@@ -1,8 +1,0 @@
-Bob Dylan, 3/13/01, Hamamatsu, Japan, Act City Hamamatsu, 2CDR
-
-LB-5370, (63min+49min), Source:, "Hide" recording, Equipment:, COS-11PTs > CSP161(Pre Amp) > TCD-D100 (16bit/44.1kHz), Lineage:, DAT master > DTC-ZE700 > RPD-500 > CD-Rs, > PC(WAV) > TLH > FLAC (level 6); bittorrent download 09/07; same recording as LB-471 based on same clapping at end of d1t7; this has higher levels and that has a band at 21k to 22k indicating this probably has a cleaner transfer but they sound similar; this does not have the pop on d1t2 that one has; excellent sound [A]
-
-Disc1:, 01.Roving Gambler (acoustic), 02.My Back Pages (acoustic)(Bob on harp), 03.Masters Of War (acoustic), 04.Stuck Inside Of Mobile With The Memphis Blues Again, 05.Every Grain Of Sand, 06.'Til I Fell In Love With You, 07.Girl Of The North Country (acoustic), 08.A Hard Rain's A-Gonna Fall (acoustic), 09.Tangled Up In Blue (acoustic), Disc2:, 01.I Want You, 02.Drifter's Escape (Bob on harp), 03.Rainy Day Women #12 & 35, (encore), 04.Love Sick, 05.Like A Rolling Stone, 06.If Dogs Run Free (acoustic), 07.Highway 61 Revisited, 08.Blowin' In The Wind (acoustic)
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

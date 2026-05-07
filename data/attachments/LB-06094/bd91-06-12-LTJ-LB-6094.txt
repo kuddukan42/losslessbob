@@ -1,8 +1,0 @@
-Bob Dylan, 6/12/91, Budapest, Hungary, 2CDR
-
-LB-6094, (51min+50min), legendary taper J, cut before Knockin' On Heaven's Door, Sennheiser MKE2002 -> portable DATrecorder - clone -> (digital transfer) m-audio delta audiophile 2496, -> Wavelab -> ssrc -> wavelab, levels raised -> cdwave for tracking -> tlh, I did not harm the sound of the recording in any way; bittorrent download 05/08; same recording as hg LB-1839 based on same clapping at end of d1t7 only inverted; in comparison this is not as harsh and has less hiss; excellent sound [A-]
-
-1 intro, 2 New Morning, 3 Lay Lady Lay, 4 All Along The Watchtower, 5 Gotta Serve Somebody, 6 Shelter From The Storm, 7 You're A Big Girl Now, 8 When First Unto This Country (trad.), 9 Don't Think Twice, It's All Right, 10 Mr. Tambourine Man, 11 It Ain't Me, Babe, 1 Knockin' On Heaven's Door, 2 Rainy Day Women # 12 & 35, 3 Just Like A Woman, 4 Highway 61 Revisited, 5 Shooting Star, 6 I Shall Be Released, 7 Like A Rolling Stone, 8 Acoustic Jam / One Too Many Mornings, 9 Blowin' In The Wind, 10 Maggie's Farm
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

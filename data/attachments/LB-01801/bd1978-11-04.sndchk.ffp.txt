@@ -1,5 +1,0 @@
-bd1978-11-04t01.sndchk.flac:bd04c2348cc5115b90c4263a0add78e2
-bd1978-11-04t02.sndchk.flac:bd0cc6c619523aa6c762df8b78ff88fd
-bd1978-11-04t03.sndchk.flac:d50a2ac27ba0bb76f9f3826dd6437e1e
-bd1978-11-04t04.sndchk.flac:daaf3878b2aa4260cdb57b65d1108920
-bd1978-11-04t05.sndchk.flac:b7e13dd8e6a2bc871c93f2597ef5eb9b

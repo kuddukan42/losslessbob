@@ -1,7 +1,0 @@
-06f0c394456adfb677778db9d1b564e9 *01 Crash on the Levee (down in the flood).flac
-aa2abce84dffc455f7a8018b93453363 *02 Man in the long black coat.flac
-445364edd67111b7bdd164a71b1a678d *03 All along the watchtower.flac
-81b7d448e530a1959df8f7c0ebe9a50b *04 Most likely you go your way (and I'll go mine).flac
-265d1d0e3ad7e665b12cae4da4ecf4f8 *05 Tears of rage.flac
-95ca168d7d9640e04f6b48b0cd4978f0 *06 Tombstone blues.flac
-8cc0e6bfa1eaf9b2fe9871b037d9d5aa *07 Mr. Tambourine man.flac

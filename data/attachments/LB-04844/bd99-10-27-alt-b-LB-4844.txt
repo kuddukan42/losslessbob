@@ -1,8 +1,0 @@
-Bob Dylan, 10/27/99, Champaign, Illinois, Assembly Hall, University of Illinois, 2CDR
-
-LB-4844, (65min+29min), version "b"; DAT AUD Master > DAT clone(s) > Wav > Soundforge 6.0 > CD Wave > CD > EAC > FLAC, I did not harm the sound of the recording in any way., This is not the same recording as LB-1359;; also different recording than bk4021 LB-4683; in 3 way comparison bk4021 LB-4683 was warmest on the vocals followed by  LB-1359 and then this one; excellent sound [A]
-
-CD 1 [64:18.27], 01 I Am The Man, Thomas [03:09.53], 02 The Times They Are-A Changin' [05:47.74], 03 It's Alright, Ma (I'm Only Bleeding) [07:39.36], 04 One Too Many Mornings [06:31.18], 05 Tangled Up In Blue [08:15.35], 06 All Along The Watchtower [04:04.57], 07 This Wheel's On Fire [06:04.03], 08 Stuck Inside Of Mobile With The Memphis Blues Again [08:21.63], 09 Not Dark Yet [06:54.58], 10 Highway 61 Revisited [07:29.23], CD 2 [28:18.51], 01 Love Sick [06:33.74], 02 Like A Rolling Stone [08:08.72], 03 It Ain't Me, Babe [09:35.50], 04 Not Fade Away [04:00.05]
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

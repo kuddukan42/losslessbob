@@ -1,7 +1,0 @@
-01 Mr. Tambourine Man.flac:95c0c2d76b592bd49574716aa875771e
-02 Silvio.flac:15413c92925f7a9ce4b83ac598786894
-03 I shall be released.flac:7ea5a1c9f7603f74366cffa73b064f69
-04 Like a rolling stone.flac:3c43e3ec4a6cc7cbba2c31d0f6496f64
-05 The times they are a-changin'.flac:d87ad0604c48305a4e867653abeac764
-06 Knockin' on heaven's door.flac:f0e15ea20f99ac4ad7fdf9e0b4996b27
-07 Maggie's farm.flac:6402cd8a9b9c5ff1dc47e39a8b3c8599

@@ -1,8 +1,0 @@
-7703422a7d048e3d602a1ce6bcbaa529 *d2-5.likearollingstone.flac
-a083dcce2e67ce5bd483610beb22a08f *d2-4highway61revisited.flac
-a58269efd9c59d75daea3dac8ac490bb *d2-2.silvio.flac
-95c3615bdb1805be3c9cd15139c8413f *d2-7.notfadeaway.flac
-4d45afc747d8f1cf6809ad594369fa07 *d2-6.blowin'inthewind.flac
-beeb85d4484864c8f3ae483b5e073e51 *d2-3.notdarkyet.flac
-385c28f9eafe9fd1d72871240cd828f6 *d2-1.justlikeawoman.flac
-

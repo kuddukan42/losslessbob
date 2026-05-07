@@ -1,124 +1,0 @@
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-01 All along the watchtower.flac:4b211b3b1033f85cc793da662895b80302 Simple twist of fate.flac:b84973a45a19cdb0d8455b23047d33ee03 Everything is broken.flac:5f1b7ec20d2e72f0ad6341e1d7c5bb9204 Just like a woman.flac:8c6eba169ecbc89b04422a187f9eca9005 Tangled up in blue.flac:e202c55608618fb1c68f9320c2d2c41306 She belongs to me.flac:0efe34ff90cb5cb708d084bb7173bb8007 Maggie's farm.flac:c58c655a55c3c8ed3de4040d78e8f27e08 Love minus zero - no limit.flac:7ae9a1fdf61929be252c0f2aeeac8fcc09 Little Moses.flac:a39c034cf59dc7e8728bdb8d3507efae10 Gates of Eden.flac:e7a391d42709cac00d6ca03a496ee48f
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-5cadffca3ca6c9cab0f5887afa649e78 *01 All along the watchtower.flac
-d52f87f987b941dcd22bcce4987fd94c *02 Simple twist of fate.flac
-049c6459fbbd612155910258ec4f5719 *03 Everything is broken.flac
-75ef3f025a8441ff72d7763e23635c29 *04 Just like a woman.flac
-f7a33969df956369297f5c7cc3ac46ad *05 Tangled up in blue.flac
-83d1e33377f1f5ca9ff56dc5e537ff78 *06 She belongs to me.flac
-7b5beb3b741acac60e472322abb99cb1 *07 Maggie's farm.flac
-337635a00398760dd82b5d463a9e7e48 *08 Love minus zero - no limit.flac
-d3b331a55f50bb99d908b98b6de7b465 *09 Little Moses.flac
-2229a8df1bd3625a9f98332adcee7464 *10 Gates of Eden.flac
-
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-11 Mr. Tambourine Man.flac:099b2595f3da941da325628de3bda3db12 Cat's in the well.flac:69efa7013bf88c8ace714176f7e7046813 I'll remember you.flac:147bb73695b93fbfe9d720b86c70e00a14 The times they are a-changin'.flac:c8deda04c3928a30fedad6698df035b315 Highway 61 revisited.flac:9f69288e9793d869269161ebcab54e0616 Ballad of a thin man.flac:da407e95985322b1b3036f6576a4e70b17 Watching the river flow.flac:df1ae052b63d728a0198bc3ba7a9116618 Blowin' in the wind.flac:6e714a8e00b210a3132a8535b8e99dca
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-1c1ffc027cfff46b5a18d6586929fda9 *11 Mr. Tambourine Man.flac
-0be9b1c0e9d06acdab00b50317e85f06 *12 Cat's in the well.flac
-6da5e0a8ddeb5431bfe9907d7cebe6aa *13 I'll remember you.flac
-ef341538e8028987bd38e6fba370fec3 *14 The times they are a-changin'.flac
-7383eaa51281badb5885816bb5d72219 *15 Highway 61 revisited.flac
-6c1ade71174ba1241ce9dc350a1f8a0c *16 Ballad of a thin man.flac
-c1b8161b62d341f0f24693070ebe17cd *17 Watching the river flow.flac
-8a325ba4ec9f24c0211b71e2fed31609 *18 Blowin' in the wind.flac
-
-===================
-===================
-===================
-=== 1992-03-29 Royal Theatre, Canberra, Australian Capitol Territory, Australia [unidentified taper].txt
-===================
-===================
-===================
-Bob Dylan
-Royal Theatre
-Canberra, Australian Capitol Territory, Australia
-March 29, 1992
-
-Lineage: Unknown
-
-?LB-400?, (59min +40min), excellent sound
-3:56 has squeak but could just be drummer; d2t6 3:41 pop
-
-Uploaders note: Dunno what the 03:56 squeak means but truly there is a d2t6pop at 03:41:257, hardly audible, though (I had to use a magnifying glass to see it and my best ear to hear it!) Also LB says discs fade, but they are clean breaks. Not sure LB has the same recording. I have a recording that is sped up to fit better on the discs, but all the markers seem the same to me. I think this is likely MKs version, but I do not have that to compare. In any event, an excellent recording!
-
-Conversion: received as SHNs, converted to FLACs, via WAVs.
-Sets given song titles, as I find it more convenient, and I trust others do too
-
-01. All Along The Watchtower [04:14]
-02. Simple Twist Of Fate [07:06]
-03. Everything Is Broken [03:29]
-04. Just Like A Woman [06:28]
-05. Tangled Up In Blue [06:22]
-06. She Belongs To Me [04:22]
-07. Maggie's Farm [06:15]
-08. Love Minus Zero/No Limit [03:09]
-09. Little Moses (Bert A. Williams/Earle C. Jones) [04:10]
-10. Gates Of Eden [05:00]
-Total time: [50:39]
-
-11. Mr. Tambourine Man [07:16]
-12. Cat's In The Well [04:11]
-13. I'll Remember You [04:55]
-14. The Times They Are A-Changin' [05:57]
-15. Highway 61 Revisited [05:08]
-16. Ballad Of A Thin Man [06:11]
-17. Watching The River Flow [05:50]
-18. Blowin' In The Wind [03:04]
-Total time: [42:35]
-
-Concert # 371 of The Never-Ending Tour
-Concert # 7 of the 1992 Tour Of Australia
-1992 concert # 7
-
-Concert # 7 with the 6th Never-Ending Tour band:
-Bob Dylan (vocal & guitar)
-Bucky Baxter (pedal steel guitar & electric slide guitar)
-John Jackson (guitar)
-Tony Garnier (bass)
-Ian Wallace (drums)
-
-8, 9 Bob Dylan (acoustic guitar & vocal)
-18 Bob Dylan (electric guitar & vocal)
-10 Bob Dylan (acoustic guitar & vocal) & John Jackson (guitar)
-11, 14 acoustic with the band
-2, 4, 5, 8, 11, 13, 14, 18 Bob Dylan harmonica
-5, 14 Bucky Baxter electric mandolin
-
-BobTalk:
-This one's off my new album called ...another animal song about a cat, Cat's In A Well
-
-4 new songs (22%) compared to previous concert
-1 new song for this tour
-
-Stereo audience recording, 95 minutes
-
-* * * Fixin' gaps * * *
-===================
-===================
-===================

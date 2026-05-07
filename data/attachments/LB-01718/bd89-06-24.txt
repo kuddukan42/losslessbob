@@ -1,9 +1,0 @@
-Bob Dylan, 6/24/89, Acikhava Tiyatrosu, Istanbul, Turkey, 2CDR
-
-(46min+48min), incomplete as follows: 19 [One Too Many Mornings] is cut and 20-21 [It Ain't Me, Babe & Maggie's Farm] are missing.; Source: aud, Lineage: ? > CD-R > EAC > CoolEdit Pro > CD Wave Editor > .flac, Sound Quality: a solid B; a bit distant from the stage, but highly listenable,, Removed sector boundary error micro gaps w/ CoolEdit Pro, reassembled each disk into a single .wav, normalized, and recut with CD Wave Editor. No other processing applied; bittorrent download 04/04; good to very good sound; some talking d1t2, d1t3 and so on occasionally
-
-small drop d1t2 3:48. mic noise d2t1 0:09
-
-Setlist:, disk 1, 1. Most Likely You Go Your Way (And I'll Go Mine), 2. Making Believe (Jimmy Work), 3. All Along The Watchtower, 4. Ballad Of Hollis Brown, 5. Just Like A Woman, 6. The Water Is Wide (trad.), 7. Ballad Of A Thin Man, 8. Highway 61 Revisited, 9. Mama, You Been On My Mind, 
-
-disk 2, 1. Mr. Tambourine Man, 2. Don't Think Twice, It's All Right, 3. Knockin' On Heaven's Door, 4. I Shall Be Released, 5. You're A Big Girl Now, 6. Leopard-Skin Pill-Box Hat, 7. Like A Rolling Stone, 8. Blowin' In The Wind, 9. Barbara Allen (trad.), 10. One Too Many Mornings (tape cuts out at 1:02)

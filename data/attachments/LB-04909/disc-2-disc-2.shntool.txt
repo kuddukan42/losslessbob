@@ -1,8 +1,0 @@
-    length     expanded size   cdr  WAVE problems filename
-     7:35.54       80389052    ---   --   ---xx   Track No01.flac
-    10:24.50      110191244    ---   --   ---xx   Track No02.flac
-     7:47.73       82550540    ---   --   ---xx   Track No03.flac
-     7:51.59       83223212    ---   --   ---xx   Track No04.flac
-    12:25.03      131425100    ---   --   ---xx   Track No05.flac
-     6:03.18       64075580    ---   --   ---xx   Track No06.flac
-    52:08.32      551854728 B                     (totals for 6 files, 0.6368 overall compression ratio)

@@ -1,8 +1,0 @@
-Bob Dylan, 9/23/78, Rochester, New York, War Memorial Auditorium, 1CDR
-
-LB-5638, (66min), version "a"; Fixed LB-5048: only circulating incomplete recording., Trade CD > EAC > FLAC > HD > HC bittorrent download 06/07, LB-5048 > HD> flac frontend > Wave Repair 4.9.2 fixing index clicks, re-tracking Shelter From The Storm / Love Minus Zero and Am I Your Stepchild? / One More Cup Of Coffee (Valley Below) into separate songs, no ASM>flac lvl8, verify., LB notes:, most of t10* at very low level or in a drop and recovers part way into t11 beffore ending in t12; good to very good sound [B-], some occasional analog drops that are long or stutter, * Now Track 11 (IAMB) on this fixed version, Time: 65:20; bittorrent download 12/07; eac match to LB-5048 on first part of d1t1; appears as stated above with retrackig and discontinuity near track boundaries cleaned up; (did not listen to all of this)
-
-01. Shelter From The Storm (cuts at start), 02. Love Minus Zero, 03. Tangled Up In Blue, 04. Ballad Of A Thin Man, 05. Maggie's Farm, 06. I Don't Believe You (She Acts Like We Never Have Met), 07. Like A Rolling Stone, 08. I Shall Be Released, 09. Going, Going, Gone, 10. One Of Us Must Know (Sooner Or Later), 11. It Ain't Me, Babe, 12. Am I Your Stepchild?, 13. One More Cup Of Coffee (Valley Below), 14. Blowin' In The Wind (partial)
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

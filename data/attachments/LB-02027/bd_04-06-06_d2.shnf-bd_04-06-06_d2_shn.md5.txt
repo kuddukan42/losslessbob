@@ -1,8 +1,0 @@
-ae8e4d6a52d7af10443a9c5f458a1cad *bd_04-06-06_d2_Track_ 1.shn
-a075f2b2379a4f6fa48803a0799b50bc *bd_04-06-06_d2_Track_ 2.shn
-57169600987bb56e67a776dc9df30a23 *bd_04-06-06_d2_Track_ 3.shn
-efaff7e708865fbf9b0e92aad8087ef9 *bd_04-06-06_d2_Track_ 4.shn
-bca0adec57148e5d98a0f5224b1836df *bd_04-06-06_d2_Track_ 5.shn
-1774140d68de66235268327cfa09fd3e *bd_04-06-06_d2_Track_ 6.shn
-a7721e1a5c6b7d4e03328a4cd15b9841 *bd_04-06-06_d2_Track_ 7.shn
-da6dc2a1a213e03e06ae2a820b73a26b *bd_04-06-06_d2_Track_ 8.shn

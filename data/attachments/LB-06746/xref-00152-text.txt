@@ -1,98 +1,0 @@
-===================
-===================
-===================
-=== born again music - notes.txt
-===================
-===================
-===================
-Bob Dylan Live at The Massey Hall 
-Toronto 
-Canada
-April 20th 1980
-
-The Born Again Music
-Flashback 03.93.0204
-
-2cd
-
-tracks:
-
-1  introduction*
-2. if I've got my ticket lord*
-3. hold on*
-4. the rainbow sign*
-5. show me the way lord*
-6. freedom at the wall*
-7. this train is bound for glory*
-8. gotta serve somebody
-9. I believe in you
-10. when he returns
-11. ain't gonna go to hell for nobody
-12. cover down down I break through
-13. man gave names to all the animals
-14. precious angel
-15. slow train coming
-16. stranger in the city*
-17. walk around heaven all day*
-18. do right to me baby
-19. solid rock
-20. saving grace
-21. saved
-22. what can I do for you?
-23. in the garden
-24. are you ready?
-25. pressing on
-
-* performed by backing vocalists only.
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-d1 t01 Introduction.flac:78783b4131dadc5bdc43f219005f4739d1 t02 If I've Got My Ticket Lord.flac:4175e0301d0f0fb468a5986f91a40977d1 t03 Hold On.flac:b310bd33c5d1acfda1ef7b2fd80fa6add1 t04 The Rainbow Sign.flac:95aa42c8e8942f1ec213a850e54bf34dd1 t05 Show Me the Way Lord.flac:26a49da529f416b2f95ec0729541afb3d1 t06 Freedom at the Wall.flac:91515f46d9fe750ae522e8deb1b2df87d1 t07 This Train Is Bound for Glory.flac:b2008c39494ed3f4686de7c6928fd040d1 t08 Gotta Serve Somebody.flac:47d1b1c54e6680e81c3b3b608a7af888d1 t09 I Believe in You.flac:7b01c1e3f9bfe0b91df34467ccdb79a1d1 t10 When He Returns.flac:7b64d410e7ed6e4639a323131c287becd1 t11 Ain't Gonna Go to Hell for Anybody.flac:ff2872dcd4531d97515e39eec630b46ed1 t12 Cover Down, I Break Through.flac:9346d42e0a8caaaca133be06bc29be4ad1 t13 Man Gave Names to all the Animals.flac:4b576fcdbad6fa4d8cb57c29075d6a43d1 t14 Precious Angel.flac:dead65a101732bfc96302ccb62596909d1 t15 Slow Train.flac:71ce5fd23146b074bf89b28e3677289fd2 t16 Stranger in the City.flac:0fe1667a1efd3bd89ed13124c56c20f4d2 t17 Walk Around Heaven All Day.flac:60672aded84918ee5df1fa264733b148d2 t18 Do Right to Me Baby.flac:c2f6cce383e7b3c63358cebece8c8d87d2 t19 Solid Rock.flac:52ce47c06f7729016b962473563fc18ad2 t20 Saving Grace.flac:46104f95dd02d3267614690fd3db2113d2 t21 Saved.flac:ed7e578c08b4bc6a548898b6692ec181d2 t22 What Can I Do for You.flac:1cfc75a9756912312daae98c940fbd05d2 t23 In the Garden.flac:4c2100b079df9a46b24b4330bb2058bad2 t24 Are You Ready.flac:4724bf99e3f0b9bb39be885697a6c8a9d2 t25 Pressing On.flac:62b484edf2826eede7ef213d8128e990
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-5d953d81697a9ce79de69dd5fceb57d3 *d1 t01 Introduction.flac
-3a985fcd574d00d6a2d7bcbf63e21aba *d1 t02 If I've Got My Ticket Lord.flac
-24da13219fd3eb0bb086303b14b17b83 *d1 t03 Hold On.flac
-82de6563e347948d8c3491ca47b6477b *d1 t04 The Rainbow Sign.flac
-25d7cd12070f45d3f171693d84a149b5 *d1 t05 Show Me the Way Lord.flac
-48c1ff4e605f9d8fa0f5bf68f42dca61 *d1 t06 Freedom at the Wall.flac
-1516a507d1a54435c0ca99d7914bb4af *d1 t07 This Train Is Bound for Glory.flac
-7ea5c55308cc694aa701c85b5fa3ef2b *d1 t08 Gotta Serve Somebody.flac
-f3c4e88dd540e6dd34c5fa653fe5b4f7 *d1 t09 I Believe in You.flac
-21f1386d936599d8da32de926bd8fa7f *d1 t10 When He Returns.flac
-3f04e47ee806d356722738b3e30992a0 *d1 t11 Ain't Gonna Go to Hell for Anybody.flac
-b60b515bcfa4fbae153b833230c39428 *d1 t12 Cover Down, I Break Through.flac
-7f35c7cbe9de2d9e5a123e859707e881 *d1 t13 Man Gave Names to all the Animals.flac
-61353dbfdc9e0339236320dbc0cb6b53 *d1 t14 Precious Angel.flac
-ad5594562b606c5c74193ef93205753b *d1 t15 Slow Train.flac
-
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-2d2fdb669bd86c7a88d92d8719ddec7d *d2 t16 Stranger in the City.flac
-337e24bd40e23ff76a02be96e616ac0a *d2 t17 Walk Around Heaven All Day.flac
-d241cdd594e4c91dd407fa4fb837cb65 *d2 t18 Do Right to Me Baby.flac
-8d8e97cb2052fa4f4fcd3ff0170cea87 *d2 t19 Solid Rock.flac
-1d46fa4820c3637a85ca3c9332fef3e2 *d2 t20 Saving Grace.flac
-8c776932631d55182a74f564d896a6be *d2 t21 Saved.flac
-96c40dafc2bafeff9338547c67873ac0 *d2 t22 What Can I Do for You.flac
-6c59d2cad7db6817ffb849c73f816b24 *d2 t23 In the Garden.flac
-b87d9c22a9b471d00463f6a55a269bf3 *d2 t24 Are You Ready.flac
-389c86946a78847fc1c9ce8f88700ccf *d2 t25 Pressing On.flac
-
-===================
-===================
-===================

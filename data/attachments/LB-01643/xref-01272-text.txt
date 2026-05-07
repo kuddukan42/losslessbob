@@ -1,107 +1,0 @@
-===================
-===================
-===================
-=== text.txt
-===================
-===================
-===================
-The Pantages Theater
-Hollywood
-Los Angeles, California
-17 May 1992
- 
-1.Rainy Day Women # 12 & 35
-2.Black Muddy River (Jerry Garcia/Robert Hunter)
-3.Union Sundown
-4.Just Like A Woman
-5.Stuck Inside Of Mobile With The Memphis Blues Again
-6.She Belongs To Me
-7.Maggie's Farm
-8.Love Minus Zero/No Limit
-9.Little Moses (Bert A. Williams/Earle C. Jones)
-10.The Lonesome Death Of Hattie Carroll
-11.Mr. Tambourine Man
-12.Cat's In The Well
-13.Idiot Wind
-14.The Times They Are A-Changin'
-15.Everything Is Broken
-
-16.I Don't Believe You (She Acts Like We Never Have Met)
-17.Ballad Of A Thin Man
-18.Blowin' In The Wind
- 
-Concert # 401 of The Never-Ending Tour.  Concert # 17 of the 1992 US West Coast Spring Tour. 1992 concert # 37.
- 
-Concert # 15 with the 7th Never-Ending Tour band: Bob Dylan (vocal & guitar), Bucky Baxter (pedal steel guitar & electric slide guitar), John Jackson (guitar), Tony Garnier (bass), Ian Wallace (drums), Charlie Quintana (drums & percussion).
- 
-8, 9, 18  Bob Dylan (acoustic guitar & vocal).
- 
-10, 11, 14  acoustic with the band.
- 
-1, 4, 5, 8, 10, 13, 14, 18  Bob Dylan harmonica.
- 
-10, 11  Bucky Baxter (dobro or acoustic slide).
- 
-14  Bucky Baxter (mandolin).
- 
-9 new songs (50%) compared to previous concert. No new songs for this tour.
- 
-Stereo audience recording, 100 minutes.
-
-/www.bjorner.com
-
-taper: unknow
-lineage: trade > temptxACTConvert.wav level 8 > flac
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-01 Piste audio.flac:f92ee655cbb9fcfb862bf7ff7b342eea02 Piste audio.flac:f954d50750d3654b602f4680515f810403 Piste audio.flac:b08f7254433059361d67cc109d4e070e04 Piste audio.flac:01336dc06fba5b2b07b91cc0c339c58005 Piste audio.flac:bf865ab797e0036a3afeba4db78131d606 Piste audio.flac:6b6a798de22494a6784b2b6f3eb0c7c907 Piste audio.flac:f93a2b16852bcec17b1a7f25132d499f08 Piste audio.flac:6fbf58bdf4525a514e930930037c30ba09 Piste audio.flac:860150f18a7ef6554b5b95ef46caa60b
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-26b1a8dd9cd600e27d582e71cb1d7028 *01 Piste audio.flac
-4a2c85c177a59a7386feb33b4c2ffacd *02 Piste audio.flac
-6813bbbf88fbbe2b44ec200fbd3a33af *03 Piste audio.flac
-90aca22f46a15de425d88f1879df4c5b *04 Piste audio.flac
-500f6e406c32249ce7a2e0b1f19925fb *05 Piste audio.flac
-0ac859a1aa9f9d62efe81ddc2fc079c3 *06 Piste audio.flac
-fb5f217e3629102a64ce1dd2588a219c *07 Piste audio.flac
-53aa2e8c1def77988c2076609c64e66f *08 Piste audio.flac
-f481a7680d7bc774f0eebcf46da9e0a0 *09 Piste audio.flac
-
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-01 Piste audio.flac:a1c4acbe8c51235f0fad771b2afad90402 Piste audio.flac:731c716fd4982ddc90223dcab2dfb04503 Piste audio.flac:75db46bd0b9017a87b32f4086b03ffd604 Piste audio.flac:7bbf623f7e6ca0ed56ebd107f9a93a2c05 Piste audio.flac:9e204effee3d3cd406a8603e82ea166606 Piste audio.flac:b7cf015fb3e8e45b4a4baf470719ae6f07 Piste audio.flac:e6083d3e706f77ebded7698384c826d208 Piste audio.flac:630cdd7762de51321b0b7b74bc34548309 Piste audio.flac:f3db51cbd47a874fbb744eda6e3aa549
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-cd30bc9a73709082e9d42eb5aba8bbb9 *01 Piste audio.flac
-105bd76f176705cadfa48cfa1a622f98 *02 Piste audio.flac
-53fe35b74706f8fb3dad91541bfa9d26 *03 Piste audio.flac
-b174897572018e522533b86d6deaf98b *04 Piste audio.flac
-14cb98e47f397e8181b579d318c62137 *05 Piste audio.flac
-dc0cecab4b67b9f8edccc9a0c9284264 *06 Piste audio.flac
-49670bd819d4b85f6ce1d892980ebca0 *07 Piste audio.flac
-35dc92041a8fb02ba03d429dabc243ff *08 Piste audio.flac
-11198cf2f2f36240762e4856ea272636 *09 Piste audio.flac
-
-===================
-===================
-===================

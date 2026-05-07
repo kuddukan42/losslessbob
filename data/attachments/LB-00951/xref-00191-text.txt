@@ -1,59 +1,0 @@
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-Track No01.flac:66a011b886f9aa74da74a301adea7dbbTrack No02.flac:a4ce82e920044da15019dfd02ba9aff2Track No03.flac:cb3af76a425cc21b514fef59526ebb13Track No04.flac:3956745b18c2a64b34c5830533661e5bTrack No05.flac:749f96de9e1f5558ddbc75257537234eTrack No06.flac:9c2100be3b5250b9376e084b090e9fb5Track No07.flac:a2e0ebefa9c9e89e3135083ab8ee1eadTrack No08.flac:f87605f629a79857666962aa4599fe4bTrack No09.flac:a4aafcefb389e3b98f204973f3a0d3c8Track No10.flac:24fd16156800008841646fc84932c2eeTrack No01.flac:6448e9bb319364911a03c0cf9ff17f1aTrack No02.flac:c5be36f2d2166d47af2dcd5ada96033dTrack No03.flac:4af9d1e7eab77d10ba29da315558240bTrack No04.flac:f5fc208bfac0f4793493e83583dd80ea
-===================
-===================
-===================
-=== infos.txt
-===================
-===================
-===================
-Bob Dylan, 5/1/80, Buffalo, New York, 2CDR
-
-(44min+45min), very good sound; missing first 2 songs Gotta Serve Somebody, I Believe In You and cuts into 3rd which are reported by dylanbase 97 not to circulate; also missing the girls songs as just have bob's intros to the songs
-
-begin of d1t1 missing; 6sec drop d1t1 0:21
-
-CD1
-1 When You Gonna Wake Up ?, 2 Ain't Gonna Go To Hell, 3 Cover Down/Break Through, 4 Precious Angel, 5 Man Gave Names To All The Animals, 6 Slow Train, 7 intro to Lord Don't Move That Mountain (Mahalia Jackson), + intro to  Walk Around Heaven All Day (Rev J Cleveland/C George), + Do Right To Me Baby (Do Unto Others), 8 Solid Rock, + begin of next song 
-
-CD2
-1 Saving Grace, 2 Saved (Dylan/Drummond), 3 What Can I Do For You ?, 4 In The Garden,  5 Are You Ready ?, 6 Pressing On
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-46eaee8e7c4dab186f8ad0f191e7e0c1 *Track No01.flac
-dab9689d1d3658330187ae0c3d27db68 *Track No02.flac
-eb23a7b307a9b62c3611f51b396518a3 *Track No03.flac
-414de5e2e129363ee07ef0d6623124c5 *Track No04.flac
-
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-a78b2ab45a27a3b68819459beeaee911 *Track No01.flac
-f759c99a66ca2535d924afa209b28f5c *Track No02.flac
-43d23cd53f470a4c4c6f2a700f339514 *Track No03.flac
-58540a8c0cc34539ecdee3c36952460a *Track No04.flac
-66c74781cfebf9dd8308f08a3a617959 *Track No05.flac
-eba2f6696564eaa9eb5486f0df491151 *Track No06.flac
-e6965035e6f6f02827f380c256d1a825 *Track No07.flac
-835b55e9dfdac1b8403a148f9f10d9b7 *Track No08.flac
-564113ab4d9ffa9149940f48bc3a2198 *Track No09.flac
-e5c1a15feb817169971270b03bf9e44d *Track No10.flac
-
-===================
-===================
-===================

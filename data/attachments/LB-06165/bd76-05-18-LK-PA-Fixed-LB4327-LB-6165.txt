@@ -1,9 +1,0 @@
-Bob Dylan, 5/18/76, Oklahoma City, Oklahoma, 1CDR
-
-LB-6165, (60min), LK PA Fixed LB4327; PA Tape, My Low Gen tape > CoolEdit > HR > CDR > EAC > Flac (reordered to concert order) > LB 4327 > Wav Repair fixing index clicks/micro gaps, No ASM > Flac lvl 8, verify; bittorrent download 06/08; this is a sort of close eac match on t1 on LB-6165 with differences as expected being at the end of the track as gaps removed; (did not listen to all of this)
-
-CD1
-01 Linda Lou (Burnette), 02 Turn Turn Turn (McGuinn), 03 Lover of the Bayou (McGuinn), 04 Maggie's Farm, 05 One Too Many Mornings (cut), 06 Mozambique, 07 Isis, 11 I Pity The Poor Immigrant (acoustic), 12 Shelter From The Storm, 13 Oh, Sister, 16 You're Gonna Make Me Lonesome When You Go, 17 Lay Lady Lay, 19 I Want You, 20 Going,Going, Gone
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

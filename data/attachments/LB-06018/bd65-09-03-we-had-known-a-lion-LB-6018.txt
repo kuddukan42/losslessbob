@@ -1,8 +1,0 @@
-Bob Dylan, 9/3/65, Hollywood, CA, 2CDR
-
-LB-6018, (42min+49min), Lineage: CD-R > EAC > FLAC Frontend; bittorrent download 04/08; in 5-way comparison on d1t2 this is most similar to bootleg "From Newport to the Ancient Empty Street in LA" LB-584 (listed at 1/1/64) except levels raised on that one; both bootlegs have most removed above 8k; this has more hiss maybe because that one had more hiss removed; the bootleg "Back In Hollywood Bowl 1965" LB-5546 has a fuller spectrum with more hiss but also a more natural sound;  LB-518 also is fuller spectrum with more natural sound and has a little more hiss than bootleg LB-5546 but that one has more distortion on the vocals; LB-5559 sounds very similar to LB-5546
-
-Disc one, (Acoustic), She Belongs To Me, To Ramona, Gates of Eden, It's All Over Now Baby Blue, Desolation Row, Love Minus Zero, Mr. Tambourine Man, Disc two, (Electric), Tombstone Blues (first verse missing), I Don't Believe You, From A Buick 6, Just Like Tom Thumb's Blues, Maggie's Farm, It Ain't Me, Babe, Ballad Of A Thin Man, Like A Rolling Stone, Tombstone Blues * (backing vocal overdub)
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

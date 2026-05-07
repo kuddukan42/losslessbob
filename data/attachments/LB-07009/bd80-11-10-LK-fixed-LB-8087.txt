@@ -1,8 +1,0 @@
-Bob Dylan, 11/10/80, San Francisco, California, 2CDR
-
-LB-8087, (72min+50min), Notes for Fixed LB-7009:, The long and winding road above., This version presents various micro left-channel dropouts (e.g. during Senor) which were left unaltered. Wave Repair 4.9.3 to manually fix many minor ticks / digi clicks and double index ticks on most tracks as reported by DigiFlawFinder (see attached log. Thanks goes out to DigiFlawFinder creators who gave me back the listening pleasure rather than annoting digi flaws while listening). On-source edit between D1t8-9 D2t5-6 and between disc 1 and 2. No ASM applied. DigiFlawFinder log for fixed wavs attached > Flac Frontend lvl8 verify sector align (not required)., Thanks to the original taper, LK and traders.; bittorrent download 10/09; this is a close eac match on d1t1 to lk LB-7009 with flaws fixed as indicated; (did not listen to all of this)
-
-Setlist:, DISC 1:, 1. Let Me Ride, 2. Look Up, 3. Come On In This House, 4. Saved By the Grace of Your Love, 5. Gotta Serve Somebody, 6. I Believe In You, 7. Like A Rolling Stone, 8. Till I get it Right, 9. Man Gave Names To All The Animals, 10. To Ramona, 11. Ain't Gonna Go To Hell For Anybody, 12. Girl From The North Country, 13. Slow Train, 14. Walk Around Heaven All Day, DISC 2:, 1. Abraham Martin And John, 2. Let's Keep It Between Us, 3. Covenant Woman, 4. Solid Rock, 5. Just Like A Woman, 6. What Can I Do For You?, 7. When You Gonna Wake Up, 8. Senor (Tales Of Yankee Power), 9. In The Garden, 10. Blowin' In The Wind, 11. City Of Gold, 12. Love Minus Zero/No Limit (acoustic)
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

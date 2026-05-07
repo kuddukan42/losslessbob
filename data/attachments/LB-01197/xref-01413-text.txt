@@ -1,121 +1,0 @@
-===================
-===================
-===================
-=== infos.txt
-===================
-===================
-===================
-Hammerstein Ballroom
-New York City, New York
-
-20 August 2003
-
-1.Maggie's Farm
-2.Seor (Tales Of Yankee Power)
-3.Tweedle Dee & Tweedle Dum
-4.Watching The River Flow
-5.Things Have Changed
-6.Highway 61 Revisited
-7.This Wheel's On Fire (Bob Dylan/Rick Danko)
-8.You Ain't Goin' Nowhere
-9.Just Like Tom Thumb's Blues
-10.Cold Irons Bound
-11.The Lonesome Death Of Hattie Carroll
-12.Honest With Me
-13.Mr. Tambourine Man
-14.Summer Days
-
-15.Like A Rolling Stone
-16.All Along The Watchtower
-17.Rainy Day Women # 12 & 35
-
-Concert # 1552 of The Never-Ending Tour. Concert # 28 of the 2003 US Summer Tour. 2003 concert # 62.
-
-Concert # 51 with the 16th Never-Ending Tour Band: Bob Dylan (vocal & piano), Freddie Koella (guitar), Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar), Tony Garnier (bass), George Recile (drums & percussion).
-
-1-3, 12, 14, 16 Tommy Morrongiello (guitar).
-
-11, 13 acoustic with the band.
-
-2, 4, 7-9, 13 Bob Dylan (harmonica).
-
-4, 5, 7, 13, 16  Chuck Loeb (guitar).
-
-8 Larry Campbell (pedal steel guitar).
-
-9, 13, 17 Andy York (guitar).
-
-12 Larry Campbell (slide guitar).
-
-www.bjoner.com
-
-Trade CDr < XLD < flac < dime
-apa05 
-===================
-===================
-===================
-=== notes.txt
-===================
-===================
-===================
-CEDAR Notes:
-
-CEDAR #1
-
-FINGERPRINT
-There's a male voice in quiet conversation near the taper for much of the show. Just before "Tambourine Man," you can hear "... kind of good for... been in therapy..."
-
-COMMENTS:
-A little distant but very listenable recording. Beginning of show is clipped, starting just before the vocals begin in "Maggie's Farm."
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-01 Bob Dylan - Maggie's Farm.flac:41dfc9879b870949160511e0d1c2475e02 Bob Dylan - Senor.flac:9ab7189437eec0e1ac9056a262d8b3b103 Bob Dylan - Tweedle Dee & Tweedle Dum.flac:2ac364187f297ab4a373d335ec5269e504 Bob Dylan - Watching The River Flow.flac:dcbc2e8309ea31028a629f2f380448cf05 Bob Dylan - Things Have Changed.flac:8f8cdbc9242e03bd5b7bde37b2d7d86006 Bob Dylan - Highway 61 Revisited.flac:a373aca693c52d50373352a51477ddcb07 Bob Dylan - This Wheel's On Fire.flac:ca8451f605a564728d304f02aee9dfa508 Bob Dylan - You Ain't Goin' Nowhere.flac:429e003806c9cc9e1a2e83c07dfc656e09 Bob Dylan - Just Like A Woman.flac:974a6523e6c5158086e860aaad8752a410 Bob Dylan - Cold Irons Bound.flac:c446b53cac553a57876b99563967b80e
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-7cb69cf49d6aca06b86e0caf9f3d94a2 *01 Bob Dylan - Maggie's Farm.flac
-7d976237a6918d2799d215a6e60cadd9 *02 Bob Dylan - Senor.flac
-ee364c1522596118a858312e79a2c53d *03 Bob Dylan - Tweedle Dee & Tweedle Dum.flac
-84c8399173f213ccca9528a09cc506ac *04 Bob Dylan - Watching The River Flow.flac
-a0f9ad974a84d48068ab1984930732a5 *05 Bob Dylan - Things Have Changed.flac
-30d497838911c60a80f7d8cd198d1ba9 *06 Bob Dylan - Highway 61 Revisited.flac
-f89b9554e7cabc63721da7c53e2134d2 *07 Bob Dylan - This Wheel's On Fire.flac
-eb40600dab528c92bc72c205dc857666 *08 Bob Dylan - You Ain't Goin' Nowhere.flac
-a7b7e93d5ec528608254a66851cafb62 *09 Bob Dylan - Just Like A Woman.flac
-5bfccffd63e323e6bcd05c0bdcb3b1a4 *10 Bob Dylan - Cold Irons Bound.flac
-
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-01 Bob Dylan - The Lonesome Death Of Hattie Carroll.flac:e12778012e0ef7ee1429c5f507ace86502 Bob Dylan - Honest With Me.flac:940085d62f20406a2047b6b2590c53ac03 Bob Dylan - Mr.Tambourine Man.flac:522ba78916bc716bae03af5a8bf41c4204 Bob Dylan - Summer Days.flac:d1279053314468ab387da102e33ab64705 Bob Dylan - Like A Rolling Stone.flac:da307f4621eeaf3aab46ee9cfc85087006 Bob Dylan - All Along The Watchtower.flac:d275aa770b3ce05d76b27d3a5e535a2107 Bob Dylan - Rainy Day Women #12&35.flac:b76fc34b0622e43dc115fdf539438429
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-3f16e4e5f380113828d76752083f6b14 *01 Bob Dylan - The Lonesome Death Of Hattie Carroll.flac
-c322b7f6f900915aef58fe9cc02bcdf6 *02 Bob Dylan - Honest With Me.flac
-f081066cc04b3687b516d95d03329277 *03 Bob Dylan - Mr.Tambourine Man.flac
-94c677d9ff00545b2065a90e987245a0 *04 Bob Dylan - Summer Days.flac
-88c0e270da06519dc2314c116eb9a117 *05 Bob Dylan - Like A Rolling Stone.flac
-44702af4c4694853df4b161a9850e1e1 *06 Bob Dylan - All Along The Watchtower.flac
-c3e2306ba70cbc5774d2a8618ae54034 *07 Bob Dylan - Rainy Day Women #12&35.flac
-
-===================
-===================
-===================

@@ -1,131 +1,0 @@
-===================
-===================
-===================
-=== infos.txt
-===================
-===================
-===================
-	
-Municipal Auditorium
-Jackson, Mississippi
-9 September 1992
- 
- 
- 1.  Everything Is Broken
- 2.  Pretty Peggy-O (trad. arr. Bob Dylan)
- 3.  All Along The Watchtower
- 4.  Shelter From The Storm
- 5.  Simple Twist Of Fate
- 6.  Positively 4th Street
- 7.  Silvio (Bob Dylan & Robert Hunter)
- 8.  Little Moses (Bert A. Williams/Earle C. Jones)
- 9.  Boots Of Spanish Leather
-10.  John Brown
-11.  Mr. Tambourine Man
-12.  Unbelievable
-13.  Man In The Long Black Coat
-14.  Under The Red Sky
-15.  Maggie's Farm
-16.  Ballad Of A Thin Man
-17.  Highway 61 Revisited
-18.  Blowin' In The Wind
-
-Concert # 433 of The Never-Ending Tour.  Concert # 17 of the 1992 Late Summer Tour Of US And Canada. 1992 concert # 69.
- 
-Third concert with the 8th Never-Ending Tour band: Bob Dylan (vocal & guitar), Bucky Baxter (pedal steel guitar & electric slide guitar), John Jackson (guitar), Tony Garnier (bass), Ian Wallace (drums), Winston Watson (drums & percussion).
- 
-8, 9, 18  Bob Dylan (acoustic guitar & vocal).
- 
-10  Bob Dylan (acoustic guitar & vocal), Tony Garnier (bass).
- 
-11  Bob Dylan (acoustic guitar & vocal), Tony Garnier (bass), Ian Wallace (drums).
- 
-3-5, 9, 11, 13, 18  Bob Dylan harmonica.
- 
-BobTalk:
- 
-Thanks everybody! Give a big hand for the band!! (after Highway 61 Revisited).
- 
-9 new songs (50%) compared to previous concert. 2 new songs for this tour.
- 
-Stereo audience recording, 105 minutes.
-Session info updated 28 March 1993.
-
-http://www.bjorner.com
-
-
-audio trade (Improve Air Remaster) > XLD > flac
-
-fingerprint
-01 Bob Dylan - Everything Is Broken.flac:d8e510d7b0a99e80610586147f26cdd702 Bob Dylan - Pretty Peggy-O.flac:00aba419996d9698068a66b07ac4765403 Bob Dylan - All Along The Watchtower.flac:4d6a40db599ec8e64c51a7cc2a7f53b304 Bob Dylan - Shelter From The Storm.flac:ff50777efb4fa3bca78507341b39751505 Bob Dylan - Simple Twist Of Fate.flac:d1f90eb88b01ffe0978e871047eeb08906 Bob Dylan - Positively 4th Street.flac:5bcadb11b064cc52ee9662ac80aad83507 Bob Dylan - Silvio.flac:8d096a4fd108805f09e398810782524608 Bob Dylan - Little Moses.flac:51efdce1105bcb7692694bfc77109a0209 Bob Dylan - Boots Of Spanish Leather (Acoustic).flac:bf0a3e7d533dc729daeb1a44db80085910 Bob Dylan - John Brown (Acoustic.flac:40478a8b5bb06764ac076ea9b844fb6511 Bob Dylan - Mr. Tambourine Man (Acoustic).flac:e6189e1994e420936850f18515f2fba3
-
-01 Bob Dylan - Unbelievable.flac:f3b3d9fb4dde87ac8470e9ed7c6437fe02 Bob Dylan - Man In The Long Black Coat.flac:913ecbe08d0d068008a9de3a2f2948a203 Bob Dylan - Under The Red Sky.flac:b0c9fab9b82001ee5a71490ae3995a0604 Bob Dylan - Maggie's Farm.flac:cbfac2d7f450a9a206ef0700b343918e05 Bob Dylan - Ballad Of A Thin Man.flac:eefd8474f57c25736b00369ccc3b6b5806 Bob Dylan - Highway 61 Revisited.flac:366ba0390c686e987c1896c60a8f30f507 Bob Dylan - Blowin' In The Wind (Acoustic).flac:23c34c228195990411a2a8bf60df6048
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-01 Bob Dylan - Everything Is Broken.flac:d8e510d7b0a99e80610586147f26cdd702 Bob Dylan - Pretty Peggy-O.flac:00aba419996d9698068a66b07ac4765403 Bob Dylan - All Along The Watchtower.flac:4d6a40db599ec8e64c51a7cc2a7f53b304 Bob Dylan - Shelter From The Storm.flac:ff50777efb4fa3bca78507341b39751505 Bob Dylan - Simple Twist Of Fate.flac:d1f90eb88b01ffe0978e871047eeb08906 Bob Dylan - Positively 4th Street.flac:5bcadb11b064cc52ee9662ac80aad83507 Bob Dylan - Silvio.flac:8d096a4fd108805f09e398810782524608 Bob Dylan - Little Moses.flac:51efdce1105bcb7692694bfc77109a0209 Bob Dylan - Boots Of Spanish Leather (Acoustic).flac:bf0a3e7d533dc729daeb1a44db80085910 Bob Dylan - John Brown (Acoustic.flac:40478a8b5bb06764ac076ea9b844fb6511 Bob Dylan - Mr. Tambourine Man (Acoustic).flac:e6189e1994e420936850f18515f2fba3
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-160c5accb5dca6e8e62959b375220056 *01 Bob Dylan - Everything Is Broken.flac
-ad63ba55550ac4487bd7623542fcf978 *02 Bob Dylan - Pretty Peggy-O.flac
-b58e5eda0aaed43f608ab7ceee24bdd9 *03 Bob Dylan - All Along The Watchtower.flac
-0572aad2885613c9ad951035ea63a6ef *04 Bob Dylan - Shelter From The Storm.flac
-0f9bb84e723da19fb466f878fb132453 *05 Bob Dylan - Simple Twist Of Fate.flac
-482db30eeda29701fe0b2201403b4d32 *06 Bob Dylan - Positively 4th Street.flac
-836f75e31989a6124e3901e024d21351 *07 Bob Dylan - Silvio.flac
-873c5fdd16f6a131cbc4df42058c617f *08 Bob Dylan - Little Moses.flac
-3cb537e6bfec4e2ef1628e2ab98a31f8 *09 Bob Dylan - Boots Of Spanish Leather (Acoustic).flac
-ebbef82cac3c18d3df7541ef37e8cda7 *10 Bob Dylan - John Brown (Acoustic.flac
-44acb76c1b8ff2600b1a1f84383236c6 *11 Bob Dylan - Mr. Tambourine Man (Acoustic).flac
-
-===================
-===================
-===================
-=== shntool len.txt
-===================
-===================
-===================
-    length     expanded size    cdr  WAVE problems  fmt   ratio  filename     4:02.43       42789980 B   ---   --   ---xx  01 Bob Dylan - Everything Is Broken.flac     6:12.19       65665532 B   ---   --   ---xx  02 Bob Dylan - Pretty Peggy-O.flac     5:00.09       52941212 B   ---   --   ---xx  03 Bob Dylan - All Along The Watchtower.flac     6:45.63       71590220 B   ---   --   ---xx  04 Bob Dylan - Shelter From The Storm.flac     8:14.63       87289820 B   ---   --   ---xx  05 Bob Dylan - Simple Twist Of Fate.flac     6:14.20       66020684 B   ---   --   ---xx  06 Bob Dylan - Positively 4th Street.flac     4:46.17       50490428 B   ---   --   ---xx  07 Bob Dylan - Silvio.flac     4:14.66       44960876 B   ---   --   ---xx  08 Bob Dylan - Little Moses.flac     4:48.64       50953772 B   ---   --   ---xx  09 Bob Dylan - Boots Of Spanish Leather (Acoustic).flac     5:41.00       60152444 B   ---   --   ---xx  10 Bob Dylan - John Brown (Acoustic.flac     6:34.62       69647468 B   ---   --   ---xx  11 Bob Dylan - Mr. Tambourine Man (Acoustic).flac    62:35.51      662502436 B                            0.5902  (11 files)
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-01 Bob Dylan - Unbelievable.flac:f3b3d9fb4dde87ac8470e9ed7c6437fe02 Bob Dylan - Man In The Long Black Coat.flac:913ecbe08d0d068008a9de3a2f2948a203 Bob Dylan - Under The Red Sky.flac:b0c9fab9b82001ee5a71490ae3995a0604 Bob Dylan - Maggie's Farm.flac:cbfac2d7f450a9a206ef0700b343918e05 Bob Dylan - Ballad Of A Thin Man.flac:eefd8474f57c25736b00369ccc3b6b5806 Bob Dylan - Highway 61 Revisited.flac:366ba0390c686e987c1896c60a8f30f507 Bob Dylan - Blowin' In The Wind (Acoustic).flac:23c34c228195990411a2a8bf60df6048
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-345c7e472689c8e833e6fc26bd8c309a *01 Bob Dylan - Unbelievable.flac
-f38b3bd109096a441cc92eaa6741a21b *02 Bob Dylan - Man In The Long Black Coat.flac
-ce8fbe92228633894764702b5fac0cf5 *03 Bob Dylan - Under The Red Sky.flac
-7f1c79c754f0c4558dd6f6b00c82e374 *04 Bob Dylan - Maggie's Farm.flac
-7a63539cd95ef22e8d3c2d95bbed6667 *05 Bob Dylan - Ballad Of A Thin Man.flac
-e4b39602ba8a4e4461d69bfb71cebae1 *06 Bob Dylan - Highway 61 Revisited.flac
-5f035d6c465ff1d86ddde4d97e9f0ed3 *07 Bob Dylan - Blowin' In The Wind (Acoustic).flac
-
-===================
-===================
-===================
-=== shntool len.txt
-===================
-===================
-===================
-    length     expanded size    cdr  WAVE problems  fmt   ratio  filename     6:03.55       64162604 B   ---   --   ---xx  01 Bob Dylan - Unbelievable.flac     7:26.34       78754412 B   ---   --   ---xx  02 Bob Dylan - Man In The Long Black Coat.flac     5:02.22       53324588 B   ---   --   ---xx  03 Bob Dylan - Under The Red Sky.flac     7:18.40       77357324 B   ---   --   ---xx  04 Bob Dylan - Maggie's Farm.flac     7:12.08       76223660 B   ---   --   ---xx  05 Bob Dylan - Ballad Of A Thin Man.flac     5:45.29       60926252 B   ---   --   ---xx  06 Bob Dylan - Highway 61 Revisited.flac     4:32.21       48030236 B   ---   --   ---xx  07 Bob Dylan - Blowin' In The Wind (Acoustic).flac    43:20.59      458779076 B                            0.5040  (7 files)
-===================
-===================
-===================

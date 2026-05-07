@@ -1,120 +1,0 @@
-===================
-===================
-===================
-=== infos.txt
-===================
-===================
-===================
-Grand Theater
-Hilton Hotel
-Atlantic City, New Jersey
-10 May 2003
- 
-1.Maggie's Farm
-2.I Don't Believe You
-3.Tweedle Dee & Tweedle Dum
-4.Tonight I'll Be Staying Here With You
-5.Things Have Changed
-6.Drifter's Escape
-7.Don't Think Twice, It's All Right
-8.Highway 61 Revisited
-9.High Water (For Charley Patton)
-10.Honest With Me
-11.Bye And Bye
-12.Summer Days
--
-13.Like A Rolling Stone
-14.All Along The Watchtower
- 
-Concert # 1518 of The Never-Ending Tour. Concert # 17 of the 2003 US Spring Tour. 2003 concert # 28.
- 
-Concert # 17 with the 16th Never-Ending Tour Band: Bob Dylan (vocal), Freddie Koella (guitar), Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar), Tony Garnier (bass), George Recile (drums & percussion).
- 
-1-5, 8-14 Bob Dylan (piano).
-2, 6 Bob Dylan (harmonica).
-4 Larry Campbell (pedal steel guitar).
-6, 7 Bob Dylan (guitar).
-7 acoustic with band.
-10 Larry Campbell (slide guitar).
-
-www.bjoner.com
-
-CDr trade < XLD < flac < dime
-apa05
-===================
-===================
-===================
-=== notes.txt
-===================
-===================
-===================
-Maybe derived from LB-1028.
-
-CEDAR - The Catalogue of Extant Dylan Audio Recordings; Spring 2003 Shows
-
-CEDAR #3
-Male voice, left channel, just before the top of "Highway 61" says, "Don't watch your meters." 
-
-Very good recording.
-===================
-===================
-===================
-=== shntool.txt
-===================
-===================
-===================
-    length     expanded size    cdr  WAVE problems  fmt   ratio  filename     0:46.33        8192060 B   ---   --   ---xx  01 Piste 01.flac     5:18.72       56264588 B   ---   --   ---xx  02 Piste 02.flac     6:23.30       67631804 B   ---   --   ---xx  03 Piste 03.flac     5:27.72       57852188 B   ---   --   ---xx  04 Piste 04.flac     4:49.33       51057260 B   ---   --   ---xx  05 Piste 05.flac     6:51.09       72521612 B   ---   --   ---xx  06 Piste 06.flac     6:18.54       66806252 B   ---   --   ---xx  07 Piste 07.flac    10:09.09      107448812 B   ---   --   ---xx  08 Piste 08.flac     5:47.03       61217900 B   ---   --   ---xx  01 Piste 01.flac     6:48.45       72077084 B   ---   --   ---xx  02 Piste 02.flac     6:46.33       71696060 B   ---   --   ---xx  03 Piste 03.flac     5:38.03       59630300 B   ---   --   ---xx  04 Piste 04.flac     0:35.48        6286940 B   ---   --   ---xx  05 Piste 05.flac    10:30.54      111259052 B   ---   --   ---xx  06 Piste 06.flac     6:43.69       71251532 B   ---   --   ---xx  07 Piste 07.flac     6:17.48       66615740 B   ---   --   ---xx  08 Piste 08.flac    95:13.15     1007809184 B                            0.5532  (16 files)
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-01 Piste 01.flac:eb6d7ef95d28e8373b7150763a946e5102 Piste 02.flac:11c108f6841710b58b7dd1d668a7e9b003 Piste 03.flac:611cdeff7630b3d587f1c89889a5c35b04 Piste 04.flac:85df294d68f27b1e9825e81671a0040005 Piste 05.flac:b78ec7991d98948d3a168b4ef354a91e06 Piste 06.flac:44468657a5912dec6b2b3d618852b6b207 Piste 07.flac:af9283e9eff89807aaba61a08b4c26da08 Piste 08.flac:9501defb103b167e24a71a6f8a21c827Gap status              : Analyzed, Appended
-
-TOC of the extracted CD
-     Track |   Start  |  Length  | Start s
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-917d5b6ae09f44b5fdf577c50db3434c *01 Piste 01.flac
-17b290e84328994564eb7f630d8d33bb *02 Piste 02.flac
-15e99336daab3df196e1fe6e4cf3ef65 *03 Piste 03.flac
-e78800b297a77143133a4b14da002c66 *04 Piste 04.flac
-a37cef161859b05424e8abdc7f532ebe *05 Piste 05.flac
-9fffe002d50cbe9f3f55e46456697a21 *06 Piste 06.flac
-e9430614a1c695a2ec86638ae917a2bf *07 Piste 07.flac
-51d5183c4c450bc28c732fdd0e551fb5 *08 Piste 08.flac
-
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-01 Piste 01.flac:8ce34dbdf8601c21aa595ca660f8afbe02 Piste 02.flac:acf693d29ebc835a3926ae6557f750a103 Piste 03.flac:04d2d8dbafdac85d680372c59d78b81404 Piste 04.flac:9c75c0ee5447dcc0edef39fac99939e405 Piste 05.flac:135eaf73f7ab77219e0dabf8c16fd0d906 Piste 06.flac:010494f1b50595a22dfe1355e889b9d207 Piste 07.flac:ce2da73a484c6af0796ea04fa612c34e08 Piste 08.flac:01cdd30fed7a4fb8f5dcacbea89ddf9e
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-b253136334edafafa08d3d22c293bd2a *01 Piste 01.flac
-bc615527dbb12cec5cf0b68616b52575 *02 Piste 02.flac
-64dd96441a86f3c7d1d3f5118d9b9db0 *03 Piste 03.flac
-d8bf646efef3e2a39b7ef7a0b75b494f *04 Piste 04.flac
-7af06c850e6e0fa547185ad4532234d9 *05 Piste 05.flac
-7644c6deab1f4c128c07683ad4e0aa5f *06 Piste 06.flac
-0c4cca25e6970a417be36d1143c7e53d *07 Piste 07.flac
-5b6a8c8a60729730efcb709739612e73 *08 Piste 08.flac
-
-===================
-===================
-===================

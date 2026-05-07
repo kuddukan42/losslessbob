@@ -1,8 +1,0 @@
-Bob Dylan, 10/29/95, Springfield, Missouri, 2CDR
-
-LB-6231, (75min+52min), version "c"; net taper A, last 3 tracks 32 kHz, ?? -> portable DATrecorder - clone -> (digital transfer) m-audio delta audiophile 2496, -> Wavelab -> ssrc -> wavelab, levels raised -> cdwave for tracking -> tlh, I did not harm the sound of the recording in any way; bittorrent download 06/08; d2t7 is a close eac match to LB-6215 and the rest is at the correct spped; in comparison to LB-2645 they have similar wav and spectral view except this has higher levels; (did not listen to all of this)
-
-1 intro, 2 Crash On The Levee (Down In The Flood), 3 The Man In Me, 4 All Along The Watchtower, 5 Shelter From The Storm, 6 Most Likely You Go Your Way (And I'll Go Mine), 7 Silvio (Bob Dylan & Robert Hunter), 8 Mr. Tambourine Man, 9 John Brown, 10 Tangled Up In Blue, 1 Maggie's Farm, 2 Lenny Bruce, 3 Band introduction, 4 Highway 61 Revisited, 5 Alabama Getaway (Robert Hunter/Jerry Garcia), 6 Girl From The North Country, 7 Rainy Day Women # 12 & 35
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

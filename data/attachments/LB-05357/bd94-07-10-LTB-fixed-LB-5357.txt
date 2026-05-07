@@ -1,8 +1,0 @@
-Bob Dylan, 7/10/94, Cologne, 2CDR
-
-LB-5357, (49min+50min), fixed; Taper: Legendary Taper B, Source: transferred from DAT > audio disks > (dBpowerAMP set to compression level 6) flac; bittorrent download 09/07; this is the fixed version as commented on the torrent desription "The original torrent from a couple days ago had some diginoise on the last two tracks of d1; this diginoise was not on the audio disks i received, so i reconverted the relevant tracks and replaced the md5 sum with a new one."; these noted problems were not found on this one ; has asymetric wavs on most songs like d1t5 and d1t6 but not on d1t7 or the other very quiet songs; top limits/clips at -3db and bottom clips/limits at -1db; in comparison to sh LB-2984 that one has warmer sound; sometimes the sound on this seems fuller and less unnatural and other times just the opposite; this also has the limiting/clipping sometimes on the vocals;  excellent sound [A-]
-
-Disk One, 1. Jokerman, 2. The Man In Me, 3. All Along The Watchtower, 4. I Don't Believe You (She Acts Like We Never Have Met), 5. Tangled Up In Blue, 6. I'll Be Your Baby Tonight, 7. Love Minus Zero/No Limit, Disk Two, 8. Masters Of War, 9. Boots Of Spanish Leather, 10. God Knows, 11. I Believe In You, 12. Maggie's Farm, 13. Rainy Day Women # 12 & 35, 14. It Ain't Me, Babe
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

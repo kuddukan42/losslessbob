@@ -1,8 +1,0 @@
-01-Highway 61.flac:6b31122b884fe57d6630d8b5dfacfe8f
-02-Love Sick.flac:76bd30242b0826dd4641e8bca90a3cf0
-03-Like A Rolling Stone.flac:50118d47dd0ab49e206dabe11baa2f04
-04-It Ain't Me Babe.flac:6d9abdd73383188a52ecd0a711efafcb
-05-Not Fade Away.flac:0b63b2c7af2054918cd288051db44bc6
-06-Blowin' In The Wind.flac:f95bcc9020ef0e0b8f89da3031425d4f
-07-Alabama Getaway.flac:a9ec828650733e429f7394b86921e7f8
-08-I Shall Be Released.flac:c27a5d59a640690070a7c97b26e65aff

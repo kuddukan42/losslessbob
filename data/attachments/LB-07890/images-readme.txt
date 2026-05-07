@@ -1,1 +1,0 @@
-snapshots from shaky video taken 2009-08-05 with flip minoHD camera.

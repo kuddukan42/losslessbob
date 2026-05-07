@@ -1,76 +1,0 @@
-===================
-===================
-===================
-=== notes.txt
-===================
-===================
-===================
-
-I have this old copy on my hard drive and no idea where from I've got it.
-And as everytime I'm not so sure of the interest to upload.
-
-Here we have numerous bittorrent described in LB-1573, and one more seemed to me unnecessary.
-But by comparing with the other LB #, the lengthes of tracks are different, the spectrum analysis gives different results and finally when listening partially some tracks it sounded to me different. The crowd noises seems different as well or with a different intensity.
-Then I though after all why not .... Obviously it's up to you to decide.
-===================
-===================
-===================
-=== setlist.txt
-===================
-===================
-===================
-June 5 - Fillmore Auditorium, Denver, Colo.
-
-Friend Of The Devil -Mr. Tambourine Man - Masters Of War - Tomorrow Is A Long Time - Tangled Up In Blue - Rank Strangers To Me - Cold Irons Bound - Just Like A Woman - Not Dark Yet - Highway 61 Revisited - Love Sick - Maggie's Farm - Blowin' In The Wind - Sounds Of Silence (w/ Paul Simon) - I Walk The Line (w/ Paul Simon) - Blue Moon Of Kentucky (w/ Paul Simon) - Forever Young (w/ Paul Simon)
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-01 Track 01.flac:f0034e67402f94f3ecf67fb6b891429802 Track 02.flac:cde7fa2bba3ff293f9582e1870f643ab03 Track 03.flac:7929c4653f2250eff8cf13fa430e725d04 Track 04.flac:aa7adb2470ed5346be0c0dd81d73914c05 Track 05.flac:ec12e6230a275e1417c01061721c6fe306 Track 06.flac:4e1038e88a9036204c733b1ea4820c3307 Track 07.flac:e4c36ae7437f5f368b101a882da6a78108 Track 08.flac:3e1a1571239c139caac67564566a8a3809 Track 09.flac:0713365b2599bb6f0f2cba5f244d0b5c10 Track 10.flac:2080df0b92d4d33e82602fa9fd16ea27
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-0cdd6b8b5244633e6a69f0dc9e05cb43 *01 Track 01.flac
-056def6a1008d17f1d157d024de7b753 *02 Track 02.flac
-f255a91ccb09ad8f05fdb89f360632fc *03 Track 03.flac
-5453f0bd114024add2bb8a25593e05b9 *04 Track 04.flac
-21dcf6a74ab646a03b96028b1744a0b5 *05 Track 05.flac
-1feabda9bb14ccaf0a2290fa6c3a14b3 *06 Track 06.flac
-3ee54ccbc0f9de7f62f769249697faae *07 Track 07.flac
-ef05722e19f5a95815e43ed559cf6f38 *08 Track 08.flac
-1935e008ca3134adf6f564a0a65ad4fb *09 Track 09.flac
-d5ed624886c6099c1ba6b25eb21ce4a1 *10 Track 10.flac
-
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-01 Track 01.flac:9f5cde793b8a1d9485002b765766253302 Track 02.flac:35719fb5022af535e875ad23473e69b603 Track 03.flac:69298f05ce30fe8c3c216a422f1aa04a04 Track 04.flac:8c4049bc72eb13c0a020685b34d7090405 Track 05.flac:559809bff74f1ecb8ee80ae66725a6fd06 Track 06.flac:ca3d92be82221c5faf0d0f207f32e9cd07 Track 07.flac:11dcbfdb3d6aded0fc9881617c6e179b
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-9230e699c8e94700c6a1060fc0b45094 *01 Track 01.flac
-915bcb65d9f930f9455bdb1c5a4a5353 *02 Track 02.flac
-f8a8f81e13f9d4ebaa5acb00b8b90b84 *03 Track 03.flac
-3f0ed3ebf69b1ae70428c24146642460 *04 Track 04.flac
-bdb8a2926ecfab7833ee549f7aaa78c2 *05 Track 05.flac
-abb05664fe21e6837e151cc0e74f9785 *06 Track 06.flac
-f8c85af1f0f21a45d0583570ef54ce8d *07 Track 07.flac
-
-===================
-===================
-===================

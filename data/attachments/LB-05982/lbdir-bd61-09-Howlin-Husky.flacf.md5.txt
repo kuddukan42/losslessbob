@@ -1,9 +1,0 @@
-0154fb7bdc046dba83ef1e0bff02e415  First Gaslight.log
-61417ddfef6e9804195a8859da59dea3  Gaslight Café First Gaslight Tape sept 6 1961.doc
-db85f1acf2207ff196655143603c8766  Gaslight Café First Gaslight Tape sept 6 1961.txt
-9a7910c0d005098a38a182a58e4520ba  Track01.flac
-4357b0609a2595a5bddf601beb588d59  Track02.flac
-3e94f2e9b94228ca103eadcb69485bf3  Track03.flac
-f6c2fb738af2213b3b74d582f761ff94  Track04.flac
-7d9f115cdefd7acca5ca374ad64fb036  Track05.flac
-2b6b4081f216884cc6d36743e066d4f0  Track06.flac

@@ -1,7 +1,0 @@
-a86af3807bc7742eac997ddd176a3675 *bd_03-05-05_cd2_Track 1.shn
-19375b040513e70b8311a0ff12450b05 *bd_03-05-05_cd2_Track 2.shn
-2892e722d1effc4f03bb5cb015c9f154 *bd_03-05-05_cd2_Track 3.shn
-2231d829f66ccb90cc0e7036cab6dff7 *bd_03-05-05_cd2_Track 4.shn
-4272b63a2c2352be37db668de7090014 *bd_03-05-05_cd2_Track 5.shn
-cc2be199afacce985f0b7ae2f50995c8 *bd_03-05-05_cd2_Track 6.shn
-b2cbe55c15fa63db056ff573ab28a5fc *bd_03-05-05_cd2_Track 7.shn

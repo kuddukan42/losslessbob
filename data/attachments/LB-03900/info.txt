@@ -1,9 +1,0 @@
-Setlist: d1 71:14 Duncan And Brady, To Ramona, It's Alright Ma (I'm Only Bleeding), 'Til I Fell In Love With You, Blind Willie McTell, Tombstone Blues, Don't Think Twice, Hard Rain's A-Gonna Fall, It Ain't Me Babe, Things Have Changed, Wicked Messenger, Rainy Day Women #12 & 35; d2 38:34 Love Sick, Like A Rolling Stone, If Dogs Run Free, All Along The Watchtower, Knockin' On Heaven's Door, Highway 61 Revisited, Blowin' In The Wind
-
-Trade CDR>EAC(Secure)>Flac(Level 8)
-
-If you look at the log file for d1 you will see that the CDR had 13 tracks. I used EAC to append t3 to t2 so that To Ramona is now a single track.
-
-Starts out a little bit ragged but settles down by the middle of t1. Perhaps a little thin, lacking warmth. Also, overcooked during the louder parts. Taper adjusts/fidgets with mics at the start of d1t10 and again d1t12 and d2t3@1:05. Drop d2t3@0:21 plus 3 or 4 other minor glitches. 
-
- 

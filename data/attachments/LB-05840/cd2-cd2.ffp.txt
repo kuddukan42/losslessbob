@@ -1,6 +1,0 @@
-bd1993-10-08-sacramento.scottsays.d2t01.flac:dec8769608f861dee3cfd0a9289a5b3a
-bd1993-10-08-sacramento.scottsays.d2t02.flac:4d9a9fd87651e36b2dcb7686d8d98e6c
-bd1993-10-08-sacramento.scottsays.d2t03.flac:91536e9fdaa48de141cb1e8805e5a4b3
-bd1993-10-08-sacramento.scottsays.d2t04.flac:22764245efd91b170c0e1c61ad4634a2
-bd1993-10-08-sacramento.scottsays.d2t05.flac:1ed4d3e4cea2e290c1726a63707ba5d0
-bd1993-10-08-sacramento.scottsays.d2t06.flac:78b595d20e6a46793f871b86f13ec75f

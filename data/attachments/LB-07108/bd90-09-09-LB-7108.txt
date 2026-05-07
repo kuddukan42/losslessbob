@@ -1,8 +1,0 @@
-Bob Dylan, 9/9/90, Austin, Texas, 2CDR
-
-LB-7108, (46min+42min), No source/lineage information, Received as SHN vine; seek tables and shntool fingerprint & length files added, Cut at end of Desolation Row (ten seconds of silence at end of d1); ten seconds of silence at end of d2, One crowd fingerprint: man & woman talking at start of Desolation Row (0:23-0:42 of d1t09, talking starts just before Dylan begins singing); bittorrent download 01/09; good sound [C]
-
-Tracklist:, Disc 1, 01 Intro + Marine Hymn (instrumental) + Tangled Up In Blue, 02 Man In The Long Black Coat, 03 Willin', 04 Masters Of War, 05 I Want You, 06 Man Of Peace, 07 It's Alright, Ma (I'm Only Bleeding), 08 Gates Of Eden, 09 Desolation Row, Disc 2, 01 One Too Many Mornings, 02 Pledging My Time, 03 Every Grain Of Sand, 04 All Along The Watchtower, 05 Just Like Tom Thumb's Blues, 06 Shooting Star, 07 Like A Rolling Stone, 08 Blowin' In The Wind, 09 Highway 61 Revisited
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

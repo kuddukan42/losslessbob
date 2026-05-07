@@ -1,9 +1,0 @@
-83114f27a30a9fac86616e3fddc66b42 *04 ThisWas D-M D2t15.shn
-dbec5e2b3cf18c3d4333ab4cc6f8571b *02 TellMe O.shn
-b37bacc7f005c95a58fd932a5c3b265a *03 ThisWas (what) D-M D1t10.shn
-c25adfb6e0f51c07991e404d3bfa6df3 *01 TellMe D-M D2t11.shn
-6cefd9c41e98372b6e3d1e77598cbe2f *05 Union (fs) D-M D3t3.shn
-857eebc81a973dc64d098614b865ab16 *06 Union (hum) D-M D2t6.shn
-9f0b3c45da40eeb8c84cbf743615cfae *07 Union O t6.shn
-af47fb9af8217519cca75e3e2e1428c6 *08 Union RW (mono) D4t13.shn
-5848dd995a348bb174123bbf8f7f14d7 *09 Union W t13.shn

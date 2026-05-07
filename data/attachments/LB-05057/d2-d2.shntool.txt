@@ -1,8 +1,0 @@
-    length     expanded size   cdr  WAVE problems filename
-     7:24.33       78398892    -b-   --   ---xx   bd-1996-11-10mankato-HG-FLAC-d2 (Track 01).flac
-     6:25.05       67925804    ---   --   ---xx   bd-1996-11-10mankato-HG-FLAC-d2 (Track 02).flac
-    10:05.71      106889036    ---   --   ---xx   bd-1996-11-10mankato-HG-FLAC-d2 (Track 03).flac
-    12:11.11      128974316    ---   --   ---xx   bd-1996-11-10mankato-HG-FLAC-d2 (Track 04).flac
-    10:29.56      111087356    ---   --   ---xx   bd-1996-11-10mankato-HG-FLAC-d2 (Track 05).flac
-     5:37.46       59555036    ---   --   ---xx   bd-1996-11-10mankato-HG-FLAC-d2 (Track 06).flac
-    52:13.72      552830440 B                     (totals for 6 files, 0.6816 overall compression ratio)

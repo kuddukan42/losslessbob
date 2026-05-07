@@ -1,8 +1,0 @@
-Bob Dylan, 11/6/99, State College, Pennsylvania, Bryce Jordan Center, Pennsylvania State University, 2CDR
-
-LB-4758, (75min+24min), version "a"; AUD DAT Master [Sonic Studios 6P] > DAT clone(s) > WAV > Soundforge 6.0 > CD Wave > CD > EAC > WAV > FLAC, I did not harm the sound of the recording in any way, This is not the same recording as LB-3131 but is a fairly new transfer from my DAT clone; bittorrent download 04/07; in comparison to LB-3131 this has a  fuller sound with more bass; excellent sound [A]
-
-CD 1 [74:04.67], 01 I Am The Man, Thomas [03:05.40], 02 To Ramona [06:16.13], 03 Desolation Row [09:00.42], 04 Mama You Been On My Mind [05:50.17], 05 Tangled Up In Blue [09:48.63], 06 All Along The Watchtower [04:13.61], 07 Just Like Tom Thumb's Blues [06:19.72], 08 Shelter From The Storm [05:50.45], 09 Seeing The Real You At Last [06:09.70], 10 Tears Of Rage [08:02.08], 11 Leopard-Skin Pill-Box Hat [09:27.01], CD 2 [23:42.23], 12 Love Sick [06:30.21], 12 Like A Rolling Stone [07:17.11], 12 Blowin' In The Wind [05:34.72], 12 Not Fade Away [04:19.69]
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

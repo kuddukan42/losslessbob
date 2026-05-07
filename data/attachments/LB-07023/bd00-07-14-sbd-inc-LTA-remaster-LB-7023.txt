@@ -1,8 +1,0 @@
-Bob Dylan, 7/14/00, Minneapolis, MN, 1CDR
-
-LB-7023, (58min), Soundboard,, Incomplete; LTA remaster;  Soundboard recording, Bob Dylan & His Band opened, SBD > CDR >, SAMSUNG DVD-ROM SD-616E >, Exact Audio Copy >, Trader's Little Helper (flac8) >, FLC (lvl 8), md5 >, Torrent 1.8.1.0/13 (torrent) >, Dime 2008-11-24 by RiverBend, bt.etree.org 2008-11-25 by marksg [banned], LTA Remaster & Artwork:, Phil Lesh:right channel 129% (+2.21db);, Bob Dylan: right channel 128 % (+2.14db);, amplitude whole tape 140% (+2.92db);, Unbroken Chain digi-click right channel @ 00:23 fixed, Not Fade Away >Scarlet 00'00"038 gap fixed, Scarlet 00'01"216 drop @ 5:30 patched with unknown aud, [conversion by S.G.:Sony TCD-D8>HHB-850>WAV>EAC>shnV3] >, FLAC (lvl 6) 0.3822 (8 files) >, Azureus/Vuze 4.0.0/213 >, TangledUpInTorrents 2008-11-28 by mixedup; bittorrent download 11/08; still has extremely low levels on t3 although raised some from LB-7006 as indicated; (did not listen to all of this)
-
-(encore), 01 Things Have Changed 06:05, 02 Like a Rolling Stone 07:13, 03 Girl from the North Country 08:23, 21:43  Phil Lesh & Friends:, 04 Unbroken Chain > 15:04 Phillip Chapman Lesh, Robert M Peterson, 05 Not Fade Away 02:44 Norman Petty, Charles Hardin, 06 Scarlet Begonias 08:27 Robert C Hunter, Jerome John Garcia, 07 Band Introduction 01:04, (encore), 08 Fat Man in the Bathtub 08:19 George Thomas Lowell, 35:41, Dylan + Lesh 57:24
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

@@ -1,8 +1,0 @@
-    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
-     7:14.73       76730412 B   -b-   --   ---xx   flac  0.6080  Dylan_2009_04_12_Amsterdam_TM_D2_01.flac
-    10:15.56      108617772 B   -b-   --   ---xx   flac  0.5979  Dylan_2009_04_12_Amsterdam_TM_D2_02.flac
-     5:02.47       53383256 B   -b-   --   ---xx   flac  0.6011  Dylan_2009_04_12_Amsterdam_TM_D2_03.flac
-     7:15.68       76894208 B   -b-   --   ---xx   flac  0.5284  Dylan_2009_04_12_Amsterdam_TM_D2_04.flac
-     0:50.06        8835116 B   -b-   --   ---xx   flac  0.6056  Dylan_2009_04_12_Amsterdam_TM_D2_05.flac
-     6:09.46       65200088 B   -b-   --   ---xx   flac  0.5854  Dylan_2009_04_12_Amsterdam_TM_D2_06.flac
-    36:48.72      389660852 B                            0.5847  (6 files)

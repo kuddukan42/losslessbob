@@ -1,7 +1,0 @@
-fbd4a06f365936ec54c84208e848863f  BD_talks-65-66Track01.flac
-1a156881c41a989d13ff3957a0deed4f  BD_talks-65-66Track02.flac
-6893e014347043f1483cb773994558f1  BD_talks-65-66Track03.flac
-c226d1cdcbe4d1e2826032c84bfdf24c  BD_talks-65-66Track04.flac
-13bb5a6fcf3b925fce657b425b65ac93  BD_talks-65-66Track05.flac
-e50b1e49fcc2fa947882d50293ada216  BD_talks-65-66Track06.flac
-423946602d269f85990d89ab3028c589  info.txt

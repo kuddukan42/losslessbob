@@ -1,3 +1,0 @@
-dd8220dc9cb9bb377e6732aeeaf90ad6 *bd03-08-02deadset-t03.shn
-c02d54935f2378d27d09f39128dcc407 *bd03-08-02deadset-t01.shn
-451f81a8e2784a779e9fd821a5db3db0 *bd03-08-02deadset-t02.shn

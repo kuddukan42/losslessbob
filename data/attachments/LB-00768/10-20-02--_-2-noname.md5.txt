@@ -1,8 +1,0 @@
-d789274a3cca09ee3997a1b4e3df98cf *Track01.shn
-0355dfc6e6624c182af2c45b71a98232 *Track02.shn
-a29e9041cef6fee0aacdb8996a5690e9 *Track03.shn
-493df82edbe7a61a7c6d4d805fcbb1a6 *Track04.shn
-b3f9f40c8c7b3a73f4381ee9a7bafdb1 *Track05.shn
-4c112805b7c3767229ef961364ca3026 *Track06.shn
-05efd8e69af600049f34ac5eb910aa3d *Track07.shn
-6fee637cc970134ffa37c8b1695a19c8 *Track08.shn

@@ -1,4 +1,0 @@
-fc3361d2a90ea34c6780c6f0b1b2214d *bd_79-11-15_cd2_Track 1.shn
-6190b50dd1e7c409514311c2607b5688 *bd_79-11-15_cd2_Track 2.shn
-c67ef104e535bc7cee3b73bdeabe3061 *bd_79-11-15_cd2_Track 3.shn
-c6b5aff6efc121d8894d0af2aa476816 *bd_79-11-15_cd2_Track 4.shn

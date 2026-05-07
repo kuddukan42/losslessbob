@@ -1,72 +1,0 @@
-Bob Dylan and his band
-Schaumburg, Illinois
-Alexian Field
-July 10, 2005
-
-AUDIENCE recording by M&A
-
-MBHO 603a > Lunatech V-3 > Sony-D100 > Audio CDs from M&A
-(wav encoded to FLAC with xACT 1.4b24)
-
-Disc 1	49:30
-1.	Introduction	0:38
-2.	Drifter's Escape	4:39
-3.	Se–or (Tales Of Yankee Power)	5:31
-4.	God Knows	4:55
-5.	The Times They Are A-Changin'	6:25
-6.	Most Likely You Go Your Way (And I'll Go Mine)	7:07
-7.	Million Miles	6:39
-7.	Stuck Inside Of Mobile With The Memphis Blues Again	7:55
-8.	I Shall Be Released	5:39
-
-Disc 2	33.53
-1.	Highway 61 Revisited	7:11
-2.	Tryin' To Get To Heaven	5:45
-3.	Ballad Of A Thin Man	6:31
-4.	Summer Days	7:14
-(encore - one second pause at edit) 
-5.	Like A Rolling Stone	7:11
- 	 
-Band Members
-Bob Dylan - keyboard, harp
-Stu Kimball - lead guitar
-Denny Freeman - guitar
-Donnie Herron - banjo, electric mandolin, pedal steel, lap steel
-Tony Garnier - bass
-George Recile - drums
-
-bd2005-07-10.ffp.txt
-bd2005-07-10d1t01.flac:e8eab36e9b78b38b43bd58a5a1d87a97bd2005-07-10d1t02.flac:3e072d6ba423b18df8d4cde1bed18e6ebd2005-07-10d1t03.flac:c985531944875783da78f336c6cd822cbd2005-07-10d1t04.flac:1cb910f32bf05bd9c34efcc1b5bfba7ebd2005-07-10d1t05.flac:d37f991845d6546a4825182350344858bd2005-07-10d1t06.flac:98b81d510f68525fadd4a8fa2cf32882bd2005-07-10d1t07.flac:f4106f01ecf7f63729f484272b3a7f11bd2005-07-10d1t08.flac:2849aa2ac94dc81640247f2e69a370edbd2005-07-10d1t09.flac:1519b6897218b1f298c887ca2aadfaaebd2005-07-10d2t01.flac:d926aeb75e5a54b4d9c754b6b05955ffbd2005-07-10d2t02.flac:6edd8817287f373209783fbf89da9c6cbd2005-07-10d2t03.flac:b03c71004a381b8933d3796079063f40bd2005-07-10d2t04.flac:d7325cfe0136843a2d9e9b24266c0beabd2005-07-10d2t05.flac:03b80938076a243778132c56794d8ad7
-
-bd2005-07-10.flac.md5
-9130f45331663f04f36e3e6b29c8fb9f *bd2005-07-10d1t04.flac
-734c862c049ff2dad889401ad22dfa5d *bd2005-07-10d1t03.flac
-c035ef9c5ee43b04a9522229d9e058ba *bd2005-07-10d1t02.flac
-6ac4a7c85e0d3cae5c42f7c9db357ad3 *bd2005-07-10d1t01.flac
-ec151080057a897741e0a8165f926cd7 *bd2005-07-10d1t07.flac
-e8f839bf32949f4fcc21d0b2fa17de07 *bd2005-07-10d1t08.flac
-8032374008cbcf2f321aca1ebcb84ae2 *bd2005-07-10d1t06.flac
-8d2d621318999fa20c5d9d7c672bb9e2 *bd2005-07-10d2t05.flac
-57e1bde7d8404390a5d9754445ec371d *bd2005-07-10d2t04.flac
-514d00ae3a184e8f8c66075970ed292c *bd2005-07-10d2t03.flac
-54f561fd02014661b1824109aa1f9ed1 *bd2005-07-10d2t02.flac
-060e5c3dfb51205d7b48f91554d92571 *bd2005-07-10d2t01.flac
-e8480aed5e6bcbb77f31a1794cc16763 *bd2005-07-10d1t09.flac
-530565cf3976f1f1ce8c52790b8ba66d *bd2005-07-10d1t05.flac
-
-bd2005-07-10.wav.md5
-a03258830258d519f831246257bf38e8 *bd2005-07-10d2t05.wav
-74f2a548026d1afb8523aea3d63e3c25 *bd2005-07-10d2t04.wav
-6e3eff220bacbd7159dedff6e02c368f *bd2005-07-10d2t03.wav
-597d73a81cfdb3bc49e4aaf124740a6e *bd2005-07-10d2t02.wav
-6241f0092bc07ae4b75a62ac2a34eae3 *bd2005-07-10d2t01.wav
-6441ecc60541fe5a4e075b396164667c *bd2005-07-10d1t09.wav
-fc97a89cce21a2fca49306c4b9b3b0bb *bd2005-07-10d1t08.wav
-427f14ea806cbaabba9dabef13f1aedb *bd2005-07-10d1t07.wav
-f2ee8ba26d9233b76fd8f35376e988ad *bd2005-07-10d1t06.wav
-0e008d0c008254af519994fac56205a7 *bd2005-07-10d1t05.wav
-3645560762a74524cdc57d518d9d390a *bd2005-07-10d1t04.wav
-3de48d7776d08697c9163a5d3a7129b1 *bd2005-07-10d1t03.wav
-b76ff7a9971a53741773bab4b9d0166c *bd2005-07-10d1t01.wav
-7ab77d725f681ec571f0c3b120f33e12 *bd2005-07-10d1t02.wav
-

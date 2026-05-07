@@ -1,8 +1,0 @@
-Bob Dylan, 6/24/96, Differdange, Luxembourg, 2CDR
-
-LB-7118, (64min+40min), local taper DE F, cut before Rainy Day Women # 12 & 35, OKM II ? -> portable Sony DATrecorder - clone ->(digital transfer) m-audio delta audiophile 2496, -> Wavelab -> ssrc -> Wavelab, levels raised 1 channel -> cdwave for tracking -> tlh, I did not harm the sound of the recording in any way; bittorrent download 01/09; same recording as LB-3073 based on same clapping wavs on d1t8; this has lower levels so does not clip on clapping; this has similar spectral view and sound;  in 4-way comparrison these are different recordings based on different crowd on d1t8; sennheiser LB-2684 and akg LB-1397 are similar warm full sound, then this is harsher, then bootleg LB-6902 is harshest and also has a slight hiss; (did not listen to all of this)
-
-1 intro, 2 Crash On The Levee (Down In The Flood), 3 Lay Lady Lay, 4 All Along The Watchtower, 5 Positively 4th Street, 6 Most Likely You Go Your Way (And I'll Go Mine), 7 Silvio (Bob Dylan & Robert Hunter), 8 Visions Of Johanna, 9 Masters Of War, 10 It's All Over Now, Baby Blue, 1 God Knows, 2 Ring Them Bells, 3 Seven Days, 4 The New Minglewood Blues (adapted from "Minglewood Blues" by Noah Lewis), 5 Blowin' In The Wind, 6 Rainy Day Women # 12 & 35
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

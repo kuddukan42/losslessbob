@@ -1,7 +1,0 @@
-be66d88d92460e41208508a53a854ec1 *dead&dylan2003.8.07.d3t04.shn
-b2c6c8d8d830a3cc72e246755edb4a3b *dead&dylan2003.8.07.d3t02.shn
-4a3cbaacd70e7ce751b0916cb1ed7936 *dead&dylan2003.8.07.d3t03.shn
-c81ab630acf19b6eaa270d0372fbf954 *dead&dylan2003.8.06.d3t03.shn
-26563377533e16e7d2fcdfffda04cc31 *dead&dylan2003.8.06.d3t01.shn
-f3dd234f8515bfaf28bdc97c4196b84a *dead&dylan2003.8.07.d3t01.shn
-933f3dad723bf2d330fabde15a0f6486 *dead&dylan2003.8.06.d3t02.shn

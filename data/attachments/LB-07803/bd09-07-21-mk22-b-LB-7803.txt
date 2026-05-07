@@ -1,8 +1,0 @@
-Bob Dylan, 7/21/09, Pawtucket, Rhode Island, 2CDR
-
-LB-7803, (76min+17min), version "b"; *16 Bit*, A Dave Flaschner & Jason Lees recording, DFC 25' from stage, Source:Schoeps-mk22>kc5>cmc6>fostexFR-2le@48-24>cf, Transfer:cf>cdwave>flac, Downsample:flac24>wav(24/48)[dbpoweramp-v13.2]>wav(16/44.1)[adobe-audition-1.0/highest-quality-conversion-ratio,999]>flac(flac-frontend-1.1.3/align-on-SB-option/level-8/verify-on), Flac 24/48 fileset received straight from taper via sendspace. Thanks Dave for the original set and your kind permission and interest in sharing this 16 bit version at best. Downsampled to 16/44.1 through Adobe Audition, highest quality conversion ratio. Added verification tools (md5 and ffp's) with SA & FA screenshot., Enjoy!, Luisbp51 (Hungercity July 23, 2009); bittorrent download 07/09; as indicated 16bit version of LB-7802; (did not listen to all of this)
-
-Disc 1, Cats In The Well, It Ain't Me Babe, I'll Be Your Baby Tonight, This Wheels On Fire, The Levee's Gonna Break, Masters Of War, It's Alright Ma (I'm Only Bleeding), Po' Boy, Highway 61, Ain't Talkin, Summer Days, Disc 2 (Encore), Like A Rolling Stone, Jolene, All Along The Watchtower
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

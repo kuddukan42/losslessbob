@@ -1,8 +1,0 @@
-Bob Dylan, 5/16/96, Clarkston, Michigan, 2CDR
-
-LB-7545, (67min+47min), net taper G, levels unsteady, cuts, ?? -> portable DAT-recorder - clone -> (digital transfer) m-audio delta audiophile 2496, -> Wavelab -> ssrc -> cdwave for tracking -> tlh, I did not harm the sound of the recording in any way;;; levels start ok but go low on d1t1 0:20 and continute into d1t2 low and then fluctuate on d1t2; also low at beginning of d2t1 and d2t5; background talking d1t5; excellent sound [A]
-
-1 intro, 2 Leopard-Skin Pill-Box Hat, 3 I Want You, 4 All Along The Watchtower, 5 Positively 4th Street, 6 Watching The River Flow, 7 Silvio (Bob Dylan & Robert Hunter), 8 Tangled Up In Blue, 9 It's All Over Now, Baby Blue, 10 Friend Of The Devil (Jerry Garcia - Robert Hunter - John Dawson), 1 Stuck Inside Of Mobile With The Memphis Blues Again, 2 This Wheel's On Fire (Bob Dylan/Rick Danko), 3 Band introduction, 4 Highway 61 Revisited, 5 Alabama Getaway (Robert Hunter/Jerry Garcia), 6 Girl From The North Country, 7 Rainy Day Women # 12 & 35
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

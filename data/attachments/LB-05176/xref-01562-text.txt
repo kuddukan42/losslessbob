@@ -1,131 +1,0 @@
-===================
-===================
-===================
-=== infos.txt
-===================
-===================
-===================
-Orpheum Theater
-Omaha, Nebraska
-26 January 1980
-
-
-1.Gotta Serve Somebody
-2.I Believe In You
-3.When You Gonna Wake Up
-4.When He Returns
-5.Man Gave Names To All The Animals
-6.Precious Angel
-7.Slow Train
-8.Covenant Woman
-
-Mona Lisa Young:
-Ordinary People (Danniebelle Hall)  not on this recording
-
-9.Gonna Change My Way Of Thinking
-10.Do Right To Me Baby (Do Unto Others)
-11.Solid Rock
-12.Saving Grace
-13.What Can I Do For You?
-14.Saved (Bob Dylan/Tim Drummond)
-15.In The Garden
-16.Blessed Be The Name
-17.Pressing On
-
-Concert # 13 of the Second Gospel Tour. Gospel concert # 39. 1980 concert # 13.
-Concert # 13 with the Second Gospel Band: Bob Dylan (vocal & guitar), Fred Tackett (guitar), Spooner Oldham (keyboards), Tim Drummond (bass), Terry Young (keyboards), Jim Keltner (drums), Carolyn Dennis, Regina Peeples, Regina Havis , Mona Lisa Young (background vocals).
-
-4 Bob Dylan solo (vocal & guitar) with Spooner Oldham (piano).
-13 Bob Dylan (harmonica).
-17 Bob Dylan (piano).
-
-BobTalk
-There's a slow train coming, how many people know that? Yeah? Well, tell the person next to you so they'll know too. (before Slow Train)
-Thank you. On the keyboards tonight, give him a hand, Spooner Oldham. On the other set of keyboards, Mr. Terry Young. Lead guitar tonight is Fred Tackett. On the drums ,Jim Keltner. On electric bass guitar, Tim Drummond. All right, on the backup vocals here Miss Carolyn Dennis. Standing next to her is Regina Peeples. Next to her is Mona Lisa Young. And the little girl on the right is Regina McCreary. She told you that story about Jesus, remember. (before Blessed Be The Name)
-
-Mono audience recording, 100 minutes.
-
-http://www.bjorner.com
-
-Live Omaha
-CDR trade > XLD > flac
-apa05
-
-===================
-===================
-===================
-=== shntool len.txt
-===================
-===================
-===================
-    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
-     7:03.55       74746604 B   ---   --   ---xx  01 Bob Dylan - Gotta Serve Somebody.flac
-     5:00.69       53082332 B   ---   --   ---xx  02 Bob Dylan - I Believe In You.flac
-     5:45.49       60973292 B   ---   --   ---xx  03 Bob Dylan - When You Gonna Wake Up?.flac
-     4:49.32       51054908 B   ---   --   ---xx  04 Bob Dylan - When He Returns.flac
-     5:43.57       60639308 B   ---   --   ---xx  05 Bob Dylan - Man Gave Names To All The Animals.flac
-     5:47.41       61307276 B   ---   --   ---xx  06 Bob Dylan - Precious Angel.flac
-     7:23.74       78319292 B   ---   --   ---xx  07 Bob Dylan - Slow Train.flac
-     6:23.33       67638860 B   ---   --   ---xx  01 Bob Dylan - Covenant Woman.flac
-     4:45.71       50441036 B   ---   --   ---xx  02 Bob Dylan - Gonna Change My Way Of Thinking.flac
-     4:59.08       52762460 B   ---   --   ---xx  03 Bob Dylan - Do Right To Me Baby (Do Unto Others).flac
-     4:28.44       47378732 B   ---   --   ---xx  04 Bob Dylan - Solid Rock.flac
-     4:36.70       48851084 B   ---   --   ---xx  05 Bob Dylan - Saving Grace.flac
-     4:53.24       51741692 B   ---   --   ---xx  06 Bob Dylan - What Can I Do For You?.flac
-     6:16.52       66448748 B   ---   --   ---xx  07 Bob Dylan - Saved.flac
-     6:33.70       69489884 B   ---   --   ---xx  08 Bob Dylan - In The Garden.flac
-     5:32.18       58607180 B   ---   --   ---xx  09 Bob Dylan - Blessed Be The Name.flac
-     5:33.69       58903532 B   ---   --   ---xx  10 Bob Dylan - Pressing On.flac
-    95:39.11     1012386220 B                            0.5621  (17 files)
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-01 Bob Dylan - Gotta Serve Somebody.flac:9efa2034dbffc8a2021ba7384a27344202 Bob Dylan - I Believe In You.flac:2dd5fdfceb2be56b8344c561f6435bd703 Bob Dylan - When You Gonna Wake Up?.flac:1d862d57ff2d0eb1e0a4cc0a3bea608904 Bob Dylan - When He Returns.flac:5e7475fa684ae6be42f7bd2320e625d705 Bob Dylan - Man Gave Names To All The Animals.flac:4d312258b3e3338b4f0c4e0c66052a0506 Bob Dylan - Precious Angel.flac:a8dd7323574479f1aa8c6978d5e1b16b07 Bob Dylan - Slow Train.flac:0315c44f964f09f36dfed879fd5abdc2
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-731d888cfed3b64be69f45a44fec7d31 *01 Bob Dylan - Gotta Serve Somebody.flac
-717923bece09303eaf54ca479052c127 *02 Bob Dylan - I Believe In You.flac
-602a0f1d481c8ee6f492c37088271f8b *03 Bob Dylan - When You Gonna Wake Up?.flac
-b75d75525adfab9159674d1dcbf5f2e4 *04 Bob Dylan - When He Returns.flac
-3709c4dd07d7c15946b1d9e09eb401a8 *05 Bob Dylan - Man Gave Names To All The Animals.flac
-7a1c214cc1995e600971cd0803e67a6f *06 Bob Dylan - Precious Angel.flac
-e8b538121e9e55a594c0ef60a394a565 *07 Bob Dylan - Slow Train.flac
-
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-01 Bob Dylan - Covenant Woman.flac:888dc8015db6143b60b98d2bce09877902 Bob Dylan - Gonna Change My Way Of Thinking.flac:70152ceaf487b81513a580ac07e042f603 Bob Dylan - Do Right To Me Baby (Do Unto Others).flac:b2d56f9aea2feb7f92b83cfcfa33ebef04 Bob Dylan - Solid Rock.flac:601b40cc610219f6888efa80091be82205 Bob Dylan - Saving Grace.flac:520e5106cd4ff9448657872c2362c21406 Bob Dylan - What Can I Do For You?.flac:0cca73725d763fcc5c6791382f77524507 Bob Dylan - Saved.flac:fb18fa05e08426d9c94efcd9862e5e7e08 Bob Dylan - In The Garden.flac:b824d494371334fa005e49e317a69a1d09 Bob Dylan - Blessed Be The Name.flac:801d538bcb0b4c565950804581bca8b810 Bob Dylan - Pressing On.flac:e68d14954b0ecb677a505c3a0ec4adf1
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-b4111f3f6cceb9456d7fc97ea4ac6f8b *01 Bob Dylan - Covenant Woman.flac
-06921ea976f80a0af207a049dbce0892 *02 Bob Dylan - Gonna Change My Way Of Thinking.flac
-9c4383d0041a8f396ea140c9218b7110 *03 Bob Dylan - Do Right To Me Baby (Do Unto Others).flac
-788039ce70098d12abf183c7a5c849ae *04 Bob Dylan - Solid Rock.flac
-8811eb6178581dfbd1ac47fce6a84c1b *05 Bob Dylan - Saving Grace.flac
-1fd29d41cfd86430c3c7b66b8164ccb2 *06 Bob Dylan - What Can I Do For You?.flac
-34528bcdb68233453ad9c1a7dae7db39 *07 Bob Dylan - Saved.flac
-f9469cd030bea104656c99fb6c85eb80 *08 Bob Dylan - In The Garden.flac
-baab8abf4fcabb86b1a1bf19ffd528ea *09 Bob Dylan - Blessed Be The Name.flac
-759ec54717b87bbbd5454485fc2784c8 *10 Bob Dylan - Pressing On.flac
-
-===================
-===================
-===================

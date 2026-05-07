@@ -1,8 +1,0 @@
-f84377e9c9a5a0c742a4ea7f23e5d009 *track1.shn
-a6b9bb796b878a65144a44736427fb6f *track2.shn
-887e5d5ab34608134f1b85dcb11563d6 *track3.shn
-2ae3dbd472362969b6b19b46d0f95820 *track4.shn
-a6e2039c51aede43faaa5d9cc977459a *track5.shn
-b49a434e6354e9b81e285d48fea5cdb7 *track6.shn
-acc76ed4705de21c7c1b9dfb553e7c70 *track7.shn
-602de78fe8115e4badc8cfaf18cc4471 *track8.shn

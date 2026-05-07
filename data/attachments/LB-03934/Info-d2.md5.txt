@@ -1,8 +1,0 @@
-dcb6309938c1a7005528194976f05b1d *CD2\01 All along the watchtower.wav
-eadaa6e821782944c3cb75b93189f2f6 *CD2\02 Joey.wav
-857553e0fbae5bc3e6508f187f70050d *CD2\03 Drifter's escape.wav
-eda6af198b506025ea9e57a56b800c2f *CD2\04 Leopard-skin pill-box hat.wav
-9ff235ea53c9d359cad01dbc808e4d74 *CD2\05 Things have changed.wav
-4d443f6a529ea2e148792a34b33420e1 *CD2\06 Like a rolling stone.wav
-51c8cc6f3235d2015348d910c555bb78 *CD2\07 Girl from the North Country.wav
-f083035280c1cf1ff51579d6fe3225df *CD2\08 Highway 61 revisited.wav

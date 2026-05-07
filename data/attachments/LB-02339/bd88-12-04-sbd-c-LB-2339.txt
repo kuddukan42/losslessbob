@@ -1,8 +1,0 @@
-Bob Dylan, 12/4/88, Bridge School Benefit II, 
-
-LB-2339, version "c"; see Bridge School Benefit II, incomplete; in comparison to LB-634 this has lower levels but otherwise similar wav and spectral view and sound
-
-has drops between tracks; drop t4 3:42
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

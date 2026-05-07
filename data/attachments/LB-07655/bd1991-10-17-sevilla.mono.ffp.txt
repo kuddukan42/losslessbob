@@ -1,6 +1,0 @@
-bd1991-10-17-sevilla.mono.t01.flac:28df205a8db849de966026a205d83468
-bd1991-10-17-sevilla.mono.t02.flac:b5df5ad8a5c3de8332e0dcb9a0966283
-bd1991-10-17-sevilla.mono.t03.flac:ff5b747a85a9a3923214daf77d6f98fc
-bd1991-10-17-sevilla.mono.t04.flac:1c8d9d8bd8099e65bb0fe2d311419045
-bd1991-10-17-sevilla.mono.t05.flac:38d192f0ad89d17159d49ad86159d4b1
-bd1991-10-17-sevilla.mono.t06.flac:a83001fcf9f1f4b86188933c53d0b962

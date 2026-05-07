@@ -1,80 +1,0 @@
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-910623_Hamburg_disc1-Track01.flac:483d09ec7fb00b463178a594bd14a825910623_Hamburg_disc1-Track02.flac:5dae9b43513d9ced7687cdf713866c6d910623_Hamburg_disc1-Track03.flac:7111c7a86073e910b599f2fcebdc9d8d910623_Hamburg_disc1-Track04.flac:89bb13354b61ed542a5524fa9aed4941910623_Hamburg_disc1-Track05.flac:4870ccd48cbd7f75f82137269e66f962910623_Hamburg_disc1-Track06.flac:db3a334fa78f37d902d7f90f121cda71910623_Hamburg_disc1-Track07.flac:a0e6a742db70c568b65aa0f8cbe8732d910623_Hamburg_disc1-Track08.flac:e23639bebfc67a5090783daaf7ebea90910623_Hamburg_disc1-Track09.flac:fd4d7a70712212882aa1ebad31a32dc8910623_Hamburg_disc1-Track10.flac:297d4f5780e221d1613f2a90195067dd910623_Hamburg_disc1-Track11.flac:24da7c1a028063197ba24bf2f2073e84910623_Hamburg_disc2-Track01.flac:80990f013436c7b8d3d2374b4a4ef918910623_Hamburg_disc2-Track02.flac:69455b0450ef29dc73897c7e6b145243910623_Hamburg_disc2-Track03.flac:8da3348a3b8b02e6c7d4c6edade135e2910623_Hamburg_disc2-Track04.flac:f7e60f57a9414362d859aafecd29c99a910623_Hamburg_disc2-Track05.flac:4c41836234501a06f6269f0b46d5b96f910623_Hamburg_disc2-Track06.flac:6afc51d2357a19af76381a533bbad3a5910623_Hamburg_disc1-Track01.flac:483d09ec7fb00b463178a594bd14a825910623_Hamburg_disc1-Track02.flac:5dae9b43513d9ced7687cdf713866c6d910623_Hamburg_disc1-Track03.flac:7111c7a86073e910b599f2fcebdc9d8d910623_Hamburg_disc1-Track04.flac:89bb13354b61ed542a5524fa9aed4941910623_Hamburg_disc1-Track05.flac:4870ccd48cbd7f75f82137269e66f962910623_Hamburg_disc1-Track06.flac:db3a334fa78f37d902d7f90f121cda71910623_Hamburg_disc1-Track07.flac:a0e6a742db70c568b65aa0f8cbe8732d910623_Hamburg_disc1-Track08.flac:e23639bebfc67a5090783daaf7ebea90910623_Hamburg_disc1-Track09.flac:fd4d7a70712212882aa1ebad31a32dc8910623_Hamburg_disc1-Track10.flac:297d4f5780e221d1613f2a90195067dd910623_Hamburg_disc1-Track11.flac:24da7c1a028063197ba24bf2f2073e84910623_Hamburg_disc2-Track01.flac:80990f013436c7b8d3d2374b4a4ef918910623_Hamburg_disc2-Track02.flac:69455b0450ef29dc73897c7e6b145243910623_Hamburg_disc2-Track03.flac:8da3348a3b8b02e6c7d4c6edade135e2910623_Hamburg_disc2-Track04.flac:f7e60f57a9414362d859aafecd29c99a910623_Hamburg_disc2-Track05.flac:4c41836234501a06f6269f0b46d5b96f910623_Hamburg_disc2-Track06.flac:6afc51d2357a19af76381a533bbad3a5
-===================
-===================
-===================
-=== info.txt
-===================
-===================
-===================
-23.6.1991, Hamburg, 2 CDs
-
-LB-1849, Holy Grail
-
-known flaws according to LosslessBob:
-left channel drop with small pop d1t3 2:15 to 2:21, square wav static d1t5 0:23, drop/square wav static d1t6 2:15, square wav static d1t8 0:21
-
-CD 1 (62:39)
-
-1 New Morning 
-2 Lay Lady Lay
-3 All Along The Watchtower
-4 Shelter From The Storm
-5 Gotta Serve Somebody
-6 Wiggle Wiggle + Man Gave Names To All The Animals
-7 When I Paint My Masterpiece
-8 Barbara Allen (acoustic w band) 
-9 Girl From The North Country (acoustic w band)
-10 Mr. Tambourine Man (acoustic w band)
-11 It Ain't Me, Babe (acoustic w band)
-
-CD2 (30:03)
-
-1 Man In The Long Black Coat 
-2 Everything Is Broken 
-3 I Believe In You 
-4 Highway 61 Revisited 
-5 Positively 4th Street 
-6 Ballad Of A Thin Man 
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-9a7dfd3e3438e82263cbd8264243bfa2 *910623_Hamburg_disc1-Track01.flac
-66b41e2f4bc19533050590fba3846655 *910623_Hamburg_disc1-Track02.flac
-7cf93e85131300c26714e3e01002a111 *910623_Hamburg_disc1-Track03.flac
-821c78827846f5f2d1fa36dd1c089c72 *910623_Hamburg_disc1-Track04.flac
-5ff07e092c1aab39cb9a6ffed954bf08 *910623_Hamburg_disc1-Track05.flac
-ba0f604ac129def73196cf6fc077c8af *910623_Hamburg_disc1-Track06.flac
-8d80f407f4af3b951803f386ad961843 *910623_Hamburg_disc1-Track07.flac
-12d009c8283b3d4e1010e0cdc1aa2c42 *910623_Hamburg_disc1-Track08.flac
-0cef1076e0f539e5bfed73064df43451 *910623_Hamburg_disc1-Track09.flac
-3b9639084da167bcff74957a4a51c73b *910623_Hamburg_disc1-Track10.flac
-fbf9c6716f7b50acb454a4f27a5e510b *910623_Hamburg_disc1-Track11.flac
-
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-25f4d07152fd5adba9616d27d0950a78 *910623_Hamburg_disc2-Track01.flac
-5fd3ba89cb74d20c9c07b0637e620848 *910623_Hamburg_disc2-Track02.flac
-75ede204630a133f569df617e2834f4b *910623_Hamburg_disc2-Track03.flac
-0bd10586a671c5003b9952207dd5965e *910623_Hamburg_disc2-Track04.flac
-4e2054c2869a649f42616f228cce27d2 *910623_Hamburg_disc2-Track05.flac
-b5e61edbc1c53a617a2be05e885b3cc6 *910623_Hamburg_disc2-Track06.flac
-
-===================
-===================
-===================

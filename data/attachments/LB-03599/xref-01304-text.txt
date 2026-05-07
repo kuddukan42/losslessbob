@@ -1,108 +1,0 @@
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-d1t01.flac:156066031c0c158def55c4e74ba919c0d1t02.flac:dfd481ba7abd716d2be3c62ea30a0fedd1t03.flac:d213d61f04a9c6ea133877d16b8405ebd1t04.flac:2a04552fdb67cfe18d06f8a65e348762d1t05.flac:cdb953205b37afd1697cb23713a28d89d1t06.flac:706af94775d2143fc044f1adf8185557d1t07.flac:e3476e354b44044ff434b0e82a5943d5d1t08.flac:ce94ddb62602fd37681891c5ea7e580ad1t09.flac:7b02e87ae0ad85c8dafdfe0f558ccc2bd1t10.flac:ec5d671e8447593f590de877f8334a3ad1t11.flac:27cb63a34b834576f44b6ca84a4dbe4dd1t12.flac:9ab013ce39e9332a7e89aeb9b71ac1a2d2t01.flac:f46893c3f25ed83741617b95894ad979d2t02.flac:67e4b14eda06aad57376342d5d7b63f7d2t03.flac:bcf1950ac41e617bf93d87818b174be6d2t04.flac:b0e654d8f2cc4b67b048ba380ae27810d2t05.flac:6aa1f5172e571db613c062e0ccb32061d2t06.flac:239db99ad1f957d4eb258d703ae0b394d2t07.flac:108bea6d5059220283387d9e55022d39d2t08.flac:6406888689487999c4b314000ce73094
-===================
-===================
-===================
-=== infos.txt
-===================
-===================
-===================
-Oak Mountain Amphitheater
-Pelham, Alabama
-11 September 1992
- 
- 
-1.   Rainy Day Women # 12 & 35
-2.   Pretty Peggy-O (trad. arr. Bob Dylan)
-3.   All Along The Watchtower
-4.   Under The Red Sky
-5.   Tangled Up In Blue
-6.   Silvio (Bob Dylan & Robert Hunter)
-7.   Simple Twist Of Fate
-8.   Little Moses (Bert A. Williams/Earle C. Jones)
-9.   Boots Of Spanish Leather
-10.   A Hard Rain's A-Gonna Fall
-11.   Don't Think Twice, It's All Right
-12.   Unbelievable
-13.   Man In The Long Black Coat
-14.   The Times They Are A-Changin'
-15.   Maggie's Farm
-
-16.   Ballad Of A Thin Man
-17.   Highway 61 Revisited
-18.   It Ain't Me, Babe
- 
- 
-Concert # 434 of The Never-Ending Tour.  Concert # 18 of the 1992 Late Summer Tour Of US And Canada. 1992 concert # 70.
- 
-Concert # 4 with the 8th Never-Ending Tour band: Bob Dylan (vocal & guitar), Bucky Baxter (pedal steel guitar & electric slide guitar), John Jackson (guitar), Tony Garnier (bass), Ian Wallace (drums), Winston Watson (drums & percussion).
- 
-8, 9, 18  Bob Dylan (acoustic guitar & vocal).
- 
-10  Bob Dylan (acoustic guitar & vocal), Tony Garnier (bass).
- 
-11  Bob Dylan (acoustic guitar & vocal), Tony Garnier (bass), Ian Wallace (drums).
- 
-1, 3, 5, 7, 9, 11, 13, 18  Bob Dylan harmonica.
- 
-6  Bucky Baxter (mandolin).
- 
-BobTalk:
- 
-Thank you everybody! Give my band a hand too!! (after Maggie's Farm).
- 
-6 new songs (33%) compared to previous concert. 1 new song for this tour.
- 
-Stereo audience recording, 115 minutes.
- 
-Session info updated 15 December 1992.
-
-www.bjorner.com
-
-
-d1t01.flac:156066031c0c158def55c4e74ba919c0d1t02.flac:dfd481ba7abd716d2be3c62ea30a0fedd1t03.flac:d213d61f04a9c6ea133877d16b8405ebd1t04.flac:2a04552fdb67cfe18d06f8a65e348762d1t05.flac:cdb953205b37afd1697cb23713a28d89d1t06.flac:706af94775d2143fc044f1adf8185557d1t07.flac:e3476e354b44044ff434b0e82a5943d5d1t08.flac:ce94ddb62602fd37681891c5ea7e580ad1t09.flac:7b02e87ae0ad85c8dafdfe0f558ccc2bd1t10.flac:ec5d671e8447593f590de877f8334a3ad1t11.flac:27cb63a34b834576f44b6ca84a4dbe4dd1t12.flac:9ab013ce39e9332a7e89aeb9b71ac1a2d2t01.flac:f46893c3f25ed83741617b95894ad979d2t02.flac:67e4b14eda06aad57376342d5d7b63f7d2t03.flac:bcf1950ac41e617bf93d87818b174be6d2t04.flac:b0e654d8f2cc4b67b048ba380ae27810d2t05.flac:6aa1f5172e571db613c062e0ccb32061d2t06.flac:239db99ad1f957d4eb258d703ae0b394d2t07.flac:108bea6d5059220283387d9e55022d39d2t08.flac:6406888689487999c4b314000ce73094
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-85a441e10c113c9ada82ad67669bd357 *d1t01.flac
-210d5bf492e674f4773b2d41edcd3049 *d1t02.flac
-7b2e23ec11a4b70ff9097c8419ef5cbb *d1t03.flac
-8011b237193f1c5dc18cf9c44fbde50e *d1t04.flac
-f4e18dfd93717b4cf7595e2f04a6507f *d1t05.flac
-d63c9c98445c29f6453cf1c1a42f9838 *d1t06.flac
-5b034aa9200def91ba8cec80ae14e26e *d1t07.flac
-9d777767c04beb61676c3032d28d5fad *d1t08.flac
-753e38220ecdd0119a69998bf93030c8 *d1t09.flac
-bc67adbab8de22c251959971b41a4cee *d1t10.flac
-51d265422e8b6eeb7d261c433f5cf183 *d1t11.flac
-bbccfc1476752e01ae53514e56d237bf *d1t12.flac
-196deadc014a5bd3e386447fbf33b07f *d2t01.flac
-acbd96f83d04c4b4d7fce160c59bcd6c *d2t02.flac
-7737dc1c85b7ed8b57db32e706759f6b *d2t03.flac
-5832e00d517dee188cd4b71d2f1a39ad *d2t04.flac
-9d221cea788743784a0aead2728c8c94 *d2t05.flac
-4c8d919f1154aeca55672862a7d0b5a2 *d2t06.flac
-2ee0a99802ed94251794535baf385a5f *d2t07.flac
-f6430180b52b511a95b99e5df040292a *d2t08.flac
-
-===================
-===================
-===================
-=== shntool.txt
-===================
-===================
-===================
-    length     expanded size    cdr  WAVE problems  fmt   ratio  filename     4:41.19       49613132 B   ---   --   ---xx  d1t01.flac     7:03.47       74727788 B   ---   --   ---xx  d1t02.flac     5:28.45       57965084 B   ---   --   ---xx  d1t03.flac     5:01.27       53159948 B   ---   --   ---xx  d1t04.flac     9:20.45       98889884 B   ---   --   ---xx  d1t05.flac     4:32.12       48009068 B   ---   --   ---xx  d1t06.flac     3:34.19       37794332 B   ---   --   ---xx  d1t07.flac     4:09.57       44057708 B   ---   --   ---xx  d1t08.flac     5:07.21       54204236 B   ---   --   ---xx  d1t09.flac     8:28.00       89611244 B   ---   --   ---xx  d1t10.flac     7:12.25       76263644 B   ---   --   ---xx  d1t11.flac     0:04.61         849116 B   ---   --   ---xx  d1t12.flac     5:25.30       57400604 B   ---   --   ---xx  d2t01.flac     7:47.15       82414124 B   ---   --   ---xx  d2t02.flac     6:41.70       70901084 B   ---   --   ---xx  d2t03.flac     5:55.30       62692604 B   ---   --   ---xx  d2t04.flac     0:42.33        7486460 B   ---   --   ---xx  d2t05.flac     7:32.71       79899836 B   ---   --   ---xx  d2t06.flac     6:33.16       69362876 B   ---   --   ---xx  d2t07.flac     6:02.08       63875660 B   ---   --   ---xx  d2t08.flac   111:24.51     1179178432 B                            0.5768  (20 files)
-===================
-===================
-===================

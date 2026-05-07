@@ -1,8 +1,0 @@
-Bob Dylan, 5/10/95, San Diego, California, 2CDR
-
-LB-7494, (56min+38min), version "b"; ?? -> portable DATrecorder - clone -> (digital transfer) m-audio delta audiophile 2496, -> Wavelab -> ssrc -> cdwave for tracking -> tlh, I did not harm the sound of the recording in any way; bittorrent download 05/09; same recording as LB-3297 based on same clapping wavs at end of d1t2 with similar wav and spectral view except levels a little different; this does not have the flaws listed for that one; (did not listen to all of this)
-
-1 intro, 2 Crash On The Levee (Down In The Flood), 3 I Want You, 4 All Along The Watchtower, 5 Just Like A Woman, 6 Silvio (Bob Dylan & Robert Hunter), 7 Shooting Star, 8 Mr. Tambourine Man, 9 Boots Of Spanish Leather, 10 Don't Think Twice, It's All Right, 1 Seeing The Real You At Last, 2 Man In The Long Black Coat, 3 Band introduction, 4 Highway 61 Revisited, 5 Like A Rolling Stone, 6 It Ain't Me, Babe
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

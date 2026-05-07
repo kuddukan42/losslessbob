@@ -1,8 +1,0 @@
-Bob Dylan, 9/20/00, Birmingham; England, National Exhibition Centre Arena (NEC Arena), 2CDR
-
-LB-4458, (52min+62min), Schubert-Rec+ASM; Technical Information, Neumann SKM140 / Neumann BS48i-2 / SBM1 / Sony TDC-D100, Additional Notes, recorded by 'Schubert'., with additional Soundmastering (processed with Steinberg's Wavelab v3.0)., + .md5 checksums for the .flac files; bittorrent download 01/07; same recording as schubert remaster LB-2195 and cc bootleg LB-2461 and different recording than schubert LB-1494 and NEU LB-20 based on crowd at begin of d1t1 and end of d1t3;  in comparison  schubert remaster LB-2195 and cc bootleg LB-2461 both have higher levels, a lot more high end and midrange, and are compressed and harsher; in comparison to schubert LB-1494 that one has a more upfront natural less echoey or blairy sound; in comparison to NEU LB-20 that one has a more less full and natural sound; excellent sound [A]
-
-Disk 1, 1 Announcement, 2 I Am The Man, Thomas (acoustic), 3 The Times They Are A-Changin' (acoustic), 4 It's Alright, Ma (I'm Only Bleeding) (acoustic), 5 One Too Many Mornings (acoustic) (Bob on harp), 6 Tangled Up In Blue (acoustic), 7 Searching For A Soldier's Grave (acoustic), 8 Country Pie, 9 Ballad Of A Thin Man, 10 Down In The Flood, 11 Tryin' To Get To Heaven, Disk 2, 1 Cold Irons Bound, 2 Leopard-Skin Pill-Box Hat, 3 (encore), Things Have Changed, 4 Like A Rolling Stone, 5 It Ain't Me, Babe (acoustic), 6 Highway 61 Revisited, 7 Forever Young (acoustic), 8 Everything Is Broken, 9 Blowin' In The Wind (acoustic)
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

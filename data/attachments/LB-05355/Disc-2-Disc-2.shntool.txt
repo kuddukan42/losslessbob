@@ -1,8 +1,0 @@
-    length     expanded size   cdr  WAVE problems filename
-     7:02.02       74445548    ---   --   -----   bd2004-04-02schoeps_d2t01.wav
-     6:13.71       65964236    ---   --   -----   bd2004-04-02schoeps_d2t02.wav
-     7:33.07       79925708    ---   --   -----   bd2004-04-02schoeps_d2t03.wav
-     4:57.57       52524908    ---   --   -----   bd2004-04-02schoeps_d2t04.wav
-     7:30.15       79415324    ---   --   -----   bd2004-04-02schoeps_d2t05.wav
-     5:56.20       62845484    ---   --   -----   bd2004-04-02schoeps_d2t06.wav
-    39:13.22      415121208 B                     (totals for 6 files, 1.0000 overall compression ratio)

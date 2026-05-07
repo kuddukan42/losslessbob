@@ -1,8 +1,0 @@
-Bob Dylan, 11/12/96, Dubuque, Iowa, Five Flags Center Arena, 2CDR
-
-LB-4504, (69min+58min), version "a"; AUD DAT Master [unknown equipment] > DAT clone(s) > WAV > Soundforge 6.0 > CD Wave > FLAC, I did not harm the sound of the recording in any way other than some crossfading, This is the same recording as LB-0991 but is a recent transfer from my DAT clone, d2t06 is from a different source tape, may be from an alternate master and may be recorded at 32kHz; bittorrent download 02/07; dt26 has nothing above 17k; in comparison to LB-991 this has similar wav and spectral views but without the flaw/cut at the transition on d2t6; excellent sound [A]
-
-CD 1 [68:14.39], 01 Down In The Flood [04:47.00], 02 If Not For You [05:54.00], 03 All Along The Watchtower [07:13.18], 04 Shelter From The Storm [09:24.28], 05 Most Likely You Go Your Way (And I'll Go Mine) [09:18.34], 06 Silvio [07:57.67], 07 Tangled Up In Blue [09:07.57], 08 To Ramona [06:20.06], 09 Friend Of The Devil [08:11.54], CD 2 [57:09.38], 01 Absolutely Sweet Marie [07:57.58], 02 Ballad Of A Thin Man [08:48.07], 03 Highway 61 Revisited [08:35.62] %, 04 Like A Rolling Stone [12:15.50] %, 05 It Ain't Me, Babe [11:09.37] %, 06 Rainy Day Women # 12 & 35 [08:22.49]
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

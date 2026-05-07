@@ -1,40 +1,0 @@
-===================
-===================
-===================
-=== 1989-09-24-Chabad.ffp
-===================
-===================
-===================
-01 1989-09-24_t1.flac: 4c6a29829d1dd1406969188f6ad3cde002 1989-09-24_t2.flac: 67cf83877b0f039767ffa4d34e7e12f003 1989-09-24_t3.flac: b09855af938a8b46ee5d64116b22587e04 1989-09-24_t4.flac: 907c2d89d79a567773cea3dc74154c9705 1989-09-24_t5.flac: 26be8ddab08f9823f6a76a1a74fe4d04
-===================
-===================
-===================
-=== 1989-09-24.ffp
-===================
-===================
-===================
-01\ 1989-09-24_t1.flac: 4c6a29829d1dd1406969188f6ad3cde002\ 1989-09-24_t2.flac: 67cf83877b0f039767ffa4d34e7e12f003\ 1989-09-24_t3.flac: b09855af938a8b46ee5d64116b22587e04\ 1989-09-24_t4.flac: 907c2d89d79a567773cea3dc74154c9705\ 1989-09-24_t5.flac: 26be8ddab08f9823f6a76a1a74fe4d04
-===================
-===================
-===================
-=== 1989-19-24.md5
-===================
-===================
-===================
-579f0b760fc8ddb3dd1107897e78e324 *04 1989-09-24_t4.flac
-7e3ed6bf32728410b636f530e38e672a *03 1989-09-24_t3.flac
-bafe12f8838b61646b579b8298db8851 *01 1989-09-24_t1.flac
-e387d33179ab092eb03d2e5739219493 *02 1989-09-24_t2.flac
-e763cf0d01cb51ff4dc65bd8f8673fd9 *05 1989-09-24_t5.flac
-
-===================
-===================
-===================
-=== Chabud.txt
-===================
-===================
-===================
-Chabad TV StudioLos Angeles, California24 September 1989  1.    Einsleipt Mein Kind Dein Eigalach (trad.)2.    Adelita (trad.)3.    Hava Negilah (trad.)  1   Bob Dylan (flute & recorder), Peter Himmelman (vocals & guitar), Harry Dean Stanton (harmonica). 2  Bob Dylan (vocals & recorder), Peter Himmelman (guitar), Harry Dean Stanton (vocals & harmonica). 3  Bob Dylan (harmonica), Peter Himmelman (vocals & guitar),  Harry Dean Stanton (vocals & guitar). Broadcast live by Chabad Telethon in the program L'Chaim To Life!, Telethon '89. Mono TV broadcast, 10 minutesSeptember 24 Dylan participates in the "L'Chaim To Life, Telethon '89" on Chabad TV.Together with his son- in-law Peter Himmelman and Harry Dean Stanton onguitars he plays flute and recorder (!) on three songs. The "group" is called'Chopped Liver'.
-===================
-===================
-===================

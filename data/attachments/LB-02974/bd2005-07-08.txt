@@ -1,75 +1,0 @@
-Bob Dylan and his Band
-Sauget, Illinois
-GMC Stadium
-July 8, 2005
-
-AUDIENCE recording by M&A
-
-MBHO 603a > Lunatech V-3 > Sony-D100 > Audio CDs from M&A
-(wav encoded to FLAC with xACT 1.4b24)
-
-Disc 1	54:31
-1.      Intro  0:39
-2.	To Be Alone With You	5:16
-3.	If You See Her, Say Hello	5:44
-4.	It's Alright, Ma (I'm Only Bleeding)	7:32
-5.	Lay, Lady, Lay  7:08
-6.	Highway 61 Revisited	8:14
-7.	Can't Wait	5:31
-8.	Stuck Inside Of Mobile With The Memphis Blues Again	8:42
-9.	Make You Feel My Love	5:43
-
-Disc 2	42:55
-1.	Cold Irons Bound	5:49
-2.	Positively 4th Street	6:44
-3.	Floater (Too Much To Ask)	7:53
-12.	Summer Days	8:44
-(encore - one second pause at edit)  
-13.	Love Sick	6:51
-14.	Like A Rolling Stone	6:52
- 	 
-Band Members
-Bob Dylan - keyboard, harp
-Stu Kimball - lead guitar
-Denny Freeman - guitar
-Donnie Herron - banjo, electric mandolin, pedal steel, lap steel
-Tony Garnier - bass
-George Recile - drums
-
-bd2005-07-08.ffp.txt
-bd2005-07-08d1t01.flac:0fdd060a81d5c6fe8434082ea76d0bafbd2005-07-08d1t02.flac:13014ceb940b84ba6d956cf8133d52cbbd2005-07-08d1t03.flac:9da9904b30dff81157458a3392e10d2bbd2005-07-08d1t04.flac:9feaeafc160494026dc5d46dc173544cbd2005-07-08d1t05.flac:869671d8b911fcc1221a9e43dfa3689abd2005-07-08d1t06.flac:837069709b56c1d339966f8b9f82fe3fbd2005-07-08d1t07.flac:12165f49d522c14a50716d9d6fc3faa6bd2005-07-08d1t08.flac:833afbc02d49b262f432c8dff4491fe2bd2005-07-08d1t09.flac:b71636415469e07aa59541b2ba1345f2bd2005-07-08d2t01.flac:b0090461812a387e07e1965516f343abbd2005-07-08d2t02.flac:a966f161e8bf151d6eeb5fe095fba01cbd2005-07-08d2t03.flac:5be29983c2f298e1e9b1371248967c66bd2005-07-08d2t04.flac:7d15d7e002d6e30848d0c9418688616abd2005-07-08d2t05.flac:c963a40f90db0d0f72306815f8c3d7e7bd2005-07-08d2t06.flac:60205ce24619ba0360aeacba6b89fb12
-
-bd2005-07-08.flac.md5
-9b056a5d6a37cd3dd0720eedc5757a5d *bd2005-07-08d2t06.flac
-67e3d817b1789a5582d7e1e1fa9811f9 *bd2005-07-08d2t05.flac
-3ee3c2b03119001349db1007896364a6 *bd2005-07-08d2t04.flac
-0072819688bcf8b2abde95fb3f4bec5b *bd2005-07-08d2t03.flac
-e3be97c1b5e8c9ff349a6339f3618dd4 *bd2005-07-08d2t02.flac
-9e76a67137865c5a88854388ae2863ac *bd2005-07-08d2t01.flac
-785aca7ca8849bb910d37fcfc4b1b8fc *bd2005-07-08d1t09.flac
-078f17f1a5c657bd997428b089afa840 *bd2005-07-08d1t08.flac
-2d344c6bf5e421d4f549be069fc2da5b *bd2005-07-08d1t07.flac
-c69d5224c9e3d5b1af0caea93ded037b *bd2005-07-08d1t06.flac
-393f0b92fbd4cef8964d485d393ac759 *bd2005-07-08d1t05.flac
-aa4ff66d4b56c6d76257be60107534c9 *bd2005-07-08d1t04.flac
-d2a7be5fd3b25fa05adc755227e2a5c3 *bd2005-07-08d1t03.flac
-318a87931de1b20a1151093b668ee1a9 *bd2005-07-08d1t02.flac
-8315fac24d83a3f63b8e2586362c8e6a *bd2005-07-08d1t01.flac
-
-bd2005-07-08.wav.md5
-0215573e054a1ccb4d9dd2265212ffa6 *bd2005-07-08d1t01.wav
-b99f3cd3344662dff511f324720098bd *bd2005-07-08d1t02.wav
-2168343eda76541031d7bdc30ccade6b *bd2005-07-08d1t03.wav
-258e8122e3fb7a37c8af00ad95deb1c1 *bd2005-07-08d1t04.wav
-b26d0283f6373eb4c0be7c003df8a4f5 *bd2005-07-08d1t05.wav
-df7c87253a1533ea334e7df2ad22c322 *bd2005-07-08d1t06.wav
-fc5c566489ed29deaba5f3a9fa91acc6 *bd2005-07-08d1t07.wav
-54957cbdf9dda9b8d9c8aca11728231e *bd2005-07-08d1t08.wav
-0fadd0c8e6e6f4aad2bd0980b45f8166 *bd2005-07-08d1t09.wav
-6f379500b13faf013336c89ab7b2a5a4 *bd2005-07-08d2t01.wav
-7254f344b1d50424a6b8c06e66c105da *bd2005-07-08d2t02.wav
-2f813f6469e761bba7648c618cc988a8 *bd2005-07-08d2t03.wav
-96a04335c7b8f1a982370647be9e6ebb *bd2005-07-08d2t04.wav
-571d2426a76e2145082b0a43c66aea87 *bd2005-07-08d2t05.wav
-efab3c983a7c85d53697b63218a15ff7 *bd2005-07-08d2t06.wav
-

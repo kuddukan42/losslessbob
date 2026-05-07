@@ -1,6 +1,0 @@
-fe79aa0992f947c77fd17422aeb09f51  [shntool]  bd1988-07-28d1t01.shn
-74a98bda976332bcf10ccc39150f6c1c  [shntool]  bd1988-07-28d1t02.shn
-375188fc6538109f93f91a7d076f4ae3  [shntool]  bd1988-07-28d1t03.shn
-a54fe7ac5cd4a2531423f05fa7f010fd  [shntool]  bd1988-07-28d1t04.shn
-65be05546b3da7cf78c52e83f5a10cfb  [shntool]  bd1988-07-28d1t05.shn
-3d1a6ca3371132b183b187bb38cd24e8  [shntool]  bd1988-07-28d1t06.shn

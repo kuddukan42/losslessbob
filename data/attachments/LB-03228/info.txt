@@ -1,5 +1,0 @@
--there is a small gap (less than 1/10 second) in d1t3 starting @ 1:15:749
--there is another small gap in d1t8, maybe a dropout, starting @ 0:53.847
-
-they both sound like typical DAT problems, either introduced at the analog transfer or at the playback when the CD was done. 
-Anyway, I didn't produce them, they were on the CDs I received years ago, but it still is kind of embarassing. 

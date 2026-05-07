@@ -1,72 +1,0 @@
-Bob Dylan
-Tuesday November 4, 2008 - election night
-Minneapolis, Minnesota
-Northrop Auditorium
-
-Setlist:
-Disc 1 (63:43.27)
-01. intro
-02. Cat's In The Well
-03. The Times They Are A-Changin'
-04. Summer Days
-05. This Wheel's On Fire
-06. Tangled Up In Blue
-07. Masters Of War
-08. Stuck Inside Of Mobile With The Memphis Blues Again
-09. John Brown
-10. Beyond The Horizon
-11. Highway 61 Revisited
-Disc 2 (52:48.34)
-12. Shooting Star
-13. It's Alright, Ma (I'm Only Bleeding)
-14. Under The Red Sky
-15. Thunder On The Mountain (LCH trouble)
-16. Ain't Talkin' (minor LCH trouble)
-17. encore break
-18. Like A Rolling Stone
-19. Blowin' In The Wind
-20. crowd
-
-Personnel:
-Bob Dylan - keyboard, guitar, harp
-Tony Garnier - bass
-George Recile - drums
-Stu Kimball - rhythm guitar
-Denny Freeman - lead guitar
-Donnie Herron - violin, viola, banjo, electric mandolin, pedal steel, lap steel
-
-Source:
-Audience recording (note- some trouble on LCH near end of show, spots patched with RCH)
-
-Location:
-Main floor, left center section
-
-SHNTOOL:
-    length     expanded size    cdr  WAVE problems  fmt   ratio  filename     0:52.32        9248108 B   ---   --   ---xx  Dylan2008-11-04d1t01.flac     4:03.64       43015772 B   ---   --   ---xx  Dylan2008-11-04d1t02.flac     5:20.50       56565644 B   ---   --   ---xx  Dylan2008-11-04d1t03.flac     5:44.04       60691052 B   ---   --   ---xx  Dylan2008-11-04d1t04.flac     6:36.12       69882668 B   ---   --   ---xx  Dylan2008-11-04d1t05.flac     8:17.46       87779036 B   ---   --   ---xx  Dylan2008-11-04d1t06.flac     5:40.34       60056012 B   ---   --   ---xx  Dylan2008-11-04d1t07.flac     7:19.55       77569004 B   ---   --   ---xx  Dylan2008-11-04d1t08.flac     5:53.18       62311580 B   ---   --   ---xx  Dylan2008-11-04d1t09.flac     6:17.09       66524012 B   ---   --   ---xx  Dylan2008-11-04d1t10.flac     7:38.03       80798300 B   ---   --   ---xx  Dylan2008-11-04d1t11.flac     4:49.41       51076076 B   ---   --   ---xx  Dylan2008-11-04d2t01.flac     7:32.21       79782236 B   ---   --   ---xx  Dylan2008-11-04d2t02.flac     5:52.14       62125772 B   ---   --   ---xx  Dylan2008-11-04d2t03.flac     6:28.68       68603180 B   ---   --   ---xx  Dylan2008-11-04d2t04.flac     8:28.47       89721788 B   ---   --   ---xx  Dylan2008-11-04d2t05.flac     3:56.39       41722172 B   ---   --   ---xx  Dylan2008-11-04d2t06.flac     7:05.66       75125276 B   ---   --   ---xx  Dylan2008-11-04d2t07.flac     6:15.32       66225308 B   ---   --   ---xx  Dylan2008-11-04d2t08.flac     2:19.06       24533756 B   ---   --   ---xx  Dylan2008-11-04d2t09.flac   116:31.61     1233356752 B                            0.4724  (20 files)
-
-FFP:
-Dylan2008-11-04d1t01.flac:f7eaaa04b69321591ae26b72922b87f1Dylan2008-11-04d1t02.flac:c4d89eb40c3e72e0b53e67ae47a5aef0Dylan2008-11-04d1t03.flac:481b6b63d3d832c138ac3b0d0dce8c0eDylan2008-11-04d1t04.flac:5d795990094290272981979faf0dbcdcDylan2008-11-04d1t05.flac:a17ae95344acd034dae1d8b685a316b8Dylan2008-11-04d1t06.flac:9ccf67c2f2ad79c9239fc52f3219dabbDylan2008-11-04d1t07.flac:597e2e86b34197f07840ee26595486f8Dylan2008-11-04d1t08.flac:c2a728b0bb937bc46a472ffd2b60e869Dylan2008-11-04d1t09.flac:c04fb1eab3f7e6dead86a35ab475bbaeDylan2008-11-04d1t10.flac:6c8b6c90e0bc17ff46940b164a3f8fc1Dylan2008-11-04d1t11.flac:fb332397680dc30c38f85acb2865b1eeDylan2008-11-04d2t01.flac:8f2c597584ec0264570b37efa9a04d52Dylan2008-11-04d2t02.flac:71d52305b82fda4717144262ebf95cf3Dylan2008-11-04d2t03.flac:90c83e355ad9adde6a3f02a2e73bc3a7Dylan2008-11-04d2t04.flac:f4faa0c804e1350fd6bda950da5c596fDylan2008-11-04d2t05.flac:526ec68992d317d1a7485da9e4bc5801Dylan2008-11-04d2t06.flac:2e00035ea6150db8fceef0c15f714275Dylan2008-11-04d2t07.flac:7a270982d704d72668696105cce548e5Dylan2008-11-04d2t08.flac:ce44d1b9620e55c47b36ed1c721c20fcDylan2008-11-04d2t09.flac:ff2883dbac6f1c9d99fff4dcafd82b3a
-
-MD5:
-8ce67dda428a876dfe03b33a6c42d588 *Dylan2008-11-04d1t01.flac
-cbb380e1a3d8110867ed45d37e96550f *Dylan2008-11-04d1t02.flac
-bbc1a6f3a8c5c6108f6ae92e41cf0d3b *Dylan2008-11-04d1t03.flac
-b3bbe3e7fd628ad31c1fef548b5e5deb *Dylan2008-11-04d1t04.flac
-e41ae99d8a6553a232846a7bd1f3125f *Dylan2008-11-04d1t05.flac
-776571646db7c20812610687cd73a018 *Dylan2008-11-04d1t06.flac
-8a210a91efabd7c1b5fa17cac1a201ef *Dylan2008-11-04d1t07.flac
-69a11bf2a098e268b3f6b0643dc92ee5 *Dylan2008-11-04d1t08.flac
-911e202528dad912f5b69fe4a8a58bd4 *Dylan2008-11-04d1t09.flac
-423f6560f6ca77d5ab0a8065a9bb8dea *Dylan2008-11-04d1t10.flac
-beb09bac9132d9dd34526993ac01c80e *Dylan2008-11-04d1t11.flac
-8cb715791397465ad194c1619b56ac3a *Dylan2008-11-04d2t01.flac
-2df7e834689fb7be940d7955e70db02c *Dylan2008-11-04d2t02.flac
-5a2cdaadeda5bd615d2837e3834d59c3 *Dylan2008-11-04d2t03.flac
-24e92b4bdc21eb70c8fbd62af95686cd *Dylan2008-11-04d2t04.flac
-a10e082790d1fbc6d2e0d1700e35ccf3 *Dylan2008-11-04d2t05.flac
-375e616b7b02c054858800cc7d552a0d *Dylan2008-11-04d2t06.flac
-1e7658eb3891ace4cab99ea2d75401a8 *Dylan2008-11-04d2t07.flac
-6a5844bc11d747876f7d7ef0740df3b4 *Dylan2008-11-04d2t08.flac
-7b7f87b59b020df58f3c635d349edde4 *Dylan2008-11-04d2t09.flac
-
-Thanks to Boblinks.com for the info, and the ghost of Todd F. for the recording

@@ -1,78 +1,0 @@
-Bob Dylan and his Band
-Savannah, Georgia
-Grayson Stadium
-June 4, 2005
-
-AUDIENCE recording by M&A
-
-MBHO 603a > Lunatech V-3 > Sony-D100 > Audio CDs from M&A
-(wav encoded to FLAC with xACT 1.4b24)
-
-Disc 1	55:41
-1.      Intro	0:35
-2.	Maggie's Farm	5:21
-3.	I'll Remember You	7:19
-4.	Lonesome Day Blues	7:22
-5.	Positively 4th Street	7:40
-6.	High Water (For Charley Patton)	7:27
-7.	I Don't Believe You (She Acts Like We Never Have Met)	6:49
-8.	Ballad Of Hollis Brown (acoustic)	5:45
-9.	Highway 61 Revisited	7:20
-
-
-Disc 2	41:19
-1.	Floater (Too Much To Ask)	6:28
-2.	Honest With Me	6:35
-3.	Girl Of The North Country (acoustic)	6:51
-4.	Summer Days	7:28
-(encore - one second pause at edit)
-5.	Don't Think Twice, It's All Right	8:26
-6.	All Along The Watchtower	5:29
- 	 
-Band Members
-Bob Dylan - keyboard, harp
-Stu Kimball - lead guitar
-Denny Freeman - guitar
-Donnie Herron - electric mandolin, violin, banjo, pedal steel
-Tony Garnier - bass
-George Recile - drums
-
-bd2005-06-04.ffp.txt
-bd2005-06-04d1t01.flac:2636a7e93c92d443c13642a0dac21a03bd2005-06-04d1t02.flac:59f34efa6726e06f1e3a0e6de783340fbd2005-06-04d1t03.flac:3cd3cbb004de2f5a0d7c06cd235b6fdebd2005-06-04d1t04.flac:e2c432fab64b7c84fac223cef3b080f5bd2005-06-04d1t05.flac:7c0d73769386dfb10e63daf477fc1261bd2005-06-04d1t06.flac:256b350709ededc5a7dd5857ca66a9bfbd2005-06-04d1t07.flac:16dcc75a1d90752e1469133bdc15bf3dbd2005-06-04d1t08.flac:edb1f8ebe4681defdc0e14d96ec6f4bcbd2005-06-04d1t09.flac:055c280495be6c620ab8b1de77051126bd2005-06-04d2t01.flac:c373f443c5bb7952567f90515e1712ddbd2005-06-04d2t02.flac:0c64038c7d95db101cbfadf5c8e6342dbd2005-06-04d2t03.flac:e6edbe79fff4872b27a2d1e6a470f0bbbd2005-06-04d2t04.flac:afe3376cc6ee4b10727bf807e7ff0bbabd2005-06-04d2t05.flac:7ab716ce97b6d18ee767d42821c20d04bd2005-06-04d2t06.flac:97da9f2f74df99c20f0655e84aaddee8
-
-bd2005-06-04.shntool.md5
-2636a7e93c92d443c13642a0dac21a03  [shntool]  bd2005-06-04d1t01.flac
-59f34efa6726e06f1e3a0e6de783340f  [shntool]  bd2005-06-04d1t02.flac
-3cd3cbb004de2f5a0d7c06cd235b6fde  [shntool]  bd2005-06-04d1t03.flac
-e2c432fab64b7c84fac223cef3b080f5  [shntool]  bd2005-06-04d1t04.flac
-7c0d73769386dfb10e63daf477fc1261  [shntool]  bd2005-06-04d1t05.flac
-256b350709ededc5a7dd5857ca66a9bf  [shntool]  bd2005-06-04d1t06.flac
-16dcc75a1d90752e1469133bdc15bf3d  [shntool]  bd2005-06-04d1t07.flac
-edb1f8ebe4681defdc0e14d96ec6f4bc  [shntool]  bd2005-06-04d1t08.flac
-055c280495be6c620ab8b1de77051126  [shntool]  bd2005-06-04d1t09.flac
-c373f443c5bb7952567f90515e1712dd  [shntool]  bd2005-06-04d2t01.flac
-0c64038c7d95db101cbfadf5c8e6342d  [shntool]  bd2005-06-04d2t02.flac
-e6edbe79fff4872b27a2d1e6a470f0bb  [shntool]  bd2005-06-04d2t03.flac
-afe3376cc6ee4b10727bf807e7ff0bba  [shntool]  bd2005-06-04d2t04.flac
-7ab716ce97b6d18ee767d42821c20d04  [shntool]  bd2005-06-04d2t05.flac
-97da9f2f74df99c20f0655e84aaddee8  [shntool]  bd2005-06-04d2t06.flac
-
-bd2005-06-04.wav.md5
-075096b0d785f3e27c78265b1c8482a8 *bd2005-06-04d2t06.wav
-049f2698296dcf3b991dd103f993de51 *bd2005-06-04d2t05.wav
-d991e9490a3c3a858b1119147de24d7b *bd2005-06-04d2t04.wav
-b7de540dbdbd80081d8e20f996855467 *bd2005-06-04d2t03.wav
-32066fdcaf70c347a80a5d69c15b688b *bd2005-06-04d2t02.wav
-b1ac5faeec55b77c85b68e9b3cc8e505 *bd2005-06-04d2t01.wav
-feab17861334b631208b151053c93ba9 *bd2005-06-04d1t09.wav
-3fe6a54e6e1e50cda161468a93d182c5 *bd2005-06-04d1t08.wav
-c58293d0e8f27584daf319d2b5a9d6b0 *bd2005-06-04d1t07.wav
-4f335600b8115d92d1ff31c5cfea3e04 *bd2005-06-04d1t06.wav
-c8a80003758aa64516a31e3aec88c8c5 *bd2005-06-04d1t05.wav
-4970371004fd9f393c0bd49d5521e5d1 *bd2005-06-04d1t04.wav
-aa836a652b239ba67cf44cb1a9461b2b *bd2005-06-04d1t03.wav
-4d5d242da6357dc3a07132f8f6a7df6d *bd2005-06-04d1t02.wav
-c01eff7d09e59a276fa94df57ce31a3a *bd2005-06-04d1t01.wav
-
-
-

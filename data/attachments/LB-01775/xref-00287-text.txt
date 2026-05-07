@@ -1,94 +1,0 @@
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-Track01.flac:e8508e28639cdb15730a44d1f0cb4d6eTrack02.flac:69bfe6766625bd8ddc226c21a9ca9c1cTrack03.flac:571963697e186e0136f2948758072683Track04.flac:8474bd8e9b29d272b34389cd6810be18Track05.flac:61fa0cec674a1a46bc0ed67f1c311164Track06.flac:0d9062162cfff1b85e1732c967c70eddTrack07.flac:f71ad2ca531267910fdcf10b0cf26616Track08.flac:f98a98f21c56c0436a0c75d556264a6dTrack09.flac:da2fc58bdb86a5bfd6f221a4e2eca27eTrack10.flac:6a84c55747be4b9ffdf0bbabfdc32d3cTrack11.flac:7e1ee80db1a0b5b7fd5e02fbaecd65baTrack12.flac:c68dbb935e965d5e5604854bb0bc4749Track13.flac:9099c77eda62b04ccd6c6d0162e4ca0aTrack14.flac:e219e130949af2730dc6a02336223362Track15.flac:e40b037dcdc1fe904dc702b142f92595Track01.flac:e6cf8e5d920f0cfec61aeb34b0b9898dTrack02.flac:c8b1fd77d92e19d015dabd7cfb7118c3Track03.flac:ac1c221c04857569bdaabdd8cf9676e0Track04.flac:9f00c8411d648a7139760e8b71d02cd8Track05.flac:9a64ac71428ae405cd47bb81137f08de
-===================
-===================
-===================
-=== Fox Warfield 1980-11-15.txt
-===================
-===================
-===================
-Here's a classic sounboard recording from the start of Bob's Musical Retrospective tour of 1980/81. This soundboard is also circulating as Farewell Bloomfield:
-http://www.bobsboots.com/CDs/cd-f02.html
-This version sounds better!
-Enjoy!
-
-
-LB-1775
-
-15 November 1980 
-Fox Warfield Theater, San Francisco, California Watchtower remaster of the SOUNDBOARD recording. shn=>wavs=>cooledit noise removed=>some bas removed=>wavs=>flac align on sector boundaries=>finish flacs (Senor is missing from sbd); excellent sound).
-
-digi-pop d1t1 4:29, small pop because of discontinuity d1t5 1:37, d1t5 2:28
-
->cdr>EAC>flac>dime
-(I recieved an audio version.)
-
-CD1 
-1. Gotta Serve Somebody 1
-2. I Believe In You 
-3. Like A Rolling Stone 
-4. Man Gave Names To All Animals 
-5. Simple Twist Of Fate 
-6. Ain't Gonna Go To Hell For Anybody 
-7. Girl From The North Country 
-8. Slow Train 
-9. Abraham, Martin & John 
-10. Let's Keep It Between Us 
-11. Mary From The Wild Moor 
-12. Covenant Woman 
-13. Solid Rock 
-14. Just Like A Woman 
-15. The Groom's Still Waiting At The Altar 
-
-CD2 
-1. When You Gonna Wake Up? 
-2. In The Garden 
-3. Blowin' In The Wind 
-4. City Of Gold 
-5. Love Minus Zero/No Limit 
-
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-f414181109eac70fc1ce15299cb87872 *Track01.flac
-559e2bb60ecb92cc16f987741609efca *Track02.flac
-d07bff317ace78f609589dd1875d9f3e *Track03.flac
-b0952d87cf4af66c4f2b95dd0615c8d1 *Track04.flac
-e9e59427d64b471a3c89207aea6e2c9b *Track05.flac
-
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-35cd7397f0500f6f846d3431887db899 *Track01.flac
-488db497e73c9a4569aaa12125c5f6be *Track02.flac
-38fade7e4d4c5bee5f0b15ed606b73f3 *Track03.flac
-800e0b98737ef5755b420e6c87e9fdc5 *Track04.flac
-8a2668b75c486843d2173da9b64cd0e7 *Track05.flac
-97d3998224d6389b6c397c2599342321 *Track06.flac
-0c3ebd330abda960731eea8fe0c124e9 *Track07.flac
-77d3fae79646bd8548bdeb393befaf4c *Track08.flac
-4658d180d42a0f965d616ecaa0c82da5 *Track09.flac
-0f9f41ca0e29851f433ec76edb55e17b *Track10.flac
-f3fc78735142a35c74d735c629d7ad8f *Track11.flac
-015fd6a3ade08bf9fb6a7ef7a66f226d *Track12.flac
-f1364b663073c343b5d5aaddf7cc22a1 *Track13.flac
-bd1ad0fd6827915b24cb92111dfd17b2 *Track14.flac
-8fec68518c3956caa2057ef176a519f1 *Track15.flac
-
-===================
-===================
-===================

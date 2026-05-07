@@ -1,77 +1,0 @@
-Bob Dylan and his band
-Soaring Eagle Casino & Resort
-Mt. Pleasant, Michigan
-April 11, 2005	
-
-Audience recording by M&A
-Recording equipment unknown, received as audio CDs from M&A
-(wav encoded to FLAC with xACT 1.4b28)
-
-Disc 1	49:15
-1.  Intro	0:35
-2.  To Be Alone With You	4:06
-3.  I'll Be Your Baby Tonight	5:43
-4.  Tweedle Dee & Tweedle Dum	5:40
-5.  Just Like A Woman	7:36
-6.  Cold Irons Bound	4:53
-7.  Moonlight	7:25
-8.  Highway 61 Revisited	6:21
-9.  Blind Willie McTell	6:54
-
-Disc 2	39:59
-I Don't Believe You (She Acts Like We Never Have Met)	6:52
-Summer Days	8:06
-Saving Grace	5:46
-Like A Rolling Stone	6:56
-(encore - one second pause at edit)  
-Forever Young	6:51
-All Along The Watchtower	5:29
-
-Band Members:
-Bob Dylan - keyboard, harp
-Stu Kimball - lead guitar
-Denny Freeman - guitar
-Donnie Herron - electric mandolin, pedal steel, banjo, violin
-Tony Garnier - bass
-George Recile - drums
-
-
-bd2005-04-11.ffp.txt
-bd2005-04-11d1t01.flac:23202f007012074d469865fac7baab6dbd2005-04-11d1t02.flac:625d55cb739a53841cd84a6ebe3c80f1bd2005-04-11d1t03.flac:cd3e9cc82f1b11f563412004e8a56be7bd2005-04-11d1t04.flac:e1b7d2a1732d5b0a8fb70250349db9ecbd2005-04-11d1t05.flac:a8a2d0b5e5f2aea4696f463b37e76cfbbd2005-04-11d1t06.flac:049807bcb87034ec7dcbf550f41066e7bd2005-04-11d1t07.flac:24c1163014b018ebb754e13c0b0f6f04bd2005-04-11d1t08.flac:50b8675bc110a9227e004f36849adfddbd2005-04-11d1t09.flac:2927adf831de71aa2d2819cf3a73be25bd2005-04-11d2t01.flac:d710a8bfb88290edc26f5c7fa562acc9bd2005-04-11d2t02.flac:855f8f8fa1d9c88f905b64f1caba6396bd2005-04-11d2t03.flac:f93bfbe5c2de23c47db15790ded64915bd2005-04-11d2t04.flac:34d440158f994342248d04f83c63f73dbd2005-04-11d2t05.flac:087dd561f8f298b74d2d3e8722afee78bd2005-04-11d2t06.flac:61c26a5855ccddb40b7404270e2082b6
-
-bd2005-04-11.flac.md5
-db5ce18c27f965cbcb9553d05eb06659 *bd2005-04-11d2t01.flac
-6339b5c6ecc031ca6b1fa80a75448ffa *bd2005-04-11d2t04.flac
-7a8e9902ed421994b386244b58a91c71 *bd2005-04-11d2t03.flac
-9e020b4358916470b9b87ea6b9b0e7ef *bd2005-04-11d1t09.flac
-bfc3ec0d01e8231a8dacdfd0533ffb41 *bd2005-04-11d1t06.flac
-7bd73abc71066cef0a367bb0bb255bf8 *bd2005-04-11d1t05.flac
-d1856acc4896ed03f289320ad10f8d37 *bd2005-04-11d1t04.flac
-13459fe91c6f258eb3fe34996ad0128c *bd2005-04-11d1t03.flac
-a05d0198e016089b1f3afc2b287bb6cf *bd2005-04-11d1t02.flac
-7429e664088892dda90c94540bbceec5 *bd2005-04-11d2t02.flac
-2dc49623acec9bb2cb7cc3d012f72c05 *bd2005-04-11d1t07.flac
-1b05a35fdf2b7f000b0834d2c2ae3093 *bd2005-04-11d1t08.flac
-7fe46fb2fcad2903218237eee32c01d3 *bd2005-04-11d2t06.flac
-672248fef52059aa79ff1c4c31559c17 *bd2005-04-11d2t05.flac
-29da52940708b9688955e3d78a2b7e50 *bd2005-04-11d1t01.flac
-
-bd2005-04-11.wav.md5
-a34648d0e99d2c7b6a80d60a1b3336d2 *bd2005-04-11d2t06.wav
-d75c2db111d6bcd9965c3438190bb924 *bd2005-04-11d2t05.wav
-4d33aaa19f0d99960a92b8ca42534c5c *bd2005-04-11d2t04.wav
-94c2328a319a1959ea69360e9e188b8e *bd2005-04-11d2t03.wav
-3b99addcc5f72cef662a232287a6b21a *bd2005-04-11d2t02.wav
-6b55cbc7bf27a01976ba49397deebcf7 *bd2005-04-11d2t01.wav
-c0567b77291c0d46f6a5f2974abe909e *bd2005-04-11d1t09.wav
-04ce5515f8de122f373d599969a19582 *bd2005-04-11d1t08.wav
-0425f3ec7208517d31d2ecdaf1a1e0a4 *bd2005-04-11d1t07.wav
-df6af22e8158bb0bafd04a973bf42aaa *bd2005-04-11d1t06.wav
-9904721d401fbfacdf91104179b8d519 *bd2005-04-11d1t05.wav
-e780eb510f0bac6baec54120e9a1c04e *bd2005-04-11d1t04.wav
-58e575f239614fbab28433ab26ccfa59 *bd2005-04-11d1t03.wav
-6e2deb01cd2975fe567ab7f8fdb231e0 *bd2005-04-11d1t02.wav
-fa892324915d5903a06eede3ceb70b0b *bd2005-04-11d1t01.wav
-
-
-

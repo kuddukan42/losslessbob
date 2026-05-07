@@ -1,117 +1,0 @@
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-Track No01.flac:2a07562bc99563960ed212351032a12eTrack No02.flac:246c065c6f68c1288cb1bf728c558f1fTrack No03.flac:0a6064912639e8f9879f57958609276bTrack No04.flac:5ca2a2fabae18ad4c669de7611675c93Track No05.flac:9aee6d6b44fbb3a03f0b53a1def3327aTrack No06.flac:70ee4a4fc7d53c7a7427debe74b85c73Track No07.flac:a2f4514e9399fdc7bac85da1d77cf045Track No08.flac:884ee5daa3243a3c8d069697464de365Track No09.flac:58644a8b50eec36134eebb29a6af0079Track No10.flac:1976d84d14c3a795eccb82e7a7599bb1Track No11.flac:cb8bf8e5bb3df4f5476fb10ab2e51192Track No12.flac:a6560c85ae0141da24910f7809883d56Track No13.flac:7d58fb7ab59cf89dccd3902451e834b2Track No14.flac:972fbd5649d9ee19dfffe97d127884c4Track No15.flac:d484020af42926636f04fb10a2735178Track No16.flac:c20b73916b7dde0c5f29b51d8bcb4a45Track No01.flac:808a661ecd90863585dbac93d2857978Track No02.flac:c9db8b452980dbb209e0e0e5efc6fef1Track No03.flac:8fb18608cd208c487289d2401865c6beTrack No04.flac:3aac3a85e2524c26eb1610c80260b42dTrack No05.flac:380ca649b30b9fce0b13f192ef8846feTrack No06.flac:6326ed5ca95ae61d74af8c74d49f4a6fTrack No07.flac:dd8f3ae112d7176a169f4bdd261eea70Track No08.flac:7a17ea658ab114e673468e505fe0e9f5Track No09.flac:c11aad0b7b3ffd5c0586a3c30347979dTrack No10.flac:d805e0051a0af4a9b6b550cd269f20c1Track No11.flac:b277ee575cc2d09384db300cd90d7d2aTrack No12.flac:02da81d895e41c85873ac1045824d767Track No13.flac:9873c7f6e2608bb7d28a73adc5586dfcTrack No14.flac:96e3bbd15c40e9ecec9f1ec7f2df415eTrack No15.flac:9057b47caf6077ebdb5a53844842c598
-===================
-===================
-===================
-=== info.txt
-===================
-===================
-===================
-.flac
-
-Bob Dylan
-
-6360
-Earls Court
-London, England
-1 July 1981
-
-1.  Gotta Serve Somebody
-2.  I Believe In You
-3.  Like A Rolling Stone
-4.  Till I Get It Right (Red Lane/Larry Henley)
-5.  Man Gave Names To All The Animals
-6.  Maggie's Farm
-7.  Here Comes The Sun (George Harrison)
-8.  Girl From The North Country
-9.  Dead Man, Dead Man
-10.  Simple Twist Of Fate
-11.  Ballad Of A Thin Man
-12.  Slow Train
-13.  Walk around heaven all day (Carolyn Dennis)
-14.  Let's Begin (Jim Webb)
-15.  Shot Of Love
-16.  Lenny Bruce
-17.  Mr. Tambourine Man
-18.  Solid Rock
-19.  Just Like A Woman
-20.  We Just Disagree (Jim Krueger)
-21.  Masters Of War
-22.  Forever Young
-23.  Heart Of Mine
-24.  Watered-Down Love
-25.  When You Gonna Wake Up
-26.  In The Garden
- 
-27.  Blowin' In The Wind
-28.  It's Alright, Ma (I'm Only Bleeding)
-29.  Knockin' On Heaven's Door
-===================
-===================
-===================
-=== LB-infos.txt
-===================
-===================
-===================
-CD1
-1 Gotta Serve Somebody, 2 I Believe In You, 3 Like A Rolling Stone, 4 Till I Get It Right (R Lane/L Henley), 5 Man Gave Names To All The Animals, 6 Maggie's Farm, 7 Here Comes The Sun (George Harrison) >, 8 > Girl Of The North Country, 9 Dead Man, Dead Man, 10 Simple Twist Of Fate, 11 Ballad Of A Thin Man, 12 Slow Train, 13 Walk Around Heaven All Day (Rev J Cleveland/C George), 14 Let's Begin (J Webb), 15 Shot Of Love, 16 Lenny Bruce, 17 Mr. Tambourine Man(cut),
-
-CD2
-
-1 short crowd, 2 Mr. Tambourine Man, 3 Solid Rock, 4 Just Like A Woman, 5 We Just Disagree (J Krueger), 6 Masters Of War, 7 Forever Young, 8 Heart Of Mine, 9 Watered-Down Love, 10 When You Gonna Wake Up ?, 11 In The Garden, 12 short crowd, 13 Blowin' In The Wind, 14 It's Alright, Ma (I'm Only Bleeding), 15 Knockin' On Heaven's Door
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-075e9ec21f96d1e609eb433cc982275e *Track No01.flac
-8dc227df6ef6f253f9619ccbe8b9e476 *Track No02.flac
-9c6e3304b15b303d8f78442143e16a23 *Track No03.flac
-a571933cd625f5e3e1b4737e104bcc13 *Track No04.flac
-3e880771068ed26e32aa734c7d63b985 *Track No05.flac
-c63adc6713bac3b9f8d8e00b502eddde *Track No06.flac
-8fb3bdc1d4ad3f66aed18ec8844bfa9d *Track No07.flac
-54eb772d1db076edc0e26155fb01c3b7 *Track No08.flac
-3f9db36bede3d408f2c0c2e4c6d04111 *Track No09.flac
-bef156e4c980bec3362a993892f98656 *Track No10.flac
-9a7fa93bbd3a85b04dd1773dae96f760 *Track No11.flac
-20db26f8f19409bfa810bf40c63393f0 *Track No12.flac
-f25afc9931b799e55616fd075103b9f2 *Track No13.flac
-e4ecf521b58409871f40869a674134a5 *Track No14.flac
-0880273500bb0236466a32c12032b354 *Track No15.flac
-266445360f4b1446f32486f77b969c30 *Track No16.flac
-
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-7e0ffca8faa4f309d007850ca498e72f *Track No01.flac
-498201b1f62b91009a893e0b98b278e5 *Track No02.flac
-3cf5bf9875fc94e3f4a2eb480aa7f198 *Track No03.flac
-427735668e674004e2e32137dc484a76 *Track No04.flac
-9d13618b33002b4512a007374638e314 *Track No05.flac
-9b3c553cc6e729ac963ed275357faa68 *Track No06.flac
-94b60de2f61520a13a60156e0bd8a9cc *Track No07.flac
-71504dcf9ab5966531fc651698a6e4b4 *Track No08.flac
-c8de8c75f95849299b8c72c7d40df290 *Track No09.flac
-f8c3caf94768ad91a592aa418694e7fa *Track No10.flac
-163e99fdb7d20c1113baba71d95de572 *Track No11.flac
-42586b807d334275684009a9ed478d40 *Track No12.flac
-30eb73f508d6e6d01960dc4a319b2c01 *Track No13.flac
-d7c3f1ce95358cc06daa62dddd873514 *Track No14.flac
-24a5d4129f43d429b0b8eca38f76744f *Track No15.flac
-
-===================
-===================
-===================

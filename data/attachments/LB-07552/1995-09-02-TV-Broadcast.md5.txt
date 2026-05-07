@@ -1,6 +1,0 @@
-e744c54e681c2d4ed45faaf6b8caa5e9 *01 All along the watchtower.flac
-9b29066d95131b2c30afb8b1df892478 *02 Just like a woman.flac
-aa2a6f6095609b37a1d118e80eece706 *03 Seeing the real you at last.flac
-19d1f812ddb9d8cc48ec90963c98bda0 *04 Highway 61 revisited.flac
-4fccb921a21e912afb400fa7f9c2b30c *15 Forever young.flac
-5e78775c6f5194dad4eea9dc14bdd20e *Info\1995-09-02 Cleveland Stadium, Cleveland, Ohio, USA [uT].txt

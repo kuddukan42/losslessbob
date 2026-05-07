@@ -1,8 +1,0 @@
-Bob Dylan, 11/6/04, Grantham, Pennsylvania, 2CDR
-
-LB-6535, (71min+39min), source: soomlos, center ga floor, akg391's > denecke ps-2 > denecke ad-20 > sony tcd-d8, sony tcd-d8 > m-audio mt1 > usb > hdd, sony sound forge 9.0 > cd wave > flac; bittorrent download 09/08; same recording as LB-2412 based on same clapping wavs at end of d1t5 with same wav and spectral view except levels are higher on this one; this does not have the flaws present on that one; excellent sound [A]
-
-Disc 1:, 01. introduction, 02. Maggie's Farm, 03. The Times They Are A-Changin', 04. Lonesome Day Blues, 05. Mr. Tambourine Man, 06. It's Alright, Ma (I'm Only Bleeding), 07. Po' Boy, 08. Stuck Inside Of Mobile With The Memphis Blues Again, 09. Dignity, 10. Love Sick, 11. Tweedle Dee & Tweedle Dum, 12. Saving Grace, Disc 2:, 01. Honest With Me, 02. Ballad Of Hollis Brown, 03. Summer Days, (encore), 04. Like A Rolling Stone, 05. band introduction, 06. All Along The Watchtower
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

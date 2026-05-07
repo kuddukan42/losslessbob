@@ -1,9 +1,0 @@
-8fd60d4c5bbf3c23a97933a02d9f3c2d *bd_Soundcheck 18 July 1981/Track01.flac
-d6bd6723fe7148a147e22538aa042fe1 *bd_Soundcheck 18 July 1981/Track02.flac
-8781931eeff0a27501dac3a4b41bff20 *bd_Soundcheck 18 July 1981/Track03.flac
-70e5e98ad2907964e97a88e288d3d29e *bd_Soundcheck 18 July 1981/Track04.flac
-7579a21ff0f9100268c0ed3ae84753ab *bd_Soundcheck 18 July 1981/Track05.flac
-198b3fcf8bfc94807296c6dc8e60dc08 *bd_Soundcheck 18 July 1981/Track06.flac
-5b392a191a121b976893e85a903784ac *bd_Soundcheck 25 July 1981/Track07.flac
-b2df2c79a2e96a1a28a66a10870e09d0 *bd_Soundcheck 25 July 1981/Track08.flac
-2b62b58fe22e18c8d71f8c83c93477a2 *bd_Soundcheck 25 July 1981/Track09.flac

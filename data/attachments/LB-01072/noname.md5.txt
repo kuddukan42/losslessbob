@@ -1,7 +1,0 @@
-e031ac5e2f0ba138f0d60fa88e9deee2 *1978-10-28_soundcheck_01.shn
-1afb39de354d841cf26706e4aa7242eb *1978-10-28_soundcheck_02.shn
-a0e7e4a7335c9a5c5f11cf386e723fb9 *1978-10-28_soundcheck_03.shn
-99efe2520adab38c184b66004a78a7c9 *1978-10-28_soundcheck_04.shn
-c1326bf58d396d25df136b4007bdba01 *1978-10-28_soundcheck_05.shn
-48c992415e0cf85bf0f8beb8da6c96a1 *1978-10-28_soundcheck_06.shn
-3c93c3a3b6ce13dc6cd4d1328958a499 *1978-10-28_soundcheck_07.shn

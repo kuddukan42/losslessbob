@@ -1,8 +1,0 @@
-Bob Dylan, 4/22/80, Montreal, Quebec, Canada, Le Theatre Saint-Denis, 1CDR
-
-LB-5061, (68min), version "a"; Soundcheck, This is the raw source for LB-3030:, http://jokerman.org.uk/lb/detail/LB-03030.html, According to Olof and Krogsgaard 'Ain't Gonna Go To Hell For Anybody" was soundchecked only twice that year- precisely on the 22 April. The two versions are clearly from same time/venue. There is a possible edit or dropout on the second take (t24 at :45 sec).; bittorrent download 06/07; left channel has asymetric wavs for t1-t22 limited to -12db while bottom is free; t22-23 are of worse quality; same recording as LB-3030 with lower levels; as indicated in its info file, that one just uses the right channel; (did not listen to all of this)
-
-01. Unidentified Song, 02.I Will Love Him, 03.I Will Love Him, 04.Unidentified Song, 05.I Will Sing, I Will Sing (Max Dyer), 06.I Will Sing, I Will Sing (Max Dyer), 07.I Will Love Him, 08.I Will Love Him, 09.I Will Love Him, 10.I Will Love Him, 11.I will Love him, 12.They Talk About Me (?), 13.They Talk About Me (?), 14.Unidentified Song, 15.Ain't Gonna Go To Hell For Anybody, 16.Cover Down, Break Through, 17.Cover Down, Break Through, 18.Cover Down, Break Through, 19.Slow Train, 20.unidentified song, 21.Gotta Serve Somebody, 22.Gotta Serve Somebody, 23.Ain't Gonna Go To Hell For Anybody, 24.Ain't Gonna Go To Hell For Anybody
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

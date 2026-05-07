@@ -1,7 +1,0 @@
-1b56217e64dd019bbc6df04b415aa1c8 *bd1978-07-08t01.sndchk.flac
-6cdb9cb6655b1429c19455eebca5bbe7 *bd1978-07-08t02.sndchk.flac
-90f26df5b9e071e267592b0e2c6ba7f4 *bd1978-07-08t03.sndchk.flac
-56df1c1f160842bb1c4804e33f611815 *bd1978-07-08t04.sndchk.flac
-2cd9d2aa51d0c1ce4a998ebceaf42daa *bd1978-07-08t05.sndchk.flac
-f1c604a8f555c6494d4710cd3b1c2ad7 *bd1978-07-08t06.sndchk.flac
-a1a3b71c5869ce1ffe9d2a03314df7e8 *bd1978-07-08t07.sndchk.flac

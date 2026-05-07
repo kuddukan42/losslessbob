@@ -1,8 +1,0 @@
-Bob Dylan, 7/10/87, Philadelphia PA, JFK Stadium, 1CDR
-
-LB-5380, (78min), aud; carpenter; (cdr3 of grateful dead set); AUD: Nakamichi CM-700's > patched from one Sony D5 > Sony TC-D5M >, Maxell MX-90's (no Dolby), set up FOB. Taped by Ted Carpenter., Transfer: MAC > Nakamichi BX-125 (no Dolby) > Audiophile 2496 >, Soundforge > CD-Wave > TLH > FLAC. Transferred by Andrew F., Notes:, - Levels go up gradually in Iko., - ShnID-3859 patch in Minglewood (crowd noise only) 7:25 > 7:32., - ShnID-3859 patch Cassidy (crowd noise) 7:14 > China Cat 0:28., - Terrapin cuts in on first notes., - ShnID-3859 patch OMSN 0:00 > 0:03 (but some is still missing)., - Stuck Inside Mobile cuts in on first notes., - Various mic-bumps thru-out the show, none major., - Break between Cassidy and China Cat is seamless., - Soundforge used to make fades, adjust levels, add patches., - TLH used for SBE-OK, FLAC compression, and checksums; bittorrent download 09/07; in comparison to senn LB-1296 this has less hiss and warmer sound and makes that one sound tinny; excellent sound [A-]
-
-Disc Three (77:21), 01 Tangled Up in Blue, 02 I'll Be Your Baby Tonight, 03 Man of Peace, 04 The Ballad of Frankie Lee and Judas Priest, 05 John Brown, 06 Simple Twist of Fate, 07 Ballad of a Thin Man, 08 //Stuck Inside of Mobile with the Memphis Blues Again, 09 Chimes of Freedom, 10 Queen Jane Approximately (falls apart after aprx 45 seconds), 11 Gotta Serve Somebody, 12 Joey, 13 All Along the Watchtower, -- encore --, 14 Touch of Grey
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

@@ -1,7 +1,0 @@
-Bob Dylan
-Tulsa
-2005-07-06
-
-Taper: M&A
-Source: Audio disks direct from taper > (feurio) wav > (flacfrontend) flac.
-Technical information: MBHO603> Lunatec V-3 > Sony D100.

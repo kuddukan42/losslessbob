@@ -1,8 +1,0 @@
-Bob Dylan, 11/10/99, New Haven, Connecticut, Veterans Memorial Coliseum, 2CDR
-
-LB-4770, (69min+28min), version "c"; AUD DAT Master [unknown equipment] > DAT clone(s) > WAV > Soundforge 6.0 > CD Wave > FLAC, I did not harm the sound of the recording in any way., This is the same recording as LB-2438 and LB-3126 but is a new transfer from my DAT clone.; bittorrent download 04/07; excellent sound [A]; this has similar wav and spectral view to LB-2438
-
-CD 1 [69:00.23], 01 I Am The Man, Thomas [02:51.49], 02 My Back Pages [07:07.54], 03 John Brown [06:36.25], 04 Tangled Up In Blue [09:47.68], 05 One Too Many Mornings [05:58.37], 06 Folsom Prison Blues [04:23.70], 07 'Til I Fell In Love With You [06:18.50], 08 Positively 4th Street [07:31.31], 09 Most Likely You Go Your Way (And I'll Go Mine) [06:56.09], 10 I And I [05:04.33], 11 Leopard-Skin Pill-Box Hat [06:23.47], CD 2 [27:16.64], 01 Love Sick [06:10.23], 02 It Ain't Me, Babe [10:15.54], 03 West L.A. Fadeaway [06:29.00], 04 Not Fade Away [04:21.62]
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

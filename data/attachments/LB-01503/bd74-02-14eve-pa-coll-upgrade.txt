@@ -1,9 +1,0 @@
-Bob Dylan, 2/14/74, The Forum, Inglewood, CA, 2CDR
-
-(68min+71min), & The Band, evening, The 1974 PA Tape Collection upgrade, (compiled by Les Kokay), Source/lineage information: mix of PA and audience recordings, best known sources, Lossless transmission from compiler; received as SHN files, There were sector boundary errors on disc 1, which I, fixed with shntool. The SHN files included here are the, fixed files; the MD5 file corresponds to these files, so it is not the same as the original MD5.; excellent sound
-
-see tracklist for flaws
-
-Disc 1, audience recordings except as noted, Dylan & The Band, 1. Most Likely You Go Your Way And I'll Go Mine, PA recording, 2. Lay, Lady, Lay, 3. Just Like Tom Thumb's Blues, 4. Rainy Day Women #12 & 35, 5. It Ain't Me, Babe, PA recording, 6. Ballad Of A Thin Man, The Band, these are PA recordings, 7. Stage Fright, 8. The Night They Drove Old Dixie Down, 9. King Harvest (Has Surely Come), 10. When You Awake, 11. Up On Cripple Creek, Dylan & The Band, 12. All Along The Watchtower, 13. Ballad Of Hollis Brown, 14. Mr. Tambourine Man, 15. Knockin' On Heaven's Door, 
-
-Disc 2, PA recordings except as noted, Dylan solo, 1. She Belongs To Me, audience recording, 2. The Times They Are A-Changin', audience recording, 3. Just Like A Woman, 4. Gates Of Eden, audience recording, 5. Don't Think Twice, It's All Right, 6. It's Alright, Ma (I'm Only Bleeding), The Band, 7. Rag Mama Rag, tape flaw/skip at 2:18, 8. Endless Highway, 9. The Shape I'm In, 10. The Weight, Dylan & The Band, 11. Forever Young, 12. Highway 61 Revisited, 13. Like A Rolling Stone, 14. Maggie's Farm, 15. Blowin' In The Wind, starts with Dylan introducing Bill Graham

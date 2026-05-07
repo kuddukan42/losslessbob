@@ -1,8 +1,0 @@
-Bob Dylan, 5/13/98, Vancouver, British Columbia, 2CDR
-
-LB-7081, (47min+47min), version "a"; aud>?>cdr (x)>flac, md5 checked with TLH., LB-889 has same disc-splice but different track- and disc lengths.; bittorrent download 12/08; same recording as LB-889 based on same clapping wavs at beginning of d1t1; similar wav and spectral view and sound except levels are higher on this one and that one fades in on crowd on d1t1 where this one does not; that has crowd cut out at end of d2t3, beginning of d2t5 and probably more to account for time difference; (did not listen to all of this)
-
-disc 1:, 01 Not Fade Away, 02 Tonight I'll Be Staying Here With You, 03 Cold Irons Bound, 04 Make You Feel My Love, 05 Silvio, 06 Stone Walls And Steel Bars, 07 It's All Over Now, Baby Blue 08 Tangled Up In Blue, (46:57.36), disc 2:, 01 Million Miles, 02 I'm Not Supposed To Care, 03 Highway 61 Revisited, 04 'Til I Fell In Love With You, 05 It Ain't Me, Babe, 06 Love Sick, 07 Rainy Day Women #12 & 35, (46:25.60)
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

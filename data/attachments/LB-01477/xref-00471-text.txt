@@ -1,39 +1,0 @@
-===================
-===================
-===================
-=== 2000-05-30 Florence TUIT.txt
-===================
-===================
-===================
-Bob DylanMay 30, 2000PalasportFlorence, ItalySchubert-recorded-ASM, from trade HD (thanks to Taper and Trader)101 Announcement.flac102 Duncan And Brady.flac103 The Times They Are A-Changin'.flac104 Visions Of Johanna.flac105 To Ramona.flac106 Tangled Up In Blue.flac107 It's All Over Now, Baby Blue.flac108 Country Pie.flac109 It Takes A Lot To Laugh, It Takes A Train To Cry.flac110 Stuck Inside Of Mobile With The Memphis Blues Again .flac111 Simple Twist Of Fate.flac
-201 Drifter's Escape.flac202 Highway 61 Revisited .flac203 Love Sick.flac204 Like A Rolling Stone.flac205 It Ain't Me, Babe.flac206 Maggie's Farm.flac207 Don't Think Twice, It's All Right.flac208 Rainy Day Women #12 & #35.flac209 Blowin' In The Wind.flacUploaded here on TUIT by gr, May 14th, 2009.
-===================
-===================
-===================
-=== BD 2000-05-30 Florence.md5
-===================
-===================
-===================
-42e60519aabedbd9c6b0f0c04bec2bec *101 Announcement.flac
-a6f16ad90f5988b419cf0826be1f5a9c *102 Duncan And Brady.flac
-d945b5e0be66416ee54d6371f5ef1f14 *103 The Times They Are A-Changin'.flac
-d667fa410470a3a4321efd586743e7bf *104 Visions Of Johanna.flac
-50f30c3bbc21889f8f7c3f07325c908d *105 To Ramona.flac
-6a0494bd8d92dec68d94e45a080a6288 *106 Tangled Up In Blue.flac
-d0fa2b20633915ce96a2f246ee6cc997 *107 It's All Over Now, Baby Blue.flac
-ad1928eb72d5225e0a71285fee2e74cc *108 Country Pie.flac
-76e8849fba1e695d2dec22871209dd18 *109 It Takes A Lot To Laugh, It Takes A Train To Cry.flac
-a1e34c66f9b1ba1792d8a936c9c7fac6 *110 Stuck Inside Of Mobile With The Memphis Blues Again .flac
-78bc585de6998ac1409fda758c04b34b *111 Simple Twist Of Fate.flac
-10bf89e031333b213ff96bd6fcab7e4b *201 Drifter's Escape.flac
-7676e586ab2d54161e6928d97a11ab54 *202 Highway 61 Revisited .flac
-6961dc8acb8db5169bb7295dda44f697 *203 Love Sick.flac
-c54f6424c49fd06d18f0968f380921ed *204 Like A Rolling Stone.flac
-0046506920f6f1b65b79363961bda688 *205 It Ain't Me, Babe.flac
-30fe74da3e1b848e7dd4290ba5ebb7ad *206 Maggie's Farm.flac
-0b2033872fd84a8a614dc7bd734281b5 *207 Don't Think Twice, It's All Right.flac
-481920b7cf22844a1d0dc2ce752a2793 *208 Rainy Day Women #12 & #35.flac
-3adcbbb73708125731cec8150bd91c29 *209 Blowin' In The Wind.flac
-===================
-===================
-===================

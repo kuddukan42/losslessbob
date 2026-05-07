@@ -1,7 +1,0 @@
-fdc272c5402455b74cf03a65c49abb44 *dallas_03-04-18_cd2_Track 01.shn
-64fcf75652c8b26a13f00e65137b6a38 *dallas_03-04-18_cd2_Track 02.shn
-66b54bd8bc5cd090a32e03b79c3db6ed *dallas_03-04-18_cd2_Track 03.shn
-707fbaa1a02a1423194f3ee82bda99ae *dallas_03-04-18_cd2_Track 04.shn
-b8ce0e4a2f13073b36c0c14d090c695a *dallas_03-04-18_cd2_Track 05.shn
-da7a5ebd7ec55dd000deb705887d565c *dallas_03-04-18_cd2_Track 06.shn
-56590923a1d1915108bbccb860ff2b74 *dallas_03-04-18_cd2_Track 07.shn

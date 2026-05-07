@@ -1,8 +1,0 @@
-4ebb3c58ce11d513b7eedec234d31b81 *bd_03-07-13_cd2_Track1.shn
-ef7a5f237d94244a5a0419e65bfb8b27 *bd_03-07-13_cd2_Track2.shn
-ecfe8436ad2dcd5f1796d947267d1ce8 *bd_03-07-13_cd2_Track3.shn
-6ef7e489a7732510013b2a6ae09103f0 *bd_03-07-13_cd2_Track4.shn
-e7bef5e593e2e39aa010d6263391e8cc *bd_03-07-13_cd2_Track5.shn
-8011eaf56ae28bcf0be0fdc865c3a175 *bd_03-07-13_cd2_Track6.shn
-ab9ecdf75dd70b448024cbe752a99e45 *bd_03-07-13_cd2_Track7.shn
-d4c59a9c658240469a9b34aeb5c06768 *bd_03-07-13_cd2_Track8.shn

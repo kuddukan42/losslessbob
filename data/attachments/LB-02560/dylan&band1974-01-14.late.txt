@@ -1,35 +1,0 @@
-Bob Dylan/The Band (late show)01-14-74Boston Garden, Boston, MASource: AUD > MC (Joe Maloney [maloneyjoe68_at_aol_dot_com) > 
-        shn by Jamie Salerno  [jjs4_at_cwru_dot_edu]    Disc I Set 1 [1:01:00] 1. You Go Your Way, I'll Go Mine  2. Lay Lady Lay  3. Just Like Tom Thumb's Blues  4. Rainy Day Woman #12 & 35  5. It Ain't Me, Babe
- 6. Ballad Of A Thin Man
- 7. Stage Fright
- 8. The Night They Drove Old Dixie Down
- 9. King Harvest
-10. This Wheel's On Fire
-11. I Shall Be Released
-12. Up On Cripple Creek
-13  All Along The Watchtower
-14. The Ballad Of Hollis Brown
-15. Knockin' On Heaven's Door
-
-    Disc II Set 2 [58:08]
- 1. Blowin' In The Wind
- 2. Don't Think Twice, It's Alright
- 3. Gates Of Eden
- 4. Love Minus Zero/No Limit
- 5. It's Alright Ma, (I'm Only Bleeding)
- 6. Rag, Momma, Rag
- 7. When You Awake
- 8. The Shape 'm In
- 9. The Weight
-10. Forever Young
-11. Something There Is About You
-12. Like A Rolling Stone
-
-   Encore
-
-13. Most Likely, You Go Your Way (And I'll Go Mine)
-
-
-Also included are Toast/Jam printouts for the CDs (so you can use the "Audio starts in Pause" timings to have a track end when the music stops and the subsequent track start when the music begins).
-
-Notes:Recorded on a Sony TC-110A, using the built-in microphone (see http://www.sciencetech.technomuses.ca/english/collection/cassette_rec.cfm).  Original cassettes were transferred to a Mac DAW using a Denon DR-M10HR. The analog signal was first run through: a) a SAE 2800 parametric equalizer to bump the highs slightly and to remove "room boom" at around 80 MHz; & b) a Phase Linear Autocorrelator to remove hiss & expand the signal (the TC-110A did not have controls for recording; the recorder, designed for dictation, compressed the signal and recorded at a fixed level). Transferred to the Mac using a MOTU 896.  Bias Deck used to splice tape flips & even out volume levels.  Bias Peak used to transfer SDII files to WAV files for shn compression.  Shntool used to fix SBEsThis recording is one of literally dozens of concerts recorded by Joe Maloney in the late '60s - late '70s to be released to the live recording community.  The bulk of the concerts recorded were in the Boston area, with some in Maine venues.

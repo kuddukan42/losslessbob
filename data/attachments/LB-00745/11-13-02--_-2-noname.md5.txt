@@ -1,9 +1,0 @@
-ec4a2373de498c28b010d708212bd6b1 *Bob Dylan04.shn
-6d20d4945069dc2cf3c3e0c8bd30dc72 *Bob Dylan05.shn
-d704487035a778eaffbfb6a847ff3348 *Bob Dylan01.shn
-57274966a76727d5b14500053d5693e2 *Bob Dylan02.shn
-2d96e1554080338d1d7d1dc8853a8b23 *Bob Dylan08.shn
-9b57f04a0cb01948973804a35ff0307e *Bob Dylan09.shn
-d77b65d88303f50a30ebf3e7ca9fa92f *Bob Dylan06.shn
-22a5db58c76d7b30975428e52b620c43 *Bob Dylan03.shn
-979a94c3a44badd1eec96c9a3cbccc77 *Bob Dylan07.shn

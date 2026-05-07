@@ -1,97 +1,0 @@
-===================
-===================
-===================
-=== bd19920328mk.md5
-===================
-===================
-===================
-0f246f8c0fd25cc23a34aa047f6ddfa5 *bd19920328mk_back.jpg
-90843f96544508dbfeb081497ac51761 *bd19920328mk_freq.JPG
-382e3fbf98b102e0ead1da49f95f50cb *bd19920328mk_front.jpg
-f527107ccebe2fff92684e1c23b08365 *bd19920328mk_info.txt
-0aac8e3d55d391e444284c1394f602d7 *Disc 1\01 All Along The Watchtower.flac
-5f2ca200ce4159c2b46358ca35417c0b *Disc 1\02 Most Of The Time.flac
-f0ac6898fd7095d961871b11da12587b *Disc 1\03 Everything Is Broken.flac
-e5c6ceb086c6775f51ba79ba0022e78d *Disc 1\04 Just Like A Woman.flac
-194e45618d7e3542a8409b85bb308b5a *Disc 1\05 Tangled Up In Blue.flac
-f23d5b84c249981cfbe2ba9abc4e1b29 *Disc 1\06 She Belongs To Me.flac
-9cced42108404a82b26b2a27599bdb5f *Disc 1\07 Maggie's Farm.flac
-e3cac435d3123824a4d184b57ec343b2 *Disc 1\08 Love Minus Zero - No Limit.flac
-c0dada0c9fb21c1193b69678612e06e9 *Disc 1\09 Little Moses.flac
-8d467c5d45e7a8fe4517631e024604f7 *Disc 1\10 Two Soldiers.flac
-ae95ed29e4ec98598c2ed51d4ed80a28 *Disc 2\1 The Lonesome Death Of Hattie Carroll.flac
-85fd9e721a598c3abde4fb61f38f138e *Disc 2\2 Cat's In The Well.flac
-f7026b216c5bca0bdacd17319efbec40 *Disc 2\3 Simple Twist Of Fate.flac
-84c35b999adeaaa215317c9a90862a57 *Disc 2\4 The Times They Are A-Changin'.flac
-67b1712de75fcfd7b2631801766c45a4 *Disc 2\5 Highway 61 Revisited.flac
-46d8e1d36ca1364110154f1a23dbb700 *Disc 2\6 Ballad Of A Thin Man.flac
-ea1f48dccd190f3cb6d18f868392c5a8 *Disc 2\7 Rainy Day Women # 12 & 35.flac
-58d1b7c79e6f9f404114a4ca70170a26 *Disc 2\8 Blowin' In The Wind.flac
-1e8c4a9c3a3dccfdfbaab00a4413deaf *Thumbs.db
-===================
-===================
-===================
-=== bd19920328mk_info.txt
-===================
-===================
-===================
-Bob Dylan
-March 28, 1992 - Brisbane, Australia
-
-Disc 1
-1. All Along The Watchtower
-2. Most Of The Time
-3. Everything Is Broken
-4. Just Like A Woman
-5. Tangled Up In Blue
-6. She Belongs To Me
-7. Maggie's Farm
-8. Love Minus Zero / No Limit @
-9. Little Moses @
-10. Two Soldiers @
-
-Disc 2
-01. The Lonesome Death Of Hattie Carroll @
-02. Cat's In The Well
-03. Simple Twist Of Fate
-04. The Times They Are A-Changin' @
-05. Highway 61 Revisited
-06. Ballad Of A Thin Man
-07. Rainy Day Women # 12 & 35
-08. Blowin' In The Wind @
-
-From MK master tape
-
-Disc 1
-01 All Along The Watchtower.flac:2422a2c137f69fc2bc667bc8561f4dc7
-02 Most Of The Time.flac:0c4f7d49979cbc78e3afcfcd272d0ae0
-03 Everything Is Broken.flac:d27945c3796f83111a6e34ae7f10f8f4
-04 Just Like A Woman.flac:6c7927970de0d31884e73f7f26b40b5b
-05 Tangled Up In Blue.flac:82a58cfd3261c80d7dc25c949a2f108f
-06 She Belongs To Me.flac:11b2a066112c7290036e5246b0833056
-07 Maggie's Farm.flac:08902dd1b60d42391d6c7b33072c2be0
-08 Love Minus Zero - No Limit.flac:59f12bc21d9232b6291d7bfdba253597
-09 Little Moses.flac:f8308bb82d670d2ccf09c092d43ec392
-10 Two Soldiers.flac:27ec1c03ab84c788feedcdd6915c1e9c
-
-
-Disc 2
-1 The Lonesome Death Of Hattie Carroll.flac:985560612fecca188bc24eab378f795f
-2 Cat's In The Well.flac:2a22dd61207556fe98417489fd8ec9be
-3 Simple Twist Of Fate.flac:7386b94e324c6d22906f64b4ff292a97
-4 The Times They Are A-Changin'.flac:1c74405bb5666f9a9b44e352b38bd2b9
-5 Highway 61 Revisited.flac:2c3cca60f0812f7d4e75e1b9e44fb2ca
-6 Ballad Of A Thin Man.flac:2b6aebf9d9965c45a599979648fadd47
-7 Rainy Day Women # 12 & 35.flac:9e5c3a7efab67115d955e991466cf444
-8 Blowin' In The Wind.flac:8fd5f95d549eb2e83e6bd6b8a319dd69
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-01 All Along The Watchtower.flac:2422a2c137f69fc2bc667bc8561f4dc702 Most Of The Time.flac:0c4f7d49979cbc78e3afcfcd272d0ae003 Everything Is Broken.flac:d27945c3796f83111a6e34ae7f10f8f404 Just Like A Woman.flac:6c7927970de0d31884e73f7f26b40b5b05 Tangled Up In Blue.flac:82a58cfd3261c80d7dc25c949a2f108f06 She Belongs To Me.flac:11b2a066112c7290036e5246b083305607 Maggie's Farm.flac:08902dd1b60d42391d6c7b33072c2be008 Love Minus Zero - No Limit.flac:59f12bc21d9232b6291d7bfdba25359709 Little Moses.flac:f8308bb82d670d2ccf09c092d43ec39210 Two Soldiers.flac:27ec1c03ab84c788feedcdd6915c1e9c1 The Lonesome Death Of Hattie Carroll.flac:985560612fecca188bc24eab378f795f2 Cat's In The Well.flac:2a22dd61207556fe98417489fd8ec9be3 Simple Twist Of Fate.flac:7386b94e324c6d22906f64b4ff292a974 The Times They Are A-Changin'.flac:1c74405bb5666f9a9b44e352b38bd2b95 Highway 61 Revisited.flac:2c3cca60f0812f7d4e75e1b9e44fb2ca6 Ballad Of A Thin Man.flac:2b6aebf9d9965c45a599979648fadd477 Rainy Day Women # 12 & 35.flac:9e5c3a7efab67115d955e991466cf4448 Blowin' In The Wind.flac:8fd5f95d549eb2e83e6bd6b8a319dd69
-===================
-===================
-===================

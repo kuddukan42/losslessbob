@@ -1,95 +1,0 @@
-===================
-===================
-===================
-=== 1992_04_03_Melbourne-MK.md5
-===================
-===================
-===================
-14f32fee4b8cf41c8cec4ae6a4d8cd67 *1992_04_03_Melbourne_back.jpg
-ff5456b99122111b9e64c67ca181fa5b *1992_04_03_Melbourne_freq.JPG
-f4095b061252567d5560417bb11e8b2a *1992_04_03_Melbourne_front.jpg
-88e192903589bf10d643699ff4e84e3a *1992_04_03_Melbourne_info.txt
-758a9aa1bf51cb1c9463397ed3dba2b4 *Disc 1\01 All Along The Watchtower.flac
-7a65d5fbb4fd44d991dbc39638cab3ae *Disc 1\02 Most Of The Time.flac
-5901c67f4844b80acace207037bac5ba *Disc 1\03 I Don't Believe You.flac
-6b6aa5d3e73e85a93f4c50f1b76aae0d *Disc 1\04 Just Like A Woman.flac
-6915cba3e282b956b213c92b49a1aae1 *Disc 1\05 Tangled Up In Blue.flac
-07751c3d7606f6ea39091801ad5f33e9 *Disc 1\06 She Belongs To Me.flac
-2f96f76adaf431316e4753a60aedb268 *Disc 1\07 I'll Be Your Baby Tonight.flac
-8f3d0f9d6b3b00fd9eae6e7338f010f0 *Disc 1\08 Love Minus Zero - No Limit.flac
-fa55f2a25be8baec693567c409555b81 *Disc 1\09 Little Moses.flac
-f880ae24f9ae8ec497aadc0d4f4a3216 *Disc 1\10 Female Rambling Sailor.flac
-4e24b494a84e3e3bcefab241b33de072 *Disc 2\1 Mr. Tambourine Man.flac
-0c44e900ff7cd38e78e251cdd639a352 *Disc 2\2 Cat's In The Well.flac
-c07a88914582f1260a7040618491aeab *Disc 2\3 Idiot Wind.flac
-c85b03fa44be75100280a722cd2b2775 *Disc 2\4 The Times They Are A-Changin'.flac
-6549fe4796de6754bc77a9839019c5ef *Disc 2\5 Highway 61 Revisited.flac
-da66fd1cbeecac240591fcd5de8caf63 *Disc 2\6 Absolutely Sweet Marie.flac
-fc4a392b6bae4e3cec60ebc74b2180f7 *Disc 2\7 Watching The River Flow.flac
-a7a36c396e08a781bd4af96ce0605233 *Disc 2\8 Blowin' In The Wind.flac
-===================
-===================
-===================
-=== 1992_04_03_Melbourne_info.txt
-===================
-===================
-===================
-Bob Dylan
-April 3, 1992 - Melbourne, Australia
-
-Disc 1
-1. All Along The Watchtower
-2. Most Of The Time
-3. I Don't Believe You
-4. Just Like A Woman
-5. Tangled Up In Blue
-6. She Belongs To Me
-7. I'll Be Your Baby Tonight
-8. Love Minus Zero / No Limit @
-9. Little Moses @
-10. Female Rambling Sailor @
-
-Disc 2
-1. Mr. Tambourine Man @
-2. Cat's In The Well
-3. Idiot Wind
-4. The Times They Are A-Changin'@
-5. Highway 61 Revisited
-6. Absolutely Sweet Marie
-7. Watching The River Flow
-8. Blowin' In The Wind @
-
-From MK master tape
-
-Disc 1
-01 All Along The Watchtower.flac:e8b76aaf5ee86ef1cc6057bb0c8084b1
-02 Most Of The Time.flac:0cdfa81af930f5d9c2c13881c93d4a09
-03 I Don't Believe You.flac:e7ff095480c6d514b2e7c3f30a28bb30
-04 Just Like A Woman.flac:6975d35582043506f056917ded18dc46
-05 Tangled Up In Blue.flac:00f9ace2bc586811c97d3b5dbbcc718a
-06 She Belongs To Me.flac:b816300d6dad7a1c6d15d294f5df4e6d
-07 I'll Be Your Baby Tonight.flac:9e1fe3ed921b57807a3c7cb3c94fc333
-08 Love Minus Zero - No Limit.flac:1e0f2c6562636b247cb2cb7da51233f2
-09 Little Moses.flac:40e862877794e69ebee2ec4559cd3e5b
-10 Female Rambling Sailor.flac:e3fc7de5c0a3317a08ff57594dfb240c
-
-Disc 2
-1 Mr. Tambourine Man.flac:7de093585e7ae89f965d9199856c7dd9
-2 Cat's In The Well.flac:ca0f8f15fbb7a19722aba434c9a05f1e
-3 Idiot Wind.flac:b0545d6e43a7519d61c504114205f84a
-4 The Times They Are A-Changin'.flac:c533d289cdc2755f46290042d999579a
-5 Highway 61 Revisited.flac:4deeb01a6157ca887d11af4ba316f5f9
-6 Absolutely Sweet Marie.flac:06f5ba0bf4c039024cd8a8294036a441
-7 Watching The River Flow.flac:53c074ba24dccc35dc9b696d6382beae
-8 Blowin' In The Wind.flac:ad610adae16048e2569f1d9638d90c3d
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-01 All Along The Watchtower.flac:e8b76aaf5ee86ef1cc6057bb0c8084b102 Most Of The Time.flac:0cdfa81af930f5d9c2c13881c93d4a0903 I Don't Believe You.flac:e7ff095480c6d514b2e7c3f30a28bb3004 Just Like A Woman.flac:6975d35582043506f056917ded18dc4605 Tangled Up In Blue.flac:00f9ace2bc586811c97d3b5dbbcc718a06 She Belongs To Me.flac:b816300d6dad7a1c6d15d294f5df4e6d07 I'll Be Your Baby Tonight.flac:9e1fe3ed921b57807a3c7cb3c94fc33308 Love Minus Zero - No Limit.flac:1e0f2c6562636b247cb2cb7da51233f209 Little Moses.flac:40e862877794e69ebee2ec4559cd3e5b10 Female Rambling Sailor.flac:e3fc7de5c0a3317a08ff57594dfb240c1 Mr. Tambourine Man.flac:7de093585e7ae89f965d9199856c7dd92 Cat's In The Well.flac:ca0f8f15fbb7a19722aba434c9a05f1e3 Idiot Wind.flac:b0545d6e43a7519d61c504114205f84a4 The Times They Are A-Changin'.flac:c533d289cdc2755f46290042d999579a5 Highway 61 Revisited.flac:4deeb01a6157ca887d11af4ba316f5f96 Absolutely Sweet Marie.flac:06f5ba0bf4c039024cd8a8294036a4417 Watching The River Flow.flac:53c074ba24dccc35dc9b696d6382beae8 Blowin' In The Wind.flac:ad610adae16048e2569f1d9638d90c3d
-===================
-===================
-===================

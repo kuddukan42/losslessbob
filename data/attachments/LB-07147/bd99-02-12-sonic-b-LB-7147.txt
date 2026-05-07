@@ -1,8 +1,0 @@
-Bob Dylan, 2/12/99, Carbondale, Il, 2CDR
-
-LB-7147, (61min+45min), version "b"; Source: Sonic Studio Mics PA-6 > Sony D8, Transfer: DAT > Sony Standalone CD Burner > FreeRIP (FLAC) > Bulk Rename Utility (Track ID) > Trader's Little Helper (FFP) > Torrent; bittorrent download 01/09; this is a close eac match on d1t1 to LB-4695; (did not listen to all of this)
-
-Disc One, 01 Gotta Serve Somebody, 02 Million Miles, 03 Maggie's Farm, 04 Shelter From The Storm, 05 Cold Irons Bound, 06 Silvio, 07 Rank Strangers To Me (acoustic), 08 It's All Over Now, Baby Blue (acoustic), 09 Tangled Up In Blue (acoustic), 10 My Back Pages (acoustic) (with harp), Disc Two, 01 'Til I Fell In Love With You, 02 Positively 4th Street, 03 Highway 61 Revisited, (encore), 04 Love Sick, 05 Leopard-Skin Pill-Box Hat, 06 Blowin' In The Wind (acoustic), 07 Not Fade Away
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

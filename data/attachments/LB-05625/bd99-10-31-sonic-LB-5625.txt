@@ -1,8 +1,0 @@
-Bob Dylan, 10/31/99, Chicago, Illinois, Conference Center Pavilion, University Of Illinois, 2CDR
-
-LB-5625, (67min+29min), AUD DAT Master [Sonic Studios 6P] > DAT clone(s) > CD > EAC > WAV > Soundforge 6.0 > FLAC, I did not harm the sound of the recording in any way, This is the not same recording as LB-1316. Yet another incomplete master exists with, d1t01 and d1t02 from this recording usually patched in., There is also a heavily remastered version of this master in circulation, Please retain this info file as a marker for this lossless set, and if you spread it please list it in the description to avoid others getting duplicates;; this recording used to patch LB-4742 on d1t1 and d1t2  based on similar wav and spectral view except this has lower levels; otherwise different recording than LB-1316 and LB-4742 based on different crowd at end of d1t4; LB-1316 is the warmest sound, then this, and then LB-4742 but LB-1316 is also more muffled; excellent sound [A]
-
-CD 1 [66:09.14], 01 I Am The Man, Thomas [02:41.57], 02 Mr. Tambourine Man [05:54.03], 03 It's Alright, Ma (I'm Only Bleeding) [07:26.52], 04 Love Minus Zero / No Limit [06:19.62], 05 Tangled Up In Blue [07:57.08], 06 All Along The Watchtower [03:59.07], 07 Simple Twist Of Fate [08:33.67], 08 Stuck Inside Of Mobile With The Memphis Blues Again [07:19.61], 09 Not Dark Yet [06:49.22], 10 Highway 61 Revisited [09:07.50], CD 2 [28:04.03], 01 Love Sick [06:16.22], 02 Like A Rolling Stone [08:16.63], 03 Don't Think Twice, It's All Right [07:31.05], 04 Not Fade Away [06:00.15]
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

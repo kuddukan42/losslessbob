@@ -1,6 +1,0 @@
-dd07c063b210c5aa31d723e5c6b92efb *Track 01.shn
-cd77e80d57180517712951e353854b86 *Track 02.shn
-dd283fe637c66ad723dbc7ab09eabb91 *Track 03.shn
-ebdc420b4799b3099d2644bdd284cfda *Track 04.shn
-1255ccfa9b05d4dc6a37422a10edd50b *Track 05.shn
-a4cc9f6000cd378c43f2a707f6653d88 *Track 06.shn

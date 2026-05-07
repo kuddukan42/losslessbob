@@ -1,4 +1,0 @@
-46b3d309036d20febce08944412168a8 *bd_04-02-28_D_cd2_Track 01.shn
-9b0fa86045d8d10128928aad7a62fc3d *bd_04-02-28_D_cd2_Track 02.shn
-2b927264a27bda2c0341765d523666a5 *bd_04-02-28_D_cd2_Track 03.shn
-3b622eb62e92ee20c9e59fd41b65c2ed *bd_04-02-28_D_cd2_Track 04.shn

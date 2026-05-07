@@ -1,8 +1,0 @@
-Bob Dylan, 9/23/98, Portland, Oregon, 2CDR
-
-LB-5916, version"a"; Source/Lineage: audiodiscs(taper+lineage unknown)>dat>hd>soundforge>cdwave>flac, This version is without the flaws being reported for LB-0938.; bittorrent download 03/08; same recording as LB-938 based on same wav and spectral view on d1t3 except levels lower on this one and this does not have the flaws on d1t3 on that one; (did not listen to all of this)
-
-disc1:, 01. Maggie's Farm, 02. I Want You, 03. Can't Wait, 04. Under The Red Sky, 05. Silvio (Bob Dylan & Robert Hunter), 06. Stone Walls And Steel Bars (Ray Pennington / Ray Marcum), 07. Mr. Tambourine Man, 08. Tangled Up In Blue, 09. The Lonesome Death Of Hattie Carroll, 53:13,89, disc2:, 01. Make You Feel My Love, 02. 'Til I Fell In Love With You, 03. Love Sick, 04. Rainy Day Women # 12 & 35, 05. Blowin' In The Wind, 27:21,24
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

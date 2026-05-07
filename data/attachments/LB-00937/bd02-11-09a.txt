@@ -1,9 +1,0 @@
-Bob Dylan, 11/9/02, CoachUSA Center, Elmira, NY, 2CDR
-
-(57min+69min), alternate, upgrade over previous version; excellent sound; A little background talking on d2t8; Location: Left Stack @ ~35', Source: Shure SM84a's > Denecke AD-20 > Sharp MD-MT15 @ 44.1 kHz, Transfer: Sony MDS-E10 > M-Audio DiO 2496 > ASIO > n-track 3.1.9 > WAV @ 44.1 kHz, Conversion: WAV > CD Wave 1.73 > WAV > shntool 1.2.3 > WAV > mkw 0.97beta1 > SHN; downloaded from a.b.m.s 04/03
-
-Notes:, *Tape flip before "Drifter's Escape." There is a fade out/in at this point.; discontinuity noise d2t4 1:29-61
-
-Disc 1:, 01. Tweedle Dee & Tweedle Dum [05:11.28], 02. Carrying A Torch [05:24.71], 03. Tombstone Blues [06:58.10], 04. Watching The River Flow [05:22.15], 05. Things Have Changed [06:47.46], 06. Brown Sugar [04:15.69], 07. Positively 4th Street [07:21.05], 08. It's Alright, Ma (I'm Only Bleeding) [08:12.47], 09. Just Like A Woman [07:10.32], Total: [56:44.23], 
-
-Disc2:, 01. Drifter's Escape* [05:20.52], 02. Shelter From The Storm [05:55.44], 03. Old Man [04:12.64], 04. Honest With Me [06:47.23], 05. Don't Think Twice, It's All Right [06:56.22], 06. High Water [07:28.52], 07. Mutineer [03:34.01], 08. Floater (Too Much To Ask) [07:29.13], 09. Summer Days [08:12.23], 10. E: Knockin' On Heaven's Door [06:10.58], 11. E: All Along The Watchtower [06:16.35], Total: [68:24.12]

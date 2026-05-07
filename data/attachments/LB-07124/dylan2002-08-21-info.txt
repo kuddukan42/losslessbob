@@ -1,38 +1,0 @@
-Bob Dylan
-Wednesday, August 21, 2002Omaha, Nebraska
-Omaha Civic Auditorium
-
-Disc 1 (71:52.62)
-01. intro
-02. A Voice From On High (acoustic) (Larry on mandolin) 03. Se–or (Tales Of Yankee Power) (acoustic) (Larry on violin) 04. It's Alright, Ma (I'm Only Bleeding) (acoustic) (Charlie on dobro and Larry on cittern) 05. Girl Of The North Country (acoustic) 06. Solid Rock 07. Just Like A Woman (Bob on harp and Larry on pedal steel) 08. Lonesome Day Blues (Larry on slide guitar) 09. High Water (For Charley Patton) 10. Don't Think Twice, It's All Right (acoustic) 11. Masters Of War (acoustic) (Charlie on dobro) 12. One Too Many Mornings (acoustic)(Larry on pedal steel) 
-
-Disc 2 (59:13.09)
-13. Summer Days (Tony on standup bass)14. Standing In The Doorway 15. Cold Irons Bound 16. Rainy Day Women #12 & 35 (Larry on steel guitar) (encore) 17. Like A Rolling Stone 18. Knockin' On Heaven's Door (acoustic) (Charlie on electric guitar) 19. All Along The Watchtower 
-recorded direct to DAT @48 kHz original sampling rate, from 14th row DFC
-transferred digitally, sample rate converted to 44.1 kHz in Protools 4.1.1
-
-SHNTOOL:
-    length     expanded size    cdr  WAVE problems  fmt   ratio  filename     1:33.39       16496972 B   ---   --   ---xx  dylan2002-08-21d1t01.flac     4:25.10       46769564 B   ---   --   ---xx  dylan2002-08-21d1t02.flac     4:55.51       52157996 B   ---   --   ---xx  dylan2002-08-21d1t03.flac     6:45.51       71561996 B   ---   --   ---xx  dylan2002-08-21d1t04.flac     7:02.36       74525516 B   ---   --   ---xx  dylan2002-08-21d1t05.flac     4:23.72       46562588 B   ---   --   ---xx  dylan2002-08-21d1t06.flac     8:23.08       88748060 B   ---   --   ---xx  dylan2002-08-21d1t07.flac     7:51.41       83180876 B   ---   --   ---xx  dylan2002-08-21d1t08.flac     7:29.08       79222460 B   ---   --   ---xx  dylan2002-08-21d1t09.flac     7:03.59       74756012 B   ---   --   ---xx  dylan2002-08-21d1t10.flac     4:58.26       52628396 B   ---   --   ---xx  dylan2002-08-21d1t11.flac     7:00.36       74172716 B   ---   --   ---xx  dylan2002-08-21d1t12.flac     7:20.05       77627804 B   ---   --   ---xx  dylan2002-08-21d2t01.flac     8:42.05       92092604 B   ---   --   ---xx  dylan2002-08-21d2t02.flac     6:02.18       63899180 B   ---   --   ---xx  dylan2002-08-21d2t03.flac    12:56.72      137055788 B   ---   --   ---xx  dylan2002-08-21d2t04.flac     9:15.65       98054924 B   ---   --   ---xx  dylan2002-08-21d2t05.flac     6:15.04       66159452 B   ---   --   ---xx  dylan2002-08-21d2t06.flac     8:40.65       91880924 B   ---   --   ---xx  dylan2002-08-21d2t07.flac   131:05.71     1387553828 B                            0.4930  (19 files)
-
-FFP:dylan2002-08-21d1t01.flac:cb91763f1f4211c6c65358bca6fb7609dylan2002-08-21d1t02.flac:27188bbd22fd005fb306c1e27fdb6accdylan2002-08-21d1t03.flac:90580b11421ef9ca9f2f4f58947cf3dfdylan2002-08-21d1t04.flac:d5fa83b51c36ce10a6de55c6bdd097c8dylan2002-08-21d1t05.flac:220654c35be141020bb21c97b2a2c901dylan2002-08-21d1t06.flac:b8335315880e6852e13394eb861465c4dylan2002-08-21d1t07.flac:07873f15d84e11b56806ebf2f73da900dylan2002-08-21d1t08.flac:64316cf30db9f94e2bc86f19815b57b8dylan2002-08-21d1t09.flac:d9ff8bbe7c68a1a1095aa560e2a59849dylan2002-08-21d1t10.flac:2af1de60a2604238fdce31fc430dfc05dylan2002-08-21d1t11.flac:c182b6f97e5271144b65d92a3d0bf697dylan2002-08-21d1t12.flac:466fa12781e5d3a7d7887a5a6a9e6aa3dylan2002-08-21d2t01.flac:77665782c0e7db121e63cd63625132e3dylan2002-08-21d2t02.flac:b0a2d33d204cfa0e6fac7ecaa4ef0be4dylan2002-08-21d2t03.flac:54a9ae6bab1419ca656efdb5a69453e4dylan2002-08-21d2t04.flac:c466bb74602af6ef78241a1580fa4f23dylan2002-08-21d2t05.flac:2fa007e54ecef189435d6111098c4442dylan2002-08-21d2t06.flac:f3f37c0c117f322bd75c52c3a4f5e8a0dylan2002-08-21d2t07.flac:8c8ebc7900a20b58aeb4ed3a7b497504
-
-MD5:
-7210eb77f2eda4e9ce619ec2bf93afce *dylan2002-08-21d1t01.flac
-36712e24446f1e64eac5a5f0fbe870d2 *dylan2002-08-21d1t02.flac
-908465012c2a19cedfbfc5ca7d78a28d *dylan2002-08-21d1t03.flac
-5a97da062a44fdf04368e0d1d5a79c95 *dylan2002-08-21d1t04.flac
-bf4367842f9bc203c745073380aab030 *dylan2002-08-21d1t05.flac
-6e88f513f1190c1884e74b698c0c00c5 *dylan2002-08-21d1t06.flac
-2fa597ebb38dc014a3191ebb85e4ec51 *dylan2002-08-21d1t07.flac
-0431d8b902ce788ead1a6ea8e5431773 *dylan2002-08-21d1t08.flac
-52fd5d96f98ad9fdf5e4d12445adbd6b *dylan2002-08-21d1t09.flac
-20c3c932bdc9a2fd0f56569f243d47e6 *dylan2002-08-21d1t10.flac
-b2617f30233f716a3354f8aec9555019 *dylan2002-08-21d1t11.flac
-427841f4a416dc6fc39c906690859858 *dylan2002-08-21d1t12.flac
-6a06094e98aafedfdfda4b35a5226164 *dylan2002-08-21d2t01.flac
-0cb90d43bc3cc62d53fdd0e6621f32c6 *dylan2002-08-21d2t02.flac
-e279368b8ddc78808ffe50536921f261 *dylan2002-08-21d2t03.flac
-38390e8055b14349640c8645dcfcd9f0 *dylan2002-08-21d2t04.flac
-b9dc368b9b4b6fcdbe46f8c11ff65a08 *dylan2002-08-21d2t05.flac
-877cd04024cdc58808521932a5772f39 *dylan2002-08-21d2t06.flac
-a0853c69ef3d1eeec5ca4226d9f49816 *dylan2002-08-21d2t07.flac

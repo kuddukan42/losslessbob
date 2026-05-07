@@ -1,8 +1,0 @@
-Bob Dylan, 4/30/92, Eugene, Oregon, 2CDR
-
-LB-5899, (55min+41min), legendary taper D, Sennheiser MKE2002 -> portable DATrecorder - clone -> (digital transfer) m-audio delta audiophile 2496, -> Wavelab -> cdwave for tracking -> tlh, I did not harm the sound of the recording in any way;; nothing above 16k; same recording as LB-1624 with similar wav and spectral views except levels are lower on this one; has same level adjusting problem at the beginning of d1t2
-
-1 intro, 2 Rainy Day Women # 12 & 35, 3 Black Muddy River (Jerry Garcia/Robert Hunter), 4 Drifter's Escape, 5 Just Like A Woman, 6 Tangled Up In Blue, 7 I Don't Believe You (She Acts Like We Never Have Met), 8 Everything Is Broken, 9 Love Minus Zero/No Limit, 10 Little Moses (Bert A. Williams/Earle C. Jones), 11 The Lonesome Death Of Hattie Carroll, 12 Mr. Tambourine Man, 1 Cat's In The Well, 2 Idiot Wind, 3 The Times They Are A-Changin', 4 Maggie's Farm, 5 Absolutely Sweet Marie, 6 All Along The Watchtower, 7 Blowin' In The Wind
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

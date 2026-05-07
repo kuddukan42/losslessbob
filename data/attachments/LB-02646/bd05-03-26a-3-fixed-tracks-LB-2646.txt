@@ -1,6 +1,0 @@
-Bob Dylan, 3/26/05, Los Angeles, California Pantages Theatre, 
-
-LB-2646, fix for version "a" "LB-2643" d1t8, d1t9, d2t10 flaws; big improvement to snip out the biggest loudest glitches but still does not remove all problems but much better than before; note that when replacing previous tracks there are sector boundary errors now
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

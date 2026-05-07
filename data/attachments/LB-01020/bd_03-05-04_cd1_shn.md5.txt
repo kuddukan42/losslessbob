@@ -1,8 +1,0 @@
-c95713f43ffc9c38007773c0e9563b00 *bd_03-05-04_cd1_Sound 1.shn
-f8d57a086f45a500e5c4a4ea48ec7e0e *bd_03-05-04_cd1_Sound 2.shn
-b020d71d90c4fbc8a54533ff313c22c0 *bd_03-05-04_cd1_Sound 3.shn
-11f3f2da4fff66edf786d01ba11e388f *bd_03-05-04_cd1_Sound 4.shn
-9c5fdfe621f20c633d8683f1b525e8d3 *bd_03-05-04_cd1_Sound 5.shn
-10c8552bf479d928337f837d4e1a9f89 *bd_03-05-04_cd1_Sound 6.shn
-9a87c608e50c72f112fc86d565b95d85 *bd_03-05-04_cd1_Sound 7.shn
-d09e0729be070edf6bdf8de740544532 *bd_03-05-04_cd1_Sound 8.shn

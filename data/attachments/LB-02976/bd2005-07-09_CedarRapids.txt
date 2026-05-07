@@ -1,74 +1,0 @@
-Bob Dylan and his Band
-Cedar Rapids, Iowa
-Veterans Memorial Stadium
-July 9, 2005
-
-AUDIENCE recording by M&A
-
-MBHO 603a > Lunatech V-3 > Sony-D100 > Audio CDs from M&A
-(wav encoded to FLAC with xACT 1.4b24)
-
-Disk 1	55:52
-1.	Intro	0:44
-2.	Maggie's Farm	5:20
-3.	To Ramona	6:58
-4.	Cry A While	5:53
-5.	Positively 4th Street	7:24
-6.	High Water (For Charley Patton)	7:12
-7.	Highway 61 Revisited	8:19
-8.	Ballad Of Hollis Brown (acoustic)	5:39
-9.	Most Likely You Go Your Way (And I'll Go Mine)	8:21
-
-Disk 2	42:00
-1.	Just Like A Woman	6:41
-2.	Honest With Me	6:44
-3.	Girl Of The North Country (acoustic)	5:58
-4.	Summer Days	7:33
-(encore - one second pause at edit)  
-5.	Tangled Up In Blue (acoustic)	9:31
-6.	All Along The Watchtower	5:31
- 	 
-Band Members
-Bob Dylan - keyboard, harp
-Stu Kimball - lead guitar
-Denny Freeman - guitar
-Donnie Herron - banjo, electric mandolin, pedal steel, lap steel
-Tony Garnier - bass
-George Recile - drums
-
-bd2005-07-09.ffp.txt
-bd2005-07-09d1t01.flac:d73da510fc5eecfbc8226290bc7d0eaabd2005-07-09d1t02.flac:12f746efa6522a3e00ef046527984d45bd2005-07-09d1t03.flac:c274021c0cf5254f8b77b647bd66bb8dbd2005-07-09d1t04.flac:7f375b913f0c56ff146a0183d9bf89edbd2005-07-09d1t05.flac:d4fd550800a5ba646beed0e7cf5a9697bd2005-07-09d1t06.flac:7f4505f8d0b7b3d56f5113c2e97d2930bd2005-07-09d1t07.flac:2542bf6f8dfed774ad1738f2cc383c94bd2005-07-09d1t08.flac:4d1e7a2a3981b3fd451be3f8a912cda6bd2005-07-09d1t09.flac:fd022856ad1ecaf44667f605a0093cadbd2005-07-09d2t01.flac:f8c0f8fc6b31d6f65a8e4594d827a1babd2005-07-09d2t02.flac:5045a40cdeeb2803606e8edcc266d0c7bd2005-07-09d2t03.flac:26a04dfb63c57525d417f10ca1c4bd20bd2005-07-09d2t04.flac:d568243ce4547689b850b9ae222aa7fbbd2005-07-09d2t05.flac:8ac95429e5ce349c35d74c37be136bf0bd2005-07-09d2t06.flac:949094fae7dd27cb5b638c618aec7816
-
-bd2005-07-09.flac.md5
-dc297b83a42b300e7dae3c13e59bfdbb *bd2005-07-09d1t04.flac
-de8904825755cc4d8dd09c3b8cb22144 *bd2005-07-09d1t02.flac
-26ed38b72b384576605b613c512f9e75 *bd2005-07-09d1t01.flac
-32e80592213cce85527e8cb9bbf2f370 *bd2005-07-09d1t06.flac
-74d1f7b4dc5f845ec497dddf2de3d243 *bd2005-07-09d1t05.flac
-12d2844fbb85c861c59b936a0e34f759 *bd2005-07-09d2t06.flac
-b5cd8cec02c70dfb70047b6a3281cba9 *bd2005-07-09d2t05.flac
-7fc81c3f7e241e78071148a407c5ec46 *bd2005-07-09d2t04.flac
-49dcb1aebc6282945643698d5e0caaed *bd2005-07-09d2t03.flac
-6f558328a2fd43675ba0e7782df3c26e *bd2005-07-09d2t02.flac
-f7b0ed6c3950bd7052b99d20615af3a3 *bd2005-07-09d2t01.flac
-f76a0f887055d7db156a184ed87ba9c4 *bd2005-07-09d1t09.flac
-dbfb61596a197ca0c37d9ec391fdabb0 *bd2005-07-09d1t08.flac
-60b85b7f452343a10bb425e37037a664 *bd2005-07-09d1t07.flac
-87f40e6098cdf7d47dc421c49fcf6001 *bd2005-07-09d1t03.flac
-
-bd2005-07-09.wav.md5
-24f11dadd96bc32967530d3bc55e89c5 *bd2005-07-09d1t01.wav
-4f6cac2f1466b758d61554ac74f01182 *bd2005-07-09d1t02.wav
-38a3e868015dae217ea814da30f1b16d *bd2005-07-09d1t03.wav
-435a5fea7d9876335d47a495539991cf *bd2005-07-09d1t04.wav
-a6440d95c9e54e2b65106ee07fc584d9 *bd2005-07-09d1t05.wav
-e2e1e2a7621a3d5a21340fcb008ba5dc *bd2005-07-09d1t06.wav
-9c72996ae85351649862e531c7e713e7 *bd2005-07-09d1t07.wav
-c2d615ca80577ec4a7423433b1ecbea1 *bd2005-07-09d1t08.wav
-1d62e7269b4a261a6b3efb3ab212af68 *bd2005-07-09d1t09.wav
-e51791eec85356375a7a8ed8a3b7b224 *bd2005-07-09d2t01.wav
-943bcb8c4e4bb26135a53beef4a9e9d5 *bd2005-07-09d2t02.wav
-5cf229d7054d8ff8d317604d8caf7f83 *bd2005-07-09d2t03.wav
-db34b6ae4eadb451bbd15e54d50bd656 *bd2005-07-09d2t04.wav
-260cd7c5787ccda7677d611ffee73f6c *bd2005-07-09d2t05.wav
-f1b428135ebb03e0a7ac99eaaa2ae723 *bd2005-07-09d2t06.wav

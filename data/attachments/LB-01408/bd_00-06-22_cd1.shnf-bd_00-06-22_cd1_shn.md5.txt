@@ -1,9 +1,0 @@
-e3352d520266e33e5b429411c99c9bd2 *bd_00-06-22_cd1_Track 1.shn
-a56aeae7a901b033134f5c2b1149f209 *bd_00-06-22_cd1_Track 2.shn
-a26a789b30258bd66cd66f1385cf53e5 *bd_00-06-22_cd1_Track 3.shn
-8761323f51b1155a53add50cc0549637 *bd_00-06-22_cd1_Track 4.shn
-d03b051762a22ae16629c20aa4747688 *bd_00-06-22_cd1_Track 5.shn
-f701ca2534927e58540d037c84df9eac *bd_00-06-22_cd1_Track 6.shn
-b3c9bb3d92954c46cc65be8c2b915c0c *bd_00-06-22_cd1_Track 7.shn
-1154bad482dd5dbbf23fd3ffead9adbe *bd_00-06-22_cd1_Track 8.shn
-35da48a14053aaa746e7db26469fc122 *bd_00-06-22_cd1_Track 9.shn

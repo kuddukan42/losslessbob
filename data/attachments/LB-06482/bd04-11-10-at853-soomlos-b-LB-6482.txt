@@ -1,9 +1,0 @@
-Bob Dylan, 11/10/04, Toledo, Ohio, 2CDR
-
-LB-6482, (72min+41min), version "b"; source: soomlos, 16th row, right side floor, akg391's > denecke ps-2/ad-20 > sony tcd-d8 (16bit/44.1kHz), sony tcd-d8 > m-audio mt1 > usb > hdd, sony sound forge 9.0 > cd wave > flac; bittorrent download 09/08; torrenters comment: "this is a new transfer from the master DAT.
-Once again it eliminates the CDR > EAC steps and is seamless from start to finish"; in comparison to LB-2415 this has similar wav and spectral view except levels are a higher on d1t5; (did not listen to all of this)
-
-Disc 1:, 01. introduction, 02. Leopard-Skin Pill-Box Hat, 03. Tonight I'll Be Staying Here With You, 04. Tweedle Dee & Tweedle Dum, 05. Visions Of Johanna, 06. Highway 61 Revisited, 07. Tryin' To Get To Heaven, 08. Most Likely You Go Your Way (And I'll Go Mine), 09. Million Miles, 10. I'll Be Your Baby Tonight, 11. Love Sick, 12. Bye And Bye, Disc 2:, 01. Honest With Me, 02. Every Grain Of Sand, 03. Summer Days, (encore), 04. Like A Rolling Stone, 05. band introduction, 06. All Along The Watchtower
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

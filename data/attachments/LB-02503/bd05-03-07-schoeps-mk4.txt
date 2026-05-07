@@ -1,7 +1,0 @@
-Bob Dylan, 3/7/05, Paramount Theater, Seattle, WA, 2CDR
-
-(80min+19min), Lineage:, Source: Schoeps MK4->Kcy->Sonosax SX-M2/LS->Sony M1 DAT, Transfer:Tascam DA-20 MkII DAT ->Tascam CDRW700-> EAC (secure mode)->, Soundforge 4.5 (intro + outro fades)-> CDRWav->Flac 16 (level 5); bittorrent download 03/05; excellent sound [A]
-
-Disc 1, 1. Drifter's Escape, 2. The Man In Me, 3. Stuck Inside Of Mobile With The Memphis Blues Again, 4. Moonlight, 5. It's Aliright, Ma (I'm Only Bleeding), 6. I Don't Believe You (She Acts Like We Never Have Met), 7. Queen Jane Approximately, 8. Cat's In The Well, 9. Sugar Baby, 10. Watching The River Flow, 11. Mr. Tamborine Man, 12. Honest With Me, 
-
-Disc 2 (encore), 1. Like A Rolling Stone, 2. All Along The Watchtower, 3. Sing Me Back Home

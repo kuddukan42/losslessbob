@@ -1,8 +1,0 @@
-Bob Dylan, 8/6/03, Columbus, OH, Germain Amphitheater, 1CDR
-
-LB-3533, (20min), To the best of my knowledge, Neumann U89 (omni, split 8', at 8', front row of taper's section) >, Lunatec V2 > Mini-Me (24/48, USB out) > Sony PCG-V505AX > SoundForge 7, Conversion: WaveLab 4 (dither and resample to 16/44.1) > CD Wave Editor > FLAC, CD>EAC>CD>CD Wave>WAV>SHN; bittorrent download 02/06 withThe Dead; similar quality to LB-1334; excellent sound [A-]
-
-5 *Big Boss Man, 6 *Subterranean Homesick Blues, 7 *You Win Again
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

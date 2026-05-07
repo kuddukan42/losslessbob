@@ -1,5 +1,0 @@
-3459f42d745fc8060ac0a5de11315256 *Track 01-fixed.shn
-a0aa7dd99f2117fd47bd67638e2bb97a *Track 02-fixed.shn
-29d3a5da76d19e24d408e7bf48a1639f *Track 03-fixed.shn
-79e85893abbd8b0795bb7d43651d893c *Track 04-fixed.shn
-c493d32bdf91b6918fb6c7583a398221 *Track 05-fixed.shn

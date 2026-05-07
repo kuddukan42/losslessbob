@@ -1,8 +1,0 @@
-Bob Dylan, 6/23/05, Pittsfield, Massachusetts, 2CDR
-
-LB-7276, (76min+36min), source: soomlos, akg391's > denecke ps-2/ad-20 > sony tcd-d8, sony tcd-d8 > tascam cd-rw700 > cdr > eac > hdd, sound forge 9.0 > cd wave > foobar > tlh, suggested CD split:, CD 1 - tracks 01 - 11, CD 2 - tracks 12 - 17; bittorrent download 03/09; in 3-way comparison this has fullest most natural sound, then wanted man LB-2903 and then M&A LB-2960 ; excellent sound [A]
-
-01. introduction, 02. Drifter's Escape, 03. Just Like Tom Thumb's Blues, 04. It's Alright, Ma (I'm Only Bleeding), 05. Moonlight, 06. Down Along The Cove, 07. Girl Of The North Country, 08. High Water (For Charley Patton), 09. Every Grain Of Sand, 10. Highway 61 Revisited, 11. Blind Willie McTell, 12. Chimes Of Freedom, 13. Summer Days, 14. crowd, 15. It Ain't Me, Babe, 16. band introduction, 17. Like A Rolling Stone
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

@@ -1,9 +1,0 @@
-e04049a68312c005073d3a15fa0e6935 *01 Jokerman.wav
-19c91d446045cdedea348df2f195e126 *02 Senor (Tales Of Yankee Power).wav
-9000eb5264dd0f4823ac274aa1a6b14f *03 All Along The Watchtower.wav
-f915a3a7a8db8e7cc16d388f39fa9bdd *04 You're A Big Girl Now.wav
-cbe17909d10eefecda74227b71a5c56b *05 Tangled Up In Blue.wav
-7749faa3b7912264467fafa74e4767e5 *06 Simple Twist Of Fate.wav
-8b34f8fc521ad68393b102243d46e122 *07 Masters Of War.wav
-5e39fe9b1073ef178cf768f97259fcc8 *08 Mama, You Been On My Mind.wav
-42b3705a32563990faa23a838ab62fd6 *09 Gates Of Eden.wav

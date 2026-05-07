@@ -1,8 +1,0 @@
-Bob Dylan, 6/23/08, Zaragoza, Spain, 2CDR
-
-LB-6213, (59min+58min), lbp51; Audience recording. 4th row, 10 feet to the right side in front of the left stack., Taper: lbp51, Lineage: Edirol R09 - red (built-in mics) > wav (44.1 Khz, 16 bits, stereo) > Adobe Audition 1.0 (tracking) > flac (flac Frontend - align on SB option - level 8 - verify on), Luisbp51 (Hungercity June 2008); bittorrent download 06/08; muffled sounding; (did not listen to all of this)
-
-Tracklist:, Disc 1, 01. [4:56.843] I'll Be Your Baby Tonight, 02. [5:50.000] Don't Think Twice, It's All Right, 03. [6:10.435] Just Like Tom Thumb's Blues, 04. [7:04.994] The Levee's Gonna Break, 05. [6:58.601] Shelter From The Storm, 06. [6:55.840] Cry A While, 07. [7:22.760] Just Like A Woman, 08. [6:44.545] Things Have Changed, 09. [6:16.715] Beyond The Horizon, [58:20.733] Total Time, Disc 2, 01. [6:36.440] Honest With Me, 02. [6:11.750] When The Deal Goes Down, 03. [6:00.230] Highway 61 Revisited, 04. [6:57.975] A Hard Rain's A-Gonna Fall, 05. [6:38.855] Summer Days, 06. [4:20.627] All Along The Watchtower, 07. [4:35.689] Crowd, (encore), 08. [7:50.082]Thunder On The Mountain, 09. [7:57.647]Like A Rolling Stone, [57:09.295] Total Time
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

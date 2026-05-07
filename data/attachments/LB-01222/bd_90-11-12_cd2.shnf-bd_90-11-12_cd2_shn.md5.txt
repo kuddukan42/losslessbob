@@ -1,5 +1,0 @@
-a19e8df2a3828141c390f001d800a383 *bd_90-11-12_cd2_Track 1.shn
-10892cb13a8818face426db2b5ab6038 *bd_90-11-12_cd2_Track 2.shn
-4ea984d45878f9ac5b9141e3dae64a97 *bd_90-11-12_cd2_Track 3.shn
-0cb82c8bfc8ae442faf95309d9fc83d3 *bd_90-11-12_cd2_Track 4.shn
-a86b18b931143e814327241fc08cbbf3 *bd_90-11-12_cd2_Track 5.shn

@@ -1,125 +1,0 @@
-===================
-===================
-===================
-=== infos.txt
-===================
-===================
-===================
-Pacific Amphitheater
-Costa Mesa, California
-
-27 July 2003
-Orange County Fair
-
-1.Tombstone Blues
-2.I'll Remember You
-3.Tweedle Dee & Tweedle Dum
-4.Make You Feel My Love
-5.Things Have Changed
-6.Highway 61 Revisited
-7.It Ain't Me, Babe
-8.Cold Irons Bound
-9.I Believe In You
-10.Watching The River Flow
-11.Standing In The Doorway
-12.Honest With Me
-13.Moonlight
-14.Summer Days
-
-15.Like A Rolling Stone
-16.All Along The Watchtower
-
-Concert # 1536 of The Never-Ending Tour. Concert # 12 of the 2003 US Summer Tour. 2003 concert # 46.
-
-Concert # 35 with the 16th Never-Ending Tour Band: Bob Dylan (vocal & piano), Freddie Koella (guitar), Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar), Tony Garnier (bass), George Recile (drums & percussion).
-
-7 acoustic with the band.
-
-4, 7, 9, 16 Bob Dylan (harmonica).
-
-2  Larry Campbell (pedal steel guitar).
-
-7 Larry Campbell (cittern).
-
-10, 12 Larry Campbell (slide guitar).
-
-wwww.bjoner.com
-
-Trade CDr < XLD < flac < dime
-apa05 
-===================
-===================
-===================
-=== shntool.txt
-===================
-===================
-===================
-    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
-     5:39.71       59966636 B   ---   --   ---xx  01 Track 01.flac
-     4:56.70       52379084 B   ---   --   ---xx  02 Track 02.flac
-     5:27.02       57687548 B   ---   --   ---xx  03 Track 03.flac
-     4:22.71       46383836 B   ---   --   ---xx  04 Track 04.flac
-     7:32.24       79789292 B   ---   --   ---xx  05 Track 05.flac
-     5:57.65       63127724 B   ---   --   ---xx  06 Track 06.flac
-     6:37.22       70082588 B   ---   --   ---xx  07 Track 07.flac
-     6:16.58       66462860 B   ---   --   ---xx  08 Track 08.flac
-     5:27.23       57736940 B   ---   --   ---xx  09 Track 09.flac
-     6:05.30       64456604 B   ---   --   ---xx  10 Track 10.flac
-     6:59.12       73939868 B   ---   --   ---xx  01 Track 01.flac
-     7:07.43       75423980 B   ---   --   ---xx  02 Track 02.flac
-     6:27.65       68419724 B   ---   --   ---xx  03 Track 03.flac
-    11:03.65      117106124 B   ---   --   ---xx  04 Track 04.flac
-     6:24.01       67739996 B   ---   --   ---xx  05 Track 05.flac
-     6:47.55       71924204 B   ---   --   ---xx  06Track 06.flac
-   103:14.02     1092627008 B                            0.5094  (16 files)
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-01 Track 01.flac:06c0922dd6a26572ed3dc78019abeec002 Track 02.flac:f1efca4ca71adb4d08e3b1972639998c03 Track 03.flac:b64b9ee5aac2051fcfa43095723e553604 Track 04.flac:8dbb1644a750d38cd64f3d4956398f9f05 Track 05.flac:117ac3088d97bd8b664a1a69c8e2d4ab06 Track 06.flac:50ce7e77baac2b0e306ec65385fe68fc07 Track 07.flac:6476b890e950d1bf87185d8569178d8408 Track 08.flac:dcf807011b88e7b346c71e7bff27398909 Track 09.flac:c1ce62a34af2c94f3b2581ad873ab23010 Track 10.flac:169c3bda790ae43d7a6964b0d779ffbc
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-e183b2a8781243d8bf3de2da1b04a2e8 *01 Track 01.flac
-a9ac5e92f3e979f1fe77a4083ab676dd *02 Track 02.flac
-e5407589ab2471805780cdee290c4ff2 *03 Track 03.flac
-387d1840a7c527af888f2c40d9d55228 *04 Track 04.flac
-7c0f5985f64947c9845bf09672b44685 *05 Track 05.flac
-aa748eca76ea2ea38c8b42f58592a320 *06 Track 06.flac
-88da558d638801918a8c39eb7e5fddcd *07 Track 07.flac
-388f3382bbbc4849b821f3f412571a17 *08 Track 08.flac
-5a5a9051eec533ad247a8dbdbc62ef7b *09 Track 09.flac
-e7463e34e7b0707717dd5b84192e81be *10 Track 10.flac
-
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-01 Track 01.flac:832412198224f158a595dbedb9cdaaa702 Track 02.flac:44c7615b797c149301cca397b3c55eb803 Track 03.flac:e8862b7ac56bea0604878e1bdc36be7c04 Track 04.flac:976a7642a426b6bc0c0dcdf7291cb56905 Track 05.flac:1026f02f0cc61451340985cea92ce1a506Track 06.flac:bbcfe34850997e1e5c9125a73bf4e72b
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-b3c6bc24a10feea494e977873c448b6f *01 Track 01.flac
-8179c3c58bfecc1f2059eaff5f152eee *02 Track 02.flac
-70ae34c3b6555b4ce0bd62332a176f2d *03 Track 03.flac
-382d019ebf816850504af17208f56bde *04 Track 04.flac
-570dabf054e98317e707c12e5ced701a *05 Track 05.flac
-ca72622a6459f700e6265e386fbf2ca5 *06Track 06.flac
-
-===================
-===================
-===================

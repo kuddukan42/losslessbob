@@ -1,6 +1,0 @@
-3042156d3ee62e75490a3a8141676b77  [shntool]  bd1991-07-10d2t01.shn
-0f376d1243cc39353d90b4a73e26e691  [shntool]  bd1991-07-10d2t02.shn
-22c3aec60939e12b830ff1e7378dfb3b  [shntool]  bd1991-07-10d2t03.shn
-47ed65e5cd29e8d06f29e340def8a114  [shntool]  bd1991-07-10d2t04.shn
-00742ad0d6af1bcac1d995a5f4deee9b  [shntool]  bd1991-07-10d2t05.shn
-6f1fc55c51d7c309ad6700baa15faf8d  [shntool]  bd1991-07-10d2t06.shn

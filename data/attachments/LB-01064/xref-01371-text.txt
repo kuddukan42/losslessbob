@@ -1,103 +1,0 @@
-===================
-===================
-===================
-=== infos.txt
-===================
-===================
-===================
-Asheville Civic Center 
-Asheville, North Carolina
-14 May 2003
- 
-1.Maggie's Farm
-2.I'll Be Your Baby Tonight
-3.Tweedle Dee & Tweedle Dum
-4.It's All Over Now, Baby Blue
-5.Things Have Changed
-6.Positively 4th Street
-7.Drifter's Escape
-8.Every Grain Of Sand
-9.Dignity
-10.Blind Willie McTell
-11.Highway 61 Revisited
-12.Moonlight
-13.Honest With Me
-14.Summer Days
-
-15.Like A Rolling Stone
-16.All Along The Watchtower
- 
-Concert # 1521 of The Never-Ending Tour. Concert # 20 of the 2003 US Spring Tour. 2003 concert # 31.
- 
-Concert # 20 with the 16th Never-Ending Tour Band: Bob Dylan (vocal & piano), Freddie Koella (guitar), Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar), Tony Garnier (bass), George Recile (drums & percussion).
- 
-2, 4 Larry Campbell (pedal steel guitar).
-2, 6, 7 Bob Dylan (harmonica).
-4 acoustic with band.
-10 Larry Campbell (cittern).
-13 Larry Campbell (slide guitar).
- 
-wwww.bjoner.com
-
-Trade CDr < XLD < flac < dime
-apa05
-===================
-===================
-===================
-=== shntool.txt
-===================
-===================
-===================
-    length     expanded size    cdr  WAVE problems  fmt   ratio  filename     6:10.67       65425628 B   ---   --   ---xx  01 Bob Dylan - Maggie's Farm.flac     6:15.67       66307628 B   ---   --   ---xx  02 Bob Dylan - I'll Be Your Baby Tonight.flac     5:21.11       56650316 B   ---   --   ---xx  03 Bob Dylan - Tweedle Dee & Tweedle Dum.flac     8:18.08       87866060 B   ---   --   ---xx  04 Bob Dylan - It's All Over Now Baby Blue.flac     7:12.32       76280108 B   ---   --   ---xx  05 Bob Dylan - Things Have Changed.flac     8:19.60       88164764 B   ---   --   ---xx  06 Bob Dylan - Positively 4th Street.flac     4:45.59       50412812 B   ---   --   ---xx  07 Bob Dylan - Drifter's Escape.flac     6:37.67       70188428 B   ---   --   ---xx  08 Bob Dylan - Every Grain Of Sand.flac     5:45.12       60886268 B   ---   --   ---xx  09 Bob Dylan - Dignity.flac     6:17.00       66502844 B   ---   --   ---xx  10 Bob Dylan - Blind Willie McTell.flac     6:26.64       68240972 B   ---   --   ---xx  11 Bob Dylan - Highway 61.flac     5:31.73       58560140 B   ---   --   ---xx  12 Bob Dylan - Moonlight.flac     7:19.17       77479628 B   ---   --   ---xx  01 Bob Dylan - Honest With Me.flac     6:58.47       73845788 B   ---   --   ---xx  02 Bob Dylan - Summer Days.flac     3:07.44       33090332 B   ---   --   ---xx  03 Bob Dylan - Encore.flac     6:47.24       71851292 B   ---   --   ---xx  04 Bob Dylan - Like A Rolling Stone.flac     5:26.29       57574652 B   ---   --   ---xx  05 Bob Dylan - All Along The Watchtower.flac   106:42.06     1129327660 B                            0.4902  (17 files)
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-01 Bob Dylan - Maggie's Farm.flac:d44547fb40a6e14331d48488f1df208802 Bob Dylan - I'll Be Your Baby Tonight.flac:035a5c80cef73558e5899e5b77a85d1403 Bob Dylan - Tweedle Dee & Tweedle Dum.flac:5bc28f8c3c9b9407b0bcadbacddc665a04 Bob Dylan - It's All Over Now Baby Blue.flac:81876f6d9e120a07b5809dd979b2467f05 Bob Dylan - Things Have Changed.flac:1ce7d68f50f48bc175afe8caf0dc8c4006 Bob Dylan - Positively 4th Street.flac:7c54100406c95207a31a36d5eaf5f96007 Bob Dylan - Drifter's Escape.flac:d0d39e3027d52a402589f7d4c7aa0e8208 Bob Dylan - Every Grain Of Sand.flac:24102f3279dbc7b09499918b2bb177a309 Bob Dylan - Dignity.flac:c410c65d19ecb1828c7138461b6d5c6c10 Bob Dylan - Blind Willie McTell.flac:d1020eb92cf79a2a1fe5d08c7402037811 Bob Dylan - Highway 61.flac:a426907f86aade4fd45b449e04b9e98c12 Bob Dylan - Moonlight.flac:c73d45c748143b8c6ffa635167c7c012
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-dd1c28491593edec7ad1237d562a32c6 *01 Bob Dylan - Maggie's Farm.flac
-d188d54882418576219bcb4030b9af8c *02 Bob Dylan - I'll Be Your Baby Tonight.flac
-c812aeb3a2416d95b157536500ef9ea7 *03 Bob Dylan - Tweedle Dee & Tweedle Dum.flac
-167b1018ea39c32cd3ed1f662082a3e1 *04 Bob Dylan - It's All Over Now Baby Blue.flac
-dcbb433aaa04200dd025fcd8c2f3e935 *05 Bob Dylan - Things Have Changed.flac
-fb3318e710618dcb4e31d7275ce4265c *06 Bob Dylan - Positively 4th Street.flac
-6d65704afc43ef18d9f14eaba5195c14 *07 Bob Dylan - Drifter's Escape.flac
-659ddd882a72d173c340f0836c932327 *08 Bob Dylan - Every Grain Of Sand.flac
-b4705a43e08f75a151541ac7a961b17b *09 Bob Dylan - Dignity.flac
-9df131521403c6f24f52ae6d4f19984b *10 Bob Dylan - Blind Willie McTell.flac
-4e4b6f9fdce91eddfd51a5a0799b007d *11 Bob Dylan - Highway 61.flac
-fc6a969bdbc784a7b1f6bbb1745b6ba3 *12 Bob Dylan - Moonlight.flac
-
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-01 Bob Dylan - Honest With Me.flac:7ee329ef9b6117cd515347965a31562b02 Bob Dylan - Summer Days.flac:ed99580c2bdadec2cddcbbeab6ed7b1c03 Bob Dylan - Encore.flac:cfd5656028d41240cc6f87eed15c194904 Bob Dylan - Like A Rolling Stone.flac:8ef40aede54631b41f53775e03941bd305 Bob Dylan - All Along The Watchtower.flac:943c9e15fc358b377d23018ef5aaf88c
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-3b3209239533e55404640ff736212780 *01 Bob Dylan - Honest With Me.flac
-a71e332d180ec13a258c73223a075245 *02 Bob Dylan - Summer Days.flac
-1ec99c18fd742b79b048026605ae350e *03 Bob Dylan - Encore.flac
-b4605bd8e5816be676f2ba2eaf8b9cf6 *04 Bob Dylan - Like A Rolling Stone.flac
-57f6b5c04ee5c6cf3932ba46e39813ef *05 Bob Dylan - All Along The Watchtower.flac
-
-===================
-===================
-===================

@@ -1,8 +1,0 @@
-Bob Dylan, 6/15/95, Highgate VT; Franklin County Airport, 
-
-LB-5040, 48k version; AUD Source: Nakamichi CM-300's w/CP4 shotgun capsules > unknown, deck > Denon DTR-80P Dat. Mics on stand in OTS, left of sbd area., Transfer: MAD > Sony TCD-D10Pro > Coax SPDIF > Audiophile 2496 >, Soundforge (at 48kHz) > CD-Wave > TLH > FLAC., Notes:, - Beginnings of first and last songs slightly clipped., - Soundforge used to make fades., - TLH used for FLAC compression and making checksums.; bittorrent download 06/07; (did not listen to all of this)
-
-01 //Crash on the Levee, 02 It Takes a Lot to Laugh, It Takes a Train to Cry, 03 All Along the Watchtower, 04 Tears of Rage, 05 Silvio, 06 Mister Tambourine Man, 07 Masters of War, 08 It's All Over Now, Baby Blue, 09 Stuck Inside of Mobile with the Memphis Blues Again, 10 She Belongs to Me, 11 Highway 61 Revisited, 12 Encore: //Like A Rolling Stone
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

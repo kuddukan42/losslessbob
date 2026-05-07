@@ -1,101 +1,0 @@
-===================
-===================
-===================
-=== 16 March 1995.txt
-===================
-===================
-===================
-Stadthalle
-Bielefeld, Germany
-16 March 1995
-
-SOURCE: Unknown
-LINEAGE: CD-R > EAC, secure mode > .WAV > FLAC Frontend level 7 > .FLAC
-SOUND: Very Good
-SIZE: 497 MiB (FLAC)
-
-DISC ONE
-1.  Crash On The Levee (Down In The Flood)
-2.  If Not For You
-3.  All Along The Watchtower
-4.  Just Like A Woman
-5.  Tangled Up In Blue
-6.  Positively 4th Street
-7.  Mr. Tambourine Man
-8.  Masters Of War
-9.  Boots Of Spanish Leather
-
-DISC TWO
-10.  Dignity
-11.  Man In The Long Black Coat
-12.  Maggies Farm
-13.  Like A Rolling Stone
-
-********************
-
-Fingerprint:
-bd1995-03-16 d1t1.flac:ec1e215ea505c3fee3feb64e0735ac44
-bd1995-03-16 d1t2.flac:20122ca48cd3b8b45620812e7561a7d8
-bd1995-03-16 d1t3.flac:fd8e5c9b32df1df613051cd70f678830
-bd1995-03-16 d1t4.flac:b237df94a16f2a1b2312763e1dbf71e5
-bd1995-03-16 d1t5.flac:4145194543eb64f516e5addf22440563
-bd1995-03-16 d1t6.flac:c6dc2bcd6e5bd093cd71efaa7fe00165
-bd1995-03-16 d1t7.flac:30a334ab900116505a1a1de7cbbd3c74
-bd1995-03-16 d1t8.flac:504b5ac267168e8655b15e04a5b596b0
-bd1995-03-16 d1t9.flac:576dbfca0d3d1a6f7e105281b7005795
-bd1995-03-16 d2t1.flac:375f434f8b7185dd2651f359d5907fa8
-bd1995-03-16 d2t2.flac:f9726749ade7791f11899c452c0b405a
-bd1995-03-16 d2t3.flac:9414109616c06bc8a5bf557628c85bc5
-bd1995-03-16 d2t4.flac:7a1506924a0f71399dfef745dd2c07f4
-===================
-===================
-===================
-=== bd1995-03-16.md5
-===================
-===================
-===================
-; Using hkSFV on 07.01.2004 at 19:30:38
-; http://www.big-o-software.com
-;
-;/----
-;         1320 12:50.19 2004-07-01 16 March 1995.txt
-;     34662860 11:29.56 2004-07-01 bd1995-03-16 d1t1.flac
-;     25706102 11:30.30 2004-07-01 bd1995-03-16 d1t2.flac
-;     37817861 11:31.15 2004-07-01 bd1995-03-16 d1t3.flac
-;     31770492 11:31.58 2004-07-01 bd1995-03-16 d1t4.flac
-;     57593937 11:33.12 2004-07-01 bd1995-03-16 d1t5.flac
-;     43872952 11:34.09 2004-07-01 bd1995-03-16 d1t6.flac
-;     28673923 11:34.59 2004-07-01 bd1995-03-16 d1t7.flac
-;     26140735 11:35.42 2004-07-01 bd1995-03-16 d1t8.flac
-;     31189543 11:36.40 2004-07-01 bd1995-03-16 d1t9.flac
-;     50610195 12:05.50 2004-07-01 bd1995-03-16 d2t1.flac
-;     38811596 12:06.48 2004-07-01 bd1995-03-16 d2t2.flac
-;     65692011 12:08.09 2004-07-01 bd1995-03-16 d2t3.flac
-;     49575827 12:09.16 2004-07-01 bd1995-03-16 d2t4.flac
-;\----
-;
-50a30d4a0ef37d57efaaabfd6969181b *16 March 1995.txt
-3cf567e48d2c908cb77efffdb46268e7 *bd1995-03-16 d1t1.flac
-e21c387d950d67167d0cfa670c938a29 *bd1995-03-16 d1t2.flac
-d7b9dabea85556f0db02eeafe3b5af8e *bd1995-03-16 d1t3.flac
-70a00ad6d986c3493d1dde8b2a5dc08d *bd1995-03-16 d1t4.flac
-67df15abee91981c8f37efd09106e985 *bd1995-03-16 d1t5.flac
-edfd7c49d3be15ae6c69425afae469a1 *bd1995-03-16 d1t6.flac
-43bd193449a49258eb328090421ae5f2 *bd1995-03-16 d1t7.flac
-f31e86d824a8d13ff18c6660694e7c7d *bd1995-03-16 d1t8.flac
-da5562e0e3b61873c1673c9857660ed1 *bd1995-03-16 d1t9.flac
-c3e2561528b195d6e48d30208ebc3cc1 *bd1995-03-16 d2t1.flac
-33c9e609aa6ee3acefad070de5784358 *bd1995-03-16 d2t2.flac
-81ccbd86c22d2766853cb58cd50b2b93 *bd1995-03-16 d2t3.flac
-9887972638106311528ba01430132e59 *bd1995-03-16 d2t4.flac
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-bd1995-03-16 d1t1.flac:ec1e215ea505c3fee3feb64e0735ac44bd1995-03-16 d1t2.flac:20122ca48cd3b8b45620812e7561a7d8bd1995-03-16 d1t3.flac:fd8e5c9b32df1df613051cd70f678830bd1995-03-16 d1t4.flac:b237df94a16f2a1b2312763e1dbf71e5bd1995-03-16 d1t5.flac:4145194543eb64f516e5addf22440563bd1995-03-16 d1t6.flac:c6dc2bcd6e5bd093cd71efaa7fe00165bd1995-03-16 d1t7.flac:30a334ab900116505a1a1de7cbbd3c74bd1995-03-16 d1t8.flac:504b5ac267168e8655b15e04a5b596b0bd1995-03-16 d1t9.flac:576dbfca0d3d1a6f7e105281b7005795bd1995-03-16 d2t1.flac:375f434f8b7185dd2651f359d5907fa8bd1995-03-16 d2t2.flac:f9726749ade7791f11899c452c0b405abd1995-03-16 d2t3.flac:9414109616c06bc8a5bf557628c85bc5bd1995-03-16 d2t4.flac:7a1506924a0f71399dfef745dd2c07f4bd1995-03-16 d1t1.flac:ec1e215ea505c3fee3feb64e0735ac44bd1995-03-16 d1t2.flac:20122ca48cd3b8b45620812e7561a7d8bd1995-03-16 d1t3.flac:fd8e5c9b32df1df613051cd70f678830bd1995-03-16 d1t4.flac:b237df94a16f2a1b2312763e1dbf71e5bd1995-03-16 d1t5.flac:4145194543eb64f516e5addf22440563bd1995-03-16 d1t6.flac:c6dc2bcd6e5bd093cd71efaa7fe00165bd1995-03-16 d1t7.flac:30a334ab900116505a1a1de7cbbd3c74bd1995-03-16 d1t8.flac:504b5ac267168e8655b15e04a5b596b0bd1995-03-16 d1t9.flac:576dbfca0d3d1a6f7e105281b7005795bd1995-03-16 d2t1.flac:375f434f8b7185dd2651f359d5907fa8bd1995-03-16 d2t2.flac:f9726749ade7791f11899c452c0b405abd1995-03-16 d2t3.flac:9414109616c06bc8a5bf557628c85bc5bd1995-03-16 d2t4.flac:7a1506924a0f71399dfef745dd2c07f4
-===================
-===================
-===================

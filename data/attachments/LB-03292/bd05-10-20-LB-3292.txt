@@ -1,8 +1,0 @@
-Bob Dylan, 10/20/05, Karlstad, Lofbergs Lila Arena, 2CDR
-
-LB-3292, (56min+53min), Source: SP-CMC-8 (AT 853's) - Croakie Mount > SP-SPSB-3 With Bass Roll Off @ 69 Hz >, Sony TCD-D8 (48 kHz) (Line In), Transfer: Sony TCD-D8 > 7-pin optical > M-Audio CO2 > Coax >, M-Audio Audiophile 2496 > Wavelab 5.01a (Covert Sample Rate to 44.1 kHz) >, Wav > Flac Frontend 1.7.1 (level 0), Recorded and transfered by Jofa (rtj_22@hotmail.com); bittorrent download 10/05; excellent sound [A]
-
-Disc 1:, 01. Introduction > Maggies Farm [06:10.07], 02. Tonight I, ll Be Staying Here With You [05:55.06], 03. Watching the River Flow [06:13.43], 04. Lay Lady Lay [05:51.58], 05. Down Along the Cove [07:13.16], 06. Girl of the North Country [06:20.64], 07. Highway 61 Revisited [06:40.37], 08. Trying To Get To Heaven [04:56.47], 09. Cold Irons Bound [05:33.23], 10. Fade Track [00:20.13], Total: [55:15.14], Disc 2:, 01: Fade Track [00:26.66], 02. Stuck Inside of Mobile [08:06.13], 03. If Dogs Run Free [05:34.58], 04 Down In the Flood [05:40.71], 05. Mr Tambourine Man [06:25.02], 06. Summer Days [07:44.20], 07. Audience [04:46.63], 08. Like A Rolling Stone [06:40.19], 09. Band Presentation > [07:20.11], All Along the Watchtower, Total: [52:43.23]
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

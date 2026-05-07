@@ -1,6 +1,0 @@
-2d82255348b8302439e06bf0edf13662 *bd87rehearsalt05.shn
-d6e28df392ebd3f24c93dbca771c1954 *bd87rehearsalt02.shn
-91bdbbf14acccfd2759cb2990a2d9cf4 *bd87rehearsalt03.shn
-66cac8325ab3fa67a43a07e3043adea0 *bd87rehearsalt04.shn
-6903f24be9f8b26f5064db302c2589a8 *bd87rehearsalt01.shn
-f64e3dd7c3fa80dff5d9a6dddd7f663b *bd87rehearsalt06.shn

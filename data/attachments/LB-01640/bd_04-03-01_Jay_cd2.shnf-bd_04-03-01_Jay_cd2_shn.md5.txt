@@ -1,8 +1,0 @@
-9923af098f1ce501f521be17f565e462 *bd_04-03-01_Jay_cd2_Track 01.shn
-a458d921075ff60eb07ac588e8054132 *bd_04-03-01_Jay_cd2_Track 02.shn
-0464e8855bed2d87aca1a5f5ac1e0491 *bd_04-03-01_Jay_cd2_Track 03.shn
-3f8d20645dd1e3d76811e17c50acadea *bd_04-03-01_Jay_cd2_Track 04.shn
-aff49dd93ced1b5a276ae3459dd32bb2 *bd_04-03-01_Jay_cd2_Track 05.shn
-30eaad7cf64bc13272fd637563bbfb22 *bd_04-03-01_Jay_cd2_Track 06.shn
-761ff866955295e49cbbc7a7b3b8a24f *bd_04-03-01_Jay_cd2_Track 07.shn
-1f4308e2138960e44a438c786ef75522 *bd_04-03-01_Jay_cd2_Track 08.shn

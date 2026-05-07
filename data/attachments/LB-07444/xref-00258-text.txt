@@ -1,104 +1,0 @@
-===================
-===================
-===================
-=== D1.md5
-===================
-===================
-===================
-f5c8eccac379f8ec2c1e221d30dbef3c *01 G Ride.flac
-4a7b47a4b6adafdcd21591c72f00d3c7 *02 G Look.flac
-cd04d8c98ca63a7d4d769859daecf43d *03 G House.flac
-97cfd8d6ffee7a3ff6ae03a624bb1308 *04 G Grace.flac
-4c2afbf3561fc40e70a2409cafd58e7f *05 Gotta serve.flac
-d16dcb347c979699345de0a53b91b03c *06 Believe.flac
-d91543686000bbbdbf514032d841cc3a *07 LRS.flac
-7f2882b01804bf672eab9daa6193e18b *08 G Heaven.flac
-9b968faccf2b6f2b40ee96411dc9c706 *09 Animals.flac
-6c4d954ae642cb61e00194fa8b15a5f9 *10 Precious.flac
-c71b8024479a9e2f809499f20b4eceb4 *11 Hell.flac
-5e853bb28a31ebd69ca6d98cb1bda7f9 *12 GirlNC.flac
-e471d9850a7971562350da44c27f3b1e *13 Slow Train.flac
-8df9c3bbd408343493990e1830a3039b *14 G Right.flac
-===================
-===================
-===================
-=== D2.md5
-===================
-===================
-===================
-f97ae4d0d83d2380a05ad09168f90141 *15 AM&J.flac
-e39836094fed29882f686aefc8de17be *16 Between.flac
-96fe3f37f539aa1963a4832cceb59174 *17 Covenant.flac
-75754e894a49f84149c9e077a697a793 *18 Solid Rock.flac
-47ab8704d3f0eed248b856c4e36e9f42 *19 JLAW.flac
-b524029ad0ac124c6b0f6e159b83a948 *20 Wake up.flac
-3b7bfd01d2338412e23030188a467998 *21 Senor.flac
-baea30fe3b96cb5ff826423ff9394918 *22 Garden.flac
-d854b1eee735060be76d4ba0882d5c51 *23 Blowin.flac
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-01 G Ride.flac:b63c96a98f45de3e9f6b2d8d953d983a02 G Look.flac:6d932ea43af37eec8d7174a585eac22803 G House.flac:afcdb1d053a5b05724dd00b1aede89b904 G Grace.flac:110d615afe171ae5f0becaa18129794f05 Gotta serve.flac:42c00c477daacefb58f953af6d35065606 Believe.flac:e41653c91b51abe174e812f3c492b92307 LRS.flac:7f70660f5ec6ad4c4b8d86076a871a9308 G Heaven.flac:16f62f8429b446e0921d7a31ae4456f809 Animals.flac:f36e027be6fc7fccdf93e2a5ff37739b10 Precious.flac:a6595d1ce7011eb6695331c1d8c6ce0711 Hell.flac:1130e66c3f893ec47091421bb223922612 GirlNC.flac:2d0d57ac8987478dec7e2e8ad028964213 Slow Train.flac:8c5117fcaf3cd75bfb4b5375293ff4c814 G Right.flac:733e5dbd9f9b8ca0b0b8b964e488c8be15 AM&J.flac:c5af258273f72e90bb47def29282ea3616 Between.flac:e96918c66a9fe8093fefbefd9db23f7517 Covenant.flac:becffcb4223a96c95fb876d8cd16045318 Solid Rock.flac:4ad18dff743a13406560bbf89b32464d19 JLAW.flac:904c3fe402560cbf57990ebbade2d9f120 Wake up.flac:3fc94c14eb72bf1fd4ab9a96ca9c129e21 Senor.flac:a41a56f1c61adaa1c5c88e27636392f122 Garden.flac:9388a3a21365fb9ab8a42361c1bef40c23 Blowin.flac:6fe54f6fe0953c9ad9db7408f0ea60ef01 G Ride.flac:b63c96a98f45de3e9f6b2d8d953d983a02 G Look.flac:6d932ea43af37eec8d7174a585eac22803 G House.flac:afcdb1d053a5b05724dd00b1aede89b904 G Grace.flac:110d615afe171ae5f0becaa18129794f05 Gotta serve.flac:42c00c477daacefb58f953af6d35065606 Believe.flac:e41653c91b51abe174e812f3c492b92307 LRS.flac:7f70660f5ec6ad4c4b8d86076a871a9308 G Heaven.flac:16f62f8429b446e0921d7a31ae4456f809 Animals.flac:f36e027be6fc7fccdf93e2a5ff37739b10 Precious.flac:a6595d1ce7011eb6695331c1d8c6ce0711 Hell.flac:1130e66c3f893ec47091421bb223922612 GirlNC.flac:2d0d57ac8987478dec7e2e8ad028964213 Slow Train.flac:8c5117fcaf3cd75bfb4b5375293ff4c814 G Right.flac:733e5dbd9f9b8ca0b0b8b964e488c8be15 AM&J.flac:c5af258273f72e90bb47def29282ea3616 Between.flac:e96918c66a9fe8093fefbefd9db23f7517 Covenant.flac:becffcb4223a96c95fb876d8cd16045318 Solid Rock.flac:4ad18dff743a13406560bbf89b32464d19 JLAW.flac:904c3fe402560cbf57990ebbade2d9f120 Wake up.flac:3fc94c14eb72bf1fd4ab9a96ca9c129e21 Senor.flac:a41a56f1c61adaa1c5c88e27636392f122 Garden.flac:9388a3a21365fb9ab8a42361c1bef40c23 Blowin.flac:6fe54f6fe0953c9ad9db7408f0ea60ef
-===================
-===================
-===================
-=== setlist.txt
-===================
-===================
-===================
-Fox Warfield Theatre
-San Francisco, California
-9 November 1980
- 
-1.Gotta Serve Somebody
-2.I Believe In You
-3.Like A Rolling Stone
- 
-Carolyn Dennis:
-Walk Around Heaven All Day (Rev. James Cleveland/Cassietta George)
- 
-4.Man Gave Names To All The Animals
-5.Precious Angel
-6.Ain't Gonna Go To Hell For Anybody
-7.Girl From The North Country
-8.Slow Train
-
-Regina McCreary Havis:
-Till I Get It Right (Red Lane/Larry Henley)
- 
-9.Abraham, Martin And John (Dick Holler)
-10.Let's Keep It Between Us
-11.Covenant Woman
-12.Solid Rock
-13.Just Like A Woman
-14.When You Gonna Wake Up
-15.Seor (Tales Of Yankee Power)
-16.In The Garden 
-
-17.Blowin' In The Wind
- 
- 
-First concert of A Musical Retrospective Tour. 1980 concert # 54.
-Bob Dylan (vocal & guitar), Fred Tackett (guitar & mandolin), Willie Smith (keyboards), Tim Drummond (bass), Jim Keltner (drums), Clydie King, Carolyn Dennis, Regina Havis (background vocals).
- 
-7 Bob Dylan (vocal & guitar), Willie Smith (piano).
-9 Bob Dylan (piano & vocal), Clydie King (shared vocal).
-10 Bob Dylan (piano) backed by the band.
- 
-Note. Live debut of Abraham, Martin And John and Let's Keep It Between Us.
- 
-BobTalk
-Thank you, that was a new song that I wrote. I don't think you heard it here before called I Ain't Gonna Go To Hell For Anybody.
-Thank you. Alright, all right. This is Carolyn Dennis, Regina McCreary and Clydie King (before In The Garden)
-All right, thank you. You come up and play! Anybody wanna play a song? All right, goodnight. You all know how to do it. You can do it. (after Blowin' In The Wind)
- 
-Stereo studio recording, 75 minutes.
- 
-www.bjorner.com
-===================
-===================
-===================

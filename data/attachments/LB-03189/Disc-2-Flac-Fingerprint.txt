@@ -1,8 +1,0 @@
-01-Cat's In The Well.flac:6a8648a206cb92844e1742ad0733cfbe
-02-I And I.flac:97b89fea7866a3448f1f8194c3f13003
-03-Simple Twist Of Fate.flac:a926f5bad8b92cc86470fa7dd964624d
-04-Highway 61.flac:dcfcb12ded6b5ccae976d4751b160c20
-05-Ballad Of A Thin Man.flac:390fd045dc3cff41979d6cc63e808c34
-06-Everything Is Broken.flac:e59a9fb34fc908460dd7b3a278328590
-07-It Ain't Me Babe.flac:027aa0cf80401e475b5f8c7733700a55
-08-Don't Think Twice.flac:6666643d5fe00a71d797ef53c0fba9b1

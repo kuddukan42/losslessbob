@@ -1,7 +1,0 @@
-Bob Dylan, 12/4/88, Oakland Coliseum, Oakland, California, 1CDR
-
-(33min), patched; Lineage: sbd > ? > cd-r > EAC secure mode > CoolEdit Pro > CD Wave Editor > FLAC Frontend > .flac level 6, Sound quality: 1st sbd source A+, 2nd sbd source B, Notes: t04 5:30 > t05 2:21 are missing from the 1st sbd source, and were mixed in from a 2nd source which circulates on the "Blown Out On The Trail" boot.; bittorrent download 05/04; excellent sound
-
-noise t1 0:06, 0:08, drop t4 3:46, digi-drop t5 0:34
-
-Setlist:, 1. San Francisco Bay Blues (Jesse Fuller), 2. Pretty Boy Floyd (Woody Guthrie), 3. With God On Our Side, 4. Girl From The North Country, 5. Gates Of Eden, 6. Forever Young

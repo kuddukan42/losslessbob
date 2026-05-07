@@ -1,8 +1,0 @@
-Bob Dylan, 8/28/63, March On Washington- Washington Mall, DC, 1CDR
-
-LB-3537, (10min), Mono audience recording 9:58, The 1st two tracks are from an audience recording. The 3rd track is from the audience video of all 3 songs. On track 2, Dylan's does only backup guitar., Also at the March: Odetta, Josh White, SNCC Freedom Singers, Peter, Paul & Mary., This seed was de-thumped, declicked etc. and eq has been applied to forestall a worse job by someone else. Use your tone controls for custom adjustments, of course., Seeded on Dylantree Feb 2006. Please do not reseed elsewhere without this info file and all relevant comments., Lowgen; bittorrent download 02/06; bittorrent download 02/06; t1 and t2 have nothing above 21k and very close to true mono; t3 is missing almost everything at the hiss band at 16k and doesn't have much above 8k except what looks like noise;  good sound [C+]
-
-1 Only A Pawn In Their Game, 2 Keep Your Eyes On The Prize, Hold On, 3 When The Ship Comes In
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

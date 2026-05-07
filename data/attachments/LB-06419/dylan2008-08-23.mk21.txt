@@ -1,37 +1,0 @@
-Bob Dylan
-August 23, 2008
-Horseshoe Casino
-Elizabeth, IN
-
-source: Schoeps mk21 > kc5 > cmc6xt > Sound Devices 702 (24/48)
-location: Row D, seat D5 (5 seats right of center)
-transfer: 702 > firewire > Spark XL 2.82 > xACT > .flac (16/44)
-
-Disc 1
-01 Introduction
-02 Watching The River Flow
-03 Mr. Tambourine Man
-04 Stuck Inside Of Mobile With The Memphis Blues Again
-05 Ballad Of Hollis Brown
-06 Tweedle Dee And Tweedle Dum
-07 Visions Of Johanna
-08 The Levee's Gonna Break
-09 I Believe In You
-10 Honest With Me
-
-Disc 2
-01 The Lonesome Death Of Hattie Carroll
-02 Highway 61 Revisited
-03 Make You Feel My Love
-04 I Don't Believe You (She Acts Like We Never Have Met)
-05 Ain't Talkin
-06 Thunder On The Mountain
-Encore:
-07 Like A Rolling Stone
-08 Blowin' In The Wind
-
-total runtime: 1 hr. 59 min.
-
-flac fingerprint:
-dylan2008-08-23d1t01.flac:809d6e922e020c2b0c9cceb08ae95349dylan2008-08-23d1t02.flac:5eb9adbb80f6423123a3204ebb20db17dylan2008-08-23d1t03.flac:717cbe820fba11dbf854f52240c79b49dylan2008-08-23d1t04.flac:966cd9810ae61e4e2b3f4e106aa76c1edylan2008-08-23d1t05.flac:9f9c7d166f82f83f82655463298d2d41dylan2008-08-23d1t06.flac:c6c13663b68805138b70087bb19d34b0dylan2008-08-23d1t07.flac:00113ed737235d7da5b539873bb0a83ddylan2008-08-23d1t08.flac:224ef1a99749853962e10ce6b03b0b17dylan2008-08-23d1t09.flac:f7dd677f466998213f29e42e80c0facfdylan2008-08-23d1t10.flac:4327a7627f8ac277bc78c12560dcc2dbdylan2008-08-23d2t01.flac:f43cbe2d1513e5e6e171fb2e8a5ffd52dylan2008-08-23d2t02.flac:97606239759c410f9055b9cd2cc892f2dylan2008-08-23d2t03.flac:0831cb2fb4fe441e0489054adbb37114dylan2008-08-23d2t04.flac:14f200aaa0d44af1eb69f0228eeb40addylan2008-08-23d2t05.flac:16da72a3f63e2098d0e9bf5b8543e4cfdylan2008-08-23d2t06.flac:5cb7a178e2f308d1dccf239655c6614ddylan2008-08-23d2t07.flac:1598cf5a201521687a972978fb61ad48dylan2008-08-23d2t08.flac:119f9a02414b7d666e5808b292b293cc
-

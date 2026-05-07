@@ -1,8 +1,0 @@
-Bob Dylan, 5/7/94, Chattanooga, Tn, USA, 2CDR
-
-LB-7189, (60min+42min), Source: Sonic Studio Mics PA-6 > Sony D7, Transfer: DAT > Sony Standalone CD Burner > FreeRIP (FLAC) > Bulk Rename Utility (Track ID) > Trader's Little Helper (FFP) > Torrent; bittorrent download 02/09;  same recording as LB-5650 based on same clapping wavs at end of d1t9; in comparison levels are close and have similar wav and spectral view and sound on d1t9; this has a drop/cut  between cdrs while that one is continuous; (did not listen to all of this)
-
-Disc One, 01. Jokerman, 02. Senor (Tales Of Yankee Power), 03. All Along The Watchtower, 04. Disease Of Conceit, 05. Tangled Up In Blue, 06. Simple Twist Of Fate, 07. Masters Of War (acoustic), 08. Mama, You Been On My Mind (acoustic), 09. It's All Over Now, Baby Blue Disc Two, 01. Highway 61 Revisited, 02. In The Garden, 03. I'll Be Your Baby Tonight, 04. Maggie's Farm, 05. Ballad Of A Thin Man, 06. It Ain't Me, Babe (acoustic)
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

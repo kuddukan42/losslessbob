@@ -1,110 +1,0 @@
-===================
-===================
-===================
-=== notes.txt
-===================
-===================
-===================
-Pines Theatre
-Look Park
-Northampton, Massachusetts
-
-19 August 2003
-
-1.To Be Alone With You
-2.The Times They Are A-Changin'
-3.Tweedle Dee & Tweedle Dum
-4.I'll Be Your Baby Tonight
-5.Things Have Changed
-6.Shelter From The Storm
-7.Highway 61 Revisited
-8.Blind Willie McTell
-9.It's Alright, Ma (I'm Only Bleeding)
-10.Watching The River Flow
-11.Boots Of Spanish Leather
-12.Honest With Me
-13.Tangled Up In Blue
-14.Summer Days
-
-15.Like A Rolling Stone
-16.All Along The Watchtower
-
-Concert # 1551 of The Never-Ending Tour. Concert # 27 of the 2003 US Summer Tour. 2003 concert # 61.
-
-Concert # 50 with the 16th Never-Ending Tour Band: Bob Dylan (vocal & piano), Freddie Koella (guitar), Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar), Tony Garnier (bass), George Recile (drums & percussion).
-
-Tommy Morrongiello (guitar).
-
-2, 9, 11, 13 acoustic with the band.
-
-2, 4, 6, 10, 16 Bob Dylan (harmonica).
-
-2, 8 Larry Campbell (cittern).
-
-4 Larry Campbell (pedal steel guitar).
-
-12 Larry Campbell (slide guitar).
-
-www.bjorner.com/
-
-Trade CDr < XLD < flac < dime
-apa05 
-===================
-===================
-===================
-=== shntool.txt
-===================
-===================
-===================
-    length     expanded size    cdr  WAVE problems  fmt   ratio  filename     5:06.69       54140732 B   ---   --   ---xx  01 Track 01.flac     5:12.17       55076828 B   ---   --   ---xx  02 Track 02.flac     5:28.58       57995660 B   ---   --   ---xx  03 Track 03.flac     5:54.52       62567948 B   ---   --   ---xx  04 Track 04.flac     6:55.63       73354220 B   ---   --   ---xx  05 Track 05.flac     6:28.38       68532620 B   ---   --   ---xx  06 Track 06.flac     6:58.68       73895180 B   ---   --   ---xx  07 Track 07.flac     6:32.33       69226460 B   ---   --   ---xx  08 Track 08.flac     7:21.35       77874764 B   ---   --   ---xx  09 Track 09.flac     6:21.30       67279004 B   ---   --   ---xx  10 Track 10.flac     5:48.65       61540124 B   ---   --   ---xx  11 Track 11.flac     6:47.00       71794844 B   ---   --   ---xx  12 Track 12.flac     7:29.03       79210700 B   ---   --   ---xx  01 Track 01.flac     7:51.43       83185580 B   ---   --   ---xx  02 Track 02.flac     7:28.03       79034300 B   ---   --   ---xx  03 Track 03.flac     7:03.39       74708972 B   ---   --   ---xx  04 Track 04.flac   104:49.16     1109417936 B                            0.6390  (16 files)
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-01 Track 01.flac:4a40aa225d55b24a2a8b88d4ba78b6ee02 Track 02.flac:bf567a8e0570b703c257037ee2208e5f03 Track 03.flac:4968c7ad4e4dbb3835c7db6d1fb1b14e04 Track 04.flac:4ec8f358498c43933c401c1eb8c608ef05 Track 05.flac:eadc2d05e0caacfcad9775c25d7011dc06 Track 06.flac:0579abe5b73f0dee3a382aabe7bd6bfe07 Track 07.flac:4e4d8a91c17bc27503eaa7090520dd0608 Track 08.flac:7c538ee57427235fea78e398a714e32109 Track 09.flac:c25cb17adc4a38dae894724d3f09c74110 Track 10.flac:eef801dee67cbc96011f2dad2634268c11 Track 11.flac:1a8cad765cb5b55c9e0cc9c1c518529212 Track 12.flac:6ac574985d024b4a64058a532b8b4a6c
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-c6b38028dc99b74f8c89b1b46647650c *01 Track 01.flac
-e3daf862e484ea1fc0976a09d9f43098 *02 Track 02.flac
-95652125ae091b659812280f4df4a2ac *03 Track 03.flac
-55be19f7f31fbc0465d663d910c8dfe4 *04 Track 04.flac
-4036b594104c51177dd0105e319340d9 *05 Track 05.flac
-eac0aee235b2210c073ca332827effcf *06 Track 06.flac
-0a30a7d035dffea1ecf3c736202bc5d4 *07 Track 07.flac
-bd05f818d80a16767a9ec48361ac73de *08 Track 08.flac
-38f5e22b799c5e1329ab8ae790e36696 *09 Track 09.flac
-47b5fb6d015ce22f56456543f7861b14 *10 Track 10.flac
-f3186a44a0e9fa6d38c7d2826f7b9abd *11 Track 11.flac
-16951b70c4e4d1cc9bd71c23c3ae39e7 *12 Track 12.flac
-
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-01 Track 01.flac:f550e7f6b193fe9a3fb1c92859de6f1002 Track 02.flac:73974aa09e0032e82c1a9a65074075a703 Track 03.flac:6f0e6ad93f27b982d4d9411e78ae9e9e04 Track 04.flac:3183fe91fea239519f6137cd7554ca1c
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-9a82a58370d8893213546437ee66f2d8 *01 Track 01.flac
-19529642d72f3e37be36fd32afd0b4eb *02 Track 02.flac
-7d2f50fa07ed49c0005729edd57b0f87 *03 Track 03.flac
-f7de5a86c2269f76bf847cf64683669a *04 Track 04.flac
-
-===================
-===================
-===================

@@ -1,87 +1,0 @@
-===================
-===================
-===================
-=== bd_2000_09-25-crystal cat-flac.txt
-===================
-===================
-===================
-Bob DylanSeptember 25, 2000Guild Hall, Portsmouth, EnglandCrystal Cat release number 565-66 (released 2000)Title: "Portsmouth Guild Hall Second Evening"Bob's Boots reference: http://www.bobsboots.com/CDs/cd-p39.htmlOffending Tracks Removed:Things Have Changed(commercially released (Japan-only) on "Live 1961-2000 - Thirty-nine years of great concert performances":)Tryin' To Get To Heaven(promotional single for Chronicles)Silvers > CD-R > xACT (Flac) > DimeDisc One:01. Introduction (0:55)02. Hallelujah, I'm Ready To Go (2:54)03. Mr. Tambourine Man (6:16)04. A Hard Rain's A-Gonna Fall (9:39)05. The Ballad Of Frankie Lee and Judas Priest (5:08)06. Tangled Up In Blue (8:00)07. Searching For A Soldier's Grave (3:22)08. Country Pie (2:44)09. She Belongs To Me (5:33)10. Tombstone Blues (5:31)Disc Two:01. Tryin' To Get To Heaven (5:34) - REMOVED02. Drifter's Escape (4:23)03. Everything Is Broken (8:40)04. Things Have Changed (5:47) - REMOVED05. Like A Rolling Stone (6:37)06. It Ain't Me Babe (6:55)07. Watching The River Flow (4:48)08. Forever Young (6:28)09. Highway 61 Revisited (5:46)10. Blowin' In The Wind (7:39)Bonus Tracks:11. Dear Landlord - 03-14-00 Visalia Convention Center, Visalia, CA (4:46)12. Positively Fourth Street - 03-15-00 Civic Auditorium, Santa Cruz, CA (8:03)The sound quality, as is typical of Crystal Cat, is stellar.Excellent performance. Check out The Ballad Of Frankie Lee and Judas Priest.You'll want this one.
-===================
-===================
-===================
-=== bd_2000_09-25-crystal cat-new-info.txt
-===================
-===================
-===================
-Bob DylanSeptember 25, 2000Guild Hall, Portsmouth, EnglandCrystal Cat release number 565-66 (released 2000)Title: "Portsmouth Guild Hall Second Evening"Bob's Boots reference: http://www.bobsboots.com/CDs/cd-p39.htmlOriginally dime torrent 120042 with 2 tracks removed
-Then posted complete to alt.binaries.music.shn.dylan, whence these files come.
-Silvers > CD-R > xACT (Flac) > DimeDisc One:01. Introduction (0:55)02. Hallelujah, I'm Ready To Go (2:54)03. Mr. Tambourine Man (6:16)04. A Hard Rain's A-Gonna Fall (9:39)05. The Ballad Of Frankie Lee and Judas Priest (5:08)06. Tangled Up In Blue (8:00)07. Searching For A Soldier's Grave (3:22)08. Country Pie (2:44)09. She Belongs To Me (5:33)10. Tombstone Blues (5:31)Disc Two:01. Tryin' To Get To Heaven (5:34)02. Drifter's Escape (4:23)03. Everything Is Broken (8:40)04. Things Have Changed (5:47)05. Like A Rolling Stone (6:37)06. It Ain't Me Babe (6:55)07. Watching The River Flow (4:48)08. Forever Young (6:28)09. Highway 61 Revisited (5:46)10. Blowin' In The Wind (7:39)Bonus Tracks:11. Dear Landlord - 03-14-00 Visalia Convention Center, Visalia, CA (4:46)12. Positively Fourth Street - 03-15-00 Civic Auditorium, Santa Cruz, CA (8:03)The sound quality, as is typical of Crystal Cat, is stellar.Excellent performance. Check out The Ballad Of Frankie Lee and Judas Priest.You'll want this one.
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-bd2000-09-25-d1-01 Introduction.flac:a19cf8e1637627cf209995bece69957ebd2000-09-25-d1-02 Hallelujah, I'm ReadyTo Go.flac:a8d82f8367526270ad092a70d17e6958bd2000-09-25-d1-03 Mr. Tambourine Man.flac:48e96e96cdca7e69272511a10fe4b7fdbd2000-09-25-d1-04 A Hard Rain's A-Gonna Fall.flac:f6959ef5db74c05e5c03a95200bae0f8bd2000-09-25-d1-05 The Ballad Of Frankie Lee and Judas Priest.flac:1a7c9074d7133d37cd2f5ab95b01d965bd2000-09-25-d1-06 Tangled Up In Blue.flac:e313bef51000a328945fec51240939fcbd2000-09-25-d1-07 Searching For A Soldier's Grave.flac:0eaac327334cfdf464f90118be1e310cbd2000-09-25-d1-08 Country Pie.flac:0d8a66835ac0353007dce9762b645823bd2000-09-25-d1-09 She Belongs To Me.flac:a5d1eceb388805e5ac0dc432470b1be7bd2000-09-25-d1-10 Tombstone Blues.flac:f27618ec5a6bfedf33c0b3c76b60f813bd2000-09-25-d2-02 Drifter's Escape.flac:9265172b1eccea8ddc5e7721c279bb56bd2000-09-25-d2-03 Everything's Broken.flac:8928556963dc9082e2cb7d6d1c5a5f3dbd2000-09-25-d2-05 Like A Rolling Stone.flac:73895e3e697dddd9d8829645c4743de5bd2000-09-25-d2-06 It Ain't Me, Babe.flac:8ec0fb48b7d5f91a969d87757f60ceb7bd2000-09-25-d2-07 Watching The River Flow.flac:16284edf0b98c66cdf8c338852904d75bd2000-09-25-d2-08 Forever Young.flac:7eef60dc8441e4250411498d1585903ebd2000-09-25-d2-09 Highway 61 Revisited.flac:8803583d9d18457d5c707f812de1a126bd2000-09-25-d2-10 Blowin' In The Wind.flac:58226e1e521d192b28cca36cc74a4525bd2000-09-25-d2-11 Dear Landlord.flac:1c0abae8d276cc33bacf584657774bacbd2000-09-25-d2-12 Positively Fourth Street.flac:555fa0adbd275778148589ccce94d1c8
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-bd85bae541a576701c3d0dd2ab80fe99 *bd2000-09-25-d1-01 Introduction.flac
-e42f6babb2c734a4a0c913e5de2bf4b6 *bd2000-09-25-d1-02 Hallelujah, I'm ReadyTo Go.flac
-5b42639487fd896c4292ba2c874626d5 *bd2000-09-25-d1-03 Mr. Tambourine Man.flac
-7d4bfd9c63f001fe655927cefa730cf6 *bd2000-09-25-d1-04 A Hard Rain's A-Gonna Fall.flac
-25c9bd5efd5ee7877bf6e453f7eafdf0 *bd2000-09-25-d1-05 The Ballad Of Frankie Lee and Judas Priest.flac
-bf755580e34675b8c02aa9b77a3d796d *bd2000-09-25-d1-06 Tangled Up In Blue.flac
-f201c3008cbe7ea02cb1e8927f4d45d8 *bd2000-09-25-d1-07 Searching For A Soldier's Grave.flac
-7c8a2513f98076f9c335520a02ed8830 *bd2000-09-25-d1-08 Country Pie.flac
-0dc0af1559dcc40433c5b642ba80f891 *bd2000-09-25-d1-09 She Belongs To Me.flac
-2382da942fd265cb08d5f934f44af1a8 *bd2000-09-25-d1-10 Tombstone Blues.flac
-6ba5b2e3810fb1bc1b7f669600ee57fb *bd2000-09-25-d2-01 Trying To Get To Heaven.flac
-d03226e3562a568a8756961b464585e3 *bd2000-09-25-d2-02 Drifter's Escape.flac
-1e11e0c7f84eb929e21ce3bb72071979 *bd2000-09-25-d2-03 Everything's Broken.flac
-4ead8469114d2fc4279d09f53c06fd1c *bd2000-09-25-d2-04 Things Have Changed.flac
-1a25490f3e422893128ab4a9a59e9b20 *bd2000-09-25-d2-05 Like A Rolling Stone.flac
-675a952b2f05ad009c50a2937b8b259d *bd2000-09-25-d2-06 It Ain't Me, Babe.flac
-9f31b54fbf8a327ae7731c28cec9848e *bd2000-09-25-d2-07 Watching The River Flow.flac
-766cf58e2fa7814b7da407e956b84304 *bd2000-09-25-d2-08 Forever Young.flac
-ac122aeef85d86bcd90d881f0ee88c09 *bd2000-09-25-d2-09 Highway 61 Revisited.flac
-c5efc6ec176c32f44559bf8765dc00c2 *bd2000-09-25-d2-10 Blowin' In The Wind.flac
-f279a604c7d14d97197c7e1cdb5b638e *bd2000-09-25-d2-11 Dear Landlord.flac
-62fca6af56700bd4fffb73c69d11e3e0 *bd2000-09-25-d2-12 Positively Fourth Street.flac
-
-===================
-===================
-===================
-=== shntoolmd5sum.st5
-===================
-===================
-===================
-a19cf8e1637627cf209995bece69957e  [shntool]  bd2000-09-25-d1-01 Introduction.flac
-a8d82f8367526270ad092a70d17e6958  [shntool]  bd2000-09-25-d1-02 Hallelujah, I'm ReadyTo Go.flac
-48e96e96cdca7e69272511a10fe4b7fd  [shntool]  bd2000-09-25-d1-03 Mr. Tambourine Man.flac
-f6959ef5db74c05e5c03a95200bae0f8  [shntool]  bd2000-09-25-d1-04 A Hard Rain's A-Gonna Fall.flac
-1a7c9074d7133d37cd2f5ab95b01d965  [shntool]  bd2000-09-25-d1-05 The Ballad Of Frankie Lee and Judas Priest.flac
-e313bef51000a328945fec51240939fc  [shntool]  bd2000-09-25-d1-06 Tangled Up In Blue.flac
-0eaac327334cfdf464f90118be1e310c  [shntool]  bd2000-09-25-d1-07 Searching For A Soldier's Grave.flac
-0d8a66835ac0353007dce9762b645823  [shntool]  bd2000-09-25-d1-08 Country Pie.flac
-a5d1eceb388805e5ac0dc432470b1be7  [shntool]  bd2000-09-25-d1-09 She Belongs To Me.flac
-f27618ec5a6bfedf33c0b3c76b60f813  [shntool]  bd2000-09-25-d1-10 Tombstone Blues.flac
-9265172b1eccea8ddc5e7721c279bb56  [shntool]  bd2000-09-25-d2-02 Drifter's Escape.flac
-8928556963dc9082e2cb7d6d1c5a5f3d  [shntool]  bd2000-09-25-d2-03 Everything's Broken.flac
-73895e3e697dddd9d8829645c4743de5  [shntool]  bd2000-09-25-d2-05 Like A Rolling Stone.flac
-8ec0fb48b7d5f91a969d87757f60ceb7  [shntool]  bd2000-09-25-d2-06 It Ain't Me, Babe.flac
-16284edf0b98c66cdf8c338852904d75  [shntool]  bd2000-09-25-d2-07 Watching The River Flow.flac
-7eef60dc8441e4250411498d1585903e  [shntool]  bd2000-09-25-d2-08 Forever Young.flac
-8803583d9d18457d5c707f812de1a126  [shntool]  bd2000-09-25-d2-09 Highway 61 Revisited.flac
-58226e1e521d192b28cca36cc74a4525  [shntool]  bd2000-09-25-d2-10 Blowin' In The Wind.flac
-1c0abae8d276cc33bacf584657774bac  [shntool]  bd2000-09-25-d2-11 Dear Landlord.flac
-555fa0adbd275778148589ccce94d1c8  [shntool]  bd2000-09-25-d2-12 Positively Fourth Street.flac
-
-===================
-===================
-===================

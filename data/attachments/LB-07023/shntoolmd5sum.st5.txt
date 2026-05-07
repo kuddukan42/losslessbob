@@ -1,8 +1,0 @@
-5dd150faac4c133483f7c25be96153af  [shntool]  bd2000-07-14-sbd-d1t01.flac
-30f56cb5f510caeb90a6eb978de4dbd8  [shntool]  bd2000-07-14-sbd-d1t02.flac
-69cf61529066a49e31706fa3c01cc24a  [shntool]  bd2000-07-14-sbd-d1t03.flac
-8429c1c8ab33eb59bb66a1dcd662112f  [shntool]  bd2000-07-14-sbd-d1t04.flac
-6733e80685064500be1ce5d73b0a7f59  [shntool]  bd2000-07-14-sbd-d1t05.flac
-8d8eeb0ac8f57ba7ad5ca1ee74d3b448  [shntool]  bd2000-07-14-sbd-d1t06.flac
-525ecb02f4ed3455e4f478403b95b7c0  [shntool]  bd2000-07-14-sbd-d1t07.flac
-a23edea30d5dd682695c3bc59ae5eed3  [shntool]  bd2000-07-14-sbd-d1t08.flac

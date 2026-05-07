@@ -1,9 +1,0 @@
-H:\Bob Dylan 9-11-93 Project\Disc2_Shns>shntool len *.shn
-    length     expanded size   cdr  WAVE  probs   filename
-    11:51.17     125460428     ---   --    -xx    BobDylan 1993-9-11d2t01.shn
-     7:18.27      77326748     ---   --    -xx    BobDylan 1993-9-11d2t02.shn
-     6:39.41      70480076     ---   --    -xx    BobDylan 1993-9-11d2t03.shn
-     6:31.61      69115916     ---   --    -xx    BobDylan 1993-9-11d2t04.shn
-     6:31.20      69019484     ---   --    -xx    BobDylan 1993-9-11d2t05.shn
-     7:58.40      84413324     ---   --    -xx    BobDylan 1993-9-11d2t06.shn
-    46:50.56     495815976 B                      (totals for 6 files, 0.6041 overall compression ratio)

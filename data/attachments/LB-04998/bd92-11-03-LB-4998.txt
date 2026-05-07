@@ -1,8 +1,0 @@
-Bob Dylan, 11/3/92, Cincinnati, Ohio, Cincinnati Music Hall, 2CDR
-
-LB-4998, (70min+50min), Unknown Audience Recording>CDR>EAC> FLAC LEVEL 5; bittorrent download 06/07; left channel has asymetrical wavs wit top at -10db while bottom goes to -6db on d2t6; cut before d2t7 and for d2t7 sound quality decreases to hollow and harsh with a little hiss to  B- quality as if from a different recording as spectral view changes and include a tv band; excellent sound [A-]
-
-CD 1 70:00, 1 I Can't Be Satisfied (McKinley Morganfield), 2 If Not For You, 3 All Along The Watchtower, 4 Positively 4th Street, 5 I Want You, 6 I And I, 7 Silvio (Bob Dylan & Robert Hunter), 8 Mama, You Been On My Mind, 9 Boots Of Spanish Leather, 10 It's All Over Now, Baby Blue, 11 Desolation Row, CD 2 49:32, 1 Unbelievable, 2 Every Grain Of Sand, 3 The Times They Are A-Changin', 4 Maggie's Farm, 5 Shooting Star, 6 Everything Is Broken, 7 It Ain't Me, Babe
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

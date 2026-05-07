@@ -1,93 +1,0 @@
-===================
-===================
-===================
-=== 1992_04_14_Sydney-MK.md5
-===================
-===================
-===================
-203f8e9760a1cc260e82b1c380d29513 *1992_04_14_Sydney_freq.JPG
-7a077adee7025a82b8fdc2f43f1ebaf6 *1992_04_14_Sydney_info.txt
-992377136a2f7fabb72bd3f72026fd85 *1992_04_14_Sydney_Ken_back.jpg
-57320089f22b13d08c51f696730daa54 *1992_04_14_Sydney_Ken_front.jpg
-cea9267411280fa295486ed4cb77988a *Disc 1\01 New Morning.flac
-ee9b94f34d5ed2a2426d1a9ce082a9f5 *Disc 1\02 When I Paint My Masterpiece.flac
-d48d78de8e1fe9f2d9ad8ec749290711 *Disc 1\03 Everything Is Broken.flac
-6820bf4bdb1a873e39a1d4cdbb31bbf0 *Disc 1\04 Just Like A Woman.flac
-0ead35172ffb06c4248b686105f07fe8 *Disc 1\05 Tangled Up In Blue.flac
-2b86739343467a5e843cbd2eecf12b1b *Disc 1\06 Shelter From The Storm.flac
-27dd63d539a0b6b11939caad6bd9db58 *Disc 1\07 If Not For You.flac
-ce677d5b2a33f29c40bd15cc3a44ca6a *Disc 1\08 Love Minus Zero - No Limit.flac
-8499908eef056aed606b532f6d688bb3 *Disc 1\09 Little Moses.flac
-9d75822a6c879bcfb7bad87571b1c267 *Disc 1\10 Desolation Row.flac
-62ea0a16d8db6f7627f03e134465eda9 *Disc 2\1 It Ain't Me Babe.flac
-d7ff3237aeb9fc0dee2be610599d8f38 *Disc 2\2 Cat's In The Well.flac
-48bcf7ea2c31079cca6b4d915c795e88 *Disc 2\3 Idiot Wind.flac
-62fe6d1539fec5eb8bd9fefaa843e338 *Disc 2\4 The Times They Are A-Changin'.flac
-c023224c396b0dd8890e03987dfdef3e *Disc 2\5 Maggie's Farm.flac
-3872380e575067e39c0977c622417c56 *Disc 2\6 Absolutely Sweet Marie.flac
-419da6b5a304fc67b1a1fe4fef438ee0 *Disc 2\7 All Along The Watchtower.flac
-453f16538189d4b39fbdf6659991ef00 *Disc 2\8 The Lady Of Carlisle.flac
-===================
-===================
-===================
-=== 1992_04_14_Sydney_info.txt
-===================
-===================
-===================
-Bob Dylan
-April 14, 1992 - Sydney, Australia
-
-Disc 1
-1. New Morning
-2. When I Paint My Masterpiece
-3. Everything Is Broken
-4. Just Like A Woman
-5. Tangled Up In Blue
-6. Shelter From The Storm
-7. If Not For You
-8. Love Minus Zero / No Limit @
-9. Little Moses @
-10. Desolation Row @
-
-Disc 2
-1. It Ain't Me, Babe @
-2. Cat's In The Well
-3. Idiot Wind
-4. The Times They Are A-Changin' @
-5. Maggie's Farm
-6. Absolutely Sweet Marie
-7. All Along The Watchtower
-8. The Lady Of Carlisle @
-
-From MK master tape
-
-
-Disc 1\01 New Morning.flac:948fbd4c344a893639d3381f37c1e93a
-Disc 1\02 When I Paint My Masterpiece.flac:c2c2066c46d58ad10824e8a93b142a59
-Disc 1\03 Everything Is Broken.flac:ac13506257ca62e01b76ca36de1925cc
-Disc 1\04 Just Like A Woman.flac:ccff42a2f1db56bf84abe3c3c357e434
-Disc 1\05 Tangled Up In Blue.flac:4c937766bffab155be8459e9dd56c058
-Disc 1\06 Shelter From The Storm.flac:2fb27f7ae6b63d5e5388c9f2d83d713f
-Disc 1\07 If Not For You.flac:cfb10eeec02a431600c29717bc66d431
-Disc 1\08 Love Minus Zero - No Limit.flac:2885cc43a335ffd88b00a3519671db4e
-Disc 1\09 Little Moses.flac:449431bb811f434160400c1c27347963
-Disc 1\10 Desolation Row.flac:9611aa11d2333f62fbceba6fb701acee
-Disc 2\1 It Ain't Me Babe.flac:a0bbc533071a5f5662a39b7c852537c2
-Disc 2\2 Cat's In The Well.flac:b4e321fc0fe8d829d4fed9651187d040
-Disc 2\3 Idiot Wind.flac:d417c1844dec0c8704038f98142afc76
-Disc 2\4 The Times They Are A-Changin'.flac:be6364b0d0eb019cc76fcad1c41e1c3d
-Disc 2\5 Maggie's Farm.flac:0cb3b6688ab32dd1d2ffb4b7cc28d6bd
-Disc 2\6 Absolutely Sweet Marie.flac:fde9e7181c9c6c017b80ce04f499c386
-Disc 2\7 All Along The Watchtower.flac:f5943c2aee1ad0c15ea7c8ddd2751016
-Disc 2\8 The Lady Of Carlisle.flac:15f8b0c4b904d1c34978b9479c9d6932
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-01 New Morning.flac:948fbd4c344a893639d3381f37c1e93a02 When I Paint My Masterpiece.flac:c2c2066c46d58ad10824e8a93b142a5903 Everything Is Broken.flac:ac13506257ca62e01b76ca36de1925cc04 Just Like A Woman.flac:ccff42a2f1db56bf84abe3c3c357e43405 Tangled Up In Blue.flac:4c937766bffab155be8459e9dd56c05806 Shelter From The Storm.flac:2fb27f7ae6b63d5e5388c9f2d83d713f07 If Not For You.flac:cfb10eeec02a431600c29717bc66d43108 Love Minus Zero - No Limit.flac:2885cc43a335ffd88b00a3519671db4e09 Little Moses.flac:449431bb811f434160400c1c2734796310 Desolation Row.flac:9611aa11d2333f62fbceba6fb701acee1 It Ain't Me Babe.flac:a0bbc533071a5f5662a39b7c852537c22 Cat's In The Well.flac:b4e321fc0fe8d829d4fed9651187d0403 Idiot Wind.flac:d417c1844dec0c8704038f98142afc764 The Times They Are A-Changin'.flac:be6364b0d0eb019cc76fcad1c41e1c3d5 Maggie's Farm.flac:0cb3b6688ab32dd1d2ffb4b7cc28d6bd6 Absolutely Sweet Marie.flac:fde9e7181c9c6c017b80ce04f499c3867 All Along The Watchtower.flac:f5943c2aee1ad0c15ea7c8ddd27510168 The Lady Of Carlisle.flac:15f8b0c4b904d1c34978b9479c9d6932
-===================
-===================
-===================

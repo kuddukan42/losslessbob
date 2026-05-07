@@ -1,8 +1,0 @@
-Bob Dylan, 11/18/08, Montreal, QC -- Centre Bell, 2CDR
-
-LB-7001, (65min+52min), Sennheiser MKE2002; Nice audience recording made from the lower stands on the extreme right on the side of the, stage. Looked at the back of Bob's head all night long but I had a speaker to myself and, friends left and right. Result is good., Sennheiser MKE2002 -> Denon DTR80P (44.1 khz, 16 bit), Fostex D5 (playback) -> M-Audio 2496 (digital port) -> CEP (trim, final fade) -> CDWave (track, split) -> flac frontend (level 8, tested, SBE corrected) -> maketorrent 2.0 (ffp, md5, info, file included) -> Dime 2008-11-22, Purchase the official releases and attend tour performances., Pass on in lossless formats only as a gift or in even trade only, Please do all possible to prevent the sale or auction of this recording.; bittorrent download 11/08; when vocals get loud especially on d1t2 they sound distorted like they are brickwalling;; very good to excellent sound [B+]
-
--- 115:56, Disc one: (64:39), 01. -message and intro-, 02. Cat's in the Well, 03. Lay Lady Lay, 04. Lonesome Day Blues, 05. Just Like a Woman, 06. The Levee's Gonna Break, 07. John Brown, 08. Stuck Inside of Mobile with the Memphis Blues Again, 09. Spirit on the Water, 10. Tweedle Dee & Tweedle Dum, 11. This Wheel's on Fire, Disc two: (51:17), 01. Highway 61 Revisited, 02. Masters of War, 03. Summer Days, 04. Ain't Talkin', 05. Thunder on the Mountain, 06. -applause-, 07. Like a Rolling Stone, 08. -band intro-, 09. All Along the Watchtower, 10. -applause-, Discs should combine perfectly for longer media.
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

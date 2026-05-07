@@ -1,75 +1,0 @@
-===================
-===================
-===================
-=== info.txt
-===================
-===================
-===================
-10.11.1989, Atlanta, 2CDs
-
-LB-2464
-
-cut at the start of d2t6
-
-Another terrific show, although the sound is not the best. The acoustic set (esp. "Dark As A Dungeon") is wonderful & the encores are for me among Dylan's best performances of that year. I love the loud opening chords to "All Along The Watchtower".
-
-
-CD 1 (51:44)
-
-1 To Be Alone With You 
-2 Masters Of War 
-3 Man Of Peace 
-4 Simple Twist Of Fate 
-5 Lay Lady Lay 
-6 Leopard-Skin Pill-Box Hat 
-7 Gates Of Eden (acoustic) 
-8 TheLonesome Death Of Hattie Carroll (acoustic) 
-9 Mr. Tambourine Man (acoustic) 
-10 Dark As A Dungeon (acoustic)
-
-CD 2 (45:04)
-
-1 Everything Is Broken 
-2 It Takes A Lot To Laugh,It Takes A Train To Cry 
-3 What Good Am I? 
-4 Most Of The Time 
-5 In The Garden 
-6 Like A Rolling Stone 
-7 Barbara Allen (acoustic) 
-8 Disease Of Conceit 
-9 All Along The Watchtower 
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-891110_Atlanta_disc1-Track01.flac:3483a8275986db58e4dc3275f702760a891110_Atlanta_disc1-Track02.flac:e932f01628aca66ad6f4c6dedae16ab9891110_Atlanta_disc1-Track03.flac:1dff8e1879a1d7ba156a1665969676a4891110_Atlanta_disc1-Track04.flac:71c7e8663decd1c99a3c29c3c9613f1a891110_Atlanta_disc1-Track05.flac:032882c641cb468ac038f8ae6b7272b1891110_Atlanta_disc1-Track06.flac:2936bc7318f784a01dd0e3498e1e54c4891110_Atlanta_disc1-Track07.flac:13883b5b56a5d4e6abfe872b4392c531891110_Atlanta_disc1-Track08.flac:3e36f4523e3176e6f69a94746d9a2a9a891110_Atlanta_disc1-Track09.flac:497c3ebe99f3aa20e9bd1016e13f48c1891110_Atlanta_disc1-Track10.flac:b001e814888159696a88121cbf668913
-===================
-===================
-===================
-=== Len.txt
-===================
-===================
-===================
-    length     expanded size    cdr  WAVE problems  fmt   ratio  filename     5:51.33       61994060 B   ---   --   ---xx  891110_Atlanta_disc1-Track01.flac     3:17.13       34781420 B   ---   --   ---xx  891110_Atlanta_disc1-Track02.flac     4:42.70       49909484 B   ---   --   ---xx  891110_Atlanta_disc1-Track03.flac     5:26.12       57534668 B   ---   --   ---xx  891110_Atlanta_disc1-Track04.flac     4:37.21       48912236 B   ---   --   ---xx  891110_Atlanta_disc1-Track05.flac     3:04.12       32485868 B   ---   --   ---xx  891110_Atlanta_disc1-Track06.flac     5:52.50       62210444 B   ---   --   ---xx  891110_Atlanta_disc1-Track07.flac     7:12.18       76247180 B   ---   --   ---xx  891110_Atlanta_disc1-Track08.flac     6:43.45       71195084 B   ---   --   ---xx  891110_Atlanta_disc1-Track09.flac     4:56.42       52313228 B   ---   --   ---xx  891110_Atlanta_disc1-Track10.flac    51:44.16      547583672 B                            0.6589  (10 files)
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-891110_Atlanta_disc2-Track01.flac:47562fdff0f4e11c6df70549249bec08891110_Atlanta_disc2-Track02.flac:435a974f246a76241f8b5c309735e6ab891110_Atlanta_disc2-Track03.flac:12ca17f2df623f6fec5522623de14415891110_Atlanta_disc2-Track04.flac:ff0fa86f41ee8c65185d81534633d983891110_Atlanta_disc2-Track05.flac:8040e9704b4d5bdcf787b410b99754da891110_Atlanta_disc2-Track06.flac:65aaec39919c058b03b532d3b107e04e891110_Atlanta_disc2-Track07.flac:e1e3a8a15173a5e1e6afdc808bdc4384891110_Atlanta_disc2-Track08.flac:6371cad39203f2a9355e5fc7c436dacf891110_Atlanta_disc2-Track09.flac:e26001aabff26eeafe796c3a110aa6a0
-===================
-===================
-===================
-=== Leng.txt
-===================
-===================
-===================
-    length     expanded size    cdr  WAVE problems  fmt   ratio  filename     3:17.00       34750844 B   ---   --   ---xx  891110_Atlanta_disc2-Track01.flac     4:53.55       51814604 B   ---   --   ---xx  891110_Atlanta_disc2-Track02.flac     4:56.66       52369676 B   ---   --   ---xx  891110_Atlanta_disc2-Track03.flac     4:56.34       52294412 B   ---   --   ---xx  891110_Atlanta_disc2-Track04.flac     4:55.72       52207388 B   ---   --   ---xx  891110_Atlanta_disc2-Track05.flac     7:50.06       82922156 B   ---   --   ---xx  891110_Atlanta_disc2-Track06.flac     4:04.51       43161596 B   ---   --   ---xx  891110_Atlanta_disc2-Track07.flac     4:28.03       47282300 B   ---   --   ---xx  891110_Atlanta_disc2-Track08.flac     5:41.45       60258284 B   ---   --   ---xx  891110_Atlanta_disc2-Track09.flac    45:04.32      477061260 B                            0.6840  (9 files)
-===================
-===================
-===================

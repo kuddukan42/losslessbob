@@ -1,6 +1,0 @@
-370a887fc16087d4794d260033d245e6 *bd_03-08-09_cd2_Track 01.shn
-0b7bc548e127bdffb23401dea65158a2 *bd_03-08-09_cd2_Track 02.shn
-2a8b959468c69d464f41e3ecd4ba7ef6 *bd_03-08-09_cd2_Track 03.shn
-cadf658deb986ffa5b63d2122573c3ee *bd_03-08-09_cd2_Track 04.shn
-03bbaf46c35bcbc3ebb190174560a824 *bd_03-08-09_cd2_Track 05.shn
-6109e157009b420b0ccc837a041f844d *bd_03-08-09_cd2_Track 06.shn

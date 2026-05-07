@@ -1,9 +1,0 @@
-ca9e902f6fd09e29298528774be1b5d5 *01 Maggie's farm.flac
-945deba81ed748f5a70e0b80d988a9c7 *02 I want you.flac
-ed642dd72b7dee822eb559decf71b1a3 *03 Can't wait.flac
-9184a3b73d538bb7d252ec6f7a8e23d9 *04 Under the red sky.flac
-9d539f61b1594d15c270d876eecada58 *05 Silvio.flac
-e7a8d3ef6d234e2a615a33274ee00d7a *06 Stone walls and steel bars.flac
-95b9d5c54a646b3407a639889013df23 *07 Mr. Tambourine Man.flac
-9b4292d13f2105a98801284ce7833d26 *08 Tangled up in blue.flac
-6c8042905b9906d8757f7a59887b58db *09 The lonesome death of Hattie Carroll.flac

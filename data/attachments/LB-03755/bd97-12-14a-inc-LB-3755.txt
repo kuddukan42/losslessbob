@@ -1,8 +1,0 @@
-Bob Dylan, 12/14/97, Chicago, Cabaret Metro, 2CDR
-
-LB-3755, (48min+43min), version "a"; incomplete; Taper Unknown, A>D conversion by Mike Stillman (e-mail: mikebvc at ripco dot com), DAT > DAT > Maxell cassette recorded and played on Nakamichi RX-505 >, 20-bit digital conversion using Burr-Brown DAC, dithered to 16 bits for output >, HHB CDR-830 > EAC, no errors > Sector boundaries split and verified with SHNtool >, FLAC Level 8 encoding > these files; David Bromberg: vocals and guitar on D1T1, D1T2, D2T4, D2T5; bittorrent download 05/06; has a hiss band; in comparison to LB-2484 this one has a nicer warmer sound which is offset by its hiss and fuzziness probably from cassette but still is more pleasant to listen to
-
-Disk One:, David Bromberg with Dylan's Band (introduced by Tony Garnier):, 1. Kissing You Goodbye, 2. Will Not Be Your Fool, Bob Dylan and his band:, 3. /Maggie's Farm (first few seconds cut on source), 4. Tonight I'll Be Staying Here With You, 5. Cold Irons Bound, 6. Simple Twist of Fate, 7. Can't Wait, 8. Silvio, Disk Two:, 1. Roving Gambler, 2. To Ramona, 3. Tangled Up in Blue, 4. Ragtime Annie (Dylan-acoustic guitar, Bromberg-acoustic guitar, Campbell-fiddle, Baxter-mandolin, Garnier-acoustic bass, Kemper-drums), 5. It Takes A Lot To Laugh, It Takes A Train To Cry (Bromberg on electric slide guitar), 6. Joey, 7. E: 'Til I Fell In Love With You, (missing)E: Don't Think Twice, It's All Right, (missing)E: Love Sick, (missing)E: Rainy Day Women #12 & 35
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

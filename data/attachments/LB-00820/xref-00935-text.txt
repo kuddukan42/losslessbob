@@ -1,63 +1,0 @@
-===================
-===================
-===================
-=== 1992_04_13_Sydney_info.txt
-===================
-===================
-===================
-Bob Dylan
-April 13, 1992 - Sydney, Australia
-
-Disc 1
-1. Don't Let Your Deal Go Down
-2. Lay Lady Lay
-3. Everything Is Broken
-4. Just Like A Woman
-5. Tangled Up In Blue
-6. She Belongs To Me
-7. Maggie's Farm
-8. Love Minus Zero / No Limit
-9. Little Moses
-10. Gates Of Eden
-
-Disc 2
-1. Mr. Tambourine Man
-2. Cat's In The Well
-3. Idiot Wind
-4. The Times They Are A-Changin'
-5. Highway 61 Revisited
-6. Absolutely Sweet Marie
-7. All Along The Watchtower
-8. Blowin' In The Wind
-
-From MK master tape
-
-1-SHN\01 Don't Let Your Deal Go Down.flac:0f2353c1b99ddf885daa8ea447795b9e
-1-SHN\02 Lay Lady Lay.flac:e313c7a508d47721abae0cb3362ab95c
-1-SHN\03 Everything Is Broken.flac:136c4e8f34d07c7bb54585a8dbb66a08
-1-SHN\04 Just Like A Woman.flac:c03a79a5e636f6c7f8c9bdb012cfaee9
-1-SHN\05 Tangled Up In Blue.flac:ccf0bb8fc6679a75e21d0e37c5a44e26
-1-SHN\06 She Belongs To Me.flac:38cc504a28a92adacb4aa3076cea5c53
-1-SHN\07 Maggie's Farm.flac:9dcae31e1b1aeb92f936a3be98402b7f
-1-SHN\08 Love Minus Zero - No Limit.flac:61be9d1f1d792e878a1088ba27bdef7e
-1-SHN\09 Little Moses.flac:1a1fac5e571147e6bd1de83f2e1db1f2
-1-SHN\10 Gates Of Eden.flac:fde200cfc711c13ac91575cccab3012d
-2-SHN\1 Mr. Tambourine Man.flac:800997c2582619b9aee1384c0a23da89
-2-SHN\2 Cat's In The Well.flac:7644b62223a9cca06ed8752bddccfeee
-2-SHN\3 Idiot Wind.flac:c3efcd8d274f860137cd9f3d205764b5
-2-SHN\4 The Times They Are A-Changin'.flac:b33f357f3976085e407914f083f23679
-2-SHN\5 Highway 61 Revisited.flac:4ea9b2478d6b560020f79f00d8efb198
-2-SHN\6 Absolutely Sweet Marie.flac:bf8015506611e4f55d65f05122558616
-2-SHN\7 All Along The Watchtower.flac:4fd85e993c8b49df27335e1ccdfd3f47
-2-SHN\8 Blowin' In The Wind.flac:7255cd40dce689ab7992381918f0c120
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-01 Don't Let Your Deal Go Down.flac:0f2353c1b99ddf885daa8ea447795b9e02 Lay Lady Lay.flac:e313c7a508d47721abae0cb3362ab95c03 Everything Is Broken.flac:136c4e8f34d07c7bb54585a8dbb66a0804 Just Like A Woman.flac:c03a79a5e636f6c7f8c9bdb012cfaee905 Tangled Up In Blue.flac:ccf0bb8fc6679a75e21d0e37c5a44e2606 She Belongs To Me.flac:38cc504a28a92adacb4aa3076cea5c5307 Maggie's Farm.flac:9dcae31e1b1aeb92f936a3be98402b7f08 Love Minus Zero - No Limit.flac:61be9d1f1d792e878a1088ba27bdef7e09 Little Moses.flac:1a1fac5e571147e6bd1de83f2e1db1f210 Gates Of Eden.flac:fde200cfc711c13ac91575cccab3012d1 Mr. Tambourine Man.flac:800997c2582619b9aee1384c0a23da892 Cat's In The Well.flac:7644b62223a9cca06ed8752bddccfeee3 Idiot Wind.flac:c3efcd8d274f860137cd9f3d205764b54 The Times They Are A-Changin'.flac:b33f357f3976085e407914f083f236795 Highway 61 Revisited.flac:4ea9b2478d6b560020f79f00d8efb1986 Absolutely Sweet Marie.flac:bf8015506611e4f55d65f051225586167 All Along The Watchtower.flac:4fd85e993c8b49df27335e1ccdfd3f478 Blowin' In The Wind.flac:7255cd40dce689ab7992381918f0c120
-===================
-===================
-===================

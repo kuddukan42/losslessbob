@@ -1,9 +1,0 @@
-ec7090619e7fd076a9b54b4fae9a0d91 *bd90-07-05-rooftop-serenade-d1t01.flac
-b08e5a0c56d8547417c8893723c1c3ff *bd90-07-05-rooftop-serenade-d1t02.flac
-d98eb4e24275b66bc0c17594632372ed *bd90-07-05-rooftop-serenade-d1t03.flac
-24a2438edd2972edf6934f063a44b12f *bd90-07-05-rooftop-serenade-d1t04.flac
-fe780324dcc796efd7430f9cf4880164 *bd90-07-05-rooftop-serenade-d1t05.flac
-962f74c15d4262a84c0daad37b903170 *bd90-07-05-rooftop-serenade-d1t06.flac
-765ebc59aa7fc4257fed8db39e41e8f8 *bd90-07-05-rooftop-serenade-d1t07.flac
-355bc7d49a27b6c6a497e3ea9a0a81e5 *bd90-07-05-rooftop-serenade-d1t08.flac
-985dbb20e10437eedb0f9002625b49ab *bd90-07-05-rooftop-serenade-d1t09.flac

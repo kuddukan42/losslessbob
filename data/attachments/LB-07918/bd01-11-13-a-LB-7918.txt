@@ -1,8 +1,0 @@
-Bob Dylan, 11/13/01, Syracuse, NY, USA, 2CDR
-
-LB-7918, (76min+65min), version "a"; received in a trade as rip from audio CD, CDR > EAC > .wav > FLAC Frontend > FLAC, drop/cut between cdrs, Quality: Very Good; bittorrent download 08/09; same recording as LB-2758 based on same clapping wavs at end of d2t9 only inverted; this has lower levels and similar spectral view and less digital flaws; (did not listen to all of this)
-
-Disc 1, 1) Somebody Touched Me, 2) My Back Pages, 3) It's Alright, Ma, 4) Searching For A Soldier's Grave, 5) Tweedle Dee & Tweedle Dum, 6) Where Teardrops Fall, 7) I'll Be Your Baby Tonight, 8) High Water, 9) Boots Of Spanish Leather, 10) John Brown, 11) Tangled Up In Blue, 12) Summer Days, Disc 2, 1) Sugar Baby, 2) Cold Irons Bound, 3) Rainy Day Women #12 & 35, 4) Country Pie, 5) Like A Rolling Stone, 6) If Dogs Run Free, 7) Honest With Me, 8) Blowing In The Wind, 9) All Along The Watchtower
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

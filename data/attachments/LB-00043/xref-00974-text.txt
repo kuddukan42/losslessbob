@@ -1,98 +1,0 @@
-===================
-===================
-===================
-=== infos.txt
-===================
-===================
-===================
-Tri-City Arena
-Kearney, Nebraska
-20 April 2001
- 
- 
-1.Somebody Touched Me (trad.)
-2.It's All Over Now, Baby Blue
-3.Desolation Row
-4.Crash On The Levee (Down In The Flood)
-5.Just Like A Woman
-6.Things Have Changed
-7.It Ain't Me, Babe
-8.Masters Of War
-9.Tangled Up In Blue
-10.Stuck Inside Of Mobile With The Memphis Blues Again
-11.The Wicked Messenger
-12.Leopard-Skin Pill-Box Hat
-
-13.Love Sick
-14.Like A Rolling Stone
-15.If Dogs Run Free
-16.All Along The Watchtower
-17.Knockin' On Heaven's Door
-18.Highway 61 Revisited
-19.Blowin' In The Wind
-20.Rainy Day Women # 12 & 35
-
-Concert # 1301 of The Never-Ending Tour. Second concert of the 2001 US Spring Tour. 2001 concert # 24.
-
-Concert # 206 with the 12th Never-Ending Tour Band: Bob Dylan (vocal & guitar), Charlie Sexton (guitar), Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar), Tony Garnier (bass), David Kemper (drums & percussion).
- 
-13, 7 9, 15, 17, 19 acoustic with the band.
- 
-2, 3 Bob Dylan (harmonica).
- 
-1, 17, 19 Larry Campbell & Charlie Sexton (backup vocals).
- 
-Note. Band introduction during Leopard-Skin Pill-Box Hat like the one in Boulder 18 April.
- 
-8 new songs (40%) compared to previous concert. 8 new songs for this tour.
- 
-Stereo audience recording, 120 minutes.
- 
-Session info updated 19 November 2003.
- 
-www.bjorner.com
-===================
-===================
-===================
-=== shntool lengh.txt
-===================
-===================
-===================
-    length     expanded size    cdr  WAVE problems  fmt   ratio  filename     2:39.41       28144076 B   ---   --   ---xx  Track01.shn     7:46.31       82275356 B   ---   --   ---xx  Track02.shn     9:16.24       98134892 B   ---   --   ---xx  Track03.shn     5:26.47       57616988 B   ---   --   ---xx  Track04.shn     6:17.04       66512252 B   ---   --   ---xx  Track05.shn     6:33.00       69325244 B   ---   --   ---xx  Track06.shn     7:35.05       80273804 B   ---   --   ---xx  Track07.shn     5:37.70       59611484 B   ---   --   ---xx  Track08.shn     8:40.00       91728044 B   ---   --   ---xx  Track09.shn     7:18.02       77267948 B   ---   --   ---xx  Track10.shn     4:37.62       49008668 B   ---   --   ---xx  Track11.shn     5:31.27       58451948 B   ---   --   ---xx  Track12.shn     5:51.74       62090492 B   ---   --   ---xx  Track01.shn     8:22.73       88724540 B   ---   --   ---xx  Track02.shn     4:02.02       42693548 B   ---   --   ---xx  Track03.shn     5:17.05       55930604 B   ---   --   ---xx  Track04.shn     5:53.72       62438588 B   ---   --   ---xx  Track05.shn     6:14.73       66145340 B   ---   --   ---xx  Track06.shn     6:28.22       68494988 B   ---   --   ---xx  Track07.shn     5:19.62       56417468 B   ---   --   ---xx  Track08.shn   124:50.21     1321286272 B                            0.7237  (20 files)
-===================
-===================
-===================
-=== noname.md5
-===================
-===================
-===================
-f2b1340156cd284a7dd4cada88229543 *Track01.shn
-30213363af45f26171b8803a236c6808 *Track02.shn
-3ab222254a5fd54dc72a2b32184e4d02 *Track03.shn
-88a6cce6744cbde9b79c774732d4a531 *Track04.shn
-ec26086a9784b709a5a75b2e16d44355 *Track05.shn
-ba26915f3e096fd24607eee88613320d *Track06.shn
-5b73b7bf8ec1e45bd4c9a3d29738ed6b *Track07.shn
-169c82d09998ca83dc8adf3c734918e3 *Track08.shn
-cf1ec8a0b22fed117460b893ac4f6ce4 *Track09.shn
-6120095694f800a862884146c267821c *Track10.shn
-470ca437c989b4ca7a6907496c14d203 *Track11.shn
-5f64dbfaa22435dd23303f7db496a58f *Track12.shn
-===================
-===================
-===================
-=== noname.md5
-===================
-===================
-===================
-b0a789be30266c33280ab0199ec1322b *Track01.shn
-18f816469c7318545a5123297e2dea07 *Track02.shn
-84df6df1aaadba287805912239362f6c *Track03.shn
-eecb4372374f042a43803f47be2ed8ab *Track04.shn
-1272b27e92649648690a1aa8ab5a4a0b *Track05.shn
-ab1c24a4fbb2b51d87b8ea27bacbbf79 *Track06.shn
-b201b3f33caa4623be77593a23472082 *Track07.shn
-d47bdd1faf776ea6cc0ecb598ad952fc *Track08.shn
-===================
-===================
-===================

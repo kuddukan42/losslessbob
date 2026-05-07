@@ -1,8 +1,0 @@
-Bob Dylan, 7/7/90, Torhout, 1CDR
-
-LB-7179, (71min), version "c"; speed corrected by LTA; Alternative recording to LTJ, Taper: unknown, cassette, Lossless Bob remarked the tape ran too fast, so I've remastered it a second time, Mastering (Mark II) by LTA:, Maxell XL II-S 90 (unknown generation) >, JVC TD-W501 >, Intel Core 2 Duo >, Azureus II 3.8.7 >, Speed 102.1 %, some levels corrected, 1 click removed >, xACT 1.64 >, FLAC (lvl 5) 0.5726 (15 files), FLAC tags, md5, st5, ffp >, Azureus/Vuze 4.0.0.4/213 >, TangledUpInTorrents by mixedup 2009-01-30, tape flip after Mr. Tambourine Man, tape flip after I Shall Be Released, cut before encore, crowd is a noisy bunch; bittorrent download 01/09; this is about 2% faster than LB-7168 on d1t9 but otherwise seems similar; (did not listen to all of this)
-
-01 Introduction > Silvio 03:12 Bob Dylan, Robert C Hunter, 02 Simple Twist of Fate 05:14, 03 Shelter from the Storm 04:48, 04 Masters of War 04:36, 05 Gotta Serve Somebody 04:30, 06 It's Alright, Ma (I'm only Bleeding) 05:03, 07 Don't Think Twice, It's All Right 05:49, 08 Gates of Eden 04:04, 09 Mr. Tambourine Man 05:04, 10 Rainy Day Women #12 & 35 03:57, 11 It Takes a Lot to Laugh, it Takes a Train to Cry 04:55, 12 I Shall Be Released 03:51, 13 Like a Rolling Stone 06:01, (encore), 14 Blowin' in the Wind 04:10, 15 Highway 61 Revisited 04:41, 70:01
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

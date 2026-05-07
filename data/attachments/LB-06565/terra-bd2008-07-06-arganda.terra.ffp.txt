@@ -1,3 +1,0 @@
-bd2008-07-06-arganda.t02.terra.flac:f7daae3adc4fbeed86c03b9d7daa9aea
-bd2008-07-06-arganda.t03.terra.flac:01ed50bbbb1fe3e7de0da75c74ddbf68
-bd2008-07-06-arganda.t04.terra.flac:fa2d1cd20ef789bb8f9eb0c02502b2d2

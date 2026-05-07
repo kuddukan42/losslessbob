@@ -1,7 +1,0 @@
-Bob Dylan, 5/13/95, Hard Rock Hotel, Las Vegas, NV, 2CDR
-
-(45min+53min), version "a"; alternate, upgrade,; No source/lineage information, Fingerprints: On Lay, Lady, Lady - Disc 1 track 2. A man says something at 0:19 and 0:21 -, I can't understand it, but it's a very distinct word or couple of words (louder in left channel), as Dylan sings "my big brass bed"; at 0:34, a higher-pitched voice says "wah-ho man", (maybe louder in right channel), after Dylan sings "my big brass bed" for the second time., To be technical:, Received as audio vine; ripped each disc as single WAV file using EAC, Cut into individual WAV files with EAC WAV editor, Encoded to SHN (with seek tables appended) with mkwACT;  downloaded from a.b.m.s.d. 02/04; very good to excellent sound, better sound than previous version with less hiss, more warmth and not as harsh;
-
-TRACKLIST:, DISC 1, 01 Down In The Flood, 02 Lay, Lady, Lay, 03 All Along The Watchtower, 04 Just Like A Woman, 05 Silvio, 06 Tombstone Blues, 07 Mr. Tambourine Man, [The very end of this track is repeated at the start of track 1 on disc 2], 
-
-DISC 2, 01 Gates Of Eden, 02 Don't Think Twice, It's All Right, 03 Seeing The Real You At Last, 04 I Shall Be Released, 05 Ballad Of A Thin Man (band intros at start), 06 Like A Rolling Stone, 07 It Ain't Me, Babe

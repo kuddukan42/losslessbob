@@ -1,3 +1,0 @@
-    length     expanded size   cdr  WAVE problems filename
-     7:06.38       75235820    ---   --   ---xx   NPRinterview20041012.shn
-     7:06.38       75235820 B                     (total for 1 file, 0.5444 overall compression ratio)

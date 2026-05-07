@@ -1,96 +1,0 @@
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-01 i can't be satisfied.flac:b3b6b87eccba1c3ef6c898be2615365a02 lay lady lay.flac:637706572eea02b6ff9d2a75d2c03d7f03 all along the watchtower.flac:bb2fa444137179972c1a00f1e9bcaa1604 tangled up in blue.flac:0a95d1931f5ea1dcf10797112e57cf7405 leopard-skin pill-box hat.flac:71ecfed0f85bd5aa5298eca996ef81dc06 man in the long black coat.flac:faaf4a5d6997ce21726cdbf71f1fbb2d07 silvio.flac:28a02fea93704aabb376ff1ed2ff573c08 mama you been on my mind.flac:d1206a88532287665ef16ab4519c221109 boots of spanish leather.flac:fad59823675d5cba4420d649780c6bb610 hard rain.flac:cdfbf64cafa03cf77897e4a17ebc0a3311 don't think twice.flac:7b421f49de4ce5bee0c07d3afcb1b79512 cat's in the well.flac:ea7adce0246325f8e684d36b49d0332213 just like a woman.flac:f20e585c21c17ae5f721940531621bfe14 the times they are a changin'.flac:a03ddc0f52feab04756b3fb7bf9beb9e15 maggie's farm.flac:661ff860f575c5af865dfd4aaa17d677
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-a412e63554ae81150fdea696b946a80c *01 i can't be satisfied.flac
-3cd445157ddcadef339be9f16e15bdd9 *02 lay lady lay.flac
-d60043d228a37cd10f2fe319265b82c4 *03 all along the watchtower.flac
-e4ff435953eb52b30ea3f3f184b47a0c *04 tangled up in blue.flac
-4cffdbd9cf351dfa2f19fb5b9a59a206 *05 leopard-skin pill-box hat.flac
-de25e87665460fcfff0c3779743dd5fb *06 man in the long black coat.flac
-6953933fd2671144e0993a603018dd3a *07 silvio.flac
-ceafa3551e29754c69b9814fb1e48fb1 *08 mama you been on my mind.flac
-cf16c5e2d6f7ec5721d0826ca6c64241 *09 boots of spanish leather.flac
-5e45a95af005d83bedde16d985cfd9c4 *10 hard rain.flac
-a9a1664b5434f22b719f958ef33d0b80 *11 don't think twice.flac
-9c746888f60dfabbb46ca9a9a0275b15 *12 cat's in the well.flac
-d322c9b671b8589debe5a1adfb0b2945 *13 just like a woman.flac
-736ac6354377e10fc16fd03888c7d37c *14 the times they are a changin'.flac
-975d95721b3e3c14a375faf71ce1ad8f *15 maggie's farm.flac
-
-===================
-===================
-===================
-=== setlist.txt
-===================
-===================
-===================
-University Center
-University of Miami
-Coral Gables, Florida
- 
-8 November 1992
- 
- 1.  I Can't Be Satisfied (McKinley Morganfield)
- 2.  Lay Lady Lay
- 3.  All Along The Watchtower
- 4.  Tangled Up In Blue
- 5.  Man In The Long Black Coat
- 6.  Leopard-Skin Pill-Box Hat
- 7.  Silvio (Bob Dylan & Robert Hunter)
- 8.  Mama, You Been On My Mind
- 9.  Boots Of Spanish Leather
-10.  A Hard Rain's A-Gonna Fall
-11.  Don't Think Twice, It's All Right
-12.  Cat's In The Well
-13.  Just Like A Woman
-14.  The Times They Are A-Changin'
-15.  Maggie's Farm
- 
-Concert # 451 of The Never-Ending Tour.  Concert # 15 of the 1992 US Fall Tour. 1992 concert # 87.
- 
-Concert # 20 with the 8th Never-Ending Tour band: Bob Dylan (vocal & guitar), Bucky Baxter (pedal steel guitar & electric slide guitar), John Jackson (guitar), Tony Garnier (bass), Ian Wallace (drums), Winston Watson (drums & percussion).
- 
-8-9, 18  Bob Dylan (acoustic guitar & vocal).
- 
-10, 11  Bob Dylan (acoustic guitar & vocal), John Jackson (guitar) & Tony Garnier (bass).
- 
-4, 5, 8, 9, 11  Bob Dylan harmonica.
- 
-14  Bucky Baxter (electric mandolin).
- 
-Note. No encores due to rainy weather.
- 
-BobTalk
- 
-This is the encore song right now. The set was gone about twenty minutes ago,  we're already into the encore part now. (before Maggie's Farm).
- 
-6 new songs (40%) compared to previous concert. 2 new songs for this tour.
- 
-Stereo audience recording, 100 minutes.
- 
-Session info updated 28 March 1993.
-
-www.bjoner.com
-===================
-===================
-===================
-=== shntool.txt
-===================
-===================
-===================
-    length     expanded size    cdr  WAVE problems  fmt   ratio  filename     4:26.62       47068268 B   ---   --   ---xx  01 i can't be satisfied.flac     6:05.15       64421324 B   ---   --   ---xx  02 lay lady lay.flac     5:04.06       53639756 B   ---   --   ---xx  03 all along the watchtower.flac    10:22.22      109772588 B   ---   --   ---xx  04 tangled up in blue.flac     7:24.09       78342812 B   ---   --   ---xx  05 leopard-skin pill-box hat.flac     8:11.38       86701820 B   ---   --   ---xx  06 man in the long black coat.flac     4:57.26       52451996 B   ---   --   ---xx  07 silvio.flac     3:45.53       39814700 B   ---   --   ---xx  08 mama you been on my mind.flac     4:39.13       49246220 B   ---   --   ---xx  09 boots of spanish leather.flac    10:18.21      109064636 B   ---   --   ---xx  10 hard rain.flac     7:50.51       83027996 B   ---   --   ---xx  11 don't think twice.flac     4:08.46       43855436 B   ---   --   ---xx  12 cat's in the well.flac     7:10.28       75917900 B   ---   --   ---xx  13 just like a woman.flac     7:24.30       78392204 B   ---   --   ---xx  14 the times they are a changin'.flac     7:06.58       75282860 B   ---   --   ---xx  15 maggie's farm.flac    98:55.28     1047000516 B                            0.4978  (15 files)
-===================
-===================
-===================

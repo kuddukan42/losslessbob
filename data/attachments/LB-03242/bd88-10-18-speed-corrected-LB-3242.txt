@@ -1,8 +1,0 @@
-Bob Dylan, 10/18/88, Radio City Music Hall, New York City, New York, 2CDR
-
-LB-3242, (59min+32min), version "b"; Source/Lineage: Aud>?>CD-Rs>EAC>speed correction>flac; bittorrent download 10/05; looks like same recording as previous version but has been sped up; this one does not have anything above 21k but otherwise looks similarly in spectral view  (did not listen to all of this one)
-
-disc 1, 1. Subterranean Homesick Blues, 2. Just Like A Woman, 3. Masters Of War, 4. Shelter From The Storm, 5. Bob Dylan's 115th Dream, 6. Stuck Inside Of Mobile With The Memphis Blues Again, 7. Gates Of Eden, 8. With God On Our Side, 9. Girl From The North Country, 10. I Shall Be Released, 11. Silvio (Bob Dylan & Robert Hunter), disc 2, 1. Like A Rolling Stone, 2. Wagoner's Lad (trad.), 3. To Ramona, 4. Knockin' On Heaven's Door, 5. In The Garden, 6. All Along The Watchtower
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

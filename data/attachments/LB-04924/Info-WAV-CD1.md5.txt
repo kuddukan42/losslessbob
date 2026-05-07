@@ -1,9 +1,0 @@
-24c678052f2e06c902a087c9897ccc72 *01 Crash on the levee (down in the flood).wav
-6153eff07bfd1dc18d4dfd2b3798f010 *02 If you see her, say hello.wav
-e707bd113017155a54c7afd0ec89056f *03 All along the watchtower.wav
-2649f4af62dc95d349c75f3e275aa116 *04 Simple twist of fate.wav
-82e0ef256abe46cc46855130eb32d7f4 *05 Pledging my time.wav
-f422bbbfc54669e7086ce92cd426929d *06 Silvio.wav
-6e0cdcd4d5396880ac97252e3377ad8f *07 Mr. Tambourine Man.wav
-49456d47757f490648bfd7a94d80697e *08 Masters of war.wav
-cd66415f945045999d18a02a2418ae58 *09 Don't think twice, it's all right.wav

@@ -1,9 +1,0 @@
-Bob Dylan, 5/11/76, San Antonio, TX, Municipal Audiotrium, 2CDR
-
-(47min+47min), I got this soundboard-/audience-mix of low-generation sources the San Antonio show lately from kind trader who said I could seed them if I'd like, and so, here it is:, San Antonio, TX, Municipal Audiotrium, May 11 1976, lineage (according to Carsten, from whom I got it):, soundboard: probably MR>C>DAT>CDr, audience: low generation tape>CDr, everything pitch corrected and crossfaded, compression progress:, CDr->EAC(secure mode)->*.wav->FLAC fronted->*.flac, soundquality: A- for snb-part, B- for aud-part, Size: 516mb, Total running time: 01:32:32 (92min 32sec); bittorrent down, sbd load 10/04;  very good sound [B] (aud is C, sbd A-)
-
-CD1
-(Mr. Tambourine Man ??), 1 Spanish is the Loving Tongue, (Positively Van Gogh ??), 2 Maggie's Farm, 3 Mozambique, 4 Isis (cut), 5 Blowin' in the Wind*, 6 Railroad Boy*, 7 Deportees*, 8 I Pity the Poor Immigrant (cut)*, 9 Shelter from the Storm, 10 Romance in Durango, 11 I Want You*, 
-
-CD2
-12 You're a Big Girl Now, 13 You're Gonna Make Me Lonesome When You Go (cut), 14 Oh, Sister, 15 Lay, Lady, Lay, (Silver Mantis ???), 16 Going, Going, Gone, 17 Idiot Wind, 18 Knockin' on Heaven's Door (cut), 19 Gotta Travel On*, soundboard recording, exept for, *=audience recording, note: Mr. Tambourine Man, Positively Van Gogh and Silver Mantis are only setlist-guesses and NOT in circulation (and so of course not included in this torrent eighter).

@@ -1,89 +1,0 @@
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-1 Oh, Babe It Ain't No Lie.flac:b612c670a117d273ff294bcc8c86050010 Tombstone Blues.flac:9aafb161f9c6b89e4e24f51afc26651411 Not Dark Yet.flac:4d4cdec2d2a9754a5f15e77dc0f3c5792 The Times They Are A-Changin'.flac:bc9ce723e84525da0f87941ef37106973 Boots Of Spanish Leather.flac:2861aa46b4e2d46cf230e18826ae94524 John Brown.flac:1db08750d5e0001f323d2b75dbf9b1455 Visions Of Johanna.flac:13667f70edce681f75a6fbbd44b42e2c6 Seeing The Real You At Last.flac:8bd56e28ebd93aa4dcdc2226b0ec66057 Ballad Of A Thin Man.flac:1599231cee45ccc5231e724eb485882f8 Most Likely You Go Your Way (And I'll Go Mine).flac:0ff9e248ad0caf97d7db6d7a1a4da5aa9 Every Grain Of Sand.flac:92e0362b60f8631af53c758fcf2b77451 Highway 61 Revisited.flac:730f2bfd17e1220f0958a63e1d484b2110 Love Minus Zero-No Limit.flac:e3dbe4030746fd648977514573770fce11 Highlands.flac:3440e9775932d059e9f1cee829ffe57e3 Like A Rolling Stone.flac:765fee5d49507f32ff3231884ee8ca6b4 It Ain't Me, Babe.flac:c608f0241315ba76bf01ec765b3bc0095 Not Fade Away.flac:cebbfa2f987ccc94adde8c4f8ae4e66a6 Blowin' In The Wind.flac:3d97804a231e6f1f5e5a6f969c629da97 Alabama Getaway.flac:49ed68dbf92415585e6bfdab546b73e18 I Shall Be Released.flac:128b3645e411ba8fa385f236c03e571a9 Cocaine Around My Brain.flac:c9dbefdbe53322061ce9c92981abe76c
-===================
-===================
-===================
-=== Tramps.txt
-===================
-===================
-===================
-Bob Dylan and His Band
-
-Tramps 51 West - 21st Street, New York City
-July 26, 1999
-
-Audience Recording
-CD ONE
-01, Oh Babe, It Ain't No Lie
-02. The Times They Are A Chnging
-03. Boots of Spanish Leather
-04. John Brown
-05. Visions of Johanna
-06. Seeing The Real You At Last
-07. Ballad of a Thin Man
-08. Most Likely You Go Your Way (and I'll Go Mine)
-09. Every Grain ofSand
-10. Tombstone Blues
-11. Not Dark Yet
-
-CD TWO
-01. Highway 61 Revisited
-02. Love Sick
-03. Like A Rolling Stone
-04. It Ain't Me babe
-05. Not Fade Away
-06. Blowin' In The Wind
-07. Alabama Getaway
-08. I Shall be Released - 
-
-with Elvis Costello fill: Madison Sq. Garden July 27, 1999
-09. Cocaine Blues
-10. Love Minus Zer./No Limit
-11. Highlands
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-b663873f649695cebc743ee323162b4b *1 Oh, Babe It Ain't No Lie.flac
-c491c16ca24fdfefcced75d303a66e7b *10 Tombstone Blues.flac
-e0f625bc7a1d3e65786ed4472d225179 *11 Not Dark Yet.flac
-f2dee1acc05afb9cdcbfb32e3874ff3c *2 The Times They Are A-Changin'.flac
-99a38f169f487d36f346d4fd07dd78c5 *3 Boots Of Spanish Leather.flac
-d153bb53e7c6ff24f478dd235e662e55 *4 John Brown.flac
-8607545b6b6933190edf8be783d355d6 *5 Visions Of Johanna.flac
-708be986028671c6423ca8ea87b1801f *6 Seeing The Real You At Last.flac
-99fc0dc428219c8c3d4743fa43a29c26 *7 Ballad Of A Thin Man.flac
-62fd8aa5fbb683cafbac9871de073b65 *8 Most Likely You Go Your Way (And I'll Go Mine).flac
-2fad286ab1773abf31fc937c695afc86 *9 Every Grain Of Sand.flac
-
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-dd140ecdc04c655c94ea082147e32833 *1 Highway 61 Revisited.flac
-e89ecd9569c74e2a395d1dd5f9a42c6b *10 Love Minus Zero-No Limit.flac
-69b65bceda1c7910c366f3737d72a766 *11 Highlands.flac
-71236f813b1eae343f958eaa9c635f3d *2 Love Sick.flac
-2d3e49a7403793f2f32ed07c309d1d47 *3 Like A Rolling Stone.flac
-54c5f7b245c58f0ed8b9ec4e2bccb5bd *4 It Ain't Me, Babe.flac
-447a3551597de819d205121254f848a1 *5 Not Fade Away.flac
-8c0c62ef6e1966617cfe468ea5c7f3c2 *6 Blowin' In The Wind.flac
-78a7936b99da395e6bced163d850393e *7 Alabama Getaway.flac
-cd5d7a29c377d5b4d76104f0b0f593b3 *8 I Shall Be Released.flac
-4e5d4591edc3e14c9d646c011d3acc99 *9 Cocaine Around My Brain.flac
-
-===================
-===================
-===================

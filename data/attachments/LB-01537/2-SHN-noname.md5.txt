@@ -1,8 +1,0 @@
-a8950df417fb25b55e22b52e7f5ca16f *1 Desolation Row.shn
-58a2bfeaf4fb1c56cd11080280e221f1 *2 Cat's In The Well.shn
-3d11133734a9ac3d7151552e58c0ec79 *3 Idiot Wind.shn
-2decba1db21ec01a6a69c01256325a1b *5 Highway 61 Revisited.shn
-ca33bcf12ab13173d8f62b69de761d71 *6 I Don't Believe You.shn
-9ef8a4d1094bc1ed681198e9c44a0544 *4 The Times They Are A-Changin'.shn
-2f77a02bd976f96dcacd86590d18be25 *7 All Along The Watchtower.shn
-812bc8d26be87297bc9e02665654782c *8 Blowin' In The Wind.shn

@@ -1,8 +1,0 @@
-Bob Dylan, 7/31/86, Tacoma, Washington, Tacoma Dome, 2CDR
-
-LB-5139, (75min+48min), version "a"; SBD>C>EAC>FLAC; bittorrent download 07/07; this is a sort of close eac match to LB-464 on d1t4; differences is that LB-464 had discontinuity pops at d1t4 1:04 not on this one; this has same analog drops d1t12 at 3:2x and cuts at end of d1t15 and d2t9; this has digipops at d1t15 0:5, 054 not on that one (did not listen to all of this)
-
-Disc 1, So Long, Good Luck And Goodbye (Weldon Rogers), All Along The Watchtower, Clean Cut Kid, I'll Remember You, Shot Of Love, We Had It All (Donny Fritts-Troy Seals), Masters Of War, It Ain't Me, Babe, One Too Many Mornings, Mr. Tambourine Man, I Forgot More Than You'll Ever Know (Cecil A. Null), Band Of The Hand, When The Night Comes Falling From The Sky, Lonesome Town (Baker Knight), Ballad Of A Thin Man, Disc 2, Rainy Day Women # 12 & 35, Seeing The Real You At Last, Across The Borderline (Ry Cooder/John Hiatt/Jim Dickinson), Gotta Serve Somebody-Missing, I And I, Like A Rolling Stone, In The Garden, Blowin' In The Wind, Bye Bye Johnny (Chuck Berry), Knockin' On Heaven's Door
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

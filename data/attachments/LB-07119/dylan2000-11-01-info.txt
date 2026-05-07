@@ -1,63 +1,0 @@
-Bloomington, IndianaIndiana UniversityIU AuditoriumNovember 1, 2000   1. Duncan And Brady (acoustic)   2. To Ramona (acoustic) (Larry on Mandolin)   3. It's Alright, Ma (I'm Only Bleeding) (acoustic) (Charlie on dobro)   4. The Lonesome Death Of Hattie Carroll (acoustic)   5. Tangled Up In Blue (acoustic)   6. Searching For A Soldier's Grave (acoustic) (Larry on mandolin)      (song by Johnnie Wright, Jim Anglin and Jack Anglin)   7. Country Pie   8. Tryin' To Get To Heaven   9. Maggie's Farm  10. I Threw It All Away  11. Cold Irons Bound  12. Leopard-Skin Pill-Box Hat      (encore)  13. Things Have Changed  14. Like A Rolling Stone  15. If Dogs Run Free (acoustic) (Larry and Charlie on electric guitar)  16. All Along The Watchtower  17. Blue Bonnet Girl (acoustic) (Charlie on electric guitar) (song by Glenn Spencer)  18. I Shall Be Released (acoustic)  19. Highway 61 Revisited  20. Blowin' In The Wind (acoustic) 
-
-
-Notes:
-Low recordings levels at very start, the come up pretty quickly though.
-
-After Cold Irons Bound, before introducing his band, Bob mentioned that he had played Hattie Carroll in dedication to Steve Allen, who passed away on October 30, 2000.
-
-
-Bob's only known performance of Blue Bonnet Girl
-
-Blue Bonnet Girl
-The Texas moon caresses you
-Soft as the night  (Leaving the light)
-Leaving the light  (Soft as the night)
-Deep in your eyes
-Blue Bonnet Girl
-I'm sure the southern breezes too
-Call for a kiss
-You never miss
-As they go by
-
-Soft as the springtime
-Gentle and sweet
-True as the Alamo
-You'll have the world at your feet
-Wherever you go
-
-And if the clouds
-Should fail to let the sunshine through
-Leavin' me blue
-I'll come to you
-Blue Bonnet Girl
-
-
-
-SHNTOOL:
-    length     expanded size    cdr  WAVE problems  fmt   ratio  filename     3:21.48       35569340 B   ---   --   ---xx  dylan2000-11-01d1t01.flac     5:00.32       52995308 B   ---   --   ---xx  dylan2000-11-01d1t02.flac     7:57.22       84194588 B   ---   --   ---xx  dylan2000-11-01d1t03.flac     6:01.44       63783932 B   ---   --   ---xx  dylan2000-11-01d1t04.flac     7:45.63       82174220 B   ---   --   ---xx  dylan2000-11-01d1t05.flac     3:11.46       33800636 B   ---   --   ---xx  dylan2000-11-01d1t06.flac     3:00.52       31874348 B   ---   --   ---xx  dylan2000-11-01d1t07.flac     5:26.66       57661676 B   ---   --   ---xx  dylan2000-11-01d1t08.flac     6:37.74       70204892 B   ---   --   ---xx  dylan2000-11-01d1t09.flac     5:31.03       58395500 B   ---   --   ---xx  dylan2000-11-01d1t10.flac     6:31.29       69040652 B   ---   --   ---xx  dylan2000-11-01d1t11.flac     7:47.68       82538780 B   ---   --   ---xx  dylan2000-11-01d1t12.flac     6:04.21       64259036 B   ---   --   ---xx  dylan2000-11-01d2t01.flac     6:54.54       73156652 B   ---   --   ---xx  dylan2000-11-01d2t02.flac     4:08.64       43897772 B   ---   --   ---xx  dylan2000-11-01d2t03.flac     4:41.31       49641356 B   ---   --   ---xx  dylan2000-11-01d2t04.flac     3:39.36       38716316 B   ---   --   ---xx  dylan2000-11-01d2t05.flac     4:47.38       50716220 B   ---   --   ---xx  dylan2000-11-01d2t06.flac     5:49.16       61601276 B   ---   --   ---xx  dylan2000-11-01d2t07.flac     8:10.03       86442712 B   -b-   --   ---xx  dylan2000-11-01d2t08.flac   112:29.60     1190665212 B                            0.5586  (20 files)
-
-FFP:
-dylan2000-11-01d1t01.flac:5ef0bef5394e038470aae9e95c6c9624dylan2000-11-01d1t02.flac:32bf5e5ab9ed72ac136bfd017f0b7aa5dylan2000-11-01d1t03.flac:074d9bb5fa459809cc070b85f49b3b96dylan2000-11-01d1t04.flac:aea5df6ee51d3313390d6cd48499d5f3dylan2000-11-01d1t05.flac:20a8ef8547e4e56ed336467347b82655dylan2000-11-01d1t06.flac:bbd897da2e661e438e477473f8971215dylan2000-11-01d1t07.flac:4f17aaed01ba255d784fb7ae4ed95344dylan2000-11-01d1t08.flac:cfef9e18424d999474d8db07d6bbf6bedylan2000-11-01d1t09.flac:c342be1de0437ebb927c111af1af8383dylan2000-11-01d1t10.flac:c7cfb00417ea6e178300ad92bb110316dylan2000-11-01d1t11.flac:8b8e83e1fa31f6c63c012f0f5ed9da4cdylan2000-11-01d1t12.flac:e8642d947e5ce068af6ca48b6149d93edylan2000-11-01d2t01.flac:b9d7c376a2b52b28e30fc778b6c3f287dylan2000-11-01d2t02.flac:58946f8a93f5c4f5e7b0792fde231ebddylan2000-11-01d2t03.flac:34ba3872f78d2634e67c449007c4628cdylan2000-11-01d2t04.flac:595bee34db4d0219b1e26b44ca822dbcdylan2000-11-01d2t05.flac:e8628c2c2328a6fa2181b240a2f91d0cdylan2000-11-01d2t06.flac:4a873d38a38408d7245d473a351234e7dylan2000-11-01d2t07.flac:e7d0c5be69b28bf51e1cbb8eccb77bc7dylan2000-11-01d2t08.flac:af6df97f22d6b4c0cb8cc7e6301fc166
-
-MD5:
-f585a594f3fbc6266f47c2d99b68cf3c *dylan2000-11-01d1t01.flac
-23d3768cbb77348aebfaa46bbeddc8ca *dylan2000-11-01d1t02.flac
-0b81a2273e6a61e3fe71ceaa30855aba *dylan2000-11-01d1t03.flac
-642f11a3fc24c6bccc6a3bb6e966e347 *dylan2000-11-01d1t04.flac
-f03472792c249a8bb8559756ee2395b6 *dylan2000-11-01d1t05.flac
-8159a2b3f1acf1467c655493cdbd440f *dylan2000-11-01d1t06.flac
-6f448c51229f3f113ec0ac976b4bd57a *dylan2000-11-01d1t07.flac
-c3acada0e27eb4f604a3484dcd1900d0 *dylan2000-11-01d1t08.flac
-ac9f79698568a093fe60ee2aba14f1ae *dylan2000-11-01d1t09.flac
-5f00a1b84d5eb9bf49fef7aa7fb5c2a1 *dylan2000-11-01d1t10.flac
-afc28d76df8bd263150f3a2d0cde6b22 *dylan2000-11-01d1t11.flac
-8208e809d8c8e27aaba68946a132eb9b *dylan2000-11-01d1t12.flac
-cec9d53a344bfcdb009ee21a9a49cc2d *dylan2000-11-01d2t01.flac
-d4c52d8ca976c3f67f8889b080c556ae *dylan2000-11-01d2t02.flac
-0b0ab66156b2122050a272f3905df645 *dylan2000-11-01d2t03.flac
-1d1da8ef7351d59c34ecccb6d675c892 *dylan2000-11-01d2t04.flac
-63269be014e430fca7efcf92aaa83fa8 *dylan2000-11-01d2t05.flac
-68fe8a53c0c4eb85b49ad770c11fa2d7 *dylan2000-11-01d2t06.flac
-3a313f16627eac49c6e6f355abdcad1e *dylan2000-11-01d2t07.flac
-840201ce1672db06e4ecd70f15c77289 *dylan2000-11-01d2t08.flac

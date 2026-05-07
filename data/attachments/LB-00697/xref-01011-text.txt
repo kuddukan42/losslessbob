@@ -1,100 +1,0 @@
-===================
-===================
-===================
-=== Bob Dylan - Atlanta 02-09-2002.txt
-===================
-===================
-===================
-Bob Dylan
-Philips Arena
-Atlanta, GA
-February 9, 2002
-
-Lineage: Soundboard > CDR trade (gen. ? - no compression) > EAC (secure) > WAV > 
-FLAC (level 8, align on sector boundaries)
-
-File Size: 641.26 MB
-
-Disc One
-1.  I Am The Man, Thomas 
-2.  My Back Pages 
-3.  It's Alright, Ma (I'm Only Bleeding) 
-4.  Searching For A Soldier's Grave 
-5.  Lonesome Day Blues  
-6.  Lay, Lady, Lay 
-7.  Floater  
-8.  High Water (For Charley Patton) 
-9.  It Ain't Me, Babe 
-10. Masters Of War 
-11. Tangled Up In Blue 
-
-Disc Two 
-1.  Summer Days 
-2.  Sugar Baby 
-3.  Drifter's Escape 
-4.  Rainy Day Women #12 & 35 
-5.  Things Have Changed  
-6.  Like A Rolling Stone  
-7.  Forever Young 
-8.  Honest With Me  
-9.  Blowin' In The Wind 
-10. All Along The Watchtower 
-
-
-Review from Bob's Boots:
-
-This is about as good as it gets, audio wise, as is evident by the many releases of this 
-show. The soundboard for this show is simply flawless. Not only is the sound exquisite, 
-but Bob and the band are brilliant. Dylan bends and drags his words as only he can do. 
-The band is tight and keeps up beautifully with Bob's driving vocals. This recording 
-proves just what a force that Dylan and his band are. 
-
-Artwork available at:
-
-http://www.bobsboots.com/CDs/cd-h53.html
-
------------------------------------------------------------
-
-DO NOT SELL -- KEEP IT LOSSLESS AND FREE
-
-http://home.austin.rr.com/texastoys/trading/CDRlist.htm
-===================
-===================
-===================
-=== dylan_atlanta-2002-02-09.md5
-===================
-===================
-===================
-50b34e36cd726f97cb52c423363a91bc *Bob Dylan - Atlanta 02-09-2002.txt
-3ed29deafc378b6831ff04affb9e9cd5 *CD1\Track01.flac
-b5d4df229a718742e0a0a4f4431cf58b *CD1\Track02.flac
-2626c6ee8f9315df5849cdfc3bfb72f3 *CD1\Track03.flac
-b792da4c16f29a7dc31bc7e5fe194f9e *CD1\Track04.flac
-e7829c2b5696e978765c817f63dfc48a *CD1\Track05.flac
-bc6c0eabb03d697e485ca409fe22b68e *CD1\Track06.flac
-ef4f3a63a3704023a0f9aabc694b0f3a *CD1\Track07.flac
-a3164a4fb406947b82e5ca4fc8896243 *CD1\Track08.flac
-cbf1094f73a1d5f151a3a930e48e9495 *CD1\Track09.flac
-f2d590e08eaa6b8b11b3b944deb369e6 *CD1\Track10.flac
-3713089a9f18b833560478959fddeb88 *CD1\Track11.flac
-1a99426a65dd28a2c930fb50ce98d2b4 *CD2\Track01.flac
-8b0c234b7902a806808dab455ad1fcbb *CD2\Track02.flac
-12ca020411cbe444bea1f5620dc3bb95 *CD2\Track03.flac
-fcfd76c695dd7680cd0765de062d77c2 *CD2\Track04.flac
-143ee01e6b00655577b487d4bbeb5bc3 *CD2\Track05.flac
-a1a3cb35cc93c92697d5e5fda62afebe *CD2\Track06.flac
-7eb92bcdc956d3d8818d02f17cc45de5 *CD2\Track07.flac
-2e310afc1e66dd51b3cd47ce0720d423 *CD2\Track08.flac
-ba7c90055708546870e916fda9aabc36 *CD2\Track09.flac
-bed9fd5c8a1f857b6e7d408dfcf14248 *CD2\Track10.flac
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-Track01.flac:98cf84ccc6d67787c30ad438f691c80fTrack02.flac:fb76730bc78bb8f39959885dcf719221Track03.flac:596896e33fded4137549f647d60fb311Track04.flac:3817dfee066bb72c48b3a53a048ccdd3Track05.flac:87b5891f5d4b369d211153afcfd0dc47Track06.flac:0e1d009a91d803493cac9199bf1cf710Track07.flac:b217a41a40b758abc44e5248647a7d86Track08.flac:6c569c51632fbda86be6798e8843319bTrack09.flac:eb33ae41f66d45deb0866ff9bf119008Track10.flac:f32b6b14a38c4a228bc49a755fd035d6Track11.flac:2363d24c04177d28f2e54280d71560a5Track01.flac:d46d578897c740386ae73f1a824bfc28Track02.flac:051d73746961dce9d8048db6244eee9dTrack03.flac:575cf4a8329dab39ec5380cc7ba3ba69Track04.flac:f3f6449f7497bd27c21f573209337a76Track05.flac:69c20ff08f2db8b5c9b23eafca55d897Track06.flac:fdd64f7229b2902092df81489e75e957Track07.flac:d1f9513904b8dfcdcf444fc9d32286a4Track08.flac:42424eaed64a1a153b4df76f192eb6ccTrack09.flac:554e6010b8b167e9b76539b8c2fb7f90Track10.flac:10a591a33237f15d14a9ddb78ea914bc
-===================
-===================
-===================

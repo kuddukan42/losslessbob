@@ -1,50 +1,0 @@
-Bob Dylan
-Lehigh University
-Stabler Arena
-Bethlehem, Pennsylvania
-November 8, 2000
-
-Source: soomlos
-FOB, Center
-Core-Sound > Sony D8
-
-Transfer:
-Sony D8 > Tascam CD-RW700 > EAC > Adobe Audition 1.0 > CD Wave > Flac
-
-Disc 1:
-01. Intro [00:10]
-02. Duncan and Brady [03:07]
-03. The Times They Are A-Changin [05:08]
-04. Desolation Row [08:29]
-05. Fourth Time Around [03:60]
-06. Tangled Up In Blue [07:49]
-07. Searching for A Soldier's Grave [03:21]
-08. Country Pie [03:11]
-09. Shelter From The Storm [05:25]
-10. Watching The River Flow [05:16]
-11. Tombstone Blues [05:51]
-12. Tryin' To Get To Heaven [05:31]
-13. The Wicked Messenge [04:33]
-14. Band Intros [00:36]
-15. Leopard-Skin Pill-Box hat [07:20]
-Total time: [69:47]
-
-Disc 2:
-01. Things Have Changed [06:15]
-02. Like A Rolling Stone [07:20]
-03. If Dogs Run Free [03:50]
-04. All Along The Watchtower [04:37]
-05. I Shall Be Released [05:49]
-06. Highway 61 Revisited [06:01]
-07. Blowin' In The Wind [05:49]
-Total time: [39:41]
-
-Band Members:
-Bob Dylan - vocals, guitars, harp
-Charlie Sexton - guitars
-Larry Campbell - guitars + more
-David Kemper - drums
-Tony Garnier - bass
-
-Flac Fingerprint:
-bd2000-11-08d1t01.flac:83f129e4faf8f355e227159293352bb6bd2000-11-08d1t02.flac:9650589d3c063e8fee24b8e90bbd0aacbd2000-11-08d1t03.flac:740f36af8fef43a60ed36baa35f16c70bd2000-11-08d1t04.flac:a79d3736e54f95b5746668bf9d07565abd2000-11-08d1t05.flac:7f6970b999408caabf72e55ebc6bb1c0bd2000-11-08d1t06.flac:53032c0f69b8fe99811094c932d8ef00bd2000-11-08d1t07.flac:f719b35a082738ca23fa28491a362fb7bd2000-11-08d1t08.flac:47631f2cac30be3a573db0e3c3408dfdbd2000-11-08d1t09.flac:fd26270fc475fcd204e3d5b457da61debd2000-11-08d1t10.flac:b2fa2a7c73384c56c5630edc09514d81bd2000-11-08d1t11.flac:a36117b1cd8b4cc414c0ffe6d2f36b7dbd2000-11-08d1t12.flac:2271b07794d3c02e9c836fbfe25d28a0bd2000-11-08d1t13.flac:fcee50fdebc0ef56dbbd4743e7a20affbd2000-11-08d1t14.flac:1becf29afee770f5600e3c5f1fa8e007bd2000-11-08d1t15.flac:9c08a8c5d3d50dcbba4f3860df789f10bd2000-11-08d2t01.flac:352f5cb106daf2e007de75bcbdec046abd2000-11-08d2t02.flac:4bcfe7de8847349a2622121a40fbb015bd2000-11-08d2t03.flac:096de8176d3126abd7c1a26965c61077bd2000-11-08d2t04.flac:913a54984eaccb29ae08e87df5c563d2bd2000-11-08d2t05.flac:d3e16ac195704ebbda3157ce40a991c2bd2000-11-08d2t06.flac:794b71eed4794e1279411eacbe77ffd9bd2000-11-08d2t07.flac:47d84a8fb484a3a1ede65bd67826e457

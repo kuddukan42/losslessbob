@@ -1,8 +1,0 @@
-Bob Dylan, 7/7/86, Washington DC, 2CDR
-
-LB-6334, (60min+63min), version "d"; Master: In-house FM > Portable FM Receiver > Cassette Master (Sony TC-D6C), Transfer: Cassette Master (Nakamichi RX-202) > SBM > Sony PCM R500 (pass-through only @ 48kHz) > VXPocket v2 > Dell Inspiron 9300 > Sound Forge (v. 6.0) (editing, 48>44.1kHz resample) > WAV > EAC > FLAC Frontend (v.1.7.0.1) > FLAC; bittorrent download 08/08; has same info file header as LB-4746 but actually a different lineage and transfer on comparison ; in 3-way comparison LB-432 is warmest but most muffled, LB-4746 is tinnier with a little more hiss but fuller sound than this which seems warmer but suppressed in comparison; (did not listen to all of this)
-
-Disc 1, 1. Unchain My Heart, 2. Positively 4th Street, 3. Clean-Cut Kid, 4. Emotionally Yours, 5. Shot Of Love, 6. We Had It All, 7. Masters of War, 8. +To Ramona, 9. +One Too Many Mornings, 10. +It Ain't Me, Babe, 11. I Forgot More Then You'll Ever Know, 12. I'm Moving On, 13. Band Of The Hand, 14. When The Night Comes Falling From The Sky, 15. Just Like a Woman, Disc 2, Ballad Of a Thin Man, Rainy Day Women #12&35, Seeing The Real You At Last, Across The Borderline, I and I, Like a Rolling Stone, In The Garden, Encores, Blowin' In The Wind, Shake a Hand, Knockin' On Heaven's Door, Desolation Row ** W/ Grateful Dead
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

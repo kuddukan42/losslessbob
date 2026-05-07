@@ -1,9 +1,0 @@
-6357c1817054eba082e522137ecf4c2b *09 - Traccia Audio.shn
-02168bd2e20373adb67ad2451c628fe2 *01 - Traccia Audio.shn
-057fdac61def38fef64dea2d3e93d69f *02 - Traccia Audio.shn
-210f9a891763bb8fb5b5d3db9cbb4bbd *03 - Traccia Audio.shn
-ab68df16a425799f29e2ebcd22a9db1d *04 - Traccia Audio.shn
-d1242c69a9adebaeac23475b1b7c9a7d *05 - Traccia Audio.shn
-e30a6d8839f609768576eafdd2e62ee7 *06 - Traccia Audio.shn
-704d3187d637e357e4e6bb6e93cf6944 *07 - Traccia Audio.shn
-47adb973eff1016cea0ea68c74f468a1 *08 - Traccia Audio.shn

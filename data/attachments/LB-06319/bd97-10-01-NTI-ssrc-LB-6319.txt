@@ -1,8 +1,0 @@
-Bob Dylan, 10/1/97, Bournemouth, England, 2CDR
-
-LB-6319, (69min+29min), ssrc; net taper I, OKMII -> portable Sony DATrecorder - clone ->(digital transfer) m-audio delta audiophile 2496, -> Wavelab -> ssrc -> cdwave for tracking -> tlh, I did not harm the sound of the recording in any way; bittorrent download 08/08, similar wav and spectral view on d1t3 to LB-5576 except levels are slightly different and this has a little more spectral density above 21k; (did not listen to all of this)
-
-1 intro, 2 Absolutely Sweet Marie, 3 Man In The Long Black Coat, 4 Tough Mama, 5 You Ain't Goin' Nowhere, 6 Silvio (Bob Dylan & Robert Hunter), 7 Cocaine Blues (trad.), 8 Tangled Up In Blue, 9 Mr. Tambourine Man, 10 Stuck Inside Of Mobile With The Memphis Blues Again, 11 Blind Willie McTell, 12 Band introduction, 13 Highway 61 Revisited, 1 Like A Rolling Stone, 2 Don't Think Twice, It's All Right, 3 Love Sick, 4 Rainy Day Women # 12 & 35
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

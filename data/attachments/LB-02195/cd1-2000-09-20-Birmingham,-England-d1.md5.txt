@@ -1,7 +1,0 @@
-4359aae413c50ce422e408a30831fb8e *06 Searching for a soldier's grave.shn
-6a8ad586119e3d5a87b4998f66738ef6 *00 Intro.shn
-0d5d958b37500c6e8f6501bdc461bdca *01 I am the man, Thomas.shn
-7f386edab8d08d8d4f88efaec219f919 *02 The times they are a-changin'.shn
-f73eab188b619c6b82eaa8bc93402e05 *03 It's alright, ma (I'm only bleeding).shn
-a80e868b3874c58b6e0e5855933edc42 *04 One too many mornings.shn
-4dc2de5699692ab60547c374eaebdb9c *05 Tangled up in blue.shn

@@ -1,92 +1,0 @@
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-1 Piste audio.flac:da1953bd170bd6a325139e4af2089ae110 Piste audio.flac:d9c55d59d1d6a32f3e7d5bb0c1c5973c11 Piste audio.flac:3db74d629a83fe1d060c2b13398c35692 Piste audio.flac:d748f6971e4e17fd5253ad2de86b27313 Piste audio.flac:216ac28f302f7df516daad78b2e1c3f74 Piste audio.flac:1c5c42e2cf63649fefdab22ca01db5545 Piste audio.flac:ec78adb2cb2410b20dade16a7c60dd026 Piste audio.flac:3b2d4475da79c5f77dca65424cb61f3f7 Piste audio.flac:3788e801ee27ebcdcc3c8433d45f51948 Piste audio.flac:8e23366a7cc272b2492e1cc6bad4b0be9 Piste audio.flac:83ea0c9fddd18b7165ecb8ec587f38e31 Piste audio.flac:c4cfa655e1fdd4b9cd69bf6602b1716d2 Piste audio.flac:017b25753d032ae32d98b223f1c086073 Piste audio.flac:3035dbd8e5881b91576717687b2ca1794 Piste audio.flac:fd12e8745ffae9f1abe4e86b405a3d47
-===================
-===================
-===================
-=== setlist.txt
-===================
-===================
-===================
-King's Hall
-Belfast, Northern Ireland
-10 April 1995
- 
-1.  Crash On The Levee (Down In The Flood)
-2.  I Want You
-3.  All Along The Watchtower
-4.  Just Like A Woman
-5.  Silvio (Bob Dylan & Robert Hunter)
-6.  What Good Am I?
-7.  Mr. Tambourine Man
-8.  Boots Of Spanish Leather
-9.  Don't Think Twice, It's All Right
-10.  God Knows
-11.  Ring Them Bells
-12.  Highway 61 Revisited
- 
-
- 
-13.  Like A Rolling Stone
-14.  The Times They Are A-Changin'
-15.  Rainy Day Women # 12 & 35
- 
- 
-Concert # 665 of The Never-Ending Tour. Concert # 25 of the 1995 European Spring Tour. Concert # 25 in 1995.
- 
-Concert # 209 with the 9th Never-Ending Tour Band: Bob Dylan (vocal & guitar), Bucky Baxter (pedal steel guitar & electric slide guitar), John Jackson (guitar), Tony Garnier (bass), Winston Watson (drums & percussion).
- 
-79, 14  acoustic with the band.
- 
-1, 2, 7, 8, 14  Bob Dylan harmonica.
-
-www.bjorner.com
-
-
-===================
-===================
-===================
-=== shntool.txt
-===================
-===================
-===================
-    length     expanded size    cdr  WAVE problems  fmt   ratio  filename     5:02.65       53425724 B   ---   --   ---xx  1 Piste audio.flac     7:09.21       75725036 B   ---   --   ---xx  10 Piste audio.flac     6:15.15       66185324 B   ---   --   ---xx  11 Piste audio.flac    10:14.53      108434300 B   ---   --   ---xx  2 Piste audio.flac     0:04.19         750332 B   ---   --   ---xx  3 Piste audio.flac     5:36.48       59383340 B   ---   --   ---xx  4 Piste audio.flac     4:55.59       52176812 B   ---   --   ---xx  5 Piste audio.flac     7:56.42       84065228 B   ---   --   ---xx  6 Piste audio.flac     7:11.47       76138988 B   ---   --   ---xx  7 Piste audio.flac     7:59.35       84577964 B   ---   --   ---xx  8 Piste audio.flac     6:26.18       68132780 B   ---   --   ---xx  9 Piste audio.flac     6:34.64       69652172 B   ---   --   ---xx  1 Piste audio.flac     9:15.51       98021996 B   ---   --   ---xx  2 Piste audio.flac     9:21.53       99085100 B   ---   --   ---xx  3 Piste audio.flac     6:20.18       67074380 B   ---   --   ---xx  4 Piste audio.flac   100:25.08     1062829476 B                            0.4713  (15 files)
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-dc47b8b46fcbd460601dae6e93bc06da *1 Piste audio.flac
-1aaade94011284e243d403a5c55dc5af *10 Piste audio.flac
-616cb0a2ae421d92a6f1d8c3f288c5e8 *11 Piste audio.flac
-b47a35afb7e5e828c556d580f4c338f6 *2 Piste audio.flac
-14beb8f053a8cf96f8e83a101f3c6e7a *3 Piste audio.flac
-e613b64c8af5eb67cd5ce8768eaa5576 *4 Piste audio.flac
-84b86006518bced34d2be1195d116bf4 *5 Piste audio.flac
-5a9251ff7660b8221a9c8598260aac66 *6 Piste audio.flac
-5f0c55c030ee8c52cf3483f0119b2783 *7 Piste audio.flac
-dd453b05121141b8f15d9ab628211dd2 *8 Piste audio.flac
-154a43ad724ba69fbfacfc36ca74f69a *9 Piste audio.flac
-
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-434e079d52a6fd35297cbb8137adc586 *1 Piste audio.flac
-8374257e4337edf70585f695d8952d6c *2 Piste audio.flac
-2738115d0af953f58a00b8fffe7ec111 *3 Piste audio.flac
-53ff9d7c772d857c4c01ee478c2fde5e *4 Piste audio.flac
-
-===================
-===================
-===================

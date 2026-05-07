@@ -1,153 +1,0 @@
-===================
-===================
-===================
-=== text.txt
-===================
-===================
-===================
-Paramount Theater
-Seattle, Washington
-27 April 1992
- 
- 
-1.Rainy Day Women # 12 & 35
-2.I Don't Believe You (She Acts Like We Never Have Met)
-3.Union Sundown
-4.Just Like A Woman
-5.Tangled Up In Blue
-6.She Belongs To Me
-7.Everything Is Broken
-8.Love Minus Zero/No Limit
-9.Little Moses (Bert A. Williams/Earle C. Jones)
-10.A Hard Rain's A-Gonna Fall
-11.It's All Over Now, Baby Blue
-12.Cat's In The Well
-13.Idiot Wind
-14.The Times They Are A-Changin'
-15.Highway 61 Revisited
-
-16.Absolutely Sweet Marie
-17.All Along The Watchtower
-18.Blowin' In The Wind
- 
- 
-Concert # 387 of The Never-Ending Tour.  Third concert of the 1992 US West Coast Spring Tour. 1992 concert # 23.
- 
-First concert with the 7th Never-Ending Tour band: Bob Dylan (vocal & guitar), Bucky Baxter (pedal steel guitar & electric slide guitar), John Jackson (guitar), Tony Garnier (bass), Ian Wallace (drums), Charlie Quintana (drums & percussion).
- 
-8, 9, 18  Bob Dylan (acoustic guitar & vocal).
-10, 11, 14  acoustic with the band.
-1, 3-5, 7, 8, 11, 13-16, 18  Bob Dylan harmonica.
-1  instrumental.
-5, 14  Bucky Baxter (mandolin).
-10  Bucky Baxter (dobro or acoustic slide).
- 
-BobTalk:
- 
-This is off my new record, called Cat's In The Well.
- 
-5 new songs (27%) compared to previous concert. 4 new songs for this tour.
-Stereo audience recording, 95 minutes.
-Session info updated 10 September 1992.
-
-www.bjorner.com
-
-Fillers:
-
-Paramount Theater
-Seattle, Washington
-28 April 1992
-
-Sally Sue Brown (J. Alexander - E. Montgomery - T. Stafford)
-Stuck Inside Of Mobile With The Memphis Blues Again
-Simple Twist Of Fate
-Watching The River Flow
-Female Rambling Sailor (trad.)
-Gates Of Eden
-Shooting Star
-Like A Rolling Stone
-Ballad Of A Thin Man
-
-fingerprint
-01 Track 01.flac:236e7d4957a8186d154637e919cf083d02 Track 02.flac:affdcc35665b08b3dac324e26aecd5af03 Track 03.flac:da95989866060343d78a592beca3460f04 Track 04.flac:d7ba8b08a56443346290bd9ac2274b1805 Track 05.flac:a10e37691dd63ad92fb46a329429bd2e06 Track 06.flac:8cdfa80e0c07c674a7803f0bebcca04a07 Track 07.flac:17f28829e262b95d72c629d83a28eb7108 Track 08.flac:71c1cf310c5cc0bec0c8c1d562a9cffa09 Track 09.flac:f47a4051e836f2e270505289a329981510 Track 10.flac:afd4b6db786adbfba820be7954625b4111 Track 11.flac:3edaa816b3633871229c7daa45511a0a12 Track 12.flac:d1d430ee9f6bfa92d9aa338de9ba549513 Track 13.flac:b0a804e68caa76e07095cfea66aef75614 Track 14.flac:38186361eda3dd84cb34b917de47588e
-
-01 Track 01.flac:6a9be41945887203d95aca7fed1c316202 Track 02.flac:bdc5093ce0ebeaa66b38ef45a65d88bb03 Track 03.flac:a476493dfe8e7626fbabfaf526ea087b04 Track 04.flac:4eabb10526cf6ac23ad539b8d9243eb405 Track 05.flac:ac4169ee00b90494fd23de40e7c7007b06 Track 06.flac:aff3eb22848b7c3ce09a84e9c4e9bbba07 Track 07.flac:a07ede569cde80a46f120c4f7f57323d08 Track 08.flac:fa21832c17d1434709c0850d3450e14009 Track 09.flac:794b227c3aca69b9a5336f8eebfd846e10 Track 10.flac:a8a076f7c965bf52f55c772f35109e5a11 Track 11.flac:fde88accb3dfc94ff223e087139383fd12 Track 12.flac:5c69ac1835aeaa60fd4242fa54e3726413 Track 13.flac:6a0e7adce508c8f9c722044c747cc5c7
- 
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-01 Track 01.flac:236e7d4957a8186d154637e919cf083d02 Track 02.flac:affdcc35665b08b3dac324e26aecd5af03 Track 03.flac:da95989866060343d78a592beca3460f04 Track 04.flac:d7ba8b08a56443346290bd9ac2274b1805 Track 05.flac:a10e37691dd63ad92fb46a329429bd2e06 Track 06.flac:8cdfa80e0c07c674a7803f0bebcca04a07 Track 07.flac:17f28829e262b95d72c629d83a28eb7108 Track 08.flac:71c1cf310c5cc0bec0c8c1d562a9cffa09 Track 09.flac:f47a4051e836f2e270505289a329981510 Track 10.flac:afd4b6db786adbfba820be7954625b4111 Track 11.flac:3edaa816b3633871229c7daa45511a0a12 Track 12.flac:d1d430ee9f6bfa92d9aa338de9ba549513 Track 13.flac:b0a804e68caa76e07095cfea66aef75614 Track 14.flac:38186361eda3dd84cb34b917de47588e
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-7b8d2bd0e231bdcf5ae05598137ecfa9 *01 Track 01.flac
-2d97a1565bd37a84369ba9a8fd400cf1 *02 Track 02.flac
-763864001f9492c63884a405e2dd115f *03 Track 03.flac
-95f8524e783c2d32d2a046d1515dc753 *04 Track 04.flac
-20a850c102ab4252e87646f8b58749f8 *05 Track 05.flac
-beecdb0053d3145ba0d96d5174bc5ee0 *06 Track 06.flac
-d6af9b855177cf820723a2df6d85ff6e *07 Track 07.flac
-45b1a993b8926f81ae5071a7bb98dd6b *08 Track 08.flac
-232cff81953060c195520be1fbcef9af *09 Track 09.flac
-08b29c1139b4216a6ea100585793a796 *10 Track 10.flac
-dfeb16b994a685c6020ea73bdc7257ad *11 Track 11.flac
-a6f6dccc8a462d0d09a5b40e1e566ea3 *12 Track 12.flac
-007e98e11237c242c57c23cab1990c45 *13 Track 13.flac
-f0b66eb4ceba3c2ac99172f406419db4 *14 Track 14.flac
-
-===================
-===================
-===================
-=== shntool len.txt
-===================
-===================
-===================
-  length     expanded size    cdr  WAVE problems  fmt   ratio  filename     1:24.28       14883500 B   ---   --   ---xx  01 Track 01.flac     4:40.02       49396748 B   ---   --   ---xx  02 Track 02.flac     4:23.21       46442636 B   ---   --   ---xx  03 Track 03.flac     5:24.14       57186572 B   ---   --   ---xx  04 Track 04.flac     8:23.06       88743356 B   ---   --   ---xx  05 Track 05.flac     5:01.38       53185820 B   ---   --   ---xx  06 Track 06.flac     4:02.68       42848780 B   ---   --   ---xx  07 Track 07.flac     2:39.52       28169948 B   ---   --   ---xx  08 Track 08.flac     3:47.34       40122812 B   ---   --   ---xx  09 Track 09.flac     6:48.23       72025340 B   ---   --   ---xx  10 Track 10.flac     6:32.22       69200588 B   ---   --   ---xx  11 Track 11.flac     4:36.35       48768764 B   ---   --   ---xx  12 Track 12.flac     9:12.21       97422236 B   ---   --   ---xx  13 Track 13.flac     6:37.66       70186076 B   ---   --   ---xx  14 Track 14.flac    73:33.55      778583176 B                            0.5454  (14 files)
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-01 Track 01.flac:6a9be41945887203d95aca7fed1c316202 Track 02.flac:bdc5093ce0ebeaa66b38ef45a65d88bb03 Track 03.flac:a476493dfe8e7626fbabfaf526ea087b04 Track 04.flac:4eabb10526cf6ac23ad539b8d9243eb405 Track 05.flac:ac4169ee00b90494fd23de40e7c7007b06 Track 06.flac:aff3eb22848b7c3ce09a84e9c4e9bbba07 Track 07.flac:a07ede569cde80a46f120c4f7f57323d08 Track 08.flac:fa21832c17d1434709c0850d3450e14009 Track 09.flac:794b227c3aca69b9a5336f8eebfd846e10 Track 10.flac:a8a076f7c965bf52f55c772f35109e5a11 Track 11.flac:fde88accb3dfc94ff223e087139383fd12 Track 12.flac:5c69ac1835aeaa60fd4242fa54e3726413 Track 13.flac:6a0e7adce508c8f9c722044c747cc5c7
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-100d96962cba49565ebd993d2e5fc2a6 *01 Track 01.flac
-a7e0c6467f5bcb5b5da4e4ac43ba16f7 *02 Track 02.flac
-3344ddc157198756e7ee0cf1e461eb16 *03 Track 03.flac
-da9e7f5214785164acfac65d7bd0a467 *04 Track 04.flac
-35d23663184e02afb24eb6ac2e16859e *05 Track 05.flac
-4a5401f2ee659892df65c59dc7e5f9df *06 Track 06.flac
-b950d1ee8910c88aea65fa517f068322 *07 Track 07.flac
-72992a0be46e6d9ebb95558d23b32500 *08 Track 08.flac
-d584248d6249f93c72b66c7b1debeb41 *09 Track 09.flac
-d02bdde9019df4a9e1ba69377dd898a6 *10 Track 10.flac
-b725ea1bc6abb33e4a53fbb606e1cf83 *11 Track 11.flac
-52ef30d86fc1448e50dcf6815a4cccfe *12 Track 12.flac
-428979a29a0ef631e6893eccc868dc80 *13 Track 13.flac
-
-===================
-===================
-===================
-=== shntool len.txt
-===================
-===================
-===================
-    length     expanded size    cdr  WAVE problems  fmt   ratio  filename     6:35.12       69706268 B   ---   --   ---xx  01 Track 01.flac     5:38.19       59667932 B   ---   --   ---xx  02 Track 02.flac     4:20.59       46002812 B   ---   --   ---xx  03 Track 03.flac     3:25.15       36197324 B   ---   --   ---xx  04 Track 04.flac     2:56.08       31065260 B   ---   --   ---xx  05 Track 05.flac     6:35.42       69776828 B   ---   --   ---xx  06 Track 06.flac     7:40.51       81263996 B   ---   --   ---xx  07 Track 07.flac     3:45.24       39746492 B   ---   --   ---xx  08 Track 08.flac     3:04.58       32594060 B   ---   --   ---xx  09 Track 09.flac     4:51.34       51412412 B   ---   --   ---xx  10 Track 10.flac     5:24.00       57153644 B   ---   --   ---xx  11 Track 11.flac     5:33.53       58865900 B   ---   --   ---xx  12 Track 12.flac     5:36.48       59383340 B   ---   --   ---xx  13 Track 13.flac    65:27.48      692836268 B                            0.6227  (13 files)
-===================
-===================
-===================

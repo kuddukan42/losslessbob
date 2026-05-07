@@ -1,121 +1,0 @@
-===================
-===================
-===================
-=== Txt Infos Set List.txt
-===================
-===================
-===================
-Bob Dylan 
-Le Theatre Saint-Denis
-Montreal, Quebec, Canada
-24 April 1980
- 
-Lineage / Taper ? 
-
-
-01. Gotta Serve Somebody
-02. Covenant Woman
-03. When You Gonna Wake Up
-04. Ain't Gonna Go To Hell For Anybody
-05. Cover Down, Break Through
-06. Precious Angel
-07. Man Gave Names To All The Animals
-08. Slow Train
-
-
-01. Do Right To Me Baby (Do Unto Others)
-02. Solid Rock
-03. Saving Grace
-04. Saved (Bob Dylan/Tim Drummond)
-05. What Can I Do For You?
-06. In The Garden
-  
-----> Encore
-07. Are You Ready?
-08. Pressing On
-      
-
-Set List 
-http://www.bjorner.com/DSN05570%201980%20Third%20Gospel%20Tour.htm#DSN05650
-
-Concert # 7 of the Third Gospel Tour. Gospel concert # 57. 1980 concert # 31.
-
-Concert # 7 with the Third Gospel Band: 
-Bob Dylan (vocal & guitar), 
-Fred Tackett (guitar), 
-Spooner Oldham (keyboards), 
-Tim Drummond (bass), 
-Terry Young (keyboards), 
-Jim Keltner (drums), 
-Clydie King, Gwen Evans, Mary Elizabeth Bridges, Regina Havis, Mona Lisa Young (background vocals).
-
- 
-13 Bob Dylan (harmonica).
-16 Bob Dylan (piano).
-
-BobTalk
-
-Thank you. Im happy to say Leonard Cohen is here tonight. (..) (before Precious Angel)
-
-We gotta go now. Can we play one more? We will play one more. (before In The Garden)
-
-Thank you. On the keyboards, from Muscle Shoals, Alabama, Spooner Oldham. On the other set of keyboards, from Birmingham, Alabama, Terry Young. The bass guitar in this groupdo you hear that well enough? Well, can or cant you? He play loud enough. On lead guitar, from Little Rock, Arkansas, Fred Tackett. On drums, from Tulsa, Oklahoma, Jimmy Lee Keltner. And bass guitar tonight, from Cincinnati, Tim Drummond. Youre a Texan, aint that right? On the left over there, from Dallas, Texas, Clydie King. From Houston, Texas, Gwen Evans. From San Francisco, Mary Bridges. Also from San Francisco, Mona Lisa Young. And from Nashville, Tennessee, a young lady, told you about Jesus before, remember? Some of you may never hear that name again. So remember though, you heard it one time. One times enough. (..) baptized with water. Jesus came (..) with the Holy Ghost. Thats right. From Nashville, Tennessee, Regina McCreary. (before Are You Ready?)
-
- 
-
-Stereo audience recording, 135 minutes.
-
-
- 
-            
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-Track No01.flac:92a66300cc0115cb103e41df87d7eba5Track No02.flac:5a2f03fde21450fdac66e850706a6006Track No03.flac:21126b39ff364b04d4bab67a9f70c3e8Track No04.flac:b6b311df7d9d20dcab2d3681152cce31Track No05.flac:81f311d46864ae01f35b6493852e5959Track No06.flac:70cb6db18d13b7e4d391293e0f76f13bTrack No07.flac:816c05ddb5ebe92eb28445f928189320Track No08.flac:44a84021292ea279aa9603967a5176fe
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-eb9e466e7ca9dad7b61ed35ee18cba8b *Track No01.flac
-f795f75217a4497f222e2df8061ae4c4 *Track No02.flac
-344511d444f4dd7189d3b749246134b9 *Track No03.flac
-bf9ace901884497a8231cd066508dc32 *Track No04.flac
-fe5a754f38f7d277eafe4c22de6dc3d3 *Track No05.flac
-643a7e762bcd187ee6187025c35d55a2 *Track No06.flac
-116c4df5ca2f6a5070ba021872669c96 *Track No07.flac
-20da3321e08711981b860ea66ade7e38 *Track No08.flac
-
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-Track No01.flac:70e76836e148cfc0d85445bdbf7aa8cdTrack No02.flac:01e719f0aa19cee821fff8d71932cc35Track No03.flac:66b3ac31c6e78ec394c86c8d1eb95ef3Track No04.flac:abfda46fdf926be97b38aa93cfa8f75dTrack No05.flac:f70f6d914565816ef7add5214e9b5e1bTrack No06.flac:573b08f263cfeca02f62899db9a90ee1Track No07.flac:a5b7ad25be0a752b3fa2e1d83d0fbc33Track No08.flac:3f3eff08775489bd138d3bf6003e365d
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-e1535963a6ccb512d55708d0c51c62d2 *Track No01.flac
-46cd7a5addeea51ef0549f68b5c7b8fc *Track No02.flac
-fd56b0590870ee77bf20dad7b5e0705e *Track No03.flac
-986e64811e8388961f79ce46d0773b47 *Track No04.flac
-2cc27adb44d914e0731622d153532d82 *Track No05.flac
-be08ecb49107398b61ec483d4a29d345 *Track No06.flac
-24ff26fa2f1408b6c7ab6da206c5a9b5 *Track No07.flac
-bddb51c4e8cccf56923b2d250cdd7676 *Track No08.flac
-
-===================
-===================
-===================

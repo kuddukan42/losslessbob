@@ -1,6 +1,0 @@
-cfbb2a496518380eea6bde4c5443f671 *DylanPetty-1986-7-15d3t01.shn
-1d6753255c9ab9688a026e207dc830b6 *DylanPetty-1986-7-15d3t02.shn
-ff97048a746c7a34a94ffb4f3800f1f8 *DylanPetty-1986-7-15d3t03.shn
-8d5d22cde52e483df39f6b682c3d6f34 *DylanPetty-1986-7-15d3t04.shn
-acf399b21b223fb2aeb1aae87341cc9a *DylanPetty-1986-7-15d3t05.shn
-ae03d668a1d24a96524487c01cfa5449 *DylanPetty-1986-7-15d3t06.shn

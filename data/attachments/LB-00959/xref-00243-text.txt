@@ -1,101 +1,0 @@
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-Track No01.flac:c7890df73661b4e4d6dff821bb29f510Track No02.flac:56b663e21436634a28fc2ab5d0b9c20bTrack No03.flac:bfb59578889b344edb0beeb6b10d73adTrack No04.flac:371776874eb4c5695c64ab245fbcd25dTrack No05.flac:1157a14415f9afd6c47d237c4b774a7bTrack No06.flac:455e9ee3df703af6a6c3b748fe8bde9cTrack No07.flac:52637ae29fde00abe676a2f98bdb6646Track No08.flac:fa1a812ad12f03452d86c3544070004aTrack No01.flac:6e4a1f759a687070fbeb5fb69dc9b5daTrack No02.flac:75736758f3514001b93cd36dccdae059Track No03.flac:fcf092733b005bd791418a0953eec310Track No04.flac:a05b5e2239e3bd1b17b28d4ddb9266d9Track No05.flac:d5628abb4ec777cf9a429203157d79abTrack No06.flac:f4d397ea7388cd7a0099ee25bc5c136fTrack No07.flac:d981eb18a77d264e16ce9545b2c34eceTrack No08.flac:da5b4dec00b1eb775fd1f393c0c31d64Track No09.flac:3c6d87112f18da208938bdea03a03ee5
-
-    length     expanded size    cdr  WAVE problems  fmt   ratio  filename     6:27.35       68349164 B   ---   --   ---xx  Track No01.flac     4:37.29       48931052 B   ---   --   ---xx  Track No02.flac     5:17.58       56055260 B   ---   --   ---xx  Track No03.flac     4:16.13       45189020 B   ---   --   ---xx  Track No04.flac     5:09.69       54669932 B   ---   --   ---xx  Track No05.flac     5:34.67       59075228 B   ---   --   ---xx  Track No06.flac     5:50.24       61796492 B   ---   --   ---xx  Track No07.flac     9:06.13       96345020 B   ---   --   ---xx  Track No08.flac     0:40.52        7178348 B   ---   --   ---xx  Track No01.flac     5:00.62       53065868 B   ---   --   ---xx  Track No02.flac     4:21.21       46089836 B   ---   --   ---xx  Track No03.flac     4:42.34       49824812 B   ---   --   ---xx  Track No04.flac     4:46.51       50570396 B   ---   --   ---xx  Track No05.flac     6:51.10       72523964 B   ---   --   ---xx  Track No06.flac     6:19.65       67008524 B   ---   --   ---xx  Track No07.flac     7:30.34       79460012 B   ---   --   ---xx  Track No08.flac     3:56.55       41759804 B   ---   --   ---xx  Track No09.flac    90:30.17      957892732 B                            0.6511  (17 files)
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-efdad732c3820d9c3707f4d3ac7e5d98 *Track No01.flac
-b1c0688100bcad796490083bfdfde3f6 *Track No02.flac
-ea7b29f7aea8210fae03f18e138ab5b1 *Track No03.flac
-908259eedb81afc45edf53a8482d1c25 *Track No04.flac
-496c788604a60d6d20eb889980384cea *Track No05.flac
-f88e7a4c7cacb65bacb6eec1ffa3a387 *Track No06.flac
-acdcc4fff4d920504edb6852ca17c473 *Track No07.flac
-d70d545c73fb6eb537cef9ad4655e5b6 *Track No08.flac
-a86aeaff0314f9153a0b12d703734566 *Track No09.flac
-
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-0023f6f3d6d893fbc9f68c2edee122bf *Track No01.flac
-ba44152f0e8bb46b33343afae48e083e *Track No02.flac
-05379c639ade36ec8add81574034ff26 *Track No03.flac
-5d5cb16579166a803c2235308f0e5834 *Track No04.flac
-eeb34cfcf3429ad9f432105c0f401182 *Track No05.flac
-4c647951d6c5e6a43b16f539afa4216f *Track No06.flac
-500113854fd438ef732c245752d24658 *Track No07.flac
-c4aafe53453e90141604b412c32d7f0b *Track No08.flac
-
-===================
-===================
-===================
-=== setlist.txt
-===================
-===================
-===================
-Ocean State Performing Arts Center
- 
-Providence, Rhode Island
- 
-11 May 1980
- 
- 
-1.Gotta Serve Somebody
-2.I Believe In You
-3.When You Gonna Wake Up
-4.Ain't Gonna Go To Hell For Anybody
-5.Cover Down, Break Through
-6.Precious Angel
-7.Man Gave Names To All The Animals
-8.Slow Train
-  
-Clydie King:
-Calgary (?)
-Mona Lisa Young:
-Stranger In The City (Healing) (?)
- 
-9.Do Right To Me Baby (Do Unto Others)
-10.Solid Rock
-11.Saving Grace
-12.Saved (Bob Dylan/Tim Drummond)
-13.What Can I Do For You?
-14.In The Garden
-
-15.
-Are You Ready?
-16.Pressing On
- 
- 
-Concert # 21 of the Third Gospel Tour. Gospel concert # 71. 1980 concert # 45.
-Concert # 21 with the Third Gospel Band: Bob Dylan (vocal & guitar), Fred Tackett (guitar), Spooner Oldham (keyboards), Tim Drummond (bass), Terry Young (keyboards), Jim Keltner (drums), Clydie King, Gwen Evans, Mary Elizabeth Bridges, Regina Havis, Mona Lisa Young (background vocals).
- 
-13 Bob Dylan (harmonica).
-16 Bob Dylan (piano).
- 
-BobTalk
-All right, thank you. I Ain't Gonna Go To Hell For Anybody. I know it's not fashionable. It's not fashionable to be thinking about Heaven and Hell. I know that. But Gods always in fashion. So we're gonna be talking about Jesus tonight. And I warn you right now, that if you got any demons inside of you at all they're not gonna like that name, Jesus. They're gonna rebel against that. I know a lot of you think of yourselves as rebels. But let me tell you something, you ain't no rebel at all unless you rebel against the Devil. (after Aint Gonna Go To Hell For Anybody)
-Thank you. Well, I'd like to say right now we're not gonna give an altar call tonight. There's a pit right here in front of the stage. But I am gonna try to implant the words of God in you. I know, you cast out seeds; you cast out on the wayside. Some seeds they go on to the rock. Other seeds they go into the thorns, then there some seeds go on the fertile ground. I know some of you are gonna hear this. Youre gonna hear Jesus died for your sins and to destroy the works of the Devil and you're gonna rejoice when you hear that. A lot of you don't know (..) an oath, you figure it's a political system or something. You don't know the Devils behind politics. You don't know you are the tree that God believes in. Anyway, some of you are gonna hear that word, it's like throwing it out to the wayside. You hear it, but you're gonna leave this room, it's gonna disappear immediately. Others of you are gonna hear it, it's gonna be like putting on a rock, youre also gonna rejoice. But youre gonna go out there and it's not gonna take any deep root. It's gonna be snatched away by the enemy. I don't mean that old enemy that Waylon Jennings talks about, and Willie Nelson, and Jackson Browne, and Henry Kissinger, any of those people. I mean the real enemy, that one that wants your soul. All right, some of you youre so choked by the riches of this world, the cares of this world that those riches and those cares are gonna choke this word. I know all about that. But others, I know, are gonna plant the word in fertile ground. For these are the last days, these dark times. It's the midnight hour. I know some of you are on the verge of committing suicide. Some of you, you think you got it all together; it dont matter. Jesus came for all nations. Every knee shall bow, every tongue will confess. (before Slow Train)
-All right, thank you. Well, we're hanging on to a solid rock. I don't know what you're hanging on to, but we're hanging on to a solid rock.
-All right, on the keyboards tonight, from Muscle Shoals, Alabama, Spooner Oldham. On the other set of keyboards, from Birmingham, Alabama, Terry Young. From Little Rock, Arkansas, on lead guitar tonight, Fred Tackett. Playing drums tonight, from Tulsa, Oklahoma, Mr. Jim Keltner. Playing bass guitar tonight, from Cincinnati, (..), Tim Drummond. From Dallas, Texas, Clydie King. From Houston, Texas, Gwen Evans. From San Francisco, Mary Bridges. Also from San Francisco, Mona Lisa Young. All right. The girl that told you the story about Jesus, a couple of days ago. Can you hear me now? Remember that story she told you? Well, that's just what some of you, most of you, all of you have been looking for. And you just don't know it. John the Baptist he baptized with water. Jesus baptized with fire and the Holy Spirit, it's a little bit different. Anyway, from Nashville, Tennessee, Regina McCreary. (before Are You Ready?)
- 
-Stereo audience recording, 100 minutes.
- 
-www.bjorner.com
-===================
-===================
-===================

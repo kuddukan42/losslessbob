@@ -1,123 +1,0 @@
-===================
-===================
-===================
-=== infos.txt
-===================
-===================
-===================
-Bob Dylan
-
-Brisbane Entertainment Centre
-Brisbane, Queensland, Australia
-11 February 2003
- 
- 
-1.Maggie's Farm
-2.I'll Be Your Baby Tonight
-3.Highway 61 Revisited
-4.You Ain't Goin' Nowhere
-5.Things Have Changed
-6.The Wicked Messenger
-7.It's All Over Now, Baby Blue
-8.Masters Of War
-9.Forever Young
-10.Don't Think Twice, It's All Right
-11.Watching The River Flow
-12.Honest With Me
-13.Saving Grace
-14.High Water (for Charlie Patton)
-15.Moonlight
-16.Summer Days
-
-17.It Ain't Me, Babe
-18.All Along The Watchtower
- 
-Concert # 1493 of The Never-Ending Tour. Third concert of the 2003 Tour Down Under. Third 2003 concert.
- 
-Third concert with the 15th Never-Ending Tour Band: Bob Dylan (vocal & guitar), Bill Burnette (guitar), Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar), Tony Garnier (bass), George Recile (drums & percussion).
- 
-7-10, 17 acoustic with the band.
-1-6, 11-16 Bob Dylan (piano).
-2, 6, 11, 17  Bob Dylan (harmonica).
-2, 7, 13 Larry Campbell (pedal steel guitar).
-10, 17 Larry Campbell (cittern).
-11, 12 Larry Campbell (slide guitar).
- 
-http://www.bjorner.com/
-
-taper: unknow
-lineage: my cd trade > temptxACTConvert.wav level 8 > flac
-           
-CEDAR #1
-Fingerprint: At end of concert after "Watchtower," a male voice asks, "Did you see the Academy Award on the side there?".
-Comments: Doublespeed minidisc recording. Some reporters have complained of the sound, citing its bassiness, its lack of separation, and its overall instrumental muddiness. Others think that the high saturation of the recording gives it a lot of presence and character. Well worth a listen. Very quiet clicks audible at d1t2 1:10, d1t3 3:25, and d2t9 6:26 and 6:29.
-
-Time: disc 1  68:38      disc 2  63:00
-
-From CEDAR - The Catalogue of Extant Dylan Audio Recordings  Winter 2003 Shows            
-
-
-
-
-===================
-===================
-===================
-=== shntool.txt
-===================
-===================
-===================
-    length     expanded size    cdr  WAVE problems  fmt   ratio  filename     6:27.00       68266844 B   ---   --   ---xx  1 Piste audio.flac     6:54.43       73130780 B   ---   --   ---xx  10 Piste audio.flac     7:07.00       75322844 B   ---   --   ---xx  2 Piste audio.flac     6:31.00       68972444 B   ---   --   ---xx  3 Piste audio.flac     5:25.00       57330044 B   ---   --   ---xx  4 Piste audio.flac     7:03.00       74617244 B   ---   --   ---xx  5 Piste audio.flac     6:05.00       64386044 B   ---   --   ---xx  6 Piste audio.flac     9:37.00      101782844 B   ---   --   ---xx  7 Piste audio.flac     5:09.00       54507644 B   ---   --   ---xx  8 Piste audio.flac     8:20.00       88200044 B   ---   --   ---xx  9 Piste audio.flac     7:14.00       76557644 B   ---   --   ---xx  1 Piste audio.flac     8:56.00       94550444 B   ---   --   ---xx  2 Piste audio.flac     5:38.00       59623244 B   ---   --   ---xx  3 Piste audio.flac     7:35.00       80262044 B   ---   --   ---xx  4 Piste audio.flac     5:04.00       53625644 B   ---   --   ---xx  5 Piste audio.flac     8:33.00       90493244 B   ---   --   ---xx  6 Piste audio.flac     2:05.00       22050044 B   ---   --   ---xx  7 Piste audio.flac     9:26.00       99842444 B   ---   --   ---xx  8 Piste audio.flac     8:29.00       89787644 B   ---   --   ---xx  9 Piste audio.flac   131:38.43     1393309172 B                            0.4136  (19 files)
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-1 Piste audio.flac:56cf43facf8ff54d826a0f43515e60d710 Piste audio.flac:a9fd590a1e0a621e77839d386a7716c92 Piste audio.flac:0410b042f7ccb093a4908b00dbc13d473 Piste audio.flac:037496cd2d7a79c0d03d214732e33f1e4 Piste audio.flac:3a48176b358814d1daf4a3db70e67c605 Piste audio.flac:87d9a8390066224f3338ee4c4a7b12896 Piste audio.flac:8f4a207d4a42bc76695f359b438d787e7 Piste audio.flac:54878c90c07fcf1c7d291a005d431c3a8 Piste audio.flac:5c6fd9fcb2d01618a76133a30ca120f99 Piste audio.flac:666b76a756e2debcfc525ce73b12f4bb
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-2489ed68f10b1bba714e1a1a8b74ee69 *1 Piste audio.flac
-da674feab123837478a7e39a0adfaa98 *10 Piste audio.flac
-182a2a1559a537bed525439b0e5f9d95 *2 Piste audio.flac
-3dc29ad4bb7102eb06aff01584ea2f5c *3 Piste audio.flac
-c5f4d6daec25db8f7d33dcde6b927abb *4 Piste audio.flac
-0bf797197c01de44b21a860fcfa14178 *5 Piste audio.flac
-61b8bc3da48d6ccc1790cd939ae979be *6 Piste audio.flac
-58ccd29a3f2e7400646f1de7bca8afe7 *7 Piste audio.flac
-47a8f79fa649194a5f3033392e141da5 *8 Piste audio.flac
-242ed9ca4c0b9c8046bf6709d974fc86 *9 Piste audio.flac
-
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-1 Piste audio.flac:46f4db62037e9b6b5ba476cd88d45f312 Piste audio.flac:5c4937a99e37e0530a5fced070166a053 Piste audio.flac:a8b68ebb3caeef1871e65ebefa0f6ed34 Piste audio.flac:9e880b1b2243c6e6c20ef398188253405 Piste audio.flac:d98900aaaa54e4bffa1ea136fb0a2b766 Piste audio.flac:d6db0605a5571749b9e0fec1793793bd7 Piste audio.flac:d470026ccc41dac743daa2c4663e40798 Piste audio.flac:16142651bc2815da32b9c55e3218ecad9 Piste audio.flac:d6ea59729c563b9ed5a3b5d79973d45a
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-fac500e45c2897ae617e202837600f9e *1 Piste audio.flac
-099a9f1c265102fd9259f504bfdbf225 *2 Piste audio.flac
-56c39374eba7c908bbb51b4865f9ad68 *3 Piste audio.flac
-4110a1090b28f942b960d8ca3195a2a1 *4 Piste audio.flac
-5d3b8e5fb18cec97aedc9ecbb18749f6 *5 Piste audio.flac
-be1db605fd68458f5301ea81ba8b99a7 *6 Piste audio.flac
-9cc0707c0a5c544aeb66210b5d361d5a *7 Piste audio.flac
-d52a58588a7d46302175fa7b8937dfb6 *8 Piste audio.flac
-34eb0a4530af3267810dcbccbda473c0 *9 Piste audio.flac
-
-===================
-===================
-===================

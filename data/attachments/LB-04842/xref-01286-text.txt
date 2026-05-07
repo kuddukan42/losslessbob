@@ -1,108 +1,0 @@
-===================
-===================
-===================
-=== setlist.txt
-===================
-===================
-===================
-Burlington Memorial Auditorium
-Burlington, Vermont
-27 October 1992
- 
-1.  I Can't Be Satisfied (McKinley Morganfield)
-2.  Pretty Peggy-O (trad. arr. Bob Dylan)
-3.  All Along The Watchtower
-4.  Just Like A Woman
-5.  Tangled Up In Blue
-6.  Positively 4th Street
-7.  Silvio (Bob Dylan & Robert Hunter)
-8.  Mama, You Been On My Mind
-9.  Boots Of Spanish Leather
-10.  It's All Over Now, Baby Blue
-11.  Mr. Tambourine Man
-12.  Leopard-Skin Pill-Box Hat
-13.  When I Paint My Masterpiece
-14.  The Times They Are A-Changin'
-15.  Maggie's Farm
-
-16.  What Good Am I?
-17.  Highway 61 Revisited
-18.  It Ain't Me, Babe
- 
- 
-Concert # 444 of The Never-Ending Tour.  Concert # 8 of the 1992 US Fall Tour. 1992 concert # 80.
- 
-Concert # 13 with the 8th Never-Ending Tour band: Bob Dylan (vocal & guitar), Bucky Baxter (pedal steel guitar & electric slide guitar), John Jackson (guitar), Tony Garnier (bass), Ian Wallace (drums), Winston Watson (drums & percussion).
- 
-8-9, 18  Bob Dylan (acoustic guitar & vocal).
- 
-10  Bob Dylan (acoustic guitar & vocal) & Tony Garnier (bass).
- 
-11  Bob Dylan (acoustic guitar & vocal), John Jackson (guitar),  Tony Garnier (bass).
- 
-14  acoustic with the band.
- 
-3-5, 8, 9, 11, 18  Bob Dylan harmonica.
- 
-5, 14  Bucky Baxter (electric mandolin).
- 
-11 new songs (61%) compared to previous concert. 5 new songs for this tour.
- 
-Stereo audience recording, 125 minutes.
- 
-Session info updated 5 March 2001.
-
-www.bjorner.com
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-01 Track01.flac:a22083c09923ee45a708e6f601f79fce02 Track02.flac:c4d47441d988678d6fead6ff36a2a1e703 Track03.flac:ac21d050898439294609788fa52deb9204 Track04.flac:dbc2b388ee5cc268725184525a686f3e05 Track05.flac:ff0bc2b3b0ee8220cfb8e57bc84bb0e506 Track06.flac:ecbb1a87b11eec9b9e51486644f3fbee07 Track07.flac:ec5c967c30a422af8981a5dda91dc4e108 Track08.flac:5d40348b873175b62e67e03e60748eb009 Track09.flac:fbaf4f369a6dfb01f36a7e6faefedccc
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-c29bad21a91dfdef1ebd2b409ed01702 *01 Track01.flac
-f222c626ae07f48b9ddfae12697f1517 *02 Track02.flac
-779ad7a1c04267fcba97f0b37c113df8 *03 Track03.flac
-8270f690822a01f667fdd5f526f5887b *04 Track04.flac
-5f3d8793b0c0ce794a0bdbd74f42fb21 *05 Track05.flac
-0ac01450e884b98be1e34bd2cd067154 *06 Track06.flac
-834dad980cad9e9e11b167d4b0d25454 *07 Track07.flac
-849f3606bfcd4c0196f019d23ca60fad *08 Track08.flac
-237ee0f251dcc12bf14fe697635dbb3f *09 Track09.flac
-
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-01 Track01.flac:7c46c522fa879ee48193a5143eb7279002 Track02.flac:02bd9bd11bc9aca41b8ec50ed8b47fb503 Track03.flac:6c750d08774bd45f142536773ea9cb1f04 Track04.flac:2d29a5c377abfe0216fb7fb234742b8e05 Track05.flac:7b9b58688b1d0de62a9315b2d6b99c3a06 Track06.flac:2d1d5d34630f15571da21849dfa1cd8c07 Track07.flac:4f4d618442ed3001821a5d07215d41c408 Track08.flac:2c7732cbd80aec0b45842f39ca5a5d7509 Track09.flac:041874bc56f253a7a3cd4c08be6bd1dc
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-5661d946b0e1835fdaa00ceac2699c5e *01 Track01.flac
-922b878f68408ee4221255d3c98e9fa2 *02 Track02.flac
-6c31a217591e4caa5bd8b34ded370ca8 *03 Track03.flac
-6ab82c7dc4589dadcc0e9469e7deb907 *04 Track04.flac
-5424d33c8743e08e9a44f776ffe062c6 *05 Track05.flac
-219bb03eb3f83c5b4e4f563ae7cb4b98 *06 Track06.flac
-33614b0d367f4ce53127070b37988e35 *07 Track07.flac
-295c02c9d83f79ec1d17c0f3e1e3bfb0 *08 Track08.flac
-7221beac43b5b23045f970574f39bc56 *09 Track09.flac
-
-===================
-===================
-===================

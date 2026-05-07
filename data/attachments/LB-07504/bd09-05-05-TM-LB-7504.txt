@@ -1,8 +1,0 @@
-Bob Dylan, 5/5/09, Dublin, 2CDR
-
-LB-7504, (79min+36min), Technical Information:, Taper: TOM MOORE, Microphones: OKM II R + A3 Adapter, Recorder: M-Audio Microtrack @ 44,1 kHz/16 bit + APC Powerpack, Software: edit and split with Steinberg WaveLa; has spectral fuzz band above 18k;bStudio 6.0, unfortunately a lot of background talking, No band-introduction this evening! First live performance of "If You Ever Go To Houston"., TOM MOORE, 2009-05-08; bittorrent download 05/09; has spectral fuzz band above 18k;; (did not listen to all of this)
-
-CD 1 [78:34.70], (01) [Intro], (02) Leopard-Skin Pill-Box Hat, (03) Don't Think Twice, It's All Right, (04) Lonesome Day Blues, (05) Just Like a Woman, (06) Rollin' and Tumblin', (07) John Brown, (08) Stuck Inside of Mobile with the Memphis Blues Again, (09) Under the Red Sky, (10) Honest With Me, (11) Masters of War, (12) Highway 61 Revisited, (13) Ain't Talkin', CD 2 [35:04.61], (01) Thunder On The Mountain, (02) Like A Rolling Stone, (03) All Along The Watchtower, (04) If You Ever Go To Houston, (05) Blowin' In The Wind
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates

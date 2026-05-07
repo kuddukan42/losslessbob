@@ -1,185 +1,0 @@
-===================
-===================
-===================
-=== infos.txt
-===================
-===================
-===================
-Maple Leaf Gardens
-Toronto, Ontario, Canada
-12 October 1978
-
-1.My Back Pages
-2.Im Ready (Willie Dixon)
-3.Is Your Love In Vain?
-4.Shelter From The Storm
-5.It's All Over Now, Baby Blue
-6.Tangled Up In Blue
-7.Ballad Of A Thin Man
-8.Maggie's Farm
-9.I Dont Believe You (She Acts Like We Never Have Met)
-10.Like A Rolling Stone
-11.I Shall Be Released
-12.Going, Going, Gone
-13.One Of Us Must Know (Sooner Or Later)
-14.It Ain't Me, Babe
-15.Am I Your Stepchild?
-16.One More Cup Of Coffee (Valley Below)
-17.Blowin' In The Wind
-18.Girl From The North Country
-19.Where Are You Tonight? (Journey Through Dark Heat)
-20.Masters Of War
-21.Just Like A Woman
-22.To Ramona
-23.All Along The Watchtower
-24.All I Really Want To Do
-25.It's Alright, Ma (I'm Only Bleeding)
-26.Forever Young
-27.Changing Of The Guards
-
- Concert # 19 of the 1978 US Fall Tour. 1978 concert # 68.
-
-Concert # 45 with the 1978 World Tour Band: Bob Dylan (vocal & guitar), Billy Cross (lead guitar), Alan Pasqua (keyboards), Steven Soles (rhythm guitar, backup vocals), David Mansfield (violin & mandolin), Steve Douglas (horns), Jerry Scheff (bass), Bobbye Hall (percussion), Ian Wallace (drums), Helena Springs, Jo Ann Harris, Carolyn Dennis (background vocals).
-
-1 instrumental without Bob Dylan.
-5, 15, 21 Bob Dylan (harmonica).
-14 Bob Dylan solo (vocal, harmonica & guitar).
-
-BobTalk
-
-All right. This is a love ballad I wrote a few years ago. About ..., tt's a love ballad about three people in love. (before Tangled Up In Love)
-
-Thank you! I first played this song at the Newport Folk Festival, and they booed me right out of town. But I keep playing it anyway, I hope that you like it. It's called I ain't gonna work on Maggie's Farm no more.
-
-Thank you! thank you! We're gonna take a short break right here. You what? This is a song.... Which one you want me to do? Ok, we're gonna do this song, it's a song I recorded with The Band. Remember The Band ? Anyway we did an album awhile back called Planet Waves. Sold about 12 copies. Anyway ha ha, ... anyway we'll see you in a short while. (before Going, Going, Gone)
-
-Thank you. This is a new song I wrote a while ago, called Am I Your Stepchild ?
-
-Thank you! Thank you! I want say hello to my good friend Bill Ayliss who's here tonight. Turn the spotlight on Bill Ayliss. Anyway, Bill I hope you're feeling all right. (before Girl From The North Country)
-
-Thank you. I'm sure there's a message there somewhere. Here's one, straight out of the book of Genesis. (plays All Along The Watchtower) That was All Along The Watchtower, David Mansfield on the violin. I wanna say hello to Ronnie Hawkins if he's still here. If he's still around I want him to know he's a great artist.
-
-Thank you! I know you wanna know who's playing the drums tonight. Well I'm gonna tell you folks, that's right. On the drums tonight, ladies and gentlemen give him a warm hand please, Ian Wallace. On the bass guitar, Mr. Jerry Scheff. On the keyboards, the one and only Alan Pasqua. On the lead guitar, brilliant guitar player, lead guitar, plays it all, Mr. Billy Cross. On the rhythm guitar, a man who doesn't speak a word of English, ladies and gentlemen, from Tombstone, Arizona, one of the founders of outlaw music, give him a warm hand please, Mr. Steven Soles. On the violin and the mandolin, sometimes lead electric guitar, a young man who's been with me for five years now. He's fifteen years old. Has a great future, doesn't smoke dope, drink whiskey or go out with women. He's a very pure boy! Well, he's pure in his musical mind. Anyway, give him a warm hand, David Mansfield. On the tenor saxophone, the phenomenal Steve Douglas. All right, on the backup vocals tonight. On the right my cousin, Jo Ann Harris. On the other side, my current girlfriend, Carolyn Dennis. And in the middle, my fiance, Helena Springs. On the conga drums from Detroit the most amazing Miss Bobbye Hall. All right, this is called It's Alright Ma, I'm Only Bleeding.
-
-Thank you! We're gonna go now. Anyway, here's another song I recorded with The Band on an album called Planet Waves. Anyway, I wrote it for one of my babies. (before Forever Young)
-
-Bootleg
-
-I Was Young When I Left Home. Golden Stars GZCD 2004
-No new songs compared to previous concert.
-
-Stereo audience recording, 140 minutes.
-
-Session info updated 31 March 2003.
-
-http://www.bjorner.com 
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-01 Bob Dylan - My Back Pages (Instrumental).flac:29eb644df1f608a53c85dc923e23158d02 Bob Dylan - I'm Ready.flac:6169e9ce374d35a9e4c93cd0cfb6ac1b03 Bob Dylan - Is Your Love In Vain?.flac:4e3044bd501e0e6add206bd1eb01669704 Bob Dylan - Shelter From The Storm.flac:3e068c27f3ecaee814f8b2d14b7427b605 Bob Dylan - It's All Over Now Baby Blue.flac:2db1d0f6bbeeeffc265095456b72dca206 Bob Dylan - Tangled Up In Blue.flac:11b6a8b1dcbc9c4f68942a311ea0f14007 Bob Dylan - Ballad Of A Thin Man.flac:2ce6298c9a3b01239de9c0e0d4d6abf108 Bob Dylan - Maggie's Farm.flac:c96a5d8ecc0b0be3836f7ebf0e1203fb09 Bob Dylan - I Don't Believe You.flac:3bd52ad02774c9e80fed88263162a3db10 Bob Dylan - Like A Rolling Stone.flac:40d7a4fa33d331bcb03614a88bd5263811 Bob Dylan - I Shall Be Released.flac:ba123cbb3573dd59d1a1c725ef70157f12 Bob Dylan - Going, Going, Gone.flac:8bfad0ca0f989c79272463038b5181db13 Bob Dylan - One Of Us Must Know (Sooner Of Later).flac:7bb23494fd781e0f10190641eca5e20a14 Bob Dylan - It Ain't Me, Babe.flac:575168ad51ed769dbbe224977670bd7615 Bob Dylan - Am I Your Stepchild?.flac:456db44fbf31e55f925f77634d431efd16 Bob Dylan - One More Cup Of Coffee.flac:d6fe9319e78394b7f1e871ed9b5a3b95
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-dab8c0b3ce6afcdd7588309d6ed2058f *01 Bob Dylan - My Back Pages (Instrumental).flac
-6f61ef8fe6216f162217c163284a8b76 *02 Bob Dylan - I'm Ready.flac
-422ad4026e3b7486b935de0ddc9dbc67 *03 Bob Dylan - Is Your Love In Vain?.flac
-3701e12e4c1fc24c67b71fdc7053b5c5 *04 Bob Dylan - Shelter From The Storm.flac
-86147bfdfe6bee1e12f5c8ae00b6cb6d *05 Bob Dylan - It's All Over Now Baby Blue.flac
-c2a365e726591ea997afd3623e48cb58 *06 Bob Dylan - Tangled Up In Blue.flac
-84c142e171bb3f390f84de36b21bb8ee *07 Bob Dylan - Ballad Of A Thin Man.flac
-6aad26c4deaa9ac430bc2f105951b316 *08 Bob Dylan - Maggie's Farm.flac
-a48aeddc311027301715fc22a2b3f5f3 *09 Bob Dylan - I Don't Believe You.flac
-524338893192a076d0c4fe3b4f88e48e *10 Bob Dylan - Like A Rolling Stone.flac
-9a2be1837327be9d5e8285925b5ac3ab *11 Bob Dylan - I Shall Be Released.flac
-aee52a62058cae2f01d4db92caaff604 *12 Bob Dylan - Going, Going, Gone.flac
-40ef7a93063f245d24c3dcb84f2a4b60 *13 Bob Dylan - One Of Us Must Know (Sooner Of Later).flac
-a236a2efe8a6c18f39f7a5886076b428 *14 Bob Dylan - It Ain't Me, Babe.flac
-650bf274f088039516a0d5343ad9b4c4 *15 Bob Dylan - Am I Your Stepchild?.flac
-7a8b10f9b873ef1e168c72d4ec149a53 *16 Bob Dylan - One More Cup Of Coffee.flac
-
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-01 Bob Dylan - Blowin' In The Wind.flac:3b934d9205f426b7245cbc64356927be02 Bob Dylan - Girl From The North Country.flac:d1f2614b0649e80e225d9957dbd3f97003 Bob Dylan - Where Are You Tonight?.flac:db9827af705b5ec19489bbdc8d665bfd04 Bob Dylan - Masters Of War.flac:18e916dd8c2fd268ce95fe920458195d05 Bob Dylan - Just Like A Woman.flac:b6b1376eeeebe426b14d569df55dc09d06 Bob Dylan - To Ramona.flac:35b14fa818b983918e21e45a87a682d407 Bob Dylan - All Along The Watchtower.flac:618ef87a0d26f008d4117f1b09d2641808 Bob Dylan - All I Really Want To Do.flac:0821cb8b5dd58d99d8e4d494009d178c09 Bob Dylan - It's Alright Ma.flac:ef00b3707c99a74c4406ee247eab606210 Bob Dylan - Forever Young.flac:d9293dd43481c5b6d41123a686118c1711 Bob Dylan - Changing Of The Guards.flac:6122e15052aa58407fd3c15b310be920
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-dc6f2ef516dce17a6e866b9e57860ed5 *01 Bob Dylan - Blowin' In The Wind.flac
-770746c9879072eb17fa1fe488dcbf23 *02 Bob Dylan - Girl From The North Country.flac
-dba4d5feb63f15b13d0b0127cb3b5591 *03 Bob Dylan - Where Are You Tonight?.flac
-40928f1a5f4ddacf65722848f0a1b5e5 *04 Bob Dylan - Masters Of War.flac
-ef6230e1ace7b3a87aad7e54917190d0 *05 Bob Dylan - Just Like A Woman.flac
-42d548215c9d7489735bc5b4a120af87 *06 Bob Dylan - To Ramona.flac
-10992dc31b0b7813f4d9997c64d700f9 *07 Bob Dylan - All Along The Watchtower.flac
-0deff8998926f58fc593a520bfda6cc4 *08 Bob Dylan - All I Really Want To Do.flac
-03573dda35d952999b584e91f27b9e3b *09 Bob Dylan - It's Alright Ma.flac
-b0f2cea039a4341d7278b2048be52a54 *10 Bob Dylan - Forever Young.flac
-80e6ea955960cbc5029d9bee436c76cf *11 Bob Dylan - Changing Of The Guards.flac
-
-===================
-===================
-===================
-=== bd91-11-18-a.ffp
-===================
-===================
-===================
-bd91-11-18-a-d1t01.flac:df9efec185f8c927486251ee8888ae23
-bd91-11-18-a-d1t02.flac:43a455e4ffe6aa90dae7042a550c870b
-bd91-11-18-a-d1t03.flac:1293571bbcde6b8224c8cba1506d11a0
-bd91-11-18-a-d1t04.flac:4b364f7ffd737254b77f83fcbb1c2935
-bd91-11-18-a-d1t05.flac:7304b4ef08944dc79d029f7109a453fb
-bd91-11-18-a-d1t06.flac:2d466a9ccb2a73b174c3e06bf209ad65
-bd91-11-18-a-d1t07.flac:ed5841ffb6236ec409112ce8ddb505c7
-bd91-11-18-a-d1t08.flac:19a23a3416f962fe2b28bdae856d8f8a
-bd91-11-18-a-d1t09.flac:b65a6aff0873aa7c23c14e7fd38ee076
-bd91-11-18-a-d2r01.flac:401b79ee9b5ef3f12219da800ed9ac8e
-bd91-11-18-a-d2r02.flac:36992241bb471ee1c4c7bb69add8dc2c
-bd91-11-18-a-d2r03.flac:2c5faeb14be04dfc85554180b8db6b5f
-bd91-11-18-a-d2r04.flac:7f58c959e037477ef7b539f3e788744e
-bd91-11-18-a-d2r05.flac:0a2612cf9ee4b0b3b8215afdfd2a9e7c
-bd91-11-18-a-d2r06.flac:270f424492aee178e037ab6ba25b2beb
-bd91-11-18-a-d2r07.flac:44ea0b1481e45692e5e5b776ce3292ec
-bd91-11-18-a-d2r08.flac:69b311b56263baec9eb38829cbdb1b0c
-===================
-===================
-===================
-=== bd91-11-18-a.md5
-===================
-===================
-===================
-1eeb783ea3e971bb952c8fed1731180f *bd91-11-18-a-d1t01.flac
-28f3a5fbad9ffdefd87d1c470e100689 *bd91-11-18-a-d1t02.flac
-00ce66bbf1bb91b4bfd28e72a5e0d48f *bd91-11-18-a-d1t03.flac
-24c3ed3ecc36168680cdf18e42075efb *bd91-11-18-a-d1t04.flac
-a0a96ad7475d8445bed8af278d2624ce *bd91-11-18-a-d1t05.flac
-a60a22f4c86671561d3345cfca7f4098 *bd91-11-18-a-d1t06.flac
-1d706b887434cff2c8a051f639111137 *bd91-11-18-a-d1t07.flac
-b57b8ab2226ab0640b91179dedca567c *bd91-11-18-a-d1t08.flac
-af931b5718ec623d306f69600fdd0fa3 *bd91-11-18-a-d1t09.flac
-b21530ea38b581ce470728c4a72f1486 *bd91-11-18-a-d2r01.flac
-a93dd399b3cef7aade53e027915bd371 *bd91-11-18-a-d2r02.flac
-d8ebb8b04e330c74eeaecae5d361cf84 *bd91-11-18-a-d2r03.flac
-d22311407f6340fac250d5b14fc1789c *bd91-11-18-a-d2r04.flac
-26a81d7257d56a9fc4dd146be3de09d7 *bd91-11-18-a-d2r05.flac
-2cbf1e12199da147888e50864e8c5e3a *bd91-11-18-a-d2r06.flac
-ce8e7eb78bb861c74a208fba608a9e8b *bd91-11-18-a-d2r07.flac
-9b08a84f884693bd710f1fd25ef2d0a2 *bd91-11-18-a-d2r08.flac
-===================
-===================
-===================

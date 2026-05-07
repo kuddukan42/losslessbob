@@ -1,100 +1,0 @@
-===================
-===================
-===================
-=== Info.txt
-===================
-===================
-===================
-
-Granada, Spain
-April 18, 1999
-Palacio Municipal de Deportes
-
-Thanks to jOkerman because he has brought my memory back to the great spanish shows in 1999.I love these acoustic sets.
-This is another excellent recording of a nice show.Enjoy it !
-Let me know if you are interested in any other shows of the 1999 european tour.
-I add in the torrent one of my simple artworks ...
-
-
-lineage : master dat > cd > cdcopy > flac
-
-
-sample included
-
-
-
-Granada, Spain
-April 18, 1999
-Palacio Municipal de Deportes
-
-Friend Of The Devil (acoustic) 
-4th Time Around (acoustic) 
-Masters Of War (acoustic) 
-Visions Of Johanna (acoustic) 
-Mr. Tambourine Man (acoustic) (with harp) 
-Tangled Up In Blue (acoustic) 
-The Lonesome Death Of Hattie Carroll (acoustic) 
-I Don't Believe You 
-It Takes A Lot To Laugh, It Takes A Train To Cry 
-Can't Wait 
-Make You Feel My Love 
-Highway 61 Revisited 
-(encore) 
-Love Sick 
-Rainy Day Women #12 & 35 
-Blowin' In The Wind (acoustic) 
-Maggie's Farm 
-
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-TRACK01.flac:deb816a5e8b3aed83ec289d5f5be2840TRACK02.flac:c3db20f919d9e6fdc9fcde8ca5921e54TRACK03.flac:89a927783556e632277467d15e3bf34aTRACK04.flac:7d3a9d7ac41b46581957865e353268abTRACK05.flac:613273a76778ab22dae686350968a2efTRACK06.flac:f4dba314638e3fb2d127d4417c0c4c81TRACK07.flac:31af597c89b1f7e41b523e2a9c8caee8TRACK08.flac:a4a7c15b9fae7e330a77f62d6c6af154
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-bd27e5976689354b7ba9f67714e65ea6 *TRACK01.flac
-e3bdbab860493e85a79aceabedc80c97 *TRACK02.flac
-731edc839dabb9149f5750a4c67888e8 *TRACK03.flac
-f372c5beb5c62d0a26c5e17d470c20dd *TRACK04.flac
-32e5a8bc64f7a57e1fea00fa26150c3a *TRACK05.flac
-2e7aa8ee7150d0c55f50a2f5f9b144ab *TRACK06.flac
-98010ce495d3586700d9f830159b7825 *TRACK07.flac
-906ca887e739a35664929069053d6d27 *TRACK08.flac
-
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-TRACK01.flac:90278f897d25a470e27f1112659a26b5TRACK02.flac:65ee5fccadb2c5d8145dadaf526b092cTRACK03.flac:e9df3da4c8c7786a863f6fba0207175dTRACK04.flac:c001700e8cae3d3e33e4371339abd010TRACK05.flac:e14af9b7b1d27d3ecf707a6d7baeda38TRACK06.flac:3ae3b8b2c93ad460bd21e617681c4374TRACK07.flac:3c2354b1c753010d42ac642a9de93f8bTRACK08.flac:de7565aa3be4990ff48bceeb4ae9993eTRACK09.flac:8ef3d5e18ff5e2024f2d0d7f50525ff6TRACK10.flac:70dfa629e198801e79004c9c4b10524a
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-2846eefe24f35585e4eac5b55cb425c0 *TRACK01.flac
-4ef95d7ef1be4be0b46650faae199ae0 *TRACK02.flac
-11adebf35d2a10ecd6799f15e95f91de *TRACK03.flac
-57b91221ae6beb912ede3f8b7476ff71 *TRACK04.flac
-523571a7e0cdb41dff28da52d4193f0c *TRACK05.flac
-d617933a8b1f0ebc01c25c37d463d7c7 *TRACK06.flac
-467e2a8fea892c61b200826801f89288 *TRACK07.flac
-67d899673bfd3dfbf3e4b409784c8bf2 *TRACK08.flac
-c53f0eeb77f908b66c94a8c4bcfecb46 *TRACK09.flac
-20390b668eefcef0ab63baacaf3e0927 *TRACK10.flac
-
-===================
-===================
-===================

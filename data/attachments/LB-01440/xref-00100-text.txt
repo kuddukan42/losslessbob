@@ -1,47 +1,0 @@
-===================
-===================
-===================
-=== 2000-05-27 Modena.txt
-===================
-===================
-===================
-2000-05-27 Modena
-SCHUBERT REC + ASM
-
-FLAC audio files plus some artwork
-Received on trade HD
-
-CD 1101 Announcement102 Duncan And Brady103 Mr. Tambourine Man104 Masters Of War105 Boots Of Spanish Leather106 Tangled Up In Blue107 To Ramona108 Country Pie109 Positively 4th Street110 Stuck Inside Of Mobile With The Memphis Blues Again111 Can't Wait
-
-CD 2201 Drifter's Escape202 Leopard-Skin Pill-Box Hat203 Love Sick204 Like A Rolling Stone205 Don't Think Twice, It's All Right206 Gotta Serve Somebody207 Forever Young208 Rainy Day Women #12 & #35209 Blowin' In The Wind
-Shared on TUIT by gør, November 2009
-===================
-===================
-===================
-=== BD 2000-05-27 Modena.md5
-===================
-===================
-===================
-2fc0cc0399fce8957a2e2189fa754042 *101 Announcement.flac
-40420ff9fae24585f275a73646d15371 *102 Duncan And Brady.flac
-509d16d43cc9d026db75ff5e38c977aa *103 Mr. Tambourine Man.flac
-23c9efdd61c2cf3dc8cc58d861ca35e2 *104 Masters Of War.flac
-edf61f04a37a003ee716751e7eb11828 *105 Boots Of Spanish Leather.flac
-8c6d20cf3b3030ba96090854e68621d9 *106 Tangled Up In Blue.flac
-95203ac0d441a94d69aa0342b14c67ac *107 To Ramona.flac
-68012bc0915b9b84c93c968ee5bc0464 *108 Country Pie.flac
-52a7a3652a1edb95fb3bd67c74a08ab5 *109 Positively 4th Street .flac
-96889545aedfbec80ad087103e118f61 *110 Stuck Inside Of Mobile With The Memphis Blues Again .flac
-52e3649a0a2bfb93a8593fedfd35c72c *111 Can't Wait.flac
-2495dbebf9500f8057ebcc691c366e22 *201 Drifter's Escape.flac
-c1c24a7360468e8d552e6550e612b8ba *202 Leopard-Skin Pill-Box Hat.flac
-74ee3ea9a89b680636c21af6a8042fea *203 Love Sick.flac
-82b70d2c72e921a3541cf68c5949369d *204 Like A Rolling Stone .flac
-901b91273483df5060b90af5ced3bae2 *205 Don't Think Twice, It's All Right.flac
-f8831a43e1d7023abed6cd8a9e1bc2d3 *206 Gotta Serve Somebody.flac
-6d703ae2ed75168f23345217ffaca58c *207 Forever Young.flac
-a0d63e289a13f18381042a016c28ba85 *208 Rainy Day Women #12 & #35.flac
-e8a677f7b4b3dfc010fc5885739ed50d *209 Blowin' In The Wind.flac
-===================
-===================
-===================

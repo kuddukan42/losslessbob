@@ -1,129 +1,0 @@
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-01 Tangled up in blue.flac:e425eb8fb83a6ea4b6a5c7c37155e4c402 Most of the time.flac:c005260407e8f63281c7f232e232bfac03 All along the watchtower.flac:d2b2b8c2d5a49cd5b8d9c524c2043eca04 Just like a woman.flac:0a212abcebaa2624ce6ddcfd163f875405 Stuck inside of Mobile with the Memphis blues again.flac:896918259a54e60b55296b02929aeb7006 She belongs to me.flac:b5da815ca65b3d752b96aaa7115e836707 Maggie's farm.flac:93ff567810016e3b0b59608b85d5de5808 Love minus zero - no limit.flac:cf5299426b87eba9b6833fa53716e0be09 Little Moses.flac:278f8a3a3b4c3596aba30ea9c8a77fbf10 Female rambling sailor.flac:64fb708d69cbcb57a64b5f7427cfc3bc01 Tangled up in blue.flac:e425eb8fb83a6ea4b6a5c7c37155e4c402 Most of the time.flac:c005260407e8f63281c7f232e232bfac03 All along the watchtower.flac:d2b2b8c2d5a49cd5b8d9c524c2043eca04 Just like a woman.flac:0a212abcebaa2624ce6ddcfd163f875405 Stuck inside of Mobile with the Memphis blues again.flac:896918259a54e60b55296b02929aeb7006 She belongs to me.flac:b5da815ca65b3d752b96aaa7115e836707 Maggie's farm.flac:93ff567810016e3b0b59608b85d5de5808 Love minus zero - no limit.flac:cf5299426b87eba9b6833fa53716e0be09 Little Moses.flac:278f8a3a3b4c3596aba30ea9c8a77fbf10 Female rambling sailor.flac:64fb708d69cbcb57a64b5f7427cfc3bc
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-5bfaeb6ec51ab7d7da17f4d5e241dcc3 *01 Tangled up in blue.flac
-8c633afd87879b4f7c1ff25bd2d23684 *02 Most of the time.flac
-82af2dbdf9756e8f66afac7d28f429ec *03 All along the watchtower.flac
-baf40b5979ff02f3c655b09d5ed8e885 *04 Just like a woman.flac
-0a92eea189b268c81e2491ee163dc23c *05 Stuck inside of Mobile with the Memphis blues again.flac
-fb02701ddd3af0327b1a85bf3425d4c5 *06 She belongs to me.flac
-99684a19aba568c667eed11163386ea5 *07 Maggie's farm.flac
-3a4eec7441c2c9c6adbaf91947bdf883 *08 Love minus zero - no limit.flac
-7053127ac8a253454a442aa68cf548ed *09 Little Moses.flac
-4949532e0db61f775df30f9c91850103 *10 Female rambling sailor.flac
-
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-11 Desolation Row.flac:78549771d7ceb8874b87b5794c94e5f712 Cat's in the well.flac:12c8fff05dd1be0f49ab2f8498169feb13 I'll remember you.flac:103410c2cad88077baee23b2d8579eba14 The times they are a-changin'.flac:4850e3292d07315cedd9370a1ad8a39015 Highway 61 revisited.flac:53285371d50316efe89c6db986f96afb16 Ballad of a thin man.flac:479f4b4a4d79d73db5e2706d26aa2a7517 To be alone with you.flac:830a86eb80072825d6113ac037a0768418 Blowin' in the wind.flac:95c6c3383bc6e62c75c170d78e34f113
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-140bfc9e4387961d518448d53d8fee5c *11 Desolation Row.flac
-7a27557fd5cd6ec618a804c954185969 *12 Cat's in the well.flac
-c4c9c152b2b792ad0083466ae6b36d66 *13 I'll remember you.flac
-724d35ac84414d99fe594f9b7ff75f0f *14 The times they are a-changin'.flac
-3f0e56036a851313847e6842625e0535 *15 Highway 61 revisited.flac
-287c96c1c741c67243bcd3b7309cb447 *16 Ballad of a thin man.flac
-64cdaa5e8018c8ef4cf8689a26979baf *17 To be alone with you.flac
-703a959ce9ec2d5a17f9a68c251f7116 *18 Blowin' in the wind.flac
-
-===================
-===================
-===================
-=== 1992-03-24 State Theatre, Sydney, New South Wales, Australia [JL].txt
-===================
-===================
-===================
-State Theatre
-Sydney, New South Wales, Australia
-March 24, 1992
-
-4th 92 down under show!
-Due to recent information (disc times) about which show was taped by whom, this most likely signifies a 'JL' recording. My copys times vary slightly... very slightly.
-
-angrycrows comment: definitely a JL recording, transferred and remastered by Les Kokay
-
-Differences:
-MK has t9 Little Moses last on disc 1, and t10 Female Rambling Sailor first on disc 2
-JL has t11 Desolation Row first on disc 2 (complies with this set).
-
-Losslessbob says: LB-1047, (49min+42min), JL recording, excellent sound, sounds fuller and slightly better than the MK recording
-1. pop d1t10 3:34 after music where recording ends on cd1
-Uploader's note: above is correct!
-
-Qlty: Excellent recording!
-Conversion: received as SHNs, converted to FLACs, via WAVs.
-Sets given song titles, as I find it more convenient, and maybe for you
-
-01. Tangled Up In Blue [07:39]
-02. Most Of The Time [03:35]
-03. All Along The Watchtower [03:52]
-04. Just Like A Woman [05:24]
-05. Stuck Inside Of Mobile With The Memphis Blues Again [07:40]
-06. She Belongs To Me [03:38]
-07. Maggie's Farm [05:41]
-08. Love Minus Zero/No Limit [02:52]
-09. Little Moses (Bert A. Williams/Earle C. Jones) [04:12]
-10. Female Rambling Sailor (trad.) [03:38]
-Total time: [48:15]
-
-11. Desolation Row [07:25]
-12. Cat's In The Well [04:03]
-13. I'll Remember You [04:39]
-14. The Times They Are A-Changin' [06:39]
-15. Highway 61 Revisited [05:29]
-16. Ballad Of A Thin Man [05:41]
-17. To Be Alone With You [04:00]
-18. Blowin' In The Wind [03:42]
-Total time: [41:42]
-
-Concert # 368 of The Never-Ending Tour
-Concert # 4 of the 1992 Tour Of Australia
-1992 concert # 4
-
-Concert # 4 with the 6th Never-Ending Tour band:
-Bob Dylan (vocal & guitar), Bucky Baxter (pedal steel guitar & electric slide guitar), John Jackson (guitar), Tony Garnier (bass), Ian Wallace (drums)
-
-8, 9, 18 Bob Dylan (acoustic guitar & vocal)
-1, 4, 5, 8, 11, 14, 18 Bob Dylan harmonica
-10 Bob Dylan (acoustic guitar & vocal) & John Jackson (acoustic guitar)
-11, 14 acoustic with the band
-1, 14 Bucky Baxter (mandolin)
-11 Bucky Baxter (dobro)
-15 Bucky Baxter (electric slide guitar)
-
-4 new songs (22%) compared to previous concert
-3 new songs for this tour
-
-BobTalk:
-Thanks everybody! This is all about not wanting to work on a farm no more. Actually a farm's my favorite place!
-Thanks everybody! That's the spiritual part of the show tonight. Here's a song about a sailor!
-Thank you! From one of my newest records... Another animal song. It's all about a cat ??? in a well
-
-Stereo audience recording, 90 minutes
-
-* * * Fixin' a hole * * *
-===================
-===================
-===================

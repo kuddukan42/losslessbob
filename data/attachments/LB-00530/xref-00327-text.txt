@@ -1,179 +1,0 @@
-===================
-===================
-===================
-=== fingerprint.ffp.txt
-===================
-===================
-===================
-Track01.flac:a4c17a454b28123cabad1f632476c5b1Track02.flac:2999ce8d5c1a66db89efd719ed7af99cTrack03.flac:ca85bc7ed1ca62938ec0e96a8ca77ce6Track04.flac:bc57b570e2b82d35f6ea6d8d0569e2b1Track05.flac:c7f70059d670d125aa09b9cd5ffa872cTrack06.flac:79ae2be12c0c96bd750033217be9a734Track07.flac:d9307d12d4a617523c9169e7a86def38Track08.flac:2335cebb29868da2353b4188110c7a1aTrack09.flac:2bfda34674fca33cb62dfe63afe01a02Track10.flac:2aafd9dd16c253e549cfa545c685350eTrack11.flac:f3242dbb3d20f87273a4c7b57fe0d6c6Track12.flac:efa538f3cf1cb4744012b4a35d156193Track13.flac:b4bce32efc26bc8aaa61fdf4afa22debTrack14.flac:cfa87e65923bd8f9dae8f15dda3f0b16Track15.flac:da2bacd0c69a458997fe88243b9dcee3Track16.flac:356f0d30bb81b056665c6d5a60d0d4cdTrack17.flac:3c224a11e6bf75964f96b21fb3533248Track01.flac:1432dcc9a82137ea5f056e0aa4b782e8Track02.flac:84cf3f9fe2fac92caa56e35b14d6820dTrack03.flac:9bafd44e3ffedd3277e107a61852b148Track04.flac:5fb1d3f929375bc6bab7285ca6baea20Track05.flac:b78d3f0d85c4a11d7589b87cbe46ac6bTrack06.flac:27036e10ad5e330334481a04bbcd743bTrack07.flac:8c984043a0127742a7b6861032891d2cTrack08.flac:5cb232f319ee9854c962a60bf3122817Track09.flac:f16ddaf279b249adb34060c9b86625d1Track10.flac:4f6861575f37099da3f63d47f6a61b70Track11.flac:4345cb4729419931d7726b9a0627e8b6
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-fe38626d15465453d05b124419d00642 *Track01.flac
-a745496b499841f413be1fc0e05606a9 *Track02.flac
-024641dbf9a44dbc74c34084fe72676d *Track03.flac
-07151782bc02a721fe827129c6ea3bda *Track04.flac
-379b316303992aa833abac2021213dc8 *Track05.flac
-aa71626de59664d9610a5eb3071e367e *Track06.flac
-dd2a46e1f1a6823a4e333e20dd8d4bbc *Track07.flac
-4fe7d87106343794c494f17f75e7da35 *Track08.flac
-1985d599f49c114e4468db298b832e4f *Track09.flac
-04199173a9721bc02d0790c74d825fff *Track10.flac
-542c0c81bf86d3ff23179bb1cfd43af4 *Track11.flac
-79a32150c7bd804e92ebadac264a80f4 *Track12.flac
-756bd5746a2b96731fdc8aefc4b37eef *Track13.flac
-930fb97bd3a636a1f8e905905b25d713 *Track14.flac
-e8b0320e5f826f9a2544a4d7ed7e967d *Track15.flac
-3c3400ea7895b20e8bfa00826b3826cb *Track16.flac
-3689202ed6aab22eb93e5338cb7d8d4f *Track17.flac
-
-===================
-===================
-===================
-=== md5sum.md5
-===================
-===================
-===================
-37e4c03362beec6cca471811402676b0 *Track01.flac
-024d09439bb3f06119e8b1b9d1a93aca *Track02.flac
-795a48ba0b8450c1ec944c5e26ae3dd2 *Track03.flac
-b961ee8f8a10fde9efbe7b929df2741c *Track04.flac
-563e81bd6f8b922676c213259943d5ca *Track05.flac
-0e496fd0b900f77777e885e51dcbb41c *Track06.flac
-de651d55b43e488ac61c3a2c68583e0e *Track07.flac
-1cf75d2e767932124751c87824319f7a *Track08.flac
-91395a272cb29e81db08a5fb7c747729 *Track09.flac
-78cd889c4b8b57f530709636bcd1076e *Track10.flac
-1f7d72e210c694027e7fbf3d9d01b75b *Track11.flac
-
-===================
-===================
-===================
-=== setlist.txt
-===================
-===================
-===================
-Bob Dylan
-Fox Warfield Theatre
-San Francisco, California
-22 November 1980
-
- 
-1.Gotta Serve Somebody
-2.I Believe In You
-3.Like A Rolling Stone
- 
-Clydie King:
-You Are So Beautiful (To Me) (?)
- 
-4.Man Gave Names To All The Animals
-5.Simple Twist Of Fate
-6.Fever (Johnny Davenport/Eddie Cooley)
-7.Girl From The North Country
-8.We Just Disagree (Jim Krueger)
-9.Ain't Gonna Go To Hell For Anybody
-10.Slow Train
-
-Carolyn Dennis:
-Walk Around Heaven All Day (Rev. James Cleveland/Cassietta George)
- 
-11.Abraham, Martin And John (Dick Holler)
-12.Rise Again (Dallas Holm)
-13.Let's Keep It Between Us
-14.Mary From The Wild Moor (trad.)
-15.Solid Rock
-16.Just Like A Woman
-17.Seor (Tales Of Yankee Power)
-18.Mr. Tambourine Man
-19.Knockin' On Heaven's Door
-20.In The Garden
-
-21.Blowin' In The Wind
-22.City Of Gold
-23.It Ain't Me, Babe
-24.A Hard Rain's A-Gonna Fall
- 
- 
-Concert # 12 of A Musical Retrospective Tour. 1980 concert # 65.
-Bob Dylan (vocal & guitar), Fred Tackett (guitar & mandolin), Willie Smith (keyboards), Tim Drummond (bass), Jim Keltner (drums), Clydie King, Carolyn Dennis, Regina Havis (background vocals).
- 
-7 Bob Dylan (vocal & guitar), Willie Smith (piano).
-11, 12 Bob Dylan (piano & vocal), Clydie King (shared vocal).
-13 Bob Dylan (piano) backed by the band.
-14 Bob Dylan (vocal & guitar), Regina Havis (shared vocal & autoharp), Fred Tackett (mandolin).
-18, 19 Roger McGuinn (guitar & shared vocal).
-23 Bob Dylan solo (vocal & guitar).
- 
-Note. Live debut of Fever.
- 
-BobTalk
-Thank you. We're gonna slow things down a bit here. This is Clydie King, she's gonna sing a song called You Are So Beautiful.
-Thank you all right. I know I can speak freely for myself and everybody in the band, that we really enjoyed this time at the Warfield. I know I speak for everybody when I say I do hope we do get invited back. (....) because when we came here last year, we came here with a show (....). That's enough for most promoters in the business to cancel out the rest of the shows but they didn't do that, they just (....). Anyway I ran into a girl here I hadn't seen since a while back and ..., she said I was a strange person and she told me why. She said you were born up in a certain area where the grounds are metallic. And actually she is right, where I come from the ground is metallic. As a matter of fact during the Second World War 90% of all the iron and steel that went into all the ships and the boats and airplanes and all kinds of weaponry, 90% of all the iron and the steel that went into all that came from area where I lived. (.....) Across the lake is a town called Detroit. And I got to go to Detroit once I think when I was about twelve or so with a friend of mine who had relatives there. Anyway, once, I can't remember how it happened but I found, I found myself in funeral parlor. Where people came to eat all day and they mingle all night and they had a dead man in the back. And that was the first time, see where Im from, Im (....) hear country music no Hank Williams, no Hank Snow, they played me all kind of things, but anyways this was my first time face to face with rhythm and blues in Detroit. And when I was about five years old there was a man who was singing this song here, I dont think I do it as good as he did, but Im gonna try to do it anyway. (before Fever)
-Thank you. Here's a new song that I started putting together this year, called I Ain't Gonna Go To Hell For Anybody.
-Thank you. This is Carolyn Dennis she's gonna sing a song called Walking Around Heaven All Day.
-Thank you. This is a new song Im also trying to put together called Honey Let's just Keep It Between Us, Cause It May Get Out Of Hand.
-We're gonna try and play an old song now, this is about 1200 years old. Yeah. A sort of old Southern Mountain ballad song that we all used to sing, one time or another. (before Mary From The Wild Moor)
-Thank you all right we been here for 12 night I think, and different people have been stopping down. I wanna thank them all. Jerry Garcia was here, lets see, Elton John, Bruce Springsteen, Captain Beefheart. They all went through here one time or another. Anyway got another special guest, ha ha, tonight. Can't get away we know so many people you know. Anyway I first met this next man I think about, almost twenty years ago if not that. Probably was, and he was playing in a group, I don't remember the name of the group actually. But he went on and started a group called The Byrds, I'm sure you heard of them. Anyway we've played together before, been on tours together and all that kind of stuff. I'll bring him out here now, you know who he is, Roger McGuinn. (before Mr. Tambourine Man)
-Roger played on this song too. He played on, we recorded it, how many years ago was that Roger? When did we do that? Right. (plays Knockin' On Heaven's Door) All right, Rogers playing in the area, you go see him now.
-Thank you, Clydie King, Regina McCreary and Carolyn Dennis. On the keyboards tonight, Willie Smith. Playing lead guitar tonight, Fred Tackett. On the drums Jim Keltner. Playing bass guitar, Tim Drummond. Special guest, Roger McGuinn. All right now, we gotta get out of here. I hope we come back! (at the end of In The Garden)
- 
-Bootleg
-Highway 80 Revisited. RSR/International Label.
- 
-5 new songs (20%) compared to previous concert. 5 new songs for this tour.
- 
-Stereo audience recording. 115 minutes.
- 
-Session info updated 19 May 2009.
-www.bjorner.com
-===================
-===================
-===================
-=== shntoolmd5sum.st5
-===================
-===================
-===================
-1432dcc9a82137ea5f056e0aa4b782e8  [shntool]  Track01.flac
-84cf3f9fe2fac92caa56e35b14d6820d  [shntool]  Track02.flac
-9bafd44e3ffedd3277e107a61852b148  [shntool]  Track03.flac
-5fb1d3f929375bc6bab7285ca6baea20  [shntool]  Track04.flac
-b78d3f0d85c4a11d7589b87cbe46ac6b  [shntool]  Track05.flac
-27036e10ad5e330334481a04bbcd743b  [shntool]  Track06.flac
-8c984043a0127742a7b6861032891d2c  [shntool]  Track07.flac
-5cb232f319ee9854c962a60bf3122817  [shntool]  Track08.flac
-f16ddaf279b249adb34060c9b86625d1  [shntool]  Track09.flac
-4f6861575f37099da3f63d47f6a61b70  [shntool]  Track10.flac
-4345cb4729419931d7726b9a0627e8b6  [shntool]  Track11.flac
-
-===================
-===================
-===================
-=== shntoolmd5sum.st5
-===================
-===================
-===================
-a4c17a454b28123cabad1f632476c5b1  [shntool]  Track01.flac
-2999ce8d5c1a66db89efd719ed7af99c  [shntool]  Track02.flac
-ca85bc7ed1ca62938ec0e96a8ca77ce6  [shntool]  Track03.flac
-bc57b570e2b82d35f6ea6d8d0569e2b1  [shntool]  Track04.flac
-c7f70059d670d125aa09b9cd5ffa872c  [shntool]  Track05.flac
-79ae2be12c0c96bd750033217be9a734  [shntool]  Track06.flac
-d9307d12d4a617523c9169e7a86def38  [shntool]  Track07.flac
-2335cebb29868da2353b4188110c7a1a  [shntool]  Track08.flac
-2bfda34674fca33cb62dfe63afe01a02  [shntool]  Track09.flac
-2aafd9dd16c253e549cfa545c685350e  [shntool]  Track10.flac
-f3242dbb3d20f87273a4c7b57fe0d6c6  [shntool]  Track11.flac
-efa538f3cf1cb4744012b4a35d156193  [shntool]  Track12.flac
-b4bce32efc26bc8aaa61fdf4afa22deb  [shntool]  Track13.flac
-cfa87e65923bd8f9dae8f15dda3f0b16  [shntool]  Track14.flac
-da2bacd0c69a458997fe88243b9dcee3  [shntool]  Track15.flac
-356f0d30bb81b056665c6d5a60d0d4cd  [shntool]  Track16.flac
-3c224a11e6bf75964f96b21fb3533248  [shntool]  Track17.flac
-
-===================
-===================
-===================

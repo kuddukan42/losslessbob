@@ -1,8 +1,0 @@
-Bob Dylan, 12/6/62, Studio A, Columbia Recording Studios, New York Studio, New York, 1CDR
-
-LB-6387, (37min), version "c"; DAT -> (digital transfer) m-audio delta audiophile 2496 -> Wavelab -> ssrc -> wavelab,levels raised -> cdwave, tracking -> tlh; The 7th Freewheelin' Bob Dylan session, produced by John Hammond., ; bittorrent download 08/08; similar wav and spectal view on t3 to LB-5550 except this has more above 21k and levels a little higher and this does not have the flaw noted on that one; (did not listen to all of this)
-
-1 Hero Blues, 2 Whatcha Gonna Do, 3 Oxford Town, 4 I Shall Be Free, 5 I Shall Be Free, 6 I Shall Be Free, 7 I Shall Be Free, 8 I Shall Be Free, 9 Hero Blues, 10 Hero Blues, 11 Hero Blues, 12 A Hard Rain's A-Gonna Fall
-
-Please retain this info file and its LB number as a marker for this lossless set
-and if you spread it please list it in the description to avoid others getting duplicates
