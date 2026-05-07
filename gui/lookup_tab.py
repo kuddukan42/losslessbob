@@ -1,6 +1,4 @@
-import hashlib
 import re
-import struct
 import webbrowser
 from pathlib import Path
 
@@ -145,113 +143,24 @@ class _LookupWorker(QThread):
 
 class _GenerateWorker(QThread):
     finished = pyqtSignal(dict)
-
-    _AUDIO_EXTS = {'.flac', '.mp3', '.wav', '.ape', '.m4a', '.ogg', '.wv', '.aif', '.aiff'}
-
-    def __init__(self, folder):
-        super().__init__()
-        self.folder = Path(folder)
-
-    def run(self):
-        result = self._run_folder(self.folder)
-        result["folder"] = str(self.folder)
-        self.finished.emit(result)
-
-    @classmethod
-    def _run_folder(cls, folder):
-        folder = Path(folder)
-        name = folder.name
-        generated, skipped, errors = [], [], []
-
-        audio_files = sorted(
-            f for f in folder.iterdir()
-            if f.is_file() and f.suffix.lower() in cls._AUDIO_EXTS
-        )
-        if not audio_files:
-            return {"generated": [], "skipped": [], "errors": ["No audio files found in folder."]}
-
-        md5_path = folder / f"{name}.md5"
-        if md5_path.exists():
-            skipped.append(md5_path.name)
-        else:
-            try:
-                lines = [f"{cls._file_md5(f)}  {f.name}" for f in audio_files]
-                md5_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
-                generated.append(str(md5_path))
-            except Exception as e:
-                errors.append(f"MD5: {e}")
-
-        flac_files = [f for f in audio_files if f.suffix.lower() == ".flac"]
-        if flac_files:
-            ffp_path = folder / f"{name}.ffp"
-            if ffp_path.exists():
-                skipped.append(ffp_path.name)
-            else:
-                try:
-                    lines = []
-                    for f in flac_files:
-                        fp = cls._flac_fingerprint(f)
-                        if fp:
-                            lines.append(f"{f.name}:{fp}")
-                        else:
-                            errors.append(f"Could not read fingerprint: {f.name}")
-                    if lines:
-                        ffp_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
-                        generated.append(str(ffp_path))
-                except Exception as e:
-                    errors.append(f"FFP: {e}")
-
-        return {"generated": generated, "skipped": skipped, "errors": errors}
-
-    @staticmethod
-    def _file_md5(path):
-        h = hashlib.md5()
-        with open(path, "rb") as f:
-            for chunk in iter(lambda: f.read(65536), b""):
-                h.update(chunk)
-        return h.hexdigest()
-
-    @staticmethod
-    def _flac_fingerprint(path):
-        # Reads the MD5-of-audio-data from the FLAC STREAM_INFO block header.
-        # STREAM_INFO layout (34 bytes): 2+2+3+3+8 bytes then 16 bytes of MD5.
-        try:
-            with open(path, "rb") as f:
-                if f.read(4) != b"fLaC":
-                    return None
-                while True:
-                    hdr = f.read(4)
-                    if len(hdr) < 4:
-                        return None
-                    block_type = hdr[0] & 0x7F
-                    is_last = hdr[0] & 0x80
-                    block_len = struct.unpack(">I", b"\x00" + hdr[1:4])[0]
-                    if block_type == 0:  # STREAM_INFO
-                        data = f.read(block_len)
-                        return data[18:34].hex() if len(data) >= 34 else None
-                    f.seek(block_len, 1)
-                    if is_last:
-                        return None
-        except Exception:
-            return None
-
-
-class _MultiGenerateWorker(QThread):
     progress = pyqtSignal(str)
-    all_finished = pyqtSignal(list)
 
-    def __init__(self, folders):
+    def __init__(self, flask_port, folders):
         super().__init__()
-        self.folders = [Path(f) for f in folders]
+        self.flask_port = flask_port
+        self.folders = list(folders)
 
     def run(self):
-        results = []
-        for folder in self.folders:
-            self.progress.emit(f"Generating checksums for {folder.name}...")
-            result = _GenerateWorker._run_folder(folder)
-            result["folder"] = str(folder)
-            results.append(result)
-        self.all_finished.emit(results)
+        try:
+            self.progress.emit(f"Generating checksums for {len(self.folders)} folder(s)...")
+            resp = requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/verify/generate",
+                json={"folders": self.folders},
+                timeout=300,
+            )
+            self.finished.emit(resp.json())
+        except Exception as e:
+            self.finished.emit({"error": str(e), "results": []})
 
 
 class DropListWidget(QListWidget):
@@ -558,10 +467,9 @@ class LookupTab(QWidget):
             self.status_label.setText("No valid folders found for selected items.")
             return
         self.generate_btn.setEnabled(False)
-        self.status_label.setText(f"Generating checksums for {len(folders)} folder(s)...")
-        self._multi_generate_worker = _MultiGenerateWorker(list(folders))
+        self._multi_generate_worker = _GenerateWorker(self.flask_port, list(folders))
         self._multi_generate_worker.progress.connect(self.status_label.setText)
-        self._multi_generate_worker.all_finished.connect(self._on_multi_generate_done)
+        self._multi_generate_worker.finished.connect(self._on_multi_generate_done)
         self._multi_generate_worker.start()
 
     def _on_generate_done(self, result):
@@ -638,17 +546,17 @@ class LookupTab(QWidget):
             self.status_label.setText("No folders found for selected INCOMPLETE entries.")
             return
         self.generate_summary_btn.setEnabled(False)
-        self.status_label.setText(f"Generating checksums for {len(folders)} folder(s)...")
-        self._multi_generate_worker = _MultiGenerateWorker(folders)
+        self._multi_generate_worker = _GenerateWorker(self.flask_port, folders)
         self._multi_generate_worker.progress.connect(self.status_label.setText)
-        self._multi_generate_worker.all_finished.connect(self._on_multi_generate_done)
+        self._multi_generate_worker.finished.connect(self._on_multi_generate_done)
         self._multi_generate_worker.start()
 
-    def _on_multi_generate_done(self, results):
-        all_generated, all_skipped, all_errors = [], [], []
-        for result in results:
+    def _on_multi_generate_done(self, response):
+        all_generated, all_errors = [], []
+        if "error" in response:
+            all_errors.append(response["error"])
+        for result in response.get("results", []):
             all_generated.extend(result.get("generated", []))
-            all_skipped.extend(result.get("skipped", []))
             all_errors.extend(result.get("errors", []))
             if result.get("generated"):
                 self._no_checksum_folders.discard(result.get("folder", ""))
@@ -656,14 +564,10 @@ class LookupTab(QWidget):
             for path in all_generated:
                 if path not in self._all_paths:
                     self._all_paths.append(path)
-            self._refresh_listbox()
-        elif self._no_checksum_folders is not None:
-            self._refresh_listbox()
+        self._refresh_listbox()
         parts = []
         if all_generated:
             parts.append(f"Generated: {', '.join(Path(p).name for p in all_generated)}")
-        if all_skipped:
-            parts.append(f"Already existed: {', '.join(all_skipped)}")
         if all_errors:
             parts.append(f"Errors: {'; '.join(all_errors)}")
         self.status_label.setText("  |  ".join(parts) if parts else "Done.")

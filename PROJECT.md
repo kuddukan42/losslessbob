@@ -32,6 +32,7 @@ losslessbob/
 ├── backend/
 │   ├── app.py                # Flask REST API — all routes
 │   ├── db.py                 # SQLite layer, checksum parsing, search
+│   ├── checksum_utils.py     # Shared: FFP/MD5/shntool compute, lbdir parse, verify, generate
 │   ├── importer.py           # Flat-file import logic
 │   ├── scraper.py            # Web scraper for losslessbob.com
 │   └── scheduler.py          # Watchdog file watcher, auto-import
@@ -140,8 +141,20 @@ Persists settings between runs. Key examples:
 | Method | Route | Description |
 |--------|-------|-------------|
 | POST | `/api/scrape/start` | Start bulk scrape. Body: `{lb_numbers, force, download_files, delay_ms}` |
-| GET | `/api/scrape/status` | Poll progress: `{running, current_lb, done, total, errors}` |
+| GET | `/api/scrape/status` | Poll progress: `{running, current_lb, done, total, errors, skipped, last_action}` |
 | POST | `/api/scrape/stop` | Request stop |
+
+### Verify (Local Checksums)
+| Method | Route | Description |
+|--------|-------|-------------|
+| POST | `/api/verify` | Verify audio files against `.ffp`/`.md5`/`.st5` in each folder. Body: `{folders:[...]}`. |
+| POST | `/api/verify/generate` | Generate `_lbgen.ffp` and/or `_lbgen.md5` for each folder. Body: `{folders:[...]}`. |
+
+### LBDir
+| Method | Route | Description |
+|--------|-------|-------------|
+| POST | `/api/lbdir/check` | Find `lbdir*.txt` in each folder, parse, and verify all listed files. Returns extended result with `lbdir_found`, `lbdir_path`, `lb_number`, plus `length`/`cdr`/`wave_problems` per file from shntool_len section. |
+| POST | `/api/lbdir/retrieve` | Copy `lbdir*.txt` from `data/attachments/LB-{N:05d}/` to the target folder (triggering a scrape if not yet cached). Looks up LB number from `my_collection` by `disk_path`. |
 
 ---
 
@@ -164,6 +177,63 @@ For each parsed checksum, queries `checksums` table, then aggregates per LB numb
 - **DUPLICATE** — same checksum exists in multiple LB entries
 - **NOT FOUND** — no DB match at all
 - **XREF** — matched, but entry is a cross-reference
+
+---
+
+## Backend: Checksum Utilities (`backend/checksum_utils.py`)
+
+Shared module for local file verification and checksum generation. Used by `/api/verify`, `/api/verify/generate`, `/api/lbdir/check`, and `/api/lbdir/retrieve`.
+
+### Functions
+
+| Function | Description |
+|----------|-------------|
+| `parse_lbdir_file(path)` | Parse a `lbdir*.txt` into `{mode, md5, ffp, shntool, shntool_len}` sections. Detects mode from content. Maps shntool `.wav` → `.shn`. |
+| `compute_ffp(filepath)` | Scan FLAC metadata blocks for STREAM_INFO, return bytes 18–33 as 32-char hex (MD5 of unencoded audio). Returns `None` if not valid FLAC. |
+| `compute_md5(filepath)` | Streaming `hashlib.md5` of full file bytes. Returns `None` on IOError. |
+| `compute_shntool(filepath)` | Shell out to `shntool md5 <file>`, parse `[shntool]` line. Raises `ShntoolNotFoundError` if binary not in PATH. |
+| `detect_folder_mode(folder_path)` | Returns `'flac'`, `'shn'`, or `'mixed'` by globbing for `.flac`/`.shn` files. |
+| `_lbgen_path(folder, basename, ext)` | Returns `<folder>/<basename>_lbgen.<ext>`, incrementing to `_lbgen_2`, `_lbgen_3`, … until a non-existent path is found. |
+| `verify_folder(folder_path)` | Verify audio files against standalone `.ffp`/`.md5`/`.st5` checksum files in the folder. |
+| `verify_folder_lbdir(folder_path, lbdir_path)` | Verify all files listed in a `lbdir*.txt` (audio + non-audio), including `length`/`cdr`/`wave_problems` from shntool_len section. |
+| `generate_checksums(folder_path)` | FLAC: write `_lbgen.ffp` + `_lbgen.md5`. SHN: write `_lbgen.md5` with shntool `[shntool]` format lines. Never overwrites existing files. |
+
+### Verify result schema (per folder)
+```json
+{
+  "folder": "/path",
+  "mode": "flac|shn|mixed",
+  "status": "pass|fail|incomplete|shntool_missing",
+  "total": 12, "pass": 10, "mismatch": 1, "missing": 1, "extra": 0,
+  "missing_types": ["ffp"],
+  "files": [
+    {
+      "filename": "01 - Track.flac",
+      "md5_expected": "...", "md5_actual": "...", "md5_status": "pass|fail|missing|na",
+      "ffp_expected": "...", "ffp_actual": "...", "ffp_status": "pass|fail|missing|na",
+      "shntool_expected": null, "shntool_actual": null, "shntool_status": "na",
+      "st5_expected": null, "st5_status": "na",
+      "on_disk": true, "overall": "pass|fail|missing|extra"
+    }
+  ]
+}
+```
+`/api/lbdir/check` adds `lbdir_found`, `lbdir_path`, `lb_number` at the top level and `length`, `cdr`, `wave_problems` per file.
+
+### lbdir file format
+```
+=== md5 for: LB-01234 ===
+d41d8cd98f00b204e9800998ecf8427e *01 - Track.flac
+
+=== ffp for: LB-01234 ===
+01 - Track.flac:a9f1234...
+
+=== shntool md5/hash for: LB-01234 ===
+e5d3a...  [shntool]  01 - Track.wav
+
+=== shntool len for: LB-01234 ===
+  3:47.15  39,684,620  -  ---  FLAC  0.5012  01 - Track.wav
+```
 
 ---
 
@@ -201,7 +271,9 @@ checksum<TAB>filename<TAB>type<TAB>lb_number<TAB>xref
 
 **Rate limiting:** 3 retries with exponential backoff; 60-second pause on HTTP 429.
 
-**Bulk scrape:** Thread-safe progress state `{running, current_lb, done, total, errors, stop_requested}` polled by GUI every 1 second.
+**Skip logic:** `scrape_entry` skips an entry (returns `{skipped: True}`) when `force=False` and the entry exists in DB with no pending file downloads. The inter-request delay (`delay_ms`) is suppressed for skipped entries so bulk scrapes over already-complete ranges complete immediately.
+
+**Bulk scrape:** Thread-safe progress state `{running, current_lb, done, total, errors, skipped, last_action, stop_requested}` polled by GUI every 1 second. `last_action` is `'scraped'`, `'skipped'`, or `'error'`.
 
 ---
 
@@ -254,7 +326,7 @@ The primary user-facing feature.
 | Yellow | DUPLICATE (in multiple LBs) |
 | Light blue | XREF (cross-reference entry) |
 
-**Checksum generation:** For a selected folder, reads FLAC `STREAM_INFO` block (bytes 18–34) for FFP hashes; computes MD5 for all audio files. Writes `.ffp` and `.md5` files.
+**Checksum generation:** Posts to `POST /api/verify/generate` with the selected folder path(s). The backend (`backend/checksum_utils.py`) computes FFP (FLAC STREAM_INFO bytes 18–34) and MD5 hashes and writes `<foldername>_lbgen.ffp` and `<foldername>_lbgen.md5`, incrementing the suffix (`_lbgen_2`, etc.) if files already exist. Generated file paths and any errors are shown in the status area below the file list.
 
 **Double-click summary row:** Opens the LosslessBob detail page in the system browser.
 
@@ -277,19 +349,23 @@ Search field + field selector (All / Location / Date / Description). Results tab
 **Database section:** Stats display, Import Database File button, Check for Update, Open DB Folder, destructive Reset button.
 
 **Scraper section:**
-- Checkboxes: Auto-scrape after import, Download attachment files
+- Checkboxes: Auto-scrape after import, Download attachment files, **Force re-scrape (ignore already-complete entries)**
 - Delay spinner (500–10000 ms, default 1500 ms)
 - Scrape All / Stop buttons
 - Single-entry scrape (enter one LB number)
 - Range scrape (start, end, optional Fill Gaps mode)
 - Progress bar + scrolling log (max 500 lines)
 
-**Fill Gaps mode:** Queries DB for LB numbers that have no entry yet and scrapes only those, filling holes in the local cache.
+**Force re-scrape checkbox:** When checked, passes `force=True` to all three scrape modes (single, range, all), bypassing the skip-if-already-complete logic. Persisted in `meta` as `force_scrape`.
+
+**Fill Gaps mode:** For LB numbers in the range not present in the checksum DB, inserts a `status='missing'` placeholder entry.
+
+**Scraper log:** Shows "Scraped LB-X" or "Skipped LB-X — already complete" per entry based on `last_action` from the status poll. Completion message includes skipped count.
 
 **Background threads:**
 - `_ImportThread` — calls `/api/db/import`
 - `_ResetThread` — calls `/api/db/reset`
-- `_SingleScrapeThread` — calls `/api/entry/<lb>/scrape`
+- `_SingleScrapeThread(flask_port, lb_number, force)` — calls `/api/entry/<lb>/scrape`
 - `_ScrapeStatusThread` — polls `/api/scrape/status` every 1 second; updates progress bar and log
 
 ---
@@ -304,6 +380,8 @@ Search field + field selector (All / Location / Date / Description). Results tab
 - Generic panel with Open Externally button for other types
 
 **Re-download button:** Forces a fresh scrape of the selected entry.
+
+**Manual file placement:** Files dropped directly into `data/attachments/LB-XXXXX/` (matching the zero-padded naming convention) are displayed in the tree after clicking Refresh — no DB write required. The "Refresh / Re-download" button will overwrite manually placed files, so avoid using it on manually populated entries.
 
 ---
 
@@ -407,7 +485,7 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
   - Lookup: `summary_container`, `detail_container`
   - Rename: `view`
   - Search: `view`
-  - Collection: `table`
+  - Collection: `coll_view`, `miss_view`
   Do **not** apply globally or to the window frame.
 
 ---
@@ -431,3 +509,8 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 | 2026-05-06 | Removed SDF/Wine/ExportSqlCE40 import path; flat-file only. Renamed `sdf_hash` meta key to `import_hash`. Deleted `tools/` directory. |
 | 2026-05-06 | QSS modernization: Fusion base style, rounded corners, flat buttons, tab underline indicator, slim progress bar, `font-weight 700`, drop shadows on result panels. |
 | 2026-05-06 | Rename tab: added `wrong_lb` state (purple) for folders with mismatched LB numbers; "Select Wrong LB" and "Strip Wrong LB from Selected" buttons; "Select All" now only checks actionable rows. |
+| 2026-05-06 | Scraper: skip logic no longer fires delay for already-complete entries; `_scrape_state` gains `skipped` count and `last_action`; log distinguishes scraped vs skipped. |
+| 2026-05-06 | Setup tab: added "Force re-scrape" checkbox applied to all three scrape modes; `_SingleScrapeThread` accepts `force` parameter. |
+| 2026-05-06 | Added `backend/checksum_utils.py`: FFP/MD5/shntool compute, lbdir parsing, `verify_folder`, `verify_folder_lbdir`, `generate_checksums`, `_lbgen_path`. |
+| 2026-05-06 | Added four new API routes: `POST /api/verify`, `POST /api/verify/generate`, `POST /api/lbdir/check`, `POST /api/lbdir/retrieve`. |
+| 2026-05-06 | Lookup tab: checksum generation now calls `POST /api/verify/generate` instead of doing file I/O in the GUI worker; output uses `_lbgen` naming convention. |

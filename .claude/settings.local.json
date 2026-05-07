@@ -25,7 +25,8 @@
       "Bash(python -m py_compile backend/db.py backend/app.py gui/styles.py gui/rename_tab.py gui/search_tab.py gui/collection_tab.py gui/main_window.py)",
       "Bash(python3 -c \"import ast, sys; ast.parse\\(open\\('/home/tjenkins/Documents/losslessbob/gui/lookup_tab.py'\\).read\\(\\)\\); print\\('syntax OK'\\)\")",
       "Bash(python3 -c \"import ast; ast.parse\\(open\\('/home/tjenkins/Documents/losslessbob/gui/lookup_tab.py'\\).read\\(\\)\\); print\\('syntax OK'\\)\")",
-      "Bash(python3 -c \"import ast; ast.parse\\(open\\('/home/tjenkins/Documents/losslessbob/gui/setup_tab.py'\\).read\\(\\)\\); print\\('OK'\\)\")"
+      "Bash(python3 -c \"import ast; ast.parse\\(open\\('/home/tjenkins/Documents/losslessbob/gui/setup_tab.py'\\).read\\(\\)\\); print\\('OK'\\)\")",
+      "Bash(python3 -c \"import ast; ast.parse\\(open\\('/home/tjenkins/Documents/losslessbob/gui/lookup_tab.py'\\).read\\(\\)\\); print\\('OK'\\)\")"
     ]
   }
 }

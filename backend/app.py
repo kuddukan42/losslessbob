@@ -1,3 +1,4 @@
+import shutil
 import threading
 from pathlib import Path
 
@@ -6,6 +7,7 @@ from flask_cors import CORS
 
 from backend import db as database
 from backend import importer, scraper, scheduler
+from backend import checksum_utils
 
 DATA_DIR = Path(__file__).parent.parent / "data"
 ATTACHMENTS_DIR = DATA_DIR / "attachments"
@@ -282,6 +284,154 @@ def create_app():
     def scrape_stop():
         scraper.stop_scrape()
         return jsonify({"ok": True})
+
+    # ── Verify ───────────────────────────────────────────────────────────────
+
+    @app.route("/api/verify", methods=["POST"])
+    def verify():
+        try:
+            data = request.get_json() or {}
+            folders = data.get("folders", [])
+            if not folders:
+                return jsonify({"error": "folders list required"}), 400
+            results = [checksum_utils.verify_folder(f) for f in folders]
+            return jsonify({"results": results})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/verify/generate", methods=["POST"])
+    def verify_generate():
+        try:
+            data = request.get_json() or {}
+            folders = data.get("folders", [])
+            if not folders:
+                return jsonify({"error": "folders list required"}), 400
+            results = [checksum_utils.generate_checksums(f) for f in folders]
+            return jsonify({"results": results})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    # ── LBDir ────────────────────────────────────────────────────────────────
+
+    @app.route("/api/lbdir/check", methods=["POST"])
+    def lbdir_check():
+        try:
+            data = request.get_json() or {}
+            folders = data.get("folders", [])
+            if not folders:
+                return jsonify({"error": "folders list required"}), 400
+
+            results = []
+            for folder_path in folders:
+                folder = Path(folder_path)
+
+                # Look up LB number from collection by disk_path
+                with database.get_connection() as conn:
+                    row = conn.execute(
+                        "SELECT lb_number FROM my_collection WHERE disk_path=?",
+                        (str(folder),)
+                    ).fetchone()
+                lb_number = row["lb_number"] if row else None
+
+                # Find lbdir*.txt (case-insensitive)
+                lbdir_path = None
+                if folder.exists():
+                    for f in folder.iterdir():
+                        if f.is_file() and f.name.lower().startswith('lbdir') and f.suffix.lower() == '.txt':
+                            lbdir_path = f
+                            break
+
+                if not lbdir_path:
+                    results.append({
+                        "folder": str(folder_path),
+                        "lb_number": lb_number,
+                        "lbdir_found": False,
+                        "lbdir_path": None,
+                        "error": "No lbdir*.txt found in folder",
+                    })
+                    continue
+
+                result = checksum_utils.verify_folder_lbdir(folder_path, lbdir_path)
+                result["lb_number"] = lb_number
+                result["lbdir_found"] = True
+                result["lbdir_path"] = str(lbdir_path)
+                results.append(result)
+
+            return jsonify({"results": results})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/lbdir/retrieve", methods=["POST"])
+    def lbdir_retrieve():
+        try:
+            data = request.get_json() or {}
+            folders = data.get("folders", [])
+            if not folders:
+                return jsonify({"error": "folders list required"}), 400
+
+            results = []
+            for folder_path in folders:
+                folder = Path(folder_path)
+
+                # Look up LB number from collection
+                with database.get_connection() as conn:
+                    row = conn.execute(
+                        "SELECT lb_number FROM my_collection WHERE disk_path=?",
+                        (str(folder),)
+                    ).fetchone()
+
+                if not row:
+                    results.append({
+                        "folder": str(folder_path),
+                        "lb_number": None,
+                        "status": "no_lb_number",
+                        "lbdir_filename": None,
+                    })
+                    continue
+
+                lb_number = row["lb_number"]
+                lb_id = f"{lb_number:05d}"
+                attach_dir = ATTACHMENTS_DIR / f"LB-{lb_id}"
+
+                def _find_lbdir(directory):
+                    if not directory.exists():
+                        return None
+                    for f in directory.iterdir():
+                        if f.is_file() and f.name.lower().startswith('lbdir') and f.suffix.lower() == '.txt':
+                            return f
+                    return None
+
+                lbdir_src = _find_lbdir(attach_dir)
+                was_scraped = False
+
+                if not lbdir_src:
+                    scraper.scrape_entry(lb_number, force=False, download_files=True)
+                    lbdir_src = _find_lbdir(attach_dir)
+                    was_scraped = True
+
+                if not lbdir_src:
+                    results.append({
+                        "folder": str(folder_path),
+                        "lb_number": lb_number,
+                        "status": "not_found",
+                        "lbdir_filename": None,
+                    })
+                    continue
+
+                dest = folder / lbdir_src.name
+                folder.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(str(lbdir_src), str(dest))
+
+                results.append({
+                    "folder": str(folder_path),
+                    "lb_number": lb_number,
+                    "status": "scraped_and_copied" if was_scraped else "copied",
+                    "lbdir_filename": lbdir_src.name,
+                })
+
+            return jsonify({"results": results})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
 
     return app
 
