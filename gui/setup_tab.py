@@ -217,11 +217,14 @@ class SetupTab(QWidget):
         scrape_grid.setVerticalSpacing(10)
 
         # Row 0: bulk actions — button in col 2 so it lines up with single/range
+        _SCRAPE_BTN_W = 180
         self.scrape_all_btn = QPushButton("Scrape All Missing Entries")
+        self.scrape_all_btn.setFixedWidth(_SCRAPE_BTN_W)
         self.scrape_all_btn.clicked.connect(self._on_scrape_all)
         scrape_grid.addWidget(self.scrape_all_btn, 0, 2, _VC)
 
         self.stop_scrape_btn = QPushButton("Stop Scraper")
+        self.stop_scrape_btn.setFixedWidth(_SCRAPE_BTN_W)
         self.stop_scrape_btn.clicked.connect(self._on_stop_scrape)
         self.stop_scrape_btn.setEnabled(False)
         scrape_grid.addWidget(self.stop_scrape_btn, 0, 3, _VC)
@@ -234,6 +237,7 @@ class SetupTab(QWidget):
         self.single_lb_input.returnPressed.connect(self._on_scrape_single)
         scrape_grid.addWidget(self.single_lb_input, 1, 1, _VC)
         self.scrape_single_btn = QPushButton("Scrape")
+        self.scrape_single_btn.setFixedWidth(_SCRAPE_BTN_W)
         self.scrape_single_btn.clicked.connect(self._on_scrape_single)
         scrape_grid.addWidget(self.scrape_single_btn, 1, 2, _VC)
         self.single_scrape_status_label = QLabel("")
@@ -258,6 +262,7 @@ class SetupTab(QWidget):
         range_inputs.addWidget(self.range_end_spin)
         scrape_grid.addWidget(range_inputs_w, 2, 1, _VC)
         self.scrape_range_btn = QPushButton("Scrape Range")
+        self.scrape_range_btn.setFixedWidth(_SCRAPE_BTN_W)
         self.scrape_range_btn.clicked.connect(self._on_scrape_range)
         scrape_grid.addWidget(self.scrape_range_btn, 2, 2, _VC)
         self.fill_gaps_cb = QCheckBox("Skip LB numbers with no checksum data")

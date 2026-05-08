@@ -1,3 +1,11 @@
+[2026-05-07] — Uniform fixed width on all four scraper action buttons
+
+Changed
+
+gui/setup_tab.py: Set all four scraper buttons (Scrape All Missing Entries, Stop Scraper, Scrape, Scrape Range) to a shared fixed width of 180px via a local constant `_SCRAPE_BTN_W`.
+
+---
+
 [2026-05-07] — Search filters, collection pagination/year filter, scraper grid and label fixes
 
 Added
