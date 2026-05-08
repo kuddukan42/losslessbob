@@ -1,4 +1,5 @@
 import csv
+import math
 import re
 import subprocess
 import webbrowser
@@ -13,7 +14,7 @@ from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QTabWidget, QTableView, QPushButton,
     QLabel, QLineEdit, QAbstractItemView, QHeaderView, QMenu, QDialog,
     QFormLayout, QDialogButtonBox, QTableWidget, QTableWidgetItem,
-    QFileDialog, QMessageBox, QSizePolicy,
+    QFileDialog, QMessageBox, QComboBox,
 )
 
 from gui.styles import ROW_OWNED
@@ -239,7 +240,28 @@ class CollectionTab(QWidget):
         super().__init__(parent)
         self.flask_port = flask_port
         self._workers = []
+        self._all_collection: list = []
+        self._page: int = 0
+        self._page_size: int = 50
+        self._load_page_size()
         self._build_ui()
+        self.refresh_collection()
+
+    def _load_page_size(self) -> None:
+        try:
+            resp = requests.get(
+                f"http://127.0.0.1:{self.flask_port}/api/db/settings", timeout=5
+            )
+            self._page_size = int(resp.json().get("search_page_size") or 50)
+        except Exception:
+            pass
+
+    def set_page_size(self, size: int) -> None:
+        """Update results-per-page and re-render the current collection."""
+        self._page_size = max(1, size)
+        self._page = 0
+        if self._all_collection:
+            self._render_coll_page()
 
     def _build_ui(self):
         layout = QVBoxLayout(self)
@@ -255,13 +277,19 @@ class CollectionTab(QWidget):
         w = QWidget()
         layout = QVBoxLayout(w)
 
-        # Search bar
-        search_row = QHBoxLayout()
+        # Filter row: text search + year dropdown
+        filter_row = QHBoxLayout()
         self.coll_search = QLineEdit()
         self.coll_search.setPlaceholderText("Filter by LB number, folder name, or path…")
         self.coll_search.textChanged.connect(self._on_coll_filter)
-        search_row.addWidget(self.coll_search)
-        layout.addLayout(search_row)
+        filter_row.addWidget(self.coll_search)
+
+        self.coll_year_combo = QComboBox()
+        self.coll_year_combo.setMinimumWidth(100)
+        self.coll_year_combo.addItem("All Years", userData=None)
+        self.coll_year_combo.currentIndexChanged.connect(self._on_coll_filter)
+        filter_row.addWidget(self.coll_year_combo)
+        layout.addLayout(filter_row)
 
         # Button row
         btn_row = QHBoxLayout()
@@ -286,6 +314,24 @@ class CollectionTab(QWidget):
         btn_row.addWidget(refresh_btn)
         btn_row.addStretch()
         layout.addLayout(btn_row)
+
+        # Pagination controls
+        page_row = QHBoxLayout()
+        self._coll_prev_btn = QPushButton("← Prev")
+        self._coll_prev_btn.setFixedWidth(80)
+        self._coll_prev_btn.clicked.connect(self._coll_prev_page)
+        page_row.addWidget(self._coll_prev_btn)
+        self._coll_page_label = QLabel("Page 1 of 1")
+        page_row.addWidget(self._coll_page_label)
+        self._coll_next_btn = QPushButton("Next →")
+        self._coll_next_btn.setFixedWidth(80)
+        self._coll_next_btn.clicked.connect(self._coll_next_page)
+        page_row.addWidget(self._coll_next_btn)
+        page_row.addStretch()
+        self._coll_page_widget = QWidget()
+        self._coll_page_widget.setLayout(page_row)
+        self._coll_page_widget.setVisible(False)
+        layout.addWidget(self._coll_page_widget)
 
         self.coll_model = _CollectionModel()
         self.coll_view = QTableView()
@@ -346,11 +392,95 @@ class CollectionTab(QWidget):
 
     def _on_collection_loaded(self, data):
         if isinstance(data, list):
-            self.coll_model.set_rows(data)
-            self.coll_view.resizeColumnsToContents()
-            self.coll_status.setText(f"{len(data)} item(s) in collection.")
+            self._all_collection = data
+            self._page = 0
+            self._populate_year_combo()
+            self._render_coll_page()
         else:
             self.coll_status.setText(f"Error: {data.get('error', 'unknown')}")
+
+    def _populate_year_combo(self) -> None:
+        current = self.coll_year_combo.currentData()
+        self.coll_year_combo.blockSignals(True)
+        self.coll_year_combo.clear()
+        self.coll_year_combo.addItem("All Years", userData=None)
+        years: set = set()
+        for row in self._all_collection:
+            date_str = row.get("date_str") or ""
+            parts = date_str.split("/")
+            if len(parts) >= 3:
+                try:
+                    y = int(parts[-1].strip())
+                    if y < 100:
+                        y = 1900 + y if y >= 49 else 2000 + y
+                    years.add(y)
+                except ValueError:
+                    pass
+        for y in sorted(years, reverse=True):
+            self.coll_year_combo.addItem(str(y), userData=y)
+        if current is not None:
+            idx = self.coll_year_combo.findData(current)
+            if idx >= 0:
+                self.coll_year_combo.setCurrentIndex(idx)
+        self.coll_year_combo.blockSignals(False)
+
+    def _filtered_collection(self) -> list:
+        text = self.coll_search.text().lower()
+        year = self.coll_year_combo.currentData()
+        results = self._all_collection
+        if text:
+            results = [
+                r for r in results
+                if text in str(r.get("lb_number", "")).lower()
+                or text in (r.get("folder_name", "") or "").lower()
+                or text in (r.get("disk_path", "") or "").lower()
+            ]
+        if year is not None:
+            short = str(year)[-2:]
+            long_ = str(year)
+            results = [
+                r for r in results
+                if (r.get("date_str") or "").endswith(f"/{short}")
+                or (r.get("date_str") or "").endswith(f"/{long_}")
+            ]
+        return results
+
+    def _total_coll_pages(self) -> int:
+        n = len(self._filtered_collection())
+        return max(1, math.ceil(n / self._page_size))
+
+    def _render_coll_page(self) -> None:
+        filtered = self._filtered_collection()
+        start = self._page * self._page_size
+        end = start + self._page_size
+        self.coll_model.set_rows(filtered[start:end])
+        self.coll_view.resizeColumnsToContents()
+
+        pages = self._total_coll_pages()
+        total = len(self._all_collection)
+        shown = len(filtered)
+        if pages > 1:
+            self._coll_page_widget.setVisible(True)
+            self._coll_page_label.setText(f"Page {self._page + 1} of {pages}  ({shown} item(s))")
+            self._coll_prev_btn.setEnabled(self._page > 0)
+            self._coll_next_btn.setEnabled(self._page < pages - 1)
+        else:
+            self._coll_page_widget.setVisible(False)
+
+        if shown == total:
+            self.coll_status.setText(f"{total} item(s) in collection.")
+        else:
+            self.coll_status.setText(f"{shown} item(s) shown (of {total} total).")
+
+    def _coll_prev_page(self) -> None:
+        if self._page > 0:
+            self._page -= 1
+            self._render_coll_page()
+
+    def _coll_next_page(self) -> None:
+        if self._page < self._total_coll_pages() - 1:
+            self._page += 1
+            self._render_coll_page()
 
     def refresh_missing(self):
         self.miss_status.setText("Loading…")
@@ -372,8 +502,9 @@ class CollectionTab(QWidget):
 
     # ── Collection filter ─────────────────────────────────────────────────────
 
-    def _on_coll_filter(self, text):
-        self.coll_model.filter(text)
+    def _on_coll_filter(self, *_) -> None:
+        self._page = 0
+        self._render_coll_page()
 
     # ── Add Single Folder ─────────────────────────────────────────────────────
 

@@ -60,6 +60,7 @@ QPushButton {{
     border: none;
     padding: 5px 14px;
     border-radius: 6px;
+    min-height: 20px;
 }}
 QPushButton:hover {{
     background-color: {t['accent_hover']};
@@ -140,6 +141,16 @@ QProgressBar {{
 QProgressBar::chunk {{
     background-color: {t['accent']};
     border-radius: 3px;
+}}
+QProgressBar#scrapeProgress {{
+    min-height: 20px;
+    max-height: 20px;
+    border-radius: 4px;
+    color: {t['app_fg']};
+    text-align: center;
+}}
+QProgressBar#scrapeProgress::chunk {{
+    border-radius: 4px;
 }}
 QGroupBox {{
     border: 1px solid {t['border']};

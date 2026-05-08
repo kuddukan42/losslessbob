@@ -269,7 +269,7 @@ def insert_missing_entry(lb_number, db_path=None):
         )
 
 
-def search_entries(query, field="all", year=None, limit=100, db_path=None):
+def search_entries(query, field="all", year=None, limit=None, db_path=None):
     conditions = []
     params = []
 
@@ -300,9 +300,11 @@ def search_entries(query, field="all", year=None, limit=100, db_path=None):
     where = f"WHERE {' AND '.join(conditions)}" if conditions else ""
     sql = (
         f"SELECT lb_number, date_str, location, rating, description, status "
-        f"FROM entries {where} ORDER BY lb_number LIMIT ?"
+        f"FROM entries {where} ORDER BY lb_number"
     )
-    params.append(limit)
+    if limit is not None:
+        sql += " LIMIT ?"
+        params.append(limit)
     with get_connection(db_path) as conn:
         rows = conn.execute(sql, params).fetchall()
     return [dict(r) for r in rows]

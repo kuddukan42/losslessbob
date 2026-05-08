@@ -12,6 +12,8 @@ from gui.collection_tab import CollectionTab
 from gui.attachments_tab import AttachmentsTab
 from gui.setup_tab import SetupTab
 from gui.theme_tab import ThemeTab
+from gui.verify_tab import VerifyTab
+from gui.lbdir_tab import LbdirTab
 import gui.styles as styles
 from gui.styles import apply_panel_shadow
 
@@ -55,11 +57,15 @@ class MainWindow(QMainWindow):
         db_menu = menubar.addMenu("Database")
 
         check_update_act = QAction("Check for Update", self)
-        check_update_act.triggered.connect(lambda: self.tabs.setCurrentIndex(4))
+        check_update_act.triggered.connect(
+            lambda: self.tabs.setCurrentIndex(self.tabs.indexOf(self.setup_tab))
+        )
         db_menu.addAction(check_update_act)
 
         select_db_act = QAction("Select Database", self)
-        select_db_act.triggered.connect(lambda: self.tabs.setCurrentIndex(4))
+        select_db_act.triggered.connect(
+            lambda: self.tabs.setCurrentIndex(self.tabs.indexOf(self.setup_tab))
+        )
         db_menu.addAction(select_db_act)
 
         open_folder_act = QAction("Open DB Folder", self)
@@ -79,8 +85,12 @@ class MainWindow(QMainWindow):
         self.tabs = QTabWidget()
         self.setCentralWidget(self.tabs)
 
+        # Tab order: Lookup(0) Rename(1) Verify(2) lbdir(3) Search(4)
+        #            Collection(5) Attachments(6) Setup(7) Themes(8)
         self.lookup_tab = LookupTab(self.flask_port)
         self.rename_tab = RenameTab()
+        self.verify_tab = VerifyTab(self.flask_port)
+        self.lbdir_tab = LbdirTab(self.flask_port)
         self.search_tab = SearchTab(self.flask_port)
         self.collection_tab = CollectionTab(self.flask_port)
         self.attachments_tab = AttachmentsTab(self.flask_port)
@@ -89,6 +99,8 @@ class MainWindow(QMainWindow):
 
         self.tabs.addTab(self.lookup_tab, "Lookup")
         self.tabs.addTab(self.rename_tab, "Rename Folders")
+        self.tabs.addTab(self.verify_tab, "Verify")
+        self.tabs.addTab(self.lbdir_tab, "lbdir")
         self.tabs.addTab(self.search_tab, "Search")
         self.tabs.addTab(self.collection_tab, "My Collection")
         self.tabs.addTab(self.attachments_tab, "Attachments")
@@ -100,6 +112,8 @@ class MainWindow(QMainWindow):
         self.setup_tab.stats_changed.connect(self._refresh_status)
         self.setup_tab.stats_changed.connect(self.search_tab.load_years)
         self.setup_tab.stats_changed.connect(self.collection_tab.refresh_collection)
+        self.setup_tab.search_page_size_changed.connect(self.search_tab.set_page_size)
+        self.setup_tab.search_page_size_changed.connect(self.collection_tab.set_page_size)
         self.lookup_tab.lookup_completed.connect(self.rename_tab.populate_from_lookup)
         self.theme_tab.theme_applied.connect(self._on_theme_applied)
 
@@ -112,6 +126,10 @@ class MainWindow(QMainWindow):
         apply_panel_shadow(self.search_tab.view)
         apply_panel_shadow(self.collection_tab.coll_view)
         apply_panel_shadow(self.collection_tab.miss_view)
+        apply_panel_shadow(self.verify_tab.summary_container)
+        apply_panel_shadow(self.verify_tab.detail_container)
+        apply_panel_shadow(self.lbdir_tab.summary_container)
+        apply_panel_shadow(self.lbdir_tab.detail_container)
 
     def _build_status_bar(self):
         self.status_bar = QStatusBar()
@@ -154,7 +172,7 @@ class MainWindow(QMainWindow):
         self.lookup_tab.refresh_colors()
 
     def _on_search_lookup_lb(self, lb_number):
-        self.tabs.setCurrentIndex(0)
+        self.tabs.setCurrentIndex(self.tabs.indexOf(self.lookup_tab))
         self.lookup_tab.lookup_lb_number(lb_number)
 
     def _on_help(self):

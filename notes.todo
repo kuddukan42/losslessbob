@@ -1,7 +1,7 @@
-1) add the verify file system (prompts already located in chat)
-2) finish updating the lookup tab for the missing checksums (in process)
-3) add filters everywhere, setup page to set entries per page on dialogs
-4) scrap outside the system and copy these into the project, can it find them?
+1) add the verify file system (prompts already located in chat) DONE
+2) finish updating the lookup tab for the missing checksums (in process) DONE
+3) add filters everywhere, setup page to set entries per page on dialogs DONE
+4) scrap outside the system and copy these into the project, can it find them? DONE
 5) if the rename tab doesn't find a match and has red status, you should not be able to rename this, even if selected, don't rename it, and don't move it to the 0. processed folder
 6) check app for resource usage
 7) check app for security holes
@@ -12,9 +12,11 @@
 12) populate the database with additional scraped data for searching capabilities?
 13) remove GD database field
 14) add my collection for non-LB stuffs, maybe separate tab
+15) db maintenance - remove certain records, flush the my collection portion separate or the checksum separate
+
 
 need to know what metadata and attachments are missing, filter for missing ones, so you can select and download
 
-web scrape option to use folder of local html files, vs remote server
+web scrape option to use folder of local html files, vs remote server DONE
 
-/mnt/MEDIA2/DYLAN3/Websites/2022-01-25 LosslessBob (LB-15404)/LB/www.losslessbob.wonderingwhattochoose.com/detail
+add comments to explain source code DONE

@@ -15,17 +15,20 @@ BYNUMBER_URL = BASE_URL + "/bynumber/LBMbynumber.html"
 
 DATA_DIR = Path(__file__).parent.parent / "data"
 ATTACHMENTS_DIR = DATA_DIR / "attachments"
+PAGES_DIR = DATA_DIR / "pages"
 
 HEADERS = {"User-Agent": "LosslessBob-Archiver/1.0 (personal research tool)"}
 
 _scrape_state = {
     "running": False,
     "current_lb": None,
+    "last_lb": None,
     "total": 0,
     "done": 0,
     "errors": 0,
     "skipped": 0,
     "last_action": None,
+    "last_source": None,
     "stop_requested": False,
 }
 _scrape_lock = threading.Lock()
@@ -58,7 +61,7 @@ def _fetch(url, retries=3, delay=1.5):
     return None, 0
 
 
-def scrape_entry(lb_number, force=False, download_files=True, db_path=None):
+def scrape_entry(lb_number, force=False, download_files=True, use_local_pages=False, db_path=None):
     db_path = db_path or DB_PATH
     lb_id = f"{lb_number:05d}"
     lb_dir = ATTACHMENTS_DIR / f"LB-{lb_id}"
@@ -71,6 +74,17 @@ def scrape_entry(lb_number, force=False, download_files=True, db_path=None):
             if row is not None:
                 if row["status"] == "missing":
                     return {"skipped": True}
+                if not download_files:
+                    return {"skipped": True}
+                for prow in conn.execute(
+                    "SELECT filename, clean_name FROM entry_files WHERE lb_number=? AND downloaded=0",
+                    (lb_number,)
+                ).fetchall():
+                    if (lb_dir / prow["clean_name"]).exists():
+                        conn.execute(
+                            "UPDATE entry_files SET downloaded=1 WHERE lb_number=? AND filename=?",
+                            (lb_number, prow["filename"])
+                        )
                 pending = conn.execute(
                     "SELECT COUNT(*) FROM entry_files WHERE lb_number=? AND downloaded=0",
                     (lb_number,)
@@ -78,17 +92,24 @@ def scrape_entry(lb_number, force=False, download_files=True, db_path=None):
                 if pending == 0:
                     return {"skipped": True}
 
-    url = DETAIL_URL.format(n=lb_id)
-    resp, status = _fetch(url)
+    local_page = PAGES_DIR / f"LB-{lb_id}.html"
+    if use_local_pages and local_page.exists():
+        html_text = local_page.read_text(encoding="utf-8", errors="replace")
+        used_local = True
+    else:
+        url = DETAIL_URL.format(n=lb_id)
+        resp, status = _fetch(url)
+        if status == 404:
+            insert_missing_entry(lb_number, db_path)
+            return {"error": "404", "missing": True}
+        if resp is None:
+            return {"error": "fetch_failed"}
+        html_text = resp.text
+        used_local = False
+        PAGES_DIR.mkdir(parents=True, exist_ok=True)
+        local_page.write_text(html_text, encoding="utf-8")
 
-    if status == 404:
-        insert_missing_entry(lb_number, db_path)
-        return {"error": "404", "missing": True}
-
-    if resp is None:
-        return {"error": "fetch_failed"}
-
-    soup = BeautifulSoup(resp.text, "lxml")
+    soup = BeautifulSoup(html_text, "lxml")
     entry_data = {"lb_number": lb_number}
 
     # Parse the detail table — find the one with known header columns
@@ -174,7 +195,7 @@ def scrape_entry(lb_number, force=False, download_files=True, db_path=None):
         lb_dir.mkdir(parents=True, exist_ok=True)
         for filename, clean, file_url in file_links:
             local_path = lb_dir / clean
-            if local_path.exists() and not force:
+            if local_path.exists() and (not force or use_local_pages):
                 continue
             file_resp, fstatus = _fetch(file_url)
             if file_resp and fstatus == 200:
@@ -187,10 +208,10 @@ def scrape_entry(lb_number, force=False, download_files=True, db_path=None):
                 downloaded.append(clean)
             time.sleep(0.5)
 
-    return {"ok": True, "files_downloaded": downloaded}
+    return {"ok": True, "files_downloaded": downloaded, "local_source": used_local}
 
 
-def scrape_range(lb_numbers, force=False, download_files=True, delay_ms=1500, db_path=None, progress_cb=None):
+def scrape_range(lb_numbers, force=False, download_files=True, use_local_pages=False, delay_ms=1500, db_path=None, progress_cb=None):
     db_path = db_path or DB_PATH
     total = len(lb_numbers)
 
@@ -202,6 +223,7 @@ def scrape_range(lb_numbers, force=False, download_files=True, delay_ms=1500, db
             "errors": 0,
             "skipped": 0,
             "last_action": None,
+            "last_source": None,
             "stop_requested": False,
         })
 
@@ -211,24 +233,28 @@ def scrape_range(lb_numbers, force=False, download_files=True, delay_ms=1500, db
                 break
             _scrape_state["current_lb"] = lb
 
-        result = scrape_entry(lb, force=force, download_files=download_files, db_path=db_path)
+        result = scrape_entry(lb, force=force, download_files=download_files, use_local_pages=use_local_pages, db_path=db_path)
         was_skipped = result.get("skipped", False)
 
         with _scrape_lock:
             _scrape_state["done"] = i + 1
+            _scrape_state["last_lb"] = lb
             if "error" in result:
                 _scrape_state["errors"] += 1
                 _scrape_state["last_action"] = "error"
+                _scrape_state["last_source"] = None
             elif was_skipped:
                 _scrape_state["skipped"] += 1
                 _scrape_state["last_action"] = "skipped"
+                _scrape_state["last_source"] = None
             else:
                 _scrape_state["last_action"] = "scraped"
+                _scrape_state["last_source"] = "local" if result.get("local_source") else "web"
 
         if progress_cb:
             progress_cb(i + 1, total, lb)
 
-        if not was_skipped and i < total - 1:
+        if not was_skipped and not result.get("local_source") and i < total - 1:
             time.sleep(delay_ms / 1000.0)
 
     with _scrape_lock:

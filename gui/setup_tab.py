@@ -3,10 +3,12 @@ import subprocess
 import sys
 from pathlib import Path
 
+_LOG_FILE = Path(__file__).parent.parent / "data" / "scraper.log"
+
 import requests
-from PyQt6.QtCore import QThread, pyqtSignal
+from PyQt6.QtCore import Qt, QThread, pyqtSignal
 from PyQt6.QtWidgets import (
-    QWidget, QVBoxLayout, QHBoxLayout, QGroupBox, QLabel,
+    QWidget, QVBoxLayout, QHBoxLayout, QGridLayout, QGroupBox, QLabel,
     QPushButton, QComboBox, QCheckBox, QSpinBox, QProgressBar,
     QFileDialog, QMessageBox, QLineEdit, QPlainTextEdit,
 )
@@ -95,6 +97,7 @@ class _ScrapeStatusThread(QThread):
 
 class SetupTab(QWidget):
     stats_changed = pyqtSignal()
+    search_page_size_changed = pyqtSignal(int)
 
     def __init__(self, flask_port, parent=None):
         super().__init__(parent)
@@ -106,6 +109,7 @@ class SetupTab(QWidget):
         self._build_ui()
         self._load_settings()
         self._refresh_stats()
+        self._refresh_log_size()
 
     def _build_ui(self):
         layout = QVBoxLayout(self)
@@ -159,6 +163,22 @@ class SetupTab(QWidget):
 
         layout.addWidget(db_group)
 
+        # Search settings section
+        search_group = QGroupBox("Search")
+        search_layout = QVBoxLayout(search_group)
+        page_size_row = QHBoxLayout()
+        page_size_row.addWidget(QLabel("Results per page:"))
+        self.search_page_spin = QSpinBox()
+        self.search_page_spin.setRange(10, 500)
+        self.search_page_spin.setValue(50)
+        self.search_page_spin.setSingleStep(10)
+        self.search_page_spin.setFixedWidth(80)
+        self.search_page_spin.valueChanged.connect(self._on_search_page_size_changed)
+        page_size_row.addWidget(self.search_page_spin)
+        page_size_row.addStretch()
+        search_layout.addLayout(page_size_row)
+        layout.addWidget(search_group)
+
         # Scraper section
         scraper_group = QGroupBox("Web Scraper")
         scraper_layout = QVBoxLayout(scraper_group)
@@ -175,6 +195,10 @@ class SetupTab(QWidget):
         self.force_scrape_cb.stateChanged.connect(self._save_settings)
         scraper_layout.addWidget(self.force_scrape_cb)
 
+        self.local_pages_cb = QCheckBox("Use local pages for metadata (data/pages/)")
+        self.local_pages_cb.stateChanged.connect(self._save_settings)
+        scraper_layout.addWidget(self.local_pages_cb)
+
         delay_row = QHBoxLayout()
         delay_row.addWidget(QLabel("Delay between requests (ms):"))
         self.delay_spin = QSpinBox()
@@ -186,59 +210,67 @@ class SetupTab(QWidget):
         delay_row.addStretch()
         scraper_layout.addLayout(delay_row)
 
-        scrape_btn_row = QHBoxLayout()
+        _VC = Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter
+        scrape_grid = QGridLayout()
+        scrape_grid.setColumnStretch(4, 1)
+        scrape_grid.setHorizontalSpacing(8)
+        scrape_grid.setVerticalSpacing(10)
+
+        # Row 0: bulk actions — button in col 2 so it lines up with single/range
         self.scrape_all_btn = QPushButton("Scrape All Missing Entries")
         self.scrape_all_btn.clicked.connect(self._on_scrape_all)
-        scrape_btn_row.addWidget(self.scrape_all_btn)
+        scrape_grid.addWidget(self.scrape_all_btn, 0, 2, _VC)
 
         self.stop_scrape_btn = QPushButton("Stop Scraper")
         self.stop_scrape_btn.clicked.connect(self._on_stop_scrape)
         self.stop_scrape_btn.setEnabled(False)
-        scrape_btn_row.addWidget(self.stop_scrape_btn)
-        scrape_btn_row.addStretch()
-        scraper_layout.addLayout(scrape_btn_row)
+        scrape_grid.addWidget(self.stop_scrape_btn, 0, 3, _VC)
 
-        single_scrape_row = QHBoxLayout()
-        single_scrape_row.addWidget(QLabel("Scrape single entry:"))
+        # Row 1: single entry
+        scrape_grid.addWidget(QLabel("Single entry:"), 1, 0, _VC)
         self.single_lb_input = QLineEdit()
         self.single_lb_input.setPlaceholderText("LB number...")
         self.single_lb_input.setFixedWidth(100)
         self.single_lb_input.returnPressed.connect(self._on_scrape_single)
-        single_scrape_row.addWidget(self.single_lb_input)
+        scrape_grid.addWidget(self.single_lb_input, 1, 1, _VC)
         self.scrape_single_btn = QPushButton("Scrape")
         self.scrape_single_btn.clicked.connect(self._on_scrape_single)
-        single_scrape_row.addWidget(self.scrape_single_btn)
+        scrape_grid.addWidget(self.scrape_single_btn, 1, 2, _VC)
         self.single_scrape_status_label = QLabel("")
-        single_scrape_row.addWidget(self.single_scrape_status_label)
-        single_scrape_row.addStretch()
-        scraper_layout.addLayout(single_scrape_row)
+        scrape_grid.addWidget(self.single_scrape_status_label, 1, 3, 1, 2, _VC)
 
-        range_scrape_row = QHBoxLayout()
-        range_scrape_row.addWidget(QLabel("Scrape range:"))
+        # Row 2: range
+        scrape_grid.addWidget(QLabel("Range:"), 2, 0, _VC)
+        range_inputs_w = QWidget()
+        range_inputs = QHBoxLayout(range_inputs_w)
+        range_inputs.setContentsMargins(0, 0, 0, 0)
+        range_inputs.setSpacing(4)
         self.range_start_spin = QSpinBox()
         self.range_start_spin.setRange(1, 99999)
         self.range_start_spin.setValue(1)
         self.range_start_spin.setFixedWidth(80)
-        range_scrape_row.addWidget(self.range_start_spin)
-        range_scrape_row.addWidget(QLabel("to"))
+        range_inputs.addWidget(self.range_start_spin)
+        range_inputs.addWidget(QLabel("to"))
         self.range_end_spin = QSpinBox()
         self.range_end_spin.setRange(1, 99999)
         self.range_end_spin.setValue(100)
         self.range_end_spin.setFixedWidth(80)
-        range_scrape_row.addWidget(self.range_end_spin)
+        range_inputs.addWidget(self.range_end_spin)
+        scrape_grid.addWidget(range_inputs_w, 2, 1, _VC)
         self.scrape_range_btn = QPushButton("Scrape Range")
         self.scrape_range_btn.clicked.connect(self._on_scrape_range)
-        range_scrape_row.addWidget(self.scrape_range_btn)
-        self.fill_gaps_cb = QCheckBox("Mark sequential gaps as MISSING")
+        scrape_grid.addWidget(self.scrape_range_btn, 2, 2, _VC)
+        self.fill_gaps_cb = QCheckBox("Skip LB numbers with no checksum data")
         self.fill_gaps_cb.setToolTip(
             "For LB numbers in the range not present in the checksum database, "
             "insert a MISSING placeholder entry so they appear in search results."
         )
-        range_scrape_row.addWidget(self.fill_gaps_cb)
-        range_scrape_row.addStretch()
-        scraper_layout.addLayout(range_scrape_row)
+        scrape_grid.addWidget(self.fill_gaps_cb, 2, 3, 1, 2, _VC)
+
+        scraper_layout.addLayout(scrape_grid)
 
         self.scrape_progress = QProgressBar()
+        self.scrape_progress.setObjectName("scrapeProgress")
         self.scrape_progress.setVisible(False)
         scraper_layout.addWidget(self.scrape_progress)
 
@@ -254,6 +286,19 @@ class SetupTab(QWidget):
         self.scraper_log.setMaximumBlockCount(500)
         self.scraper_log.setFixedHeight(150)
         log_layout.addWidget(self.scraper_log)
+
+        log_file_row = QHBoxLayout()
+        self.log_size_label = QLabel("Log file: —")
+        log_file_row.addWidget(self.log_size_label)
+        log_file_row.addStretch()
+        self.open_log_btn = QPushButton("Open Log File")
+        self.open_log_btn.clicked.connect(self._on_open_log)
+        log_file_row.addWidget(self.open_log_btn)
+        self.purge_log_btn = QPushButton("Purge Log")
+        self.purge_log_btn.clicked.connect(self._on_purge_log)
+        log_file_row.addWidget(self.purge_log_btn)
+        log_layout.addLayout(log_file_row)
+
         layout.addWidget(log_group)
 
         layout.addStretch()
@@ -265,7 +310,11 @@ class SetupTab(QWidget):
             self.auto_scrape_cb.setChecked(data.get("auto_scrape", "1") != "0")
             self.download_files_cb.setChecked(data.get("scrape_attachments", "1") != "0")
             self.force_scrape_cb.setChecked(data.get("force_scrape", "0") != "0")
+            self.local_pages_cb.setChecked(data.get("use_local_pages", "0") == "1")
             self.delay_spin.setValue(int(data.get("scrape_delay_ms") or 1500))
+            self.search_page_spin.blockSignals(True)
+            self.search_page_spin.setValue(int(data.get("search_page_size") or 50))
+            self.search_page_spin.blockSignals(False)
         except Exception:
             self.auto_scrape_cb.setChecked(True)
             self.download_files_cb.setChecked(True)
@@ -278,12 +327,18 @@ class SetupTab(QWidget):
                     "auto_scrape": "1" if self.auto_scrape_cb.isChecked() else "0",
                     "scrape_attachments": "1" if self.download_files_cb.isChecked() else "0",
                     "force_scrape": "1" if self.force_scrape_cb.isChecked() else "0",
+                    "use_local_pages": "1" if self.local_pages_cb.isChecked() else "0",
                     "scrape_delay_ms": str(self.delay_spin.value()),
+                    "search_page_size": str(self.search_page_spin.value()),
                 },
                 timeout=5,
             )
         except Exception:
             pass
+
+    def _on_search_page_size_changed(self, value: int) -> None:
+        self._save_settings()
+        self.search_page_size_changed.emit(value)
 
     def _refresh_stats(self):
         try:
@@ -394,10 +449,60 @@ class SetupTab(QWidget):
         else:
             subprocess.run(["xdg-open", str(data_dir)])
 
-    def _log(self, msg):
+    def _log(self, msg: str) -> None:
         from datetime import datetime
         ts = datetime.now().strftime("%H:%M:%S")
-        self.scraper_log.appendPlainText(f"[{ts}] {msg}")
+        line = f"[{ts}] {msg}"
+        self.scraper_log.appendPlainText(line)
+        try:
+            _LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
+            with _LOG_FILE.open("a", encoding="utf-8") as f:
+                f.write(line + "\n")
+        except OSError:
+            pass
+        self._refresh_log_size()
+
+    def _refresh_log_size(self) -> None:
+        try:
+            size = _LOG_FILE.stat().st_size
+            if size < 1024:
+                text = f"{size} B"
+            elif size < 1_048_576:
+                text = f"{size / 1024:.1f} KB"
+            else:
+                text = f"{size / 1_048_576:.1f} MB"
+            self.log_size_label.setText(f"Log file: {text}")
+        except FileNotFoundError:
+            self.log_size_label.setText("Log file: not created yet")
+        except OSError:
+            self.log_size_label.setText("Log file: error reading size")
+
+    def _on_purge_log(self) -> None:
+        confirm = QMessageBox.question(
+            self, "Purge Log",
+            "Clear the scraper log file on disk? The in-app log will also be cleared.",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.Cancel,
+            QMessageBox.StandardButton.Cancel,
+        )
+        if confirm != QMessageBox.StandardButton.Yes:
+            return
+        try:
+            _LOG_FILE.write_text("", encoding="utf-8")
+        except OSError:
+            pass
+        self.scraper_log.clear()
+        self._refresh_log_size()
+
+    def _on_open_log(self) -> None:
+        if not _LOG_FILE.exists():
+            QMessageBox.information(self, "Open Log", "Log file has not been created yet.")
+            return
+        if sys.platform == "win32":
+            os.startfile(str(_LOG_FILE))
+        elif sys.platform == "darwin":
+            subprocess.run(["open", str(_LOG_FILE)])
+        else:
+            subprocess.run(["xdg-open", str(_LOG_FILE)])
 
     def _on_scrape_single(self):
         text = self.single_lb_input.text().strip()
@@ -493,27 +598,34 @@ class SetupTab(QWidget):
         total = status.get("total", 0)
         done = status.get("done", 0)
         current = status.get("current_lb", "")
+        last_lb = status.get("last_lb")
         running = status.get("running", False)
         skipped = status.get("skipped", 0)
         last_action = status.get("last_action")
+        last_source = status.get("last_source")
 
         if total > 0:
             self.scrape_progress.setRange(0, total)
             self.scrape_progress.setValue(done)
 
+        # Status label shows what is currently being processed
         if current:
-            action_word = "Skipped" if last_action == "skipped" else "Scraping"
-            label = f"{action_word} LB-{current} ({done}/{total}"
+            label = f"Scraping LB-{current} ({done}/{total}"
             if skipped:
                 label += f", {skipped} skipped"
             label += ")..."
             self.scrape_status_label.setText(label)
-            if current != self._last_logged_lb:
-                self._last_logged_lb = current
-                if last_action == "skipped":
-                    self._log(f"Skipped LB-{current} — already complete ({done}/{total})")
-                else:
-                    self._log(f"Scraped LB-{current} ({done}/{total})")
+
+        # Log the just-completed entry (last_lb) so the source tag is always correct
+        if last_lb and last_lb != self._last_logged_lb:
+            self._last_logged_lb = last_lb
+            if last_action == "skipped":
+                self._log(f"Skipped LB-{last_lb} — already complete ({done}/{total})")
+            elif last_action == "error":
+                self._log(f"Error scraping LB-{last_lb} ({done}/{total})")
+            else:
+                src = f" [{last_source}]" if last_source else ""
+                self._log(f"Scraped LB-{last_lb}{src} ({done}/{total})")
 
         if not running:
             self._scrape_status_thread.stop()

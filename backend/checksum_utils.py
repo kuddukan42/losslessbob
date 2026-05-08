@@ -17,8 +17,9 @@ _FFP_RE = re.compile(r'^(.+\.(?:flac|ape|wav))[:=]([0-9a-fA-F]{32,40})$', re.IGN
 _SHNTOOL_LINE_RE = re.compile(
     r'^([0-9a-fA-F]{32,40})\s+\[shntool\]\s+(.+\.wav)\s*$', re.IGNORECASE
 )
+# Groups: length, expanded_size, cdr, wave_problems_1, wave_problems_2, fmt, ratio, filename
 _SHNTOOL_LEN_RE = re.compile(
-    r'^\s*([\d:]+\.\d+)\s+([\d,]+)\s+([+-])\s+(\S+)\s+(\S+)\s+([\d.]+)\s+(.+?)\s*$'
+    r'^\s*([\d:]+\.[\d]+)\s+([\d]+)\s+B\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+([\d.]+)\s+(.+?)\s*$'
 )
 
 
@@ -47,6 +48,10 @@ def parse_lbdir_file(path):
     for line in text.splitlines():
         stripped = line.strip()
         sl = stripped.lower()
+
+        # Separator lines are all '=' characters — skip without changing section
+        if re.match(r'^=+$', stripped):
+            continue
 
         if sl.startswith('=== md5 for:'):
             current_section = 'md5'
@@ -97,16 +102,20 @@ def parse_lbdir_file(path):
         elif current_section == 'shntool_len':
             m = _SHNTOOL_LEN_RE.match(line)
             if m:
-                wav_fname = m.group(7).strip()
-                shn_fname = re.sub(r'\.wav$', '.shn', wav_fname, flags=re.IGNORECASE)
+                raw_fname = m.group(8).strip()
+                # Skip the totals summary line
+                if raw_fname.startswith('('):
+                    continue
+                # Map .wav -> .shn for SHN recordings; FLAC filenames pass through unchanged
+                fname = re.sub(r'\.wav$', '.shn', raw_fname, flags=re.IGNORECASE)
                 result['shntool_len'].append({
-                    'filename': shn_fname,
+                    'filename': fname,
                     'length': m.group(1),
                     'expanded_size': m.group(2),
                     'cdr': m.group(3),
-                    'wave_problems': m.group(4),
-                    'fmt': m.group(5),
-                    'ratio': m.group(6),
+                    'wave_problems': f"{m.group(4)} {m.group(5)}",
+                    'fmt': m.group(6),
+                    'ratio': m.group(7),
                 })
 
     if has_shn and has_flac:
@@ -492,8 +501,11 @@ def verify_folder_lbdir(folder_path, lbdir_path):
             'st5_expected': None, 'st5_status': 'na',
             'on_disk': on_disk, 'overall': overall,
             'length': len_info.get('length'),
+            'expanded_size': len_info.get('expanded_size'),
             'cdr': len_info.get('cdr'),
             'wave_problems': len_info.get('wave_problems'),
+            'fmt': len_info.get('fmt'),
+            'ratio': len_info.get('ratio'),
         })
 
     missing_types = []

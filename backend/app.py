@@ -1,3 +1,4 @@
+import re
 import shutil
 import threading
 from pathlib import Path
@@ -81,7 +82,8 @@ def create_app():
                     database.set_meta(key, str(value))
                 return jsonify({"ok": True})
             else:
-                keys = ["scrape_attachments", "scrape_delay_ms", "auto_scrape"]
+                keys = ["scrape_attachments", "scrape_delay_ms", "auto_scrape", "use_local_pages",
+                        "force_scrape", "search_page_size"]
                 return jsonify({k: database.get_meta(k) for k in keys})
         except Exception as e:
             return jsonify({"error": str(e)}), 500
@@ -146,7 +148,8 @@ def create_app():
             force = data.get("force", False)
             delay = int(database.get_meta("scrape_delay_ms") or 1500)
             download = database.get_meta("scrape_attachments") != "0"
-            result = scraper.scrape_entry(lb_number, force=force, download_files=download)
+            use_local_pages = database.get_meta("use_local_pages") == "1"
+            result = scraper.scrape_entry(lb_number, force=force, download_files=download, use_local_pages=use_local_pages)
             return jsonify(result)
         except Exception as e:
             return jsonify({"error": str(e)}), 500
@@ -255,6 +258,7 @@ def create_app():
             fill_gaps = data.get("fill_gaps", False)
             delay = int(database.get_meta("scrape_delay_ms") or 1500)
             download = database.get_meta("scrape_attachments") != "0"
+            use_local_pages = database.get_meta("use_local_pages") == "1"
 
             with database.get_connection() as conn:
                 q = "SELECT DISTINCT lb_number FROM checksums WHERE lb_number >= ?"
@@ -271,7 +275,7 @@ def create_app():
                     if n not in known:
                         database.insert_missing_entry(n)
 
-            _start_scrape_thread(lb_numbers, force=force, delay_ms=delay, download=download)
+            _start_scrape_thread(lb_numbers, force=force, delay_ms=delay, download=download, use_local_pages=use_local_pages)
             return jsonify({"ok": True, "total": len(lb_numbers)})
         except Exception as e:
             return jsonify({"error": str(e)}), 500
@@ -373,14 +377,21 @@ def create_app():
             for folder_path in folders:
                 folder = Path(folder_path)
 
-                # Look up LB number from collection
+                # Look up LB number: try my_collection first, then parse folder name
                 with database.get_connection() as conn:
                     row = conn.execute(
                         "SELECT lb_number FROM my_collection WHERE disk_path=?",
                         (str(folder),)
                     ).fetchone()
 
-                if not row:
+                lb_number = row["lb_number"] if row else None
+
+                if lb_number is None:
+                    m = re.search(r'LB-(\d+)', folder.name, re.IGNORECASE)
+                    if m:
+                        lb_number = int(m.group(1))
+
+                if lb_number is None:
                     results.append({
                         "folder": str(folder_path),
                         "lb_number": None,
@@ -388,8 +399,6 @@ def create_app():
                         "lbdir_filename": None,
                     })
                     continue
-
-                lb_number = row["lb_number"]
                 lb_id = f"{lb_number:05d}"
                 attach_dir = ATTACHMENTS_DIR / f"LB-{lb_id}"
 
@@ -436,7 +445,7 @@ def create_app():
     return app
 
 
-def _start_scrape_thread(lb_numbers, force=False, delay_ms=1500, download=True):
+def _start_scrape_thread(lb_numbers, force=False, delay_ms=1500, download=True, use_local_pages=False):
     global _scrape_thread
     if _scrape_thread and _scrape_thread.is_alive():
         return
@@ -446,6 +455,7 @@ def _start_scrape_thread(lb_numbers, force=False, delay_ms=1500, download=True):
             lb_numbers,
             force=force,
             download_files=download,
+            use_local_pages=use_local_pages,
             delay_ms=delay_ms,
         )
 

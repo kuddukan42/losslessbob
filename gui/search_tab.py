@@ -1,10 +1,11 @@
+import math
 import webbrowser
 
 import requests
 from PyQt6.QtCore import Qt, QAbstractTableModel, QModelIndex, pyqtSignal, QThread
 from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLineEdit, QComboBox,
-    QPushButton, QTableView, QAbstractItemView, QHeaderView, QLabel,
+    QPushButton, QTableView, QAbstractItemView, QHeaderView, QLabel, QCheckBox,
 )
 
 HEADERS = ["LB Number", "Date", "Location", "Rating", "Description", "Owned"]
@@ -39,6 +40,9 @@ class SearchModel(QAbstractTableModel):
             val = row.get(keys[col], "")
             return str(val) if val else ""
         if role == Qt.ItemDataRole.BackgroundRole:
+            if row.get("status") == "missing":
+                from PyQt6.QtGui import QColor
+                return QColor("#FFFF99")
             if row.get("lb_number") in self._owned:
                 from gui.styles import ROW_OWNED
                 return ROW_OWNED
@@ -141,8 +145,23 @@ class SearchTab(QWidget):
         self._worker = None
         self._years_worker = None
         self._owned_worker = None
+        self._all_results: list = []
+        self._show_missing_only: bool = False
+        self._page: int = 0
+        self._page_size: int = 50
+        self._load_page_size()
         self._build_ui()
         self.load_years()
+
+    def _load_page_size(self) -> None:
+        try:
+            resp = requests.get(
+                f"http://127.0.0.1:{self.flask_port}/api/db/settings", timeout=5
+            )
+            data = resp.json()
+            self._page_size = int(data.get("search_page_size") or 50)
+        except Exception:
+            pass
 
     def _build_ui(self):
         layout = QVBoxLayout(self)
@@ -166,10 +185,41 @@ class SearchTab(QWidget):
         self.search_btn = QPushButton("Search")
         self.search_btn.clicked.connect(self._do_search)
         search_row.addWidget(self.search_btn)
+
+        self._missing_only_cb = QCheckBox("Missing only")
+        self._missing_only_cb.stateChanged.connect(self._on_filter_changed)
+        search_row.addWidget(self._missing_only_cb)
+
+        self._owned_only_cb = QCheckBox("Owned only")
+        self._owned_only_cb.stateChanged.connect(self._on_filter_changed)
+        search_row.addWidget(self._owned_only_cb)
+
+        self._not_owned_cb = QCheckBox("Not owned")
+        self._not_owned_cb.stateChanged.connect(self._on_filter_changed)
+        search_row.addWidget(self._not_owned_cb)
+
         layout.addLayout(search_row)
 
         self.results_label = QLabel("")
         layout.addWidget(self.results_label)
+
+        # Pagination controls — hidden until results span more than one page
+        page_row = QHBoxLayout()
+        self._prev_btn = QPushButton("← Prev")
+        self._prev_btn.setFixedWidth(80)
+        self._prev_btn.clicked.connect(self._prev_page)
+        page_row.addWidget(self._prev_btn)
+        self._page_label = QLabel("Page 1 of 1")
+        page_row.addWidget(self._page_label)
+        self._next_btn = QPushButton("Next →")
+        self._next_btn.setFixedWidth(80)
+        self._next_btn.clicked.connect(self._next_page)
+        page_row.addWidget(self._next_btn)
+        page_row.addStretch()
+        self._page_widget = QWidget()
+        self._page_widget.setLayout(page_row)
+        self._page_widget.setVisible(False)
+        layout.addWidget(self._page_widget)
 
         self.model = SearchModel()
         self.view = QTableView()
@@ -179,6 +229,66 @@ class SearchTab(QWidget):
         self.view.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
         self.view.doubleClicked.connect(self._on_double_click)
         layout.addWidget(self.view)
+
+    # ── Pagination ────────────────────────────────────────────────────────────
+
+    def _filtered_results(self) -> list:
+        results = self._all_results
+        if self._show_missing_only:
+            results = [r for r in results if r.get("status") == "missing"]
+        owned = self.model._owned
+        owned_only = self._owned_only_cb.isChecked()
+        not_owned = self._not_owned_cb.isChecked()
+        if owned_only and not_owned:
+            results = []
+        elif owned_only:
+            results = [r for r in results if r.get("lb_number") in owned]
+        elif not_owned:
+            results = [r for r in results if r.get("lb_number") not in owned]
+        return results
+
+    def _total_pages(self) -> int:
+        results = self._filtered_results()
+        if not results or self._page_size < 1:
+            return 1
+        return math.ceil(len(results) / self._page_size)
+
+    def _render_page(self) -> None:
+        results = self._filtered_results()
+        start = self._page * self._page_size
+        end = start + self._page_size
+        self.model.set_rows(results[start:end])
+        self.view.resizeColumnsToContents()
+
+        pages = self._total_pages()
+        if pages > 1:
+            self._page_widget.setVisible(True)
+            self._page_label.setText(
+                f"Page {self._page + 1} of {pages}  ({len(results)} results)"
+            )
+            self._prev_btn.setEnabled(self._page > 0)
+            self._next_btn.setEnabled(self._page < pages - 1)
+        else:
+            self._page_widget.setVisible(False)
+
+    def _prev_page(self) -> None:
+        if self._page > 0:
+            self._page -= 1
+            self._render_page()
+
+    def _next_page(self) -> None:
+        if self._page < self._total_pages() - 1:
+            self._page += 1
+            self._render_page()
+
+    def set_page_size(self, size: int) -> None:
+        """Update the number of results shown per page; resets to page 1."""
+        self._page_size = max(1, size)
+        self._page = 0
+        if self._all_results:
+            self._render_page()
+
+    # ── Years ─────────────────────────────────────────────────────────────────
 
     def load_years(self):
         self._years_worker = _YearsWorker(self.flask_port)
@@ -192,12 +302,13 @@ class SearchTab(QWidget):
         self.year_combo.addItem("All Years", userData=None)
         for y in years:
             self.year_combo.addItem(str(y), userData=y)
-        # Restore selection if possible
         if current_year is not None:
             idx = self.year_combo.findData(current_year)
             if idx >= 0:
                 self.year_combo.setCurrentIndex(idx)
         self.year_combo.blockSignals(False)
+
+    # ── Search ────────────────────────────────────────────────────────────────
 
     def _do_search(self):
         q = self.search_field.text().strip()
@@ -217,15 +328,37 @@ class SearchTab(QWidget):
         self._worker.error.connect(self._on_error)
         self._worker.start()
 
+    def _on_filter_changed(self) -> None:
+        self._show_missing_only = self._missing_only_cb.isChecked()
+        self._page = 0
+        self._render_page()
+        self._update_results_label()
+
+    def _update_results_label(self) -> None:
+        filtered = self._filtered_results()
+        total = len(self._all_results)
+        shown = len(filtered)
+        if self._show_missing_only and shown != total:
+            self.results_label.setText(f"{shown} missing result(s) (of {total} total).")
+        else:
+            self.results_label.setText(f"{total} result(s) found.")
+
     def _on_results(self, results):
         self.search_btn.setEnabled(True)
-        self.model.set_rows(results)
-        self.view.resizeColumnsToContents()
-        self.results_label.setText(f"{len(results)} result(s) found.")
-        # Fetch owned set and mark rows
+        self._all_results = results
+        self._page = 0
+        self._render_page()
+        self._update_results_label()
         self._owned_worker = _OwnedWorker(self.flask_port)
-        self._owned_worker.finished.connect(lambda lbs: self.model.set_owned(set(lbs)))
+        self._owned_worker.finished.connect(self._on_owned_loaded)
         self._owned_worker.start()
+
+    def _on_owned_loaded(self, lbs: list) -> None:
+        self.model.set_owned(set(lbs))
+        if self._owned_only_cb.isChecked() or self._not_owned_cb.isChecked():
+            self._page = 0
+            self._render_page()
+            self._update_results_label()
 
     def _on_error(self, msg):
         self.search_btn.setEnabled(True)
@@ -238,5 +371,5 @@ class SearchTab(QWidget):
         if index.column() == 0:
             self.lookup_lb.emit(lb)
         else:
-            url = f"http://www.losslessbob.wonderingwhattochoose.com/detail/LB-{lb}.html"
+            url = f"http://www.losslessbob.wonderingwhattochoose.com/detail/LB-{lb:05d}.html"
             webbrowser.open(url)

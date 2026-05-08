@@ -39,6 +39,8 @@ losslessbob/
 ├── gui/
 │   ├── main_window.py        # Main window, tab container, menu, status bar
 │   ├── lookup_tab.py         # Core feature: paste/load checksums, view results
+│   ├── verify_tab.py         # Verify local checksum files (.ffp/.md5/.st5) against audio
+│   ├── lbdir_tab.py          # Verify official lbdir*.txt files against audio on disk
 │   ├── search_tab.py         # Full-text search across entries
 │   ├── setup_tab.py          # Import, scraper control, DB management
 │   ├── attachments_tab.py    # Browse and preview cached attachment files
@@ -48,8 +50,10 @@ losslessbob/
 └── data/
     ├── losslessbob.db        # SQLite database
     ├── *_flat_file.txt       # Tab-delimited flat-file (user-provided)
-    └── attachments/
-        └── LB-{N}/           # Cached .ffp, .txt, .html per entry
+    ├── attachments/
+    │   └── LB-{N}/           # Cached .ffp, .txt, .html per entry
+    └── pages/
+        └── LB-{N}.html       # Cached detail page HTML (used by local-pages scrape mode)
 ```
 
 ---
@@ -102,6 +106,8 @@ Persists settings between runs. Key examples:
 - `auto_scrape` — `'1'` or `'0'`
 - `scrape_delay_ms` — Delay between scrape requests
 - `download_files` — Whether to cache attachment files
+- `use_local_pages` — `'1'` or `'0'` — read metadata from `data/pages/` instead of web when available
+- `search_page_size` — integer string, results per page in Search tab (default `'50'`)
 
 ---
 
@@ -135,13 +141,13 @@ Persists settings between runs. Key examples:
 ### Search
 | Method | Route | Description |
 |--------|-------|-------------|
-| GET | `/api/search?q=&field=` | `field`: `all`, `location`, `date`, `description`. Returns up to 100 entries. |
+| GET | `/api/search?q=&field=` | `field`: `all`, `location`, `date`, `description`. Returns all matching entries (no limit). |
 
 ### Scraper Control
 | Method | Route | Description |
 |--------|-------|-------------|
 | POST | `/api/scrape/start` | Start bulk scrape. Body: `{lb_numbers, force, download_files, delay_ms}` |
-| GET | `/api/scrape/status` | Poll progress: `{running, current_lb, done, total, errors, skipped, last_action}` |
+| GET | `/api/scrape/status` | Poll progress: `{running, current_lb, done, total, errors, skipped, last_action, last_source}` |
 | POST | `/api/scrape/stop` | Request stop |
 
 ### Verify (Local Checksums)
@@ -153,7 +159,7 @@ Persists settings between runs. Key examples:
 ### LBDir
 | Method | Route | Description |
 |--------|-------|-------------|
-| POST | `/api/lbdir/check` | Find `lbdir*.txt` in each folder, parse, and verify all listed files. Returns extended result with `lbdir_found`, `lbdir_path`, `lb_number`, plus `length`/`cdr`/`wave_problems` per file from shntool_len section. |
+| POST | `/api/lbdir/check` | Find `lbdir*.txt` in each folder, parse, and verify all listed files. Returns extended result with `lbdir_found`, `lbdir_path`, `lb_number`, plus `length`/`expanded_size`/`cdr`/`wave_problems`/`fmt`/`ratio` per file from shntool_len section. |
 | POST | `/api/lbdir/retrieve` | Copy `lbdir*.txt` from `data/attachments/LB-{N:05d}/` to the target folder (triggering a scrape if not yet cached). Looks up LB number from `my_collection` by `disk_path`. |
 
 ---
@@ -218,7 +224,7 @@ Shared module for local file verification and checksum generation. Used by `/api
   ]
 }
 ```
-`/api/lbdir/check` adds `lbdir_found`, `lbdir_path`, `lb_number` at the top level and `length`, `cdr`, `wave_problems` per file.
+`/api/lbdir/check` adds `lbdir_found`, `lbdir_path`, `lb_number` at the top level and `length`, `expanded_size`, `cdr`, `wave_problems`, `fmt`, `ratio` per file (all six shntool_len fields).
 
 ### lbdir file format
 ```
@@ -261,19 +267,27 @@ checksum<TAB>filename<TAB>type<TAB>lb_number<TAB>xref
 - LB numbers are zero-padded to 5 digits (e.g., `LB-00042`, `LB-01025`)
 
 **Single entry scrape:**
-1. Fetch `/detail/LB-{N:05d}.html`
-2. Parse HTML table for date, location, CDR, rating, timing
-3. Extract description from `<p>` tags + bare text nodes
-4. Extract setlist from numbered lines (`1. song`, `2. song`)
-5. Find attachment links matching `/files/LBF-*`
-6. Optionally download files to `data/attachments/LB-{N:05d}/`
-7. 404 → write `status='missing'` to DB
+1. If `use_local_pages=True` and `data/pages/LB-{N:05d}.html` exists → read from disk (no network request)
+2. Otherwise fetch `/detail/LB-{N:05d}.html` → save HTML to `data/pages/LB-{N:05d}.html` for future reuse
+3. Parse HTML table for date, location, CDR, rating, timing
+4. Extract description from `<p>` tags + bare text nodes
+5. Extract setlist from numbered lines (`1. song`, `2. song`)
+6. Find attachment links matching `/files/LBF-*`
+7. Optionally download files to `data/attachments/LB-{N:05d}/`; skip if file already on disk unless `force=True` and `use_local_pages=False`
+8. 404 → write `status='missing'` to DB
 
 **Rate limiting:** 3 retries with exponential backoff; 60-second pause on HTTP 429.
 
-**Skip logic:** `scrape_entry` skips an entry (returns `{skipped: True}`) when `force=False` and the entry exists in DB with no pending file downloads. The inter-request delay (`delay_ms`) is suppressed for skipped entries so bulk scrapes over already-complete ranges complete immediately.
+**Skip logic:** `scrape_entry` skips an entry (returns `{skipped: True}`) when `force=False` and any of:
+- Entry exists in DB with `status='missing'`
+- Entry exists and `download_files=False` (metadata already present)
+- Entry exists and all `entry_files` records have `downloaded=1` (including files synced from disk — see below)
 
-**Bulk scrape:** Thread-safe progress state `{running, current_lb, done, total, errors, skipped, last_action, stop_requested}` polled by GUI every 1 second. `last_action` is `'scraped'`, `'skipped'`, or `'error'`.
+**Filesystem sync:** Before counting pending downloads, the skip check updates any `downloaded=0` record to `downloaded=1` if the corresponding file already exists in `data/attachments/LB-{N:05d}/`. This handles files placed there from external sources.
+
+**Bulk scrape:** Thread-safe progress state `{running, current_lb, done, total, errors, skipped, last_action, last_source, stop_requested}` polled by GUI every 1 second. `last_action` is `'scraped'`, `'skipped'`, or `'error'`. `last_source` is `'local'`, `'web'`, or `None`.
+
+**Delay suppression:** The inter-request delay is suppressed when an entry was read from a local page file (`last_source='local'`) since no network I/O occurred. Web fallbacks still observe the configured delay.
 
 ---
 
@@ -292,16 +306,18 @@ Watchdog observer monitors the `data/` directory for `.txt` file changes.
 
 ## GUI: Main Window (`gui/main_window.py`)
 
-Six tabs: **Lookup**, **Rename Folders**, **Search**, **Attachments**, **Setup**, **Themes**
+Nine tabs in order: **Lookup**(0) · **Rename Folders**(1) · **Verify**(2) · **lbdir**(3) · **Search**(4) · **My Collection**(5) · **Attachments**(6) · **Setup**(7) · **Themes**(8)
 
 **Menu bar:**
 - File → Exit
-- Database → Check for Update / Select Database / Open DB Folder
+- Database → Check for Update / Select Database / Open DB Folder (all navigate to Setup via `tabs.indexOf(setup_tab)`)
 - Help → Help / About
 
 **Status bar:** Refreshes every 10 seconds with latest DB stats (most recent LB, checksum count, last import date).
 
 **Settings persistence:** Window geometry saved/restored via `QSettings`.
+
+**Tab index policy:** All `setCurrentIndex()` calls use `self.tabs.indexOf(self.whichever_tab)` rather than hardcoded integers so the order can change without breaking navigation.
 
 ---
 
@@ -336,11 +352,84 @@ The primary user-facing feature.
 
 ---
 
+## GUI: Verify Tab (`gui/verify_tab.py`)
+
+Verifies audio files against **locally-generated** checksum files (`.ffp`, `.md5`, `.st5`) — distinct from lbdir_tab which checks the official archive record.
+
+**Left panel:** Folder list (drag-drop, dirs only). Buttons: Add Folders, Add Root Folder (recursive audio scan), Remove Selected, Clear List, Verify Folders, Generate Checksums, Retrieve from LB.
+
+**Summary table** (one row per folder):
+Columns: Folder | Mode | FFP | MD5 | Shntool | Total | Pass | Mismatch | Missing | Extra | Status
+
+**Detail table** (one row per audio file in selected folder):
+Columns: Filename | MD5 | FFP/Shntool | ST5 | On Disk | Overall
+Default: problem rows only. Toggle: "Show all files" checkbox.
+
+**Row colors:**
+| Color | Meaning |
+|-------|---------|
+| Green | PASS |
+| Red | FAIL (mismatch) |
+| Orange | MISSING FILES (files not on disk) |
+| Yellow | INCOMPLETE (missing checksum type) |
+
+**Workers:**
+- `_VerifyWorker` → `POST /api/verify`
+- `_GenerateWorker` → `POST /api/verify/generate`, then auto-triggers verify
+- `_RetrieveWorker` → `POST /api/lbdir/retrieve`, then auto-triggers verify
+
+shntool missing → yellow row + status label install hint.
+
+---
+
+## GUI: lbdir Tab (`gui/lbdir_tab.py`)
+
+Verifies the **official lbdir*.txt** file for each folder against actual files on disk. The lbdir file is the archive's authoritative checksum record scraped from losslessbob.com.
+
+**Left panel:** Folder list (drag-drop, dirs only). Buttons: Add Folders, Add Root Folder, Remove Selected, Clear List, Check lbdir Files (all folders), Retrieve lbdir (selected or all → auto-triggers check).
+
+**Summary table** (one row per folder):
+Columns: Folder | LB# | lbdir File | Mode | Total | Pass | Mismatch | Missing | Status
+
+**Row colors:**
+| Color | Meaning |
+|-------|---------|
+| Green | PASS |
+| Red | FAIL, MISSING FILES, SHNTOOL MISSING, PARSE ERROR |
+| Yellow | NO LBDIR (lbdir absent but LB# known, retrievable) |
+| Grey | NO LB# (cannot retrieve, entry unknown) |
+
+**Double-click summary row:** Opens `http://www.losslessbob.wonderingwhattochoose.com/detail/LB-{lb:05d}.html`.
+
+**Detail table** (one row per file listed in lbdir):
+Columns: Filename | MD5 Exp. | MD5 Act. | MD5 | FFP/Shn Exp. | FFP/Shn Act. | FFP/Shn | On Disk | Overall
+Hash columns truncated to 12 chars with full hash in tooltip. Column-0 `UserRole` stores the original file index so the "Show all files" toggle correctly maps visible rows to file data.
+
+**Info panel** (right of detail table): Displays shntool_len data for the selected detail row — Length, Expanded Size, CDR, WAVE Problems, Format, Ratio. Populated from `/api/lbdir/check` per-file fields; blank for non-audio files or when no shntool_len data is available.
+
+**Retrieve lbdir button:** Uses selected listbox items if any, otherwise all folders. Status messages distinguish `copied` (local cache), `scraped_and_copied` (fresh scrape), `not_found`, and `no_lb_number` (folder not in My Collection).
+
+**Workers:**
+- `_LbdirCheckWorker` → `POST /api/lbdir/check`
+- `_LbdirRetrieveWorker` → `POST /api/lbdir/retrieve`, then auto-triggers check
+
+---
+
 ## GUI: Search Tab (`gui/search_tab.py`)
 
-Search field + field selector (All / Location / Date / Description). Results table shows up to 100 entries: LB Number, Date, Location, Rating, Description.
+Search field + field selector (All / Location / Date / Description) + year dropdown. All matching entries are fetched from the API and paginated client-side. Columns: LB Number, Date, Location, Rating, Description, Owned.
 
-**Double-click:** Switches to Lookup tab and loads that LB number's checksums.
+**Pagination:** Prev/Next buttons and a "Page X of Y (N results)" label appear between the search bar and table whenever results exceed the configured page size. Page size defaults to 50 and is set in the Setup tab. `set_page_size(n)` resets to page 1 and re-renders.
+
+**Client-side filters (checkboxes, all AND-combined):**
+- **Missing only** — show only rows with `status == "missing"` (yellow highlighted)
+- **Owned only** — show only rows whose LB number is in My Collection
+- **Not owned** — show only rows NOT in My Collection
+- Combining "Missing only" + "Owned" = missing entries that are owned; combining "Owned only" + "Not owned" = empty result (contradictory)
+
+**Owned data** is fetched from `GET /api/collection/lb_numbers` after each search result arrives. If an owned filter is active when data loads, the page is re-rendered automatically.
+
+**Double-click col 0:** Switches to Lookup tab. **Double-click any other column:** Opens `LB-{lb:05d}.html` on losslessbob.com (5-digit zero-padded).
 
 ---
 
@@ -348,8 +437,10 @@ Search field + field selector (All / Location / Date / Description). Results tab
 
 **Database section:** Stats display, Import Database File button, Check for Update, Open DB Folder, destructive Reset button.
 
+**Search section:** "Results per page" spinner (range 10–500, step 10, default 50). Saved to meta as `search_page_size`. Emits `search_page_size_changed(int)` signal picked up by the Search tab.
+
 **Scraper section:**
-- Checkboxes: Auto-scrape after import, Download attachment files, **Force re-scrape (ignore already-complete entries)**
+- Checkboxes: Auto-scrape after import, Download attachment files, Force re-scrape (ignore already-complete entries), **Use local pages for metadata (data/pages/)**
 - Delay spinner (500–10000 ms, default 1500 ms)
 - Scrape All / Stop buttons
 - Single-entry scrape (enter one LB number)
@@ -358,9 +449,11 @@ Search field + field selector (All / Location / Date / Description). Results tab
 
 **Force re-scrape checkbox:** When checked, passes `force=True` to all three scrape modes (single, range, all), bypassing the skip-if-already-complete logic. Persisted in `meta` as `force_scrape`.
 
-**Fill Gaps mode:** For LB numbers in the range not present in the checksum DB, inserts a `status='missing'` placeholder entry.
+**Skip LB numbers with no checksum data:** For LB numbers in the range not present in the checksum DB, inserts a `status='missing'` placeholder entry (renamed from "Mark sequential gaps as MISSING").
 
-**Scraper log:** Shows "Scraped LB-X" or "Skipped LB-X — already complete" per entry based on `last_action` from the status poll. Completion message includes skipped count.
+**Scraper log:** Shows "Scraped LB-X [local]" / "Scraped LB-X [web]", "Skipped LB-X — already complete", or "Error scraping LB-X" per entry. Uses `last_lb` (the just-completed entry) paired with `last_source`/`last_action` from the status poll so the source tag always matches the logged LB number. Completion message includes skipped and error counts.
+
+**Scraper log file:** Every log line is appended to `data/scraper.log`. The Scraper Log group shows the current file size, an "Open Log File" button, and a "Purge Log" button that truncates the file and clears the in-app widget.
 
 **Background threads:**
 - `_ImportThread` — calls `/api/db/import`
@@ -439,14 +532,18 @@ User clicks Import / file dropped in data/
 ### Scrape
 ```
 User clicks Scrape All / Range / Single
-  → POST /api/scrape/start {lb_numbers}
+  → POST /api/scrape/start {lb_numbers, force, use_local_pages}
     → Background thread: for each LB:
-        GET /detail/LB-{N:05d}.html
+        if use_local_pages and data/pages/LB-N.html exists:
+            read HTML from disk (no network)
+        else:
+            GET /detail/LB-{N:05d}.html
+            save HTML → data/pages/LB-{N:05d}.html
         Parse HTML → entries table
-        Download files → data/attachments/LB-{N:05d}/
-        Sleep delay_ms
+        Download missing files → data/attachments/LB-{N:05d}/
+        Sleep delay_ms only if source was web
   ← GET /api/scrape/status every 1s
-  → Progress bar + log update
+  → Progress bar + log update ([local] / [web] label per entry)
 ```
 
 ---
@@ -484,9 +581,17 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 - **Drop shadows:** `styles.apply_panel_shadow(widget)` attaches a `QGraphicsDropShadowEffect` (blurRadius 12, offset 0,2, color rgba 0,0,0,60) to a widget. Applied in `main_window.py → _apply_shadows()` to the 1–2 main result panels per tab:
   - Lookup: `summary_container`, `detail_container`
   - Rename: `view`
+  - Verify: `summary_container`, `detail_container`
+  - lbdir: `summary_container`, `detail_container`
   - Search: `view`
   - Collection: `coll_view`, `miss_view`
   Do **not** apply globally or to the window frame.
+
+- **QTableWidget vs QTableView:** The Lookup and Rename tabs use `QTableView` + custom `QAbstractTableModel`. The Verify and lbdir tabs use `QTableWidget` (no model class) since their data is repopulated wholesale on each run and per-cell color/tooltip control is simpler with `QTableWidgetItem`. Both use `QHeaderView.ResizeMode.Interactive` and `resizeColumnsToContents()` after load.
+
+- **Worker pattern:** All background operations use `QThread` subclasses with `finished(dict)` and `error(str)` signals, matching `_LookupWorker`. Workers that auto-chain (generate→verify, retrieve→check) call the next `_start_*` method from the `finished` handler in the main thread.
+
+- **Folder index in detail tables:** When the Verify or lbdir detail table filters rows (show-problems-only mode), column-0 of each visible row stores the original index into the full file list via `item.setData(Qt.ItemDataRole.UserRole, file_idx)`. This allows the info panel click handler to correctly retrieve shntool_len data regardless of which rows are hidden.
 
 ---
 
@@ -514,3 +619,14 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 | 2026-05-06 | Added `backend/checksum_utils.py`: FFP/MD5/shntool compute, lbdir parsing, `verify_folder`, `verify_folder_lbdir`, `generate_checksums`, `_lbgen_path`. |
 | 2026-05-06 | Added four new API routes: `POST /api/verify`, `POST /api/verify/generate`, `POST /api/lbdir/check`, `POST /api/lbdir/retrieve`. |
 | 2026-05-06 | Lookup tab: checksum generation now calls `POST /api/verify/generate` instead of doing file I/O in the GUI worker; output uses `_lbgen` naming convention. |
+| 2026-05-07 | Added `gui/verify_tab.py`: folder-level verification against local checksum files; three workers (verify, generate, retrieve); summary + detail tables with color coding. |
+| 2026-05-07 | Added `gui/lbdir_tab.py`: verification against official lbdir*.txt archive records; detail table with truncated hash columns + tooltip; info panel for shntool_len data; double-click opens LB detail page. |
+| 2026-05-07 | `checksum_utils.verify_folder_lbdir` now passes all six shntool_len fields per file (`length`, `expanded_size`, `cdr`, `wave_problems`, `fmt`, `ratio`). |
+| 2026-05-07 | Tab order updated: Lookup(0) Rename(1) Verify(2) lbdir(3) Search(4) Collection(5) Attachments(6) Setup(7) Themes(8). All `setCurrentIndex` calls replaced with `indexOf()` for future-proofing. |
+| 2026-05-07 | lbdir_tab, verify_tab: "Show all files" checkbox now checked by default. |
+| 2026-05-07 | scraper.py: Fixed three skip/download bugs (see BUGS.md BUG-001–003). |
+| 2026-05-07 | scraper.py, app.py, setup_tab.py: Added `use_local_pages` feature — metadata scraped from `data/pages/LB-XXXXX.html` when available; web scrapes cache HTML to `data/pages/` for reuse; delay suppressed for local reads; `last_source` field in scrape state. |
+| 2026-05-07 | data/pages/: New directory for cached detail page HTML files. |
+| 2026-05-07 | Search tab: client-side pagination with Prev/Next buttons; Setup tab: "Results per page" spinner (10–500); db.py search_entries limit removed; search_page_size meta key added. |
+| 2026-05-07 | Scraper log now persisted to data/scraper.log; log management UI (size, Open, Purge) added; [web]/[local] label bug fixed via last_lb state field; error entries now logged explicitly. |
+| 2026-05-07 | Search tab: added Missing only / Owned only / Not owned client-side filter checkboxes (AND-combinable); fixed double-click URL to zero-pad LB number to 5 digits. Setup tab: renamed "Mark sequential gaps as MISSING" → "Skip LB numbers with no checksum data"; Scrape All/Scrape/Scrape Range buttons moved to same grid column so they render at equal width. My Collection tab: auto-loads on startup; client-side pagination (shares Results per page from Setup tab); year dropdown filter. |
