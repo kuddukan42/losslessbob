@@ -13,7 +13,7 @@
 13) remove GD database field
 14) add my collection for non-LB stuffs, maybe separate tab
 15) db maintenance - remove certain records, flush the my collection portion separate or the checksum separate
-
+16) translations to other languages 
 
 need to know what metadata and attachments are missing, filter for missing ones, so you can select and download
 

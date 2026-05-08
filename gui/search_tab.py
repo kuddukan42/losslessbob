@@ -6,7 +6,11 @@ from PyQt6.QtCore import Qt, QAbstractTableModel, QModelIndex, pyqtSignal, QThre
 from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLineEdit, QComboBox,
     QPushButton, QTableView, QAbstractItemView, QHeaderView, QLabel, QCheckBox,
+    QMenu, QInputDialog,
 )
+
+_DESC_COL = 4          # index of the Description column
+_DESC_DEFAULT_W = 1400  # default width for Description in pixels
 
 HEADERS = ["LB Number", "Date", "Location", "Rating", "Description", "Owned"]
 
@@ -34,7 +38,7 @@ class SearchModel(QAbstractTableModel):
                 return f"LB-{row.get('lb_number', '')}"
             if col == 4:
                 val = row.get("description", "") or ""
-                return str(val)[:120] + ("..." if len(str(val)) > 120 else "")
+                return str(val)
             if col == 5:
                 return "✓" if row.get("lb_number") in self._owned else ""
             val = row.get(keys[col], "")
@@ -149,6 +153,7 @@ class SearchTab(QWidget):
         self._show_missing_only: bool = False
         self._page: int = 0
         self._page_size: int = 50
+        self._col_widths: list | None = None
         self._load_page_size()
         self._build_ui()
         self.load_years()
@@ -198,6 +203,10 @@ class SearchTab(QWidget):
         self._not_owned_cb.stateChanged.connect(self._on_filter_changed)
         search_row.addWidget(self._not_owned_cb)
 
+        self._wrap_cb = QCheckBox("Word wrap")
+        self._wrap_cb.stateChanged.connect(self._on_wrap_toggled)
+        search_row.addWidget(self._wrap_cb)
+
         layout.addLayout(search_row)
 
         self.results_label = QLabel("")
@@ -226,9 +235,57 @@ class SearchTab(QWidget):
         self.view.setModel(self.model)
         self.view.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.view.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
-        self.view.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
+        hdr = self.view.horizontalHeader()
+        hdr.setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
+        hdr.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
+        hdr.customContextMenuRequested.connect(self._on_header_context)
         self.view.doubleClicked.connect(self._on_double_click)
         layout.addWidget(self.view)
+
+    # ── Column sizing ─────────────────────────────────────────────────────────
+
+    def _set_default_col_widths(self) -> None:
+        """Size all columns by content except Description, which gets a fixed default."""
+        self.view.resizeColumnsToContents()
+        self.view.setColumnWidth(_DESC_COL, _DESC_DEFAULT_W)
+        self._col_widths = [self.view.columnWidth(i) for i in range(len(HEADERS))]
+
+    def _apply_col_widths(self) -> None:
+        if not self._col_widths:
+            return
+        for i, w in enumerate(self._col_widths):
+            self.view.setColumnWidth(i, w)
+
+    def _on_header_context(self, pos) -> None:
+        col = self.view.horizontalHeader().logicalIndexAt(pos)
+        if col < 0:
+            return
+        menu = QMenu(self)
+        act = menu.addAction(f"Set '{HEADERS[col]}' width…")
+        if menu.exec(self.view.horizontalHeader().mapToGlobal(pos)) != act:
+            return
+        current = self.view.columnWidth(col)
+        width, ok = QInputDialog.getInt(
+            self, "Set Column Width",
+            f"Width for '{HEADERS[col]}' (pixels):",
+            value=current, min=20, max=9000, step=10,
+        )
+        if ok:
+            self.view.setColumnWidth(col, width)
+            if self._col_widths and col < len(self._col_widths):
+                self._col_widths[col] = width
+
+    def _on_wrap_toggled(self, state: int) -> None:
+        enabled = bool(state)
+        self.view.setWordWrap(enabled)
+        vh = self.view.verticalHeader()
+        if enabled:
+            vh.setSectionResizeMode(QHeaderView.ResizeMode.ResizeToContents)
+        else:
+            vh.setSectionResizeMode(QHeaderView.ResizeMode.Fixed)
+            default_h = vh.defaultSectionSize()
+            for i in range(self.model.rowCount()):
+                vh.resizeSection(i, default_h)
 
     # ── Pagination ────────────────────────────────────────────────────────────
 
@@ -257,8 +314,19 @@ class SearchTab(QWidget):
         results = self._filtered_results()
         start = self._page * self._page_size
         end = start + self._page_size
+
+        # Snapshot current (possibly user-dragged) widths before model reset
+        # clears the QHeaderView sections.
+        if self._col_widths is not None:
+            self._col_widths = [self.view.columnWidth(i) for i in range(len(HEADERS))]
+
         self.model.set_rows(results[start:end])
-        self.view.resizeColumnsToContents()
+
+        if self._col_widths is None:
+            if self.model.rowCount() > 0:
+                self._set_default_col_widths()
+        else:
+            self._apply_col_widths()
 
         pages = self._total_pages()
         if pages > 1:
@@ -347,6 +415,7 @@ class SearchTab(QWidget):
         self.search_btn.setEnabled(True)
         self._all_results = results
         self._page = 0
+        self._col_widths = None
         self._render_page()
         self._update_results_label()
         self._owned_worker = _OwnedWorker(self.flask_port)

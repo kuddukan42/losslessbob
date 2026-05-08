@@ -102,6 +102,7 @@ class SetupTab(QWidget):
     def __init__(self, flask_port, parent=None):
         super().__init__(parent)
         self.flask_port = flask_port
+        self._loading = False
         self._import_thread = None
         self._reset_thread = None
         self._single_scrape_thread = None
@@ -309,6 +310,7 @@ class SetupTab(QWidget):
         layout.addStretch()
 
     def _load_settings(self):
+        self._loading = True
         try:
             resp = requests.get(f"http://127.0.0.1:{self.flask_port}/api/db/settings", timeout=5)
             data = resp.json()
@@ -317,14 +319,16 @@ class SetupTab(QWidget):
             self.force_scrape_cb.setChecked(data.get("force_scrape", "0") != "0")
             self.local_pages_cb.setChecked(data.get("use_local_pages", "0") == "1")
             self.delay_spin.setValue(int(data.get("scrape_delay_ms") or 1500))
-            self.search_page_spin.blockSignals(True)
             self.search_page_spin.setValue(int(data.get("search_page_size") or 50))
-            self.search_page_spin.blockSignals(False)
         except Exception:
             self.auto_scrape_cb.setChecked(True)
             self.download_files_cb.setChecked(True)
+        finally:
+            self._loading = False
 
     def _save_settings(self):
+        if self._loading:
+            return
         try:
             requests.post(
                 f"http://127.0.0.1:{self.flask_port}/api/db/settings",

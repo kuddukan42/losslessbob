@@ -14,7 +14,7 @@ from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QTabWidget, QTableView, QPushButton,
     QLabel, QLineEdit, QAbstractItemView, QHeaderView, QMenu, QDialog,
     QFormLayout, QDialogButtonBox, QTableWidget, QTableWidgetItem,
-    QFileDialog, QMessageBox, QComboBox,
+    QFileDialog, QMessageBox, QComboBox, QCheckBox,
 )
 
 from gui.styles import ROW_OWNED
@@ -128,7 +128,7 @@ class _MissingModel(QAbstractTableModel):
             keys = ["lb_number", "date_str", "location", "rating", "description"]
             val = row.get(keys[col], "") or ""
             if col == 4:
-                return str(val)[:120] + ("..." if len(str(val)) > 120 else "")
+                return str(val)
             return str(val)
         return None
 
@@ -243,6 +243,8 @@ class CollectionTab(QWidget):
         self._all_collection: list = []
         self._page: int = 0
         self._page_size: int = 50
+        self._coll_col_widths: list | None = None
+        self._miss_col_widths: list | None = None
         self._load_page_size()
         self._build_ui()
         self.refresh_collection()
@@ -312,6 +314,10 @@ class CollectionTab(QWidget):
         refresh_btn = QPushButton("Refresh")
         refresh_btn.clicked.connect(self.refresh_collection)
         btn_row.addWidget(refresh_btn)
+
+        self._coll_wrap_cb = QCheckBox("Word wrap")
+        self._coll_wrap_cb.stateChanged.connect(self._on_coll_wrap_toggled)
+        btn_row.addWidget(self._coll_wrap_cb)
         btn_row.addStretch()
         layout.addLayout(btn_row)
 
@@ -362,6 +368,10 @@ class CollectionTab(QWidget):
         export_btn = QPushButton("Export CSV…")
         export_btn.clicked.connect(self._on_export_csv)
         btn_row.addWidget(export_btn)
+
+        self._miss_wrap_cb = QCheckBox("Word wrap")
+        self._miss_wrap_cb.stateChanged.connect(self._on_miss_wrap_toggled)
+        btn_row.addWidget(self._miss_wrap_cb)
         btn_row.addStretch()
         layout.addLayout(btn_row)
 
@@ -377,6 +387,40 @@ class CollectionTab(QWidget):
         self.miss_status = QLabel("")
         layout.addWidget(self.miss_status)
         return w
+
+    # ── Column sizing & word wrap ─────────────────────────────────────────────
+
+    def _apply_coll_col_widths(self) -> None:
+        if not self._coll_col_widths:
+            return
+        for i, w in enumerate(self._coll_col_widths):
+            self.coll_view.setColumnWidth(i, w)
+
+    def _apply_miss_col_widths(self) -> None:
+        if not self._miss_col_widths:
+            return
+        for i, w in enumerate(self._miss_col_widths):
+            self.miss_view.setColumnWidth(i, w)
+
+    def _on_coll_wrap_toggled(self, state: int) -> None:
+        enabled = bool(state)
+        self.coll_view.setWordWrap(enabled)
+        vh = self.coll_view.verticalHeader()
+        if enabled:
+            vh.setSectionResizeMode(QHeaderView.ResizeMode.ResizeToContents)
+        else:
+            vh.setSectionResizeMode(QHeaderView.ResizeMode.Fixed)
+            self.coll_view.resizeRowsToContents()
+
+    def _on_miss_wrap_toggled(self, state: int) -> None:
+        enabled = bool(state)
+        self.miss_view.setWordWrap(enabled)
+        vh = self.miss_view.verticalHeader()
+        if enabled:
+            vh.setSectionResizeMode(QHeaderView.ResizeMode.ResizeToContents)
+        else:
+            vh.setSectionResizeMode(QHeaderView.ResizeMode.Fixed)
+            self.miss_view.resizeRowsToContents()
 
     # ── Data loading ──────────────────────────────────────────────────────────
 
@@ -394,6 +438,7 @@ class CollectionTab(QWidget):
         if isinstance(data, list):
             self._all_collection = data
             self._page = 0
+            self._coll_col_widths = None
             self._populate_year_combo()
             self._render_coll_page()
         else:
@@ -454,7 +499,14 @@ class CollectionTab(QWidget):
         start = self._page * self._page_size
         end = start + self._page_size
         self.coll_model.set_rows(filtered[start:end])
-        self.coll_view.resizeColumnsToContents()
+
+        if self._coll_col_widths is None and self.coll_model.rowCount() > 0:
+            self.coll_view.resizeColumnsToContents()
+            self._coll_col_widths = [
+                self.coll_view.columnWidth(i) for i in range(self.coll_model.columnCount())
+            ]
+        else:
+            self._apply_coll_col_widths()
 
         pages = self._total_coll_pages()
         total = len(self._all_collection)
@@ -494,8 +546,13 @@ class CollectionTab(QWidget):
 
     def _on_missing_loaded(self, data):
         if isinstance(data, list):
+            self._miss_col_widths = None
             self.miss_model.set_rows(data)
-            self.miss_view.resizeColumnsToContents()
+            if data:
+                self.miss_view.resizeColumnsToContents()
+                self._miss_col_widths = [
+                    self.miss_view.columnWidth(i) for i in range(self.miss_model.columnCount())
+                ]
             self.miss_status.setText(f"{len(data)} missing from collection.")
         else:
             self.miss_status.setText(f"Error: {data.get('error', 'unknown')}")
