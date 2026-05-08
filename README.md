@@ -7,8 +7,6 @@ Cross-platform replacement for the original Windows Checksum_Lookup utility for 
 - Python 3.11 or newer
 - pip (comes with Python)
 - **Windows:** Microsoft Visual C++ Redistributable (for PyQt6)
-- **Windows (SDF import):** `ExportSqlCE40.exe` — place in `tools/` folder. Download from: https://github.com/ErikEJ/SqlCeToolbox
-- **macOS/Linux:** Use the flat file export from the LosslessBob downloads page instead of SDF
 
 ## Installation
 
@@ -22,9 +20,9 @@ python main.py
 ## First Database Import
 
 1. Download the latest zip from the LosslessBob downloads page
-2. Unzip — you will find either a `.sdf` file (Windows) or a flat file (`.txt`)
-3. Copy the `.sdf` or flat file into the `data/` folder
-4. Open the app, go to the **Setup** tab, click **Import New SDF**
+2. Unzip — you will find a flat file (`.txt`)
+3. Open the app, go to the **Setup** tab, click **Import Database File...**
+4. Select the `.txt` flat file
 5. Wait for import to complete (progress shown in status bar)
 6. Optionally start the scraper to fetch entry metadata
 
@@ -32,7 +30,7 @@ python main.py
 
 1. Click **Check for Update** in the Setup tab (or Database menu)
 2. If an update is available, download the new zip from the LosslessBob site
-3. Drop the new `.sdf` or flat file into the `data/` folder
+3. Drop the new flat file (`.txt`) into the `data/` folder
 4. The app detects the new file automatically (via file watcher) and starts import
 5. Only new LB entries are processed — takes seconds, not minutes
 
@@ -41,22 +39,23 @@ python main.py
 - **Lookup tab:** Paste checksum text from clipboard or drag-drop files/folders to look up LB numbers
 - **Color coding:** Green = complete match, Orange = not found, Pink = incomplete set, Yellow = duplicate
 - **Rename Folders tab:** Propose and execute folder renames to append LB numbers
+- **Verify tab:** Verify audio files against their checksum files (FFP, MD5, ST5)
+- **lbdir tab:** Check and retrieve lbdir verification files from the LosslessBob cache
 - **Search tab:** Full-text search across entry metadata (date, location, description)
+- **My Collection tab:** Track which LB entries you own, scan directories, export missing list
 - **Attachments tab:** Browse locally cached files (ffp, txt, html) for each LB entry
 - **Setup tab:** Import database, configure scraper, check for updates
 
 ## Packaging with PyInstaller
 
+Use the provided `losslessbob.spec`:
+
 ```bash
 pip install pyinstaller
-pyinstaller --onefile --windowed \
-  --name "LosslessBobLookup" \
-  --add-data "data:data" \
-  --hidden-import PyQt6.QtWebEngineWidgets \
-  main.py
+pyinstaller losslessbob.spec
 ```
 
-> **Note:** Keep the `data/` folder (SQLite DB + attachments) alongside the executable — do not bundle it, so it can be updated independently.
+Output is in `dist/LosslessBob/`. Keep the `data/` folder alongside the executable — do not bundle it, so it persists across updates.
 
 ## Flat File Format
 

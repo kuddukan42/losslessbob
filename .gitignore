@@ -1,3 +1,39 @@
 /data
 data/losslessbob.db
 losslessbob.tar.gz
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+ 
+# PyInstaller
+build/
+dist/
+*.spec.bak
+ 
+# Database and user data
+data/losslessbob.db
+data/temp_import.db
+data/*.sdf
+data/*.txt
+data/attachments/
+data/pages/
+data/scraper.log
+ 
+# Archives
+*.tar.gz
+*.zip
+ 
+# IDE
+.vscode/
+.idea/
+*.swp
+ 
+# OS
+.DS_Store
+Thumbs.db
+ 
