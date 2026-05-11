@@ -3,7 +3,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-_LOG_FILE = Path(__file__).parent.parent / "data" / "scraper.log"
+from backend.paths import LOG_FILE as _LOG_FILE, DATA_DIR as _DATA_DIR
 
 import requests
 from PyQt6.QtCore import Qt, QThread, pyqtSignal
@@ -449,14 +449,13 @@ class SetupTab(QWidget):
             self.check_update_btn.setEnabled(True)
 
     def _on_open_folder(self):
-        data_dir = Path(__file__).parent.parent / "data"
-        data_dir.mkdir(exist_ok=True)
+        _DATA_DIR.mkdir(exist_ok=True)
         if sys.platform == "win32":
-            os.startfile(str(data_dir))
+            os.startfile(str(_DATA_DIR))
         elif sys.platform == "darwin":
-            subprocess.run(["open", str(data_dir)])
+            subprocess.run(["open", str(_DATA_DIR)])
         else:
-            subprocess.run(["xdg-open", str(data_dir)])
+            subprocess.run(["xdg-open", str(_DATA_DIR)])
 
     def _log(self, msg: str) -> None:
         from datetime import datetime

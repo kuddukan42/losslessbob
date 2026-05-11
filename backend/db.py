@@ -2,7 +2,7 @@ import re
 import sqlite3
 from pathlib import Path
 
-DB_PATH = Path(__file__).parent.parent / "data" / "losslessbob.db"
+from backend.paths import DB_PATH  # noqa: F401
 
 SCHEMA_SQL = """
 CREATE TABLE IF NOT EXISTS checksums (

@@ -4,7 +4,7 @@ from pathlib import Path
 
 from backend.db import get_connection, init_db, get_meta, set_meta, DB_PATH
 
-DATA_DIR = Path(__file__).parent.parent / "data"
+from backend.paths import DATA_DIR
 
 
 def md5_file(path):

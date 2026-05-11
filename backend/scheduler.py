@@ -8,7 +8,7 @@ from watchdog.observers import Observer
 from backend.importer import run_import, md5_file
 from backend.db import get_meta, DB_PATH
 
-DATA_DIR = Path(__file__).parent.parent / "data"
+from backend.paths import DATA_DIR
 
 _import_callbacks = []
 _observer = None

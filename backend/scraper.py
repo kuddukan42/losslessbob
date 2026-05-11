@@ -1,21 +1,16 @@
 import re
 import time
 import threading
-from pathlib import Path
-
 import requests
 from bs4 import BeautifulSoup
 
 from backend.db import get_connection, DB_PATH, insert_missing_entry
+from backend.paths import ATTACHMENTS_DIR, PAGES_DIR
 
 BASE_URL = "http://www.losslessbob.wonderingwhattochoose.com"
 DETAIL_URL = BASE_URL + "/detail/LB-{n}.html"
 FILE_URL = BASE_URL + "/files/{filename}"
 BYNUMBER_URL = BASE_URL + "/bynumber/LBMbynumber.html"
-
-DATA_DIR = Path(__file__).parent.parent / "data"
-ATTACHMENTS_DIR = DATA_DIR / "attachments"
-PAGES_DIR = DATA_DIR / "pages"
 
 HEADERS = {"User-Agent": "LosslessBob-Archiver/1.0 (personal research tool)"}
 

@@ -107,6 +107,7 @@ class DropFolderListWidget(QListWidget):
             event.acceptProposedAction()
 
     def dropEvent(self, event):
+        event.acceptProposedAction()
         folders = []
         seen = set()
         for url in event.mimeData().urls():
@@ -116,7 +117,6 @@ class DropFolderListWidget(QListWidget):
                 seen.add(folder)
                 folders.append(folder)
         self.folders_dropped.emit(folders)
-        event.acceptProposedAction()
 
 
 class VerifyTab(QWidget):
@@ -276,7 +276,8 @@ class VerifyTab(QWidget):
     def _on_folders_dropped(self, folders):
         for f in folders:
             self._add_folder(f)
-        self._refresh_listbox()
+        from PyQt6.QtCore import QTimer
+        QTimer.singleShot(0, self._refresh_listbox)
 
     def _on_add_folders(self):
         path = QFileDialog.getExistingDirectory(self, "Add Folder", str(Path.home()))

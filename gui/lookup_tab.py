@@ -180,9 +180,9 @@ class DropListWidget(QListWidget):
             event.acceptProposedAction()
 
     def dropEvent(self, event):
+        event.acceptProposedAction()
         paths = [url.toLocalFile() for url in event.mimeData().urls()]
         self.files_dropped.emit(paths)
-        event.acceptProposedAction()
 
 
 class LookupTab(QWidget):
@@ -335,6 +335,8 @@ class LookupTab(QWidget):
         for p in paths:
             self._add_path(p)
         self._update_list_header()
+        from PyQt6.QtCore import QTimer
+        QTimer.singleShot(0, self._refresh_listbox)
 
     _CHECKSUM_EXTS = {".md5", ".ffp", ".txt"}
 
@@ -364,7 +366,6 @@ class LookupTab(QWidget):
             s = str(p)
             if s not in self._all_paths:
                 self._all_paths.append(s)
-        self._refresh_listbox()
 
     def _refresh_listbox(self):
         self.listbox.clear()
@@ -399,6 +400,7 @@ class LookupTab(QWidget):
         path = QFileDialog.getExistingDirectory(self, "Add Folder", str(Path.home()))
         if path:
             self._add_path(path)
+            self._refresh_listbox()
 
     def _on_clear_list(self):
         self._all_paths.clear()

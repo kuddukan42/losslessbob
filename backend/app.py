@@ -10,8 +10,7 @@ from backend import db as database
 from backend import importer, scraper, scheduler
 from backend import checksum_utils
 
-DATA_DIR = Path(__file__).parent.parent / "data"
-ATTACHMENTS_DIR = DATA_DIR / "attachments"
+from backend.paths import ATTACHMENTS_DIR
 
 _scrape_thread = None
 
