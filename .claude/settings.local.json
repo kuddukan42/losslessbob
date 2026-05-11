@@ -28,7 +28,20 @@
       "Bash(python3 -c \"import ast; ast.parse\\(open\\('/home/tjenkins/Documents/losslessbob/gui/setup_tab.py'\\).read\\(\\)\\); print\\('OK'\\)\")",
       "Bash(python3 -c \"import ast; ast.parse\\(open\\('/home/tjenkins/Documents/losslessbob/gui/lookup_tab.py'\\).read\\(\\)\\); print\\('OK'\\)\")",
       "Bash(python3 -c \"import ast; ast.parse\\(open\\('backend/app.py'\\).read\\(\\)\\); print\\('app.py OK'\\)\")",
-      "Bash(python3 -c \"import ast; ast.parse\\(open\\('/home/tjenkins/Documents/losslessbob/backend/checksum_utils.py'\\).read\\(\\)\\); print\\('OK'\\)\")"
+      "Bash(python3 -c \"import ast; ast.parse\\(open\\('/home/tjenkins/Documents/losslessbob/backend/checksum_utils.py'\\).read\\(\\)\\); print\\('OK'\\)\")",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git tag *)",
+      "Bash(git push *)",
+      "Bash(git remote *)",
+      "Bash(ssh-keyscan github.com >> ~/.ssh/known_hosts 2>/dev/null && git push origin main --tags)",
+      "Bash(ssh -T git@github.com)",
+      "Bash(gh auth *)",
+      "Bash(git config *)",
+      "Read(//home/tjenkins/**)"
+    ],
+    "additionalDirectories": [
+      "/home/tjenkins/.ssh"
     ]
   }
 }
