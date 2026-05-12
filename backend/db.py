@@ -62,8 +62,9 @@ _FFP_RE = re.compile(r'^(.+\.(?:flac|ape|wav))[:=]([0-9a-fA-F]{32,40})$', re.IGN
 
 def get_connection(db_path=None):
     path = db_path or DB_PATH
-    conn = sqlite3.connect(str(path))
+    conn = sqlite3.connect(str(path), timeout=30, check_same_thread=False)
     conn.row_factory = sqlite3.Row
+    conn.execute("PRAGMA busy_timeout=30000")
     return conn
 
 

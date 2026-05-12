@@ -1,3 +1,25 @@
+BUG-015: xdg-open hardcoded in collection_tab.py — crashes on Windows (WIN-03)
+Status: Fixed
+File(s): gui/collection_tab.py:792, gui/attachments_tab.py:206, gui/setup_tab.py:454,509
+Reported: 2026-05-12
+Fixed: 2026-05-12
+Description: collection_tab._open_folders unconditionally called subprocess.Popen(["xdg-open", path]), which raises FileNotFoundError on Windows. attachments_tab and setup_tab had inline sys.platform branches that were correct but duplicated across files.
+Root cause: Platform branching was scattered and collection_tab was missed entirely.
+Fix: Created gui/platform_utils.py with open_folder(), open_file(), and open_url(). All three files now delegate to these helpers. Removed top-level subprocess and os imports from collection_tab, attachments_tab, and setup_tab.
+
+---
+
+BUG-014: SQLite "database is locked" under concurrent access on Windows (WIN-04)
+Status: Fixed
+File(s): backend/db.py:get_connection
+Reported: 2026-05-12
+Fixed: 2026-05-12
+Description: sqlite3.connect() had no timeout, so any write contention between the scraper thread and GUI polling raised OperationalError: database is locked immediately on Windows.
+Root cause: Windows uses LockFileEx for SQLite file-locking, which is more aggressive than Linux advisory locks. Without a retry timeout, contention raises immediately.
+Fix: Added timeout=30 and check_same_thread=False to sqlite3.connect(). Added PRAGMA busy_timeout=30000 as belt-and-suspenders to mirror the connect timeout.
+
+---
+
 BUG-013: PyInstaller frozen build cannot find data/ directory (WIN-01)
 Status: Fixed
 File(s): backend/paths.py (new), backend/db.py, backend/app.py, backend/scraper.py, backend/scheduler.py, backend/importer.py, gui/setup_tab.py, main.py

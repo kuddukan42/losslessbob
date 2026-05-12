@@ -1,7 +1,6 @@
 import csv
 import math
 import re
-import subprocess
 import webbrowser
 from pathlib import Path
 
@@ -785,11 +784,12 @@ class CollectionTab(QWidget):
             menu.exec(self.coll_view.mapToGlobal(pos))
 
     def _open_folders(self, rows):
+        from gui.platform_utils import open_folder
         for row in rows:
             path = row.get("disk_path", "")
             if path and Path(path).is_dir():
                 try:
-                    subprocess.Popen(["xdg-open", path])
+                    open_folder(path)
                 except Exception:
                     pass
 

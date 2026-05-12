@@ -1,6 +1,3 @@
-import os
-import subprocess
-import sys
 from pathlib import Path
 
 from backend.paths import LOG_FILE as _LOG_FILE, DATA_DIR as _DATA_DIR
@@ -450,12 +447,11 @@ class SetupTab(QWidget):
 
     def _on_open_folder(self):
         _DATA_DIR.mkdir(exist_ok=True)
-        if sys.platform == "win32":
-            os.startfile(str(_DATA_DIR))
-        elif sys.platform == "darwin":
-            subprocess.run(["open", str(_DATA_DIR)])
-        else:
-            subprocess.run(["xdg-open", str(_DATA_DIR)])
+        from gui.platform_utils import open_folder
+        try:
+            open_folder(_DATA_DIR)
+        except Exception:
+            pass
 
     def _log(self, msg: str) -> None:
         from datetime import datetime
@@ -505,12 +501,11 @@ class SetupTab(QWidget):
         if not _LOG_FILE.exists():
             QMessageBox.information(self, "Open Log", "Log file has not been created yet.")
             return
-        if sys.platform == "win32":
-            os.startfile(str(_LOG_FILE))
-        elif sys.platform == "darwin":
-            subprocess.run(["open", str(_LOG_FILE)])
-        else:
-            subprocess.run(["xdg-open", str(_LOG_FILE)])
+        from gui.platform_utils import open_file
+        try:
+            open_file(_LOG_FILE)
+        except Exception:
+            pass
 
     def _on_scrape_single(self):
         text = self.single_lb_input.text().strip()

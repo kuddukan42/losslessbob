@@ -1,5 +1,3 @@
-import subprocess
-import sys
 import webbrowser
 from pathlib import Path
 
@@ -203,13 +201,12 @@ class AttachmentsTab(QWidget):
     def _open_externally(self):
         if not self._current_file:
             return
-        if sys.platform == "win32":
-            import os
-            os.startfile(str(self._current_file))
-        elif sys.platform == "darwin":
-            subprocess.run(["open", str(self._current_file)])
-        else:
-            subprocess.run(["xdg-open", str(self._current_file)])
+        from gui.platform_utils import open_file
+        try:
+            open_file(self._current_file)
+        except Exception as e:
+            from PyQt6.QtWidgets import QMessageBox
+            QMessageBox.warning(self, "Open Failed", str(e))
 
     def _on_download_all(self):
         if self._current_lb is None:
