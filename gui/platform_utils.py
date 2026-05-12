@@ -31,3 +31,25 @@ def open_file(path: str | Path) -> None:
 def open_url(url: str) -> None:
     """Open a URL in the default browser."""
     webbrowser.open(url)
+
+
+def _subprocess_flags() -> dict:
+    """Return kwargs to suppress console windows on Windows. No-op on other platforms."""
+    if sys.platform == "win32":
+        si = subprocess.STARTUPINFO()
+        si.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+        si.wShowWindow = subprocess.SW_HIDE
+        return {"startupinfo": si, "creationflags": subprocess.CREATE_NO_WINDOW}
+    return {}
+
+
+def url_to_local_path(url) -> Path:
+    """Convert a QUrl from a drag-drop event to a correct local Path.
+
+    Fixes Qt6 on Windows returning '/C:/Users/...' with a spurious leading slash.
+    """
+    local = url.toLocalFile()
+    if sys.platform == "win32":
+        import re
+        local = re.sub(r'^/([A-Za-z]:)', r'\1', local)
+    return Path(local)

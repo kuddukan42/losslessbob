@@ -1,4 +1,3 @@
-import webbrowser
 from pathlib import Path
 
 import requests
@@ -8,13 +7,7 @@ from PyQt6.QtWidgets import (
     QPushButton, QTextEdit, QLabel, QStackedWidget,
 )
 
-try:
-    from PyQt6.QtWebEngineWidgets import QWebEngineView
-    _HAS_WEBENGINE = True
-except ImportError:
-    _HAS_WEBENGINE = False
-
-ATTACHMENTS_DIR = Path(__file__).parent.parent / "data" / "attachments"
+from backend.paths import ATTACHMENTS_DIR
 
 
 class _ScrapeThread(QThread):
@@ -83,10 +76,20 @@ class AttachmentsTab(QWidget):
         self.text_view.setReadOnly(True)
         self.stack.addWidget(self.text_view)
 
-        if _HAS_WEBENGINE:
-            self.web_view = QWebEngineView()
+        try:
+            from PyQt6.QtWebEngineWidgets import QWebEngineView
+            from PyQt6.QtWebEngineCore import QWebEngineProfile, QWebEnginePage
+            from backend.paths import WEBENGINE_DIR
+            WEBENGINE_DIR.mkdir(parents=True, exist_ok=True)
+            profile = QWebEngineProfile("losslessbob", self)
+            profile.setPersistentStoragePath(str(WEBENGINE_DIR))
+            profile.setCachePath(str(WEBENGINE_DIR / "cache"))
+            profile.setHttpCacheMaximumSize(32 * 1024 * 1024)
+            page = QWebEnginePage(profile, self)
+            self.web_view = QWebEngineView(self)
+            self.web_view.setPage(page)
             self.stack.addWidget(self.web_view)
-        else:
+        except ImportError:
             self.web_view = None
 
         self.other_widget = QWidget()
@@ -190,7 +193,7 @@ class AttachmentsTab(QWidget):
             except Exception as e:
                 self.text_view.setPlainText(f"Error reading file: {e}")
                 self.stack.setCurrentIndex(0)
-        elif suffix in (".html", ".htm") and _HAS_WEBENGINE and self.web_view:
+        elif suffix in (".html", ".htm") and self.web_view is not None:
             from PyQt6.QtCore import QUrl
             self.web_view.load(QUrl.fromLocalFile(str(path)))
             self.stack.setCurrentIndex(1)

@@ -2,7 +2,8 @@ import re
 import sqlite3
 from pathlib import Path
 
-from backend.paths import DB_PATH  # noqa: F401
+from backend.paths import DB_PATH  # noqa: F401  — re-exported for callers
+from backend.paths import to_long_path
 
 SCHEMA_SQL = """
 CREATE TABLE IF NOT EXISTS checksums (
@@ -61,7 +62,7 @@ _FFP_RE = re.compile(r'^(.+\.(?:flac|ape|wav))[:=]([0-9a-fA-F]{32,40})$', re.IGN
 
 
 def get_connection(db_path=None):
-    path = db_path or DB_PATH
+    path = to_long_path(Path(db_path or DB_PATH))
     conn = sqlite3.connect(str(path), timeout=30, check_same_thread=False)
     conn.row_factory = sqlite3.Row
     conn.execute("PRAGMA busy_timeout=30000")

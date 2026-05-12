@@ -181,7 +181,8 @@ class DropListWidget(QListWidget):
 
     def dropEvent(self, event):
         event.acceptProposedAction()
-        paths = [url.toLocalFile() for url in event.mimeData().urls()]
+        from gui.platform_utils import url_to_local_path
+        paths = [str(url_to_local_path(url)) for url in event.mimeData().urls()]
         self.files_dropped.emit(paths)
 
 

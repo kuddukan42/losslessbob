@@ -17,9 +17,30 @@ ATTACHMENTS_DIR = DATA_DIR / "attachments"
 PAGES_DIR = DATA_DIR / "pages"
 LOG_FILE = DATA_DIR / "scraper.log"
 TOOLS_DIR = APP_ROOT / "tools"
+WEBENGINE_DIR = DATA_DIR / "webengine_cache"
+
+
+def to_long_path(p: Path) -> Path:
+    """On Windows, prefix path with \\?\\ to enable paths > MAX_PATH (260). No-op elsewhere."""
+    if sys.platform != "win32":
+        return p
+    p = p.resolve()
+    s = str(p)
+    if s.startswith("\\\\?\\"):
+        return p
+    if s.startswith("\\\\"):
+        return Path("\\\\?\\UNC\\" + s[2:])
+    return Path("\\\\?\\" + s)
 
 
 def ensure_data_dirs() -> None:
     """Create data subdirectories if they do not exist."""
     for d in (DATA_DIR, ATTACHMENTS_DIR, PAGES_DIR):
         d.mkdir(parents=True, exist_ok=True)
+    if sys.platform == "win32" and len(str(DATA_DIR)) > 200:
+        import warnings
+        warnings.warn(
+            f"Data directory path is {len(str(DATA_DIR))} characters. "
+            "Windows MAX_PATH is 260. Consider moving the app closer to a drive root.",
+            stacklevel=2,
+        )

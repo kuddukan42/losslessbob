@@ -3,7 +3,52 @@ import re
 import shutil
 import struct
 import subprocess
+import sys
 from pathlib import Path
+
+from backend.paths import to_long_path
+
+
+def _no_window_kwargs() -> dict:
+    """Return subprocess kwargs that suppress console windows on Windows."""
+    if sys.platform == "win32":
+        si = subprocess.STARTUPINFO()
+        si.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+        si.wShowWindow = subprocess.SW_HIDE
+        return {"startupinfo": si, "creationflags": subprocess.CREATE_NO_WINDOW}
+    return {}
+
+
+def _find_shntool() -> list[str] | None:
+    """Return the command prefix to invoke shntool, or None if unavailable."""
+    if sys.platform == "win32":
+        if shutil.which("wsl"):
+            try:
+                r = subprocess.run(
+                    ["wsl", "which", "shntool"],
+                    capture_output=True, text=True, timeout=10,
+                    **_no_window_kwargs(),
+                )
+                if r.returncode == 0 and r.stdout.strip():
+                    return ["wsl", "shntool"]
+            except Exception:
+                pass
+        return None
+    if shutil.which("shntool"):
+        return ["shntool"]
+    return None
+
+
+_shntool_cmd_checked = False
+_shntool_cmd_result: list[str] | None = None
+
+
+def _get_shntool_cmd() -> list[str] | None:
+    global _shntool_cmd_checked, _shntool_cmd_result
+    if not _shntool_cmd_checked:
+        _shntool_cmd_result = _find_shntool()
+        _shntool_cmd_checked = True
+    return _shntool_cmd_result
 
 
 class ShntoolNotFoundError(Exception):
@@ -132,7 +177,7 @@ def compute_ffp(filepath):
     Returns 32-char hex string or None if not valid FLAC.
     """
     try:
-        with open(filepath, 'rb') as f:
+        with open(to_long_path(Path(filepath)), 'rb') as f:
             if f.read(4) != b'fLaC':
                 return None
             while True:
@@ -156,7 +201,7 @@ def compute_md5(filepath):
     """MD5 of full file bytes. Returns 32-char hex or None on IOError."""
     try:
         h = hashlib.md5()
-        with open(filepath, 'rb') as f:
+        with open(to_long_path(Path(filepath)), 'rb') as f:
             for chunk in iter(lambda: f.read(65536), b''):
                 h.update(chunk)
         return h.hexdigest()
@@ -167,15 +212,28 @@ def compute_md5(filepath):
 def compute_shntool(filepath):
     """
     Run shntool md5 <filepath>, parse [shntool] line, return hash.
-    Raises ShntoolNotFoundError if binary not in PATH.
+    On Windows, auto-detects shntool via WSL if native binary is unavailable.
+    Raises ShntoolNotFoundError if no shntool found by any method.
     Returns None if command fails or output not parseable.
     """
-    if not shutil.which('shntool'):
-        raise ShntoolNotFoundError('shntool binary not found in PATH')
+    cmd = _get_shntool_cmd()
+    if cmd is None:
+        raise ShntoolNotFoundError(
+            "shntool not found. "
+            "On Windows: install WSL (wsl --install) then run: "
+            "wsl sudo apt install shntool"
+        )
+    invoke_path = str(filepath)
+    if sys.platform == "win32" and cmd[0] == "wsl":
+        p = Path(filepath).resolve()
+        drive = p.drive.rstrip(":").lower()
+        rest = str(p)[len(p.drive):].replace("\\", "/")
+        invoke_path = f"/mnt/{drive}{rest}"
     try:
         result = subprocess.run(
-            ['shntool', 'md5', str(filepath)],
+            cmd + ['md5', invoke_path],
             capture_output=True, text=True, timeout=120,
+            **_no_window_kwargs(),
         )
         for line in result.stdout.splitlines():
             if '[shntool]' in line:
@@ -280,7 +338,7 @@ def verify_folder(folder_path):
         return {'folder': str(folder_path), 'error': 'Folder not found'}
 
     mode = detect_folder_mode(folder_path)
-    shntool_ok = bool(shutil.which('shntool'))
+    shntool_ok = _get_shntool_cmd() is not None
 
     disk_audio = {f.name for f in folder.iterdir() if f.suffix.lower() in AUDIO_EXTS}
 
@@ -430,7 +488,7 @@ def verify_folder_lbdir(folder_path, lbdir_path):
         return {'folder': str(folder_path), 'error': parsed['error']}
 
     mode = parsed['mode']
-    shntool_ok = bool(shutil.which('shntool'))
+    shntool_ok = _get_shntool_cmd() is not None
 
     md5_map = dict(parsed['md5'])
     ffp_map = dict(parsed['ffp'])
@@ -594,7 +652,7 @@ def generate_checksums(folder_path):
     if mode in ('shn', 'mixed'):
         shn_files = [f for f in audio_files if f.suffix.lower() == '.shn']
         if shn_files:
-            if not shutil.which('shntool'):
+            if _get_shntool_cmd() is None:
                 errors.append('shntool not found; cannot generate SHN checksums')
             else:
                 shn_lines = []

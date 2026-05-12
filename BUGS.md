@@ -1,3 +1,102 @@
+BUG-024: WebEngine cache written outside app folder, breaks portable installs (WIN-15)
+Status: Fixed
+File(s): gui/attachments_tab.py, backend/paths.py
+Reported: 2026-05-12
+Fixed: 2026-05-12
+Description: QWebEngineView used the default profile, writing cache to %LOCALAPPDATA%\QtProject on Windows and ~/.local/share/QtProject on Linux. Breaks USB/portable use and leaves debris after uninstall.
+Root cause: No custom profile was configured for the WebEngine instance.
+Fix: Added WEBENGINE_DIR = DATA_DIR / "webengine_cache" to paths.py. attachments_tab now creates a named QWebEngineProfile("losslessbob") with storage and cache redirected to WEBENGINE_DIR. Also removed stale __file__-relative ATTACHMENTS_DIR definition.
+
+---
+
+BUG-023: _pending dict in scheduler leaks memory on long-running sessions (WIN-13)
+Status: Fixed
+File(s): backend/scheduler.py:FileEventHandler._handle
+Reported: 2026-05-12
+Fixed: 2026-05-12
+Description: _handle() set _pending[key] = True before spawning the delayed thread but the thread never cleaned it up, so every detected file event permanently bloated _pending.
+Root cause: Missing finally cleanup in the delayed() thread function.
+Fix: Moved the _pending cleanup into a finally block in delayed(). Added early-exit for Windows system files (Thumbs.db, desktop.ini, dotfiles). Use WindowsApiObserver on Windows for reliable ReadDirectoryChangesW behaviour.
+
+---
+
+BUG-022: Qt6 DnD returns '/C:/path' with leading slash on Windows (WIN-14)
+Status: Fixed
+File(s): gui/platform_utils.py, gui/lookup_tab.py, gui/verify_tab.py, gui/lbdir_tab.py
+Reported: 2026-05-12
+Fixed: 2026-05-12
+Description: QUrl.toLocalFile() returns '/C:/Users/...' on Windows Qt6 — the leading slash makes Path resolve relative to the drive root, so path.is_dir() is always False and drag-drop silently adds nothing.
+Root cause: Qt6 Windows behaviour difference from Linux.
+Fix: Added url_to_local_path() to platform_utils.py that strips the spurious leading slash on win32. All three DropWidget.dropEvent methods now use it.
+
+---
+
+BUG-021: shutil.move raises PermissionError on Windows with no user guidance (WIN-07)
+Status: Fixed
+File(s): gui/rename_tab.py
+Reported: 2026-05-12
+Fixed: 2026-05-12
+Description: Windows Explorer holding a folder open causes shutil.move to raise PermissionError. The bare exception was shown as a raw Python traceback with no actionable message.
+Root cause: Single broad except clause; no Windows-specific guidance.
+Fix: Split rename block into distinct mkdir + move try/except catching PermissionError, FileExistsError, and OSError separately. Added Windows tip to the error display. Also added check for illegal filename characters before attempting the move.
+
+---
+
+BUG-020: console windows flash on Windows during subprocess calls (WIN-05)
+Status: Fixed
+File(s): gui/platform_utils.py, backend/checksum_utils.py
+Reported: 2026-05-12
+Fixed: 2026-05-12
+Description: Every subprocess.run call in checksum_utils.py spawned a visible console window on Windows, flashing on screen during verification.
+Root cause: No STARTUPINFO / CREATE_NO_WINDOW flags passed to subprocess on Windows.
+Fix: Added _no_window_kwargs() to checksum_utils.py and _subprocess_flags() to platform_utils.py. compute_shntool now passes **_no_window_kwargs() to subprocess.run.
+
+---
+
+BUG-019: shntool unavailable on Windows with no user guidance (WIN-08)
+Status: Fixed
+File(s): backend/checksum_utils.py, gui/verify_tab.py
+Reported: 2026-05-12
+Fixed: 2026-05-12
+Description: On Windows, shutil.which('shntool') returns None and SHN folders report INCOMPLETE with no instruction on how to fix it.
+Root cause: shntool is a Linux binary; no WSL detection or Windows-specific guidance existed.
+Fix: Added _find_shntool() that auto-detects shntool via WSL on Windows. Added _get_shntool_cmd() cache. compute_shntool converts Windows paths to WSL /mnt/ paths. verify_tab shntool_missing message now shows Windows-specific WSL install instructions.
+
+---
+
+BUG-018: Paths > 260 chars silently fail on Windows (WIN-09)
+Status: Fixed
+File(s): backend/paths.py, backend/checksum_utils.py, backend/db.py, backend/scraper.py
+Reported: 2026-05-12
+Fixed: 2026-05-12
+Description: Python on Windows raises FileNotFoundError for paths exceeding MAX_PATH (260 chars) unless the \\?\ long-path prefix is used.
+Root cause: No long-path prefix applied to file I/O operations.
+Fix: Added to_long_path() to paths.py. Applied in compute_md5, compute_ffp (checksum_utils), get_connection (db), and lb_dir/local_page construction (scraper). Added data-dir length warning in ensure_data_dirs().
+
+---
+
+BUG-017: Font-family hardcoded to Segoe UI — layout differs on Linux (WIN-10)
+Status: Fixed
+File(s): gui/styles.py
+Reported: 2026-05-12
+Fixed: 2026-05-12
+Description: Stylesheet hardcoded 'Segoe UI, Arial, sans-serif'. On Linux this falls back to Arial or generic sans-serif, causing minor layout differences.
+Root cause: No platform-aware font selection.
+Fix: Added _platform_font_stack() helper. Windows uses Segoe UI; macOS uses -apple-system; Linux uses Ubuntu/Cantarell/DejaVu Sans.
+
+---
+
+BUG-016: QSettings writes to Windows registry — not portable (WIN-11)
+Status: Fixed
+File(s): gui/main_window.py
+Reported: 2026-05-12
+Fixed: 2026-05-12
+Description: QSettings(APP_NAME, APP_NAME) stores geometry in HKCU\Software\LosslessBobLookup on Windows, breaking portable/USB installs and leaving registry debris after uninstall.
+Root cause: Default QSettings backend uses the registry on Windows.
+Fix: Replaced with QSettings(path, QSettings.Format.IniFormat) pointing to data/settings.ini. Window geometry now stored as a plain text INI file alongside the database.
+
+---
+
 BUG-015: xdg-open hardcoded in collection_tab.py — crashes on Windows (WIN-03)
 Status: Fixed
 File(s): gui/collection_tab.py:792, gui/attachments_tab.py:206, gui/setup_tab.py:454,509

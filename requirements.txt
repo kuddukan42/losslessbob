@@ -12,7 +12,6 @@ PyQt6-WebEngine==6.7.0
 # File watching
 watchdog==4.0.1
 
-# Production WSGI server (optional, for non-dev use)
 waitress==3.0.0
 
 # Packaging (run separately, not imported)

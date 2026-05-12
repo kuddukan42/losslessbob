@@ -108,10 +108,11 @@ class DropFolderListWidget(QListWidget):
 
     def dropEvent(self, event):
         event.acceptProposedAction()
+        from gui.platform_utils import url_to_local_path
         folders = []
         seen = set()
         for url in event.mimeData().urls():
-            path = Path(url.toLocalFile())
+            path = url_to_local_path(url)
             folder = str(path if path.is_dir() else path.parent)
             if folder not in seen:
                 seen.add(folder)
@@ -379,7 +380,16 @@ class VerifyTab(QWidget):
         n_issue = len(results) - n_pass
         msg = f"Verified {len(results)} folder(s): {n_pass} pass, {n_issue} with issues."
         if any(r.get("status") == "shntool_missing" for r in results):
-            msg += "\nshntool not found — install with: sudo apt install shntool"
+            import sys as _sys
+            if _sys.platform == "win32":
+                msg += (
+                    "\nshntool not found on Windows. Options:\n"
+                    "  1. Install WSL: wsl --install (then: wsl sudo apt install shntool)\n"
+                    "  2. SHN MD5 checksums can still be verified; "
+                    "only shntool hashes require it."
+                )
+            else:
+                msg += "\nshntool not found — install with: sudo apt install shntool"
         self.status_label.setText(msg)
 
     # ── Generate ─────────────────────────────────────────────────────────────

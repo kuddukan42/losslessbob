@@ -44,47 +44,58 @@ class FileEventHandler(FileSystemEventHandler):
         path = Path(event.src_path)
         if path.suffix.lower() != ".txt":
             return
-
-        # Debounce: wait 2s then check hash
-        def delayed():
-            time.sleep(2)
-            stored_hash = get_meta("import_hash", self.db_path)
-            try:
-                current_hash = md5_file(path)
-            except Exception:
-                return
-            if current_hash == stored_hash:
-                return
-            _notify(f"New data file detected: {path.name}. Starting import...")
-
-            def do_import():
-                try:
-                    result = run_import(path, progress_callback=_notify, db_path=self.db_path)
-                    if result.get("skipped"):
-                        _notify("Import skipped (no changes).")
-                    else:
-                        _notify(f"Import complete: {result['new_lb_count']} new LB entries.")
-                except Exception as e:
-                    _notify(f"Import error: {e}")
-
-            t = threading.Thread(target=do_import, daemon=True)
-            t.start()
+        name = path.name
+        if name.startswith('.') or name.lower() in ('thumbs.db', 'desktop.ini'):
+            return
 
         key = str(path)
         if key in self._pending:
             return
         self._pending[key] = True
-        t = threading.Thread(target=delayed, daemon=True)
-        t.start()
+
+        def delayed():
+            try:
+                time.sleep(2)
+                stored_hash = get_meta("import_hash", self.db_path)
+                try:
+                    current_hash = md5_file(path)
+                except Exception:
+                    return
+                if current_hash == stored_hash:
+                    return
+                _notify(f"New data file detected: {path.name}. Starting import...")
+
+                def do_import():
+                    try:
+                        result = run_import(path, progress_callback=_notify, db_path=self.db_path)
+                        if result.get("skipped"):
+                            _notify("Import skipped (no changes).")
+                        else:
+                            _notify(f"Import complete: {result['new_lb_count']} new LB entries.")
+                    except Exception as e:
+                        _notify(f"Import error: {e}")
+
+                threading.Thread(target=do_import, daemon=True).start()
+            finally:
+                self._pending.pop(key, None)
+
+        threading.Thread(target=delayed, daemon=True).start()
 
 
 def start_file_watcher(db_path=None):
     global _observer
     if _observer and _observer.is_alive():
         return
-
+    import sys as _sys
     handler = FileEventHandler(db_path=db_path)
-    _observer = Observer()
+    if _sys.platform == "win32":
+        try:
+            from watchdog.observers.winapi import WindowsApiObserver
+            _observer = WindowsApiObserver()
+        except ImportError:
+            _observer = Observer()
+    else:
+        _observer = Observer()
     _observer.schedule(handler, str(DATA_DIR), recursive=False)
     _observer.daemon = True
     _observer.start()

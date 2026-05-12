@@ -1,4 +1,3 @@
-import os
 import re
 import shutil
 import webbrowser
@@ -299,23 +298,47 @@ class RenameTab(QWidget):
         for idx, row in to_rename:
             src, proposed_dst = row[1], row[2]
             new_name = Path(proposed_dst).name
-            processed_dir = os.path.join(str(Path(src).parent), "0. Processed")
-            final_dst = os.path.join(processed_dir, new_name)
-            if src == final_dst:
-                self.model.update_row_after_rename(idx, final_dst)
+            processed_dir = Path(src).parent / "0. Processed"
+            final_dst = processed_dir / new_name
+            if str(src) == str(final_dst):
+                self.model.update_row_after_rename(idx, str(final_dst))
                 done += 1
                 continue
+            illegal = set('<>:"/\\|?*')
+            if any(c in illegal for c in new_name):
+                errors.append(f"{Path(src).name}: proposed name contains illegal characters")
+                continue
             try:
-                os.makedirs(processed_dir, exist_ok=True)
-                shutil.move(src, final_dst)
-                self.model.update_row_after_rename(idx, final_dst)
+                processed_dir.mkdir(parents=True, exist_ok=True)
+            except OSError as e:
+                errors.append(f"Cannot create '0. Processed': {e}")
+                continue
+            try:
+                shutil.move(str(src), str(final_dst))
+                self.model.update_row_after_rename(idx, str(final_dst))
                 done += 1
-            except Exception as e:
+            except PermissionError:
+                errors.append(
+                    f"{Path(src).name}: Permission denied. Close any programs "
+                    "that may have files in this folder open (Explorer, media "
+                    "player, antivirus) and try again."
+                )
+            except FileExistsError:
+                errors.append(
+                    f"{Path(src).name}: A folder named '{new_name}' already "
+                    "exists in '0. Processed'."
+                )
+            except OSError as e:
                 errors.append(f"{Path(src).name}: {e}")
 
         msg = f"Renamed {done} folder(s)."
         if errors:
             msg += f" {len(errors)} error(s): " + "; ".join(errors[:3])
+            if any("Permission denied" in e for e in errors):
+                msg += (
+                    "\n\nTip (Windows): click somewhere else in Explorer to "
+                    "deselect the folder, then retry."
+                )
         self.status_label.setText(msg)
 
     def _on_strip_wrong_lb(self):

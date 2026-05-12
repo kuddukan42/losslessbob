@@ -1,4 +1,15 @@
+import sys as _sys
+
 from PyQt6.QtGui import QColor
+
+
+def _platform_font_stack() -> str:
+    if _sys.platform == "win32":
+        return "Segoe UI, Arial, sans-serif"
+    elif _sys.platform == "darwin":
+        return "-apple-system, Helvetica Neue, Arial, sans-serif"
+    else:
+        return "Ubuntu, Cantarell, DejaVu Sans, Arial, sans-serif"
 
 ROW_MATCHED = QColor("#90EE90")
 ROW_NOT_FOUND = QColor("#FFA07A")
@@ -19,7 +30,7 @@ def build_stylesheet(t):
 QMainWindow, QWidget {{
     background-color: {t['app_bg']};
     color: {t['app_fg']};
-    font-family: Segoe UI, Arial, sans-serif;
+    font-family: {_platform_font_stack()};
     font-size: 9pt;
 }}
 QTabWidget::pane {{

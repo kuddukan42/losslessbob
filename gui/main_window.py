@@ -1,3 +1,5 @@
+import threading
+
 import requests
 from PyQt6.QtCore import QSettings, QSize, QPoint, QTimer
 from PyQt6.QtGui import QAction
@@ -5,17 +7,9 @@ from PyQt6.QtWidgets import (
     QMainWindow, QTabWidget, QStatusBar, QMessageBox,
 )
 
-from gui.lookup_tab import LookupTab
-from gui.rename_tab import RenameTab
-from gui.search_tab import SearchTab
-from gui.collection_tab import CollectionTab
-from gui.attachments_tab import AttachmentsTab
-from gui.setup_tab import SetupTab
-from gui.theme_tab import ThemeTab
-from gui.verify_tab import VerifyTab
-from gui.lbdir_tab import LbdirTab
 import gui.styles as styles
 from gui.styles import apply_panel_shadow
+from backend.paths import DATA_DIR
 
 APP_NAME = "LosslessBobLookup"
 VERSION = "1.0.0"
@@ -29,7 +23,8 @@ class MainWindow(QMainWindow):
         self.setMinimumSize(800, 500)
         self.setStyleSheet(styles.MAIN_STYLESHEET)
 
-        self._settings = QSettings(APP_NAME, APP_NAME)
+        _settings_path = str(DATA_DIR / "settings.ini")
+        self._settings = QSettings(_settings_path, QSettings.Format.IniFormat)
 
         self._build_menu()
         self._build_tabs()
@@ -44,7 +39,7 @@ class MainWindow(QMainWindow):
         self._status_timer = QTimer(self)
         self._status_timer.timeout.connect(self._refresh_status)
         self._status_timer.start(10000)
-        QTimer.singleShot(500, self._refresh_status)
+        QTimer.singleShot(3000, self._refresh_status)
 
     def _build_menu(self):
         menubar = self.menuBar()
@@ -82,6 +77,16 @@ class MainWindow(QMainWindow):
         help_menu.addAction(about_act)
 
     def _build_tabs(self):
+        from gui.lookup_tab import LookupTab
+        from gui.rename_tab import RenameTab
+        from gui.verify_tab import VerifyTab
+        from gui.lbdir_tab import LbdirTab
+        from gui.search_tab import SearchTab
+        from gui.collection_tab import CollectionTab
+        from gui.attachments_tab import AttachmentsTab
+        from gui.setup_tab import SetupTab
+        from gui.theme_tab import ThemeTab
+
         self.tabs = QTabWidget()
         self.setCentralWidget(self.tabs)
 
@@ -153,19 +158,23 @@ class MainWindow(QMainWindow):
         super().closeEvent(event)
 
     def _refresh_status(self):
-        try:
-            resp = requests.get(f"http://127.0.0.1:{self.flask_port}/api/db/stats", timeout=3)
-            s = resp.json()
-            lb = s.get("latest_lb", "?")
-            checksums = s.get("total_checksums", 0)
-            last_import = s.get("last_import", "Never")
-            if last_import and len(str(last_import)) > 10:
-                last_import = str(last_import)[:10]
-            self.status_bar.showMessage(
-                f"DB: LB-{lb}  |  Checksums: {checksums:,}  |  Last import: {last_import}"
-            )
-        except Exception:
-            self.status_bar.showMessage("Database not connected.")
+        def _fetch():
+            try:
+                resp = requests.get(
+                    f"http://127.0.0.1:{self.flask_port}/api/db/stats", timeout=5
+                )
+                s = resp.json()
+                lb = s.get("latest_lb", "?")
+                checksums = s.get("total_checksums", 0)
+                last_import = s.get("last_import", "Never")
+                if last_import and len(str(last_import)) > 10:
+                    last_import = str(last_import)[:10]
+                msg = f"DB: LB-{lb}  |  Checksums: {checksums:,}  |  Last import: {last_import}"
+            except Exception:
+                msg = "Database not connected."
+            QTimer.singleShot(0, lambda: self.status_bar.showMessage(msg))
+
+        threading.Thread(target=_fetch, daemon=True).start()
 
     def _on_theme_applied(self):
         self.setStyleSheet(styles.MAIN_STYLESHEET)

@@ -101,10 +101,11 @@ class DropFolderListWidget(QListWidget):
 
     def dropEvent(self, event):
         event.acceptProposedAction()
+        from gui.platform_utils import url_to_local_path
         folders = []
         seen = set()
         for url in event.mimeData().urls():
-            path = Path(url.toLocalFile())
+            path = url_to_local_path(url)
             folder = str(path if path.is_dir() else path.parent)
             if folder not in seen:
                 seen.add(folder)

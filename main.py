@@ -48,8 +48,26 @@ def main() -> None:
     flask_thread = threading.Thread(target=start_flask, daemon=True)
     flask_thread.start()
 
+    qt_app = QApplication(sys.argv)
+    qt_app.setStyle("Fusion")
+    qt_app.setApplicationName("LosslessBob Checksum Lookup")
+
+    from PyQt6.QtWidgets import QSplashScreen
+    from PyQt6.QtGui import QPixmap, QColor
+    from PyQt6.QtCore import Qt
+
+    pix = QPixmap(400, 120)
+    pix.fill(QColor("#1F4E79"))
+    splash = QSplashScreen(pix, Qt.WindowType.WindowStaysOnTopHint)
+    splash.showMessage(
+        "  LosslessBob — starting…",
+        Qt.AlignmentFlag.AlignBottom | Qt.AlignmentFlag.AlignLeft,
+        QColor("#FFFFFF"),
+    )
+    splash.show()
+    qt_app.processEvents()
+
     if not _wait_for_port("127.0.0.1", FLASK_PORT, timeout=15.0):
-        QApplication(sys.argv)
         from PyQt6.QtWidgets import QMessageBox
         QMessageBox.critical(
             None, "Startup Error",
@@ -61,12 +79,9 @@ def main() -> None:
 
     from gui.main_window import MainWindow
 
-    qt_app = QApplication(sys.argv)
-    qt_app.setStyle("Fusion")
-    qt_app.setApplicationName("LosslessBob Checksum Lookup")
-
     window = MainWindow(flask_port=FLASK_PORT, ignore_saved_pos=ignore_pos)
     window.show()
+    splash.finish(window)
     sys.exit(qt_app.exec())
 
 

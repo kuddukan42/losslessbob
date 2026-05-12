@@ -36,6 +36,8 @@ a = Analysis(
         'bs4.builder._htmlparser',
         # Waitress WSGI
         'waitress',
+        'waitress.task',
+        'waitress.server',
         # Watchdog — platform-specific observers
         'watchdog',
         'watchdog.observers',

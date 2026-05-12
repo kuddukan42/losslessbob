@@ -5,7 +5,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from backend.db import get_connection, DB_PATH, insert_missing_entry
-from backend.paths import ATTACHMENTS_DIR, PAGES_DIR
+from backend.paths import ATTACHMENTS_DIR, PAGES_DIR, to_long_path
 
 BASE_URL = "http://www.losslessbob.wonderingwhattochoose.com"
 DETAIL_URL = BASE_URL + "/detail/LB-{n}.html"
@@ -59,7 +59,7 @@ def _fetch(url, retries=3, delay=1.5):
 def scrape_entry(lb_number, force=False, download_files=True, use_local_pages=False, db_path=None):
     db_path = db_path or DB_PATH
     lb_id = f"{lb_number:05d}"
-    lb_dir = ATTACHMENTS_DIR / f"LB-{lb_id}"
+    lb_dir = to_long_path(ATTACHMENTS_DIR / f"LB-{lb_id}")
 
     if not force:
         with get_connection(db_path) as conn:
@@ -87,7 +87,7 @@ def scrape_entry(lb_number, force=False, download_files=True, use_local_pages=Fa
                 if pending == 0:
                     return {"skipped": True}
 
-    local_page = PAGES_DIR / f"LB-{lb_id}.html"
+    local_page = to_long_path(PAGES_DIR / f"LB-{lb_id}.html")
     if use_local_pages and local_page.exists():
         html_text = local_page.read_text(encoding="utf-8", errors="replace")
         used_local = True
