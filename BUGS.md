@@ -1,3 +1,14 @@
+BUG-033: Spectrogram panning overshoots then snaps back
+Status: Fixed
+File(s): gui/spectrogram_tab.py:87,100,101
+Reported: 2026-05-13
+Fixed: 2026-05-13
+Description: Small drags caused the view to pan too far then immediately correct, producing jerky movement.
+Root cause: Pan tracking used event.position() (label-local coordinates). After each scroll bar update Qt moves the label widget, invalidating the stored _pan_start — next delta was computed against a stale coordinate in a different frame, causing equal-and-opposite overshoot.
+Fix: Changed _pan_start capture and delta calculation to use event.globalPosition() (screen coordinates), which are unaffected by the widget's scroll position.
+
+---
+
 BUG-032: "Scrape All Missing" leaves gap LB numbers (not in checksums) completely absent from the database
 Status: Fixed
 File(s): backend/app.py:303, backend/db.py:421

@@ -84,7 +84,7 @@ class _ImageViewer(QScrollArea):
             t = event.type()
             if t == QEvent.Type.MouseButtonPress and event.button() == Qt.MouseButton.LeftButton:
                 self._panning = True
-                self._pan_start = event.position()
+                self._pan_start = event.globalPosition()
                 self._pan_remainder = QPointF(0.0, 0.0)
                 self._label.setCursor(Qt.CursorShape.ClosedHandCursor)
                 return True
@@ -97,8 +97,8 @@ class _ImageViewer(QScrollArea):
                 )
                 return True
             elif t == QEvent.Type.MouseMove and self._panning and self._pan_start is not None:
-                delta = event.position() - self._pan_start
-                self._pan_start = event.position()
+                delta = event.globalPosition() - self._pan_start
+                self._pan_start = event.globalPosition()
                 # Accumulate sub-pixel remainder to avoid integer-rounding jitter
                 rx = delta.x() + self._pan_remainder.x()
                 ry = delta.y() + self._pan_remainder.y()
