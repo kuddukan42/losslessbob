@@ -1,7 +1,7 @@
 import threading
 
 import requests
-from PyQt6.QtCore import QSettings, QSize, QPoint, QTimer
+from PyQt6.QtCore import QSettings, QSize, QPoint, QTimer, pyqtSignal
 from PyQt6.QtGui import QAction
 from PyQt6.QtWidgets import (
     QMainWindow, QTabWidget, QStatusBar, QMessageBox,
@@ -16,6 +16,8 @@ VERSION = "1.0.0"
 
 
 class MainWindow(QMainWindow):
+    _status_message = pyqtSignal(str)
+
     def __init__(self, flask_port, ignore_saved_pos=False, parent=None):
         super().__init__(parent)
         self.flask_port = flask_port
@@ -35,6 +37,8 @@ class MainWindow(QMainWindow):
             self._restore_geometry()
         else:
             self.resize(1100, 750)
+
+        self._status_message.connect(self.status_bar.showMessage)
 
         self._status_timer = QTimer(self)
         self._status_timer.timeout.connect(self._refresh_status)
@@ -172,7 +176,7 @@ class MainWindow(QMainWindow):
                 msg = f"DB: LB-{lb}  |  Checksums: {checksums:,}  |  Last import: {last_import}"
             except Exception:
                 msg = "Database not connected."
-            QTimer.singleShot(0, lambda: self.status_bar.showMessage(msg))
+            self._status_message.emit(msg)
 
         threading.Thread(target=_fetch, daemon=True).start()
 
