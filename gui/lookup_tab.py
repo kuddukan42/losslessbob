@@ -238,6 +238,13 @@ class LookupTab(QWidget):
         self.add_folders_btn.clicked.connect(self._on_add_folders)
         btn_layout.addWidget(self.add_folders_btn)
 
+        self.scan_tree_btn = QPushButton("Scan Tree...")
+        self.scan_tree_btn.setToolTip(
+            "Recursively find all checksum files under a root directory and run a combined lookup."
+        )
+        self.scan_tree_btn.clicked.connect(self._on_scan_tree)
+        btn_layout.addWidget(self.scan_tree_btn)
+
         self.clear_list_btn = QPushButton("Clear Listbox")
         self.clear_list_btn.clicked.connect(self._on_clear_list)
         btn_layout.addWidget(self.clear_list_btn)
@@ -402,6 +409,31 @@ class LookupTab(QWidget):
         if path:
             self._add_path(path)
             self._refresh_listbox()
+
+    def _on_scan_tree(self):
+        """Recursively scan a directory tree for checksum files and run a combined lookup."""
+        root = QFileDialog.getExistingDirectory(self, "Select Root Directory")
+        if not root:
+            return
+        root_path = Path(root)
+        CHECKSUM_EXTS = {".ffp", ".md5", ".st5", ".sha1", ".shn"}
+        found = []
+        for p in sorted(root_path.rglob("*")):
+            if p.is_file() and p.suffix.lower() in CHECKSUM_EXTS:
+                if "_mychecksums" in p.name.lower() and self._filter_mychecksums:
+                    continue
+                found.append(p)
+        if not found:
+            self.status_label.setText("No checksum files found under selected folder.")
+            return
+        text_parts = []
+        for p in found:
+            try:
+                text_parts.append(p.read_text(errors="replace"))
+            except OSError:
+                pass
+        combined = "\n".join(text_parts)
+        self._run_lookup(combined, source="scan-tree")
 
     def _on_clear_list(self):
         self._all_paths.clear()

@@ -138,9 +138,15 @@ class SetupTab(QWidget):
     def _build_ui(self):
         layout = QVBoxLayout(self)
 
-        # Database section
+        # ── Database group: left = archive controls, right = Data Management ──
         db_group = QGroupBox("Database")
-        db_layout = QVBoxLayout(db_group)
+        db_inner = QHBoxLayout(db_group)
+        db_inner.setSpacing(16)
+
+        # Left panel: archive stats and controls
+        left_panel = QWidget()
+        db_layout = QVBoxLayout(left_panel)
+        db_layout.setContentsMargins(0, 0, 0, 0)
 
         db_sel_row = QHBoxLayout()
         db_sel_row.addWidget(QLabel("Active database:"))
@@ -201,6 +207,56 @@ class SetupTab(QWidget):
         self.import_progress.setObjectName("importProgress")
         self.import_progress.setVisible(False)
         db_layout.addWidget(self.import_progress)
+
+        db_layout.addStretch()
+        db_inner.addWidget(left_panel, stretch=3)
+
+        # Vertical divider
+        from PyQt6.QtWidgets import QFrame
+        div = QFrame()
+        div.setFrameShape(QFrame.Shape.VLine)
+        div.setFrameShadow(QFrame.Shadow.Sunken)
+        db_inner.addWidget(div)
+
+        # Right panel: Data Management
+        right_panel = QWidget()
+        purge_layout = QVBoxLayout(right_panel)
+        purge_layout.setContentsMargins(0, 0, 0, 0)
+
+        purge_layout.addWidget(QLabel(
+            "<b>Data Management</b> — purge operations remove user data only; "
+            "the checksum archive is never affected."
+        ))
+
+        # User-data stats (collection, wishlist, etc.)
+        self.coll_stats_label = QLabel("Loading…")
+        self.coll_stats_label.setStyleSheet("font-size:11px; color:#666;")
+        purge_layout.addWidget(self.coll_stats_label)
+
+        purge_items = [
+            ("My Collection (+ ratings, alerts)", "collection"),
+            ("Wishlist",                          "wishlist"),
+            ("Personal Ratings and Tags only",    "personal_meta"),
+            ("Watchdog Alerts",                   "integrity_events"),
+            ("Scrape Diff Changelog",             "entry_changes"),
+        ]
+        purge_grid = QGridLayout()
+        purge_grid.setVerticalSpacing(4)
+        for i, (label, scope) in enumerate(purge_items):
+            lbl = QLabel(label)
+            btn = QPushButton("Purge…")
+            btn.setFixedWidth(80)
+            btn.clicked.connect(
+                lambda checked=False, s=scope, l=label: self._on_purge(s, l)
+            )
+            purge_grid.addWidget(lbl, i, 0)
+            purge_grid.addWidget(btn, i, 1)
+
+        purge_layout.addLayout(purge_grid)
+        self.purge_status_label = QLabel("")
+        purge_layout.addWidget(self.purge_status_label)
+        purge_layout.addStretch()
+        db_inner.addWidget(right_panel, stretch=2)
 
         layout.addWidget(db_group)
 
@@ -395,6 +451,28 @@ class SetupTab(QWidget):
             )
         except Exception:
             self.db_stats_label.setText("Could not load database stats.")
+        self._refresh_collection_stats()
+
+    def _refresh_collection_stats(self):
+        _TABLE_LABELS = {
+            "my_collection":   "My Collection",
+            "my_wishlist":     "Wishlist",
+            "collection_meta": "Personal Ratings",
+            "integrity_events":"Watchdog Events",
+            "entry_changes":   "Scrape Diff Rows",
+        }
+        try:
+            resp = requests.get(
+                f"http://127.0.0.1:{self.flask_port}/api/dbedit/tables", timeout=5
+            )
+            tables = {t["name"]: t["row_count"] for t in resp.json()}
+            parts = []
+            for key, label in _TABLE_LABELS.items():
+                count = tables.get(key, 0)
+                parts.append(f"{label}: {count:,}")
+            self.coll_stats_label.setText("  |  ".join(parts))
+        except Exception:
+            self.coll_stats_label.setText("Could not load collection stats.")
 
     def _on_db_changed(self, index):
         pass
@@ -586,6 +664,26 @@ class SetupTab(QWidget):
             open_file(_LOG_FILE)
         except Exception:
             pass
+
+    def _on_purge(self, scope: str, label: str) -> None:
+        if QMessageBox.question(
+            self, "Confirm Purge",
+            f"Permanently delete all: {label}\n\nThis cannot be undone.",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+        ) != QMessageBox.StandardButton.Yes:
+            return
+        try:
+            resp = requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/collection/purge",
+                json={"scope": scope}, timeout=15,
+            ).json()
+            self.purge_status_label.setText(
+                f"Purged: {label}" if resp.get("ok") else f"Error: {resp.get('error')}"
+            )
+            self.stats_changed.emit()
+            self._refresh_collection_stats()
+        except Exception as e:
+            self.purge_status_label.setText(f"Error: {e}")
 
     def _on_scrape_single(self):
         text = self.single_lb_input.text().strip()

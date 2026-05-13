@@ -98,6 +98,16 @@ CREATE TABLE IF NOT EXISTS my_wishlist (
 );
 CREATE INDEX IF NOT EXISTS idx_wishlist_lb ON my_wishlist(lb_number);
 
+CREATE TABLE IF NOT EXISTS integrity_events (
+    id          INTEGER PRIMARY KEY AUTOINCREMENT,
+    lb_number   INTEGER,
+    disk_path   TEXT,
+    event_type  TEXT,
+    detail      TEXT,
+    occurred_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    acknowledged INTEGER DEFAULT 0
+);
+
 CREATE VIRTUAL TABLE IF NOT EXISTS entries_fts USING fts5(
     description,
     setlist,
@@ -739,3 +749,58 @@ def get_collection_duplicates(db_path=None) -> list:
                 "unowned": [dict(r) for r in all_lbs if not r["owned"]],
             })
     return results
+
+
+# ── FEAT-13: Granular Collection Data Management ──────────────────────────────
+
+def purge_collection(db_path=None) -> None:
+    """Delete all rows from collection_meta, integrity_events, and my_collection."""
+    conn = get_connection(db_path)
+    conn.execute("DELETE FROM collection_meta")
+    conn.execute("DELETE FROM integrity_events")
+    conn.execute("DELETE FROM my_collection")
+    conn.commit()
+
+
+def purge_wishlist(db_path=None) -> None:
+    """Delete all rows from my_wishlist."""
+    conn = get_connection(db_path)
+    conn.execute("DELETE FROM my_wishlist")
+    conn.commit()
+
+
+def purge_collection_meta(db_path=None) -> None:
+    """Delete all personal ratings and tags (collection_meta only)."""
+    conn = get_connection(db_path)
+    conn.execute("DELETE FROM collection_meta")
+    conn.commit()
+
+
+def purge_integrity_events(db_path=None) -> None:
+    """Delete all watchdog integrity events."""
+    conn = get_connection(db_path)
+    conn.execute("DELETE FROM integrity_events")
+    conn.commit()
+
+
+def purge_entry_changes(db_path=None) -> None:
+    """Delete all scrape diff changelog rows from entry_changes."""
+    conn = get_connection(db_path)
+    conn.execute("DELETE FROM entry_changes")
+    conn.commit()
+
+
+def delete_collection_entries(lb_numbers: list, db_path=None) -> int:
+    """Remove specific LB entries from my_collection plus their associated meta/events.
+
+    Returns the number of rows deleted from my_collection.
+    """
+    if not lb_numbers:
+        return 0
+    conn = get_connection(db_path)
+    ph = ",".join("?" * len(lb_numbers))
+    conn.execute(f"DELETE FROM collection_meta WHERE lb_number IN ({ph})", lb_numbers)
+    conn.execute(f"DELETE FROM integrity_events WHERE lb_number IN ({ph})", lb_numbers)
+    conn.execute(f"DELETE FROM my_collection WHERE lb_number IN ({ph})", lb_numbers)
+    conn.commit()
+    return conn.execute("SELECT changes()").fetchone()[0]

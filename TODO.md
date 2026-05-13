@@ -43,3 +43,21 @@ Priority: Low
 Status: Open
 Added: 2026-05-12
 Description: With the persistent thread-local connection pool (DB-02), the connection to temp_import.db is never closed after the file is deleted. On the next import in the same thread, get_connection(temp_db_path) returns the stale handle. Workaround: delete the cached entry from _local.connections for the temp path after unlink, or use a separate in-memory SQLite for temp import.
+
+---
+
+TODO-007: FEAT-13 — Granular Collection Data Management
+Priority: High
+Status: Done
+Added: 2026-05-13
+Closed: 2026-05-13
+Description: Add fine-grained purge control for user data (collection, wishlist, personal meta, integrity events, entry changes). Bulk delete from collection tab. Select All/None buttons in My Collection.
+
+---
+
+TODO-008: FEAT-14 — Database Editor Tab
+Priority: High
+Status: Done
+Added: 2026-05-13
+Closed: 2026-05-13
+Description: Add DB Editor tab (gui/dbedit_tab.py) with table browser, paginated row viewer, inline cell editing, row deletion, CSV export. Backend routes: GET /api/dbedit/tables, schema, rows, PATCH row, DELETE rows, GET export.

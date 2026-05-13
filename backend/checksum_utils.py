@@ -455,10 +455,10 @@ def verify_folder(folder_path):
 
     if not shntool_ok and mode == 'shn' and has_shntool_entries:
         status = 'shntool_missing'
-    elif missing_types:
-        status = 'incomplete'
-    elif n_mismatch > 0 or n_missing > 0:
+    elif n_mismatch > 0:
         status = 'fail'
+    elif n_missing > 0:
+        status = 'incomplete'
     else:
         status = 'pass'
 
@@ -576,10 +576,10 @@ def verify_folder_lbdir(folder_path, lbdir_path):
 
     if not shntool_ok and mode == 'shn' and shn_map:
         status = 'shntool_missing'
-    elif missing_types:
-        status = 'incomplete'
-    elif n_mismatch > 0 or n_missing > 0:
+    elif n_mismatch > 0:
         status = 'fail'
+    elif n_missing > 0:
+        status = 'incomplete'
     else:
         status = 'pass'
 

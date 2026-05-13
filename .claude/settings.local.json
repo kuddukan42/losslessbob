@@ -50,7 +50,12 @@
       "Bash(sed -n '418,460p' /home/tjenkins/Documents/losslessbob/gui/lookup_tab.py)",
       "Bash(sed -n '580,630p' /home/tjenkins/Documents/losslessbob/gui/lookup_tab.py)",
       "Bash(python -c \"import backend.sox_utils; print\\('sox_utils OK'\\)\")",
-      "Bash(python -c \"from gui.spectrogram_tab import SpectrogramTab; print\\('spectrogram_tab OK'\\)\")"
+      "Bash(python -c \"from gui.spectrogram_tab import SpectrogramTab; print\\('spectrogram_tab OK'\\)\")",
+      "Bash(python -c \"from backend.db import init_db; print\\('db import ok'\\)\")",
+      "Bash(python -c \"from backend.app import create_app; print\\('app import ok'\\)\")",
+      "Bash(python -c \"from gui.dbedit_tab import DbEditTab; print\\('dbedit_tab import ok'\\)\")",
+      "Bash(python -c \"import ast, pathlib; ast.parse\\(pathlib.Path\\('gui/dbedit_tab.py'\\).read_text\\(\\)\\); print\\('syntax ok'\\)\")",
+      "Bash(python -c \"import ast, pathlib; ast.parse\\(pathlib.Path\\('gui/setup_tab.py'\\).read_text\\(\\)\\); print\\('ok'\\)\")"
     ],
     "additionalDirectories": [
       "/home/tjenkins/.ssh"

@@ -418,6 +418,11 @@ class CollectionTab(QWidget):
         scan_btn.clicked.connect(self._on_scan_directory)
         btn_row.addWidget(scan_btn)
 
+        scan_tree_btn = QPushButton("Scan Tree…")
+        scan_tree_btn.setToolTip("Recursively find LB-numbered folders at any depth under a root directory.")
+        scan_tree_btn.clicked.connect(self._on_scan_tree)
+        btn_row.addWidget(scan_tree_btn)
+
         self.update_loc_btn = QPushButton("Update Location")
         self.update_loc_btn.clicked.connect(self._on_update_location)
         btn_row.addWidget(self.update_loc_btn)
@@ -425,6 +430,14 @@ class CollectionTab(QWidget):
         self.remove_btn = QPushButton("Remove")
         self.remove_btn.clicked.connect(self._on_remove)
         btn_row.addWidget(self.remove_btn)
+
+        select_all_btn = QPushButton("Select All")
+        select_all_btn.clicked.connect(lambda: self.coll_view.selectAll())
+        btn_row.addWidget(select_all_btn)
+
+        select_none_btn = QPushButton("Select None")
+        select_none_btn.clicked.connect(lambda: self.coll_view.clearSelection())
+        btn_row.addWidget(select_none_btn)
 
         refresh_btn = QPushButton("Refresh")
         refresh_btn.clicked.connect(self.refresh_collection)
@@ -944,6 +957,48 @@ class CollectionTab(QWidget):
 
         self._bulk_add(entries, skipped)
 
+    def _on_scan_tree(self):
+        """Recursively scan all subdirectories for LB-numbered folders and bulk-add them."""
+        root = QFileDialog.getExistingDirectory(self, "Select Root Directory to Scan")
+        if not root:
+            return
+        root_path = Path(root)
+        by_lb: dict = {}
+        skipped = 0
+        for child in root_path.rglob("*"):
+            if not child.is_dir():
+                continue
+            lb = _extract_lb(child.name)
+            if lb is not None:
+                depth = len(child.relative_to(root_path).parts)
+                if lb not in by_lb or depth < by_lb[lb][0]:
+                    by_lb[lb] = (depth, child.name, str(child))
+            else:
+                skipped += 1
+
+        if not by_lb:
+            QMessageBox.information(
+                self, "Scan Tree",
+                f"No folders with LB numbers found.\n{skipped} folder(s) skipped."
+            )
+            return
+
+        entries = [(lb, name, path) for lb, (_, name, path) in sorted(by_lb.items())]
+
+        try:
+            owned_resp = requests.get(
+                f"http://127.0.0.1:{self.flask_port}/api/collection/lb_numbers", timeout=10
+            )
+            owned_set = set(owned_resp.json())
+        except Exception:
+            owned_set = set()
+
+        dlg = _ScanPreviewDialog(entries, owned_set, parent=self)
+        if dlg.exec() != QDialog.DialogCode.Accepted:
+            return
+
+        self._bulk_add(entries, skipped)
+
     def _bulk_add(self, entries, skipped_count):
         flask_port = self.flask_port
 
@@ -1044,22 +1099,33 @@ class CollectionTab(QWidget):
         if not rows:
             self.coll_status.setText("Select one or more rows to remove.")
             return
-        confirm = QMessageBox.question(
+        lb_numbers = [r["lb_number"] for r in rows]
+        if QMessageBox.question(
             self, "Confirm Remove",
-            f"Remove {len(rows)} item(s) from My Collection?\n(Files are not deleted.)",
+            f"Remove {len(lb_numbers)} item(s) from My Collection?\n\n"
+            "Personal ratings, tags, and watchdog alerts for these entries "
+            "will also be removed. Audio files on disk are NOT deleted.",
             QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
-        )
-        if confirm != QMessageBox.StandardButton.Yes:
+        ) != QMessageBox.StandardButton.Yes:
             return
-        for row in rows:
-            lb = row["lb_number"]
-            w = _ApiWorker(lambda lb=lb: requests.delete(
-                f"http://127.0.0.1:{self.flask_port}/api/collection/{lb}", timeout=10
-            ).json())
-            self._workers.append(w)
-            w.start()
-        self.coll_status.setText(f"Removed {len(rows)} item(s).")
-        self.refresh_collection()
+
+        def call():
+            return requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/collection/delete_bulk",
+                json={"lb_numbers": lb_numbers}, timeout=30,
+            ).json()
+
+        w = _ApiWorker(call)
+        w.finished.connect(lambda r: (
+            self.coll_status.setText(
+                f"Removed {r.get('deleted', 0)} item(s)."
+                if not r.get("error") else f"Error: {r['error']}"
+            ),
+            self.refresh_collection(),
+        ))
+        w.error.connect(lambda e: self.coll_status.setText(f"Error: {e}"))
+        self._workers.append(w)
+        w.start()
 
     # ── Context menu ──────────────────────────────────────────────────────────
 

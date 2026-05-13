@@ -114,9 +114,12 @@ class MainWindow(QMainWindow):
         self.tabs.addTab(self.collection_tab, "My Collection")
         from gui.spectrogram_tab import SpectrogramTab
         self.spectrogram_tab = SpectrogramTab(self.flask_port)
+        from gui.dbedit_tab import DbEditTab
+        self.dbedit_tab = DbEditTab(self.flask_port)
 
         self.tabs.addTab(self.attachments_tab, "Attachments")
         self.tabs.addTab(self.spectrogram_tab, "Spectrograms")
+        self.tabs.addTab(self.dbedit_tab, "DB Editor")
         self.tabs.addTab(self.setup_tab, "Setup")
         self.tabs.addTab(self.theme_tab, "Themes")
 
@@ -193,6 +196,8 @@ class MainWindow(QMainWindow):
         if widget is self.setup_tab and not getattr(self.setup_tab, "_sox_checked", False):
             self.setup_tab._sox_checked = True
             self.setup_tab._check_sox()
+        if widget is self.dbedit_tab and self.dbedit_tab.table_list.count() == 0:
+            self.dbedit_tab.load_tables()
 
     def _on_theme_applied(self):
         self.setStyleSheet(styles.MAIN_STYLESHEET)

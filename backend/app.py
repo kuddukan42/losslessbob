@@ -14,6 +14,11 @@ from backend.paths import ATTACHMENTS_DIR
 
 _scrape_thread = None
 
+# ── FEAT-14: DB Editor table classification ───────────────────────────────────
+_DBEDIT_READONLY = frozenset({"entries_fts"})
+_DBEDIT_AUDIT    = frozenset({"entry_changes", "integrity_events"})
+_DBEDIT_WARN     = frozenset({"checksums", "entries", "entry_files"})
+
 _spectro_state = {
     "status":    "idle",
     "current":   "",
@@ -351,6 +356,39 @@ def create_app():
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
+    # ── FEAT-13: Granular Collection Data Management ─────────────────────────
+
+    @app.route("/api/collection/purge", methods=["POST"])
+    def collection_purge():
+        try:
+            scope = (request.get_json() or {}).get("scope", "collection")
+            dispatch = {
+                "collection":       database.purge_collection,
+                "wishlist":         database.purge_wishlist,
+                "personal_meta":    database.purge_collection_meta,
+                "integrity_events": database.purge_integrity_events,
+                "entry_changes":    database.purge_entry_changes,
+            }
+            if scope not in dispatch:
+                return jsonify({"error": f"Unknown scope: {scope}"}), 400
+            dispatch[scope]()
+            return jsonify({"ok": True, "scope": scope})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/collection/delete_bulk", methods=["POST"])
+    def collection_delete_bulk():
+        try:
+            lb_numbers = (request.get_json() or {}).get("lb_numbers", [])
+            if not lb_numbers:
+                return jsonify({"error": "lb_numbers required"}), 400
+            deleted = database.delete_collection_entries(
+                [int(lb) for lb in lb_numbers]
+            )
+            return jsonify({"ok": True, "deleted": deleted})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
     # ── Scraper Control ──────────────────────────────────────────────────────
 
     @app.route("/api/scrape/start", methods=["POST"])
@@ -643,6 +681,162 @@ def create_app():
             if entries:
                 result[folder] = entries
         return jsonify(result)
+
+    # ── FEAT-14: DB Editor ───────────────────────────────────────────────────
+
+    @app.route("/api/dbedit/tables", methods=["GET"])
+    def dbedit_tables():
+        try:
+            conn = database.get_connection()
+            rows = conn.execute(
+                "SELECT name FROM sqlite_master "
+                "WHERE type IN ('table','view') ORDER BY name"
+            ).fetchall()
+            result = []
+            for r in rows:
+                name = r["name"]
+                if (name.startswith("sqlite_")
+                        or any(name.endswith(sfx) for sfx in
+                               ("_fts_data", "_fts_idx", "_fts_content",
+                                "_fts_docsize", "_fts_config"))):
+                    continue
+                try:
+                    count = conn.execute(
+                        f"SELECT COUNT(*) FROM [{name}]"
+                    ).fetchone()[0]
+                except Exception:
+                    count = -1
+                result.append({
+                    "name":      name,
+                    "row_count": count,
+                    "readonly":  name in _DBEDIT_READONLY,
+                    "audit":     name in _DBEDIT_AUDIT,
+                    "warn":      name in _DBEDIT_WARN,
+                })
+            return jsonify(result)
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/dbedit/table/<name>/schema", methods=["GET"])
+    def dbedit_schema(name):
+        try:
+            conn = database.get_connection()
+            cols = conn.execute(
+                f"PRAGMA table_info([{name}])"
+            ).fetchall()
+            return jsonify([dict(c) for c in cols])
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/dbedit/table/<name>/rows", methods=["GET"])
+    def dbedit_rows(name):
+        try:
+            page     = int(request.args.get("page", 0))
+            limit    = min(int(request.args.get("limit", 100)), 500)
+            search   = request.args.get("search", "").strip()
+            sort_col = request.args.get("sort_col", "")
+            sort_dir = "DESC" if request.args.get("sort_dir", "asc") == "desc" else "ASC"
+            conn     = database.get_connection()
+
+            where, params = "", []
+            if search:
+                text_cols = [
+                    c["name"] for c in
+                    conn.execute(f"PRAGMA table_info([{name}])").fetchall()
+                    if "TEXT" in (c["type"] or "").upper() or not c["type"]
+                ]
+                if text_cols:
+                    clauses = [f"CAST([{c}] AS TEXT) LIKE ?" for c in text_cols]
+                    where   = "WHERE " + " OR ".join(clauses)
+                    params  = [f"%{search}%"] * len(text_cols)
+
+            order = f"ORDER BY [{sort_col}] {sort_dir}" if sort_col else ""
+            total = conn.execute(
+                f"SELECT COUNT(*) FROM [{name}] {where}", params
+            ).fetchone()[0]
+            cur = conn.execute(
+                f"SELECT rowid, * FROM [{name}] {where} {order} LIMIT ? OFFSET ?",
+                params + [limit, page * limit]
+            )
+            rows = cur.fetchall()
+
+            # cur.description is always populated after execute, even for empty result sets
+            cols = ([d[0] for d in cur.description] if cur.description else
+                    ["rowid"] + [c["name"] for c in
+                     conn.execute(f"PRAGMA table_info([{name}])").fetchall()])
+            return jsonify({
+                "columns": cols,
+                "rows":    [list(r) for r in rows],
+                "total":   total,
+                "page":    page,
+                "limit":   limit,
+            })
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/dbedit/table/<name>/row", methods=["PATCH"])
+    def dbedit_update_row(name):
+        if name in _DBEDIT_READONLY or name in _DBEDIT_AUDIT:
+            return jsonify({"error": f"Table {name!r} is not editable"}), 403
+        try:
+            data    = request.get_json() or {}
+            rowid   = data.get("rowid")
+            updates = data.get("updates", {})
+            if rowid is None or not updates:
+                return jsonify({"error": "rowid and updates required"}), 400
+            conn  = database.get_connection()
+            valid = {c["name"] for c in
+                     conn.execute(f"PRAGMA table_info([{name}])").fetchall()}
+            bad = [k for k in updates if k not in valid]
+            if bad:
+                return jsonify({"error": f"Unknown columns: {bad}"}), 400
+            set_clause = ", ".join(f"[{k}]=?" for k in updates)
+            conn.execute(
+                f"UPDATE [{name}] SET {set_clause} WHERE rowid=?",
+                list(updates.values()) + [rowid]
+            )
+            conn.commit()
+            return jsonify({"ok": True,
+                            "affected": conn.execute("SELECT changes()").fetchone()[0]})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/dbedit/table/<name>/rows", methods=["DELETE"])
+    def dbedit_delete_rows(name):
+        if name in _DBEDIT_READONLY:
+            return jsonify({"error": f"Table {name!r} cannot be modified"}), 403
+        try:
+            rowids = (request.get_json() or {}).get("rowids", [])
+            if not rowids:
+                return jsonify({"error": "rowids list required"}), 400
+            conn = database.get_connection()
+            ph   = ",".join("?" * len(rowids))
+            conn.execute(f"DELETE FROM [{name}] WHERE rowid IN ({ph})", rowids)
+            conn.commit()
+            return jsonify({"ok": True,
+                            "deleted": conn.execute("SELECT changes()").fetchone()[0]})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/dbedit/table/<name>/export", methods=["GET"])
+    def dbedit_export(name):
+        try:
+            import csv, io
+            conn = database.get_connection()
+            rows = conn.execute(f"SELECT * FROM [{name}]").fetchall()
+            buf  = io.StringIO()
+            if rows:
+                writer = csv.writer(buf)
+                writer.writerow(rows[0].keys())
+                writer.writerows(rows)
+            from flask import Response
+            return Response(
+                buf.getvalue(), mimetype="text/csv",
+                headers={"Content-Disposition":
+                         f"attachment; filename={name}.csv"}
+            )
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
 
     return app
 

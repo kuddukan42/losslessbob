@@ -48,6 +48,7 @@ losslessbob/
 │   ├── attachments_tab.py    # Browse and preview cached attachment files
 │   ├── rename_tab.py         # Propose and execute folder renames based on LB match
 │   ├── spectrogram_tab.py    # Generate and view per-file SoX spectrograms
+│   ├── dbedit_tab.py         # DB Editor: browse/edit/delete rows, export CSV
 │   ├── theme_tab.py          # Color theme picker and custom color editor
 │   └── styles.py             # Generates Qt stylesheets from color dict
 └── data/
@@ -117,6 +118,17 @@ Content table over `entries`. Columns: `description`, `setlist`, `location`, `da
 
 Index: `idx_changes_lb ON entry_changes(lb_number, changed_at DESC)`.
 
+### `integrity_events` — Watchdog file-change alert log
+| Column | Type | Notes |
+|--------|------|-------|
+| id | INTEGER PK | Auto-increment |
+| lb_number | INTEGER | Owning collection entry |
+| disk_path | TEXT | Path being watched |
+| event_type | TEXT | e.g. `'deleted'`, `'modified'` |
+| detail | TEXT | Human-readable description |
+| occurred_at | TIMESTAMP | Defaults to CURRENT_TIMESTAMP |
+| acknowledged | INTEGER | 0 = unread, 1 = dismissed |
+
 ### `meta` — Key-value configuration store
 Persists settings between runs. Key examples:
 - `import_hash` — MD5 of last imported flat file (skip re-import if unchanged)
@@ -169,6 +181,22 @@ Persists settings between runs. Key examples:
 | POST | `/api/scrape/start` | Start bulk scrape. Body: `{lb_numbers, force, download_files, delay_ms}` |
 | GET | `/api/scrape/status` | Poll progress: `{running, current_lb, done, total, errors, skipped, last_action, last_source}` |
 | POST | `/api/scrape/stop` | Request stop |
+
+### Collection Data Management
+| Method | Route | Description |
+|--------|-------|-------------|
+| POST | `/api/collection/purge` | Purge a data scope. Body: `{scope}`. Scopes: `collection`, `wishlist`, `personal_meta`, `integrity_events`, `entry_changes`. |
+| POST | `/api/collection/delete_bulk` | Remove specific entries from My Collection. Body: `{lb_numbers:[...]}`. Returns `{ok, deleted}`. |
+
+### DB Editor
+| Method | Route | Description |
+|--------|-------|-------------|
+| GET | `/api/dbedit/tables` | List all tables with row counts and edit flags (`readonly`, `audit`, `warn`). |
+| GET | `/api/dbedit/table/<name>/schema` | Return `PRAGMA table_info` for the named table. |
+| GET | `/api/dbedit/table/<name>/rows` | Paginated rows. Query params: `page`, `limit` (max 500), `search`, `sort_col`, `sort_dir`. Returns `{columns, rows, total, page, limit}`. |
+| PATCH | `/api/dbedit/table/<name>/row` | Update one row by rowid. Body: `{rowid, updates:{col:val,...}}`. Blocked for readonly/audit tables. |
+| DELETE | `/api/dbedit/table/<name>/rows` | Delete rows by rowid list. Body: `{rowids:[...]}`. Blocked for readonly tables. |
+| GET | `/api/dbedit/table/<name>/export` | Download entire table as CSV attachment. |
 
 ### Spectrogram
 | Method | Route | Description |
@@ -335,7 +363,7 @@ Watchdog observer monitors the `data/` directory for `.txt` file changes.
 
 ## GUI: Main Window (`gui/main_window.py`)
 
-Ten tabs in order: **Lookup**(0) · **Rename Folders**(1) · **Verify**(2) · **lbdir**(3) · **Search**(4) · **My Collection**(5) · **Attachments**(6) · **Spectrograms**(7) · **Setup**(8) · **Themes**(9)
+Ten tabs in order: **Lookup**(0) · **Rename Folders**(1) · **Verify**(2) · **lbdir**(3) · **Search**(4) · **My Collection**(5) · **Attachments**(6) · **Spectrograms**(7) · **DB Editor**(8) · **Setup**(9) · **Themes**(10)
 
 **Menu bar:**
 - File → Exit
@@ -670,3 +698,5 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 | 2026-05-12 | Added backend/sox_utils.py: SoX/ffmpeg detection, generate_spectrogram(), spectrogram batch worker. Five /api/spectrogram/* routes. |
 | 2026-05-12 | Added gui/spectrogram_tab.py: two-pane spectrogram viewer tab. Registered as tab 7 (Spectrograms). |
 | 2026-05-12 | gui/setup_tab.py: SoX availability indicator with Re-check button added to Database group. |
+| 2026-05-13 | FEAT-13: integrity_events schema added; purge_* / delete_collection_entries in db.py; POST /api/collection/purge and /delete_bulk; Select All/None + bulk _on_remove in collection_tab; Data Management group in setup_tab. |
+| 2026-05-13 | FEAT-14: _DBEDIT constants and 6 /api/dbedit/* routes in app.py; gui/dbedit_tab.py (DbEditTab) created; registered as DB Editor tab (index 8) in main_window.py. Tab count: 11. |

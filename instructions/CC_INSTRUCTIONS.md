@@ -1105,7 +1105,7 @@ def get_collection_duplicates(db_path=None):
 
 ---
 
-### FEAT-08: Batch Filesystem Scan → Auto-Lookup
+### FEAT-08: Batch Filesystem Scan → Auto-Lookup ## COMPLETE
 
 **Files:** `gui/lookup_tab.py`  
 **Dependencies:** None (uses existing `/api/lookup`)  
@@ -2243,7 +2243,7 @@ Add slot:
 
 ---
 
-### FEAT-13: Granular Collection Data Management
+### FEAT-13: Granular Collection Data Management ## COMPLETE
 
 **Files:** `backend/db.py`, `backend/app.py`, `gui/collection_tab.py`, `gui/setup_tab.py`
 **Dependencies:** DB-01
@@ -2475,7 +2475,7 @@ Add slot:
 
 ---
 
-### FEAT-14: Database Editor Tab
+### FEAT-14: Database Editor Tab ## COMPLETE 
 
 **Files:** `gui/dbedit_tab.py` (new), `gui/main_window.py`, `backend/app.py`
 **Dependencies:** DB-01 (`backend/paths.py` already exists — WIN-01 done)
