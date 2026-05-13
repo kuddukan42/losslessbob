@@ -27,3 +27,19 @@ Priority: Low
 Status: Open
 Added: 2026-05-07
 Description: Flask route functions lack type hints and Google-style docstrings as required by project code standards.
+
+---
+
+TODO-005: GUI viewer for entry change history (DB-08 follow-up)
+Priority: Low
+Status: Open
+Added: 2026-05-12
+Description: The entry_changes table is populated on every re-scrape but there is no GUI to view it. A small "History" button on the detail panel (or in Attachments tab) could call GET /api/entry/<lb>/changes and display a table of field diffs with timestamps.
+
+---
+
+TODO-006: Close stale temp-DB connection in importer._import_flat_file
+Priority: Low
+Status: Open
+Added: 2026-05-12
+Description: With the persistent thread-local connection pool (DB-02), the connection to temp_import.db is never closed after the file is deleted. On the next import in the same thread, get_connection(temp_db_path) returns the stale handle. Workaround: delete the cached entry from _local.connections for the temp path after unlink, or use a separate in-memory SQLite for temp import.

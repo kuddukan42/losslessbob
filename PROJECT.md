@@ -13,6 +13,7 @@
 | REST backend | Flask + Flask-CORS | 3.0.3 / 4.0.1 |
 | WSGI server (optional) | Waitress | 3.0.0 |
 | Database | SQLite3 | (stdlib) |
+| Bloom filter | pybloom-live | 4.0.0 |
 | Web scraping | BeautifulSoup4 + lxml | 4.12.3 / 6.1.0 |
 | HTTP client | Requests | 2.32.3 |
 | File watching | Watchdog | 4.0.1 |
@@ -99,6 +100,21 @@ Unique index on `(checksum, lb_number)`.
 
 PK: `(lb_number, filename)`.
 
+### `entries_fts` — FTS5 full-text search index (virtual table)
+Content table over `entries`. Columns: `description`, `setlist`, `location`, `date_str`. Maintained by `entries_fts_insert/update/delete` triggers. Rebuilt by `init_db()` on first run when index is empty but `entries` is not.
+
+### `entry_changes` — Field-level scrape diff log
+| Column | Type | Notes |
+|--------|------|-------|
+| id | INTEGER PK | Auto-increment |
+| lb_number | INTEGER NOT NULL | Entry that changed |
+| field | TEXT NOT NULL | Field name from `TRACKED_ENTRY_FIELDS` |
+| old_value | TEXT | Previous value |
+| new_value | TEXT | New value after scrape |
+| changed_at | TIMESTAMP | Defaults to CURRENT_TIMESTAMP |
+
+Index: `idx_changes_lb ON entry_changes(lb_number, changed_at DESC)`.
+
 ### `meta` — Key-value configuration store
 Persists settings between runs. Key examples:
 - `import_hash` — MD5 of last imported flat file (skip re-import if unchanged)
@@ -124,7 +140,8 @@ Persists settings between runs. Key examples:
 | Method | Route | Description |
 |--------|-------|-------------|
 | GET | `/api/db/stats` | Row counts, latest LB number, last import date |
-| POST | `/api/db/import` | Import flat-file. Body: `{file_path}` |
+| POST | `/api/db/import` | Start async flat-file import. Returns `{ok, running}` immediately. |
+| GET | `/api/db/import/status` | Poll import progress: `{running, stage, rows_parsed, rows_total, rows_merged, new_lb_count, message, error}` |
 | GET | `/api/db/settings` | Load all `meta` key-value pairs |
 | POST | `/api/db/settings` | Save `meta` key-value pairs |
 | POST | `/api/db/reset` | Drop and recreate all tables (destructive) |
@@ -135,6 +152,7 @@ Persists settings between runs. Key examples:
 |--------|-------|-------------|
 | GET | `/api/entry/<lb>` | Full entry record + checksums + files |
 | GET | `/api/entry/<lb>/files` | List attachment files for entry |
+| GET | `/api/entry/<lb>/changes` | Field-level scrape diff history. Query param: `limit` (default 50). Returns `[{field, old_value, new_value, changed_at}]`. |
 | GET | `/api/attachment/<lb>/<filename>` | Serve cached attachment file |
 | POST | `/api/entry/<lb>/scrape` | Trigger scrape of single entry |
 
@@ -630,3 +648,11 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 | 2026-05-07 | Search tab: client-side pagination with Prev/Next buttons; Setup tab: "Results per page" spinner (10–500); db.py search_entries limit removed; search_page_size meta key added. |
 | 2026-05-07 | Scraper log now persisted to data/scraper.log; log management UI (size, Open, Purge) added; [web]/[local] label bug fixed via last_lb state field; error entries now logged explicitly. |
 | 2026-05-07 | Search tab: added Missing only / Owned only / Not owned client-side filter checkboxes (AND-combinable); fixed double-click URL to zero-pad LB number to 5 digits. Setup tab: renamed "Mark sequential gaps as MISSING" → "Skip LB numbers with no checksum data"; Scrape All/Scrape/Scrape Range buttons moved to same grid column so they render at equal width. My Collection tab: auto-loads on startup; client-side pagination (shares Results per page from Setup tab); year dropdown filter. |
+| 2026-05-12 | DB-01/02: WAL mode + performance PRAGMAs; persistent per-thread connection pool in db.py. |
+| 2026-05-12 | DB-03: idx_chk_covering and idx_lb_xref0 partial index added to checksums. |
+| 2026-05-12 | DB-04: lookup_checksums uses temp table JOIN instead of IN clause. |
+| 2026-05-12 | DB-05: entries_fts FTS5 virtual table + triggers; search_entries uses FTS MATCH with LIKE fallback. |
+| 2026-05-12 | DB-06: PRAGMA optimize called after import (importer.py) and after scrape_range (scraper.py). |
+| 2026-05-12 | DB-07: ScalableBloomFilter pre-filters definite-miss checksums; pybloom-live==4.0.0 added. |
+| 2026-05-12 | DB-08: entry_changes table + record_entry_changes(); GET /api/entry/lb/changes endpoint; db_reset drops FTS and entry_changes. |
+| 2026-05-12 | Import progress: async import with stage/row-count state; GET /api/db/import/status; import progress bar in Setup tab. |

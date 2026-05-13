@@ -12,7 +12,7 @@ from PyQt6.QtWidgets import (
 
 
 class _ImportThread(QThread):
-    progress = pyqtSignal(str)
+    """Fires the async import start request; returns immediately once the backend accepts it."""
     finished = pyqtSignal(dict)
 
     def __init__(self, flask_port, file_path):
@@ -25,11 +25,36 @@ class _ImportThread(QThread):
             resp = requests.post(
                 f"http://127.0.0.1:{self.flask_port}/api/db/import",
                 json={"file_path": str(self.file_path)},
-                timeout=300,
+                timeout=15,
             )
             self.finished.emit(resp.json())
         except Exception as e:
             self.finished.emit({"error": str(e)})
+
+
+class _ImportStatusThread(QThread):
+    """Polls /api/db/import/status every 500 ms while an import is running."""
+    status_update = pyqtSignal(dict)
+
+    def __init__(self, flask_port):
+        super().__init__()
+        self.flask_port = flask_port
+        self._running = True
+
+    def run(self):
+        while self._running:
+            try:
+                resp = requests.get(
+                    f"http://127.0.0.1:{self.flask_port}/api/db/import/status",
+                    timeout=5,
+                )
+                self.status_update.emit(resp.json())
+            except Exception:
+                pass
+            self.msleep(500)
+
+    def stop(self):
+        self._running = False
 
 
 class _ResetThread(QThread):
@@ -101,6 +126,7 @@ class SetupTab(QWidget):
         self.flask_port = flask_port
         self._loading = False
         self._import_thread = None
+        self._import_status_thread = None
         self._reset_thread = None
         self._single_scrape_thread = None
         self._scrape_status_thread = None
@@ -158,6 +184,11 @@ class SetupTab(QWidget):
 
         self.import_status_label = QLabel("")
         db_layout.addWidget(self.import_status_label)
+
+        self.import_progress = QProgressBar()
+        self.import_progress.setObjectName("importProgress")
+        self.import_progress.setVisible(False)
+        db_layout.addWidget(self.import_progress)
 
         layout.addWidget(db_group)
 
@@ -371,24 +402,64 @@ class SetupTab(QWidget):
             return
 
         self.import_btn.setEnabled(False)
-        self.import_status_label.setText("Importing...")
+        self.import_status_label.setText("Starting import…")
+        self.import_progress.setRange(0, 0)
+        self.import_progress.setVisible(True)
 
         self._import_thread = _ImportThread(self.flask_port, path)
-        self._import_thread.finished.connect(self._on_import_finished)
+        self._import_thread.finished.connect(self._on_import_started)
         self._import_thread.start()
 
-    def _on_import_finished(self, result):
-        self.import_btn.setEnabled(True)
+    def _on_import_started(self, result):
+        """Called once the backend acknowledges the async import has started."""
         if "error" in result:
+            self.import_btn.setEnabled(True)
+            self.import_progress.setVisible(False)
             self.import_status_label.setText(f"Error: {result['error']}")
-        elif result.get("skipped"):
-            self.import_status_label.setText("Import skipped — file already imported.")
+            return
+        # Backend accepted the request — start polling for progress
+        self._import_status_thread = _ImportStatusThread(self.flask_port)
+        self._import_status_thread.status_update.connect(self._on_import_status)
+        self._import_status_thread.start()
+
+    def _on_import_status(self, status):
+        """Handles polling updates from _ImportStatusThread."""
+        stage = status.get("stage", "idle")
+        msg = status.get("message", "")
+        running = status.get("running", False)
+        rows_parsed = status.get("rows_parsed", 0)
+        rows_total = status.get("rows_total", 0)
+        rows_merged = status.get("rows_merged", 0)
+
+        # Update progress bar: determinate during merge, indeterminate otherwise
+        if stage == "merging" and rows_total > 0:
+            self.import_progress.setRange(0, rows_total)
+            self.import_progress.setValue(rows_merged)
         else:
-            self.import_status_label.setText(
-                f"Import complete. {result.get('new_lb_count', 0)} new LB entries added."
-            )
-            self._refresh_stats()
-            self.stats_changed.emit()
+            self.import_progress.setRange(0, 0)
+
+        self.import_status_label.setText(msg)
+
+        if not running:
+            if self._import_status_thread:
+                self._import_status_thread.stop()
+                self._import_status_thread = None
+
+            self.import_btn.setEnabled(True)
+            self.import_progress.setVisible(False)
+
+            if stage == "error":
+                self.import_status_label.setText(f"Import failed: {status.get('error', 'unknown error')}")
+            elif stage == "done":
+                if "Already imported" in msg:
+                    self.import_status_label.setText("Already imported — file unchanged since last run.")
+                else:
+                    new_lbs = status.get("new_lb_count", 0)
+                    self.import_status_label.setText(
+                        f"Import complete — {new_lbs:,} new LB entries added."
+                    )
+                    self._refresh_stats()
+                    self.stats_changed.emit()
 
     def _on_reset(self):
         confirm = QMessageBox.warning(
@@ -414,6 +485,7 @@ class SetupTab(QWidget):
     def _on_reset_finished(self, result):
         self.reset_btn.setEnabled(True)
         self.import_btn.setEnabled(True)
+        self.import_progress.setVisible(False)
         if "error" in result:
             self.import_status_label.setText(f"Reset failed: {result['error']}")
         else:

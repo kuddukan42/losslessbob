@@ -1,3 +1,58 @@
+BUG-029: 2–4 s startup delay from eager QWebEngineView construction in AttachmentsTab
+Status: Fixed
+File(s): gui/attachments_tab.py
+Reported: 2026-05-12
+Fixed: 2026-05-12
+Description: MainWindow took 2–4 extra seconds to appear because AttachmentsTab.__init__ created QWebEngineView immediately, triggering the WebEngine GPU subprocess spawn during startup.
+Root cause: WebEngine subprocess starts synchronously on first QWebEngineView instantiation.
+Fix: Moved all WebEngine construction (profile, page, view) into _init_web_view(), called via QTimer.singleShot(0, ...) from showEvent on first activation. _preview_file now uses setCurrentWidget instead of setCurrentIndex.
+
+---
+
+BUG-028: ~7 s Flask startup delay from synchronous bloom filter rebuild in init_db()
+Status: Fixed
+File(s): backend/db.py:init_db
+Reported: 2026-05-12
+Fixed: 2026-05-12
+Description: Flask took ~7 seconds to start serving requests because init_db() called rebuild_bloom() synchronously, iterating every checksum row before returning.
+Root cause: DB-07 added rebuild_bloom() at the end of init_db() without considering startup cost on large databases.
+Fix: Added _rebuild_bloom_bg() helper and launch it as a daemon thread. init_db() returns immediately; the filter populates in the background. Lookups fall through to SQLite (correct, if slightly slower) until the filter is ready.
+
+---
+
+BUG-027: ~10 s startup delay on Linux — Qt::AA_ShareOpenGLContexts not set before QApplication
+Status: Fixed
+File(s): main.py
+Reported: 2026-05-12
+Fixed: 2026-05-12
+Description: App took ~10 seconds to show any window on Linux. Console printed "Attribute Qt::AA_ShareOpenGLContexts must be set before QCoreApplication is created."
+Root cause: QtWebEngine registers its GPU/renderer subprocess during QApplication construction. Without AA_ShareOpenGLContexts the renderer cannot share the host GL context and falls back to a slow separate-process initialisation path.
+Fix: Added QApplication.setAttribute(Qt.ApplicationAttribute.AA_ShareOpenGLContexts) immediately before QApplication(sys.argv) in main.py.
+
+---
+
+BUG-026: "Release of profile requested but WebEnginePage still not deleted" on shutdown
+Status: Fixed
+File(s): gui/attachments_tab.py:84-90
+Reported: 2026-05-12
+Fixed: 2026-05-12
+Description: Qt logged "Release of profile requested but WebEnginePage still not deleted. Expect troubles!" on app exit. Qt's child-destruction order is unspecified, so the QWebEngineProfile (child of the tab) was sometimes destroyed before the QWebEnginePage that referenced it.
+Root cause: Both profile and page were parented to self (the tab widget). Qt may destroy them in any order, and if profile goes first the page holds a dangling reference.
+Fix: Parent the QWebEnginePage to the QWebEngineProfile instead of to self. Qt now guarantees that when profile is destroyed, it first destroys its own children (including page), eliminating the ordering hazard. Both objects are also stored as self._web_profile / self._web_page for explicit lifetime tracking.
+
+---
+
+BUG-025: db_reset raises "FOREIGN KEY constraint failed" after DB-01 enabled PRAGMA foreign_keys=ON
+Status: Fixed
+File(s): backend/app.py:db_reset
+Reported: 2026-05-12
+Fixed: 2026-05-12
+Description: Clicking Reset Database in the Setup tab raised "FOREIGN KEY constraint failed" because my_collection has a FK on entries(lb_number) and PRAGMA foreign_keys was now ON (added in DB-01). The original code relied on FK enforcement being OFF by default.
+Root cause: DB-01 added PRAGMA foreign_keys=ON to get_connection(). The drop script in db_reset dropped entries before my_collection, violating the FK while enforcement was active.
+Fix: Prepend PRAGMA foreign_keys=OFF to the executescript drop sequence. Re-enable with conn.execute("PRAGMA foreign_keys=ON") after the script, before calling init_db().
+
+---
+
 BUG-024: WebEngine cache written outside app folder, breaks portable installs (WIN-15)
 Status: Fixed
 File(s): gui/attachments_tab.py, backend/paths.py

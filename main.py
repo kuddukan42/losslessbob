@@ -48,6 +48,12 @@ def main() -> None:
     flask_thread = threading.Thread(target=start_flask, daemon=True)
     flask_thread.start()
 
+    # Must be set before QApplication is constructed so QtWebEngine can share
+    # the GPU process's OpenGL context; without this the renderer falls back to
+    # a slow separate-context path that causes a ~10 s stall on Linux.
+    from PyQt6.QtCore import Qt as _Qt
+    QApplication.setAttribute(_Qt.ApplicationAttribute.AA_ShareOpenGLContexts)
+
     qt_app = QApplication(sys.argv)
     qt_app.setStyle("Fusion")
     qt_app.setApplicationName("LosslessBob Checksum Lookup")

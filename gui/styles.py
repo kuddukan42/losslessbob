@@ -153,14 +153,16 @@ QProgressBar::chunk {{
     background-color: {t['accent']};
     border-radius: 3px;
 }}
-QProgressBar#scrapeProgress {{
+QProgressBar#scrapeProgress,
+QProgressBar#importProgress {{
     min-height: 20px;
     max-height: 20px;
     border-radius: 4px;
     color: {t['app_fg']};
     text-align: center;
 }}
-QProgressBar#scrapeProgress::chunk {{
+QProgressBar#scrapeProgress::chunk,
+QProgressBar#importProgress::chunk {{
     border-radius: 4px;
 }}
 QGroupBox {{

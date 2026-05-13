@@ -1,9 +1,19 @@
 import re
 import sqlite3
+import threading
 from pathlib import Path
+
+from pybloom_live import ScalableBloomFilter as _SBF
 
 from backend.paths import DB_PATH  # noqa: F401  — re-exported for callers
 from backend.paths import to_long_path
+
+# --- Thread-local persistent connection pool (DB-02) ---
+_local = threading.local()
+
+# --- Bloom filter for fast NOT-FOUND short-circuit (DB-07) ---
+_bloom: _SBF | None = None
+_bloom_lock = threading.Lock()
 
 SCHEMA_SQL = """
 CREATE TABLE IF NOT EXISTS checksums (
@@ -17,6 +27,10 @@ CREATE TABLE IF NOT EXISTS checksums (
 );
 CREATE INDEX IF NOT EXISTS idx_checksum ON checksums(checksum);
 CREATE INDEX IF NOT EXISTS idx_lb_number ON checksums(lb_number);
+CREATE INDEX IF NOT EXISTS idx_chk_covering
+    ON checksums(checksum, lb_number, chk_type, filename, xref);
+CREATE INDEX IF NOT EXISTS idx_lb_xref0
+    ON checksums(lb_number, checksum) WHERE xref=0;
 
 CREATE TABLE IF NOT EXISTS entries (
     lb_number INTEGER PRIMARY KEY,
@@ -54,27 +68,123 @@ CREATE TABLE IF NOT EXISTS my_collection (
     notes        TEXT,
     FOREIGN KEY (lb_number) REFERENCES entries(lb_number)
 );
+
+CREATE TABLE IF NOT EXISTS entry_changes (
+    id         INTEGER PRIMARY KEY AUTOINCREMENT,
+    lb_number  INTEGER NOT NULL,
+    field      TEXT NOT NULL,
+    old_value  TEXT,
+    new_value  TEXT,
+    changed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+CREATE INDEX IF NOT EXISTS idx_changes_lb ON entry_changes(lb_number, changed_at DESC);
+
+CREATE VIRTUAL TABLE IF NOT EXISTS entries_fts USING fts5(
+    description,
+    setlist,
+    location,
+    date_str,
+    content='entries',
+    content_rowid='lb_number',
+    tokenize='unicode61 remove_diacritics 2'
+);
+
+CREATE TRIGGER IF NOT EXISTS entries_fts_insert
+AFTER INSERT ON entries BEGIN
+    INSERT INTO entries_fts(rowid, description, setlist, location, date_str)
+    VALUES (new.lb_number, new.description, new.setlist, new.location, new.date_str);
+END;
+
+CREATE TRIGGER IF NOT EXISTS entries_fts_update
+AFTER UPDATE ON entries BEGIN
+    INSERT INTO entries_fts(entries_fts, rowid, description, setlist, location, date_str)
+    VALUES ('delete', old.lb_number, old.description, old.setlist, old.location, old.date_str);
+    INSERT INTO entries_fts(rowid, description, setlist, location, date_str)
+    VALUES (new.lb_number, new.description, new.setlist, new.location, new.date_str);
+END;
+
+CREATE TRIGGER IF NOT EXISTS entries_fts_delete
+AFTER DELETE ON entries BEGIN
+    INSERT INTO entries_fts(entries_fts, rowid, description, setlist, location, date_str)
+    VALUES ('delete', old.lb_number, old.description, old.setlist, old.location, old.date_str);
+END;
 """
 
 _MD5_RE = re.compile(r'^([0-9a-fA-F]{32})\s+\*?(.+)$')
 _SHA1_RE = re.compile(r'^([0-9a-fA-F]{40})\s+\*?(.+)$')
 _FFP_RE = re.compile(r'^(.+\.(?:flac|ape|wav))[:=]([0-9a-fA-F]{32,40})$', re.IGNORECASE)
 
+TRACKED_ENTRY_FIELDS = ("date_str", "location", "cdr", "rating", "timing",
+                        "description", "setlist", "status")
+
 
 def get_connection(db_path=None):
-    path = to_long_path(Path(db_path or DB_PATH))
-    conn = sqlite3.connect(str(path), timeout=30, check_same_thread=False)
-    conn.row_factory = sqlite3.Row
-    conn.execute("PRAGMA busy_timeout=30000")
-    return conn
+    """Return a persistent per-thread SQLite connection with WAL and performance PRAGMAs."""
+    path = str(to_long_path(Path(db_path or DB_PATH)))
+    cache = getattr(_local, "connections", None)
+    if cache is None:
+        _local.connections = {}
+        cache = _local.connections
+    if path not in cache:
+        conn = sqlite3.connect(path, check_same_thread=False)
+        conn.row_factory = sqlite3.Row
+        conn.execute("PRAGMA journal_mode=WAL")
+        conn.execute("PRAGMA synchronous=NORMAL")
+        conn.execute("PRAGMA cache_size=-65536")
+        conn.execute("PRAGMA mmap_size=536870912")
+        conn.execute("PRAGMA temp_store=MEMORY")
+        conn.execute("PRAGMA foreign_keys=ON")
+        conn.execute("PRAGMA busy_timeout=30000")
+        cache[path] = conn
+    return cache[path]
+
+
+def rebuild_bloom(db_path=None):
+    """Load all checksums into an in-process bloom filter. Call after import/init."""
+    global _bloom
+    bf = _SBF(mode=_SBF.LARGE_SET_GROWTH, error_rate=0.01)
+    conn = get_connection(db_path)
+    for row in conn.execute("SELECT checksum FROM checksums"):
+        bf.add(row[0])
+    with _bloom_lock:
+        _bloom = bf
+
+
+def _rebuild_bloom_bg(db_path=None) -> None:
+    try:
+        rebuild_bloom(db_path)
+    except Exception:
+        pass  # Non-fatal; lookups fall through to SQLite until filter is ready
+
+
+def checksum_in_bloom(chk: str) -> bool:
+    """Returns False only if chk is DEFINITELY not in DB. True means possible match."""
+    with _bloom_lock:
+        if _bloom is None:
+            return True
+        return chk in _bloom
 
 
 def init_db(db_path=None):
-    with get_connection(db_path) as conn:
-        conn.executescript(SCHEMA_SQL)
-        cols = [r[1] for r in conn.execute("PRAGMA table_info(entries)").fetchall()]
-        if "status" not in cols:
-            conn.execute("ALTER TABLE entries ADD COLUMN status TEXT DEFAULT 'ok'")
+    """Create schema, run migrations, rebuild FTS index if needed, seed bloom filter."""
+    conn = get_connection(db_path)
+    conn.executescript(SCHEMA_SQL)
+    cols = [r[1] for r in conn.execute("PRAGMA table_info(entries)").fetchall()]
+    if "status" not in cols:
+        conn.execute("ALTER TABLE entries ADD COLUMN status TEXT DEFAULT 'ok'")
+        conn.commit()
+
+    # Populate FTS index if empty (first run after adding FTS)
+    fts_count = conn.execute("SELECT COUNT(*) FROM entries_fts").fetchone()[0]
+    entry_count = conn.execute("SELECT COUNT(*) FROM entries").fetchone()[0]
+    if fts_count == 0 and entry_count > 0:
+        conn.execute("INSERT INTO entries_fts(entries_fts) VALUES('rebuild')")
+        conn.commit()
+
+    # Build bloom filter in background so startup is not blocked.
+    # checksum_in_bloom() returns True while _bloom is None, so all lookups
+    # fall through to SQLite until the filter is ready.
+    threading.Thread(target=_rebuild_bloom_bg, args=(db_path,), daemon=True).start()
 
 
 def get_meta(key, db_path=None):
@@ -150,17 +260,28 @@ def lookup_checksums(parsed_entries, db_path=None):
     if not parsed_entries:
         return {}, []
 
-    checksums = [e[0] for e in parsed_entries]
-    chk_map = {e[0]: e for e in parsed_entries}
+    # Bloom pre-filter: separate definite misses from candidates (DB-07)
+    candidates = [e for e in parsed_entries if checksum_in_bloom(e[0])]
+    definite_misses = [e for e in parsed_entries if not checksum_in_bloom(e[0])]
+    checksums = [e[0] for e in candidates]
 
-    with get_connection(db_path) as conn:
-        placeholders = ','.join('?' * len(checksums))
-        rows = conn.execute(
-            f"SELECT checksum, filename, chk_type, lb_number, xref FROM checksums WHERE checksum IN ({placeholders})",
-            checksums
-        ).fetchall()
+    # Temp-table bulk lookup — avoids dynamic IN clause and the 999-param limit (DB-04)
+    conn = get_connection(db_path)
+    conn.execute("CREATE TEMP TABLE IF NOT EXISTS _lookup_input (checksum TEXT PRIMARY KEY)")
+    conn.execute("DELETE FROM _lookup_input")
+    if checksums:
+        conn.executemany(
+            "INSERT OR IGNORE INTO _lookup_input(checksum) VALUES(?)",
+            [(c,) for c in checksums]
+        )
+    rows = conn.execute("""
+        SELECT c.checksum, c.filename, c.chk_type, c.lb_number, c.xref
+        FROM checksums c
+        JOIN _lookup_input t ON t.checksum = c.checksum
+    """).fetchall()
+    conn.commit()
 
-    matched_chks = {}
+    matched_chks: dict = {}
     for row in rows:
         chk = row["checksum"]
         if chk not in matched_chks:
@@ -168,16 +289,14 @@ def lookup_checksums(parsed_entries, db_path=None):
         matched_chks[chk].append(dict(row))
 
     detail = []
-    lb_to_given = {}
-    lb_to_matched = {}
+    lb_to_matched: dict = {}
 
-    for chk, fname, chk_type in parsed_entries:
+    for chk, fname, chk_type in candidates:
         if chk in matched_chks:
             matches = matched_chks[chk]
             is_duplicate = len(matches) > 1
             for m in matches:
                 lb = m["lb_number"]
-                lb_to_given.setdefault(lb, set()).add(chk)
                 lb_to_matched.setdefault(lb, set()).add(chk)
                 status = "DUPLICATE" if is_duplicate else "MATCHED"
                 detail.append({
@@ -204,20 +323,28 @@ def lookup_checksums(parsed_entries, db_path=None):
                 "detail_url": None,
             })
 
+    # Append bloom-filtered definite misses as NOT FOUND without querying SQLite
+    for chk, fname, chk_type in definite_misses:
+        detail.append({
+            "checksum": chk, "filename": fname, "type": chk_type,
+            "lb_number": None, "xref": 0, "status": "NOT FOUND",
+            "is_duplicate": False, "missing_from_set": [], "detail_url": None,
+        })
+
     # Reverse lookup: find checksums in DB for matched LBs that weren't in input
-    with get_connection(db_path) as conn:
-        for lb, matched_set in lb_to_matched.items():
-            all_chks = conn.execute(
-                "SELECT checksum FROM checksums WHERE lb_number=? AND xref=0",
-                (lb,)
-            ).fetchall()
-            all_chks_set = {r["checksum"] for r in all_chks}
-            missing = all_chks_set - matched_set
-            for item in detail:
-                if item["lb_number"] == lb:
-                    item["missing_from_set"] = list(missing)
-                    if missing and item["status"] == "MATCHED":
-                        item["status"] = "MATCHED (INCOMPLETE)"
+    # Uses idx_lb_xref0 partial index (DB-03)
+    for lb, matched_set in lb_to_matched.items():
+        all_chks = conn.execute(
+            "SELECT checksum FROM checksums WHERE lb_number=? AND xref=0",
+            (lb,)
+        ).fetchall()
+        all_chks_set = {r["checksum"] for r in all_chks}
+        missing = all_chks_set - matched_set
+        for item in detail:
+            if item["lb_number"] == lb:
+                item["missing_from_set"] = list(missing)
+                if missing and item["status"] == "MATCHED":
+                    item["status"] = "MATCHED (INCOMPLETE)"
 
     # Build summary per LB
     lb_summary = {}
@@ -262,6 +389,35 @@ def lookup_checksums(parsed_entries, db_path=None):
     return summary, detail
 
 
+def record_entry_changes(lb_number: int, new_data: dict, db_path=None) -> list:
+    """
+    Compare new_data against the current entries row.
+    Insert a row into entry_changes for each field that differs.
+    Returns list of changed field names.
+    """
+    conn = get_connection(db_path)
+    existing = conn.execute(
+        "SELECT * FROM entries WHERE lb_number=?", (lb_number,)
+    ).fetchone()
+    if not existing:
+        return []
+    changed = []
+    rows_to_insert = []
+    for field in TRACKED_ENTRY_FIELDS:
+        old = existing[field] if field in existing.keys() else None
+        new = new_data.get(field)
+        if old != new and not (old is None and new is None):
+            rows_to_insert.append((lb_number, field, old, new))
+            changed.append(field)
+    if rows_to_insert:
+        conn.executemany(
+            "INSERT INTO entry_changes(lb_number, field, old_value, new_value) VALUES(?,?,?,?)",
+            rows_to_insert
+        )
+        conn.commit()
+    return changed
+
+
 def insert_missing_entry(lb_number, db_path=None):
     with get_connection(db_path) as conn:
         conn.execute(
@@ -272,43 +428,64 @@ def insert_missing_entry(lb_number, db_path=None):
 
 
 def search_entries(query, field="all", year=None, limit=None, db_path=None):
-    conditions = []
-    params = []
+    """Search entries using FTS5 when a query is present, falling back to LIKE on FTS syntax errors."""
+    conn = get_connection(db_path)
 
+    year_clause = ""
+    year_params: list = []
     if year is not None:
         short = str(year)[-2:]
         long_ = str(year)
-        conditions.append("(date_str LIKE ? OR date_str LIKE ?)")
-        params.extend([f"%/{short}", f"%/{long_}"])
+        year_clause = "AND (e.date_str LIKE ? OR e.date_str LIKE ?)"
+        year_params = [f"%/{short}", f"%/{long_}"]
 
     if query:
-        like = f"%{query}%"
         if field == "location":
-            conditions.append("location LIKE ?")
-            params.append(like)
+            fts_query = f"location:{query}"
         elif field == "date":
-            conditions.append("date_str LIKE ?")
-            params.append(like)
-        elif field == "description":
-            conditions.append("description LIKE ?")
-            params.append(like)
+            fts_query = f"date_str:{query}"
         else:
-            conditions.append(
-                "(CAST(lb_number AS TEXT) LIKE ? OR location LIKE ? OR date_str LIKE ?"
-                " OR description LIKE ? OR status LIKE ?)"
-            )
-            params.extend([like, like, like, like, like])
+            fts_query = query
 
-    where = f"WHERE {' AND '.join(conditions)}" if conditions else ""
-    sql = (
-        f"SELECT lb_number, date_str, location, rating, description, status "
-        f"FROM entries {where} ORDER BY lb_number"
-    )
-    if limit is not None:
-        sql += " LIMIT ?"
-        params.append(limit)
-    with get_connection(db_path) as conn:
+        limit_clause = f"LIMIT {int(limit)}" if limit is not None else ""
+        sql = f"""
+            SELECT e.lb_number, e.date_str, e.location, e.rating,
+                   e.description, e.status
+            FROM entries_fts
+            JOIN entries e ON e.lb_number = entries_fts.rowid
+            WHERE entries_fts MATCH ?
+            {year_clause}
+            ORDER BY rank
+            {limit_clause}
+        """
+        params: list = [fts_query] + year_params
+    else:
+        limit_clause = f"LIMIT {int(limit)}" if limit is not None else ""
+        sql = f"""
+            SELECT lb_number, date_str, location, rating, description, status
+            FROM entries
+            WHERE 1=1 {year_clause.replace('e.', '')}
+            ORDER BY lb_number
+            {limit_clause}
+        """
+        params = year_params
+
+    try:
         rows = conn.execute(sql, params).fetchall()
+    except Exception:
+        # FTS5 syntax error fallback — revert to LIKE
+        like = f"%{query}%"
+        fallback_sql = (
+            "SELECT lb_number, date_str, location, rating, description, status "
+            "FROM entries WHERE description LIKE ? OR location LIKE ? OR date_str LIKE ? "
+            "ORDER BY lb_number"
+        )
+        fallback_params = [like, like, like]
+        if limit is not None:
+            fallback_sql += " LIMIT ?"
+            fallback_params.append(int(limit))
+        rows = conn.execute(fallback_sql, fallback_params).fetchall()
+
     return [dict(r) for r in rows]
 
 

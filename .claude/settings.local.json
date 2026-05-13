@@ -38,7 +38,10 @@
       "Bash(ssh -T git@github.com)",
       "Bash(gh auth *)",
       "Bash(git config *)",
-      "Read(//home/tjenkins/**)"
+      "Read(//home/tjenkins/**)",
+      "Bash(pip install *)",
+      "Bash(python -c \"from backend.db import init_db, lookup_checksums, search_entries, record_entry_changes, rebuild_bloom, checksum_in_bloom; print\\('db.py OK'\\)\")",
+      "Bash(python -c \"from backend.db import init_db; import time; t=time.monotonic\\(\\); init_db\\(\\); print\\(f'init_db returned in {time.monotonic\\(\\)-t:.2f}s'\\)\")"
     ],
     "additionalDirectories": [
       "/home/tjenkins/.ssh"

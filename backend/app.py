@@ -55,20 +55,23 @@ def create_app():
             if not path.exists():
                 return jsonify({"error": f"File not found: {file_path}"}), 404
 
-            messages = []
-            def progress_cb(msg):
-                messages.append(msg)
+            def on_complete(result):
+                if result.get("scrape_queued"):
+                    auto_scrape = database.get_meta("auto_scrape") != "0"
+                    if auto_scrape:
+                        new_lbs = result.get("new_lb_numbers", [])
+                        delay = int(database.get_meta("scrape_delay_ms") or 1500)
+                        _start_scrape_thread(new_lbs, delay_ms=delay)
 
-            result = importer.run_import(path, progress_callback=progress_cb)
+            importer.start_import_async(path, on_complete=on_complete)
+            return jsonify({"ok": True, "running": True})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
 
-            if result.get("scrape_queued"):
-                auto_scrape = database.get_meta("auto_scrape") != "0"
-                if auto_scrape:
-                    new_lbs = result.get("new_lb_numbers", [])
-                    delay = int(database.get_meta("scrape_delay_ms") or 1500)
-                    _start_scrape_thread(new_lbs, delay_ms=delay)
-
-            return jsonify(result)
+    @app.route("/api/db/import/status", methods=["GET"])
+    def db_import_status():
+        try:
+            return jsonify(importer.get_import_status())
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
@@ -90,13 +93,24 @@ def create_app():
     @app.route("/api/db/reset", methods=["POST"])
     def db_reset():
         try:
-            with database.get_connection() as conn:
-                conn.executescript(
-                    "DROP TABLE IF EXISTS checksums;"
-                    "DROP TABLE IF EXISTS entries;"
-                    "DROP TABLE IF EXISTS entry_files;"
-                    "DROP TABLE IF EXISTS meta;"
-                )
+            conn = database.get_connection()
+            # Disable FK enforcement for the duration of the drop so that
+            # my_collection's FK on entries(lb_number) doesn't block the drop.
+            conn.executescript(
+                "PRAGMA foreign_keys=OFF;"
+                "DROP TABLE IF EXISTS entry_changes;"
+                "DROP TRIGGER IF EXISTS entries_fts_insert;"
+                "DROP TRIGGER IF EXISTS entries_fts_update;"
+                "DROP TRIGGER IF EXISTS entries_fts_delete;"
+                "DROP TABLE IF EXISTS entries_fts;"
+                "DROP TABLE IF EXISTS checksums;"
+                "DROP TABLE IF EXISTS entries;"
+                "DROP TABLE IF EXISTS entry_files;"
+                "DROP TABLE IF EXISTS meta;"
+            )
+            # executescript() doesn't restore PRAGMAs — re-enable explicitly on
+            # the persistent connection before init_db() recreates the schema.
+            conn.execute("PRAGMA foreign_keys=ON")
             database.init_db()
             return jsonify({"ok": True})
         except Exception as e:
@@ -139,6 +153,21 @@ def create_app():
         if not file_path.exists():
             abort(404)
         return send_file(str(file_path))
+
+    @app.route("/api/entry/<int:lb_number>/changes", methods=["GET"])
+    def entry_changes(lb_number):
+        try:
+            limit = int(request.args.get("limit", 50))
+            conn = database.get_connection()
+            rows = conn.execute(
+                "SELECT field, old_value, new_value, changed_at "
+                "FROM entry_changes WHERE lb_number=? "
+                "ORDER BY changed_at DESC LIMIT ?",
+                (lb_number, limit)
+            ).fetchall()
+            return jsonify([dict(r) for r in rows])
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
 
     @app.route("/api/entry/<int:lb_number>/scrape", methods=["POST"])
     def scrape_entry_route(lb_number):

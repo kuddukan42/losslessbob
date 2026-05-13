@@ -39,7 +39,7 @@ class MainWindow(QMainWindow):
         self._status_timer = QTimer(self)
         self._status_timer.timeout.connect(self._refresh_status)
         self._status_timer.start(10000)
-        QTimer.singleShot(3000, self._refresh_status)
+        QTimer.singleShot(0, self._refresh_status)
 
     def _build_menu(self):
         menubar = self.menuBar()

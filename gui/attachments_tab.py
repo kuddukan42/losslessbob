@@ -1,7 +1,7 @@
 from pathlib import Path
 
 import requests
-from PyQt6.QtCore import Qt, QThread, pyqtSignal
+from PyQt6.QtCore import Qt, QThread, QTimer, pyqtSignal
 from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QSplitter, QTreeWidget, QTreeWidgetItem,
     QPushButton, QTextEdit, QLabel, QStackedWidget,
@@ -76,21 +76,10 @@ class AttachmentsTab(QWidget):
         self.text_view.setReadOnly(True)
         self.stack.addWidget(self.text_view)
 
-        try:
-            from PyQt6.QtWebEngineWidgets import QWebEngineView
-            from PyQt6.QtWebEngineCore import QWebEngineProfile, QWebEnginePage
-            from backend.paths import WEBENGINE_DIR
-            WEBENGINE_DIR.mkdir(parents=True, exist_ok=True)
-            profile = QWebEngineProfile("losslessbob", self)
-            profile.setPersistentStoragePath(str(WEBENGINE_DIR))
-            profile.setCachePath(str(WEBENGINE_DIR / "cache"))
-            profile.setHttpCacheMaximumSize(32 * 1024 * 1024)
-            page = QWebEnginePage(profile, self)
-            self.web_view = QWebEngineView(self)
-            self.web_view.setPage(page)
-            self.stack.addWidget(self.web_view)
-        except ImportError:
-            self.web_view = None
+        # WebEngine view is created lazily on first showEvent to avoid a
+        # 2–4 s GPU-process startup cost blocking the main window.
+        self.web_view = None
+        self._web_initialised = False
 
         self.other_widget = QWidget()
         other_layout = QVBoxLayout(self.other_widget)
@@ -183,23 +172,46 @@ class AttachmentsTab(QWidget):
             self.file_label.setText(str(path.name))
             self._preview_file(path)
 
+    def showEvent(self, event):
+        super().showEvent(event)
+        if not self._web_initialised:
+            self._web_initialised = True
+            QTimer.singleShot(0, self._init_web_view)
+
+    def _init_web_view(self):
+        """Create the QWebEngineView on first tab activation (lazy GPU-process start)."""
+        try:
+            from PyQt6.QtWebEngineWidgets import QWebEngineView
+            from PyQt6.QtWebEngineCore import QWebEngineProfile, QWebEnginePage
+            from backend.paths import WEBENGINE_DIR
+            WEBENGINE_DIR.mkdir(parents=True, exist_ok=True)
+            self._web_profile = QWebEngineProfile("losslessbob", self)
+            self._web_profile.setPersistentStoragePath(str(WEBENGINE_DIR))
+            self._web_profile.setCachePath(str(WEBENGINE_DIR / "cache"))
+            self._web_profile.setHttpCacheMaximumSize(32 * 1024 * 1024)
+            self._web_page = QWebEnginePage(self._web_profile, self._web_profile)
+            self.web_view = QWebEngineView(self)
+            self.web_view.setPage(self._web_page)
+            self.stack.addWidget(self.web_view)
+        except ImportError:
+            pass
+
     def _preview_file(self, path):
         suffix = path.suffix.lower()
         if suffix in (".txt", ".ffp", ".md5", ".st5"):
             try:
                 text = path.read_text(encoding="utf-8", errors="replace")
                 self.text_view.setPlainText(text)
-                self.stack.setCurrentIndex(0)
             except Exception as e:
                 self.text_view.setPlainText(f"Error reading file: {e}")
-                self.stack.setCurrentIndex(0)
+            self.stack.setCurrentWidget(self.text_view)
         elif suffix in (".html", ".htm") and self.web_view is not None:
             from PyQt6.QtCore import QUrl
             self.web_view.load(QUrl.fromLocalFile(str(path)))
-            self.stack.setCurrentIndex(1)
+            self.stack.setCurrentWidget(self.web_view)
         else:
             self.other_label.setText(f"File: {path.name}\nNo in-app preview available.")
-            self.stack.setCurrentIndex(2)
+            self.stack.setCurrentWidget(self.other_widget)
 
     def _open_externally(self):
         if not self._current_file:

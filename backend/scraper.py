@@ -4,7 +4,7 @@ import threading
 import requests
 from bs4 import BeautifulSoup
 
-from backend.db import get_connection, DB_PATH, insert_missing_entry
+from backend.db import get_connection, DB_PATH, insert_missing_entry, record_entry_changes
 from backend.paths import ATTACHMENTS_DIR, PAGES_DIR, to_long_path
 
 BASE_URL = "http://www.losslessbob.wonderingwhattochoose.com"
@@ -164,6 +164,8 @@ def scrape_entry(lb_number, force=False, download_files=True, use_local_pages=Fa
             full_url = BASE_URL + "/files/" + filename
             file_links.append((filename, clean, full_url))
 
+    record_entry_changes(lb_number, entry_data, db_path)
+
     with get_connection(db_path) as conn:
         conn.execute(
             """INSERT OR REPLACE INTO entries(lb_number, date_str, location, cdr, rating, timing, description, setlist)
@@ -254,6 +256,10 @@ def scrape_range(lb_numbers, force=False, download_files=True, use_local_pages=F
 
     with _scrape_lock:
         _scrape_state.update({"running": False, "done": total, "current_lb": None})
+
+    conn = get_connection(db_path)
+    conn.execute("PRAGMA optimize")
+    conn.commit()
 
 
 def check_for_update(db_path=None):
