@@ -14,6 +14,17 @@ from backend.paths import ATTACHMENTS_DIR
 
 _scrape_thread = None
 
+_spectro_state = {
+    "status":    "idle",
+    "current":   "",
+    "done":      0,
+    "total":     0,
+    "errors":    [],
+    "skipped":   0,
+    "stop_requested": False,
+}
+_spectro_lock = __import__("threading").Lock()
+
 
 def create_app():
     app = Flask(__name__)
@@ -539,7 +550,174 @@ def create_app():
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
+    # ── Spectrogram ──────────────────────────────────────────────────────────
+
+    @app.route("/api/spectrogram/check", methods=["GET"])
+    def spectrogram_check():
+        """Return tool availability for the Setup tab indicator."""
+        from backend.sox_utils import check_sox_version, get_ffmpeg
+        sox_ver = check_sox_version()
+        ffmpeg  = get_ffmpeg()
+        return jsonify({
+            "sox_available":    bool(sox_ver),
+            "sox_version":      sox_ver,
+            "ffmpeg_available": ffmpeg is not None,
+        })
+
+    @app.route("/api/spectrogram/generate", methods=["POST"])
+    def spectrogram_generate():
+        """
+        Start batch spectrogram generation for a list of folders.
+        Body: {
+            folders:    ["/path/to/folder", ...],
+            width:      1500,
+            height:     513,
+            dyn_range:  120,
+            force:      false,
+        }
+        """
+        with _spectro_lock:
+            if _spectro_state["status"] == "running":
+                return jsonify({"error": "Generation already running"}), 409
+
+        data    = request.get_json() or {}
+        folders = data.get("folders", [])
+        if not folders:
+            return jsonify({"error": "folders list required"}), 400
+
+        opts = {
+            "width":     int(data.get("width",    1500)),
+            "height":    int(data.get("height",    513)),
+            "dyn_range": int(data.get("dyn_range", 120)),
+            "force":     bool(data.get("force",  False)),
+        }
+        import threading as _t
+        _t.Thread(target=_do_spectro_batch,
+                  args=([str(f) for f in folders], opts),
+                  daemon=True).start()
+        return jsonify({"ok": True})
+
+    @app.route("/api/spectrogram/status", methods=["GET"])
+    def spectrogram_status():
+        with _spectro_lock:
+            return jsonify(dict(_spectro_state))
+
+    @app.route("/api/spectrogram/stop", methods=["POST"])
+    def spectrogram_stop():
+        with _spectro_lock:
+            _spectro_state["stop_requested"] = True
+        return jsonify({"ok": True})
+
+    @app.route("/api/spectrogram/list", methods=["POST"])
+    def spectrogram_list():
+        """
+        Return a dict of {folder -> [entry, ...]} for the viewer.
+        Body: {folders: [...]}
+        """
+        from backend.sox_utils import AUDIO_EXTS_ALL
+        folders = (request.get_json() or {}).get("folders", [])
+        result  = {}
+        for folder in folders:
+            p = Path(folder)
+            if not p.is_dir():
+                continue
+            spectro_dir = p / "spectrograms"
+            audio_files = sorted(
+                f for f in p.iterdir()
+                if f.is_file() and f.suffix.lower() in AUDIO_EXTS_ALL
+            )
+            pngs = {
+                png.stem: str(png)
+                for png in (spectro_dir.iterdir() if spectro_dir.is_dir() else [])
+                if png.suffix.lower() == ".png"
+            }
+            entries = []
+            for af in audio_files:
+                png_path = pngs.get(af.stem, None)
+                entries.append({
+                    "audio_file": str(af),
+                    "audio_name": af.name,
+                    "png_path":   png_path,
+                    "has_png":    png_path is not None,
+                })
+            if entries:
+                result[folder] = entries
+        return jsonify(result)
+
     return app
+
+
+def _do_spectro_batch(folders: list[str], opts: dict) -> None:
+    from backend.sox_utils import (
+        generate_spectrogram, AUDIO_EXTS_ALL,
+        SoxNotFoundError, ConversionError, SpectrogenError,
+    )
+
+    def _set(**kw):
+        with _spectro_lock:
+            _spectro_state.update(kw)
+
+    all_files: list[tuple[Path, Path]] = []
+    for folder in folders:
+        p = Path(folder)
+        if not p.is_dir():
+            continue
+        spectro_dir = p / "spectrograms"
+        for f in sorted(p.iterdir()):
+            if f.is_file() and f.suffix.lower() in AUDIO_EXTS_ALL:
+                png = spectro_dir / (f.stem + ".png")
+                all_files.append((f, png))
+
+    _set(status="running", done=0, total=len(all_files),
+         errors=[], skipped=0, stop_requested=False, current="")
+
+    if not all_files:
+        _set(status="done", current="", done=0)
+        return
+
+    done = 0
+    skipped = 0
+    errors = []
+
+    for audio_path, output_png in all_files:
+        with _spectro_lock:
+            if _spectro_state["stop_requested"]:
+                break
+
+        _set(current=audio_path.name)
+
+        if output_png.exists() and not opts.get("force"):
+            skipped += 1
+            done += 1
+            _set(done=done, skipped=skipped)
+            continue
+
+        try:
+            generate_spectrogram(
+                audio_path, output_png,
+                width=opts["width"],
+                height=opts["height"],
+                dyn_range=opts["dyn_range"],
+                title=audio_path.name,
+            )
+        except SoxNotFoundError as e:
+            errors.append({"file": audio_path.name, "error": str(e)})
+            _set(status="error", errors=list(errors), done=done,
+                 current="SoX not found — generation stopped.")
+            return
+        except ConversionError as e:
+            errors.append({"file": audio_path.name, "error": str(e)})
+        except SpectrogenError as e:
+            errors.append({"file": audio_path.name, "error": str(e)})
+        except Exception as e:
+            errors.append({"file": audio_path.name,
+                           "error": f"Unexpected: {e}"})
+
+        done += 1
+        _set(done=done, errors=list(errors), skipped=skipped)
+
+    _set(status="done", current="", done=done,
+         errors=list(errors), skipped=skipped)
 
 
 def _start_scrape_thread(lb_numbers, force=False, delay_ms=1500, download=True, use_local_pages=False):

@@ -36,16 +36,18 @@ losslessbob/
 │   ├── checksum_utils.py     # Shared: FFP/MD5/shntool compute, lbdir parse, verify, generate
 │   ├── importer.py           # Flat-file import logic
 │   ├── scraper.py            # Web scraper for losslessbob.com
-│   └── scheduler.py          # Watchdog file watcher, auto-import
+│   ├── scheduler.py          # Watchdog file watcher, auto-import
+│   └── sox_utils.py          # SoX/ffmpeg tool detection + spectrogram generation
 ├── gui/
 │   ├── main_window.py        # Main window, tab container, menu, status bar
 │   ├── lookup_tab.py         # Core feature: paste/load checksums, view results
 │   ├── verify_tab.py         # Verify local checksum files (.ffp/.md5/.st5) against audio
 │   ├── lbdir_tab.py          # Verify official lbdir*.txt files against audio on disk
 │   ├── search_tab.py         # Full-text search across entries
-│   ├── setup_tab.py          # Import, scraper control, DB management
+│   ├── setup_tab.py          # Import, scraper control, DB management, SoX status
 │   ├── attachments_tab.py    # Browse and preview cached attachment files
 │   ├── rename_tab.py         # Propose and execute folder renames based on LB match
+│   ├── spectrogram_tab.py    # Generate and view per-file SoX spectrograms
 │   ├── theme_tab.py          # Color theme picker and custom color editor
 │   └── styles.py             # Generates Qt stylesheets from color dict
 └── data/
@@ -167,6 +169,15 @@ Persists settings between runs. Key examples:
 | POST | `/api/scrape/start` | Start bulk scrape. Body: `{lb_numbers, force, download_files, delay_ms}` |
 | GET | `/api/scrape/status` | Poll progress: `{running, current_lb, done, total, errors, skipped, last_action, last_source}` |
 | POST | `/api/scrape/stop` | Request stop |
+
+### Spectrogram
+| Method | Route | Description |
+|--------|-------|-------------|
+| GET | `/api/spectrogram/check` | Tool availability: `{sox_available, sox_version, ffmpeg_available}` |
+| POST | `/api/spectrogram/generate` | Start batch generation. Body: `{folders, width, height, dyn_range, force}` |
+| GET | `/api/spectrogram/status` | Poll batch state: `{status, current, done, total, errors, skipped, stop_requested}` |
+| POST | `/api/spectrogram/stop` | Request stop after current file |
+| POST | `/api/spectrogram/list` | Inventory PNGs per folder. Body: `{folders}`. Returns `{folder -> [{audio_file, audio_name, png_path, has_png}]}` |
 
 ### Verify (Local Checksums)
 | Method | Route | Description |
@@ -324,7 +335,7 @@ Watchdog observer monitors the `data/` directory for `.txt` file changes.
 
 ## GUI: Main Window (`gui/main_window.py`)
 
-Nine tabs in order: **Lookup**(0) · **Rename Folders**(1) · **Verify**(2) · **lbdir**(3) · **Search**(4) · **My Collection**(5) · **Attachments**(6) · **Setup**(7) · **Themes**(8)
+Ten tabs in order: **Lookup**(0) · **Rename Folders**(1) · **Verify**(2) · **lbdir**(3) · **Search**(4) · **My Collection**(5) · **Attachments**(6) · **Spectrograms**(7) · **Setup**(8) · **Themes**(9)
 
 **Menu bar:**
 - File → Exit
@@ -656,3 +667,6 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 | 2026-05-12 | DB-07: ScalableBloomFilter pre-filters definite-miss checksums; pybloom-live==4.0.0 added. |
 | 2026-05-12 | DB-08: entry_changes table + record_entry_changes(); GET /api/entry/lb/changes endpoint; db_reset drops FTS and entry_changes. |
 | 2026-05-12 | Import progress: async import with stage/row-count state; GET /api/db/import/status; import progress bar in Setup tab. |
+| 2026-05-12 | Added backend/sox_utils.py: SoX/ffmpeg detection, generate_spectrogram(), spectrogram batch worker. Five /api/spectrogram/* routes. |
+| 2026-05-12 | Added gui/spectrogram_tab.py: two-pane spectrogram viewer tab. Registered as tab 7 (Spectrograms). |
+| 2026-05-12 | gui/setup_tab.py: SoX availability indicator with Re-check button added to Database group. |

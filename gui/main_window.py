@@ -112,9 +112,15 @@ class MainWindow(QMainWindow):
         self.tabs.addTab(self.lbdir_tab, "lbdir")
         self.tabs.addTab(self.search_tab, "Search")
         self.tabs.addTab(self.collection_tab, "My Collection")
+        from gui.spectrogram_tab import SpectrogramTab
+        self.spectrogram_tab = SpectrogramTab(self.flask_port)
+
         self.tabs.addTab(self.attachments_tab, "Attachments")
+        self.tabs.addTab(self.spectrogram_tab, "Spectrograms")
         self.tabs.addTab(self.setup_tab, "Setup")
         self.tabs.addTab(self.theme_tab, "Themes")
+
+        self.tabs.currentChanged.connect(self._on_tab_changed)
 
         self.search_tab.lookup_lb.connect(self._on_search_lookup_lb)
         self.collection_tab.lookup_lb.connect(self._on_search_lookup_lb)
@@ -179,6 +185,14 @@ class MainWindow(QMainWindow):
             self._status_message.emit(msg)
 
         threading.Thread(target=_fetch, daemon=True).start()
+
+    def _on_tab_changed(self, index: int):
+        widget = self.tabs.widget(index)
+        if widget is self.spectrogram_tab and self.spectrogram_tab._folders:
+            self.spectrogram_tab._refresh_inventory()
+        if widget is self.setup_tab and not getattr(self.setup_tab, "_sox_checked", False):
+            self.setup_tab._sox_checked = True
+            self.setup_tab._check_sox()
 
     def _on_theme_applied(self):
         self.setStyleSheet(styles.MAIN_STYLESHEET)

@@ -182,6 +182,18 @@ class SetupTab(QWidget):
         reset_row.addStretch()
         db_layout.addLayout(reset_row)
 
+        # SoX availability indicator
+        sox_row = QHBoxLayout()
+        sox_row.addWidget(QLabel("SoX:"))
+        self.sox_status_label = QLabel("Checking…")
+        sox_row.addWidget(self.sox_status_label)
+        self.sox_check_btn = QPushButton("Re-check")
+        self.sox_check_btn.setFixedWidth(80)
+        self.sox_check_btn.clicked.connect(self._check_sox)
+        sox_row.addWidget(self.sox_check_btn)
+        sox_row.addStretch()
+        db_layout.addLayout(sox_row)
+
         self.import_status_label = QLabel("")
         db_layout.addWidget(self.import_status_label)
 
@@ -710,6 +722,26 @@ class SetupTab(QWidget):
             self.scrape_status_label.setText(msg)
             self._log(msg)
             self._last_logged_lb = None
+
+    def _check_sox(self):
+        try:
+            r = requests.get(
+                f"http://127.0.0.1:{self.flask_port}/api/spectrogram/check",
+                timeout=8,
+            ).json()
+            if r.get("sox_available"):
+                ver = r.get("sox_version", "")
+                ff  = "  ffmpeg: OK" if r.get("ffmpeg_available") else \
+                      "  ffmpeg: not found (SHN/APE/WV unsupported)"
+                self.sox_status_label.setText(f"OK — {ver}{ff}")
+                self.sox_status_label.setStyleSheet("color: green;")
+            else:
+                self.sox_status_label.setText(
+                    "Not found — install: sudo apt install sox libsox-fmt-all"
+                )
+                self.sox_status_label.setStyleSheet("color: red;")
+        except Exception as e:
+            self.sox_status_label.setText(f"Error: {e}")
 
     def _on_stop_scrape(self):
         try:
