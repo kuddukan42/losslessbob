@@ -286,7 +286,6 @@ def create_app():
             start_lb = data.get("start_lb", 1)
             end_lb = data.get("end_lb", None)
             force = data.get("force", False)
-            fill_gaps = data.get("fill_gaps", False)
             delay = int(database.get_meta("scrape_delay_ms") or 1500)
             download = database.get_meta("scrape_attachments") != "0"
             use_local_pages = database.get_meta("use_local_pages") == "1"
@@ -300,9 +299,13 @@ def create_app():
                 q += " ORDER BY lb_number"
                 lb_numbers = [r[0] for r in conn.execute(q, params).fetchall()]
 
-            if fill_gaps and end_lb:
+            # Always fill every sequential gap so no LB number is left out of
+            # the database. Derive the upper bound from the highest checksum entry
+            # when no explicit end_lb was given ("Scrape All Missing" path).
+            effective_end = end_lb or (lb_numbers[-1] if lb_numbers else None)
+            if effective_end:
                 known = set(lb_numbers)
-                for n in range(start_lb, end_lb + 1):
+                for n in range(start_lb, effective_end + 1):
                     if n not in known:
                         database.insert_missing_entry(n)
 

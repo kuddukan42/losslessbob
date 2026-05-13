@@ -421,7 +421,7 @@ def record_entry_changes(lb_number: int, new_data: dict, db_path=None) -> list:
 def insert_missing_entry(lb_number, db_path=None):
     with get_connection(db_path) as conn:
         conn.execute(
-            """INSERT OR REPLACE INTO entries(lb_number, date_str, location, cdr, rating, timing, description, setlist, status)
+            """INSERT OR IGNORE INTO entries(lb_number, date_str, location, cdr, rating, timing, description, setlist, status)
                VALUES(?, '', '', '', '', '', '', '', 'missing')""",
             (lb_number,)
         )

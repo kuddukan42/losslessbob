@@ -1,11 +1,22 @@
-BUG-031: "Scrape All Missing" skips entries with status='missing' even when a local page is available
+BUG-032: "Scrape All Missing" leaves gap LB numbers (not in checksums) completely absent from the database
+Status: Fixed
+File(s): backend/app.py:303, backend/db.py:421
+Reported: 2026-05-12
+Fixed: 2026-05-12
+Description: "Scrape All Missing" queried only lb_numbers present in the checksums table. Any sequential gap (e.g. LB-7 with no checksum data) was never included in the scrape list, never attempted, and never written to entries — leaving a blank hole in the database instead of a MISSING placeholder row.
+Root cause: The gap-filling logic (fill_gaps) only ran when an explicit end_lb was provided and the range-scrape checkbox was checked. The "all missing" path sent no end_lb, so fill_gaps was never applied and gaps were silently skipped. Additionally, insert_missing_entry used INSERT OR REPLACE which could have overwritten an already-scraped entry.
+Fix: backend/app.py — derive effective_end from the highest checksum lb_number when end_lb is absent, then unconditionally fill every sequential gap between start_lb and effective_end using insert_missing_entry. For explicit range scrapes the fill_gaps checkbox is still respected. backend/db.py — changed insert_missing_entry to INSERT OR IGNORE so gap-filling can never clobber a row that already has real scraped data.
+
+---
+
+BUG-031: scrape_entry skips status='missing' entries even when a local page could be used
 Status: Fixed
 File(s): backend/scraper.py:64
 Reported: 2026-05-12
 Fixed: 2026-05-12
-Description: When use_local_pages=True, entries previously marked status='missing' (from a prior web 404 or fill_gaps) were silently skipped by scrape_entry() even if a local HTML page existed in data/pages/ that could provide real metadata. The status=='missing' early-return fired before the local-page existence check.
-Root cause: local_page path was computed at line 90, after the skip block (lines 64–88). The skip logic had no visibility into whether a local file was present, so it unconditionally bailed on any 'missing' entry.
-Fix: Moved local_page resolution before the skip block. The status=='missing' branch now only skips if no usable local page is present (not (use_local_pages and local_page.exists())). Also restructured the elif/else branches to be mutually exclusive and clearer.
+Description: When use_local_pages=True, entries previously marked status='missing' were silently skipped by scrape_entry() even if a local HTML page existed in data/pages/ that could provide real metadata. The status=='missing' early-return fired before the local-page existence check.
+Root cause: local_page path was computed after the skip block. The skip logic had no visibility into whether a local file was present, so it unconditionally bailed on any 'missing' entry.
+Fix: Moved local_page resolution before the skip block. The status=='missing' branch now only skips if no usable local page is present.
 
 ---
 

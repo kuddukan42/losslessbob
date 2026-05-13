@@ -294,12 +294,6 @@ class SetupTab(QWidget):
         self.scrape_range_btn.setFixedWidth(_SCRAPE_BTN_W)
         self.scrape_range_btn.clicked.connect(self._on_scrape_range)
         scrape_grid.addWidget(self.scrape_range_btn, 2, 2, _VC)
-        self.fill_gaps_cb = QCheckBox("Skip LB numbers with no checksum data")
-        self.fill_gaps_cb.setToolTip(
-            "For LB numbers in the range not present in the checksum database, "
-            "insert a MISSING placeholder entry so they appear in search results."
-        )
-        scrape_grid.addWidget(self.fill_gaps_cb, 2, 3, 1, 2, _VC)
 
         scraper_layout.addLayout(scrape_grid)
 
@@ -621,15 +615,14 @@ class SetupTab(QWidget):
         self.stop_scrape_btn.setEnabled(True)
         self.scrape_progress.setVisible(True)
         self.scrape_progress.setRange(0, 0)
-        fill_gaps = self.fill_gaps_cb.isChecked()
         force = self.force_scrape_cb.isChecked()
         self.scrape_status_label.setText(f"Starting range scrape LB-{start} to LB-{end}...")
-        self._log(f"Starting range scrape: LB-{start} to LB-{end}{' (fill gaps)' if fill_gaps else ''}{' (force)' if force else ''}")
+        self._log(f"Starting range scrape: LB-{start} to LB-{end}{' (force)' if force else ''}")
 
         try:
             requests.post(
                 f"http://127.0.0.1:{self.flask_port}/api/scrape/start",
-                json={"start_lb": start, "end_lb": end, "force": force, "fill_gaps": fill_gaps},
+                json={"start_lb": start, "end_lb": end, "force": force},
                 timeout=10,
             )
         except Exception as e:
