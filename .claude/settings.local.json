@@ -41,7 +41,12 @@
       "Read(//home/tjenkins/**)",
       "Bash(pip install *)",
       "Bash(python -c \"from backend.db import init_db, lookup_checksums, search_entries, record_entry_changes, rebuild_bloom, checksum_in_bloom; print\\('db.py OK'\\)\")",
-      "Bash(python -c \"from backend.db import init_db; import time; t=time.monotonic\\(\\); init_db\\(\\); print\\(f'init_db returned in {time.monotonic\\(\\)-t:.2f}s'\\)\")"
+      "Bash(python -c \"from backend.db import init_db; import time; t=time.monotonic\\(\\); init_db\\(\\); print\\(f'init_db returned in {time.monotonic\\(\\)-t:.2f}s'\\)\")",
+      "Bash(git -C /home/tjenkins/Documents/losslessbob log --oneline -10)",
+      "Bash(git -C /home/tjenkins/Documents/losslessbob show bec87153 --stat)",
+      "Bash(git -C /home/tjenkins/Documents/losslessbob show f84af308 --stat)",
+      "Bash(git -C /home/tjenkins/Documents/losslessbob diff f84af308..bec87153 -- backend/app.py backend/importer.py backend/db.py gui/setup_tab.py)",
+      "Bash(git -C /home/tjenkins/Documents/losslessbob show f84af308 -- backend/app.py)"
     ],
     "additionalDirectories": [
       "/home/tjenkins/.ssh"

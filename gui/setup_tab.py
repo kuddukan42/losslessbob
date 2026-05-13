@@ -490,6 +490,8 @@ class SetupTab(QWidget):
             self.import_status_label.setText(f"Reset failed: {result['error']}")
         else:
             self.import_status_label.setText("Database reset. Ready for a fresh import.")
+            # Re-persist current UI state so user preferences survive the meta table wipe.
+            self._save_settings()
             self._refresh_stats()
             self.stats_changed.emit()
 

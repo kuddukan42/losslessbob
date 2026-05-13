@@ -61,6 +61,9 @@ def scrape_entry(lb_number, force=False, download_files=True, use_local_pages=Fa
     lb_id = f"{lb_number:05d}"
     lb_dir = to_long_path(ATTACHMENTS_DIR / f"LB-{lb_id}")
 
+    # Resolve local page path early so the skip logic can check its existence.
+    local_page = to_long_path(PAGES_DIR / f"LB-{lb_id}.html")
+
     if not force:
         with get_connection(db_path) as conn:
             row = conn.execute(
@@ -68,26 +71,29 @@ def scrape_entry(lb_number, force=False, download_files=True, use_local_pages=Fa
             ).fetchone()
             if row is not None:
                 if row["status"] == "missing":
+                    # If a local page is available we can recover real metadata;
+                    # only skip if there is nothing local to work with.
+                    if not (use_local_pages and local_page.exists()):
+                        return {"skipped": True}
+                elif not download_files:
                     return {"skipped": True}
-                if not download_files:
-                    return {"skipped": True}
-                for prow in conn.execute(
-                    "SELECT filename, clean_name FROM entry_files WHERE lb_number=? AND downloaded=0",
-                    (lb_number,)
-                ).fetchall():
-                    if (lb_dir / prow["clean_name"]).exists():
-                        conn.execute(
-                            "UPDATE entry_files SET downloaded=1 WHERE lb_number=? AND filename=?",
-                            (lb_number, prow["filename"])
-                        )
-                pending = conn.execute(
-                    "SELECT COUNT(*) FROM entry_files WHERE lb_number=? AND downloaded=0",
-                    (lb_number,)
-                ).fetchone()[0]
-                if pending == 0:
-                    return {"skipped": True}
+                else:
+                    for prow in conn.execute(
+                        "SELECT filename, clean_name FROM entry_files WHERE lb_number=? AND downloaded=0",
+                        (lb_number,)
+                    ).fetchall():
+                        if (lb_dir / prow["clean_name"]).exists():
+                            conn.execute(
+                                "UPDATE entry_files SET downloaded=1 WHERE lb_number=? AND filename=?",
+                                (lb_number, prow["filename"])
+                            )
+                    pending = conn.execute(
+                        "SELECT COUNT(*) FROM entry_files WHERE lb_number=? AND downloaded=0",
+                        (lb_number,)
+                    ).fetchone()[0]
+                    if pending == 0:
+                        return {"skipped": True}
 
-    local_page = to_long_path(PAGES_DIR / f"LB-{lb_id}.html")
     if use_local_pages and local_page.exists():
         html_text = local_page.read_text(encoding="utf-8", errors="replace")
         used_local = True

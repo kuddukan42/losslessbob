@@ -1,3 +1,25 @@
+BUG-031: "Scrape All Missing" skips entries with status='missing' even when a local page is available
+Status: Fixed
+File(s): backend/scraper.py:64
+Reported: 2026-05-12
+Fixed: 2026-05-12
+Description: When use_local_pages=True, entries previously marked status='missing' (from a prior web 404 or fill_gaps) were silently skipped by scrape_entry() even if a local HTML page existed in data/pages/ that could provide real metadata. The status=='missing' early-return fired before the local-page existence check.
+Root cause: local_page path was computed at line 90, after the skip block (lines 64–88). The skip logic had no visibility into whether a local file was present, so it unconditionally bailed on any 'missing' entry.
+Fix: Moved local_page resolution before the skip block. The status=='missing' branch now only skips if no usable local page is present (not (use_local_pages and local_page.exists())). Also restructured the elif/else branches to be mutually exclusive and clearer.
+
+---
+
+BUG-030: Auto-scrape fires after import even when checkbox is unchecked (post-DB-reset)
+Status: Fixed
+File(s): gui/setup_tab.py:485, backend/app.py:59
+Reported: 2026-05-12
+Fixed: 2026-05-12
+Description: After clicking "Reset Database", the meta table is wiped. _on_reset_finished did not re-persist the current UI settings, so auto_scrape became NULL in the DB. on_complete then evaluated NULL != "0" as True and started the scraper even though the checkbox was unchecked.
+Root cause: DB reset drops all meta rows but the GUI never re-saves its settings to the fresh DB, leaving auto_scrape as NULL; NULL != "0" is always True in Python.
+Fix: Added self._save_settings() call in _on_reset_finished after a successful reset so user preferences survive the meta table wipe. Added explicit NULL handling in on_complete (val is None or val != "0") to document the intended default-on behaviour.
+
+---
+
 BUG-029: 2–4 s startup delay from eager QWebEngineView construction in AttachmentsTab
 Status: Fixed
 File(s): gui/attachments_tab.py

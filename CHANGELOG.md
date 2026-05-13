@@ -1,3 +1,16 @@
+[2026-05-12] — fix(scraper): BUG-031 — "Scrape All Missing" skips recoverable entries when local pages are present
+
+Fixed
+
+backend/scraper.py: Moved local_page resolution before the skip block in scrape_entry(). The status=='missing' guard now permits scraping when use_local_pages=True and the local HTML file exists, so previously-404'd entries are recovered from disk on the next "Scrape All Missing" run. Restructured the skip elif/else branches to be mutually exclusive.
+
+[2026-05-12] — fix(gui,backend): BUG-030 — auto-scrape fires after import post-DB-reset
+
+Fixed
+
+gui/setup_tab.py: _on_reset_finished now calls self._save_settings() after a successful reset so the user's current checkbox states are persisted back to the freshly-wiped meta table. Prevents auto_scrape reverting to NULL (which was treated as enabled).
+backend/app.py: on_complete now uses explicit None-check (_val is None or _val != "0") to document the intended default-on behaviour and guard against future Python type surprises.
+
 [2026-05-12] — feat(importer): real-time import progress status
 
 Changed

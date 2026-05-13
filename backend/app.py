@@ -57,7 +57,10 @@ def create_app():
 
             def on_complete(result):
                 if result.get("scrape_queued"):
-                    auto_scrape = database.get_meta("auto_scrape") != "0"
+                    # Treat None (never set / DB reset) as enabled — matches UI default.
+                    # Only "0" disables auto-scrape.
+                    _val = database.get_meta("auto_scrape")
+                    auto_scrape = _val is None or _val != "0"
                     if auto_scrape:
                         new_lbs = result.get("new_lb_numbers", [])
                         delay = int(database.get_meta("scrape_delay_ms") or 1500)
