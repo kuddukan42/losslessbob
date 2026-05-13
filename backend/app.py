@@ -277,6 +277,69 @@ def create_app():
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
+    # ── FEAT-03: Personal Metadata ───────────────────────────────────────────
+
+    @app.route("/api/collection/<int:lb>/meta", methods=["GET"])
+    def get_coll_meta(lb):
+        try:
+            return jsonify(database.get_collection_meta(lb))
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/collection/<int:lb>/meta", methods=["POST"])
+    def set_coll_meta(lb):
+        try:
+            database.set_collection_meta(lb, request.get_json() or {})
+            return jsonify({"ok": True})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/collection/<int:lb>/listen", methods=["POST"])
+    def log_listen(lb):
+        try:
+            database.increment_listen_count(lb)
+            return jsonify({"ok": True})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    # ── FEAT-04: Wishlist ────────────────────────────────────────────────────
+
+    @app.route("/api/wishlist", methods=["GET"])
+    def wishlist_list():
+        try:
+            return jsonify(database.get_wishlist())
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/wishlist", methods=["POST"])
+    def wishlist_add():
+        try:
+            data = request.get_json() or {}
+            lb = data.get("lb_number")
+            if not lb:
+                return jsonify({"error": "lb_number required"}), 400
+            added = database.add_to_wishlist(int(lb), data.get("priority", 3), data.get("notes"))
+            return jsonify({"ok": True, "added": added > 0})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/wishlist/<int:lb>", methods=["DELETE"])
+    def wishlist_remove(lb):
+        try:
+            database.remove_from_wishlist(lb)
+            return jsonify({"ok": True})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    # ── FEAT-05: Duplicate Detector ──────────────────────────────────────────
+
+    @app.route("/api/collection/duplicates", methods=["GET"])
+    def collection_duplicates():
+        try:
+            return jsonify(database.get_collection_duplicates())
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
     # ── Scraper Control ──────────────────────────────────────────────────────
 
     @app.route("/api/scrape/start", methods=["POST"])

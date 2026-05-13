@@ -13,10 +13,11 @@ from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QTabWidget, QTableView, QPushButton,
     QLabel, QLineEdit, QAbstractItemView, QHeaderView, QMenu, QDialog,
     QFormLayout, QDialogButtonBox, QTableWidget, QTableWidgetItem,
-    QFileDialog, QMessageBox, QComboBox, QCheckBox,
+    QFileDialog, QMessageBox, QComboBox, QCheckBox, QTreeWidget, QTreeWidgetItem,
+    QSpinBox,
 )
 
-from gui.styles import ROW_OWNED
+from gui.styles import ROW_OWNED, ROW_WISHLIST
 
 _LB_RE = re.compile(r'LB-0*(\d+)', re.IGNORECASE)
 
@@ -148,6 +149,59 @@ class _MissingModel(QAbstractTableModel):
         return list(self._rows)
 
 
+WISH_HEADERS = ["LB Number", "Date", "Location", "Rating", "Priority", "Notes", "Added"]
+
+
+class _WishlistModel(QAbstractTableModel):
+    def __init__(self):
+        super().__init__()
+        self._rows = []
+
+    def rowCount(self, parent=QModelIndex()):
+        return len(self._rows)
+
+    def columnCount(self, parent=QModelIndex()):
+        return len(WISH_HEADERS)
+
+    def data(self, index, role=Qt.ItemDataRole.DisplayRole):
+        if not index.isValid():
+            return None
+        row = self._rows[index.row()]
+        col = index.column()
+        if role == Qt.ItemDataRole.DisplayRole:
+            if col == 0:
+                return f"LB-{row['lb_number']}"
+            if col == 1:
+                return row.get("date_str") or ""
+            if col == 2:
+                return row.get("location") or ""
+            if col == 3:
+                return row.get("rating") or ""
+            if col == 4:
+                return str(row.get("priority") or 3)
+            if col == 5:
+                return row.get("notes") or ""
+            if col == 6:
+                v = row.get("added_at") or ""
+                return str(v)[:10]
+        if role == Qt.ItemDataRole.BackgroundRole:
+            return ROW_WISHLIST
+        return None
+
+    def headerData(self, section, orientation, role=Qt.ItemDataRole.DisplayRole):
+        if orientation == Qt.Orientation.Horizontal and role == Qt.ItemDataRole.DisplayRole:
+            return WISH_HEADERS[section]
+        return None
+
+    def set_rows(self, rows):
+        self.beginResetModel()
+        self._rows = rows
+        self.endResetModel()
+
+    def get_row(self, idx):
+        return self._rows[idx] if 0 <= idx < len(self._rows) else None
+
+
 class _ApiWorker(QThread):
     finished = pyqtSignal(object)
     error = pyqtSignal(str)
@@ -232,6 +286,63 @@ class _ScanPreviewDialog(QDialog):
         layout.addWidget(btns)
 
 
+class _PersonalMetaDialog(QDialog):
+    def __init__(self, lb_number, meta, flask_port, parent=None):
+        super().__init__(parent)
+        self.setWindowTitle(f"Personal Info — LB-{lb_number:05d}")
+        self._lb = lb_number
+        self._flask_port = flask_port
+        layout = QFormLayout(self)
+
+        self._rating = QComboBox()
+        self._rating.addItem("— none —", userData=None)
+        for i in range(1, 6):
+            self._rating.addItem("★" * i, userData=i)
+        current_rating = meta.get("personal_rating")
+        if current_rating:
+            self._rating.setCurrentIndex(current_rating)
+        layout.addRow("Rating:", self._rating)
+
+        self._tags = QLineEdit(meta.get("tags") or "")
+        layout.addRow("Tags:", self._tags)
+
+        listen_count = meta.get("listen_count") or 0
+        last = meta.get("last_listened") or "never"
+        self._listen_label = QLabel(f"{listen_count}  (last: {str(last)[:19]})")
+        layout.addRow("Listen count:", self._listen_label)
+
+        log_btn = QPushButton("Log Listen")
+        log_btn.clicked.connect(self._log_listen)
+        layout.addRow("", log_btn)
+
+        btns = QDialogButtonBox(QDialogButtonBox.StandardButton.Ok | QDialogButtonBox.StandardButton.Cancel)
+        btns.accepted.connect(self.accept)
+        btns.rejected.connect(self.reject)
+        layout.addRow(btns)
+
+    def _log_listen(self):
+        try:
+            requests.post(
+                f"http://127.0.0.1:{self._flask_port}/api/collection/{self._lb}/listen",
+                timeout=5,
+            )
+            resp = requests.get(
+                f"http://127.0.0.1:{self._flask_port}/api/collection/{self._lb}/meta",
+                timeout=5,
+            ).json()
+            count = resp.get("listen_count") or 0
+            last = resp.get("last_listened") or "never"
+            self._listen_label.setText(f"{count}  (last: {str(last)[:19]})")
+        except Exception as e:
+            self._listen_label.setText(f"Error: {e}")
+
+    def get_values(self):
+        return {
+            "personal_rating": self._rating.currentData(),
+            "tags": self._tags.text().strip() or None,
+        }
+
+
 class CollectionTab(QWidget):
     lookup_lb = pyqtSignal(int)
 
@@ -244,6 +355,8 @@ class CollectionTab(QWidget):
         self._page_size: int = 50
         self._coll_col_widths: list | None = None
         self._miss_col_widths: list | None = None
+        self._wish_col_widths: list | None = None
+        self._duplicates_loaded: bool = False
         self._load_page_size()
         self._build_ui()
         self.refresh_collection()
@@ -271,6 +384,9 @@ class CollectionTab(QWidget):
         layout.addWidget(self.inner_tabs)
         self.inner_tabs.addTab(self._build_collection_panel(), "My Collection")
         self.inner_tabs.addTab(self._build_missing_panel(), "Missing")
+        self.inner_tabs.addTab(self._build_wishlist_panel(), "Wishlist")
+        self.inner_tabs.addTab(self._build_duplicates_panel(), "Duplicates")
+        self.inner_tabs.currentChanged.connect(self._on_inner_tab_changed)
 
     # ── My Collection panel ───────────────────────────────────────────────────
 
@@ -386,6 +502,63 @@ class CollectionTab(QWidget):
         self.miss_status = QLabel("")
         layout.addWidget(self.miss_status)
         return w
+
+    # ── Wishlist panel ────────────────────────────────────────────────────────
+
+    def _build_wishlist_panel(self):
+        w = QWidget()
+        layout = QVBoxLayout(w)
+
+        btn_row = QHBoxLayout()
+        refresh_btn = QPushButton("Refresh")
+        refresh_btn.clicked.connect(self.refresh_wishlist)
+        btn_row.addWidget(refresh_btn)
+        btn_row.addStretch()
+        layout.addLayout(btn_row)
+
+        self.wish_model = _WishlistModel()
+        self.wish_view = QTableView()
+        self.wish_view.setModel(self.wish_model)
+        self.wish_view.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
+        self.wish_view.setSelectionMode(QAbstractItemView.SelectionMode.SingleSelection)
+        self.wish_view.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
+        self.wish_view.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
+        self.wish_view.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
+        self.wish_view.customContextMenuRequested.connect(self._on_wish_context)
+        layout.addWidget(self.wish_view)
+
+        self.wish_status = QLabel("")
+        layout.addWidget(self.wish_status)
+        return w
+
+    # ── Duplicates panel ──────────────────────────────────────────────────────
+
+    def _build_duplicates_panel(self):
+        w = QWidget()
+        layout = QVBoxLayout(w)
+
+        btn_row = QHBoxLayout()
+        refresh_btn = QPushButton("Refresh")
+        refresh_btn.clicked.connect(self.refresh_duplicates)
+        btn_row.addWidget(refresh_btn)
+        btn_row.addStretch()
+        layout.addLayout(btn_row)
+
+        self.dupes_tree = QTreeWidget()
+        self.dupes_tree.setColumnCount(2)
+        self.dupes_tree.setHeaderLabels(["LB Number / Show", "Rating"])
+        self.dupes_tree.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
+        self.dupes_tree.customContextMenuRequested.connect(self._on_dupes_context)
+        layout.addWidget(self.dupes_tree)
+
+        self.dupes_status = QLabel("")
+        layout.addWidget(self.dupes_status)
+        return w
+
+    def _on_inner_tab_changed(self, index: int) -> None:
+        tab_text = self.inner_tabs.tabText(index)
+        if tab_text == "Duplicates" and not self._duplicates_loaded:
+            self.refresh_duplicates()
 
     # ── Column sizing & word wrap ─────────────────────────────────────────────
 
@@ -555,6 +728,143 @@ class CollectionTab(QWidget):
             self.miss_status.setText(f"{len(data)} missing from collection.")
         else:
             self.miss_status.setText(f"Error: {data.get('error', 'unknown')}")
+
+    # ── Wishlist data ─────────────────────────────────────────────────────────
+
+    def refresh_wishlist(self):
+        self.wish_status.setText("Loading…")
+        w = _ApiWorker(lambda: requests.get(
+            f"http://127.0.0.1:{self.flask_port}/api/wishlist", timeout=15
+        ).json())
+        w.finished.connect(self._on_wishlist_loaded)
+        w.error.connect(lambda e: self.wish_status.setText(f"Error: {e}"))
+        self._workers.append(w)
+        w.start()
+
+    def _on_wishlist_loaded(self, data):
+        if isinstance(data, list):
+            self._wish_col_widths = None
+            self.wish_model.set_rows(data)
+            if data:
+                self.wish_view.resizeColumnsToContents()
+                self._wish_col_widths = [
+                    self.wish_view.columnWidth(i) for i in range(self.wish_model.columnCount())
+                ]
+            self.wish_status.setText(f"{len(data)} item(s) on wishlist.")
+        else:
+            self.wish_status.setText(f"Error: {data.get('error', 'unknown')}")
+
+    def _on_wish_context(self, pos):
+        index = self.wish_view.indexAt(pos)
+        if not index.isValid():
+            return
+        row = self.wish_model.get_row(index.row())
+        if not row:
+            return
+        lb = row["lb_number"]
+        menu = QMenu(self)
+
+        remove_act = QAction("Remove from Wishlist", self)
+        remove_act.triggered.connect(lambda: self._wishlist_remove(lb))
+        menu.addAction(remove_act)
+
+        view_act = QAction("View LB Entry", self)
+        url = f"http://www.losslessbob.wonderingwhattochoose.com/detail/LB-{lb:05d}.html"
+        view_act.triggered.connect(lambda: webbrowser.open(url))
+        menu.addAction(view_act)
+
+        menu.exec(self.wish_view.mapToGlobal(pos))
+
+    def _wishlist_remove(self, lb: int):
+        w = _ApiWorker(lambda: requests.delete(
+            f"http://127.0.0.1:{self.flask_port}/api/wishlist/{lb}", timeout=10
+        ).json())
+        w.finished.connect(lambda _: self.refresh_wishlist())
+        w.error.connect(lambda e: self.wish_status.setText(f"Error: {e}"))
+        self._workers.append(w)
+        w.start()
+
+    # ── Duplicates data ───────────────────────────────────────────────────────
+
+    def refresh_duplicates(self):
+        self.dupes_status.setText("Loading…")
+        self._duplicates_loaded = True
+        w = _ApiWorker(lambda: requests.get(
+            f"http://127.0.0.1:{self.flask_port}/api/collection/duplicates", timeout=15
+        ).json())
+        w.finished.connect(self._on_duplicates_loaded)
+        w.error.connect(lambda e: self.dupes_status.setText(f"Error: {e}"))
+        self._workers.append(w)
+        w.start()
+
+    def _on_duplicates_loaded(self, data):
+        self.dupes_tree.clear()
+        if not isinstance(data, list):
+            self.dupes_status.setText(f"Error: {data.get('error', 'unknown')}")
+            return
+        for group in data:
+            show_item = QTreeWidgetItem([
+                f"{group['date_str']}  —  {group['location']}",
+                f"({len(group['owned'])} owned)",
+            ])
+            for lb_row in group["owned"]:
+                child = QTreeWidgetItem([
+                    f"LB-{lb_row['lb_number']:05d}",
+                    lb_row.get("rating") or "",
+                ])
+                child.setForeground(0, QColor("#1B5E20"))
+                child.setForeground(1, QColor("#1B5E20"))
+                child.setData(0, Qt.ItemDataRole.UserRole, ("owned", lb_row["lb_number"]))
+                show_item.addChild(child)
+            for lb_row in group["unowned"]:
+                child = QTreeWidgetItem([
+                    f"LB-{lb_row['lb_number']:05d}",
+                    lb_row.get("rating") or "",
+                ])
+                child.setForeground(0, QColor("#757575"))
+                child.setForeground(1, QColor("#757575"))
+                child.setData(0, Qt.ItemDataRole.UserRole, ("unowned", lb_row["lb_number"]))
+                show_item.addChild(child)
+            self.dupes_tree.addTopLevelItem(show_item)
+            show_item.setExpanded(True)
+        self.dupes_tree.resizeColumnToContents(0)
+        self.dupes_status.setText(f"{len(data)} duplicate show(s) found.")
+
+    def _on_dupes_context(self, pos):
+        item = self.dupes_tree.itemAt(pos)
+        if not item:
+            return
+        data = item.data(0, Qt.ItemDataRole.UserRole)
+        if not data:
+            return
+        kind, lb = data
+        menu = QMenu(self)
+        if kind == "owned":
+            rm_act = QAction("Remove from Collection", self)
+            rm_act.triggered.connect(lambda: self._dupes_remove_collection(lb))
+            menu.addAction(rm_act)
+        else:
+            open_act = QAction("Open on LosslessBob", self)
+            url = f"http://www.losslessbob.wonderingwhattochoose.com/detail/LB-{lb:05d}.html"
+            open_act.triggered.connect(lambda: webbrowser.open(url))
+            menu.addAction(open_act)
+        menu.exec(self.dupes_tree.mapToGlobal(pos))
+
+    def _dupes_remove_collection(self, lb: int):
+        confirm = QMessageBox.question(
+            self, "Confirm Remove",
+            f"Remove LB-{lb:05d} from My Collection?\n(Files are not deleted.)",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+        )
+        if confirm != QMessageBox.StandardButton.Yes:
+            return
+        w = _ApiWorker(lambda: requests.delete(
+            f"http://127.0.0.1:{self.flask_port}/api/collection/{lb}", timeout=10
+        ).json())
+        w.finished.connect(lambda _: (self.refresh_collection(), self.refresh_duplicates()))
+        w.error.connect(lambda e: self.dupes_status.setText(f"Error: {e}"))
+        self._workers.append(w)
+        w.start()
 
     # ── Collection filter ─────────────────────────────────────────────────────
 
@@ -780,6 +1090,10 @@ class CollectionTab(QWidget):
                 upd_act.triggered.connect(self._on_update_location)
                 menu.addAction(upd_act)
 
+                meta_act = QAction("Edit Personal Info…", self)
+                meta_act.triggered.connect(lambda: self._on_edit_personal_info(lb))
+                menu.addAction(meta_act)
+
         if not menu.isEmpty():
             menu.exec(self.coll_view.mapToGlobal(pos))
 
@@ -806,6 +1120,28 @@ class CollectionTab(QWidget):
         w.error.connect(lambda e: self.coll_status.setText(f"Error: {e}"))
         self._workers.append(w)
         w.start()
+
+    def _on_edit_personal_info(self, lb_number: int):
+        try:
+            meta = requests.get(
+                f"http://127.0.0.1:{self.flask_port}/api/collection/{lb_number}/meta",
+                timeout=5,
+            ).json()
+        except Exception as e:
+            self.coll_status.setText(f"Error loading meta: {e}")
+            return
+        dlg = _PersonalMetaDialog(lb_number, meta, self.flask_port, parent=self)
+        if dlg.exec() != QDialog.DialogCode.Accepted:
+            return
+        vals = dlg.get_values()
+        try:
+            requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/collection/{lb_number}/meta",
+                json=vals, timeout=5,
+            )
+            self.coll_status.setText(f"Saved personal info for LB-{lb_number:05d}.")
+        except Exception as e:
+            self.coll_status.setText(f"Error saving meta: {e}")
 
     # ── Missing: double-click & export ────────────────────────────────────────
 

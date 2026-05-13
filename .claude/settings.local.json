@@ -46,7 +46,9 @@
       "Bash(git -C /home/tjenkins/Documents/losslessbob show bec87153 --stat)",
       "Bash(git -C /home/tjenkins/Documents/losslessbob show f84af308 --stat)",
       "Bash(git -C /home/tjenkins/Documents/losslessbob diff f84af308..bec87153 -- backend/app.py backend/importer.py backend/db.py gui/setup_tab.py)",
-      "Bash(git -C /home/tjenkins/Documents/losslessbob show f84af308 -- backend/app.py)"
+      "Bash(git -C /home/tjenkins/Documents/losslessbob show f84af308 -- backend/app.py)",
+      "Bash(sed -n '418,460p' /home/tjenkins/Documents/losslessbob/gui/lookup_tab.py)",
+      "Bash(sed -n '580,630p' /home/tjenkins/Documents/losslessbob/gui/lookup_tab.py)"
     ],
     "additionalDirectories": [
       "/home/tjenkins/.ssh"

@@ -2,7 +2,7 @@ import math
 import webbrowser
 
 import requests
-from PyQt6.QtCore import Qt, QAbstractTableModel, QModelIndex, pyqtSignal, QThread
+from PyQt6.QtCore import Qt, QAbstractTableModel, QModelIndex, pyqtSignal, QThread, QSettings
 from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLineEdit, QComboBox,
     QPushButton, QTableView, QAbstractItemView, QHeaderView, QLabel, QCheckBox,
@@ -10,7 +10,10 @@ from PyQt6.QtWidgets import (
 )
 
 _DESC_COL = 4          # index of the Description column
-_DESC_DEFAULT_W = 1400  # default width for Description in pixels
+_DESC_DEFAULT_W = 600  # default width for Description in pixels
+_QSETTINGS_ORG = "LosslessBob"
+_QSETTINGS_APP = "SearchTab"
+_QSETTINGS_COL_KEY = "col_widths"
 
 HEADERS = ["LB Number", "Date", "Location", "Rating", "Description", "Owned"]
 
@@ -153,7 +156,9 @@ class SearchTab(QWidget):
         self._show_missing_only: bool = False
         self._page: int = 0
         self._page_size: int = 50
-        self._col_widths: list | None = None
+        self._resizing_programmatically: bool = False
+        self._qsettings = QSettings(_QSETTINGS_ORG, _QSETTINGS_APP)
+        self._col_widths: list | None = self._load_col_widths()
         self._load_page_size()
         self._build_ui()
         self.load_years()
@@ -239,22 +244,52 @@ class SearchTab(QWidget):
         hdr.setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
         hdr.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
         hdr.customContextMenuRequested.connect(self._on_header_context)
+        hdr.sectionResized.connect(self._on_col_resized)
+        self.view.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
+        self.view.customContextMenuRequested.connect(self._on_row_context)
         self.view.doubleClicked.connect(self._on_double_click)
         layout.addWidget(self.view)
 
     # ── Column sizing ─────────────────────────────────────────────────────────
 
+    def _load_col_widths(self) -> list | None:
+        data = self._qsettings.value(_QSETTINGS_COL_KEY)
+        if isinstance(data, list) and len(data) == len(HEADERS):
+            try:
+                return [int(w) for w in data]
+            except (ValueError, TypeError):
+                pass
+        return None
+
+    def _save_col_widths(self) -> None:
+        if self._col_widths and len(self._col_widths) == len(HEADERS):
+            self._qsettings.setValue(_QSETTINGS_COL_KEY, self._col_widths)
+
+    def _on_col_resized(self, col: int, _old_w: int, new_w: int) -> None:
+        if self._resizing_programmatically:
+            return
+        if self._col_widths is None:
+            self._col_widths = [self.view.columnWidth(i) for i in range(len(HEADERS))]
+        if col < len(self._col_widths):
+            self._col_widths[col] = new_w
+        self._save_col_widths()
+
     def _set_default_col_widths(self) -> None:
         """Size all columns by content except Description, which gets a fixed default."""
+        self._resizing_programmatically = True
         self.view.resizeColumnsToContents()
         self.view.setColumnWidth(_DESC_COL, _DESC_DEFAULT_W)
+        self._resizing_programmatically = False
         self._col_widths = [self.view.columnWidth(i) for i in range(len(HEADERS))]
+        self._save_col_widths()
 
     def _apply_col_widths(self) -> None:
         if not self._col_widths:
             return
+        self._resizing_programmatically = True
         for i, w in enumerate(self._col_widths):
             self.view.setColumnWidth(i, w)
+        self._resizing_programmatically = False
 
     def _on_header_context(self, pos) -> None:
         col = self.view.horizontalHeader().logicalIndexAt(pos)
@@ -274,6 +309,7 @@ class SearchTab(QWidget):
             self.view.setColumnWidth(col, width)
             if self._col_widths and col < len(self._col_widths):
                 self._col_widths[col] = width
+            self._save_col_widths()
 
     def _on_wrap_toggled(self, state: int) -> None:
         enabled = bool(state)
@@ -415,7 +451,6 @@ class SearchTab(QWidget):
         self.search_btn.setEnabled(True)
         self._all_results = results
         self._page = 0
-        self._col_widths = None
         self._render_page()
         self._update_results_label()
         self._owned_worker = _OwnedWorker(self.flask_port)
@@ -442,3 +477,29 @@ class SearchTab(QWidget):
         else:
             url = f"http://www.losslessbob.wonderingwhattochoose.com/detail/LB-{lb:05d}.html"
             webbrowser.open(url)
+
+    def _on_row_context(self, pos):
+        index = self.view.indexAt(pos)
+        if not index.isValid():
+            return
+        lb = self.model.get_lb(index.row())
+        if lb is None:
+            return
+        menu = QMenu(self)
+        wish_act = menu.addAction("Add to Wishlist")
+        wish_act.triggered.connect(lambda: self._add_to_wishlist(lb))
+        menu.exec(self.view.mapToGlobal(pos))
+
+    def _add_to_wishlist(self, lb: int):
+        import requests as _req
+        try:
+            resp = _req.post(
+                f"http://127.0.0.1:{self.flask_port}/api/wishlist",
+                json={"lb_number": lb}, timeout=5,
+            ).json()
+            if resp.get("added"):
+                self.results_label.setText(f"LB-{lb:05d} added to wishlist.")
+            else:
+                self.results_label.setText(f"LB-{lb:05d} already on wishlist.")
+        except Exception as e:
+            self.results_label.setText(f"Wishlist error: {e}")

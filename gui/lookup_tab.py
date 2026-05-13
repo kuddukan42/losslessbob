@@ -597,11 +597,29 @@ class LookupTab(QWidget):
                     open_web = QAction("Go to Web Page", self)
                     open_web.triggered.connect(lambda: webbrowser.open(url))
                     menu.addAction(open_web)
+
+                    wish_act = QAction("Add to Wishlist", self)
+                    wish_act.triggered.connect(lambda: self._add_to_wishlist(lb_num))
+                    menu.addAction(wish_act)
                 except ValueError:
                     pass
 
         if not menu.isEmpty():
             menu.exec(self.summary_view.mapToGlobal(pos))
+
+    def _add_to_wishlist(self, lb_num: int):
+        try:
+            import requests as _req
+            resp = _req.post(
+                f"http://127.0.0.1:{self.flask_port}/api/wishlist",
+                json={"lb_number": lb_num}, timeout=5,
+            ).json()
+            if resp.get("added"):
+                self.status_label.setText(f"LB-{lb_num:05d} added to wishlist.")
+            else:
+                self.status_label.setText(f"LB-{lb_num:05d} already on wishlist.")
+        except Exception as e:
+            self.status_label.setText(f"Wishlist error: {e}")
 
     # ── Theme refresh ─────────────────────────────────────────────────────────
 

@@ -79,6 +79,25 @@ CREATE TABLE IF NOT EXISTS entry_changes (
 );
 CREATE INDEX IF NOT EXISTS idx_changes_lb ON entry_changes(lb_number, changed_at DESC);
 
+CREATE TABLE IF NOT EXISTS collection_meta (
+    lb_number      INTEGER PRIMARY KEY,
+    personal_rating INTEGER CHECK(personal_rating BETWEEN 1 AND 5),
+    listen_count   INTEGER DEFAULT 0,
+    last_listened  TIMESTAMP,
+    tags           TEXT,
+    FOREIGN KEY (lb_number) REFERENCES my_collection(lb_number) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS my_wishlist (
+    id         INTEGER PRIMARY KEY AUTOINCREMENT,
+    lb_number  INTEGER NOT NULL UNIQUE,
+    added_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    priority   INTEGER DEFAULT 3 CHECK(priority BETWEEN 1 AND 5),
+    notes      TEXT,
+    FOREIGN KEY (lb_number) REFERENCES entries(lb_number)
+);
+CREATE INDEX IF NOT EXISTS idx_wishlist_lb ON my_wishlist(lb_number);
+
 CREATE VIRTUAL TABLE IF NOT EXISTS entries_fts USING fts5(
     description,
     setlist,
@@ -600,3 +619,123 @@ def get_owned_lb_numbers(db_path=None):
     with get_connection(db_path) as conn:
         rows = conn.execute("SELECT lb_number FROM my_collection").fetchall()
     return [r[0] for r in rows]
+
+
+# ── FEAT-03: Per-Entry Personal Metadata ─────────────────────────────────────
+
+def get_collection_meta(lb_number: int, db_path=None) -> dict:
+    """Return personal metadata for a collection entry, with defaults if absent."""
+    with get_connection(db_path) as conn:
+        row = conn.execute(
+            "SELECT * FROM collection_meta WHERE lb_number=?", (lb_number,)
+        ).fetchone()
+    return dict(row) if row else {
+        "lb_number": lb_number, "personal_rating": None,
+        "listen_count": 0, "last_listened": None, "tags": None,
+    }
+
+
+def set_collection_meta(lb_number: int, fields: dict, db_path=None) -> None:
+    """Upsert personal metadata. Accepted keys: personal_rating, listen_count, last_listened, tags."""
+    allowed = {"personal_rating", "listen_count", "last_listened", "tags"}
+    clean = {k: v for k, v in fields.items() if k in allowed}
+    if not clean:
+        return
+    with get_connection(db_path) as conn:
+        conn.execute(
+            "INSERT INTO collection_meta(lb_number) VALUES(?) ON CONFLICT(lb_number) DO NOTHING",
+            (lb_number,)
+        )
+        set_clause = ", ".join(f"{k}=?" for k in clean)
+        conn.execute(
+            f"UPDATE collection_meta SET {set_clause} WHERE lb_number=?",
+            list(clean.values()) + [lb_number]
+        )
+
+
+def increment_listen_count(lb_number: int, db_path=None) -> None:
+    """Increment listen count and update last_listened timestamp."""
+    from datetime import datetime
+    with get_connection(db_path) as conn:
+        conn.execute(
+            "INSERT INTO collection_meta(lb_number, listen_count, last_listened) "
+            "VALUES(?, 1, ?) ON CONFLICT(lb_number) DO UPDATE SET "
+            "listen_count=listen_count+1, last_listened=excluded.last_listened",
+            (lb_number, datetime.utcnow().isoformat())
+        )
+
+
+# ── FEAT-04: Wishlist ─────────────────────────────────────────────────────────
+
+def get_wishlist(db_path=None) -> list:
+    """Return all wishlist items joined with entry metadata."""
+    with get_connection(db_path) as conn:
+        rows = conn.execute("""
+            SELECT w.id, w.lb_number, w.added_at, w.priority, w.notes,
+                   e.date_str, e.location, e.rating, e.description
+            FROM my_wishlist w
+            LEFT JOIN entries e ON e.lb_number = w.lb_number
+            ORDER BY w.priority DESC, w.lb_number
+        """).fetchall()
+    return [dict(r) for r in rows]
+
+
+def add_to_wishlist(lb_number: int, priority: int = 3, notes: str = None, db_path=None) -> int:
+    """Add an entry to the wishlist. Returns 1 if inserted, 0 if already present."""
+    with get_connection(db_path) as conn:
+        conn.execute(
+            "INSERT OR IGNORE INTO my_wishlist(lb_number, priority, notes) VALUES(?,?,?)",
+            (lb_number, priority, notes)
+        )
+        return conn.execute("SELECT changes()").fetchone()[0]
+
+
+def remove_from_wishlist(lb_number: int, db_path=None) -> None:
+    """Remove an entry from the wishlist."""
+    with get_connection(db_path) as conn:
+        conn.execute("DELETE FROM my_wishlist WHERE lb_number=?", (lb_number,))
+
+
+def get_wishlist_lb_numbers(db_path=None) -> list:
+    """Return a flat list of lb_numbers currently on the wishlist."""
+    with get_connection(db_path) as conn:
+        return [r[0] for r in conn.execute("SELECT lb_number FROM my_wishlist").fetchall()]
+
+
+# ── FEAT-05: Duplicate Concert Detector ──────────────────────────────────────
+
+def get_collection_duplicates(db_path=None) -> list:
+    """Find date+location combos where the user owns more than one LB entry.
+
+    Returns a list of groups, each with keys: date_str, location, owned, unowned.
+    owned/unowned are lists of dicts with lb_number, rating, description.
+    """
+    with get_connection(db_path) as conn:
+        dupes = conn.execute("""
+            SELECT e.date_str, e.location, COUNT(*) as cnt
+            FROM entries e
+            JOIN my_collection c ON c.lb_number = e.lb_number
+            WHERE e.date_str IS NOT NULL AND e.date_str != ''
+              AND e.location IS NOT NULL AND e.location != ''
+            GROUP BY e.date_str, e.location
+            HAVING cnt > 1
+            ORDER BY e.date_str
+        """).fetchall()
+
+        results = []
+        for row in dupes:
+            all_lbs = conn.execute("""
+                SELECT e.lb_number, e.rating, e.description,
+                       (CASE WHEN c.lb_number IS NOT NULL THEN 1 ELSE 0 END) as owned
+                FROM entries e
+                LEFT JOIN my_collection c ON c.lb_number = e.lb_number
+                WHERE e.date_str=? AND e.location=?
+                ORDER BY owned DESC, e.lb_number
+            """, (row["date_str"], row["location"])).fetchall()
+            results.append({
+                "date_str": row["date_str"],
+                "location": row["location"],
+                "owned": [dict(r) for r in all_lbs if r["owned"]],
+                "unowned": [dict(r) for r in all_lbs if not r["owned"]],
+            })
+    return results

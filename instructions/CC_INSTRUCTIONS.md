@@ -6,11 +6,11 @@
 
 ---
 
-## CATEGORY: DATABASE PERFORMANCE
+## CATEGORY: DATABASE PERFORMANCE ## COMPLETE
 
 ---
 
-### DB-01: WAL Mode + Performance PRAGMAs
+### DB-01: WAL Mode + Performance PRAGMAs ## COMPLETE
 
 **Files:** `backend/db.py`  
 **Dependencies:** None  
@@ -40,7 +40,7 @@ def get_connection(db_path=None):
 
 ---
 
-### DB-02: Persistent Per-Thread Connection Pool
+### DB-02: Persistent Per-Thread Connection Pool ## COMPLETE
 
 **Files:** `backend/db.py`  
 **Dependencies:** DB-01 must be complete  
@@ -87,7 +87,7 @@ def get_connection(db_path=None):
 
 ---
 
-### DB-03: Covering Index + Partial Index on `checksums`
+### DB-03: Covering Index + Partial Index on `checksums` ## COMPLETE
 
 **Files:** `backend/db.py`  
 **Dependencies:** None (additive schema change)  
@@ -119,7 +119,7 @@ This executes `CREATE INDEX IF NOT EXISTS` which is a no-op if the index already
 
 ---
 
-### DB-04: Temp Table Bulk Lookup (Replace `IN` Clause)
+### DB-04: Temp Table Bulk Lookup (Replace `IN` Clause) ## COMPLETE
 
 **Files:** `backend/db.py`  
 **Dependencies:** DB-02 (persistent connection required for temp tables to persist within a call)  
@@ -179,7 +179,7 @@ With:
 
 ---
 
-### DB-05: FTS5 Full-Text Search
+### DB-05: FTS5 Full-Text Search ## COMPLETE
 
 **Files:** `backend/db.py`, `backend/app.py`  
 **Dependencies:** DB-01  
@@ -305,7 +305,7 @@ def search_entries(query, field="all", year=None, limit=None, db_path=None):
 
 ---
 
-### DB-06: `PRAGMA optimize` After Import and Scrape
+### DB-06: `PRAGMA optimize` After Import and Scrape ## COMPLETE
 
 **Files:** `backend/importer.py`, `backend/scraper.py`  
 **Dependencies:** DB-01  
@@ -334,7 +334,7 @@ def search_entries(query, field="all", year=None, limit=None, db_path=None):
 
 ---
 
-### DB-07: Bloom Filter Pre-Check for Lookups
+### DB-07: Bloom Filter Pre-Check for Lookups ## COMPLETE
 
 **Files:** `backend/db.py`, `backend/app.py`, `requirements.txt`  
 **Dependencies:** DB-02  
@@ -417,7 +417,7 @@ Then at the point where NOT FOUND entries are appended to `detail`, also append 
 
 ---
 
-### DB-08: Metadata Changelog (Scrape Diff)
+### DB-08: Metadata Changelog (Scrape Diff) ## COMPLETE
 
 **Files:** `backend/db.py`, `backend/scraper.py`, `backend/app.py`  
 **Dependencies:** DB-01  
@@ -724,7 +724,7 @@ def fuzzy_filename_lookup(parsed_entries, threshold=80, db_path=None):
 
 ---
 
-### FEAT-03: Per-Entry Personal Metadata
+### FEAT-03: Per-Entry Personal Metadata ## COMPLETE
 
 **Files:** `backend/db.py`, `backend/app.py`  
 **Dependencies:** DB-01  
@@ -813,7 +813,7 @@ def increment_listen_count(lb_number, db_path=None):
 
 ---
 
-### FEAT-04: Wishlist Tab
+### FEAT-04: Wishlist Tab ## COMPLETE
 
 **Files:** `backend/db.py`, `backend/app.py`, `gui/collection_tab.py`  
 **Dependencies:** DB-01  
@@ -903,7 +903,7 @@ def get_wishlist_lb_numbers(db_path=None):
 
 ---
 
-### FEAT-05: Duplicate Concert Detector
+### FEAT-05: Duplicate Concert Detector ## COMPLETE
 
 **Files:** `backend/db.py`, `backend/app.py`, `gui/collection_tab.py`  
 **Dependencies:** DB-01  
