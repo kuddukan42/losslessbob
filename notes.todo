@@ -26,6 +26,25 @@ debugging on windows
 
 sort search tables
 fix width adjustments on my collection tabs like the search tab
-search by lb number
+search by lb number COMPLETE
 column pickers ? 
 need to be able to see the metadata stars, log listen, etc in my collection
+backup data function to compressed ZIP file, also restore from ZIP file.
+for web scraper, show missing entries stats.
+database check for update doesn't work
+
+prompt for lookup / xref
+
+explain duplicate status in detail box of lookup tab, if you find duplicates, then we are looking for the one that is fully matched, if there is a matched and an incomplete both that are found, prefer the matched one, that's the one it is, not the incomplete one.
+
+1) in lookup if a folder is dragged into the lookup box, there should be an indication in the summary tab that there are no checksums to find, if the folder has audio but not checksums.  this also prompts to generate the missing checksums.
+2) in lookup, when you click on a folder in the listbox, you should filter the summary and detail so you only see that folder.  if there is a long list in the listbox there are too many entries to scroll.  if you click it again to unselect it in the listbox, then show all the results again.
+3) in lookup, if you click on a row in the summary tab, you should filter the detail box to only those records, so you can review that specific item.  if you click it again to unselect it, revert to all the results.
+4) in verify, if there are no checksums of any kind, the status should be NO CHECKSUMS and a yellow status, currently no checksums in a folder will result in a green row that says PASS.
+5) if you have folders added to lookup, then when you switch to verify tab you should carry the same folders to that tab.  so you don't have to add them two times.  however, you can clear the verify box, and add different ones, the lookup and verify will not always be mirrored.  but the frequent use is add to lookup, then switch to verify to verify.
+6) on rename, if reason is Multiple IDs then provide a right click open to select the LB found that you want to apply for renaming.  Then allow rename.  Otherwise don't allow rename if Multiple ID's found but not resolved.  Another option is to select multiple choices of the multiple ID's and apply them all to the rename operation.  if 3 are found, you can pick 1, 2, or 3 for example.  give this status a unique color in the rename tab, not red.
+7) xref functionality need to be added or verified to lookup, rename, search, my collection, etc.  the xref is an alternate version of an LB number.  The naming process looks like LB-XXXXX-xrefXXXX.  similar XXXX can be X, XX, XXX, or XXXX but assume the padded 0's if needed.  find xref216 as xref0216 these are equivalent.  the checksums for all the xrefs are in the checksum database.
+8) add a filter for the xrefs on the search tab, collection tab.
+9) if you find an xref, the rename has to apply the xref to the name, not just the LB.  if you find a partial LB match, and a complete xref match, then the xref is the match. 
+10) generate checksums functions don't work on SHN files
+11) for checksums generated, append _mychecksums to the folder name with the file extension after this.  to distinguish checksums made in the app.

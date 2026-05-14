@@ -20,6 +20,8 @@ from gui.styles import ROW_MATCHED, ROW_NOT_FOUND, ROW_MISSING, ROW_DUPLICATE, R
 SUMMARY_HEADERS = ["LB Number", "Source", "Given", "Matched", "Not Found", "Missing", "Dups", "Xrefs", "Status"]
 DETAIL_HEADERS = ["Checksum", "Filename", "Type", "LB Number", "Xref", "Status", "Source"]
 
+_AUDIO_EXTS = {'.flac', '.shn', '.ape', '.wav', '.m4a', '.wv', '.aif', '.aiff', '.mp3'}
+
 
 class _TableModel(QAbstractTableModel):
     def __init__(self, headers, rows=None):
@@ -141,6 +143,32 @@ class _LookupWorker(QThread):
             self.error.emit(str(e))
 
 
+class _ScanTreeWorker(QThread):
+    """Recursively finds checksum files under a root — runs off the main thread."""
+    finished = pyqtSignal(list)
+    error = pyqtSignal(str)
+
+    _EXTS = {".ffp", ".md5", ".st5", ".sha1", ".shn"}
+
+    def __init__(self, root: Path, filter_mychecksums: bool):
+        super().__init__()
+        self._root = root
+        self._filter = filter_mychecksums
+
+    def run(self):
+        try:
+            found = []
+            for p in sorted(self._root.rglob("*")):
+                if not (p.is_file() and p.suffix.lower() in self._EXTS):
+                    continue
+                if self._filter and "_mychecksums" not in p.name.lower():
+                    continue
+                found.append(str(p))
+            self.finished.emit(found)
+        except Exception as e:
+            self.error.emit(str(e))
+
+
 class _GenerateWorker(QThread):
     finished = pyqtSignal(dict)
     progress = pyqtSignal(str)
@@ -201,6 +229,22 @@ class LookupTab(QWidget):
         self._worker = None
         self._generate_worker = None
         self._multi_generate_worker = None
+        self._scan_tree_worker = None
+
+        # Filtering state
+        self._folder_filter: str | None = None       # active listbox folder filter
+        self._summary_filter_lbs: set = set()        # active summary-row LB filter
+        self._ignore_summary_selection = False
+
+        # Storage for full (unfiltered) rendered data
+        self._sum_rows: list = []
+        self._sum_colors: list = []
+        self._sum_lb_nums: list = []      # int | None per summary row
+        self._sum_user_data: list = []    # user_data dicts per summary row
+        self._det_rows: list = []
+        self._det_colors: list = []
+        self._det_source_folders: list = []  # str | None per detail row
+
         self._build_ui()
 
     def _build_ui(self):
@@ -219,6 +263,7 @@ class LookupTab(QWidget):
         self.listbox.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
         self.listbox.customContextMenuRequested.connect(self._on_listbox_context)
         self.listbox.itemSelectionChanged.connect(self._on_listbox_selection_changed)
+        self.listbox.itemClicked.connect(self._on_listbox_item_clicked)
         left_layout.addWidget(self.listbox)
 
         btn_layout = QVBoxLayout()
@@ -286,7 +331,8 @@ class LookupTab(QWidget):
         sc_layout.setContentsMargins(0, 0, 0, 0)
 
         summary_header_row = QHBoxLayout()
-        summary_header_row.addWidget(QLabel("Summary"))
+        self.summary_label = QLabel("Summary")
+        summary_header_row.addWidget(self.summary_label)
         summary_header_row.addStretch()
         self.select_incomplete_btn = QPushButton("Select All Incomplete")
         self.select_incomplete_btn.clicked.connect(self._on_select_all_incomplete)
@@ -308,6 +354,7 @@ class LookupTab(QWidget):
         self.summary_view.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
         self.summary_view.customContextMenuRequested.connect(self._on_summary_context)
         self.summary_view.selectionModel().selectionChanged.connect(self._on_summary_selection_changed)
+        self.summary_view.clicked.connect(self._on_summary_clicked)
         self.summary_view.setMinimumHeight(120)
         sc_layout.addWidget(self.summary_view)
         splitter.addWidget(summary_container)
@@ -316,7 +363,8 @@ class LookupTab(QWidget):
         self.detail_container = detail_container = QWidget()
         dc_layout = QVBoxLayout(detail_container)
         dc_layout.setContentsMargins(0, 0, 0, 0)
-        dc_layout.addWidget(QLabel("Detail"))
+        self.detail_label = QLabel("Detail")
+        dc_layout.addWidget(self.detail_label)
         self.detail_model = _TableModel(DETAIL_HEADERS)
         self.detail_view = QTableView()
         self.detail_view.setModel(self.detail_model)
@@ -351,24 +399,29 @@ class LookupTab(QWidget):
     def _add_path(self, path):
         p = Path(path)
         if p.is_dir():
-            found_any = False
+            found_checksums = False
+            found_audio = False
             candidates = list(p.iterdir())
             for child in candidates:
-                if child.is_file() and child.suffix.lower() in self._CHECKSUM_EXTS:
-                    found_any = True
-                    s = str(child)
-                    if s not in self._all_paths:
-                        self._all_paths.append(s)
+                if child.is_file():
+                    if child.suffix.lower() in self._CHECKSUM_EXTS:
+                        found_checksums = True
+                        s = str(child)
+                        if s not in self._all_paths:
+                            self._all_paths.append(s)
+                    elif child.suffix.lower() in _AUDIO_EXTS:
+                        found_audio = True
                 elif child.is_dir():
                     for grandchild in child.iterdir():
                         if grandchild.is_file() and grandchild.suffix.lower() in self._CHECKSUM_EXTS:
-                            found_any = True
+                            found_checksums = True
                             s = str(grandchild)
                             if s not in self._all_paths:
                                 self._all_paths.append(s)
-            if found_any:
+            if found_checksums:
                 self._no_checksum_folders.discard(str(p))
-            else:
+            elif found_audio:
+                # Has audio but no checksums — flag for generation prompt
                 self._no_checksum_folders.add(str(p))
         else:
             s = str(p)
@@ -411,41 +464,60 @@ class LookupTab(QWidget):
             self._refresh_listbox()
 
     def _on_scan_tree(self):
-        """Recursively scan a directory tree for checksum files and run a combined lookup."""
+        """Recursively scan a directory tree for checksum files, add to listbox, run lookup."""
         root = QFileDialog.getExistingDirectory(self, "Select Root Directory")
         if not root:
             return
-        root_path = Path(root)
-        CHECKSUM_EXTS = {".ffp", ".md5", ".st5", ".sha1", ".shn"}
-        found = []
-        for p in sorted(root_path.rglob("*")):
-            if p.is_file() and p.suffix.lower() in CHECKSUM_EXTS:
-                if "_mychecksums" in p.name.lower() and self._filter_mychecksums:
-                    continue
-                found.append(p)
+        self.status_label.setText("Scanning…")
+        self.scan_tree_btn.setEnabled(False)
+        self._scan_tree_worker = _ScanTreeWorker(Path(root), self._filter_mychecksums)
+        self._scan_tree_worker.finished.connect(self._on_scan_tree_done)
+        self._scan_tree_worker.error.connect(self._on_scan_tree_error)
+        self._scan_tree_worker.start()
+
+    def _on_scan_tree_done(self, found: list):
+        self.scan_tree_btn.setEnabled(True)
         if not found:
             self.status_label.setText("No checksum files found under selected folder.")
             return
-        text_parts = []
-        for p in found:
-            try:
-                text_parts.append(p.read_text(errors="replace"))
-            except OSError:
-                pass
-        combined = "\n".join(text_parts)
-        self._run_lookup(combined, source="scan-tree")
+        for path in found:
+            if path not in self._all_paths:
+                self._all_paths.append(path)
+        self._refresh_listbox()
+        self.clipboard_btn.setEnabled(False)
+        self.listbox_btn.setEnabled(False)
+        self.status_label.setText(f"Looking up {len(found)} file(s)…")
+        self._worker = _LookupWorker(self.flask_port, paths=found)
+        self._worker.finished.connect(lambda data: self._on_lookup_done(data, "scan-tree"))
+        self._worker.error.connect(self._on_lookup_error)
+        self._worker.start()
+
+    def _on_scan_tree_error(self, msg: str):
+        self.scan_tree_btn.setEnabled(True)
+        self.status_label.setText(f"Scan error: {msg}")
 
     def _on_clear_list(self):
         self._all_paths.clear()
         self._no_checksum_folders.clear()
         self.listbox.clear()
         self._update_list_header()
+        self._folder_filter = None
 
     def _on_clear_results(self):
+        self._sum_rows.clear()
+        self._sum_colors.clear()
+        self._sum_lb_nums.clear()
+        self._sum_user_data.clear()
+        self._det_rows.clear()
+        self._det_colors.clear()
+        self._det_source_folders.clear()
         self.summary_model.set_data([], [])
         self.detail_model.set_data([], [])
         self.status_label.setText("")
         self._last_detail.clear()
+        self._folder_filter = None
+        self._summary_filter_lbs.clear()
+        self._update_filter_labels()
 
     def _on_listbox_context(self, pos):
         menu = QMenu(self)
@@ -480,10 +552,127 @@ class LookupTab(QWidget):
         self._filter_mychecksums = not self._filter_mychecksums
         self._refresh_listbox()
 
-    # ── Generate checksums ────────────────────────────────────────────────────
+    # ── Listbox click → folder filter ─────────────────────────────────────────
 
     def _on_listbox_selection_changed(self):
+        """Update generate button state (selection-driven, not click-driven)."""
         self.generate_btn.setEnabled(bool(self.listbox.selectedItems()))
+
+    def _on_listbox_item_clicked(self, item):
+        """Toggle folder filter: click to filter, click same item again to clear."""
+        path = item.data(Qt.ItemDataRole.UserRole) or ""
+        if item.data(Qt.ItemDataRole.UserRole + 1) == "no_checksums":
+            folder = path
+        else:
+            folder = str(Path(path).parent) if path else None
+
+        if folder and folder == self._folder_filter:
+            # Same folder clicked again → deselect and clear filter
+            self._folder_filter = None
+            self.listbox.clearSelection()
+        else:
+            self._folder_filter = folder
+
+        self._apply_filters()
+
+    # ── Summary row click → LB filter ─────────────────────────────────────────
+
+    def _on_summary_selection_changed(self):
+        if self._ignore_summary_selection:
+            return
+        folders = self._get_folders_for_selected_summary()
+        self.generate_summary_btn.setEnabled(bool(folders))
+
+    def _on_summary_clicked(self, index):
+        """Toggle detail filter: click a summary row to filter detail, click again to clear."""
+        selected_rows = {idx.row() for idx in self.summary_view.selectionModel().selectedRows()}
+        lbs = set()
+        for row_idx in selected_rows:
+            row = self.summary_model.get_row(row_idx)
+            if row:
+                lb_str = str(row[0]).replace("LB-", "")
+                try:
+                    lbs.add(int(lb_str))
+                except ValueError:
+                    pass
+
+        if lbs == self._summary_filter_lbs and lbs:
+            # Same selection clicked again → clear filter
+            self._summary_filter_lbs = set()
+            self._ignore_summary_selection = True
+            self.summary_view.clearSelection()
+            self._ignore_summary_selection = False
+        else:
+            self._summary_filter_lbs = lbs
+
+        self._update_filter_labels()
+        self._apply_filters()
+
+    # ── Filtering ─────────────────────────────────────────────────────────────
+
+    def _update_filter_labels(self):
+        """Update section headers to show when a filter is active."""
+        if self._folder_filter:
+            folder_name = Path(self._folder_filter).name
+            self.summary_label.setText(f"Summary  [folder: {folder_name}]")
+        else:
+            self.summary_label.setText("Summary")
+
+        if self._summary_filter_lbs:
+            lb_str = ", ".join(f"LB-{lb}" for lb in sorted(self._summary_filter_lbs))
+            self.detail_label.setText(f"Detail  [filter: {lb_str}]")
+        else:
+            self.detail_label.setText("Detail")
+
+    def _apply_filters(self):
+        """Rebuild summary and detail views applying active folder and LB filters."""
+        self._update_filter_labels()
+
+        # Determine which detail row indices to show
+        det_indices = list(range(len(self._det_rows)))
+        sum_indices = list(range(len(self._sum_rows)))
+
+        if self._folder_filter:
+            det_indices = [
+                i for i in det_indices
+                if self._det_source_folders[i] == self._folder_filter
+            ]
+            # Show only summary rows whose LB has at least one detail item in this folder
+            visible_lbs = set()
+            for i in det_indices:
+                lb_str = self._det_rows[i][3]
+                if lb_str.startswith("LB-"):
+                    try:
+                        visible_lbs.add(int(lb_str.replace("LB-", "")))
+                    except ValueError:
+                        pass
+            sum_indices = [
+                i for i in sum_indices
+                if self._sum_lb_nums[i] in visible_lbs
+                or self._sum_lb_nums[i] is None  # no-checksum / not-found rows
+            ]
+
+        if self._summary_filter_lbs:
+            def _lb_matches(lb_str):
+                if not lb_str.startswith("LB-"):
+                    return False
+                try:
+                    return int(lb_str.replace("LB-", "")) in self._summary_filter_lbs
+                except ValueError:
+                    return False
+            det_indices = [i for i in det_indices if _lb_matches(self._det_rows[i][3])]
+
+        # Apply to models
+        det_rows = [self._det_rows[i] for i in det_indices]
+        det_colors = [self._det_colors[i] for i in det_indices]
+        self.detail_model.set_data(det_rows, det_colors)
+
+        sum_rows = [self._sum_rows[i] for i in sum_indices]
+        sum_colors = [self._sum_colors[i] for i in sum_indices]
+        sum_user = [self._sum_user_data[i] for i in sum_indices]
+        self.summary_model.set_data(sum_rows, sum_colors, sum_user)
+
+    # ── Generate checksums ────────────────────────────────────────────────────
 
     def _on_generate_checksums(self):
         items = self.listbox.selectedItems()
@@ -526,10 +715,6 @@ class LookupTab(QWidget):
         self._on_listbox_selection_changed()
 
     # ── Summary table: multi-select + generate ────────────────────────────────
-
-    def _on_summary_selection_changed(self):
-        folders = self._get_folders_for_selected_summary()
-        self.generate_summary_btn.setEnabled(bool(folders))
 
     def _on_select_all_incomplete(self):
         model = self.summary_model
@@ -717,6 +902,10 @@ class LookupTab(QWidget):
         detail_list = data.get("detail", [])
         self._last_detail = detail_list
 
+        # Reset filters on new lookup
+        self._folder_filter = None
+        self._summary_filter_lbs = set()
+
         # Build LB → folder mapping for "generate missing checksums" feature
         self._lb_to_folders = {}
         for d in detail_list:
@@ -729,6 +918,8 @@ class LookupTab(QWidget):
         lb_summaries = summary_info.get("lb_summary", [])
         sum_rows = []
         sum_colors = []
+        sum_lb_nums = []
+        sum_user_data = []
         for s in lb_summaries:
             row = [
                 f"LB-{s['lb_number']}",
@@ -742,6 +933,8 @@ class LookupTab(QWidget):
                 s["status"],
             ]
             sum_rows.append(row)
+            sum_lb_nums.append(s["lb_number"])
+            sum_user_data.append({})
             if s["status"] == "MATCHED":
                 sum_colors.append(ROW_MATCHED)
             elif s["status"] == "INCOMPLETE":
@@ -751,9 +944,47 @@ class LookupTab(QWidget):
             else:
                 sum_colors.append(ROW_NOT_FOUND)
 
-        # Build detail rows and colors
+        # Add summary rows for input folders whose checksums had no DB match at all
+        not_found_items = [d for d in detail_list if d["status"] == "NOT FOUND"]
+        if not_found_items:
+            covered_folders: set = set()
+            for d in detail_list:
+                if d.get("lb_number") and d.get("source_file"):
+                    covered_folders.add(str(Path(d["source_file"]).parent))
+            not_found_by_folder: dict = {}
+            for d in not_found_items:
+                folder_key = (
+                    str(Path(d["source_file"]).parent) if d.get("source_file") else ""
+                )
+                if folder_key not in covered_folders:
+                    not_found_by_folder.setdefault(folder_key, 0)
+                    not_found_by_folder[folder_key] += 1
+            for folder_key, count in sorted(not_found_by_folder.items()):
+                label = Path(folder_key).name if folder_key else "NOT FOUND"
+                sum_rows.append([label, source, count, 0, count, 0, 0, 0, "NOT FOUND"])
+                sum_colors.append(ROW_NOT_FOUND)
+                sum_lb_nums.append(None)
+                sum_user_data.append({})
+
+        # No-checksum folders (listbox source or scan-tree)
+        if source in ("listbox", "scan-tree"):
+            _bg = QColor("#fff0e0")
+            _fg = QColor("#cc4400")
+            for folder in sorted(self._no_checksum_folders):
+                row = [
+                    Path(folder).name, "", "0", "", "", "", "", "",
+                    "NO CHECKSUMS — Generate?",
+                ]
+                sum_rows.append(row)
+                sum_colors.append(_bg)
+                sum_lb_nums.append(None)
+                sum_user_data.append({"path": folder, "type": "no_checksums", "fg": _fg})
+
+        # Build detail rows and colors; also record source folder per row
         det_rows = []
         det_colors = []
+        det_source_folders = []
+        seen_det_rows = set()
         for d in detail_list:
             lb_str = f"LB-{d['lb_number']}" if d["lb_number"] else "—"
             row = [
@@ -765,7 +996,13 @@ class LookupTab(QWidget):
                 d["status"],
                 source,
             ]
+            row_key = (d["checksum"], lb_str)
+            if row_key in seen_det_rows:
+                continue
+            seen_det_rows.add(row_key)
             det_rows.append(row)
+            sf = d.get("source_file")
+            det_source_folders.append(str(Path(sf).parent) if sf else None)
             status = d["status"]
             if status == "NOT FOUND":
                 det_colors.append(ROW_NOT_FOUND)
@@ -778,19 +1015,17 @@ class LookupTab(QWidget):
             else:
                 det_colors.append(ROW_MATCHED)
 
-        # Unmatched checksums (no LB)
-        unmatched = [d for d in detail_list if d["lb_number"] is None]
-        for d in unmatched:
-            row = [d["checksum"], d["filename"], d["type"], "—", 0, "NOT FOUND", source]
-            if row not in det_rows:
-                det_rows.append(row)
-                det_colors.append(ROW_NOT_FOUND)
+        # Store full unfiltered data
+        self._sum_rows = sum_rows
+        self._sum_colors = sum_colors
+        self._sum_lb_nums = sum_lb_nums
+        self._sum_user_data = sum_user_data
+        self._det_rows = det_rows
+        self._det_colors = det_colors
+        self._det_source_folders = det_source_folders
 
-        self.summary_model.set_data(sum_rows, sum_colors)
-        self.detail_model.set_data(det_rows, det_colors)
-
-        if source == "listbox":
-            self._append_no_checksum_summary_rows()
+        # Render without any filter active
+        self._apply_filters()
 
         self.summary_view.resizeColumnsToContents()
         self.detail_view.resizeColumnsToContents()
@@ -806,19 +1041,8 @@ class LookupTab(QWidget):
         self.lookup_completed.emit(detail_list, folders)
 
     def _append_no_checksum_summary_rows(self):
-        if not self._no_checksum_folders:
-            return
-        _bg = QColor("#fff0e0")
-        _fg = QColor("#cc4400")
-        rows, colors, user_data = [], [], []
-        for folder in sorted(self._no_checksum_folders):
-            rows.append([
-                Path(folder).name, "", "0", "", "", "", "", "",
-                "NO CHECKSUMS — Generate?",
-            ])
-            colors.append(_bg)
-            user_data.append({"path": folder, "type": "no_checksums", "fg": _fg})
-        self.summary_model.append_rows(rows, colors, user_data)
+        """Legacy method kept for compatibility; rows are now built inside _on_lookup_done."""
+        pass
 
     def _select_missing_checksum_folders(self):
         # Select matching listbox items
@@ -842,6 +1066,12 @@ class LookupTab(QWidget):
         self.clipboard_btn.setEnabled(True)
         self.listbox_btn.setEnabled(True)
         self.status_label.setText(f"Error: {msg}")
+
+    # ── Expose folders for other tabs ─────────────────────────────────────────
+
+    def get_lookup_folders(self) -> list[str]:
+        """Return unique parent folders of all loaded checksum files."""
+        return list(dict.fromkeys(str(Path(p).parent) for p in self._all_paths))
 
     # ── Grid interactions ─────────────────────────────────────────────────────
 

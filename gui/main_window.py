@@ -222,6 +222,11 @@ class MainWindow(QMainWindow):
             self.setup_tab._check_sox()
         if widget is self.dbedit_tab and self.dbedit_tab.table_list.count() == 0:
             self.dbedit_tab.load_tables()
+        if widget is self.verify_tab:
+            # Carry lookup folders to verify when verify list is empty
+            folders = self.lookup_tab.get_lookup_folders()
+            if folders:
+                self.verify_tab.add_folders_from_lookup(folders)
 
     def _on_theme_applied(self):
         self.setStyleSheet(styles.MAIN_STYLESHEET)

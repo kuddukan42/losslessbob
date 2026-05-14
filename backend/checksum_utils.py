@@ -1,9 +1,11 @@
 import hashlib
+import os
 import re
 import shutil
 import struct
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 from backend.paths import to_long_path
@@ -49,6 +51,23 @@ def _get_shntool_cmd() -> list[str] | None:
         _shntool_cmd_result = _find_shntool()
         _shntool_cmd_checked = True
     return _shntool_cmd_result
+
+
+def check_shntool_version() -> str:
+    """Return shntool version string, or empty string if unavailable."""
+    cmd = _get_shntool_cmd()
+    if not cmd:
+        return ""
+    try:
+        r = subprocess.run(
+            cmd + ["-v"],
+            capture_output=True, text=True, timeout=8,
+            **_no_window_kwargs(),
+        )
+        output = (r.stdout or r.stderr).strip()
+        return output.splitlines()[0] if output else ""
+    except Exception:
+        return ""
 
 
 class ShntoolNotFoundError(Exception):
@@ -120,7 +139,7 @@ def parse_lbdir_file(path):
         if current_section == 'md5':
             m = _MD5_RE.match(stripped)
             if m:
-                fname = m.group(2).strip()
+                fname = m.group(2).strip().replace('\\', '/')
                 ext = Path(fname).suffix.lower()
                 if ext == '.shn':
                     has_shn = True
@@ -131,7 +150,7 @@ def parse_lbdir_file(path):
         elif current_section == 'ffp':
             m = _FFP_RE.match(stripped)
             if m:
-                fname = m.group(1)
+                fname = m.group(1).replace('\\', '/')
                 if Path(fname).suffix.lower() == '.flac':
                     has_flac = True
                 result['ffp'].append((fname, m.group(2).lower()))
@@ -139,20 +158,25 @@ def parse_lbdir_file(path):
         elif current_section == 'shntool':
             m = _SHNTOOL_LINE_RE.match(stripped)
             if m:
-                wav_fname = m.group(2).strip()
-                shn_fname = re.sub(r'\.wav$', '.shn', wav_fname, flags=re.IGNORECASE)
-                has_shn = True
-                result['shntool'].append((shn_fname, m.group(1).lower()))
+                wav_fname = m.group(2).strip().replace('\\', '/')
+                # Only convert .wav -> .shn when the md5 section already confirmed SHN files
+                # on disk. WAV-format recordings (e.g. lbdir *.wavf.txt) store .wav files and
+                # shntool hashes them directly — no conversion needed in that case.
+                if has_shn:
+                    fname = re.sub(r'\.wav$', '.shn', wav_fname, flags=re.IGNORECASE)
+                else:
+                    fname = wav_fname
+                result['shntool'].append((fname, m.group(1).lower()))
 
         elif current_section == 'shntool_len':
             m = _SHNTOOL_LEN_RE.match(line)
             if m:
-                raw_fname = m.group(8).strip()
+                raw_fname = m.group(8).strip().replace('\\', '/')
                 # Skip the totals summary line
                 if raw_fname.startswith('('):
                     continue
-                # Map .wav -> .shn for SHN recordings; FLAC filenames pass through unchanged
-                fname = re.sub(r'\.wav$', '.shn', raw_fname, flags=re.IGNORECASE)
+                # Map .wav -> .shn only for SHN recordings (same logic as shntool section)
+                fname = re.sub(r'\.wav$', '.shn', raw_fname, flags=re.IGNORECASE) if has_shn else raw_fname
                 result['shntool_len'].append({
                     'filename': fname,
                     'length': m.group(1),
@@ -209,12 +233,56 @@ def compute_md5(filepath):
         return None
 
 
+def _compute_shntool_via_ffmpeg(invoke_path: str, cmd: list[str]) -> str | None:
+    """
+    Decode audio to a temp WAV via ffmpeg, then run shntool hash on the WAV.
+    Used as fallback when the shorten decoder is not installed.
+    Returns 32-char hex string or None on failure.
+    """
+    if not shutil.which('ffmpeg'):
+        return None
+    tmp_fd, tmp_path = tempfile.mkstemp(suffix='.wav')
+    try:
+        os.close(tmp_fd)
+        dec = subprocess.run(
+            ['ffmpeg', '-y', '-i', invoke_path, '-f', 'wav', tmp_path],
+            capture_output=True, text=True, timeout=600,
+            **_no_window_kwargs(),
+        )
+        if dec.returncode != 0:
+            return None
+        result = subprocess.run(
+            cmd + ['hash', tmp_path],
+            capture_output=True, text=True, timeout=120,
+            **_no_window_kwargs(),
+        )
+        for line in result.stdout.splitlines():
+            if '[shntool]' in line:
+                parts = line.split()
+                if parts:
+                    return parts[0].lower()
+        return None
+    except (subprocess.TimeoutExpired, Exception):
+        return None
+    finally:
+        try:
+            os.unlink(tmp_path)
+        except OSError:
+            pass
+
+
 def compute_shntool(filepath):
     """
-    Run shntool md5 <filepath>, parse [shntool] line, return hash.
+    Compute the shntool audio-data MD5 for filepath.
+
+    First attempts shntool hash directly (requires shorten for .shn files).
+    If that produces no output and the file is .shn, falls back to decoding
+    via ffmpeg then hashing the resulting WAV — handles systems where shorten
+    is not installed.
+
     On Windows, auto-detects shntool via WSL if native binary is unavailable.
     Raises ShntoolNotFoundError if no shntool found by any method.
-    Returns None if command fails or output not parseable.
+    Returns None if all methods fail or output is not parseable.
     """
     cmd = _get_shntool_cmd()
     if cmd is None:
@@ -231,7 +299,7 @@ def compute_shntool(filepath):
         invoke_path = f"/mnt/{drive}{rest}"
     try:
         result = subprocess.run(
-            cmd + ['md5', invoke_path],
+            cmd + ['hash', invoke_path],
             capture_output=True, text=True, timeout=120,
             **_no_window_kwargs(),
         )
@@ -240,11 +308,15 @@ def compute_shntool(filepath):
                 parts = line.split()
                 if parts:
                     return parts[0].lower()
-        return None
     except subprocess.TimeoutExpired:
         return None
     except Exception:
         return None
+
+    # shorten not installed — fall back to ffmpeg decode → shntool hash
+    if Path(filepath).suffix.lower() == '.shn':
+        return _compute_shntool_via_ffmpeg(invoke_path, cmd)
+    return None
 
 
 def detect_folder_mode(folder_path):
@@ -459,6 +531,9 @@ def verify_folder(folder_path):
         status = 'fail'
     elif n_missing > 0:
         status = 'incomplete'
+    elif not has_ffp and not has_md5 and not has_shntool_entries and disk_audio:
+        # Audio files present but no checksum files of any kind found
+        status = 'no_checksums'
     else:
         status = 'pass'
 
@@ -512,8 +587,9 @@ def verify_folder_lbdir(folder_path, lbdir_path):
 
         md5_actual = compute_md5(str(fpath)) if on_disk and md5_exp is not None else None
         ffp_actual = compute_ffp(str(fpath)) if on_disk and is_flac and ffp_exp is not None else None
+        is_wav = ext == '.wav'
         shn_actual = None
-        if on_disk and is_shn and shn_exp is not None and shntool_ok:
+        if on_disk and shn_exp is not None and shntool_ok and (is_shn or is_wav):
             try:
                 shn_actual = compute_shntool(str(fpath))
             except ShntoolNotFoundError:
@@ -541,6 +617,8 @@ def verify_folder_lbdir(folder_path, lbdir_path):
             else:
                 if md5_exp is not None:
                     checks.append(md5_st)
+                if shn_exp is not None and shntool_ok:
+                    checks.append(shn_st)
 
             overall = _file_verdict(checks)
             if overall == 'pass':
@@ -652,10 +730,21 @@ def generate_checksums(folder_path):
     if mode in ('shn', 'mixed'):
         shn_files = [f for f in audio_files if f.suffix.lower() == '.shn']
         if shn_files:
+            md5_lines: list[str] = []
+            shn_lines: list[str] = []
+
+            # File MD5 requires no external tool
+            for f in shn_files:
+                h = compute_md5(str(f))
+                if h:
+                    md5_lines.append(f'{h}  {f.name}')
+                else:
+                    errors.append(f'MD5 failed: {f.name}')
+
+            # Shntool audio hash; falls back to ffmpeg decode when shorten is absent
             if _get_shntool_cmd() is None:
-                errors.append('shntool not found; cannot generate SHN checksums')
+                errors.append('shntool not found; cannot generate SHN audio checksums')
             else:
-                shn_lines = []
                 for f in shn_files:
                     try:
                         h = compute_shntool(str(f))
@@ -666,12 +755,14 @@ def generate_checksums(folder_path):
                     except ShntoolNotFoundError:
                         errors.append('shntool not found')
                         break
-                if shn_lines:
-                    out = _lbgen_path(folder, basename, 'md5')
-                    try:
-                        Path(out).write_text('\n'.join(shn_lines) + '\n', encoding='utf-8')
-                        generated.append(out)
-                    except OSError as e:
-                        errors.append(f'Write MD5: {e}')
+
+            all_lines = md5_lines + shn_lines
+            if all_lines:
+                out = _lbgen_path(folder, basename, 'md5')
+                try:
+                    Path(out).write_text('\n'.join(all_lines) + '\n', encoding='utf-8')
+                    generated.append(out)
+                except OSError as e:
+                    errors.append(f'Write MD5: {e}')
 
     return {'folder': str(folder_path), 'generated': generated, 'errors': errors}

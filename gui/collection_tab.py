@@ -406,6 +406,7 @@ class CollectionTab(QWidget):
         self.flask_port = flask_port
         self._workers = []
         self._all_collection: list = []
+        self._xref_lb_numbers: set = set()
         self._page: int = 0
         self._page_size: int = 50
         self._coll_col_widths: list | None = None
@@ -415,6 +416,7 @@ class CollectionTab(QWidget):
         self._load_page_size()
         self._build_ui()
         self.refresh_collection()
+        self._load_xref_lb_numbers()
 
     def _load_page_size(self) -> None:
         try:
@@ -461,6 +463,14 @@ class CollectionTab(QWidget):
         self.coll_year_combo.addItem("All Years", userData=None)
         self.coll_year_combo.currentIndexChanged.connect(self._on_coll_filter)
         filter_row.addWidget(self.coll_year_combo)
+
+        self._coll_xref_cb = QCheckBox("Xref only")
+        self._coll_xref_cb.setToolTip(
+            "Show only collection entries whose LB number has cross-reference (xref) variants in the DB."
+        )
+        self._coll_xref_cb.stateChanged.connect(self._on_coll_filter)
+        filter_row.addWidget(self._coll_xref_cb)
+
         layout.addLayout(filter_row)
 
         # Button row
@@ -709,6 +719,37 @@ class CollectionTab(QWidget):
                 self.coll_year_combo.setCurrentIndex(idx)
         self.coll_year_combo.blockSignals(False)
 
+    def _load_xref_lb_numbers(self) -> None:
+        from PyQt6.QtCore import QThread, pyqtSignal as _sig
+
+        class _W(QThread):
+            finished = _sig(list)
+
+            def __init__(self, port):
+                super().__init__()
+                self._port = port
+
+            def run(self):
+                try:
+                    import requests as _r
+                    resp = _r.get(
+                        f"http://127.0.0.1:{self._port}/api/checksums/xref_lb_numbers",
+                        timeout=15,
+                    )
+                    self.finished.emit(resp.json())
+                except Exception:
+                    self.finished.emit([])
+
+        self._xref_load_worker = _W(self.flask_port)
+        self._xref_load_worker.finished.connect(self._on_xref_loaded)
+        self._xref_load_worker.start()
+
+    def _on_xref_loaded(self, lb_numbers: list) -> None:
+        self._xref_lb_numbers = set(lb_numbers)
+        if self._coll_xref_cb.isChecked() and self._all_collection:
+            self._page = 0
+            self._render_coll_page()
+
     def _filtered_collection(self) -> list:
         text = self.coll_search.text().lower()
         year = self.coll_year_combo.currentData()
@@ -728,6 +769,8 @@ class CollectionTab(QWidget):
                 if (r.get("date_str") or "").endswith(f"/{short}")
                 or (r.get("date_str") or "").endswith(f"/{long_}")
             ]
+        if self._coll_xref_cb.isChecked():
+            results = [r for r in results if r.get("lb_number") in self._xref_lb_numbers]
         return results
 
     def _total_coll_pages(self) -> int:

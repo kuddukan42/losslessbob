@@ -18,44 +18,72 @@ _STATE_COLORS = {
     "renamed":      QColor("#C8E6C9"),  # green  — just renamed
     "needs_rename": QColor("#FFE0B2"),  # orange — match found but not yet renamed
     "wrong_lb":     QColor("#E1BEE7"),  # purple — folder has a different LB number
-    "no_match":     QColor("#FFCDD2"),  # red    — no match or multiple IDs
+    "no_match":     QColor("#FFCDD2"),  # red    — no match
+    "multiple_ids": QColor("#B2EBF2"),  # cyan   — multiple LBs found, unresolved
 }
 
+# Only include these detail statuses when building the folder→LB map
+_MATCH_STATUSES = {"MATCHED", "MATCHED (INCOMPLETE)"}
 
-def _lb_in_name(folder_name, lb_str):
+
+def _fmt_lb(lb_num: int, xref_val: int = 0) -> str:
+    """Format an LB label, including xref suffix when xref_val > 0."""
+    if xref_val:
+        return f"LB-{lb_num}-xref{xref_val:04d}"
+    return f"LB-{lb_num}"
+
+
+def _lb_in_name(folder_name: str, lb_str: str) -> bool:
+    """True when folder_name already contains the LB (and xref) from lb_str."""
     if not lb_str or lb_str == "—" or "," in lb_str:
         return False
-    m = re.search(r'LB-0*(\d+)', lb_str, re.IGNORECASE)
+    m = re.search(r'LB-0*(\d+)(?:-xref0*(\d+))?', lb_str, re.IGNORECASE)
     if not m:
         return False
     lb_num = int(m.group(1))
-    m2 = re.search(r'LB-0*(\d+)', folder_name, re.IGNORECASE)
-    return bool(m2 and int(m2.group(1)) == lb_num)
+    xref_num = int(m.group(2)) if m.group(2) else 0
+
+    m2 = re.search(r'LB-0*(\d+)(?:-xref0*(\d+))?', folder_name, re.IGNORECASE)
+    if not m2:
+        return False
+    folder_lb = int(m2.group(1))
+    folder_xref = int(m2.group(2)) if m2.group(2) else 0
+    return folder_lb == lb_num and folder_xref == xref_num
 
 
-def _has_wrong_lb(folder_name, lb_str):
+def _has_wrong_lb(folder_name: str, lb_str: str) -> bool:
     """True when folder_name contains an LB number that differs from lb_str."""
     if not lb_str or lb_str == "—" or "," in lb_str:
         return False
-    m = re.search(r'LB-0*(\d+)', lb_str, re.IGNORECASE)
+    m = re.search(r'LB-0*(\d+)(?:-xref0*(\d+))?', lb_str, re.IGNORECASE)
     if not m:
         return False
     lb_num = int(m.group(1))
-    m2 = re.search(r'LB-0*(\d+)', folder_name, re.IGNORECASE)
-    return bool(m2 and int(m2.group(1)) != lb_num)
+    xref_num = int(m.group(2)) if m.group(2) else 0
+
+    m2 = re.search(r'LB-0*(\d+)(?:-xref0*(\d+))?', folder_name, re.IGNORECASE)
+    if not m2:
+        return False
+    folder_lb = int(m2.group(1))
+    folder_xref = int(m2.group(2)) if m2.group(2) else 0
+    # Wrong if LB number differs, OR if xref number differs
+    return not (folder_lb == lb_num and folder_xref == xref_num)
 
 
-def _strip_lb_from_name(name):
-    """Remove LB-NNNN (and surrounding separators) from a folder name."""
-    cleaned = re.sub(r'[\-_. ]+LB-\d+', '', name, flags=re.IGNORECASE)
+def _strip_lb_from_name(name: str) -> str:
+    """Remove LB-NNNN[-xrefNNNN] (and surrounding separators) from a folder name."""
+    # Strip full xref pattern first, then plain LB
+    cleaned = re.sub(r'[\-_. ]+LB-\d+(?:-xref\d+)?', '', name, flags=re.IGNORECASE)
     if cleaned == name:
-        cleaned = re.sub(r'LB-\d+[\-_. ]*', '', name, flags=re.IGNORECASE)
+        cleaned = re.sub(r'LB-\d+(?:-xref\d+)?[\-_. ]*', '', name, flags=re.IGNORECASE)
     return cleaned.strip('-_. ')
 
 
-def _row_state(folder_path, lb_str):
-    if lb_str == "—" or "," in lb_str:
+def _row_state(folder_path: str, lb_str: str) -> str:
+    if lb_str == "—":
         return "no_match"
+    if "," in lb_str:
+        return "multiple_ids"
     folder_name = Path(folder_path).name
     if _lb_in_name(folder_name, lb_str):
         return "has_lb"
@@ -69,6 +97,8 @@ class RenameModel(QAbstractTableModel):
         super().__init__()
         self._rows = []
         self._states = []
+        # Per-row list of (lb_number, xref_value) candidate tuples (for multiple_ids rows)
+        self._candidates: list[list[tuple[int, int]]] = []
 
     def rowCount(self, parent=QModelIndex()):
         return len(self._rows)
@@ -110,14 +140,43 @@ class RenameModel(QAbstractTableModel):
             return HEADERS[section]
         return None
 
-    def set_rows(self, rows, states=None):
+    def set_rows(self, rows, states=None, candidates=None):
         self.beginResetModel()
         self._rows = rows
         self._states = states or ["no_match"] * len(rows)
+        self._candidates = candidates or [[] for _ in rows]
         self.endResetModel()
 
     def get_row(self, idx):
         return self._rows[idx] if 0 <= idx < len(self._rows) else None
+
+    def get_state(self, idx):
+        return self._states[idx] if 0 <= idx < len(self._states) else None
+
+    def get_candidates(self, idx) -> list[tuple[int, int]]:
+        if 0 <= idx < len(self._candidates):
+            return self._candidates[idx]
+        return []
+
+    def resolve_multi_id(self, idx: int, lb_num: int, xref_val: int) -> None:
+        """Resolve a multiple_ids row to a specific LB (and optional xref)."""
+        if not (0 <= idx < len(self._rows)):
+            return
+        row = self._rows[idx]
+        folder_path = Path(row[1])
+        lb_str = _fmt_lb(lb_num, xref_val)
+        proposed_name = f"{folder_path.name}-{lb_str}"
+        proposed = str(folder_path.parent / proposed_name)
+        row[2] = proposed
+        row[3] = lb_str
+        row[4] = "Multiple IDs → resolved"
+        new_state = _row_state(str(folder_path), lb_str)
+        self._states[idx] = new_state
+        self._candidates[idx] = []
+        self.dataChanged.emit(
+            self.index(idx, 0),
+            self.index(idx, len(HEADERS) - 1),
+        )
 
     def update_row_after_rename(self, idx, new_path):
         if 0 <= idx < len(self._rows):
@@ -155,9 +214,6 @@ class RenameModel(QAbstractTableModel):
         if self._rows:
             self.dataChanged.emit(self.index(0, 0), self.index(len(self._rows) - 1, 0))
 
-    def get_state(self, idx):
-        return self._states[idx] if 0 <= idx < len(self._states) else None
-
     def update_proposed_name(self, idx, new_proposed, new_reason=None):
         if 0 <= idx < len(self._rows):
             self._rows[idx][2] = new_proposed
@@ -188,6 +244,7 @@ class RenameTab(QWidget):
         self.view.setColumnWidth(0, 50)
         self.view.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
         self.view.customContextMenuRequested.connect(self._on_context)
+        self.view.clicked.connect(self._on_cell_clicked)
         layout.addWidget(self.view)
 
         # Legend
@@ -196,7 +253,8 @@ class RenameTab(QWidget):
             ("#C8E6C9", "LB found in name / renamed"),
             ("#FFE0B2", "Match found — rename suggested"),
             ("#E1BEE7", "Wrong LB in name — strip needed"),
-            ("#FFCDD2", "No match or multiple IDs"),
+            ("#B2EBF2", "Multiple IDs — right-click to resolve"),
+            ("#FFCDD2", "No match"),
         ]:
             swatch = QLabel()
             swatch.setFixedSize(14, 14)
@@ -235,43 +293,62 @@ class RenameTab(QWidget):
         layout.addWidget(self.status_label)
 
     def populate_from_lookup(self, detail_list, listbox_folders):
-        lb_by_folder = {}
+        # Build folder → {lb_number: xref_value} from MATCHED items only.
+        # Excluding DUPLICATE (resolved losers) prevents spurious "Multiple IDs" when
+        # duplicate resolution already picked a winner.
+        lb_xref_by_folder: dict[str, dict[int, int]] = {}
         for d in detail_list:
-            if d.get("lb_number") and d.get("source_file"):
+            if d.get("lb_number") and d.get("source_file") and d.get("status") in _MATCH_STATUSES:
                 folder = str(Path(d["source_file"]).parent)
-                lb_by_folder.setdefault(folder, set()).add(d["lb_number"])
+                lb = d["lb_number"]
+                xref_val = d.get("xref") or 0
+                # If we see the same LB with xref=0 (primary) later, prefer that
+                existing = lb_xref_by_folder.setdefault(folder, {}).get(lb, xref_val)
+                lb_xref_by_folder[folder][lb] = min(existing, xref_val)  # 0 wins over non-zero
 
         rows = []
         states = []
+        candidates = []
         for folder in listbox_folders:
             folder_path = Path(folder)
             if not folder_path.is_dir():
                 continue
-            lbs = lb_by_folder.get(folder, set())
-            if not lbs:
+            lb_xref = lb_xref_by_folder.get(folder, {})
+            cands = sorted(lb_xref.items())  # [(lb_num, xref_val), ...]
+
+            if not cands:
                 reason = "No match"
                 proposed = folder_path.name
                 lb_str = "—"
-            elif len(lbs) > 1:
+                cand_list = []
+            elif len(cands) > 1:
                 reason = "Multiple IDs"
                 proposed = folder_path.name
-                lb_str = ", ".join(f"LB-{n}" for n in sorted(lbs))
+                lb_str = ", ".join(_fmt_lb(lb, xr) for lb, xr in cands)
+                cand_list = cands
             else:
-                lb = next(iter(lbs))
-                lb_str = f"LB-{lb}"
+                lb, xref_val = cands[0]
+                lb_str = _fmt_lb(lb, xref_val)
+                cand_list = []
                 if _lb_in_name(folder_path.name, lb_str):
                     proposed = folder_path.name
                     reason = "LB already in name"
                 elif _has_wrong_lb(folder_path.name, lb_str):
-                    proposed = f"{folder_path.name}-LB-{lb}"
+                    proposed = f"{folder_path.name}-{lb_str}"
                     reason = "Wrong LB in name"
+                elif xref_val:
+                    proposed = f"{folder_path.name}-{lb_str}"
+                    reason = "xref match"
                 else:
-                    proposed = f"{folder_path.name}-LB-{lb}"
+                    proposed = f"{folder_path.name}-{lb_str}"
                     reason = "Complete match"
-            rows.append([True, folder, str(folder_path.parent / proposed), lb_str, reason])
-            states.append(_row_state(folder, lb_str))
 
-        self.model.set_rows(rows, states)
+            rows.append([True, folder, str(folder_path.parent / proposed) if proposed != folder_path.name
+                         else folder, lb_str, reason])
+            states.append(_row_state(folder, lb_str))
+            candidates.append(cand_list)
+
+        self.model.set_rows(rows, states, candidates)
         self.view.resizeColumnsToContents()
         self.info_label.setText(f"{len(rows)} folders ready for rename review.")
 
@@ -281,33 +358,59 @@ class RenameTab(QWidget):
             for i in range(self.model.rowCount())
             if self.model.get_row(i) and self.model.get_row(i)[0]
         ]
-        if not to_rename:
-            self.status_label.setText("No folders selected.")
+        _eligible_states = {"needs_rename", "has_lb"}
+        eligible = [(i, r) for i, r in to_rename if self.model.get_state(i) in _eligible_states]
+
+        # Report unresolved multiple_ids that user tried to include
+        unresolved = [(i, r) for i, r in to_rename if self.model.get_state(i) == "multiple_ids"]
+        if not eligible:
+            if unresolved:
+                self.status_label.setText(
+                    f"{len(unresolved)} row(s) have multiple IDs — right-click each to resolve, "
+                    "then select and rename."
+                )
+            else:
+                self.status_label.setText(
+                    "No folders selected." if not to_rename
+                    else "None of the selected folders can be processed — "
+                         "only 'Complete match', 'xref match', and 'LB already in name' rows are eligible."
+                )
             return
 
+        n_rename = sum(1 for i, _ in eligible if self.model.get_state(i) == "needs_rename")
+        n_move   = sum(1 for i, _ in eligible if self.model.get_state(i) == "has_lb")
+        parts = []
+        if n_rename:
+            parts.append(f"rename and move {n_rename} folder(s)")
+        if n_move:
+            parts.append(f"move {n_move} folder(s) without renaming")
         confirm = QMessageBox.question(
-            self, "Confirm Rename",
-            f"Rename {len(to_rename)} folder(s)? This cannot be undone.",
+            self, "Confirm",
+            f"This will {' and '.join(parts)} into '0. Processed'. This cannot be undone.",
             QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No
         )
         if confirm != QMessageBox.StandardButton.Yes:
             return
 
-        done = 0
+        done_rename = 0
+        done_move = 0
         errors = []
-        for idx, row in to_rename:
-            src, proposed_dst = row[1], row[2]
-            new_name = Path(proposed_dst).name
+        for idx, row in eligible:
+            src = row[1]
+            state = self.model.get_state(idx)
+            new_name = Path(src).name if state == "has_lb" else Path(row[2]).name
             processed_dir = Path(src).parent / "0. Processed"
             final_dst = processed_dir / new_name
             if str(src) == str(final_dst):
                 self.model.update_row_after_rename(idx, str(final_dst))
-                done += 1
+                done_rename += (state == "needs_rename")
+                done_move += (state == "has_lb")
                 continue
-            illegal = set('<>:"/\\|?*')
-            if any(c in illegal for c in new_name):
-                errors.append(f"{Path(src).name}: proposed name contains illegal characters")
-                continue
+            if state == "needs_rename":
+                illegal = set('<>:"/\\|?*')
+                if any(c in illegal for c in new_name):
+                    errors.append(f"{Path(src).name}: proposed name contains illegal characters")
+                    continue
             try:
                 processed_dir.mkdir(parents=True, exist_ok=True)
             except OSError as e:
@@ -316,7 +419,10 @@ class RenameTab(QWidget):
             try:
                 shutil.move(str(src), str(final_dst))
                 self.model.update_row_after_rename(idx, str(final_dst))
-                done += 1
+                if state == "needs_rename":
+                    done_rename += 1
+                else:
+                    done_move += 1
             except PermissionError:
                 errors.append(
                     f"{Path(src).name}: Permission denied. Close any programs "
@@ -331,7 +437,12 @@ class RenameTab(QWidget):
             except OSError as e:
                 errors.append(f"{Path(src).name}: {e}")
 
-        msg = f"Renamed {done} folder(s)."
+        parts = []
+        if done_rename:
+            parts.append(f"Renamed and moved {done_rename} folder(s)")
+        if done_move:
+            parts.append(f"moved {done_move} folder(s) without renaming")
+        msg = ("; ".join(parts) + ".") if parts else "Nothing processed."
         if errors:
             msg += f" {len(errors)} error(s): " + "; ".join(errors[:3])
             if any("Permission denied" in e for e in errors):
@@ -350,13 +461,15 @@ class RenameTab(QWidget):
             if self.model.get_state(i) != "wrong_lb":
                 continue
             lb_str = row[3]
-            m = re.search(r'LB-0*(\d+)', lb_str, re.IGNORECASE)
+            # Extract LB and optional xref from lb_str
+            m = re.search(r'LB-0*(\d+)(?:-xref0*(\d+))?', lb_str, re.IGNORECASE)
             if not m:
                 continue
             lb_num = int(m.group(1))
+            xref_val = int(m.group(2)) if m.group(2) else 0
             folder_path = Path(row[1])
             clean_name = _strip_lb_from_name(folder_path.name)
-            new_proposed = str(folder_path.parent / f"{clean_name}-LB-{lb_num}")
+            new_proposed = str(folder_path.parent / f"{clean_name}-{_fmt_lb(lb_num, xref_val)}")
             self.model.update_proposed_name(i, new_proposed, "Strip & rename")
             changed += 1
         if changed:
@@ -366,31 +479,69 @@ class RenameTab(QWidget):
         else:
             self.status_label.setText("No checked wrong-LB rows to strip.")
 
+    def _on_cell_clicked(self, index: QModelIndex) -> None:
+        if index.column() != 0:
+            return
+        row = self.model.get_row(index.row())
+        if row is None:
+            return
+        new_state = Qt.CheckState.Unchecked if row[0] else Qt.CheckState.Checked
+        self.model.setData(index, new_state, Qt.ItemDataRole.CheckStateRole)
+
     def _on_context(self, pos):
         index = self.view.indexAt(pos)
         if not index.isValid():
             return
-        row = self.model.get_row(index.row())
+        row_idx = index.row()
+        row = self.model.get_row(row_idx)
         if not row:
             return
 
         menu = QMenu(self)
+        state = self.model.get_state(row_idx)
         col = index.column()
 
-        if col == 4:
+        # Multiple IDs resolution submenu
+        if state == "multiple_ids":
+            candidates = self.model.get_candidates(row_idx)
+            if candidates:
+                resolve_menu = menu.addMenu("Resolve — Apply…")
+                for lb_num, xref_val in candidates:
+                    label = _fmt_lb(lb_num, xref_val)
+                    act = QAction(label, self)
+                    # Capture lb_num and xref_val in closure
+                    act.triggered.connect(
+                        lambda checked=False, r=row_idx, lb=lb_num, xr=xref_val:
+                        self._resolve_multi_id(r, lb, xr)
+                    )
+                    resolve_menu.addAction(act)
+
+        elif col == 4:
             jump = QAction("Jump to Lookup Detail", self)
             jump.triggered.connect(lambda: self.jump_to_lookup.emit(row[1]))
             menu.addAction(jump)
         else:
             lb_str = row[3]
-            if lb_str.startswith("LB-") and "," not in lb_str:
-                try:
-                    lb_num = int(lb_str.replace("LB-", ""))
-                    open_web = QAction(f"Open {lb_str} in Browser", self)
-                    url = f"http://www.losslessbob.wonderingwhattochoose.com/detail/LB-{lb_num}.html"
-                    open_web.triggered.connect(lambda: webbrowser.open(url))
-                    menu.addAction(open_web)
-                except ValueError:
-                    pass
+            if lb_str and lb_str != "—" and "," not in lb_str:
+                m = re.search(r'LB-0*(\d+)', lb_str, re.IGNORECASE)
+                if m:
+                    try:
+                        lb_num = int(m.group(1))
+                        open_web = QAction(f"Open LB-{lb_num} in Browser", self)
+                        url = f"http://www.losslessbob.wonderingwhattochoose.com/detail/LB-{lb_num}.html"
+                        open_web.triggered.connect(lambda: webbrowser.open(url))
+                        menu.addAction(open_web)
+                    except ValueError:
+                        pass
 
-        menu.exec(self.view.mapToGlobal(pos))
+        if not menu.isEmpty():
+            menu.exec(self.view.mapToGlobal(pos))
+
+    def _resolve_multi_id(self, row_idx: int, lb_num: int, xref_val: int) -> None:
+        """Apply a specific LB (and optional xref) to a multiple_ids row."""
+        self.model.resolve_multi_id(row_idx, lb_num, xref_val)
+        lb_str = _fmt_lb(lb_num, xref_val)
+        self.status_label.setText(
+            f"Row {row_idx + 1}: resolved to {lb_str}. "
+            "Click 'Select All' then 'Rename Selected' when ready."
+        )

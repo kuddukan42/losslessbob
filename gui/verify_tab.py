@@ -11,12 +11,13 @@ from PyQt6.QtWidgets import (
 
 AUDIO_EXTS = {'.flac', '.shn', '.ape', '.wav'}
 
-_C_PASS       = QColor("#C8E6C9")
-_C_FAIL       = QColor("#FFCDD2")
-_C_MISSING    = QColor("#FFE0B2")   # orange — files not on disk
-_C_INCOMPLETE = QColor("#FFFF99")   # yellow — missing checksum type
-_C_EXTRA      = QColor("#FFFF99")   # yellow — on disk, no checksum
-_C_GREY       = QColor("#E0E0E0")   # grey   — N/A
+_C_PASS         = QColor("#C8E6C9")
+_C_FAIL         = QColor("#FFCDD2")
+_C_MISSING      = QColor("#FFE0B2")   # orange — files not on disk
+_C_INCOMPLETE   = QColor("#FFFF99")   # yellow — missing checksum type
+_C_EXTRA        = QColor("#FFFF99")   # yellow — on disk, no checksum
+_C_GREY         = QColor("#E0E0E0")   # grey   — N/A
+_C_NO_CHECKSUMS = QColor("#FFFF99")   # yellow — audio present but no checksum files
 
 SUMMARY_HEADERS = [
     "Folder", "Mode", "FFP", "MD5", "Shntool",
@@ -320,6 +321,15 @@ class VerifyTab(QWidget):
         self.detail_table.setRowCount(0)
         self.status_label.setText("")
 
+    def add_folders_from_lookup(self, folders: list[str]) -> None:
+        """Pre-populate folder list from the Lookup tab (only if list is currently empty)."""
+        if self._folders:
+            return
+        for f in folders:
+            self._add_folder(f)
+        if self._folders:
+            self._refresh_listbox()
+
     def _on_listbox_context(self, pos):
         menu = QMenu(self)
         remove_act = QAction("Remove from List", self)
@@ -466,6 +476,8 @@ class VerifyTab(QWidget):
     @staticmethod
     def _summary_row_color(result):
         status = result.get("status", "")
+        if status == "no_checksums":
+            return _C_NO_CHECKSUMS
         if status == "pass":
             return _C_PASS
         if status in ("incomplete", "shntool_missing"):
@@ -502,6 +514,7 @@ class VerifyTab(QWidget):
             status_labels = {
                 "pass": "PASS", "fail": "FAIL",
                 "incomplete": "INCOMPLETE", "shntool_missing": "SHNTOOL MISSING",
+                "no_checksums": "NO CHECKSUMS",
             }
             status_text = status_labels.get(result.get("status", ""),
                                             result.get("status", "").upper())

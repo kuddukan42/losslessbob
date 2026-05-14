@@ -61,3 +61,30 @@ Status: Done
 Added: 2026-05-13
 Closed: 2026-05-13
 Description: Add DB Editor tab (gui/dbedit_tab.py) with table browser, paginated row viewer, inline cell editing, row deletion, CSV export. Backend routes: GET /api/dbedit/tables, schema, rows, PATCH row, DELETE rows, GET export.
+
+---
+
+TODO-009: Rename tab — Multiple IDs right-click resolution
+Priority: Medium
+Status: Done
+Added: 2026-05-13
+Closed: 2026-05-14
+Description: When rename reason is "Multiple IDs", provide a right-click context menu to select which found LB to apply for renaming. Allow rename only after user resolves the ambiguity. Optionally allow selecting multiple IDs (e.g. pick 1, 2, or all 3). Give Multiple IDs a unique color (not red). If no resolution is chosen, block the rename action.
+
+---
+
+TODO-010: xref support in lookup, rename, search, collection
+Priority: Medium
+Status: Done
+Added: 2026-05-13
+Closed: 2026-05-14
+Description: xref is an alternate LB number variant. Naming: LB-XXXXX-xrefXXXX (XXXX zero-padded to 4 digits, e.g. xref216 == xref0216). Checksums for all xrefs are in the checksum DB (xref column stores the xref identifier). Tasks: (1) Lookup duplicate resolution already prefers fully-matched over incomplete; (2) Rename applies xref suffix when match is via xref checksum; (3) Search and Collection tabs have xref filter; (4) complete xref match wins over partial primary LB match via duplicate resolution.
+
+---
+
+TODO-011: xref filter on Search and Collection tabs
+Priority: Low
+Status: Done
+Added: 2026-05-13
+Closed: 2026-05-14
+Description: Added "Xref only" checkbox to Search tab and My Collection tab. Backed by GET /api/checksums/xref_lb_numbers (db.get_xref_lb_numbers). Filter shows only entries that have at least one xref checksum in the DB.

@@ -188,17 +188,31 @@ class SetupTab(QWidget):
         reset_row.addStretch()
         db_layout.addLayout(reset_row)
 
-        # SoX availability indicator
+        # External tool availability indicators
         sox_row = QHBoxLayout()
         sox_row.addWidget(QLabel("SoX:"))
         self.sox_status_label = QLabel("Checking…")
         sox_row.addWidget(self.sox_status_label)
+        sox_row.addStretch()
+        db_layout.addLayout(sox_row)
+
+        ffmpeg_row = QHBoxLayout()
+        ffmpeg_row.addWidget(QLabel("ffmpeg:"))
+        self.ffmpeg_status_label = QLabel("Checking…")
+        ffmpeg_row.addWidget(self.ffmpeg_status_label)
+        ffmpeg_row.addStretch()
+        db_layout.addLayout(ffmpeg_row)
+
+        shntool_row = QHBoxLayout()
+        shntool_row.addWidget(QLabel("shntool:"))
+        self.shntool_status_label = QLabel("Checking…")
+        shntool_row.addWidget(self.shntool_status_label)
         self.sox_check_btn = QPushButton("Re-check")
         self.sox_check_btn.setFixedWidth(80)
         self.sox_check_btn.clicked.connect(self._check_sox)
-        sox_row.addWidget(self.sox_check_btn)
-        sox_row.addStretch()
-        db_layout.addLayout(sox_row)
+        shntool_row.addWidget(self.sox_check_btn)
+        shntool_row.addStretch()
+        db_layout.addLayout(shntool_row)
 
         self.import_status_label = QLabel("")
         db_layout.addWidget(self.import_status_label)
@@ -827,19 +841,37 @@ class SetupTab(QWidget):
                 f"http://127.0.0.1:{self.flask_port}/api/spectrogram/check",
                 timeout=8,
             ).json()
+
             if r.get("sox_available"):
-                ver = r.get("sox_version", "")
-                ff  = "  ffmpeg: OK" if r.get("ffmpeg_available") else \
-                      "  ffmpeg: not found (SHN/APE/WV unsupported)"
-                self.sox_status_label.setText(f"OK — {ver}{ff}")
+                self.sox_status_label.setText(f"OK — {r.get('sox_version', '')}")
                 self.sox_status_label.setStyleSheet("color: green;")
             else:
                 self.sox_status_label.setText(
                     "Not found — install: sudo apt install sox libsox-fmt-all"
                 )
                 self.sox_status_label.setStyleSheet("color: red;")
+
+            if r.get("ffmpeg_available"):
+                self.ffmpeg_status_label.setText("OK (SHN/APE/WV/M4A supported)")
+                self.ffmpeg_status_label.setStyleSheet("color: green;")
+            else:
+                self.ffmpeg_status_label.setText(
+                    "Not found — install: sudo apt install ffmpeg  (needed for SHN/APE/WV spectrograms)"
+                )
+                self.ffmpeg_status_label.setStyleSheet("color: orange;")
+
+            if r.get("shntool_available"):
+                self.shntool_status_label.setText(f"OK — {r.get('shntool_version', '')}")
+                self.shntool_status_label.setStyleSheet("color: green;")
+            else:
+                self.shntool_status_label.setText(
+                    "Not found — install: sudo apt install shntool  (needed for SHN verification)"
+                )
+                self.shntool_status_label.setStyleSheet("color: red;")
+
         except Exception as e:
-            self.sox_status_label.setText(f"Error: {e}")
+            for lbl in (self.sox_status_label, self.ffmpeg_status_label, self.shntool_status_label):
+                lbl.setText(f"Error: {e}")
 
     def _on_stop_scrape(self):
         try:

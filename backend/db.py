@@ -375,6 +375,22 @@ def lookup_checksums(parsed_entries, db_path=None):
                 if missing and item["status"] == "MATCHED":
                     item["status"] = "MATCHED (INCOMPLETE)"
 
+    # Duplicate resolution: when the same checksum appears in multiple LBs (DUPLICATE),
+    # and one of those LBs is fully matched (no missing files) while others are not,
+    # prefer the fully-matched LB — reclassify its items as MATCHED so it is the primary result.
+    from collections import defaultdict as _dd
+    _dup_by_chk: dict = _dd(list)
+    for item in detail:
+        if item["status"] == "DUPLICATE":
+            _dup_by_chk[item["checksum"]].append(item)
+    for _items in _dup_by_chk.values():
+        fully_matched = [i for i in _items if not i["missing_from_set"]]
+        incomplete = [i for i in _items if i["missing_from_set"]]
+        if fully_matched and incomplete:
+            for item in fully_matched:
+                item["status"] = "MATCHED"
+                item["is_duplicate"] = False
+
     # Build summary per LB
     lb_summary = {}
     unmatched_count = 0
@@ -710,6 +726,15 @@ def get_wishlist_lb_numbers(db_path=None) -> list:
     """Return a flat list of lb_numbers currently on the wishlist."""
     with get_connection(db_path) as conn:
         return [r[0] for r in conn.execute("SELECT lb_number FROM my_wishlist").fetchall()]
+
+
+def get_xref_lb_numbers(db_path=None) -> list:
+    """Return distinct lb_numbers that have at least one xref checksum (xref > 0)."""
+    with get_connection(db_path) as conn:
+        rows = conn.execute(
+            "SELECT DISTINCT lb_number FROM checksums WHERE xref > 0 ORDER BY lb_number"
+        ).fetchall()
+    return [r[0] for r in rows]
 
 
 # ── FEAT-05: Duplicate Concert Detector ──────────────────────────────────────

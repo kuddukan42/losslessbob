@@ -143,6 +143,24 @@ class _OwnedWorker(QThread):
             self.finished.emit([])
 
 
+class _XrefWorker(QThread):
+    finished = pyqtSignal(list)
+
+    def __init__(self, flask_port):
+        super().__init__()
+        self.flask_port = flask_port
+
+    def run(self):
+        try:
+            resp = requests.get(
+                f"http://127.0.0.1:{self.flask_port}/api/checksums/xref_lb_numbers",
+                timeout=15,
+            )
+            self.finished.emit(resp.json())
+        except Exception:
+            self.finished.emit([])
+
+
 class SearchTab(QWidget):
     lookup_lb = pyqtSignal(int)
 
@@ -152,7 +170,9 @@ class SearchTab(QWidget):
         self._worker = None
         self._years_worker = None
         self._owned_worker = None
+        self._xref_worker = None
         self._all_results: list = []
+        self._xref_lb_numbers: set = set()
         self._show_missing_only: bool = False
         self._page: int = 0
         self._page_size: int = 50
@@ -162,6 +182,7 @@ class SearchTab(QWidget):
         self._load_page_size()
         self._build_ui()
         self.load_years()
+        self._load_xref_lb_numbers()
 
     def _load_page_size(self) -> None:
         try:
@@ -207,6 +228,13 @@ class SearchTab(QWidget):
         self._not_owned_cb = QCheckBox("Not owned")
         self._not_owned_cb.stateChanged.connect(self._on_filter_changed)
         search_row.addWidget(self._not_owned_cb)
+
+        self._xref_only_cb = QCheckBox("Xref only")
+        self._xref_only_cb.setToolTip(
+            "Show only entries that have cross-reference (xref) alternate versions in the DB."
+        )
+        self._xref_only_cb.stateChanged.connect(self._on_filter_changed)
+        search_row.addWidget(self._xref_only_cb)
 
         self._wrap_cb = QCheckBox("Word wrap")
         self._wrap_cb.stateChanged.connect(self._on_wrap_toggled)
@@ -338,7 +366,20 @@ class SearchTab(QWidget):
             results = [r for r in results if r.get("lb_number") in owned]
         elif not_owned:
             results = [r for r in results if r.get("lb_number") not in owned]
+        if self._xref_only_cb.isChecked():
+            results = [r for r in results if r.get("lb_number") in self._xref_lb_numbers]
         return results
+
+    def _load_xref_lb_numbers(self) -> None:
+        self._xref_worker = _XrefWorker(self.flask_port)
+        self._xref_worker.finished.connect(self._on_xref_loaded)
+        self._xref_worker.start()
+
+    def _on_xref_loaded(self, lb_numbers: list) -> None:
+        self._xref_lb_numbers = set(lb_numbers)
+        if self._xref_only_cb.isChecked() and self._all_results:
+            self._page = 0
+            self._render_page()
 
     def _total_pages(self) -> int:
         results = self._filtered_results()

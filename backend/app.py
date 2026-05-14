@@ -228,6 +228,13 @@ def create_app():
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
+    @app.route("/api/checksums/xref_lb_numbers", methods=["GET"])
+    def xref_lb_numbers():
+        try:
+            return jsonify(database.get_xref_lb_numbers())
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
     @app.route("/api/entries/year/<year>", methods=["GET"])
     def entries_by_year(year):
         try:
@@ -600,12 +607,16 @@ def create_app():
     def spectrogram_check():
         """Return tool availability for the Setup tab indicator."""
         from backend.sox_utils import check_sox_version, get_ffmpeg
-        sox_ver = check_sox_version()
-        ffmpeg  = get_ffmpeg()
+        from backend.checksum_utils import check_shntool_version
+        sox_ver     = check_sox_version()
+        ffmpeg      = get_ffmpeg()
+        shntool_ver = check_shntool_version()
         return jsonify({
-            "sox_available":    bool(sox_ver),
-            "sox_version":      sox_ver,
-            "ffmpeg_available": ffmpeg is not None,
+            "sox_available":      bool(sox_ver),
+            "sox_version":        sox_ver,
+            "ffmpeg_available":   ffmpeg is not None,
+            "shntool_available":  bool(shntool_ver),
+            "shntool_version":    shntool_ver,
         })
 
     @app.route("/api/spectrogram/generate", methods=["POST"])
