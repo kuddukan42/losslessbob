@@ -35,8 +35,8 @@ class AttachmentsTab(QWidget):
         super().__init__(parent)
         self.flask_port = flask_port
         self._scrape_thread = None
+        self._tree_loaded = False
         self._build_ui()
-        self._refresh_tree()
 
     def _build_ui(self):
         layout = QVBoxLayout(self)
@@ -177,6 +177,9 @@ class AttachmentsTab(QWidget):
         if not self._web_initialised:
             self._web_initialised = True
             QTimer.singleShot(0, self._init_web_view)
+        if not self._tree_loaded:
+            self._tree_loaded = True
+            self._refresh_tree()
 
     def _init_web_view(self):
         """Create the QWebEngineView on first tab activation (lazy GPU-process start)."""

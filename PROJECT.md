@@ -37,7 +37,8 @@ losslessbob/
 │   ├── importer.py           # Flat-file import logic
 │   ├── scraper.py            # Web scraper for losslessbob.com
 │   ├── scheduler.py          # Watchdog file watcher, auto-import
-│   └── sox_utils.py          # SoX/ffmpeg tool detection + spectrogram generation
+│   ├── sox_utils.py          # SoX/ffmpeg tool detection + spectrogram generation
+│   └── startup_log.py        # Startup timing logger → data/startup.log
 ├── gui/
 │   ├── main_window.py        # Main window, tab container, menu, status bar
 │   ├── lookup_tab.py         # Core feature: paste/load checksums, view results
@@ -700,3 +701,4 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 | 2026-05-12 | gui/setup_tab.py: SoX availability indicator with Re-check button added to Database group. |
 | 2026-05-13 | FEAT-13: integrity_events schema added; purge_* / delete_collection_entries in db.py; POST /api/collection/purge and /delete_bulk; Select All/None + bulk _on_remove in collection_tab; Data Management group in setup_tab. |
 | 2026-05-13 | FEAT-14: _DBEDIT constants and 6 /api/dbedit/* routes in app.py; gui/dbedit_tab.py (DbEditTab) created; registered as DB Editor tab (index 8) in main_window.py. Tab count: 11. |
+| 2026-05-13 | Added backend/startup_log.py; instrumented main.py, backend/app.py, gui/main_window.py with startup timing probes → data/startup.log. |

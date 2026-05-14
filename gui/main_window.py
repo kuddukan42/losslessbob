@@ -19,6 +19,8 @@ class MainWindow(QMainWindow):
     _status_message = pyqtSignal(str)
 
     def __init__(self, flask_port, ignore_saved_pos=False, parent=None):
+        import backend.startup_log as _slog
+        _slog.t("MainWindow.__init__: start")
         super().__init__(parent)
         self.flask_port = flask_port
         self.setWindowTitle("LosslessBob Checksum Lookup")
@@ -28,15 +30,21 @@ class MainWindow(QMainWindow):
         _settings_path = str(DATA_DIR / "settings.ini")
         self._settings = QSettings(_settings_path, QSettings.Format.IniFormat)
 
+        _slog.t("MainWindow.__init__: _build_menu")
         self._build_menu()
+        _slog.t("MainWindow.__init__: _build_tabs")
         self._build_tabs()
+        _slog.t("MainWindow.__init__: _apply_shadows")
         self._apply_shadows()
+        _slog.t("MainWindow.__init__: _build_status_bar")
         self._build_status_bar()
+        _slog.t("MainWindow.__init__: geometry restore")
 
         if not ignore_saved_pos:
             self._restore_geometry()
         else:
             self.resize(1100, 750)
+        _slog.t("MainWindow.__init__: done")
 
         self._status_message.connect(self.status_bar.showMessage)
 
@@ -81,6 +89,8 @@ class MainWindow(QMainWindow):
         help_menu.addAction(about_act)
 
     def _build_tabs(self):
+        import backend.startup_log as _slog
+        _slog.t("_build_tabs: importing tab modules")
         from gui.lookup_tab import LookupTab
         from gui.rename_tab import RenameTab
         from gui.verify_tab import VerifyTab
@@ -90,20 +100,30 @@ class MainWindow(QMainWindow):
         from gui.attachments_tab import AttachmentsTab
         from gui.setup_tab import SetupTab
         from gui.theme_tab import ThemeTab
+        _slog.t("_build_tabs: tab modules imported")
 
         self.tabs = QTabWidget()
         self.setCentralWidget(self.tabs)
 
         # Tab order: Lookup(0) Rename(1) Verify(2) lbdir(3) Search(4)
         #            Collection(5) Attachments(6) Setup(7) Themes(8)
+        _slog.t("_build_tabs: init LookupTab")
         self.lookup_tab = LookupTab(self.flask_port)
+        _slog.t("_build_tabs: init RenameTab")
         self.rename_tab = RenameTab()
+        _slog.t("_build_tabs: init VerifyTab")
         self.verify_tab = VerifyTab(self.flask_port)
+        _slog.t("_build_tabs: init LbdirTab")
         self.lbdir_tab = LbdirTab(self.flask_port)
+        _slog.t("_build_tabs: init SearchTab")
         self.search_tab = SearchTab(self.flask_port)
+        _slog.t("_build_tabs: init CollectionTab")
         self.collection_tab = CollectionTab(self.flask_port)
+        _slog.t("_build_tabs: init AttachmentsTab")
         self.attachments_tab = AttachmentsTab(self.flask_port)
+        _slog.t("_build_tabs: init SetupTab")
         self.setup_tab = SetupTab(self.flask_port)
+        _slog.t("_build_tabs: init ThemeTab")
         self.theme_tab = ThemeTab()
 
         self.tabs.addTab(self.lookup_tab, "Lookup")
@@ -112,9 +132,13 @@ class MainWindow(QMainWindow):
         self.tabs.addTab(self.lbdir_tab, "lbdir")
         self.tabs.addTab(self.search_tab, "Search")
         self.tabs.addTab(self.collection_tab, "My Collection")
+        _slog.t("_build_tabs: import SpectrogramTab")
         from gui.spectrogram_tab import SpectrogramTab
+        _slog.t("_build_tabs: init SpectrogramTab")
         self.spectrogram_tab = SpectrogramTab(self.flask_port)
+        _slog.t("_build_tabs: import DbEditTab")
         from gui.dbedit_tab import DbEditTab
+        _slog.t("_build_tabs: init DbEditTab")
         self.dbedit_tab = DbEditTab(self.flask_port)
 
         self.tabs.addTab(self.attachments_tab, "Attachments")

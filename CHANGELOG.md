@@ -1,3 +1,33 @@
+[2026-05-13] — fix(startup): defer AttachmentsTab tree load to first activation — removes 3s startup block
+
+Fixed
+
+gui/attachments_tab.py: _refresh_tree() (HTTP request + directory scan) was called in __init__, blocking main-thread tab construction for ~3s. Replaced with a _tree_loaded flag; tree now populates in showEvent on first activation, matching the existing lazy WebEngine pattern.
+
+[2026-05-13] — fix(collection): scan now recognises "LB XXXXX" (space separator) folder names; remove unused QSpinBox import
+
+Changed
+
+gui/collection_tab.py: _LB_RE updated from r'LB-0*(\d+)' to r'LB[- ]0*(\d+)' so folders named "LB 12345" are matched alongside "LB-12345". Removed unused QSpinBox import.
+
+[2026-05-13] — fix(collection): Scan Directory / Scan Tree froze UI on large drives (BUG-034)
+
+Fixed
+
+gui/collection_tab.py: Moved filesystem walk (iterdir / rglob) and /api/collection/lb_numbers network call out of the main thread into a new _ScanWorker QThread. Both _on_scan_directory and _on_scan_tree now start the worker and show a "Scanning…" status; _on_scan_finished presents the preview dialog and calls _bulk_add when results arrive.
+
+[2026-05-13] — chore(startup): add startup timing logger to data/startup.log
+
+Added
+
+backend/startup_log.py: New module — init(path) truncates the log and records start time; t(label) appends a wall-clock timestamp + elapsed seconds entry. Thread-safe via lock; no-ops silently if not yet initialized.
+
+Changed
+
+main.py: Calls startup_log.init() after ensure_data_dirs(); adds t() probes at flask-thread-start, QApplication creation, splash shown, flask-port-ready, main_window import, MainWindow created, and window.show().
+backend/app.py: create_app() adds t() probes around init_db(), start_file_watcher(), and route registration.
+gui/main_window.py: __init__ adds t() probes around each build phase; _build_tabs adds t() probes before and after each tab module import and each tab instantiation.
+
 [2026-05-13] — refactor(setup): move Data Management into Database group; add column-width persistence to DB Editor
 
 Changed

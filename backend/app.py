@@ -32,11 +32,17 @@ _spectro_lock = __import__("threading").Lock()
 
 
 def create_app():
+    import backend.startup_log as _slog
+    _slog.t("Flask: create_app start")
     app = Flask(__name__)
     CORS(app)
 
+    _slog.t("Flask: init_db start")
     database.init_db()
+    _slog.t("Flask: init_db done")
+    _slog.t("Flask: start_file_watcher start")
     scheduler.start_file_watcher()
+    _slog.t("Flask: routes registering")
 
     # ── Checksum Lookup ──────────────────────────────────────────────────────
 
@@ -838,6 +844,7 @@ def create_app():
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
+    _slog.t("Flask: create_app done")
     return app
 
 

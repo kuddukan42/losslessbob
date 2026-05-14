@@ -1,3 +1,14 @@
+BUG-034: Scan Directory / Scan Tree freezes the UI ("python is not responding")
+Status: Fixed
+File(s): gui/collection_tab.py:_on_scan_directory, _on_scan_tree
+Reported: 2026-05-13
+Fixed: 2026-05-13
+Description: Clicking "Scan Directory" or "Scan Tree…" then selecting a large root directory caused Python to become unresponsive. The OS showed a "python is not responding" dialog.
+Root cause: Both methods called Path.iterdir() / Path.rglob("*") and requests.get() synchronously on the Qt main thread after the file dialog closed. A large archive drive (thousands of subdirectories) blocks the event loop long enough to trigger the not-responding timeout.
+Fix: Added _ScanWorker(QThread) that performs the filesystem traversal and the /api/collection/lb_numbers network call off the main thread. Both _on_scan_directory and _on_scan_tree now start the worker immediately and show a status message; _on_scan_finished (connected to worker.finished) presents the preview dialog and proceeds with _bulk_add.
+
+---
+
 BUG-033: Spectrogram panning overshoots then snaps back
 Status: Fixed
 File(s): gui/spectrogram_tab.py:87,100,101

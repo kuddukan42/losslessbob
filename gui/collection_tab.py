@@ -14,12 +14,11 @@ from PyQt6.QtWidgets import (
     QLabel, QLineEdit, QAbstractItemView, QHeaderView, QMenu, QDialog,
     QFormLayout, QDialogButtonBox, QTableWidget, QTableWidgetItem,
     QFileDialog, QMessageBox, QComboBox, QCheckBox, QTreeWidget, QTreeWidgetItem,
-    QSpinBox,
 )
 
 from gui.styles import ROW_OWNED, ROW_WISHLIST
 
-_LB_RE = re.compile(r'LB-0*(\d+)', re.IGNORECASE)
+_LB_RE = re.compile(r'LB[- ]0*(\d+)', re.IGNORECASE)
 
 COLL_HEADERS = ["LB Number", "Date", "Location", "Folder Name", "Disk Path", "Confirmed", "Notes"]
 MISS_HEADERS = ["LB Number", "Date", "Location", "Rating", "Description"]
@@ -213,6 +212,62 @@ class _ApiWorker(QThread):
     def run(self):
         try:
             self.finished.emit(self._fn())
+        except Exception as e:
+            self.error.emit(str(e))
+
+
+class _ScanWorker(QThread):
+    """Filesystem walker for Scan Directory / Scan Tree — runs off the main thread."""
+    finished = pyqtSignal(object)
+    error = pyqtSignal(str)
+
+    def __init__(self, root_path: Path, recursive: bool, flask_port: int):
+        super().__init__()
+        self._root = root_path
+        self._recursive = recursive
+        self._flask_port = flask_port
+
+    def run(self):
+        try:
+            by_lb: dict = {}
+            skipped = 0
+            if self._recursive:
+                for child in self._root.rglob("*"):
+                    if not child.is_dir():
+                        continue
+                    lb = _extract_lb(child.name)
+                    if lb is not None:
+                        depth = len(child.relative_to(self._root).parts)
+                        if lb not in by_lb or depth < by_lb[lb][0]:
+                            by_lb[lb] = (depth, child.name, str(child))
+                    else:
+                        skipped += 1
+                entries = [(lb, name, path) for lb, (_, name, path) in sorted(by_lb.items())]
+            else:
+                entries = []
+                for child in sorted(self._root.iterdir()):
+                    if not child.is_dir():
+                        continue
+                    lb = _extract_lb(child.name)
+                    if lb is not None:
+                        entries.append((lb, child.name, str(child)))
+                    else:
+                        skipped += 1
+
+            try:
+                owned_resp = requests.get(
+                    f"http://127.0.0.1:{self._flask_port}/api/collection/lb_numbers",
+                    timeout=10,
+                )
+                owned_set = set(owned_resp.json())
+            except Exception:
+                owned_set = set()
+
+            self.finished.emit({
+                "entries": entries,
+                "skipped": skipped,
+                "owned_set": owned_set,
+            })
         except Exception as e:
             self.error.emit(str(e))
 
@@ -927,74 +982,41 @@ class CollectionTab(QWidget):
         root = QFileDialog.getExistingDirectory(self, "Select Root Directory to Scan")
         if not root:
             return
-        root_path = Path(root)
-        entries = []
-        skipped = 0
-        for child in sorted(root_path.iterdir()):
-            if not child.is_dir():
-                continue
-            lb = _extract_lb(child.name)
-            if lb is not None:
-                entries.append((lb, child.name, str(child)))
-            else:
-                skipped += 1
-
-        if not entries:
-            QMessageBox.information(self, "Scan", f"No folders with LB numbers found.\n{skipped} folder(s) skipped.")
-            return
-
-        try:
-            owned_resp = requests.get(
-                f"http://127.0.0.1:{self.flask_port}/api/collection/lb_numbers", timeout=10
-            )
-            owned_set = set(owned_resp.json())
-        except Exception:
-            owned_set = set()
-
-        dlg = _ScanPreviewDialog(entries, owned_set, parent=self)
-        if dlg.exec() != QDialog.DialogCode.Accepted:
-            return
-
-        self._bulk_add(entries, skipped)
+        self.coll_status.setText("Scanning…")
+        w = _ScanWorker(Path(root), recursive=False, flask_port=self.flask_port)
+        w.finished.connect(self._on_scan_finished)
+        w.error.connect(lambda e: self.coll_status.setText(f"Scan error: {e}"))
+        self._workers.append(w)
+        w.start()
 
     def _on_scan_tree(self):
         """Recursively scan all subdirectories for LB-numbered folders and bulk-add them."""
         root = QFileDialog.getExistingDirectory(self, "Select Root Directory to Scan")
         if not root:
             return
-        root_path = Path(root)
-        by_lb: dict = {}
-        skipped = 0
-        for child in root_path.rglob("*"):
-            if not child.is_dir():
-                continue
-            lb = _extract_lb(child.name)
-            if lb is not None:
-                depth = len(child.relative_to(root_path).parts)
-                if lb not in by_lb or depth < by_lb[lb][0]:
-                    by_lb[lb] = (depth, child.name, str(child))
-            else:
-                skipped += 1
+        self.coll_status.setText("Scanning (recursive)…")
+        w = _ScanWorker(Path(root), recursive=True, flask_port=self.flask_port)
+        w.finished.connect(self._on_scan_finished)
+        w.error.connect(lambda e: self.coll_status.setText(f"Scan error: {e}"))
+        self._workers.append(w)
+        w.start()
 
-        if not by_lb:
+    def _on_scan_finished(self, result: dict):
+        entries = result["entries"]
+        skipped = result["skipped"]
+        owned_set = result["owned_set"]
+
+        if not entries:
             QMessageBox.information(
-                self, "Scan Tree",
+                self, "Scan",
                 f"No folders with LB numbers found.\n{skipped} folder(s) skipped."
             )
+            self.coll_status.setText("Scan complete — no LB folders found.")
             return
-
-        entries = [(lb, name, path) for lb, (_, name, path) in sorted(by_lb.items())]
-
-        try:
-            owned_resp = requests.get(
-                f"http://127.0.0.1:{self.flask_port}/api/collection/lb_numbers", timeout=10
-            )
-            owned_set = set(owned_resp.json())
-        except Exception:
-            owned_set = set()
 
         dlg = _ScanPreviewDialog(entries, owned_set, parent=self)
         if dlg.exec() != QDialog.DialogCode.Accepted:
+            self.coll_status.setText("Scan cancelled.")
             return
 
         self._bulk_add(entries, skipped)
