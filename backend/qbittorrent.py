@@ -4,6 +4,10 @@ Adds generated .torrent files to a running qBittorrent instance so the
 client can begin seeding immediately using the existing files on disk.
 save_path is set to the *parent* of each source folder so qBittorrent
 locates the folder by name and starts seeding without re-downloading.
+
+Auth priority: if api_key is provided it is used as a Bearer token and
+the login/logout flow is skipped entirely.  Fall back to username/password
+when no key is set.
 """
 import logging
 from pathlib import Path
@@ -11,14 +15,13 @@ from pathlib import Path
 import requests
 
 from backend import db
-from backend.credentials import SERVICE_QBT, get_credentials
 
 logger = logging.getLogger(__name__)
 
-_LOGIN_PATH  = "/api/v2/auth/login"
-_LOGOUT_PATH = "/api/v2/auth/logout"
+_LOGIN_PATH   = "/api/v2/auth/login"
+_LOGOUT_PATH  = "/api/v2/auth/logout"
 _VERSION_PATH = "/api/v2/app/version"
-_ADD_PATH    = "/api/v2/torrents/add"
+_ADD_PATH     = "/api/v2/torrents/add"
 
 
 def _base_url(host: str, port: int) -> str:
@@ -28,36 +31,65 @@ def _base_url(host: str, port: int) -> str:
     return f"{host}:{port}"
 
 
+def _make_session(base: str, api_key: str = "") -> requests.Session:
+    """Return a requests Session with CSRF and optional Bearer auth headers."""
+    session = requests.Session()
+    session.headers.update({"Referer": base, "Origin": base})
+    if api_key:
+        session.headers["Authorization"] = f"Bearer {api_key}"
+    return session
+
+
+def _login(session: requests.Session, base: str, username: str, password: str) -> dict | None:
+    """Perform username/password login.  Returns an error dict on failure, None on success."""
+    r = session.post(
+        base + _LOGIN_PATH,
+        data={"username": username, "password": password},
+        timeout=10,
+    )
+    # 204 = bypass-auth (localhost bypass, no body); 200 + "Ok." = normal success
+    login_ok = r.status_code == 204 or (r.status_code == 200 and r.text.strip() == "Ok.")
+    if not login_ok:
+        body = r.text.strip()[:100] or "<empty>"
+        return {"ok": False, "error": f"Login rejected (HTTP {r.status_code}): {body}"}
+    return None
+
+
 def test_connection(
     host: str = "localhost",
     port: int = 8080,
     username: str = "",
     password: str = "",
+    api_key: str = "",
 ) -> dict:
-    """Attempt to log in and return the qBittorrent application version.
+    """Attempt to authenticate and return the qBittorrent application version.
 
     Args:
         host: qBittorrent WebUI hostname or IP.
         port: WebUI port.
-        username: WebUI username.
-        password: WebUI password.
+        username: WebUI username (ignored when api_key is set).
+        password: WebUI password (ignored when api_key is set).
+        api_key: API key (qBittorrent 5+). Takes priority over username/password.
 
     Returns:
         Dict with keys: ok (bool), version (str), error (str if ok=False).
     """
     base = _base_url(host, port)
-    session = requests.Session()
+    session = _make_session(base, api_key)
     try:
-        r = session.post(
-            base + _LOGIN_PATH,
-            data={"username": username, "password": password},
-            timeout=10,
-        )
-        if r.text.strip() != "Ok.":
-            return {"ok": False, "error": f"Login rejected: {r.text.strip()[:100]}"}
+        if not api_key:
+            err = _login(session, base, username, password)
+            if err:
+                return err
+
         ver_r = session.get(base + _VERSION_PATH, timeout=10)
+        if ver_r.status_code in (401, 403):
+            return {"ok": False, "error": f"Unauthorized (HTTP {ver_r.status_code}) — check API key or credentials"}
         version = ver_r.text.strip()
-        session.post(base + _LOGOUT_PATH, timeout=5)
+
+        if not api_key:
+            session.post(base + _LOGOUT_PATH, timeout=5)
+
         return {"ok": True, "version": version}
     except requests.exceptions.ConnectionError:
         return {"ok": False, "error": f"Cannot connect to {base}"}
@@ -70,10 +102,11 @@ def add_torrent_for_seeding(
     source_folder: str | Path,
     host: str,
     port: int,
-    username: str,
-    password: str,
+    username: str = "",
+    password: str = "",
     category: str = "",
     tags: str = "",
+    api_key: str = "",
 ) -> dict:
     """Add a .torrent file to qBittorrent and start seeding immediately.
 
@@ -85,10 +118,11 @@ def add_torrent_for_seeding(
         source_folder: Absolute path to the recording folder on disk.
         host: qBittorrent WebUI host.
         port: qBittorrent WebUI port.
-        username: WebUI username.
-        password: WebUI password.
+        username: WebUI username (ignored when api_key is set).
+        password: WebUI password (ignored when api_key is set).
         category: Optional category string.
         tags: Optional comma-separated tags string.
+        api_key: API key (qBittorrent 5+). Takes priority over username/password.
 
     Returns:
         Dict with keys: ok (bool), error (str if ok=False).
@@ -99,16 +133,13 @@ def add_torrent_for_seeding(
 
     save_path = str(Path(source_folder).parent)
     base = _base_url(host, port)
-    session = requests.Session()
+    session = _make_session(base, api_key)
 
     try:
-        r = session.post(
-            base + _LOGIN_PATH,
-            data={"username": username, "password": password},
-            timeout=10,
-        )
-        if r.text.strip() != "Ok.":
-            return {"ok": False, "error": f"Login rejected: {r.text.strip()[:100]}"}
+        if not api_key:
+            err = _login(session, base, username, password)
+            if err:
+                return err
 
         form: dict = {
             "savepath": save_path,
@@ -129,11 +160,20 @@ def add_torrent_for_seeding(
                 timeout=30,
             )
 
-        session.post(base + _LOGOUT_PATH, timeout=5)
+        if not api_key:
+            session.post(base + _LOGOUT_PATH, timeout=5)
 
-        if add_r.text.strip() == "Ok.":
+        body = add_r.text.strip()
+        # qBittorrent <5 returns plain "Ok."; qBittorrent 5+ returns JSON
+        if body == "Ok.":
             return {"ok": True}
-        return {"ok": False, "error": f"qBittorrent response: {add_r.text.strip()[:200]}"}
+        try:
+            j = add_r.json()
+            if j.get("failure_count", 1) == 0 and j.get("success_count", 0) > 0:
+                return {"ok": True}
+        except Exception:
+            pass
+        return {"ok": False, "error": f"qBittorrent response: {body[:200]}"}
 
     except requests.exceptions.ConnectionError:
         return {"ok": False, "error": f"Cannot connect to {base}"}
@@ -145,10 +185,11 @@ def add_torrent_from_db(
     torrent_db_id: int,
     host: str,
     port: int,
-    username: str,
-    password: str,
+    username: str = "",
+    password: str = "",
     category: str = "",
     tags: str = "",
+    api_key: str = "",
     db_path=None,
 ) -> dict:
     """Look up a torrents table record by id and add it to qBittorrent.
@@ -159,10 +200,11 @@ def add_torrent_from_db(
         torrent_db_id: Primary key of the torrents row.
         host: qBittorrent WebUI host.
         port: Port.
-        username: WebUI username.
-        password: WebUI password.
+        username: WebUI username (ignored when api_key is set).
+        password: WebUI password (ignored when api_key is set).
         category: Optional category.
         tags: Optional tags.
+        api_key: API key (qBittorrent 5+). Takes priority over username/password.
         db_path: DB path override for testing.
 
     Returns:
@@ -184,6 +226,7 @@ def add_torrent_from_db(
         password=password,
         category=category,
         tags=tags,
+        api_key=api_key,
     )
 
     if result["ok"]:

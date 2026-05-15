@@ -9,8 +9,9 @@ from dataclasses import dataclass
 
 logger = logging.getLogger(__name__)
 
-SERVICE_QBT  = "losslessbob_qbittorrent"
-SERVICE_WTRF = "losslessbob_wtrf"
+SERVICE_QBT     = "losslessbob_qbittorrent"
+SERVICE_QBT_KEY = "losslessbob_qbittorrent_apikey"
+SERVICE_WTRF    = "losslessbob_wtrf"
 
 # In-session credential cache (cleared when the process exits)
 _session: dict[str, tuple[str, str]] = {}

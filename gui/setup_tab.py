@@ -474,17 +474,24 @@ class SetupTab(QWidget):
         self.qbt_pass.setFixedWidth(180)
         qbt_layout.addWidget(self.qbt_pass, 1, 3)
 
-        qbt_layout.addWidget(QLabel("Category:"), 2, 0)
+        qbt_layout.addWidget(QLabel("API Key:"), 2, 0)
+        self.qbt_api_key = QLineEdit()
+        self.qbt_api_key.setEchoMode(QLineEdit.EchoMode.Password)
+        self.qbt_api_key.setPlaceholderText("qBittorrent 5+ — takes priority over username/password")
+        self.qbt_api_key.setFixedWidth(380)
+        qbt_layout.addWidget(self.qbt_api_key, 2, 1, 1, 3)
+
+        qbt_layout.addWidget(QLabel("Category:"), 3, 0)
         self.qbt_category = QLineEdit()
         self.qbt_category.setPlaceholderText("e.g. losslessbob (optional)")
         self.qbt_category.setFixedWidth(180)
-        qbt_layout.addWidget(self.qbt_category, 2, 1)
+        qbt_layout.addWidget(self.qbt_category, 3, 1)
 
-        qbt_layout.addWidget(QLabel("Tags:"), 2, 2)
+        qbt_layout.addWidget(QLabel("Tags:"), 3, 2)
         self.qbt_tags = QLineEdit()
         self.qbt_tags.setPlaceholderText("comma-separated (optional)")
         self.qbt_tags.setFixedWidth(180)
-        qbt_layout.addWidget(self.qbt_tags, 2, 3)
+        qbt_layout.addWidget(self.qbt_tags, 3, 3)
 
         qbt_btn_row = QHBoxLayout()
         self.qbt_save_btn = QPushButton("Save Credentials")
@@ -497,10 +504,10 @@ class SetupTab(QWidget):
         self.qbt_clear_btn.clicked.connect(self._on_qbt_clear)
         qbt_btn_row.addWidget(self.qbt_clear_btn)
         qbt_btn_row.addStretch()
-        qbt_layout.addLayout(qbt_btn_row, 3, 0, 1, 5)
+        qbt_layout.addLayout(qbt_btn_row, 4, 0, 1, 5)
 
         self.qbt_status_label = QLabel("")
-        qbt_layout.addWidget(self.qbt_status_label, 4, 0, 1, 5)
+        qbt_layout.addWidget(self.qbt_status_label, 5, 0, 1, 5)
         qbt_layout.setColumnStretch(4, 1)
         right_col.addWidget(qbt_group)
 
@@ -1040,13 +1047,13 @@ class SetupTab(QWidget):
     # ── qBittorrent handlers ─────────────────────────────────────────────────
 
     def _on_qbt_save(self):
-        from backend.credentials import save_credentials, SERVICE_QBT
+        from backend.credentials import save_credentials, SERVICE_QBT, SERVICE_QBT_KEY
+        key = self.qbt_api_key.text().strip()
         u = self.qbt_user.text().strip()
         p = self.qbt_pass.text()
-        if not u:
-            self.qbt_status_label.setText("Username is required.")
+        if not key and not u:
+            self.qbt_status_label.setText("API key or username is required.")
             return
-        # Save non-sensitive settings to meta
         try:
             requests.post(
                 f"http://127.0.0.1:{self.flask_port}/api/db/settings",
@@ -1060,21 +1067,30 @@ class SetupTab(QWidget):
             )
         except Exception:
             pass
-        result = save_credentials(SERVICE_QBT, u, p)
-        self.qbt_status_label.setText(result.label)
+        if key:
+            result = save_credentials(SERVICE_QBT_KEY, "api_key", key)
+            self.qbt_status_label.setText(f"API key saved — {result.label}")
+        else:
+            result = save_credentials(SERVICE_QBT, u, p)
+            self.qbt_status_label.setText(f"Username/password saved — {result.label}")
 
     def _on_qbt_test(self):
         self.qbt_test_btn.setEnabled(False)
         self.qbt_status_label.setText("Testing…")
         try:
+            payload: dict = {
+                "host": self.qbt_host.text().strip() or "localhost",
+                "port": self.qbt_port.value(),
+            }
+            key = self.qbt_api_key.text().strip()
+            if key:
+                payload["api_key"] = key
+            else:
+                payload["username"] = self.qbt_user.text().strip()
+                payload["password"] = self.qbt_pass.text()
             resp = requests.post(
                 f"http://127.0.0.1:{self.flask_port}/api/qbt/test",
-                json={
-                    "host": self.qbt_host.text().strip() or "localhost",
-                    "port": self.qbt_port.value(),
-                    "username": self.qbt_user.text().strip(),
-                    "password": self.qbt_pass.text(),
-                },
+                json=payload,
                 timeout=15,
             ).json()
             if resp.get("ok"):
@@ -1090,16 +1106,18 @@ class SetupTab(QWidget):
             self.qbt_test_btn.setEnabled(True)
 
     def _on_qbt_clear(self):
-        from backend.credentials import delete_credentials, SERVICE_QBT
+        from backend.credentials import delete_credentials, SERVICE_QBT, SERVICE_QBT_KEY
         delete_credentials(SERVICE_QBT)
+        delete_credentials(SERVICE_QBT_KEY)
         self.qbt_user.clear()
         self.qbt_pass.clear()
+        self.qbt_api_key.clear()
         self.qbt_status_label.setText("Credentials cleared.")
         self.qbt_status_label.setStyleSheet("")
 
     def _load_qbt_settings(self):
         """Load qBittorrent host/port/category/tags from meta and credential status from keyring."""
-        from backend.credentials import credentials_stored, get_credentials, SERVICE_QBT
+        from backend.credentials import credentials_stored, get_credentials, SERVICE_QBT, SERVICE_QBT_KEY
         try:
             resp = requests.get(
                 f"http://127.0.0.1:{self.flask_port}/api/db/settings", timeout=5
@@ -1110,11 +1128,15 @@ class SetupTab(QWidget):
             self.qbt_tags.setText(resp.get("qbt_tags") or "")
         except Exception:
             pass
-        if credentials_stored(SERVICE_QBT):
+        if credentials_stored(SERVICE_QBT_KEY):
+            _, key = get_credentials(SERVICE_QBT_KEY)
+            self.qbt_api_key.setText(key)
+            self.qbt_status_label.setText("API key stored in keyring.")
+        elif credentials_stored(SERVICE_QBT):
             u, p = get_credentials(SERVICE_QBT)
             self.qbt_user.setText(u)
             self.qbt_pass.setText(p)
-            self.qbt_status_label.setText("Credentials stored in keyring.")
+            self.qbt_status_label.setText("Username/password stored in keyring.")
 
     # ── WTRF Forum handlers ──────────────────────────────────────────────────
 

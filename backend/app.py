@@ -931,19 +931,22 @@ def create_app():
     def qbt_test():
         """Test qBittorrent WebUI connectivity.
 
-        Body: {host, port, username?, password?}  — credentials optional (uses keyring).
+        Body: {host, port, username?, password?, api_key?} — credentials optional (uses keyring).
         """
         try:
             from backend.qbittorrent import test_connection
-            from backend.credentials import get_credentials, SERVICE_QBT
+            from backend.credentials import get_credentials, SERVICE_QBT, SERVICE_QBT_KEY
             data = request.get_json() or {}
             host = data.get("host") or database.get_meta("qbt_host") or "localhost"
             port = int(data.get("port") or database.get_meta("qbt_port") or 8080)
+            api_key = data.get("api_key") or ""
+            if not api_key:
+                _, api_key = get_credentials(SERVICE_QBT_KEY)
             username = data.get("username") or ""
             password = data.get("password") or ""
-            if not username:
+            if not api_key and not username:
                 username, password = get_credentials(SERVICE_QBT)
-            return jsonify(test_connection(host, port, username, password))
+            return jsonify(test_connection(host, port, username, password, api_key))
         except Exception as exc:
             return jsonify({"ok": False, "error": str(exc)}), 500
 
@@ -952,27 +955,31 @@ def create_app():
         """Add one or more torrents to qBittorrent.
 
         Body: {torrent_id?, lb_numbers?, host?, port?, username?, password?,
-               category?, tags?}
+               api_key?, category?, tags?}
         Use torrent_id for a single known record, or lb_numbers to add all
         torrents for those entries (latest record per LB).
         """
         try:
             from backend.qbittorrent import add_torrent_from_db
-            from backend.credentials import get_credentials, SERVICE_QBT
+            from backend.credentials import get_credentials, SERVICE_QBT, SERVICE_QBT_KEY
             data = request.get_json() or {}
             host = data.get("host") or database.get_meta("qbt_host") or "localhost"
             port = int(data.get("port") or database.get_meta("qbt_port") or 8080)
             category = data.get("category") or database.get_meta("qbt_category") or ""
             tags = data.get("tags") or database.get_meta("qbt_tags") or ""
+            api_key = data.get("api_key") or ""
+            if not api_key:
+                _, api_key = get_credentials(SERVICE_QBT_KEY)
             username = data.get("username") or ""
             password = data.get("password") or ""
-            if not username:
+            if not api_key and not username:
                 username, password = get_credentials(SERVICE_QBT)
 
             results = []
             if data.get("torrent_id"):
                 r = add_torrent_from_db(
-                    int(data["torrent_id"]), host, port, username, password, category, tags
+                    int(data["torrent_id"]), host, port, username, password, category, tags,
+                    api_key=api_key,
                 )
                 results.append(r)
             elif data.get("lb_numbers"):
@@ -980,7 +987,8 @@ def create_app():
                     rows = database.get_torrents_for_lb(int(lb))
                     if rows:
                         r = add_torrent_from_db(
-                            rows[0]["id"], host, port, username, password, category, tags
+                            rows[0]["id"], host, port, username, password, category, tags,
+                            api_key=api_key,
                         )
                         results.append({**r, "lb_number": lb})
             else:
@@ -1014,6 +1022,25 @@ def create_app():
             if session is None:
                 return jsonify({"ok": False, "error": "Login failed — check username and password."})
             return jsonify({"ok": True, "username": username})
+        except Exception as exc:
+            return jsonify({"ok": False, "error": str(exc)}), 500
+
+    @app.route("/api/entry/<int:lb>/preview_forum", methods=["GET"])
+    def preview_forum(lb):
+        """Return the forum post subject and body for an LB entry without posting.
+
+        Returns: {subject, body}.
+        """
+        try:
+            from backend.forum_poster import preview_lb_topic
+            from backend.paths import ATTACHMENTS_DIR
+            entry_data = database.get_entry(lb)
+            if not entry_data:
+                return jsonify({"ok": False, "error": f"Entry LB-{lb} not found"}), 404
+            entry = entry_data["entry"]
+            attach_dir = ATTACHMENTS_DIR / f"LB-{lb:05d}"
+            result = preview_lb_topic(lb_number=lb, entry=entry, attachments_dir=attach_dir)
+            return jsonify(result)
         except Exception as exc:
             return jsonify({"ok": False, "error": str(exc)}), 500
 
@@ -1068,6 +1095,8 @@ def create_app():
                 password=password,
                 entry=entry,
                 attachments_dir=attach_dir,
+                subject_override=data.get("subject") or None,
+                body_override=data.get("body") or None,
             )
             return jsonify(result)
         except Exception as exc:

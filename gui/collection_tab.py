@@ -14,7 +14,7 @@ from PyQt6.QtWidgets import (
     QLabel, QLineEdit, QAbstractItemView, QHeaderView, QMenu, QDialog,
     QFormLayout, QDialogButtonBox, QTableWidget, QTableWidgetItem,
     QFileDialog, QMessageBox, QComboBox, QCheckBox, QTreeWidget, QTreeWidgetItem,
-    QGroupBox,
+    QGroupBox, QTextEdit, QSplitter,
 )
 
 from gui.styles import ROW_OWNED, ROW_WISHLIST
@@ -1399,6 +1399,8 @@ class CollectionTab(QWidget):
         if errors:
             msg += f" {len(errors)} error(s): " + "; ".join(errors[:3])
         self.coll_status.setText(msg)
+        if self._current_history_lb is not None:
+            self._load_torrent_history(self._current_history_lb)
 
     def _on_add_to_qbt(self):
         rows = self._selected_rows()
@@ -1449,13 +1451,79 @@ class CollectionTab(QWidget):
         row = rows[0]
         lb = row["lb_number"]
         flask_port = self.flask_port
+        self.coll_status.setText(f"Building preview for LB-{lb:05d}…")
+        self.post_forum_btn.setEnabled(False)
+
+        def call():
+            return requests.get(
+                f"http://127.0.0.1:{flask_port}/api/entry/{lb}/preview_forum",
+                timeout=15,
+            ).json()
+
+        w = _ApiWorker(call)
+        w.finished.connect(lambda r: self._on_preview_forum_ready(r, lb))
+        w.error.connect(lambda e: (
+            self.coll_status.setText(f"Error building preview: {e}"),
+            self.post_forum_btn.setEnabled(True),
+        ))
+        self._workers.append(w)
+        w.start()
+
+    def _on_preview_forum_ready(self, result: dict, lb: int):
+        self.post_forum_btn.setEnabled(True)
+        if result.get("ok") is False:
+            self.coll_status.setText(f"Preview failed: {result.get('error', 'unknown')}")
+            return
+
+        subject = result.get("subject", "")
+        body = result.get("body", "")
+
+        dlg = QDialog(self)
+        dlg.setWindowTitle(f"Forum Post Preview — LB-{lb:05d}")
+        dlg.resize(760, 560)
+        layout = QVBoxLayout(dlg)
+        layout.setSpacing(8)
+
+        # Subject row
+        subj_layout = QHBoxLayout()
+        subj_layout.addWidget(QLabel("Subject:"))
+        subj_edit = QLineEdit(subject)
+        subj_layout.addWidget(subj_edit)
+        layout.addLayout(subj_layout)
+
+        # Body
+        layout.addWidget(QLabel("Body (BBcode):"))
+        body_edit = QTextEdit()
+        body_edit.setPlainText(body)
+        body_edit.setFont(self.font())
+        layout.addWidget(body_edit, 1)
+
+        # Buttons
+        btn_box = QDialogButtonBox()
+        post_btn = btn_box.addButton("Post to Forum", QDialogButtonBox.ButtonRole.AcceptRole)
+        post_btn.setObjectName("accent")
+        btn_box.addButton(QDialogButtonBox.StandardButton.Cancel)
+        btn_box.accepted.connect(dlg.accept)
+        btn_box.rejected.connect(dlg.reject)
+        layout.addWidget(btn_box)
+
+        self.coll_status.setText(f"Preview ready for LB-{lb:05d} — review and confirm.")
+
+        if dlg.exec() != QDialog.DialogCode.Accepted:
+            self.coll_status.setText("Forum post cancelled.")
+            return
+
+        # User confirmed — send the (possibly edited) subject/body
+        flask_port = self.flask_port
+        confirmed_subject = subj_edit.text().strip()
+        confirmed_body = body_edit.toPlainText()
         self.coll_status.setText(f"Posting LB-{lb:05d} to WTRF forum…")
         self.post_forum_btn.setEnabled(False)
 
         def call():
             return requests.post(
                 f"http://127.0.0.1:{flask_port}/api/entry/{lb}/post_forum",
-                json={},
+                json={"subject": confirmed_subject, "body": confirmed_body},
                 timeout=60,
             ).json()
 
@@ -1474,13 +1542,11 @@ class CollectionTab(QWidget):
             url = result.get("topic_url", "")
             self.coll_status.setText(f"Posted LB-{lb:05d} to forum.  {url}")
             if url:
-                from PyQt6.QtWidgets import QMessageBox
                 if QMessageBox.question(
                     self, "Posted",
                     f"Topic posted successfully.\nOpen in browser?\n{url}",
                     QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
                 ) == QMessageBox.StandardButton.Yes:
-                    import webbrowser
                     webbrowser.open(url)
         else:
             self.coll_status.setText(f"Forum post failed: {result.get('error', 'unknown')}")

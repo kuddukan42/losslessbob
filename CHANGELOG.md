@@ -1,3 +1,49 @@
+[2026-05-14] — fix(gui): torrent history panel now refreshes after torrent creation
+
+Fixed
+
+gui/collection_tab.py: _on_torrent_done() never called _load_torrent_history(), so the history panel stayed empty after creating a torrent until the user re-selected the entry. Now reloads history for the currently-displayed LB after a successful create.
+
+---
+
+[2026-05-14] — fix(backend): handle qBittorrent 5 JSON response for torrents/add
+
+Fixed
+
+backend/qbittorrent.py: qBittorrent 5+ returns a JSON object from /api/v2/torrents/add instead of plain "Ok.". Added a JSON fallback check (failure_count==0 and success_count>0) so successful adds are no longer reported as failures.
+
+---
+
+[2026-05-14] — feat: qBittorrent API key authentication (qBittorrent 5+)
+
+Added
+
+backend/credentials.py: SERVICE_QBT_KEY constant for keyring storage of the API key.
+backend/qbittorrent.py: api_key parameter on test_connection(), add_torrent_for_seeding(), and add_torrent_from_db(). When set, a Bearer token header is used and the login/logout flow is skipped entirely. Refactored shared session setup into _make_session() and login logic into _login().
+backend/app.py: /api/qbt/test and /api/qbt/add routes now retrieve and forward the stored API key; api_key takes priority over username/password.
+gui/setup_tab.py: API Key field added to the qBittorrent section (row 2, password-masked, spanning full width). Save/Clear/Test/Load handlers all updated to prefer the API key when filled.
+
+---
+
+[2026-05-14] — fix(backend): add Origin+Referer headers to qBittorrent login, improve error detail
+
+Fixed
+
+backend/qbittorrent.py: Added both Referer and Origin headers to test_connection() and add_torrent_for_seeding(). Fixed login check to accept HTTP 204 No Content (qBittorrent's response when "Bypass authentication for clients on localhost" is enabled) alongside the normal 200 "Ok." response. Error message now includes HTTP status code and shows "<empty>" for blank bodies.
+
+---
+
+[2026-05-14] — feat(gui/backend): Forum post preview dialog before submitting to WTRF
+
+Added
+
+backend/forum_poster.py: preview_lb_topic() builds subject + body without logging in or posting.
+backend/app.py: GET /api/entry/<lb>/preview_forum returns {subject, body} for the GUI to display.
+gui/collection_tab.py: "Post to Forum" now opens a preview dialog showing the subject and editable BBcode body; the post only fires after the user clicks "Post to Forum" in the dialog. Subject and body edits in the dialog are forwarded to the backend.
+backend/forum_poster.py: post_lb_topic() accepts subject_override and body_override kwargs so user edits from the preview are used verbatim.
+
+---
+
 [2026-05-14] — fix(backend): WTRF forum login failures due to wrong domain and bad URL check
 
 Fixed

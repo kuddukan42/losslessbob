@@ -152,6 +152,39 @@ def _build_body(entry: dict, attachments_dir: Path | None) -> str:
     return body.strip()
 
 
+def preview_lb_topic(
+    lb_number: int,
+    entry: dict,
+    attachments_dir: str | Path | None = None,
+) -> dict:
+    """Build the forum post subject and body without logging in or posting.
+
+    Args:
+        lb_number: LosslessBob entry number.
+        entry: Dict from the entries table (date_str, location, …).
+        attachments_dir: Path to data/attachments/LB-XXXXX/ (for body text).
+
+    Returns:
+        Dict with keys: subject (str), body (str).
+    """
+    lb_id = f"LB-{lb_number:05d}"
+    date_str = entry.get("date_str") or ""
+    location = (entry.get("location") or "").strip()
+
+    from backend.torrent_maker import _parse_date
+    iso_date = _parse_date(date_str)
+    if iso_date and location:
+        subject = f"{iso_date} {location} ({lb_id})"
+    elif location:
+        subject = f"{location} ({lb_id})"
+    else:
+        subject = lb_id
+
+    attach_path = Path(attachments_dir) if attachments_dir else None
+    body = _build_body(entry, attach_path)
+    return {"subject": subject, "body": body}
+
+
 def post_lb_topic(
     lb_number: int,
     torrent_path: str | Path,
@@ -159,6 +192,8 @@ def post_lb_topic(
     password: str,
     entry: dict,
     attachments_dir: str | Path | None = None,
+    subject_override: str | None = None,
+    body_override: str | None = None,
 ) -> dict:
     """Post a new topic for an LB entry with the .torrent as an attachment.
 
@@ -169,6 +204,8 @@ def post_lb_topic(
         password: WTRF forum password.
         entry: Dict from the entries table (date_str, location, …).
         attachments_dir: Path to data/attachments/LB-XXXXX/ (for body text).
+        subject_override: If provided, use this subject instead of the auto-generated one.
+        body_override: If provided, use this body instead of the auto-generated one.
 
     Returns:
         Dict with keys: ok (bool), topic_url (str if ok=True), error (str if ok=False).
@@ -177,19 +214,20 @@ def post_lb_topic(
     if not torrent.exists():
         return {"ok": False, "error": f"Torrent file not found: {torrent}"}
 
-    lb_id = f"LB-{lb_number:05d}"
-    date_str = entry.get("date_str") or ""
-    location = (entry.get("location") or "").strip()
-
-    # Format subject line
-    from backend.torrent_maker import _parse_date
-    iso_date = _parse_date(date_str)
-    if iso_date and location:
-        subject = f"{iso_date} {location} ({lb_id})"
-    elif location:
-        subject = f"{location} ({lb_id})"
+    if subject_override:
+        subject = subject_override
     else:
-        subject = lb_id
+        lb_id = f"LB-{lb_number:05d}"
+        date_str = entry.get("date_str") or ""
+        location = (entry.get("location") or "").strip()
+        from backend.torrent_maker import _parse_date
+        iso_date = _parse_date(date_str)
+        if iso_date and location:
+            subject = f"{iso_date} {location} ({lb_id})"
+        elif location:
+            subject = f"{location} ({lb_id})"
+        else:
+            subject = lb_id
 
     session = _get_session(username, password)
     if session is None:
@@ -199,8 +237,11 @@ def post_lb_topic(
     if not hidden.get("sc"):
         return {"ok": False, "error": "Could not retrieve SMF form fields (sc/seqnum missing)."}
 
-    attach_path = Path(attachments_dir) if attachments_dir else None
-    body = _build_body(entry, attach_path)
+    if body_override is not None:
+        body = body_override
+    else:
+        attach_path = Path(attachments_dir) if attachments_dir else None
+        body = _build_body(entry, attach_path)
 
     payload = {
         **hidden,
