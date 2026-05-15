@@ -75,6 +75,27 @@ class _ResetThread(QThread):
             self.finished.emit({"error": str(e)})
 
 
+class _WtrfTestThread(QThread):
+    finished = pyqtSignal(dict)
+
+    def __init__(self, flask_port, username, password):
+        super().__init__()
+        self.flask_port = flask_port
+        self.username = username
+        self.password = password
+
+    def run(self):
+        try:
+            resp = requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/wtrf/test",
+                json={"username": self.username, "password": self.password},
+                timeout=20,
+            )
+            self.finished.emit(resp.json())
+        except Exception as e:
+            self.finished.emit({"ok": False, "error": str(e)})
+
+
 class _SingleScrapeThread(QThread):
     finished = pyqtSignal(dict)
 
@@ -130,6 +151,7 @@ class SetupTab(QWidget):
         self._reset_thread = None
         self._single_scrape_thread = None
         self._scrape_status_thread = None
+        self._wtrf_test_thread = None
         self._build_ui()
         self._load_settings()
         self._refresh_stats()
@@ -290,7 +312,14 @@ class SetupTab(QWidget):
         search_layout.addLayout(page_size_row)
         layout.addWidget(search_group)
 
-        # Scraper section
+        # ── Two-column lower section ─────────────────────────────────────────
+        lower_row = QHBoxLayout()
+        lower_row.setSpacing(12)
+
+        # Left column: scraper + log
+        left_col = QVBoxLayout()
+        left_col.setSpacing(8)
+
         scraper_group = QGroupBox("Web Scraper")
         scraper_layout = QVBoxLayout(scraper_group)
 
@@ -387,14 +416,14 @@ class SetupTab(QWidget):
         self.scrape_status_label = QLabel("")
         scraper_layout.addWidget(self.scrape_status_label)
 
-        layout.addWidget(scraper_group)
+        left_col.addWidget(scraper_group)
 
         log_group = QGroupBox("Scraper Log")
         log_layout = QVBoxLayout(log_group)
         self.scraper_log = QPlainTextEdit()
         self.scraper_log.setReadOnly(True)
         self.scraper_log.setMaximumBlockCount(500)
-        self.scraper_log.setFixedHeight(150)
+        self.scraper_log.setMinimumHeight(120)
         log_layout.addWidget(self.scraper_log)
 
         log_file_row = QHBoxLayout()
@@ -409,7 +438,12 @@ class SetupTab(QWidget):
         log_file_row.addWidget(self.purge_log_btn)
         log_layout.addLayout(log_file_row)
 
-        layout.addWidget(log_group)
+        left_col.addWidget(log_group, stretch=1)
+        lower_row.addLayout(left_col, stretch=3)
+
+        # Right column: qBittorrent + WTRF Forum + Torrent Settings
+        right_col = QVBoxLayout()
+        right_col.setSpacing(8)
 
         # ── qBittorrent section ──────────────────────────────────────────────
         qbt_group = QGroupBox("qBittorrent")
@@ -468,7 +502,7 @@ class SetupTab(QWidget):
         self.qbt_status_label = QLabel("")
         qbt_layout.addWidget(self.qbt_status_label, 4, 0, 1, 5)
         qbt_layout.setColumnStretch(4, 1)
-        layout.addWidget(qbt_group)
+        right_col.addWidget(qbt_group)
 
         # ── WTRF Forum section ───────────────────────────────────────────────
         wtrf_group = QGroupBox("Watching the River Flow Forum")
@@ -491,6 +525,9 @@ class SetupTab(QWidget):
         self.wtrf_save_btn = QPushButton("Save Credentials")
         self.wtrf_save_btn.clicked.connect(self._on_wtrf_save)
         wtrf_btn_row.addWidget(self.wtrf_save_btn)
+        self.wtrf_test_btn = QPushButton("Test Connection")
+        self.wtrf_test_btn.clicked.connect(self._on_wtrf_test)
+        wtrf_btn_row.addWidget(self.wtrf_test_btn)
         self.wtrf_clear_btn = QPushButton("Clear Credentials")
         self.wtrf_clear_btn.clicked.connect(self._on_wtrf_clear)
         wtrf_btn_row.addWidget(self.wtrf_clear_btn)
@@ -500,7 +537,7 @@ class SetupTab(QWidget):
         self.wtrf_status_label = QLabel("")
         wtrf_layout.addWidget(self.wtrf_status_label, 3, 0, 1, 3)
         wtrf_layout.setColumnStretch(2, 1)
-        layout.addWidget(wtrf_group)
+        right_col.addWidget(wtrf_group)
 
         # ── Torrent section ──────────────────────────────────────────────────
         torrent_group = QGroupBox("Torrent Settings")
@@ -520,9 +557,12 @@ class SetupTab(QWidget):
         self.tracker_count_label = QLabel("—")
         torrent_layout.addWidget(self.tracker_count_label)
         torrent_layout.addStretch()
-        layout.addWidget(torrent_group)
+        right_col.addWidget(torrent_group)
 
-        layout.addStretch()
+        right_col.addStretch()
+        lower_row.addLayout(right_col, stretch=2)
+
+        layout.addLayout(lower_row, stretch=1)
 
     def _load_settings(self):
         self._loading = True
@@ -1071,8 +1111,9 @@ class SetupTab(QWidget):
         except Exception:
             pass
         if credentials_stored(SERVICE_QBT):
-            u, _ = get_credentials(SERVICE_QBT)
+            u, p = get_credentials(SERVICE_QBT)
             self.qbt_user.setText(u)
+            self.qbt_pass.setText(p)
             self.qbt_status_label.setText("Credentials stored in keyring.")
 
     # ── WTRF Forum handlers ──────────────────────────────────────────────────
@@ -1087,6 +1128,27 @@ class SetupTab(QWidget):
         result = save_credentials(SERVICE_WTRF, u, p)
         self.wtrf_status_label.setText(result.label)
 
+    def _on_wtrf_test(self):
+        self.wtrf_test_btn.setEnabled(False)
+        self.wtrf_status_label.setText("Testing…")
+        self.wtrf_status_label.setStyleSheet("")
+        self._wtrf_test_thread = _WtrfTestThread(
+            self.flask_port,
+            self.wtrf_user.text().strip(),
+            self.wtrf_pass.text(),
+        )
+        self._wtrf_test_thread.finished.connect(self._on_wtrf_test_finished)
+        self._wtrf_test_thread.start()
+
+    def _on_wtrf_test_finished(self, result: dict) -> None:
+        self.wtrf_test_btn.setEnabled(True)
+        if result.get("ok"):
+            self.wtrf_status_label.setText(f"Logged in as {result.get('username', '')}")
+            self.wtrf_status_label.setStyleSheet("color: green;")
+        else:
+            self.wtrf_status_label.setText(f"Error: {result.get('error', 'unknown')}")
+            self.wtrf_status_label.setStyleSheet("color: red;")
+
     def _on_wtrf_clear(self):
         from backend.credentials import delete_credentials, SERVICE_WTRF
         delete_credentials(SERVICE_WTRF)
@@ -1097,8 +1159,9 @@ class SetupTab(QWidget):
     def _load_wtrf_settings(self):
         from backend.credentials import credentials_stored, get_credentials, SERVICE_WTRF
         if credentials_stored(SERVICE_WTRF):
-            u, _ = get_credentials(SERVICE_WTRF)
+            u, p = get_credentials(SERVICE_WTRF)
             self.wtrf_user.setText(u)
+            self.wtrf_pass.setText(p)
             self.wtrf_status_label.setText("Credentials stored in keyring.")
 
     # ── Torrent / tracker handlers ───────────────────────────────────────────

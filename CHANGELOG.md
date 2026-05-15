@@ -1,3 +1,38 @@
+[2026-05-14] — fix(backend): WTRF forum login failures due to wrong domain and bad URL check
+
+Fixed
+
+backend/forum_poster.py: FORUM_BASE corrected from watchingtheriverflow.com to watchingtheriverflow.org.
+backend/forum_poster.py: Login success check was matching "action=login" as a substring of "action=login2" (the POST endpoint), causing every login to be flagged as failed. Fixed to only treat a redirect back to the GET login page as failure. This forum returns 200 with empty body at login2 on success.
+backend/forum_poster.py: _get_session now collects all hidden fields from the login form (not just hash_passwrd) to include sc and any other CSRF fields.
+
+---
+
+[2026-05-14] — fix(gui): WTRF and qBittorrent password fields blank on restart
+
+Fixed
+
+gui/setup_tab.py: _load_wtrf_settings and _load_qbt_settings now populate both username and password from keyring (was discarding password with _).
+
+---
+
+[2026-05-14] — feat(gui/backend): WTRF forum "Test Connection" button on Setup tab
+
+Added
+
+gui/setup_tab.py: _WtrfTestThread QThread; "Test Connection" button in the WTRF Forum group; _on_wtrf_test / _on_wtrf_test_finished handlers; green/red status label feedback.
+backend/app.py: POST /api/wtrf/test — calls forum_poster._get_session() to verify credentials without posting. Falls back to stored keyring creds if body fields are empty.
+
+---
+
+[2026-05-14] — refactor(gui): setup tab two-column layout to eliminate wasted right-side space
+
+Changed
+
+gui/setup_tab.py: Replaced single-column lower section with a two-column QHBoxLayout. Left column holds Web Scraper and Scraper Log groups (stretch=3); right column holds qBittorrent, WTRF Forum, and Torrent Settings groups (stretch=2). Scraper log switched from fixed height to minimumHeight so it expands to fill available space.
+
+---
+
 [2026-05-14] — fix(checksum): rename generated checksum files from _lbgen to _mychecksums (TODO-014)
 
 Changed

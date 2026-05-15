@@ -10,11 +10,10 @@ from pathlib import Path
 import requests
 from bs4 import BeautifulSoup
 
-from backend.credentials import SERVICE_WTRF, get_credentials
 
 logger = logging.getLogger(__name__)
 
-FORUM_BASE  = "http://www.watchingtheriverflow.com"
+FORUM_BASE  = "http://www.watchingtheriverflow.org"
 FORUM_BOARD = 16  # index.php?board=16.0
 
 _LOGIN_URL  = f"{FORUM_BASE}/index.php?action=login2"
@@ -35,12 +34,11 @@ def _get_session(username: str, password: str) -> requests.Session | None:
     session = requests.Session()
     session.headers["User-Agent"] = "LosslessBob/1.0 (+https://github.com)"
     try:
-        # Fetch the login page to get the hidden hash_passwrd token
+        # Fetch the login page and collect all hidden fields (includes sc, hash_passwrd, etc.)
         login_page = session.get(
             f"{FORUM_BASE}/index.php?action=login", timeout=15
         )
         soup = BeautifulSoup(login_page.text, "lxml")
-        token_input = soup.find("input", {"name": "hash_passwrd"})
 
         payload = {
             "user": username,
@@ -48,15 +46,23 @@ def _get_session(username: str, password: str) -> requests.Session | None:
             "cookieneverexp": "0",
             "cookielength": "-1",
         }
-        if token_input:
-            payload["hash_passwrd"] = token_input.get("value", "")
+        login_form = soup.find("form", attrs={"action": lambda v: v and "login2" in v})
+        if login_form:
+            for inp in login_form.find_all("input", {"type": "hidden"}):
+                name = inp.get("name")
+                if name:
+                    payload[name] = inp.get("value", "")
 
         r = session.post(_LOGIN_URL, data=payload, timeout=15)
 
-        # SMF redirects to the main page on success; a login form in the
-        # response body means the credentials were rejected
-        if "action=login" in r.url or "incorrect password" in r.text.lower():
-            logger.warning("WTRF login failed for user %s", username)
+        # SMF on this forum returns 200 with empty body at login2 on success.
+        # Check specifically for the login page URL (not login2 which is the POST target).
+        login_page_url = f"{FORUM_BASE}/index.php?action=login"
+        if r.url.startswith(login_page_url) and "login2" not in r.url:
+            logger.warning("WTRF login failed for user %s (redirected back to login)", username)
+            return None
+        if "incorrect password" in r.text.lower():
+            logger.warning("WTRF login failed for user %s (incorrect password in body)", username)
             return None
 
         return session
@@ -89,7 +95,7 @@ def _scrape_form_fields(session: requests.Session) -> dict:
         return {}
 
 
-def _build_body(entry: dict, attachments_dir: Path | None, lb_id: str) -> str:
+def _build_body(entry: dict, attachments_dir: Path | None) -> str:
     """Build the post body from cached .txt and .ffp files, or entry table fields.
 
     The body format is:
@@ -194,7 +200,7 @@ def post_lb_topic(
         return {"ok": False, "error": "Could not retrieve SMF form fields (sc/seqnum missing)."}
 
     attach_path = Path(attachments_dir) if attachments_dir else None
-    body = _build_body(entry, attach_path, lb_id)
+    body = _build_body(entry, attach_path)
 
     payload = {
         **hidden,

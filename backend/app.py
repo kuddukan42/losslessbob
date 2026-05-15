@@ -993,6 +993,30 @@ def create_app():
 
     # ── Forum Posting ─────────────────────────────────────────────────────────
 
+    @app.route("/api/wtrf/test", methods=["POST"])
+    def wtrf_test():
+        """Test WTRF forum credentials by attempting a login (no post is made).
+
+        Body: {username?, password?} — falls back to stored keyring credentials.
+        Returns: {ok, username} or {ok=False, error}.
+        """
+        try:
+            from backend.forum_poster import _get_session
+            from backend.credentials import get_credentials, SERVICE_WTRF
+            data = request.get_json() or {}
+            username = data.get("username") or ""
+            password = data.get("password") or ""
+            if not username:
+                username, password = get_credentials(SERVICE_WTRF)
+            if not username:
+                return jsonify({"ok": False, "error": "No credentials provided"}), 400
+            session = _get_session(username, password)
+            if session is None:
+                return jsonify({"ok": False, "error": "Login failed — check username and password."})
+            return jsonify({"ok": True, "username": username})
+        except Exception as exc:
+            return jsonify({"ok": False, "error": str(exc)}), 500
+
     @app.route("/api/entry/<int:lb>/post_forum", methods=["POST"])
     def post_forum(lb):
         """Post a topic to the WTRF forum for one LB entry.

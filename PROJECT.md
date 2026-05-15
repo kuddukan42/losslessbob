@@ -257,6 +257,7 @@ Persists settings between runs. Key examples:
 ### Forum Posting
 | Method | Route | Description |
 |--------|-------|-------------|
+| POST | `/api/wtrf/test` | Test WTRF forum credentials. Body: `{username?, password?}`. Returns `{ok, username}`. |
 | POST | `/api/entry/<lb>/post_forum` | Post a topic to the WTRF forum. Body: `{username?, password?, torrent_id?}`. Returns `{ok, topic_url}`. |
 
 ### Spectrogram
@@ -766,4 +767,5 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 | 2026-05-14 | Rename: Multiple IDs cyan color + right-click resolve; xref-aware naming (LB-N-xrefXXXX); _fmt_lb helper; populate_from_lookup filters to MATCHED status only. |
 | 2026-05-14 | Added GET /api/checksums/xref_lb_numbers; db.get_xref_lb_numbers(); "Xref only" filter on Search and Collection tabs. |
 | 2026-05-14 | Phase 1: Added torrents + rename_history tables; backend/credentials.py, rename.py, torrent_maker.py, qbittorrent.py, forum_poster.py; 7 new API routes; qBt/WTRF/Torrent sections in Setup tab; Create Torrent/Add to qBt/Post to Forum in My Collection; write_rename_log() wired to Rename tab; torf==4.3.1 + keyring==25.7.0 added. |
+| 2026-05-14 | Added POST /api/wtrf/test and "Test Connection" button to WTRF Forum group in Setup tab. |
 | 2026-05-14 | TODO-012/013: Torrent history sub-panel in My Collection — lists all torrents records per selected entry with green/red/orange status indicator, per-row context menu, Add to qBittorrent / Regenerate / Relocate Source buttons; path relocation flow with file cross-check, rename_log.txt logging, and optional rename to standard format. |
