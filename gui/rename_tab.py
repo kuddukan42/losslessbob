@@ -3,6 +3,8 @@ import shutil
 import webbrowser
 from pathlib import Path
 
+from backend.rename import write_rename_log
+
 from PyQt6.QtCore import Qt, QAbstractTableModel, QModelIndex, pyqtSignal
 from PyQt6.QtGui import QAction, QColor
 from PyQt6.QtWidgets import (
@@ -417,6 +419,17 @@ class RenameTab(QWidget):
                 errors.append(f"Cannot create '0. Processed': {e}")
                 continue
             try:
+                # Extract LB number for rename_history (best-effort; None if not found)
+                _lb_m = re.search(r'LB-0*(\d+)', row[3] or "", re.IGNORECASE)
+                _lb_num = int(_lb_m.group(1)) if _lb_m else None
+                # Write log entry BEFORE the move so it ends up in the renamed folder
+                write_rename_log(
+                    folder_path=src,
+                    old_name=Path(src).name,
+                    new_name=new_name,
+                    source="rename_tab",
+                    lb_number=_lb_num,
+                )
                 shutil.move(str(src), str(final_dst))
                 self.model.update_row_after_rename(idx, str(final_dst))
                 if state == "needs_rename":

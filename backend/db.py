@@ -108,6 +108,32 @@ CREATE TABLE IF NOT EXISTS integrity_events (
     acknowledged INTEGER DEFAULT 0
 );
 
+CREATE TABLE IF NOT EXISTS torrents (
+    id                      INTEGER PRIMARY KEY AUTOINCREMENT,
+    lb_number               INTEGER,
+    torrent_path            TEXT,
+    source_folder           TEXT,
+    created_at              TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    infohash                TEXT,
+    added_to_qbt            INTEGER DEFAULT 0,
+    added_to_qbt_at         TIMESTAMP,
+    qbt_infohash_confirmed  INTEGER DEFAULT 0,
+    last_seen_at            TIMESTAMP,
+    excluded_files          TEXT
+);
+CREATE INDEX IF NOT EXISTS idx_torrents_lb ON torrents(lb_number);
+
+CREATE TABLE IF NOT EXISTS rename_history (
+    id          INTEGER PRIMARY KEY AUTOINCREMENT,
+    lb_number   INTEGER,
+    old_path    TEXT,
+    new_path    TEXT,
+    renamed_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    source      TEXT,
+    notes       TEXT
+);
+CREATE INDEX IF NOT EXISTS idx_rename_history_lb ON rename_history(lb_number);
+
 CREATE VIRTUAL TABLE IF NOT EXISTS entries_fts USING fts5(
     description,
     setlist,
@@ -812,6 +838,66 @@ def purge_entry_changes(db_path=None) -> None:
     """Delete all scrape diff changelog rows from entry_changes."""
     conn = get_connection(db_path)
     conn.execute("DELETE FROM entry_changes")
+    conn.commit()
+
+
+# ── Torrents ──────────────────────────────────────────────────────────────────
+
+def get_torrents_for_lb(lb_number: int, db_path=None) -> list:
+    """Return all torrent records for an LB entry, newest first."""
+    with get_connection(db_path) as conn:
+        rows = conn.execute(
+            "SELECT * FROM torrents WHERE lb_number=? ORDER BY created_at DESC",
+            (lb_number,)
+        ).fetchall()
+    return [dict(r) for r in rows]
+
+
+def add_torrent_record(lb_number: int, torrent_path: str, source_folder: str,
+                       infohash: str, excluded_files: list | None = None,
+                       db_path=None) -> int:
+    """Insert a new torrent record. Returns the new row id."""
+    import json as _json
+    excl = _json.dumps(excluded_files or [])
+    conn = get_connection(db_path)
+    conn.execute(
+        """INSERT INTO torrents(lb_number, torrent_path, source_folder, infohash, excluded_files)
+           VALUES(?,?,?,?,?)""",
+        (lb_number, torrent_path, source_folder, infohash, excl)
+    )
+    conn.commit()
+    return conn.execute("SELECT last_insert_rowid()").fetchone()[0]
+
+
+def update_torrent_record(torrent_id: int, fields: dict, db_path=None) -> None:
+    """Update fields on a torrents row by id."""
+    allowed = {
+        "torrent_path", "source_folder", "infohash", "added_to_qbt",
+        "added_to_qbt_at", "qbt_infohash_confirmed", "last_seen_at", "excluded_files",
+    }
+    clean = {k: v for k, v in fields.items() if k in allowed}
+    if not clean:
+        return
+    set_clause = ", ".join(f"{k}=?" for k in clean)
+    conn = get_connection(db_path)
+    conn.execute(
+        f"UPDATE torrents SET {set_clause} WHERE id=?",
+        list(clean.values()) + [torrent_id]
+    )
+    conn.commit()
+
+
+# ── Rename History ─────────────────────────────────────────────────────────────
+
+def add_rename_history(lb_number: int | None, old_path: str, new_path: str,
+                       source: str, notes: str = "", db_path=None) -> None:
+    """Insert a rename_history row."""
+    conn = get_connection(db_path)
+    conn.execute(
+        """INSERT INTO rename_history(lb_number, old_path, new_path, source, notes)
+           VALUES(?,?,?,?,?)""",
+        (lb_number, old_path, new_path, source, notes)
+    )
     conn.commit()
 
 

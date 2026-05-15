@@ -17,6 +17,8 @@
 | Web scraping | BeautifulSoup4 + lxml | 4.12.3 / 6.1.0 |
 | HTTP client | Requests | 2.32.3 |
 | File watching | Watchdog | 4.0.1 |
+| Torrent generation | torf | 4.3.1 |
+| Credential storage | keyring | 25.7.0 |
 | Language | Python | 3.11+ |
 
 **Architecture pattern:** The GUI and backend are separated by a local Flask REST API (port 5174). The GUI makes HTTP requests to `localhost:5174` for all data operations. Flask runs in a daemon thread started before the PyQt6 event loop.
@@ -34,11 +36,16 @@ losslessbob/
 │   ├── app.py                # Flask REST API — all routes
 │   ├── db.py                 # SQLite layer, checksum parsing, search
 │   ├── checksum_utils.py     # Shared: FFP/MD5/shntool compute, lbdir parse, verify, generate
+│   ├── credentials.py        # OS keyring credential storage (SERVICE_QBT, SERVICE_WTRF)
 │   ├── importer.py           # Flat-file import logic
+│   ├── rename.py             # write_rename_log() — rename_log.txt + rename_history DB row
 │   ├── scraper.py            # Web scraper for losslessbob.com
 │   ├── scheduler.py          # Watchdog file watcher, auto-import
 │   ├── sox_utils.py          # SoX/ffmpeg tool detection + spectrogram generation
-│   └── startup_log.py        # Startup timing logger → data/startup.log
+│   ├── startup_log.py        # Startup timing logger → data/startup.log
+│   ├── torrent_maker.py      # torf-based .torrent generation; tracker CDN fetch
+│   ├── qbittorrent.py        # qBittorrent WebUI API v2 integration
+│   └── forum_poster.py       # SMF 2.x WTRF forum topic posting
 ├── gui/
 │   ├── main_window.py        # Main window, tab container, menu, status bar
 │   ├── lookup_tab.py         # Core feature: paste/load checksums, view results
@@ -57,8 +64,10 @@ losslessbob/
     ├── *_flat_file.txt       # Tab-delimited flat-file (user-provided)
     ├── attachments/
     │   └── LB-{N}/           # Cached .ffp, .txt, .html per entry
-    └── pages/
-        └── LB-{N}.html       # Cached detail page HTML (used by local-pages scrape mode)
+    ├── pages/
+    │   └── LB-{N}.html       # Cached detail page HTML (used by local-pages scrape mode)
+    └── torrents/
+        └── *.torrent          # Generated .torrent files (excluded from git)
 ```
 
 ---
@@ -130,6 +139,32 @@ Index: `idx_changes_lb ON entry_changes(lb_number, changed_at DESC)`.
 | occurred_at | TIMESTAMP | Defaults to CURRENT_TIMESTAMP |
 | acknowledged | INTEGER | 0 = unread, 1 = dismissed |
 
+### `torrents` — Generated .torrent file records
+| Column | Type | Notes |
+|--------|------|-------|
+| id | INTEGER PK | Auto-increment |
+| lb_number | INTEGER | FK to entries |
+| torrent_path | TEXT | Absolute path to .torrent in data/torrents/ |
+| source_folder | TEXT | Absolute path to LB folder on disk |
+| created_at | TIMESTAMP | Defaults to CURRENT_TIMESTAMP |
+| infohash | TEXT | Read from .torrent via torf at creation time |
+| added_to_qbt | INTEGER | 0 / 1 |
+| added_to_qbt_at | TIMESTAMP | NULL if never added |
+| qbt_infohash_confirmed | INTEGER | 0 / 1 |
+| last_seen_at | TIMESTAMP | Last time source_folder verified on disk |
+| excluded_files | TEXT | JSON list of files excluded from torrent |
+
+### `rename_history` — Folder rename audit log
+| Column | Type | Notes |
+|--------|------|-------|
+| id | INTEGER PK | Auto-increment |
+| lb_number | INTEGER | FK to entries (nullable) |
+| old_path | TEXT | Full path before rename |
+| new_path | TEXT | Full path after rename |
+| renamed_at | TIMESTAMP | Defaults to CURRENT_TIMESTAMP |
+| source | TEXT | 'rename_tab', 'collection_tab', or 'auto' |
+| notes | TEXT | Warnings, mismatch details, relocation notes |
+
 ### `meta` — Key-value configuration store
 Persists settings between runs. Key examples:
 - `import_hash` — MD5 of last imported flat file (skip re-import if unchanged)
@@ -139,6 +174,11 @@ Persists settings between runs. Key examples:
 - `download_files` — Whether to cache attachment files
 - `use_local_pages` — `'1'` or `'0'` — read metadata from `data/pages/` instead of web when available
 - `search_page_size` — integer string, results per page in Search tab (default `'50'`)
+- `qbt_host` — qBittorrent WebUI hostname (default `'localhost'`)
+- `qbt_port` — qBittorrent WebUI port (default `'8080'`)
+- `qbt_category` — optional category label for added torrents
+- `qbt_tags` — optional comma-separated tag string for added torrents
+- `tracker_list` — tracker list name for torrent generation (default `'best'`)
 
 ---
 
@@ -200,6 +240,25 @@ Persists settings between runs. Key examples:
 | DELETE | `/api/dbedit/table/<name>/rows` | Delete rows by rowid list. Body: `{rowids:[...]}`. Blocked for readonly tables. |
 | GET | `/api/dbedit/table/<name>/export` | Download entire table as CSV attachment. |
 
+### Torrent Generation
+| Method | Route | Description |
+|--------|-------|-------------|
+| POST | `/api/torrent/create` | Generate a .torrent for one LB entry. Body: `{lb_number, source_folder, tracker_list?}`. Returns `{ok, torrent_path, infohash, torrent_id, name, excluded_files}`. |
+| GET | `/api/torrent/<lb>` | List all torrent records for an LB entry. Each row includes `source_folder_exists` and `torrent_file_exists` booleans. |
+| PATCH | `/api/torrent/<id>` | Update a torrents row (e.g. source_folder after relocation). |
+| GET | `/api/trackers` | Return tracker list. Query params: `list_name`, `force_refresh`. |
+
+### qBittorrent Integration
+| Method | Route | Description |
+|--------|-------|-------------|
+| POST | `/api/qbt/test` | Test WebUI connectivity. Body: `{host, port, username?, password?}`. Returns `{ok, version}`. |
+| POST | `/api/qbt/add` | Add torrent(s) to qBittorrent. Body: `{torrent_id?, lb_numbers?, host?, port?, username?, password?, category?, tags?}`. Returns `{ok, added, total, results}`. |
+
+### Forum Posting
+| Method | Route | Description |
+|--------|-------|-------------|
+| POST | `/api/entry/<lb>/post_forum` | Post a topic to the WTRF forum. Body: `{username?, password?, torrent_id?}`. Returns `{ok, topic_url}`. |
+
 ### Spectrogram
 | Method | Route | Description |
 |--------|-------|-------------|
@@ -213,7 +272,7 @@ Persists settings between runs. Key examples:
 | Method | Route | Description |
 |--------|-------|-------------|
 | POST | `/api/verify` | Verify audio files against `.ffp`/`.md5`/`.st5` in each folder. Body: `{folders:[...]}`. |
-| POST | `/api/verify/generate` | Generate `_lbgen.ffp` and/or `_lbgen.md5` for each folder. Body: `{folders:[...]}`. |
+| POST | `/api/verify/generate` | Generate `_mychecksums.ffp` and/or `_mychecksums.md5` for each folder. Body: `{folders:[...]}`. |
 
 ### LBDir
 | Method | Route | Description |
@@ -258,10 +317,10 @@ Shared module for local file verification and checksum generation. Used by `/api
 | `compute_md5(filepath)` | Streaming `hashlib.md5` of full file bytes. Returns `None` on IOError. |
 | `compute_shntool(filepath)` | Shell out to `shntool md5 <file>`, parse `[shntool]` line. Raises `ShntoolNotFoundError` if binary not in PATH. |
 | `detect_folder_mode(folder_path)` | Returns `'flac'`, `'shn'`, or `'mixed'` by globbing for `.flac`/`.shn` files. |
-| `_lbgen_path(folder, basename, ext)` | Returns `<folder>/<basename>_lbgen.<ext>`, incrementing to `_lbgen_2`, `_lbgen_3`, … until a non-existent path is found. |
+| `_mychecksums_path(folder, basename, ext)` | Returns `<folder>/<basename>_mychecksums.<ext>`, incrementing to `_mychecksums_2`, `_mychecksums_3`, … until a non-existent path is found. |
 | `verify_folder(folder_path)` | Verify audio files against standalone `.ffp`/`.md5`/`.st5` checksum files in the folder. |
 | `verify_folder_lbdir(folder_path, lbdir_path)` | Verify all files listed in a `lbdir*.txt` (audio + non-audio), including `length`/`cdr`/`wave_problems` from shntool_len section. |
-| `generate_checksums(folder_path)` | FLAC: write `_lbgen.ffp` + `_lbgen.md5`. SHN: write `_lbgen.md5` with shntool `[shntool]` format lines. Never overwrites existing files. |
+| `generate_checksums(folder_path)` | FLAC: write `_mychecksums.ffp` + `_mychecksums.md5`. SHN: write `_mychecksums.md5` with shntool `[shntool]` format lines. Never overwrites existing files. |
 
 ### Verify result schema (per folder)
 ```json
@@ -401,7 +460,7 @@ The primary user-facing feature.
 | Yellow | DUPLICATE (in multiple LBs) |
 | Light blue | XREF (cross-reference entry) |
 
-**Checksum generation:** Posts to `POST /api/verify/generate` with the selected folder path(s). The backend (`backend/checksum_utils.py`) computes FFP (FLAC STREAM_INFO bytes 18–34) and MD5 hashes and writes `<foldername>_lbgen.ffp` and `<foldername>_lbgen.md5`, incrementing the suffix (`_lbgen_2`, etc.) if files already exist. Generated file paths and any errors are shown in the status area below the file list.
+**Checksum generation:** Posts to `POST /api/verify/generate` with the selected folder path(s). The backend (`backend/checksum_utils.py`) computes FFP (FLAC STREAM_INFO bytes 18–34) and MD5 hashes and writes `<foldername>_mychecksums.ffp` and `<foldername>_mychecksums.md5`, incrementing the suffix (`_mychecksums_2`, etc.) if files already exist. Generated file paths and any errors are shown in the status area below the file list.
 
 **Double-click summary row:** Opens the LosslessBob detail page in the system browser.
 
@@ -706,3 +765,5 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 | 2026-05-13 | Lookup: duplicate resolution prefers MATCHED over INCOMPLETE; folder/summary click filtering; verify NO CHECKSUMS yellow status; lookup→verify folder carry. |
 | 2026-05-14 | Rename: Multiple IDs cyan color + right-click resolve; xref-aware naming (LB-N-xrefXXXX); _fmt_lb helper; populate_from_lookup filters to MATCHED status only. |
 | 2026-05-14 | Added GET /api/checksums/xref_lb_numbers; db.get_xref_lb_numbers(); "Xref only" filter on Search and Collection tabs. |
+| 2026-05-14 | Phase 1: Added torrents + rename_history tables; backend/credentials.py, rename.py, torrent_maker.py, qbittorrent.py, forum_poster.py; 7 new API routes; qBt/WTRF/Torrent sections in Setup tab; Create Torrent/Add to qBt/Post to Forum in My Collection; write_rename_log() wired to Rename tab; torf==4.3.1 + keyring==25.7.0 added. |
+| 2026-05-14 | TODO-012/013: Torrent history sub-panel in My Collection — lists all torrents records per selected entry with green/red/orange status indicator, per-row context menu, Add to qBittorrent / Regenerate / Relocate Source buttons; path relocation flow with file cross-check, rename_log.txt logging, and optional rename to standard format. |

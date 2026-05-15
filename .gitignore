@@ -22,6 +22,7 @@ data/*.sdf
 data/*.txt
 data/attachments/
 data/pages/
+data/torrents/
 data/scraper.log
  
 # Archives

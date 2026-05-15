@@ -15,6 +15,7 @@ DATA_DIR = APP_ROOT / "data"
 DB_PATH = DATA_DIR / "losslessbob.db"
 ATTACHMENTS_DIR = DATA_DIR / "attachments"
 PAGES_DIR = DATA_DIR / "pages"
+TORRENTS_DIR = DATA_DIR / "torrents"
 LOG_FILE = DATA_DIR / "scraper.log"
 TOOLS_DIR = APP_ROOT / "tools"
 WEBENGINE_DIR = DATA_DIR / "webengine_cache"
@@ -35,7 +36,7 @@ def to_long_path(p: Path) -> Path:
 
 def ensure_data_dirs() -> None:
     """Create data subdirectories if they do not exist."""
-    for d in (DATA_DIR, ATTACHMENTS_DIR, PAGES_DIR):
+    for d in (DATA_DIR, ATTACHMENTS_DIR, PAGES_DIR, TORRENTS_DIR):
         d.mkdir(parents=True, exist_ok=True)
     if sys.platform == "win32" and len(str(DATA_DIR)) > 200:
         import warnings

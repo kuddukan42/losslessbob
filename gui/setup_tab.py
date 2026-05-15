@@ -411,6 +411,117 @@ class SetupTab(QWidget):
 
         layout.addWidget(log_group)
 
+        # ── qBittorrent section ──────────────────────────────────────────────
+        qbt_group = QGroupBox("qBittorrent")
+        qbt_layout = QGridLayout(qbt_group)
+        qbt_layout.setHorizontalSpacing(8)
+        qbt_layout.setVerticalSpacing(6)
+
+        qbt_layout.addWidget(QLabel("Host:"), 0, 0)
+        self.qbt_host = QLineEdit("localhost")
+        self.qbt_host.setFixedWidth(180)
+        qbt_layout.addWidget(self.qbt_host, 0, 1)
+
+        qbt_layout.addWidget(QLabel("Port:"), 0, 2)
+        self.qbt_port = QSpinBox()
+        self.qbt_port.setRange(1, 65535)
+        self.qbt_port.setValue(8080)
+        self.qbt_port.setFixedWidth(80)
+        qbt_layout.addWidget(self.qbt_port, 0, 3)
+
+        qbt_layout.addWidget(QLabel("Username:"), 1, 0)
+        self.qbt_user = QLineEdit()
+        self.qbt_user.setFixedWidth(180)
+        qbt_layout.addWidget(self.qbt_user, 1, 1)
+
+        qbt_layout.addWidget(QLabel("Password:"), 1, 2)
+        self.qbt_pass = QLineEdit()
+        self.qbt_pass.setEchoMode(QLineEdit.EchoMode.Password)
+        self.qbt_pass.setFixedWidth(180)
+        qbt_layout.addWidget(self.qbt_pass, 1, 3)
+
+        qbt_layout.addWidget(QLabel("Category:"), 2, 0)
+        self.qbt_category = QLineEdit()
+        self.qbt_category.setPlaceholderText("e.g. losslessbob (optional)")
+        self.qbt_category.setFixedWidth(180)
+        qbt_layout.addWidget(self.qbt_category, 2, 1)
+
+        qbt_layout.addWidget(QLabel("Tags:"), 2, 2)
+        self.qbt_tags = QLineEdit()
+        self.qbt_tags.setPlaceholderText("comma-separated (optional)")
+        self.qbt_tags.setFixedWidth(180)
+        qbt_layout.addWidget(self.qbt_tags, 2, 3)
+
+        qbt_btn_row = QHBoxLayout()
+        self.qbt_save_btn = QPushButton("Save Credentials")
+        self.qbt_save_btn.clicked.connect(self._on_qbt_save)
+        qbt_btn_row.addWidget(self.qbt_save_btn)
+        self.qbt_test_btn = QPushButton("Test Connection")
+        self.qbt_test_btn.clicked.connect(self._on_qbt_test)
+        qbt_btn_row.addWidget(self.qbt_test_btn)
+        self.qbt_clear_btn = QPushButton("Clear Credentials")
+        self.qbt_clear_btn.clicked.connect(self._on_qbt_clear)
+        qbt_btn_row.addWidget(self.qbt_clear_btn)
+        qbt_btn_row.addStretch()
+        qbt_layout.addLayout(qbt_btn_row, 3, 0, 1, 5)
+
+        self.qbt_status_label = QLabel("")
+        qbt_layout.addWidget(self.qbt_status_label, 4, 0, 1, 5)
+        qbt_layout.setColumnStretch(4, 1)
+        layout.addWidget(qbt_group)
+
+        # ── WTRF Forum section ───────────────────────────────────────────────
+        wtrf_group = QGroupBox("Watching the River Flow Forum")
+        wtrf_layout = QGridLayout(wtrf_group)
+        wtrf_layout.setHorizontalSpacing(8)
+        wtrf_layout.setVerticalSpacing(6)
+
+        wtrf_layout.addWidget(QLabel("Username:"), 0, 0)
+        self.wtrf_user = QLineEdit()
+        self.wtrf_user.setFixedWidth(200)
+        wtrf_layout.addWidget(self.wtrf_user, 0, 1)
+
+        wtrf_layout.addWidget(QLabel("Password:"), 1, 0)
+        self.wtrf_pass = QLineEdit()
+        self.wtrf_pass.setEchoMode(QLineEdit.EchoMode.Password)
+        self.wtrf_pass.setFixedWidth(200)
+        wtrf_layout.addWidget(self.wtrf_pass, 1, 1)
+
+        wtrf_btn_row = QHBoxLayout()
+        self.wtrf_save_btn = QPushButton("Save Credentials")
+        self.wtrf_save_btn.clicked.connect(self._on_wtrf_save)
+        wtrf_btn_row.addWidget(self.wtrf_save_btn)
+        self.wtrf_clear_btn = QPushButton("Clear Credentials")
+        self.wtrf_clear_btn.clicked.connect(self._on_wtrf_clear)
+        wtrf_btn_row.addWidget(self.wtrf_clear_btn)
+        wtrf_btn_row.addStretch()
+        wtrf_layout.addLayout(wtrf_btn_row, 2, 0, 1, 3)
+
+        self.wtrf_status_label = QLabel("")
+        wtrf_layout.addWidget(self.wtrf_status_label, 3, 0, 1, 3)
+        wtrf_layout.setColumnStretch(2, 1)
+        layout.addWidget(wtrf_group)
+
+        # ── Torrent section ──────────────────────────────────────────────────
+        torrent_group = QGroupBox("Torrent Settings")
+        torrent_layout = QHBoxLayout(torrent_group)
+
+        torrent_layout.addWidget(QLabel("Tracker list:"))
+        self.tracker_list_combo = QComboBox()
+        from backend.torrent_maker import TRACKER_LISTS
+        self.tracker_list_combo.addItems(TRACKER_LISTS)
+        self.tracker_list_combo.currentTextChanged.connect(self._on_tracker_list_changed)
+        torrent_layout.addWidget(self.tracker_list_combo)
+
+        self.refresh_trackers_btn = QPushButton("Refresh Trackers")
+        self.refresh_trackers_btn.clicked.connect(self._on_refresh_trackers)
+        torrent_layout.addWidget(self.refresh_trackers_btn)
+
+        self.tracker_count_label = QLabel("—")
+        torrent_layout.addWidget(self.tracker_count_label)
+        torrent_layout.addStretch()
+        layout.addWidget(torrent_group)
+
         layout.addStretch()
 
     def _load_settings(self):
@@ -429,6 +540,10 @@ class SetupTab(QWidget):
             self.download_files_cb.setChecked(True)
         finally:
             self._loading = False
+        # Load credential-dependent settings after _loading flag is cleared
+        self._load_qbt_settings()
+        self._load_wtrf_settings()
+        self._load_tracker_settings()
 
     def _save_settings(self):
         if self._loading:
@@ -881,3 +996,152 @@ class SetupTab(QWidget):
         self.stop_scrape_btn.setEnabled(False)
         self.scrape_status_label.setText("Stop requested...")
         self._log("Stop requested by user.")
+
+    # ── qBittorrent handlers ─────────────────────────────────────────────────
+
+    def _on_qbt_save(self):
+        from backend.credentials import save_credentials, SERVICE_QBT
+        u = self.qbt_user.text().strip()
+        p = self.qbt_pass.text()
+        if not u:
+            self.qbt_status_label.setText("Username is required.")
+            return
+        # Save non-sensitive settings to meta
+        try:
+            requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/db/settings",
+                json={
+                    "qbt_host": self.qbt_host.text().strip() or "localhost",
+                    "qbt_port": str(self.qbt_port.value()),
+                    "qbt_category": self.qbt_category.text().strip(),
+                    "qbt_tags": self.qbt_tags.text().strip(),
+                },
+                timeout=5,
+            )
+        except Exception:
+            pass
+        result = save_credentials(SERVICE_QBT, u, p)
+        self.qbt_status_label.setText(result.label)
+
+    def _on_qbt_test(self):
+        self.qbt_test_btn.setEnabled(False)
+        self.qbt_status_label.setText("Testing…")
+        try:
+            resp = requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/qbt/test",
+                json={
+                    "host": self.qbt_host.text().strip() or "localhost",
+                    "port": self.qbt_port.value(),
+                    "username": self.qbt_user.text().strip(),
+                    "password": self.qbt_pass.text(),
+                },
+                timeout=15,
+            ).json()
+            if resp.get("ok"):
+                self.qbt_status_label.setText(f"Connected — qBittorrent {resp.get('version', '')}")
+                self.qbt_status_label.setStyleSheet("color: green;")
+            else:
+                self.qbt_status_label.setText(f"Error: {resp.get('error', 'unknown')}")
+                self.qbt_status_label.setStyleSheet("color: red;")
+        except Exception as exc:
+            self.qbt_status_label.setText(f"Error: {exc}")
+            self.qbt_status_label.setStyleSheet("color: red;")
+        finally:
+            self.qbt_test_btn.setEnabled(True)
+
+    def _on_qbt_clear(self):
+        from backend.credentials import delete_credentials, SERVICE_QBT
+        delete_credentials(SERVICE_QBT)
+        self.qbt_user.clear()
+        self.qbt_pass.clear()
+        self.qbt_status_label.setText("Credentials cleared.")
+        self.qbt_status_label.setStyleSheet("")
+
+    def _load_qbt_settings(self):
+        """Load qBittorrent host/port/category/tags from meta and credential status from keyring."""
+        from backend.credentials import credentials_stored, get_credentials, SERVICE_QBT
+        try:
+            resp = requests.get(
+                f"http://127.0.0.1:{self.flask_port}/api/db/settings", timeout=5
+            ).json()
+            self.qbt_host.setText(resp.get("qbt_host") or "localhost")
+            self.qbt_port.setValue(int(resp.get("qbt_port") or 8080))
+            self.qbt_category.setText(resp.get("qbt_category") or "")
+            self.qbt_tags.setText(resp.get("qbt_tags") or "")
+        except Exception:
+            pass
+        if credentials_stored(SERVICE_QBT):
+            u, _ = get_credentials(SERVICE_QBT)
+            self.qbt_user.setText(u)
+            self.qbt_status_label.setText("Credentials stored in keyring.")
+
+    # ── WTRF Forum handlers ──────────────────────────────────────────────────
+
+    def _on_wtrf_save(self):
+        from backend.credentials import save_credentials, SERVICE_WTRF
+        u = self.wtrf_user.text().strip()
+        p = self.wtrf_pass.text()
+        if not u:
+            self.wtrf_status_label.setText("Username is required.")
+            return
+        result = save_credentials(SERVICE_WTRF, u, p)
+        self.wtrf_status_label.setText(result.label)
+
+    def _on_wtrf_clear(self):
+        from backend.credentials import delete_credentials, SERVICE_WTRF
+        delete_credentials(SERVICE_WTRF)
+        self.wtrf_user.clear()
+        self.wtrf_pass.clear()
+        self.wtrf_status_label.setText("Credentials cleared.")
+
+    def _load_wtrf_settings(self):
+        from backend.credentials import credentials_stored, get_credentials, SERVICE_WTRF
+        if credentials_stored(SERVICE_WTRF):
+            u, _ = get_credentials(SERVICE_WTRF)
+            self.wtrf_user.setText(u)
+            self.wtrf_status_label.setText("Credentials stored in keyring.")
+
+    # ── Torrent / tracker handlers ───────────────────────────────────────────
+
+    def _on_tracker_list_changed(self, name: str) -> None:
+        try:
+            requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/db/settings",
+                json={"tracker_list": name},
+                timeout=5,
+            )
+        except Exception:
+            pass
+
+    def _on_refresh_trackers(self) -> None:
+        self.refresh_trackers_btn.setEnabled(False)
+        self.tracker_count_label.setText("Fetching…")
+        try:
+            list_name = self.tracker_list_combo.currentText()
+            resp = requests.get(
+                f"http://127.0.0.1:{self.flask_port}/api/trackers",
+                params={"list_name": list_name, "force_refresh": "1"},
+                timeout=20,
+            ).json()
+            count = resp.get("count", 0)
+            self.tracker_count_label.setText(f"{count} trackers loaded")
+            self.tracker_count_label.setStyleSheet("color: green;" if count else "color: red;")
+        except Exception as exc:
+            self.tracker_count_label.setText(f"Error: {exc}")
+            self.tracker_count_label.setStyleSheet("color: red;")
+        finally:
+            self.refresh_trackers_btn.setEnabled(True)
+
+    def _load_tracker_settings(self) -> None:
+        try:
+            resp = requests.get(
+                f"http://127.0.0.1:{self.flask_port}/api/db/settings", timeout=5
+            ).json()
+            name = resp.get("tracker_list") or "best"
+            from backend.torrent_maker import TRACKER_LISTS
+            if name in TRACKER_LISTS:
+                self.tracker_list_combo.blockSignals(True)
+                self.tracker_list_combo.setCurrentText(name)
+                self.tracker_list_combo.blockSignals(False)
+        except Exception:
+            pass

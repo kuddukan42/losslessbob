@@ -88,3 +88,39 @@ Status: Done
 Added: 2026-05-13
 Closed: 2026-05-14
 Description: Added "Xref only" checkbox to Search tab and My Collection tab. Backed by GET /api/checksums/xref_lb_numbers (db.get_xref_lb_numbers). Filter shows only entries that have at least one xref checksum in the DB.
+
+---
+
+TODO-012: Torrent history panel in My Collection tab
+Priority: Medium
+Status: Done
+Added: 2026-05-14
+Closed: 2026-05-14
+Description: Add a torrent history sub-panel to the My Collection tab that lists all torrents table records for the selected entry. Show green/red indicator for source_folder_exists; Regenerate button when torrent_path is missing; Add to qBittorrent and added_to_qbt_at per record. Phase 1 adds the buttons but not the history panel UI.
+
+---
+
+TODO-013: Path relocation flow for stale torrent records
+Priority: Medium
+Status: Done
+Added: 2026-05-14
+Closed: 2026-05-14
+Description: When a torrent's source_folder is no longer valid (red indicator in the history panel), allow the user to browse for the new folder location, cross-check files against checksums, and optionally rename the folder to the standard format. Described in the Implementation Guide qBittorrent section.
+
+---
+
+TODO-014: Confirm _mychecksums filename convention and finalize TORRENT_EXCLUDE
+Priority: Low
+Status: Done
+Added: 2026-05-14
+Closed: 2026-05-14
+Description: backend/torrent_maker.py currently excludes files matching .*_mychecksums\.(ffp|md5|st5). Confirm the exact naming convention used in the wild before first use and update TORRENT_EXCLUDE_PATTERNS if needed. Resolved: generate_checksums() renamed from _lbgen_* to _mychecksums_* convention; TORRENT_EXCLUDE_PATTERNS already matched this pattern and requires no change.
+
+---
+
+TODO-015: db_reset should drop torrents and rename_history tables
+Priority: Low
+Status: Done
+Added: 2026-05-14
+Closed: 2026-05-14
+Description: The db_reset route drops legacy tables but not the new torrents and rename_history tables added in Phase 1. Fixed immediately: added DROP TABLE IF EXISTS rename_history and torrents to the executescript drop sequence in backend/app.py:db_reset.

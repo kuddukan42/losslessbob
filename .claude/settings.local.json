@@ -76,7 +76,8 @@
       "Bash(ffmpeg -i \"/mnt/DATA0/examples/08 Oct 87_speed corrected/8oct87sc_101.shn\" -f wav /tmp/test_shn.wav -y)",
       "Bash(rm \"/mnt/DATA0/examples/08 Oct 87_speed corrected/08 Oct 87_speed corrected_lbgen.md5\")",
       "Bash(python3 -c \"import ast; ast.parse\\(open\\('gui/lookup_tab.py'\\).read\\(\\)\\); print\\('OK'\\)\")",
-      "Bash(python3 -c \"import ast; ast.parse\\(open\\('gui/rename_tab.py'\\).read\\(\\)\\); print\\('OK'\\)\")"
+      "Bash(python3 -c \"import ast; ast.parse\\(open\\('gui/rename_tab.py'\\).read\\(\\)\\); print\\('OK'\\)\")",
+      "Bash(ssh-add -l)"
     ],
     "additionalDirectories": [
       "/home/tjenkins/.ssh"

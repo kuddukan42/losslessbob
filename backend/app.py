@@ -110,7 +110,9 @@ def create_app():
                 return jsonify({"ok": True})
             else:
                 keys = ["scrape_attachments", "scrape_delay_ms", "auto_scrape", "use_local_pages",
-                        "force_scrape", "search_page_size"]
+                        "force_scrape", "search_page_size",
+                        "qbt_host", "qbt_port", "qbt_category", "qbt_tags",
+                        "tracker_list"]
                 return jsonify({k: database.get_meta(k) for k in keys})
         except Exception as e:
             return jsonify({"error": str(e)}), 500
@@ -124,6 +126,8 @@ def create_app():
             conn.executescript(
                 "PRAGMA foreign_keys=OFF;"
                 "DROP TABLE IF EXISTS entry_changes;"
+                "DROP TABLE IF EXISTS rename_history;"
+                "DROP TABLE IF EXISTS torrents;"
                 "DROP TRIGGER IF EXISTS entries_fts_insert;"
                 "DROP TRIGGER IF EXISTS entries_fts_update;"
                 "DROP TRIGGER IF EXISTS entries_fts_delete;"
@@ -854,6 +858,196 @@ def create_app():
             )
         except Exception as e:
             return jsonify({"error": str(e)}), 500
+
+    # ── Torrent Generation ───────────────────────────────────────────────────
+
+    @app.route("/api/torrent/create", methods=["POST"])
+    def torrent_create():
+        """Generate a .torrent for one LB entry.
+
+        Body: {lb_number, source_folder, tracker_list?}
+        Returns: {ok, torrent_path, infohash, torrent_id, name, excluded_files}
+        """
+        try:
+            from backend.torrent_maker import make_torrent
+            data = request.get_json() or {}
+            lb = data.get("lb_number")
+            folder = data.get("source_folder", "")
+            tracker_list = data.get("tracker_list") or database.get_meta("tracker_list") or "best"
+            if not lb or not folder:
+                return jsonify({"error": "lb_number and source_folder required"}), 400
+            result = make_torrent(int(lb), folder, tracker_list=tracker_list)
+            return jsonify({"ok": True, **result})
+        except Exception as exc:
+            return jsonify({"ok": False, "error": str(exc)}), 500
+
+    @app.route("/api/torrent/<int:lb>", methods=["GET"])
+    def torrent_list(lb):
+        """List all torrent records for an LB entry."""
+        try:
+            rows = database.get_torrents_for_lb(lb)
+            # Annotate each row with source_folder_exists for the history panel
+            for row in rows:
+                row["source_folder_exists"] = (
+                    bool(row.get("source_folder"))
+                    and Path(row["source_folder"]).is_dir()
+                )
+                row["torrent_file_exists"] = (
+                    bool(row.get("torrent_path"))
+                    and Path(row["torrent_path"]).exists()
+                )
+            return jsonify(rows)
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/torrent/<int:torrent_id>", methods=["PATCH"])
+    def torrent_update(torrent_id):
+        """Update a torrents row (e.g. source_folder after path relocation)."""
+        try:
+            fields = request.get_json() or {}
+            database.update_torrent_record(torrent_id, fields)
+            return jsonify({"ok": True})
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/trackers", methods=["GET"])
+    def trackers_get():
+        """Return the cached tracker list.
+
+        Query params: list_name, force_refresh (0/1).
+        """
+        try:
+            from backend.torrent_maker import fetch_trackers
+            list_name = request.args.get("list_name") or database.get_meta("tracker_list") or "best"
+            force = request.args.get("force_refresh", "0") == "1"
+            trackers = fetch_trackers(list_name, force_refresh=force)
+            return jsonify({"list_name": list_name, "count": len(trackers), "trackers": trackers})
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    # ── qBittorrent Integration ───────────────────────────────────────────────
+
+    @app.route("/api/qbt/test", methods=["POST"])
+    def qbt_test():
+        """Test qBittorrent WebUI connectivity.
+
+        Body: {host, port, username?, password?}  — credentials optional (uses keyring).
+        """
+        try:
+            from backend.qbittorrent import test_connection
+            from backend.credentials import get_credentials, SERVICE_QBT
+            data = request.get_json() or {}
+            host = data.get("host") or database.get_meta("qbt_host") or "localhost"
+            port = int(data.get("port") or database.get_meta("qbt_port") or 8080)
+            username = data.get("username") or ""
+            password = data.get("password") or ""
+            if not username:
+                username, password = get_credentials(SERVICE_QBT)
+            return jsonify(test_connection(host, port, username, password))
+        except Exception as exc:
+            return jsonify({"ok": False, "error": str(exc)}), 500
+
+    @app.route("/api/qbt/add", methods=["POST"])
+    def qbt_add():
+        """Add one or more torrents to qBittorrent.
+
+        Body: {torrent_id?, lb_numbers?, host?, port?, username?, password?,
+               category?, tags?}
+        Use torrent_id for a single known record, or lb_numbers to add all
+        torrents for those entries (latest record per LB).
+        """
+        try:
+            from backend.qbittorrent import add_torrent_from_db
+            from backend.credentials import get_credentials, SERVICE_QBT
+            data = request.get_json() or {}
+            host = data.get("host") or database.get_meta("qbt_host") or "localhost"
+            port = int(data.get("port") or database.get_meta("qbt_port") or 8080)
+            category = data.get("category") or database.get_meta("qbt_category") or ""
+            tags = data.get("tags") or database.get_meta("qbt_tags") or ""
+            username = data.get("username") or ""
+            password = data.get("password") or ""
+            if not username:
+                username, password = get_credentials(SERVICE_QBT)
+
+            results = []
+            if data.get("torrent_id"):
+                r = add_torrent_from_db(
+                    int(data["torrent_id"]), host, port, username, password, category, tags
+                )
+                results.append(r)
+            elif data.get("lb_numbers"):
+                for lb in data["lb_numbers"]:
+                    rows = database.get_torrents_for_lb(int(lb))
+                    if rows:
+                        r = add_torrent_from_db(
+                            rows[0]["id"], host, port, username, password, category, tags
+                        )
+                        results.append({**r, "lb_number": lb})
+            else:
+                return jsonify({"error": "torrent_id or lb_numbers required"}), 400
+
+            ok_count = sum(1 for r in results if r.get("ok"))
+            return jsonify({"ok": True, "added": ok_count, "total": len(results), "results": results})
+        except Exception as exc:
+            return jsonify({"ok": False, "error": str(exc)}), 500
+
+    # ── Forum Posting ─────────────────────────────────────────────────────────
+
+    @app.route("/api/entry/<int:lb>/post_forum", methods=["POST"])
+    def post_forum(lb):
+        """Post a topic to the WTRF forum for one LB entry.
+
+        Body: {username?, password?, torrent_id?}
+        Requires a torrents record for the entry to exist.
+        Returns: {ok, topic_url} or {ok=False, error}.
+        """
+        try:
+            from backend.forum_poster import post_lb_topic
+            from backend.credentials import get_credentials, SERVICE_WTRF
+            from backend.paths import ATTACHMENTS_DIR
+            data = request.get_json() or {}
+
+            # Resolve credentials
+            username = data.get("username") or ""
+            password = data.get("password") or ""
+            if not username:
+                username, password = get_credentials(SERVICE_WTRF)
+            if not username:
+                return jsonify({"ok": False, "error": "WTRF credentials not set"}), 400
+
+            # Get entry metadata
+            entry_data = database.get_entry(lb)
+            if not entry_data:
+                return jsonify({"ok": False, "error": f"Entry LB-{lb} not found"}), 404
+            entry = entry_data["entry"]
+
+            # Resolve torrent file
+            torrent_id = data.get("torrent_id")
+            if torrent_id:
+                conn = database.get_connection()
+                row = conn.execute(
+                    "SELECT torrent_path FROM torrents WHERE id=?", (torrent_id,)
+                ).fetchone()
+                torrent_path = row["torrent_path"] if row else None
+            else:
+                rows = database.get_torrents_for_lb(lb)
+                torrent_path = rows[0]["torrent_path"] if rows else None
+
+            if not torrent_path:
+                return jsonify({"ok": False, "error": "No torrent file found for this entry. Create one first."}), 400
+
+            attach_dir = ATTACHMENTS_DIR / f"LB-{lb:05d}"
+            result = post_lb_topic(
+                lb_number=lb,
+                torrent_path=torrent_path,
+                username=username,
+                password=password,
+                entry=entry,
+                attachments_dir=attach_dir,
+            )
+            return jsonify(result)
+        except Exception as exc:
+            return jsonify({"ok": False, "error": str(exc)}), 500
 
     _slog.t("Flask: create_app done")
     return app

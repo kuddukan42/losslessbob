@@ -329,18 +329,18 @@ def detect_folder_mode(folder_path):
     return 'shn' if has_shn else 'flac'
 
 
-def _lbgen_path(folder, basename, ext):
+def _mychecksums_path(folder, basename, ext):
     """
-    Return <folder>/<basename>_lbgen.<ext>, incrementing suffix
-    (_lbgen_2, _lbgen_3, ...) until a non-existing path is found.
+    Return <folder>/<basename>_mychecksums.<ext>, incrementing suffix
+    (_mychecksums_2, _mychecksums_3, ...) until a non-existing path is found.
     """
     folder = Path(folder)
-    candidate = folder / f'{basename}_lbgen.{ext}'
+    candidate = folder / f'{basename}_mychecksums.{ext}'
     if not candidate.exists():
         return str(candidate)
     n = 2
     while True:
-        candidate = folder / f'{basename}_lbgen_{n}.{ext}'
+        candidate = folder / f'{basename}_mychecksums_{n}.{ext}'
         if not candidate.exists():
             return str(candidate)
         n += 1
@@ -678,9 +678,9 @@ def verify_folder_lbdir(folder_path, lbdir_path):
 def generate_checksums(folder_path):
     """
     Generate FFP and/or MD5 checksum files for audio in folder.
-    Uses _lbgen_path naming to avoid overwriting existing files.
-    FLAC: writes _lbgen.ffp (FFP) + _lbgen.md5 (file MD5 of all audio).
-    SHN:  writes _lbgen.md5 (shntool hashes in [shntool] line format).
+    Uses _mychecksums_path naming to avoid overwriting existing files.
+    FLAC: writes _mychecksums.ffp (FFP) + _mychecksums.md5 (file MD5 of all audio).
+    SHN:  writes _mychecksums.md5 (shntool hashes in [shntool] line format).
     Returns {'folder': ..., 'generated': [...], 'errors': [...]}.
     """
     folder = Path(folder_path)
@@ -705,7 +705,7 @@ def generate_checksums(folder_path):
                 else:
                     errors.append(f'FFP failed: {f.name}')
             if ffp_lines:
-                out = _lbgen_path(folder, basename, 'ffp')
+                out = _mychecksums_path(folder, basename, 'ffp')
                 try:
                     Path(out).write_text('\n'.join(ffp_lines) + '\n', encoding='utf-8')
                     generated.append(out)
@@ -720,7 +720,7 @@ def generate_checksums(folder_path):
             else:
                 errors.append(f'MD5 failed: {f.name}')
         if md5_lines:
-            out = _lbgen_path(folder, basename, 'md5')
+            out = _mychecksums_path(folder, basename, 'md5')
             try:
                 Path(out).write_text('\n'.join(md5_lines) + '\n', encoding='utf-8')
                 generated.append(out)
@@ -758,7 +758,7 @@ def generate_checksums(folder_path):
 
             all_lines = md5_lines + shn_lines
             if all_lines:
-                out = _lbgen_path(folder, basename, 'md5')
+                out = _mychecksums_path(folder, basename, 'md5')
                 try:
                     Path(out).write_text('\n'.join(all_lines) + '\n', encoding='utf-8')
                     generated.append(out)
