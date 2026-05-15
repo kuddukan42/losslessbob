@@ -528,6 +528,14 @@ class SetupTab(QWidget):
         self.wtrf_pass.setFixedWidth(200)
         wtrf_layout.addWidget(self.wtrf_pass, 1, 1)
 
+        wtrf_layout.addWidget(QLabel("Board ID:"), 2, 0)
+        self.wtrf_board_spin = QSpinBox()
+        self.wtrf_board_spin.setRange(1, 9999)
+        self.wtrf_board_spin.setFixedWidth(80)
+        self.wtrf_board_spin.setToolTip("SMF board number from the forum URL (e.g. ?board=42.0 → 42)")
+        self.wtrf_board_spin.valueChanged.connect(self._on_wtrf_board_changed)
+        wtrf_layout.addWidget(self.wtrf_board_spin, 2, 1)
+
         wtrf_btn_row = QHBoxLayout()
         self.wtrf_save_btn = QPushButton("Save Credentials")
         self.wtrf_save_btn.clicked.connect(self._on_wtrf_save)
@@ -539,10 +547,10 @@ class SetupTab(QWidget):
         self.wtrf_clear_btn.clicked.connect(self._on_wtrf_clear)
         wtrf_btn_row.addWidget(self.wtrf_clear_btn)
         wtrf_btn_row.addStretch()
-        wtrf_layout.addLayout(wtrf_btn_row, 2, 0, 1, 3)
+        wtrf_layout.addLayout(wtrf_btn_row, 3, 0, 1, 3)
 
         self.wtrf_status_label = QLabel("")
-        wtrf_layout.addWidget(self.wtrf_status_label, 3, 0, 1, 3)
+        wtrf_layout.addWidget(self.wtrf_status_label, 4, 0, 1, 3)
         wtrf_layout.setColumnStretch(2, 1)
         right_col.addWidget(wtrf_group)
 
@@ -1178,6 +1186,18 @@ class SetupTab(QWidget):
         self.wtrf_pass.clear()
         self.wtrf_status_label.setText("Credentials cleared.")
 
+    def _on_wtrf_board_changed(self, value: int) -> None:
+        if self._loading:
+            return
+        try:
+            requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/db/settings",
+                json={"wtrf_board_id": str(value)},
+                timeout=5,
+            )
+        except Exception:
+            pass
+
     def _load_wtrf_settings(self):
         from backend.credentials import credentials_stored, get_credentials, SERVICE_WTRF
         if credentials_stored(SERVICE_WTRF):
@@ -1185,6 +1205,17 @@ class SetupTab(QWidget):
             self.wtrf_user.setText(u)
             self.wtrf_pass.setText(p)
             self.wtrf_status_label.setText("Credentials stored in keyring.")
+        try:
+            resp = requests.get(f"http://127.0.0.1:{self.flask_port}/api/db/settings", timeout=5)
+            board_id = int(resp.json().get("wtrf_board_id") or 0)
+            if board_id:
+                self._loading = True
+                try:
+                    self.wtrf_board_spin.setValue(board_id)
+                finally:
+                    self._loading = False
+        except Exception:
+            pass
 
     # ── Torrent / tracker handlers ───────────────────────────────────────────
 

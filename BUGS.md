@@ -1,3 +1,69 @@
+BUG-046: Forum post stuck in lock-warning loop — board requires admin confirmation resubmit
+Status: Fixed
+File(s): backend/forum_poster.py:post_lb_topic
+Reported: 2026-05-14
+Fixed: 2026-05-14
+Description: After fixing the board URL, every post still bounced with "Warning: topic is currently/will be locked!" regardless of lock=0 in the payload.
+Root cause: Board 16 ("Up To Me") is a restricted board (admin/mod-only posting). SMF always returns a confirmation-preview page for new topics on such boards, even for admins. This is a board-level policy, not a form-field issue. The attachment was already temp-stored server-side by the time the warning appeared.
+Fix: Detect the lock-warning page by text content. Re-scrape fresh hidden fields (new seqnum/CSRF token) from the warning page and resubmit via a second POST without the file. The second submission confirms the action and SMF creates the topic.
+
+---
+
+BUG-045: Forum post bounced with lock warning — admin compose page pre-sets lock=1
+Status: Fixed
+File(s): backend/forum_poster.py:post_lb_topic
+Reported: 2026-05-14
+Fixed: 2026-05-14
+Description: After fixing the board URL, SMF returned the compose form with "Warning: topic is currently/will be locked! Only admins and moderators can reply." instead of creating the topic.
+Root cause: Admin users' compose pages include lock=1 as a hidden field. This was forwarded verbatim via **hidden, causing SMF to treat every new topic as locked and requiring a second confirmation POST.
+Fix: Explicitly override lock=0, sticky=0, move=0 in the payload after **hidden so admin-default values are always neutralised.
+
+---
+
+BUG-044: Forum post always fails with "board doesn't exist" — board missing from POST URL
+Status: Fixed
+File(s): backend/forum_poster.py:post_lb_topic
+Reported: 2026-05-14
+Fixed: 2026-05-14
+Description: Every post attempt returned "The board you specified doesn't exist" even though the compose page loaded correctly for the same board.
+Root cause: _POST_URL was hardcoded as ?action=post;sa=post2 with no board parameter. SMF requires board=N.0 in the POST URL (not just the compose/GET URL) to know which board to write the topic into.
+Fix: Replaced the static _POST_URL constant with _post_url(board_id) that appends ;board=N.0 to match the compose URL pattern.
+
+---
+
+BUG-043: Forum post fails with "board doesn't exist" — board ID was hardcoded to wrong value
+Status: Fixed
+File(s): backend/forum_poster.py, backend/app.py, gui/setup_tab.py
+Reported: 2026-05-14
+Fixed: 2026-05-14
+Description: After the false-success fix, posting failed with "The board you specified doesn't exist" because FORUM_BOARD was hardcoded to 16, which is not a valid board on this forum instance.
+Root cause: Board ID was a hardcoded constant in forum_poster.py with no way to configure it without editing source.
+Fix: Removed the constant. post_lb_topic() now accepts board_id as a required parameter. The value is stored in the meta table as wtrf_board_id, exposed via /api/db/settings, and configured via a new Board ID spinbox in the Setup tab WTRF section.
+
+---
+
+BUG-042: Forum post reports "Posted successfully" but topic never appears on forum
+Status: Fixed
+File(s): backend/forum_poster.py:post_lb_topic
+Reported: 2026-05-14
+Fixed: 2026-05-14
+Description: After BUG-041 was fixed, "Post to Forum" showed a success dialog with a topic URL, but no topic appeared on the forum.
+Root cause: SMF returns HTTP 200 when it bounces a rejected post back to the compose form (CSRF failure, attachment rejected, flood control, etc.). The fallback "if status==200 assume success" path fired, returning the POST endpoint URL as the fake topic URL. Additionally, the POST was missing Referer/Origin headers (needed for SMF's CSRF check), and additional_options was left at 0 (the compose-page default), which suppresses attachment processing.
+Fix: Success is now gated on 'topic=' appearing in the final response URL (the redirect SMF sends only on a real post). Added Referer and Origin headers to the POST. Added additional_options=1 to the payload. Error reporting now collects errorbox/error_list/post_error div text and falls back to page title + URL so failures are always diagnosable.
+
+---
+
+BUG-041: Forum post fails with "sc missing" — WTRF SMF uses a hashed field name instead of 'sc'
+Status: Fixed
+File(s): backend/forum_poster.py:post_lb_topic
+Reported: 2026-05-14
+Fixed: 2026-05-14
+Description: "Post to Forum" always failed with "Could not retrieve SMF form fields (sc missing)." even though login succeeded and the compose page loaded correctly (HTTP 200, 'Start new topic').
+Root cause: post_lb_topic validated that both 'sc' and 'seqnum' were present in the hidden form fields. This WTRF SMF install uses a dynamically-hashed field name for the CSRF token (e.g. 'a9c55b28') instead of the literal 'sc'. seqnum was present; sc was absent under that name. All fields including the hashed token were already forwarded via **hidden, so the post would have succeeded if the validation had not blocked it.
+Fix: Removed the 'sc' name check. Only seqnum is validated (it uniquely identifies the real post form). The hashed CSRF field is passed through automatically with all other hidden fields.
+
+---
+
 BUG-040: generate_checksums produces no shntool hashes for SHN files when shorten is not installed
 Status: Fixed
 File(s): backend/checksum_utils.py:compute_shntool, generate_checksums

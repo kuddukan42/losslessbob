@@ -112,7 +112,7 @@ def create_app():
                 keys = ["scrape_attachments", "scrape_delay_ms", "auto_scrape", "use_local_pages",
                         "force_scrape", "search_page_size",
                         "qbt_host", "qbt_port", "qbt_category", "qbt_tags",
-                        "tracker_list"]
+                        "tracker_list", "wtrf_board_id"]
                 return jsonify({k: database.get_meta(k) for k in keys})
         except Exception as e:
             return jsonify({"error": str(e)}), 500
@@ -1087,6 +1087,10 @@ def create_app():
             if not torrent_path:
                 return jsonify({"ok": False, "error": "No torrent file found for this entry. Create one first."}), 400
 
+            board_id = int(database.get_meta("wtrf_board_id") or 0)
+            if not board_id:
+                return jsonify({"ok": False, "error": "Forum board ID not set. Configure it in Setup → WTRF Forum."}), 400
+
             attach_dir = ATTACHMENTS_DIR / f"LB-{lb:05d}"
             result = post_lb_topic(
                 lb_number=lb,
@@ -1094,6 +1098,7 @@ def create_app():
                 username=username,
                 password=password,
                 entry=entry,
+                board_id=board_id,
                 attachments_dir=attach_dir,
                 subject_override=data.get("subject") or None,
                 body_override=data.get("body") or None,

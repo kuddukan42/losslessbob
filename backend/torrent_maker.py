@@ -5,7 +5,6 @@ All torrents are private=True (disables DHT/PEX/LSD on all compliant clients).
 Tracker list is fetched live from ngosang/trackerslist via jsDelivr and cached
 in-process for the session.
 """
-import json
 import logging
 import re
 import threading
@@ -21,7 +20,7 @@ logger = logging.getLogger(__name__)
 
 TRACKER_LISTS = ["best", "all", "all_udp", "all_http", "all_https"]
 _TRACKER_CDN = (
-    "https://cdn.jsdelivr.net/gh/ngosang/trackerslist@master/trackers_{name}.txt"
+    "https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_{name}.txt"
 )
 
 _tracker_cache: dict[str, list[str]] = {}

@@ -1,7 +1,9 @@
+import logging
 import sys
 import socket
 import threading
 import time
+from logging.handlers import RotatingFileHandler
 
 from PyQt6.QtWidgets import QApplication
 
@@ -29,6 +31,8 @@ def start_flask() -> None:
     """Start the Flask backend, using Waitress on Windows for stability."""
     ensure_data_dirs()
     flask_app = create_app()
+    # Flask resets werkzeug's logger to INFO inside create_app — pin it back here.
+    logging.getLogger("werkzeug").setLevel(logging.WARNING)
     if sys.platform == "win32":
         try:
             from waitress import serve as waitress_serve
@@ -43,8 +47,38 @@ def start_flask() -> None:
                       debug=False, use_reloader=False)
 
 
+def _configure_logging() -> None:
+    """Write DEBUG+ from our own modules to data/losslessbob.log; keep third-party at WARNING."""
+    log_path = DATA_DIR / "losslessbob.log"
+
+    fmt = logging.Formatter("%(asctime)s %(levelname)-8s %(name)s: %(message)s")
+
+    fh = RotatingFileHandler(log_path, maxBytes=5 * 1024 * 1024, backupCount=3, encoding="utf-8")
+    fh.setLevel(logging.DEBUG)
+    fh.setFormatter(fmt)
+
+    sh = logging.StreamHandler()
+    sh.setLevel(logging.WARNING)
+    sh.setFormatter(logging.Formatter("%(levelname)s %(name)s: %(message)s"))
+
+    # Root logger at WARNING so urllib3/requests/werkzeug stay quiet.
+    root = logging.getLogger()
+    root.setLevel(logging.WARNING)
+    root.addHandler(fh)
+    root.addHandler(sh)
+
+    # Our own namespaces get DEBUG so every logger.debug() call lands in the file.
+    for ns in ("backend", "gui"):
+        logging.getLogger(ns).setLevel(logging.DEBUG)
+
+    # urllib3/requests: pin now (Flask hasn't touched them yet).
+    for ns in ("urllib3", "requests"):
+        logging.getLogger(ns).setLevel(logging.WARNING)
+
+
 def main() -> None:
     ensure_data_dirs()
+    _configure_logging()
     _slog.init(DATA_DIR / "startup.log")
     _slog.t("main: start")
 
