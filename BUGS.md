@@ -1,3 +1,14 @@
+BUG-056: _parse_date swaps month and day — subject dates posted as YYYY-DD-MM instead of YYYY-MM-DD
+Status: Fixed
+File(s): backend/torrent_maker.py:_parse_date
+Reported: 2026-05-15
+Fixed: 2026-05-15
+Description: Forum post subjects showed wrong date formats — e.g. "1980-22-01 Denver, Colorado" instead of "1980-01-22 Denver, Colorado". LosslessBob stores dates as M/D/YY (US format) but _parse_date was assigning parts[0] to `day` and parts[1] to `month`, producing YYYY-DD-MM output.
+Root cause: Docstring and variable names assumed D/M/YY (European) format; the actual LosslessBob date format is M/D/YY (US: month/day/year).
+Fix: Swapped variable assignment — parts[0] → month, parts[1] → day. Updated docstring to reflect M/D/YY.
+
+---
+
 BUG-055: SMF topic Description field (desc) not sent — LB number never appeared on forum
 Status: Fixed
 File(s): backend/forum_poster.py:post_lb_topic

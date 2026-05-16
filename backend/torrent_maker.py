@@ -87,7 +87,7 @@ def _is_excluded(path: Path) -> bool:
 
 
 def _parse_date(date_str: str) -> str:
-    """Convert LosslessBob date_str (D/M/YY or D/M/YYYY) to YYYY-MM-DD.
+    """Convert LosslessBob date_str (M/D/YY or M/D/YYYY) to YYYY-MM-DD.
 
     Falls back to the original string when parsing fails.
     """
@@ -97,8 +97,8 @@ def _parse_date(date_str: str) -> str:
     if len(parts) != 3:
         return date_str.strip()
     try:
-        day = int(parts[0].strip())
-        month = int(parts[1].strip())
+        month = int(parts[0].strip())
+        day = int(parts[1].strip())
         year = int(parts[2].strip())
         if year < 100:
             year = 1900 + year if year >= 49 else 2000 + year

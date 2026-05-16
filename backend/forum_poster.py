@@ -220,7 +220,16 @@ def _scrape_form_fields(
             if name:
                 fields[name] = value
 
-        logger.debug("_scrape_form_fields: form_action=%s fields=%s", form_action, list(fields.keys()))
+        # Log visible text/textarea inputs so we can verify field names (e.g. desc).
+        visible_names = [
+            (inp.get("name"), inp.get("type", "text"))
+            for inp in target.find_all(["input", "textarea"])
+            if inp.get("name") and inp.get("type", "text") != "hidden"
+        ]
+        logger.debug(
+            "_scrape_form_fields: form_action=%s hidden_fields=%s visible_inputs=%s",
+            form_action, list(fields.keys()), visible_names,
+        )
         diag = (
             f"HTTP {status}, page: '{page_title}', URL: {final_url}, "
             f"form_action: {form_action}, fields: {list(fields.keys())}"
@@ -566,8 +575,8 @@ def post_lb_topic(
     }
 
     logger.debug(
-        "post_lb_topic: posting LB-%05d subject=%r body_len=%d torrent=%s",
-        lb_number, subject, len(body), torrent.name,
+        "post_lb_topic: posting LB-%05d subject=%r desc=%r body_len=%d torrent=%s",
+        lb_number, subject, lb_id, len(body), torrent.name,
     )
 
     try:
