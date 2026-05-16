@@ -26,7 +26,27 @@ SELECTION_COLOR = QColor("#CCE5FF")
 MAIN_STYLESHEET = ""  # set by apply_theme() at startup
 
 
+def _blend_hex(color1: str, color2: str, ratio: float) -> str:
+    """Return color1 blended toward color2 by ratio (0.0 = all color1, 1.0 = all color2)."""
+    c1 = QColor(color1)
+    c2 = QColor(color2)
+    r = int(c1.red() * (1 - ratio) + c2.red() * ratio)
+    g = int(c1.green() * (1 - ratio) + c2.green() * ratio)
+    b = int(c1.blue() * (1 - ratio) + c2.blue() * ratio)
+    return QColor(r, g, b).name()
+
+
+def _button_text_color(accent: str) -> str:
+    """Return black or white depending on accent luminance, for readable button labels."""
+    c = QColor(accent)
+    luma = 0.299 * c.red() + 0.587 * c.green() + 0.114 * c.blue()
+    return "#000000" if luma > 128 else "#FFFFFF"
+
+
 def build_stylesheet(t):
+    _btn_fg = _button_text_color(t['accent'])
+    _btn_fg_hover = _button_text_color(t['accent_hover'])
+    _btn_fg_pressed = _button_text_color(t['accent_pressed'])
     return f"""
 QMainWindow, QWidget {{
     background-color: {t['app_bg']};
@@ -44,6 +64,9 @@ QTabBar::tab {{
     border: none;
     border-radius: 4px 4px 0 0;
     margin-right: 2px;
+}}
+QTabBar::tab:hover {{
+    background: {_blend_hex(t['tab_bg'], t['tab_selected'], 0.5)};
 }}
 QTabBar::tab:selected {{
     background: {t['tab_selected']};
@@ -68,7 +91,7 @@ QHeaderView::section {{
 }}
 QPushButton {{
     background-color: {t['accent']};
-    color: {t['header_fg']};
+    color: {_btn_fg};
     border: none;
     padding: 5px 14px;
     border-radius: 6px;
@@ -76,15 +99,15 @@ QPushButton {{
 }}
 QPushButton:hover {{
     background-color: {t['accent_hover']};
-    color: {t['header_fg']};
+    color: {_btn_fg_hover};
 }}
 QPushButton:pressed {{
     background-color: {t['accent_pressed']};
-    color: {t['header_fg']};
+    color: {_btn_fg_pressed};
 }}
 QPushButton:disabled {{
-    background-color: #A0A0A0;
-    color: #E0E0E0;
+    background-color: {_blend_hex(t['accent'], t['app_bg'], 0.65)};
+    color: {_blend_hex(t['app_fg'], t['app_bg'], 0.55)};
 }}
 QListWidget {{
     border: 1px solid {t['border']};

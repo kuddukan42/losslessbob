@@ -1,3 +1,36 @@
+BUG-059: Disabled buttons render as hardcoded gray on dark themes
+Status: Fixed
+File(s): gui/styles.py:build_stylesheet
+Reported: 2026-05-16
+Fixed: 2026-05-16
+Description: Buttons in a disabled state (e.g. "Generate Missing Checksums", "Select Missing Checksums") showed as medium gray (#A0A0A0) regardless of theme, clashing badly against dark app backgrounds like Tokyo Night's #1A1B26.
+Root cause: `QPushButton:disabled` in `build_stylesheet` used hardcoded color values instead of theme-derived ones.
+Fix: Added `_blend_hex()` helper; disabled button background is now `accent` blended 65% toward `app_bg`, and disabled text is `app_fg` blended 55% toward `app_bg`, so it adapts to every theme.
+
+---
+
+BUG-058: Search tab column widths reset to 100px on every launch and ignore user settings
+Status: Fixed
+File(s): gui/search_tab.py:_render_page
+Reported: 2026-05-16
+Fixed: 2026-05-16
+Description: All columns on the Search tab defaulted to 100px on every launch. User-adjusted widths were not persisted across sessions.
+Root cause: The snapshot block in `_render_page()` ran before `_apply_col_widths()` was ever called, so it captured Qt's 100px defaults and immediately overwrote the widths that had been loaded from QSettings.
+Fix: Added `_widths_applied` bool flag; the snapshot is now guarded by `and self._widths_applied` so it is skipped until after the saved widths have been applied to the view at least once. `_apply_col_widths()` and `_set_default_col_widths()` both set the flag to True.
+
+---
+
+BUG-057: Forum poster sends wrong field name for SMF description — "desc" instead of "description"
+Status: Fixed
+File(s): backend/forum_poster.py:post_lb_topic (lines 564, 659)
+Reported: 2026-05-16
+Fixed: 2026-05-16
+Description: LB number never appeared in the SMF topic Description field. BUG-055 added the field to the payload, but used the key "desc" while the actual HTML form field is named "description" (confirmed from the modify-post page source).
+Root cause: Wrong key name in both initial payload and retry_payload dicts.
+Fix: Changed "desc": lb_id to "description": lb_id in both payload dicts and updated the debug log string to match.
+
+---
+
 BUG-056: _parse_date swaps month and day — subject dates posted as YYYY-DD-MM instead of YYYY-MM-DD
 Status: Fixed
 File(s): backend/torrent_maker.py:_parse_date

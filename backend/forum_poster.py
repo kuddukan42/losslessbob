@@ -561,7 +561,7 @@ def post_lb_topic(
     payload = {
         **hidden,
         "subject": subject,
-        "desc": lb_id,
+        "description": lb_id,
         "message": message_crlf,
         "post": "Post",
         "ns": "0",
@@ -575,7 +575,7 @@ def post_lb_topic(
     }
 
     logger.debug(
-        "post_lb_topic: posting LB-%05d subject=%r desc=%r body_len=%d torrent=%s",
+        "post_lb_topic: posting LB-%05d subject=%r description=%r body_len=%d torrent=%s",
         lb_number, subject, lb_id, len(body), torrent.name,
     )
 
@@ -656,7 +656,7 @@ def post_lb_topic(
             retry_payload = {
                 **retry_fields,
                 "subject": subject,
-                "desc": lb_id,
+                "description": lb_id,
                 "message": message_crlf,
                 "post": "Post",
                 "ns": "0",

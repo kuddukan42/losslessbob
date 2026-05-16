@@ -636,7 +636,7 @@ Populated automatically after each lookup. Shows folders from the input file lis
 
 ## GUI: Theme Tab (`gui/theme_tab.py`)
 
-Six preset themes (Light, Dark, Black, Dracula, Blue, Purple) plus custom color picker. Color changes apply immediately via `styles.py` which generates Qt QSS from a color dictionary. Theme name and per-color overrides persist in `QSettings`.
+Fourteen preset themes (Light, Dark, Black, Dracula, Blue, Purple, Red, Nord, Gruvbox, Monokai, Tokyo Night, Solarized, Everforest, Catppuccin) plus custom color picker. Color changes apply immediately via `styles.py` which generates Qt QSS from a color dictionary. Theme name and per-color overrides persist in `QSettings`.
 
 ---
 
@@ -788,3 +788,4 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 | 2026-05-14 | Forum preview: GET /api/entry/lb/preview_forum; preview_lb_topic() in forum_poster.py; preview dialog with editable subject+body before posting. |
 | 2026-05-14 | TODO-012/013: Torrent history sub-panel in My Collection — lists all torrents records per selected entry with green/red/orange status indicator, per-row context menu, Add to qBittorrent / Regenerate / Relocate Source buttons; path relocation flow with file cross-check, rename_log.txt logging, and optional rename to standard format. |
 | 2026-05-15 | lbdir Reconcile Files: find_reconcilable_files() in checksum_utils.py; POST /api/lbdir/reconcile + /apply_reconcile; ReconcilePreviewDialog + "Reconcile Files" button in lbdir_tab.py; _find_lbdir_in_folder() DRY refactor in app.py. |
+| 2026-05-16 | Added 7 new preset themes to theme_tab.py: Nord, Gruvbox, Monokai, Tokyo Night, Solarized, Everforest, Catppuccin (14 total). |

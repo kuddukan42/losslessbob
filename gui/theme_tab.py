@@ -95,6 +95,97 @@ THEMES = {
         "row_missing": "#6B1F2E", "row_duplicate": "#6B6B1A", "row_xref": "#22226B",
         "row_owned": "#1E4A2A", "row_wishlist": "#3B2060",
     },
+    "Nord": {
+        # Arctic blue-gray — https://www.nordtheme.com/
+        "app_bg": "#2E3440", "app_fg": "#D8DEE9",
+        "accent": "#5E81AC", "accent_hover": "#81A1C1", "accent_pressed": "#4C6E95",
+        "header_bg": "#3B4252", "header_fg": "#ECEFF4",
+        "table_bg": "#2E3440", "table_alt": "#3B4252",
+        "border": "#4C566A", "status_bg": "#252A34",
+        "tab_bg": "#3B4252", "tab_selected": "#2E3440",
+        "selection": "#4C566A", "input_bg": "#3B4252",
+        "row_matched": "#3B6B3B", "row_not_found": "#863C3C",
+        "row_missing": "#6B4A3B", "row_duplicate": "#6B6030", "row_xref": "#445B80",
+        "row_owned": "#426542", "row_wishlist": "#554A6B",
+    },
+    "Gruvbox": {
+        # Earthy retro dark — https://github.com/morhetz/gruvbox
+        "app_bg": "#282828", "app_fg": "#EBDBB2",
+        "accent": "#458588", "accent_hover": "#83A598", "accent_pressed": "#2D6B6E",
+        "header_bg": "#3C3836", "header_fg": "#FBF1C7",
+        "table_bg": "#282828", "table_alt": "#32302F",
+        "border": "#504945", "status_bg": "#1D2021",
+        "tab_bg": "#3C3836", "tab_selected": "#282828",
+        "selection": "#504945", "input_bg": "#3C3836",
+        "row_matched": "#3A5A1A", "row_not_found": "#8C3210",
+        "row_missing": "#8C2840", "row_duplicate": "#6B5A10", "row_xref": "#2A5060",
+        "row_owned": "#2E5C20", "row_wishlist": "#6E2860",
+    },
+    "Monokai": {
+        # Vivid dark — TextMate/Sublime classic
+        "app_bg": "#272822", "app_fg": "#F8F8F2",
+        "accent": "#66D9E8", "accent_hover": "#A6E22E", "accent_pressed": "#4BACB8",
+        "header_bg": "#3E3D32", "header_fg": "#F8F8F2",
+        "table_bg": "#272822", "table_alt": "#2E2E28",
+        "border": "#75715E", "status_bg": "#1E1F1A",
+        "tab_bg": "#3E3D32", "tab_selected": "#272822",
+        "selection": "#49483E", "input_bg": "#3E3D32",
+        "row_matched": "#3A6010", "row_not_found": "#8A2840",
+        "row_missing": "#841A50", "row_duplicate": "#606010", "row_xref": "#285060",
+        "row_owned": "#305A10", "row_wishlist": "#604A90",
+    },
+    "Tokyo Night": {
+        # Neon city dark — https://github.com/folke/tokyonight.nvim
+        "app_bg": "#1A1B26", "app_fg": "#C0CAF5",
+        "accent": "#7AA2F7", "accent_hover": "#89B4FA", "accent_pressed": "#5D7FD8",
+        "header_bg": "#24283B", "header_fg": "#C0CAF5",
+        "table_bg": "#1A1B26", "table_alt": "#1F2335",
+        "border": "#414868", "status_bg": "#13141F",
+        "tab_bg": "#24283B", "tab_selected": "#1A1B26",
+        "selection": "#2D3149", "input_bg": "#24283B",
+        "row_matched": "#204A20", "row_not_found": "#701830",
+        "row_missing": "#6E1450", "row_duplicate": "#585010", "row_xref": "#263278",
+        "row_owned": "#1A4A20", "row_wishlist": "#4A2868",
+    },
+    "Solarized": {
+        # Precision warm light — https://ethanschoonover.com/solarized/
+        "app_bg": "#FDF6E3", "app_fg": "#586E75",
+        "accent": "#268BD2", "accent_hover": "#2AA198", "accent_pressed": "#1A6DA8",
+        "header_bg": "#073642", "header_fg": "#93A1A1",
+        "table_bg": "#FDF6E3", "table_alt": "#EEE8D5",
+        "border": "#D0CBB8", "status_bg": "#EEE8D5",
+        "tab_bg": "#EEE8D5", "tab_selected": "#FDF6E3",
+        "selection": "#C8DDEF", "input_bg": "#FDF6E3",
+        "row_matched": "#B8E6B8", "row_not_found": "#F8C8A8",
+        "row_missing": "#F8B0C0", "row_duplicate": "#F8F0A0", "row_xref": "#C8E0F8",
+        "row_owned": "#C8E6C8", "row_wishlist": "#E8D8F8",
+    },
+    "Everforest": {
+        # Forest dark green — https://github.com/sainnhe/everforest
+        "app_bg": "#2D3B2D", "app_fg": "#D5C9A0",
+        "accent": "#8DA101", "accent_hover": "#A3B820", "accent_pressed": "#6A7A01",
+        "header_bg": "#374535", "header_fg": "#E9DDB0",
+        "table_bg": "#2D3B2D", "table_alt": "#374535",
+        "border": "#4A5E48", "status_bg": "#232F22",
+        "tab_bg": "#374535", "tab_selected": "#2D3B2D",
+        "selection": "#3D5040", "input_bg": "#374535",
+        "row_matched": "#3C6A20", "row_not_found": "#A04020",
+        "row_missing": "#A03050", "row_duplicate": "#706520", "row_xref": "#2E6262",
+        "row_owned": "#3A6628", "row_wishlist": "#783F65",
+    },
+    "Catppuccin": {
+        # Soft pastel dark (Mocha) — https://github.com/catppuccin/catppuccin
+        "app_bg": "#1E1E2E", "app_fg": "#CDD6F4",
+        "accent": "#89B4FA", "accent_hover": "#74C7EC", "accent_pressed": "#6A9CE8",
+        "header_bg": "#313244", "header_fg": "#CDD6F4",
+        "table_bg": "#1E1E2E", "table_alt": "#272738",
+        "border": "#45475A", "status_bg": "#181825",
+        "tab_bg": "#313244", "tab_selected": "#1E1E2E",
+        "selection": "#313244", "input_bg": "#313244",
+        "row_matched": "#1C5A28", "row_not_found": "#6A2038",
+        "row_missing": "#7A1850", "row_duplicate": "#585010", "row_xref": "#283A90",
+        "row_owned": "#1C4E28", "row_wishlist": "#4A2870",
+    },
 }
 
 COLOR_LABELS = [
@@ -137,29 +228,31 @@ class ThemeTab(QWidget):
 
     def _build_ui(self):
         layout = QHBoxLayout(self)
+        layout.setContentsMargins(8, 8, 8, 8)
+        layout.setSpacing(12)
 
-        # ── Left: theme selector ──────────────────────────────────────────────
-        left = QWidget()
-        left.setFixedWidth(130)
-        left_layout = QVBoxLayout(left)
-        left_layout.setContentsMargins(0, 0, 8, 0)
-        left_layout.addWidget(QLabel("Presets"))
+        # ── Preset list ───────────────────────────────────────────────────────
+        preset_panel = QWidget()
+        preset_panel.setFixedWidth(130)
+        preset_layout = QVBoxLayout(preset_panel)
+        preset_layout.setContentsMargins(0, 0, 0, 0)
+        preset_layout.addWidget(QLabel("Presets"))
 
         self.theme_list = QListWidget()
         for name in list(THEMES.keys()) + ["Custom"]:
             self.theme_list.addItem(QListWidgetItem(name))
         self.theme_list.currentTextChanged.connect(self._on_preset_selected)
-        left_layout.addWidget(self.theme_list)
-        layout.addWidget(left)
+        preset_layout.addWidget(self.theme_list)
+        layout.addWidget(preset_panel)
 
-        # ── Right: swatches + apply ───────────────────────────────────────────
-        right = QWidget()
-        right_layout = QVBoxLayout(right)
-        right_layout.setContentsMargins(0, 0, 0, 0)
+        # ── Swatches panel (2-column grid) ────────────────────────────────────
+        swatch_panel = QWidget()
+        swatch_panel_layout = QVBoxLayout(swatch_panel)
+        swatch_panel_layout.setContentsMargins(0, 0, 0, 0)
 
         hint = QLabel("Click any color swatch to customize. Changes become Custom.")
         hint.setWordWrap(True)
-        right_layout.addWidget(hint)
+        swatch_panel_layout.addWidget(hint)
 
         scroll = QScrollArea()
         scroll.setWidgetResizable(True)
@@ -168,30 +261,37 @@ class ThemeTab(QWidget):
         swatch_container = QWidget()
         grid = QGridLayout(swatch_container)
         grid.setVerticalSpacing(5)
-        grid.setHorizontalSpacing(10)
+        grid.setHorizontalSpacing(14)
+        # 4 grid columns: label-A | swatch-A | label-B | swatch-B
         grid.setColumnStretch(0, 1)
         grid.setColumnMinimumWidth(1, 110)
+        grid.setColumnStretch(2, 1)
+        grid.setColumnMinimumWidth(3, 110)
 
-        for row_idx, (label_text, key) in enumerate(COLOR_LABELS):
-            grid.addWidget(QLabel(label_text), row_idx, 0, Qt.AlignmentFlag.AlignRight)
+        num_rows = (len(COLOR_LABELS) + 1) // 2
+        for i, (label_text, key) in enumerate(COLOR_LABELS):
+            row = i % num_rows
+            col_base = (i // num_rows) * 2  # 0 for left column, 2 for right column
+            grid.addWidget(QLabel(label_text), row, col_base, Qt.AlignmentFlag.AlignRight)
             btn = QPushButton()
             btn.setFixedHeight(22)
             btn.setMinimumWidth(110)
             btn.clicked.connect(lambda checked, k=key: self._on_swatch_clicked(k))
             self._swatches[key] = btn
-            grid.addWidget(btn, row_idx, 1)
+            grid.addWidget(btn, row, col_base + 1)
 
         scroll.setWidget(swatch_container)
-        right_layout.addWidget(scroll)
+        swatch_panel_layout.addWidget(scroll)
 
         self.apply_btn = QPushButton("Apply Theme")
         self.apply_btn.clicked.connect(self._on_apply)
-        right_layout.addWidget(self.apply_btn)
+        swatch_panel_layout.addWidget(self.apply_btn)
 
         self.status_label = QLabel("")
-        right_layout.addWidget(self.status_label)
+        swatch_panel_layout.addWidget(self.status_label)
 
-        layout.addWidget(right, 1)
+        layout.addWidget(swatch_panel)
+        layout.addStretch()
 
         self._refresh_swatches()
 

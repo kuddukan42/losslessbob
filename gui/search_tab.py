@@ -176,6 +176,7 @@ class SearchTab(QWidget):
         self._page: int = 0
         self._page_size: int = 50
         self._resizing_programmatically: bool = False
+        self._widths_applied: bool = False
         self._qsettings = QSettings(_QSETTINGS_ORG, _QSETTINGS_APP)
         self._col_widths: list | None = self._load_col_widths()
         self._load_page_size()
@@ -308,6 +309,7 @@ class SearchTab(QWidget):
         self.view.setColumnWidth(_DESC_COL, _DESC_DEFAULT_W)
         self._resizing_programmatically = False
         self._col_widths = [self.view.columnWidth(i) for i in range(len(HEADERS))]
+        self._widths_applied = True
         self._save_col_widths()
 
     def _apply_col_widths(self) -> None:
@@ -317,6 +319,7 @@ class SearchTab(QWidget):
         for i, w in enumerate(self._col_widths):
             self.view.setColumnWidth(i, w)
         self._resizing_programmatically = False
+        self._widths_applied = True
 
     def _on_header_context(self, pos) -> None:
         col = self.view.horizontalHeader().logicalIndexAt(pos)
@@ -392,8 +395,10 @@ class SearchTab(QWidget):
         end = start + self._page_size
 
         # Snapshot current (possibly user-dragged) widths before model reset
-        # clears the QHeaderView sections.
-        if self._col_widths is not None:
+        # clears the QHeaderView sections.  Only snapshot after widths have been
+        # applied at least once — otherwise we'd overwrite loaded settings with
+        # Qt's 100px defaults before they were ever applied to the view.
+        if self._col_widths is not None and self._widths_applied:
             self._col_widths = [self.view.columnWidth(i) for i in range(len(HEADERS))]
 
         self.model.set_rows(results[start:end])

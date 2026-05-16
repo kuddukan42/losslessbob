@@ -1,3 +1,63 @@
+[2026-05-16] — feat(gui): add hover highlight to tab bar tabs
+
+Added
+
+gui/styles.py: Added `QTabBar::tab:hover` rule that blends `tab_bg` halfway toward `tab_selected` using the existing `_blend_hex()` helper, giving a subtle visual cue as the mouse moves over inactive tabs without affecting the selected tab's appearance.
+
+---
+
+[2026-05-16] — fix(gui): button text color now auto-contrasts against accent instead of using header_fg
+
+Fixed
+
+gui/styles.py: `QPushButton` text was hardcoded to `{t['header_fg']}` (Table Header Text), which had no logical connection to buttons and gave wrong results on many themes. Added `_button_text_color()` which picks black or white based on the accent's luminance — the same approach the theme swatch labels use. Each button state (normal, hover, pressed) now gets its own computed text color.
+
+---
+
+[2026-05-16] — fix(gui): disabled buttons now match the active theme instead of rendering as hardcoded gray
+
+Fixed
+
+gui/styles.py: `QPushButton:disabled` was hardcoded to `#A0A0A0` / `#E0E0E0` regardless of theme. On dark themes like Tokyo Night the gray buttons clashed visually with the dark background. Added `_blend_hex()` helper and replaced the hardcoded values with theme-derived colors (accent blended 65% toward app_bg for background, app_fg blended 55% toward app_bg for text).
+
+---
+
+[2026-05-16] — feat(gui): move theme swatches to left side and split into 2-column grid
+
+Changed
+
+gui/theme_tab.py: Restructured `_build_ui` so the swatch panel sits immediately right of the preset list (no right-side expansion). The `QGridLayout` now uses 4 columns (label-A | swatch-A | label-B | swatch-B), distributing the 22 color entries across 11 rows × 2 columns. Added `layout.addStretch()` at the end so the panels stay left-anchored.
+
+---
+
+[2026-05-16] — fix(gui): search tab column widths no longer reset to 100px on every launch
+
+Fixed
+
+gui/search_tab.py: Added `_widths_applied` flag to guard the pre-reset snapshot in `_render_page()`. The snapshot was executing before `_apply_col_widths()` had ever run, so Qt's 100px default widths overwrote the values loaded from QSettings, destroying saved preferences. The snapshot is now skipped until widths have been applied at least once.
+
+---
+
+[2026-05-16] — fix(scraper): use correct SMF form field name "description" instead of "desc"
+
+Fixed
+
+backend/forum_poster.py: Changed "desc": lb_id to "description": lb_id in both the initial POST payload and the retry payload. The SMF modify/post form uses name="description" (confirmed from live page source); the previous key "desc" was silently ignored by the server, so the LB number never appeared in the topic description field. Updated debug log line to match.
+
+---
+
+[2026-05-16] — feat(gui): add 7 new preset themes (Nord, Gruvbox, Monokai, Tokyo Night, Solarized, Everforest, Catppuccin)
+
+Added
+
+gui/theme_tab.py: Nord (Arctic blue-gray), Gruvbox (earthy retro dark), Monokai (vivid dark with cyan accents), Tokyo Night (neon city dark), Solarized (precision warm light), Everforest (forest dark-green), Catppuccin Mocha (soft pastel dark). All 14 row-color keys verified for luminance contrast against each theme's table background. Preset list now shows 14 named themes plus Custom.
+
+Changed
+
+PROJECT.md: Updated Theme Tab description from "Six preset themes" to fourteen.
+
+---
+
 [2026-05-15] — fix(gui): search-tab "missing" row hardcoded yellow; dark-theme row luma audit
 
 Fixed
