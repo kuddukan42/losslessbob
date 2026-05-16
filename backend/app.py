@@ -999,6 +999,73 @@ def create_app():
         except Exception as exc:
             return jsonify({"ok": False, "error": str(exc)}), 500
 
+    @app.route("/api/torrent/<int:torrent_id>/qbt_remove", methods=["POST"])
+    def qbt_remove(torrent_id):
+        """Remove a torrent from qBittorrent (content files are NOT deleted).
+
+        Uses the stored infohash. Clears added_to_qbt on success.
+        Body: {host?, port?, username?, password?, api_key?}
+        Returns: {ok, error?}
+        """
+        try:
+            from backend.qbittorrent import remove_torrent
+            from backend.credentials import get_credentials, SERVICE_QBT, SERVICE_QBT_KEY
+            data = request.get_json() or {}
+            host = data.get("host") or database.get_meta("qbt_host") or "localhost"
+            port = int(data.get("port") or database.get_meta("qbt_port") or 8080)
+            api_key = data.get("api_key") or ""
+            if not api_key:
+                _, api_key = get_credentials(SERVICE_QBT_KEY)
+            username = data.get("username") or ""
+            password = data.get("password") or ""
+            if not api_key and not username:
+                username, password = get_credentials(SERVICE_QBT)
+
+            conn = database.get_connection()
+            row = conn.execute(
+                "SELECT infohash FROM torrents WHERE id=?", (torrent_id,)
+            ).fetchone()
+            if not row:
+                return jsonify({"ok": False, "error": f"No torrent record id={torrent_id}"}), 404
+
+            result = remove_torrent(
+                infohash=row["infohash"] or "",
+                host=host, port=port,
+                username=username, password=password, api_key=api_key,
+            )
+            if result["ok"]:
+                database.update_torrent_record(
+                    torrent_id, {"added_to_qbt": 0, "added_to_qbt_at": None}
+                )
+            return jsonify(result)
+        except Exception as exc:
+            return jsonify({"ok": False, "error": str(exc)}), 500
+
+    @app.route("/api/torrent/<int:torrent_id>/file", methods=["DELETE"])
+    def torrent_file_delete(torrent_id):
+        """Delete the .torrent file from disk and clear torrent_path in the DB.
+
+        Does not remove from qBittorrent.
+        Returns: {ok, error?}
+        """
+        try:
+            conn = database.get_connection()
+            row = conn.execute(
+                "SELECT torrent_path FROM torrents WHERE id=?", (torrent_id,)
+            ).fetchone()
+            if not row:
+                return jsonify({"ok": False, "error": f"No torrent record id={torrent_id}"}), 404
+
+            torrent_path = row["torrent_path"]
+            if torrent_path:
+                p = Path(torrent_path)
+                if p.exists():
+                    p.unlink()
+            database.update_torrent_record(torrent_id, {"torrent_path": None})
+            return jsonify({"ok": True})
+        except Exception as exc:
+            return jsonify({"ok": False, "error": str(exc)}), 500
+
     # ── Forum Posting ─────────────────────────────────────────────────────────
 
     @app.route("/api/wtrf/test", methods=["POST"])
@@ -1103,7 +1170,39 @@ def create_app():
                 subject_override=data.get("subject") or None,
                 body_override=data.get("body") or None,
             )
+            if result.get("ok"):
+                from backend.torrent_maker import _parse_date
+                subj = data.get("subject") or ""
+                if not subj:
+                    iso_date = _parse_date(entry.get("date_str") or "")
+                    loc = (entry.get("location") or "").strip()
+                    lb_id = f"LB-{lb:05d}"
+                    subj = (f"{iso_date} {loc} ({lb_id})" if iso_date and loc
+                            else f"{loc} ({lb_id})" if loc else lb_id)
+                database.add_forum_post(
+                    lb_number=lb,
+                    subject=subj,
+                    topic_url=result.get("topic_url", ""),
+                    board_id=board_id,
+                )
             return jsonify(result)
+        except Exception as exc:
+            return jsonify({"ok": False, "error": str(exc)}), 500
+
+    @app.route("/api/entry/<int:lb>/forum_posts", methods=["GET"])
+    def forum_posts_list(lb):
+        """Return all logged forum posts for an LB entry, newest first."""
+        try:
+            return jsonify(database.get_forum_posts_for_lb(lb))
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/forum_post/<int:post_id>", methods=["DELETE"])
+    def forum_post_delete(post_id):
+        """Delete a forum post log record by id."""
+        try:
+            database.delete_forum_post(post_id)
+            return jsonify({"ok": True})
         except Exception as exc:
             return jsonify({"ok": False, "error": str(exc)}), 500
 

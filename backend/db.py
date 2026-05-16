@@ -134,6 +134,17 @@ CREATE TABLE IF NOT EXISTS rename_history (
 );
 CREATE INDEX IF NOT EXISTS idx_rename_history_lb ON rename_history(lb_number);
 
+CREATE TABLE IF NOT EXISTS forum_posts (
+    id          INTEGER PRIMARY KEY AUTOINCREMENT,
+    lb_number   INTEGER NOT NULL,
+    subject     TEXT,
+    topic_url   TEXT,
+    board_id    INTEGER,
+    posted_at   TEXT NOT NULL DEFAULT (datetime('now')),
+    FOREIGN KEY (lb_number) REFERENCES entries(lb_number)
+);
+CREATE INDEX IF NOT EXISTS idx_forum_posts_lb ON forum_posts(lb_number, posted_at DESC);
+
 CREATE VIRTUAL TABLE IF NOT EXISTS entries_fts USING fts5(
     description,
     setlist,
@@ -851,6 +862,34 @@ def get_torrents_for_lb(lb_number: int, db_path=None) -> list:
             (lb_number,)
         ).fetchall()
     return [dict(r) for r in rows]
+
+
+def add_forum_post(lb_number: int, subject: str, topic_url: str,
+                   board_id: int | None = None, db_path=None) -> int:
+    """Record a successful forum post and return its new row id."""
+    with get_connection(db_path) as conn:
+        cur = conn.execute(
+            "INSERT INTO forum_posts(lb_number, subject, topic_url, board_id) "
+            "VALUES (?, ?, ?, ?)",
+            (lb_number, subject, topic_url, board_id),
+        )
+        return cur.lastrowid
+
+
+def get_forum_posts_for_lb(lb_number: int, db_path=None) -> list:
+    """Return all forum post records for an LB entry, newest first."""
+    with get_connection(db_path) as conn:
+        rows = conn.execute(
+            "SELECT * FROM forum_posts WHERE lb_number=? ORDER BY posted_at DESC",
+            (lb_number,),
+        ).fetchall()
+    return [dict(r) for r in rows]
+
+
+def delete_forum_post(post_id: int, db_path=None) -> None:
+    """Delete a forum post record by id."""
+    with get_connection(db_path) as conn:
+        conn.execute("DELETE FROM forum_posts WHERE id=?", (post_id,))
 
 
 def add_torrent_record(lb_number: int, torrent_path: str, source_folder: str,

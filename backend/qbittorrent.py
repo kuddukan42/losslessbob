@@ -238,3 +238,59 @@ def add_torrent_from_db(
         )
 
     return result
+
+
+def remove_torrent(
+    infohash: str,
+    host: str,
+    port: int,
+    username: str = "",
+    password: str = "",
+    api_key: str = "",
+) -> dict:
+    """Remove a torrent from qBittorrent without deleting the content files.
+
+    Uses POST /api/v2/torrents/delete with deleteFiles=false so only the
+    torrent entry is removed from qBittorrent's list; the seeded audio files
+    on disk are left untouched.
+
+    Args:
+        infohash: Hex infohash of the torrent to remove.
+        host: qBittorrent WebUI host.
+        port: Port.
+        username: WebUI username (ignored when api_key is set).
+        password: WebUI password (ignored when api_key is set).
+        api_key: API key (qBittorrent 5+). Takes priority over username/password.
+
+    Returns:
+        Dict with keys: ok (bool), error (str if ok=False).
+    """
+    if not infohash:
+        return {"ok": False, "error": "No infohash — cannot identify torrent in qBittorrent"}
+
+    base = _base_url(host, port)
+    session = _make_session(base, api_key)
+
+    try:
+        if not api_key:
+            err = _login(session, base, username, password)
+            if err:
+                return err
+
+        r = session.post(
+            base + "/api/v2/torrents/delete",
+            data={"hashes": infohash.lower(), "deleteFiles": "false"},
+            timeout=15,
+        )
+
+        if not api_key:
+            session.post(base + _LOGOUT_PATH, timeout=5)
+
+        if r.status_code == 200:
+            return {"ok": True}
+        return {"ok": False, "error": f"qBittorrent responded HTTP {r.status_code}: {r.text[:200]}"}
+
+    except requests.exceptions.ConnectionError:
+        return {"ok": False, "error": f"Cannot connect to {base}"}
+    except Exception as exc:
+        return {"ok": False, "error": str(exc)}

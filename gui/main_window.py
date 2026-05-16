@@ -157,6 +157,7 @@ class MainWindow(QMainWindow):
         self.setup_tab.search_page_size_changed.connect(self.search_tab.set_page_size)
         self.setup_tab.search_page_size_changed.connect(self.collection_tab.set_page_size)
         self.lookup_tab.lookup_completed.connect(self.rename_tab.populate_from_lookup)
+        self.collection_tab.send_to_spectrograms.connect(self._on_send_to_spectrograms)
         self.theme_tab.theme_applied.connect(self._on_theme_applied)
 
         self.theme_tab.load_and_apply_saved()
@@ -231,6 +232,10 @@ class MainWindow(QMainWindow):
     def _on_theme_applied(self):
         self.setStyleSheet(styles.MAIN_STYLESHEET)
         self.lookup_tab.refresh_colors()
+
+    def _on_send_to_spectrograms(self, folders: list):
+        self.spectrogram_tab._add_folders(folders)
+        self.tabs.setCurrentIndex(self.tabs.indexOf(self.spectrogram_tab))
 
     def _on_search_lookup_lb(self, lb_number):
         self.tabs.setCurrentIndex(self.tabs.indexOf(self.lookup_tab))

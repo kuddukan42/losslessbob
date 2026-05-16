@@ -124,3 +124,11 @@ Status: Done
 Added: 2026-05-14
 Closed: 2026-05-14
 Description: The db_reset route drops legacy tables but not the new torrents and rename_history tables added in Phase 1. Fixed immediately: added DROP TABLE IF EXISTS rename_history and torrents to the executescript drop sequence in backend/app.py:db_reset.
+
+---
+
+TODO-016: Make forum post footer attribution (username/version) configurable
+Priority: Low
+Status: Open
+Added: 2026-05-15
+Description: The footer string "Brought to you by kuddukan, via the Bob-O-Matic v1.0." is hard-coded in forum_poster.py as _FOOTER. Consider reading username from forum credentials and version from a project constant so it doesn't need manual updates.

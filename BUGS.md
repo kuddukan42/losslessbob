@@ -1,3 +1,47 @@
+BUG-050: _post_url() hardcoded wrong SMF handler — form action= is the authoritative POST target
+Status: Fixed
+File(s): backend/forum_poster.py:post_lb_topic, _scrape_form_fields
+Reported: 2026-05-15
+Fixed: 2026-05-15
+Description: Even after BUG-044 added board_id to the POST URL, the constructed URL still used a hardcoded action=post;sa=post2 path that does not match the form's actual action attribute, causing posts to land on the wrong SMF handler.
+Root cause: _post_url(board_id) was built from a hardcoded string rather than reading the form's own action= value. SMF's compose form is the only reliable source of the correct POST endpoint.
+Fix: Removed _post_url(). _scrape_form_fields() now returns (fields, form_action, diag) where form_action is extracted from _find_post_form(soup).get("action"). post_lb_topic() uses form_action as the POST target; fails fast if form_action is empty.
+
+---
+
+BUG-049: Retry path did not handle board-redirect success — always reported failure after confirmation resubmit
+Status: Fixed
+File(s): backend/forum_poster.py:post_lb_topic (retry block)
+Reported: 2026-05-15
+Fixed: 2026-05-15
+Description: After the lock-warning retry was introduced (BUG-046), the retry POST only checked for topic= in the redirect Location. This forum returns a board=N.0 redirect on success, so every successful retry was reported as "Retry: unexpected redirect".
+Root cause: The retry success-detection block was copied from the pre-board-redirect era and only handled the topic= case.
+Fix: Extended retry success detection to mirror the initial POST: checks topic= first, then board=N.0, then treats anything else as a failure. Both paths call _find_newest_topic() on the board page sorted by first_post desc.
+
+---
+
+BUG-048: _extract_smf_error returned phantom error text on every compose page — hidden errorbox triggered
+Status: Fixed
+File(s): backend/forum_poster.py:_extract_smf_error
+Reported: 2026-05-15
+Fixed: 2026-05-15
+Description: _extract_smf_error() returned "SMF: ..." error strings even when the post had succeeded, causing false failure reports. The function scraped the errorbox/windowbg divs that are always present (but empty and display:none) on the compose page.
+Root cause: Error-element checks did not filter out hidden elements. A valid empty errorbox (display:none) matched the class selector and its empty text still satisfied len > 10 when combined with whitespace from nested elements.
+Fix: Added _is_element_hidden() check before extracting text from any candidate error element. Elements with inline display:none are skipped entirely.
+
+---
+
+BUG-047: Lock-warning retry fired on every failed post — #lock_warning always present but hidden
+Status: Fixed
+File(s): backend/forum_poster.py:post_lb_topic
+Reported: 2026-05-15
+Fixed: 2026-05-15
+Description: Any failed post that returned HTTP 200 (no redirect) triggered the lock-warning retry path, even when no real lock warning was shown. The retry then failed identically, masking the real error.
+Root cause: The lock-warning check used soup.find(id="lock_warning") without checking whether the element was visible. SMF includes #lock_warning on every compose page but sets display:none when there is no active warning. The check therefore always matched.
+Fix: Added _is_element_hidden() helper. is_lock_warning is now True only when the element exists AND does not carry a display:none inline style.
+
+---
+
 BUG-046: Forum post stuck in lock-warning loop — board requires admin confirmation resubmit
 Status: Fixed
 File(s): backend/forum_poster.py:post_lb_topic

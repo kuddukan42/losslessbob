@@ -14,7 +14,7 @@ from PyQt6.QtWidgets import (
     QLabel, QLineEdit, QAbstractItemView, QHeaderView, QMenu, QDialog,
     QFormLayout, QDialogButtonBox, QTableWidget, QTableWidgetItem,
     QFileDialog, QMessageBox, QComboBox, QCheckBox, QTreeWidget, QTreeWidgetItem,
-    QGroupBox, QTextEdit, QSplitter,
+    QGroupBox, QTextEdit,
 )
 
 from gui.styles import ROW_OWNED, ROW_WISHLIST
@@ -402,6 +402,7 @@ class _PersonalMetaDialog(QDialog):
 
 class CollectionTab(QWidget):
     lookup_lb = pyqtSignal(int)
+    send_to_spectrograms = pyqtSignal(list)  # list[str] of disk_path values
 
     def __init__(self, flask_port, parent=None):
         super().__init__(parent)
@@ -417,6 +418,10 @@ class CollectionTab(QWidget):
         self._duplicates_loaded: bool = False
         self._torrent_history_records: list = []
         self._current_history_lb: int | None = None
+        self._history_gen: int = 0  # incremented each load; guards against stale responses
+        self._forum_posts_records: list = []
+        self._current_forum_posts_lb: int | None = None
+        self._forum_posts_gen: int = 0
         self._load_page_size()
         self._build_ui()
         self.refresh_collection()
@@ -572,7 +577,7 @@ class CollectionTab(QWidget):
         self.coll_view.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
         self.coll_view.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
         self.coll_view.customContextMenuRequested.connect(self._on_coll_context)
-        layout.addWidget(self.coll_view)
+        layout.addWidget(self.coll_view, stretch=1)
         self.coll_view.selectionModel().selectionChanged.connect(self._on_coll_selection_changed)
 
         self.coll_status = QLabel("")
@@ -1239,6 +1244,12 @@ class CollectionTab(QWidget):
             open_act.triggered.connect(lambda: self._open_folders(rows))
             menu.addAction(open_act)
 
+            spec_paths = [r["disk_path"] for r in rows if r.get("disk_path") and Path(r["disk_path"]).is_dir()]
+            if spec_paths:
+                spec_act = QAction("Generate Spectrograms", self)
+                spec_act.triggered.connect(lambda: self.send_to_spectrograms.emit(spec_paths))
+                menu.addAction(spec_act)
+
         if index.isValid():
             row = self.coll_model.get_row(index.row())
             if row:
@@ -1450,11 +1461,52 @@ class CollectionTab(QWidget):
             return
         row = rows[0]
         lb = row["lb_number"]
+        disk_path = row.get("disk_path", "")
         flask_port = self.flask_port
-        self.coll_status.setText(f"Building preview for LB-{lb:05d}…")
+        self.coll_status.setText(f"Preparing LB-{lb:05d} for forum post…")
         self.post_forum_btn.setEnabled(False)
 
         def call():
+            # 1. Check for an existing torrent file.
+            torrent_list = requests.get(
+                f"http://127.0.0.1:{flask_port}/api/torrent/{lb}",
+                timeout=15,
+            ).json()
+            has_torrent = isinstance(torrent_list, list) and any(
+                t.get("torrent_file_exists") for t in torrent_list
+            )
+
+            if not has_torrent:
+                # 2. Need a source folder to create the torrent.
+                if not disk_path:
+                    return {
+                        "ok": False,
+                        "error": (
+                            "No torrent found for this entry and no disk path is set. "
+                            "Set the disk path in the collection first."
+                        ),
+                    }
+                # 3. Create the torrent.
+                ct = requests.post(
+                    f"http://127.0.0.1:{flask_port}/api/torrent/create",
+                    json={"lb_number": lb, "source_folder": disk_path},
+                    timeout=300,
+                ).json()
+                if not ct.get("ok"):
+                    return {
+                        "ok": False,
+                        "error": f"Torrent creation failed: {ct.get('error', 'unknown')}",
+                    }
+                # 4. Add to qBittorrent (failure is non-fatal — post still proceeds).
+                torrent_id = ct.get("torrent_id")
+                if torrent_id:
+                    requests.post(
+                        f"http://127.0.0.1:{flask_port}/api/qbt/add",
+                        json={"torrent_id": torrent_id},
+                        timeout=30,
+                    )
+
+            # 5. Build the preview.
             return requests.get(
                 f"http://127.0.0.1:{flask_port}/api/entry/{lb}/preview_forum",
                 timeout=15,
@@ -1463,7 +1515,7 @@ class CollectionTab(QWidget):
         w = _ApiWorker(call)
         w.finished.connect(lambda r: self._on_preview_forum_ready(r, lb))
         w.error.connect(lambda e: (
-            self.coll_status.setText(f"Error building preview: {e}"),
+            self.coll_status.setText(f"Error: {e}"),
             self.post_forum_btn.setEnabled(True),
         ))
         self._workers.append(w)
@@ -1471,6 +1523,9 @@ class CollectionTab(QWidget):
 
     def _on_preview_forum_ready(self, result: dict, lb: int):
         self.post_forum_btn.setEnabled(True)
+        # Refresh history in case a torrent was auto-created during pre-flight.
+        if self._current_history_lb == lb:
+            self._load_torrent_history(lb)
         if result.get("ok") is False:
             self.coll_status.setText(f"Preview failed: {result.get('error', 'unknown')}")
             return
@@ -1541,6 +1596,10 @@ class CollectionTab(QWidget):
         if result.get("ok"):
             url = result.get("topic_url", "")
             self.coll_status.setText(f"Posted LB-{lb:05d} to forum.  {url}")
+            # Refresh forum post history and switch to that tab.
+            if self._current_forum_posts_lb == lb:
+                self._load_forum_posts(lb)
+                self.history_tabs.setCurrentIndex(1)
             if url:
                 if QMessageBox.question(
                     self, "Posted",
@@ -1551,16 +1610,25 @@ class CollectionTab(QWidget):
         else:
             self.coll_status.setText(f"Forum post failed: {result.get('error', 'unknown')}")
 
-    # ── Torrent History Panel ─────────────────────────────────────────────────
+    # ── History Panel (Torrents + Forum Posts) ───────────────────────────────
 
     def _build_torrent_history_panel(self) -> QGroupBox:
-        group = QGroupBox("Torrent History")
+        group = QGroupBox("History")
         outer = QVBoxLayout(group)
         outer.setContentsMargins(6, 6, 6, 6)
         outer.setSpacing(4)
 
+        tabs = QTabWidget()
+        tabs.setDocumentMode(True)
+
+        # ── Torrents tab ──────────────────────────────────────────────────────
+        torrent_tab = QWidget()
+        torrent_layout = QVBoxLayout(torrent_tab)
+        torrent_layout.setContentsMargins(0, 4, 0, 0)
+        torrent_layout.setSpacing(4)
+
         self.torrent_history_label = QLabel("Select one entry to view its torrent history.")
-        outer.addWidget(self.torrent_history_label)
+        torrent_layout.addWidget(self.torrent_history_label)
 
         self.torrent_history_table = QTableWidget(0, 5)
         self.torrent_history_table.setHorizontalHeaderLabels(
@@ -1576,8 +1644,8 @@ class CollectionTab(QWidget):
         self.torrent_history_table.setColumnWidth(1, 138)
         self.torrent_history_table.setColumnWidth(2, 210)
         self.torrent_history_table.setColumnWidth(3, 210)
-        self.torrent_history_table.setMaximumHeight(150)
-        outer.addWidget(self.torrent_history_table)
+        self.torrent_history_table.setMaximumHeight(130)
+        torrent_layout.addWidget(self.torrent_history_table)
 
         hist_btn_row = QHBoxLayout()
         self.history_add_qbt_btn = QPushButton("Add to qBittorrent")
@@ -1598,16 +1666,151 @@ class CollectionTab(QWidget):
         hist_btn_row.addWidget(self.history_relocate_btn)
 
         hist_btn_row.addStretch()
-        outer.addLayout(hist_btn_row)
+        torrent_layout.addLayout(hist_btn_row)
 
         self.torrent_history_status = QLabel("")
-        outer.addWidget(self.torrent_history_status)
+        torrent_layout.addWidget(self.torrent_history_status)
+
+        tabs.addTab(torrent_tab, "Torrents")
+
+        # ── Forum Posts tab ───────────────────────────────────────────────────
+        forum_tab = QWidget()
+        forum_layout = QVBoxLayout(forum_tab)
+        forum_layout.setContentsMargins(0, 4, 0, 0)
+        forum_layout.setSpacing(4)
+
+        self.forum_posts_label = QLabel("Select one entry to view its forum post history.")
+        forum_layout.addWidget(self.forum_posts_label)
+
+        self.forum_posts_table = QTableWidget(0, 3)
+        self.forum_posts_table.setHorizontalHeaderLabels(["Posted", "Subject", "URL"])
+        self.forum_posts_table.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
+        self.forum_posts_table.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
+        self.forum_posts_table.setSelectionMode(QAbstractItemView.SelectionMode.SingleSelection)
+        self.forum_posts_table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
+        self.forum_posts_table.setColumnWidth(0, 145)
+        self.forum_posts_table.setColumnWidth(1, 280)
+        self.forum_posts_table.setColumnWidth(2, 300)
+        self.forum_posts_table.setMaximumHeight(130)
+        forum_layout.addWidget(self.forum_posts_table)
+
+        fp_btn_row = QHBoxLayout()
+        self.forum_open_btn = QPushButton("Open in Browser")
+        self.forum_open_btn.setEnabled(False)
+        self.forum_open_btn.clicked.connect(self._on_forum_post_open)
+        fp_btn_row.addWidget(self.forum_open_btn)
+
+        self.forum_delete_btn = QPushButton("Remove Record")
+        self.forum_delete_btn.setEnabled(False)
+        self.forum_delete_btn.setToolTip("Remove this log entry (does not delete the forum post)")
+        self.forum_delete_btn.clicked.connect(self._on_forum_post_delete)
+        fp_btn_row.addWidget(self.forum_delete_btn)
+
+        fp_btn_row.addStretch()
+        forum_layout.addLayout(fp_btn_row)
+
+        self.forum_posts_table.itemSelectionChanged.connect(self._on_forum_post_selection)
+
+        tabs.addTab(forum_tab, "Forum Posts")
+
+        outer.addWidget(tabs)
+        self.history_tabs = tabs
         return group
+
+    def _load_forum_posts(self, lb: int) -> None:
+        self._current_forum_posts_lb = lb
+        self._forum_posts_gen += 1
+        gen = self._forum_posts_gen
+        self.forum_posts_label.setText(f"Loading forum post history for LB-{lb:05d}…")
+        flask_port = self.flask_port
+
+        def call():
+            return requests.get(
+                f"http://127.0.0.1:{flask_port}/api/entry/{lb}/forum_posts", timeout=10
+            ).json()
+
+        w = _ApiWorker(call)
+        w.finished.connect(lambda data, _lb=lb, _gen=gen: self._populate_forum_posts(data, _lb, _gen))
+        w.error.connect(lambda e: self.forum_posts_label.setText(f"Error: {e}"))
+        self._workers.append(w)
+        w.start()
+
+    def _populate_forum_posts(self, records, lb: int, gen: int) -> None:
+        if lb != self._current_forum_posts_lb or gen != self._forum_posts_gen:
+            return
+        if isinstance(records, dict):
+            self.forum_posts_label.setText(f"Error: {records.get('error', 'unknown')}")
+            return
+
+        self._forum_posts_records = records
+        self.forum_posts_table.setRowCount(0)
+        self.forum_open_btn.setEnabled(False)
+        self.forum_delete_btn.setEnabled(False)
+
+        if not records:
+            self.forum_posts_label.setText(
+                f"LB-{lb:05d} — no forum posts logged yet."
+            )
+            return
+
+        self.forum_posts_label.setText(
+            f"LB-{lb:05d} — {len(records)} forum post(s):"
+        )
+        for rec in records:
+            row = self.forum_posts_table.rowCount()
+            self.forum_posts_table.insertRow(row)
+            posted = str(rec.get("posted_at") or "")[:19]
+            self.forum_posts_table.setItem(row, 0, QTableWidgetItem(posted))
+            self.forum_posts_table.setItem(row, 1, QTableWidgetItem(rec.get("subject") or ""))
+            url_item = QTableWidgetItem(rec.get("topic_url") or "")
+            url_item.setForeground(QColor("#1565C0"))
+            self.forum_posts_table.setItem(row, 2, url_item)
+
+    def _on_forum_post_selection(self) -> None:
+        rows = self.forum_posts_table.selectedItems()
+        has = bool(rows)
+        self.forum_open_btn.setEnabled(has)
+        self.forum_delete_btn.setEnabled(has)
+
+    def _on_forum_post_open(self) -> None:
+        row = self.forum_posts_table.currentRow()
+        if row < 0 or row >= len(self._forum_posts_records):
+            return
+        url = self._forum_posts_records[row].get("topic_url", "")
+        if url:
+            webbrowser.open(url)
+
+    def _on_forum_post_delete(self) -> None:
+        row = self.forum_posts_table.currentRow()
+        if row < 0 or row >= len(self._forum_posts_records):
+            return
+        rec = self._forum_posts_records[row]
+        if QMessageBox.question(
+            self, "Remove Record",
+            f"Remove this forum post log entry?\n{rec.get('topic_url', '')}",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+        ) != QMessageBox.StandardButton.Yes:
+            return
+        flask_port = self.flask_port
+        post_id = rec["id"]
+
+        def call():
+            return requests.delete(
+                f"http://127.0.0.1:{flask_port}/api/forum_post/{post_id}", timeout=10
+            ).json()
+
+        w = _ApiWorker(call)
+        w.finished.connect(lambda _: self._load_forum_posts(self._current_forum_posts_lb))
+        w.error.connect(lambda e: self.forum_posts_label.setText(f"Error: {e}"))
+        self._workers.append(w)
+        w.start()
 
     def _on_coll_selection_changed(self, _selected, _deselected) -> None:
         rows = self._selected_rows()
         if len(rows) == 1:
-            self._load_torrent_history(rows[0]["lb_number"])
+            lb = rows[0]["lb_number"]
+            self._load_torrent_history(lb)
+            self._load_forum_posts(lb)
         else:
             msg = (
                 "Select one entry to view its torrent history."
@@ -1625,6 +1828,8 @@ class CollectionTab(QWidget):
 
     def _load_torrent_history(self, lb: int) -> None:
         self._current_history_lb = lb
+        self._history_gen += 1
+        gen = self._history_gen
         self.torrent_history_label.setText(f"Loading torrent history for LB-{lb:05d}…")
         flask_port = self.flask_port
 
@@ -1634,14 +1839,14 @@ class CollectionTab(QWidget):
             ).json()
 
         w = _ApiWorker(call)
-        w.finished.connect(lambda data, _lb=lb: self._populate_torrent_history(data, _lb))
+        w.finished.connect(lambda data, _lb=lb, _gen=gen: self._populate_torrent_history(data, _lb, _gen))
         w.error.connect(lambda e: self.torrent_history_label.setText(f"Error loading history: {e}"))
         self._workers.append(w)
         w.start()
 
-    def _populate_torrent_history(self, records, lb: int) -> None:
-        if lb != self._current_history_lb:
-            return  # stale response from an earlier selection
+    def _populate_torrent_history(self, records, lb: int, gen: int) -> None:
+        if lb != self._current_history_lb or gen != self._history_gen:
+            return  # stale response — a newer load supersedes this one
         if isinstance(records, dict):
             self.torrent_history_label.setText(f"Error: {records.get('error', 'unknown')}")
             return
@@ -1740,6 +1945,18 @@ class CollectionTab(QWidget):
         relocate_act = QAction("Relocate Source Folder…", self)
         relocate_act.triggered.connect(lambda: self._history_relocate_record(rec))
         menu.addAction(relocate_act)
+
+        menu.addSeparator()
+
+        qbt_remove_act = QAction("Remove from qBittorrent", self)
+        qbt_remove_act.setEnabled(bool(rec.get("infohash")))
+        qbt_remove_act.triggered.connect(lambda: self._history_qbt_remove(rec))
+        menu.addAction(qbt_remove_act)
+
+        file_del_act = QAction("Delete .torrent File from Disk", self)
+        file_del_act.setEnabled(bool(rec.get("torrent_file_exists")))
+        file_del_act.triggered.connect(lambda: self._history_torrent_file_delete(rec))
+        menu.addAction(file_del_act)
 
         menu.exec(self.torrent_history_table.mapToGlobal(pos))
 
@@ -1857,6 +2074,83 @@ class CollectionTab(QWidget):
                 self._load_torrent_history(self._current_history_lb)
         else:
             self.torrent_history_status.setText(f"Error: {result.get('error', 'unknown')}")
+
+    # ── History: Remove from qBittorrent ─────────────────────────────────────
+
+    def _history_qbt_remove(self, rec: dict) -> None:
+        infohash = rec.get("infohash") or ""
+        if not infohash:
+            self.torrent_history_status.setText("No infohash stored — cannot identify in qBittorrent.")
+            return
+        if QMessageBox.question(
+            self, "Remove from qBittorrent",
+            "Remove this torrent from qBittorrent?\n\n"
+            "The seeded audio files on disk will NOT be deleted.",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+        ) != QMessageBox.StandardButton.Yes:
+            return
+
+        torrent_id = rec["id"]
+        flask_port = self.flask_port
+        self.torrent_history_status.setText("Removing from qBittorrent…")
+
+        def call():
+            return requests.post(
+                f"http://127.0.0.1:{flask_port}/api/torrent/{torrent_id}/qbt_remove",
+                json={},
+                timeout=20,
+            ).json()
+
+        def done(result):
+            if result.get("ok"):
+                self.torrent_history_status.setText("Removed from qBittorrent.")
+            else:
+                self.torrent_history_status.setText(f"Error: {result.get('error', 'unknown')}")
+            if self._current_history_lb:
+                self._load_torrent_history(self._current_history_lb)
+
+        w = _ApiWorker(call)
+        w.finished.connect(done)
+        w.error.connect(lambda e: self.torrent_history_status.setText(f"Error: {e}"))
+        self._workers.append(w)
+        w.start()
+
+    # ── History: Delete .torrent file from disk ───────────────────────────────
+
+    def _history_torrent_file_delete(self, rec: dict) -> None:
+        torrent_path = rec.get("torrent_path") or ""
+        fname = torrent_path.split("/")[-1] if torrent_path else "this .torrent file"
+        if QMessageBox.question(
+            self, "Delete .torrent File",
+            f"Permanently delete {fname} from disk?\n\n"
+            "The DB record is kept. The audio files are NOT affected.",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+        ) != QMessageBox.StandardButton.Yes:
+            return
+
+        torrent_id = rec["id"]
+        flask_port = self.flask_port
+        self.torrent_history_status.setText("Deleting .torrent file…")
+
+        def call():
+            return requests.delete(
+                f"http://127.0.0.1:{flask_port}/api/torrent/{torrent_id}/file",
+                timeout=10,
+            ).json()
+
+        def done(result):
+            if result.get("ok"):
+                self.torrent_history_status.setText(f"Deleted: {fname}")
+            else:
+                self.torrent_history_status.setText(f"Error: {result.get('error', 'unknown')}")
+            if self._current_history_lb:
+                self._load_torrent_history(self._current_history_lb)
+
+        w = _ApiWorker(call)
+        w.finished.connect(done)
+        w.error.connect(lambda e: self.torrent_history_status.setText(f"Error: {e}"))
+        self._workers.append(w)
+        w.start()
 
     # ── History: Path Relocation (TODO-013) ───────────────────────────────────
 

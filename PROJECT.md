@@ -165,6 +165,16 @@ Index: `idx_changes_lb ON entry_changes(lb_number, changed_at DESC)`.
 | source | TEXT | 'rename_tab', 'collection_tab', or 'auto' |
 | notes | TEXT | Warnings, mismatch details, relocation notes |
 
+### `forum_posts` — Forum post log
+| Column | Type | Notes |
+|--------|------|-------|
+| id | INTEGER PK | Auto-increment |
+| lb_number | INTEGER | FK to entries |
+| subject | TEXT | Post subject line |
+| topic_url | TEXT | Full URL to the created topic |
+| board_id | INTEGER | SMF board number posted to |
+| posted_at | TEXT | UTC datetime, defaults to datetime('now') |
+
 ### `meta` — Key-value configuration store
 Persists settings between runs. Key examples:
 - `import_hash` — MD5 of last imported flat file (skip re-import if unchanged)

@@ -47,21 +47,62 @@ def _resolve_url(href: str) -> str:
     return href
 
 
-def _find_newest_topic(board_resp: requests.Response) -> str | None:
-    """After a board-redirect success, return the URL of the most recent topic.
+def _board_url_sorted(board_url: str) -> str:
+    """Append SMF's sort-by-creation-date-descending parameter to a board URL.
 
-    SMF board pages list topics newest-first; the first anchor containing
-    'topic=' in its href is the post we just created.
+    The default board listing order is by last-reply date, which means a busy
+    thread bumped after our post appears first.  Sorting by first_post desc
+    puts the topic we just created at the top.
+
+    Args:
+        board_url: Absolute board URL (may already contain query params).
+
+    Returns:
+        Board URL with sort=first_post;desc=1 appended.
+    """
+    sep = ";" if "?" in board_url else "?"
+    return f"{board_url}{sep}sort=first_post;desc=1"
+
+
+def _find_newest_topic(board_resp: requests.Response, subject: str | None = None) -> str | None:
+    """After a board-redirect success, return the URL of the topic we just created.
+
+    Strategy (most-reliable first):
+    1. Subject match — find the link whose visible text contains the posted subject.
+       Immune to sticky ordering.
+    2. First non-sticky link — skip <tr>/<div>/<li> elements whose class includes
+       "sticky"; take the first remaining topic link.
+    3. Last resort — return whatever the first topic= link is.
 
     Args:
         board_resp: The response from following the post-success redirect.
+        subject: The subject line we posted, used for exact matching.
 
     Returns:
         Absolute topic URL, or None if no topic link was found.
     """
     soup = BeautifulSoup(board_resp.text, "lxml")
-    for a in soup.find_all("a", href=lambda h: h and "topic=" in h):
-        return _resolve_url(a["href"])
+    all_topic_links = soup.find_all("a", href=lambda h: h and "topic=" in h)
+
+    # Pass 1: subject match.
+    if subject:
+        subject_lower = subject.lower()
+        for a in all_topic_links:
+            if subject_lower in a.get_text(strip=True).lower():
+                return _resolve_url(a["href"])
+
+    # Pass 2: first non-sticky link.
+    for a in all_topic_links:
+        sticky_ancestor = a.find_parent(
+            lambda el: el.name in ("tr", "div", "li")
+            and "sticky" in " ".join(el.get("class", [])).lower()
+        )
+        if sticky_ancestor is None:
+            return _resolve_url(a["href"])
+
+    # Pass 3: anything.
+    if all_topic_links:
+        return _resolve_url(all_topic_links[0]["href"])
     return None
 
 
@@ -195,58 +236,154 @@ def _scrape_form_fields(
 # Post-body builder
 # ---------------------------------------------------------------------------
 
-def _build_body(entry: dict, attachments_dir: Path | None) -> str:
-    """Build the post body from cached .txt and .ffp files, or entry table fields.
+def _read_lb_txt(attachments_dir: Path, lb_number: int | None) -> str:
+    """Read the LB-numbered info txt file, skipping its first header line.
 
-    The body format is:
-        [code]<info txt content>[/code]
-        [code]<ffp content>[/code]
+    Looks for a file whose name contains ``LB-{lb_number}`` (without zero-padding)
+    and that is not an lbdir manifest.
 
-    Falls back to entry table fields when cached files are unavailable.
+    Args:
+        attachments_dir: Path to the attachment directory.
+        lb_number: Integer LB number used to identify the correct txt file.
+
+    Returns:
+        File text with the first header line stripped, or empty string.
+    """
+    if not attachments_dir.is_dir():
+        return ""
+    candidates = [
+        f for f in sorted(attachments_dir.iterdir())
+        if f.suffix.lower() == ".txt"
+        and not f.name.lower().startswith("lbdir")
+        and not f.name.lower().startswith("orig-")
+        and (lb_number is None or f"LB-{lb_number}" in f.name)
+    ]
+    if not candidates:
+        return ""
+    try:
+        text = candidates[0].read_text(encoding="utf-8", errors="replace").strip()
+        lines = text.splitlines()
+        # Skip the first line (e.g. "Bob Dylan, date, location, NCdr")
+        start = 1
+        while start < len(lines) and not lines[start].strip():
+            start += 1
+        return "\n".join(lines[start:]).strip()
+    except OSError:
+        return ""
+
+
+def _read_lbdir(attachments_dir: Path, lb_number: int | None) -> str:
+    """Read the lbdir checksum manifest file.
+
+    When multiple lbdir files exist, prefers the one whose stem shares the
+    most characters with the LB-numbered info txt file.
+
+    Args:
+        attachments_dir: Path to the attachment directory.
+        lb_number: Integer LB number used to find the best matching lbdir.
+
+    Returns:
+        Full lbdir file text, or empty string.
+    """
+    if not attachments_dir.is_dir():
+        return ""
+    candidates = sorted(
+        f for f in attachments_dir.iterdir()
+        if f.suffix.lower() == ".txt" and f.name.lower().startswith("lbdir")
+    )
+    if not candidates:
+        return ""
+    if len(candidates) > 1 and lb_number is not None:
+        lb_txt = [
+            f for f in attachments_dir.iterdir()
+            if f.suffix.lower() == ".txt"
+            and not f.name.lower().startswith("lbdir")
+            and f"LB-{lb_number}" in f.name
+        ]
+        if lb_txt:
+            base = lb_txt[0].stem.replace(f"-LB-{lb_number}", "")
+            matching = [f for f in candidates if base in f.name]
+            if matching:
+                candidates = sorted(matching)
+    try:
+        return candidates[0].read_text(encoding="utf-8", errors="replace").strip()
+    except OSError:
+        return ""
+
+
+_FOOTER = "[i][color=#888888]Brought to you by kuddukan, via the Bob-O-Matic v1.0.[/color][/i]"
+
+
+def _build_body(entry: dict, attachments_dir: Path | None, lb_number: int | None = None) -> str:
+    """Build the post body from entry fields and LB attachment files.
+
+    Format:
+        1. Metadata header (larger text): Date | Location | CDR | Rating | Timing | LB-XXXXX (red)
+        2. [hr] separator
+        3. Info text from the LB-numbered txt file (or entry.description fallback)
+        4. [b]Checksums[/b] + [code]lbdir content[/code]
+        5. [hr] + footer attribution line
 
     Args:
         entry: Dict from the entries table.
         attachments_dir: Path to data/attachments/LB-XXXXX/ or None.
+        lb_number: Integer LB number for locating the correct attachment files.
 
     Returns:
-        Post body string with BBcode.
+        Post body string with BBcode.  Uses \\n line separators; caller must
+        normalise to \\r\\n when submitting via multipart/form-data.
     """
-    txt_block = ""
-    ffp_block = ""
+    parts: list[str] = []
 
-    if attachments_dir and attachments_dir.is_dir():
-        for f in attachments_dir.iterdir():
-            if f.suffix.lower() == ".txt" and "lbdir" not in f.name.lower():
-                try:
-                    txt_block = f.read_text(encoding="utf-8", errors="replace").strip()
-                    break
-                except OSError:
-                    pass
-        for f in attachments_dir.iterdir():
-            if f.suffix.lower() == ".ffp":
-                try:
-                    ffp_block = f.read_text(encoding="utf-8", errors="replace").strip()
-                    break
-                except OSError:
-                    pass
+    # --- Metadata header ---
+    date_str = (entry.get("date_str") or "").strip()
+    location = (entry.get("location") or "").strip()
+    cdr      = (entry.get("cdr") or "").strip()
+    rating   = (entry.get("rating") or "").strip()
+    timing   = (entry.get("timing") or "").strip()
 
-    if not txt_block and not ffp_block:
-        parts = []
-        for key in ("date_str", "location", "cdr", "rating", "timing", "description"):
-            val = (entry.get(key) or "").strip()
-            if val:
-                parts.append(f"{key}: {val}")
-        setlist = (entry.get("setlist") or "").strip()
-        if setlist:
-            parts.append("\n" + setlist)
-        txt_block = "\n".join(parts)
+    meta_fields = []
+    if date_str: meta_fields.append(f"[b]Date:[/b] {date_str}")
+    if location: meta_fields.append(f"[b]Location:[/b] {location}")
+    if cdr:      meta_fields.append(f"[b]CDR:[/b] {cdr}")
+    if rating:   meta_fields.append(f"[b]Rating:[/b] {rating}")
+    if timing:   meta_fields.append(f"[b]Timing:[/b] {timing}")
+    if lb_number is not None:
+        lb_id = f"LB-{lb_number:05d}"
+        detail_url = (
+            f"http://www.losslessbob.wonderingwhattochoose.com/detail/{lb_id}.html"
+        )
+        meta_fields.append(f"[url={detail_url}][color=red][b]{lb_id}[/b][/color][/url]")
 
-    body = ""
-    if txt_block:
-        body += f"[code]\n{txt_block}\n[/code]\n\n"
-    if ffp_block:
-        body += f"[code]\n{ffp_block}\n[/code]"
-    return body.strip()
+    if meta_fields:
+        # Slightly larger than body text so the header stands out; [hr] follows on next line
+        header_line = "   |   ".join(meta_fields)
+        parts.append(f"[size=13pt]{header_line}[/size]\n[hr]")
+
+    # --- Info / setlist text ---
+    attach_path = attachments_dir if isinstance(attachments_dir, Path) else (
+        Path(attachments_dir) if attachments_dir else None
+    )
+    info_text = _read_lb_txt(attach_path, lb_number) if attach_path else ""
+    if info_text:
+        parts.append(info_text)
+    else:
+        description = (entry.get("description") or "").strip()
+        setlist     = (entry.get("setlist") or "").strip()
+        if description:
+            parts.append(description)
+        elif setlist:
+            parts.append(setlist)
+
+    # --- Checksums (lbdir) ---
+    lbdir_text = _read_lbdir(attach_path, lb_number) if attach_path else ""
+    if lbdir_text:
+        parts.append(f"[b]lbdir[/b]\n[code]{lbdir_text}[/code]")
+
+    # --- Footer ---
+    parts.append(f"[hr]\n{_FOOTER}")
+
+    return "\n\n".join(parts).strip()
 
 
 # ---------------------------------------------------------------------------
@@ -324,7 +461,7 @@ def preview_lb_topic(
         subject = lb_id
 
     attach_path = Path(attachments_dir) if attachments_dir else None
-    body = _build_body(entry, attach_path)
+    body = _build_body(entry, attach_path, lb_number)
     return {"subject": subject, "body": body}
 
 
@@ -404,12 +541,17 @@ def post_lb_topic(
         body = body_override
     else:
         attach_path = Path(attachments_dir) if attachments_dir else None
-        body = _build_body(entry, attach_path)
+        body = _build_body(entry, attach_path, lb_number)
+
+    # Multipart/form-data requires CRLF line endings in text fields; bare \n
+    # is silently stripped by some SMF installs when the attachment upload
+    # forces the request into multipart encoding.
+    message_crlf = body.replace("\r\n", "\n").replace("\n", "\r\n")
 
     payload = {
         **hidden,
         "subject": subject,
-        "message": body,
+        "message": message_crlf,
         "post": "Post",
         "ns": "0",
         # Ensure SMF processes the attachment[] field.
@@ -455,9 +597,9 @@ def post_lb_topic(
             # This forum's success: redirect to the board listing.
             # Follow the redirect, then find the newest topic link on that page.
             if f"board={board_id}" in location or f"board={board_id}." in location:
-                board_resp = session.get(location, timeout=15,
+                board_resp = session.get(_board_url_sorted(location), timeout=15,
                                          headers={"Referer": form_action})
-                topic_url = _find_newest_topic(board_resp) or location
+                topic_url = _find_newest_topic(board_resp, subject=subject) or location
                 logger.debug("post_lb_topic: board-redirect success, topic_url=%s", topic_url)
                 return {"ok": True, "topic_url": topic_url}
 
@@ -503,7 +645,7 @@ def post_lb_topic(
             retry_payload = {
                 **retry_fields,
                 "subject": subject,
-                "message": body,
+                "message": message_crlf,
                 "post": "Post",
                 "ns": "0",
                 "additional_options": "1",
@@ -527,9 +669,9 @@ def post_lb_topic(
                 if "topic=" in location2:
                     return {"ok": True, "topic_url": location2}
                 if f"board={board_id}" in location2 or f"board={board_id}." in location2:
-                    board_resp2 = session.get(location2, timeout=15,
+                    board_resp2 = session.get(_board_url_sorted(location2), timeout=15,
                                               headers={"Referer": retry_action})
-                    topic_url2 = _find_newest_topic(board_resp2) or location2
+                    topic_url2 = _find_newest_topic(board_resp2, subject=subject) or location2
                     return {"ok": True, "topic_url": topic_url2}
                 return {
                     "ok": False,
