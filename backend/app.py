@@ -79,6 +79,13 @@ def create_app():
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
+    @app.route("/api/db/missing_lb_numbers", methods=["GET"])
+    def db_missing_lb_numbers():
+        try:
+            return jsonify(database.get_missing_lb_numbers())
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
     @app.route("/api/db/import", methods=["POST"])
     def db_import():
         try:
@@ -247,6 +254,13 @@ def create_app():
     def xref_lb_numbers():
         try:
             return jsonify(database.get_xref_lb_numbers())
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/checksums/xref_map", methods=["GET"])
+    def xref_map():
+        try:
+            return jsonify(database.get_xref_map())
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
@@ -1300,6 +1314,32 @@ def create_app():
             return jsonify({"ok": True})
         except Exception as exc:
             return jsonify({"ok": False, "error": str(exc)}), 500
+
+    @app.route("/api/forum_posts", methods=["GET"])
+    def all_forum_posts():
+        """Return all logged forum posts across every LB entry, newest first."""
+        try:
+            return jsonify(database.get_all_forum_posts())
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/torrents", methods=["GET"])
+    def all_torrents():
+        """Return all torrent records across every LB entry, newest first."""
+        try:
+            rows = database.get_all_torrents()
+            for row in rows:
+                row["source_folder_exists"] = (
+                    bool(row.get("source_folder"))
+                    and Path(row["source_folder"]).is_dir()
+                )
+                row["torrent_file_exists"] = (
+                    bool(row.get("torrent_path"))
+                    and Path(row["torrent_path"]).exists()
+                )
+            return jsonify(rows)
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
 
     _slog.t("Flask: create_app done")
     return app

@@ -11,12 +11,14 @@ from PyQt6.QtWidgets import (
 )
 
 _DESC_COL = 4          # index of the Description column
+_XREF_COL = 5          # index of the Xref column
+_OWNED_COL = 6         # index of the Owned column
 _DESC_DEFAULT_W = 600  # default width for Description in pixels
 _QSETTINGS_ORG = "LosslessBob"
 _QSETTINGS_APP = "SearchTab"
 _QSETTINGS_COL_KEY = "col_widths"
 
-HEADERS = ["LB Number", "Date", "Location", "Rating", "Description", "Owned"]
+HEADERS = ["LB Number", "Date", "Location", "Rating", "Description", "Xref", "Owned"]
 
 
 class SearchModel(QAbstractTableModel):
@@ -24,6 +26,7 @@ class SearchModel(QAbstractTableModel):
         super().__init__()
         self._rows = []
         self._owned = set()
+        self._xref_map: dict = {}
 
     def rowCount(self, parent=QModelIndex()):
         return len(self._rows)
@@ -40,10 +43,13 @@ class SearchModel(QAbstractTableModel):
             keys = ["lb_number", "date_str", "location", "rating", "description"]
             if col == 0:
                 return f"LB-{row.get('lb_number', '')}"
-            if col == 4:
+            if col == _DESC_COL:
                 val = row.get("description", "") or ""
                 return str(val)
-            if col == 5:
+            if col == _XREF_COL:
+                vals = self._xref_map.get(row.get("lb_number"), [])
+                return ", ".join(str(x) for x in vals) if vals else ""
+            if col == _OWNED_COL:
                 return "✓" if row.get("lb_number") in self._owned else ""
             val = row.get(keys[col], "")
             return str(val) if val else ""
@@ -52,7 +58,7 @@ class SearchModel(QAbstractTableModel):
                 return styles.ROW_MISSING
             if row.get("lb_number") in self._owned:
                 return styles.ROW_OWNED
-        if role == Qt.ItemDataRole.TextAlignmentRole and col == 5:
+        if role == Qt.ItemDataRole.TextAlignmentRole and col in (_XREF_COL, _OWNED_COL):
             return Qt.AlignmentFlag.AlignCenter
         return None
 
@@ -72,6 +78,14 @@ class SearchModel(QAbstractTableModel):
             self.dataChanged.emit(
                 self.index(0, 0),
                 self.index(len(self._rows) - 1, len(HEADERS) - 1),
+            )
+
+    def set_xref_map(self, xref_map: dict) -> None:
+        self._xref_map = xref_map
+        if self._rows:
+            self.dataChanged.emit(
+                self.index(0, _XREF_COL),
+                self.index(len(self._rows) - 1, _XREF_COL),
             )
 
     def get_lb(self, row_idx):
@@ -143,7 +157,7 @@ class _OwnedWorker(QThread):
 
 
 class _XrefWorker(QThread):
-    finished = pyqtSignal(list)
+    finished = pyqtSignal(object)  # dict: {lb_number: [xref_values]}
 
     def __init__(self, flask_port):
         super().__init__()
@@ -152,12 +166,12 @@ class _XrefWorker(QThread):
     def run(self):
         try:
             resp = requests.get(
-                f"http://127.0.0.1:{self.flask_port}/api/checksums/xref_lb_numbers",
+                f"http://127.0.0.1:{self.flask_port}/api/checksums/xref_map",
                 timeout=15,
             )
             self.finished.emit(resp.json())
         except Exception:
-            self.finished.emit([])
+            self.finished.emit({})
 
 
 class SearchTab(QWidget):
@@ -171,6 +185,7 @@ class SearchTab(QWidget):
         self._owned_worker = None
         self._xref_worker = None
         self._all_results: list = []
+        self._xref_map: dict = {}
         self._xref_lb_numbers: set = set()
         self._show_missing_only: bool = False
         self._page: int = 0
@@ -377,9 +392,15 @@ class SearchTab(QWidget):
         self._xref_worker.finished.connect(self._on_xref_loaded)
         self._xref_worker.start()
 
-    def _on_xref_loaded(self, lb_numbers: list) -> None:
-        self._xref_lb_numbers = set(lb_numbers)
-        if self._xref_only_cb.isChecked() and self._all_results:
+    def _on_xref_loaded(self, raw_map: object) -> None:
+        # JSON dict keys are strings; convert to int to match lb_number type.
+        if isinstance(raw_map, dict):
+            self._xref_map = {int(k): v for k, v in raw_map.items()}
+        else:
+            self._xref_map = {}
+        self._xref_lb_numbers = set(self._xref_map.keys())
+        self.model.set_xref_map(self._xref_map)
+        if self._all_results:
             self._page = 0
             self._render_page()
 

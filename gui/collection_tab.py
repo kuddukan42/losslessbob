@@ -416,6 +416,8 @@ class CollectionTab(QWidget):
         self._miss_col_widths: list | None = None
         self._wish_col_widths: list | None = None
         self._duplicates_loaded: bool = False
+        self._all_forum_history_loaded: bool = False
+        self._all_torrent_history_loaded: bool = False
         self._torrent_history_records: list = []
         self._current_history_lb: int | None = None
         self._history_gen: int = 0  # incremented each load; guards against stale responses
@@ -452,6 +454,8 @@ class CollectionTab(QWidget):
         self.inner_tabs.addTab(self._build_missing_panel(), "Missing")
         self.inner_tabs.addTab(self._build_wishlist_panel(), "Wishlist")
         self.inner_tabs.addTab(self._build_duplicates_panel(), "Duplicates")
+        self.inner_tabs.addTab(self._build_all_forum_history_panel(), "Forum History")
+        self.inner_tabs.addTab(self._build_all_torrent_history_panel(), "Torrent History")
         self.inner_tabs.currentChanged.connect(self._on_inner_tab_changed)
 
     # ── My Collection panel ───────────────────────────────────────────────────
@@ -475,7 +479,7 @@ class CollectionTab(QWidget):
 
         self._coll_xref_cb = QCheckBox("Xref only")
         self._coll_xref_cb.setToolTip(
-            "Show only collection entries whose LB number has cross-reference (xref) variants in the DB."
+            "Show only collection entries where your folder is an xref variant (folder name contains 'xref')."
         )
         self._coll_xref_cb.stateChanged.connect(self._on_coll_filter)
         filter_row.addWidget(self._coll_xref_cb)
@@ -677,6 +681,96 @@ class CollectionTab(QWidget):
         tab_text = self.inner_tabs.tabText(index)
         if tab_text == "Duplicates" and not self._duplicates_loaded:
             self.refresh_duplicates()
+        elif tab_text == "Forum History" and not self._all_forum_history_loaded:
+            self.refresh_all_forum_history()
+        elif tab_text == "Torrent History" and not self._all_torrent_history_loaded:
+            self.refresh_all_torrent_history()
+
+    # ── Forum History panel (all entries) ─────────────────────────────────────
+
+    def _build_all_forum_history_panel(self):
+        w = QWidget()
+        layout = QVBoxLayout(w)
+
+        btn_row = QHBoxLayout()
+        refresh_btn = QPushButton("Refresh")
+        refresh_btn.clicked.connect(self.refresh_all_forum_history)
+        btn_row.addWidget(refresh_btn)
+
+        self._forum_hist_open_btn = QPushButton("Open in Browser")
+        self._forum_hist_open_btn.setEnabled(False)
+        self._forum_hist_open_btn.clicked.connect(self._on_all_forum_hist_open)
+        btn_row.addWidget(self._forum_hist_open_btn)
+
+        self._forum_hist_delete_btn = QPushButton("Remove Record")
+        self._forum_hist_delete_btn.setEnabled(False)
+        self._forum_hist_delete_btn.setToolTip("Remove this log entry (does not delete the forum post)")
+        self._forum_hist_delete_btn.clicked.connect(self._on_all_forum_hist_delete)
+        btn_row.addWidget(self._forum_hist_delete_btn)
+
+        btn_row.addStretch()
+        layout.addLayout(btn_row)
+
+        self._forum_hist_status = QLabel("Switch to this tab to load all forum post history.")
+        layout.addWidget(self._forum_hist_status)
+
+        self._forum_hist_table = QTableWidget(0, 5)
+        self._forum_hist_table.setHorizontalHeaderLabels(
+            ["LB Number", "Date", "Location", "Posted", "Subject"]
+        )
+        self._forum_hist_table.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
+        self._forum_hist_table.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
+        self._forum_hist_table.setSelectionMode(QAbstractItemView.SelectionMode.SingleSelection)
+        self._forum_hist_table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
+        self._forum_hist_table.setColumnWidth(0, 90)
+        self._forum_hist_table.setColumnWidth(1, 95)
+        self._forum_hist_table.setColumnWidth(2, 200)
+        self._forum_hist_table.setColumnWidth(3, 140)
+        self._forum_hist_table.setColumnWidth(4, 350)
+        self._forum_hist_table.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
+        self._forum_hist_table.customContextMenuRequested.connect(self._on_all_forum_hist_context)
+        self._forum_hist_table.itemSelectionChanged.connect(self._on_all_forum_hist_selection)
+        layout.addWidget(self._forum_hist_table, stretch=1)
+
+        self._all_forum_posts_records: list = []
+        return w
+
+    # ── Torrent History panel (all entries) ───────────────────────────────────
+
+    def _build_all_torrent_history_panel(self):
+        w = QWidget()
+        layout = QVBoxLayout(w)
+
+        btn_row = QHBoxLayout()
+        refresh_btn = QPushButton("Refresh")
+        refresh_btn.clicked.connect(self.refresh_all_torrent_history)
+        btn_row.addWidget(refresh_btn)
+        btn_row.addStretch()
+        layout.addLayout(btn_row)
+
+        self._torrent_hist_status = QLabel("Switch to this tab to load all torrent history.")
+        layout.addWidget(self._torrent_hist_status)
+
+        self._torrent_hist_table = QTableWidget(0, 6)
+        self._torrent_hist_table.setHorizontalHeaderLabels(
+            ["LB Number", "Date", "Location", "Created", "Source Folder", "Added to qBt"]
+        )
+        self._torrent_hist_table.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
+        self._torrent_hist_table.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
+        self._torrent_hist_table.setSelectionMode(QAbstractItemView.SelectionMode.SingleSelection)
+        self._torrent_hist_table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
+        self._torrent_hist_table.setColumnWidth(0, 90)
+        self._torrent_hist_table.setColumnWidth(1, 95)
+        self._torrent_hist_table.setColumnWidth(2, 200)
+        self._torrent_hist_table.setColumnWidth(3, 140)
+        self._torrent_hist_table.setColumnWidth(4, 280)
+        self._torrent_hist_table.setColumnWidth(5, 95)
+        self._torrent_hist_table.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
+        self._torrent_hist_table.customContextMenuRequested.connect(self._on_all_torrent_hist_context)
+        layout.addWidget(self._torrent_hist_table, stretch=1)
+
+        self._all_torrents_records: list = []
+        return w
 
     # ── Column sizing & word wrap ─────────────────────────────────────────────
 
@@ -810,7 +904,7 @@ class CollectionTab(QWidget):
                 or (r.get("date_str") or "").endswith(f"/{long_}")
             ]
         if self._coll_xref_cb.isChecked():
-            results = [r for r in results if r.get("lb_number") in self._xref_lb_numbers]
+            results = [r for r in results if "xref" in (r.get("folder_name") or "").lower()]
         return results
 
     def _total_coll_pages(self) -> int:
@@ -1016,6 +1110,160 @@ class CollectionTab(QWidget):
         w.error.connect(lambda e: self.dupes_status.setText(f"Error: {e}"))
         self._workers.append(w)
         w.start()
+
+    # ── All Forum History data ────────────────────────────────────────────────
+
+    def refresh_all_forum_history(self) -> None:
+        self._all_forum_history_loaded = True
+        self._forum_hist_status.setText("Loading…")
+        flask_port = self.flask_port
+
+        def call():
+            return requests.get(
+                f"http://127.0.0.1:{flask_port}/api/forum_posts", timeout=15
+            ).json()
+
+        w = _ApiWorker(call)
+        w.finished.connect(self._on_all_forum_history_loaded)
+        w.error.connect(lambda e: self._forum_hist_status.setText(f"Error: {e}"))
+        self._workers.append(w)
+        w.start()
+
+    def _on_all_forum_history_loaded(self, data: list) -> None:
+        if isinstance(data, dict):
+            self._forum_hist_status.setText(f"Error: {data.get('error', 'unknown')}")
+            return
+        self._all_forum_posts_records = data
+        self._forum_hist_table.setRowCount(0)
+        self._forum_hist_open_btn.setEnabled(False)
+        self._forum_hist_delete_btn.setEnabled(False)
+        for rec in data:
+            row = self._forum_hist_table.rowCount()
+            self._forum_hist_table.insertRow(row)
+            self._forum_hist_table.setItem(row, 0, QTableWidgetItem(f"LB-{rec['lb_number']:05d}"))
+            self._forum_hist_table.setItem(row, 1, QTableWidgetItem(rec.get("date_str") or ""))
+            self._forum_hist_table.setItem(row, 2, QTableWidgetItem(rec.get("location") or ""))
+            posted = str(rec.get("posted_at") or "")[:19]
+            self._forum_hist_table.setItem(row, 3, QTableWidgetItem(posted))
+            self._forum_hist_table.setItem(row, 4, QTableWidgetItem(rec.get("subject") or ""))
+        self._forum_hist_table.resizeColumnsToContents()
+        self._forum_hist_status.setText(f"{len(data)} forum post(s) total.")
+
+    def _on_all_forum_hist_selection(self) -> None:
+        has = bool(self._forum_hist_table.selectedItems())
+        self._forum_hist_open_btn.setEnabled(has)
+        self._forum_hist_delete_btn.setEnabled(has)
+
+    def _on_all_forum_hist_open(self) -> None:
+        row = self._forum_hist_table.currentRow()
+        if row < 0 or row >= len(self._all_forum_posts_records):
+            return
+        url = self._all_forum_posts_records[row].get("topic_url", "")
+        if url:
+            webbrowser.open(url)
+
+    def _on_all_forum_hist_delete(self) -> None:
+        row = self._forum_hist_table.currentRow()
+        if row < 0 or row >= len(self._all_forum_posts_records):
+            return
+        rec = self._all_forum_posts_records[row]
+        if QMessageBox.question(
+            self, "Remove Record",
+            f"Remove this forum post log entry?\n{rec.get('topic_url', '')}",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+        ) != QMessageBox.StandardButton.Yes:
+            return
+        flask_port = self.flask_port
+        post_id = rec["id"]
+
+        def call():
+            return requests.delete(
+                f"http://127.0.0.1:{flask_port}/api/forum_post/{post_id}", timeout=10
+            ).json()
+
+        w = _ApiWorker(call)
+        w.finished.connect(lambda _: self.refresh_all_forum_history())
+        w.error.connect(lambda e: self._forum_hist_status.setText(f"Error: {e}"))
+        self._workers.append(w)
+        w.start()
+
+    def _on_all_forum_hist_context(self, pos) -> None:
+        row = self._forum_hist_table.rowAt(pos.y())
+        if row < 0 or row >= len(self._all_forum_posts_records):
+            return
+        rec = self._all_forum_posts_records[row]
+        menu = QMenu(self)
+        if rec.get("topic_url"):
+            open_act = QAction("Open in Browser", self)
+            open_act.triggered.connect(lambda: webbrowser.open(rec["topic_url"]))
+            menu.addAction(open_act)
+        rm_act = QAction("Remove Record", self)
+        rm_act.triggered.connect(self._on_all_forum_hist_delete)
+        menu.addAction(rm_act)
+        lb = rec.get("lb_number")
+        if lb:
+            lb_act = QAction(f"Go to LB-{lb:05d} in My Collection", self)
+            lb_act.triggered.connect(lambda: self._nav_to_lb_in_collection(lb))
+            menu.addAction(lb_act)
+        menu.exec(self._forum_hist_table.mapToGlobal(pos))
+
+    # ── All Torrent History data ───────────────────────────────────────────────
+
+    def refresh_all_torrent_history(self) -> None:
+        self._all_torrent_history_loaded = True
+        self._torrent_hist_status.setText("Loading…")
+        flask_port = self.flask_port
+
+        def call():
+            return requests.get(
+                f"http://127.0.0.1:{flask_port}/api/torrents", timeout=15
+            ).json()
+
+        w = _ApiWorker(call)
+        w.finished.connect(self._on_all_torrent_history_loaded)
+        w.error.connect(lambda e: self._torrent_hist_status.setText(f"Error: {e}"))
+        self._workers.append(w)
+        w.start()
+
+    def _on_all_torrent_history_loaded(self, data: list) -> None:
+        if isinstance(data, dict):
+            self._torrent_hist_status.setText(f"Error: {data.get('error', 'unknown')}")
+            return
+        self._all_torrents_records = data
+        self._torrent_hist_table.setRowCount(0)
+        for rec in data:
+            row = self._torrent_hist_table.rowCount()
+            self._torrent_hist_table.insertRow(row)
+            self._torrent_hist_table.setItem(row, 0, QTableWidgetItem(f"LB-{rec['lb_number']:05d}"))
+            self._torrent_hist_table.setItem(row, 1, QTableWidgetItem(rec.get("date_str") or ""))
+            self._torrent_hist_table.setItem(row, 2, QTableWidgetItem(rec.get("location") or ""))
+            created = str(rec.get("created_at") or "")[:19]
+            self._torrent_hist_table.setItem(row, 3, QTableWidgetItem(created))
+            self._torrent_hist_table.setItem(row, 4, QTableWidgetItem(rec.get("source_folder") or ""))
+            added = "Yes" if rec.get("added_to_qbt") else "No"
+            item = QTableWidgetItem(added)
+            if rec.get("added_to_qbt"):
+                item.setForeground(QColor("#1B5E20"))
+            self._torrent_hist_table.setItem(row, 5, item)
+        self._torrent_hist_table.resizeColumnsToContents()
+        self._torrent_hist_status.setText(f"{len(data)} torrent record(s) total.")
+
+    def _on_all_torrent_hist_context(self, pos) -> None:
+        row = self._torrent_hist_table.rowAt(pos.y())
+        if row < 0 or row >= len(self._all_torrents_records):
+            return
+        rec = self._all_torrents_records[row]
+        menu = QMenu(self)
+        lb = rec.get("lb_number")
+        if lb:
+            lb_act = QAction(f"Go to LB-{lb:05d} in My Collection", self)
+            lb_act.triggered.connect(lambda: self._nav_to_lb_in_collection(lb))
+            menu.addAction(lb_act)
+        menu.exec(self._torrent_hist_table.mapToGlobal(pos))
+
+    def _nav_to_lb_in_collection(self, lb: int) -> None:
+        self.inner_tabs.setCurrentIndex(0)
+        self.coll_search.setText(str(lb))
 
     # ── Collection filter ─────────────────────────────────────────────────────
 

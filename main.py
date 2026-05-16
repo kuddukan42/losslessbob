@@ -100,11 +100,18 @@ def main() -> None:
 
     # Suppress Chromium-level sandbox diagnostics and path-override warnings that
     # go directly to stderr and can't be filtered through Python's logging.
-    # --disable-features=VaapiVideoDecoder stops Chromium's GPU process from probing
-    # hardware video-decode pixel formats (e.g. P010/HDR) via GBM, which produces
-    # spurious "Unknown or not supported format: 808530000" errors on many Linux systems.
+    # --disable-gpu prevents Chromium from starting a GPU process entirely, which
+    # fixes two issues on Linux/XWayland with Qt 6.7:
+    #   1. GBM "Unknown or not supported format: 808530000" (P010 format probe)
+    #   2. Full-window blackout caused by Chromium's GPU process hijacking the
+    #      shared OpenGL context established by AA_ShareOpenGLContexts.
+    # Chromium falls back to Swiftshader software rendering, which is sufficient
+    # for the simple archive pages and local HTML files this app displays.
     _flags = os.environ.get("QTWEBENGINE_CHROMIUM_FLAGS", "")
-    _needed = ["--disable-logging", "--disable-features=VaapiVideoDecoder"]
+    _needed = [
+        "--disable-logging",
+        "--disable-gpu",
+    ]
     for _f in _needed:
         if _f not in _flags:
             _flags = (_flags + " " + _f).strip()

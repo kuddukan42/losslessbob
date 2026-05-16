@@ -205,6 +205,7 @@ Persists settings between runs. Key examples:
 | Method | Route | Description |
 |--------|-------|-------------|
 | GET | `/api/db/stats` | Row counts, latest LB number, last import date |
+| GET | `/api/db/missing_lb_numbers` | List of integers in 1..max_lb absent from checksums table |
 | POST | `/api/db/import` | Start async flat-file import. Returns `{ok, running}` immediately. |
 | GET | `/api/db/import/status` | Poll import progress: `{running, stage, rows_parsed, rows_total, rows_merged, new_lb_count, message, error}` |
 | GET | `/api/db/settings` | Load all `meta` key-value pairs |
@@ -226,6 +227,7 @@ Persists settings between runs. Key examples:
 |--------|-------|-------------|
 | GET | `/api/search?q=&field=` | `field`: `all`, `location`, `date`, `description`. Returns all matching entries (no limit). |
 | GET | `/api/checksums/xref_lb_numbers` | Return sorted list of lb_numbers that have at least one xref checksum (xref > 0). |
+| GET | `/api/checksums/xref_map` | Return `{lb_number: [xref_values]}` for all LBs with xref checksums. |
 
 ### Scraper Control
 | Method | Route | Description |
@@ -256,6 +258,7 @@ Persists settings between runs. Key examples:
 | POST | `/api/torrent/create` | Generate a .torrent for one LB entry. Body: `{lb_number, source_folder, tracker_list?}`. Returns `{ok, torrent_path, infohash, torrent_id, name, excluded_files}`. |
 | GET | `/api/torrent/<lb>` | List all torrent records for an LB entry. Each row includes `source_folder_exists` and `torrent_file_exists` booleans. |
 | PATCH | `/api/torrent/<id>` | Update a torrents row (e.g. source_folder after relocation). |
+| GET | `/api/torrents` | List all torrent records across every LB entry, newest first. Each row includes `source_folder_exists`, `torrent_file_exists`, `date_str`, `location`. |
 | GET | `/api/trackers` | Return tracker list. Query params: `list_name`, `force_refresh`. |
 
 ### qBittorrent Integration
@@ -270,6 +273,9 @@ Persists settings between runs. Key examples:
 | POST | `/api/wtrf/test` | Test WTRF forum credentials. Body: `{username?, password?}`. Returns `{ok, username}`. |
 | GET | `/api/entry/<lb>/preview_forum` | Return the auto-generated subject and BBcode body for an LB entry without posting. Returns `{subject, body}`. |
 | POST | `/api/entry/<lb>/post_forum` | Post a topic to the WTRF forum. Body: `{username?, password?, torrent_id?, subject?, body?}`. Optional `subject`/`body` override the auto-generated values (used when the user edits the preview). Returns `{ok, topic_url}`. |
+| GET | `/api/entry/<lb>/forum_posts` | List all logged forum posts for an LB entry, newest first. |
+| DELETE | `/api/forum_post/<id>` | Delete a forum post log record by id. |
+| GET | `/api/forum_posts` | List all logged forum posts across every LB entry, newest first. Includes `date_str` and `location` from entries. |
 
 ### Spectrogram
 | Method | Route | Description |
@@ -789,3 +795,5 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 | 2026-05-14 | TODO-012/013: Torrent history sub-panel in My Collection — lists all torrents records per selected entry with green/red/orange status indicator, per-row context menu, Add to qBittorrent / Regenerate / Relocate Source buttons; path relocation flow with file cross-check, rename_log.txt logging, and optional rename to standard format. |
 | 2026-05-15 | lbdir Reconcile Files: find_reconcilable_files() in checksum_utils.py; POST /api/lbdir/reconcile + /apply_reconcile; ReconcilePreviewDialog + "Reconcile Files" button in lbdir_tab.py; _find_lbdir_in_folder() DRY refactor in app.py. |
 | 2026-05-16 | Added 7 new preset themes to theme_tab.py: Nord, Gruvbox, Monokai, Tokyo Night, Solarized, Everforest, Catppuccin (14 total). |
+| 2026-05-16 | Added "Forum History" and "Torrent History" inner tabs to My Collection — global all-entry views backed by GET /api/forum_posts and GET /api/torrents; db.get_all_forum_posts() and db.get_all_torrents() added. |
+| 2026-05-16 | Search tab: added "Xref" column (col 5) showing xref numbers per entry; GET /api/checksums/xref_map added. Collection "Xref only" filter now matches folder_name containing "xref" instead of checking the master DB xref list. |

@@ -1,3 +1,36 @@
+BUG-062: Searching by lb_number returns no results when text fields don't contain that number
+Status: Fixed
+File(s): backend/db.py:594-626
+Reported: 2026-05-16
+Fixed: 2026-05-16
+Description: Searching for an entry by its lb_number (e.g. "1797") returned no results when none of the entry's text fields (date_str, location, description, setlist) contained that token. Entries with a webpage but no attachments — invisible to the Attachments tab — were completely unfindable.
+Root cause: search_entries used FTS5 exclusively, which only indexes text content columns. lb_number is not a text column and not in the FTS index.
+Fix: After FTS results are collected, if the query parses as a bare integer and that lb_number is not already in the result set, a direct SELECT by lb_number is performed and the match is prepended to the results.
+
+---
+
+BUG-061: Attachments "Missing" list incorrectly includes real entries with no checksums
+Status: Fixed
+File(s): backend/db.py:281-299
+Reported: 2026-05-16
+Fixed: 2026-05-16
+Description: The Missing view in the Attachments tab listed entries like LB-12404 as missing even though they have a valid webpage on the archive site. Any lb_number in range 1..max_lb without a row in the checksums table was returned, regardless of whether the entry had a webpage.
+Root cause: get_missing_lb_numbers queried the checksums table rather than entries.status. Entries with a webpage but no checksum files were indistinguishable from entries with no page at all.
+Fix: Rewrote get_missing_lb_numbers to query entries.status. Only lb_numbers where status='missing' (scraper confirmed no page) or that have never been scraped are returned. lb_numbers with status='ok' are excluded — they are real entries, just without downloadable content.
+
+---
+
+BUG-060: Full-window blackout and GBM format errors when Attachments tab is opened
+Status: Fixed
+File(s): main.py
+Reported: 2026-05-16
+Fixed: 2026-05-16
+Description: Clicking the Attachments tab caused the entire application window to flash black (full blackout, not just the WebEngine pane) and printed "GBM-DRV error (get_bytes_per_component): Unknown or not supported format: 808530000" to stderr repeatedly.
+Root cause: QtWebEngine initialises a Chromium GPU process on first use. With AA_ShareOpenGLContexts set (required to avoid a ~10 s startup stall on Linux), Chromium's GPU process hijacked the shared OpenGL context on Qt 6.7 / XWayland, causing Qt's own widget compositor to lose its context and render a black frame. The GBM errors were Chromium probing the P010 (10-bit YUV) pixel format, which the system's Mesa/DRM driver does not support.
+Fix: Added --disable-gpu to QTWEBENGINE_CHROMIUM_FLAGS in main.py. This prevents Chromium from starting a GPU process at all; it falls back to Swiftshader software rendering, which is sufficient for the plain HTML pages this app displays. Both the blackout and the GBM stderr noise are eliminated.
+
+---
+
 BUG-059: Disabled buttons render as hardcoded gray on dark themes
 Status: Fixed
 File(s): gui/styles.py:build_stylesheet

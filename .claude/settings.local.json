@@ -79,7 +79,15 @@
       "Bash(python3 -c \"import ast; ast.parse\\(open\\('gui/rename_tab.py'\\).read\\(\\)\\); print\\('OK'\\)\")",
       "Bash(ssh-add -l)",
       "Bash(python -c \"import gui.lbdir_tab; print\\('lbdir_tab OK'\\)\")",
-      "Bash(python -c \"import backend.checksum_utils; print\\('checksum_utils OK'\\)\")"
+      "Bash(python -c \"import backend.checksum_utils; print\\('checksum_utils OK'\\)\")",
+      "Bash(python3 -c \"import gui.collection_tab; import backend.db; import backend.app; print\\('OK'\\)\")",
+      "Bash(sqlite3 /home/tjenkins/Documents/losslessbob/data/losslessbob.db \".schema\")",
+      "Bash(.venv/bin/python -c \"from PyQt6.QtCore import PYQT_VERSION_STR, QT_VERSION_STR; print\\('PyQt6:', PYQT_VERSION_STR, 'Qt:', QT_VERSION_STR\\)\")",
+      "Bash(sqlite3 /home/tjenkins/Documents/losslessbob/data/losslessbob.db \".schema lb_entries\")",
+      "Bash(sqlite3 /home/tjenkins/Documents/losslessbob/data/losslessbob.db \".tables\")",
+      "Bash(fc-list)",
+      "Bash(sed 's/,.*$//')",
+      "Bash(grep -i \"ubuntu\\\\|cantarell\\\\|liberation sans$\\\\|noto sans$\\\\|dejavu sans$\\\\|open sans\\\\|roboto\\\\|inter\\\\|source sans\\\\|lato\\\\|fira\\\\|oxygen\\\\|bitstream\\\\|freesans\\\\|droid sans\\\\|arial\\\\|helvetica\")"
     ],
     "additionalDirectories": [
       "/home/tjenkins/.ssh"

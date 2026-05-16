@@ -1,3 +1,111 @@
+[2026-05-16] — fix(db): searching a bare integer now always returns the matching lb_number entry
+
+Fixed
+
+backend/db.py: After the FTS5 search in search_entries, if the query is a bare integer and the matching lb_number is not already in the FTS results, a direct lb_number lookup is performed and the matching entry is prepended. Fixes entries like LB-01797 (Paris, 7/6/78) that have a webpage and metadata but no text fields containing their own lb_number, making them invisible to numeric search queries.
+
+---
+
+[2026-05-16] — fix(db): redefine "missing" as entries with no webpage, not entries with no checksums
+
+Fixed
+
+backend/db.py: get_missing_lb_numbers now queries entries.status instead of the checksums table. An entry is missing only when status='missing' (scraper confirmed no page) or the lb_number was never scraped. Entries with status='ok' are real entries and are never returned as missing even if they have no checksums or attachments (e.g. LB-12404). Previously the function returned any lb_number in range 1..max_lb absent from the checksums table, which incorrectly included hundreds of real entries that simply have no downloadable content.
+
+---
+
+[2026-05-16] — fix(attachments): tree page change glitches — viewport not reset after clear
+
+Fixed
+
+gui/attachments_tab.py: _render_tree_page now calls scrollToTop() after populating the new page so the viewport always lands at the top. Also wrapped clear+populate in setUpdatesEnabled(False/True) to suppress incremental repaints during the bulk insert, eliminating visual tearing.
+
+---
+
+[2026-05-16] — feat(attachments): paginate cached LB tree to 1000 entries per page with prev/next buttons
+
+Added
+
+gui/attachments_tab.py: Added PAGE_SIZE = 1000 class constant and _page / _all_lb_dirs state. Split _refresh_tree into a collector phase (builds sorted list of non-empty LB dirs) and _render_tree_page (populates tree for the current page slice). Added ◀ Prev / page label / Next ▶ navigation row that auto-shows in cached view and hides in missing view. _jump_to_lb now calculates the target page from _all_lb_dirs and navigates there before scrolling. Buttons are disabled when at the first or last page.
+
+---
+
+[2026-05-16] — fix(attachments): move WebEngine warmup to app startup instead of first tab visit
+
+Fixed
+
+gui/attachments_tab.py: QWebEngineView initialization (and about:blank warmup) now scheduled via QTimer.singleShot(0) in __init__ so it fires on the first event-loop tick after the main window appears — while the user is still on the Lookup tab — rather than on the first Attachments tab visit. Removed _web_initialised flag and the lazy-init block from showEvent. Added early-return guard in _init_web_view to prevent double-init. Removed the fallback _init_web_view() call from _open_lb_in_webview since the view is always ready by the time the user can interact.
+
+---
+
+[2026-05-16] — fix(main): disable Chromium GPU process to fix full-window blackout and GBM format errors on Linux
+
+Fixed
+
+main.py: Added --disable-gpu to QTWEBENGINE_CHROMIUM_FLAGS. Chromium's GPU process was hijacking the shared OpenGL context (AA_ShareOpenGLContexts) on Qt 6.7/XWayland, causing the entire application window to flash black. --disable-gpu prevents the GPU process from starting; Chromium uses Swiftshader software rendering instead, which is sufficient for the simple pages this app displays. Also eliminates the spurious "Unknown or not supported format: 808530000" (P010 GBM probe) stderr errors.
+
+---
+
+[2026-05-16] — fix(attachments): warm up WebEngine GPU process on tab open to prevent first-load window flash
+
+Fixed
+
+gui/attachments_tab.py: Loading about:blank immediately after QWebEngineView is added to the stack during _init_web_view. This forces the GPU/renderer subprocess to start while the tab is quietly initialising rather than on the first user-triggered URL load, eliminating the native-window flash on Linux.
+
+---
+
+[2026-05-16] — feat(attachments): right-click "Open in browser pane" on tree and missing list
+
+Added
+
+gui/attachments_tab.py: Right-click context menu on both the cached tree and the missing list shows "Open LB-NNNNN in browser pane". Selecting it loads the DETAIL_URL for that entry directly into the embedded QWebEngineView (right panel) instead of opening an external browser. DETAIL_URL imported from backend.scraper; QUrl moved to top-level import and removed from inline lazy import in _preview_file.
+
+---
+
+[2026-05-16] — feat(attachments): Missing LB list with scrape capability
+
+Added
+
+backend/db.py: get_missing_lb_numbers() — returns list of integers in range 1..max_lb absent from the checksums table.
+backend/app.py: GET /api/db/missing_lb_numbers route backed by get_missing_lb_numbers().
+gui/attachments_tab.py: _MissingThread fetches missing list from backend. Left panel now has Cached/Missing toggle buttons that swap a QStackedWidget between the existing tree and a new QListWidget. Jump-to search box works in both views. "Scrape Selected Entry" button in Missing view calls the same _ScrapeThread; on success the entry is removed from the missing list and the cached tree is marked stale. "No attachments found" status confirms true gaps.
+
+---
+
+[2026-05-16] — fix(gui): xref checkbox — search adds Xref column; collection filters on owned xref folders only
+
+Changed
+
+gui/search_tab.py: Added "Xref" column (col 5) to the search results table showing which xref numbers exist for each entry. _XrefWorker now calls GET /api/checksums/xref_map (returns {lb: [xref_values]}) instead of the bare LB list; SearchModel gains _xref_map and set_xref_map(); _on_xref_loaded converts string JSON keys to ints and pushes the map to the model.
+
+gui/collection_tab.py: "Xref only" checkbox now filters to collection entries where the folder_name contains "xref" (i.e., the user has an xref-named folder in their collection). Previously it filtered on whether the LB exists in the master DB xref list, which was wrong — it showed any LB that has xref variants, not specifically the entries the user collected as xref folders.
+
+backend/db.py: Added get_xref_map() — returns {lb_number: [xref_val, ...]} for all lb_numbers with xref checksums.
+
+backend/app.py: Added GET /api/checksums/xref_map route backed by get_xref_map().
+
+---
+
+[2026-05-16] — feat(gui): attachments tab layout overhaul — wider tree, stat label moved, LB jump-to search box
+
+Changed
+
+gui/attachments_tab.py: Moved the "Entries with cached files" stat label into the left panel (above the tree) so it no longer floats in dead space. Splitter initial sizes changed from 300/700 to 420/580 to give the tree more room. Outer VBoxLayout now uses stretch=1 on the splitter so it fills the full widget height. Added QLineEdit + "Go" button at the bottom of the left panel to jump the tree selection to a typed LB number (accepts plain digits, "LB-NNNNN", or "LBNNNNN").
+
+---
+
+[2026-05-16] — feat(gui): add Forum History and Torrent History tabs to My Collection
+
+Added
+
+gui/collection_tab.py: Two new inner tabs ("Forum History" and "Torrent History") beside Duplicates. Each shows a global, all-entry table loaded lazily on first activation with a Refresh button. Forum History shows LB#, Date, Location, Posted timestamp, Subject with Open in Browser and Remove Record actions and a right-click context menu. Torrent History shows LB#, Date, Location, Created timestamp, Source Folder, Added to qBt status. Right-click on either table offers "Go to LB-XXXXX in My Collection" navigation.
+
+backend/db.py: Added get_all_forum_posts() and get_all_torrents() — full-table queries joined with entries for date_str and location.
+
+backend/app.py: Added GET /api/forum_posts and GET /api/torrents routes.
+
+---
+
 [2026-05-16] — feat(gui): add hover highlight to tab bar tabs
 
 Added

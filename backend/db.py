@@ -278,6 +278,25 @@ def get_stats(db_path=None):
     }
 
 
+def get_missing_lb_numbers(db_path=None) -> list[int]:
+    """Return LB numbers that have no webpage on the archive site.
+
+    An entry is "missing" only when the scraper confirmed no page exists
+    (entries.status = 'missing') or the lb_number has never been scraped.
+    Entries with status='ok' are real entries even if they have no checksums
+    or attachments, and are never returned here.
+    """
+    with get_connection(db_path) as conn:
+        all_rows = conn.execute(
+            "SELECT lb_number, status FROM entries ORDER BY lb_number"
+        ).fetchall()
+    if not all_rows:
+        return []
+    max_lb = max(r[0] for r in all_rows)
+    ok_set = {r[0] for r in all_rows if r[1] == "ok"}
+    return [n for n in range(1, max_lb + 1) if n not in ok_set]
+
+
 def parse_checksum_text(text):
     """Parse FFP, MD5, or ST5 checksum text into list of (checksum, filename, type) tuples."""
     results = {}
@@ -588,7 +607,26 @@ def search_entries(query, field="all", year=None, limit=None, db_path=None):
             fallback_params.append(int(limit))
         rows = conn.execute(fallback_sql, fallback_params).fetchall()
 
-    return [dict(r) for r in rows]
+    results = [dict(r) for r in rows]
+
+    # When the query is a bare integer, ensure the entry with that lb_number is
+    # included even when none of its text fields contain the number (e.g. searching
+    # "1797" for LB-01797 whose date/location fields don't contain that token).
+    if query:
+        try:
+            lb_id = int(query)
+            if not any(r["lb_number"] == lb_id for r in results):
+                direct = conn.execute(
+                    "SELECT lb_number, date_str, location, rating, description, status "
+                    "FROM entries WHERE lb_number = ?",
+                    (lb_id,),
+                ).fetchone()
+                if direct:
+                    results.insert(0, dict(direct))
+        except ValueError:
+            pass
+
+    return results
 
 
 def get_entry(lb_number, db_path=None):
@@ -794,6 +832,18 @@ def get_xref_lb_numbers(db_path=None) -> list:
     return [r[0] for r in rows]
 
 
+def get_xref_map(db_path=None) -> dict:
+    """Return {lb_number: sorted list of distinct xref values} for entries with xref > 0."""
+    with get_connection(db_path) as conn:
+        rows = conn.execute(
+            "SELECT DISTINCT lb_number, xref FROM checksums WHERE xref > 0 ORDER BY lb_number, xref"
+        ).fetchall()
+    result: dict = {}
+    for lb, xref_val in rows:
+        result.setdefault(lb, []).append(xref_val)
+    return result
+
+
 # ── FEAT-05: Duplicate Concert Detector ──────────────────────────────────────
 
 def get_collection_duplicates(db_path=None) -> list:
@@ -910,6 +960,35 @@ def delete_forum_post(post_id: int, db_path=None) -> None:
     """Delete a forum post record by id."""
     with get_connection(db_path) as conn:
         conn.execute("DELETE FROM forum_posts WHERE id=?", (post_id,))
+
+
+def get_all_forum_posts(db_path=None) -> list:
+    """Return all forum posts across all LB entries, newest first."""
+    with get_connection(db_path) as conn:
+        rows = conn.execute(
+            """SELECT fp.id, fp.lb_number, fp.subject, fp.topic_url,
+                      fp.board_id, fp.posted_at,
+                      e.date_str, e.location
+               FROM forum_posts fp
+               LEFT JOIN entries e ON e.lb_number = fp.lb_number
+               ORDER BY fp.posted_at DESC"""
+        ).fetchall()
+    return [dict(r) for r in rows]
+
+
+def get_all_torrents(db_path=None) -> list:
+    """Return all torrent records across all LB entries, newest first."""
+    with get_connection(db_path) as conn:
+        rows = conn.execute(
+            """SELECT t.id, t.lb_number, t.torrent_path, t.source_folder,
+                      t.created_at, t.infohash, t.added_to_qbt, t.added_to_qbt_at,
+                      t.qbt_infohash_confirmed, t.last_seen_at, t.excluded_files,
+                      e.date_str, e.location
+               FROM torrents t
+               LEFT JOIN entries e ON e.lb_number = t.lb_number
+               ORDER BY t.created_at DESC"""
+        ).fetchall()
+    return [dict(r) for r in rows]
 
 
 def add_torrent_record(lb_number: int, torrent_path: str, source_folder: str,
