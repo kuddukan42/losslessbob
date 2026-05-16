@@ -87,7 +87,8 @@
       "Bash(sqlite3 /home/tjenkins/Documents/losslessbob/data/losslessbob.db \".tables\")",
       "Bash(fc-list)",
       "Bash(sed 's/,.*$//')",
-      "Bash(grep -i \"ubuntu\\\\|cantarell\\\\|liberation sans$\\\\|noto sans$\\\\|dejavu sans$\\\\|open sans\\\\|roboto\\\\|inter\\\\|source sans\\\\|lato\\\\|fira\\\\|oxygen\\\\|bitstream\\\\|freesans\\\\|droid sans\\\\|arial\\\\|helvetica\")"
+      "Bash(grep -i \"ubuntu\\\\|cantarell\\\\|liberation sans$\\\\|noto sans$\\\\|dejavu sans$\\\\|open sans\\\\|roboto\\\\|inter\\\\|source sans\\\\|lato\\\\|fira\\\\|oxygen\\\\|bitstream\\\\|freesans\\\\|droid sans\\\\|arial\\\\|helvetica\")",
+      "Bash(gh release *)"
     ],
     "additionalDirectories": [
       "/home/tjenkins/.ssh"
