@@ -5,7 +5,7 @@ import requests
 from PyQt6.QtCore import Qt, QThread, pyqtSignal
 from PyQt6.QtGui import QAction, QColor
 from PyQt6.QtWidgets import (
-    QAbstractItemView, QCheckBox, QFileDialog, QHeaderView, QHBoxLayout,
+    QAbstractItemView, QCheckBox, QDialog, QFileDialog, QHeaderView, QHBoxLayout,
     QLabel, QListWidget, QListWidgetItem, QMenu, QProgressBar, QPushButton,
     QSplitter, QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget,
 )
@@ -83,6 +83,256 @@ class _LbdirRetrieveWorker(QThread):
             self.error.emit(str(e))
 
 
+class _LbdirReconcileWorker(QThread):
+    finished = pyqtSignal(dict)
+    error = pyqtSignal(str)
+
+    def __init__(self, flask_port, folders):
+        super().__init__()
+        self.flask_port = flask_port
+        self.folders = list(folders)
+
+    def run(self):
+        try:
+            resp = requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/lbdir/reconcile",
+                json={"folders": self.folders},
+                timeout=300,
+            )
+            self.finished.emit(resp.json())
+        except Exception as e:
+            self.error.emit(str(e))
+
+
+class _LbdirApplyReconcileWorker(QThread):
+    finished = pyqtSignal(dict)
+    error = pyqtSignal(str)
+
+    def __init__(self, flask_port, folder, renames):
+        super().__init__()
+        self.flask_port = flask_port
+        self.folder = folder
+        self.renames = renames
+
+    def run(self):
+        try:
+            resp = requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/lbdir/apply_reconcile",
+                json={"folder": self.folder, "renames": self.renames},
+                timeout=120,
+            )
+            self.finished.emit(resp.json())
+        except Exception as e:
+            self.error.emit(str(e))
+
+
+class _LbdirFindExtraWorker(QThread):
+    finished = pyqtSignal(dict)
+    error = pyqtSignal(str)
+
+    def __init__(self, flask_port, folders):
+        super().__init__()
+        self.flask_port = flask_port
+        self.folders = list(folders)
+
+    def run(self):
+        try:
+            resp = requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/lbdir/find_extra",
+                json={"folders": self.folders},
+                timeout=120,
+            )
+            self.finished.emit(resp.json())
+        except Exception as e:
+            self.error.emit(str(e))
+
+
+class _LbdirDeleteExtraWorker(QThread):
+    finished = pyqtSignal(dict)
+    error = pyqtSignal(str)
+
+    def __init__(self, flask_port, folder, files):
+        super().__init__()
+        self.flask_port = flask_port
+        self.folder = folder
+        self.files = files
+
+    def run(self):
+        try:
+            resp = requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/lbdir/delete_extra",
+                json={"folder": self.folder, "files": self.files},
+                timeout=60,
+            )
+            self.finished.emit(resp.json())
+        except Exception as e:
+            self.error.emit(str(e))
+
+
+class ReconcilePreviewDialog(QDialog):
+    """
+    Shows proposed file renames from reconcile. User selects which to apply.
+    Table columns: [checkbox, From (disk), To (lbdir), MD5]
+    """
+
+    def __init__(self, folder: str, proposals: list, parent=None):
+        super().__init__(parent)
+        self.setWindowTitle(f"Reconcile Files — {Path(folder).name}")
+        self.setMinimumSize(860, 400)
+        self._proposals = proposals
+
+        layout = QVBoxLayout(self)
+        layout.addWidget(QLabel(f"Folder: {folder}"))
+        layout.addWidget(QLabel(
+            f"{len(proposals)} file(s) found on disk that match missing lbdir entries by MD5:"
+        ))
+
+        self._table = QTableWidget(len(proposals), 4)
+        self._table.setHorizontalHeaderLabels(["", "Disk Path (from)", "lbdir Path (to)", "MD5"])
+        self._table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
+        self._table.horizontalHeader().setSectionResizeMode(0, QHeaderView.ResizeMode.Fixed)
+        self._table.setColumnWidth(0, 28)
+        self._table.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
+        self._table.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
+        self._table.verticalHeader().setVisible(False)
+
+        for row, p in enumerate(proposals):
+            chk_item = QTableWidgetItem()
+            chk_item.setCheckState(Qt.CheckState.Checked)
+            chk_item.setTextAlignment(Qt.AlignmentFlag.AlignCenter)
+            self._table.setItem(row, 0, chk_item)
+            self._table.setItem(row, 1, QTableWidgetItem(p.get("disk_rel", "")))
+            self._table.setItem(row, 2, QTableWidgetItem(p.get("lbdir_rel", "")))
+            md5 = p.get("md5", "")
+            md5_display = (md5[:16] + "…") if len(md5) > 16 else md5
+            md5_item = QTableWidgetItem(md5_display)
+            md5_item.setToolTip(md5)
+            self._table.setItem(row, 3, md5_item)
+
+        self._table.resizeColumnsToContents()
+        self._table.setColumnWidth(0, 28)
+        layout.addWidget(self._table)
+
+        sel_layout = QHBoxLayout()
+        sel_all_btn = QPushButton("Select All")
+        sel_all_btn.clicked.connect(self._select_all)
+        desel_all_btn = QPushButton("Deselect All")
+        desel_all_btn.clicked.connect(self._deselect_all)
+        sel_layout.addWidget(sel_all_btn)
+        sel_layout.addWidget(desel_all_btn)
+        sel_layout.addStretch()
+        layout.addLayout(sel_layout)
+
+        btn_layout = QHBoxLayout()
+        apply_btn = QPushButton("Apply Selected")
+        apply_btn.clicked.connect(self.accept)
+        cancel_btn = QPushButton("Cancel")
+        cancel_btn.clicked.connect(self.reject)
+        btn_layout.addStretch()
+        btn_layout.addWidget(apply_btn)
+        btn_layout.addWidget(cancel_btn)
+        layout.addLayout(btn_layout)
+
+    def _select_all(self):
+        for row in range(self._table.rowCount()):
+            self._table.item(row, 0).setCheckState(Qt.CheckState.Checked)
+
+    def _deselect_all(self):
+        for row in range(self._table.rowCount()):
+            self._table.item(row, 0).setCheckState(Qt.CheckState.Unchecked)
+
+    def get_selected_renames(self) -> list:
+        result = []
+        for row in range(self._table.rowCount()):
+            if self._table.item(row, 0).checkState() == Qt.CheckState.Checked:
+                result.append({
+                    "from": self._proposals[row]["disk_rel"],
+                    "to": self._proposals[row]["lbdir_rel"],
+                })
+        return result
+
+
+class ExtraFilesDialog(QDialog):
+    """
+    Confirmation dialog for deleting files not listed in the lbdir.
+    Shows all extra files with checkboxes; user confirms before any deletion occurs.
+    """
+
+    def __init__(self, folder: str, extra_files: list, parent=None):
+        super().__init__(parent)
+        self.setWindowTitle(f"Remove Extra Files — {Path(folder).name}")
+        self.setMinimumSize(700, 420)
+        self._extra_files = extra_files
+
+        layout = QVBoxLayout(self)
+
+        warn = QLabel(
+            f"⚠️  The following {len(extra_files)} file(s) are NOT listed in the lbdir "
+            f"and will be permanently deleted from disk. This cannot be undone."
+        )
+        warn.setWordWrap(True)
+        warn.setStyleSheet("color: #c0392b; font-weight: bold;")
+        layout.addWidget(warn)
+        layout.addWidget(QLabel(f"Folder: {folder}"))
+
+        self._table = QTableWidget(len(extra_files), 2)
+        self._table.setHorizontalHeaderLabels(["", "File (relative path)"])
+        self._table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
+        self._table.horizontalHeader().setSectionResizeMode(0, QHeaderView.ResizeMode.Fixed)
+        self._table.setColumnWidth(0, 28)
+        self._table.horizontalHeader().setStretchLastSection(True)
+        self._table.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
+        self._table.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
+        self._table.verticalHeader().setVisible(False)
+
+        for row, rel in enumerate(extra_files):
+            chk_item = QTableWidgetItem()
+            chk_item.setCheckState(Qt.CheckState.Checked)
+            chk_item.setTextAlignment(Qt.AlignmentFlag.AlignCenter)
+            self._table.setItem(row, 0, chk_item)
+            path_item = QTableWidgetItem(rel)
+            path_item.setToolTip(str(Path(folder) / rel))
+            self._table.setItem(row, 1, path_item)
+
+        layout.addWidget(self._table)
+
+        sel_layout = QHBoxLayout()
+        sel_all_btn = QPushButton("Select All")
+        sel_all_btn.clicked.connect(self._select_all)
+        desel_all_btn = QPushButton("Deselect All")
+        desel_all_btn.clicked.connect(self._deselect_all)
+        sel_layout.addWidget(sel_all_btn)
+        sel_layout.addWidget(desel_all_btn)
+        sel_layout.addStretch()
+        layout.addLayout(sel_layout)
+
+        btn_layout = QHBoxLayout()
+        delete_btn = QPushButton("Delete Selected")
+        delete_btn.setStyleSheet("background-color: #c0392b; color: white;")
+        delete_btn.clicked.connect(self.accept)
+        cancel_btn = QPushButton("Cancel")
+        cancel_btn.clicked.connect(self.reject)
+        btn_layout.addStretch()
+        btn_layout.addWidget(delete_btn)
+        btn_layout.addWidget(cancel_btn)
+        layout.addLayout(btn_layout)
+
+    def _select_all(self):
+        for row in range(self._table.rowCount()):
+            self._table.item(row, 0).setCheckState(Qt.CheckState.Checked)
+
+    def _deselect_all(self):
+        for row in range(self._table.rowCount()):
+            self._table.item(row, 0).setCheckState(Qt.CheckState.Unchecked)
+
+    def get_selected_files(self) -> list:
+        return [
+            self._extra_files[row]
+            for row in range(self._table.rowCount())
+            if self._table.item(row, 0).checkState() == Qt.CheckState.Checked
+        ]
+
+
 class DropFolderListWidget(QListWidget):
     folders_dropped = pyqtSignal(list)
 
@@ -122,6 +372,10 @@ class LbdirTab(QWidget):
         self._current_detail_files: list[dict] = []
         self._check_worker = None
         self._retrieve_worker = None
+        self._reconcile_worker = None
+        self._apply_reconcile_worker = None
+        self._find_extra_worker = None
+        self._delete_extra_worker = None
         self._build_ui()
 
     def _build_ui(self):
@@ -180,6 +434,23 @@ class LbdirTab(QWidget):
         )
         self.retrieve_btn.clicked.connect(self._on_retrieve)
         btn_layout.addWidget(self.retrieve_btn)
+
+        self.reconcile_btn = QPushButton("Reconcile Files")
+        self.reconcile_btn.setToolTip(
+            "Find disk files whose MD5 checksum matches a missing lbdir entry.\n"
+            "Proposes renames/moves to recreate the lbdir layout.\n"
+            "Preview is shown before any files are moved."
+        )
+        self.reconcile_btn.clicked.connect(self._on_reconcile)
+        btn_layout.addWidget(self.reconcile_btn)
+
+        self.remove_extra_btn = QPushButton("Remove Extra Files")
+        self.remove_extra_btn.setToolTip(
+            "Find files in each folder that are not listed in the lbdir.\n"
+            "A confirmation dialog shows which files will be permanently deleted."
+        )
+        self.remove_extra_btn.clicked.connect(self._on_remove_extra)
+        btn_layout.addWidget(self.remove_extra_btn)
 
         btn_layout.addStretch()
 
@@ -361,7 +632,7 @@ class LbdirTab(QWidget):
 
     _ALL_BTNS = (
         "add_folders_btn", "add_root_btn", "remove_btn",
-        "clear_btn", "check_btn", "retrieve_btn",
+        "clear_btn", "check_btn", "retrieve_btn", "reconcile_btn", "remove_extra_btn",
     )
 
     def _set_buttons_enabled(self, enabled):
@@ -459,6 +730,141 @@ class LbdirTab(QWidget):
         self._show_progress(False)
         self._set_buttons_enabled(True)
         self.status_label.setText(f"Error: {msg}")
+
+    # ── Reconcile ─────────────────────────────────────────────────────────────
+
+    def _get_selected_or_all_folders(self) -> list:
+        selected = [
+            item.data(Qt.ItemDataRole.UserRole)
+            for item in self.listbox.selectedItems()
+        ]
+        return selected if selected else list(self._folders)
+
+    def _on_reconcile(self):
+        folders = self._get_selected_or_all_folders()
+        if not folders:
+            self.status_label.setText("No folders. Add folders and run Check lbdir Files first.")
+            return
+        self._set_buttons_enabled(False)
+        self._show_progress(True)
+        self.status_label.setText(f"Scanning {len(folders)} folder(s) for reconcilable files...")
+        self._reconcile_worker = _LbdirReconcileWorker(self.flask_port, folders)
+        self._reconcile_worker.finished.connect(self._on_reconcile_done)
+        self._reconcile_worker.error.connect(self._on_worker_error)
+        self._reconcile_worker.start()
+
+    def _on_reconcile_done(self, response: dict):
+        self._show_progress(False)
+        self._set_buttons_enabled(True)
+        if "error" in response:
+            self.status_label.setText(f"Error: {response['error']}")
+            return
+        results = response.get("results", [])
+        all_proposals = [
+            (r["folder"], r["proposals"])
+            for r in results
+            if r.get("proposals")
+        ]
+        if not all_proposals:
+            self.status_label.setText(
+                "No reconcilable files found — no checksum matches for missing files."
+            )
+            return
+        total = sum(len(p) for _, p in all_proposals)
+        self.status_label.setText(f"Found {total} reconcilable file(s). Showing preview...")
+        for folder, proposals in all_proposals:
+            dlg = ReconcilePreviewDialog(folder, proposals, parent=self)
+            if dlg.exec() == QDialog.DialogCode.Accepted:
+                selected = dlg.get_selected_renames()
+                if selected:
+                    self._apply_reconcile(folder, selected)
+
+    def _apply_reconcile(self, folder: str, renames: list):
+        self._set_buttons_enabled(False)
+        self._show_progress(True)
+        self.status_label.setText(f"Applying {len(renames)} rename(s)...")
+        self._apply_reconcile_worker = _LbdirApplyReconcileWorker(
+            self.flask_port, folder, renames
+        )
+        self._apply_reconcile_worker.finished.connect(self._on_apply_reconcile_done)
+        self._apply_reconcile_worker.error.connect(self._on_worker_error)
+        self._apply_reconcile_worker.start()
+
+    def _on_apply_reconcile_done(self, response: dict):
+        self._show_progress(False)
+        applied = response.get("applied", 0)
+        errors = response.get("errors", [])
+        msg = f"Applied {applied} rename(s)."
+        if errors:
+            msg += f" {len(errors)} error(s): {errors[0]['error']}"
+        self.status_label.setText(msg)
+        self._start_check(list(self._folders))
+
+    # ── Remove extra files ────────────────────────────────────────────────────
+
+    def _on_remove_extra(self):
+        folders = self._get_selected_or_all_folders()
+        if not folders:
+            self.status_label.setText("No folders. Add folders first.")
+            return
+        self._set_buttons_enabled(False)
+        self._show_progress(True)
+        self.status_label.setText(f"Scanning {len(folders)} folder(s) for extra files...")
+        self._find_extra_worker = _LbdirFindExtraWorker(self.flask_port, folders)
+        self._find_extra_worker.finished.connect(self._on_find_extra_done)
+        self._find_extra_worker.error.connect(self._on_worker_error)
+        self._find_extra_worker.start()
+
+    def _on_find_extra_done(self, response: dict):
+        self._show_progress(False)
+        self._set_buttons_enabled(True)
+        if "error" in response:
+            self.status_label.setText(f"Error: {response['error']}")
+            return
+        results = response.get("results", [])
+        folders_with_extra = [
+            (r["folder"], r["extra"])
+            for r in results
+            if r.get("extra")
+        ]
+        errors = [r for r in results if "error" in r]
+        if errors:
+            self.status_label.setText(
+                f"Error in {len(errors)} folder(s): {errors[0]['error']}"
+            )
+        if not folders_with_extra:
+            self.status_label.setText("No extra files found — all disk files are listed in the lbdir.")
+            return
+        total = sum(len(f) for _, f in folders_with_extra)
+        self.status_label.setText(f"Found {total} extra file(s). Showing confirmation...")
+        for folder, extra_files in folders_with_extra:
+            dlg = ExtraFilesDialog(folder, extra_files, parent=self)
+            if dlg.exec() == QDialog.DialogCode.Accepted:
+                selected = dlg.get_selected_files()
+                if selected:
+                    self._delete_extra(folder, selected)
+
+    def _delete_extra(self, folder: str, files: list):
+        self._set_buttons_enabled(False)
+        self._show_progress(True)
+        self.status_label.setText(f"Deleting {len(files)} file(s)...")
+        self._delete_extra_worker = _LbdirDeleteExtraWorker(self.flask_port, folder, files)
+        self._delete_extra_worker.finished.connect(self._on_delete_extra_done)
+        self._delete_extra_worker.error.connect(self._on_worker_error)
+        self._delete_extra_worker.start()
+
+    def _on_delete_extra_done(self, response: dict):
+        self._show_progress(False)
+        deleted = response.get("deleted", 0)
+        removed_dirs = response.get("removed_dirs", [])
+        errors = response.get("errors", [])
+        msg = f"Deleted {deleted} file(s)."
+        if removed_dirs:
+            msg += f" Removed {len(removed_dirs)} empty folder(s)."
+        if errors:
+            msg += f" {len(errors)} error(s): {errors[0]['error']}"
+        self.status_label.setText(msg)
+        self._start_check(list(self._folders))
 
     # ── Summary table ─────────────────────────────────────────────────────────
 

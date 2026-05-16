@@ -675,6 +675,129 @@ def verify_folder_lbdir(folder_path, lbdir_path):
     }
 
 
+def find_reconcilable_files(
+    folder_path: str | Path,
+    lbdir_path: str | Path,
+) -> dict:
+    """
+    Identify disk files that match lbdir checksums but are at wrong paths.
+
+    Scans all files recursively under folder_path, computes MD5, and matches
+    against lbdir entries whose expected path does not exist on disk.
+
+    Args:
+        folder_path: Root folder to scan.
+        lbdir_path: Path to the lbdir*.txt file.
+
+    Returns:
+        dict with keys 'proposals', 'unmatched_lbdir', 'unmatched_disk', 'warnings'.
+        On parse failure, returns {'error': '...'}.
+    """
+    folder = Path(folder_path)
+    lbdir = Path(lbdir_path)
+
+    parsed = parse_lbdir_file(str(lbdir))
+    if "error" in parsed:
+        return {"error": parsed["error"]}
+
+    md5_map: dict[str, str] = dict(parsed.get("md5", []))
+    if not md5_map:
+        return {"error": "No MD5 section found in lbdir file"}
+
+    missing_entries: dict[str, str] = {
+        rel: md5 for rel, md5 in md5_map.items()
+        if not (folder / rel).exists()
+    }
+
+    correct_rels: set[str] = set(md5_map.keys()) - set(missing_entries.keys())
+
+    disk_md5_to_rel: dict[str, str] = {}
+    warnings: list[str] = []
+    all_disk_rels: set[str] = set()
+
+    for disk_file in sorted(folder.rglob("*")):
+        if not disk_file.is_file():
+            continue
+        rel = disk_file.relative_to(folder).as_posix()
+        if rel in correct_rels:
+            continue
+        md5 = compute_md5(str(disk_file))
+        if md5 is None:
+            continue
+        if md5 in disk_md5_to_rel:
+            warnings.append(
+                f"Duplicate MD5 {md5[:12]}… on disk — using {disk_md5_to_rel[md5]}, ignoring {rel}"
+            )
+        else:
+            disk_md5_to_rel[md5] = rel
+        all_disk_rels.add(rel)
+
+    proposals: list[dict] = []
+    unmatched_lbdir: list[str] = []
+    matched_disk_rels: set[str] = set()
+
+    for lbdir_rel, expected_md5 in missing_entries.items():
+        if expected_md5 in disk_md5_to_rel:
+            disk_rel = disk_md5_to_rel[expected_md5]
+            proposals.append({
+                "disk_rel": disk_rel,
+                "lbdir_rel": lbdir_rel,
+                "md5": expected_md5,
+            })
+            matched_disk_rels.add(disk_rel)
+        else:
+            unmatched_lbdir.append(lbdir_rel)
+
+    unmatched_disk = sorted(all_disk_rels - matched_disk_rels)
+
+    return {
+        "proposals": proposals,
+        "unmatched_lbdir": unmatched_lbdir,
+        "unmatched_disk": unmatched_disk,
+        "warnings": warnings,
+    }
+
+
+def find_extra_files(
+    folder_path: str | Path,
+    lbdir_path: str | Path,
+) -> dict:
+    """
+    Find files in folder_path that are not referenced in the lbdir MD5 section.
+
+    The lbdir file itself is never included in the result.
+
+    Args:
+        folder_path: Root folder to scan.
+        lbdir_path: Path to the lbdir*.txt file.
+
+    Returns:
+        {'extra': ['rel/path', ...], 'lbdir_rel': 'lbdir.txt'}
+        or {'error': '...'} on parse failure.
+    """
+    folder = Path(folder_path)
+    lbdir = Path(lbdir_path)
+
+    parsed = parse_lbdir_file(str(lbdir))
+    if "error" in parsed:
+        return {"error": parsed["error"]}
+
+    expected: set[str] = set(dict(parsed.get("md5", [])).keys())
+    lbdir_rel = lbdir.relative_to(folder).as_posix()
+
+    extra = []
+    for disk_file in sorted(folder.rglob("*")):
+        if not disk_file.is_file():
+            continue
+        rel = disk_file.relative_to(folder).as_posix()
+        if rel == lbdir_rel:
+            continue
+        if rel not in expected:
+            extra.append(rel)
+
+    return {"extra": extra, "lbdir_rel": lbdir_rel}
+
+
 def generate_checksums(folder_path):
     """
     Generate FFP and/or MD5 checksum files for audio in folder.

@@ -100,9 +100,15 @@ def main() -> None:
 
     # Suppress Chromium-level sandbox diagnostics and path-override warnings that
     # go directly to stderr and can't be filtered through Python's logging.
+    # --disable-features=VaapiVideoDecoder stops Chromium's GPU process from probing
+    # hardware video-decode pixel formats (e.g. P010/HDR) via GBM, which produces
+    # spurious "Unknown or not supported format: 808530000" errors on many Linux systems.
     _flags = os.environ.get("QTWEBENGINE_CHROMIUM_FLAGS", "")
-    if "--disable-logging" not in _flags:
-        os.environ["QTWEBENGINE_CHROMIUM_FLAGS"] = (_flags + " --disable-logging").strip()
+    _needed = ["--disable-logging", "--disable-features=VaapiVideoDecoder"]
+    for _f in _needed:
+        if _f not in _flags:
+            _flags = (_flags + " " + _f).strip()
+    os.environ["QTWEBENGINE_CHROMIUM_FLAGS"] = _flags
 
     # Must be set before QApplication is constructed so QtWebEngine can share
     # the GPU process's OpenGL context; without this the renderer falls back to

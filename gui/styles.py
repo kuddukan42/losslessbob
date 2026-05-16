@@ -196,7 +196,7 @@ QSplitter::handle {{
 
 
 def apply_theme(theme_dict):
-    global ROW_MATCHED, ROW_NOT_FOUND, ROW_MISSING, ROW_DUPLICATE, ROW_XREF, ROW_OWNED
+    global ROW_MATCHED, ROW_NOT_FOUND, ROW_MISSING, ROW_DUPLICATE, ROW_XREF, ROW_OWNED, ROW_WISHLIST
     global HEADER_BG, HEADER_FG, APP_BG, SELECTION_COLOR, MAIN_STYLESHEET
     ROW_MATCHED = QColor(theme_dict["row_matched"])
     ROW_NOT_FOUND = QColor(theme_dict["row_not_found"])
@@ -204,6 +204,7 @@ def apply_theme(theme_dict):
     ROW_DUPLICATE = QColor(theme_dict["row_duplicate"])
     ROW_XREF = QColor(theme_dict["row_xref"])
     ROW_OWNED = QColor(theme_dict.get("row_owned", "#C8E6C9"))
+    ROW_WISHLIST = QColor(theme_dict.get("row_wishlist", "#E8D5FF"))
     HEADER_BG = QColor(theme_dict["header_bg"])
     HEADER_FG = QColor(theme_dict["header_fg"])
     APP_BG = QColor(theme_dict["app_bg"])
@@ -232,4 +233,5 @@ apply_theme({
     "selection": "#CCE5FF", "input_bg": "#FFFFFF",
     "row_matched": "#90EE90", "row_not_found": "#FFA07A",
     "row_missing": "#FFB6C1", "row_duplicate": "#FFFF99", "row_xref": "#E0E0FF",
+    "row_owned": "#C8E6C9", "row_wishlist": "#E8D5FF",
 })

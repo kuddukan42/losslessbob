@@ -17,7 +17,7 @@ from PyQt6.QtWidgets import (
     QGroupBox, QTextEdit,
 )
 
-from gui.styles import ROW_OWNED, ROW_WISHLIST
+import gui.styles as styles
 
 _LB_RE = re.compile(r'LB[- ]0*(\d+)', re.IGNORECASE)
 _STANDARD_LB_NAME_RE = re.compile(r'^\d{4}-\d{2}-\d{2}\s.+\(LB-\d{5}\)$')
@@ -75,7 +75,7 @@ class _CollectionModel(QAbstractTableModel):
             if not val:
                 return QColor("#888888")
         if role == Qt.ItemDataRole.BackgroundRole:
-            return ROW_OWNED
+            return styles.ROW_OWNED
         return None
 
     def headerData(self, section, orientation, role=Qt.ItemDataRole.DisplayRole):
@@ -186,7 +186,7 @@ class _WishlistModel(QAbstractTableModel):
                 v = row.get("added_at") or ""
                 return str(v)[:10]
         if role == Qt.ItemDataRole.BackgroundRole:
-            return ROW_WISHLIST
+            return styles.ROW_WISHLIST
         return None
 
     def headerData(self, section, orientation, role=Qt.ItemDataRole.DisplayRole):

@@ -5,7 +5,7 @@ from PyQt6.QtGui import QColor
 from PyQt6.QtWidgets import (
     QWidget, QHBoxLayout, QVBoxLayout, QListWidget, QListWidgetItem,
     QPushButton, QLabel, QScrollArea, QColorDialog, QGridLayout,
-    QFrame, QApplication,
+    QFrame,
 )
 
 import gui.styles as styles
@@ -21,6 +21,7 @@ THEMES = {
         "selection": "#CCE5FF", "input_bg": "#FFFFFF",
         "row_matched": "#90EE90", "row_not_found": "#FFA07A",
         "row_missing": "#FFB6C1", "row_duplicate": "#FFFF99", "row_xref": "#E0E0FF",
+        "row_owned": "#C8E6C9", "row_wishlist": "#E8D5FF",
     },
     "Dark": {
         "app_bg": "#2D2D2D", "app_fg": "#D4D4D4",
@@ -30,8 +31,9 @@ THEMES = {
         "border": "#555555", "status_bg": "#222222",
         "tab_bg": "#3A3A3A", "tab_selected": "#2D2D2D",
         "selection": "#1A4A7A", "input_bg": "#444444",
-        "row_matched": "#1E5C1E", "row_not_found": "#7A2E1E",
-        "row_missing": "#6B1F2E", "row_duplicate": "#6B6B1A", "row_xref": "#1A1A5C",
+        "row_matched": "#206820", "row_not_found": "#922C1C",
+        "row_missing": "#922848", "row_duplicate": "#6B6B1A", "row_xref": "#4040A8",
+        "row_owned": "#267040", "row_wishlist": "#603098",
     },
     "Black": {
         "app_bg": "#0D0D0D", "app_fg": "#E0E0E0",
@@ -41,8 +43,9 @@ THEMES = {
         "border": "#333333", "status_bg": "#0A0A0A",
         "tab_bg": "#1A1A1A", "tab_selected": "#0D0D0D",
         "selection": "#2A2A4A", "input_bg": "#1A1A1A",
-        "row_matched": "#0F3B0F", "row_not_found": "#4A1A0F",
-        "row_missing": "#3B0F1A", "row_duplicate": "#3B3B0F", "row_xref": "#0F0F3B",
+        "row_matched": "#0F3B0F", "row_not_found": "#6B280F",
+        "row_missing": "#5C1428", "row_duplicate": "#3B3B0F", "row_xref": "#20207E",
+        "row_owned": "#163D20", "row_wishlist": "#321480",
     },
     "Dracula": {
         "app_bg": "#282A36", "app_fg": "#F8F8F2",
@@ -52,8 +55,9 @@ THEMES = {
         "border": "#6272A4", "status_bg": "#21222C",
         "tab_bg": "#44475A", "tab_selected": "#282A36",
         "selection": "#44475A", "input_bg": "#21222C",
-        "row_matched": "#1A5C30", "row_not_found": "#7A2020",
-        "row_missing": "#5C1A3A", "row_duplicate": "#4A4A10", "row_xref": "#2A2050",
+        "row_matched": "#1A5C30", "row_not_found": "#8C2424",
+        "row_missing": "#7A2048", "row_duplicate": "#4A4A10", "row_xref": "#383098",
+        "row_owned": "#1C6030", "row_wishlist": "#5028A0",
     },
     "Blue": {
         "app_bg": "#EBF5FB", "app_fg": "#1A2A4A",
@@ -65,6 +69,7 @@ THEMES = {
         "selection": "#90CAF9", "input_bg": "#FFFFFF",
         "row_matched": "#A5D6A7", "row_not_found": "#EF9A9A",
         "row_missing": "#F48FB1", "row_duplicate": "#FFF176", "row_xref": "#B3E5FC",
+        "row_owned": "#A5D6A7", "row_wishlist": "#CE93D8",
     },
     "Purple": {
         "app_bg": "#F3E5F5", "app_fg": "#1A0A2A",
@@ -76,6 +81,19 @@ THEMES = {
         "selection": "#CE93D8", "input_bg": "#FFFFFF",
         "row_matched": "#A5D6A7", "row_not_found": "#EF9A9A",
         "row_missing": "#F48FB1", "row_duplicate": "#FFF176", "row_xref": "#E1BEE7",
+        "row_owned": "#A5D6A7", "row_wishlist": "#CE93D8",
+    },
+    "Red": {
+        "app_bg": "#1A0A0A", "app_fg": "#F0D0D0",
+        "accent": "#C0392B", "accent_hover": "#E74C3C", "accent_pressed": "#922B21",
+        "header_bg": "#922B21", "header_fg": "#FFFFFF",
+        "table_bg": "#2A1010", "table_alt": "#331515",
+        "border": "#7B241C", "status_bg": "#110808",
+        "tab_bg": "#331515", "tab_selected": "#1A0A0A",
+        "selection": "#5C1A1A", "input_bg": "#331515",
+        "row_matched": "#1E5C1E", "row_not_found": "#7A2E10",
+        "row_missing": "#6B1F2E", "row_duplicate": "#6B6B1A", "row_xref": "#22226B",
+        "row_owned": "#1E4A2A", "row_wishlist": "#3B2060",
     },
 }
 
@@ -100,6 +118,8 @@ COLOR_LABELS = [
     ("Row: Missing",         "row_missing"),
     ("Row: Duplicate",       "row_duplicate"),
     ("Row: Cross-ref",       "row_xref"),
+    ("Row: Owned",           "row_owned"),
+    ("Row: Wishlist",        "row_wishlist"),
 ]
 
 _SETTINGS_GROUP = "LosslessBobLookup"

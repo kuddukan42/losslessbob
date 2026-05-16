@@ -14,7 +14,7 @@ from PyQt6.QtWidgets import (
     QFileDialog, QHeaderView, QCheckBox,
 )
 
-from gui.styles import ROW_MATCHED, ROW_NOT_FOUND, ROW_MISSING, ROW_DUPLICATE, ROW_XREF
+import gui.styles as styles
 
 
 SUMMARY_HEADERS = ["LB Number", "Source", "Given", "Matched", "Not Found", "Missing", "Dups", "Xrefs", "Status"]
@@ -875,7 +875,6 @@ class LookupTab(QWidget):
     # ── Theme refresh ─────────────────────────────────────────────────────────
 
     def refresh_colors(self):
-        from gui import styles
         self.summary_model.refresh_colors(lambda row:
             styles.ROW_MATCHED if row[8] == "MATCHED" else
             styles.ROW_MISSING if row[8] == "INCOMPLETE" else
@@ -970,13 +969,13 @@ class LookupTab(QWidget):
             sum_lb_nums.append(s["lb_number"])
             sum_user_data.append({})
             if s["status"] == "MATCHED":
-                sum_colors.append(ROW_MATCHED)
+                sum_colors.append(styles.ROW_MATCHED)
             elif s["status"] == "INCOMPLETE":
-                sum_colors.append(ROW_MISSING)
+                sum_colors.append(styles.ROW_MISSING)
             elif s["duplicates"] > 0:
-                sum_colors.append(ROW_DUPLICATE)
+                sum_colors.append(styles.ROW_DUPLICATE)
             else:
-                sum_colors.append(ROW_NOT_FOUND)
+                sum_colors.append(styles.ROW_NOT_FOUND)
 
         # Add summary rows for input folders whose checksums had no DB match at all
         not_found_items = [d for d in detail_list if d["status"] == "NOT FOUND"]
@@ -996,7 +995,7 @@ class LookupTab(QWidget):
             for folder_key, count in sorted(not_found_by_folder.items()):
                 label = Path(folder_key).name if folder_key else "NOT FOUND"
                 sum_rows.append([label, source, count, 0, count, 0, 0, 0, "NOT FOUND"])
-                sum_colors.append(ROW_NOT_FOUND)
+                sum_colors.append(styles.ROW_NOT_FOUND)
                 sum_lb_nums.append(None)
                 sum_user_data.append({})
 
@@ -1039,15 +1038,15 @@ class LookupTab(QWidget):
             det_source_folders.append(str(Path(sf).parent) if sf else None)
             status = d["status"]
             if status == "NOT FOUND":
-                det_colors.append(ROW_NOT_FOUND)
+                det_colors.append(styles.ROW_NOT_FOUND)
             elif status == "DUPLICATE":
-                det_colors.append(ROW_DUPLICATE)
+                det_colors.append(styles.ROW_DUPLICATE)
             elif "INCOMPLETE" in status:
-                det_colors.append(ROW_MISSING)
+                det_colors.append(styles.ROW_MISSING)
             elif d.get("xref"):
-                det_colors.append(ROW_XREF)
+                det_colors.append(styles.ROW_XREF)
             else:
-                det_colors.append(ROW_MATCHED)
+                det_colors.append(styles.ROW_MATCHED)
 
         # Store full unfiltered data
         self._sum_rows = sum_rows

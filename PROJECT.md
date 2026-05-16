@@ -291,6 +291,10 @@ Persists settings between runs. Key examples:
 |--------|-------|-------------|
 | POST | `/api/lbdir/check` | Find `lbdir*.txt` in each folder, parse, and verify all listed files. Returns extended result with `lbdir_found`, `lbdir_path`, `lb_number`, plus `length`/`expanded_size`/`cdr`/`wave_problems`/`fmt`/`ratio` per file from shntool_len section. |
 | POST | `/api/lbdir/retrieve` | Copy `lbdir*.txt` from `data/attachments/LB-{N:05d}/` to the target folder (triggering a scrape if not yet cached). Looks up LB number from `my_collection` by `disk_path`. |
+| POST | `/api/lbdir/reconcile` | Preview-only: scan disk files recursively, compute MD5, match against missing lbdir entries. Returns `{results: [{folder, proposals:[{disk_rel,lbdir_rel,md5}], unmatched_lbdir, unmatched_disk, warnings}]}`. Does NOT move any files. |
+| POST | `/api/lbdir/apply_reconcile` | Apply selected rename proposals from `/api/lbdir/reconcile`. Body: `{folder, renames:[{from,to}]}`. Uses `shutil.move`; creates subdirectories as needed; never deletes. Returns `{applied, errors}`. |
+| POST | `/api/lbdir/find_extra` | List files in each folder not referenced in the lbdir MD5 section (lbdir file itself excluded). Returns `{results: [{folder, extra:['rel/path',...], lbdir_rel}]}`. |
+| POST | `/api/lbdir/delete_extra` | Permanently delete selected extra files. Body: `{folder, files:['rel/path',...]}`. After deletion, prunes empty subdirectories bottom-up. Returns `{deleted, removed_dirs, errors}`. |
 
 ---
 
@@ -332,6 +336,8 @@ Shared module for local file verification and checksum generation. Used by `/api
 | `_mychecksums_path(folder, basename, ext)` | Returns `<folder>/<basename>_mychecksums.<ext>`, incrementing to `_mychecksums_2`, `_mychecksums_3`, … until a non-existent path is found. |
 | `verify_folder(folder_path)` | Verify audio files against standalone `.ffp`/`.md5`/`.st5` checksum files in the folder. |
 | `verify_folder_lbdir(folder_path, lbdir_path)` | Verify all files listed in a `lbdir*.txt` (audio + non-audio), including `length`/`cdr`/`wave_problems` from shntool_len section. |
+| `find_reconcilable_files(folder_path, lbdir_path)` | Scan disk files recursively, compute MD5, match against missing lbdir entries. Returns `{proposals, unmatched_lbdir, unmatched_disk, warnings}`. |
+| `find_extra_files(folder_path, lbdir_path)` | Return all disk files not referenced in the lbdir MD5 section (lbdir file itself excluded). Returns `{extra:['rel/path',...], lbdir_rel}`. |
 | `generate_checksums(folder_path)` | FLAC: write `_mychecksums.ffp` + `_mychecksums.md5`. SHN: write `_mychecksums.md5` with shntool `[shntool]` format lines. Never overwrites existing files. |
 
 ### Verify result schema (per folder)
@@ -781,3 +787,4 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 | 2026-05-14 | Added POST /api/wtrf/test and "Test Connection" button to WTRF Forum group in Setup tab. |
 | 2026-05-14 | Forum preview: GET /api/entry/lb/preview_forum; preview_lb_topic() in forum_poster.py; preview dialog with editable subject+body before posting. |
 | 2026-05-14 | TODO-012/013: Torrent history sub-panel in My Collection — lists all torrents records per selected entry with green/red/orange status indicator, per-row context menu, Add to qBittorrent / Regenerate / Relocate Source buttons; path relocation flow with file cross-check, rename_log.txt logging, and optional rename to standard format. |
+| 2026-05-15 | lbdir Reconcile Files: find_reconcilable_files() in checksum_utils.py; POST /api/lbdir/reconcile + /apply_reconcile; ReconcilePreviewDialog + "Reconcile Files" button in lbdir_tab.py; _find_lbdir_in_folder() DRY refactor in app.py. |

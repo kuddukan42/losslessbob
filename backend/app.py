@@ -1,3 +1,4 @@
+import os
 import re
 import shutil
 import threading
@@ -29,6 +30,16 @@ _spectro_state = {
     "stop_requested": False,
 }
 _spectro_lock = __import__("threading").Lock()
+
+
+def _find_lbdir_in_folder(folder: Path) -> "Path | None":
+    """Return the first lbdir*.txt (or LBF-*-lbdir.txt) found in folder, or None."""
+    if not folder.exists():
+        return None
+    for f in folder.iterdir():
+        if f.is_file() and 'lbdir' in f.name.lower() and f.suffix.lower() == '.txt':
+            return f
+    return None
 
 
 def create_app():
@@ -500,14 +511,7 @@ def create_app():
                     ).fetchone()
                 lb_number = row["lb_number"] if row else None
 
-                # Find lbdir*.txt (case-insensitive).
-                # Matches both standard "lbdir*.txt" and xref naming "LBF-XXXXX-xref-NNNN-lbdir.txt".
-                lbdir_path = None
-                if folder.exists():
-                    for f in folder.iterdir():
-                        if f.is_file() and 'lbdir' in f.name.lower() and f.suffix.lower() == '.txt':
-                            lbdir_path = f
-                            break
+                lbdir_path = _find_lbdir_in_folder(folder)
 
                 if not lbdir_path:
                     results.append({
@@ -566,21 +570,12 @@ def create_app():
                 lb_id = f"{lb_number:05d}"
                 attach_dir = ATTACHMENTS_DIR / f"LB-{lb_id}"
 
-                def _find_lbdir(directory):
-                    if not directory.exists():
-                        return None
-                    for f in directory.iterdir():
-                        # Matches "lbdir*.txt" and xref naming "LBF-XXXXX-xref-NNNN-lbdir.txt"
-                        if f.is_file() and 'lbdir' in f.name.lower() and f.suffix.lower() == '.txt':
-                            return f
-                    return None
-
-                lbdir_src = _find_lbdir(attach_dir)
+                lbdir_src = _find_lbdir_in_folder(attach_dir)
                 was_scraped = False
 
                 if not lbdir_src:
                     scraper.scrape_entry(lb_number, force=False, download_files=True)
-                    lbdir_src = _find_lbdir(attach_dir)
+                    lbdir_src = _find_lbdir_in_folder(attach_dir)
                     was_scraped = True
 
                 if not lbdir_src:
@@ -604,6 +599,104 @@ def create_app():
                 })
 
             return jsonify({"results": results})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/lbdir/reconcile", methods=["POST"])
+    def lbdir_reconcile():
+        """Preview: find disk files whose MD5 matches missing lbdir entries. Does NOT move files."""
+        try:
+            data = request.get_json() or {}
+            folders = data.get("folders", [])
+            if not folders:
+                return jsonify({"error": "folders list required"}), 400
+
+            results = []
+            for folder_path in folders:
+                folder = Path(folder_path)
+                lbdir_path = _find_lbdir_in_folder(folder)
+                if not lbdir_path:
+                    results.append({"folder": str(folder), "error": "No lbdir*.txt found"})
+                    continue
+                result = checksum_utils.find_reconcilable_files(folder, lbdir_path)
+                result["folder"] = str(folder)
+                results.append(result)
+            return jsonify({"results": results})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/lbdir/apply_reconcile", methods=["POST"])
+    def lbdir_apply_reconcile():
+        """Apply verified rename/move proposals inside a single folder. Never deletes files."""
+        try:
+            data = request.get_json() or {}
+            folder = Path(data.get("folder", ""))
+            renames = data.get("renames", [])  # [{"from": rel, "to": rel}, ...]
+            applied, errors = [], []
+            for r in renames:
+                src = folder / r["from"]
+                dst = folder / r["to"]
+                try:
+                    dst.parent.mkdir(parents=True, exist_ok=True)
+                    shutil.move(str(src), str(dst))
+                    applied.append(r)
+                except Exception as e:
+                    errors.append({"rename": r, "error": str(e)})
+            return jsonify({"applied": len(applied), "errors": errors})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/lbdir/find_extra", methods=["POST"])
+    def lbdir_find_extra():
+        """List files in each folder that are not referenced in the lbdir MD5 section."""
+        try:
+            data = request.get_json() or {}
+            folders = data.get("folders", [])
+            if not folders:
+                return jsonify({"error": "folders list required"}), 400
+
+            results = []
+            for folder_path in folders:
+                folder = Path(folder_path)
+                lbdir_path = _find_lbdir_in_folder(folder)
+                if not lbdir_path:
+                    results.append({"folder": str(folder), "error": "No lbdir*.txt found"})
+                    continue
+                result = checksum_utils.find_extra_files(folder, lbdir_path)
+                result["folder"] = str(folder)
+                results.append(result)
+            return jsonify({"results": results})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/lbdir/delete_extra", methods=["POST"])
+    def lbdir_delete_extra():
+        """Permanently delete specified extra files and any resulting empty subdirectories."""
+        try:
+            data = request.get_json() or {}
+            folder = Path(data.get("folder", ""))
+            files = data.get("files", [])  # list of relative paths
+            deleted, errors = [], []
+            for rel in files:
+                target = folder / rel
+                try:
+                    target.unlink()
+                    deleted.append(rel)
+                except Exception as e:
+                    errors.append({"file": rel, "error": str(e)})
+            # Prune subdirectories that are now empty (bottom-up, never touch folder root)
+            removed_dirs = []
+            for dirpath, dirnames, filenames in os.walk(str(folder), topdown=False):
+                d = Path(dirpath)
+                if d == folder:
+                    continue
+                try:
+                    if not any(d.iterdir()):
+                        d.rmdir()
+                        removed_dirs.append(d.relative_to(folder).as_posix())
+                except Exception:
+                    pass
+            return jsonify({"deleted": len(deleted), "removed_dirs": removed_dirs, "errors": errors})
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 

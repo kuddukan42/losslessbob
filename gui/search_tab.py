@@ -3,6 +3,7 @@ import webbrowser
 
 import requests
 from PyQt6.QtCore import Qt, QAbstractTableModel, QModelIndex, pyqtSignal, QThread, QSettings
+import gui.styles as styles
 from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLineEdit, QComboBox,
     QPushButton, QTableView, QAbstractItemView, QHeaderView, QLabel, QCheckBox,
@@ -48,11 +49,9 @@ class SearchModel(QAbstractTableModel):
             return str(val) if val else ""
         if role == Qt.ItemDataRole.BackgroundRole:
             if row.get("status") == "missing":
-                from PyQt6.QtGui import QColor
-                return QColor("#FFFF99")
+                return styles.ROW_MISSING
             if row.get("lb_number") in self._owned:
-                from gui.styles import ROW_OWNED
-                return ROW_OWNED
+                return styles.ROW_OWNED
         if role == Qt.ItemDataRole.TextAlignmentRole and col == 5:
             return Qt.AlignmentFlag.AlignCenter
         return None
