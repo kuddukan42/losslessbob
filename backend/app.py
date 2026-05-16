@@ -500,11 +500,12 @@ def create_app():
                     ).fetchone()
                 lb_number = row["lb_number"] if row else None
 
-                # Find lbdir*.txt (case-insensitive)
+                # Find lbdir*.txt (case-insensitive).
+                # Matches both standard "lbdir*.txt" and xref naming "LBF-XXXXX-xref-NNNN-lbdir.txt".
                 lbdir_path = None
                 if folder.exists():
                     for f in folder.iterdir():
-                        if f.is_file() and f.name.lower().startswith('lbdir') and f.suffix.lower() == '.txt':
+                        if f.is_file() and 'lbdir' in f.name.lower() and f.suffix.lower() == '.txt':
                             lbdir_path = f
                             break
 
@@ -569,7 +570,8 @@ def create_app():
                     if not directory.exists():
                         return None
                     for f in directory.iterdir():
-                        if f.is_file() and f.name.lower().startswith('lbdir') and f.suffix.lower() == '.txt':
+                        # Matches "lbdir*.txt" and xref naming "LBF-XXXXX-xref-NNNN-lbdir.txt"
+                        if f.is_file() and 'lbdir' in f.name.lower() and f.suffix.lower() == '.txt':
                             return f
                     return None
 

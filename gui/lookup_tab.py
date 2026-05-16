@@ -11,7 +11,7 @@ from PyQt6.QtGui import QColor, QAction
 from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QSplitter, QListWidget, QListWidgetItem,
     QPushButton, QLabel, QTableView, QAbstractItemView, QMenu, QApplication,
-    QFileDialog, QHeaderView,
+    QFileDialog, QHeaderView, QCheckBox,
 )
 
 from gui.styles import ROW_MATCHED, ROW_NOT_FOUND, ROW_MISSING, ROW_DUPLICATE, ROW_XREF
@@ -235,6 +235,7 @@ class LookupTab(QWidget):
         self._folder_filter: str | None = None       # active listbox folder filter
         self._summary_filter_lbs: set = set()        # active summary-row LB filter
         self._ignore_summary_selection = False
+        self._best_match_only: bool = True           # hide non-MATCHED rows when a MATCHED exists
 
         # Storage for full (unfiltered) rendered data
         self._sum_rows: list = []
@@ -333,6 +334,14 @@ class LookupTab(QWidget):
         summary_header_row = QHBoxLayout()
         self.summary_label = QLabel("Summary")
         summary_header_row.addWidget(self.summary_label)
+        self.best_match_chk = QCheckBox("Best match only")
+        self.best_match_chk.setChecked(True)
+        self.best_match_chk.setToolTip(
+            "When a complete MATCHED result exists, hide secondary DUPLICATE/INCOMPLETE rows.\n"
+            "Uncheck to see all LB entries that share checksums with your files."
+        )
+        self.best_match_chk.stateChanged.connect(self._on_best_match_toggled)
+        summary_header_row.addWidget(self.best_match_chk)
         summary_header_row.addStretch()
         self.select_incomplete_btn = QPushButton("Select All Incomplete")
         self.select_incomplete_btn.clicked.connect(self._on_select_all_incomplete)
@@ -608,6 +617,10 @@ class LookupTab(QWidget):
         self._update_filter_labels()
         self._apply_filters()
 
+    def _on_best_match_toggled(self, state):
+        self._best_match_only = bool(state)
+        self._apply_filters()
+
     # ── Filtering ─────────────────────────────────────────────────────────────
 
     def _update_filter_labels(self):
@@ -661,6 +674,27 @@ class LookupTab(QWidget):
                 except ValueError:
                     return False
             det_indices = [i for i in det_indices if _lb_matches(self._det_rows[i][3])]
+
+        # Best-match-only filter: when any summary row in the current view is MATCHED,
+        # hide rows that are DUPLICATE or INCOMPLETE so secondary hits don't clutter results.
+        if self._best_match_only:
+            matched_indices = [i for i in sum_indices if self._sum_rows[i][8] == "MATCHED"]
+            if matched_indices:
+                matched_lbs = {self._sum_lb_nums[i] for i in matched_indices}
+
+                def _parse_det_lb(lb_str: str) -> int | None:
+                    if lb_str.startswith("LB-"):
+                        try:
+                            return int(lb_str[3:])
+                        except ValueError:
+                            pass
+                    return None
+
+                sum_indices = matched_indices
+                det_indices = [
+                    i for i in det_indices
+                    if _parse_det_lb(self._det_rows[i][3]) in matched_lbs
+                ]
 
         # Apply to models
         det_rows = [self._det_rows[i] for i in det_indices]

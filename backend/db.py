@@ -355,7 +355,7 @@ def lookup_checksums(parsed_entries, db_path=None):
         matched_chks[chk].append(dict(row))
 
     detail = []
-    lb_to_matched: dict = {}
+    lb_xref_to_matched: dict = {}  # (lb_number, xref_val) -> set of matched checksums
 
     for chk, fname, chk_type in candidates:
         if chk in matched_chks:
@@ -363,7 +363,7 @@ def lookup_checksums(parsed_entries, db_path=None):
             is_duplicate = len(matches) > 1
             for m in matches:
                 lb = m["lb_number"]
-                lb_to_matched.setdefault(lb, set()).add(chk)
+                lb_xref_to_matched.setdefault((lb, m["xref"]), set()).add(chk)
                 status = "DUPLICATE" if is_duplicate else "MATCHED"
                 detail.append({
                     "checksum": chk,
@@ -397,20 +397,32 @@ def lookup_checksums(parsed_entries, db_path=None):
             "is_duplicate": False, "missing_from_set": [], "detail_url": None,
         })
 
-    # Reverse lookup: find checksums in DB for matched LBs that weren't in input
-    # Uses idx_lb_xref0 partial index (DB-03)
-    for lb, matched_set in lb_to_matched.items():
+    # Reverse lookup: check completeness per (lb_number, xref_value) group.
+    # Evaluating per xref group means a recording that fully matches an xref variant
+    # is shown as MATCHED (green) rather than INCOMPLETE — because it IS complete for
+    # that xref; the primary LB set simply isn't what the user has.
+    _lb_xref_missing: dict = {}
+    for (lb, xref_val), matched_set in lb_xref_to_matched.items():
         all_chks = conn.execute(
-            "SELECT checksum FROM checksums WHERE lb_number=? AND xref=0",
-            (lb,)
+            "SELECT checksum FROM checksums WHERE lb_number=? AND xref=?",
+            (lb, xref_val)
         ).fetchall()
         all_chks_set = {r["checksum"] for r in all_chks}
-        missing = all_chks_set - matched_set
-        for item in detail:
-            if item["lb_number"] == lb:
-                item["missing_from_set"] = list(missing)
-                if missing and item["status"] == "MATCHED":
-                    item["status"] = "MATCHED (INCOMPLETE)"
+        _lb_xref_missing[(lb, xref_val)] = all_chks_set - matched_set
+
+    for item in detail:
+        lb = item["lb_number"]
+        if lb is None:
+            continue
+        missing = _lb_xref_missing.get((lb, item["xref"]), set())
+        item["missing_from_set"] = list(missing)
+        if missing and item["status"] == "MATCHED":
+            item["status"] = "MATCHED (INCOMPLETE)"
+
+    # Per-LB total missing count aggregated across all xref groups (for summary display)
+    _lb_missing_count: dict = {}
+    for (lb, _xv), missing_set in _lb_xref_missing.items():
+        _lb_missing_count[lb] = _lb_missing_count.get(lb, 0) + len(missing_set)
 
     # Duplicate resolution: when the same checksum appears in multiple LBs (DUPLICATE),
     # and one of those LBs is fully matched (no missing files) while others are not,
@@ -442,7 +454,7 @@ def lookup_checksums(parsed_entries, db_path=None):
                 "given": 0,
                 "matched": 0,
                 "not_found": 0,
-                "missing_from_set": len(item["missing_from_set"]),
+                "missing_from_set": _lb_missing_count.get(lb, 0),
                 "duplicates": 0,
                 "xrefs": 0,
                 "status": "MATCHED",
@@ -458,6 +470,14 @@ def lookup_checksums(parsed_entries, db_path=None):
             s["xrefs"] += 1
         if item["missing_from_set"]:
             s["status"] = "INCOMPLETE"
+
+    # If every matched item for an LB is still a duplicate (none were promoted to MATCHED
+    # by the resolution pass), the entry is superseded by a better-matching LB — show it
+    # as DUPLICATE (yellow) rather than INCOMPLETE (pink) so the user isn't misled into
+    # thinking they have missing files.
+    for s in lb_summary.values():
+        if s["duplicates"] == s["given"] and s["status"] == "INCOMPLETE":
+            s["status"] = "DUPLICATE"
 
     summary = {
         "given": len(parsed_entries),

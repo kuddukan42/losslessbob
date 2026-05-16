@@ -500,11 +500,12 @@ def post_lb_topic(
     if not torrent.exists():
         return {"ok": False, "error": f"Torrent file not found: {torrent}"}
 
+    lb_id = f"LB-{lb_number:05d}"
+
     # --- Build subject ---
     if subject_override:
         subject = subject_override
     else:
-        lb_id = f"LB-{lb_number:05d}"
         date_str = entry.get("date_str") or ""
         location = (entry.get("location") or "").strip()
         from backend.torrent_maker import _parse_date
@@ -551,6 +552,7 @@ def post_lb_topic(
     payload = {
         **hidden,
         "subject": subject,
+        "desc": lb_id,
         "message": message_crlf,
         "post": "Post",
         "ns": "0",
@@ -645,6 +647,7 @@ def post_lb_topic(
             retry_payload = {
                 **retry_fields,
                 "subject": subject,
+                "desc": lb_id,
                 "message": message_crlf,
                 "post": "Post",
                 "ns": "0",

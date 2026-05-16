@@ -1,3 +1,58 @@
+BUG-055: SMF topic Description field (desc) not sent — LB number never appeared on forum
+Status: Fixed
+File(s): backend/forum_poster.py:post_lb_topic
+Reported: 2026-05-15
+Fixed: 2026-05-15
+Description: After the desc feature was added to forum posts, the LB number never appeared in the SMF topic Description field because `"desc": lb_id` was missing from both the initial payload and the retry payload. Additionally, `lb_id` was scoped inside the `else:` branch (only defined when subject_override was None), so calling code that always supplies subject_override (the GUI) would encounter a NameError if desc had been included.
+Root cause: `lb_id` was defined inside `if not subject_override: else:` block instead of unconditionally; `"desc": lb_id` was never added to either payload dict.
+Fix: Moved `lb_id = f"LB-{lb_number:05d}"` to before the subject branch so it is always defined. Added `"desc": lb_id` to both the initial payload and the retry_payload.
+
+---
+
+BUG-054: Superseded duplicate LB shows INCOMPLETE (pink) instead of DUPLICATE (yellow) in summary
+Status: Fixed
+File(s): backend/db.py:lookup_checksums
+Reported: 2026-05-15
+Fixed: 2026-05-15
+Description: When two LBs share checksums and one is a complete match (MATCHED, green), the other showed as INCOMPLETE (pink) in the summary, implying the user is missing files. The 8 shared checksums were all duplicates — none were unique to the secondary LB — so the user is not missing anything.
+Root cause: The summary status was set to INCOMPLETE whenever missing_from_set was non-empty, regardless of whether all matched items were DUPLICATEs superseded by a better-matching LB. The "missing" files belong to the secondary LB's primary set, not to what the user actually has.
+Fix: After building the summary, any LB where duplicates == given (all items still DUPLICATE after resolution) and status == INCOMPLETE is reclassified to DUPLICATE. The GUI's existing color mapping renders it yellow.
+
+---
+
+BUG-053: Fatal crash under Wayland — EGL_BAD_NATIVE_WINDOW kills the compositor connection
+Status: Fixed
+File(s): main.py
+Reported: 2026-05-15
+Fixed: 2026-05-15
+Description: App crashed with "qt.qpa.wayland: eglSwapBuffers failed with 0x300d, surface: 0x0" followed by "The Wayland connection experienced a fatal error: Invalid argument". The process was killed with no Python traceback.
+Root cause: Qt's native Wayland plugin + AA_ShareOpenGLContexts + QtWebEngine EGL context sharing triggers EGL_BAD_NATIVE_WINDOW (surface becomes 0x0) on some Wayland compositors. The fatal Wayland protocol error that follows is unrecoverable at the application level.
+Fix: Set QT_QPA_PLATFORM=xcb before QApplication construction on non-Windows platforms when the variable is not already set by the user. XWayland is stable for this workload and loses no functionality. User can override by exporting QT_QPA_PLATFORM before launch.
+
+---
+
+BUG-052: xref full match shown as INCOMPLETE — completeness checked against primary set instead of xref group
+Status: Fixed
+File(s): backend/db.py:lookup_checksums
+Reported: 2026-05-15
+Fixed: 2026-05-15
+Description: A recording that provides all checksums for a specific xref variant (e.g. xref 253) was shown as MATCHED (INCOMPLETE) instead of MATCHED (green). The summary correctly identified the xref but the status was wrong.
+Root cause: The reverse lookup queried `WHERE lb_number=? AND xref=0` for every matched LB, comparing input against the full primary set. Since the user only had xref-253 files, all 32 primary checksums appeared "missing" and flipped the status to INCOMPLETE.
+Fix: Refactored lb_to_matched to lb_xref_to_matched keyed by (lb_number, xref_value). Reverse lookup now queries `WHERE lb_number=? AND xref=?` per group. Completeness is evaluated independently per xref variant — the primary set is not consulted when the user has no primary files.
+
+---
+
+BUG-051: lbdir xref files not found — startswith('lbdir') misses LBF-XXXXX-xref-NNNN-lbdir.txt naming
+Status: Fixed
+File(s): backend/app.py:lbdir_check, lbdir_retrieve._find_lbdir
+Reported: 2026-05-15
+Fixed: 2026-05-15
+Description: xref lbdir files are named LBF-02283-xref-00253-lbdir.txt (not lbdir*.txt). Both the lbdir_check route and the _find_lbdir helper used startswith('lbdir'), so xref lbdir files in local folders and in the attachment cache were never detected.
+Root cause: The filename detection predicate only matched the original naming convention and did not account for the xref attachment naming pattern where 'lbdir' appears mid-name rather than at the start.
+Fix: Changed both detection predicates from startswith('lbdir') to 'lbdir' in f.name.lower(), which matches both conventions while remaining specific (combined with the .txt suffix check).
+
+---
+
 BUG-050: _post_url() hardcoded wrong SMF handler — form action= is the authoritative POST target
 Status: Fixed
 File(s): backend/forum_poster.py:post_lb_topic, _scrape_form_fields
@@ -264,12 +319,12 @@ Fix: Added QApplication.setAttribute(Qt.ApplicationAttribute.AA_ShareOpenGLConte
 
 BUG-026: "Release of profile requested but WebEnginePage still not deleted" on shutdown
 Status: Fixed
-File(s): gui/attachments_tab.py:84-90
+File(s): gui/attachments_tab.py:_init_web_view, _cleanup_webengine
 Reported: 2026-05-12
-Fixed: 2026-05-12
-Description: Qt logged "Release of profile requested but WebEnginePage still not deleted. Expect troubles!" on app exit. Qt's child-destruction order is unspecified, so the QWebEngineProfile (child of the tab) was sometimes destroyed before the QWebEnginePage that referenced it.
-Root cause: Both profile and page were parented to self (the tab widget). Qt may destroy them in any order, and if profile goes first the page holds a dangling reference.
-Fix: Parent the QWebEnginePage to the QWebEngineProfile instead of to self. Qt now guarantees that when profile is destroyed, it first destroys its own children (including page), eliminating the ordering hazard. Both objects are also stored as self._web_profile / self._web_page for explicit lifetime tracking.
+Fixed: 2026-05-15
+Description: Qt logged "Release of profile requested but WebEnginePage still not deleted. Expect troubles!" on app exit. The previous fix (parenting page to profile) was insufficient — the profile itself was still a sibling of web_view under the tab, so Qt could still destroy the profile while the view held live Chromium web-contents references.
+Root cause: QWebEngineProfile had the tab as its Qt parent; Qt destroyed siblings in arbitrary order. Even with the page parented to the profile, the Chromium-level web-contents tracked by the view were still alive when the profile destructor ran.
+Fix: Removed the Qt parent from QWebEngineProfile (no second arg to constructor). Connected QApplication.aboutToQuit to _cleanup_webengine(), which uses sip.delete() to force destruction in the required order: view first (disconnects Chromium web-contents from the profile), then page, then profile.
 
 ---
 

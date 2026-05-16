@@ -1,4 +1,5 @@
 import logging
+import os
 import sys
 import socket
 import threading
@@ -87,6 +88,21 @@ def main() -> None:
     flask_thread = threading.Thread(target=start_flask, daemon=True)
     flask_thread.start()
     _slog.t("flask thread started")
+
+    # Force XWayland (xcb) on Linux when running under a Wayland compositor.
+    # Native Wayland + AA_ShareOpenGLContexts + QtWebEngine can trigger fatal
+    # EGL_BAD_NATIVE_WINDOW (0x300d) errors that kill the Wayland connection
+    # with no recovery path. XWayland is stable for this workload and loses
+    # no functionality. Honour an explicit QT_QPA_PLATFORM override from the
+    # environment so the user can still opt in to native Wayland if desired.
+    if sys.platform != "win32" and "QT_QPA_PLATFORM" not in os.environ:
+        os.environ["QT_QPA_PLATFORM"] = "xcb"
+
+    # Suppress Chromium-level sandbox diagnostics and path-override warnings that
+    # go directly to stderr and can't be filtered through Python's logging.
+    _flags = os.environ.get("QTWEBENGINE_CHROMIUM_FLAGS", "")
+    if "--disable-logging" not in _flags:
+        os.environ["QTWEBENGINE_CHROMIUM_FLAGS"] = (_flags + " --disable-logging").strip()
 
     # Must be set before QApplication is constructed so QtWebEngine can share
     # the GPU process's OpenGL context; without this the renderer falls back to

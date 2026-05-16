@@ -181,14 +181,17 @@ class AttachmentsTab(QWidget):
             self._tree_loaded = True
             self._refresh_tree()
 
-    def _init_web_view(self):
+    def _init_web_view(self) -> None:
         """Create the QWebEngineView on first tab activation (lazy GPU-process start)."""
         try:
             from PyQt6.QtWebEngineWidgets import QWebEngineView
             from PyQt6.QtWebEngineCore import QWebEngineProfile, QWebEnginePage
+            from PyQt6.QtWidgets import QApplication
             from backend.paths import WEBENGINE_DIR
             WEBENGINE_DIR.mkdir(parents=True, exist_ok=True)
-            self._web_profile = QWebEngineProfile("losslessbob", self)
+            # No Qt parent on the profile — lifecycle is managed explicitly by
+            # _cleanup_webengine so we can guarantee view → page → profile order.
+            self._web_profile = QWebEngineProfile("losslessbob")
             self._web_profile.setPersistentStoragePath(str(WEBENGINE_DIR))
             self._web_profile.setCachePath(str(WEBENGINE_DIR / "cache"))
             self._web_profile.setHttpCacheMaximumSize(32 * 1024 * 1024)
@@ -196,8 +199,24 @@ class AttachmentsTab(QWidget):
             self.web_view = QWebEngineView(self)
             self.web_view.setPage(self._web_page)
             self.stack.addWidget(self.web_view)
+            QApplication.instance().aboutToQuit.connect(self._cleanup_webengine)
         except ImportError:
             pass
+
+    def _cleanup_webengine(self) -> None:
+        """Destroy WebEngine objects in safe order: view → page → profile."""
+        from PyQt6 import sip
+        if self.web_view is not None and not sip.isdeleted(self.web_view):
+            sip.delete(self.web_view)
+            self.web_view = None
+        page = getattr(self, "_web_page", None)
+        if page is not None and not sip.isdeleted(page):
+            sip.delete(page)
+            self._web_page = None
+        profile = getattr(self, "_web_profile", None)
+        if profile is not None and not sip.isdeleted(profile):
+            sip.delete(profile)
+            self._web_profile = None
 
     def _preview_file(self, path):
         suffix = path.suffix.lower()
