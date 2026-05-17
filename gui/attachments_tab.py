@@ -3,6 +3,7 @@ from pathlib import Path
 import requests
 from PyQt6.QtCore import Qt, QThread, QTimer, pyqtSignal
 from PyQt6.QtCore import QUrl
+from PyQt6.QtGui import QBrush, QColor
 from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QSplitter, QTreeWidget, QTreeWidgetItem,
     QPushButton, QTextEdit, QLabel, QStackedWidget, QLineEdit, QListWidget, QMenu,
@@ -10,6 +11,7 @@ from PyQt6.QtWidgets import (
 
 from backend.paths import ATTACHMENTS_DIR
 from backend.scraper import DETAIL_URL
+from backend.db import get_lb_statuses_batch
 
 
 class _ScrapeThread(QThread):
@@ -269,16 +271,42 @@ class AttachmentsTab(QWidget):
         self._page = 0
         self._render_tree_page()
 
+    _LB_STATUS_BG = {
+        "private": QColor("#B3E5FC"),
+        "missing": QColor("#E0E0E0"),
+    }
+
     def _render_tree_page(self):
         total_pages = max(1, (len(self._all_lb_dirs) + self.PAGE_SIZE - 1) // self.PAGE_SIZE)
         start = self._page * self.PAGE_SIZE
         end = start + self.PAGE_SIZE
+        page_dirs = self._all_lb_dirs[start:end]
+
+        # Batch-fetch lb_status for all LB dirs on this page (one query)
+        page_lbs: list[int] = []
+        for lb_dir in page_dirs:
+            try:
+                page_lbs.append(int(lb_dir.name.replace("LB-", "")))
+            except ValueError:
+                pass
+        lb_status_map = get_lb_statuses_batch(page_lbs) if page_lbs else {}
+
         self.tree.setUpdatesEnabled(False)
         self.tree.clear()
-        for lb_dir in self._all_lb_dirs[start:end]:
+        for lb_dir in page_dirs:
             lb_name = lb_dir.name
             parent_item = QTreeWidgetItem(self.tree, [lb_name])
             parent_item.setData(0, Qt.ItemDataRole.UserRole, {"type": "lb", "lb_dir": str(lb_dir)})
+            try:
+                lb_num = int(lb_name.replace("LB-", ""))
+                lb_status = lb_status_map.get(lb_num)
+                if lb_status in self._LB_STATUS_BG:
+                    bg = QBrush(self._LB_STATUS_BG[lb_status])
+                    parent_item.setBackground(0, bg)
+                    tip = "Private LB — no published webpage" if lb_status == "private" else "Missing LB — not in DB"
+                    parent_item.setToolTip(0, tip)
+            except ValueError:
+                pass
             for f in sorted(lb_dir.iterdir()):
                 child = QTreeWidgetItem(parent_item, [f.name])
                 child.setData(0, Qt.ItemDataRole.UserRole, {"type": "file", "path": str(f)})

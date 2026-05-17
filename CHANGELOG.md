@@ -1,4 +1,20 @@
-[2026-05-17] — feat(gui): lb_status filter combobox + tinting in Lookup tab (TODO-021 partial)
+[2026-05-17] — feat(gui): lb_status filter + tinting across Lookup, Attachments, Rename, Lbdir tabs (TODO-021)
+
+Changed
+
+backend/db.py: `get_lb_statuses_batch(lb_numbers)` — single batch SELECT from lb_master, returns {lb_number: lb_status} dict for bulk UI colouring. Also stamps lb_status onto each lb_summary dict in lookup_checksums() for the filter combobox.
+
+gui/lookup_tab.py: "All LB statuses / Public only / Private only / Missing only" QComboBox in Summary header row. `_lb_status_filter` + `_sum_lb_statuses` list drive filter guard in `_apply_filters()`. Private → #B3E5FC, Missing → #E0E0E0 row tinting ahead of match-quality colors.
+
+gui/rename_tab.py: LB Found column (col 3) tinted #B3E5FC/E0E0E0 for Private/Missing when no NFT discrepancy is active.
+
+gui/attachments_tab.py: `_render_tree_page()` batch-fetches lb_status for the current page via `get_lb_statuses_batch()`, tints Private parent items light blue and Missing items gray, with tooltip text.
+
+gui/lbdir_tab.py: `_populate_summary()` batch-fetches lb_status and tints the LB# column (col 1) by lb_status; verification-result color still applies to all other columns.
+
+---
+
+[2026-05-17] — feat(integrity): -NFT suffix for Private LB folder names (TODO-018)
 
 Changed
 

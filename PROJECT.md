@@ -766,6 +766,7 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 
 | Date | Change |
 |------|--------|
+| 2026-05-17 | lb_status filter + tinting across Lookup (filter combobox + row tint), Attachments tree (page-level batch tint), Rename LB Found column, Lbdir LB# column. `get_lb_statuses_batch()` in db.py. (TODO-021) |
 | 2026-05-17 | -NFT suffix for Private LB folder names: new `backend/folder_naming.py` module; `should_mark_nft()` + `lb_status` annotation in `lookup_checksums()` in `db.py`; Rename tab applies NFT suffix to proposed names and shows discrepancy colours; Collection tab `_get_standard_lb_name()` calls `/api/lb_master/<lb>/nft`. (TODO-018) |
 | 2026-05-17 | Re-scrape Private LBs button in Setup tab (Row 3 of Scraper grid): `POST /api/scrape/private_rescrape` + GUI handler with confirmation dialog, progress tracking, and promotion count in completion message. (TODO-017) |
 | 2026-05-17 | Master/user data ownership split: `MASTER_TABLES`/`USER_TABLES`/`MASTER_META_KEYS`/`MASTER_SCHEMA_VERSION` constants in `backend/db.py`. New `export_master_db()` and `import_master_db()` with SHA256 manifest and schema-version guard. Curator mode (`meta.is_curator`) gates publish UI. Endpoints `GET/POST /api/curator`, `POST /api/master/export`, `POST /api/master/import`. Setup tab "Master Data" group adds Curator-mode checkbox + Publish/Install Master Update buttons. 13 tests in `tests/test_master_data.py`. (TODO-020) |

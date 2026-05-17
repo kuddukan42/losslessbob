@@ -1461,6 +1461,25 @@ def get_lb_status(lb_number: int, db_path=None) -> str | None:
     return row["lb_status"] if row else None
 
 
+def get_lb_statuses_batch(lb_numbers: "list[int]", db_path=None) -> "dict[int, str]":
+    """Return {lb_number: lb_status} for every lb_number present in lb_master.
+
+    Missing entries are absent from the result dict.  Intended for bulk
+    UI colouring (e.g. the Attachments tree page render) to avoid N individual
+    queries.
+    """
+    if not lb_numbers:
+        return {}
+    conn = get_connection(db_path)
+    rows = conn.execute(
+        "SELECT lb_number, lb_status FROM lb_master WHERE lb_number IN ({})".format(
+            ",".join("?" * len(lb_numbers))
+        ),
+        lb_numbers,
+    ).fetchall()
+    return {r["lb_number"]: r["lb_status"] for r in rows}
+
+
 def should_mark_nft(lb_number: int, db_path=None) -> bool:
     """Return True if folders for lb_number should carry the -NFT suffix.
 
