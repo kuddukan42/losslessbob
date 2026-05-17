@@ -232,6 +232,14 @@ class MainWindow(QMainWindow):
     def _on_theme_applied(self):
         self.setStyleSheet(styles.MAIN_STYLESHEET)
         self.lookup_tab.refresh_colors()
+        font_size = self.theme_tab._font_size_spin.value()
+        self.search_tab.resize_columns_to_font()
+        self.collection_tab.resize_columns_to_font(font_size)
+        self.dbedit_tab.resize_columns_to_font()
+        self.lookup_tab.resize_columns_to_font()
+        self.rename_tab.resize_columns_to_font()
+        self.verify_tab.resize_columns_to_font()
+        self.lbdir_tab.resize_columns_to_font()
 
     def _on_send_to_spectrograms(self, folders: list):
         self.spectrogram_tab._add_folders(folders)

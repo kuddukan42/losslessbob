@@ -1,3 +1,50 @@
+[2026-05-16] — fix(gui): crash on theme apply due to non-existent self.table reference
+
+Fixed
+
+gui/collection_tab.py: resize_columns_to_font() referenced self.table, which only exists on the unrelated _ScanPreviewDialog class — not on CollectionTab. Caused AttributeError on every theme/font change and aborted the app. Removed the stray block; the other view/table resizes were already covering CollectionTab's real widgets.
+
+---
+
+[2026-05-16] — feat(gui): resize table columns to fit whenever font size changes
+
+Added
+
+gui/search_tab.py: resize_columns_to_font() — calls resizeColumnsToContents() on the search results view.
+gui/collection_tab.py: resize_columns_to_font(font_size) — resizeColumnsToContents() on coll/miss/wish views and the LB lib table; scales torrent_history_table and forum_posts_table hardcoded pixel widths by font_size/9.
+gui/dbedit_tab.py: resize_columns_to_font() — resizeColumnsToContents() on the data table.
+gui/lookup_tab.py: resize_columns_to_font() — resizeColumnsToContents() on summary and detail views.
+gui/rename_tab.py: resize_columns_to_font() — resizeColumnsToContents() on the rename view.
+gui/verify_tab.py: resize_columns_to_font() — resizeColumnsToContents() on summary and detail tables.
+gui/lbdir_tab.py: resize_columns_to_font() — resizeColumnsToContents() on summary and detail tables.
+gui/main_window.py: _on_theme_applied() now reads the current font size from theme_tab and calls resize_columns_to_font() on every tab after applying the stylesheet.
+
+---
+
+[2026-05-16] — feat(dbedit): add LB# search field to DB Editor toolbar
+
+Added
+
+gui/dbedit_tab.py: "LB#:" label + lb_input QLineEdit (width 80px) added to the toolbar between "Load Records" and the text search field. Pressing Enter in the field triggers the search; the field is cleared on table switch and "Load Records".
+backend/app.py: dbedit_rows now accepts an optional lb_number query param; when the table has an lb_number column and the value is a valid integer, it appends AND lb_number = ? to the WHERE clause (combinable with the existing text search).
+
+---
+
+[2026-05-16] — feat(gui): add font family and font size controls to the Themes tab
+
+Added
+
+gui/styles.py: build_stylesheet() and apply_theme() now accept font_family and font_size keyword args; the chosen font is prepended to the platform stack and the size replaces the hardcoded 9pt.
+gui/theme_tab.py: Font row (QComboBox + QSpinBox) inserted in _build_ui() below the colour swatches; _on_apply(), _save_settings(), and load_and_apply_saved() wired to read, persist, and restore font settings via QSettings keys theme/font_family and theme/font_size.
+
+Changed
+
+gui/search_tab.py: _prev_btn / _next_btn setFixedWidth(80) → setMinimumWidth(80) so buttons expand at larger font sizes.
+gui/collection_tab.py: _coll_prev_btn / _coll_next_btn setFixedWidth(80) → setMinimumWidth(80).
+gui/dbedit_tab.py: prev_btn / next_btn setFixedWidth(70) → setMinimumWidth(70).
+
+---
+
 [2026-05-16] — fix(db): searching a bare integer now always returns the matching lb_number entry
 
 Fixed

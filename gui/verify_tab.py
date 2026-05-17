@@ -604,3 +604,7 @@ class VerifyTab(QWidget):
                 self.detail_table.setItem(row, col, item)
 
         self.detail_table.resizeColumnsToContents()
+
+    def resize_columns_to_font(self) -> None:
+        self.summary_table.resizeColumnsToContents()
+        self.detail_table.resizeColumnsToContents()

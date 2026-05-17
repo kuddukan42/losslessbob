@@ -43,16 +43,18 @@ def _button_text_color(accent: str) -> str:
     return "#000000" if luma > 128 else "#FFFFFF"
 
 
-def build_stylesheet(t):
+def build_stylesheet(t, font_family: str = "", font_size: int = 9) -> str:
     _btn_fg = _button_text_color(t['accent'])
     _btn_fg_hover = _button_text_color(t['accent_hover'])
     _btn_fg_pressed = _button_text_color(t['accent_pressed'])
+    _stack = f"{font_family}, {_platform_font_stack()}" if font_family else _platform_font_stack()
+    _fsize = f"{font_size}pt"
     return f"""
 QMainWindow, QWidget {{
     background-color: {t['app_bg']};
     color: {t['app_fg']};
-    font-family: {_platform_font_stack()};
-    font-size: 9pt;
+    font-family: {_stack};
+    font-size: {_fsize};
 }}
 QTabWidget::pane {{
     border: 1px solid {t['border']};
@@ -218,7 +220,7 @@ QSplitter::handle {{
 """
 
 
-def apply_theme(theme_dict):
+def apply_theme(theme_dict, font_family: str = "", font_size: int = 9):
     global ROW_MATCHED, ROW_NOT_FOUND, ROW_MISSING, ROW_DUPLICATE, ROW_XREF, ROW_OWNED, ROW_WISHLIST
     global HEADER_BG, HEADER_FG, APP_BG, SELECTION_COLOR, MAIN_STYLESHEET
     ROW_MATCHED = QColor(theme_dict["row_matched"])
@@ -232,7 +234,7 @@ def apply_theme(theme_dict):
     HEADER_FG = QColor(theme_dict["header_fg"])
     APP_BG = QColor(theme_dict["app_bg"])
     SELECTION_COLOR = QColor(theme_dict["selection"])
-    MAIN_STYLESHEET = build_stylesheet(theme_dict)
+    MAIN_STYLESHEET = build_stylesheet(theme_dict, font_family=font_family, font_size=font_size)
 
 
 def apply_panel_shadow(widget):

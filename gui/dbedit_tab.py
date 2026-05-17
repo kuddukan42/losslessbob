@@ -91,6 +91,12 @@ class DbEditTab(QWidget):
         load_btn.setToolTip("Retrieve all records for the selected table (clears search)")
         load_btn.clicked.connect(self._on_load_all)
         toolbar.addWidget(load_btn)
+        toolbar.addWidget(QLabel("LB#:"))
+        self.lb_input = QLineEdit()
+        self.lb_input.setPlaceholderText("e.g. 1797")
+        self.lb_input.setFixedWidth(80)
+        self.lb_input.returnPressed.connect(self._do_search)
+        toolbar.addWidget(self.lb_input)
         self.search_input = QLineEdit()
         self.search_input.setPlaceholderText("Search text columns…")
         self.search_input.setFixedWidth(220)
@@ -128,13 +134,13 @@ class DbEditTab(QWidget):
         # Pagination row
         page_row = QHBoxLayout()
         self.prev_btn = QPushButton("< Prev")
-        self.prev_btn.setFixedWidth(70)
+        self.prev_btn.setMinimumWidth(70)
         self.prev_btn.clicked.connect(self._prev_page)
         page_row.addWidget(self.prev_btn)
         self.page_label = QLabel("")
         page_row.addWidget(self.page_label)
         self.next_btn = QPushButton("Next >")
-        self.next_btn.setFixedWidth(70)
+        self.next_btn.setMinimumWidth(70)
         self.next_btn.clicked.connect(self._next_page)
         page_row.addWidget(self.next_btn)
         page_row.addStretch()
@@ -215,6 +221,7 @@ class DbEditTab(QWidget):
         self.save_btn.setEnabled(False)
         self.discard_btn.setEnabled(False)
         self.search_input.clear()
+        self.lb_input.clear()
         # Prime the width cache from QSettings so the first load can restore them
         if self._current_table not in self._col_widths:
             saved = self._load_saved_widths(self._current_table)
@@ -255,6 +262,7 @@ class DbEditTab(QWidget):
             self.status_label.setText("Select a table first.")
             return
         self.search_input.clear()
+        self.lb_input.clear()
         self._page = 0
         self._load_rows()
 
@@ -265,12 +273,14 @@ class DbEditTab(QWidget):
     def _load_rows(self):
         if not self._current_table:
             return
-        name   = self._current_table
-        search = self.search_input.text().strip()
+        name      = self._current_table
+        search    = self.search_input.text().strip()
+        lb_number = self.lb_input.text().strip()
         url    = (f"http://127.0.0.1:{self.flask_port}"
                   f"/api/dbedit/table/{name}/rows"
                   f"?page={self._page}&limit={self._limit}"
-                  + (f"&search={search}" if search else ""))
+                  + (f"&search={search}" if search else "")
+                  + (f"&lb_number={lb_number}" if lb_number else ""))
         self.status_label.setText("Loading…")
         w = _Worker(lambda: requests.get(url, timeout=20).json())
         w.finished.connect(self._on_rows_loaded)
@@ -575,3 +585,6 @@ class DbEditTab(QWidget):
             self.status_label.setText(f"Exported to {Path(path).name}")
         except Exception as e:
             self.status_label.setText(f"Export error: {e}")
+
+    def resize_columns_to_font(self) -> None:
+        self.data_table.resizeColumnsToContents()

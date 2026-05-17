@@ -557,13 +557,13 @@ class CollectionTab(QWidget):
         # Pagination controls
         page_row = QHBoxLayout()
         self._coll_prev_btn = QPushButton("← Prev")
-        self._coll_prev_btn.setFixedWidth(80)
+        self._coll_prev_btn.setMinimumWidth(80)
         self._coll_prev_btn.clicked.connect(self._coll_prev_page)
         page_row.addWidget(self._coll_prev_btn)
         self._coll_page_label = QLabel("Page 1 of 1")
         page_row.addWidget(self._coll_page_label)
         self._coll_next_btn = QPushButton("Next →")
-        self._coll_next_btn.setFixedWidth(80)
+        self._coll_next_btn.setMinimumWidth(80)
         self._coll_next_btn.clicked.connect(self._coll_next_page)
         page_row.addWidget(self._coll_next_btn)
         page_row.addStretch()
@@ -2566,3 +2566,14 @@ class CollectionTab(QWidget):
                 if row:
                     rows.append(row)
         return rows
+
+    def resize_columns_to_font(self, font_size: int = 9) -> None:
+        scale = font_size / 9.0
+        for tv in (self.coll_view, self.miss_view, self.wish_view):
+            tv.resizeColumnsToContents()
+        self._forum_hist_table.resizeColumnsToContents()
+        self._torrent_hist_table.resizeColumnsToContents()
+        for i, w in enumerate([22, 138, 210, 210]):
+            self.torrent_history_table.setColumnWidth(i, int(w * scale))
+        for i, w in enumerate([145, 280, 300]):
+            self.forum_posts_table.setColumnWidth(i, int(w * scale))

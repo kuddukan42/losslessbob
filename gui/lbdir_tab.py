@@ -1050,3 +1050,7 @@ class LbdirTab(QWidget):
             self._clear_info_panel()
             return
         self._populate_info_panel(self._current_detail_files[file_idx])
+
+    def resize_columns_to_font(self) -> None:
+        self.summary_table.resizeColumnsToContents()
+        self.detail_table.resizeColumnsToContents()

@@ -1,3 +1,14 @@
+BUG-063: AttributeError 'CollectionTab' object has no attribute 'table' on theme apply
+Status: Fixed
+File(s): gui/collection_tab.py:2574
+Reported: 2026-05-16
+Fixed: 2026-05-16
+Description: Applying a theme (or any font-size change) aborted the app with AttributeError: 'CollectionTab' object has no attribute 'table'. Triggered via main_window._on_theme_applied → collection_tab.resize_columns_to_font.
+Root cause: resize_columns_to_font referenced self.table, but that attribute only exists on the unrelated _ScanPreviewDialog class in the same module. CollectionTab's real tables are coll_view/miss_view/wish_view plus the forum/torrent history tables, all of which were already being resized correctly.
+Fix: Removed the self.table block from resize_columns_to_font.
+
+---
+
 BUG-062: Searching by lb_number returns no results when text fields don't contain that number
 Status: Fixed
 File(s): backend/db.py:594-626

@@ -1180,3 +1180,7 @@ class LookupTab(QWidget):
             self._run_lookup("\n".join(text_lines), source=f"LB-{lb_number}")
         except Exception as e:
             self.status_label.setText(f"Error: {e}")
+
+    def resize_columns_to_font(self) -> None:
+        self.summary_view.resizeColumnsToContents()
+        self.detail_view.resizeColumnsToContents()

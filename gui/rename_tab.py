@@ -558,3 +558,6 @@ class RenameTab(QWidget):
             f"Row {row_idx + 1}: resolved to {lb_str}. "
             "Click 'Select All' then 'Rename Selected' when ready."
         )
+
+    def resize_columns_to_font(self) -> None:
+        self.view.resizeColumnsToContents()

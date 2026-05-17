@@ -5,7 +5,7 @@ from PyQt6.QtGui import QColor
 from PyQt6.QtWidgets import (
     QWidget, QHBoxLayout, QVBoxLayout, QListWidget, QListWidgetItem,
     QPushButton, QLabel, QScrollArea, QColorDialog, QGridLayout,
-    QFrame,
+    QFrame, QComboBox, QSpinBox,
 )
 
 import gui.styles as styles
@@ -283,6 +283,32 @@ class ThemeTab(QWidget):
         scroll.setWidget(swatch_container)
         swatch_panel_layout.addWidget(scroll)
 
+        # ── Font settings ──────────────────────────────────────────────────────
+        _FONT_OPTIONS = [
+            ("System default",  ""),
+            ("Cantarell",       "Cantarell"),
+            ("DejaVu Sans",     "DejaVu Sans"),
+            ("Liberation Sans", "Liberation Sans"),
+            ("Noto Sans",       "Noto Sans"),
+            ("Ubuntu",          "Ubuntu"),
+            ("Arial",           "Arial"),
+        ]
+        font_row = QHBoxLayout()
+        font_row.addWidget(QLabel("Font:"))
+        self._font_family_combo = QComboBox()
+        for display, family in _FONT_OPTIONS:
+            self._font_family_combo.addItem(display, userData=family)
+        font_row.addWidget(self._font_family_combo)
+        font_row.addWidget(QLabel("Size:"))
+        self._font_size_spin = QSpinBox()
+        self._font_size_spin.setRange(8, 14)
+        self._font_size_spin.setValue(9)
+        self._font_size_spin.setSuffix(" pt")
+        self._font_size_spin.setFixedWidth(70)
+        font_row.addWidget(self._font_size_spin)
+        font_row.addStretch()
+        swatch_panel_layout.addLayout(font_row)
+
         self.apply_btn = QPushButton("Apply Theme")
         self.apply_btn.clicked.connect(self._on_apply)
         swatch_panel_layout.addWidget(self.apply_btn)
@@ -341,7 +367,9 @@ class ThemeTab(QWidget):
         self._refresh_swatches()
 
     def _on_apply(self):
-        styles.apply_theme(self._current)
+        font_family = self._font_family_combo.currentData()
+        font_size = self._font_size_spin.value()
+        styles.apply_theme(self._current, font_family=font_family, font_size=font_size)
         self._save_settings()
         self.theme_applied.emit()
         self.status_label.setText("Theme applied.")
@@ -354,6 +382,8 @@ class ThemeTab(QWidget):
         s.setValue("theme/name", name)
         for _, key in COLOR_LABELS:
             s.setValue(f"theme/color/{key}", self._current.get(key, ""))
+        s.setValue("theme/font_family", self._font_family_combo.currentData() or "")
+        s.setValue("theme/font_size",   self._font_size_spin.value())
 
     def load_and_apply_saved(self):
         s = QSettings(_SETTINGS_GROUP, _SETTINGS_GROUP)
@@ -383,6 +413,16 @@ class ThemeTab(QWidget):
                 self.theme_list.setCurrentRow(i)
                 self.theme_list.blockSignals(False)
                 break
+
+        saved_family = s.value("theme/font_family", "")
+        saved_size   = max(8, min(14, int(s.value("theme/font_size", 9))))
+        matched_idx = 0
+        for i in range(self._font_family_combo.count()):
+            if self._font_family_combo.itemData(i) == saved_family:
+                matched_idx = i
+                break
+        self._font_family_combo.setCurrentIndex(matched_idx)
+        self._font_size_spin.setValue(saved_size)
 
         self._refresh_swatches()
         self._on_apply()

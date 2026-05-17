@@ -5,6 +5,13 @@ You are the primary developer assistant for this project. Follow all rules below
 
 ---
 
+## Debugging Approach
+
+- Before making speculative fixes, identify and confirm the root cause first. State your hypothesis and verify it with logs/tests before editing.
+- For multi-symptom bugs, check for shared root causes (e.g., import-time binding, date format swaps, platform checks) rather than patching each symptom.
+
+---
+
 ## Mandatory on Every Code Change
 
 ### 1. Update CHANGELOG.md
@@ -98,6 +105,21 @@ Example: fix(scraper): handle HTTP 429 rate limit with exponential backoff
 
 ---
 
+## Project Conventions
+
+- This is a PyQt application; after any GUI change, verify Qt repaint/viewport behavior and avoid initialization-order issues.
+- After implementing any feature or fix, update CHANGELOG.md and BUGS.md as appropriate.
+- Run a syntax check (`python -m py_compile`) on modified files before declaring done.
+
+---
+
+## Testing & Verification
+
+- For bugs reported with 'still didn't work', do not re-apply similar fixes — re-read the original error and consider alternative root causes (off-by-one, format swaps, platform differences, library quirks).
+- Verify fixes end-to-end where possible (run the code, check actual output) rather than relying on code inspection alone.
+
+---
+
 ## What NOT to Do
 
 - Do not silently change behavior — document every behavioral change in CHANGELOG.md.
@@ -105,3 +127,4 @@ Example: fix(scraper): handle HTTP 429 rate limit with exponential backoff
 - Do not hardcode paths outside of the designated constants in each module.
 - Do not modify `data/losslessbob.db` schema without updating PROJECT.md and adding a migration path.
 - Do not create new files without adding them to the File Structure in PROJECT.md.
+

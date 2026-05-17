@@ -57,3 +57,14 @@ search by lb number COMPLETE
 9) clear or edit the my collection database, delete entries, singles or all ? flush ? 
 15) db maintenance - remove certain records, flush the my collection portion separate or the checksum separate
 #######################################
+
+prompt for db integrity
+
+need to identify the status of every integer between 1 and the max LB entry from the flat file update.
+need to start with a list of numbers with no gaps.
+for every number must identify the status
+a) has webpage, this is a "Public LB" - doesn't matter if there is no attachment or no checksum, this is a "Public LB", majority of entries will have this status.
+b) has checksums, but no webpage - this is a "Private LB" - web scrapes are not going to work for these items, unless the status is changed from Private to Public by the webmaster.  Sometimes this happens.
+c) no webpage, no attachments, no checksums - this "Doesn't Exist" - truly missing items because they were deleted or skipped by accident.
+We need to make a plan to document the 3 status of every number, and add filters on the search and collection and various places, this should be listed as a status in the search results, and collection results
+The current status of the project does not give us a single source of truth about the status of each LB number. we are relying on whether it was scraped, or we found attachments, or found checksums.  we need a master table of all the numbers with a status that is immutable.  we can build other queries and functions off this master list.

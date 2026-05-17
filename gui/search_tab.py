@@ -263,13 +263,13 @@ class SearchTab(QWidget):
         # Pagination controls — hidden until results span more than one page
         page_row = QHBoxLayout()
         self._prev_btn = QPushButton("← Prev")
-        self._prev_btn.setFixedWidth(80)
+        self._prev_btn.setMinimumWidth(80)
         self._prev_btn.clicked.connect(self._prev_page)
         page_row.addWidget(self._prev_btn)
         self._page_label = QLabel("Page 1 of 1")
         page_row.addWidget(self._page_label)
         self._next_btn = QPushButton("Next →")
-        self._next_btn.setFixedWidth(80)
+        self._next_btn.setMinimumWidth(80)
         self._next_btn.clicked.connect(self._next_page)
         page_row.addWidget(self._next_btn)
         page_row.addStretch()
@@ -569,3 +569,6 @@ class SearchTab(QWidget):
                 self.results_label.setText(f"LB-{lb:05d} already on wishlist.")
         except Exception as e:
             self.results_label.setText(f"Wishlist error: {e}")
+
+    def resize_columns_to_font(self) -> None:
+        self.view.resizeColumnsToContents()

@@ -88,7 +88,16 @@
       "Bash(fc-list)",
       "Bash(sed 's/,.*$//')",
       "Bash(grep -i \"ubuntu\\\\|cantarell\\\\|liberation sans$\\\\|noto sans$\\\\|dejavu sans$\\\\|open sans\\\\|roboto\\\\|inter\\\\|source sans\\\\|lato\\\\|fira\\\\|oxygen\\\\|bitstream\\\\|freesans\\\\|droid sans\\\\|arial\\\\|helvetica\")",
-      "Bash(gh release *)"
+      "Bash(gh release *)",
+      "Bash(python -m py_compile gui/styles.py gui/theme_tab.py gui/search_tab.py gui/collection_tab.py gui/dbedit_tab.py)",
+      "Bash(python -m py_compile gui/dbedit_tab.py)",
+      "Bash(python -m py_compile backend/app.py)",
+      "Bash(python -m py_compile gui/search_tab.py gui/collection_tab.py gui/dbedit_tab.py gui/lookup_tab.py gui/rename_tab.py gui/verify_tab.py gui/lbdir_tab.py gui/main_window.py)",
+      "Bash(python -m py_compile gui/collection_tab.py)",
+      "Bash(curl -sL -k --max-time 20 -A \"Mozilla/5.0\" \"http://www.losslessbob.wonderingwhattochoose.com/checksum_lookup/checksum_lookup_lb_zip_download.htm\" -o /tmp/lb_zip_page2.html -w \"HTTP %{http_code} | size=%{size_download} | type=%{content_type} | url=%{url_effective}\\\\n\")",
+      "Bash(curl -sL -k --max-time 20 -A \"Mozilla/5.0\" \"http://www.losslessbob.wonderingwhattochoose.com/detail/LB-bootleg-by-title.html\" -o /tmp/lb_bootleg.html -w \"HTTP %{http_code} | size=%{size_download} | type=%{content_type}\\\\n\")",
+      "Bash(head -c 3000 /tmp/lb_bootleg.html)",
+      "Bash(grep -nA 20 \"_get_standard_lb_name\" /home/tjenkins/Documents/losslessbob/gui/collection_tab.py)"
     ],
     "additionalDirectories": [
       "/home/tjenkins/.ssh"

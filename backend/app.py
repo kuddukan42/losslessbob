@@ -868,6 +868,7 @@ def create_app():
             sort_dir = "DESC" if request.args.get("sort_dir", "asc") == "desc" else "ASC"
             conn     = database.get_connection()
 
+            lb_filter = request.args.get("lb_number", "").strip()
             where, params = "", []
             if search:
                 text_cols = [
@@ -879,6 +880,14 @@ def create_app():
                     clauses = [f"CAST([{c}] AS TEXT) LIKE ?" for c in text_cols]
                     where   = "WHERE " + " OR ".join(clauses)
                     params  = [f"%{search}%"] * len(text_cols)
+            if lb_filter and lb_filter.lstrip("-").isdigit():
+                col_names = [c["name"] for c in
+                             conn.execute(f"PRAGMA table_info([{name}])").fetchall()]
+                if "lb_number" in col_names:
+                    lb_clause = "lb_number = ?"
+                    where = (f"WHERE {lb_clause}" if not where
+                             else where + f" AND {lb_clause}")
+                    params.append(int(lb_filter))
 
             order = f"ORDER BY [{sort_col}] {sort_dir}" if sort_col else ""
             total = conn.execute(
