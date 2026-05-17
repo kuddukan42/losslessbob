@@ -23,18 +23,18 @@ Legend: ✅ shipped · 🟡 partial · ⬜ not started
 |---|---|---|---|
 | 0 | **Core `lb_master` table + reconciliation + history + manual overrides** | ✅ | Shipped 2026-05-16. `backend/db.py` has tables, `migrate_lb_master`, `reconcile_lb_status`, override helpers, stats. `backend/importer.py` and `backend/scraper.py` integrated. 9 endpoints under `/api/lb_master/*`. 27 pytest tests in `tests/test_lb_master.py`. |
 | 0 | **Backup function** (`backup_database()`) | ✅ | Shipped 2026-05-16. `VACUUM INTO` with microsecond timestamps, keeps last 10. `POST /api/db/backup` endpoint live. DB Editor has "Backup DB Now" button. |
-| — | **Master ↔ User data ownership model** (publish/subscribe, master export/import) | ⬜ | Schema not split, no `MASTER_TABLES`/`USER_TABLES` constants, no `/api/master/*` endpoints, no GitHub publish button. |
+| — | **Master ↔ User data ownership model** (publish/subscribe, master export/import) | ✅ | Shipped 2026-05-17 (TODO-020). `MASTER_TABLES`/`USER_TABLES`/`MASTER_META_KEYS` constants in `db.py`. `export_master_db()` / `import_master_db()` with SHA256 manifest + schema-version guard. `POST /api/master/export` + `POST /api/master/import`. Curator mode checkbox in Setup tab. 13 tests in `tests/test_master_data.py`. GitHub release upload still deferred (TODO-022). |
 | — | **Override export/import JSON tool** | ⬜ | No `/api/lb_master/overrides/export` or `/import` endpoint. |
 | 5 | **Forum post guard for Private LBs** | ✅ | Shipped 2026-05-16. Backend 403 for private/missing in `preview_forum` and `post_forum`. Collection tab modal both pre-click and on 403 response. `is_postable_to_forum()` helper in `db.py`. |
-| 6 | **Status filters across all appropriate GUI elements** | 🟡 | Done: Search tab + Collection tab (My Collection and Missing-from-Collection) have Status column, color background, status combobox. DB Editor "DB Integrity" panel with stats and Show-Needs-Review. **Not done:** shared `LBStatusComboBox` / `lb_status_style()` widget module (each tab inlined its own), Lookup tab, Attachments tab, Rename tab, Verify/Lbdir tabs, name collision rename of "Missing only" → "Incomplete matches only" in Lookup. |
-| 7 | **`-NFT` suffix on folder names for Private LBs** | ⬜ | No `backend/folder_naming.py`, no `_apply_status_suffix()`, no discrepancy coloring in Rename tab. |
-| 8 | **Persistent folder-to-LB linking (`lb_alias` + `folder_lb_link`)** | ⬜ | Both tables and the Rename tab "Link…" dropdown still need to be built. |
+| 6 | **Status filters across all appropriate GUI elements** | ✅ | Shipped 2026-05-17 (TODO-021). Lookup tab: filter combobox + Private/Missing row tinting. Attachments tree: batch page-level tinting. Rename tab: LB Found col tint. Lbdir: LB# col tint. `get_lb_statuses_batch()` in `db.py`. Shared `LBStatusComboBox` / `lb_status_style()` widget module not built (each tab inlined its own); Verify tab skipped (lb_number unavailable in results). |
+| 7 | **`-NFT` suffix on folder names for Private LBs** | ✅ | Shipped 2026-05-17 (TODO-018). `backend/folder_naming.py` created with `apply_nft_suffix`, `strip_nft_suffix`, `has_nft_suffix`, `nft_discrepancy`. Rename tab applies suffix to proposed names and shows discrepancy colours (pale red/yellow/orange rows). Collection tab `_get_standard_lb_name()` calls `/api/lb_master/<lb>/nft`. `should_mark_nft()` in `db.py`. `GET /api/lb_master/<lb>/nft` endpoint. |
+| 8 | **Persistent folder-to-LB linking (`lb_alias` + `folder_lb_link`)** | ⬜ | Both tables and the Rename tab "Link…" dropdown still need to be built. (TODO-019) |
 | 9 | **Flat-file update check rework** | ⬜ | Existing `scraper.check_for_update()` still does the broken bynumber-page scrape. `flat_file_releases`/`flat_file_changelog` tables not created. |
 | 10 | **Click-to-sort across all tables** | ⬜ | Existing DB Editor backend has `sort_col`/`sort_dir` already, but no GUI wiring; no `SortableTableItem`/`sort_key_for` helper module. |
-| 11 | **Reliable column width persistence** | 🟡 | Search tab got a targeted fix on 2026-05-16 ("column widths no longer reset to 100px on every launch") — but **only Search**. Collection, Lbdir, Rename still hardcode widths in populate. No shared `GuiStateStore` / JSON file. Also shipped: `resize_columns_to_font()` on every tab when theme font size changes, which is a different concern. |
+| 11 | **Reliable column width persistence** | 🟡 | Search tab fixed 2026-05-16 (BUG-058). Collection, Lbdir, Rename still hardcode widths in populate calls. No shared `GuiStateStore` / JSON file. |
 | 12 | **Bootleg-CD catalog (LBBCD)** | ⬜ | No scraper, no tables, no Bootlegs tab. |
-| 13 | **Standardize folder name button** | 🟡 | The canonical format `YYYY-MM-DD Location (LB-XXXXX)` is **already produced** by Collection tab's `_get_standard_lb_name()` — and the prompt-to-rename flow already works for collection folders. **Not done:** shared `backend/folder_naming.py` module, Rename tab "Standardize Selected" button, right-click "Standardize Name" action, `-NFT` integration, regex extension to allow optional `-NFT`, `GET /api/folder_naming/standard/<lb>` endpoint. |
-| Map | **Map view of LB locations** | ⬜ | Plan extracted to [CC_MAP_FEATURE.md](CC_MAP_FEATURE.md). No `location_geocoded` table, no `gui/map_tab.py`, no `PyQt6-WebEngine` in requirements. (Note: `webEngineQuickWidgets`-related fixes for the Attachments tab landed on 2026-05-16 — that's the in-app browser pane, separate from the Map feature.) |
+| 13 | **Standardize folder name button** | ✅ | Shipped 2026-05-17. `build_standard_name()` in `backend/folder_naming.py`. `GET /api/folder_naming/standard/<lb>`. "Standardize Selected" button + right-click "Standardize Name" action in Rename tab. `RenameModel.update_state()`. Also fixed BUG-064 (`_on_strip_wrong_lb` now transitions state to `needs_rename`). |
+| Map | **Map view of LB locations** | ⬜ | Plan extracted to [CC_MAP_FEATURE.md](CC_MAP_FEATURE.md). No `location_geocoded` table, no `gui/map_tab.py`. Deferred — lowest priority. |
 
 **When implementing pending items, check the CHANGELOG before starting** — small follow-on fixes may have already touched the same files since the last plan-doc audit.
 
@@ -356,7 +356,7 @@ Add `backup_database(reason: str) -> Path` to [backend/db.py](../../Documents/lo
 
 ## Data Ownership Model (Master vs. User Data)
 
-**Status:** ⬜ Not started. No `MASTER_TABLES`/`USER_TABLES` constants, no `/api/master/*` endpoints, no GitHub publish/subscribe flow, no curator-mode flag.
+**Status:** ✅ Shipped 2026-05-17 (TODO-020). `MASTER_TABLES`/`USER_TABLES`/`MASTER_META_KEYS`/`MASTER_SCHEMA_VERSION` constants in `db.py`. `export_master_db()` / `import_master_db()` with SHA256 manifest and schema-version guard. `POST /api/master/export` + `POST /api/master/import`. Curator-mode checkbox in Setup tab. 13 tests in `tests/test_master_data.py`. **Still pending:** GitHub release upload via `gh` CLI (TODO-022); override export/import JSON endpoints.
 
 **Curator role.** The repository owner (kuddukan) is responsible for curating the **master data** — the canonical truth about the LosslessBob archive. Other end users install the app and receive periodic master-data updates from the curator. Their personal collection/wishlist/notes never leave their machine.
 
@@ -483,7 +483,7 @@ The "Publish Master Update" button does export + upload in one flow, using the `
 
 ## First-Time Master Generation Workflow (Curator Step-by-Step)
 
-**Status:** 🟡 Procedural document, not a code feature. Step 1 (migration) and Step 2 mechanics (`migrate_lb_master`, `reconcile_lb_status`, `needs_review` flag) are shipped. Steps 6–8 (Pre-publish review, Publish Master Update, master release notes) depend on the Data Ownership Model feature above, which is not started.
+**Status:** 🟡 Procedural document, not a code feature. Step 1 (migration) and Step 2 mechanics (`migrate_lb_master`, `reconcile_lb_status`, `needs_review` flag) are shipped. Steps 3–5 (Re-scrape Private LBs, review, verify) are now supported by the GUI buttons and DB Editor. Steps 6–8 (Pre-publish review, Publish Master Update with GitHub release upload) are partially done: the export/import workflow is live, but GitHub release upload via `gh` CLI is deferred (TODO-022).
 
 This is the operational sequence **you (kuddukan) walk through once** to bootstrap the master table from your existing DB and ship the first master release. Assumes the schema/code from above is already implemented.
 
@@ -635,7 +635,7 @@ No special-casing needed.
 
 ## Ancillary Feature: Status Filters Across All Appropriate GUI Elements
 
-**Status:** 🟡 Search and Collection tabs shipped 2026-05-16 (Status column, color background, filter combobox). Pending: shared `LBStatusComboBox` / `lb_status_style()` module (each tab inlined its own), Lookup tab, Attachments tab, Rename tab status badges, Verify/Lbdir, and the "Missing only" → "Incomplete matches only" rename in Lookup.
+**Status:** ✅ Shipped 2026-05-17 (TODO-021). Search, Collection (My Collection + Missing), Lookup (filter combobox + Private/Missing row tinting), Attachments tree (batch page-level background tinting), Rename tab (LB Found column tint), Lbdir (LB# column tint). `get_lb_statuses_batch()` in `db.py`. **Not done:** shared `LBStatusComboBox` / `lb_status_style()` widget module (each tab inlined its own); Verify tab skipped (lb_number not in verify results); "Missing only" → "Incomplete matches only" rename in Lookup not done.
 
 **Why.** The `lb_master` status (Public / Private / Missing) is meaningless to users if it only surfaces in one tab. Every place LB numbers are browsed or filtered should expose the same status concept, with the same visual language, so the user builds a single mental model. This section enumerates every GUI element and prescribes the right treatment.
 
@@ -747,7 +747,7 @@ All tabs below use these helpers. New colors/icons changed in one place propagat
 
 ## Ancillary Feature: Append `-NFT` to Folder Names for Private LBs
 
-**Status:** ⬜ Not started. No `backend/folder_naming.py`, no `_apply_status_suffix()`, no discrepancy coloring in Rename tab.
+**Status:** ✅ Shipped 2026-05-17 (TODO-018). `backend/folder_naming.py` created with `apply_nft_suffix`, `strip_nft_suffix`, `has_nft_suffix`, `nft_discrepancy`. Rename tab applies suffix to all proposed names and shows discrepancy row colours (pale red = missing NFT, pale yellow = stale NFT, pale orange = NFT on missing LB). Collection tab `_get_standard_lb_name()` appends `-NFT` via `/api/lb_master/<lb>/nft`. `should_mark_nft()` in `db.py`. `GET /api/lb_master/<lb>/nft` endpoint.
 
 **Why.** `NFT` = Not For Trade, the lossless-audio community convention for marking items that must not be shared publicly. Private LBs (no webpage published) fit exactly this category — the webmaster has chosen not to release them, so users with copies must mark folders accordingly. Embedding `-NFT` directly in the folder name makes the constraint travel with the data: any future tool, script, or human looking at the folder sees the restriction immediately, even if they don't have access to this app's DB.
 
@@ -1886,7 +1886,7 @@ The bootleg catalog ships in master releases. Practical consequences:
 
 ## Ancillary Feature: Standardize Folder Name Button
 
-**Status:** 🟡 Canonical format `YYYY-MM-DD Location (LB-XXXXX)` is already produced by Collection tab's `_get_standard_lb_name()`, with rename-prompt flow already working there. Pending: shared `backend/folder_naming.py` module, Rename tab "Standardize Selected" button + right-click action, `-NFT` integration, regex extension for optional `-NFT`, `/api/folder_naming/standard/<lb>` endpoint.
+**Status:** ✅ Shipped 2026-05-17 (CC_LB_INTEGRITY item 13). `build_standard_name()` added to `backend/folder_naming.py`. `GET /api/folder_naming/standard/<lb>` endpoint returns `{standard_name, lb_status, nft}`. Rename tab has "Standardize Selected" button and right-click "Standardize Name" action; both update the proposed name and escalate state to `needs_rename` when the standard name differs from the current folder name. NFT suffix applied automatically. Also fixed BUG-064 (`_on_strip_wrong_lb` now transitions row state so stripped rows become eligible for rename).
 
 **Why.** The canonical format for a Dylan show folder is:
 

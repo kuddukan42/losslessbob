@@ -1,8 +1,9 @@
 """Shared folder-name helpers for LosslessBob.
 
-Provides :func:`apply_nft_suffix` and :func:`nft_discrepancy` so that every
-part of the GUI that builds or validates proposed folder names applies the
--NFT marker consistently.
+Provides :func:`apply_nft_suffix`, :func:`nft_discrepancy`, and
+:func:`build_standard_name` so that every part of the GUI that builds or
+validates proposed folder names applies consistent formatting and the -NFT
+marker correctly.
 """
 
 _NFT_SUFFIX = "-NFT"
@@ -45,6 +46,36 @@ def strip_nft_suffix(name: str) -> str:
 def has_nft_suffix(name: str) -> bool:
     """Return True if *name* ends with -NFT (case-insensitive)."""
     return name.upper().endswith(_NFT_SUFFIX)
+
+
+def build_standard_name(
+    lb_number: int,
+    date_str: str,
+    location: str,
+    lb_status: str | None,
+) -> str:
+    """Build the canonical ``YYYY-MM-DD Location (LB-XXXXX)[-NFT]`` folder name.
+
+    Args:
+        lb_number: LosslessBob entry number.
+        date_str: Date string in M/D/YY format from the database.
+        location: Event location string.
+        lb_status: 'public', 'private', 'missing', or None.
+
+    Returns:
+        Canonical folder name with optional -NFT suffix applied via
+        :func:`apply_nft_suffix`.  Falls back to ``LB-XXXXX[-NFT]`` when
+        date or location is missing.
+    """
+    from backend.torrent_maker import _parse_date
+
+    iso_date = _parse_date(date_str) if date_str else ""
+    loc = location.strip() if location else ""
+    if iso_date and loc:
+        base = f"{iso_date} {loc} (LB-{lb_number:05d})"
+    else:
+        base = f"LB-{lb_number:05d}"
+    return apply_nft_suffix(base, lb_status)
 
 
 def nft_discrepancy(folder_name: str, lb_status: str | None) -> str | None:

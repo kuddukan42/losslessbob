@@ -1502,6 +1502,29 @@ def create_app():
         except Exception as exc:
             return jsonify({"error": str(exc)}), 500
 
+    @app.route("/api/folder_naming/standard/<int:lb>", methods=["GET"])
+    def folder_naming_standard(lb: int):
+        """Return the canonical folder name for an LB entry.
+
+        Returns:
+            JSON: standard_name (str), lb_status (str|null), nft (bool).
+        """
+        try:
+            from backend.folder_naming import build_standard_name
+            result = database.get_entry(lb)
+            entry = (result or {}).get("entry", {})
+            date_str = entry.get("date_str") or ""
+            location = (entry.get("location") or "").strip()
+            lb_status = database.get_lb_status(lb)
+            standard_name = build_standard_name(lb, date_str, location, lb_status)
+            return jsonify({
+                "standard_name": standard_name,
+                "lb_status": lb_status,
+                "nft": lb_status == "private",
+            })
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
     @app.route("/api/db/backup", methods=["POST"])
     def db_backup():
         """Create a manual DB backup. Body: {reason} (optional)."""

@@ -4,7 +4,10 @@ import webbrowser
 from pathlib import Path
 
 from backend.rename import write_rename_log
-from backend.folder_naming import apply_nft_suffix, strip_nft_suffix, nft_discrepancy
+from backend.folder_naming import (
+    apply_nft_suffix, strip_nft_suffix, nft_discrepancy, build_standard_name,
+)
+from backend.db import get_entry, get_lb_status
 
 from PyQt6.QtCore import Qt, QAbstractTableModel, QModelIndex, pyqtSignal
 from PyQt6.QtGui import QAction, QColor
@@ -251,6 +254,14 @@ class RenameModel(QAbstractTableModel):
                 self._rows[idx][4] = new_reason
             self.dataChanged.emit(self.index(idx, 2), self.index(idx, 4))
 
+    def update_state(self, idx: int, state: str) -> None:
+        if 0 <= idx < len(self._states):
+            self._states[idx] = state
+            self.dataChanged.emit(
+                self.index(idx, 0),
+                self.index(idx, len(HEADERS) - 1),
+            )
+
 
 class RenameTab(QWidget):
     jump_to_lookup = pyqtSignal(str)
@@ -318,6 +329,13 @@ class RenameTab(QWidget):
         self.strip_wrong_lb_btn = QPushButton("Strip Wrong LB from Selected")
         self.strip_wrong_lb_btn.clicked.connect(self._on_strip_wrong_lb)
         btn_row.addWidget(self.strip_wrong_lb_btn)
+
+        self.standardize_btn = QPushButton("Standardize Selected")
+        self.standardize_btn.setToolTip(
+            "Rewrite proposed names to canonical YYYY-MM-DD Location (LB-XXXXX)[-NFT] format"
+        )
+        self.standardize_btn.clicked.connect(self._on_standardize_selected)
+        btn_row.addWidget(self.standardize_btn)
 
         btn_row.addStretch()
         layout.addLayout(btn_row)
@@ -543,6 +561,7 @@ class RenameTab(QWidget):
             new_base = f"{clean_name}-{_fmt_lb(lb_num, xref_val)}"
             new_proposed = str(folder_path.parent / apply_nft_suffix(new_base, lb_status))
             self.model.update_proposed_name(i, new_proposed, "Strip & rename")
+            self.model.update_state(i, "needs_rename")
             changed += 1
         if changed:
             self.status_label.setText(
@@ -550,6 +569,80 @@ class RenameTab(QWidget):
             )
         else:
             self.status_label.setText("No checked wrong-LB rows to strip.")
+
+    def _on_standardize_selected(self) -> None:
+        """Rewrite proposed names for checked single-LB rows to canonical format."""
+        changed = 0
+        errors: list[str] = []
+        for i in range(self.model.rowCount()):
+            row = self.model.get_row(i)
+            if not row or not row[0]:
+                continue
+            lb_str = row[3]
+            if not lb_str or lb_str == "—" or "," in lb_str:
+                continue
+            m = re.search(r"LB-0*(\d+)(?:-xref0*(\d+))?", lb_str, re.IGNORECASE)
+            if not m:
+                continue
+            lb_num = int(m.group(1))
+            try:
+                standard = self._compute_standard(lb_num, row)
+            except Exception as exc:
+                errors.append(f"LB-{lb_num:05d}: {exc}")
+                continue
+            folder_path = Path(row[1])
+            new_proposed = str(folder_path.parent / standard)
+            self.model.update_proposed_name(i, new_proposed, "Standardize")
+            if standard != folder_path.name:
+                self.model.update_state(i, "needs_rename")
+            changed += 1
+
+        if errors:
+            self.status_label.setText(
+                f"Standardized {changed} row(s). {len(errors)} error(s): "
+                + "; ".join(errors[:3])
+            )
+        elif changed:
+            self.status_label.setText(
+                f"Standardized {changed} row(s). Click 'Rename Selected' to apply."
+            )
+        else:
+            self.status_label.setText("No checked single-LB rows to standardize.")
+
+    def _standardize_row(self, row_idx: int) -> None:
+        """Standardize the proposed name for a single row (right-click action)."""
+        row = self.model.get_row(row_idx)
+        if not row:
+            return
+        lb_str = row[3]
+        if not lb_str or lb_str == "—" or "," in lb_str:
+            return
+        m = re.search(r"LB-0*(\d+)", lb_str, re.IGNORECASE)
+        if not m:
+            return
+        lb_num = int(m.group(1))
+        try:
+            standard = self._compute_standard(lb_num, row)
+        except Exception as exc:
+            self.status_label.setText(f"Error standardizing: {exc}")
+            return
+        folder_path = Path(row[1])
+        new_proposed = str(folder_path.parent / standard)
+        self.model.update_proposed_name(row_idx, new_proposed, "Standardize")
+        if standard != folder_path.name:
+            self.model.update_state(row_idx, "needs_rename")
+        self.status_label.setText(
+            f"Row {row_idx + 1}: proposed name set to '{standard}'."
+        )
+
+    def _compute_standard(self, lb_num: int, row: list) -> str:
+        """Return the canonical standard folder name for an LB row."""
+        entry_data = get_entry(lb_num)
+        entry = (entry_data or {}).get("entry", {})
+        date_str = entry.get("date_str") or ""
+        location = (entry.get("location") or "").strip()
+        lb_status = get_lb_status(lb_num) or (row[5] if len(row) > 5 else None)
+        return build_standard_name(lb_num, date_str, location, lb_status)
 
     def _on_cell_clicked(self, index: QModelIndex) -> None:
         if index.column() != 0:
@@ -599,6 +692,11 @@ class RenameTab(QWidget):
                 if m:
                     try:
                         lb_num = int(m.group(1))
+                        std_act = QAction("Standardize Name (YYYY-MM-DD Location…)", self)
+                        std_act.triggered.connect(
+                            lambda checked=False, r=row_idx: self._standardize_row(r)
+                        )
+                        menu.addAction(std_act)
                         open_web = QAction(f"Open LB-{lb_num} in Browser", self)
                         url = f"http://www.losslessbob.wonderingwhattochoose.com/detail/LB-{lb_num}.html"
                         open_web.triggered.connect(lambda: webbrowser.open(url))

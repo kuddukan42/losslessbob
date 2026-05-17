@@ -1,3 +1,21 @@
+[2026-05-17] — feat(gui): Standardize folder name button in Rename tab (CC_LB_INTEGRITY item 13)
+
+Added
+
+backend/folder_naming.py: `build_standard_name(lb_number, date_str, location, lb_status)` — builds canonical `YYYY-MM-DD Location (LB-XXXXX)[-NFT]` folder name. Shared between Rename tab and Collection tab. Imports `_parse_date` lazily from `backend/torrent_maker`.
+
+backend/app.py: `GET /api/folder_naming/standard/<lb>` — returns `{standard_name, lb_status, nft}`. Looks up entry metadata and lb_master status; applies NFT suffix via `build_standard_name`.
+
+gui/rename_tab.py: "Standardize Selected" button — for each checked single-LB row, fetches canonical name via `get_entry()` + `get_lb_status()` + `build_standard_name()`, updates the proposed name, and escalates state to `needs_rename` when the standard name differs from the current folder name. Right-click "Standardize Name (YYYY-MM-DD Location…)" action applies the same transform to a single row.
+
+gui/rename_tab.py: `RenameModel.update_state(idx, state)` — new method to update a row's state and emit `dataChanged` for the full row.
+
+Fixed
+
+gui/rename_tab.py: `_on_strip_wrong_lb()` now calls `update_state(i, "needs_rename")` after updating the proposed name. Previously the state stayed `wrong_lb`, which is not in the rename-eligible set, so stripped rows could never be renamed by the "Rename Selected" button. (BUG-064)
+
+---
+
 [2026-05-17] — feat(gui): lb_status filter + tinting across Lookup, Attachments, Rename, Lbdir tabs (TODO-021)
 
 Changed
