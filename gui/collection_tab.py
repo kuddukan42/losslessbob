@@ -2602,7 +2602,7 @@ class CollectionTab(QWidget):
             return ""
 
     def _get_standard_lb_name(self, lb: int) -> str:
-        """Return the standard YYYY-MM-DD Location (LB-XXXXX) folder name for an entry."""
+        """Return the standard YYYY-MM-DD Location (LB-XXXXX)[-NFT] folder name."""
         try:
             resp = requests.get(
                 f"http://127.0.0.1:{self.flask_port}/api/entry/{lb}", timeout=10
@@ -2613,7 +2613,18 @@ class CollectionTab(QWidget):
             from backend.torrent_maker import _parse_date
             iso_date = _parse_date(date_str)
             if iso_date and location:
-                return f"{iso_date} {location} (LB-{lb:05d})"
+                base_name = f"{iso_date} {location} (LB-{lb:05d})"
+                # Append -NFT when the LB is Private
+                try:
+                    nft_resp = requests.get(
+                        f"http://127.0.0.1:{self.flask_port}/api/lb_master/{lb}/nft",
+                        timeout=5,
+                    ).json()
+                    if nft_resp.get("nft"):
+                        base_name = f"{base_name}-NFT"
+                except Exception:
+                    pass
+                return base_name
         except Exception:
             pass
         return ""

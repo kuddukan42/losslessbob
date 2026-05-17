@@ -4,6 +4,7 @@ import webbrowser
 from pathlib import Path
 
 from backend.rename import write_rename_log
+from backend.folder_naming import apply_nft_suffix, strip_nft_suffix, nft_discrepancy
 
 from PyQt6.QtCore import Qt, QAbstractTableModel, QModelIndex, pyqtSignal
 from PyQt6.QtGui import QAction, QColor
@@ -22,6 +23,20 @@ _STATE_COLORS = {
     "wrong_lb":     QColor("#E1BEE7"),  # purple — folder has a different LB number
     "no_match":     QColor("#FFCDD2"),  # red    — no match
     "multiple_ids": QColor("#B2EBF2"),  # cyan   — multiple LBs found, unresolved
+}
+
+# NFT discrepancy state → background color (overrides state color when set)
+_NFT_DISC_COLORS = {
+    "missing": QColor("#FFCCCC"),  # pale red    — Private LB, folder lacks -NFT
+    "stale":   QColor("#FFF9C4"),  # pale yellow — Public LB, folder has -NFT
+    "unknown": QColor("#FFE8D0"),  # pale orange — Missing/None LB, folder has -NFT
+}
+
+# NFT discrepancy → tooltip text
+_NFT_DISC_TIPS = {
+    "missing": "LB is Private — folder should be marked -NFT",
+    "stale":   "LB is now Public — -NFT marker may no longer be needed",
+    "unknown": "LB does not exist — investigate this folder",
 }
 
 # Only include these detail statuses when building the folder→LB map
@@ -120,8 +135,18 @@ class RenameModel(QAbstractTableModel):
         if role == Qt.ItemDataRole.CheckStateRole and col == 0:
             return Qt.CheckState.Checked if row[0] else Qt.CheckState.Unchecked
         if role == Qt.ItemDataRole.BackgroundRole:
+            # NFT discrepancy overrides the normal state colour
+            lb_status = row[5] if len(row) > 5 else None
+            disc = nft_discrepancy(Path(row[1]).name, lb_status)
+            if disc:
+                return _NFT_DISC_COLORS.get(disc)
             state = self._states[index.row()] if index.row() < len(self._states) else None
             return _STATE_COLORS.get(state)
+        if role == Qt.ItemDataRole.ToolTipRole:
+            lb_status = row[5] if len(row) > 5 else None
+            disc = nft_discrepancy(Path(row[1]).name, lb_status)
+            if disc:
+                return _NFT_DISC_TIPS.get(disc)
         return None
 
     def setData(self, index, value, role=Qt.ItemDataRole.EditRole):
@@ -257,6 +282,9 @@ class RenameTab(QWidget):
             ("#E1BEE7", "Wrong LB in name — strip needed"),
             ("#B2EBF2", "Multiple IDs — right-click to resolve"),
             ("#FFCDD2", "No match"),
+            ("#FFCCCC", "Missing -NFT (Private LB)"),
+            ("#FFF9C4", "Stale -NFT (LB now Public)"),
+            ("#FFE8D0", "-NFT but LB is Missing"),
         ]:
             swatch = QLabel()
             swatch.setFixedSize(14, 14)
@@ -299,14 +327,17 @@ class RenameTab(QWidget):
         # Excluding DUPLICATE (resolved losers) prevents spurious "Multiple IDs" when
         # duplicate resolution already picked a winner.
         lb_xref_by_folder: dict[str, dict[int, int]] = {}
+        # lb_status_map: lb_number → lb_status (populated from detail lb_status annotations)
+        lb_status_map: dict[int, str] = {}
         for d in detail_list:
-            if d.get("lb_number") and d.get("source_file") and d.get("status") in _MATCH_STATUSES:
+            lb = d.get("lb_number")
+            if lb and d.get("source_file") and d.get("status") in _MATCH_STATUSES:
                 folder = str(Path(d["source_file"]).parent)
-                lb = d["lb_number"]
                 xref_val = d.get("xref") or 0
-                # If we see the same LB with xref=0 (primary) later, prefer that
                 existing = lb_xref_by_folder.setdefault(folder, {}).get(lb, xref_val)
                 lb_xref_by_folder[folder][lb] = min(existing, xref_val)  # 0 wins over non-zero
+            if lb and d.get("lb_status"):
+                lb_status_map[lb] = d["lb_status"]
 
         rows = []
         states = []
@@ -323,15 +354,20 @@ class RenameTab(QWidget):
                 proposed = folder_path.name
                 lb_str = "—"
                 cand_list = []
+                row_lb_status = None
             elif len(cands) > 1:
                 reason = "Multiple IDs"
                 proposed = folder_path.name
                 lb_str = ", ".join(_fmt_lb(lb, xr) for lb, xr in cands)
                 cand_list = cands
+                # Conservative: any private candidate → mark the whole folder
+                cand_statuses = [lb_status_map.get(lb) for lb, _xr in cands]
+                row_lb_status = "private" if any(s == "private" for s in cand_statuses) else None
             else:
                 lb, xref_val = cands[0]
                 lb_str = _fmt_lb(lb, xref_val)
                 cand_list = []
+                row_lb_status = lb_status_map.get(lb)
                 if _lb_in_name(folder_path.name, lb_str):
                     proposed = folder_path.name
                     reason = "LB already in name"
@@ -345,9 +381,27 @@ class RenameTab(QWidget):
                     proposed = f"{folder_path.name}-{lb_str}"
                     reason = "Complete match"
 
+                # Apply NFT logic: add -NFT for private, propose strip for stale public
+                nft_applied = apply_nft_suffix(proposed, row_lb_status)
+                if nft_applied != proposed:
+                    proposed = nft_applied
+                    if reason == "LB already in name":
+                        reason = "Add NFT marker (Private LB)"
+                elif row_lb_status == "public" and reason == "LB already in name":
+                    stripped = strip_nft_suffix(proposed)
+                    if stripped != proposed:
+                        proposed = stripped
+                        reason = "Strip NFT marker (now Public)"
+
+            state = _row_state(folder, lb_str)
+            # If NFT logic changed the proposed name for an already-named folder,
+            # escalate to needs_rename so the rename path uses the proposed name.
+            if state == "has_lb" and proposed != folder_path.name:
+                state = "needs_rename"
+
             rows.append([True, folder, str(folder_path.parent / proposed) if proposed != folder_path.name
-                         else folder, lb_str, reason])
-            states.append(_row_state(folder, lb_str))
+                         else folder, lb_str, reason, row_lb_status])
+            states.append(state)
             candidates.append(cand_list)
 
         self.model.set_rows(rows, states, candidates)
@@ -482,7 +536,9 @@ class RenameTab(QWidget):
             xref_val = int(m.group(2)) if m.group(2) else 0
             folder_path = Path(row[1])
             clean_name = _strip_lb_from_name(folder_path.name)
-            new_proposed = str(folder_path.parent / f"{clean_name}-{_fmt_lb(lb_num, xref_val)}")
+            lb_status = row[5] if len(row) > 5 else None
+            new_base = f"{clean_name}-{_fmt_lb(lb_num, xref_val)}"
+            new_proposed = str(folder_path.parent / apply_nft_suffix(new_base, lb_status))
             self.model.update_proposed_name(i, new_proposed, "Strip & rename")
             changed += 1
         if changed:

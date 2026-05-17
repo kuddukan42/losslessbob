@@ -137,16 +137,18 @@ Description: The footer string "Brought to you by kuddukan, via the Bob-O-Matic 
 
 TODO-017: Periodic re-scrape of Private LBs to detect newly-published pages
 Priority: Medium
-Status: Open
+Status: Done
 Added: 2026-05-16
+Closed: 2026-05-17
 Description: Add a "Re-scrape Private LBs" button in Setup tab. Iterates every lb_status='private' row, attempts a fresh scrape, calls reconcile_lb_status() to flip status if a page is now found. Shows a completion summary ("N LBs promoted from Private to Public").
 
 ---
 
 TODO-018: NFT folder-name suffix for Private LBs
 Priority: Medium
-Status: Open
+Status: Done
 Added: 2026-05-16
+Closed: 2026-05-17
 Description: Per CC_LB_INTEGRITY.md §NFT: Rename tab and Collection tab should append -NFT to any proposed folder name whose matched LB is Private. Requires _apply_status_suffix() helper in backend/folder_naming.py, discrepancy detection coloring in Rename tab, and GET /api/lb_master/<lb>/nft integration in the GUI.
 
 ---
@@ -161,9 +163,10 @@ Description: Per CC_LB_INTEGRITY.md §Disambiguation: add lb_alias (master — a
 
 TODO-020: Master data publish/subscribe system (curator workflow)
 Priority: Low
-Status: Open
+Status: Done (partial — GitHub release publishing deferred)
 Added: 2026-05-16
-Description: Per CC_LB_INTEGRITY.md §Master Data: implement POST /api/master/export (VACUUM INTO, drop user tables, write manifest + SHA256), POST /api/master/import (attach, copy master tables, preserve user meta keys), and GitHub release publishing via gh CLI ("Publish Master Update" button in Setup tab). Implement after TODO-018 and TODO-019 are stable.
+Closed: 2026-05-17
+Description: Per CC_LB_INTEGRITY.md §Master Data: implemented POST /api/master/export (VACUUM INTO, drop user tables, filter meta to MASTER_META_KEYS, stamp version, SHA256, manifest sidecar) and POST /api/master/import (manifest SHA validation, schema-version guard, pre-import backup, ATTACH + table-level copy, preserve user data and user meta). MASTER_TABLES / USER_TABLES / MASTER_META_KEYS constants added to backend/db.py. Curator-mode flag (is_curator) + checkbox in Setup tab gates the Publish button. 13 tests in tests/test_master_data.py. Deferred: GitHub-release-via-gh-CLI upload from inside the Publish button — for now the curator uploads the data/exports/ files manually to kuddukan42/losslessbob releases. Follow-up TODO will track that automation once the repo goes public.
 
 ---
 
@@ -172,3 +175,11 @@ Priority: Low
 Status: Open
 Added: 2026-05-16
 Description: Per CC_LB_INTEGRITY.md §Status Filters Across All GUI Elements: add lb_status background coloring and optional filter combobox to Lookup summary/detail, Attachments tree, Rename LB Found column, and (low priority) Verify and lbdir summary tables. Requires shared lb_status_style() in gui/styles.py.
+
+---
+
+TODO-022: GitHub release upload from "Publish Master Update" button
+Priority: Low
+Status: Open
+Added: 2026-05-17
+Description: After the export endpoint produces data/exports/<file>.db + .manifest.json, automate the upload to the kuddukan42/losslessbob GitHub releases via the gh CLI. Tag scheme: master-YYYY-MM-DD with auto-bump (.2, .3) on same-day re-release. Auto-generate release notes from lb_status_history rows since the last published master_version, plus a list of new manual overrides + notes. Currently the curator uploads the two files manually. Repo is private at the moment; this work should land once it goes public so end users can pull releases without auth. See CC_LB_INTEGRITY.md §GitHub Release Publishing.

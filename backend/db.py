@@ -15,6 +15,57 @@ _local = threading.local()
 _bloom: _SBF | None = None
 _bloom_lock = threading.Lock()
 
+# --- Master vs. user data ownership model -------------------------------------
+# MASTER tables ship in a master-data export and are overwritten on import.
+# USER tables stay local to each install and never appear in an export.
+# See instructions/CC_LB_INTEGRITY.md §Data Ownership Model.
+
+MASTER_SCHEMA_VERSION = 1  # bump on any schema change that breaks older clients
+
+MASTER_TABLES = (
+    "checksums",
+    "entries",
+    "entry_files",
+    "entry_changes",
+    "lb_master",
+    "lb_status_history",
+)
+# Note: `entries_fts` is a virtual FTS5 table whose content is mirrored from
+# `entries` via triggers. It is NOT copied directly during export/import; the
+# triggers (or a one-shot rebuild) keep it in sync once `entries` is replaced.
+
+USER_TABLES = (
+    "my_collection",
+    "collection_meta",
+    "my_wishlist",
+    "integrity_events",
+    "torrents",
+    "rename_history",
+    "forum_posts",
+)
+
+# meta is mixed: master keys ship, user keys stay local.
+MASTER_META_KEYS = frozenset({
+    "import_hash",
+    "last_import_date",
+    "last_lb_number",
+    "master_version",
+    "master_published_at",
+    "master_schema_version",
+})
+
+# Sentinel set so callers (and the export verifier) know which keys are
+# explicitly user-local and must never be exported. Used for documentation;
+# the actual export uses the MASTER_META_KEYS whitelist as the source of truth.
+USER_META_KEYS = frozenset({
+    "auto_scrape", "scrape_delay_ms", "scrape_attachments", "force_scrape",
+    "download_files", "use_local_pages", "search_page_size",
+    "qbt_host", "qbt_port", "qbt_category", "qbt_tags",
+    "tracker_list",
+    "wtrf_board_id", "wtrf_username", "wtrf_password",
+    "is_curator",
+})
+
 SCHEMA_SQL = """
 CREATE TABLE IF NOT EXISTS checksums (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -541,6 +592,21 @@ def lookup_checksums(parsed_entries, db_path=None):
         "lb_numbers_found": list(lb_summary.keys()),
         "lb_summary": list(lb_summary.values()),
     }
+
+    # Annotate detail items with lb_status from lb_master so callers (e.g.
+    # rename tab) can apply NFT suffix logic without a second DB round-trip.
+    _matched_lbs = {item["lb_number"] for item in detail if item["lb_number"] is not None}
+    if _matched_lbs:
+        _lb_status_map = dict(conn.execute(
+            "SELECT lb_number, lb_status FROM lb_master WHERE lb_number IN ({})".format(
+                ",".join("?" * len(_matched_lbs))
+            ),
+            list(_matched_lbs),
+        ).fetchall())
+    else:
+        _lb_status_map = {}
+    for item in detail:
+        item["lb_status"] = _lb_status_map.get(item["lb_number"])
 
     return summary, detail
 
@@ -1392,6 +1458,15 @@ def get_lb_status(lb_number: int, db_path=None) -> str | None:
     return row["lb_status"] if row else None
 
 
+def should_mark_nft(lb_number: int, db_path=None) -> bool:
+    """Return True if folders for lb_number should carry the -NFT suffix.
+
+    An LB is marked NFT when lb_status is 'private' — it has checksums
+    but no published webpage, indicating the webmaster has not released it.
+    """
+    return get_lb_status(lb_number, db_path) == "private"
+
+
 def is_postable_to_forum(lb_number: int, db_path=None) -> tuple[bool, str | None]:
     """Return (allowed, reason) for forum posting.
 
@@ -1438,3 +1513,307 @@ def get_lb_status_history(lb_number: int, limit: int = 50, db_path=None) -> list
         (lb_number, limit),
     ).fetchall()
     return [dict(r) for r in rows]
+
+
+# ── Curator mode (user-local meta flag) ────────────────────────────────────────
+
+def is_curator(db_path=None) -> bool:
+    """Return True if the local install is flagged as the curator.
+
+    Curator mode unlocks master-data publishing UI in Setup tab and
+    write access to alias/override editing once those features ship.
+    The flag is stored in `meta.is_curator='1'|'0'` and never ships in
+    a master export (it's in USER_META_KEYS).
+    """
+    return (get_meta("is_curator", db_path) or "0") == "1"
+
+
+def set_curator(enabled: bool, db_path=None) -> None:
+    """Toggle the curator flag for this install."""
+    set_meta("is_curator", "1" if enabled else "0", db_path)
+
+
+# ── Master data export / import ───────────────────────────────────────────────
+
+def export_master_db(reason: str = "publish", db_path=None) -> "tuple[Path, dict]":
+    """Produce a master-only snapshot of the DB plus a manifest sidecar.
+
+    Pipeline:
+      1. ``VACUUM INTO`` a snapshot file → consistent point-in-time copy.
+      2. On the snapshot: DROP every table in :data:`USER_TABLES`.
+      3. Delete every ``meta`` row whose key is not in :data:`MASTER_META_KEYS`.
+      4. Stamp ``master_version`` (UTC timestamp), ``master_published_at`` (now),
+         and ``master_schema_version`` (current code constant).
+      5. ``VACUUM`` to reclaim freed space.
+      6. **Verify** the snapshot contains no USER_TABLES and no non-master meta.
+      7. Compute SHA256 of the final snapshot file.
+      8. Write ``<snapshot>.manifest.json`` sidecar with counts + SHA + version.
+
+    Returns:
+        (snapshot_path, manifest_dict)
+
+    Raises:
+        RuntimeError: If the verification step finds residual user data.
+    """
+    import hashlib
+    import json
+    import logging
+    from datetime import datetime as _dt
+    from backend.paths import DATA_DIR as _DATA
+
+    log = logging.getLogger(__name__)
+    export_dir = _DATA / "exports"
+    export_dir.mkdir(parents=True, exist_ok=True)
+
+    ts = _dt.utcnow().strftime("%Y-%m-%d_%H%M%S")
+    safe_reason = "".join(c if c.isalnum() or c in "-_" else "_" for c in reason)
+    out_path = export_dir / f"losslessbob_master_{ts}_{safe_reason}.db"
+    manifest_path = export_dir.joinpath(out_path.name + ".manifest.json")
+
+    # Step 1: consistent snapshot via VACUUM INTO
+    src = get_connection(db_path)
+    src.execute("VACUUM INTO ?", (str(out_path),))
+    log.info("Master export snapshot created at %s", out_path)
+
+    # Steps 2-5: clean the snapshot in-place (separate connection on the file)
+    snap = sqlite3.connect(str(out_path))
+    snap.row_factory = sqlite3.Row
+    try:
+        snap.execute("PRAGMA foreign_keys = OFF")
+        for tbl in USER_TABLES:
+            snap.execute(f"DROP TABLE IF EXISTS {tbl}")
+        # Filter meta to whitelist
+        placeholders = ",".join("?" * len(MASTER_META_KEYS))
+        snap.execute(
+            f"DELETE FROM meta WHERE key NOT IN ({placeholders})",
+            tuple(MASTER_META_KEYS),
+        )
+        # Stamp version + publish timestamp + schema version
+        master_version = ts  # human-readable + sortable
+        published_at = _dt.utcnow().isoformat()
+        for k, v in (
+            ("master_version", master_version),
+            ("master_published_at", published_at),
+            ("master_schema_version", str(MASTER_SCHEMA_VERSION)),
+        ):
+            snap.execute(
+                "INSERT INTO meta(key, value) VALUES(?, ?) "
+                "ON CONFLICT(key) DO UPDATE SET value=excluded.value",
+                (k, v),
+            )
+        snap.commit()
+        snap.execute("VACUUM")
+
+        # Step 6: VERIFY
+        # 6a. No user tables present
+        present = {r[0] for r in snap.execute(
+            "SELECT name FROM sqlite_master WHERE type='table'"
+        ).fetchall()}
+        leaked = present & set(USER_TABLES)
+        if leaked:
+            raise RuntimeError(
+                f"Master export verification failed: user tables present in "
+                f"snapshot: {sorted(leaked)}"
+            )
+        # 6b. No non-master meta keys
+        non_master = [r[0] for r in snap.execute(
+            f"SELECT key FROM meta WHERE key NOT IN ({placeholders})",
+            tuple(MASTER_META_KEYS),
+        ).fetchall()]
+        if non_master:
+            raise RuntimeError(
+                f"Master export verification failed: non-master meta keys "
+                f"present in snapshot: {sorted(non_master)}"
+            )
+        # 6c. Sanity: lb_master populated (otherwise this isn't a useful release)
+        lb_count = snap.execute("SELECT COUNT(*) FROM lb_master").fetchone()[0]
+        ck_count = snap.execute("SELECT COUNT(*) FROM checksums").fetchone()[0]
+        en_count = snap.execute("SELECT COUNT(*) FROM entries").fetchone()[0]
+        stats_row = snap.execute(
+            "SELECT lb_status, COUNT(*) FROM lb_master GROUP BY lb_status"
+        ).fetchall()
+        status_counts = {r[0]: r[1] for r in stats_row}
+        override_count = snap.execute(
+            "SELECT COUNT(*) FROM lb_master WHERE manual_override=1"
+        ).fetchone()[0]
+    finally:
+        snap.close()
+
+    # Step 7: SHA256 of the final file
+    sha = hashlib.sha256()
+    with open(out_path, "rb") as f:
+        for chunk in iter(lambda: f.read(1 << 20), b""):
+            sha.update(chunk)
+    sha256 = sha.hexdigest()
+    size_bytes = out_path.stat().st_size
+
+    # Step 8: manifest sidecar
+    manifest = {
+        "filename": out_path.name,
+        "size_bytes": size_bytes,
+        "sha256": sha256,
+        "master_version": master_version,
+        "master_published_at": published_at,
+        "master_schema_version": MASTER_SCHEMA_VERSION,
+        "row_counts": {
+            "lb_master": lb_count,
+            "checksums": ck_count,
+            "entries": en_count,
+        },
+        "lb_status_counts": status_counts,
+        "manual_override_count": override_count,
+        "reason": reason,
+    }
+    with open(manifest_path, "w", encoding="utf-8") as f:
+        json.dump(manifest, f, indent=2)
+    log.info(
+        "Master export verified: %s rows (lb_master), %s bytes, sha256=%s",
+        lb_count, size_bytes, sha256[:12],
+    )
+    return out_path, manifest
+
+
+def import_master_db(snapshot_path: "Path | str", db_path=None) -> dict:
+    """Import a master snapshot into the local DB, preserving user data.
+
+    Pipeline:
+      1. Load + validate the manifest sidecar (SHA256 must match the .db file).
+      2. Schema version guard: refuse if incoming version > local
+         :data:`MASTER_SCHEMA_VERSION`.
+      3. Take an automatic backup (``reason='pre_master_import'``).
+      4. ``ATTACH DATABASE`` the incoming snapshot as ``incoming``.
+      5. For each table in :data:`MASTER_TABLES`:
+            ``DELETE FROM main.<t>;
+             INSERT INTO main.<t> SELECT * FROM incoming.<t>;``
+      6. For meta: replace only the keys in :data:`MASTER_META_KEYS`;
+         leave user keys (theme, qbt_*, wtrf_*, is_curator, ...) untouched.
+      7. ``INSERT INTO entries_fts(entries_fts) VALUES('rebuild');``
+      8. ``DETACH DATABASE incoming``.
+
+    Returns:
+        Summary dict: ``{master_version, rows_per_table, lb_status_counts,
+        backup_path, lb_status_changes}``.
+
+    Raises:
+        FileNotFoundError: snapshot or manifest missing.
+        ValueError: SHA256 mismatch.
+        RuntimeError: schema version too new for this client.
+    """
+    import hashlib
+    import json
+    import logging
+    from datetime import datetime as _dt
+
+    log = logging.getLogger(__name__)
+    snapshot_path = Path(snapshot_path)
+    manifest_path = snapshot_path.with_name(snapshot_path.name + ".manifest.json")
+    if not snapshot_path.exists():
+        raise FileNotFoundError(f"Master snapshot not found: {snapshot_path}")
+    if not manifest_path.exists():
+        raise FileNotFoundError(
+            f"Manifest not found alongside snapshot: {manifest_path}"
+        )
+
+    with open(manifest_path, "r", encoding="utf-8") as f:
+        manifest = json.load(f)
+
+    # Step 1: SHA256 validation
+    sha = hashlib.sha256()
+    with open(snapshot_path, "rb") as f:
+        for chunk in iter(lambda: f.read(1 << 20), b""):
+            sha.update(chunk)
+    actual_sha = sha.hexdigest()
+    expected_sha = manifest.get("sha256")
+    if expected_sha != actual_sha:
+        raise ValueError(
+            f"Master snapshot SHA256 mismatch. Expected {expected_sha}, "
+            f"got {actual_sha}. Re-download the file."
+        )
+
+    # Step 2: schema version guard
+    incoming_schema = int(manifest.get("master_schema_version", 0))
+    if incoming_schema > MASTER_SCHEMA_VERSION:
+        raise RuntimeError(
+            f"Master snapshot schema version {incoming_schema} is newer than "
+            f"this app supports (v{MASTER_SCHEMA_VERSION}). Upgrade the app first."
+        )
+
+    # Step 3: backup local DB before destructive replace
+    backup_path = backup_database(reason="pre_master_import", db_path=db_path)
+    log.info("Pre-import backup written to %s", backup_path)
+
+    # Step 4-7: copy under a transaction
+    conn = get_connection(db_path)
+    # Snapshot pre-import lb_status distribution so we can report what changed
+    pre_status = {r[0]: r[1] for r in conn.execute(
+        "SELECT lb_status, COUNT(*) FROM lb_master GROUP BY lb_status"
+    ).fetchall()}
+
+    conn.execute("PRAGMA foreign_keys = OFF")
+    try:
+        conn.execute(f"ATTACH DATABASE ? AS incoming", (str(snapshot_path),))
+        try:
+            row_counts: dict[str, int] = {}
+            # Order matters when FKs exist (entries before entry_files etc.),
+            # but with foreign_keys OFF for this scope it doesn't.
+            for tbl in MASTER_TABLES:
+                conn.execute(f"DELETE FROM main.{tbl}")
+                conn.execute(
+                    f"INSERT INTO main.{tbl} SELECT * FROM incoming.{tbl}"
+                )
+                row_counts[tbl] = conn.execute(
+                    f"SELECT COUNT(*) FROM main.{tbl}"
+                ).fetchone()[0]
+            # meta: replace only master keys, preserve user keys
+            placeholders = ",".join("?" * len(MASTER_META_KEYS))
+            conn.execute(
+                f"DELETE FROM main.meta WHERE key IN ({placeholders})",
+                tuple(MASTER_META_KEYS),
+            )
+            conn.execute(
+                f"INSERT INTO main.meta(key, value) "
+                f"SELECT key, value FROM incoming.meta WHERE key IN ({placeholders})",
+                tuple(MASTER_META_KEYS),
+            )
+            # Rebuild FTS from the freshly-replaced entries
+            try:
+                conn.execute("INSERT INTO entries_fts(entries_fts) VALUES('rebuild')")
+            except sqlite3.OperationalError as e:
+                log.warning("FTS rebuild failed (will rebuild on next FTS access): %s", e)
+            conn.commit()
+        finally:
+            conn.execute("DETACH DATABASE incoming")
+    except Exception:
+        conn.rollback()
+        raise
+    finally:
+        conn.execute("PRAGMA foreign_keys = ON")
+
+    # Reset bloom filter so the next checksum lookup rebuilds it from new data
+    global _bloom
+    with _bloom_lock:
+        _bloom = None
+
+    post_status = {r[0]: r[1] for r in conn.execute(
+        "SELECT lb_status, COUNT(*) FROM lb_master GROUP BY lb_status"
+    ).fetchall()}
+
+    # Compute the diff: how many LBs changed status
+    changed = 0
+    all_keys = set(pre_status) | set(post_status)
+    for k in all_keys:
+        if pre_status.get(k, 0) != post_status.get(k, 0):
+            changed = sum(abs(pre_status.get(k, 0) - post_status.get(k, 0))
+                          for k in all_keys) // 2
+            break
+
+    return {
+        "master_version": manifest.get("master_version"),
+        "master_published_at": manifest.get("master_published_at"),
+        "row_counts": row_counts,
+        "pre_status_counts": pre_status,
+        "post_status_counts": post_status,
+        "lb_status_changes": changed,
+        "backup_path": str(backup_path),
+        "imported_at": _dt.utcnow().isoformat(),
+    }

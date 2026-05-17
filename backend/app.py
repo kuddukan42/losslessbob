@@ -477,6 +477,34 @@ def create_app():
         scraper.stop_scrape()
         return jsonify({"ok": True})
 
+    @app.route("/api/scrape/private_rescrape", methods=["POST"])
+    def scrape_private_rescrape():
+        """Force re-scrape of all currently-Private LBs to detect newly-published pages.
+
+        Uses force=True so LBs with a prior 'missing' result are re-attempted.
+        Returns {ok, total} where total is the number of private LBs queued.
+        """
+        try:
+            with database.get_connection() as conn:
+                lb_numbers = [
+                    r[0] for r in conn.execute(
+                        "SELECT lb_number FROM lb_master WHERE lb_status='private' "
+                        "ORDER BY lb_number"
+                    ).fetchall()
+                ]
+            if not lb_numbers:
+                return jsonify({"ok": True, "total": 0})
+            delay = int(database.get_meta("scrape_delay_ms") or 1500)
+            download = database.get_meta("scrape_attachments") != "0"
+            use_local_pages = database.get_meta("use_local_pages") == "1"
+            _start_scrape_thread(
+                lb_numbers, force=True, delay_ms=delay,
+                download=download, use_local_pages=use_local_pages,
+            )
+            return jsonify({"ok": True, "total": len(lb_numbers)})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
     # ── Verify ───────────────────────────────────────────────────────────────
 
     @app.route("/api/verify", methods=["POST"])
@@ -1483,6 +1511,78 @@ def create_app():
             path = database.backup_database(reason=reason)
             size = path.stat().st_size
             return jsonify({"ok": True, "path": str(path), "size_bytes": size})
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    # ── Curator mode (local flag) ──────────────────────────────────────────────
+
+    @app.route("/api/curator", methods=["GET"])
+    def curator_get():
+        """Return whether this install is flagged as the curator."""
+        try:
+            return jsonify({"is_curator": database.is_curator()})
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/curator", methods=["POST"])
+    def curator_set():
+        """Toggle the local curator flag. Body: {enabled: bool}."""
+        try:
+            body = request.get_json(silent=True) or {}
+            enabled = bool(body.get("enabled", False))
+            database.set_curator(enabled)
+            return jsonify({"ok": True, "is_curator": enabled})
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    # ── Master data publish / subscribe ────────────────────────────────────────
+
+    @app.route("/api/master/export", methods=["POST"])
+    def master_export():
+        """Build a master-data snapshot + manifest. Curator-only.
+
+        Body (optional): {reason}. Returns:
+        {ok, path, manifest_path, manifest: {...}}.
+        """
+        try:
+            if not database.is_curator():
+                return jsonify({
+                    "error": "curator_required",
+                    "message": "Master export is only available in curator mode. "
+                               "Enable Curator Mode in Setup tab.",
+                }), 403
+            body = request.get_json(silent=True) or {}
+            reason = body.get("reason", "publish")
+            path, manifest = database.export_master_db(reason=reason)
+            return jsonify({
+                "ok": True,
+                "path": str(path),
+                "manifest_path": str(path) + ".manifest.json",
+                "manifest": manifest,
+            })
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/master/import", methods=["POST"])
+    def master_import():
+        """Apply a master snapshot to the local DB, preserving user data.
+
+        Body: {path: "/abs/path/to/snapshot.db"}. Manifest sidecar must live
+        alongside the snapshot at <path>.manifest.json.
+        """
+        try:
+            body = request.get_json(silent=True) or {}
+            path = body.get("path")
+            if not path:
+                return jsonify({"error": "missing_path"}), 400
+            summary = database.import_master_db(path)
+            return jsonify({"ok": True, **summary})
+        except FileNotFoundError as exc:
+            return jsonify({"error": "not_found", "message": str(exc)}), 404
+        except ValueError as exc:
+            return jsonify({"error": "sha256_mismatch", "message": str(exc)}), 400
+        except RuntimeError as exc:
+            return jsonify({"error": "schema_too_new", "message": str(exc)}), 400
         except Exception as exc:
             return jsonify({"error": str(exc)}), 500
 
