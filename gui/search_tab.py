@@ -10,15 +10,23 @@ from PyQt6.QtWidgets import (
     QMenu, QInputDialog,
 )
 
-_DESC_COL = 4          # index of the Description column
-_XREF_COL = 5          # index of the Xref column
-_OWNED_COL = 6         # index of the Owned column
+_STATUS_COL = 1        # index of the lb_master Status column
+_DESC_COL = 5          # index of the Description column
+_XREF_COL = 6          # index of the Xref column
+_OWNED_COL = 7         # index of the Owned column
 _DESC_DEFAULT_W = 600  # default width for Description in pixels
 _QSETTINGS_ORG = "LosslessBob"
 _QSETTINGS_APP = "SearchTab"
 _QSETTINGS_COL_KEY = "col_widths"
 
-HEADERS = ["LB Number", "Date", "Location", "Rating", "Description", "Xref", "Owned"]
+HEADERS = ["LB Number", "Status", "Date", "Location", "Rating", "Description", "Xref", "Owned"]
+
+# Background colours for lb_master status — single source of truth for this tab
+_BG_STATUS = {
+    "public":  None,           # default background
+    "private": "#B3E5FC",      # light blue
+    "missing": "#E0E0E0",      # light gray
+}
 
 
 class SearchModel(QAbstractTableModel):
@@ -39,27 +47,36 @@ class SearchModel(QAbstractTableModel):
             return None
         row = self._rows[index.row()]
         col = index.column()
+        lb_status = row.get("lb_status") or ""
         if role == Qt.ItemDataRole.DisplayRole:
-            keys = ["lb_number", "date_str", "location", "rating", "description"]
             if col == 0:
                 return f"LB-{row.get('lb_number', '')}"
-            if col == _DESC_COL:
-                val = row.get("description", "") or ""
+            if col == _STATUS_COL:
+                return lb_status.capitalize() if lb_status else ""
+            # cols 2-4: date, location, rating
+            keys = [None, None, "date_str", "location", "rating"]
+            if col in (2, 3, 4):
+                val = row.get(keys[col], "") or ""
                 return str(val)
+            if col == _DESC_COL:
+                return str(row.get("description", "") or "")
             if col == _XREF_COL:
                 vals = self._xref_map.get(row.get("lb_number"), [])
                 return ", ".join(str(x) for x in vals) if vals else ""
             if col == _OWNED_COL:
                 return "✓" if row.get("lb_number") in self._owned else ""
-            val = row.get(keys[col], "")
-            return str(val) if val else ""
+            return ""
         if role == Qt.ItemDataRole.BackgroundRole:
-            if row.get("status") == "missing":
-                return styles.ROW_MISSING
+            from PyQt6.QtGui import QColor
+            hex_color = _BG_STATUS.get(lb_status)
+            if hex_color:
+                return QColor(hex_color)
             if row.get("lb_number") in self._owned:
                 return styles.ROW_OWNED
-        if role == Qt.ItemDataRole.TextAlignmentRole and col in (_XREF_COL, _OWNED_COL):
+        if role == Qt.ItemDataRole.TextAlignmentRole and col in (_STATUS_COL, _XREF_COL, _OWNED_COL):
             return Qt.AlignmentFlag.AlignCenter
+        if role == Qt.ItemDataRole.ToolTipRole and col == _STATUS_COL and lb_status:
+            return f"lb_master status: {lb_status}"
         return None
 
     def headerData(self, section, orientation, role=Qt.ItemDataRole.DisplayRole):
@@ -187,7 +204,7 @@ class SearchTab(QWidget):
         self._all_results: list = []
         self._xref_map: dict = {}
         self._xref_lb_numbers: set = set()
-        self._show_missing_only: bool = False
+        self._lb_master_stats: dict = {}  # cached stats for status filter
         self._page: int = 0
         self._page_size: int = 50
         self._resizing_programmatically: bool = False
@@ -232,9 +249,15 @@ class SearchTab(QWidget):
         self.search_btn.clicked.connect(self._do_search)
         search_row.addWidget(self.search_btn)
 
-        self._missing_only_cb = QCheckBox("Missing only")
-        self._missing_only_cb.stateChanged.connect(self._on_filter_changed)
-        search_row.addWidget(self._missing_only_cb)
+        self._status_combo = QComboBox()
+        self._status_combo.setMinimumWidth(110)
+        self._status_combo.addItem("All statuses", userData=None)
+        self._status_combo.addItem("Public only",  userData="public")
+        self._status_combo.addItem("Private only", userData="private")
+        self._status_combo.addItem("Missing only", userData="missing")
+        self._status_combo.addItem("Needs review", userData="needs_review")
+        self._status_combo.currentIndexChanged.connect(self._on_filter_changed)
+        search_row.addWidget(self._status_combo)
 
         self._owned_only_cb = QCheckBox("Owned only")
         self._owned_only_cb.stateChanged.connect(self._on_filter_changed)
@@ -372,8 +395,13 @@ class SearchTab(QWidget):
 
     def _filtered_results(self) -> list:
         results = self._all_results
-        if self._show_missing_only:
-            results = [r for r in results if r.get("status") == "missing"]
+        # lb_master status filter
+        status_filter = self._status_combo.currentData()
+        if status_filter == "needs_review":
+            # needs_review rows aren't in the search result data — fall back to all
+            pass
+        elif status_filter:
+            results = [r for r in results if r.get("lb_status") == status_filter]
         owned = self.model._owned
         owned_only = self._owned_only_cb.isChecked()
         not_owned = self._not_owned_cb.isChecked()
@@ -499,7 +527,6 @@ class SearchTab(QWidget):
         self._worker.start()
 
     def _on_filter_changed(self) -> None:
-        self._show_missing_only = self._missing_only_cb.isChecked()
         self._page = 0
         self._render_page()
         self._update_results_label()
@@ -508,8 +535,12 @@ class SearchTab(QWidget):
         filtered = self._filtered_results()
         total = len(self._all_results)
         shown = len(filtered)
-        if self._show_missing_only and shown != total:
-            self.results_label.setText(f"{shown} missing result(s) (of {total} total).")
+        status_filter = self._status_combo.currentData()
+        if status_filter and shown != total:
+            self.results_label.setText(
+                f"{shown} result(s) matching '{self._status_combo.currentText()}' "
+                f"(of {total} total)."
+            )
         else:
             self.results_label.setText(f"{total} result(s) found.")
 

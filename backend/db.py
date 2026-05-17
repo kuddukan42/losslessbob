@@ -15,6 +15,57 @@ _local = threading.local()
 _bloom: _SBF | None = None
 _bloom_lock = threading.Lock()
 
+# --- Master vs. user data ownership model -------------------------------------
+# MASTER tables ship in a master-data export and are overwritten on import.
+# USER tables stay local to each install and never appear in an export.
+# See instructions/CC_LB_INTEGRITY.md §Data Ownership Model.
+
+MASTER_SCHEMA_VERSION = 1  # bump on any schema change that breaks older clients
+
+MASTER_TABLES = (
+    "checksums",
+    "entries",
+    "entry_files",
+    "entry_changes",
+    "lb_master",
+    "lb_status_history",
+)
+# Note: `entries_fts` is a virtual FTS5 table whose content is mirrored from
+# `entries` via triggers. It is NOT copied directly during export/import; the
+# triggers (or a one-shot rebuild) keep it in sync once `entries` is replaced.
+
+USER_TABLES = (
+    "my_collection",
+    "collection_meta",
+    "my_wishlist",
+    "integrity_events",
+    "torrents",
+    "rename_history",
+    "forum_posts",
+)
+
+# meta is mixed: master keys ship, user keys stay local.
+MASTER_META_KEYS = frozenset({
+    "import_hash",
+    "last_import_date",
+    "last_lb_number",
+    "master_version",
+    "master_published_at",
+    "master_schema_version",
+})
+
+# Sentinel set so callers (and the export verifier) know which keys are
+# explicitly user-local and must never be exported. Used for documentation;
+# the actual export uses the MASTER_META_KEYS whitelist as the source of truth.
+USER_META_KEYS = frozenset({
+    "auto_scrape", "scrape_delay_ms", "scrape_attachments", "force_scrape",
+    "download_files", "use_local_pages", "search_page_size",
+    "qbt_host", "qbt_port", "qbt_category", "qbt_tags",
+    "tracker_list",
+    "wtrf_board_id", "wtrf_username", "wtrf_password",
+    "is_curator",
+})
+
 SCHEMA_SQL = """
 CREATE TABLE IF NOT EXISTS checksums (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -145,6 +196,36 @@ CREATE TABLE IF NOT EXISTS forum_posts (
 );
 CREATE INDEX IF NOT EXISTS idx_forum_posts_lb ON forum_posts(lb_number, posted_at DESC);
 
+CREATE TABLE IF NOT EXISTS lb_master (
+    lb_number        INTEGER PRIMARY KEY,
+    lb_status        TEXT NOT NULL CHECK (lb_status IN ('public','private','missing')),
+    has_webpage      INTEGER NOT NULL DEFAULT 0,
+    has_checksums    INTEGER NOT NULL DEFAULT 0,
+    has_attachments  INTEGER NOT NULL DEFAULT 0,
+    first_seen_at    TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    last_status_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    previous_status  TEXT,
+    manual_override  INTEGER NOT NULL DEFAULT 0,
+    manual_status    TEXT,
+    manual_notes     TEXT,
+    manual_set_by    TEXT,
+    manual_set_at    TIMESTAMP,
+    needs_review     INTEGER NOT NULL DEFAULT 0
+);
+CREATE INDEX IF NOT EXISTS idx_lb_master_status   ON lb_master(lb_status);
+CREATE INDEX IF NOT EXISTS idx_lb_master_override ON lb_master(manual_override) WHERE manual_override = 1;
+CREATE INDEX IF NOT EXISTS idx_lb_master_review   ON lb_master(needs_review)   WHERE needs_review = 1;
+
+CREATE TABLE IF NOT EXISTS lb_status_history (
+    id            INTEGER PRIMARY KEY AUTOINCREMENT,
+    lb_number     INTEGER NOT NULL,
+    old_status    TEXT,
+    new_status    TEXT NOT NULL,
+    changed_at    TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    trigger_event TEXT
+);
+CREATE INDEX IF NOT EXISTS idx_lb_history_lb ON lb_status_history(lb_number, changed_at DESC);
+
 CREATE VIRTUAL TABLE IF NOT EXISTS entries_fts USING fts5(
     description,
     setlist,
@@ -251,6 +332,11 @@ def init_db(db_path=None):
     # checksum_in_bloom() returns True while _bloom is None, so all lookups
     # fall through to SQLite until the filter is ready.
     threading.Thread(target=_rebuild_bloom_bg, args=(db_path,), daemon=True).start()
+
+    # One-time backfill: populate lb_master if table is empty and checksums exist.
+    threading.Thread(
+        target=lambda: migrate_lb_master(db_path), daemon=True
+    ).start()
 
 
 def get_meta(key, db_path=None):
@@ -507,6 +593,24 @@ def lookup_checksums(parsed_entries, db_path=None):
         "lb_summary": list(lb_summary.values()),
     }
 
+    # Annotate detail items with lb_status from lb_master so callers (e.g.
+    # rename tab) can apply NFT suffix logic without a second DB round-trip.
+    _matched_lbs = {item["lb_number"] for item in detail if item["lb_number"] is not None}
+    if _matched_lbs:
+        _lb_status_map = dict(conn.execute(
+            "SELECT lb_number, lb_status FROM lb_master WHERE lb_number IN ({})".format(
+                ",".join("?" * len(_matched_lbs))
+            ),
+            list(_matched_lbs),
+        ).fetchall())
+    else:
+        _lb_status_map = {}
+    for item in detail:
+        item["lb_status"] = _lb_status_map.get(item["lb_number"])
+    # Also annotate lb_summary values so the lookup tab can tint rows and filter
+    for s in lb_summary.values():
+        s["lb_status"] = _lb_status_map.get(s["lb_number"])
+
     return summary, detail
 
 
@@ -571,9 +675,10 @@ def search_entries(query, field="all", year=None, limit=None, db_path=None):
         limit_clause = f"LIMIT {int(limit)}" if limit is not None else ""
         sql = f"""
             SELECT e.lb_number, e.date_str, e.location, e.rating,
-                   e.description, e.status
+                   e.description, e.status, lm.lb_status
             FROM entries_fts
             JOIN entries e ON e.lb_number = entries_fts.rowid
+            LEFT JOIN lb_master lm ON lm.lb_number = e.lb_number
             WHERE entries_fts MATCH ?
             {year_clause}
             ORDER BY rank
@@ -583,10 +688,12 @@ def search_entries(query, field="all", year=None, limit=None, db_path=None):
     else:
         limit_clause = f"LIMIT {int(limit)}" if limit is not None else ""
         sql = f"""
-            SELECT lb_number, date_str, location, rating, description, status
-            FROM entries
-            WHERE 1=1 {year_clause.replace('e.', '')}
-            ORDER BY lb_number
+            SELECT e.lb_number, e.date_str, e.location, e.rating,
+                   e.description, e.status, lm.lb_status
+            FROM entries e
+            LEFT JOIN lb_master lm ON lm.lb_number = e.lb_number
+            WHERE 1=1 {year_clause}
+            ORDER BY e.lb_number
             {limit_clause}
         """
         params = year_params
@@ -597,9 +704,11 @@ def search_entries(query, field="all", year=None, limit=None, db_path=None):
         # FTS5 syntax error fallback — revert to LIKE
         like = f"%{query}%"
         fallback_sql = (
-            "SELECT lb_number, date_str, location, rating, description, status "
-            "FROM entries WHERE description LIKE ? OR location LIKE ? OR date_str LIKE ? "
-            "ORDER BY lb_number"
+            "SELECT e.lb_number, e.date_str, e.location, e.rating,"
+            " e.description, e.status, lm.lb_status"
+            " FROM entries e LEFT JOIN lb_master lm ON lm.lb_number = e.lb_number"
+            " WHERE e.description LIKE ? OR e.location LIKE ? OR e.date_str LIKE ?"
+            " ORDER BY e.lb_number"
         )
         fallback_params = [like, like, like]
         if limit is not None:
@@ -617,8 +726,10 @@ def search_entries(query, field="all", year=None, limit=None, db_path=None):
             lb_id = int(query)
             if not any(r["lb_number"] == lb_id for r in results):
                 direct = conn.execute(
-                    "SELECT lb_number, date_str, location, rating, description, status "
-                    "FROM entries WHERE lb_number = ?",
+                    "SELECT e.lb_number, e.date_str, e.location, e.rating,"
+                    " e.description, e.status, lm.lb_status"
+                    " FROM entries e LEFT JOIN lb_master lm ON lm.lb_number = e.lb_number"
+                    " WHERE e.lb_number = ?",
                     (lb_id,),
                 ).fetchone()
                 if direct:
@@ -675,9 +786,10 @@ def get_collection(db_path=None):
     with get_connection(db_path) as conn:
         rows = conn.execute("""
             SELECT c.id, c.lb_number, c.folder_name, c.disk_path, c.confirmed_at, c.notes,
-                   e.date_str, e.location
+                   e.date_str, e.location, lm.lb_status
             FROM my_collection c
             LEFT JOIN entries e ON c.lb_number = e.lb_number
+            LEFT JOIN lb_master lm ON lm.lb_number = c.lb_number
             ORDER BY c.lb_number
         """).fetchall()
     return [dict(r) for r in rows]
@@ -713,9 +825,11 @@ def delete_from_collection(lb_number, db_path=None):
 def get_missing_from_collection(db_path=None):
     with get_connection(db_path) as conn:
         rows = conn.execute("""
-            SELECT e.lb_number, e.date_str, e.location, e.rating, e.description
+            SELECT e.lb_number, e.date_str, e.location, e.rating, e.description,
+                   lm.lb_status
             FROM entries e
             LEFT JOIN my_collection c ON e.lb_number = c.lb_number
+            LEFT JOIN lb_master lm ON lm.lb_number = e.lb_number
             WHERE c.lb_number IS NULL AND e.status = 'ok'
             ORDER BY e.lb_number
         """).fetchall()
@@ -1053,3 +1167,675 @@ def delete_collection_entries(lb_numbers: list, db_path=None) -> int:
     conn.execute(f"DELETE FROM my_collection WHERE lb_number IN ({ph})", lb_numbers)
     conn.commit()
     return conn.execute("SELECT changes()").fetchone()[0]
+
+
+# ── lb_master integrity system ─────────────────────────────────────────────────
+
+def backup_database(reason: str = "manual", db_path=None) -> "Path":
+    """Create a consistent snapshot of the DB using VACUUM INTO.
+
+    Output: data/backups/losslessbob_YYYY-MM-DD_HHMMSS_<reason>.db
+    Keeps the 10 most recent backups, pruning older ones.
+    Returns the Path of the new backup file.
+    """
+    import logging
+    from datetime import datetime as _dt
+    from backend.paths import DATA_DIR as _DATA
+
+    backup_dir = _DATA / "backups"
+    backup_dir.mkdir(parents=True, exist_ok=True)
+
+    ts = _dt.utcnow().strftime("%Y-%m-%d_%H%M%S_%f")
+    safe_reason = "".join(c if c.isalnum() or c in "-_" else "_" for c in reason)
+    out_path = backup_dir / f"losslessbob_{ts}_{safe_reason}.db"
+
+    conn = get_connection(db_path)
+    conn.execute("VACUUM INTO ?", (str(out_path),))
+    logging.getLogger(__name__).info("Database backed up to %s", out_path)
+
+    # Prune: keep newest 10 backups only
+    backups = sorted(backup_dir.glob("losslessbob_*.db"), key=lambda p: p.stat().st_mtime)
+    for old in backups[:-10]:
+        try:
+            old.unlink()
+        except OSError:
+            pass
+
+    return out_path
+
+
+def _compute_lb_status(has_web: bool, has_chk: bool, has_att: bool) -> tuple[str, int]:
+    """Apply status-precedence rules. Returns (status, needs_review)."""
+    if has_web or has_att:
+        status = "public"
+        # Attachments-only without a confirmed webpage → flag for review
+        needs_review = 1 if (has_att and not has_web) else 0
+    elif has_chk:
+        status = "private"
+        needs_review = 0
+    else:
+        status = "missing"
+        needs_review = 0
+    return status, needs_review
+
+
+def migrate_lb_master(db_path=None) -> int:
+    """Backfill lb_master for integers 1..MAX(lb_number) from existing data.
+
+    Skipped when lb_master already contains rows (idempotent guard).
+    Deletes entries.status='missing' tombstones after populating lb_master.
+    Returns number of rows inserted, or 0 if skipped.
+    """
+    import logging
+    conn = get_connection(db_path)
+
+    existing = conn.execute("SELECT COUNT(*) FROM lb_master").fetchone()[0]
+    if existing > 0:
+        return 0
+
+    max_lb = conn.execute("SELECT MAX(lb_number) FROM checksums").fetchone()[0]
+    if not max_lb:
+        return 0
+
+    backup_database("pre_lb_master_migration", db_path)
+
+    public_set = {r[0] for r in conn.execute(
+        "SELECT lb_number FROM entries WHERE status='ok'")}
+    checksum_set = {r[0] for r in conn.execute(
+        "SELECT DISTINCT lb_number FROM checksums")}
+    attach_set = {r[0] for r in conn.execute(
+        "SELECT DISTINCT lb_number FROM entry_files")}
+
+    rows = []
+    for n in range(1, max_lb + 1):
+        has_web = n in public_set
+        has_chk = n in checksum_set
+        has_att = n in attach_set
+        status, needs_review = _compute_lb_status(has_web, has_chk, has_att)
+        rows.append((n, status, int(has_web), int(has_chk), int(has_att), needs_review))
+
+    conn.executemany(
+        """INSERT OR REPLACE INTO lb_master
+           (lb_number, lb_status, has_webpage, has_checksums, has_attachments, needs_review)
+           VALUES (?,?,?,?,?,?)""",
+        rows,
+    )
+    # Remove tombstone rows — lb_master is now authoritative
+    conn.execute("DELETE FROM entries WHERE status='missing'")
+    conn.commit()
+
+    logging.getLogger(__name__).info(
+        "lb_master populated: %d rows (%d public, %d private, %d missing)",
+        len(rows),
+        sum(1 for r in rows if r[1] == "public"),
+        sum(1 for r in rows if r[1] == "private"),
+        sum(1 for r in rows if r[1] == "missing"),
+    )
+    return len(rows)
+
+
+def reconcile_lb_status(lb_number: int, trigger: str = "reconcile", db_path=None) -> str:
+    """Recompute lb_master status for a single LB from live data.
+
+    Respects manual_override=1: updates has_* columns but does NOT change lb_status.
+    Logs transitions to lb_status_history.
+    Returns the final (possibly unchanged) lb_status string.
+    """
+    conn = get_connection(db_path)
+
+    has_web = bool(conn.execute(
+        "SELECT 1 FROM entries WHERE lb_number=? AND status='ok'", (lb_number,)
+    ).fetchone())
+    has_chk = bool(conn.execute(
+        "SELECT 1 FROM checksums WHERE lb_number=?", (lb_number,)
+    ).fetchone())
+    has_att = bool(conn.execute(
+        "SELECT 1 FROM entry_files WHERE lb_number=?", (lb_number,)
+    ).fetchone())
+
+    auto_status, needs_review = _compute_lb_status(has_web, has_chk, has_att)
+
+    existing = conn.execute(
+        "SELECT lb_status, manual_override FROM lb_master WHERE lb_number=?",
+        (lb_number,),
+    ).fetchone()
+
+    if existing is None:
+        # New row
+        conn.execute(
+            """INSERT INTO lb_master
+               (lb_number, lb_status, has_webpage, has_checksums, has_attachments, needs_review)
+               VALUES (?,?,?,?,?,?)""",
+            (lb_number, auto_status, int(has_web), int(has_chk), int(has_att), needs_review),
+        )
+        conn.execute(
+            "INSERT INTO lb_status_history(lb_number, old_status, new_status, trigger_event) "
+            "VALUES (?,NULL,?,?)",
+            (lb_number, auto_status, trigger),
+        )
+        conn.commit()
+        return auto_status
+
+    old_status = existing["lb_status"]
+    manual_override = existing["manual_override"]
+
+    if manual_override:
+        # Respect override: only refresh signal columns and needs_review
+        conn.execute(
+            """UPDATE lb_master
+               SET has_webpage=?, has_checksums=?, has_attachments=?,
+                   needs_review=?, last_status_at=CURRENT_TIMESTAMP
+               WHERE lb_number=?""",
+            (int(has_web), int(has_chk), int(has_att), needs_review, lb_number),
+        )
+        conn.commit()
+        return old_status
+
+    final_status = auto_status
+    if final_status != old_status:
+        conn.execute(
+            """UPDATE lb_master
+               SET lb_status=?, previous_status=?, has_webpage=?, has_checksums=?,
+                   has_attachments=?, needs_review=?, last_status_at=CURRENT_TIMESTAMP
+               WHERE lb_number=?""",
+            (final_status, old_status,
+             int(has_web), int(has_chk), int(has_att), needs_review, lb_number),
+        )
+        conn.execute(
+            "INSERT INTO lb_status_history(lb_number, old_status, new_status, trigger_event) "
+            "VALUES (?,?,?,?)",
+            (lb_number, old_status, final_status, trigger),
+        )
+    else:
+        conn.execute(
+            """UPDATE lb_master
+               SET has_webpage=?, has_checksums=?, has_attachments=?,
+                   needs_review=?, last_status_at=CURRENT_TIMESTAMP
+               WHERE lb_number=?""",
+            (int(has_web), int(has_chk), int(has_att), needs_review, lb_number),
+        )
+    conn.commit()
+    return final_status
+
+
+def reconcile_all_lb_master(db_path=None) -> dict:
+    """Full rebuild of lb_master, extending to new max lb_number.
+
+    Respects existing manual_override rows.
+    Returns counts by status.
+    """
+    conn = get_connection(db_path)
+    backup_database("pre_reconcile_all", db_path)
+
+    max_lb = conn.execute("SELECT MAX(lb_number) FROM checksums").fetchone()[0] or 0
+    # Also include LBs already in lb_master (they may exceed checksums max after deletions)
+    master_max = conn.execute("SELECT MAX(lb_number) FROM lb_master").fetchone()[0] or 0
+    effective_max = max(max_lb, master_max)
+    if effective_max == 0:
+        return {"public": 0, "private": 0, "missing": 0, "max_lb": 0}
+
+    for n in range(1, effective_max + 1):
+        reconcile_lb_status(n, trigger="reconcile", db_path=db_path)
+
+    stats = get_lb_master_stats(db_path)
+    return stats
+
+
+def set_lb_manual_override(lb_number: int, status: str, notes: str,
+                           set_by: str = "user", db_path=None) -> None:
+    """Set a manual override on an lb_master row."""
+    from datetime import datetime as _dt
+    conn = get_connection(db_path)
+    existing = conn.execute(
+        "SELECT lb_status FROM lb_master WHERE lb_number=?", (lb_number,)
+    ).fetchone()
+    old_status = existing["lb_status"] if existing else None
+
+    conn.execute(
+        """INSERT INTO lb_master(lb_number, lb_status, manual_override, manual_status,
+               manual_notes, manual_set_by, manual_set_at, needs_review,
+               has_webpage, has_checksums, has_attachments)
+           VALUES(?,?,1,?,?,?,?,0,0,0,0)
+           ON CONFLICT(lb_number) DO UPDATE SET
+               lb_status=excluded.lb_status,
+               manual_override=1,
+               manual_status=excluded.manual_status,
+               manual_notes=excluded.manual_notes,
+               manual_set_by=excluded.manual_set_by,
+               manual_set_at=excluded.manual_set_at,
+               last_status_at=CURRENT_TIMESTAMP""",
+        (lb_number, status, status, notes, set_by, _dt.utcnow().isoformat()),
+    )
+    conn.execute(
+        "INSERT INTO lb_status_history(lb_number, old_status, new_status, trigger_event) "
+        "VALUES(?,?,?,'manual')",
+        (lb_number, old_status, status),
+    )
+    conn.commit()
+
+
+def clear_lb_manual_override(lb_number: int, db_path=None) -> str:
+    """Clear a manual override and immediately reconcile. Returns new auto status."""
+    conn = get_connection(db_path)
+    conn.execute(
+        """UPDATE lb_master SET manual_override=0, manual_status=NULL,
+               manual_notes=NULL, manual_set_by=NULL, manual_set_at=NULL
+           WHERE lb_number=?""",
+        (lb_number,),
+    )
+    conn.commit()
+    return reconcile_lb_status(lb_number, trigger="manual_clear", db_path=db_path)
+
+
+def get_lb_master_row(lb_number: int, db_path=None) -> dict | None:
+    """Return the lb_master row for an LB number, or None if absent."""
+    conn = get_connection(db_path)
+    row = conn.execute(
+        "SELECT * FROM lb_master WHERE lb_number=?", (lb_number,)
+    ).fetchone()
+    return dict(row) if row else None
+
+
+def get_lb_master_stats(db_path=None) -> dict:
+    """Return {public, private, missing, max_lb, overrides, needs_review} counts."""
+    conn = get_connection(db_path)
+    row = conn.execute("""
+        SELECT
+            COALESCE(SUM(CASE WHEN lb_status='public'  THEN 1 ELSE 0 END), 0) AS public,
+            COALESCE(SUM(CASE WHEN lb_status='private' THEN 1 ELSE 0 END), 0) AS private,
+            COALESCE(SUM(CASE WHEN lb_status='missing' THEN 1 ELSE 0 END), 0) AS missing,
+            COALESCE(MAX(lb_number), 0)                                         AS max_lb,
+            COALESCE(SUM(manual_override), 0)                                   AS overrides,
+            COALESCE(SUM(needs_review), 0)                                      AS needs_review
+        FROM lb_master
+    """).fetchone()
+    return dict(row) if row else {
+        "public": 0, "private": 0, "missing": 0,
+        "max_lb": 0, "overrides": 0, "needs_review": 0,
+    }
+
+
+def get_lb_status(lb_number: int, db_path=None) -> str | None:
+    """Return lb_master.lb_status for a single LB, or None if not in table."""
+    row = get_lb_master_row(lb_number, db_path)
+    return row["lb_status"] if row else None
+
+
+def get_lb_statuses_batch(lb_numbers: "list[int]", db_path=None) -> "dict[int, str]":
+    """Return {lb_number: lb_status} for every lb_number present in lb_master.
+
+    Missing entries are absent from the result dict.  Intended for bulk
+    UI colouring (e.g. the Attachments tree page render) to avoid N individual
+    queries.
+    """
+    if not lb_numbers:
+        return {}
+    conn = get_connection(db_path)
+    rows = conn.execute(
+        "SELECT lb_number, lb_status FROM lb_master WHERE lb_number IN ({})".format(
+            ",".join("?" * len(lb_numbers))
+        ),
+        lb_numbers,
+    ).fetchall()
+    return {r["lb_number"]: r["lb_status"] for r in rows}
+
+
+def should_mark_nft(lb_number: int, db_path=None) -> bool:
+    """Return True if folders for lb_number should carry the -NFT suffix.
+
+    An LB is marked NFT when lb_status is 'private' — it has checksums
+    but no published webpage, indicating the webmaster has not released it.
+    """
+    return get_lb_status(lb_number, db_path) == "private"
+
+
+def is_postable_to_forum(lb_number: int, db_path=None) -> tuple[bool, str | None]:
+    """Return (allowed, reason) for forum posting.
+
+    Blocks private and missing LBs; passes public ones.
+    Blocks with 'status_unknown' if the LB has no lb_master row at all.
+    """
+    status = get_lb_status(lb_number, db_path)
+    if status is None:
+        return False, "status_unknown"
+    if status == "private":
+        return False, "lb_private"
+    if status == "missing":
+        return False, "lb_missing"
+    return True, None
+
+
+def get_lb_master_list(status: str | None = None, override_only: bool = False,
+                       review_only: bool = False, limit: int = 500,
+                       offset: int = 0, db_path=None) -> list[dict]:
+    """Return paginated lb_master rows with optional filters."""
+    conn = get_connection(db_path)
+    clauses = []
+    params: list = []
+    if status:
+        clauses.append("lb_status=?")
+        params.append(status)
+    if override_only:
+        clauses.append("manual_override=1")
+    if review_only:
+        clauses.append("needs_review=1")
+    where = ("WHERE " + " AND ".join(clauses)) if clauses else ""
+    rows = conn.execute(
+        f"SELECT * FROM lb_master {where} ORDER BY lb_number LIMIT ? OFFSET ?",
+        params + [limit, offset],
+    ).fetchall()
+    return [dict(r) for r in rows]
+
+
+def get_lb_status_history(lb_number: int, limit: int = 50, db_path=None) -> list[dict]:
+    """Return transition history for a single LB, newest first."""
+    conn = get_connection(db_path)
+    rows = conn.execute(
+        "SELECT * FROM lb_status_history WHERE lb_number=? ORDER BY changed_at DESC LIMIT ?",
+        (lb_number, limit),
+    ).fetchall()
+    return [dict(r) for r in rows]
+
+
+# ── Curator mode (user-local meta flag) ────────────────────────────────────────
+
+def is_curator(db_path=None) -> bool:
+    """Return True if the local install is flagged as the curator.
+
+    Curator mode unlocks master-data publishing UI in Setup tab and
+    write access to alias/override editing once those features ship.
+    The flag is stored in `meta.is_curator='1'|'0'` and never ships in
+    a master export (it's in USER_META_KEYS).
+    """
+    return (get_meta("is_curator", db_path) or "0") == "1"
+
+
+def set_curator(enabled: bool, db_path=None) -> None:
+    """Toggle the curator flag for this install."""
+    set_meta("is_curator", "1" if enabled else "0", db_path)
+
+
+# ── Master data export / import ───────────────────────────────────────────────
+
+def export_master_db(reason: str = "publish", db_path=None) -> "tuple[Path, dict]":
+    """Produce a master-only snapshot of the DB plus a manifest sidecar.
+
+    Pipeline:
+      1. ``VACUUM INTO`` a snapshot file → consistent point-in-time copy.
+      2. On the snapshot: DROP every table in :data:`USER_TABLES`.
+      3. Delete every ``meta`` row whose key is not in :data:`MASTER_META_KEYS`.
+      4. Stamp ``master_version`` (UTC timestamp), ``master_published_at`` (now),
+         and ``master_schema_version`` (current code constant).
+      5. ``VACUUM`` to reclaim freed space.
+      6. **Verify** the snapshot contains no USER_TABLES and no non-master meta.
+      7. Compute SHA256 of the final snapshot file.
+      8. Write ``<snapshot>.manifest.json`` sidecar with counts + SHA + version.
+
+    Returns:
+        (snapshot_path, manifest_dict)
+
+    Raises:
+        RuntimeError: If the verification step finds residual user data.
+    """
+    import hashlib
+    import json
+    import logging
+    from datetime import datetime as _dt
+    from backend.paths import DATA_DIR as _DATA
+
+    log = logging.getLogger(__name__)
+    export_dir = _DATA / "exports"
+    export_dir.mkdir(parents=True, exist_ok=True)
+
+    ts = _dt.utcnow().strftime("%Y-%m-%d_%H%M%S")
+    safe_reason = "".join(c if c.isalnum() or c in "-_" else "_" for c in reason)
+    out_path = export_dir / f"losslessbob_master_{ts}_{safe_reason}.db"
+    manifest_path = export_dir.joinpath(out_path.name + ".manifest.json")
+
+    # Step 1: consistent snapshot via VACUUM INTO
+    src = get_connection(db_path)
+    src.execute("VACUUM INTO ?", (str(out_path),))
+    log.info("Master export snapshot created at %s", out_path)
+
+    # Steps 2-5: clean the snapshot in-place (separate connection on the file)
+    snap = sqlite3.connect(str(out_path))
+    snap.row_factory = sqlite3.Row
+    try:
+        snap.execute("PRAGMA foreign_keys = OFF")
+        for tbl in USER_TABLES:
+            snap.execute(f"DROP TABLE IF EXISTS {tbl}")
+        # Filter meta to whitelist
+        placeholders = ",".join("?" * len(MASTER_META_KEYS))
+        snap.execute(
+            f"DELETE FROM meta WHERE key NOT IN ({placeholders})",
+            tuple(MASTER_META_KEYS),
+        )
+        # Stamp version + publish timestamp + schema version
+        master_version = ts  # human-readable + sortable
+        published_at = _dt.utcnow().isoformat()
+        for k, v in (
+            ("master_version", master_version),
+            ("master_published_at", published_at),
+            ("master_schema_version", str(MASTER_SCHEMA_VERSION)),
+        ):
+            snap.execute(
+                "INSERT INTO meta(key, value) VALUES(?, ?) "
+                "ON CONFLICT(key) DO UPDATE SET value=excluded.value",
+                (k, v),
+            )
+        snap.commit()
+        snap.execute("VACUUM")
+
+        # Step 6: VERIFY
+        # 6a. No user tables present
+        present = {r[0] for r in snap.execute(
+            "SELECT name FROM sqlite_master WHERE type='table'"
+        ).fetchall()}
+        leaked = present & set(USER_TABLES)
+        if leaked:
+            raise RuntimeError(
+                f"Master export verification failed: user tables present in "
+                f"snapshot: {sorted(leaked)}"
+            )
+        # 6b. No non-master meta keys
+        non_master = [r[0] for r in snap.execute(
+            f"SELECT key FROM meta WHERE key NOT IN ({placeholders})",
+            tuple(MASTER_META_KEYS),
+        ).fetchall()]
+        if non_master:
+            raise RuntimeError(
+                f"Master export verification failed: non-master meta keys "
+                f"present in snapshot: {sorted(non_master)}"
+            )
+        # 6c. Sanity: lb_master populated (otherwise this isn't a useful release)
+        lb_count = snap.execute("SELECT COUNT(*) FROM lb_master").fetchone()[0]
+        ck_count = snap.execute("SELECT COUNT(*) FROM checksums").fetchone()[0]
+        en_count = snap.execute("SELECT COUNT(*) FROM entries").fetchone()[0]
+        stats_row = snap.execute(
+            "SELECT lb_status, COUNT(*) FROM lb_master GROUP BY lb_status"
+        ).fetchall()
+        status_counts = {r[0]: r[1] for r in stats_row}
+        override_count = snap.execute(
+            "SELECT COUNT(*) FROM lb_master WHERE manual_override=1"
+        ).fetchone()[0]
+    finally:
+        snap.close()
+
+    # Step 7: SHA256 of the final file
+    sha = hashlib.sha256()
+    with open(out_path, "rb") as f:
+        for chunk in iter(lambda: f.read(1 << 20), b""):
+            sha.update(chunk)
+    sha256 = sha.hexdigest()
+    size_bytes = out_path.stat().st_size
+
+    # Step 8: manifest sidecar
+    manifest = {
+        "filename": out_path.name,
+        "size_bytes": size_bytes,
+        "sha256": sha256,
+        "master_version": master_version,
+        "master_published_at": published_at,
+        "master_schema_version": MASTER_SCHEMA_VERSION,
+        "row_counts": {
+            "lb_master": lb_count,
+            "checksums": ck_count,
+            "entries": en_count,
+        },
+        "lb_status_counts": status_counts,
+        "manual_override_count": override_count,
+        "reason": reason,
+    }
+    with open(manifest_path, "w", encoding="utf-8") as f:
+        json.dump(manifest, f, indent=2)
+    log.info(
+        "Master export verified: %s rows (lb_master), %s bytes, sha256=%s",
+        lb_count, size_bytes, sha256[:12],
+    )
+    return out_path, manifest
+
+
+def import_master_db(snapshot_path: "Path | str", db_path=None) -> dict:
+    """Import a master snapshot into the local DB, preserving user data.
+
+    Pipeline:
+      1. Load + validate the manifest sidecar (SHA256 must match the .db file).
+      2. Schema version guard: refuse if incoming version > local
+         :data:`MASTER_SCHEMA_VERSION`.
+      3. Take an automatic backup (``reason='pre_master_import'``).
+      4. ``ATTACH DATABASE`` the incoming snapshot as ``incoming``.
+      5. For each table in :data:`MASTER_TABLES`:
+            ``DELETE FROM main.<t>;
+             INSERT INTO main.<t> SELECT * FROM incoming.<t>;``
+      6. For meta: replace only the keys in :data:`MASTER_META_KEYS`;
+         leave user keys (theme, qbt_*, wtrf_*, is_curator, ...) untouched.
+      7. ``INSERT INTO entries_fts(entries_fts) VALUES('rebuild');``
+      8. ``DETACH DATABASE incoming``.
+
+    Returns:
+        Summary dict: ``{master_version, rows_per_table, lb_status_counts,
+        backup_path, lb_status_changes}``.
+
+    Raises:
+        FileNotFoundError: snapshot or manifest missing.
+        ValueError: SHA256 mismatch.
+        RuntimeError: schema version too new for this client.
+    """
+    import hashlib
+    import json
+    import logging
+    from datetime import datetime as _dt
+
+    log = logging.getLogger(__name__)
+    snapshot_path = Path(snapshot_path)
+    manifest_path = snapshot_path.with_name(snapshot_path.name + ".manifest.json")
+    if not snapshot_path.exists():
+        raise FileNotFoundError(f"Master snapshot not found: {snapshot_path}")
+    if not manifest_path.exists():
+        raise FileNotFoundError(
+            f"Manifest not found alongside snapshot: {manifest_path}"
+        )
+
+    with open(manifest_path, "r", encoding="utf-8") as f:
+        manifest = json.load(f)
+
+    # Step 1: SHA256 validation
+    sha = hashlib.sha256()
+    with open(snapshot_path, "rb") as f:
+        for chunk in iter(lambda: f.read(1 << 20), b""):
+            sha.update(chunk)
+    actual_sha = sha.hexdigest()
+    expected_sha = manifest.get("sha256")
+    if expected_sha != actual_sha:
+        raise ValueError(
+            f"Master snapshot SHA256 mismatch. Expected {expected_sha}, "
+            f"got {actual_sha}. Re-download the file."
+        )
+
+    # Step 2: schema version guard
+    incoming_schema = int(manifest.get("master_schema_version", 0))
+    if incoming_schema > MASTER_SCHEMA_VERSION:
+        raise RuntimeError(
+            f"Master snapshot schema version {incoming_schema} is newer than "
+            f"this app supports (v{MASTER_SCHEMA_VERSION}). Upgrade the app first."
+        )
+
+    # Step 3: backup local DB before destructive replace
+    backup_path = backup_database(reason="pre_master_import", db_path=db_path)
+    log.info("Pre-import backup written to %s", backup_path)
+
+    # Step 4-7: copy under a transaction
+    conn = get_connection(db_path)
+    # Snapshot pre-import lb_status distribution so we can report what changed
+    pre_status = {r[0]: r[1] for r in conn.execute(
+        "SELECT lb_status, COUNT(*) FROM lb_master GROUP BY lb_status"
+    ).fetchall()}
+
+    conn.execute("PRAGMA foreign_keys = OFF")
+    try:
+        conn.execute(f"ATTACH DATABASE ? AS incoming", (str(snapshot_path),))
+        try:
+            row_counts: dict[str, int] = {}
+            # Order matters when FKs exist (entries before entry_files etc.),
+            # but with foreign_keys OFF for this scope it doesn't.
+            for tbl in MASTER_TABLES:
+                conn.execute(f"DELETE FROM main.{tbl}")
+                conn.execute(
+                    f"INSERT INTO main.{tbl} SELECT * FROM incoming.{tbl}"
+                )
+                row_counts[tbl] = conn.execute(
+                    f"SELECT COUNT(*) FROM main.{tbl}"
+                ).fetchone()[0]
+            # meta: replace only master keys, preserve user keys
+            placeholders = ",".join("?" * len(MASTER_META_KEYS))
+            conn.execute(
+                f"DELETE FROM main.meta WHERE key IN ({placeholders})",
+                tuple(MASTER_META_KEYS),
+            )
+            conn.execute(
+                f"INSERT INTO main.meta(key, value) "
+                f"SELECT key, value FROM incoming.meta WHERE key IN ({placeholders})",
+                tuple(MASTER_META_KEYS),
+            )
+            # Rebuild FTS from the freshly-replaced entries
+            try:
+                conn.execute("INSERT INTO entries_fts(entries_fts) VALUES('rebuild')")
+            except sqlite3.OperationalError as e:
+                log.warning("FTS rebuild failed (will rebuild on next FTS access): %s", e)
+            conn.commit()
+        finally:
+            conn.execute("DETACH DATABASE incoming")
+    except Exception:
+        conn.rollback()
+        raise
+    finally:
+        conn.execute("PRAGMA foreign_keys = ON")
+
+    # Reset bloom filter so the next checksum lookup rebuilds it from new data
+    global _bloom
+    with _bloom_lock:
+        _bloom = None
+
+    post_status = {r[0]: r[1] for r in conn.execute(
+        "SELECT lb_status, COUNT(*) FROM lb_master GROUP BY lb_status"
+    ).fetchall()}
+
+    # Compute the diff: how many LBs changed status
+    changed = 0
+    all_keys = set(pre_status) | set(post_status)
+    for k in all_keys:
+        if pre_status.get(k, 0) != post_status.get(k, 0):
+            changed = sum(abs(pre_status.get(k, 0) - post_status.get(k, 0))
+                          for k in all_keys) // 2
+            break
+
+    return {
+        "master_version": manifest.get("master_version"),
+        "master_published_at": manifest.get("master_published_at"),
+        "row_counts": row_counts,
+        "pre_status_counts": pre_status,
+        "post_status_counts": post_status,
+        "lb_status_changes": changed,
+        "backup_path": str(backup_path),
+        "imported_at": _dt.utcnow().isoformat(),
+    }

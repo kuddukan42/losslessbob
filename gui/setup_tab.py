@@ -152,10 +152,13 @@ class SetupTab(QWidget):
         self._single_scrape_thread = None
         self._scrape_status_thread = None
         self._wtrf_test_thread = None
+        self._private_rescrape_mode = False
+        self._private_rescrape_before = 0
         self._build_ui()
         self._load_settings()
         self._refresh_stats()
         self._refresh_log_size()
+        self._load_curator_status()
 
     def _build_ui(self):
         layout = QVBoxLayout(self)
@@ -296,6 +299,47 @@ class SetupTab(QWidget):
 
         layout.addWidget(db_group)
 
+        # ── Master Data section ─────────────────────────────────────────────
+        # Curator publishes master snapshots; end users install them.
+        master_group = QGroupBox("Master Data")
+        master_layout = QVBoxLayout(master_group)
+
+        curator_row = QHBoxLayout()
+        self.curator_cb = QCheckBox("Curator mode (publish-enabled)")
+        self.curator_cb.setToolTip(
+            "Enable to publish master-data snapshots that ship to other users.\n"
+            "Curator status is stored locally and never included in any export."
+        )
+        self.curator_cb.toggled.connect(self._on_curator_toggled)
+        curator_row.addWidget(self.curator_cb)
+        curator_row.addStretch()
+        master_layout.addLayout(curator_row)
+
+        self.master_status_label = QLabel("Master version: (not yet published)")
+        master_layout.addWidget(self.master_status_label)
+
+        master_btn_row = QHBoxLayout()
+        self.publish_master_btn = QPushButton("Publish Master Update…")
+        self.publish_master_btn.setToolTip(
+            "Build a master-only snapshot (.db + .manifest.json) in data/exports/. "
+            "Strips all user data, verifies, computes SHA256, writes manifest."
+        )
+        self.publish_master_btn.clicked.connect(self._on_publish_master)
+        self.publish_master_btn.setEnabled(False)  # toggled by curator checkbox
+        master_btn_row.addWidget(self.publish_master_btn)
+
+        self.install_master_btn = QPushButton("Install Master Update…")
+        self.install_master_btn.setToolTip(
+            "Apply a master snapshot from disk. Your collection, wishlist, "
+            "credentials, and personal settings are preserved."
+        )
+        self.install_master_btn.clicked.connect(self._on_install_master)
+        master_btn_row.addWidget(self.install_master_btn)
+        master_btn_row.addStretch()
+        master_layout.addLayout(master_btn_row)
+
+        layout.addWidget(master_group)
+
         # Search settings section
         search_group = QGroupBox("Search")
         search_layout = QVBoxLayout(search_group)
@@ -405,6 +449,18 @@ class SetupTab(QWidget):
         self.scrape_range_btn.setFixedWidth(_SCRAPE_BTN_W)
         self.scrape_range_btn.clicked.connect(self._on_scrape_range)
         scrape_grid.addWidget(self.scrape_range_btn, 2, 2, _VC)
+
+        # Row 3: private LB re-scrape
+        scrape_grid.addWidget(QLabel("Private LBs:"), 3, 0, _VC)
+        self.rescrape_private_btn = QPushButton("Re-scrape Private LBs")
+        self.rescrape_private_btn.setFixedWidth(_SCRAPE_BTN_W)
+        self.rescrape_private_btn.setToolTip(
+            "Force re-scrape all Private LBs to check whether any have been published"
+        )
+        self.rescrape_private_btn.clicked.connect(self._on_rescrape_private)
+        scrape_grid.addWidget(self.rescrape_private_btn, 3, 2, _VC)
+        self.rescrape_private_label = QLabel("")
+        scrape_grid.addWidget(self.rescrape_private_label, 3, 3, 1, 2, _VC)
 
         scraper_layout.addLayout(scrape_grid)
 
@@ -787,6 +843,166 @@ class SetupTab(QWidget):
         finally:
             self.check_update_btn.setEnabled(True)
 
+    # ── Master Data: curator flag + publish/install handlers ───────────────────
+
+    def _load_curator_status(self):
+        """Read the curator flag from the backend and reflect it in the UI."""
+        try:
+            resp = requests.get(
+                f"http://127.0.0.1:{self.flask_port}/api/curator", timeout=5
+            )
+            data = resp.json() if resp.ok else {}
+            enabled = bool(data.get("is_curator", False))
+        except Exception:
+            enabled = False
+        # Block signals so loading state doesn't trigger a POST loop
+        self.curator_cb.blockSignals(True)
+        self.curator_cb.setChecked(enabled)
+        self.curator_cb.blockSignals(False)
+        self.publish_master_btn.setEnabled(enabled)
+        self._refresh_master_status_label()
+
+    def _refresh_master_status_label(self):
+        """Show the current locally-installed master_version on the label."""
+        try:
+            resp = requests.get(
+                f"http://127.0.0.1:{self.flask_port}/api/db/stats", timeout=5
+            )
+            # master_version is master meta; check via a separate read
+            from backend import db as _db
+            version = _db.get_meta("master_version") or ""
+            published = _db.get_meta("master_published_at") or ""
+            if version:
+                self.master_status_label.setText(
+                    f"Master version: {version}"
+                    + (f"  (published {published[:19]})" if published else "")
+                )
+            else:
+                self.master_status_label.setText(
+                    "Master version: (not yet published or imported)"
+                )
+        except Exception as e:
+            self.master_status_label.setText(f"Master version: (unknown — {e})")
+
+    def _on_curator_toggled(self, checked: bool):
+        """Persist the curator flag and gate the Publish button."""
+        try:
+            resp = requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/curator",
+                json={"enabled": bool(checked)}, timeout=5,
+            )
+            if not resp.ok:
+                raise RuntimeError(resp.text)
+            self.publish_master_btn.setEnabled(bool(checked))
+        except Exception as e:
+            QMessageBox.warning(self, "Curator Mode", f"Could not update flag: {e}")
+            # Revert UI to the actual server state
+            self._load_curator_status()
+
+    def _on_publish_master(self):
+        """Build a master export and show the result + path."""
+        confirm = QMessageBox.question(
+            self, "Publish Master Update?",
+            "Build a master-only snapshot of the current database?\n\n"
+            "This writes a .db and .manifest.json to data/exports/.\n"
+            "No data is modified locally; user-only tables are dropped from the copy.",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+        )
+        if confirm != QMessageBox.StandardButton.Yes:
+            return
+        self.publish_master_btn.setEnabled(False)
+        try:
+            resp = requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/master/export",
+                json={"reason": "publish"}, timeout=300,
+            )
+            data = resp.json()
+            if not resp.ok or "error" in data:
+                msg = data.get("message") or data.get("error") or "Unknown error"
+                QMessageBox.warning(self, "Publish Failed", msg)
+                return
+            manifest = data.get("manifest", {})
+            counts = manifest.get("lb_status_counts", {})
+            rc = manifest.get("row_counts", {})
+            QMessageBox.information(
+                self, "Master Snapshot Published",
+                f"Version:     {manifest.get('master_version', '?')}\n"
+                f"File:        {data.get('path', '?')}\n"
+                f"Size:        {manifest.get('size_bytes', 0):,} bytes\n"
+                f"SHA256:      {(manifest.get('sha256') or '')[:16]}…\n\n"
+                f"LB master:   {rc.get('lb_master', 0):,}\n"
+                f"  Public:    {counts.get('public', 0):,}\n"
+                f"  Private:   {counts.get('private', 0):,}\n"
+                f"  Missing:   {counts.get('missing', 0):,}\n"
+                f"Overrides:   {manifest.get('manual_override_count', 0)}\n\n"
+                f"Upload the .db AND .manifest.json together to your distribution channel."
+            )
+            self._refresh_master_status_label()
+        except Exception as e:
+            QMessageBox.warning(self, "Publish Failed", str(e))
+        finally:
+            # Re-enable only if curator is still on
+            self.publish_master_btn.setEnabled(self.curator_cb.isChecked())
+
+    def _on_install_master(self):
+        """Pick a master snapshot from disk and apply it locally."""
+        path, _ = QFileDialog.getOpenFileName(
+            self, "Select Master Snapshot",
+            str(_DATA_DIR / "exports"),
+            "Master DB (*.db);;All files (*)",
+        )
+        if not path:
+            return
+        confirm = QMessageBox.question(
+            self, "Install Master Update?",
+            f"Apply this master snapshot to your local database?\n\n"
+            f"{path}\n\n"
+            "An automatic backup of your current database will be taken first.\n"
+            "Your collection, wishlist, credentials, and personal settings are preserved.",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+        )
+        if confirm != QMessageBox.StandardButton.Yes:
+            return
+        self.install_master_btn.setEnabled(False)
+        try:
+            resp = requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/master/import",
+                json={"path": path}, timeout=600,
+            )
+            data = resp.json()
+            if not resp.ok or "error" in data:
+                msg = data.get("message") or data.get("error") or "Unknown error"
+                QMessageBox.critical(self, "Install Failed", msg)
+                return
+            rc = data.get("row_counts", {})
+            post = data.get("post_status_counts", {})
+            QMessageBox.information(
+                self, "Master Update Installed",
+                f"Version:     {data.get('master_version', '?')}\n"
+                f"Imported at: {data.get('imported_at', '?')[:19]}\n"
+                f"Backup:      {data.get('backup_path', '?')}\n\n"
+                f"Row counts after import:\n"
+                f"  lb_master: {rc.get('lb_master', 0):,}\n"
+                f"  checksums: {rc.get('checksums', 0):,}\n"
+                f"  entries:   {rc.get('entries', 0):,}\n\n"
+                f"Status distribution:\n"
+                f"  Public:    {post.get('public', 0):,}\n"
+                f"  Private:   {post.get('private', 0):,}\n"
+                f"  Missing:   {post.get('missing', 0):,}\n\n"
+                f"LB status changes vs. previous state: "
+                f"{data.get('lb_status_changes', 0):,}"
+            )
+            self._refresh_master_status_label()
+            # Refresh the existing DB stats label too if available
+            try:
+                self._refresh_stats()
+            except Exception:
+                pass
+        except Exception as e:
+            QMessageBox.critical(self, "Install Failed", str(e))
+        finally:
+            self.install_master_btn.setEnabled(True)
+
     def _on_open_folder(self):
         _DATA_DIR.mkdir(exist_ok=True)
         from gui.platform_utils import open_folder
@@ -906,6 +1122,7 @@ class SetupTab(QWidget):
             return
         self.scrape_range_btn.setEnabled(False)
         self.scrape_all_btn.setEnabled(False)
+        self.rescrape_private_btn.setEnabled(False)
         self.stop_scrape_btn.setEnabled(True)
         self.scrape_progress.setVisible(True)
         self.scrape_progress.setRange(0, 0)
@@ -933,6 +1150,8 @@ class SetupTab(QWidget):
 
     def _on_scrape_all(self):
         self.scrape_all_btn.setEnabled(False)
+        self.scrape_range_btn.setEnabled(False)
+        self.rescrape_private_btn.setEnabled(False)
         self.stop_scrape_btn.setEnabled(True)
         self.scrape_progress.setVisible(True)
         self.scrape_progress.setRange(0, 0)
@@ -995,15 +1214,98 @@ class SetupTab(QWidget):
             self._scrape_status_thread.stop()
             self.scrape_all_btn.setEnabled(True)
             self.scrape_range_btn.setEnabled(True)
+            self.rescrape_private_btn.setEnabled(True)
             self.stop_scrape_btn.setEnabled(False)
             self.scrape_progress.setVisible(False)
             msg = f"Scrape complete. {done} processed"
             if skipped:
                 msg += f" ({skipped} already complete)"
             msg += f", {status.get('errors', 0)} errors."
+            if self._private_rescrape_mode:
+                self._private_rescrape_mode = False
+                try:
+                    stats_resp = requests.get(
+                        f"http://127.0.0.1:{self.flask_port}/api/lb_master/stats",
+                        timeout=5,
+                    ).json()
+                    new_private = stats_resp.get("private", 0)
+                    promoted = max(0, self._private_rescrape_before - new_private)
+                    msg += f" {promoted} promoted to Public, {new_private} private remain."
+                except Exception:
+                    pass
             self.scrape_status_label.setText(msg)
             self._log(msg)
             self._last_logged_lb = None
+
+    def _on_rescrape_private(self):
+        try:
+            stats_resp = requests.get(
+                f"http://127.0.0.1:{self.flask_port}/api/lb_master/stats", timeout=5
+            ).json()
+            private_count = stats_resp.get("private", 0)
+        except Exception as e:
+            QMessageBox.warning(self, "Re-scrape Private LBs", f"Could not fetch stats: {e}")
+            return
+        if private_count == 0:
+            QMessageBox.information(
+                self, "Re-scrape Private LBs",
+                "No Private LBs found in the database.",
+            )
+            return
+        confirm = QMessageBox.question(
+            self, "Re-scrape Private LBs",
+            f"Re-scrape {private_count} Private LB(s) to check whether any have been "
+            "published on the website?\n\nThis uses force mode and may take a while.",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.Cancel,
+            QMessageBox.StandardButton.Cancel,
+        )
+        if confirm != QMessageBox.StandardButton.Yes:
+            return
+
+        self._private_rescrape_mode = True
+        self._private_rescrape_before = private_count
+
+        self.rescrape_private_btn.setEnabled(False)
+        self.scrape_all_btn.setEnabled(False)
+        self.scrape_range_btn.setEnabled(False)
+        self.stop_scrape_btn.setEnabled(True)
+        self.scrape_progress.setVisible(True)
+        self.scrape_progress.setRange(0, 0)
+        self.scrape_status_label.setText(
+            f"Queuing {private_count} private LB(s) for force re-scrape..."
+        )
+        self._log(f"Starting private LB re-scrape: {private_count} LBs (force=True)")
+
+        try:
+            resp = requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/scrape/private_rescrape",
+                timeout=10,
+            ).json()
+        except Exception as e:
+            self._private_rescrape_mode = False
+            self.rescrape_private_btn.setEnabled(True)
+            self.scrape_all_btn.setEnabled(True)
+            self.scrape_range_btn.setEnabled(True)
+            self.stop_scrape_btn.setEnabled(False)
+            self.scrape_progress.setVisible(False)
+            self.scrape_status_label.setText(f"Error: {e}")
+            self._log(f"Failed to start private rescrape: {e}")
+            return
+
+        if "error" in resp:
+            self._private_rescrape_mode = False
+            self.rescrape_private_btn.setEnabled(True)
+            self.scrape_all_btn.setEnabled(True)
+            self.scrape_range_btn.setEnabled(True)
+            self.stop_scrape_btn.setEnabled(False)
+            self.scrape_progress.setVisible(False)
+            self.scrape_status_label.setText(f"Error: {resp['error']}")
+            self._log(f"Private rescrape error: {resp['error']}")
+            return
+
+        self._scrape_status_thread = _ScrapeStatusThread(self.flask_port)
+        self._scrape_status_thread.status_update.connect(self._on_scrape_status)
+        self._scrape_status_thread.start()
 
     def _check_sox(self):
         try:

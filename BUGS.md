@@ -1,3 +1,14 @@
+BUG-064: _on_strip_wrong_lb leaves state as 'wrong_lb' — stripped rows can never be renamed
+Status: Fixed
+File(s): gui/rename_tab.py:_on_strip_wrong_lb
+Reported: 2026-05-17
+Fixed: 2026-05-17
+Description: After "Strip Wrong LB from Selected" updated the proposed name for a wrong_lb row, the state stayed 'wrong_lb'. The rename button's eligible set is {"needs_rename", "has_lb"}, so stripped rows were silently skipped and could never be renamed without a manual re-load of the lookup results.
+Root cause: _on_strip_wrong_lb called update_proposed_name() but never called update_state(), so the state never transitioned to 'needs_rename'.
+Fix: Added update_state(i, "needs_rename") call in _on_strip_wrong_lb() after the proposed name is updated. Added RenameModel.update_state() helper that updates _states[idx] and emits dataChanged for the full row.
+
+---
+
 BUG-063: AttributeError 'CollectionTab' object has no attribute 'table' on theme apply
 Status: Fixed
 File(s): gui/collection_tab.py:2574

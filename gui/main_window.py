@@ -12,7 +12,7 @@ from gui.styles import apply_panel_shadow
 from backend.paths import DATA_DIR
 
 APP_NAME = "LosslessBobLookup"
-VERSION = "1.0.0"
+VERSION = "1.0.1"
 
 
 class MainWindow(QMainWindow):

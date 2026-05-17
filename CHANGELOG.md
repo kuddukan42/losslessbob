@@ -1,3 +1,107 @@
+[2026-05-17] — feat(gui): Standardize folder name button in Rename tab (CC_LB_INTEGRITY item 13)
+
+Added
+
+backend/folder_naming.py: `build_standard_name(lb_number, date_str, location, lb_status)` — builds canonical `YYYY-MM-DD Location (LB-XXXXX)[-NFT]` folder name. Shared between Rename tab and Collection tab. Imports `_parse_date` lazily from `backend/torrent_maker`.
+
+backend/app.py: `GET /api/folder_naming/standard/<lb>` — returns `{standard_name, lb_status, nft}`. Looks up entry metadata and lb_master status; applies NFT suffix via `build_standard_name`.
+
+gui/rename_tab.py: "Standardize Selected" button — for each checked single-LB row, fetches canonical name via `get_entry()` + `get_lb_status()` + `build_standard_name()`, updates the proposed name, and escalates state to `needs_rename` when the standard name differs from the current folder name. Right-click "Standardize Name (YYYY-MM-DD Location…)" action applies the same transform to a single row.
+
+gui/rename_tab.py: `RenameModel.update_state(idx, state)` — new method to update a row's state and emit `dataChanged` for the full row.
+
+Fixed
+
+gui/rename_tab.py: `_on_strip_wrong_lb()` now calls `update_state(i, "needs_rename")` after updating the proposed name. Previously the state stayed `wrong_lb`, which is not in the rename-eligible set, so stripped rows could never be renamed by the "Rename Selected" button. (BUG-064)
+
+---
+
+[2026-05-17] — feat(gui): lb_status filter + tinting across Lookup, Attachments, Rename, Lbdir tabs (TODO-021)
+
+Changed
+
+backend/db.py: `get_lb_statuses_batch(lb_numbers)` — single batch SELECT from lb_master, returns {lb_number: lb_status} dict for bulk UI colouring. Also stamps lb_status onto each lb_summary dict in lookup_checksums() for the filter combobox.
+
+gui/lookup_tab.py: "All LB statuses / Public only / Private only / Missing only" QComboBox in Summary header row. `_lb_status_filter` + `_sum_lb_statuses` list drive filter guard in `_apply_filters()`. Private → #B3E5FC, Missing → #E0E0E0 row tinting ahead of match-quality colors.
+
+gui/rename_tab.py: LB Found column (col 3) tinted #B3E5FC/E0E0E0 for Private/Missing when no NFT discrepancy is active.
+
+gui/attachments_tab.py: `_render_tree_page()` batch-fetches lb_status for the current page via `get_lb_statuses_batch()`, tints Private parent items light blue and Missing items gray, with tooltip text.
+
+gui/lbdir_tab.py: `_populate_summary()` batch-fetches lb_status and tints the LB# column (col 1) by lb_status; verification-result color still applies to all other columns.
+
+---
+
+[2026-05-17] — feat(integrity): -NFT suffix for Private LB folder names (TODO-018)
+
+Changed
+
+backend/db.py: lookup_checksums() now also stamps lb_status onto each lb_summary dict (reusing the same _lb_status_map batch query that already annotates detail items).
+
+gui/lookup_tab.py: Added "All LB statuses / Public only / Private only / Missing only" QComboBox to the Summary header row. _lb_status_filter state drives a new guard in _apply_filters() that filters sum_indices by _sum_lb_statuses. _process_result() populates _sum_lb_statuses (parallel to _sum_lb_nums) from s["lb_status"]. Private rows get light-blue (#B3E5FC) and Missing rows get light-gray (#E0E0E0) background overrides ahead of match-quality colors. lb_status stored in sum_user_data per row.
+
+---
+
+[2026-05-17] — feat(integrity): -NFT suffix for Private LB folder names (TODO-018)
+
+Added
+
+backend/folder_naming.py: New module. `apply_nft_suffix(name, lb_status)` appends -NFT when lb_status='private', idempotent, case-normalises existing suffix. `strip_nft_suffix(name)` removes trailing -NFT. `has_nft_suffix(name)` predicate. `nft_discrepancy(folder_name, lb_status)` returns 'missing'|'stale'|'unknown'|None for discrepancy detection.
+
+backend/db.py: `should_mark_nft(lb_number)` returns True when lb_status='private'. `lookup_checksums()` now annotates each detail item with `lb_status` from lb_master via a single batch lookup, making the status available to downstream callers (rename tab, etc.) without extra API calls.
+
+gui/rename_tab.py: Imports `apply_nft_suffix`, `strip_nft_suffix`, `nft_discrepancy` from `backend.folder_naming`. `populate_from_lookup()` builds a `lb_status_map` from detail item annotations, applies NFT suffix to proposed names for Private LBs, proposes stripping -NFT for Public LBs that still have it, and escalates state to `needs_rename` when the proposed name differs from current. Multi-LB rows conservatively inherit `lb_status='private'` if any candidate LB is Private. `RenameModel.data()` overrides BackgroundRole and adds ToolTipRole for NFT discrepancy states (_NFT_DISC_COLORS / _NFT_DISC_TIPS). `_on_strip_wrong_lb()` also applies NFT suffix when rebuilding proposed names. Legend gains three new NFT-discrepancy swatches.
+
+gui/collection_tab.py: `_get_standard_lb_name()` calls `/api/lb_master/<lb>/nft` and appends -NFT to the returned base name when the response is `{nft: true}`.
+
+---
+
+[2026-05-17] — feat(integrity): Re-scrape Private LBs button in Setup tab (TODO-017)
+
+Added
+
+backend/app.py: POST /api/scrape/private_rescrape — queries lb_master for all lb_status='private' rows, starts the scraper with force=True on those lb_numbers, returns {ok, total}. Uses existing _start_scrape_thread so standard /api/scrape/status polling applies.
+
+gui/setup_tab.py: "Re-scrape Private LBs" button added as Row 3 in the Scraper section grid. Clicking it fetches the current private count from /api/lb_master/stats, shows a confirmation dialog with the count, and calls the new endpoint. Uses the existing _ScrapeStatusThread + _on_scrape_status machinery for progress/completion. On completion, fetches updated stats and appends "N promoted to Public, M private remain." to the status message. _on_scrape_all and _on_scrape_range now also disable this button while a scrape is running.
+
+---
+
+[2026-05-17] — feat(db): master/user data ownership split + master publish/install + curator mode (TODO-020)
+
+Added
+
+backend/db.py: MASTER_TABLES, USER_TABLES, MASTER_META_KEYS, USER_META_KEYS, MASTER_SCHEMA_VERSION constants formalise which tables ship in a master release and which stay local. New `is_curator()` / `set_curator()` helpers backed by `meta.is_curator='1'|'0'` (user-local, never shipped). New `export_master_db(reason)` produces a master-only snapshot in `data/exports/` via `VACUUM INTO` → drop every USER_TABLES table → filter `meta` to MASTER_META_KEYS → stamp `master_version` / `master_published_at` / `master_schema_version` → VACUUM → verify (no user tables, no non-master meta keys) → SHA256 → write `<file>.manifest.json` sidecar. New `import_master_db(snapshot_path)` validates the manifest SHA256, refuses incoming schema versions newer than this client, takes a `pre_master_import` backup, ATTACHes the snapshot, copies only MASTER_TABLES, replaces only MASTER_META_KEYS in `meta`, rebuilds the `entries_fts` virtual table, and returns a summary (row counts, pre/post status distribution, backup path).
+
+backend/app.py: GET /api/curator and POST /api/curator endpoints toggle the curator flag (body `{enabled: bool}`). POST /api/master/export requires `is_curator=true` (returns HTTP 403 `error=curator_required` otherwise); returns `{ok, path, manifest_path, manifest}`. POST /api/master/import (body `{path}`) returns the import summary or 400/404 with `error=sha256_mismatch | schema_too_new | not_found`.
+
+gui/setup_tab.py: New "Master Data" QGroupBox below Database. Curator-mode checkbox persists via `/api/curator`. Publish Master Update button (curator-only, gated by checkbox) runs the export and shows a confirmation dialog with version, sha256 prefix, row counts, status distribution, and override count. Install Master Update button opens a file picker (defaults to `data/exports/`) and applies the chosen snapshot with a pre/post status diff in the result dialog. New `_load_curator_status()` called at init reflects the persisted flag in the UI.
+
+tests/test_master_data.py: 13 pytest tests covering the MASTER/USER table constants and disjointness, MASTER_META_KEYS whitelist (no user keys leak), curator-flag round-trip, export-excludes-user-data, SHA256-matches-file-contents, version-stamping, end-to-end import preserves user collection + user meta keys (qbt_*, search_page_size, is_curator) while replacing master tables and master meta keys (import_hash, master_version), SHA-mismatch rejection (ValueError), schema-too-new rejection (RuntimeError), pre-import backup creation, and Flask 403 guard when curator mode is off.
+
+---
+
+[2026-05-16] — feat(integrity): lb_master status system, forum post guard, Search/Collection status columns, DB Editor integrity panel
+
+Changed
+
+backend/db.py: Added lb_master and lb_status_history tables to SCHEMA_SQL. Added backup_database(), migrate_lb_master(), reconcile_lb_status(), reconcile_all_lb_master(), set_lb_manual_override(), clear_lb_manual_override(), get_lb_master_row(), get_lb_master_stats(), get_lb_status(), is_postable_to_forum(), get_lb_master_list(), get_lb_status_history(). search_entries() now LEFT JOINs lb_master to return lb_status on every row. get_collection() and get_missing_from_collection() also return lb_status. migrate_lb_master() is called once from init_db() background thread and deletes entries.status='missing' tombstones after populating lb_master. lb_master.lb_status CHECK constraint enforces 'public'|'private'|'missing'. backup_database() uses VACUUM INTO with microsecond-precision timestamps to avoid filename collisions; keeps last 10 backups.
+
+backend/app.py: Added 9 new endpoints: GET /api/lb_master/stats, GET /api/lb_master/<lb>, GET /api/lb_master, POST /api/lb_master/reconcile, GET /api/lb_master/history/<lb>, PUT /api/lb_master/<lb>/manual, DELETE /api/lb_master/<lb>/manual, GET /api/lb_master/<lb>/nft, POST /api/db/backup. Added forum post guard to preview_forum() and post_forum(): returns HTTP 403 with error=lb_private|lb_missing|status_unknown for non-public LBs.
+
+backend/importer.py: After flat-file merge, calls migrate_lb_master() on first import (lb_master empty) or reconcile_lb_status() for every touched LB on subsequent imports.
+
+backend/scraper.py: Calls reconcile_lb_status() after every scrape_entry() success and 404, wiring the scraper into the lb_master lifecycle.
+
+gui/search_tab.py: Added "Status" column (col 1) to HEADERS. Replaced "Missing only" checkbox with LBStatusComboBox-style QComboBox (All statuses / Public only / Private only / Missing only / Needs review). _filtered_results() uses the status combobox. Background coloring now reads lb_status from result rows (public=default, private=light blue #B3E5FC, missing=light gray #E0E0E0).
+
+gui/collection_tab.py: Added "Status" column (col 1) to COLL_HEADERS and MISS_HEADERS. _CollectionModel.data() and _MissingModel.data() display lb_status and apply matching background colors. _on_post_forum() adds a hard blocking modal dialog for private/missing LBs before attempting any network call. _on_post_forum_done() surfaces backend 403 forum-guard errors with the same modal (handles stale-status race).
+
+gui/dbedit_tab.py: Added "DB Integrity" QGroupBox to the left panel with: live stats label (Public/Private/Missing/Max/Overrides/Needs Review), Reconcile All button (→ POST /api/lb_master/reconcile with confirmation), Show Needs Review button (selects lb_master + applies needs_review:1 search), Backup DB Now button (→ POST /api/db/backup with result dialog). load_tables() now also calls load_integrity_stats().
+
+Added
+
+tests/test_lb_master.py: 27 pytest tests covering schema creation, migrate_lb_master idempotency and status precedence, reconcile_lb_status transitions and override respect, stats counts, importer integration, is_postable_to_forum logic, Flask forum endpoint guard (HTTP 403 for private/missing), and GUI column/widget presence checks (skipped without DISPLAY).
+
 [2026-05-16] — fix(gui): crash on theme apply due to non-existent self.table reference
 
 Fixed

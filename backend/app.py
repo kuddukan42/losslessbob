@@ -477,6 +477,34 @@ def create_app():
         scraper.stop_scrape()
         return jsonify({"ok": True})
 
+    @app.route("/api/scrape/private_rescrape", methods=["POST"])
+    def scrape_private_rescrape():
+        """Force re-scrape of all currently-Private LBs to detect newly-published pages.
+
+        Uses force=True so LBs with a prior 'missing' result are re-attempted.
+        Returns {ok, total} where total is the number of private LBs queued.
+        """
+        try:
+            with database.get_connection() as conn:
+                lb_numbers = [
+                    r[0] for r in conn.execute(
+                        "SELECT lb_number FROM lb_master WHERE lb_status='private' "
+                        "ORDER BY lb_number"
+                    ).fetchall()
+                ]
+            if not lb_numbers:
+                return jsonify({"ok": True, "total": 0})
+            delay = int(database.get_meta("scrape_delay_ms") or 1500)
+            download = database.get_meta("scrape_attachments") != "0"
+            use_local_pages = database.get_meta("use_local_pages") == "1"
+            _start_scrape_thread(
+                lb_numbers, force=True, delay_ms=delay,
+                download=download, use_local_pages=use_local_pages,
+            )
+            return jsonify({"ok": True, "total": len(lb_numbers)})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
     # ── Verify ───────────────────────────────────────────────────────────────
 
     @app.route("/api/verify", methods=["POST"])
@@ -1215,8 +1243,18 @@ def create_app():
         """Return the forum post subject and body for an LB entry without posting.
 
         Returns: {subject, body}.
+        Blocked (HTTP 403) for private and missing LBs.
         """
         try:
+            allowed, reason = database.is_postable_to_forum(lb)
+            if not allowed:
+                _msg = {
+                    "lb_private": f"LB-{lb:05d} is marked Private. Forum posting is blocked.",
+                    "lb_missing": f"LB-{lb:05d} is marked as not existing. Nothing to post.",
+                    "status_unknown": f"LB-{lb:05d} has no master status record. Cannot post.",
+                }.get(reason, f"LB-{lb:05d} cannot be posted.")
+                return jsonify({"error": reason, "message": _msg}), 403
+
             from backend.forum_poster import preview_lb_topic
             from backend.paths import ATTACHMENTS_DIR
             entry_data = database.get_entry(lb)
@@ -1238,6 +1276,23 @@ def create_app():
         Returns: {ok, topic_url} or {ok=False, error}.
         """
         try:
+            # Guard: block private and missing LBs from being posted to the forum
+            allowed, reason = database.is_postable_to_forum(lb)
+            if not allowed:
+                _msg = {
+                    "lb_private": (
+                        f"LB-{lb:05d} is marked Private. "
+                        "Forum posting is blocked to avoid exposing unreleased content."
+                    ),
+                    "lb_missing": (
+                        f"LB-{lb:05d} is marked as not existing. There is nothing to post about."
+                    ),
+                    "status_unknown": (
+                        f"LB-{lb:05d} has no master status record. Cannot determine postability."
+                    ),
+                }.get(reason, f"LB-{lb:05d} cannot be posted.")
+                return jsonify({"error": reason, "message": _msg}), 403
+
             from backend.forum_poster import post_lb_topic
             from backend.credentials import get_credentials, SERVICE_WTRF
             from backend.paths import ATTACHMENTS_DIR
@@ -1347,6 +1402,210 @@ def create_app():
                     and Path(row["torrent_path"]).exists()
                 )
             return jsonify(rows)
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    # ── lb_master integrity API ────────────────────────────────────────────────
+
+    @app.route("/api/lb_master/stats", methods=["GET"])
+    def lb_master_stats():
+        """Return {public, private, missing, max_lb, overrides, needs_review} counts."""
+        try:
+            return jsonify(database.get_lb_master_stats())
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/lb_master/<int:lb>", methods=["GET"])
+    def lb_master_get(lb):
+        """Return a single lb_master row joined with entry metadata."""
+        try:
+            row = database.get_lb_master_row(lb)
+            if row is None:
+                return jsonify({"error": "not_found"}), 404
+            entry = database.get_entry(lb)
+            row["entry"] = entry["entry"] if entry else None
+            return jsonify(row)
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/lb_master", methods=["GET"])
+    def lb_master_list():
+        """Return paginated lb_master rows.
+
+        Query params: status (public|private|missing), override=1, review=1,
+                      limit (default 500), offset (default 0).
+        """
+        try:
+            status = request.args.get("status") or None
+            override_only = request.args.get("override") == "1"
+            review_only = request.args.get("review") == "1"
+            limit = min(int(request.args.get("limit", 500)), 2000)
+            offset = int(request.args.get("offset", 0))
+            rows = database.get_lb_master_list(
+                status=status, override_only=override_only, review_only=review_only,
+                limit=limit, offset=offset,
+            )
+            return jsonify(rows)
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/lb_master/reconcile", methods=["POST"])
+    def lb_master_reconcile():
+        """Full rebuild of lb_master. Backs up DB first. Returns status counts."""
+        try:
+            stats = database.reconcile_all_lb_master()
+            return jsonify({"ok": True, "stats": stats})
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/lb_master/history/<int:lb>", methods=["GET"])
+    def lb_master_history(lb):
+        """Return transition history for an LB, newest first."""
+        try:
+            limit = int(request.args.get("limit", 50))
+            rows = database.get_lb_status_history(lb, limit=limit)
+            return jsonify(rows)
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/lb_master/<int:lb>/manual", methods=["PUT"])
+    def lb_master_set_manual(lb):
+        """Set a manual override. Body: {status, notes}."""
+        try:
+            body = request.get_json(silent=True) or {}
+            status = body.get("status")
+            notes = body.get("notes", "")
+            if status not in ("public", "private", "missing"):
+                return jsonify({"error": "status must be public, private, or missing"}), 400
+            database.set_lb_manual_override(lb, status, notes)
+            return jsonify({"ok": True})
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/lb_master/<int:lb>/manual", methods=["DELETE"])
+    def lb_master_clear_manual(lb):
+        """Clear a manual override and immediately reconcile."""
+        try:
+            new_status = database.clear_lb_manual_override(lb)
+            return jsonify({"ok": True, "new_status": new_status})
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/lb_master/<int:lb>/nft", methods=["GET"])
+    def lb_master_nft(lb):
+        """Return {nft: bool, reason: str|null} for folder naming guidance."""
+        try:
+            status = database.get_lb_status(lb)
+            nft = status == "private"
+            reason = "private" if nft else None
+            return jsonify({"nft": nft, "reason": reason})
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/folder_naming/standard/<int:lb>", methods=["GET"])
+    def folder_naming_standard(lb: int):
+        """Return the canonical folder name for an LB entry.
+
+        Returns:
+            JSON: standard_name (str), lb_status (str|null), nft (bool).
+        """
+        try:
+            from backend.folder_naming import build_standard_name
+            result = database.get_entry(lb)
+            entry = (result or {}).get("entry", {})
+            date_str = entry.get("date_str") or ""
+            location = (entry.get("location") or "").strip()
+            lb_status = database.get_lb_status(lb)
+            standard_name = build_standard_name(lb, date_str, location, lb_status)
+            return jsonify({
+                "standard_name": standard_name,
+                "lb_status": lb_status,
+                "nft": lb_status == "private",
+            })
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/db/backup", methods=["POST"])
+    def db_backup():
+        """Create a manual DB backup. Body: {reason} (optional)."""
+        try:
+            body = request.get_json(silent=True) or {}
+            reason = body.get("reason", "manual")
+            path = database.backup_database(reason=reason)
+            size = path.stat().st_size
+            return jsonify({"ok": True, "path": str(path), "size_bytes": size})
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    # ── Curator mode (local flag) ──────────────────────────────────────────────
+
+    @app.route("/api/curator", methods=["GET"])
+    def curator_get():
+        """Return whether this install is flagged as the curator."""
+        try:
+            return jsonify({"is_curator": database.is_curator()})
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/curator", methods=["POST"])
+    def curator_set():
+        """Toggle the local curator flag. Body: {enabled: bool}."""
+        try:
+            body = request.get_json(silent=True) or {}
+            enabled = bool(body.get("enabled", False))
+            database.set_curator(enabled)
+            return jsonify({"ok": True, "is_curator": enabled})
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    # ── Master data publish / subscribe ────────────────────────────────────────
+
+    @app.route("/api/master/export", methods=["POST"])
+    def master_export():
+        """Build a master-data snapshot + manifest. Curator-only.
+
+        Body (optional): {reason}. Returns:
+        {ok, path, manifest_path, manifest: {...}}.
+        """
+        try:
+            if not database.is_curator():
+                return jsonify({
+                    "error": "curator_required",
+                    "message": "Master export is only available in curator mode. "
+                               "Enable Curator Mode in Setup tab.",
+                }), 403
+            body = request.get_json(silent=True) or {}
+            reason = body.get("reason", "publish")
+            path, manifest = database.export_master_db(reason=reason)
+            return jsonify({
+                "ok": True,
+                "path": str(path),
+                "manifest_path": str(path) + ".manifest.json",
+                "manifest": manifest,
+            })
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/master/import", methods=["POST"])
+    def master_import():
+        """Apply a master snapshot to the local DB, preserving user data.
+
+        Body: {path: "/abs/path/to/snapshot.db"}. Manifest sidecar must live
+        alongside the snapshot at <path>.manifest.json.
+        """
+        try:
+            body = request.get_json(silent=True) or {}
+            path = body.get("path")
+            if not path:
+                return jsonify({"error": "missing_path"}), 400
+            summary = database.import_master_db(path)
+            return jsonify({"ok": True, **summary})
+        except FileNotFoundError as exc:
+            return jsonify({"error": "not_found", "message": str(exc)}), 404
+        except ValueError as exc:
+            return jsonify({"error": "sha256_mismatch", "message": str(exc)}), 400
+        except RuntimeError as exc:
+            return jsonify({"error": "schema_too_new", "message": str(exc)}), 400
         except Exception as exc:
             return jsonify({"error": str(exc)}), 500
 

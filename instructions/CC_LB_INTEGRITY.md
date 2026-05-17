@@ -1,5 +1,43 @@
 # Plan: LB Number Integrity & Status Master Table
 
+## Locked Decisions (2026-05-17)
+
+User-confirmed answers to outstanding planning questions:
+
+- **GitHub repo for master publishing:** `kuddukan42/losslessbob`. Currently **private**; will go public later. Until then the Publish Master Update flow uploads to a private repo — only authenticated users with read access can download. End-user installs of the app will need the repo to be public (or releases mirrored elsewhere) before they can pull updates.
+- **Curator mode gating:** **Checkbox in Setup tab** (writes `meta.is_curator='1'`). Not requiring users to edit SQL.
+- **Phase order:** Use the recommended sequence (Data Ownership → UX wins → status-consuming features → flat-file & bootlegs → folder linking → Map). **Map view is deferred** — last priority, may be cut.
+- **PR cadence:** Feature-by-feature within a phase (safer rollback).
+- **Bootleg year pivot:** `Y ≥ 30 → 19YY`, `Y < 30 → 20YY`. Comfortable through ~2029.
+- **NFT multi-LB rule:** If *any* matched LB is Private, the whole folder gets `-NFT` (conservative).
+- **LBBCD deep-scrape:** Deferred — index page only.
+- **Persistent offline map tile cache:** Deferred.
+- **Map view as a whole:** Deferred (push to end of queue, possibly cut).
+- **Defaults accepted as recommended:** flat-file auto-check cadence (`every_start`), GUI state file location (`data/gui_state.json`), per-section status colors (Private `#B3E5FC`, Missing `#E0E0E0`, needs-review orange ✎), backwards-compat (clean cut for broken code, coexistence otherwise), test bar (similar to `test_lb_master.py` where feasible, lighter for GUI-heavy where pytest can't reach), auto-incremental geocoding (yes, queued during flat-file apply — moot while Map is deferred).
+
+## Implementation Status (last audited 2026-05-17)
+
+Legend: ✅ shipped · 🟡 partial · ⬜ not started
+
+| # | Feature section | Status | Notes |
+|---|---|---|---|
+| 0 | **Core `lb_master` table + reconciliation + history + manual overrides** | ✅ | Shipped 2026-05-16. `backend/db.py` has tables, `migrate_lb_master`, `reconcile_lb_status`, override helpers, stats. `backend/importer.py` and `backend/scraper.py` integrated. 9 endpoints under `/api/lb_master/*`. 27 pytest tests in `tests/test_lb_master.py`. |
+| 0 | **Backup function** (`backup_database()`) | ✅ | Shipped 2026-05-16. `VACUUM INTO` with microsecond timestamps, keeps last 10. `POST /api/db/backup` endpoint live. DB Editor has "Backup DB Now" button. |
+| — | **Master ↔ User data ownership model** (publish/subscribe, master export/import) | ✅ | Shipped 2026-05-17 (TODO-020). `MASTER_TABLES`/`USER_TABLES`/`MASTER_META_KEYS` constants in `db.py`. `export_master_db()` / `import_master_db()` with SHA256 manifest + schema-version guard. `POST /api/master/export` + `POST /api/master/import`. Curator mode checkbox in Setup tab. 13 tests in `tests/test_master_data.py`. GitHub release upload still deferred (TODO-022). |
+| — | **Override export/import JSON tool** | ⬜ | No `/api/lb_master/overrides/export` or `/import` endpoint. |
+| 5 | **Forum post guard for Private LBs** | ✅ | Shipped 2026-05-16. Backend 403 for private/missing in `preview_forum` and `post_forum`. Collection tab modal both pre-click and on 403 response. `is_postable_to_forum()` helper in `db.py`. |
+| 6 | **Status filters across all appropriate GUI elements** | ✅ | Shipped 2026-05-17 (TODO-021). Lookup tab: filter combobox + Private/Missing row tinting. Attachments tree: batch page-level tinting. Rename tab: LB Found col tint. Lbdir: LB# col tint. `get_lb_statuses_batch()` in `db.py`. Shared `LBStatusComboBox` / `lb_status_style()` widget module not built (each tab inlined its own); Verify tab skipped (lb_number unavailable in results). |
+| 7 | **`-NFT` suffix on folder names for Private LBs** | ✅ | Shipped 2026-05-17 (TODO-018). `backend/folder_naming.py` created with `apply_nft_suffix`, `strip_nft_suffix`, `has_nft_suffix`, `nft_discrepancy`. Rename tab applies suffix to proposed names and shows discrepancy colours (pale red/yellow/orange rows). Collection tab `_get_standard_lb_name()` calls `/api/lb_master/<lb>/nft`. `should_mark_nft()` in `db.py`. `GET /api/lb_master/<lb>/nft` endpoint. |
+| 8 | **Persistent folder-to-LB linking (`lb_alias` + `folder_lb_link`)** | ⬜ | Both tables and the Rename tab "Link…" dropdown still need to be built. (TODO-019) |
+| 9 | **Flat-file update check rework** | ⬜ | Existing `scraper.check_for_update()` still does the broken bynumber-page scrape. `flat_file_releases`/`flat_file_changelog` tables not created. |
+| 10 | **Click-to-sort across all tables** | ⬜ | Existing DB Editor backend has `sort_col`/`sort_dir` already, but no GUI wiring; no `SortableTableItem`/`sort_key_for` helper module. |
+| 11 | **Reliable column width persistence** | 🟡 | Search tab fixed 2026-05-16 (BUG-058). Collection, Lbdir, Rename still hardcode widths in populate calls. No shared `GuiStateStore` / JSON file. |
+| 12 | **Bootleg-CD catalog (LBBCD)** | ⬜ | No scraper, no tables, no Bootlegs tab. |
+| 13 | **Standardize folder name button** | ✅ | Shipped 2026-05-17. `build_standard_name()` in `backend/folder_naming.py`. `GET /api/folder_naming/standard/<lb>`. "Standardize Selected" button + right-click "Standardize Name" action in Rename tab. `RenameModel.update_state()`. Also fixed BUG-064 (`_on_strip_wrong_lb` now transitions state to `needs_rename`). |
+| Map | **Map view of LB locations** | ⬜ | Plan extracted to [CC_MAP_FEATURE.md](CC_MAP_FEATURE.md). No `location_geocoded` table, no `gui/map_tab.py`. Deferred — lowest priority. |
+
+**When implementing pending items, check the CHANGELOG before starting** — small follow-on fixes may have already touched the same files since the last plan-doc audit.
+
 ## Context
 
 **Why this is needed.** Today the LosslessBob app has no single source of truth for "what is the status of LB-NNNNN?" The answer is reconstructed at query time by joining `entries.status`, the presence of rows in `checksums`, and (sometimes) the presence of rows in `entry_files`. This works but it:
@@ -287,6 +325,8 @@ This is where the **manual status editing** lives.
 
 ## Backup / Restore (ships with this feature)
 
+**Status:** 🟡 `backup_database()` + `POST /api/db/backup` + Backup DB Now button shipped 2026-05-16. Override export/import JSON not started. Auto-backup before `migrate_lb_master` and reconcile-all is in code.
+
 ### Full DB backup function
 
 Add `backup_database(reason: str) -> Path` to [backend/db.py](../../Documents/losslessbob/backend/db.py).
@@ -315,6 +355,8 @@ Add `backup_database(reason: str) -> Path` to [backend/db.py](../../Documents/lo
 ---
 
 ## Data Ownership Model (Master vs. User Data)
+
+**Status:** ✅ Shipped 2026-05-17 (TODO-020). `MASTER_TABLES`/`USER_TABLES`/`MASTER_META_KEYS`/`MASTER_SCHEMA_VERSION` constants in `db.py`. `export_master_db()` / `import_master_db()` with SHA256 manifest and schema-version guard. `POST /api/master/export` + `POST /api/master/import`. Curator-mode checkbox in Setup tab. 13 tests in `tests/test_master_data.py`. **Still pending:** GitHub release upload via `gh` CLI (TODO-022); override export/import JSON endpoints.
 
 **Curator role.** The repository owner (kuddukan) is responsible for curating the **master data** — the canonical truth about the LosslessBob archive. Other end users install the app and receive periodic master-data updates from the curator. Their personal collection/wishlist/notes never leave their machine.
 
@@ -441,6 +483,8 @@ The "Publish Master Update" button does export + upload in one flow, using the `
 
 ## First-Time Master Generation Workflow (Curator Step-by-Step)
 
+**Status:** 🟡 Procedural document, not a code feature. Step 1 (migration) and Step 2 mechanics (`migrate_lb_master`, `reconcile_lb_status`, `needs_review` flag) are shipped. Steps 3–5 (Re-scrape Private LBs, review, verify) are now supported by the GUI buttons and DB Editor. Steps 6–8 (Pre-publish review, Publish Master Update with GitHub release upload) are partially done: the export/import workflow is live, but GitHub release upload via `gh` CLI is deferred (TODO-022).
+
 This is the operational sequence **you (kuddukan) walk through once** to bootstrap the master table from your existing DB and ship the first master release. Assumes the schema/code from above is already implemented.
 
 ### Step 0 — Preflight (5 min)
@@ -522,6 +566,8 @@ This is the operational sequence **you (kuddukan) walk through once** to bootstr
 
 ## Ancillary Feature: Forum Post Guard for Private LBs
 
+**Status:** ✅ Shipped 2026-05-16. Backend 403 + Collection tab modal + `is_postable_to_forum()` helper all live. Preview endpoint also guarded.
+
 **Why.** Private LBs are items the webmaster has deliberately not published a webpage for. Posting about them on the public forum would expose unreleased content — directly defeating the webmaster's choice to keep them private. Private items can still legitimately appear in a user's personal collection (the user owns the recordings), so the guard belongs at the *forum-post action*, not at collection inclusion.
 
 ### Guard placement (defense in depth)
@@ -588,6 +634,8 @@ No special-casing needed.
 ---
 
 ## Ancillary Feature: Status Filters Across All Appropriate GUI Elements
+
+**Status:** ✅ Shipped 2026-05-17 (TODO-021). Search, Collection (My Collection + Missing), Lookup (filter combobox + Private/Missing row tinting), Attachments tree (batch page-level background tinting), Rename tab (LB Found column tint), Lbdir (LB# column tint). `get_lb_statuses_batch()` in `db.py`. **Not done:** shared `LBStatusComboBox` / `lb_status_style()` widget module (each tab inlined its own); Verify tab skipped (lb_number not in verify results); "Missing only" → "Incomplete matches only" rename in Lookup not done.
 
 **Why.** The `lb_master` status (Public / Private / Missing) is meaningless to users if it only surfaces in one tab. Every place LB numbers are browsed or filtered should expose the same status concept, with the same visual language, so the user builds a single mental model. This section enumerates every GUI element and prescribes the right treatment.
 
@@ -699,6 +747,8 @@ All tabs below use these helpers. New colors/icons changed in one place propagat
 
 ## Ancillary Feature: Append `-NFT` to Folder Names for Private LBs
 
+**Status:** ✅ Shipped 2026-05-17 (TODO-018). `backend/folder_naming.py` created with `apply_nft_suffix`, `strip_nft_suffix`, `has_nft_suffix`, `nft_discrepancy`. Rename tab applies suffix to all proposed names and shows discrepancy row colours (pale red = missing NFT, pale yellow = stale NFT, pale orange = NFT on missing LB). Collection tab `_get_standard_lb_name()` appends `-NFT` via `/api/lb_master/<lb>/nft`. `should_mark_nft()` in `db.py`. `GET /api/lb_master/<lb>/nft` endpoint.
+
 **Why.** `NFT` = Not For Trade, the lossless-audio community convention for marking items that must not be shared publicly. Private LBs (no webpage published) fit exactly this category — the webmaster has chosen not to release them, so users with copies must mark folders accordingly. Embedding `-NFT` directly in the folder name makes the constraint travel with the data: any future tool, script, or human looking at the folder sees the restriction immediately, even if they don't have access to this app's DB.
 
 This is automatic: anytime the app *proposes* a folder name and the matched LB is `private`, the proposal includes `-NFT`. The user can still edit before accepting.
@@ -809,6 +859,8 @@ Expose via API: `GET /api/lb_master/<int:lb>/nft` → `{"nft": true|false, "reas
 ---
 
 ## Ancillary Feature: Persistent Folder-to-LB Linking (Disambiguation)
+
+**Status:** ⬜ Not started. No `lb_alias` or `folder_lb_link` tables; Rename tab multi-LB rows still show comma-separated LBs with no resolution mechanism.
 
 **Why.** Some folders match multiple LB candidates because the LB entry pages reference each other (e.g., LB-A's page mentions LB-B, or vice versa). The existing `xref` mechanism only handles checksum-level cross-references; these entry-level LB-to-LB references aren't captured anywhere structured. Today, the user manually picks the right LB every time the Rename tab encounters such a folder. The choice should persist — and where the curator has decided which LB in a referenced pair is canonical, that decision should ship in the master so every user gets the disambiguation for free.
 
@@ -975,6 +1027,8 @@ Aliasing is consequential beyond just disambiguation. The following places shoul
 ---
 
 ## Ancillary Feature: Rework Flat-File Update Check
+
+**Status:** ⬜ Not started. Existing broken `scraper.check_for_update()` still scrapes the bynumber page; no `flat_file_releases`/`flat_file_changelog` tables; no real-file diff pipeline.
 
 **Why current implementation is broken.** [scraper.py:271](../../Documents/losslessbob/backend/scraper.py#L271) `check_for_update()` does not check the flat file at all — it scrapes the bynumber webpage and counts visible LB links to compute a `site_max`. Failure modes:
 - Misses any update that doesn't extend the max LB (corrections, added checksums for existing LBs — the majority of real updates).
@@ -1277,8 +1331,35 @@ Users who have been manually importing flat files for years will install this fe
 - Future imports use this as the baseline for the downgrade check.
 - No changelog rows are backfilled — accepted one-time loss of per-row history.
 
-### Verification (additions)
+### Files to Modify
 
+| File | Change |
+|---|---|
+| [backend/scraper.py](../../Documents/losslessbob/backend/scraper.py) | Remove old `check_for_update()`. Add `discover_flat_file_release()`. |
+| New: `backend/flat_file.py` | `discover_flat_file_release`, `download_flat_file_release`, `diff_flat_file_release`, `apply_flat_file_release`, `defer_flat_file_release`. Parse the date format `M/D/YY H:MM:SS AM/PM` carefully. Also handles the manual-import classification (already applied / recognized / newer / re-cut / downgrade refused / unknown). |
+| [backend/importer.py](../../Documents/losslessbob/backend/importer.py) | Restructure so the merge step writes to `flat_file_changelog` when invoked under a `release_id`. Manual file imports compute SHA256 and attach to an existing release row if matched. Downgrade refusal path is enforced here. |
+| [backend/db.py](../../Documents/losslessbob/backend/db.py) | Add `flat_file_releases` and `flat_file_changelog` to `init_db()` and `MASTER_TABLES`. Add legacy bootstrap (`applied_legacy` row) on first run if `meta.import_hash` is present. |
+| [backend/app.py](../../Documents/losslessbob/backend/app.py) | Add 7 new endpoints. Remove `/api/db/check_update`. |
+| [gui/setup_tab.py](../../Documents/losslessbob/gui/setup_tab.py) | Rebuild the Check button; add Update Available dialog, Review & Apply dialog, History sub-panel, downgrade-refusal dialog, unknown-age confirmation dialog. Implement startup auto-check worker. Add cadence dropdown. |
+| `CHANGELOG.md` | User-visible: "Check for Update" rework — now genuinely checks the flat file, prompts with diff preview before applying. Downgrades refused. |
+| `PROJECT.md` | Document the discovery → download → diff → apply pipeline, the master-data changelog, and the no-downgrades policy. |
+
+### Verification
+
+56. **Discovery — no change:** With current release applied, click Check. Confirm "up to date" dialog.
+57. **Discovery — new release:** Manually edit `flat_file_releases` to point at a fake older release. Click Check. Confirm Update Available dialog appears with the right filename/date.
+58. **Discovery — Last-Modified change without filename change:** Simulate by clearing the stored `http_last_modified` only. Confirm discovery fires correctly.
+59. **Download → diff:** Download a release on a populated DB. Confirm the diff dialog shows non-zero added/changed/removed counts that match a hand-computed expected.
+60. **Apply — backup created:** Apply a release. Confirm a `pre_flat_apply_*` backup exists in `data/backups/`.
+61. **Apply — changelog written:** Confirm `flat_file_changelog` has one row per modified `checksums` row, with `release_id` set.
+62. **Apply — lb_master reconciled:** Pick an LB that gained checksums in the release; confirm its `lb_master` row's `has_checksums` flag updated and `lb_status` reconciled.
+63. **Defer:** Click Defer 1 day. Restart app. Confirm no Update Available dialog appears (banner still surfaces in Setup).
+64. **Skip release:** Click Skip. Discovery still reports `available=true` but the dialog doesn't auto-pop. New release supersedes the skip.
+65. **Manual file matches downloaded release:** Manually drag in the same `.zip` (or its extracted flat file). Confirm it attaches to the existing `flat_file_releases` row instead of creating a duplicate, and the changelog is generated correctly.
+66. **Auto-check cadence:** Set cadence to `daily`. Restart twice within an hour; second restart should not re-fire discovery. Restart >24h later (or manually set `last_check` back) — discovery fires.
+67. **Page format breaks:** Edit the page-parse regex to fail. Confirm error surfaces as a non-blocking warning, not a crash.
+68. **Master export includes changelog:** After applying a release, export master. Confirm `flat_file_releases` and `flat_file_changelog` are present in the exported `.db`.
+69. **Master import: end-user sees release history:** On a clean install, import the master. Confirm Setup tab History panel lists the curator's applied releases.
 70. **Manual import — already applied:** Drag the currently-applied zip in. Confirm "already applied" dialog with last apply date; no DB changes.
 71. **Manual import — downgrade refused:** Drag an older zip in. Confirm refusal dialog with no Force/Override button. Verify zero DB changes after dismissing.
 72. **Manual import — same LastLB re-cut:** Edit one byte of the current zip and re-drag. Confirm re-cut prompt fires; choosing No leaves DB unchanged; choosing Yes runs normal pipeline.
@@ -1290,6 +1371,8 @@ Users who have been manually importing flat files for years will install this fe
 ---
 
 ## Ancillary Feature: Click-to-Sort Across All Tables
+
+**Status:** ⬜ Not started. DB Editor backend already has `sort_col`/`sort_dir` support but no GUI wiring; no shared `SortableTableItem`/`sort_key_for` helper module.
 
 **Why.** Today only the DB Editor has any sort support (and only at the backend level via `sort_col`/`sort_dir` params on `/api/db/table_rows`). No GUI table allows the user to click a column header to sort. Users have to mentally scan or rely on whatever default order the backend returns. The fix is straightforward Qt plumbing plus a shared sort-key helper, but it needs to be done consistently — otherwise different tabs will sort the same data type differently and create more confusion than they solve.
 
@@ -1424,7 +1507,7 @@ Each sortable table remembers its last sort across:
 78. **Numeric LB sort:** Search tab, click LB Number header. LB-2 sorts before LB-10 (not after, which would be the lexicographic bug).
 79. **Status rank sort:** Search tab, click Status header ASC → order is Public/Private/Missing, not alphabetical.
 80. **Date sort with M/D/YY format:** Flat File History, click Date header. 2026-03-30 sorts after 2026-02-15.
-31. **Sort persists across restart:** Set Search to Date DESC, restart app, return to Search. Sort still Date DESC with the triangle on the right column.
+81. **Sort persists across restart:** Set Search to Date DESC, restart app, return to Search. Sort still Date DESC with the triangle on the right column.
 82. **Server-paginated reset to page 1:** On Search page 5, click a header. Confirm jump to page 1 with new sort.
 83. **Whitelist guard:** `curl /api/search?sort_col=password` → backend ignores or returns 400, doesn't blindly inject into SQL.
 84. **Stable secondary sort:** With ties in primary sort, confirm page boundaries are consistent (same row never appears on two pages or skipped).
@@ -1433,6 +1516,8 @@ Each sortable table remembers its last sort across:
 ---
 
 ## Ancillary Feature: Reliable Column Width Persistence
+
+**Status:** 🟡 Search tab got a targeted "no longer reset to 100px on launch" fix on 2026-05-16. Collection, Lbdir, Rename still hardcode widths in populate functions. No shared `GuiStateStore` module, no JSON file, no atomic write + debounce + flush-on-close infra. Note: `resize_columns_to_font()` shipped on every tab — that's a separate concern (font scaling) and orthogonal to persistence.
 
 **Why current attempts keep breaking.** The codebase has three different approaches in flight simultaneously:
 
@@ -1605,6 +1690,8 @@ For users upgrading from the current QSettings-based code:
 ---
 
 ## Ancillary Feature: Bootleg-CD Catalog (LBBCD)
+
+**Status:** ⬜ Not started. No scraper, no `bootleg_titles`/`bootleg_scrapes` tables, no Bootlegs tab.
 
 **Why.** The LosslessBob site maintains a separate sub-catalog of named bootleg releases at `http://www.losslessbob.wonderingwhattochoose.com/detail/LB-bootleg-by-title.html`. Each row pairs a bootleg title (e.g., "Zurich Modern Times") with the canonical LB number it corresponds to, plus date, location, and CD count. Some titles link further to a dedicated `LBBCD-NNN` detail page. This is curator-relevant content that today the app has no awareness of — Search results, Lookup matches, and Collection views can't surface "this LB is also released as bootleg titled X" or "I own three bootlegs that map to LB-Y." Per the user, this is master-class data that should ship to all users.
 
@@ -1799,15 +1886,19 @@ The bootleg catalog ships in master releases. Practical consequences:
 
 ## Ancillary Feature: Standardize Folder Name Button
 
+**Status:** ✅ Shipped 2026-05-17 (CC_LB_INTEGRITY item 13). `build_standard_name()` added to `backend/folder_naming.py`. `GET /api/folder_naming/standard/<lb>` endpoint returns `{standard_name, lb_status, nft}`. Rename tab has "Standardize Selected" button and right-click "Standardize Name" action; both update the proposed name and escalate state to `needs_rename` when the standard name differs from the current folder name. NFT suffix applied automatically. Also fixed BUG-064 (`_on_strip_wrong_lb` now transitions row state so stripped rows become eligible for rename).
+
 **Why.** The canonical format for a Dylan show folder is:
 
 ```
-YYYY-MM-DD Location from LB (LB-XXXXX)
+YYYY-MM-DD Location (LB-XXXXX)
 ```
 
-Example: `1965-08-28 Forest Hills, NY from LB (LB-04321)`
+Example: `1965-08-28 Forest Hills, NY (LB-04321)`
 
-Today the Rename tab proposes names by **appending** the LB suffix to whatever the existing folder name is. The Collection tab has a `_get_standard_lb_name()` helper but it produces a slightly different format (no "from LB" segment) and isn't reused anywhere. The user wants a one-click way to apply the standard format to selected folders in the Rename tab, with the same format used everywhere standardization happens.
+The Date and Location strings are sourced from the `entries` table (i.e., from the LB master metadata — *not* literal text inserted into the filename).
+
+Today the Rename tab proposes names by **appending** the LB suffix to whatever the existing folder name is. The Collection tab has a `_get_standard_lb_name()` helper that already produces this exact format and a regex `_STANDARD_LB_NAME_RE` that matches it — but the helper isn't shared, the Rename tab has no equivalent button, and neither integrates with the `-NFT` suffix for Private LBs. The user wants a one-click way to apply the standard format to selected folders in the Rename tab, using the same shared helper everywhere.
 
 ### Two Distinct Operations — Both Stay Available
 
@@ -1825,16 +1916,21 @@ This tightens the relationship between folder names and master metadata (date + 
 ### Format Specification
 
 ```
-YYYY-MM-DD<SP>Location<SP>from<SP>LB<SP>(LB-XXXXX)[-NFT]
+YYYY-MM-DD<SP>Location<SP>(LB-XXXXX)[-NFT]
 ```
 
 - `YYYY-MM-DD` — ISO date derived from `entries.date_str`. Required.
 - `Location` — `entries.location`, sanitized for filesystem safety. Required.
-- Literal `from LB` — separator that distinguishes the canonical format from older or ad-hoc names.
 - `(LB-XXXXX)` — LB number zero-padded to 5 digits, wrapped in parentheses.
 - `-NFT` — appended when `lb_master.lb_status='private'` (per the earlier NFT feature).
 
 Component order is fixed; do not reorder for shorter strings.
+
+The existing regex `_STANDARD_LB_NAME_RE` in `gui/collection_tab.py` already matches this pattern. After consolidation, it lives in the shared module:
+
+```
+^\d{4}-\d{2}-\d{2}\s.+\s\(LB-\d{5}\)(-NFT)?$
+```
 
 ### Consolidation
 
@@ -1858,9 +1954,9 @@ The function:
 Replaces:
 - `_get_standard_lb_name()` in [gui/collection_tab.py](../../Documents/losslessbob/gui/collection_tab.py).
 - Any ad-hoc name construction in [gui/rename_tab.py](../../Documents/losslessbob/gui/rename_tab.py) `_fmt_lb()` consumers.
-- The `_STANDARD_LB_NAME_RE` regex used by Collection tab to test "is this folder already standard" — replace with one that matches the new format exactly:
+- The existing `_STANDARD_LB_NAME_RE` regex used by Collection tab to test "is this folder already standard" — extend to optionally allow the trailing `-NFT` for Private folders:
   ```
-  ^\d{4}-\d{2}-\d{2}\s.+\sfrom\sLB\s\(LB-\d{5}\)(-NFT)?$
+  ^\d{4}-\d{2}-\d{2}\s.+\s\(LB-\d{5}\)(-NFT)?$
   ```
 
 ### Filesystem Sanitization
@@ -1897,7 +1993,7 @@ Right-click a single row → "Standardize Name" → same logic, applied to that 
 
 #### Collection tab — [gui/collection_tab.py](../../Documents/losslessbob/gui/collection_tab.py)
 
-The existing "rename folder to standard format" prompt at line 2469 continues to work, but now calls `build_standard_folder_name` and uses the new format. The "Standard:" preview text in the dialog automatically reflects the new format (including `-NFT` when applicable). Users with existing folders in the old format (no "from LB" segment) will see the prompt fire on next reload — they can accept to migrate or dismiss to keep the old name.
+The existing "rename folder to standard format" prompt at line 2469 already produces the correct format. The change is: replace the local `_get_standard_lb_name()` body with a call to the shared `build_standard_folder_name()`. The "Standard:" preview text continues to look the same for Public folders; for Private folders it now includes `-NFT`. The `_STANDARD_LB_NAME_RE` regex is updated to optionally allow the trailing `-NFT` so existing Public-format folders don't suddenly start triggering the rename prompt.
 
 #### Setup tab (optional, low priority)
 
@@ -1944,7 +2040,7 @@ GUI calls this rather than poking the DB directly. Keeps the canonical name logi
 
 ### Verification
 
-108. **Format — public LB:** Call endpoint for a Public LB with full date and location. Confirm result is `YYYY-MM-DD Location from LB (LB-XXXXX)`.
+108. **Format — public LB:** Call endpoint for a Public LB with full date and location. Confirm result is `YYYY-MM-DD Location (LB-XXXXX)`.
 109. **Format — private LB:** Same with a Private LB. Confirm trailing `-NFT`.
 110. **Format — partial date:** LB with `xx/xx/67`. Confirm `{name: null, error: "Partial date..."}`.
 111. **Format — empty location:** LB with `location=""`. Confirm `error: "Location is empty..."`.
@@ -1952,8 +2048,8 @@ GUI calls this rather than poking the DB directly. Keeps the canonical name logi
 113. **Sanitization — truncation:** Manufacture a 500-char location. Confirm result name ≤200 chars, truncation at word boundary with `…`, LB suffix preserved.
 114. **Rename tab — bulk standardize:** Check 10 rows, click Standardize Selected. Confirm Proposed New Name updates for valid rows, summary dialog lists skips with reasons.
 115. **Rename tab — single row:** Right-click → Standardize Name. Confirm just that row updates.
-116. **Collection tab — old format triggers prompt:** Manually create a folder named `1965-08-28 Forest Hills (LB-04321)` (old format). Open Collection tab actions. Confirm the rename prompt fires with the new format proposed.
-117. **Collection tab — new format does not trigger:** Folder already in new format. Confirm no rename prompt fires (regex match correct).
+116. **Collection tab — Private LB without NFT triggers prompt:** Folder named `1965-08-28 Forest Hills (LB-04321)` belonging to a Private LB. Confirm rename prompt fires with `-NFT` added.
+117. **Collection tab — already-standard format does not trigger:** Folder already in standard format (with `-NFT` for Private, without for Public). Confirm no rename prompt fires.
 118. **Convergence:** `grep -rn "_get_standard_lb_name\|_STANDARD_LB_NAME_RE" gui/` returns only collection_tab.py call sites that use the new endpoint. The local function definition is gone.
 119. **NFT discrepancy still works:** Standardize a Private LB folder; confirm `-NFT` is appended and discrepancy detection from the earlier feature does not flag it.
 120. **No-op rename suppression:** Folder already matches standard format exactly. Click Standardize Selected. Confirm row is not modified and not listed in summary as a skip.
@@ -1962,210 +2058,17 @@ GUI calls this rather than poking the DB directly. Keeps the canonical name logi
 
 ## Ancillary Feature: Map View of LB Locations
 
-**Why.** `entries.location` is freeform text — useful in lists but invisible spatially. Plotting LBs on a world map turns "Dylan toured Europe in 1981" from text into a glance: clusters in Germany/UK/Netherlands, sparser dots in Eastern Europe. Useful for browsing ("what's that show in Norway?"), for spotting gaps in coverage ("never owned anything from the Australia leg"), and for the curator to validate that location strings are clean.
+**Status:** ⬜ Not started — **deferred to end of implementation queue**, may be cut. Full plan in [CC_MAP_FEATURE.md](CC_MAP_FEATURE.md).
 
-The whole stack can be free: OpenStreetMap tiles + Leaflet.js (rendering) + Nominatim (one-time geocoding) + the QtWebEngine widget that PyQt6 already supports.
+**Moved to its own plan file:** [CC_MAP_FEATURE.md](CC_MAP_FEATURE.md).
 
-### Architecture in Two Phases
+Brief recap (full design and verification list in the linked file):
 
-**Phase 1 — Geocoding (curator-side, ships in master).** Convert each unique `entries.location` string into a (lat, lon) pair once. Cache results in a master-data table so every end user gets the geocoded coordinates as part of the master release. End users never call any external geocoding service.
+- Plot every LB on an interactive world map by joining `entries.location` with a new master table `location_geocoded` (lat/lon per unique location).
+- Two-phase: curator runs Nominatim geocoding once (rate-limited, ships in master); end users get pre-geocoded coordinates and only ever talk to OpenStreetMap tile servers.
+- New "Map" tab uses `QWebEngineView` + Leaflet.js + marker clustering. Markers colored via the shared `lb_status_style()` helper. Filters mirror the Search tab.
+- Whole stack is free: OSM tiles + Leaflet + Nominatim + PyQt6-WebEngine.
+- New schema: `location_geocoded` (master data), curator-managed via DB Editor sub-panel with drag-to-place dialog for failed/approximate geocodes.
 
-**Phase 2 — Map rendering (end-user side).** A new "Map" tab embeds a Leaflet map in a `QWebEngineView`. Pulls joined `entries` + `location_geocoded` + `lb_master` rows from the local DB and renders as marker clusters. All tile fetches go directly to OpenStreetMap; no other external calls.
+See the dedicated plan file for schema, endpoints, UI mockup, edge cases, files to modify, and verification steps.
 
-### Schema (master data — ships)
-
-```sql
-CREATE TABLE IF NOT EXISTS location_geocoded (
-    location_text   TEXT PRIMARY KEY,             -- exact entries.location value
-    lat             REAL,                          -- decimal degrees, NULL if ungeocodable
-    lon             REAL,
-    source          TEXT NOT NULL,                 -- 'nominatim' | 'manual' | 'failed'
-    confidence      TEXT,                          -- 'high' | 'medium' | 'low' (heuristic on Nominatim importance)
-    display_name    TEXT,                          -- Nominatim's canonical name, for UI
-    manual_override INTEGER NOT NULL DEFAULT 0,    -- 1 = curator hand-edited coordinates
-    note            TEXT,                          -- curator note (e.g. "Dylan's home, approximated")
-    geocoded_at     TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-CREATE INDEX IF NOT EXISTS idx_geo_source ON location_geocoded(source);
-```
-
-Added to `MASTER_TABLES`.
-
-**Override semantics** match `lb_master`: when `manual_override=1`, batch geocoding skips the row. Curator can hand-place tricky locations ("Big Pink", "Dylan's home in Woodstock, NY") with approximate coordinates and a note explaining the approximation.
-
-### Phase 1: Geocoding Tool (Curator)
-
-New CLI script `tools/geocode_locations.py`:
-
-```
-python tools/geocode_locations.py [--limit N] [--retry-failed] [--dry-run]
-```
-
-Algorithm:
-1. Read all distinct `entries.location` values not already in `location_geocoded` (or with `source='failed'` if `--retry-failed`).
-2. For each, query Nominatim:
-   - URL: `https://nominatim.openstreetmap.org/search?q=<location>&format=json&limit=1`
-   - User-Agent header set to `LosslessBob-Geocoder/1.0 (kuddukan@gmail.com)` — Nominatim ToS requires identifying contact.
-   - Sleep 1.1s between requests (Nominatim ToS: max 1 req/sec; 100ms margin for politeness).
-3. Parse response:
-   - First result → `(lat, lon, display_name, importance)`. Importance ≥ 0.5 = high confidence, 0.3–0.5 = medium, < 0.3 = low.
-   - Empty result → `source='failed'`, lat/lon NULL.
-4. UPSERT into `location_geocoded`.
-5. Progress reporting every 10 rows (script will run for hours on first pass).
-
-**Backend endpoint** mirrors the script for in-app use (in case the curator prefers a button over CLI):
-- `POST /api/geocode/run` — starts the geocode worker (long-running, status via existing import-progress mechanism).
-- `GET /api/geocode/status` — current progress.
-- `POST /api/geocode/location` — body `{location, lat, lon, note}` for manual placement.
-
-Setup tab (curator-only) gains a **"Geocode Locations"** button + progress bar.
-
-### Phase 2: Map Tab (End User)
-
-New `gui/map_tab.py`. Layout:
-
-```
-┌─ Map ────────────────────────────────────────────────────────┐
-│  [Filter bar: status | owned | year range | text]            │
-├─────────────────────────────────────────────────────────────┤
-│                                                              │
-│                   ┌──────────────────┐                       │
-│                   │                  │                       │
-│                   │   World Map      │                       │
-│                   │   (Leaflet in    │                       │
-│                   │   QWebEngineView)│                       │
-│                   │                  │                       │
-│                   └──────────────────┘                       │
-│                                                              │
-├─────────────────────────────────────────────────────────────┤
-│  Stats: 14,820 LBs plotted | 1,768 locations | 432 unplottable│
-└─────────────────────────────────────────────────────────────┘
-```
-
-**Implementation:**
-
-- `QWebEngineView` loads a static HTML file `gui/resources/map.html` that includes Leaflet from a local copy (no CDN — works offline once tiles are cached).
-- On tab show, Python queries the backend for plot data (joined `entries` + `location_geocoded` + `lb_master` + `my_collection`), passes it to the page via `runJavaScript("loadMarkers(<json>)")`.
-- Each marker carries `{lb, date, location, status, owned, lat, lon}`. Status drives the marker color via the same `lb_status_style()` helper from the earlier shared-components feature (Public default, Private blue, Missing gray). Owned LBs get a thicker outline.
-- Marker clustering via `leaflet.markercluster` plugin (also local copy). Without clustering, ~15k markers tank the renderer.
-- Click marker → popup with LB number, date, location, status badge, **"Open in Search"** button (uses Qt's `QWebChannel` to call back into Python and switch tabs with the LB selected).
-- Hover cluster → highlight the bounding region.
-
-**Backend endpoint:**
-```
-GET /api/map/data?status=&owned=&year_min=&year_max=&q=
-→ {markers: [{lb, lat, lon, date, location, status, owned, ...}, ...],
-   unplottable_count: 432}
-```
-
-The query is the same filter set as Search, returning only rows with non-NULL lat/lon. `unplottable_count` exposes "how many LBs were filtered out due to ungeocoded location" so users know they're not seeing everything.
-
-### Tile Source and Offline Support
-
-- **Default:** OpenStreetMap standard tiles via `https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png`. Free, attribution required ("© OpenStreetMap contributors" — Leaflet provides the default attribution control).
-- **Caching:** Browser cache (QtWebEngine's built-in) handles tile reuse within a session. Persistent offline cache is a separate enhancement — not in v1.
-- **No API key needed.** No paid tiers. No tracking pixels.
-
-If usage ever becomes uncomfortable (OSM rate limits, attribution complaints), drop-in alternatives are CartoDB Voyager or Stamen Toner Lite — both also free with attribution.
-
-### Dependency Add: QtWebEngine
-
-PyQt6 ships QtWebEngine as a separate package `PyQt6-WebEngine`. It's substantial (~50 MB) but standard.
-
-- Add to `requirements.txt`: `PyQt6-WebEngine==6.x.x` (match the existing PyQt6 version).
-- README and installation docs note the new dependency.
-- Map tab is gracefully disabled if QtWebEngine import fails: tab still appears, shows a stub message "QtWebEngine not installed — see README to enable the Map tab." This way the app doesn't break for users on minimal installs.
-
-### Filtering & Interactivity
-
-Filter bar applies the same status/owned/year/text filters as Search. Changes re-issue the backend query and re-call `loadMarkers()`. Cheap because the JSON payload is ~kb-scale even for 15k markers.
-
-**Geographic filtering by viewport (zoom-to-region):** the map's currently-visible bounds can drive a "filter by visible area" toggle that shows a count + a "List these LBs in Search tab" button.
-
-**Heatmap mode** (toggle): swaps marker clusters for a density heatmap (leaflet.heat plugin). Useful for spotting touring patterns at a glance.
-
-### Curator UI for Geocoding Maintenance
-
-DB Editor tab gains a **"Location Geocoding"** sub-panel (curator only):
-
-- Table of `location_geocoded` rows with columns: Location, Source, Confidence, Lat, Lon, Manual?, Note.
-- Filter: `All | Failed | Low confidence | Manual overrides`.
-- Double-click row → opens a **Place Manually** dialog with a small embedded map; curator drags a pin to the right spot, optionally adds a note, saves → `manual_override=1`, `source='manual'`.
-- Failed rows are a curator's punch list — bad scrapes, weird location strings, ambiguous historical names.
-
-### Edge Cases
-
-- **Same location text used by many LBs:** all share one geocoded row; marker clustering handles density. No duplication.
-- **Location with multiple plausible places** (e.g., "Springfield" — there are dozens): Nominatim picks the highest-population one. Curator overrides if wrong; the note explains the override reason.
-- **Approximate locations** ("Dylan's home", "Big Pink"): geocode as failed by default; curator manually places with approximate coordinates and note like "Approximate — Saugerties, NY area".
-- **Locations that change name historically** ("Leningrad" → "St. Petersburg"): Nominatim handles many of these via OSM aliases. If not, manual override.
-- **New LBs after geocoding pass:** when a new flat-file release adds entries with new locations, the next master release won't have geocoded coords for them. Map tab shows them as unplottable until the curator runs the geocoder again. Suggest auto-incremental geocoding tied into the flat-file apply step as a follow-up.
-- **Ungeocodable locations counted but not lost:** the `unplottable_count` in the map response and the stats footer ensure users always see "you're looking at N of M total entries". No silent omissions.
-- **GDPR / network use disclosure:** OSM tile requests reveal IP + viewport to OSM's CDN. Document this in README so privacy-sensitive users know.
-
-### Files to Modify
-
-| File | Change |
-|---|---|
-| New: `backend/geocoder.py` | Nominatim client, batch driver, manual-override helpers. |
-| New: `tools/geocode_locations.py` | CLI runner around the geocoder. |
-| [backend/db.py](../../Documents/losslessbob/backend/db.py) | Add `location_geocoded` to `init_db()` and `MASTER_TABLES`. Add `get_map_data(filters)` join helper. |
-| [backend/app.py](../../Documents/losslessbob/backend/app.py) | Add `GET /api/map/data`, `POST /api/geocode/run`, `GET /api/geocode/status`, `POST /api/geocode/location`. |
-| New: `gui/map_tab.py` | The Map tab. |
-| New: `gui/resources/map.html` | Static page with Leaflet + markercluster + heatmap plugins (local copies). |
-| New: `gui/resources/leaflet/` | Local copy of Leaflet JS+CSS and required plugins. |
-| [gui/main_window.py](../../Documents/losslessbob/gui/main_window.py) | Register Map tab. Try/except import of QtWebEngine; stub-out if missing. |
-| [gui/dbedit_tab.py](../../Documents/losslessbob/gui/dbedit_tab.py) | Add Location Geocoding sub-panel (curator only) with manual placement dialog. |
-| [gui/setup_tab.py](../../Documents/losslessbob/gui/setup_tab.py) | "Geocode Locations" button (curator only) + progress bar. |
-| `requirements.txt` | Add `PyQt6-WebEngine`. |
-| `README.md` | Document the new dependency, OSM attribution, Nominatim ToS compliance for curator. |
-| `PROJECT.md` | Document the geocoding pipeline, map tab, master data inclusion. |
-| `CHANGELOG.md` | User-visible: new Map tab with marker clusters + filters. |
-
-### Verification
-
-121. **Geocoding — fresh location:** Run geocoder against a known location ("Forest Hills, NY"). Confirm row inserted with reasonable lat/lon.
-122. **Geocoding — rate limit:** Run against 5 sequential locations; confirm 1.1s gap between requests (check timestamps).
-123. **Geocoding — failed:** Geocode a nonsense location ("xkdjs"). Confirm row inserted with `source='failed'`, lat/lon NULL.
-124. **Geocoding — manual override skipped:** Manually place a location, then re-run geocoder with `--retry-failed`. Confirm the manual row is untouched.
-125. **Map tab — renders:** Open Map tab. Confirm world map loads with OSM tiles visible.
-126. **Map tab — markers:** Confirm clustered markers visible at low zoom; expand at high zoom shows individual pins.
-127. **Map tab — status colors:** Spot-check Public/Private/Missing colors on individual markers.
-128. **Map tab — owned outline:** Owned LBs render with a distinct outline.
-129. **Map tab — popup → Search:** Click marker, click "Open in Search" — confirm Search tab opens with that LB selected.
-130. **Map tab — filters:** Apply status=Private filter; confirm only Private markers visible and the unplottable count updates.
-131. **Map tab — unplottable count:** Confirm footer shows total vs. plotted accurately.
-132. **Heatmap toggle:** Switch to heatmap; confirm density visualization replaces markers without errors.
-133. **QtWebEngine missing graceful fail:** Uninstall `PyQt6-WebEngine`. Restart. Confirm Map tab shows stub message; app otherwise works.
-134. **Master export contains geocoded:** Export master, confirm `location_geocoded` ships and the end-user's map populates without running the geocoder locally.
-135. **Curator manual placement:** Open DB Editor → Location Geocoding → double-click a failed row → drag pin → save. Confirm row updates with `source='manual'`, `manual_override=1`, note saved.
-
-### Files to Modify
-
-| File | Change |
-|---|---|
-| [backend/scraper.py](../../Documents/losslessbob/backend/scraper.py) | Remove old `check_for_update()`. Add `discover_flat_file_release()`. |
-| New: `backend/flat_file.py` | `discover_flat_file_release`, `download_flat_file_release`, `diff_flat_file_release`, `apply_flat_file_release`, `defer_flat_file_release`. Parse the date format `M/D/YY H:MM:SS AM/PM` carefully. |
-| [backend/importer.py](../../Documents/losslessbob/backend/importer.py) | Restructure so the merge step writes to `flat_file_changelog` when invoked under a `release_id`. Manual file imports compute SHA256 and attach to an existing release row if matched. |
-| [backend/db.py](../../Documents/losslessbob/backend/db.py) | Add `flat_file_releases` and `flat_file_changelog` to `init_db()` and `MASTER_TABLES`. |
-| [backend/app.py](../../Documents/losslessbob/backend/app.py) | Add 7 new endpoints. Remove `/api/db/check_update`. |
-| [gui/setup_tab.py](../../Documents/losslessbob/gui/setup_tab.py) | Rebuild the Check button; add Update Available dialog, Review & Apply dialog, History sub-panel. Implement startup auto-check worker. Add cadence dropdown. |
-| `CHANGELOG.md` | User-visible: "Check for Update" rework — now genuinely checks the flat file, prompts with diff preview before applying. |
-| `PROJECT.md` | Document the discovery → download → diff → apply pipeline and the master-data changelog. |
-
-### Verification
-
-56. **Discovery — no change:** With current release applied, click Check. Confirm "up to date" dialog.
-57. **Discovery — new release:** Manually edit `flat_file_releases` to point at a fake older release. Click Check. Confirm Update Available dialog appears with the right filename/date.
-58. **Discovery — Last-Modified change without filename change:** Simulate by clearing the stored `http_last_modified` only. Confirm discovery fires correctly.
-59. **Download → diff:** Download a release on a populated DB. Confirm the diff dialog shows non-zero added/changed/removed counts that match a hand-computed expected.
-60. **Apply — backup created:** Apply a release. Confirm a `pre_flat_apply_*` backup exists in `data/backups/`.
-61. **Apply — changelog written:** Confirm `flat_file_changelog` has one row per modified `checksums` row, with `release_id` set.
-62. **Apply — lb_master reconciled:** Pick an LB that gained checksums in the release; confirm its `lb_master` row's `has_checksums` flag updated and `lb_status` reconciled.
-63. **Defer:** Click Defer 1 day. Restart app. Confirm no Update Available dialog appears (banner still surfaces in Setup).
-64. **Skip release:** Click Skip. Discovery still reports `available=true` but the dialog doesn't auto-pop. New release supersedes the skip.
-65. **Manual file matches downloaded release:** Manually drag in the same `.zip` (or its extracted flat file). Confirm it attaches to the existing `flat_file_releases` row instead of creating a duplicate, and the changelog is generated correctly.
-66. **Auto-check cadence:** Set cadence to `daily`. Restart twice within an hour; second restart should not re-fire discovery. Restart >24h later (or manually set `last_check` back) — discovery fires.
-67. **Page format breaks:** Edit the page-parse regex to fail. Confirm error surfaces as a non-blocking warning, not a crash.
-68. **Master export includes changelog:** After applying a release, export master. Confirm `flat_file_releases` and `flat_file_changelog` are present in the exported `.db`.
-69. **Master import: end-user sees release history:** On a clean install, import the master. Confirm Setup tab History panel lists the curator's applied releases.

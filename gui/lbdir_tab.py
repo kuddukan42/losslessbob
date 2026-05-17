@@ -4,6 +4,8 @@ from pathlib import Path
 import requests
 from PyQt6.QtCore import Qt, QThread, pyqtSignal
 from PyQt6.QtGui import QAction, QColor
+
+from backend.db import get_lb_statuses_batch
 from PyQt6.QtWidgets import (
     QAbstractItemView, QCheckBox, QDialog, QFileDialog, QHeaderView, QHBoxLayout,
     QLabel, QListWidget, QListWidgetItem, QMenu, QProgressBar, QPushButton,
@@ -885,7 +887,14 @@ class LbdirTab(QWidget):
             return "SHNTOOL MISSING", _C_FAIL
         return "FAIL", _C_FAIL
 
+    _LB_STATUS_COLOR = {"private": QColor("#B3E5FC"), "missing": QColor("#E0E0E0")}
+    _LB_STATUS_TIP   = {"private": "Private LB — no published webpage", "missing": "LB not in DB"}
+
     def _populate_summary(self, results):
+        # Batch-fetch lb_status for all lb_numbers in the result set (one query)
+        lb_nums = [r["lb_number"] for r in results if r.get("lb_number") is not None]
+        lb_status_map = get_lb_statuses_batch(lb_nums) if lb_nums else {}
+
         self.summary_table.setRowCount(0)
         for result in results:
             row = self.summary_table.rowCount()
@@ -898,6 +907,7 @@ class LbdirTab(QWidget):
             found = result.get("lbdir_found", False)
             status_text, color = self._result_display_status(result)
 
+            lb_status = lb_status_map.get(lb_number) if lb_number is not None else None
             lbdir_file = Path(lbdir_path).name if lbdir_path else "NOT FOUND"
             lb_str = str(lb_number) if lb_number is not None else ""
 
@@ -914,7 +924,12 @@ class LbdirTab(QWidget):
             ]
             for col, text in enumerate(cells):
                 item = QTableWidgetItem(text)
-                item.setBackground(color)
+                # Col 1 (LB#): tint by lb_status; other cols use verification color
+                if col == 1 and lb_status in self._LB_STATUS_COLOR:
+                    item.setBackground(self._LB_STATUS_COLOR[lb_status])
+                    item.setToolTip(self._LB_STATUS_TIP[lb_status])
+                else:
+                    item.setBackground(color)
                 if col == 0:
                     item.setToolTip(folder)
                     item.setData(Qt.ItemDataRole.UserRole, lb_number)
