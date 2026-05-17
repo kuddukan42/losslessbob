@@ -4,7 +4,10 @@ import threading
 import requests
 from bs4 import BeautifulSoup
 
-from backend.db import get_connection, DB_PATH, insert_missing_entry, record_entry_changes
+from backend.db import (
+    get_connection, DB_PATH, insert_missing_entry,
+    record_entry_changes, reconcile_lb_status,
+)
 from backend.paths import ATTACHMENTS_DIR, PAGES_DIR, to_long_path
 
 BASE_URL = "http://www.losslessbob.wonderingwhattochoose.com"
@@ -102,6 +105,7 @@ def scrape_entry(lb_number, force=False, download_files=True, use_local_pages=Fa
         resp, status = _fetch(url)
         if status == 404:
             insert_missing_entry(lb_number, db_path)
+            reconcile_lb_status(lb_number, trigger="scrape", db_path=db_path)
             return {"error": "404", "missing": True}
         if resp is None:
             return {"error": "fetch_failed"}
@@ -211,6 +215,7 @@ def scrape_entry(lb_number, force=False, download_files=True, use_local_pages=Fa
                 downloaded.append(clean)
             time.sleep(0.5)
 
+    reconcile_lb_status(lb_number, trigger="scrape", db_path=db_path)
     return {"ok": True, "files_downloaded": downloaded, "local_source": used_local}
 
 

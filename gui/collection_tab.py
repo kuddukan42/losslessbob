@@ -22,8 +22,17 @@ import gui.styles as styles
 _LB_RE = re.compile(r'LB[- ]0*(\d+)', re.IGNORECASE)
 _STANDARD_LB_NAME_RE = re.compile(r'^\d{4}-\d{2}-\d{2}\s.+\(LB-\d{5}\)$')
 
-COLL_HEADERS = ["LB Number", "Date", "Location", "Folder Name", "Disk Path", "Confirmed", "Notes"]
-MISS_HEADERS = ["LB Number", "Date", "Location", "Rating", "Description"]
+COLL_HEADERS = ["LB Number", "Status", "Date", "Location", "Folder Name", "Disk Path", "Confirmed", "Notes"]
+MISS_HEADERS = ["LB Number", "Status", "Date", "Location", "Rating", "Description"]
+
+_COLL_STATUS_COL = 1   # Status column in My Collection
+_MISS_STATUS_COL = 1   # Status column in Missing-from-Collection
+
+_BG_LB_STATUS = {
+    "public":  None,       # default
+    "private": "#B3E5FC",  # light blue
+    "missing": "#E0E0E0",  # light gray
+}
 
 
 def _extract_lb(name):
@@ -48,34 +57,44 @@ class _CollectionModel(QAbstractTableModel):
             return None
         row = self._rows[index.row()]
         col = index.column()
+        lb_status = row.get("lb_status") or ""
         if role == Qt.ItemDataRole.DisplayRole:
             if col == 0:
                 return f"LB-{row['lb_number']}"
-            if col == 1:
-                return row.get("date_str") or ""
+            if col == _COLL_STATUS_COL:
+                return lb_status.capitalize() if lb_status else ""
             if col == 2:
-                return row.get("location") or ""
+                return row.get("date_str") or ""
             if col == 3:
-                return row.get("folder_name", "")
+                return row.get("location") or ""
             if col == 4:
-                return row.get("disk_path", "")
+                return row.get("folder_name", "")
             if col == 5:
+                return row.get("disk_path", "")
+            if col == 6:
                 v = row.get("confirmed_at", "") or ""
                 return str(v)[:10]
-            if col == 6:
+            if col == 7:
                 return row.get("notes", "") or ""
-        if role == Qt.ItemDataRole.FontRole and col in (1, 2):
-            val = row.get("date_str") if col == 1 else row.get("location")
+        if role == Qt.ItemDataRole.FontRole and col in (2, 3):
+            val = row.get("date_str") if col == 2 else row.get("location")
             if not val:
                 f = QFont()
                 f.setItalic(True)
                 return f
-        if role == Qt.ItemDataRole.ForegroundRole and col in (1, 2):
-            val = row.get("date_str") if col == 1 else row.get("location")
+        if role == Qt.ItemDataRole.ForegroundRole and col in (2, 3):
+            val = row.get("date_str") if col == 2 else row.get("location")
             if not val:
                 return QColor("#888888")
         if role == Qt.ItemDataRole.BackgroundRole:
+            hex_color = _BG_LB_STATUS.get(lb_status)
+            if hex_color:
+                return QColor(hex_color)
             return styles.ROW_OWNED
+        if role == Qt.ItemDataRole.TextAlignmentRole and col == _COLL_STATUS_COL:
+            return Qt.AlignmentFlag.AlignCenter
+        if role == Qt.ItemDataRole.ToolTipRole and col == _COLL_STATUS_COL and lb_status:
+            return f"LB master status: {lb_status}"
         return None
 
     def headerData(self, section, orientation, role=Qt.ItemDataRole.DisplayRole):
@@ -123,14 +142,24 @@ class _MissingModel(QAbstractTableModel):
             return None
         row = self._rows[index.row()]
         col = index.column()
+        lb_status = row.get("lb_status") or ""
         if role == Qt.ItemDataRole.DisplayRole:
             if col == 0:
                 return f"LB-{row.get('lb_number', '')}"
-            keys = ["lb_number", "date_str", "location", "rating", "description"]
-            val = row.get(keys[col], "") or ""
-            if col == 4:
-                return str(val)
+            if col == _MISS_STATUS_COL:
+                return lb_status.capitalize() if lb_status else ""
+            # cols 2-5: date, location, rating, description
+            keys = [None, None, "date_str", "location", "rating", "description"]
+            val = row.get(keys[col], "") or "" if col < len(keys) else ""
             return str(val)
+        if role == Qt.ItemDataRole.BackgroundRole:
+            hex_color = _BG_LB_STATUS.get(lb_status)
+            if hex_color:
+                return QColor(hex_color)
+        if role == Qt.ItemDataRole.TextAlignmentRole and col == _MISS_STATUS_COL:
+            return Qt.AlignmentFlag.AlignCenter
+        if role == Qt.ItemDataRole.ToolTipRole and col == _MISS_STATUS_COL and lb_status:
+            return f"LB master status: {lb_status}"
         return None
 
     def headerData(self, section, orientation, role=Qt.ItemDataRole.DisplayRole):
@@ -1709,6 +1738,32 @@ class CollectionTab(QWidget):
             return
         row = rows[0]
         lb = row["lb_number"]
+
+        # Guard: block private and missing LBs
+        lb_status = row.get("lb_status") or ""
+        if lb_status in ("private", "missing"):
+            msg_map = {
+                "private": (
+                    f"LB-{lb:05d} is marked <b>Private</b>.<br><br>"
+                    "Posting to the forum would expose content that the webmaster "
+                    "has chosen not to publish on the LosslessBob website.<br><br>"
+                    "If you believe this status is wrong, you can request the "
+                    "curator to review it."
+                ),
+                "missing": (
+                    f"LB-{lb:05d} is marked as <b>not existing</b>.<br><br>"
+                    "There is nothing to post about for a non-existent entry."
+                ),
+            }
+            from PyQt6.QtWidgets import QMessageBox
+            dlg = QMessageBox(self)
+            dlg.setWindowTitle("Forum Post Blocked")
+            dlg.setIcon(QMessageBox.Icon.Warning)
+            dlg.setText(msg_map.get(lb_status, f"LB-{lb:05d} cannot be posted."))
+            dlg.setStandardButtons(QMessageBox.StandardButton.Ok)
+            dlg.exec()
+            return
+
         disk_path = row.get("disk_path", "")
         flask_port = self.flask_port
         self.coll_status.setText(f"Preparing LB-{lb:05d} for forum post…")
@@ -1856,7 +1911,17 @@ class CollectionTab(QWidget):
                 ) == QMessageBox.StandardButton.Yes:
                     webbrowser.open(url)
         else:
-            self.coll_status.setText(f"Forum post failed: {result.get('error', 'unknown')}")
+            err = result.get("error", "unknown")
+            # Surface forum-post-guard rejections with a modal (stale cached status race)
+            if err in ("lb_private", "lb_missing", "status_unknown"):
+                dlg = QMessageBox(self)
+                dlg.setWindowTitle("Forum Post Blocked")
+                dlg.setIcon(QMessageBox.Icon.Warning)
+                dlg.setText(result.get("message", f"LB-{lb:05d} cannot be posted."))
+                dlg.setStandardButtons(QMessageBox.StandardButton.Ok)
+                dlg.exec()
+            else:
+                self.coll_status.setText(f"Forum post failed: {err}")
 
     # ── History Panel (Torrents + Forum Posts) ───────────────────────────────
 

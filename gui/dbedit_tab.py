@@ -72,6 +72,39 @@ class DbEditTab(QWidget):
         refresh_btn = QPushButton("Refresh")
         refresh_btn.clicked.connect(self.load_tables)
         ll.addWidget(refresh_btn)
+
+        # ── DB Integrity sub-panel ────────────────────────────────────────────
+        from PyQt6.QtWidgets import QGroupBox
+        integrity_box = QGroupBox("DB Integrity")
+        ib_layout = QVBoxLayout(integrity_box)
+        ib_layout.setContentsMargins(6, 8, 6, 6)
+        ib_layout.setSpacing(3)
+
+        self._integrity_label = QLabel("—")
+        self._integrity_label.setWordWrap(True)
+        ib_layout.addWidget(self._integrity_label)
+
+        reconcile_btn = QPushButton("Reconcile All")
+        reconcile_btn.setToolTip(
+            "Recompute lb_master status for every LB number. Backs up DB first."
+        )
+        reconcile_btn.clicked.connect(self._on_reconcile_all)
+        ib_layout.addWidget(reconcile_btn)
+
+        needs_review_btn = QPushButton("Show Needs Review")
+        needs_review_btn.setToolTip(
+            "Load lb_master rows flagged as needing curator review."
+        )
+        needs_review_btn.clicked.connect(self._on_show_needs_review)
+        ib_layout.addWidget(needs_review_btn)
+
+        backup_btn = QPushButton("Backup DB Now")
+        backup_btn.setToolTip("Create a manual snapshot of the database.")
+        backup_btn.clicked.connect(self._on_backup_db)
+        ib_layout.addWidget(backup_btn)
+
+        ll.addWidget(integrity_box)
+        ll.addStretch()
         splitter.addWidget(left)
 
         # Right panel: data view
@@ -188,6 +221,7 @@ class DbEditTab(QWidget):
         w.error.connect(lambda e: self.status_label.setText(f"Error: {e}"))
         self._workers.append(w)
         w.start()
+        self.load_integrity_stats()
 
     def _on_tables_loaded(self, data):
         self.table_list.clear()
@@ -588,3 +622,102 @@ class DbEditTab(QWidget):
 
     def resize_columns_to_font(self) -> None:
         self.data_table.resizeColumnsToContents()
+
+    # ── DB Integrity panel ────────────────────────────────────────────────────
+
+    def load_integrity_stats(self) -> None:
+        """Fetch lb_master stats and update the integrity label."""
+        def _fetch():
+            return requests.get(
+                f"http://127.0.0.1:{self.flask_port}/api/lb_master/stats",
+                timeout=10,
+            ).json()
+
+        w = _Worker(_fetch)
+        w.finished.connect(self._on_integrity_stats)
+        w.error.connect(lambda e: self._integrity_label.setText(f"Stats error: {e}"))
+        self._workers.append(w)
+        w.start()
+
+    def _on_integrity_stats(self, data: dict) -> None:
+        if not isinstance(data, dict) or "error" in data:
+            self._integrity_label.setText("Stats unavailable")
+            return
+        self._integrity_label.setText(
+            f"Public: {data.get('public', 0):,}\n"
+            f"Private: {data.get('private', 0):,}\n"
+            f"Missing: {data.get('missing', 0):,}\n"
+            f"Max LB: {data.get('max_lb', 0):,}\n"
+            f"Overrides: {data.get('overrides', 0):,}\n"
+            f"Needs review: {data.get('needs_review', 0):,}"
+        )
+
+    def _on_reconcile_all(self) -> None:
+        from PyQt6.QtWidgets import QMessageBox
+        reply = QMessageBox.question(
+            self, "Reconcile All",
+            "Recompute lb_master status for every LB number?\n"
+            "A database backup will be created first.",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+        )
+        if reply != QMessageBox.StandardButton.Yes:
+            return
+        self._integrity_label.setText("Reconciling…")
+
+        def _run():
+            return requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/lb_master/reconcile",
+                timeout=120,
+            ).json()
+
+        w = _Worker(_run)
+        w.finished.connect(self._on_reconcile_done)
+        w.error.connect(lambda e: self._integrity_label.setText(f"Reconcile error: {e}"))
+        self._workers.append(w)
+        w.start()
+
+    def _on_reconcile_done(self, data: dict) -> None:
+        if data.get("ok"):
+            stats = data.get("stats", {})
+            self._on_integrity_stats(stats)
+            self.status_label.setText("Reconcile complete.")
+        else:
+            self._integrity_label.setText(f"Error: {data.get('error', 'unknown')}")
+
+    def _on_show_needs_review(self) -> None:
+        """Select lb_master in the table list and filter to needs_review rows."""
+        for i in range(self.table_list.count()):
+            item = self.table_list.item(i)
+            if item.data(Qt.ItemDataRole.UserRole) == "lb_master":
+                self.table_list.setCurrentItem(item)
+                break
+        # Apply filter via search box
+        self.search_input.setText("needs_review:1")
+        self._do_search()
+
+    def _on_backup_db(self) -> None:
+        from PyQt6.QtWidgets import QMessageBox
+
+        def _run():
+            return requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/db/backup",
+                json={"reason": "manual"},
+                timeout=60,
+            ).json()
+
+        w = _Worker(_run)
+        w.finished.connect(self._on_backup_done)
+        w.error.connect(lambda e: self.status_label.setText(f"Backup error: {e}"))
+        self._workers.append(w)
+        w.start()
+
+    def _on_backup_done(self, data: dict) -> None:
+        from PyQt6.QtWidgets import QMessageBox
+        if data.get("ok"):
+            size_mb = data.get("size_bytes", 0) / 1_048_576
+            QMessageBox.information(
+                self, "Backup Complete",
+                f"Backup saved to:\n{data.get('path', '?')}\n\nSize: {size_mb:.1f} MB",
+            )
+        else:
+            self.status_label.setText(f"Backup error: {data.get('error', 'unknown')}")

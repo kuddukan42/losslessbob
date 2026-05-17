@@ -3,7 +3,10 @@ import threading
 from datetime import datetime
 from pathlib import Path
 
-from backend.db import get_connection, init_db, get_meta, set_meta, DB_PATH, rebuild_bloom
+from backend.db import (
+    get_connection, init_db, get_meta, set_meta, DB_PATH, rebuild_bloom,
+    reconcile_lb_status, migrate_lb_master,
+)
 from backend.paths import DATA_DIR
 
 # --- Shared import progress state (mirrors _scrape_state pattern) ---
@@ -158,6 +161,20 @@ def run_import(source_path, progress_callback=None, db_path=None):
         conn.execute("PRAGMA optimize")
 
     rebuild_bloom(db_path)
+
+    # Populate or extend lb_master for all LBs touched by this import.
+    # migrate_lb_master() is a no-op when lb_master is already populated (idempotent guard),
+    # so for subsequent imports we reconcile only the LBs from this file.
+    _set_state(stage="optimizing", message="Updating integrity status…")
+    lb_master_count = 0
+    with get_connection(db_path) as _c:
+        lb_master_count = _c.execute("SELECT COUNT(*) FROM lb_master").fetchone()[0]
+
+    if lb_master_count == 0:
+        migrate_lb_master(db_path)
+    else:
+        for lb in sorted(temp_lbs):
+            reconcile_lb_status(lb, trigger="import", db_path=db_path)
 
     _set_state(running=False, stage="done", new_lb_count=len(new_lbs),
                message=f"Done — {len(new_lbs):,} new LB entries added.")

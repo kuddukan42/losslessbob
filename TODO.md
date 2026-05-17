@@ -132,3 +132,43 @@ Priority: Low
 Status: Open
 Added: 2026-05-15
 Description: The footer string "Brought to you by kuddukan, via the Bob-O-Matic v1.0." is hard-coded in forum_poster.py as _FOOTER. Consider reading username from forum credentials and version from a project constant so it doesn't need manual updates.
+
+---
+
+TODO-017: Periodic re-scrape of Private LBs to detect newly-published pages
+Priority: Medium
+Status: Open
+Added: 2026-05-16
+Description: Add a "Re-scrape Private LBs" button in Setup tab. Iterates every lb_status='private' row, attempts a fresh scrape, calls reconcile_lb_status() to flip status if a page is now found. Shows a completion summary ("N LBs promoted from Private to Public").
+
+---
+
+TODO-018: NFT folder-name suffix for Private LBs
+Priority: Medium
+Status: Open
+Added: 2026-05-16
+Description: Per CC_LB_INTEGRITY.md §NFT: Rename tab and Collection tab should append -NFT to any proposed folder name whose matched LB is Private. Requires _apply_status_suffix() helper in backend/folder_naming.py, discrepancy detection coloring in Rename tab, and GET /api/lb_master/<lb>/nft integration in the GUI.
+
+---
+
+TODO-019: lb_alias and folder_lb_link disambiguation tables
+Priority: Low
+Status: Open
+Added: 2026-05-16
+Description: Per CC_LB_INTEGRITY.md §Disambiguation: add lb_alias (master — alias_lb → canonical_lb) and folder_lb_link (user — folder_path → lb_number) tables. Wire into Rename tab resolution order: folder_lb_link first, lb_alias collapse second, fall back to multiple_ids. Curator creates aliases in DB Editor.
+
+---
+
+TODO-020: Master data publish/subscribe system (curator workflow)
+Priority: Low
+Status: Open
+Added: 2026-05-16
+Description: Per CC_LB_INTEGRITY.md §Master Data: implement POST /api/master/export (VACUUM INTO, drop user tables, write manifest + SHA256), POST /api/master/import (attach, copy master tables, preserve user meta keys), and GitHub release publishing via gh CLI ("Publish Master Update" button in Setup tab). Implement after TODO-018 and TODO-019 are stable.
+
+---
+
+TODO-021: Status filter combobox on remaining tabs (Lookup, Attachments, Rename, Verify, lbdir)
+Priority: Low
+Status: Open
+Added: 2026-05-16
+Description: Per CC_LB_INTEGRITY.md §Status Filters Across All GUI Elements: add lb_status background coloring and optional filter combobox to Lookup summary/detail, Attachments tree, Rename LB Found column, and (low priority) Verify and lbdir summary tables. Requires shared lb_status_style() in gui/styles.py.
