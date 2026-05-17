@@ -607,6 +607,9 @@ def lookup_checksums(parsed_entries, db_path=None):
         _lb_status_map = {}
     for item in detail:
         item["lb_status"] = _lb_status_map.get(item["lb_number"])
+    # Also annotate lb_summary values so the lookup tab can tint rows and filter
+    for s in lb_summary.values():
+        s["lb_status"] = _lb_status_map.get(s["lb_number"])
 
     return summary, detail
 

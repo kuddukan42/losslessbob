@@ -135,11 +135,14 @@ class RenameModel(QAbstractTableModel):
         if role == Qt.ItemDataRole.CheckStateRole and col == 0:
             return Qt.CheckState.Checked if row[0] else Qt.CheckState.Unchecked
         if role == Qt.ItemDataRole.BackgroundRole:
-            # NFT discrepancy overrides the normal state colour
             lb_status = row[5] if len(row) > 5 else None
+            # NFT discrepancy overrides the whole row
             disc = nft_discrepancy(Path(row[1]).name, lb_status)
             if disc:
                 return _NFT_DISC_COLORS.get(disc)
+            # LB Found column (col 3) shows lb_status tint when private or missing
+            if col == 3 and lb_status in ("private", "missing"):
+                return QColor("#B3E5FC") if lb_status == "private" else QColor("#E0E0E0")
             state = self._states[index.row()] if index.row() < len(self._states) else None
             return _STATE_COLORS.get(state)
         if role == Qt.ItemDataRole.ToolTipRole:

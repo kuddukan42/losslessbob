@@ -234,14 +234,16 @@ class LookupTab(QWidget):
         # Filtering state
         self._folder_filter: str | None = None       # active listbox folder filter
         self._summary_filter_lbs: set = set()        # active summary-row LB filter
+        self._lb_status_filter: str = ""             # "public"|"private"|"missing"|""
         self._ignore_summary_selection = False
         self._best_match_only: bool = True           # hide non-MATCHED rows when a MATCHED exists
 
         # Storage for full (unfiltered) rendered data
         self._sum_rows: list = []
         self._sum_colors: list = []
-        self._sum_lb_nums: list = []      # int | None per summary row
-        self._sum_user_data: list = []    # user_data dicts per summary row
+        self._sum_lb_nums: list = []          # int | None per summary row
+        self._sum_lb_statuses: list = []      # str | None lb_status per summary row
+        self._sum_user_data: list = []        # user_data dicts per summary row
         self._det_rows: list = []
         self._det_colors: list = []
         self._det_source_folders: list = []  # str | None per detail row
@@ -342,6 +344,14 @@ class LookupTab(QWidget):
         )
         self.best_match_chk.stateChanged.connect(self._on_best_match_toggled)
         summary_header_row.addWidget(self.best_match_chk)
+        from PyQt6.QtWidgets import QComboBox
+        self.lb_status_combo = QComboBox()
+        self.lb_status_combo.addItems([
+            "All LB statuses", "Public only", "Private only", "Missing only",
+        ])
+        self.lb_status_combo.setToolTip("Filter summary rows by LB archive status")
+        self.lb_status_combo.currentIndexChanged.connect(self._on_lb_status_filter_changed)
+        summary_header_row.addWidget(self.lb_status_combo)
         summary_header_row.addStretch()
         self.select_incomplete_btn = QPushButton("Select All Incomplete")
         self.select_incomplete_btn.clicked.connect(self._on_select_all_incomplete)
@@ -516,6 +526,7 @@ class LookupTab(QWidget):
         self._sum_rows.clear()
         self._sum_colors.clear()
         self._sum_lb_nums.clear()
+        self._sum_lb_statuses.clear()
         self._sum_user_data.clear()
         self._det_rows.clear()
         self._det_colors.clear()
@@ -621,6 +632,11 @@ class LookupTab(QWidget):
         self._best_match_only = bool(state)
         self._apply_filters()
 
+    def _on_lb_status_filter_changed(self, index):
+        mapping = {0: "", 1: "public", 2: "private", 3: "missing"}
+        self._lb_status_filter = mapping.get(index, "")
+        self._apply_filters()
+
     # ── Filtering ─────────────────────────────────────────────────────────────
 
     def _update_filter_labels(self):
@@ -663,6 +679,12 @@ class LookupTab(QWidget):
                 i for i in sum_indices
                 if self._sum_lb_nums[i] in visible_lbs
                 or self._sum_lb_nums[i] is None  # no-checksum / not-found rows
+            ]
+
+        if self._lb_status_filter:
+            sum_indices = [
+                i for i in sum_indices
+                if self._sum_lb_statuses[i] == self._lb_status_filter
             ]
 
         if self._summary_filter_lbs:
@@ -947,11 +969,18 @@ class LookupTab(QWidget):
                 folder = str(Path(d["source_file"]).parent)
                 self._lb_to_folders.setdefault(lb, set()).add(folder)
 
+        # LB-status color overrides: Private → light blue, Missing → light gray
+        _LB_STATUS_COLOR = {
+            "private": QColor("#B3E5FC"),
+            "missing": QColor("#E0E0E0"),
+        }
+
         # Build summary rows and colors
         lb_summaries = summary_info.get("lb_summary", [])
         sum_rows = []
         sum_colors = []
         sum_lb_nums = []
+        sum_lb_statuses = []
         sum_user_data = []
         for s in lb_summaries:
             row = [
@@ -965,10 +994,15 @@ class LookupTab(QWidget):
                 s["xrefs"],
                 s["status"],
             ]
+            lb_status = s.get("lb_status")
             sum_rows.append(row)
             sum_lb_nums.append(s["lb_number"])
-            sum_user_data.append({})
-            if s["status"] == "MATCHED":
+            sum_lb_statuses.append(lb_status)
+            sum_user_data.append({"lb_status": lb_status})
+            # lb_status overrides match-quality color for Private/Missing
+            if lb_status in _LB_STATUS_COLOR:
+                sum_colors.append(_LB_STATUS_COLOR[lb_status])
+            elif s["status"] == "MATCHED":
                 sum_colors.append(styles.ROW_MATCHED)
             elif s["status"] == "INCOMPLETE":
                 sum_colors.append(styles.ROW_MISSING)
@@ -997,6 +1031,7 @@ class LookupTab(QWidget):
                 sum_rows.append([label, source, count, 0, count, 0, 0, 0, "NOT FOUND"])
                 sum_colors.append(styles.ROW_NOT_FOUND)
                 sum_lb_nums.append(None)
+                sum_lb_statuses.append(None)
                 sum_user_data.append({})
 
         # No-checksum folders (listbox source or scan-tree)
@@ -1011,6 +1046,7 @@ class LookupTab(QWidget):
                 sum_rows.append(row)
                 sum_colors.append(_bg)
                 sum_lb_nums.append(None)
+                sum_lb_statuses.append(None)
                 sum_user_data.append({"path": folder, "type": "no_checksums", "fg": _fg})
 
         # Build detail rows and colors; also record source folder per row
@@ -1052,6 +1088,7 @@ class LookupTab(QWidget):
         self._sum_rows = sum_rows
         self._sum_colors = sum_colors
         self._sum_lb_nums = sum_lb_nums
+        self._sum_lb_statuses = sum_lb_statuses
         self._sum_user_data = sum_user_data
         self._det_rows = det_rows
         self._det_colors = det_colors

@@ -1,3 +1,13 @@
+[2026-05-17] — feat(gui): lb_status filter combobox + tinting in Lookup tab (TODO-021 partial)
+
+Changed
+
+backend/db.py: lookup_checksums() now also stamps lb_status onto each lb_summary dict (reusing the same _lb_status_map batch query that already annotates detail items).
+
+gui/lookup_tab.py: Added "All LB statuses / Public only / Private only / Missing only" QComboBox to the Summary header row. _lb_status_filter state drives a new guard in _apply_filters() that filters sum_indices by _sum_lb_statuses. _process_result() populates _sum_lb_statuses (parallel to _sum_lb_nums) from s["lb_status"]. Private rows get light-blue (#B3E5FC) and Missing rows get light-gray (#E0E0E0) background overrides ahead of match-quality colors. lb_status stored in sum_user_data per row.
+
+---
+
 [2026-05-17] — feat(integrity): -NFT suffix for Private LB folder names (TODO-018)
 
 Added

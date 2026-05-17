@@ -172,9 +172,10 @@ Description: Per CC_LB_INTEGRITY.md §Master Data: implemented POST /api/master/
 
 TODO-021: Status filter combobox on remaining tabs (Lookup, Attachments, Rename, Verify, lbdir)
 Priority: Low
-Status: Open
+Status: In Progress
 Added: 2026-05-16
 Description: Per CC_LB_INTEGRITY.md §Status Filters Across All GUI Elements: add lb_status background coloring and optional filter combobox to Lookup summary/detail, Attachments tree, Rename LB Found column, and (low priority) Verify and lbdir summary tables. Requires shared lb_status_style() in gui/styles.py.
+Progress: Lookup tab done (2026-05-17) — lb_status filter combobox + Private/Missing row tinting. Remaining: Attachments tree, Rename LB Found column coloring, Verify, lbdir.
 
 ---
 
