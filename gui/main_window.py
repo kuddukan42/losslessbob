@@ -110,7 +110,7 @@ class MainWindow(QMainWindow):
         _slog.t("_build_tabs: init LookupTab")
         self.lookup_tab = LookupTab(self.flask_port)
         _slog.t("_build_tabs: init RenameTab")
-        self.rename_tab = RenameTab(state_store=self.state_store)
+        self.rename_tab = RenameTab(state_store=self.state_store, flask_port=self.flask_port)
         _slog.t("_build_tabs: init VerifyTab")
         self.verify_tab = VerifyTab(self.flask_port)
         _slog.t("_build_tabs: init LbdirTab")

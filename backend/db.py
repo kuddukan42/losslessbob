@@ -32,6 +32,7 @@ MASTER_TABLES = (
     "lb_status_history",
     "flat_file_releases",
     "flat_file_changelog",
+    "lb_alias",
 )
 # Note: `entries_fts` is a virtual FTS5 table whose content is mirrored from
 # `entries` via triggers. It is NOT copied directly during export/import; the
@@ -45,6 +46,7 @@ USER_TABLES = (
     "torrents",
     "rename_history",
     "forum_posts",
+    "folder_lb_link",
 )
 
 # meta is mixed: master keys ship, user keys stay local.
@@ -298,6 +300,24 @@ CREATE TABLE IF NOT EXISTS flat_file_changelog (
 );
 CREATE INDEX IF NOT EXISTS idx_flat_changelog_release ON flat_file_changelog(release_id);
 CREATE INDEX IF NOT EXISTS idx_flat_changelog_lb      ON flat_file_changelog(lb_number);
+
+CREATE TABLE IF NOT EXISTS lb_alias (
+    alias_lb       INTEGER PRIMARY KEY,
+    canonical_lb   INTEGER NOT NULL,
+    relationship   TEXT NOT NULL DEFAULT 'duplicate',
+    note           TEXT,
+    created_at     TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CHECK (alias_lb != canonical_lb)
+);
+CREATE INDEX IF NOT EXISTS idx_lb_alias_canonical ON lb_alias(canonical_lb);
+
+CREATE TABLE IF NOT EXISTS folder_lb_link (
+    folder_path    TEXT PRIMARY KEY,
+    lb_number      INTEGER NOT NULL,
+    linked_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    note           TEXT
+);
+CREATE INDEX IF NOT EXISTS idx_folder_link_lb ON folder_lb_link(lb_number);
 """
 
 _MD5_RE = re.compile(r'^([0-9a-fA-F]{32})\s+\*?(.+)$')
@@ -1988,3 +2008,184 @@ def import_master_db(snapshot_path: "Path | str", db_path=None) -> dict:
         "backup_path": str(backup_path),
         "imported_at": _dt.utcnow().isoformat(),
     }
+
+
+# ── lb_alias helpers ──────────────────────────────────────────────────────────
+
+def resolve_aliases(lb_numbers: list[int], db_path=None) -> list[int]:
+    """Collapse alias LBs to their canonical LBs. Returns de-duped canonical list.
+
+    Each alias maps to exactly one canonical (max 1 hop; chain rewrites are
+    enforced on insert by :func:`add_lb_alias`).
+
+    Args:
+        lb_numbers: List of LB numbers to resolve.
+        db_path: Optional path to the SQLite database file.
+
+    Returns:
+        De-duplicated list of canonical LB numbers, preserving order of
+        first occurrence.
+    """
+    if not lb_numbers:
+        return []
+    conn = get_connection(db_path)
+    placeholders = ",".join("?" * len(lb_numbers))
+    alias_map = {
+        r["alias_lb"]: r["canonical_lb"]
+        for r in conn.execute(
+            f"SELECT alias_lb, canonical_lb FROM lb_alias WHERE alias_lb IN ({placeholders})",
+            lb_numbers,
+        )
+    }
+    resolved = [alias_map.get(lb, lb) for lb in lb_numbers]
+    # De-dup preserving order of first occurrence
+    seen: set[int] = set()
+    out: list[int] = []
+    for lb in resolved:
+        if lb not in seen:
+            seen.add(lb)
+            out.append(lb)
+    return out
+
+
+def get_folder_link(folder_path: str, db_path=None) -> dict | None:
+    """Return the folder_lb_link row for a path, or None.
+
+    Args:
+        folder_path: Absolute path of the folder.
+        db_path: Optional path to the SQLite database file.
+
+    Returns:
+        Row as a dict with keys folder_path, lb_number, linked_at, note,
+        or None if no link is stored.
+    """
+    conn = get_connection(db_path)
+    row = conn.execute(
+        "SELECT * FROM folder_lb_link WHERE folder_path=?", (folder_path,)
+    ).fetchone()
+    return dict(row) if row else None
+
+
+def set_folder_link(folder_path: str, lb_number: int, note: str = "", db_path=None) -> None:
+    """Create or replace a folder→LB link.
+
+    Args:
+        folder_path: Absolute path of the folder.
+        lb_number: LB number to link this folder to.
+        note: Optional user note.
+        db_path: Optional path to the SQLite database file.
+    """
+    conn = get_connection(db_path)
+    conn.execute(
+        "INSERT OR REPLACE INTO folder_lb_link (folder_path, lb_number, note, linked_at) "
+        "VALUES (?,?,?,CURRENT_TIMESTAMP)",
+        (folder_path, lb_number, note),
+    )
+    conn.commit()
+
+
+def delete_folder_link(folder_path: str, db_path=None) -> None:
+    """Remove a folder→LB link.
+
+    Args:
+        folder_path: Absolute path of the folder whose link should be deleted.
+        db_path: Optional path to the SQLite database file.
+    """
+    conn = get_connection(db_path)
+    conn.execute("DELETE FROM folder_lb_link WHERE folder_path=?", (folder_path,))
+    conn.commit()
+
+
+def add_lb_alias(
+    alias_lb: int,
+    canonical_lb: int,
+    relationship: str = "duplicate",
+    note: str = "",
+    db_path=None,
+) -> dict:
+    """Add an alias mapping. Validates no cycles, rewrites chains if needed.
+
+    Each alias is stored with max 1 hop: if canonical_lb is itself an alias,
+    the target is rewritten to its canonical before storing.
+
+    Args:
+        alias_lb: The LB number being aliased (the 'wrong' or secondary one).
+        canonical_lb: The LB number this alias resolves to.
+        relationship: One of 'duplicate', 'supersedes', 'see_also'.
+        note: Optional curator note.
+        db_path: Optional path to the SQLite database file.
+
+    Returns:
+        Dict with keys alias_lb (int), canonical_lb (int), rewrote_chain (bool).
+
+    Raises:
+        ValueError: If alias_lb == canonical_lb, or if adding the alias
+            would create a cycle.
+    """
+    if alias_lb == canonical_lb:
+        raise ValueError("alias_lb and canonical_lb must differ")
+    conn = get_connection(db_path)
+
+    # Chain rewrite: if canonical_lb is itself an alias, use its canonical
+    canon_of_canon = conn.execute(
+        "SELECT canonical_lb FROM lb_alias WHERE alias_lb=?", (canonical_lb,)
+    ).fetchone()
+    rewrote = False
+    if canon_of_canon:
+        canonical_lb = canon_of_canon["canonical_lb"]
+        rewrote = True
+
+    # Cycle prevention: canonical must not be an alias of alias_lb
+    would_cycle = conn.execute(
+        "SELECT 1 FROM lb_alias WHERE alias_lb=? AND canonical_lb=?",
+        (canonical_lb, alias_lb),
+    ).fetchone()
+    if would_cycle:
+        raise ValueError(
+            f"Adding alias {alias_lb}→{canonical_lb} would create a cycle"
+        )
+
+    conn.execute(
+        "INSERT OR REPLACE INTO lb_alias (alias_lb, canonical_lb, relationship, note) "
+        "VALUES (?,?,?,?)",
+        (alias_lb, canonical_lb, relationship, note),
+    )
+    conn.commit()
+    return {"alias_lb": alias_lb, "canonical_lb": canonical_lb, "rewrote_chain": rewrote}
+
+
+def delete_lb_alias(alias_lb: int, db_path=None) -> None:
+    """Remove an alias entry.
+
+    Args:
+        alias_lb: The alias LB number whose entry should be removed.
+        db_path: Optional path to the SQLite database file.
+    """
+    conn = get_connection(db_path)
+    conn.execute("DELETE FROM lb_alias WHERE alias_lb=?", (alias_lb,))
+    conn.commit()
+
+
+def get_lb_aliases(canonical_lb: int | None = None, db_path=None) -> list[dict]:
+    """Return alias rows, optionally filtered by canonical_lb.
+
+    Args:
+        canonical_lb: If provided, only return aliases that map to this
+            canonical LB number.
+        db_path: Optional path to the SQLite database file.
+
+    Returns:
+        List of row dicts with keys alias_lb, canonical_lb, relationship,
+        note, created_at.
+    """
+    conn = get_connection(db_path)
+    if canonical_lb is not None:
+        rows = conn.execute(
+            "SELECT * FROM lb_alias WHERE canonical_lb=? ORDER BY alias_lb",
+            (canonical_lb,),
+        ).fetchall()
+    else:
+        rows = conn.execute(
+            "SELECT * FROM lb_alias ORDER BY alias_lb"
+        ).fetchall()
+    return [dict(r) for r in rows]

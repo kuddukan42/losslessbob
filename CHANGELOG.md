@@ -1,3 +1,13 @@
+[2026-05-18] — feat(backend/gui): lb_alias + folder_lb_link disambiguation (CC_LB_INTEGRITY item 8)
+
+Added
+
+backend/db.py: lb_alias and folder_lb_link tables added to SCHEMA_SQL. lb_alias added to MASTER_TABLES; folder_lb_link added to USER_TABLES. New helpers: resolve_aliases(), get_folder_link(), set_folder_link(), delete_folder_link(), add_lb_alias(), delete_lb_alias(), get_lb_aliases() — all with type hints and Google-style docstrings.
+backend/app.py: 7 new endpoints: GET /api/lb_alias, POST /api/lb_alias (curator-only), DELETE /api/lb_alias/<alias_lb> (curator-only), GET /api/lb_alias/resolve, GET /api/folder_link, PUT /api/folder_link, DELETE /api/folder_link.
+gui/rename_tab.py: RenameTab now accepts flask_port parameter. Resolution order on populate_from_lookup: (1) folder_lb_link lookup; (2) lb_alias collapse; (3) fall back to multiple_ids. Right-click: "Link this folder…", "Unlink this folder", "Save as master alias…" (curator-only). _AliasDialog for curator alias creation.
+gui/main_window.py: Pass flask_port to RenameTab constructor.
+gui/dbedit_tab.py: "LB Aliases" QGroupBox panel. Auto-loads on load_tables(). Add/Delete curator-gated.
+
 [2026-05-18] — feat(backend/gui): Flat-file update check rework (CC_LB_INTEGRITY item 9)
 
 Added
@@ -9,69 +19,31 @@ backend/flat_file.py: New pipeline module — discover_flat_file_release, downlo
   and applies changes with a full flat_file_changelog audit trail. Auto-backup before apply.
   Reconciles lb_master for touched LBs post-apply.
 backend/db.py: flat_file_releases and flat_file_changelog tables added to SCHEMA_SQL and
-  MASTER_TABLES. _bootstrap_flat_file_legacy() for first-run migration: creates a synthetic
-  applied_legacy row from pre-feature import_hash/last_import_date meta so history is not empty
-  on upgrade. Called from init_db() in a daemon thread.
-backend/app.py: 7 new endpoints under /api/flat_file/*:
-  GET  /api/flat_file/discover
-  POST /api/flat_file/download/<id>
-  GET  /api/flat_file/diff/<id>
-  POST /api/flat_file/apply/<id>
-  POST /api/flat_file/defer/<id>
-  GET  /api/flat_file/releases
-  GET  /api/flat_file/changelog/<id>
-gui/setup_tab.py: "Check for Flat File Update" button now calls /api/flat_file/discover via
-  _DiscoverThread (non-blocking). _on_discover_result shows an info dialog (up to date) or
-  opens _UpdateAvailableDialog. New _UpdateAvailableDialog: shows release metadata, Download &
-  Apply (with diff confirmation), Defer 1 Day, Skip. Download and Apply each run in their own
-  QThread workers. New "Flat File History" QGroupBox with QTableWidget showing all releases
-  (Date, Filename, Status, Added, Changed, Removed); loaded on tab show via showEvent.
-  _DiscoverThread, _DownloadThread, _ApplyThread worker classes added.
+  MASTER_TABLES. _bootstrap_flat_file_legacy() for first-run migration.
+backend/app.py: 7 new endpoints under /api/flat_file/*.
+gui/setup_tab.py: "Check for Flat File Update" button, _UpdateAvailableDialog, Flat File History panel.
 
 Changed
 
-backend/scraper.py: Removed broken check_for_update() which scraped the bynumber page and
-  missed corrections / checksum additions that didn't extend the max LB number. Left a comment
-  pointing to the new pipeline.
+backend/scraper.py: Removed broken check_for_update() which scraped the bynumber page.
 
 [2026-05-18] — feat(gui/backend): Click-to-sort on all major tables (CC_LB_INTEGRITY item 10)
 
 Added
 
-gui/widgets/sort_keys.py: New module with SortableTableItem (QTableWidgetItem subclass that sorts by
-  typed key) and sort_key_for() helper supporting lb_number, date_iso, date_mdy, file_size_h,
-  lb_status, verify_status, bool_check, int, and text kinds.
-gui/widgets/state_store.py: Added get_sort()/set_sort() method pair for persisting per-table sort
-  state (column index + direction) alongside column widths in gui_state.json.
-gui/lbdir_tab.py: Client-side sort enabled on summary and detail QTableWidget tables via
-  SortableTableItem. Header setSectionsClickable/setSortIndicatorShown enabled. Default sort
-  col 0 ASC after each populate.
-gui/verify_tab.py: Client-side sort enabled on summary and detail QTableWidget tables via
-  SortableTableItem. QTableWidgetItem import removed (fully replaced by SortableTableItem).
-gui/dbedit_tab.py: Server-side sort wired via sectionClicked on data_table header. Sort state
-  (col name + dir) tracked per-session; _load_rows() now appends sort_col/sort_dir params.
-  Sort indicator cleared on table switch and Load Records.
-gui/search_tab.py: In-memory sort added via sectionClicked on search results QTableView.
-  _render_page() sorts filtered results by the active column before slicing for pagination.
-gui/collection_tab.py: In-memory sort added for My Collection (coll_view) and Missing (miss_view)
-  QTableView tables via sectionClicked. Sort applied in _render_coll_page() and _on_missing_loaded().
-backend/app.py: sort_col/sort_dir params accepted by /api/search, /api/collection, and
-  /api/collection/missing endpoints with whitelisted column mapping and in-process Python sort
-  (GUI currently sorts client-side; backend sort available for future server-side use).
+gui/widgets/sort_keys.py: SortableTableItem + sort_key_for() with typed sort keys.
+gui/widgets/state_store.py: get_sort()/set_sort() for persistent sort state.
+gui/lbdir_tab.py, gui/verify_tab.py: Client-side sort via SortableTableItem.
+gui/search_tab.py, gui/collection_tab.py, gui/dbedit_tab.py: In-memory/server-side sort via sectionClicked.
+backend/app.py: sort_col/sort_dir params on /api/search, /api/collection, /api/collection/missing.
 
 [2026-05-18] — feat(gui/backend): Override export/import JSON endpoints and DB Editor buttons
 
 Added
 
-backend/db.py: export_overrides() returns all lb_master rows with manual_override=1 as a list of
-  dicts for JSON serialisation. import_overrides() upserts a list of override dicts, skipping
-  lb_numbers outside the current max range, and writes an lb_status_history row with
-  trigger_event='import' for each upserted row.
-backend/app.py: GET /api/lb_master/overrides/export (read-only, no curator check) and POST
-  /api/lb_master/overrides/import (curator-only, returns {imported, skipped}).
-gui/dbedit_tab.py: "Export Overrides" and "Import Overrides" buttons added to the DB Integrity
-  panel, with QFileDialog for file selection and QMessageBox result summaries. Import calls
-  load_integrity_stats() to refresh the panel after completing.
+backend/db.py: export_overrides() and import_overrides() helpers.
+backend/app.py: GET /api/lb_master/overrides/export and POST /api/lb_master/overrides/import.
+gui/dbedit_tab.py: "Export Overrides" and "Import Overrides" buttons in DB Integrity panel.
 
 [2026-05-17] — fix(gui): Column widths now actually persist across restarts (GuiStateStore root-cause fix)
 

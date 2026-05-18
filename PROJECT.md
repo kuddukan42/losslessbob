@@ -187,6 +187,28 @@ Index: `idx_changes_lb ON entry_changes(lb_number, changed_at DESC)`.
 | board_id | INTEGER | SMF board number posted to |
 | posted_at | TEXT | UTC datetime, defaults to datetime('now') |
 
+### `lb_alias` — Curator-authored alias mappings (MASTER table)
+| Column | Type | Notes |
+|--------|------|-------|
+| alias_lb | INTEGER PK | The secondary / duplicate LB number |
+| canonical_lb | INTEGER NOT NULL | The authoritative LB number it maps to |
+| relationship | TEXT NOT NULL | `'duplicate'`, `'supersedes'`, or `'see_also'` (default `'duplicate'`) |
+| note | TEXT | Optional curator note |
+| created_at | TIMESTAMP | Defaults to CURRENT_TIMESTAMP |
+
+CHECK constraint: `alias_lb != canonical_lb`. Chains are rewritten to max 1 hop on insert.
+Index: `idx_lb_alias_canonical ON lb_alias(canonical_lb)`.
+
+### `folder_lb_link` — User-saved folder→LB sticky links (USER table)
+| Column | Type | Notes |
+|--------|------|-------|
+| folder_path | TEXT PK | Absolute path of the folder |
+| lb_number | INTEGER NOT NULL | LB number the user pinned this folder to |
+| linked_at | TIMESTAMP | Defaults to CURRENT_TIMESTAMP |
+| note | TEXT | Optional user note |
+
+Index: `idx_folder_link_lb ON folder_lb_link(lb_number)`.
+
 ### `meta` — Key-value configuration store
 Persists settings between runs. Key examples:
 - `import_hash` — MD5 of last imported flat file (skip re-import if unchanged)
@@ -305,6 +327,21 @@ Indexes: `idx_flat_changelog_release(release_id)`, `idx_flat_changelog_lb(lb_num
 | Method | Route | Description |
 |--------|-------|-------------|
 | GET | `/api/folder_naming/standard/<lb>` | Return `{standard_name, lb_status, nft}` — canonical `YYYY-MM-DD Location (LB-XXXXX)[-NFT]` folder name for an LB. Falls back to `LB-XXXXX` when the entry has no metadata. |
+
+### LB Alias (disambiguation — master data)
+| Method | Route | Description |
+|--------|-------|-------------|
+| GET | `/api/lb_alias` | List all `lb_alias` rows. Optional query param `canonical_lb` to filter. |
+| POST | `/api/lb_alias` | **Curator-only.** Add alias. Body: `{alias_lb, canonical_lb, relationship, note}`. Rewrites chains (max 1 hop). Returns `{alias_lb, canonical_lb, rewrote_chain}`. 403 if not curator; 400 on validation error. |
+| DELETE | `/api/lb_alias/<alias_lb>` | **Curator-only.** Remove an alias entry. |
+| GET | `/api/lb_alias/resolve` | Collapse a list of LB numbers through alias table. Query param `lbs=1,2,3`. Returns `{canonical: [int, ...]}` — de-duped, order-preserving. |
+
+### Folder→LB Sticky Links (user data)
+| Method | Route | Description |
+|--------|-------|-------------|
+| GET | `/api/folder_link` | Get the sticky link for a folder. Query param `path=...`. Returns `{folder_path, lb_number, linked_at, note}` or `{}` if not linked. |
+| PUT | `/api/folder_link` | Set or replace a link. Body: `{folder_path, lb_number, note?}`. Returns `{ok}`. |
+| DELETE | `/api/folder_link` | Clear a link. Query param `path=...`. Returns `{ok}`. |
 
 ### Entry Detail
 | Method | Route | Description |
@@ -716,7 +753,7 @@ Search field + field selector (All / Location / Date / Description) + year dropd
 
 ## GUI: Rename Tab (`gui/rename_tab.py`)
 
-Populated automatically after each lookup. Shows folders from the input file list alongside proposed new names.
+Populated automatically after each lookup. Shows folders from the input file list alongside proposed new names. Constructor takes `flask_port` (default 5174) for backend resolution calls.
 
 **Row states and colors:**
 | State | Color | Meaning |
@@ -724,7 +761,21 @@ Populated automatically after each lookup. Shows folders from the input file lis
 | `has_lb` / `renamed` | Green `#C8E6C9` | Correct LB already in name / just renamed |
 | `needs_rename` | Orange `#FFE0B2` | Match found, rename to `{folder}-LB-{N}` |
 | `wrong_lb` | Purple `#E1BEE7` | Folder has a *different* LB number — needs strip + rename |
-| `no_match` | Red `#FFCDD2` | No match or multiple IDs |
+| `multiple_ids` | Cyan `#B2EBF2` | Multiple LBs found, unresolved |
+| `no_match` | Red `#FFCDD2` | No match |
+
+**Disambiguation resolution order** (applied per folder during `populate_from_lookup`):
+1. `folder_lb_link` lookup — if an exact path match exists in the DB, use that LB directly. LB Found cell shows `🔗 LB-XXXXX` prefix.
+2. `lb_alias` collapse — call `GET /api/lb_alias/resolve`. If all candidates collapse to one canonical, use it automatically.
+3. Fall back to `multiple_ids` state (cyan) for manual resolution.
+
+**Right-click context menu (multiple_ids rows):**
+- **Resolve — Apply…** submenu — pick a specific candidate LB to resolve the row (session-only, not persisted)
+- **Link this folder to specific LB…** — prompts for an LB number, saves via `PUT /api/folder_link`, updates row to resolved state with `🔗` indicator
+- **Save as master alias…** *(curator-only)* — opens `_AliasDialog` to create a `lb_alias` mapping; re-runs resolution for the row after save
+
+**Right-click context menu (linked rows, indicated by `🔗`):**
+- **Unlink this folder** — calls `DELETE /api/folder_link`, resets row to non-linked state
 
 **Wrong-LB workflow:** When a folder already contains an LB number that doesn't match the correct one, the row shows "Wrong LB in name" (purple). Use **Select Wrong LB** to batch-select all such rows, then **Strip Wrong LB from Selected** to rewrite proposed names from `OldFolder-LB-old-LB-new` → `OldFolder-LB-new`. Then click **Rename Selected** to apply.
 
@@ -736,17 +787,21 @@ Populated automatically after each lookup. Shows folders from the input file lis
 
 ## GUI: DB Editor Tab (`gui/dbedit_tab.py`)
 
-**Left panel:** Table list (all DB tables with row count and edit flags). Refresh button.
+Paginated browse, inline-edit, and delete for every SQLite table. Left sidebar has a table list (with row counts), a **DB Integrity** panel, and an **LB Aliases** panel.
 
-**DB Integrity sub-panel (left panel, below table list):**
+**DB Integrity sub-panel:**
 - Live stats label: Public / Private / Missing / Max LB / Overrides / Needs review counts (from `GET /api/lb_master/stats`).
-- **Reconcile All** — recomputes lb_master status for every LB. Backs up DB first (`POST /api/lb_master/reconcile`).
+- **Reconcile All** — recomputes lb_master status for every LB. Backs up DB first.
 - **Show Needs Review** — filters the lb_master table to rows with `needs_review=1`.
-- **Export Overrides** — opens a save-file dialog, calls `GET /api/lb_master/overrides/export`, writes the JSON file, and shows a summary message with the count exported.
-- **Import Overrides** — opens an open-file dialog for a `.json` file, confirms with the user, calls `POST /api/lb_master/overrides/import`, and shows `{imported, skipped}` summary. Refreshes the stats label afterwards. Requires curator mode (backend enforces 403 otherwise).
+- **Export Overrides** — calls `GET /api/lb_master/overrides/export`, saves JSON file.
+- **Import Overrides** — loads a JSON file, calls `POST /api/lb_master/overrides/import`. Curator-gated.
 - **Backup DB Now** — manual snapshot (`POST /api/db/backup`).
 
-**Right panel:** Editable data table for the selected DB table. Supports: Load Records, per-LB filter, column search, pagination (Prev/Next), sort, inline cell edit, Save Changes, Delete Selected, Export CSV.
+**LB Aliases panel:**
+- `QTableWidget` with columns: Alias LB | → | Canonical LB | Relationship | Note
+- Auto-loaded on `load_tables()`. Add/Delete buttons curator-only. Non-curators read-only.
+
+**Right panel:** Editable data table. Supports: Load Records, per-LB filter, column search, pagination, sort (header click), inline cell edit, Save Changes, Delete Selected, Export CSV.
 
 ---
 
@@ -860,7 +915,10 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 
 | Date | Change |
 |------|--------|
-| 2026-05-18 | Flat-file update check rework: new `backend/flat_file.py` pipeline (discover/download/diff/apply); `flat_file_releases` + `flat_file_changelog` tables in MASTER_TABLES; 7 new `/api/flat_file/*` endpoints; removed broken `check_for_update()` from scraper.py; Setup tab "Check for Flat File Update" button + `_UpdateAvailableDialog` + Flat File History panel. (CC_LB_INTEGRITY item 9, TODO-024) |
+| 2026-05-18 | Disambiguation: `lb_alias` (MASTER) and `folder_lb_link` (USER) tables; 7 new endpoints under `/api/lb_alias` + `/api/folder_link`; Rename tab resolution order + 🔗 indicator + Link/Unlink/Alias context menu; DB Editor LB Aliases panel (curator-gated). (CC_LB_INTEGRITY item 8, TODO-019) |
+| 2026-05-18 | Flat-file update check rework: new `backend/flat_file.py` pipeline (discover/download/diff/apply); `flat_file_releases` + `flat_file_changelog` tables in MASTER_TABLES; 7 new `/api/flat_file/*` endpoints; removed broken `check_for_update()` from scraper.py; Setup tab "Check for Flat File Update" button + `_UpdateAvailableDialog` + Flat File History panel. (CC_LB_INTEGRITY item 9, TODO-026) |
+| 2026-05-18 | Click-to-sort on all major tables: `gui/widgets/sort_keys.py` (SortableTableItem + sort_key_for); lbdir/verify QTableWidget client-side sort; search/collection/dbedit server-side sort via sectionClicked; backend /api/search, /api/collection, /api/collection/missing accept sort_col/sort_dir. (CC_LB_INTEGRITY item 10, TODO-025) |
+| 2026-05-18 | Override export/import JSON: `export_overrides()` + `import_overrides()` in db.py; `GET /api/lb_master/overrides/export` + `POST /api/lb_master/overrides/import`; DB Editor Export/Import Overrides buttons in Integrity panel. (TODO-024) |
 | 2026-05-17 | Standardize folder name: `build_standard_name()` in `backend/folder_naming.py`; `GET /api/folder_naming/standard/<lb>`; "Standardize Selected" button + right-click action in Rename tab; `RenameModel.update_state()`; fixed BUG-064 (_on_strip_wrong_lb now transitions state to needs_rename). (CC_LB_INTEGRITY item 13) |
 | 2026-05-17 | lb_status filter + tinting across Lookup (filter combobox + row tint), Attachments tree (page-level batch tint), Rename LB Found column, Lbdir LB# column. `get_lb_statuses_batch()` in db.py. (TODO-021) |
 | 2026-05-17 | -NFT suffix for Private LB folder names: new `backend/folder_naming.py` module; `should_mark_nft()` + `lb_status` annotation in `lookup_checksums()` in `db.py`; Rename tab applies NFT suffix to proposed names and shows discrepancy colours; Collection tab `_get_standard_lb_name()` calls `/api/lb_master/<lb>/nft`. (TODO-018) |

@@ -53,6 +53,7 @@ class DbEditTab(QWidget):
         # Sort state: column name string and direction for the current table
         self._sort_col: str  = ""
         self._sort_dir: str  = "asc"
+        self._is_curator: bool | None = None   # fetched lazily on first alias panel use
         self._build_ui()
 
     def _build_ui(self):
@@ -113,6 +114,51 @@ class DbEditTab(QWidget):
         ib_layout.addWidget(backup_btn)
 
         ll.addWidget(integrity_box)
+
+        # ── Aliases sub-panel ─────────────────────────────────────────────────
+        aliases_box = QGroupBox("LB Aliases")
+        ab_layout = QVBoxLayout(aliases_box)
+        ab_layout.setContentsMargins(6, 8, 6, 6)
+        ab_layout.setSpacing(3)
+
+        self._alias_table = QTableWidget()
+        self._alias_table.setColumnCount(5)
+        self._alias_table.setHorizontalHeaderLabels(
+            ["Alias LB", "→", "Canonical LB", "Relationship", "Note"]
+        )
+        self._alias_table.setSelectionBehavior(
+            QAbstractItemView.SelectionBehavior.SelectRows
+        )
+        self._alias_table.setEditTriggers(
+            QAbstractItemView.EditTrigger.NoEditTriggers
+        )
+        self._alias_table.horizontalHeader().setSectionResizeMode(
+            QHeaderView.ResizeMode.ResizeToContents
+        )
+        self._alias_table.setFixedHeight(130)
+        ab_layout.addWidget(self._alias_table)
+
+        alias_btn_row = QHBoxLayout()
+        self._alias_add_btn = QPushButton("Add")
+        self._alias_add_btn.setToolTip("Add a new alias mapping (curator only)")
+        self._alias_add_btn.clicked.connect(self._on_add_alias)
+        alias_btn_row.addWidget(self._alias_add_btn)
+
+        self._alias_del_btn = QPushButton("Delete")
+        self._alias_del_btn.setToolTip("Remove selected alias (curator only)")
+        self._alias_del_btn.clicked.connect(self._on_delete_alias)
+        alias_btn_row.addWidget(self._alias_del_btn)
+
+        reload_alias_btn = QPushButton("Reload")
+        reload_alias_btn.clicked.connect(self._load_aliases)
+        alias_btn_row.addWidget(reload_alias_btn)
+        ab_layout.addLayout(alias_btn_row)
+
+        self._alias_status = QLabel("")
+        self._alias_status.setWordWrap(True)
+        ab_layout.addWidget(self._alias_status)
+
+        ll.addWidget(aliases_box)
         ll.addStretch()
         splitter.addWidget(left)
 
@@ -234,6 +280,7 @@ class DbEditTab(QWidget):
         self._workers.append(w)
         w.start()
         self.load_integrity_stats()
+        self._load_aliases()
 
     def _on_tables_loaded(self, data):
         self.table_list.clear()
@@ -841,5 +888,186 @@ class DbEditTab(QWidget):
 
         w.finished.connect(_done)
         w.error.connect(lambda e: QMessageBox.warning(self, "Import Error", str(e)))
+        self._workers.append(w)
+        w.start()
+
+    # ── Aliases panel ─────────────────────────────────────────────────────────
+
+    def _check_curator(self) -> bool:
+        """Return curator status, fetching from backend once per session."""
+        if self._is_curator is None:
+            try:
+                resp = requests.get(
+                    f"http://127.0.0.1:{self.flask_port}/api/curator",
+                    timeout=5,
+                )
+                self._is_curator = bool(resp.json().get("is_curator", False))
+            except Exception:
+                self._is_curator = False
+        return self._is_curator
+
+    def _load_aliases(self) -> None:
+        """Fetch lb_alias rows from the backend and populate the alias table."""
+        def _fetch():
+            return requests.get(
+                f"http://127.0.0.1:{self.flask_port}/api/lb_alias",
+                timeout=10,
+            ).json()
+
+        w = _Worker(_fetch)
+        w.finished.connect(self._on_aliases_loaded)
+        w.error.connect(lambda e: self._alias_status.setText(f"Error: {e}"))
+        self._workers.append(w)
+        w.start()
+
+    def _on_aliases_loaded(self, data) -> None:
+        if not isinstance(data, list):
+            self._alias_status.setText("Failed to load aliases.")
+            return
+        curator = self._check_curator()
+        self._alias_add_btn.setEnabled(curator)
+        self._alias_del_btn.setEnabled(curator)
+
+        self._alias_table.setRowCount(0)
+        for row in data:
+            r = self._alias_table.rowCount()
+            self._alias_table.insertRow(r)
+            alias_lb = row.get("alias_lb", "")
+            canonical_lb = row.get("canonical_lb", "")
+            relationship = row.get("relationship", "")
+            note = row.get("note") or ""
+            for c, val in enumerate([str(alias_lb), "→", str(canonical_lb), relationship, note]):
+                item = QTableWidgetItem(val)
+                item.setFlags(item.flags() & ~Qt.ItemFlag.ItemIsEditable)
+                if c == 1:
+                    item.setTextAlignment(Qt.AlignmentFlag.AlignCenter)
+                self._alias_table.setItem(r, c, item)
+        n = len(data)
+        self._alias_status.setText(
+            f"{n} alias{'es' if n != 1 else ''}" + ("" if curator else " (read-only)")
+        )
+
+    def _on_add_alias(self) -> None:
+        """Open a dialog to add a new lb_alias entry (curator only)."""
+        if not self._check_curator():
+            self._alias_status.setText("Curator mode required to add aliases.")
+            return
+
+        from PyQt6.QtWidgets import (
+            QDialog, QFormLayout, QSpinBox, QComboBox, QTextEdit, QDialogButtonBox,
+        )
+
+        dlg = QDialog(self)
+        dlg.setWindowTitle("Add LB Alias")
+        dlg.setMinimumWidth(360)
+        form = QFormLayout(dlg)
+        form.setContentsMargins(12, 12, 12, 12)
+        form.setSpacing(8)
+
+        alias_spin = QSpinBox()
+        alias_spin.setRange(1, 999999)
+        form.addRow("Alias LB (secondary):", alias_spin)
+
+        canon_spin = QSpinBox()
+        canon_spin.setRange(1, 999999)
+        form.addRow("Canonical LB (primary):", canon_spin)
+
+        rel_combo = QComboBox()
+        for rel in ("duplicate", "supersedes", "see_also"):
+            rel_combo.addItem(rel)
+        form.addRow("Relationship:", rel_combo)
+
+        note_edit = QTextEdit()
+        note_edit.setFixedHeight(56)
+        note_edit.setPlaceholderText("Optional note…")
+        form.addRow("Note:", note_edit)
+
+        buttons = QDialogButtonBox(
+            QDialogButtonBox.StandardButton.Ok | QDialogButtonBox.StandardButton.Cancel
+        )
+        buttons.accepted.connect(dlg.accept)
+        buttons.rejected.connect(dlg.reject)
+        form.addRow(buttons)
+
+        if dlg.exec() != QDialog.DialogCode.Accepted:
+            return
+
+        alias_lb = alias_spin.value()
+        canonical_lb = canon_spin.value()
+        relationship = rel_combo.currentText()
+        note = note_edit.toPlainText().strip()
+
+        def _post():
+            return requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/lb_alias",
+                json={
+                    "alias_lb": alias_lb,
+                    "canonical_lb": canonical_lb,
+                    "relationship": relationship,
+                    "note": note,
+                },
+                timeout=10,
+            ).json()
+
+        def _done(result):
+            if "error" in result:
+                self._alias_status.setText(f"Error: {result['error']}")
+            else:
+                rewrote = " (chain rewritten)" if result.get("rewrote_chain") else ""
+                self._alias_status.setText(
+                    f"Alias LB-{alias_lb:05d} → LB-{result.get('canonical_lb', canonical_lb):05d} "
+                    f"saved{rewrote}."
+                )
+                self._load_aliases()
+
+        w = _Worker(_post)
+        w.finished.connect(_done)
+        w.error.connect(lambda e: self._alias_status.setText(f"Error: {e}"))
+        self._workers.append(w)
+        w.start()
+
+    def _on_delete_alias(self) -> None:
+        """Delete the selected alias row (curator only)."""
+        if not self._check_curator():
+            self._alias_status.setText("Curator mode required to delete aliases.")
+            return
+        selected = self._alias_table.selectedItems()
+        if not selected:
+            self._alias_status.setText("Select an alias row to delete.")
+            return
+        row_idx = self._alias_table.currentRow()
+        alias_item = self._alias_table.item(row_idx, 0)
+        if alias_item is None:
+            return
+        try:
+            alias_lb = int(alias_item.text())
+        except ValueError:
+            self._alias_status.setText("Could not parse alias LB number.")
+            return
+
+        reply = QMessageBox.question(
+            self, "Confirm Delete",
+            f"Remove alias LB-{alias_lb:05d}?",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+        )
+        if reply != QMessageBox.StandardButton.Yes:
+            return
+
+        def _delete():
+            return requests.delete(
+                f"http://127.0.0.1:{self.flask_port}/api/lb_alias/{alias_lb}",
+                timeout=10,
+            ).json()
+
+        def _done(result):
+            if result.get("ok"):
+                self._alias_status.setText(f"Alias LB-{alias_lb:05d} removed.")
+                self._load_aliases()
+            else:
+                self._alias_status.setText(f"Error: {result.get('error', 'unknown')}")
+
+        w = _Worker(_delete)
+        w.finished.connect(_done)
+        w.error.connect(lambda e: self._alias_status.setText(f"Error: {e}"))
         self._workers.append(w)
         w.start()
