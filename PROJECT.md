@@ -61,7 +61,8 @@ losslessbob/
 │   ├── theme_tab.py          # Color theme picker and custom color editor
 │   ├── styles.py             # Generates Qt stylesheets from color dict
 │   └── widgets/
-│       └── state_store.py    # GuiStateStore: column widths + window geometry → data/gui_state.json
+│       ├── state_store.py    # GuiStateStore: column widths + window geometry → data/gui_state.json
+│       └── sort_keys.py      # SortableTableItem + sort_key_for() for typed client-side sort
 ├── tests/
 │   ├── test_lb_master.py     # lb_master schema, reconcile, override, forum guard, GUI presence
 │   └── test_master_data.py   # MASTER/USER table classification, export/import, SHA + schema-version guards
@@ -827,3 +828,4 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 | 2026-05-16 | Added "Forum History" and "Torrent History" inner tabs to My Collection — global all-entry views backed by GET /api/forum_posts and GET /api/torrents; db.get_all_forum_posts() and db.get_all_torrents() added. |
 | 2026-05-16 | Search tab: added "Xref" column (col 5) showing xref numbers per entry; GET /api/checksums/xref_map added. Collection "Xref only" filter now matches folder_name containing "xref" instead of checking the master DB xref list. |
 | 2026-05-17 | CC_LB_INTEGRITY item 11: GuiStateStore in gui/widgets/state_store.py; all tabs migrated from QSettings/hardcoded widths to attach_table / data/gui_state.json; window geometry migrated too. |
+| 2026-05-18 | CC_LB_INTEGRITY item 10: Click-to-sort on all major tables. gui/widgets/sort_keys.py added. lbdir+verify QTableWidget tables use SortableTableItem. Search/Collection/Missing QTableView tables sort in-memory via sectionClicked. DB Editor sectionClicked wired to server-side sort. Backend /api/search, /api/collection, /api/collection/missing accept sort_col/sort_dir. |

@@ -50,6 +50,9 @@ class DbEditTab(QWidget):
         # Per-table column widths in-session cache: {table_name: [w0, w1, ...]}
         self._col_widths: dict     = {}
         self._resizing_prog: bool  = False
+        # Sort state: column name string and direction for the current table
+        self._sort_col: str  = ""
+        self._sort_dir: str  = "asc"
         self._build_ui()
 
     def _build_ui(self):
@@ -150,9 +153,12 @@ class DbEditTab(QWidget):
             QAbstractItemView.SelectionMode.ExtendedSelection)
         hdr = self.data_table.horizontalHeader()
         hdr.setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
+        hdr.setSectionsClickable(True)
+        hdr.setSortIndicatorShown(True)
         hdr.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
         hdr.customContextMenuRequested.connect(self._on_header_context)
         hdr.sectionResized.connect(self._on_col_resized)
+        hdr.sectionClicked.connect(self._on_sort_col_clicked)
         self.data_table.verticalHeader().setVisible(False)
         self.data_table.setContextMenuPolicy(
             Qt.ContextMenuPolicy.CustomContextMenu)
@@ -252,6 +258,9 @@ class DbEditTab(QWidget):
         self.discard_btn.setEnabled(False)
         self.search_input.clear()
         self.lb_input.clear()
+        self._sort_col = ""
+        self._sort_dir = "asc"
+        self.data_table.horizontalHeader().setSortIndicator(-1, Qt.SortOrder.AscendingOrder)
         # Prime the in-session cache so the first load can restore widths
         if self._current_table not in self._col_widths:
             saved = self._load_saved_widths(self._current_table)
@@ -287,6 +296,25 @@ class DbEditTab(QWidget):
 
     # ── Row data ──────────────────────────────────────────────────────────────
 
+    def _on_sort_col_clicked(self, logical_index: int) -> None:
+        """Toggle sort direction when the same column header is clicked; reset to ASC otherwise."""
+        if not self._columns or logical_index >= len(self._columns):
+            return
+        col_name = self._columns[logical_index]
+        # Skip the hidden rowid column (index 0)
+        if logical_index == 0:
+            return
+        if self._sort_col == col_name:
+            self._sort_dir = "desc" if self._sort_dir == "asc" else "asc"
+        else:
+            self._sort_col = col_name
+            self._sort_dir = "asc"
+        order = (Qt.SortOrder.AscendingOrder if self._sort_dir == "asc"
+                 else Qt.SortOrder.DescendingOrder)
+        self.data_table.horizontalHeader().setSortIndicator(logical_index, order)
+        self._page = 0
+        self._load_rows()
+
     def _on_load_all(self):
         if not self._current_table:
             self.status_label.setText("Select a table first.")
@@ -294,6 +322,9 @@ class DbEditTab(QWidget):
         self.search_input.clear()
         self.lb_input.clear()
         self._page = 0
+        self._sort_col = ""
+        self._sort_dir = "asc"
+        self.data_table.horizontalHeader().setSortIndicator(-1, Qt.SortOrder.AscendingOrder)
         self._load_rows()
 
     def _do_search(self):
@@ -310,7 +341,9 @@ class DbEditTab(QWidget):
                   f"/api/dbedit/table/{name}/rows"
                   f"?page={self._page}&limit={self._limit}"
                   + (f"&search={search}" if search else "")
-                  + (f"&lb_number={lb_number}" if lb_number else ""))
+                  + (f"&lb_number={lb_number}" if lb_number else "")
+                  + (f"&sort_col={self._sort_col}&sort_dir={self._sort_dir}"
+                     if self._sort_col else ""))
         self.status_label.setText("Loading…")
         w = _Worker(lambda: requests.get(url, timeout=20).json())
         w.finished.connect(self._on_rows_loaded)

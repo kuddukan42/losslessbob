@@ -6,8 +6,10 @@ from PyQt6.QtGui import QAction, QColor
 from PyQt6.QtWidgets import (
     QAbstractItemView, QCheckBox, QFileDialog, QHeaderView, QHBoxLayout,
     QLabel, QListWidget, QListWidgetItem, QMenu, QProgressBar, QPushButton,
-    QSplitter, QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget,
+    QSplitter, QTableWidget, QVBoxLayout, QWidget,
 )
+
+from gui.widgets.sort_keys import SortableTableItem, sort_key_for
 
 AUDIO_EXTS = {'.flac', '.shn', '.ape', '.wav'}
 
@@ -225,7 +227,10 @@ class VerifyTab(QWidget):
         self.summary_table.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.summary_table.setSelectionMode(QAbstractItemView.SelectionMode.SingleSelection)
         self.summary_table.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
-        self.summary_table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
+        _sum_hdr = self.summary_table.horizontalHeader()
+        _sum_hdr.setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
+        _sum_hdr.setSectionsClickable(True)
+        _sum_hdr.setSortIndicatorShown(True)
         self.summary_table.verticalHeader().setVisible(False)
         self.summary_table.setMinimumHeight(120)
         self.summary_table.itemSelectionChanged.connect(self._on_summary_row_clicked)
@@ -250,7 +255,10 @@ class VerifyTab(QWidget):
         self.detail_table.setHorizontalHeaderLabels(DETAIL_HEADERS)
         self.detail_table.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.detail_table.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
-        self.detail_table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
+        _det_hdr = self.detail_table.horizontalHeader()
+        _det_hdr.setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
+        _det_hdr.setSectionsClickable(True)
+        _det_hdr.setSortIndicatorShown(True)
         self.detail_table.verticalHeader().setVisible(False)
         dc_layout.addWidget(self.detail_table)
         splitter.addWidget(self.detail_container)
@@ -487,6 +495,7 @@ class VerifyTab(QWidget):
         return _C_FAIL
 
     def _populate_summary(self, results):
+        self.summary_table.setSortingEnabled(False)
         self.summary_table.setRowCount(0)
         for result in results:
             row = self.summary_table.rowCount()
@@ -519,19 +528,23 @@ class VerifyTab(QWidget):
             status_text = status_labels.get(result.get("status", ""),
                                             result.get("status", "").upper())
 
-            cells = [
-                Path(folder).name,
-                mode.upper(),
-                ffp_sym, md5_sym, shn_sym,
-                str(result.get("total", 0)),
-                str(result.get("pass", 0)),
-                str(result.get("mismatch", 0)),
-                str(result.get("missing", 0)),
-                str(result.get("extra", 0)),
-                status_text,
+            # (display_text, sort_kind, raw_for_sort)
+            cell_defs = [
+                (Path(folder).name, "text", None),
+                (mode.upper(), "text", None),
+                (ffp_sym, "bool_check", None),
+                (md5_sym, "bool_check", None),
+                (shn_sym, "bool_check", None),
+                (str(result.get("total", 0)), "int", result.get("total", 0)),
+                (str(result.get("pass", 0)), "int", result.get("pass", 0)),
+                (str(result.get("mismatch", 0)), "int", result.get("mismatch", 0)),
+                (str(result.get("missing", 0)), "int", result.get("missing", 0)),
+                (str(result.get("extra", 0)), "int", result.get("extra", 0)),
+                (status_text, "verify_status", result.get("status", "")),
             ]
-            for col, text in enumerate(cells):
-                item = QTableWidgetItem(text)
+            for col, (text, kind, raw) in enumerate(cell_defs):
+                sk = sort_key_for(raw if raw is not None else text, kind)
+                item = SortableTableItem(text, sk)
                 item.setBackground(color)
                 if col == 0:
                     item.setToolTip(folder)
@@ -539,6 +552,8 @@ class VerifyTab(QWidget):
                     item.setTextAlignment(Qt.AlignmentFlag.AlignCenter)
                 self.summary_table.setItem(row, col, item)
 
+        self.summary_table.setSortingEnabled(True)
+        self.summary_table.sortByColumn(0, Qt.SortOrder.AscendingOrder)
         self.summary_table.resizeColumnsToContents()
 
     # ── Detail table ──────────────────────────────────────────────────────────
@@ -564,6 +579,7 @@ class VerifyTab(QWidget):
 
     def _populate_detail(self, files):
         show_all = self.show_all_cb.isChecked()
+        self.detail_table.setSortingEnabled(False)
         self.detail_table.setRowCount(0)
 
         for file_info in files:
@@ -586,23 +602,26 @@ class VerifyTab(QWidget):
             shn_st = file_info.get("shntool_status", "na")
             ffp_shn = ffp_st if ffp_st != "na" else shn_st
 
-            cells = [
-                file_info.get("filename", ""),
-                self._fmt_status(file_info.get("md5_status")),
-                self._fmt_status(ffp_shn),
-                self._fmt_status(file_info.get("st5_status")),
-                "Yes" if file_info.get("on_disk") else "No",
-                overall.upper() if overall else "",
+            # (display_text, sort_kind)
+            cell_defs = [
+                (file_info.get("filename", ""), "text"),
+                (self._fmt_status(file_info.get("md5_status")), "verify_status"),
+                (self._fmt_status(ffp_shn), "verify_status"),
+                (self._fmt_status(file_info.get("st5_status")), "verify_status"),
+                ("Yes" if file_info.get("on_disk") else "No", "bool_check"),
+                (overall.upper() if overall else "", "verify_status"),
             ]
             row = self.detail_table.rowCount()
             self.detail_table.insertRow(row)
-            for col, text in enumerate(cells):
-                item = QTableWidgetItem(text)
+            for col, (text, kind) in enumerate(cell_defs):
+                item = SortableTableItem(text, sort_key_for(text, kind))
                 item.setBackground(color)
                 if col > 0:
                     item.setTextAlignment(Qt.AlignmentFlag.AlignCenter)
                 self.detail_table.setItem(row, col, item)
 
+        self.detail_table.setSortingEnabled(True)
+        self.detail_table.sortByColumn(0, Qt.SortOrder.AscendingOrder)
         self.detail_table.resizeColumnsToContents()
 
     def resize_columns_to_font(self) -> None:

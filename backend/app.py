@@ -233,12 +233,36 @@ def create_app():
 
     @app.route("/api/search", methods=["GET"])
     def search():
+        # NOTE: sort_col/sort_dir accepted for API completeness; the GUI currently
+        # performs in-memory sorting on the full result set.
         try:
             q = request.args.get("q", "")
             field = request.args.get("field", "all")
             year_str = request.args.get("year")
             year = int(year_str) if year_str else None
+            sort_col = request.args.get("sort_col", "")
+            sort_dir = "DESC" if request.args.get("sort_dir", "asc") == "desc" else "ASC"
+            _SEARCH_SORT_COLS = {
+                "lb_number": "e.lb_number",
+                "date_str":  "e.date_str",
+                "location":  "e.location",
+                "lb_status": (
+                    "CASE lm.lb_status WHEN 'public' THEN 0 "
+                    "WHEN 'private' THEN 1 WHEN 'missing' THEN 2 END"
+                ),
+            }
             results = database.search_entries(q, field, year=year)
+            if sort_col and sort_col in _SEARCH_SORT_COLS:
+                reverse = sort_dir == "DESC"
+                key_map = {
+                    "lb_number": lambda r: r.get("lb_number") or 0,
+                    "date_str":  lambda r: (r.get("date_str") or "").lower(),
+                    "location":  lambda r: (r.get("location") or "").lower(),
+                    "lb_status": lambda r: {"public": 0, "private": 1,
+                                            "missing": 2}.get(
+                                           r.get("lb_status") or "", 99),
+                }
+                results.sort(key=key_map[sort_col], reverse=reverse)
             return jsonify(results)
         except Exception as e:
             return jsonify({"error": str(e)}), 500
@@ -276,8 +300,25 @@ def create_app():
 
     @app.route("/api/collection", methods=["GET"])
     def collection_list():
+        # NOTE: sort_col/sort_dir accepted for API completeness; the GUI currently
+        # performs in-memory sorting on the full result set.
         try:
-            return jsonify(database.get_collection())
+            sort_col = request.args.get("sort_col", "")
+            sort_dir = "DESC" if request.args.get("sort_dir", "asc") == "desc" else "ASC"
+            _COLL_SORT_COLS = {
+                "lb_number":   lambda r: r.get("lb_number") or 0,
+                "date_str":    lambda r: (r.get("date_str") or "").lower(),
+                "location":    lambda r: (r.get("location") or "").lower(),
+                "folder_name": lambda r: (r.get("folder_name") or "").lower(),
+                "lb_status":   lambda r: {"public": 0, "private": 1,
+                                          "missing": 2}.get(
+                                         r.get("lb_status") or "", 99),
+            }
+            results = database.get_collection()
+            if sort_col and sort_col in _COLL_SORT_COLS:
+                results.sort(key=_COLL_SORT_COLS[sort_col],
+                             reverse=(sort_dir == "DESC"))
+            return jsonify(results)
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
@@ -315,8 +356,24 @@ def create_app():
 
     @app.route("/api/collection/missing", methods=["GET"])
     def collection_missing():
+        # NOTE: sort_col/sort_dir accepted for API completeness; the GUI currently
+        # performs in-memory sorting on the full result set.
         try:
-            return jsonify(database.get_missing_from_collection())
+            sort_col = request.args.get("sort_col", "")
+            sort_dir = "DESC" if request.args.get("sort_dir", "asc") == "desc" else "ASC"
+            _MISS_SORT_COLS = {
+                "lb_number": lambda r: r.get("lb_number") or 0,
+                "date_str":  lambda r: (r.get("date_str") or "").lower(),
+                "location":  lambda r: (r.get("location") or "").lower(),
+                "lb_status": lambda r: {"public": 0, "private": 1,
+                                        "missing": 2}.get(
+                                       r.get("lb_status") or "", 99),
+            }
+            results = database.get_missing_from_collection()
+            if sort_col and sort_col in _MISS_SORT_COLS:
+                results.sort(key=_MISS_SORT_COLS[sort_col],
+                             reverse=(sort_dir == "DESC"))
+            return jsonify(results)
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 

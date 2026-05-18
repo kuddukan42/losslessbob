@@ -1,3 +1,28 @@
+[2026-05-18] — feat(gui/backend): Click-to-sort on all major tables (CC_LB_INTEGRITY item 10)
+
+Added
+
+gui/widgets/sort_keys.py: New module with SortableTableItem (QTableWidgetItem subclass that sorts by
+  typed key) and sort_key_for() helper supporting lb_number, date_iso, date_mdy, file_size_h,
+  lb_status, verify_status, bool_check, int, and text kinds.
+gui/widgets/state_store.py: Added get_sort()/set_sort() method pair for persisting per-table sort
+  state (column index + direction) alongside column widths in gui_state.json.
+gui/lbdir_tab.py: Client-side sort enabled on summary and detail QTableWidget tables via
+  SortableTableItem. Header setSectionsClickable/setSortIndicatorShown enabled. Default sort
+  col 0 ASC after each populate.
+gui/verify_tab.py: Client-side sort enabled on summary and detail QTableWidget tables via
+  SortableTableItem. QTableWidgetItem import removed (fully replaced by SortableTableItem).
+gui/dbedit_tab.py: Server-side sort wired via sectionClicked on data_table header. Sort state
+  (col name + dir) tracked per-session; _load_rows() now appends sort_col/sort_dir params.
+  Sort indicator cleared on table switch and Load Records.
+gui/search_tab.py: In-memory sort added via sectionClicked on search results QTableView.
+  _render_page() sorts filtered results by the active column before slicing for pagination.
+gui/collection_tab.py: In-memory sort added for My Collection (coll_view) and Missing (miss_view)
+  QTableView tables via sectionClicked. Sort applied in _render_coll_page() and _on_missing_loaded().
+backend/app.py: sort_col/sort_dir params accepted by /api/search, /api/collection, and
+  /api/collection/missing endpoints with whitelisted column mapping and in-process Python sort
+  (GUI currently sorts client-side; backend sort available for future server-side use).
+
 [2026-05-17] — fix(gui): Column widths now actually persist across restarts (GuiStateStore root-cause fix)
 
 Fixed
