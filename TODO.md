@@ -188,6 +188,15 @@ Description: After the export endpoint produces data/exports/<file>.db + .manife
 
 ---
 
+TODO-024: Override export/import JSON
+Priority: Low
+Status: Done
+Added: 2026-05-18
+Closed: 2026-05-18
+Description: GET /api/lb_master/overrides/export and POST /api/lb_master/overrides/import. DB Editor buttons for Export and Import Overrides in the Integrity panel.
+
+---
+
 TODO-023: Reliable column width persistence (CC_LB_INTEGRITY item 11)
 Priority: Medium
 Status: Done

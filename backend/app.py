@@ -1491,6 +1491,42 @@ def create_app():
         except Exception as exc:
             return jsonify({"error": str(exc)}), 500
 
+    @app.route("/api/lb_master/overrides/export", methods=["GET"])
+    def lb_master_overrides_export():
+        """Export all manual overrides as a JSON array.
+
+        Returns every lb_master row where manual_override=1, serialised as a
+        list of dicts suitable for re-import via POST /api/lb_master/overrides/import.
+        Read-only — no curator check required.
+        """
+        try:
+            data = database.export_overrides()
+            return jsonify(data)
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/lb_master/overrides/import", methods=["POST"])
+    def lb_master_overrides_import():
+        """Import manual overrides from a JSON array body.  Curator-only.
+
+        Body: list of ``{lb_number, manual_status, manual_notes, manual_set_by}``.
+        Entries whose lb_number is outside the current lb_master range are
+        silently skipped and counted.
+
+        Returns:
+            ``{imported: int, skipped: int}``
+        """
+        if not database.is_curator():
+            return jsonify({"error": "curator_required"}), 403
+        payload = request.get_json(force=True)
+        if not isinstance(payload, list):
+            return jsonify({"error": "expected JSON array"}), 400
+        try:
+            result = database.import_overrides(payload)
+            return jsonify(result)
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
     @app.route("/api/lb_master/<int:lb>/nft", methods=["GET"])
     def lb_master_nft(lb):
         """Return {nft: bool, reason: str|null} for folder naming guidance."""

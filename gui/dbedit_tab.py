@@ -94,6 +94,16 @@ class DbEditTab(QWidget):
         needs_review_btn.clicked.connect(self._on_show_needs_review)
         ib_layout.addWidget(needs_review_btn)
 
+        export_overrides_btn = QPushButton("Export Overrides")
+        export_overrides_btn.setToolTip("Save all manual LB status overrides to a JSON file.")
+        export_overrides_btn.clicked.connect(self._on_export_overrides)
+        ib_layout.addWidget(export_overrides_btn)
+
+        import_overrides_btn = QPushButton("Import Overrides")
+        import_overrides_btn.setToolTip("Load manual LB status overrides from a JSON file.")
+        import_overrides_btn.clicked.connect(self._on_import_overrides)
+        ib_layout.addWidget(import_overrides_btn)
+
         backup_btn = QPushButton("Backup DB Now")
         backup_btn.setToolTip("Create a manual snapshot of the database.")
         backup_btn.clicked.connect(self._on_backup_db)
@@ -715,3 +725,88 @@ class DbEditTab(QWidget):
             )
         else:
             self.status_label.setText(f"Backup error: {data.get('error', 'unknown')}")
+
+    def _on_export_overrides(self) -> None:
+        """Export all manual lb_master overrides to a user-chosen JSON file."""
+        path, _ = QFileDialog.getSaveFileName(
+            self, "Export Overrides", "lb_overrides.json", "JSON files (*.json)"
+        )
+        if not path:
+            return
+
+        def _run():
+            r = requests.get(
+                f"http://127.0.0.1:{self.flask_port}/api/lb_master/overrides/export",
+                timeout=10,
+            )
+            r.raise_for_status()
+            return r.json()
+
+        w = _Worker(_run)
+
+        def _done(data: list) -> None:
+            import json
+            with open(path, "w", encoding="utf-8") as fh:
+                json.dump(data, fh, indent=2, default=str)
+            QMessageBox.information(
+                self, "Export Complete",
+                f"Exported {len(data)} override(s) to:\n{path}",
+            )
+
+        w.finished.connect(_done)
+        w.error.connect(lambda e: QMessageBox.warning(self, "Export Error", str(e)))
+        self._workers.append(w)
+        w.start()
+
+    def _on_import_overrides(self) -> None:
+        """Import manual lb_master overrides from a user-chosen JSON file."""
+        path, _ = QFileDialog.getOpenFileName(
+            self, "Import Overrides", "", "JSON files (*.json)"
+        )
+        if not path:
+            return
+
+        import json
+        try:
+            with open(path, "r", encoding="utf-8") as fh:
+                payload = json.load(fh)
+        except Exception as exc:
+            QMessageBox.warning(self, "Import Error", f"Could not read file:\n{exc}")
+            return
+
+        if not isinstance(payload, list):
+            QMessageBox.warning(self, "Import Error", "File must contain a JSON array.")
+            return
+
+        reply = QMessageBox.question(
+            self, "Confirm Import",
+            f"Import {len(payload)} override(s) from:\n{path}\n\n"
+            "This will overwrite existing overrides for those LBs.",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+        )
+        if reply != QMessageBox.StandardButton.Yes:
+            return
+
+        def _run():
+            r = requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/lb_master/overrides/import",
+                json=payload,
+                timeout=30,
+            )
+            r.raise_for_status()
+            return r.json()
+
+        w = _Worker(_run)
+
+        def _done(data: dict) -> None:
+            QMessageBox.information(
+                self, "Import Complete",
+                f"Imported {data.get('imported', 0)} override(s).\n"
+                f"Skipped {data.get('skipped', 0)} out-of-range entries.",
+            )
+            self.load_integrity_stats()
+
+        w.finished.connect(_done)
+        w.error.connect(lambda e: QMessageBox.warning(self, "Import Error", str(e)))
+        self._workers.append(w)
+        w.start()
