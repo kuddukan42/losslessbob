@@ -59,7 +59,9 @@ losslessbob/
 │   ├── spectrogram_tab.py    # Generate and view per-file SoX spectrograms
 │   ├── dbedit_tab.py         # DB Editor: browse/edit/delete rows, export CSV
 │   ├── theme_tab.py          # Color theme picker and custom color editor
-│   └── styles.py             # Generates Qt stylesheets from color dict
+│   ├── styles.py             # Generates Qt stylesheets from color dict
+│   └── widgets/
+│       └── state_store.py    # GuiStateStore: column widths + window geometry → data/gui_state.json
 ├── tests/
 │   ├── test_lb_master.py     # lb_master schema, reconcile, override, forum guard, GUI presence
 │   └── test_master_data.py   # MASTER/USER table classification, export/import, SHA + schema-version guards
@@ -70,6 +72,7 @@ losslessbob/
     │   └── LB-{N}/           # Cached .ffp, .txt, .html per entry
     ├── pages/
     │   └── LB-{N}.html       # Cached detail page HTML (used by local-pages scrape mode)
+    ├── gui_state.json        # Persistent GUI state: column widths, window geometry (user data — not in master)
     ├── backups/              # Auto + manual DB backups (VACUUM INTO snapshots, last 10 kept)
     ├── exports/              # Master-data snapshots + .manifest.json sidecars for publishing
     └── torrents/
@@ -823,3 +826,4 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 | 2026-05-16 | Added 7 new preset themes to theme_tab.py: Nord, Gruvbox, Monokai, Tokyo Night, Solarized, Everforest, Catppuccin (14 total). |
 | 2026-05-16 | Added "Forum History" and "Torrent History" inner tabs to My Collection — global all-entry views backed by GET /api/forum_posts and GET /api/torrents; db.get_all_forum_posts() and db.get_all_torrents() added. |
 | 2026-05-16 | Search tab: added "Xref" column (col 5) showing xref numbers per entry; GET /api/checksums/xref_map added. Collection "Xref only" filter now matches folder_name containing "xref" instead of checking the master DB xref list. |
+| 2026-05-17 | CC_LB_INTEGRITY item 11: GuiStateStore in gui/widgets/state_store.py; all tabs migrated from QSettings/hardcoded widths to attach_table / data/gui_state.json; window geometry migrated too. |

@@ -1,7 +1,7 @@
 import threading
 
 import requests
-from PyQt6.QtCore import QSettings, QSize, QPoint, QTimer, pyqtSignal
+from PyQt6.QtCore import QTimer, pyqtSignal
 from PyQt6.QtGui import QAction
 from PyQt6.QtWidgets import (
     QMainWindow, QTabWidget, QStatusBar, QMessageBox,
@@ -9,6 +9,7 @@ from PyQt6.QtWidgets import (
 
 import gui.styles as styles
 from gui.styles import apply_panel_shadow
+from gui.widgets.state_store import GuiStateStore
 from backend.paths import DATA_DIR
 
 APP_NAME = "LosslessBobLookup"
@@ -27,8 +28,7 @@ class MainWindow(QMainWindow):
         self.setMinimumSize(800, 500)
         self.setStyleSheet(styles.MAIN_STYLESHEET)
 
-        _settings_path = str(DATA_DIR / "settings.ini")
-        self._settings = QSettings(_settings_path, QSettings.Format.IniFormat)
+        self.state_store = GuiStateStore(DATA_DIR / "gui_state.json", parent=self)
 
         _slog.t("MainWindow.__init__: _build_menu")
         self._build_menu()
@@ -110,15 +110,15 @@ class MainWindow(QMainWindow):
         _slog.t("_build_tabs: init LookupTab")
         self.lookup_tab = LookupTab(self.flask_port)
         _slog.t("_build_tabs: init RenameTab")
-        self.rename_tab = RenameTab()
+        self.rename_tab = RenameTab(state_store=self.state_store)
         _slog.t("_build_tabs: init VerifyTab")
         self.verify_tab = VerifyTab(self.flask_port)
         _slog.t("_build_tabs: init LbdirTab")
-        self.lbdir_tab = LbdirTab(self.flask_port)
+        self.lbdir_tab = LbdirTab(self.flask_port, state_store=self.state_store)
         _slog.t("_build_tabs: init SearchTab")
-        self.search_tab = SearchTab(self.flask_port)
+        self.search_tab = SearchTab(self.flask_port, state_store=self.state_store)
         _slog.t("_build_tabs: init CollectionTab")
-        self.collection_tab = CollectionTab(self.flask_port)
+        self.collection_tab = CollectionTab(self.flask_port, state_store=self.state_store)
         _slog.t("_build_tabs: init AttachmentsTab")
         self.attachments_tab = AttachmentsTab(self.flask_port)
         _slog.t("_build_tabs: init SetupTab")
@@ -139,7 +139,7 @@ class MainWindow(QMainWindow):
         _slog.t("_build_tabs: import DbEditTab")
         from gui.dbedit_tab import DbEditTab
         _slog.t("_build_tabs: init DbEditTab")
-        self.dbedit_tab = DbEditTab(self.flask_port)
+        self.dbedit_tab = DbEditTab(self.flask_port, state_store=self.state_store)
 
         self.tabs.addTab(self.attachments_tab, "Attachments")
         self.tabs.addTab(self.spectrogram_tab, "Spectrograms")
@@ -180,19 +180,13 @@ class MainWindow(QMainWindow):
         self.status_bar.showMessage("Connecting to database...")
 
     def _restore_geometry(self):
-        size = self._settings.value("window/size", QSize(1100, 750))
-        pos = self._settings.value("window/pos", QPoint(100, 100))
-        if isinstance(size, QSize):
-            self.resize(size)
-        if isinstance(pos, QPoint):
-            self.move(pos)
-
-    def _save_geometry(self):
-        self._settings.setValue("window/size", self.size())
-        self._settings.setValue("window/pos", self.pos())
+        restored = self.state_store.restore_window(self)
+        if not restored:
+            self.resize(1100, 750)
 
     def closeEvent(self, event):
-        self._save_geometry()
+        self.state_store.save_window(self)
+        self.state_store.flush()
         super().closeEvent(event)
 
     def _refresh_status(self):

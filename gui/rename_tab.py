@@ -266,8 +266,9 @@ class RenameModel(QAbstractTableModel):
 class RenameTab(QWidget):
     jump_to_lookup = pyqtSignal(str)
 
-    def __init__(self, parent=None):
+    def __init__(self, parent=None, state_store=None):
         super().__init__(parent)
+        self._state_store = state_store
         self._build_ui()
 
     def _build_ui(self):
@@ -282,11 +283,15 @@ class RenameTab(QWidget):
         self.view.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.view.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self.view.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
-        self.view.setColumnWidth(0, 50)
         self.view.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
         self.view.customContextMenuRequested.connect(self._on_context)
         self.view.clicked.connect(self._on_cell_clicked)
         layout.addWidget(self.view)
+
+        if self._state_store:
+            self._state_store.attach_table(
+                self.view, "rename.folders", defaults=[50, 220, 220, 90, 200]
+            )
 
         # Legend
         legend_row = QHBoxLayout()

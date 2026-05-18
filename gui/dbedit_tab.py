@@ -1,7 +1,7 @@
 import requests
 from pathlib import Path
 
-from PyQt6.QtCore import Qt, QThread, pyqtSignal, QSettings
+from PyQt6.QtCore import Qt, QThread, pyqtSignal
 from PyQt6.QtGui import QColor, QAction
 from PyQt6.QtWidgets import (
     QWidget, QHBoxLayout, QVBoxLayout, QSplitter,
@@ -9,10 +9,6 @@ from PyQt6.QtWidgets import (
     QPushButton, QLabel, QLineEdit, QHeaderView, QAbstractItemView,
     QMessageBox, QFileDialog, QMenu, QComboBox, QApplication, QInputDialog,
 )
-
-from backend.paths import DATA_DIR
-
-_SETTINGS_PATH = str(DATA_DIR / "settings.ini")
 
 _C_DIRTY  = QColor("#fffbe6")
 _C_WARN   = QColor("#fff0f0")
@@ -37,9 +33,10 @@ class _Worker(QThread):
 
 class DbEditTab(QWidget):
 
-    def __init__(self, flask_port, parent=None):
+    def __init__(self, flask_port, parent=None, state_store=None):
         super().__init__(parent)
         self.flask_port            = flask_port
+        self._state_store          = state_store
         self._table_meta: dict     = {}
         self._current_table        = ""
         self._schema: list         = []
@@ -50,10 +47,9 @@ class DbEditTab(QWidget):
         self._dirty: dict          = {}   # (row, col) -> new_value
         self._rowids: list         = []   # rowid per displayed row
         self._workers: list        = []
-        # Per-table column widths: {table_name: [w0, w1, ...]}
+        # Per-table column widths in-session cache: {table_name: [w0, w1, ...]}
         self._col_widths: dict     = {}
         self._resizing_prog: bool  = False
-        self._qsettings            = QSettings(_SETTINGS_PATH, QSettings.Format.IniFormat)
         self._build_ui()
 
     def _build_ui(self):
@@ -256,7 +252,7 @@ class DbEditTab(QWidget):
         self.discard_btn.setEnabled(False)
         self.search_input.clear()
         self.lb_input.clear()
-        # Prime the width cache from QSettings so the first load can restore them
+        # Prime the in-session cache so the first load can restore widths
         if self._current_table not in self._col_widths:
             saved = self._load_saved_widths(self._current_table)
             if saved:
@@ -391,24 +387,21 @@ class DbEditTab(QWidget):
     # ── Column width management ───────────────────────────────────────────────
 
     def _snapshot_and_save(self) -> None:
-        """Capture current column widths and write to QSettings."""
+        """Capture current column widths and persist via state_store."""
         n = self.data_table.columnCount()
         if n == 0:
             return
         widths = [self.data_table.columnWidth(i) for i in range(n)]
         self._col_widths[self._current_table] = widths
-        self._qsettings.setValue(
-            f"DbEditTab/{self._current_table}/col_widths", widths
-        )
+        if self._state_store:
+            self._state_store.set_col_widths(
+                f"dbedit.{self._current_table}", widths
+            )
 
     def _load_saved_widths(self, table: str) -> list | None:
         """Return persisted widths for *table*, or None if not saved yet."""
-        data = self._qsettings.value(f"DbEditTab/{table}/col_widths")
-        if isinstance(data, list):
-            try:
-                return [int(w) for w in data]
-            except (ValueError, TypeError):
-                pass
+        if self._state_store:
+            return self._state_store.get_col_widths(f"dbedit.{table}")
         return None
 
     def _apply_col_widths(self, widths: list) -> None:
@@ -429,7 +422,8 @@ class DbEditTab(QWidget):
         if col < len(widths):
             widths[col] = new_w
         self._col_widths[table] = widths
-        self._qsettings.setValue(f"DbEditTab/{table}/col_widths", widths)
+        if self._state_store:
+            self._state_store.set_col_widths(f"dbedit.{table}", widths)
 
     def _on_header_context(self, pos) -> None:
         hdr = self.data_table.horizontalHeader()

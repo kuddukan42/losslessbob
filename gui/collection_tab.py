@@ -433,17 +433,15 @@ class CollectionTab(QWidget):
     lookup_lb = pyqtSignal(int)
     send_to_spectrograms = pyqtSignal(list)  # list[str] of disk_path values
 
-    def __init__(self, flask_port, parent=None):
+    def __init__(self, flask_port, parent=None, state_store=None):
         super().__init__(parent)
         self.flask_port = flask_port
+        self._state_store = state_store
         self._workers = []
         self._all_collection: list = []
         self._xref_lb_numbers: set = set()
         self._page: int = 0
         self._page_size: int = 50
-        self._coll_col_widths: list | None = None
-        self._miss_col_widths: list | None = None
-        self._wish_col_widths: list | None = None
         self._duplicates_loaded: bool = False
         self._all_forum_history_loaded: bool = False
         self._all_torrent_history_loaded: bool = False
@@ -613,6 +611,12 @@ class CollectionTab(QWidget):
         layout.addWidget(self.coll_view, stretch=1)
         self.coll_view.selectionModel().selectionChanged.connect(self._on_coll_selection_changed)
 
+        if self._state_store:
+            self._state_store.attach_table(
+                self.coll_view, "collection.my_collection",
+                defaults=[80, 80, 100, 200, 300, 200, 80, 150],
+            )
+
         self.coll_status = QLabel("")
         layout.addWidget(self.coll_status)
 
@@ -650,6 +654,12 @@ class CollectionTab(QWidget):
         self.miss_view.doubleClicked.connect(self._on_missing_double_click)
         layout.addWidget(self.miss_view)
 
+        if self._state_store:
+            self._state_store.attach_table(
+                self.miss_view, "collection.missing",
+                defaults=[80, 80, 100, 200, 60, 400],
+            )
+
         self.miss_status = QLabel("")
         layout.addWidget(self.miss_status)
         return w
@@ -677,6 +687,12 @@ class CollectionTab(QWidget):
         self.wish_view.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
         self.wish_view.customContextMenuRequested.connect(self._on_wish_context)
         layout.addWidget(self.wish_view)
+
+        if self._state_store:
+            self._state_store.attach_table(
+                self.wish_view, "collection.wishlist",
+                defaults=[80, 100, 200, 60, 80, 200, 100],
+            )
 
         self.wish_status = QLabel("")
         layout.addWidget(self.wish_status)
@@ -751,15 +767,16 @@ class CollectionTab(QWidget):
         self._forum_hist_table.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self._forum_hist_table.setSelectionMode(QAbstractItemView.SelectionMode.SingleSelection)
         self._forum_hist_table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
-        self._forum_hist_table.setColumnWidth(0, 90)
-        self._forum_hist_table.setColumnWidth(1, 95)
-        self._forum_hist_table.setColumnWidth(2, 200)
-        self._forum_hist_table.setColumnWidth(3, 140)
-        self._forum_hist_table.setColumnWidth(4, 350)
         self._forum_hist_table.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
         self._forum_hist_table.customContextMenuRequested.connect(self._on_all_forum_hist_context)
         self._forum_hist_table.itemSelectionChanged.connect(self._on_all_forum_hist_selection)
         layout.addWidget(self._forum_hist_table, stretch=1)
+
+        if self._state_store:
+            self._state_store.attach_table(
+                self._forum_hist_table, "collection.forum_history",
+                defaults=[90, 95, 200, 140, 350],
+            )
 
         self._all_forum_posts_records: list = []
         return w
@@ -788,32 +805,20 @@ class CollectionTab(QWidget):
         self._torrent_hist_table.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self._torrent_hist_table.setSelectionMode(QAbstractItemView.SelectionMode.SingleSelection)
         self._torrent_hist_table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
-        self._torrent_hist_table.setColumnWidth(0, 90)
-        self._torrent_hist_table.setColumnWidth(1, 95)
-        self._torrent_hist_table.setColumnWidth(2, 200)
-        self._torrent_hist_table.setColumnWidth(3, 140)
-        self._torrent_hist_table.setColumnWidth(4, 280)
-        self._torrent_hist_table.setColumnWidth(5, 95)
         self._torrent_hist_table.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
         self._torrent_hist_table.customContextMenuRequested.connect(self._on_all_torrent_hist_context)
         layout.addWidget(self._torrent_hist_table, stretch=1)
 
+        if self._state_store:
+            self._state_store.attach_table(
+                self._torrent_hist_table, "collection.torrent_history",
+                defaults=[90, 95, 200, 140, 280, 95],
+            )
+
         self._all_torrents_records: list = []
         return w
 
-    # ── Column sizing & word wrap ─────────────────────────────────────────────
-
-    def _apply_coll_col_widths(self) -> None:
-        if not self._coll_col_widths:
-            return
-        for i, w in enumerate(self._coll_col_widths):
-            self.coll_view.setColumnWidth(i, w)
-
-    def _apply_miss_col_widths(self) -> None:
-        if not self._miss_col_widths:
-            return
-        for i, w in enumerate(self._miss_col_widths):
-            self.miss_view.setColumnWidth(i, w)
+    # ── Word wrap ─────────────────────────────────────────────────────────────
 
     def _on_coll_wrap_toggled(self, state: int) -> None:
         enabled = bool(state)
@@ -851,7 +856,6 @@ class CollectionTab(QWidget):
         if isinstance(data, list):
             self._all_collection = data
             self._page = 0
-            self._coll_col_widths = None
             self._populate_year_combo()
             self._render_coll_page()
         else:
@@ -946,14 +950,6 @@ class CollectionTab(QWidget):
         end = start + self._page_size
         self.coll_model.set_rows(filtered[start:end])
 
-        if self._coll_col_widths is None and self.coll_model.rowCount() > 0:
-            self.coll_view.resizeColumnsToContents()
-            self._coll_col_widths = [
-                self.coll_view.columnWidth(i) for i in range(self.coll_model.columnCount())
-            ]
-        else:
-            self._apply_coll_col_widths()
-
         pages = self._total_coll_pages()
         total = len(self._all_collection)
         shown = len(filtered)
@@ -992,13 +988,7 @@ class CollectionTab(QWidget):
 
     def _on_missing_loaded(self, data):
         if isinstance(data, list):
-            self._miss_col_widths = None
             self.miss_model.set_rows(data)
-            if data:
-                self.miss_view.resizeColumnsToContents()
-                self._miss_col_widths = [
-                    self.miss_view.columnWidth(i) for i in range(self.miss_model.columnCount())
-                ]
             self.miss_status.setText(f"{len(data)} missing from collection.")
         else:
             self.miss_status.setText(f"Error: {data.get('error', 'unknown')}")
@@ -1017,13 +1007,7 @@ class CollectionTab(QWidget):
 
     def _on_wishlist_loaded(self, data):
         if isinstance(data, list):
-            self._wish_col_widths = None
             self.wish_model.set_rows(data)
-            if data:
-                self.wish_view.resizeColumnsToContents()
-                self._wish_col_widths = [
-                    self.wish_view.columnWidth(i) for i in range(self.wish_model.columnCount())
-                ]
             self.wish_status.setText(f"{len(data)} item(s) on wishlist.")
         else:
             self.wish_status.setText(f"Error: {data.get('error', 'unknown')}")
@@ -1953,12 +1937,14 @@ class CollectionTab(QWidget):
         self.torrent_history_table.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
         self.torrent_history_table.customContextMenuRequested.connect(self._on_history_context)
         self.torrent_history_table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
-        self.torrent_history_table.setColumnWidth(0, 22)
-        self.torrent_history_table.setColumnWidth(1, 138)
-        self.torrent_history_table.setColumnWidth(2, 210)
-        self.torrent_history_table.setColumnWidth(3, 210)
         self.torrent_history_table.setMaximumHeight(130)
         torrent_layout.addWidget(self.torrent_history_table)
+
+        if self._state_store:
+            self._state_store.attach_table(
+                self.torrent_history_table, "collection.entry_torrents",
+                defaults=[22, 138, 210, 210, 90],
+            )
 
         hist_btn_row = QHBoxLayout()
         self.history_add_qbt_btn = QPushButton("Add to qBittorrent")
@@ -2001,11 +1987,14 @@ class CollectionTab(QWidget):
         self.forum_posts_table.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.forum_posts_table.setSelectionMode(QAbstractItemView.SelectionMode.SingleSelection)
         self.forum_posts_table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
-        self.forum_posts_table.setColumnWidth(0, 145)
-        self.forum_posts_table.setColumnWidth(1, 280)
-        self.forum_posts_table.setColumnWidth(2, 300)
         self.forum_posts_table.setMaximumHeight(130)
         forum_layout.addWidget(self.forum_posts_table)
+
+        if self._state_store:
+            self._state_store.attach_table(
+                self.forum_posts_table, "collection.entry_forum_posts",
+                defaults=[145, 280, 300],
+            )
 
         fp_btn_row = QHBoxLayout()
         self.forum_open_btn = QPushButton("Open in Browser")

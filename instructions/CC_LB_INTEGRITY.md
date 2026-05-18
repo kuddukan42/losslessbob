@@ -31,7 +31,7 @@ Legend: ✅ shipped · 🟡 partial · ⬜ not started
 | 8 | **Persistent folder-to-LB linking (`lb_alias` + `folder_lb_link`)** | ⬜ | Both tables and the Rename tab "Link…" dropdown still need to be built. (TODO-019) |
 | 9 | **Flat-file update check rework** | ⬜ | Existing `scraper.check_for_update()` still does the broken bynumber-page scrape. `flat_file_releases`/`flat_file_changelog` tables not created. |
 | 10 | **Click-to-sort across all tables** | ⬜ | Existing DB Editor backend has `sort_col`/`sort_dir` already, but no GUI wiring; no `SortableTableItem`/`sort_key_for` helper module. |
-| 11 | **Reliable column width persistence** | 🟡 | Search tab fixed 2026-05-16 (BUG-058). Collection, Lbdir, Rename still hardcode widths in populate calls. No shared `GuiStateStore` / JSON file. |
+| 11 | **Reliable column width persistence** | ✅ | `GuiStateStore` in `gui/widgets/state_store.py`. All tabs (Search, Collection×7, DbEdit, Lbdir, Rename) use `attach_table`. Window geometry also migrated. QSettings migration on first run. 2026-05-17. |
 | 12 | **Bootleg-CD catalog (LBBCD)** | ⬜ | No scraper, no tables, no Bootlegs tab. |
 | 13 | **Standardize folder name button** | ✅ | Shipped 2026-05-17. `build_standard_name()` in `backend/folder_naming.py`. `GET /api/folder_naming/standard/<lb>`. "Standardize Selected" button + right-click "Standardize Name" action in Rename tab. `RenameModel.update_state()`. Also fixed BUG-064 (`_on_strip_wrong_lb` now transitions state to `needs_rename`). |
 | Map | **Map view of LB locations** | ⬜ | Plan extracted to [CC_MAP_FEATURE.md](CC_MAP_FEATURE.md). No `location_geocoded` table, no `gui/map_tab.py`. Deferred — lowest priority. |

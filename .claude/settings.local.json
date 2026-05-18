@@ -134,7 +134,12 @@
       "Bash(python3 -m py_compile /home/tjenkins/Documents/losslessbob/backend/app.py)",
       "Bash(python3 -m py_compile /home/tjenkins/Documents/losslessbob/backend/folder_naming.py)",
       "Bash(python3 -m py_compile /home/tjenkins/Documents/losslessbob/gui/setup_tab.py)",
-      "Bash(mkdir -p /home/tjenkins/Documents/losslessbob/.claude/commands)"
+      "Bash(mkdir -p /home/tjenkins/Documents/losslessbob/.claude/commands)",
+      "Bash(python -m py_compile gui/widgets/state_store.py gui/main_window.py gui/search_tab.py gui/dbedit_tab.py gui/collection_tab.py gui/lbdir_tab.py gui/rename_tab.py)",
+      "Bash(QT_QPA_PLATFORM=offscreen python /tmp/test_trace.py)",
+      "Bash(QT_QPA_PLATFORM=offscreen python /tmp/test_colwidths.py)",
+      "Bash(QT_QPA_PLATFORM=offscreen python /tmp/test_trace2.py)",
+      "Bash(python -m py_compile /home/tjenkins/Documents/losslessbob/gui/widgets/state_store.py)"
     ],
     "additionalDirectories": [
       "/home/tjenkins/.ssh",

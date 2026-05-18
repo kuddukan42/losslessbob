@@ -366,9 +366,10 @@ class DropFolderListWidget(QListWidget):
 
 
 class LbdirTab(QWidget):
-    def __init__(self, flask_port, parent=None):
+    def __init__(self, flask_port, parent=None, state_store=None):
         super().__init__(parent)
         self.flask_port = flask_port
+        self._state_store = state_store
         self._folders: list[str] = []
         self._check_results: list[dict] = []
         self._current_detail_files: list[dict] = []
@@ -492,6 +493,12 @@ class LbdirTab(QWidget):
         self.summary_table.itemSelectionChanged.connect(self._on_summary_row_clicked)
         self.summary_table.doubleClicked.connect(self._on_summary_double_click)
         sc_layout.addWidget(self.summary_table)
+
+        if self._state_store:
+            self._state_store.attach_table(
+                self.summary_table, "lbdir.summary",
+                defaults=[160, 60, 220, 60, 60, 60, 60, 60, 90],
+            )
         v_splitter.addWidget(self.summary_container)
 
         # ── Bottom: horizontal splitter (detail + info) ──────────────────────
@@ -936,8 +943,6 @@ class LbdirTab(QWidget):
                 if col >= 4:
                     item.setTextAlignment(Qt.AlignmentFlag.AlignCenter)
                 self.summary_table.setItem(row, col, item)
-
-        self.summary_table.resizeColumnsToContents()
 
     def _on_summary_row_clicked(self):
         row = self.summary_table.currentRow()

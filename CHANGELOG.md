@@ -1,3 +1,34 @@
+[2026-05-17] — fix(gui): Column widths now actually persist across restarts (GuiStateStore root-cause fix)
+
+Fixed
+
+gui/widgets/state_store.py: Two root causes identified and fixed via headless regression test.
+  Bug A — Qt fires sectionResized for all columns during initial layout, AFTER _on_resized is
+  connected but BEFORE _restore sets _restoring. _on_resized saved the auto-calculated garbage
+  widths; _restore then read them back. Fix: set _restoring.add(tid) at the very start of
+  attach_table, before any signal or timer is wired.
+  Bug B — _migrate_from_qsettings was copying column widths from old QSettings into the new JSON.
+  Those QSettings were written by the same buggy _on_resized, so they contained auto-layout garbage
+  (e.g. 5340px for "Description"). Fix: skip column-width migration entirely; only geometry is
+  safe to migrate. Added 10 <= w <= 3000 sanity guard in get_col_widths as a second line of
+  defence against any future garbage reaching the store.
+Also cleared garbage from system QSettings (LosslessBob/SearchTab col_widths).
+
+[2026-05-17] — feat(gui): Reliable column width persistence via GuiStateStore (CC_LB_INTEGRITY item 11)
+
+Added
+
+gui/widgets/state_store.py: `GuiStateStore` — single source of truth for persistent GUI widget state. Stores column widths, window geometry in `data/gui_state.json`. Atomic writes (tempfile + os.replace), 500 ms debounced saves, `_restoring` guard to suppress spurious saves during programmatic restore. One-time QSettings migration on first run.
+
+Changed
+
+gui/main_window.py: Removed `QSettings` window geometry; replaced with `state_store.restore_window` / `save_window`. `closeEvent` calls `state_store.flush()` before close. `GuiStateStore` instance created at startup and passed to all tabs with tables.
+gui/search_tab.py: Removed `_qsettings`, `_col_widths`, `_widths_applied`, `_resizing_programmatically`, `_load_col_widths`, `_save_col_widths`, `_on_col_resized`, `_set_default_col_widths`, `_apply_col_widths`. Now calls `state_store.attach_table(view, "search.results")`. `_render_page` no longer snapshots/restores widths around model resets.
+gui/dbedit_tab.py: Removed `QSettings` and `_SETTINGS_PATH`. `_snapshot_and_save` / `_load_saved_widths` / `_on_col_resized` now use `state_store.get_col_widths` / `set_col_widths` with key `dbedit.<table_name>`.
+gui/collection_tab.py: Removed `_coll_col_widths`, `_miss_col_widths`, `_wish_col_widths` in-memory tracking and `_apply_coll_col_widths` / `_apply_miss_col_widths`. All 7 tables (my_collection, missing, wishlist, forum_history, torrent_history, entry_torrents, entry_forum_posts) now use `state_store.attach_table`.
+gui/lbdir_tab.py: `summary_table` now uses `state_store.attach_table`; removed `resizeColumnsToContents()` call from `_populate_summary` that clobbered user widths on each check run.
+gui/rename_tab.py: Removed hardcoded `setColumnWidth(0, 50)` in `_build_ui`; replaced with `state_store.attach_table`.
+
 [2026-05-17] — feat(gui): Standardize folder name button in Rename tab (CC_LB_INTEGRITY item 13)
 
 Added

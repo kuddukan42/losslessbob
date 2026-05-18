@@ -2,7 +2,7 @@ import math
 import webbrowser
 
 import requests
-from PyQt6.QtCore import Qt, QAbstractTableModel, QModelIndex, pyqtSignal, QThread, QSettings
+from PyQt6.QtCore import Qt, QAbstractTableModel, QModelIndex, pyqtSignal, QThread
 import gui.styles as styles
 from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLineEdit, QComboBox,
@@ -14,10 +14,7 @@ _STATUS_COL = 1        # index of the lb_master Status column
 _DESC_COL = 5          # index of the Description column
 _XREF_COL = 6          # index of the Xref column
 _OWNED_COL = 7         # index of the Owned column
-_DESC_DEFAULT_W = 600  # default width for Description in pixels
-_QSETTINGS_ORG = "LosslessBob"
-_QSETTINGS_APP = "SearchTab"
-_QSETTINGS_COL_KEY = "col_widths"
+_SEARCH_COL_DEFAULTS = [80, 80, 100, 200, 60, 600, 60, 60]
 
 HEADERS = ["LB Number", "Status", "Date", "Location", "Rating", "Description", "Xref", "Owned"]
 
@@ -194,9 +191,10 @@ class _XrefWorker(QThread):
 class SearchTab(QWidget):
     lookup_lb = pyqtSignal(int)
 
-    def __init__(self, flask_port, parent=None):
+    def __init__(self, flask_port, parent=None, state_store=None):
         super().__init__(parent)
         self.flask_port = flask_port
+        self._state_store = state_store
         self._worker = None
         self._years_worker = None
         self._owned_worker = None
@@ -207,10 +205,6 @@ class SearchTab(QWidget):
         self._lb_master_stats: dict = {}  # cached stats for status filter
         self._page: int = 0
         self._page_size: int = 50
-        self._resizing_programmatically: bool = False
-        self._widths_applied: bool = False
-        self._qsettings = QSettings(_QSETTINGS_ORG, _QSETTINGS_APP)
-        self._col_widths: list | None = self._load_col_widths()
         self._load_page_size()
         self._build_ui()
         self.load_years()
@@ -310,54 +304,17 @@ class SearchTab(QWidget):
         hdr.setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
         hdr.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
         hdr.customContextMenuRequested.connect(self._on_header_context)
-        hdr.sectionResized.connect(self._on_col_resized)
         self.view.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
         self.view.customContextMenuRequested.connect(self._on_row_context)
         self.view.doubleClicked.connect(self._on_double_click)
         layout.addWidget(self.view)
 
+        if self._state_store:
+            self._state_store.attach_table(
+                self.view, "search.results", defaults=_SEARCH_COL_DEFAULTS
+            )
+
     # ── Column sizing ─────────────────────────────────────────────────────────
-
-    def _load_col_widths(self) -> list | None:
-        data = self._qsettings.value(_QSETTINGS_COL_KEY)
-        if isinstance(data, list) and len(data) == len(HEADERS):
-            try:
-                return [int(w) for w in data]
-            except (ValueError, TypeError):
-                pass
-        return None
-
-    def _save_col_widths(self) -> None:
-        if self._col_widths and len(self._col_widths) == len(HEADERS):
-            self._qsettings.setValue(_QSETTINGS_COL_KEY, self._col_widths)
-
-    def _on_col_resized(self, col: int, _old_w: int, new_w: int) -> None:
-        if self._resizing_programmatically:
-            return
-        if self._col_widths is None:
-            self._col_widths = [self.view.columnWidth(i) for i in range(len(HEADERS))]
-        if col < len(self._col_widths):
-            self._col_widths[col] = new_w
-        self._save_col_widths()
-
-    def _set_default_col_widths(self) -> None:
-        """Size all columns by content except Description, which gets a fixed default."""
-        self._resizing_programmatically = True
-        self.view.resizeColumnsToContents()
-        self.view.setColumnWidth(_DESC_COL, _DESC_DEFAULT_W)
-        self._resizing_programmatically = False
-        self._col_widths = [self.view.columnWidth(i) for i in range(len(HEADERS))]
-        self._widths_applied = True
-        self._save_col_widths()
-
-    def _apply_col_widths(self) -> None:
-        if not self._col_widths:
-            return
-        self._resizing_programmatically = True
-        for i, w in enumerate(self._col_widths):
-            self.view.setColumnWidth(i, w)
-        self._resizing_programmatically = False
-        self._widths_applied = True
 
     def _on_header_context(self, pos) -> None:
         col = self.view.horizontalHeader().logicalIndexAt(pos)
@@ -375,9 +332,6 @@ class SearchTab(QWidget):
         )
         if ok:
             self.view.setColumnWidth(col, width)
-            if self._col_widths and col < len(self._col_widths):
-                self._col_widths[col] = width
-            self._save_col_widths()
 
     def _on_wrap_toggled(self, state: int) -> None:
         enabled = bool(state)
@@ -443,20 +397,7 @@ class SearchTab(QWidget):
         start = self._page * self._page_size
         end = start + self._page_size
 
-        # Snapshot current (possibly user-dragged) widths before model reset
-        # clears the QHeaderView sections.  Only snapshot after widths have been
-        # applied at least once — otherwise we'd overwrite loaded settings with
-        # Qt's 100px defaults before they were ever applied to the view.
-        if self._col_widths is not None and self._widths_applied:
-            self._col_widths = [self.view.columnWidth(i) for i in range(len(HEADERS))]
-
         self.model.set_rows(results[start:end])
-
-        if self._col_widths is None:
-            if self.model.rowCount() > 0:
-                self._set_default_col_widths()
-        else:
-            self._apply_col_widths()
 
         pages = self._total_pages()
         if pages > 1:
