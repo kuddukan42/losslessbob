@@ -133,11 +133,13 @@
       "Bash(python3 -m py_compile /home/tjenkins/Documents/losslessbob/backend/db.py)",
       "Bash(python3 -m py_compile /home/tjenkins/Documents/losslessbob/backend/app.py)",
       "Bash(python3 -m py_compile /home/tjenkins/Documents/losslessbob/backend/folder_naming.py)",
-      "Bash(python3 -m py_compile /home/tjenkins/Documents/losslessbob/gui/setup_tab.py)"
+      "Bash(python3 -m py_compile /home/tjenkins/Documents/losslessbob/gui/setup_tab.py)",
+      "Bash(mkdir -p /home/tjenkins/Documents/losslessbob/.claude/commands)"
     ],
     "additionalDirectories": [
       "/home/tjenkins/.ssh",
-      "/tmp"
+      "/tmp",
+      "/home/tjenkins/Documents/losslessbob/.claude"
     ]
   }
 }
