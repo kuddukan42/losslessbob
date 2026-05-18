@@ -1,3 +1,17 @@
+[2026-05-18] — feat(gui/backend): Override export/import JSON endpoints and DB Editor buttons
+
+Added
+
+backend/db.py: export_overrides() returns all lb_master rows with manual_override=1 as a list of
+  dicts for JSON serialisation. import_overrides() upserts a list of override dicts, skipping
+  lb_numbers outside the current max range, and writes an lb_status_history row with
+  trigger_event='import' for each upserted row.
+backend/app.py: GET /api/lb_master/overrides/export (read-only, no curator check) and POST
+  /api/lb_master/overrides/import (curator-only, returns {imported, skipped}).
+gui/dbedit_tab.py: "Export Overrides" and "Import Overrides" buttons added to the DB Integrity
+  panel, with QFileDialog for file selection and QMessageBox result summaries. Import calls
+  load_integrity_stats() to refresh the panel after completing.
+
 [2026-05-17] — fix(gui): Column widths now actually persist across restarts (GuiStateStore root-cause fix)
 
 Fixed

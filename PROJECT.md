@@ -231,6 +231,20 @@ Persists settings between runs. Key examples:
 | POST | `/api/master/export` | **Curator-only** (returns 403 `curator_required` otherwise). Builds a master-only snapshot in `data/exports/`: VACUUM INTO → drops every `USER_TABLES` table → filters `meta` to `MASTER_META_KEYS` → stamps `master_version` / `master_published_at` / `master_schema_version` → verifies (no user data leaked) → SHA256 → writes `.manifest.json` sidecar. Returns `{ok, path, manifest_path, manifest}`. |
 | POST | `/api/master/import` | Body `{path}`. Validates manifest SHA256, refuses schema versions newer than this client (400 `schema_too_new`), takes a `pre_master_import` backup, ATTACHes the snapshot, copies only `MASTER_TABLES` rows, replaces only `MASTER_META_KEYS` rows in `meta`, rebuilds `entries_fts`. Returns the import summary (row counts, pre/post status distribution, backup path). Errors: 400 `sha256_mismatch`, 404 `not_found`. |
 
+### LB Master Integrity
+| Method | Route | Description |
+|--------|-------|-------------|
+| GET | `/api/lb_master/stats` | Return `{public, private, missing, max_lb, overrides, needs_review}` counts. |
+| GET | `/api/lb_master` | Paginated lb_master rows. Query params: `status`, `override=1`, `review=1`, `limit` (max 2000), `offset`. |
+| GET | `/api/lb_master/<lb>` | Single lb_master row joined with entry metadata. |
+| POST | `/api/lb_master/reconcile` | Full rebuild of lb_master. Backs up DB first. Returns `{ok, stats}`. |
+| GET | `/api/lb_master/history/<lb>` | Transition history for an LB, newest first. Query param: `limit` (default 50). |
+| PUT | `/api/lb_master/<lb>/manual` | Set a manual override. Body: `{status, notes}`. |
+| DELETE | `/api/lb_master/<lb>/manual` | Clear a manual override and immediately reconcile. Returns `{ok, new_status}`. |
+| GET | `/api/lb_master/<lb>/nft` | Return `{nft: bool, reason}` for folder naming guidance. |
+| GET | `/api/lb_master/overrides/export` | Export all `manual_override=1` rows as a JSON array. Read-only; no curator check required. Returns `[{lb_number, manual_status, manual_notes, manual_set_by, manual_set_at}, ...]`. |
+| POST | `/api/lb_master/overrides/import` | **Curator-only.** Body: same JSON array. Upserts each row via `set_lb_manual_override`, writes `lb_status_history` with `trigger_event='import'`, skips lb_numbers outside current max. Returns `{imported, skipped}`. |
+
 ### Folder Naming
 | Method | Route | Description |
 |--------|-------|-------------|
@@ -664,6 +678,22 @@ Populated automatically after each lookup. Shows folders from the input file lis
 
 ---
 
+## GUI: DB Editor Tab (`gui/dbedit_tab.py`)
+
+**Left panel:** Table list (all DB tables with row count and edit flags). Refresh button.
+
+**DB Integrity sub-panel (left panel, below table list):**
+- Live stats label: Public / Private / Missing / Max LB / Overrides / Needs review counts (from `GET /api/lb_master/stats`).
+- **Reconcile All** — recomputes lb_master status for every LB. Backs up DB first (`POST /api/lb_master/reconcile`).
+- **Show Needs Review** — filters the lb_master table to rows with `needs_review=1`.
+- **Export Overrides** — opens a save-file dialog, calls `GET /api/lb_master/overrides/export`, writes the JSON file, and shows a summary message with the count exported.
+- **Import Overrides** — opens an open-file dialog for a `.json` file, confirms with the user, calls `POST /api/lb_master/overrides/import`, and shows `{imported, skipped}` summary. Refreshes the stats label afterwards. Requires curator mode (backend enforces 403 otherwise).
+- **Backup DB Now** — manual snapshot (`POST /api/db/backup`).
+
+**Right panel:** Editable data table for the selected DB table. Supports: Load Records, per-LB filter, column search, pagination (Prev/Next), sort, inline cell edit, Save Changes, Delete Selected, Export CSV.
+
+---
+
 ## GUI: Theme Tab (`gui/theme_tab.py`)
 
 Fourteen preset themes (Light, Dark, Black, Dracula, Blue, Purple, Red, Nord, Gruvbox, Monokai, Tokyo Night, Solarized, Everforest, Catppuccin) plus custom color picker. Color changes apply immediately via `styles.py` which generates Qt QSS from a color dictionary. Theme name and per-color overrides persist in `QSettings`.
@@ -827,3 +857,4 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 | 2026-05-16 | Added "Forum History" and "Torrent History" inner tabs to My Collection — global all-entry views backed by GET /api/forum_posts and GET /api/torrents; db.get_all_forum_posts() and db.get_all_torrents() added. |
 | 2026-05-16 | Search tab: added "Xref" column (col 5) showing xref numbers per entry; GET /api/checksums/xref_map added. Collection "Xref only" filter now matches folder_name containing "xref" instead of checking the master DB xref list. |
 | 2026-05-17 | CC_LB_INTEGRITY item 11: GuiStateStore in gui/widgets/state_store.py; all tabs migrated from QSettings/hardcoded widths to attach_table / data/gui_state.json; window geometry migrated too. |
+| 2026-05-18 | Override export/import JSON: export_overrides() + import_overrides() in db.py; GET /api/lb_master/overrides/export + POST /api/lb_master/overrides/import in app.py; "Export Overrides" + "Import Overrides" buttons in DB Integrity panel (dbedit_tab.py). |

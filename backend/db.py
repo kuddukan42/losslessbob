@@ -1,3 +1,4 @@
+import logging
 import re
 import sqlite3
 import threading
@@ -1425,6 +1426,73 @@ def clear_lb_manual_override(lb_number: int, db_path=None) -> str:
     )
     conn.commit()
     return reconcile_lb_status(lb_number, trigger="manual_clear", db_path=db_path)
+
+
+def export_overrides(db_path=None) -> list[dict]:
+    """Return all manual overrides as a list of dicts for JSON export.
+
+    Args:
+        db_path: Optional path to the SQLite database file.
+
+    Returns:
+        List of dicts with keys: lb_number, manual_status, manual_notes,
+        manual_set_by, manual_set_at — one per lb_master row where
+        manual_override=1, ordered by lb_number ascending.
+    """
+    conn = get_connection(db_path)
+    rows = conn.execute(
+        """SELECT lb_number, manual_status, manual_notes, manual_set_by, manual_set_at
+           FROM lb_master WHERE manual_override=1 ORDER BY lb_number"""
+    ).fetchall()
+    return [dict(r) for r in rows]
+
+
+def import_overrides(overrides: list[dict], db_path=None) -> dict:
+    """Upsert a list of override dicts into lb_master.
+
+    Skips entries whose lb_number is out of the valid range (< 1 or greater
+    than the current MAX(lb_number) in lb_master).  Writes an
+    lb_status_history row with trigger_event='import' for each upserted row.
+
+    Args:
+        overrides: List of dicts, each containing at minimum ``lb_number``.
+            Optional keys: ``manual_status``, ``manual_notes``,
+            ``manual_set_by``.
+        db_path: Optional path to the SQLite database file.
+
+    Returns:
+        Dict ``{imported: int, skipped: int}``.
+    """
+    conn = get_connection(db_path)
+    max_lb = conn.execute("SELECT MAX(lb_number) FROM lb_master").fetchone()[0] or 0
+    imported = 0
+    skipped = 0
+    for item in overrides:
+        lb = item.get("lb_number")
+        if not isinstance(lb, int) or lb < 1 or lb > max_lb:
+            skipped += 1
+            continue
+        set_lb_manual_override(
+            lb,
+            item.get("manual_status", ""),
+            item.get("manual_notes", ""),
+            item.get("manual_set_by", "import"),
+            db_path,
+        )
+        # The history row for the manual call is already written by
+        # set_lb_manual_override; add a second row to record the import event.
+        conn.execute(
+            """INSERT INTO lb_status_history (lb_number, old_status, new_status, trigger_event)
+               SELECT lb_number, previous_status, lb_status, 'import'
+               FROM lb_master WHERE lb_number=?""",
+            (lb,),
+        )
+        imported += 1
+    conn.commit()
+    logging.getLogger(__name__).info(
+        "import_overrides: %d imported, %d skipped", imported, skipped
+    )
+    return {"imported": imported, "skipped": skipped}
 
 
 def get_lb_master_row(lb_number: int, db_path=None) -> dict | None:
