@@ -203,3 +203,12 @@ Status: Done
 Added: 2026-05-17
 Closed: 2026-05-17
 Description: Per CC_LB_INTEGRITY.md §Reliable Column Width Persistence: implement GuiStateStore in gui/widgets/state_store.py storing state in data/gui_state.json (atomic writes, 500ms debounce, _restoring guard). Migrate all tabs off QSettings / hardcoded setColumnWidth. One-time QSettings migration on first run. Covers Search, Collection (7 tables), DbEdit, lbdir summary, Rename. ThemeTab QSettings and main_window geometry also migrated to GuiStateStore.
+
+---
+
+TODO-024: Click-to-sort across all tables
+Priority: Medium
+Status: Done
+Added: 2026-05-18
+Closed: 2026-05-18
+Description: CC_LB_INTEGRITY item 10. SortableTableItem and sort_key_for() in gui/widgets/sort_keys.py. Client-side sort via SortableTableItem for lbdir and verify QTableWidget tables (summary + detail). In-memory sort via sectionClicked for Search, Collection, and Missing QTableView tables. Server-side sort for DB Editor (sectionClicked wired, sort_col/sort_dir appended to /api/dbedit/table/rows fetch). Backend /api/search, /api/collection, /api/collection/missing updated to accept sort_col/sort_dir. GuiStateStore.get_sort()/set_sort() added for future sort state persistence.

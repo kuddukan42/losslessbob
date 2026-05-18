@@ -442,6 +442,12 @@ class CollectionTab(QWidget):
         self._xref_lb_numbers: set = set()
         self._page: int = 0
         self._page_size: int = 50
+        # Sort state for My Collection table
+        self._coll_sort_col: int = 0
+        self._coll_sort_dir: str = "asc"
+        # Sort state for Missing table
+        self._miss_sort_col: int = 0
+        self._miss_sort_dir: str = "asc"
         self._duplicates_loaded: bool = False
         self._all_forum_history_loaded: bool = False
         self._all_torrent_history_loaded: bool = False
@@ -605,7 +611,11 @@ class CollectionTab(QWidget):
         self.coll_view.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.coll_view.setSelectionMode(QAbstractItemView.SelectionMode.ExtendedSelection)
         self.coll_view.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
-        self.coll_view.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
+        _coll_hdr = self.coll_view.horizontalHeader()
+        _coll_hdr.setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
+        _coll_hdr.setSectionsClickable(True)
+        _coll_hdr.setSortIndicatorShown(True)
+        _coll_hdr.sectionClicked.connect(self._on_coll_sort_clicked)
         self.coll_view.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
         self.coll_view.customContextMenuRequested.connect(self._on_coll_context)
         layout.addWidget(self.coll_view, stretch=1)
@@ -650,7 +660,11 @@ class CollectionTab(QWidget):
         self.miss_view.setModel(self.miss_model)
         self.miss_view.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.miss_view.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
-        self.miss_view.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
+        _miss_hdr = self.miss_view.horizontalHeader()
+        _miss_hdr.setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
+        _miss_hdr.setSectionsClickable(True)
+        _miss_hdr.setSortIndicatorShown(True)
+        _miss_hdr.sectionClicked.connect(self._on_miss_sort_clicked)
         self.miss_view.doubleClicked.connect(self._on_missing_double_click)
         layout.addWidget(self.miss_view)
 
@@ -818,6 +832,70 @@ class CollectionTab(QWidget):
         self._all_torrents_records: list = []
         return w
 
+    # ── Header sort ───────────────────────────────────────────────────────────
+
+    # COLL_HEADERS = ["LB Number", "Status", "Date", "Location",
+    #                 "Folder Name", "Disk Path", "Confirmed", "Notes"]
+    _COLL_SORT_KEY_FNS = {
+        0: lambda r: r.get("lb_number") or 0,
+        1: lambda r: {"public": 0, "private": 1, "missing": 2}.get(
+               (r.get("lb_status") or ""), 99),
+        2: lambda r: (r.get("date_str") or "").lower(),
+        3: lambda r: (r.get("location") or "").lower(),
+        4: lambda r: (r.get("folder_name") or "").lower(),
+        5: lambda r: (r.get("disk_path") or "").lower(),
+        6: lambda r: (r.get("confirmed_at") or "").lower(),
+        7: lambda r: (r.get("notes") or "").lower(),
+    }
+
+    # MISS_HEADERS = ["LB Number", "Status", "Date", "Location",
+    #                 "Rating", "Description"]
+    _MISS_SORT_KEY_FNS = {
+        0: lambda r: r.get("lb_number") or 0,
+        1: lambda r: {"public": 0, "private": 1, "missing": 2}.get(
+               (r.get("lb_status") or ""), 99),
+        2: lambda r: (r.get("date_str") or "").lower(),
+        3: lambda r: (r.get("location") or "").lower(),
+        4: lambda r: (r.get("rating") or "").lower(),
+        5: lambda r: (r.get("description") or "").lower(),
+    }
+
+    def _on_coll_sort_clicked(self, logical_index: int) -> None:
+        """Toggle sort direction for My Collection table, then re-render page 1."""
+        if logical_index == self._coll_sort_col:
+            self._coll_sort_dir = "desc" if self._coll_sort_dir == "asc" else "asc"
+        else:
+            self._coll_sort_col = logical_index
+            self._coll_sort_dir = "asc"
+        order = (Qt.SortOrder.AscendingOrder if self._coll_sort_dir == "asc"
+                 else Qt.SortOrder.DescendingOrder)
+        self.coll_view.horizontalHeader().setSortIndicator(logical_index, order)
+        self._page = 0
+        self._render_coll_page()
+
+    def _on_miss_sort_clicked(self, logical_index: int) -> None:
+        """Toggle sort direction for Missing table, then re-render."""
+        if logical_index == self._miss_sort_col:
+            self._miss_sort_dir = "desc" if self._miss_sort_dir == "asc" else "asc"
+        else:
+            self._miss_sort_col = logical_index
+            self._miss_sort_dir = "asc"
+        order = (Qt.SortOrder.AscendingOrder if self._miss_sort_dir == "asc"
+                 else Qt.SortOrder.DescendingOrder)
+        self.miss_view.horizontalHeader().setSortIndicator(logical_index, order)
+        self._re_render_missing()
+
+    def _re_render_missing(self) -> None:
+        """Re-sort and re-display the cached missing rows."""
+        rows = self.miss_model.all_rows()
+        key_fn = self._MISS_SORT_KEY_FNS.get(self._miss_sort_col)
+        if key_fn and rows:
+            try:
+                rows = sorted(rows, key=key_fn, reverse=(self._miss_sort_dir == "desc"))
+            except Exception:
+                pass
+        self.miss_model.set_rows(rows)
+
     # ── Word wrap ─────────────────────────────────────────────────────────────
 
     def _on_coll_wrap_toggled(self, state: int) -> None:
@@ -946,6 +1024,13 @@ class CollectionTab(QWidget):
 
     def _render_coll_page(self) -> None:
         filtered = self._filtered_collection()
+        key_fn = self._COLL_SORT_KEY_FNS.get(self._coll_sort_col)
+        if key_fn and filtered:
+            try:
+                filtered = sorted(filtered, key=key_fn,
+                                  reverse=(self._coll_sort_dir == "desc"))
+            except Exception:
+                pass
         start = self._page * self._page_size
         end = start + self._page_size
         self.coll_model.set_rows(filtered[start:end])
@@ -988,7 +1073,15 @@ class CollectionTab(QWidget):
 
     def _on_missing_loaded(self, data):
         if isinstance(data, list):
-            self.miss_model.set_rows(data)
+            rows = data
+            key_fn = self._MISS_SORT_KEY_FNS.get(self._miss_sort_col)
+            if key_fn and rows:
+                try:
+                    rows = sorted(rows, key=key_fn,
+                                  reverse=(self._miss_sort_dir == "desc"))
+                except Exception:
+                    pass
+            self.miss_model.set_rows(rows)
             self.miss_status.setText(f"{len(data)} missing from collection.")
         else:
             self.miss_status.setText(f"Error: {data.get('error', 'unknown')}")

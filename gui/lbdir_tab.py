@@ -12,6 +12,8 @@ from PyQt6.QtWidgets import (
     QSplitter, QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget,
 )
 
+from gui.widgets.sort_keys import SortableTableItem, sort_key_for
+
 AUDIO_EXTS = {'.flac', '.shn', '.ape', '.wav'}
 LB_DETAIL_URL = "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-{lb:05d}.html"
 
@@ -487,7 +489,10 @@ class LbdirTab(QWidget):
         self.summary_table.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.summary_table.setSelectionMode(QAbstractItemView.SelectionMode.SingleSelection)
         self.summary_table.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
-        self.summary_table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
+        _sum_hdr = self.summary_table.horizontalHeader()
+        _sum_hdr.setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
+        _sum_hdr.setSectionsClickable(True)
+        _sum_hdr.setSortIndicatorShown(True)
         self.summary_table.verticalHeader().setVisible(False)
         self.summary_table.setMinimumHeight(120)
         self.summary_table.itemSelectionChanged.connect(self._on_summary_row_clicked)
@@ -527,7 +532,10 @@ class LbdirTab(QWidget):
         self.detail_table.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.detail_table.setSelectionMode(QAbstractItemView.SelectionMode.SingleSelection)
         self.detail_table.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
-        self.detail_table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
+        _det_hdr = self.detail_table.horizontalHeader()
+        _det_hdr.setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
+        _det_hdr.setSectionsClickable(True)
+        _det_hdr.setSortIndicatorShown(True)
         self.detail_table.verticalHeader().setVisible(False)
         self.detail_table.itemSelectionChanged.connect(self._on_detail_row_clicked)
         detail_layout.addWidget(self.detail_table)
@@ -902,6 +910,7 @@ class LbdirTab(QWidget):
         lb_nums = [r["lb_number"] for r in results if r.get("lb_number") is not None]
         lb_status_map = get_lb_statuses_batch(lb_nums) if lb_nums else {}
 
+        self.summary_table.setSortingEnabled(False)
         self.summary_table.setRowCount(0)
         for result in results:
             row = self.summary_table.rowCount()
@@ -921,16 +930,21 @@ class LbdirTab(QWidget):
             def _n(key):
                 return str(result.get(key, "")) if found and "error" not in result else ""
 
-            cells = [
-                Path(folder).name,
-                lb_str,
-                lbdir_file,
-                mode.upper() if mode else "",
-                _n("total"), _n("pass"), _n("mismatch"), _n("missing"),
-                status_text,
+            # (display_text, sort_kind, raw_value_for_sort_key)
+            cell_defs = [
+                (Path(folder).name, "text", None),
+                (lb_str, "int", lb_number if lb_number is not None else 0),
+                (lbdir_file, "text", None),
+                (mode.upper() if mode else "", "text", None),
+                (_n("total"), "int", result.get("total", 0) if found else 0),
+                (_n("pass"), "int", result.get("pass", 0) if found else 0),
+                (_n("mismatch"), "int", result.get("mismatch", 0) if found else 0),
+                (_n("missing"), "int", result.get("missing", 0) if found else 0),
+                (status_text, "text", None),
             ]
-            for col, text in enumerate(cells):
-                item = QTableWidgetItem(text)
+            for col, (text, kind, raw) in enumerate(cell_defs):
+                sk = sort_key_for(raw if raw is not None else text, kind)
+                item = SortableTableItem(text, sk)
                 # Col 1 (LB#): tint by lb_status; other cols use verification color
                 if col == 1 and lb_status in self._LB_STATUS_COLOR:
                     item.setBackground(self._LB_STATUS_COLOR[lb_status])
@@ -943,6 +957,9 @@ class LbdirTab(QWidget):
                 if col >= 4:
                     item.setTextAlignment(Qt.AlignmentFlag.AlignCenter)
                 self.summary_table.setItem(row, col, item)
+
+        self.summary_table.setSortingEnabled(True)
+        self.summary_table.sortByColumn(0, Qt.SortOrder.AscendingOrder)
 
     def _on_summary_row_clicked(self):
         row = self.summary_table.currentRow()
@@ -986,6 +1003,7 @@ class LbdirTab(QWidget):
 
     def _populate_detail(self, files):
         show_all = self.show_all_cb.isChecked()
+        self.detail_table.setSortingEnabled(False)
         self.detail_table.setRowCount(0)
 
         for file_idx, file_info in enumerate(files):
@@ -1011,22 +1029,24 @@ class LbdirTab(QWidget):
             md5_exp = file_info.get("md5_expected") or ""
             md5_act = file_info.get("md5_actual") or ""
 
-            # (display_text, full_tooltip_or_None)
+            # (display_text, sort_kind, full_tooltip_or_None)
             cells = [
-                (file_info.get("filename", ""), None),
-                (self._fmt_hash(md5_exp), md5_exp or None),
-                (self._fmt_hash(md5_act), md5_act or None),
-                (self._fmt_status(file_info.get("md5_status")), None),
-                (self._fmt_hash(ffp_exp), ffp_exp or None),
-                (self._fmt_hash(ffp_act), ffp_act or None),
-                (self._fmt_status(ffp_shn_st), None),
-                ("Yes" if file_info.get("on_disk") else "No", None),
-                (overall.upper() if overall else "", None),
+                (file_info.get("filename", ""), "text", None),
+                (self._fmt_hash(md5_exp), "text", md5_exp or None),
+                (self._fmt_hash(md5_act), "text", md5_act or None),
+                (self._fmt_status(file_info.get("md5_status")), "verify_status",
+                 None),
+                (self._fmt_hash(ffp_exp), "text", ffp_exp or None),
+                (self._fmt_hash(ffp_act), "text", ffp_act or None),
+                (self._fmt_status(ffp_shn_st), "verify_status", None),
+                ("Yes" if file_info.get("on_disk") else "No", "bool_check", None),
+                (overall.upper() if overall else "", "verify_status", None),
             ]
             row = self.detail_table.rowCount()
             self.detail_table.insertRow(row)
-            for col, (text, tooltip) in enumerate(cells):
-                item = QTableWidgetItem(text)
+            for col, (text, kind, tooltip) in enumerate(cells):
+                sk = sort_key_for(text, kind)
+                item = SortableTableItem(text, sk)
                 item.setBackground(color)
                 if col == 0:
                     item.setData(Qt.ItemDataRole.UserRole, file_idx)
@@ -1036,6 +1056,8 @@ class LbdirTab(QWidget):
                     item.setToolTip(tooltip)
                 self.detail_table.setItem(row, col, item)
 
+        self.detail_table.setSortingEnabled(True)
+        self.detail_table.sortByColumn(0, Qt.SortOrder.AscendingOrder)
         self.detail_table.resizeColumnsToContents()
 
     # ── Info panel ────────────────────────────────────────────────────────────

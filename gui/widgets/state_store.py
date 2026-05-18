@@ -234,3 +234,24 @@ class GuiStateStore(QObject):
             "pos": [p.x(), p.y()],
         }
         self._schedule_save()
+
+    # ── sort state ────────────────────────────────────────────────────────────
+
+    def get_sort(self, key: str) -> tuple[int, str] | None:
+        """Return (col_index, 'asc'|'desc') for *key*, or None if not stored."""
+        entry = self._state.get(key)
+        if isinstance(entry, dict):
+            sort = entry.get("sort")
+            if isinstance(sort, dict):
+                col = sort.get("col")
+                direction = sort.get("dir", "asc")
+                if isinstance(col, int) and direction in ("asc", "desc"):
+                    return col, direction
+        return None
+
+    def set_sort(self, key: str, col: int, direction: str) -> None:
+        """Persist sort state (col index + 'asc'|'desc') for *key* (debounced)."""
+        if key not in self._state:
+            self._state[key] = {}
+        self._state[key]["sort"] = {"col": col, "dir": direction}
+        self._schedule_save()

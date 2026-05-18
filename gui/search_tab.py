@@ -205,6 +205,9 @@ class SearchTab(QWidget):
         self._lb_master_stats: dict = {}  # cached stats for status filter
         self._page: int = 0
         self._page_size: int = 50
+        # Sort state for in-memory sort of results
+        self._sort_col_idx: int = 0          # column index
+        self._sort_dir: str = "asc"          # "asc" | "desc"
         self._load_page_size()
         self._build_ui()
         self.load_years()
@@ -302,8 +305,11 @@ class SearchTab(QWidget):
         self.view.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         hdr = self.view.horizontalHeader()
         hdr.setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
+        hdr.setSectionsClickable(True)
+        hdr.setSortIndicatorShown(True)
         hdr.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
         hdr.customContextMenuRequested.connect(self._on_header_context)
+        hdr.sectionClicked.connect(self._on_sort_col_clicked)
         self.view.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
         self.view.customContextMenuRequested.connect(self._on_row_context)
         self.view.doubleClicked.connect(self._on_double_click)
@@ -313,6 +319,36 @@ class SearchTab(QWidget):
             self._state_store.attach_table(
                 self.view, "search.results", defaults=_SEARCH_COL_DEFAULTS
             )
+
+    # ── Header sort ──────────────────────────────────────────────────────────
+
+    # Maps column index → key extractor for in-memory sort of result dicts.
+    # HEADERS = ["LB Number", "Status", "Date", "Location", "Rating",
+    #            "Description", "Xref", "Owned"]
+    _SORT_KEY_FNS = {
+        0: lambda r: r.get("lb_number") or 0,
+        1: lambda r: {"public": 0, "private": 1, "missing": 2}.get(
+               (r.get("lb_status") or ""), 99),
+        2: lambda r: (r.get("date_str") or "").lower(),
+        3: lambda r: (r.get("location") or "").lower(),
+        4: lambda r: (r.get("rating") or "").lower(),
+        5: lambda r: (r.get("description") or "").lower(),
+        6: lambda r: 0,   # Xref — not directly in the row dict; treat as unsortable
+        7: lambda r: 0,   # Owned — depends on owned set; treat as unsortable
+    }
+
+    def _on_sort_col_clicked(self, logical_index: int) -> None:
+        """Toggle sort direction or set new sort column, then re-render page 1."""
+        if logical_index == self._sort_col_idx:
+            self._sort_dir = "desc" if self._sort_dir == "asc" else "asc"
+        else:
+            self._sort_col_idx = logical_index
+            self._sort_dir = "asc"
+        order = (Qt.SortOrder.AscendingOrder if self._sort_dir == "asc"
+                 else Qt.SortOrder.DescendingOrder)
+        self.view.horizontalHeader().setSortIndicator(logical_index, order)
+        self._page = 0
+        self._render_page()
 
     # ── Column sizing ─────────────────────────────────────────────────────────
 
@@ -394,6 +430,13 @@ class SearchTab(QWidget):
 
     def _render_page(self) -> None:
         results = self._filtered_results()
+        key_fn = self._SORT_KEY_FNS.get(self._sort_col_idx)
+        if key_fn is not None:
+            try:
+                results = sorted(results, key=key_fn,
+                                 reverse=(self._sort_dir == "desc"))
+            except Exception:
+                pass
         start = self._page * self._page_size
         end = start + self._page_size
 
