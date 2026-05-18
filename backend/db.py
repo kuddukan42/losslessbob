@@ -30,6 +30,8 @@ MASTER_TABLES = (
     "entry_changes",
     "lb_master",
     "lb_status_history",
+    "flat_file_releases",
+    "flat_file_changelog",
 )
 # Note: `entries_fts` is a virtual FTS5 table whose content is mirrored from
 # `entries` via triggers. It is NOT copied directly during export/import; the
@@ -256,6 +258,46 @@ AFTER DELETE ON entries BEGIN
     INSERT INTO entries_fts(entries_fts, rowid, description, setlist, location, date_str)
     VALUES ('delete', old.lb_number, old.description, old.setlist, old.location, old.date_str);
 END;
+
+CREATE TABLE IF NOT EXISTS flat_file_releases (
+    id                  INTEGER PRIMARY KEY AUTOINCREMENT,
+    detected_at         TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    downloaded_at       TIMESTAMP,
+    applied_at          TIMESTAMP,
+    deferred_until      TIMESTAMP,
+    source_page_url     TEXT NOT NULL,
+    zip_url             TEXT NOT NULL,
+    zip_filename        TEXT NOT NULL,
+    last_lb_in_name     INTEGER,
+    page_timestamp      TEXT,
+    http_last_modified  TEXT,
+    zip_size_bytes      INTEGER,
+    zip_sha256          TEXT,
+    rows_added          INTEGER,
+    rows_changed        INTEGER,
+    rows_removed        INTEGER,
+    new_lb_min          INTEGER,
+    new_lb_max          INTEGER,
+    status              TEXT NOT NULL,
+    failure_reason      TEXT
+);
+CREATE INDEX IF NOT EXISTS idx_flat_releases_status
+    ON flat_file_releases(status, detected_at DESC);
+
+CREATE TABLE IF NOT EXISTS flat_file_changelog (
+    id            INTEGER PRIMARY KEY AUTOINCREMENT,
+    release_id    INTEGER NOT NULL REFERENCES flat_file_releases(id),
+    lb_number     INTEGER NOT NULL,
+    op            TEXT NOT NULL,
+    checksum      TEXT NOT NULL,
+    filename      TEXT NOT NULL,
+    chk_type      TEXT NOT NULL,
+    xref          INTEGER NOT NULL DEFAULT 0,
+    old_filename  TEXT,
+    old_xref      INTEGER
+);
+CREATE INDEX IF NOT EXISTS idx_flat_changelog_release ON flat_file_changelog(release_id);
+CREATE INDEX IF NOT EXISTS idx_flat_changelog_lb      ON flat_file_changelog(lb_number);
 """
 
 _MD5_RE = re.compile(r'^([0-9a-fA-F]{32})\s+\*?(.+)$')
@@ -338,6 +380,45 @@ def init_db(db_path=None):
     threading.Thread(
         target=lambda: migrate_lb_master(db_path), daemon=True
     ).start()
+
+    # One-time backfill: create a synthetic applied_legacy row for pre-feature imports.
+    threading.Thread(
+        target=lambda: _bootstrap_flat_file_legacy(db_path), daemon=True
+    ).start()
+
+
+def _bootstrap_flat_file_legacy(db_path=None) -> None:
+    """On first run after feature install: create a synthetic applied_legacy row from existing meta.
+
+    If flat_file_releases is empty but a previous import_hash exists in meta,
+    insert a placeholder row so the history panel is not completely empty and
+    the discovery logic has a baseline to compare against.
+    """
+    import logging as _log_mod
+    _log = _log_mod.getLogger(__name__)
+    try:
+        conn = get_connection(db_path)
+        count = conn.execute("SELECT COUNT(*) FROM flat_file_releases").fetchone()[0]
+        if count > 0:
+            return
+        import_hash = get_meta("import_hash", db_path)
+        if not import_hash:
+            return
+        last_lb = conn.execute("SELECT MAX(lb_number) FROM checksums").fetchone()[0] or 0
+        last_date = get_meta("last_import_date", db_path) or ""
+        conn.execute(
+            """INSERT INTO flat_file_releases
+               (source_page_url, zip_url, zip_filename, last_lb_in_name, zip_sha256,
+                applied_at, status, failure_reason)
+               VALUES (?, ?, ?, ?, ?, ?, 'applied_legacy',
+                       'Backfilled from pre-feature import history.')""",
+            ("", "", f"Checksum_Lookup_flat_file_LastLB_{last_lb}.zip",
+             last_lb, import_hash, last_date)
+        )
+        conn.commit()
+        _log.info("flat_file: bootstrapped legacy applied row (LastLB=%d)", last_lb)
+    except Exception as exc:
+        _log.warning("flat_file bootstrap failed: %s", exc)
 
 
 def get_meta(key, db_path=None):

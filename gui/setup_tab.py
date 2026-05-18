@@ -8,7 +8,9 @@ from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QGridLayout, QGroupBox, QLabel,
     QPushButton, QComboBox, QCheckBox, QSpinBox, QProgressBar,
     QFileDialog, QMessageBox, QLineEdit, QPlainTextEdit,
+    QDialog, QDialogButtonBox, QTableWidget, QTableWidgetItem,
 )
+from PyQt6.QtGui import QColor
 
 
 class _ImportThread(QThread):
@@ -138,6 +140,232 @@ class _ScrapeStatusThread(QThread):
         self._running = False
 
 
+class _DiscoverThread(QThread):
+    """Calls GET /api/flat_file/discover in a background thread."""
+    finished = pyqtSignal(dict)
+
+    def __init__(self, flask_port: int) -> None:
+        super().__init__()
+        self.flask_port = flask_port
+
+    def run(self) -> None:
+        try:
+            resp = requests.get(
+                f"http://127.0.0.1:{self.flask_port}/api/flat_file/discover",
+                timeout=25,
+            )
+            self.finished.emit(resp.json())
+        except Exception as exc:
+            self.finished.emit({"error": str(exc)})
+
+
+class _DownloadThread(QThread):
+    """Calls POST /api/flat_file/download/{id} in a background thread."""
+    finished = pyqtSignal(dict)
+
+    def __init__(self, flask_port: int, release_id: int) -> None:
+        super().__init__()
+        self.flask_port = flask_port
+        self.release_id = release_id
+
+    def run(self) -> None:
+        try:
+            resp = requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/flat_file/download/{self.release_id}",
+                timeout=120,
+            )
+            self.finished.emit(resp.json())
+        except Exception as exc:
+            self.finished.emit({"error": str(exc)})
+
+
+class _ApplyThread(QThread):
+    """Calls POST /api/flat_file/apply/{id} in a background thread."""
+    finished = pyqtSignal(dict)
+
+    def __init__(self, flask_port: int, release_id: int) -> None:
+        super().__init__()
+        self.flask_port = flask_port
+        self.release_id = release_id
+
+    def run(self) -> None:
+        try:
+            resp = requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/flat_file/apply/{self.release_id}",
+                timeout=120,
+            )
+            self.finished.emit(resp.json())
+        except Exception as exc:
+            self.finished.emit({"error": str(exc)})
+
+
+class _UpdateAvailableDialog(QDialog):
+    """Modal dialog shown when a new flat-file release is detected.
+
+    Shows release metadata and provides Download & Apply, Defer, and Skip actions.
+    """
+
+    def __init__(
+        self,
+        release_info: dict,
+        last_applied: dict | None,
+        flask_port: int,
+        parent=None,
+    ) -> None:
+        super().__init__(parent)
+        self.setWindowTitle("Flat File Update Available")
+        self.flask_port = flask_port
+        self.release_info = release_info
+        self._download_thread: _DownloadThread | None = None
+        self._apply_thread: _ApplyThread | None = None
+
+        layout = QVBoxLayout(self)
+        layout.setSpacing(10)
+
+        # Release info label
+        info_parts = []
+        fn = release_info.get("zip_filename", "Unknown")
+        info_parts.append(f"<b>New file:</b> {fn}")
+        if release_info.get("page_timestamp"):
+            info_parts.append(f"<b>Page updated:</b> {release_info['page_timestamp']}")
+        sz = release_info.get("zip_size_bytes", 0)
+        if sz:
+            info_parts.append(f"<b>Size:</b> {sz / 1024 / 1024:.1f} MB")
+        if last_applied:
+            prev_fn = last_applied.get("zip_filename", "")
+            prev_date = (last_applied.get("applied_at") or "")[:19]
+            info_parts.append(f"<b>Last applied:</b> {prev_fn} on {prev_date}")
+            # Estimate new LB range
+            prev_lb = last_applied.get("last_lb_in_name") or 0
+            new_lb = release_info.get("last_lb_in_name") or 0
+            if new_lb and prev_lb and new_lb > prev_lb:
+                info_parts.append(
+                    f"<b>Estimated new LBs:</b> up to {new_lb - prev_lb} (LB-{prev_lb+1} – LB-{new_lb})"
+                )
+        info_lbl = QLabel("<br>".join(info_parts))
+        info_lbl.setTextFormat(Qt.TextFormat.RichText)
+        info_lbl.setWordWrap(True)
+        layout.addWidget(info_lbl)
+
+        self._status_lbl = QLabel("")
+        self._status_lbl.setWordWrap(True)
+        layout.addWidget(self._status_lbl)
+
+        self._progress = QProgressBar()
+        self._progress.setRange(0, 0)  # indeterminate
+        self._progress.setVisible(False)
+        layout.addWidget(self._progress)
+
+        # Buttons
+        btn_row = QHBoxLayout()
+        self._apply_btn = QPushButton("Download && Apply")
+        self._apply_btn.clicked.connect(self._on_download_apply)
+        btn_row.addWidget(self._apply_btn)
+
+        self._defer_btn = QPushButton("Defer 1 Day")
+        self._defer_btn.clicked.connect(self._on_defer)
+        btn_row.addWidget(self._defer_btn)
+
+        skip_btn = QPushButton("Skip")
+        skip_btn.clicked.connect(self.reject)
+        btn_row.addWidget(skip_btn)
+        btn_row.addStretch()
+        layout.addLayout(btn_row)
+
+        self.setMinimumWidth(480)
+
+    def _set_busy(self, busy: bool) -> None:
+        self._apply_btn.setEnabled(not busy)
+        self._defer_btn.setEnabled(not busy)
+        self._progress.setVisible(busy)
+
+    def _on_download_apply(self) -> None:
+        release_id = self.release_info.get("id")
+        if not release_id:
+            QMessageBox.warning(self, "Error", "No release ID available.")
+            return
+        self._set_busy(True)
+        self._status_lbl.setText("Downloading zip…")
+        self._download_thread = _DownloadThread(self.flask_port, release_id)
+        self._download_thread.finished.connect(self._on_downloaded)
+        self._download_thread.start()
+
+    def _on_downloaded(self, result: dict) -> None:
+        if "error" in result:
+            self._set_busy(False)
+            self._status_lbl.setText(f"Download failed: {result['error']}")
+            return
+        # Fetch diff counts before applying
+        release_id = self.release_info.get("id")
+        self._status_lbl.setText("Computing diff…")
+        try:
+            diff_resp = requests.get(
+                f"http://127.0.0.1:{self.flask_port}/api/flat_file/diff/{release_id}",
+                timeout=60,
+            )
+            diff = diff_resp.json()
+        except Exception as exc:
+            self._set_busy(False)
+            self._status_lbl.setText(f"Diff failed: {exc}")
+            return
+
+        if "error" in diff:
+            self._set_busy(False)
+            self._status_lbl.setText(f"Diff error: {diff['error']}")
+            return
+
+        msg = (
+            f"Ready to apply:\n"
+            f"  Added:   {diff.get('rows_added', 0):,}\n"
+            f"  Changed: {diff.get('rows_changed', 0):,}\n"
+            f"  Removed: {diff.get('rows_removed', 0):,}\n\n"
+            "Proceed?"
+        )
+        ans = QMessageBox.question(
+            self, "Confirm Apply", msg,
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+        )
+        if ans != QMessageBox.StandardButton.Yes:
+            self._set_busy(False)
+            self._status_lbl.setText("Apply cancelled.")
+            return
+
+        self._status_lbl.setText("Applying release…")
+        self._apply_thread = _ApplyThread(self.flask_port, release_id)
+        self._apply_thread.finished.connect(self._on_applied)
+        self._apply_thread.start()
+
+    def _on_applied(self, result: dict) -> None:
+        self._set_busy(False)
+        if "error" in result:
+            self._status_lbl.setText(f"Apply failed: {result['error']}")
+            return
+        added = result.get("rows_added", 0)
+        changed = result.get("rows_changed", 0)
+        removed = result.get("rows_removed", 0)
+        QMessageBox.information(
+            self, "Update Applied",
+            f"Flat file applied successfully.\n"
+            f"Added: {added:,}  Changed: {changed:,}  Removed: {removed:,}",
+        )
+        self.accept()
+
+    def _on_defer(self) -> None:
+        release_id = self.release_info.get("id")
+        if not release_id:
+            self.reject()
+            return
+        try:
+            requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/flat_file/defer/{release_id}",
+                json={"days": 1},
+                timeout=10,
+            )
+        except Exception:
+            pass
+        self.reject()
+
+
 class SetupTab(QWidget):
     stats_changed = pyqtSignal()
     search_page_size_changed = pyqtSignal(int)
@@ -152,6 +380,7 @@ class SetupTab(QWidget):
         self._single_scrape_thread = None
         self._scrape_status_thread = None
         self._wtrf_test_thread = None
+        self._discover_thread: _DiscoverThread | None = None
         self._private_rescrape_mode = False
         self._private_rescrape_before = 0
         self._build_ui()
@@ -159,6 +388,10 @@ class SetupTab(QWidget):
         self._refresh_stats()
         self._refresh_log_size()
         self._load_curator_status()
+
+    def showEvent(self, event) -> None:  # type: ignore[override]
+        super().showEvent(event)
+        self._load_flat_file_history()
 
     def _build_ui(self):
         layout = QVBoxLayout(self)
@@ -190,7 +423,7 @@ class SetupTab(QWidget):
         self.import_btn.clicked.connect(self._on_import)
         btn_row.addWidget(self.import_btn)
 
-        self.check_update_btn = QPushButton("Check for Update")
+        self.check_update_btn = QPushButton("Check for Flat File Update")
         self.check_update_btn.clicked.connect(self._on_check_update)
         btn_row.addWidget(self.check_update_btn)
 
@@ -635,6 +868,30 @@ class SetupTab(QWidget):
 
         layout.addLayout(lower_row, stretch=1)
 
+        # ── Flat File History ────────────────────────────────────────────────
+        ff_group = QGroupBox("Flat File History")
+        ff_layout = QVBoxLayout(ff_group)
+
+        self._ff_history_table = QTableWidget(0, 6)
+        self._ff_history_table.setHorizontalHeaderLabels(
+            ["Detected", "Filename", "Status", "Added", "Changed", "Removed"]
+        )
+        self._ff_history_table.horizontalHeader().setStretchLastSection(False)
+        self._ff_history_table.horizontalHeader().setSectionResizeMode(
+            1, self._ff_history_table.horizontalHeader().ResizeMode.Stretch
+        )
+        self._ff_history_table.setSelectionBehavior(
+            QTableWidget.SelectionBehavior.SelectRows
+        )
+        self._ff_history_table.setEditTriggers(
+            QTableWidget.EditTrigger.NoEditTriggers
+        )
+        self._ff_history_table.setMinimumHeight(100)
+        self._ff_history_table.setMaximumHeight(160)
+        ff_layout.addWidget(self._ff_history_table)
+
+        layout.addWidget(ff_group)
+
     def _load_settings(self):
         self._loading = True
         try:
@@ -819,29 +1076,86 @@ class SetupTab(QWidget):
             self._refresh_stats()
             self.stats_changed.emit()
 
-    def _on_check_update(self):
+    def _on_check_update(self) -> None:
+        """Check for a new flat-file release on the LosslessBob download page."""
         self.check_update_btn.setEnabled(False)
+        self._discover_thread = _DiscoverThread(self.flask_port)
+        self._discover_thread.finished.connect(self._on_discover_result)
+        self._discover_thread.start()
+
+    def _on_discover_result(self, data: dict) -> None:
+        self.check_update_btn.setEnabled(True)
+        if data.get("error"):
+            QMessageBox.warning(
+                self, "Check Update",
+                f"Discovery failed:\n{data['error']}",
+            )
+            return
+        if not data.get("available"):
+            last = data.get("last_applied_release")
+            last_info = ""
+            if last:
+                fn = last.get("zip_filename", "")
+                dt = (last.get("applied_at") or "")[:19]
+                last_info = f"\n\nLast applied: {fn}\non {dt}"
+            QMessageBox.information(
+                self, "Up to Date",
+                f"Your flat file is up to date.{last_info}",
+            )
+            return
+        dlg = _UpdateAvailableDialog(
+            release_info=data["current_release"],
+            last_applied=data.get("last_applied_release"),
+            flask_port=self.flask_port,
+            parent=self,
+        )
+        dlg.exec()
+        # Refresh history panel after dialog closes (update may have been applied)
+        self._load_flat_file_history()
+        self.stats_changed.emit()
+
+    def _load_flat_file_history(self) -> None:
+        """Populate the Flat File History table from the backend."""
         try:
-            resp = requests.get(f"http://127.0.0.1:{self.flask_port}/api/db/check_update", timeout=30)
-            data = resp.json()
-            if "error" in data:
-                QMessageBox.warning(self, "Check Update", f"Error: {data['error']}")
-            elif data.get("update_available"):
-                QMessageBox.information(
-                    self, "Update Available",
-                    f"Local latest: LB-{data['local_latest']}\n"
-                    f"Site latest: LB-{data['site_latest']}\n\n"
-                    "A newer database is available. Download from the LosslessBob site."
-                )
-            else:
-                QMessageBox.information(
-                    self, "Up to Date",
-                    f"Your database is up to date (LB-{data.get('local_latest', '?')})."
-                )
-        except Exception as e:
-            QMessageBox.warning(self, "Check Update", f"Could not check for updates: {e}")
-        finally:
-            self.check_update_btn.setEnabled(True)
+            resp = requests.get(
+                f"http://127.0.0.1:{self.flask_port}/api/flat_file/releases",
+                timeout=5,
+            )
+            releases = resp.json()
+        except Exception:
+            return
+        if not isinstance(releases, list):
+            return
+
+        tbl = self._ff_history_table
+        tbl.setRowCount(0)
+        status_colors = {
+            "applied": QColor("#d4edda"),
+            "applied_legacy": QColor("#e2f0d9"),
+            "detected": QColor("#fff3cd"),
+            "downloaded": QColor("#cce5ff"),
+            "deferred": QColor("#e2e3e5"),
+            "failed": QColor("#f8d7da"),
+        }
+        for row_data in releases:
+            row = tbl.rowCount()
+            tbl.insertRow(row)
+            detected = (row_data.get("detected_at") or "")[:16]
+            filename = row_data.get("zip_filename", "")
+            status = row_data.get("status", "")
+            added = str(row_data.get("rows_added") or "")
+            changed = str(row_data.get("rows_changed") or "")
+            removed = str(row_data.get("rows_removed") or "")
+            for col, val in enumerate([detected, filename, status, added, changed, removed]):
+                item = QTableWidgetItem(val)
+                color = status_colors.get(status)
+                if color:
+                    item.setBackground(color)
+                tbl.setItem(row, col, item)
+        tbl.resizeColumnsToContents()
+        tbl.horizontalHeader().setSectionResizeMode(
+            1, tbl.horizontalHeader().ResizeMode.Stretch
+        )
 
     # ── Master Data: curator flag + publish/install handlers ───────────────────
 

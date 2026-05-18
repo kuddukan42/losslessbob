@@ -206,9 +206,27 @@ Description: Per CC_LB_INTEGRITY.md §Reliable Column Width Persistence: impleme
 
 ---
 
-TODO-024: Click-to-sort across all tables
+TODO-024: Override export/import JSON
+Priority: Low
+Status: Done
+Added: 2026-05-18
+Closed: 2026-05-18
+Description: GET /api/lb_master/overrides/export and POST /api/lb_master/overrides/import. DB Editor buttons for Export and Import Overrides in the Integrity panel.
+
+---
+
+TODO-025: Click-to-sort across all tables
 Priority: Medium
 Status: Done
 Added: 2026-05-18
 Closed: 2026-05-18
 Description: CC_LB_INTEGRITY item 10. SortableTableItem and sort_key_for() in gui/widgets/sort_keys.py. Client-side sort via SortableTableItem for lbdir and verify QTableWidget tables (summary + detail). In-memory sort via sectionClicked for Search, Collection, and Missing QTableView tables. Server-side sort for DB Editor (sectionClicked wired, sort_col/sort_dir appended to /api/dbedit/table/rows fetch). Backend /api/search, /api/collection, /api/collection/missing updated to accept sort_col/sort_dir. GuiStateStore.get_sort()/set_sort() added for future sort state persistence.
+
+---
+
+TODO-026: Flat-file update check rework (CC_LB_INTEGRITY item 9)
+Priority: Medium
+Status: Done
+Added: 2026-05-18
+Closed: 2026-05-18
+Description: CC_LB_INTEGRITY item 9. New backend/flat_file.py pipeline: discover→download→diff→apply with audit trail in flat_file_releases + flat_file_changelog tables (added to MASTER_TABLES). 7 new API endpoints under /api/flat_file/*. Setup tab UI rework: "Check for Flat File Update" button using _DiscoverThread (non-blocking), _UpdateAvailableDialog with Download & Apply / Defer / Skip, Flat File History panel showing all releases. Removed broken check_for_update() from scraper.py (was scraping bynumber page, missed corrections).
