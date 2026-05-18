@@ -1,3 +1,14 @@
+BUG-065: check_for_update() misses flat-file corrections and non-max-LB additions
+Status: Fixed
+File(s): backend/scraper.py:276 (removed)
+Reported: 2026-05-18
+Fixed: 2026-05-18
+Description: The old check_for_update() scraped the bynumber page and compared the maximum LB number found in links against the local max. Any release that only corrected checksums, added checksums for LBs already in the database, or updated filenames would not be detected because the max LB number didn't change.
+Root cause: Wrong data source — the download page for the flat-file zip was never consulted. The bynumber page shows the highest LB entry, not the state of the flat file.
+Fix: Removed check_for_update() entirely and replaced with the backend/flat_file.py pipeline (discover_flat_file_release). Discovery checks the actual download page for zip filename, page timestamp, and HTTP Last-Modified header, which change whenever any update (including corrections) is published. API route changed from /api/db/check_update to /api/flat_file/discover.
+
+---
+
 BUG-064: _on_strip_wrong_lb leaves state as 'wrong_lb' — stripped rows can never be renamed
 Status: Fixed
 File(s): gui/rename_tab.py:_on_strip_wrong_lb

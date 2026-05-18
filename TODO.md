@@ -194,3 +194,10 @@ Status: Done
 Added: 2026-05-17
 Closed: 2026-05-17
 Description: Per CC_LB_INTEGRITY.md §Reliable Column Width Persistence: implement GuiStateStore in gui/widgets/state_store.py storing state in data/gui_state.json (atomic writes, 500ms debounce, _restoring guard). Migrate all tabs off QSettings / hardcoded setColumnWidth. One-time QSettings migration on first run. Covers Search, Collection (7 tables), DbEdit, lbdir summary, Rename. ThemeTab QSettings and main_window geometry also migrated to GuiStateStore.
+
+TODO-024: Flat-file update check rework (CC_LB_INTEGRITY item 9)
+Priority: Medium
+Status: Done
+Added: 2026-05-18
+Closed: 2026-05-18
+Description: CC_LB_INTEGRITY item 9. New backend/flat_file.py pipeline: discover→download→diff→apply with audit trail in flat_file_releases + flat_file_changelog tables (added to MASTER_TABLES). 7 new API endpoints under /api/flat_file/*. Setup tab UI rework: "Check for Flat File Update" button using _DiscoverThread (non-blocking), _UpdateAvailableDialog with Download & Apply / Defer / Skip, Flat File History panel showing all releases. Removed broken check_for_update() from scraper.py (was scraping bynumber page, missed corrections).

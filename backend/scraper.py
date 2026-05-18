@@ -273,26 +273,6 @@ def scrape_range(lb_numbers, force=False, download_files=True, use_local_pages=F
     conn.commit()
 
 
-def check_for_update(db_path=None):
-    db_path = db_path or DB_PATH
-    with get_connection(db_path) as conn:
-        local_max = conn.execute("SELECT MAX(lb_number) FROM checksums").fetchone()[0] or 0
-
-    resp, status = _fetch(BYNUMBER_URL)
-    site_max = None
-    if resp:
-        soup = BeautifulSoup(resp.text, "lxml")
-        all_links = soup.find_all("a", href=True)
-        lb_nums = []
-        for a in all_links:
-            m = re.search(r'LB-(\d+)', a.get_text() + a["href"])
-            if m:
-                lb_nums.append(int(m.group(1)))
-        if lb_nums:
-            site_max = max(lb_nums)
-
-    return {
-        "local_latest": local_max,
-        "site_latest": site_max,
-        "update_available": (site_max is not None and site_max > local_max),
-    }
+# check_for_update() was removed — it scraped the bynumber page to count LB links
+# which missed corrections and checksum additions that didn't extend the max LB number.
+# Use backend.flat_file.discover_flat_file_release() and the /api/flat_file/* routes instead.

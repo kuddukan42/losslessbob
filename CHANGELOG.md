@@ -1,3 +1,41 @@
+[2026-05-18] — feat(backend/gui): Flat-file update check rework (CC_LB_INTEGRITY item 9)
+
+Added
+
+backend/flat_file.py: New pipeline module — discover_flat_file_release, download_flat_file_release,
+  diff_flat_file_release, apply_flat_file_release, defer_flat_file_release, get_releases,
+  get_release_changelog. Discovers new releases from the LosslessBob download page, downloads
+  the zip, diffs against the live checksums table (tab-delimited format matching importer.py),
+  and applies changes with a full flat_file_changelog audit trail. Auto-backup before apply.
+  Reconciles lb_master for touched LBs post-apply.
+backend/db.py: flat_file_releases and flat_file_changelog tables added to SCHEMA_SQL and
+  MASTER_TABLES. _bootstrap_flat_file_legacy() for first-run migration: creates a synthetic
+  applied_legacy row from pre-feature import_hash/last_import_date meta so history is not empty
+  on upgrade. Called from init_db() in a daemon thread.
+backend/app.py: 7 new endpoints under /api/flat_file/*:
+  GET  /api/flat_file/discover
+  POST /api/flat_file/download/<id>
+  GET  /api/flat_file/diff/<id>
+  POST /api/flat_file/apply/<id>
+  POST /api/flat_file/defer/<id>
+  GET  /api/flat_file/releases
+  GET  /api/flat_file/changelog/<id>
+gui/setup_tab.py: "Check for Flat File Update" button now calls /api/flat_file/discover via
+  _DiscoverThread (non-blocking). _on_discover_result shows an info dialog (up to date) or
+  opens _UpdateAvailableDialog. New _UpdateAvailableDialog: shows release metadata, Download &
+  Apply (with diff confirmation), Defer 1 Day, Skip. Download and Apply each run in their own
+  QThread workers. New "Flat File History" QGroupBox with QTableWidget showing all releases
+  (Date, Filename, Status, Added, Changed, Removed); loaded on tab show via showEvent.
+  _DiscoverThread, _DownloadThread, _ApplyThread worker classes added.
+
+Changed
+
+backend/scraper.py: Removed broken check_for_update() which scraped the bynumber page and
+  missed corrections / checksum additions that didn't extend the max LB number. Left a comment
+  pointing to the new pipeline.
+
+---
+
 [2026-05-17] — fix(gui): Column widths now actually persist across restarts (GuiStateStore root-cause fix)
 
 Fixed

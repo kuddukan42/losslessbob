@@ -163,13 +163,86 @@ def create_app():
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
-    @app.route("/api/db/check_update", methods=["GET"])
-    def check_update():
+    # NOTE: /api/db/check_update removed — replaced by /api/flat_file/discover
+    # (old route called scraper.check_for_update() which only counted LB links on
+    # the bynumber page and missed corrections/checksum additions).
+    # See backend/flat_file.py for the full discover→download→diff→apply pipeline.
+
+    # ── Flat file update pipeline ─────────────────────────────────────────────
+
+    @app.route("/api/flat_file/discover", methods=["GET"])
+    def flat_file_discover():
+        """Live check for a new flat-file release on the LosslessBob download page."""
+        from . import flat_file as ff
         try:
-            result = scraper.check_for_update()
+            result = ff.discover_flat_file_release()
             return jsonify(result)
-        except Exception as e:
-            return jsonify({"error": str(e)}), 500
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/flat_file/download/<int:release_id>", methods=["POST"])
+    def flat_file_download(release_id):
+        """Download the zip for a detected release (may be long-running)."""
+        from . import flat_file as ff
+        try:
+            path = ff.download_flat_file_release(release_id)
+            return jsonify({"path": str(path), "release_id": release_id})
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/flat_file/diff/<int:release_id>", methods=["GET"])
+    def flat_file_diff(release_id):
+        """Return diff counts (rows_added/changed/removed) without applying."""
+        from . import flat_file as ff
+        try:
+            return jsonify(ff.diff_flat_file_release(release_id))
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/flat_file/apply/<int:release_id>", methods=["POST"])
+    def flat_file_apply(release_id):
+        """Apply a downloaded flat-file release to the main database."""
+        from . import flat_file as ff
+        try:
+            result = ff.apply_flat_file_release(release_id)
+            return jsonify(result)
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/flat_file/defer/<int:release_id>", methods=["POST"])
+    def flat_file_defer(release_id):
+        """Defer prompting for a release. Body: {days: int} or {until_next: true}."""
+        from . import flat_file as ff
+        body = request.get_json(force=True) or {}
+        try:
+            ff.defer_flat_file_release(
+                release_id,
+                days=body.get("days"),
+                until_next=body.get("until_next", False),
+            )
+            return jsonify({"ok": True})
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 400
+
+    @app.route("/api/flat_file/releases", methods=["GET"])
+    def flat_file_releases():
+        """List all flat file release history rows, newest first."""
+        from . import flat_file as ff
+        try:
+            return jsonify(ff.get_releases())
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/flat_file/changelog/<int:release_id>", methods=["GET"])
+    def flat_file_changelog(release_id):
+        """Paginated changelog for a release. Query params: limit, offset."""
+        from . import flat_file as ff
+        limit = int(request.args.get("limit", 100))
+        offset = int(request.args.get("offset", 0))
+        try:
+            return jsonify(ff.get_release_changelog(release_id, limit, offset))
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
 
     # ── Entry Detail & Attachments ───────────────────────────────────────────
 

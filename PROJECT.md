@@ -37,7 +37,8 @@ losslessbob/
 │   ├── db.py                 # SQLite layer, checksum parsing, search
 │   ├── checksum_utils.py     # Shared: FFP/MD5/shntool compute, lbdir parse, verify, generate
 │   ├── credentials.py        # OS keyring credential storage (SERVICE_QBT, SERVICE_WTRF)
-│   ├── importer.py           # Flat-file import logic
+│   ├── flat_file.py          # Flat-file update pipeline: discover/download/diff/apply + audit tables
+│   ├── importer.py           # Flat-file import logic (legacy: imports from local file path)
 │   ├── folder_naming.py      # Shared helpers: apply_nft_suffix, strip_nft_suffix, nft_discrepancy, build_standard_name
 │   ├── rename.py             # write_rename_log() — rename_log.txt + rename_history DB row
 │   ├── scraper.py            # Web scraper for losslessbob.com
@@ -74,6 +75,7 @@ losslessbob/
     │   └── LB-{N}.html       # Cached detail page HTML (used by local-pages scrape mode)
     ├── gui_state.json        # Persistent GUI state: column widths, window geometry (user data — not in master)
     ├── backups/              # Auto + manual DB backups (VACUUM INTO snapshots, last 10 kept)
+    ├── downloads/            # Downloaded flat-file zips (kept after apply for audit purposes)
     ├── exports/              # Master-data snapshots + .manifest.json sidecars for publishing
     └── torrents/
         └── *.torrent          # Generated .torrent files (excluded from git)
@@ -199,6 +201,49 @@ Persists settings between runs. Key examples:
 - `qbt_tags` — optional comma-separated tag string for added torrents
 - `tracker_list` — tracker list name for torrent generation (default `'best'`)
 
+### `flat_file_releases` — Flat-file update release log (MASTER table)
+One row per discovered/downloaded/applied release of the LosslessBob flat-file zip.
+| Column | Type | Notes |
+|--------|------|-------|
+| id | INTEGER PK | Auto-increment |
+| detected_at | TIMESTAMP | When the release was first noticed |
+| downloaded_at | TIMESTAMP | When the zip was fully downloaded |
+| applied_at | TIMESTAMP | When the release was applied to the DB |
+| deferred_until | TIMESTAMP | Set when user defers the prompt |
+| source_page_url | TEXT | URL of the download page |
+| zip_url | TEXT | Direct URL of the zip |
+| zip_filename | TEXT | e.g. `Checksum_Lookup_flat_file_LastLB_12345.zip` |
+| last_lb_in_name | INTEGER | LB number parsed from zip filename |
+| page_timestamp | TEXT | Timestamp string shown on the download page |
+| http_last_modified | TEXT | HTTP Last-Modified header from zip URL |
+| zip_size_bytes | INTEGER | File size in bytes |
+| zip_sha256 | TEXT | SHA-256 of the downloaded zip |
+| rows_added | INTEGER | Checksum rows added on apply |
+| rows_changed | INTEGER | Checksum rows updated on apply |
+| rows_removed | INTEGER | Checksum rows deleted on apply |
+| new_lb_min | INTEGER | Lowest LB touched by apply |
+| new_lb_max | INTEGER | Highest LB touched by apply |
+| status | TEXT | `detected`, `downloaded`, `applied`, `applied_legacy`, `deferred`, `failed` |
+| failure_reason | TEXT | Error detail if status=failed |
+
+Index: `idx_flat_releases_status ON flat_file_releases(status, detected_at DESC)`.
+
+### `flat_file_changelog` — Per-row diff log for each applied release (MASTER table)
+| Column | Type | Notes |
+|--------|------|-------|
+| id | INTEGER PK | Auto-increment |
+| release_id | INTEGER | FK → flat_file_releases.id |
+| lb_number | INTEGER | LB number of the changed checksum |
+| op | TEXT | `add`, `change`, or `remove` |
+| checksum | TEXT | The checksum value |
+| filename | TEXT | New filename (after op) |
+| chk_type | TEXT | `f` / `s` / `m` |
+| xref | INTEGER | Cross-reference flag (0 or 1) |
+| old_filename | TEXT | Previous filename (op=change only) |
+| old_xref | INTEGER | Previous xref (op=change only) |
+
+Indexes: `idx_flat_changelog_release(release_id)`, `idx_flat_changelog_lb(lb_number)`.
+
 ---
 
 ## Backend: Flask API (`backend/app.py`)
@@ -220,8 +265,18 @@ Persists settings between runs. Key examples:
 | GET | `/api/db/settings` | Load all `meta` key-value pairs |
 | POST | `/api/db/settings` | Save `meta` key-value pairs |
 | POST | `/api/db/reset` | Drop and recreate all tables (destructive) |
-| GET | `/api/db/check_update` | Compare local max LB vs site max |
 | POST | `/api/db/backup` | Create a manual DB backup via VACUUM INTO. Body `{reason?}`. Returns `{ok, path, size_bytes}`. |
+
+### Flat File Update Pipeline
+| Method | Route | Description |
+|--------|-------|-------------|
+| GET | `/api/flat_file/discover` | Live check for a new flat-file release on the download page. Returns `{available, current_release, last_applied_release, error}`. Inserts a `detected` row in `flat_file_releases` when a new release is found. |
+| POST | `/api/flat_file/download/<id>` | Download the zip for a detected release. Long-running. Returns `{path, release_id}`. |
+| GET | `/api/flat_file/diff/<id>` | Return `{rows_added, rows_changed, rows_removed, new_lb_min, new_lb_max}` without applying. Release must be in `downloaded` status. |
+| POST | `/api/flat_file/apply/<id>` | Apply a downloaded release. Auto-backs up DB first. Updates checksums, writes changelog, reconciles lb_master. Returns diff counts. |
+| POST | `/api/flat_file/defer/<id>` | Defer prompting. Body: `{days: int}` or `{until_next: true}`. |
+| GET | `/api/flat_file/releases` | List all `flat_file_releases` rows, newest first. |
+| GET | `/api/flat_file/changelog/<id>` | Paginated `flat_file_changelog` for a release. Query params: `limit` (default 100), `offset` (default 0). |
 
 ### Master Data (publish / subscribe)
 | Method | Route | Description |
@@ -774,6 +829,7 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 
 | Date | Change |
 |------|--------|
+| 2026-05-18 | Flat-file update check rework: new `backend/flat_file.py` pipeline (discover/download/diff/apply); `flat_file_releases` + `flat_file_changelog` tables in MASTER_TABLES; 7 new `/api/flat_file/*` endpoints; removed broken `check_for_update()` from scraper.py; Setup tab "Check for Flat File Update" button + `_UpdateAvailableDialog` + Flat File History panel. (CC_LB_INTEGRITY item 9, TODO-024) |
 | 2026-05-17 | Standardize folder name: `build_standard_name()` in `backend/folder_naming.py`; `GET /api/folder_naming/standard/<lb>`; "Standardize Selected" button + right-click action in Rename tab; `RenameModel.update_state()`; fixed BUG-064 (_on_strip_wrong_lb now transitions state to needs_rename). (CC_LB_INTEGRITY item 13) |
 | 2026-05-17 | lb_status filter + tinting across Lookup (filter combobox + row tint), Attachments tree (page-level batch tint), Rename LB Found column, Lbdir LB# column. `get_lb_statuses_batch()` in db.py. (TODO-021) |
 | 2026-05-17 | -NFT suffix for Private LB folder names: new `backend/folder_naming.py` module; `should_mark_nft()` + `lb_status` annotation in `lookup_checksums()` in `db.py`; Rename tab applies NFT suffix to proposed names and shows discrepancy colours; Collection tab `_get_standard_lb_name()` calls `/api/lb_master/<lb>/nft`. (TODO-018) |
