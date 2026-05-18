@@ -1,3 +1,19 @@
+[2026-05-18] — feat(backend/gui): lb_alias + folder_lb_link disambiguation (CC_LB_INTEGRITY item 8)
+
+Added
+
+backend/db.py: lb_alias and folder_lb_link tables added to SCHEMA_SQL. lb_alias added to MASTER_TABLES; folder_lb_link added to USER_TABLES. New helpers: resolve_aliases(), get_folder_link(), set_folder_link(), delete_folder_link(), add_lb_alias(), delete_lb_alias(), get_lb_aliases() — all with type hints and Google-style docstrings.
+
+backend/app.py: 7 new endpoints: GET /api/lb_alias, POST /api/lb_alias (curator-only), DELETE /api/lb_alias/<alias_lb> (curator-only), GET /api/lb_alias/resolve, GET /api/folder_link, PUT /api/folder_link, DELETE /api/folder_link.
+
+gui/rename_tab.py: RenameTab now accepts flask_port parameter. Resolution order on populate_from_lookup: (1) folder_lb_link lookup — if match, resolve to single LB with 🔗 indicator; (2) lb_alias collapse — if aliases reduce candidates to one canonical, use it; (3) fall back to multiple_ids state. Right-click context menu additions: "Link this folder to specific LB…" (all users, on multiple_ids rows), "Unlink this folder" (on linked rows), "Save as master alias…" (curator-only, on multiple_ids rows, opens _AliasDialog). New _AliasDialog class for curator alias creation.
+
+gui/main_window.py: Pass flask_port to RenameTab constructor.
+
+gui/dbedit_tab.py: "LB Aliases" QGroupBox panel in left sidebar. Auto-loads on load_tables(). QTableWidget shows alias_lb, →, canonical_lb, relationship, note columns. Add/Delete buttons enabled for curators only (checked via GET /api/curator). Reload button available to all. Add dialog uses inline QDialog with QSpinBox, QComboBox, QTextEdit. _check_curator() caches the curator flag per session.
+
+---
+
 [2026-05-17] — fix(gui): Column widths now actually persist across restarts (GuiStateStore root-cause fix)
 
 Fixed

@@ -155,9 +155,10 @@ Description: Per CC_LB_INTEGRITY.md §NFT: Rename tab and Collection tab should 
 
 TODO-019: lb_alias and folder_lb_link disambiguation tables
 Priority: Low
-Status: Open
+Status: Done
 Added: 2026-05-16
-Description: Per CC_LB_INTEGRITY.md §Disambiguation: add lb_alias (master — alias_lb → canonical_lb) and folder_lb_link (user — folder_path → lb_number) tables. Wire into Rename tab resolution order: folder_lb_link first, lb_alias collapse second, fall back to multiple_ids. Curator creates aliases in DB Editor.
+Closed: 2026-05-18
+Description: Per CC_LB_INTEGRITY.md §Disambiguation: lb_alias (master) and folder_lb_link (user) tables. Rename tab resolution order: folder_lb_link first, lb_alias collapse second, fall back to multiple_ids. Curator creates aliases in DB Editor Aliases panel. 7 API endpoints. Right-click "Link…"/"Unlink…"/"Save as master alias…" actions in Rename tab.
 
 ---
 

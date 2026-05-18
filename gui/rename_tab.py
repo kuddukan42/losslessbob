@@ -2,6 +2,9 @@ import re
 import shutil
 import webbrowser
 from pathlib import Path
+from urllib.parse import quote as _url_quote
+
+import requests
 
 from backend.rename import write_rename_log
 from backend.folder_naming import (
@@ -14,6 +17,8 @@ from PyQt6.QtGui import QAction, QColor
 from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QTableView, QPushButton,
     QAbstractItemView, QHeaderView, QMessageBox, QMenu, QLabel,
+    QInputDialog, QDialog, QFormLayout, QComboBox, QTextEdit,
+    QDialogButtonBox, QSpinBox,
 )
 
 HEADERS = ["Rename", "Current Folder Name", "Proposed New Name", "LB Found", "Reason"]
@@ -266,9 +271,14 @@ class RenameModel(QAbstractTableModel):
 class RenameTab(QWidget):
     jump_to_lookup = pyqtSignal(str)
 
-    def __init__(self, parent=None, state_store=None):
+    def __init__(self, parent=None, state_store=None, flask_port: int = 5174):
         super().__init__(parent)
         self._state_store = state_store
+        self._flask_port = flask_port
+        # Rows (by model index) that were resolved via folder_lb_link (show 🔗 indicator)
+        self._linked_rows: set[int] = set()
+        # Curator flag — fetched lazily; None means not yet checked
+        self._is_curator: bool | None = None
         self._build_ui()
 
     def _build_ui(self):
@@ -348,6 +358,102 @@ class RenameTab(QWidget):
         self.status_label = QLabel("")
         layout.addWidget(self.status_label)
 
+    # ── Internal helpers ──────────────────────────────────────────────────────
+
+    def _api(self, path: str, **kwargs):
+        """GET the local Flask API. Returns parsed JSON or None on error."""
+        try:
+            r = requests.get(
+                f"http://127.0.0.1:{self._flask_port}{path}",
+                timeout=5, **kwargs
+            )
+            r.raise_for_status()
+            return r.json()
+        except Exception:
+            return None
+
+    def _api_put(self, path: str, json_body: dict) -> bool:
+        """PUT to the local Flask API. Returns True on success."""
+        try:
+            r = requests.put(
+                f"http://127.0.0.1:{self._flask_port}{path}",
+                json=json_body, timeout=5,
+            )
+            return r.ok
+        except Exception:
+            return False
+
+    def _api_delete(self, path: str, **kwargs) -> bool:
+        """DELETE the local Flask API resource. Returns True on success."""
+        try:
+            r = requests.delete(
+                f"http://127.0.0.1:{self._flask_port}{path}",
+                timeout=5, **kwargs
+            )
+            return r.ok
+        except Exception:
+            return False
+
+    def _api_post(self, path: str, json_body: dict):
+        """POST to the local Flask API. Returns parsed JSON or None on error."""
+        try:
+            r = requests.post(
+                f"http://127.0.0.1:{self._flask_port}{path}",
+                json=json_body, timeout=5,
+            )
+            r.raise_for_status()
+            return r.json()
+        except Exception:
+            return None
+
+    def _check_curator(self) -> bool:
+        """Return curator status, fetching from backend once per session."""
+        if self._is_curator is None:
+            data = self._api("/api/curator")
+            self._is_curator = bool((data or {}).get("is_curator", False))
+        return self._is_curator
+
+    def _resolve_single_lb(
+        self,
+        cands: list[tuple[int, int]],
+        folder: str,
+    ) -> tuple[int, int, bool] | None:
+        """Try to resolve a multiple-candidate folder to a single (lb, xref, linked) triple.
+
+        Resolution order:
+          1. folder_lb_link — sticky user choice for this exact path.
+          2. lb_alias collapse — if all candidates collapse to one canonical.
+
+        Args:
+            cands: Sorted list of (lb_number, xref_value) candidate pairs.
+            folder: Absolute folder path string.
+
+        Returns:
+            Tuple (lb_num, xref_val, linked_flag) if resolved to a single LB,
+            or None if still ambiguous.
+        """
+        # Step 1: folder_lb_link
+        link = self._api(f"/api/folder_link?path={_url_quote(folder, safe='')}")
+        if link and link.get("lb_number"):
+            linked_lb = int(link["lb_number"])
+            # Find xref for this lb in the candidate list (default 0)
+            xref_for_linked = next((xr for lb, xr in cands if lb == linked_lb), 0)
+            return (linked_lb, xref_for_linked, True)
+
+        # Step 2: lb_alias collapse
+        lb_nums = [lb for lb, _xr in cands]
+        resolve_data = self._api(
+            f"/api/lb_alias/resolve?lbs={','.join(str(x) for x in lb_nums)}"
+        )
+        if resolve_data and len(resolve_data.get("canonical", [])) == 1:
+            canonical_lb = resolve_data["canonical"][0]
+            xref_for_canon = next((xr for lb, xr in cands if lb == canonical_lb), 0)
+            return (canonical_lb, xref_for_canon, False)
+
+        return None
+
+    # ── Populate ──────────────────────────────────────────────────────────────
+
     def populate_from_lookup(self, detail_list, listbox_folders):
         # Build folder → {lb_number: xref_value} from MATCHED items only.
         # Excluding DUPLICATE (resolved losers) prevents spurious "Multiple IDs" when
@@ -368,7 +474,9 @@ class RenameTab(QWidget):
         rows = []
         states = []
         candidates = []
-        for folder in listbox_folders:
+        self._linked_rows = set()
+
+        for row_idx, folder in enumerate(listbox_folders):
             folder_path = Path(folder)
             if not folder_path.is_dir():
                 continue
@@ -382,13 +490,37 @@ class RenameTab(QWidget):
                 cand_list = []
                 row_lb_status = None
             elif len(cands) > 1:
-                reason = "Multiple IDs"
-                proposed = folder_path.name
-                lb_str = ", ".join(_fmt_lb(lb, xr) for lb, xr in cands)
-                cand_list = cands
-                # Conservative: any private candidate → mark the whole folder
-                cand_statuses = [lb_status_map.get(lb) for lb, _xr in cands]
-                row_lb_status = "private" if any(s == "private" for s in cand_statuses) else None
+                # --- Disambiguation resolution ---
+                resolved = self._resolve_single_lb(cands, folder)
+                if resolved is not None:
+                    lb, xref_val, is_linked = resolved
+                    lb_str = ("🔗 " if is_linked else "") + _fmt_lb(lb, xref_val)
+                    cand_list = []
+                    row_lb_status = lb_status_map.get(lb)
+                    if is_linked:
+                        self._linked_rows.add(len(rows))  # index in the rows list
+                    if _lb_in_name(folder_path.name, _fmt_lb(lb, xref_val)):
+                        proposed = folder_path.name
+                        reason = "LB already in name (resolved)"
+                    elif _has_wrong_lb(folder_path.name, _fmt_lb(lb, xref_val)):
+                        proposed = f"{folder_path.name}-{_fmt_lb(lb, xref_val)}"
+                        reason = "Wrong LB in name (resolved)"
+                    else:
+                        proposed = f"{folder_path.name}-{_fmt_lb(lb, xref_val)}"
+                        reason = "Multiple IDs → resolved"
+                    nft_applied = apply_nft_suffix(proposed, row_lb_status)
+                    if nft_applied != proposed:
+                        proposed = nft_applied
+                        if reason.endswith("(resolved)") and "already" in reason:
+                            reason = "Add NFT marker (Private LB)"
+                elif resolved is None:
+                    reason = "Multiple IDs"
+                    proposed = folder_path.name
+                    lb_str = ", ".join(_fmt_lb(lb, xr) for lb, xr in cands)
+                    cand_list = cands
+                    # Conservative: any private candidate → mark the whole folder
+                    cand_statuses = [lb_status_map.get(lb) for lb, _xr in cands]
+                    row_lb_status = "private" if any(s == "private" for s in cand_statuses) else None
             else:
                 lb, xref_val = cands[0]
                 lb_str = _fmt_lb(lb, xref_val)
@@ -686,14 +818,40 @@ class RenameTab(QWidget):
                     )
                     resolve_menu.addAction(act)
 
+            # "Link this folder to specific LB..." — persist user choice
+            link_act = QAction("Link this folder to specific LB…", self)
+            link_act.triggered.connect(
+                lambda checked=False, r=row_idx: self._on_link_folder(r)
+            )
+            menu.addAction(link_act)
+
+            # Curator-only: "Save as master alias…"
+            if self._check_curator() and candidates:
+                alias_act = QAction("Save as master alias…", self)
+                alias_act.triggered.connect(
+                    lambda checked=False, r=row_idx: self._on_save_alias(r)
+                )
+                menu.addAction(alias_act)
+
         elif col == 4:
             jump = QAction("Jump to Lookup Detail", self)
             jump.triggered.connect(lambda: self.jump_to_lookup.emit(row[1]))
             menu.addAction(jump)
         else:
             lb_str = row[3]
-            if lb_str and lb_str != "—" and "," not in lb_str:
-                m = re.search(r'LB-0*(\d+)', lb_str, re.IGNORECASE)
+            # Unlink action — shown for linked rows (have 🔗 prefix)
+            if row_idx in self._linked_rows or lb_str.startswith("🔗"):
+                unlink_act = QAction("Unlink this folder", self)
+                unlink_act.triggered.connect(
+                    lambda checked=False, r=row_idx: self._on_unlink_folder(r)
+                )
+                menu.addAction(unlink_act)
+                menu.addSeparator()
+
+            # Strip the 🔗 prefix for LB parsing
+            lb_str_clean = lb_str.lstrip("🔗 ")
+            if lb_str_clean and lb_str_clean != "—" and "," not in lb_str_clean:
+                m = re.search(r'LB-0*(\d+)', lb_str_clean, re.IGNORECASE)
                 if m:
                     try:
                         lb_num = int(m.group(1))
@@ -703,7 +861,10 @@ class RenameTab(QWidget):
                         )
                         menu.addAction(std_act)
                         open_web = QAction(f"Open LB-{lb_num} in Browser", self)
-                        url = f"http://www.losslessbob.wonderingwhattochoose.com/detail/LB-{lb_num}.html"
+                        url = (
+                            f"http://www.losslessbob.wonderingwhattochoose.com"
+                            f"/detail/LB-{lb_num}.html"
+                        )
                         open_web.triggered.connect(lambda: webbrowser.open(url))
                         menu.addAction(open_web)
                     except ValueError:
@@ -721,5 +882,199 @@ class RenameTab(QWidget):
             "Click 'Select All' then 'Rename Selected' when ready."
         )
 
+    def _on_link_folder(self, row_idx: int) -> None:
+        """Prompt the user to link a multiple_ids folder to a specific LB."""
+        row = self.model.get_row(row_idx)
+        if not row:
+            return
+        folder = row[1]
+        candidates = self.model.get_candidates(row_idx)
+        candidate_labels = [_fmt_lb(lb, xr) for lb, xr in candidates]
+
+        if candidate_labels:
+            hint = f"Candidates: {', '.join(candidate_labels)}\n\nEnter the LB number to link:"
+        else:
+            hint = "Enter the LB number to link:"
+
+        lb_text, ok = QInputDialog.getText(
+            self, "Link Folder to LB", hint,
+        )
+        if not ok or not lb_text.strip():
+            return
+        # Accept plain integers or "LB-NNNNN" format
+        m = re.search(r'\d+', lb_text)
+        if not m:
+            self.status_label.setText("Invalid LB number entered.")
+            return
+        lb_num = int(m.group())
+
+        ok_put = self._api_put("/api/folder_link", {
+            "folder_path": folder,
+            "lb_number": lb_num,
+            "note": "",
+        })
+        if not ok_put:
+            self.status_label.setText(f"Row {row_idx + 1}: failed to save link.")
+            return
+
+        # Re-resolve the row using the new link
+        xref_val = next((xr for lb, xr in candidates if lb == lb_num), 0)
+        lb_str = "🔗 " + _fmt_lb(lb_num, xref_val)
+        folder_path = Path(folder)
+        plain_lb_str = _fmt_lb(lb_num, xref_val)
+        if _lb_in_name(folder_path.name, plain_lb_str):
+            proposed = folder
+            reason = "LB already in name (linked)"
+        else:
+            proposed = str(folder_path.parent / f"{folder_path.name}-{plain_lb_str}")
+            reason = "Multiple IDs → linked"
+
+        row[2] = proposed
+        row[3] = lb_str
+        row[4] = reason
+        new_state = _row_state(folder, plain_lb_str)
+        self.model._states[row_idx] = new_state
+        self.model._candidates[row_idx] = []
+        self._linked_rows.add(row_idx)
+        self.model.dataChanged.emit(
+            self.model.index(row_idx, 0),
+            self.model.index(row_idx, len(HEADERS) - 1),
+        )
+        self.status_label.setText(
+            f"Row {row_idx + 1}: linked to LB-{lb_num:05d}. "
+            "Select and rename when ready."
+        )
+
+    def _on_unlink_folder(self, row_idx: int) -> None:
+        """Remove a folder→LB link and re-run resolution for that row."""
+        row = self.model.get_row(row_idx)
+        if not row:
+            return
+        folder = row[1]
+        ok = self._api_delete(f"/api/folder_link?path={_url_quote(folder, safe='')}")
+        if not ok:
+            self.status_label.setText(f"Row {row_idx + 1}: failed to remove link.")
+            return
+        self._linked_rows.discard(row_idx)
+        # Reset lb_str to stripped value (remove 🔗 prefix) and re-evaluate state
+        lb_str = row[3].lstrip("🔗 ")
+        row[3] = lb_str
+        row[4] = "Unlinked — check manually"
+        # If only one LB remains after stripping, keep needs_rename / has_lb logic
+        new_state = _row_state(folder, lb_str)
+        self.model._states[row_idx] = new_state
+        self.model.dataChanged.emit(
+            self.model.index(row_idx, 0),
+            self.model.index(row_idx, len(HEADERS) - 1),
+        )
+        self.status_label.setText(
+            f"Row {row_idx + 1}: link removed. Re-run lookup to refresh candidates."
+        )
+
+    def _on_save_alias(self, row_idx: int) -> None:
+        """Open a dialog to save a master alias for a multiple_ids row (curator only)."""
+        row = self.model.get_row(row_idx)
+        if not row:
+            return
+        candidates = self.model.get_candidates(row_idx)
+        if len(candidates) < 2:
+            self.status_label.setText("Need at least 2 candidates to create an alias.")
+            return
+
+        dlg = _AliasDialog(candidates, parent=self)
+        if dlg.exec() != QDialog.DialogCode.Accepted:
+            return
+        alias_lb, canonical_lb, relationship, note = dlg.get_values()
+
+        result = self._api_post("/api/lb_alias", {
+            "alias_lb": alias_lb,
+            "canonical_lb": canonical_lb,
+            "relationship": relationship,
+            "note": note,
+        })
+        if result is None:
+            self.status_label.setText("Failed to save alias (check curator mode).")
+            return
+
+        rewrote = result.get("rewrote_chain", False)
+        effective_canon = result.get("canonical_lb", canonical_lb)
+        msg = (
+            f"Alias LB-{alias_lb:05d} → LB-{effective_canon:05d} saved."
+        )
+        if rewrote:
+            msg += " (chain rewritten)"
+        self.status_label.setText(msg)
+
+        # Re-run alias resolution for this row in-place
+        resolved = self._resolve_single_lb(candidates, row[1])
+        if resolved is not None:
+            lb, xref_val, is_linked = resolved
+            plain_lb_str = _fmt_lb(lb, xref_val)
+            lb_str = ("🔗 " if is_linked else "") + plain_lb_str
+            folder_path = Path(row[1])
+            row[3] = lb_str
+            row[4] = "Multiple IDs → resolved (alias)"
+            if not _lb_in_name(folder_path.name, plain_lb_str):
+                row[2] = str(folder_path.parent / f"{folder_path.name}-{plain_lb_str}")
+            new_state = _row_state(row[1], plain_lb_str)
+            self.model._states[row_idx] = new_state
+            self.model._candidates[row_idx] = []
+            if is_linked:
+                self._linked_rows.add(row_idx)
+            self.model.dataChanged.emit(
+                self.model.index(row_idx, 0),
+                self.model.index(row_idx, len(HEADERS) - 1),
+            )
+
     def resize_columns_to_font(self) -> None:
         self.view.resizeColumnsToContents()
+
+
+class _AliasDialog(QDialog):
+    """Dialog for curator to create an lb_alias mapping from a multiple_ids row."""
+
+    def __init__(self, candidates: list[tuple[int, int]], parent=None):
+        super().__init__(parent)
+        self.setWindowTitle("Save as Master Alias")
+        self.setMinimumWidth(380)
+        layout = QFormLayout(self)
+        layout.setContentsMargins(12, 12, 12, 12)
+        layout.setSpacing(8)
+
+        lb_nums = [lb for lb, _xr in candidates]
+
+        self._alias_spin = QSpinBox()
+        self._alias_spin.setRange(1, 999999)
+        self._alias_spin.setValue(lb_nums[0] if lb_nums else 1)
+        layout.addRow("Alias LB (the secondary/wrong one):", self._alias_spin)
+
+        self._canon_spin = QSpinBox()
+        self._canon_spin.setRange(1, 999999)
+        self._canon_spin.setValue(lb_nums[1] if len(lb_nums) > 1 else 1)
+        layout.addRow("Canonical LB (the correct one):", self._canon_spin)
+
+        self._rel_combo = QComboBox()
+        for rel in ("duplicate", "supersedes", "see_also"):
+            self._rel_combo.addItem(rel)
+        layout.addRow("Relationship:", self._rel_combo)
+
+        self._note_edit = QTextEdit()
+        self._note_edit.setFixedHeight(60)
+        self._note_edit.setPlaceholderText("Optional note for this alias…")
+        layout.addRow("Note:", self._note_edit)
+
+        buttons = QDialogButtonBox(
+            QDialogButtonBox.StandardButton.Ok | QDialogButtonBox.StandardButton.Cancel
+        )
+        buttons.accepted.connect(self.accept)
+        buttons.rejected.connect(self.reject)
+        layout.addRow(buttons)
+
+    def get_values(self) -> tuple[int, int, str, str]:
+        """Return (alias_lb, canonical_lb, relationship, note)."""
+        return (
+            self._alias_spin.value(),
+            self._canon_spin.value(),
+            self._rel_combo.currentText(),
+            self._note_edit.toPlainText().strip(),
+        )
