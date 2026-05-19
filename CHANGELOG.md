@@ -1,3 +1,15 @@
+[2026-05-19] — feat(gui): click-to-sort on Lookup tab summary and detail tables (TODO-027)
+
+Added
+
+  gui/lookup_tab.py: _LookupSortProxy (QSortFilterProxyModel with lessThan() using sort_key_for());
+    _SUMMARY_COL_KINDS / _DETAIL_COL_KINDS column kind arrays; _sum_src_row() / _det_src_row()
+    helpers to map proxy→source indices. Both summary (default: LB Number ASC) and detail (default:
+    Filename ASC) views now support click-to-sort with sort indicator arrows. All selection handlers,
+    context menus, double-click, and _on_select_all_incomplete updated to use source row mapping.
+
+---
+
 [2026-05-19] — feat(backend/gui): auto GitHub release upload from Publish button (TODO-022)
 
 Added

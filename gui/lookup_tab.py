@@ -4,7 +4,7 @@ from pathlib import Path
 
 import requests
 from PyQt6.QtCore import (
-    Qt, QAbstractTableModel, QModelIndex, QThread, pyqtSignal,
+    Qt, QAbstractTableModel, QModelIndex, QSortFilterProxyModel, QThread, pyqtSignal,
     QItemSelection, QItemSelectionModel,
 )
 from PyQt6.QtGui import QColor, QAction
@@ -12,16 +12,46 @@ from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QSplitter, QListWidget, QListWidgetItem,
     QPushButton, QLabel, QTableView, QAbstractItemView, QMenu, QApplication,
     QFileDialog, QHeaderView, QCheckBox, QDialog, QTableWidget, QTableWidgetItem,
-    QDialogButtonBox, QSizePolicy,
+    QDialogButtonBox,
 )
 
 import gui.styles as styles
+from gui.widgets.sort_keys import sort_key_for
 
 
 SUMMARY_HEADERS = ["LB Number", "Source", "Given", "Matched", "Not Found", "Missing", "Dups", "Xrefs", "Status"]
 DETAIL_HEADERS = ["Checksum", "Filename", "Type", "LB Number", "Xref", "Status", "Source"]
 
+# Per-column sort kind for each table, aligned to the headers above.
+_SUMMARY_COL_KINDS = ["lb_number", "text", "int", "int", "int", "int", "int", "int", "lb_status"]
+_DETAIL_COL_KINDS  = ["text",      "text", "text", "lb_number", "int", "lb_status", "text"]
+
 _AUDIO_EXTS = {'.flac', '.shn', '.ape', '.wav', '.m4a', '.wv', '.aif', '.aiff', '.mp3'}
+
+
+class _LookupSortProxy(QSortFilterProxyModel):
+    """Proxy that sorts Lookup tab tables using typed sort keys.
+
+    Args:
+        col_kinds: List of kind strings (one per column) accepted by
+            :func:`~gui.widgets.sort_keys.sort_key_for`.
+        parent: Parent QObject.
+    """
+
+    def __init__(self, col_kinds: list[str], parent=None) -> None:
+        super().__init__(parent)
+        self._col_kinds = col_kinds
+
+    def lessThan(self, left: QModelIndex, right: QModelIndex) -> bool:
+        """Compare two source-model cells using a typed sort key."""
+        col = left.column()
+        kind = self._col_kinds[col] if col < len(self._col_kinds) else "text"
+        lv = self.sourceModel().data(left,  Qt.ItemDataRole.DisplayRole) or ""
+        rv = self.sourceModel().data(right, Qt.ItemDataRole.DisplayRole) or ""
+        try:
+            return sort_key_for(lv, kind) < sort_key_for(rv, kind)
+        except TypeError:
+            return str(lv).lower() < str(rv).lower()
 
 
 class _TableModel(QAbstractTableModel):
@@ -449,12 +479,16 @@ class LookupTab(QWidget):
         sc_layout.addLayout(summary_header_row)
 
         self.summary_model = _TableModel(SUMMARY_HEADERS)
+        self.summary_proxy = _LookupSortProxy(_SUMMARY_COL_KINDS)
+        self.summary_proxy.setSourceModel(self.summary_model)
         self.summary_view = QTableView()
-        self.summary_view.setModel(self.summary_model)
+        self.summary_view.setModel(self.summary_proxy)
         self.summary_view.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.summary_view.setSelectionMode(QAbstractItemView.SelectionMode.ExtendedSelection)
         self.summary_view.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self.summary_view.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
+        self.summary_view.setSortingEnabled(True)
+        self.summary_proxy.sort(0, Qt.SortOrder.AscendingOrder)
         self.summary_view.doubleClicked.connect(self._on_summary_double_click)
         self.summary_view.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
         self.summary_view.customContextMenuRequested.connect(self._on_summary_context)
@@ -479,11 +513,15 @@ class LookupTab(QWidget):
         detail_header.addWidget(self._history_btn)
         dc_layout.addLayout(detail_header)
         self.detail_model = _TableModel(DETAIL_HEADERS)
+        self.detail_proxy = _LookupSortProxy(_DETAIL_COL_KINDS)
+        self.detail_proxy.setSourceModel(self.detail_model)
         self.detail_view = QTableView()
-        self.detail_view.setModel(self.detail_model)
+        self.detail_view.setModel(self.detail_proxy)
         self.detail_view.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.detail_view.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self.detail_view.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
+        self.detail_view.setSortingEnabled(True)
+        self.detail_proxy.sort(1, Qt.SortOrder.AscendingOrder)
         self.detail_view.doubleClicked.connect(self._on_detail_double_click)
         self.detail_view.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
         self.detail_view.customContextMenuRequested.connect(self._on_detail_context)
@@ -497,6 +535,16 @@ class LookupTab(QWidget):
 
         self.status_label = QLabel("")
         right_layout.addWidget(self.status_label)
+
+    # ── Proxy helpers ─────────────────────────────────────────────────────────
+
+    def _sum_src_row(self, proxy_index: QModelIndex) -> int:
+        """Return the source-model row for a summary proxy index."""
+        return self.summary_proxy.mapToSource(proxy_index).row()
+
+    def _det_src_row(self, proxy_index: QModelIndex) -> int:
+        """Return the source-model row for a detail proxy index."""
+        return self.detail_proxy.mapToSource(proxy_index).row()
 
     # ── Listbox management ────────────────────────────────────────────────────
 
@@ -697,10 +745,9 @@ class LookupTab(QWidget):
         folders = self._get_folders_for_selected_summary()
         self.generate_summary_btn.setEnabled(bool(folders))
         # Enable History button only when exactly one LB row is selected
-        selected = {idx.row() for idx in self.summary_view.selectionModel().selectedRows()}
         lbs = []
-        for row_idx in selected:
-            row = self.summary_model.get_row(row_idx)
+        for pidx in self.summary_view.selectionModel().selectedRows():
+            row = self.summary_model.get_row(self._sum_src_row(pidx))
             if row:
                 lb_str = str(row[0]).replace("LB-", "")
                 try:
@@ -712,10 +759,9 @@ class LookupTab(QWidget):
 
     def _on_summary_clicked(self, index):
         """Toggle detail filter: click a summary row to filter detail, click again to clear."""
-        selected_rows = {idx.row() for idx in self.summary_view.selectionModel().selectedRows()}
         lbs = set()
-        for row_idx in selected_rows:
-            row = self.summary_model.get_row(row_idx)
+        for pidx in self.summary_view.selectionModel().selectedRows():
+            row = self.summary_model.get_row(self._sum_src_row(pidx))
             if row:
                 lb_str = str(row[0]).replace("LB-", "")
                 try:
@@ -880,14 +926,21 @@ class LookupTab(QWidget):
     # ── Summary table: multi-select + generate ────────────────────────────────
 
     def _on_select_all_incomplete(self):
-        model = self.summary_model
         selection = QItemSelection()
-        for i in range(model.rowCount()):
-            row = model.get_row(i)
+        for pi in range(self.summary_proxy.rowCount()):
+            src_row = self._sum_src_row(self.summary_proxy.index(pi, 0))
+            row = self.summary_model.get_row(src_row)
             is_incomplete = row and row[8] == "INCOMPLETE"
-            is_no_checksum = model.data(model.index(i, 0), Qt.ItemDataRole.UserRole + 1) == "no_checksums"
+            is_no_checksum = (
+                self.summary_model.data(
+                    self.summary_model.index(src_row, 0), Qt.ItemDataRole.UserRole + 1
+                ) == "no_checksums"
+            )
             if is_incomplete or is_no_checksum:
-                selection.select(model.index(i, 0), model.index(i, model.columnCount() - 1))
+                selection.select(
+                    self.summary_proxy.index(pi, 0),
+                    self.summary_proxy.index(pi, self.summary_proxy.columnCount() - 1),
+                )
         self.summary_view.selectionModel().select(
             selection, QItemSelectionModel.SelectionFlag.ClearAndSelect
         )
@@ -895,13 +948,13 @@ class LookupTab(QWidget):
     def _get_folders_for_selected_summary(self):
         seen = set()
         folders = []
-        rows_seen = set()
-        for idx in self.summary_view.selectedIndexes():
-            row_idx = idx.row()
-            if row_idx in rows_seen:
+        src_rows_seen = set()
+        for pidx in self.summary_view.selectedIndexes():
+            src_row = self._sum_src_row(pidx)
+            if src_row in src_rows_seen:
                 continue
-            rows_seen.add(row_idx)
-            col0 = self.summary_model.index(row_idx, 0)
+            src_rows_seen.add(src_row)
+            col0 = self.summary_model.index(src_row, 0)
             # No-checksum rows store the folder path directly in UserRole
             if self.summary_model.data(col0, Qt.ItemDataRole.UserRole + 1) == "no_checksums":
                 folder = self.summary_model.data(col0, Qt.ItemDataRole.UserRole)
@@ -909,7 +962,7 @@ class LookupTab(QWidget):
                     seen.add(folder)
                     folders.append(folder)
                 continue
-            row = self.summary_model.get_row(row_idx)
+            row = self.summary_model.get_row(src_row)
             if not row or row[8] != "INCOMPLETE":
                 continue
             lb_str = str(row[0]).replace("LB-", "")
@@ -968,7 +1021,7 @@ class LookupTab(QWidget):
 
         index = self.summary_view.indexAt(pos)
         if index.isValid():
-            row = self.summary_model.get_row(index.row())
+            row = self.summary_model.get_row(self._sum_src_row(index))
             if row:
                 lb_str = str(row[0]).replace("LB-", "")
                 try:
@@ -1253,7 +1306,7 @@ class LookupTab(QWidget):
     # ── Grid interactions ─────────────────────────────────────────────────────
 
     def _on_summary_double_click(self, index):
-        row = self.summary_model.get_row(index.row())
+        row = self.summary_model.get_row(self._sum_src_row(index))
         if row:
             lb_str = str(row[0]).replace("LB-", "")
             try:
@@ -1271,7 +1324,7 @@ class LookupTab(QWidget):
         dlg.exec()
 
     def _on_detail_double_click(self, index):
-        row = self.detail_model.get_row(index.row())
+        row = self.detail_model.get_row(self._det_src_row(index))
         if row:
             lb_str = str(row[3]).replace("LB-", "")
             try:
@@ -1285,7 +1338,7 @@ class LookupTab(QWidget):
         index = self.detail_view.indexAt(pos)
         if not index.isValid():
             return
-        row = self.detail_model.get_row(index.row())
+        row = self.detail_model.get_row(self._det_src_row(index))
         if not row:
             return
 

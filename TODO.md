@@ -254,8 +254,9 @@ Description: CC_LB_INTEGRITY item 9. New backend/flat_file.py pipeline: discover
 
 TODO-027: Click-to-sort on Lookup tab summary and detail tables
 Priority: Low
-Status: Open
+Status: Done
 Added: 2026-05-18
+Closed: 2026-05-19
 Description: Lookup tab uses QAbstractTableModel + QTableView, so SortableTableItem (QTableWidget-only) does not apply. Add a QSortFilterProxyModel wrapper to both the summary and detail table views. Define a custom lessThan() that uses typed sort keys (lb_number numeric, lb_status rank, text case-insensitive) consistent with sort_key_for() in gui/widgets/sort_keys.py. Wire header sectionClicked to toggle sort direction and update the sort indicator. Default: summary sorted by LB Number ASC, detail by Filename ASC.
 
 ---
