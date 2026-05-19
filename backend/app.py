@@ -4,7 +4,7 @@ import shutil
 import threading
 from pathlib import Path
 
-from flask import Flask, jsonify, request, send_file, abort
+from flask import Flask, jsonify, request, send_file, send_from_directory, abort
 from flask_cors import CORS
 
 from backend import db as database
@@ -2121,6 +2121,137 @@ def create_app():
         try:
             database.delete_folder_link(path)
             return jsonify({"ok": True})
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    # ── Map feature routes — added 2026-05-18 ──────────────────────────────────────
+
+    @app.route("/map")
+    def serve_map():
+        """Serve gui/resources/map.html for both QWebEngineView and system browser."""
+        resources_dir = (Path(__file__).parent.parent / "gui" / "resources").resolve()
+        return send_from_directory(str(resources_dir), "map.html")
+
+    @app.route("/api/map/data")
+    def api_map_data():
+        """Return geocoded concert entries filtered by status, owned, year, and free text.
+
+        Query params:
+            status (str): lb_master status filter (public/private/missing).
+            owned (str): "true" to restrict to my_collection entries.
+            year_min (int): inclusive lower year bound.
+            year_max (int): inclusive upper year bound.
+            q (str): free-text search against location/date fields.
+
+        Returns:
+            JSON list of map marker dicts from db.get_map_data().
+        """
+        filters = {
+            "status":   request.args.get("status") or None,
+            "owned":    request.args.get("owned") == "true",
+            "year_min": int(request.args.get("year_min")) if request.args.get("year_min") else None,
+            "year_max": int(request.args.get("year_max")) if request.args.get("year_max") else None,
+            "q":        request.args.get("q") or None,
+        }
+        try:
+            result = database.get_map_data(filters)
+        except AttributeError:
+            return jsonify({"error": "get_map_data not yet available in db module"}), 503
+        return jsonify(result)
+
+    @app.route("/api/geocode/run", methods=["POST"])
+    def api_geocode_run():
+        """Start a background geocode batch.
+
+        Body (optional): {retry_failed: bool, limit: int|null}
+
+        Returns:
+            {status: "started"} or 409 if already running, 503 if module unavailable.
+        """
+        try:
+            import backend.geocoder as _geocoder
+        except ImportError:
+            return jsonify({"error": "geocoder module not available"}), 503
+
+        with _geocoder._lock:
+            if _geocoder._progress.get("running"):
+                return jsonify({"error": "already running"}), 409
+
+        body = request.get_json(silent=True) or {}
+        retry_failed = bool(body.get("retry_failed", False))
+        limit = body.get("limit")
+
+        t = threading.Thread(
+            target=_geocoder.run_batch,
+            kwargs={"limit": limit, "retry_failed": retry_failed},
+            daemon=True,
+        )
+        t.start()
+        return jsonify({"status": "started"})
+
+    @app.route("/api/geocode/status")
+    def api_geocode_status():
+        """Return current geocode batch progress dict.
+
+        Returns:
+            _geocoder._progress dict or 503 if module unavailable.
+        """
+        try:
+            import backend.geocoder as _geocoder
+            return jsonify(_geocoder._progress)
+        except ImportError:
+            return jsonify({"error": "geocoder module not available"}), 503
+
+    @app.route("/api/geocode/location", methods=["POST"])
+    def api_geocode_location():
+        """Manually place a location's coordinates.
+
+        Body: {location: str, lat: float, lon: float, note: str (optional)}
+
+        Returns:
+            {ok: true} or 400/503 on error.
+        """
+        try:
+            import backend.geocoder as _geocoder
+        except ImportError:
+            return jsonify({"error": "geocoder module not available"}), 503
+
+        body = request.get_json(silent=True) or {}
+        location = body.get("location", "").strip()
+        lat = body.get("lat")
+        lon = body.get("lon")
+        note = body.get("note", "")
+
+        if not location or lat is None or lon is None:
+            return jsonify({"error": "location, lat, lon required"}), 400
+
+        _geocoder.place_manual(location, float(lat), float(lon), note)
+        return jsonify({"ok": True})
+
+    @app.route("/api/geocode/locations")
+    def api_geocode_locations():
+        """Return rows from location_geocoded for the curator geocode management UI.
+
+        Query params:
+            filter (str): all | failed | low_confidence | manual (default: all)
+
+        Returns:
+            {"locations": [<row dicts>]}
+        """
+        filter_type = request.args.get("filter", "all")
+        try:
+            conn = database.get_connection()
+            where_map = {
+                "failed":         "WHERE source = 'failed'",
+                "low_confidence": "WHERE confidence = 'low'",
+                "manual":         "WHERE manual_override = 1",
+                "all":            "",
+            }
+            where = where_map.get(filter_type, "")
+            rows = conn.execute(
+                f"SELECT * FROM location_geocoded {where} ORDER BY location"
+            ).fetchall()
+            return jsonify({"locations": [dict(r) for r in rows]})
         except Exception as exc:
             return jsonify({"error": str(exc)}), 500
 

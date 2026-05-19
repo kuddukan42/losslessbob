@@ -158,6 +158,14 @@ backend/db.py: Added `location_geocoded` table (DDL inside `_SCHEMA`) — column
   "unplottable_count": int}` for a future map tab; joins entries, location_geocoded, lb_master, and
   my_collection; supports filters: status, owned, year_min, year_max, q.
 
+---
+
+[2026-05-18] — feat(backend): add /map, /api/map/data, /api/geocode/* routes
+
+Changed
+
+  backend/app.py: add GET /map, GET /api/map/data, POST /api/geocode/run, GET /api/geocode/status, POST /api/geocode/location, GET /api/geocode/locations. Also added send_from_directory to Flask imports.
+
 [2026-05-17] — fix(gui): Column widths now actually persist across restarts (GuiStateStore root-cause fix)
 
 Fixed
