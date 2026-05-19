@@ -1,6 +1,10 @@
+from __future__ import annotations
+
 import re
 import time
 import threading
+from typing import Callable
+
 import requests
 from bs4 import BeautifulSoup
 
@@ -36,17 +40,36 @@ _scrape_state = {
 _scrape_lock = threading.Lock()
 
 
-def get_scrape_status():
+def get_scrape_status() -> dict:
+    """Return a snapshot of the current scrape state.
+
+    Returns:
+        Dict with keys: running (bool), current_lb (int|None), last_lb (int|None),
+        total (int), done (int), errors (int), skipped (int),
+        last_action (str|None), last_source (str|None), stop_requested (bool).
+    """
     with _scrape_lock:
         return dict(_scrape_state)
 
 
-def stop_scrape():
+def stop_scrape() -> None:
+    """Signal the active scrape_range call to stop after its current entry."""
     with _scrape_lock:
         _scrape_state["stop_requested"] = True
 
 
-def _fetch(url, retries=3, delay=1.5):
+def _fetch(url: str, retries: int = 3, delay: float = 1.5) -> tuple[requests.Response | None, int]:
+    """GET *url* with retry logic and 429 back-off.
+
+    Args:
+        url: Full URL to fetch.
+        retries: Maximum number of attempts before giving up.
+        delay: Base sleep in seconds between retries (multiplied by attempt number).
+
+    Returns:
+        (response, status_code) on success; (None, 404) on 404; (None, 0) after
+        all retries are exhausted.
+    """
     for attempt in range(retries):
         try:
             resp = requests.get(url, headers=HEADERS, timeout=30)
@@ -63,7 +86,36 @@ def _fetch(url, retries=3, delay=1.5):
     return None, 0
 
 
-def scrape_entry(lb_number, force=False, download_files=True, use_local_pages=False, db_path=None):
+def scrape_entry(
+    lb_number: int,
+    force: bool = False,
+    download_files: bool = True,
+    use_local_pages: bool = False,
+    db_path: str | None = None,
+) -> dict:
+    """Scrape a single LB entry page and persist the result to the database.
+
+    Fetches the detail page for *lb_number* (from the live site or a local
+    cache), parses metadata and attachment links, upserts the ``entries`` and
+    ``entry_files`` rows, optionally downloads attachment files, and calls
+    ``reconcile_lb_status`` to keep ``lb_master`` in sync.
+
+    Args:
+        lb_number: The LB number to scrape (e.g. 12345).
+        force: When True, re-scrape and re-download even if the entry already
+            exists and all files are present.
+        download_files: When True, fetch attachment files that are not yet
+            cached locally.
+        use_local_pages: When True, read the detail page from
+            ``data/site/detail/`` instead of making a network request.
+        db_path: Override the default database path (used in tests).
+
+    Returns:
+        On skip: ``{"skipped": True}``.
+        On 404: ``{"error": "404", "missing": True}``.
+        On network failure: ``{"error": "fetch_failed"}``.
+        On success: ``{"ok": True, "files_downloaded": list[str], "local_source": bool}``.
+    """
     db_path = db_path or DB_PATH
     lb_id = f"{lb_number:05d}"
 
@@ -223,7 +275,33 @@ def scrape_entry(lb_number, force=False, download_files=True, use_local_pages=Fa
     return {"ok": True, "files_downloaded": downloaded, "local_source": used_local}
 
 
-def scrape_range(lb_numbers, force=False, download_files=True, use_local_pages=False, delay_ms=1500, db_path=None, progress_cb=None):
+def scrape_range(
+    lb_numbers: list[int],
+    force: bool = False,
+    download_files: bool = True,
+    use_local_pages: bool = False,
+    delay_ms: int = 1500,
+    db_path: str | None = None,
+    progress_cb: Callable[[int, int, int], None] | None = None,
+) -> None:
+    """Scrape a sequence of LB entries, updating shared state for GUI progress.
+
+    Iterates over *lb_numbers* calling :func:`scrape_entry` for each one.
+    Updates ``_scrape_state`` so the Setup tab progress bar and Stop button
+    work without extra wiring.  Respects ``stop_requested`` between entries.
+    Runs ``PRAGMA optimize`` on the connection when done.
+
+    Args:
+        lb_numbers: Ordered list of LB numbers to scrape.
+        force: Passed through to :func:`scrape_entry`.
+        download_files: Passed through to :func:`scrape_entry`.
+        use_local_pages: Passed through to :func:`scrape_entry`.
+        delay_ms: Milliseconds to sleep between live web requests.  Skipped
+            entries and local-page reads do not incur the delay.
+        db_path: Override the default database path (used in tests).
+        progress_cb: Optional callback invoked after each entry as
+            ``progress_cb(done, total, lb_number)``.
+    """
     db_path = db_path or DB_PATH
     total = len(lb_numbers)
 

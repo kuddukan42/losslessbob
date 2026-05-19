@@ -1,8 +1,10 @@
 TODO-024: Map tab — interactive map of concert locations
 Priority: Low
-Status: Open
+Status: Done
 Added: 2026-05-18
+Closed: 2026-05-19
 Description: Build a gui/map_tab.py using a QWebEngineView + Leaflet.js to render concert locations from the location_geocoded table as clickable markers. Backend already has GET /api/map/data (to be added to app.py) backed by db.get_map_data(). Filter controls: lb_status, owned, year range, text search. Markers should open a popup with date, location, lb_number, and a link to open the entry. Requires app.py route to be added and a Flask endpoint test.
+Completed: gui/map_tab.py, gui/resources/map.html (Leaflet 1.9.4, markercluster, heatmap), GET /map + GET /api/map/data routes, browser-viewable at http://localhost:5174/map.
 
 ---
 
@@ -26,8 +28,9 @@ Description: Add a separate "Download Pages Only" button that fetches and caches
 
 TODO-003: Add type hints and Google-style docstrings to scraper.py public functions
 Priority: Medium
-Status: Open
+Status: Done
 Added: 2026-05-07
+Closed: 2026-05-19
 Description: `scrape_entry`, `scrape_range`, `get_scrape_status`, `stop_scrape`, and `check_for_update` currently have no type hints or docstrings. Required by code standards.
 
 ---
@@ -590,8 +593,9 @@ Description: After TODO-032 through TODO-039 are complete: update PROJECT.md fil
 
 TODO-041: Backend geocoding API endpoints
 Priority: Medium
-Status: Open
+Status: Done
 Added: 2026-05-18
+Closed: 2026-05-19
 Description: The curator geocoding GUI added in setup_tab.py and dbedit_tab.py requires four backend routes that do not yet exist:
   POST /api/geocode/run        — start geocoder; body {retry_failed: bool}; returns 409 if already running
   GET  /api/geocode/status     — poll running state; returns {running, done, total, current, errors}
