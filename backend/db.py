@@ -1970,6 +1970,63 @@ def export_master_db(reason: str = "publish", db_path=None) -> "tuple[Path, dict
     return out_path, manifest
 
 
+def generate_release_notes(since_timestamp: str | None = None, db_path=None) -> str:
+    """Build markdown release notes from lb_status_history and manual overrides.
+
+    Args:
+        since_timestamp: ISO timestamp; only history rows after this point are
+            included. Pass None to include all rows (first-ever release).
+        db_path: Optional path to the SQLite database file. Defaults to DB_PATH.
+
+    Returns:
+        Markdown string suitable for a GitHub release body.
+    """
+    conn = get_connection(db_path)
+
+    # Status transitions since the last published snapshot
+    if since_timestamp:
+        rows = conn.execute(
+            "SELECT lb_number, old_status, new_status, changed_at, trigger_event "
+            "FROM lb_status_history WHERE changed_at > ? ORDER BY changed_at",
+            (since_timestamp,),
+        ).fetchall()
+    else:
+        rows = conn.execute(
+            "SELECT lb_number, old_status, new_status, changed_at, trigger_event "
+            "FROM lb_status_history ORDER BY changed_at",
+        ).fetchall()
+
+    # Manual override rows with notes
+    overrides = conn.execute(
+        "SELECT lb_number, lb_status, notes, updated_at "
+        "FROM lb_master WHERE manual_override = 1 ORDER BY lb_number",
+    ).fetchall()
+
+    lines: list[str] = []
+
+    if rows:
+        lines.append(f"## Status changes ({len(rows)})\n")
+        for r in rows:
+            old = r["old_status"] or "—"
+            new = r["new_status"]
+            ts = (r["changed_at"] or "")[:10]
+            trigger = r["trigger_event"] or ""
+            lines.append(f"- LB-{r['lb_number']:05d}: {old} → {new}  _{ts}_ {trigger}")
+        lines.append("")
+
+    if overrides:
+        lines.append(f"## Manual overrides ({len(overrides)})\n")
+        for o in overrides:
+            note = f" — {o['notes']}" if o.get("notes") else ""
+            lines.append(f"- LB-{o['lb_number']:05d}: {o['lb_status']}{note}")
+        lines.append("")
+
+    if not lines:
+        lines = ["_No status changes since last release._"]
+
+    return "\n".join(lines)
+
+
 def get_map_data(filters: dict, db_path=None) -> dict:
     """Return marker data and unplottable count for the map view.
 

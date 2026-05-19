@@ -162,6 +162,37 @@ class _DiscoverThread(QThread):
             self.finished.emit({"error": str(exc)})
 
 
+class _GithubReleaseThread(QThread):
+    """POST /api/master/github_release in a background thread."""
+
+    finished = pyqtSignal(dict)
+
+    def __init__(self, flask_port: int, db_path: str, manifest_path: str,
+                 version: str, prev_published_at: str | None) -> None:
+        super().__init__()
+        self.flask_port = flask_port
+        self.db_path = db_path
+        self.manifest_path = manifest_path
+        self.version = version
+        self.prev_published_at = prev_published_at
+
+    def run(self) -> None:
+        try:
+            resp = requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/master/github_release",
+                json={
+                    "db_path": self.db_path,
+                    "manifest_path": self.manifest_path,
+                    "version": self.version,
+                    "prev_published_at": self.prev_published_at,
+                },
+                timeout=150,
+            )
+            self.finished.emit(resp.json())
+        except Exception as exc:
+            self.finished.emit({"error": str(exc)})
+
+
 class _DownloadThread(QThread):
     """Calls POST /api/flat_file/download/{id} in a background thread."""
     finished = pyqtSignal(dict)
@@ -438,6 +469,7 @@ class SetupTab(QWidget):
         self._discover_thread: _DiscoverThread | None = None
         self._geocode_run_thread: _GeocodeRunThread | None = None
         self._geocode_status_thread: _GeocodeStatusThread | None = None
+        self._github_release_thread: _GithubReleaseThread | None = None
         self._build_ui()
         self._load_settings()
         self._refresh_stats()
@@ -624,6 +656,10 @@ class SetupTab(QWidget):
         master_btn_row.addWidget(self.install_master_btn)
         master_btn_row.addStretch()
         master_layout.addLayout(master_btn_row)
+
+        self._publish_status_label = QLabel("")
+        self._publish_status_label.setVisible(False)
+        master_layout.addWidget(self._publish_status_label)
 
         layout.addWidget(master_group)
 
@@ -1143,19 +1179,33 @@ class SetupTab(QWidget):
             # Revert UI to the actual server state
             self._load_curator_status()
 
-    def _on_publish_master(self):
-        """Build a master export and show the result + path."""
+    def _on_publish_master(self) -> None:
+        """Build a master export then upload to GitHub releases."""
         confirm = QMessageBox.question(
             self, "Publish Master Update?",
-            "Build a master-only snapshot of the current database?\n\n"
-            "This writes a .db and .manifest.json to data/exports/.\n"
+            "Build a master-only snapshot and upload it to GitHub releases?\n\n"
+            "This writes a .db and .manifest.json to data/exports/, then calls\n"
+            "the gh CLI to create a new release on kuddukan42/losslessbob.\n"
             "No data is modified locally; user-only tables are dropped from the copy.",
             QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
         )
         if confirm != QMessageBox.StandardButton.Yes:
             return
+
         self.publish_master_btn.setEnabled(False)
+        self._publish_status_label.setText("Exporting master snapshot…")
+        self._publish_status_label.setVisible(True)
+
         try:
+            # Read previous master_published_at before the export stamps a new one
+            prev_resp = requests.get(
+                f"http://127.0.0.1:{self.flask_port}/api/master/status",
+                timeout=10,
+            )
+            prev_published_at = None
+            if prev_resp.ok:
+                prev_published_at = prev_resp.json().get("master_published_at")
+
             resp = requests.post(
                 f"http://127.0.0.1:{self.flask_port}/api/master/export",
                 json={"reason": "publish"}, timeout=300,
@@ -1163,30 +1213,68 @@ class SetupTab(QWidget):
             data = resp.json()
             if not resp.ok or "error" in data:
                 msg = data.get("message") or data.get("error") or "Unknown error"
-                QMessageBox.warning(self, "Publish Failed", msg)
+                QMessageBox.warning(self, "Export Failed", msg)
+                self._publish_status_label.setText(f"Export failed: {msg}")
                 return
+
             manifest = data.get("manifest", {})
             counts = manifest.get("lb_status_counts", {})
             rc = manifest.get("row_counts", {})
-            QMessageBox.information(
-                self, "Master Snapshot Published",
-                f"Version:     {manifest.get('master_version', '?')}\n"
-                f"File:        {data.get('path', '?')}\n"
-                f"Size:        {manifest.get('size_bytes', 0):,} bytes\n"
-                f"SHA256:      {(manifest.get('sha256') or '')[:16]}…\n\n"
-                f"LB master:   {rc.get('lb_master', 0):,}\n"
-                f"  Public:    {counts.get('public', 0):,}\n"
-                f"  Private:   {counts.get('private', 0):,}\n"
-                f"  Missing:   {counts.get('missing', 0):,}\n"
-                f"Overrides:   {manifest.get('manual_override_count', 0)}\n\n"
-                f"Upload the .db AND .manifest.json together to your distribution channel."
+            version = manifest.get("master_version", "")
+            db_path = data.get("path", "")
+            manifest_path = data.get("manifest_path", "")
+
+            self._publish_status_label.setText(
+                f"Export done ({manifest.get('size_bytes', 0):,} bytes) — uploading to GitHub…"
             )
             self._refresh_master_status_label()
+
+            # Kick off the GitHub upload in a background thread
+            self._github_release_thread = _GithubReleaseThread(
+                self.flask_port, db_path, manifest_path, version, prev_published_at,
+            )
+            self._github_release_thread.finished.connect(
+                lambda result, m=manifest, c=counts, rc_=rc: self._on_github_release_done(result, m, c, rc_)
+            )
+            self._github_release_thread.start()
+
         except Exception as e:
             QMessageBox.warning(self, "Publish Failed", str(e))
-        finally:
-            # Re-enable only if curator is still on
+            self._publish_status_label.setText(f"Error: {e}")
             self.publish_master_btn.setEnabled(self.curator_cb.isChecked())
+
+    def _on_github_release_done(self, result: dict, manifest: dict,
+                                counts: dict, rc: dict) -> None:
+        """Handle the GitHub release result and show a summary dialog."""
+        self.publish_master_btn.setEnabled(self.curator_cb.isChecked())
+
+        if "error" in result:
+            err = result.get("message") or result.get("error")
+            self._publish_status_label.setText(f"GitHub upload failed: {err}")
+            QMessageBox.warning(
+                self, "GitHub Upload Failed",
+                f"{err}\n\nThe .db and .manifest.json files were saved to data/exports/.\n"
+                "You can upload them manually to GitHub releases.",
+            )
+            return
+
+        tag = result.get("tag", "?")
+        url = result.get("url", "")
+        self._publish_status_label.setText(f"Released: {tag}  {url}")
+
+        QMessageBox.information(
+            self, "Master Update Published",
+            f"Version:     {manifest.get('master_version', '?')}\n"
+            f"Tag:         {tag}\n"
+            f"Size:        {manifest.get('size_bytes', 0):,} bytes\n"
+            f"SHA256:      {(manifest.get('sha256') or '')[:16]}…\n\n"
+            f"LB master:   {rc.get('lb_master', 0):,}\n"
+            f"  Public:    {counts.get('public', 0):,}\n"
+            f"  Private:   {counts.get('private', 0):,}\n"
+            f"  Missing:   {counts.get('missing', 0):,}\n"
+            f"Overrides:   {manifest.get('manual_override_count', 0)}\n\n"
+            f"GitHub release:\n{url}",
+        )
 
     def _on_install_master(self):
         """Pick a master snapshot from disk and apply it locally."""

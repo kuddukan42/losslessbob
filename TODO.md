@@ -200,8 +200,9 @@ Done: Lookup tab (filter combobox + Private/Missing row tinting), Attachments tr
 
 TODO-022: GitHub release upload from "Publish Master Update" button
 Priority: Low
-Status: Open
+Status: Done
 Added: 2026-05-17
+Closed: 2026-05-19
 Description: After the export endpoint produces data/exports/<file>.db + .manifest.json, automate the upload to the kuddukan42/losslessbob GitHub releases via the gh CLI. Tag scheme: master-YYYY-MM-DD with auto-bump (.2, .3) on same-day re-release. Auto-generate release notes from lb_status_history rows since the last published master_version, plus a list of new manual overrides + notes. Currently the curator uploads the two files manually. Repo is private at the moment; this work should land once it goes public so end users can pull releases without auth. See CC_LB_INTEGRITY.md §GitHub Release Publishing.
 
 ---

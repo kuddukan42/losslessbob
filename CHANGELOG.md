@@ -1,3 +1,18 @@
+[2026-05-19] — feat(backend/gui): auto GitHub release upload from Publish button (TODO-022)
+
+Added
+
+  backend/db.py: generate_release_notes() — markdown from lb_status_history + manual overrides
+    since the previous master_published_at.
+  backend/app.py: GET /api/master/status (returns master_version + master_published_at);
+    POST /api/master/github_release — generates tag (master-YYYY-MM-DD[.N]), builds release notes,
+    runs gh release create, returns {ok, tag, url}.
+  gui/setup_tab.py: _GithubReleaseThread; _on_publish_master now reads prev master_published_at,
+    exports, then uploads to GitHub in a background thread; _on_github_release_done shows tag + URL;
+    _publish_status_label shows live progress below the Publish button.
+
+---
+
 [2026-05-19] — feat(gui): entry change history viewer in Lookup tab (TODO-005)
 
 Added

@@ -2279,6 +2279,22 @@ def create_app() -> Flask:
 
     # ── Master data publish / subscribe ────────────────────────────────────────
 
+    @app.route("/api/master/status", methods=["GET"])
+    def master_status() -> Response:
+        """Return the current master snapshot version and publish timestamp.
+
+        Returns:
+            JSON dict with master_version and master_published_at from the meta table.
+        """
+        try:
+            conn = database.get_connection()
+            rows = conn.execute(
+                "SELECT key, value FROM meta WHERE key IN ('master_version', 'master_published_at')"
+            ).fetchall()
+            return jsonify({r["key"]: r["value"] for r in rows})
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
     @app.route("/api/master/export", methods=["POST"])
     def master_export() -> Response:
         """Build a master-data snapshot + manifest. Curator-only.
@@ -2302,6 +2318,85 @@ def create_app() -> Flask:
                 "manifest_path": str(path) + ".manifest.json",
                 "manifest": manifest,
             })
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/master/github_release", methods=["POST"])
+    def master_github_release() -> Response:
+        """Create a GitHub release for a just-exported master snapshot. Curator-only.
+
+        Requires the ``gh`` CLI to be authenticated. Picks a tag in the form
+        ``master-YYYY-MM-DD``, appending ``.2`` / ``.3`` etc. on same-day
+        re-releases. Generates release notes from ``lb_status_history`` since
+        the previous ``master_published_at``.
+
+        Body: {db_path, manifest_path, version, prev_published_at (optional)}.
+        Returns: {ok, tag, url} or {error}.
+        """
+        import subprocess
+        from datetime import datetime, timezone
+
+        try:
+            if not database.is_curator():
+                return jsonify({"error": "curator_required"}), 403
+
+            body = request.get_json(silent=True) or {}
+            db_path_str = body.get("db_path", "")
+            manifest_path_str = body.get("manifest_path", "")
+            version = body.get("version", "")
+            prev_published_at = body.get("prev_published_at")
+
+            if not db_path_str or not manifest_path_str:
+                return jsonify({"error": "db_path and manifest_path are required"}), 400
+
+            # Derive date from version (format: YYYY-MM-DDTHH:MM:SS or timestamp)
+            try:
+                date_str = version[:10] if version else datetime.now(timezone.utc).strftime("%Y-%m-%d")
+            except Exception:
+                date_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
+            # Find an unused tag: master-YYYY-MM-DD[.N]
+            tag = f"master-{date_str}"
+            for suffix in ["", ".2", ".3", ".4", ".5"]:
+                candidate = f"{tag}{suffix}"
+                check = subprocess.run(
+                    ["gh", "release", "view", candidate, "--repo", "kuddukan42/losslessbob"],
+                    capture_output=True,
+                )
+                if check.returncode != 0:
+                    tag = candidate
+                    break
+
+            notes = database.generate_release_notes(
+                since_timestamp=prev_published_at,
+            )
+
+            result = subprocess.run(
+                [
+                    "gh", "release", "create", tag,
+                    db_path_str,
+                    manifest_path_str,
+                    "--title", f"Master Update {date_str}",
+                    "--notes", notes,
+                    "--repo", "kuddukan42/losslessbob",
+                ],
+                capture_output=True, text=True, timeout=120,
+            )
+
+            if result.returncode != 0:
+                return jsonify({
+                    "error": "gh_failed",
+                    "message": result.stderr.strip() or result.stdout.strip(),
+                }), 500
+
+            url = result.stdout.strip()
+            return jsonify({"ok": True, "tag": tag, "url": url})
+
+        except FileNotFoundError:
+            return jsonify({"error": "gh_not_found",
+                            "message": "gh CLI not found — install GitHub CLI first."}), 500
+        except subprocess.TimeoutExpired:
+            return jsonify({"error": "timeout", "message": "gh upload timed out after 120s"}), 500
         except Exception as exc:
             return jsonify({"error": str(exc)}), 500
 
