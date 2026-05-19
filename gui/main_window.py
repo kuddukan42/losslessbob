@@ -1,7 +1,7 @@
 import threading
 
 import requests
-from PyQt6.QtCore import QTimer, pyqtSignal
+from PyQt6.QtCore import pyqtSignal
 from PyQt6.QtGui import QAction
 from PyQt6.QtWidgets import (
     QMainWindow, QTabWidget, QStatusBar, QMessageBox,
@@ -48,10 +48,12 @@ class MainWindow(QMainWindow):
 
         self._status_message.connect(self.status_bar.showMessage)
 
-        self._status_timer = QTimer(self)
-        self._status_timer.timeout.connect(self._refresh_status)
-        self._status_timer.start(10000)
-        QTimer.singleShot(0, self._refresh_status)
+        self._status_stop = threading.Event()
+        self._status_wake = threading.Event()
+        self._status_thread = threading.Thread(
+            target=self._status_poll_loop, daemon=True, name="status-poller"
+        )
+        self._status_thread.start()
 
     def _build_menu(self):
         menubar = self.menuBar()
@@ -208,37 +210,49 @@ class MainWindow(QMainWindow):
             self.resize(1100, 750)
 
     def closeEvent(self, event):
+        self._status_stop.set()
+        self._status_wake.set()  # unblock any pending wait
         self.state_store.save_window(self)
         self.state_store.flush()
         super().closeEvent(event)
 
-    def _refresh_status(self):
-        def _fetch():
-            try:
-                resp = requests.get(
-                    f"http://127.0.0.1:{self.flask_port}/api/db/stats", timeout=5
-                )
-                s = resp.json()
-                lb = s.get("latest_lb", "?")
-                checksums = s.get("total_checksums", 0)
-                last_import = s.get("last_import", "Never")
-                if last_import and len(str(last_import)) > 10:
-                    last_import = str(last_import)[:10]
-                msg = f"DB: LB-{lb}  |  Checksums: {checksums:,}  |  Last import: {last_import}"
-                try:
-                    bl = requests.get(
-                        f"http://127.0.0.1:{self.flask_port}/api/bootlegs/stats", timeout=3
-                    ).json()
-                    bt = bl.get("total", 0)
-                    if bt:
-                        msg += f"  |  Bootlegs: {bt:,}"
-                except Exception:
-                    pass
-            except Exception:
-                msg = "Database not connected."
-            self._status_message.emit(msg)
+    def _status_poll_loop(self) -> None:
+        """Persistent status-bar polling loop.
 
-        threading.Thread(target=_fetch, daemon=True).start()
+        A single long-lived daemon thread that wakes every 10 s (or on demand
+        via _refresh_status()).  Avoids per-tick thread-creation overhead that
+        is measurable on Windows (~0.5–2 ms per spawn vs ~100 µs on Linux).
+        """
+        self._do_status_fetch()
+        while not self._status_stop.is_set():
+            self._status_wake.wait(timeout=10)
+            if self._status_stop.is_set():
+                break
+            self._status_wake.clear()
+            self._do_status_fetch()
+
+    def _do_status_fetch(self) -> None:
+        """Fetch combined DB + bootleg stats and emit a status-bar message."""
+        try:
+            s = requests.get(
+                f"http://127.0.0.1:{self.flask_port}/api/status", timeout=5
+            ).json()
+            lb = s.get("latest_lb", "?")
+            checksums = s.get("total_checksums", 0)
+            last_import = s.get("last_import", "Never")
+            if last_import and len(str(last_import)) > 10:
+                last_import = str(last_import)[:10]
+            msg = f"DB: LB-{lb}  |  Checksums: {checksums:,}  |  Last import: {last_import}"
+            bt = s.get("bootlegs", {}).get("total", 0)
+            if bt:
+                msg += f"  |  Bootlegs: {bt:,}"
+        except Exception:
+            msg = "Database not connected."
+        self._status_message.emit(msg)
+
+    def _refresh_status(self) -> None:
+        """Wake the persistent status poller to fetch immediately."""
+        self._status_wake.set()
 
     def _on_tab_changed(self, index: int):
         widget = self.tabs.widget(index)

@@ -93,6 +93,39 @@ class _RetrieveWorker(QThread):
             self.error.emit(str(e))
 
 
+class _AddRootWorker(QThread):
+    """Scan a root directory tree off the main thread (BUG-080 / TODO-045).
+
+    Walks the tree, finds all subdirectories that contain at least one audio
+    file, and emits the list of resolved absolute paths when done.
+    """
+    finished = pyqtSignal(list)
+    error = pyqtSignal(str)
+
+    def __init__(self, root: Path):
+        super().__init__()
+        self._root = root
+
+    def run(self):
+        try:
+            found = []
+            for sub in sorted(self._root.rglob("*")):
+                if not sub.is_dir():
+                    continue
+                try:
+                    if any(
+                        f.suffix.lower() in AUDIO_EXTS
+                        for f in sub.iterdir()
+                        if f.is_file()
+                    ):
+                        found.append(str(sub.resolve()))
+                except PermissionError:
+                    pass
+            self.finished.emit(found)
+        except Exception as exc:
+            self.error.emit(str(exc))
+
+
 class DropFolderListWidget(QListWidget):
     folders_dropped = pyqtSignal(list)
 
@@ -132,6 +165,7 @@ class VerifyTab(QWidget):
         self._worker = None
         self._generate_worker = None
         self._retrieve_worker = None
+        self._add_root_worker = None
         self._build_ui()
 
     def _build_ui(self):
@@ -299,20 +333,28 @@ class VerifyTab(QWidget):
         root = QFileDialog.getExistingDirectory(self, "Select Root Folder", str(Path.home()))
         if not root:
             return
-        root_path = Path(root)
-        added = 0
-        for sub in sorted(root_path.rglob("*")):
-            if sub.is_dir():
-                try:
-                    if any(f.suffix.lower() in AUDIO_EXTS for f in sub.iterdir() if f.is_file()):
-                        before = len(self._folders)
-                        self._add_folder(str(sub))
-                        if len(self._folders) > before:
-                            added += 1
-                except PermissionError:
-                    pass
+        self.add_root_btn.setEnabled(False)
+        self.status_label.setText("Scanning for audio folders…")
+        worker = _AddRootWorker(Path(root))
+        self._add_root_worker = worker
+        worker.finished.connect(self._on_add_root_finished)
+        worker.error.connect(self._on_add_root_error)
+        worker.start()
+
+    def _on_add_root_finished(self, candidates: list) -> None:
+        before = len(self._folders)
+        for path in candidates:
+            self._add_folder(path)
+        added = len(self._folders) - before
         self._refresh_listbox()
         self.status_label.setText(f"Added {added} subfolder(s) with audio files.")
+        self.add_root_btn.setEnabled(True)
+        self._add_root_worker = None
+
+    def _on_add_root_error(self, msg: str) -> None:
+        self.status_label.setText(f"Scan error: {msg}")
+        self.add_root_btn.setEnabled(True)
+        self._add_root_worker = None
 
     def _on_remove_selected(self):
         for item in self.listbox.selectedItems():

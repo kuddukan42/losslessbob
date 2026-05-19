@@ -1,3 +1,83 @@
+[2026-05-19] — fix(gui): HiDPI-aware splash screen pixmap on Windows (TODO-049)
+
+Fixed
+
+  main.py: QPixmap(400, 120) was created at logical size with no device-pixel-ratio
+    awareness. On Windows at 125%/150%/200% DPI scaling the splash appeared blurry.
+    Now queries qt_app.primaryScreen().devicePixelRatio() after QApplication is
+    constructed, creates the pixmap at (400*dpr) × (120*dpr) physical pixels, and
+    calls pix.setDevicePixelRatio(dpr) so Qt renders it at native resolution.
+    Falls back to dpr=1.0 if primaryScreen() returns None (headless/no display).
+
+[2026-05-19] — feat(backend/gui): GET /api/status merged endpoint, halve status-bar loopback (TODO-048)
+
+Added
+
+  backend/app.py: GET /api/status returns database.get_stats() merged with
+    database.get_bootleg_stats() under a "bootlegs" key. Halves per-tick loopback
+    round-trips from two sequential GETs to one. Existing /api/db/stats and
+    /api/bootlegs/stats routes are unchanged.
+
+Changed
+
+  gui/main_window.py: _do_status_fetch() now calls /api/status instead of
+    /api/db/stats + /api/bootlegs/stats. Bootleg count read from s["bootlegs"]["total"].
+    Removed the inner try/except for the second request — error path simplified to one
+    catch.
+
+[2026-05-19] — fix(gui): replace per-tick status thread with persistent poller (TODO-047)
+
+Changed
+
+  gui/main_window.py: _refresh_status() previously spawned a new daemon threading.Thread
+    every 10 s (each QTimer tick). Replaced with a single long-lived "status-poller" daemon
+    thread (_status_poll_loop) that sleeps via threading.Event.wait(timeout=10). Calling
+    _refresh_status() (e.g. from setup_tab.stats_changed) now simply sets _status_wake,
+    waking the sleeping thread immediately for an extra fetch. _status_stop + _status_wake
+    events are both set in closeEvent to let the thread exit cleanly without joining.
+    Removed QTimer and its import; removed the per-tick Thread spawn.
+
+[2026-05-19] — fix(gui): skip QGraphicsDropShadowEffect on Windows to eliminate repaint lag (TODO-046)
+
+Fixed
+
+  gui/styles.py: apply_panel_shadow() now returns immediately on sys.platform == "win32".
+    Qt Fusion (Windows) renders entirely in software, so blurRadius=12 shadow effects on
+    11 panel widgets forced per-repaint offscreen blits that caused visible scroll/resize lag
+    with large tables. Shadows are unaffected on Linux and macOS.
+
+[2026-05-19] — fix(gui): move "Add Root Folder" rglob scan off main thread (BUG-080/TODO-045)
+
+Fixed
+
+  gui/verify_tab.py: _on_add_root_folder used sorted(root_path.rglob("*")) synchronously
+    on the Qt main thread. Added _AddRootWorker(QThread) that runs the directory tree scan
+    and per-subfolder audio-file check off-thread. _on_add_root_folder now disables the
+    button and starts the worker; _on_add_root_finished calls _add_folder() for each
+    discovered path and re-enables the button. Added _on_add_root_error for error reporting.
+  gui/lbdir_tab.py: Identical fix — same _AddRootWorker pattern added, same slot structure.
+
+[2026-05-19] — fix(main): skip --disable-gpu WebEngine flag on Windows (TODO-044)
+
+Fixed
+
+  main.py: --disable-gpu was applied to QTWEBENGINE_CHROMIUM_FLAGS unconditionally,
+    including on Windows. This flag was added to work around Linux/XWayland issues
+    (EGL_BAD_NATIVE_WINDOW, GPU-process blackout). On Windows, Chromium uses
+    DirectX/ANGLE and GPU acceleration works correctly; forcing --disable-gpu switched
+    the Map and Attachments WebEngine tabs to slow Swiftshader software rendering.
+    The flag is now injected only when sys.platform != "win32". --disable-logging
+    (suppresses Chromium stderr noise) remains unconditional on all platforms.
+
+[2026-05-19] — chore(docs): Windows performance audit — add TODO-044–049 and BUG-080
+
+Added
+
+  TODO.md: TODO-044 (--disable-gpu on Windows), TODO-045 (rglob main-thread freeze),
+    TODO-046 (QGraphicsDropShadowEffect repaint lag), TODO-047 (per-tick thread churn),
+    TODO-048 (consolidated /api/status), TODO-049 (HiDPI splash pixmap).
+  BUGS.md: BUG-080 — rglob("*") on main GUI thread in verify_tab and lbdir_tab.
+
 [2026-05-19] — fix(backend): flat_file relative path, import concurrency guard, .st5 verification
 
 Fixed

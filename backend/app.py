@@ -95,6 +95,24 @@ def create_app() -> Flask:
 
     # ── Database Management ──────────────────────────────────────────────────
 
+    @app.route("/api/status", methods=["GET"])
+    def api_status() -> Response:
+        """Return combined DB and bootleg stats in one round-trip.
+
+        Merges /api/db/stats and /api/bootlegs/stats to halve loopback
+        overhead for the GUI status-bar poller (two GETs → one GET).
+
+        Returns:
+            JSON dict: all keys from get_stats() plus a 'bootlegs' sub-key
+            containing get_bootleg_stats().
+        """
+        try:
+            data = database.get_stats()
+            data["bootlegs"] = database.get_bootleg_stats()
+            return jsonify(data)
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
     @app.route("/api/db/stats", methods=["GET"])
     def db_stats() -> Response:
         """Return database row counts and metadata statistics.

@@ -1,3 +1,89 @@
+TODO-049: Windows — HiDPI-aware splash screen pixmap
+Priority: Low
+Status: Done
+Added: 2026-05-19
+Closed: 2026-05-19
+Description: The splash screen in main.py creates QPixmap(400, 120) without considering the
+  display's device pixel ratio. On Windows with 125%/150%/200% scaling the splash appears
+  blurry. Should query QScreen.devicePixelRatio() before QApplication is shown, create the
+  pixmap at (400*dpr) × (120*dpr), and call pixmap.setDevicePixelRatio(dpr) so Qt renders
+  it at native resolution.
+
+---
+
+TODO-048: Windows — consolidated /api/status endpoint to halve loopback overhead
+Priority: Low
+Status: Done
+Added: 2026-05-19
+Closed: 2026-05-19
+Description: _refresh_status() in main_window.py makes two sequential HTTP GETs every 10 s:
+  /api/db/stats then /api/bootlegs/stats. On Windows, loopback TCP has more overhead than
+  Linux. Add GET /api/status returning both payloads merged; update _refresh_status() to use
+  the single call. Reduces per-tick network cost and simplifies the error path.
+
+---
+
+TODO-047: Windows — replace per-tick daemon thread in _refresh_status with persistent worker
+Priority: Medium
+Status: Done
+Added: 2026-05-19
+Closed: 2026-05-19
+Description: _refresh_status() in main_window.py (main_window.py:216) spawns a new
+  threading.Thread every 10 s. On Windows, thread creation costs ~0.5–2 ms (kernel TLS init
+  + scheduler registration) vs ~100 µs on Linux. Over a long session this is measurable churn.
+  Replace with a single persistent QThread (or threading.Thread with a threading.Event sleep
+  loop) that polls at the same 10 s interval without re-creating OS threads.
+
+---
+
+TODO-046: Windows — QGraphicsDropShadowEffect on 11 panels causes repaint lag
+Priority: Medium
+Status: Done
+Added: 2026-05-19
+Closed: 2026-05-19
+Description: _apply_shadows() in main_window.py applies a blurRadius=12 QGraphicsDropShadow-
+  Effect to 11 widgets (Lookup, Rename, Search, Collection ×2, Verify ×2, lbdir ×2, Bootlegs).
+  On Windows, Qt renders the Fusion style entirely in software; the shadow forces each affected
+  widget to blit into an offscreen buffer, apply a Gaussian blur, and composite back on every
+  repaint. With large tables this causes visible lag during resize/scroll. Options:
+    (a) Skip shadows on Windows:  `if sys.platform != "win32": apply_panel_shadow(…)`
+    (b) Reduce blurRadius from 12 to 4 and offset from (0,2) to (0,1) to lower cost on all platforms.
+  Option (a) is the safest short-term fix. Option (b) benefits all platforms.
+
+---
+
+TODO-045: Windows — rglob("*") on main thread in Verify and lbdir "Add Root Folder"
+Priority: High
+Status: Done
+Added: 2026-05-19
+Closed: 2026-05-19
+Description: verify_tab._on_add_root_folder (verify_tab.py:304) and
+  lbdir_tab._on_add_root_folder (lbdir_tab.py:608) both call sorted(root_path.rglob("*"))
+  synchronously on the Qt main thread after the file dialog closes. On Windows with NTFS and
+  large collections, this freezes the GUI ("Python not responding"). This is the same pattern
+  fixed for collection_tab in BUG-034; see _ScanWorker there for the reference fix.
+  Fix: add a _AddRootWorker(QThread) to each tab that runs the rglob traversal off-thread,
+  emits the discovered folder list, and lets the main thread update the listbox.
+  See also: BUG-080.
+
+---
+
+TODO-044: Windows — --disable-gpu Chromium flag applied on Windows, killing GPU acceleration
+Priority: High
+Status: Done
+Added: 2026-05-19
+Closed: 2026-05-19
+Description: main.py:157–165 unconditionally appends --disable-gpu and --disable-logging to
+  QTWEBENGINE_CHROMIUM_FLAGS. These flags were added to work around Linux/XWayland issues
+  (EGL_BAD_NATIVE_WINDOW, GPU-process blackout — see BUG-053, BUG-060). On Windows,
+  Chromium uses DirectX/ANGLE for GPU compositing, which works well and produces smooth
+  scrolling in the Map tab and Attachments tab. Forcing --disable-gpu switches Chromium to
+  Swiftshader software rendering, making both tabs noticeably laggy.
+  Fix: wrap the flag injection in `if sys.platform != "win32":` so Windows retains GPU
+  acceleration while Linux still gets the XWayland workarounds.
+
+---
+
 TODO-043: Admin panel — site-crawler control and live status dialog
 Priority: Low
 Status: Done

@@ -238,7 +238,15 @@ def apply_theme(theme_dict, font_family: str = "", font_size: int = 9):
 
 
 def apply_panel_shadow(widget):
-    """Attach a subtle drop-shadow effect to a results panel widget."""
+    """Attach a subtle drop-shadow effect to a results panel widget.
+
+    No-op on Windows: Qt Fusion renders entirely in software, so each affected
+    widget must blit into an offscreen buffer, apply a Gaussian blur, and
+    composite back on every repaint — causing visible lag with large tables.
+    """
+    import sys
+    if sys.platform == "win32":
+        return
     from PyQt6.QtWidgets import QGraphicsDropShadowEffect
     effect = QGraphicsDropShadowEffect()
     effect.setBlurRadius(12)

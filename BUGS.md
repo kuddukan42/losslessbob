@@ -1,3 +1,18 @@
+BUG-080: rglob("*") on main thread in Verify and lbdir "Add Root Folder" freezes UI
+Status: Fixed
+File(s): gui/verify_tab.py, gui/lbdir_tab.py
+Reported: 2026-05-19
+Fixed: 2026-05-19
+Description: Both _on_add_root_folder handlers traversed the selected directory tree using
+  sorted(root_path.rglob("*")) synchronously on the Qt main thread. On Windows (NTFS, slower
+  directory reads) or large archives this triggered an unresponsive-window timeout. Same pattern
+  as BUG-034 which was fixed in collection_tab.py.
+Root cause: No worker thread offloaded the filesystem traversal.
+Fix: Added _AddRootWorker(QThread) to each tab. The worker runs the rglob scan and
+  iterdir() audio-file check off the main thread, emitting finished(list[str]) on completion.
+  _on_add_root_folder starts the worker and disables the button; _on_add_root_finished
+  adds paths via _add_folder() (which deduplicates) and re-enables the button.
+
 BUG-079: .st5 hashes parsed but never verified — stored under wrong dict key
 Status: Fixed
 File(s): backend/checksum_utils.py:verify_folder

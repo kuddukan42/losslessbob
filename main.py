@@ -147,19 +147,18 @@ def main() -> None:
 
     # Suppress Chromium-level sandbox diagnostics and path-override warnings that
     # go directly to stderr and can't be filtered through Python's logging.
-    # --disable-gpu prevents Chromium from starting a GPU process entirely, which
-    # fixes two issues on Linux/XWayland with Qt 6.7:
+    # --disable-gpu is Linux/XWayland-only: it prevents Chromium from starting a
+    # GPU process, which fixes two Qt 6.7 regressions on XWayland:
     #   1. GBM "Unknown or not supported format: 808530000" (P010 format probe)
     #   2. Full-window blackout caused by Chromium's GPU process hijacking the
     #      shared OpenGL context established by AA_ShareOpenGLContexts.
-    # Chromium falls back to Swiftshader software rendering, which is sufficient
-    # for the simple archive pages and local HTML files this app displays.
+    # On Windows, Chromium uses DirectX/ANGLE and GPU acceleration works correctly;
+    # applying --disable-gpu there forces Swiftshader software rendering and makes
+    # the Map and Attachments tabs noticeably laggy (TODO-044).
     _flags = os.environ.get("QTWEBENGINE_CHROMIUM_FLAGS", "")
-    _needed = [
-        "--disable-logging",
-        "--disable-gpu",
-    ]
-    for _f in _needed:
+    _always_flags = ["--disable-logging"]
+    _linux_flags = ["--disable-gpu"] if sys.platform != "win32" else []
+    for _f in _always_flags + _linux_flags:
         if _f not in _flags:
             _flags = (_flags + " " + _f).strip()
     os.environ["QTWEBENGINE_CHROMIUM_FLAGS"] = _flags
@@ -180,7 +179,10 @@ def main() -> None:
     from PyQt6.QtGui import QPixmap, QColor
     from PyQt6.QtCore import Qt
 
-    pix = QPixmap(400, 120)
+    _screen = qt_app.primaryScreen()
+    dpr = _screen.devicePixelRatio() if _screen else 1.0
+    pix = QPixmap(int(400 * dpr), int(120 * dpr))
+    pix.setDevicePixelRatio(dpr)
     pix.fill(QColor("#1F4E79"))
     splash = QSplashScreen(pix, Qt.WindowType.WindowStaysOnTopHint)
     splash.showMessage(
