@@ -38,13 +38,13 @@ def start_flask() -> None:
         try:
             from waitress import serve as waitress_serve
             _FLASK_READY.set()  # waitress_serve blocks; signal readiness before it starts
-            waitress_serve(flask_app, host="127.0.0.1", port=FLASK_PORT,
+            waitress_serve(flask_app, host="0.0.0.0", port=FLASK_PORT,
                            threads=8, channel_timeout=120)
         except ImportError:
-            flask_app.run(host="127.0.0.1", port=FLASK_PORT,
+            flask_app.run(host="0.0.0.0", port=FLASK_PORT,
                           debug=False, use_reloader=False)
     else:
-        flask_app.run(host="127.0.0.1", port=FLASK_PORT,
+        flask_app.run(host="0.0.0.0", port=FLASK_PORT,
                       debug=False, use_reloader=False)
 
 

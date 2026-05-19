@@ -16,6 +16,17 @@ import urllib.request
 logger = logging.getLogger(__name__)
 
 # ---------------------------------------------------------------------------
+# Internal helpers
+# ---------------------------------------------------------------------------
+
+class _RateLimitError(Exception):
+    """Raised by geocode_one() when Nominatim returns HTTP 429."""
+
+
+_MAX_429_RETRIES = 3      # max retries per location after a 429
+_RATE_LIMIT_SLEEP = 60    # seconds to sleep after a 429 before retrying
+
+# ---------------------------------------------------------------------------
 # Module-level thread-safe progress state
 # ---------------------------------------------------------------------------
 
@@ -25,7 +36,7 @@ _progress: dict = {
     "total": 0,
     "current": "",
     "errors": 0,
-    "stage": "",       # "querying" | "saving" | "sleeping" | "done" | ""
+    "stage": "",       # "querying" | "saving" | "sleeping" | "rate_limited" | "done" | ""
     "succeeded": 0,
 }
 _lock = threading.Lock()
@@ -58,6 +69,20 @@ def geocode_one(location_text: str) -> dict:
     try:
         with urllib.request.urlopen(req, timeout=15) as resp:
             data = json.loads(resp.read().decode("utf-8"))
+    except urllib.error.HTTPError as exc:
+        if exc.code == 429:
+            logger.warning("Nominatim rate-limited (429) for %r", location_text)
+            raise _RateLimitError(location_text) from exc
+        logger.warning("Nominatim HTTP %d for %r: %s", exc.code, location_text, exc)
+        return {
+            "location_text": location_text,
+            "lat": None,
+            "lon": None,
+            "display_name": None,
+            "source": "failed",
+            "confidence": None,
+            "note": str(exc),
+        }
     except Exception as exc:
         logger.warning("Nominatim request failed for %r: %s", location_text, exc)
         return {
@@ -221,7 +246,36 @@ def run_batch(
                 _progress["current"] = location_text
                 _progress["stage"] = "querying"
 
-            result = geocode_one(location_text)
+            for attempt in range(_MAX_429_RETRIES + 1):
+                try:
+                    result = geocode_one(location_text)
+                    break
+                except _RateLimitError:
+                    if attempt < _MAX_429_RETRIES:
+                        logger.warning(
+                            "Rate-limited on %r; sleeping %ds (retry %d/%d)",
+                            location_text, _RATE_LIMIT_SLEEP,
+                            attempt + 1, _MAX_429_RETRIES,
+                        )
+                        with _lock:
+                            _progress["stage"] = "rate_limited"
+                        time.sleep(_RATE_LIMIT_SLEEP)
+                        with _lock:
+                            _progress["stage"] = "querying"
+                    else:
+                        logger.error(
+                            "Still rate-limited after %d retries on %r; marking failed",
+                            _MAX_429_RETRIES, location_text,
+                        )
+                        result = {
+                            "location_text": location_text,
+                            "lat": None,
+                            "lon": None,
+                            "display_name": None,
+                            "source": "failed",
+                            "confidence": None,
+                            "note": f"HTTP 429: rate-limited after {_MAX_429_RETRIES} retries",
+                        }
 
             with _lock:
                 _progress["stage"] = "saving"

@@ -126,7 +126,7 @@ class MainWindow(QMainWindow):
         _slog.t("_build_tabs: init AttachmentsTab")
         self.attachments_tab = AttachmentsTab(self.flask_port)
         _slog.t("_build_tabs: init SetupTab")
-        self.setup_tab = SetupTab(self.flask_port)
+        self.setup_tab = SetupTab(self.flask_port, state_store=self.state_store)
         _slog.t("_build_tabs: init ThemeTab")
         self.theme_tab = ThemeTab()
 

@@ -2557,9 +2557,10 @@ def create_app() -> Flask:
         Returns:
             JSON list of map marker dicts from db.get_map_data().
         """
+        _owned_param = request.args.get("owned")
         filters = {
             "status":   request.args.get("status") or None,
-            "owned":    request.args.get("owned") == "true",
+            "owned":    True if _owned_param in ("true", "1") else None,
             "year_min": int(request.args.get("year_min")) if request.args.get("year_min") else None,
             "year_max": int(request.args.get("year_max")) if request.args.get("year_max") else None,
             "q":        request.args.get("q") or None,
@@ -2798,3 +2799,12 @@ def _start_download_pages_thread(lb_numbers, force=False, delay_ms=1500):
 
     _scrape_thread = threading.Thread(target=run, daemon=True)
     _scrape_thread.start()
+
+
+if __name__ == "__main__":
+    import sys
+    from backend.paths import ensure_data_dirs
+    ensure_data_dirs()
+    port = int(sys.argv[1]) if len(sys.argv) > 1 else 5174
+    flask_app = create_app()
+    flask_app.run(host="0.0.0.0", port=port, debug=False, use_reloader=False)

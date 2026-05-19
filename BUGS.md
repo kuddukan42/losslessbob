@@ -1,3 +1,34 @@
+BUG-075: Map shows only ~434 markers instead of ~9,700 (owned filter applied by default)
+Status: Fixed
+File(s): backend/app.py:api_map_data, gui/resources/map.html
+Reported: 2026-05-19
+Fixed: 2026-05-19
+Description: The map loaded with almost no markers even with no filters applied.
+Root cause: api_map_data() set owned=False when no 'owned' query param was present
+  (request.args.get("owned") == "true" evaluates to False, not None).
+  get_map_data() treats owned=False as "show non-owned only" (mc.lb_number IS NULL),
+  filtering out ~9,300 entries. A secondary bug: the JS sent owned=1 but Flask
+  checked for "true", so the Owned-only checkbox also never worked.
+  A third bug: the JS popup read m.lb/m.date/m.status instead of the correct
+  API field names m.lb_number/m.date_str/m.lb_status, causing all popups to show
+  no LB number, no date, and all markers to render orange (unknown status).
+Fix: api_map_data() now passes None (no filter) when owned param is absent;
+  owned=True only when param is "true" or "1". JS corrected to send owned=true
+  and to read correct field names from the API response.
+
+---
+
+BUG-074: Map shows garbage markers for low-confidence Nominatim geocodes
+Status: Fixed
+File(s): backend/db.py:get_map_data
+Reported: 2026-05-19
+Fixed: 2026-05-19
+Description: Low-confidence geocode results (e.g. "Japan 2001" → village in Indonesia, "1964 revisited" → Chicago tattoo studio) were shown as map markers because get_map_data only checked lat IS NOT NULL.
+Root cause: The JOIN on location_geocoded did not filter by confidence, so low-quality matches with valid lat/lon coordinates were included.
+Fix: Added AND geo.confidence != 'low' to the JOIN condition so low-confidence rows produce NULL lat/lon and fall into the unplottable bucket.
+
+---
+
 BUG-073: Location Geocoding panel shows "Unexpected response from server" on Load
 Status: Fixed
 File(s): gui/dbedit_tab.py:_on_geo_loaded
@@ -86,12 +117,13 @@ Fix: Removed check_for_update() entirely and replaced with the backend/flat_file
 ---
 
 BUG-069: Nominatim batch geocoder has no HTTP-429 / rate-limit retry logic
-Status: Open
-File(s): backend/geocoder.py:run_batch
+Status: Fixed
+File(s): backend/geocoder.py:geocode_one, run_batch
 Reported: 2026-05-19
+Fixed: 2026-05-19
 Description: run_batch() sleeps 1.1 s between requests to stay within Nominatim's 1 req/sec ToS. However, if the server still returns HTTP 429 (overloaded or policy breach), the request is logged as a network error and marked source='failed' with no retry or back-off. Large batch runs against a slow Nominatim endpoint may accumulate many false 'failed' rows that require --retry-failed later.
 Root cause: geocode_one() wraps urllib.request.urlopen in a generic except; 429 responses are not distinguished from actual failures.
-Fix: Not yet implemented. Suggested fix: check resp.status == 429 and raise with a marker; run_batch catches the marker, sleeps an additional 60 s, then retries the same location without advancing the progress counter.
+Fix: geocode_one() now catches urllib.error.HTTPError before the generic except; a 429 raises the private _RateLimitError sentinel. run_batch() wraps geocode_one() in a retry loop (up to 3 attempts); on each _RateLimitError it sets stage='rate_limited', sleeps 60 s, then retries without advancing the progress counter. After all retries are exhausted the location falls back to source='failed' with a descriptive note.
 
 ---
 

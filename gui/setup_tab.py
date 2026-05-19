@@ -458,9 +458,10 @@ class SetupTab(QWidget):
     stats_changed = pyqtSignal()
     search_page_size_changed = pyqtSignal(int)
 
-    def __init__(self, flask_port, parent=None):
+    def __init__(self, flask_port, state_store=None, parent=None):
         super().__init__(parent)
         self.flask_port = flask_port
+        self._state_store = state_store
         self._loading = False
         self._import_thread = None
         self._import_status_thread = None
@@ -471,6 +472,7 @@ class SetupTab(QWidget):
         self._geocode_status_thread: _GeocodeStatusThread | None = None
         self._github_release_thread: _GithubReleaseThread | None = None
         self._build_ui()
+        self._refresh_col_defaults_status()
         self._load_settings()
         self._refresh_stats()
         self._load_curator_status()
@@ -706,6 +708,40 @@ class SetupTab(QWidget):
         search_layout.addLayout(page_size_row)
         layout.addWidget(search_group)
 
+        # ── Column Widths ────────────────────────────────────────────────────────
+        cw_group = QGroupBox("Column Widths")
+        cw_layout = QVBoxLayout(cw_group)
+
+        self._cw_status_label = QLabel("User defaults: none (factory widths will be used)")
+        cw_layout.addWidget(self._cw_status_label)
+
+        cw_btn_row = QHBoxLayout()
+        self._save_defaults_btn = QPushButton("Save as Defaults")
+        self._save_defaults_btn.setToolTip(
+            "Snapshot current column widths as your personal defaults"
+        )
+        self._save_defaults_btn.clicked.connect(self._on_save_col_defaults)
+        cw_btn_row.addWidget(self._save_defaults_btn)
+
+        self._restore_defaults_btn = QPushButton("Restore My Defaults")
+        self._restore_defaults_btn.setToolTip(
+            "Apply your saved column-width defaults to all tables"
+        )
+        self._restore_defaults_btn.setEnabled(False)
+        self._restore_defaults_btn.clicked.connect(self._on_restore_col_defaults)
+        cw_btn_row.addWidget(self._restore_defaults_btn)
+
+        self._restore_factory_btn = QPushButton("Restore Factory")
+        self._restore_factory_btn.setToolTip(
+            "Reset all column widths to factory defaults and clear your saved layout"
+        )
+        self._restore_factory_btn.clicked.connect(self._on_restore_factory_defaults)
+        cw_btn_row.addWidget(self._restore_factory_btn)
+        cw_btn_row.addStretch()
+        cw_layout.addLayout(cw_btn_row)
+
+        layout.addWidget(cw_group)
+
         # ── Connection settings (scraper controls moved to Scraper tab) ─────────
         conn_row = QHBoxLayout()
         conn_row.setSpacing(12)
@@ -865,9 +901,46 @@ class SetupTab(QWidget):
 
         layout.addWidget(ff_group)
 
-        layout.addWidget(ff_group)
-
     # _build_ui end — scraper and bootleg catalog panels moved to ScraperTab
+
+    # ── Column-width defaults ────────────────────────────────────────────────
+
+    def _refresh_col_defaults_status(self) -> None:
+        if self._state_store is None:
+            return
+        has = self._state_store.has_user_defaults
+        self._restore_defaults_btn.setEnabled(has)
+        self._cw_status_label.setText(
+            "User defaults: saved" if has
+            else "User defaults: none (factory widths will be used)"
+        )
+
+    def _on_save_col_defaults(self) -> None:
+        if self._state_store is None:
+            return
+        self._state_store.save_user_defaults()
+        self._cw_status_label.setText("Layout saved as defaults.")
+        self._restore_defaults_btn.setEnabled(True)
+
+    def _on_restore_col_defaults(self) -> None:
+        if self._state_store is None:
+            return
+        self._state_store.restore_user_defaults()
+        self._cw_status_label.setText("Defaults restored.")
+
+    def _on_restore_factory_defaults(self) -> None:
+        if self._state_store is None:
+            return
+        if QMessageBox.question(
+            self, "Restore Factory Defaults",
+            "Reset all column widths to factory defaults?\n\nThis will clear your saved layout.",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+            QMessageBox.StandardButton.No,
+        ) != QMessageBox.StandardButton.Yes:
+            return
+        self._state_store.restore_factory_defaults()
+        self._cw_status_label.setText("User defaults: none (factory widths will be used)")
+        self._restore_defaults_btn.setEnabled(False)
 
     def _load_settings(self):
         self._loading = True

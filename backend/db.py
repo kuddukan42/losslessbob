@@ -2084,7 +2084,8 @@ def get_map_data(filters: dict, db_path=None) -> dict:
                CASE WHEN mc.lb_number IS NOT NULL THEN 1 ELSE 0 END AS owned,
                geo.lat, geo.lon, geo.display_name
         FROM entries e
-        LEFT JOIN location_geocoded geo ON e.location = geo.location_text
+        LEFT JOIN location_geocoded geo
+               ON e.location = geo.location_text AND geo.confidence != 'low'
         LEFT JOIN lb_master lm ON e.lb_number = lm.lb_number
         LEFT JOIN my_collection mc ON e.lb_number = mc.lb_number
         {where}

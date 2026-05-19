@@ -1,3 +1,71 @@
+[2026-05-19] — fix(backend/gui): map showed only 434 markers instead of ~9,700 (BUG-075)
+
+Fixed
+
+  backend/app.py: api_map_data() now passes owned=None (no filter) when the
+    'owned' query param is absent; previously defaulted to False which applied
+    a "non-owned only" WHERE clause. Also accepts "1" as a truthy value for
+    the owned=true filter so the Owned-only checkbox works.
+  gui/resources/map.html: JS popup corrected to read m.lb_number, m.date_str,
+    m.lb_status instead of non-existent m.lb, m.date, m.status field names.
+    owned filter now sends owned=true (was owned=1, not matched by Flask).
+
+[2026-05-19] — chore(backend): add __main__ block to app.py for headless backend
+
+Added
+
+  backend/app.py: `if __name__ == "__main__":` entry point so the Flask
+    server can be started without the GUI via `python -m backend.app [port]`.
+    Port defaults to 5174; pass an integer argument to override.
+
+[2026-05-19] — fix(db): exclude low-confidence geocodes from map markers (BUG-074)
+
+Fixed
+
+  backend/db.py: get_map_data JOIN on location_geocoded now filters out
+    confidence='low' rows. Previously, low-confidence Nominatim matches
+    (e.g. "Japan 2001" → a village in Indonesia) were shown as map markers.
+    They are now counted as unplottable instead.
+
+[2026-05-19] — chore(main): bind Flask to 0.0.0.0 for LAN accessibility
+
+Changed
+
+  main.py: Flask server now listens on 0.0.0.0 instead of 127.0.0.1, making all routes
+    (including /map and /api/*) reachable from other machines on the local network.
+    The local readiness probe in _wait_for_port still uses 127.0.0.1.
+
+[2026-05-19] — fix(geocoder): retry on HTTP 429 with 60-second back-off (BUG-069)
+
+Fixed
+
+  backend/geocoder.py: geocode_one() now catches urllib.error.HTTPError before the generic
+    Exception handler; a 429 response raises the private _RateLimitError sentinel instead of
+    silently producing source='failed'. run_batch() wraps geocode_one() in a retry loop (up
+    to _MAX_429_RETRIES=3 attempts); on each _RateLimitError it sets stage='rate_limited',
+    sleeps _RATE_LIMIT_SLEEP=60 s, then retries without advancing the progress counter. If
+    all retries are exhausted the location is written as source='failed' with a descriptive
+    note so it can be picked up by --retry-failed later.
+
+[2026-05-19] — feat(gui): column-width save/restore defaults in Setup tab (TODO-029)
+
+Added
+
+  gui/widgets/state_store.py: import weakref; self._registered list tracks every attach_table()
+    call as (weakref.ref(table), key, factory_defaults). New methods: has_user_defaults (property),
+    save_user_defaults(), restore_user_defaults(), restore_factory_defaults(), clear_user_defaults(),
+    _apply_col_widths(). save/restore write immediately (no debounce); _apply_col_widths uses
+    _restoring guard so programmatic resize doesn't trigger spurious live-width saves.
+  gui/setup_tab.py: accepts state_store=None; new "Column Widths" QGroupBox with three buttons —
+    "Save as Defaults", "Restore My Defaults" (disabled when no snapshot exists), "Restore Factory"
+    (confirmation required). Status label shows saved vs. none state. _refresh_col_defaults_status()
+    syncs button enable state on init.
+  gui/main_window.py: SetupTab now receives state_store=self.state_store.
+
+Fixed
+
+  gui/setup_tab.py: removed duplicate layout.addWidget(ff_group) at end of _build_ui().
+
 [2026-05-19] — feat(gui): click-to-sort on Lookup tab summary and detail tables (TODO-027)
 
 Added

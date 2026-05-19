@@ -271,8 +271,9 @@ Description: Rename tab uses RenameModel (QAbstractTableModel) + QTableView, so 
 
 TODO-029: Save / restore column-width defaults across all GUI tabs
 Priority: Medium
-Status: Open
+Status: Done
 Added: 2026-05-18
+Closed: 2026-05-19
 Description: Allow the user to snapshot their current column layout as reusable defaults and restore to them (or to factory defaults) on demand.
 
 Concepts:

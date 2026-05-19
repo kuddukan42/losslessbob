@@ -231,7 +231,7 @@
     function buildQuery(filters) {
         const params = new URLSearchParams();
         if (filters.status)   params.set('status',   filters.status);
-        if (filters.owned)    params.set('owned',    '1');
+        if (filters.owned)    params.set('owned',    'true');
         if (filters.year_min) params.set('year_min', filters.year_min);
         if (filters.year_max) params.set('year_max', filters.year_max);
         if (filters.q)        params.set('q',        filters.q);
@@ -283,7 +283,7 @@
                     const lon = m.lon;
                     if (lat == null || lon == null) return;
 
-                    const color   = STATUS_COLORS[m.status] || DEFAULT_COLOR;
+                    const color   = STATUS_COLORS[m.lb_status] || DEFAULT_COLOR;
                     const isOwned = Boolean(m.owned);
 
                     const circle = L.circleMarker([lat, lon], {
@@ -297,8 +297,8 @@
                     // Popup HTML
                     let popupHtml =
                         '<div class="lb-popup">' +
-                        '<b>LB ' + (m.lb || '') + '</b><br>' +
-                        (m.date || '') + '<br>' +
+                        '<b>LB ' + (m.lb_number || '') + '</b><br>' +
+                        (m.date_str || '') + '<br>' +
                         (m.location || '') + '<br>';
 
                     if (m.display_name && m.display_name !== m.location) {
@@ -307,7 +307,7 @@
 
                     popupHtml +=
                         '<span class="popup-status" style="color:' + color + '">' +
-                        escapeHtml(m.status || 'unknown') + '</span>';
+                        escapeHtml(m.lb_status || 'unknown') + '</span>';
 
                     if (isOwned) {
                         popupHtml += ' &nbsp;<span style="color:#FF9800; font-size:11px;">★ owned</span>';

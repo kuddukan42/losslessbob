@@ -10,6 +10,7 @@ import json
 import logging
 import os
 import time
+import weakref
 from pathlib import Path
 
 from PyQt6.QtCore import QObject, QTimer
@@ -33,6 +34,8 @@ class GuiStateStore(QObject):
         self._dirty = False
         self._restoring: set[int] = set()   # id(table) values being restored
         self.corrupt_on_load = False
+
+        self._registered: list[tuple] = []  # (weakref.ref(table), key, factory_defaults)
 
         self._save_timer = QTimer(self)
         self._save_timer.setSingleShot(True)
@@ -165,6 +168,8 @@ class GuiStateStore(QObject):
         hdr = table.horizontalHeader()
         tid = id(table)
 
+        self._registered.append((weakref.ref(table), key, list(defaults) if defaults else []))
+
         # Guard must be set NOW, before any sectionResized can fire from Qt's
         # deferred initial layout.  The singleShot(0) _restore below fires on
         # the next event-loop tick — too late; Qt auto-resize fires first and
@@ -201,6 +206,70 @@ class GuiStateStore(QObject):
 
         hdr.sectionResized.connect(_on_resized)
         QTimer.singleShot(0, _restore)
+
+    # ── user-default column widths ────────────────────────────────────────────
+
+    @property
+    def has_user_defaults(self) -> bool:
+        """True if the user has saved a column-width snapshot."""
+        return bool(self._state.get("col_width_defaults"))
+
+    def save_user_defaults(self) -> None:
+        """Snapshot current live col_widths for every registered table.
+
+        Written immediately (no debounce) — this is always user-triggered.
+        """
+        snap: dict[str, list[int]] = {}
+        for ref, key, _ in self._registered:
+            tbl = ref()
+            if tbl is None:
+                continue
+            widths = self.get_col_widths(key)
+            if widths:
+                snap[key] = widths
+        self._state["col_width_defaults"] = snap
+        self._write_now()
+
+    def restore_user_defaults(self) -> None:
+        """Apply user-saved defaults to all registered tables, falling back to factory."""
+        user_defs: dict = self._state.get("col_width_defaults") or {}
+        for ref, key, factory in self._registered:
+            tbl = ref()
+            if tbl is None:
+                continue
+            widths = user_defs.get(key) or factory
+            if widths:
+                self._apply_col_widths(tbl, widths, key)
+        self._write_now()
+
+    def restore_factory_defaults(self) -> None:
+        """Apply hardcoded factory widths to all tables and clear user defaults."""
+        self._state.pop("col_width_defaults", None)
+        for ref, key, factory in self._registered:
+            tbl = ref()
+            if tbl is None:
+                continue
+            if factory:
+                self._apply_col_widths(tbl, factory, key)
+        self._write_now()
+
+    def clear_user_defaults(self) -> None:
+        """Remove the user snapshot; restore_user_defaults() will fall back to factory."""
+        self._state.pop("col_width_defaults", None)
+        self._schedule_save()
+
+    def _apply_col_widths(self, table, widths: list[int], key: str) -> None:
+        """Set column widths under the _restoring guard and persist as live widths."""
+        tid = id(table)
+        self._restoring.add(tid)
+        m = table.model()
+        n = m.columnCount() if m is not None else 0
+        for i in range(min(len(widths), n)):
+            table.setColumnWidth(i, widths[i])
+        if key not in self._state:
+            self._state[key] = {}
+        self._state[key]["col_widths"] = list(widths)
+        QTimer.singleShot(150, lambda: self._restoring.discard(tid))
 
     # ── window geometry ───────────────────────────────────────────────────────
 
