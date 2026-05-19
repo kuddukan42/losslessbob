@@ -2,6 +2,7 @@ from pathlib import Path
 
 from backend.paths import DATA_DIR as _DATA_DIR
 
+import logging
 import requests
 from PyQt6.QtCore import Qt, QThread, pyqtSignal
 from PyQt6.QtWidgets import (
@@ -11,6 +12,8 @@ from PyQt6.QtWidgets import (
     QDialog, QDialogButtonBox, QTableWidget, QTableWidgetItem,
 )
 from PyQt6.QtGui import QColor
+
+_log = logging.getLogger(__name__)
 
 
 class _ImportThread(QThread):
@@ -366,6 +369,56 @@ class _UpdateAvailableDialog(QDialog):
         self.reject()
 
 
+class _GeocodeRunThread(QThread):
+    """POST /api/geocode/run in a background thread; never blocks the GUI."""
+
+    finished = pyqtSignal(dict)
+
+    def __init__(self, flask_port: int, retry_failed: bool) -> None:
+        super().__init__()
+        self.flask_port = flask_port
+        self.retry_failed = retry_failed
+
+    def run(self) -> None:
+        try:
+            resp = requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/geocode/run",
+                json={"retry_failed": self.retry_failed},
+                timeout=15,
+            )
+            self.finished.emit(resp.json() if resp.ok or resp.status_code == 409
+                               else {"error": resp.text, "status_code": resp.status_code})
+        except Exception as exc:
+            self.finished.emit({"error": str(exc)})
+
+
+class _GeocodeStatusThread(QThread):
+    """Polls GET /api/geocode/status every 2 s while geocoding is running."""
+
+    status_update = pyqtSignal(dict)
+
+    def __init__(self, flask_port: int) -> None:
+        super().__init__()
+        self.flask_port = flask_port
+        self._running = True
+
+    def run(self) -> None:
+        while self._running:
+            try:
+                resp = requests.get(
+                    f"http://127.0.0.1:{self.flask_port}/api/geocode/status",
+                    timeout=5,
+                )
+                self.status_update.emit(resp.json())
+            except Exception:
+                pass
+            self.msleep(2000)
+
+    def stop(self) -> None:
+        """Signal the polling loop to exit on the next iteration."""
+        self._running = False
+
+
 class SetupTab(QWidget):
     stats_changed = pyqtSignal()
     search_page_size_changed = pyqtSignal(int)
@@ -379,6 +432,8 @@ class SetupTab(QWidget):
         self._reset_thread = None
         self._wtrf_test_thread = None
         self._discover_thread: _DiscoverThread | None = None
+        self._geocode_run_thread: _GeocodeRunThread | None = None
+        self._geocode_status_thread: _GeocodeStatusThread | None = None
         self._build_ui()
         self._load_settings()
         self._refresh_stats()
@@ -567,6 +622,33 @@ class SetupTab(QWidget):
         master_layout.addLayout(master_btn_row)
 
         layout.addWidget(master_group)
+
+        # ── Geocode Locations (curator only) ────────────────────────────────
+        self._geocode_group = QGroupBox("Geocode Locations")
+        geocode_layout = QVBoxLayout(self._geocode_group)
+
+        geocode_layout.addWidget(QLabel(
+            "Geocode entries.location → lat/lon via Nominatim (curator only)"
+        ))
+
+        geocode_opts_row = QHBoxLayout()
+        self._geocode_retry_cb = QCheckBox("Retry Failed")
+        self._geocode_retry_cb.setToolTip(
+            "Re-attempt entries that previously failed geocoding"
+        )
+        geocode_opts_row.addWidget(self._geocode_retry_cb)
+
+        self._geocode_run_btn = QPushButton("Run Geocoder")
+        self._geocode_run_btn.clicked.connect(self._on_geocode_run)
+        geocode_opts_row.addWidget(self._geocode_run_btn)
+        geocode_opts_row.addStretch()
+        geocode_layout.addLayout(geocode_opts_row)
+
+        self._geocode_status_label = QLabel("Status: idle")
+        geocode_layout.addWidget(self._geocode_status_label)
+
+        self._geocode_group.setVisible(False)  # shown only in curator mode
+        layout.addWidget(self._geocode_group)
 
         # Search settings section
         search_group = QGroupBox("Search")
@@ -1016,6 +1098,7 @@ class SetupTab(QWidget):
         self.curator_cb.setChecked(enabled)
         self.curator_cb.blockSignals(False)
         self.publish_master_btn.setEnabled(enabled)
+        self._geocode_group.setVisible(enabled)
         self._refresh_master_status_label()
 
     def _refresh_master_status_label(self):
@@ -1041,7 +1124,7 @@ class SetupTab(QWidget):
             self.master_status_label.setText(f"Master version: (unknown — {e})")
 
     def _on_curator_toggled(self, checked: bool):
-        """Persist the curator flag and gate the Publish button."""
+        """Persist the curator flag and gate the Publish button and geocoder group."""
         try:
             resp = requests.post(
                 f"http://127.0.0.1:{self.flask_port}/api/curator",
@@ -1050,6 +1133,7 @@ class SetupTab(QWidget):
             if not resp.ok:
                 raise RuntimeError(resp.text)
             self.publish_master_btn.setEnabled(bool(checked))
+            self._geocode_group.setVisible(bool(checked))
         except Exception as e:
             QMessageBox.warning(self, "Curator Mode", f"Could not update flag: {e}")
             # Revert UI to the actual server state
@@ -1434,3 +1518,61 @@ class SetupTab(QWidget):
                 self.tracker_list_combo.blockSignals(False)
         except Exception:
             pass
+
+    # ── Geocoding (curator only) ─────────────────────────────────────────────
+
+    def _on_geocode_run(self) -> None:
+        """Start the Nominatim geocoder in a background thread (curator only).
+
+        POSTs to /api/geocode/run; starts a polling thread on success.
+        """
+        retry = self._geocode_retry_cb.isChecked()
+        self._geocode_run_btn.setEnabled(False)
+        self._geocode_status_label.setText("Status: starting…")
+
+        self._geocode_run_thread = _GeocodeRunThread(self.flask_port, retry)
+        self._geocode_run_thread.finished.connect(self._on_geocode_started)
+        self._geocode_run_thread.start()
+
+    def _on_geocode_started(self, result: dict) -> None:
+        """Handle the immediate response from POST /api/geocode/run."""
+        if result.get("status_code") == 409 or result.get("already_running"):
+            self._geocode_status_label.setText("Status: already running")
+            self._geocode_run_btn.setEnabled(True)
+            return
+        if "error" in result and "status_code" not in result:
+            self._geocode_status_label.setText(f"Status: error — {result['error']}")
+            self._geocode_run_btn.setEnabled(True)
+            return
+        # Geocoder started — begin polling
+        self._geocode_status_label.setText("Status: running…")
+        self._geocode_status_thread = _GeocodeStatusThread(self.flask_port)
+        self._geocode_status_thread.status_update.connect(self._on_geocode_status)
+        self._geocode_status_thread.start()
+
+    def _on_geocode_status(self, status: dict) -> None:
+        """Update the geocode progress label from a polling update.
+
+        Args:
+            status: JSON payload from GET /api/geocode/status.
+        """
+        running = status.get("running", False)
+        done = status.get("done", 0)
+        total = status.get("total", 0)
+        current = status.get("current", "")
+        errors = status.get("errors", 0)
+
+        if running:
+            parts = [f"Running: {done}/{total}"]
+            if current:
+                parts.append(current)
+            self._geocode_status_label.setText(" — ".join(parts))
+        else:
+            if self._geocode_status_thread is not None:
+                self._geocode_status_thread.stop()
+                self._geocode_status_thread = None
+            self._geocode_run_btn.setEnabled(True)
+            self._geocode_status_label.setText(
+                f"Done: {done} geocoded, {errors} errors"
+            )
+            _log.info("Geocoder finished: %d geocoded, %d errors", done, errors)

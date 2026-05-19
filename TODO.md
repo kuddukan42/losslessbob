@@ -577,3 +577,16 @@ Status: Done
 Added: 2026-05-18
 Closed: 2026-05-18
 Description: After TODO-032 through TODO-039 are complete: update PROJECT.md file structure tree (new backend/site_crawler.py, gui/scraper_tab.py), DB schema section (scrape_sessions + page_cache_state), API routes section (/api/crawler/*), and Tech Stack table if any new deps were added. Prepend CHANGELOG.md entry summarising the full TODO-031 scraper tab implementation. This TODO should be the last closed item in the TODO-031 work sequence.
+
+---
+
+TODO-041: Backend geocoding API endpoints
+Priority: Medium
+Status: Open
+Added: 2026-05-18
+Description: The curator geocoding GUI added in setup_tab.py and dbedit_tab.py requires four backend routes that do not yet exist:
+  POST /api/geocode/run        — start geocoder; body {retry_failed: bool}; returns 409 if already running
+  GET  /api/geocode/status     — poll running state; returns {running, done, total, current, errors}
+  GET  /api/geocode/locations  — list geocoded location rows; query param filter=all|failed|low_confidence|manual
+  POST /api/geocode/location   — save a manual lat/lon; body {location, lat, lon, note}
+Nominatim (geopy or direct HTTP) should be used with a polite 1-request-per-second rate limit and User-Agent header. DB schema: location_geocodes(location_text PK, source, confidence, lat, lon, is_manual, note, geocoded_at). Add to MASTER_TABLES.

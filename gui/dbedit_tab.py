@@ -1,3 +1,4 @@
+import logging
 import requests
 from pathlib import Path
 
@@ -8,12 +9,97 @@ from PyQt6.QtWidgets import (
     QListWidget, QListWidgetItem, QTableWidget, QTableWidgetItem,
     QPushButton, QLabel, QLineEdit, QHeaderView, QAbstractItemView,
     QMessageBox, QFileDialog, QMenu, QComboBox, QApplication, QInputDialog,
+    QDialog, QFormLayout, QDoubleSpinBox, QDialogButtonBox, QGroupBox,
 )
+
+_log = logging.getLogger(__name__)
 
 _C_DIRTY  = QColor("#fffbe6")
 _C_WARN   = QColor("#fff0f0")
 _C_AUDIT  = QColor("#f0f0ff")
 _C_RDONLY = QColor("#f4f4f4")
+
+
+# ── Geocoding helpers ─────────────────────────────────────────────────────────
+
+class PlaceManualDialog(QDialog):
+    """Dialog for manually entering lat/lon coordinates for a location.
+
+    Args:
+        location_text: The raw location string being geocoded (read-only).
+        lat: Pre-filled latitude, or None if not yet geocoded.
+        lon: Pre-filled longitude, or None if not yet geocoded.
+        note: Pre-filled curator note, or empty string.
+        parent: Parent widget.
+    """
+
+    def __init__(
+        self,
+        location_text: str,
+        lat: float | None,
+        lon: float | None,
+        note: str,
+        parent=None,
+    ) -> None:
+        super().__init__(parent)
+        self.setWindowTitle("Place Manually")
+        self.setMinimumWidth(360)
+
+        form = QFormLayout(self)
+        form.setContentsMargins(12, 12, 12, 12)
+        form.setSpacing(8)
+
+        loc_lbl = QLabel(location_text)
+        loc_lbl.setWordWrap(True)
+        form.addRow("Location:", loc_lbl)
+
+        self._lat_spin = QDoubleSpinBox()
+        self._lat_spin.setRange(-90.0, 90.0)
+        self._lat_spin.setDecimals(6)
+        self._lat_spin.setSingleStep(0.0001)
+        self._lat_spin.setValue(lat if lat is not None else 0.0)
+        form.addRow("Lat:", self._lat_spin)
+
+        self._lon_spin = QDoubleSpinBox()
+        self._lon_spin.setRange(-180.0, 180.0)
+        self._lon_spin.setDecimals(6)
+        self._lon_spin.setSingleStep(0.0001)
+        self._lon_spin.setValue(lon if lon is not None else 0.0)
+        form.addRow("Lon:", self._lon_spin)
+
+        self._note_edit = QLineEdit(note)
+        self._note_edit.setPlaceholderText("Optional curator note…")
+        form.addRow("Note:", self._note_edit)
+
+        buttons = QDialogButtonBox(
+            QDialogButtonBox.StandardButton.Save
+            | QDialogButtonBox.StandardButton.Cancel
+        )
+        buttons.accepted.connect(self.accept)
+        buttons.rejected.connect(self.reject)
+        form.addRow(buttons)
+
+        self._location_text = location_text
+
+    @property
+    def location(self) -> str:
+        """The location text that was passed in (read-only)."""
+        return self._location_text
+
+    @property
+    def lat(self) -> float:
+        """Currently selected latitude value."""
+        return self._lat_spin.value()
+
+    @property
+    def lon(self) -> float:
+        """Currently selected longitude value."""
+        return self._lon_spin.value()
+
+    @property
+    def note(self) -> str:
+        """Currently entered note text."""
+        return self._note_edit.text().strip()
 
 
 class _Worker(QThread):
@@ -74,7 +160,6 @@ class DbEditTab(QWidget):
         ll.addWidget(refresh_btn)
 
         # ── DB Integrity sub-panel ────────────────────────────────────────────
-        from PyQt6.QtWidgets import QGroupBox
         integrity_box = QGroupBox("DB Integrity")
         ib_layout = QVBoxLayout(integrity_box)
         ib_layout.setContentsMargins(6, 8, 6, 6)
@@ -159,6 +244,57 @@ class DbEditTab(QWidget):
         ab_layout.addWidget(self._alias_status)
 
         ll.addWidget(aliases_box)
+
+        # ── Location Geocoding sub-panel (curator only) ───────────────────────
+        self._geo_box = QGroupBox("Location Geocoding")
+        geo_layout = QVBoxLayout(self._geo_box)
+        geo_layout.setContentsMargins(6, 8, 6, 6)
+        geo_layout.setSpacing(3)
+
+        geo_filter_row = QHBoxLayout()
+        geo_filter_row.addWidget(QLabel("Filter:"))
+        self._geo_filter_combo = QComboBox()
+        self._geo_filter_combo.addItems(["All", "Failed", "Low Confidence", "Manual Only"])
+        self._geo_filter_combo.setToolTip(
+            "All → all locations\n"
+            "Failed → geocoding failed\n"
+            "Low Confidence → confidence score below threshold\n"
+            "Manual Only → entries with a manual coordinate override"
+        )
+        geo_filter_row.addWidget(self._geo_filter_combo)
+
+        self._geo_load_btn = QPushButton("Load")
+        self._geo_load_btn.setToolTip("Fetch locations from /api/geocode/locations")
+        self._geo_load_btn.clicked.connect(self._on_geo_load)
+        geo_filter_row.addWidget(self._geo_load_btn)
+        geo_layout.addLayout(geo_filter_row)
+
+        self._geo_table = QTableWidget(0, 7)
+        self._geo_table.setHorizontalHeaderLabels(
+            ["Location Text", "Source", "Confidence", "Lat", "Lon", "Manual?", "Note"]
+        )
+        self._geo_table.setSelectionBehavior(
+            QAbstractItemView.SelectionBehavior.SelectRows
+        )
+        self._geo_table.setEditTriggers(
+            QAbstractItemView.EditTrigger.NoEditTriggers
+        )
+        hdr = self._geo_table.horizontalHeader()
+        hdr.setSectionResizeMode(0, QHeaderView.ResizeMode.Stretch)
+        for col in range(1, 7):
+            hdr.setSectionResizeMode(col, QHeaderView.ResizeMode.ResizeToContents)
+        self._geo_table.setMinimumHeight(120)
+        self._geo_table.setMaximumHeight(200)
+        self._geo_table.doubleClicked.connect(self._on_geo_row_dblclick)
+        geo_layout.addWidget(self._geo_table)
+
+        self._geo_status = QLabel("")
+        self._geo_status.setWordWrap(True)
+        geo_layout.addWidget(self._geo_status)
+
+        self._geo_box.setVisible(False)  # shown only in curator mode
+        ll.addWidget(self._geo_box)
+
         ll.addStretch()
         splitter.addWidget(left)
 
@@ -927,6 +1063,7 @@ class DbEditTab(QWidget):
         curator = self._check_curator()
         self._alias_add_btn.setEnabled(curator)
         self._alias_del_btn.setEnabled(curator)
+        self._geo_box.setVisible(curator)
 
         self._alias_table.setRowCount(0)
         for row in data:
@@ -1069,5 +1206,141 @@ class DbEditTab(QWidget):
         w = _Worker(_delete)
         w.finished.connect(_done)
         w.error.connect(lambda e: self._alias_status.setText(f"Error: {e}"))
+        self._workers.append(w)
+        w.start()
+
+    # ── Location Geocoding panel (curator only) ───────────────────────────────
+
+    # Filter combo labels → API parameter values
+    _GEO_FILTER_MAP: dict[str, str] = {
+        "All": "all",
+        "Failed": "failed",
+        "Low Confidence": "low_confidence",
+        "Manual Only": "manual",
+    }
+
+    def _on_geo_load(self) -> None:
+        """Load geocoded locations from the backend into the geo table.
+
+        Calls GET /api/geocode/locations?filter=<value> in a background worker.
+        """
+        if not self._check_curator():
+            self._geo_status.setText("Curator mode required.")
+            return
+        label = self._geo_filter_combo.currentText()
+        filter_val = self._GEO_FILTER_MAP.get(label, "all")
+        self._geo_load_btn.setEnabled(False)
+        self._geo_status.setText("Loading…")
+
+        def _fetch():
+            return requests.get(
+                f"http://127.0.0.1:{self.flask_port}/api/geocode/locations",
+                params={"filter": filter_val},
+                timeout=15,
+            ).json()
+
+        w = _Worker(_fetch)
+        w.finished.connect(self._on_geo_loaded)
+        w.error.connect(self._on_geo_load_error)
+        self._workers.append(w)
+        w.start()
+
+    def _on_geo_loaded(self, data: object) -> None:
+        """Populate the geocoding table from the API response.
+
+        Args:
+            data: List of location dicts from the backend, or an error dict.
+        """
+        self._geo_load_btn.setEnabled(True)
+        if isinstance(data, dict) and "error" in data:
+            self._geo_status.setText(f"Error: {data['error']}")
+            return
+        if not isinstance(data, list):
+            self._geo_status.setText("Unexpected response from server.")
+            return
+
+        self._geo_table.setRowCount(0)
+        for row in data:
+            r = self._geo_table.rowCount()
+            self._geo_table.insertRow(r)
+            loc_text = row.get("location_text") or ""
+            source = row.get("source") or ""
+            confidence = str(row.get("confidence") or "")
+            lat = row.get("lat")
+            lon = row.get("lon")
+            lat_str = f"{lat:.6f}" if lat is not None else ""
+            lon_str = f"{lon:.6f}" if lon is not None else ""
+            manual = "Yes" if row.get("is_manual") else ""
+            note = row.get("note") or ""
+            for col, val in enumerate(
+                [loc_text, source, confidence, lat_str, lon_str, manual, note]
+            ):
+                item = QTableWidgetItem(val)
+                item.setFlags(item.flags() & ~Qt.ItemFlag.ItemIsEditable)
+                # Store the full row dict on the first column for later retrieval
+                if col == 0:
+                    item.setData(Qt.ItemDataRole.UserRole, row)
+                self._geo_table.setItem(r, col, item)
+
+        self._geo_status.setText(f"{len(data)} location(s) loaded.")
+
+    def _on_geo_load_error(self, msg: str) -> None:
+        """Handle a worker error during geocode location load.
+
+        Args:
+            msg: Error message string from the worker thread.
+        """
+        self._geo_load_btn.setEnabled(True)
+        self._geo_status.setText(f"Error: {msg}")
+        _log.error("Geocode load error: %s", msg)
+
+    def _on_geo_row_dblclick(self) -> None:
+        """Open PlaceManualDialog for the double-clicked geocoding row.
+
+        POSTs the updated coordinates to /api/geocode/location on Save.
+        """
+        row = self._geo_table.currentRow()
+        if row < 0:
+            return
+        first_item = self._geo_table.item(row, 0)
+        if first_item is None:
+            return
+        row_data: dict = first_item.data(Qt.ItemDataRole.UserRole) or {}
+        loc_text = row_data.get("location_text") or (first_item.text())
+        lat_val: float | None = row_data.get("lat")
+        lon_val: float | None = row_data.get("lon")
+        note_val: str = row_data.get("note") or ""
+
+        dlg = PlaceManualDialog(loc_text, lat_val, lon_val, note_val, parent=self)
+        if dlg.exec() != QDialog.DialogCode.Accepted:
+            return
+
+        payload = {
+            "location": dlg.location,
+            "lat": dlg.lat,
+            "lon": dlg.lon,
+            "note": dlg.note,
+        }
+
+        def _post():
+            return requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/geocode/location",
+                json=payload,
+                timeout=10,
+            ).json()
+
+        def _done(result: dict) -> None:
+            if "error" in result:
+                self._geo_status.setText(f"Save error: {result['error']}")
+            else:
+                self._geo_status.setText(
+                    f"Saved manual placement for: {loc_text}"
+                )
+                # Reload the table to reflect the change
+                self._on_geo_load()
+
+        w = _Worker(_post)
+        w.finished.connect(_done)
+        w.error.connect(lambda e: self._geo_status.setText(f"Save error: {e}"))
         self._workers.append(w)
         w.start()

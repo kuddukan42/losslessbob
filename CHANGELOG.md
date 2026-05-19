@@ -1,3 +1,12 @@
+[2026-05-18] — feat(gui): add curator geocoding controls to Setup tab and DB Editor tab
+
+Changed
+
+  gui/setup_tab.py: add Geocode Locations group box (curator only) with progress polling; _GeocodeRunThread POSTs /api/geocode/run, _GeocodeStatusThread polls /api/geocode/status every 2 s; group shown/hidden on curator toggle.
+  gui/dbedit_tab.py: add Location Geocoding sub-panel (curator only) with filter dropdown (All/Failed/Low Confidence/Manual Only), Load button calling GET /api/geocode/locations, QTableWidget (7 cols, first col stretches), double-click → PlaceManualDialog; PlaceManualDialog pre-fills lat/lon/note, Save POSTs /api/geocode/location; all HTTP calls via _Worker(QThread), never on GUI thread.
+
+---
+
 [2026-05-18] — fix: crawler seeded from wrong URL + test suite (BUG-067, BUG-068)
 
 Fixed
