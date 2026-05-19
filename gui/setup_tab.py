@@ -193,6 +193,59 @@ class _GithubReleaseThread(QThread):
             self.finished.emit({"error": str(exc)})
 
 
+class _ExportMasterThread(QThread):
+    """GET /api/master/status + POST /api/master/export off the main thread."""
+
+    finished = pyqtSignal(dict)
+
+    def __init__(self, flask_port: int) -> None:
+        super().__init__()
+        self.flask_port = flask_port
+
+    def run(self) -> None:
+        try:
+            prev_published_at = None
+            try:
+                st = requests.get(
+                    f"http://127.0.0.1:{self.flask_port}/api/master/status",
+                    timeout=10,
+                )
+                if st.ok:
+                    prev_published_at = st.json().get("master_published_at")
+            except Exception:
+                pass
+            resp = requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/master/export",
+                json={"reason": "publish"}, timeout=300,
+            )
+            data = resp.json()
+            data["_prev_published_at"] = prev_published_at
+            self.finished.emit(data)
+        except Exception as exc:
+            self.finished.emit({"error": str(exc)})
+
+
+class _InstallMasterThread(QThread):
+    """POST /api/master/import off the main thread."""
+
+    finished = pyqtSignal(dict)
+
+    def __init__(self, flask_port: int, path: str) -> None:
+        super().__init__()
+        self.flask_port = flask_port
+        self.path = path
+
+    def run(self) -> None:
+        try:
+            resp = requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/master/import",
+                json={"path": self.path}, timeout=600,
+            )
+            self.finished.emit(resp.json())
+        except Exception as exc:
+            self.finished.emit({"error": str(exc)})
+
+
 class _DownloadThread(QThread):
     """Calls POST /api/flat_file/download/{id} in a background thread."""
     finished = pyqtSignal(dict)
@@ -1269,52 +1322,39 @@ class SetupTab(QWidget):
         self._publish_status_label.setText("Exporting master snapshot…")
         self._publish_status_label.setVisible(True)
 
-        try:
-            # Read previous master_published_at before the export stamps a new one
-            prev_resp = requests.get(
-                f"http://127.0.0.1:{self.flask_port}/api/master/status",
-                timeout=10,
-            )
-            prev_published_at = None
-            if prev_resp.ok:
-                prev_published_at = prev_resp.json().get("master_published_at")
+        self._export_thread = _ExportMasterThread(self.flask_port)
+        self._export_thread.finished.connect(self._on_export_done)
+        self._export_thread.start()
 
-            resp = requests.post(
-                f"http://127.0.0.1:{self.flask_port}/api/master/export",
-                json={"reason": "publish"}, timeout=300,
-            )
-            data = resp.json()
-            if not resp.ok or "error" in data:
-                msg = data.get("message") or data.get("error") or "Unknown error"
-                QMessageBox.warning(self, "Export Failed", msg)
-                self._publish_status_label.setText(f"Export failed: {msg}")
-                return
-
-            manifest = data.get("manifest", {})
-            counts = manifest.get("lb_status_counts", {})
-            rc = manifest.get("row_counts", {})
-            version = manifest.get("master_version", "")
-            db_path = data.get("path", "")
-            manifest_path = data.get("manifest_path", "")
-
-            self._publish_status_label.setText(
-                f"Export done ({manifest.get('size_bytes', 0):,} bytes) — uploading to GitHub…"
-            )
-            self._refresh_master_status_label()
-
-            # Kick off the GitHub upload in a background thread
-            self._github_release_thread = _GithubReleaseThread(
-                self.flask_port, db_path, manifest_path, version, prev_published_at,
-            )
-            self._github_release_thread.finished.connect(
-                lambda result, m=manifest, c=counts, rc_=rc: self._on_github_release_done(result, m, c, rc_)
-            )
-            self._github_release_thread.start()
-
-        except Exception as e:
-            QMessageBox.warning(self, "Publish Failed", str(e))
-            self._publish_status_label.setText(f"Error: {e}")
+    def _on_export_done(self, data: dict) -> None:
+        """Handle export completion and kick off GitHub upload."""
+        if not data.get("ok") or "error" in data:
+            msg = data.get("message") or data.get("error") or "Unknown error"
+            QMessageBox.warning(self, "Export Failed", msg)
+            self._publish_status_label.setText(f"Export failed: {msg}")
             self.publish_master_btn.setEnabled(self.curator_cb.isChecked())
+            return
+
+        manifest = data.get("manifest", {})
+        counts = manifest.get("lb_status_counts", {})
+        rc = manifest.get("row_counts", {})
+        version = manifest.get("master_version", "")
+        db_path = data.get("path", "")
+        manifest_path = data.get("manifest_path", "")
+        prev_published_at = data.get("_prev_published_at")
+
+        self._publish_status_label.setText(
+            f"Export done ({manifest.get('size_bytes', 0):,} bytes) — uploading to GitHub…"
+        )
+        self._refresh_master_status_label()
+
+        self._github_release_thread = _GithubReleaseThread(
+            self.flask_port, db_path, manifest_path, version, prev_published_at,
+        )
+        self._github_release_thread.finished.connect(
+            lambda result, m=manifest, c=counts, rc_=rc: self._on_github_release_done(result, m, c, rc_)
+        )
+        self._github_release_thread.start()
 
     def _on_github_release_done(self, result: dict, manifest: dict,
                                 counts: dict, rc: dict) -> None:
@@ -1369,44 +1409,40 @@ class SetupTab(QWidget):
         if confirm != QMessageBox.StandardButton.Yes:
             return
         self.install_master_btn.setEnabled(False)
+        self._install_thread = _InstallMasterThread(self.flask_port, path)
+        self._install_thread.finished.connect(self._on_install_done)
+        self._install_thread.start()
+
+    def _on_install_done(self, data: dict) -> None:
+        """Handle master install completion."""
+        self.install_master_btn.setEnabled(True)
+        if not data.get("ok") or "error" in data:
+            msg = data.get("message") or data.get("error") or "Unknown error"
+            QMessageBox.critical(self, "Install Failed", msg)
+            return
+        rc = data.get("row_counts", {})
+        post = data.get("post_status_counts", {})
+        QMessageBox.information(
+            self, "Master Update Installed",
+            f"Version:     {data.get('master_version', '?')}\n"
+            f"Imported at: {data.get('imported_at', '?')[:19]}\n"
+            f"Backup:      {data.get('backup_path', '?')}\n\n"
+            f"Row counts after import:\n"
+            f"  lb_master: {rc.get('lb_master', 0):,}\n"
+            f"  checksums: {rc.get('checksums', 0):,}\n"
+            f"  entries:   {rc.get('entries', 0):,}\n\n"
+            f"Status distribution:\n"
+            f"  Public:    {post.get('public', 0):,}\n"
+            f"  Private:   {post.get('private', 0):,}\n"
+            f"  Missing:   {post.get('missing', 0):,}\n\n"
+            f"LB status changes vs. previous state: "
+            f"{data.get('lb_status_changes', 0):,}"
+        )
+        self._refresh_master_status_label()
         try:
-            resp = requests.post(
-                f"http://127.0.0.1:{self.flask_port}/api/master/import",
-                json={"path": path}, timeout=600,
-            )
-            data = resp.json()
-            if not resp.ok or "error" in data:
-                msg = data.get("message") or data.get("error") or "Unknown error"
-                QMessageBox.critical(self, "Install Failed", msg)
-                return
-            rc = data.get("row_counts", {})
-            post = data.get("post_status_counts", {})
-            QMessageBox.information(
-                self, "Master Update Installed",
-                f"Version:     {data.get('master_version', '?')}\n"
-                f"Imported at: {data.get('imported_at', '?')[:19]}\n"
-                f"Backup:      {data.get('backup_path', '?')}\n\n"
-                f"Row counts after import:\n"
-                f"  lb_master: {rc.get('lb_master', 0):,}\n"
-                f"  checksums: {rc.get('checksums', 0):,}\n"
-                f"  entries:   {rc.get('entries', 0):,}\n\n"
-                f"Status distribution:\n"
-                f"  Public:    {post.get('public', 0):,}\n"
-                f"  Private:   {post.get('private', 0):,}\n"
-                f"  Missing:   {post.get('missing', 0):,}\n\n"
-                f"LB status changes vs. previous state: "
-                f"{data.get('lb_status_changes', 0):,}"
-            )
-            self._refresh_master_status_label()
-            # Refresh the existing DB stats label too if available
-            try:
-                self._refresh_stats()
-            except Exception:
-                pass
-        except Exception as e:
-            QMessageBox.critical(self, "Install Failed", str(e))
-        finally:
-            self.install_master_btn.setEnabled(True)
+            self._refresh_stats()
+        except Exception:
+            pass
 
     def _on_open_folder(self):
         _DATA_DIR.mkdir(exist_ok=True)

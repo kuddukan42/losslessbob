@@ -231,8 +231,16 @@ All three server startup paths in `main.py` bind to `host="127.0.0.1"`. No new r
 
 ## Priority Fix Order
 
-1. **#1 Path traversal** — add directory containment check to `/api/master/import` before it can be used in production
-2. **#2 Missing curator gate on import** — one-line fix
-3. **#5 Main-thread HTTP** — needed before publish/install UI is used on large databases
-4. **#4 Manifest type validation** — harden before any automated import pipeline is built
-5. **#3 Unprotected reconcile/backup** — low exploitability on localhost, but worth gating before any network exposure
+All items fixed 2026-05-19. See CHANGELOG.md for details.
+
+1. **#1 Path traversal** ✅ — directory containment + .db extension check in `master_import()`
+2. **#2 Missing curator gate on import** ✅ — is_curator() 403 added
+3. **#5 Main-thread HTTP** ✅ — `_InstallMasterThread` + `_ExportMasterThread` QThread workers
+4. **#4 Manifest type validation** ✅ — isinstance checks, no SHA exposure on mismatch, lower-bound guard
+5. **#3 Unprotected reconcile/backup** ✅ — is_curator() on reconcile; 60 s rate-limit on backup
+6. **#6 status allowlist** ✅
+7. **#7 offset/limit bounds** ✅
+8. **#8 reason length cap** ✅
+9. **#9 str(exc) exposure** ✅ — log.exception + internal_error on sensitive routes
+10. **#10 f-string table names** ✅ — _SAFE_IDENT assertion at module load
+11. **#11 manual_notes length** ✅

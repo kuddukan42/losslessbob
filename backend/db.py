@@ -54,6 +54,11 @@ USER_TABLES = (
     "site_inventory",
 )
 
+# Guard against f-string injection if a table name is ever mis-typed (#10)
+_SAFE_IDENT = re.compile(r'^[a-zA-Z_][a-zA-Z0-9_]*$')
+assert all(_SAFE_IDENT.match(t) for t in (*MASTER_TABLES, *USER_TABLES)), \
+    "Table name constant contains unsafe identifier"
+
 # meta is mixed: master keys ship, user keys stay local.
 MASTER_META_KEYS = frozenset({
     "import_hash",
@@ -2165,15 +2170,20 @@ def import_master_db(snapshot_path: "Path | str", db_path=None) -> dict:
         for chunk in iter(lambda: f.read(1 << 20), b""):
             sha.update(chunk)
     actual_sha = sha.hexdigest()
+    # Validate sha256 field type before comparing (#4)
     expected_sha = manifest.get("sha256")
+    if not isinstance(expected_sha, str) or len(expected_sha) != 64:
+        raise ValueError("Invalid manifest: sha256 missing or wrong format")
     if expected_sha != actual_sha:
-        raise ValueError(
-            f"Master snapshot SHA256 mismatch. Expected {expected_sha}, "
-            f"got {actual_sha}. Re-download the file."
-        )
+        raise ValueError("Master snapshot SHA256 mismatch. Re-download the file.")
 
-    # Step 2: schema version guard
-    incoming_schema = int(manifest.get("master_schema_version", 0))
+    # Step 2: schema version guard with type-check (#4)
+    raw_schema = manifest.get("master_schema_version")
+    if not isinstance(raw_schema, (int, str)):
+        raise ValueError("Invalid manifest: master_schema_version missing or wrong type")
+    incoming_schema = int(raw_schema)
+    if incoming_schema < 1:
+        raise ValueError("Invalid manifest: master_schema_version must be ≥ 1")
     if incoming_schema > MASTER_SCHEMA_VERSION:
         raise RuntimeError(
             f"Master snapshot schema version {incoming_schema} is newer than "

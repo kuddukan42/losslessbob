@@ -1,3 +1,32 @@
+[2026-05-19] — fix(backend/gui): security hardening — CC_SECURITY_REVIEW items #1–11
+
+Fixed
+
+  backend/app.py: #1 Path traversal in /api/master/import — resolve path and
+    reject anything outside DATA_DIR/exports or imports; enforce .db extension.
+  backend/app.py: #2 /api/master/import had no curator auth check — added
+    is_curator() 403 guard matching the export endpoint.
+  backend/app.py: #3 /api/lb_master/reconcile was unprotected — added
+    is_curator() guard. /api/db/backup rate-limited to once per 60 s.
+  backend/db.py: #4 Manifest sha256/master_schema_version not type-checked —
+    validate isinstance and length before use; no longer exposes actual SHA on
+    mismatch; added lower-bound check (schema ≥ 1).
+  gui/setup_tab.py: #5 Blocking requests.post(timeout=600) on Qt main thread
+    in _on_install_master and requests.post(timeout=300) in _on_publish_master —
+    added _InstallMasterThread and _ExportMasterThread (QThread); both handlers
+    now return immediately after starting their worker thread.
+  backend/app.py: #6 status query param on /api/lb_master not allowlist-validated
+    — returns 400 for any value outside public|private|missing.
+  backend/app.py: #7 offset accepts negatives; history limit uncapped — clamped
+    offset to ≥ 0, history limit to 1–500.
+  backend/app.py: #8 reason field written to manifest/backup without length cap —
+    truncated to 200 chars for export, 100 chars for backup.
+  backend/app.py: #9 Raw str(exc) in catch-alls for import/export/reconcile/backup
+    — replaced with log.exception + {"error": "internal_error"}.
+  backend/db.py: #10 f-string table name interpolation — added _SAFE_IDENT
+    assertion at module load to guard MASTER_TABLES and USER_TABLES.
+  backend/app.py: #11 manual_notes stored without length cap — truncated to 1000.
+
 [2026-05-19] — fix(gui): HiDPI-aware splash screen pixmap on Windows (TODO-049)
 
 Fixed

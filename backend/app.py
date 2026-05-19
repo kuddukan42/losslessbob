@@ -1,7 +1,9 @@
+import logging
 import os
 import re
 import shutil
 import threading
+import time
 from pathlib import Path
 
 from flask import Flask, jsonify, request, send_file, send_from_directory, abort, Response
@@ -13,7 +15,13 @@ from backend import checksum_utils
 from backend import bootleg_scraper
 from backend import site_crawler
 
-from backend.paths import SITE_DIR, SITE_FILES_DIR, attachment_path, find_lbdir_attachment
+from backend.paths import DATA_DIR, SITE_DIR, SITE_FILES_DIR, attachment_path, find_lbdir_attachment
+
+_log = logging.getLogger(__name__)
+
+# Rate-limit for /api/db/backup (#3): reject if last manual backup was < 60 s ago
+_last_backup_at: float = 0.0
+_backup_lock = threading.Lock()
 
 _scrape_thread = None
 
@@ -2155,10 +2163,13 @@ def create_app() -> Flask:
         """
         try:
             status = request.args.get("status") or None
+            if status and status not in ("public", "private", "missing"):  # #6
+                return jsonify({"error": "invalid_status",
+                                "message": "status must be public, private, or missing"}), 400
             override_only = request.args.get("override") == "1"
             review_only = request.args.get("review") == "1"
-            limit = min(int(request.args.get("limit", 500)), 2000)
-            offset = int(request.args.get("offset", 0))
+            limit = max(1, min(int(request.args.get("limit", 500)), 2000))
+            offset = max(0, int(request.args.get("offset", 0)))  # #7
             rows = database.get_lb_master_list(
                 status=status, override_only=override_only, review_only=review_only,
                 limit=limit, offset=offset,
@@ -2170,17 +2181,20 @@ def create_app() -> Flask:
     @app.route("/api/lb_master/reconcile", methods=["POST"])
     def lb_master_reconcile() -> Response:
         """Full rebuild of lb_master. Backs up DB first. Returns status counts."""
+        if not database.is_curator():  # #3
+            return jsonify({"error": "curator_required"}), 403
         try:
             stats = database.reconcile_all_lb_master()
             return jsonify({"ok": True, "stats": stats})
-        except Exception as exc:
-            return jsonify({"error": str(exc)}), 500
+        except Exception:
+            _log.exception("lb_master_reconcile failed")  # #9
+            return jsonify({"error": "internal_error"}), 500
 
     @app.route("/api/lb_master/history/<int:lb>", methods=["GET"])
     def lb_master_history(lb: int) -> Response:
         """Return transition history for an LB, newest first."""
         try:
-            limit = int(request.args.get("limit", 50))
+            limit = max(1, min(int(request.args.get("limit", 50)), 500))  # #7
             rows = database.get_lb_status_history(lb, limit=limit)
             return jsonify(rows)
         except Exception as exc:
@@ -2192,7 +2206,7 @@ def create_app() -> Flask:
         try:
             body = request.get_json(silent=True) or {}
             status = body.get("status")
-            notes = body.get("notes", "")
+            notes = str(body.get("notes", ""))[:1000]  # #11
             if status not in ("public", "private", "missing"):
                 return jsonify({"error": "status must be public, private, or missing"}), 400
             database.set_lb_manual_override(lb, status, notes)
@@ -2282,14 +2296,22 @@ def create_app() -> Flask:
     @app.route("/api/db/backup", methods=["POST"])
     def db_backup() -> Response:
         """Create a manual DB backup. Body: {reason} (optional)."""
+        global _last_backup_at
+        with _backup_lock:  # #3 — rate-limit to once per 60 s
+            now = time.monotonic()
+            if now - _last_backup_at < 60:
+                return jsonify({"error": "rate_limited",
+                                "message": "Please wait 60 s between manual backups"}), 429
+            _last_backup_at = now
         try:
             body = request.get_json(silent=True) or {}
-            reason = body.get("reason", "manual")
+            reason = str(body.get("reason", "manual"))[:100]  # #8
             path = database.backup_database(reason=reason)
             size = path.stat().st_size
             return jsonify({"ok": True, "path": str(path), "size_bytes": size})
-        except Exception as exc:
-            return jsonify({"error": str(exc)}), 500
+        except Exception:
+            _log.exception("db_backup failed")  # #9
+            return jsonify({"error": "internal_error"}), 500
 
     # ── Curator mode (local flag) ──────────────────────────────────────────────
 
@@ -2345,7 +2367,7 @@ def create_app() -> Flask:
                                "Enable Curator Mode in Setup tab.",
                 }), 403
             body = request.get_json(silent=True) or {}
-            reason = body.get("reason", "publish")
+            reason = str(body.get("reason", "publish"))[:200]  # #8
             path, manifest = database.export_master_db(reason=reason)
             return jsonify({
                 "ok": True,
@@ -2353,8 +2375,9 @@ def create_app() -> Flask:
                 "manifest_path": str(path) + ".manifest.json",
                 "manifest": manifest,
             })
-        except Exception as exc:
-            return jsonify({"error": str(exc)}), 500
+        except Exception:
+            _log.exception("master_export failed")  # #9
+            return jsonify({"error": "internal_error"}), 500
 
     @app.route("/api/master/github_release", methods=["POST"])
     def master_github_release() -> Response:
@@ -2442,21 +2465,34 @@ def create_app() -> Flask:
         Body: {path: "/abs/path/to/snapshot.db"}. Manifest sidecar must live
         alongside the snapshot at <path>.manifest.json.
         """
+        if not database.is_curator():  # #2
+            return jsonify({"error": "curator_required",
+                            "message": "Master import requires curator mode."}), 403
         try:
             body = request.get_json(silent=True) or {}
             path = body.get("path")
             if not path:
                 return jsonify({"error": "missing_path"}), 400
-            summary = database.import_master_db(path)
+            # #1 — directory containment: only allow exports/ or imports/ sub-dirs
+            snapshot_path = Path(path).resolve()
+            allowed_dirs = [DATA_DIR / "exports", DATA_DIR / "imports"]
+            if not any(snapshot_path.is_relative_to(d) for d in allowed_dirs):
+                return jsonify({"error": "path_not_allowed",
+                                "message": "Snapshot must be in data/exports/ or data/imports/"}), 400
+            if snapshot_path.suffix.lower() != ".db":
+                return jsonify({"error": "path_not_allowed",
+                                "message": "Snapshot must be a .db file"}), 400
+            summary = database.import_master_db(str(snapshot_path))
             return jsonify({"ok": True, **summary})
         except FileNotFoundError as exc:
             return jsonify({"error": "not_found", "message": str(exc)}), 404
         except ValueError as exc:
-            return jsonify({"error": "sha256_mismatch", "message": str(exc)}), 400
+            return jsonify({"error": "validation_error", "message": str(exc)}), 400
         except RuntimeError as exc:
             return jsonify({"error": "schema_too_new", "message": str(exc)}), 400
-        except Exception as exc:
-            return jsonify({"error": str(exc)}), 500
+        except Exception:
+            _log.exception("master_import failed")  # #9
+            return jsonify({"error": "internal_error"}), 500
 
     # ── lb_alias endpoints ────────────────────────────────────────────────────
 
