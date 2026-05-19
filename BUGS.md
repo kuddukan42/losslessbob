@@ -1,3 +1,25 @@
+BUG-073: Location Geocoding panel shows "Unexpected response from server" on Load
+Status: Fixed
+File(s): gui/dbedit_tab.py:_on_geo_loaded
+Reported: 2026-05-19
+Fixed: 2026-05-19
+Description: Clicking Load in the Location Geocoding sub-panel always showed "Unexpected response from server." even when the API returned valid data.
+Root cause: GET /api/geocode/locations returns {"locations": [...]} (a dict wrapper). _on_geo_loaded checked isinstance(data, list) which failed for a dict, hitting the error branch even on success.
+Fix: Unwrap the "locations" key when data is a dict before the isinstance(list) check.
+
+---
+
+BUG-072: Bootleg scraper retrieves zero entries — picks title-banner table instead of data table
+Status: Fixed
+File(s): backend/bootleg_scraper.py:322
+Reported: 2026-05-19
+Fixed: 2026-05-19
+Description: "Scrape Bootleg Catalog" always produced 0 rows_total despite the catalog page having ~1379 entries.
+Root cause: The catalog page (LB-bootleg-by-title.html) has two <table> elements: a 1-row title banner and the data table. soup.find("table") returned the first (banner) table. rows[1:] on a 1-row table produces an empty slice → zero entries parsed.
+Fix: Changed selector to find the table containing <th> header cells (the data table). Falls back to the last table if no <th> is found.
+
+---
+
 BUG-071: Geocode locations panel crashes — "no such column: location"
 Status: Fixed
 File(s): backend/app.py:2252

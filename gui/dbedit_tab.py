@@ -1255,6 +1255,9 @@ class DbEditTab(QWidget):
         if isinstance(data, dict) and "error" in data:
             self._geo_status.setText(f"Error: {data['error']}")
             return
+        # API wraps the list in {"locations": [...]}
+        if isinstance(data, dict):
+            data = data.get("locations", [])
         if not isinstance(data, list):
             self._geo_status.setText("Unexpected response from server.")
             return

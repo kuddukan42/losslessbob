@@ -319,7 +319,10 @@ def scrape_bootlegs(force: bool = False, db_path=None) -> dict:
     _set(stage="parsing", message="Parsing catalog table…")
     soup = BeautifulSoup(body, "lxml")
     incoming: list[dict] = []
-    table = soup.find("table")
+    # The page has two tables: a 1-row title banner and the data table.
+    # Pick the table that has <th> header cells (the data table).
+    all_tables = soup.find_all("table")
+    table = next((t for t in all_tables if t.find("th")), None) or (all_tables[-1] if all_tables else None)
     if table:
         rows = table.find_all("tr")
         for tr in rows[1:]:  # skip header
