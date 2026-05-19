@@ -1,3 +1,25 @@
+BUG-071: Geocode locations panel crashes — "no such column: location"
+Status: Fixed
+File(s): backend/app.py:2252
+Reported: 2026-05-19
+Fixed: 2026-05-19
+Description: GET /api/geocode/locations returned sqlite3 OperationalError: no such column: location.
+Root cause: ORDER BY clause used column name "location" but the table column is "location_text".
+Fix: Changed ORDER BY location to ORDER BY location_text in api_geocode_locations().
+
+---
+
+BUG-070: Setup tab shows "Status: error — already running" on first geocoder run
+Status: Fixed
+File(s): gui/setup_tab.py:389, gui/setup_tab.py:1539
+Reported: 2026-05-19
+Fixed: 2026-05-19
+Description: Clicking "Run Geocoder" immediately showed "Status: error — already running" even though the geocoder had never been started.
+Root cause: _GeocodeRunThread emitted resp.json() for 409 responses ({"error": "already running"} with no status_code key). _on_geocode_started checked result.get("status_code") == 409 which was always False, so it fell through to the generic error handler and displayed "error — already running".
+Fix: Replaced the ternary emit with explicit branches; 409 now emits {"error": "already running", "status_code": 409} so the status_code check in _on_geocode_started works correctly.
+
+---
+
 BUG-068: Crawler seeded from domain root — DreamHost placeholder has no useful links
 Status: Fixed
 File(s): backend/site_crawler.py

@@ -2249,7 +2249,7 @@ def create_app():
             }
             where = where_map.get(filter_type, "")
             rows = conn.execute(
-                f"SELECT * FROM location_geocoded {where} ORDER BY location"
+                f"SELECT * FROM location_geocoded {where} ORDER BY location_text"
             ).fetchall()
             return jsonify({"locations": [dict(r) for r in rows]})
         except Exception as exc:

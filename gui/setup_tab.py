@@ -386,8 +386,12 @@ class _GeocodeRunThread(QThread):
                 json={"retry_failed": self.retry_failed},
                 timeout=15,
             )
-            self.finished.emit(resp.json() if resp.ok or resp.status_code == 409
-                               else {"error": resp.text, "status_code": resp.status_code})
+            if resp.ok:
+                self.finished.emit(resp.json())
+            elif resp.status_code == 409:
+                self.finished.emit({"error": "already running", "status_code": 409})
+            else:
+                self.finished.emit({"error": resp.text, "status_code": resp.status_code})
         except Exception as exc:
             self.finished.emit({"error": str(exc)})
 
