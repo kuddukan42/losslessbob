@@ -9,7 +9,7 @@
 | Layer | Technology | Version |
 |-------|------------|---------|
 | GUI | PyQt6 | 6.7.1 |
-| Web view (attachments) | PyQt6-WebEngine | 6.7.0 |
+| Web view (attachments + map) | PyQt6-WebEngine | 6.7.0 |
 | REST backend | Flask + Flask-CORS | 3.0.3 / 4.0.1 |
 | WSGI server (optional) | Waitress | 3.0.0 |
 | Database | SQLite3 | (stdlib) |
@@ -530,6 +530,20 @@ Indexes: `idx_flat_changelog_release(release_id)`, `idx_flat_changelog_lb(lb_num
 | DELETE | `/api/forum_post/<id>` | Delete a forum post log record by id. |
 | GET | `/api/forum_posts` | List all logged forum posts across every LB entry, newest first. Includes `date_str` and `location` from entries. |
 
+### Map
+| Method | Route | Description |
+|--------|-------|-------------|
+| GET | `/map` | Serve `gui/resources/map.html` — Leaflet map page (OpenStreetMap tiles, OSM attribution). |
+| GET | `/api/map/data` | Marker data with optional query filters (`year`, `owned`, `lb_status`). Returns `[{lb_number, lat, lon, date_str, location, display_name, owned}]`. |
+
+### Geocoding
+| Method | Route | Description |
+|--------|-------|-------------|
+| POST | `/api/geocode/run` | **Curator-only.** Start batch Nominatim geocode of all un-geocoded `location` values. Returns `{ok, queued}` immediately; progress polled via `/api/geocode/status`. |
+| GET | `/api/geocode/status` | Poll batch geocode state: `{running, done, total, errors, last_location}`. |
+| POST | `/api/geocode/location` | **Curator-only.** Manually place or correct a coordinate. Body: `{location, lat, lon}`. Sets `manual=1` so the batch geocoder never overwrites it. |
+| GET | `/api/geocode/locations` | **Curator-only.** List all rows in `location_geocoded` with geocode status. Returns `[{location, lat, lon, display_name, geocoded_at, manual}]`. |
+
 ### Spectrogram
 | Method | Route | Description |
 |--------|-------|-------------|
@@ -779,7 +793,7 @@ Dedicated tab containing all scraping functions. Replaces the scraper controls p
 
 ## GUI: Main Window (`gui/main_window.py`)
 
-Thirteen tabs in order: **Lookup**(0) · **Rename Folders**(1) · **Verify**(2) · **lbdir**(3) · **Search**(4) · **Bootlegs**(5) · **My Collection**(6) · **Attachments**(7) · **Spectrograms**(8) · **DB Editor**(9) · **Scraper**(10) · **Setup**(11) · **Themes**(12)
+Fourteen tabs in order: **Lookup**(0) · **Rename Folders**(1) · **Verify**(2) · **lbdir**(3) · **Search**(4) · **Bootlegs**(5) · **My Collection**(6) · **Attachments**(7) · **Spectrograms**(8) · **DB Editor**(9) · **Scraper**(10) · **Setup**(11) · **Themes**(12) · **Map**(13, graceful-fallback if PyQt6-WebEngine absent)
 
 **Menu bar:**
 - File → Exit
@@ -1199,4 +1213,4 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 | 2026-05-18 | CC_LB_INTEGRITY item 10: Click-to-sort on all major tables. gui/widgets/sort_keys.py added. lbdir+verify QTableWidget tables use SortableTableItem. Search/Collection/Missing QTableView tables sort in-memory via sectionClicked. DB Editor sectionClicked wired to server-side sort. Backend /api/search, /api/collection, /api/collection/missing accept sort_col/sort_dir. |
 | 2026-05-18 | Download Missing Pages: `download_pages_range()` in scraper.py; `POST /api/scrape/download_pages`; Row 4 "Download Missing Pages" button in Setup tab scraper grid. (TODO-002) |
 | 2026-05-18 | Bootleg-CD Catalog (LBBCD): `backend/bootleg_scraper.py`; `bootleg_titles` + `bootleg_scrapes` tables (MASTER); MASTER_SCHEMA_VERSION→2; 7 `/api/bootlegs/*` routes; `gui/bootlegs_tab.py` (Bootlegs tab, index 5); 🎵 badge in Search tab; Scrape Bootleg Catalog button + history panel in Setup tab; Bootlegs count in status bar. (TODO-030) |
-| 2026-05-19 | Map feature: location_geocoded table (MASTER) + get_map_data(); backend/geocoder.py (Nominatim); tools/geocode_locations.py CLI; GET /map + /api/map/data + /api/geocode/* routes; gui/map_tab.py + gui/resources/map.html (Leaflet); curator geocoding UI in setup_tab + dbedit_tab. |
+| 2026-05-19 | Map feature: location_geocoded table (MASTER) + get_map_data(); backend/geocoder.py (Nominatim); tools/geocode_locations.py CLI; GET /map + /api/map/data + /api/geocode/* routes; gui/map_tab.py + gui/resources/map.html (Leaflet); curator geocoding UI in setup_tab + dbedit_tab; Map tab wired into main_window.py. |

@@ -46,6 +46,18 @@ python main.py
 - **Attachments tab:** Browse locally cached files (ffp, txt, html) for each LB entry
 - **Setup tab:** Import database, configure scraper, check for updates
 
+## Map Tab
+
+The **Map** tab displays concert locations on an interactive OpenStreetMap map (Leaflet).
+
+- Requires `PyQt6-WebEngine` (already in `requirements.txt`)
+- The map can also be viewed in any browser at `http://localhost:5174/map` while the app is running
+- **Geocoding (curators only):** Run `python tools/geocode_locations.py` once to populate coordinates
+  via Nominatim. End users receive pre-geocoded coordinates as part of the master data release and
+  never call Nominatim themselves.
+- OSM tile requests reveal your IP address to OpenStreetMap's tile CDN
+- Attribution: © OpenStreetMap contributors
+
 ## Packaging with PyInstaller
 
 Use the provided `losslessbob.spec`:

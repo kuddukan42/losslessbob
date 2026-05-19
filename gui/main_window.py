@@ -157,6 +157,16 @@ class MainWindow(QMainWindow):
         self.tabs.addTab(self.setup_tab, "Setup")
         self.tabs.addTab(self.theme_tab, "Themes")
 
+        _slog.t("_build_tabs: importing MapTab")
+        try:
+            from gui.map_tab import MapTab
+            _slog.t("_build_tabs: init MapTab")
+            self.map_tab = MapTab(self.flask_port, state_store=self.state_store)
+            self.tabs.addTab(self.map_tab, "Map")
+        except Exception as exc:  # noqa: BLE001
+            import logging
+            logging.getLogger(__name__).warning("Map tab unavailable: %s", exc)
+
         self.tabs.currentChanged.connect(self._on_tab_changed)
 
         self.search_tab.lookup_lb.connect(self._on_search_lookup_lb)

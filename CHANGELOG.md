@@ -175,6 +175,20 @@ Added
   gui/map_tab.py: Map tab widget with QWebEngineView + Open in Browser fallback
   gui/resources/map.html: Leaflet map page with filters, marker clustering, heatmap mode
 
+---
+
+[2026-05-18] — feat(gui/backend): Map tab wired into main window, PyQt6-WebEngine added to requirements
+
+Changed
+
+  gui/main_window.py: register Map tab after ThemeTab via graceful try/except import fallback so the
+    app starts normally even when gui/map_tab.py is not yet present in the worktree
+  requirements.txt: PyQt6-WebEngine already pinned at 6.7.0; requests already pinned at 2.32.3 — no
+    version changes required
+  PROJECT.md: document map feature: new files (map_tab.py, map.html, geocoder.py,
+    geocode_locations.py), location_geocoded schema, six new API routes (GET /map,
+    GET /api/map/data, POST/GET /api/geocode/*), tab count updated to 11
+
 [2026-05-17] — fix(gui): Column widths now actually persist across restarts (GuiStateStore root-cause fix)
 
 Fixed
