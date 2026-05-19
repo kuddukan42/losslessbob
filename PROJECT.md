@@ -66,7 +66,10 @@ losslessbob/
 │   ├── spectrogram_tab.py    # Generate and view per-file SoX spectrograms
 │   ├── dbedit_tab.py         # DB Editor: browse/edit/delete rows, export CSV
 │   ├── theme_tab.py          # Color theme picker and custom color editor
+│   ├── map_tab.py            # World map of LB locations via Leaflet + QWebEngineView
 │   ├── styles.py             # Generates Qt stylesheets from color dict
+│   ├── resources/
+│   │   └── map.html          # Leaflet map page served at GET /map; fetches /api/map/data
 │   └── widgets/
 │       ├── state_store.py    # GuiStateStore: column widths + window geometry → data/gui_state.json
 │       └── sort_keys.py      # SortableTableItem + sort_key_for() for typed client-side sort
@@ -1138,6 +1141,7 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 | 2026-05-18 | Flat-file update check rework: new `backend/flat_file.py` pipeline (discover/download/diff/apply); `flat_file_releases` + `flat_file_changelog` tables in MASTER_TABLES; 7 new `/api/flat_file/*` endpoints; removed broken `check_for_update()` from scraper.py; Setup tab "Check for Flat File Update" button + `_UpdateAvailableDialog` + Flat File History panel. (CC_LB_INTEGRITY item 9, TODO-026) |
 | 2026-05-18 | Click-to-sort on all major tables: `gui/widgets/sort_keys.py` (SortableTableItem + sort_key_for); lbdir/verify QTableWidget client-side sort; search/collection/dbedit server-side sort via sectionClicked; backend /api/search, /api/collection, /api/collection/missing accept sort_col/sort_dir. (CC_LB_INTEGRITY item 10, TODO-025) |
 | 2026-05-18 | Override export/import JSON: `export_overrides()` + `import_overrides()` in db.py; `GET /api/lb_master/overrides/export` + `POST /api/lb_master/overrides/import`; DB Editor Export/Import Overrides buttons in Integrity panel. (TODO-024) |
+| 2026-05-19 | Map tab added: `gui/map_tab.py` (QWebEngineView + Open-in-Browser fallback), `gui/resources/map.html` (Leaflet 1.9.4, markercluster, leaflet.heat, filter bar, stats bar). |
 | 2026-05-17 | Standardize folder name: `build_standard_name()` in `backend/folder_naming.py`; `GET /api/folder_naming/standard/<lb>`; "Standardize Selected" button + right-click action in Rename tab; `RenameModel.update_state()`; fixed BUG-064 (_on_strip_wrong_lb now transitions state to needs_rename). (CC_LB_INTEGRITY item 13) |
 | 2026-05-17 | lb_status filter + tinting across Lookup (filter combobox + row tint), Attachments tree (page-level batch tint), Rename LB Found column, Lbdir LB# column. `get_lb_statuses_batch()` in db.py. (TODO-021) |
 | 2026-05-17 | -NFT suffix for Private LB folder names: new `backend/folder_naming.py` module; `should_mark_nft()` + `lb_status` annotation in `lookup_checksums()` in `db.py`; Rename tab applies NFT suffix to proposed names and shows discrepancy colours; Collection tab `_get_standard_lb_name()` calls `/api/lb_master/<lb>/nft`. (TODO-018) |

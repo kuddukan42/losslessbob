@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LosslessBob &mdash; Map</title>
+
+    <!-- Leaflet 1.9.4 -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Leaflet.markercluster -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+    <!-- Leaflet.heat -->
+    <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Ubuntu, Cantarell, "DejaVu Sans", Arial, sans-serif;
+            font-size: 13px;
+            background: #f8f8f0;
+            color: #1a1a1a;
+        }
+
+        #app {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        /* ---- Filter bar ---- */
+        #filterBar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 10px;
+            background: #e8e8e0;
+            border-bottom: 1px solid #ccc;
+            flex-shrink: 0;
+        }
+
+        #filterBar label {
+            font-size: 12px;
+            color: #444;
+        }
+
+        #filterBar select,
+        #filterBar input[type="number"],
+        #filterBar input[type="text"] {
+            border: 1px solid #bbb;
+            border-radius: 4px;
+            padding: 3px 6px;
+            font-size: 12px;
+            background: #fff;
+            color: #1a1a1a;
+            height: 26px;
+        }
+
+        #filterBar input[type="number"] {
+            width: 90px;
+        }
+
+        #filterBar input[type="text"] {
+            width: 180px;
+        }
+
+        #filterBar input[type="checkbox"] {
+            cursor: pointer;
+            width: 14px;
+            height: 14px;
+            vertical-align: middle;
+        }
+
+        #filterBar button {
+            background: #1f4e79;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 4px 12px;
+            font-size: 12px;
+            cursor: pointer;
+            height: 26px;
+        }
+
+        #filterBar button:hover {
+            background: #2e6fa3;
+        }
+
+        #filterBar button:active {
+            background: #14375a;
+        }
+
+        .filter-sep {
+            width: 1px;
+            height: 20px;
+            background: #ccc;
+            margin: 0 2px;
+        }
+
+        /* ---- Map area ---- */
+        #map {
+            flex: 1;
+            min-height: 0;
+        }
+
+        /* ---- Stats bar ---- */
+        #statsBar {
+            flex-shrink: 0;
+            padding: 4px 10px;
+            background: #e0e0d8;
+            border-top: 1px solid #ccc;
+            font-size: 12px;
+            color: #444;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* ---- Popup styling ---- */
+        .lb-popup b {
+            font-size: 13px;
+        }
+
+        .lb-popup .popup-status {
+            font-weight: 600;
+            text-transform: capitalize;
+        }
+
+        /* ---- Owned ring indicator in legend ---- */
+        .legend-owned {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 3px solid white;
+            background: #4CAF50;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+
+    <!-- Filter bar -->
+    <div id="filterBar">
+        <label for="statusFilter">Status:</label>
+        <select id="statusFilter">
+            <option value="">All</option>
+            <option value="public">Public</option>
+            <option value="private">Private</option>
+            <option value="missing">Missing</option>
+        </select>
+
+        <div class="filter-sep"></div>
+
+        <label for="ownedFilter">
+            <input type="checkbox" id="ownedFilter"> Owned only
+        </label>
+
+        <div class="filter-sep"></div>
+
+        <label for="yearMin">Year:</label>
+        <input type="number" id="yearMin" placeholder="From" min="1900" max="2100" step="1">
+        <span style="font-size:11px; color:#888;">–</span>
+        <input type="number" id="yearMax" placeholder="To" min="1900" max="2100" step="1">
+
+        <div class="filter-sep"></div>
+
+        <input type="text" id="textFilter" placeholder="Search LB or location&hellip;">
+
+        <button onclick="applyFilters()">Apply</button>
+        <button id="heatmapToggle" onclick="toggleHeatmap()">Heatmap</button>
+    </div>
+
+    <!-- Map -->
+    <div id="map"></div>
+
+    <!-- Stats bar -->
+    <div id="statsBar">Loading&hellip;</div>
+
+</div>
+
+<script>
+    // ---------------------------------------------------------------------------
+    // Constants
+    // ---------------------------------------------------------------------------
+
+    const STATUS_COLORS = {
+        public:  '#4CAF50',   // green
+        private: '#2196F3',   // blue
+        missing: '#9E9E9E',   // gray
+    };
+    const DEFAULT_COLOR = '#FF9800'; // orange — unknown status
+
+    // ---------------------------------------------------------------------------
+    // Map initialisation
+    // ---------------------------------------------------------------------------
+
+    const map = L.map('map').setView([30, 0], 2);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 19,
+    }).addTo(map);
+
+    // Active layers
+    let clusterLayer = null;
+    let heatLayer = null;
+    let heatmapMode = false;
+
+    // ---------------------------------------------------------------------------
+    // loadMarkers — fetch data and build layers
+    // ---------------------------------------------------------------------------
+
+    /**
+     * Build URL query string from a filters object, omitting falsy/empty values.
+     * @param {Object} filters
+     * @returns {string} query string including leading '?' or empty string
+     */
+    function buildQuery(filters) {
+        const params = new URLSearchParams();
+        if (filters.status)   params.set('status',   filters.status);
+        if (filters.owned)    params.set('owned',    '1');
+        if (filters.year_min) params.set('year_min', filters.year_min);
+        if (filters.year_max) params.set('year_max', filters.year_max);
+        if (filters.q)        params.set('q',        filters.q);
+        const qs = params.toString();
+        return qs ? '?' + qs : '';
+    }
+
+    /**
+     * Fetch map marker data and render cluster + heat layers.
+     * @param {Object} filters - active filter values
+     */
+    function loadMarkers(filters) {
+        // Clear existing layers
+        if (clusterLayer) {
+            map.removeLayer(clusterLayer);
+            clusterLayer = null;
+        }
+        if (heatLayer) {
+            map.removeLayer(heatLayer);
+            heatLayer = null;
+        }
+
+        document.getElementById('statsBar').textContent = 'Loading…';
+
+        const url = '/api/map/data' + buildQuery(filters);
+
+        fetch(url)
+            .then(function(resp) {
+                if (!resp.ok) {
+                    throw new Error('HTTP ' + resp.status);
+                }
+                return resp.json();
+            })
+            .then(function(data) {
+                const markers = data.markers || [];
+                const stats   = data.stats   || {};
+
+                // Build cluster group
+                const group = L.markerClusterGroup({
+                    maxClusterRadius: 60,
+                    spiderfyOnMaxZoom: true,
+                    showCoverageOnHover: false,
+                });
+
+                const heatPoints = [];
+
+                markers.forEach(function(m) {
+                    const lat = m.lat;
+                    const lon = m.lon;
+                    if (lat == null || lon == null) return;
+
+                    const color   = STATUS_COLORS[m.status] || DEFAULT_COLOR;
+                    const isOwned = Boolean(m.owned);
+
+                    const circle = L.circleMarker([lat, lon], {
+                        radius:      8,
+                        fillColor:   color,
+                        fillOpacity: 0.85,
+                        color:       isOwned ? 'white' : '#555',
+                        weight:      isOwned ? 3 : 1,
+                    });
+
+                    // Popup HTML
+                    let popupHtml =
+                        '<div class="lb-popup">' +
+                        '<b>LB ' + (m.lb || '') + '</b><br>' +
+                        (m.date || '') + '<br>' +
+                        (m.location || '') + '<br>';
+
+                    if (m.display_name && m.display_name !== m.location) {
+                        popupHtml += '<em>' + escapeHtml(m.display_name) + '</em><br>';
+                    }
+
+                    popupHtml +=
+                        '<span class="popup-status" style="color:' + color + '">' +
+                        escapeHtml(m.status || 'unknown') + '</span>';
+
+                    if (isOwned) {
+                        popupHtml += ' &nbsp;<span style="color:#FF9800; font-size:11px;">★ owned</span>';
+                    }
+
+                    popupHtml += '</div>';
+
+                    circle.bindPopup(popupHtml);
+                    group.addLayer(circle);
+
+                    heatPoints.push([lat, lon, isOwned ? 1.5 : 1.0]);
+                });
+
+                clusterLayer = group;
+                heatLayer = L.heatLayer(heatPoints, {
+                    radius: 25,
+                    blur: 18,
+                    maxZoom: 10,
+                    gradient: { 0.3: '#4CAF50', 0.6: '#FF9800', 1.0: '#f03' },
+                });
+
+                // Show the correct layer based on current mode
+                if (heatmapMode) {
+                    map.addLayer(heatLayer);
+                } else {
+                    map.addLayer(clusterLayer);
+                }
+
+                // Update stats bar
+                const plotted   = stats.plotted   != null ? stats.plotted   : markers.length;
+                const unique    = stats.unique     != null ? stats.unique    : '–';
+                const unplot    = stats.unplottable != null ? stats.unplottable : '–';
+                document.getElementById('statsBar').textContent =
+                    plotted + ' LBs plotted | ' +
+                    unique  + ' unique locations | ' +
+                    unplot  + ' unplottable';
+            })
+            .catch(function(err) {
+                document.getElementById('statsBar').textContent = 'Error loading data: ' + err.message;
+            });
+    }
+
+    // ---------------------------------------------------------------------------
+    // applyFilters — read filter bar and call loadMarkers
+    // ---------------------------------------------------------------------------
+
+    function applyFilters() {
+        const filters = {};
+
+        const status = document.getElementById('statusFilter').value;
+        if (status) filters.status = status;
+
+        if (document.getElementById('ownedFilter').checked) filters.owned = true;
+
+        const yearMin = document.getElementById('yearMin').value.trim();
+        if (yearMin) filters.year_min = yearMin;
+
+        const yearMax = document.getElementById('yearMax').value.trim();
+        if (yearMax) filters.year_max = yearMax;
+
+        const q = document.getElementById('textFilter').value.trim();
+        if (q) filters.q = q;
+
+        loadMarkers(filters);
+    }
+
+    // ---------------------------------------------------------------------------
+    // toggleHeatmap — switch between cluster and heat views
+    // ---------------------------------------------------------------------------
+
+    function toggleHeatmap() {
+        heatmapMode = !heatmapMode;
+        const btn = document.getElementById('heatmapToggle');
+
+        if (heatmapMode) {
+            btn.textContent = 'Clusters';
+            if (clusterLayer) map.removeLayer(clusterLayer);
+            if (heatLayer)    map.addLayer(heatLayer);
+        } else {
+            btn.textContent = 'Heatmap';
+            if (heatLayer)    map.removeLayer(heatLayer);
+            if (clusterLayer) map.addLayer(clusterLayer);
+        }
+    }
+
+    // ---------------------------------------------------------------------------
+    // Utility
+    // ---------------------------------------------------------------------------
+
+    function escapeHtml(str) {
+        if (!str) return '';
+        return str
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
+    }
+
+    // ---------------------------------------------------------------------------
+    // Bootstrap
+    // ---------------------------------------------------------------------------
+
+    document.addEventListener('DOMContentLoaded', function() {
+        loadMarkers({});
+    });
+</script>
+</body>
+</html>

@@ -166,6 +166,15 @@ Changed
 
   backend/app.py: add GET /map, GET /api/map/data, POST /api/geocode/run, GET /api/geocode/status, POST /api/geocode/location, GET /api/geocode/locations. Also added send_from_directory to Flask imports.
 
+---
+
+[2026-05-18] — feat(gui): add Map tab with Leaflet world map, marker clusters, heatmap toggle, browser view
+
+Added
+
+  gui/map_tab.py: Map tab widget with QWebEngineView + Open in Browser fallback
+  gui/resources/map.html: Leaflet map page with filters, marker clustering, heatmap mode
+
 [2026-05-17] — fix(gui): Column widths now actually persist across restarts (GuiStateStore root-cause fix)
 
 Fixed
