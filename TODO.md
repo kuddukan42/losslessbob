@@ -46,8 +46,9 @@ Description: Flask route functions lack type hints and Google-style docstrings a
 
 TODO-005: GUI viewer for entry change history (DB-08 follow-up)
 Priority: Low
-Status: Open
+Status: Done
 Added: 2026-05-12
+Closed: 2026-05-19
 Description: The entry_changes table is populated on every re-scrape but there is no GUI to view it. A small "History" button on the detail panel (or in Attachments tab) could call GET /api/entry/<lb>/changes and display a table of field diffs with timestamps.
 
 ---

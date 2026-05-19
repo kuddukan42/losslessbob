@@ -11,7 +11,8 @@ from PyQt6.QtGui import QColor, QAction
 from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QSplitter, QListWidget, QListWidgetItem,
     QPushButton, QLabel, QTableView, QAbstractItemView, QMenu, QApplication,
-    QFileDialog, QHeaderView, QCheckBox,
+    QFileDialog, QHeaderView, QCheckBox, QDialog, QTableWidget, QTableWidgetItem,
+    QDialogButtonBox, QSizePolicy,
 )
 
 import gui.styles as styles
@@ -214,6 +215,90 @@ class DropListWidget(QListWidget):
         self.files_dropped.emit(paths)
 
 
+class _ChangeHistoryDialog(QDialog):
+    """Modal dialog showing field-level change history for one LB entry.
+
+    Fetches rows from GET /api/entry/<lb_number>/changes and displays them
+    in a read-only table sorted newest-first.
+
+    Args:
+        lb_number: The LB number whose history to display.
+        flask_port: Port the Flask backend is listening on.
+        parent: Parent widget.
+    """
+
+    _HEADERS = ["Field", "Old value", "New value", "Changed at"]
+
+    def __init__(self, lb_number: int, flask_port: int, parent=None) -> None:
+        super().__init__(parent)
+        self.setWindowTitle(f"Change History — LB-{lb_number:05d}")
+        self.resize(720, 400)
+
+        layout = QVBoxLayout(self)
+        layout.setContentsMargins(8, 8, 8, 8)
+        layout.setSpacing(6)
+
+        self._status = QLabel("Loading…")
+        layout.addWidget(self._status)
+
+        self._table = QTableWidget(0, len(self._HEADERS))
+        self._table.setHorizontalHeaderLabels(self._HEADERS)
+        self._table.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
+        self._table.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
+        self._table.horizontalHeader().setStretchLastSection(False)
+        self._table.horizontalHeader().setSectionResizeMode(0, QHeaderView.ResizeMode.ResizeToContents)
+        self._table.horizontalHeader().setSectionResizeMode(1, QHeaderView.ResizeMode.Stretch)
+        self._table.horizontalHeader().setSectionResizeMode(2, QHeaderView.ResizeMode.Stretch)
+        self._table.horizontalHeader().setSectionResizeMode(3, QHeaderView.ResizeMode.ResizeToContents)
+        self._table.verticalHeader().setVisible(False)
+        self._table.setAlternatingRowColors(True)
+        layout.addWidget(self._table)
+
+        buttons = QDialogButtonBox(QDialogButtonBox.StandardButton.Close)
+        buttons.rejected.connect(self.reject)
+        layout.addWidget(buttons)
+
+        self._worker = _ChangeHistoryWorker(lb_number, flask_port)
+        self._worker.finished.connect(self._on_loaded)
+        self._worker.start()
+
+    def _on_loaded(self, rows: list) -> None:
+        """Populate the table once the background fetch completes."""
+        if isinstance(rows, dict) and "error" in rows:
+            self._status.setText(f"Error: {rows['error']}")
+            return
+        self._status.setText(f"{len(rows)} change record(s)")
+        self._table.setRowCount(len(rows))
+        for r, row in enumerate(rows):
+            for c, key in enumerate(("field", "old_value", "new_value", "changed_at")):
+                val = row.get(key) or ""
+                item = QTableWidgetItem(str(val))
+                item.setFlags(item.flags() & ~Qt.ItemFlag.ItemIsEditable)
+                self._table.setItem(r, c, item)
+
+
+class _ChangeHistoryWorker(QThread):
+    """Fetch entry change history in a background thread."""
+
+    finished = pyqtSignal(object)
+
+    def __init__(self, lb_number: int, flask_port: int) -> None:
+        super().__init__()
+        self.lb_number = lb_number
+        self.flask_port = flask_port
+
+    def run(self) -> None:
+        try:
+            resp = requests.get(
+                f"http://127.0.0.1:{self.flask_port}/api/entry/{self.lb_number}/changes",
+                params={"limit": 200},
+                timeout=10,
+            )
+            self.finished.emit(resp.json())
+        except Exception as exc:
+            self.finished.emit({"error": str(exc)})
+
+
 class LookupTab(QWidget):
     lb_double_clicked = pyqtSignal(int)
     lookup_completed = pyqtSignal(list, list)  # (detail_list, folder_list)
@@ -237,6 +322,7 @@ class LookupTab(QWidget):
         self._lb_status_filter: str = ""             # "public"|"private"|"missing"|""
         self._ignore_summary_selection = False
         self._best_match_only: bool = True           # hide non-MATCHED rows when a MATCHED exists
+        self._history_selected_lb: int | None = None
 
         # Storage for full (unfiltered) rendered data
         self._sum_rows: list = []
@@ -382,8 +468,16 @@ class LookupTab(QWidget):
         self.detail_container = detail_container = QWidget()
         dc_layout = QVBoxLayout(detail_container)
         dc_layout.setContentsMargins(0, 0, 0, 0)
+        detail_header = QHBoxLayout()
         self.detail_label = QLabel("Detail")
-        dc_layout.addWidget(self.detail_label)
+        detail_header.addWidget(self.detail_label)
+        detail_header.addStretch()
+        self._history_btn = QPushButton("History…")
+        self._history_btn.setToolTip("View field-change history for the selected LB")
+        self._history_btn.setEnabled(False)
+        self._history_btn.clicked.connect(self._on_show_history)
+        detail_header.addWidget(self._history_btn)
+        dc_layout.addLayout(detail_header)
         self.detail_model = _TableModel(DETAIL_HEADERS)
         self.detail_view = QTableView()
         self.detail_view.setModel(self.detail_model)
@@ -602,6 +696,19 @@ class LookupTab(QWidget):
             return
         folders = self._get_folders_for_selected_summary()
         self.generate_summary_btn.setEnabled(bool(folders))
+        # Enable History button only when exactly one LB row is selected
+        selected = {idx.row() for idx in self.summary_view.selectionModel().selectedRows()}
+        lbs = []
+        for row_idx in selected:
+            row = self.summary_model.get_row(row_idx)
+            if row:
+                lb_str = str(row[0]).replace("LB-", "")
+                try:
+                    lbs.append(int(lb_str))
+                except ValueError:
+                    pass
+        self._history_btn.setEnabled(len(lbs) == 1)
+        self._history_selected_lb = lbs[0] if len(lbs) == 1 else None
 
     def _on_summary_clicked(self, index):
         """Toggle detail filter: click a summary row to filter detail, click again to clear."""
@@ -1155,6 +1262,13 @@ class LookupTab(QWidget):
                 webbrowser.open(url)
             except ValueError:
                 pass
+
+    def _on_show_history(self) -> None:
+        """Open the change-history dialog for the currently selected LB."""
+        if self._history_selected_lb is None:
+            return
+        dlg = _ChangeHistoryDialog(self._history_selected_lb, self.flask_port, parent=self)
+        dlg.exec()
 
     def _on_detail_double_click(self, index):
         row = self.detail_model.get_row(index.row())

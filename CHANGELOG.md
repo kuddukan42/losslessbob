@@ -1,3 +1,14 @@
+[2026-05-19] — feat(gui): entry change history viewer in Lookup tab (TODO-005)
+
+Added
+
+  gui/lookup_tab.py: _ChangeHistoryDialog + _ChangeHistoryWorker; "History…" button in detail
+    panel header, enabled when exactly one LB is selected in summary; fetches up to 200 rows from
+    GET /api/entry/<lb>/changes and displays field, old value, new value, changed_at in a resizable
+    table; background fetch never blocks the GUI thread.
+
+---
+
 [2026-05-18] — feat(gui): add curator geocoding controls to Setup tab and DB Editor tab
 
 Changed
