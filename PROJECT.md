@@ -41,7 +41,10 @@ losslessbob/
 │   ├── importer.py           # Flat-file import logic (legacy: imports from local file path)
 │   ├── folder_naming.py      # Shared helpers: apply_nft_suffix, strip_nft_suffix, nft_discrepancy, build_standard_name
 │   ├── rename.py             # write_rename_log() — rename_log.txt + rename_history DB row
-│   ├── scraper.py            # Web scraper for losslessbob.com
+│   ├── scraper.py            # Web scraper for losslessbob.com (per-entry metadata)
+│   ├── site_crawler.py       # Full-domain BFS site mirror spider (data/site/)
+│   ├── html_utils.py         # rewrite_links(): server-absolute → relative for file:// browsing
+│   ├── bootleg_scraper.py    # Bootleg-CD catalog (LBBCD index) scraper
 │   ├── scheduler.py          # Watchdog file watcher, auto-import
 │   ├── sox_utils.py          # SoX/ffmpeg tool detection + spectrogram generation
 │   ├── startup_log.py        # Startup timing logger → data/startup.log
@@ -54,7 +57,9 @@ losslessbob/
 │   ├── verify_tab.py         # Verify local checksum files (.ffp/.md5/.st5) against audio
 │   ├── lbdir_tab.py          # Verify official lbdir*.txt files against audio on disk
 │   ├── search_tab.py         # Full-text search across entries
-│   ├── setup_tab.py          # Import, scraper control, DB management, SoX status
+│   ├── bootlegs_tab.py       # Bootleg-CD catalog browser (LBBCD)
+│   ├── scraper_tab.py        # Scraper tab: site crawler, entry scraper, bootleg catalog, session history
+│   ├── setup_tab.py          # Import, DB management, credentials, SoX status
 │   ├── attachments_tab.py    # Browse and preview cached attachment files
 │   ├── rename_tab.py         # Propose and execute folder renames based on LB match
 │   ├── spectrogram_tab.py    # Generate and view per-file SoX spectrograms
@@ -70,10 +75,15 @@ losslessbob/
 └── data/
     ├── losslessbob.db        # SQLite database
     ├── *_flat_file.txt       # Tab-delimited flat-file (user-provided)
-    ├── attachments/
-    │   └── LB-{N}/           # Cached .ffp, .txt, .html per entry
-    ├── pages/
-    │   └── LB-{N}.html       # Cached detail page HTML (used by local-pages scrape mode)
+    ├── site/                 # Offline mirror of losslessbob.wonderingwhattochoose.com
+    │   ├── detail/
+    │   │   └── LB-{N}.html   # Entry detail pages (links rewritten for file:// browsing)
+    │   ├── files/
+    │   │   └── LBF-{N}-*.ext # Attachment files (.ffp, .txt, .md5, etc.)
+    │   ├── lbbcd/
+    │   │   └── LBBCD-{N}.html# LBBCD detail pages
+    │   └── bynumber/
+    │       └── *.html        # Bynumber index pages
     ├── gui_state.json        # Persistent GUI state: column widths, window geometry (user data — not in master)
     ├── backups/              # Auto + manual DB backups (VACUUM INTO snapshots, last 10 kept)
     ├── downloads/            # Downloaded flat-file zips (kept after apply for audit purposes)
@@ -208,6 +218,74 @@ Index: `idx_lb_alias_canonical ON lb_alias(canonical_lb)`.
 | note | TEXT | Optional user note |
 
 Index: `idx_folder_link_lb ON folder_lb_link(lb_number)`.
+
+### `bootleg_titles` — LBBCD catalog index (MASTER table)
+| Column | Type | Notes |
+|--------|------|-------|
+| id | INTEGER PK | Auto-increment |
+| lb_number | INTEGER NOT NULL | Canonical LB this bootleg maps to |
+| title | TEXT | As displayed; empty string when blank on page |
+| date_str | TEXT | Raw page date string, e.g. `"xx/xx/67"` |
+| date_iso | TEXT | Best-effort ISO date (`YYYY-MM-DD`, `YYYY-MM`, or `YYYY`); NULL if unparseable |
+| year | INTEGER | 4-digit year for fast filtering; NULL if wholly unknown |
+| location | TEXT | |
+| cd_count | INTEGER | 0 is valid (vinyl-only / unreleased) |
+| lbbcd_id | INTEGER | e.g. 275 from `LBBCD-275.html`; NULL if no link |
+| lbbcd_url | TEXT | Relative URL to the LBBCD detail page; NULL if no link |
+| scraped_at | TIMESTAMP | |
+
+Natural key for diffing: `(lb_number, title, date_str)`. Indexes: `idx_bootleg_lb`, `idx_bootleg_lbbcd` (partial WHERE lbbcd_id NOT NULL), `idx_bootleg_year`, `idx_bootleg_title COLLATE NOCASE`.
+
+### `bootleg_scrapes` — Scrape audit log (MASTER table)
+| Column | Type | Notes |
+|--------|------|-------|
+| id | INTEGER PK | Auto-increment |
+| source_url | TEXT NOT NULL | |
+| scraped_at | TIMESTAMP | |
+| http_etag | TEXT | |
+| http_last_modified | TEXT | |
+| body_sha256 | TEXT | |
+| rows_total | INTEGER | |
+| rows_added | INTEGER | |
+| rows_changed | INTEGER | |
+| rows_removed | INTEGER | |
+| status | TEXT NOT NULL | `success`, `no_change`, or `failed` |
+
+### `scrape_sessions` — Crawler session log (MASTER table)
+One row per site-crawler run started via POST /api/crawler/start.
+| Column | Type | Notes |
+|--------|------|-------|
+| id | INTEGER PK | Auto-increment |
+| started_at | TIMESTAMP | Session start time (DEFAULT CURRENT_TIMESTAMP) |
+| finished_at | TIMESTAMP | Session end time |
+| scope | TEXT | `'full'`, `'incremental'`, etc. |
+| start_url | TEXT | Entry-point URL for this session |
+| pages_fetched | INTEGER | HTTP 200 responses (new/changed body saved) |
+| pages_304 | INTEGER | HTTP 304 (unchanged) responses |
+| pages_skipped | INTEGER | Skipped by robots.txt or duplicate |
+| pages_failed | INTEGER | Network errors or non-200/304 responses |
+| files_fetched | INTEGER | Attachment files downloaded |
+| status | TEXT | `'running'`, `'done'`, `'stopped'`, `'error'` |
+| notes | TEXT | Optional freeform notes |
+
+### `site_inventory` — Per-URL crawl state (MASTER table)
+One row per unique URL discovered or fetched by the site crawler.
+| Column | Type | Notes |
+|--------|------|-------|
+| url | TEXT PK | Absolute URL |
+| status | TEXT | `'pending'`, `'downloaded'`, `'not_found'`, `'failed'`, `'skipped'` |
+| relative_path | TEXT | Path relative to `data/site/`, e.g. `detail/LB-00001.html` |
+| content_type | TEXT | MIME type from response header |
+| size_bytes | INTEGER | Body size in bytes |
+| http_status | INTEGER | Last HTTP status code received |
+| last_fetched_at | TIMESTAMP | When the body was last saved |
+| last_checked_at | TIMESTAMP | When the URL was last checked (including 304 hits) |
+| last_modified | TEXT | `Last-Modified` header from last fetch |
+| body_sha256 | TEXT | SHA-256 of the saved body |
+| discovered_by | TEXT | URL of the page that linked here, or `'start'` |
+| session_id | INTEGER | FK → `scrape_sessions.id` of last session that touched this row |
+
+Indexes: `idx_inventory_status`, `idx_inventory_session`.
 
 ### `meta` — Key-value configuration store
 Persists settings between runs. Key examples:
@@ -359,13 +437,35 @@ Indexes: `idx_flat_changelog_release(release_id)`, `idx_flat_changelog_lb(lb_num
 | GET | `/api/checksums/xref_lb_numbers` | Return sorted list of lb_numbers that have at least one xref checksum (xref > 0). |
 | GET | `/api/checksums/xref_map` | Return `{lb_number: [xref_values]}` for all LBs with xref checksums. |
 
-### Scraper Control
+### Site Mirror Crawler
+| Method | Route | Description |
+|--------|-------|-------------|
+| POST | `/api/crawler/start` | Start a full-domain crawl in a background thread. Body: `{scope?, force?, delay_ms?, daily_cap?}`. Returns `{ok}` or `{ok:false, error:"already running"}`. |
+| GET | `/api/crawler/status` | Poll crawler state: `{running, stage, current_url, fetched, not_modified, skipped, failed, not_found, queue_size, session_id, message, stop_requested}` |
+| POST | `/api/crawler/stop` | Request crawler to stop after current URL |
+| GET | `/api/crawler/sessions` | Recent `scrape_sessions` rows. Query: `limit` (max 100, default 20). |
+| GET | `/api/crawler/inventory` | Paginated `site_inventory` rows. Query: `status`, `path_prefix`, `limit` (max 1000), `offset`. Returns `{rows, total}`. |
+| GET | `/api/crawler/inventory/stats` | Aggregate counts from `site_inventory` grouped by status. |
+
+### Entry Metadata Scraper
 | Method | Route | Description |
 |--------|-------|-------------|
 | POST | `/api/scrape/start` | Start bulk scrape. Body: `{lb_numbers, force, download_files, delay_ms}` |
 | GET | `/api/scrape/status` | Poll progress: `{running, current_lb, done, total, errors, skipped, last_action, last_source}` |
 | POST | `/api/scrape/stop` | Request stop |
 | POST | `/api/scrape/private_rescrape` | Force re-scrape all Private LBs (from lb_master) to detect newly-published pages. Returns `{ok, total}` |
+| POST | `/api/scrape/download_pages` | Fetch and cache `data/site/detail/LB-XXXXX.html` for a range of LBs without parsing metadata or writing to the DB. Body: `{start_lb?, end_lb?, force?}`. Returns `{ok, total}`. |
+
+### Bootleg-CD Catalog
+| Method | Route | Description |
+|--------|-------|-------------|
+| POST | `/api/bootlegs/scrape` | Start a catalog scrape. Body: `{force: bool}`. Returns `{ok, running}`. |
+| GET | `/api/bootlegs/scrape/status` | Poll scrape progress: `{running, stage, rows_total, rows_added, rows_changed, rows_removed, message, error}`. |
+| GET | `/api/bootlegs/lb_numbers` | Sorted list of lb_numbers that have at least one bootleg title. Used for 🎵 badge in Search tab. |
+| GET | `/api/bootlegs` | Paginated filtered list. Query params: `q`, `year_min`, `year_max`, `cd_min`, `cd_max`, `lb_status`, `owned` (true/false), `has_lbbcd` (true/false), `sort_col`, `sort_dir`, `limit` (max 1000), `offset`. Returns `{rows, total}`. |
+| GET | `/api/bootlegs/by_lb/<lb>` | All bootleg titles for one LB. |
+| GET | `/api/bootlegs/scrapes` | Recent scrape history. Query param: `limit` (default 20). |
+| GET | `/api/bootlegs/stats` | Summary: `{total, last_scraped_at, last_status}`. |
 
 ### Collection Data Management
 | Method | Route | Description |
@@ -540,13 +640,13 @@ checksum<TAB>filename<TAB>type<TAB>lb_number<TAB>xref
 - LB numbers are zero-padded to 5 digits (e.g., `LB-00042`, `LB-01025`)
 
 **Single entry scrape:**
-1. If `use_local_pages=True` and `data/pages/LB-{N:05d}.html` exists → read from disk (no network request)
-2. Otherwise fetch `/detail/LB-{N:05d}.html` → save HTML to `data/pages/LB-{N:05d}.html` for future reuse
+1. If `use_local_pages=True` and `data/site/detail/LB-{N:05d}.html` exists → read from disk (no network request)
+2. Otherwise fetch `/detail/LB-{N:05d}.html` → save HTML to `data/site/detail/LB-{N:05d}.html` for future reuse
 3. Parse HTML table for date, location, CDR, rating, timing
 4. Extract description from `<p>` tags + bare text nodes
 5. Extract setlist from numbered lines (`1. song`, `2. song`)
 6. Find attachment links matching `/files/LBF-*`
-7. Optionally download files to `data/attachments/LB-{N:05d}/`; skip if file already on disk unless `force=True` and `use_local_pages=False`
+7. Optionally download files to `data/site/files/`; skip if file already on disk unless `force=True` and `use_local_pages=False`
 8. 404 → write `status='missing'` to DB
 
 **Rate limiting:** 3 retries with exponential backoff; 60-second pause on HTTP 429.
@@ -556,7 +656,7 @@ checksum<TAB>filename<TAB>type<TAB>lb_number<TAB>xref
 - Entry exists and `download_files=False` (metadata already present)
 - Entry exists and all `entry_files` records have `downloaded=1` (including files synced from disk — see below)
 
-**Filesystem sync:** Before counting pending downloads, the skip check updates any `downloaded=0` record to `downloaded=1` if the corresponding file already exists in `data/attachments/LB-{N:05d}/`. This handles files placed there from external sources.
+**Filesystem sync:** Before counting pending downloads, the skip check updates any `downloaded=0` record to `downloaded=1` if the corresponding file already exists in `data/site/files/`. This handles files placed there from external sources.
 
 **Bulk scrape:** Thread-safe progress state `{running, current_lb, done, total, errors, skipped, last_action, last_source, stop_requested}` polled by GUI every 1 second. `last_action` is `'scraped'`, `'skipped'`, or `'error'`. `last_source` is `'local'`, `'web'`, or `None`.
 
@@ -577,9 +677,69 @@ Watchdog observer monitors the `data/` directory for `.txt` file changes.
 
 ---
 
+## Backend: Site Crawler (`backend/site_crawler.py`)
+
+Full-domain BFS spider that produces a complete offline mirror of `losslessbob.wonderingwhattochoose.com` under `data/site/`. Uses `If-Modified-Since` for efficient incremental updates.
+
+**Entry point:** `crawl(start_url, scope, force, delay_ms, daily_cap)` — run in a daemon thread via `POST /api/crawler/start`.
+
+**Change detection:** Per-page GET with `If-Modified-Since: <stored last_modified>`. HTTP 304 = unchanged (only `last_checked_at` updated). HTTP 200 = changed (body saved, links rewritten, inventory updated).
+
+**Link discovery:** `_extract_links(html, page_url)` finds all same-domain `<a href>` and `<link href>` targets. External links, `mailto:`, `javascript:`, `data:`, and fragment-only anchors are ignored. Binary file extensions (`.flac`, `.mp3`, `.zip`, etc.) are skipped.
+
+**Link rewriting:** `backend/html_utils.rewrite_links()` converts server-absolute paths to relative paths so cached pages work in a browser via `file://`.
+
+**URL → disk mapping:** `_url_to_local(url)` maps site paths to `data/site/` sub-dirs:
+- `/detail/LB-XXXXX.html` → `data/site/detail/LB-XXXXX.html`
+- `/files/LBF-*` → `data/site/files/LBF-*`
+- `/lbbcd/LBBCD-*.html` → `data/site/lbbcd/LBBCD-*.html`
+- `/bynumber/*.html` → `data/site/bynumber/*.html`
+- `/` → `data/site/index.html`
+
+**Rate limiting:** 1500ms base delay ±20% jitter. On HTTP 429: honor `Retry-After` header (default 60s). On connection error: exponential backoff 5s → 15s → 45s. Configurable daily request cap (default 5,000). Always sequential (no concurrency). `robots.txt` read once per session.
+
+**State:** Separate `_crawler_state` dict and `_crawler_lock` (no shared state with `scraper.py`). Fields: `running`, `stage`, `current_url`, `fetched`, `not_modified`, `skipped`, `failed`, `not_found`, `queue_size`, `session_id`, `message`, `stop_requested`.
+
+---
+
+## GUI: Scraper Tab (`gui/scraper_tab.py`)
+
+Dedicated tab containing all scraping functions. Replaces the scraper controls previously in the Setup tab.
+
+**Panel 1 — Site Mirror Crawler:**
+- Scope selector (`incremental` / `full`), Force re-fetch checkbox
+- Delay (ms) and Daily cap spinboxes (saved to DB settings)
+- Start Crawl / Stop buttons
+- Live URL status label + counts label (Fetched / 304 / Not found / Skipped / Failed / Queue)
+- Progress bar (indeterminate while running)
+
+**Panel 2 — Crawler Session History:**
+- `QTableWidget` showing the 20 most recent `scrape_sessions` rows (Started, Finished, Scope, Status, Fetched, 304, Failed)
+- Color-coded by status (green=done, yellow=stopped, red=error)
+- Refresh button
+
+**Panel 3 — Site Inventory:**
+- Paginated `QTableWidget` showing `site_inventory` rows with Status and Path-prefix filters
+- Columns: URL, Status, Size, HTTP, Last Fetched, Last Modified
+- 100 rows per page with Prev/Next pagination
+
+**Panel 4 — Entry Pages & Metadata Scraper:**
+- Options: Auto-scrape after import, Download attachments, Force re-scrape, Use local pages, Delay (ms)
+- Actions: Scrape All Missing, Scrape Range, Single Entry, Re-scrape Private LBs, Download Missing Pages
+- Progress bar + stop button (shared `_scrape_state` from `scraper.py`)
+- Embedded scraper log (read-only `QPlainTextEdit`, 500 lines)
+
+**Panel 5 — Bootleg-CD Catalog (LBBCD):**
+- Scrape Bootleg Catalog button + Force checkbox + status label
+- History table (5 columns: Scraped at, Status, Total, Added, Changed)
+
+**Background threads:** `_CrawlerStatusThread` (polls `/api/crawler/status` every 1s), `_ScrapeStatusThread` (polls `/api/scrape/status` every 1s), `_SingleScrapeThread` (one-shot single-entry scrape).
+
+---
+
 ## GUI: Main Window (`gui/main_window.py`)
 
-Ten tabs in order: **Lookup**(0) · **Rename Folders**(1) · **Verify**(2) · **lbdir**(3) · **Search**(4) · **My Collection**(5) · **Attachments**(6) · **Spectrograms**(7) · **DB Editor**(8) · **Setup**(9) · **Themes**(10)
+Thirteen tabs in order: **Lookup**(0) · **Rename Folders**(1) · **Verify**(2) · **lbdir**(3) · **Search**(4) · **Bootlegs**(5) · **My Collection**(6) · **Attachments**(7) · **Spectrograms**(8) · **DB Editor**(9) · **Scraper**(10) · **Setup**(11) · **Themes**(12)
 
 **Menu bar:**
 - File → Exit
@@ -703,6 +863,28 @@ Search field + field selector (All / Location / Date / Description) + year dropd
 **Owned data** is fetched from `GET /api/collection/lb_numbers` after each search result arrives. If an owned filter is active when data loads, the page is re-rendered automatically.
 
 **Double-click col 0:** Switches to Lookup tab. **Double-click any other column:** Opens `LB-{lb:05d}.html` on losslessbob.com (5-digit zero-padded).
+
+**🎵 Bootleg badge:** LB Number cells show a `🎵 N` suffix when that LB has entries in `bootleg_titles`. The badge set is pushed from `BootlegsTab.bootleg_lbs_loaded` on startup and after each scrape.
+
+---
+
+## GUI: Bootlegs Tab (`gui/bootlegs_tab.py`)
+
+Browse the LosslessBob Bootleg-CD catalog (LBBCD index page). Backed by `bootleg_titles` + `bootleg_scrapes` tables (MASTER data, ships in curator releases).
+
+**Filter bar:** Free-text search (title + location, debounced 300 ms), year range (two spinboxes), CDs combobox (All / 0 / 1 / 2 / 3+), Status filter (public/private/missing), Owned filter (All/Owned/Not owned), LBBCD filter (All/Has link/No link), Clear button.
+
+**Table columns:** LB Number, Title, Date, Year, Location, CDs, LBBCD (e.g. `LBBCD-275`), Status (lb_master colour), Owned (✓).
+
+**Pagination:** Prev/Next with "Page X of Y · N results" label. Default page size 200.
+
+**Detail pane (right):** Title, date, location, CD count, lb_master status, LBBCD identifier. Two buttons: "Open in Search Tab" (emits `open_lb_in_search` → MainWindow switches to Search and pre-fills the LB number); "Open LBBCD Page" (opens browser). "Other bootleg titles for this LB" sub-panel lists sibling rows.
+
+**Signals:**
+- `open_lb_in_search(int)` — connected by MainWindow to `_on_bootleg_open_lb`
+- `bootleg_lbs_loaded(set)` — connected by MainWindow to `search_tab.set_bootleg_lbs`
+
+**Double-click row:** Opens the LB detail page on losslessbob.com.
 
 ---
 
@@ -974,3 +1156,5 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 | 2026-05-17 | CC_LB_INTEGRITY item 11: GuiStateStore in gui/widgets/state_store.py; all tabs migrated from QSettings/hardcoded widths to attach_table / data/gui_state.json; window geometry migrated too. |
 | 2026-05-18 | Override export/import JSON: export_overrides() + import_overrides() in db.py; GET /api/lb_master/overrides/export + POST /api/lb_master/overrides/import in app.py; "Export Overrides" + "Import Overrides" buttons in DB Integrity panel (dbedit_tab.py). |
 | 2026-05-18 | CC_LB_INTEGRITY item 10: Click-to-sort on all major tables. gui/widgets/sort_keys.py added. lbdir+verify QTableWidget tables use SortableTableItem. Search/Collection/Missing QTableView tables sort in-memory via sectionClicked. DB Editor sectionClicked wired to server-side sort. Backend /api/search, /api/collection, /api/collection/missing accept sort_col/sort_dir. |
+| 2026-05-18 | Download Missing Pages: `download_pages_range()` in scraper.py; `POST /api/scrape/download_pages`; Row 4 "Download Missing Pages" button in Setup tab scraper grid. (TODO-002) |
+| 2026-05-18 | Bootleg-CD Catalog (LBBCD): `backend/bootleg_scraper.py`; `bootleg_titles` + `bootleg_scrapes` tables (MASTER); MASTER_SCHEMA_VERSION→2; 7 `/api/bootlegs/*` routes; `gui/bootlegs_tab.py` (Bootlegs tab, index 5); 🎵 badge in Search tab; Scrape Bootleg Catalog button + history panel in Setup tab; Bootlegs count in status bar. (TODO-030) |

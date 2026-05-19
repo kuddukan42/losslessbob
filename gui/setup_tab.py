@@ -1,13 +1,13 @@
 from pathlib import Path
 
-from backend.paths import LOG_FILE as _LOG_FILE, DATA_DIR as _DATA_DIR
+from backend.paths import DATA_DIR as _DATA_DIR
 
 import requests
 from PyQt6.QtCore import Qt, QThread, pyqtSignal
 from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QGridLayout, QGroupBox, QLabel,
     QPushButton, QComboBox, QCheckBox, QSpinBox, QProgressBar,
-    QFileDialog, QMessageBox, QLineEdit, QPlainTextEdit,
+    QFileDialog, QMessageBox, QLineEdit,
     QDialog, QDialogButtonBox, QTableWidget, QTableWidgetItem,
 )
 from PyQt6.QtGui import QColor
@@ -377,16 +377,11 @@ class SetupTab(QWidget):
         self._import_thread = None
         self._import_status_thread = None
         self._reset_thread = None
-        self._single_scrape_thread = None
-        self._scrape_status_thread = None
         self._wtrf_test_thread = None
         self._discover_thread: _DiscoverThread | None = None
-        self._private_rescrape_mode = False
-        self._private_rescrape_before = 0
         self._build_ui()
         self._load_settings()
         self._refresh_stats()
-        self._refresh_log_size()
         self._load_curator_status()
 
     def showEvent(self, event) -> None:  # type: ignore[override]
@@ -589,150 +584,9 @@ class SetupTab(QWidget):
         search_layout.addLayout(page_size_row)
         layout.addWidget(search_group)
 
-        # ── Two-column lower section ─────────────────────────────────────────
-        lower_row = QHBoxLayout()
-        lower_row.setSpacing(12)
-
-        # Left column: scraper + log
-        left_col = QVBoxLayout()
-        left_col.setSpacing(8)
-
-        scraper_group = QGroupBox("Web Scraper")
-        scraper_layout = QVBoxLayout(scraper_group)
-
-        self.auto_scrape_cb = QCheckBox("Automatically scrape new entries after import")
-        self.auto_scrape_cb.stateChanged.connect(self._save_settings)
-        scraper_layout.addWidget(self.auto_scrape_cb)
-
-        self.download_files_cb = QCheckBox("Download attachment files (ffp, txt, html)")
-        self.download_files_cb.stateChanged.connect(self._save_settings)
-        scraper_layout.addWidget(self.download_files_cb)
-
-        self.force_scrape_cb = QCheckBox("Force re-scrape (ignore already-complete entries)")
-        self.force_scrape_cb.stateChanged.connect(self._save_settings)
-        scraper_layout.addWidget(self.force_scrape_cb)
-
-        self.local_pages_cb = QCheckBox("Use local pages for metadata (data/pages/)")
-        self.local_pages_cb.stateChanged.connect(self._save_settings)
-        scraper_layout.addWidget(self.local_pages_cb)
-
-        delay_row = QHBoxLayout()
-        delay_row.addWidget(QLabel("Delay between requests (ms):"))
-        self.delay_spin = QSpinBox()
-        self.delay_spin.setRange(500, 10000)
-        self.delay_spin.setValue(1500)
-        self.delay_spin.setSingleStep(100)
-        self.delay_spin.valueChanged.connect(self._save_settings)
-        delay_row.addWidget(self.delay_spin)
-        delay_row.addStretch()
-        scraper_layout.addLayout(delay_row)
-
-        _VC = Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter
-        scrape_grid = QGridLayout()
-        scrape_grid.setColumnStretch(4, 1)
-        scrape_grid.setHorizontalSpacing(8)
-        scrape_grid.setVerticalSpacing(10)
-
-        # Row 0: bulk actions — button in col 2 so it lines up with single/range
-        _SCRAPE_BTN_W = 180
-        self.scrape_all_btn = QPushButton("Scrape All Missing Entries")
-        self.scrape_all_btn.setFixedWidth(_SCRAPE_BTN_W)
-        self.scrape_all_btn.clicked.connect(self._on_scrape_all)
-        scrape_grid.addWidget(self.scrape_all_btn, 0, 2, _VC)
-
-        self.stop_scrape_btn = QPushButton("Stop Scraper")
-        self.stop_scrape_btn.setFixedWidth(_SCRAPE_BTN_W)
-        self.stop_scrape_btn.clicked.connect(self._on_stop_scrape)
-        self.stop_scrape_btn.setEnabled(False)
-        scrape_grid.addWidget(self.stop_scrape_btn, 0, 3, _VC)
-
-        # Row 1: single entry
-        scrape_grid.addWidget(QLabel("Single entry:"), 1, 0, _VC)
-        self.single_lb_input = QLineEdit()
-        self.single_lb_input.setPlaceholderText("LB number...")
-        self.single_lb_input.setFixedWidth(100)
-        self.single_lb_input.returnPressed.connect(self._on_scrape_single)
-        scrape_grid.addWidget(self.single_lb_input, 1, 1, _VC)
-        self.scrape_single_btn = QPushButton("Scrape")
-        self.scrape_single_btn.setFixedWidth(_SCRAPE_BTN_W)
-        self.scrape_single_btn.clicked.connect(self._on_scrape_single)
-        scrape_grid.addWidget(self.scrape_single_btn, 1, 2, _VC)
-        self.single_scrape_status_label = QLabel("")
-        scrape_grid.addWidget(self.single_scrape_status_label, 1, 3, 1, 2, _VC)
-
-        # Row 2: range
-        scrape_grid.addWidget(QLabel("Range:"), 2, 0, _VC)
-        range_inputs_w = QWidget()
-        range_inputs = QHBoxLayout(range_inputs_w)
-        range_inputs.setContentsMargins(0, 0, 0, 0)
-        range_inputs.setSpacing(4)
-        self.range_start_spin = QSpinBox()
-        self.range_start_spin.setRange(1, 99999)
-        self.range_start_spin.setValue(1)
-        self.range_start_spin.setFixedWidth(80)
-        range_inputs.addWidget(self.range_start_spin)
-        range_inputs.addWidget(QLabel("to"))
-        self.range_end_spin = QSpinBox()
-        self.range_end_spin.setRange(1, 99999)
-        self.range_end_spin.setValue(100)
-        self.range_end_spin.setFixedWidth(80)
-        range_inputs.addWidget(self.range_end_spin)
-        scrape_grid.addWidget(range_inputs_w, 2, 1, _VC)
-        self.scrape_range_btn = QPushButton("Scrape Range")
-        self.scrape_range_btn.setFixedWidth(_SCRAPE_BTN_W)
-        self.scrape_range_btn.clicked.connect(self._on_scrape_range)
-        scrape_grid.addWidget(self.scrape_range_btn, 2, 2, _VC)
-
-        # Row 3: private LB re-scrape
-        scrape_grid.addWidget(QLabel("Private LBs:"), 3, 0, _VC)
-        self.rescrape_private_btn = QPushButton("Re-scrape Private LBs")
-        self.rescrape_private_btn.setFixedWidth(_SCRAPE_BTN_W)
-        self.rescrape_private_btn.setToolTip(
-            "Force re-scrape all Private LBs to check whether any have been published"
-        )
-        self.rescrape_private_btn.clicked.connect(self._on_rescrape_private)
-        scrape_grid.addWidget(self.rescrape_private_btn, 3, 2, _VC)
-        self.rescrape_private_label = QLabel("")
-        scrape_grid.addWidget(self.rescrape_private_label, 3, 3, 1, 2, _VC)
-
-        scraper_layout.addLayout(scrape_grid)
-
-        self.scrape_progress = QProgressBar()
-        self.scrape_progress.setObjectName("scrapeProgress")
-        self.scrape_progress.setVisible(False)
-        scraper_layout.addWidget(self.scrape_progress)
-
-        self.scrape_status_label = QLabel("")
-        scraper_layout.addWidget(self.scrape_status_label)
-
-        left_col.addWidget(scraper_group)
-
-        log_group = QGroupBox("Scraper Log")
-        log_layout = QVBoxLayout(log_group)
-        self.scraper_log = QPlainTextEdit()
-        self.scraper_log.setReadOnly(True)
-        self.scraper_log.setMaximumBlockCount(500)
-        self.scraper_log.setMinimumHeight(120)
-        log_layout.addWidget(self.scraper_log)
-
-        log_file_row = QHBoxLayout()
-        self.log_size_label = QLabel("Log file: —")
-        log_file_row.addWidget(self.log_size_label)
-        log_file_row.addStretch()
-        self.open_log_btn = QPushButton("Open Log File")
-        self.open_log_btn.clicked.connect(self._on_open_log)
-        log_file_row.addWidget(self.open_log_btn)
-        self.purge_log_btn = QPushButton("Purge Log")
-        self.purge_log_btn.clicked.connect(self._on_purge_log)
-        log_file_row.addWidget(self.purge_log_btn)
-        log_layout.addLayout(log_file_row)
-
-        left_col.addWidget(log_group, stretch=1)
-        lower_row.addLayout(left_col, stretch=3)
-
-        # Right column: qBittorrent + WTRF Forum + Torrent Settings
-        right_col = QVBoxLayout()
-        right_col.setSpacing(8)
+        # ── Connection settings (scraper controls moved to Scraper tab) ─────────
+        conn_row = QHBoxLayout()
+        conn_row.setSpacing(12)
 
         # ── qBittorrent section ──────────────────────────────────────────────
         qbt_group = QGroupBox("qBittorrent")
@@ -798,7 +652,7 @@ class SetupTab(QWidget):
         self.qbt_status_label = QLabel("")
         qbt_layout.addWidget(self.qbt_status_label, 5, 0, 1, 5)
         qbt_layout.setColumnStretch(4, 1)
-        right_col.addWidget(qbt_group)
+        conn_row.addWidget(qbt_group, stretch=1)
 
         # ── WTRF Forum section ───────────────────────────────────────────────
         wtrf_group = QGroupBox("Watching the River Flow Forum")
@@ -841,7 +695,7 @@ class SetupTab(QWidget):
         self.wtrf_status_label = QLabel("")
         wtrf_layout.addWidget(self.wtrf_status_label, 4, 0, 1, 3)
         wtrf_layout.setColumnStretch(2, 1)
-        right_col.addWidget(wtrf_group)
+        conn_row.addWidget(wtrf_group, stretch=1)
 
         # ── Torrent section ──────────────────────────────────────────────────
         torrent_group = QGroupBox("Torrent Settings")
@@ -861,12 +715,9 @@ class SetupTab(QWidget):
         self.tracker_count_label = QLabel("—")
         torrent_layout.addWidget(self.tracker_count_label)
         torrent_layout.addStretch()
-        right_col.addWidget(torrent_group)
+        conn_row.addWidget(torrent_group, stretch=1)
 
-        right_col.addStretch()
-        lower_row.addLayout(right_col, stretch=2)
-
-        layout.addLayout(lower_row, stretch=1)
+        layout.addLayout(conn_row)
 
         # ── Flat File History ────────────────────────────────────────────────
         ff_group = QGroupBox("Flat File History")
@@ -892,20 +743,18 @@ class SetupTab(QWidget):
 
         layout.addWidget(ff_group)
 
+        layout.addWidget(ff_group)
+
+    # _build_ui end — scraper and bootleg catalog panels moved to ScraperTab
+
     def _load_settings(self):
         self._loading = True
         try:
             resp = requests.get(f"http://127.0.0.1:{self.flask_port}/api/db/settings", timeout=5)
             data = resp.json()
-            self.auto_scrape_cb.setChecked(data.get("auto_scrape", "1") != "0")
-            self.download_files_cb.setChecked(data.get("scrape_attachments", "1") != "0")
-            self.force_scrape_cb.setChecked(data.get("force_scrape", "0") != "0")
-            self.local_pages_cb.setChecked(data.get("use_local_pages", "0") == "1")
-            self.delay_spin.setValue(int(data.get("scrape_delay_ms") or 1500))
             self.search_page_spin.setValue(int(data.get("search_page_size") or 50))
         except Exception:
-            self.auto_scrape_cb.setChecked(True)
-            self.download_files_cb.setChecked(True)
+            pass
         finally:
             self._loading = False
         # Load credential-dependent settings after _loading flag is cleared
@@ -919,14 +768,7 @@ class SetupTab(QWidget):
         try:
             requests.post(
                 f"http://127.0.0.1:{self.flask_port}/api/db/settings",
-                json={
-                    "auto_scrape": "1" if self.auto_scrape_cb.isChecked() else "0",
-                    "scrape_attachments": "1" if self.download_files_cb.isChecked() else "0",
-                    "force_scrape": "1" if self.force_scrape_cb.isChecked() else "0",
-                    "use_local_pages": "1" if self.local_pages_cb.isChecked() else "0",
-                    "scrape_delay_ms": str(self.delay_spin.value()),
-                    "search_page_size": str(self.search_page_spin.value()),
-                },
+                json={"search_page_size": str(self.search_page_spin.value())},
                 timeout=5,
             )
         except Exception:
@@ -1325,60 +1167,6 @@ class SetupTab(QWidget):
         except Exception:
             pass
 
-    def _log(self, msg: str) -> None:
-        from datetime import datetime
-        ts = datetime.now().strftime("%H:%M:%S")
-        line = f"[{ts}] {msg}"
-        self.scraper_log.appendPlainText(line)
-        try:
-            _LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
-            with _LOG_FILE.open("a", encoding="utf-8") as f:
-                f.write(line + "\n")
-        except OSError:
-            pass
-        self._refresh_log_size()
-
-    def _refresh_log_size(self) -> None:
-        try:
-            size = _LOG_FILE.stat().st_size
-            if size < 1024:
-                text = f"{size} B"
-            elif size < 1_048_576:
-                text = f"{size / 1024:.1f} KB"
-            else:
-                text = f"{size / 1_048_576:.1f} MB"
-            self.log_size_label.setText(f"Log file: {text}")
-        except FileNotFoundError:
-            self.log_size_label.setText("Log file: not created yet")
-        except OSError:
-            self.log_size_label.setText("Log file: error reading size")
-
-    def _on_purge_log(self) -> None:
-        confirm = QMessageBox.question(
-            self, "Purge Log",
-            "Clear the scraper log file on disk? The in-app log will also be cleared.",
-            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.Cancel,
-            QMessageBox.StandardButton.Cancel,
-        )
-        if confirm != QMessageBox.StandardButton.Yes:
-            return
-        try:
-            _LOG_FILE.write_text("", encoding="utf-8")
-        except OSError:
-            pass
-        self.scraper_log.clear()
-        self._refresh_log_size()
-
-    def _on_open_log(self) -> None:
-        if not _LOG_FILE.exists():
-            QMessageBox.information(self, "Open Log", "Log file has not been created yet.")
-            return
-        from gui.platform_utils import open_file
-        try:
-            open_file(_LOG_FILE)
-        except Exception:
-            pass
-
     def _on_purge(self, scope: str, label: str) -> None:
         if QMessageBox.question(
             self, "Confirm Purge",
@@ -1398,228 +1186,6 @@ class SetupTab(QWidget):
             self._refresh_collection_stats()
         except Exception as e:
             self.purge_status_label.setText(f"Error: {e}")
-
-    def _on_scrape_single(self):
-        text = self.single_lb_input.text().strip()
-        try:
-            lb = int(text)
-        except ValueError:
-            self.single_scrape_status_label.setText("Invalid number.")
-            return
-        self.scrape_single_btn.setEnabled(False)
-        self.single_scrape_status_label.setText(f"Scraping LB-{lb}...")
-        self._log(f"Starting single scrape: LB-{lb}")
-        self._single_scrape_thread = _SingleScrapeThread(self.flask_port, lb, force=self.force_scrape_cb.isChecked())
-        self._single_scrape_thread.finished.connect(self._on_single_scrape_finished)
-        self._single_scrape_thread.start()
-
-    def _on_single_scrape_finished(self, data):
-        self.scrape_single_btn.setEnabled(True)
-        lb = self.single_lb_input.text().strip()
-        if "error" in data:
-            msg = f"Error scraping LB-{lb}: {data['error']}"
-            self.single_scrape_status_label.setText(f"Error: {data['error']}")
-        elif data.get("skipped"):
-            msg = f"LB-{lb} already scraped (skipped)."
-            self.single_scrape_status_label.setText(msg)
-        else:
-            n = len(data.get("files_downloaded", []))
-            msg = f"LB-{lb} scraped. {n} file(s) downloaded."
-            self.single_scrape_status_label.setText(msg)
-        self._log(msg)
-
-    def _on_scrape_range(self):
-        start = self.range_start_spin.value()
-        end = self.range_end_spin.value()
-        if end < start:
-            self.scrape_status_label.setText("End must be >= start.")
-            return
-        self.scrape_range_btn.setEnabled(False)
-        self.scrape_all_btn.setEnabled(False)
-        self.rescrape_private_btn.setEnabled(False)
-        self.stop_scrape_btn.setEnabled(True)
-        self.scrape_progress.setVisible(True)
-        self.scrape_progress.setRange(0, 0)
-        force = self.force_scrape_cb.isChecked()
-        self.scrape_status_label.setText(f"Starting range scrape LB-{start} to LB-{end}...")
-        self._log(f"Starting range scrape: LB-{start} to LB-{end}{' (force)' if force else ''}")
-
-        try:
-            requests.post(
-                f"http://127.0.0.1:{self.flask_port}/api/scrape/start",
-                json={"start_lb": start, "end_lb": end, "force": force},
-                timeout=10,
-            )
-        except Exception as e:
-            self.scrape_status_label.setText(f"Error: {e}")
-            self._log(f"Failed to start range scrape: {e}")
-            self.scrape_range_btn.setEnabled(True)
-            self.scrape_all_btn.setEnabled(True)
-            self.stop_scrape_btn.setEnabled(False)
-            return
-
-        self._scrape_status_thread = _ScrapeStatusThread(self.flask_port)
-        self._scrape_status_thread.status_update.connect(self._on_scrape_status)
-        self._scrape_status_thread.start()
-
-    def _on_scrape_all(self):
-        self.scrape_all_btn.setEnabled(False)
-        self.scrape_range_btn.setEnabled(False)
-        self.rescrape_private_btn.setEnabled(False)
-        self.stop_scrape_btn.setEnabled(True)
-        self.scrape_progress.setVisible(True)
-        self.scrape_progress.setRange(0, 0)
-        force = self.force_scrape_cb.isChecked()
-        self.scrape_status_label.setText("Starting scraper...")
-        self._log(f"Starting bulk scrape of all missing entries{' (force)' if force else ''}...")
-
-        try:
-            requests.post(
-                f"http://127.0.0.1:{self.flask_port}/api/scrape/start",
-                json={"start_lb": 1, "force": force},
-                timeout=10,
-            )
-        except Exception as e:
-            self.scrape_status_label.setText(f"Error: {e}")
-            self._log(f"Failed to start scraper: {e}")
-            self.scrape_all_btn.setEnabled(True)
-            return
-
-        self._scrape_status_thread = _ScrapeStatusThread(self.flask_port)
-        self._scrape_status_thread.status_update.connect(self._on_scrape_status)
-        self._scrape_status_thread.start()
-
-    _last_logged_lb = None
-
-    def _on_scrape_status(self, status):
-        total = status.get("total", 0)
-        done = status.get("done", 0)
-        current = status.get("current_lb", "")
-        last_lb = status.get("last_lb")
-        running = status.get("running", False)
-        skipped = status.get("skipped", 0)
-        last_action = status.get("last_action")
-        last_source = status.get("last_source")
-
-        if total > 0:
-            self.scrape_progress.setRange(0, total)
-            self.scrape_progress.setValue(done)
-
-        # Status label shows what is currently being processed
-        if current:
-            label = f"Scraping LB-{current} ({done}/{total}"
-            if skipped:
-                label += f", {skipped} skipped"
-            label += ")..."
-            self.scrape_status_label.setText(label)
-
-        # Log the just-completed entry (last_lb) so the source tag is always correct
-        if last_lb and last_lb != self._last_logged_lb:
-            self._last_logged_lb = last_lb
-            if last_action == "skipped":
-                self._log(f"Skipped LB-{last_lb} — already complete ({done}/{total})")
-            elif last_action == "error":
-                self._log(f"Error scraping LB-{last_lb} ({done}/{total})")
-            else:
-                src = f" [{last_source}]" if last_source else ""
-                self._log(f"Scraped LB-{last_lb}{src} ({done}/{total})")
-
-        if not running:
-            self._scrape_status_thread.stop()
-            self.scrape_all_btn.setEnabled(True)
-            self.scrape_range_btn.setEnabled(True)
-            self.rescrape_private_btn.setEnabled(True)
-            self.stop_scrape_btn.setEnabled(False)
-            self.scrape_progress.setVisible(False)
-            msg = f"Scrape complete. {done} processed"
-            if skipped:
-                msg += f" ({skipped} already complete)"
-            msg += f", {status.get('errors', 0)} errors."
-            if self._private_rescrape_mode:
-                self._private_rescrape_mode = False
-                try:
-                    stats_resp = requests.get(
-                        f"http://127.0.0.1:{self.flask_port}/api/lb_master/stats",
-                        timeout=5,
-                    ).json()
-                    new_private = stats_resp.get("private", 0)
-                    promoted = max(0, self._private_rescrape_before - new_private)
-                    msg += f" {promoted} promoted to Public, {new_private} private remain."
-                except Exception:
-                    pass
-            self.scrape_status_label.setText(msg)
-            self._log(msg)
-            self._last_logged_lb = None
-
-    def _on_rescrape_private(self):
-        try:
-            stats_resp = requests.get(
-                f"http://127.0.0.1:{self.flask_port}/api/lb_master/stats", timeout=5
-            ).json()
-            private_count = stats_resp.get("private", 0)
-        except Exception as e:
-            QMessageBox.warning(self, "Re-scrape Private LBs", f"Could not fetch stats: {e}")
-            return
-        if private_count == 0:
-            QMessageBox.information(
-                self, "Re-scrape Private LBs",
-                "No Private LBs found in the database.",
-            )
-            return
-        confirm = QMessageBox.question(
-            self, "Re-scrape Private LBs",
-            f"Re-scrape {private_count} Private LB(s) to check whether any have been "
-            "published on the website?\n\nThis uses force mode and may take a while.",
-            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.Cancel,
-            QMessageBox.StandardButton.Cancel,
-        )
-        if confirm != QMessageBox.StandardButton.Yes:
-            return
-
-        self._private_rescrape_mode = True
-        self._private_rescrape_before = private_count
-
-        self.rescrape_private_btn.setEnabled(False)
-        self.scrape_all_btn.setEnabled(False)
-        self.scrape_range_btn.setEnabled(False)
-        self.stop_scrape_btn.setEnabled(True)
-        self.scrape_progress.setVisible(True)
-        self.scrape_progress.setRange(0, 0)
-        self.scrape_status_label.setText(
-            f"Queuing {private_count} private LB(s) for force re-scrape..."
-        )
-        self._log(f"Starting private LB re-scrape: {private_count} LBs (force=True)")
-
-        try:
-            resp = requests.post(
-                f"http://127.0.0.1:{self.flask_port}/api/scrape/private_rescrape",
-                timeout=10,
-            ).json()
-        except Exception as e:
-            self._private_rescrape_mode = False
-            self.rescrape_private_btn.setEnabled(True)
-            self.scrape_all_btn.setEnabled(True)
-            self.scrape_range_btn.setEnabled(True)
-            self.stop_scrape_btn.setEnabled(False)
-            self.scrape_progress.setVisible(False)
-            self.scrape_status_label.setText(f"Error: {e}")
-            self._log(f"Failed to start private rescrape: {e}")
-            return
-
-        if "error" in resp:
-            self._private_rescrape_mode = False
-            self.rescrape_private_btn.setEnabled(True)
-            self.scrape_all_btn.setEnabled(True)
-            self.scrape_range_btn.setEnabled(True)
-            self.stop_scrape_btn.setEnabled(False)
-            self.scrape_progress.setVisible(False)
-            self.scrape_status_label.setText(f"Error: {resp['error']}")
-            self._log(f"Private rescrape error: {resp['error']}")
-            return
-
-        self._scrape_status_thread = _ScrapeStatusThread(self.flask_port)
-        self._scrape_status_thread.status_update.connect(self._on_scrape_status)
-        self._scrape_status_thread.start()
 
     def _check_sox(self):
         try:
@@ -1658,15 +1224,6 @@ class SetupTab(QWidget):
         except Exception as e:
             for lbl in (self.sox_status_label, self.ffmpeg_status_label, self.shntool_status_label):
                 lbl.setText(f"Error: {e}")
-
-    def _on_stop_scrape(self):
-        try:
-            requests.post(f"http://127.0.0.1:{self.flask_port}/api/scrape/stop", timeout=5)
-        except Exception:
-            pass
-        self.stop_scrape_btn.setEnabled(False)
-        self.scrape_status_label.setText("Stop requested...")
-        self._log("Stop requested by user.")
 
     # ── qBittorrent handlers ─────────────────────────────────────────────────
 

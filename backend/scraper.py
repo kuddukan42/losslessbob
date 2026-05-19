@@ -8,7 +8,11 @@ from backend.db import (
     get_connection, DB_PATH, insert_missing_entry,
     record_entry_changes, reconcile_lb_status,
 )
-from backend.paths import ATTACHMENTS_DIR, PAGES_DIR, to_long_path
+from backend.paths import (
+    SITE_DETAIL_DIR, SITE_FILES_DIR, to_long_path,
+    detail_page_path, attachment_path,
+)
+from backend.html_utils import rewrite_links
 
 BASE_URL = "http://www.losslessbob.wonderingwhattochoose.com"
 DETAIL_URL = BASE_URL + "/detail/LB-{n}.html"
@@ -62,10 +66,9 @@ def _fetch(url, retries=3, delay=1.5):
 def scrape_entry(lb_number, force=False, download_files=True, use_local_pages=False, db_path=None):
     db_path = db_path or DB_PATH
     lb_id = f"{lb_number:05d}"
-    lb_dir = to_long_path(ATTACHMENTS_DIR / f"LB-{lb_id}")
 
     # Resolve local page path early so the skip logic can check its existence.
-    local_page = to_long_path(PAGES_DIR / f"LB-{lb_id}.html")
+    local_page = to_long_path(detail_page_path(lb_id))
 
     if not force:
         with get_connection(db_path) as conn:
@@ -85,7 +88,7 @@ def scrape_entry(lb_number, force=False, download_files=True, use_local_pages=Fa
                         "SELECT filename, clean_name FROM entry_files WHERE lb_number=? AND downloaded=0",
                         (lb_number,)
                     ).fetchall():
-                        if (lb_dir / prow["clean_name"]).exists():
+                        if attachment_path(prow["filename"]).exists():
                             conn.execute(
                                 "UPDATE entry_files SET downloaded=1 WHERE lb_number=? AND filename=?",
                                 (lb_number, prow["filename"])
@@ -111,8 +114,9 @@ def scrape_entry(lb_number, force=False, download_files=True, use_local_pages=Fa
             return {"error": "fetch_failed"}
         html_text = resp.text
         used_local = False
-        PAGES_DIR.mkdir(parents=True, exist_ok=True)
-        local_page.write_text(html_text, encoding="utf-8")
+        SITE_DETAIL_DIR.mkdir(parents=True, exist_ok=True)
+        rewritten = rewrite_links(html_text, url, BASE_URL.split("//")[-1])
+        local_page.write_text(rewritten, encoding="utf-8")
 
     soup = BeautifulSoup(html_text, "lxml")
     entry_data = {"lb_number": lb_number}
@@ -199,9 +203,9 @@ def scrape_entry(lb_number, force=False, download_files=True, use_local_pages=Fa
 
     downloaded = []
     if download_files and file_links:
-        lb_dir.mkdir(parents=True, exist_ok=True)
+        SITE_FILES_DIR.mkdir(parents=True, exist_ok=True)
         for filename, clean, file_url in file_links:
-            local_path = lb_dir / clean
+            local_path = attachment_path(filename)   # data/site/files/LBF-XXXXX-name.ext
             if local_path.exists() and (not force or use_local_pages):
                 continue
             file_resp, fstatus = _fetch(file_url)
@@ -271,6 +275,89 @@ def scrape_range(lb_numbers, force=False, download_files=True, use_local_pages=F
     conn = get_connection(db_path)
     conn.execute("PRAGMA optimize")
     conn.commit()
+
+
+def download_pages_range(lb_numbers: list[int], force: bool = False, delay_ms: int = 1500) -> None:
+    """Fetch and cache HTML detail pages for *lb_numbers* without parsing metadata.
+
+    Saves each page to ``data/pages/LB-{n:05d}.html``.  Does not write to the
+    database, parse entry fields, or download attachment files.  Existing pages
+    are skipped unless *force* is True.
+
+    Uses the same ``_scrape_state`` as :func:`scrape_range` so the Setup-tab
+    progress bar and Stop button work without any extra wiring.
+
+    Args:
+        lb_numbers: Ordered list of LB numbers to download.
+        force: When True, re-download pages that already exist on disk.
+        delay_ms: Milliseconds to sleep between successful web fetches.
+    """
+    total = len(lb_numbers)
+    SITE_DETAIL_DIR.mkdir(parents=True, exist_ok=True)
+
+    with _scrape_lock:
+        _scrape_state.update({
+            "running": True,
+            "total": total,
+            "done": 0,
+            "errors": 0,
+            "skipped": 0,
+            "last_action": None,
+            "last_source": None,
+            "stop_requested": False,
+            "current_lb": None,
+            "last_lb": None,
+        })
+
+    for i, lb in enumerate(lb_numbers):
+        with _scrape_lock:
+            if _scrape_state["stop_requested"]:
+                break
+            _scrape_state["current_lb"] = lb
+
+        lb_id = f"{lb:05d}"
+        local_page = to_long_path(detail_page_path(lb_id))
+
+        if not force and local_page.exists():
+            with _scrape_lock:
+                _scrape_state["done"] = i + 1
+                _scrape_state["last_lb"] = lb
+                _scrape_state["skipped"] += 1
+                _scrape_state["last_action"] = "skipped"
+                _scrape_state["last_source"] = None
+            continue
+
+        url = DETAIL_URL.format(n=lb_id)
+        resp, status = _fetch(url)
+
+        with _scrape_lock:
+            _scrape_state["done"] = i + 1
+            _scrape_state["last_lb"] = lb
+
+        if resp is None or status in (0, 404):
+            with _scrape_lock:
+                if status == 404:
+                    _scrape_state["skipped"] += 1
+                    _scrape_state["last_action"] = "skipped"
+                else:
+                    _scrape_state["errors"] += 1
+                    _scrape_state["last_action"] = "error"
+                _scrape_state["last_source"] = None
+            continue
+
+        url = DETAIL_URL.format(n=lb_id)
+        rewritten = rewrite_links(resp.text, url, BASE_URL.split("//")[-1])
+        local_page.write_text(rewritten, encoding="utf-8")
+
+        with _scrape_lock:
+            _scrape_state["last_action"] = "downloaded"
+            _scrape_state["last_source"] = "web"
+
+        if i < total - 1:
+            time.sleep(delay_ms / 1000.0)
+
+    with _scrape_lock:
+        _scrape_state.update({"running": False, "current_lb": None})
 
 
 # check_for_update() was removed — it scraped the bynumber page to count LB links

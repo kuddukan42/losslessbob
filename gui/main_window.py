@@ -100,13 +100,15 @@ class MainWindow(QMainWindow):
         from gui.attachments_tab import AttachmentsTab
         from gui.setup_tab import SetupTab
         from gui.theme_tab import ThemeTab
+        from gui.bootlegs_tab import BootlegsTab
         _slog.t("_build_tabs: tab modules imported")
 
         self.tabs = QTabWidget()
         self.setCentralWidget(self.tabs)
 
         # Tab order: Lookup(0) Rename(1) Verify(2) lbdir(3) Search(4)
-        #            Collection(5) Attachments(6) Setup(7) Themes(8)
+        #            Bootlegs(5) Collection(6) Attachments(7)
+        #            Spectrograms(8) DB Editor(9) Scraper(10) Setup(11) Themes(12)
         _slog.t("_build_tabs: init LookupTab")
         self.lookup_tab = LookupTab(self.flask_port)
         _slog.t("_build_tabs: init RenameTab")
@@ -117,6 +119,8 @@ class MainWindow(QMainWindow):
         self.lbdir_tab = LbdirTab(self.flask_port, state_store=self.state_store)
         _slog.t("_build_tabs: init SearchTab")
         self.search_tab = SearchTab(self.flask_port, state_store=self.state_store)
+        _slog.t("_build_tabs: init BootlegsTab")
+        self.bootlegs_tab = BootlegsTab(self.flask_port, state_store=self.state_store)
         _slog.t("_build_tabs: init CollectionTab")
         self.collection_tab = CollectionTab(self.flask_port, state_store=self.state_store)
         _slog.t("_build_tabs: init AttachmentsTab")
@@ -131,6 +135,7 @@ class MainWindow(QMainWindow):
         self.tabs.addTab(self.verify_tab, "Verify")
         self.tabs.addTab(self.lbdir_tab, "lbdir")
         self.tabs.addTab(self.search_tab, "Search")
+        self.tabs.addTab(self.bootlegs_tab, "Bootlegs")
         self.tabs.addTab(self.collection_tab, "My Collection")
         _slog.t("_build_tabs: import SpectrogramTab")
         from gui.spectrogram_tab import SpectrogramTab
@@ -140,10 +145,15 @@ class MainWindow(QMainWindow):
         from gui.dbedit_tab import DbEditTab
         _slog.t("_build_tabs: init DbEditTab")
         self.dbedit_tab = DbEditTab(self.flask_port, state_store=self.state_store)
+        _slog.t("_build_tabs: import ScraperTab")
+        from gui.scraper_tab import ScraperTab
+        _slog.t("_build_tabs: init ScraperTab")
+        self.scraper_tab = ScraperTab(self.flask_port)
 
         self.tabs.addTab(self.attachments_tab, "Attachments")
         self.tabs.addTab(self.spectrogram_tab, "Spectrograms")
         self.tabs.addTab(self.dbedit_tab, "DB Editor")
+        self.tabs.addTab(self.scraper_tab, "Scraper")
         self.tabs.addTab(self.setup_tab, "Setup")
         self.tabs.addTab(self.theme_tab, "Themes")
 
@@ -151,6 +161,8 @@ class MainWindow(QMainWindow):
 
         self.search_tab.lookup_lb.connect(self._on_search_lookup_lb)
         self.collection_tab.lookup_lb.connect(self._on_search_lookup_lb)
+        self.bootlegs_tab.open_lb_in_search.connect(self._on_bootleg_open_lb)
+        self.bootlegs_tab.bootleg_lbs_loaded.connect(self.search_tab.set_bootleg_lbs)
         self.setup_tab.stats_changed.connect(self._refresh_status)
         self.setup_tab.stats_changed.connect(self.search_tab.load_years)
         self.setup_tab.stats_changed.connect(self.collection_tab.refresh_collection)
@@ -173,6 +185,7 @@ class MainWindow(QMainWindow):
         apply_panel_shadow(self.verify_tab.detail_container)
         apply_panel_shadow(self.lbdir_tab.summary_container)
         apply_panel_shadow(self.lbdir_tab.detail_container)
+        apply_panel_shadow(self.bootlegs_tab.view)
 
     def _build_status_bar(self):
         self.status_bar = QStatusBar()
@@ -202,6 +215,15 @@ class MainWindow(QMainWindow):
                 if last_import and len(str(last_import)) > 10:
                     last_import = str(last_import)[:10]
                 msg = f"DB: LB-{lb}  |  Checksums: {checksums:,}  |  Last import: {last_import}"
+                try:
+                    bl = requests.get(
+                        f"http://127.0.0.1:{self.flask_port}/api/bootlegs/stats", timeout=3
+                    ).json()
+                    bt = bl.get("total", 0)
+                    if bt:
+                        msg += f"  |  Bootlegs: {bt:,}"
+                except Exception:
+                    pass
             except Exception:
                 msg = "Database not connected."
             self._status_message.emit(msg)
@@ -234,6 +256,7 @@ class MainWindow(QMainWindow):
         self.rename_tab.resize_columns_to_font()
         self.verify_tab.resize_columns_to_font()
         self.lbdir_tab.resize_columns_to_font()
+        self.bootlegs_tab.resize_columns_to_font()
 
     def _on_send_to_spectrograms(self, folders: list):
         self.spectrogram_tab._add_folders(folders)
@@ -242,6 +265,11 @@ class MainWindow(QMainWindow):
     def _on_search_lookup_lb(self, lb_number):
         self.tabs.setCurrentIndex(self.tabs.indexOf(self.lookup_tab))
         self.lookup_tab.lookup_lb_number(lb_number)
+
+    def _on_bootleg_open_lb(self, lb_number: int) -> None:
+        self.tabs.setCurrentIndex(self.tabs.indexOf(self.search_tab))
+        self.search_tab.search_field.setText(str(lb_number))
+        self.search_tab._do_search()
 
     def _on_help(self):
         QMessageBox.information(

@@ -1,3 +1,81 @@
+[2026-05-18] — fix: crawler seeded from wrong URL + test suite (BUG-067, BUG-068)
+
+Fixed
+
+backend/site_crawler.py: Added SITE_HOME_URL = BASE_URL + "/LosslessBob.html" (real site entry point; domain root is a DreamHost placeholder). Changed crawl() default start_url from BASE_URL to SITE_HOME_URL. Added SEED_URLS constant (/bynumber/LBMbynumber.html, /detail/LB-bootleg-by-title.html) seeded on every crawl as safety-net index pages. Changed BeautifulSoup parser from "lxml" to "html.parser" (eliminates lxml import, removes deprecation warnings). Removed unused attachment_path import and unused local variable. (BUG-068)
+backend/html_utils.py: Changed BeautifulSoup parser from "lxml" to "html.parser". (BUG-067)
+backend/db.py: Fixed get_scrape_sessions() ORDER BY to add id DESC tiebreaker so sessions created within the same second are reliably ordered by insertion sequence.
+
+Added
+
+tests/test_scraper_crawler.py: 59-test suite covering html_utils.rewrite_links() (9 tests), paths.py SITE_DIR hierarchy (7 tests), db.py scrape_sessions+site_inventory helpers (14 tests), site_crawler.py pure URL utilities (18 tests), and /api/crawler/* Flask route smoke tests (7 tests). All 59 pass individually; see BUG-067 for combined-run limitation.
+
+---
+
+[2026-05-18] — feat: Dedicated Scraper tab + full-site mirror crawler (TODO-031)
+
+Added
+
+backend/site_crawler.py: BFS spider for losslessbob.wonderingwhattochoose.com. crawl(start_url, scope, force, delay_ms, daily_cap) runs in a daemon thread. _extract_links() discovers same-domain links. _fetch_page() uses If-Modified-Since for efficient incremental fetches (304 = skip, 200 = save + rewrite links). _url_to_local() maps URLs to data/site/ sub-dirs. Separate _crawler_state/_crawler_lock (no shared state with scraper.py). Rate limiting: 1500ms ±20% jitter, Retry-After on 429, exponential backoff on error, configurable daily cap, robots.txt cached per session.
+backend/html_utils.py: rewrite_links(html, page_url, base_domain) — rewrites server-absolute paths to relative paths so cached pages work via file:// browsing. Uses BeautifulSoup; processes href, src, action attributes.
+backend/paths.py: SITE_DIR = DATA_DIR / "site" and sub-constants SITE_DETAIL_DIR, SITE_FILES_DIR, SITE_LBBCD_DIR, SITE_BN_DIR replacing old PAGES_DIR/ATTACHMENTS_DIR. detail_page_path(), attachment_path(), find_lbdir_attachment() updated to use SITE_DETAIL_DIR / SITE_FILES_DIR. ensure_data_dirs() creates all site/ sub-dirs.
+backend/db.py: scrape_sessions and site_inventory tables added to SCHEMA_SQL and MASTER_TABLES. Helpers: create_scrape_session(), finish_scrape_session(), get_scrape_sessions(), upsert_inventory(), get_inventory_stats(), get_inventory_page(), get_pending_urls(), get_downloaded_urls().
+backend/app.py: 6 new routes: POST /api/crawler/start, GET /api/crawler/status, POST /api/crawler/stop, GET /api/crawler/sessions, GET /api/crawler/inventory, GET /api/crawler/inventory/stats. backend.site_crawler imported at module level. _crawler_thread single-element list for background thread ref.
+gui/scraper_tab.py: New Scraper tab. 5 panels (crawler control, session history, site inventory, entry scraper, bootleg catalog). _CrawlerStatusThread + _ScrapeStatusThread poll respective status endpoints every 1s. All scraper controls migrated from SetupTab. Settings (delay, daily cap) persisted to DB via /api/db/settings.
+gui/main_window.py: ScraperTab imported and registered at tab index 10 (between DB Editor and Setup). Tab count: 12 → 13. Tab order comment updated.
+
+Changed
+
+gui/setup_tab.py: Removed all scraper controls (panels, buttons, progress bar, log widget, _log/_on_stop_scrape/_refresh_log_size methods, _LOG_FILE import). Kept: DB management, master data, qBittorrent credentials, WTRF Forum credentials, SoX status, flat-file update history, data-management purge controls. Dead _refresh_log_size() call removed from __init__.
+backend/scraper.py: All path references updated from data/pages/ / data/attachments/ to data/site/detail/ / data/site/files/ via SITE_DETAIL_DIR / SITE_FILES_DIR / detail_page_path() / attachment_path() from paths.py.
+
+---
+
+[2026-05-18] — feat: Bootleg-CD Catalog (LBBCD) — scraper, Bootlegs tab, cross-tab integrations (TODO-030)
+
+Added
+
+backend/bootleg_scraper.py: scrape_bootlegs(force) — HEAD→diff→apply pipeline for the LBBCD index page. _parse_date() handles M/D/YY with 'xx' unknowns (2-digit year pivot Y>=30→19YY). _diff() uses (lb_number, title, date_str) natural key. Pre-scrape DB backup via backup_database(). bootleg_scrapes audit row written on every run. get_scrape_status() for polling.
+backend/db.py: bootleg_titles + bootleg_scrapes tables added to SCHEMA_SQL and MASTER_TABLES. MASTER_SCHEMA_VERSION bumped to 2. Helper functions: get_bootleg_lb_numbers(), get_bootlegs_for_lb(), get_bootleg_stats(), get_bootlegs() (paginated/filtered), get_bootleg_scrape_history(). _BOOTLEG_SOURCE_URL constant.
+backend/app.py: 7 new routes: POST /api/bootlegs/scrape, GET /api/bootlegs/scrape/status, GET /api/bootlegs/lb_numbers, GET /api/bootlegs, GET /api/bootlegs/by_lb/<lb>, GET /api/bootlegs/scrapes, GET /api/bootlegs/stats. bootleg_scraper imported.
+gui/bootlegs_tab.py: New Bootlegs tab. Filter bar (text, year range, CDs, status, owned, has-LBBCD). Paginated QTableView (QAbstractTableModel). Detail pane with LBBCD link + "other titles for this LB" panel. open_lb_in_search signal → MainWindow switches to Search tab. bootleg_lbs_loaded signal pushes LB-number set to Search tab for badge rendering.
+gui/main_window.py: Bootlegs tab registered at index 5 (between Search and My Collection). _on_bootleg_open_lb() handler. bootleg_lbs_loaded wired to search_tab.set_bootleg_lbs(). Shadow applied to bootlegs_tab.view. Status bar includes "Bootlegs: N" count when catalog is populated.
+gui/search_tab.py: SearchModel._bootleg_lbs set; LB Number column shows 🎵 badge when lb_number is in the bootleg set; tooltip explains the badge. set_bootleg_lbs() public method on SearchTab.
+gui/setup_tab.py: "Bootleg-CD Catalog (LBBCD)" QGroupBox added to layout; "Scrape Bootleg Catalog" button + Force checkbox + status label; bootleg scrape history table (5 columns); _on_scrape_bootlegs(), _poll_bootlegs_scrape(), _load_bootlegs_history() handlers. History loads on showEvent.
+
+---
+
+[2026-05-18] — feat(backend/gui): Download Missing Pages — cache HTML without metadata scrape (TODO-002)
+
+Added
+
+backend/scraper.py: download_pages_range(lb_numbers, force, delay_ms) — fetches detail pages and saves them to data/pages/ using the existing _scrape_state so the progress bar, stop button, and log all work. last_action="downloaded" distinguishes page fetches from full metadata scrapes. 404s are treated as skipped (not errors) since no DB writes occur.
+backend/app.py: POST /api/scrape/download_pages — body: {start_lb?, end_lb?, force?}. Builds a full integer range (1..max_lb by default) and delegates to _start_download_pages_thread(); _start_download_pages_thread() added alongside _start_scrape_thread().
+gui/setup_tab.py: Row 4 "Download Missing Pages" button added to the scraper grid. _on_download_pages() handler; _page_download_mode flag on SetupTab. _on_scrape_status() updated to use "Downloading" verb, "already cached" skip text, and "Downloaded LB-X [web]" log lines in download mode; completion message shows downloaded/cached/error counts and refreshes the pages-count label.
+
+---
+
+[2026-05-18] — fix/feat: TODO-006 connection leak, TODO-001 pages count, TODO-016 forum footer
+
+Changed
+
+backend/db.py: Added close_connection(db_path) — closes and evicts the per-thread SQLite handle for a given path. Prevents stale handle being returned for temp_import.db after it is deleted.
+backend/importer.py: Calls close_connection(temp_db_path) before both unlink() sites in run_import() so the thread-local pool is clean for subsequent imports. (TODO-006)
+backend/paths.py: Added APP_VERSION = "1.0" constant.
+backend/forum_poster.py: Replaced hardcoded _FOOTER string with _build_footer() function that reads the WTRF username from the OS keyring via get_credentials(SERVICE_WTRF) and uses APP_VERSION; falls back to "kuddukan" when no credential is stored. (TODO-016)
+gui/setup_tab.py: "Use local pages" checkbox now shares a row with a grey count label "(N pages cached)" populated by _refresh_pages_count(), which globs data/pages/*.html. Called from _load_settings(). (TODO-001)
+
+---
+
+[2026-05-18] — fix(gui/db): search tab row colours delayed 5–6 s after first display (BUG-066)
+
+Changed
+
+gui/search_tab.py: Removed self._page = 0 / _render_page() call from _on_xref_loaded(). model.set_xref_map() already emits dataChanged for the Xref column; the full model reset was the cause of the delayed colour paint. Added _prefetch_owned() called at __init__ so the owned set is warm before the first search render.
+backend/db.py: Added idx_chk_xref_pos partial index ON checksums(lb_number, xref) WHERE xref>0. Eliminates the full checksums table scan in get_xref_map() that caused the 5–6 s delay.
+
+---
+
 [2026-05-18] — feat(backend/gui): lb_alias + folder_lb_link disambiguation (CC_LB_INTEGRITY item 8)
 
 Added

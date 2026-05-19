@@ -2,6 +2,8 @@
 import sys
 from pathlib import Path
 
+APP_VERSION = "1.0"
+
 
 def _app_root() -> Path:
     """Return the directory that contains the data/ folder."""
@@ -13,12 +15,59 @@ def _app_root() -> Path:
 APP_ROOT = _app_root()
 DATA_DIR = APP_ROOT / "data"
 DB_PATH = DATA_DIR / "losslessbob.db"
-ATTACHMENTS_DIR = DATA_DIR / "attachments"
-PAGES_DIR = DATA_DIR / "pages"
 TORRENTS_DIR = DATA_DIR / "torrents"
 LOG_FILE = DATA_DIR / "scraper.log"
 TOOLS_DIR = APP_ROOT / "tools"
 WEBENGINE_DIR = DATA_DIR / "webengine_cache"
+
+# ── Offline site mirror ───────────────────────────────────────────────────────
+# data/site/ mirrors the URL directory structure of losslessbob.wonderingwhattochoose.com
+# so that relative links work natively when browsing offline via file:// or Flask.
+#
+#   data/site/detail/LB-XXXXX.html   ← entry detail pages  (links rewritten)
+#   data/site/files/LBF-XXXXX-*.ext  ← attachment files    (original filenames)
+#   data/site/lbbcd/LBBCD-NNN.html   ← LBBCD detail pages  (links rewritten)
+#   data/site/bynumber/*.html         ← bynumber index      (links rewritten)
+#   data/site/index.html              ← root / home page    (links rewritten)
+#
+# These replace the old PAGES_DIR (data/pages/) and ATTACHMENTS_DIR (data/attachments/).
+SITE_DIR         = DATA_DIR / "site"
+SITE_DETAIL_DIR  = SITE_DIR / "detail"
+SITE_FILES_DIR   = SITE_DIR / "files"
+SITE_LBBCD_DIR   = SITE_DIR / "lbbcd"
+SITE_BN_DIR      = SITE_DIR / "bynumber"
+
+
+def detail_page_path(lb_id: str) -> "Path":
+    """Return the local path for an entry detail page, e.g. LB-00001.html."""
+    return SITE_DETAIL_DIR / f"LB-{lb_id}.html"
+
+
+def attachment_path(filename: str) -> "Path":
+    """Return the local path for an attachment file using its ORIGINAL filename.
+
+    Args:
+        filename: Original filename as stored in entry_files.filename,
+                  e.g. ``LBF-01234-lbdir.txt``.
+    """
+    return SITE_FILES_DIR / filename
+
+
+def find_lbdir_attachment(lb_number: int) -> "Path | None":
+    """Find the lbdir attachment file for lb_number in SITE_FILES_DIR.
+
+    Searches for files matching ``LBF-{lb_number:05d}-*lbdir*.txt``.
+    Returns None if SITE_FILES_DIR does not exist or no file is found.
+    """
+    if not SITE_FILES_DIR.exists():
+        return None
+    prefix = f"LBF-{lb_number:05d}-"
+    for f in SITE_FILES_DIR.iterdir():
+        if (f.name.startswith(prefix)
+                and "lbdir" in f.name.lower()
+                and f.suffix.lower() == ".txt"):
+            return f
+    return None
 
 
 def to_long_path(p: Path) -> Path:
@@ -36,7 +85,8 @@ def to_long_path(p: Path) -> Path:
 
 def ensure_data_dirs() -> None:
     """Create data subdirectories if they do not exist."""
-    for d in (DATA_DIR, ATTACHMENTS_DIR, PAGES_DIR, TORRENTS_DIR):
+    for d in (DATA_DIR, TORRENTS_DIR,
+              SITE_DIR, SITE_DETAIL_DIR, SITE_FILES_DIR, SITE_LBBCD_DIR, SITE_BN_DIR):
         d.mkdir(parents=True, exist_ok=True)
     if sys.platform == "win32" and len(str(DATA_DIR)) > 200:
         import warnings

@@ -10,8 +10,10 @@ from flask_cors import CORS
 from backend import db as database
 from backend import importer, scraper, scheduler
 from backend import checksum_utils
+from backend import bootleg_scraper
+from backend import site_crawler
 
-from backend.paths import ATTACHMENTS_DIR
+from backend.paths import SITE_DIR, SITE_FILES_DIR, attachment_path, find_lbdir_attachment
 
 _scrape_thread = None
 
@@ -269,7 +271,14 @@ def create_app():
 
     @app.route("/api/attachment/<int:lb_number>/<path:filename>", methods=["GET"])
     def get_attachment(lb_number, filename):
-        file_path = ATTACHMENTS_DIR / f"LB-{lb_number}" / filename
+        # filename is the clean_name (no LBF- prefix); look up original filename
+        row = database.get_connection().execute(
+            "SELECT filename FROM entry_files WHERE lb_number=? AND clean_name=?",
+            (lb_number, filename),
+        ).fetchone()
+        if not row:
+            abort(404)
+        file_path = attachment_path(row["filename"])
         if not file_path.exists():
             abort(404)
         return send_file(str(file_path))
@@ -607,6 +616,44 @@ def create_app():
         scraper.stop_scrape()
         return jsonify({"ok": True})
 
+    @app.route("/api/scrape/download_pages", methods=["POST"])
+    def scrape_download_pages():
+        """Fetch and cache HTML detail pages for a range of LB numbers.
+
+        Body JSON keys (all optional):
+            start_lb (int): First LB number to attempt.  Default 1.
+            end_lb   (int): Last LB number (inclusive).  Default: max lb_number
+                            in the checksums table.
+            force    (bool): Re-download pages that already exist.  Default false.
+
+        Existing ``data/pages/LB-{n:05d}.html`` files are skipped unless
+        ``force`` is true.  No metadata is parsed and nothing is written to the
+        database.
+
+        Returns:
+            JSON: {ok: true, total: int}  — number of LB numbers queued.
+        """
+        try:
+            data = request.get_json() or {}
+            start_lb = int(data.get("start_lb", 1))
+            force = bool(data.get("force", False))
+            delay = int(database.get_meta("scrape_delay_ms") or 1500)
+
+            with database.get_connection() as conn:
+                max_lb = conn.execute(
+                    "SELECT MAX(lb_number) FROM checksums"
+                ).fetchone()[0] or 1
+
+            end_lb = int(data.get("end_lb", max_lb))
+            if end_lb < start_lb:
+                return jsonify({"error": "end_lb must be >= start_lb"}), 400
+
+            lb_numbers = list(range(start_lb, end_lb + 1))
+            _start_download_pages_thread(lb_numbers, force=force, delay_ms=delay)
+            return jsonify({"ok": True, "total": len(lb_numbers)})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
     @app.route("/api/scrape/private_rescrape", methods=["POST"])
     def scrape_private_rescrape():
         """Force re-scrape of all currently-Private LBs to detect newly-published pages.
@@ -632,6 +679,201 @@ def create_app():
                 download=download, use_local_pages=use_local_pages,
             )
             return jsonify({"ok": True, "total": len(lb_numbers)})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    # ── Bootleg-CD Catalog ────────────────────────────────────────────────────
+
+    @app.route("/api/bootlegs/scrape", methods=["POST"])
+    def bootlegs_scrape():
+        """Trigger a bootleg catalog scrape. Body: {force: bool}.
+
+        Long-running — runs in a background thread so the HTTP response
+        returns immediately.  Poll ``GET /api/bootlegs/scrape/status`` for
+        progress.
+
+        Returns:
+            JSON: {ok: true, running: true}
+        """
+        try:
+            data = request.get_json() or {}
+            force = bool(data.get("force", False))
+            if bootleg_scraper.get_scrape_status().get("running"):
+                return jsonify({"ok": False, "error": "Scrape already running"}), 409
+            threading.Thread(
+                target=bootleg_scraper.scrape_bootlegs,
+                kwargs={"force": force},
+                daemon=True,
+            ).start()
+            return jsonify({"ok": True, "running": True})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/bootlegs/scrape/status", methods=["GET"])
+    def bootlegs_scrape_status():
+        """Poll the bootleg scrape progress state."""
+        return jsonify(bootleg_scraper.get_scrape_status())
+
+    @app.route("/api/bootlegs/lb_numbers", methods=["GET"])
+    def bootlegs_lb_numbers():
+        """Return sorted list of lb_numbers that have at least one bootleg title.
+
+        Used by the Search and Collection tabs to populate the 🎵 badge set
+        without an expensive per-row lookup.
+        """
+        try:
+            return jsonify(database.get_bootleg_lb_numbers())
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/bootlegs", methods=["GET"])
+    def bootlegs_list():
+        """Paginated, filtered bootleg title list.
+
+        Query params: q, year_min, year_max, cd_min, cd_max, lb_status,
+        owned (true/false), has_lbbcd (true/false), sort_col, sort_dir,
+        limit (default 200, max 1000), offset (default 0).
+
+        Returns:
+            JSON: {rows: [...], total: int}
+        """
+        try:
+            def _bool(key: str) -> bool | None:
+                v = request.args.get(key, "").lower()
+                if v == "true":  return True
+                if v == "false": return False
+                return None
+
+            rows, total = database.get_bootlegs(
+                q=request.args.get("q", ""),
+                year_min=int(request.args["year_min"]) if "year_min" in request.args else None,
+                year_max=int(request.args["year_max"]) if "year_max" in request.args else None,
+                cd_min=int(request.args["cd_min"]) if "cd_min" in request.args else None,
+                cd_max=int(request.args["cd_max"]) if "cd_max" in request.args else None,
+                lb_status=request.args.get("lb_status") or None,
+                owned=_bool("owned"),
+                has_lbbcd=_bool("has_lbbcd"),
+                sort_col=request.args.get("sort_col", "lb_number"),
+                sort_dir=request.args.get("sort_dir", "ASC"),
+                limit=min(int(request.args.get("limit", 200)), 1000),
+                offset=int(request.args.get("offset", 0)),
+            )
+            return jsonify({"rows": rows, "total": total})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/bootlegs/by_lb/<int:lb>", methods=["GET"])
+    def bootlegs_by_lb(lb: int):
+        """All bootleg titles for one LB number."""
+        try:
+            return jsonify(database.get_bootlegs_for_lb(lb))
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/bootlegs/scrapes", methods=["GET"])
+    def bootlegs_scrape_history():
+        """Recent bootleg_scrapes rows (newest first). Query param: limit (default 20)."""
+        try:
+            limit = min(int(request.args.get("limit", 20)), 100)
+            return jsonify(database.get_bootleg_scrape_history(limit))
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/bootlegs/stats", methods=["GET"])
+    def bootlegs_stats():
+        """Summary counts: total rows, last scrape timestamp and status."""
+        try:
+            return jsonify(database.get_bootleg_stats())
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    # ── Site Crawler ─────────────────────────────────────────────────────────
+
+    _crawler_thread: list[threading.Thread] = []  # single-element list for mutability in closure
+
+    @app.route("/api/crawler/start", methods=["POST"])
+    def crawler_start():
+        """Start a full-domain crawl in a background thread.
+
+        Body JSON (all optional):
+            scope     (str):  "full" or "incremental".  Default "incremental".
+            force     (bool): Re-fetch cached pages.  Default false.
+            delay_ms  (int):  Base ms between requests.  Default 1500.
+            daily_cap (int):  Max requests this session.  Default 5000.
+
+        Returns:
+            JSON: {ok: true}  or  {ok: false, error: "already running"}
+        """
+        try:
+            if site_crawler.get_crawler_status().get("running"):
+                return jsonify({"ok": False, "error": "Crawler already running"}), 409
+            data = request.get_json() or {}
+            scope     = data.get("scope", "incremental")
+            force     = bool(data.get("force", False))
+            delay_ms  = int(data.get("delay_ms", 1500))
+            daily_cap = int(data.get("daily_cap", 5000))
+            t = threading.Thread(
+                target=site_crawler.crawl,
+                kwargs={"scope": scope, "force": force,
+                        "delay_ms": delay_ms, "daily_cap": daily_cap},
+                daemon=True,
+            )
+            t.start()
+            _crawler_thread[:] = [t]
+            return jsonify({"ok": True})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/crawler/status", methods=["GET"])
+    def crawler_status():
+        """Return a snapshot of the current crawler state."""
+        return jsonify(site_crawler.get_crawler_status())
+
+    @app.route("/api/crawler/stop", methods=["POST"])
+    def crawler_stop():
+        """Request the crawler to stop after the current URL."""
+        site_crawler.stop_crawler()
+        return jsonify({"ok": True})
+
+    @app.route("/api/crawler/sessions", methods=["GET"])
+    def crawler_sessions():
+        """Return recent scrape session rows.
+
+        Query params:
+            limit (int): Max rows to return.  Default 20, max 100.
+        """
+        try:
+            limit = min(int(request.args.get("limit", 20)), 100)
+            return jsonify(database.get_scrape_sessions(limit))
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/crawler/inventory", methods=["GET"])
+    def crawler_inventory():
+        """Paginated site_inventory rows.
+
+        Query params:
+            status      (str): Filter by status (downloaded, pending, failed, not_found, skipped).
+            path_prefix (str): Filter by relative_path prefix.
+            limit       (int): Default 200, max 1000.
+            offset      (int): Default 0.
+        """
+        try:
+            rows, total = database.get_inventory_page(
+                status=request.args.get("status") or None,
+                path_prefix=request.args.get("path_prefix") or None,
+                limit=min(int(request.args.get("limit", 200)), 1000),
+                offset=int(request.args.get("offset", 0)),
+            )
+            return jsonify({"rows": rows, "total": total})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/crawler/inventory/stats", methods=["GET"])
+    def crawler_inventory_stats():
+        """Return aggregate counts from site_inventory grouped by status."""
+        try:
+            return jsonify(database.get_inventory_stats())
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
@@ -740,14 +982,13 @@ def create_app():
                     })
                     continue
                 lb_id = f"{lb_number:05d}"
-                attach_dir = ATTACHMENTS_DIR / f"LB-{lb_id}"
 
-                lbdir_src = _find_lbdir_in_folder(attach_dir)
+                lbdir_src = find_lbdir_attachment(lb_number)
                 was_scraped = False
 
                 if not lbdir_src:
                     scraper.scrape_entry(lb_number, force=False, download_files=True)
-                    lbdir_src = _find_lbdir_in_folder(attach_dir)
+                    lbdir_src = find_lbdir_attachment(lb_number)
                     was_scraped = True
 
                 if not lbdir_src:
@@ -1386,13 +1627,11 @@ def create_app():
                 return jsonify({"error": reason, "message": _msg}), 403
 
             from backend.forum_poster import preview_lb_topic
-            from backend.paths import ATTACHMENTS_DIR
             entry_data = database.get_entry(lb)
             if not entry_data:
                 return jsonify({"ok": False, "error": f"Entry LB-{lb} not found"}), 404
             entry = entry_data["entry"]
-            attach_dir = ATTACHMENTS_DIR / f"LB-{lb:05d}"
-            result = preview_lb_topic(lb_number=lb, entry=entry, attachments_dir=attach_dir)
+            result = preview_lb_topic(lb_number=lb, entry=entry, attachments_dir=SITE_FILES_DIR)
             return jsonify(result)
         except Exception as exc:
             return jsonify({"ok": False, "error": str(exc)}), 500
@@ -1425,7 +1664,6 @@ def create_app():
 
             from backend.forum_poster import post_lb_topic
             from backend.credentials import get_credentials, SERVICE_WTRF
-            from backend.paths import ATTACHMENTS_DIR
             data = request.get_json() or {}
 
             # Resolve credentials
@@ -1461,7 +1699,6 @@ def create_app():
             if not board_id:
                 return jsonify({"ok": False, "error": "Forum board ID not set. Configure it in Setup → WTRF Forum."}), 400
 
-            attach_dir = ATTACHMENTS_DIR / f"LB-{lb:05d}"
             result = post_lb_topic(
                 lb_number=lb,
                 torrent_path=torrent_path,
@@ -1469,7 +1706,7 @@ def create_app():
                 password=password,
                 entry=entry,
                 board_id=board_id,
-                attachments_dir=attach_dir,
+                attachments_dir=SITE_FILES_DIR,
                 subject_override=data.get("subject") or None,
                 body_override=data.get("body") or None,
             )
@@ -1977,6 +2214,18 @@ def _start_scrape_thread(lb_numbers, force=False, delay_ms=1500, download=True, 
             use_local_pages=use_local_pages,
             delay_ms=delay_ms,
         )
+
+    _scrape_thread = threading.Thread(target=run, daemon=True)
+    _scrape_thread.start()
+
+
+def _start_download_pages_thread(lb_numbers, force=False, delay_ms=1500):
+    global _scrape_thread
+    if _scrape_thread and _scrape_thread.is_alive():
+        return
+
+    def run():
+        scraper.download_pages_range(lb_numbers, force=force, delay_ms=delay_ms)
 
     _scrape_thread = threading.Thread(target=run, daemon=True)
     _scrape_thread.start()

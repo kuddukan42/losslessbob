@@ -32,6 +32,7 @@ class SearchModel(QAbstractTableModel):
         self._rows = []
         self._owned = set()
         self._xref_map: dict = {}
+        self._bootleg_lbs: set = set()
 
     def rowCount(self, parent=QModelIndex()):
         return len(self._rows)
@@ -47,7 +48,9 @@ class SearchModel(QAbstractTableModel):
         lb_status = row.get("lb_status") or ""
         if role == Qt.ItemDataRole.DisplayRole:
             if col == 0:
-                return f"LB-{row.get('lb_number', '')}"
+                lb = row.get('lb_number', '')
+                badge = " 🎵" if lb in self._bootleg_lbs else ""
+                return f"LB-{lb}{badge}"
             if col == _STATUS_COL:
                 return lb_status.capitalize() if lb_status else ""
             # cols 2-4: date, location, rating
@@ -72,8 +75,11 @@ class SearchModel(QAbstractTableModel):
                 return styles.ROW_OWNED
         if role == Qt.ItemDataRole.TextAlignmentRole and col in (_STATUS_COL, _XREF_COL, _OWNED_COL):
             return Qt.AlignmentFlag.AlignCenter
-        if role == Qt.ItemDataRole.ToolTipRole and col == _STATUS_COL and lb_status:
-            return f"lb_master status: {lb_status}"
+        if role == Qt.ItemDataRole.ToolTipRole:
+            if col == _STATUS_COL and lb_status:
+                return f"lb_master status: {lb_status}"
+            if col == 0 and row.get("lb_number") in self._bootleg_lbs:
+                return "🎵 This LB has bootleg CD titles — open Bootlegs tab for details"
         return None
 
     def headerData(self, section, orientation, role=Qt.ItemDataRole.DisplayRole):
@@ -100,6 +106,14 @@ class SearchModel(QAbstractTableModel):
             self.dataChanged.emit(
                 self.index(0, _XREF_COL),
                 self.index(len(self._rows) - 1, _XREF_COL),
+            )
+
+    def set_bootleg_lbs(self, lb_set: set) -> None:
+        self._bootleg_lbs = lb_set
+        if self._rows:
+            self.dataChanged.emit(
+                self.index(0, 0),
+                self.index(len(self._rows) - 1, 0),
             )
 
     def get_lb(self, row_idx):
@@ -212,6 +226,7 @@ class SearchTab(QWidget):
         self._build_ui()
         self.load_years()
         self._load_xref_lb_numbers()
+        self._prefetch_owned()
 
     def _load_page_size(self) -> None:
         try:
@@ -410,6 +425,13 @@ class SearchTab(QWidget):
         self._xref_worker.finished.connect(self._on_xref_loaded)
         self._xref_worker.start()
 
+    def _prefetch_owned(self) -> None:
+        """Warm the owned set at tab init so colours are ready for the first search render."""
+        worker = _OwnedWorker(self.flask_port)
+        worker.finished.connect(self._on_owned_loaded)
+        worker.start()
+        self._owned_worker = worker
+
     def _on_xref_loaded(self, raw_map: object) -> None:
         # JSON dict keys are strings; convert to int to match lb_number type.
         if isinstance(raw_map, dict):
@@ -417,10 +439,13 @@ class SearchTab(QWidget):
         else:
             self._xref_map = {}
         self._xref_lb_numbers = set(self._xref_map.keys())
+        # set_xref_map() emits dataChanged for the Xref column — that is
+        # sufficient.  The previous _render_page() call here caused a full
+        # beginResetModel/endResetModel cycle 5–6 seconds after the initial
+        # display (because get_xref_map does a slow full-table scan), resetting
+        # the user's page to 0 and delaying the visual appearance of row
+        # colours until that late repaint.
         self.model.set_xref_map(self._xref_map)
-        if self._all_results:
-            self._page = 0
-            self._render_page()
 
     def _total_pages(self) -> int:
         results = self._filtered_results()
@@ -584,6 +609,10 @@ class SearchTab(QWidget):
                 self.results_label.setText(f"LB-{lb:05d} already on wishlist.")
         except Exception as e:
             self.results_label.setText(f"Wishlist error: {e}")
+
+    def set_bootleg_lbs(self, lb_set: set) -> None:
+        """Push the bootleg-LB set so the 🎵 badge can appear in the LB Number column."""
+        self.model.set_bootleg_lbs(lb_set)
 
     def resize_columns_to_font(self) -> None:
         self.view.resizeColumnsToContents()

@@ -21,7 +21,7 @@ _bloom_lock = threading.Lock()
 # USER tables stay local to each install and never appear in an export.
 # See instructions/CC_LB_INTEGRITY.md §Data Ownership Model.
 
-MASTER_SCHEMA_VERSION = 1  # bump on any schema change that breaks older clients
+MASTER_SCHEMA_VERSION = 2  # bumped: bootleg_titles + bootleg_scrapes added to master
 
 MASTER_TABLES = (
     "checksums",
@@ -33,6 +33,8 @@ MASTER_TABLES = (
     "flat_file_releases",
     "flat_file_changelog",
     "lb_alias",
+    "bootleg_titles",
+    "bootleg_scrapes",
 )
 # Note: `entries_fts` is a virtual FTS5 table whose content is mirrored from
 # `entries` via triggers. It is NOT copied directly during export/import; the
@@ -47,6 +49,8 @@ USER_TABLES = (
     "rename_history",
     "forum_posts",
     "folder_lb_link",
+    "scrape_sessions",
+    "site_inventory",
 )
 
 # meta is mixed: master keys ship, user keys stay local.
@@ -87,6 +91,8 @@ CREATE INDEX IF NOT EXISTS idx_chk_covering
     ON checksums(checksum, lb_number, chk_type, filename, xref);
 CREATE INDEX IF NOT EXISTS idx_lb_xref0
     ON checksums(lb_number, checksum) WHERE xref=0;
+CREATE INDEX IF NOT EXISTS idx_chk_xref_pos
+    ON checksums(lb_number, xref) WHERE xref>0;
 
 CREATE TABLE IF NOT EXISTS entries (
     lb_number INTEGER PRIMARY KEY,
@@ -318,6 +324,76 @@ CREATE TABLE IF NOT EXISTS folder_lb_link (
     note           TEXT
 );
 CREATE INDEX IF NOT EXISTS idx_folder_link_lb ON folder_lb_link(lb_number);
+
+CREATE TABLE IF NOT EXISTS scrape_sessions (
+    id          INTEGER PRIMARY KEY AUTOINCREMENT,
+    started_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    finished_at TIMESTAMP,
+    scope       TEXT NOT NULL,      -- 'full' | 'incremental' | 'range' | 'entry_pages' | 'attachments'
+    start_url   TEXT,
+    pages_fetched  INTEGER DEFAULT 0,
+    pages_304      INTEGER DEFAULT 0,   -- unchanged (If-Modified-Since honoured)
+    pages_skipped  INTEGER DEFAULT 0,
+    pages_failed   INTEGER DEFAULT 0,
+    files_fetched  INTEGER DEFAULT 0,
+    status      TEXT NOT NULL DEFAULT 'running',   -- running | done | stopped | failed
+    notes       TEXT
+);
+
+CREATE TABLE IF NOT EXISTS site_inventory (
+    url             TEXT PRIMARY KEY,
+    relative_path   TEXT,       -- path under data/site/, e.g. detail/LB-00001.html
+    content_type    TEXT,
+    discovered_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    discovered_by   TEXT,       -- URL of the page where this link was found
+    status          TEXT NOT NULL DEFAULT 'pending',
+                                -- pending | downloaded | not_found | failed | skipped
+    last_fetched_at TIMESTAMP,
+    last_checked_at TIMESTAMP,  -- last If-Modified-Since check (may be 304)
+    last_modified   TEXT,       -- HTTP Last-Modified stored for next check
+    body_sha256     TEXT,
+    size_bytes      INTEGER,
+    http_status     INTEGER,
+    session_id      INTEGER REFERENCES scrape_sessions(id)
+);
+CREATE INDEX IF NOT EXISTS idx_inventory_status  ON site_inventory(status);
+CREATE INDEX IF NOT EXISTS idx_inventory_session ON site_inventory(session_id);
+
+CREATE TABLE IF NOT EXISTS bootleg_titles (
+    id           INTEGER PRIMARY KEY AUTOINCREMENT,
+    lb_number    INTEGER NOT NULL,
+    title        TEXT NOT NULL DEFAULT '',
+    date_str     TEXT NOT NULL DEFAULT '',
+    date_iso     TEXT,
+    year         INTEGER,
+    location     TEXT NOT NULL DEFAULT '',
+    cd_count     INTEGER NOT NULL DEFAULT 0,
+    lbbcd_id     INTEGER,
+    lbbcd_url    TEXT,
+    scraped_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+CREATE INDEX IF NOT EXISTS idx_bootleg_lb
+    ON bootleg_titles(lb_number);
+CREATE INDEX IF NOT EXISTS idx_bootleg_lbbcd
+    ON bootleg_titles(lbbcd_id) WHERE lbbcd_id IS NOT NULL;
+CREATE INDEX IF NOT EXISTS idx_bootleg_year
+    ON bootleg_titles(year);
+CREATE INDEX IF NOT EXISTS idx_bootleg_title
+    ON bootleg_titles(title COLLATE NOCASE);
+
+CREATE TABLE IF NOT EXISTS bootleg_scrapes (
+    id                  INTEGER PRIMARY KEY AUTOINCREMENT,
+    source_url          TEXT NOT NULL,
+    scraped_at          TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    http_etag           TEXT,
+    http_last_modified  TEXT,
+    body_sha256         TEXT,
+    rows_total          INTEGER,
+    rows_added          INTEGER,
+    rows_changed        INTEGER,
+    rows_removed        INTEGER,
+    status              TEXT NOT NULL
+);
 """
 
 _MD5_RE = re.compile(r'^([0-9a-fA-F]{32})\s+\*?(.+)$')
@@ -347,6 +423,22 @@ def get_connection(db_path=None):
         conn.execute("PRAGMA busy_timeout=30000")
         cache[path] = conn
     return cache[path]
+
+
+def close_connection(db_path) -> None:
+    """Close and evict the per-thread connection for *db_path*.
+
+    Call this after deleting a temporary database file so the stale handle is
+    not returned by the next get_connection() call on the same thread.
+    """
+    path = str(to_long_path(Path(db_path)))
+    cache = getattr(_local, "connections", None)
+    if cache and path in cache:
+        try:
+            cache[path].close()
+        except Exception:
+            pass
+        del cache[path]
 
 
 def rebuild_bloom(db_path=None):
@@ -2189,3 +2281,267 @@ def get_lb_aliases(canonical_lb: int | None = None, db_path=None) -> list[dict]:
             "SELECT * FROM lb_alias ORDER BY alias_lb"
         ).fetchall()
     return [dict(r) for r in rows]
+
+
+# ── Bootleg-CD Catalog ────────────────────────────────────────────────────────
+
+_BOOTLEG_SOURCE_URL = (
+    "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-bootleg-by-title.html"
+)
+
+
+def get_bootleg_lb_numbers(db_path=None) -> list[int]:
+    """Return sorted list of lb_numbers that have at least one bootleg title."""
+    with get_connection(db_path) as conn:
+        rows = conn.execute(
+            "SELECT DISTINCT lb_number FROM bootleg_titles ORDER BY lb_number"
+        ).fetchall()
+    return [r[0] for r in rows]
+
+
+def get_bootlegs_for_lb(lb_number: int, db_path=None) -> list[dict]:
+    """Return all bootleg_titles rows for one LB, ordered by date_iso NULLS LAST."""
+    with get_connection(db_path) as conn:
+        rows = conn.execute(
+            "SELECT * FROM bootleg_titles WHERE lb_number=? "
+            "ORDER BY date_iso NULLS LAST, title COLLATE NOCASE",
+            (lb_number,),
+        ).fetchall()
+    return [dict(r) for r in rows]
+
+
+def get_bootleg_stats(db_path=None) -> dict:
+    """Return summary counts and most-recent scrape info."""
+    with get_connection(db_path) as conn:
+        total = conn.execute("SELECT COUNT(*) FROM bootleg_titles").fetchone()[0]
+        last_scrape = conn.execute(
+            "SELECT scraped_at, status, rows_added, rows_changed, rows_removed "
+            "FROM bootleg_scrapes ORDER BY scraped_at DESC LIMIT 1"
+        ).fetchone()
+    result: dict = {"total": total}
+    if last_scrape:
+        result["last_scraped_at"] = last_scrape["scraped_at"]
+        result["last_status"] = last_scrape["status"]
+    return result
+
+
+def get_bootlegs(
+    q: str = "",
+    year_min: int | None = None,
+    year_max: int | None = None,
+    cd_min: int | None = None,
+    cd_max: int | None = None,
+    lb_status: str | None = None,
+    owned: bool | None = None,
+    has_lbbcd: bool | None = None,
+    sort_col: str = "lb_number",
+    sort_dir: str = "ASC",
+    limit: int = 200,
+    offset: int = 0,
+    db_path=None,
+) -> tuple[list[dict], int]:
+    """Paginated, filtered bootleg list joined with lb_master and my_collection.
+
+    Returns (rows, total_count).
+    """
+    _SORT_COLS = {
+        "lb_number": "bt.lb_number",
+        "title":     "bt.title COLLATE NOCASE",
+        "date_iso":  "bt.date_iso NULLS LAST",
+        "year":      "bt.year NULLS LAST",
+        "location":  "bt.location COLLATE NOCASE",
+        "cd_count":  "bt.cd_count",
+        "lbbcd_id":  "bt.lbbcd_id NULLS LAST",
+        "lb_status": "lm.lb_status",
+    }
+    order_expr = _SORT_COLS.get(sort_col, "bt.lb_number")
+    direction = "DESC" if sort_dir.upper() == "DESC" else "ASC"
+
+    conditions: list[str] = []
+    params: list = []
+
+    if q:
+        conditions.append("(bt.title LIKE ? OR bt.location LIKE ?)")
+        like = f"%{q}%"
+        params += [like, like]
+    if year_min is not None:
+        conditions.append("bt.year >= ?")
+        params.append(year_min)
+    if year_max is not None:
+        conditions.append("bt.year <= ?")
+        params.append(year_max)
+    if cd_min is not None:
+        conditions.append("bt.cd_count >= ?")
+        params.append(cd_min)
+    if cd_max is not None:
+        conditions.append("bt.cd_count <= ?")
+        params.append(cd_max)
+    if lb_status:
+        conditions.append("lm.lb_status = ?")
+        params.append(lb_status)
+    if owned is True:
+        conditions.append("mc.lb_number IS NOT NULL")
+    elif owned is False:
+        conditions.append("mc.lb_number IS NULL")
+    if has_lbbcd is True:
+        conditions.append("bt.lbbcd_id IS NOT NULL")
+    elif has_lbbcd is False:
+        conditions.append("bt.lbbcd_id IS NULL")
+
+    where = ("WHERE " + " AND ".join(conditions)) if conditions else ""
+    base_sql = f"""
+        FROM bootleg_titles bt
+        LEFT JOIN lb_master lm ON lm.lb_number = bt.lb_number
+        LEFT JOIN my_collection mc ON mc.lb_number = bt.lb_number
+        {where}
+    """
+    conn = get_connection(db_path)
+    total = conn.execute(f"SELECT COUNT(*) {base_sql}", params).fetchone()[0]
+    rows = conn.execute(
+        f"SELECT bt.*, lm.lb_status, mc.lb_number IS NOT NULL AS owned {base_sql} "
+        f"ORDER BY {order_expr} {direction} LIMIT ? OFFSET ?",
+        params + [limit, offset],
+    ).fetchall()
+    return [dict(r) for r in rows], total
+
+
+def get_bootleg_scrape_history(limit: int = 20, db_path=None) -> list[dict]:
+    """Return recent bootleg_scrapes rows, newest first."""
+    with get_connection(db_path) as conn:
+        rows = conn.execute(
+            "SELECT * FROM bootleg_scrapes ORDER BY scraped_at DESC LIMIT ?",
+            (limit,),
+        ).fetchall()
+    return [dict(r) for r in rows]
+
+
+# ── Site crawler sessions + inventory ─────────────────────────────────────────
+
+def create_scrape_session(scope: str, start_url: str = "", db_path=None) -> int:
+    """Insert a new scrape_sessions row and return its id."""
+    conn = get_connection(db_path)
+    cur = conn.execute(
+        "INSERT INTO scrape_sessions(scope, start_url, status) VALUES(?,?,'running')",
+        (scope, start_url),
+    )
+    conn.commit()
+    return cur.lastrowid
+
+
+def finish_scrape_session(
+    session_id: int,
+    status: str = "done",
+    pages_fetched: int = 0,
+    pages_304: int = 0,
+    pages_skipped: int = 0,
+    pages_failed: int = 0,
+    files_fetched: int = 0,
+    notes: str = "",
+    db_path=None,
+) -> None:
+    """Close a scrape session with final counts."""
+    conn = get_connection(db_path)
+    conn.execute(
+        """UPDATE scrape_sessions
+           SET finished_at=CURRENT_TIMESTAMP, status=?,
+               pages_fetched=?, pages_304=?, pages_skipped=?,
+               pages_failed=?, files_fetched=?, notes=?
+           WHERE id=?""",
+        (status, pages_fetched, pages_304, pages_skipped,
+         pages_failed, files_fetched, notes, session_id),
+    )
+    conn.commit()
+
+
+def get_scrape_sessions(limit: int = 50, db_path=None) -> list[dict]:
+    """Return recent scrape_sessions rows, newest first."""
+    with get_connection(db_path) as conn:
+        rows = conn.execute(
+            "SELECT * FROM scrape_sessions ORDER BY started_at DESC, id DESC LIMIT ?",
+            (limit,),
+        ).fetchall()
+    return [dict(r) for r in rows]
+
+
+def upsert_inventory(url: str, db_path=None, **fields) -> None:
+    """Insert or update a site_inventory row for *url*.
+
+    Keyword args map directly to column names.  Only the supplied keys are
+    updated on conflict — unsupplied columns are left unchanged.
+    """
+    conn = get_connection(db_path)
+    # Ensure row exists first (INSERT OR IGNORE so discovered_at stays)
+    conn.execute(
+        "INSERT OR IGNORE INTO site_inventory(url) VALUES(?)", (url,)
+    )
+    if fields:
+        set_clause = ", ".join(f"{k}=?" for k in fields)
+        conn.execute(
+            f"UPDATE site_inventory SET {set_clause} WHERE url=?",
+            list(fields.values()) + [url],
+        )
+    conn.commit()
+
+
+def get_inventory_stats(db_path=None) -> dict:
+    """Return counts grouped by status plus total discovered."""
+    conn = get_connection(db_path)
+    rows = conn.execute(
+        "SELECT status, COUNT(*) AS n FROM site_inventory GROUP BY status"
+    ).fetchall()
+    stats: dict = {r["status"]: r["n"] for r in rows}
+    stats["total"] = sum(stats.values())
+    return stats
+
+
+def get_inventory_page(
+    status: str | None = None,
+    content_type: str | None = None,
+    path_prefix: str | None = None,
+    limit: int = 200,
+    offset: int = 0,
+    db_path=None,
+) -> tuple[list[dict], int]:
+    """Paginated, filtered site_inventory list. Returns (rows, total)."""
+    conditions: list[str] = []
+    params: list = []
+    if status:
+        conditions.append("status=?")
+        params.append(status)
+    if content_type:
+        conditions.append("content_type LIKE ?")
+        params.append(f"%{content_type}%")
+    if path_prefix:
+        conditions.append("relative_path LIKE ?")
+        params.append(f"{path_prefix}%")
+    where = ("WHERE " + " AND ".join(conditions)) if conditions else ""
+    conn = get_connection(db_path)
+    total = conn.execute(
+        f"SELECT COUNT(*) FROM site_inventory {where}", params
+    ).fetchone()[0]
+    rows = conn.execute(
+        f"SELECT * FROM site_inventory {where} "
+        f"ORDER BY url LIMIT ? OFFSET ?",
+        params + [limit, offset],
+    ).fetchall()
+    return [dict(r) for r in rows], total
+
+
+def get_pending_urls(db_path=None) -> list[dict]:
+    """Return all URLs with status pending or failed, with last_modified."""
+    with get_connection(db_path) as conn:
+        rows = conn.execute(
+            "SELECT url, last_modified FROM site_inventory "
+            "WHERE status IN ('pending', 'failed') ORDER BY url"
+        ).fetchall()
+    return [dict(r) for r in rows]
+
+
+def get_downloaded_urls(db_path=None) -> set[str]:
+    """Return the set of URLs already downloaded or confirmed not found."""
+    with get_connection(db_path) as conn:
+        rows = conn.execute(
+            "SELECT url FROM site_inventory "
+            "WHERE status IN ('downloaded', 'not_found', 'skipped')"
+        ).fetchall()
+    return {r["url"] for r in rows}

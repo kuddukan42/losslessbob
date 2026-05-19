@@ -10,6 +10,9 @@ from pathlib import Path
 import requests
 from bs4 import BeautifulSoup
 
+from backend.paths import APP_VERSION
+from backend.credentials import get_credentials, SERVICE_WTRF
+
 
 logger = logging.getLogger(__name__)
 
@@ -260,12 +263,13 @@ def _read_lb_txt(attachments_dir: Path, lb_number: int | None) -> str:
     """
     if not attachments_dir.is_dir():
         return ""
+    # Files are stored as LBF-XXXXX-name.ext in a flat directory; filter by prefix.
+    prefix = f"LBF-{lb_number:05d}-" if lb_number is not None else ""
     candidates = [
         f for f in sorted(attachments_dir.iterdir())
         if f.suffix.lower() == ".txt"
-        and not f.name.lower().startswith("lbdir")
-        and not f.name.lower().startswith("orig-")
-        and (lb_number is None or f"LB-{lb_number}" in f.name)
+        and (not prefix or f.name.startswith(prefix))
+        and "lbdir" not in f.name.lower()
     ]
     if not candidates:
         return ""
@@ -296,31 +300,27 @@ def _read_lbdir(attachments_dir: Path, lb_number: int | None) -> str:
     """
     if not attachments_dir.is_dir():
         return ""
+    # Files stored as LBF-XXXXX-lbdir.txt in a flat directory; filter by LB prefix.
+    prefix = f"LBF-{lb_number:05d}-" if lb_number is not None else ""
     candidates = sorted(
         f for f in attachments_dir.iterdir()
-        if f.suffix.lower() == ".txt" and f.name.lower().startswith("lbdir")
+        if f.suffix.lower() == ".txt"
+        and "lbdir" in f.name.lower()
+        and (not prefix or f.name.startswith(prefix))
     )
     if not candidates:
         return ""
-    if len(candidates) > 1 and lb_number is not None:
-        lb_txt = [
-            f for f in attachments_dir.iterdir()
-            if f.suffix.lower() == ".txt"
-            and not f.name.lower().startswith("lbdir")
-            and f"LB-{lb_number}" in f.name
-        ]
-        if lb_txt:
-            base = lb_txt[0].stem.replace(f"-LB-{lb_number}", "")
-            matching = [f for f in candidates if base in f.name]
-            if matching:
-                candidates = sorted(matching)
     try:
         return candidates[0].read_text(encoding="utf-8", errors="replace").strip()
     except OSError:
         return ""
 
 
-_FOOTER = "[i][color=#888888]Brought to you by kuddukan, via the Bob-O-Matic v1.0.[/color][/i]"
+def _build_footer() -> str:
+    """Return the BBcode footer line using the stored WTRF username and APP_VERSION."""
+    username, _ = get_credentials(SERVICE_WTRF)
+    name = username.strip() if username.strip() else "kuddukan"
+    return f"[i][color=#888888]Brought to you by {name}, via the Bob-O-Matic v{APP_VERSION}.[/color][/i]"
 
 
 def _build_body(entry: dict, attachments_dir: Path | None, lb_number: int | None = None) -> str:
@@ -390,7 +390,7 @@ def _build_body(entry: dict, attachments_dir: Path | None, lb_number: int | None
         parts.append(f"[b]lbdir[/b]\n[code]{lbdir_text}[/code]")
 
     # --- Footer ---
-    parts.append(f"[hr]\n{_FOOTER}")
+    parts.append(f"[hr]\n{_build_footer()}")
 
     return "\n\n".join(parts).strip()
 

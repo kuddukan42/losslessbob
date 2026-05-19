@@ -1,3 +1,35 @@
+BUG-068: Crawler seeded from domain root — DreamHost placeholder has no useful links
+Status: Fixed
+File(s): backend/site_crawler.py
+Reported: 2026-05-18
+Fixed: 2026-05-18
+Description: Running the site crawler in full mode fetched only one file (the domain root index.html, 808 bytes) and stopped. The root URL http://www.losslessbob.wonderingwhattochoose.com/ serves a DreamHost "coming soon" placeholder page with no same-domain links. The correct entry point is /LosslessBob.html.
+Root cause: crawl() default start_url was BASE_URL ("/") instead of SITE_HOME_URL ("/LosslessBob.html"). No explicit seed URLs were added, so the BFS queue was empty after the root fetch.
+Fix: Added SITE_HOME_URL = BASE_URL + "/LosslessBob.html"; changed crawl() default start_url to SITE_HOME_URL. Added SEED_URLS constant seeding /bynumber/LBMbynumber.html and /detail/LB-bootleg-by-title.html as a safety net for every crawl session, regardless of start_url.
+
+---
+
+BUG-067: PyQt6 + lxml SIGABRT when Qt widget tests run before lxml-importing tests
+Status: Open
+File(s): tests/test_scraper_crawler.py, tests/test_lb_master.py
+Reported: 2026-05-18
+Description: Running all three test files in a single pytest process causes a Fatal Python error: Aborted when tests/test_lb_master.py Qt widget tests (TestSearchTabStatusColumn, TestDbEditorIntegrityPanel) run before tests/test_scraper_crawler.py which imports BeautifulSoup (bs4 loads lxml at import time). The SIGABRT is a known incompatibility between PyQt6 cleanup and lxml's memory allocator on Linux.
+Root cause: bs4 unconditionally imports lxml at bs4 import time regardless of which parser is used. When lxml's .so is loaded into the same process as PyQt6 objects, Qt's atexit/destructor sequence may SIGABRT.
+Fix: Run test files separately (`pytest tests/test_scraper_crawler.py`) or exclude Qt widget tests when running combined (`pytest tests/ -k "not SearchTab and not DbEditor and not CollectionTab"`). All three files pass independently (59 + 27 + 13 = 99 total tests, all green).
+
+---
+
+BUG-066: Search tab row colours not applied for 5–6 seconds after results appear
+Status: Fixed
+File(s): gui/search_tab.py:413-423, backend/db.py:88-89
+Reported: 2026-05-18
+Fixed: 2026-05-18
+Description: After a search returned results, row background colours (owned green, private blue, missing grey) did not appear for approximately 5–6 seconds.
+Root cause: Two compounding issues. (1) _XrefWorker (started at tab init) called GET /api/checksums/xref_map. get_xref_map() did a full table scan on checksums (WHERE xref > 0) because the only partial index — idx_lb_xref0 — covers xref=0, not xref>0. On a large DB this took 5–6 s. (2) _on_xref_loaded() called self._page = 0; self._render_page() whenever _all_results was non-empty. That unnecessary beginResetModel/endResetModel cycle discarded the view's previously-painted state and issued a fresh repaint 5–6 s after the initial display — the repaint that made colours first visible. Additionally, the owned set (_OwnedWorker) was only started after search results were rendered, adding a second HTTP round-trip delay before owned (green) colours could appear.
+Fix: (1) Removed the self._page = 0 / _render_page() call from _on_xref_loaded; model.set_xref_map() already emits dataChanged for the Xref column. (2) Added idx_chk_xref_pos partial index ON checksums(lb_number, xref) WHERE xref>0 so get_xref_map() uses an index-only scan. (3) Added _prefetch_owned() called at SearchTab.__init__ to warm the owned set before the user's first search.
+
+---
+
 BUG-065: check_for_update() misses flat-file corrections and non-max-LB additions
 Status: Fixed
 File(s): backend/scraper.py:276 (removed)

@@ -4,8 +4,8 @@ from datetime import datetime
 from pathlib import Path
 
 from backend.db import (
-    get_connection, init_db, get_meta, set_meta, DB_PATH, rebuild_bloom,
-    reconcile_lb_status, migrate_lb_master,
+    get_connection, close_connection, init_db, get_meta, set_meta, DB_PATH,
+    rebuild_bloom, reconcile_lb_status, migrate_lb_master,
 )
 from backend.paths import DATA_DIR
 
@@ -116,6 +116,7 @@ def run_import(source_path, progress_callback=None, db_path=None):
         new_lbs = temp_lbs - before_lbs
 
         if not temp_lbs:
+            close_connection(temp_db_path)
             temp_db_path.unlink(missing_ok=True)
             _set_state(running=False, stage="error", error="No checksums found in file.")
             return {"error": "No checksums found in file. Check the file format."}
@@ -141,6 +142,7 @@ def run_import(source_path, progress_callback=None, db_path=None):
         _set_state(rows_merged=merged,
                    message=f"Merging — {merged:,} / {total_rows:,} rows")
 
+    close_connection(temp_db_path)
     temp_db_path.unlink(missing_ok=True)
 
     _set_state(stage="optimizing", message="Updating statistics…")

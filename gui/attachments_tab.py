@@ -9,9 +9,9 @@ from PyQt6.QtWidgets import (
     QPushButton, QTextEdit, QLabel, QStackedWidget, QLineEdit, QListWidget, QMenu,
 )
 
-from backend.paths import ATTACHMENTS_DIR
+from backend.paths import SITE_FILES_DIR, attachment_path
 from backend.scraper import DETAIL_URL
-from backend.db import get_lb_statuses_batch
+from backend.db import get_lb_statuses_batch, get_connection
 
 
 class _ScrapeThread(QThread):
@@ -66,7 +66,7 @@ class AttachmentsTab(QWidget):
         self._missing_count = 0
         self._in_missing_view = False
         self._page = 0
-        self._all_lb_dirs = []
+        self._all_lb_entries: list[dict] = []  # [{lb_number, files: [{filename, clean_name}]}]
         self._build_ui()
         # Schedule WebEngine init on the first event-loop tick so it warms up
         # during app startup rather than on first tab visit or first URL load.
@@ -255,15 +255,23 @@ class AttachmentsTab(QWidget):
         except Exception:
             pass
 
-        self._all_lb_dirs = []
-        if ATTACHMENTS_DIR.exists():
-            for lb_dir in sorted(ATTACHMENTS_DIR.iterdir()):
-                if not lb_dir.is_dir():
-                    continue
-                if any(lb_dir.iterdir()):
-                    self._all_lb_dirs.append(lb_dir)
+        # Build entry list from DB — groups downloaded files by lb_number.
+        conn = get_connection()
+        rows = conn.execute(
+            "SELECT lb_number, filename, clean_name FROM entry_files "
+            "WHERE downloaded=1 ORDER BY lb_number, clean_name"
+        ).fetchall()
+        grouped: dict[int, list[dict]] = {}
+        for r in rows:
+            grouped.setdefault(r["lb_number"], []).append(
+                {"filename": r["filename"], "clean_name": r["clean_name"]}
+            )
+        self._all_lb_entries = [
+            {"lb_number": lb, "files": files}
+            for lb, files in sorted(grouped.items())
+        ]
 
-        self._cached_count = len(self._all_lb_dirs)
+        self._cached_count = len(self._all_lb_entries)
         self.top_label.setText(
             f"Entries with cached files: {self._cached_count} / {total_entries}"
         )
@@ -277,39 +285,33 @@ class AttachmentsTab(QWidget):
     }
 
     def _render_tree_page(self):
-        total_pages = max(1, (len(self._all_lb_dirs) + self.PAGE_SIZE - 1) // self.PAGE_SIZE)
+        total_pages = max(1, (len(self._all_lb_entries) + self.PAGE_SIZE - 1) // self.PAGE_SIZE)
         start = self._page * self.PAGE_SIZE
         end = start + self.PAGE_SIZE
-        page_dirs = self._all_lb_dirs[start:end]
+        page_entries = self._all_lb_entries[start:end]
 
-        # Batch-fetch lb_status for all LB dirs on this page (one query)
-        page_lbs: list[int] = []
-        for lb_dir in page_dirs:
-            try:
-                page_lbs.append(int(lb_dir.name.replace("LB-", "")))
-            except ValueError:
-                pass
+        page_lbs = [e["lb_number"] for e in page_entries]
         lb_status_map = get_lb_statuses_batch(page_lbs) if page_lbs else {}
 
         self.tree.setUpdatesEnabled(False)
         self.tree.clear()
-        for lb_dir in page_dirs:
-            lb_name = lb_dir.name
+        for entry in page_entries:
+            lb_num  = entry["lb_number"]
+            lb_name = f"LB-{lb_num:05d}"
             parent_item = QTreeWidgetItem(self.tree, [lb_name])
-            parent_item.setData(0, Qt.ItemDataRole.UserRole, {"type": "lb", "lb_dir": str(lb_dir)})
-            try:
-                lb_num = int(lb_name.replace("LB-", ""))
-                lb_status = lb_status_map.get(lb_num)
-                if lb_status in self._LB_STATUS_BG:
-                    bg = QBrush(self._LB_STATUS_BG[lb_status])
-                    parent_item.setBackground(0, bg)
-                    tip = "Private LB — no published webpage" if lb_status == "private" else "Missing LB — not in DB"
-                    parent_item.setToolTip(0, tip)
-            except ValueError:
-                pass
-            for f in sorted(lb_dir.iterdir()):
-                child = QTreeWidgetItem(parent_item, [f.name])
-                child.setData(0, Qt.ItemDataRole.UserRole, {"type": "file", "path": str(f)})
+            parent_item.setData(0, Qt.ItemDataRole.UserRole, {"type": "lb", "lb_number": lb_num})
+            lb_status = lb_status_map.get(lb_num)
+            if lb_status in self._LB_STATUS_BG:
+                bg = QBrush(self._LB_STATUS_BG[lb_status])
+                parent_item.setBackground(0, bg)
+                tip = "Private LB — no published webpage" if lb_status == "private" else "Missing LB — not in DB"
+                parent_item.setToolTip(0, tip)
+            for frow in entry["files"]:
+                child = QTreeWidgetItem(parent_item, [frow["clean_name"]])
+                child.setData(0, Qt.ItemDataRole.UserRole, {
+                    "type": "file",
+                    "path": str(attachment_path(frow["filename"])),
+                })
         self.tree.setUpdatesEnabled(True)
         self.tree.scrollToTop()
         self.page_label.setText(f"Page {self._page + 1} / {total_pages}")
@@ -322,7 +324,7 @@ class AttachmentsTab(QWidget):
             self._render_tree_page()
 
     def _next_page(self):
-        total_pages = max(1, (len(self._all_lb_dirs) + self.PAGE_SIZE - 1) // self.PAGE_SIZE)
+        total_pages = max(1, (len(self._all_lb_entries) + self.PAGE_SIZE - 1) // self.PAGE_SIZE)
         if self._page < total_pages - 1:
             self._page += 1
             self._render_tree_page()
@@ -410,8 +412,8 @@ class AttachmentsTab(QWidget):
                     self.search_edit.clear()
                     return
         else:
-            for idx, lb_dir in enumerate(self._all_lb_dirs):
-                if lb_dir.name == target:
+            for idx, entry in enumerate(self._all_lb_entries):
+                if f"LB-{entry['lb_number']:05d}" == target:
                     page = idx // self.PAGE_SIZE
                     if page != self._page:
                         self._page = page
