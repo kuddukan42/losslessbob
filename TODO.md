@@ -1,3 +1,11 @@
+TODO-024: Map tab — interactive map of concert locations
+Priority: Low
+Status: Open
+Added: 2026-05-18
+Description: Build a gui/map_tab.py using a QWebEngineView + Leaflet.js to render concert locations from the location_geocoded table as clickable markers. Backend already has GET /api/map/data (to be added to app.py) backed by db.get_map_data(). Filter controls: lb_status, owned, year range, text search. Markers should open a popup with date, location, lb_number, and a link to open the entry. Requires app.py route to be added and a Flask endpoint test.
+
+---
+
 TODO-001: Show local pages coverage count in Setup tab
 Priority: Low
 Status: Done

@@ -41,6 +41,16 @@ Fix: Removed check_for_update() entirely and replaced with the backend/flat_file
 
 ---
 
+BUG-069: Nominatim batch geocoder has no HTTP-429 / rate-limit retry logic
+Status: Open
+File(s): backend/geocoder.py:run_batch
+Reported: 2026-05-19
+Description: run_batch() sleeps 1.1 s between requests to stay within Nominatim's 1 req/sec ToS. However, if the server still returns HTTP 429 (overloaded or policy breach), the request is logged as a network error and marked source='failed' with no retry or back-off. Large batch runs against a slow Nominatim endpoint may accumulate many false 'failed' rows that require --retry-failed later.
+Root cause: geocode_one() wraps urllib.request.urlopen in a generic except; 429 responses are not distinguished from actual failures.
+Fix: Not yet implemented. Suggested fix: check resp.status == 429 and raise with a marker; run_batch catches the marker, sleeps an additional 60 s, then retries the same location without advancing the progress counter.
+
+---
+
 BUG-064: _on_strip_wrong_lb leaves state as 'wrong_lb' — stripped rows can never be renamed
 Status: Fixed
 File(s): gui/rename_tab.py:_on_strip_wrong_lb

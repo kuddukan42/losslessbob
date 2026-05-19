@@ -35,6 +35,7 @@ MASTER_TABLES = (
     "lb_alias",
     "bootleg_titles",
     "bootleg_scrapes",
+    "location_geocoded",
 )
 # Note: `entries_fts` is a virtual FTS5 table whose content is mirrored from
 # `entries` via triggers. It is NOT copied directly during export/import; the
@@ -236,6 +237,19 @@ CREATE TABLE IF NOT EXISTS lb_status_history (
     trigger_event TEXT
 );
 CREATE INDEX IF NOT EXISTS idx_lb_history_lb ON lb_status_history(lb_number, changed_at DESC);
+
+CREATE TABLE IF NOT EXISTS location_geocoded (
+    location_text   TEXT PRIMARY KEY,
+    lat             REAL,
+    lon             REAL,
+    source          TEXT NOT NULL,
+    confidence      TEXT,
+    display_name    TEXT,
+    manual_override INTEGER NOT NULL DEFAULT 0,
+    note            TEXT,
+    geocoded_at     TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+CREATE INDEX IF NOT EXISTS idx_geo_source ON location_geocoded(source);
 
 CREATE VIRTUAL TABLE IF NOT EXISTS entries_fts USING fts5(
     description,
@@ -1954,6 +1968,93 @@ def export_master_db(reason: str = "publish", db_path=None) -> "tuple[Path, dict
         lb_count, size_bytes, sha256[:12],
     )
     return out_path, manifest
+
+
+def get_map_data(filters: dict, db_path=None) -> dict:
+    """Return marker data and unplottable count for the map view.
+
+    Args:
+        filters: Dict with optional keys: status (str), owned (bool),
+                 year_min (int), year_max (int), q (str).
+        db_path: Optional path to the SQLite database file. Defaults to DB_PATH.
+
+    Returns:
+        Dict with keys "markers" (list of dicts) and "unplottable_count" (int).
+        Each marker dict contains: lb_number, date_str, location, lb_status,
+        owned, lat, lon, display_name.
+    """
+    conn = get_connection(db_path)
+
+    clauses: list[str] = []
+    params: list = []
+
+    status = filters.get("status")
+    if status:
+        clauses.append("lm.lb_status = ?")
+        params.append(status)
+
+    owned = filters.get("owned")
+    if owned is True:
+        clauses.append("mc.lb_number IS NOT NULL")
+    elif owned is False:
+        clauses.append("mc.lb_number IS NULL")
+
+    year_min = filters.get("year_min")
+    if year_min is not None:
+        clauses.append("CAST(SUBSTR(e.date_str, INSTR(e.date_str, '/') + INSTR(SUBSTR(e.date_str,"
+                       " INSTR(e.date_str, '/') + 1), '/') + INSTR(e.date_str, '/'), 10) AS INTEGER)"
+                       " >= ?")
+        params.append(int(year_min))
+
+    year_max = filters.get("year_max")
+    if year_max is not None:
+        clauses.append("CAST(SUBSTR(e.date_str, INSTR(e.date_str, '/') + INSTR(SUBSTR(e.date_str,"
+                       " INSTR(e.date_str, '/') + 1), '/') + INSTR(e.date_str, '/'), 10) AS INTEGER)"
+                       " <= ?")
+        params.append(int(year_max))
+
+    q = filters.get("q")
+    if q:
+        like = f"%{q}%"
+        clauses.append("(e.lb_number LIKE ? OR e.location LIKE ?)")
+        params.extend([like, like])
+
+    where = ("WHERE " + " AND ".join(clauses)) if clauses else ""
+
+    sql = f"""
+        SELECT e.lb_number, e.date_str, e.location,
+               lm.lb_status,
+               CASE WHEN mc.lb_number IS NOT NULL THEN 1 ELSE 0 END AS owned,
+               geo.lat, geo.lon, geo.display_name
+        FROM entries e
+        LEFT JOIN location_geocoded geo ON e.location = geo.location_text
+        LEFT JOIN lb_master lm ON e.lb_number = lm.lb_number
+        LEFT JOIN my_collection mc ON e.lb_number = mc.lb_number
+        {where}
+        ORDER BY e.lb_number
+    """
+
+    rows = conn.execute(sql, params).fetchall()
+
+    markers: list[dict] = []
+    unplottable_count = 0
+
+    for row in rows:
+        if row["lat"] is not None and row["lon"] is not None:
+            markers.append({
+                "lb_number": row["lb_number"],
+                "date_str": row["date_str"],
+                "location": row["location"],
+                "lb_status": row["lb_status"],
+                "owned": bool(row["owned"]),
+                "lat": row["lat"],
+                "lon": row["lon"],
+                "display_name": row["display_name"],
+            })
+        else:
+            unplottable_count += 1
+
+    return {"markers": markers, "unplottable_count": unplottable_count}
 
 
 def import_master_db(snapshot_path: "Path | str", db_path=None) -> dict:

@@ -50,7 +50,8 @@ losslessbob/
 │   ├── startup_log.py        # Startup timing logger → data/startup.log
 │   ├── torrent_maker.py      # torf-based .torrent generation; tracker CDN fetch
 │   ├── qbittorrent.py        # qBittorrent WebUI API v2 integration
-│   └── forum_poster.py       # SMF 2.x WTRF forum topic posting
+│   ├── forum_poster.py       # SMF 2.x WTRF forum topic posting
+│   └── geocoder.py           # Nominatim geocoder: geocode_one, place_manual, run_batch, get_progress
 ├── gui/
 │   ├── main_window.py        # Main window, tab container, menu, status bar
 │   ├── lookup_tab.py         # Core feature: paste/load checksums, view results
@@ -72,6 +73,8 @@ losslessbob/
 ├── tests/
 │   ├── test_lb_master.py     # lb_master schema, reconcile, override, forum guard, GUI presence
 │   └── test_master_data.py   # MASTER/USER table classification, export/import, SHA + schema-version guards
+├── tools/
+│   └── geocode_locations.py  # CLI: batch-geocode entries.location via Nominatim (--limit, --retry-failed, --dry-run)
 └── data/
     ├── losslessbob.db        # SQLite database
     ├── *_flat_file.txt       # Tab-delimited flat-file (user-provided)
@@ -286,6 +289,22 @@ One row per unique URL discovered or fetched by the site crawler.
 | session_id | INTEGER | FK → `scrape_sessions.id` of last session that touched this row |
 
 Indexes: `idx_inventory_status`, `idx_inventory_session`.
+
+### `location_geocoded` — Geocoded concert locations (MASTER TABLE)
+| Column | Type | Notes |
+|--------|------|-------|
+| location_text | TEXT PK | Matches `entries.location` verbatim |
+| lat | REAL | WGS-84 latitude (NULL if geocoding failed) |
+| lon | REAL | WGS-84 longitude (NULL if geocoding failed) |
+| source | TEXT NOT NULL | `'nominatim'` / `'manual'` / `'failed'` |
+| confidence | TEXT | `'high'` / `'medium'` / `'low'` / NULL |
+| display_name | TEXT | Full display name returned by Nominatim |
+| manual_override | INTEGER | 1 = curator-placed pin; batch run never overwrites |
+| note | TEXT | Optional curator note |
+| geocoded_at | TIMESTAMP | Last geocode attempt timestamp |
+
+Index: `idx_geo_source ON location_geocoded(source)`.
+Populated by `backend/geocoder.py:run_batch()` or `place_manual()`. Included in master-data export/import (`MASTER_TABLES`).
 
 ### `meta` — Key-value configuration store
 Persists settings between runs. Key examples:
@@ -554,6 +573,24 @@ For each parsed checksum, queries `checksums` table, then aggregates per LB numb
 - **DUPLICATE** — same checksum exists in multiple LB entries
 - **NOT FOUND** — no DB match at all
 - **XREF** — matched, but entry is a cross-reference
+
+### Map data (`get_map_data`)
+Returns `{"markers": [...], "unplottable_count": int}`. Each marker dict: `{lb_number, date_str, location, lb_status, owned (bool), lat, lon, display_name}`. Entries with no geocoded coordinates are counted in `unplottable_count` and omitted from `markers`. Supported filter keys: `status` (str), `owned` (bool), `year_min` (int), `year_max` (int), `q` (text LIKE on lb_number/location).
+
+---
+
+## Backend: Geocoder (`backend/geocoder.py`)
+
+Nominatim-based geocoder for concert location strings. Uses stdlib `urllib` only — no extra dependencies.
+
+| Function | Description |
+|----------|-------------|
+| `geocode_one(location_text)` | Single Nominatim lookup. Returns dict with lat, lon, display_name, source, confidence. source='failed' on error or no result. |
+| `place_manual(location_text, lat, lon, note)` | UPSERT with manual_override=1; batch run never overwrites manual rows. |
+| `run_batch(limit, retry_failed, dry_run, db_path)` | Batch-geocode all un-geocoded entries.location values. Sleeps 1.1 s between requests (Nominatim ToS). Updates thread-safe _progress dict. |
+| `get_progress()` | Snapshot of {running, done, total, current, errors} for GUI polling. |
+
+**CLI tool:** `tools/geocode_locations.py` — run `python tools/geocode_locations.py --help` from project root.
 
 ---
 
@@ -1158,3 +1195,4 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 | 2026-05-18 | CC_LB_INTEGRITY item 10: Click-to-sort on all major tables. gui/widgets/sort_keys.py added. lbdir+verify QTableWidget tables use SortableTableItem. Search/Collection/Missing QTableView tables sort in-memory via sectionClicked. DB Editor sectionClicked wired to server-side sort. Backend /api/search, /api/collection, /api/collection/missing accept sort_col/sort_dir. |
 | 2026-05-18 | Download Missing Pages: `download_pages_range()` in scraper.py; `POST /api/scrape/download_pages`; Row 4 "Download Missing Pages" button in Setup tab scraper grid. (TODO-002) |
 | 2026-05-18 | Bootleg-CD Catalog (LBBCD): `backend/bootleg_scraper.py`; `bootleg_titles` + `bootleg_scrapes` tables (MASTER); MASTER_SCHEMA_VERSION→2; 7 `/api/bootlegs/*` routes; `gui/bootlegs_tab.py` (Bootlegs tab, index 5); 🎵 badge in Search tab; Scrape Bootleg Catalog button + history panel in Setup tab; Bootlegs count in status bar. (TODO-030) |
+| 2026-05-19 | Map feature: location_geocoded table (MASTER) + get_map_data(); backend/geocoder.py (Nominatim); tools/geocode_locations.py CLI; GET /map + /api/map/data + /api/geocode/* routes; gui/map_tab.py + gui/resources/map.html (Leaflet); curator geocoding UI in setup_tab + dbedit_tab. |

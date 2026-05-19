@@ -132,6 +132,32 @@ backend/db.py: export_overrides() and import_overrides() helpers.
 backend/app.py: GET /api/lb_master/overrides/export and POST /api/lb_master/overrides/import.
 gui/dbedit_tab.py: "Export Overrides" and "Import Overrides" buttons in DB Integrity panel.
 
+---
+
+[2026-05-18] — feat(db/backend): add location_geocoded schema, Nominatim geocoder, CLI tool
+
+Added
+
+backend/geocoder.py: Nominatim geocoder module. `geocode_one(location_text)` performs a single
+  lookup (stdlib urllib only, no extra deps). `place_manual(location_text, lat, lon, note)` inserts
+  a manual coordinate with `manual_override=1` so batch runs never overwrite it. `run_batch(limit,
+  retry_failed, dry_run)` batch-geocodes all un-geocoded `entries.location` values with a 1.1-second
+  sleep between requests (Nominatim ToS). Thread-safe `_progress` dict for future GUI integration.
+  `get_progress()` returns a snapshot for polling.
+
+tools/geocode_locations.py: CLI wrapper for `run_batch`. Accepts `--limit N`, `--retry-failed`,
+  `--dry-run`. Configures root logging and resolves project root so it can be run directly from the
+  project root directory.
+
+Changed
+
+backend/db.py: Added `location_geocoded` table (DDL inside `_SCHEMA`) — columns: location_text
+  (PK), lat, lon, source, confidence, display_name, manual_override (DEFAULT 0), note, geocoded_at.
+  Index `idx_geo_source` on source column. Table added to `MASTER_TABLES` so it is included in
+  master-data export/import. Added `get_map_data(filters, db_path)` — returns `{"markers": [...],
+  "unplottable_count": int}` for a future map tab; joins entries, location_geocoded, lb_master, and
+  my_collection; supports filters: status, owned, year_min, year_max, q.
+
 [2026-05-17] — fix(gui): Column widths now actually persist across restarts (GuiStateStore root-cause fix)
 
 Fixed
