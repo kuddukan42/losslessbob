@@ -1,3 +1,18 @@
+BUG-076: Admin "Restart Server" button restarted the entire app including the GUI
+Status: Fixed
+File(s): main.py, backend/app.py, backend/admin.html
+Reported: 2026-05-19
+Fixed: 2026-05-19
+Description: Clicking Restart Server on the admin page (e.g. from a phone) killed the PyQt6
+  GUI window because os.execv replaced the whole process.
+Root cause: admin_restart used os.execv unconditionally — no distinction between "restart
+  only Flask" and "restart the whole process."
+Fix: main.py now runs Flask via werkzeug make_server in a restart loop and registers
+  request_flask_restart() as a callback. The route calls the callback instead of os.execv,
+  so only the Flask server recycles; the GUI remains open.
+
+---
+
 BUG-075: Map shows only ~434 markers instead of ~9,700 (owned filter applied by default)
 Status: Fixed
 File(s): backend/app.py:api_map_data, gui/resources/map.html

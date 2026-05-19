@@ -15,6 +15,25 @@ import backend.startup_log as _slog
 FLASK_PORT = 5174
 _FLASK_READY = threading.Event()
 
+# ── Flask in-process restart support ─────────────────────────────────────────
+_flask_server = None
+_flask_server_lock = threading.Lock()
+_flask_restart_event = threading.Event()
+
+
+def request_flask_restart() -> None:
+    """Shut down the current Flask server so the start_flask loop restarts it.
+
+    Called by the /api/admin/restart route. Only the Flask backend restarts;
+    the GUI process stays alive.
+    """
+    global _flask_server
+    _flask_restart_event.set()
+    with _flask_server_lock:
+        srv = _flask_server
+    if srv is not None:
+        srv.shutdown()
+
 
 def _wait_for_port(host: str, port: int, timeout: float = 15.0) -> bool:
     """Block until the TCP port accepts connections or timeout expires."""
@@ -29,23 +48,44 @@ def _wait_for_port(host: str, port: int, timeout: float = 15.0) -> bool:
 
 
 def start_flask() -> None:
-    """Start the Flask backend, using Waitress on Windows for stability."""
+    """Start the Flask backend in a loop that supports in-process restart.
+
+    On Linux/macOS: uses werkzeug's make_server so the server can be shut down
+    and restarted without touching the GUI process.
+    On Windows: uses Waitress (no clean shutdown support) — restart falls back
+    to os.execv and restarts the whole process.
+    """
+    global _flask_server
     ensure_data_dirs()
-    flask_app = create_app()
-    # Flask resets werkzeug's logger to INFO inside create_app — pin it back here.
-    logging.getLogger("werkzeug").setLevel(logging.WARNING)
+
     if sys.platform == "win32":
+        flask_app = create_app()
+        logging.getLogger("werkzeug").setLevel(logging.WARNING)
         try:
             from waitress import serve as waitress_serve
-            _FLASK_READY.set()  # waitress_serve blocks; signal readiness before it starts
+            _FLASK_READY.set()
             waitress_serve(flask_app, host="0.0.0.0", port=FLASK_PORT,
                            threads=8, channel_timeout=120)
         except ImportError:
             flask_app.run(host="0.0.0.0", port=FLASK_PORT,
                           debug=False, use_reloader=False)
-    else:
-        flask_app.run(host="0.0.0.0", port=FLASK_PORT,
-                      debug=False, use_reloader=False)
+        return
+
+    # Linux/macOS: restart loop using werkzeug make_server
+    from werkzeug.serving import make_server
+    while True:
+        flask_app = create_app()
+        logging.getLogger("werkzeug").setLevel(logging.WARNING)
+        srv = make_server("0.0.0.0", FLASK_PORT, flask_app, threaded=True)
+        with _flask_server_lock:
+            _flask_server = srv
+        srv.serve_forever()
+        srv.server_close()
+
+        if not _flask_restart_event.is_set():
+            break
+        _flask_restart_event.clear()
+        time.sleep(0.5)  # brief pause to ensure the OS releases the port
 
 
 def _configure_logging() -> None:
@@ -84,6 +124,13 @@ def main() -> None:
     _slog.t("main: start")
 
     ignore_pos = "-ignore_start_positions" in sys.argv
+
+    # Register restart callback before starting Flask so it's available immediately.
+    # Windows still uses waitress (no clean shutdown) — leave callback unset there
+    # so admin_restart falls back to os.execv.
+    if sys.platform != "win32":
+        import backend.app as _backend_app
+        _backend_app.set_restart_callback(request_flask_restart)
 
     flask_thread = threading.Thread(target=start_flask, daemon=True)
     flask_thread.start()

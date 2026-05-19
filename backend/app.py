@@ -17,6 +17,20 @@ from backend.paths import SITE_DIR, SITE_FILES_DIR, attachment_path, find_lbdir_
 
 _scrape_thread = None
 
+# ── Restart callback (set by main.py so only the Flask server restarts) ───────
+_restart_callback = None
+
+
+def set_restart_callback(cb) -> None:
+    """Register a function that main.py calls to restart the Flask server in-process.
+
+    When set, admin_restart invokes this instead of os.execv so the GUI is not affected.
+    If not set (standalone/Windows), os.execv restarts the whole process as before.
+    """
+    global _restart_callback
+    _restart_callback = cb
+
+
 # ── FEAT-14: DB Editor table classification ───────────────────────────────────
 _DBEDIT_READONLY = frozenset({"entries_fts"})
 _DBEDIT_AUDIT    = frozenset({"entry_changes", "integrity_events"})
@@ -2666,6 +2680,77 @@ def create_app() -> Flask:
             return jsonify({"locations": [dict(r) for r in rows]})
         except Exception as exc:
             return jsonify({"error": str(exc)}), 500
+
+    # ── Admin page ───────────────────────────────────────────────────────────
+    import time as _time
+    _admin_start_time = _time.monotonic()
+
+    @app.route("/admin")
+    def admin_page() -> Response:
+        """Serve the mobile-friendly admin control panel."""
+        admin_html = Path(__file__).parent / "admin.html"
+        return send_from_directory(str(admin_html.parent), admin_html.name)
+
+    @app.route("/api/admin/status", methods=["GET"])
+    def admin_status() -> Response:
+        """Return combined server/DB/scraper status for the admin dashboard.
+
+        Returns:
+            JSON dict with db stats, scrape status, import status, master stats,
+            and server uptime in seconds.
+        """
+        try:
+            result: dict = {}
+            result["uptime_seconds"] = round(_time.monotonic() - _admin_start_time)
+            try:
+                result["db"] = database.get_stats()
+            except Exception:
+                result["db"] = None
+            try:
+                result["scrape"] = scraper.get_scrape_status()
+            except Exception:
+                result["scrape"] = None
+            try:
+                result["import_status"] = importer.get_import_status()
+            except Exception:
+                result["import_status"] = None
+            try:
+                result["crawler"] = site_crawler.get_crawler_status()
+            except Exception:
+                result["crawler"] = None
+            try:
+                conn = database.get_connection()
+                total = conn.execute("SELECT COUNT(*) FROM lb_master").fetchone()[0]
+                conflicts = conn.execute(
+                    "SELECT COUNT(*) FROM lb_master WHERE status='conflict'"
+                ).fetchone()[0]
+                result["master"] = {"total": total, "conflicts": conflicts}
+            except Exception:
+                result["master"] = None
+            return jsonify(result)
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/admin/restart", methods=["POST"])
+    def admin_restart() -> Response:
+        """Restart the entire application process to pick up code changes.
+
+        Uses os.execv to replace the current process with a fresh copy.
+        Returns a 202 before the restart so the client can handle it.
+        """
+        import os as _os
+        import sys as _sys
+        import threading as _threading
+
+        def _do_restart():
+            _time.sleep(0.3)
+            if _restart_callback is not None:
+                _restart_callback()
+            else:
+                _os.execv(_sys.executable, [_sys.executable] + _sys.argv)
+
+        _threading.Thread(target=_do_restart, daemon=True).start()
+        return jsonify({"ok": True, "message": "Restarting…"}), 202
 
     _slog.t("Flask: create_app done")
     return app

@@ -1,3 +1,49 @@
+[2026-05-19] — feat(backend): run_backend.py standalone launcher for phone/LAN use
+
+Added
+
+  run_backend.py: headless Flask launcher (no Qt GUI). Uses the same make_server
+    restart loop as main.py. The Restart Server button on the admin page calls the
+    in-process callback — only the Flask server recycles, the process stays alive.
+    Start with: .venv/bin/python3 run_backend.py
+
+[2026-05-19] — fix(backend/admin): restart button now restarts only the Flask server, not the GUI
+
+Fixed
+
+  main.py: replaced flask_app.run() with werkzeug make_server + serve_forever loop so the
+    server can be shut down and restarted in-process without touching the PyQt6 GUI process.
+    Added request_flask_restart() and _flask_restart_event / _flask_server globals.
+  backend/app.py: added _restart_callback / set_restart_callback(). The admin_restart route
+    now calls the callback (set by main.py on Linux) instead of os.execv, so only the Flask
+    server recycles. Falls back to os.execv when no callback is set (Windows/standalone).
+  backend/admin.html: updated Server card description — "GUI window stays open."
+
+[2026-05-19] — feat(admin): site-crawler control + live status dialog in admin panel
+
+Added
+
+  backend/admin.html: Site Crawler card — Incremental / Full / Stop buttons, progress bar,
+    live status line showing current URL. "Live View" button opens a modal dialog that
+    polls /api/crawler/status every 1.5 s, displaying stage, fetched / 304 / skipped /
+    failed counts and the current URL being fetched. Dialog closes on backdrop click.
+  backend/app.py: GET /api/admin/status now includes "crawler" key
+    (site_crawler.get_crawler_status() snapshot).
+
+[2026-05-19] — feat(backend): mobile-friendly admin control panel at /admin
+
+Added
+
+  backend/admin.html: self-contained admin UI — dark theme, responsive grid, no external
+    dependencies. Sections: DB stats + backup/reset, flat-file update pipeline,
+    scraper start/stop with progress bar, LB master reconcile, server restart.
+    Auto-polls /api/admin/status every 5 s; toast notifications for all actions;
+    confirm overlay for destructive operations (reset DB, restart server).
+  backend/app.py: three new admin routes:
+    GET  /admin           — serves admin.html
+    GET  /api/admin/status — combined DB/scrape/import/master/uptime snapshot
+    POST /api/admin/restart — os.execv restart to pick up code changes (202 before exit)
+
 [2026-05-19] — fix(backend/gui): map showed only 434 markers instead of ~9,700 (BUG-075)
 
 Fixed

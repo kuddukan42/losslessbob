@@ -1,3 +1,23 @@
+TODO-043: Admin panel — site-crawler control and live status dialog
+Priority: Low
+Status: Done
+Added: 2026-05-19
+Closed: 2026-05-19
+Description: Extend the /admin panel to control the master website site_crawler.
+  Site Crawler card: Incremental / Full / Stop buttons, progress bar, live status line.
+  Live View modal: polls /api/crawler/status every 1.5 s; shows stage, fetched/304/skipped/
+  failed counts, current URL. /api/admin/status now includes "crawler" snapshot.
+
+TODO-042: Mobile-friendly admin control panel
+Priority: Low
+Status: Done
+Added: 2026-05-19
+Closed: 2026-05-19
+Description: Web admin page at /admin for managing the backend from mobile or browser.
+  Features: DB stats/backup/reset, flat-file update pipeline, scraper start/stop,
+  LB master reconcile, server restart (os.execv). Routes: GET /admin,
+  GET /api/admin/status, POST /api/admin/restart.
+
 TODO-024: Map tab — interactive map of concert locations
 Priority: Low
 Status: Done

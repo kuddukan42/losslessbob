@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LosslessBob Admin</title>
+  <style>
+    :root {
+      --bg:       #0d1117;
+      --surface:  #161b22;
+      --surface2: #1c2128;
+      --border:   #30363d;
+      --text:     #e6edf3;
+      --muted:    #7d8590;
+      --accent:   #2563eb;
+      --accent-h: #1d4ed8;
+      --success:  #16a34a;
+      --warning:  #d97706;
+      --danger:   #dc2626;
+      --danger-h: #b91c1c;
+      --radius:   10px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      font-size: 15px;
+    }
+
+    /* ── Header ─────────────────────────────────────────────────── */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    header h1 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      flex: 1;
+      color: var(--text);
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .pill.online  { background: rgba(22,163,74,.2);  color: #4ade80; border: 1px solid rgba(22,163,74,.4); }
+    .pill.offline { background: rgba(220,38,38,.2);  color: #f87171; border: 1px solid rgba(220,38,38,.4); }
+    .pill.warning { background: rgba(217,119,6,.2);  color: #fbbf24; border: 1px solid rgba(217,119,6,.4); }
+    .pulse {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: currentColor;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: .4; }
+    }
+    #uptime-text { font-size: 0.78rem; color: var(--muted); white-space: nowrap; }
+
+    /* ── Layout ─────────────────────────────────────────────────── */
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px 16px 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .card.wide { grid-column: 1 / -1; }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+    }
+    .card-icon { font-size: 1rem; }
+
+    /* ── Stats grid ─────────────────────────────────────────────── */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .stat {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 10px 12px;
+    }
+    .stat-label { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 3px; }
+    .stat-value { font-size: 1.3rem; font-weight: 700; color: var(--text); font-variant-numeric: tabular-nums; }
+    .stat-value.small { font-size: 0.9rem; font-weight: 500; }
+
+    /* ── Buttons ────────────────────────────────────────────────── */
+    .btn-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .btn {
+      flex: 1;
+      min-width: 110px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: opacity .15s, transform .1s;
+      white-space: nowrap;
+    }
+    .btn:active { transform: scale(.97); }
+    .btn:disabled { opacity: .4; cursor: default; transform: none; }
+    .btn-primary  { background: var(--accent);   color: #fff; }
+    .btn-primary:hover:not(:disabled)  { background: var(--accent-h); }
+    .btn-success  { background: var(--success);  color: #fff; }
+    .btn-success:hover:not(:disabled)  { background: #15803d; }
+    .btn-warning  { background: var(--warning);  color: #fff; }
+    .btn-warning:hover:not(:disabled)  { background: #b45309; }
+    .btn-danger   { background: var(--danger);   color: #fff; }
+    .btn-danger:hover:not(:disabled)   { background: var(--danger-h); }
+    .btn-ghost    { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+    .btn-ghost:hover:not(:disabled)   { background: var(--border); }
+
+    /* ── Status line ────────────────────────────────────────────── */
+    .status-line {
+      font-size: 0.8rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 1.2em;
+    }
+    .status-line.ok      { color: #4ade80; }
+    .status-line.err     { color: #f87171; }
+    .status-line.running { color: #fbbf24; }
+
+    /* ── Progress bar ───────────────────────────────────────────── */
+    .prog-wrap {
+      background: var(--surface2);
+      border-radius: 4px;
+      height: 6px;
+      overflow: hidden;
+    }
+    .prog-bar {
+      height: 100%;
+      border-radius: 4px;
+      background: var(--accent);
+      transition: width .4s;
+    }
+
+    /* ── Toast ──────────────────────────────────────────────────── */
+    #toast-container {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      z-index: 999;
+      pointer-events: none;
+      width: min(90vw, 380px);
+    }
+    .toast {
+      padding: 11px 18px;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity .25s, transform .25s;
+      pointer-events: auto;
+      border: 1px solid transparent;
+    }
+    .toast.show     { opacity: 1; transform: translateY(0); }
+    .toast.success  { background: #14532d; color: #86efac; border-color: #16a34a; }
+    .toast.error    { background: #450a0a; color: #fca5a5; border-color: #dc2626; }
+    .toast.info     { background: #1e3a5f; color: #93c5fd; border-color: #2563eb; }
+    .toast.warning  { background: #451a03; color: #fcd34d; border-color: #d97706; }
+
+    /* ── Crawler dialog ─────────────────────────────────────────── */
+    #crawler-dialog {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,.65);
+      z-index: 500;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 60px 20px 20px;
+    }
+    #crawler-dialog.active { display: flex; }
+    #crawler-dialog-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 22px 18px;
+      width: min(96vw, 540px);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    #crawler-dialog-box h3 {
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .cd-stat-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+    .cd-stat {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 8px 10px;
+      text-align: center;
+    }
+    .cd-stat-label { font-size: 0.65rem; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+    .cd-stat-value { font-size: 1.1rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+    #cd-current {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 9px 12px;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.75rem;
+      color: var(--muted);
+      word-break: break-all;
+      min-height: 2.4em;
+      line-height: 1.6;
+    }
+    #cd-stage { font-size: 0.78rem; color: var(--muted); }
+
+    /* ── Confirm overlay ────────────────────────────────────────── */
+    #confirm-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,.65);
+      z-index: 500;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    #confirm-overlay.active { display: flex; }
+    #confirm-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px 22px;
+      max-width: 360px;
+      width: 100%;
+    }
+    #confirm-box h3 { margin-bottom: 10px; font-size: 1.05rem; }
+    #confirm-box p  { color: var(--muted); font-size: 0.875rem; margin-bottom: 20px; line-height: 1.5; }
+    #confirm-box .btn-row { gap: 10px; }
+
+    /* ── Log area ───────────────────────────────────────────────── */
+    .log-area {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 10px 12px;
+      font-size: 0.78rem;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      color: var(--muted);
+      max-height: 140px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      word-break: break-all;
+      line-height: 1.6;
+    }
+
+    /* ── Responsive ─────────────────────────────────────────────── */
+    @media (max-width: 480px) {
+      main { grid-template-columns: 1fr; padding: 12px 10px 40px; }
+      .btn { min-width: 90px; padding: 11px 12px; font-size: 0.82rem; }
+      .stat-value { font-size: 1.15rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>&#x2699;&#xFE0F; LosslessBob Admin</h1>
+  <span id="server-pill" class="pill offline"><span class="pulse"></span>Checking…</span>
+  <span id="uptime-text"></span>
+</header>
+
+<main>
+
+  <!-- ── DB Stats ────────────────────────────────── -->
+  <div class="card">
+    <div class="card-header"><span class="card-icon">🗄️</span> Database</div>
+    <div class="stat-grid">
+      <div class="stat">
+        <div class="stat-label">LB Numbers</div>
+        <div class="stat-value" id="stat-lb">—</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Checksums</div>
+        <div class="stat-value" id="stat-cs">—</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Latest LB</div>
+        <div class="stat-value" id="stat-latest">—</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Last Import</div>
+        <div class="stat-value small" id="stat-import">—</div>
+      </div>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-primary" onclick="dbBackup()">💾 Backup</button>
+      <button class="btn btn-danger"  onclick="confirmAction('Reset Database','This permanently drops and rebuilds all checksum/entry data. Collection and wishlist are preserved.', dbReset)">🗑️ Reset DB</button>
+    </div>
+    <div id="db-status" class="status-line"></div>
+  </div>
+
+  <!-- ── Flat File Update ────────────────────────── -->
+  <div class="card">
+    <div class="card-header"><span class="card-icon">📦</span> Flat File Update</div>
+    <div id="ff-result" class="log-area" style="min-height:60px;">Ready.</div>
+    <div class="btn-row">
+      <button class="btn btn-primary" onclick="ffDiscover()">🔍 Check for Update</button>
+      <button class="btn btn-ghost"   id="ff-apply-btn" style="display:none" onclick="ffApply()">⚡ Apply Update</button>
+    </div>
+    <div id="ff-status" class="status-line"></div>
+  </div>
+
+  <!-- ── Scraper ─────────────────────────────────── -->
+  <div class="card">
+    <div class="card-header"><span class="card-icon">🕷️</span> Scraper</div>
+    <div class="stat-grid">
+      <div class="stat">
+        <div class="stat-label">Status</div>
+        <div class="stat-value small" id="scrape-status-text">—</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Progress</div>
+        <div class="stat-value small" id="scrape-progress">—</div>
+      </div>
+    </div>
+    <div class="prog-wrap" id="scrape-prog-wrap" style="display:none">
+      <div class="prog-bar" id="scrape-prog-bar" style="width:0%"></div>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-success" id="scrape-start-btn" onclick="scrapeStart()">▶ Start</button>
+      <button class="btn btn-warning" id="scrape-stop-btn"  onclick="scrapeStop()" disabled>⏹ Stop</button>
+    </div>
+    <div id="scrape-log" class="status-line"></div>
+  </div>
+
+  <!-- ── Site Crawler ──────────────────────────────── -->
+  <div class="card">
+    <div class="card-header"><span class="card-icon">🌐</span> Site Crawler</div>
+    <div class="stat-grid">
+      <div class="stat">
+        <div class="stat-label">Status</div>
+        <div class="stat-value small" id="crawl-status-text">—</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Fetched</div>
+        <div class="stat-value" id="crawl-fetched">—</div>
+      </div>
+    </div>
+    <div class="prog-wrap" id="crawl-prog-wrap" style="display:none">
+      <div class="prog-bar" id="crawl-prog-bar" style="width:0%"></div>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-primary" id="crawl-start-btn" onclick="crawlerStart('incremental')">▶ Incremental</button>
+      <button class="btn btn-ghost"   id="crawl-full-btn"  onclick="crawlerStart('full')">🌐 Full</button>
+      <button class="btn btn-warning" id="crawl-stop-btn"  onclick="crawlerStop()" disabled>⏹ Stop</button>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-ghost" style="flex:0;min-width:0;padding:7px 14px;font-size:0.8rem" onclick="openCrawlerDialog()">📊 Live View</button>
+    </div>
+    <div id="crawl-log" class="status-line"></div>
+  </div>
+
+  <!-- ── LB Master ───────────────────────────────── -->
+  <div class="card">
+    <div class="card-header"><span class="card-icon">📋</span> LB Master</div>
+    <div class="stat-grid">
+      <div class="stat">
+        <div class="stat-label">Total</div>
+        <div class="stat-value" id="master-total">—</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Conflicts</div>
+        <div class="stat-value" id="master-conflicts">—</div>
+      </div>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-primary" onclick="masterReconcile()">🔄 Reconcile</button>
+    </div>
+    <div id="master-status" class="status-line"></div>
+  </div>
+
+  <!-- ── Import ──────────────────────────────────── -->
+  <div class="card">
+    <div class="card-header"><span class="card-icon">📥</span> Import</div>
+    <div class="stat-grid">
+      <div class="stat">
+        <div class="stat-label">Status</div>
+        <div class="stat-value small" id="import-status-text">—</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Progress</div>
+        <div class="stat-value small" id="import-progress">—</div>
+      </div>
+    </div>
+    <div class="prog-wrap" id="import-prog-wrap" style="display:none">
+      <div class="prog-bar" id="import-prog-bar" style="width:0%"></div>
+    </div>
+    <div id="import-log" class="status-line"></div>
+  </div>
+
+  <!-- ── Server ──────────────────────────────────── -->
+  <div class="card">
+    <div class="card-header"><span class="card-icon">⚡</span> Server</div>
+    <p style="font-size:.83rem;color:var(--muted);line-height:1.6">
+      Restart reloads all Python modules and picks up code changes. The GUI window stays open.
+    </p>
+    <div class="btn-row">
+      <button class="btn btn-warning" onclick="confirmAction('Restart Server','The entire app (GUI + backend) will restart. Unsaved GUI state will be lost.', serverRestart)">🔁 Restart Server</button>
+    </div>
+    <div id="server-status" class="status-line"></div>
+  </div>
+
+</main>
+
+<!-- ── Crawler status dialog ────────────────────── -->
+<div id="crawler-dialog">
+  <div id="crawler-dialog-box">
+    <h3>🌐 Site Crawler — Live Status</h3>
+    <div id="cd-stage">Stage: <strong id="cd-stage-val">—</strong></div>
+    <div class="cd-stat-row">
+      <div class="cd-stat">
+        <div class="cd-stat-label">Fetched</div>
+        <div class="cd-stat-value" id="cd-fetched">—</div>
+      </div>
+      <div class="cd-stat">
+        <div class="cd-stat-label">304 (cached)</div>
+        <div class="cd-stat-value" id="cd-304">—</div>
+      </div>
+      <div class="cd-stat">
+        <div class="cd-stat-label">Skipped</div>
+        <div class="cd-stat-value" id="cd-skipped">—</div>
+      </div>
+      <div class="cd-stat">
+        <div class="cd-stat-label">Failed</div>
+        <div class="cd-stat-value" id="cd-failed">—</div>
+      </div>
+    </div>
+    <div id="cd-current">—</div>
+    <div class="btn-row" style="margin-top:4px">
+      <button class="btn btn-ghost" onclick="closeCrawlerDialog()">Close</button>
+      <button class="btn btn-warning" id="cd-stop-btn" onclick="crawlerStop()" disabled>⏹ Stop Crawler</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── Confirm overlay ──────────────────────────── -->
+<div id="confirm-overlay">
+  <div id="confirm-box">
+    <h3 id="confirm-title">Confirm</h3>
+    <p  id="confirm-msg"></p>
+    <div class="btn-row">
+      <button class="btn btn-ghost"  onclick="closeConfirm()">Cancel</button>
+      <button class="btn btn-danger" id="confirm-ok-btn" onclick="doConfirm()">Confirm</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── Toast container ──────────────────────────── -->
+<div id="toast-container"></div>
+
+<script>
+  const BASE = window.location.origin;
+  let _confirmCallback = null;
+  let _startTs = null;
+  let _uptimeInterval = null;
+  let _pollInterval = null;
+  let _pendingFfReleaseId = null;
+  let _restarting = false;
+
+  // ── Helpers ────────────────────────────────────────
+  async function api(method, path, body) {
+    const opts = { method, headers: { 'Content-Type': 'application/json' } };
+    if (body != null) opts.body = JSON.stringify(body);
+    const r = await fetch(BASE + path, opts);
+    return r.json();
+  }
+
+  function fmt(n) {
+    if (n == null) return '—';
+    return Number(n).toLocaleString();
+  }
+
+  function setStatus(id, msg, cls) {
+    const el = document.getElementById(id);
+    el.textContent = msg;
+    el.className = 'status-line ' + (cls || '');
+  }
+
+  function toast(msg, type = 'info') {
+    const c = document.getElementById('toast-container');
+    const t = document.createElement('div');
+    t.className = 'toast ' + type;
+    t.textContent = msg;
+    c.appendChild(t);
+    requestAnimationFrame(() => { requestAnimationFrame(() => t.classList.add('show')); });
+    setTimeout(() => {
+      t.classList.remove('show');
+      setTimeout(() => t.remove(), 300);
+    }, 3800);
+  }
+
+  function confirmAction(title, msg, cb) {
+    document.getElementById('confirm-title').textContent = title;
+    document.getElementById('confirm-msg').textContent = msg;
+    _confirmCallback = cb;
+    document.getElementById('confirm-overlay').classList.add('active');
+  }
+  function closeConfirm() {
+    document.getElementById('confirm-overlay').classList.remove('active');
+    _confirmCallback = null;
+  }
+  function doConfirm() {
+    closeConfirm();
+    if (_confirmCallback) _confirmCallback();
+  }
+
+  // ── Uptime ─────────────────────────────────────────
+  function startUptime(uptimeSecs) {
+    _startTs = Date.now() - uptimeSecs * 1000;
+    clearInterval(_uptimeInterval);
+    _uptimeInterval = setInterval(() => {
+      if (_restarting) return;
+      const s = Math.floor((Date.now() - _startTs) / 1000);
+      const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), sec = s % 60;
+      const parts = [];
+      if (h) parts.push(h + 'h');
+      if (m || h) parts.push(m + 'm');
+      parts.push(sec + 's');
+      document.getElementById('uptime-text').textContent = 'up ' + parts.join(' ');
+    }, 1000);
+  }
+
+  // ── Poll status ────────────────────────────────────
+  async function pollStatus() {
+    if (_restarting) return;
+    try {
+      const d = await api('GET', '/api/admin/status');
+
+      // Server pill
+      const pill = document.getElementById('server-pill');
+      pill.className = 'pill online';
+      pill.innerHTML = '<span class="pulse"></span>Online';
+
+      // DB stats
+      document.getElementById('stat-lb').textContent     = fmt(d.db?.total_lb_numbers);
+      document.getElementById('stat-cs').textContent     = fmt(d.db?.total_checksums);
+      document.getElementById('stat-latest').textContent = fmt(d.db?.latest_lb);
+      const imp = d.db?.last_import;
+      document.getElementById('stat-import').textContent = imp ? imp.slice(0, 10) : '—';
+
+      // Uptime (only init once)
+      if (_startTs == null && d.uptime_seconds != null) startUptime(d.uptime_seconds);
+
+      // Scraper
+      updateScrapeUI(d.scrape);
+
+      // Site Crawler
+      updateCrawlerUI(d.crawler);
+
+      // Import
+      updateImportUI(d.import_status);
+
+      // Master
+      if (d.master) {
+        document.getElementById('master-total').textContent     = fmt(d.master.total);
+        document.getElementById('master-conflicts').textContent = fmt(d.master.conflicts);
+      }
+
+    } catch (e) {
+      if (!_restarting) {
+        const pill = document.getElementById('server-pill');
+        pill.className = 'pill offline';
+        pill.innerHTML = '<span class="pulse"></span>Offline';
+        document.getElementById('uptime-text').textContent = '';
+      }
+    }
+  }
+
+  function updateScrapeUI(s) {
+    if (!s) return;
+    const running = s.running || s.status === 'running';
+    document.getElementById('scrape-status-text').textContent = running ? '🟡 Running' : '⚪ Idle';
+    const done = s.done || 0, total = s.total || 0;
+    document.getElementById('scrape-progress').textContent =
+      total > 0 ? done + ' / ' + fmt(total) : (running ? 'starting…' : '—');
+    const wrap = document.getElementById('scrape-prog-wrap');
+    wrap.style.display = (running && total > 0) ? '' : 'none';
+    if (running && total > 0) {
+      document.getElementById('scrape-prog-bar').style.width = Math.round(done / total * 100) + '%';
+    }
+    document.getElementById('scrape-start-btn').disabled = running;
+    document.getElementById('scrape-stop-btn').disabled  = !running;
+    if (s.current) setStatus('scrape-log', s.current, 'running');
+  }
+
+  function updateImportUI(s) {
+    if (!s) return;
+    const running = s.running;
+    document.getElementById('import-status-text').textContent = running ? '🟡 Running' : '⚪ Idle';
+    const done = s.imported || 0, total = s.total || 0;
+    document.getElementById('import-progress').textContent =
+      total > 0 ? done + ' / ' + fmt(total) : (running ? 'starting…' : '—');
+    const wrap = document.getElementById('import-prog-wrap');
+    wrap.style.display = (running && total > 0) ? '' : 'none';
+    if (running && total > 0) {
+      document.getElementById('import-prog-bar').style.width = Math.round(done / total * 100) + '%';
+    }
+    if (s.error) setStatus('import-log', s.error, 'err');
+    else if (running && s.current_file) setStatus('import-log', s.current_file, 'running');
+  }
+
+  // ── DB actions ─────────────────────────────────────
+  async function dbBackup() {
+    setStatus('db-status', 'Backing up…', 'running');
+    try {
+      const d = await api('POST', '/api/db/backup');
+      if (d.ok) { toast('Backup saved to ' + (d.path || 'data/'), 'success'); setStatus('db-status', 'Done', 'ok'); }
+      else       { toast('Backup failed: ' + (d.error || '?'), 'error'); setStatus('db-status', d.error || 'Error', 'err'); }
+    } catch (e) { toast('Network error', 'error'); setStatus('db-status', 'Network error', 'err'); }
+  }
+
+  async function dbReset() {
+    setStatus('db-status', 'Resetting…', 'running');
+    try {
+      const d = await api('POST', '/api/db/reset');
+      if (d.ok) { toast('Database reset and rebuilt', 'success'); setStatus('db-status', 'Done', 'ok'); pollStatus(); }
+      else       { toast('Reset failed: ' + (d.error || '?'), 'error'); setStatus('db-status', d.error || 'Error', 'err'); }
+    } catch (e) { toast('Network error', 'error'); setStatus('db-status', 'Network error', 'err'); }
+  }
+
+  // ── Flat file ──────────────────────────────────────
+  async function ffDiscover() {
+    const log = document.getElementById('ff-result');
+    log.textContent = '🔍 Checking for update…';
+    setStatus('ff-status', '', '');
+    document.getElementById('ff-apply-btn').style.display = 'none';
+    _pendingFfReleaseId = null;
+    try {
+      const d = await api('GET', '/api/flat_file/discover');
+      if (d.error) { log.textContent = '❌ ' + d.error; return; }
+      if (d.already_imported || d.up_to_date) {
+        log.textContent = '✅ Already up to date.\n' + JSON.stringify(d, null, 2);
+      } else if (d.release_id != null) {
+        _pendingFfReleaseId = d.release_id;
+        log.textContent = '📦 New release found!\n' + JSON.stringify(d, null, 2);
+        document.getElementById('ff-apply-btn').style.display = '';
+        toast('New flat file release available — click Apply to install', 'info');
+      } else {
+        log.textContent = JSON.stringify(d, null, 2);
+      }
+    } catch (e) { log.textContent = '❌ Network error'; }
+  }
+
+  async function ffApply() {
+    if (_pendingFfReleaseId == null) return;
+    const id = _pendingFfReleaseId;
+    const log = document.getElementById('ff-result');
+    log.textContent = '⬇️ Downloading release ' + id + '…';
+    setStatus('ff-status', 'Downloading…', 'running');
+    try {
+      const dl = await api('POST', '/api/flat_file/download/' + id);
+      if (dl.error) { log.textContent += '\n❌ Download: ' + dl.error; setStatus('ff-status', dl.error, 'err'); return; }
+      log.textContent += '\n✅ Downloaded. Applying…';
+      setStatus('ff-status', 'Applying…', 'running');
+      const ap = await api('POST', '/api/flat_file/apply/' + id);
+      if (ap.error) { log.textContent += '\n❌ Apply: ' + ap.error; setStatus('ff-status', ap.error, 'err'); return; }
+      log.textContent += '\n✅ Applied!\n' + JSON.stringify(ap, null, 2);
+      setStatus('ff-status', 'Done', 'ok');
+      toast('Flat file update applied', 'success');
+      document.getElementById('ff-apply-btn').style.display = 'none';
+      _pendingFfReleaseId = null;
+      pollStatus();
+    } catch (e) { log.textContent += '\n❌ Network error'; setStatus('ff-status', 'Error', 'err'); }
+  }
+
+  // ── Scraper ────────────────────────────────────────
+  async function scrapeStart() {
+    try {
+      const d = await api('POST', '/api/scrape/start', {});
+      if (d.ok) toast('Scrape started', 'success');
+      else toast('Could not start: ' + (d.error || '?'), 'error');
+      pollStatus();
+    } catch (e) { toast('Network error', 'error'); }
+  }
+
+  async function scrapeStop() {
+    try {
+      await api('POST', '/api/scrape/stop');
+      toast('Stop signal sent', 'warning');
+      setStatus('scrape-log', 'Stop requested…', 'running');
+    } catch (e) { toast('Network error', 'error'); }
+  }
+
+  // ── LB Master ──────────────────────────────────────
+  async function masterReconcile() {
+    setStatus('master-status', 'Reconciling…', 'running');
+    try {
+      const d = await api('POST', '/api/lb_master/reconcile');
+      if (d.ok) { toast('Reconcile complete', 'success'); setStatus('master-status', 'Done', 'ok'); pollStatus(); }
+      else       { toast('Reconcile failed: ' + (d.error || '?'), 'error'); setStatus('master-status', d.error || 'Error', 'err'); }
+    } catch (e) { toast('Network error', 'error'); setStatus('master-status', 'Error', 'err'); }
+  }
+
+  // ── Server restart ─────────────────────────────────
+  async function serverRestart() {
+    const pill = document.getElementById('server-pill');
+    pill.className = 'pill warning';
+    pill.innerHTML = '<span class="pulse"></span>Restarting…';
+    setStatus('server-status', 'Restart requested…', 'running');
+    _restarting = true;
+    try {
+      await api('POST', '/api/admin/restart');
+    } catch (_) {}
+    toast('Server restarting — reconnecting…', 'warning');
+    // Poll until backend comes back
+    setTimeout(waitForRestart, 2000);
+  }
+
+  async function waitForRestart() {
+    try {
+      const d = await api('GET', '/api/admin/status');
+      if (d.db) {
+        _restarting = false;
+        _startTs = null;
+        setStatus('server-status', 'Back online', 'ok');
+        toast('Server restarted successfully', 'success');
+        pollStatus();
+      } else throw new Error('not ready');
+    } catch (_) {
+      setTimeout(waitForRestart, 1500);
+    }
+  }
+
+  // ── Site Crawler ──────────────────────────────────
+  let _crawlerDialogInterval = null;
+
+  function updateCrawlerUI(c) {
+    if (!c) return;
+    const running = c.running;
+    const stage   = c.stage || 'idle';
+    document.getElementById('crawl-status-text').textContent = running ? '🟡 ' + stage : '⚪ Idle';
+    document.getElementById('crawl-fetched').textContent     = running ? fmt(c.fetched) : (c.fetched ? fmt(c.fetched) : '—');
+    const queue = c.queue_size || 0;
+    const total = (c.fetched || 0) + queue;
+    const wrap  = document.getElementById('crawl-prog-wrap');
+    wrap.style.display = (running && total > 0) ? '' : 'none';
+    if (running && total > 0) {
+      document.getElementById('crawl-prog-bar').style.width =
+        Math.round((c.fetched || 0) / total * 100) + '%';
+    }
+    document.getElementById('crawl-start-btn').disabled = running;
+    document.getElementById('crawl-full-btn').disabled  = running;
+    document.getElementById('crawl-stop-btn').disabled  = !running;
+    if (running && c.current_url) {
+      setStatus('crawl-log', c.current_url, 'running');
+    } else if (!running && stage === 'done') {
+      setStatus('crawl-log', 'Done — ' + fmt(c.fetched) + ' fetched', 'ok');
+    } else if (!running && stage === 'error') {
+      setStatus('crawl-log', c.message || 'Error', 'err');
+    }
+  }
+
+  async function crawlerStart(scope) {
+    try {
+      const d = await api('POST', '/api/crawler/start', { scope });
+      if (d.ok) { toast('Crawler started (' + scope + ')', 'success'); pollStatus(); }
+      else toast('Could not start: ' + (d.error || '?'), 'error');
+    } catch (e) { toast('Network error', 'error'); }
+  }
+
+  async function crawlerStop() {
+    try {
+      await api('POST', '/api/crawler/stop');
+      toast('Stop signal sent', 'warning');
+      document.getElementById('cd-stop-btn').disabled = true;
+    } catch (e) { toast('Network error', 'error'); }
+  }
+
+  function _syncCrawlerDialog(c) {
+    if (!c) return;
+    const running = c.running;
+    document.getElementById('cd-stage-val').textContent = c.stage || 'idle';
+    document.getElementById('cd-fetched').textContent   = fmt(c.fetched) || '0';
+    document.getElementById('cd-304').textContent       = fmt(c.not_modified) || '0';
+    document.getElementById('cd-skipped').textContent   = fmt(c.skipped) || '0';
+    document.getElementById('cd-failed').textContent    = fmt(c.failed) || '0';
+    document.getElementById('cd-current').textContent   = c.current_url || (c.message || '—');
+    document.getElementById('cd-stop-btn').disabled     = !running;
+  }
+
+  async function _pollCrawlerDialog() {
+    try {
+      const c = await api('GET', '/api/crawler/status');
+      _syncCrawlerDialog(c);
+      updateCrawlerUI(c);
+    } catch (_) {}
+  }
+
+  function openCrawlerDialog() {
+    document.getElementById('crawler-dialog').classList.add('active');
+    _pollCrawlerDialog();
+    _crawlerDialogInterval = setInterval(_pollCrawlerDialog, 1500);
+  }
+
+  function closeCrawlerDialog() {
+    document.getElementById('crawler-dialog').classList.remove('active');
+    clearInterval(_crawlerDialogInterval);
+    _crawlerDialogInterval = null;
+  }
+
+  // Close dialog on backdrop click
+  document.getElementById('crawler-dialog').addEventListener('click', function(e) {
+    if (e.target === this) closeCrawlerDialog();
+  });
+
+  // ── Init ───────────────────────────────────────────
+  pollStatus();
+  _pollInterval = setInterval(pollStatus, 5000);
+</script>
+</body>
+</html>
