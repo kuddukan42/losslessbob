@@ -128,6 +128,9 @@ def create_app() -> Flask:
             JSON {ok, running} or 404 if file not found.
         """
         try:
+            if importer.get_import_status().get("running"):
+                return jsonify({"ok": False, "error": "Import already running"}), 409
+
             data = request.get_json()
             file_path = data.get("file_path", "")
             path = Path(file_path)

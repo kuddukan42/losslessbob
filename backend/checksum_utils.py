@@ -426,6 +426,12 @@ def verify_folder(folder_path):
                 expected[fname] = {}
             if ext == '.st5':
                 expected[fname]['st5'] = hval
+                # ST5 files contain shntool-format MD5s; use them for
+                # verification when no shntool hash was already supplied
+                # by a .md5 file.
+                if not expected[fname].get('shntool'):
+                    expected[fname]['shntool'] = hval
+                has_shntool_entries = True
             else:
                 expected[fname][htype] = hval
                 if htype == 'ffp':

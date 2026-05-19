@@ -1,3 +1,50 @@
+BUG-079: .st5 hashes parsed but never verified — stored under wrong dict key
+Status: Fixed
+File(s): backend/checksum_utils.py:verify_folder
+Reported: 2026-05-19
+Fixed: 2026-05-19
+Description: .st5 files contain shntool-format MD5s and are parsed correctly by
+  _parse_checksum_file (via _SHNTOOL_LINE_RE). However verify_folder stored them under
+  expected[fname]['st5'] rather than ['shntool'], so shn_exp = exp.get('shntool') was
+  always None, shntool verification was skipped, and st5_status was always 'na'. A folder
+  with only a .st5 file (no .md5 shntool section) would get status='no_checksums'.
+Root cause: The ext == '.st5' branch in verify_folder used a separate 'st5' key that no
+  downstream verification code read from, while the verification code only checked 'shntool'.
+Fix: .st5 entries now also set expected[fname]['shntool'] (when not already present from a
+  .md5 file) and has_shntool_entries = True, so shntool verification runs normally.
+
+---
+
+BUG-078: /api/db/import POST route has no concurrency guard — concurrent imports corrupt state
+Status: Fixed
+File(s): backend/app.py:db_import
+Reported: 2026-05-19
+Fixed: 2026-05-19
+Description: Unlike every other long-running operation (scraper, geocoder, spectrogram, site
+  crawler — all guarded with 409), start_import_async() was called unconditionally. Two rapid
+  POST requests could start concurrent imports, corrupt _import_state, and double-execute the
+  DB merge. The first to finish would delete temp_import.db; the second would then error.
+Root cause: Missing "already running" guard before start_import_async().
+Fix: Added get_import_status().get("running") check; returns 409 if True, matching the
+  pattern used by all other long-running routes.
+
+---
+
+BUG-077: flat_file._DOWNLOADS_DIR uses relative path — wrong location if CWD ≠ project root
+Status: Fixed
+File(s): backend/flat_file.py:29
+Reported: 2026-05-19
+Fixed: 2026-05-19
+Description: _DOWNLOADS_DIR = Path("data/downloads") resolved relative to the process CWD.
+  In development (CWD = project root) this worked, but on a frozen/PyInstaller build or when
+  launched from another directory, download_flat_file_release put zips in the wrong location,
+  and diff_flat_file_release / apply_flat_file_release raised FileNotFoundError because the
+  zip was not found at the CWD-relative path.
+Root cause: flat_file.py did not import from backend.paths, unlike all other modules.
+Fix: Imported DATA_DIR from .paths and changed to _DOWNLOADS_DIR = DATA_DIR / "downloads".
+
+---
+
 BUG-076: Admin "Restart Server" button restarted the entire app including the GUI
 Status: Fixed
 File(s): main.py, backend/app.py, backend/admin.html

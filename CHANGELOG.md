@@ -1,3 +1,17 @@
+[2026-05-19] — fix(backend): flat_file relative path, import concurrency guard, .st5 verification
+
+Fixed
+
+  backend/flat_file.py: _DOWNLOADS_DIR was Path("data/downloads") (relative to CWD).
+    Changed to DATA_DIR / "downloads" so download/diff/apply work regardless of CWD.
+  backend/app.py: /api/db/import POST had no "already running" guard. Two rapid requests
+    could start concurrent imports, corrupting _import_state and double-executing the DB merge.
+    Added 409 guard matching the pattern used by all other long-running routes.
+  backend/checksum_utils.py: .st5 files parsed correctly (via _SHNTOOL_LINE_RE) but stored
+    under 'st5' key only — shn_exp = exp.get('shntool') was always None, so verification
+    never ran and st5_status was hardcoded 'na'. Fixed: .st5 entries now also populate the
+    'shntool' key (when not already set by a .md5 file) and set has_shntool_entries = True.
+
 [2026-05-19] — feat(backend): run_backend.py standalone launcher for phone/LAN use
 
 Added
