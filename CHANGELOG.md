@@ -189,6 +189,14 @@ Changed
     geocode_locations.py), location_geocoded schema, six new API routes (GET /map,
     GET /api/map/data, POST/GET /api/geocode/*), tab count updated to 11
 
+---
+
+[2026-05-19] — docs(backend): add type hints and Google-style docstrings to all app.py route handlers (TODO-004)
+
+Changed
+
+backend/app.py: Added `Response` to module-level Flask imports. Added `-> Flask` return type and one-line docstring to `create_app()`. Added `-> Response` return types to all 67 route handler functions. Added URL path-parameter type hints across all parameterised routes. Added Google-style docstrings to 47 route functions that previously had none; left 20 existing docstrings unchanged. Added docstring and parameter types to `_start_scrape_thread()` and `_do_spectro_batch()` helpers.
+
 [2026-05-17] — fix(gui): Column widths now actually persist across restarts (GuiStateStore root-cause fix)
 
 Fixed

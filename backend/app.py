@@ -4,7 +4,7 @@ import shutil
 import threading
 from pathlib import Path
 
-from flask import Flask, jsonify, request, send_file, send_from_directory, abort
+from flask import Flask, jsonify, request, send_file, send_from_directory, abort, Response
 from flask_cors import CORS
 
 from backend import db as database
@@ -44,7 +44,8 @@ def _find_lbdir_in_folder(folder: Path) -> "Path | None":
     return None
 
 
-def create_app():
+def create_app() -> Flask:
+    """Create and configure the Flask application."""
     import backend.startup_log as _slog
     _slog.t("Flask: create_app start")
     app = Flask(__name__)
@@ -60,7 +61,13 @@ def create_app():
     # ── Checksum Lookup ──────────────────────────────────────────────────────
 
     @app.route("/api/lookup", methods=["POST"])
-    def lookup():
+    def lookup() -> Response:
+        """Look up checksums from pasted text and return match results.
+
+        Body: {text: <raw checksum block>}
+        Returns:
+            JSON with summary and detail match lists, or 400/500 on error.
+        """
         try:
             data = request.get_json()
             text = data.get("text", "")
@@ -75,21 +82,37 @@ def create_app():
     # ── Database Management ──────────────────────────────────────────────────
 
     @app.route("/api/db/stats", methods=["GET"])
-    def db_stats():
+    def db_stats() -> Response:
+        """Return database row counts and metadata statistics.
+
+        Returns:
+            JSON dict with counts for entries, checksums, and other DB stats.
+        """
         try:
             return jsonify(database.get_stats())
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
     @app.route("/api/db/missing_lb_numbers", methods=["GET"])
-    def db_missing_lb_numbers():
+    def db_missing_lb_numbers() -> Response:
+        """Return a list of LB numbers in the checksums table that have no entries row.
+
+        Returns:
+            JSON list of integer LB numbers.
+        """
         try:
             return jsonify(database.get_missing_lb_numbers())
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
     @app.route("/api/db/import", methods=["POST"])
-    def db_import():
+    def db_import() -> Response:
+        """Trigger an async import of a flat-file checksum DB.
+
+        Body: {file_path: "/abs/path/to/file"}
+        Returns:
+            JSON {ok, running} or 404 if file not found.
+        """
         try:
             data = request.get_json()
             file_path = data.get("file_path", "")
@@ -114,14 +137,26 @@ def create_app():
             return jsonify({"error": str(e)}), 500
 
     @app.route("/api/db/import/status", methods=["GET"])
-    def db_import_status():
+    def db_import_status() -> Response:
+        """Return current status of the background import worker.
+
+        Returns:
+            JSON import status dict from importer.get_import_status().
+        """
         try:
             return jsonify(importer.get_import_status())
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
     @app.route("/api/db/settings", methods=["GET", "POST"])
-    def db_settings():
+    def db_settings() -> Response:
+        """Get or update persistent application settings stored in the meta table.
+
+        GET returns a dict of known setting keys and their current values.
+        POST body: {key: value, ...} — writes each pair via set_meta().
+        Returns:
+            JSON settings dict (GET) or {ok: true} (POST).
+        """
         try:
             if request.method == "POST":
                 data = request.get_json() or {}
@@ -138,7 +173,13 @@ def create_app():
             return jsonify({"error": str(e)}), 500
 
     @app.route("/api/db/reset", methods=["POST"])
-    def db_reset():
+    def db_reset() -> Response:
+        """Drop all checksum/entry tables and reinitialise the schema from scratch.
+
+        Preserves collection, wishlist, and personal metadata.
+        Returns:
+            JSON {ok: true} or 500 on error.
+        """
         try:
             conn = database.get_connection()
             # Disable FK enforcement for the duration of the drop so that
@@ -173,7 +214,7 @@ def create_app():
     # ── Flat file update pipeline ─────────────────────────────────────────────
 
     @app.route("/api/flat_file/discover", methods=["GET"])
-    def flat_file_discover():
+    def flat_file_discover() -> Response:
         """Live check for a new flat-file release on the LosslessBob download page."""
         from . import flat_file as ff
         try:
@@ -249,7 +290,15 @@ def create_app():
     # ── Entry Detail & Attachments ───────────────────────────────────────────
 
     @app.route("/api/entry/<int:lb_number>", methods=["GET"])
-    def get_entry(lb_number):
+    def get_entry(lb_number: int) -> Response:
+        """Return metadata for a single LB entry.
+
+        Args:
+            lb_number: The LB number to look up.
+
+        Returns:
+            JSON dict with entry fields, or 404 if not found.
+        """
         try:
             data = database.get_entry(lb_number)
             if not data:
@@ -259,7 +308,15 @@ def create_app():
             return jsonify({"error": str(e)}), 500
 
     @app.route("/api/entry/<int:lb_number>/files", methods=["GET"])
-    def get_entry_files(lb_number):
+    def get_entry_files(lb_number: int) -> Response:
+        """Return all entry_files rows for a single LB entry.
+
+        Args:
+            lb_number: The LB number whose files to retrieve.
+
+        Returns:
+            JSON list of entry_files dicts.
+        """
         try:
             with database.get_connection() as conn:
                 files = conn.execute(
@@ -270,7 +327,16 @@ def create_app():
             return jsonify({"error": str(e)}), 500
 
     @app.route("/api/attachment/<int:lb_number>/<path:filename>", methods=["GET"])
-    def get_attachment(lb_number, filename):
+    def get_attachment(lb_number: int, filename: str) -> Response:
+        """Serve a downloaded attachment file for an LB entry.
+
+        Args:
+            lb_number: The LB number owning the attachment.
+            filename: Clean filename (no LBF- prefix); looked up in entry_files.
+
+        Returns:
+            The file contents, or 404 if not found.
+        """
         # filename is the clean_name (no LBF- prefix); look up original filename
         row = database.get_connection().execute(
             "SELECT filename FROM entry_files WHERE lb_number=? AND clean_name=?",
@@ -284,7 +350,16 @@ def create_app():
         return send_file(str(file_path))
 
     @app.route("/api/entry/<int:lb_number>/changes", methods=["GET"])
-    def entry_changes(lb_number):
+    def entry_changes(lb_number: int) -> Response:
+        """Return field-level change history for a single LB entry.
+
+        Args:
+            lb_number: The LB number to query.
+
+        Returns:
+            JSON list of {field, old_value, new_value, changed_at} dicts,
+            ordered by changed_at DESC. Query param: limit (default 50).
+        """
         try:
             limit = int(request.args.get("limit", 50))
             conn = database.get_connection()
@@ -299,7 +374,16 @@ def create_app():
             return jsonify({"error": str(e)}), 500
 
     @app.route("/api/entry/<int:lb_number>/scrape", methods=["POST"])
-    def scrape_entry_route(lb_number):
+    def scrape_entry_route(lb_number: int) -> Response:
+        """Scrape (or force re-scrape) a single LB entry from the source site.
+
+        Args:
+            lb_number: The LB number to scrape.
+
+        Body: {force: bool}
+        Returns:
+            JSON result dict from scraper.scrape_entry().
+        """
         try:
             data = request.get_json() or {}
             force = data.get("force", False)
@@ -314,7 +398,13 @@ def create_app():
     # ── Search ───────────────────────────────────────────────────────────────
 
     @app.route("/api/search", methods=["GET"])
-    def search():
+    def search() -> Response:
+        """Search entries by keyword, field filter, and optional year.
+
+        Query params: q (text), field (all|title|location|etc.), year (int).
+        Returns:
+            JSON list of matching entry dicts.
+        """
         # NOTE: sort_col/sort_dir accepted for API completeness; the GUI currently
         # performs in-memory sorting on the full result set.
         try:
@@ -350,28 +440,51 @@ def create_app():
             return jsonify({"error": str(e)}), 500
 
     @app.route("/api/search/years", methods=["GET"])
-    def search_years():
+    def search_years() -> Response:
+        """Return the distinct years present in the entries table.
+
+        Returns:
+            JSON list of year strings for populating filter dropdowns.
+        """
         try:
             return jsonify(database.get_distinct_years())
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
     @app.route("/api/checksums/xref_lb_numbers", methods=["GET"])
-    def xref_lb_numbers():
+    def xref_lb_numbers() -> Response:
+        """Return LB numbers that have at least one xref checksum record.
+
+        Returns:
+            JSON list of integer LB numbers.
+        """
         try:
             return jsonify(database.get_xref_lb_numbers())
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
     @app.route("/api/checksums/xref_map", methods=["GET"])
-    def xref_map():
+    def xref_map() -> Response:
+        """Return a mapping of xref identifiers to their canonical LB numbers.
+
+        Returns:
+            JSON dict {xref_id: lb_number}.
+        """
         try:
             return jsonify(database.get_xref_map())
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
     @app.route("/api/entries/year/<year>", methods=["GET"])
-    def entries_by_year(year):
+    def entries_by_year(year: str) -> Response:
+        """Return all entries for a given year string.
+
+        Args:
+            year: The year to filter by (e.g. "1979").
+
+        Returns:
+            JSON list of entry dicts for that year.
+        """
         try:
             results = database.get_entries_by_year(year)
             return jsonify(results)
@@ -381,7 +494,12 @@ def create_app():
     # ── My Collection ────────────────────────────────────────────────────────
 
     @app.route("/api/collection", methods=["GET"])
-    def collection_list():
+    def collection_list() -> Response:
+        """Return all entries in the user's collection.
+
+        Returns:
+            JSON list of my_collection row dicts.
+        """
         # NOTE: sort_col/sort_dir accepted for API completeness; the GUI currently
         # performs in-memory sorting on the full result set.
         try:
@@ -405,7 +523,13 @@ def create_app():
             return jsonify({"error": str(e)}), 500
 
     @app.route("/api/collection", methods=["POST"])
-    def collection_add():
+    def collection_add() -> Response:
+        """Add an LB entry to the user's collection.
+
+        Body: {lb_number, folder_name, disk_path, notes?}
+        Returns:
+            JSON {ok, added} or 400 if required fields are missing.
+        """
         try:
             data = request.get_json() or {}
             lb = data.get("lb_number")
@@ -420,7 +544,16 @@ def create_app():
             return jsonify({"error": str(e)}), 500
 
     @app.route("/api/collection/<int:lb>", methods=["PATCH"])
-    def collection_update(lb):
+    def collection_update(lb: int) -> Response:
+        """Update fields on an existing collection entry.
+
+        Args:
+            lb: The LB number to update.
+
+        Body: {field: value, ...}
+        Returns:
+            JSON {ok: true}.
+        """
         try:
             data = request.get_json() or {}
             database.update_collection(lb, data)
@@ -429,7 +562,15 @@ def create_app():
             return jsonify({"error": str(e)}), 500
 
     @app.route("/api/collection/<int:lb>", methods=["DELETE"])
-    def collection_delete(lb):
+    def collection_delete(lb: int) -> Response:
+        """Remove an LB entry from the user's collection.
+
+        Args:
+            lb: The LB number to remove.
+
+        Returns:
+            JSON {ok: true}.
+        """
         try:
             database.delete_from_collection(lb)
             return jsonify({"ok": True})
@@ -437,7 +578,12 @@ def create_app():
             return jsonify({"error": str(e)}), 500
 
     @app.route("/api/collection/missing", methods=["GET"])
-    def collection_missing():
+    def collection_missing() -> Response:
+        """Return collection entries whose disk_path no longer exists on disk.
+
+        Returns:
+            JSON list of collection row dicts with missing paths.
+        """
         # NOTE: sort_col/sort_dir accepted for API completeness; the GUI currently
         # performs in-memory sorting on the full result set.
         try:
@@ -460,7 +606,13 @@ def create_app():
             return jsonify({"error": str(e)}), 500
 
     @app.route("/api/collection/search", methods=["GET"])
-    def collection_search():
+    def collection_search() -> Response:
+        """Search the user's collection by keyword.
+
+        Query params: q (text).
+        Returns:
+            JSON list of matching collection row dicts.
+        """
         try:
             q = request.args.get("q", "")
             return jsonify(database.search_collection(q))
@@ -468,7 +620,12 @@ def create_app():
             return jsonify({"error": str(e)}), 500
 
     @app.route("/api/collection/lb_numbers", methods=["GET"])
-    def collection_lb_numbers():
+    def collection_lb_numbers() -> Response:
+        """Return all LB numbers currently in the user's collection.
+
+        Returns:
+            JSON list of integer LB numbers.
+        """
         try:
             return jsonify(database.get_owned_lb_numbers())
         except Exception as e:
@@ -477,14 +634,31 @@ def create_app():
     # ── FEAT-03: Personal Metadata ───────────────────────────────────────────
 
     @app.route("/api/collection/<int:lb>/meta", methods=["GET"])
-    def get_coll_meta(lb):
+    def get_coll_meta(lb: int) -> Response:
+        """Return personal metadata for a collection entry.
+
+        Args:
+            lb: The LB number to retrieve metadata for.
+
+        Returns:
+            JSON dict of personal metadata key/value pairs.
+        """
         try:
             return jsonify(database.get_collection_meta(lb))
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
     @app.route("/api/collection/<int:lb>/meta", methods=["POST"])
-    def set_coll_meta(lb):
+    def set_coll_meta(lb: int) -> Response:
+        """Set personal metadata for a collection entry.
+
+        Args:
+            lb: The LB number to update metadata for.
+
+        Body: {key: value, ...}
+        Returns:
+            JSON {ok: true}.
+        """
         try:
             database.set_collection_meta(lb, request.get_json() or {})
             return jsonify({"ok": True})
@@ -492,7 +666,15 @@ def create_app():
             return jsonify({"error": str(e)}), 500
 
     @app.route("/api/collection/<int:lb>/listen", methods=["POST"])
-    def log_listen(lb):
+    def log_listen(lb: int) -> Response:
+        """Increment the listen count for a collection entry.
+
+        Args:
+            lb: The LB number to log a listen for.
+
+        Returns:
+            JSON {ok: true}.
+        """
         try:
             database.increment_listen_count(lb)
             return jsonify({"ok": True})
@@ -502,14 +684,25 @@ def create_app():
     # ── FEAT-04: Wishlist ────────────────────────────────────────────────────
 
     @app.route("/api/wishlist", methods=["GET"])
-    def wishlist_list():
+    def wishlist_list() -> Response:
+        """Return all entries in the user's wishlist.
+
+        Returns:
+            JSON list of wishlist row dicts.
+        """
         try:
             return jsonify(database.get_wishlist())
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
     @app.route("/api/wishlist", methods=["POST"])
-    def wishlist_add():
+    def wishlist_add() -> Response:
+        """Add an LB entry to the user's wishlist.
+
+        Body: {lb_number, priority?, notes?}
+        Returns:
+            JSON {ok, added} or 400 if lb_number is missing.
+        """
         try:
             data = request.get_json() or {}
             lb = data.get("lb_number")
@@ -521,7 +714,15 @@ def create_app():
             return jsonify({"error": str(e)}), 500
 
     @app.route("/api/wishlist/<int:lb>", methods=["DELETE"])
-    def wishlist_remove(lb):
+    def wishlist_remove(lb: int) -> Response:
+        """Remove an LB entry from the user's wishlist.
+
+        Args:
+            lb: The LB number to remove.
+
+        Returns:
+            JSON {ok: true}.
+        """
         try:
             database.remove_from_wishlist(lb)
             return jsonify({"ok": True})
@@ -531,7 +732,12 @@ def create_app():
     # ── FEAT-05: Duplicate Detector ──────────────────────────────────────────
 
     @app.route("/api/collection/duplicates", methods=["GET"])
-    def collection_duplicates():
+    def collection_duplicates() -> Response:
+        """Return collection entries that share the same LB number (duplicates).
+
+        Returns:
+            JSON list of duplicate collection row dicts.
+        """
         try:
             return jsonify(database.get_collection_duplicates())
         except Exception as e:
@@ -540,7 +746,13 @@ def create_app():
     # ── FEAT-13: Granular Collection Data Management ─────────────────────────
 
     @app.route("/api/collection/purge", methods=["POST"])
-    def collection_purge():
+    def collection_purge() -> Response:
+        """Purge all rows from a named user-data table.
+
+        Body: {scope: collection|wishlist|personal_meta|integrity_events|entry_changes}
+        Returns:
+            JSON {ok, scope} or 400 for unknown scope.
+        """
         try:
             scope = (request.get_json() or {}).get("scope", "collection")
             dispatch = {
@@ -558,7 +770,13 @@ def create_app():
             return jsonify({"error": str(e)}), 500
 
     @app.route("/api/collection/delete_bulk", methods=["POST"])
-    def collection_delete_bulk():
+    def collection_delete_bulk() -> Response:
+        """Delete multiple collection entries by LB number in one request.
+
+        Body: {lb_numbers: [int, ...]}
+        Returns:
+            JSON {ok, deleted} count, or 400 if lb_numbers is empty.
+        """
         try:
             lb_numbers = (request.get_json() or {}).get("lb_numbers", [])
             if not lb_numbers:
@@ -573,7 +791,13 @@ def create_app():
     # ── Scraper Control ──────────────────────────────────────────────────────
 
     @app.route("/api/scrape/start", methods=["POST"])
-    def scrape_start():
+    def scrape_start() -> Response:
+        """Start a background scrape over a range of LB numbers.
+
+        Body: {start_lb?, end_lb?, force?}
+        Returns:
+            JSON {ok, total} where total is the number of LBs queued.
+        """
         try:
             data = request.get_json() or {}
             start_lb = data.get("start_lb", 1)
@@ -608,11 +832,21 @@ def create_app():
             return jsonify({"error": str(e)}), 500
 
     @app.route("/api/scrape/status", methods=["GET"])
-    def scrape_status():
+    def scrape_status() -> Response:
+        """Return current status of the background scrape worker.
+
+        Returns:
+            JSON status dict from scraper.get_scrape_status().
+        """
         return jsonify(scraper.get_scrape_status())
 
     @app.route("/api/scrape/stop", methods=["POST"])
-    def scrape_stop():
+    def scrape_stop() -> Response:
+        """Signal the background scrape worker to stop after the current entry.
+
+        Returns:
+            JSON {ok: true}.
+        """
         scraper.stop_scrape()
         return jsonify({"ok": True})
 
@@ -655,7 +889,7 @@ def create_app():
             return jsonify({"error": str(e)}), 500
 
     @app.route("/api/scrape/private_rescrape", methods=["POST"])
-    def scrape_private_rescrape():
+    def scrape_private_rescrape() -> Response:
         """Force re-scrape of all currently-Private LBs to detect newly-published pages.
 
         Uses force=True so LBs with a prior 'missing' result are re-attempted.
@@ -880,7 +1114,13 @@ def create_app():
     # ── Verify ───────────────────────────────────────────────────────────────
 
     @app.route("/api/verify", methods=["POST"])
-    def verify():
+    def verify() -> Response:
+        """Verify checksums for a list of local folders against the DB.
+
+        Body: {folders: ["/path/to/folder", ...]}
+        Returns:
+            JSON {results: [verify_result, ...]} or 400 if folders is empty.
+        """
         try:
             data = request.get_json() or {}
             folders = data.get("folders", [])
@@ -892,7 +1132,13 @@ def create_app():
             return jsonify({"error": str(e)}), 500
 
     @app.route("/api/verify/generate", methods=["POST"])
-    def verify_generate():
+    def verify_generate() -> Response:
+        """Generate checksum files (_mychecksums_*) for a list of folders.
+
+        Body: {folders: ["/path/to/folder", ...]}
+        Returns:
+            JSON {results: [generate_result, ...]} or 400 if folders is empty.
+        """
         try:
             data = request.get_json() or {}
             folders = data.get("folders", [])
@@ -906,7 +1152,13 @@ def create_app():
     # ── LBDir ────────────────────────────────────────────────────────────────
 
     @app.route("/api/lbdir/check", methods=["POST"])
-    def lbdir_check():
+    def lbdir_check() -> Response:
+        """Verify each folder's files against its lbdir*.txt checksum list.
+
+        Body: {folders: ["/path/to/folder", ...]}
+        Returns:
+            JSON {results: [lbdir_check_result, ...]} or 400 if folders is empty.
+        """
         try:
             data = request.get_json() or {}
             folders = data.get("folders", [])
@@ -948,7 +1200,14 @@ def create_app():
             return jsonify({"error": str(e)}), 500
 
     @app.route("/api/lbdir/retrieve", methods=["POST"])
-    def lbdir_retrieve():
+    def lbdir_retrieve() -> Response:
+        """Copy the lbdir*.txt from the attachments cache into each folder.
+
+        Scrapes the LB entry first if the attachment has not yet been downloaded.
+        Body: {folders: ["/path/to/folder", ...]}
+        Returns:
+            JSON {results: [retrieve_result, ...]} or 400 if folders is empty.
+        """
         try:
             data = request.get_json() or {}
             folders = data.get("folders", [])
@@ -1016,7 +1275,7 @@ def create_app():
             return jsonify({"error": str(e)}), 500
 
     @app.route("/api/lbdir/reconcile", methods=["POST"])
-    def lbdir_reconcile():
+    def lbdir_reconcile() -> Response:
         """Preview: find disk files whose MD5 matches missing lbdir entries. Does NOT move files."""
         try:
             data = request.get_json() or {}
@@ -1039,7 +1298,7 @@ def create_app():
             return jsonify({"error": str(e)}), 500
 
     @app.route("/api/lbdir/apply_reconcile", methods=["POST"])
-    def lbdir_apply_reconcile():
+    def lbdir_apply_reconcile() -> Response:
         """Apply verified rename/move proposals inside a single folder. Never deletes files."""
         try:
             data = request.get_json() or {}
@@ -1060,7 +1319,7 @@ def create_app():
             return jsonify({"error": str(e)}), 500
 
     @app.route("/api/lbdir/find_extra", methods=["POST"])
-    def lbdir_find_extra():
+    def lbdir_find_extra() -> Response:
         """List files in each folder that are not referenced in the lbdir MD5 section."""
         try:
             data = request.get_json() or {}
@@ -1083,7 +1342,7 @@ def create_app():
             return jsonify({"error": str(e)}), 500
 
     @app.route("/api/lbdir/delete_extra", methods=["POST"])
-    def lbdir_delete_extra():
+    def lbdir_delete_extra() -> Response:
         """Permanently delete specified extra files and any resulting empty subdirectories."""
         try:
             data = request.get_json() or {}
@@ -1116,7 +1375,7 @@ def create_app():
     # ── Spectrogram ──────────────────────────────────────────────────────────
 
     @app.route("/api/spectrogram/check", methods=["GET"])
-    def spectrogram_check():
+    def spectrogram_check() -> Response:
         """Return tool availability for the Setup tab indicator."""
         from backend.sox_utils import check_sox_version, get_ffmpeg
         from backend.checksum_utils import check_shntool_version
@@ -1132,7 +1391,7 @@ def create_app():
         })
 
     @app.route("/api/spectrogram/generate", methods=["POST"])
-    def spectrogram_generate():
+    def spectrogram_generate() -> Response:
         """
         Start batch spectrogram generation for a list of folders.
         Body: {
@@ -1165,18 +1424,28 @@ def create_app():
         return jsonify({"ok": True})
 
     @app.route("/api/spectrogram/status", methods=["GET"])
-    def spectrogram_status():
+    def spectrogram_status() -> Response:
+        """Return current status of the spectrogram batch generation worker.
+
+        Returns:
+            JSON copy of the _spectro_state dict.
+        """
         with _spectro_lock:
             return jsonify(dict(_spectro_state))
 
     @app.route("/api/spectrogram/stop", methods=["POST"])
-    def spectrogram_stop():
+    def spectrogram_stop() -> Response:
+        """Request the spectrogram batch worker to stop after the current file.
+
+        Returns:
+            JSON {ok: true}.
+        """
         with _spectro_lock:
             _spectro_state["stop_requested"] = True
         return jsonify({"ok": True})
 
     @app.route("/api/spectrogram/list", methods=["POST"])
-    def spectrogram_list():
+    def spectrogram_list() -> Response:
         """
         Return a dict of {folder -> [entry, ...]} for the viewer.
         Body: {folders: [...]}
@@ -1214,7 +1483,12 @@ def create_app():
     # ── FEAT-14: DB Editor ───────────────────────────────────────────────────
 
     @app.route("/api/dbedit/tables", methods=["GET"])
-    def dbedit_tables():
+    def dbedit_tables() -> Response:
+        """List all user-visible tables and views with row counts and edit flags.
+
+        Returns:
+            JSON list of {name, row_count, readonly, audit, warn} dicts.
+        """
         try:
             conn = database.get_connection()
             rows = conn.execute(
@@ -1247,7 +1521,15 @@ def create_app():
             return jsonify({"error": str(e)}), 500
 
     @app.route("/api/dbedit/table/<name>/schema", methods=["GET"])
-    def dbedit_schema(name):
+    def dbedit_schema(name: str) -> Response:
+        """Return PRAGMA table_info columns for a named table.
+
+        Args:
+            name: The SQLite table name to inspect.
+
+        Returns:
+            JSON list of column info dicts from PRAGMA table_info.
+        """
         try:
             conn = database.get_connection()
             cols = conn.execute(
@@ -1258,7 +1540,16 @@ def create_app():
             return jsonify({"error": str(e)}), 500
 
     @app.route("/api/dbedit/table/<name>/rows", methods=["GET"])
-    def dbedit_rows(name):
+    def dbedit_rows(name: str) -> Response:
+        """Return a paginated, searchable, sortable slice of a table's rows.
+
+        Args:
+            name: The SQLite table name to query.
+
+        Query params: page, limit (max 500), search, sort_col, sort_dir, lb_number.
+        Returns:
+            JSON {columns, rows, total, page, limit}.
+        """
         try:
             page     = int(request.args.get("page", 0))
             limit    = min(int(request.args.get("limit", 100)), 500)
@@ -1313,7 +1604,16 @@ def create_app():
             return jsonify({"error": str(e)}), 500
 
     @app.route("/api/dbedit/table/<name>/row", methods=["PATCH"])
-    def dbedit_update_row(name):
+    def dbedit_update_row(name: str) -> Response:
+        """Update a single row in a named table by rowid.
+
+        Args:
+            name: The SQLite table name to update.
+
+        Body: {rowid: int, updates: {col: value, ...}}
+        Returns:
+            JSON {ok, affected} or 403/400 on permission/validation error.
+        """
         if name in _DBEDIT_READONLY or name in _DBEDIT_AUDIT:
             return jsonify({"error": f"Table {name!r} is not editable"}), 403
         try:
@@ -1340,7 +1640,16 @@ def create_app():
             return jsonify({"error": str(e)}), 500
 
     @app.route("/api/dbedit/table/<name>/rows", methods=["DELETE"])
-    def dbedit_delete_rows(name):
+    def dbedit_delete_rows(name: str) -> Response:
+        """Delete one or more rows from a named table by rowid list.
+
+        Args:
+            name: The SQLite table name to delete from.
+
+        Body: {rowids: [int, ...]}
+        Returns:
+            JSON {ok, deleted} or 403/400 on permission/validation error.
+        """
         if name in _DBEDIT_READONLY:
             return jsonify({"error": f"Table {name!r} cannot be modified"}), 403
         try:
@@ -1357,7 +1666,15 @@ def create_app():
             return jsonify({"error": str(e)}), 500
 
     @app.route("/api/dbedit/table/<name>/export", methods=["GET"])
-    def dbedit_export(name):
+    def dbedit_export(name: str) -> Response:
+        """Export all rows of a named table as a CSV file download.
+
+        Args:
+            name: The SQLite table name to export.
+
+        Returns:
+            CSV file attachment with Content-Disposition header.
+        """
         try:
             import csv, io
             conn = database.get_connection()
@@ -1367,7 +1684,6 @@ def create_app():
                 writer = csv.writer(buf)
                 writer.writerow(rows[0].keys())
                 writer.writerows(rows)
-            from flask import Response
             return Response(
                 buf.getvalue(), mimetype="text/csv",
                 headers={"Content-Disposition":
@@ -1379,7 +1695,7 @@ def create_app():
     # ── Torrent Generation ───────────────────────────────────────────────────
 
     @app.route("/api/torrent/create", methods=["POST"])
-    def torrent_create():
+    def torrent_create() -> Response:
         """Generate a .torrent for one LB entry.
 
         Body: {lb_number, source_folder, tracker_list?}
@@ -1399,7 +1715,7 @@ def create_app():
             return jsonify({"ok": False, "error": str(exc)}), 500
 
     @app.route("/api/torrent/<int:lb>", methods=["GET"])
-    def torrent_list(lb):
+    def torrent_list(lb: int) -> Response:
         """List all torrent records for an LB entry."""
         try:
             rows = database.get_torrents_for_lb(lb)
@@ -1418,7 +1734,7 @@ def create_app():
             return jsonify({"error": str(exc)}), 500
 
     @app.route("/api/torrent/<int:torrent_id>", methods=["PATCH"])
-    def torrent_update(torrent_id):
+    def torrent_update(torrent_id: int) -> Response:
         """Update a torrents row (e.g. source_folder after path relocation)."""
         try:
             fields = request.get_json() or {}
@@ -1428,7 +1744,7 @@ def create_app():
             return jsonify({"error": str(exc)}), 500
 
     @app.route("/api/trackers", methods=["GET"])
-    def trackers_get():
+    def trackers_get() -> Response:
         """Return the cached tracker list.
 
         Query params: list_name, force_refresh (0/1).
@@ -1445,7 +1761,7 @@ def create_app():
     # ── qBittorrent Integration ───────────────────────────────────────────────
 
     @app.route("/api/qbt/test", methods=["POST"])
-    def qbt_test():
+    def qbt_test() -> Response:
         """Test qBittorrent WebUI connectivity.
 
         Body: {host, port, username?, password?, api_key?} — credentials optional (uses keyring).
@@ -1468,7 +1784,7 @@ def create_app():
             return jsonify({"ok": False, "error": str(exc)}), 500
 
     @app.route("/api/qbt/add", methods=["POST"])
-    def qbt_add():
+    def qbt_add() -> Response:
         """Add one or more torrents to qBittorrent.
 
         Body: {torrent_id?, lb_numbers?, host?, port?, username?, password?,
@@ -1517,7 +1833,7 @@ def create_app():
             return jsonify({"ok": False, "error": str(exc)}), 500
 
     @app.route("/api/torrent/<int:torrent_id>/qbt_remove", methods=["POST"])
-    def qbt_remove(torrent_id):
+    def qbt_remove(torrent_id: int) -> Response:
         """Remove a torrent from qBittorrent (content files are NOT deleted).
 
         Uses the stored infohash. Clears added_to_qbt on success.
@@ -1559,7 +1875,7 @@ def create_app():
             return jsonify({"ok": False, "error": str(exc)}), 500
 
     @app.route("/api/torrent/<int:torrent_id>/file", methods=["DELETE"])
-    def torrent_file_delete(torrent_id):
+    def torrent_file_delete(torrent_id: int) -> Response:
         """Delete the .torrent file from disk and clear torrent_path in the DB.
 
         Does not remove from qBittorrent.
@@ -1586,7 +1902,7 @@ def create_app():
     # ── Forum Posting ─────────────────────────────────────────────────────────
 
     @app.route("/api/wtrf/test", methods=["POST"])
-    def wtrf_test():
+    def wtrf_test() -> Response:
         """Test WTRF forum credentials by attempting a login (no post is made).
 
         Body: {username?, password?} — falls back to stored keyring credentials.
@@ -1610,7 +1926,7 @@ def create_app():
             return jsonify({"ok": False, "error": str(exc)}), 500
 
     @app.route("/api/entry/<int:lb>/preview_forum", methods=["GET"])
-    def preview_forum(lb):
+    def preview_forum(lb: int) -> Response:
         """Return the forum post subject and body for an LB entry without posting.
 
         Returns: {subject, body}.
@@ -1637,7 +1953,7 @@ def create_app():
             return jsonify({"ok": False, "error": str(exc)}), 500
 
     @app.route("/api/entry/<int:lb>/post_forum", methods=["POST"])
-    def post_forum(lb):
+    def post_forum(lb: int) -> Response:
         """Post a topic to the WTRF forum for one LB entry.
 
         Body: {username?, password?, torrent_id?}
@@ -1730,7 +2046,7 @@ def create_app():
             return jsonify({"ok": False, "error": str(exc)}), 500
 
     @app.route("/api/entry/<int:lb>/forum_posts", methods=["GET"])
-    def forum_posts_list(lb):
+    def forum_posts_list(lb: int) -> Response:
         """Return all logged forum posts for an LB entry, newest first."""
         try:
             return jsonify(database.get_forum_posts_for_lb(lb))
@@ -1738,7 +2054,7 @@ def create_app():
             return jsonify({"error": str(exc)}), 500
 
     @app.route("/api/forum_post/<int:post_id>", methods=["DELETE"])
-    def forum_post_delete(post_id):
+    def forum_post_delete(post_id: int) -> Response:
         """Delete a forum post log record by id."""
         try:
             database.delete_forum_post(post_id)
@@ -1747,7 +2063,7 @@ def create_app():
             return jsonify({"ok": False, "error": str(exc)}), 500
 
     @app.route("/api/forum_posts", methods=["GET"])
-    def all_forum_posts():
+    def all_forum_posts() -> Response:
         """Return all logged forum posts across every LB entry, newest first."""
         try:
             return jsonify(database.get_all_forum_posts())
@@ -1755,7 +2071,7 @@ def create_app():
             return jsonify({"error": str(exc)}), 500
 
     @app.route("/api/torrents", methods=["GET"])
-    def all_torrents():
+    def all_torrents() -> Response:
         """Return all torrent records across every LB entry, newest first."""
         try:
             rows = database.get_all_torrents()
@@ -1775,7 +2091,7 @@ def create_app():
     # ── lb_master integrity API ────────────────────────────────────────────────
 
     @app.route("/api/lb_master/stats", methods=["GET"])
-    def lb_master_stats():
+    def lb_master_stats() -> Response:
         """Return {public, private, missing, max_lb, overrides, needs_review} counts."""
         try:
             return jsonify(database.get_lb_master_stats())
@@ -1783,7 +2099,7 @@ def create_app():
             return jsonify({"error": str(exc)}), 500
 
     @app.route("/api/lb_master/<int:lb>", methods=["GET"])
-    def lb_master_get(lb):
+    def lb_master_get(lb: int) -> Response:
         """Return a single lb_master row joined with entry metadata."""
         try:
             row = database.get_lb_master_row(lb)
@@ -1796,7 +2112,7 @@ def create_app():
             return jsonify({"error": str(exc)}), 500
 
     @app.route("/api/lb_master", methods=["GET"])
-    def lb_master_list():
+    def lb_master_list() -> Response:
         """Return paginated lb_master rows.
 
         Query params: status (public|private|missing), override=1, review=1,
@@ -1817,7 +2133,7 @@ def create_app():
             return jsonify({"error": str(exc)}), 500
 
     @app.route("/api/lb_master/reconcile", methods=["POST"])
-    def lb_master_reconcile():
+    def lb_master_reconcile() -> Response:
         """Full rebuild of lb_master. Backs up DB first. Returns status counts."""
         try:
             stats = database.reconcile_all_lb_master()
@@ -1826,7 +2142,7 @@ def create_app():
             return jsonify({"error": str(exc)}), 500
 
     @app.route("/api/lb_master/history/<int:lb>", methods=["GET"])
-    def lb_master_history(lb):
+    def lb_master_history(lb: int) -> Response:
         """Return transition history for an LB, newest first."""
         try:
             limit = int(request.args.get("limit", 50))
@@ -1836,7 +2152,7 @@ def create_app():
             return jsonify({"error": str(exc)}), 500
 
     @app.route("/api/lb_master/<int:lb>/manual", methods=["PUT"])
-    def lb_master_set_manual(lb):
+    def lb_master_set_manual(lb: int) -> Response:
         """Set a manual override. Body: {status, notes}."""
         try:
             body = request.get_json(silent=True) or {}
@@ -1850,7 +2166,7 @@ def create_app():
             return jsonify({"error": str(exc)}), 500
 
     @app.route("/api/lb_master/<int:lb>/manual", methods=["DELETE"])
-    def lb_master_clear_manual(lb):
+    def lb_master_clear_manual(lb: int) -> Response:
         """Clear a manual override and immediately reconcile."""
         try:
             new_status = database.clear_lb_manual_override(lb)
@@ -1895,7 +2211,7 @@ def create_app():
             return jsonify({"error": str(exc)}), 500
 
     @app.route("/api/lb_master/<int:lb>/nft", methods=["GET"])
-    def lb_master_nft(lb):
+    def lb_master_nft(lb: int) -> Response:
         """Return {nft: bool, reason: str|null} for folder naming guidance."""
         try:
             status = database.get_lb_status(lb)
@@ -1906,7 +2222,7 @@ def create_app():
             return jsonify({"error": str(exc)}), 500
 
     @app.route("/api/folder_naming/standard/<int:lb>", methods=["GET"])
-    def folder_naming_standard(lb: int):
+    def folder_naming_standard(lb: int) -> Response:
         """Return the canonical folder name for an LB entry.
 
         Returns:
@@ -1929,7 +2245,7 @@ def create_app():
             return jsonify({"error": str(exc)}), 500
 
     @app.route("/api/db/backup", methods=["POST"])
-    def db_backup():
+    def db_backup() -> Response:
         """Create a manual DB backup. Body: {reason} (optional)."""
         try:
             body = request.get_json(silent=True) or {}
@@ -1943,7 +2259,7 @@ def create_app():
     # ── Curator mode (local flag) ──────────────────────────────────────────────
 
     @app.route("/api/curator", methods=["GET"])
-    def curator_get():
+    def curator_get() -> Response:
         """Return whether this install is flagged as the curator."""
         try:
             return jsonify({"is_curator": database.is_curator()})
@@ -1951,7 +2267,7 @@ def create_app():
             return jsonify({"error": str(exc)}), 500
 
     @app.route("/api/curator", methods=["POST"])
-    def curator_set():
+    def curator_set() -> Response:
         """Toggle the local curator flag. Body: {enabled: bool}."""
         try:
             body = request.get_json(silent=True) or {}
@@ -1964,7 +2280,7 @@ def create_app():
     # ── Master data publish / subscribe ────────────────────────────────────────
 
     @app.route("/api/master/export", methods=["POST"])
-    def master_export():
+    def master_export() -> Response:
         """Build a master-data snapshot + manifest. Curator-only.
 
         Body (optional): {reason}. Returns:
@@ -1990,7 +2306,7 @@ def create_app():
             return jsonify({"error": str(exc)}), 500
 
     @app.route("/api/master/import", methods=["POST"])
-    def master_import():
+    def master_import() -> Response:
         """Apply a master snapshot to the local DB, preserving user data.
 
         Body: {path: "/abs/path/to/snapshot.db"}. Manifest sidecar must live
@@ -2260,6 +2576,15 @@ def create_app():
 
 
 def _do_spectro_batch(folders: list[str], opts: dict) -> None:
+    """Run spectrogram generation for all audio files in the given folders.
+
+    Intended to be executed in a daemon thread. Updates _spectro_state in-place
+    with progress, skipped, error counts, and final status.
+
+    Args:
+        folders: List of absolute folder paths to process.
+        opts: Generation options — width, height, dyn_range (int), force (bool).
+    """
     from backend.sox_utils import (
         generate_spectrogram, AUDIO_EXTS_ALL,
         SoxNotFoundError, ConversionError, SpectrogenError,
@@ -2332,7 +2657,25 @@ def _do_spectro_batch(folders: list[str], opts: dict) -> None:
          errors=list(errors), skipped=skipped)
 
 
-def _start_scrape_thread(lb_numbers, force=False, delay_ms=1500, download=True, use_local_pages=False):
+def _start_scrape_thread(
+    lb_numbers: list[int],
+    force: bool = False,
+    delay_ms: int = 1500,
+    download: bool = True,
+    use_local_pages: bool = False,
+) -> None:
+    """Start a background thread to scrape the given LB numbers, if none is running.
+
+    No-op if a scrape thread is already alive. The thread calls
+    scraper.scrape_range() with the supplied options.
+
+    Args:
+        lb_numbers: Ordered list of LB numbers to scrape.
+        force: Re-scrape even if an entry already has data.
+        delay_ms: Milliseconds to sleep between requests.
+        download: Download attachment files when True.
+        use_local_pages: Read from data/pages/ cache instead of the network.
+    """
     global _scrape_thread
     if _scrape_thread and _scrape_thread.is_alive():
         return

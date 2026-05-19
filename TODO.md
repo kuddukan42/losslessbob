@@ -37,8 +37,9 @@ Description: `scrape_entry`, `scrape_range`, `get_scrape_status`, `stop_scrape`,
 
 TODO-004: Add type hints and docstrings to app.py route handlers
 Priority: Low
-Status: Open
+Status: Done
 Added: 2026-05-07
+Closed: 2026-05-19
 Description: Flask route functions lack type hints and Google-style docstrings as required by project code standards.
 
 ---
