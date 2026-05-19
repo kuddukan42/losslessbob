@@ -25,6 +25,8 @@ _progress: dict = {
     "total": 0,
     "current": "",
     "errors": 0,
+    "stage": "",       # "querying" | "saving" | "sleeping" | "done" | ""
+    "succeeded": 0,
 }
 _lock = threading.Lock()
 
@@ -210,13 +212,19 @@ def run_batch(
         _progress["total"] = total
         _progress["current"] = ""
         _progress["errors"] = 0
+        _progress["succeeded"] = 0
+        _progress["stage"] = "starting"
 
     try:
         for i, location_text in enumerate(locations):
             with _lock:
                 _progress["current"] = location_text
+                _progress["stage"] = "querying"
 
             result = geocode_one(location_text)
+
+            with _lock:
+                _progress["stage"] = "saving"
 
             if not dry_run:
                 conn.execute(
@@ -249,6 +257,8 @@ def run_batch(
                 _progress["done"] = i + 1
                 if result["source"] == "failed":
                     _progress["errors"] += 1
+                else:
+                    _progress["succeeded"] += 1
 
             if (i + 1) % 10 == 0:
                 logger.info(
@@ -258,12 +268,15 @@ def run_batch(
 
             # Nominatim ToS: maximum 1 request per second
             if i < total - 1:
+                with _lock:
+                    _progress["stage"] = "sleeping"
                 time.sleep(1.1)
 
     finally:
         with _lock:
             _progress["running"] = False
             _progress["current"] = ""
+            _progress["stage"] = "done"
 
     logger.info(
         "Batch geocode complete: %d/%d processed, %d errors, dry_run=%s",

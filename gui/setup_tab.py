@@ -1565,18 +1565,52 @@ class SetupTab(QWidget):
         total = status.get("total", 0)
         current = status.get("current", "")
         errors = status.get("errors", 0)
+        succeeded = status.get("succeeded", 0)
+        stage = status.get("stage", "")
 
         if running:
-            parts = [f"Running: {done}/{total}"]
+            pct = int(done / total * 100) if total else 0
+            progress_str = f"{done} / {total}  ({pct}%)"
+
+            stage_hint = ""
+            if stage == "querying":
+                stage_hint = "querying Nominatim…"
+            elif stage == "sleeping":
+                stage_hint = "waiting (rate limit)…"
+            elif stage == "saving":
+                stage_hint = "saving…"
+            elif stage == "starting":
+                stage_hint = "starting…"
+
+            eta_str = ""
+            remaining = total - done
+            if remaining > 0 and done > 0:
+                eta_s = int(remaining * 1.1)
+                if eta_s >= 3600:
+                    eta_str = f"~{eta_s // 3600}h {(eta_s % 3600) // 60}m left"
+                elif eta_s >= 60:
+                    eta_str = f"~{eta_s // 60}m {eta_s % 60}s left"
+                else:
+                    eta_str = f"~{eta_s}s left"
+
+            counts = f"{succeeded} ok  |  {errors} failed" if (succeeded + errors) > 0 else ""
+
+            parts = [progress_str]
             if current:
                 parts.append(current)
-            self._geocode_status_label.setText(" — ".join(parts))
+            if stage_hint:
+                parts.append(stage_hint)
+            if eta_str:
+                parts.append(eta_str)
+            if counts:
+                parts.append(counts)
+            self._geocode_status_label.setText("  ·  ".join(parts))
         else:
             if self._geocode_status_thread is not None:
                 self._geocode_status_thread.stop()
                 self._geocode_status_thread = None
             self._geocode_run_btn.setEnabled(True)
             self._geocode_status_label.setText(
-                f"Done: {done} geocoded, {errors} errors"
+                f"Done: {succeeded} geocoded, {errors} failed"
             )
-            _log.info("Geocoder finished: %d geocoded, %d errors", done, errors)
+            _log.info("Geocoder finished: %d geocoded, %d errors", succeeded, errors)
