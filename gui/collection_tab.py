@@ -306,17 +306,17 @@ class _ScanWorker(QThread):
 class _AddDialog(QDialog):
     def __init__(self, lb_number=None, folder_name="", disk_path="", parent=None):
         super().__init__(parent)
-        self.setWindowTitle("Add to My Collection")
+        self.setWindowTitle(self.tr("Add to My Collection"))
         self.setMinimumWidth(420)
         layout = QFormLayout(self)
         self.lb_edit = QLineEdit(str(lb_number) if lb_number is not None else "")
         self.folder_edit = QLineEdit(folder_name)
         self.path_edit = QLineEdit(disk_path)
         self.notes_edit = QLineEdit()
-        layout.addRow("LB Number:", self.lb_edit)
-        layout.addRow("Folder Name:", self.folder_edit)
-        layout.addRow("Disk Path:", self.path_edit)
-        layout.addRow("Notes:", self.notes_edit)
+        layout.addRow(self.tr("LB Number:"), self.lb_edit)
+        layout.addRow(self.tr("Folder Name:"), self.folder_edit)
+        layout.addRow(self.tr("Disk Path:"), self.path_edit)
+        layout.addRow(self.tr("Notes:"), self.notes_edit)
         btns = QDialogButtonBox(
             QDialogButtonBox.StandardButton.Ok | QDialogButtonBox.StandardButton.Cancel
         )
@@ -340,13 +340,16 @@ class _AddDialog(QDialog):
 class _ScanPreviewDialog(QDialog):
     def __init__(self, entries, owned_set, parent=None):
         super().__init__(parent)
-        self.setWindowTitle("Scan Results — Confirm Add")
+        self.setWindowTitle(self.tr("Scan Results — Confirm Add"))
         self.setMinimumSize(700, 400)
         layout = QVBoxLayout(self)
-        layout.addWidget(QLabel(f"Found {len(entries)} folder(s) with LB numbers:"))
+        layout.addWidget(QLabel(self.tr("Found {} folder(s) with LB numbers:").format(len(entries))))
 
         self.table = QTableWidget(len(entries), 4)
-        self.table.setHorizontalHeaderLabels(["LB Number", "Folder Name", "Path", "Already Owned"])
+        self.table.setHorizontalHeaderLabels([
+            self.tr("LB Number"), self.tr("Folder Name"),
+            self.tr("Path"), self.tr("Already Owned"),
+        ])
         self.table.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self.table.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
@@ -355,7 +358,7 @@ class _ScanPreviewDialog(QDialog):
             self.table.setItem(i, 0, QTableWidgetItem(f"LB-{lb}"))
             self.table.setItem(i, 1, QTableWidgetItem(name))
             self.table.setItem(i, 2, QTableWidgetItem(path))
-            item = QTableWidgetItem("Yes" if owned else "No")
+            item = QTableWidgetItem(self.tr("Yes") if owned else self.tr("No"))
             if owned:
                 item.setForeground(QColor("#388E3C"))
             self.table.setItem(i, 3, item)
@@ -366,7 +369,7 @@ class _ScanPreviewDialog(QDialog):
         btns = QDialogButtonBox(
             QDialogButtonBox.StandardButton.Ok | QDialogButtonBox.StandardButton.Cancel
         )
-        btns.button(QDialogButtonBox.StandardButton.Ok).setText("Add All")
+        btns.button(QDialogButtonBox.StandardButton.Ok).setText(self.tr("Add All"))
         btns.accepted.connect(self.accept)
         btns.rejected.connect(self.reject)
         layout.addWidget(btns)
@@ -375,29 +378,29 @@ class _ScanPreviewDialog(QDialog):
 class _PersonalMetaDialog(QDialog):
     def __init__(self, lb_number, meta, flask_port, parent=None):
         super().__init__(parent)
-        self.setWindowTitle(f"Personal Info — LB-{lb_number:05d}")
+        self.setWindowTitle(self.tr("Personal Info — LB-{}").format(f"{lb_number:05d}"))
         self._lb = lb_number
         self._flask_port = flask_port
         layout = QFormLayout(self)
 
         self._rating = QComboBox()
-        self._rating.addItem("— none —", userData=None)
+        self._rating.addItem(self.tr("— none —"), userData=None)
         for i in range(1, 6):
             self._rating.addItem("★" * i, userData=i)
         current_rating = meta.get("personal_rating")
         if current_rating:
             self._rating.setCurrentIndex(current_rating)
-        layout.addRow("Rating:", self._rating)
+        layout.addRow(self.tr("Rating:"), self._rating)
 
         self._tags = QLineEdit(meta.get("tags") or "")
-        layout.addRow("Tags:", self._tags)
+        layout.addRow(self.tr("Tags:"), self._tags)
 
         listen_count = meta.get("listen_count") or 0
-        last = meta.get("last_listened") or "never"
-        self._listen_label = QLabel(f"{listen_count}  (last: {str(last)[:19]})")
-        layout.addRow("Listen count:", self._listen_label)
+        last = meta.get("last_listened") or self.tr("never")
+        self._listen_label = QLabel(self.tr("{} (last: {})").format(listen_count, str(last)[:19]))
+        layout.addRow(self.tr("Listen count:"), self._listen_label)
 
-        log_btn = QPushButton("Log Listen")
+        log_btn = QPushButton(self.tr("Log Listen"))
         log_btn.clicked.connect(self._log_listen)
         layout.addRow("", log_btn)
 
@@ -417,10 +420,10 @@ class _PersonalMetaDialog(QDialog):
                 timeout=5,
             ).json()
             count = resp.get("listen_count") or 0
-            last = resp.get("last_listened") or "never"
-            self._listen_label.setText(f"{count}  (last: {str(last)[:19]})")
+            last = resp.get("last_listened") or self.tr("never")
+            self._listen_label.setText(self.tr("{} (last: {})").format(count, str(last)[:19]))
         except Exception as e:
-            self._listen_label.setText(f"Error: {e}")
+            self._listen_label.setText(self.tr("Error: {}").format(e))
 
     def get_values(self):
         return {
@@ -483,12 +486,12 @@ class CollectionTab(QWidget):
         layout.setContentsMargins(0, 0, 0, 0)
         self.inner_tabs = QTabWidget()
         layout.addWidget(self.inner_tabs)
-        self.inner_tabs.addTab(self._build_collection_panel(), "My Collection")
-        self.inner_tabs.addTab(self._build_missing_panel(), "Missing")
-        self.inner_tabs.addTab(self._build_wishlist_panel(), "Wishlist")
-        self.inner_tabs.addTab(self._build_duplicates_panel(), "Duplicates")
-        self.inner_tabs.addTab(self._build_all_forum_history_panel(), "Forum History")
-        self.inner_tabs.addTab(self._build_all_torrent_history_panel(), "Torrent History")
+        self.inner_tabs.addTab(self._build_collection_panel(), self.tr("My Collection"))
+        self.inner_tabs.addTab(self._build_missing_panel(), self.tr("Missing"))
+        self.inner_tabs.addTab(self._build_wishlist_panel(), self.tr("Wishlist"))
+        self.inner_tabs.addTab(self._build_duplicates_panel(), self.tr("Duplicates"))
+        self.inner_tabs.addTab(self._build_all_forum_history_panel(), self.tr("Forum History"))
+        self.inner_tabs.addTab(self._build_all_torrent_history_panel(), self.tr("Torrent History"))
         self.inner_tabs.currentChanged.connect(self._on_inner_tab_changed)
 
     # ── My Collection panel ───────────────────────────────────────────────────
@@ -500,19 +503,19 @@ class CollectionTab(QWidget):
         # Filter row: text search + year dropdown
         filter_row = QHBoxLayout()
         self.coll_search = QLineEdit()
-        self.coll_search.setPlaceholderText("Filter by LB number, folder name, or path…")
+        self.coll_search.setPlaceholderText(self.tr("Filter by LB number, folder name, or path…"))
         self.coll_search.textChanged.connect(self._on_coll_filter)
         filter_row.addWidget(self.coll_search)
 
         self.coll_year_combo = QComboBox()
         self.coll_year_combo.setMinimumWidth(100)
-        self.coll_year_combo.addItem("All Years", userData=None)
+        self.coll_year_combo.addItem(self.tr("All Years"), userData=None)
         self.coll_year_combo.currentIndexChanged.connect(self._on_coll_filter)
         filter_row.addWidget(self.coll_year_combo)
 
-        self._coll_xref_cb = QCheckBox("Xref only")
+        self._coll_xref_cb = QCheckBox(self.tr("Xref only"))
         self._coll_xref_cb.setToolTip(
-            "Show only collection entries where your folder is an xref variant (folder name contains 'xref')."
+            self.tr("Show only collection entries where your folder is an xref variant (folder name contains 'xref').")
         )
         self._coll_xref_cb.stateChanged.connect(self._on_coll_filter)
         filter_row.addWidget(self._coll_xref_cb)
@@ -521,40 +524,40 @@ class CollectionTab(QWidget):
 
         # Button row
         btn_row = QHBoxLayout()
-        add_btn = QPushButton("Add Single Folder")
+        add_btn = QPushButton(self.tr("Add Single Folder"))
         add_btn.clicked.connect(self._on_add_single)
         btn_row.addWidget(add_btn)
 
-        scan_btn = QPushButton("Scan Directory")
+        scan_btn = QPushButton(self.tr("Scan Directory"))
         scan_btn.clicked.connect(self._on_scan_directory)
         btn_row.addWidget(scan_btn)
 
-        scan_tree_btn = QPushButton("Scan Tree…")
-        scan_tree_btn.setToolTip("Recursively find LB-numbered folders at any depth under a root directory.")
+        scan_tree_btn = QPushButton(self.tr("Scan Tree…"))
+        scan_tree_btn.setToolTip(self.tr("Recursively find LB-numbered folders at any depth under a root directory."))
         scan_tree_btn.clicked.connect(self._on_scan_tree)
         btn_row.addWidget(scan_tree_btn)
 
-        self.update_loc_btn = QPushButton("Update Location")
+        self.update_loc_btn = QPushButton(self.tr("Update Location"))
         self.update_loc_btn.clicked.connect(self._on_update_location)
         btn_row.addWidget(self.update_loc_btn)
 
-        self.remove_btn = QPushButton("Remove")
+        self.remove_btn = QPushButton(self.tr("Remove"))
         self.remove_btn.clicked.connect(self._on_remove)
         btn_row.addWidget(self.remove_btn)
 
-        select_all_btn = QPushButton("Select All")
+        select_all_btn = QPushButton(self.tr("Select All"))
         select_all_btn.clicked.connect(lambda: self.coll_view.selectAll())
         btn_row.addWidget(select_all_btn)
 
-        select_none_btn = QPushButton("Select None")
+        select_none_btn = QPushButton(self.tr("Select None"))
         select_none_btn.clicked.connect(lambda: self.coll_view.clearSelection())
         btn_row.addWidget(select_none_btn)
 
-        refresh_btn = QPushButton("Refresh")
+        refresh_btn = QPushButton(self.tr("Refresh"))
         refresh_btn.clicked.connect(self.refresh_collection)
         btn_row.addWidget(refresh_btn)
 
-        self._coll_wrap_cb = QCheckBox("Word wrap")
+        self._coll_wrap_cb = QCheckBox(self.tr("Word wrap"))
         self._coll_wrap_cb.stateChanged.connect(self._on_coll_wrap_toggled)
         btn_row.addWidget(self._coll_wrap_cb)
         btn_row.addStretch()
@@ -562,24 +565,24 @@ class CollectionTab(QWidget):
 
         # Torrent / forum action row
         torrent_row = QHBoxLayout()
-        self.create_torrent_btn = QPushButton("Create Torrent")
+        self.create_torrent_btn = QPushButton(self.tr("Create Torrent"))
         self.create_torrent_btn.setToolTip(
-            "Generate a .torrent file for the selected entry. Requires the folder to exist on disk."
+            self.tr("Generate a .torrent file for the selected entry. Requires the folder to exist on disk.")
         )
         self.create_torrent_btn.clicked.connect(self._on_create_torrent)
         torrent_row.addWidget(self.create_torrent_btn)
 
-        self.add_qbt_btn = QPushButton("Add to qBittorrent")
+        self.add_qbt_btn = QPushButton(self.tr("Add to qBittorrent"))
         self.add_qbt_btn.setToolTip(
-            "Add the most recent torrent for the selected entry to qBittorrent for seeding."
+            self.tr("Add the most recent torrent for the selected entry to qBittorrent for seeding.")
         )
         self.add_qbt_btn.clicked.connect(self._on_add_to_qbt)
         torrent_row.addWidget(self.add_qbt_btn)
 
-        self.post_forum_btn = QPushButton("Post to Forum")
+        self.post_forum_btn = QPushButton(self.tr("Post to Forum"))
         self.post_forum_btn.setToolTip(
-            "Post a topic to the WTRF forum with the .torrent as an attachment. "
-            "Requires a torrent to exist for this entry."
+            self.tr("Post a topic to the WTRF forum with the .torrent as an attachment. "
+                    "Requires a torrent to exist for this entry.")
         )
         self.post_forum_btn.clicked.connect(self._on_post_forum)
         torrent_row.addWidget(self.post_forum_btn)
@@ -589,13 +592,13 @@ class CollectionTab(QWidget):
 
         # Pagination controls
         page_row = QHBoxLayout()
-        self._coll_prev_btn = QPushButton("← Prev")
+        self._coll_prev_btn = QPushButton(self.tr("← Prev"))
         self._coll_prev_btn.setMinimumWidth(80)
         self._coll_prev_btn.clicked.connect(self._coll_prev_page)
         page_row.addWidget(self._coll_prev_btn)
-        self._coll_page_label = QLabel("Page 1 of 1")
+        self._coll_page_label = QLabel(self.tr("Page 1 of 1"))
         page_row.addWidget(self._coll_page_label)
-        self._coll_next_btn = QPushButton("Next →")
+        self._coll_next_btn = QPushButton(self.tr("Next →"))
         self._coll_next_btn.setMinimumWidth(80)
         self._coll_next_btn.clicked.connect(self._coll_next_page)
         page_row.addWidget(self._coll_next_btn)
@@ -641,15 +644,15 @@ class CollectionTab(QWidget):
         layout = QVBoxLayout(w)
 
         btn_row = QHBoxLayout()
-        refresh_btn = QPushButton("Refresh")
+        refresh_btn = QPushButton(self.tr("Refresh"))
         refresh_btn.clicked.connect(self.refresh_missing)
         btn_row.addWidget(refresh_btn)
 
-        export_btn = QPushButton("Export CSV…")
+        export_btn = QPushButton(self.tr("Export CSV…"))
         export_btn.clicked.connect(self._on_export_csv)
         btn_row.addWidget(export_btn)
 
-        self._miss_wrap_cb = QCheckBox("Word wrap")
+        self._miss_wrap_cb = QCheckBox(self.tr("Word wrap"))
         self._miss_wrap_cb.stateChanged.connect(self._on_miss_wrap_toggled)
         btn_row.addWidget(self._miss_wrap_cb)
         btn_row.addStretch()
@@ -685,7 +688,7 @@ class CollectionTab(QWidget):
         layout = QVBoxLayout(w)
 
         btn_row = QHBoxLayout()
-        refresh_btn = QPushButton("Refresh")
+        refresh_btn = QPushButton(self.tr("Refresh"))
         refresh_btn.clicked.connect(self.refresh_wishlist)
         btn_row.addWidget(refresh_btn)
         btn_row.addStretch()
@@ -719,7 +722,7 @@ class CollectionTab(QWidget):
         layout = QVBoxLayout(w)
 
         btn_row = QHBoxLayout()
-        refresh_btn = QPushButton("Refresh")
+        refresh_btn = QPushButton(self.tr("Refresh"))
         refresh_btn.clicked.connect(self.refresh_duplicates)
         btn_row.addWidget(refresh_btn)
         btn_row.addStretch()
@@ -727,7 +730,7 @@ class CollectionTab(QWidget):
 
         self.dupes_tree = QTreeWidget()
         self.dupes_tree.setColumnCount(2)
-        self.dupes_tree.setHeaderLabels(["LB Number / Show", "Rating"])
+        self.dupes_tree.setHeaderLabels([self.tr("LB Number / Show"), self.tr("Rating")])
         self.dupes_tree.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
         self.dupes_tree.customContextMenuRequested.connect(self._on_dupes_context)
         layout.addWidget(self.dupes_tree)
@@ -737,12 +740,11 @@ class CollectionTab(QWidget):
         return w
 
     def _on_inner_tab_changed(self, index: int) -> None:
-        tab_text = self.inner_tabs.tabText(index)
-        if tab_text == "Duplicates" and not self._duplicates_loaded:
+        if index == 3 and not self._duplicates_loaded:
             self.refresh_duplicates()
-        elif tab_text == "Forum History" and not self._all_forum_history_loaded:
+        elif index == 4 and not self._all_forum_history_loaded:
             self.refresh_all_forum_history()
-        elif tab_text == "Torrent History" and not self._all_torrent_history_loaded:
+        elif index == 5 and not self._all_torrent_history_loaded:
             self.refresh_all_torrent_history()
 
     # ── Forum History panel (all entries) ─────────────────────────────────────
@@ -752,31 +754,32 @@ class CollectionTab(QWidget):
         layout = QVBoxLayout(w)
 
         btn_row = QHBoxLayout()
-        refresh_btn = QPushButton("Refresh")
+        refresh_btn = QPushButton(self.tr("Refresh"))
         refresh_btn.clicked.connect(self.refresh_all_forum_history)
         btn_row.addWidget(refresh_btn)
 
-        self._forum_hist_open_btn = QPushButton("Open in Browser")
+        self._forum_hist_open_btn = QPushButton(self.tr("Open in Browser"))
         self._forum_hist_open_btn.setEnabled(False)
         self._forum_hist_open_btn.clicked.connect(self._on_all_forum_hist_open)
         btn_row.addWidget(self._forum_hist_open_btn)
 
-        self._forum_hist_delete_btn = QPushButton("Remove Record")
+        self._forum_hist_delete_btn = QPushButton(self.tr("Remove Record"))
         self._forum_hist_delete_btn.setEnabled(False)
-        self._forum_hist_delete_btn.setToolTip("Remove this log entry (does not delete the forum post)")
+        self._forum_hist_delete_btn.setToolTip(self.tr("Remove this log entry (does not delete the forum post)"))
         self._forum_hist_delete_btn.clicked.connect(self._on_all_forum_hist_delete)
         btn_row.addWidget(self._forum_hist_delete_btn)
 
         btn_row.addStretch()
         layout.addLayout(btn_row)
 
-        self._forum_hist_status = QLabel("Switch to this tab to load all forum post history.")
+        self._forum_hist_status = QLabel(self.tr("Switch to this tab to load all forum post history."))
         layout.addWidget(self._forum_hist_status)
 
         self._forum_hist_table = QTableWidget(0, 5)
-        self._forum_hist_table.setHorizontalHeaderLabels(
-            ["LB Number", "Date", "Location", "Posted", "Subject"]
-        )
+        self._forum_hist_table.setHorizontalHeaderLabels([
+            self.tr("LB Number"), self.tr("Date"), self.tr("Location"),
+            self.tr("Posted"), self.tr("Subject"),
+        ])
         self._forum_hist_table.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self._forum_hist_table.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self._forum_hist_table.setSelectionMode(QAbstractItemView.SelectionMode.SingleSelection)
@@ -802,19 +805,20 @@ class CollectionTab(QWidget):
         layout = QVBoxLayout(w)
 
         btn_row = QHBoxLayout()
-        refresh_btn = QPushButton("Refresh")
+        refresh_btn = QPushButton(self.tr("Refresh"))
         refresh_btn.clicked.connect(self.refresh_all_torrent_history)
         btn_row.addWidget(refresh_btn)
         btn_row.addStretch()
         layout.addLayout(btn_row)
 
-        self._torrent_hist_status = QLabel("Switch to this tab to load all torrent history.")
+        self._torrent_hist_status = QLabel(self.tr("Switch to this tab to load all torrent history."))
         layout.addWidget(self._torrent_hist_status)
 
         self._torrent_hist_table = QTableWidget(0, 6)
-        self._torrent_hist_table.setHorizontalHeaderLabels(
-            ["LB Number", "Date", "Location", "Created", "Source Folder", "Added to qBt"]
-        )
+        self._torrent_hist_table.setHorizontalHeaderLabels([
+            self.tr("LB Number"), self.tr("Date"), self.tr("Location"),
+            self.tr("Created"), self.tr("Source Folder"), self.tr("Added to qBt"),
+        ])
         self._torrent_hist_table.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self._torrent_hist_table.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self._torrent_hist_table.setSelectionMode(QAbstractItemView.SelectionMode.SingleSelection)
@@ -921,12 +925,12 @@ class CollectionTab(QWidget):
     # ── Data loading ──────────────────────────────────────────────────────────
 
     def refresh_collection(self):
-        self.coll_status.setText("Loading…")
+        self.coll_status.setText(self.tr("Loading…"))
         w = _ApiWorker(lambda: requests.get(
             f"http://127.0.0.1:{self.flask_port}/api/collection", timeout=15
         ).json())
         w.finished.connect(self._on_collection_loaded)
-        w.error.connect(lambda e: self.coll_status.setText(f"Error: {e}"))
+        w.error.connect(lambda e: self.coll_status.setText(self.tr("Error: {}").format(e)))
         self._workers.append(w)
         w.start()
 
@@ -937,13 +941,13 @@ class CollectionTab(QWidget):
             self._populate_year_combo()
             self._render_coll_page()
         else:
-            self.coll_status.setText(f"Error: {data.get('error', 'unknown')}")
+            self.coll_status.setText(self.tr("Error: {}").format(data.get('error', 'unknown')))
 
     def _populate_year_combo(self) -> None:
         current = self.coll_year_combo.currentData()
         self.coll_year_combo.blockSignals(True)
         self.coll_year_combo.clear()
-        self.coll_year_combo.addItem("All Years", userData=None)
+        self.coll_year_combo.addItem(self.tr("All Years"), userData=None)
         years: set = set()
         for row in self._all_collection:
             date_str = row.get("date_str") or ""
@@ -1040,16 +1044,16 @@ class CollectionTab(QWidget):
         shown = len(filtered)
         if pages > 1:
             self._coll_page_widget.setVisible(True)
-            self._coll_page_label.setText(f"Page {self._page + 1} of {pages}  ({shown} item(s))")
+            self._coll_page_label.setText(self.tr("Page {} of {}  ({} item(s))").format(self._page + 1, pages, shown))
             self._coll_prev_btn.setEnabled(self._page > 0)
             self._coll_next_btn.setEnabled(self._page < pages - 1)
         else:
             self._coll_page_widget.setVisible(False)
 
         if shown == total:
-            self.coll_status.setText(f"{total} item(s) in collection.")
+            self.coll_status.setText(self.tr("{} item(s) in collection.").format(total))
         else:
-            self.coll_status.setText(f"{shown} item(s) shown (of {total} total).")
+            self.coll_status.setText(self.tr("{} item(s) shown (of {} total).").format(shown, total))
 
     def _coll_prev_page(self) -> None:
         if self._page > 0:
@@ -1062,12 +1066,12 @@ class CollectionTab(QWidget):
             self._render_coll_page()
 
     def refresh_missing(self):
-        self.miss_status.setText("Loading…")
+        self.miss_status.setText(self.tr("Loading…"))
         w = _ApiWorker(lambda: requests.get(
             f"http://127.0.0.1:{self.flask_port}/api/collection/missing", timeout=15
         ).json())
         w.finished.connect(self._on_missing_loaded)
-        w.error.connect(lambda e: self.miss_status.setText(f"Error: {e}"))
+        w.error.connect(lambda e: self.miss_status.setText(self.tr("Error: {}").format(e)))
         self._workers.append(w)
         w.start()
 
@@ -1082,28 +1086,28 @@ class CollectionTab(QWidget):
                 except Exception:
                     pass
             self.miss_model.set_rows(rows)
-            self.miss_status.setText(f"{len(data)} missing from collection.")
+            self.miss_status.setText(self.tr("{} missing from collection.").format(len(data)))
         else:
-            self.miss_status.setText(f"Error: {data.get('error', 'unknown')}")
+            self.miss_status.setText(self.tr("Error: {}").format(data.get('error', 'unknown')))
 
     # ── Wishlist data ─────────────────────────────────────────────────────────
 
     def refresh_wishlist(self):
-        self.wish_status.setText("Loading…")
+        self.wish_status.setText(self.tr("Loading…"))
         w = _ApiWorker(lambda: requests.get(
             f"http://127.0.0.1:{self.flask_port}/api/wishlist", timeout=15
         ).json())
         w.finished.connect(self._on_wishlist_loaded)
-        w.error.connect(lambda e: self.wish_status.setText(f"Error: {e}"))
+        w.error.connect(lambda e: self.wish_status.setText(self.tr("Error: {}").format(e)))
         self._workers.append(w)
         w.start()
 
     def _on_wishlist_loaded(self, data):
         if isinstance(data, list):
             self.wish_model.set_rows(data)
-            self.wish_status.setText(f"{len(data)} item(s) on wishlist.")
+            self.wish_status.setText(self.tr("{} item(s) on wishlist.").format(len(data)))
         else:
-            self.wish_status.setText(f"Error: {data.get('error', 'unknown')}")
+            self.wish_status.setText(self.tr("Error: {}").format(data.get('error', 'unknown')))
 
     def _on_wish_context(self, pos):
         index = self.wish_view.indexAt(pos)
@@ -1115,11 +1119,11 @@ class CollectionTab(QWidget):
         lb = row["lb_number"]
         menu = QMenu(self)
 
-        remove_act = QAction("Remove from Wishlist", self)
+        remove_act = QAction(self.tr("Remove from Wishlist"), self)
         remove_act.triggered.connect(lambda: self._wishlist_remove(lb))
         menu.addAction(remove_act)
 
-        view_act = QAction("View LB Entry", self)
+        view_act = QAction(self.tr("View LB Entry"), self)
         url = f"http://www.losslessbob.wonderingwhattochoose.com/detail/LB-{lb:05d}.html"
         view_act.triggered.connect(lambda: webbrowser.open(url))
         menu.addAction(view_act)
@@ -1131,27 +1135,27 @@ class CollectionTab(QWidget):
             f"http://127.0.0.1:{self.flask_port}/api/wishlist/{lb}", timeout=10
         ).json())
         w.finished.connect(lambda _: self.refresh_wishlist())
-        w.error.connect(lambda e: self.wish_status.setText(f"Error: {e}"))
+        w.error.connect(lambda e: self.wish_status.setText(self.tr("Error: {}").format(e)))
         self._workers.append(w)
         w.start()
 
     # ── Duplicates data ───────────────────────────────────────────────────────
 
     def refresh_duplicates(self):
-        self.dupes_status.setText("Loading…")
+        self.dupes_status.setText(self.tr("Loading…"))
         self._duplicates_loaded = True
         w = _ApiWorker(lambda: requests.get(
             f"http://127.0.0.1:{self.flask_port}/api/collection/duplicates", timeout=15
         ).json())
         w.finished.connect(self._on_duplicates_loaded)
-        w.error.connect(lambda e: self.dupes_status.setText(f"Error: {e}"))
+        w.error.connect(lambda e: self.dupes_status.setText(self.tr("Error: {}").format(e)))
         self._workers.append(w)
         w.start()
 
     def _on_duplicates_loaded(self, data):
         self.dupes_tree.clear()
         if not isinstance(data, list):
-            self.dupes_status.setText(f"Error: {data.get('error', 'unknown')}")
+            self.dupes_status.setText(self.tr("Error: {}").format(data.get('error', 'unknown')))
             return
         for group in data:
             show_item = QTreeWidgetItem([
@@ -1179,7 +1183,7 @@ class CollectionTab(QWidget):
             self.dupes_tree.addTopLevelItem(show_item)
             show_item.setExpanded(True)
         self.dupes_tree.resizeColumnToContents(0)
-        self.dupes_status.setText(f"{len(data)} duplicate show(s) found.")
+        self.dupes_status.setText(self.tr("{} duplicate show(s) found.").format(len(data)))
 
     def _on_dupes_context(self, pos):
         item = self.dupes_tree.itemAt(pos)
@@ -1191,11 +1195,11 @@ class CollectionTab(QWidget):
         kind, lb = data
         menu = QMenu(self)
         if kind == "owned":
-            rm_act = QAction("Remove from Collection", self)
+            rm_act = QAction(self.tr("Remove from Collection"), self)
             rm_act.triggered.connect(lambda: self._dupes_remove_collection(lb))
             menu.addAction(rm_act)
         else:
-            open_act = QAction("Open on LosslessBob", self)
+            open_act = QAction(self.tr("Open on LosslessBob"), self)
             url = f"http://www.losslessbob.wonderingwhattochoose.com/detail/LB-{lb:05d}.html"
             open_act.triggered.connect(lambda: webbrowser.open(url))
             menu.addAction(open_act)
@@ -1203,8 +1207,8 @@ class CollectionTab(QWidget):
 
     def _dupes_remove_collection(self, lb: int):
         confirm = QMessageBox.question(
-            self, "Confirm Remove",
-            f"Remove LB-{lb:05d} from My Collection?\n(Files are not deleted.)",
+            self, self.tr("Confirm Remove"),
+            self.tr("Remove LB-{} from My Collection?\n(Files are not deleted.)").format(f"{lb:05d}"),
             QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
         )
         if confirm != QMessageBox.StandardButton.Yes:
@@ -1213,7 +1217,7 @@ class CollectionTab(QWidget):
             f"http://127.0.0.1:{self.flask_port}/api/collection/{lb}", timeout=10
         ).json())
         w.finished.connect(lambda _: (self.refresh_collection(), self.refresh_duplicates()))
-        w.error.connect(lambda e: self.dupes_status.setText(f"Error: {e}"))
+        w.error.connect(lambda e: self.dupes_status.setText(self.tr("Error: {}").format(e)))
         self._workers.append(w)
         w.start()
 
@@ -1221,7 +1225,7 @@ class CollectionTab(QWidget):
 
     def refresh_all_forum_history(self) -> None:
         self._all_forum_history_loaded = True
-        self._forum_hist_status.setText("Loading…")
+        self._forum_hist_status.setText(self.tr("Loading…"))
         flask_port = self.flask_port
 
         def call():
@@ -1231,13 +1235,13 @@ class CollectionTab(QWidget):
 
         w = _ApiWorker(call)
         w.finished.connect(self._on_all_forum_history_loaded)
-        w.error.connect(lambda e: self._forum_hist_status.setText(f"Error: {e}"))
+        w.error.connect(lambda e: self._forum_hist_status.setText(self.tr("Error: {}").format(e)))
         self._workers.append(w)
         w.start()
 
     def _on_all_forum_history_loaded(self, data: list) -> None:
         if isinstance(data, dict):
-            self._forum_hist_status.setText(f"Error: {data.get('error', 'unknown')}")
+            self._forum_hist_status.setText(self.tr("Error: {}").format(data.get('error', 'unknown')))
             return
         self._all_forum_posts_records = data
         self._forum_hist_table.setRowCount(0)
@@ -1253,7 +1257,7 @@ class CollectionTab(QWidget):
             self._forum_hist_table.setItem(row, 3, QTableWidgetItem(posted))
             self._forum_hist_table.setItem(row, 4, QTableWidgetItem(rec.get("subject") or ""))
         self._forum_hist_table.resizeColumnsToContents()
-        self._forum_hist_status.setText(f"{len(data)} forum post(s) total.")
+        self._forum_hist_status.setText(self.tr("{} forum post(s) total.").format(len(data)))
 
     def _on_all_forum_hist_selection(self) -> None:
         has = bool(self._forum_hist_table.selectedItems())
@@ -1274,8 +1278,8 @@ class CollectionTab(QWidget):
             return
         rec = self._all_forum_posts_records[row]
         if QMessageBox.question(
-            self, "Remove Record",
-            f"Remove this forum post log entry?\n{rec.get('topic_url', '')}",
+            self, self.tr("Remove Record"),
+            self.tr("Remove this forum post log entry?\n{}").format(rec.get('topic_url', '')),
             QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
         ) != QMessageBox.StandardButton.Yes:
             return
@@ -1289,7 +1293,7 @@ class CollectionTab(QWidget):
 
         w = _ApiWorker(call)
         w.finished.connect(lambda _: self.refresh_all_forum_history())
-        w.error.connect(lambda e: self._forum_hist_status.setText(f"Error: {e}"))
+        w.error.connect(lambda e: self._forum_hist_status.setText(self.tr("Error: {}").format(e)))
         self._workers.append(w)
         w.start()
 
@@ -1300,15 +1304,15 @@ class CollectionTab(QWidget):
         rec = self._all_forum_posts_records[row]
         menu = QMenu(self)
         if rec.get("topic_url"):
-            open_act = QAction("Open in Browser", self)
+            open_act = QAction(self.tr("Open in Browser"), self)
             open_act.triggered.connect(lambda: webbrowser.open(rec["topic_url"]))
             menu.addAction(open_act)
-        rm_act = QAction("Remove Record", self)
+        rm_act = QAction(self.tr("Remove Record"), self)
         rm_act.triggered.connect(self._on_all_forum_hist_delete)
         menu.addAction(rm_act)
         lb = rec.get("lb_number")
         if lb:
-            lb_act = QAction(f"Go to LB-{lb:05d} in My Collection", self)
+            lb_act = QAction(self.tr("Go to LB-{} in My Collection").format(f"{lb:05d}"), self)
             lb_act.triggered.connect(lambda: self._nav_to_lb_in_collection(lb))
             menu.addAction(lb_act)
         menu.exec(self._forum_hist_table.mapToGlobal(pos))
@@ -1317,7 +1321,7 @@ class CollectionTab(QWidget):
 
     def refresh_all_torrent_history(self) -> None:
         self._all_torrent_history_loaded = True
-        self._torrent_hist_status.setText("Loading…")
+        self._torrent_hist_status.setText(self.tr("Loading…"))
         flask_port = self.flask_port
 
         def call():
@@ -1327,13 +1331,13 @@ class CollectionTab(QWidget):
 
         w = _ApiWorker(call)
         w.finished.connect(self._on_all_torrent_history_loaded)
-        w.error.connect(lambda e: self._torrent_hist_status.setText(f"Error: {e}"))
+        w.error.connect(lambda e: self._torrent_hist_status.setText(self.tr("Error: {}").format(e)))
         self._workers.append(w)
         w.start()
 
     def _on_all_torrent_history_loaded(self, data: list) -> None:
         if isinstance(data, dict):
-            self._torrent_hist_status.setText(f"Error: {data.get('error', 'unknown')}")
+            self._torrent_hist_status.setText(self.tr("Error: {}").format(data.get('error', 'unknown')))
             return
         self._all_torrents_records = data
         self._torrent_hist_table.setRowCount(0)
@@ -1346,13 +1350,13 @@ class CollectionTab(QWidget):
             created = str(rec.get("created_at") or "")[:19]
             self._torrent_hist_table.setItem(row, 3, QTableWidgetItem(created))
             self._torrent_hist_table.setItem(row, 4, QTableWidgetItem(rec.get("source_folder") or ""))
-            added = "Yes" if rec.get("added_to_qbt") else "No"
+            added = self.tr("Yes") if rec.get("added_to_qbt") else self.tr("No")
             item = QTableWidgetItem(added)
             if rec.get("added_to_qbt"):
                 item.setForeground(QColor("#1B5E20"))
             self._torrent_hist_table.setItem(row, 5, item)
         self._torrent_hist_table.resizeColumnsToContents()
-        self._torrent_hist_status.setText(f"{len(data)} torrent record(s) total.")
+        self._torrent_hist_status.setText(self.tr("{} torrent record(s) total.").format(len(data)))
 
     def _on_all_torrent_hist_context(self, pos) -> None:
         row = self._torrent_hist_table.rowAt(pos.y())
@@ -1362,7 +1366,7 @@ class CollectionTab(QWidget):
         menu = QMenu(self)
         lb = rec.get("lb_number")
         if lb:
-            lb_act = QAction(f"Go to LB-{lb:05d} in My Collection", self)
+            lb_act = QAction(self.tr("Go to LB-{} in My Collection").format(f"{lb:05d}"), self)
             lb_act.triggered.connect(lambda: self._nav_to_lb_in_collection(lb))
             menu.addAction(lb_act)
         menu.exec(self._torrent_hist_table.mapToGlobal(pos))
@@ -1380,7 +1384,7 @@ class CollectionTab(QWidget):
     # ── Add Single Folder ─────────────────────────────────────────────────────
 
     def _on_add_single(self):
-        path = QFileDialog.getExistingDirectory(self, "Select Folder")
+        path = QFileDialog.getExistingDirectory(self, self.tr("Select Folder"))
         if not path:
             return
         folder = Path(path)
@@ -1390,7 +1394,7 @@ class CollectionTab(QWidget):
             return
         vals = dlg.get_values()
         if not vals["lb_number"]:
-            QMessageBox.warning(self, "Invalid", "LB Number is required and must be an integer.")
+            QMessageBox.warning(self, self.tr("Invalid"), self.tr("LB Number is required and must be an integer."))
             return
         self._post_collection(vals)
 
@@ -1402,39 +1406,39 @@ class CollectionTab(QWidget):
             ).json()
         w = _ApiWorker(call)
         w.finished.connect(lambda r: self._on_post_done(r, 1, 0))
-        w.error.connect(lambda e: self.coll_status.setText(f"Error: {e}"))
+        w.error.connect(lambda e: self.coll_status.setText(self.tr("Error: {}").format(e)))
         self._workers.append(w)
         w.start()
 
     def _on_post_done(self, result, added, skipped):
         if isinstance(result, dict) and result.get("error"):
-            self.coll_status.setText(f"Error: {result['error']}")
+            self.coll_status.setText(self.tr("Error: {}").format(result['error']))
         else:
-            self.coll_status.setText(f"Added: {added}, already existed: {skipped}.")
+            self.coll_status.setText(self.tr("Added: {}, already existed: {}.").format(added, skipped))
             self.refresh_collection()
 
     # ── Scan Directory ────────────────────────────────────────────────────────
 
     def _on_scan_directory(self):
-        root = QFileDialog.getExistingDirectory(self, "Select Root Directory to Scan")
+        root = QFileDialog.getExistingDirectory(self, self.tr("Select Root Directory to Scan"))
         if not root:
             return
-        self.coll_status.setText("Scanning…")
+        self.coll_status.setText(self.tr("Scanning…"))
         w = _ScanWorker(Path(root), recursive=False, flask_port=self.flask_port)
         w.finished.connect(self._on_scan_finished)
-        w.error.connect(lambda e: self.coll_status.setText(f"Scan error: {e}"))
+        w.error.connect(lambda e: self.coll_status.setText(self.tr("Scan error: {}").format(e)))
         self._workers.append(w)
         w.start()
 
     def _on_scan_tree(self):
         """Recursively scan all subdirectories for LB-numbered folders and bulk-add them."""
-        root = QFileDialog.getExistingDirectory(self, "Select Root Directory to Scan")
+        root = QFileDialog.getExistingDirectory(self, self.tr("Select Root Directory to Scan"))
         if not root:
             return
-        self.coll_status.setText("Scanning (recursive)…")
+        self.coll_status.setText(self.tr("Scanning (recursive)…"))
         w = _ScanWorker(Path(root), recursive=True, flask_port=self.flask_port)
         w.finished.connect(self._on_scan_finished)
-        w.error.connect(lambda e: self.coll_status.setText(f"Scan error: {e}"))
+        w.error.connect(lambda e: self.coll_status.setText(self.tr("Scan error: {}").format(e)))
         self._workers.append(w)
         w.start()
 
@@ -1445,15 +1449,15 @@ class CollectionTab(QWidget):
 
         if not entries:
             QMessageBox.information(
-                self, "Scan",
-                f"No folders with LB numbers found.\n{skipped} folder(s) skipped."
+                self, self.tr("Scan"),
+                self.tr("No folders with LB numbers found.\n{} folder(s) skipped.").format(skipped)
             )
-            self.coll_status.setText("Scan complete — no LB folders found.")
+            self.coll_status.setText(self.tr("Scan complete — no LB folders found."))
             return
 
         dlg = _ScanPreviewDialog(entries, owned_set, parent=self)
         if dlg.exec() != QDialog.DialogCode.Accepted:
-            self.coll_status.setText("Scan cancelled.")
+            self.coll_status.setText(self.tr("Scan cancelled."))
             return
 
         self._bulk_add(entries, skipped)
@@ -1478,15 +1482,16 @@ class CollectionTab(QWidget):
 
         w = _ApiWorker(call)
         w.finished.connect(lambda r: self._on_bulk_done(r))
-        w.error.connect(lambda e: self.coll_status.setText(f"Error: {e}"))
+        w.error.connect(lambda e: self.coll_status.setText(self.tr("Error: {}").format(e)))
         self._workers.append(w)
         w.start()
-        self.coll_status.setText("Adding…")
+        self.coll_status.setText(self.tr("Adding…"))
 
     def _on_bulk_done(self, result):
         self.coll_status.setText(
-            f"Added: {result['added']}, already existed: {result['already']}, "
-            f"skipped (no LB): {result['skipped']}."
+            self.tr("Added: {}, already existed: {}, skipped (no LB): {}.").format(
+                result['added'], result['already'], result['skipped']
+            )
         )
         self.refresh_collection()
 
@@ -1495,12 +1500,12 @@ class CollectionTab(QWidget):
     def _on_update_location(self):
         rows = self._selected_rows()
         if not rows:
-            self.coll_status.setText("Select one or more rows to update.")
+            self.coll_status.setText(self.tr("Select one or more rows to update."))
             return
 
         if len(rows) == 1:
             row = rows[0]
-            path = QFileDialog.getExistingDirectory(self, "Select New Folder Location")
+            path = QFileDialog.getExistingDirectory(self, self.tr("Select New Folder Location"))
             if not path:
                 return
             folder = Path(path)
@@ -1509,7 +1514,7 @@ class CollectionTab(QWidget):
                 "folder_name": folder.name,
             })
         else:
-            root = QFileDialog.getExistingDirectory(self, "Select Root Directory to Search")
+            root = QFileDialog.getExistingDirectory(self, self.tr("Select Root Directory to Search"))
             if not root:
                 return
             root_path = Path(root)
@@ -1533,9 +1538,9 @@ class CollectionTab(QWidget):
                     updated += 1
                 else:
                     not_found.append(f"LB-{row['lb_number']}")
-            msg = f"Updated: {updated}."
+            msg = self.tr("Updated: {}.").format(updated)
             if not_found:
-                msg += f" Not found: {', '.join(not_found)}."
+                msg += " " + self.tr("Not found: {}.").format(', '.join(not_found))
             self.coll_status.setText(msg)
             self.refresh_collection()
 
@@ -1547,7 +1552,7 @@ class CollectionTab(QWidget):
             ).json()
         w = _ApiWorker(call)
         w.finished.connect(lambda _: self.refresh_collection())
-        w.error.connect(lambda e: self.coll_status.setText(f"Error: {e}"))
+        w.error.connect(lambda e: self.coll_status.setText(self.tr("Error: {}").format(e)))
         self._workers.append(w)
         w.start()
 
@@ -1556,14 +1561,14 @@ class CollectionTab(QWidget):
     def _on_remove(self):
         rows = self._selected_rows()
         if not rows:
-            self.coll_status.setText("Select one or more rows to remove.")
+            self.coll_status.setText(self.tr("Select one or more rows to remove."))
             return
         lb_numbers = [r["lb_number"] for r in rows]
         if QMessageBox.question(
-            self, "Confirm Remove",
-            f"Remove {len(lb_numbers)} item(s) from My Collection?\n\n"
-            "Personal ratings, tags, and watchdog alerts for these entries "
-            "will also be removed. Audio files on disk are NOT deleted.",
+            self, self.tr("Confirm Remove"),
+            self.tr("Remove {} item(s) from My Collection?\n\n"
+                    "Personal ratings, tags, and watchdog alerts for these entries "
+                    "will also be removed. Audio files on disk are NOT deleted.").format(len(lb_numbers)),
             QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
         ) != QMessageBox.StandardButton.Yes:
             return
@@ -1577,12 +1582,12 @@ class CollectionTab(QWidget):
         w = _ApiWorker(call)
         w.finished.connect(lambda r: (
             self.coll_status.setText(
-                f"Removed {r.get('deleted', 0)} item(s)."
-                if not r.get("error") else f"Error: {r['error']}"
+                self.tr("Removed {} item(s).").format(r.get('deleted', 0))
+                if not r.get("error") else self.tr("Error: {}").format(r['error'])
             ),
             self.refresh_collection(),
         ))
-        w.error.connect(lambda e: self.coll_status.setText(f"Error: {e}"))
+        w.error.connect(lambda e: self.coll_status.setText(self.tr("Error: {}").format(e)))
         self._workers.append(w)
         w.start()
 
@@ -1594,13 +1599,13 @@ class CollectionTab(QWidget):
 
         rows = self._selected_rows()
         if rows:
-            open_act = QAction("Open Folder", self)
+            open_act = QAction(self.tr("Open Folder"), self)
             open_act.triggered.connect(lambda: self._open_folders(rows))
             menu.addAction(open_act)
 
             spec_paths = [r["disk_path"] for r in rows if r.get("disk_path") and Path(r["disk_path"]).is_dir()]
             if spec_paths:
-                spec_act = QAction("Generate Spectrograms", self)
+                spec_act = QAction(self.tr("Generate Spectrograms"), self)
                 spec_act.triggered.connect(lambda: self.send_to_spectrograms.emit(spec_paths))
                 menu.addAction(spec_act)
 
@@ -1608,20 +1613,20 @@ class CollectionTab(QWidget):
             row = self.coll_model.get_row(index.row())
             if row:
                 lb = row["lb_number"]
-                view_act = QAction("View LB Entry", self)
+                view_act = QAction(self.tr("View LB Entry"), self)
                 url = f"http://www.losslessbob.wonderingwhattochoose.com/detail/LB-{lb:05d}.html"
                 view_act.triggered.connect(lambda: webbrowser.open(url))
                 menu.addAction(view_act)
 
-                scrape_act = QAction("Scrape Entry", self)
+                scrape_act = QAction(self.tr("Scrape Entry"), self)
                 scrape_act.triggered.connect(lambda: self._scrape_entry(lb))
                 menu.addAction(scrape_act)
 
-                upd_act = QAction("Update Location", self)
+                upd_act = QAction(self.tr("Update Location"), self)
                 upd_act.triggered.connect(self._on_update_location)
                 menu.addAction(upd_act)
 
-                meta_act = QAction("Edit Personal Info…", self)
+                meta_act = QAction(self.tr("Edit Personal Info…"), self)
                 meta_act.triggered.connect(lambda: self._on_edit_personal_info(lb))
                 menu.addAction(meta_act)
 
@@ -1639,16 +1644,16 @@ class CollectionTab(QWidget):
                     pass
 
     def _scrape_entry(self, lb_number):
-        self.coll_status.setText(f"Scraping LB-{lb_number}…")
+        self.coll_status.setText(self.tr("Scraping LB-{}…").format(lb_number))
         w = _ApiWorker(lambda: requests.post(
             f"http://127.0.0.1:{self.flask_port}/api/entry/{lb_number}/scrape",
             timeout=60,
         ).json())
         w.finished.connect(lambda _: (
-            self.coll_status.setText(f"Scraped LB-{lb_number}."),
+            self.coll_status.setText(self.tr("Scraped LB-{}.").format(lb_number)),
             self.refresh_collection(),
         ))
-        w.error.connect(lambda e: self.coll_status.setText(f"Error: {e}"))
+        w.error.connect(lambda e: self.coll_status.setText(self.tr("Error: {}").format(e)))
         self._workers.append(w)
         w.start()
 
@@ -1659,7 +1664,7 @@ class CollectionTab(QWidget):
                 timeout=5,
             ).json()
         except Exception as e:
-            self.coll_status.setText(f"Error loading meta: {e}")
+            self.coll_status.setText(self.tr("Error loading meta: {}").format(e))
             return
         dlg = _PersonalMetaDialog(lb_number, meta, self.flask_port, parent=self)
         if dlg.exec() != QDialog.DialogCode.Accepted:
@@ -1670,9 +1675,9 @@ class CollectionTab(QWidget):
                 f"http://127.0.0.1:{self.flask_port}/api/collection/{lb_number}/meta",
                 json=vals, timeout=5,
             )
-            self.coll_status.setText(f"Saved personal info for LB-{lb_number:05d}.")
+            self.coll_status.setText(self.tr("Saved personal info for LB-{}.").format(f"{lb_number:05d}"))
         except Exception as e:
-            self.coll_status.setText(f"Error saving meta: {e}")
+            self.coll_status.setText(self.tr("Error saving meta: {}").format(e))
 
     # ── Missing: double-click & export ────────────────────────────────────────
 
@@ -1684,11 +1689,11 @@ class CollectionTab(QWidget):
     def _on_export_csv(self):
         rows = self.miss_model.all_rows()
         if not rows:
-            self.miss_status.setText("Nothing to export.")
+            self.miss_status.setText(self.tr("Nothing to export."))
             return
         path, _ = QFileDialog.getSaveFileName(
-            self, "Export Missing as CSV", "missing_from_collection.csv",
-            "CSV Files (*.csv)"
+            self, self.tr("Export Missing as CSV"), "missing_from_collection.csv",
+            self.tr("CSV Files (*.csv)")
         )
         if not path:
             return
@@ -1704,16 +1709,16 @@ class CollectionTab(QWidget):
                         "Rating": r.get("rating", ""),
                         "Description": r.get("description", ""),
                     })
-            self.miss_status.setText(f"Exported {len(rows)} rows to {Path(path).name}.")
+            self.miss_status.setText(self.tr("Exported {} rows to {}.").format(len(rows), Path(path).name))
         except Exception as e:
-            self.miss_status.setText(f"Export error: {e}")
+            self.miss_status.setText(self.tr("Export error: {}").format(e))
 
     # ── Torrent / Forum actions ───────────────────────────────────────────────
 
     def _on_create_torrent(self):
         rows = self._selected_rows()
         if not rows:
-            self.coll_status.setText("Select one or more entries to create torrents for.")
+            self.coll_status.setText(self.tr("Select one or more entries to create torrents for."))
             return
         entries = [
             {"lb_number": r["lb_number"], "source_folder": r.get("disk_path", "")}
@@ -1721,12 +1726,12 @@ class CollectionTab(QWidget):
             if r.get("disk_path")
         ]
         if not entries:
-            self.coll_status.setText("Selected entries have no disk path set.")
+            self.coll_status.setText(self.tr("Selected entries have no disk path set."))
             return
 
         flask_port = self.flask_port
         total = len(entries)
-        self.coll_status.setText(f"Creating {total} torrent(s)…")
+        self.coll_status.setText(self.tr("Creating {} torrent(s)…").format(total))
         self.create_torrent_btn.setEnabled(False)
 
         def call():
@@ -1750,7 +1755,7 @@ class CollectionTab(QWidget):
         w = _ApiWorker(call)
         w.finished.connect(self._on_torrent_done)
         w.error.connect(lambda e: (
-            self.coll_status.setText(f"Error: {e}"),
+            self.coll_status.setText(self.tr("Error: {}").format(e)),
             self.create_torrent_btn.setEnabled(True),
         ))
         self._workers.append(w)
@@ -1760,9 +1765,9 @@ class CollectionTab(QWidget):
         self.create_torrent_btn.setEnabled(True)
         ok_count = len(result.get("results", []))
         errors = result.get("errors", [])
-        msg = f"Created {ok_count} torrent(s)."
+        msg = self.tr("Created {} torrent(s).").format(ok_count)
         if errors:
-            msg += f" {len(errors)} error(s): " + "; ".join(errors[:3])
+            msg += " " + self.tr("{} error(s): ").format(len(errors)) + "; ".join(errors[:3])
         self.coll_status.setText(msg)
         if self._current_history_lb is not None:
             self._load_torrent_history(self._current_history_lb)
@@ -1770,11 +1775,11 @@ class CollectionTab(QWidget):
     def _on_add_to_qbt(self):
         rows = self._selected_rows()
         if not rows:
-            self.coll_status.setText("Select one or more entries to add to qBittorrent.")
+            self.coll_status.setText(self.tr("Select one or more entries to add to qBittorrent."))
             return
         lb_numbers = [r["lb_number"] for r in rows]
         flask_port = self.flask_port
-        self.coll_status.setText(f"Adding {len(lb_numbers)} torrent(s) to qBittorrent…")
+        self.coll_status.setText(self.tr("Adding {} torrent(s) to qBittorrent…").format(len(lb_numbers)))
         self.add_qbt_btn.setEnabled(False)
 
         def call():
@@ -1787,7 +1792,7 @@ class CollectionTab(QWidget):
         w = _ApiWorker(call)
         w.finished.connect(self._on_qbt_done)
         w.error.connect(lambda e: (
-            self.coll_status.setText(f"Error: {e}"),
+            self.coll_status.setText(self.tr("Error: {}").format(e)),
             self.add_qbt_btn.setEnabled(True),
         ))
         self._workers.append(w)
@@ -1799,19 +1804,17 @@ class CollectionTab(QWidget):
             added = result.get("added", 0)
             total = result.get("total", 0)
             errors = [r for r in result.get("results", []) if not r.get("ok")]
-            msg = f"Added {added}/{total} torrent(s) to qBittorrent."
+            msg = self.tr("Added {}/{} torrent(s) to qBittorrent.").format(added, total)
             if errors:
-                msg += " Errors: " + "; ".join(
-                    r.get("error", "?") for r in errors[:3]
-                )
+                msg += " " + self.tr("Errors: ") + "; ".join(r.get("error", "?") for r in errors[:3])
             self.coll_status.setText(msg)
         else:
-            self.coll_status.setText(f"Error: {result.get('error', 'unknown')}")
+            self.coll_status.setText(self.tr("Error: {}").format(result.get('error', 'unknown')))
 
     def _on_post_forum(self):
         rows = self._selected_rows()
         if len(rows) != 1:
-            self.coll_status.setText("Select exactly one entry to post to the forum.")
+            self.coll_status.setText(self.tr("Select exactly one entry to post to the forum."))
             return
         row = rows[0]
         lb = row["lb_number"]
@@ -1820,21 +1823,21 @@ class CollectionTab(QWidget):
         lb_status = row.get("lb_status") or ""
         if lb_status in ("private", "missing"):
             msg_map = {
-                "private": (
-                    f"LB-{lb:05d} is marked <b>Private</b>.<br><br>"
+                "private": self.tr(
+                    "LB-{lb} is marked <b>Private</b>.<br><br>"
                     "Posting to the forum would expose content that the webmaster "
                     "has chosen not to publish on the LosslessBob website.<br><br>"
                     "If you believe this status is wrong, you can request the "
                     "curator to review it."
-                ),
-                "missing": (
-                    f"LB-{lb:05d} is marked as <b>not existing</b>.<br><br>"
+                ).format(lb=f"{lb:05d}"),
+                "missing": self.tr(
+                    "LB-{lb} is marked as <b>not existing</b>.<br><br>"
                     "There is nothing to post about for a non-existent entry."
-                ),
+                ).format(lb=f"{lb:05d}"),
             }
             from PyQt6.QtWidgets import QMessageBox
             dlg = QMessageBox(self)
-            dlg.setWindowTitle("Forum Post Blocked")
+            dlg.setWindowTitle(self.tr("Forum Post Blocked"))
             dlg.setIcon(QMessageBox.Icon.Warning)
             dlg.setText(msg_map.get(lb_status, f"LB-{lb:05d} cannot be posted."))
             dlg.setStandardButtons(QMessageBox.StandardButton.Ok)
@@ -1843,7 +1846,7 @@ class CollectionTab(QWidget):
 
         disk_path = row.get("disk_path", "")
         flask_port = self.flask_port
-        self.coll_status.setText(f"Preparing LB-{lb:05d} for forum post…")
+        self.coll_status.setText(self.tr("Preparing LB-{} for forum post…").format(f"{lb:05d}"))
         self.post_forum_btn.setEnabled(False)
 
         def call():
@@ -1907,27 +1910,27 @@ class CollectionTab(QWidget):
         if self._current_history_lb == lb:
             self._load_torrent_history(lb)
         if result.get("ok") is False:
-            self.coll_status.setText(f"Preview failed: {result.get('error', 'unknown')}")
+            self.coll_status.setText(self.tr("Preview failed: {}").format(result.get('error', 'unknown')))
             return
 
         subject = result.get("subject", "")
         body = result.get("body", "")
 
         dlg = QDialog(self)
-        dlg.setWindowTitle(f"Forum Post Preview — LB-{lb:05d}")
+        dlg.setWindowTitle(self.tr("Forum Post Preview — LB-{}").format(f"{lb:05d}"))
         dlg.resize(760, 560)
         layout = QVBoxLayout(dlg)
         layout.setSpacing(8)
 
         # Subject row
         subj_layout = QHBoxLayout()
-        subj_layout.addWidget(QLabel("Subject:"))
+        subj_layout.addWidget(QLabel(self.tr("Subject:")))
         subj_edit = QLineEdit(subject)
         subj_layout.addWidget(subj_edit)
         layout.addLayout(subj_layout)
 
         # Body
-        layout.addWidget(QLabel("Body (BBcode):"))
+        layout.addWidget(QLabel(self.tr("Body (BBcode):")))
         body_edit = QTextEdit()
         body_edit.setPlainText(body)
         body_edit.setFont(self.font())
@@ -1935,24 +1938,24 @@ class CollectionTab(QWidget):
 
         # Buttons
         btn_box = QDialogButtonBox()
-        post_btn = btn_box.addButton("Post to Forum", QDialogButtonBox.ButtonRole.AcceptRole)
+        post_btn = btn_box.addButton(self.tr("Post to Forum"), QDialogButtonBox.ButtonRole.AcceptRole)
         post_btn.setObjectName("accent")
         btn_box.addButton(QDialogButtonBox.StandardButton.Cancel)
         btn_box.accepted.connect(dlg.accept)
         btn_box.rejected.connect(dlg.reject)
         layout.addWidget(btn_box)
 
-        self.coll_status.setText(f"Preview ready for LB-{lb:05d} — review and confirm.")
+        self.coll_status.setText(self.tr("Preview ready for LB-{} — review and confirm.").format(f"{lb:05d}"))
 
         if dlg.exec() != QDialog.DialogCode.Accepted:
-            self.coll_status.setText("Forum post cancelled.")
+            self.coll_status.setText(self.tr("Forum post cancelled."))
             return
 
         # User confirmed — send the (possibly edited) subject/body
         flask_port = self.flask_port
         confirmed_subject = subj_edit.text().strip()
         confirmed_body = body_edit.toPlainText()
-        self.coll_status.setText(f"Posting LB-{lb:05d} to WTRF forum…")
+        self.coll_status.setText(self.tr("Posting LB-{} to WTRF forum…").format(f"{lb:05d}"))
         self.post_forum_btn.setEnabled(False)
 
         def call():
@@ -1965,7 +1968,7 @@ class CollectionTab(QWidget):
         w = _ApiWorker(call)
         w.finished.connect(lambda r: self._on_post_forum_done(r, lb))
         w.error.connect(lambda e: (
-            self.coll_status.setText(f"Error: {e}"),
+            self.coll_status.setText(self.tr("Error: {}").format(e)),
             self.post_forum_btn.setEnabled(True),
         ))
         self._workers.append(w)
@@ -1975,15 +1978,15 @@ class CollectionTab(QWidget):
         self.post_forum_btn.setEnabled(True)
         if result.get("ok"):
             url = result.get("topic_url", "")
-            self.coll_status.setText(f"Posted LB-{lb:05d} to forum.  {url}")
+            self.coll_status.setText(self.tr("Posted LB-{} to forum.  {}").format(f"{lb:05d}", url))
             # Refresh forum post history and switch to that tab.
             if self._current_forum_posts_lb == lb:
                 self._load_forum_posts(lb)
                 self.history_tabs.setCurrentIndex(1)
             if url:
                 if QMessageBox.question(
-                    self, "Posted",
-                    f"Topic posted successfully.\nOpen in browser?\n{url}",
+                    self, self.tr("Posted"),
+                    self.tr("Topic posted successfully.\nOpen in browser?\n{}").format(url),
                     QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
                 ) == QMessageBox.StandardButton.Yes:
                     webbrowser.open(url)
@@ -1992,18 +1995,18 @@ class CollectionTab(QWidget):
             # Surface forum-post-guard rejections with a modal (stale cached status race)
             if err in ("lb_private", "lb_missing", "status_unknown"):
                 dlg = QMessageBox(self)
-                dlg.setWindowTitle("Forum Post Blocked")
+                dlg.setWindowTitle(self.tr("Forum Post Blocked"))
                 dlg.setIcon(QMessageBox.Icon.Warning)
-                dlg.setText(result.get("message", f"LB-{lb:05d} cannot be posted."))
+                dlg.setText(result.get("message", self.tr("LB-{} cannot be posted.").format(f"{lb:05d}")))
                 dlg.setStandardButtons(QMessageBox.StandardButton.Ok)
                 dlg.exec()
             else:
-                self.coll_status.setText(f"Forum post failed: {err}")
+                self.coll_status.setText(self.tr("Forum post failed: {}").format(err))
 
     # ── History Panel (Torrents + Forum Posts) ───────────────────────────────
 
     def _build_torrent_history_panel(self) -> QGroupBox:
-        group = QGroupBox("History")
+        group = QGroupBox(self.tr("History"))
         outer = QVBoxLayout(group)
         outer.setContentsMargins(6, 6, 6, 6)
         outer.setSpacing(4)
@@ -2017,13 +2020,14 @@ class CollectionTab(QWidget):
         torrent_layout.setContentsMargins(0, 4, 0, 0)
         torrent_layout.setSpacing(4)
 
-        self.torrent_history_label = QLabel("Select one entry to view its torrent history.")
+        self.torrent_history_label = QLabel(self.tr("Select one entry to view its torrent history."))
         torrent_layout.addWidget(self.torrent_history_label)
 
         self.torrent_history_table = QTableWidget(0, 5)
-        self.torrent_history_table.setHorizontalHeaderLabels(
-            ["", "Created", "Torrent File", "Source Folder", "Added to qBt"]
-        )
+        self.torrent_history_table.setHorizontalHeaderLabels([
+            "", self.tr("Created"), self.tr("Torrent File"),
+            self.tr("Source Folder"), self.tr("Added to qBt"),
+        ])
         self.torrent_history_table.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self.torrent_history_table.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.torrent_history_table.setSelectionMode(QAbstractItemView.SelectionMode.SingleSelection)
@@ -2040,20 +2044,20 @@ class CollectionTab(QWidget):
             )
 
         hist_btn_row = QHBoxLayout()
-        self.history_add_qbt_btn = QPushButton("Add to qBittorrent")
+        self.history_add_qbt_btn = QPushButton(self.tr("Add to qBittorrent"))
         self.history_add_qbt_btn.setEnabled(False)
         self.history_add_qbt_btn.clicked.connect(self._on_history_add_to_qbt)
         hist_btn_row.addWidget(self.history_add_qbt_btn)
 
-        self.history_regen_btn = QPushButton("Regenerate")
+        self.history_regen_btn = QPushButton(self.tr("Regenerate"))
         self.history_regen_btn.setEnabled(False)
-        self.history_regen_btn.setToolTip("Recreate the .torrent file (only when file is missing)")
+        self.history_regen_btn.setToolTip(self.tr("Recreate the .torrent file (only when file is missing)"))
         self.history_regen_btn.clicked.connect(self._on_history_regenerate)
         hist_btn_row.addWidget(self.history_regen_btn)
 
-        self.history_relocate_btn = QPushButton("Relocate Source…")
+        self.history_relocate_btn = QPushButton(self.tr("Relocate Source…"))
         self.history_relocate_btn.setEnabled(False)
-        self.history_relocate_btn.setToolTip("Update the stored source folder path for this torrent")
+        self.history_relocate_btn.setToolTip(self.tr("Update the stored source folder path for this torrent"))
         self.history_relocate_btn.clicked.connect(self._on_history_relocate)
         hist_btn_row.addWidget(self.history_relocate_btn)
 
@@ -2063,7 +2067,7 @@ class CollectionTab(QWidget):
         self.torrent_history_status = QLabel("")
         torrent_layout.addWidget(self.torrent_history_status)
 
-        tabs.addTab(torrent_tab, "Torrents")
+        tabs.addTab(torrent_tab, self.tr("Torrents"))
 
         # ── Forum Posts tab ───────────────────────────────────────────────────
         forum_tab = QWidget()
@@ -2071,11 +2075,11 @@ class CollectionTab(QWidget):
         forum_layout.setContentsMargins(0, 4, 0, 0)
         forum_layout.setSpacing(4)
 
-        self.forum_posts_label = QLabel("Select one entry to view its forum post history.")
+        self.forum_posts_label = QLabel(self.tr("Select one entry to view its forum post history."))
         forum_layout.addWidget(self.forum_posts_label)
 
         self.forum_posts_table = QTableWidget(0, 3)
-        self.forum_posts_table.setHorizontalHeaderLabels(["Posted", "Subject", "URL"])
+        self.forum_posts_table.setHorizontalHeaderLabels([self.tr("Posted"), self.tr("Subject"), self.tr("URL")])
         self.forum_posts_table.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self.forum_posts_table.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.forum_posts_table.setSelectionMode(QAbstractItemView.SelectionMode.SingleSelection)
@@ -2090,14 +2094,14 @@ class CollectionTab(QWidget):
             )
 
         fp_btn_row = QHBoxLayout()
-        self.forum_open_btn = QPushButton("Open in Browser")
+        self.forum_open_btn = QPushButton(self.tr("Open in Browser"))
         self.forum_open_btn.setEnabled(False)
         self.forum_open_btn.clicked.connect(self._on_forum_post_open)
         fp_btn_row.addWidget(self.forum_open_btn)
 
-        self.forum_delete_btn = QPushButton("Remove Record")
+        self.forum_delete_btn = QPushButton(self.tr("Remove Record"))
         self.forum_delete_btn.setEnabled(False)
-        self.forum_delete_btn.setToolTip("Remove this log entry (does not delete the forum post)")
+        self.forum_delete_btn.setToolTip(self.tr("Remove this log entry (does not delete the forum post)"))
         self.forum_delete_btn.clicked.connect(self._on_forum_post_delete)
         fp_btn_row.addWidget(self.forum_delete_btn)
 
@@ -2106,7 +2110,7 @@ class CollectionTab(QWidget):
 
         self.forum_posts_table.itemSelectionChanged.connect(self._on_forum_post_selection)
 
-        tabs.addTab(forum_tab, "Forum Posts")
+        tabs.addTab(forum_tab, self.tr("Forum Posts"))
 
         outer.addWidget(tabs)
         self.history_tabs = tabs
@@ -2116,7 +2120,7 @@ class CollectionTab(QWidget):
         self._current_forum_posts_lb = lb
         self._forum_posts_gen += 1
         gen = self._forum_posts_gen
-        self.forum_posts_label.setText(f"Loading forum post history for LB-{lb:05d}…")
+        self.forum_posts_label.setText(self.tr("Loading forum post history for LB-{}…").format(f"{lb:05d}"))
         flask_port = self.flask_port
 
         def call():
@@ -2126,7 +2130,7 @@ class CollectionTab(QWidget):
 
         w = _ApiWorker(call)
         w.finished.connect(lambda data, _lb=lb, _gen=gen: self._populate_forum_posts(data, _lb, _gen))
-        w.error.connect(lambda e: self.forum_posts_label.setText(f"Error: {e}"))
+        w.error.connect(lambda e: self.forum_posts_label.setText(self.tr("Error: {}").format(e)))
         self._workers.append(w)
         w.start()
 
@@ -2134,7 +2138,7 @@ class CollectionTab(QWidget):
         if lb != self._current_forum_posts_lb or gen != self._forum_posts_gen:
             return
         if isinstance(records, dict):
-            self.forum_posts_label.setText(f"Error: {records.get('error', 'unknown')}")
+            self.forum_posts_label.setText(self.tr("Error: {}").format(records.get('error', 'unknown')))
             return
 
         self._forum_posts_records = records
@@ -2144,12 +2148,12 @@ class CollectionTab(QWidget):
 
         if not records:
             self.forum_posts_label.setText(
-                f"LB-{lb:05d} — no forum posts logged yet."
+                self.tr("LB-{} — no forum posts logged yet.").format(f"{lb:05d}")
             )
             return
 
         self.forum_posts_label.setText(
-            f"LB-{lb:05d} — {len(records)} forum post(s):"
+            self.tr("LB-{} — {} forum post(s):").format(f"{lb:05d}", len(records))
         )
         for rec in records:
             row = self.forum_posts_table.rowCount()
@@ -2181,8 +2185,8 @@ class CollectionTab(QWidget):
             return
         rec = self._forum_posts_records[row]
         if QMessageBox.question(
-            self, "Remove Record",
-            f"Remove this forum post log entry?\n{rec.get('topic_url', '')}",
+            self, self.tr("Remove Record"),
+            self.tr("Remove this forum post log entry?\n{}").format(rec.get('topic_url', '')),
             QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
         ) != QMessageBox.StandardButton.Yes:
             return
@@ -2196,7 +2200,7 @@ class CollectionTab(QWidget):
 
         w = _ApiWorker(call)
         w.finished.connect(lambda _: self._load_forum_posts(self._current_forum_posts_lb))
-        w.error.connect(lambda e: self.forum_posts_label.setText(f"Error: {e}"))
+        w.error.connect(lambda e: self.forum_posts_label.setText(self.tr("Error: {}").format(e)))
         self._workers.append(w)
         w.start()
 
@@ -2208,9 +2212,9 @@ class CollectionTab(QWidget):
             self._load_forum_posts(lb)
         else:
             msg = (
-                "Select one entry to view its torrent history."
+                self.tr("Select one entry to view its torrent history.")
                 if not rows else
-                "Select a single entry to view torrent history."
+                self.tr("Select a single entry to view torrent history.")
             )
             self.torrent_history_label.setText(msg)
             self.torrent_history_table.setRowCount(0)
@@ -2225,7 +2229,7 @@ class CollectionTab(QWidget):
         self._current_history_lb = lb
         self._history_gen += 1
         gen = self._history_gen
-        self.torrent_history_label.setText(f"Loading torrent history for LB-{lb:05d}…")
+        self.torrent_history_label.setText(self.tr("Loading torrent history for LB-{}…").format(f"{lb:05d}"))
         flask_port = self.flask_port
 
         def call():
@@ -2235,7 +2239,7 @@ class CollectionTab(QWidget):
 
         w = _ApiWorker(call)
         w.finished.connect(lambda data, _lb=lb, _gen=gen: self._populate_torrent_history(data, _lb, _gen))
-        w.error.connect(lambda e: self.torrent_history_label.setText(f"Error loading history: {e}"))
+        w.error.connect(lambda e: self.torrent_history_label.setText(self.tr("Error loading history: {}").format(e)))
         self._workers.append(w)
         w.start()
 
@@ -2243,7 +2247,7 @@ class CollectionTab(QWidget):
         if lb != self._current_history_lb or gen != self._history_gen:
             return  # stale response — a newer load supersedes this one
         if isinstance(records, dict):
-            self.torrent_history_label.setText(f"Error: {records.get('error', 'unknown')}")
+            self.torrent_history_label.setText(self.tr("Error: {}").format(records.get('error', 'unknown')))
             return
 
         self._torrent_history_records = records
@@ -2251,7 +2255,7 @@ class CollectionTab(QWidget):
 
         if not records:
             self.torrent_history_label.setText(
-                f"LB-{lb:05d} — no torrents yet. Use Create Torrent to make one."
+                self.tr("LB-{} — no torrents yet. Use Create Torrent to make one.").format(f"{lb:05d}")
             )
             self.history_add_qbt_btn.setEnabled(False)
             self.history_regen_btn.setEnabled(False)
@@ -2260,7 +2264,7 @@ class CollectionTab(QWidget):
             return
 
         self.torrent_history_label.setText(
-            f"LB-{lb:05d} — {len(records)} torrent record(s):"
+            self.tr("LB-{} — {} torrent record(s):").format(f"{lb:05d}", len(records))
         )
 
         for rec in records:
@@ -2274,13 +2278,13 @@ class CollectionTab(QWidget):
             dot.setTextAlignment(Qt.AlignmentFlag.AlignCenter)
             if not folder_ok:
                 dot.setForeground(QColor("#D32F2F"))
-                dot.setToolTip("Source folder not found on disk — use Relocate Source")
+                dot.setToolTip(self.tr("Source folder not found on disk — use Relocate Source"))
             elif not torrent_ok:
                 dot.setForeground(QColor("#F57C00"))
-                dot.setToolTip("Torrent file missing from data/torrents/ — use Regenerate")
+                dot.setToolTip(self.tr("Torrent file missing from data/torrents/ — use Regenerate"))
             else:
                 dot.setForeground(QColor("#388E3C"))
-                dot.setToolTip("Source folder and .torrent file both present")
+                dot.setToolTip(self.tr("Source folder and .torrent file both present"))
             self.torrent_history_table.setItem(row, 0, dot)
 
             created = str(rec.get("created_at") or "")[:19]
@@ -2288,7 +2292,7 @@ class CollectionTab(QWidget):
 
             tp = rec.get("torrent_path") or ""
             from pathlib import Path as _Path
-            t_name = _Path(tp).name if tp else "MISSING"
+            t_name = _Path(tp).name if tp else self.tr("MISSING")
             t_item = QTableWidgetItem(t_name)
             t_item.setToolTip(tp)
             if not torrent_ok:
@@ -2304,7 +2308,7 @@ class CollectionTab(QWidget):
 
             added = rec.get("added_to_qbt", 0)
             added_at = str(rec.get("added_to_qbt_at") or "")[:10]
-            qbt_text = f"Yes ({added_at})" if added and added_at else ("Yes" if added else "No")
+            qbt_text = self.tr("Yes ({})").format(added_at) if added and added_at else (self.tr("Yes") if added else self.tr("No"))
             self.torrent_history_table.setItem(row, 4, QTableWidgetItem(qbt_text))
 
         self.history_add_qbt_btn.setEnabled(True)
@@ -2328,27 +2332,27 @@ class CollectionTab(QWidget):
         self.torrent_history_table.setCurrentCell(row, 0)
 
         menu = QMenu(self)
-        add_act = QAction("Add to qBittorrent", self)
+        add_act = QAction(self.tr("Add to qBittorrent"), self)
         add_act.triggered.connect(lambda: self._history_add_record(rec))
         menu.addAction(add_act)
 
         if not rec.get("torrent_file_exists"):
-            regen_act = QAction("Regenerate Torrent", self)
+            regen_act = QAction(self.tr("Regenerate Torrent"), self)
             regen_act.triggered.connect(lambda: self._history_regen_record(rec))
             menu.addAction(regen_act)
 
-        relocate_act = QAction("Relocate Source Folder…", self)
+        relocate_act = QAction(self.tr("Relocate Source Folder…"), self)
         relocate_act.triggered.connect(lambda: self._history_relocate_record(rec))
         menu.addAction(relocate_act)
 
         menu.addSeparator()
 
-        qbt_remove_act = QAction("Remove from qBittorrent", self)
+        qbt_remove_act = QAction(self.tr("Remove from qBittorrent"), self)
         qbt_remove_act.setEnabled(bool(rec.get("infohash")))
         qbt_remove_act.triggered.connect(lambda: self._history_qbt_remove(rec))
         menu.addAction(qbt_remove_act)
 
-        file_del_act = QAction("Delete .torrent File from Disk", self)
+        file_del_act = QAction(self.tr("Delete .torrent File from Disk"), self)
         file_del_act.setEnabled(bool(rec.get("torrent_file_exists")))
         file_del_act.triggered.connect(lambda: self._history_torrent_file_delete(rec))
         menu.addAction(file_del_act)
@@ -2368,9 +2372,9 @@ class CollectionTab(QWidget):
     def _history_add_record(self, rec: dict) -> None:
         if not rec.get("source_folder_exists"):
             reply = QMessageBox.question(
-                self, "Source Folder Missing",
-                "The source folder for this torrent no longer exists.\n\n"
-                "Would you like to relocate it first?",
+                self, self.tr("Source Folder Missing"),
+                self.tr("The source folder for this torrent no longer exists.\n\n"
+                        "Would you like to relocate it first?"),
                 QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No
                 | QMessageBox.StandardButton.Cancel,
             )
@@ -2382,7 +2386,7 @@ class CollectionTab(QWidget):
 
         torrent_id = rec["id"]
         flask_port = self.flask_port
-        self.torrent_history_status.setText("Adding to qBittorrent…")
+        self.torrent_history_status.setText(self.tr("Adding to qBittorrent…"))
         self.history_add_qbt_btn.setEnabled(False)
 
         def call():
@@ -2395,7 +2399,7 @@ class CollectionTab(QWidget):
         w = _ApiWorker(call)
         w.finished.connect(self._on_history_qbt_done)
         w.error.connect(lambda e: (
-            self.torrent_history_status.setText(f"Error: {e}"),
+            self.torrent_history_status.setText(self.tr("Error: {}").format(e)),
             self.history_add_qbt_btn.setEnabled(True),
         ))
         self._workers.append(w)
@@ -2404,14 +2408,14 @@ class CollectionTab(QWidget):
     def _on_history_qbt_done(self, result: dict) -> None:
         self.history_add_qbt_btn.setEnabled(True)
         if result.get("ok") and result.get("added", 0) > 0:
-            self.torrent_history_status.setText("Added to qBittorrent successfully.")
+            self.torrent_history_status.setText(self.tr("Added to qBittorrent successfully."))
             if self._current_history_lb:
                 self._load_torrent_history(self._current_history_lb)
         else:
             errors = result.get("results", [])
             err = next((r.get("error") for r in errors if r.get("error")),
                        result.get("error", "unknown error"))
-            self.torrent_history_status.setText(f"Failed: {err}")
+            self.torrent_history_status.setText(self.tr("Failed: {}").format(err))
 
     # ── History: Regenerate ───────────────────────────────────────────────────
 
@@ -2430,17 +2434,17 @@ class CollectionTab(QWidget):
         lb = self._current_history_lb
         source_folder = rec.get("source_folder", "")
         if not source_folder:
-            self.torrent_history_status.setText("No source folder recorded.")
+            self.torrent_history_status.setText(self.tr("No source folder recorded."))
             return
         from pathlib import Path as _Path
         if not _Path(source_folder).is_dir():
             self.torrent_history_status.setText(
-                "Source folder not found. Relocate it first before regenerating."
+                self.tr("Source folder not found. Relocate it first before regenerating.")
             )
             return
 
         flask_port = self.flask_port
-        self.torrent_history_status.setText("Regenerating torrent…")
+        self.torrent_history_status.setText(self.tr("Regenerating torrent…"))
         self.history_regen_btn.setEnabled(False)
 
         def call():
@@ -2453,7 +2457,7 @@ class CollectionTab(QWidget):
         w = _ApiWorker(call)
         w.finished.connect(self._on_history_regen_done)
         w.error.connect(lambda e: (
-            self.torrent_history_status.setText(f"Error: {e}"),
+            self.torrent_history_status.setText(self.tr("Error: {}").format(e)),
             self.history_regen_btn.setEnabled(True),
         ))
         self._workers.append(w)
@@ -2464,30 +2468,30 @@ class CollectionTab(QWidget):
         if result.get("ok"):
             from pathlib import Path as _Path
             fname = _Path(result.get("torrent_path", "")).name
-            self.torrent_history_status.setText(f"Torrent regenerated: {fname}")
+            self.torrent_history_status.setText(self.tr("Torrent regenerated: {}").format(fname))
             if self._current_history_lb:
                 self._load_torrent_history(self._current_history_lb)
         else:
-            self.torrent_history_status.setText(f"Error: {result.get('error', 'unknown')}")
+            self.torrent_history_status.setText(self.tr("Error: {}").format(result.get('error', 'unknown')))
 
     # ── History: Remove from qBittorrent ─────────────────────────────────────
 
     def _history_qbt_remove(self, rec: dict) -> None:
         infohash = rec.get("infohash") or ""
         if not infohash:
-            self.torrent_history_status.setText("No infohash stored — cannot identify in qBittorrent.")
+            self.torrent_history_status.setText(self.tr("No infohash stored — cannot identify in qBittorrent."))
             return
         if QMessageBox.question(
-            self, "Remove from qBittorrent",
-            "Remove this torrent from qBittorrent?\n\n"
-            "The seeded audio files on disk will NOT be deleted.",
+            self, self.tr("Remove from qBittorrent"),
+            self.tr("Remove this torrent from qBittorrent?\n\n"
+                    "The seeded audio files on disk will NOT be deleted."),
             QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
         ) != QMessageBox.StandardButton.Yes:
             return
 
         torrent_id = rec["id"]
         flask_port = self.flask_port
-        self.torrent_history_status.setText("Removing from qBittorrent…")
+        self.torrent_history_status.setText(self.tr("Removing from qBittorrent…"))
 
         def call():
             return requests.post(
@@ -2498,15 +2502,15 @@ class CollectionTab(QWidget):
 
         def done(result):
             if result.get("ok"):
-                self.torrent_history_status.setText("Removed from qBittorrent.")
+                self.torrent_history_status.setText(self.tr("Removed from qBittorrent."))
             else:
-                self.torrent_history_status.setText(f"Error: {result.get('error', 'unknown')}")
+                self.torrent_history_status.setText(self.tr("Error: {}").format(result.get('error', 'unknown')))
             if self._current_history_lb:
                 self._load_torrent_history(self._current_history_lb)
 
         w = _ApiWorker(call)
         w.finished.connect(done)
-        w.error.connect(lambda e: self.torrent_history_status.setText(f"Error: {e}"))
+        w.error.connect(lambda e: self.torrent_history_status.setText(self.tr("Error: {}").format(e)))
         self._workers.append(w)
         w.start()
 
@@ -2516,16 +2520,16 @@ class CollectionTab(QWidget):
         torrent_path = rec.get("torrent_path") or ""
         fname = torrent_path.split("/")[-1] if torrent_path else "this .torrent file"
         if QMessageBox.question(
-            self, "Delete .torrent File",
-            f"Permanently delete {fname} from disk?\n\n"
-            "The DB record is kept. The audio files are NOT affected.",
+            self, self.tr("Delete .torrent File"),
+            self.tr("Permanently delete {} from disk?\n\n"
+                    "The DB record is kept. The audio files are NOT affected.").format(fname),
             QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
         ) != QMessageBox.StandardButton.Yes:
             return
 
         torrent_id = rec["id"]
         flask_port = self.flask_port
-        self.torrent_history_status.setText("Deleting .torrent file…")
+        self.torrent_history_status.setText(self.tr("Deleting .torrent file…"))
 
         def call():
             return requests.delete(
@@ -2535,15 +2539,15 @@ class CollectionTab(QWidget):
 
         def done(result):
             if result.get("ok"):
-                self.torrent_history_status.setText(f"Deleted: {fname}")
+                self.torrent_history_status.setText(self.tr("Deleted: {}").format(fname))
             else:
-                self.torrent_history_status.setText(f"Error: {result.get('error', 'unknown')}")
+                self.torrent_history_status.setText(self.tr("Error: {}").format(result.get('error', 'unknown')))
             if self._current_history_lb:
                 self._load_torrent_history(self._current_history_lb)
 
         w = _ApiWorker(call)
         w.finished.connect(done)
-        w.error.connect(lambda e: self.torrent_history_status.setText(f"Error: {e}"))
+        w.error.connect(lambda e: self.torrent_history_status.setText(self.tr("Error: {}").format(e)))
         self._workers.append(w)
         w.start()
 
@@ -2554,7 +2558,7 @@ class CollectionTab(QWidget):
         if rec is None and self._torrent_history_records:
             rec = self._torrent_history_records[0]
         if rec is None:
-            self.torrent_history_status.setText("No torrent record to relocate.")
+            self.torrent_history_status.setText(self.tr("No torrent record to relocate."))
             return
         self._history_relocate_record(rec)
 
@@ -2566,7 +2570,7 @@ class CollectionTab(QWidget):
         torrent_id = rec["id"]
 
         new_folder = QFileDialog.getExistingDirectory(
-            self, "Select New Source Folder Location"
+            self, self.tr("Select New Source Folder Location")
         )
         if not new_folder:
             return
@@ -2578,8 +2582,8 @@ class CollectionTab(QWidget):
             warn_msg = self._cross_check_folder(new_path, lb)
             if warn_msg:
                 if QMessageBox.question(
-                    self, "File Check Warning",
-                    f"LB-{lb:05d} file check:\n{warn_msg}\n\nProceed with relocation anyway?",
+                    self, self.tr("File Check Warning"),
+                    self.tr("LB-{} file check:\n{}\n\nProceed with relocation anyway?").format(f"{lb:05d}", warn_msg),
                     QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
                 ) != QMessageBox.StandardButton.Yes:
                     return
@@ -2592,10 +2596,10 @@ class CollectionTab(QWidget):
                 timeout=10,
             ).json()
             if not resp.get("ok"):
-                self.torrent_history_status.setText(f"Update error: {resp.get('error')}")
+                self.torrent_history_status.setText(self.tr("Update error: {}").format(resp.get('error')))
                 return
         except Exception as e:
-            self.torrent_history_status.setText(f"Error: {e}")
+            self.torrent_history_status.setText(self.tr("Error: {}").format(e))
             return
 
         # Log the relocation to rename_log.txt and rename_history
@@ -2616,11 +2620,12 @@ class CollectionTab(QWidget):
         std_name = self._get_standard_lb_name(lb) if lb else ""
         if std_name and std_name != new_path.name and _STANDARD_LB_NAME_RE.match(std_name):
             reply = QMessageBox.question(
-                self, "Rename Folder?",
-                "The folder name does not match the standard format.\n\n"
-                f"Current:  {new_path.name}\n"
-                f"Standard: {std_name}\n\n"
-                "Rename the folder to the standard format?",
+                self, self.tr("Rename Folder?"),
+                self.tr("The folder name does not match the standard format.\n\n"
+                        "Current:  {current}\nStandard: {standard}\n\n"
+                        "Rename the folder to the standard format?").format(
+                    current=new_path.name, standard=std_name
+                ),
                 QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
             )
             if reply == QMessageBox.StandardButton.Yes:
@@ -2648,15 +2653,15 @@ class CollectionTab(QWidget):
                             timeout=10,
                         )
                     self.torrent_history_status.setText(
-                        f"Relocated and renamed to: {std_name}"
+                        self.tr("Relocated and renamed to: {}").format(std_name)
                     )
                     self.refresh_collection()
                 except Exception as exc:
-                    self.torrent_history_status.setText(f"Rename error: {exc}")
+                    self.torrent_history_status.setText(self.tr("Rename error: {}").format(exc))
             else:
-                self.torrent_history_status.setText(f"Relocated to: {new_path.name}")
+                self.torrent_history_status.setText(self.tr("Relocated to: {}").format(new_path.name))
         else:
-            self.torrent_history_status.setText(f"Source folder updated: {new_path.name}")
+            self.torrent_history_status.setText(self.tr("Source folder updated: {}").format(new_path.name))
 
         if lb:
             self._load_torrent_history(lb)

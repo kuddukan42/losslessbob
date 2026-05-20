@@ -175,6 +175,25 @@ def main() -> None:
     qt_app.setApplicationName("LosslessBob Checksum Lookup")
     _slog.t("QApplication created")
 
+    # Load UI language before any windows are constructed so all tr() calls use
+    # the right translator from the start.
+    import sqlite3 as _sqlite3
+    from backend.paths import DB_PATH as _DB_PATH
+    from gui.i18n import load_language as _load_language
+
+    def _read_saved_lang() -> str:
+        try:
+            with _sqlite3.connect(str(_DB_PATH)) as _conn:
+                _row = _conn.execute(
+                    "SELECT value FROM meta WHERE key='ui_language'"
+                ).fetchone()
+                return _row[0] if _row else "en"
+        except Exception:
+            return "en"
+
+    _load_language(qt_app, _read_saved_lang())
+    _slog.t("i18n language loaded")
+
     from PyQt6.QtWidgets import QSplashScreen
     from PyQt6.QtGui import QPixmap, QColor
     from PyQt6.QtCore import Qt

@@ -157,7 +157,12 @@ class RenameModel(QAbstractTableModel):
             lb_status = row[5] if len(row) > 5 else None
             disc = nft_discrepancy(Path(row[1]).name, lb_status)
             if disc:
-                return _NFT_DISC_TIPS.get(disc)
+                _tips = {
+                    "missing": self.tr("LB is Private — folder should be marked -NFT"),
+                    "stale":   self.tr("LB is now Public — -NFT marker may no longer be needed"),
+                    "unknown": self.tr("LB does not exist — investigate this folder"),
+                }
+                return _tips.get(disc)
         return None
 
     def setData(self, index, value, role=Qt.ItemDataRole.EditRole):
@@ -175,7 +180,7 @@ class RenameModel(QAbstractTableModel):
 
     def headerData(self, section, orientation, role=Qt.ItemDataRole.DisplayRole):
         if orientation == Qt.Orientation.Horizontal and role == Qt.ItemDataRole.DisplayRole:
-            return HEADERS[section]
+            return self.tr(HEADERS[section])
         return None
 
     def set_rows(self, rows, states=None, candidates=None):
@@ -207,7 +212,7 @@ class RenameModel(QAbstractTableModel):
         proposed = str(folder_path.parent / proposed_name)
         row[2] = proposed
         row[3] = lb_str
-        row[4] = "Multiple IDs → resolved"
+        row[4] = self.tr("Multiple IDs → resolved")
         new_state = _row_state(str(folder_path), lb_str)
         self._states[idx] = new_state
         self._candidates[idx] = []
@@ -221,7 +226,7 @@ class RenameModel(QAbstractTableModel):
             self._rows[idx][0] = False
             self._rows[idx][1] = new_path
             self._rows[idx][2] = new_path
-            self._rows[idx][4] = "Renamed"
+            self._rows[idx][4] = self.tr("Renamed")
             self._states[idx] = "renamed"
             self.dataChanged.emit(
                 self.index(idx, 0),
@@ -284,7 +289,7 @@ class RenameTab(QWidget):
     def _build_ui(self):
         layout = QVBoxLayout(self)
 
-        self.info_label = QLabel("Populate the Lookup listbox and run a lookup, then switch here to rename folders.")
+        self.info_label = QLabel(self.tr("Populate the Lookup listbox and run a lookup, then switch here to rename folders."))
         layout.addWidget(self.info_label)
 
         self.model = RenameModel()
@@ -306,14 +311,14 @@ class RenameTab(QWidget):
         # Legend
         legend_row = QHBoxLayout()
         for color, text in [
-            ("#C8E6C9", "LB found in name / renamed"),
-            ("#FFE0B2", "Match found — rename suggested"),
-            ("#E1BEE7", "Wrong LB in name — strip needed"),
-            ("#B2EBF2", "Multiple IDs — right-click to resolve"),
-            ("#FFCDD2", "No match"),
-            ("#FFCCCC", "Missing -NFT (Private LB)"),
-            ("#FFF9C4", "Stale -NFT (LB now Public)"),
-            ("#FFE8D0", "-NFT but LB is Missing"),
+            ("#C8E6C9", self.tr("LB found in name / renamed")),
+            ("#FFE0B2", self.tr("Match found — rename suggested")),
+            ("#E1BEE7", self.tr("Wrong LB in name — strip needed")),
+            ("#B2EBF2", self.tr("Multiple IDs — right-click to resolve")),
+            ("#FFCDD2", self.tr("No match")),
+            ("#FFCCCC", self.tr("Missing -NFT (Private LB)")),
+            ("#FFF9C4", self.tr("Stale -NFT (LB now Public)")),
+            ("#FFE8D0", self.tr("-NFT but LB is Missing")),
         ]:
             swatch = QLabel()
             swatch.setFixedSize(14, 14)
@@ -325,29 +330,29 @@ class RenameTab(QWidget):
         layout.addLayout(legend_row)
 
         btn_row = QHBoxLayout()
-        self.rename_btn = QPushButton("Rename Selected")
+        self.rename_btn = QPushButton(self.tr("Rename Selected"))
         self.rename_btn.clicked.connect(self._on_rename)
         btn_row.addWidget(self.rename_btn)
 
-        self.select_all_btn = QPushButton("Select All")
+        self.select_all_btn = QPushButton(self.tr("Select All"))
         self.select_all_btn.clicked.connect(self.model.check_actionable)
         btn_row.addWidget(self.select_all_btn)
 
-        self.deselect_all_btn = QPushButton("Deselect All")
+        self.deselect_all_btn = QPushButton(self.tr("Deselect All"))
         self.deselect_all_btn.clicked.connect(lambda: self.model.check_all(False))
         btn_row.addWidget(self.deselect_all_btn)
 
-        self.select_wrong_lb_btn = QPushButton("Select Wrong LB")
+        self.select_wrong_lb_btn = QPushButton(self.tr("Select Wrong LB"))
         self.select_wrong_lb_btn.clicked.connect(lambda: self.model.check_by_state("wrong_lb"))
         btn_row.addWidget(self.select_wrong_lb_btn)
 
-        self.strip_wrong_lb_btn = QPushButton("Strip Wrong LB from Selected")
+        self.strip_wrong_lb_btn = QPushButton(self.tr("Strip Wrong LB from Selected"))
         self.strip_wrong_lb_btn.clicked.connect(self._on_strip_wrong_lb)
         btn_row.addWidget(self.strip_wrong_lb_btn)
 
-        self.standardize_btn = QPushButton("Standardize Selected")
+        self.standardize_btn = QPushButton(self.tr("Standardize Selected"))
         self.standardize_btn.setToolTip(
-            "Rewrite proposed names to canonical YYYY-MM-DD Location (LB-XXXXX)[-NFT] format"
+            self.tr("Rewrite proposed names to canonical YYYY-MM-DD Location (LB-XXXXX)[-NFT] format")
         )
         self.standardize_btn.clicked.connect(self._on_standardize_selected)
         btn_row.addWidget(self.standardize_btn)
@@ -484,7 +489,7 @@ class RenameTab(QWidget):
             cands = sorted(lb_xref.items())  # [(lb_num, xref_val), ...]
 
             if not cands:
-                reason = "No match"
+                reason = self.tr("No match")
                 proposed = folder_path.name
                 lb_str = "—"
                 cand_list = []
@@ -501,20 +506,20 @@ class RenameTab(QWidget):
                         self._linked_rows.add(len(rows))  # index in the rows list
                     if _lb_in_name(folder_path.name, _fmt_lb(lb, xref_val)):
                         proposed = folder_path.name
-                        reason = "LB already in name (resolved)"
+                        reason = self.tr("LB already in name (resolved)")
                     elif _has_wrong_lb(folder_path.name, _fmt_lb(lb, xref_val)):
                         proposed = f"{folder_path.name}-{_fmt_lb(lb, xref_val)}"
-                        reason = "Wrong LB in name (resolved)"
+                        reason = self.tr("Wrong LB in name (resolved)")
                     else:
                         proposed = f"{folder_path.name}-{_fmt_lb(lb, xref_val)}"
-                        reason = "Multiple IDs → resolved"
+                        reason = self.tr("Multiple IDs → resolved")
                     nft_applied = apply_nft_suffix(proposed, row_lb_status)
                     if nft_applied != proposed:
                         proposed = nft_applied
-                        if reason.endswith("(resolved)") and "already" in reason:
-                            reason = "Add NFT marker (Private LB)"
+                        if reason.endswith(self.tr("(resolved)")) and "already" in reason:
+                            reason = self.tr("Add NFT marker (Private LB)")
                 elif resolved is None:
-                    reason = "Multiple IDs"
+                    reason = self.tr("Multiple IDs")
                     proposed = folder_path.name
                     lb_str = ", ".join(_fmt_lb(lb, xr) for lb, xr in cands)
                     cand_list = cands
@@ -528,28 +533,28 @@ class RenameTab(QWidget):
                 row_lb_status = lb_status_map.get(lb)
                 if _lb_in_name(folder_path.name, lb_str):
                     proposed = folder_path.name
-                    reason = "LB already in name"
+                    reason = self.tr("LB already in name")
                 elif _has_wrong_lb(folder_path.name, lb_str):
                     proposed = f"{folder_path.name}-{lb_str}"
-                    reason = "Wrong LB in name"
+                    reason = self.tr("Wrong LB in name")
                 elif xref_val:
                     proposed = f"{folder_path.name}-{lb_str}"
-                    reason = "xref match"
+                    reason = self.tr("xref match")
                 else:
                     proposed = f"{folder_path.name}-{lb_str}"
-                    reason = "Complete match"
+                    reason = self.tr("Complete match")
 
                 # Apply NFT logic: add -NFT for private, propose strip for stale public
                 nft_applied = apply_nft_suffix(proposed, row_lb_status)
                 if nft_applied != proposed:
                     proposed = nft_applied
-                    if reason == "LB already in name":
-                        reason = "Add NFT marker (Private LB)"
-                elif row_lb_status == "public" and reason == "LB already in name":
+                    if reason == self.tr("LB already in name"):
+                        reason = self.tr("Add NFT marker (Private LB)")
+                elif row_lb_status == "public" and reason == self.tr("LB already in name"):
                     stripped = strip_nft_suffix(proposed)
                     if stripped != proposed:
                         proposed = stripped
-                        reason = "Strip NFT marker (now Public)"
+                        reason = self.tr("Strip NFT marker (now Public)")
 
             state = _row_state(folder, lb_str)
             # If NFT logic changed the proposed name for an already-named folder,
@@ -564,7 +569,7 @@ class RenameTab(QWidget):
 
         self.model.set_rows(rows, states, candidates)
         self.view.resizeColumnsToContents()
-        self.info_label.setText(f"{len(rows)} folders ready for rename review.")
+        self.info_label.setText(self.tr("{} folders ready for rename review.").format(len(rows)))
 
     def _on_rename(self):
         to_rename = [
@@ -580,14 +585,18 @@ class RenameTab(QWidget):
         if not eligible:
             if unresolved:
                 self.status_label.setText(
-                    f"{len(unresolved)} row(s) have multiple IDs — right-click each to resolve, "
-                    "then select and rename."
+                    self.tr(
+                        "{} row(s) have multiple IDs — right-click each to resolve, "
+                        "then select and rename."
+                    ).format(len(unresolved))
                 )
             else:
                 self.status_label.setText(
-                    "No folders selected." if not to_rename
-                    else "None of the selected folders can be processed — "
-                         "only 'Complete match', 'xref match', and 'LB already in name' rows are eligible."
+                    self.tr("No folders selected.") if not to_rename
+                    else self.tr(
+                        "None of the selected folders can be processed — "
+                        "only 'Complete match', 'xref match', and 'LB already in name' rows are eligible."
+                    )
                 )
             return
 
@@ -595,12 +604,14 @@ class RenameTab(QWidget):
         n_move   = sum(1 for i, _ in eligible if self.model.get_state(i) == "has_lb")
         parts = []
         if n_rename:
-            parts.append(f"rename and move {n_rename} folder(s)")
+            parts.append(self.tr("rename and move {} folder(s)").format(n_rename))
         if n_move:
-            parts.append(f"move {n_move} folder(s) without renaming")
+            parts.append(self.tr("move {} folder(s) without renaming").format(n_move))
         confirm = QMessageBox.question(
-            self, "Confirm",
-            f"This will {' and '.join(parts)} into '0. Processed'. This cannot be undone.",
+            self, self.tr("Confirm"),
+            self.tr("This will {} into '0. Processed'. This cannot be undone.").format(
+                self.tr(" and ").join(parts)
+            ),
             QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No
         )
         if confirm != QMessageBox.StandardButton.Yes:
@@ -623,12 +634,14 @@ class RenameTab(QWidget):
             if state == "needs_rename":
                 illegal = set('<>:"/\\|?*')
                 if any(c in illegal for c in new_name):
-                    errors.append(f"{Path(src).name}: proposed name contains illegal characters")
+                    errors.append(
+                        self.tr("{}: proposed name contains illegal characters").format(Path(src).name)
+                    )
                     continue
             try:
                 processed_dir.mkdir(parents=True, exist_ok=True)
             except OSError as e:
-                errors.append(f"Cannot create '0. Processed': {e}")
+                errors.append(self.tr("Cannot create '0. Processed': {}").format(e))
                 continue
             try:
                 # Extract LB number for rename_history (best-effort; None if not found)
@@ -650,28 +663,31 @@ class RenameTab(QWidget):
                     done_move += 1
             except PermissionError:
                 errors.append(
-                    f"{Path(src).name}: Permission denied. Close any programs "
-                    "that may have files in this folder open (Explorer, media "
-                    "player, antivirus) and try again."
+                    self.tr(
+                        "{}: Permission denied. Close any programs that may have "
+                        "files in this folder open (Explorer, media player, antivirus) "
+                        "and try again."
+                    ).format(Path(src).name)
                 )
             except FileExistsError:
                 errors.append(
-                    f"{Path(src).name}: A folder named '{new_name}' already "
-                    "exists in '0. Processed'."
+                    self.tr("{0}: A folder named '{1}' already exists in '0. Processed'.").format(
+                        Path(src).name, new_name
+                    )
                 )
             except OSError as e:
-                errors.append(f"{Path(src).name}: {e}")
+                errors.append(self.tr("{}: {}").format(Path(src).name, e))
 
         parts = []
         if done_rename:
-            parts.append(f"Renamed and moved {done_rename} folder(s)")
+            parts.append(self.tr("Renamed and moved {} folder(s)").format(done_rename))
         if done_move:
-            parts.append(f"moved {done_move} folder(s) without renaming")
-        msg = ("; ".join(parts) + ".") if parts else "Nothing processed."
+            parts.append(self.tr("moved {} folder(s) without renaming").format(done_move))
+        msg = ("; ".join(parts) + ".") if parts else self.tr("Nothing processed.")
         if errors:
-            msg += f" {len(errors)} error(s): " + "; ".join(errors[:3])
+            msg += self.tr(" {} error(s): ").format(len(errors)) + "; ".join(errors[:3])
             if any("Permission denied" in e for e in errors):
-                msg += (
+                msg += self.tr(
                     "\n\nTip (Windows): click somewhere else in Explorer to "
                     "deselect the folder, then retry."
                 )
@@ -702,10 +718,10 @@ class RenameTab(QWidget):
             changed += 1
         if changed:
             self.status_label.setText(
-                f"Updated proposed name for {changed} folder(s). Click Rename Selected to apply."
+                self.tr("Updated proposed name for {} folder(s). Click Rename Selected to apply.").format(changed)
             )
         else:
-            self.status_label.setText("No checked wrong-LB rows to strip.")
+            self.status_label.setText(self.tr("No checked wrong-LB rows to strip."))
 
     def _on_standardize_selected(self) -> None:
         """Rewrite proposed names for checked single-LB rows to canonical format."""
@@ -736,15 +752,15 @@ class RenameTab(QWidget):
 
         if errors:
             self.status_label.setText(
-                f"Standardized {changed} row(s). {len(errors)} error(s): "
+                self.tr("Standardized {0} row(s). {1} error(s): ").format(changed, len(errors))
                 + "; ".join(errors[:3])
             )
         elif changed:
             self.status_label.setText(
-                f"Standardized {changed} row(s). Click 'Rename Selected' to apply."
+                self.tr("Standardized {} row(s). Click 'Rename Selected' to apply.").format(changed)
             )
         else:
-            self.status_label.setText("No checked single-LB rows to standardize.")
+            self.status_label.setText(self.tr("No checked single-LB rows to standardize."))
 
     def _standardize_row(self, row_idx: int) -> None:
         """Standardize the proposed name for a single row (right-click action)."""
@@ -761,7 +777,7 @@ class RenameTab(QWidget):
         try:
             standard = self._compute_standard(lb_num, row)
         except Exception as exc:
-            self.status_label.setText(f"Error standardizing: {exc}")
+            self.status_label.setText(self.tr("Error standardizing: {}").format(exc))
             return
         folder_path = Path(row[1])
         new_proposed = str(folder_path.parent / standard)
@@ -769,7 +785,7 @@ class RenameTab(QWidget):
         if standard != folder_path.name:
             self.model.update_state(row_idx, "needs_rename")
         self.status_label.setText(
-            f"Row {row_idx + 1}: proposed name set to '{standard}'."
+            self.tr("Row {0}: proposed name set to '{1}'.").format(row_idx + 1, standard)
         )
 
     def _compute_standard(self, lb_num: int, row: list) -> str:
@@ -807,7 +823,7 @@ class RenameTab(QWidget):
         if state == "multiple_ids":
             candidates = self.model.get_candidates(row_idx)
             if candidates:
-                resolve_menu = menu.addMenu("Resolve — Apply…")
+                resolve_menu = menu.addMenu(self.tr("Resolve — Apply…"))
                 for lb_num, xref_val in candidates:
                     label = _fmt_lb(lb_num, xref_val)
                     act = QAction(label, self)
@@ -819,7 +835,7 @@ class RenameTab(QWidget):
                     resolve_menu.addAction(act)
 
             # "Link this folder to specific LB..." — persist user choice
-            link_act = QAction("Link this folder to specific LB…", self)
+            link_act = QAction(self.tr("Link this folder to specific LB…"), self)
             link_act.triggered.connect(
                 lambda checked=False, r=row_idx: self._on_link_folder(r)
             )
@@ -827,21 +843,21 @@ class RenameTab(QWidget):
 
             # Curator-only: "Save as master alias…"
             if self._check_curator() and candidates:
-                alias_act = QAction("Save as master alias…", self)
+                alias_act = QAction(self.tr("Save as master alias…"), self)
                 alias_act.triggered.connect(
                     lambda checked=False, r=row_idx: self._on_save_alias(r)
                 )
                 menu.addAction(alias_act)
 
         elif col == 4:
-            jump = QAction("Jump to Lookup Detail", self)
+            jump = QAction(self.tr("Jump to Lookup Detail"), self)
             jump.triggered.connect(lambda: self.jump_to_lookup.emit(row[1]))
             menu.addAction(jump)
         else:
             lb_str = row[3]
             # Unlink action — shown for linked rows (have 🔗 prefix)
             if row_idx in self._linked_rows or lb_str.startswith("🔗"):
-                unlink_act = QAction("Unlink this folder", self)
+                unlink_act = QAction(self.tr("Unlink this folder"), self)
                 unlink_act.triggered.connect(
                     lambda checked=False, r=row_idx: self._on_unlink_folder(r)
                 )
@@ -855,12 +871,12 @@ class RenameTab(QWidget):
                 if m:
                     try:
                         lb_num = int(m.group(1))
-                        std_act = QAction("Standardize Name (YYYY-MM-DD Location…)", self)
+                        std_act = QAction(self.tr("Standardize Name (YYYY-MM-DD Location…)"), self)
                         std_act.triggered.connect(
                             lambda checked=False, r=row_idx: self._standardize_row(r)
                         )
                         menu.addAction(std_act)
-                        open_web = QAction(f"Open LB-{lb_num} in Browser", self)
+                        open_web = QAction(self.tr("Open LB-{} in Browser").format(lb_num), self)
                         url = (
                             f"http://www.losslessbob.wonderingwhattochoose.com"
                             f"/detail/LB-{lb_num}.html"
@@ -878,8 +894,9 @@ class RenameTab(QWidget):
         self.model.resolve_multi_id(row_idx, lb_num, xref_val)
         lb_str = _fmt_lb(lb_num, xref_val)
         self.status_label.setText(
-            f"Row {row_idx + 1}: resolved to {lb_str}. "
-            "Click 'Select All' then 'Rename Selected' when ready."
+            self.tr("Row {0}: resolved to {1}. Click 'Select All' then 'Rename Selected' when ready.").format(
+                row_idx + 1, lb_str
+            )
         )
 
     def _on_link_folder(self, row_idx: int) -> None:
@@ -892,19 +909,21 @@ class RenameTab(QWidget):
         candidate_labels = [_fmt_lb(lb, xr) for lb, xr in candidates]
 
         if candidate_labels:
-            hint = f"Candidates: {', '.join(candidate_labels)}\n\nEnter the LB number to link:"
+            hint = self.tr("Candidates: {}\n\nEnter the LB number to link:").format(
+                ', '.join(candidate_labels)
+            )
         else:
-            hint = "Enter the LB number to link:"
+            hint = self.tr("Enter the LB number to link:")
 
         lb_text, ok = QInputDialog.getText(
-            self, "Link Folder to LB", hint,
+            self, self.tr("Link Folder to LB"), hint,
         )
         if not ok or not lb_text.strip():
             return
         # Accept plain integers or "LB-NNNNN" format
         m = re.search(r'\d+', lb_text)
         if not m:
-            self.status_label.setText("Invalid LB number entered.")
+            self.status_label.setText(self.tr("Invalid LB number entered."))
             return
         lb_num = int(m.group())
 
@@ -914,7 +933,7 @@ class RenameTab(QWidget):
             "note": "",
         })
         if not ok_put:
-            self.status_label.setText(f"Row {row_idx + 1}: failed to save link.")
+            self.status_label.setText(self.tr("Row {}: failed to save link.").format(row_idx + 1))
             return
 
         # Re-resolve the row using the new link
@@ -924,10 +943,10 @@ class RenameTab(QWidget):
         plain_lb_str = _fmt_lb(lb_num, xref_val)
         if _lb_in_name(folder_path.name, plain_lb_str):
             proposed = folder
-            reason = "LB already in name (linked)"
+            reason = self.tr("LB already in name (linked)")
         else:
             proposed = str(folder_path.parent / f"{folder_path.name}-{plain_lb_str}")
-            reason = "Multiple IDs → linked"
+            reason = self.tr("Multiple IDs → linked")
 
         row[2] = proposed
         row[3] = lb_str
@@ -941,8 +960,9 @@ class RenameTab(QWidget):
             self.model.index(row_idx, len(HEADERS) - 1),
         )
         self.status_label.setText(
-            f"Row {row_idx + 1}: linked to LB-{lb_num:05d}. "
-            "Select and rename when ready."
+            self.tr("Row {0}: linked to LB-{1}. Select and rename when ready.").format(
+                row_idx + 1, f"{lb_num:05d}"
+            )
         )
 
     def _on_unlink_folder(self, row_idx: int) -> None:
@@ -953,13 +973,13 @@ class RenameTab(QWidget):
         folder = row[1]
         ok = self._api_delete(f"/api/folder_link?path={_url_quote(folder, safe='')}")
         if not ok:
-            self.status_label.setText(f"Row {row_idx + 1}: failed to remove link.")
+            self.status_label.setText(self.tr("Row {}: failed to remove link.").format(row_idx + 1))
             return
         self._linked_rows.discard(row_idx)
         # Reset lb_str to stripped value (remove 🔗 prefix) and re-evaluate state
         lb_str = row[3].lstrip("🔗 ")
         row[3] = lb_str
-        row[4] = "Unlinked — check manually"
+        row[4] = self.tr("Unlinked — check manually")
         # If only one LB remains after stripping, keep needs_rename / has_lb logic
         new_state = _row_state(folder, lb_str)
         self.model._states[row_idx] = new_state
@@ -968,7 +988,7 @@ class RenameTab(QWidget):
             self.model.index(row_idx, len(HEADERS) - 1),
         )
         self.status_label.setText(
-            f"Row {row_idx + 1}: link removed. Re-run lookup to refresh candidates."
+            self.tr("Row {}: link removed. Re-run lookup to refresh candidates.").format(row_idx + 1)
         )
 
     def _on_save_alias(self, row_idx: int) -> None:
@@ -978,7 +998,7 @@ class RenameTab(QWidget):
             return
         candidates = self.model.get_candidates(row_idx)
         if len(candidates) < 2:
-            self.status_label.setText("Need at least 2 candidates to create an alias.")
+            self.status_label.setText(self.tr("Need at least 2 candidates to create an alias."))
             return
 
         dlg = _AliasDialog(candidates, parent=self)
@@ -993,16 +1013,16 @@ class RenameTab(QWidget):
             "note": note,
         })
         if result is None:
-            self.status_label.setText("Failed to save alias (check curator mode).")
+            self.status_label.setText(self.tr("Failed to save alias (check curator mode)."))
             return
 
         rewrote = result.get("rewrote_chain", False)
         effective_canon = result.get("canonical_lb", canonical_lb)
-        msg = (
-            f"Alias LB-{alias_lb:05d} → LB-{effective_canon:05d} saved."
+        msg = self.tr("Alias LB-{0} → LB-{1} saved.").format(
+            f"{alias_lb:05d}", f"{effective_canon:05d}"
         )
         if rewrote:
-            msg += " (chain rewritten)"
+            msg += self.tr(" (chain rewritten)")
         self.status_label.setText(msg)
 
         # Re-run alias resolution for this row in-place
@@ -1013,7 +1033,7 @@ class RenameTab(QWidget):
             lb_str = ("🔗 " if is_linked else "") + plain_lb_str
             folder_path = Path(row[1])
             row[3] = lb_str
-            row[4] = "Multiple IDs → resolved (alias)"
+            row[4] = self.tr("Multiple IDs → resolved (alias)")
             if not _lb_in_name(folder_path.name, plain_lb_str):
                 row[2] = str(folder_path.parent / f"{folder_path.name}-{plain_lb_str}")
             new_state = _row_state(row[1], plain_lb_str)
@@ -1035,7 +1055,7 @@ class _AliasDialog(QDialog):
 
     def __init__(self, candidates: list[tuple[int, int]], parent=None):
         super().__init__(parent)
-        self.setWindowTitle("Save as Master Alias")
+        self.setWindowTitle(self.tr("Save as Master Alias"))
         self.setMinimumWidth(380)
         layout = QFormLayout(self)
         layout.setContentsMargins(12, 12, 12, 12)
@@ -1046,22 +1066,22 @@ class _AliasDialog(QDialog):
         self._alias_spin = QSpinBox()
         self._alias_spin.setRange(1, 999999)
         self._alias_spin.setValue(lb_nums[0] if lb_nums else 1)
-        layout.addRow("Alias LB (the secondary/wrong one):", self._alias_spin)
+        layout.addRow(self.tr("Alias LB (the secondary/wrong one):"), self._alias_spin)
 
         self._canon_spin = QSpinBox()
         self._canon_spin.setRange(1, 999999)
         self._canon_spin.setValue(lb_nums[1] if len(lb_nums) > 1 else 1)
-        layout.addRow("Canonical LB (the correct one):", self._canon_spin)
+        layout.addRow(self.tr("Canonical LB (the correct one):"), self._canon_spin)
 
         self._rel_combo = QComboBox()
         for rel in ("duplicate", "supersedes", "see_also"):
             self._rel_combo.addItem(rel)
-        layout.addRow("Relationship:", self._rel_combo)
+        layout.addRow(self.tr("Relationship:"), self._rel_combo)
 
         self._note_edit = QTextEdit()
         self._note_edit.setFixedHeight(60)
-        self._note_edit.setPlaceholderText("Optional note for this alias…")
-        layout.addRow("Note:", self._note_edit)
+        self._note_edit.setPlaceholderText(self.tr("Optional note for this alias…"))
+        layout.addRow(self.tr("Note:"), self._note_edit)
 
         buttons = QDialogButtonBox(
             QDialogButtonBox.StandardButton.Ok | QDialogButtonBox.StandardButton.Cancel

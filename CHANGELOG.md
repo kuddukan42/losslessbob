@@ -1,3 +1,121 @@
+[2026-05-20] — feat(i18n): TODO-069 COMPLETE — .qm files compiled and verified (1067/1067 per language)
+
+Fixed
+
+  scripts/build_qm.py: rewrote pure-Python Qt .qm compiler with correct binary format.
+    Previous version had wrong tag IDs (Translation=5 instead of 3, SourceText=3 instead of 6,
+    Context=4 instead of 7), wrong section layout (one 0x42 section instead of separate 0x42
+    Hashes + 0x69 Messages sections), per-record length prefix (not present in real format),
+    and wrong ELF hash shift (>> 23 instead of >> 24). Also added elfHash_finish (0 → 1) and
+    hashed sourceText+comment (not just sourceText). Verified: 1067/1067 translations returned
+    by QCoreApplication.translate() for all five languages.
+
+[2026-05-20] — feat(gui/i18n): scraper_tab.py wrapped (missed from TODO-068 tracking)
+
+Changed
+
+  gui/scraper_tab.py: wrapped all user-facing strings — groupbox titles, all buttons/labels/
+    checkboxes/tooltips, table headers, pagination labels, and all status/error messages;
+    inventory status combo fixed from addItems()+currentText() comparison to individual
+    addItem(tr(...), userData)+currentData() (same i18n correctness fix as other combos).
+
+[2026-05-20] — feat(gui/i18n): TODO-068 COMPLETE — attachments_tab; widgets confirmed clean
+
+Changed
+
+  gui/attachments_tab.py: wrapped all user-facing strings — toggle buttons, tree header, page
+    navigation labels, placeholder text, file preview label, context menu actions, scrape status
+    messages, and file-reading error text; widgets/sort_keys.py and widgets/state_store.py
+    confirmed to contain no user-facing strings (no changes needed).
+
+[2026-05-20] — feat(gui/i18n): TODO-068 string wrapping — lookup_tab, collection_tab, dbedit_tab
+
+Changed
+
+  gui/dbedit_tab.py: wrapped all user-facing strings in PlaceManualDialog and DbEditTab — buttons,
+    labels, groupbox titles, tooltips, QFileDialog/QMessageBox/QInputDialog calls, table headers,
+    and all status/error messages; geo filter combo converted from addItems() + text-based map lookup
+    to individual addItem(self.tr(...), userData) + currentData(), fixing the i18n lookup bug.
+
+[2026-05-20] — feat(gui/i18n): TODO-068 string wrapping — lookup_tab, collection_tab
+
+Changed
+
+  gui/collection_tab.py: wrapped all user-facing strings in _AddDialog, _ScanPreviewDialog,
+    _PersonalMetaDialog, and CollectionTab — ~130 strings total including tab names, all buttons,
+    labels, tooltips, QFileDialog captions, QMessageBox dialogs, context menu actions,
+    QTableWidget/QTreeWidget headers, and all status/error f-string messages; _on_inner_tab_changed
+    refactored from fragile tab-text comparison to index-based dispatch (correctness fix for i18n).
+
+[2026-05-20] — feat(gui/i18n): TODO-068 string wrapping — lookup_tab
+
+Changed
+
+  gui/lookup_tab.py: wrapped all user-facing strings in LookupTab and _ChangeHistoryDialog — button
+    labels, tooltips, dialog titles, status messages, context menu actions, table header lists,
+    QFileDialog captions, filter labels, and all f-string status messages; _TableModel headers now
+    wrapped at construction site via [self.tr(h) for h in CONST]; _ChangeHistoryDialog headers use
+    [self.tr(h) for h in self._HEADERS]; lb_status_combo items switched from addItems() to individual
+    addItem(self.tr(...)) calls for pylupdate compatibility.
+
+[2026-05-19] — feat(gui/i18n): TODO-068 string wrapping — setup_tab, bootlegs_tab, search_tab, lbdir_tab, rename_tab
+
+Changed
+
+  gui/setup_tab.py: wrapped all remaining user-facing strings in handler methods (stats labels, status
+    messages, error dialogs, qBittorrent/WTRF/tracker/geocode sections, purge dialog, master publish/install
+    dialogs); also wrapped _build_ui ffmpeg/shntool/re-check label strings.
+  gui/bootlegs_tab.py: wrapped _BootlegsModel.headerData, tooltip and (no title) strings; wrapped all
+    _build_ui combo items (with userData preserved), buttons, labels; wrapped fetch/pagination status messages.
+  gui/search_tab.py: wrapped SearchModel.headerData and tooltips; refactored field_combo to use addItem
+    with userData so translated display text does not break the field_map lookup; wrapped all _build_ui
+    widgets and handler status/error messages.
+  gui/lbdir_tab.py: wrapped ReconcilePreviewDialog and ExtraFilesDialog titles, labels, buttons; wrapped all
+    LbdirTab._build_ui button texts and tooltips; converted _result_display_status and _fmt_status from
+    @staticmethod to instance methods to enable self.tr(); wrapped all handler status messages and error
+    strings; wrapped SUMMARY_HEADERS, DETAIL_HEADERS, and INFO_FIELDS at point of use.
+  gui/rename_tab.py: wrapped RenameModel.headerData and NFT tooltip dict (inline at use site); wrapped all
+    RenameTab._build_ui legend, buttons, and tooltips; wrapped reason strings in populate_from_lookup;
+    wrapped all handler status/error messages and context menu action texts; wrapped _AliasDialog.
+
+[2026-05-19] — chore(scraper): raise site crawler daily_cap from 5000 to 99999
+
+Changed
+
+  backend/site_crawler.py: crawl() default daily_cap 5000 → 99999.
+  backend/app.py: POST /api/crawler/start default daily_cap 5000 → 99999; updated docstring.
+  gui/scraper_tab.py: spinner max 50000 → 99999, default value 5000 → 99999, load fallback 5000 → 99999.
+
+[2026-05-19] — fix(gui/scraper): Attachments tab showed no crawler-downloaded files — entry_files.downloaded never updated by site_crawler
+
+Fixed
+
+  gui/attachments_tab.py: Added _reconcile_site_files() which scans SITE_FILES_DIR on every
+    _refresh_tree() call and bulk-updates entry_files SET downloaded=1 for any file that exists
+    on disk. Fixes the 6,000+ existing files the crawler had downloaded but that were invisible
+    to the tab. Also added `import logging` at module level.
+  backend/site_crawler.py: After saving a /files/ URL to disk, now also updates
+    entry_files SET downloaded=1 WHERE filename=? so future crawl sessions keep the tab in sync.
+    Added get_connection to DB imports.
+
+[2026-05-19] — feat(gui): i18n infrastructure — language loader, Setup tab selector, startup wiring (TODO-067)
+
+Added
+
+  gui/i18n.py: QTranslator loader with load_language() and supported_languages(); reads compiled
+    .qm files from gui/locales/; falls back silently to English if file is missing.
+
+Changed
+
+  main.py: read ui_language from meta table via direct SQLite at startup (before any windows are
+    shown) and install the matching QTranslator via load_language().
+  backend/app.py: added "ui_language" to the GET /api/db/settings response keys so the Setup tab
+    can read the current preference on load.
+  gui/setup_tab.py: added "Preferences" group box with interface-language QComboBox; saving
+    persists via POST /api/db/settings; restart notice appears on change.
+
+---
+
 [2026-05-19] — feat(docs): GitHub Pages marketing website for community advertising
 
 Added

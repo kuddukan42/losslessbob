@@ -1,6 +1,7 @@
 from pathlib import Path
 
 from backend.paths import DATA_DIR as _DATA_DIR
+from gui.i18n import supported_languages
 
 import logging
 import requests
@@ -300,7 +301,7 @@ class _UpdateAvailableDialog(QDialog):
         parent=None,
     ) -> None:
         super().__init__(parent)
-        self.setWindowTitle("Flat File Update Available")
+        self.setWindowTitle(self.tr("Flat File Update Available"))
         self.flask_port = flask_port
         self.release_info = release_info
         self._download_thread: _DownloadThread | None = None
@@ -345,15 +346,15 @@ class _UpdateAvailableDialog(QDialog):
 
         # Buttons
         btn_row = QHBoxLayout()
-        self._apply_btn = QPushButton("Download && Apply")
+        self._apply_btn = QPushButton(self.tr("Download && Apply"))
         self._apply_btn.clicked.connect(self._on_download_apply)
         btn_row.addWidget(self._apply_btn)
 
-        self._defer_btn = QPushButton("Defer 1 Day")
+        self._defer_btn = QPushButton(self.tr("Defer 1 Day"))
         self._defer_btn.clicked.connect(self._on_defer)
         btn_row.addWidget(self._defer_btn)
 
-        skip_btn = QPushButton("Skip")
+        skip_btn = QPushButton(self.tr("Skip"))
         skip_btn.clicked.connect(self.reject)
         btn_row.addWidget(skip_btn)
         btn_row.addStretch()
@@ -369,10 +370,10 @@ class _UpdateAvailableDialog(QDialog):
     def _on_download_apply(self) -> None:
         release_id = self.release_info.get("id")
         if not release_id:
-            QMessageBox.warning(self, "Error", "No release ID available.")
+            QMessageBox.warning(self, self.tr("Error"), self.tr("No release ID available."))
             return
         self._set_busy(True)
-        self._status_lbl.setText("Downloading zip…")
+        self._status_lbl.setText(self.tr("Downloading zip…"))
         self._download_thread = _DownloadThread(self.flask_port, release_id)
         self._download_thread.finished.connect(self._on_downloaded)
         self._download_thread.start()
@@ -380,11 +381,11 @@ class _UpdateAvailableDialog(QDialog):
     def _on_downloaded(self, result: dict) -> None:
         if "error" in result:
             self._set_busy(False)
-            self._status_lbl.setText(f"Download failed: {result['error']}")
+            self._status_lbl.setText(self.tr("Download failed: {}").format(result['error']))
             return
         # Fetch diff counts before applying
         release_id = self.release_info.get("id")
-        self._status_lbl.setText("Computing diff…")
+        self._status_lbl.setText(self.tr("Computing diff…"))
         try:
             diff_resp = requests.get(
                 f"http://127.0.0.1:{self.flask_port}/api/flat_file/diff/{release_id}",
@@ -393,31 +394,35 @@ class _UpdateAvailableDialog(QDialog):
             diff = diff_resp.json()
         except Exception as exc:
             self._set_busy(False)
-            self._status_lbl.setText(f"Diff failed: {exc}")
+            self._status_lbl.setText(self.tr("Diff failed: {}").format(exc))
             return
 
         if "error" in diff:
             self._set_busy(False)
-            self._status_lbl.setText(f"Diff error: {diff['error']}")
+            self._status_lbl.setText(self.tr("Diff error: {}").format(diff['error']))
             return
 
-        msg = (
-            f"Ready to apply:\n"
-            f"  Added:   {diff.get('rows_added', 0):,}\n"
-            f"  Changed: {diff.get('rows_changed', 0):,}\n"
-            f"  Removed: {diff.get('rows_removed', 0):,}\n\n"
+        msg = self.tr(
+            "Ready to apply:\n"
+            "  Added:   {0:,}\n"
+            "  Changed: {1:,}\n"
+            "  Removed: {2:,}\n\n"
             "Proceed?"
+        ).format(
+            diff.get('rows_added', 0),
+            diff.get('rows_changed', 0),
+            diff.get('rows_removed', 0),
         )
         ans = QMessageBox.question(
-            self, "Confirm Apply", msg,
+            self, self.tr("Confirm Apply"), msg,
             QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
         )
         if ans != QMessageBox.StandardButton.Yes:
             self._set_busy(False)
-            self._status_lbl.setText("Apply cancelled.")
+            self._status_lbl.setText(self.tr("Apply cancelled."))
             return
 
-        self._status_lbl.setText("Applying release…")
+        self._status_lbl.setText(self.tr("Applying release…"))
         self._apply_thread = _ApplyThread(self.flask_port, release_id)
         self._apply_thread.finished.connect(self._on_applied)
         self._apply_thread.start()
@@ -425,15 +430,15 @@ class _UpdateAvailableDialog(QDialog):
     def _on_applied(self, result: dict) -> None:
         self._set_busy(False)
         if "error" in result:
-            self._status_lbl.setText(f"Apply failed: {result['error']}")
+            self._status_lbl.setText(self.tr("Apply failed: {}").format(result['error']))
             return
         added = result.get("rows_added", 0)
         changed = result.get("rows_changed", 0)
         removed = result.get("rows_removed", 0)
         QMessageBox.information(
-            self, "Update Applied",
-            f"Flat file applied successfully.\n"
-            f"Added: {added:,}  Changed: {changed:,}  Removed: {removed:,}",
+            self, self.tr("Update Applied"),
+            self.tr("Flat file applied successfully.\nAdded: {0:,}  Changed: {1:,}  Removed: {2:,}").format(
+                added, changed, removed),
         )
         self.accept()
 
@@ -538,7 +543,7 @@ class SetupTab(QWidget):
         layout = QVBoxLayout(self)
 
         # ── Database group: left = archive controls, right = Data Management ──
-        db_group = QGroupBox("Database")
+        db_group = QGroupBox(self.tr("Database"))
         db_inner = QHBoxLayout(db_group)
         db_inner.setSpacing(16)
 
@@ -548,40 +553,40 @@ class SetupTab(QWidget):
         db_layout.setContentsMargins(0, 0, 0, 0)
 
         db_sel_row = QHBoxLayout()
-        db_sel_row.addWidget(QLabel("Active database:"))
+        db_sel_row.addWidget(QLabel(self.tr("Active database:")))
         self.db_combo = QComboBox()
-        self.db_combo.addItems(["LosslessBob", "Grateful Dead etree"])
+        self.db_combo.addItems([self.tr("LosslessBob"), self.tr("Grateful Dead etree")])
         self.db_combo.currentIndexChanged.connect(self._on_db_changed)
         db_sel_row.addWidget(self.db_combo)
         db_sel_row.addStretch()
         db_layout.addLayout(db_sel_row)
 
-        self.db_stats_label = QLabel("Loading stats...")
+        self.db_stats_label = QLabel(self.tr("Loading stats..."))
         db_layout.addWidget(self.db_stats_label)
 
         btn_row = QHBoxLayout()
-        self.import_btn = QPushButton("Import Database File...")
+        self.import_btn = QPushButton(self.tr("Import Database File..."))
         self.import_btn.clicked.connect(self._on_import)
         btn_row.addWidget(self.import_btn)
 
-        self.check_update_btn = QPushButton("Check for Flat File Update")
+        self.check_update_btn = QPushButton(self.tr("Check for Flat File Update"))
         self.check_update_btn.clicked.connect(self._on_check_update)
         btn_row.addWidget(self.check_update_btn)
 
-        self.open_folder_btn = QPushButton("Open Data Folder")
+        self.open_folder_btn = QPushButton(self.tr("Open Data Folder"))
         self.open_folder_btn.clicked.connect(self._on_open_folder)
         btn_row.addWidget(self.open_folder_btn)
         btn_row.addStretch()
         db_layout.addLayout(btn_row)
 
         reset_row = QHBoxLayout()
-        self.reset_btn = QPushButton("Reset Database...")
+        self.reset_btn = QPushButton(self.tr("Reset Database..."))
         self.reset_btn.setStyleSheet(
             "QPushButton { background-color: #8B1A1A; color: #FFFFFF; border-radius: 3px; }"
             "QPushButton:hover { background-color: #B22222; }"
             "QPushButton:disabled { background-color: #888888; }"
         )
-        self.reset_btn.setToolTip("Drop all data and reinitialize the database from scratch")
+        self.reset_btn.setToolTip(self.tr("Drop all data and reinitialize the database from scratch"))
         self.reset_btn.clicked.connect(self._on_reset)
         reset_row.addWidget(self.reset_btn)
         reset_row.addStretch()
@@ -589,24 +594,24 @@ class SetupTab(QWidget):
 
         # External tool availability indicators
         sox_row = QHBoxLayout()
-        sox_row.addWidget(QLabel("SoX:"))
-        self.sox_status_label = QLabel("Checking…")
+        sox_row.addWidget(QLabel(self.tr("SoX:")))
+        self.sox_status_label = QLabel(self.tr("Checking…"))
         sox_row.addWidget(self.sox_status_label)
         sox_row.addStretch()
         db_layout.addLayout(sox_row)
 
         ffmpeg_row = QHBoxLayout()
-        ffmpeg_row.addWidget(QLabel("ffmpeg:"))
-        self.ffmpeg_status_label = QLabel("Checking…")
+        ffmpeg_row.addWidget(QLabel(self.tr("ffmpeg:")))
+        self.ffmpeg_status_label = QLabel(self.tr("Checking…"))
         ffmpeg_row.addWidget(self.ffmpeg_status_label)
         ffmpeg_row.addStretch()
         db_layout.addLayout(ffmpeg_row)
 
         shntool_row = QHBoxLayout()
-        shntool_row.addWidget(QLabel("shntool:"))
-        self.shntool_status_label = QLabel("Checking…")
+        shntool_row.addWidget(QLabel(self.tr("shntool:")))
+        self.shntool_status_label = QLabel(self.tr("Checking…"))
         shntool_row.addWidget(self.shntool_status_label)
-        self.sox_check_btn = QPushButton("Re-check")
+        self.sox_check_btn = QPushButton(self.tr("Re-check"))
         self.sox_check_btn.setFixedWidth(80)
         self.sox_check_btn.clicked.connect(self._check_sox)
         shntool_row.addWidget(self.sox_check_btn)
@@ -637,8 +642,8 @@ class SetupTab(QWidget):
         purge_layout.setContentsMargins(0, 0, 0, 0)
 
         purge_layout.addWidget(QLabel(
-            "<b>Data Management</b> — purge operations remove user data only; "
-            "the checksum archive is never affected."
+            self.tr("<b>Data Management</b> — purge operations remove user data only; "
+            "the checksum archive is never affected.")
         ))
 
         # User-data stats (collection, wishlist, etc.)
@@ -647,17 +652,17 @@ class SetupTab(QWidget):
         purge_layout.addWidget(self.coll_stats_label)
 
         purge_items = [
-            ("My Collection (+ ratings, alerts)", "collection"),
-            ("Wishlist",                          "wishlist"),
-            ("Personal Ratings and Tags only",    "personal_meta"),
-            ("Watchdog Alerts",                   "integrity_events"),
-            ("Scrape Diff Changelog",             "entry_changes"),
+            (self.tr("My Collection (+ ratings, alerts)"), "collection"),
+            (self.tr("Wishlist"),                          "wishlist"),
+            (self.tr("Personal Ratings and Tags only"),    "personal_meta"),
+            (self.tr("Watchdog Alerts"),                   "integrity_events"),
+            (self.tr("Scrape Diff Changelog"),             "entry_changes"),
         ]
         purge_grid = QGridLayout()
         purge_grid.setVerticalSpacing(4)
         for i, (label, scope) in enumerate(purge_items):
             lbl = QLabel(label)
-            btn = QPushButton("Purge…")
+            btn = QPushButton(self.tr("Purge…"))
             btn.setFixedWidth(80)
             btn.clicked.connect(
                 lambda checked=False, s=scope, l=label: self._on_purge(s, l)
@@ -675,37 +680,37 @@ class SetupTab(QWidget):
 
         # ── Master Data section ─────────────────────────────────────────────
         # Curator publishes master snapshots; end users install them.
-        master_group = QGroupBox("Master Data")
+        master_group = QGroupBox(self.tr("Master Data"))
         master_layout = QVBoxLayout(master_group)
 
         curator_row = QHBoxLayout()
-        self.curator_cb = QCheckBox("Curator mode (publish-enabled)")
+        self.curator_cb = QCheckBox(self.tr("Curator mode (publish-enabled)"))
         self.curator_cb.setToolTip(
-            "Enable to publish master-data snapshots that ship to other users.\n"
-            "Curator status is stored locally and never included in any export."
+            self.tr("Enable to publish master-data snapshots that ship to other users.\n"
+            "Curator status is stored locally and never included in any export.")
         )
         self.curator_cb.toggled.connect(self._on_curator_toggled)
         curator_row.addWidget(self.curator_cb)
         curator_row.addStretch()
         master_layout.addLayout(curator_row)
 
-        self.master_status_label = QLabel("Master version: (not yet published)")
+        self.master_status_label = QLabel(self.tr("Master version: (not yet published)"))
         master_layout.addWidget(self.master_status_label)
 
         master_btn_row = QHBoxLayout()
-        self.publish_master_btn = QPushButton("Publish Master Update…")
+        self.publish_master_btn = QPushButton(self.tr("Publish Master Update…"))
         self.publish_master_btn.setToolTip(
-            "Build a master-only snapshot (.db + .manifest.json) in data/exports/. "
-            "Strips all user data, verifies, computes SHA256, writes manifest."
+            self.tr("Build a master-only snapshot (.db + .manifest.json) in data/exports/. "
+            "Strips all user data, verifies, computes SHA256, writes manifest.")
         )
         self.publish_master_btn.clicked.connect(self._on_publish_master)
         self.publish_master_btn.setEnabled(False)  # toggled by curator checkbox
         master_btn_row.addWidget(self.publish_master_btn)
 
-        self.install_master_btn = QPushButton("Install Master Update…")
+        self.install_master_btn = QPushButton(self.tr("Install Master Update…"))
         self.install_master_btn.setToolTip(
-            "Apply a master snapshot from disk. Your collection, wishlist, "
-            "credentials, and personal settings are preserved."
+            self.tr("Apply a master snapshot from disk. Your collection, wishlist, "
+            "credentials, and personal settings are preserved.")
         )
         self.install_master_btn.clicked.connect(self._on_install_master)
         master_btn_row.addWidget(self.install_master_btn)
@@ -719,37 +724,37 @@ class SetupTab(QWidget):
         layout.addWidget(master_group)
 
         # ── Geocode Locations (curator only) ────────────────────────────────
-        self._geocode_group = QGroupBox("Geocode Locations")
+        self._geocode_group = QGroupBox(self.tr("Geocode Locations"))
         geocode_layout = QVBoxLayout(self._geocode_group)
 
         geocode_layout.addWidget(QLabel(
-            "Geocode entries.location → lat/lon via Nominatim (curator only)"
+            self.tr("Geocode entries.location → lat/lon via Nominatim (curator only)")
         ))
 
         geocode_opts_row = QHBoxLayout()
-        self._geocode_retry_cb = QCheckBox("Retry Failed")
+        self._geocode_retry_cb = QCheckBox(self.tr("Retry Failed"))
         self._geocode_retry_cb.setToolTip(
-            "Re-attempt entries that previously failed geocoding"
+            self.tr("Re-attempt entries that previously failed geocoding")
         )
         geocode_opts_row.addWidget(self._geocode_retry_cb)
 
-        self._geocode_run_btn = QPushButton("Run Geocoder")
+        self._geocode_run_btn = QPushButton(self.tr("Run Geocoder"))
         self._geocode_run_btn.clicked.connect(self._on_geocode_run)
         geocode_opts_row.addWidget(self._geocode_run_btn)
         geocode_opts_row.addStretch()
         geocode_layout.addLayout(geocode_opts_row)
 
-        self._geocode_status_label = QLabel("Status: idle")
+        self._geocode_status_label = QLabel(self.tr("Status: idle"))
         geocode_layout.addWidget(self._geocode_status_label)
 
         self._geocode_group.setVisible(False)  # shown only in curator mode
         layout.addWidget(self._geocode_group)
 
         # Search settings section
-        search_group = QGroupBox("Search")
+        search_group = QGroupBox(self.tr("Search"))
         search_layout = QVBoxLayout(search_group)
         page_size_row = QHBoxLayout()
-        page_size_row.addWidget(QLabel("Results per page:"))
+        page_size_row.addWidget(QLabel(self.tr("Results per page:")))
         self.search_page_spin = QSpinBox()
         self.search_page_spin.setRange(10, 500)
         self.search_page_spin.setValue(50)
@@ -762,31 +767,31 @@ class SetupTab(QWidget):
         layout.addWidget(search_group)
 
         # ── Column Widths ────────────────────────────────────────────────────────
-        cw_group = QGroupBox("Column Widths")
+        cw_group = QGroupBox(self.tr("Column Widths"))
         cw_layout = QVBoxLayout(cw_group)
 
-        self._cw_status_label = QLabel("User defaults: none (factory widths will be used)")
+        self._cw_status_label = QLabel(self.tr("User defaults: none (factory widths will be used)"))
         cw_layout.addWidget(self._cw_status_label)
 
         cw_btn_row = QHBoxLayout()
-        self._save_defaults_btn = QPushButton("Save as Defaults")
+        self._save_defaults_btn = QPushButton(self.tr("Save as Defaults"))
         self._save_defaults_btn.setToolTip(
-            "Snapshot current column widths as your personal defaults"
+            self.tr("Snapshot current column widths as your personal defaults")
         )
         self._save_defaults_btn.clicked.connect(self._on_save_col_defaults)
         cw_btn_row.addWidget(self._save_defaults_btn)
 
-        self._restore_defaults_btn = QPushButton("Restore My Defaults")
+        self._restore_defaults_btn = QPushButton(self.tr("Restore My Defaults"))
         self._restore_defaults_btn.setToolTip(
-            "Apply your saved column-width defaults to all tables"
+            self.tr("Apply your saved column-width defaults to all tables")
         )
         self._restore_defaults_btn.setEnabled(False)
         self._restore_defaults_btn.clicked.connect(self._on_restore_col_defaults)
         cw_btn_row.addWidget(self._restore_defaults_btn)
 
-        self._restore_factory_btn = QPushButton("Restore Factory")
+        self._restore_factory_btn = QPushButton(self.tr("Restore Factory"))
         self._restore_factory_btn.setToolTip(
-            "Reset all column widths to factory defaults and clear your saved layout"
+            self.tr("Reset all column widths to factory defaults and clear your saved layout")
         )
         self._restore_factory_btn.clicked.connect(self._on_restore_factory_defaults)
         cw_btn_row.addWidget(self._restore_factory_btn)
@@ -795,66 +800,88 @@ class SetupTab(QWidget):
 
         layout.addWidget(cw_group)
 
+        # ── Preferences ──────────────────────────────────────────────────────────
+        pref_group = QGroupBox(self.tr("Preferences"))
+        pref_layout = QVBoxLayout(pref_group)
+
+        lang_row = QHBoxLayout()
+        lang_row.addWidget(QLabel(self.tr("Interface language:")))
+        self._lang_combo = QComboBox()
+        self._lang_combo.setFixedWidth(160)
+        for code, name in supported_languages():
+            self._lang_combo.addItem(name, code)
+        self._lang_combo.currentIndexChanged.connect(self._on_language_changed)
+        lang_row.addWidget(self._lang_combo)
+        lang_row.addStretch()
+        pref_layout.addLayout(lang_row)
+
+        self._lang_restart_label = QLabel(self.tr("Restart the app to apply the new language."))
+        self._lang_restart_label.setStyleSheet("color: #E8A000; font-size: 11px;")
+        self._lang_restart_label.setVisible(False)
+        pref_layout.addWidget(self._lang_restart_label)
+
+        layout.addWidget(pref_group)
+
         # ── Connection settings (scraper controls moved to Scraper tab) ─────────
         conn_row = QHBoxLayout()
         conn_row.setSpacing(12)
 
         # ── qBittorrent section ──────────────────────────────────────────────
-        qbt_group = QGroupBox("qBittorrent")
+        qbt_group = QGroupBox(self.tr("qBittorrent"))
         qbt_layout = QGridLayout(qbt_group)
         qbt_layout.setHorizontalSpacing(8)
         qbt_layout.setVerticalSpacing(6)
 
-        qbt_layout.addWidget(QLabel("Host:"), 0, 0)
+        qbt_layout.addWidget(QLabel(self.tr("Host:")), 0, 0)
         self.qbt_host = QLineEdit("localhost")
         self.qbt_host.setFixedWidth(180)
         qbt_layout.addWidget(self.qbt_host, 0, 1)
 
-        qbt_layout.addWidget(QLabel("Port:"), 0, 2)
+        qbt_layout.addWidget(QLabel(self.tr("Port:")), 0, 2)
         self.qbt_port = QSpinBox()
         self.qbt_port.setRange(1, 65535)
         self.qbt_port.setValue(8080)
         self.qbt_port.setFixedWidth(80)
         qbt_layout.addWidget(self.qbt_port, 0, 3)
 
-        qbt_layout.addWidget(QLabel("Username:"), 1, 0)
+        qbt_layout.addWidget(QLabel(self.tr("Username:")), 1, 0)
         self.qbt_user = QLineEdit()
         self.qbt_user.setFixedWidth(180)
         qbt_layout.addWidget(self.qbt_user, 1, 1)
 
-        qbt_layout.addWidget(QLabel("Password:"), 1, 2)
+        qbt_layout.addWidget(QLabel(self.tr("Password:")), 1, 2)
         self.qbt_pass = QLineEdit()
         self.qbt_pass.setEchoMode(QLineEdit.EchoMode.Password)
         self.qbt_pass.setFixedWidth(180)
         qbt_layout.addWidget(self.qbt_pass, 1, 3)
 
-        qbt_layout.addWidget(QLabel("API Key:"), 2, 0)
+        qbt_layout.addWidget(QLabel(self.tr("API Key:")), 2, 0)
         self.qbt_api_key = QLineEdit()
         self.qbt_api_key.setEchoMode(QLineEdit.EchoMode.Password)
-        self.qbt_api_key.setPlaceholderText("qBittorrent 5+ — takes priority over username/password")
+        self.qbt_api_key.setPlaceholderText(self.tr("qBittorrent 5+ — takes priority over username/password"))
         self.qbt_api_key.setFixedWidth(380)
         qbt_layout.addWidget(self.qbt_api_key, 2, 1, 1, 3)
 
-        qbt_layout.addWidget(QLabel("Category:"), 3, 0)
+        qbt_layout.addWidget(QLabel(self.tr("Category:")), 3, 0)
         self.qbt_category = QLineEdit()
-        self.qbt_category.setPlaceholderText("e.g. losslessbob (optional)")
+        self.qbt_category.setPlaceholderText(self.tr("e.g. losslessbob (optional)"))
         self.qbt_category.setFixedWidth(180)
         qbt_layout.addWidget(self.qbt_category, 3, 1)
 
-        qbt_layout.addWidget(QLabel("Tags:"), 3, 2)
+        qbt_layout.addWidget(QLabel(self.tr("Tags:")), 3, 2)
         self.qbt_tags = QLineEdit()
-        self.qbt_tags.setPlaceholderText("comma-separated (optional)")
+        self.qbt_tags.setPlaceholderText(self.tr("comma-separated (optional)"))
         self.qbt_tags.setFixedWidth(180)
         qbt_layout.addWidget(self.qbt_tags, 3, 3)
 
         qbt_btn_row = QHBoxLayout()
-        self.qbt_save_btn = QPushButton("Save Credentials")
+        self.qbt_save_btn = QPushButton(self.tr("Save Credentials"))
         self.qbt_save_btn.clicked.connect(self._on_qbt_save)
         qbt_btn_row.addWidget(self.qbt_save_btn)
-        self.qbt_test_btn = QPushButton("Test Connection")
+        self.qbt_test_btn = QPushButton(self.tr("Test Connection"))
         self.qbt_test_btn.clicked.connect(self._on_qbt_test)
         qbt_btn_row.addWidget(self.qbt_test_btn)
-        self.qbt_clear_btn = QPushButton("Clear Credentials")
+        self.qbt_clear_btn = QPushButton(self.tr("Clear Credentials"))
         self.qbt_clear_btn.clicked.connect(self._on_qbt_clear)
         qbt_btn_row.addWidget(self.qbt_clear_btn)
         qbt_btn_row.addStretch()
@@ -866,38 +893,38 @@ class SetupTab(QWidget):
         conn_row.addWidget(qbt_group, stretch=1)
 
         # ── WTRF Forum section ───────────────────────────────────────────────
-        wtrf_group = QGroupBox("Watching the River Flow Forum")
+        wtrf_group = QGroupBox(self.tr("Watching the River Flow Forum"))
         wtrf_layout = QGridLayout(wtrf_group)
         wtrf_layout.setHorizontalSpacing(8)
         wtrf_layout.setVerticalSpacing(6)
 
-        wtrf_layout.addWidget(QLabel("Username:"), 0, 0)
+        wtrf_layout.addWidget(QLabel(self.tr("Username:")), 0, 0)
         self.wtrf_user = QLineEdit()
         self.wtrf_user.setFixedWidth(200)
         wtrf_layout.addWidget(self.wtrf_user, 0, 1)
 
-        wtrf_layout.addWidget(QLabel("Password:"), 1, 0)
+        wtrf_layout.addWidget(QLabel(self.tr("Password:")), 1, 0)
         self.wtrf_pass = QLineEdit()
         self.wtrf_pass.setEchoMode(QLineEdit.EchoMode.Password)
         self.wtrf_pass.setFixedWidth(200)
         wtrf_layout.addWidget(self.wtrf_pass, 1, 1)
 
-        wtrf_layout.addWidget(QLabel("Board ID:"), 2, 0)
+        wtrf_layout.addWidget(QLabel(self.tr("Board ID:")), 2, 0)
         self.wtrf_board_spin = QSpinBox()
         self.wtrf_board_spin.setRange(1, 9999)
         self.wtrf_board_spin.setFixedWidth(80)
-        self.wtrf_board_spin.setToolTip("SMF board number from the forum URL (e.g. ?board=42.0 → 42)")
+        self.wtrf_board_spin.setToolTip(self.tr("SMF board number from the forum URL (e.g. ?board=42.0 → 42)"))
         self.wtrf_board_spin.valueChanged.connect(self._on_wtrf_board_changed)
         wtrf_layout.addWidget(self.wtrf_board_spin, 2, 1)
 
         wtrf_btn_row = QHBoxLayout()
-        self.wtrf_save_btn = QPushButton("Save Credentials")
+        self.wtrf_save_btn = QPushButton(self.tr("Save Credentials"))
         self.wtrf_save_btn.clicked.connect(self._on_wtrf_save)
         wtrf_btn_row.addWidget(self.wtrf_save_btn)
-        self.wtrf_test_btn = QPushButton("Test Connection")
+        self.wtrf_test_btn = QPushButton(self.tr("Test Connection"))
         self.wtrf_test_btn.clicked.connect(self._on_wtrf_test)
         wtrf_btn_row.addWidget(self.wtrf_test_btn)
-        self.wtrf_clear_btn = QPushButton("Clear Credentials")
+        self.wtrf_clear_btn = QPushButton(self.tr("Clear Credentials"))
         self.wtrf_clear_btn.clicked.connect(self._on_wtrf_clear)
         wtrf_btn_row.addWidget(self.wtrf_clear_btn)
         wtrf_btn_row.addStretch()
@@ -909,17 +936,17 @@ class SetupTab(QWidget):
         conn_row.addWidget(wtrf_group, stretch=1)
 
         # ── Torrent section ──────────────────────────────────────────────────
-        torrent_group = QGroupBox("Torrent Settings")
+        torrent_group = QGroupBox(self.tr("Torrent Settings"))
         torrent_layout = QHBoxLayout(torrent_group)
 
-        torrent_layout.addWidget(QLabel("Tracker list:"))
+        torrent_layout.addWidget(QLabel(self.tr("Tracker list:")))
         self.tracker_list_combo = QComboBox()
         from backend.torrent_maker import TRACKER_LISTS
         self.tracker_list_combo.addItems(TRACKER_LISTS)
         self.tracker_list_combo.currentTextChanged.connect(self._on_tracker_list_changed)
         torrent_layout.addWidget(self.tracker_list_combo)
 
-        self.refresh_trackers_btn = QPushButton("Refresh Trackers")
+        self.refresh_trackers_btn = QPushButton(self.tr("Refresh Trackers"))
         self.refresh_trackers_btn.clicked.connect(self._on_refresh_trackers)
         torrent_layout.addWidget(self.refresh_trackers_btn)
 
@@ -931,12 +958,13 @@ class SetupTab(QWidget):
         layout.addLayout(conn_row)
 
         # ── Flat File History ────────────────────────────────────────────────
-        ff_group = QGroupBox("Flat File History")
+        ff_group = QGroupBox(self.tr("Flat File History"))
         ff_layout = QVBoxLayout(ff_group)
 
         self._ff_history_table = QTableWidget(0, 6)
         self._ff_history_table.setHorizontalHeaderLabels(
-            ["Detected", "Filename", "Status", "Added", "Changed", "Removed"]
+            [self.tr("Detected"), self.tr("Filename"), self.tr("Status"),
+             self.tr("Added"), self.tr("Changed"), self.tr("Removed")]
         )
         self._ff_history_table.horizontalHeader().setStretchLastSection(False)
         self._ff_history_table.horizontalHeader().setSectionResizeMode(
@@ -964,35 +992,35 @@ class SetupTab(QWidget):
         has = self._state_store.has_user_defaults
         self._restore_defaults_btn.setEnabled(has)
         self._cw_status_label.setText(
-            "User defaults: saved" if has
-            else "User defaults: none (factory widths will be used)"
+            self.tr("User defaults: saved") if has
+            else self.tr("User defaults: none (factory widths will be used)")
         )
 
     def _on_save_col_defaults(self) -> None:
         if self._state_store is None:
             return
         self._state_store.save_user_defaults()
-        self._cw_status_label.setText("Layout saved as defaults.")
+        self._cw_status_label.setText(self.tr("Layout saved as defaults."))
         self._restore_defaults_btn.setEnabled(True)
 
     def _on_restore_col_defaults(self) -> None:
         if self._state_store is None:
             return
         self._state_store.restore_user_defaults()
-        self._cw_status_label.setText("Defaults restored.")
+        self._cw_status_label.setText(self.tr("Defaults restored."))
 
     def _on_restore_factory_defaults(self) -> None:
         if self._state_store is None:
             return
         if QMessageBox.question(
-            self, "Restore Factory Defaults",
-            "Reset all column widths to factory defaults?\n\nThis will clear your saved layout.",
+            self, self.tr("Restore Factory Defaults"),
+            self.tr("Reset all column widths to factory defaults?\n\nThis will clear your saved layout."),
             QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
             QMessageBox.StandardButton.No,
         ) != QMessageBox.StandardButton.Yes:
             return
         self._state_store.restore_factory_defaults()
-        self._cw_status_label.setText("User defaults: none (factory widths will be used)")
+        self._cw_status_label.setText(self.tr("User defaults: none (factory widths will be used)"))
         self._restore_defaults_btn.setEnabled(False)
 
     def _load_settings(self):
@@ -1001,6 +1029,7 @@ class SetupTab(QWidget):
             resp = requests.get(f"http://127.0.0.1:{self.flask_port}/api/db/settings", timeout=5)
             data = resp.json()
             self.search_page_spin.setValue(int(data.get("search_page_size") or 50))
+            self._load_language_setting(data.get("ui_language") or "en")
         except Exception:
             pass
         finally:
@@ -1026,27 +1055,55 @@ class SetupTab(QWidget):
         self._save_settings()
         self.search_page_size_changed.emit(value)
 
+    def _load_language_setting(self, lang_code: str) -> None:
+        """Set the language combo to the saved value without triggering a save."""
+        codes = [self._lang_combo.itemData(i) for i in range(self._lang_combo.count())]
+        idx = codes.index(lang_code) if lang_code in codes else 0
+        self._lang_combo.blockSignals(True)
+        self._lang_combo.setCurrentIndex(idx)
+        self._lang_combo.blockSignals(False)
+
+    def _on_language_changed(self, _index: int) -> None:
+        """Persist the selected language and show the restart notice."""
+        if self._loading:
+            return
+        lang_code = self._lang_combo.currentData()
+        try:
+            requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/db/settings",
+                json={"ui_language": lang_code},
+                timeout=5,
+            )
+        except Exception:
+            pass
+        self._lang_restart_label.setVisible(True)
+
     def _refresh_stats(self):
         try:
             resp = requests.get(f"http://127.0.0.1:{self.flask_port}/api/db/stats", timeout=5)
             stats = resp.json()
             self.db_stats_label.setText(
-                f"Total checksums: {stats.get('total_checksums', 0):,}  |  "
-                f"LB entries: {stats.get('total_lb_numbers', 0):,}  |  "
-                f"Latest LB: {stats.get('latest_lb', 'N/A')}  |  "
-                f"Last import: {stats.get('last_import', 'Never')}"
+                self.tr(
+                    "Total checksums: {0:,}  |  LB entries: {1:,}  |  "
+                    "Latest LB: {2}  |  Last import: {3}"
+                ).format(
+                    stats.get('total_checksums', 0),
+                    stats.get('total_lb_numbers', 0),
+                    stats.get('latest_lb', self.tr('N/A')),
+                    stats.get('last_import', self.tr('Never')),
+                )
             )
         except Exception:
-            self.db_stats_label.setText("Could not load database stats.")
+            self.db_stats_label.setText(self.tr("Could not load database stats."))
         self._refresh_collection_stats()
 
     def _refresh_collection_stats(self):
         _TABLE_LABELS = {
-            "my_collection":   "My Collection",
-            "my_wishlist":     "Wishlist",
-            "collection_meta": "Personal Ratings",
-            "integrity_events":"Watchdog Events",
-            "entry_changes":   "Scrape Diff Rows",
+            "my_collection":   self.tr("My Collection"),
+            "my_wishlist":     self.tr("Wishlist"),
+            "collection_meta": self.tr("Personal Ratings"),
+            "integrity_events": self.tr("Watchdog Events"),
+            "entry_changes":   self.tr("Scrape Diff Rows"),
         }
         try:
             resp = requests.get(
@@ -1059,21 +1116,21 @@ class SetupTab(QWidget):
                 parts.append(f"{label}: {count:,}")
             self.coll_stats_label.setText("  |  ".join(parts))
         except Exception:
-            self.coll_stats_label.setText("Could not load collection stats.")
+            self.coll_stats_label.setText(self.tr("Could not load collection stats."))
 
     def _on_db_changed(self, index):
         pass
 
     def _on_import(self):
         path, _ = QFileDialog.getOpenFileName(
-            self, "Select flat file", str(Path.home()),
-            "Database files (*.txt);;All files (*)"
+            self, self.tr("Select flat file"), str(Path.home()),
+            self.tr("Database files (*.txt);;All files (*)")
         )
         if not path:
             return
 
         self.import_btn.setEnabled(False)
-        self.import_status_label.setText("Starting import…")
+        self.import_status_label.setText(self.tr("Starting import…"))
         self.import_progress.setRange(0, 0)
         self.import_progress.setVisible(True)
 
@@ -1086,7 +1143,7 @@ class SetupTab(QWidget):
         if "error" in result:
             self.import_btn.setEnabled(True)
             self.import_progress.setVisible(False)
-            self.import_status_label.setText(f"Error: {result['error']}")
+            self.import_status_label.setText(self.tr("Error: {}").format(result['error']))
             return
         # Backend accepted the request — start polling for progress
         self._import_status_thread = _ImportStatusThread(self.flask_port)
@@ -1120,14 +1177,16 @@ class SetupTab(QWidget):
             self.import_progress.setVisible(False)
 
             if stage == "error":
-                self.import_status_label.setText(f"Import failed: {status.get('error', 'unknown error')}")
+                self.import_status_label.setText(
+                    self.tr("Import failed: {}").format(status.get('error', self.tr('unknown error')))
+                )
             elif stage == "done":
                 if "Already imported" in msg:
-                    self.import_status_label.setText("Already imported — file unchanged since last run.")
+                    self.import_status_label.setText(self.tr("Already imported — file unchanged since last run."))
                 else:
                     new_lbs = status.get("new_lb_count", 0)
                     self.import_status_label.setText(
-                        f"Import complete — {new_lbs:,} new LB entries added."
+                        self.tr("Import complete — {} new LB entries added.").format(new_lbs)
                     )
                     self._refresh_stats()
                     self.stats_changed.emit()
@@ -1135,10 +1194,10 @@ class SetupTab(QWidget):
     def _on_reset(self):
         confirm = QMessageBox.warning(
             self,
-            "Reset Database",
-            "This will permanently delete ALL checksums, entries, and scraped data "
+            self.tr("Reset Database"),
+            self.tr("This will permanently delete ALL checksums, entries, and scraped data "
             "and reinitialize the database from scratch.\n\n"
-            "This cannot be undone. Continue?",
+            "This cannot be undone. Continue?"),
             QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.Cancel,
             QMessageBox.StandardButton.Cancel,
         )
@@ -1147,7 +1206,7 @@ class SetupTab(QWidget):
 
         self.reset_btn.setEnabled(False)
         self.import_btn.setEnabled(False)
-        self.import_status_label.setText("Resetting database...")
+        self.import_status_label.setText(self.tr("Resetting database..."))
 
         self._reset_thread = _ResetThread(self.flask_port)
         self._reset_thread.finished.connect(self._on_reset_finished)
@@ -1158,9 +1217,9 @@ class SetupTab(QWidget):
         self.import_btn.setEnabled(True)
         self.import_progress.setVisible(False)
         if "error" in result:
-            self.import_status_label.setText(f"Reset failed: {result['error']}")
+            self.import_status_label.setText(self.tr("Reset failed: {}").format(result['error']))
         else:
-            self.import_status_label.setText("Database reset. Ready for a fresh import.")
+            self.import_status_label.setText(self.tr("Database reset. Ready for a fresh import."))
             # Re-persist current UI state so user preferences survive the meta table wipe.
             self._save_settings()
             self._refresh_stats()
@@ -1177,8 +1236,8 @@ class SetupTab(QWidget):
         self.check_update_btn.setEnabled(True)
         if data.get("error"):
             QMessageBox.warning(
-                self, "Check Update",
-                f"Discovery failed:\n{data['error']}",
+                self, self.tr("Check Update"),
+                self.tr("Discovery failed:\n{}").format(data['error']),
             )
             return
         if not data.get("available"):
@@ -1189,8 +1248,8 @@ class SetupTab(QWidget):
                 dt = (last.get("applied_at") or "")[:19]
                 last_info = f"\n\nLast applied: {fn}\non {dt}"
             QMessageBox.information(
-                self, "Up to Date",
-                f"Your flat file is up to date.{last_info}",
+                self, self.tr("Up to Date"),
+                self.tr("Your flat file is up to date.{}").format(last_info),
             )
             return
         dlg = _UpdateAvailableDialog(
@@ -1278,16 +1337,16 @@ class SetupTab(QWidget):
             version = _db.get_meta("master_version") or ""
             published = _db.get_meta("master_published_at") or ""
             if version:
+                suffix = self.tr("  (published {})").format(published[:19]) if published else ""
                 self.master_status_label.setText(
-                    f"Master version: {version}"
-                    + (f"  (published {published[:19]})" if published else "")
+                    self.tr("Master version: {}").format(version) + suffix
                 )
             else:
                 self.master_status_label.setText(
-                    "Master version: (not yet published or imported)"
+                    self.tr("Master version: (not yet published or imported)")
                 )
         except Exception as e:
-            self.master_status_label.setText(f"Master version: (unknown — {e})")
+            self.master_status_label.setText(self.tr("Master version: (unknown — {})").format(e))
 
     def _on_curator_toggled(self, checked: bool):
         """Persist the curator flag and gate the Publish button and geocoder group."""
@@ -1301,25 +1360,25 @@ class SetupTab(QWidget):
             self.publish_master_btn.setEnabled(bool(checked))
             self._geocode_group.setVisible(bool(checked))
         except Exception as e:
-            QMessageBox.warning(self, "Curator Mode", f"Could not update flag: {e}")
+            QMessageBox.warning(self, self.tr("Curator Mode"), self.tr("Could not update flag: {}").format(e))
             # Revert UI to the actual server state
             self._load_curator_status()
 
     def _on_publish_master(self) -> None:
         """Build a master export then upload to GitHub releases."""
         confirm = QMessageBox.question(
-            self, "Publish Master Update?",
-            "Build a master-only snapshot and upload it to GitHub releases?\n\n"
+            self, self.tr("Publish Master Update?"),
+            self.tr("Build a master-only snapshot and upload it to GitHub releases?\n\n"
             "This writes a .db and .manifest.json to data/exports/, then calls\n"
             "the gh CLI to create a new release on kuddukan42/losslessbob.\n"
-            "No data is modified locally; user-only tables are dropped from the copy.",
+            "No data is modified locally; user-only tables are dropped from the copy."),
             QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
         )
         if confirm != QMessageBox.StandardButton.Yes:
             return
 
         self.publish_master_btn.setEnabled(False)
-        self._publish_status_label.setText("Exporting master snapshot…")
+        self._publish_status_label.setText(self.tr("Exporting master snapshot…"))
         self._publish_status_label.setVisible(True)
 
         self._export_thread = _ExportMasterThread(self.flask_port)
@@ -1330,8 +1389,8 @@ class SetupTab(QWidget):
         """Handle export completion and kick off GitHub upload."""
         if not data.get("ok") or "error" in data:
             msg = data.get("message") or data.get("error") or "Unknown error"
-            QMessageBox.warning(self, "Export Failed", msg)
-            self._publish_status_label.setText(f"Export failed: {msg}")
+            QMessageBox.warning(self, self.tr("Export Failed"), msg)
+            self._publish_status_label.setText(self.tr("Export failed: {}").format(msg))
             self.publish_master_btn.setEnabled(self.curator_cb.isChecked())
             return
 
@@ -1344,7 +1403,7 @@ class SetupTab(QWidget):
         prev_published_at = data.get("_prev_published_at")
 
         self._publish_status_label.setText(
-            f"Export done ({manifest.get('size_bytes', 0):,} bytes) — uploading to GitHub…"
+            self.tr("Export done ({} bytes) — uploading to GitHub…").format(f"{manifest.get('size_bytes', 0):,}")
         )
         self._refresh_master_status_label()
 
@@ -1363,47 +1422,60 @@ class SetupTab(QWidget):
 
         if "error" in result:
             err = result.get("message") or result.get("error")
-            self._publish_status_label.setText(f"GitHub upload failed: {err}")
+            self._publish_status_label.setText(self.tr("GitHub upload failed: {}").format(err))
             QMessageBox.warning(
-                self, "GitHub Upload Failed",
-                f"{err}\n\nThe .db and .manifest.json files were saved to data/exports/.\n"
-                "You can upload them manually to GitHub releases.",
+                self, self.tr("GitHub Upload Failed"),
+                self.tr("{}\n\nThe .db and .manifest.json files were saved to data/exports/.\n"
+                "You can upload them manually to GitHub releases.").format(err),
             )
             return
 
         tag = result.get("tag", "?")
         url = result.get("url", "")
-        self._publish_status_label.setText(f"Released: {tag}  {url}")
+        self._publish_status_label.setText(self.tr("Released: {0}  {1}").format(tag, url))
 
         QMessageBox.information(
-            self, "Master Update Published",
-            f"Version:     {manifest.get('master_version', '?')}\n"
-            f"Tag:         {tag}\n"
-            f"Size:        {manifest.get('size_bytes', 0):,} bytes\n"
-            f"SHA256:      {(manifest.get('sha256') or '')[:16]}…\n\n"
-            f"LB master:   {rc.get('lb_master', 0):,}\n"
-            f"  Public:    {counts.get('public', 0):,}\n"
-            f"  Private:   {counts.get('private', 0):,}\n"
-            f"  Missing:   {counts.get('missing', 0):,}\n"
-            f"Overrides:   {manifest.get('manual_override_count', 0)}\n\n"
-            f"GitHub release:\n{url}",
+            self, self.tr("Master Update Published"),
+            self.tr(
+                "Version:     {version}\n"
+                "Tag:         {tag}\n"
+                "Size:        {size:,} bytes\n"
+                "SHA256:      {sha256}…\n\n"
+                "LB master:   {lb_master:,}\n"
+                "  Public:    {public:,}\n"
+                "  Private:   {private_:,}\n"
+                "  Missing:   {missing:,}\n"
+                "Overrides:   {overrides}\n\n"
+                "GitHub release:\n{url}"
+            ).format(
+                version=manifest.get('master_version', '?'),
+                tag=tag,
+                size=manifest.get('size_bytes', 0),
+                sha256=(manifest.get('sha256') or '')[:16],
+                lb_master=rc.get('lb_master', 0),
+                public=counts.get('public', 0),
+                private_=counts.get('private', 0),
+                missing=counts.get('missing', 0),
+                overrides=manifest.get('manual_override_count', 0),
+                url=url,
+            ),
         )
 
     def _on_install_master(self):
         """Pick a master snapshot from disk and apply it locally."""
         path, _ = QFileDialog.getOpenFileName(
-            self, "Select Master Snapshot",
+            self, self.tr("Select Master Snapshot"),
             str(_DATA_DIR / "exports"),
-            "Master DB (*.db);;All files (*)",
+            self.tr("Master DB (*.db);;All files (*)"),
         )
         if not path:
             return
         confirm = QMessageBox.question(
-            self, "Install Master Update?",
-            f"Apply this master snapshot to your local database?\n\n"
-            f"{path}\n\n"
+            self, self.tr("Install Master Update?"),
+            self.tr("Apply this master snapshot to your local database?\n\n"
+            "{}\n\n"
             "An automatic backup of your current database will be taken first.\n"
-            "Your collection, wishlist, credentials, and personal settings are preserved.",
+            "Your collection, wishlist, credentials, and personal settings are preserved.").format(path),
             QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
         )
         if confirm != QMessageBox.StandardButton.Yes:
@@ -1417,26 +1489,38 @@ class SetupTab(QWidget):
         """Handle master install completion."""
         self.install_master_btn.setEnabled(True)
         if not data.get("ok") or "error" in data:
-            msg = data.get("message") or data.get("error") or "Unknown error"
-            QMessageBox.critical(self, "Install Failed", msg)
+            msg = data.get("message") or data.get("error") or self.tr("Unknown error")
+            QMessageBox.critical(self, self.tr("Install Failed"), msg)
             return
         rc = data.get("row_counts", {})
         post = data.get("post_status_counts", {})
         QMessageBox.information(
-            self, "Master Update Installed",
-            f"Version:     {data.get('master_version', '?')}\n"
-            f"Imported at: {data.get('imported_at', '?')[:19]}\n"
-            f"Backup:      {data.get('backup_path', '?')}\n\n"
-            f"Row counts after import:\n"
-            f"  lb_master: {rc.get('lb_master', 0):,}\n"
-            f"  checksums: {rc.get('checksums', 0):,}\n"
-            f"  entries:   {rc.get('entries', 0):,}\n\n"
-            f"Status distribution:\n"
-            f"  Public:    {post.get('public', 0):,}\n"
-            f"  Private:   {post.get('private', 0):,}\n"
-            f"  Missing:   {post.get('missing', 0):,}\n\n"
-            f"LB status changes vs. previous state: "
-            f"{data.get('lb_status_changes', 0):,}"
+            self, self.tr("Master Update Installed"),
+            self.tr(
+                "Version:     {version}\n"
+                "Imported at: {imported_at}\n"
+                "Backup:      {backup}\n\n"
+                "Row counts after import:\n"
+                "  lb_master: {lb_master:,}\n"
+                "  checksums: {checksums:,}\n"
+                "  entries:   {entries:,}\n\n"
+                "Status distribution:\n"
+                "  Public:    {public:,}\n"
+                "  Private:   {private_:,}\n"
+                "  Missing:   {missing:,}\n\n"
+                "LB status changes vs. previous state: {lb_changes:,}"
+            ).format(
+                version=data.get('master_version', '?'),
+                imported_at=(data.get('imported_at', '?') or '')[:19],
+                backup=data.get('backup_path', '?'),
+                lb_master=rc.get('lb_master', 0),
+                checksums=rc.get('checksums', 0),
+                entries=rc.get('entries', 0),
+                public=post.get('public', 0),
+                private_=post.get('private', 0),
+                missing=post.get('missing', 0),
+                lb_changes=data.get('lb_status_changes', 0),
+            )
         )
         self._refresh_master_status_label()
         try:
@@ -1454,8 +1538,8 @@ class SetupTab(QWidget):
 
     def _on_purge(self, scope: str, label: str) -> None:
         if QMessageBox.question(
-            self, "Confirm Purge",
-            f"Permanently delete all: {label}\n\nThis cannot be undone.",
+            self, self.tr("Confirm Purge"),
+            self.tr("Permanently delete all: {}\n\nThis cannot be undone.").format(label),
             QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
         ) != QMessageBox.StandardButton.Yes:
             return
@@ -1465,12 +1549,13 @@ class SetupTab(QWidget):
                 json={"scope": scope}, timeout=15,
             ).json()
             self.purge_status_label.setText(
-                f"Purged: {label}" if resp.get("ok") else f"Error: {resp.get('error')}"
+                self.tr("Purged: {}").format(label) if resp.get("ok")
+                else self.tr("Error: {}").format(resp.get('error'))
             )
             self.stats_changed.emit()
             self._refresh_collection_stats()
         except Exception as e:
-            self.purge_status_label.setText(f"Error: {e}")
+            self.purge_status_label.setText(self.tr("Error: {}").format(e))
 
     def _check_sox(self):
         try:
@@ -1480,35 +1565,35 @@ class SetupTab(QWidget):
             ).json()
 
             if r.get("sox_available"):
-                self.sox_status_label.setText(f"OK — {r.get('sox_version', '')}")
+                self.sox_status_label.setText(self.tr("OK — {}").format(r.get('sox_version', '')))
                 self.sox_status_label.setStyleSheet("color: green;")
             else:
                 self.sox_status_label.setText(
-                    "Not found — install: sudo apt install sox libsox-fmt-all"
+                    self.tr("Not found — install: sudo apt install sox libsox-fmt-all")
                 )
                 self.sox_status_label.setStyleSheet("color: red;")
 
             if r.get("ffmpeg_available"):
-                self.ffmpeg_status_label.setText("OK (SHN/APE/WV/M4A supported)")
+                self.ffmpeg_status_label.setText(self.tr("OK (SHN/APE/WV/M4A supported)"))
                 self.ffmpeg_status_label.setStyleSheet("color: green;")
             else:
                 self.ffmpeg_status_label.setText(
-                    "Not found — install: sudo apt install ffmpeg  (needed for SHN/APE/WV spectrograms)"
+                    self.tr("Not found — install: sudo apt install ffmpeg  (needed for SHN/APE/WV spectrograms)")
                 )
                 self.ffmpeg_status_label.setStyleSheet("color: orange;")
 
             if r.get("shntool_available"):
-                self.shntool_status_label.setText(f"OK — {r.get('shntool_version', '')}")
+                self.shntool_status_label.setText(self.tr("OK — {}").format(r.get('shntool_version', '')))
                 self.shntool_status_label.setStyleSheet("color: green;")
             else:
                 self.shntool_status_label.setText(
-                    "Not found — install: sudo apt install shntool  (needed for SHN verification)"
+                    self.tr("Not found — install: sudo apt install shntool  (needed for SHN verification)")
                 )
                 self.shntool_status_label.setStyleSheet("color: red;")
 
         except Exception as e:
             for lbl in (self.sox_status_label, self.ffmpeg_status_label, self.shntool_status_label):
-                lbl.setText(f"Error: {e}")
+                lbl.setText(self.tr("Error: {}").format(e))
 
     # ── qBittorrent handlers ─────────────────────────────────────────────────
 
@@ -1518,7 +1603,7 @@ class SetupTab(QWidget):
         u = self.qbt_user.text().strip()
         p = self.qbt_pass.text()
         if not key and not u:
-            self.qbt_status_label.setText("API key or username is required.")
+            self.qbt_status_label.setText(self.tr("API key or username is required."))
             return
         try:
             requests.post(
@@ -1535,14 +1620,14 @@ class SetupTab(QWidget):
             pass
         if key:
             result = save_credentials(SERVICE_QBT_KEY, "api_key", key)
-            self.qbt_status_label.setText(f"API key saved — {result.label}")
+            self.qbt_status_label.setText(self.tr("API key saved — {}").format(result.label))
         else:
             result = save_credentials(SERVICE_QBT, u, p)
-            self.qbt_status_label.setText(f"Username/password saved — {result.label}")
+            self.qbt_status_label.setText(self.tr("Username/password saved — {}").format(result.label))
 
     def _on_qbt_test(self):
         self.qbt_test_btn.setEnabled(False)
-        self.qbt_status_label.setText("Testing…")
+        self.qbt_status_label.setText(self.tr("Testing…"))
         try:
             payload: dict = {
                 "host": self.qbt_host.text().strip() or "localhost",
@@ -1560,13 +1645,17 @@ class SetupTab(QWidget):
                 timeout=15,
             ).json()
             if resp.get("ok"):
-                self.qbt_status_label.setText(f"Connected — qBittorrent {resp.get('version', '')}")
+                self.qbt_status_label.setText(
+                    self.tr("Connected — qBittorrent {}").format(resp.get('version', ''))
+                )
                 self.qbt_status_label.setStyleSheet("color: green;")
             else:
-                self.qbt_status_label.setText(f"Error: {resp.get('error', 'unknown')}")
+                self.qbt_status_label.setText(
+                    self.tr("Error: {}").format(resp.get('error', self.tr('unknown')))
+                )
                 self.qbt_status_label.setStyleSheet("color: red;")
         except Exception as exc:
-            self.qbt_status_label.setText(f"Error: {exc}")
+            self.qbt_status_label.setText(self.tr("Error: {}").format(exc))
             self.qbt_status_label.setStyleSheet("color: red;")
         finally:
             self.qbt_test_btn.setEnabled(True)
@@ -1578,7 +1667,7 @@ class SetupTab(QWidget):
         self.qbt_user.clear()
         self.qbt_pass.clear()
         self.qbt_api_key.clear()
-        self.qbt_status_label.setText("Credentials cleared.")
+        self.qbt_status_label.setText(self.tr("Credentials cleared."))
         self.qbt_status_label.setStyleSheet("")
 
     def _load_qbt_settings(self):
@@ -1597,12 +1686,12 @@ class SetupTab(QWidget):
         if credentials_stored(SERVICE_QBT_KEY):
             _, key = get_credentials(SERVICE_QBT_KEY)
             self.qbt_api_key.setText(key)
-            self.qbt_status_label.setText("API key stored in keyring.")
+            self.qbt_status_label.setText(self.tr("API key stored in keyring."))
         elif credentials_stored(SERVICE_QBT):
             u, p = get_credentials(SERVICE_QBT)
             self.qbt_user.setText(u)
             self.qbt_pass.setText(p)
-            self.qbt_status_label.setText("Username/password stored in keyring.")
+            self.qbt_status_label.setText(self.tr("Username/password stored in keyring."))
 
     # ── WTRF Forum handlers ──────────────────────────────────────────────────
 
@@ -1611,14 +1700,14 @@ class SetupTab(QWidget):
         u = self.wtrf_user.text().strip()
         p = self.wtrf_pass.text()
         if not u:
-            self.wtrf_status_label.setText("Username is required.")
+            self.wtrf_status_label.setText(self.tr("Username is required."))
             return
         result = save_credentials(SERVICE_WTRF, u, p)
         self.wtrf_status_label.setText(result.label)
 
     def _on_wtrf_test(self):
         self.wtrf_test_btn.setEnabled(False)
-        self.wtrf_status_label.setText("Testing…")
+        self.wtrf_status_label.setText(self.tr("Testing…"))
         self.wtrf_status_label.setStyleSheet("")
         self._wtrf_test_thread = _WtrfTestThread(
             self.flask_port,
@@ -1631,10 +1720,14 @@ class SetupTab(QWidget):
     def _on_wtrf_test_finished(self, result: dict) -> None:
         self.wtrf_test_btn.setEnabled(True)
         if result.get("ok"):
-            self.wtrf_status_label.setText(f"Logged in as {result.get('username', '')}")
+            self.wtrf_status_label.setText(
+                self.tr("Logged in as {}").format(result.get('username', ''))
+            )
             self.wtrf_status_label.setStyleSheet("color: green;")
         else:
-            self.wtrf_status_label.setText(f"Error: {result.get('error', 'unknown')}")
+            self.wtrf_status_label.setText(
+                self.tr("Error: {}").format(result.get('error', self.tr('unknown')))
+            )
             self.wtrf_status_label.setStyleSheet("color: red;")
 
     def _on_wtrf_clear(self):
@@ -1642,7 +1735,7 @@ class SetupTab(QWidget):
         delete_credentials(SERVICE_WTRF)
         self.wtrf_user.clear()
         self.wtrf_pass.clear()
-        self.wtrf_status_label.setText("Credentials cleared.")
+        self.wtrf_status_label.setText(self.tr("Credentials cleared."))
 
     def _on_wtrf_board_changed(self, value: int) -> None:
         if self._loading:
@@ -1662,7 +1755,7 @@ class SetupTab(QWidget):
             u, p = get_credentials(SERVICE_WTRF)
             self.wtrf_user.setText(u)
             self.wtrf_pass.setText(p)
-            self.wtrf_status_label.setText("Credentials stored in keyring.")
+            self.wtrf_status_label.setText(self.tr("Credentials stored in keyring."))
         try:
             resp = requests.get(f"http://127.0.0.1:{self.flask_port}/api/db/settings", timeout=5)
             board_id = int(resp.json().get("wtrf_board_id") or 0)
@@ -1689,7 +1782,7 @@ class SetupTab(QWidget):
 
     def _on_refresh_trackers(self) -> None:
         self.refresh_trackers_btn.setEnabled(False)
-        self.tracker_count_label.setText("Fetching…")
+        self.tracker_count_label.setText(self.tr("Fetching…"))
         try:
             list_name = self.tracker_list_combo.currentText()
             resp = requests.get(
@@ -1698,10 +1791,10 @@ class SetupTab(QWidget):
                 timeout=20,
             ).json()
             count = resp.get("count", 0)
-            self.tracker_count_label.setText(f"{count} trackers loaded")
+            self.tracker_count_label.setText(self.tr("{} trackers loaded").format(count))
             self.tracker_count_label.setStyleSheet("color: green;" if count else "color: red;")
         except Exception as exc:
-            self.tracker_count_label.setText(f"Error: {exc}")
+            self.tracker_count_label.setText(self.tr("Error: {}").format(exc))
             self.tracker_count_label.setStyleSheet("color: red;")
         finally:
             self.refresh_trackers_btn.setEnabled(True)
@@ -1729,7 +1822,7 @@ class SetupTab(QWidget):
         """
         retry = self._geocode_retry_cb.isChecked()
         self._geocode_run_btn.setEnabled(False)
-        self._geocode_status_label.setText("Status: starting…")
+        self._geocode_status_label.setText(self.tr("Status: starting…"))
 
         self._geocode_run_thread = _GeocodeRunThread(self.flask_port, retry)
         self._geocode_run_thread.finished.connect(self._on_geocode_started)
@@ -1738,15 +1831,17 @@ class SetupTab(QWidget):
     def _on_geocode_started(self, result: dict) -> None:
         """Handle the immediate response from POST /api/geocode/run."""
         if result.get("status_code") == 409 or result.get("already_running"):
-            self._geocode_status_label.setText("Status: already running")
+            self._geocode_status_label.setText(self.tr("Status: already running"))
             self._geocode_run_btn.setEnabled(True)
             return
         if "error" in result and "status_code" not in result:
-            self._geocode_status_label.setText(f"Status: error — {result['error']}")
+            self._geocode_status_label.setText(
+                self.tr("Status: error — {}").format(result['error'])
+            )
             self._geocode_run_btn.setEnabled(True)
             return
         # Geocoder started — begin polling
-        self._geocode_status_label.setText("Status: running…")
+        self._geocode_status_label.setText(self.tr("Status: running…"))
         self._geocode_status_thread = _GeocodeStatusThread(self.flask_port)
         self._geocode_status_thread.status_update.connect(self._on_geocode_status)
         self._geocode_status_thread.start()
@@ -1771,26 +1866,31 @@ class SetupTab(QWidget):
 
             stage_hint = ""
             if stage == "querying":
-                stage_hint = "querying Nominatim…"
+                stage_hint = self.tr("querying Nominatim…")
             elif stage == "sleeping":
-                stage_hint = "waiting (rate limit)…"
+                stage_hint = self.tr("waiting (rate limit)…")
             elif stage == "saving":
-                stage_hint = "saving…"
+                stage_hint = self.tr("saving…")
             elif stage == "starting":
-                stage_hint = "starting…"
+                stage_hint = self.tr("starting…")
 
             eta_str = ""
             remaining = total - done
             if remaining > 0 and done > 0:
                 eta_s = int(remaining * 1.1)
                 if eta_s >= 3600:
-                    eta_str = f"~{eta_s // 3600}h {(eta_s % 3600) // 60}m left"
+                    eta_str = self.tr("~{0}h {1}m left").format(
+                        eta_s // 3600, (eta_s % 3600) // 60
+                    )
                 elif eta_s >= 60:
-                    eta_str = f"~{eta_s // 60}m {eta_s % 60}s left"
+                    eta_str = self.tr("~{0}m {1}s left").format(eta_s // 60, eta_s % 60)
                 else:
-                    eta_str = f"~{eta_s}s left"
+                    eta_str = self.tr("~{}s left").format(eta_s)
 
-            counts = f"{succeeded} ok  |  {errors} failed" if (succeeded + errors) > 0 else ""
+            counts = (
+                self.tr("{0} ok  |  {1} failed").format(succeeded, errors)
+                if (succeeded + errors) > 0 else ""
+            )
 
             parts = [progress_str]
             if current:
@@ -1808,6 +1908,6 @@ class SetupTab(QWidget):
                 self._geocode_status_thread = None
             self._geocode_run_btn.setEnabled(True)
             self._geocode_status_label.setText(
-                f"Done: {succeeded} geocoded, {errors} failed"
+                self.tr("Done: {0} geocoded, {1} failed").format(succeeded, errors)
             )
             _log.info("Geocoder finished: %d geocoded, %d errors", succeeded, errors)

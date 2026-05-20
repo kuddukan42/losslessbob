@@ -112,21 +112,23 @@ class MapTab(QWidget):
         top_bar.setContentsMargins(0, 0, 0, 0)
         top_bar.setSpacing(6)
 
-        title_label = QLabel("Map")
+        title_label = QLabel(self.tr("Map"))
         title_label.setStyleSheet("font-weight: 700; font-size: 11pt;")
         top_bar.addWidget(title_label)
         top_bar.addStretch()
 
-        self._open_browser_btn = QPushButton("Open in Browser")
-        self._open_browser_btn.setToolTip(f"Open {self._map_url.toString()} in the system browser")
+        self._open_browser_btn = QPushButton(self.tr("Open in Browser"))
+        self._open_browser_btn.setToolTip(
+            self.tr("Open {} in the system browser").format(self._map_url.toString())
+        )
         self._open_browser_btn.clicked.connect(self._open_in_browser)
         top_bar.addWidget(self._open_browser_btn)
 
         layout.addLayout(top_bar)
 
         if _WEBENGINE_OK:
-            self._refresh_btn = QPushButton("Refresh")
-            self._refresh_btn.setToolTip("Reload the map page")
+            self._refresh_btn = QPushButton(self.tr("Refresh"))
+            self._refresh_btn.setToolTip(self.tr("Reload the map page"))
             self._refresh_btn.clicked.connect(self._on_refresh)
             top_bar.insertWidget(top_bar.count() - 1, self._refresh_btn)
 
@@ -141,7 +143,7 @@ class MapTab(QWidget):
             fallback_layout = QVBoxLayout(fallback_container)
             fallback_layout.setContentsMargins(0, 0, 0, 0)
 
-            notice = QLabel("Map tab requires PyQt6-WebEngine — see README to enable")
+            notice = QLabel(self.tr("Map tab requires PyQt6-WebEngine — see README to enable"))
             notice.setAlignment(Qt.AlignmentFlag.AlignCenter)
             notice.setStyleSheet("color: gray; font-style: italic;")
             fallback_layout.addStretch()

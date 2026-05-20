@@ -69,7 +69,9 @@ losslessbob/
 │   ├── dbedit_tab.py         # DB Editor: browse/edit/delete rows, export CSV
 │   ├── theme_tab.py          # Color theme picker and custom color editor
 │   ├── map_tab.py            # World map of LB locations via Leaflet + QWebEngineView; QWebChannel bridge
+│   ├── i18n.py               # Translation loader: load_language(), supported_languages(); reads gui/locales/*.qm
 │   ├── styles.py             # Generates Qt stylesheets from color dict
+│   ├── locales/              # Qt Linguist translation files (.ts source + .qm compiled binary per language)
 │   ├── resources/
 │   │   ├── map.html          # Leaflet map page served at GET /map; fetches /api/map/data
 │   │   └── leaflet/          # Bundled Leaflet 1.9.4 + markercluster 1.5.3 + leaflet.heat 0.2.0 assets
@@ -330,6 +332,7 @@ Persists settings between runs. Key examples:
 - `qbt_category` — optional category label for added torrents
 - `qbt_tags` — optional comma-separated tag string for added torrents
 - `tracker_list` — tracker list name for torrent generation (default `'best'`)
+- `ui_language` — ISO 639-1 language code for the GUI (`'en'` default; `'de'`/`'fr'`/`'es'`/`'it'`/`'nl'` once translation files are installed)
 
 ### `flat_file_releases` — Flat-file update release log (MASTER table)
 One row per discovered/downloaded/applied release of the LosslessBob flat-file zip.
@@ -1232,3 +1235,4 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 | 2026-05-18 | Bootleg-CD Catalog (LBBCD): `backend/bootleg_scraper.py`; `bootleg_titles` + `bootleg_scrapes` tables (MASTER); MASTER_SCHEMA_VERSION→2; 7 `/api/bootlegs/*` routes; `gui/bootlegs_tab.py` (Bootlegs tab, index 5); 🎵 badge in Search tab; Scrape Bootleg Catalog button + history panel in Setup tab; Bootlegs count in status bar. (TODO-030) |
 | 2026-05-19 | Map feature: location_geocoded table (MASTER) + get_map_data(); backend/geocoder.py (Nominatim); tools/geocode_locations.py CLI; GET /map + /api/map/data + /api/geocode/* routes; gui/map_tab.py + gui/resources/map.html (Leaflet); curator geocoding UI in setup_tab + dbedit_tab; Map tab wired into main_window.py. |
 | 2026-05-19 | Map feature complete (CC_MAP_FEATURE.md): bundled Leaflet assets in gui/resources/leaflet/ (served via GET /leaflet/<filename>); QWebChannel bridge (_MapBridge) in map_tab.py for "Open in Search" popup button + "List in Search" viewport filter; _LbListWorker + SearchTab.load_lb_list() in search_tab.py; get_entries_by_lb_list() in db.py; GET /api/entries/by_lb_list in app.py. |
+| 2026-05-19 | i18n infrastructure (TODO-067): gui/i18n.py (load_language, supported_languages); gui/locales/ directory for .ts/.qm files; ui_language meta key; Preferences group in Setup tab; startup language load in main.py; "ui_language" added to GET /api/db/settings. |

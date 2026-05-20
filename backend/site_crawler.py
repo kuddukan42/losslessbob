@@ -25,6 +25,7 @@ from bs4 import BeautifulSoup
 
 from backend.db import (
     DB_PATH,
+    get_connection,
     upsert_inventory,
     get_downloaded_urls,
     get_pending_urls,
@@ -282,7 +283,7 @@ def crawl(
     scope: str = "full",
     force: bool = False,
     delay_ms: int = 1500,
-    daily_cap: int = 5000,
+    daily_cap: int = 99999,
     db_path=None,
 ) -> dict:
     """Crawl the LosslessBob site and cache all pages under data/site/.
@@ -407,6 +408,23 @@ def crawl(
             http_status=status,
             session_id=session_id,
         )
+
+        # Keep entry_files.downloaded in sync: when the crawler saves a /files/ URL,
+        # mark the matching row as downloaded so the Attachments tab can see it.
+        url_path = urlparse(url).path
+        if url_path.startswith("/files/"):
+            filename = url_path[len("/files/"):]
+            if filename:
+                try:
+                    conn = get_connection(db_path)
+                    conn.execute(
+                        "UPDATE entry_files SET downloaded=1 WHERE filename=?",
+                        (filename,),
+                    )
+                    conn.commit()
+                except Exception:
+                    logger.exception("Failed to update entry_files.downloaded for %s", filename)
+
         _set(fetched=counts["fetched"])
 
         # Discover new links from HTML pages

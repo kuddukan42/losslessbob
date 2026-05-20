@@ -67,7 +67,7 @@ class _BootlegsModel(QAbstractTableModel):
             if col == _LB_COL:
                 return f"LB-{row['lb_number']:05d}"
             if col == _TITLE_COL:
-                return row.get("title") or "(no title)"
+                return row.get("title") or self.tr("(no title)")
             if col == _DATE_COL:
                 return row.get("date_str") or ""
             if col == _YEAR_COL:
@@ -103,16 +103,16 @@ class _BootlegsModel(QAbstractTableModel):
         if role == Qt.ItemDataRole.ToolTipRole:
             if col == _STATUS_COL:
                 s = row.get("lb_status") or ""
-                return f"lb_master status: {s}" if s else None
+                return self.tr("lb_master status: {}").format(s) if s else None
             if col == _LBBCD_COL and row.get("lbbcd_id"):
-                return f"Open LBBCD-{row['lbbcd_id']} detail page"
+                return self.tr("Open LBBCD-{} detail page").format(row['lbbcd_id'])
             return None
 
         return None
 
     def headerData(self, section, orientation, role=Qt.ItemDataRole.DisplayRole):
         if orientation == Qt.Orientation.Horizontal and role == Qt.ItemDataRole.DisplayRole:
-            return HEADERS[section]
+            return self.tr(HEADERS[section])
         return None
 
     def set_rows(self, rows: list[dict]) -> None:
@@ -273,14 +273,14 @@ class BootlegsTab(QWidget):
         filter_bar = QHBoxLayout()
 
         self._q_edit = QLineEdit()
-        self._q_edit.setPlaceholderText("Search title / location…")
+        self._q_edit.setPlaceholderText(self.tr("Search title / location…"))
         self._q_edit.textChanged.connect(self._on_filter_changed)
         filter_bar.addWidget(self._q_edit, stretch=2)
 
-        filter_bar.addWidget(QLabel("Year:"))
+        filter_bar.addWidget(QLabel(self.tr("Year:")))
         self._year_min = QSpinBox()
         self._year_min.setRange(0, 2099)
-        self._year_min.setSpecialValueText("Any")
+        self._year_min.setSpecialValueText(self.tr("Any"))
         self._year_min.setValue(0)
         self._year_min.setFixedWidth(65)
         self._year_min.valueChanged.connect(self._on_filter_changed)
@@ -288,41 +288,43 @@ class BootlegsTab(QWidget):
         filter_bar.addWidget(QLabel("–"))
         self._year_max = QSpinBox()
         self._year_max.setRange(0, 2099)
-        self._year_max.setSpecialValueText("Any")
+        self._year_max.setSpecialValueText(self.tr("Any"))
         self._year_max.setValue(0)
         self._year_max.setFixedWidth(65)
         self._year_max.valueChanged.connect(self._on_filter_changed)
         filter_bar.addWidget(self._year_max)
 
-        filter_bar.addWidget(QLabel("CDs:"))
+        filter_bar.addWidget(QLabel(self.tr("CDs:")))
         self._cd_combo = QComboBox()
-        self._cd_combo.addItems(["All", "0", "1", "2", "3+"])
+        self._cd_combo.addItem(self.tr("All"))
+        for _cd_label in ("0", "1", "2", "3+"):
+            self._cd_combo.addItem(_cd_label)
         self._cd_combo.currentIndexChanged.connect(self._on_filter_changed)
         filter_bar.addWidget(self._cd_combo)
 
         self._status_combo = QComboBox()
-        self._status_combo.addItem("All statuses", userData=None)
-        self._status_combo.addItem("Public",        userData="public")
-        self._status_combo.addItem("Private",       userData="private")
-        self._status_combo.addItem("Missing",       userData="missing")
+        self._status_combo.addItem(self.tr("All statuses"), userData=None)
+        self._status_combo.addItem(self.tr("Public"),        userData="public")
+        self._status_combo.addItem(self.tr("Private"),       userData="private")
+        self._status_combo.addItem(self.tr("Missing"),       userData="missing")
         self._status_combo.currentIndexChanged.connect(self._on_filter_changed)
         filter_bar.addWidget(self._status_combo)
 
         self._owned_combo = QComboBox()
-        self._owned_combo.addItem("All",       userData=None)
-        self._owned_combo.addItem("Owned",     userData=True)
-        self._owned_combo.addItem("Not owned", userData=False)
+        self._owned_combo.addItem(self.tr("All"),       userData=None)
+        self._owned_combo.addItem(self.tr("Owned"),     userData=True)
+        self._owned_combo.addItem(self.tr("Not owned"), userData=False)
         self._owned_combo.currentIndexChanged.connect(self._on_filter_changed)
         filter_bar.addWidget(self._owned_combo)
 
         self._lbbcd_combo = QComboBox()
-        self._lbbcd_combo.addItem("All",          userData=None)
-        self._lbbcd_combo.addItem("Has LBBCD",    userData=True)
-        self._lbbcd_combo.addItem("No LBBCD",     userData=False)
+        self._lbbcd_combo.addItem(self.tr("All"),          userData=None)
+        self._lbbcd_combo.addItem(self.tr("Has LBBCD"),    userData=True)
+        self._lbbcd_combo.addItem(self.tr("No LBBCD"),     userData=False)
         self._lbbcd_combo.currentIndexChanged.connect(self._on_filter_changed)
         filter_bar.addWidget(self._lbbcd_combo)
 
-        self._clear_btn = QPushButton("Clear")
+        self._clear_btn = QPushButton(self.tr("Clear"))
         self._clear_btn.clicked.connect(self._on_clear_filters)
         filter_bar.addWidget(self._clear_btn)
 
@@ -330,16 +332,16 @@ class BootlegsTab(QWidget):
 
         # ── Status / pagination bar ─────────────────────────────────────────
         status_bar = QHBoxLayout()
-        self._status_lbl = QLabel("No results.")
+        self._status_lbl = QLabel(self.tr("No results."))
         status_bar.addWidget(self._status_lbl)
         status_bar.addStretch()
-        self._prev_btn = QPushButton("← Prev")
+        self._prev_btn = QPushButton(self.tr("← Prev"))
         self._prev_btn.setEnabled(False)
         self._prev_btn.clicked.connect(self._prev_page)
         status_bar.addWidget(self._prev_btn)
         self._page_lbl = QLabel("")
         status_bar.addWidget(self._page_lbl)
-        self._next_btn = QPushButton("Next →")
+        self._next_btn = QPushButton(self.tr("Next →"))
         self._next_btn.setEnabled(False)
         self._next_btn.clicked.connect(self._next_page)
         status_bar.addWidget(self._next_btn)
@@ -369,7 +371,7 @@ class BootlegsTab(QWidget):
         detail_layout = QVBoxLayout(detail_widget)
         detail_layout.setContentsMargins(8, 4, 4, 4)
 
-        detail_group = QGroupBox("Bootleg Detail")
+        detail_group = QGroupBox(self.tr("Bootleg Detail"))
         form = QFormLayout(detail_group)
         form.setLabelAlignment(Qt.AlignmentFlag.AlignRight)
 
@@ -383,19 +385,19 @@ class BootlegsTab(QWidget):
         self._d_status   = QLabel("—")
         self._d_lbbcd    = QLabel("—")
 
-        form.addRow("LB Number:",  self._d_lb)
-        form.addRow("Title:",      self._d_title)
-        form.addRow("Date:",       self._d_date)
-        form.addRow("Location:",   self._d_location)
-        form.addRow("CDs:",        self._d_cds)
-        form.addRow("LB Status:",  self._d_status)
-        form.addRow("LBBCD:",      self._d_lbbcd)
+        form.addRow(self.tr("LB Number:"),  self._d_lb)
+        form.addRow(self.tr("Title:"),      self._d_title)
+        form.addRow(self.tr("Date:"),       self._d_date)
+        form.addRow(self.tr("Location:"),   self._d_location)
+        form.addRow(self.tr("CDs:"),        self._d_cds)
+        form.addRow(self.tr("LB Status:"),  self._d_status)
+        form.addRow(self.tr("LBBCD:"),      self._d_lbbcd)
 
-        self._open_lb_btn = QPushButton("Open in Search Tab")
+        self._open_lb_btn = QPushButton(self.tr("Open in Search Tab"))
         self._open_lb_btn.clicked.connect(self._on_open_lb)
         self._open_lb_btn.setEnabled(False)
 
-        self._open_lbbcd_btn = QPushButton("Open LBBCD Page")
+        self._open_lbbcd_btn = QPushButton(self.tr("Open LBBCD Page"))
         self._open_lbbcd_btn.clicked.connect(self._on_open_lbbcd)
         self._open_lbbcd_btn.setEnabled(False)
 
@@ -407,7 +409,7 @@ class BootlegsTab(QWidget):
         detail_layout.addWidget(detail_group)
         detail_layout.addLayout(btn_row)
 
-        also_group = QGroupBox("Other bootleg titles for this LB")
+        also_group = QGroupBox(self.tr("Other bootleg titles for this LB"))
         also_layout = QVBoxLayout(also_group)
         self._also_text = QTextEdit()
         self._also_text.setReadOnly(True)
@@ -508,7 +510,7 @@ class BootlegsTab(QWidget):
         return params
 
     def _do_fetch(self) -> None:
-        self._status_lbl.setText("Loading…")
+        self._status_lbl.setText(self.tr("Loading…"))
         params = self._build_params()
         if self._worker and self._worker.isRunning():
             self._worker.finished.disconnect()
@@ -527,13 +529,13 @@ class BootlegsTab(QWidget):
         self._update_pagination()
 
     def _on_fetch_error(self, msg: str) -> None:
-        self._status_lbl.setText(f"Error: {msg}")
+        self._status_lbl.setText(self.tr("Error: {}").format(msg))
 
     def _update_status(self, total: int) -> None:
         page = self._offset // self._page_size + 1
         pages = max(1, -(-total // self._page_size))
         self._status_lbl.setText(
-            f"{total:,} bootleg title(s)  —  page {page} of {pages}"
+            self.tr("{0:,} bootleg title(s)  —  page {1} of {2}").format(total, page, pages)
         )
 
     def _update_pagination(self) -> None:
@@ -541,7 +543,7 @@ class BootlegsTab(QWidget):
         pages = max(1, -(-self._total // self._page_size))
         self._prev_btn.setEnabled(self._offset > 0)
         self._next_btn.setEnabled(page < pages)
-        self._page_lbl.setText(f"Page {page} of {pages}")
+        self._page_lbl.setText(self.tr("Page {0} of {1}").format(page, pages))
 
     def _prev_page(self) -> None:
         self._offset = max(0, self._offset - self._page_size)
@@ -560,7 +562,7 @@ class BootlegsTab(QWidget):
             return
         lb = row["lb_number"]
         self._d_lb.setText(f"LB-{lb:05d}")
-        self._d_title.setText(row.get("title") or "(no title)")
+        self._d_title.setText(row.get("title") or self.tr("(no title)"))
         self._d_date.setText(row.get("date_str") or "—")
         self._d_location.setText(row.get("location") or "—")
         self._d_cds.setText(str(row.get("cd_count", 0)))
@@ -600,7 +602,7 @@ class BootlegsTab(QWidget):
                      for r in others]
             self._also_text.setPlainText("\n".join(lines))
         else:
-            self._also_text.setPlainText("(only bootleg title for this LB)")
+            self._also_text.setPlainText(self.tr("(only bootleg title for this LB)"))
 
     def _on_open_lb(self) -> None:
         lb = self._open_lb_btn.property("lb")

@@ -24,7 +24,7 @@ class MainWindow(QMainWindow):
         _slog.t("MainWindow.__init__: start")
         super().__init__(parent)
         self.flask_port = flask_port
-        self.setWindowTitle("LosslessBob Checksum Lookup")
+        self.setWindowTitle(self.tr("LosslessBob Checksum Lookup"))
         self.setMinimumSize(800, 500)
         self.setStyleSheet(styles.MAIN_STYLESHEET)
 
@@ -58,35 +58,35 @@ class MainWindow(QMainWindow):
     def _build_menu(self):
         menubar = self.menuBar()
 
-        file_menu = menubar.addMenu("File")
-        exit_act = QAction("Exit", self)
+        file_menu = menubar.addMenu(self.tr("File"))
+        exit_act = QAction(self.tr("Exit"), self)
         exit_act.triggered.connect(self.close)
         file_menu.addAction(exit_act)
 
-        db_menu = menubar.addMenu("Database")
+        db_menu = menubar.addMenu(self.tr("Database"))
 
-        check_update_act = QAction("Check for Update", self)
+        check_update_act = QAction(self.tr("Check for Update"), self)
         check_update_act.triggered.connect(
             lambda: self.tabs.setCurrentIndex(self.tabs.indexOf(self.setup_tab))
         )
         db_menu.addAction(check_update_act)
 
-        select_db_act = QAction("Select Database", self)
+        select_db_act = QAction(self.tr("Select Database"), self)
         select_db_act.triggered.connect(
             lambda: self.tabs.setCurrentIndex(self.tabs.indexOf(self.setup_tab))
         )
         db_menu.addAction(select_db_act)
 
-        open_folder_act = QAction("Open DB Folder", self)
+        open_folder_act = QAction(self.tr("Open DB Folder"), self)
         open_folder_act.triggered.connect(lambda: self.setup_tab._on_open_folder())
         db_menu.addAction(open_folder_act)
 
-        help_menu = menubar.addMenu("Help")
-        help_act = QAction("Help", self)
+        help_menu = menubar.addMenu(self.tr("Help"))
+        help_act = QAction(self.tr("Help"), self)
         help_act.triggered.connect(self._on_help)
         help_menu.addAction(help_act)
 
-        about_act = QAction("About", self)
+        about_act = QAction(self.tr("About"), self)
         about_act.triggered.connect(self._on_about)
         help_menu.addAction(about_act)
 
@@ -132,13 +132,13 @@ class MainWindow(QMainWindow):
         _slog.t("_build_tabs: init ThemeTab")
         self.theme_tab = ThemeTab()
 
-        self.tabs.addTab(self.lookup_tab, "Lookup")
-        self.tabs.addTab(self.rename_tab, "Rename Folders")
-        self.tabs.addTab(self.verify_tab, "Verify")
-        self.tabs.addTab(self.lbdir_tab, "lbdir")
-        self.tabs.addTab(self.search_tab, "Search")
-        self.tabs.addTab(self.bootlegs_tab, "Bootlegs")
-        self.tabs.addTab(self.collection_tab, "My Collection")
+        self.tabs.addTab(self.lookup_tab, self.tr("Lookup"))
+        self.tabs.addTab(self.rename_tab, self.tr("Rename Folders"))
+        self.tabs.addTab(self.verify_tab, self.tr("Verify"))
+        self.tabs.addTab(self.lbdir_tab, self.tr("lbdir"))
+        self.tabs.addTab(self.search_tab, self.tr("Search"))
+        self.tabs.addTab(self.bootlegs_tab, self.tr("Bootlegs"))
+        self.tabs.addTab(self.collection_tab, self.tr("My Collection"))
         _slog.t("_build_tabs: import SpectrogramTab")
         from gui.spectrogram_tab import SpectrogramTab
         _slog.t("_build_tabs: init SpectrogramTab")
@@ -152,19 +152,19 @@ class MainWindow(QMainWindow):
         _slog.t("_build_tabs: init ScraperTab")
         self.scraper_tab = ScraperTab(self.flask_port)
 
-        self.tabs.addTab(self.attachments_tab, "Attachments")
-        self.tabs.addTab(self.spectrogram_tab, "Spectrograms")
-        self.tabs.addTab(self.dbedit_tab, "DB Editor")
-        self.tabs.addTab(self.scraper_tab, "Scraper")
-        self.tabs.addTab(self.setup_tab, "Setup")
-        self.tabs.addTab(self.theme_tab, "Themes")
+        self.tabs.addTab(self.attachments_tab, self.tr("Attachments"))
+        self.tabs.addTab(self.spectrogram_tab, self.tr("Spectrograms"))
+        self.tabs.addTab(self.dbedit_tab, self.tr("DB Editor"))
+        self.tabs.addTab(self.scraper_tab, self.tr("Scraper"))
+        self.tabs.addTab(self.setup_tab, self.tr("Setup"))
+        self.tabs.addTab(self.theme_tab, self.tr("Themes"))
 
         _slog.t("_build_tabs: importing MapTab")
         try:
             from gui.map_tab import MapTab
             _slog.t("_build_tabs: init MapTab")
             self.map_tab = MapTab(self.flask_port, state_store=self.state_store)
-            self.tabs.addTab(self.map_tab, "Map")
+            self.tabs.addTab(self.map_tab, self.tr("Map"))
             self.map_tab.open_in_search.connect(self._on_map_open_in_search)
             self.map_tab.list_in_search.connect(self._on_map_list_in_search)
         except Exception as exc:  # noqa: BLE001
@@ -204,7 +204,7 @@ class MainWindow(QMainWindow):
     def _build_status_bar(self):
         self.status_bar = QStatusBar()
         self.setStatusBar(self.status_bar)
-        self.status_bar.showMessage("Connecting to database...")
+        self.status_bar.showMessage(self.tr("Connecting to database…"))
 
     def _restore_geometry(self):
         restored = self.state_store.restore_window(self)
@@ -244,12 +244,14 @@ class MainWindow(QMainWindow):
             last_import = s.get("last_import", "Never")
             if last_import and len(str(last_import)) > 10:
                 last_import = str(last_import)[:10]
-            msg = f"DB: LB-{lb}  |  Checksums: {checksums:,}  |  Last import: {last_import}"
+            msg = self.tr("DB: LB-{}  |  Checksums: {}  |  Last import: {}").format(
+                lb, f"{checksums:,}", last_import
+            )
             bt = s.get("bootlegs", {}).get("total", 0)
             if bt:
-                msg += f"  |  Bootlegs: {bt:,}"
+                msg += self.tr("  |  Bootlegs: {}").format(f"{bt:,}")
         except Exception:
-            msg = "Database not connected."
+            msg = self.tr("Database not connected.")
         self._status_message.emit(msg)
 
     def _refresh_status(self) -> None:
@@ -314,20 +316,24 @@ class MainWindow(QMainWindow):
 
     def _on_help(self):
         QMessageBox.information(
-            self, "Help",
-            "LosslessBob Checksum Lookup\n\n"
-            "1. Add files or folders to the listbox (drag-drop or Add buttons)\n"
-            "2. Click 'Lookup From Listbox' to check checksums\n"
-            "3. Or paste checksum text and click 'Lookup From Clipboard'\n"
-            "4. Green rows = complete match, Orange = not found, Pink = incomplete set\n\n"
-            "Use the Setup tab to import the LosslessBob flat-file database."
+            self, self.tr("Help"),
+            self.tr(
+                "LosslessBob Checksum Lookup\n\n"
+                "1. Add files or folders to the listbox (drag-drop or Add buttons)\n"
+                "2. Click 'Lookup From Listbox' to check checksums\n"
+                "3. Or paste checksum text and click 'Lookup From Clipboard'\n"
+                "4. Green rows = complete match, Orange = not found, Pink = incomplete set\n\n"
+                "Use the Setup tab to import the LosslessBob flat-file database."
+            ),
         )
 
     def _on_about(self):
         QMessageBox.about(
-            self, "About",
-            f"LosslessBob Checksum Lookup v{VERSION}\n\n"
-            "Cross-platform replacement for the original Windows Checksum_Lookup utility.\n"
-            "Supports the LosslessBob Bob Dylan lossless recording archive.\n\n"
-            "Built with Python, PyQt6, and Flask."
+            self, self.tr("About"),
+            self.tr(
+                "LosslessBob Checksum Lookup v{version}\n\n"
+                "Cross-platform replacement for the original Windows Checksum_Lookup utility.\n"
+                "Supports the LosslessBob Bob Dylan lossless recording archive.\n\n"
+                "Built with Python, PyQt6, and Flask."
+            ).format(version=VERSION),
         )

@@ -176,7 +176,7 @@ class VerifyTab(QWidget):
         left_layout = QVBoxLayout(left_widget)
         left_layout.setContentsMargins(0, 0, 4, 0)
 
-        self.list_header = QLabel("Folders: 0")
+        self.list_header = QLabel(self.tr("Folders: 0"))
         left_layout.addWidget(self.list_header)
 
         self.listbox = DropFolderListWidget()
@@ -187,23 +187,23 @@ class VerifyTab(QWidget):
 
         btn_layout = QVBoxLayout()
 
-        self.add_folders_btn = QPushButton("Add Folders...")
+        self.add_folders_btn = QPushButton(self.tr("Add Folders…"))
         self.add_folders_btn.clicked.connect(self._on_add_folders)
         btn_layout.addWidget(self.add_folders_btn)
 
-        self.add_root_btn = QPushButton("Add Root Folder...")
+        self.add_root_btn = QPushButton(self.tr("Add Root Folder…"))
         self.add_root_btn.setToolTip(
-            "Pick a parent folder and recursively add all subfolders "
-            "that contain audio files."
+            self.tr("Pick a parent folder and recursively add all subfolders "
+                    "that contain audio files.")
         )
         self.add_root_btn.clicked.connect(self._on_add_root_folder)
         btn_layout.addWidget(self.add_root_btn)
 
-        self.remove_btn = QPushButton("Remove Selected")
+        self.remove_btn = QPushButton(self.tr("Remove Selected"))
         self.remove_btn.clicked.connect(self._on_remove_selected)
         btn_layout.addWidget(self.remove_btn)
 
-        self.clear_btn = QPushButton("Clear List")
+        self.clear_btn = QPushButton(self.tr("Clear List"))
         self.clear_btn.clicked.connect(self._on_clear_list)
         btn_layout.addWidget(self.clear_btn)
 
@@ -212,19 +212,19 @@ class VerifyTab(QWidget):
         sep.setStyleSheet("background: #cccccc;")
         btn_layout.addWidget(sep)
 
-        self.verify_btn = QPushButton("Verify Folders")
+        self.verify_btn = QPushButton(self.tr("Verify Folders"))
         self.verify_btn.clicked.connect(self._on_verify)
         btn_layout.addWidget(self.verify_btn)
 
-        self.generate_btn = QPushButton("Generate Checksums")
+        self.generate_btn = QPushButton(self.tr("Generate Checksums"))
         self.generate_btn.clicked.connect(self._on_generate)
         btn_layout.addWidget(self.generate_btn)
 
-        self.retrieve_btn = QPushButton("Retrieve from LB")
+        self.retrieve_btn = QPushButton(self.tr("Retrieve from LB"))
         self.retrieve_btn.setToolTip(
-            "Copy lbdir*.txt from the local attachment cache to each folder,\n"
-            "scraping from losslessbob.com if not yet cached.\n"
-            "LB number is read from My Collection or parsed from the folder name."
+            self.tr("Copy lbdir*.txt from the local attachment cache to each folder,\n"
+                    "scraping from losslessbob.com if not yet cached.\n"
+                    "LB number is read from My Collection or parsed from the folder name.")
         )
         self.retrieve_btn.clicked.connect(self._on_retrieve)
         btn_layout.addWidget(self.retrieve_btn)
@@ -254,10 +254,10 @@ class VerifyTab(QWidget):
         self.summary_container = QWidget()
         sc_layout = QVBoxLayout(self.summary_container)
         sc_layout.setContentsMargins(0, 0, 0, 0)
-        sc_layout.addWidget(QLabel("Summary"))
+        sc_layout.addWidget(QLabel(self.tr("Summary")))
 
         self.summary_table = QTableWidget(0, len(SUMMARY_HEADERS))
-        self.summary_table.setHorizontalHeaderLabels(SUMMARY_HEADERS)
+        self.summary_table.setHorizontalHeaderLabels([self.tr(h) for h in SUMMARY_HEADERS])
         self.summary_table.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.summary_table.setSelectionMode(QAbstractItemView.SelectionMode.SingleSelection)
         self.summary_table.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
@@ -277,16 +277,16 @@ class VerifyTab(QWidget):
         dc_layout.setContentsMargins(0, 0, 0, 0)
 
         detail_header_row = QHBoxLayout()
-        detail_header_row.addWidget(QLabel("Detail"))
+        detail_header_row.addWidget(QLabel(self.tr("Detail")))
         detail_header_row.addStretch()
-        self.show_all_cb = QCheckBox("Show all files")
+        self.show_all_cb = QCheckBox(self.tr("Show all files"))
         self.show_all_cb.setChecked(True)
         self.show_all_cb.stateChanged.connect(self._on_show_all_changed)
         detail_header_row.addWidget(self.show_all_cb)
         dc_layout.addLayout(detail_header_row)
 
         self.detail_table = QTableWidget(0, len(DETAIL_HEADERS))
-        self.detail_table.setHorizontalHeaderLabels(DETAIL_HEADERS)
+        self.detail_table.setHorizontalHeaderLabels([self.tr(h) for h in DETAIL_HEADERS])
         self.detail_table.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.detail_table.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         _det_hdr = self.detail_table.horizontalHeader()
@@ -315,7 +315,7 @@ class VerifyTab(QWidget):
             item.setToolTip(folder)
             item.setData(Qt.ItemDataRole.UserRole, folder)
             self.listbox.addItem(item)
-        self.list_header.setText(f"Folders: {len(self._folders)}")
+        self.list_header.setText(self.tr("Folders: {}").format(len(self._folders)))
 
     def _on_folders_dropped(self, folders):
         for f in folders:
@@ -324,17 +324,17 @@ class VerifyTab(QWidget):
         QTimer.singleShot(0, self._refresh_listbox)
 
     def _on_add_folders(self):
-        path = QFileDialog.getExistingDirectory(self, "Add Folder", str(Path.home()))
+        path = QFileDialog.getExistingDirectory(self, self.tr("Add Folder"), str(Path.home()))
         if path:
             self._add_folder(path)
             self._refresh_listbox()
 
     def _on_add_root_folder(self):
-        root = QFileDialog.getExistingDirectory(self, "Select Root Folder", str(Path.home()))
+        root = QFileDialog.getExistingDirectory(self, self.tr("Select Root Folder"), str(Path.home()))
         if not root:
             return
         self.add_root_btn.setEnabled(False)
-        self.status_label.setText("Scanning for audio folders…")
+        self.status_label.setText(self.tr("Scanning for audio folders…"))
         worker = _AddRootWorker(Path(root))
         self._add_root_worker = worker
         worker.finished.connect(self._on_add_root_finished)
@@ -347,12 +347,12 @@ class VerifyTab(QWidget):
             self._add_folder(path)
         added = len(self._folders) - before
         self._refresh_listbox()
-        self.status_label.setText(f"Added {added} subfolder(s) with audio files.")
+        self.status_label.setText(self.tr("Added {} subfolder(s) with audio files.").format(added))
         self.add_root_btn.setEnabled(True)
         self._add_root_worker = None
 
     def _on_add_root_error(self, msg: str) -> None:
-        self.status_label.setText(f"Scan error: {msg}")
+        self.status_label.setText(self.tr("Scan error: {}").format(msg))
         self.add_root_btn.setEnabled(True)
         self._add_root_worker = None
 
@@ -382,10 +382,10 @@ class VerifyTab(QWidget):
 
     def _on_listbox_context(self, pos):
         menu = QMenu(self)
-        remove_act = QAction("Remove from List", self)
+        remove_act = QAction(self.tr("Remove from List"), self)
         remove_act.triggered.connect(self._on_remove_selected)
         menu.addAction(remove_act)
-        clear_act = QAction("Clear List", self)
+        clear_act = QAction(self.tr("Clear List"), self)
         clear_act.triggered.connect(self._on_clear_list)
         menu.addAction(clear_act)
         menu.exec(self.listbox.mapToGlobal(pos))
@@ -413,7 +413,7 @@ class VerifyTab(QWidget):
 
     def _on_verify(self):
         if not self._folders:
-            self.status_label.setText("No folders in list.")
+            self.status_label.setText(self.tr("No folders in list."))
             return
         self._start_verify(list(self._folders))
 
@@ -421,7 +421,7 @@ class VerifyTab(QWidget):
         self._set_buttons_enabled(False)
         self._show_progress(True)
         self.detail_table.setRowCount(0)
-        self.status_label.setText(f"Verifying {len(folders)} folder(s)...")
+        self.status_label.setText(self.tr("Verifying {} folder(s)…").format(len(folders)))
         self._worker = _VerifyWorker(self.flask_port, folders)
         self._worker.finished.connect(self._on_verify_done)
         self._worker.error.connect(self._on_worker_error)
@@ -431,36 +431,40 @@ class VerifyTab(QWidget):
         self._show_progress(False)
         self._set_buttons_enabled(True)
         if "error" in response:
-            self.status_label.setText(f"Error: {response['error']}")
+            self.status_label.setText(self.tr("Error: {}").format(response["error"]))
             return
         results = response.get("results", [])
         self._verify_results = results
         self._populate_summary(results)
         n_pass = sum(1 for r in results if r.get("status") == "pass")
         n_issue = len(results) - n_pass
-        msg = f"Verified {len(results)} folder(s): {n_pass} pass, {n_issue} with issues."
+        msg = self.tr("Verified {} folder(s): {} pass, {} with issues.").format(
+            len(results), n_pass, n_issue
+        )
         if any(r.get("status") == "shntool_missing" for r in results):
             import sys as _sys
             if _sys.platform == "win32":
-                msg += (
+                msg += self.tr(
                     "\nshntool not found on Windows. Options:\n"
                     "  1. Install WSL: wsl --install (then: wsl sudo apt install shntool)\n"
                     "  2. SHN MD5 checksums can still be verified; "
                     "only shntool hashes require it."
                 )
             else:
-                msg += "\nshntool not found — install with: sudo apt install shntool"
+                msg += self.tr("\nshntool not found — install with: sudo apt install shntool")
         self.status_label.setText(msg)
 
     # ── Generate ─────────────────────────────────────────────────────────────
 
     def _on_generate(self):
         if not self._folders:
-            self.status_label.setText("No folders in list.")
+            self.status_label.setText(self.tr("No folders in list."))
             return
         self._set_buttons_enabled(False)
         self._show_progress(True)
-        self.status_label.setText(f"Generating checksums for {len(self._folders)} folder(s)...")
+        self.status_label.setText(
+            self.tr("Generating checksums for {} folder(s)…").format(len(self._folders))
+        )
         self._generate_worker = _GenerateWorker(self.flask_port, list(self._folders))
         self._generate_worker.finished.connect(self._on_generate_done)
         self._generate_worker.error.connect(self._on_worker_error)
@@ -474,21 +478,27 @@ class VerifyTab(QWidget):
             all_errors.extend(result.get("errors", []))
         parts = []
         if all_generated:
-            parts.append(f"Generated: {', '.join(Path(p).name for p in all_generated)}")
+            parts.append(self.tr("Generated: {}").format(
+                ", ".join(Path(p).name for p in all_generated)
+            ))
         if all_errors:
-            parts.append(f"Errors: {'; '.join(all_errors)}")
-        self.status_label.setText("  |  ".join(parts) if parts else "No files generated.")
+            parts.append(self.tr("Errors: {}").format("; ".join(all_errors)))
+        self.status_label.setText(
+            "  |  ".join(parts) if parts else self.tr("No files generated.")
+        )
         self._start_verify(list(self._folders))
 
     # ── Retrieve ─────────────────────────────────────────────────────────────
 
     def _on_retrieve(self):
         if not self._folders:
-            self.status_label.setText("No folders in list.")
+            self.status_label.setText(self.tr("No folders in list."))
             return
         self._set_buttons_enabled(False)
         self._show_progress(True)
-        self.status_label.setText(f"Retrieving lbdir files for {len(self._folders)} folder(s)...")
+        self.status_label.setText(
+            self.tr("Retrieving lbdir files for {} folder(s)…").format(len(self._folders))
+        )
         self._retrieve_worker = _RetrieveWorker(self.flask_port, list(self._folders))
         self._retrieve_worker.finished.connect(self._on_retrieve_done)
         self._retrieve_worker.error.connect(self._on_worker_error)
@@ -502,14 +512,16 @@ class VerifyTab(QWidget):
         no_lb = [r for r in results if r.get("status") == "no_lb_number"]
         parts = []
         if copied:
-            parts.append(f"Retrieved {len(copied)} lbdir file(s)")
+            parts.append(self.tr("Retrieved {} lbdir file(s)").format(len(copied)))
         if not_found:
-            parts.append(f"{len(not_found)} not found in cache")
+            parts.append(self.tr("{} not found in cache").format(len(not_found)))
         if no_lb:
             parts.append(
-                f"{len(no_lb)} folder(s) skipped — no LB number found, run Lookup first"
+                self.tr("{} folder(s) skipped — no LB number found, run Lookup first").format(
+                    len(no_lb)
+                )
             )
-        self.status_label.setText("  |  ".join(parts) if parts else "Done.")
+        self.status_label.setText("  |  ".join(parts) if parts else self.tr("Done."))
         if copied:
             # Only auto-trigger verify when at least one lbdir was actually retrieved
             self._start_verify(list(self._folders))
@@ -519,7 +531,7 @@ class VerifyTab(QWidget):
     def _on_worker_error(self, msg):
         self._show_progress(False)
         self._set_buttons_enabled(True)
-        self.status_label.setText(f"Error: {msg}")
+        self.status_label.setText(self.tr("Error: {}").format(msg))
 
     # ── Summary table ─────────────────────────────────────────────────────────
 
@@ -650,7 +662,7 @@ class VerifyTab(QWidget):
                 (self._fmt_status(file_info.get("md5_status")), "verify_status"),
                 (self._fmt_status(ffp_shn), "verify_status"),
                 (self._fmt_status(file_info.get("st5_status")), "verify_status"),
-                ("Yes" if file_info.get("on_disk") else "No", "bool_check"),
+                (self.tr("Yes") if file_info.get("on_disk") else self.tr("No"), "bool_check"),
                 (overall.upper() if overall else "", "verify_status"),
             ]
             row = self.detail_table.rowCount()

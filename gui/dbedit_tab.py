@@ -42,7 +42,7 @@ class PlaceManualDialog(QDialog):
         parent=None,
     ) -> None:
         super().__init__(parent)
-        self.setWindowTitle("Place Manually")
+        self.setWindowTitle(self.tr("Place Manually"))
         self.setMinimumWidth(360)
 
         form = QFormLayout(self)
@@ -51,25 +51,25 @@ class PlaceManualDialog(QDialog):
 
         loc_lbl = QLabel(location_text)
         loc_lbl.setWordWrap(True)
-        form.addRow("Location:", loc_lbl)
+        form.addRow(self.tr("Location:"), loc_lbl)
 
         self._lat_spin = QDoubleSpinBox()
         self._lat_spin.setRange(-90.0, 90.0)
         self._lat_spin.setDecimals(6)
         self._lat_spin.setSingleStep(0.0001)
         self._lat_spin.setValue(lat if lat is not None else 0.0)
-        form.addRow("Lat:", self._lat_spin)
+        form.addRow(self.tr("Lat:"), self._lat_spin)
 
         self._lon_spin = QDoubleSpinBox()
         self._lon_spin.setRange(-180.0, 180.0)
         self._lon_spin.setDecimals(6)
         self._lon_spin.setSingleStep(0.0001)
         self._lon_spin.setValue(lon if lon is not None else 0.0)
-        form.addRow("Lon:", self._lon_spin)
+        form.addRow(self.tr("Lon:"), self._lon_spin)
 
         self._note_edit = QLineEdit(note)
-        self._note_edit.setPlaceholderText("Optional curator note…")
-        form.addRow("Note:", self._note_edit)
+        self._note_edit.setPlaceholderText(self.tr("Optional curator note…"))
+        form.addRow(self.tr("Note:"), self._note_edit)
 
         buttons = QDialogButtonBox(
             QDialogButtonBox.StandardButton.Save
@@ -150,17 +150,17 @@ class DbEditTab(QWidget):
         left = QWidget()
         ll   = QVBoxLayout(left)
         ll.setContentsMargins(0, 0, 4, 0)
-        ll.addWidget(QLabel("Tables"))
+        ll.addWidget(QLabel(self.tr("Tables")))
         self.table_list = QListWidget()
         self.table_list.setFixedWidth(190)
         self.table_list.currentItemChanged.connect(self._on_table_selected)
         ll.addWidget(self.table_list)
-        refresh_btn = QPushButton("Refresh")
+        refresh_btn = QPushButton(self.tr("Refresh"))
         refresh_btn.clicked.connect(self.load_tables)
         ll.addWidget(refresh_btn)
 
         # ── DB Integrity sub-panel ────────────────────────────────────────────
-        integrity_box = QGroupBox("DB Integrity")
+        integrity_box = QGroupBox(self.tr("DB Integrity"))
         ib_layout = QVBoxLayout(integrity_box)
         ib_layout.setContentsMargins(6, 8, 6, 6)
         ib_layout.setSpacing(3)
@@ -169,48 +169,49 @@ class DbEditTab(QWidget):
         self._integrity_label.setWordWrap(True)
         ib_layout.addWidget(self._integrity_label)
 
-        reconcile_btn = QPushButton("Reconcile All")
+        reconcile_btn = QPushButton(self.tr("Reconcile All"))
         reconcile_btn.setToolTip(
-            "Recompute lb_master status for every LB number. Backs up DB first."
+            self.tr("Recompute lb_master status for every LB number. Backs up DB first.")
         )
         reconcile_btn.clicked.connect(self._on_reconcile_all)
         ib_layout.addWidget(reconcile_btn)
 
-        needs_review_btn = QPushButton("Show Needs Review")
+        needs_review_btn = QPushButton(self.tr("Show Needs Review"))
         needs_review_btn.setToolTip(
-            "Load lb_master rows flagged as needing curator review."
+            self.tr("Load lb_master rows flagged as needing curator review.")
         )
         needs_review_btn.clicked.connect(self._on_show_needs_review)
         ib_layout.addWidget(needs_review_btn)
 
-        export_overrides_btn = QPushButton("Export Overrides")
-        export_overrides_btn.setToolTip("Save all manual LB status overrides to a JSON file.")
+        export_overrides_btn = QPushButton(self.tr("Export Overrides"))
+        export_overrides_btn.setToolTip(self.tr("Save all manual LB status overrides to a JSON file."))
         export_overrides_btn.clicked.connect(self._on_export_overrides)
         ib_layout.addWidget(export_overrides_btn)
 
-        import_overrides_btn = QPushButton("Import Overrides")
-        import_overrides_btn.setToolTip("Load manual LB status overrides from a JSON file.")
+        import_overrides_btn = QPushButton(self.tr("Import Overrides"))
+        import_overrides_btn.setToolTip(self.tr("Load manual LB status overrides from a JSON file."))
         import_overrides_btn.clicked.connect(self._on_import_overrides)
         ib_layout.addWidget(import_overrides_btn)
 
-        backup_btn = QPushButton("Backup DB Now")
-        backup_btn.setToolTip("Create a manual snapshot of the database.")
+        backup_btn = QPushButton(self.tr("Backup DB Now"))
+        backup_btn.setToolTip(self.tr("Create a manual snapshot of the database."))
         backup_btn.clicked.connect(self._on_backup_db)
         ib_layout.addWidget(backup_btn)
 
         ll.addWidget(integrity_box)
 
         # ── Aliases sub-panel ─────────────────────────────────────────────────
-        aliases_box = QGroupBox("LB Aliases")
+        aliases_box = QGroupBox(self.tr("LB Aliases"))
         ab_layout = QVBoxLayout(aliases_box)
         ab_layout.setContentsMargins(6, 8, 6, 6)
         ab_layout.setSpacing(3)
 
         self._alias_table = QTableWidget()
         self._alias_table.setColumnCount(5)
-        self._alias_table.setHorizontalHeaderLabels(
-            ["Alias LB", "→", "Canonical LB", "Relationship", "Note"]
-        )
+        self._alias_table.setHorizontalHeaderLabels([
+            self.tr("Alias LB"), "→", self.tr("Canonical LB"),
+            self.tr("Relationship"), self.tr("Note"),
+        ])
         self._alias_table.setSelectionBehavior(
             QAbstractItemView.SelectionBehavior.SelectRows
         )
@@ -224,17 +225,17 @@ class DbEditTab(QWidget):
         ab_layout.addWidget(self._alias_table)
 
         alias_btn_row = QHBoxLayout()
-        self._alias_add_btn = QPushButton("Add")
-        self._alias_add_btn.setToolTip("Add a new alias mapping (curator only)")
+        self._alias_add_btn = QPushButton(self.tr("Add"))
+        self._alias_add_btn.setToolTip(self.tr("Add a new alias mapping (curator only)"))
         self._alias_add_btn.clicked.connect(self._on_add_alias)
         alias_btn_row.addWidget(self._alias_add_btn)
 
-        self._alias_del_btn = QPushButton("Delete")
-        self._alias_del_btn.setToolTip("Remove selected alias (curator only)")
+        self._alias_del_btn = QPushButton(self.tr("Delete"))
+        self._alias_del_btn.setToolTip(self.tr("Remove selected alias (curator only)"))
         self._alias_del_btn.clicked.connect(self._on_delete_alias)
         alias_btn_row.addWidget(self._alias_del_btn)
 
-        reload_alias_btn = QPushButton("Reload")
+        reload_alias_btn = QPushButton(self.tr("Reload"))
         reload_alias_btn.clicked.connect(self._load_aliases)
         alias_btn_row.addWidget(reload_alias_btn)
         ab_layout.addLayout(alias_btn_row)
@@ -246,33 +247,37 @@ class DbEditTab(QWidget):
         ll.addWidget(aliases_box)
 
         # ── Location Geocoding sub-panel (curator only) ───────────────────────
-        self._geo_box = QGroupBox("Location Geocoding")
+        self._geo_box = QGroupBox(self.tr("Location Geocoding"))
         geo_layout = QVBoxLayout(self._geo_box)
         geo_layout.setContentsMargins(6, 8, 6, 6)
         geo_layout.setSpacing(3)
 
         geo_filter_row = QHBoxLayout()
-        geo_filter_row.addWidget(QLabel("Filter:"))
+        geo_filter_row.addWidget(QLabel(self.tr("Filter:")))
         self._geo_filter_combo = QComboBox()
-        self._geo_filter_combo.addItems(["All", "Failed", "Low Confidence", "Manual Only"])
+        self._geo_filter_combo.addItem(self.tr("All"), "all")
+        self._geo_filter_combo.addItem(self.tr("Failed"), "failed")
+        self._geo_filter_combo.addItem(self.tr("Low Confidence"), "low_confidence")
+        self._geo_filter_combo.addItem(self.tr("Manual Only"), "manual")
         self._geo_filter_combo.setToolTip(
-            "All → all locations\n"
-            "Failed → geocoding failed\n"
-            "Low Confidence → confidence score below threshold\n"
-            "Manual Only → entries with a manual coordinate override"
+            self.tr("All → all locations\n"
+                    "Failed → geocoding failed\n"
+                    "Low Confidence → confidence score below threshold\n"
+                    "Manual Only → entries with a manual coordinate override")
         )
         geo_filter_row.addWidget(self._geo_filter_combo)
 
-        self._geo_load_btn = QPushButton("Load")
-        self._geo_load_btn.setToolTip("Fetch locations from /api/geocode/locations")
+        self._geo_load_btn = QPushButton(self.tr("Load"))
+        self._geo_load_btn.setToolTip(self.tr("Fetch locations from /api/geocode/locations"))
         self._geo_load_btn.clicked.connect(self._on_geo_load)
         geo_filter_row.addWidget(self._geo_load_btn)
         geo_layout.addLayout(geo_filter_row)
 
         self._geo_table = QTableWidget(0, 7)
-        self._geo_table.setHorizontalHeaderLabels(
-            ["Location Text", "Source", "Confidence", "Lat", "Lon", "Manual?", "Note"]
-        )
+        self._geo_table.setHorizontalHeaderLabels([
+            self.tr("Location Text"), self.tr("Source"), self.tr("Confidence"),
+            self.tr("Lat"), self.tr("Lon"), self.tr("Manual?"), self.tr("Note"),
+        ])
         self._geo_table.setSelectionBehavior(
             QAbstractItemView.SelectionBehavior.SelectRows
         )
@@ -305,28 +310,28 @@ class DbEditTab(QWidget):
 
         # Toolbar row
         toolbar = QHBoxLayout()
-        self.table_label = QLabel("Select a table")
+        self.table_label = QLabel(self.tr("Select a table"))
         f = self.table_label.font()
         f.setBold(True)
         self.table_label.setFont(f)
         toolbar.addWidget(self.table_label)
         toolbar.addStretch()
-        load_btn = QPushButton("Load Records")
-        load_btn.setToolTip("Retrieve all records for the selected table (clears search)")
+        load_btn = QPushButton(self.tr("Load Records"))
+        load_btn.setToolTip(self.tr("Retrieve all records for the selected table (clears search)"))
         load_btn.clicked.connect(self._on_load_all)
         toolbar.addWidget(load_btn)
-        toolbar.addWidget(QLabel("LB#:"))
+        toolbar.addWidget(QLabel(self.tr("LB#:")))
         self.lb_input = QLineEdit()
-        self.lb_input.setPlaceholderText("e.g. 1797")
+        self.lb_input.setPlaceholderText(self.tr("e.g. 1797"))
         self.lb_input.setFixedWidth(80)
         self.lb_input.returnPressed.connect(self._do_search)
         toolbar.addWidget(self.lb_input)
         self.search_input = QLineEdit()
-        self.search_input.setPlaceholderText("Search text columns…")
+        self.search_input.setPlaceholderText(self.tr("Search text columns…"))
         self.search_input.setFixedWidth(220)
         self.search_input.returnPressed.connect(self._do_search)
         toolbar.addWidget(self.search_input)
-        search_btn = QPushButton("Search")
+        search_btn = QPushButton(self.tr("Search"))
         search_btn.clicked.connect(self._do_search)
         toolbar.addWidget(search_btn)
         rl.addLayout(toolbar)
@@ -360,18 +365,18 @@ class DbEditTab(QWidget):
 
         # Pagination row
         page_row = QHBoxLayout()
-        self.prev_btn = QPushButton("< Prev")
+        self.prev_btn = QPushButton(self.tr("< Prev"))
         self.prev_btn.setMinimumWidth(70)
         self.prev_btn.clicked.connect(self._prev_page)
         page_row.addWidget(self.prev_btn)
         self.page_label = QLabel("")
         page_row.addWidget(self.page_label)
-        self.next_btn = QPushButton("Next >")
+        self.next_btn = QPushButton(self.tr("Next >"))
         self.next_btn.setMinimumWidth(70)
         self.next_btn.clicked.connect(self._next_page)
         page_row.addWidget(self.next_btn)
         page_row.addStretch()
-        page_row.addWidget(QLabel("Rows per page:"))
+        page_row.addWidget(QLabel(self.tr("Rows per page:")))
         self.limit_combo = QComboBox()
         for v in [50, 100, 200, 500]:
             self.limit_combo.addItem(str(v), v)
@@ -382,18 +387,18 @@ class DbEditTab(QWidget):
 
         # Action row
         act_row = QHBoxLayout()
-        self.save_btn = QPushButton("Commit Changes")
+        self.save_btn = QPushButton(self.tr("Commit Changes"))
         self.save_btn.setEnabled(False)
         self.save_btn.clicked.connect(self._on_commit)
         act_row.addWidget(self.save_btn)
-        self.discard_btn = QPushButton("Discard Changes")
+        self.discard_btn = QPushButton(self.tr("Discard Changes"))
         self.discard_btn.setEnabled(False)
         self.discard_btn.clicked.connect(self._on_discard)
         act_row.addWidget(self.discard_btn)
-        self.delete_btn = QPushButton("Delete Selected")
+        self.delete_btn = QPushButton(self.tr("Delete Selected"))
         self.delete_btn.clicked.connect(self._on_delete)
         act_row.addWidget(self.delete_btn)
-        self.export_btn = QPushButton("Export CSV…")
+        self.export_btn = QPushButton(self.tr("Export CSV…"))
         self.export_btn.clicked.connect(self._on_export)
         act_row.addWidget(self.export_btn)
         act_row.addStretch()
@@ -412,7 +417,7 @@ class DbEditTab(QWidget):
             f"http://127.0.0.1:{self.flask_port}/api/dbedit/tables",
             timeout=10).json())
         w.finished.connect(self._on_tables_loaded)
-        w.error.connect(lambda e: self.status_label.setText(f"Error: {e}"))
+        w.error.connect(lambda e: self.status_label.setText(self.tr("Error: {}").format(e)))
         self._workers.append(w)
         w.start()
         self.load_integrity_stats()
@@ -432,13 +437,13 @@ class DbEditTab(QWidget):
             item.setData(Qt.ItemDataRole.UserRole, name)
             if t.get("readonly"):
                 item.setForeground(QColor("#888"))
-                item.setToolTip("Read-only virtual table")
+                item.setToolTip(self.tr("Read-only virtual table"))
             elif t.get("warn"):
                 item.setForeground(QColor("#c0392b"))
-                item.setToolTip("Core archive — deletions affect lookup results")
+                item.setToolTip(self.tr("Core archive — deletions affect lookup results"))
             elif t.get("audit"):
                 item.setForeground(QColor("#2980b9"))
-                item.setToolTip("Audit log — delete only, no editing")
+                item.setToolTip(self.tr("Audit log — delete only, no editing"))
             self.table_list.addItem(item)
 
     def _on_table_selected(self, current, _previous):
@@ -510,7 +515,7 @@ class DbEditTab(QWidget):
 
     def _on_load_all(self):
         if not self._current_table:
-            self.status_label.setText("Select a table first.")
+            self.status_label.setText(self.tr("Select a table first."))
             return
         self.search_input.clear()
         self.lb_input.clear()
@@ -537,16 +542,16 @@ class DbEditTab(QWidget):
                   + (f"&lb_number={lb_number}" if lb_number else "")
                   + (f"&sort_col={self._sort_col}&sort_dir={self._sort_dir}"
                      if self._sort_col else ""))
-        self.status_label.setText("Loading…")
+        self.status_label.setText(self.tr("Loading…"))
         w = _Worker(lambda: requests.get(url, timeout=20).json())
         w.finished.connect(self._on_rows_loaded)
-        w.error.connect(lambda e: self.status_label.setText(f"Error: {e}"))
+        w.error.connect(lambda e: self.status_label.setText(self.tr("Error: {}").format(e)))
         self._workers.append(w)
         w.start()
 
     def _on_rows_loaded(self, data):
         if "error" in data:
-            self.status_label.setText(f"Error: {data['error']}")
+            self.status_label.setText(self.tr("Error: {}").format(data['error']))
             return
 
         self._total   = data["total"]
@@ -588,17 +593,17 @@ class DbEditTab(QWidget):
 
         pages = max(1, -(-self._total // self._limit))
         self.page_label.setText(
-            f"Page {self._page + 1}/{pages}  ({self._total:,} rows total)"
+            self.tr("Page {}/{} ({} rows total)").format(self._page + 1, pages, f"{self._total:,}")
         )
         self.prev_btn.setEnabled(self._page > 0)
         self.next_btn.setEnabled(self._page < pages - 1)
 
         lbl = self._current_table
-        if meta.get("readonly"): lbl += " [read-only]"
-        if meta.get("audit"):    lbl += " [audit: delete only]"
-        if meta.get("warn"):     lbl += "  WARNING: core archive table"
+        if meta.get("readonly"): lbl += " " + self.tr("[read-only]")
+        if meta.get("audit"):    lbl += " " + self.tr("[audit: delete only]")
+        if meta.get("warn"):     lbl += "  " + self.tr("WARNING: core archive table")
         self.table_label.setText(lbl)
-        self.status_label.setText(f"{self._total:,} rows")
+        self.status_label.setText(self.tr("{} rows").format(f"{self._total:,}"))
 
         # Column widths: restore saved, or size-to-content on first load
         saved = self._col_widths.get(self._current_table)
@@ -658,15 +663,15 @@ class DbEditTab(QWidget):
             return
         col_name = self._columns[col] if col < len(self._columns) else str(col)
         menu = QMenu(self)
-        set_act    = menu.addAction(f"Set '{col_name}' width…")
-        fit_act    = menu.addAction(f"Fit '{col_name}' to contents")
-        fit_all    = menu.addAction("Fit all columns to contents")
+        set_act    = menu.addAction(self.tr("Set '{}' width…").format(col_name))
+        fit_act    = menu.addAction(self.tr("Fit '{}' to contents").format(col_name))
+        fit_all    = menu.addAction(self.tr("Fit all columns to contents"))
         chosen = menu.exec(hdr.mapToGlobal(pos))
         if chosen == set_act:
             current = self.data_table.columnWidth(col)
             width, ok = QInputDialog.getInt(
-                self, "Set Column Width",
-                f"Width for '{col_name}' (pixels):",
+                self, self.tr("Set Column Width"),
+                self.tr("Width for '{}' (pixels):").format(col_name),
                 value=current, min=20, max=9000, step=10,
             )
             if ok:
@@ -743,9 +748,9 @@ class DbEditTab(QWidget):
                 errors.append(str(e))
 
         if errors:
-            self.status_label.setText(f"Errors: {errors[0]}")
+            self.status_label.setText(self.tr("Errors: {}").format(errors[0]))
         else:
-            self.status_label.setText(f"Committed {len(by_row)} row(s).")
+            self.status_label.setText(self.tr("Committed {} row(s).").format(len(by_row)))
         self._dirty.clear()
         self.save_btn.setEnabled(False)
         self.discard_btn.setEnabled(False)
@@ -763,21 +768,21 @@ class DbEditTab(QWidget):
         selected = list({idx.row() for idx in
                          self.data_table.selectedIndexes()})
         if not selected:
-            self.status_label.setText("Select rows to delete.")
+            self.status_label.setText(self.tr("Select rows to delete."))
             return
         meta = self._table_meta.get(self._current_table, {})
         if meta.get("readonly"):
-            self.status_label.setText("Cannot delete from a read-only table.")
+            self.status_label.setText(self.tr("Cannot delete from a read-only table."))
             return
 
         extra = ""
         if meta.get("warn"):
-            extra = ("\n\nWARNING: This is a core archive table. "
-                     "Deleting checksums or entries affects lookup results.")
+            extra = "\n\n" + self.tr("WARNING: This is a core archive table. "
+                                     "Deleting checksums or entries affects lookup results.")
 
         if QMessageBox.question(
-            self, "Confirm Delete",
-            f"Delete {len(selected)} row(s) from '{self._current_table}'?{extra}",
+            self, self.tr("Confirm Delete"),
+            self.tr("Delete {} row(s) from '{}'?").format(len(selected), self._current_table) + extra,
             QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
         ) != QMessageBox.StandardButton.Yes:
             return
@@ -791,21 +796,21 @@ class DbEditTab(QWidget):
                 json={"rowids": rowids}, timeout=15,
             ).json()
             if resp.get("error"):
-                self.status_label.setText(f"Error: {resp['error']}")
+                self.status_label.setText(self.tr("Error: {}").format(resp['error']))
             else:
-                self.status_label.setText(f"Deleted {resp.get('deleted', 0)} row(s).")
+                self.status_label.setText(self.tr("Deleted {} row(s).").format(resp.get('deleted', 0)))
                 self._load_rows()
         except Exception as e:
-            self.status_label.setText(f"Error: {e}")
+            self.status_label.setText(self.tr("Error: {}").format(e))
 
     # ── Context menu ──────────────────────────────────────────────────────────
 
     def _on_context(self, pos):
         menu = QMenu(self)
-        copy_act = QAction("Copy Cell Value", self)
+        copy_act = QAction(self.tr("Copy Cell Value"), self)
         copy_act.triggered.connect(self._copy_cell)
         menu.addAction(copy_act)
-        del_act = QAction("Delete Selected Row(s)", self)
+        del_act = QAction(self.tr("Delete Selected Row(s)"), self)
         del_act.triggered.connect(self._on_delete)
         menu.addAction(del_act)
         menu.exec(self.data_table.mapToGlobal(pos))
@@ -821,9 +826,9 @@ class DbEditTab(QWidget):
         if not self._current_table:
             return
         path, _ = QFileDialog.getSaveFileName(
-            self, "Export CSV",
+            self, self.tr("Export CSV"),
             f"{self._current_table}.csv",
-            "CSV Files (*.csv)"
+            self.tr("CSV Files (*.csv)")
         )
         if not path:
             return
@@ -836,9 +841,9 @@ class DbEditTab(QWidget):
             )
             with open(path, "wb") as fh:
                 fh.write(resp.content)
-            self.status_label.setText(f"Exported to {Path(path).name}")
+            self.status_label.setText(self.tr("Exported to {}").format(Path(path).name))
         except Exception as e:
-            self.status_label.setText(f"Export error: {e}")
+            self.status_label.setText(self.tr("Export error: {}").format(e))
 
     def resize_columns_to_font(self) -> None:
         self.data_table.resizeColumnsToContents()
@@ -855,34 +860,39 @@ class DbEditTab(QWidget):
 
         w = _Worker(_fetch)
         w.finished.connect(self._on_integrity_stats)
-        w.error.connect(lambda e: self._integrity_label.setText(f"Stats error: {e}"))
+        w.error.connect(lambda e: self._integrity_label.setText(self.tr("Stats error: {}").format(e)))
         self._workers.append(w)
         w.start()
 
     def _on_integrity_stats(self, data: dict) -> None:
         if not isinstance(data, dict) or "error" in data:
-            self._integrity_label.setText("Stats unavailable")
+            self._integrity_label.setText(self.tr("Stats unavailable"))
             return
         self._integrity_label.setText(
-            f"Public: {data.get('public', 0):,}\n"
-            f"Private: {data.get('private', 0):,}\n"
-            f"Missing: {data.get('missing', 0):,}\n"
-            f"Max LB: {data.get('max_lb', 0):,}\n"
-            f"Overrides: {data.get('overrides', 0):,}\n"
-            f"Needs review: {data.get('needs_review', 0):,}"
+            self.tr(
+                "Public: {public}\nPrivate: {private}\nMissing: {missing}\n"
+                "Max LB: {max_lb}\nOverrides: {overrides}\nNeeds review: {needs_review}"
+            ).format(
+                public=f"{data.get('public', 0):,}",
+                private=f"{data.get('private', 0):,}",
+                missing=f"{data.get('missing', 0):,}",
+                max_lb=f"{data.get('max_lb', 0):,}",
+                overrides=f"{data.get('overrides', 0):,}",
+                needs_review=f"{data.get('needs_review', 0):,}",
+            )
         )
 
     def _on_reconcile_all(self) -> None:
         from PyQt6.QtWidgets import QMessageBox
         reply = QMessageBox.question(
-            self, "Reconcile All",
-            "Recompute lb_master status for every LB number?\n"
-            "A database backup will be created first.",
+            self, self.tr("Reconcile All"),
+            self.tr("Recompute lb_master status for every LB number?\n"
+                    "A database backup will be created first."),
             QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
         )
         if reply != QMessageBox.StandardButton.Yes:
             return
-        self._integrity_label.setText("Reconciling…")
+        self._integrity_label.setText(self.tr("Reconciling…"))
 
         def _run():
             return requests.post(
@@ -892,7 +902,7 @@ class DbEditTab(QWidget):
 
         w = _Worker(_run)
         w.finished.connect(self._on_reconcile_done)
-        w.error.connect(lambda e: self._integrity_label.setText(f"Reconcile error: {e}"))
+        w.error.connect(lambda e: self._integrity_label.setText(self.tr("Reconcile error: {}").format(e)))
         self._workers.append(w)
         w.start()
 
@@ -900,9 +910,9 @@ class DbEditTab(QWidget):
         if data.get("ok"):
             stats = data.get("stats", {})
             self._on_integrity_stats(stats)
-            self.status_label.setText("Reconcile complete.")
+            self.status_label.setText(self.tr("Reconcile complete."))
         else:
-            self._integrity_label.setText(f"Error: {data.get('error', 'unknown')}")
+            self._integrity_label.setText(self.tr("Error: {}").format(data.get('error', 'unknown')))
 
     def _on_show_needs_review(self) -> None:
         """Select lb_master in the table list and filter to needs_review rows."""
@@ -927,7 +937,7 @@ class DbEditTab(QWidget):
 
         w = _Worker(_run)
         w.finished.connect(self._on_backup_done)
-        w.error.connect(lambda e: self.status_label.setText(f"Backup error: {e}"))
+        w.error.connect(lambda e: self.status_label.setText(self.tr("Backup error: {}").format(e)))
         self._workers.append(w)
         w.start()
 
@@ -936,16 +946,18 @@ class DbEditTab(QWidget):
         if data.get("ok"):
             size_mb = data.get("size_bytes", 0) / 1_048_576
             QMessageBox.information(
-                self, "Backup Complete",
-                f"Backup saved to:\n{data.get('path', '?')}\n\nSize: {size_mb:.1f} MB",
+                self, self.tr("Backup Complete"),
+                self.tr("Backup saved to:\n{path}\n\nSize: {size} MB").format(
+                    path=data.get('path', '?'), size=f"{size_mb:.1f}"
+                ),
             )
         else:
-            self.status_label.setText(f"Backup error: {data.get('error', 'unknown')}")
+            self.status_label.setText(self.tr("Backup error: {}").format(data.get('error', 'unknown')))
 
     def _on_export_overrides(self) -> None:
         """Export all manual lb_master overrides to a user-chosen JSON file."""
         path, _ = QFileDialog.getSaveFileName(
-            self, "Export Overrides", "lb_overrides.json", "JSON files (*.json)"
+            self, self.tr("Export Overrides"), "lb_overrides.json", self.tr("JSON files (*.json)")
         )
         if not path:
             return
@@ -965,19 +977,19 @@ class DbEditTab(QWidget):
             with open(path, "w", encoding="utf-8") as fh:
                 json.dump(data, fh, indent=2, default=str)
             QMessageBox.information(
-                self, "Export Complete",
-                f"Exported {len(data)} override(s) to:\n{path}",
+                self, self.tr("Export Complete"),
+                self.tr("Exported {} override(s) to:\n{}").format(len(data), path),
             )
 
         w.finished.connect(_done)
-        w.error.connect(lambda e: QMessageBox.warning(self, "Export Error", str(e)))
+        w.error.connect(lambda e: QMessageBox.warning(self, self.tr("Export Error"), str(e)))
         self._workers.append(w)
         w.start()
 
     def _on_import_overrides(self) -> None:
         """Import manual lb_master overrides from a user-chosen JSON file."""
         path, _ = QFileDialog.getOpenFileName(
-            self, "Import Overrides", "", "JSON files (*.json)"
+            self, self.tr("Import Overrides"), "", self.tr("JSON files (*.json)")
         )
         if not path:
             return
@@ -987,17 +999,17 @@ class DbEditTab(QWidget):
             with open(path, "r", encoding="utf-8") as fh:
                 payload = json.load(fh)
         except Exception as exc:
-            QMessageBox.warning(self, "Import Error", f"Could not read file:\n{exc}")
+            QMessageBox.warning(self, self.tr("Import Error"), self.tr("Could not read file:\n{}").format(exc))
             return
 
         if not isinstance(payload, list):
-            QMessageBox.warning(self, "Import Error", "File must contain a JSON array.")
+            QMessageBox.warning(self, self.tr("Import Error"), self.tr("File must contain a JSON array."))
             return
 
         reply = QMessageBox.question(
-            self, "Confirm Import",
-            f"Import {len(payload)} override(s) from:\n{path}\n\n"
-            "This will overwrite existing overrides for those LBs.",
+            self, self.tr("Confirm Import"),
+            self.tr("Import {} override(s) from:\n{}\n\n"
+                    "This will overwrite existing overrides for those LBs.").format(len(payload), path),
             QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
         )
         if reply != QMessageBox.StandardButton.Yes:
@@ -1016,14 +1028,15 @@ class DbEditTab(QWidget):
 
         def _done(data: dict) -> None:
             QMessageBox.information(
-                self, "Import Complete",
-                f"Imported {data.get('imported', 0)} override(s).\n"
-                f"Skipped {data.get('skipped', 0)} out-of-range entries.",
+                self, self.tr("Import Complete"),
+                self.tr("Imported {} override(s).\nSkipped {} out-of-range entries.").format(
+                    data.get('imported', 0), data.get('skipped', 0)
+                ),
             )
             self.load_integrity_stats()
 
         w.finished.connect(_done)
-        w.error.connect(lambda e: QMessageBox.warning(self, "Import Error", str(e)))
+        w.error.connect(lambda e: QMessageBox.warning(self, self.tr("Import Error"), str(e)))
         self._workers.append(w)
         w.start()
 
@@ -1052,13 +1065,13 @@ class DbEditTab(QWidget):
 
         w = _Worker(_fetch)
         w.finished.connect(self._on_aliases_loaded)
-        w.error.connect(lambda e: self._alias_status.setText(f"Error: {e}"))
+        w.error.connect(lambda e: self._alias_status.setText(self.tr("Error: {}").format(e)))
         self._workers.append(w)
         w.start()
 
     def _on_aliases_loaded(self, data) -> None:
         if not isinstance(data, list):
-            self._alias_status.setText("Failed to load aliases.")
+            self._alias_status.setText(self.tr("Failed to load aliases."))
             return
         curator = self._check_curator()
         self._alias_add_btn.setEnabled(curator)
@@ -1080,14 +1093,15 @@ class DbEditTab(QWidget):
                     item.setTextAlignment(Qt.AlignmentFlag.AlignCenter)
                 self._alias_table.setItem(r, c, item)
         n = len(data)
+        count_str = self.tr("{} alias(es)").format(n)
         self._alias_status.setText(
-            f"{n} alias{'es' if n != 1 else ''}" + ("" if curator else " (read-only)")
+            count_str + ("" if curator else self.tr(" (read-only)"))
         )
 
     def _on_add_alias(self) -> None:
         """Open a dialog to add a new lb_alias entry (curator only)."""
         if not self._check_curator():
-            self._alias_status.setText("Curator mode required to add aliases.")
+            self._alias_status.setText(self.tr("Curator mode required to add aliases."))
             return
 
         from PyQt6.QtWidgets import (
@@ -1095,7 +1109,7 @@ class DbEditTab(QWidget):
         )
 
         dlg = QDialog(self)
-        dlg.setWindowTitle("Add LB Alias")
+        dlg.setWindowTitle(self.tr("Add LB Alias"))
         dlg.setMinimumWidth(360)
         form = QFormLayout(dlg)
         form.setContentsMargins(12, 12, 12, 12)
@@ -1103,21 +1117,21 @@ class DbEditTab(QWidget):
 
         alias_spin = QSpinBox()
         alias_spin.setRange(1, 999999)
-        form.addRow("Alias LB (secondary):", alias_spin)
+        form.addRow(self.tr("Alias LB (secondary):"), alias_spin)
 
         canon_spin = QSpinBox()
         canon_spin.setRange(1, 999999)
-        form.addRow("Canonical LB (primary):", canon_spin)
+        form.addRow(self.tr("Canonical LB (primary):"), canon_spin)
 
         rel_combo = QComboBox()
         for rel in ("duplicate", "supersedes", "see_also"):
             rel_combo.addItem(rel)
-        form.addRow("Relationship:", rel_combo)
+        form.addRow(self.tr("Relationship:"), rel_combo)
 
         note_edit = QTextEdit()
         note_edit.setFixedHeight(56)
-        note_edit.setPlaceholderText("Optional note…")
-        form.addRow("Note:", note_edit)
+        note_edit.setPlaceholderText(self.tr("Optional note…"))
+        form.addRow(self.tr("Note:"), note_edit)
 
         buttons = QDialogButtonBox(
             QDialogButtonBox.StandardButton.Ok | QDialogButtonBox.StandardButton.Cancel
@@ -1148,29 +1162,32 @@ class DbEditTab(QWidget):
 
         def _done(result):
             if "error" in result:
-                self._alias_status.setText(f"Error: {result['error']}")
+                self._alias_status.setText(self.tr("Error: {}").format(result['error']))
             else:
-                rewrote = " (chain rewritten)" if result.get("rewrote_chain") else ""
+                rewrote = self.tr(" (chain rewritten)") if result.get("rewrote_chain") else ""
                 self._alias_status.setText(
-                    f"Alias LB-{alias_lb:05d} → LB-{result.get('canonical_lb', canonical_lb):05d} "
-                    f"saved{rewrote}."
+                    self.tr("Alias LB-{alias} → LB-{canon} saved{rewrote}.").format(
+                        alias=f"{alias_lb:05d}",
+                        canon=f"{result.get('canonical_lb', canonical_lb):05d}",
+                        rewrote=rewrote,
+                    )
                 )
                 self._load_aliases()
 
         w = _Worker(_post)
         w.finished.connect(_done)
-        w.error.connect(lambda e: self._alias_status.setText(f"Error: {e}"))
+        w.error.connect(lambda e: self._alias_status.setText(self.tr("Error: {}").format(e)))
         self._workers.append(w)
         w.start()
 
     def _on_delete_alias(self) -> None:
         """Delete the selected alias row (curator only)."""
         if not self._check_curator():
-            self._alias_status.setText("Curator mode required to delete aliases.")
+            self._alias_status.setText(self.tr("Curator mode required to delete aliases."))
             return
         selected = self._alias_table.selectedItems()
         if not selected:
-            self._alias_status.setText("Select an alias row to delete.")
+            self._alias_status.setText(self.tr("Select an alias row to delete."))
             return
         row_idx = self._alias_table.currentRow()
         alias_item = self._alias_table.item(row_idx, 0)
@@ -1179,12 +1196,12 @@ class DbEditTab(QWidget):
         try:
             alias_lb = int(alias_item.text())
         except ValueError:
-            self._alias_status.setText("Could not parse alias LB number.")
+            self._alias_status.setText(self.tr("Could not parse alias LB number."))
             return
 
         reply = QMessageBox.question(
-            self, "Confirm Delete",
-            f"Remove alias LB-{alias_lb:05d}?",
+            self, self.tr("Confirm Delete"),
+            self.tr("Remove alias LB-{}?").format(f"{alias_lb:05d}"),
             QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
         )
         if reply != QMessageBox.StandardButton.Yes:
@@ -1198,14 +1215,14 @@ class DbEditTab(QWidget):
 
         def _done(result):
             if result.get("ok"):
-                self._alias_status.setText(f"Alias LB-{alias_lb:05d} removed.")
+                self._alias_status.setText(self.tr("Alias LB-{} removed.").format(f"{alias_lb:05d}"))
                 self._load_aliases()
             else:
-                self._alias_status.setText(f"Error: {result.get('error', 'unknown')}")
+                self._alias_status.setText(self.tr("Error: {}").format(result.get('error', 'unknown')))
 
         w = _Worker(_delete)
         w.finished.connect(_done)
-        w.error.connect(lambda e: self._alias_status.setText(f"Error: {e}"))
+        w.error.connect(lambda e: self._alias_status.setText(self.tr("Error: {}").format(e)))
         self._workers.append(w)
         w.start()
 
@@ -1225,12 +1242,11 @@ class DbEditTab(QWidget):
         Calls GET /api/geocode/locations?filter=<value> in a background worker.
         """
         if not self._check_curator():
-            self._geo_status.setText("Curator mode required.")
+            self._geo_status.setText(self.tr("Curator mode required."))
             return
-        label = self._geo_filter_combo.currentText()
-        filter_val = self._GEO_FILTER_MAP.get(label, "all")
+        filter_val = self._geo_filter_combo.currentData() or "all"
         self._geo_load_btn.setEnabled(False)
-        self._geo_status.setText("Loading…")
+        self._geo_status.setText(self.tr("Loading…"))
 
         def _fetch():
             return requests.get(
@@ -1253,13 +1269,13 @@ class DbEditTab(QWidget):
         """
         self._geo_load_btn.setEnabled(True)
         if isinstance(data, dict) and "error" in data:
-            self._geo_status.setText(f"Error: {data['error']}")
+            self._geo_status.setText(self.tr("Error: {}").format(data['error']))
             return
         # API wraps the list in {"locations": [...]}
         if isinstance(data, dict):
             data = data.get("locations", [])
         if not isinstance(data, list):
-            self._geo_status.setText("Unexpected response from server.")
+            self._geo_status.setText(self.tr("Unexpected response from server."))
             return
 
         self._geo_table.setRowCount(0)
@@ -1273,7 +1289,7 @@ class DbEditTab(QWidget):
             lon = row.get("lon")
             lat_str = f"{lat:.6f}" if lat is not None else ""
             lon_str = f"{lon:.6f}" if lon is not None else ""
-            manual = "Yes" if row.get("is_manual") else ""
+            manual = self.tr("Yes") if row.get("is_manual") else ""
             note = row.get("note") or ""
             for col, val in enumerate(
                 [loc_text, source, confidence, lat_str, lon_str, manual, note]
@@ -1285,7 +1301,7 @@ class DbEditTab(QWidget):
                     item.setData(Qt.ItemDataRole.UserRole, row)
                 self._geo_table.setItem(r, col, item)
 
-        self._geo_status.setText(f"{len(data)} location(s) loaded.")
+        self._geo_status.setText(self.tr("{} location(s) loaded.").format(len(data)))
 
     def _on_geo_load_error(self, msg: str) -> None:
         """Handle a worker error during geocode location load.
@@ -1294,7 +1310,7 @@ class DbEditTab(QWidget):
             msg: Error message string from the worker thread.
         """
         self._geo_load_btn.setEnabled(True)
-        self._geo_status.setText(f"Error: {msg}")
+        self._geo_status.setText(self.tr("Error: {}").format(msg))
         _log.error("Geocode load error: %s", msg)
 
     def _on_geo_row_dblclick(self) -> None:
@@ -1334,16 +1350,16 @@ class DbEditTab(QWidget):
 
         def _done(result: dict) -> None:
             if "error" in result:
-                self._geo_status.setText(f"Save error: {result['error']}")
+                self._geo_status.setText(self.tr("Save error: {}").format(result['error']))
             else:
                 self._geo_status.setText(
-                    f"Saved manual placement for: {loc_text}"
+                    self.tr("Saved manual placement for: {}").format(loc_text)
                 )
                 # Reload the table to reflect the change
                 self._on_geo_load()
 
         w = _Worker(_post)
         w.finished.connect(_done)
-        w.error.connect(lambda e: self._geo_status.setText(f"Save error: {e}"))
+        w.error.connect(lambda e: self._geo_status.setText(self.tr("Save error: {}").format(e)))
         self._workers.append(w)
         w.start()

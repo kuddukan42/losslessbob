@@ -210,7 +210,7 @@ def create_app() -> Flask:
                 keys = ["scrape_attachments", "scrape_delay_ms", "auto_scrape", "use_local_pages",
                         "force_scrape", "search_page_size",
                         "qbt_host", "qbt_port", "qbt_category", "qbt_tags",
-                        "tracker_list", "wtrf_board_id"]
+                        "tracker_list", "wtrf_board_id", "ui_language"]
                 return jsonify({k: database.get_meta(k) for k in keys})
         except Exception as e:
             return jsonify({"error": str(e)}), 500
@@ -1076,7 +1076,7 @@ def create_app() -> Flask:
             scope     (str):  "full" or "incremental".  Default "incremental".
             force     (bool): Re-fetch cached pages.  Default false.
             delay_ms  (int):  Base ms between requests.  Default 1500.
-            daily_cap (int):  Max requests this session.  Default 5000.
+            daily_cap (int):  Max requests this session.  Default 99999.
 
         Returns:
             JSON: {ok: true}  or  {ok: false, error: "already running"}
@@ -1088,7 +1088,7 @@ def create_app() -> Flask:
             scope     = data.get("scope", "incremental")
             force     = bool(data.get("force", False))
             delay_ms  = int(data.get("delay_ms", 1500))
-            daily_cap = int(data.get("daily_cap", 5000))
+            daily_cap = int(data.get("daily_cap", 99999))
             t = threading.Thread(
                 target=site_crawler.crawl,
                 kwargs={"scope": scope, "force": force,

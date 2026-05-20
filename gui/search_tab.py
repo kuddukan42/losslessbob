@@ -77,14 +77,14 @@ class SearchModel(QAbstractTableModel):
             return Qt.AlignmentFlag.AlignCenter
         if role == Qt.ItemDataRole.ToolTipRole:
             if col == _STATUS_COL and lb_status:
-                return f"lb_master status: {lb_status}"
+                return self.tr("lb_master status: {}").format(lb_status)
             if col == 0 and row.get("lb_number") in self._bootleg_lbs:
-                return "🎵 This LB has bootleg CD titles — open Bootlegs tab for details"
+                return self.tr("🎵 This LB has bootleg CD titles — open Bootlegs tab for details")
         return None
 
     def headerData(self, section, orientation, role=Qt.ItemDataRole.DisplayRole):
         if orientation == Qt.Orientation.Horizontal and role == Qt.ItemDataRole.DisplayRole:
-            return HEADERS[section]
+            return self.tr(HEADERS[section])
         return None
 
     def set_rows(self, rows):
@@ -267,50 +267,53 @@ class SearchTab(QWidget):
 
         search_row = QHBoxLayout()
         self.search_field = QLineEdit()
-        self.search_field.setPlaceholderText("Search...")
+        self.search_field.setPlaceholderText(self.tr("Search..."))
         self.search_field.returnPressed.connect(self._do_search)
         search_row.addWidget(self.search_field)
 
         self.field_combo = QComboBox()
-        self.field_combo.addItems(["All Fields", "Location", "Date", "Description"])
+        self.field_combo.addItem(self.tr("All Fields"), userData="all")
+        self.field_combo.addItem(self.tr("Location"), userData="location")
+        self.field_combo.addItem(self.tr("Date"), userData="date")
+        self.field_combo.addItem(self.tr("Description"), userData="description")
         search_row.addWidget(self.field_combo)
 
         self.year_combo = QComboBox()
         self.year_combo.setMinimumWidth(90)
-        self.year_combo.addItem("All Years", userData=None)
+        self.year_combo.addItem(self.tr("All Years"), userData=None)
         self.year_combo.currentIndexChanged.connect(self._do_search)
         search_row.addWidget(self.year_combo)
 
-        self.search_btn = QPushButton("Search")
+        self.search_btn = QPushButton(self.tr("Search"))
         self.search_btn.clicked.connect(self._do_search)
         search_row.addWidget(self.search_btn)
 
         self._status_combo = QComboBox()
         self._status_combo.setMinimumWidth(110)
-        self._status_combo.addItem("All statuses", userData=None)
-        self._status_combo.addItem("Public only",  userData="public")
-        self._status_combo.addItem("Private only", userData="private")
-        self._status_combo.addItem("Missing only", userData="missing")
-        self._status_combo.addItem("Needs review", userData="needs_review")
+        self._status_combo.addItem(self.tr("All statuses"), userData=None)
+        self._status_combo.addItem(self.tr("Public only"),  userData="public")
+        self._status_combo.addItem(self.tr("Private only"), userData="private")
+        self._status_combo.addItem(self.tr("Missing only"), userData="missing")
+        self._status_combo.addItem(self.tr("Needs review"), userData="needs_review")
         self._status_combo.currentIndexChanged.connect(self._on_filter_changed)
         search_row.addWidget(self._status_combo)
 
-        self._owned_only_cb = QCheckBox("Owned only")
+        self._owned_only_cb = QCheckBox(self.tr("Owned only"))
         self._owned_only_cb.stateChanged.connect(self._on_filter_changed)
         search_row.addWidget(self._owned_only_cb)
 
-        self._not_owned_cb = QCheckBox("Not owned")
+        self._not_owned_cb = QCheckBox(self.tr("Not owned"))
         self._not_owned_cb.stateChanged.connect(self._on_filter_changed)
         search_row.addWidget(self._not_owned_cb)
 
-        self._xref_only_cb = QCheckBox("Xref only")
+        self._xref_only_cb = QCheckBox(self.tr("Xref only"))
         self._xref_only_cb.setToolTip(
-            "Show only entries that have cross-reference (xref) alternate versions in the DB."
+            self.tr("Show only entries that have cross-reference (xref) alternate versions in the DB.")
         )
         self._xref_only_cb.stateChanged.connect(self._on_filter_changed)
         search_row.addWidget(self._xref_only_cb)
 
-        self._wrap_cb = QCheckBox("Word wrap")
+        self._wrap_cb = QCheckBox(self.tr("Word wrap"))
         self._wrap_cb.stateChanged.connect(self._on_wrap_toggled)
         search_row.addWidget(self._wrap_cb)
 
@@ -321,13 +324,13 @@ class SearchTab(QWidget):
 
         # Pagination controls — hidden until results span more than one page
         page_row = QHBoxLayout()
-        self._prev_btn = QPushButton("← Prev")
+        self._prev_btn = QPushButton(self.tr("← Prev"))
         self._prev_btn.setMinimumWidth(80)
         self._prev_btn.clicked.connect(self._prev_page)
         page_row.addWidget(self._prev_btn)
-        self._page_label = QLabel("Page 1 of 1")
+        self._page_label = QLabel(self.tr("Page 1 of 1"))
         page_row.addWidget(self._page_label)
-        self._next_btn = QPushButton("Next →")
+        self._next_btn = QPushButton(self.tr("Next →"))
         self._next_btn.setMinimumWidth(80)
         self._next_btn.clicked.connect(self._next_page)
         page_row.addWidget(self._next_btn)
@@ -395,14 +398,15 @@ class SearchTab(QWidget):
         col = self.view.horizontalHeader().logicalIndexAt(pos)
         if col < 0:
             return
+        col_name = self.tr(HEADERS[col])
         menu = QMenu(self)
-        act = menu.addAction(f"Set '{HEADERS[col]}' width…")
+        act = menu.addAction(self.tr("Set '{}' width…").format(col_name))
         if menu.exec(self.view.horizontalHeader().mapToGlobal(pos)) != act:
             return
         current = self.view.columnWidth(col)
         width, ok = QInputDialog.getInt(
-            self, "Set Column Width",
-            f"Width for '{HEADERS[col]}' (pixels):",
+            self, self.tr("Set Column Width"),
+            self.tr("Width for '{}' (pixels):").format(col_name),
             value=current, min=20, max=9000, step=10,
         )
         if ok:
@@ -495,7 +499,9 @@ class SearchTab(QWidget):
         if pages > 1:
             self._page_widget.setVisible(True)
             self._page_label.setText(
-                f"Page {self._page + 1} of {pages}  ({len(results)} results)"
+                self.tr("Page {0} of {1}  ({2} results)").format(
+                    self._page + 1, pages, len(results)
+                )
             )
             self._prev_btn.setEnabled(self._page > 0)
             self._next_btn.setEnabled(self._page < pages - 1)
@@ -528,7 +534,7 @@ class SearchTab(QWidget):
         if not lb_numbers:
             return
         self.search_btn.setEnabled(False)
-        self.results_label.setText(f"Loading {len(lb_numbers)} entries…")
+        self.results_label.setText(self.tr("Loading {} entries…").format(len(lb_numbers)))
         self._lb_list_worker = _LbListWorker(self.flask_port, lb_numbers)
         self._lb_list_worker.finished.connect(self._on_results)
         self._lb_list_worker.error.connect(self._on_error)
@@ -545,7 +551,7 @@ class SearchTab(QWidget):
         current_year = self.year_combo.currentData()
         self.year_combo.blockSignals(True)
         self.year_combo.clear()
-        self.year_combo.addItem("All Years", userData=None)
+        self.year_combo.addItem(self.tr("All Years"), userData=None)
         for y in years:
             self.year_combo.addItem(str(y), userData=y)
         if current_year is not None:
@@ -558,16 +564,10 @@ class SearchTab(QWidget):
 
     def _do_search(self):
         q = self.search_field.text().strip()
-        field_map = {
-            "All Fields": "all",
-            "Location": "location",
-            "Date": "date",
-            "Description": "description",
-        }
-        field = field_map.get(self.field_combo.currentText(), "all")
+        field = self.field_combo.currentData() or "all"
         year = self.year_combo.currentData()
         self.search_btn.setEnabled(False)
-        self.results_label.setText("Searching...")
+        self.results_label.setText(self.tr("Searching..."))
 
         self._worker = _SearchWorker(self.flask_port, q, field, year=year)
         self._worker.finished.connect(self._on_results)
@@ -586,11 +586,12 @@ class SearchTab(QWidget):
         status_filter = self._status_combo.currentData()
         if status_filter and shown != total:
             self.results_label.setText(
-                f"{shown} result(s) matching '{self._status_combo.currentText()}' "
-                f"(of {total} total)."
+                self.tr("{0} result(s) matching '{1}' (of {2} total).").format(
+                    shown, self._status_combo.currentText(), total
+                )
             )
         else:
-            self.results_label.setText(f"{total} result(s) found.")
+            self.results_label.setText(self.tr("{} result(s) found.").format(total))
 
     def _on_results(self, results):
         self.search_btn.setEnabled(True)
@@ -611,7 +612,7 @@ class SearchTab(QWidget):
 
     def _on_error(self, msg):
         self.search_btn.setEnabled(True)
-        self.results_label.setText(f"Error: {msg}")
+        self.results_label.setText(self.tr("Error: {}").format(msg))
 
     def _on_double_click(self, index):
         lb = self.model.get_lb(index.row())
@@ -631,7 +632,7 @@ class SearchTab(QWidget):
         if lb is None:
             return
         menu = QMenu(self)
-        wish_act = menu.addAction("Add to Wishlist")
+        wish_act = menu.addAction(self.tr("Add to Wishlist"))
         wish_act.triggered.connect(lambda: self._add_to_wishlist(lb))
         menu.exec(self.view.mapToGlobal(pos))
 
@@ -643,11 +644,11 @@ class SearchTab(QWidget):
                 json={"lb_number": lb}, timeout=5,
             ).json()
             if resp.get("added"):
-                self.results_label.setText(f"LB-{lb:05d} added to wishlist.")
+                self.results_label.setText(self.tr("LB-{} added to wishlist.").format(f"{lb:05d}"))
             else:
-                self.results_label.setText(f"LB-{lb:05d} already on wishlist.")
+                self.results_label.setText(self.tr("LB-{} already on wishlist.").format(f"{lb:05d}"))
         except Exception as e:
-            self.results_label.setText(f"Wishlist error: {e}")
+            self.results_label.setText(self.tr("Wishlist error: {}").format(e))
 
     def set_bootleg_lbs(self, lb_set: set) -> None:
         """Push the bootleg-LB set so the 🎵 badge can appear in the LB Number column."""

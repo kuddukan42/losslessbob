@@ -10,6 +10,9 @@ from PyQt6.QtWidgets import (
 )
 
 from backend.paths import SITE_FILES_DIR, attachment_path
+import logging
+
+log = logging.getLogger(__name__)
 from backend.scraper import DETAIL_URL
 from backend.db import get_lb_statuses_batch, get_connection
 
@@ -84,18 +87,18 @@ class AttachmentsTab(QWidget):
         left_layout.setContentsMargins(0, 0, 0, 0)
         left_layout.setSpacing(4)
 
-        self.top_label = QLabel("Loading...")
+        self.top_label = QLabel(self.tr("Loading..."))
         left_layout.addWidget(self.top_label)
 
         # Cached / Missing toggle buttons
         toggle_row = QHBoxLayout()
         toggle_row.setContentsMargins(0, 0, 0, 0)
         toggle_row.setSpacing(2)
-        self.btn_cached = QPushButton("Cached")
+        self.btn_cached = QPushButton(self.tr("Cached"))
         self.btn_cached.setCheckable(True)
         self.btn_cached.setChecked(True)
         self.btn_cached.clicked.connect(self._show_cached)
-        self.btn_missing = QPushButton("Missing")
+        self.btn_missing = QPushButton(self.tr("Missing"))
         self.btn_missing.setCheckable(True)
         self.btn_missing.setChecked(False)
         self.btn_missing.clicked.connect(self._show_missing)
@@ -107,7 +110,7 @@ class AttachmentsTab(QWidget):
         self.left_stack = QStackedWidget()
 
         self.tree = QTreeWidget()
-        self.tree.setHeaderLabel("LB Entries with Cached Files")
+        self.tree.setHeaderLabel(self.tr("LB Entries with Cached Files"))
         self.tree.itemClicked.connect(self._on_tree_item_clicked)
         self.tree.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
         self.tree.customContextMenuRequested.connect(self._tree_context_menu)
@@ -126,12 +129,12 @@ class AttachmentsTab(QWidget):
         page_nav_row = QHBoxLayout(self.page_nav_widget)
         page_nav_row.setContentsMargins(0, 0, 0, 0)
         page_nav_row.setSpacing(4)
-        self.prev_btn = QPushButton("◀ Prev")
+        self.prev_btn = QPushButton(self.tr("◀ Prev"))
         self.prev_btn.setFixedWidth(60)
         self.prev_btn.clicked.connect(self._prev_page)
-        self.page_label = QLabel("Page 1 / 1")
+        self.page_label = QLabel(self.tr("Page 1 / 1"))
         self.page_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.next_btn = QPushButton("Next ▶")
+        self.next_btn = QPushButton(self.tr("Next ▶"))
         self.next_btn.setFixedWidth(60)
         self.next_btn.clicked.connect(self._next_page)
         page_nav_row.addWidget(self.prev_btn)
@@ -143,16 +146,16 @@ class AttachmentsTab(QWidget):
         search_row = QHBoxLayout()
         search_row.setContentsMargins(0, 0, 0, 0)
         self.search_edit = QLineEdit()
-        self.search_edit.setPlaceholderText("Jump to LB number…")
+        self.search_edit.setPlaceholderText(self.tr("Jump to LB number…"))
         self.search_edit.returnPressed.connect(self._jump_to_lb)
         search_row.addWidget(self.search_edit)
-        self.search_btn = QPushButton("Go")
+        self.search_btn = QPushButton(self.tr("Go"))
         self.search_btn.setFixedWidth(40)
         self.search_btn.clicked.connect(self._jump_to_lb)
         search_row.addWidget(self.search_btn)
         left_layout.addLayout(search_row)
 
-        self.refresh_btn = QPushButton("Refresh")
+        self.refresh_btn = QPushButton(self.tr("Refresh"))
         self.refresh_btn.clicked.connect(self._refresh_current)
         left_layout.addWidget(self.refresh_btn)
 
@@ -163,7 +166,7 @@ class AttachmentsTab(QWidget):
         right_layout = QVBoxLayout(right)
         right_layout.setContentsMargins(0, 0, 0, 0)
 
-        self.file_label = QLabel("Select a file to preview.")
+        self.file_label = QLabel(self.tr("Select a file to preview."))
         right_layout.addWidget(self.file_label)
 
         self.stack = QStackedWidget()
@@ -178,7 +181,7 @@ class AttachmentsTab(QWidget):
         other_layout = QVBoxLayout(self.other_widget)
         self.other_label = QLabel("")
         other_layout.addWidget(self.other_label)
-        self.open_ext_btn = QPushButton("Open Externally")
+        self.open_ext_btn = QPushButton(self.tr("Open Externally"))
         self.open_ext_btn.clicked.connect(self._open_externally)
         other_layout.addWidget(self.open_ext_btn)
         other_layout.addStretch()
@@ -187,7 +190,7 @@ class AttachmentsTab(QWidget):
         right_layout.addWidget(self.stack)
 
         btn_row = QHBoxLayout()
-        self.download_btn = QPushButton("Refresh / Re-download Selected Entry")
+        self.download_btn = QPushButton(self.tr("Refresh / Re-download Selected Entry"))
         self.download_btn.clicked.connect(self._on_download_all)
         self.download_btn.setEnabled(False)
         btn_row.addWidget(self.download_btn)
@@ -214,10 +217,10 @@ class AttachmentsTab(QWidget):
         self._in_missing_view = False
         self.left_stack.setCurrentIndex(0)
         self.page_nav_widget.setVisible(True)
-        self.download_btn.setText("Refresh / Re-download Selected Entry")
+        self.download_btn.setText(self.tr("Refresh / Re-download Selected Entry"))
         self.download_btn.setEnabled(False)
         self._current_lb = None
-        self.file_label.setText("Select a file to preview.")
+        self.file_label.setText(self.tr("Select a file to preview."))
 
     def _show_missing(self):
         self.btn_missing.setChecked(True)
@@ -225,10 +228,10 @@ class AttachmentsTab(QWidget):
         self._in_missing_view = True
         self.left_stack.setCurrentIndex(1)
         self.page_nav_widget.setVisible(False)
-        self.download_btn.setText("Scrape Selected Entry")
+        self.download_btn.setText(self.tr("Scrape Selected Entry"))
         self.download_btn.setEnabled(False)
         self._current_lb = None
-        self.file_label.setText("Select a missing LB entry to scrape.")
+        self.file_label.setText(self.tr("Select a missing LB entry to scrape."))
         if not self._missing_loaded:
             self._refresh_missing()
 
@@ -239,12 +242,43 @@ class AttachmentsTab(QWidget):
             self._refresh_tree()
 
     def _update_toggle_labels(self):
-        self.btn_cached.setText(f"Cached ({self._cached_count})")
-        self.btn_missing.setText(f"Missing ({self._missing_count})")
+        self.btn_cached.setText(self.tr("Cached ({})").format(self._cached_count))
+        self.btn_missing.setText(self.tr("Missing ({})").format(self._missing_count))
 
     # ------------------------------------------------------------------
     # Tree (cached) view
     # ------------------------------------------------------------------
+
+    def _reconcile_site_files(self, conn) -> None:
+        """Mark entry_files.downloaded=1 for any file that physically exists in SITE_FILES_DIR.
+
+        Called from _refresh_tree() each time the cached view is refreshed so that
+        files downloaded by the site crawler (which writes to SITE_FILES_DIR without
+        updating entry_files.downloaded) are reflected immediately.
+        """
+        if not SITE_FILES_DIR.exists():
+            return
+        try:
+            on_disk = {f.name for f in SITE_FILES_DIR.iterdir() if f.is_file()}
+            if not on_disk:
+                return
+            # Batch in chunks of 500 to stay within SQLite's variable limit.
+            names = list(on_disk)
+            chunk_size = 500
+            updated = 0
+            for i in range(0, len(names), chunk_size):
+                chunk = names[i:i + chunk_size]
+                placeholders = ",".join("?" * len(chunk))
+                cur = conn.execute(
+                    f"UPDATE entry_files SET downloaded=1 WHERE downloaded=0 AND filename IN ({placeholders})",
+                    chunk,
+                )
+                updated += cur.rowcount
+            if updated:
+                conn.commit()
+                log.debug("reconcile_site_files: marked %d rows downloaded=1", updated)
+        except Exception:
+            log.exception("reconcile_site_files failed")
 
     def _refresh_tree(self):
         total_entries = 0
@@ -257,6 +291,7 @@ class AttachmentsTab(QWidget):
 
         # Build entry list from DB — groups downloaded files by lb_number.
         conn = get_connection()
+        self._reconcile_site_files(conn)
         rows = conn.execute(
             "SELECT lb_number, filename, clean_name FROM entry_files "
             "WHERE downloaded=1 ORDER BY lb_number, clean_name"
@@ -273,7 +308,7 @@ class AttachmentsTab(QWidget):
 
         self._cached_count = len(self._all_lb_entries)
         self.top_label.setText(
-            f"Entries with cached files: {self._cached_count} / {total_entries}"
+            self.tr("Entries with cached files: {} / {}").format(self._cached_count, total_entries)
         )
         self._update_toggle_labels()
         self._page = 0
@@ -304,7 +339,7 @@ class AttachmentsTab(QWidget):
             if lb_status in self._LB_STATUS_BG:
                 bg = QBrush(self._LB_STATUS_BG[lb_status])
                 parent_item.setBackground(0, bg)
-                tip = "Private LB — no published webpage" if lb_status == "private" else "Missing LB — not in DB"
+                tip = self.tr("Private LB — no published webpage") if lb_status == "private" else self.tr("Missing LB — not in DB")
                 parent_item.setToolTip(0, tip)
             for frow in entry["files"]:
                 child = QTreeWidgetItem(parent_item, [frow["clean_name"]])
@@ -314,7 +349,7 @@ class AttachmentsTab(QWidget):
                 })
         self.tree.setUpdatesEnabled(True)
         self.tree.scrollToTop()
-        self.page_label.setText(f"Page {self._page + 1} / {total_pages}")
+        self.page_label.setText(self.tr("Page {} / {}").format(self._page + 1, total_pages))
         self.prev_btn.setEnabled(self._page > 0)
         self.next_btn.setEnabled(self._page < total_pages - 1)
 
@@ -341,7 +376,7 @@ class AttachmentsTab(QWidget):
                 self.download_btn.setEnabled(True)
             except ValueError:
                 pass
-            self.file_label.setText(f"Selected: {lb_str}")
+            self.file_label.setText(self.tr("Selected: {}").format(lb_str))
             return
 
         if data["type"] == "file":
@@ -364,7 +399,7 @@ class AttachmentsTab(QWidget):
 
     def _refresh_missing(self):
         self.missing_list.clear()
-        self.missing_list.addItem("Loading…")
+        self.missing_list.addItem(self.tr("Loading…"))
         self.refresh_btn.setEnabled(False)
         self._missing_thread = _MissingThread(self.flask_port)
         self._missing_thread.finished.connect(self._on_missing_loaded)
@@ -386,7 +421,7 @@ class AttachmentsTab(QWidget):
             self.download_btn.setEnabled(True)
         except ValueError:
             pass
-        self.file_label.setText(f"Missing: {text} — click Scrape to attempt download")
+        self.file_label.setText(self.tr("Missing: {} — click Scrape to attempt download").format(text))
 
     # ------------------------------------------------------------------
     # Jump-to search box
@@ -446,7 +481,7 @@ class AttachmentsTab(QWidget):
         except ValueError:
             return
         menu = QMenu(self)
-        act = menu.addAction(f"Open {lb_str} in browser pane")
+        act = menu.addAction(self.tr("Open {} in browser pane").format(lb_str))
         act.triggered.connect(lambda: self._open_lb_in_webview(lb_num))
         menu.exec(self.tree.viewport().mapToGlobal(pos))
 
@@ -459,7 +494,7 @@ class AttachmentsTab(QWidget):
         except ValueError:
             return
         menu = QMenu(self)
-        act = menu.addAction(f"Open {item.text()} in browser pane")
+        act = menu.addAction(self.tr("Open {} in browser pane").format(item.text()))
         act.triggered.connect(lambda: self._open_lb_in_webview(lb_num))
         menu.exec(self.missing_list.viewport().mapToGlobal(pos))
 
@@ -469,7 +504,7 @@ class AttachmentsTab(QWidget):
         url = QUrl(DETAIL_URL.format(n=f"{lb_num:05d}"))
         self.web_view.load(url)
         self.stack.setCurrentWidget(self.web_view)
-        self.file_label.setText(f"LB-{lb_num:05d} — entry page")
+        self.file_label.setText(self.tr("LB-{} — entry page").format(f"{lb_num:05d}"))
 
     # ------------------------------------------------------------------
     # showEvent / WebEngine lifecycle
@@ -534,13 +569,13 @@ class AttachmentsTab(QWidget):
                 text = path.read_text(encoding="utf-8", errors="replace")
                 self.text_view.setPlainText(text)
             except Exception as e:
-                self.text_view.setPlainText(f"Error reading file: {e}")
+                self.text_view.setPlainText(self.tr("Error reading file: {}").format(e))
             self.stack.setCurrentWidget(self.text_view)
         elif suffix in (".html", ".htm") and self.web_view is not None:
             self.web_view.load(QUrl.fromLocalFile(str(path)))
             self.stack.setCurrentWidget(self.web_view)
         else:
-            self.other_label.setText(f"File: {path.name}\nNo in-app preview available.")
+            self.other_label.setText(self.tr("File: {}\nNo in-app preview available.").format(path.name))
             self.stack.setCurrentWidget(self.other_widget)
 
     def _open_externally(self):
@@ -551,7 +586,7 @@ class AttachmentsTab(QWidget):
             open_file(self._current_file)
         except Exception as e:
             from PyQt6.QtWidgets import QMessageBox
-            QMessageBox.warning(self, "Open Failed", str(e))
+            QMessageBox.warning(self, self.tr("Open Failed"), str(e))
 
     # ------------------------------------------------------------------
     # Scrape / download
@@ -561,7 +596,7 @@ class AttachmentsTab(QWidget):
         if self._current_lb is None:
             return
         self.download_btn.setEnabled(False)
-        self.download_status.setText(f"Scraping LB-{self._current_lb:05d}...")
+        self.download_status.setText(self.tr("Scraping LB-{}...").format(f"{self._current_lb:05d}"))
 
         self._scrape_thread = _ScrapeThread(self.flask_port, self._current_lb)
         self._scrape_thread.finished.connect(self._on_scrape_done)
@@ -570,7 +605,7 @@ class AttachmentsTab(QWidget):
     def _on_scrape_done(self, result):
         self.download_btn.setEnabled(True)
         if "error" in result:
-            self.download_status.setText(f"Error: {result['error']}")
+            self.download_status.setText(self.tr("Error: {}").format(result['error']))
             return
 
         downloaded = result.get("files_downloaded", [])
@@ -584,12 +619,14 @@ class AttachmentsTab(QWidget):
                         self._missing_count -= 1
                         self._update_toggle_labels()
                         break
-                self.download_status.setText(f"Downloaded {len(downloaded)} file(s) — entry moved to Cached.")
+                self.download_status.setText(
+                    self.tr("Downloaded {} file(s) — entry moved to Cached.").format(len(downloaded))
+                )
                 self._tree_loaded = False  # force tree refresh next time cached view opens
             else:
                 self.download_status.setText(
-                    f"No attachments found for LB-{self._current_lb:05d} — confirmed gap."
+                    self.tr("No attachments found for LB-{} — confirmed gap.").format(f"{self._current_lb:05d}")
                 )
         else:
-            self.download_status.setText(f"Downloaded {len(downloaded)} file(s).")
+            self.download_status.setText(self.tr("Downloaded {} file(s).").format(len(downloaded)))
             self._refresh_tree()

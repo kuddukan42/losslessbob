@@ -10,8 +10,9 @@ Description: After web GUI feature is complete: update PROJECT.md (frontend/ fil
 
 TODO-067: i18n infrastructure — language loader, meta key, Setup tab selector
 Priority: Medium
-Status: Open
+Status: Done
 Added: 2026-05-19
+Closed: 2026-05-19
 Description: Create gui/i18n.py with load_language() and supported_languages() helpers.
   Wire language loading at QApplication startup (read ui_language from meta table).
   Add POST /api/meta route to backend if not present (whitelist key=ui_language).
@@ -23,7 +24,8 @@ Description: Create gui/i18n.py with load_language() and supported_languages() h
 
 TODO-068: Wrap all user-facing GUI strings in self.tr()
 Priority: Medium
-Status: Open
+Status: Done
+Closed: 2026-05-20
 Added: 2026-05-19
 Description: Go through all 14 gui/*.py files and gui/widgets/*.py and wrap every
   user-facing string literal in self.tr("..."). Convert f-strings with variables to
@@ -36,7 +38,8 @@ Description: Go through all 14 gui/*.py files and gui/widgets/*.py and wrap ever
 
 TODO-069: Generate, translate, and compile .ts/.qm files for 5 languages
 Priority: Medium
-Status: Open
+Status: Done
+Closed: 2026-05-20
 Added: 2026-05-19
 Description: Run pylupdate6 against all gui/*.py to extract tr() strings into
   gui/locales/losslessbob_{de,fr,es,it,nl}.ts. Fill all translations (AI-assisted

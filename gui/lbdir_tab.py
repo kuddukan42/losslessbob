@@ -214,18 +214,22 @@ class ReconcilePreviewDialog(QDialog):
 
     def __init__(self, folder: str, proposals: list, parent=None):
         super().__init__(parent)
-        self.setWindowTitle(f"Reconcile Files — {Path(folder).name}")
+        self.setWindowTitle(self.tr("Reconcile Files — {}").format(Path(folder).name))
         self.setMinimumSize(860, 400)
         self._proposals = proposals
 
         layout = QVBoxLayout(self)
-        layout.addWidget(QLabel(f"Folder: {folder}"))
+        layout.addWidget(QLabel(self.tr("Folder: {}").format(folder)))
         layout.addWidget(QLabel(
-            f"{len(proposals)} file(s) found on disk that match missing lbdir entries by MD5:"
+            self.tr("{} file(s) found on disk that match missing lbdir entries by MD5:").format(
+                len(proposals)
+            )
         ))
 
         self._table = QTableWidget(len(proposals), 4)
-        self._table.setHorizontalHeaderLabels(["", "Disk Path (from)", "lbdir Path (to)", "MD5"])
+        self._table.setHorizontalHeaderLabels([
+            "", self.tr("Disk Path (from)"), self.tr("lbdir Path (to)"), self.tr("MD5")
+        ])
         self._table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
         self._table.horizontalHeader().setSectionResizeMode(0, QHeaderView.ResizeMode.Fixed)
         self._table.setColumnWidth(0, 28)
@@ -251,9 +255,9 @@ class ReconcilePreviewDialog(QDialog):
         layout.addWidget(self._table)
 
         sel_layout = QHBoxLayout()
-        sel_all_btn = QPushButton("Select All")
+        sel_all_btn = QPushButton(self.tr("Select All"))
         sel_all_btn.clicked.connect(self._select_all)
-        desel_all_btn = QPushButton("Deselect All")
+        desel_all_btn = QPushButton(self.tr("Deselect All"))
         desel_all_btn.clicked.connect(self._deselect_all)
         sel_layout.addWidget(sel_all_btn)
         sel_layout.addWidget(desel_all_btn)
@@ -261,9 +265,9 @@ class ReconcilePreviewDialog(QDialog):
         layout.addLayout(sel_layout)
 
         btn_layout = QHBoxLayout()
-        apply_btn = QPushButton("Apply Selected")
+        apply_btn = QPushButton(self.tr("Apply Selected"))
         apply_btn.clicked.connect(self.accept)
-        cancel_btn = QPushButton("Cancel")
+        cancel_btn = QPushButton(self.tr("Cancel"))
         cancel_btn.clicked.connect(self.reject)
         btn_layout.addStretch()
         btn_layout.addWidget(apply_btn)
@@ -297,23 +301,25 @@ class ExtraFilesDialog(QDialog):
 
     def __init__(self, folder: str, extra_files: list, parent=None):
         super().__init__(parent)
-        self.setWindowTitle(f"Remove Extra Files — {Path(folder).name}")
+        self.setWindowTitle(self.tr("Remove Extra Files — {}").format(Path(folder).name))
         self.setMinimumSize(700, 420)
         self._extra_files = extra_files
 
         layout = QVBoxLayout(self)
 
         warn = QLabel(
-            f"⚠️  The following {len(extra_files)} file(s) are NOT listed in the lbdir "
-            f"and will be permanently deleted from disk. This cannot be undone."
+            self.tr(
+                "⚠️  The following {0} file(s) are NOT listed in the lbdir "
+                "and will be permanently deleted from disk. This cannot be undone."
+            ).format(len(extra_files))
         )
         warn.setWordWrap(True)
         warn.setStyleSheet("color: #c0392b; font-weight: bold;")
         layout.addWidget(warn)
-        layout.addWidget(QLabel(f"Folder: {folder}"))
+        layout.addWidget(QLabel(self.tr("Folder: {}").format(folder)))
 
         self._table = QTableWidget(len(extra_files), 2)
-        self._table.setHorizontalHeaderLabels(["", "File (relative path)"])
+        self._table.setHorizontalHeaderLabels(["", self.tr("File (relative path)")])
         self._table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
         self._table.horizontalHeader().setSectionResizeMode(0, QHeaderView.ResizeMode.Fixed)
         self._table.setColumnWidth(0, 28)
@@ -334,9 +340,9 @@ class ExtraFilesDialog(QDialog):
         layout.addWidget(self._table)
 
         sel_layout = QHBoxLayout()
-        sel_all_btn = QPushButton("Select All")
+        sel_all_btn = QPushButton(self.tr("Select All"))
         sel_all_btn.clicked.connect(self._select_all)
-        desel_all_btn = QPushButton("Deselect All")
+        desel_all_btn = QPushButton(self.tr("Deselect All"))
         desel_all_btn.clicked.connect(self._deselect_all)
         sel_layout.addWidget(sel_all_btn)
         sel_layout.addWidget(desel_all_btn)
@@ -344,10 +350,10 @@ class ExtraFilesDialog(QDialog):
         layout.addLayout(sel_layout)
 
         btn_layout = QHBoxLayout()
-        delete_btn = QPushButton("Delete Selected")
+        delete_btn = QPushButton(self.tr("Delete Selected"))
         delete_btn.setStyleSheet("background-color: #c0392b; color: white;")
         delete_btn.clicked.connect(self.accept)
-        cancel_btn = QPushButton("Cancel")
+        cancel_btn = QPushButton(self.tr("Cancel"))
         cancel_btn.clicked.connect(self.reject)
         btn_layout.addStretch()
         btn_layout.addWidget(delete_btn)
@@ -425,7 +431,7 @@ class LbdirTab(QWidget):
         left_layout = QVBoxLayout(left_widget)
         left_layout.setContentsMargins(0, 0, 4, 0)
 
-        self.list_header = QLabel("Folders: 0")
+        self.list_header = QLabel(self.tr("Folders: 0"))
         left_layout.addWidget(self.list_header)
 
         self.listbox = DropFolderListWidget()
@@ -436,23 +442,25 @@ class LbdirTab(QWidget):
 
         btn_layout = QVBoxLayout()
 
-        self.add_folders_btn = QPushButton("Add Folders...")
+        self.add_folders_btn = QPushButton(self.tr("Add Folders..."))
         self.add_folders_btn.clicked.connect(self._on_add_folders)
         btn_layout.addWidget(self.add_folders_btn)
 
-        self.add_root_btn = QPushButton("Add Root Folder...")
+        self.add_root_btn = QPushButton(self.tr("Add Root Folder..."))
         self.add_root_btn.setToolTip(
-            "Pick a parent folder and recursively add all subfolders "
-            "containing audio files."
+            self.tr(
+                "Pick a parent folder and recursively add all subfolders "
+                "containing audio files."
+            )
         )
         self.add_root_btn.clicked.connect(self._on_add_root_folder)
         btn_layout.addWidget(self.add_root_btn)
 
-        self.remove_btn = QPushButton("Remove Selected")
+        self.remove_btn = QPushButton(self.tr("Remove Selected"))
         self.remove_btn.clicked.connect(self._on_remove_selected)
         btn_layout.addWidget(self.remove_btn)
 
-        self.clear_btn = QPushButton("Clear List")
+        self.clear_btn = QPushButton(self.tr("Clear List"))
         self.clear_btn.clicked.connect(self._on_clear_list)
         btn_layout.addWidget(self.clear_btn)
 
@@ -461,32 +469,38 @@ class LbdirTab(QWidget):
         sep.setStyleSheet("background: #cccccc;")
         btn_layout.addWidget(sep)
 
-        self.check_btn = QPushButton("Check lbdir Files")
+        self.check_btn = QPushButton(self.tr("Check lbdir Files"))
         self.check_btn.clicked.connect(self._on_check)
         btn_layout.addWidget(self.check_btn)
 
-        self.retrieve_btn = QPushButton("Retrieve lbdir")
+        self.retrieve_btn = QPushButton(self.tr("Retrieve lbdir"))
         self.retrieve_btn.setToolTip(
-            "Pull lbdir*.txt from the local attachment cache (or scrape)\n"
-            "for selected folders (or all if none selected), then check.\n"
-            "LB number is read from My Collection or parsed from the folder name."
+            self.tr(
+                "Pull lbdir*.txt from the local attachment cache (or scrape)\n"
+                "for selected folders (or all if none selected), then check.\n"
+                "LB number is read from My Collection or parsed from the folder name."
+            )
         )
         self.retrieve_btn.clicked.connect(self._on_retrieve)
         btn_layout.addWidget(self.retrieve_btn)
 
-        self.reconcile_btn = QPushButton("Reconcile Files")
+        self.reconcile_btn = QPushButton(self.tr("Reconcile Files"))
         self.reconcile_btn.setToolTip(
-            "Find disk files whose MD5 checksum matches a missing lbdir entry.\n"
-            "Proposes renames/moves to recreate the lbdir layout.\n"
-            "Preview is shown before any files are moved."
+            self.tr(
+                "Find disk files whose MD5 checksum matches a missing lbdir entry.\n"
+                "Proposes renames/moves to recreate the lbdir layout.\n"
+                "Preview is shown before any files are moved."
+            )
         )
         self.reconcile_btn.clicked.connect(self._on_reconcile)
         btn_layout.addWidget(self.reconcile_btn)
 
-        self.remove_extra_btn = QPushButton("Remove Extra Files")
+        self.remove_extra_btn = QPushButton(self.tr("Remove Extra Files"))
         self.remove_extra_btn.setToolTip(
-            "Find files in each folder that are not listed in the lbdir.\n"
-            "A confirmation dialog shows which files will be permanently deleted."
+            self.tr(
+                "Find files in each folder that are not listed in the lbdir.\n"
+                "A confirmation dialog shows which files will be permanently deleted."
+            )
         )
         self.remove_extra_btn.clicked.connect(self._on_remove_extra)
         btn_layout.addWidget(self.remove_extra_btn)
@@ -516,10 +530,10 @@ class LbdirTab(QWidget):
         self.summary_container = QWidget()
         sc_layout = QVBoxLayout(self.summary_container)
         sc_layout.setContentsMargins(0, 0, 0, 0)
-        sc_layout.addWidget(QLabel("Summary"))
+        sc_layout.addWidget(QLabel(self.tr("Summary")))
 
         self.summary_table = QTableWidget(0, len(SUMMARY_HEADERS))
-        self.summary_table.setHorizontalHeaderLabels(SUMMARY_HEADERS)
+        self.summary_table.setHorizontalHeaderLabels([self.tr(h) for h in SUMMARY_HEADERS])
         self.summary_table.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.summary_table.setSelectionMode(QAbstractItemView.SelectionMode.SingleSelection)
         self.summary_table.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
@@ -553,16 +567,16 @@ class LbdirTab(QWidget):
         detail_layout.setContentsMargins(0, 0, 0, 0)
 
         detail_header_row = QHBoxLayout()
-        detail_header_row.addWidget(QLabel("Detail"))
+        detail_header_row.addWidget(QLabel(self.tr("Detail")))
         detail_header_row.addStretch()
-        self.show_all_cb = QCheckBox("Show all files")
+        self.show_all_cb = QCheckBox(self.tr("Show all files"))
         self.show_all_cb.setChecked(True)
         self.show_all_cb.stateChanged.connect(self._on_show_all_changed)
         detail_header_row.addWidget(self.show_all_cb)
         detail_layout.addLayout(detail_header_row)
 
         self.detail_table = QTableWidget(0, len(DETAIL_HEADERS))
-        self.detail_table.setHorizontalHeaderLabels(DETAIL_HEADERS)
+        self.detail_table.setHorizontalHeaderLabels([self.tr(h) for h in DETAIL_HEADERS])
         self.detail_table.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.detail_table.setSelectionMode(QAbstractItemView.SelectionMode.SingleSelection)
         self.detail_table.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
@@ -579,12 +593,12 @@ class LbdirTab(QWidget):
         info_widget = QWidget()
         info_layout = QVBoxLayout(info_widget)
         info_layout.setContentsMargins(8, 0, 0, 0)
-        info_layout.addWidget(QLabel("Track Info (shntool len)"))
+        info_layout.addWidget(QLabel(self.tr("Track Info (shntool len)")))
 
         self._info_fields: dict[str, QLabel] = {}
         for key, label_text in INFO_FIELDS:
             row_layout = QHBoxLayout()
-            key_lbl = QLabel(label_text)
+            key_lbl = QLabel(self.tr(label_text))
             key_lbl.setFixedWidth(100)
             val_lbl = QLabel("")
             val_lbl.setWordWrap(True)
@@ -619,7 +633,7 @@ class LbdirTab(QWidget):
             item.setToolTip(folder)
             item.setData(Qt.ItemDataRole.UserRole, folder)
             self.listbox.addItem(item)
-        self.list_header.setText(f"Folders: {len(self._folders)}")
+        self.list_header.setText(self.tr("Folders: {}").format(len(self._folders)))
 
     def _on_folders_dropped(self, folders):
         for f in folders:
@@ -628,17 +642,17 @@ class LbdirTab(QWidget):
         QTimer.singleShot(0, self._refresh_listbox)
 
     def _on_add_folders(self):
-        path = QFileDialog.getExistingDirectory(self, "Add Folder", str(Path.home()))
+        path = QFileDialog.getExistingDirectory(self, self.tr("Add Folder"), str(Path.home()))
         if path:
             self._add_folder(path)
             self._refresh_listbox()
 
     def _on_add_root_folder(self):
-        root = QFileDialog.getExistingDirectory(self, "Select Root Folder", str(Path.home()))
+        root = QFileDialog.getExistingDirectory(self, self.tr("Select Root Folder"), str(Path.home()))
         if not root:
             return
         self.add_root_btn.setEnabled(False)
-        self.status_label.setText("Scanning for audio folders…")
+        self.status_label.setText(self.tr("Scanning for audio folders…"))
         worker = _AddRootWorker(Path(root))
         self._add_root_worker = worker
         worker.finished.connect(self._on_add_root_finished)
@@ -651,12 +665,12 @@ class LbdirTab(QWidget):
             self._add_folder(path)
         added = len(self._folders) - before
         self._refresh_listbox()
-        self.status_label.setText(f"Added {added} subfolder(s) with audio files.")
+        self.status_label.setText(self.tr("Added {} subfolder(s) with audio files.").format(added))
         self.add_root_btn.setEnabled(True)
         self._add_root_worker = None
 
     def _on_add_root_error(self, msg: str) -> None:
-        self.status_label.setText(f"Scan error: {msg}")
+        self.status_label.setText(self.tr("Scan error: {}").format(msg))
         self.add_root_btn.setEnabled(True)
         self._add_root_worker = None
 
@@ -679,10 +693,10 @@ class LbdirTab(QWidget):
 
     def _on_listbox_context(self, pos):
         menu = QMenu(self)
-        remove_act = QAction("Remove from List", self)
+        remove_act = QAction(self.tr("Remove from List"), self)
         remove_act.triggered.connect(self._on_remove_selected)
         menu.addAction(remove_act)
-        clear_act = QAction("Clear List", self)
+        clear_act = QAction(self.tr("Clear List"), self)
         clear_act.triggered.connect(self._on_clear_list)
         menu.addAction(clear_act)
         menu.exec(self.listbox.mapToGlobal(pos))
@@ -710,7 +724,7 @@ class LbdirTab(QWidget):
 
     def _on_check(self):
         if not self._folders:
-            self.status_label.setText("No folders in list.")
+            self.status_label.setText(self.tr("No folders in list."))
             return
         self._start_check(list(self._folders))
 
@@ -720,7 +734,7 @@ class LbdirTab(QWidget):
         self.detail_table.setRowCount(0)
         self._current_detail_files.clear()
         self._clear_info_panel()
-        self.status_label.setText(f"Checking {len(folders)} folder(s)...")
+        self.status_label.setText(self.tr("Checking {} folder(s)...").format(len(folders)))
         self._check_worker = _LbdirCheckWorker(self.flask_port, folders)
         self._check_worker.finished.connect(self._on_check_done)
         self._check_worker.error.connect(self._on_worker_error)
@@ -730,7 +744,7 @@ class LbdirTab(QWidget):
         self._show_progress(False)
         self._set_buttons_enabled(True)
         if "error" in response:
-            self.status_label.setText(f"Error: {response['error']}")
+            self.status_label.setText(self.tr("Error: {}").format(response['error']))
             return
         results = response.get("results", [])
         self._check_results = results
@@ -740,9 +754,11 @@ class LbdirTab(QWidget):
             if r.get("lbdir_found") and r.get("status") == "pass"
         )
         n_issue = len(results) - n_pass
-        msg = f"Checked {len(results)} folder(s): {n_pass} pass, {n_issue} with issues."
+        msg = self.tr("Checked {0} folder(s): {1} pass, {2} with issues.").format(
+            len(results), n_pass, n_issue
+        )
         if any(r.get("status") == "shntool_missing" for r in results):
-            msg += "\nshntool not found — install with: sudo apt install shntool"
+            msg += self.tr("\nshntool not found — install with: sudo apt install shntool")
         self.status_label.setText(msg)
 
     # ── Retrieve ─────────────────────────────────────────────────────────────
@@ -754,11 +770,13 @@ class LbdirTab(QWidget):
         ]
         folders = selected if selected else list(self._folders)
         if not folders:
-            self.status_label.setText("No folders in list.")
+            self.status_label.setText(self.tr("No folders in list."))
             return
         self._set_buttons_enabled(False)
         self._show_progress(True)
-        self.status_label.setText(f"Retrieving lbdir files for {len(folders)} folder(s)...")
+        self.status_label.setText(
+            self.tr("Retrieving lbdir files for {} folder(s)...").format(len(folders))
+        )
         self._retrieve_worker = _LbdirRetrieveWorker(self.flask_port, folders)
         self._retrieve_worker.finished.connect(self._on_retrieve_done)
         self._retrieve_worker.error.connect(self._on_worker_error)
@@ -773,22 +791,22 @@ class LbdirTab(QWidget):
         no_lb = [r for r in results if r.get("status") == "no_lb_number"]
         parts = []
         if from_cache:
-            parts.append(f"{len(from_cache)} retrieved from local cache")
+            parts.append(self.tr("{} retrieved from local cache").format(len(from_cache)))
         if scraped:
-            parts.append(f"{len(scraped)} retrieved via scrape")
+            parts.append(self.tr("{} retrieved via scrape").format(len(scraped)))
         if not_found:
-            parts.append(f"{len(not_found)} not found in cache")
+            parts.append(self.tr("{} not found in cache").format(len(not_found)))
         if no_lb:
             parts.append(
-                f"{len(no_lb)} folder(s) skipped — no LB number found, run Lookup first"
+                self.tr("{} folder(s) skipped — no LB number found, run Lookup first").format(len(no_lb))
             )
-        self.status_label.setText("  |  ".join(parts) if parts else "Done.")
+        self.status_label.setText("  |  ".join(parts) if parts else self.tr("Done."))
         self._start_check(list(self._folders))
 
     def _on_worker_error(self, msg):
         self._show_progress(False)
         self._set_buttons_enabled(True)
-        self.status_label.setText(f"Error: {msg}")
+        self.status_label.setText(self.tr("Error: {}").format(msg))
 
     # ── Reconcile ─────────────────────────────────────────────────────────────
 
@@ -802,11 +820,15 @@ class LbdirTab(QWidget):
     def _on_reconcile(self):
         folders = self._get_selected_or_all_folders()
         if not folders:
-            self.status_label.setText("No folders. Add folders and run Check lbdir Files first.")
+            self.status_label.setText(
+                self.tr("No folders. Add folders and run Check lbdir Files first.")
+            )
             return
         self._set_buttons_enabled(False)
         self._show_progress(True)
-        self.status_label.setText(f"Scanning {len(folders)} folder(s) for reconcilable files...")
+        self.status_label.setText(
+            self.tr("Scanning {} folder(s) for reconcilable files...").format(len(folders))
+        )
         self._reconcile_worker = _LbdirReconcileWorker(self.flask_port, folders)
         self._reconcile_worker.finished.connect(self._on_reconcile_done)
         self._reconcile_worker.error.connect(self._on_worker_error)
@@ -816,7 +838,7 @@ class LbdirTab(QWidget):
         self._show_progress(False)
         self._set_buttons_enabled(True)
         if "error" in response:
-            self.status_label.setText(f"Error: {response['error']}")
+            self.status_label.setText(self.tr("Error: {}").format(response['error']))
             return
         results = response.get("results", [])
         all_proposals = [
@@ -826,11 +848,13 @@ class LbdirTab(QWidget):
         ]
         if not all_proposals:
             self.status_label.setText(
-                "No reconcilable files found — no checksum matches for missing files."
+                self.tr("No reconcilable files found — no checksum matches for missing files.")
             )
             return
         total = sum(len(p) for _, p in all_proposals)
-        self.status_label.setText(f"Found {total} reconcilable file(s). Showing preview...")
+        self.status_label.setText(
+            self.tr("Found {} reconcilable file(s). Showing preview...").format(total)
+        )
         for folder, proposals in all_proposals:
             dlg = ReconcilePreviewDialog(folder, proposals, parent=self)
             if dlg.exec() == QDialog.DialogCode.Accepted:
@@ -841,7 +865,7 @@ class LbdirTab(QWidget):
     def _apply_reconcile(self, folder: str, renames: list):
         self._set_buttons_enabled(False)
         self._show_progress(True)
-        self.status_label.setText(f"Applying {len(renames)} rename(s)...")
+        self.status_label.setText(self.tr("Applying {} rename(s)...").format(len(renames)))
         self._apply_reconcile_worker = _LbdirApplyReconcileWorker(
             self.flask_port, folder, renames
         )
@@ -853,9 +877,9 @@ class LbdirTab(QWidget):
         self._show_progress(False)
         applied = response.get("applied", 0)
         errors = response.get("errors", [])
-        msg = f"Applied {applied} rename(s)."
+        msg = self.tr("Applied {} rename(s).").format(applied)
         if errors:
-            msg += f" {len(errors)} error(s): {errors[0]['error']}"
+            msg += self.tr(" {} error(s): {}").format(len(errors), errors[0]['error'])
         self.status_label.setText(msg)
         self._start_check(list(self._folders))
 
@@ -864,11 +888,13 @@ class LbdirTab(QWidget):
     def _on_remove_extra(self):
         folders = self._get_selected_or_all_folders()
         if not folders:
-            self.status_label.setText("No folders. Add folders first.")
+            self.status_label.setText(self.tr("No folders. Add folders first."))
             return
         self._set_buttons_enabled(False)
         self._show_progress(True)
-        self.status_label.setText(f"Scanning {len(folders)} folder(s) for extra files...")
+        self.status_label.setText(
+            self.tr("Scanning {} folder(s) for extra files...").format(len(folders))
+        )
         self._find_extra_worker = _LbdirFindExtraWorker(self.flask_port, folders)
         self._find_extra_worker.finished.connect(self._on_find_extra_done)
         self._find_extra_worker.error.connect(self._on_worker_error)
@@ -878,7 +904,7 @@ class LbdirTab(QWidget):
         self._show_progress(False)
         self._set_buttons_enabled(True)
         if "error" in response:
-            self.status_label.setText(f"Error: {response['error']}")
+            self.status_label.setText(self.tr("Error: {}").format(response['error']))
             return
         results = response.get("results", [])
         folders_with_extra = [
@@ -889,13 +915,17 @@ class LbdirTab(QWidget):
         errors = [r for r in results if "error" in r]
         if errors:
             self.status_label.setText(
-                f"Error in {len(errors)} folder(s): {errors[0]['error']}"
+                self.tr("Error in {} folder(s): {}").format(len(errors), errors[0]['error'])
             )
         if not folders_with_extra:
-            self.status_label.setText("No extra files found — all disk files are listed in the lbdir.")
+            self.status_label.setText(
+                self.tr("No extra files found — all disk files are listed in the lbdir.")
+            )
             return
         total = sum(len(f) for _, f in folders_with_extra)
-        self.status_label.setText(f"Found {total} extra file(s). Showing confirmation...")
+        self.status_label.setText(
+            self.tr("Found {} extra file(s). Showing confirmation...").format(total)
+        )
         for folder, extra_files in folders_with_extra:
             dlg = ExtraFilesDialog(folder, extra_files, parent=self)
             if dlg.exec() == QDialog.DialogCode.Accepted:
@@ -906,7 +936,7 @@ class LbdirTab(QWidget):
     def _delete_extra(self, folder: str, files: list):
         self._set_buttons_enabled(False)
         self._show_progress(True)
-        self.status_label.setText(f"Deleting {len(files)} file(s)...")
+        self.status_label.setText(self.tr("Deleting {} file(s)...").format(len(files)))
         self._delete_extra_worker = _LbdirDeleteExtraWorker(self.flask_port, folder, files)
         self._delete_extra_worker.finished.connect(self._on_delete_extra_done)
         self._delete_extra_worker.error.connect(self._on_worker_error)
@@ -917,35 +947,33 @@ class LbdirTab(QWidget):
         deleted = response.get("deleted", 0)
         removed_dirs = response.get("removed_dirs", [])
         errors = response.get("errors", [])
-        msg = f"Deleted {deleted} file(s)."
+        msg = self.tr("Deleted {} file(s).").format(deleted)
         if removed_dirs:
-            msg += f" Removed {len(removed_dirs)} empty folder(s)."
+            msg += self.tr(" Removed {} empty folder(s).").format(len(removed_dirs))
         if errors:
-            msg += f" {len(errors)} error(s): {errors[0]['error']}"
+            msg += self.tr(" {} error(s): {}").format(len(errors), errors[0]['error'])
         self.status_label.setText(msg)
         self._start_check(list(self._folders))
 
     # ── Summary table ─────────────────────────────────────────────────────────
 
-    @staticmethod
-    def _result_display_status(result):
+    def _result_display_status(self, result):
         if not result.get("lbdir_found"):
             if result.get("lb_number") is not None:
-                return "NO LBDIR", _C_NO_LB
-            return "NO LB#", _C_GREY
+                return self.tr("NO LBDIR"), _C_NO_LB
+            return self.tr("NO LB#"), _C_GREY
         if "error" in result:
-            return "PARSE ERROR", _C_FAIL
+            return self.tr("PARSE ERROR"), _C_FAIL
         status = result.get("status", "")
         if status == "pass":
-            return "PASS", _C_PASS
+            return self.tr("PASS"), _C_PASS
         if result.get("missing", 0) > 0 and result.get("mismatch", 0) == 0:
-            return "MISSING FILES", _C_FAIL
+            return self.tr("MISSING FILES"), _C_FAIL
         if status == "shntool_missing":
-            return "SHNTOOL MISSING", _C_FAIL
-        return "FAIL", _C_FAIL
+            return self.tr("SHNTOOL MISSING"), _C_FAIL
+        return self.tr("FAIL"), _C_FAIL
 
     _LB_STATUS_COLOR = {"private": QColor("#B3E5FC"), "missing": QColor("#E0E0E0")}
-    _LB_STATUS_TIP   = {"private": "Private LB — no published webpage", "missing": "LB not in DB"}
 
     def _populate_summary(self, results):
         # Batch-fetch lb_status for all lb_numbers in the result set (one query)
@@ -989,8 +1017,12 @@ class LbdirTab(QWidget):
                 item = SortableTableItem(text, sk)
                 # Col 1 (LB#): tint by lb_status; other cols use verification color
                 if col == 1 and lb_status in self._LB_STATUS_COLOR:
+                    _lb_tips = {
+                        "private": self.tr("Private LB — no published webpage"),
+                        "missing": self.tr("LB not in DB"),
+                    }
                     item.setBackground(self._LB_STATUS_COLOR[lb_status])
-                    item.setToolTip(self._LB_STATUS_TIP[lb_status])
+                    item.setToolTip(_lb_tips.get(lb_status, ""))
                 else:
                     item.setBackground(color)
                 if col == 0:
@@ -1034,11 +1066,11 @@ class LbdirTab(QWidget):
             return ""
         return (h[:12] + "…") if len(h) > 12 else h
 
-    @staticmethod
-    def _fmt_status(s):
+    def _fmt_status(self, s):
         return {
-            "pass": "PASS", "fail": "FAIL", "missing": "MISSING", "na": "N/A",
-        }.get(s or "na", (s or "").upper() or "N/A")
+            "pass": self.tr("PASS"), "fail": self.tr("FAIL"),
+            "missing": self.tr("MISSING"), "na": self.tr("N/A"),
+        }.get(s or "na", (s or "").upper() or self.tr("N/A"))
 
     def _on_show_all_changed(self):
         self._populate_detail(self._current_detail_files)
@@ -1081,7 +1113,7 @@ class LbdirTab(QWidget):
                 (self._fmt_hash(ffp_exp), "text", ffp_exp or None),
                 (self._fmt_hash(ffp_act), "text", ffp_act or None),
                 (self._fmt_status(ffp_shn_st), "verify_status", None),
-                ("Yes" if file_info.get("on_disk") else "No", "bool_check", None),
+                (self.tr("Yes") if file_info.get("on_disk") else self.tr("No"), "bool_check", None),
                 (overall.upper() if overall else "", "verify_status", None),
             ]
             row = self.detail_table.rowCount()

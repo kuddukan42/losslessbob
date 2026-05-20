@@ -261,18 +261,18 @@ class _ChangeHistoryDialog(QDialog):
 
     def __init__(self, lb_number: int, flask_port: int, parent=None) -> None:
         super().__init__(parent)
-        self.setWindowTitle(f"Change History — LB-{lb_number:05d}")
+        self.setWindowTitle(self.tr("Change History — LB-{}").format(f"{lb_number:05d}"))
         self.resize(720, 400)
 
         layout = QVBoxLayout(self)
         layout.setContentsMargins(8, 8, 8, 8)
         layout.setSpacing(6)
 
-        self._status = QLabel("Loading…")
+        self._status = QLabel(self.tr("Loading…"))
         layout.addWidget(self._status)
 
         self._table = QTableWidget(0, len(self._HEADERS))
-        self._table.setHorizontalHeaderLabels(self._HEADERS)
+        self._table.setHorizontalHeaderLabels([self.tr(h) for h in self._HEADERS])
         self._table.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self._table.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self._table.horizontalHeader().setStretchLastSection(False)
@@ -295,9 +295,9 @@ class _ChangeHistoryDialog(QDialog):
     def _on_loaded(self, rows: list) -> None:
         """Populate the table once the background fetch completes."""
         if isinstance(rows, dict) and "error" in rows:
-            self._status.setText(f"Error: {rows['error']}")
+            self._status.setText(self.tr("Error: {}").format(rows['error']))
             return
-        self._status.setText(f"{len(rows)} change record(s)")
+        self._status.setText(self.tr("{} change record(s)").format(len(rows)))
         self._table.setRowCount(len(rows))
         for r, row in enumerate(rows):
             for c, key in enumerate(("field", "old_value", "new_value", "changed_at")):
@@ -374,7 +374,7 @@ class LookupTab(QWidget):
         left_layout = QVBoxLayout(left_widget)
         left_layout.setContentsMargins(0, 0, 4, 0)
 
-        self.list_header = QLabel("Files: 0")
+        self.list_header = QLabel(self.tr("Files: 0"))
         left_layout.addWidget(self.list_header)
 
         self.listbox = DropListWidget()
@@ -386,49 +386,49 @@ class LookupTab(QWidget):
         left_layout.addWidget(self.listbox)
 
         btn_layout = QVBoxLayout()
-        self.clipboard_btn = QPushButton("Lookup From Clipboard")
+        self.clipboard_btn = QPushButton(self.tr("Lookup From Clipboard"))
         self.clipboard_btn.clicked.connect(self._on_clipboard_lookup)
         btn_layout.addWidget(self.clipboard_btn)
 
-        self.listbox_btn = QPushButton("Lookup From Listbox")
+        self.listbox_btn = QPushButton(self.tr("Lookup From Listbox"))
         self.listbox_btn.clicked.connect(self._on_listbox_lookup)
         btn_layout.addWidget(self.listbox_btn)
 
-        self.add_files_btn = QPushButton("Add Files...")
+        self.add_files_btn = QPushButton(self.tr("Add Files..."))
         self.add_files_btn.clicked.connect(self._on_add_files)
         btn_layout.addWidget(self.add_files_btn)
 
-        self.add_folders_btn = QPushButton("Add Folders...")
+        self.add_folders_btn = QPushButton(self.tr("Add Folders..."))
         self.add_folders_btn.clicked.connect(self._on_add_folders)
         btn_layout.addWidget(self.add_folders_btn)
 
-        self.scan_tree_btn = QPushButton("Scan Tree...")
+        self.scan_tree_btn = QPushButton(self.tr("Scan Tree..."))
         self.scan_tree_btn.setToolTip(
-            "Recursively find all checksum files under a root directory and run a combined lookup."
+            self.tr("Recursively find all checksum files under a root directory and run a combined lookup.")
         )
         self.scan_tree_btn.clicked.connect(self._on_scan_tree)
         btn_layout.addWidget(self.scan_tree_btn)
 
-        self.clear_list_btn = QPushButton("Clear Listbox")
+        self.clear_list_btn = QPushButton(self.tr("Clear Listbox"))
         self.clear_list_btn.clicked.connect(self._on_clear_list)
         btn_layout.addWidget(self.clear_list_btn)
 
-        self.clear_results_btn = QPushButton("Clear Results")
+        self.clear_results_btn = QPushButton(self.tr("Clear Results"))
         self.clear_results_btn.clicked.connect(self._on_clear_results)
         btn_layout.addWidget(self.clear_results_btn)
 
-        self.generate_btn = QPushButton("Generate Missing Checksums")
+        self.generate_btn = QPushButton(self.tr("Generate Missing Checksums"))
         self.generate_btn.setToolTip(
-            "Generate .md5 and .ffp files for the folder of the selected listbox item,\n"
-            "if those files do not already exist."
+            self.tr("Generate .md5 and .ffp files for the folder of the selected listbox item,\n"
+                    "if those files do not already exist.")
         )
         self.generate_btn.setEnabled(False)
         self.generate_btn.clicked.connect(self._on_generate_checksums)
         btn_layout.addWidget(self.generate_btn)
 
-        self.select_missing_btn = QPushButton("Select Missing Checksums")
+        self.select_missing_btn = QPushButton(self.tr("Select Missing Checksums"))
         self.select_missing_btn.setToolTip(
-            "Select all listbox entries and summary rows that have no checksum files."
+            self.tr("Select all listbox entries and summary rows that have no checksum files.")
         )
         self.select_missing_btn.clicked.connect(self._select_missing_checksum_folders)
         btn_layout.addWidget(self.select_missing_btn)
@@ -450,35 +450,36 @@ class LookupTab(QWidget):
         sc_layout.setContentsMargins(0, 0, 0, 0)
 
         summary_header_row = QHBoxLayout()
-        self.summary_label = QLabel("Summary")
+        self.summary_label = QLabel(self.tr("Summary"))
         summary_header_row.addWidget(self.summary_label)
-        self.best_match_chk = QCheckBox("Best match only")
+        self.best_match_chk = QCheckBox(self.tr("Best match only"))
         self.best_match_chk.setChecked(True)
         self.best_match_chk.setToolTip(
-            "When a complete MATCHED result exists, hide secondary DUPLICATE/INCOMPLETE rows.\n"
-            "Uncheck to see all LB entries that share checksums with your files."
+            self.tr("When a complete MATCHED result exists, hide secondary DUPLICATE/INCOMPLETE rows.\n"
+                    "Uncheck to see all LB entries that share checksums with your files.")
         )
         self.best_match_chk.stateChanged.connect(self._on_best_match_toggled)
         summary_header_row.addWidget(self.best_match_chk)
         from PyQt6.QtWidgets import QComboBox
         self.lb_status_combo = QComboBox()
-        self.lb_status_combo.addItems([
-            "All LB statuses", "Public only", "Private only", "Missing only",
-        ])
-        self.lb_status_combo.setToolTip("Filter summary rows by LB archive status")
+        self.lb_status_combo.addItem(self.tr("All LB statuses"))
+        self.lb_status_combo.addItem(self.tr("Public only"))
+        self.lb_status_combo.addItem(self.tr("Private only"))
+        self.lb_status_combo.addItem(self.tr("Missing only"))
+        self.lb_status_combo.setToolTip(self.tr("Filter summary rows by LB archive status"))
         self.lb_status_combo.currentIndexChanged.connect(self._on_lb_status_filter_changed)
         summary_header_row.addWidget(self.lb_status_combo)
         summary_header_row.addStretch()
-        self.select_incomplete_btn = QPushButton("Select All Incomplete")
+        self.select_incomplete_btn = QPushButton(self.tr("Select All Incomplete"))
         self.select_incomplete_btn.clicked.connect(self._on_select_all_incomplete)
         summary_header_row.addWidget(self.select_incomplete_btn)
-        self.generate_summary_btn = QPushButton("Generate Missing Checksums")
+        self.generate_summary_btn = QPushButton(self.tr("Generate Missing Checksums"))
         self.generate_summary_btn.setEnabled(False)
         self.generate_summary_btn.clicked.connect(self._on_generate_for_summary_selected)
         summary_header_row.addWidget(self.generate_summary_btn)
         sc_layout.addLayout(summary_header_row)
 
-        self.summary_model = _TableModel(SUMMARY_HEADERS)
+        self.summary_model = _TableModel([self.tr(h) for h in SUMMARY_HEADERS])
         self.summary_proxy = _LookupSortProxy(_SUMMARY_COL_KINDS)
         self.summary_proxy.setSourceModel(self.summary_model)
         self.summary_view = QTableView()
@@ -503,16 +504,16 @@ class LookupTab(QWidget):
         dc_layout = QVBoxLayout(detail_container)
         dc_layout.setContentsMargins(0, 0, 0, 0)
         detail_header = QHBoxLayout()
-        self.detail_label = QLabel("Detail")
+        self.detail_label = QLabel(self.tr("Detail"))
         detail_header.addWidget(self.detail_label)
         detail_header.addStretch()
-        self._history_btn = QPushButton("History…")
-        self._history_btn.setToolTip("View field-change history for the selected LB")
+        self._history_btn = QPushButton(self.tr("History…"))
+        self._history_btn.setToolTip(self.tr("View field-change history for the selected LB"))
         self._history_btn.setEnabled(False)
         self._history_btn.clicked.connect(self._on_show_history)
         detail_header.addWidget(self._history_btn)
         dc_layout.addLayout(detail_header)
-        self.detail_model = _TableModel(DETAIL_HEADERS)
+        self.detail_model = _TableModel([self.tr(h) for h in DETAIL_HEADERS])
         self.detail_proxy = _LookupSortProxy(_DETAIL_COL_KINDS)
         self.detail_proxy.setSourceModel(self.detail_model)
         self.detail_view = QTableView()
@@ -599,7 +600,7 @@ class LookupTab(QWidget):
             item.setData(Qt.ItemDataRole.UserRole, path)
             self.listbox.addItem(item)
         for folder in sorted(self._no_checksum_folders):
-            item = QListWidgetItem(f"⚠ {folder}  [no checksum files]")
+            item = QListWidgetItem(f"⚠ {folder}  {self.tr('[no checksum files]')}")
             item.setForeground(QColor("#cc4400"))
             item.setData(Qt.ItemDataRole.UserRole, folder)
             item.setData(Qt.ItemDataRole.UserRole + 1, "no_checksums")
@@ -609,27 +610,31 @@ class LookupTab(QWidget):
     def _update_list_header(self):
         shown = self.listbox.count()
         total = len(self._all_paths)
-        filter_str = " [filtered: _mychecksums only]" if self._filter_mychecksums else ""
-        self.list_header.setText(f"Files: {shown}/{total}{filter_str}")
+        if self._filter_mychecksums:
+            self.list_header.setText(
+                self.tr("Files: {}/{} [filtered: _mychecksums only]").format(shown, total)
+            )
+        else:
+            self.list_header.setText(self.tr("Files: {}/{}").format(shown, total))
 
     def _on_add_files(self):
-        paths, _ = QFileDialog.getOpenFileNames(self, "Add Files", str(Path.home()), "All files (*)")
+        paths, _ = QFileDialog.getOpenFileNames(self, self.tr("Add Files"), str(Path.home()), self.tr("All files (*)"))
         for p in paths:
             self._all_paths.append(p)
         self._refresh_listbox()
 
     def _on_add_folders(self):
-        path = QFileDialog.getExistingDirectory(self, "Add Folder", str(Path.home()))
+        path = QFileDialog.getExistingDirectory(self, self.tr("Add Folder"), str(Path.home()))
         if path:
             self._add_path(path)
             self._refresh_listbox()
 
     def _on_scan_tree(self):
         """Recursively scan a directory tree for checksum files, add to listbox, run lookup."""
-        root = QFileDialog.getExistingDirectory(self, "Select Root Directory")
+        root = QFileDialog.getExistingDirectory(self, self.tr("Select Root Directory"))
         if not root:
             return
-        self.status_label.setText("Scanning…")
+        self.status_label.setText(self.tr("Scanning…"))
         self.scan_tree_btn.setEnabled(False)
         self._scan_tree_worker = _ScanTreeWorker(Path(root), self._filter_mychecksums)
         self._scan_tree_worker.finished.connect(self._on_scan_tree_done)
@@ -639,7 +644,7 @@ class LookupTab(QWidget):
     def _on_scan_tree_done(self, found: list):
         self.scan_tree_btn.setEnabled(True)
         if not found:
-            self.status_label.setText("No checksum files found under selected folder.")
+            self.status_label.setText(self.tr("No checksum files found under selected folder."))
             return
         for path in found:
             if path not in self._all_paths:
@@ -647,7 +652,7 @@ class LookupTab(QWidget):
         self._refresh_listbox()
         self.clipboard_btn.setEnabled(False)
         self.listbox_btn.setEnabled(False)
-        self.status_label.setText(f"Looking up {len(found)} file(s)…")
+        self.status_label.setText(self.tr("Looking up {} file(s)…").format(len(found)))
         self._worker = _LookupWorker(self.flask_port, paths=found)
         self._worker.finished.connect(lambda data: self._on_lookup_done(data, "scan-tree"))
         self._worker.error.connect(self._on_lookup_error)
@@ -655,7 +660,7 @@ class LookupTab(QWidget):
 
     def _on_scan_tree_error(self, msg: str):
         self.scan_tree_btn.setEnabled(True)
-        self.status_label.setText(f"Scan error: {msg}")
+        self.status_label.setText(self.tr("Scan error: {}").format(msg))
 
     def _on_clear_list(self):
         self._all_paths.clear()
@@ -683,16 +688,17 @@ class LookupTab(QWidget):
 
     def _on_listbox_context(self, pos):
         menu = QMenu(self)
-        remove_act = QAction("Remove from List", self)
+        remove_act = QAction(self.tr("Remove from List"), self)
         remove_act.triggered.connect(self._remove_selected)
         menu.addAction(remove_act)
 
-        clear_act = QAction("Clear List", self)
+        clear_act = QAction(self.tr("Clear List"), self)
         clear_act.triggered.connect(self._on_clear_list)
         menu.addAction(clear_act)
 
         filter_act = QAction(
-            "Disable _mychecksums filter" if self._filter_mychecksums else "Filter: _mychecksums only",
+            self.tr("Disable _mychecksums filter") if self._filter_mychecksums
+            else self.tr("Filter: _mychecksums only"),
             self
         )
         filter_act.triggered.connect(self._toggle_filter)
@@ -796,15 +802,15 @@ class LookupTab(QWidget):
         """Update section headers to show when a filter is active."""
         if self._folder_filter:
             folder_name = Path(self._folder_filter).name
-            self.summary_label.setText(f"Summary  [folder: {folder_name}]")
+            self.summary_label.setText(self.tr("Summary  [folder: {}]").format(folder_name))
         else:
-            self.summary_label.setText("Summary")
+            self.summary_label.setText(self.tr("Summary"))
 
         if self._summary_filter_lbs:
             lb_str = ", ".join(f"LB-{lb}" for lb in sorted(self._summary_filter_lbs))
-            self.detail_label.setText(f"Detail  [filter: {lb_str}]")
+            self.detail_label.setText(self.tr("Detail  [filter: {}]").format(lb_str))
         else:
-            self.detail_label.setText("Detail")
+            self.detail_label.setText(self.tr("Detail"))
 
     def _apply_filters(self):
         """Rebuild summary and detail views applying active folder and LB filters."""
@@ -897,7 +903,7 @@ class LookupTab(QWidget):
             if folder and Path(folder).is_dir():
                 folders.add(folder)
         if not folders:
-            self.status_label.setText("No valid folders found for selected items.")
+            self.status_label.setText(self.tr("No valid folders found for selected items."))
             return
         self.generate_btn.setEnabled(False)
         self._multi_generate_worker = _GenerateWorker(self.flask_port, list(folders))
@@ -915,12 +921,12 @@ class LookupTab(QWidget):
                     self._all_paths.append(path)
             self._refresh_listbox()
             names = [Path(p).name for p in result["generated"]]
-            parts.append(f"Generated: {', '.join(names)}")
+            parts.append(self.tr("Generated: {}").format(', '.join(names)))
         if result.get("skipped"):
-            parts.append(f"Already existed: {', '.join(result['skipped'])}")
+            parts.append(self.tr("Already existed: {}").format(', '.join(result['skipped'])))
         if result.get("errors"):
-            parts.append(f"Errors: {'; '.join(result['errors'])}")
-        self.status_label.setText("  |  ".join(parts) if parts else "Done.")
+            parts.append(self.tr("Errors: {}").format('; '.join(result['errors'])))
+        self.status_label.setText("  |  ".join(parts) if parts else self.tr("Done."))
         self._on_listbox_selection_changed()
 
     # ── Summary table: multi-select + generate ────────────────────────────────
@@ -979,7 +985,7 @@ class LookupTab(QWidget):
     def _on_generate_for_summary_selected(self):
         folders = self._get_folders_for_selected_summary()
         if not folders:
-            self.status_label.setText("No folders found for selected INCOMPLETE entries.")
+            self.status_label.setText(self.tr("No folders found for selected INCOMPLETE entries."))
             return
         self.generate_summary_btn.setEnabled(False)
         self._multi_generate_worker = _GenerateWorker(self.flask_port, folders)
@@ -1003,10 +1009,10 @@ class LookupTab(QWidget):
         self._refresh_listbox()
         parts = []
         if all_generated:
-            parts.append(f"Generated: {', '.join(Path(p).name for p in all_generated)}")
+            parts.append(self.tr("Generated: {}").format(', '.join(Path(p).name for p in all_generated)))
         if all_errors:
-            parts.append(f"Errors: {'; '.join(all_errors)}")
-        self.status_label.setText("  |  ".join(parts) if parts else "Done.")
+            parts.append(self.tr("Errors: {}").format('; '.join(all_errors)))
+        self.status_label.setText("  |  ".join(parts) if parts else self.tr("Done."))
         self.generate_btn.setEnabled(bool(self.listbox.selectedItems()))
         self._on_summary_selection_changed()
 
@@ -1014,7 +1020,7 @@ class LookupTab(QWidget):
         menu = QMenu(self)
         folders = self._get_folders_for_selected_summary()
         if folders:
-            label = f"Generate Missing Checksums ({len(folders)} folder(s))"
+            label = self.tr("Generate Missing Checksums ({} folder(s))").format(len(folders))
             gen_act = QAction(label, self)
             gen_act.triggered.connect(self._on_generate_for_summary_selected)
             menu.addAction(gen_act)
@@ -1027,11 +1033,11 @@ class LookupTab(QWidget):
                 try:
                     lb_num = int(lb_str)
                     url = f"http://www.losslessbob.wonderingwhattochoose.com/detail/LB-{lb_num}.html"
-                    open_web = QAction("Go to Web Page", self)
+                    open_web = QAction(self.tr("Go to Web Page"), self)
                     open_web.triggered.connect(lambda: webbrowser.open(url))
                     menu.addAction(open_web)
 
-                    wish_act = QAction("Add to Wishlist", self)
+                    wish_act = QAction(self.tr("Add to Wishlist"), self)
                     wish_act.triggered.connect(lambda: self._add_to_wishlist(lb_num))
                     menu.addAction(wish_act)
                 except ValueError:
@@ -1048,11 +1054,11 @@ class LookupTab(QWidget):
                 json={"lb_number": lb_num}, timeout=5,
             ).json()
             if resp.get("added"):
-                self.status_label.setText(f"LB-{lb_num:05d} added to wishlist.")
+                self.status_label.setText(self.tr("LB-{} added to wishlist.").format(f"{lb_num:05d}"))
             else:
-                self.status_label.setText(f"LB-{lb_num:05d} already on wishlist.")
+                self.status_label.setText(self.tr("LB-{} already on wishlist.").format(f"{lb_num:05d}"))
         except Exception as e:
-            self.status_label.setText(f"Wishlist error: {e}")
+            self.status_label.setText(self.tr("Wishlist error: {}").format(e))
 
     # ── Theme refresh ─────────────────────────────────────────────────────────
 
@@ -1077,7 +1083,7 @@ class LookupTab(QWidget):
         clipboard = QApplication.clipboard()
         text = clipboard.text()
         if not text.strip():
-            self.status_label.setText("Clipboard is empty.")
+            self.status_label.setText(self.tr("Clipboard is empty."))
             return
         self._run_lookup(text, source="clipboard")
 
@@ -1089,11 +1095,11 @@ class LookupTab(QWidget):
                 continue
             paths.append(item.data(Qt.ItemDataRole.UserRole) or item.text())
         if not paths:
-            self.status_label.setText("No checksum files in listbox.")
+            self.status_label.setText(self.tr("No checksum files in listbox."))
             return
         self.clipboard_btn.setEnabled(False)
         self.listbox_btn.setEnabled(False)
-        self.status_label.setText("Looking up...")
+        self.status_label.setText(self.tr("Looking up..."))
         self._worker = _LookupWorker(self.flask_port, paths=paths)
         self._worker.finished.connect(lambda data: self._on_lookup_done(data, "listbox"))
         self._worker.error.connect(self._on_lookup_error)
@@ -1102,7 +1108,7 @@ class LookupTab(QWidget):
     def _run_lookup(self, text, source=""):
         self.clipboard_btn.setEnabled(False)
         self.listbox_btn.setEnabled(False)
-        self.status_label.setText("Looking up...")
+        self.status_label.setText(self.tr("Looking up..."))
 
         self._worker = _LookupWorker(self.flask_port, text)
         self._worker.finished.connect(lambda data: self._on_lookup_done(data, source))
@@ -1264,7 +1270,7 @@ class LookupTab(QWidget):
         given = summary_info.get("given", 0)
         lbs = len(summary_info.get("lb_numbers_found", []))
         self.status_label.setText(
-            f"Given: {given}  |  Matched: {matched}  |  LB numbers found: {lbs}"
+            self.tr("Given: {}  |  Matched: {}  |  LB numbers found: {}").format(given, matched, lbs)
         )
 
         folders = list(dict.fromkeys(str(Path(p).parent) for p in self._all_paths))
@@ -1295,7 +1301,7 @@ class LookupTab(QWidget):
     def _on_lookup_error(self, msg):
         self.clipboard_btn.setEnabled(True)
         self.listbox_btn.setEnabled(True)
-        self.status_label.setText(f"Error: {msg}")
+        self.status_label.setText(self.tr("Error: {}").format(msg))
 
     # ── Expose folders for other tabs ─────────────────────────────────────────
 
@@ -1343,18 +1349,18 @@ class LookupTab(QWidget):
             return
 
         menu = QMenu(self)
-        copy_chk = QAction("Copy Checksum", self)
+        copy_chk = QAction(self.tr("Copy Checksum"), self)
         copy_chk.triggered.connect(lambda: QApplication.clipboard().setText(str(row[0])))
         menu.addAction(copy_chk)
 
-        copy_row = QAction("Copy Row", self)
+        copy_row = QAction(self.tr("Copy Row"), self)
         copy_row.triggered.connect(lambda: QApplication.clipboard().setText("\t".join(str(c) for c in row)))
         menu.addAction(copy_row)
 
         lb_str = str(row[3]).replace("LB-", "")
         try:
             lb_num = int(lb_str)
-            open_web = QAction("Go to Web Page", self)
+            open_web = QAction(self.tr("Go to Web Page"), self)
             url = f"http://www.losslessbob.wonderingwhattochoose.com/detail/LB-{lb_num}.html"
             open_web.triggered.connect(lambda: webbrowser.open(url))
             menu.addAction(open_web)
@@ -1373,7 +1379,7 @@ class LookupTab(QWidget):
             data = resp.json()
             checksums = data.get("checksums", [])
             if not checksums:
-                self.status_label.setText(f"No checksums found for LB-{lb_number}")
+                self.status_label.setText(self.tr("No checksums found for LB-{}").format(lb_number))
                 return
             text_lines = []
             for c in checksums:
@@ -1383,7 +1389,7 @@ class LookupTab(QWidget):
                     text_lines.append(f"{c['checksum']}  {c['filename']}")
             self._run_lookup("\n".join(text_lines), source=f"LB-{lb_number}")
         except Exception as e:
-            self.status_label.setText(f"Error: {e}")
+            self.status_label.setText(self.tr("Error: {}").format(e))
 
     def resize_columns_to_font(self) -> None:
         self.summary_view.resizeColumnsToContents()

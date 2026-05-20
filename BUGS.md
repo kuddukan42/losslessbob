@@ -1,3 +1,40 @@
+BUG-082: build_qm.py produced .qm files that load but return no translations
+Status: Fixed
+File(s): scripts/build_qm.py
+Reported: 2026-05-20
+Fixed: 2026-05-20
+Description: QTranslator.load() returned True but every QCoreApplication.translate() call
+  returned the English source string. The compiler was writing structurally invalid .qm files.
+Root cause: Four bugs combined: (1) Wrong tag IDs — MSG_TRANSLATION=5 (correct: 3),
+  MSG_SOURCE_TEXT=3 (correct: 6), MSG_CONTEXT=4 (correct: 7). (2) Wrong section layout —
+  all data went into one 0x42 section instead of separate 0x42 Hashes + 0x69 Messages.
+  (3) Per-record length prefix emitted (Qt does not use one — records start directly at the
+  offset stored in the Hashes section). (4) Wrong ELF hash — shift was >> 23; Qt uses >> 24;
+  elfHash_finish (0 → 1) was missing; hash must cover sourceText+comment, not sourceText alone.
+Fix: Rewrote build_qm.py with correct two-section layout (0x42 sorted hash+offset pairs,
+  0x69 message records), correct tag IDs from Qt 6 qtranslator.cpp enum, correct ELF hash
+  (>> 24, elfHash_finish), and TAG_COMMENT (8) subtag included. Verified 1067/1067 per language.
+
+---
+
+BUG-081: Attachments tab shows no files downloaded by the site crawler
+Status: Fixed
+File(s): gui/attachments_tab.py, backend/site_crawler.py
+Reported: 2026-05-19
+Fixed: 2026-05-19
+Description: The Attachments tab queries entry_files WHERE downloaded=1, but the site_crawler
+  wrote files to data/site/files/ without ever setting entry_files.downloaded=1. Only the
+  per-entry scraper.scrape_entry() updated that flag, so all 6,000+ crawler-downloaded files
+  were invisible to the tab.
+Root cause: site_crawler.py only wrote to site_inventory; it had no code to update entry_files.
+Fix: (1) gui/attachments_tab.py — added _reconcile_site_files() called from _refresh_tree().
+  It scans SITE_FILES_DIR and bulk-updates entry_files.downloaded=1 for all files present on
+  disk, fixing existing data immediately.
+  (2) backend/site_crawler.py — after saving a /files/ URL, now updates
+  entry_files.downloaded=1 for the matching filename so future crawls stay in sync.
+
+---
+
 BUG-080: rglob("*") on main thread in Verify and lbdir "Add Root Folder" freezes UI
 Status: Fixed
 File(s): gui/verify_tab.py, gui/lbdir_tab.py

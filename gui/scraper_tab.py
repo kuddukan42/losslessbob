@@ -157,23 +157,23 @@ class ScraperTab(QWidget):
     # ── Panel 1: Site Mirror Crawler ──────────────────────────────────────────
 
     def _build_crawler_group(self) -> QGroupBox:
-        group = QGroupBox("Site Mirror Crawler")
+        group = QGroupBox(self.tr("Site Mirror Crawler"))
         layout = QVBoxLayout(group)
 
         # Controls row
         ctrl_row = QHBoxLayout()
 
-        ctrl_row.addWidget(QLabel("Scope:"))
+        ctrl_row.addWidget(QLabel(self.tr("Scope:")))
         self._scope_combo = QComboBox()
         self._scope_combo.addItems(["incremental", "full"])
         self._scope_combo.setFixedWidth(120)
         ctrl_row.addWidget(self._scope_combo)
 
-        self._crawler_force_cb = QCheckBox("Force re-fetch")
-        self._crawler_force_cb.setToolTip("Re-download pages even when If-Modified-Since says unchanged")
+        self._crawler_force_cb = QCheckBox(self.tr("Force re-fetch"))
+        self._crawler_force_cb.setToolTip(self.tr("Re-download pages even when If-Modified-Since says unchanged"))
         ctrl_row.addWidget(self._crawler_force_cb)
 
-        ctrl_row.addWidget(QLabel("Delay (ms):"))
+        ctrl_row.addWidget(QLabel(self.tr("Delay (ms):")))
         self._crawler_delay_spin = QSpinBox()
         self._crawler_delay_spin.setRange(500, 10000)
         self._crawler_delay_spin.setValue(1500)
@@ -182,10 +182,10 @@ class ScraperTab(QWidget):
         self._crawler_delay_spin.valueChanged.connect(self._save_crawler_settings)
         ctrl_row.addWidget(self._crawler_delay_spin)
 
-        ctrl_row.addWidget(QLabel("Daily cap:"))
+        ctrl_row.addWidget(QLabel(self.tr("Daily cap:")))
         self._crawler_cap_spin = QSpinBox()
-        self._crawler_cap_spin.setRange(100, 50000)
-        self._crawler_cap_spin.setValue(5000)
+        self._crawler_cap_spin.setRange(100, 99999)
+        self._crawler_cap_spin.setValue(99999)
         self._crawler_cap_spin.setSingleStep(500)
         self._crawler_cap_spin.setFixedWidth(80)
         self._crawler_cap_spin.valueChanged.connect(self._save_crawler_settings)
@@ -193,12 +193,12 @@ class ScraperTab(QWidget):
 
         ctrl_row.addStretch()
 
-        self._crawler_start_btn = QPushButton("Start Crawl")
+        self._crawler_start_btn = QPushButton(self.tr("Start Crawl"))
         self._crawler_start_btn.setFixedWidth(110)
         self._crawler_start_btn.clicked.connect(self._on_crawler_start)
         ctrl_row.addWidget(self._crawler_start_btn)
 
-        self._crawler_stop_btn = QPushButton("Stop")
+        self._crawler_stop_btn = QPushButton(self.tr("Stop"))
         self._crawler_stop_btn.setFixedWidth(80)
         self._crawler_stop_btn.setEnabled(False)
         self._crawler_stop_btn.clicked.connect(self._on_crawler_stop)
@@ -213,7 +213,7 @@ class ScraperTab(QWidget):
         layout.addWidget(self._crawler_progress)
 
         # Status label — shows current URL being processed
-        self._crawler_url_label = QLabel("Idle")
+        self._crawler_url_label = QLabel(self.tr("Idle"))
         self._crawler_url_label.setStyleSheet("font-family: monospace; font-size: 11px;")
         self._crawler_url_label.setWordWrap(True)
         layout.addWidget(self._crawler_url_label)
@@ -228,13 +228,14 @@ class ScraperTab(QWidget):
     # ── Panel 2: Session History ───────────────────────────────────────────────
 
     def _build_sessions_group(self) -> QGroupBox:
-        group = QGroupBox("Crawler Session History")
+        group = QGroupBox(self.tr("Crawler Session History"))
         layout = QVBoxLayout(group)
 
         self._sessions_table = QTableWidget(0, 7)
-        self._sessions_table.setHorizontalHeaderLabels(
-            ["Started", "Finished", "Scope", "Status", "Fetched", "304", "Failed"]
-        )
+        self._sessions_table.setHorizontalHeaderLabels([
+            self.tr("Started"), self.tr("Finished"), self.tr("Scope"),
+            self.tr("Status"), self.tr("Fetched"), "304", self.tr("Failed"),
+        ])
         hdr = self._sessions_table.horizontalHeader()
         hdr.setSectionResizeMode(0, QHeaderView.ResizeMode.Stretch)
         hdr.setSectionResizeMode(1, QHeaderView.ResizeMode.Stretch)
@@ -248,7 +249,7 @@ class ScraperTab(QWidget):
 
         refresh_row = QHBoxLayout()
         refresh_row.addStretch()
-        refresh_btn = QPushButton("Refresh")
+        refresh_btn = QPushButton(self.tr("Refresh"))
         refresh_btn.setFixedWidth(80)
         refresh_btn.clicked.connect(self._load_sessions_history)
         refresh_row.addWidget(refresh_btn)
@@ -259,26 +260,28 @@ class ScraperTab(QWidget):
     # ── Panel 3: Site Inventory ────────────────────────────────────────────────
 
     def _build_inventory_group(self) -> QGroupBox:
-        group = QGroupBox("Site Inventory")
+        group = QGroupBox(self.tr("Site Inventory"))
         layout = QVBoxLayout(group)
 
         # Filter row
         filter_row = QHBoxLayout()
-        filter_row.addWidget(QLabel("Status:"))
+        filter_row.addWidget(QLabel(self.tr("Status:")))
         self._inv_status_combo = QComboBox()
-        self._inv_status_combo.addItems(["(all)", "downloaded", "pending", "failed", "not_found", "skipped"])
+        self._inv_status_combo.addItem(self.tr("(all)"), None)
+        for _status in ("downloaded", "pending", "failed", "not_found", "skipped"):
+            self._inv_status_combo.addItem(_status, _status)
         self._inv_status_combo.setFixedWidth(110)
         self._inv_status_combo.currentIndexChanged.connect(self._inv_refresh)
         filter_row.addWidget(self._inv_status_combo)
 
-        filter_row.addWidget(QLabel("Path prefix:"))
+        filter_row.addWidget(QLabel(self.tr("Path prefix:")))
         self._inv_prefix_edit = QLineEdit()
-        self._inv_prefix_edit.setPlaceholderText("e.g. detail/")
+        self._inv_prefix_edit.setPlaceholderText(self.tr("e.g. detail/"))
         self._inv_prefix_edit.setFixedWidth(160)
         self._inv_prefix_edit.returnPressed.connect(self._inv_refresh)
         filter_row.addWidget(self._inv_prefix_edit)
 
-        inv_search_btn = QPushButton("Filter")
+        inv_search_btn = QPushButton(self.tr("Filter"))
         inv_search_btn.setFixedWidth(60)
         inv_search_btn.clicked.connect(self._inv_refresh)
         filter_row.addWidget(inv_search_btn)
@@ -291,9 +294,10 @@ class ScraperTab(QWidget):
 
         # Table
         self._inv_table = QTableWidget(0, 6)
-        self._inv_table.setHorizontalHeaderLabels(
-            ["URL", "Status", "Size", "HTTP", "Last Fetched", "Last Modified"]
-        )
+        self._inv_table.setHorizontalHeaderLabels([
+            "URL", self.tr("Status"), self.tr("Size"), "HTTP",
+            self.tr("Last Fetched"), self.tr("Last Modified"),
+        ])
         hdr = self._inv_table.horizontalHeader()
         hdr.setSectionResizeMode(0, QHeaderView.ResizeMode.Stretch)
         for col in range(1, 6):
@@ -306,13 +310,13 @@ class ScraperTab(QWidget):
 
         # Pagination row
         pg_row = QHBoxLayout()
-        self._inv_prev_btn = QPushButton("◀ Prev")
+        self._inv_prev_btn = QPushButton(self.tr("◀ Prev"))
         self._inv_prev_btn.setFixedWidth(80)
         self._inv_prev_btn.clicked.connect(self._inv_prev)
         pg_row.addWidget(self._inv_prev_btn)
         self._inv_page_label = QLabel("—")
         pg_row.addWidget(self._inv_page_label)
-        self._inv_next_btn = QPushButton("Next ▶")
+        self._inv_next_btn = QPushButton(self.tr("Next ▶"))
         self._inv_next_btn.setFixedWidth(80)
         self._inv_next_btn.clicked.connect(self._inv_next)
         pg_row.addWidget(self._inv_next_btn)
@@ -324,27 +328,27 @@ class ScraperTab(QWidget):
     # ── Panel 4: Entry Pages & Metadata Scraper ───────────────────────────────
 
     def _build_entry_scraper_group(self) -> QGroupBox:
-        group = QGroupBox("Entry Pages & Metadata Scraper")
+        group = QGroupBox(self.tr("Entry Pages & Metadata Scraper"))
         layout = QVBoxLayout(group)
 
         # Options row
         opts_row = QHBoxLayout()
-        self.auto_scrape_cb = QCheckBox("Auto-scrape new entries after import")
+        self.auto_scrape_cb = QCheckBox(self.tr("Auto-scrape new entries after import"))
         self.auto_scrape_cb.stateChanged.connect(self._save_entry_settings)
         opts_row.addWidget(self.auto_scrape_cb)
 
-        self.download_files_cb = QCheckBox("Download attachments (ffp, txt)")
+        self.download_files_cb = QCheckBox(self.tr("Download attachments (ffp, txt)"))
         self.download_files_cb.stateChanged.connect(self._save_entry_settings)
         opts_row.addWidget(self.download_files_cb)
 
-        self.force_scrape_cb = QCheckBox("Force re-scrape")
+        self.force_scrape_cb = QCheckBox(self.tr("Force re-scrape"))
         self.force_scrape_cb.stateChanged.connect(self._save_entry_settings)
         opts_row.addWidget(self.force_scrape_cb)
         opts_row.addStretch()
         layout.addLayout(opts_row)
 
         local_row = QHBoxLayout()
-        self.local_pages_cb = QCheckBox("Use local pages for metadata")
+        self.local_pages_cb = QCheckBox(self.tr("Use local pages for metadata"))
         self.local_pages_cb.stateChanged.connect(self._save_entry_settings)
         local_row.addWidget(self.local_pages_cb)
         self._pages_count_label = QLabel("")
@@ -352,7 +356,7 @@ class ScraperTab(QWidget):
         local_row.addWidget(self._pages_count_label)
         local_row.addStretch()
 
-        local_row.addWidget(QLabel("Delay (ms):"))
+        local_row.addWidget(QLabel(self.tr("Delay (ms):")))
         self.delay_spin = QSpinBox()
         self.delay_spin.setRange(500, 10000)
         self.delay_spin.setValue(1500)
@@ -371,25 +375,25 @@ class ScraperTab(QWidget):
         grid.setVerticalSpacing(8)
 
         # Row 0: bulk + stop
-        self.scrape_all_btn = QPushButton("Scrape All Missing Entries")
+        self.scrape_all_btn = QPushButton(self.tr("Scrape All Missing Entries"))
         self.scrape_all_btn.setFixedWidth(_W)
         self.scrape_all_btn.clicked.connect(self._on_scrape_all)
         grid.addWidget(self.scrape_all_btn, 0, 2, _VC)
 
-        self.stop_scrape_btn = QPushButton("Stop Scraper")
+        self.stop_scrape_btn = QPushButton(self.tr("Stop Scraper"))
         self.stop_scrape_btn.setFixedWidth(_W)
         self.stop_scrape_btn.setEnabled(False)
         self.stop_scrape_btn.clicked.connect(self._on_stop_scrape)
         grid.addWidget(self.stop_scrape_btn, 0, 3, _VC)
 
         # Row 1: single entry
-        grid.addWidget(QLabel("Single entry:"), 1, 0, _VC)
+        grid.addWidget(QLabel(self.tr("Single entry:")), 1, 0, _VC)
         self.single_lb_input = QLineEdit()
-        self.single_lb_input.setPlaceholderText("LB number…")
+        self.single_lb_input.setPlaceholderText(self.tr("LB number…"))
         self.single_lb_input.setFixedWidth(100)
         self.single_lb_input.returnPressed.connect(self._on_scrape_single)
         grid.addWidget(self.single_lb_input, 1, 1, _VC)
-        self.scrape_single_btn = QPushButton("Scrape")
+        self.scrape_single_btn = QPushButton(self.tr("Scrape"))
         self.scrape_single_btn.setFixedWidth(_W)
         self.scrape_single_btn.clicked.connect(self._on_scrape_single)
         grid.addWidget(self.scrape_single_btn, 1, 2, _VC)
@@ -397,7 +401,7 @@ class ScraperTab(QWidget):
         grid.addWidget(self.single_scrape_status_label, 1, 3, 1, 2, _VC)
 
         # Row 2: range
-        grid.addWidget(QLabel("Range:"), 2, 0, _VC)
+        grid.addWidget(QLabel(self.tr("Range:")), 2, 0, _VC)
         range_w = QWidget()
         range_inner = QHBoxLayout(range_w)
         range_inner.setContentsMargins(0, 0, 0, 0)
@@ -407,24 +411,24 @@ class ScraperTab(QWidget):
         self.range_start_spin.setValue(1)
         self.range_start_spin.setFixedWidth(80)
         range_inner.addWidget(self.range_start_spin)
-        range_inner.addWidget(QLabel("to"))
+        range_inner.addWidget(QLabel(self.tr("to")))
         self.range_end_spin = QSpinBox()
         self.range_end_spin.setRange(1, 99999)
         self.range_end_spin.setValue(100)
         self.range_end_spin.setFixedWidth(80)
         range_inner.addWidget(self.range_end_spin)
         grid.addWidget(range_w, 2, 1, _VC)
-        self.scrape_range_btn = QPushButton("Scrape Range")
+        self.scrape_range_btn = QPushButton(self.tr("Scrape Range"))
         self.scrape_range_btn.setFixedWidth(_W)
         self.scrape_range_btn.clicked.connect(self._on_scrape_range)
         grid.addWidget(self.scrape_range_btn, 2, 2, _VC)
 
         # Row 3: private rescrape
-        grid.addWidget(QLabel("Private LBs:"), 3, 0, _VC)
-        self.rescrape_private_btn = QPushButton("Re-scrape Private LBs")
+        grid.addWidget(QLabel(self.tr("Private LBs:")), 3, 0, _VC)
+        self.rescrape_private_btn = QPushButton(self.tr("Re-scrape Private LBs"))
         self.rescrape_private_btn.setFixedWidth(_W)
         self.rescrape_private_btn.setToolTip(
-            "Force re-scrape all Private LBs to check whether any have been published"
+            self.tr("Force re-scrape all Private LBs to check whether any have been published")
         )
         self.rescrape_private_btn.clicked.connect(self._on_rescrape_private)
         grid.addWidget(self.rescrape_private_btn, 3, 2, _VC)
@@ -432,12 +436,12 @@ class ScraperTab(QWidget):
         grid.addWidget(self.rescrape_private_label, 3, 3, 1, 2, _VC)
 
         # Row 4: download pages
-        grid.addWidget(QLabel("Page cache:"), 4, 0, _VC)
-        self.download_pages_btn = QPushButton("Download Missing Pages")
+        grid.addWidget(QLabel(self.tr("Page cache:")), 4, 0, _VC)
+        self.download_pages_btn = QPushButton(self.tr("Download Missing Pages"))
         self.download_pages_btn.setFixedWidth(_W)
         self.download_pages_btn.setToolTip(
-            "Fetch and cache HTML detail pages for every LB number "
-            "without parsing metadata or downloading attachments."
+            self.tr("Fetch and cache HTML detail pages for every LB number "
+                    "without parsing metadata or downloading attachments.")
         )
         self.download_pages_btn.clicked.connect(self._on_download_pages)
         grid.addWidget(self.download_pages_btn, 4, 2, _VC)
@@ -455,7 +459,7 @@ class ScraperTab(QWidget):
         layout.addWidget(self.scrape_status_label)
 
         # Scraper log
-        log_group = QGroupBox("Scraper Log")
+        log_group = QGroupBox(self.tr("Scraper Log"))
         log_layout = QVBoxLayout(log_group)
         self.scraper_log = QPlainTextEdit()
         self.scraper_log.setReadOnly(True)
@@ -470,20 +474,20 @@ class ScraperTab(QWidget):
     # ── Panel 5: Bootleg Catalog ───────────────────────────────────────────────
 
     def _build_bootlegs_group(self) -> QGroupBox:
-        group = QGroupBox("Bootleg-CD Catalog (LBBCD)")
+        group = QGroupBox(self.tr("Bootleg-CD Catalog (LBBCD)"))
         layout = QVBoxLayout(group)
 
         btn_row = QHBoxLayout()
-        self._scrape_bootlegs_btn = QPushButton("Scrape Bootleg Catalog")
+        self._scrape_bootlegs_btn = QPushButton(self.tr("Scrape Bootleg Catalog"))
         self._scrape_bootlegs_btn.setToolTip(
-            "Fetch and diff-apply the LosslessBob LBBCD index page. "
-            "Skips if unchanged (ETag / Last-Modified). Force-scrape ignores cache."
+            self.tr("Fetch and diff-apply the LosslessBob LBBCD index page. "
+                    "Skips if unchanged (ETag / Last-Modified). Force-scrape ignores cache.")
         )
         self._scrape_bootlegs_btn.clicked.connect(self._on_scrape_bootlegs)
         btn_row.addWidget(self._scrape_bootlegs_btn)
 
-        self._force_bootlegs_cb = QCheckBox("Force")
-        self._force_bootlegs_cb.setToolTip("Re-fetch even when ETag/Last-Modified indicate no change")
+        self._force_bootlegs_cb = QCheckBox(self.tr("Force"))
+        self._force_bootlegs_cb.setToolTip(self.tr("Re-fetch even when ETag/Last-Modified indicate no change"))
         btn_row.addWidget(self._force_bootlegs_cb)
 
         btn_row.addStretch()
@@ -492,9 +496,10 @@ class ScraperTab(QWidget):
         layout.addLayout(btn_row)
 
         self._bl_history_table = QTableWidget(0, 5)
-        self._bl_history_table.setHorizontalHeaderLabels(
-            ["Scraped at", "Status", "Total", "Added", "Changed"]
-        )
+        self._bl_history_table.setHorizontalHeaderLabels([
+            self.tr("Scraped at"), self.tr("Status"), self.tr("Total"),
+            self.tr("Added"), self.tr("Changed"),
+        ])
         hdr = self._bl_history_table.horizontalHeader()
         hdr.setSectionResizeMode(0, QHeaderView.ResizeMode.Stretch)
         for col in range(1, 5):
@@ -515,7 +520,7 @@ class ScraperTab(QWidget):
                 f"http://127.0.0.1:{self.flask_port}/api/db/settings", timeout=5
             ).json()
             self._crawler_delay_spin.setValue(int(resp.get("crawler_delay_ms") or 1500))
-            self._crawler_cap_spin.setValue(int(resp.get("crawler_daily_cap") or 5000))
+            self._crawler_cap_spin.setValue(int(resp.get("crawler_daily_cap") or 99999))
             # Entry scraper settings
             self.auto_scrape_cb.setChecked(resp.get("auto_scrape", "1") != "0")
             self.download_files_cb.setChecked(resp.get("scrape_attachments", "1") != "0")
@@ -557,7 +562,7 @@ class ScraperTab(QWidget):
     def _refresh_pages_count(self) -> None:
         try:
             count = sum(1 for _ in _SITE_DETAIL_DIR.glob("*.html"))
-            self._pages_count_label.setText(f"({count:,} cached)")
+            self._pages_count_label.setText(self.tr("({} cached)").format(f"{count:,}"))
         except Exception:
             self._pages_count_label.setText("")
 
@@ -576,15 +581,15 @@ class ScraperTab(QWidget):
                 timeout=10,
             ).json()
         except Exception as e:
-            self._crawler_url_label.setText(f"Error: {e}")
+            self._crawler_url_label.setText(self.tr("Error: {}").format(e))
             return
         if not resp.get("ok"):
-            self._crawler_url_label.setText(resp.get("error", "Failed to start crawler."))
+            self._crawler_url_label.setText(resp.get("error", self.tr("Failed to start crawler.")))
             return
         self._crawler_start_btn.setEnabled(False)
         self._crawler_stop_btn.setEnabled(True)
         self._crawler_progress.setVisible(True)
-        self._crawler_url_label.setText("Starting…")
+        self._crawler_url_label.setText(self.tr("Starting…"))
         self._crawler_counts_label.setText("")
         self._start_crawler_poll()
 
@@ -596,7 +601,7 @@ class ScraperTab(QWidget):
         except Exception:
             pass
         self._crawler_stop_btn.setEnabled(False)
-        self._crawler_url_label.setText("Stop requested…")
+        self._crawler_url_label.setText(self.tr("Stop requested…"))
 
     def _start_crawler_poll(self) -> None:
         if self._crawler_status_thread and self._crawler_status_thread.isRunning():
@@ -623,10 +628,13 @@ class ScraperTab(QWidget):
         elif msg:
             self._crawler_url_label.setText(msg)
 
-        counts_text = (
-            f"Fetched: {fetched}  |  304 (unchanged): {not_modified}  |  "
-            f"Not found: {not_found}  |  Skipped: {skipped}  |  Failed: {failed}  |  "
-            f"Queue: {queue_size}"
+        counts_text = self.tr(
+            "Fetched: {fetched}  |  304 (unchanged): {not_modified}  |  "
+            "Not found: {not_found}  |  Skipped: {skipped}  |  Failed: {failed}  |  "
+            "Queue: {queue_size}"
+        ).format(
+            fetched=fetched, not_modified=not_modified, not_found=not_found,
+            skipped=skipped, failed=failed, queue_size=queue_size,
         )
         self._crawler_counts_label.setText(counts_text)
 
@@ -637,7 +645,7 @@ class ScraperTab(QWidget):
             self._crawler_start_btn.setEnabled(True)
             self._crawler_stop_btn.setEnabled(False)
             self._crawler_progress.setVisible(False)
-            final = msg or f"Done — stage: {stage}"
+            final = msg or self.tr("Done — stage: {}").format(stage)
             self._crawler_url_label.setText(final)
             self._load_sessions_history()
             self._inv_refresh()
@@ -697,8 +705,7 @@ class ScraperTab(QWidget):
             self._inv_load()
 
     def _inv_load(self) -> None:
-        status_val = self._inv_status_combo.currentText()
-        status_param = None if status_val == "(all)" else status_val
+        status_param = self._inv_status_combo.currentData()
         prefix = self._inv_prefix_edit.text().strip() or None
         params: dict = {"limit": self._inv_limit, "offset": self._inv_offset}
         if status_param:
@@ -748,8 +755,8 @@ class ScraperTab(QWidget):
 
         page_num = self._inv_offset // self._inv_limit + 1
         page_total = max(1, -(-total // self._inv_limit))
-        self._inv_page_label.setText(f"Page {page_num} / {page_total}")
-        self._inv_count_label.setText(f"{total:,} rows")
+        self._inv_page_label.setText(self.tr("Page {} / {}").format(page_num, page_total))
+        self._inv_count_label.setText(self.tr("{} rows").format(f"{total:,}"))
         self._inv_prev_btn.setEnabled(self._inv_offset > 0)
         self._inv_next_btn.setEnabled(self._inv_offset + self._inv_limit < total)
 
@@ -773,10 +780,10 @@ class ScraperTab(QWidget):
         try:
             lb = int(text)
         except ValueError:
-            self.single_scrape_status_label.setText("Invalid number.")
+            self.single_scrape_status_label.setText(self.tr("Invalid number."))
             return
         self.scrape_single_btn.setEnabled(False)
-        self.single_scrape_status_label.setText(f"Scraping LB-{lb}…")
+        self.single_scrape_status_label.setText(self.tr("Scraping LB-{}…").format(lb))
         self._log(f"Starting single scrape: LB-{lb}")
         self._single_scrape_thread = _SingleScrapeThread(
             self.flask_port, lb, force=self.force_scrape_cb.isChecked()
@@ -789,25 +796,29 @@ class ScraperTab(QWidget):
         lb = self.single_lb_input.text().strip()
         if "error" in data:
             msg = f"Error scraping LB-{lb}: {data['error']}"
-            self.single_scrape_status_label.setText(f"Error: {data['error']}")
+            self.single_scrape_status_label.setText(self.tr("Error: {}").format(data['error']))
         elif data.get("skipped"):
             msg = f"LB-{lb} already scraped (skipped)."
-            self.single_scrape_status_label.setText(msg)
+            self.single_scrape_status_label.setText(
+                self.tr("LB-{} already scraped (skipped).").format(lb)
+            )
         else:
             n = len(data.get("files_downloaded", []))
             msg = f"LB-{lb} scraped. {n} file(s) downloaded."
-            self.single_scrape_status_label.setText(msg)
+            self.single_scrape_status_label.setText(
+                self.tr("LB-{lb} scraped. {n} file(s) downloaded.").format(lb=lb, n=n)
+            )
         self._log(msg)
 
     def _on_scrape_range(self) -> None:
         start = self.range_start_spin.value()
         end   = self.range_end_spin.value()
         if end < start:
-            self.scrape_status_label.setText("End must be >= start.")
+            self.scrape_status_label.setText(self.tr("End must be >= start."))
             return
         force = self.force_scrape_cb.isChecked()
         self._entry_scraper_set_busy(True)
-        self.scrape_status_label.setText(f"Starting range scrape LB-{start} to LB-{end}…")
+        self.scrape_status_label.setText(self.tr("Starting range scrape LB-{} to LB-{}…").format(start, end))
         self._log(f"Starting range scrape: LB-{start} to LB-{end}{' (force)' if force else ''}")
         try:
             requests.post(
@@ -817,7 +828,7 @@ class ScraperTab(QWidget):
             )
         except Exception as e:
             self._entry_scraper_set_busy(False)
-            self.scrape_status_label.setText(f"Error: {e}")
+            self.scrape_status_label.setText(self.tr("Error: {}").format(e))
             self._log(f"Failed to start range scrape: {e}")
             return
         self._start_scrape_poll()
@@ -825,7 +836,7 @@ class ScraperTab(QWidget):
     def _on_scrape_all(self) -> None:
         force = self.force_scrape_cb.isChecked()
         self._entry_scraper_set_busy(True)
-        self.scrape_status_label.setText("Starting scraper…")
+        self.scrape_status_label.setText(self.tr("Starting scraper…"))
         self._log(f"Starting bulk scrape of all missing entries{' (force)' if force else ''}…")
         try:
             requests.post(
@@ -835,7 +846,7 @@ class ScraperTab(QWidget):
             )
         except Exception as e:
             self._entry_scraper_set_busy(False)
-            self.scrape_status_label.setText(f"Error: {e}")
+            self.scrape_status_label.setText(self.tr("Error: {}").format(e))
             self._log(f"Failed to start scraper: {e}")
             return
         self._start_scrape_poll()
@@ -848,7 +859,7 @@ class ScraperTab(QWidget):
         except Exception:
             pass
         self.stop_scrape_btn.setEnabled(False)
-        self.scrape_status_label.setText("Stop requested…")
+        self.scrape_status_label.setText(self.tr("Stop requested…"))
         self._log("Stop requested by user.")
 
     def _on_rescrape_private(self) -> None:
@@ -858,17 +869,19 @@ class ScraperTab(QWidget):
             ).json()
             private_count = stats.get("private", 0)
         except Exception as e:
-            QMessageBox.warning(self, "Re-scrape Private LBs", f"Could not fetch stats: {e}")
+            QMessageBox.warning(self, self.tr("Re-scrape Private LBs"),
+                                self.tr("Could not fetch stats: {}").format(e))
             return
         if private_count == 0:
             QMessageBox.information(
-                self, "Re-scrape Private LBs", "No Private LBs found in the database."
+                self, self.tr("Re-scrape Private LBs"),
+                self.tr("No Private LBs found in the database.")
             )
             return
         confirm = QMessageBox.question(
-            self, "Re-scrape Private LBs",
-            f"Re-scrape {private_count} Private LB(s) to check whether any have been "
-            "published?\n\nThis uses force mode and may take a while.",
+            self, self.tr("Re-scrape Private LBs"),
+            self.tr("Re-scrape {} Private LB(s) to check whether any have been published?\n\n"
+                    "This uses force mode and may take a while.").format(private_count),
             QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.Cancel,
             QMessageBox.StandardButton.Cancel,
         )
@@ -878,7 +891,7 @@ class ScraperTab(QWidget):
         self._private_rescrape_before = private_count
         self._entry_scraper_set_busy(True)
         self.scrape_status_label.setText(
-            f"Queuing {private_count} private LB(s) for force re-scrape…"
+            self.tr("Queuing {} private LB(s) for force re-scrape…").format(private_count)
         )
         self._log(f"Starting private LB re-scrape: {private_count} LBs (force=True)")
         try:
@@ -889,13 +902,13 @@ class ScraperTab(QWidget):
         except Exception as e:
             self._private_rescrape_mode = False
             self._entry_scraper_set_busy(False)
-            self.scrape_status_label.setText(f"Error: {e}")
+            self.scrape_status_label.setText(self.tr("Error: {}").format(e))
             self._log(f"Failed to start private rescrape: {e}")
             return
         if "error" in resp:
             self._private_rescrape_mode = False
             self._entry_scraper_set_busy(False)
-            self.scrape_status_label.setText(f"Error: {resp['error']}")
+            self.scrape_status_label.setText(self.tr("Error: {}").format(resp['error']))
             self._log(f"Private rescrape error: {resp['error']}")
             return
         self._start_scrape_poll()
@@ -904,7 +917,7 @@ class ScraperTab(QWidget):
         force = self.force_scrape_cb.isChecked()
         self._page_download_mode = True
         self._entry_scraper_set_busy(True)
-        self.scrape_status_label.setText("Queueing page downloads…")
+        self.scrape_status_label.setText(self.tr("Queueing page downloads…"))
         self._log(f"Starting page-cache download{' (force)' if force else ''}…")
         try:
             resp = requests.post(
@@ -915,13 +928,13 @@ class ScraperTab(QWidget):
         except Exception as e:
             self._page_download_mode = False
             self._entry_scraper_set_busy(False)
-            self.scrape_status_label.setText(f"Error: {e}")
+            self.scrape_status_label.setText(self.tr("Error: {}").format(e))
             self._log(f"Failed to start page download: {e}")
             return
         if "error" in resp:
             self._page_download_mode = False
             self._entry_scraper_set_busy(False)
-            self.scrape_status_label.setText(f"Error: {resp['error']}")
+            self.scrape_status_label.setText(self.tr("Error: {}").format(resp['error']))
             self._log(f"Page download error: {resp['error']}")
             return
         total = resp.get("total", 0)
@@ -952,12 +965,12 @@ class ScraperTab(QWidget):
             self.scrape_progress.setValue(done)
 
         if current:
-            verb = "Downloading" if self._page_download_mode else "Scraping"
-            label = f"{verb} LB-{current} ({done}/{total}"
+            verb = self.tr("Downloading") if self._page_download_mode else self.tr("Scraping")
+            label = self.tr("{verb} LB-{lb} ({done}/{total}").format(
+                verb=verb, lb=current, done=done, total=total)
             if skipped:
-                label += f", {skipped} skipped"
-            label += ")…"
-            self.scrape_status_label.setText(label)
+                label += self.tr(", {skipped} skipped").format(skipped=skipped)
+            self.scrape_status_label.setText(label + ")…")
 
         if last_lb and last_lb != self._last_logged_lb:
             self._last_logged_lb = last_lb
@@ -981,14 +994,16 @@ class ScraperTab(QWidget):
             if self._page_download_mode:
                 self._page_download_mode = False
                 downloaded = done - skipped - status.get("errors", 0)
-                msg = (f"Page download complete. {downloaded} downloaded, "
-                       f"{skipped} already cached, {status.get('errors', 0)} errors.")
+                msg = self.tr(
+                    "Page download complete. {downloaded} downloaded, "
+                    "{skipped} already cached, {errors} errors."
+                ).format(downloaded=downloaded, skipped=skipped, errors=status.get('errors', 0))
                 self._refresh_pages_count()
             else:
-                msg = f"Scrape complete. {done} processed"
+                msg = self.tr("Scrape complete. {done} processed").format(done=done)
                 if skipped:
-                    msg += f" ({skipped} already complete)"
-                msg += f", {status.get('errors', 0)} errors."
+                    msg += self.tr(" ({skipped} already complete)").format(skipped=skipped)
+                msg += self.tr(", {errors} errors.").format(errors=status.get('errors', 0))
                 if self._private_rescrape_mode:
                     self._private_rescrape_mode = False
                     try:
@@ -998,7 +1013,8 @@ class ScraperTab(QWidget):
                         ).json()
                         new_private = stats.get("private", 0)
                         promoted = max(0, self._private_rescrape_before - new_private)
-                        msg += f" {promoted} promoted to Public, {new_private} private remain."
+                        msg += self.tr(" {promoted} promoted to Public, {private} private remain.").format(
+                            promoted=promoted, private=new_private)
                     except Exception:
                         pass
             self.scrape_status_label.setText(msg)
@@ -1010,7 +1026,7 @@ class ScraperTab(QWidget):
     def _on_scrape_bootlegs(self) -> None:
         force = self._force_bootlegs_cb.isChecked()
         self._scrape_bootlegs_btn.setEnabled(False)
-        self._bootlegs_status_lbl.setText("Starting scrape…")
+        self._bootlegs_status_lbl.setText(self.tr("Starting scrape…"))
         try:
             resp = requests.post(
                 f"http://127.0.0.1:{self.flask_port}/api/bootlegs/scrape",
@@ -1018,14 +1034,14 @@ class ScraperTab(QWidget):
                 timeout=10,
             ).json()
         except Exception as e:
-            self._bootlegs_status_lbl.setText(f"Error: {e}")
+            self._bootlegs_status_lbl.setText(self.tr("Error: {}").format(e))
             self._scrape_bootlegs_btn.setEnabled(True)
             return
         if "error" in resp:
-            self._bootlegs_status_lbl.setText(f"Error: {resp['error']}")
+            self._bootlegs_status_lbl.setText(self.tr("Error: {}").format(resp['error']))
             self._scrape_bootlegs_btn.setEnabled(True)
             return
-        self._bootlegs_status_lbl.setText("Scraping…")
+        self._bootlegs_status_lbl.setText(self.tr("Scraping…"))
         self._poll_bootlegs_scrape()
 
     def _poll_bootlegs_scrape(self) -> None:
@@ -1039,12 +1055,12 @@ class ScraperTab(QWidget):
             return
         if data.get("running"):
             QTimer.singleShot(1500, self._poll_bootlegs_scrape)
-            self._bootlegs_status_lbl.setText(data.get("message", "Scraping…"))
+            self._bootlegs_status_lbl.setText(data.get("message", self.tr("Scraping…")))
         else:
             self._scrape_bootlegs_btn.setEnabled(True)
-            msg = data.get("message") or data.get("stage", "Done.")
+            msg = data.get("message") or data.get("stage", self.tr("Done."))
             if data.get("error"):
-                msg = f"Error: {data['error']}"
+                msg = self.tr("Error: {}").format(data['error'])
             self._bootlegs_status_lbl.setText(msg)
             self._load_bootlegs_history()
 

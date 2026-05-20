@@ -236,7 +236,7 @@ class ThemeTab(QWidget):
         preset_panel.setFixedWidth(130)
         preset_layout = QVBoxLayout(preset_panel)
         preset_layout.setContentsMargins(0, 0, 0, 0)
-        preset_layout.addWidget(QLabel("Presets"))
+        preset_layout.addWidget(QLabel(self.tr("Presets")))
 
         self.theme_list = QListWidget()
         for name in list(THEMES.keys()) + ["Custom"]:
@@ -250,7 +250,7 @@ class ThemeTab(QWidget):
         swatch_panel_layout = QVBoxLayout(swatch_panel)
         swatch_panel_layout.setContentsMargins(0, 0, 0, 0)
 
-        hint = QLabel("Click any color swatch to customize. Changes become Custom.")
+        hint = QLabel(self.tr("Click any color swatch to customize. Changes become Custom."))
         hint.setWordWrap(True)
         swatch_panel_layout.addWidget(hint)
 
@@ -272,7 +272,7 @@ class ThemeTab(QWidget):
         for i, (label_text, key) in enumerate(COLOR_LABELS):
             row = i % num_rows
             col_base = (i // num_rows) * 2  # 0 for left column, 2 for right column
-            grid.addWidget(QLabel(label_text), row, col_base, Qt.AlignmentFlag.AlignRight)
+            grid.addWidget(QLabel(self.tr(label_text)), row, col_base, Qt.AlignmentFlag.AlignRight)
             btn = QPushButton()
             btn.setFixedHeight(22)
             btn.setMinimumWidth(110)
@@ -294,12 +294,12 @@ class ThemeTab(QWidget):
             ("Arial",           "Arial"),
         ]
         font_row = QHBoxLayout()
-        font_row.addWidget(QLabel("Font:"))
+        font_row.addWidget(QLabel(self.tr("Font:")))
         self._font_family_combo = QComboBox()
         for display, family in _FONT_OPTIONS:
-            self._font_family_combo.addItem(display, userData=family)
+            self._font_family_combo.addItem(self.tr(display), userData=family)
         font_row.addWidget(self._font_family_combo)
-        font_row.addWidget(QLabel("Size:"))
+        font_row.addWidget(QLabel(self.tr("Size:")))
         self._font_size_spin = QSpinBox()
         self._font_size_spin.setRange(8, 14)
         self._font_size_spin.setValue(9)
@@ -309,7 +309,7 @@ class ThemeTab(QWidget):
         font_row.addStretch()
         swatch_panel_layout.addLayout(font_row)
 
-        self.apply_btn = QPushButton("Apply Theme")
+        self.apply_btn = QPushButton(self.tr("Apply Theme"))
         self.apply_btn.clicked.connect(self._on_apply)
         swatch_panel_layout.addWidget(self.apply_btn)
 
@@ -355,7 +355,7 @@ class ThemeTab(QWidget):
 
     def _on_swatch_clicked(self, key):
         initial = QColor(self._current.get(key, "#FFFFFF"))
-        color = QColorDialog.getColor(initial, self, f"Choose color")
+        color = QColorDialog.getColor(initial, self, self.tr("Choose color"))
         if not color.isValid():
             return
         current_name = self.theme_list.currentItem().text() if self.theme_list.currentItem() else ""
@@ -372,7 +372,7 @@ class ThemeTab(QWidget):
         styles.apply_theme(self._current, font_family=font_family, font_size=font_size)
         self._save_settings()
         self.theme_applied.emit()
-        self.status_label.setText("Theme applied.")
+        self.status_label.setText(self.tr("Theme applied."))
 
     # ── Persistence ───────────────────────────────────────────────────────────
 
