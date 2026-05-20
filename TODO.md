@@ -1,3 +1,228 @@
+TODO-066: Web GUI — docs update after web UI ships
+Priority: Low
+Status: Open
+Added: 2026-05-19
+Description: After web GUI feature is complete: update PROJECT.md (frontend/ file tree,
+  new routes), README.md (Web UI section, LAN access, password instructions, privacy note),
+  CHANGELOG.md. See CC_WEB_GUI_PLAN.md Phase 10.
+
+---
+
+TODO-067: i18n infrastructure — language loader, meta key, Setup tab selector
+Priority: Medium
+Status: Open
+Added: 2026-05-19
+Description: Create gui/i18n.py with load_language() and supported_languages() helpers.
+  Wire language loading at QApplication startup (read ui_language from meta table).
+  Add POST /api/meta route to backend if not present (whitelist key=ui_language).
+  Add language selector QComboBox to Setup tab Preferences section with restart notice.
+  Supported languages: de, fr, es, it, nl (all LTR — no layout mirroring needed).
+  See instructions/CC_I18N.md TODO-067 section for full spec.
+
+---
+
+TODO-068: Wrap all user-facing GUI strings in self.tr()
+Priority: Medium
+Status: Open
+Added: 2026-05-19
+Description: Go through all 14 gui/*.py files and gui/widgets/*.py and wrap every
+  user-facing string literal in self.tr("..."). Convert f-strings with variables to
+  self.tr("template {}").format(var). Do NOT wrap log messages, SQL, API URLs, or
+  archive data (LB numbers, checksums, filenames). Run py_compile after each file.
+  ~1,209 call sites total. Prerequisite: TODO-067 (i18n.py must exist first).
+  See instructions/CC_I18N.md TODO-068 section for rules and file-by-file checklist.
+
+---
+
+TODO-069: Generate, translate, and compile .ts/.qm files for 5 languages
+Priority: Medium
+Status: Open
+Added: 2026-05-19
+Description: Run pylupdate6 against all gui/*.py to extract tr() strings into
+  gui/locales/losslessbob_{de,fr,es,it,nl}.ts. Fill all translations (AI-assisted
+  batch is fine; review domain-specific terms against the glossary in CC_I18N.md).
+  Compile each .ts to .qm with lrelease — target 0 untranslated warnings.
+  Commit both .ts and .qm files. Prerequisite: TODO-068.
+  See instructions/CC_I18N.md TODO-069 section for full spec and glossary.
+
+---
+
+TODO-070: i18n integration testing — all 5 languages end-to-end
+Priority: Medium
+Status: Open
+Added: 2026-05-19
+Description: For each of the 5 languages: set ui_language in meta, restart app,
+  verify tab titles, button labels, column headers, placeholder text, and QMessageBox
+  dialogs are translated. Verify LB numbers and checksums are not garbled. Verify
+  English still works as default. Run py_compile on all gui files.
+  Prerequisite: TODO-069. See instructions/CC_I18N.md TODO-070 section for checklist.
+
+---
+
+TODO-065: Web GUI — web password setting in Setup tab
+Priority: High
+Status: Open
+Added: 2026-05-19
+Description: Add "Web GUI Password" QLineEdit (password mode) in Setup tab Network section.
+  POSTs to /api/db/settings with {web_password: "..."}. Empty = auth disabled. Add
+  web_password to the GET keys list in db_settings() (return "set"/"" not actual value).
+  See CC_WEB_GUI_PLAN.md TODO-065.
+
+---
+
+TODO-064: Web GUI — optional basic-auth middleware for web routes
+Priority: High
+Status: Open
+Added: 2026-05-19
+Description: Add before_request hook in backend/app.py that enforces HTTP Basic Auth on
+  /web/* and /frontend/* routes when meta key web_password is set. API routes (/api/*)
+  remain unauthenticated (desktop app calls them directly). Flask already binds to
+  0.0.0.0 so this is needed before any web UI page ships.
+  See CC_WEB_GUI_PLAN.md TODO-064.
+
+---
+
+TODO-063: Web GUI — status bar data in nav
+Priority: Low
+Status: Open
+Added: 2026-05-19
+Description: Every web page calls GET /api/status on load and displays DB entry count
+  + status in the shared nav bar corner. See CC_WEB_GUI_PLAN.md TODO-063.
+
+---
+
+TODO-062: Web GUI — frontend/index.html landing redirect
+Priority: Low
+Status: Open
+Added: 2026-05-19
+Description: Simple /frontend/index.html with <meta refresh> redirect to /web/search.
+  Shown when user hits http://localhost:5174/ directly. See CC_WEB_GUI_PLAN.md TODO-062.
+
+---
+
+TODO-061: Web GUI — add nav links to admin.html and map.html
+Priority: Low
+Status: Open
+Added: 2026-05-19
+Description: Add shared nav bar (or minimal "← App" back-link) to backend/admin.html
+  and gui/resources/map.html. See CC_WEB_GUI_PLAN.md TODO-061.
+
+---
+
+TODO-060: Web GUI — frontend/bootlegs.html Bootleg catalog browser
+Priority: Low
+Status: Open
+Added: 2026-05-19
+Description: Bootleg catalog browser page. API: GET /api/bootlegs, /api/bootlegs/stats,
+  /api/bootlegs/by_lb/<lb>. Filter bar (text/year/format), stats row, paginated table,
+  expandable detail panel per row. See CC_WEB_GUI_PLAN.md TODO-060.
+
+---
+
+TODO-059: Web GUI — frontend/lb_master.html LB Master viewer
+Priority: Medium
+Status: Open
+Added: 2026-05-19
+Description: LB Master status browser. API: GET /api/lb_master, /api/lb_master/stats,
+  /api/lb_master/history/<lb>. Stats bar (counts by status), filter bar, paginated table,
+  inline history expansion on row click. See CC_WEB_GUI_PLAN.md TODO-059.
+
+---
+
+TODO-058: Web GUI — frontend/entry.html Entry detail page
+Priority: High
+Status: Open
+Added: 2026-05-19
+Description: Entry detail page at /web/entry?lb=<lb_number>. Shows entry metadata,
+  checksum table, file list, change history, LB master record, personal notes, and
+  Add to Collection / Forum Preview actions. Linked from Search, Collection, Lookup
+  result rows. See CC_WEB_GUI_PLAN.md TODO-058.
+
+---
+
+TODO-057: Web GUI — Collection tab write operations
+Priority: Medium
+Status: Open
+Added: 2026-05-19
+Description: Add Remove from Collection button (DELETE /api/collection/<lb>) with confirm
+  dialog, Add to Wishlist button for Missing rows (POST /api/wishlist), and counts update
+  after mutations. See CC_WEB_GUI_PLAN.md TODO-057.
+
+---
+
+TODO-056: Web GUI — frontend/collection.html Collection tab (read)
+Priority: High
+Status: Open
+Added: 2026-05-19
+Description: My Collection page with three pill-tab panels: Owned (GET /api/collection),
+  Missing (GET /api/collection/missing), Wishlist (GET /api/wishlist). Filters, pagination,
+  status badges. See CC_WEB_GUI_PLAN.md TODO-056.
+
+---
+
+TODO-055: Web GUI — frontend/lookup.html Lookup tab
+Priority: High
+Status: Open
+Added: 2026-05-19
+Description: Checksum lookup page. Textarea for FFP/MD5/ST5 paste, POST /api/lookup,
+  summary table + detail table, status colour coding, LB links to /web/entry, Copy TSV
+  button. See CC_WEB_GUI_PLAN.md TODO-055.
+
+---
+
+TODO-054: Web GUI — Search tab owned column async load
+Priority: Medium
+Status: Open
+Added: 2026-05-19
+Description: After search results render, fire background GET /api/collection/lb_numbers
+  and update the Owned column cells in-place. Matches _OwnedWorker pattern from the
+  desktop search tab. See CC_WEB_GUI_PLAN.md TODO-054.
+
+---
+
+TODO-053: Web GUI — frontend/search.html Search tab
+Priority: High
+Status: Open
+Added: 2026-05-19
+Description: Main search page. Filter bar (text, field, year, status, xref-only), results
+  table (LB# | Status | Date | Location | Rating | Description | Xref | Owned), client-side
+  sort, pagination, status row colouring, row click → /web/entry. API: GET /api/search,
+  /api/search/years, /api/collection/lb_numbers, /api/checksums/xref_lb_numbers.
+  See CC_WEB_GUI_PLAN.md TODO-053.
+
+---
+
+TODO-052: Web GUI — frontend/utils.js shared JS utilities
+Priority: High
+Status: Open
+Added: 2026-05-19
+Description: Create frontend/utils.js with: apiFetch(), escapeHtml(), statusBadge(),
+  formatDate(), paginate(), debounce(). Used by all web pages.
+  See CC_WEB_GUI_PLAN.md TODO-052.
+
+---
+
+TODO-051: Web GUI — frontend/base.css shared dark theme
+Priority: High
+Status: Open
+Added: 2026-05-19
+Description: Create frontend/base.css porting CSS variables and component styles from
+  backend/admin.html. Components: :root vars, body, nav, data table, pagination, filter
+  bar, buttons, badges, spinner, error banner. See CC_WEB_GUI_PLAN.md TODO-051.
+
+---
+
+TODO-050: Web GUI — Flask routes for frontend static files
+Priority: High
+Status: Open
+Added: 2026-05-19
+Description: Add to backend/app.py: GET / redirect to /web/search; GET /web/<page> serves
+  frontend/<page>.html (allowlist validated); GET /frontend/<path> serves frontend/ dir.
+  Create frontend/ directory. Verify no / route conflict exists.
+  See CC_WEB_GUI_PLAN.md TODO-050.
+
+---
+
 TODO-049: Windows — HiDPI-aware splash screen pixmap
 Priority: Low
 Status: Done
@@ -110,7 +335,11 @@ Status: Done
 Added: 2026-05-18
 Closed: 2026-05-19
 Description: Build a gui/map_tab.py using a QWebEngineView + Leaflet.js to render concert locations from the location_geocoded table as clickable markers. Backend already has GET /api/map/data (to be added to app.py) backed by db.get_map_data(). Filter controls: lb_status, owned, year range, text search. Markers should open a popup with date, location, lb_number, and a link to open the entry. Requires app.py route to be added and a Flask endpoint test.
-Completed: gui/map_tab.py, gui/resources/map.html (Leaflet 1.9.4, markercluster, heatmap), GET /map + GET /api/map/data routes, browser-viewable at http://localhost:5174/map.
+Completed (2026-05-19 phase 1): gui/map_tab.py, gui/resources/map.html (Leaflet 1.9.4, markercluster, heatmap), GET /map + GET /api/map/data routes, browser-viewable at http://localhost:5174/map.
+Completed (2026-05-19 phase 2 — CC_MAP_FEATURE.md fully implemented): local Leaflet assets in
+  gui/resources/leaflet/, QWebChannel bridge (_MapBridge) with "Open in Search" popup button,
+  Viewport Filter toggle + "List in Search" (calls load_lb_list on SearchTab via GET
+  /api/entries/by_lb_list), db.get_entries_by_lb_list(), curator geocoding panel in DB Editor.
 
 ---
 

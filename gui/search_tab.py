@@ -184,6 +184,30 @@ class _OwnedWorker(QThread):
             self.finished.emit([])
 
 
+class _LbListWorker(QThread):
+    """Fetch a specific list of LB entries from /api/entries/by_lb_list."""
+
+    finished = pyqtSignal(list)
+    error = pyqtSignal(str)
+
+    def __init__(self, flask_port: int, lb_numbers: list[int]) -> None:
+        super().__init__()
+        self.flask_port = flask_port
+        self.lb_numbers = lb_numbers
+
+    def run(self) -> None:
+        try:
+            lbs_csv = ",".join(str(n) for n in self.lb_numbers)
+            resp = requests.get(
+                f"http://127.0.0.1:{self.flask_port}/api/entries/by_lb_list",
+                params={"lbs": lbs_csv},
+                timeout=15,
+            )
+            self.finished.emit(resp.json())
+        except Exception as exc:
+            self.error.emit(str(exc))
+
+
 class _XrefWorker(QThread):
     finished = pyqtSignal(object)  # dict: {lb_number: [xref_values]}
 
@@ -494,6 +518,21 @@ class SearchTab(QWidget):
         self._page = 0
         if self._all_results:
             self._render_page()
+
+    def load_lb_list(self, lb_numbers: list[int]) -> None:
+        """Load a specific set of LB numbers directly (used by Map tab viewport filter).
+
+        Args:
+            lb_numbers: List of integer LB numbers to fetch and display.
+        """
+        if not lb_numbers:
+            return
+        self.search_btn.setEnabled(False)
+        self.results_label.setText(f"Loading {len(lb_numbers)} entries…")
+        self._lb_list_worker = _LbListWorker(self.flask_port, lb_numbers)
+        self._lb_list_worker.finished.connect(self._on_results)
+        self._lb_list_worker.error.connect(self._on_error)
+        self._lb_list_worker.start()
 
     # ── Years ─────────────────────────────────────────────────────────────────
 

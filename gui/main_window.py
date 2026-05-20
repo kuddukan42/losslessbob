@@ -165,6 +165,8 @@ class MainWindow(QMainWindow):
             _slog.t("_build_tabs: init MapTab")
             self.map_tab = MapTab(self.flask_port, state_store=self.state_store)
             self.tabs.addTab(self.map_tab, "Map")
+            self.map_tab.open_in_search.connect(self._on_map_open_in_search)
+            self.map_tab.list_in_search.connect(self._on_map_list_in_search)
         except Exception as exc:  # noqa: BLE001
             import logging
             logging.getLogger(__name__).warning("Map tab unavailable: %s", exc)
@@ -294,6 +296,21 @@ class MainWindow(QMainWindow):
         self.tabs.setCurrentIndex(self.tabs.indexOf(self.search_tab))
         self.search_tab.search_field.setText(str(lb_number))
         self.search_tab._do_search()
+
+    def _on_map_open_in_search(self, lb_number: int) -> None:
+        self.tabs.setCurrentIndex(self.tabs.indexOf(self.search_tab))
+        self.search_tab.search_field.setText(str(lb_number))
+        self.search_tab._do_search()
+
+    def _on_map_list_in_search(self, lb_csv: str) -> None:
+        try:
+            lb_numbers = [int(x.strip()) for x in lb_csv.split(",") if x.strip()]
+        except ValueError:
+            return
+        if not lb_numbers:
+            return
+        self.tabs.setCurrentIndex(self.tabs.indexOf(self.search_tab))
+        self.search_tab.load_lb_list(lb_numbers)
 
     def _on_help(self):
         QMessageBox.information(

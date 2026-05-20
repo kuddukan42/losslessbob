@@ -236,7 +236,16 @@
       "Bash(fuser -k 5175/tcp)",
       "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\('markers:', len\\(d.get\\('markers',[]\\)\\)\\)\")",
       "Bash(git *)",
-      "Bash(python3 -m py_compile /home/tjenkins/Documents/losslessbob/backend/app.py /home/tjenkins/Documents/losslessbob/backend/db.py /home/tjenkins/Documents/losslessbob/backend/geocoder.py /home/tjenkins/Documents/losslessbob/gui/main_window.py /home/tjenkins/Documents/losslessbob/gui/setup_tab.py /home/tjenkins/Documents/losslessbob/gui/widgets/state_store.py /home/tjenkins/Documents/losslessbob/main.py)"
+      "Bash(python3 -m py_compile /home/tjenkins/Documents/losslessbob/backend/app.py /home/tjenkins/Documents/losslessbob/backend/db.py /home/tjenkins/Documents/losslessbob/backend/geocoder.py /home/tjenkins/Documents/losslessbob/gui/main_window.py /home/tjenkins/Documents/losslessbob/gui/setup_tab.py /home/tjenkins/Documents/losslessbob/gui/widgets/state_store.py /home/tjenkins/Documents/losslessbob/main.py)",
+      "Bash(curl *)",
+      "Bash(ps *)",
+      "Bash(kill 4134759)",
+      "Bash(DISPLAY=:0 XDG_RUNTIME_DIR=/run/user/1000 nohup .venv/bin/python main.py)",
+      "Bash(echo \"PID: $!\")",
+      "Bash(python3 -m py_compile backend/db.py)",
+      "Bash(python3 -m py_compile gui/setup_tab.py)",
+      "Bash(python3 *)",
+      "Bash(grep -n \"catch.all\\\\|frontend\\\\|dist/\\\\|send_from.*frontend\\\\|route.*/$\" /home/tjenkins/Documents/losslessbob/backend/app.py)"
     ],
     "additionalDirectories": [
       "/home/tjenkins/.ssh",

@@ -953,6 +953,31 @@ def search_entries(query, field="all", year=None, limit=None, db_path=None):
     return results
 
 
+def get_entries_by_lb_list(lb_numbers: list[int], db_path=None) -> list[dict]:
+    """Return search-compatible entry dicts for a specific list of LB numbers.
+
+    Args:
+        lb_numbers: List of integer LB numbers to fetch.
+        db_path: Optional path to the database file.
+
+    Returns:
+        List of entry dicts with the same keys as :func:`search_entries`.
+    """
+    if not lb_numbers:
+        return []
+    conn = get_connection(db_path)
+    placeholders = ",".join("?" * len(lb_numbers))
+    rows = conn.execute(
+        f"SELECT e.lb_number, e.date_str, e.location, e.rating,"
+        f" e.description, e.status, lm.lb_status"
+        f" FROM entries e LEFT JOIN lb_master lm ON lm.lb_number = e.lb_number"
+        f" WHERE e.lb_number IN ({placeholders})"
+        f" ORDER BY e.lb_number",
+        [int(n) for n in lb_numbers],
+    ).fetchall()
+    return [dict(r) for r in rows]
+
+
 def get_entry(lb_number, db_path=None):
     with get_connection(db_path) as conn:
         entry = conn.execute("SELECT * FROM entries WHERE lb_number=?", (lb_number,)).fetchone()

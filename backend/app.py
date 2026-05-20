@@ -2614,6 +2614,35 @@ def create_app() -> Flask:
         resources_dir = (Path(__file__).parent.parent / "gui" / "resources").resolve()
         return send_from_directory(str(resources_dir), "map.html")
 
+    @app.route("/leaflet/<path:filename>")
+    def serve_leaflet(filename: str):
+        """Serve bundled Leaflet JS/CSS assets from gui/resources/leaflet/."""
+        leaflet_dir = (Path(__file__).parent.parent / "gui" / "resources" / "leaflet").resolve()
+        return send_from_directory(str(leaflet_dir), filename)
+
+    @app.route("/api/entries/by_lb_list")
+    def api_entries_by_lb_list():
+        """Return search-compatible entry dicts for a comma-separated list of LB numbers.
+
+        Query params:
+            lbs (str): comma-separated integer LB numbers (e.g. "1234,5678,91011").
+
+        Returns:
+            JSON list of entry dicts matching the requested LB numbers.
+        """
+        raw = request.args.get("lbs", "")
+        try:
+            lb_numbers = [int(x.strip()) for x in raw.split(",") if x.strip()]
+        except ValueError:
+            return jsonify({"error": "invalid lbs parameter — must be comma-separated integers"}), 400
+        lb_numbers = lb_numbers[:500]
+        try:
+            results = database.get_entries_by_lb_list(lb_numbers)
+        except Exception:
+            log.exception("api_entries_by_lb_list failed")
+            return jsonify({"error": "internal_error"}), 500
+        return jsonify(results)
+
     @app.route("/api/map/data")
     def api_map_data():
         """Return geocoded concert entries filtered by status, owned, year, and free text.

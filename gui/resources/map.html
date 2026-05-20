@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LosslessBob &mdash; Map</title>
 
-    <!-- Leaflet 1.9.4 -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Leaflet 1.9.4 — served locally via /leaflet/ Flask route -->
+    <link rel="stylesheet" href="/leaflet/leaflet.css"/>
+    <script src="/leaflet/leaflet.js"></script>
 
-    <!-- Leaflet.markercluster -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
-    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <!-- Leaflet.markercluster 1.5.3 -->
+    <link rel="stylesheet" href="/leaflet/MarkerCluster.css"/>
+    <link rel="stylesheet" href="/leaflet/MarkerCluster.Default.css"/>
+    <script src="/leaflet/leaflet.markercluster.js"></script>
 
-    <!-- Leaflet.heat -->
-    <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+    <!-- Leaflet.heat 0.2.0 -->
+    <script src="/leaflet/leaflet-heat.js"></script>
 
     <style>
         *, *::before, *::after {
@@ -101,6 +101,18 @@
             background: #14375a;
         }
 
+        #filterBar button.active-toggle {
+            background: #c0392b;
+        }
+
+        #filterBar button.active-toggle:hover {
+            background: #e74c3c;
+        }
+
+        #listInSearchBtn {
+            display: none;
+        }
+
         .filter-sep {
             width: 1px;
             height: 20px;
@@ -135,6 +147,22 @@
         .lb-popup .popup-status {
             font-weight: 600;
             text-transform: capitalize;
+        }
+
+        .lb-popup .popup-search-btn {
+            display: inline-block;
+            margin-top: 5px;
+            padding: 3px 8px;
+            background: #1f4e79;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 11px;
+            cursor: pointer;
+        }
+
+        .lb-popup .popup-search-btn:hover {
+            background: #2e6fa3;
         }
 
         /* ---- Owned ring indicator in legend ---- */
@@ -181,6 +209,11 @@
 
         <button onclick="applyFilters()">Apply</button>
         <button id="heatmapToggle" onclick="toggleHeatmap()">Heatmap</button>
+
+        <div class="filter-sep"></div>
+
+        <button id="viewportToggle" onclick="toggleViewportFilter()" title="Show only markers in the current map view">Viewport Filter</button>
+        <button id="listInSearchBtn" onclick="listViewportInSearch()" title="Load visible LBs in the Search tab">List in Search</button>
     </div>
 
     <!-- Map -->
@@ -204,6 +237,19 @@
     const DEFAULT_COLOR = '#FF9800'; // orange — unknown status
 
     // ---------------------------------------------------------------------------
+    // QWebChannel bridge — wires JS to Python when running inside QWebEngineView
+    // ---------------------------------------------------------------------------
+
+    let _bridge = null;  // set once QWebChannel initialises
+
+    function _initBridge() {
+        if (typeof qt === 'undefined' || !qt.webChannelTransport) return;
+        new QWebChannel(qt.webChannelTransport, function(channel) {
+            _bridge = channel.objects.bridge;
+        });
+    }
+
+    // ---------------------------------------------------------------------------
     // Map initialisation
     // ---------------------------------------------------------------------------
 
@@ -219,15 +265,16 @@
     let heatLayer = null;
     let heatmapMode = false;
 
+    // All fetched marker data — retained for viewport filtering without re-fetch
+    let _allMarkerData = [];
+
+    // Viewport filter state
+    let viewportFilterOn = false;
+
     // ---------------------------------------------------------------------------
     // loadMarkers — fetch data and build layers
     // ---------------------------------------------------------------------------
 
-    /**
-     * Build URL query string from a filters object, omitting falsy/empty values.
-     * @param {Object} filters
-     * @returns {string} query string including leading '?' or empty string
-     */
     function buildQuery(filters) {
         const params = new URLSearchParams();
         if (filters.status)   params.set('status',   filters.status);
@@ -239,20 +286,9 @@
         return qs ? '?' + qs : '';
     }
 
-    /**
-     * Fetch map marker data and render cluster + heat layers.
-     * @param {Object} filters - active filter values
-     */
     function loadMarkers(filters) {
-        // Clear existing layers
-        if (clusterLayer) {
-            map.removeLayer(clusterLayer);
-            clusterLayer = null;
-        }
-        if (heatLayer) {
-            map.removeLayer(heatLayer);
-            heatLayer = null;
-        }
+        if (clusterLayer) { map.removeLayer(clusterLayer); clusterLayer = null; }
+        if (heatLayer)    { map.removeLayer(heatLayer);    heatLayer    = null; }
 
         document.getElementById('statsBar').textContent = 'Loading…';
 
@@ -260,94 +296,119 @@
 
         fetch(url)
             .then(function(resp) {
-                if (!resp.ok) {
-                    throw new Error('HTTP ' + resp.status);
-                }
+                if (!resp.ok) throw new Error('HTTP ' + resp.status);
                 return resp.json();
             })
             .then(function(data) {
-                const markers = data.markers || [];
-                const stats   = data.stats   || {};
-
-                // Build cluster group
-                const group = L.markerClusterGroup({
-                    maxClusterRadius: 60,
-                    spiderfyOnMaxZoom: true,
-                    showCoverageOnHover: false,
-                });
-
-                const heatPoints = [];
-
-                markers.forEach(function(m) {
-                    const lat = m.lat;
-                    const lon = m.lon;
-                    if (lat == null || lon == null) return;
-
-                    const color   = STATUS_COLORS[m.lb_status] || DEFAULT_COLOR;
-                    const isOwned = Boolean(m.owned);
-
-                    const circle = L.circleMarker([lat, lon], {
-                        radius:      8,
-                        fillColor:   color,
-                        fillOpacity: 0.85,
-                        color:       isOwned ? 'white' : '#555',
-                        weight:      isOwned ? 3 : 1,
-                    });
-
-                    // Popup HTML
-                    let popupHtml =
-                        '<div class="lb-popup">' +
-                        '<b>LB ' + (m.lb_number || '') + '</b><br>' +
-                        (m.date_str || '') + '<br>' +
-                        (m.location || '') + '<br>';
-
-                    if (m.display_name && m.display_name !== m.location) {
-                        popupHtml += '<em>' + escapeHtml(m.display_name) + '</em><br>';
-                    }
-
-                    popupHtml +=
-                        '<span class="popup-status" style="color:' + color + '">' +
-                        escapeHtml(m.lb_status || 'unknown') + '</span>';
-
-                    if (isOwned) {
-                        popupHtml += ' &nbsp;<span style="color:#FF9800; font-size:11px;">★ owned</span>';
-                    }
-
-                    popupHtml += '</div>';
-
-                    circle.bindPopup(popupHtml);
-                    group.addLayer(circle);
-
-                    heatPoints.push([lat, lon, isOwned ? 1.5 : 1.0]);
-                });
-
-                clusterLayer = group;
-                heatLayer = L.heatLayer(heatPoints, {
-                    radius: 25,
-                    blur: 18,
-                    maxZoom: 10,
-                    gradient: { 0.3: '#4CAF50', 0.6: '#FF9800', 1.0: '#f03' },
-                });
-
-                // Show the correct layer based on current mode
-                if (heatmapMode) {
-                    map.addLayer(heatLayer);
-                } else {
-                    map.addLayer(clusterLayer);
-                }
-
-                // Update stats bar
-                const plotted   = stats.plotted   != null ? stats.plotted   : markers.length;
-                const unique    = stats.unique     != null ? stats.unique    : '–';
-                const unplot    = stats.unplottable != null ? stats.unplottable : '–';
-                document.getElementById('statsBar').textContent =
-                    plotted + ' LBs plotted | ' +
-                    unique  + ' unique locations | ' +
-                    unplot  + ' unplottable';
+                _allMarkerData = data.markers || [];
+                const stats    = data.stats   || {};
+                _buildLayers(_allMarkerData);
+                updateStats(stats, _allMarkerData.length);
+                if (viewportFilterOn) applyViewportFilter();
             })
             .catch(function(err) {
                 document.getElementById('statsBar').textContent = 'Error loading data: ' + err.message;
             });
+    }
+
+    // ---------------------------------------------------------------------------
+    // _buildLayers — (re)build cluster + heat layers from a subset of markers
+    // ---------------------------------------------------------------------------
+
+    function _buildLayers(markers) {
+        if (clusterLayer) { map.removeLayer(clusterLayer); clusterLayer = null; }
+        if (heatLayer)    { map.removeLayer(heatLayer);    heatLayer    = null; }
+
+        const group = L.markerClusterGroup({
+            maxClusterRadius: 60,
+            spiderfyOnMaxZoom: true,
+            showCoverageOnHover: false,
+        });
+
+        const heatPoints = [];
+
+        markers.forEach(function(m) {
+            const lat = m.lat;
+            const lon = m.lon;
+            if (lat == null || lon == null) return;
+
+            const color   = STATUS_COLORS[m.lb_status] || DEFAULT_COLOR;
+            const isOwned = Boolean(m.owned);
+
+            const circle = L.circleMarker([lat, lon], {
+                radius:      8,
+                fillColor:   color,
+                fillOpacity: 0.85,
+                color:       isOwned ? 'white' : '#555',
+                weight:      isOwned ? 3 : 1,
+            });
+
+            // Popup HTML
+            let popupHtml =
+                '<div class="lb-popup">' +
+                '<b>LB ' + escapeHtml(String(m.lb_number || '')) + '</b><br>' +
+                escapeHtml(m.date_str || '') + '<br>' +
+                escapeHtml(m.location || '') + '<br>';
+
+            if (m.display_name && m.display_name !== m.location) {
+                popupHtml += '<em>' + escapeHtml(m.display_name) + '</em><br>';
+            }
+
+            popupHtml +=
+                '<span class="popup-status" style="color:' + color + '">' +
+                escapeHtml(m.lb_status || 'unknown') + '</span>';
+
+            if (isOwned) {
+                popupHtml += ' &nbsp;<span style="color:#FF9800; font-size:11px;">★ owned</span>';
+            }
+
+            const lbNum = m.lb_number;
+            popupHtml +=
+                '<br><button class="popup-search-btn" onclick="openInSearch(' + lbNum + ')">' +
+                'Open in Search</button>';
+
+            popupHtml += '</div>';
+
+            circle.bindPopup(popupHtml);
+            group.addLayer(circle);
+
+            heatPoints.push([lat, lon, isOwned ? 1.5 : 1.0]);
+        });
+
+        clusterLayer = group;
+        heatLayer = L.heatLayer(heatPoints, {
+            radius: 25,
+            blur: 18,
+            maxZoom: 10,
+            gradient: { 0.3: '#4CAF50', 0.6: '#FF9800', 1.0: '#f03' },
+        });
+
+        if (heatmapMode) {
+            map.addLayer(heatLayer);
+        } else {
+            map.addLayer(clusterLayer);
+        }
+    }
+
+    // ---------------------------------------------------------------------------
+    // updateStats — update the stats bar text
+    // ---------------------------------------------------------------------------
+
+    function updateStats(stats, visibleCount) {
+        const plotted   = stats.plotted   != null ? stats.plotted   : _allMarkerData.length;
+        const unique    = stats.unique    != null ? stats.unique    : '–';
+        const unplot    = stats.unplottable != null ? stats.unplottable : '–';
+
+        if (viewportFilterOn && visibleCount !== plotted) {
+            document.getElementById('statsBar').textContent =
+                visibleCount + ' in view of ' + plotted + ' plotted | ' +
+                unique + ' unique locations | ' + unplot + ' unplottable';
+        } else {
+            document.getElementById('statsBar').textContent =
+                plotted + ' LBs plotted | ' +
+                unique + ' unique locations | ' +
+                unplot + ' unplottable';
+        }
     }
 
     // ---------------------------------------------------------------------------
@@ -394,6 +455,70 @@
     }
 
     // ---------------------------------------------------------------------------
+    // Viewport filter — filter displayed markers to the current map bounds
+    // ---------------------------------------------------------------------------
+
+    function toggleViewportFilter() {
+        viewportFilterOn = !viewportFilterOn;
+        const btn     = document.getElementById('viewportToggle');
+        const listBtn = document.getElementById('listInSearchBtn');
+
+        if (viewportFilterOn) {
+            btn.textContent = 'All Markers';
+            btn.classList.add('active-toggle');
+            listBtn.style.display = 'inline-block';
+            applyViewportFilter();
+            map.on('moveend zoomend', applyViewportFilter);
+        } else {
+            btn.textContent = 'Viewport Filter';
+            btn.classList.remove('active-toggle');
+            listBtn.style.display = 'none';
+            map.off('moveend zoomend', applyViewportFilter);
+            _buildLayers(_allMarkerData);
+            const statsEl = document.getElementById('statsBar');
+            // restore full count
+            const plotted = _allMarkerData.length;
+            statsEl.textContent = plotted + ' LBs plotted';
+        }
+    }
+
+    function applyViewportFilter() {
+        if (!viewportFilterOn) return;
+        const bounds = map.getBounds();
+        const visible = _allMarkerData.filter(function(m) {
+            return m.lat != null && m.lon != null && bounds.contains([m.lat, m.lon]);
+        });
+        _buildLayers(visible);
+        updateStats({}, visible.length);
+    }
+
+    // ---------------------------------------------------------------------------
+    // openInSearch — bridge to Python (single LB)
+    // ---------------------------------------------------------------------------
+
+    function openInSearch(lbNumber) {
+        if (_bridge) {
+            _bridge.openInSearch(String(lbNumber));
+        }
+        // No fallback needed when running in a plain browser — button is informational.
+    }
+
+    // ---------------------------------------------------------------------------
+    // listViewportInSearch — send all visible LBs to the Search tab
+    // ---------------------------------------------------------------------------
+
+    function listViewportInSearch() {
+        if (!_bridge) return;
+        const bounds = map.getBounds();
+        const visible = _allMarkerData.filter(function(m) {
+            return m.lat != null && m.lon != null && bounds.contains([m.lat, m.lon]);
+        });
+        if (visible.length === 0) return;
+        const csv = visible.map(function(m) { return m.lb_number; }).join(',');
+        _bridge.listInSearch(csv);
+    }
+
+    // ---------------------------------------------------------------------------
     // Utility
     // ---------------------------------------------------------------------------
 
@@ -411,6 +536,7 @@
     // ---------------------------------------------------------------------------
 
     document.addEventListener('DOMContentLoaded', function() {
+        _initBridge();
         loadMarkers({});
     });
 </script>
