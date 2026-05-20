@@ -68,10 +68,11 @@ losslessbob/
 │   ├── spectrogram_tab.py    # Generate and view per-file SoX spectrograms
 │   ├── dbedit_tab.py         # DB Editor: browse/edit/delete rows, export CSV
 │   ├── theme_tab.py          # Color theme picker and custom color editor
-│   ├── map_tab.py            # World map of LB locations via Leaflet + QWebEngineView
+│   ├── map_tab.py            # World map of LB locations via Leaflet + QWebEngineView; QWebChannel bridge
 │   ├── styles.py             # Generates Qt stylesheets from color dict
 │   ├── resources/
-│   │   └── map.html          # Leaflet map page served at GET /map; fetches /api/map/data
+│   │   ├── map.html          # Leaflet map page served at GET /map; fetches /api/map/data
+│   │   └── leaflet/          # Bundled Leaflet 1.9.4 + markercluster 1.5.3 + leaflet.heat 0.2.0 assets
 │   └── widgets/
 │       ├── state_store.py    # GuiStateStore: column widths + window geometry → data/gui_state.json
 │       └── sort_keys.py      # SortableTableItem + sort_key_for() for typed client-side sort
@@ -80,6 +81,10 @@ losslessbob/
 │   └── test_master_data.py   # MASTER/USER table classification, export/import, SHA + schema-version guards
 ├── tools/
 │   └── geocode_locations.py  # CLI: batch-geocode entries.location via Nominatim (--limit, --retry-failed, --dry-run)
+├── docs/
+│   ├── index.html            # GitHub Pages marketing/landing page
+│   └── screenshots/          # Screenshot placeholders (replace with real app screenshots)
+│       └── README.md         # Guide for which screenshots to capture
 └── data/
     ├── losslessbob.db        # SQLite database
     ├── *_flat_file.txt       # Tab-delimited flat-file (user-provided)
@@ -536,7 +541,9 @@ Indexes: `idx_flat_changelog_release(release_id)`, `idx_flat_changelog_lb(lb_num
 | Method | Route | Description |
 |--------|-------|-------------|
 | GET | `/map` | Serve `gui/resources/map.html` — Leaflet map page (OpenStreetMap tiles, OSM attribution). |
+| GET | `/leaflet/<filename>` | Serve bundled Leaflet JS/CSS from `gui/resources/leaflet/`. |
 | GET | `/api/map/data` | Marker data with optional query filters (`year`, `owned`, `lb_status`). Returns `[{lb_number, lat, lon, date_str, location, display_name, owned}]`. |
+| GET | `/api/entries/by_lb_list` | Fetch search-compatible entry dicts for `?lbs=1,2,3` (comma-separated LB numbers, max 500). Used by Map → List in Search. |
 
 ### Geocoding
 | Method | Route | Description |
@@ -1224,3 +1231,4 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 | 2026-05-18 | Download Missing Pages: `download_pages_range()` in scraper.py; `POST /api/scrape/download_pages`; Row 4 "Download Missing Pages" button in Setup tab scraper grid. (TODO-002) |
 | 2026-05-18 | Bootleg-CD Catalog (LBBCD): `backend/bootleg_scraper.py`; `bootleg_titles` + `bootleg_scrapes` tables (MASTER); MASTER_SCHEMA_VERSION→2; 7 `/api/bootlegs/*` routes; `gui/bootlegs_tab.py` (Bootlegs tab, index 5); 🎵 badge in Search tab; Scrape Bootleg Catalog button + history panel in Setup tab; Bootlegs count in status bar. (TODO-030) |
 | 2026-05-19 | Map feature: location_geocoded table (MASTER) + get_map_data(); backend/geocoder.py (Nominatim); tools/geocode_locations.py CLI; GET /map + /api/map/data + /api/geocode/* routes; gui/map_tab.py + gui/resources/map.html (Leaflet); curator geocoding UI in setup_tab + dbedit_tab; Map tab wired into main_window.py. |
+| 2026-05-19 | Map feature complete (CC_MAP_FEATURE.md): bundled Leaflet assets in gui/resources/leaflet/ (served via GET /leaflet/<filename>); QWebChannel bridge (_MapBridge) in map_tab.py for "Open in Search" popup button + "List in Search" viewport filter; _LbListWorker + SearchTab.load_lb_list() in search_tab.py; get_entries_by_lb_list() in db.py; GET /api/entries/by_lb_list in app.py. |

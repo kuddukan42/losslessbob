@@ -1,3 +1,35 @@
+[2026-05-19] — feat(docs): GitHub Pages marketing website for community advertising
+
+Added
+
+  docs/index.html: Dark-themed landing page showcasing all features, install instructions,
+    screenshot placeholders, and GitHub/release links. Ready for GitHub Pages (docs/ source).
+  docs/screenshots/README.md: Guide listing which screenshots to capture and where to save them.
+
+[2026-05-19] — feat(gui/backend): map feature complete — local Leaflet, QWebChannel, viewport filter, List in Search
+
+Changed
+
+  gui/resources/map.html: replaced CDN Leaflet/markercluster/heat refs with local /leaflet/ paths;
+    added "Open in Search" button to marker popups (calls QWebChannel bridge);
+    added Viewport Filter toggle + "List in Search" button that sends visible LB numbers to Search tab.
+
+Added
+
+  gui/resources/leaflet/: bundled Leaflet 1.9.4, leaflet.markercluster 1.5.3,
+    leaflet.heat 0.2.0 — map now works fully offline (tiles still require network).
+  gui/map_tab.py: _MapBridge(QObject) with openInSearch/listInSearch slots;
+    QWebChannel setup with qwebchannel.js injection from Qt resources;
+    open_in_search and list_in_search pyqtSignals forwarded from bridge.
+  gui/main_window.py: _on_map_open_in_search + _on_map_list_in_search handlers;
+    map_tab signals connected on tab creation.
+  gui/search_tab.py: _LbListWorker QThread + SearchTab.load_lb_list() for
+    direct LB-number loading (used by Map → List in Search).
+  backend/db.py: get_entries_by_lb_list() — fetch entries by LB number list.
+  backend/app.py: GET /api/entries/by_lb_list + GET /leaflet/<filename> routes.
+
+---
+
 [2026-05-19] — fix(backend/gui): security hardening — CC_SECURITY_REVIEW items #1–11
 
 Fixed

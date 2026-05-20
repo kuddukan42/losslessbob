@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LosslessBob Desktop — The Archive, On Your Desktop</title>
+  <meta name="description" content="Cross-platform desktop app for the LosslessBob Bob Dylan lossless archive. Identify recordings by checksum, browse the world map of concerts, verify files, and more." />
+  <meta property="og:title" content="LosslessBob Desktop" />
+  <meta property="og:description" content="Cross-platform checksum lookup tool for the LosslessBob archive. Windows · macOS · Linux." />
+  <meta property="og:type" content="website" />
+  <style>
+    /* ── Reset & base ─────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:        #0e0e0e;
+      --bg2:       #161616;
+      --bg3:       #1e1e1e;
+      --border:    #2a2a2a;
+      --gold:      #c9a84c;
+      --gold-dim:  #a07c30;
+      --gold-glow: rgba(201,168,76,0.15);
+      --text:      #e8e2d4;
+      --muted:     #888;
+      --radius:    10px;
+      --max:       1100px;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Nav ─────────────────────────────────────── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(14,14,14,0.93);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 58px;
+    }
+    .nav-logo {
+      font-family: 'Georgia', serif;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: var(--gold);
+      letter-spacing: 0.03em;
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--text); font-weight: normal; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: var(--muted); font-size: 0.9rem; font-family: sans-serif; }
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+    .nav-cta {
+      background: var(--gold);
+      color: #111 !important;
+      padding: 0.35rem 1rem;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 0.85rem;
+      font-family: sans-serif;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: #e0b85c !important; text-decoration: none !important; }
+
+    /* ── Hero ────────────────────────────────────── */
+    .hero {
+      text-align: center;
+      padding: 100px 2rem 80px;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% 0%, rgba(201,168,76,0.07) 0%, transparent 70%),
+        var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--gold-glow);
+      border: 1px solid var(--gold-dim);
+      color: var(--gold);
+      font-family: sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.2rem;
+      color: var(--text);
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      font-family: sans-serif;
+    }
+    .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--gold);
+      color: #111;
+      padding: 0.75rem 2rem;
+      border-radius: var(--radius);
+      font-weight: bold;
+      font-family: sans-serif;
+      font-size: 1rem;
+      transition: background 0.2s, transform 0.1s;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+    }
+    .btn-primary:hover { background: #e0b85c; text-decoration: none; transform: translateY(-1px); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      padding: 0.75rem 2rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      font-family: sans-serif;
+      font-size: 1rem;
+      transition: border-color 0.2s, transform 0.1s;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+    }
+    .btn-secondary:hover { border-color: var(--gold); text-decoration: none; transform: translateY(-1px); }
+    .hero-platforms {
+      margin-top: 2rem;
+      font-family: sans-serif;
+      font-size: 0.8rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+    .hero-platforms span { color: var(--gold); }
+
+    /* ── Hero screenshot placeholder ─────────────── */
+    .hero-screenshot {
+      max-width: 900px;
+      margin: 3rem auto 0;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.6), 0 0 0 1px var(--border);
+    }
+    .screenshot-bar {
+      background: #222;
+      padding: 10px 14px;
+      display: flex; align-items: center; gap: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .dot { width: 12px; height: 12px; border-radius: 50%; }
+    .dot-r { background: #ff5f57; }
+    .dot-y { background: #ffbd2e; }
+    .dot-g { background: #28c840; }
+    .screenshot-placeholder {
+      background: #1a1a1a;
+      height: 480px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      color: var(--muted);
+      font-family: sans-serif;
+      font-size: 0.9rem;
+      position: relative;
+    }
+    .screenshot-placeholder .ph-label {
+      background: var(--gold-glow);
+      border: 1px dashed var(--gold-dim);
+      color: var(--gold);
+      padding: 0.5rem 1.2rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+    }
+    .screenshot-placeholder svg { opacity: 0.25; }
+
+    /* ── Section wrapper ─────────────────────────── */
+    section { padding: 80px 2rem; }
+    .container { max-width: var(--max); margin: 0 auto; }
+    .section-label {
+      font-family: sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-size: clamp(1.7rem, 3.5vw, 2.5rem);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .section-sub {
+      color: var(--muted);
+      font-family: sans-serif;
+      font-size: 1rem;
+      max-width: 520px;
+    }
+
+    /* ── Features grid ───────────────────────────── */
+    #features { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .feature-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .feature-card:hover {
+      border-color: var(--gold-dim);
+      box-shadow: 0 0 20px var(--gold-glow);
+    }
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .feature-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+    .feature-card p {
+      font-family: sans-serif;
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── Screenshot showcase ─────────────────────── */
+    .showcase { background: var(--bg); }
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    @media (max-width: 700px) { .showcase-grid { grid-template-columns: 1fr; } }
+    .showcase-item { display: flex; flex-direction: column; gap: 1rem; }
+    .showcase-item h3 {
+      font-size: 1.05rem;
+      color: var(--gold);
+    }
+    .showcase-item p {
+      font-family: sans-serif;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+    .ss-frame {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #1a1a1a;
+    }
+    .ss-bar {
+      background: #222;
+      height: 28px;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; padding: 0 10px; gap: 6px;
+    }
+    .ss-dot { width: 9px; height: 9px; border-radius: 50%; }
+    .ss-placeholder {
+      height: 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      color: #444;
+      font-family: sans-serif;
+      font-size: 0.78rem;
+    }
+    .ss-placeholder .ph-tag {
+      background: rgba(201,168,76,0.08);
+      border: 1px dashed #5a4a20;
+      color: #7a6030;
+      padding: 0.3rem 0.7rem;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── Platform / install ───────────────────────── */
+    #install { background: var(--bg2); border-top: 1px solid var(--border); }
+    .install-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .install-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+    .install-card h3 {
+      font-family: sans-serif;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .install-card pre {
+      background: #111;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+      font-size: 0.8rem;
+      color: #aaa;
+      margin-top: 0.75rem;
+      overflow-x: auto;
+      white-space: pre;
+    }
+    .install-card p {
+      font-family: sans-serif;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.5rem;
+    }
+
+    /* ── CTA banner ───────────────────────────────── */
+    .cta-banner {
+      background: linear-gradient(135deg, #1a1200 0%, #0e0e0e 60%);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+      padding: 80px 2rem;
+    }
+    .cta-banner h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      margin-bottom: 1rem;
+    }
+    .cta-banner p {
+      color: var(--muted);
+      font-family: sans-serif;
+      margin-bottom: 2rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ── Footer ───────────────────────────────────── */
+    footer {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      font-family: sans-serif;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+    footer a { color: var(--gold); }
+
+    /* ── Responsive nav ───────────────────────────── */
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Navigation ──────────────────────────────── -->
+<nav>
+  <a class="nav-logo" href="#">LosslessBob<span> Desktop</span></a>
+  <ul class="nav-links">
+    <li><a href="#features">Features</a></li>
+    <li><a href="#screenshots">Screenshots</a></li>
+    <li><a href="#install">Install</a></li>
+    <li><a href="https://github.com/kuddukan42/losslessbob" class="nav-cta">GitHub ↗</a></li>
+  </ul>
+</nav>
+
+<!-- ── Hero ────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-badge">Free &amp; Open Source</div>
+  <h1>The <em>LosslessBob</em> archive,<br>on your desktop.</h1>
+  <p>
+    A cross-platform replacement for the original Windows-only Checksum Lookup tool —
+    built for collectors of Bob Dylan lossless recordings.
+  </p>
+  <div class="hero-actions">
+    <a href="https://github.com/kuddukan42/losslessbob/releases" class="btn-primary">
+      ⬇ Download Latest
+    </a>
+    <a href="https://github.com/kuddukan42/losslessbob" class="btn-secondary">
+      ☆ View on GitHub
+    </a>
+  </div>
+  <p class="hero-platforms">Runs on <span>Windows</span> · <span>macOS</span> · <span>Linux</span></p>
+
+  <!-- Hero screenshot -->
+  <div class="hero-screenshot">
+    <div class="screenshot-bar">
+      <div class="dot dot-r"></div>
+      <div class="dot dot-y"></div>
+      <div class="dot dot-g"></div>
+    </div>
+    <div class="screenshot-placeholder">
+      <svg width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+        <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor"/>
+        <path d="M3 9h18M9 21V9" stroke="currentColor"/>
+      </svg>
+      <div class="ph-label">📸 Replace with: Main window — Lookup tab showing a match result</div>
+      <small>Save as <code>docs/screenshots/hero.png</code> and update src below</small>
+    </div>
+    <!--
+      Once you have a screenshot, replace the .screenshot-placeholder div above with:
+      <img src="screenshots/hero.png" alt="LosslessBob Desktop main window" style="width:100%;display:block;" />
+    -->
+  </div>
+</section>
+
+<!-- ── Features grid ────────────────────────────── -->
+<section id="features">
+  <div class="container">
+    <p class="section-label">What it does</p>
+    <h2 class="section-title">Everything a collector needs.</h2>
+    <p class="section-sub">
+      All the tools you need to work with the LosslessBob archive — in one native desktop app.
+    </p>
+
+    <div class="features-grid">
+
+      <div class="feature-card">
+        <span class="feature-icon">🔍</span>
+        <h3>Checksum Lookup</h3>
+        <p>
+          Paste or load FFP, MD5, or ST5/SHA1 checksum files and instantly identify
+          which LB entry a recording belongs to. See match quality, cross-references,
+          and missing or duplicate files at a glance.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <span class="feature-icon">🗺️</span>
+        <h3>Interactive World Map</h3>
+        <p>
+          Explore the entire archive on an interactive Leaflet map. Every recording
+          plotted by concert location — zoom in, cluster, click for details. Heatmap
+          view shows where Bob played most.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <span class="feature-icon">🔎</span>
+        <h3>Full-Text Search</h3>
+        <p>
+          Search across all entry metadata — dates, venues, setlists, descriptions.
+          Results update live as you type, with sortable columns and one-click detail view.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <span class="feature-icon">✅</span>
+        <h3>File Verification</h3>
+        <p>
+          Point the app at your local audio files and verify them against the official
+          LosslessBob checksums. Broken, missing, or extra files are highlighted immediately.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <span class="feature-icon">📂</span>
+        <h3>Folder Renamer</h3>
+        <p>
+          After a lookup, propose standard LosslessBob-compliant folder names for your
+          recordings. Preview renames before committing, with a full rename history log.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <span class="feature-icon">📡</span>
+        <h3>Offline Archive Mirror</h3>
+        <p>
+          Spider and cache the entire losslessbob.com site locally.
+          Browse entry pages, attachments (.ffp, .txt, .md5), and the LBBCD bootleg
+          catalog — no internet required after the initial crawl.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <span class="feature-icon">🎵</span>
+        <h3>Spectrogram Viewer</h3>
+        <p>
+          Generate SoX spectrograms for any audio file directly from the app.
+          Spot upsamples, lossy re-encodes, or anomalies without leaving LosslessBob Desktop.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <span class="feature-icon">💿</span>
+        <h3>Bootleg-CD Catalog</h3>
+        <p>
+          Browse the full LBBCD bootleg CD index — search by entry, date, or label.
+          Scraped directly from losslessbob.com and stored locally for offline use.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <span class="feature-icon">🌐</span>
+        <h3>Torrent Generation &amp; qBittorrent</h3>
+        <p>
+          Create .torrent files for any LB entry with one click. Directly add them to
+          qBittorrent via its WebUI API — no manual drag-and-drop required.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <span class="feature-icon">📱</span>
+        <h3>Mobile-Friendly Admin Panel</h3>
+        <p>
+          Access a full-featured admin control panel from any device on your local
+          network — trigger imports, check status, manage the database from your phone.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <span class="feature-icon">🎨</span>
+        <h3>Color Themes</h3>
+        <p>
+          Choose from built-in themes or build your own color scheme with the live
+          theme editor. All colors persist across sessions.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <span class="feature-icon">🗄️</span>
+        <h3>Database Editor</h3>
+        <p>
+          Power-user table browser: view, edit, delete any row, and export to CSV.
+          Automatic backup snapshots keep your data safe.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Screenshot showcase ───────────────────────── -->
+<section id="screenshots" class="showcase">
+  <div class="container">
+    <p class="section-label">Screenshots</p>
+    <h2 class="section-title">See it in action.</h2>
+    <p class="section-sub">
+      A look at the tabs you'll use every day.
+    </p>
+
+    <div class="showcase-grid">
+
+      <div class="showcase-item">
+        <h3>Checksum Lookup</h3>
+        <p>Paste a checksum file — the app returns the LB match in seconds.</p>
+        <div class="ss-frame">
+          <div class="ss-bar">
+            <div class="ss-dot dot-r"></div>
+            <div class="ss-dot dot-y"></div>
+            <div class="ss-dot dot-g"></div>
+          </div>
+          <div class="ss-placeholder">
+            <div class="ph-tag">📸 Replace: Lookup tab with a match result</div>
+            <small><code>screenshots/lookup.png</code></small>
+          </div>
+          <!-- Replace with: <img src="screenshots/lookup.png" alt="Lookup tab" style="width:100%;display:block;" /> -->
+        </div>
+      </div>
+
+      <div class="showcase-item">
+        <h3>World Map</h3>
+        <p>Every LosslessBob entry plotted by concert location on an interactive Leaflet map.</p>
+        <div class="ss-frame">
+          <div class="ss-bar">
+            <div class="ss-dot dot-r"></div>
+            <div class="ss-dot dot-y"></div>
+            <div class="ss-dot dot-g"></div>
+          </div>
+          <div class="ss-placeholder">
+            <div class="ph-tag">📸 Replace: Map tab showing clustered markers</div>
+            <small><code>screenshots/map.png</code></small>
+          </div>
+          <!-- Replace with: <img src="screenshots/map.png" alt="Map tab" style="width:100%;display:block;" /> -->
+        </div>
+      </div>
+
+      <div class="showcase-item">
+        <h3>Search</h3>
+        <p>Live full-text search across dates, venues, setlists, and descriptions.</p>
+        <div class="ss-frame">
+          <div class="ss-bar">
+            <div class="ss-dot dot-r"></div>
+            <div class="ss-dot dot-y"></div>
+            <div class="ss-dot dot-g"></div>
+          </div>
+          <div class="ss-placeholder">
+            <div class="ph-tag">📸 Replace: Search tab with results</div>
+            <small><code>screenshots/search.png</code></small>
+          </div>
+          <!-- Replace with: <img src="screenshots/search.png" alt="Search tab" style="width:100%;display:block;" /> -->
+        </div>
+      </div>
+
+      <div class="showcase-item">
+        <h3>Spectrogram Viewer</h3>
+        <p>SoX-powered spectrograms generated from any local FLAC or SHN file.</p>
+        <div class="ss-frame">
+          <div class="ss-bar">
+            <div class="ss-dot dot-r"></div>
+            <div class="ss-dot dot-y"></div>
+            <div class="ss-dot dot-g"></div>
+          </div>
+          <div class="ss-placeholder">
+            <div class="ph-tag">📸 Replace: Spectrogram tab</div>
+            <small><code>screenshots/spectrogram.png</code></small>
+          </div>
+          <!-- Replace with: <img src="screenshots/spectrogram.png" alt="Spectrogram tab" style="width:100%;display:block;" /> -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Install ────────────────────────────────────── -->
+<section id="install">
+  <div class="container">
+    <p class="section-label">Get started</p>
+    <h2 class="section-title">Install in minutes.</h2>
+    <p class="section-sub">
+      Python 3.11+ required. Install dependencies, run once, and the GUI opens automatically.
+    </p>
+
+    <div class="install-grid">
+
+      <div class="install-card">
+        <h3>🪟 Windows</h3>
+        <pre>git clone https://github.com/kuddukan42/losslessbob
+cd losslessbob
+pip install -r requirements.txt
+python main.py</pre>
+        <p>A standalone <code>.exe</code> build is planned — see the GitHub releases page.</p>
+      </div>
+
+      <div class="install-card">
+        <h3>🍎 macOS</h3>
+        <pre>git clone https://github.com/kuddukan42/losslessbob
+cd losslessbob
+pip3 install -r requirements.txt
+python3 main.py</pre>
+        <p>Tested on macOS 13+. PyQt6 wheels available on pip — no Homebrew Qt needed.</p>
+      </div>
+
+      <div class="install-card">
+        <h3>🐧 Linux</h3>
+        <pre>git clone https://github.com/kuddukan42/losslessbob
+cd losslessbob
+pip install -r requirements.txt
+python main.py</pre>
+        <p>Debian/Ubuntu users may need <code>apt install libxcb-cursor0</code> for Qt to start.</p>
+      </div>
+
+    </div>
+
+    <p style="margin-top:2rem; font-family:sans-serif; font-size:0.88rem; color:var(--muted);">
+      Optional: Install <a href="https://sox.sourceforge.net/">SoX</a> for spectrogram generation,
+      and configure qBittorrent credentials in the Setup tab for one-click torrent adding.
+    </p>
+  </div>
+</section>
+
+<!-- ── CTA banner ─────────────────────────────────── -->
+<section class="cta-banner">
+  <h2>Ready to dig into the archive?</h2>
+  <p>
+    Free, open source, and actively maintained. Pull requests and bug reports welcome.
+  </p>
+  <div class="hero-actions">
+    <a href="https://github.com/kuddukan42/losslessbob/releases" class="btn-primary">
+      ⬇ Download Latest Release
+    </a>
+    <a href="https://github.com/kuddukan42/losslessbob" class="btn-secondary">
+      ☆ Star on GitHub
+    </a>
+  </div>
+</section>
+
+<!-- ── Footer ──────────────────────────────────────── -->
+<footer>
+  <p>
+    LosslessBob Desktop is an independent community project and is not affiliated with
+    <a href="http://www.losslessbob.wonderingwhattochoose.com" target="_blank" rel="noopener">losslessbob.wonderingwhattochoose.com</a>.
+  </p>
+  <p style="margin-top:0.5rem;">
+    <a href="https://github.com/kuddukan42/losslessbob">GitHub</a> ·
+    <a href="https://github.com/kuddukan42/losslessbob/issues">Report a Bug</a> ·
+    <a href="https://github.com/kuddukan42/losslessbob/releases">Releases</a>
+  </p>
+</footer>
+
+</body>
+</html>
