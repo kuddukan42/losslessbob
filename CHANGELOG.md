@@ -1,3 +1,11 @@
+[2026-05-20] — chore(release): bump version to 1.0.2
+
+Changed
+
+  gui/main_window.py: VERSION "1.0.1" → "1.0.2"
+
+---
+
 [2026-05-20] — fix(gui): Attachments tab lag — background thread + SQL-join reconcile (BUG-083)
 
 Fixed

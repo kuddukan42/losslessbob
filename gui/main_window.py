@@ -13,7 +13,7 @@ from gui.widgets.state_store import GuiStateStore
 from backend.paths import DATA_DIR
 
 APP_NAME = "LosslessBobLookup"
-VERSION = "1.0.1"
+VERSION = "1.0.2"
 
 
 class MainWindow(QMainWindow):
