@@ -955,6 +955,34 @@ class SetupTab(QWidget):
         torrent_layout.addStretch()
         conn_row.addWidget(torrent_group, stretch=1)
 
+        # ── Web GUI password section (TODO-065) ──────────────────────────────
+        web_pw_group = QGroupBox(self.tr("Web GUI Access"))
+        web_pw_layout = QGridLayout(web_pw_group)
+        web_pw_layout.setHorizontalSpacing(8)
+        web_pw_layout.setVerticalSpacing(6)
+
+        web_pw_layout.addWidget(QLabel(self.tr("Password:")), 0, 0)
+        self.web_password_edit = QLineEdit()
+        self.web_password_edit.setEchoMode(QLineEdit.EchoMode.Password)
+        self.web_password_edit.setPlaceholderText(self.tr("Leave empty to disable auth"))
+        self.web_password_edit.setFixedWidth(200)
+        web_pw_layout.addWidget(self.web_password_edit, 0, 1)
+
+        web_pw_btn_row = QHBoxLayout()
+        self.web_pw_save_btn = QPushButton(self.tr("Save"))
+        self.web_pw_save_btn.clicked.connect(self._on_web_password_save)
+        web_pw_btn_row.addWidget(self.web_pw_save_btn)
+        self.web_pw_clear_btn = QPushButton(self.tr("Clear"))
+        self.web_pw_clear_btn.clicked.connect(self._on_web_password_clear)
+        web_pw_btn_row.addWidget(self.web_pw_clear_btn)
+        web_pw_btn_row.addStretch()
+        web_pw_layout.addLayout(web_pw_btn_row, 1, 0, 1, 2)
+
+        self.web_pw_status_label = QLabel("")
+        web_pw_layout.addWidget(self.web_pw_status_label, 2, 0, 1, 2)
+        web_pw_layout.setColumnStretch(1, 1)
+        conn_row.addWidget(web_pw_group, stretch=1)
+
         layout.addLayout(conn_row)
 
         # ── Flat File History ────────────────────────────────────────────────
@@ -1038,6 +1066,7 @@ class SetupTab(QWidget):
         self._load_qbt_settings()
         self._load_wtrf_settings()
         self._load_tracker_settings()
+        self._load_web_password_status()
 
     def _save_settings(self):
         if self._loading:
@@ -1765,6 +1794,55 @@ class SetupTab(QWidget):
                     self.wtrf_board_spin.setValue(board_id)
                 finally:
                     self._loading = False
+        except Exception:
+            pass
+
+    # ── Web GUI password handlers (TODO-065) ────────────────────────────────
+
+    def _on_web_password_save(self) -> None:
+        pw = self.web_password_edit.text()
+        try:
+            requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/db/settings",
+                json={"web_password": pw},
+                timeout=5,
+            )
+            if pw:
+                self.web_pw_status_label.setText(self.tr("Password set — web UI requires login."))
+                self.web_pw_status_label.setStyleSheet("color: green;")
+            else:
+                self.web_pw_status_label.setText(self.tr("Password cleared — web UI is open access."))
+                self.web_pw_status_label.setStyleSheet("color: orange;")
+            self.web_password_edit.clear()
+        except Exception as exc:
+            self.web_pw_status_label.setText(self.tr("Error: {}").format(exc))
+            self.web_pw_status_label.setStyleSheet("color: red;")
+
+    def _on_web_password_clear(self) -> None:
+        self.web_password_edit.clear()
+        try:
+            requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/db/settings",
+                json={"web_password": ""},
+                timeout=5,
+            )
+            self.web_pw_status_label.setText(self.tr("Password cleared — web UI is open access."))
+            self.web_pw_status_label.setStyleSheet("color: orange;")
+        except Exception as exc:
+            self.web_pw_status_label.setText(self.tr("Error: {}").format(exc))
+            self.web_pw_status_label.setStyleSheet("color: red;")
+
+    def _load_web_password_status(self) -> None:
+        try:
+            resp = requests.get(
+                f"http://127.0.0.1:{self.flask_port}/api/db/settings", timeout=5
+            ).json()
+            if resp.get("web_password") == "set":
+                self.web_pw_status_label.setText(self.tr("Password set — web UI requires login."))
+                self.web_pw_status_label.setStyleSheet("color: green;")
+            else:
+                self.web_pw_status_label.setText(self.tr("No password — web UI is open access."))
+                self.web_pw_status_label.setStyleSheet("color: orange;")
         except Exception:
             pass
 

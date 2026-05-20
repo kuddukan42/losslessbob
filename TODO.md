@@ -64,8 +64,9 @@ Description: For each of the 5 languages: set ui_language in meta, restart app,
 
 TODO-065: Web GUI — web password setting in Setup tab
 Priority: High
-Status: Open
+Status: Done
 Added: 2026-05-19
+Closed: 2026-05-20
 Description: Add "Web GUI Password" QLineEdit (password mode) in Setup tab Network section.
   POSTs to /api/db/settings with {web_password: "..."}. Empty = auth disabled. Add
   web_password to the GET keys list in db_settings() (return "set"/"" not actual value).
@@ -75,8 +76,9 @@ Description: Add "Web GUI Password" QLineEdit (password mode) in Setup tab Netwo
 
 TODO-064: Web GUI — optional basic-auth middleware for web routes
 Priority: High
-Status: Open
+Status: Done
 Added: 2026-05-19
+Closed: 2026-05-20
 Description: Add before_request hook in backend/app.py that enforces HTTP Basic Auth on
   /web/* and /frontend/* routes when meta key web_password is set. API routes (/api/*)
   remain unauthenticated (desktop app calls them directly). Flask already binds to

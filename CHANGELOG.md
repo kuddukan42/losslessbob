@@ -1,3 +1,15 @@
+[2026-05-20] — feat(backend+gui): TODO-064/065 — web GUI basic-auth middleware and Setup tab password control
+
+Added
+
+  backend/app.py: before_request hook (_enforce_web_auth) enforces HTTP Basic Auth on /web/*
+    and /frontend/* routes when meta key web_password is set. /api/* routes remain open.
+    web_password added to db_settings() GET response as "set"/"" (never exposes actual value).
+    import base64 added.
+  gui/setup_tab.py: "Web GUI Access" QGroupBox in the connection row. Password-mode QLineEdit,
+    Save and Clear buttons, status label. _on_web_password_save(), _on_web_password_clear(),
+    and _load_web_password_status() handlers wired up. Status loaded on startup.
+
 [2026-05-20] — feat(gui): TODO-028 — click-to-sort on Rename tab main table
 
 Added

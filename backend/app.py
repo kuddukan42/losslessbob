@@ -1,3 +1,4 @@
+import base64
 import logging
 import os
 import re
@@ -72,6 +73,35 @@ def create_app() -> Flask:
     _slog.t("Flask: create_app start")
     app = Flask(__name__)
     CORS(app)
+
+    # ── Web GUI basic-auth (TODO-064) ─────────────────────────────────────────
+    # Protects /web/* and /frontend/* when meta key web_password is set.
+    # /api/* routes are intentionally left open (desktop app calls them directly).
+    @app.before_request
+    def _enforce_web_auth() -> "Response | None":
+        path = request.path
+        if not (path.startswith("/web/") or path.startswith("/frontend/")):
+            return None
+        try:
+            pw = database.get_meta("web_password") or ""
+        except Exception:
+            pw = ""
+        if not pw:
+            return None
+        auth = request.headers.get("Authorization", "")
+        if auth.startswith("Basic "):
+            try:
+                decoded = base64.b64decode(auth[6:]).decode("utf-8", errors="replace")
+                _, _, supplied = decoded.partition(":")
+                if supplied == pw:
+                    return None
+            except Exception:
+                pass
+        return Response(
+            "Authentication required",
+            401,
+            {"WWW-Authenticate": 'Basic realm="LosslessBob Web"'},
+        )
 
     _slog.t("Flask: init_db start")
     database.init_db()
@@ -211,7 +241,10 @@ def create_app() -> Flask:
                         "force_scrape", "search_page_size",
                         "qbt_host", "qbt_port", "qbt_category", "qbt_tags",
                         "tracker_list", "wtrf_board_id", "ui_language"]
-                return jsonify({k: database.get_meta(k) for k in keys})
+                result = {k: database.get_meta(k) for k in keys}
+                # Return "set" or "" for web_password — never expose the actual value
+                result["web_password"] = "set" if database.get_meta("web_password") else ""
+                return jsonify(result)
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
