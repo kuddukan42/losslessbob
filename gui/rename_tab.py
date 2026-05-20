@@ -12,7 +12,7 @@ from backend.folder_naming import (
 )
 from backend.db import get_entry, get_lb_status
 
-from PyQt6.QtCore import Qt, QAbstractTableModel, QModelIndex, pyqtSignal
+from PyQt6.QtCore import Qt, QAbstractTableModel, QModelIndex, QSortFilterProxyModel, pyqtSignal
 from PyQt6.QtGui import QAction, QColor
 from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QTableView, QPushButton,
@@ -49,6 +49,56 @@ _NFT_DISC_TIPS = {
 
 # Only include these detail statuses when building the folder→LB map
 _MATCH_STATUSES = {"MATCHED", "MATCHED (INCOMPLETE)"}
+
+# Sort rank for the State/Reason column (lower = earlier in ASC sort)
+_STATE_SORT_RANK = {
+    "needs_rename": 0,
+    "has_lb":       1,
+    "wrong_lb":     2,
+    "multiple_ids": 3,
+    "renamed":      4,
+    "no_match":     5,
+}
+
+
+class RenameSortProxy(QSortFilterProxyModel):
+    """QSortFilterProxyModel wrapper for RenameModel with per-column sort logic."""
+
+    def lessThan(self, left: QModelIndex, right: QModelIndex) -> bool:
+        col = left.column()
+        src = self.sourceModel()
+
+        if col == 1:
+            l_row = src.get_row(left.row())
+            r_row = src.get_row(right.row())
+            l_val = Path(l_row[1] if l_row else "").name.lower()
+            r_val = Path(r_row[1] if r_row else "").name.lower()
+            return l_val < r_val
+
+        if col == 2:
+            l_row = src.get_row(left.row())
+            r_row = src.get_row(right.row())
+            l_val = Path(l_row[2] if l_row else "").name.lower()
+            r_val = Path(r_row[2] if r_row else "").name.lower()
+            return l_val < r_val
+
+        if col == 3:
+            def _lb_key(lb_str: str) -> int:
+                if not lb_str or lb_str == "—":
+                    return 999_999
+                nums = re.findall(r'LB-0*(\d+)', lb_str, re.IGNORECASE)
+                return min(int(n) for n in nums) if nums else 999_999
+
+            l_row = src.get_row(left.row())
+            r_row = src.get_row(right.row())
+            return _lb_key(l_row[3] if l_row else "") < _lb_key(r_row[3] if r_row else "")
+
+        if col == 4:
+            l_state = src.get_state(left.row()) or "no_match"
+            r_state = src.get_state(right.row()) or "no_match"
+            return _STATE_SORT_RANK.get(l_state, 99) < _STATE_SORT_RANK.get(r_state, 99)
+
+        return super().lessThan(left, right)
 
 
 def _fmt_lb(lb_num: int, xref_val: int = 0) -> str:
@@ -293,8 +343,12 @@ class RenameTab(QWidget):
         layout.addWidget(self.info_label)
 
         self.model = RenameModel()
+        self.proxy = RenameSortProxy()
+        self.proxy.setSourceModel(self.model)
         self.view = QTableView()
-        self.view.setModel(self.model)
+        self.view.setModel(self.proxy)
+        self.view.setSortingEnabled(True)
+        self.view.sortByColumn(1, Qt.SortOrder.AscendingOrder)
         self.view.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.view.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self.view.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
@@ -797,19 +851,21 @@ class RenameTab(QWidget):
         lb_status = get_lb_status(lb_num) or (row[5] if len(row) > 5 else None)
         return build_standard_name(lb_num, date_str, location, lb_status)
 
-    def _on_cell_clicked(self, index: QModelIndex) -> None:
-        if index.column() != 0:
+    def _on_cell_clicked(self, proxy_index: QModelIndex) -> None:
+        if proxy_index.column() != 0:
             return
-        row = self.model.get_row(index.row())
+        source_index = self.proxy.mapToSource(proxy_index)
+        row = self.model.get_row(source_index.row())
         if row is None:
             return
         new_state = Qt.CheckState.Unchecked if row[0] else Qt.CheckState.Checked
-        self.model.setData(index, new_state, Qt.ItemDataRole.CheckStateRole)
+        self.model.setData(source_index, new_state, Qt.ItemDataRole.CheckStateRole)
 
     def _on_context(self, pos):
-        index = self.view.indexAt(pos)
-        if not index.isValid():
+        proxy_index = self.view.indexAt(pos)
+        if not proxy_index.isValid():
             return
+        index = self.proxy.mapToSource(proxy_index)
         row_idx = index.row()
         row = self.model.get_row(row_idx)
         if not row:

@@ -601,8 +601,9 @@ Description: Lookup tab uses QAbstractTableModel + QTableView, so SortableTableI
 
 TODO-028: Click-to-sort on Rename tab main table
 Priority: Low
-Status: Open
+Status: Done
 Added: 2026-05-18
+Closed: 2026-05-20
 Description: Rename tab uses RenameModel (QAbstractTableModel) + QTableView, so SortableTableItem does not apply. Add a QSortFilterProxyModel wrapper around RenameModel. Implement lessThan() to sort by: Current Folder Name (text), LB Found (lb_number for single-LB rows; first LB numerically for multi-LB rows), Proposed Name (text), State (custom rank: needs_rename < has_lb < wrong_lb < multiple_ids < done). Wire header sectionClicked; default sort by Current Folder Name ASC. Ensure the proxy does not break existing row-state updates (RenameModel.update_state, update_proposed_name) — map proxy indices back to source indices before mutating.
 
 ---

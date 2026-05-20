@@ -1,3 +1,16 @@
+[2026-05-20] — feat(gui): TODO-028 — click-to-sort on Rename tab main table
+
+Added
+
+  gui/rename_tab.py: RenameSortProxy (QSortFilterProxyModel) wraps RenameModel. lessThan()
+    sorts col 1 (Current Folder Name) and col 2 (Proposed Name) by basename text, col 3
+    (LB Found) by first numeric LB (multi-LB rows use smallest LB), col 4 (Reason/State)
+    by state rank (needs_rename → has_lb → wrong_lb → multiple_ids → renamed → no_match).
+    Default sort: Current Folder Name ASC. _on_cell_clicked and _on_context now map
+    proxy→source indices before mutating source model rows.
+
+---
+
 [2026-05-20] — feat(i18n): TODO-069 COMPLETE — .qm files compiled and verified (1067/1067 per language)
 
 Fixed
