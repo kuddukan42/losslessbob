@@ -1,3 +1,24 @@
+BUG-083: Attachments tab extremely slow/laggy after site crawler migration
+Status: Fixed
+File(s): gui/attachments_tab.py
+Reported: 2026-05-20
+Fixed: 2026-05-20
+Description: After migrating attachments storage to the site crawler, the Attachments
+  tab became very slow to load and refresh. The cached view would freeze the GUI for
+  several seconds on every open/refresh.
+Root cause: Two issues: (1) _reconcile_site_files() was called on the main thread and
+  iterated all 24 k+ files in SITE_FILES_DIR via os.scandir/iterdir, building a Python
+  set, then issuing batched SQL UPDATE chunks — all blocking the UI. (2) _refresh_tree()
+  also ran its DB query and data-grouping on the main thread, compounding the freeze.
+Fix: Replaced _reconcile_site_files() filesystem scan with a single SQL UPDATE…IN(SELECT)
+  join against site_inventory (O(index) instead of O(dir scan + 50 SQL statements)).
+  Moved all DB work into _RefreshTreeThread(QThread) so the main thread stays responsive;
+  _on_tree_data_ready() is called on completion and calls _render_tree_page() on the
+  main thread. Also removed the HTTP call to /api/db/stats (replaced by a direct
+  COUNT(DISTINCT lb_number) in the worker thread).
+
+---
+
 BUG-082: build_qm.py produced .qm files that load but return no translations
 Status: Fixed
 File(s): scripts/build_qm.py

@@ -167,6 +167,7 @@ class MainWindow(QMainWindow):
             self.tabs.addTab(self.map_tab, self.tr("Map"))
             self.map_tab.open_in_search.connect(self._on_map_open_in_search)
             self.map_tab.list_in_search.connect(self._on_map_list_in_search)
+            self.setup_tab.curator_mode_changed.connect(self.map_tab.set_curator_mode)
         except Exception as exc:  # noqa: BLE001
             import logging
             logging.getLogger(__name__).warning("Map tab unavailable: %s", exc)

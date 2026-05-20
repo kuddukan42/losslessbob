@@ -9,12 +9,74 @@ from PyQt6.QtWidgets import (
     QPushButton, QTextEdit, QLabel, QStackedWidget, QLineEdit, QListWidget, QMenu,
 )
 
-from backend.paths import SITE_FILES_DIR, attachment_path
+from backend.paths import attachment_path
 import logging
 
 log = logging.getLogger(__name__)
 from backend.scraper import DETAIL_URL
 from backend.db import get_lb_statuses_batch, get_connection
+
+
+class _RefreshTreeThread(QThread):
+    """Background worker: reconciles entry_files with site_inventory via SQL,
+    then fetches the grouped downloaded-files list.
+
+    Emits finished(all_lb_entries: list[dict], total_entries: int).
+    all_lb_entries is a list of {lb_number, files: [{filename, clean_name}]}.
+    """
+
+    finished = pyqtSignal(list, int)
+
+    def run(self) -> None:
+        """Reconcile and fetch; emit result on completion."""
+        try:
+            conn = get_connection()
+            self._reconcile(conn)
+            rows = conn.execute(
+                "SELECT lb_number, filename, clean_name FROM entry_files "
+                "WHERE downloaded=1 ORDER BY lb_number, clean_name"
+            ).fetchall()
+            grouped: dict[int, list[dict]] = {}
+            for r in rows:
+                grouped.setdefault(r["lb_number"], []).append(
+                    {"filename": r["filename"], "clean_name": r["clean_name"]}
+                )
+            all_entries = [
+                {"lb_number": lb, "files": files}
+                for lb, files in sorted(grouped.items())
+            ]
+            # Total LB count from entries table — avoid a network round-trip
+            total = conn.execute(
+                "SELECT COUNT(DISTINCT lb_number) FROM checksums"
+            ).fetchone()[0]
+            self.finished.emit(all_entries, total)
+        except Exception:
+            log.exception("_RefreshTreeThread failed")
+            self.finished.emit([], 0)
+
+    @staticmethod
+    def _reconcile(conn) -> None:
+        """Mark entry_files.downloaded=1 for files present in site_inventory.
+
+        Uses a SQL join on file_url == site_inventory.url instead of scanning
+        the filesystem directory — avoids iterating 24 k+ files on the main thread.
+        """
+        try:
+            cur = conn.execute(
+                """
+                UPDATE entry_files
+                SET downloaded = 1
+                WHERE downloaded = 0
+                  AND file_url IN (
+                      SELECT url FROM site_inventory WHERE status = 'downloaded'
+                  )
+                """
+            )
+            if cur.rowcount:
+                conn.commit()
+                log.debug("_RefreshTreeThread._reconcile: marked %d rows downloaded=1", cur.rowcount)
+        except Exception:
+            log.exception("_RefreshTreeThread._reconcile failed")
 
 
 class _ScrapeThread(QThread):
@@ -63,6 +125,7 @@ class AttachmentsTab(QWidget):
         self.flask_port = flask_port
         self._scrape_thread = None
         self._missing_thread = None
+        self._refresh_thread: _RefreshTreeThread | None = None
         self._tree_loaded = False
         self._missing_loaded = False
         self._cached_count = 0
@@ -249,64 +312,22 @@ class AttachmentsTab(QWidget):
     # Tree (cached) view
     # ------------------------------------------------------------------
 
-    def _reconcile_site_files(self, conn) -> None:
-        """Mark entry_files.downloaded=1 for any file that physically exists in SITE_FILES_DIR.
+    def _refresh_tree(self) -> None:
+        """Kick off a background thread to reconcile and fetch attachment data.
 
-        Called from _refresh_tree() each time the cached view is refreshed so that
-        files downloaded by the site crawler (which writes to SITE_FILES_DIR without
-        updating entry_files.downloaded) are reflected immediately.
+        The main thread stays responsive; the tree renders when the worker finishes.
         """
-        if not SITE_FILES_DIR.exists():
-            return
-        try:
-            on_disk = {f.name for f in SITE_FILES_DIR.iterdir() if f.is_file()}
-            if not on_disk:
-                return
-            # Batch in chunks of 500 to stay within SQLite's variable limit.
-            names = list(on_disk)
-            chunk_size = 500
-            updated = 0
-            for i in range(0, len(names), chunk_size):
-                chunk = names[i:i + chunk_size]
-                placeholders = ",".join("?" * len(chunk))
-                cur = conn.execute(
-                    f"UPDATE entry_files SET downloaded=1 WHERE downloaded=0 AND filename IN ({placeholders})",
-                    chunk,
-                )
-                updated += cur.rowcount
-            if updated:
-                conn.commit()
-                log.debug("reconcile_site_files: marked %d rows downloaded=1", updated)
-        except Exception:
-            log.exception("reconcile_site_files failed")
+        self.top_label.setText(self.tr("Loading cached files…"))
+        self.refresh_btn.setEnabled(False)
+        self._refresh_thread = _RefreshTreeThread()
+        self._refresh_thread.finished.connect(self._on_tree_data_ready)
+        self._refresh_thread.start()
 
-    def _refresh_tree(self):
-        total_entries = 0
-        try:
-            resp = requests.get(f"http://127.0.0.1:{self.flask_port}/api/db/stats", timeout=5)
-            stats = resp.json()
-            total_entries = stats.get("total_lb_numbers", 0)
-        except Exception:
-            pass
-
-        # Build entry list from DB — groups downloaded files by lb_number.
-        conn = get_connection()
-        self._reconcile_site_files(conn)
-        rows = conn.execute(
-            "SELECT lb_number, filename, clean_name FROM entry_files "
-            "WHERE downloaded=1 ORDER BY lb_number, clean_name"
-        ).fetchall()
-        grouped: dict[int, list[dict]] = {}
-        for r in rows:
-            grouped.setdefault(r["lb_number"], []).append(
-                {"filename": r["filename"], "clean_name": r["clean_name"]}
-            )
-        self._all_lb_entries = [
-            {"lb_number": lb, "files": files}
-            for lb, files in sorted(grouped.items())
-        ]
-
-        self._cached_count = len(self._all_lb_entries)
+    def _on_tree_data_ready(self, all_lb_entries: list, total_entries: int) -> None:
+        """Receive background data and render the tree page on the main thread."""
+        self.refresh_btn.setEnabled(True)
+        self._all_lb_entries = all_lb_entries
+        self._cached_count = len(all_lb_entries)
         self.top_label.setText(
             self.tr("Entries with cached files: {} / {}").format(self._cached_count, total_entries)
         )

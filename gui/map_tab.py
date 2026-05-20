@@ -1,100 +1,222 @@
-"""Map tab: world map of LB locations using Leaflet via QWebEngineView."""
+"""Map tab: browser-only map launcher with filters and curator geocoding panel."""
 
 import logging
 
-from PyQt6.QtCore import QFile, QIODeviceBase, QObject, QUrl, pyqtSignal, pyqtSlot
+import requests
+from PyQt6.QtCore import Qt, QThread, pyqtSignal
 from PyQt6.QtGui import QDesktopServices
 from PyQt6.QtWidgets import (
+    QAbstractItemView,
+    QCheckBox,
+    QComboBox,
+    QDialog,
+    QDialogButtonBox,
+    QDoubleSpinBox,
+    QFormLayout,
+    QFrame,
+    QGroupBox,
     QHBoxLayout,
+    QHeaderView,
     QLabel,
+    QLineEdit,
     QPushButton,
+    QSpinBox,
+    QTableWidget,
+    QTableWidgetItem,
     QVBoxLayout,
     QWidget,
 )
-
-try:
-    from PyQt6.QtWebChannel import QWebChannel
-    from PyQt6.QtWebEngineCore import QWebEngineScript
-    from PyQt6.QtWebEngineWidgets import QWebEngineView
-    _WEBENGINE_OK = True
-except ImportError:
-    _WEBENGINE_OK = False
+from PyQt6.QtCore import QUrl
 
 log = logging.getLogger(__name__)
 
-
-def _read_qwebchannel_js() -> str:
-    """Read qwebchannel.js from Qt's built-in resources."""
-    f = QFile(":/qtwebchannel/qwebchannel.js")
-    if f.open(QIODeviceBase.OpenModeFlag.ReadOnly):
-        data = bytes(f.readAll()).decode("utf-8")
-        f.close()
-        return data
-    log.warning("MapTab: could not open :/qtwebchannel/qwebchannel.js")
-    return ""
+_FLASK_PORT = 5174
 
 
-class _MapBridge(QObject):
-    """Qt object registered with QWebChannel; called from JS in the map page.
+# ── Worker threads ─────────────────────────────────────────────────────────────
 
-    Signals are forwarded by :class:`MapTab` to the rest of the GUI.
-    """
+class _GeocodeRunThread(QThread):
+    """POST /api/geocode/run without blocking the GUI."""
 
-    open_in_search = pyqtSignal(int)   # single LB number
-    list_in_search = pyqtSignal(str)   # comma-separated LB numbers
+    finished = pyqtSignal(dict)
 
-    @pyqtSlot(str)
-    def openInSearch(self, lb_number: str) -> None:
-        """Switch the GUI to Search tab and search for lb_number.
+    def __init__(self, flask_port: int, retry_failed: bool) -> None:
+        super().__init__()
+        self.flask_port = flask_port
+        self.retry_failed = retry_failed
 
-        Args:
-            lb_number: String representation of the LB integer (e.g. "1234").
-        """
+    def run(self) -> None:
         try:
-            self.open_in_search.emit(int(lb_number))
-        except (ValueError, TypeError):
-            log.warning("MapBridge.openInSearch: invalid lb_number %r", lb_number)
+            resp = requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/geocode/run",
+                json={"retry_failed": self.retry_failed},
+                timeout=15,
+            )
+            if resp.ok:
+                self.finished.emit(resp.json())
+            elif resp.status_code == 409:
+                self.finished.emit({"error": "already running", "status_code": 409})
+            else:
+                self.finished.emit({"error": resp.text, "status_code": resp.status_code})
+        except Exception as exc:
+            self.finished.emit({"error": str(exc)})
 
-    @pyqtSlot(str)
-    def listInSearch(self, lb_csv: str) -> None:
-        """Load a set of LB numbers into the Search tab.
 
-        Args:
-            lb_csv: Comma-separated LB numbers from the viewport filter.
-        """
-        self.list_in_search.emit(lb_csv)
+class _GeocodeStatusThread(QThread):
+    """Poll GET /api/geocode/status every 2 s while geocoding is running."""
+
+    status_update = pyqtSignal(dict)
+
+    def __init__(self, flask_port: int) -> None:
+        super().__init__()
+        self.flask_port = flask_port
+        self._running = True
+
+    def run(self) -> None:
+        while self._running:
+            try:
+                resp = requests.get(
+                    f"http://127.0.0.1:{self.flask_port}/api/geocode/status",
+                    timeout=5,
+                )
+                self.status_update.emit(resp.json())
+            except Exception:
+                pass
+            self.msleep(2000)
+
+    def stop(self) -> None:
+        """Signal the polling loop to exit on the next iteration."""
+        self._running = False
 
 
-class MapTab(QWidget):
-    """World map of LosslessBob recording locations, rendered via Leaflet in a WebEngine view.
+class _GeoWorker(QThread):
+    """Generic background worker for geocoding API calls."""
 
-    Loads ``http://localhost:{flask_port}/map`` which in turn fetches marker data from
-    ``/api/map/data``.  When PyQt6-WebEngine is unavailable the tab degrades gracefully to
-    a plain-text notice and an "Open in Browser" button.
+    finished = pyqtSignal(object)
+    error = pyqtSignal(str)
 
-    Signals:
-        open_in_search: Emitted when the user clicks "Open in Search" in a marker popup.
-            Carries the integer LB number.
-        list_in_search: Emitted when the user clicks "List in Search" from the viewport
-            filter panel. Carries a comma-separated string of LB numbers.
+    def __init__(self, fn) -> None:
+        super().__init__()
+        self._fn = fn
+
+    def run(self) -> None:
+        try:
+            self.finished.emit(self._fn())
+        except Exception as exc:
+            self.error.emit(str(exc))
+
+
+# ── Dialogs ────────────────────────────────────────────────────────────────────
+
+class PlaceManualDialog(QDialog):
+    """Dialog for manually entering lat/lon coordinates for a location.
 
     Args:
-        flask_port: Port number the local Flask server is listening on.
-        state_store: Optional GuiStateStore instance (reserved for future use).
+        location_text: The raw location string being geocoded (read-only).
+        lat: Pre-filled latitude, or None if not yet geocoded.
+        lon: Pre-filled longitude, or None if not yet geocoded.
+        note: Pre-filled curator note, or empty string.
+        parent: Parent widget.
+    """
+
+    def __init__(
+        self,
+        location_text: str,
+        lat: float | None,
+        lon: float | None,
+        note: str,
+        parent=None,
+    ) -> None:
+        super().__init__(parent)
+        self.setWindowTitle(self.tr("Place Manually"))
+        self.setMinimumWidth(360)
+
+        form = QFormLayout(self)
+        form.setContentsMargins(12, 12, 12, 12)
+        form.setSpacing(8)
+
+        loc_lbl = QLabel(location_text)
+        loc_lbl.setWordWrap(True)
+        form.addRow(self.tr("Location:"), loc_lbl)
+
+        self._lat_spin = QDoubleSpinBox()
+        self._lat_spin.setRange(-90.0, 90.0)
+        self._lat_spin.setDecimals(6)
+        self._lat_spin.setSingleStep(0.0001)
+        self._lat_spin.setValue(lat if lat is not None else 0.0)
+        form.addRow(self.tr("Lat:"), self._lat_spin)
+
+        self._lon_spin = QDoubleSpinBox()
+        self._lon_spin.setRange(-180.0, 180.0)
+        self._lon_spin.setDecimals(6)
+        self._lon_spin.setSingleStep(0.0001)
+        self._lon_spin.setValue(lon if lon is not None else 0.0)
+        form.addRow(self.tr("Lon:"), self._lon_spin)
+
+        self._note_edit = QLineEdit(note)
+        self._note_edit.setPlaceholderText(self.tr("Optional curator note…"))
+        form.addRow(self.tr("Note:"), self._note_edit)
+
+        buttons = QDialogButtonBox(
+            QDialogButtonBox.StandardButton.Save
+            | QDialogButtonBox.StandardButton.Cancel
+        )
+        buttons.accepted.connect(self.accept)
+        buttons.rejected.connect(self.reject)
+        form.addRow(buttons)
+
+        self._location_text = location_text
+
+    @property
+    def location(self) -> str:
+        """The location text that was passed in (read-only)."""
+        return self._location_text
+
+    @property
+    def lat(self) -> float:
+        """Currently selected latitude value."""
+        return self._lat_spin.value()
+
+    @property
+    def lon(self) -> float:
+        """Currently selected longitude value."""
+        return self._lon_spin.value()
+
+    @property
+    def note(self) -> str:
+        """Currently entered note text."""
+        return self._note_edit.text().strip()
+
+
+# ── Main tab widget ────────────────────────────────────────────────────────────
+
+class MapTab(QWidget):
+    """Map tab: opens the Leaflet map in the system browser with optional URL filters.
+
+    Includes curator-only Geocoding and Location Overrides panels, consolidated from
+    the former Setup tab and DB Editor geocoding sections.
+
+    Signals:
+        open_in_search: Stub — retained for backward-compatible signal wiring in
+            main_window.py. Not emitted (map now opens in browser).
+        list_in_search: Stub — same reason.
+
+    Args:
+        flask_port: Port the local Flask server is listening on.
+        state_store: Optional GuiStateStore (reserved for future use).
         parent: Optional Qt parent widget.
     """
 
-    open_in_search = pyqtSignal(int)   # forwarded from _MapBridge
-    list_in_search = pyqtSignal(str)   # forwarded from _MapBridge
+    open_in_search = pyqtSignal(int)   # stub — kept for wiring compatibility
+    list_in_search = pyqtSignal(str)   # stub — kept for wiring compatibility
 
     def __init__(self, flask_port: int, state_store=None, parent: QWidget | None = None) -> None:
         super().__init__(parent)
         self.flask_port = flask_port
         self._state_store = state_store
-        self._webview: "QWebEngineView | None" = None
-        self._bridge: "_MapBridge | None" = None
-        self._channel: "QWebChannel | None" = None
-        self._map_url = QUrl(f"http://localhost:{flask_port}/map")
+        self._geocode_run_thread: _GeocodeRunThread | None = None
+        self._geocode_status_thread: _GeocodeStatusThread | None = None
+        self._geo_workers: list[_GeoWorker] = []
         self._build_ui()
 
     # ------------------------------------------------------------------
@@ -102,103 +224,398 @@ class MapTab(QWidget):
     # ------------------------------------------------------------------
 
     def _build_ui(self) -> None:
-        """Construct the layout based on WebEngine availability."""
+        """Build the full tab layout."""
         layout = QVBoxLayout(self)
-        layout.setContentsMargins(4, 4, 4, 4)
-        layout.setSpacing(4)
+        layout.setContentsMargins(8, 8, 8, 8)
+        layout.setSpacing(8)
 
-        # Top bar — always present
-        top_bar = QHBoxLayout()
-        top_bar.setContentsMargins(0, 0, 0, 0)
-        top_bar.setSpacing(6)
+        # Title
+        title = QLabel(self.tr("Map — Concert Locations"))
+        title.setStyleSheet("font-weight: 700; font-size: 11pt;")
+        layout.addWidget(title)
 
-        title_label = QLabel(self.tr("Map"))
-        title_label.setStyleSheet("font-weight: 700; font-size: 11pt;")
-        top_bar.addWidget(title_label)
-        top_bar.addStretch()
+        sep = QFrame()
+        sep.setFrameShape(QFrame.Shape.HLine)
+        sep.setFrameShadow(QFrame.Shadow.Sunken)
+        layout.addWidget(sep)
 
-        self._open_browser_btn = QPushButton(self.tr("Open in Browser"))
-        self._open_browser_btn.setToolTip(
-            self.tr("Open {} in the system browser").format(self._map_url.toString())
+        # Primary open button
+        open_btn = QPushButton(self.tr("Open Map in Browser"))
+        open_btn.setToolTip(
+            self.tr("Opens http://localhost:{}/map in your default web browser").format(self.flask_port)
         )
-        self._open_browser_btn.clicked.connect(self._open_in_browser)
-        top_bar.addWidget(self._open_browser_btn)
+        open_btn.setMinimumHeight(32)
+        open_btn.clicked.connect(self._open_map)
+        layout.addWidget(open_btn)
 
-        layout.addLayout(top_bar)
+        note = QLabel(self.tr(
+            "The map opens in your default web browser. "
+            "Use the filters below to pre-filter which concerts are shown."
+        ))
+        note.setWordWrap(True)
+        note.setStyleSheet("color: gray; font-style: italic;")
+        layout.addWidget(note)
 
-        if _WEBENGINE_OK:
-            self._refresh_btn = QPushButton(self.tr("Refresh"))
-            self._refresh_btn.setToolTip(self.tr("Reload the map page"))
-            self._refresh_btn.clicked.connect(self._on_refresh)
-            top_bar.insertWidget(top_bar.count() - 1, self._refresh_btn)
+        # Map Filters group
+        filters_box = QGroupBox(self.tr("Map Filters"))
+        fl = QVBoxLayout(filters_box)
+        fl.setSpacing(4)
 
-            self._webview = QWebEngineView(self)
-            self._setup_webchannel()
-            layout.addWidget(self._webview, stretch=1)
-        else:
-            log.warning("PyQt6-WebEngine not available — Map tab running in fallback mode")
-            from PyQt6.QtCore import Qt
+        row1 = QHBoxLayout()
+        row1.addWidget(QLabel(self.tr("Year from:")))
+        self._year_from = QSpinBox()
+        self._year_from.setRange(1900, 2100)
+        self._year_from.setValue(1961)
+        self._year_from.setFixedWidth(70)
+        row1.addWidget(self._year_from)
+        row1.addWidget(QLabel(self.tr("to:")))
+        self._year_to = QSpinBox()
+        self._year_to.setRange(1900, 2100)
+        self._year_to.setValue(2030)
+        self._year_to.setFixedWidth(70)
+        row1.addWidget(self._year_to)
+        row1.addSpacing(16)
+        row1.addWidget(QLabel(self.tr("LB Status:")))
+        self._status_combo = QComboBox()
+        self._status_combo.addItem(self.tr("All"), "")
+        self._status_combo.addItem(self.tr("Public"), "public")
+        self._status_combo.addItem(self.tr("Private"), "private")
+        self._status_combo.addItem(self.tr("Missing"), "missing")
+        row1.addWidget(self._status_combo)
+        row1.addStretch()
+        fl.addLayout(row1)
 
-            fallback_container = QWidget()
-            fallback_layout = QVBoxLayout(fallback_container)
-            fallback_layout.setContentsMargins(0, 0, 0, 0)
+        row2 = QHBoxLayout()
+        self._owned_cb = QCheckBox(self.tr("Owned only"))
+        row2.addWidget(self._owned_cb)
+        row2.addSpacing(16)
+        row2.addWidget(QLabel(self.tr("Text filter:")))
+        self._text_filter = QLineEdit()
+        self._text_filter.setPlaceholderText(self.tr("location or LB# …"))
+        self._text_filter.setFixedWidth(200)
+        row2.addWidget(self._text_filter)
+        row2.addStretch()
+        fl.addLayout(row2)
 
-            notice = QLabel(self.tr("Map tab requires PyQt6-WebEngine — see README to enable"))
-            notice.setAlignment(Qt.AlignmentFlag.AlignCenter)
-            notice.setStyleSheet("color: gray; font-style: italic;")
-            fallback_layout.addStretch()
-            fallback_layout.addWidget(notice)
-            fallback_layout.addStretch()
+        apply_btn = QPushButton(self.tr("Apply Filters and Open Map"))
+        apply_btn.clicked.connect(self._open_filtered_map)
+        fl.addWidget(apply_btn)
 
-            layout.addWidget(fallback_container, stretch=1)
+        layout.addWidget(filters_box)
 
-    def _setup_webchannel(self) -> None:
-        """Configure QWebChannel and inject qwebchannel.js into every loaded page."""
-        self._bridge = _MapBridge()
-        self._bridge.open_in_search.connect(self.open_in_search)
-        self._bridge.list_in_search.connect(self.list_in_search)
+        # Geocoding group (curator-only)
+        self._geocode_box = QGroupBox(self.tr("Geocoding"))
+        geo_layout = QVBoxLayout(self._geocode_box)
+        geo_layout.addWidget(QLabel(
+            self.tr("Geocode entries.location → lat/lon via Nominatim (curator only)")
+        ))
+        geo_opts = QHBoxLayout()
+        self._geo_retry_cb = QCheckBox(self.tr("Retry Failed"))
+        self._geo_retry_cb.setToolTip(
+            self.tr("Re-attempt entries that previously failed geocoding")
+        )
+        geo_opts.addWidget(self._geo_retry_cb)
+        self._geo_run_btn = QPushButton(self.tr("Run Geocoder"))
+        self._geo_run_btn.clicked.connect(self._on_geocode_run)
+        geo_opts.addWidget(self._geo_run_btn)
+        geo_opts.addStretch()
+        geo_layout.addLayout(geo_opts)
+        self._geo_status_label = QLabel(self.tr("Status: idle"))
+        geo_layout.addWidget(self._geo_status_label)
+        self._geocode_box.setVisible(False)
+        layout.addWidget(self._geocode_box)
 
-        self._channel = QWebChannel(self._webview.page())
-        self._channel.registerObject("bridge", self._bridge)
-        self._webview.page().setWebChannel(self._channel)
+        # Location Overrides group (curator-only)
+        self._overrides_box = QGroupBox(self.tr("Location Overrides"))
+        ov_layout = QVBoxLayout(self._overrides_box)
 
-        js_src = _read_qwebchannel_js()
-        if js_src:
-            script = QWebEngineScript()
-            script.setName("qwebchannel_init")
-            script.setSourceCode(js_src)
-            script.setInjectionPoint(QWebEngineScript.InjectionPoint.DocumentCreation)
-            script.setWorldId(QWebEngineScript.ScriptWorldId.MainWorld)
-            self._webview.page().scripts().insert(script)
-        else:
-            log.warning("MapTab: QWebChannel JS not injected — 'Open in Search' unavailable")
+        ov_filter_row = QHBoxLayout()
+        ov_filter_row.addWidget(QLabel(self.tr("Filter:")))
+        self._geo_filter_combo = QComboBox()
+        self._geo_filter_combo.addItem(self.tr("All"), "all")
+        self._geo_filter_combo.addItem(self.tr("Failed"), "failed")
+        self._geo_filter_combo.addItem(self.tr("Low Confidence"), "low_confidence")
+        self._geo_filter_combo.addItem(self.tr("Manual Only"), "manual")
+        ov_filter_row.addWidget(self._geo_filter_combo)
+        self._geo_load_btn = QPushButton(self.tr("Load"))
+        self._geo_load_btn.setToolTip(self.tr("Fetch locations from /api/geocode/locations"))
+        self._geo_load_btn.clicked.connect(self._on_geo_load)
+        ov_filter_row.addWidget(self._geo_load_btn)
+        ov_filter_row.addStretch()
+        ov_layout.addLayout(ov_filter_row)
+
+        self._geo_table = QTableWidget(0, 7)
+        self._geo_table.setHorizontalHeaderLabels([
+            self.tr("Location Text"), self.tr("Source"), self.tr("Confidence"),
+            self.tr("Lat"), self.tr("Lon"), self.tr("Manual?"), self.tr("Note"),
+        ])
+        self._geo_table.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
+        self._geo_table.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
+        hdr = self._geo_table.horizontalHeader()
+        hdr.setSectionResizeMode(0, QHeaderView.ResizeMode.Stretch)
+        for col in range(1, 7):
+            hdr.setSectionResizeMode(col, QHeaderView.ResizeMode.ResizeToContents)
+        self._geo_table.setMinimumHeight(140)
+        self._geo_table.doubleClicked.connect(self._on_geo_row_dblclick)
+        ov_layout.addWidget(self._geo_table)
+
+        self._geo_info_label = QLabel("")
+        self._geo_info_label.setWordWrap(True)
+        ov_layout.addWidget(self._geo_info_label)
+
+        self._overrides_box.setVisible(False)
+        layout.addWidget(self._overrides_box)
+
+        layout.addStretch()
 
     # ------------------------------------------------------------------
-    # Public methods
+    # Public API
     # ------------------------------------------------------------------
 
-    def showEvent(self, event) -> None:  # type: ignore[override]
-        """Load the map URL on first show if WebEngine is available.
+    def set_curator_mode(self, enabled: bool) -> None:
+        """Show or hide curator-only panels.
 
         Args:
-            event: The QShowEvent passed by Qt.
+            enabled: True to show geocoding and overrides groups.
         """
-        if _WEBENGINE_OK and self._webview is not None:
-            current = self._webview.url()
-            if not current.isValid() or current.isEmpty() or current == QUrl("about:blank"):
-                log.debug("MapTab.showEvent: loading %s", self._map_url.toString())
-                self._webview.load(self._map_url)
-        super().showEvent(event)
+        self._geocode_box.setVisible(enabled)
+        self._overrides_box.setVisible(enabled)
 
     # ------------------------------------------------------------------
-    # Slots
+    # Map open helpers
     # ------------------------------------------------------------------
 
-    def _on_refresh(self) -> None:
-        """Reload the WebEngine view."""
-        if self._webview is not None:
-            self._webview.reload()
-
-    def _open_in_browser(self) -> None:
+    def _open_map(self) -> None:
         """Open the map URL in the system default browser."""
-        QDesktopServices.openUrl(self._map_url)
+        QDesktopServices.openUrl(QUrl(f"http://localhost:{self.flask_port}/map"))
+
+    def _open_filtered_map(self) -> None:
+        """Build a filtered map URL from the filter controls and open it."""
+        params: list[str] = []
+        year_from = self._year_from.value()
+        year_to = self._year_to.value()
+        if year_from != 1961:
+            params.append(f"year_min={year_from}")
+        if year_to != 2030:
+            params.append(f"year_max={year_to}")
+        lb_status = self._status_combo.currentData() or ""
+        if lb_status:
+            params.append(f"lb_status={lb_status}")
+        if self._owned_cb.isChecked():
+            params.append("owned=1")
+        q = self._text_filter.text().strip()
+        if q:
+            from urllib.parse import quote
+            params.append(f"q={quote(q)}")
+        base = f"http://localhost:{self.flask_port}/map"
+        url = f"{base}?{'&'.join(params)}" if params else base
+        QDesktopServices.openUrl(QUrl(url))
+
+    # ------------------------------------------------------------------
+    # Geocoder (curator-only)
+    # ------------------------------------------------------------------
+
+    def _on_geocode_run(self) -> None:
+        """Start the Nominatim geocoder in a background thread.
+
+        POSTs to /api/geocode/run; polls status on success.
+        """
+        retry = self._geo_retry_cb.isChecked()
+        self._geo_run_btn.setEnabled(False)
+        self._geo_status_label.setText(self.tr("Status: starting…"))
+        self._geocode_run_thread = _GeocodeRunThread(self.flask_port, retry)
+        self._geocode_run_thread.finished.connect(self._on_geocode_started)
+        self._geocode_run_thread.start()
+
+    def _on_geocode_started(self, result: dict) -> None:
+        """Handle immediate response from POST /api/geocode/run.
+
+        Args:
+            result: JSON response dict including optional error/status_code keys.
+        """
+        if result.get("status_code") == 409 or result.get("already_running"):
+            self._geo_status_label.setText(self.tr("Status: already running"))
+            self._geo_run_btn.setEnabled(True)
+            return
+        if "error" in result and "status_code" not in result:
+            self._geo_status_label.setText(
+                self.tr("Status: error — {}").format(result["error"])
+            )
+            self._geo_run_btn.setEnabled(True)
+            return
+        self._geo_status_label.setText(self.tr("Status: running…"))
+        self._geocode_status_thread = _GeocodeStatusThread(self.flask_port)
+        self._geocode_status_thread.status_update.connect(self._on_geocode_status)
+        self._geocode_status_thread.start()
+
+    def _on_geocode_status(self, status: dict) -> None:
+        """Update the geocode progress label from a polling update.
+
+        Args:
+            status: JSON payload from GET /api/geocode/status.
+        """
+        running = status.get("running", False)
+        done = status.get("done", 0)
+        total = status.get("total", 0)
+        current = status.get("current", "")
+        errors = status.get("errors", 0)
+        succeeded = status.get("succeeded", 0)
+        stage = status.get("stage", "")
+
+        if running:
+            pct = int(done / total * 100) if total else 0
+            parts = [f"{done} / {total}  ({pct}%)"]
+            stage_map = {
+                "querying": self.tr("querying Nominatim…"),
+                "sleeping": self.tr("waiting (rate limit)…"),
+                "saving": self.tr("saving…"),
+                "starting": self.tr("starting…"),
+            }
+            if stage in stage_map:
+                parts.append(stage_map[stage])
+            if current:
+                parts.append(current)
+            remaining = total - done
+            if remaining > 0 and done > 0:
+                eta_s = int(remaining * 1.1)
+                if eta_s >= 3600:
+                    parts.append(self.tr("~{0}h {1}m left").format(
+                        eta_s // 3600, (eta_s % 3600) // 60))
+                elif eta_s >= 60:
+                    parts.append(self.tr("~{0}m {1}s left").format(eta_s // 60, eta_s % 60))
+                else:
+                    parts.append(self.tr("~{}s left").format(eta_s))
+            if succeeded + errors > 0:
+                parts.append(self.tr("{0} ok  |  {1} failed").format(succeeded, errors))
+            self._geo_status_label.setText("  ·  ".join(parts))
+        else:
+            if self._geocode_status_thread is not None:
+                self._geocode_status_thread.stop()
+                self._geocode_status_thread = None
+            self._geo_run_btn.setEnabled(True)
+            self._geo_status_label.setText(
+                self.tr("Done: {0} geocoded, {1} failed").format(succeeded, errors)
+            )
+
+    # ------------------------------------------------------------------
+    # Location Overrides (curator-only)
+    # ------------------------------------------------------------------
+
+    def _on_geo_load(self) -> None:
+        """Load geocoded locations from the backend into the overrides table."""
+        filter_val = self._geo_filter_combo.currentData() or "all"
+        self._geo_load_btn.setEnabled(False)
+        self._geo_info_label.setText(self.tr("Loading…"))
+
+        def _fetch():
+            return requests.get(
+                f"http://127.0.0.1:{self.flask_port}/api/geocode/locations",
+                params={"filter": filter_val},
+                timeout=15,
+            ).json()
+
+        w = _GeoWorker(_fetch)
+        w.finished.connect(self._on_geo_loaded)
+        w.error.connect(self._on_geo_load_error)
+        self._geo_workers.append(w)
+        w.start()
+
+    def _on_geo_loaded(self, data: object) -> None:
+        """Populate the overrides table from the API response.
+
+        Args:
+            data: List of location dicts, or dict with error key.
+        """
+        self._geo_load_btn.setEnabled(True)
+        if isinstance(data, dict) and "error" in data:
+            self._geo_info_label.setText(self.tr("Error: {}").format(data["error"]))
+            return
+        if isinstance(data, dict):
+            data = data.get("locations", [])
+        if not isinstance(data, list):
+            self._geo_info_label.setText(self.tr("Unexpected response from server."))
+            return
+
+        self._geo_table.setRowCount(0)
+        for row in data:
+            r = self._geo_table.rowCount()
+            self._geo_table.insertRow(r)
+            lat = row.get("lat")
+            lon = row.get("lon")
+            for col, val in enumerate([
+                row.get("location_text") or "",
+                row.get("source") or "",
+                str(row.get("confidence") or ""),
+                f"{lat:.6f}" if lat is not None else "",
+                f"{lon:.6f}" if lon is not None else "",
+                self.tr("Yes") if row.get("is_manual") else "",
+                row.get("note") or "",
+            ]):
+                item = QTableWidgetItem(val)
+                item.setFlags(item.flags() & ~Qt.ItemFlag.ItemIsEditable)
+                if col == 0:
+                    item.setData(Qt.ItemDataRole.UserRole, row)
+                self._geo_table.setItem(r, col, item)
+
+        self._geo_info_label.setText(self.tr("{} location(s) loaded.").format(len(data)))
+
+    def _on_geo_load_error(self, msg: str) -> None:
+        """Handle a worker error during location load.
+
+        Args:
+            msg: Error message string from the worker thread.
+        """
+        self._geo_load_btn.setEnabled(True)
+        self._geo_info_label.setText(self.tr("Error: {}").format(msg))
+        log.error("Geo load error: %s", msg)
+
+    def _on_geo_row_dblclick(self) -> None:
+        """Open PlaceManualDialog for the double-clicked row and POST the result."""
+        row = self._geo_table.currentRow()
+        if row < 0:
+            return
+        first_item = self._geo_table.item(row, 0)
+        if first_item is None:
+            return
+        row_data: dict = first_item.data(Qt.ItemDataRole.UserRole) or {}
+        loc_text = row_data.get("location_text") or first_item.text()
+        lat_val: float | None = row_data.get("lat")
+        lon_val: float | None = row_data.get("lon")
+        note_val: str = row_data.get("note") or ""
+
+        dlg = PlaceManualDialog(loc_text, lat_val, lon_val, note_val, parent=self)
+        if dlg.exec() != QDialog.DialogCode.Accepted:
+            return
+
+        payload = {
+            "location": dlg.location,
+            "lat": dlg.lat,
+            "lon": dlg.lon,
+            "note": dlg.note,
+        }
+
+        def _post():
+            return requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/geocode/location",
+                json=payload,
+                timeout=10,
+            ).json()
+
+        def _done(result: dict) -> None:
+            if "error" in result:
+                self._geo_info_label.setText(
+                    self.tr("Save error: {}").format(result["error"])
+                )
+            else:
+                self._geo_info_label.setText(
+                    self.tr("Saved manual placement for: {}").format(loc_text)
+                )
+                self._on_geo_load()
+
+        w = _GeoWorker(_post)
+        w.finished.connect(_done)
+        w.error.connect(
+            lambda e: self._geo_info_label.setText(self.tr("Save error: {}").format(e))
+        )
+        self._geo_workers.append(w)
+        w.start()

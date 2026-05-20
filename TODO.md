@@ -1,3 +1,27 @@
+TODO-074: Map tab rework — browser-only, consolidate geocoding
+Priority: Medium
+Status: Done
+Added: 2026-05-20
+Closed: 2026-05-20
+Description: Removed QWebEngineView from Map tab; map now opens in system browser.
+  Moved geocoding controls (Run Geocoder, location overrides table) from Setup tab
+  and DB Editor tab to Map tab. Map Filters group lets user pre-filter the browser URL.
+  Freed space on Setup and DB Editor tabs.
+
+---
+
+TODO-073: FEAT-01 — CLI / Headless Mode
+Priority: Low
+Status: Done
+Added: 2026-05-20
+Closed: 2026-05-20
+Description: Create cli.py in project root providing headless CLI for LosslessBob.
+  Commands: lookup, search, stats, import, serve. Cross-platform: port-poll instead of
+  time.sleep(), Waitress on Windows, forward-slash M3U paths. On Linux/macOS optionally
+  chmod +x; on Windows invoke as python cli.py.
+
+---
+
 TODO-072: Audio filename reconcile on Lookup and Rename tabs
 Priority: Medium
 Status: Done

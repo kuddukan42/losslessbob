@@ -1,3 +1,42 @@
+[2026-05-20] — fix(gui): Attachments tab lag — background thread + SQL-join reconcile (BUG-083)
+
+Fixed
+
+  gui/attachments_tab.py: Replaced blocking _reconcile_site_files() filesystem scan
+    (24 k+ iterdir() + 50 batched SQL UPDATEs on the main thread) with a single
+    UPDATE…IN(SELECT site_inventory) SQL join. Moved all DB work into
+    _RefreshTreeThread(QThread); main thread stays responsive. Removed HTTP round-trip
+    to /api/db/stats (now uses COUNT(DISTINCT lb_number) in the worker).
+
+---
+
+[2026-05-20] — refactor(gui): Map tab browser-only + geocoding consolidation (TODO-074)
+
+Changed
+
+  gui/map_tab.py: Replaced QWebEngineView with browser-open button. Added Map Filters
+    group (year range, lb_status, owned, text search). Added Geocoding group (Run
+    Geocoder, status polling) and Location Overrides group (table + double-click edit),
+    both curator-only. PyQt6-WebEngine no longer required for the Map tab.
+  gui/setup_tab.py: Removed Geocode Locations group and worker threads (_GeocodeRunThread,
+    _GeocodeStatusThread). Added curator_mode_changed signal. Frees vertical space.
+  gui/dbedit_tab.py: Removed Location Geocoding sub-panel (PlaceManualDialog,
+    _geo_box and all geo methods). Frees vertical space in the DB Editor integrity/aliases
+    section.
+  gui/main_window.py: Connected setup_tab.curator_mode_changed to map_tab.set_curator_mode().
+
+---
+
+[2026-05-20] — feat(cli): FEAT-01 CLI/headless mode — cli.py
+
+Added
+
+  cli.py: New headless CLI entrypoint. Commands: lookup <glob>, search <query>, stats,
+    import <path>, serve. Uses port-poll instead of time.sleep() for cross-platform
+    safety. Uses Waitress on Windows. Flask and PyQt6 never imported in CLI mode.
+
+---
+
 [2026-05-20] — feat(backend+gui): audio filename reconcile on Lookup and Rename tabs
 
 Added

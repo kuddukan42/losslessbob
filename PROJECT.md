@@ -9,7 +9,7 @@
 | Layer | Technology | Version |
 |-------|------------|---------|
 | GUI | PyQt6 | 6.7.1 |
-| Web view (attachments + map) | PyQt6-WebEngine | 6.7.0 |
+| Web view (attachments) | PyQt6-WebEngine | 6.7.0 |
 | REST backend | Flask + Flask-CORS | 3.0.3 / 4.0.1 |
 | WSGI server (optional) | Waitress | 3.0.0 |
 | Database | SQLite3 | (stdlib) |
@@ -30,6 +30,7 @@
 ```
 losslessbob/
 ├── main.py                   # Entrypoint: starts Flask thread, then PyQt6 app
+├── cli.py                    # Headless CLI: lookup / search / stats / import / serve
 ├── run_backend.py            # Headless entrypoint: Flask only, no GUI (phone/LAN use)
 ├── requirements.txt
 ├── PROJECT.md                # This file
@@ -68,7 +69,7 @@ losslessbob/
 │   ├── spectrogram_tab.py    # Generate and view per-file SoX spectrograms
 │   ├── dbedit_tab.py         # DB Editor: browse/edit/delete rows, export CSV
 │   ├── theme_tab.py          # Color theme picker and custom color editor
-│   ├── map_tab.py            # World map of LB locations via Leaflet + QWebEngineView; QWebChannel bridge
+│   ├── map_tab.py            # Map tab: "Open in Browser" button + URL filter builder + curator geocoding panel
 │   ├── i18n.py               # Translation loader: load_language(), supported_languages(); reads gui/locales/*.qm
 │   ├── styles.py             # Generates Qt stylesheets from color dict
 │   ├── locales/              # Qt Linguist translation files (.ts source + .qm compiled binary per language)
@@ -1240,3 +1241,4 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 | 2026-05-19 | Map feature complete (CC_MAP_FEATURE.md): bundled Leaflet assets in gui/resources/leaflet/ (served via GET /leaflet/<filename>); QWebChannel bridge (_MapBridge) in map_tab.py for "Open in Search" popup button + "List in Search" viewport filter; _LbListWorker + SearchTab.load_lb_list() in search_tab.py; get_entries_by_lb_list() in db.py; GET /api/entries/by_lb_list in app.py. |
 | 2026-05-19 | i18n infrastructure (TODO-067): gui/i18n.py (load_language, supported_languages); gui/locales/ directory for .ts/.qm files; ui_language meta key; Preferences group in Setup tab; startup language load in main.py; "ui_language" added to GET /api/db/settings. |
 | 2026-05-20 | Audio filename reconcile: db_filename added to lookup_checksums() detail dicts; POST /api/checksums/reconcile_audio + apply_reconcile_audio routes; gui/widgets/reconcile_dialog.py (AudioReconcileDialog); "Reconcile Audio Files" button on Lookup tab (auto-enabled on filename mismatch) and Rename tab (_ReconcileAudioWorker scans checksum files in checked folders). |
+| 2026-05-20 | Map tab rework (TODO-074): map_tab.py rewritten as browser-only (no QWebEngineView); Open Map in Browser button + Map Filters group (year, lb_status, owned, text); Geocoding group + Location Overrides group moved from setup_tab/dbedit_tab; curator_mode_changed signal added to SetupTab; Tech Stack updated (WebEngine for attachments only). |
