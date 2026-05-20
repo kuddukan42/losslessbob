@@ -2871,6 +2871,64 @@ def create_app() -> Flask:
         _threading.Thread(target=_do_restart, daemon=True).start()
         return jsonify({"ok": True, "message": "Restarting…"}), 202
 
+    _AUDIO_EXTS = frozenset({
+        ".flac", ".shn", ".ape", ".wav", ".mp3", ".ogg", ".aiff", ".wv", ".m4a",
+    })
+
+    @app.route("/api/checksums/reconcile_audio", methods=["POST"])
+    def reconcile_audio():
+        """Validate proposed audio file renames against the filesystem.
+
+        Accepts a list of {checksum, input_filename, db_filename, folder} dicts.
+        Returns each proposal annotated with status: ok | from_missing | to_exists.
+        Only audio file extensions are processed; others are silently skipped.
+        """
+        try:
+            proposals_in = (request.get_json() or {}).get("proposals", [])
+            proposals_out = []
+            for p in proposals_in:
+                db_fn = p.get("db_filename", "")
+                if Path(db_fn).suffix.lower() not in _AUDIO_EXTS:
+                    continue
+                folder = Path(p["folder"])
+                from_path = folder / p["input_filename"]
+                to_path = folder / db_fn
+                if not from_path.exists():
+                    status = "from_missing"
+                elif to_path.exists() and to_path.resolve() != from_path.resolve():
+                    status = "to_exists"
+                else:
+                    status = "ok"
+                proposals_out.append({
+                    **p,
+                    "from": str(from_path),
+                    "to": str(to_path),
+                    "status": status,
+                })
+            return jsonify({"proposals": proposals_out})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/checksums/apply_reconcile_audio", methods=["POST"])
+    def apply_reconcile_audio():
+        """Apply a list of {from, to} file renames on disk.
+
+        Returns {applied, errors} where applied is the count of successful renames.
+        """
+        try:
+            renames = (request.get_json() or {}).get("renames", [])
+            applied = 0
+            errors = []
+            for r in renames:
+                try:
+                    Path(r["from"]).rename(r["to"])
+                    applied += 1
+                except Exception as e:
+                    errors.append(f"{Path(r['from']).name}: {e}")
+            return jsonify({"applied": applied, "errors": errors})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
     _slog.t("Flask: create_app done")
     return app
 

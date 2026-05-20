@@ -1,3 +1,27 @@
+TODO-072: Audio filename reconcile on Lookup and Rename tabs
+Priority: Medium
+Status: Done
+Added: 2026-05-20
+Closed: 2026-05-20
+Description: After a lookup, offer "Reconcile Audio Files" button that renames audio files
+  on disk to match canonical filenames in the checksum DB. Available on Lookup tab (auto-enabled
+  when mismatches are found) and Rename tab (scans checksum files in checked folders).
+  Backend: POST /api/checksums/reconcile_audio + apply_reconcile_audio. GUI: AudioReconcileDialog
+  in gui/widgets/reconcile_dialog.py. db_filename field added to lookup detail dicts.
+
+---
+
+TODO-071: FEAT-02 — Fuzzy Filename Matching Fallback
+Priority: Low
+Status: Cancelled
+Added: 2026-05-20
+Closed: 2026-05-20
+Description: Fuzzy filename matching for NOT FOUND checksums using rapidfuzz.
+  Cancelled — not useful. Lookup matches on checksum only; if the checksum doesn't
+  match, a similar filename doesn't confirm anything about the recording content.
+
+---
+
 TODO-066: Web GUI — docs update after web UI ships
 Priority: Low
 Status: Open

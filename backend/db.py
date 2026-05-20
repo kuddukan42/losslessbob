@@ -686,6 +686,7 @@ def lookup_checksums(parsed_entries, db_path=None):
                 detail.append({
                     "checksum": chk,
                     "filename": fname,
+                    "db_filename": m["filename"],
                     "type": chk_type,
                     "lb_number": lb,
                     "xref": m["xref"],
@@ -698,6 +699,7 @@ def lookup_checksums(parsed_entries, db_path=None):
             detail.append({
                 "checksum": chk,
                 "filename": fname,
+                "db_filename": None,
                 "type": chk_type,
                 "lb_number": None,
                 "xref": 0,
@@ -710,7 +712,7 @@ def lookup_checksums(parsed_entries, db_path=None):
     # Append bloom-filtered definite misses as NOT FOUND without querying SQLite
     for chk, fname, chk_type in definite_misses:
         detail.append({
-            "checksum": chk, "filename": fname, "type": chk_type,
+            "checksum": chk, "filename": fname, "db_filename": None, "type": chk_type,
             "lb_number": None, "xref": 0, "status": "NOT FOUND",
             "is_duplicate": False, "missing_from_set": [], "detail_url": None,
         })

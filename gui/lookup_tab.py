@@ -417,6 +417,15 @@ class LookupTab(QWidget):
         self.clear_results_btn.clicked.connect(self._on_clear_results)
         btn_layout.addWidget(self.clear_results_btn)
 
+        self.reconcile_audio_btn = QPushButton(self.tr("Reconcile Audio Files"))
+        self.reconcile_audio_btn.setToolTip(
+            self.tr("Rename audio files on disk to match the canonical filenames in the checksum DB.\n"
+                    "Only available when matched results contain filename differences.")
+        )
+        self.reconcile_audio_btn.setEnabled(False)
+        self.reconcile_audio_btn.clicked.connect(self._on_reconcile_audio)
+        btn_layout.addWidget(self.reconcile_audio_btn)
+
         self.generate_btn = QPushButton(self.tr("Generate Missing Checksums"))
         self.generate_btn.setToolTip(
             self.tr("Generate .md5 and .ffp files for the folder of the selected listbox item,\n"
@@ -662,6 +671,82 @@ class LookupTab(QWidget):
         self.scan_tree_btn.setEnabled(True)
         self.status_label.setText(self.tr("Scan error: {}").format(msg))
 
+    def _on_reconcile_audio(self):
+        """Rename audio files on disk to match the canonical filenames stored in the checksum DB."""
+        _AUDIO_EXTS = {".flac", ".shn", ".ape", ".wav", ".mp3", ".ogg", ".aiff", ".wv", ".m4a"}
+        proposals = []
+        seen = set()
+        for d in self._last_detail:
+            if d.get("status") not in ("MATCHED", "DUPLICATE"):
+                continue
+            sf = d.get("source_file")
+            if not sf:
+                continue
+            input_fn = d.get("filename", "")
+            db_fn = d.get("db_filename", "")
+            if not input_fn or not db_fn or input_fn == db_fn:
+                continue
+            if Path(db_fn).suffix.lower() not in _AUDIO_EXTS:
+                continue
+            folder = str(Path(sf).parent)
+            key = (folder, input_fn, db_fn)
+            if key in seen:
+                continue
+            seen.add(key)
+            proposals.append({
+                "checksum": d.get("checksum", ""),
+                "input_filename": input_fn,
+                "db_filename": db_fn,
+                "folder": folder,
+            })
+
+        if not proposals:
+            self.status_label.setText(self.tr("No audio filename mismatches found in matched results."))
+            return
+
+        try:
+            r = requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/checksums/reconcile_audio",
+                json={"proposals": proposals}, timeout=15,
+            ).json()
+        except Exception as e:
+            self.status_label.setText(self.tr("Reconcile error: {}").format(e))
+            return
+
+        if "error" in r:
+            self.status_label.setText(self.tr("Reconcile error: {}").format(r["error"]))
+            return
+
+        all_proposals = r.get("proposals", [])
+        if not all_proposals:
+            self.status_label.setText(
+                self.tr("No renameable files found — files may already be correctly named or missing from disk.")
+            )
+            return
+
+        from gui.widgets.reconcile_dialog import AudioReconcileDialog
+        dlg = AudioReconcileDialog(all_proposals, parent=self)
+        if dlg.exec() != QDialog.DialogCode.Accepted:
+            return
+
+        selected = dlg.get_selected_renames()
+        if not selected:
+            return
+
+        try:
+            result = requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/checksums/apply_reconcile_audio",
+                json={"renames": selected}, timeout=30,
+            ).json()
+            applied = result.get("applied", 0)
+            errors = result.get("errors", [])
+            msg = self.tr("Renamed {} audio file(s).").format(applied)
+            if errors:
+                msg += self.tr("  {} error(s): {}").format(len(errors), errors[0])
+            self.status_label.setText(msg)
+        except Exception as e:
+            self.status_label.setText(self.tr("Apply error: {}").format(e))
+
     def _on_clear_list(self):
         self._all_paths.clear()
         self._no_checksum_folders.clear()
@@ -685,6 +770,7 @@ class LookupTab(QWidget):
         self._folder_filter = None
         self._summary_filter_lbs.clear()
         self._update_filter_labels()
+        self.reconcile_audio_btn.setEnabled(False)
 
     def _on_listbox_context(self, pos):
         menu = QMenu(self)
@@ -1275,6 +1361,18 @@ class LookupTab(QWidget):
 
         folders = list(dict.fromkeys(str(Path(p).parent) for p in self._all_paths))
         self.lookup_completed.emit(detail_list, folders)
+
+        # Enable reconcile button if any matched row has a filename mismatch and a known source
+        _AUDIO_EXTS = {".flac", ".shn", ".ape", ".wav", ".mp3", ".ogg", ".aiff", ".wv", ".m4a"}
+        has_mismatch = any(
+            d.get("status") in ("MATCHED", "DUPLICATE")
+            and d.get("source_file")
+            and d.get("db_filename")
+            and d.get("filename") != d.get("db_filename")
+            and Path(d.get("db_filename", "")).suffix.lower() in _AUDIO_EXTS
+            for d in detail_list
+        )
+        self.reconcile_audio_btn.setEnabled(has_mismatch)
 
     def _append_no_checksum_summary_rows(self):
         """Legacy method kept for compatibility; rows are now built inside _on_lookup_done."""

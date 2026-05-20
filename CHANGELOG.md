@@ -1,3 +1,28 @@
+[2026-05-20] — feat(backend+gui): audio filename reconcile on Lookup and Rename tabs
+
+Added
+
+  backend/db.py: lookup_checksums() MATCHED detail dicts now include db_filename — the
+    canonical filename stored in the checksums table. NOT FOUND dicts include db_filename: null.
+
+  backend/app.py: POST /api/checksums/reconcile_audio — validates proposed audio renames
+    against the filesystem (ok | from_missing | to_exists per proposal, audio exts only).
+    POST /api/checksums/apply_reconcile_audio — executes Path.rename() for each approved pair.
+
+  gui/widgets/reconcile_dialog.py: AudioReconcileDialog — shared preview dialog showing
+    checkbox | Current Filename | DB Canonical Filename | Checksum. Pre-checks ok proposals,
+    flags problematic ones in yellow. Returns only checked ok renames via get_selected_renames().
+
+  gui/lookup_tab.py: "Reconcile Audio Files" button — enabled after a lookup when any MATCHED
+    row has a filename differing from the DB canonical name. Builds proposals from _last_detail
+    + source_file path, calls reconcile API, shows AudioReconcileDialog, applies renames.
+
+  gui/rename_tab.py: "Reconcile Audio Files" button — _ReconcileAudioWorker scans checksum
+    files (.ffp/.md5/.st5/.sha1/.shn) in each checked folder, runs /api/lookup, extracts
+    filename mismatches, then follows the same reconcile → dialog → apply flow.
+
+---
+
 [2026-05-20] — feat(backend+gui): TODO-064/065 — web GUI basic-auth middleware and Setup tab password control
 
 Added

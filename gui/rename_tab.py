@@ -12,13 +12,13 @@ from backend.folder_naming import (
 )
 from backend.db import get_entry, get_lb_status
 
-from PyQt6.QtCore import Qt, QAbstractTableModel, QModelIndex, QSortFilterProxyModel, pyqtSignal
+from PyQt6.QtCore import Qt, QAbstractTableModel, QModelIndex, QSortFilterProxyModel, QThread, pyqtSignal
 from PyQt6.QtGui import QAction, QColor
 from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QTableView, QPushButton,
     QAbstractItemView, QHeaderView, QMessageBox, QMenu, QLabel,
     QInputDialog, QDialog, QFormLayout, QComboBox, QTextEdit,
-    QDialogButtonBox, QSpinBox,
+    QDialogButtonBox, QSpinBox, QApplication,
 )
 
 HEADERS = ["Rename", "Current Folder Name", "Proposed New Name", "LB Found", "Reason"]
@@ -165,6 +165,80 @@ def _row_state(folder_path: str, lb_str: str) -> str:
     if _has_wrong_lb(folder_name, lb_str):
         return "wrong_lb"
     return "needs_rename"
+
+
+class _ReconcileAudioWorker(QThread):
+    """Scans folders for checksum files, runs a lookup, and returns filename-mismatch proposals."""
+
+    finished = pyqtSignal(list)
+    error    = pyqtSignal(str)
+
+    _CHECKSUM_EXTS = {".ffp", ".md5", ".st5", ".sha1", ".shn"}
+    _AUDIO_EXTS    = {".flac", ".shn", ".ape", ".wav", ".mp3", ".ogg", ".aiff", ".wv", ".m4a"}
+
+    def __init__(self, flask_port: int, folder_paths: list):
+        super().__init__()
+        self._flask_port  = flask_port
+        self._folder_paths = folder_paths
+
+    def run(self):
+        try:
+            checksum_to_folder: dict = {}
+            parts: list = []
+            for folder in self._folder_paths:
+                fp = Path(folder)
+                if not fp.is_dir():
+                    continue
+                for cf in sorted(fp.iterdir()):
+                    if not (cf.is_file() and cf.suffix.lower() in self._CHECKSUM_EXTS):
+                        continue
+                    try:
+                        content = cf.read_text(errors="replace")
+                        parts.append(content)
+                        for m in re.finditer(r'\b([0-9a-fA-F]{32,64})\b', content):
+                            checksum_to_folder.setdefault(m.group(1).lower(), folder)
+                    except Exception:
+                        pass
+
+            if not parts:
+                self.finished.emit([])
+                return
+
+            resp = requests.post(
+                f"http://127.0.0.1:{self._flask_port}/api/lookup",
+                json={"text": "\n".join(parts)},
+                timeout=30,
+            ).json()
+
+            proposals = []
+            seen: set = set()
+            for d in resp.get("detail", []):
+                if d.get("status") not in ("MATCHED", "DUPLICATE"):
+                    continue
+                input_fn = d.get("filename", "")
+                db_fn    = d.get("db_filename", "")
+                if not input_fn or not db_fn or input_fn == db_fn:
+                    continue
+                if Path(db_fn).suffix.lower() not in self._AUDIO_EXTS:
+                    continue
+                chk    = (d.get("checksum") or "").lower()
+                folder = checksum_to_folder.get(chk)
+                if not folder:
+                    continue
+                key = (folder, input_fn, db_fn)
+                if key in seen:
+                    continue
+                seen.add(key)
+                proposals.append({
+                    "checksum": chk,
+                    "input_filename": input_fn,
+                    "db_filename": db_fn,
+                    "folder": folder,
+                })
+
+            self.finished.emit(proposals)
+        except Exception as e:
+            self.error.emit(str(e))
 
 
 class RenameModel(QAbstractTableModel):
@@ -334,6 +408,7 @@ class RenameTab(QWidget):
         self._linked_rows: set[int] = set()
         # Curator flag — fetched lazily; None means not yet checked
         self._is_curator: bool | None = None
+        self._reconcile_worker: _ReconcileAudioWorker | None = None
         self._build_ui()
 
     def _build_ui(self):
@@ -410,6 +485,14 @@ class RenameTab(QWidget):
         )
         self.standardize_btn.clicked.connect(self._on_standardize_selected)
         btn_row.addWidget(self.standardize_btn)
+
+        self.reconcile_audio_btn = QPushButton(self.tr("Reconcile Audio Files"))
+        self.reconcile_audio_btn.setToolTip(
+            self.tr("Scan checksum files in checked folders and rename audio files\n"
+                    "to match canonical filenames in the checksum DB.")
+        )
+        self.reconcile_audio_btn.clicked.connect(self._on_reconcile_audio)
+        btn_row.addWidget(self.reconcile_audio_btn)
 
         btn_row.addStretch()
         layout.addLayout(btn_row)
@@ -1104,6 +1187,89 @@ class RenameTab(QWidget):
 
     def resize_columns_to_font(self) -> None:
         self.view.resizeColumnsToContents()
+
+    def _on_reconcile_audio(self):
+        """Scan checksum files in checked folders and propose audio file renames to DB canonical names."""
+        folder_paths = []
+        seen: set = set()
+        for i in range(self.model.rowCount()):
+            row = self.model.get_row(i)
+            if not row or not row[0]:
+                continue
+            fp = str(row[1])
+            if fp not in seen:
+                seen.add(fp)
+                folder_paths.append(fp)
+
+        if not folder_paths:
+            self.status_label.setText(self.tr("Check one or more rows to scan their folders."))
+            return
+
+        self.reconcile_audio_btn.setEnabled(False)
+        self.status_label.setText(
+            self.tr("Scanning {} folder(s) for checksum files…").format(len(folder_paths))
+        )
+        QApplication.processEvents()
+
+        self._reconcile_worker = _ReconcileAudioWorker(self._flask_port, folder_paths)
+        self._reconcile_worker.finished.connect(self._on_reconcile_proposals)
+        self._reconcile_worker.error.connect(self._on_reconcile_error)
+        self._reconcile_worker.start()
+
+    def _on_reconcile_proposals(self, proposals: list):
+        self.reconcile_audio_btn.setEnabled(True)
+        if not proposals:
+            self.status_label.setText(
+                self.tr("No audio filename mismatches found — files may already be correctly named.")
+            )
+            return
+
+        try:
+            r = requests.post(
+                f"http://127.0.0.1:{self._flask_port}/api/checksums/reconcile_audio",
+                json={"proposals": proposals}, timeout=15,
+            ).json()
+        except Exception as e:
+            self.status_label.setText(self.tr("Reconcile error: {}").format(e))
+            return
+
+        if "error" in r:
+            self.status_label.setText(self.tr("Reconcile error: {}").format(r["error"]))
+            return
+
+        all_proposals = r.get("proposals", [])
+        if not all_proposals:
+            self.status_label.setText(
+                self.tr("No renameable files found — files may be missing from disk.")
+            )
+            return
+
+        from gui.widgets.reconcile_dialog import AudioReconcileDialog
+        dlg = AudioReconcileDialog(all_proposals, parent=self)
+        if dlg.exec() != QDialog.DialogCode.Accepted:
+            return
+
+        selected = dlg.get_selected_renames()
+        if not selected:
+            return
+
+        try:
+            result = requests.post(
+                f"http://127.0.0.1:{self._flask_port}/api/checksums/apply_reconcile_audio",
+                json={"renames": selected}, timeout=30,
+            ).json()
+            applied = result.get("applied", 0)
+            errors = result.get("errors", [])
+            msg = self.tr("Renamed {} audio file(s).").format(applied)
+            if errors:
+                msg += self.tr("  {} error(s): {}").format(len(errors), errors[0])
+            self.status_label.setText(msg)
+        except Exception as e:
+            self.status_label.setText(self.tr("Apply error: {}").format(e))
+
+    def _on_reconcile_error(self, msg: str):
+        self.reconcile_audio_btn.setEnabled(True)
+        self.status_label.setText(self.tr("Reconcile scan error: {}").format(msg))
 
 
 class _AliasDialog(QDialog):

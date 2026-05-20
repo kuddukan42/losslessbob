@@ -76,8 +76,9 @@ losslessbob/
 │   │   ├── map.html          # Leaflet map page served at GET /map; fetches /api/map/data
 │   │   └── leaflet/          # Bundled Leaflet 1.9.4 + markercluster 1.5.3 + leaflet.heat 0.2.0 assets
 │   └── widgets/
-│       ├── state_store.py    # GuiStateStore: column widths + window geometry → data/gui_state.json
-│       └── sort_keys.py      # SortableTableItem + sort_key_for() for typed client-side sort
+│       ├── state_store.py       # GuiStateStore: column widths + window geometry → data/gui_state.json
+│       ├── sort_keys.py         # SortableTableItem + sort_key_for() for typed client-side sort
+│       └── reconcile_dialog.py  # AudioReconcileDialog: shared preview dialog for audio file renames
 ├── tests/
 │   ├── test_lb_master.py     # lb_master schema, reconcile, override, forum guard, GUI presence
 │   └── test_master_data.py   # MASTER/USER table classification, export/import, SHA + schema-version guards
@@ -468,6 +469,8 @@ Indexes: `idx_flat_changelog_release(release_id)`, `idx_flat_changelog_lb(lb_num
 | GET | `/api/search?q=&field=` | `field`: `all`, `location`, `date`, `description`. Returns all matching entries (no limit). |
 | GET | `/api/checksums/xref_lb_numbers` | Return sorted list of lb_numbers that have at least one xref checksum (xref > 0). |
 | GET | `/api/checksums/xref_map` | Return `{lb_number: [xref_values]}` for all LBs with xref checksums. |
+| POST | `/api/checksums/reconcile_audio` | Validate proposed audio file renames. Body: `{proposals:[{checksum, input_filename, db_filename, folder}]}`. Returns each proposal annotated with `status: ok\|from_missing\|to_exists`. Non-audio extensions skipped. |
+| POST | `/api/checksums/apply_reconcile_audio` | Apply audio file renames on disk. Body: `{renames:[{from, to}]}`. Returns `{applied, errors}`. |
 
 ### Site Mirror Crawler
 | Method | Route | Description |
@@ -1236,3 +1239,4 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 | 2026-05-19 | Map feature: location_geocoded table (MASTER) + get_map_data(); backend/geocoder.py (Nominatim); tools/geocode_locations.py CLI; GET /map + /api/map/data + /api/geocode/* routes; gui/map_tab.py + gui/resources/map.html (Leaflet); curator geocoding UI in setup_tab + dbedit_tab; Map tab wired into main_window.py. |
 | 2026-05-19 | Map feature complete (CC_MAP_FEATURE.md): bundled Leaflet assets in gui/resources/leaflet/ (served via GET /leaflet/<filename>); QWebChannel bridge (_MapBridge) in map_tab.py for "Open in Search" popup button + "List in Search" viewport filter; _LbListWorker + SearchTab.load_lb_list() in search_tab.py; get_entries_by_lb_list() in db.py; GET /api/entries/by_lb_list in app.py. |
 | 2026-05-19 | i18n infrastructure (TODO-067): gui/i18n.py (load_language, supported_languages); gui/locales/ directory for .ts/.qm files; ui_language meta key; Preferences group in Setup tab; startup language load in main.py; "ui_language" added to GET /api/db/settings. |
+| 2026-05-20 | Audio filename reconcile: db_filename added to lookup_checksums() detail dicts; POST /api/checksums/reconcile_audio + apply_reconcile_audio routes; gui/widgets/reconcile_dialog.py (AudioReconcileDialog); "Reconcile Audio Files" button on Lookup tab (auto-enabled on filename mismatch) and Rename tab (_ReconcileAudioWorker scans checksum files in checked folders). |
