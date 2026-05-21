@@ -6,11 +6,11 @@ import threading
 from typing import Callable
 
 import requests
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, NavigableString
 
 from backend.db import (
-    get_connection, DB_PATH, insert_missing_entry,
-    record_entry_changes, reconcile_lb_status,
+    get_connection, write_connection, DB_PATH, insert_missing_entry,
+    record_entry_changes, reconcile_lb_status, batch_reconcile_lb_status,
 )
 from backend.paths import (
     SITE_DETAIL_DIR, SITE_FILES_DIR, to_long_path,
@@ -38,6 +38,7 @@ _scrape_state = {
     "stop_requested": False,
 }
 _scrape_lock = threading.Lock()
+_RECONCILE_BATCH = 100  # lb_master rows reconciled per write transaction in scrape_range
 
 
 def get_scrape_status() -> dict:
@@ -92,6 +93,7 @@ def scrape_entry(
     download_files: bool = True,
     use_local_pages: bool = False,
     db_path: str | None = None,
+    _reconcile: bool = True,
 ) -> dict:
     """Scrape a single LB entry page and persist the result to the database.
 
@@ -109,6 +111,8 @@ def scrape_entry(
         use_local_pages: When True, read the detail page from
             ``data/site/detail/`` instead of making a network request.
         db_path: Override the default database path (used in tests).
+        _reconcile: When False, skip the reconcile_lb_status call at the end so
+            scrape_range can batch-reconcile via batch_reconcile_lb_status instead.
 
     Returns:
         On skip: ``{"skipped": True}``.
@@ -123,34 +127,33 @@ def scrape_entry(
     local_page = to_long_path(detail_page_path(lb_id))
 
     if not force:
-        with get_connection(db_path) as conn:
-            row = conn.execute(
-                "SELECT status FROM entries WHERE lb_number=?", (lb_number,)
-            ).fetchone()
-            if row is not None:
-                if row["status"] == "missing":
-                    # If a local page is available we can recover real metadata;
-                    # only skip if there is nothing local to work with.
-                    if not (use_local_pages and local_page.exists()):
-                        return {"skipped": True}
-                elif not download_files:
+        conn = get_connection(db_path)
+        row = conn.execute(
+            "SELECT status FROM entries WHERE lb_number=?", (lb_number,)
+        ).fetchone()
+        if row is not None:
+            if row["status"] == "missing":
+                # If a local page is available we can recover real metadata;
+                # only skip if there is nothing local to work with.
+                if not (use_local_pages and local_page.exists()):
                     return {"skipped": True}
-                else:
-                    for prow in conn.execute(
-                        "SELECT filename, clean_name FROM entry_files WHERE lb_number=? AND downloaded=0",
-                        (lb_number,)
-                    ).fetchall():
-                        if attachment_path(prow["filename"]).exists():
-                            conn.execute(
-                                "UPDATE entry_files SET downloaded=1 WHERE lb_number=? AND filename=?",
-                                (lb_number, prow["filename"])
-                            )
-                    pending = conn.execute(
-                        "SELECT COUNT(*) FROM entry_files WHERE lb_number=? AND downloaded=0",
-                        (lb_number,)
-                    ).fetchone()[0]
-                    if pending == 0:
-                        return {"skipped": True}
+            elif not download_files:
+                return {"skipped": True}
+            else:
+                undownloaded = conn.execute(
+                    "SELECT filename FROM entry_files WHERE lb_number=? AND downloaded=0",
+                    (lb_number,)
+                ).fetchall()
+                to_mark = [r["filename"] for r in undownloaded
+                           if attachment_path(r["filename"]).exists()]
+                if to_mark:
+                    with write_connection(db_path) as wconn:
+                        wconn.executemany(
+                            "UPDATE entry_files SET downloaded=1 WHERE lb_number=? AND filename=?",
+                            [(lb_number, fn) for fn in to_mark],
+                        )
+                if len(undownloaded) - len(to_mark) == 0:
+                    return {"skipped": True}
 
     if use_local_pages and local_page.exists():
         html_text = local_page.read_text(encoding="utf-8", errors="replace")
@@ -160,7 +163,8 @@ def scrape_entry(
         resp, status = _fetch(url)
         if status == 404:
             insert_missing_entry(lb_number, db_path)
-            reconcile_lb_status(lb_number, trigger="scrape", db_path=db_path)
+            if _reconcile:
+                reconcile_lb_status(lb_number, trigger="scrape", db_path=db_path)
             return {"error": "404", "missing": True}
         if resp is None:
             return {"error": "fetch_failed"}
@@ -194,7 +198,6 @@ def scrape_entry(
 
     # Collect text content — <p> tags are description; bare text nodes between <hr/>
     # separators may be notes (description) or track listings (setlist)
-    from bs4 import NavigableString
     track_pattern = re.compile(r'^\d{1,2}[.)]\s')
     desc_parts = []
     setlist_parts = []
@@ -232,7 +235,7 @@ def scrape_entry(
 
     record_entry_changes(lb_number, entry_data, db_path)
 
-    with get_connection(db_path) as conn:
+    with write_connection(db_path) as conn:
         conn.execute(
             """INSERT OR REPLACE INTO entries(lb_number, date_str, location, cdr, rating, timing, description, setlist)
                VALUES(:lb_number,:date_str,:location,:cdr,:rating,:timing,:description,:setlist)""",
@@ -256,6 +259,7 @@ def scrape_entry(
     downloaded = []
     if download_files and file_links:
         SITE_FILES_DIR.mkdir(parents=True, exist_ok=True)
+        newly_downloaded: list[str] = []
         for filename, clean, file_url in file_links:
             local_path = attachment_path(filename)   # data/site/files/LBF-XXXXX-name.ext
             if local_path.exists() and (not force or use_local_pages):
@@ -263,15 +267,18 @@ def scrape_entry(
             file_resp, fstatus = _fetch(file_url)
             if file_resp and fstatus == 200:
                 local_path.write_bytes(file_resp.content)
-                with get_connection(db_path) as conn:
-                    conn.execute(
-                        "UPDATE entry_files SET downloaded=1 WHERE lb_number=? AND filename=?",
-                        (lb_number, filename)
-                    )
+                newly_downloaded.append(filename)
                 downloaded.append(clean)
             time.sleep(0.5)
+        if newly_downloaded:
+            with write_connection(db_path) as conn:
+                conn.executemany(
+                    "UPDATE entry_files SET downloaded=1 WHERE lb_number=? AND filename=?",
+                    [(lb_number, fn) for fn in newly_downloaded],
+                )
 
-    reconcile_lb_status(lb_number, trigger="scrape", db_path=db_path)
+    if _reconcile:
+        reconcile_lb_status(lb_number, trigger="scrape", db_path=db_path)
     return {"ok": True, "files_downloaded": downloaded, "local_source": used_local}
 
 
@@ -317,13 +324,18 @@ def scrape_range(
             "stop_requested": False,
         })
 
+    pending_reconcile: list[int] = []
+
     for i, lb in enumerate(lb_numbers):
         with _scrape_lock:
             if _scrape_state["stop_requested"]:
                 break
             _scrape_state["current_lb"] = lb
 
-        result = scrape_entry(lb, force=force, download_files=download_files, use_local_pages=use_local_pages, db_path=db_path)
+        result = scrape_entry(
+            lb, force=force, download_files=download_files,
+            use_local_pages=use_local_pages, db_path=db_path, _reconcile=False,
+        )
         was_skipped = result.get("skipped", False)
 
         with _scrape_lock:
@@ -341,11 +353,20 @@ def scrape_range(
                 _scrape_state["last_action"] = "scraped"
                 _scrape_state["last_source"] = "local" if result.get("local_source") else "web"
 
+        if not was_skipped:
+            pending_reconcile.append(lb)
+            if len(pending_reconcile) >= _RECONCILE_BATCH:
+                batch_reconcile_lb_status(pending_reconcile, trigger="scrape", db_path=db_path)
+                pending_reconcile.clear()
+
         if progress_cb:
             progress_cb(i + 1, total, lb)
 
         if not was_skipped and not result.get("local_source") and i < total - 1:
             time.sleep(delay_ms / 1000.0)
+
+    if pending_reconcile:
+        batch_reconcile_lb_status(pending_reconcile, trigger="scrape", db_path=db_path)
 
     with _scrape_lock:
         _scrape_state.update({"running": False, "done": total, "current_lb": None})
