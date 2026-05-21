@@ -2,6 +2,7 @@ import logging
 import re
 import sqlite3
 import threading
+from contextlib import contextmanager
 from pathlib import Path
 
 from pybloom_live import ScalableBloomFilter as _SBF
@@ -12,9 +13,36 @@ from backend.paths import to_long_path
 # --- Thread-local persistent connection pool (DB-02) ---
 _local = threading.local()
 
+# --- Application-level write serialisation lock ---
+# SQLite WAL allows concurrent readers but only one writer at a time. With
+# multiple background threads (scraper, flat-file, Flask request pool) all
+# writing to the same file, SQLite's busy_timeout can be exceeded. This RLock
+# serialises writers at the Python level so SQLite never sees two concurrent
+# write attempts. RLock (reentrant) prevents deadlocks when write functions
+# call each other (e.g. reconcile_lb_status → called from scrape_entry).
+_write_lock = threading.RLock()
+
 # --- Bloom filter for fast NOT-FOUND short-circuit (DB-07) ---
 _bloom: _SBF | None = None
 _bloom_lock = threading.Lock()
+
+
+@contextmanager
+def write_connection(db_path=None):
+    """Acquire the write lock and yield the thread-local connection.
+
+    Commits on clean exit, rolls back on exception, then releases the lock.
+    Use in place of ``with get_connection() as conn:`` for any DML operation.
+    Read-only callers should continue to use ``get_connection()`` directly.
+    """
+    with _write_lock:
+        conn = get_connection(db_path)
+        try:
+            yield conn
+            conn.commit()
+        except Exception:
+            conn.rollback()
+            raise
 
 # --- Master vs. user data ownership model -------------------------------------
 # MASTER tables ship in a master-data export and are overwritten on import.
@@ -431,7 +459,7 @@ def get_connection(db_path=None):
         _local.connections = {}
         cache = _local.connections
     if path not in cache:
-        conn = sqlite3.connect(path, check_same_thread=False)
+        conn = sqlite3.connect(path, check_same_thread=False, timeout=30)
         conn.row_factory = sqlite3.Row
         conn.execute("PRAGMA journal_mode=WAL")
         conn.execute("PRAGMA synchronous=NORMAL")
@@ -488,19 +516,20 @@ def checksum_in_bloom(chk: str) -> bool:
 
 def init_db(db_path=None):
     """Create schema, run migrations, rebuild FTS index if needed, seed bloom filter."""
-    conn = get_connection(db_path)
-    conn.executescript(SCHEMA_SQL)
-    cols = [r[1] for r in conn.execute("PRAGMA table_info(entries)").fetchall()]
-    if "status" not in cols:
-        conn.execute("ALTER TABLE entries ADD COLUMN status TEXT DEFAULT 'ok'")
-        conn.commit()
+    with _write_lock:
+        conn = get_connection(db_path)
+        conn.executescript(SCHEMA_SQL)
+        cols = [r[1] for r in conn.execute("PRAGMA table_info(entries)").fetchall()]
+        if "status" not in cols:
+            conn.execute("ALTER TABLE entries ADD COLUMN status TEXT DEFAULT 'ok'")
+            conn.commit()
 
-    # Populate FTS index if empty (first run after adding FTS)
-    fts_count = conn.execute("SELECT COUNT(*) FROM entries_fts").fetchone()[0]
-    entry_count = conn.execute("SELECT COUNT(*) FROM entries").fetchone()[0]
-    if fts_count == 0 and entry_count > 0:
-        conn.execute("INSERT INTO entries_fts(entries_fts) VALUES('rebuild')")
-        conn.commit()
+        # Populate FTS index if empty (first run after adding FTS)
+        fts_count = conn.execute("SELECT COUNT(*) FROM entries_fts").fetchone()[0]
+        entry_count = conn.execute("SELECT COUNT(*) FROM entries").fetchone()[0]
+        if fts_count == 0 and entry_count > 0:
+            conn.execute("INSERT INTO entries_fts(entries_fts) VALUES('rebuild')")
+            conn.commit()
 
     # Build bloom filter in background so startup is not blocked.
     # checksum_in_bloom() returns True while _bloom is None, so all lookups
@@ -537,16 +566,16 @@ def _bootstrap_flat_file_legacy(db_path=None) -> None:
             return
         last_lb = conn.execute("SELECT MAX(lb_number) FROM checksums").fetchone()[0] or 0
         last_date = get_meta("last_import_date", db_path) or ""
-        conn.execute(
-            """INSERT INTO flat_file_releases
-               (source_page_url, zip_url, zip_filename, last_lb_in_name, zip_sha256,
-                applied_at, status, failure_reason)
-               VALUES (?, ?, ?, ?, ?, ?, 'applied_legacy',
-                       'Backfilled from pre-feature import history.')""",
-            ("", "", f"Checksum_Lookup_flat_file_LastLB_{last_lb}.zip",
-             last_lb, import_hash, last_date)
-        )
-        conn.commit()
+        with write_connection(db_path) as conn:
+            conn.execute(
+                """INSERT INTO flat_file_releases
+                   (source_page_url, zip_url, zip_filename, last_lb_in_name, zip_sha256,
+                    applied_at, status, failure_reason)
+                   VALUES (?, ?, ?, ?, ?, ?, 'applied_legacy',
+                           'Backfilled from pre-feature import history.')""",
+                ("", "", f"Checksum_Lookup_flat_file_LastLB_{last_lb}.zip",
+                 last_lb, import_hash, last_date)
+            )
         _log.info("flat_file: bootstrapped legacy applied row (LastLB=%d)", last_lb)
     except Exception as exc:
         _log.warning("flat_file bootstrap failed: %s", exc)
@@ -559,7 +588,7 @@ def get_meta(key, db_path=None):
 
 
 def set_meta(key, value, db_path=None):
-    with get_connection(db_path) as conn:
+    with write_connection(db_path) as conn:
         conn.execute("INSERT OR REPLACE INTO meta(key, value) VALUES(?,?)", (key, value))
 
 
@@ -850,16 +879,16 @@ def record_entry_changes(lb_number: int, new_data: dict, db_path=None) -> list:
             rows_to_insert.append((lb_number, field, old, new))
             changed.append(field)
     if rows_to_insert:
-        conn.executemany(
-            "INSERT INTO entry_changes(lb_number, field, old_value, new_value) VALUES(?,?,?,?)",
-            rows_to_insert
-        )
-        conn.commit()
+        with write_connection(db_path) as conn:
+            conn.executemany(
+                "INSERT INTO entry_changes(lb_number, field, old_value, new_value) VALUES(?,?,?,?)",
+                rows_to_insert
+            )
     return changed
 
 
 def insert_missing_entry(lb_number, db_path=None):
-    with get_connection(db_path) as conn:
+    with write_connection(db_path) as conn:
         conn.execute(
             """INSERT OR IGNORE INTO entries(lb_number, date_str, location, cdr, rating, timing, description, setlist, status)
                VALUES(?, '', '', '', '', '', '', '', 'missing')""",
@@ -1036,7 +1065,7 @@ def get_collection(db_path=None):
 
 
 def add_to_collection(lb_number, folder_name, disk_path, notes=None, db_path=None):
-    with get_connection(db_path) as conn:
+    with write_connection(db_path) as conn:
         conn.execute(
             "INSERT OR IGNORE INTO my_collection(lb_number, folder_name, disk_path, notes) VALUES(?,?,?,?)",
             (lb_number, folder_name, disk_path, notes)
@@ -1050,7 +1079,7 @@ def update_collection(lb_number, fields, db_path=None):
     if not updates:
         return
     set_clause = ", ".join(f"{k}=?" for k in updates)
-    with get_connection(db_path) as conn:
+    with write_connection(db_path) as conn:
         conn.execute(
             f"UPDATE my_collection SET {set_clause} WHERE lb_number=?",
             list(updates.values()) + [lb_number]
@@ -1058,7 +1087,7 @@ def update_collection(lb_number, fields, db_path=None):
 
 
 def delete_from_collection(lb_number, db_path=None):
-    with get_connection(db_path) as conn:
+    with write_connection(db_path) as conn:
         conn.execute("DELETE FROM my_collection WHERE lb_number=?", (lb_number,))
 
 
@@ -1116,7 +1145,7 @@ def set_collection_meta(lb_number: int, fields: dict, db_path=None) -> None:
     clean = {k: v for k, v in fields.items() if k in allowed}
     if not clean:
         return
-    with get_connection(db_path) as conn:
+    with write_connection(db_path) as conn:
         conn.execute(
             "INSERT INTO collection_meta(lb_number) VALUES(?) ON CONFLICT(lb_number) DO NOTHING",
             (lb_number,)
@@ -1131,7 +1160,7 @@ def set_collection_meta(lb_number: int, fields: dict, db_path=None) -> None:
 def increment_listen_count(lb_number: int, db_path=None) -> None:
     """Increment listen count and update last_listened timestamp."""
     from datetime import datetime
-    with get_connection(db_path) as conn:
+    with write_connection(db_path) as conn:
         conn.execute(
             "INSERT INTO collection_meta(lb_number, listen_count, last_listened) "
             "VALUES(?, 1, ?) ON CONFLICT(lb_number) DO UPDATE SET "
@@ -1157,7 +1186,7 @@ def get_wishlist(db_path=None) -> list:
 
 def add_to_wishlist(lb_number: int, priority: int = 3, notes: str = None, db_path=None) -> int:
     """Add an entry to the wishlist. Returns 1 if inserted, 0 if already present."""
-    with get_connection(db_path) as conn:
+    with write_connection(db_path) as conn:
         conn.execute(
             "INSERT OR IGNORE INTO my_wishlist(lb_number, priority, notes) VALUES(?,?,?)",
             (lb_number, priority, notes)
@@ -1167,7 +1196,7 @@ def add_to_wishlist(lb_number: int, priority: int = 3, notes: str = None, db_pat
 
 def remove_from_wishlist(lb_number: int, db_path=None) -> None:
     """Remove an entry from the wishlist."""
-    with get_connection(db_path) as conn:
+    with write_connection(db_path) as conn:
         conn.execute("DELETE FROM my_wishlist WHERE lb_number=?", (lb_number,))
 
 
@@ -1241,39 +1270,34 @@ def get_collection_duplicates(db_path=None) -> list:
 
 def purge_collection(db_path=None) -> None:
     """Delete all rows from collection_meta, integrity_events, and my_collection."""
-    conn = get_connection(db_path)
-    conn.execute("DELETE FROM collection_meta")
-    conn.execute("DELETE FROM integrity_events")
-    conn.execute("DELETE FROM my_collection")
-    conn.commit()
+    with write_connection(db_path) as conn:
+        conn.execute("DELETE FROM collection_meta")
+        conn.execute("DELETE FROM integrity_events")
+        conn.execute("DELETE FROM my_collection")
 
 
 def purge_wishlist(db_path=None) -> None:
     """Delete all rows from my_wishlist."""
-    conn = get_connection(db_path)
-    conn.execute("DELETE FROM my_wishlist")
-    conn.commit()
+    with write_connection(db_path) as conn:
+        conn.execute("DELETE FROM my_wishlist")
 
 
 def purge_collection_meta(db_path=None) -> None:
     """Delete all personal ratings and tags (collection_meta only)."""
-    conn = get_connection(db_path)
-    conn.execute("DELETE FROM collection_meta")
-    conn.commit()
+    with write_connection(db_path) as conn:
+        conn.execute("DELETE FROM collection_meta")
 
 
 def purge_integrity_events(db_path=None) -> None:
     """Delete all watchdog integrity events."""
-    conn = get_connection(db_path)
-    conn.execute("DELETE FROM integrity_events")
-    conn.commit()
+    with write_connection(db_path) as conn:
+        conn.execute("DELETE FROM integrity_events")
 
 
 def purge_entry_changes(db_path=None) -> None:
     """Delete all scrape diff changelog rows from entry_changes."""
-    conn = get_connection(db_path)
-    conn.execute("DELETE FROM entry_changes")
-    conn.commit()
+    with write_connection(db_path) as conn:
+        conn.execute("DELETE FROM entry_changes")
 
 
 # ── Torrents ──────────────────────────────────────────────────────────────────
@@ -1291,7 +1315,7 @@ def get_torrents_for_lb(lb_number: int, db_path=None) -> list:
 def add_forum_post(lb_number: int, subject: str, topic_url: str,
                    board_id: int | None = None, db_path=None) -> int:
     """Record a successful forum post and return its new row id."""
-    with get_connection(db_path) as conn:
+    with write_connection(db_path) as conn:
         cur = conn.execute(
             "INSERT INTO forum_posts(lb_number, subject, topic_url, board_id) "
             "VALUES (?, ?, ?, ?)",
@@ -1312,7 +1336,7 @@ def get_forum_posts_for_lb(lb_number: int, db_path=None) -> list:
 
 def delete_forum_post(post_id: int, db_path=None) -> None:
     """Delete a forum post record by id."""
-    with get_connection(db_path) as conn:
+    with write_connection(db_path) as conn:
         conn.execute("DELETE FROM forum_posts WHERE id=?", (post_id,))
 
 
@@ -1351,14 +1375,13 @@ def add_torrent_record(lb_number: int, torrent_path: str, source_folder: str,
     """Insert a new torrent record. Returns the new row id."""
     import json as _json
     excl = _json.dumps(excluded_files or [])
-    conn = get_connection(db_path)
-    conn.execute(
-        """INSERT INTO torrents(lb_number, torrent_path, source_folder, infohash, excluded_files)
-           VALUES(?,?,?,?,?)""",
-        (lb_number, torrent_path, source_folder, infohash, excl)
-    )
-    conn.commit()
-    return conn.execute("SELECT last_insert_rowid()").fetchone()[0]
+    with write_connection(db_path) as conn:
+        cur = conn.execute(
+            """INSERT INTO torrents(lb_number, torrent_path, source_folder, infohash, excluded_files)
+               VALUES(?,?,?,?,?)""",
+            (lb_number, torrent_path, source_folder, infohash, excl)
+        )
+        return cur.lastrowid
 
 
 def update_torrent_record(torrent_id: int, fields: dict, db_path=None) -> None:
@@ -1371,12 +1394,11 @@ def update_torrent_record(torrent_id: int, fields: dict, db_path=None) -> None:
     if not clean:
         return
     set_clause = ", ".join(f"{k}=?" for k in clean)
-    conn = get_connection(db_path)
-    conn.execute(
-        f"UPDATE torrents SET {set_clause} WHERE id=?",
-        list(clean.values()) + [torrent_id]
-    )
-    conn.commit()
+    with write_connection(db_path) as conn:
+        conn.execute(
+            f"UPDATE torrents SET {set_clause} WHERE id=?",
+            list(clean.values()) + [torrent_id]
+        )
 
 
 # ── Rename History ─────────────────────────────────────────────────────────────
@@ -1384,13 +1406,12 @@ def update_torrent_record(torrent_id: int, fields: dict, db_path=None) -> None:
 def add_rename_history(lb_number: int | None, old_path: str, new_path: str,
                        source: str, notes: str = "", db_path=None) -> None:
     """Insert a rename_history row."""
-    conn = get_connection(db_path)
-    conn.execute(
-        """INSERT INTO rename_history(lb_number, old_path, new_path, source, notes)
-           VALUES(?,?,?,?,?)""",
-        (lb_number, old_path, new_path, source, notes)
-    )
-    conn.commit()
+    with write_connection(db_path) as conn:
+        conn.execute(
+            """INSERT INTO rename_history(lb_number, old_path, new_path, source, notes)
+               VALUES(?,?,?,?,?)""",
+            (lb_number, old_path, new_path, source, notes)
+        )
 
 
 def delete_collection_entries(lb_numbers: list, db_path=None) -> int:
@@ -1400,13 +1421,12 @@ def delete_collection_entries(lb_numbers: list, db_path=None) -> int:
     """
     if not lb_numbers:
         return 0
-    conn = get_connection(db_path)
-    ph = ",".join("?" * len(lb_numbers))
-    conn.execute(f"DELETE FROM collection_meta WHERE lb_number IN ({ph})", lb_numbers)
-    conn.execute(f"DELETE FROM integrity_events WHERE lb_number IN ({ph})", lb_numbers)
-    conn.execute(f"DELETE FROM my_collection WHERE lb_number IN ({ph})", lb_numbers)
-    conn.commit()
-    return conn.execute("SELECT changes()").fetchone()[0]
+    with write_connection(db_path) as conn:
+        ph = ",".join("?" * len(lb_numbers))
+        conn.execute(f"DELETE FROM collection_meta WHERE lb_number IN ({ph})", lb_numbers)
+        conn.execute(f"DELETE FROM integrity_events WHERE lb_number IN ({ph})", lb_numbers)
+        cur = conn.execute(f"DELETE FROM my_collection WHERE lb_number IN ({ph})", lb_numbers)
+        return cur.rowcount
 
 
 # ── lb_master integrity system ─────────────────────────────────────────────────
@@ -1494,15 +1514,15 @@ def migrate_lb_master(db_path=None) -> int:
         status, needs_review = _compute_lb_status(has_web, has_chk, has_att)
         rows.append((n, status, int(has_web), int(has_chk), int(has_att), needs_review))
 
-    conn.executemany(
-        """INSERT OR REPLACE INTO lb_master
-           (lb_number, lb_status, has_webpage, has_checksums, has_attachments, needs_review)
-           VALUES (?,?,?,?,?,?)""",
-        rows,
-    )
-    # Remove tombstone rows — lb_master is now authoritative
-    conn.execute("DELETE FROM entries WHERE status='missing'")
-    conn.commit()
+    with write_connection(db_path) as conn:
+        conn.executemany(
+            """INSERT OR REPLACE INTO lb_master
+               (lb_number, lb_status, has_webpage, has_checksums, has_attachments, needs_review)
+               VALUES (?,?,?,?,?,?)""",
+            rows,
+        )
+        # Remove tombstone rows — lb_master is now authoritative
+        conn.execute("DELETE FROM entries WHERE status='missing'")
 
     logging.getLogger(__name__).info(
         "lb_master populated: %d rows (%d public, %d private, %d missing)",
@@ -1521,81 +1541,170 @@ def reconcile_lb_status(lb_number: int, trigger: str = "reconcile", db_path=None
     Logs transitions to lb_status_history.
     Returns the final (possibly unchanged) lb_status string.
     """
-    conn = get_connection(db_path)
+    with write_connection(db_path) as conn:
+        has_web = bool(conn.execute(
+            "SELECT 1 FROM entries WHERE lb_number=? AND status='ok'", (lb_number,)
+        ).fetchone())
+        has_chk = bool(conn.execute(
+            "SELECT 1 FROM checksums WHERE lb_number=?", (lb_number,)
+        ).fetchone())
+        has_att = bool(conn.execute(
+            "SELECT 1 FROM entry_files WHERE lb_number=?", (lb_number,)
+        ).fetchone())
 
-    has_web = bool(conn.execute(
-        "SELECT 1 FROM entries WHERE lb_number=? AND status='ok'", (lb_number,)
-    ).fetchone())
-    has_chk = bool(conn.execute(
-        "SELECT 1 FROM checksums WHERE lb_number=?", (lb_number,)
-    ).fetchone())
-    has_att = bool(conn.execute(
-        "SELECT 1 FROM entry_files WHERE lb_number=?", (lb_number,)
-    ).fetchone())
+        auto_status, needs_review = _compute_lb_status(has_web, has_chk, has_att)
 
-    auto_status, needs_review = _compute_lb_status(has_web, has_chk, has_att)
+        existing = conn.execute(
+            "SELECT lb_status, manual_override FROM lb_master WHERE lb_number=?",
+            (lb_number,),
+        ).fetchone()
 
-    existing = conn.execute(
-        "SELECT lb_status, manual_override FROM lb_master WHERE lb_number=?",
-        (lb_number,),
-    ).fetchone()
+        if existing is None:
+            conn.execute(
+                """INSERT INTO lb_master
+                   (lb_number, lb_status, has_webpage, has_checksums, has_attachments, needs_review)
+                   VALUES (?,?,?,?,?,?)""",
+                (lb_number, auto_status, int(has_web), int(has_chk), int(has_att), needs_review),
+            )
+            conn.execute(
+                "INSERT INTO lb_status_history(lb_number, old_status, new_status, trigger_event) "
+                "VALUES (?,NULL,?,?)",
+                (lb_number, auto_status, trigger),
+            )
+            return auto_status
 
-    if existing is None:
-        # New row
-        conn.execute(
-            """INSERT INTO lb_master
-               (lb_number, lb_status, has_webpage, has_checksums, has_attachments, needs_review)
-               VALUES (?,?,?,?,?,?)""",
-            (lb_number, auto_status, int(has_web), int(has_chk), int(has_att), needs_review),
-        )
-        conn.execute(
-            "INSERT INTO lb_status_history(lb_number, old_status, new_status, trigger_event) "
-            "VALUES (?,NULL,?,?)",
-            (lb_number, auto_status, trigger),
-        )
-        conn.commit()
-        return auto_status
+        old_status = existing["lb_status"]
+        manual_override = existing["manual_override"]
 
-    old_status = existing["lb_status"]
-    manual_override = existing["manual_override"]
+        if manual_override:
+            conn.execute(
+                """UPDATE lb_master
+                   SET has_webpage=?, has_checksums=?, has_attachments=?,
+                       needs_review=?, last_status_at=CURRENT_TIMESTAMP
+                   WHERE lb_number=?""",
+                (int(has_web), int(has_chk), int(has_att), needs_review, lb_number),
+            )
+            return old_status
 
-    if manual_override:
-        # Respect override: only refresh signal columns and needs_review
-        conn.execute(
-            """UPDATE lb_master
-               SET has_webpage=?, has_checksums=?, has_attachments=?,
-                   needs_review=?, last_status_at=CURRENT_TIMESTAMP
-               WHERE lb_number=?""",
-            (int(has_web), int(has_chk), int(has_att), needs_review, lb_number),
-        )
-        conn.commit()
-        return old_status
+        final_status = auto_status
+        if final_status != old_status:
+            conn.execute(
+                """UPDATE lb_master
+                   SET lb_status=?, previous_status=?, has_webpage=?, has_checksums=?,
+                       has_attachments=?, needs_review=?, last_status_at=CURRENT_TIMESTAMP
+                   WHERE lb_number=?""",
+                (final_status, old_status,
+                 int(has_web), int(has_chk), int(has_att), needs_review, lb_number),
+            )
+            conn.execute(
+                "INSERT INTO lb_status_history(lb_number, old_status, new_status, trigger_event) "
+                "VALUES (?,?,?,?)",
+                (lb_number, old_status, final_status, trigger),
+            )
+        else:
+            conn.execute(
+                """UPDATE lb_master
+                   SET has_webpage=?, has_checksums=?, has_attachments=?,
+                       needs_review=?, last_status_at=CURRENT_TIMESTAMP
+                   WHERE lb_number=?""",
+                (int(has_web), int(has_chk), int(has_att), needs_review, lb_number),
+            )
+        return final_status
 
-    final_status = auto_status
-    if final_status != old_status:
-        conn.execute(
-            """UPDATE lb_master
-               SET lb_status=?, previous_status=?, has_webpage=?, has_checksums=?,
-                   has_attachments=?, needs_review=?, last_status_at=CURRENT_TIMESTAMP
-               WHERE lb_number=?""",
-            (final_status, old_status,
-             int(has_web), int(has_chk), int(has_att), needs_review, lb_number),
-        )
-        conn.execute(
-            "INSERT INTO lb_status_history(lb_number, old_status, new_status, trigger_event) "
-            "VALUES (?,?,?,?)",
-            (lb_number, old_status, final_status, trigger),
-        )
-    else:
-        conn.execute(
-            """UPDATE lb_master
-               SET has_webpage=?, has_checksums=?, has_attachments=?,
-                   needs_review=?, last_status_at=CURRENT_TIMESTAMP
-               WHERE lb_number=?""",
-            (int(has_web), int(has_chk), int(has_att), needs_review, lb_number),
-        )
-    conn.commit()
-    return final_status
+
+def batch_reconcile_lb_status(lb_numbers: list[int], trigger: str = "reconcile", db_path=None) -> None:
+    """Reconcile lb_master for a batch of LB numbers in a single write transaction.
+
+    Equivalent to calling reconcile_lb_status() for each entry individually, but
+    uses bulk IN-queries so the total DB work is O(1) queries regardless of batch size
+    instead of O(N). Designed for use by scrape_range() to avoid per-entry lock churn.
+
+    Args:
+        lb_numbers: LB numbers to reconcile. Duplicates are harmless.
+        trigger: Value written to lb_status_history.trigger_event.
+        db_path: Override the default database path (used in tests).
+    """
+    if not lb_numbers:
+        return
+    ph = ",".join("?" * len(lb_numbers))
+    with write_connection(db_path) as conn:
+        web_set = {r[0] for r in conn.execute(
+            f"SELECT DISTINCT lb_number FROM entries WHERE lb_number IN ({ph}) AND status='ok'",
+            lb_numbers,
+        )}
+        chk_set = {r[0] for r in conn.execute(
+            f"SELECT DISTINCT lb_number FROM checksums WHERE lb_number IN ({ph})",
+            lb_numbers,
+        )}
+        att_set = {r[0] for r in conn.execute(
+            f"SELECT DISTINCT lb_number FROM entry_files WHERE lb_number IN ({ph})",
+            lb_numbers,
+        )}
+        existing = {r[0]: r for r in conn.execute(
+            f"SELECT lb_number, lb_status, manual_override FROM lb_master WHERE lb_number IN ({ph})",
+            lb_numbers,
+        )}
+
+        insert_rows: list[tuple] = []
+        history_rows: list[tuple] = []
+        upd_override: list[tuple] = []
+        upd_changed: list[tuple] = []
+        upd_same: list[tuple] = []
+
+        for lb in lb_numbers:
+            has_web = lb in web_set
+            has_chk = lb in chk_set
+            has_att = lb in att_set
+            auto_status, needs_review = _compute_lb_status(has_web, has_chk, has_att)
+            hw, hc, ha = int(has_web), int(has_chk), int(has_att)
+
+            if lb not in existing:
+                insert_rows.append((lb, auto_status, hw, hc, ha, needs_review))
+                history_rows.append((lb, None, auto_status, trigger))
+                continue
+
+            old_status = existing[lb]["lb_status"]
+            manual = existing[lb]["manual_override"]
+            if manual:
+                upd_override.append((hw, hc, ha, needs_review, lb))
+            elif auto_status != old_status:
+                upd_changed.append((auto_status, old_status, hw, hc, ha, needs_review, lb))
+                history_rows.append((lb, old_status, auto_status, trigger))
+            else:
+                upd_same.append((hw, hc, ha, needs_review, lb))
+
+        if insert_rows:
+            conn.executemany(
+                "INSERT INTO lb_master"
+                " (lb_number, lb_status, has_webpage, has_checksums, has_attachments, needs_review)"
+                " VALUES (?,?,?,?,?,?)",
+                insert_rows,
+            )
+        if history_rows:
+            conn.executemany(
+                "INSERT INTO lb_status_history(lb_number, old_status, new_status, trigger_event)"
+                " VALUES (?,?,?,?)",
+                history_rows,
+            )
+        if upd_override:
+            conn.executemany(
+                "UPDATE lb_master SET has_webpage=?, has_checksums=?, has_attachments=?,"
+                " needs_review=?, last_status_at=CURRENT_TIMESTAMP WHERE lb_number=?",
+                upd_override,
+            )
+        if upd_changed:
+            conn.executemany(
+                "UPDATE lb_master SET lb_status=?, previous_status=?, has_webpage=?,"
+                " has_checksums=?, has_attachments=?, needs_review=?,"
+                " last_status_at=CURRENT_TIMESTAMP WHERE lb_number=?",
+                upd_changed,
+            )
+        if upd_same:
+            conn.executemany(
+                "UPDATE lb_master SET has_webpage=?, has_checksums=?, has_attachments=?,"
+                " needs_review=?, last_status_at=CURRENT_TIMESTAMP WHERE lb_number=?",
+                upd_same,
+            )
 
 
 def reconcile_all_lb_master(db_path=None) -> dict:
@@ -1625,45 +1734,43 @@ def set_lb_manual_override(lb_number: int, status: str, notes: str,
                            set_by: str = "user", db_path=None) -> None:
     """Set a manual override on an lb_master row."""
     from datetime import datetime as _dt
-    conn = get_connection(db_path)
-    existing = conn.execute(
-        "SELECT lb_status FROM lb_master WHERE lb_number=?", (lb_number,)
-    ).fetchone()
-    old_status = existing["lb_status"] if existing else None
+    with write_connection(db_path) as conn:
+        existing = conn.execute(
+            "SELECT lb_status FROM lb_master WHERE lb_number=?", (lb_number,)
+        ).fetchone()
+        old_status = existing["lb_status"] if existing else None
 
-    conn.execute(
-        """INSERT INTO lb_master(lb_number, lb_status, manual_override, manual_status,
-               manual_notes, manual_set_by, manual_set_at, needs_review,
-               has_webpage, has_checksums, has_attachments)
-           VALUES(?,?,1,?,?,?,?,0,0,0,0)
-           ON CONFLICT(lb_number) DO UPDATE SET
-               lb_status=excluded.lb_status,
-               manual_override=1,
-               manual_status=excluded.manual_status,
-               manual_notes=excluded.manual_notes,
-               manual_set_by=excluded.manual_set_by,
-               manual_set_at=excluded.manual_set_at,
-               last_status_at=CURRENT_TIMESTAMP""",
-        (lb_number, status, status, notes, set_by, _dt.utcnow().isoformat()),
-    )
-    conn.execute(
-        "INSERT INTO lb_status_history(lb_number, old_status, new_status, trigger_event) "
-        "VALUES(?,?,?,'manual')",
-        (lb_number, old_status, status),
-    )
-    conn.commit()
+        conn.execute(
+            """INSERT INTO lb_master(lb_number, lb_status, manual_override, manual_status,
+                   manual_notes, manual_set_by, manual_set_at, needs_review,
+                   has_webpage, has_checksums, has_attachments)
+               VALUES(?,?,1,?,?,?,?,0,0,0,0)
+               ON CONFLICT(lb_number) DO UPDATE SET
+                   lb_status=excluded.lb_status,
+                   manual_override=1,
+                   manual_status=excluded.manual_status,
+                   manual_notes=excluded.manual_notes,
+                   manual_set_by=excluded.manual_set_by,
+                   manual_set_at=excluded.manual_set_at,
+                   last_status_at=CURRENT_TIMESTAMP""",
+            (lb_number, status, status, notes, set_by, _dt.utcnow().isoformat()),
+        )
+        conn.execute(
+            "INSERT INTO lb_status_history(lb_number, old_status, new_status, trigger_event) "
+            "VALUES(?,?,?,'manual')",
+            (lb_number, old_status, status),
+        )
 
 
 def clear_lb_manual_override(lb_number: int, db_path=None) -> str:
     """Clear a manual override and immediately reconcile. Returns new auto status."""
-    conn = get_connection(db_path)
-    conn.execute(
-        """UPDATE lb_master SET manual_override=0, manual_status=NULL,
-               manual_notes=NULL, manual_set_by=NULL, manual_set_at=NULL
-           WHERE lb_number=?""",
-        (lb_number,),
-    )
-    conn.commit()
+    with write_connection(db_path) as conn:
+        conn.execute(
+            """UPDATE lb_master SET manual_override=0, manual_status=NULL,
+                   manual_notes=NULL, manual_set_by=NULL, manual_set_at=NULL
+               WHERE lb_number=?""",
+            (lb_number,),
+        )
     return reconcile_lb_status(lb_number, trigger="manual_clear", db_path=db_path)
 
 
@@ -1720,14 +1827,14 @@ def import_overrides(overrides: list[dict], db_path=None) -> dict:
         )
         # The history row for the manual call is already written by
         # set_lb_manual_override; add a second row to record the import event.
-        conn.execute(
-            """INSERT INTO lb_status_history (lb_number, old_status, new_status, trigger_event)
-               SELECT lb_number, previous_status, lb_status, 'import'
-               FROM lb_master WHERE lb_number=?""",
-            (lb,),
-        )
+        with write_connection(db_path) as wconn:
+            wconn.execute(
+                """INSERT INTO lb_status_history (lb_number, old_status, new_status, trigger_event)
+                   SELECT lb_number, previous_status, lb_status, 'import'
+                   FROM lb_master WHERE lb_number=?""",
+                (lb,),
+            )
         imported += 1
-    conn.commit()
     logging.getLogger(__name__).info(
         "import_overrides: %d imported, %d skipped", imported, skipped
     )
@@ -2228,45 +2335,46 @@ def import_master_db(snapshot_path: "Path | str", db_path=None) -> dict:
         "SELECT lb_status, COUNT(*) FROM lb_master GROUP BY lb_status"
     ).fetchall()}
 
-    conn.execute("PRAGMA foreign_keys = OFF")
-    try:
-        conn.execute(f"ATTACH DATABASE ? AS incoming", (str(snapshot_path),))
+    with _write_lock:
+        conn.execute("PRAGMA foreign_keys = OFF")
         try:
-            row_counts: dict[str, int] = {}
-            # Order matters when FKs exist (entries before entry_files etc.),
-            # but with foreign_keys OFF for this scope it doesn't.
-            for tbl in MASTER_TABLES:
-                conn.execute(f"DELETE FROM main.{tbl}")
-                conn.execute(
-                    f"INSERT INTO main.{tbl} SELECT * FROM incoming.{tbl}"
-                )
-                row_counts[tbl] = conn.execute(
-                    f"SELECT COUNT(*) FROM main.{tbl}"
-                ).fetchone()[0]
-            # meta: replace only master keys, preserve user keys
-            placeholders = ",".join("?" * len(MASTER_META_KEYS))
-            conn.execute(
-                f"DELETE FROM main.meta WHERE key IN ({placeholders})",
-                tuple(MASTER_META_KEYS),
-            )
-            conn.execute(
-                f"INSERT INTO main.meta(key, value) "
-                f"SELECT key, value FROM incoming.meta WHERE key IN ({placeholders})",
-                tuple(MASTER_META_KEYS),
-            )
-            # Rebuild FTS from the freshly-replaced entries
+            conn.execute(f"ATTACH DATABASE ? AS incoming", (str(snapshot_path),))
             try:
-                conn.execute("INSERT INTO entries_fts(entries_fts) VALUES('rebuild')")
-            except sqlite3.OperationalError as e:
-                log.warning("FTS rebuild failed (will rebuild on next FTS access): %s", e)
-            conn.commit()
+                row_counts: dict[str, int] = {}
+                # Order matters when FKs exist (entries before entry_files etc.),
+                # but with foreign_keys OFF for this scope it doesn't.
+                for tbl in MASTER_TABLES:
+                    conn.execute(f"DELETE FROM main.{tbl}")
+                    conn.execute(
+                        f"INSERT INTO main.{tbl} SELECT * FROM incoming.{tbl}"
+                    )
+                    row_counts[tbl] = conn.execute(
+                        f"SELECT COUNT(*) FROM main.{tbl}"
+                    ).fetchone()[0]
+                # meta: replace only master keys, preserve user keys
+                placeholders = ",".join("?" * len(MASTER_META_KEYS))
+                conn.execute(
+                    f"DELETE FROM main.meta WHERE key IN ({placeholders})",
+                    tuple(MASTER_META_KEYS),
+                )
+                conn.execute(
+                    f"INSERT INTO main.meta(key, value) "
+                    f"SELECT key, value FROM incoming.meta WHERE key IN ({placeholders})",
+                    tuple(MASTER_META_KEYS),
+                )
+                # Rebuild FTS from the freshly-replaced entries
+                try:
+                    conn.execute("INSERT INTO entries_fts(entries_fts) VALUES('rebuild')")
+                except sqlite3.OperationalError as e:
+                    log.warning("FTS rebuild failed (will rebuild on next FTS access): %s", e)
+                conn.commit()
+            finally:
+                conn.execute("DETACH DATABASE incoming")
+        except Exception:
+            conn.rollback()
+            raise
         finally:
-            conn.execute("DETACH DATABASE incoming")
-    except Exception:
-        conn.rollback()
-        raise
-    finally:
-        conn.execute("PRAGMA foreign_keys = ON")
+            conn.execute("PRAGMA foreign_keys = ON")
 
     # Reset bloom filter so the next checksum lookup rebuilds it from new data
     global _bloom
@@ -2363,13 +2471,12 @@ def set_folder_link(folder_path: str, lb_number: int, note: str = "", db_path=No
         note: Optional user note.
         db_path: Optional path to the SQLite database file.
     """
-    conn = get_connection(db_path)
-    conn.execute(
-        "INSERT OR REPLACE INTO folder_lb_link (folder_path, lb_number, note, linked_at) "
-        "VALUES (?,?,?,CURRENT_TIMESTAMP)",
-        (folder_path, lb_number, note),
-    )
-    conn.commit()
+    with write_connection(db_path) as conn:
+        conn.execute(
+            "INSERT OR REPLACE INTO folder_lb_link (folder_path, lb_number, note, linked_at) "
+            "VALUES (?,?,?,CURRENT_TIMESTAMP)",
+            (folder_path, lb_number, note),
+        )
 
 
 def delete_folder_link(folder_path: str, db_path=None) -> None:
@@ -2379,9 +2486,8 @@ def delete_folder_link(folder_path: str, db_path=None) -> None:
         folder_path: Absolute path of the folder whose link should be deleted.
         db_path: Optional path to the SQLite database file.
     """
-    conn = get_connection(db_path)
-    conn.execute("DELETE FROM folder_lb_link WHERE folder_path=?", (folder_path,))
-    conn.commit()
+    with write_connection(db_path) as conn:
+        conn.execute("DELETE FROM folder_lb_link WHERE folder_path=?", (folder_path,))
 
 
 def add_lb_alias(
@@ -2433,12 +2539,12 @@ def add_lb_alias(
             f"Adding alias {alias_lb}→{canonical_lb} would create a cycle"
         )
 
-    conn.execute(
-        "INSERT OR REPLACE INTO lb_alias (alias_lb, canonical_lb, relationship, note) "
-        "VALUES (?,?,?,?)",
-        (alias_lb, canonical_lb, relationship, note),
-    )
-    conn.commit()
+    with write_connection(db_path) as conn:
+        conn.execute(
+            "INSERT OR REPLACE INTO lb_alias (alias_lb, canonical_lb, relationship, note) "
+            "VALUES (?,?,?,?)",
+            (alias_lb, canonical_lb, relationship, note),
+        )
     return {"alias_lb": alias_lb, "canonical_lb": canonical_lb, "rewrote_chain": rewrote}
 
 
@@ -2449,9 +2555,8 @@ def delete_lb_alias(alias_lb: int, db_path=None) -> None:
         alias_lb: The alias LB number whose entry should be removed.
         db_path: Optional path to the SQLite database file.
     """
-    conn = get_connection(db_path)
-    conn.execute("DELETE FROM lb_alias WHERE alias_lb=?", (alias_lb,))
-    conn.commit()
+    with write_connection(db_path) as conn:
+        conn.execute("DELETE FROM lb_alias WHERE alias_lb=?", (alias_lb,))
 
 
 def get_lb_aliases(canonical_lb: int | None = None, db_path=None) -> list[dict]:

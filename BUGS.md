@@ -1,3 +1,53 @@
+BUG-095: scrape_range acquires write lock N×4 times per entry for lb_master reconcile
+Status: Fixed
+File(s): backend/scraper.py, backend/db.py
+Reported: 2026-05-21
+Fixed: 2026-05-21
+Description: scrape_range called reconcile_lb_status() after every single scraped entry,
+  each call acquiring the write lock and issuing 3 read queries + 1-2 write queries.
+  For a full 13,000-entry scrape this was ~52,000 individual query round-trips just for
+  lb_master housekeeping. The skip-check also used write_connection for purely read
+  operations, and each attachment download opened its own write_connection for downloaded=1.
+Root cause: reconcile_lb_status and the skip/download patterns were written for single-entry
+  use; no batch path existed for bulk scrape runs.
+Fix: Added batch_reconcile_lb_status() to db.py that reconciles N entries in one write
+  transaction using IN-queries (4 queries total). scrape_entry gains _reconcile=False path;
+  scrape_range batches reconcile every 100 entries and at stop/finish. Skip-check switched
+  to get_connection for reads + executemany for the downloaded flag update. Attachment
+  download loop replaced N individual write_connection calls with one executemany.
+
+BUG-094: SQLite "database is locked" errors during concurrent scrape + fingerprint
+Status: Fixed
+File(s): backend/db.py, backend/scraper.py, backend/app.py
+Reported: 2026-05-21
+Fixed: 2026-05-21
+Description: When the scraper background thread and Flask request threads both attempted
+  DB writes simultaneously, SQLite's busy_timeout (30 s) was occasionally exceeded,
+  producing OperationalError: database is locked.
+Root cause: Multiple threads (scraper, Flask/Waitress pool) holding separate thread-local
+  WAL connections all competing to write. SQLite serialises writers via its own retry loop,
+  but rapid write bursts (one per scraped entry × reconcile_lb_status) could exhaust the
+  timeout. Additionally, sqlite3.connect() defaulted to timeout=5 (Python default) before
+  the PRAGMA busy_timeout=30000 took effect on a brand-new connection.
+Fix: Added threading.RLock() (_write_lock) and write_connection() context manager in
+  db.py. All DML functions now acquire the lock before starting a write transaction,
+  serialising writers at the Python level. Fixed sqlite3.connect(timeout=30) to align
+  Python's handler with the PRAGMA.
+
+BUG-093: Exported HTML collection shows no rows in browser
+Status: Fixed
+File(s): backend/app.py:_COLLECTION_HTML_TEMPLATE
+Reported: 2026-05-20
+Fixed: 2026-05-20
+Description: Export HTML (4.5 MB) renders the UI chrome correctly but the table body is
+  always empty; stats pills never appear.
+Root cause: `const SM` and `const BC` were declared after the boot IIFE in the embedded
+  JS template, placing them in the temporal dead zone when the IIFE called mkStats() and
+  draw(). Browser threw "Cannot access 'SM' before initialization", silently aborting
+  after the two timestamp writes.
+Fix: Moved both const declarations to immediately before the boot IIFE so they are
+  initialized by the time boot() executes.
+
 BUG-089: find_duplicate_recordings reports too many false-positive duplicates
 Status: Fixed
 File(s): backend/fingerprint.py:426

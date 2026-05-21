@@ -1,3 +1,119 @@
+[2026-05-21] — perf(scraper): reduce per-entry DB write overhead in scrape_range
+
+Changed
+
+  backend/scraper.py: Skip-check now uses get_connection (read-only) for reads and only
+    acquires write_connection when marking attachment files downloaded; uses executemany
+    instead of individual UPDATE per file. Attachment download loop now batches all
+    downloaded=1 updates into one executemany after the loop instead of one write_connection
+    per file. Added _reconcile param (default True) to scrape_entry so scrape_range can
+    defer lb_master reconciliation. Moved NavigableString import to module level.
+    Added _RECONCILE_BATCH = 100 constant.
+  backend/db.py: Added batch_reconcile_lb_status() — reconciles N lb_master rows in a
+    single write transaction using bulk IN-queries (4 SELECTs + executemany) instead of
+    the O(N) per-entry pattern (N × 4 queries). Used by scrape_range every 100 entries
+    and on stop/finish.
+
+---
+
+[2026-05-21] — test: add comprehensive DB write function test battery (test_db_writes.py)
+
+Added
+
+  tests/test_db_writes.py: 115-test battery covering all database write functions in backend/db.py.
+    Grouped into 17 test classes: set_meta, collection CRUD, collection_meta upserts,
+    listen-count increment, wishlist, record_entry_changes, insert_missing_entry,
+    lb_master reconcile/override/clear, overrides export/import, lb_alias (chain rewrite,
+    cycle detection, dedup), folder_lb_link, torrent records, forum posts, rename history,
+    all purge functions, scrape sessions, upsert_inventory, write_connection rollback, and
+    a dedicated SQL constraint class that deliberately triggers UNIQUE, CHECK, NOT NULL,
+    PK, and FK violations. Includes a concurrent-writes thread-safety test.
+
+[2026-05-21] — fix(backend): eliminate SQLite database locking errors under concurrent scrape + fingerprint
+
+Changed
+
+  backend/db.py: Added `_write_lock = threading.RLock()` and `write_connection()` context manager.
+    All DML functions now acquire the write lock before opening a write transaction, serialising
+    writers at the Python level so SQLite's busy_timeout is never exceeded. Also fixed
+    `sqlite3.connect(timeout=30)` to align Python's internal retry with the PRAGMA value.
+  backend/scraper.py: Converted three `with get_connection()` write blocks to `write_connection()`.
+  backend/app.py: Converted three direct DML routes (DB reset, dbedit UPDATE, dbedit DELETE)
+    to use `write_connection()` / `_write_lock`.
+
+[2026-05-20] — fix(backend): exported HTML collection shows no rows (TDZ crash in boot IIFE)
+
+Fixed
+
+  backend/app.py: `const SM` and `const BC` were declared after the boot IIFE in
+    _COLLECTION_HTML_TEMPLATE, placing them in the temporal dead zone when mkStats() and
+    draw() were called. Moved both declarations before the IIFE so they are initialized
+    before boot() runs.
+
+[2026-05-20] — feat(gui/map): custom cluster icon colors with vivid tier-based palette
+
+Changed
+
+  gui/resources/map.html: Replaced default MarkerCluster CSS bubble colors with a custom
+    iconCreateFunction. Five count tiers: cyan (<10), mint green (<50), amber (<150),
+    deep orange (<500), vivid purple (500+). Bubble size scales with count. Glowing ring
+    via box-shadow. Previous STATUS_COLORS changes also preserved for individual markers.
+
+[2026-05-20] — feat(backend): rework HTML collection export into modern interactive single-file report
+
+Changed
+
+  backend/app.py: Rewrote GET /api/collection/export/html. Now generates a self-contained
+    interactive HTML report via _COLLECTION_HTML_TEMPLATE (module-level constant). Features:
+    • Dark/light mode via prefers-color-scheme CSS media query
+    • Stats pills bar: total recordings + per-status counts (Public/Private/Missing/Unknown)
+    • Live search with 150 ms debounce across LB#, date, location, folder, notes
+    • Search-term highlighting in results (<mark> elements)
+    • Column sorting (all 6 columns, toggle asc/desc, visual ▲/▼ arrows)
+    • Status filter dropdown (Public/Private/Missing/Unknown)
+    • Decade filter dropdown (auto-built from data: 1960s, 1970s, …)
+    • Year filter dropdown (auto-built from data)
+    • Client-side pagination (100 rows/page default; 50/100/200/500 selector) — essential
+      for 16 000+ entry collections; only the current page renders as DOM, full dataset in JSON
+    • Keyboard shortcuts: / or Ctrl+K to focus search; Escape to clear; ← → to page
+    • CSV download button exports the currently filtered+sorted view with BOM (Excel-safe)
+    • Copy LB#s button copies all visible LB numbers to clipboard via navigator.clipboard
+    • Sticky header with ResizeObserver so table thead offset tracks header height dynamically
+    • Toast notifications for clipboard/CSV actions
+    • Print-friendly media query (hides controls)
+    • Generation timestamp in header and footer
+    All 16 k entries embed as a JSON array (~3–4 MB); JS renders 100 rows at a time.
+    No external dependencies — single self-contained file, works fully offline.
+
+[2026-05-20] — feat(gui+backend): export My Collection as HTML table or M3U playlist (FEAT-07)
+
+Added
+
+  backend/app.py: GET /api/collection/export/html — initial simple HTML table (superseded above).
+  backend/app.py: GET /api/collection/export/m3u — returns an #EXTM3U playlist walking each
+    entry's disk_path for audio files (.flac/.shn/.ape/.wav/.mp3); skips missing folders.
+  gui/collection_tab.py: "Export HTML…" and "Export M3U…" buttons in My Collection panel;
+    each GETs the corresponding API endpoint and writes the response bytes to a user-chosen
+    file via QFileDialog.getSaveFileName(); status label updated on success or error.
+
+[2026-05-20] — feat(gui): more vivid map marker colors and significantly larger popup text
+
+Changed
+
+  gui/resources/map.html: STATUS_COLORS replaced with vivid palette (public #00C853,
+    private #00B0FF, missing #FF6D00, unknown #E040FB); fillOpacity 0.85→0.95; owned
+    marker ring changed from white to gold (#FFD600); popup title 15px→20px, body
+    13px→15px, status label 13px→15px, search button 12px→14px, owned star 11px→15px.
+
+[2026-05-20] — feat(gui): larger map bubbles and popup text for LB markers
+
+Changed
+
+  gui/resources/map.html: increased circleMarker radius from 8 → 12, owned-marker
+    border weight from 3 → 4 (non-owned 1 → 1.5); popup title font-size 13px → 15px,
+    added base .lb-popup font-size 13px with line-height 1.5, status text bumped to 13px,
+    search button font 11px → 12px and padding slightly increased.
+
 [2026-05-20] — fix(gui): rework Attachments tab — QTableView replaces QTreeWidget (BUG-092)
 
 Changed
