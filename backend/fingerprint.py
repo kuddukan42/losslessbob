@@ -45,10 +45,11 @@ def _get_fp_conn(db_path: Path | None = None) -> sqlite3.Connection:
     p = str(db_path or FP_DB_PATH)
     conn = getattr(_local, "fp_conn", None)
     if conn is None or getattr(_local, "fp_conn_path", None) != p:
-        conn = sqlite3.connect(p, check_same_thread=False)
+        conn = sqlite3.connect(p, check_same_thread=False, timeout=30)
         conn.row_factory = sqlite3.Row
         conn.execute("PRAGMA journal_mode=WAL")
         conn.execute("PRAGMA synchronous=NORMAL")
+        conn.execute("PRAGMA busy_timeout=30000")
         _local.fp_conn = conn
         _local.fp_conn_path = p
     return conn
@@ -259,6 +260,7 @@ def fingerprint_file(
 def build_fingerprint_db(
     collection_rows: list[dict],
     db_path: Path | None = None,
+    force: bool = False,
     state_setter: Callable[[dict], None] | None = None,
     stop_event: threading.Event | None = None,
 ) -> dict:
@@ -282,7 +284,7 @@ def build_fingerprint_db(
         if not p.is_dir():
             _log.info("build_fingerprint_db: skipping missing path %s", disk_path)
             continue
-        for f in sorted(p.iterdir()):
+        for f in sorted(p.rglob("*")):
             if f.is_file() and f.suffix.lower() in AUDIO_EXTS:
                 all_files.append((f, lb_number))
 
@@ -302,7 +304,7 @@ def build_fingerprint_db(
             break
 
         _set(current=audio_path.name)
-        res = fingerprint_file(audio_path, lb_number, db_path=db_path)
+        res = fingerprint_file(audio_path, lb_number, db_path=db_path, force=force)
 
         if res.get("error"):
             errors.append(f"{audio_path.name}: {res['error']}")
@@ -341,23 +343,38 @@ def identify_file(
     if not hashes:
         return []
 
-    # Vote histogram: track_id → hit count
-    votes: dict[int, int] = defaultdict(int)
+    # Build a lookup from hash value → query time offset (keep first occurrence per hash)
+    hash_to_query_offset: dict[int, float] = {}
+    for h, t in hashes:
+        if h not in hash_to_query_offset:
+            hash_to_query_offset[h] = t
+
+    # Temporal coherence histogram: (track_id, rounded_offset_delta) → count
+    # Matches must agree on the same time shift, not just share a hash value.
+    from collections import Counter
+    coherence: dict[int, Counter] = defaultdict(Counter)
 
     # Batch hash lookups in chunks of 500 (SQLite variable limit is 999)
-    hash_vals = [h for h, _ in hashes]
+    hash_vals = list(hash_to_query_offset.keys())
     for i in range(0, len(hash_vals), 500):
         chunk = hash_vals[i:i + 500]
         placeholders = ",".join("?" * len(chunk))
         rows = conn.execute(
-            f"SELECT track_id FROM fingerprints WHERE hash IN ({placeholders})",
+            f"SELECT hash, track_id, time_offset FROM fingerprints"
+            f" WHERE hash IN ({placeholders})",
             chunk,
         ).fetchall()
         for row in rows:
-            votes[row["track_id"]] += 1
+            query_t = hash_to_query_offset[row["hash"]]
+            # Round delta to 0.1s bins to tolerate minor timing jitter
+            delta = round(row["time_offset"] - query_t, 1)
+            coherence[row["track_id"]][delta] += 1
 
-    if not votes:
+    if not coherence:
         return []
+
+    # Score = peak bin count for each track (temporal coherence, not raw hit count)
+    votes = {tid: counter.most_common(1)[0][1] for tid, counter in coherence.items()}
 
     # Fetch track metadata for the top candidates
     top_ids = sorted(votes, key=lambda tid: votes[tid], reverse=True)[:top_n]
@@ -414,6 +431,7 @@ def find_duplicate_recordings(
             GROUP BY ta, tb
             HAVING score >= ?
             ORDER BY score DESC
+            LIMIT 500
             """,
             (min_score,),
         ).fetchall()
@@ -452,7 +470,8 @@ def get_fp_stats(db_path: Path | None = None) -> dict:
     """Return summary statistics for the fingerprint DB.
 
     Returns {track_count, hash_count, coverage_pct} where coverage_pct is
-    the fraction of collection tracks that have been fingerprinted (0–100).
+    the percentage of fingerprinted audio tracks vs. total audio files found
+    in the user's collection folders (0–100).
     """
     conn = _get_fp_conn(db_path)
     track_count = conn.execute(
@@ -461,7 +480,25 @@ def get_fp_stats(db_path: Path | None = None) -> dict:
     hash_count = conn.execute(
         "SELECT COUNT(*) FROM fingerprints"
     ).fetchone()[0]
+
+    # Count total audio files in collection to compute coverage
+    try:
+        from backend import db as _maindb
+        collection = _maindb.get_collection()
+        total_files = 0
+        for row in collection:
+            p = Path(row.get("disk_path", ""))
+            if p.is_dir():
+                total_files += sum(
+                    1 for f in p.rglob("*")
+                    if f.is_file() and f.suffix.lower() in AUDIO_EXTS
+                )
+        coverage_pct = round(track_count / max(total_files, 1) * 100, 1)
+    except Exception:
+        coverage_pct = None
+
     return {
-        "track_count": track_count,
-        "hash_count":  hash_count,
+        "track_count":  track_count,
+        "hash_count":   hash_count,
+        "coverage_pct": coverage_pct,
     }

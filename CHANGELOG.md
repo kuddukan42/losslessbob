@@ -1,3 +1,31 @@
+[2026-05-21] — fix(fingerprint): post-review fixes — temporal coherence, DB timeout, rglob, force wiring
+
+Fixed
+
+  backend/fingerprint.py: _get_fp_conn now passes timeout=30 to sqlite3.connect()
+    and sets PRAGMA busy_timeout=30000, matching db.py's get_connection() pattern (BUG-086).
+  backend/fingerprint.py: identify_file now uses temporal coherence scoring — hashes must
+    agree on a consistent time-offset delta (db_offset − query_offset) to score, not just
+    raw hit count. This filters hash collisions and makes matching significantly more robust
+    against unrelated tracks (BUG-085).
+  backend/fingerprint.py: build_fingerprint_db now uses rglob("*") instead of iterdir()
+    so multi-disc folders (Disc1/, Disc2/) are traversed correctly.
+  backend/fingerprint.py: find_duplicate_recordings self-join now has LIMIT 500 to prevent
+    catastrophic query times on large collections.
+  backend/fingerprint.py: get_fp_stats now returns coverage_pct alongside track_count and
+    hash_count.
+
+Changed
+
+  backend/fingerprint.py: build_fingerprint_db accepts a force: bool parameter, threaded
+    through from the GUI checkbox → POST body → Flask route → _do_fp_build → fingerprint_file.
+  backend/app.py: fp_build() route reads force from request JSON and passes to _do_fp_build.
+  gui/spectrogram_tab.py: _fp_start_build passes force=checkbox state in POST body;
+    progress bar starts indeterminate (setRange(0,0)) until total is known; setMaximum
+    called only once per build run.
+  gui/spectrogram_tab.py: _fp_stop_build now uses _Worker instead of blocking main thread.
+  gui/spectrogram_tab.py: stats label shows coverage_pct when available.
+
 [2026-05-21] — feat(fingerprint): add acoustic fingerprinting engine and UI
 
 Added

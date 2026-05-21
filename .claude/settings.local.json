@@ -245,7 +245,8 @@
       "Bash(python3 -m py_compile backend/db.py)",
       "Bash(python3 -m py_compile gui/setup_tab.py)",
       "Bash(python3 *)",
-      "Bash(grep -n \"catch.all\\\\|frontend\\\\|dist/\\\\|send_from.*frontend\\\\|route.*/$\" /home/tjenkins/Documents/losslessbob/backend/app.py)"
+      "Bash(grep -n \"catch.all\\\\|frontend\\\\|dist/\\\\|send_from.*frontend\\\\|route.*/$\" /home/tjenkins/Documents/losslessbob/backend/app.py)",
+      "Bash(/home/tjenkins/Documents/losslessbob/.venv/bin/python3 -m py_compile /home/tjenkins/Documents/losslessbob/backend/fingerprint.py /home/tjenkins/Documents/losslessbob/backend/app.py /home/tjenkins/Documents/losslessbob/gui/spectrogram_tab.py)"
     ],
     "additionalDirectories": [
       "/home/tjenkins/.ssh",

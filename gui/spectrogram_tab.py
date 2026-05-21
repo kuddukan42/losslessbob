@@ -900,21 +900,27 @@ class SpectrogramTab(QWidget):
         if "error" in data:
             self.fp_stats_label.setText(self.tr("Error: {}").format(data["error"]))
             return
-        tc = data.get("track_count", 0)
-        hc = data.get("hash_count", 0)
+        tc  = data.get("track_count", 0)
+        hc  = data.get("hash_count", 0)
+        cov = data.get("coverage_pct")
+        cov_str = f" · {cov}% of collection" if cov is not None else ""
         self.fp_stats_label.setText(
-            self.tr("{} track(s) fingerprinted · {:,} hashes stored").format(tc, hc)
+            self.tr("{} track(s) fingerprinted · {:,} hashes stored{}").format(tc, hc, cov_str)
         )
 
     def _fp_start_build(self):
         self.fp_build_btn.setEnabled(False)
         self.fp_build_stop_btn.setEnabled(True)
         self.fp_build_bar.setVisible(True)
-        self.fp_build_bar.setValue(0)
+        self.fp_build_bar.setRange(0, 0)   # indeterminate until total is known
         self.fp_build_label.setText(self.tr("Starting…"))
+        self._fp_build_total_set = False
 
+        force = self.fp_force_cb.isChecked()
+        port  = self.flask_port
         w = _Worker(lambda: requests.post(
-            f"http://127.0.0.1:{self.flask_port}/api/fingerprint/build",
+            f"http://127.0.0.1:{port}/api/fingerprint/build",
+            json={"force": force},
             timeout=15,
         ).json())
         w.finished.connect(self._fp_on_build_started)
@@ -938,10 +944,12 @@ class SpectrogramTab(QWidget):
 
     def _fp_stop_build(self):
         self.fp_build_stop_btn.setEnabled(False)
-        requests.post(
-            f"http://127.0.0.1:{self.flask_port}/api/fingerprint/build/stop",
-            timeout=5,
-        )
+        port = self.flask_port
+        w = _Worker(lambda: requests.post(
+            f"http://127.0.0.1:{port}/api/fingerprint/build/stop", timeout=5,
+        ))
+        self._workers.append(w)
+        w.start()
 
     def _fp_poll_build(self):
         try:
@@ -957,8 +965,10 @@ class SpectrogramTab(QWidget):
         total  = r.get("total", 0)
         errs   = r.get("errors", [])
 
+        if total > 0 and not getattr(self, "_fp_build_total_set", False):
+            self.fp_build_bar.setRange(0, total)
+            self._fp_build_total_set = True
         if total > 0:
-            self.fp_build_bar.setMaximum(total)
             self.fp_build_bar.setValue(done)
 
         skip_msg = f"  ({r['skipped']} skipped)" if r.get("skipped") else ""

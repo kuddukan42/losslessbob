@@ -2955,10 +2955,12 @@ def create_app() -> Flask:
             if _fp_build_state["status"] == "running":
                 return jsonify({"error": "Build already running"}), 409
         try:
-            rows = database.get_collection()
+            data  = request.get_json(silent=True) or {}
+            force = bool(data.get("force", False))
+            rows  = database.get_collection()
             _fp_build_stop.clear()
             threading.Thread(
-                target=_do_fp_build, args=(rows,), daemon=True
+                target=_do_fp_build, args=(rows, force), daemon=True
             ).start()
             return jsonify({"ok": True, "total": len(rows)})
         except Exception as exc:
@@ -3118,7 +3120,7 @@ def _do_spectro_batch(folders: list[str], opts: dict) -> None:
          errors=list(errors), skipped=skipped)
 
 
-def _do_fp_build(collection_rows: list[dict]) -> None:
+def _do_fp_build(collection_rows: list[dict], force: bool = False) -> None:
     """Run fingerprint.build_fingerprint_db in a daemon thread."""
     from backend import fingerprint as _fp
 
@@ -3128,6 +3130,7 @@ def _do_fp_build(collection_rows: list[dict]) -> None:
 
     _fp.build_fingerprint_db(
         collection_rows,
+        force=force,
         state_setter=_set,
         stop_event=_fp_build_stop,
     )
