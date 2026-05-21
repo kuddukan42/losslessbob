@@ -19,6 +19,9 @@
 | File watching | Watchdog | 4.0.1 |
 | Torrent generation | torf | 4.3.1 |
 | Credential storage | keyring | 25.7.0 |
+| Audio fingerprinting | librosa | 0.10.2 |
+| Audio I/O | soundfile | 0.12.1 |
+| Signal processing | scipy | 1.13.1 |
 | Language | Python | 3.11+ |
 
 **Architecture pattern:** The GUI and backend are separated by a local Flask REST API (port 5174). The GUI makes HTTP requests to `localhost:5174` for all data operations. Flask runs in a daemon thread started before the PyQt6 event loop.
@@ -49,6 +52,7 @@ losslessbob/
 │   ├── html_utils.py         # rewrite_links(): server-absolute → relative for file:// browsing
 │   ├── bootleg_scraper.py    # Bootleg-CD catalog (LBBCD index) scraper
 │   ├── scheduler.py          # Watchdog file watcher, auto-import
+│   ├── fingerprint.py        # Acoustic fingerprinting engine (Wang/Shazam landmark algorithm)
 │   ├── sox_utils.py          # SoX/ffmpeg tool detection + spectrogram generation
 │   ├── startup_log.py        # Startup timing logger → data/startup.log
 │   ├── torrent_maker.py      # torf-based .torrent generation; tracker CDN fetch

@@ -1,3 +1,33 @@
+[2026-05-21] — feat(fingerprint): add acoustic fingerprinting engine and UI
+
+Added
+
+  backend/fingerprint.py: Wang/Shazam-style landmark fingerprinting engine.
+    Stores spectral-peak hashes in data/fingerprints.db. Public API:
+    init_fp_db, fingerprint_file, build_fingerprint_db, identify_file,
+    find_duplicate_recordings, get_fp_stats.
+
+  backend/paths.py: Added FP_DB_PATH = DATA_DIR / "fingerprints.db".
+
+  backend/sox_utils.py: Added decode_to_wav() public wrapper around
+    _convert_to_wav() for use by the fingerprint engine.
+
+Changed
+
+  backend/app.py: Added _fp_build_state/_fp_dup_state module-level dicts,
+    _fp_build_lock/_fp_dup_lock/_fp_build_stop/_fp_dup_stop thread primitives,
+    _do_fp_build/_do_fp_dup_scan background workers, init_fp_db() call in
+    create_app(), and 7 new routes under /api/fingerprint/*.
+
+  gui/spectrogram_tab.py: Refactored _build_ui into inner QTabWidget with
+    "Spectrograms" and "Fingerprinting" sub-tabs. Fingerprinting tab has
+    three panels: Fingerprint DB (build/stats/stop), Identify File (file drop
+    + browse + results table), Find Duplicates (SQL scan + CSV export).
+
+  requirements.txt: Added librosa==0.10.2, soundfile==0.12.1, scipy==1.13.1.
+
+---
+
 [2026-05-20] — chore(release): bump version to 1.0.2
 
 Changed
