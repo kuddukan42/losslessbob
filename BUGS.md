@@ -1,3 +1,64 @@
+BUG-086: fingerprint.py _get_fp_conn missing timeout=30 and busy_timeout PRAGMA
+Status: Fixed
+File(s): backend/fingerprint.py:48
+Reported: 2026-05-21
+Fixed: 2026-05-21
+Description: _get_fp_conn used sqlite3.connect() with default timeout=5s and no
+  PRAGMA busy_timeout, unlike db.py's get_connection(). Under concurrent write load
+  (e.g. fingerprint build + identify running together) this would raise
+  OperationalError: database is locked after only 5 seconds.
+Root cause: New module did not replicate the timeout fix applied to db.py (BUG-084).
+Fix: Added timeout=30 to sqlite3.connect() and PRAGMA busy_timeout=30000.
+
+BUG-085: identify_file used raw hash hit count instead of temporal coherence
+Status: Fixed
+File(s): backend/fingerprint.py:identify_file
+Reported: 2026-05-21
+Fixed: 2026-05-21
+Description: identify_file counted raw fingerprint hash matches per track without
+  checking that matched hashes agreed on a consistent time offset. Hash collisions
+  across unrelated tracks could produce false high scores.
+Root cause: Temporal coherence histogram (the key Shazam discriminator) was omitted
+  from the initial implementation.
+Fix: Now fetches time_offset from DB hits, computes db_offset - query_offset per
+  (track_id, delta) bin, and uses the peak histogram bin count as the score.
+
+BUG-084: Site crawler crashes with "database is locked" under concurrent writes
+Status: Fixed
+File(s): backend/db.py:434, backend/db.py:2662
+Reported: 2026-05-20
+Fixed: 2026-05-20
+Description: Thread-35 (crawl) raised sqlite3.OperationalError: database is locked
+  on upsert_inventory() INSERT when the scraper or another writer held the DB lock.
+  The crawler thread died entirely, causing the scraper to appear hung.
+Root cause: sqlite3.connect() used the default timeout=5.0 seconds. In Python 3.12+,
+  Python's own retry mechanism uses this value rather than deferring to PRAGMA
+  busy_timeout=30000, so the 30-second intent was not honoured. Under concurrent
+  write load (crawler + scraper both active), 5 seconds was insufficient.
+Fix: Added timeout=30 to sqlite3.connect() to align Python's retry timeout with the
+  PRAGMA. Added retry loop (3 attempts, 2s back-off) in upsert_inventory() so a
+  transient lock does not crash the crawler thread.
+
+BUG-085: Black screen flickers in app at certain times
+Status: Open
+File(s): unknown
+Reported: 2026-05-20
+Description: Intermittent black screen flickers occur in the GUI at certain points during use. Trigger conditions not yet isolated — may be related to tab switching, background thread activity, or Qt repaint/viewport timing.
+Root cause: Unknown
+Fix: —
+
+---
+
+BUG-084: Setup tab flat file update requires app restart to reflect changes
+Status: Open
+File(s): gui/setup_tab.py (suspected)
+Reported: 2026-05-20
+Description: After applying an updated flat file (downloaded and unzipped successfully), the Setup tab does not reflect the updated data until the app is exited and re-launched. The update appears to complete without error but the UI is not refreshed.
+Root cause: Unknown — likely missing signal/refresh call on the Setup tab after flat file apply completes
+Fix: —
+
+---
+
 BUG-083: Attachments tab extremely slow/laggy after site crawler migration
 Status: Fixed
 File(s): gui/attachments_tab.py
