@@ -56,6 +56,17 @@ _spectro_state = {
 }
 _spectro_lock = __import__("threading").Lock()
 
+_fp_build_state = {
+    "status": "idle", "current": "", "done": 0,
+    "total": 0, "skipped": 0, "errors": [], "stop_requested": False,
+}
+_fp_build_lock = threading.Lock()
+_fp_build_stop = threading.Event()
+
+_fp_dup_state: dict = {"status": "idle", "message": "", "results": []}
+_fp_dup_lock  = threading.Lock()
+_fp_dup_stop  = threading.Event()
+
 
 def _find_lbdir_in_folder(folder: Path) -> "Path | None":
     """Return the first lbdir*.txt (or LBF-*-lbdir.txt) found in folder, or None."""
@@ -106,6 +117,9 @@ def create_app() -> Flask:
     _slog.t("Flask: init_db start")
     database.init_db()
     _slog.t("Flask: init_db done")
+    from backend import fingerprint as _fp_mod
+    _fp_mod.init_fp_db()
+    _slog.t("Flask: init_fp_db done")
     _slog.t("Flask: start_file_watcher start")
     scheduler.start_file_watcher()
     _slog.t("Flask: routes registering")
@@ -2929,6 +2943,95 @@ def create_app() -> Flask:
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
+    # ── Fingerprint ───────────────────────────────────────────────────────────
+
+    @app.route("/api/fingerprint/build", methods=["POST"])
+    def fp_build() -> Response:
+        """Start background fingerprint DB build over the whole collection.
+
+        Returns {ok, total} or 409 if already running.
+        """
+        with _fp_build_lock:
+            if _fp_build_state["status"] == "running":
+                return jsonify({"error": "Build already running"}), 409
+        try:
+            rows = database.get_collection()
+            _fp_build_stop.clear()
+            threading.Thread(
+                target=_do_fp_build, args=(rows,), daemon=True
+            ).start()
+            return jsonify({"ok": True, "total": len(rows)})
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/fingerprint/build/status", methods=["GET"])
+    def fp_build_status() -> Response:
+        """Return current state of the fingerprint build worker."""
+        with _fp_build_lock:
+            return jsonify(dict(_fp_build_state))
+
+    @app.route("/api/fingerprint/build/stop", methods=["POST"])
+    def fp_build_stop() -> Response:
+        """Signal the fingerprint build worker to stop after the current file."""
+        _fp_build_stop.set()
+        with _fp_build_lock:
+            _fp_build_state["stop_requested"] = True
+        return jsonify({"ok": True})
+
+    @app.route("/api/fingerprint/stats", methods=["GET"])
+    def fp_stats() -> Response:
+        """Return {track_count, hash_count} from fingerprints.db."""
+        try:
+            from backend import fingerprint as _fp
+            return jsonify(_fp.get_fp_stats())
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/fingerprint/identify", methods=["POST"])
+    def fp_identify() -> Response:
+        """Identify an audio file against the fingerprint DB.
+
+        Body: {file_path: "/abs/path/to/file"}
+        Returns: JSON list of {track_id, lb_number, file_path, score, confident}.
+        """
+        try:
+            from backend import fingerprint as _fp
+            data = request.get_json() or {}
+            file_path = data.get("file_path", "")
+            if not file_path:
+                return jsonify({"error": "file_path required"}), 400
+            p = Path(file_path)
+            if not p.exists():
+                return jsonify({"error": f"File not found: {file_path}"}), 404
+            results = _fp.identify_file(p)
+            return jsonify(results)
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/fingerprint/duplicates/scan", methods=["POST"])
+    def fp_dup_scan() -> Response:
+        """Start background duplicate-recording scan.
+
+        Returns {ok} or 409 if already running.
+        """
+        with _fp_dup_lock:
+            if _fp_dup_state["status"] == "running":
+                return jsonify({"error": "Scan already running"}), 409
+        try:
+            _fp_dup_stop.clear()
+            threading.Thread(
+                target=_do_fp_dup_scan, daemon=True
+            ).start()
+            return jsonify({"ok": True})
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/fingerprint/duplicates", methods=["GET"])
+    def fp_duplicates() -> Response:
+        """Return current state of the duplicate scan, including results when done."""
+        with _fp_dup_lock:
+            return jsonify(dict(_fp_dup_state))
+
     _slog.t("Flask: create_app done")
     return app
 
@@ -3013,6 +3116,37 @@ def _do_spectro_batch(folders: list[str], opts: dict) -> None:
 
     _set(status="done", current="", done=done,
          errors=list(errors), skipped=skipped)
+
+
+def _do_fp_build(collection_rows: list[dict]) -> None:
+    """Run fingerprint.build_fingerprint_db in a daemon thread."""
+    from backend import fingerprint as _fp
+
+    def _set(kw: dict) -> None:
+        with _fp_build_lock:
+            _fp_build_state.update(kw)
+
+    _fp.build_fingerprint_db(
+        collection_rows,
+        state_setter=_set,
+        stop_event=_fp_build_stop,
+    )
+
+
+def _do_fp_dup_scan() -> None:
+    """Run fingerprint.find_duplicate_recordings in a daemon thread."""
+    from backend import fingerprint as _fp
+
+    def _set(kw: dict) -> None:
+        with _fp_dup_lock:
+            _fp_dup_state.update(kw)
+
+    results = _fp.find_duplicate_recordings(
+        state_setter=_set,
+        stop_event=_fp_dup_stop,
+    )
+    with _fp_dup_lock:
+        _fp_dup_state.update({"status": "done", "results": results})
 
 
 def _start_scrape_thread(

@@ -1,8 +1,11 @@
 """
-SpectrogramTab: generate and review per-file spectrograms.
-Left panel:  folder list + per-folder file/PNG inventory.
-Right panel: full-width zoomable PNG viewer.
+SpectrogramTab: generate and review per-file spectrograms, plus acoustic fingerprinting.
+Inner tabs:
+  "Spectrograms"   — existing folder/track/viewer workflow
+  "Fingerprinting" — build fingerprint DB, identify unknown files, find duplicate recordings
 """
+import csv
+import io
 import requests
 from pathlib import Path
 
@@ -13,7 +16,8 @@ from PyQt6.QtWidgets import (
     QListWidget, QListWidgetItem, QAbstractItemView,
     QPushButton, QLabel, QScrollArea, QProgressBar,
     QFileDialog, QMenu, QCheckBox, QSpinBox, QGroupBox,
-    QSizePolicy, QMessageBox,
+    QSizePolicy, QMessageBox, QTabWidget, QTableWidget,
+    QTableWidgetItem, QHeaderView,
 )
 
 
@@ -36,7 +40,6 @@ class _DropFolderList(QListWidget):
             event.acceptProposedAction()
 
     def dropEvent(self, event):
-        # WIN-17 pattern: accept first, defer refresh
         event.acceptProposedAction()
         from gui.platform_utils import url_to_local_path
         folders, seen = [], set()
@@ -53,13 +56,7 @@ class _DropFolderList(QListWidget):
 # ── Zoomable image viewer ─────────────────────────────────────────────────────
 
 class _ImageViewer(QScrollArea):
-    """
-    Scroll area that shows a spectrogram PNG.
-    - Default: image fills the scroll area width (fit-width mode).
-    - Ctrl+scroll or zoom buttons: scale freely.
-    - Click-drag: pan when zoomed in.
-    - Double-click: reset to fit-width.
-    """
+    """Scroll area that shows a spectrogram PNG with zoom/pan support."""
 
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -99,7 +96,6 @@ class _ImageViewer(QScrollArea):
             elif t == QEvent.Type.MouseMove and self._panning and self._pan_start is not None:
                 delta = event.globalPosition() - self._pan_start
                 self._pan_start = event.globalPosition()
-                # Accumulate sub-pixel remainder to avoid integer-rounding jitter
                 rx = delta.x() + self._pan_remainder.x()
                 ry = delta.y() + self._pan_remainder.y()
                 dx, dy = int(rx), int(ry)
@@ -188,7 +184,7 @@ class _ImageViewer(QScrollArea):
             super().wheelEvent(event)
 
 
-# ── Worker ────────────────────────────────────────────────────────────────────
+# ── Generic worker thread ─────────────────────────────────────────────────────
 
 class _Worker(QThread):
     finished = pyqtSignal(object)
@@ -205,6 +201,66 @@ class _Worker(QThread):
             self.error.emit(str(e))
 
 
+# ── Fingerprint identify worker ───────────────────────────────────────────────
+
+class _FpIdentifyWorker(QThread):
+    finished = pyqtSignal(list)
+    error    = pyqtSignal(str)
+
+    def __init__(self, port: int, file_path: str):
+        super().__init__()
+        self._port      = port
+        self._file_path = file_path
+
+    def run(self):
+        try:
+            r = requests.post(
+                f"http://127.0.0.1:{self._port}/api/fingerprint/identify",
+                json={"file_path": self._file_path},
+                timeout=120,
+            ).json()
+            if isinstance(r, list):
+                self.finished.emit(r)
+            else:
+                self.error.emit(r.get("error", "Unknown error"))
+        except Exception as e:
+            self.error.emit(str(e))
+
+
+# ── File-drop label ───────────────────────────────────────────────────────────
+
+class _FileDrop(QLabel):
+    file_dropped = pyqtSignal(str)
+
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.setAcceptDrops(True)
+        self.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.setText("Drop an audio file here\nor click Browse…")
+        self.setStyleSheet(
+            "border: 2px dashed #888; border-radius: 6px; "
+            "padding: 16px; color: #666;"
+        )
+        self.setMinimumHeight(70)
+
+    def dragEnterEvent(self, event):
+        if event.mimeData().hasUrls():
+            event.acceptProposedAction()
+
+    def dragMoveEvent(self, event):
+        if event.mimeData().hasUrls():
+            event.acceptProposedAction()
+
+    def dropEvent(self, event):
+        event.acceptProposedAction()
+        for url in event.mimeData().urls():
+            path = url.toLocalFile()
+            if path:
+                self.setText(Path(path).name)
+                self.file_dropped.emit(path)
+                break
+
+
 # ── Main tab ──────────────────────────────────────────────────────────────────
 
 class SpectrogramTab(QWidget):
@@ -217,15 +273,32 @@ class SpectrogramTab(QWidget):
         self._workers:     list      = []
         self._poll_timer:  QTimer | None = None
         self._current_png: str = ""
+        # Fingerprint timers/workers
+        self._fp_build_timer: QTimer | None = None
+        self._fp_dup_timer:   QTimer | None = None
+        self._fp_id_worker:   _FpIdentifyWorker | None = None
+        self._fp_dup_results: list[dict] = []
         self._build_ui()
 
-    # ── UI ────────────────────────────────────────────────────────────────────
+    # ── Top-level UI ──────────────────────────────────────────────────────────
 
     def _build_ui(self):
-        main = QHBoxLayout(self)
+        outer = QVBoxLayout(self)
+        outer.setContentsMargins(0, 0, 0, 0)
+        self.inner_tabs = QTabWidget()
+        outer.addWidget(self.inner_tabs)
+        self.inner_tabs.addTab(self._build_spectro_panel(), self.tr("Spectrograms"))
+        self.inner_tabs.addTab(self._build_fingerprint_panel(), self.tr("Fingerprinting"))
+
+    # ── Spectrograms panel (extracted from original _build_ui) ────────────────
+
+    def _build_spectro_panel(self) -> QWidget:
+        container = QWidget()
+        main = QHBoxLayout(container)
+        main.setContentsMargins(0, 0, 0, 0)
         splitter = QSplitter(Qt.Orientation.Horizontal)
 
-        # ── Left panel ───────────────────────────────────────────────────────
+        # Left panel
         left = QWidget()
         ll   = QVBoxLayout(left)
         ll.setContentsMargins(0, 0, 4, 0)
@@ -314,7 +387,7 @@ class SpectrogramTab(QWidget):
         left.setFixedWidth(280)
         splitter.addWidget(left)
 
-        # ── Right panel ──────────────────────────────────────────────────────
+        # Right panel
         right = QWidget()
         rl    = QVBoxLayout(right)
         rl.setContentsMargins(4, 0, 0, 0)
@@ -365,17 +438,169 @@ class SpectrogramTab(QWidget):
         splitter.setSizes([280, 820])
         main.addWidget(splitter)
 
-        self.folder_list.setContextMenuPolicy(
-            Qt.ContextMenuPolicy.CustomContextMenu)
-        self.folder_list.customContextMenuRequested.connect(
-            self._on_folder_context)
+        self.folder_list.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
+        self.folder_list.customContextMenuRequested.connect(self._on_folder_context)
+        self.track_list.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
+        self.track_list.customContextMenuRequested.connect(self._on_track_context)
 
-        self.track_list.setContextMenuPolicy(
-            Qt.ContextMenuPolicy.CustomContextMenu)
-        self.track_list.customContextMenuRequested.connect(
-            self._on_track_context)
+        return container
 
-    # ── Folder management ─────────────────────────────────────────────────────
+    # ── Fingerprinting panel ──────────────────────────────────────────────────
+
+    def _build_fingerprint_panel(self) -> QWidget:
+        container = QWidget()
+        layout = QVBoxLayout(container)
+        layout.setContentsMargins(6, 6, 6, 6)
+
+        fp_tabs = QTabWidget()
+        layout.addWidget(fp_tabs)
+
+        fp_tabs.addTab(self._build_fp_db_tab(),    self.tr("Fingerprint DB"))
+        fp_tabs.addTab(self._build_fp_id_tab(),    self.tr("Identify File"))
+        fp_tabs.addTab(self._build_fp_dup_tab(),   self.tr("Find Duplicates"))
+
+        return container
+
+    def _build_fp_db_tab(self) -> QWidget:
+        w = QWidget()
+        vl = QVBoxLayout(w)
+        vl.setContentsMargins(8, 8, 8, 8)
+
+        # Stats
+        stats_group = QGroupBox(self.tr("Database Stats"))
+        sl = QHBoxLayout(stats_group)
+        self.fp_stats_label = QLabel(self.tr("—"))
+        sl.addWidget(self.fp_stats_label)
+        sl.addStretch()
+        refresh_btn = QPushButton(self.tr("Refresh"))
+        refresh_btn.clicked.connect(self._fp_refresh_stats)
+        sl.addWidget(refresh_btn)
+        vl.addWidget(stats_group)
+
+        # Build
+        build_group = QGroupBox(self.tr("Build Fingerprint DB"))
+        bl = QVBoxLayout(build_group)
+
+        self.fp_build_bar = QProgressBar()
+        self.fp_build_bar.setVisible(False)
+        bl.addWidget(self.fp_build_bar)
+
+        self.fp_build_label = QLabel("")
+        self.fp_build_label.setWordWrap(True)
+        self.fp_build_label.setStyleSheet("font-size: 10px;")
+        bl.addWidget(self.fp_build_label)
+
+        self.fp_force_cb = QCheckBox(self.tr("Force re-fingerprint all (ignore cache)"))
+        bl.addWidget(self.fp_force_cb)
+
+        btn_row = QHBoxLayout()
+        self.fp_build_btn = QPushButton(self.tr("Build DB"))
+        self.fp_build_btn.clicked.connect(self._fp_start_build)
+        btn_row.addWidget(self.fp_build_btn)
+        self.fp_build_stop_btn = QPushButton(self.tr("Stop"))
+        self.fp_build_stop_btn.setEnabled(False)
+        self.fp_build_stop_btn.clicked.connect(self._fp_stop_build)
+        btn_row.addWidget(self.fp_build_stop_btn)
+        bl.addLayout(btn_row)
+
+        vl.addWidget(build_group)
+        vl.addStretch()
+
+        # Load initial stats
+        QTimer.singleShot(500, self._fp_refresh_stats)
+        return w
+
+    def _build_fp_id_tab(self) -> QWidget:
+        w = QWidget()
+        vl = QVBoxLayout(w)
+        vl.setContentsMargins(8, 8, 8, 8)
+
+        self.fp_drop = _FileDrop()
+        self.fp_drop.file_dropped.connect(self._fp_on_file_dropped)
+        vl.addWidget(self.fp_drop)
+
+        browse_btn = QPushButton(self.tr("Browse…"))
+        browse_btn.clicked.connect(self._fp_browse_file)
+        vl.addWidget(browse_btn)
+
+        self.fp_id_status = QLabel("")
+        self.fp_id_status.setStyleSheet("font-size: 10px;")
+        vl.addWidget(self.fp_id_status)
+
+        self.fp_id_table = QTableWidget(0, 5)
+        self.fp_id_table.setHorizontalHeaderLabels(
+            [self.tr("Rank"), self.tr("LB #"), self.tr("File"),
+             self.tr("Score"), self.tr("Confident")]
+        )
+        self.fp_id_table.horizontalHeader().setSectionResizeMode(
+            2, QHeaderView.ResizeMode.Stretch)
+        self.fp_id_table.setEditTriggers(
+            QAbstractItemView.EditTrigger.NoEditTriggers)
+        self.fp_id_table.setSelectionBehavior(
+            QAbstractItemView.SelectionBehavior.SelectRows)
+        vl.addWidget(self.fp_id_table)
+
+        return w
+
+    def _build_fp_dup_tab(self) -> QWidget:
+        w = QWidget()
+        vl = QVBoxLayout(w)
+        vl.setContentsMargins(8, 8, 8, 8)
+
+        desc = QLabel(self.tr(
+            "Scan the fingerprint DB for pairs of tracks that share enough "
+            "acoustic content to be the same performance. Slow on large collections."
+        ))
+        desc.setWordWrap(True)
+        desc.setStyleSheet("font-size: 10px; color: #555;")
+        vl.addWidget(desc)
+
+        ctl_row = QHBoxLayout()
+        self.fp_dup_btn = QPushButton(self.tr("Start Scan"))
+        self.fp_dup_btn.clicked.connect(self._fp_start_dup_scan)
+        ctl_row.addWidget(self.fp_dup_btn)
+        self.fp_dup_stop_btn = QPushButton(self.tr("Stop"))
+        self.fp_dup_stop_btn.setEnabled(False)
+        self.fp_dup_stop_btn.clicked.connect(self._fp_stop_dup_scan)
+        ctl_row.addWidget(self.fp_dup_stop_btn)
+        ctl_row.addStretch()
+        vl.addLayout(ctl_row)
+
+        self.fp_dup_bar = QProgressBar()
+        self.fp_dup_bar.setRange(0, 0)  # indeterminate
+        self.fp_dup_bar.setVisible(False)
+        vl.addWidget(self.fp_dup_bar)
+
+        self.fp_dup_status = QLabel("")
+        self.fp_dup_status.setStyleSheet("font-size: 10px;")
+        vl.addWidget(self.fp_dup_status)
+
+        self.fp_dup_table = QTableWidget(0, 5)
+        self.fp_dup_table.setHorizontalHeaderLabels(
+            [self.tr("LB A"), self.tr("LB B"),
+             self.tr("File A"), self.tr("File B"), self.tr("Score")]
+        )
+        self.fp_dup_table.horizontalHeader().setSectionResizeMode(
+            2, QHeaderView.ResizeMode.Stretch)
+        self.fp_dup_table.horizontalHeader().setSectionResizeMode(
+            3, QHeaderView.ResizeMode.Stretch)
+        self.fp_dup_table.setEditTriggers(
+            QAbstractItemView.EditTrigger.NoEditTriggers)
+        self.fp_dup_table.setSelectionBehavior(
+            QAbstractItemView.SelectionBehavior.SelectRows)
+        vl.addWidget(self.fp_dup_table)
+
+        self.fp_dup_count_label = QLabel("")
+        vl.addWidget(self.fp_dup_count_label)
+
+        self.fp_dup_export_btn = QPushButton(self.tr("Export CSV…"))
+        self.fp_dup_export_btn.setEnabled(False)
+        self.fp_dup_export_btn.clicked.connect(self._fp_export_dup_csv)
+        vl.addWidget(self.fp_dup_export_btn)
+
+        return w
+
+    # ── Spectrogram: folder management ───────────────────────────────────────
 
     def _on_add_folder(self):
         path = QFileDialog.getExistingDirectory(
@@ -431,10 +656,9 @@ class SpectrogramTab(QWidget):
         self.track_list.clear()
         self.viewer.clear_image()
 
-    # ── Inventory ─────────────────────────────────────────────────────────────
+    # ── Spectrogram: inventory ────────────────────────────────────────────────
 
     def _refresh_inventory(self):
-        """Ask backend for the current PNG status of all folders."""
         if not self._folders:
             return
         folders = list(self._folders)
@@ -456,8 +680,7 @@ class SpectrogramTab(QWidget):
             entries = data.get(folder, [])
             total  = len(entries)
             has    = sum(1 for e in entries if e["has_png"])
-            label  = f"{Path(folder).name}  [{has}/{total}]"
-            self.folder_list.item(i).setText(label)
+            self.folder_list.item(i).setText(f"{Path(folder).name}  [{has}/{total}]")
         item = self.folder_list.currentItem()
         if item:
             self._load_tracks_for(item.data(Qt.ItemDataRole.UserRole))
@@ -487,11 +710,9 @@ class SpectrogramTab(QWidget):
         else:
             self.viewer.clear_image()
             self.image_title.setText(
-                self.tr("{} — no spectrogram yet").format(e["audio_name"])
-            )
+                self.tr("{} — no spectrogram yet").format(e["audio_name"]))
             self.status_label.setText(
-                self.tr("No PNG for this track. Run Generate Spectrograms first.")
-            )
+                self.tr("No PNG for this track. Run Generate Spectrograms first."))
 
     def _load_image(self, png_path: str, name: str):
         self._current_png = png_path
@@ -546,7 +767,7 @@ class SpectrogramTab(QWidget):
         except Exception as e:
             self.status_label.setText(self.tr("Open failed: {}").format(e))
 
-    # ── Generation ────────────────────────────────────────────────────────────
+    # ── Spectrogram: generation ───────────────────────────────────────────────
 
     def _on_generate(self):
         if not self._folders:
@@ -577,10 +798,9 @@ class SpectrogramTab(QWidget):
         w.start()
 
     def _generate_single(self, entry: dict):
-        """Generate spectrogram for one file via the batch API with one folder."""
         folder = str(Path(entry["audio_file"]).parent)
         payload = {
-            "folders": [folder],
+            "folders":   [folder],
             "width":     self.width_spin.value(),
             "dyn_range": self.dyn_spin.value(),
             "force":     True,
@@ -646,8 +866,7 @@ class SpectrogramTab(QWidget):
 
             if status == "error":
                 self.progress_label.setText(
-                    r.get("current", self.tr("Generation failed."))
-                )
+                    r.get("current", self.tr("Generation failed.")))
                 self.status_label.setText(self.tr("Generation stopped with errors."))
             else:
                 self.status_label.setText(
@@ -656,9 +875,7 @@ class SpectrogramTab(QWidget):
                     )
                 )
                 if errs:
-                    err_text = "\n".join(
-                        f"{e['file']}: {e['error']}" for e in errs
-                    )
+                    err_text = "\n".join(f"{e['file']}: {e['error']}" for e in errs)
                     QMessageBox.warning(
                         self, self.tr("Generation Errors"),
                         self.tr("{} file(s) failed:\n\n{}").format(len(errs), err_text)
@@ -666,3 +883,246 @@ class SpectrogramTab(QWidget):
 
             self.progress_bar.setVisible(False)
             self._refresh_inventory()
+
+    # ── Fingerprinting: DB tab ────────────────────────────────────────────────
+
+    def _fp_refresh_stats(self):
+        w = _Worker(lambda: requests.get(
+            f"http://127.0.0.1:{self.flask_port}/api/fingerprint/stats",
+            timeout=10,
+        ).json())
+        w.finished.connect(self._fp_on_stats)
+        w.error.connect(lambda e: self.fp_stats_label.setText(self.tr("Error: {}").format(e)))
+        self._workers.append(w)
+        w.start()
+
+    def _fp_on_stats(self, data: dict):
+        if "error" in data:
+            self.fp_stats_label.setText(self.tr("Error: {}").format(data["error"]))
+            return
+        tc = data.get("track_count", 0)
+        hc = data.get("hash_count", 0)
+        self.fp_stats_label.setText(
+            self.tr("{} track(s) fingerprinted · {:,} hashes stored").format(tc, hc)
+        )
+
+    def _fp_start_build(self):
+        self.fp_build_btn.setEnabled(False)
+        self.fp_build_stop_btn.setEnabled(True)
+        self.fp_build_bar.setVisible(True)
+        self.fp_build_bar.setValue(0)
+        self.fp_build_label.setText(self.tr("Starting…"))
+
+        w = _Worker(lambda: requests.post(
+            f"http://127.0.0.1:{self.flask_port}/api/fingerprint/build",
+            timeout=15,
+        ).json())
+        w.finished.connect(self._fp_on_build_started)
+        w.error.connect(self._fp_on_build_error)
+        self._workers.append(w)
+        w.start()
+
+    def _fp_on_build_started(self, data: dict):
+        if data.get("error"):
+            self._fp_on_build_error(data["error"])
+            return
+        self._fp_build_timer = QTimer(self)
+        self._fp_build_timer.timeout.connect(self._fp_poll_build)
+        self._fp_build_timer.start(800)
+
+    def _fp_on_build_error(self, msg: str):
+        self.fp_build_btn.setEnabled(True)
+        self.fp_build_stop_btn.setEnabled(False)
+        self.fp_build_bar.setVisible(False)
+        self.fp_build_label.setText(self.tr("Error: {}").format(msg))
+
+    def _fp_stop_build(self):
+        self.fp_build_stop_btn.setEnabled(False)
+        requests.post(
+            f"http://127.0.0.1:{self.flask_port}/api/fingerprint/build/stop",
+            timeout=5,
+        )
+
+    def _fp_poll_build(self):
+        try:
+            r = requests.get(
+                f"http://127.0.0.1:{self.flask_port}/api/fingerprint/build/status",
+                timeout=5,
+            ).json()
+        except Exception:
+            return
+
+        status = r.get("status", "")
+        done   = r.get("done",  0)
+        total  = r.get("total", 0)
+        errs   = r.get("errors", [])
+
+        if total > 0:
+            self.fp_build_bar.setMaximum(total)
+            self.fp_build_bar.setValue(done)
+
+        skip_msg = f"  ({r['skipped']} skipped)" if r.get("skipped") else ""
+        err_msg  = f"  {len(errs)} error(s)" if errs else ""
+        self.fp_build_label.setText(
+            f"{r.get('current', '')}  [{done}/{total}]{skip_msg}{err_msg}"
+        )
+
+        if status == "done":
+            self._fp_build_timer.stop()
+            self.fp_build_btn.setEnabled(True)
+            self.fp_build_stop_btn.setEnabled(False)
+            self.fp_build_bar.setVisible(False)
+            self.fp_build_label.setText(
+                self.tr("Done. {} fingerprinted, {} skipped, {} error(s).").format(
+                    done, r.get("skipped", 0), len(errs)
+                )
+            )
+            self._fp_refresh_stats()
+
+    # ── Fingerprinting: Identify tab ──────────────────────────────────────────
+
+    def _fp_browse_file(self):
+        path, _ = QFileDialog.getOpenFileName(
+            self, self.tr("Select Audio File"), str(Path.home()),
+            self.tr("Audio Files (*.flac *.wav *.shn *.ape *.wv *.m4a *.mp3 *.ogg *.aif *.aiff)")
+        )
+        if path:
+            self.fp_drop.setText(Path(path).name)
+            self._fp_identify(path)
+
+    def _fp_on_file_dropped(self, path: str):
+        self._fp_identify(path)
+
+    def _fp_identify(self, path: str):
+        self.fp_id_status.setText(self.tr("Identifying…"))
+        self.fp_id_table.setRowCount(0)
+
+        if self._fp_id_worker and self._fp_id_worker.isRunning():
+            return
+
+        self._fp_id_worker = _FpIdentifyWorker(self.flask_port, path)
+        self._fp_id_worker.finished.connect(self._fp_on_identify_done)
+        self._fp_id_worker.error.connect(
+            lambda e: self.fp_id_status.setText(self.tr("Error: {}").format(e)))
+        self._fp_id_worker.start()
+
+    def _fp_on_identify_done(self, results: list):
+        self.fp_id_table.setRowCount(0)
+        if not results:
+            self.fp_id_status.setText(self.tr("No match found in fingerprint DB."))
+            return
+
+        self.fp_id_status.setText(
+            self.tr("{} candidate(s) found.").format(len(results)))
+
+        for rank, res in enumerate(results, 1):
+            row = self.fp_id_table.rowCount()
+            self.fp_id_table.insertRow(row)
+            self.fp_id_table.setItem(row, 0, QTableWidgetItem(str(rank)))
+            self.fp_id_table.setItem(row, 1, QTableWidgetItem(str(res.get("lb_number", ""))))
+            self.fp_id_table.setItem(row, 2, QTableWidgetItem(
+                Path(res.get("file_path", "")).name))
+            self.fp_id_table.setItem(row, 3, QTableWidgetItem(str(res.get("score", ""))))
+            self.fp_id_table.setItem(row, 4, QTableWidgetItem(
+                self.tr("Yes") if res.get("confident") else self.tr("No")))
+
+    # ── Fingerprinting: Duplicates tab ────────────────────────────────────────
+
+    def _fp_start_dup_scan(self):
+        self.fp_dup_btn.setEnabled(False)
+        self.fp_dup_stop_btn.setEnabled(True)
+        self.fp_dup_bar.setVisible(True)
+        self.fp_dup_status.setText(self.tr("Scanning…"))
+        self.fp_dup_table.setRowCount(0)
+        self.fp_dup_count_label.setText("")
+        self.fp_dup_export_btn.setEnabled(False)
+        self._fp_dup_results = []
+
+        w = _Worker(lambda: requests.post(
+            f"http://127.0.0.1:{self.flask_port}/api/fingerprint/duplicates/scan",
+            timeout=15,
+        ).json())
+        w.finished.connect(self._fp_on_dup_scan_started)
+        w.error.connect(lambda e: self._fp_dup_scan_done(error=e))
+        self._workers.append(w)
+        w.start()
+
+    def _fp_on_dup_scan_started(self, data: dict):
+        if data.get("error"):
+            self._fp_dup_scan_done(error=data["error"])
+            return
+        self._fp_dup_timer = QTimer(self)
+        self._fp_dup_timer.timeout.connect(self._fp_poll_dup)
+        self._fp_dup_timer.start(800)
+
+    def _fp_stop_dup_scan(self):
+        self.fp_dup_stop_btn.setEnabled(False)
+        requests.post(
+            f"http://127.0.0.1:{self.flask_port}/api/fingerprint/build/stop",
+            timeout=5,
+        )
+
+    def _fp_poll_dup(self):
+        try:
+            r = requests.get(
+                f"http://127.0.0.1:{self.flask_port}/api/fingerprint/duplicates",
+                timeout=5,
+            ).json()
+        except Exception:
+            return
+
+        msg = r.get("message", "")
+        if msg:
+            self.fp_dup_status.setText(msg)
+
+        if r.get("status") == "done":
+            self._fp_dup_timer.stop()
+            results = r.get("results", [])
+            self._fp_dup_scan_done(results=results)
+
+    def _fp_dup_scan_done(self, results: list | None = None, error: str = ""):
+        self.fp_dup_btn.setEnabled(True)
+        self.fp_dup_stop_btn.setEnabled(False)
+        self.fp_dup_bar.setVisible(False)
+
+        if error:
+            self.fp_dup_status.setText(self.tr("Error: {}").format(error))
+            return
+
+        results = results or []
+        self._fp_dup_results = results
+        self.fp_dup_table.setRowCount(0)
+
+        for res in results:
+            row = self.fp_dup_table.rowCount()
+            self.fp_dup_table.insertRow(row)
+            self.fp_dup_table.setItem(row, 0, QTableWidgetItem(str(res.get("lb_a", ""))))
+            self.fp_dup_table.setItem(row, 1, QTableWidgetItem(str(res.get("lb_b", ""))))
+            self.fp_dup_table.setItem(row, 2, QTableWidgetItem(
+                Path(res.get("file_a", "")).name))
+            self.fp_dup_table.setItem(row, 3, QTableWidgetItem(
+                Path(res.get("file_b", "")).name))
+            self.fp_dup_table.setItem(row, 4, QTableWidgetItem(str(res.get("score", ""))))
+
+        n = len(results)
+        self.fp_dup_count_label.setText(
+            self.tr("{} duplicate pair(s) found.").format(n))
+        self.fp_dup_export_btn.setEnabled(n > 0)
+
+    def _fp_export_dup_csv(self):
+        path, _ = QFileDialog.getSaveFileName(
+            self, self.tr("Export Duplicates CSV"),
+            str(Path.home() / "duplicates.csv"),
+            self.tr("CSV Files (*.csv)")
+        )
+        if not path:
+            return
+        try:
+            with open(path, "w", newline="", encoding="utf-8") as f:
+                writer = csv.DictWriter(
+                    f, fieldnames=["lb_a", "lb_b", "file_a", "file_b", "score", "confident"]
+                )
+                writer.writeheader()
+                writer.writerows(self._fp_dup_results)
+        except Exception as e:
+            QMessageBox.warning(self, self.tr("Export Failed"), str(e))

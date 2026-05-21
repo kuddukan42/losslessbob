@@ -17,5 +17,10 @@ watchdog==4.0.1
 
 waitress==3.0.0
 
+# Audio fingerprinting
+librosa==0.10.2
+soundfile==0.12.1
+scipy==1.13.1
+
 # Packaging (run separately, not imported)
 # pyinstaller==6.8.0

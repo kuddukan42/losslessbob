@@ -224,6 +224,11 @@ def _convert_to_wav(audio_path: Path) -> Path:
     return tmp_path
 
 
+def decode_to_wav(audio_path: Path) -> Path:
+    """Decode any supported audio file to a temporary WAV. Caller must delete."""
+    return _convert_to_wav(audio_path)
+
+
 # ── Spectrogram generation ────────────────────────────────────────────────────
 
 def generate_spectrogram(
