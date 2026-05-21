@@ -1,3 +1,45 @@
+BUG-089: find_duplicate_recordings reports too many false-positive duplicates
+Status: Fixed
+File(s): backend/fingerprint.py:426
+Reported: 2026-05-20
+Fixed: 2026-05-20
+Description: Duplicate scan flagged large numbers of unrelated recordings as duplicates.
+Root cause: find_duplicate_recordings() counted raw hash collisions between track pairs.
+  Any two files sharing similar spectral content (same key, similar instrumentation) could
+  accumulate 20+ raw hits even with no temporal alignment, passing MATCH_THRESHOLD.
+  identify_file() correctly used temporal coherence (peak bin count per offset-delta),
+  but find_duplicate_recordings() did not.
+Fix: Replaced the flat GROUP BY (ta, tb) COUNT(*) query with a nested query that first
+  bins matches by ROUND(a.time_offset - b.time_offset, 1) and then takes MAX(bin_count)
+  as the pair score, matching the identify_file() algorithm.
+
+BUG-088: fingerprint_file fails with "No module named 'numpy'"
+Status: Fixed
+File(s): backend/fingerprint.py, requirements.txt
+Reported: 2026-05-20
+Fixed: 2026-05-20
+Description: Every fingerprint_file() call failed with "No module named 'numpy'".
+  numpy, scipy (new version), librosa (new version), soundfile (new version), and
+  numba were not installed in the .venv despite being required by fingerprint.py.
+Root cause: requirements.txt listed outdated versions of librosa/soundfile/scipy and
+  omitted numpy and numba entirely; packages were never installed into the venv.
+Fix: pip install numpy==2.4.6 librosa==0.11.0 soundfile==0.13.1 scipy==1.17.1
+  numba==0.65.1; updated requirements.txt and PROJECT.md tech stack table.
+
+BUG-087: Fingerprint DB Stats causes 10-second read timeout
+Status: Fixed
+File(s): backend/fingerprint.py:469
+Reported: 2026-05-20
+Fixed: 2026-05-20
+Description: Opening the Fingerprinting tab shows "Error: HTTPConnectionPool … Read timed out"
+  in the Database Stats panel. The GET /api/fingerprint/stats endpoint triggered a full
+  recursive rglob("*") scan across all collection folders on every call to compute
+  coverage_pct, blocking the Flask thread until the 10-second GUI timeout fired.
+Root cause: get_fp_stats() called _maindb.get_collection() then iterated p.rglob("*") on
+  every folder to count audio files — O(n) filesystem walk, unbounded on large collections.
+Fix: Removed the rglob scan; coverage_pct now returns None. The GUI already handles None
+  gracefully (omits the "% of collection" suffix).
+
 BUG-086: fingerprint.py _get_fp_conn missing timeout=30 and busy_timeout PRAGMA
 Status: Fixed
 File(s): backend/fingerprint.py:48
@@ -39,22 +81,47 @@ Fix: Added timeout=30 to sqlite3.connect() to align Python's retry timeout with 
   PRAGMA. Added retry loop (3 attempts, 2s back-off) in upsert_inventory() so a
   transient lock does not crash the crawler thread.
 
-BUG-085: Black screen flickers in app at certain times
+BUG-092: Attachments tab still extremely slow and buggy after BUG-083 partial fix
+Status: Fixed
+File(s): gui/attachments_tab.py
+Reported: 2026-05-20
+Fixed: 2026-05-20
+Description: Even after BUG-083's thread fix, the Attachments tab remained sluggish and
+  unreliable: paging through 1000-item QTreeWidget pages was slow (thousands of QTreeWidgetItem
+  C++ objects allocated per page turn), get_lb_statuses_batch() ran on the main thread on every
+  page navigation blocking the UI, pagination state was fragile (selected item lost on page
+  turn, _render_tree_page could be called from multiple code paths), and the search box only
+  jumped-to not filtered.
+Root cause: QTreeWidget is fundamentally the wrong widget for this volume of data. Allocating
+  and destroying thousands of C++ QTreeWidgetItem objects per page render is inherently slow.
+  The tree-with-children pattern also required eager child population — all file children were
+  added even for collapsed nodes — compounding the cost.
+Fix: Replaced QTreeWidget + pagination with QTableView backed by _LbModel(QAbstractTableModel).
+  Qt only renders visible rows so all entries load without pagination. lb_status is now fetched
+  via LEFT JOIN inside _RefreshTreeThread so no per-page main-thread DB call is needed.
+  Files for the selected LB are shown in a QListWidget below the table, populated on selection.
+  Proxy model (QSortFilterProxyModel) provides instant text filtering; no custom jump logic
+  needed.
+
+BUG-091: Setup tab flat file update requires app restart to reflect changes
+Status: Fixed
+File(s): gui/setup_tab.py:1208
+Reported: 2026-05-20
+Fixed: 2026-05-20
+Description: After applying an updated flat file (downloaded and unzipped successfully), the Setup tab does not reflect the updated data until the app is exited and re-launched. The update appears to complete without error but the UI is not refreshed.
+Root cause: _on_discover_done() called _load_flat_file_history() and stats_changed.emit() after
+  the dialog closed, but never called _refresh_stats(). The stats_changed signal refreshes the
+  main window status bar and other tabs, but the Setup tab's own db_stats_label (showing total
+  checksums, LB entries, latest LB) is only updated by _refresh_stats() itself.
+Fix: Added self._refresh_stats() call in _on_discover_done() immediately after
+  _load_flat_file_history(), matching the pattern used by _on_import_status and _on_reset_finished.
+
+BUG-090: Black screen flickers in app at certain times
 Status: Open
 File(s): unknown
 Reported: 2026-05-20
 Description: Intermittent black screen flickers occur in the GUI at certain points during use. Trigger conditions not yet isolated — may be related to tab switching, background thread activity, or Qt repaint/viewport timing.
 Root cause: Unknown
-Fix: —
-
----
-
-BUG-084: Setup tab flat file update requires app restart to reflect changes
-Status: Open
-File(s): gui/setup_tab.py (suspected)
-Reported: 2026-05-20
-Description: After applying an updated flat file (downloaded and unzipped successfully), the Setup tab does not reflect the updated data until the app is exited and re-launched. The update appears to complete without error but the UI is not refreshed.
-Root cause: Unknown — likely missing signal/refresh call on the Setup tab after flat file apply completes
 Fix: —
 
 ---

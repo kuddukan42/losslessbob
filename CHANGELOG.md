@@ -1,3 +1,86 @@
+[2026-05-20] — fix(gui): rework Attachments tab — QTableView replaces QTreeWidget (BUG-092)
+
+Changed
+
+  gui/attachments_tab.py: full rework of the Cached view.
+    - _LbModel(QAbstractTableModel): two-column model (LB Number, Files) read directly from
+      the in-memory list; Qt renders only visible rows so all entries display without any
+      pagination — page nav buttons removed.
+    - QSortFilterProxyModel on the table provides instant text filtering; numeric input
+      (e.g. "1234") is normalized to "LB-01234" automatically.
+    - QListWidget below the table shows files for the selected LB; connected once in _build_ui
+      to avoid repeated signal connections.
+    - lb_status fetched via LEFT JOIN lb_master inside _RefreshTreeThread so _render_tree_page's
+      blocking get_lb_statuses_batch() call on the main thread is eliminated.
+    - Removed: PAGE_SIZE, _page, _render_tree_page, prev/next page buttons, _jump_to_lb, the
+      old _tree_context_menu and _LB_STATUS_BG dict; all replaced by the model/proxy approach.
+    - Removed import of get_lb_statuses_batch (no longer needed).
+
+[2026-05-20] — fix(gui): Setup tab stats not refreshed after flat file apply (BUG-091)
+
+Fixed
+
+  gui/setup_tab.py: _on_discover_done() now calls _refresh_stats() after the update dialog
+    closes, so the DB stats label (total checksums, LB entries, latest LB) updates immediately
+    when a flat file is applied. Previously it required an app restart to reflect the new counts.
+
+[2026-05-20] — feat(gui+backend): Fingerprinted column in My Collection; fingerprint progress shows folder name
+
+Added
+
+  gui/collection_tab.py: new "Fingerprinted" column (col 8) in My Collection table. Shows "Yes"
+    (green) when at least one audio track for that LB number has been fingerprinted. Tooltip
+    shows hash count. Column is sortable. Data is fetched async via the new API endpoint and
+    merged into rows without blocking the collection load.
+  backend/app.py: GET /api/fingerprint/lb_numbers — returns {lb_number: n_hashes} dict for
+    all fingerprinted LBs, used by the new collection column.
+
+Changed
+
+  backend/fingerprint.py: build_fingerprint_db() now sets current to "FolderName / filename"
+    instead of just "filename", so the Fingerprinting tab progress label shows which folder is
+    being processed.
+
+[2026-05-20] — fix(fingerprint): duplicate scan used raw hash count instead of temporal coherence (BUG-089)
+
+Fixed
+
+  backend/fingerprint.py: find_duplicate_recordings() was grouping by (track_a, track_b)
+    and counting raw hash collisions. Any two files sharing spectral content in unrelated
+    passages could accumulate enough raw hits to pass MATCH_THRESHOLD, producing mass
+    false positives. Fixed by applying the same temporal-coherence approach as
+    identify_file(): matches are bucketed by their time-offset delta (rounded to 0.1 s)
+    and the peak bin count — not the total hit count — is used as the score.
+
+[2026-05-20] — fix(deps): install numpy/librosa/scipy/soundfile/numba into venv (BUG-088)
+
+Fixed
+
+  requirements.txt: added numpy==2.4.6, numba==0.65.1; bumped librosa to 0.11.0,
+    soundfile to 0.13.1, scipy to 1.17.1. All packages now installed in .venv.
+    Previously fingerprint_file() failed with "No module named 'numpy'" on every call.
+  PROJECT.md: updated Tech Stack table to reflect actual installed versions.
+
+[2026-05-20] — feat(gui+backend): right-click "Fingerprint Folder" in My Collection tab
+
+Added
+
+  gui/collection_tab.py: "Fingerprint Folder" action in the My Collection context menu.
+    Appears for any selected row(s) whose disk_path exists on disk. Calls the build
+    endpoint with only the selected folder(s) so the full collection is not re-scanned.
+  backend/app.py: /api/fingerprint/build now accepts an optional `folders` list of
+    {disk_path, lb_number} dicts in the JSON body. When provided, only those rows are
+    fingerprinted instead of the whole collection.
+
+[2026-05-20] — fix(fingerprint): remove blocking rglob scan from get_fp_stats (BUG-087)
+
+Fixed
+
+  backend/fingerprint.py: get_fp_stats() no longer walks the filesystem to compute
+    coverage_pct. The rglob scan caused the /api/fingerprint/stats endpoint to block for
+    10+ seconds on large collections, triggering the GUI read timeout. coverage_pct now
+    returns None; the GUI already handles this gracefully.
+
 [2026-05-21] — fix(fingerprint): post-review fixes — temporal coherence, DB timeout, rglob, force wiring
 
 Fixed

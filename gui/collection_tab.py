@@ -22,7 +22,7 @@ import gui.styles as styles
 _LB_RE = re.compile(r'LB[- ]0*(\d+)', re.IGNORECASE)
 _STANDARD_LB_NAME_RE = re.compile(r'^\d{4}-\d{2}-\d{2}\s.+\(LB-\d{5}\)$')
 
-COLL_HEADERS = ["LB Number", "Status", "Date", "Location", "Folder Name", "Disk Path", "Confirmed", "Notes"]
+COLL_HEADERS = ["LB Number", "Status", "Date", "Location", "Folder Name", "Disk Path", "Confirmed", "Notes", "Fingerprinted"]
 MISS_HEADERS = ["LB Number", "Status", "Date", "Location", "Rating", "Description"]
 
 _COLL_STATUS_COL = 1   # Status column in My Collection
@@ -76,25 +76,34 @@ class _CollectionModel(QAbstractTableModel):
                 return str(v)[:10]
             if col == 7:
                 return row.get("notes", "") or ""
+            if col == 8:
+                return "Yes" if (row.get("fp_n_hashes") or 0) > 0 else ""
         if role == Qt.ItemDataRole.FontRole and col in (2, 3):
             val = row.get("date_str") if col == 2 else row.get("location")
             if not val:
                 f = QFont()
                 f.setItalic(True)
                 return f
-        if role == Qt.ItemDataRole.ForegroundRole and col in (2, 3):
-            val = row.get("date_str") if col == 2 else row.get("location")
-            if not val:
-                return QColor("#888888")
+        if role == Qt.ItemDataRole.ForegroundRole:
+            if col in (2, 3):
+                val = row.get("date_str") if col == 2 else row.get("location")
+                if not val:
+                    return QColor("#888888")
+            if col == 8 and (row.get("fp_n_hashes") or 0) > 0:
+                return QColor("#2E7D32")
         if role == Qt.ItemDataRole.BackgroundRole:
             hex_color = _BG_LB_STATUS.get(lb_status)
             if hex_color:
                 return QColor(hex_color)
             return styles.ROW_OWNED
-        if role == Qt.ItemDataRole.TextAlignmentRole and col == _COLL_STATUS_COL:
+        if role == Qt.ItemDataRole.TextAlignmentRole and col in (_COLL_STATUS_COL, 8):
             return Qt.AlignmentFlag.AlignCenter
-        if role == Qt.ItemDataRole.ToolTipRole and col == _COLL_STATUS_COL and lb_status:
-            return f"LB master status: {lb_status}"
+        if role == Qt.ItemDataRole.ToolTipRole:
+            if col == _COLL_STATUS_COL and lb_status:
+                return f"LB master status: {lb_status}"
+            if col == 8:
+                n = row.get("fp_n_hashes") or 0
+                return f"{n} hashes fingerprinted" if n > 0 else "Not yet fingerprinted"
         return None
 
     def headerData(self, section, orientation, role=Qt.ItemDataRole.DisplayRole):
@@ -460,6 +469,7 @@ class CollectionTab(QWidget):
         self._forum_posts_records: list = []
         self._current_forum_posts_lb: int | None = None
         self._forum_posts_gen: int = 0
+        self._fp_lb_numbers: dict[int, int] = {}  # lb_number → n_hashes
         self._load_page_size()
         self._build_ui()
         self.refresh_collection()
@@ -627,7 +637,7 @@ class CollectionTab(QWidget):
         if self._state_store:
             self._state_store.attach_table(
                 self.coll_view, "collection.my_collection",
-                defaults=[80, 80, 100, 200, 300, 200, 80, 150],
+                defaults=[80, 80, 100, 200, 300, 200, 80, 150, 90],
             )
 
         self.coll_status = QLabel("")
@@ -839,7 +849,7 @@ class CollectionTab(QWidget):
     # ── Header sort ───────────────────────────────────────────────────────────
 
     # COLL_HEADERS = ["LB Number", "Status", "Date", "Location",
-    #                 "Folder Name", "Disk Path", "Confirmed", "Notes"]
+    #                 "Folder Name", "Disk Path", "Confirmed", "Notes", "Fingerprinted"]
     _COLL_SORT_KEY_FNS = {
         0: lambda r: r.get("lb_number") or 0,
         1: lambda r: {"public": 0, "private": 1, "missing": 2}.get(
@@ -850,6 +860,7 @@ class CollectionTab(QWidget):
         5: lambda r: (r.get("disk_path") or "").lower(),
         6: lambda r: (r.get("confirmed_at") or "").lower(),
         7: lambda r: (r.get("notes") or "").lower(),
+        8: lambda r: 0 if (r.get("fp_n_hashes") or 0) > 0 else 1,
     }
 
     # MISS_HEADERS = ["LB Number", "Status", "Date", "Location",
@@ -937,9 +948,11 @@ class CollectionTab(QWidget):
     def _on_collection_loaded(self, data):
         if isinstance(data, list):
             self._all_collection = data
+            self._merge_fp_into_collection()
             self._page = 0
             self._populate_year_combo()
             self._render_coll_page()
+            self._load_fp_lb_numbers()
         else:
             self.coll_status.setText(self.tr("Error: {}").format(data.get('error', 'unknown')))
 
@@ -998,6 +1011,29 @@ class CollectionTab(QWidget):
         if self._coll_xref_cb.isChecked() and self._all_collection:
             self._page = 0
             self._render_coll_page()
+
+    def _load_fp_lb_numbers(self) -> None:
+        port = self.flask_port
+        w = _ApiWorker(lambda: requests.get(
+            f"http://127.0.0.1:{port}/api/fingerprint/lb_numbers", timeout=10
+        ).json())
+        w.finished.connect(self._on_fp_lb_numbers_loaded)
+        w.error.connect(lambda _: None)
+        self._workers.append(w)
+        w.start()
+
+    def _on_fp_lb_numbers_loaded(self, data) -> None:
+        if not isinstance(data, dict):
+            return
+        self._fp_lb_numbers = {int(k): v for k, v in data.items()}
+        self._merge_fp_into_collection()
+        if self._all_collection:
+            self._render_coll_page()
+
+    def _merge_fp_into_collection(self) -> None:
+        for row in self._all_collection:
+            lb = row.get("lb_number")
+            row["fp_n_hashes"] = self._fp_lb_numbers.get(lb, 0)
 
     def _filtered_collection(self) -> list:
         text = self.coll_search.text().lower()
@@ -1609,6 +1645,14 @@ class CollectionTab(QWidget):
                 spec_act.triggered.connect(lambda: self.send_to_spectrograms.emit(spec_paths))
                 menu.addAction(spec_act)
 
+            fp_rows = [{"disk_path": r["disk_path"], "lb_number": r["lb_number"]}
+                       for r in rows if r.get("disk_path") and r.get("lb_number")
+                       and Path(r["disk_path"]).is_dir()]
+            if fp_rows:
+                fp_act = QAction(self.tr("Fingerprint Folder"), self)
+                fp_act.triggered.connect(lambda: self._fingerprint_folders(fp_rows))
+                menu.addAction(fp_act)
+
         if index.isValid():
             row = self.coll_model.get_row(index.row())
             if row:
@@ -1642,6 +1686,26 @@ class CollectionTab(QWidget):
                     open_folder(path)
                 except Exception:
                     pass
+
+    def _fingerprint_folders(self, folders: list[dict]) -> None:
+        if len(folders) == 1:
+            label = folders[0]["disk_path"]
+        else:
+            label = self.tr("{} folders").format(len(folders))
+        self.coll_status.setText(self.tr("Starting fingerprint for {}…").format(label))
+        port = self.flask_port
+        w = _ApiWorker(lambda: requests.post(
+            f"http://127.0.0.1:{port}/api/fingerprint/build",
+            json={"folders": folders},
+            timeout=15,
+        ).json())
+        w.finished.connect(lambda d: self.coll_status.setText(
+            self.tr("Fingerprinting started for {}. See Spectrograms → Fingerprinting for progress.").format(label)
+            if not d.get("error") else self.tr("Error: {}").format(d["error"])
+        ))
+        w.error.connect(lambda e: self.coll_status.setText(self.tr("Error: {}").format(e)))
+        self._workers.append(w)
+        w.start()
 
     def _scrape_entry(self, lb_number):
         self.coll_status.setText(self.tr("Scraping LB-{}…").format(lb_number))

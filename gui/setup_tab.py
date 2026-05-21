@@ -1206,8 +1206,9 @@ class SetupTab(QWidget):
             parent=self,
         )
         dlg.exec()
-        # Refresh history panel after dialog closes (update may have been applied)
+        # Refresh history panel and stats after dialog closes (update may have been applied)
         self._load_flat_file_history()
+        self._refresh_stats()
         self.stats_changed.emit()
 
     def _load_flat_file_history(self) -> None:

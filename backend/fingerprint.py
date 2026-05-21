@@ -303,7 +303,7 @@ def build_fingerprint_db(
         if stop_event and stop_event.is_set():
             break
 
-        _set(current=audio_path.name)
+        _set(current=f"{audio_path.parent.name} / {audio_path.name}")
         res = fingerprint_file(audio_path, lb_number, db_path=db_path, force=force)
 
         if res.get("error"):
@@ -423,11 +423,22 @@ def find_duplicate_recordings(
         return []
 
     try:
+        # Temporal coherence: group hash matches by rounded time-delta between the two
+        # tracks, then take the peak bin count as the score.  Raw hash-hit count is NOT
+        # used — two files that share spectral content in unrelated passages would
+        # otherwise generate many false positives.
         rows = conn.execute(
             """
-            SELECT a.track_id AS ta, b.track_id AS tb, COUNT(*) AS score
-            FROM fingerprints a
-            JOIN fingerprints b ON a.hash = b.hash AND a.track_id < b.track_id
+            SELECT ta, tb, MAX(bin_count) AS score
+            FROM (
+                SELECT a.track_id AS ta, b.track_id AS tb,
+                       ROUND(a.time_offset - b.time_offset, 1) AS delta,
+                       COUNT(*) AS bin_count
+                FROM fingerprints a
+                JOIN fingerprints b
+                  ON a.hash = b.hash AND a.track_id < b.track_id
+                GROUP BY ta, tb, delta
+            )
             GROUP BY ta, tb
             HAVING score >= ?
             ORDER BY score DESC
@@ -481,24 +492,8 @@ def get_fp_stats(db_path: Path | None = None) -> dict:
         "SELECT COUNT(*) FROM fingerprints"
     ).fetchone()[0]
 
-    # Count total audio files in collection to compute coverage
-    try:
-        from backend import db as _maindb
-        collection = _maindb.get_collection()
-        total_files = 0
-        for row in collection:
-            p = Path(row.get("disk_path", ""))
-            if p.is_dir():
-                total_files += sum(
-                    1 for f in p.rglob("*")
-                    if f.is_file() and f.suffix.lower() in AUDIO_EXTS
-                )
-        coverage_pct = round(track_count / max(total_files, 1) * 100, 1)
-    except Exception:
-        coverage_pct = None
-
     return {
         "track_count":  track_count,
         "hash_count":   hash_count,
-        "coverage_pct": coverage_pct,
+        "coverage_pct": None,
     }
