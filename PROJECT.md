@@ -19,9 +19,11 @@
 | File watching | Watchdog | 4.0.1 |
 | Torrent generation | torf | 4.3.1 |
 | Credential storage | keyring | 25.7.0 |
-| Audio fingerprinting | librosa | 0.10.2 |
-| Audio I/O | soundfile | 0.12.1 |
-| Signal processing | scipy | 1.13.1 |
+| Numerical computing | numpy | 2.4.6 |
+| Audio fingerprinting | librosa | 0.11.0 |
+| Audio I/O | soundfile | 0.13.1 |
+| Signal processing | scipy | 1.17.1 |
+| JIT compilation | numba | 0.65.1 |
 | Language | Python | 3.11+ |
 
 **Architecture pattern:** The GUI and backend are separated by a local Flask REST API (port 5174). The GUI makes HTTP requests to `localhost:5174` for all data operations. Flask runs in a daemon thread started before the PyQt6 event loop.

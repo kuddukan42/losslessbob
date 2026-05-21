@@ -2955,9 +2955,14 @@ def create_app() -> Flask:
             if _fp_build_state["status"] == "running":
                 return jsonify({"error": "Build already running"}), 409
         try:
-            data  = request.get_json(silent=True) or {}
-            force = bool(data.get("force", False))
-            rows  = database.get_collection()
+            data    = request.get_json(silent=True) or {}
+            force   = bool(data.get("force", False))
+            folders = data.get("folders")  # optional [{disk_path, lb_number}, ...]
+            if folders:
+                rows = [{"disk_path": f["disk_path"], "lb_number": int(f["lb_number"])}
+                        for f in folders if f.get("disk_path")]
+            else:
+                rows = database.get_collection()
             _fp_build_stop.clear()
             threading.Thread(
                 target=_do_fp_build, args=(rows, force), daemon=True
@@ -2979,6 +2984,23 @@ def create_app() -> Flask:
         with _fp_build_lock:
             _fp_build_state["stop_requested"] = True
         return jsonify({"ok": True})
+
+    @app.route("/api/fingerprint/lb_numbers", methods=["GET"])
+    def fp_lb_numbers() -> Response:
+        """Return {lb_number: n_hashes} for every lb_number that has fingerprints.
+
+        Used by the Collection tab to display the Fingerprinted column without
+        a per-row lookup.  Returns an empty dict when fingerprints.db is empty.
+        """
+        try:
+            from backend import fingerprint as _fp
+            conn = _fp._get_fp_conn()
+            rows = conn.execute(
+                "SELECT lb_number, SUM(n_hashes) AS n FROM audio_tracks GROUP BY lb_number"
+            ).fetchall()
+            return jsonify({str(r["lb_number"]): r["n"] for r in rows})
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
 
     @app.route("/api/fingerprint/stats", methods=["GET"])
     def fp_stats() -> Response:
