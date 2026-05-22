@@ -621,6 +621,14 @@ class LbdirTab(QWidget):
 
     # ── Folder management ─────────────────────────────────────────────────────
 
+    def add_folders_from_lookup(self, folders: list[str]) -> None:
+        """Merge folders from the Lookup tab into the folder list (skips duplicates)."""
+        before = len(self._folders)
+        for f in folders:
+            self._add_folder(f)
+        if len(self._folders) > before:
+            self._refresh_listbox()
+
     def _add_folder(self, path):
         s = str(Path(path).resolve())
         if s not in self._folders and Path(s).is_dir():

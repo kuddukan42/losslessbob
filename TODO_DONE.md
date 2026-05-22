@@ -1,6 +1,159 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-066: Web GUI — docs update after web UI ships
+Priority: Low
+Status: Cancelled
+Added: 2026-05-19
+Closed: 2026-05-22
+Description: Web GUI feature deferred indefinitely.
+
+TODO-063: Web GUI — status bar data in nav
+Priority: Low
+Status: Cancelled
+Added: 2026-05-19
+Closed: 2026-05-22
+Description: Web GUI feature deferred indefinitely.
+
+TODO-062: Web GUI — frontend/index.html landing redirect
+Priority: Low
+Status: Cancelled
+Added: 2026-05-19
+Closed: 2026-05-22
+Description: Web GUI feature deferred indefinitely.
+
+TODO-061: Web GUI — add nav links to admin.html and map.html
+Priority: Low
+Status: Cancelled
+Added: 2026-05-19
+Closed: 2026-05-22
+Description: Web GUI feature deferred indefinitely.
+
+TODO-060: Web GUI — frontend/bootlegs.html Bootleg catalog browser
+Priority: Low
+Status: Cancelled
+Added: 2026-05-19
+Closed: 2026-05-22
+Description: Web GUI feature deferred indefinitely.
+
+TODO-059: Web GUI — frontend/lb_master.html LB Master viewer
+Priority: Medium
+Status: Cancelled
+Added: 2026-05-19
+Closed: 2026-05-22
+Description: Web GUI feature deferred indefinitely.
+
+TODO-058: Web GUI — frontend/entry.html Entry detail page
+Priority: High
+Status: Cancelled
+Added: 2026-05-19
+Closed: 2026-05-22
+Description: Web GUI feature deferred indefinitely.
+
+TODO-057: Web GUI — Collection tab write operations
+Priority: Medium
+Status: Cancelled
+Added: 2026-05-19
+Closed: 2026-05-22
+Description: Web GUI feature deferred indefinitely.
+
+TODO-056: Web GUI — frontend/collection.html Collection tab (read)
+Priority: High
+Status: Cancelled
+Added: 2026-05-19
+Closed: 2026-05-22
+Description: Web GUI feature deferred indefinitely.
+
+TODO-055: Web GUI — frontend/lookup.html Lookup tab
+Priority: High
+Status: Cancelled
+Added: 2026-05-19
+Closed: 2026-05-22
+Description: Web GUI feature deferred indefinitely.
+
+TODO-054: Web GUI — Search tab owned column async load
+Priority: Medium
+Status: Cancelled
+Added: 2026-05-19
+Closed: 2026-05-22
+Description: Web GUI feature deferred indefinitely.
+
+TODO-053: Web GUI — frontend/search.html Search tab
+Priority: High
+Status: Cancelled
+Added: 2026-05-19
+Closed: 2026-05-22
+Description: Web GUI feature deferred indefinitely.
+
+TODO-052: Web GUI — frontend/utils.js shared JS utilities
+Priority: High
+Status: Cancelled
+Added: 2026-05-19
+Closed: 2026-05-22
+Description: Web GUI feature deferred indefinitely.
+
+TODO-051: Web GUI — frontend/base.css shared dark theme
+Priority: High
+Status: Cancelled
+Added: 2026-05-19
+Closed: 2026-05-22
+Description: Web GUI feature deferred indefinitely.
+
+TODO-050: Web GUI — Flask routes for frontend static files
+Priority: High
+Status: Cancelled
+Added: 2026-05-19
+Closed: 2026-05-22
+Description: Web GUI feature deferred indefinitely.
+
+---
+
+TODO-078: CLI daemon — Windows support for start_new_session
+Priority: Low
+Status: Done
+Added: 2026-05-21
+Closed: 2026-05-22
+Description: _daemon_start() uses start_new_session=True which is a POSIX concept.
+  On Windows the equivalent is DETACHED_PROCESS + CREATE_NEW_PROCESS_GROUP via
+  subprocess creationflags. Add a platform check so daemon start works correctly
+  on Windows.
+
+TODO-084: Export HTML — decade/year filter dropdowns do not populate
+Priority: Medium
+Status: Done
+Added: 2026-05-21
+Closed: 2026-05-22
+Description: Decade/year dropdowns in exported collection HTML were always empty because
+  year was derived solely from entries.date_str, which is NULL for any collection row
+  whose lb_number has no matching entries row.
+Fix: In collection_export_html() (app.py), after failing to parse a 4-digit year from
+  date_str, fall back to a regex search on folder_name for a 19xx/20xx year. This ensures
+  rows where the LEFT JOIN misses still contribute a year to the JS DATA array so that
+  filter(Boolean) retains them and both dropdowns populate.
+
+---
+
+TODO-081: Cross-tab folder sync — preload all first-4 tabs from Lookup folder selection
+Priority: Medium
+Status: Done
+Added: 2026-05-21
+Closed: 2026-05-22
+Description: lbdir tab had no connection to Lookup folder list.
+Fix: Added add_folders_from_lookup() to lbdir_tab.py (guard: only when list is empty).
+  Wired in main_window.py _on_tab_changed alongside the existing Verify guard.
+
+TODO-080: Rename tab — embed all LB alias numbers in folder name when aliases are present
+Priority: Medium
+Status: Done
+Added: 2026-05-21
+Closed: 2026-05-22
+Description: After alias collapse resolves a multi-candidate folder to a canonical LB,
+  fetch all known aliases for that canonical and include them in the proposed folder name.
+Fix: Added get_aliases_for_canonical() to backend/db.py. In rename_tab.py
+  populate_from_lookup and _on_save_alias, after alias collapse fetches aliases via
+  GET /api/lb_alias?canonical_lb=<lb> and builds combined suffix LB-canonical-LB-alias1...
+  Display column shows "LB-12345 + LB-67890". Named convention documented in PROJECT.md.
+
 TODO-077: Interactive REPL shell for CLI
 Priority: Medium
 Status: Done

@@ -1,3 +1,97 @@
+[2026-05-22] — fix(gui): lookup folders now propagate to lbdir and verify immediately on lookup_completed
+
+Fixed
+
+  gui/main_window.py: Connected lookup_tab.lookup_completed to add_folders_from_lookup
+    on both verify_tab and lbdir_tab so folders appear immediately after lookup, not only
+    on tab switch.
+  gui/lbdir_tab.py (add_folders_from_lookup): Removed "only if empty" guard; now merges
+    new folders in, skipping duplicates. lbdir list is no longer locked after first use.
+  gui/verify_tab.py (add_folders_from_lookup): Same guard removal and merge logic.
+
+---
+
+[2026-05-22] — fix(cli): daemon start uses DETACHED_PROCESS on Windows instead of POSIX-only start_new_session (TODO-078)
+
+Fixed
+
+  cli.py (_daemon_start): Added platform check — Windows now uses
+    subprocess.DETACHED_PROCESS | CREATE_NEW_PROCESS_GROUP via creationflags;
+    POSIX still uses start_new_session=True.
+
+---
+
+[2026-05-22] — fix(backend): Export HTML decade/year dropdowns now populate via folder_name fallback (TODO-084)
+
+Fixed
+
+  backend/app.py (collection_export_html): When entries.date_str is NULL for a collection
+    row (LEFT JOIN miss), year was "" and JS filter(Boolean) stripped it, leaving both the
+    "All decades" and "All years" selects empty. Now falls back to a regex search on
+    folder_name for a 19xx/20xx year, so the dropdowns populate even when date_str is absent.
+
+---
+
+[2026-05-22] — feat(gui): pre-populate lbdir folder list from Lookup tab on tab switch (TODO-081)
+
+Added
+
+  gui/lbdir_tab.py: add_folders_from_lookup(folders) — mirrors verify_tab's implementation; only pre-populates when the lbdir folder list is currently empty, so active sessions are not overwritten.
+
+Changed
+
+  gui/main_window.py (_on_tab_changed): when switching to lbdir_tab, call add_folders_from_lookup with the current Lookup folders, matching the existing Verify tab guard pattern.
+
+---
+
+[2026-05-22] — feat(gui): embed all LB alias numbers in proposed folder name after alias collapse (TODO-080)
+
+Added
+
+  backend/db.py: get_aliases_for_canonical(canonical_lb) — thin helper returning sorted list[int] of alias_lb values for a given canonical, using the existing get_lb_aliases() query.
+
+Changed
+
+  gui/rename_tab.py (populate_from_lookup): after alias collapse resolves to a canonical, fetches all aliases via GET /api/lb_alias?canonical_lb=<lb>. Builds combined suffix LB-canonical-LB-alias1-... and uses it for the proposed folder name. Display column shows all LBs separated by " + " (e.g. "LB-12345 + LB-67890"). Existing _lb_in_name/_has_wrong_lb checks still use the canonical alone so state detection is unaffected.
+  gui/rename_tab.py (_on_save_alias): same alias fetch applied after in-place re-resolution so rows updated from the right-click "Save as master alias…" action also reflect the combined suffix immediately.
+
+---
+
+[2026-05-22] — fix(gui): fingerprint build and crawler status polling blocks main thread (BUG-099 through BUG-102)
+
+Fixed
+
+  gui/spectrogram_tab.py: Replaced QTimer-based _fp_poll_build and _fp_poll_dup (which ran
+    blocking requests.get on the main thread) with background QThread pollers
+    (_FpBuildStatusThread, _FpDupStatusThread) that emit status_update signals to the main
+    thread — the same pattern used by the crawler. Fingerprint build stop now shows
+    "Stopping…" immediately on the label. _fp_stop_dup_scan was calling the wrong endpoint
+    (/api/fingerprint/build/stop) and blocking the main thread; both are fixed. The
+    _on_fp_dup_status slot properly cleans up the thread on completion.
+
+  gui/scraper_tab.py: Crawler "Start" and "Stop" buttons were calling requests.post directly
+    on the main GUI thread (freezing the app for up to 10 s / 5 s respectively). Both now
+    dispatch via a _Worker QThread. Added self._workers list to ScraperTab.
+
+  backend/app.py: Added /api/fingerprint/duplicates/scan/stop endpoint (the old stop button
+    was misfiring to /api/fingerprint/build/stop). Added stop_requested field to
+    _fp_dup_state so the GUI can show "Stopping…" while the scan winds down.
+
+[2026-05-22] — fix(gui): curator checkbox error dialog on toggle (BUG-098)
+
+Fixed
+
+  gui/setup_tab.py: Moved curator_cb.toggled signal connection to after publish_master_btn is
+    created, eliminating the AttributeError risk if the signal fires during _build_ui before its
+    dependent widget exists. Added logging.exception in the except block so the actual error text
+    is now captured in losslessbob.log. Improved error display: Flask's JSON error body is parsed
+    so the dialog shows the plain message rather than raw JSON. Fixed _on_curator_toggled docstring
+    (removed incorrect 'geocoder group' claim — that gating happens via curator_mode_changed →
+    map_tab.set_curator_mode).
+
+  backend/app.py: Added logging.exception to the curator_set route's except block so any
+    server-side failure is captured in the log.
+
 [2026-05-21] — fix(backend): sticky table header broken in exported HTML collection page
 
 Fixed
