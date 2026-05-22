@@ -104,15 +104,12 @@ begin
   if not DirExists(DataDir) then Exit;
 
   if MsgBox(
-    'Do you also want to delete all LosslessBob data?' + #13#10 +
-    #13#10 +
+    'Do you also want to delete all LosslessBob data?' + #13#10 + #13#10 +
     'This will permanently remove:' + #13#10 +
     '  • Your database (losslessbob.db)' + #13#10 +
     '  • Cached pages and attachments' + #13#10 +
-    '  • Backups, logs, and settings' + #13#10 +
-    #13#10 +
-    'Location: ' + DataDir + #13#10 +
-    #13#10 +
+    '  • Backups, logs, and settings' + #13#10 + #13#10 +
+    'Location: ' + DataDir + #13#10 + #13#10 +
     'This cannot be undone. Choose No to keep your data.',
     mbConfirmation, MB_YESNO) = IDYES then
   begin

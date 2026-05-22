@@ -1,6 +1,28 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-104: Inno Setup build fails with "Unknown preprocessor directive" on standalone #13#10 lines
+Status: Fixed
+File(s): tools/losslessbob.iss:108
+Reported: 2026-05-22
+Fixed: 2026-05-22
+Description: CI build-windows job failed (exit code 1) at the "Build installer" step.
+Root cause: Inno Setup's ISPP preprocessor scans every source line before the Pascal parser.
+  Lines that start with `#` (even after whitespace) are interpreted as preprocessor directives.
+  Three lines in the [Code] section started with `#13#10 +` (bare blank-line expressions), which
+  ISPP rejected as unknown directives.
+Fix: Merged each standalone `#13#10 +` line onto the preceding string-literal line, so `#` no
+  longer appears as the first token on any source line.
+
+BUG-103: generate_release_notes queries non-existent columns from lb_master
+Status: Fixed
+File(s): backend/db.py:2140,2159
+Reported: 2026-05-22
+Fixed: 2026-05-22
+Description: GitHub upload failed with "no such column: notes". The generate_release_notes function queried `notes` and `updated_at` from lb_master, neither of which exist.
+Root cause: Wrong column names — lb_master uses `manual_notes` and `manual_set_at`.
+Fix: Changed query to SELECT `manual_notes, manual_set_at` and updated the dict key reference from `o['notes']` to `o['manual_notes']`.
+
 BUG-102: _fp_stop_dup_scan calls wrong endpoint and blocks main thread
 Status: Fixed
 File(s): gui/spectrogram_tab.py, backend/app.py

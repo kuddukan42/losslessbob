@@ -1,3 +1,20 @@
+[2026-05-22] — fix(release): ISS preprocessor error and update GHA actions to Node 24
+
+Fixed
+
+  tools/losslessbob.iss: Inno Setup ISPP preprocessor treated standalone `#13#10 +` lines as
+    unknown directives, aborting the installer build with exit code 1. Merged the bare blank-line
+    `#13#10 +` expressions onto the preceding string lines so `#` never starts a source line.
+  .github/workflows/release.yml: Bumped actions/checkout v4→v5 and actions/setup-python v5→v6
+    to resolve Node.js 20 deprecation warning (forced to Node.js 24 from 2026-06-02).
+
+[2026-05-22] — fix(backend): correct wrong column names in generate_release_notes
+
+Fixed
+
+  backend/db.py: generate_release_notes queried `notes` and `updated_at` from lb_master,
+    which don't exist. Corrected to `manual_notes` and `manual_set_at` (BUG-103).
+
 [2026-05-22] — chore(release): bump version to 1.0.4
 
 Changed
