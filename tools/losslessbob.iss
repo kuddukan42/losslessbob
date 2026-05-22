@@ -50,8 +50,8 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 
 [Tasks]
 ; Both shortcuts are opt-in — checked by default, user can uncheck either.
-Name: "startmenuicon";   Description: "Create a Start Menu shortcut";              GroupDescription: "Shortcuts:";          Flags: checked
-Name: "desktopicon";     Description: "Create a Desktop shortcut";                 GroupDescription: "Shortcuts:";          Flags: checked
+Name: "startmenuicon";   Description: "Create a Start Menu shortcut";              GroupDescription: "Shortcuts:"
+Name: "desktopicon";     Description: "Create a Desktop shortcut";                 GroupDescription: "Shortcuts:"
 Name: "fileassoc";       Description: "Associate .ffp, .md5, .st5 files";          GroupDescription: "File associations:";  Flags: unchecked
 Name: "startupregistry"; Description: "Launch LosslessBob when Windows starts";    GroupDescription: "System:";             Flags: unchecked
 

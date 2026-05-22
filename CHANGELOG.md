@@ -1,3 +1,11 @@
+[2026-05-22] — fix(release): remove invalid "checked" flag from Inno Setup [Tasks] section
+
+Fixed
+
+  tools/losslessbob.iss: Lines 53–54 used `Flags: checked` in the [Tasks] section. "checked"
+    is not a valid Inno Setup task flag — tasks are checked by default with no flag. Removed
+    the `Flags: checked` parameter from the startmenuicon and desktopicon task entries.
+
 [2026-05-22] — fix(release): ISS preprocessor error and update GHA actions to Node 24
 
 Fixed
