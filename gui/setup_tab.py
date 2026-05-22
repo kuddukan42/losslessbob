@@ -634,7 +634,6 @@ class SetupTab(QWidget):
             self.tr("Enable to publish master-data snapshots that ship to other users.\n"
             "Curator status is stored locally and never included in any export.")
         )
-        self.curator_cb.toggled.connect(self._on_curator_toggled)
         curator_row.addWidget(self.curator_cb)
         curator_row.addStretch()
         master_layout.addLayout(curator_row)
@@ -650,6 +649,9 @@ class SetupTab(QWidget):
         )
         self.publish_master_btn.clicked.connect(self._on_publish_master)
         self.publish_master_btn.setEnabled(False)  # toggled by curator checkbox
+        # Connect after publish_master_btn exists so _on_curator_toggled cannot
+        # fire before its dependent widget is ready.
+        self.curator_cb.toggled.connect(self._on_curator_toggled)
         master_btn_row.addWidget(self.publish_master_btn)
 
         self.install_master_btn = QPushButton(self.tr("Install Master Update…"))
@@ -1297,17 +1299,27 @@ class SetupTab(QWidget):
             self.master_status_label.setText(self.tr("Master version: (unknown — {})").format(e))
 
     def _on_curator_toggled(self, checked: bool):
-        """Persist the curator flag and gate the Publish button and geocoder group."""
+        """Persist the curator flag and gate the Publish button.
+
+        The geocoder group (on the Map tab) is gated indirectly via
+        curator_mode_changed → map_tab.set_curator_mode.
+        """
+        _log = logging.getLogger(__name__)
         try:
             resp = requests.post(
                 f"http://127.0.0.1:{self.flask_port}/api/curator",
                 json={"enabled": bool(checked)}, timeout=5,
             )
             if not resp.ok:
-                raise RuntimeError(resp.text)
+                try:
+                    err_msg = resp.json().get("error", resp.text)
+                except Exception:
+                    err_msg = resp.text
+                raise RuntimeError(err_msg)
             self.publish_master_btn.setEnabled(bool(checked))
             self.curator_mode_changed.emit(bool(checked))
         except Exception as e:
+            _log.exception("Curator toggle failed (checked=%s)", checked)
             QMessageBox.warning(self, self.tr("Curator Mode"), self.tr("Could not update flag: {}").format(e))
             # Revert UI to the actual server state
             self._load_curator_status()

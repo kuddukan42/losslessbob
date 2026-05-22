@@ -636,19 +636,32 @@ class RenameTab(QWidget):
                 resolved = self._resolve_single_lb(cands, folder)
                 if resolved is not None:
                     lb, xref_val, is_linked = resolved
-                    lb_str = ("🔗 " if is_linked else "") + _fmt_lb(lb, xref_val)
+                    canon_fmt = _fmt_lb(lb, xref_val)
+                    # Fetch all known aliases for this canonical (alias collapse only)
+                    alias_lbs: list[int] = []
+                    if not is_linked:
+                        alias_data = self._api(f"/api/lb_alias?canonical_lb={lb}") or []
+                        alias_lbs = sorted(r["alias_lb"] for r in alias_data)
+                    if alias_lbs:
+                        combined_suffix = "-".join([canon_fmt] + [_fmt_lb(a) for a in alias_lbs])
+                        lb_str = ("🔗 " if is_linked else "") + " + ".join(
+                            [canon_fmt] + [_fmt_lb(a) for a in alias_lbs]
+                        )
+                    else:
+                        combined_suffix = canon_fmt
+                        lb_str = ("🔗 " if is_linked else "") + canon_fmt
                     cand_list = []
                     row_lb_status = lb_status_map.get(lb)
                     if is_linked:
                         self._linked_rows.add(len(rows))  # index in the rows list
-                    if _lb_in_name(folder_path.name, _fmt_lb(lb, xref_val)):
+                    if _lb_in_name(folder_path.name, canon_fmt):
                         proposed = folder_path.name
                         reason = self.tr("LB already in name (resolved)")
-                    elif _has_wrong_lb(folder_path.name, _fmt_lb(lb, xref_val)):
-                        proposed = f"{folder_path.name}-{_fmt_lb(lb, xref_val)}"
+                    elif _has_wrong_lb(folder_path.name, canon_fmt):
+                        proposed = f"{folder_path.name}-{combined_suffix}"
                         reason = self.tr("Wrong LB in name (resolved)")
                     else:
-                        proposed = f"{folder_path.name}-{_fmt_lb(lb, xref_val)}"
+                        proposed = f"{folder_path.name}-{combined_suffix}"
                         reason = self.tr("Multiple IDs → resolved")
                     nft_applied = apply_nft_suffix(proposed, row_lb_status)
                     if nft_applied != proposed:
@@ -1168,14 +1181,25 @@ class RenameTab(QWidget):
         resolved = self._resolve_single_lb(candidates, row[1])
         if resolved is not None:
             lb, xref_val, is_linked = resolved
-            plain_lb_str = _fmt_lb(lb, xref_val)
-            lb_str = ("🔗 " if is_linked else "") + plain_lb_str
+            canon_fmt = _fmt_lb(lb, xref_val)
+            alias_lbs: list[int] = []
+            if not is_linked:
+                alias_data = self._api(f"/api/lb_alias?canonical_lb={lb}") or []
+                alias_lbs = sorted(r["alias_lb"] for r in alias_data)
+            if alias_lbs:
+                combined_suffix = "-".join([canon_fmt] + [_fmt_lb(a) for a in alias_lbs])
+                lb_str = ("🔗 " if is_linked else "") + " + ".join(
+                    [canon_fmt] + [_fmt_lb(a) for a in alias_lbs]
+                )
+            else:
+                combined_suffix = canon_fmt
+                lb_str = ("🔗 " if is_linked else "") + canon_fmt
             folder_path = Path(row[1])
             row[3] = lb_str
             row[4] = self.tr("Multiple IDs → resolved (alias)")
-            if not _lb_in_name(folder_path.name, plain_lb_str):
-                row[2] = str(folder_path.parent / f"{folder_path.name}-{plain_lb_str}")
-            new_state = _row_state(row[1], plain_lb_str)
+            if not _lb_in_name(folder_path.name, canon_fmt):
+                row[2] = str(folder_path.parent / f"{folder_path.name}-{combined_suffix}")
+            new_state = _row_state(row[1], lb_str)
             self.model._states[row_idx] = new_state
             self.model._candidates[row_idx] = []
             if is_linked:

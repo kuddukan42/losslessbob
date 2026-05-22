@@ -505,7 +505,7 @@ def record_entry_changes(lb_number, new_data: dict, db_path=None):
 
 ---
 
-### FEAT-01: CLI / Headless Mode
+### FEAT-01: CLI / Headless Mode ## COMPLETE
 
 **Files:** `cli.py` (new, in project root), `backend/app.py`  
 **Dependencies:** None  
@@ -624,7 +624,7 @@ if __name__ == "__main__":
 
 ---
 
-### FEAT-02: Fuzzy Filename Matching Fallback in Lookup
+### FEAT-02: Fuzzy Filename Matching Fallback in Lookup ## WONTFIX
 
 **Files:** `backend/db.py`, `requirements.txt`  
 **Dependencies:** DB-04  
@@ -1030,7 +1030,7 @@ def get_collection_duplicates(db_path=None):
 
 ---
 
-### FEAT-07: Portable Export Formats (HTML + M3U)
+### FEAT-07: Portable Export Formats (HTML + M3U) ## COMPLETE
 
 **Files:** `backend/app.py`, `gui/collection_tab.py`  
 **Dependencies:** DB-01  
@@ -2088,7 +2088,7 @@ Add data download slots:
 
 ---
 
-### FEAT-12: Import Behavior Clarification and Overwrite Control
+### FEAT-12: Import Behavior Clarification and Overwrite Control ## WONTFIX
 
 **Files:** `backend/importer.py`, `backend/app.py`, `gui/setup_tab.py`
 **Dependencies:** None

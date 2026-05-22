@@ -227,6 +227,58 @@ class _FpIdentifyWorker(QThread):
             self.error.emit(str(e))
 
 
+# ── Background status-poll threads ───────────────────────────────────────────
+
+class _FpBuildStatusThread(QThread):
+    """Polls /api/fingerprint/build/status every 800 ms in a background thread."""
+    status_update = pyqtSignal(dict)
+
+    def __init__(self, port: int) -> None:
+        super().__init__()
+        self._port = port
+        self._running = True
+
+    def run(self) -> None:
+        while self._running:
+            try:
+                resp = requests.get(
+                    f"http://127.0.0.1:{self._port}/api/fingerprint/build/status",
+                    timeout=5,
+                )
+                self.status_update.emit(resp.json())
+            except Exception:
+                pass
+            self.msleep(800)
+
+    def stop(self) -> None:
+        self._running = False
+
+
+class _FpDupStatusThread(QThread):
+    """Polls /api/fingerprint/duplicates every 800 ms in a background thread."""
+    status_update = pyqtSignal(dict)
+
+    def __init__(self, port: int) -> None:
+        super().__init__()
+        self._port = port
+        self._running = True
+
+    def run(self) -> None:
+        while self._running:
+            try:
+                resp = requests.get(
+                    f"http://127.0.0.1:{self._port}/api/fingerprint/duplicates",
+                    timeout=5,
+                )
+                self.status_update.emit(resp.json())
+            except Exception:
+                pass
+            self.msleep(800)
+
+    def stop(self) -> None:
+        self._running = False
+
+
 # ── File-drop label ───────────────────────────────────────────────────────────
 
 class _FileDrop(QLabel):
@@ -273,10 +325,10 @@ class SpectrogramTab(QWidget):
         self._workers:     list      = []
         self._poll_timer:  QTimer | None = None
         self._current_png: str = ""
-        # Fingerprint timers/workers
-        self._fp_build_timer: QTimer | None = None
-        self._fp_dup_timer:   QTimer | None = None
-        self._fp_id_worker:   _FpIdentifyWorker | None = None
+        # Fingerprint poll threads / workers
+        self._fp_build_thread: _FpBuildStatusThread | None = None
+        self._fp_dup_thread:   _FpDupStatusThread   | None = None
+        self._fp_id_worker:    _FpIdentifyWorker     | None = None
         self._fp_dup_results: list[dict] = []
         self._build_ui()
 
@@ -932,11 +984,14 @@ class SpectrogramTab(QWidget):
         if data.get("error"):
             self._fp_on_build_error(data["error"])
             return
-        self._fp_build_timer = QTimer(self)
-        self._fp_build_timer.timeout.connect(self._fp_poll_build)
-        self._fp_build_timer.start(800)
+        self._fp_build_thread = _FpBuildStatusThread(self.flask_port)
+        self._fp_build_thread.status_update.connect(self._on_fp_build_status)
+        self._fp_build_thread.start()
 
     def _fp_on_build_error(self, msg: str):
+        if self._fp_build_thread:
+            self._fp_build_thread.stop()
+            self._fp_build_thread = None
         self.fp_build_btn.setEnabled(True)
         self.fp_build_stop_btn.setEnabled(False)
         self.fp_build_bar.setVisible(False)
@@ -944,6 +999,7 @@ class SpectrogramTab(QWidget):
 
     def _fp_stop_build(self):
         self.fp_build_stop_btn.setEnabled(False)
+        self.fp_build_label.setText(self.tr("Stopping…"))
         port = self.flask_port
         w = _Worker(lambda: requests.post(
             f"http://127.0.0.1:{port}/api/fingerprint/build/stop", timeout=5,
@@ -951,19 +1007,12 @@ class SpectrogramTab(QWidget):
         self._workers.append(w)
         w.start()
 
-    def _fp_poll_build(self):
-        try:
-            r = requests.get(
-                f"http://127.0.0.1:{self.flask_port}/api/fingerprint/build/status",
-                timeout=5,
-            ).json()
-        except Exception:
-            return
-
-        status = r.get("status", "")
-        done   = r.get("done",  0)
-        total  = r.get("total", 0)
-        errs   = r.get("errors", [])
+    def _on_fp_build_status(self, r: dict):
+        status   = r.get("status", "")
+        done     = r.get("done", 0)
+        total    = r.get("total", 0)
+        errs     = r.get("errors", [])
+        stop_req = r.get("stop_requested", False)
 
         if total > 0 and not getattr(self, "_fp_build_total_set", False):
             self.fp_build_bar.setRange(0, total)
@@ -971,23 +1020,30 @@ class SpectrogramTab(QWidget):
         if total > 0:
             self.fp_build_bar.setValue(done)
 
-        skip_msg = f"  ({r['skipped']} skipped)" if r.get("skipped") else ""
-        err_msg  = f"  {len(errs)} error(s)" if errs else ""
-        self.fp_build_label.setText(
-            f"{r.get('current', '')}  [{done}/{total}]{skip_msg}{err_msg}"
-        )
-
         if status == "done":
-            self._fp_build_timer.stop()
+            if self._fp_build_thread:
+                self._fp_build_thread.stop()
+                self._fp_build_thread = None
             self.fp_build_btn.setEnabled(True)
             self.fp_build_stop_btn.setEnabled(False)
             self.fp_build_bar.setVisible(False)
+            label = self.tr("Stopped.") if stop_req else self.tr("Done.")
             self.fp_build_label.setText(
-                self.tr("Done. {} fingerprinted, {} skipped, {} error(s).").format(
-                    done, r.get("skipped", 0), len(errs)
+                self.tr("{} {} fingerprinted, {} skipped, {} error(s).").format(
+                    label, done, r.get("skipped", 0), len(errs)
                 )
             )
             self._fp_refresh_stats()
+        elif stop_req:
+            self.fp_build_label.setText(
+                self.tr("Stopping… [{}/{}]").format(done, total)
+            )
+        else:
+            skip_msg = f"  ({r['skipped']} skipped)" if r.get("skipped") else ""
+            err_msg  = f"  {len(errs)} error(s)" if errs else ""
+            self.fp_build_label.setText(
+                f"{r.get('current', '')}  [{done}/{total}]{skip_msg}{err_msg}"
+            )
 
     # ── Fingerprinting: Identify tab ──────────────────────────────────────────
 
@@ -1061,36 +1117,37 @@ class SpectrogramTab(QWidget):
         if data.get("error"):
             self._fp_dup_scan_done(error=data["error"])
             return
-        self._fp_dup_timer = QTimer(self)
-        self._fp_dup_timer.timeout.connect(self._fp_poll_dup)
-        self._fp_dup_timer.start(800)
+        self._fp_dup_thread = _FpDupStatusThread(self.flask_port)
+        self._fp_dup_thread.status_update.connect(self._on_fp_dup_status)
+        self._fp_dup_thread.start()
 
     def _fp_stop_dup_scan(self):
         self.fp_dup_stop_btn.setEnabled(False)
-        requests.post(
-            f"http://127.0.0.1:{self.flask_port}/api/fingerprint/build/stop",
-            timeout=5,
-        )
+        self.fp_dup_status.setText(self.tr("Stopping…"))
+        port = self.flask_port
+        w = _Worker(lambda: requests.post(
+            f"http://127.0.0.1:{port}/api/fingerprint/duplicates/scan/stop", timeout=5,
+        ))
+        self._workers.append(w)
+        w.start()
 
-    def _fp_poll_dup(self):
-        try:
-            r = requests.get(
-                f"http://127.0.0.1:{self.flask_port}/api/fingerprint/duplicates",
-                timeout=5,
-            ).json()
-        except Exception:
-            return
-
-        msg = r.get("message", "")
-        if msg:
+    def _on_fp_dup_status(self, r: dict):
+        msg      = r.get("message", "")
+        stop_req = r.get("stop_requested", False)
+        if msg and not stop_req:
             self.fp_dup_status.setText(msg)
 
         if r.get("status") == "done":
-            self._fp_dup_timer.stop()
+            if self._fp_dup_thread:
+                self._fp_dup_thread.stop()
+                self._fp_dup_thread = None
             results = r.get("results", [])
             self._fp_dup_scan_done(results=results)
 
     def _fp_dup_scan_done(self, results: list | None = None, error: str = ""):
+        if self._fp_dup_thread:
+            self._fp_dup_thread.stop()
+            self._fp_dup_thread = None
         self.fp_dup_btn.setEnabled(True)
         self.fp_dup_stop_btn.setEnabled(False)
         self.fp_dup_bar.setVisible(False)

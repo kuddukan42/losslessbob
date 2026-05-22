@@ -8,11 +8,11 @@ User-confirmed answers to outstanding planning questions:
 - **Curator mode gating:** **Checkbox in Setup tab** (writes `meta.is_curator='1'`). Not requiring users to edit SQL.
 - **Phase order:** Use the recommended sequence (Data Ownership → UX wins → status-consuming features → flat-file & bootlegs → folder linking → Map). **Map view is deferred** — last priority, may be cut.
 - **PR cadence:** Feature-by-feature within a phase (safer rollback).
-- **Bootleg year pivot:** `Y ≥ 30 → 19YY`, `Y < 30 → 20YY`. Comfortable through ~2029.
+COMPLETE - - **Bootleg year pivot:** `Y ≥ 30 → 19YY`, `Y < 30 → 20YY`. Comfortable through ~2029.
 - **NFT multi-LB rule:** If *any* matched LB is Private, the whole folder gets `-NFT` (conservative).
 - **LBBCD deep-scrape:** Deferred — index page only.
 - **Persistent offline map tile cache:** Deferred.
-- **Map view as a whole:** Deferred (push to end of queue, possibly cut).
+COMPLETE - **Map view as a whole:** Deferred (push to end of queue, possibly cut). 
 - **Defaults accepted as recommended:** flat-file auto-check cadence (`every_start`), GUI state file location (`data/gui_state.json`), per-section status colors (Private `#B3E5FC`, Missing `#E0E0E0`, needs-review orange ✎), backwards-compat (clean cut for broken code, coexistence otherwise), test bar (similar to `test_lb_master.py` where feasible, lighter for GUI-heavy where pytest can't reach), auto-incremental geocoding (yes, queued during flat-file apply — moot while Map is deferred).
 
 ## Implementation Status (last audited 2026-05-17)
@@ -29,12 +29,12 @@ Legend: ✅ shipped · 🟡 partial · ⬜ not started
 | 6 | **Status filters across all appropriate GUI elements** | ✅ | Shipped 2026-05-17 (TODO-021). Lookup tab: filter combobox + Private/Missing row tinting. Attachments tree: batch page-level tinting. Rename tab: LB Found col tint. Lbdir: LB# col tint. `get_lb_statuses_batch()` in `db.py`. Shared `LBStatusComboBox` / `lb_status_style()` widget module not built (each tab inlined its own); Verify tab skipped (lb_number unavailable in results). |
 | 7 | **`-NFT` suffix on folder names for Private LBs** | ✅ | Shipped 2026-05-17 (TODO-018). `backend/folder_naming.py` created with `apply_nft_suffix`, `strip_nft_suffix`, `has_nft_suffix`, `nft_discrepancy`. Rename tab applies suffix to proposed names and shows discrepancy colours (pale red/yellow/orange rows). Collection tab `_get_standard_lb_name()` calls `/api/lb_master/<lb>/nft`. `should_mark_nft()` in `db.py`. `GET /api/lb_master/<lb>/nft` endpoint. |
 | 8 | **Persistent folder-to-LB linking (`lb_alias` + `folder_lb_link`)** | ⬜ | Both tables and the Rename tab "Link…" dropdown still need to be built. (TODO-019) |
-| 9 | **Flat-file update check rework** | ⬜ | Existing `scraper.check_for_update()` still does the broken bynumber-page scrape. `flat_file_releases`/`flat_file_changelog` tables not created. |
-| 10 | **Click-to-sort across all tables** | ⬜ | Existing DB Editor backend has `sort_col`/`sort_dir` already, but no GUI wiring; no `SortableTableItem`/`sort_key_for` helper module. |
+| 9 | **Flat-file update check rework** | ✅ | Shipped. `backend/flat_file.py` with discover/download/diff/apply pipeline. `flat_file_releases` + `flat_file_changelog` tables. `scraper.check_for_update()` replaced. Setup tab reworked with Update Available + Review & Apply dialogs, downgrade-refusal guard, legacy bootstrap. |
+| 10 | **Click-to-sort across all tables** | ✅ | Shipped. `SortableTableItem` subclass + server-side sort wired to header clicks. |
 | 11 | **Reliable column width persistence** | ✅ | `GuiStateStore` in `gui/widgets/state_store.py`. All tabs (Search, Collection×7, DbEdit, Lbdir, Rename) use `attach_table`. Window geometry also migrated. QSettings migration on first run. 2026-05-17. |
 | 12 | **Bootleg-CD catalog (LBBCD)** | ⬜ | No scraper, no tables, no Bootlegs tab. |
 | 13 | **Standardize folder name button** | ✅ | Shipped 2026-05-17. `build_standard_name()` in `backend/folder_naming.py`. `GET /api/folder_naming/standard/<lb>`. "Standardize Selected" button + right-click "Standardize Name" action in Rename tab. `RenameModel.update_state()`. Also fixed BUG-064 (`_on_strip_wrong_lb` now transitions state to `needs_rename`). |
-| Map | **Map view of LB locations** | ⬜ | Plan extracted to [CC_MAP_FEATURE.md](CC_MAP_FEATURE.md). No `location_geocoded` table, no `gui/map_tab.py`. Deferred — lowest priority. |
+| Map | **Map view of LB locations** | ✅ | Shipped. Plan was in `CC_MAP_FEATURE.md`. |
 
 **When implementing pending items, check the CHANGELOG before starting** — small follow-on fixes may have already touched the same files since the last plan-doc audit.
 
@@ -1028,7 +1028,7 @@ Aliasing is consequential beyond just disambiguation. The following places shoul
 
 ## Ancillary Feature: Rework Flat-File Update Check
 
-**Status:** ⬜ Not started. Existing broken `scraper.check_for_update()` still scrapes the bynumber page; no `flat_file_releases`/`flat_file_changelog` tables; no real-file diff pipeline.
+**Status:** ✅ Shipped. `backend/flat_file.py` with discover/download/diff/apply pipeline. `flat_file_releases` + `flat_file_changelog` tables. `scraper.check_for_update()` replaced. Setup tab reworked with Update Available + Review & Apply dialogs, downgrade-refusal guard, legacy bootstrap.
 
 **Why current implementation is broken.** [scraper.py:271](../../Documents/losslessbob/backend/scraper.py#L271) `check_for_update()` does not check the flat file at all — it scrapes the bynumber webpage and counts visible LB links to compute a `site_max`. Failure modes:
 - Misses any update that doesn't extend the max LB (corrections, added checksums for existing LBs — the majority of real updates).
@@ -1372,7 +1372,7 @@ Users who have been manually importing flat files for years will install this fe
 
 ## Ancillary Feature: Click-to-Sort Across All Tables
 
-**Status:** ⬜ Not started. DB Editor backend already has `sort_col`/`sort_dir` support but no GUI wiring; no shared `SortableTableItem`/`sort_key_for` helper module.
+**Status:** ✅ Shipped.
 
 **Why.** Today only the DB Editor has any sort support (and only at the backend level via `sort_col`/`sort_dir` params on `/api/db/table_rows`). No GUI table allows the user to click a column header to sort. Users have to mentally scan or rely on whatever default order the backend returns. The fix is straightforward Qt plumbing plus a shared sort-key helper, but it needs to be done consistently — otherwise different tabs will sort the same data type differently and create more confusion than they solve.
 
