@@ -25,6 +25,22 @@ from backend.paths import SITE_DETAIL_DIR as _SITE_DETAIL_DIR
 
 # ── Background threads ─────────────────────────────────────────────────────────
 
+class _Worker(QThread):
+    """Generic fire-and-forget worker: runs fn() in a background thread."""
+    finished = pyqtSignal(object)
+    error    = pyqtSignal(str)
+
+    def __init__(self, fn):
+        super().__init__()
+        self._fn = fn
+
+    def run(self):
+        try:
+            self.finished.emit(self._fn())
+        except Exception as e:
+            self.error.emit(str(e))
+
+
 class _CrawlerStatusThread(QThread):
     """Polls /api/crawler/status every second."""
     status_update = pyqtSignal(dict)
@@ -109,6 +125,7 @@ class ScraperTab(QWidget):
         self._crawler_status_thread: _CrawlerStatusThread | None = None
         self._scrape_status_thread: _ScrapeStatusThread | None = None
         self._single_scrape_thread: _SingleScrapeThread | None = None
+        self._workers: list = []
 
         # State flags
         self._page_download_mode = False
@@ -569,39 +586,51 @@ class ScraperTab(QWidget):
     # ── Site crawler handlers ──────────────────────────────────────────────────
 
     def _on_crawler_start(self) -> None:
-        scope = self._scope_combo.currentText()
-        force = self._crawler_force_cb.isChecked()
-        delay_ms = self._crawler_delay_spin.value()
+        scope     = self._scope_combo.currentText()
+        force     = self._crawler_force_cb.isChecked()
+        delay_ms  = self._crawler_delay_spin.value()
         daily_cap = self._crawler_cap_spin.value()
-        try:
-            resp = requests.post(
-                f"http://127.0.0.1:{self.flask_port}/api/crawler/start",
-                json={"scope": scope, "force": force,
-                      "delay_ms": delay_ms, "daily_cap": daily_cap},
-                timeout=10,
-            ).json()
-        except Exception as e:
-            self._crawler_url_label.setText(self.tr("Error: {}").format(e))
-            return
-        if not resp.get("ok"):
-            self._crawler_url_label.setText(resp.get("error", self.tr("Failed to start crawler.")))
-            return
+        port      = self.flask_port
+
         self._crawler_start_btn.setEnabled(False)
+        self._crawler_url_label.setText(self.tr("Starting…"))
+
+        w = _Worker(lambda: requests.post(
+            f"http://127.0.0.1:{port}/api/crawler/start",
+            json={"scope": scope, "force": force,
+                  "delay_ms": delay_ms, "daily_cap": daily_cap},
+            timeout=10,
+        ).json())
+        w.finished.connect(self._on_crawler_start_result)
+        w.error.connect(self._on_crawler_start_error)
+        self._workers.append(w)
+        w.start()
+
+    def _on_crawler_start_result(self, resp: dict) -> None:
+        if not resp.get("ok"):
+            self._crawler_start_btn.setEnabled(True)
+            self._crawler_url_label.setText(
+                resp.get("error", self.tr("Failed to start crawler."))
+            )
+            return
         self._crawler_stop_btn.setEnabled(True)
         self._crawler_progress.setVisible(True)
-        self._crawler_url_label.setText(self.tr("Starting…"))
         self._crawler_counts_label.setText("")
         self._start_crawler_poll()
 
+    def _on_crawler_start_error(self, msg: str) -> None:
+        self._crawler_start_btn.setEnabled(True)
+        self._crawler_url_label.setText(self.tr("Error: {}").format(msg))
+
     def _on_crawler_stop(self) -> None:
-        try:
-            requests.post(
-                f"http://127.0.0.1:{self.flask_port}/api/crawler/stop", timeout=5
-            )
-        except Exception:
-            pass
         self._crawler_stop_btn.setEnabled(False)
         self._crawler_url_label.setText(self.tr("Stop requested…"))
+        port = self.flask_port
+        w = _Worker(lambda: requests.post(
+            f"http://127.0.0.1:{port}/api/crawler/stop", timeout=5
+        ))
+        self._workers.append(w)
+        w.start()
 
     def _start_crawler_poll(self) -> None:
         if self._crawler_status_thread and self._crawler_status_thread.isRunning():

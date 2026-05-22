@@ -63,7 +63,7 @@ _fp_build_state = {
 _fp_build_lock = threading.Lock()
 _fp_build_stop = threading.Event()
 
-_fp_dup_state: dict = {"status": "idle", "message": "", "results": []}
+_fp_dup_state: dict = {"status": "idle", "message": "", "results": [], "stop_requested": False}
 _fp_dup_lock  = threading.Lock()
 _fp_dup_stop  = threading.Event()
 
@@ -901,6 +901,10 @@ def create_app() -> Flask:
                 lb = r.get("lb_number", 0) or 0
                 date_str = r.get("date_str", "") or ""
                 year = date_str[:4] if len(date_str) >= 4 and date_str[:4].isdigit() else ""
+                if not year:
+                    _fm = re.search(r'\b((?:19|20)\d{2})\b', r.get("folder_name", "") or "")
+                    if _fm:
+                        year = _fm.group(1)
                 entries.append({
                     "lb": lb,
                     "lb_str": f"LB-{lb:05d}",
@@ -2464,6 +2468,7 @@ def create_app() -> Flask:
             database.set_curator(enabled)
             return jsonify({"ok": True, "is_curator": enabled})
         except Exception as exc:
+            logging.getLogger(__name__).exception("curator_set failed")
             return jsonify({"error": str(exc)}), 500
 
     # ── Master data publish / subscribe ────────────────────────────────────────
@@ -3128,6 +3133,8 @@ def create_app() -> Flask:
                 return jsonify({"error": "Scan already running"}), 409
         try:
             _fp_dup_stop.clear()
+            with _fp_dup_lock:
+                _fp_dup_state["stop_requested"] = False
             threading.Thread(
                 target=_do_fp_dup_scan, daemon=True
             ).start()
@@ -3140,6 +3147,14 @@ def create_app() -> Flask:
         """Return current state of the duplicate scan, including results when done."""
         with _fp_dup_lock:
             return jsonify(dict(_fp_dup_state))
+
+    @app.route("/api/fingerprint/duplicates/scan/stop", methods=["POST"])
+    def fp_dup_scan_stop() -> Response:
+        """Signal the duplicate scan worker to stop after the current operation."""
+        _fp_dup_stop.set()
+        with _fp_dup_lock:
+            _fp_dup_state["stop_requested"] = True
+        return jsonify({"ok": True})
 
     _slog.t("Flask: create_app done")
     return app

@@ -1,6 +1,74 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-102: _fp_stop_dup_scan calls wrong endpoint and blocks main thread
+Status: Fixed
+File(s): gui/spectrogram_tab.py, backend/app.py
+Reported: 2026-05-22
+Fixed: 2026-05-22
+Description: The "Stop" button for the duplicate scan called /api/fingerprint/build/stop
+  (stopping the fingerprint BUILD instead) and ran requests.post on the main thread.
+Root cause: Copy-paste error in endpoint URL; no _Worker used for the POST.
+Fix: Call correct new /api/fingerprint/duplicates/scan/stop endpoint via _Worker. Added
+  that endpoint to app.py. Added stop_requested to _fp_dup_state so the GUI can show
+  "Stopping…" while the scan finishes its current SQL query.
+
+BUG-101: Fingerprint build poll (QTimer) blocks main GUI thread
+Status: Fixed
+File(s): gui/spectrogram_tab.py
+Reported: 2026-05-22
+Fixed: 2026-05-22
+Description: _fp_poll_build and _fp_poll_dup were QTimer callbacks that called
+  requests.get synchronously on the main thread (up to 5 s per poll, every 800 ms),
+  starving the event loop and making the app unresponsive while both operations ran.
+Root cause: Wrong threading model — polling HTTP should never run on the main thread.
+Fix: Replaced both QTimers with background QThread pollers (_FpBuildStatusThread,
+  _FpDupStatusThread) that emit status_update signals, identical to the pattern used
+  by _CrawlerStatusThread.
+
+BUG-100: Crawler Start/Stop buttons block main GUI thread
+Status: Fixed
+File(s): gui/scraper_tab.py
+Reported: 2026-05-22
+Fixed: 2026-05-22
+Description: _on_crawler_start called requests.post directly on the main thread
+  (timeout=10 s); _on_crawler_stop also blocked (timeout=5 s). The main thread was
+  unresponsive for the full timeout duration when either was clicked, preventing abort
+  button presses from registering.
+Root cause: Missing _Worker QThread wrapper for the start/stop HTTP calls.
+Fix: Both methods now dispatch via _Worker. Added self._workers list to ScraperTab.
+  Added _on_crawler_start_result / _on_crawler_start_error slots for the callback.
+
+BUG-099: Fingerprint build "Stop" showed no immediate feedback
+Status: Fixed
+File(s): gui/spectrogram_tab.py
+Reported: 2026-05-22
+Fixed: 2026-05-22
+Description: Clicking "Stop" on the fingerprint build disabled the button but left
+  the label and progress bar unchanged, making it appear the stop had no effect. The
+  build continued until the current file finished before the UI reset.
+Root cause: _fp_stop_build only disabled the button; label update was missing.
+Fix: _fp_stop_build now immediately sets the label to "Stopping…". _on_fp_build_status
+  (the renamed poll slot) shows "Stopping… [N/M]" when stop_requested=True and
+  distinguishes "Stopped." vs "Done." in the final message.
+
+BUG-098: Curator checkbox shows an error dialog when toggled
+Status: Fixed
+File(s): gui/setup_tab.py, backend/app.py
+Reported: 2026-05-21
+Fixed: 2026-05-22
+Description: Toggling the "Curator mode" checkbox triggered an error dialog
+  ("Could not update flag: …"). Exact error was not captured; docstring also
+  incorrectly claimed the method gated a "geocoder group."
+Root cause: Three defensive/correctness issues: (1) curator_cb.toggled was connected
+  before publish_master_btn was created — any unexpected signal emission during _build_ui
+  would produce an AttributeError caught silently by the except block; (2) neither the
+  GUI nor the Flask route logged the exception, so the real error text was lost; (3) the
+  Flask route returned raw JSON as resp.text, making the dialog message cryptic.
+Fix: Moved signal connection to after publish_master_btn exists. Added logging.exception
+  in both the GUI except block and the Flask curator_set route. Parse Flask JSON error
+  body in the GUI so the dialog shows a plain message. Fixed docstring.
+
 BUG-097: Exported HTML collection table header appears mid-table (sticky broken)
 Status: Fixed
 File(s): backend/app.py:3398

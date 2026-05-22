@@ -2584,6 +2584,19 @@ def get_lb_aliases(canonical_lb: int | None = None, db_path=None) -> list[dict]:
     return [dict(r) for r in rows]
 
 
+def get_aliases_for_canonical(canonical_lb: int, db_path=None) -> list[int]:
+    """Return sorted list of alias LB numbers that map to the given canonical.
+
+    Args:
+        canonical_lb: The canonical LB number.
+        db_path: Optional path to the SQLite database file.
+
+    Returns:
+        Sorted list of alias_lb integers pointing to canonical_lb.
+    """
+    return sorted(r["alias_lb"] for r in get_lb_aliases(canonical_lb, db_path))
+
+
 # ── Bootleg-CD Catalog ────────────────────────────────────────────────────────
 
 _BOOTLEG_SOURCE_URL = (

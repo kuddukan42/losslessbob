@@ -1034,8 +1034,15 @@ Populated automatically after each lookup. Shows folders from the input file lis
 
 **Disambiguation resolution order** (applied per folder during `populate_from_lookup`):
 1. `folder_lb_link` lookup — if an exact path match exists in the DB, use that LB directly. LB Found cell shows `🔗 LB-XXXXX` prefix.
-2. `lb_alias` collapse — call `GET /api/lb_alias/resolve`. If all candidates collapse to one canonical, use it automatically.
+2. `lb_alias` collapse — call `GET /api/lb_alias/resolve`. If all candidates collapse to one canonical, use it automatically. After resolution, all known aliases for that canonical are fetched via `GET /api/lb_alias?canonical_lb=<lb>` and included in the proposed folder name.
 3. Fall back to `multiple_ids` state (cyan) for manual resolution.
+
+**Multi-LB folder naming convention** (alias-resolved folders):
+- Format: `{original_name}-{canonical}-{alias1}-{alias2}` where each LB token is `LB-NNNNN` (no zero-padding on the number itself, e.g. `LB-12345`).
+- Order: canonical first, then aliases in ascending numeric order.
+- Example: a folder resolved to canonical LB-12345 with alias LB-67890 gets suffix `LB-12345-LB-67890`.
+- The LB Found display column shows all LBs separated by ` + ` (e.g. `LB-12345 + LB-67890`) to distinguish from unresolved multiple IDs (which use `, `).
+- `_lb_in_name` / `_has_wrong_lb` / `_row_state` all operate on the canonical LB only, so state detection remains correct.
 
 **Right-click context menu (multiple_ids rows):**
 - **Resolve — Apply…** submenu — pick a specific candidate LB to resolve the row (session-only, not persisted)
@@ -1183,6 +1190,8 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 
 | Date | Change |
 |------|--------|
+| 2026-05-22 | Cross-tab folder sync: `add_folders_from_lookup()` added to `gui/lbdir_tab.py`; `main_window.py _on_tab_changed` wires lbdir pre-population on tab switch (mirrors existing Verify guard). (TODO-081) |
+| 2026-05-22 | Multi-LB alias folder naming: `get_aliases_for_canonical()` in `backend/db.py`; Rename tab `populate_from_lookup` and `_on_save_alias` fetch all aliases via `GET /api/lb_alias?canonical_lb=<lb>` after alias collapse and include them in proposed suffix (`LB-canonical-LB-alias1...`). (TODO-080) |
 | 2026-05-19 | Mobile-friendly admin panel: `backend/admin.html` + 3 routes (`GET /admin`, `GET /api/admin/status`, `POST /api/admin/restart`). Dark theme, no external deps, auto-polls every 5 s, DB stats/backup/reset, flat-file update, scraper start/stop, LB master reconcile, server restart. (TODO-042) |
 | 2026-05-18 | Disambiguation: `lb_alias` (MASTER) and `folder_lb_link` (USER) tables; 7 new endpoints under `/api/lb_alias` + `/api/folder_link`; Rename tab resolution order + 🔗 indicator + Link/Unlink/Alias context menu; DB Editor LB Aliases panel (curator-gated). (CC_LB_INTEGRITY item 8, TODO-019) |
 | 2026-05-18 | Flat-file update check rework: new `backend/flat_file.py` pipeline (discover/download/diff/apply); `flat_file_releases` + `flat_file_changelog` tables in MASTER_TABLES; 7 new `/api/flat_file/*` endpoints; removed broken `check_for_update()` from scraper.py; Setup tab "Check for Flat File Update" button + `_UpdateAvailableDialog` + Flat File History panel. (CC_LB_INTEGRITY item 9, TODO-026) |

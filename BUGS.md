@@ -1,16 +1,3 @@
-BUG-098: Curator checkbox shows an error dialog when toggled
-Status: Open
-File(s): gui/setup_tab.py:1299
-Reported: 2026-05-21
-Description: Toggling the "Curator mode" checkbox in the Setup tab triggers an error
-  dialog ("Could not update flag: …"). The exact error message has not been captured;
-  likely a ConnectionRefusedError if the Flask backend hasn't fully started, or an
-  unexpected 500 from /api/curator if set_curator() raises inside the route handler.
-  Additionally, the docstring for _on_curator_toggled mentions gating a "geocoder group"
-  but that code is absent — the method only gates publish_master_btn.
-Root cause: Unknown — exact error message required to confirm.
-Fix:
-
 BUG-090: Black screen flickers in app at certain times
 Status: Open
 File(s): unknown
