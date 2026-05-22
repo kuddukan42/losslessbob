@@ -2137,7 +2137,7 @@ def generate_release_notes(since_timestamp: str | None = None, db_path=None) -> 
 
     # Manual override rows with notes
     overrides = conn.execute(
-        "SELECT lb_number, lb_status, notes, updated_at "
+        "SELECT lb_number, lb_status, manual_notes, manual_set_at "
         "FROM lb_master WHERE manual_override = 1 ORDER BY lb_number",
     ).fetchall()
 
@@ -2156,7 +2156,7 @@ def generate_release_notes(since_timestamp: str | None = None, db_path=None) -> 
     if overrides:
         lines.append(f"## Manual overrides ({len(overrides)})\n")
         for o in overrides:
-            note = f" — {o['notes']}" if o.get("notes") else ""
+            note = f" — {o['manual_notes']}" if o.get("manual_notes") else ""
             lines.append(f"- LB-{o['lb_number']:05d}: {o['lb_status']}{note}")
         lines.append("")
 
