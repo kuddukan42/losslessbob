@@ -41,7 +41,7 @@ from pathlib import Path
 
 # ── Version ───────────────────────────────────────────────────────────────────
 
-_VERSION = "1.0.2"
+_VERSION = "1.0.3"
 _HISTORY_FILE = Path.home() / ".losslessbob_history"
 
 
