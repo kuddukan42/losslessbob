@@ -91,7 +91,9 @@ losslessbob/
 │   ├── test_master_data.py   # MASTER/USER table classification, export/import, SHA + schema-version guards
 │   └── test_db_writes.py     # 115-test battery: all DB write functions, constraint violations, rollback, thread safety
 ├── tools/
-│   └── geocode_locations.py  # CLI: batch-geocode entries.location via Nominatim (--limit, --retry-failed, --dry-run)
+│   ├── geocode_locations.py  # CLI: batch-geocode entries.location via Nominatim (--limit, --retry-failed, --dry-run)
+│   ├── losslessbob.iss       # Inno Setup 6 script — builds LosslessBob_Setup_<ver>.exe from dist/LosslessBob/
+│   └── build_windows.bat     # Local helper: pyinstaller + iscc in sequence (Windows only)
 ├── docs/
 │   ├── index.html            # GitHub Pages marketing/landing page
 │   └── screenshots/          # Screenshot placeholders (replace with real app screenshots)
