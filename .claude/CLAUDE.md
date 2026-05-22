@@ -39,7 +39,7 @@ Do not batch multiple sessions into one entry. One entry per session that produc
 - **API routes**: If any Flask route is added, changed, or removed, update the Backend section.
 - **Change Log table** at the bottom of PROJECT.md: Append a one-liner for any structural change.
 
-### 3. Update BUGS.md
+### 3. Update BUGS.md / BUGS_DONE.md
 Format:
 BUG-<NNN>: <short title>
 Status: Open | Fixed | Wontfix
@@ -50,11 +50,12 @@ Description: <what goes wrong>
 Root cause: <once known>
 Fix: <what was done>
 
-- When you identify a bug (even while doing unrelated work), add it as Open.
-- When you fix a bug, update its status and fill in Root cause + Fix.
-- Never delete bug entries — only update status.
+- When you identify a bug (even while doing unrelated work), add it as Open in BUGS.md.
+- When you fix a bug, update its status and fill in Root cause + Fix, then move the entry
+  from BUGS.md to BUGS_DONE.md (append at the top of BUGS_DONE.md after the header).
+- BUGS.md contains only Open/Wontfix bugs. BUGS_DONE.md contains all Fixed entries.
 
-### 4. Update TODO.md
+### 4. Update TODO.md / TODO_DONE.md
 Format:
 TODO-<NNN>: <task title>
 Priority: High | Medium | Low
@@ -64,7 +65,9 @@ Closed: YYYY-MM-DD (if done)
 Description: <what needs doing>
 
 - Add a TODO for any known improvement, tech debt, or deferred work discovered during a session.
-- Mark Done when completed; never delete entries.
+- When a TODO is completed or cancelled, fill in Closed date and Status, then move the entry
+  from TODO.md to TODO_DONE.md (append at the top of TODO_DONE.md after the header).
+- TODO.md contains only Open/In Progress tasks. TODO_DONE.md contains all Done/Cancelled entries.
 
 ---
 
