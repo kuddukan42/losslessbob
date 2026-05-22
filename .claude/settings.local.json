@@ -246,7 +246,18 @@
       "Bash(python3 -m py_compile gui/setup_tab.py)",
       "Bash(python3 *)",
       "Bash(grep -n \"catch.all\\\\|frontend\\\\|dist/\\\\|send_from.*frontend\\\\|route.*/$\" /home/tjenkins/Documents/losslessbob/backend/app.py)",
-      "Bash(/home/tjenkins/Documents/losslessbob/.venv/bin/python3 -m py_compile /home/tjenkins/Documents/losslessbob/backend/fingerprint.py /home/tjenkins/Documents/losslessbob/backend/app.py /home/tjenkins/Documents/losslessbob/gui/spectrogram_tab.py)"
+      "Bash(/home/tjenkins/Documents/losslessbob/.venv/bin/python3 -m py_compile /home/tjenkins/Documents/losslessbob/backend/fingerprint.py /home/tjenkins/Documents/losslessbob/backend/app.py /home/tjenkins/Documents/losslessbob/gui/spectrogram_tab.py)",
+      "Bash(.venv/bin/pip show *)",
+      "Bash(.venv/bin/pip install *)",
+      "Bash(/home/tjenkins/Documents/losslessbob/.venv/bin/python3 -m py_compile /home/tjenkins/Documents/losslessbob/gui/setup_tab.py)",
+      "Bash(/home/tjenkins/Documents/losslessbob/.venv/bin/python3 -m py_compile /home/tjenkins/Documents/losslessbob/gui/attachments_tab.py)",
+      "Bash(' in str\\(r.get\\(folder_name, \\)\\): *)",
+      "Bash(node -e ' *)",
+      "Bash(/home/tjenkins/Documents/losslessbob/.venv/bin/python3 -m pytest tests/test_db_writes.py -v --tb=short)",
+      "Bash(/home/tjenkins/Documents/losslessbob/.venv/bin/python3 -m py_compile /home/tjenkins/Documents/losslessbob/cli.py)",
+      "Bash(grep -E \"\\\\.py$|^d\")",
+      "Bash(sort -t'-' -k2 -n)",
+      "Bash(grep -n \"html,body\\\\|body{font\\\\|\\\\.hdr{\\\\|\\\\.card{\\\\|thead th{\\\\|\\\\.pg{\\\\|\\\\.ftr{\\\\|watchHdr\\\\|--hh\\\\|window\\\\.scrollTo\\\\|\\\\.card.*scrollTo\\\\|@media print\" /home/tjenkins/Documents/losslessbob/backend/app.py)"
     ],
     "additionalDirectories": [
       "/home/tjenkins/.ssh",

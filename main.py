@@ -125,16 +125,21 @@ def main() -> None:
 
     ignore_pos = "-ignore_start_positions" in sys.argv
 
-    # Register restart callback before starting Flask so it's available immediately.
-    # Windows still uses waitress (no clean shutdown) — leave callback unset there
-    # so admin_restart falls back to os.execv.
-    if sys.platform != "win32":
-        import backend.app as _backend_app
-        _backend_app.set_restart_callback(request_flask_restart)
-
-    flask_thread = threading.Thread(target=start_flask, daemon=True)
-    flask_thread.start()
-    _slog.t("flask thread started")
+    # If a persistent daemon backend is already up (e.g. started via `cli.py daemon
+    # start`), attach to it instead of launching a competing Flask thread.
+    _backend_already_running = _wait_for_port("127.0.0.1", FLASK_PORT, timeout=0.5)
+    if not _backend_already_running:
+        # Register restart callback before starting Flask so it's available immediately.
+        # Windows still uses waitress (no clean shutdown) — leave callback unset there
+        # so admin_restart falls back to os.execv.
+        if sys.platform != "win32":
+            import backend.app as _backend_app
+            _backend_app.set_restart_callback(request_flask_restart)
+        flask_thread = threading.Thread(target=start_flask, daemon=True)
+        flask_thread.start()
+        _slog.t("flask thread started")
+    else:
+        _slog.t("existing backend detected on port 5174 — skipping flask thread")
 
     # Force XWayland (xcb) on Linux when running under a Wayland compositor.
     # Native Wayland + AA_ShareOpenGLContexts + QtWebEngine can trigger fatal

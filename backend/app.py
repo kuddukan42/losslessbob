@@ -271,27 +271,28 @@ def create_app() -> Flask:
             JSON {ok: true} or 500 on error.
         """
         try:
-            conn = database.get_connection()
-            # Disable FK enforcement for the duration of the drop so that
-            # my_collection's FK on entries(lb_number) doesn't block the drop.
-            conn.executescript(
-                "PRAGMA foreign_keys=OFF;"
-                "DROP TABLE IF EXISTS entry_changes;"
-                "DROP TABLE IF EXISTS rename_history;"
-                "DROP TABLE IF EXISTS torrents;"
-                "DROP TRIGGER IF EXISTS entries_fts_insert;"
-                "DROP TRIGGER IF EXISTS entries_fts_update;"
-                "DROP TRIGGER IF EXISTS entries_fts_delete;"
-                "DROP TABLE IF EXISTS entries_fts;"
-                "DROP TABLE IF EXISTS checksums;"
-                "DROP TABLE IF EXISTS entries;"
-                "DROP TABLE IF EXISTS entry_files;"
-                "DROP TABLE IF EXISTS meta;"
-            )
-            # executescript() doesn't restore PRAGMAs — re-enable explicitly on
-            # the persistent connection before init_db() recreates the schema.
-            conn.execute("PRAGMA foreign_keys=ON")
-            database.init_db()
+            with database._write_lock:
+                conn = database.get_connection()
+                # Disable FK enforcement for the duration of the drop so that
+                # my_collection's FK on entries(lb_number) doesn't block the drop.
+                conn.executescript(
+                    "PRAGMA foreign_keys=OFF;"
+                    "DROP TABLE IF EXISTS entry_changes;"
+                    "DROP TABLE IF EXISTS rename_history;"
+                    "DROP TABLE IF EXISTS torrents;"
+                    "DROP TRIGGER IF EXISTS entries_fts_insert;"
+                    "DROP TRIGGER IF EXISTS entries_fts_update;"
+                    "DROP TRIGGER IF EXISTS entries_fts_delete;"
+                    "DROP TABLE IF EXISTS entries_fts;"
+                    "DROP TABLE IF EXISTS checksums;"
+                    "DROP TABLE IF EXISTS entries;"
+                    "DROP TABLE IF EXISTS entry_files;"
+                    "DROP TABLE IF EXISTS meta;"
+                )
+                # executescript() doesn't restore PRAGMAs — re-enable explicitly on
+                # the persistent connection before init_db() recreates the schema.
+                conn.execute("PRAGMA foreign_keys=ON")
+                database.init_db()
             return jsonify({"ok": True})
         except Exception as e:
             return jsonify({"error": str(e)}), 500
@@ -875,6 +876,93 @@ def create_app() -> Flask:
                 [int(lb) for lb in lb_numbers]
             )
             return jsonify({"ok": True, "deleted": deleted})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/collection/export/html", methods=["GET"])
+    def collection_export_html() -> Response:
+        """Export My Collection as a modern, interactive single-file HTML report.
+
+        The file embeds all entries as JSON and renders via client-side JS:
+        live search with highlight, column sorting, status/decade/year filters,
+        100-row pagination (adjustable), CSV download, LB# clipboard copy, dark
+        mode, and keyboard shortcuts. Handles 16k+ entries without DOM thrashing.
+
+        Returns:
+            HTML file attachment (collection.html), fully self-contained.
+        """
+        try:
+            import json as _json
+            from datetime import datetime
+
+            rows = database.get_collection()
+            entries = []
+            for r in rows:
+                lb = r.get("lb_number", 0) or 0
+                date_str = r.get("date_str", "") or ""
+                year = date_str[:4] if len(date_str) >= 4 and date_str[:4].isdigit() else ""
+                entries.append({
+                    "lb": lb,
+                    "lb_str": f"LB-{lb:05d}",
+                    "url": (
+                        "http://www.losslessbob.wonderingwhattochoose.com"
+                        f"/detail/LB-{lb:05d}.html"
+                    ),
+                    "status": r.get("lb_status") or "unknown",
+                    "date": date_str,
+                    "year": year,
+                    "location": r.get("location", "") or "",
+                    "folder": r.get("folder_name", "") or "",
+                    "notes": r.get("notes", "") or "",
+                })
+
+            data_json = _json.dumps(entries, ensure_ascii=False)
+            generated_at = datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
+
+            html = (
+                _COLLECTION_HTML_TEMPLATE
+                .replace("__DATA_JSON__", data_json)
+                .replace("__GENERATED_AT__", generated_at)
+            )
+            return Response(
+                html,
+                mimetype="text/html",
+                headers={"Content-Disposition": "attachment; filename=collection.html"},
+            )
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/collection/export/m3u", methods=["GET"])
+    def collection_export_m3u() -> Response:
+        """Export the full My Collection as an M3U playlist.
+
+        Iterates each entry's disk_path folder and includes all audio files
+        (FLAC, SHN, APE, WAV, MP3) in sorted order.  Entries with no valid
+        disk_path are silently skipped.
+
+        Returns:
+            M3U file attachment (collection.m3u).
+        """
+        try:
+            rows = database.get_collection()
+            audio_exts = {".flac", ".shn", ".ape", ".wav", ".mp3"}
+            lines = ["#EXTM3U"]
+            for r in rows:
+                dp = r.get("disk_path", "")
+                if not dp or not Path(dp).is_dir():
+                    continue
+                for f in sorted(Path(dp).iterdir()):
+                    if f.suffix.lower() in audio_exts:
+                        lines.append(
+                            f"#EXTINF:-1,{r.get('date_str', '')} - "
+                            f"{r.get('location', '')}"
+                        )
+                        lines.append(str(f))
+            return Response(
+                "\n".join(lines),
+                mimetype="audio/x-mpegurl",
+                headers={"Content-Disposition": "attachment; filename=collection.m3u"},
+            )
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
@@ -1712,20 +1800,19 @@ def create_app() -> Flask:
             updates = data.get("updates", {})
             if rowid is None or not updates:
                 return jsonify({"error": "rowid and updates required"}), 400
-            conn  = database.get_connection()
+            rconn = database.get_connection()
             valid = {c["name"] for c in
-                     conn.execute(f"PRAGMA table_info([{name}])").fetchall()}
+                     rconn.execute(f"PRAGMA table_info([{name}])").fetchall()}
             bad = [k for k in updates if k not in valid]
             if bad:
                 return jsonify({"error": f"Unknown columns: {bad}"}), 400
             set_clause = ", ".join(f"[{k}]=?" for k in updates)
-            conn.execute(
-                f"UPDATE [{name}] SET {set_clause} WHERE rowid=?",
-                list(updates.values()) + [rowid]
-            )
-            conn.commit()
-            return jsonify({"ok": True,
-                            "affected": conn.execute("SELECT changes()").fetchone()[0]})
+            with database.write_connection() as conn:
+                cur = conn.execute(
+                    f"UPDATE [{name}] SET {set_clause} WHERE rowid=?",
+                    list(updates.values()) + [rowid]
+                )
+            return jsonify({"ok": True, "affected": cur.rowcount})
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
@@ -1746,12 +1833,10 @@ def create_app() -> Flask:
             rowids = (request.get_json() or {}).get("rowids", [])
             if not rowids:
                 return jsonify({"error": "rowids list required"}), 400
-            conn = database.get_connection()
-            ph   = ",".join("?" * len(rowids))
-            conn.execute(f"DELETE FROM [{name}] WHERE rowid IN ({ph})", rowids)
-            conn.commit()
-            return jsonify({"ok": True,
-                            "deleted": conn.execute("SELECT changes()").fetchone()[0]})
+            ph = ",".join("?" * len(rowids))
+            with database.write_connection() as conn:
+                cur = conn.execute(f"DELETE FROM [{name}] WHERE rowid IN ({ph})", rowids)
+            return jsonify({"ok": True, "deleted": cur.rowcount})
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
@@ -3221,6 +3306,436 @@ def _start_download_pages_thread(lb_numbers, force=False, delay_ms=1500):
     _scrape_thread = threading.Thread(target=run, daemon=True)
     _scrape_thread.start()
 
+
+# ── Collection HTML export template ─────────────────────────────────────────
+# Placeholders replaced at request time:
+#   __DATA_JSON__     → JSON array of entry dicts
+#   __GENERATED_AT__  → UTC timestamp string (no single-quotes, safe in JS string literal)
+_COLLECTION_HTML_TEMPLATE = """\
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LosslessBob — My Collection</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#eceff7;--surface:#fff;--s2:#f6f7fb;--bd:#dde3ef;
+  --tx:#18202e;--tx2:#6a7390;
+  --ac:#4878f5;--acd:#2e5cdf;--acg:rgba(72,120,245,.12);
+  --pub-bg:#d1fae5;--pub:#065f46;
+  --priv-bg:#dbeafe;--priv:#1e40af;
+  --miss-bg:#fee2e2;--miss:#991b1b;
+  --unk-bg:#f1f5f9;--unk:#475569;
+  --sh1:0 1px 3px rgba(0,0,0,.07),0 2px 8px rgba(0,0,0,.05);
+  --sh2:0 4px 12px rgba(0,0,0,.08),0 12px 32px rgba(0,0,0,.06);
+  --r:12px
+}
+@media(prefers-color-scheme:dark){:root{
+  --bg:#0b0d16;--surface:#12151f;--s2:#181c28;--bd:#20253a;
+  --tx:#d6ddf0;--tx2:#7a86a4;
+  --ac:#6490ff;--acd:#4d78f0;--acg:rgba(100,144,255,.14);
+  --pub-bg:#052e16;--pub:#4ade80;
+  --priv-bg:#172554;--priv:#93c5fd;
+  --miss-bg:#450a0a;--miss:#f87171;
+  --unk-bg:#1a1f32;--unk:#94a3b8;
+  --sh1:0 1px 3px rgba(0,0,0,.3),0 2px 8px rgba(0,0,0,.2);
+  --sh2:0 4px 12px rgba(0,0,0,.4),0 12px 32px rgba(0,0,0,.3)
+}}
+html,body{height:100%;overflow:hidden}
+body{font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  background:var(--bg);color:var(--tx);font-size:14px;line-height:1.5;
+  -webkit-font-smoothing:antialiased;display:flex;flex-direction:column}
+
+/* header */
+.hdr{flex-shrink:0;background:var(--surface);
+  border-bottom:1px solid var(--bd);box-shadow:var(--sh1);padding:14px 20px 10px}
+.hdr-top{display:flex;align-items:baseline;gap:10px;margin-bottom:8px}
+.logo{font-size:18px;font-weight:700;letter-spacing:-.4px}
+.logo em{font-style:normal;color:var(--ac)}
+.gen{font-size:12px;color:var(--tx2);margin-left:auto}
+
+/* stats pills */
+.stats{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.pill{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;
+  border-radius:99px;font-size:12px;font-weight:500;
+  background:var(--s2);border:1px solid var(--bd)}
+.dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+
+/* controls */
+.ctrl{display:flex;gap:7px;flex-wrap:wrap;align-items:center}
+.sw{position:relative;flex:1;min-width:160px;max-width:320px}
+.si{position:absolute;left:9px;top:50%;transform:translateY(-50%);
+  color:var(--tx2);pointer-events:none;display:flex}
+input[type=search],select,button{font:13px/1.4 inherit}
+input[type=search]{width:100%;padding:6px 10px 6px 30px;border:1px solid var(--bd);
+  border-radius:8px;background:var(--s2);color:var(--tx);outline:none;
+  transition:border-color .15s,box-shadow .15s}
+input[type=search]::-webkit-search-cancel-button{-webkit-appearance:none}
+input[type=search]:focus{border-color:var(--ac);box-shadow:0 0 0 3px var(--acg)}
+select{padding:6px 26px 6px 10px;border:1px solid var(--bd);border-radius:8px;
+  background-color:var(--s2);color:var(--tx);outline:none;
+  -webkit-appearance:none;appearance:none;cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 24 24'%3E%3Cpath fill='%236a7390' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 8px center;
+  transition:border-color .15s}
+select:focus{border-color:var(--ac)}
+.btn{padding:6px 12px;border-radius:8px;border:1px solid var(--bd);background:var(--s2);
+  color:var(--tx);cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;
+  gap:5px;font-weight:500;
+  transition:background .12s,border-color .12s,color .12s,transform .08s}
+.btn:hover{background:var(--acg);border-color:var(--ac);color:var(--ac)}
+.btn:active{transform:scale(.96)}
+.btn-p{background:var(--ac);border-color:var(--ac);color:#fff}
+.btn-p:hover{background:var(--acd);border-color:var(--acd);color:#fff}
+.btn:disabled{opacity:.35;cursor:default;pointer-events:none}
+.cr{margin-left:auto;display:flex;align-items:center;gap:8px}
+.cnt{font-size:12px;color:var(--tx2);white-space:nowrap}
+
+/* table card */
+.card{margin:8px 16px 0;border-radius:var(--r);border:1px solid var(--bd);
+  box-shadow:var(--sh2);background:var(--surface);overflow:auto;flex:1;min-height:0}
+table{width:100%;border-collapse:collapse;font-size:13px}
+thead th{position:sticky;top:0;z-index:10;background:var(--s2);
+  padding:9px 14px;text-align:left;font-size:11px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.55px;color:var(--tx2);
+  border-bottom:1px solid var(--bd);cursor:pointer;user-select:none;
+  white-space:nowrap;transition:color .1s}
+thead th:hover{color:var(--tx)}
+.sa{display:inline-block;margin-left:3px;font-size:9px;opacity:.3}
+th.asc .sa,th.desc .sa{opacity:1;color:var(--ac)}
+th.asc  .sa::after{content:'▲'}
+th.desc .sa::after{content:'▼'}
+th:not(.asc):not(.desc) .sa::after{content:'⇅'}
+tbody tr{border-bottom:1px solid var(--bd);transition:background .08s}
+tbody tr:last-child{border-bottom:none}
+tbody tr:hover{background:var(--acg)}
+tbody td{padding:7px 14px;vertical-align:middle}
+.clb a{color:var(--ac);font-weight:600;text-decoration:none;font-variant-numeric:tabular-nums}
+.clb a:hover{text-decoration:underline}
+.cdt{white-space:nowrap;color:var(--tx2);font-variant-numeric:tabular-nums}
+.cfl{font-size:12px;color:var(--tx2);max-width:280px;word-break:break-word}
+.cno{font-size:12px;color:var(--tx2);font-style:italic;max-width:200px}
+
+/* badges */
+.b{display:inline-block;padding:2px 9px;border-radius:99px;font-size:11px;
+   font-weight:600;letter-spacing:.2px;text-transform:capitalize}
+.bp{background:var(--pub-bg);color:var(--pub)}
+.br{background:var(--priv-bg);color:var(--priv)}
+.bm{background:var(--miss-bg);color:var(--miss)}
+.bu{background:var(--unk-bg);color:var(--unk)}
+
+/* highlight */
+mark{background:#fde68a;color:#78350f;border-radius:2px;padding:0 1px;font-style:normal}
+@media(prefers-color-scheme:dark){mark{background:#5c3706;color:#fcd34d}}
+
+/* empty state */
+.empty{padding:80px 20px;text-align:center;color:var(--tx2)}
+.eico{font-size:36px;margin-bottom:10px;opacity:.5}
+
+/* pagination */
+.pg{flex-shrink:0;display:flex;align-items:center;gap:6px;flex-wrap:wrap;padding:10px 16px}
+.pg-lbl{font-size:13px;color:var(--tx2)}
+.pg-sz{padding:5px 22px 5px 8px;border:1px solid var(--bd);border-radius:8px;
+  background-color:var(--s2);color:var(--tx);outline:none;
+  -webkit-appearance:none;appearance:none;font:12px/1.4 inherit;cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 24 24'%3E%3Cpath fill='%236a7390' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 6px center}
+.pg-sz:focus{border-color:var(--ac)}
+.pg .btn{padding:5px 10px;font-size:13px}
+.ml{margin-left:auto}
+
+/* footer */
+.ftr{flex-shrink:0;margin-top:0;padding:14px 20px;text-align:center;font-size:12px;
+  color:var(--tx2);border-top:1px solid var(--bd);background:var(--surface)}
+.ftr a{color:var(--ac);text-decoration:none}
+
+/* toast */
+#toast{position:fixed;bottom:20px;right:20px;background:var(--surface);
+  border:1px solid var(--bd);border-left:3px solid var(--ac);border-radius:10px;
+  padding:9px 16px;font-size:13px;box-shadow:var(--sh2);z-index:9999;
+  opacity:0;transform:translateY(10px);
+  transition:opacity .2s,transform .2s;pointer-events:none}
+#toast.on{opacity:1;transform:translateY(0)}
+
+@media print{
+  html,body{height:auto;overflow:visible;display:block}
+  .hdr{position:static}
+  .ctrl,.pg .btn{display:none!important}
+  .card{flex:none;overflow:visible;height:auto;box-shadow:none;border:1px solid #ccc}
+  body{background:white;color:black}
+}
+</style>
+</head>
+<body>
+<header class="hdr" id="hdr">
+  <div class="hdr-top">
+    <div class="logo">LosslessBob <em>Collection</em></div>
+    <span class="gen" id="genTs"></span>
+  </div>
+  <div class="stats" id="sbar"></div>
+  <div class="ctrl">
+    <div class="sw">
+      <span class="si">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+      </span>
+      <input type="search" id="qIn" placeholder="Search LB#, date, location, folder…" autocomplete="off">
+    </div>
+    <select id="fSt"><option value="">All statuses</option>
+      <option value="public">\U0001f7e2 Public</option>
+      <option value="private">\U0001f535 Private</option>
+      <option value="missing">\U0001f534 Missing</option>
+      <option value="unknown">⚪ Unknown</option>
+    </select>
+    <select id="fDec"><option value="">All decades</option></select>
+    <select id="fYr"><option value="">All years</option></select>
+    <button class="btn" onclick="clr()">&#x2715; Clear</button>
+    <div class="cr">
+      <button class="btn" onclick="dlCSV()" title="Download filtered rows as CSV">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>CSV
+      </button>
+      <button class="btn btn-p" onclick="cpLBs()" title="Copy visible LB numbers to clipboard">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <rect x="9" y="9" width="13" height="13" rx="2"/>
+          <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+        </svg>Copy LB#s
+      </button>
+      <span class="cnt" id="cntLbl"></span>
+    </div>
+  </div>
+</header>
+
+<div class="card">
+  <table>
+    <thead><tr id="thRow">
+      <th data-col="lb"       onclick="srt('lb')">LB # <span class="sa"></span></th>
+      <th data-col="status"   onclick="srt('status')">Status <span class="sa"></span></th>
+      <th data-col="date"     onclick="srt('date')">Date <span class="sa"></span></th>
+      <th data-col="location" onclick="srt('location')">Location <span class="sa"></span></th>
+      <th data-col="folder"   onclick="srt('folder')">Folder <span class="sa"></span></th>
+      <th data-col="notes"    onclick="srt('notes')">Notes <span class="sa"></span></th>
+    </tr></thead>
+    <tbody id="tb"></tbody>
+  </table>
+  <div class="empty" id="emp" style="display:none">
+    <div class="eico">\U0001f50d</div>
+    <p>No recordings match your filters.</p>
+  </div>
+</div>
+
+<div class="pg" id="pgBar">
+  <button class="btn" id="p1"  onclick="go(1)"         title="First">&laquo;</button>
+  <button class="btn" id="pp"  onclick="go(pg-1)"       title="Previous">&lsaquo;</button>
+  <span class="pg-lbl" id="pLbl"></span>
+  <button class="btn" id="pn"  onclick="go(pg+1)"       title="Next">&rsaquo;</button>
+  <button class="btn" id="pl"  onclick="go(totPg())"    title="Last">&raquo;</button>
+  <span class="ml">
+    <select class="pg-sz" id="pSz" onchange="onPgSz()">
+      <option value="50">50 / page</option>
+      <option value="100" selected>100 / page</option>
+      <option value="200">200 / page</option>
+      <option value="500">500 / page</option>
+    </select>
+  </span>
+</div>
+
+<footer class="ftr">
+  Generated <span id="ftrTs"></span> &middot;
+  <a href="http://www.losslessbob.wonderingwhattochoose.com" target="_blank" rel="noopener">losslessbob.wonderingwhattochoose.com</a>
+  &middot; Press <kbd>/</kbd> to search &middot; <kbd>←</kbd><kbd>→</kbd> to page
+</footer>
+<div id="toast"></div>
+
+<script>
+'use strict';
+const DATA=__DATA_JSON__;
+const GEN='__GENERATED_AT__';
+
+const SM={public:{l:'Public',c:'#4ade80',r:0},private:{l:'Private',c:'#60a5fa',r:1},
+          missing:{l:'Missing',c:'#f87171',r:2},unknown:{l:'Unknown',c:'#94a3b8',r:3}};
+const BC={public:'bp',private:'br',missing:'bm'};
+let sc='lb',sd=1,qr='',fSt='',fDec='',fYr='',pg=1,pz=100,fil=[];
+
+(function boot(){
+  document.getElementById('genTs').textContent=GEN;
+  document.getElementById('ftrTs').textContent=GEN;
+  mkDrops();mkStats();bindEvt();srt('lb');
+})();
+
+function mkDrops(){
+  const yrs=[...new Set(DATA.map(r=>r.year).filter(Boolean))].sort().reverse();
+  const decs=[...new Set(yrs.map(y=>String(Math.floor(+y/10)*10)))].sort().reverse();
+  const yEl=document.getElementById('fYr');
+  yrs.forEach(y=>{yEl.add(new Option(y,y))});
+  const dEl=document.getElementById('fDec');
+  decs.forEach(d=>{dEl.add(new Option(d+'s',d))});
+}
+
+function mkStats(){
+  const cnt={public:0,private:0,missing:0,unknown:0};
+  DATA.forEach(r=>{const k=r.status in cnt?r.status:'unknown';cnt[k]++;});
+  const tot=DATA.length;
+  const bits=[`<span class="pill"><strong>${tot.toLocaleString()}</strong>&thinsp;recordings</span>`];
+  Object.entries(SM).filter(([k])=>cnt[k]>0).forEach(([k,m])=>{
+    bits.push(`<span class="pill"><span class="dot" style="background:${m.c}"></span>${cnt[k].toLocaleString()}&thinsp;${m.l}</span>`);
+  });
+  document.getElementById('sbar').innerHTML=bits.join('');
+}
+
+function bindEvt(){
+  let tmr;
+  document.getElementById('qIn').addEventListener('input',e=>{
+    clearTimeout(tmr);tmr=setTimeout(()=>{qr=e.target.value;pg=1;draw();},150);
+  });
+  ['fSt','fDec','fYr'].forEach(id=>{
+    document.getElementById(id).addEventListener('change',e=>{
+      if(id==='fSt')fSt=e.target.value;
+      else if(id==='fDec')fDec=e.target.value;
+      else fYr=e.target.value;
+      pg=1;draw();
+    });
+  });
+  document.addEventListener('keydown',e=>{
+    const inp=document.getElementById('qIn');
+    if(document.activeElement!==inp&&(e.key==='/'||(e.ctrlKey&&e.key==='k'))){
+      e.preventDefault();inp.focus();inp.select();
+    }
+    if(document.activeElement===inp&&e.key==='Escape'){
+      inp.value='';qr='';pg=1;draw();inp.blur();
+    }
+    if(!e.ctrlKey&&!e.altKey&&!e.metaKey&&document.activeElement!==inp){
+      if(e.key==='ArrowRight'){e.preventDefault();go(pg+1);}
+      if(e.key==='ArrowLeft'){e.preventDefault();go(pg-1);}
+    }
+  });
+}
+
+function apFil(){
+  const q=qr.trim().toLowerCase();
+  return DATA.filter(r=>{
+    if(fSt&&r.status!==fSt)return false;
+    if(fYr&&r.year!==fYr)return false;
+    if(fDec&&String(Math.floor(+r.year/10)*10)!==fDec)return false;
+    if(q){
+      const h=`${r.lb_str} ${r.date} ${r.location} ${r.folder} ${r.notes}`.toLowerCase();
+      if(!h.includes(q))return false;
+    }
+    return true;
+  });
+}
+
+function apSort(rows){
+  return rows.slice().sort((a,b)=>{
+    if(sc==='lb')return(a.lb-b.lb)*sd;
+    if(sc==='status'){const ra=SM[a.status]?.r??9,rb=SM[b.status]?.r??9;return(ra-rb)*sd;}
+    const av=(a[sc]||'').toLowerCase(),bv=(b[sc]||'').toLowerCase();
+    return av<bv?-sd:av>bv?sd:0;
+  });
+}
+
+function srt(col){
+  if(sc===col)sd*=-1;else{sc=col;sd=1;}
+  document.querySelectorAll('thead th').forEach(th=>{
+    th.classList.remove('asc','desc');
+    if(th.dataset.col===col)th.classList.add(sd===1?'asc':'desc');
+  });
+  pg=1;draw();
+}
+
+function esc(s){
+  return String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function hl(txt,q){
+  if(!q)return esc(txt);
+  const s=esc(txt);
+  return s.replace(new RegExp(`(${q.replace(/[.*+?^${}()|[\\]\\\\]/g,'\\\\$&')})`, 'gi'),'<mark>$1</mark>');
+}
+
+function totPg(){return Math.max(1,Math.ceil(fil.length/pz));}
+
+function draw(){
+  fil=apSort(apFil());
+  const tb=document.getElementById('tb');
+  const emp=document.getElementById('emp');
+  if(!fil.length){tb.innerHTML='';emp.style.display='';document.getElementById('cntLbl').textContent='0 results';updPg();return;}
+  emp.style.display='none';
+  const q=qr.trim().toLowerCase();
+  const st=(pg-1)*pz;
+  tb.innerHTML=fil.slice(st,st+pz).map(r=>{
+    const bc=BC[r.status]??'bu';
+    return `<tr>
+      <td class="clb"><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.lb_str)}</a></td>
+      <td><span class="b ${bc}">${esc(r.status)}</span></td>
+      <td class="cdt">${hl(r.date,q)}</td>
+      <td>${hl(r.location,q)}</td>
+      <td class="cfl" title="${esc(r.folder)}">${hl(r.folder,q)}</td>
+      <td class="cno">${hl(r.notes,q)}</td>
+    </tr>`;
+  }).join('');
+  const n=fil.length,t=DATA.length;
+  document.getElementById('cntLbl').textContent=n===t?`${n.toLocaleString()} recordings`:`${n.toLocaleString()} of ${t.toLocaleString()}`;
+  updPg();
+}
+
+function updPg(){
+  const tp=totPg();
+  document.getElementById('pLbl').textContent=`Page ${pg} of ${tp}`;
+  document.getElementById('p1').disabled=pg<=1;
+  document.getElementById('pp').disabled=pg<=1;
+  document.getElementById('pn').disabled=pg>=tp;
+  document.getElementById('pl').disabled=pg>=tp;
+  document.getElementById('pgBar').style.display=fil.length<=pz?'none':'';
+}
+
+function go(n){
+  const tp=totPg();pg=Math.max(1,Math.min(tp,n));
+  document.getElementById('tb').innerHTML='';
+  draw();document.querySelector('.card').scrollTo({top:0,behavior:'smooth'});
+}
+
+function onPgSz(){pz=+document.getElementById('pSz').value;pg=1;draw();}
+
+function clr(){
+  document.getElementById('qIn').value='';
+  document.getElementById('fSt').value='';
+  document.getElementById('fDec').value='';
+  document.getElementById('fYr').value='';
+  qr='';fSt='';fDec='';fYr='';pg=1;draw();
+}
+
+function dlCSV(){
+  const rows=[['LB#','Status','Date','Location','Folder','Notes'],
+    ...fil.map(r=>[r.lb_str,r.status,r.date,r.location,r.folder,r.notes])];
+  const csv=rows.map(r=>r.map(c=>`"${String(c??'').replace(/"/g,'""')}"`).join(',')).join('\\n');
+  const a=document.createElement('a');
+  a.href='data:text/csv;charset=utf-8,\\ufeff'+encodeURIComponent(csv);
+  a.download='collection.csv';a.click();
+  toast(`${fil.length.toLocaleString()} rows exported`);
+}
+
+function cpLBs(){
+  navigator.clipboard.writeText(fil.map(r=>r.lb_str).join('\\n')).then(
+    ()=>toast(`${fil.length.toLocaleString()} LB numbers copied`),
+    ()=>toast('Clipboard access denied')
+  );
+}
+
+let _tt;
+function toast(msg){
+  const el=document.getElementById('toast');
+  el.textContent=msg;el.classList.add('on');
+  clearTimeout(_tt);_tt=setTimeout(()=>el.classList.remove('on'),2800);
+}
+</script>
+</body>
+</html>"""
 
 if __name__ == "__main__":
     import sys

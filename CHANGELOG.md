@@ -1,3 +1,201 @@
+[2026-05-21] — fix(backend): sticky table header broken in exported HTML collection page
+
+Fixed
+
+  backend/app.py: Switched from a page-scroll layout to a flex-column viewport layout.
+    Root cause: `overflow-x:auto` on `.card` implicitly forces `overflow-y:auto` (CSS spec),
+    making `.card` a vertical scroll container — and `position:sticky` cannot escape its own
+    scroll container. No single overflow value fixes this while also enabling horizontal
+    scroll and border-radius clipping simultaneously.
+    Fix: `html/body` are now `height:100%;overflow:hidden;display:flex;flex-direction:column`.
+    `.card` gets `flex:1;min-height:0;overflow:auto` (fills remaining viewport, scrolls
+    internally). `thead th` sticks at `top:0` relative to `.card`'s scroll context instead
+    of the viewport. `.hdr`, `.pg`, `.ftr` get `flex-shrink:0`. `watchHdr()` and `--hh`
+    removed (no longer needed). `go()` now scrolls `.card` instead of `window`. Print
+    media query overrides flex layout to restore full-page rendering. (BUG-097)
+
+[2026-05-21] — feat(cli): add fingerprint command (build/stop/status/identify/stats/scan-dupes/dupes)
+
+Added
+
+  cli.py: `fingerprint` subcommand wired into _build_parser(), _execute(), _HELP_TEXT,
+          _help_text() (narrow), _COMMAND_HELP, and _COMPLETIONS.
+          Sub-actions: build [--force] [--watch], stop, status [--json],
+          identify <FILE> [--json], stats [--json], scan-dupes [--watch], dupes [--json].
+          _watch_fp_build() — polls /api/fingerprint/build/status with a progress bar.
+          _watch_fp_dupes() — polls /api/fingerprint/duplicates until scan finishes.
+          _print_fp_status() — formatted build-progress output.
+          _print_fp_identify() — ranked candidate list with CONFIDENT flag.
+          _print_fp_dupes() — duplicate pair list with lb_a ↔ lb_b and file paths.
+          All output adapts to narrow (<50 col) and wide terminal widths.
+
+[2026-05-21] — feat(cli): daemon mode — persistent background backend + auto-attach
+
+Added
+
+  cli.py: _is_flask_running(port) — checks if :5174 is already accepting connections.
+          _daemon_start/_daemon_stop/_daemon_status helpers — fork run_backend.py as
+          a detached OS process (start_new_session=True), write data/backend.pid,
+          redirect output to data/backend.log. SIGTERM on stop.
+          `daemon start|stop|status` subcommand added to _build_parser(), _execute(),
+          _HELP_TEXT, _COMMAND_HELP, and _COMPLETIONS.
+          _run_interactive() now checks _is_flask_running() first; if a backend is
+          already up it attaches instead of starting a new server.
+          One-shot main() same: skips thread start when port already listening.
+          `daemon` command excluded from Flask startup check (needs no backend).
+
+  run_backend.py: Added --port argument (argparse) so cli.py daemon start can pass
+                  the configured port when forking the process.
+
+  main.py: Added _wait_for_port(..., timeout=0.5) check before spawning the Flask
+           thread. If a daemon backend is already up, the GUI attaches to it; the
+           Flask thread and restart-callback registration are skipped. Closing the
+           GUI window no longer kills a running daemon.
+
+[2026-05-21] — ux(cli): tabular scraper/crawler status for narrow mobile output
+
+Changed
+
+  cli.py: Added _print_scrape_status() — narrow mode prints an _hr("scraper") block with
+          Status / LB / Progress / Errors / Skipped / Action rows (label col 10 chars).
+          scrape status dispatch now calls _print_scrape_status() instead of _fmt_scrape_status().
+          _watch_scrape() narrow mode: \r-overwrite progress bar [███░░░] N/total LB-NNNNN,
+          bar width computed to fill exactly w chars.
+          _watch_crawler() narrow mode: single line per URL using HH:MM timestamp (saves 3
+          chars vs HH:MM:SS) with inline Q:N count appended — no separate counts line.
+          crawler status idle narrow: _hr("crawler") + Status / Fetched table rows.
+          crawler start confirmation narrow: two-line "Crawler started / scope: X".
+          Removed dead code: _fmt_crawler_status() was defined but never called.
+
+[2026-05-21] — ux(cli): tabular single-line column layout for narrow mobile output
+
+Changed
+
+  cli.py: Replaced 2-line search/recent format with single-line columnar rows that fill
+          exactly w chars: LB-NNNNN  YYYY-MM-DD  location (location truncated to w-22).
+          lookup narrow: single row LB-NNNNN  m:N  ?:N  status (status fills remaining).
+          stats narrow: _hr("stats") section header + aligned two-column key-value table
+          (Entries / Checksums / Latest LB / Imported, label col 11 chars wide).
+
+[2026-05-21] — ux(cli): optimise all output for 40-character mobile terminals
+
+Changed
+
+  cli.py: Added `import textwrap`.  All outputs now adapt to the current terminal width
+          with a narrow-mode threshold of < 50 columns.
+    _fmt_scrape_status(): narrow mode drops errors/skipped/action; shows run/idle + LB only.
+    _counts(): narrow mode shows ↓N Q:N (fetched + queue) and drops 304/404 breakdowns.
+    _print_show(): values truncated to fit within terminal width (val_w = w - 14).
+    _print_diff(): db_sfx shortens to " [DB]" on narrow; fn_w computed per-suffix.
+    _print_verify(): narrow mode moves missing-type tag to its own line; fn_w tightened.
+    search output: 2-line format (LB+date / location) when w < 50.
+    lookup output: narrow 2-line format (LB + m:N ?:N / status) when w < 50.
+    recent output: 2-line format matching search when w < 50.
+    scrape start: narrow confirmation is 2-line "Scrape started / N entries".
+    Interactive banner and Ctrl-C hint: shortened for w < 50.
+    _help_text(): new function — returns 10-column compact command list on narrow screens,
+                  full _HELP_TEXT on wide screens.
+    _fmt_help(): new function — word-wraps per-command help pages to terminal width.
+    help/? dispatch: uses _help_text() and _fmt_help(); "No help for X" wraps on narrow.
+
+[2026-05-21] — feat(cli): add 8 new commands — show, open, diff, verify, missing, export, backup, recent
+
+Added
+
+  cli.py: Eight new commands implemented against existing Flask API endpoints.
+    show <LB>              Full concert record: metadata, checksums, cached files.
+                           Accepts "123", "00123", or "LB-00123" via _parse_lb().
+    open <LB>              Opens losslessbob.com detail page in the default browser.
+    diff <file> ...        Diff-style lookup: ✓ matched, ✗ missing from input (fetches
+                           entry detail to show filenames), ? not in DB at all.
+    verify <dir> ...       Wraps POST /api/verify; shows pass/fail + problem files.
+    missing [--field ...]  --field checksums → GET /api/db/missing_lb_numbers;
+                           --field metadata → paginates GET /api/lb_master?status=missing.
+    export [--format ...]  csv → GET /api/dbedit/table/entries/export (streamed bytes);
+                           json/txt → paginated GET /api/dbedit/table/entries/rows.
+    backup [<dest>]        POST /api/db/backup; optional shutil.copy2 to dest path.
+    recent [N]             GET /api/dbedit/table/entries/rows sorted by scraped_at DESC.
+    Added _parse_lb(), _LB_URL, _TYPE_LABELS constants; _print_show(), _print_diff(),
+    _print_verify() formatters; all 8 commands in _build_parser(), _execute(),
+    _COMMAND_HELP, _COMPLETIONS, and _HELP_TEXT.
+
+[2026-05-21] — feat(cli): clear screen on startup and add `clear` shell command
+
+Changed
+
+  cli.py: Added `_clear_screen()` (ANSI `\033[2J\033[H`) so the terminal is wiped clean
+    once Flask is ready and the welcome message always starts at line 1. Added `clear`
+    as a REPL command (tab-completable) that clears the screen mid-session. Added `clear`
+    to the `help` output and `_COMPLETIONS` list.
+
+[2026-05-21] — feat(cli): detect terminal width and adapt all output formatting
+
+Changed
+
+  cli.py: Added `shutil.get_terminal_size()`-based `_term_width()` helper. All output
+    formatters now query the live terminal width instead of using hardcoded constants.
+    - Removed `_MOB_W = 44` constant; `_hr()` and `_watch_crawler()` use `_term_width()`
+    - `_watch_scrape()`: status line capped to terminal width to prevent wrap on narrow TTYs
+    - `_watch_crawler()`: `url_w` and message chunk width computed from live terminal size
+    - `_fmt_crawler_status()`: URL truncated to available space after the fixed prefix
+    - `stats`: vertical (one-field-per-line) layout on terminals narrower than 72 columns
+    - `lookup`: two-line-per-result layout on terminals narrower than 70 columns
+    - `search`: location field truncated to `max(20, term_width - 27)` instead of fixed 50
+
+[2026-05-21] — feat(cli): interactive REPL shell with per-command help and tab-completion
+
+Changed
+
+  cli.py: Running `cli.py` with no arguments now opens a persistent interactive shell
+    (prompt `lb> `) instead of printing usage and exiting.  Flask starts once in a
+    background daemon thread on entry; all subsequent commands reuse the running backend.
+    One-shot invocation (`cli.py <command> [args]`) is fully backward-compatible.
+    Added:
+      - _run_interactive(): REPL loop with Ctrl-C safety, EOFError/Ctrl-D exit
+      - _setup_readline(): readline history persisted to ~/.losslessbob_history, tab-
+          completion for all top-level commands and scrape/crawler sub-commands
+      - _build_parser(): extracted parser construction so it can be reused both in
+          interactive (_SilentParser, no sys.exit) and one-shot modes
+      - _execute(): extracted dispatch logic called by both modes
+      - _SilentParser / _UsageError: subclass of ArgumentParser that raises instead of
+          calling sys.exit so parse errors don't kill the REPL
+      - _HELP_TEXT: structured overview with examples shown by `help` / `?`
+      - _COMMAND_HELP dict: full per-command reference (arguments, flags, output format,
+          examples) shown by `help <command>` (e.g. `help search`, `help crawler`)
+      - --port N with no subcommand also enters interactive mode on the given port
+
+[2026-05-21] — feat(cli): crawler status live tail log for mobile screens
+
+Changed
+
+  cli.py: `crawler status` now enters a live tail-log mode instead of printing
+    one snapshot. Each URL change and stage transition prints a new log entry
+    (scrolling, not overwriting) sized for ~44-char mobile SSH sessions.
+    Format: timestamp + arrow (↓ new / ↺ conditional GET) + short path, then
+    counts (ok / 304 / 404 / err / queue) on a second line.
+    If no crawl is running it prints "idle — no crawl running" and exits.
+    `--json` still produces a raw snapshot and exits as before.
+    Added _MOB_W, _short_path(), _counts(), _hr() helpers; _watch_crawler()
+    rewritten to use the new format (also used by `crawler start --watch`).
+
+[2026-05-21] — fix(gui): crawler status poll race condition shows "idle" immediately after start
+
+Fixed
+
+  gui/scraper_tab.py: _on_crawler_status now ignores the initial idle state (running=False,
+    stage="idle") so the poll thread doesn't stop itself before the crawler thread has had a
+    chance to set running=True. UI only resets when stage is a terminal value (done/stopped/error).
+
+[2026-05-21] — feat(cli): add scrape and crawler start/stop/status subcommands
+
+Added
+
+  cli.py: `scrape start/stop/status` and `crawler start/stop/status` subcommands.
+    `scrape start` accepts --start-lb, --end-lb, --force, --watch.
+    `crawler start` accepts --scope, --force, --delay-ms, --daily-cap, --watch.
+    --watch polls the respective status endpoint every 2 s and prints progress until done.
+    Extracted _wait_for_flask() helper to clean up the startup probe.
+
 [2026-05-21] — perf(scraper): reduce per-entry DB write overhead in scrape_range
 
 Changed

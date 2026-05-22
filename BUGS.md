@@ -1,3 +1,38 @@
+BUG-097: Exported HTML collection table header appears mid-table (sticky broken)
+Status: Fixed
+File(s): backend/app.py:3398
+Reported: 2026-05-21
+Fixed: 2026-05-21
+Description: In the exported HTML collection page, the sticky `thead th` header row
+  was rendered at its natural DOM position instead of sticking below the page header
+  bar as the user scrolled. It appeared to float in the middle of visible rows.
+Root cause: `overflow-x:auto` on `.card` forces `overflow-y:auto` per CSS spec, making
+  `.card` a vertical scroll container. A `position:sticky` element cannot escape its own
+  scroll container — so the thead stuck within the card (which never actually scrolls
+  vertically since it's auto-height), making sticky a no-op. `overflow:clip` has the same
+  problem. There is no single CSS overflow value that enables horizontal scroll AND
+  preserves border-radius clipping AND doesn't break vertical sticky.
+Fix: Switched to flex-column viewport layout. `html/body` are `height:100%;overflow:hidden;
+  display:flex;flex-direction:column`. `.card` fills remaining viewport with `flex:1;
+  overflow:auto` and scrolls internally. `thead th{position:sticky;top:0}` sticks within
+  `.card`'s scroll context. Removed `watchHdr()`, `--hh`, and `window.scrollTo` in `go()`.
+
+BUG-096: Crawler status shows "idle" immediately after clicking Start Crawl
+Status: Fixed
+File(s): gui/scraper_tab.py:641
+Reported: 2026-05-21
+Fixed: 2026-05-21
+Description: After clicking "Start Crawl" the status label would immediately revert to
+  "Done — stage: idle" and the Start button re-enabled, while the crawler was actually
+  running in the background unmonitored.
+Root cause: Race condition — the _CrawlerStatusThread polls /api/crawler/status immediately
+  on startup (no initial delay). If the first poll fires before the daemon crawler thread
+  has executed its first line (_set(running=True, ...)), the status dict still has the
+  default running=False / stage="idle" values. _on_crawler_status treated any running=False
+  as a terminal condition and tore down the polling thread.
+Fix: Guard the teardown with `stage != "idle"` so the poll thread ignores the pre-start
+  idle state and only resets the UI when stage is a real terminal value (done/stopped/error).
+
 BUG-095: scrape_range acquires write lock N×4 times per entry for lb_master reconcile
 Status: Fixed
 File(s): backend/scraper.py, backend/db.py

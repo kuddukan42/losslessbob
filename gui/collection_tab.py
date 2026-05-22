@@ -570,6 +570,17 @@ class CollectionTab(QWidget):
         self._coll_wrap_cb = QCheckBox(self.tr("Word wrap"))
         self._coll_wrap_cb.stateChanged.connect(self._on_coll_wrap_toggled)
         btn_row.addWidget(self._coll_wrap_cb)
+
+        export_html_btn = QPushButton(self.tr("Export HTML…"))
+        export_html_btn.setToolTip(self.tr("Export collection as a standalone HTML table."))
+        export_html_btn.clicked.connect(self._on_export_collection_html)
+        btn_row.addWidget(export_html_btn)
+
+        export_m3u_btn = QPushButton(self.tr("Export M3U…"))
+        export_m3u_btn.setToolTip(self.tr("Export collection as an M3U playlist of audio files."))
+        export_m3u_btn.clicked.connect(self._on_export_collection_m3u)
+        btn_row.addWidget(export_m3u_btn)
+
         btn_row.addStretch()
         layout.addLayout(btn_row)
 
@@ -1776,6 +1787,42 @@ class CollectionTab(QWidget):
             self.miss_status.setText(self.tr("Exported {} rows to {}.").format(len(rows), Path(path).name))
         except Exception as e:
             self.miss_status.setText(self.tr("Export error: {}").format(e))
+
+    def _on_export_collection_html(self):
+        """Export My Collection as a standalone HTML table file."""
+        path, _ = QFileDialog.getSaveFileName(
+            self, self.tr("Export Collection as HTML"), "collection.html",
+            self.tr("HTML Files (*.html)")
+        )
+        if not path:
+            return
+        try:
+            resp = requests.get(
+                f"http://127.0.0.1:{self.flask_port}/api/collection/export/html", timeout=30
+            )
+            resp.raise_for_status()
+            Path(path).write_bytes(resp.content)
+            self.coll_status.setText(self.tr("Exported collection to {}.").format(Path(path).name))
+        except Exception as e:
+            self.coll_status.setText(self.tr("Export error: {}").format(e))
+
+    def _on_export_collection_m3u(self):
+        """Export My Collection as an M3U playlist of audio files."""
+        path, _ = QFileDialog.getSaveFileName(
+            self, self.tr("Export Collection as M3U"), "collection.m3u",
+            self.tr("M3U Files (*.m3u)")
+        )
+        if not path:
+            return
+        try:
+            resp = requests.get(
+                f"http://127.0.0.1:{self.flask_port}/api/collection/export/m3u", timeout=30
+            )
+            resp.raise_for_status()
+            Path(path).write_bytes(resp.content)
+            self.coll_status.setText(self.tr("Exported M3U playlist to {}.").format(Path(path).name))
+        except Exception as e:
+            self.coll_status.setText(self.tr("Export error: {}").format(e))
 
     # ── Torrent / Forum actions ───────────────────────────────────────────────
 

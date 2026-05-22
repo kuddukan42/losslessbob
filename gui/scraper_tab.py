@@ -638,7 +638,10 @@ class ScraperTab(QWidget):
         )
         self._crawler_counts_label.setText(counts_text)
 
-        if not running:
+        # Only stop monitoring when the crawl has actually finished, not when
+        # the first poll races ahead of the crawler thread and sees the initial
+        # idle state (running=False, stage="idle").
+        if not running and stage != "idle":
             if self._crawler_status_thread:
                 self._crawler_status_thread.stop()
                 self._crawler_status_thread = None
