@@ -184,6 +184,12 @@ class MainWindow(QMainWindow):
         self.setup_tab.search_page_size_changed.connect(self.search_tab.set_page_size)
         self.setup_tab.search_page_size_changed.connect(self.collection_tab.set_page_size)
         self.lookup_tab.lookup_completed.connect(self.rename_tab.populate_from_lookup)
+        self.lookup_tab.lookup_completed.connect(
+            lambda _d, folders: self.verify_tab.add_folders_from_lookup(folders)
+        )
+        self.lookup_tab.lookup_completed.connect(
+            lambda _d, folders: self.lbdir_tab.add_folders_from_lookup(folders)
+        )
         self.collection_tab.send_to_spectrograms.connect(self._on_send_to_spectrograms)
         self.theme_tab.theme_applied.connect(self._on_theme_applied)
 
@@ -273,6 +279,10 @@ class MainWindow(QMainWindow):
             folders = self.lookup_tab.get_lookup_folders()
             if folders:
                 self.verify_tab.add_folders_from_lookup(folders)
+        if widget is self.lbdir_tab:
+            folders = self.lookup_tab.get_lookup_folders()
+            if folders:
+                self.lbdir_tab.add_folders_from_lookup(folders)
 
     def _on_theme_applied(self):
         self.setStyleSheet(styles.MAIN_STYLESHEET)

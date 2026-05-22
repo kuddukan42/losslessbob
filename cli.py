@@ -145,12 +145,22 @@ def _daemon_start(port: int) -> None:
     script   = Path(__file__).parent / "run_backend.py"
     log_file = _daemon_log_file()
 
+    # Detach from the controlling terminal/session so the backend survives
+    # after the CLI exits.  start_new_session is POSIX-only; on Windows the
+    # equivalent is DETACHED_PROCESS + CREATE_NEW_PROCESS_GROUP.
+    if sys.platform == "win32":
+        detach_kwargs: dict = {
+            "creationflags": subprocess.DETACHED_PROCESS | subprocess.CREATE_NEW_PROCESS_GROUP,
+        }
+    else:
+        detach_kwargs = {"start_new_session": True}
+
     with open(log_file, "a") as log:
         proc = subprocess.Popen(
             [sys.executable, str(script), "--port", str(port)],
             stdout=log,
             stderr=log,
-            start_new_session=True,  # detach from the terminal session
+            **detach_kwargs,
         )
 
     _daemon_pid_file().write_text(str(proc.pid))

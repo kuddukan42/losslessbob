@@ -372,12 +372,11 @@ class VerifyTab(QWidget):
         self.status_label.setText("")
 
     def add_folders_from_lookup(self, folders: list[str]) -> None:
-        """Pre-populate folder list from the Lookup tab (only if list is currently empty)."""
-        if self._folders:
-            return
+        """Merge folders from the Lookup tab into the folder list (skips duplicates)."""
+        before = len(self._folders)
         for f in folders:
             self._add_folder(f)
-        if self._folders:
+        if len(self._folders) > before:
             self._refresh_listbox()
 
     def _on_listbox_context(self, pos):
