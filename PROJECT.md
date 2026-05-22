@@ -88,7 +88,8 @@ losslessbob/
 │       └── reconcile_dialog.py  # AudioReconcileDialog: shared preview dialog for audio file renames
 ├── tests/
 │   ├── test_lb_master.py     # lb_master schema, reconcile, override, forum guard, GUI presence
-│   └── test_master_data.py   # MASTER/USER table classification, export/import, SHA + schema-version guards
+│   ├── test_master_data.py   # MASTER/USER table classification, export/import, SHA + schema-version guards
+│   └── test_db_writes.py     # 115-test battery: all DB write functions, constraint violations, rollback, thread safety
 ├── tools/
 │   └── geocode_locations.py  # CLI: batch-geocode entries.location via Nominatim (--limit, --retry-failed, --dry-run)
 ├── docs/
@@ -514,6 +515,8 @@ Indexes: `idx_flat_changelog_release(release_id)`, `idx_flat_changelog_lb(lb_num
 |--------|-------|-------------|
 | POST | `/api/collection/purge` | Purge a data scope. Body: `{scope}`. Scopes: `collection`, `wishlist`, `personal_meta`, `integrity_events`, `entry_changes`. |
 | POST | `/api/collection/delete_bulk` | Remove specific entries from My Collection. Body: `{lb_numbers:[...]}`. Returns `{ok, deleted}`. |
+| GET | `/api/collection/export/html` | Download My Collection as a self-contained HTML table. Returns `collection.html` attachment. |
+| GET | `/api/collection/export/m3u` | Download My Collection as an M3U playlist of audio files. Walks each entry's `disk_path`; skips missing folders. Returns `collection.m3u` attachment. |
 
 ### DB Editor
 | Method | Route | Description |

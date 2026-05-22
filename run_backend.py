@@ -6,10 +6,11 @@ The Restart Server button on the admin page will restart only the
 Flask server; this process stays alive between restarts.
 
 Usage:
-    python run_backend.py
+    python run_backend.py [--port PORT]
     # or
     .venv/bin/python run_backend.py
 """
+import argparse
 import logging
 import sys
 import time
@@ -19,8 +20,6 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from backend.paths import ensure_data_dirs
 from backend.app import create_app, set_restart_callback
-
-FLASK_PORT = 5174
 
 _srv = None
 _restart_flag = False
@@ -36,6 +35,13 @@ def _request_restart() -> None:
 
 def main() -> None:
     global _srv, _restart_flag
+
+    parser = argparse.ArgumentParser(prog="run_backend")
+    parser.add_argument("--port", type=int, default=5174,
+                        help="Port to listen on (default: 5174)")
+    args = parser.parse_args()
+    port = args.port
+
     ensure_data_dirs()
 
     logging.basicConfig(
@@ -54,8 +60,8 @@ def main() -> None:
         app = create_app()
         logging.getLogger("werkzeug").setLevel(logging.WARNING)
 
-        _srv = make_server("0.0.0.0", FLASK_PORT, app, threaded=True)
-        print(f"LosslessBob backend ready on :{FLASK_PORT}", flush=True)
+        _srv = make_server("0.0.0.0", port, app, threaded=True)
+        print(f"LosslessBob backend ready on :{port}", flush=True)
         _srv.serve_forever()
         _srv.server_close()
 

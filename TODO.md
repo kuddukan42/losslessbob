@@ -1,3 +1,49 @@
+TODO-078: CLI daemon — Windows support for start_new_session
+Priority: Low
+Status: Open
+Added: 2026-05-21
+Description: _daemon_start() uses start_new_session=True which is a POSIX concept.
+  On Windows the equivalent is DETACHED_PROCESS + CREATE_NEW_PROCESS_GROUP via
+  subprocess creationflags. Add a platform check so daemon start works correctly
+  on Windows.
+
+TODO-077: Interactive REPL shell for CLI
+Priority: Medium
+Status: Done
+Added: 2026-05-21
+Closed: 2026-05-21
+Description: Refactor cli.py so running it with no arguments opens a persistent
+  interactive shell (lb> prompt) with Flask started once in the background.
+  Commands, tab-completion, readline history (~/.losslessbob_history), and
+  per-command help (help <command>) all work inside the shell.
+  One-shot mode unchanged for backward compatibility.
+
+---
+
+TODO-076: DB write function test battery
+Priority: Medium
+Status: Done
+Added: 2026-05-21
+Closed: 2026-05-21
+Description: Write a comprehensive pytest battery for all database write functions in
+  backend/db.py. Cover happy-path, idempotency, constraint violations (UNIQUE, CHECK,
+  NOT NULL, PK, FK), rollback on error, and thread-safety. 115 tests in 17 classes
+  across tests/test_db_writes.py.
+
+---
+
+TODO-075: FEAT-07 — Portable Export Formats (HTML + M3U)
+Priority: Low
+Status: Done
+Added: 2026-05-20
+Closed: 2026-05-20
+Description: Export My Collection as a self-contained HTML table (collection.html) or as an
+  M3U playlist (collection.m3u). Backend: GET /api/collection/export/html and
+  GET /api/collection/export/m3u in backend/app.py. GUI: "Export HTML…" and "Export M3U…"
+  buttons in My Collection panel of gui/collection_tab.py.
+
+---
+
 TODO-074: Map tab rework — browser-only, consolidate geocoding
 Priority: Medium
 Status: Done

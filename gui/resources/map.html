@@ -141,23 +141,29 @@
 
         /* ---- Popup styling ---- */
         .lb-popup b {
-            font-size: 13px;
+            font-size: 20px;
+        }
+
+        .lb-popup {
+            font-size: 15px;
+            line-height: 1.6;
         }
 
         .lb-popup .popup-status {
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 15px;
             text-transform: capitalize;
         }
 
         .lb-popup .popup-search-btn {
             display: inline-block;
-            margin-top: 5px;
-            padding: 3px 8px;
+            margin-top: 8px;
+            padding: 6px 14px;
             background: #1f4e79;
             color: #fff;
             border: none;
-            border-radius: 4px;
-            font-size: 11px;
+            border-radius: 5px;
+            font-size: 14px;
             cursor: pointer;
         }
 
@@ -230,11 +236,11 @@
     // ---------------------------------------------------------------------------
 
     const STATUS_COLORS = {
-        public:  '#4CAF50',   // green
-        private: '#2196F3',   // blue
-        missing: '#9E9E9E',   // gray
+        public:  '#00C853',   // vivid green
+        private: '#00B0FF',   // vivid cyan-blue
+        missing: '#FF6D00',   // vivid deep-orange (more visible than gray)
     };
-    const DEFAULT_COLOR = '#FF9800'; // orange — unknown status
+    const DEFAULT_COLOR = '#E040FB'; // vivid purple — unknown status
 
     // ---------------------------------------------------------------------------
     // QWebChannel bridge — wires JS to Python when running inside QWebEngineView
@@ -319,10 +325,40 @@
         if (clusterLayer) { map.removeLayer(clusterLayer); clusterLayer = null; }
         if (heatLayer)    { map.removeLayer(heatLayer);    heatLayer    = null; }
 
+        const CLUSTER_TIERS = [
+            { max:   10, bg: '#00E5FF', fg: '#003344', ring: '#00B8D4' },  // cyan
+            { max:   50, bg: '#69F0AE', fg: '#003322', ring: '#00C853' },  // mint green
+            { max:  150, bg: '#FFD740', fg: '#3E2700', ring: '#FF8F00' },  // amber
+            { max:  500, bg: '#FF6D00', fg: '#fff',    ring: '#BF360C' },  // deep orange
+            { max: Infinity, bg: '#D500F9', fg: '#fff', ring: '#7B1FA2' }, // vivid purple
+        ];
+
         const group = L.markerClusterGroup({
             maxClusterRadius: 60,
             spiderfyOnMaxZoom: true,
             showCoverageOnHover: false,
+            spiderfyDistanceMultiplier: 2.5,
+            iconCreateFunction: function(cluster) {
+                const count = cluster.getChildCount();
+                const tier  = CLUSTER_TIERS.find(t => count < t.max);
+                const size  = count < 20 ? 36 : count < 100 ? 44 : count < 500 ? 52 : 62;
+                return L.divIcon({
+                    html: '<div style="' +
+                        'width:' + size + 'px;height:' + size + 'px;' +
+                        'border-radius:50%;' +
+                        'background:' + tier.bg + ';' +
+                        'border:3px solid ' + tier.ring + ';' +
+                        'box-shadow:0 0 8px ' + tier.ring + '88;' +
+                        'display:flex;align-items:center;justify-content:center;' +
+                        'font-weight:700;font-size:' + (count > 999 ? 11 : 13) + 'px;' +
+                        'color:' + tier.fg + ';' +
+                        'font-family:sans-serif;' +
+                        '">' + count + '</div>',
+                    className: '',
+                    iconSize: [size, size],
+                    iconAnchor: [size / 2, size / 2],
+                });
+            },
         });
 
         const heatPoints = [];
@@ -336,11 +372,11 @@
             const isOwned = Boolean(m.owned);
 
             const circle = L.circleMarker([lat, lon], {
-                radius:      8,
+                radius:      18,
                 fillColor:   color,
-                fillOpacity: 0.85,
-                color:       isOwned ? 'white' : '#555',
-                weight:      isOwned ? 3 : 1,
+                fillOpacity: 0.95,
+                color:       isOwned ? '#FFD600' : '#222',
+                weight:      isOwned ? 4 : 1.5,
             });
 
             // Popup HTML
@@ -359,7 +395,7 @@
                 escapeHtml(m.lb_status || 'unknown') + '</span>';
 
             if (isOwned) {
-                popupHtml += ' &nbsp;<span style="color:#FF9800; font-size:11px;">★ owned</span>';
+                popupHtml += ' &nbsp;<span style="color:#FFD600; font-size:15px;">★ owned</span>';
             }
 
             const lbNum = m.lb_number;
