@@ -34,13 +34,32 @@ jobs:
       - name: Create data directory in dist
         run: mkdir dist\LosslessBob\data
 
-      - name: Zip release
+      # Strip leading 'v' so installer version is "1.0.3" not "v1.0.3"
+      - name: Compute version string
+        id: version
+        shell: pwsh
         run: |
-          cd dist
-          Compress-Archive -Path LosslessBob -DestinationPath LosslessBob-${{ github.ref_name }}-windows.zip
+          $v = "${{ github.ref_name }}" -replace '^v', ''
+          "VERSION=$v" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
+
+      # windows-latest includes Inno Setup 6 pre-installed
+      - name: Build installer
+        shell: pwsh
+        run: |
+          $iscc = "C:\Program Files (x86)\Inno Setup 6\ISCC.exe"
+          & $iscc /DAppVersion=${{ steps.version.outputs.VERSION }} tools\losslessbob.iss
+
+      # Keep a portable zip alongside the installer for users who prefer it
+      - name: Create portable zip
+        shell: pwsh
+        run: |
+          Compress-Archive -Path dist\LosslessBob `
+            -DestinationPath dist\LosslessBob-${{ steps.version.outputs.VERSION }}-windows-portable.zip
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          files: dist/LosslessBob-${{ github.ref_name }}-windows.zip
+          files: |
+            dist/LosslessBob-${{ steps.version.outputs.VERSION }}-windows-portable.zip
+            tools/Output/LosslessBob_Setup_${{ steps.version.outputs.VERSION }}.exe
           generate_release_notes: true

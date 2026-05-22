@@ -1,3 +1,31 @@
+[2026-05-22] — chore(release): bump version to 1.0.4
+
+Changed
+
+  backend/paths.py: APP_VERSION 1.0 → 1.0.4
+
+[2026-05-22] — feat(release): add file associations, startup option, and data cleanup to Windows installer
+
+Added
+
+  tools/losslessbob.iss [Tasks]: fileassoc task (unchecked by default) registers .ffp/.md5/.st5
+    extensions to LosslessBob.Checksum ProgID in HKCU so double-clicking checksum files opens the app.
+  tools/losslessbob.iss [Tasks]: startupregistry task (unchecked by default) adds the exe to
+    HKCU\...\Run so LosslessBob launches with Windows.
+  tools/losslessbob.iss [Code]: CurUninstallStepChanged prompts to delete data\ on uninstall;
+    auto-cleans app dir if empty. All registry keys created by the installer are removed automatically.
+
+[2026-05-22] — feat(release): add Inno Setup installer for Windows releases
+
+Added
+
+  tools/losslessbob.iss: Inno Setup 6 script that wraps the PyInstaller dist/LosslessBob/
+    directory into a LosslessBob_Setup_<version>.exe wizard installer. Installs to
+    %LocalAppData%\LosslessBob (no UAC required); creates data\ dir; Desktop + Start Menu
+    shortcuts optional. Output goes to tools/Output/.
+  .github/workflows/release.yml: Updated to build the installer after PyInstaller, then
+    upload both LosslessBob_Setup_<ver>.exe and a portable .zip to the GitHub Release.
+
 [2026-05-22] — fix(gui): lookup folders now propagate to lbdir and verify immediately on lookup_completed
 
 Fixed
