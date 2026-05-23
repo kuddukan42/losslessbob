@@ -1,3 +1,18 @@
+[2026-05-22] — feat(release): add Linux AppImage build to GitHub Actions release workflow
+
+Added
+
+  losslessbob_linux.spec: New PyInstaller spec for Linux. Identical to the Windows spec except
+    numpy, scipy, librosa, soundfile, and numba are NOT excluded, so the fingerprinting stack is
+    bundled. Platform-specific hiddenimports trimmed to Linux (inotify watchdog observer only).
+  .github/workflows/release.yml: Added build-linux job on ubuntu-latest. Installs libgl1 and
+    upx-ucl, runs PyInstaller with the Linux spec, assembles an AppDir (AppRun + .desktop + icon),
+    downloads appimagetool (AppImageKit continuous), and builds a self-contained
+    LosslessBob-<ver>-linux-x86_64.AppImage. Both Windows and Linux jobs upload independently to
+    the same GitHub Release via softprops/action-gh-release@v2. Workflow renamed to "Release".
+
+---
+
 [2026-05-22] — fix(release): remove invalid "checked" flag from Inno Setup [Tasks] section
 
 Fixed

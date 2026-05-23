@@ -1,4 +1,4 @@
-name: Windows Release
+name: Release
 
 on:
   push:
@@ -56,10 +56,111 @@ jobs:
           Compress-Archive -Path dist\LosslessBob `
             -DestinationPath dist\LosslessBob-${{ steps.version.outputs.VERSION }}-windows-portable.zip
 
-      - name: Create GitHub Release
+      - name: Upload to GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           files: |
             dist/LosslessBob-${{ steps.version.outputs.VERSION }}-windows-portable.zip
             tools/Output/LosslessBob_Setup_${{ steps.version.outputs.VERSION }}.exe
+          generate_release_notes: true
+
+  build-linux:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y libgl1 upx-ucl
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pyinstaller
+
+      - name: Compute version string
+        id: version
+        run: |
+          VERSION="${{ github.ref_name }}"
+          VERSION="${VERSION#v}"
+          echo "VERSION=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Build with PyInstaller (Linux)
+        run: pyinstaller losslessbob_linux.spec
+
+      - name: Create data directory in dist
+        run: mkdir -p dist/LosslessBob/data
+
+      - name: Create AppDir structure
+        run: |
+          mkdir -p AppDir/opt/LosslessBob
+          cp -r dist/LosslessBob/. AppDir/opt/LosslessBob/
+
+          # AppRun — entry point executed by the AppImage runtime
+          cat > AppDir/AppRun << 'APPRUN'
+          #!/bin/bash
+          HERE="$(dirname "$(readlink -f "${0}")")"
+          export LD_LIBRARY_PATH="${HERE}/opt/LosslessBob:${LD_LIBRARY_PATH}"
+          exec "${HERE}/opt/LosslessBob/LosslessBob" "$@"
+          APPRUN
+          chmod +x AppDir/AppRun
+
+          # Desktop integration file
+          cat > AppDir/losslessbob.desktop << 'DESKTOP'
+          [Desktop Entry]
+          Name=LosslessBob
+          Comment=Bob Dylan lossless archive checksum lookup
+          Exec=LosslessBob
+          Icon=losslessbob
+          Type=Application
+          Categories=Utility;Audio;
+          StartupNotify=true
+          DESKTOP
+
+          # 256x256 solid-blue placeholder icon (pure Python, no PIL required)
+          python3 - << 'PYEOF'
+          import struct, zlib
+
+          def _w32(n): return struct.pack('>I', n)
+          def _chunk(tag, data):
+              payload = tag + data
+              return _w32(len(data)) + payload + _w32(zlib.crc32(payload) & 0xffffffff)
+
+          W = H = 256
+          r, g, b = 26, 107, 204
+          sig  = b'\x89PNG\r\n\x1a\n'
+          ihdr = _chunk(b'IHDR', _w32(W) + _w32(H) + b'\x08\x02\x00\x00\x00')
+          raw  = b''.join(b'\x00' + bytes([r, g, b] * W) for _ in range(H))
+          idat = _chunk(b'IDAT', zlib.compress(raw, 9))
+          iend = _chunk(b'IEND', b'')
+          with open('AppDir/losslessbob.png', 'wb') as f:
+              f.write(sig + ihdr + idat + iend)
+          PYEOF
+
+      - name: Download appimagetool
+        run: |
+          curl -fsSL \
+            "https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage" \
+            -o /tmp/appimagetool
+          chmod +x /tmp/appimagetool
+
+      - name: Build AppImage
+        run: |
+          ARCH=x86_64 /tmp/appimagetool --appimage-extract-and-run \
+            AppDir \
+            "dist/LosslessBob-${{ steps.version.outputs.VERSION }}-linux-x86_64.AppImage"
+
+      - name: Upload to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/LosslessBob-${{ steps.version.outputs.VERSION }}-linux-x86_64.AppImage
           generate_release_notes: true
