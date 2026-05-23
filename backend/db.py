@@ -2783,18 +2783,17 @@ def upsert_inventory(url: str, db_path=None, **fields) -> None:
     Keyword args map directly to column names.  Only the supplied keys are
     updated on conflict — unsupplied columns are left unchanged.
     """
-    conn = get_connection(db_path)
-    # Ensure row exists first (INSERT OR IGNORE so discovered_at stays)
-    conn.execute(
-        "INSERT OR IGNORE INTO site_inventory(url) VALUES(?)", (url,)
-    )
-    if fields:
-        set_clause = ", ".join(f"{k}=?" for k in fields)
+    with write_connection(db_path) as conn:
+        # Ensure row exists first (INSERT OR IGNORE so discovered_at stays)
         conn.execute(
-            f"UPDATE site_inventory SET {set_clause} WHERE url=?",
-            list(fields.values()) + [url],
+            "INSERT OR IGNORE INTO site_inventory(url) VALUES(?)", (url,)
         )
-    conn.commit()
+        if fields:
+            set_clause = ", ".join(f"{k}=?" for k in fields)
+            conn.execute(
+                f"UPDATE site_inventory SET {set_clause} WHERE url=?",
+                list(fields.values()) + [url],
+            )
 
 
 def get_inventory_stats(db_path=None) -> dict:

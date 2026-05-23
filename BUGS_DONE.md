@@ -1,6 +1,15 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-107: sqlite3.OperationalError: database is locked during crawler upsert_inventory
+Status: Fixed
+File(s): backend/db.py, backend/site_crawler.py
+Reported: 2026-05-22
+Fixed: 2026-05-23
+Description: During a crawl, sqlite3.OperationalError: database is locked raised in upsert_inventory() when concurrent Flask request threads also write to the DB.
+Root cause: upsert_inventory() called get_connection() directly and committed outside _write_lock, so concurrent writers (Flask pool + crawler) bypassed Python-level write serialisation. The inline entry_files update in site_crawler.py had the same flaw.
+Fix: Replaced get_connection()+manual commit in upsert_inventory() with the write_connection() context manager, which acquires _write_lock. Same swap applied to the entry_files update in site_crawler.py; replaced now-unused get_connection import with write_connection.
+
 BUG-104: Inno Setup build fails with "Unknown preprocessor directive" on standalone #13#10 lines
 Status: Fixed
 File(s): tools/losslessbob.iss:108

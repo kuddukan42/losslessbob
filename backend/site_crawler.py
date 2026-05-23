@@ -25,7 +25,7 @@ from bs4 import BeautifulSoup
 
 from backend.db import (
     DB_PATH,
-    get_connection,
+    write_connection,
     upsert_inventory,
     get_downloaded_urls,
     get_pending_urls,
@@ -416,12 +416,11 @@ def crawl(
             filename = url_path[len("/files/"):]
             if filename:
                 try:
-                    conn = get_connection(db_path)
-                    conn.execute(
-                        "UPDATE entry_files SET downloaded=1 WHERE filename=?",
-                        (filename,),
-                    )
-                    conn.commit()
+                    with write_connection(db_path) as conn:
+                        conn.execute(
+                            "UPDATE entry_files SET downloaded=1 WHERE filename=?",
+                            (filename,),
+                        )
                 except Exception:
                     logger.exception("Failed to update entry_files.downloaded for %s", filename)
 
