@@ -3,9 +3,13 @@
 Credentials are never written to SQLite or any file on disk.
 When no keyring backend is available the app continues normally,
 keeping credentials in the in-process session cache only.
+
+Docker: credentials can be pre-loaded via secrets mounted at /run/secrets/.
+See docker-compose.yml and secrets/ for the expected filenames.
 """
 import logging
 from dataclasses import dataclass
+from pathlib import Path
 
 logger = logging.getLogger(__name__)
 
@@ -17,6 +21,30 @@ SERVICE_WTRF    = "losslessbob_wtrf"
 _session: dict[str, tuple[str, str]] = {}
 
 _keyring_ok: bool | None = None  # cached after first probe
+
+# Docker secrets — files mounted at /run/secrets/ by docker-compose
+_SECRETS_DIR = Path("/run/secrets")
+_SECRET_MAP: dict[str, tuple[str, str]] = {
+    SERVICE_QBT:     ("qbt_username",    "qbt_password"),
+    SERVICE_QBT_KEY: ("qbt_apikey_user", "qbt_apikey"),
+    SERVICE_WTRF:    ("wtrf_username",   "wtrf_password"),
+}
+
+
+def _read_docker_secret(name: str) -> str:
+    """Return the contents of /run/secrets/<name>, or '' if absent."""
+    try:
+        return (_SECRETS_DIR / name).read_text().strip()
+    except OSError:
+        return ""
+
+
+def _get_from_docker_secrets(service: str) -> tuple[str, str]:
+    """Return (username, password) from Docker secret files, or ('', '')."""
+    pair = _SECRET_MAP.get(service)
+    if not pair:
+        return "", ""
+    return _read_docker_secret(pair[0]), _read_docker_secret(pair[1])
 
 
 @dataclass
@@ -75,7 +103,7 @@ def save_credentials(service: str, username: str, password: str) -> StorageResul
 
 
 def get_credentials(service: str) -> tuple[str, str]:
-    """Return (username, password) from session cache or OS keyring.
+    """Return (username, password) from session cache, OS keyring, or Docker secrets.
 
     Args:
         service: Service constant.
@@ -95,6 +123,11 @@ def get_credentials(service: str) -> tuple[str, str]:
                 return username, password
         except Exception as exc:
             logger.warning("keyring get failed for %s: %s", service, exc)
+    # Fall back to Docker secrets mounted at /run/secrets/
+    u, p = _get_from_docker_secrets(service)
+    if u:
+        _session[service] = (u, p)
+        return u, p
     return "", ""
 
 
@@ -136,7 +169,7 @@ def credentials_stored(service: str) -> bool:
         service: Service constant.
 
     Returns:
-        True if credentials exist in session cache or keyring.
+        True if credentials exist in session cache, keyring, or Docker secrets.
     """
     if service in _session:
         return True
@@ -146,6 +179,9 @@ def credentials_stored(service: str) -> bool:
             return bool(_kr.get_password(service, "__username__"))
         except Exception:
             pass
+    pair = _SECRET_MAP.get(service)
+    if pair:
+        return bool(_read_docker_secret(pair[0]))
     return False
 
 

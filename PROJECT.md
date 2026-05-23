@@ -91,6 +91,18 @@ losslessbob/
 │   ├── test_master_data.py   # MASTER/USER table classification, export/import, SHA + schema-version guards
 │   └── test_db_writes.py     # 115-test battery: all DB write functions, constraint violations, rollback, thread safety
 ├── losslessbob_linux.spec    # PyInstaller spec for Linux AppImage build (includes fingerprinting stack)
+├── Dockerfile                # Docker image: python:3.11-slim + Xvfb + x11vnc + noVNC + Qt6 runtime
+├── docker-compose.yml        # Compose: port 6080 (noVNC), named data volume, music-folder mount examples
+├── .dockerignore             # Excludes .git, .venv, data/, dist/ from build context
+├── docker/
+│   └── entrypoint.sh         # Container startup: Xvfb → x11vnc → websockify/noVNC → app
+├── secrets/                  # Docker secret files (git-ignored *.txt; safe *.example templates)
+│   ├── qbt_username.txt      # qBittorrent username (empty = unused)
+│   ├── qbt_password.txt      # qBittorrent password
+│   ├── qbt_apikey_user.txt   # qBittorrent API key label
+│   ├── qbt_apikey.txt        # qBittorrent API key value
+│   ├── wtrf_username.txt     # WTRF forum username
+│   └── wtrf_password.txt     # WTRF forum password
 ├── tools/
 │   ├── geocode_locations.py  # CLI: batch-geocode entries.location via Nominatim (--limit, --retry-failed, --dry-run)
 │   ├── losslessbob.iss       # Inno Setup 6 script — builds LosslessBob_Setup_<ver>.exe from dist/LosslessBob/

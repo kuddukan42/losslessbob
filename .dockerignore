@@ -1,0 +1,13 @@
+.git/
+.claude/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+data/
+dist/
+AppDir/
+*.AppImage
+build/
+.pytest_cache/
+secrets/

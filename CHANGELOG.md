@@ -1,3 +1,57 @@
+[2026-05-23] — feat(release): add Docker image build and push to GHCR in release workflow
+
+Added
+
+  .github/workflows/release.yml: build-docker job — logs in to ghcr.io with GITHUB_TOKEN,
+    uses docker/metadata-action to tag semver + sha + latest (latest only on tag pushes),
+    builds with docker/build-push-action and GHA layer cache.
+  .github/workflows/release.yml: added packages: write to top-level permissions so
+    GITHUB_TOKEN can push to GitHub Container Registry.
+  .dockerignore: added secrets/ so credential files are never copied into the image.
+
+---
+
+[2026-05-23] — docs(website): remove macOS install option, add Docker install card
+
+Changed
+
+  docs/index.html: removed macOS install card; added Docker card (docker compose up → noVNC at
+    localhost:6080); updated hero platforms line (macOS → Docker); updated og:description;
+    updated install section subtitle to reflect Docker as a no-Python-required option.
+
+---
+
+[2026-05-23] — feat(docker): Docker secrets support for pre-loading credentials in containers
+
+Added
+
+  backend/credentials.py: _SECRET_MAP, _read_docker_secret(), _get_from_docker_secrets()
+    — get_credentials() now falls back to /run/secrets/ files after keyring; credentials_stored()
+    checks secrets too. Mapping: SERVICE_QBT → qbt_username/qbt_password,
+    SERVICE_QBT_KEY → qbt_apikey_user/qbt_apikey, SERVICE_WTRF → wtrf_username/wtrf_password.
+  docker-compose.yml: secrets: block wires six secret files into the container; comments
+    explain how to copy .example files and fill in values.
+  secrets/: empty *.txt files (git-ignored) and *.example templates for all six secrets.
+  .gitignore: secrets/*.txt excluded to prevent accidental credential commits.
+
+---
+
+[2026-05-22] — feat(docker): add Docker + noVNC support for browser-based GUI access
+
+Added
+
+  Dockerfile: single-stage build on python:3.11-slim; installs Xvfb, x11vnc, noVNC,
+    websockify, SoX, and all Qt6/Chromium runtime libs; sets QTWEBENGINE_CHROMIUM_FLAGS
+    --no-sandbox so QtWebEngine works in unprivileged containers.
+  docker/entrypoint.sh: starts Xvfb :1 → x11vnc → websockify/noVNC on port 6080 →
+    launches the app; users open http://localhost:6080 in a browser.
+  docker-compose.yml: maps port 6080, named volume for data/, shm_size 256m for
+    Chromium, PYTHON_KEYRING_BACKEND=null (credentials are session-only in containers);
+    includes commented music-folder volume examples.
+  .dockerignore: excludes .git, .venv, data/, dist/, AppDir/ from the build context.
+
+---
+
 [2026-05-22] — fix(paths): use XDG_DATA_HOME for data dir on frozen Linux (AppImage)
 
 Fixed

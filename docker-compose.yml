@@ -1,0 +1,88 @@
+services:
+  losslessbob:
+    build: .
+    image: ghcr.io/kuddukan42/losslessbob:latest
+    ports:
+      - "6080:6080"        # noVNC web UI — open http://localhost:6080 in a browser
+    volumes:
+      # App data: SQLite DB, scraped site mirror, flat files, spectrograms
+      - losslessbob_data:/app/data
+
+      # ── Music drives / folders ───────────────────────────────────────────────
+      # Mount your lossless audio collections here so the Verify, Spectrogram,
+      # and Fingerprint tabs can reach them inside the container.
+      #
+      # Format:  - <host path>:<container path>
+      #
+      # The container path is what you'll browse to in the app's folder pickers.
+      # Use :ro (read-only) on drives the app should never write to.
+      #
+      # ── Local folders ────────────────────────────────────────────────────────
+      #- /home/yourname/Music:/music
+      #- /home/yourname/Downloads/lossless:/music/downloads
+      #
+      # ── External / USB drives ────────────────────────────────────────────────
+      #- /mnt/usb1:/music/drive1
+      #- /mnt/usb2:/music/drive2:ro
+      #
+      # ── NAS / network shares (already mounted on the host) ───────────────────
+      #- /mnt/nas/dylan:/music/nas-dylan:ro
+      #- /mnt/nas/archive:/music/nas-archive:ro
+      #
+      # ── Multiple independent collections ─────────────────────────────────────
+      #- /media/disk1/lossless:/music/disk1:ro
+      #- /media/disk2/lossless:/music/disk2:ro
+      #- /media/disk3/lossless:/music/disk3:ro
+      # ─────────────────────────────────────────────────────────────────────────
+
+    environment:
+      - DISPLAY=:1
+      - QT_QPA_PLATFORM=xcb
+      - QTWEBENGINE_CHROMIUM_FLAGS=--no-sandbox --disable-dev-shm-usage
+      # Keyring is unavailable in containers; credentials load from secrets below.
+      - PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
+
+    secrets:
+      - qbt_username
+      - qbt_password
+      - qbt_apikey_user
+      - qbt_apikey
+      - wtrf_username
+      - wtrf_password
+
+    # Chromium (QtWebEngine) needs more shared memory than Docker's 64 MB default
+    shm_size: 256m
+
+    restart: unless-stopped
+
+# ── Docker secrets ────────────────────────────────────────────────────────────
+# Each secret is a plain-text file containing a single value (no trailing newline
+# needed — the app strips whitespace on read).
+#
+# Files live in secrets/ (git-ignored). Copy the .example files to get started:
+#
+#   cp secrets/qbt_username.example    secrets/qbt_username.txt
+#   cp secrets/qbt_password.example    secrets/qbt_password.txt
+#   cp secrets/qbt_apikey_user.example secrets/qbt_apikey_user.txt
+#   cp secrets/qbt_apikey.example      secrets/qbt_apikey.txt
+#   cp secrets/wtrf_username.example   secrets/wtrf_username.txt
+#   cp secrets/wtrf_password.example   secrets/wtrf_password.txt
+#
+# Leave any unused credential files empty — the app falls back to the Setup tab.
+# ─────────────────────────────────────────────────────────────────────────────
+secrets:
+  qbt_username:
+    file: ./secrets/qbt_username.txt
+  qbt_password:
+    file: ./secrets/qbt_password.txt
+  qbt_apikey_user:
+    file: ./secrets/qbt_apikey_user.txt
+  qbt_apikey:
+    file: ./secrets/qbt_apikey.txt
+  wtrf_username:
+    file: ./secrets/wtrf_username.txt
+  wtrf_password:
+    file: ./secrets/wtrf_password.txt
+
+volumes:
+  losslessbob_data:
