@@ -6,7 +6,7 @@
   <title>LosslessBob Desktop — The Archive, On Your Desktop</title>
   <meta name="description" content="Cross-platform desktop app for the LosslessBob Bob Dylan lossless archive. Identify recordings by checksum, browse the world map of concerts, verify files, and more." />
   <meta property="og:title" content="LosslessBob Desktop" />
-  <meta property="og:description" content="Cross-platform checksum lookup tool for the LosslessBob archive. Windows · macOS · Linux." />
+  <meta property="og:description" content="Cross-platform checksum lookup tool for the LosslessBob archive. Windows · Linux · Docker." />
   <meta property="og:type" content="website" />
   <style>
     /* ── Reset & base ─────────────────────────────── */
@@ -404,7 +404,7 @@
       ☆ View on GitHub
     </a>
   </div>
-  <p class="hero-platforms">Runs on <span>Windows</span> · <span>macOS</span> · <span>Linux</span></p>
+  <p class="hero-platforms">Runs on <span>Windows</span> · <span>Linux</span> · <span>Docker</span></p>
 
   <!-- Hero screenshot -->
   <div class="hero-screenshot">
@@ -643,7 +643,7 @@
     <p class="section-label">Get started</p>
     <h2 class="section-title">Install in minutes.</h2>
     <p class="section-sub">
-      Python 3.11+ required. Install dependencies, run once, and the GUI opens automatically.
+      Run natively on Windows or Linux, or use Docker — no local Python install needed.
     </p>
 
     <div class="install-grid">
@@ -658,21 +658,20 @@ python main.py</pre>
       </div>
 
       <div class="install-card">
-        <h3>🍎 macOS</h3>
-        <pre>git clone https://github.com/kuddukan42/losslessbob
-cd losslessbob
-pip3 install -r requirements.txt
-python3 main.py</pre>
-        <p>Tested on macOS 13+. PyQt6 wheels available on pip — no Homebrew Qt needed.</p>
-      </div>
-
-      <div class="install-card">
         <h3>🐧 Linux</h3>
         <pre>git clone https://github.com/kuddukan42/losslessbob
 cd losslessbob
 pip install -r requirements.txt
 python main.py</pre>
         <p>Debian/Ubuntu users may need <code>apt install libxcb-cursor0</code> for Qt to start.</p>
+      </div>
+
+      <div class="install-card">
+        <h3>🐳 Docker</h3>
+        <pre>git clone https://github.com/kuddukan42/losslessbob
+cd losslessbob
+docker compose up</pre>
+        <p>Opens a full GUI via noVNC — no local Python or Qt needed. Browse to <code>http://localhost:6080</code> once the container starts. Mount your music drives in <code>docker-compose.yml</code>.</p>
       </div>
 
     </div>
