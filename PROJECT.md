@@ -90,6 +90,7 @@ losslessbob/
 │   ├── test_lb_master.py     # lb_master schema, reconcile, override, forum guard, GUI presence
 │   ├── test_master_data.py   # MASTER/USER table classification, export/import, SHA + schema-version guards
 │   └── test_db_writes.py     # 115-test battery: all DB write functions, constraint violations, rollback, thread safety
+├── losslessbob_linux.spec    # PyInstaller spec for Linux AppImage build (includes fingerprinting stack)
 ├── tools/
 │   ├── geocode_locations.py  # CLI: batch-geocode entries.location via Nominatim (--limit, --retry-failed, --dry-run)
 │   ├── losslessbob.iss       # Inno Setup 6 script — builds LosslessBob_Setup_<ver>.exe from dist/LosslessBob/
