@@ -1,3 +1,14 @@
+[2026-05-23] — fix(db): serialise upsert_inventory writes through _write_lock to prevent DB locked errors
+
+Fixed
+
+  backend/db.py: upsert_inventory() was calling get_connection() directly and committing
+    outside the _write_lock, allowing concurrent Flask/crawler writes to race. Swapped to
+    write_connection() context manager so all writes go through _write_lock.
+  backend/site_crawler.py: inline entry_files downloaded=1 update also used get_connection()
+    directly; swapped to write_connection(). Replaced now-unused get_connection import with
+    write_connection.
+
 [2026-05-23] — feat(release): add Docker image build and push to GHCR in release workflow
 
 Added

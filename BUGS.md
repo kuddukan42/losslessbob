@@ -1,11 +1,3 @@
-BUG-107: sqlite3.OperationalError: database is locked during crawler upsert_inventory
-Status: Open
-File(s): backend/db.py:2788, backend/site_crawler.py:398
-Reported: 2026-05-22
-Description: During a crawl, Thread-N (crawl) raises sqlite3.OperationalError: database is locked when calling upsert_inventory() → conn.execute("INSERT OR IGNORE INTO site_inventory(url) VALUES(?)", ...). Indicates concurrent threads are each opening their own connection to the SQLite DB without WAL mode or a shared connection/lock strategy, causing write contention.
-Root cause: Unknown
-Fix: —
-
 BUG-106: Windows installer does not place app in Program Files
 Status: Open
 File(s): installer/losslessbob.iss (or equivalent Inno Setup script)
