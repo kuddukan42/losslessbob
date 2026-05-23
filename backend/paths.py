@@ -1,4 +1,5 @@
 """Central path resolver — handles normal Python, PyInstaller frozen, and portable ZIP builds."""
+import os
 import sys
 from pathlib import Path
 
@@ -8,6 +9,11 @@ APP_VERSION = "1.0.4"
 def _app_root() -> Path:
     """Return the directory that contains the data/ folder."""
     if getattr(sys, "frozen", False):
+        if sys.platform == "linux":
+            # AppImage mounts are read-only squashfs; --appimage-extract-and-run uses an
+            # ephemeral temp path. Use XDG_DATA_HOME so data persists across runs.
+            xdg = Path(os.environ.get("XDG_DATA_HOME", Path.home() / ".local" / "share"))
+            return xdg / "LosslessBob"
         return Path(sys.executable).parent
     return Path(__file__).parent.parent
 

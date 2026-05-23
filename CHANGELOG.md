@@ -1,3 +1,15 @@
+[2026-05-22] — fix(paths): use XDG_DATA_HOME for data dir on frozen Linux (AppImage)
+
+Fixed
+
+  backend/paths.py: On Linux with a PyInstaller frozen build the executable lives inside a
+    read-only AppImage squashfs mount (or an ephemeral temp dir with --appimage-extract-and-run).
+    _app_root() now returns $XDG_DATA_HOME/LosslessBob (defaulting to
+    ~/.local/share/LosslessBob) so data/ is writable and persists across runs.
+    Windows behaviour is unchanged.
+
+---
+
 [2026-05-22] — fix(release): bundle Qt xcb dependencies for Linux AppImage
 
 Fixed
