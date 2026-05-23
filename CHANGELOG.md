@@ -1,3 +1,14 @@
+[2026-05-22] — fix(release): bundle Qt xcb dependencies for Linux AppImage
+
+Fixed
+
+  .github/workflows/release.yml: Added libxcb-cursor0, libxcb-icccm4, libxcb-image0,
+    libxcb-keysyms1, libxcb-render-util0, and libxkbcommon-x11-0 to the apt-get install step so
+    PyInstaller can find and bundle them. Without these, the Qt xcb platform plugin fails to load
+    on systems that don't have them pre-installed (Qt 6.5+ requires libxcb-cursor0 specifically).
+
+---
+
 [2026-05-22] — feat(release): add Linux AppImage build to GitHub Actions release workflow
 
 Added
