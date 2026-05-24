@@ -1,3 +1,129 @@
+[2026-05-24] — feat(collection): add "Play in VLC" context menu action for My Collection entries
+
+Added
+
+  gui/platform_utils.py: open_in_vlc(paths) — cross-platform VLC detection (PATH, common Windows/macOS install
+    locations) and subprocess launch. Returns (bool, error_msg) so callers can surface failures gracefully.
+
+  gui/collection_tab.py: "Play in VLC" context menu item in My Collection. Enabled when selected row(s) have a
+    valid disk_path on disk. Multiple rows pass all their folder paths to one VLC instance as a playlist.
+    Shows a QMessageBox.warning if VLC is not found rather than silently failing.
+
+---
+
+[2026-05-24] — DB-09: Replace ad-hoc write_connection() locking with DatabaseWriteQueue
+
+Changed
+
+  backend/db_queue.py: New module. DatabaseWriteQueue holds ONE persistent sqlite3 connection
+    and serialises every write via queue.Queue + threading.Event. All callers call
+    get_write_queue().execute(fn) or .execute_async(fn); fn(conn) runs exclusively in the
+    single writer thread — eliminating all concurrent-writer races under WAL mode.
+  backend/db.py: All write_connection() call sites migrated to get_write_queue().execute();
+    write_connection() removed. _write_lock retained only for import_master_db() ATTACH/DETACH
+    workflow. Singleton initialised inside init_db().
+  backend/scraper.py: Five write_connection() call sites replaced with get_write_queue().
+    PRAGMA optimize kept as direct get_connection() op (not DML, no lock needed).
+  backend/site_crawler.py: One write_connection() call site replaced.
+  backend/app.py: Two database.write_connection() calls (dbedit row update/delete) replaced;
+    rowcount returned through queue result box.
+  backend/importer.py: Chunked executemany merge submitted as single queue item (timeout=300s).
+  backend/flat_file.py: All four write functions (discover, download, apply, defer) routed
+    through write queue. apply_flat_file_release() pre-computes all mutations as Python lists
+    and submits one atomic executemany batch; set_meta calls follow after queue item commits.
+  backend/geocoder.py: save_manual_geocode() and per-iteration run_batch() writes routed
+    through write queue.
+
+Fixed
+
+  sqlite3.OperationalError: database is locked — root cause was multiple threads opening
+    concurrent write_connection() calls, each racing for the WAL write lock. The write queue
+    removes the race entirely.
+
+[2026-05-23] — fix(db): use BEGIN IMMEDIATE in write_connection to prevent database-locked race
+
+Fixed
+
+  backend/db.py: write_connection() now issues BEGIN IMMEDIATE before yielding, acquiring
+    the WAL write lock before any reads. Prevents SQLITE_BUSY when out-of-band writers
+    (e.g. PRAGMA optimize/ANALYZE from scraper) hold the SQLite write lock after reconcile
+    has already completed its read phase. Nested calls detect conn.in_transaction=True and
+    skip inner BEGIN/COMMIT so the outermost call owns the transaction.
+  backend/scraper.py: PRAGMA optimize at end of scrape_range moved into write_connection
+    so it goes through _write_lock instead of competing with other writers outside Python's
+    serialisation layer.
+
+[2026-05-23] — fix(scraper): eliminate 15 s startup block from synchronous HTTP calls in ScraperTab
+
+Fixed
+
+  gui/scraper_tab.py: Three methods (_load_crawler_settings, _load_sessions_history,
+    _load_bootlegs_history) were making synchronous requests.get/post calls on the main Qt
+    thread, each with a 5 s timeout. Additionally, _load_crawler_settings was triggering
+    _save_crawler_settings and _save_entry_settings via valueChanged/stateChanged signals as it
+    set widget values, causing further blocking POSTs. Combined effect: ~15 s startup freeze.
+    Fix: all three methods now fire a _Worker thread and populate widgets via finished signal.
+    _load_crawler_settings uses blockSignals() while applying loaded values to suppress the
+    spurious save cascade.
+  gui/scraper_tab.py: _refresh_pages_count() was also calling glob("*.html") synchronously.
+    Replaced with os.scandir() in a _Worker thread (contributing fix from previous attempt).
+
+[2026-05-23] — fix(db): reconcile_all_lb_master uses batch write to fix database-locked error
+
+Fixed
+
+  backend/db.py: reconcile_all_lb_master() replaced per-LB reconcile_lb_status() loop
+    (acquires/releases _write_lock N times) with a single batch_reconcile_lb_status() call,
+    eliminating the sqlite3.OperationalError: database is locked caused by concurrent writers
+    fighting over the lock across thousands of iterations.
+  backend/app.py: /api/lb_master/reconcile route now holds _reconcile_lock (non-blocking
+    acquire) and returns 409 if a reconcile is already in progress, preventing two simultaneous
+    reconcile requests from interleaving writes.
+
+[2026-05-23] — feat(db): import dylan_performances table from ODS on first startup
+
+Added
+
+  backend/db.py: new dylan_performances table (event_id PK, date_str, category, city,
+    state, country, venue) added to SCHEMA_SQL with indexes on date_str, category, country.
+  backend/db.py: import_dylan_performances() function — one-time ODS parser using stdlib
+    zipfile + ElementTree; skips if table already populated; wired into init_db() background
+    thread. Source file: data/2026-05-22_Dylan_Performance_fixed.ods (5,129 rows).
+
+---
+
+[2026-05-23] — feat(db): flat_file_apply inserts new LBs as 'public' instead of 'private'
+
+Changed
+
+  backend/db.py: reconcile_lb_status() and batch_reconcile_lb_status() now initialise
+    brand-new lb_master rows to 'public' when trigger='flat_file_apply' and the computed
+    auto_status would have been 'private' (checksums-only, no web presence). The scraper
+    can still demote to 'private' after it confirms no web entry exists. Existing rows
+    and any other trigger are unaffected.
+
+[2026-05-23] — feat(map): display LB number on individual map dots
+
+Changed
+
+  gui/resources/map.html: Replaced L.circleMarker with L.divIcon + L.marker so each
+    single-concert dot renders the LB number as centred text inside the coloured circle.
+    Visual style (colour, owned gold ring, shadow) is preserved.
+
+[2026-05-23] — fix(scraper): detect soft-404 pages (server returns HTTP 200 with error body)
+
+Fixed
+
+  backend/scraper.py: Added _SOFT_404_MARKER constant and _is_soft_404() helper.
+    scrape_entry() now checks the HTML content for the server's soft-404 signature
+    before parsing; treats it as a true 404 (deletes bad cached page, marks entry
+    missing, returns {"error": "404", "missing": True}).
+
+  backend/db.py: init_db() now runs a one-time cleanup UPDATE that finds existing
+    entries whose description contains the soft-404 error text and resets them to
+    status='missing' with cleared fields. Rebuilds the FTS index afterwards if any
+    rows were affected. 68 previously bad entries will be fixed on next app start.
+
 [2026-05-23] — feat(gui): platform-aware install hints for SoX, ffmpeg, shntool (TODO-086)
 
 Changed

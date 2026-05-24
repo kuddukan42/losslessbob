@@ -25,7 +25,6 @@ column pickers ?
 need to be able to see the metadata stars, log listen, etc in my collection
 backup data function to compressed ZIP file, also restore from ZIP file.
 
-database check for update doesn't work COMPLETE
 
 
 ## COMPLETE 
@@ -70,4 +69,4 @@ We need to make a plan to document the 3 status of every number, and add filters
 The current status of the project does not give us a single source of truth about the status of each LB number. we are relying on whether it was scraped, or we found attachments, or found checksums.  we need a master table of all the numbers with a status that is immutable.  we can build other queries and functions off this master list.
 
 
-put the LB on the dots on the map
+

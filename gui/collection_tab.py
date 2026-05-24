@@ -1664,6 +1664,13 @@ class CollectionTab(QWidget):
                 fp_act.triggered.connect(lambda: self._fingerprint_folders(fp_rows))
                 menu.addAction(fp_act)
 
+            vlc_paths = [r["disk_path"] for r in rows
+                         if r.get("disk_path") and Path(r["disk_path"]).is_dir()]
+            if vlc_paths:
+                vlc_act = QAction(self.tr("Play in VLC"), self)
+                vlc_act.triggered.connect(lambda: self._open_in_vlc(vlc_paths))
+                menu.addAction(vlc_act)
+
         if index.isValid():
             row = self.coll_model.get_row(index.row())
             if row:
@@ -1697,6 +1704,12 @@ class CollectionTab(QWidget):
                     open_folder(path)
                 except Exception:
                     pass
+
+    def _open_in_vlc(self, paths: list[str]) -> None:
+        from gui.platform_utils import open_in_vlc
+        ok, err = open_in_vlc(paths)
+        if not ok:
+            QMessageBox.warning(self, self.tr("VLC Not Found"), err)
 
     def _fingerprint_folders(self, folders: list[dict]) -> None:
         if len(folders) == 1:

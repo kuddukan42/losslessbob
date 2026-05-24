@@ -1,6 +1,19 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-096: Play selected My Collection entry in VLC
+Priority: Low
+Status: Done
+Added: 2026-05-24
+Closed: 2026-05-24
+Description: Add a "Play in VLC" right-click option on My Collection rows so the user can
+  immediately listen to a recording without opening a file manager.
+  - VLC is detected via PATH (Linux/macOS/Windows) and common Windows/macOS install paths.
+  - Multiple selected rows pass all their folder paths to one VLC instance.
+  - Shows a warning dialog if VLC is not installed rather than failing silently.
+
+---
+
 TODO-086: Rework external tool dependency hints for Windows
 Priority: High
 Status: Done

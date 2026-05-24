@@ -25,6 +25,8 @@ _log = logging.getLogger(__name__)
 _last_backup_at: float = 0.0
 _backup_lock = threading.Lock()
 
+_reconcile_lock = threading.Lock()  # prevents concurrent lb_master reconcile runs
+
 _scrape_thread = None
 
 # ── Restart callback (set by main.py so only the Flask server restarts) ───────
@@ -1812,12 +1814,13 @@ def create_app() -> Flask:
             if bad:
                 return jsonify({"error": f"Unknown columns: {bad}"}), 400
             set_clause = ", ".join(f"[{k}]=?" for k in updates)
-            with database.write_connection() as conn:
-                cur = conn.execute(
-                    f"UPDATE [{name}] SET {set_clause} WHERE rowid=?",
-                    list(updates.values()) + [rowid]
-                )
-            return jsonify({"ok": True, "affected": cur.rowcount})
+            _tbl, _sc, _vals = name, set_clause, list(updates.values()) + [rowid]
+            affected = database.get_write_queue().execute(
+                lambda c: c.execute(
+                    f"UPDATE [{_tbl}] SET {_sc} WHERE rowid=?", _vals
+                ).rowcount
+            )
+            return jsonify({"ok": True, "affected": affected})
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
@@ -1839,9 +1842,13 @@ def create_app() -> Flask:
             if not rowids:
                 return jsonify({"error": "rowids list required"}), 400
             ph = ",".join("?" * len(rowids))
-            with database.write_connection() as conn:
-                cur = conn.execute(f"DELETE FROM [{name}] WHERE rowid IN ({ph})", rowids)
-            return jsonify({"ok": True, "deleted": cur.rowcount})
+            _tbl, _ph, _rids = name, ph, list(rowids)
+            deleted = database.get_write_queue().execute(
+                lambda c: c.execute(
+                    f"DELETE FROM [{_tbl}] WHERE rowid IN ({_ph})", _rids
+                ).rowcount
+            )
+            return jsonify({"ok": True, "deleted": deleted})
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
@@ -2320,12 +2327,16 @@ def create_app() -> Flask:
         """Full rebuild of lb_master. Backs up DB first. Returns status counts."""
         if not database.is_curator():  # #3
             return jsonify({"error": "curator_required"}), 403
+        if not _reconcile_lock.acquire(blocking=False):
+            return jsonify({"error": "already running"}), 409
         try:
             stats = database.reconcile_all_lb_master()
             return jsonify({"ok": True, "stats": stats})
         except Exception:
             _log.exception("lb_master_reconcile failed")  # #9
             return jsonify({"error": "internal_error"}), 500
+        finally:
+            _reconcile_lock.release()
 
     @app.route("/api/lb_master/history/<int:lb>", methods=["GET"])
     def lb_master_history(lb: int) -> Response:

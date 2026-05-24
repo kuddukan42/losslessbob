@@ -43,6 +43,7 @@ losslessbob/
 │   ├── app.py                # Flask REST API — all routes
 │   ├── admin.html            # Mobile-friendly admin control panel (served at /admin)
 │   ├── db.py                 # SQLite layer, checksum parsing, search
+│   ├── db_queue.py           # DB-09: DatabaseWriteQueue — single writer thread, serialises all writes
 │   ├── checksum_utils.py     # Shared: FFP/MD5/shntool compute, lbdir parse, verify, generate
 │   ├── credentials.py        # OS keyring credential storage (SERVICE_QBT, SERVICE_WTRF)
 │   ├── flat_file.py          # Flat-file update pipeline: discover/download/diff/apply + audit tables
@@ -289,6 +290,23 @@ Natural key for diffing: `(lb_number, title, date_str)`. Indexes: `idx_bootleg_l
 | rows_changed | INTEGER | |
 | rows_removed | INTEGER | |
 | status | TEXT NOT NULL | `success`, `no_change`, or `failed` |
+
+### `dylan_performances` — Dylan performance location supplement (USER table)
+Populated once at startup from `data/2026-05-22_Dylan_Performance_fixed.ods` via
+`import_dylan_performances()`. Provides supplemental date/venue/location data keyed by
+a unique event ID. Read-only reference data; not part of the master-data export.
+| Column | Type | Notes |
+|--------|------|-------|
+| event_id | TEXT PK | e.g. `'1962092201'` (YYYYMMDDNN) |
+| date_str | TEXT | Raw date from ODS, e.g. `'1962-09-22'` |
+| category | TEXT | `HOME`, `NET`, `MCONCERT`, `RADIO`, etc. |
+| city | TEXT | City name |
+| state | TEXT | State/province code |
+| country | TEXT | Country code (e.g. `USA`) |
+| venue | TEXT | Venue name |
+| imported_at | TIMESTAMP | When the row was loaded |
+
+Indexes: `idx_perf_date`, `idx_perf_category`, `idx_perf_country`.
 
 ### `scrape_sessions` — Crawler session log (MASTER table)
 One row per site-crawler run started via POST /api/crawler/start.
@@ -1205,6 +1223,7 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 
 | Date | Change |
 |------|--------|
+| 2026-05-24 | DB-09: DatabaseWriteQueue in `backend/db_queue.py`; all write paths across db.py, scraper.py, site_crawler.py, app.py, importer.py, flat_file.py, geocoder.py routed through single writer thread; write_connection() removed; busy-timeout races eliminated. |
 | 2026-05-22 | Cross-tab folder sync: `add_folders_from_lookup()` added to `gui/lbdir_tab.py`; `main_window.py _on_tab_changed` wires lbdir pre-population on tab switch (mirrors existing Verify guard). (TODO-081) |
 | 2026-05-22 | Multi-LB alias folder naming: `get_aliases_for_canonical()` in `backend/db.py`; Rename tab `populate_from_lookup` and `_on_save_alias` fetch all aliases via `GET /api/lb_alias?canonical_lb=<lb>` after alias collapse and include them in proposed suffix (`LB-canonical-LB-alias1...`). (TODO-080) |
 | 2026-05-19 | Mobile-friendly admin panel: `backend/admin.html` + 3 routes (`GET /admin`, `GET /api/admin/status`, `POST /api/admin/restart`). Dark theme, no external deps, auto-polls every 5 s, DB stats/backup/reset, flat-file update, scraper start/stop, LB master reconcile, server restart. (TODO-042) |

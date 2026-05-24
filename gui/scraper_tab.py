@@ -9,7 +9,11 @@ Sub-panels (top to bottom in a scroll area):
 """
 from __future__ import annotations
 
+import logging
+import os
 import requests
+
+log = logging.getLogger(__name__)
 from PyQt6.QtCore import Qt, QThread, pyqtSignal, QTimer
 from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QGridLayout,
@@ -532,20 +536,43 @@ class ScraperTab(QWidget):
     # ── Settings persistence ───────────────────────────────────────────────────
 
     def _load_crawler_settings(self) -> None:
-        try:
-            resp = requests.get(
+        """Fetch settings from the backend in a worker thread to avoid blocking startup.
+
+        Signals are blocked while values are applied so that valueChanged / stateChanged
+        do not trigger _save_crawler_settings / _save_entry_settings during the load.
+        """
+        def _fetch():
+            return requests.get(
                 f"http://127.0.0.1:{self.flask_port}/api/db/settings", timeout=5
             ).json()
-            self._crawler_delay_spin.setValue(int(resp.get("crawler_delay_ms") or 1500))
-            self._crawler_cap_spin.setValue(int(resp.get("crawler_daily_cap") or 99999))
-            # Entry scraper settings
-            self.auto_scrape_cb.setChecked(resp.get("auto_scrape", "1") != "0")
-            self.download_files_cb.setChecked(resp.get("scrape_attachments", "1") != "0")
-            self.force_scrape_cb.setChecked(resp.get("force_scrape", "0") != "0")
-            self.local_pages_cb.setChecked(resp.get("use_local_pages", "0") == "1")
-            self.delay_spin.setValue(int(resp.get("scrape_delay_ms") or 1500))
-        except Exception:
-            pass
+
+        def _apply(resp: object) -> None:
+            if not isinstance(resp, dict):
+                return
+            _signal_widgets = [
+                self._crawler_delay_spin, self._crawler_cap_spin,
+                self.auto_scrape_cb, self.download_files_cb,
+                self.force_scrape_cb, self.local_pages_cb, self.delay_spin,
+            ]
+            for w in _signal_widgets:
+                w.blockSignals(True)
+            try:
+                self._crawler_delay_spin.setValue(int(resp.get("crawler_delay_ms") or 1500))
+                self._crawler_cap_spin.setValue(int(resp.get("crawler_daily_cap") or 99999))
+                self.auto_scrape_cb.setChecked(resp.get("auto_scrape", "1") != "0")
+                self.download_files_cb.setChecked(resp.get("scrape_attachments", "1") != "0")
+                self.force_scrape_cb.setChecked(resp.get("force_scrape", "0") != "0")
+                self.local_pages_cb.setChecked(resp.get("use_local_pages", "0") == "1")
+                self.delay_spin.setValue(int(resp.get("scrape_delay_ms") or 1500))
+            finally:
+                for w in _signal_widgets:
+                    w.blockSignals(False)
+
+        w = _Worker(_fetch)
+        w.finished.connect(_apply)
+        w.error.connect(lambda e: log.warning("Failed to load crawler settings: %s", e))
+        self._workers.append(w)
+        w.start()
 
     def _save_crawler_settings(self) -> None:
         try:
@@ -577,11 +604,26 @@ class ScraperTab(QWidget):
             pass
 
     def _refresh_pages_count(self) -> None:
-        try:
-            count = sum(1 for _ in _SITE_DETAIL_DIR.glob("*.html"))
-            self._pages_count_label.setText(self.tr("({} cached)").format(f"{count:,}"))
-        except Exception:
-            self._pages_count_label.setText("")
+        """Count cached detail pages in a background thread to avoid blocking startup."""
+        self._pages_count_label.setText(self.tr("(counting…)"))
+        detail_path = str(_SITE_DETAIL_DIR)
+
+        def _count():
+            try:
+                return sum(1 for e in os.scandir(detail_path) if e.name.endswith(".html"))
+            except OSError:
+                return None
+
+        def _done(result: object) -> None:
+            if result is None:
+                self._pages_count_label.setText("")
+            else:
+                self._pages_count_label.setText(self.tr("({} cached)").format(f"{result:,}"))
+
+        w = _Worker(_count)
+        w.finished.connect(_done)
+        self._workers.append(w)
+        w.start()
 
     # ── Site crawler handlers ──────────────────────────────────────────────────
 
@@ -685,41 +727,47 @@ class ScraperTab(QWidget):
     # ── Session history ────────────────────────────────────────────────────────
 
     def _load_sessions_history(self) -> None:
-        try:
-            rows = requests.get(
+        """Load crawler session history in a background worker."""
+        def _fetch():
+            return requests.get(
                 f"http://127.0.0.1:{self.flask_port}/api/crawler/sessions",
                 params={"limit": 20},
                 timeout=5,
             ).json()
-        except Exception:
-            return
-        if not isinstance(rows, list):
-            return
-        tbl = self._sessions_table
-        tbl.setRowCount(0)
-        _STATUS_COLORS = {
-            "done":    QColor("#d4edda"),
-            "stopped": QColor("#fff3cd"),
-            "error":   QColor("#f8d7da"),
-        }
-        for r in rows:
-            row = tbl.rowCount()
-            tbl.insertRow(row)
-            vals = [
-                (r.get("started_at") or "")[:16],
-                (r.get("finished_at") or "")[:16],
-                r.get("scope", ""),
-                r.get("status", ""),
-                str(r.get("pages_fetched") or 0),
-                str(r.get("pages_304") or 0),
-                str(r.get("pages_failed") or 0),
-            ]
-            color = _STATUS_COLORS.get(r.get("status", ""))
-            for col, val in enumerate(vals):
-                item = QTableWidgetItem(val)
-                if color:
-                    item.setBackground(color)
-                tbl.setItem(row, col, item)
+
+        def _apply(rows: object) -> None:
+            if not isinstance(rows, list):
+                return
+            tbl = self._sessions_table
+            tbl.setRowCount(0)
+            _STATUS_COLORS = {
+                "done":    QColor("#d4edda"),
+                "stopped": QColor("#fff3cd"),
+                "error":   QColor("#f8d7da"),
+            }
+            for r in rows:
+                row = tbl.rowCount()
+                tbl.insertRow(row)
+                vals = [
+                    (r.get("started_at") or "")[:16],
+                    (r.get("finished_at") or "")[:16],
+                    r.get("scope", ""),
+                    r.get("status", ""),
+                    str(r.get("pages_fetched") or 0),
+                    str(r.get("pages_304") or 0),
+                    str(r.get("pages_failed") or 0),
+                ]
+                color = _STATUS_COLORS.get(r.get("status", ""))
+                for col, val in enumerate(vals):
+                    item = QTableWidgetItem(val)
+                    if color:
+                        item.setBackground(color)
+                    tbl.setItem(row, col, item)
+
+        w = _Worker(_fetch)
+        w.finished.connect(_apply)
+        self._workers.append(w)
+        w.start()
 
     # ── Inventory ──────────────────────────────────────────────────────────────
 
@@ -1097,35 +1145,41 @@ class ScraperTab(QWidget):
             self._load_bootlegs_history()
 
     def _load_bootlegs_history(self) -> None:
-        try:
-            rows = requests.get(
+        """Load bootleg scrape history in a background worker."""
+        def _fetch():
+            return requests.get(
                 f"http://127.0.0.1:{self.flask_port}/api/bootlegs/scrapes",
                 timeout=5,
             ).json()
-        except Exception:
-            return
-        if not isinstance(rows, list):
-            return
-        tbl = self._bl_history_table
-        tbl.setRowCount(0)
-        _STATUS_COLORS = {
-            "success":   QColor("#d4edda"),
-            "no_change": QColor("#e2e3e5"),
-            "failed":    QColor("#f8d7da"),
-        }
-        for r in rows:
-            row = tbl.rowCount()
-            tbl.insertRow(row)
-            vals = [
-                (r.get("scraped_at") or "")[:16],
-                r.get("status", ""),
-                str(r.get("rows_total") or ""),
-                str(r.get("rows_added") or ""),
-                str(r.get("rows_changed") or ""),
-            ]
-            color = _STATUS_COLORS.get(r.get("status", ""))
-            for col, val in enumerate(vals):
-                item = QTableWidgetItem(val)
-                if color:
-                    item.setBackground(color)
-                tbl.setItem(row, col, item)
+
+        def _apply(rows: object) -> None:
+            if not isinstance(rows, list):
+                return
+            tbl = self._bl_history_table
+            tbl.setRowCount(0)
+            _STATUS_COLORS = {
+                "success":   QColor("#d4edda"),
+                "no_change": QColor("#e2e3e5"),
+                "failed":    QColor("#f8d7da"),
+            }
+            for r in rows:
+                row = tbl.rowCount()
+                tbl.insertRow(row)
+                vals = [
+                    (r.get("scraped_at") or "")[:16],
+                    r.get("status", ""),
+                    str(r.get("rows_total") or ""),
+                    str(r.get("rows_added") or ""),
+                    str(r.get("rows_changed") or ""),
+                ]
+                color = _STATUS_COLORS.get(r.get("status", ""))
+                for col, val in enumerate(vals):
+                    item = QTableWidgetItem(val)
+                    if color:
+                        item.setBackground(color)
+                    tbl.setItem(row, col, item)
+
+        w = _Worker(_fetch)
+        w.finished.connect(_apply)
+        self._workers.append(w)
+        w.start()
