@@ -1,3 +1,4 @@
+import sys
 from pathlib import Path
 
 from backend.paths import DATA_DIR as _DATA_DIR
@@ -541,6 +542,8 @@ class SetupTab(QWidget):
         sox_row = QHBoxLayout()
         sox_row.addWidget(QLabel(self.tr("SoX:")))
         self.sox_status_label = QLabel(self.tr("Checking…"))
+        self.sox_status_label.setTextFormat(Qt.TextFormat.RichText)
+        self.sox_status_label.setOpenExternalLinks(True)
         sox_row.addWidget(self.sox_status_label)
         sox_row.addStretch()
         db_layout.addLayout(sox_row)
@@ -548,6 +551,8 @@ class SetupTab(QWidget):
         ffmpeg_row = QHBoxLayout()
         ffmpeg_row.addWidget(QLabel(self.tr("ffmpeg:")))
         self.ffmpeg_status_label = QLabel(self.tr("Checking…"))
+        self.ffmpeg_status_label.setTextFormat(Qt.TextFormat.RichText)
+        self.ffmpeg_status_label.setOpenExternalLinks(True)
         ffmpeg_row.addWidget(self.ffmpeg_status_label)
         ffmpeg_row.addStretch()
         db_layout.addLayout(ffmpeg_row)
@@ -555,6 +560,8 @@ class SetupTab(QWidget):
         shntool_row = QHBoxLayout()
         shntool_row.addWidget(QLabel(self.tr("shntool:")))
         self.shntool_status_label = QLabel(self.tr("Checking…"))
+        self.shntool_status_label.setTextFormat(Qt.TextFormat.RichText)
+        self.shntool_status_label.setOpenExternalLinks(True)
         shntool_row.addWidget(self.shntool_status_label)
         self.sox_check_btn = QPushButton(self.tr("Re-check"))
         self.sox_check_btn.setFixedWidth(80)
@@ -1517,6 +1524,63 @@ class SetupTab(QWidget):
         except Exception as e:
             self.purge_status_label.setText(self.tr("Error: {}").format(e))
 
+    # ── Platform-aware install hints ─────────────────────────────────────────
+
+    @staticmethod
+    def _sox_tool_hint(tool: str) -> str:
+        """Return an HTML install hint for *tool* tailored to the current OS.
+
+        Args:
+            tool: one of ``"sox"``, ``"ffmpeg"``, or ``"shntool"``.
+
+        Returns:
+            A short HTML string with a command snippet and a clickable
+            download link, ready for a RichText QLabel.
+        """
+        is_win   = sys.platform == "win32"
+        is_mac   = sys.platform == "darwin"
+
+        hints = {
+            "sox": {
+                "win":   ('winget install SoX.SoX',
+                          'https://sox.sourceforge.net',
+                          'sox.sourceforge.net'),
+                "mac":   ('brew install sox', None, None),
+                "linux": ('sudo apt install sox libsox-fmt-all', None, None),
+            },
+            "ffmpeg": {
+                "win":   ('winget install Gyan.FFmpeg',
+                          'https://ffmpeg.org/download.html',
+                          'ffmpeg.org'),
+                "mac":   ('brew install ffmpeg', None, None),
+                "linux": ('sudo apt install ffmpeg', None, None),
+            },
+            "shntool": {
+                # shntool has no native Windows package — offer WSL fallback + choco
+                "win":   (None,
+                          'http://www.etree.org/shnutils/shntool/',
+                          'etree.org/shnutils/shntool'),
+                "mac":   ('brew install shntool', None, None),
+                "linux": ('sudo apt install shntool', None, None),
+            },
+        }
+
+        key = "win" if is_win else ("mac" if is_mac else "linux")
+        cmd, url, link_text = hints[tool][key]
+
+        parts = []
+        if tool == "shntool" and is_win:
+            # Special-case: no winget/choco package; recommend WSL or Chocolatey
+            parts.append("No native Windows package — try "
+                         "<code>wsl apt install shntool</code> or "
+                         "<code>choco install shntool</code> (Chocolatey).")
+        elif cmd:
+            parts.append(f"install: <code>{cmd}</code>")
+        if url:
+            parts.append(f'<a href="{url}">{link_text}</a>')
+
+        return "Not found — " + "  |  ".join(parts) if parts else "Not found"
+
     def _check_sox(self):
         try:
             r = requests.get(
@@ -1528,9 +1592,7 @@ class SetupTab(QWidget):
                 self.sox_status_label.setText(self.tr("OK — {}").format(r.get('sox_version', '')))
                 self.sox_status_label.setStyleSheet("color: green;")
             else:
-                self.sox_status_label.setText(
-                    self.tr("Not found — install: sudo apt install sox libsox-fmt-all")
-                )
+                self.sox_status_label.setText(self._sox_tool_hint("sox"))
                 self.sox_status_label.setStyleSheet("color: red;")
 
             if r.get("ffmpeg_available"):
@@ -1538,7 +1600,8 @@ class SetupTab(QWidget):
                 self.ffmpeg_status_label.setStyleSheet("color: green;")
             else:
                 self.ffmpeg_status_label.setText(
-                    self.tr("Not found — install: sudo apt install ffmpeg  (needed for SHN/APE/WV spectrograms)")
+                    self._sox_tool_hint("ffmpeg")
+                    + self.tr("  (needed for SHN/APE/WV spectrograms)")
                 )
                 self.ffmpeg_status_label.setStyleSheet("color: orange;")
 
@@ -1547,7 +1610,8 @@ class SetupTab(QWidget):
                 self.shntool_status_label.setStyleSheet("color: green;")
             else:
                 self.shntool_status_label.setText(
-                    self.tr("Not found — install: sudo apt install shntool  (needed for SHN verification)")
+                    self._sox_tool_hint("shntool")
+                    + self.tr("  (needed for SHN verification)")
                 )
                 self.shntool_status_label.setStyleSheet("color: red;")
 

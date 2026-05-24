@@ -264,7 +264,12 @@
       "Bash(/home/tjenkins/Documents/losslessbob/.venv/bin/python3 -m py_compile /home/tjenkins/Documents/losslessbob/gui/lbdir_tab.py /home/tjenkins/Documents/losslessbob/gui/main_window.py)",
       "Bash(/home/tjenkins/Documents/losslessbob/.venv/bin/python3 -m py_compile /home/tjenkins/Documents/losslessbob/backend/app.py)",
       "Bash(/home/tjenkins/Documents/losslessbob/.venv/bin/python3 -m py_compile gui/main_window.py gui/lbdir_tab.py gui/verify_tab.py)",
-      "Bash(gh run *)"
+      "Bash(gh run *)",
+      "Bash(sort -t- -k2 -n)",
+      "Bash(/home/tjenkins/Documents/losslessbob/.venv/bin/python3 -m py_compile /home/tjenkins/Documents/losslessbob/backend/paths.py)",
+      "Bash(chmod +x /home/tjenkins/Documents/losslessbob/docker/entrypoint.sh)",
+      "Bash(docker compose *)",
+      "Bash(/home/tjenkins/Documents/losslessbob/.venv/bin/python3 -m py_compile /home/tjenkins/Documents/losslessbob/backend/sox_utils.py)"
     ],
     "additionalDirectories": [
       "/home/tjenkins/.ssh",

@@ -1,6 +1,15 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-105: Windows release — master DB install fails with "internal_error"
+Status: Fixed
+File(s): backend/app.py
+Reported: 2026-05-22
+Fixed: 2026-05-23
+Description: On the Windows release build, clicking Yes on the "Install Master Update?" confirmation dialog results in "Install Failed — internal_error". The backup and install process does not complete.
+Root cause: Three stacked issues: (1) master_import route had an is_curator() guard blocking non-curator end users. (2) path_not_allowed check required snapshot to be in data/exports/ or data/imports/, blocking selection from USB drive or Downloads. (3) sqlite3.Error was not caught explicitly — any SQLite failure fell through to the generic handler returning bare "internal_error" with no message.
+Fix: Removed is_curator() guard (export stays curator-only; import open to all). Removed directory containment check (kept .db suffix check). Added sqlite3.Error to caught exceptions with descriptive message. Added "message" field to generic internal_error response. Added import sqlite3 to app.py.
+
 BUG-107: sqlite3.OperationalError: database is locked during crawler upsert_inventory
 Status: Fixed
 File(s): backend/db.py, backend/site_crawler.py

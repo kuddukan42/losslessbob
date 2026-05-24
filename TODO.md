@@ -1,9 +1,3 @@
-TODO-086: Rework external tool dependency hints for Windows
-Priority: High
-Status: Open
-Added: 2026-05-22
-Description: The Database tab currently shows Linux apt-get install commands when SoX, ffmpeg, or shntool are not found (e.g. "sudo apt install sox libsox-fmt-all"). On Windows these instructions are wrong. Rework the dependency-check UI to detect the OS and show platform-appropriate install guidance. Investigate winget as the recommended Windows package manager (winget install Gyan.FFmpeg, etc.). Consider whether shntool is even available on Windows via winget/choco, and whether a Windows-native alternative is needed. May also want a clickable link to download pages as a fallback.
-
 TODO-085: Map tab — sequential date-linked travel view across the globe
 Priority: Low
 Status: Open

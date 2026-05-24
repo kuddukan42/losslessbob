@@ -6,14 +6,6 @@ Description: The Windows installer does not install the application to the stand
 Root cause: Unknown
 Fix: —
 
-BUG-105: Windows release — master DB install fails with "internal_error"
-Status: Open
-File(s): unknown (master update install path)
-Reported: 2026-05-22
-Description: On the Windows release build, clicking Yes on the "Install Master Update?" confirmation dialog (which shows the correct .db path, e.g. G:/losslessbob_master_2026-05-23_023135_publish.db) results in an "Install Failed — internal_error" dialog. The backup and install process does not complete. Root cause not yet isolated — could be a path handling issue (drive letter/Windows separator), a permission/file-lock problem, or an error in the install worker that surfaces a bare exception string rather than a descriptive message.
-Root cause: Unknown
-Fix: —
-
 BUG-090: Black screen flickers in app at certain times
 Status: Open
 File(s): unknown
