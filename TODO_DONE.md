@@ -1,6 +1,19 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-086: Rework external tool dependency hints for Windows
+Priority: High
+Status: Done
+Added: 2026-05-22
+Closed: 2026-05-23
+Description: The Database tab currently shows Linux apt-get install commands when SoX,
+  ffmpeg, or shntool are not found. Rework the dependency-check UI to detect the OS and
+  show platform-appropriate install guidance.
+Resolution: Added _sox_tool_hint() helper in setup_tab.py; winget commands for Windows,
+  brew for macOS, apt for Linux. shntool on Windows directs to WSL/choco.
+  Status labels now use RichText + setOpenExternalLinks for clickable download links.
+  sox_utils.py error messages updated to use platform dict lookups.
+
 TODO-066: Web GUI — docs update after web UI ships
 Priority: Low
 Status: Cancelled

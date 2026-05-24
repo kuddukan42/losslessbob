@@ -160,13 +160,15 @@ def _convert_to_wav(audio_path: Path) -> Path:
     """
     ffmpeg = get_ffmpeg()
     if not ffmpeg:
+        _ffmpeg_hints = {
+            "win32":  "winget install Gyan.FFmpeg  (or https://ffmpeg.org/download.html)",
+            "darwin": "brew install ffmpeg",
+        }
+        install_hint = _ffmpeg_hints.get(sys.platform, "sudo apt install ffmpeg")
         raise ConversionError(
             f"Format {audio_path.suffix!r} requires ffmpeg for decoding, "
             "but ffmpeg was not found.\n"
-            "Install with:\n"
-            "  Linux:   sudo apt install ffmpeg\n"
-            "  macOS:   brew install ffmpeg\n"
-            "  Windows: https://ffmpeg.org/download.html  (add to PATH)\n\n"
+            f"Install with: {install_hint}\n\n"
             "Alternatively, convert the file to FLAC or WAV manually and "
             "re-run the spectrogram generator."
         )
@@ -275,12 +277,12 @@ def generate_spectrogram(
     """
     sox = get_sox()
     if not sox:
-        raise SoxNotFoundError(
-            "SoX not found. Install with:\n"
-            "  Linux:   sudo apt install sox libsox-fmt-all\n"
-            "  macOS:   brew install sox\n"
-            "  Windows: https://sox.sourceforge.net  (add to PATH)"
-        )
+        _sox_hints = {
+            "win32":  "winget install SoX.SoX  (or https://sox.sourceforge.net)",
+            "darwin": "brew install sox",
+        }
+        install_hint = _sox_hints.get(sys.platform, "sudo apt install sox libsox-fmt-all")
+        raise SoxNotFoundError(f"SoX not found. Install with: {install_hint}")
 
     if not audio_path.exists():
         raise FileNotFoundError(f"Audio file not found: {audio_path}")
@@ -364,8 +366,12 @@ def _run_sox_spectrogram(
         )
 
     if not output_png.exists():
+        _png_hints = {
+            "win32":  "reinstall SoX from https://sox.sourceforge.net (ensure the installer includes libpng)",
+            "darwin": "brew reinstall sox",
+        }
+        png_hint = _png_hints.get(sys.platform, "sudo apt install sox libsox-fmt-all")
         raise SpectrogenError(
             f"SoX exited 0 but {output_png.name} was not created. "
-            "Ensure SoX was compiled with PNG support (libpng). "
-            "On Linux: sudo apt install sox libsox-fmt-all"
+            f"Ensure SoX was compiled with PNG support (libpng). Fix: {png_hint}"
         )

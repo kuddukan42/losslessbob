@@ -1,3 +1,42 @@
+[2026-05-23] — feat(gui): platform-aware install hints for SoX, ffmpeg, shntool (TODO-086)
+
+Changed
+
+  gui/setup_tab.py: Added _sox_tool_hint() static helper that returns an HTML
+    install hint (with clickable download link) for each external tool based on
+    sys.platform — winget commands on Windows, brew on macOS, apt on Linux.
+    SoX, ffmpeg, and shntool status labels now use RichText format with
+    setOpenExternalLinks(True) so links are clickable. Windows shntool hint
+    notes no native package and suggests WSL or Chocolatey as alternatives.
+  backend/sox_utils.py: Replaced hard-coded Linux install commands in
+    SoxNotFoundError, ConversionError (ffmpeg missing), and SpectrogenError
+    (PNG support missing) with dict-based platform lookups covering win32,
+    darwin, and Linux defaults.
+
+[2026-05-23] — docs(backend): update stale docstrings referencing old data/pages/ and data/attachments/ paths
+
+Changed
+
+  backend/scraper.py: Updated download_pages_range docstring — save path is now
+    data/site/detail/LB-{n:05d}.html (was data/pages/).
+  backend/app.py: Updated /api/download-pages docstring and _start_scrape_thread
+    docstring to reference data/site/detail/ instead of data/pages/.
+  backend/forum_poster.py: Updated three attachments_dir parameter docstrings
+    to reference data/site/files/ instead of data/attachments/LB-XXXXX/.
+
+[2026-05-23] — fix(backend): fix master DB install failing with "internal_error" on Windows (BUG-105)
+
+Changed
+
+  backend/app.py: Removed is_curator() guard from master_import route — export stays
+    curator-only but import is open to all (design intent: "Curator publishes, end users
+    install"). Removed the path_not_allowed directory-containment check that blocked
+    selecting a snapshot from outside data/exports/ or data/imports/ (e.g. USB drive or
+    Downloads folder); kept the .db suffix check. Added sqlite3.Error to the caught
+    exception list so SQLite failures (ATTACH, VACUUM INTO backup, table operations)
+    surface a real error message instead of bare "internal_error". Added "message" field
+    to the generic internal_error response. Added import sqlite3 at module level.
+
 [2026-05-23] — fix(db): serialise upsert_inventory writes through _write_lock to prevent DB locked errors
 
 Fixed

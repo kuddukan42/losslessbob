@@ -3,6 +3,7 @@ import logging
 import os
 import re
 import shutil
+import sqlite3
 import threading
 import time
 from pathlib import Path
@@ -1042,7 +1043,7 @@ def create_app() -> Flask:
                             in the checksums table.
             force    (bool): Re-download pages that already exist.  Default false.
 
-        Existing ``data/pages/LB-{n:05d}.html`` files are skipped unless
+        Existing ``data/site/detail/LB-{n:05d}.html`` files are skipped unless
         ``force`` is true.  No metadata is parsed and nothing is written to the
         database.
 
@@ -2601,21 +2602,15 @@ def create_app() -> Flask:
 
         Body: {path: "/abs/path/to/snapshot.db"}. Manifest sidecar must live
         alongside the snapshot at <path>.manifest.json.
+
+        Note: intentionally not curator-gated — curators publish, anyone installs.
         """
-        if not database.is_curator():  # #2
-            return jsonify({"error": "curator_required",
-                            "message": "Master import requires curator mode."}), 403
         try:
             body = request.get_json(silent=True) or {}
             path = body.get("path")
             if not path:
                 return jsonify({"error": "missing_path"}), 400
-            # #1 — directory containment: only allow exports/ or imports/ sub-dirs
             snapshot_path = Path(path).resolve()
-            allowed_dirs = [DATA_DIR / "exports", DATA_DIR / "imports"]
-            if not any(snapshot_path.is_relative_to(d) for d in allowed_dirs):
-                return jsonify({"error": "path_not_allowed",
-                                "message": "Snapshot must be in data/exports/ or data/imports/"}), 400
             if snapshot_path.suffix.lower() != ".db":
                 return jsonify({"error": "path_not_allowed",
                                 "message": "Snapshot must be a .db file"}), 400
@@ -2627,9 +2622,12 @@ def create_app() -> Flask:
             return jsonify({"error": "validation_error", "message": str(exc)}), 400
         except RuntimeError as exc:
             return jsonify({"error": "schema_too_new", "message": str(exc)}), 400
-        except Exception:
-            _log.exception("master_import failed")  # #9
-            return jsonify({"error": "internal_error"}), 500
+        except sqlite3.Error as exc:
+            _log.exception("master_import: SQLite error")
+            return jsonify({"error": "db_error", "message": str(exc)}), 500
+        except Exception as exc:
+            _log.exception("master_import failed")
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
 
     # ── lb_alias endpoints ────────────────────────────────────────────────────
 
@@ -3291,7 +3289,7 @@ def _start_scrape_thread(
         force: Re-scrape even if an entry already has data.
         delay_ms: Milliseconds to sleep between requests.
         download: Download attachment files when True.
-        use_local_pages: Read from data/pages/ cache instead of the network.
+        use_local_pages: Read from data/site/detail/ cache instead of the network.
     """
     global _scrape_thread
     if _scrape_thread and _scrape_thread.is_alive():

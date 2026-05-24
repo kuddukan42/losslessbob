@@ -335,7 +335,7 @@ def _build_body(entry: dict, attachments_dir: Path | None, lb_number: int | None
 
     Args:
         entry: Dict from the entries table.
-        attachments_dir: Path to data/attachments/LB-XXXXX/ or None.
+        attachments_dir: Path to data/site/files/ or None.
         lb_number: Integer LB number for locating the correct attachment files.
 
     Returns:
@@ -451,7 +451,7 @@ def preview_lb_topic(
     Args:
         lb_number: LosslessBob entry number.
         entry: Dict from the entries table (date_str, location, …).
-        attachments_dir: Path to data/attachments/LB-XXXXX/ (for body text).
+        attachments_dir: Path to data/site/files/ (for body text).
 
     Returns:
         Dict with keys: subject (str), body (str).
@@ -498,7 +498,7 @@ def post_lb_topic(
         password: WTRF forum password.
         entry: Dict from the entries table (date_str, location, …).
         board_id: SMF board number to post into (stored in meta as wtrf_board_id).
-        attachments_dir: Path to data/attachments/LB-XXXXX/ (for body text).
+        attachments_dir: Path to data/site/files/ (for body text).
         subject_override: If provided, use this subject instead of the auto-generated one.
         body_override: If provided, use this body instead of the auto-generated one.
 

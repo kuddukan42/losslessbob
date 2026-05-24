@@ -379,7 +379,7 @@ def scrape_range(
 def download_pages_range(lb_numbers: list[int], force: bool = False, delay_ms: int = 1500) -> None:
     """Fetch and cache HTML detail pages for *lb_numbers* without parsing metadata.
 
-    Saves each page to ``data/pages/LB-{n:05d}.html``.  Does not write to the
+    Saves each page to ``data/site/detail/LB-{n:05d}.html``.  Does not write to the
     database, parse entry fields, or download attachment files.  Existing pages
     are skipped unless *force* is True.
 
