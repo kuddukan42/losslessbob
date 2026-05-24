@@ -7,6 +7,7 @@ from backend.db import (
     get_connection, close_connection, init_db, get_meta, set_meta, DB_PATH,
     rebuild_bloom, reconcile_lb_status, migrate_lb_master,
 )
+from backend.db_queue import get_write_queue
 from backend.paths import DATA_DIR
 
 # --- Shared import progress state (mirrors _scrape_state pattern) ---
@@ -129,18 +130,22 @@ def run_import(source_path, progress_callback=None, db_path=None):
     CHUNK = 10_000
     total_rows = len(rows)
     _set_state(rows_total=total_rows)
-    merged = 0
-    main_conn = get_connection(db_path)
-    for i in range(0, total_rows, CHUNK):
-        chunk = rows[i:i + CHUNK]
-        main_conn.executemany(
-            "INSERT OR IGNORE INTO checksums(checksum, filename, chk_type, lb_number, xref) VALUES(?,?,?,?,?)",
-            [(r["checksum"], r["filename"], r["chk_type"], r["lb_number"], r["xref"]) for r in chunk]
-        )
-        main_conn.commit()
-        merged += len(chunk)
-        _set_state(rows_merged=merged,
-                   message=f"Merging — {merged:,} / {total_rows:,} rows")
+    _all_rows, _total, _chsz = rows, total_rows, CHUNK
+
+    def _do_merge(conn) -> None:
+        for i in range(0, _total, _chsz):
+            chunk = _all_rows[i:i + _chsz]
+            conn.executemany(
+                "INSERT OR IGNORE INTO checksums"
+                "(checksum, filename, chk_type, lb_number, xref) VALUES(?,?,?,?,?)",
+                [(r["checksum"], r["filename"], r["chk_type"], r["lb_number"], r["xref"])
+                 for r in chunk],
+            )
+            _set_state(rows_merged=i + len(chunk),
+                       message=f"Merging — {i + len(chunk):,} / {_total:,} rows")
+
+    get_write_queue().execute(_do_merge, timeout=300.0)
+    merged = total_rows
 
     close_connection(temp_db_path)
     temp_db_path.unlink(missing_ok=True)

@@ -9,9 +9,10 @@ import requests
 from bs4 import BeautifulSoup, NavigableString
 
 from backend.db import (
-    get_connection, write_connection, DB_PATH, insert_missing_entry,
+    get_connection, DB_PATH, insert_missing_entry,
     record_entry_changes, reconcile_lb_status, batch_reconcile_lb_status,
 )
+from backend.db_queue import get_write_queue
 from backend.paths import (
     SITE_DETAIL_DIR, SITE_FILES_DIR, to_long_path,
     detail_page_path, attachment_path,
@@ -22,6 +23,13 @@ BASE_URL = "http://www.losslessbob.wonderingwhattochoose.com"
 DETAIL_URL = BASE_URL + "/detail/LB-{n}.html"
 FILE_URL = BASE_URL + "/files/{filename}"
 BYNUMBER_URL = BASE_URL + "/bynumber/LBMbynumber.html"
+
+# Server returns HTTP 200 with this text when a page doesn't exist (soft 404).
+_SOFT_404_MARKER = "The requested URL was not found on this server."
+
+
+def _is_soft_404(html_text: str) -> bool:
+    return _SOFT_404_MARKER in html_text
 
 HEADERS = {"User-Agent": "LosslessBob-Archiver/1.0 (personal research tool)"}
 
@@ -147,11 +155,13 @@ def scrape_entry(
                 to_mark = [r["filename"] for r in undownloaded
                            if attachment_path(r["filename"]).exists()]
                 if to_mark:
-                    with write_connection(db_path) as wconn:
-                        wconn.executemany(
+                    _lb_tm, _tm = lb_number, list(to_mark)
+                    get_write_queue().execute(
+                        lambda c: c.executemany(
                             "UPDATE entry_files SET downloaded=1 WHERE lb_number=? AND filename=?",
-                            [(lb_number, fn) for fn in to_mark],
+                            [(_lb_tm, fn) for fn in _tm],
                         )
+                    )
                 if len(undownloaded) - len(to_mark) == 0:
                     return {"skipped": True}
 
@@ -173,6 +183,26 @@ def scrape_entry(
         SITE_DETAIL_DIR.mkdir(parents=True, exist_ok=True)
         rewritten = rewrite_links(html_text, url, BASE_URL.split("//")[-1])
         local_page.write_text(rewritten, encoding="utf-8")
+
+    if _is_soft_404(html_text):
+        # Server returned 200 but with an error page — treat as missing.
+        if local_page.exists():
+            local_page.unlink(missing_ok=True)
+        _lb_missing = lb_number
+        get_write_queue().execute(
+            lambda c: c.execute(
+                """INSERT INTO entries(lb_number, date_str, location, cdr, rating, timing,
+                       description, setlist, status)
+                   VALUES(?, '', '', '', '', '', '', '', 'missing')
+                   ON CONFLICT(lb_number) DO UPDATE SET
+                   status='missing', date_str='', location='', cdr='', rating='',
+                   timing='', description='', setlist=''""",
+                (_lb_missing,),
+            )
+        )
+        if _reconcile:
+            reconcile_lb_status(lb_number, trigger="scrape", db_path=db_path)
+        return {"error": "404", "missing": True}
 
     soup = BeautifulSoup(html_text, "lxml")
     entry_data = {"lb_number": lb_number}
@@ -235,26 +265,32 @@ def scrape_entry(
 
     record_entry_changes(lb_number, entry_data, db_path)
 
-    with write_connection(db_path) as conn:
-        conn.execute(
+    _lb_entry = lb_number
+    _entry_row = {
+        "lb_number": lb_number,
+        "date_str": entry_data.get("date_str", ""),
+        "location": entry_data.get("location", ""),
+        "cdr": entry_data.get("cdr", ""),
+        "rating": entry_data.get("rating", ""),
+        "timing": entry_data.get("timing", ""),
+        "description": entry_data.get("description", ""),
+        "setlist": entry_data.get("setlist", ""),
+    }
+    _file_links = list(file_links)
+
+    def _save_entry(c) -> None:
+        c.execute(
             """INSERT OR REPLACE INTO entries(lb_number, date_str, location, cdr, rating, timing, description, setlist)
                VALUES(:lb_number,:date_str,:location,:cdr,:rating,:timing,:description,:setlist)""",
-            {
-                "lb_number": lb_number,
-                "date_str": entry_data.get("date_str", ""),
-                "location": entry_data.get("location", ""),
-                "cdr": entry_data.get("cdr", ""),
-                "rating": entry_data.get("rating", ""),
-                "timing": entry_data.get("timing", ""),
-                "description": entry_data.get("description", ""),
-                "setlist": entry_data.get("setlist", ""),
-            }
+            _entry_row,
         )
-        for filename, clean, file_url in file_links:
-            conn.execute(
+        for filename, clean, file_url in _file_links:
+            c.execute(
                 "INSERT OR IGNORE INTO entry_files(lb_number, filename, clean_name, file_url) VALUES(?,?,?,?)",
-                (lb_number, filename, clean, file_url)
+                (_lb_entry, filename, clean, file_url),
             )
+
+    get_write_queue().execute(_save_entry)
 
     downloaded = []
     if download_files and file_links:
@@ -271,11 +307,13 @@ def scrape_entry(
                 downloaded.append(clean)
             time.sleep(0.5)
         if newly_downloaded:
-            with write_connection(db_path) as conn:
-                conn.executemany(
+            _lb_nd, _nd = lb_number, list(newly_downloaded)
+            get_write_queue().execute(
+                lambda c: c.executemany(
                     "UPDATE entry_files SET downloaded=1 WHERE lb_number=? AND filename=?",
-                    [(lb_number, fn) for fn in newly_downloaded],
+                    [(_lb_nd, fn) for fn in _nd],
                 )
+            )
 
     if _reconcile:
         reconcile_lb_status(lb_number, trigger="scrape", db_path=db_path)
@@ -371,9 +409,7 @@ def scrape_range(
     with _scrape_lock:
         _scrape_state.update({"running": False, "done": total, "current_lb": None})
 
-    conn = get_connection(db_path)
-    conn.execute("PRAGMA optimize")
-    conn.commit()
+    get_connection(db_path).execute("PRAGMA optimize")
 
 
 def download_pages_range(lb_numbers: list[int], force: bool = False, delay_ms: int = 1500) -> None:

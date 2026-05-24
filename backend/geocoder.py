@@ -145,25 +145,26 @@ def place_manual(location_text: str, lat: float, lon: float, note: str = "") -> 
         lon: WGS-84 longitude.
         note: Optional freeform note (e.g. reason for the override).
     """
-    from backend.db import get_connection
+    from backend.db_queue import get_write_queue
 
-    conn = get_connection()
-    conn.execute(
-        """INSERT INTO location_geocoded
-               (location_text, lat, lon, source, confidence, manual_override, note,
-                geocoded_at)
-           VALUES (?, ?, ?, 'manual', 'high', 1, ?, CURRENT_TIMESTAMP)
-           ON CONFLICT(location_text) DO UPDATE SET
-               lat=excluded.lat,
-               lon=excluded.lon,
-               source='manual',
-               confidence='high',
-               manual_override=1,
-               note=excluded.note,
-               geocoded_at=CURRENT_TIMESTAMP""",
-        (location_text, lat, lon, note),
+    _loc, _lat, _lon, _note = location_text, lat, lon, note
+    get_write_queue().execute(
+        lambda c: c.execute(
+            """INSERT INTO location_geocoded
+                   (location_text, lat, lon, source, confidence, manual_override, note,
+                    geocoded_at)
+               VALUES (?, ?, ?, 'manual', 'high', 1, ?, CURRENT_TIMESTAMP)
+               ON CONFLICT(location_text) DO UPDATE SET
+                   lat=excluded.lat,
+                   lon=excluded.lon,
+                   source='manual',
+                   confidence='high',
+                   manual_override=1,
+                   note=excluded.note,
+                   geocoded_at=CURRENT_TIMESTAMP""",
+            (_loc, _lat, _lon, _note),
+        )
     )
-    conn.commit()
     logger.info("Manual geocode saved: %r → (%.4f, %.4f)", location_text, lat, lon)
 
 
@@ -192,6 +193,7 @@ def run_batch(
         db_path: Optional path to the SQLite database. Defaults to DB_PATH.
     """
     from backend.db import get_connection
+    from backend.db_queue import get_write_queue
 
     conn = get_connection(db_path)
 
@@ -281,31 +283,33 @@ def run_batch(
                 _progress["stage"] = "saving"
 
             if not dry_run:
-                conn.execute(
-                    """INSERT INTO location_geocoded
-                           (location_text, lat, lon, source, confidence, display_name,
-                            manual_override, note, geocoded_at)
-                       VALUES (?, ?, ?, ?, ?, ?, 0, ?, CURRENT_TIMESTAMP)
-                       ON CONFLICT(location_text) DO UPDATE SET
-                           lat=excluded.lat,
-                           lon=excluded.lon,
-                           source=excluded.source,
-                           confidence=excluded.confidence,
-                           display_name=excluded.display_name,
-                           note=excluded.note,
-                           geocoded_at=CURRENT_TIMESTAMP
-                       WHERE manual_override = 0""",
-                    (
-                        result["location_text"],
-                        result.get("lat"),
-                        result.get("lon"),
-                        result["source"],
-                        result.get("confidence"),
-                        result.get("display_name"),
-                        result.get("note"),
-                    ),
+                _r = result
+                get_write_queue().execute(
+                    lambda c: c.execute(
+                        """INSERT INTO location_geocoded
+                               (location_text, lat, lon, source, confidence, display_name,
+                                manual_override, note, geocoded_at)
+                           VALUES (?, ?, ?, ?, ?, ?, 0, ?, CURRENT_TIMESTAMP)
+                           ON CONFLICT(location_text) DO UPDATE SET
+                               lat=excluded.lat,
+                               lon=excluded.lon,
+                               source=excluded.source,
+                               confidence=excluded.confidence,
+                               display_name=excluded.display_name,
+                               note=excluded.note,
+                               geocoded_at=CURRENT_TIMESTAMP
+                           WHERE manual_override = 0""",
+                        (
+                            _r["location_text"],
+                            _r.get("lat"),
+                            _r.get("lon"),
+                            _r["source"],
+                            _r.get("confidence"),
+                            _r.get("display_name"),
+                            _r.get("note"),
+                        ),
+                    )
                 )
-                conn.commit()
 
             with _lock:
                 _progress["done"] = i + 1

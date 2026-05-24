@@ -1,6 +1,25 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-108: DB Integrity reconcile fails with "database is locked"
+Status: Fixed
+File(s): backend/db.py, backend/db_queue.py, backend/scraper.py, backend/site_crawler.py,
+         backend/app.py, backend/importer.py, backend/flat_file.py, backend/geocoder.py
+Reported: 2026-05-23
+Fixed: 2026-05-24
+Description: Clicking "Reconcile All" showed "Error: internal_error". Backend logged
+  sqlite3.OperationalError: database is locked on INSERT into lb_status_history inside
+  batch_reconcile_lb_status. Underlying issue affected all write paths — any concurrent
+  background threads could race for the SQLite WAL write lock.
+Root cause: write_connection() opened a fresh sqlite3.connect() per call and issued
+  BEGIN IMMEDIATE, so multiple threads could hold competing write connections simultaneously.
+  No amount of locking within Python could prevent WAL-level contention between separate
+  connection objects.
+Fix: DB-09 — introduced DatabaseWriteQueue (backend/db_queue.py): a single persistent writer
+  thread that holds ONE connection and serialises all writes via queue.Queue. All
+  write_connection() call sites across all backend files migrated to get_write_queue().execute().
+  write_connection() removed from db.py.
+
 BUG-105: Windows release — master DB install fails with "internal_error"
 Status: Fixed
 File(s): backend/app.py

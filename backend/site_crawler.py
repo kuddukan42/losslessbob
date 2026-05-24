@@ -25,13 +25,13 @@ from bs4 import BeautifulSoup
 
 from backend.db import (
     DB_PATH,
-    write_connection,
     upsert_inventory,
     get_downloaded_urls,
     get_pending_urls,
     create_scrape_session,
     finish_scrape_session,
 )
+from backend.db_queue import get_write_queue
 from backend.html_utils import rewrite_links
 from backend.paths import SITE_DIR
 
@@ -416,11 +416,13 @@ def crawl(
             filename = url_path[len("/files/"):]
             if filename:
                 try:
-                    with write_connection(db_path) as conn:
-                        conn.execute(
+                    _fn = filename
+                    get_write_queue().execute(
+                        lambda c: c.execute(
                             "UPDATE entry_files SET downloaded=1 WHERE filename=?",
-                            (filename,),
+                            (_fn,),
                         )
+                    )
                 except Exception:
                     logger.exception("Failed to update entry_files.downloaded for %s", filename)
 

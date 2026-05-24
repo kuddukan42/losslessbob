@@ -221,22 +221,29 @@ def discover_flat_file_release(db_path=None) -> dict:
             (zip_filename,),
         ).fetchone()
         if not existing:
-            conn.execute(
-                """INSERT INTO flat_file_releases
-                   (source_page_url, zip_url, zip_filename, last_lb_in_name,
-                    page_timestamp, http_last_modified, zip_size_bytes, status)
-                   VALUES (?,?,?,?,?,?,?,'detected')""",
-                (
-                    current["source_page_url"],
-                    zip_url,
-                    zip_filename,
-                    last_lb_in_name,
-                    page_timestamp,
-                    http_last_modified,
-                    zip_size_bytes,
-                ),
+            _zip_fn = zip_filename
+            _ivals = (
+                current["source_page_url"], zip_url, zip_filename, last_lb_in_name,
+                page_timestamp, http_last_modified, zip_size_bytes,
             )
-            conn.commit()
+
+            def _detect(c) -> None:
+                dup = c.execute(
+                    """SELECT id FROM flat_file_releases
+                       WHERE zip_filename=? AND status IN ('detected', 'downloaded')
+                       LIMIT 1""",
+                    (_zip_fn,),
+                ).fetchone()
+                if not dup:
+                    c.execute(
+                        """INSERT INTO flat_file_releases
+                           (source_page_url, zip_url, zip_filename, last_lb_in_name,
+                            page_timestamp, http_last_modified, zip_size_bytes, status)
+                           VALUES (?,?,?,?,?,?,?,'detected')""",
+                        _ivals,
+                    )
+
+            database.get_write_queue().execute(_detect)
             logger.info("flat_file: new release detected: %s", zip_filename)
         # Fetch the id for the response
         release_row = conn.execute(
@@ -301,14 +308,16 @@ def download_flat_file_release(
                 progress_cb(done, total)
 
     sha256 = hasher.hexdigest()
-    conn.execute(
-        """UPDATE flat_file_releases
-           SET zip_sha256=?, zip_size_bytes=?,
-               downloaded_at=CURRENT_TIMESTAMP, status='downloaded'
-           WHERE id=?""",
-        (sha256, dest.stat().st_size, release_id),
+    _sha, _sz, _rid = sha256, dest.stat().st_size, release_id
+    database.get_write_queue().execute(
+        lambda c: c.execute(
+            """UPDATE flat_file_releases
+               SET zip_sha256=?, zip_size_bytes=?,
+                   downloaded_at=CURRENT_TIMESTAMP, status='downloaded'
+               WHERE id=?""",
+            (_sha, _sz, _rid),
+        )
     )
-    conn.commit()
     logger.info(
         "flat_file: downloaded %s (sha256=%s)", dest.name, sha256
     )
@@ -438,92 +447,102 @@ def apply_flat_file_release(release_id: int, db_path=None) -> dict:
         for chk, fn, ct, lb, xref in incoming
     }
 
+    # Pre-compute all mutations so they can be submitted as one atomic queue item
     touched_lbs: set[int] = set()
-    rows_added = rows_changed = rows_removed = 0
+    _chk_add: list = []
+    _log_add: list = []
+    _chk_upd: list = []
+    _log_chg: list = []
+    _chk_del: list = []
+    _log_rem: list = []
 
-    # Additions
     for k, inc in incoming_rows.items():
         if k not in current_rows:
-            conn.execute(
-                """INSERT OR IGNORE INTO checksums
-                   (checksum, lb_number, filename, chk_type, xref)
-                   VALUES (?,?,?,?,?)""",
-                (
-                    inc["checksum"], inc["lb_number"], inc["filename"],
-                    inc.get("chk_type", ""), inc.get("xref", 0),
-                ),
-            )
-            conn.execute(
-                """INSERT INTO flat_file_changelog
-                   (release_id, lb_number, op, checksum, filename, chk_type, xref)
-                   VALUES (?,?,?,?,?,?,?)""",
-                (
-                    release_id, inc["lb_number"], "add", inc["checksum"],
-                    inc["filename"], inc.get("chk_type", ""), inc.get("xref", 0),
-                ),
-            )
+            _chk_add.append((inc["checksum"], inc["lb_number"], inc["filename"],
+                             inc.get("chk_type", ""), inc.get("xref", 0)))
+            _log_add.append((release_id, inc["lb_number"], "add", inc["checksum"],
+                             inc["filename"], inc.get("chk_type", ""), inc.get("xref", 0)))
             touched_lbs.add(inc["lb_number"])
-            rows_added += 1
 
-    # Changes (same key, different filename or xref)
     for k, inc in incoming_rows.items():
         if k in current_rows:
             cur = current_rows[k]
             if inc.get("filename") != cur.get("filename") or inc.get("xref") != cur.get("xref"):
-                conn.execute(
-                    "UPDATE checksums SET filename=?, xref=? WHERE checksum=? AND lb_number=?",
-                    (
-                        inc["filename"], inc.get("xref", 0),
-                        inc["checksum"], inc["lb_number"],
-                    ),
-                )
-                conn.execute(
-                    """INSERT INTO flat_file_changelog
-                       (release_id, lb_number, op, checksum, filename, chk_type,
-                        xref, old_filename, old_xref)
-                       VALUES (?,?,?,?,?,?,?,?,?)""",
-                    (
-                        release_id, inc["lb_number"], "change", inc["checksum"],
-                        inc["filename"], inc.get("chk_type", ""), inc.get("xref", 0),
-                        cur["filename"], cur.get("xref", 0),
-                    ),
-                )
+                _chk_upd.append((inc["filename"], inc.get("xref", 0),
+                                 inc["checksum"], inc["lb_number"]))
+                _log_chg.append((release_id, inc["lb_number"], "change", inc["checksum"],
+                                 inc["filename"], inc.get("chk_type", ""), inc.get("xref", 0),
+                                 cur["filename"], cur.get("xref", 0)))
                 touched_lbs.add(inc["lb_number"])
-                rows_changed += 1
 
-    # Removals
     for k, cur in current_rows.items():
         if k not in incoming_rows:
-            conn.execute(
-                "DELETE FROM checksums WHERE checksum=? AND lb_number=?",
-                (cur["checksum"], cur["lb_number"]),
-            )
-            conn.execute(
-                """INSERT INTO flat_file_changelog
-                   (release_id, lb_number, op, checksum, filename, chk_type, xref)
-                   VALUES (?,?,?,?,?,?,?)""",
-                (
-                    release_id, cur["lb_number"], "remove", cur["checksum"],
-                    cur["filename"], cur.get("chk_type", ""), cur.get("xref", 0),
-                ),
-            )
+            _chk_del.append((cur["checksum"], cur["lb_number"]))
+            _log_rem.append((release_id, cur["lb_number"], "remove", cur["checksum"],
+                             cur["filename"], cur.get("chk_type", ""), cur.get("xref", 0)))
             touched_lbs.add(cur["lb_number"])
-            rows_removed += 1
 
+    rows_added = len(_chk_add)
+    rows_changed = len(_chk_upd)
+    rows_removed = len(_chk_del)
     touched_list = sorted(touched_lbs)
     new_lb_min = min(touched_list) if touched_list else None
     new_lb_max = max(touched_list) if touched_list else None
 
-    conn.execute(
-        """UPDATE flat_file_releases
-           SET status='applied', applied_at=CURRENT_TIMESTAMP,
-               rows_added=?, rows_changed=?, rows_removed=?,
-               new_lb_min=?, new_lb_max=?
-           WHERE id=?""",
-        (rows_added, rows_changed, rows_removed, new_lb_min, new_lb_max, release_id),
-    )
+    _rel_id = release_id
+    _ra, _rc, _rr = rows_added, rows_changed, rows_removed
+    _nlmin, _nlmax = new_lb_min, new_lb_max
 
-    # Update meta keys to reflect the new state
+    def _apply_writes(c) -> None:
+        if _chk_add:
+            c.executemany(
+                "INSERT OR IGNORE INTO checksums "
+                "(checksum, lb_number, filename, chk_type, xref) VALUES (?,?,?,?,?)",
+                _chk_add,
+            )
+        if _log_add:
+            c.executemany(
+                "INSERT INTO flat_file_changelog "
+                "(release_id, lb_number, op, checksum, filename, chk_type, xref) "
+                "VALUES (?,?,?,?,?,?,?)",
+                _log_add,
+            )
+        if _chk_upd:
+            c.executemany(
+                "UPDATE checksums SET filename=?, xref=? WHERE checksum=? AND lb_number=?",
+                _chk_upd,
+            )
+        if _log_chg:
+            c.executemany(
+                "INSERT INTO flat_file_changelog "
+                "(release_id, lb_number, op, checksum, filename, chk_type, "
+                "xref, old_filename, old_xref) VALUES (?,?,?,?,?,?,?,?,?)",
+                _log_chg,
+            )
+        if _chk_del:
+            c.executemany(
+                "DELETE FROM checksums WHERE checksum=? AND lb_number=?",
+                _chk_del,
+            )
+        if _log_rem:
+            c.executemany(
+                "INSERT INTO flat_file_changelog "
+                "(release_id, lb_number, op, checksum, filename, chk_type, xref) "
+                "VALUES (?,?,?,?,?,?,?)",
+                _log_rem,
+            )
+        c.execute(
+            """UPDATE flat_file_releases
+               SET status='applied', applied_at=CURRENT_TIMESTAMP,
+                   rows_added=?, rows_changed=?, rows_removed=?,
+                   new_lb_min=?, new_lb_max=?
+               WHERE id=?""",
+            (_ra, _rc, _rr, _nlmin, _nlmax, _rel_id),
+        )
+
+    database.get_write_queue().execute(_apply_writes)
+
+    # Update meta keys to reflect the new state (each goes through queue separately)
     database.set_meta("import_hash", row["zip_sha256"] or "", db_path)
     database.set_meta(
         "last_import_date",
@@ -532,8 +551,6 @@ def apply_flat_file_release(release_id: int, db_path=None) -> dict:
     )
     if new_lb_max:
         database.set_meta("last_lb_number", str(new_lb_max), db_path)
-
-    conn.commit()
 
     # Reconcile lb_master for every touched LB number
     for lb in touched_list:
@@ -572,7 +589,6 @@ def defer_flat_file_release(
     Raises:
         ValueError: If neither days nor until_next is specified.
     """
-    conn = database.get_connection(db_path)
     if until_next:
         deferred_until = "9999-12-31 00:00:00"
     elif days is not None:
@@ -581,11 +597,13 @@ def defer_flat_file_release(
         )
     else:
         raise ValueError("Either days or until_next must be specified")
-    conn.execute(
-        "UPDATE flat_file_releases SET status='deferred', deferred_until=? WHERE id=?",
-        (deferred_until, release_id),
+    _du, _rid = deferred_until, release_id
+    database.get_write_queue().execute(
+        lambda c: c.execute(
+            "UPDATE flat_file_releases SET status='deferred', deferred_until=? WHERE id=?",
+            (_du, _rid),
+        )
     )
-    conn.commit()
     logger.info(
         "flat_file: deferred release %d until %s", release_id, deferred_until
     )

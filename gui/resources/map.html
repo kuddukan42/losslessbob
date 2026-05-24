@@ -371,13 +371,28 @@
             const color   = STATUS_COLORS[m.lb_status] || DEFAULT_COLOR;
             const isOwned = Boolean(m.owned);
 
-            const circle = L.circleMarker([lat, lon], {
-                radius:      18,
-                fillColor:   color,
-                fillOpacity: 0.95,
-                color:       isOwned ? '#FFD600' : '#222',
-                weight:      isOwned ? 4 : 1.5,
+            const _sz  = 36;
+            const _bdr = isOwned ? '3px solid #FFD600' : '1.5px solid #222';
+            const _shd = isOwned ? '0 0 6px #FFD60088' : 'none';
+            const icon = L.divIcon({
+                html: '<div style="' +
+                    'width:' + _sz + 'px;height:' + _sz + 'px;' +
+                    'border-radius:50%;' +
+                    'background:' + color + ';' +
+                    'border:' + _bdr + ';' +
+                    'box-shadow:' + _shd + ';' +
+                    'opacity:0.95;' +
+                    'display:flex;align-items:center;justify-content:center;' +
+                    'font-weight:700;font-size:9px;' +
+                    'color:#111;' +
+                    'font-family:monospace;' +
+                    'line-height:1;overflow:hidden;' +
+                    '">' + escapeHtml(String(m.lb_number || '')) + '</div>',
+                className: '',
+                iconSize:   [_sz, _sz],
+                iconAnchor: [_sz / 2, _sz / 2],
             });
+            const circle = L.marker([lat, lon], { icon: icon });
 
             // Popup HTML
             let popupHtml =
