@@ -502,6 +502,8 @@ Indexes: `idx_flat_changelog_release(release_id)`, `idx_flat_changelog_lb(lb_num
 | GET | `/api/entry/<lb>/files` | List attachment files for entry |
 | GET | `/api/entry/<lb>/changes` | Field-level scrape diff history. Query param: `limit` (default 50). Returns `[{field, old_value, new_value, changed_at}]`. |
 | GET | `/api/attachment/<lb>/<filename>` | Serve cached attachment file |
+| POST | `/api/attachments/reconcile` | Mark `entry_files.downloaded=1` for rows present in `site_inventory`. Returns `{updated: N}`. |
+| GET | `/api/attachments/cached` | Grouped downloaded files by LB + total entry count. Returns `{entries: [...], total: N}`. |
 | POST | `/api/entry/<lb>/scrape` | Trigger scrape of single entry |
 
 ### Search

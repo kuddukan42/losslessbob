@@ -444,6 +444,69 @@ def create_app() -> Flask:
             abort(404)
         return send_file(str(file_path))
 
+    @app.route("/api/attachments/reconcile", methods=["POST"])
+    def attachments_reconcile() -> Response:
+        """Mark entry_files.downloaded=1 for rows present in site_inventory.
+
+        Returns:
+            JSON {updated: N} with the number of rows updated.
+        """
+        try:
+            with database.get_connection() as conn:
+                cur = conn.execute(
+                    """
+                    UPDATE entry_files
+                    SET downloaded = 1
+                    WHERE downloaded = 0
+                      AND file_url IN (
+                          SELECT url FROM site_inventory WHERE status = 'downloaded'
+                      )
+                    """
+                )
+                updated = cur.rowcount
+            return jsonify({"updated": updated})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/attachments/cached", methods=["GET"])
+    def attachments_cached() -> Response:
+        """Return downloaded entry_files grouped by LB number, plus total entry count.
+
+        Returns:
+            JSON {entries: [{lb_number, files: [{filename, clean_name}], lb_status}],
+                  total: int}.
+        """
+        try:
+            conn = database.get_connection()
+            rows = conn.execute(
+                """
+                SELECT ef.lb_number, ef.filename, ef.clean_name, lm.lb_status
+                FROM entry_files ef
+                LEFT JOIN lb_master lm ON lm.lb_number = ef.lb_number
+                WHERE ef.downloaded = 1
+                ORDER BY ef.lb_number, ef.clean_name
+                """
+            ).fetchall()
+            grouped: dict = {}
+            for r in rows:
+                lb = r["lb_number"]
+                if lb not in grouped:
+                    grouped[lb] = {
+                        "lb_number": lb,
+                        "files": [],
+                        "lb_status": r["lb_status"],
+                    }
+                grouped[lb]["files"].append(
+                    {"filename": r["filename"], "clean_name": r["clean_name"]}
+                )
+            all_entries = [v for _, v in sorted(grouped.items())]
+            total = conn.execute(
+                "SELECT COUNT(DISTINCT lb_number) FROM checksums"
+            ).fetchone()[0]
+            return jsonify({"entries": all_entries, "total": total})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
     @app.route("/api/entry/<int:lb_number>/changes", methods=["GET"])
     def entry_changes(lb_number: int) -> Response:
         """Return field-level change history for a single LB entry.

@@ -1,3 +1,18 @@
+BUG-115: Fingerprint Build DB shows [0/0] with no feedback during folder scan
+Status: Fixed
+File(s): backend/fingerprint.py, gui/spectrogram_tab.py
+Reported: 2026-05-24
+Fixed: 2026-05-24
+Description: Clicking "Build DB" with a large collection (15,967 folders) left the
+  progress bar in indeterminate mode showing "[0/0]" for several minutes because
+  build_fingerprint_db() collects all audio files before setting total.
+Root cause: File-collection loop emitted no state updates until complete. For a large
+  collection the scan can take several minutes, giving the appearance of being frozen.
+Fix: Emit status="scanning" with folder count every 50 rows during collection;
+  GUI handles the new status by updating the label without touching the queue widgets.
+
+---
+
 BUG-113: Hard-coded table backgrounds break theming
 Status: Open
 File(s): gui/ (various table/widget files)
@@ -89,17 +104,6 @@ Description: The Windows installer does not install the application to the stand
 Root cause: Unknown
 Fix: —
 
-BUG-090: Black screen flickers in app at certain times
-Status: Open
-File(s): unknown
-Reported: 2026-05-20
-Description: Intermittent black screen flickers occur in the GUI at certain points during use. Trigger conditions not yet isolated — may be related to tab switching, background thread activity, or Qt repaint/viewport timing.
-  Note (2026-05-24): User suspects the issue began after a specific code change, possibly
-  related to XWayland support or a change made around the same time. Worth checking git
-  history around any XWayland-related commits to narrow down the regression point.
-  Note (2026-05-24): Disabling _apply_shadows() did not fix the flicker — ruled out as root cause.
-Root cause: Unknown — possible regression introduced during XWayland-related changes
-Fix: —
 
 BUG-067: PyQt6 + lxml SIGABRT when Qt widget tests run before lxml-importing tests
 Status: Open

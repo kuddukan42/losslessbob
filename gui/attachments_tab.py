@@ -19,7 +19,6 @@ import logging
 
 log = logging.getLogger(__name__)
 from backend.scraper import DETAIL_URL
-from backend.db import get_connection
 
 
 # ---------------------------------------------------------------------------
@@ -80,10 +79,7 @@ class _LbModel(QAbstractTableModel):
 # ---------------------------------------------------------------------------
 
 class _RefreshTreeThread(QThread):
-    """Reconciles entry_files with site_inventory, then fetches grouped data.
-
-    Fetches lb_status via LEFT JOIN so no main-thread DB call is needed
-    during rendering.
+    """Reconciles entry_files with site_inventory via API, then fetches grouped data.
 
     Emits: finished(all_lb_entries: list[dict], total_entries: int)
     Each entry dict: {lb_number, files: [{filename, clean_name}], lb_status}
@@ -91,59 +87,23 @@ class _RefreshTreeThread(QThread):
 
     finished = pyqtSignal(list, int)
 
+    def __init__(self, flask_port: int):
+        super().__init__()
+        self.flask_port = flask_port
+
     def run(self) -> None:
         try:
-            conn = get_connection()
-            self._reconcile(conn)
-            rows = conn.execute(
-                """
-                SELECT ef.lb_number, ef.filename, ef.clean_name, lm.lb_status
-                FROM entry_files ef
-                LEFT JOIN lb_master lm ON lm.lb_number = ef.lb_number
-                WHERE ef.downloaded = 1
-                ORDER BY ef.lb_number, ef.clean_name
-                """
-            ).fetchall()
-            grouped: dict[int, dict] = {}
-            for r in rows:
-                lb = r["lb_number"]
-                if lb not in grouped:
-                    grouped[lb] = {
-                        "lb_number": lb,
-                        "files": [],
-                        "lb_status": r["lb_status"],
-                    }
-                grouped[lb]["files"].append(
-                    {"filename": r["filename"], "clean_name": r["clean_name"]}
-                )
-            all_entries = [v for _, v in sorted(grouped.items())]
-            total = conn.execute(
-                "SELECT COUNT(DISTINCT lb_number) FROM checksums"
-            ).fetchone()[0]
-            self.finished.emit(all_entries, total)
+            base = f"http://127.0.0.1:{self.flask_port}"
+            resp = requests.post(f"{base}/api/attachments/reconcile", timeout=30)
+            if resp.ok:
+                updated = resp.json().get("updated", 0)
+                if updated:
+                    log.debug("_reconcile: marked %d rows downloaded=1", updated)
+            data = requests.get(f"{base}/api/attachments/cached", timeout=30).json()
+            self.finished.emit(data.get("entries", []), data.get("total", 0))
         except Exception:
             log.exception("_RefreshTreeThread failed")
             self.finished.emit([], 0)
-
-    @staticmethod
-    def _reconcile(conn) -> None:
-        """Mark entry_files.downloaded=1 for rows present in site_inventory."""
-        try:
-            cur = conn.execute(
-                """
-                UPDATE entry_files
-                SET downloaded = 1
-                WHERE downloaded = 0
-                  AND file_url IN (
-                      SELECT url FROM site_inventory WHERE status = 'downloaded'
-                  )
-                """
-            )
-            if cur.rowcount:
-                conn.commit()
-                log.debug("_reconcile: marked %d rows downloaded=1", cur.rowcount)
-        except Exception:
-            log.exception("_RefreshTreeThread._reconcile failed")
 
 
 class _ScrapeThread(QThread):
@@ -381,7 +341,7 @@ class AttachmentsTab(QWidget):
     def _refresh_tree(self) -> None:
         self.top_label.setText(self.tr("Loading cached files…"))
         self.refresh_btn.setEnabled(False)
-        self._refresh_thread = _RefreshTreeThread()
+        self._refresh_thread = _RefreshTreeThread(self.flask_port)
         self._refresh_thread.finished.connect(self._on_tree_data_ready)
         self._refresh_thread.start()
 

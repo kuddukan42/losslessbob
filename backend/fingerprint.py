@@ -276,14 +276,25 @@ def build_fingerprint_db(
             state_setter(kw)
 
     # Collect all files first so we know the total
+    n_total_rows = len(collection_rows)
     all_files: list[tuple[Path, int]] = []
-    for row in collection_rows:
+    for scan_idx, row in enumerate(collection_rows):
         disk_path = row.get("disk_path", "")
         lb_number = row.get("lb_number", 0)
         p = Path(disk_path)
         if not p.is_dir():
             _log.info("build_fingerprint_db: skipping missing path %s", disk_path)
             continue
+        if stop_event and stop_event.is_set():
+            break
+        # Emit scanning progress every 50 folders so the UI shows activity
+        if scan_idx % 50 == 0 and state_setter:
+            state_setter({
+                "status": "scanning",
+                "current": f"Scanning folders… ({scan_idx}/{n_total_rows})",
+                "done": 0, "total": 0, "skipped": 0, "errors": [],
+                "stop_requested": False, "queue_preview": [],
+            })
         for f in sorted(p.rglob("*")):
             if f.is_file() and f.suffix.lower() in AUDIO_EXTS:
                 all_files.append((f, lb_number))

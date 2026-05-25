@@ -1,6 +1,36 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-114: Attachments tab causes "database is locked" via direct SQLite connection
+Status: Fixed
+File(s): gui/attachments_tab.py:94, backend/app.py
+Reported: 2026-05-24
+Fixed: 2026-05-24
+Description: _RefreshTreeThread called get_connection() directly, opening a second
+  SQLite write connection from a QThread while Flask/Waitress already held the WAL
+  write lock. This caused sqlite3.OperationalError: database is locked on every
+  attachments tab load.
+Root cause: _reconcile() wrote directly to entry_files via a raw connection bypassing
+  the Flask serialisation layer.
+Fix: Added POST /api/attachments/reconcile and GET /api/attachments/cached endpoints
+  in app.py. Rewrote _RefreshTreeThread to call these via HTTP (requests), removed all
+  direct get_connection() usage and the backend.db import from attachments_tab.py.
+
+---
+
+BUG-090: Black screen flickers in app at certain times
+Status: Fixed
+File(s): main.py
+Reported: 2026-05-20
+Fixed: 2026-05-24
+Description: Intermittent black screen flickers occurring during use; trigger conditions not
+  fully isolated but consistently present. Suspected regression introduced during XWayland-related
+  changes. Ruled out: _apply_shadows(), QT_XCB_GL_INTEGRATION=none.
+Root cause: App was forcing QT_QPA_PLATFORM=xcb (XWayland); XWayland compositor interaction with
+  Qt's rendering pipeline caused the flickers.
+Fix: Changed default QT_QPA_PLATFORM from "xcb" to "wayland" in main.py so the app runs under
+  native Wayland. User-set QT_QPA_PLATFORM env var still takes precedence.
+
 BUG-108: DB Integrity reconcile fails with "database is locked"
 Status: Fixed
 File(s): backend/db.py, backend/db_queue.py, backend/scraper.py, backend/site_crawler.py,
