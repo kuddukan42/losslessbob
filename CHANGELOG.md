@@ -1,3 +1,19 @@
+[2026-05-24] — feat(fingerprint): fingerprinting queue preview with prominent progress counter and up-next list
+
+Added
+
+  backend/fingerprint.py: queue_preview state key — build_fingerprint_db() now emits the next 10 filenames
+    (relative "parent/name" form) after the current position on every state update, clearing to [] when done.
+
+  backend/app.py: GET /api/fingerprint/build/queue endpoint returning {pending: N, preview: [...]}.
+    queue_preview added to _fp_build_state initial dict so /api/fingerprint/build/status also carries it.
+
+  gui/spectrogram_tab.py: Fingerprint DB sub-tab now shows a bold "X of Y" count label and a QListWidget
+    (≤15 rows, "Up next:" header) that updates every 800 ms during a build. _FpBuildStatusThread.run()
+    fetches both /status and /queue per tick and merges results into a single emitted dict.
+
+---
+
 [2026-05-24] — feat(collection): add "Play in VLC" context menu action for My Collection entries
 
 Added

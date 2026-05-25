@@ -62,6 +62,7 @@ _spectro_lock = __import__("threading").Lock()
 _fp_build_state = {
     "status": "idle", "current": "", "done": 0,
     "total": 0, "skipped": 0, "errors": [], "stop_requested": False,
+    "queue_preview": [],
 }
 _fp_build_lock = threading.Lock()
 _fp_build_stop = threading.Event()
@@ -3083,6 +3084,18 @@ def create_app() -> Flask:
         with _fp_build_lock:
             _fp_build_state["stop_requested"] = True
         return jsonify({"ok": True})
+
+    @app.route("/api/fingerprint/build/queue", methods=["GET"])
+    def fp_build_queue() -> Response:
+        """Return pending count and preview of upcoming files in the build queue.
+
+        Returns {pending: N, preview: [up to 10 filenames]}.
+        """
+        with _fp_build_lock:
+            total   = _fp_build_state["total"]
+            done    = _fp_build_state["done"]
+            preview = list(_fp_build_state.get("queue_preview", []))
+        return jsonify({"pending": max(0, total - done), "preview": preview})
 
     @app.route("/api/fingerprint/lb_numbers", methods=["GET"])
     def fp_lb_numbers() -> Response:

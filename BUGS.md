@@ -97,6 +97,7 @@ Description: Intermittent black screen flickers occur in the GUI at certain poin
   Note (2026-05-24): User suspects the issue began after a specific code change, possibly
   related to XWayland support or a change made around the same time. Worth checking git
   history around any XWayland-related commits to narrow down the regression point.
+  Note (2026-05-24): Disabling _apply_shadows() did not fix the flicker — ruled out as root cause.
 Root cause: Unknown — possible regression introduced during XWayland-related changes
 Fix: —
 
