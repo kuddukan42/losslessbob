@@ -1,3 +1,39 @@
+[2026-05-24] — fix(fingerprint): emit scan-progress updates so UI shows activity during initial folder scan
+
+Fixed
+
+  backend/fingerprint.py: build_fingerprint_db() now emits status="scanning" with folder
+    progress every 50 rows during the initial file-collection phase, so the GUI label
+    updates from "[0/0]" instead of appearing frozen during large collection scans.
+
+  gui/spectrogram_tab.py: _on_fp_build_status() handles status="scanning" by updating
+    the build label and returning early (no queue/count changes during scan phase).
+
+---
+
+[2026-05-24] — fix(attachments): route _RefreshTreeThread through Flask API to fix "database is locked" (BUG-114)
+
+Fixed
+
+  gui/attachments_tab.py: Removed direct get_connection() calls from _RefreshTreeThread.
+    Thread now calls POST /api/attachments/reconcile then GET /api/attachments/cached via
+    HTTP (requests). Removed the backend.db import entirely. Constructor now takes flask_port.
+
+Added
+
+  backend/app.py: POST /api/attachments/reconcile — runs the UPDATE entry_files SET
+    downloaded=1 reconcile query inside Flask's connection and returns {updated: N}.
+    GET /api/attachments/cached — returns grouped entry_files data + total checksums count
+    as {entries: [...], total: N}, replacing the in-thread SELECT.
+
+[2026-05-24] — fix(gui): switch QT_QPA_PLATFORM to wayland, fixing BUG-090 black screen flickers
+
+Fixed
+
+  main.py: default QT_QPA_PLATFORM changed from "xcb" to "wayland" on Linux. Running under
+    XWayland was causing intermittent black screen flickers due to compositor interaction with
+    Qt's rendering pipeline. Native Wayland eliminates the issue. User env override still honoured.
+
 [2026-05-24] — feat(fingerprint): fingerprinting queue preview with prominent progress counter and up-next list
 
 Added

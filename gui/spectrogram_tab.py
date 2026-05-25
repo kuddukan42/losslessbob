@@ -1050,6 +1050,10 @@ class SpectrogramTab(QWidget):
         if total > 0:
             self.fp_build_bar.setValue(done)
 
+        if status == "scanning":
+            self.fp_build_label.setText(r.get("current", "Scanning…"))
+            return
+
         if status == "done":
             if self._fp_build_thread:
                 self._fp_build_thread.stop()

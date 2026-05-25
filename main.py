@@ -142,13 +142,10 @@ def main() -> None:
         _slog.t("existing backend detected on port 5174 — skipping flask thread")
 
     # Force XWayland (xcb) on Linux when running under a Wayland compositor.
-    # Native Wayland + AA_ShareOpenGLContexts + QtWebEngine can trigger fatal
-    # EGL_BAD_NATIVE_WINDOW (0x300d) errors that kill the Wayland connection
-    # with no recovery path. XWayland is stable for this workload and loses
-    # no functionality. Honour an explicit QT_QPA_PLATFORM override from the
-    # environment so the user can still opt in to native Wayland if desired.
+    # Native Wayland eliminates black screen flickers that occurred under XWayland (BUG-090).
+    # Honour an explicit QT_QPA_PLATFORM override so the user can still force xcb if needed.
     if sys.platform != "win32" and "QT_QPA_PLATFORM" not in os.environ:
-        os.environ["QT_QPA_PLATFORM"] = "xcb"
+        os.environ["QT_QPA_PLATFORM"] = "wayland"
 
     # Suppress Chromium-level sandbox diagnostics and path-override warnings that
     # go directly to stderr and can't be filtered through Python's logging.
