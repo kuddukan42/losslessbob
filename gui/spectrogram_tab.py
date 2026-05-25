@@ -230,7 +230,7 @@ class _FpIdentifyWorker(QThread):
 # ── Background status-poll threads ───────────────────────────────────────────
 
 class _FpBuildStatusThread(QThread):
-    """Polls /api/fingerprint/build/status every 800 ms in a background thread."""
+    """Polls /api/fingerprint/build/status (+ /queue) every 800 ms."""
     status_update = pyqtSignal(dict)
 
     def __init__(self, port: int) -> None:
@@ -241,11 +241,20 @@ class _FpBuildStatusThread(QThread):
     def run(self) -> None:
         while self._running:
             try:
-                resp = requests.get(
+                status = requests.get(
                     f"http://127.0.0.1:{self._port}/api/fingerprint/build/status",
                     timeout=5,
-                )
-                self.status_update.emit(resp.json())
+                ).json()
+                try:
+                    queue = requests.get(
+                        f"http://127.0.0.1:{self._port}/api/fingerprint/build/queue",
+                        timeout=5,
+                    ).json()
+                    status["queue_preview"] = queue.get("preview", [])
+                    status["queue_pending"] = queue.get("pending", 0)
+                except Exception:
+                    pass
+                self.status_update.emit(status)
             except Exception:
                 pass
             self.msleep(800)
@@ -533,9 +542,29 @@ class SpectrogramTab(QWidget):
         build_group = QGroupBox(self.tr("Build Fingerprint DB"))
         bl = QVBoxLayout(build_group)
 
+        self.fp_count_label = QLabel("")
+        self.fp_count_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.fp_count_label.setStyleSheet("font-size: 14px; font-weight: bold;")
+        self.fp_count_label.setVisible(False)
+        bl.addWidget(self.fp_count_label)
+
         self.fp_build_bar = QProgressBar()
         self.fp_build_bar.setVisible(False)
         bl.addWidget(self.fp_build_bar)
+
+        queue_label = QLabel(self.tr("Up next:"))
+        queue_label.setStyleSheet("font-size: 10px; color: #666;")
+        self.fp_queue_label_header = queue_label
+        queue_label.setVisible(False)
+        bl.addWidget(queue_label)
+
+        self.fp_queue_list = QListWidget()
+        self.fp_queue_list.setSelectionMode(QAbstractItemView.SelectionMode.NoSelection)
+        self.fp_queue_list.setFocusPolicy(Qt.FocusPolicy.NoFocus)
+        self.fp_queue_list.setMaximumHeight(15 * 18)  # ≤15 rows visible
+        self.fp_queue_list.setStyleSheet("font-size: 10px;")
+        self.fp_queue_list.setVisible(False)
+        bl.addWidget(self.fp_queue_list)
 
         self.fp_build_label = QLabel("")
         self.fp_build_label.setWordWrap(True)
@@ -1013,6 +1042,7 @@ class SpectrogramTab(QWidget):
         total    = r.get("total", 0)
         errs     = r.get("errors", [])
         stop_req = r.get("stop_requested", False)
+        preview  = r.get("queue_preview", [])
 
         if total > 0 and not getattr(self, "_fp_build_total_set", False):
             self.fp_build_bar.setRange(0, total)
@@ -1027,6 +1057,9 @@ class SpectrogramTab(QWidget):
             self.fp_build_btn.setEnabled(True)
             self.fp_build_stop_btn.setEnabled(False)
             self.fp_build_bar.setVisible(False)
+            self.fp_count_label.setVisible(False)
+            self.fp_queue_list.setVisible(False)
+            self.fp_queue_label_header.setVisible(False)
             label = self.tr("Stopped.") if stop_req else self.tr("Done.")
             self.fp_build_label.setText(
                 self.tr("{} {} fingerprinted, {} skipped, {} error(s).").format(
@@ -1035,10 +1068,28 @@ class SpectrogramTab(QWidget):
             )
             self._fp_refresh_stats()
         elif stop_req:
+            self.fp_count_label.setVisible(False)
+            self.fp_queue_list.setVisible(False)
+            self.fp_queue_label_header.setVisible(False)
             self.fp_build_label.setText(
                 self.tr("Stopping… [{}/{}]").format(done, total)
             )
         else:
+            # Update prominent count label
+            if total > 0:
+                self.fp_count_label.setText(
+                    self.tr("{} of {}").format(done, total)
+                )
+                self.fp_count_label.setVisible(True)
+
+            # Populate queue preview list
+            self.fp_queue_list.clear()
+            for name in preview:
+                self.fp_queue_list.addItem(name)
+            show_queue = bool(preview)
+            self.fp_queue_list.setVisible(show_queue)
+            self.fp_queue_label_header.setVisible(show_queue)
+
             skip_msg = f"  ({r['skipped']} skipped)" if r.get("skipped") else ""
             err_msg  = f"  {len(errs)} error(s)" if errs else ""
             self.fp_build_label.setText(

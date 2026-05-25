@@ -288,22 +288,33 @@ def build_fingerprint_db(
             if f.is_file() and f.suffix.lower() in AUDIO_EXTS:
                 all_files.append((f, lb_number))
 
+    def _preview(idx: int) -> list[str]:
+        """Return display names for the next 10 files after position idx."""
+        return [
+            f"{p.parent.name}/{p.name}"
+            for p, _ in all_files[idx: idx + 10]
+        ]
+
     _set(status="running", done=0, total=len(all_files),
-         skipped=0, errors=[], current="", stop_requested=False)
+         skipped=0, errors=[], current="", stop_requested=False,
+         queue_preview=_preview(0))
 
     if not all_files:
-        _set(status="done", current="", done=0)
+        _set(status="done", current="", done=0, queue_preview=[])
         return {"done": 0, "total": 0, "skipped": 0, "errors": []}
 
     done = 0
     skipped = 0
     errors: list[str] = []
 
-    for audio_path, lb_number in all_files:
+    for i, (audio_path, lb_number) in enumerate(all_files):
         if stop_event and stop_event.is_set():
             break
 
-        _set(current=f"{audio_path.parent.name} / {audio_path.name}")
+        _set(
+            current=f"{audio_path.parent.name} / {audio_path.name}",
+            queue_preview=_preview(i + 1),
+        )
         res = fingerprint_file(audio_path, lb_number, db_path=db_path, force=force)
 
         if res.get("error"):
@@ -315,7 +326,7 @@ def build_fingerprint_db(
         _set(done=done, skipped=skipped, errors=list(errors))
 
     _set(status="done", current="", done=done,
-         skipped=skipped, errors=list(errors))
+         skipped=skipped, errors=list(errors), queue_preview=[])
     return {"done": done, "total": len(all_files), "skipped": skipped, "errors": errors}
 
 

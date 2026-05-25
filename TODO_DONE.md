@@ -1,6 +1,19 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-092: Fingerprinting queue with progress visibility
+Priority: Medium
+Status: Done
+Added: 2026-05-24
+Closed: 2026-05-24
+Description: Implement a fingerprinting queue so users can see what is currently being
+  fingerprinted and how many files remain. Step A completed (Step B — persistent
+  fp_task_queue table — deferred as a separate follow-up TODO if needed).
+  Implemented: queue_preview in build_fingerprint_db() state, GET /api/fingerprint/build/queue
+  endpoint, bold "X of Y" count label, and "Up next" QListWidget in the Fingerprint DB tab.
+
+---
+
 TODO-096: Play selected My Collection entry in VLC
 Priority: Low
 Status: Done

@@ -38,19 +38,6 @@ Description: Add an uploader that can publish items (releases, checksums, metada
 
 ---
 
-TODO-092: Fingerprinting queue with progress visibility
-Priority: Medium
-Status: Open
-Added: 2026-05-24
-Description: Implement a fingerprinting queue so users can see what is currently being
-  fingerprinted and how many files remain. Goals:
-    • Expose a queue (ordered list) of files pending fingerprinting.
-    • Show current file being processed and position/total count (e.g. "3 of 47").
-    • Surface this in the GUI so progress is visible without digging into logs.
-    • Consider persisting the queue to survive restarts (db_queue.py already exists as a stub).
-
----
-
 TODO-091: Bundle Windows shntool binary from tools/ into the project distribution
 Priority: Medium
 Status: Open
