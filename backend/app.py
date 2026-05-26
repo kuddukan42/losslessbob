@@ -3140,6 +3140,37 @@ def create_app() -> Flask:
         _geocoder.place_manual(location, float(lat), float(lon), note, lb_number)
         return jsonify({"ok": True})
 
+    @app.route("/api/geocode/purge", methods=["POST"])
+    def api_geocode_purge():
+        """Purge cached geocoding data from location_geocoded.
+
+        Requires curator mode. Body: {scope: "failed"|"all"}.
+        - "failed": removes rows where source='failed' OR lat IS NULL.
+        - "all": removes every row (manual overrides included).
+
+        Returns:
+            {ok: true, deleted: int} or 400/403 on error.
+        """
+        if not database.get_meta("is_curator"):
+            return jsonify({"error": "curator_required"}), 403
+        body = request.get_json(silent=True) or {}
+        scope = body.get("scope", "failed")
+        if scope not in ("failed", "all"):
+            return jsonify({"error": "scope must be 'failed' or 'all'"}), 400
+        try:
+            conn = database.get_connection()
+            if scope == "all":
+                cur = conn.execute("DELETE FROM location_geocoded")
+            else:
+                cur = conn.execute(
+                    "DELETE FROM location_geocoded WHERE source = 'failed' OR lat IS NULL"
+                )
+            deleted = cur.rowcount
+            conn.commit()
+            return jsonify({"ok": True, "deleted": deleted})
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
     @app.route("/api/geocode/locations")
     def api_geocode_locations():
         """Return rows from location_geocoded for the curator geocode management UI.

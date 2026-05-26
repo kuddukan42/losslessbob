@@ -649,6 +649,7 @@ Indexes: `idx_flat_changelog_release(release_id)`, `idx_flat_changelog_lb(lb_num
 | GET | `/api/geocode/status` | Poll batch geocode state: `{running, done, total, errors, last_location}`. |
 | POST | `/api/geocode/location` | **Curator-only.** Manually place or correct a coordinate. Body: `{location, lat, lon}`. Sets `manual=1` so the batch geocoder never overwrites it. |
 | GET | `/api/geocode/locations` | **Curator-only.** List all rows in `location_geocoded` with geocode status. Returns `[{location, lat, lon, display_name, geocoded_at, manual}]`. |
+| POST | `/api/geocode/purge` | **Curator-only.** Purge cached geocoding rows. Body: `{scope: "failed"\|"all"}`. `"failed"` removes source='failed'/lat IS NULL rows; `"all"` removes entire table. Returns `{ok, deleted}`. |
 
 ### Admin
 | Method | Route | Description |
