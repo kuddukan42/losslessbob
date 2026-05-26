@@ -9,8 +9,10 @@ import io
 import requests
 from pathlib import Path
 
+import gui.styles as styles
+
 from PyQt6.QtCore import Qt, QThread, pyqtSignal, QTimer, QEvent, QPointF
-from PyQt6.QtGui import QPixmap, QColor, QAction, QWheelEvent
+from PyQt6.QtGui import QPixmap, QAction, QWheelEvent
 from PyQt6.QtWidgets import (
     QWidget, QHBoxLayout, QVBoxLayout, QSplitter,
     QListWidget, QListWidgetItem, QAbstractItemView,
@@ -299,8 +301,8 @@ class _FileDrop(QLabel):
         self.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.setText("Drop an audio file here\nor click Browse…")
         self.setStyleSheet(
-            "border: 2px dashed #888; border-radius: 6px; "
-            "padding: 16px; color: #666;"
+            f"border: 2px dashed {styles.FG_MUTED.name()}; border-radius: 6px; "
+            f"padding: 16px; color: {styles.FG_MUTED.name()};"
         )
         self.setMinimumHeight(70)
 
@@ -485,7 +487,7 @@ class SpectrogramTab(QWidget):
             "Tip: Ctrl+scroll to zoom · Click-drag to pan when zoomed · "
             "Double-click image to reset fit · Pink/salmon rows = PNG not yet generated"
         ))
-        self.hint_label.setStyleSheet("font-size: 10px; color: #666;")
+        self.hint_label.setStyleSheet(f"font-size: 10px; color: {styles.FG_MUTED.name()};")
         rl.addWidget(self.hint_label)
 
         self.viewer = _ImageViewer()
@@ -553,7 +555,7 @@ class SpectrogramTab(QWidget):
         bl.addWidget(self.fp_build_bar)
 
         queue_label = QLabel(self.tr("Up next:"))
-        queue_label.setStyleSheet("font-size: 10px; color: #666;")
+        queue_label.setStyleSheet(f"font-size: 10px; color: {styles.FG_MUTED.name()};")
         self.fp_queue_label_header = queue_label
         queue_label.setVisible(False)
         bl.addWidget(queue_label)
@@ -633,7 +635,7 @@ class SpectrogramTab(QWidget):
             "acoustic content to be the same performance. Slow on large collections."
         ))
         desc.setWordWrap(True)
-        desc.setStyleSheet("font-size: 10px; color: #555;")
+        desc.setStyleSheet(f"font-size: 10px; color: {styles.FG_MUTED.name()};")
         vl.addWidget(desc)
 
         ctl_row = QHBoxLayout()
@@ -774,7 +776,7 @@ class SpectrogramTab(QWidget):
             item = QListWidgetItem(e["audio_name"])
             item.setData(Qt.ItemDataRole.UserRole, e)
             if not e["has_png"]:
-                item.setBackground(QColor("#ffe4e1"))
+                item.setBackground(styles.ROW_FAIL)
                 item.setToolTip(self.tr("No spectrogram yet — click Generate to create"))
             else:
                 item.setToolTip(e["png_path"])

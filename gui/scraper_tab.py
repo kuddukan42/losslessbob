@@ -25,6 +25,7 @@ from PyQt6.QtWidgets import (
 from PyQt6.QtGui import QColor
 
 from backend.paths import SITE_DETAIL_DIR as _SITE_DETAIL_DIR
+import gui.styles as styles
 
 
 # ── Background threads ─────────────────────────────────────────────────────────
@@ -241,7 +242,7 @@ class ScraperTab(QWidget):
 
         # Count summary label
         self._crawler_counts_label = QLabel("")
-        self._crawler_counts_label.setStyleSheet("color: #555; font-size: 11px;")
+        self._crawler_counts_label.setStyleSheet(f"color: {styles.FG_MUTED.name()}; font-size: 11px;")
         layout.addWidget(self._crawler_counts_label)
 
         return group
@@ -309,7 +310,7 @@ class ScraperTab(QWidget):
 
         filter_row.addStretch()
         self._inv_count_label = QLabel("")
-        self._inv_count_label.setStyleSheet("color: #555; font-size: 11px;")
+        self._inv_count_label.setStyleSheet(f"color: {styles.FG_MUTED.name()}; font-size: 11px;")
         filter_row.addWidget(self._inv_count_label)
         layout.addLayout(filter_row)
 
@@ -373,7 +374,7 @@ class ScraperTab(QWidget):
         self.local_pages_cb.stateChanged.connect(self._save_entry_settings)
         local_row.addWidget(self.local_pages_cb)
         self._pages_count_label = QLabel("")
-        self._pages_count_label.setStyleSheet("color: gray; font-size: 11px;")
+        self._pages_count_label.setStyleSheet(f"color: {styles.FG_MUTED.name()}; font-size: 11px;")
         local_row.addWidget(self._pages_count_label)
         local_row.addStretch()
 
@@ -741,9 +742,9 @@ class ScraperTab(QWidget):
             tbl = self._sessions_table
             tbl.setRowCount(0)
             _STATUS_COLORS = {
-                "done":    QColor("#d4edda"),
-                "stopped": QColor("#fff3cd"),
-                "error":   QColor("#f8d7da"),
+                "done":    styles.STATUS_OK,
+                "stopped": styles.STATUS_WARN,
+                "error":   styles.STATUS_ERROR,
             }
             for r in rows:
                 row = tbl.rowCount()
@@ -807,11 +808,11 @@ class ScraperTab(QWidget):
         tbl = self._inv_table
         tbl.setRowCount(0)
         _STATUS_COLORS = {
-            "downloaded": QColor("#d4edda"),
-            "pending":    QColor("#fff3cd"),
-            "failed":     QColor("#f8d7da"),
-            "not_found":  QColor("#e2e3e5"),
-            "skipped":    QColor("#e2e3e5"),
+            "downloaded": styles.STATUS_OK,
+            "pending":    styles.STATUS_WARN,
+            "failed":     styles.STATUS_ERROR,
+            "not_found":  styles.STATUS_NEUTRAL,
+            "skipped":    styles.STATUS_NEUTRAL,
         }
         for r in rows:
             row = tbl.rowCount()
@@ -1158,9 +1159,9 @@ class ScraperTab(QWidget):
             tbl = self._bl_history_table
             tbl.setRowCount(0)
             _STATUS_COLORS = {
-                "success":   QColor("#d4edda"),
-                "no_change": QColor("#e2e3e5"),
-                "failed":    QColor("#f8d7da"),
+                "success":   styles.STATUS_OK,
+                "no_change": styles.STATUS_NEUTRAL,
+                "failed":    styles.STATUS_ERROR,
             }
             for r in rows:
                 row = tbl.rowCount()

@@ -610,7 +610,7 @@ class LookupTab(QWidget):
             self.listbox.addItem(item)
         for folder in sorted(self._no_checksum_folders):
             item = QListWidgetItem(f"⚠ {folder}  {self.tr('[no checksum files]')}")
-            item.setForeground(QColor("#cc4400"))
+            item.setForeground(styles.FG_WARNING)
             item.setData(Qt.ItemDataRole.UserRole, folder)
             item.setData(Qt.ItemDataRole.UserRole + 1, "no_checksums")
             self.listbox.addItem(item)
@@ -1223,8 +1223,8 @@ class LookupTab(QWidget):
 
         # LB-status color overrides: Private → light blue, Missing → light gray
         _LB_STATUS_COLOR = {
-            "private": QColor("#B3E5FC"),
-            "missing": QColor("#E0E0E0"),
+            "private": styles.ROW_PRIVATE,
+            "missing": styles.ROW_GREY,
         }
 
         # Build summary rows and colors
@@ -1288,8 +1288,8 @@ class LookupTab(QWidget):
 
         # No-checksum folders (listbox source or scan-tree)
         if source in ("listbox", "scan-tree"):
-            _bg = QColor("#fff0e0")
-            _fg = QColor("#cc4400")
+            _bg = styles.ROW_MISSING_FILE
+            _fg = styles.FG_WARNING
             for folder in sorted(self._no_checksum_folders):
                 row = [
                     Path(folder).name, "", "0", "", "", "", "", "",
