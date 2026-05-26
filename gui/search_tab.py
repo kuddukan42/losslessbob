@@ -18,12 +18,6 @@ _SEARCH_COL_DEFAULTS = [80, 80, 100, 200, 60, 600, 60, 60]
 
 HEADERS = ["LB Number", "Status", "Date", "Location", "Rating", "Description", "Xref", "Owned"]
 
-# Background colours for lb_master status — single source of truth for this tab
-_BG_STATUS = {
-    "public":  None,           # default background
-    "private": styles.ROW_PRIVATE.name(),  # light blue
-    "missing": styles.ROW_GREY.name(),     # light gray
-}
 
 
 class SearchModel(QAbstractTableModel):
@@ -67,10 +61,9 @@ class SearchModel(QAbstractTableModel):
                 return "✓" if row.get("lb_number") in self._owned else ""
             return ""
         if role == Qt.ItemDataRole.BackgroundRole:
-            from PyQt6.QtGui import QColor
-            hex_color = _BG_STATUS.get(lb_status)
-            if hex_color:
-                return QColor(hex_color)
+            _lb_color = {"private": styles.ROW_PRIVATE, "missing": styles.ROW_GREY}.get(lb_status)
+            if _lb_color:
+                return _lb_color
             if row.get("lb_number") in self._owned:
                 return styles.ROW_OWNED
         if role == Qt.ItemDataRole.TextAlignmentRole and col in (_STATUS_COL, _XREF_COL, _OWNED_COL):

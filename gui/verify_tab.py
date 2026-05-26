@@ -14,13 +14,6 @@ from gui.widgets.sort_keys import SortableTableItem, sort_key_for
 
 AUDIO_EXTS = {'.flac', '.shn', '.ape', '.wav'}
 
-_C_PASS         = styles.ROW_OWNED
-_C_FAIL         = styles.ROW_FAIL
-_C_MISSING      = styles.ROW_MISSING_FILE   # orange — files not on disk
-_C_INCOMPLETE   = styles.ROW_DUPLICATE      # yellow — missing checksum type
-_C_EXTRA        = styles.ROW_DUPLICATE      # yellow — on disk, no checksum
-_C_GREY         = styles.ROW_GREY           # grey   — N/A
-_C_NO_CHECKSUMS = styles.ROW_DUPLICATE      # yellow — audio present but no checksum files
 
 SUMMARY_HEADERS = [
     "Folder", "Mode", "FFP", "MD5", "Shntool",
@@ -539,14 +532,14 @@ class VerifyTab(QWidget):
     def _summary_row_color(result):
         status = result.get("status", "")
         if status == "no_checksums":
-            return _C_NO_CHECKSUMS
+            return styles.ROW_DUPLICATE
         if status == "pass":
-            return _C_PASS
+            return styles.ROW_OWNED
         if status in ("incomplete", "shntool_missing"):
-            return _C_INCOMPLETE
+            return styles.ROW_DUPLICATE
         if result.get("missing", 0) > 0 and result.get("mismatch", 0) == 0:
-            return _C_MISSING
-        return _C_FAIL
+            return styles.ROW_MISSING_FILE
+        return styles.ROW_FAIL
 
     def _populate_summary(self, results):
         self.summary_table.setSortingEnabled(False)
@@ -642,15 +635,15 @@ class VerifyTab(QWidget):
                 continue
 
             if overall == "pass":
-                color = _C_PASS
+                color = styles.ROW_OWNED
             elif overall == "fail":
-                color = _C_FAIL
+                color = styles.ROW_FAIL
             elif overall == "missing":
-                color = _C_MISSING
+                color = styles.ROW_MISSING_FILE
             elif overall == "extra":
-                color = _C_EXTRA
+                color = styles.ROW_DUPLICATE
             else:
-                color = _C_GREY
+                color = styles.ROW_GREY
 
             ffp_st = file_info.get("ffp_status", "na")
             shn_st = file_info.get("shntool_status", "na")
