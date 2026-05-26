@@ -1043,6 +1043,9 @@ def create_app() -> Flask:
     def scrape_start() -> Response:
         """Start a background scrape over a range of LB numbers.
 
+        Excludes LBs whose lb_master.lb_status is 'private' — those are handled
+        exclusively by /api/scrape/private_rescrape.
+
         Body: {start_lb?, end_lb?, force?}
         Returns:
             JSON {ok, total} where total is the number of LBs queued.
@@ -1057,12 +1060,17 @@ def create_app() -> Flask:
             use_local_pages = database.get_meta("use_local_pages") == "1"
 
             with database.get_connection() as conn:
-                q = "SELECT DISTINCT lb_number FROM checksums WHERE lb_number >= ?"
-                params = [start_lb]
+                q = (
+                    "SELECT DISTINCT c.lb_number FROM checksums c "
+                    "LEFT JOIN lb_master m ON m.lb_number = c.lb_number "
+                    "WHERE c.lb_number >= ? "
+                    "AND (m.lb_status IS NULL OR m.lb_status != 'private')"
+                )
+                params: list = [start_lb]
                 if end_lb:
-                    q += " AND lb_number <= ?"
+                    q += " AND c.lb_number <= ?"
                     params.append(end_lb)
-                q += " ORDER BY lb_number"
+                q += " ORDER BY c.lb_number"
                 lb_numbers = [r[0] for r in conn.execute(q, params).fetchall()]
 
             # Always fill every sequential gap so no LB number is left out of
@@ -2482,6 +2490,187 @@ def create_app() -> Flask:
         except Exception as exc:
             return jsonify({"error": str(exc)}), 500
 
+    # ── lb_missing management ─────────────────────────────────────────────────
+
+    @app.route("/api/lb_missing", methods=["GET"])
+    def lb_missing_list() -> Response:
+        """List all entries in lb_missing ordered by lb_number."""
+        try:
+            return jsonify(database.get_lb_missing_list())
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/lb_missing", methods=["POST"])
+    def lb_missing_add() -> Response:
+        """Curator-only. Add an lb_number to lb_missing.
+
+        Body: {lb_number, confirmed_date?, notes?}
+        """
+        try:
+            if not database.is_curator():
+                return jsonify({"error": "curator_required"}), 403
+            body = request.get_json(force=True) or {}
+            lb = body.get("lb_number")
+            if not isinstance(lb, int) or lb < 1:
+                return jsonify({"error": "lb_number must be a positive integer"}), 400
+            database.add_lb_missing(
+                lb,
+                confirmed_date=body.get("confirmed_date", ""),
+                notes=body.get("notes", ""),
+            )
+            return jsonify({"ok": True, "lb_number": lb})
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/lb_missing/<int:lb>", methods=["DELETE"])
+    def lb_missing_remove(lb: int) -> Response:
+        """Curator-only. Remove an lb_number from lb_missing."""
+        try:
+            if not database.is_curator():
+                return jsonify({"error": "curator_required"}), 403
+            database.remove_lb_missing(lb)
+            return jsonify({"ok": True, "lb_number": lb})
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    # ── Dylan Performances API ─────────────────────────────────────────────────
+
+    @app.route("/api/performances", methods=["GET"])
+    def performances_list() -> Response:
+        """Return dylan_performances rows with optional filters.
+
+        Query params:
+            date (str): ISO date (YYYY-MM-DD) — returns rows matching that date.
+            lb (int): LB number — looks up the entry's date then matches performances.
+            category (str): Filter by category (HOME, MCONCERT, RADIO, etc.).
+            limit (int): Maximum rows to return (default 200, max 2000).
+            offset (int): Pagination offset (default 0).
+
+        Returns:
+            JSON list of performance dicts. When ?lb= is used and no match is
+            found returns an empty list (not 404), since not every concert is in
+            the performances dataset.
+        """
+        try:
+            conn = database.get_connection()
+            date_q = request.args.get("date", "").strip()
+            lb_q = request.args.get("lb", "").strip()
+            cat_q = request.args.get("category", "").strip()
+            limit = min(int(request.args.get("limit", 200)), 2000)
+            offset = int(request.args.get("offset", 0))
+
+            if lb_q:
+                # Resolve LB → entry date → ISO date → performances lookup
+                lb_num = int(lb_q)
+                entry = conn.execute(
+                    "SELECT date_str FROM entries WHERE lb_number=?", (lb_num,)
+                ).fetchone()
+                if not entry or not entry["date_str"]:
+                    return jsonify([])
+                from backend.geocoder import _entry_date_to_iso as _to_iso
+                iso_date = _to_iso(entry["date_str"])
+                if not iso_date:
+                    return jsonify([])
+                date_q = iso_date
+
+            clauses: list[str] = []
+            params: list = []
+            if date_q:
+                clauses.append("date_str = ?")
+                params.append(date_q)
+            if cat_q:
+                clauses.append("category = ?")
+                params.append(cat_q)
+
+            where = ("WHERE " + " AND ".join(clauses)) if clauses else ""
+            rows = conn.execute(
+                f"SELECT event_id, date_str, category, city, state, country, venue "
+                f"FROM dylan_performances {where} "
+                f"ORDER BY date_str, event_id LIMIT ? OFFSET ?",
+                params + [limit, offset],
+            ).fetchall()
+            return jsonify([dict(r) for r in rows])
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    # ── lb_problems API ────────────────────────────────────────────────────────
+
+    @app.route("/api/lb_problems", methods=["GET"])
+    def lb_problems_list() -> Response:
+        """List lb_problems rows, optionally filtered to a single LB.
+
+        Query param: lb (int) — when supplied, returns only that LB's rows.
+
+        Returns:
+            JSON list of {id, lb_number, notes, added}.
+        """
+        try:
+            lb_q = request.args.get("lb", "").strip()
+            lb_num = int(lb_q) if lb_q else None
+            return jsonify(database.get_lb_problems(lb_num))
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/lb_problems", methods=["POST"])
+    def lb_problems_add() -> Response:
+        """Curator-only. Add a problem note for an LB entry.
+
+        Body: {lb_number (int), notes (str), added? (YYYY-MM-DD str)}
+
+        Returns:
+            JSON {ok, id, lb_number}.
+        """
+        try:
+            if not database.is_curator():
+                return jsonify({"error": "curator_required"}), 403
+            body = request.get_json(force=True) or {}
+            lb = body.get("lb_number")
+            notes = (body.get("notes") or "").strip()
+            if not isinstance(lb, int) or lb < 1:
+                return jsonify({"error": "lb_number must be a positive integer"}), 400
+            if not notes:
+                return jsonify({"error": "notes must not be empty"}), 400
+            new_id = database.add_lb_problem(lb, notes, body.get("added"))
+            return jsonify({"ok": True, "id": new_id, "lb_number": lb})
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/lb_problems/<int:problem_id>", methods=["PUT"])
+    def lb_problems_update(problem_id: int) -> Response:
+        """Update the notes on an lb_problems row.
+
+        Body: {notes (str)}
+
+        Returns:
+            JSON {ok, id}.
+        """
+        try:
+            if not database.is_curator():
+                return jsonify({"error": "curator_required"}), 403
+            body = request.get_json(force=True) or {}
+            notes = (body.get("notes") or "").strip()
+            if not notes:
+                return jsonify({"error": "notes must not be empty"}), 400
+            database.update_lb_problem(problem_id, notes)
+            return jsonify({"ok": True, "id": problem_id})
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/lb_problems/<int:problem_id>", methods=["DELETE"])
+    def lb_problems_delete(problem_id: int) -> Response:
+        """Curator-only. Delete an lb_problems row by id.
+
+        Returns:
+            JSON {ok, id}.
+        """
+        try:
+            if not database.is_curator():
+                return jsonify({"error": "curator_required"}), 403
+            database.delete_lb_problem(problem_id)
+            return jsonify({"ok": True, "id": problem_id})
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
     @app.route("/api/folder_naming/standard/<int:lb>", methods=["GET"])
     def folder_naming_standard(lb: int) -> Response:
         """Return the canonical folder name for an LB entry.
@@ -2943,11 +3132,12 @@ def create_app() -> Flask:
         lat = body.get("lat")
         lon = body.get("lon")
         note = body.get("note", "")
+        lb_number = body.get("lb_number") or None
 
         if not location or lat is None or lon is None:
             return jsonify({"error": "location, lat, lon required"}), 400
 
-        _geocoder.place_manual(location, float(lat), float(lon), note)
+        _geocoder.place_manual(location, float(lat), float(lon), note, lb_number)
         return jsonify({"ok": True})
 
     @app.route("/api/geocode/locations")
@@ -2964,15 +3154,22 @@ def create_app() -> Flask:
         try:
             conn = database.get_connection()
             where_map = {
-                "failed":         "WHERE source = 'failed'",
-                "low_confidence": "WHERE confidence = 'low'",
-                "manual":         "WHERE manual_override = 1",
+                "failed":         "WHERE lg.source = 'failed'",
+                "low_confidence": "WHERE lg.confidence = 'low'",
+                "manual":         "WHERE lg.manual_override = 1",
                 "all":            "",
             }
             where = where_map.get(filter_type, "")
-            rows = conn.execute(
-                f"SELECT * FROM location_geocoded {where} ORDER BY location_text"
-            ).fetchall()
+            rows = conn.execute(f"""
+                SELECT lg.*,
+                       lg.manual_override AS is_manual,
+                       GROUP_CONCAT(e.lb_number, ', ') AS lb_numbers
+                FROM location_geocoded lg
+                LEFT JOIN entries e ON e.location = lg.location_text
+                {where}
+                GROUP BY lg.location_text
+                ORDER BY lg.location_text
+            """).fetchall()
             return jsonify({"locations": [dict(r) for r in rows]})
         except Exception as exc:
             return jsonify({"error": str(exc)}), 500

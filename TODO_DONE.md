@@ -1,6 +1,98 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-099: Add lb_number column to location_overrides table
+Priority: Low
+Status: Done
+Added: 2026-05-24
+Closed: 2026-05-26
+Description: Added lb_number TEXT column to location_geocoded (the "location_overrides"
+  table). Migration added to init_db(). place_manual() now accepts lb_number param.
+  GET /api/geocode/locations JOINs entries to return lb_numbers (all LBs using each
+  location string). GUI Location Overrides table now shows LB# column.
+
+---
+
+
+TODO-095: Detect webpage exists but no checksum in DB
+Priority: Medium
+Status: Done
+Added: 2026-05-24
+Closed: 2026-05-26
+Description: Added "Public / no checksums" filter to the Search tab status combo.
+  Filters to lb_status='public' AND public_no_checksums=1 — entries with a known
+  webpage but zero checksum records. All search_entries() and get_entries_by_lb_list()
+  queries now return public_no_checksums in every result row.
+
+TODO-090: Create lb_problems master data table for flagging problematic LB entries
+Priority: Medium
+Status: Done
+Added: 2026-05-24
+Closed: 2026-05-26
+Description: New MASTER table lb_problems (id, lb_number FK→lb_master, notes, added).
+  CREATE TABLE IF NOT EXISTS with index; added to MASTER_TABLES. 4 DB functions:
+  get_lb_problems, add_lb_problem, update_lb_problem, delete_lb_problem, get_lb_problem_count.
+  CRUD API: GET/POST /api/lb_problems + PUT/DELETE /api/lb_problems/<id> (curator-only writes).
+  Management via DB Editor (automatic). GUI indicator deferred.
+
+TODO-086: Add Dylan performance table to lb_master data
+Priority: Medium
+Status: Done
+Added: 2026-05-23
+Closed: 2026-05-26
+Description: dylan_performances table already existed (ODS import). Promoted from unclassified
+  to MASTER_TABLES so it ships with master data exports. MASTER_SCHEMA_VERSION bumped 2→3.
+  Added GET /api/performances with ?lb= (auto-resolves entry date_str → ISO via
+  geocoder._entry_date_to_iso), ?date=, ?category= filters and pagination.
+
+TODO-100: Fix "scrape missing" to only pull missing-status entries, not private LB pages
+Priority: Medium
+Status: Done
+Added: 2026-05-25
+Closed: 2026-05-26
+Description: The "scrape missing entries" button was queuing private LBs in addition to
+  missing-status entries. Fixed by adding a LEFT JOIN to lb_master in the /api/scrape/start
+  route and excluding rows where lb_status = 'private'. Private LBs are now handled solely
+  by /api/scrape/private_rescrape ("Re-scrape Private LBs" button).
+
+TODO-102: Add lb_missing table for permanently confirmed non-existent LB entries
+Priority: Medium
+Status: Done
+Added: 2026-05-25
+Closed: 2026-05-26
+Description: lb_missing table (INTEGER PK, confirmed_date, notes) added to schema as a
+  MASTER_TABLE. Seeded with 36 confirmed-not-existing LB numbers on init_db(). scrape_entry()
+  returns {skipped, reason='nonexistent'} for any entry in lb_missing. reconcile_lb_status and
+  batch_reconcile_lb_status set lb_status='nonexistent' (new 4th valid status). CRUD via
+  is_lb_missing / add_lb_missing / remove_lb_missing / get_lb_missing_list. API:
+  GET/POST /api/lb_missing, DELETE /api/lb_missing/<lb>. DB editor exposes the table.
+  8 regression tests added to TestLbMissing.
+
+TODO-098: Add public-but-no-checksums status marker column to lb_master
+Priority: Medium
+Status: Done
+Added: 2026-05-24
+Closed: 2026-05-26
+Description: public_no_checksums INTEGER NOT NULL DEFAULT 0 added to lb_master via table
+  recreation migration (also adds 'nonexistent' to CHECK constraint). Partial index
+  idx_lb_master_public_no_chk. Flag is set to 1 when lb_status='public' AND has_checksums=0
+  in all reconcile paths (reconcile_lb_status, batch_reconcile_lb_status, migrate_lb_master).
+  get_lb_master_stats returns public_no_checksums count. GUI visual marker deferred.
+  6 regression tests added to TestPublicNoChecksums_Flag.
+
+TODO-087: Rework geocoding to use Dylan performances table for lb_master locations
+Priority: Medium
+Status: Done
+Added: 2026-05-23
+Closed: 2026-05-24
+Description: Augmented geocoding to check dylan_performances first (via date match) and
+  build a structured "venue, city, state, country" query for Nominatim. Falls back to the
+  raw entries.location text when no performance record exists. Results stored with
+  source='performances' for provenance. Date conversion (M/D/YY → YYYY-MM-DD) handled
+  by _entry_date_to_iso(). Public accessor get_performance_by_date() added to db.py.
+
+---
+
 TODO-092: Fingerprinting queue with progress visibility
 Priority: Medium
 Status: Done

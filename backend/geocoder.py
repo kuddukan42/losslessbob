@@ -3,6 +3,12 @@
 Provides single-location lookup, manual pin placement, and a batch runner
 that reads un-geocoded entries.location values from the database and writes
 results back via UPSERT.  Respects the Nominatim ToS 1-second rate limit.
+
+Performance-table integration: before calling Nominatim, run_batch() checks
+dylan_performances for a structured venue/city/state/country string that
+matches any entry associated with the location being geocoded.  When found,
+that structured string is used as the Nominatim query (better accuracy than
+the raw LB metadata location) and the result is stored with source='performances'.
 """
 
 import json
@@ -43,6 +49,77 @@ _lock = threading.Lock()
 
 _NOMINATIM_URL = "https://nominatim.openstreetmap.org/search"
 _USER_AGENT = "LosslessBob-Geocoder/1.0 (tjjenkin42@gmail.com)"
+
+
+# ---------------------------------------------------------------------------
+# Performances-table helpers
+# ---------------------------------------------------------------------------
+
+def _entry_date_to_iso(date_str: str) -> str | None:
+    """Convert an entries.date_str (M/D/YY) to YYYY-MM-DD for performances lookup.
+
+    Returns None for partial dates containing 'xx' or for unparseable strings,
+    since those can never match an exact performance record.
+
+    Args:
+        date_str: LosslessBob date string, e.g. ``'7/28/00'`` or ``'5/xx/87'``.
+
+    Returns:
+        ISO date string ``'YYYY-MM-DD'``, or ``None`` if conversion fails.
+    """
+    if not date_str or "xx" in date_str.lower():
+        return None
+    parts = date_str.split("/")
+    if len(parts) != 3:
+        return None
+    try:
+        month, day, year = int(parts[0]), int(parts[1]), int(parts[2])
+        if year < 100:
+            year = 1900 + year if year >= 49 else 2000 + year
+        return f"{year:04d}-{month:02d}-{day:02d}"
+    except ValueError:
+        return None
+
+
+def _get_performance_location_string(location_text: str, conn) -> str | None:
+    """Return a structured geocoding string from dylan_performances for this location.
+
+    Scans all distinct date_str values in entries that share this location, converts
+    each to ISO format, and checks dylan_performances for a match.  On the first hit,
+    builds a comma-joined ``"venue, city, state, country"`` string (blank / ``"?"``
+    parts dropped) and returns it.  Returns ``None`` if no performance record matches.
+
+    Args:
+        location_text: Raw location string from ``entries.location``.
+        conn: SQLite connection (read-only usage).
+
+    Returns:
+        Structured geocoding string (e.g. ``"Massey Hall, Toronto, ON, Canada"``),
+        or ``None`` if no matching performance exists.
+    """
+    date_rows = conn.execute(
+        "SELECT DISTINCT date_str FROM entries WHERE location = ? AND date_str != ''",
+        (location_text,),
+    ).fetchall()
+
+    for row in date_rows:
+        iso = _entry_date_to_iso(row["date_str"])
+        if iso is None:
+            continue
+        perf = conn.execute(
+            "SELECT venue, city, state, country FROM dylan_performances WHERE date_str = ?",
+            (iso,),
+        ).fetchone()
+        if perf is None:
+            continue
+        parts = [
+            p for p in (perf["venue"], perf["city"], perf["state"], perf["country"])
+            if p and p.strip() and p.strip() != "?"
+        ]
+        if parts:
+            return ", ".join(parts)
+
+    return None
 
 
 # ---------------------------------------------------------------------------
@@ -133,7 +210,13 @@ def geocode_one(location_text: str) -> dict:
     }
 
 
-def place_manual(location_text: str, lat: float, lon: float, note: str = "") -> None:
+def place_manual(
+    location_text: str,
+    lat: float,
+    lon: float,
+    note: str = "",
+    lb_number: str | None = None,
+) -> None:
     """Insert or replace a geocoding result with a user-supplied coordinate.
 
     Manual entries are never overwritten by batch geocoding because
@@ -144,16 +227,17 @@ def place_manual(location_text: str, lat: float, lon: float, note: str = "") -> 
         lat: WGS-84 latitude.
         lon: WGS-84 longitude.
         note: Optional freeform note (e.g. reason for the override).
+        lb_number: Optional LB number that prompted this override, for traceability.
     """
     from backend.db_queue import get_write_queue
 
-    _loc, _lat, _lon, _note = location_text, lat, lon, note
+    _loc, _lat, _lon, _note, _lb = location_text, lat, lon, note, lb_number
     get_write_queue().execute(
         lambda c: c.execute(
             """INSERT INTO location_geocoded
                    (location_text, lat, lon, source, confidence, manual_override, note,
-                    geocoded_at)
-               VALUES (?, ?, ?, 'manual', 'high', 1, ?, CURRENT_TIMESTAMP)
+                    lb_number, geocoded_at)
+               VALUES (?, ?, ?, 'manual', 'high', 1, ?, ?, CURRENT_TIMESTAMP)
                ON CONFLICT(location_text) DO UPDATE SET
                    lat=excluded.lat,
                    lon=excluded.lon,
@@ -161,8 +245,9 @@ def place_manual(location_text: str, lat: float, lon: float, note: str = "") -> 
                    confidence='high',
                    manual_override=1,
                    note=excluded.note,
+                   lb_number=COALESCE(excluded.lb_number, location_geocoded.lb_number),
                    geocoded_at=CURRENT_TIMESTAMP""",
-            (_loc, _lat, _lon, _note),
+            (_loc, _lat, _lon, _note, _lb),
         )
     )
     logger.info("Manual geocode saved: %r → (%.4f, %.4f)", location_text, lat, lon)
@@ -179,6 +264,12 @@ def run_batch(
     Reads distinct location strings from ``entries`` that have no row in
     ``location_geocoded`` (or whose ``source='failed'`` when ``retry_failed``
     is True).  Rows with ``manual_override=1`` are always skipped.
+
+    For each location, the dylan_performances table is checked first: if any
+    entry with that location has a matching performance record (by ISO date),
+    the structured ``venue, city, state, country`` string is used as the
+    Nominatim query and the result is stored with ``source='performances'``.
+    Otherwise the raw ``entries.location`` text is geocoded as before.
 
     Sleeps 1.1 seconds between each Nominatim request to comply with the
     Nominatim Usage Policy (max 1 request/second).
@@ -248,15 +339,27 @@ def run_batch(
                 _progress["current"] = location_text
                 _progress["stage"] = "querying"
 
+            # Check dylan_performances for a structured location string first.
+            # If a matching performance exists, geocode that structured string
+            # (venue, city, state, country) rather than the raw LB metadata text.
+            perf_query = _get_performance_location_string(location_text, conn)
+            if perf_query:
+                geocode_input = perf_query
+                logger.debug(
+                    "Performances hit for %r → geocoding %r", location_text, perf_query
+                )
+            else:
+                geocode_input = location_text
+
             for attempt in range(_MAX_429_RETRIES + 1):
                 try:
-                    result = geocode_one(location_text)
+                    result = geocode_one(geocode_input)
                     break
                 except _RateLimitError:
                     if attempt < _MAX_429_RETRIES:
                         logger.warning(
                             "Rate-limited on %r; sleeping %ds (retry %d/%d)",
-                            location_text, _RATE_LIMIT_SLEEP,
+                            geocode_input, _RATE_LIMIT_SLEEP,
                             attempt + 1, _MAX_429_RETRIES,
                         )
                         with _lock:
@@ -267,10 +370,10 @@ def run_batch(
                     else:
                         logger.error(
                             "Still rate-limited after %d retries on %r; marking failed",
-                            _MAX_429_RETRIES, location_text,
+                            _MAX_429_RETRIES, geocode_input,
                         )
                         result = {
-                            "location_text": location_text,
+                            "location_text": geocode_input,
                             "lat": None,
                             "lon": None,
                             "display_name": None,
@@ -279,10 +382,22 @@ def run_batch(
                             "note": f"HTTP 429: rate-limited after {_MAX_429_RETRIES} retries",
                         }
 
+            # When performances table supplied the query, override the source flag
+            # and record the structured query in note for provenance.
+            # Also promote 'low' confidence to 'medium': Nominatim importance scores
+            # penalise specific venues even when the structured query is accurate.
+            if perf_query and result.get("source") == "nominatim":
+                result["source"] = "performances"
+                result["note"] = f"performances: {perf_query}"
+                if result.get("confidence") == "low":
+                    result["confidence"] = "medium"
+
             with _lock:
                 _progress["stage"] = "saving"
 
             if not dry_run:
+                # Always key by the raw entries.location so the map JOIN still works.
+                _loc = location_text
                 _r = result
                 get_write_queue().execute(
                     lambda c: c.execute(
@@ -300,7 +415,7 @@ def run_batch(
                                geocoded_at=CURRENT_TIMESTAMP
                            WHERE manual_override = 0""",
                         (
-                            _r["location_text"],
+                            _loc,
                             _r.get("lat"),
                             _r.get("lon"),
                             _r["source"],

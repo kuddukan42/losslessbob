@@ -344,16 +344,17 @@ class MapTab(QWidget):
         ov_filter_row.addStretch()
         ov_layout.addLayout(ov_filter_row)
 
-        self._geo_table = QTableWidget(0, 7)
+        self._geo_table = QTableWidget(0, 8)
         self._geo_table.setHorizontalHeaderLabels([
-            self.tr("Location Text"), self.tr("Source"), self.tr("Confidence"),
+            self.tr("Location Text"), self.tr("LB#"), self.tr("Source"), self.tr("Confidence"),
             self.tr("Lat"), self.tr("Lon"), self.tr("Manual?"), self.tr("Note"),
         ])
         self._geo_table.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self._geo_table.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         hdr = self._geo_table.horizontalHeader()
         hdr.setSectionResizeMode(0, QHeaderView.ResizeMode.Stretch)
-        for col in range(1, 7):
+        hdr.setSectionResizeMode(1, QHeaderView.ResizeMode.ResizeToContents)
+        for col in range(2, 8):
             hdr.setSectionResizeMode(col, QHeaderView.ResizeMode.ResizeToContents)
         self._geo_table.setMinimumHeight(140)
         self._geo_table.doubleClicked.connect(self._on_geo_row_dblclick)
@@ -542,8 +543,10 @@ class MapTab(QWidget):
             self._geo_table.insertRow(r)
             lat = row.get("lat")
             lon = row.get("lon")
+            lb_numbers = row.get("lb_numbers") or row.get("lb_number") or ""
             for col, val in enumerate([
                 row.get("location_text") or "",
+                str(lb_numbers),
                 row.get("source") or "",
                 str(row.get("confidence") or ""),
                 f"{lat:.6f}" if lat is not None else "",
@@ -582,17 +585,20 @@ class MapTab(QWidget):
         lat_val: float | None = row_data.get("lat")
         lon_val: float | None = row_data.get("lon")
         note_val: str = row_data.get("note") or ""
+        lb_number_val: str | None = row_data.get("lb_number") or None
 
         dlg = PlaceManualDialog(loc_text, lat_val, lon_val, note_val, parent=self)
         if dlg.exec() != QDialog.DialogCode.Accepted:
             return
 
-        payload = {
+        payload: dict = {
             "location": dlg.location,
             "lat": dlg.lat,
             "lon": dlg.lon,
             "note": dlg.note,
         }
+        if lb_number_val:
+            payload["lb_number"] = lb_number_val
 
         def _post():
             return requests.post(
