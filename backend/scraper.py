@@ -11,6 +11,7 @@ from bs4 import BeautifulSoup, NavigableString
 from backend.db import (
     get_connection, DB_PATH, insert_missing_entry,
     record_entry_changes, reconcile_lb_status, batch_reconcile_lb_status,
+    is_lb_missing,
 )
 from backend.db_queue import get_write_queue
 from backend.paths import (
@@ -131,6 +132,10 @@ def scrape_entry(
     db_path = db_path or DB_PATH
     lb_id = f"{lb_number:05d}"
 
+    # Never scrape entries confirmed to not exist — they are in lb_missing.
+    if is_lb_missing(lb_number, db_path):
+        return {"skipped": True, "reason": "nonexistent"}
+
     # Resolve local page path early so the skip logic can check its existence.
     local_page = to_long_path(detail_page_path(lb_id))
 
@@ -141,9 +146,10 @@ def scrape_entry(
         ).fetchone()
         if row is not None:
             if row["status"] == "missing":
-                # If a local page is available we can recover real metadata;
-                # only skip if there is nothing local to work with.
-                if not (use_local_pages and local_page.exists()):
+                # For live scrapes: always re-check — the page may have been added
+                # to the site since the entry was first marked missing.
+                # For local-page mode: skip only if no local file exists to read.
+                if use_local_pages and not local_page.exists():
                     return {"skipped": True}
             elif not download_files:
                 return {"skipped": True}

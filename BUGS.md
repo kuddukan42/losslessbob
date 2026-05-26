@@ -1,18 +1,3 @@
-BUG-115: Fingerprint Build DB shows [0/0] with no feedback during folder scan
-Status: Fixed
-File(s): backend/fingerprint.py, gui/spectrogram_tab.py
-Reported: 2026-05-24
-Fixed: 2026-05-24
-Description: Clicking "Build DB" with a large collection (15,967 folders) left the
-  progress bar in indeterminate mode showing "[0/0]" for several minutes because
-  build_fingerprint_db() collects all audio files before setting total.
-Root cause: File-collection loop emitted no state updates until complete. For a large
-  collection the scan can take several minutes, giving the appearance of being frozen.
-Fix: Emit status="scanning" with folder count every 50 rows during collection;
-  GUI handles the new status by updating the label without touching the queue widgets.
-
----
-
 BUG-113: Hard-coded table backgrounds break theming
 Status: Open
 File(s): gui/ (various table/widget files)
@@ -42,59 +27,6 @@ Root cause: Unknown — likely the permission check is a copy-paste from a curat
 Fix: —
 
 ---
-
-BUG-111: Snapshot install fails on AppImage — "must be in data/exports/ or data/imports/"
-Status: Open
-File(s): backend/ or gui/ (snapshot install handler, unknown exact file)
-Reported: 2026-05-24
-Description: When attempting to install a snapshot in the AppImage build, an "Install Failed"
-  dialog is shown with the message "Snapshot must be in data/exports/ or data/imports/".
-  The install works correctly in non-AppImage (dev) runs.
-Root cause: Unknown — the path check for data/exports/ and data/imports/ likely resolves
-  relative to the AppImage mount point or CWD rather than the correct XDG data directory,
-  causing a valid snapshot file to fail the location check.
-Fix: —
-
----
-
-BUG-110: Open data folder button does nothing on AppImage
-Status: Open
-File(s): gui/ (button handler, unknown exact file)
-Reported: 2026-05-24
-Description: Clicking the "Open data folder" button has no effect when running the AppImage
-  build on Linux. The folder does not open in the file manager. Works as expected in
-  non-AppImage (dev) runs.
-Root cause: Unknown — likely xdg-open or QDesktopServices.openUrl() fails silently inside
-  the AppImage sandbox, or the data path resolves incorrectly under the AppImage environment.
-Fix: —
-
----
-
-BUG-109: Map geocode layer not shown on load when Curator mode is already checked
-Status: Open
-File(s): gui/map_tab.py (suspected)
-Reported: 2026-05-23
-Description: When the app starts (or the Map tab is opened) with Curator mode already
-  checked, the geocoded pins/layer do not appear on the map. Toggling the Curator mode
-  checkbox off and back on forces the map to refresh and the geocode data appears correctly.
-Root cause: Unknown — likely the map initialisation or data-load signal fires before the
-  checkbox state is read, so the geocode layer is never injected into the initial render.
-Fix: —
-
----
-
-BUG-107: Soft-404 pages stored as entry descriptions
-Status: Fixed
-File(s): backend/scraper.py:177, backend/db.py:init_db
-Reported: 2026-05-23
-Fixed: 2026-05-23
-Description: Archive server returns HTTP 200 with a 404 error HTML body for non-existent
-  entries. Scraper parsed the error page text ("The requested URL was not found on this
-  server.") as the entry description, resulting in 68 entries with garbage metadata.
-Root cause: _fetch() only checked the HTTP status code; the server's soft-404 responses
-  always returned 200 so the check was bypassed.
-Fix: Added _is_soft_404() in scraper.py to detect the error text in HTML before parsing.
-  Added one-time cleanup SQL in init_db() to fix existing affected rows.
 
 BUG-106: Windows installer does not place app in Program Files
 Status: Open

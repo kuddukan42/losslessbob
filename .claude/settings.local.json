@@ -274,7 +274,12 @@
       "Bash(/home/tjenkins/Documents/losslessbob/.venv/bin/python3 --version)",
       "Bash(/home/tjenkins/Documents/losslessbob/.venv/bin/pip list *)",
       "Bash(/home/tjenkins/Documents/losslessbob/.venv/bin/python3 -m py_compile /home/tjenkins/Documents/losslessbob/gui/scraper_tab.py)",
-      "Bash(/home/tjenkins/Documents/losslessbob/.venv/bin/python3 -c \"import sqlite3; print\\('sqlite3:', sqlite3.sqlite_version, 'python sqlite3 threadsafety:', sqlite3.threadsafety\\)\")"
+      "Bash(/home/tjenkins/Documents/losslessbob/.venv/bin/python3 -c \"import sqlite3; print\\('sqlite3:', sqlite3.sqlite_version, 'python sqlite3 threadsafety:', sqlite3.threadsafety\\)\")",
+      "Bash(DISPLAY=\"\" WAYLAND_DISPLAY=\"\" .venv/bin/python3 -m pytest tests/ --tb=no -q)",
+      "Bash(/home/tjenkins/Documents/losslessbob/.venv/bin/python3 -c ' *)",
+      "Bash(/home/tjenkins/Documents/losslessbob/.venv/bin/python3 -m py_compile /home/tjenkins/Documents/losslessbob/gui/platform_utils.py)",
+      "Bash(/home/tjenkins/Documents/losslessbob/.venv/bin/python3 -m py_compile /home/tjenkins/Documents/losslessbob/gui/platform_utils.py /home/tjenkins/Documents/losslessbob/gui/setup_tab.py)",
+      "Bash(xargs ls -la)"
     ],
     "additionalDirectories": [
       "/home/tjenkins/.ssh",

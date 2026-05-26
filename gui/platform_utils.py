@@ -15,7 +15,12 @@ def open_folder(path: str | Path) -> None:
     elif sys.platform == "darwin":
         subprocess.run(["open", p], check=False)
     else:
-        subprocess.run(["xdg-open", p], check=False)
+        # QDesktopServices is more reliable than subprocess xdg-open in AppImage
+        # environments where the modified PATH may not include xdg-open.
+        from PyQt6.QtCore import QUrl
+        from PyQt6.QtGui import QDesktopServices
+        if not QDesktopServices.openUrl(QUrl.fromLocalFile(p)):
+            subprocess.run(["xdg-open", p], check=False)
 
 
 def open_file(path: str | Path) -> None:
@@ -26,7 +31,10 @@ def open_file(path: str | Path) -> None:
     elif sys.platform == "darwin":
         subprocess.run(["open", p], check=False)
     else:
-        subprocess.run(["xdg-open", p], check=False)
+        from PyQt6.QtCore import QUrl
+        from PyQt6.QtGui import QDesktopServices
+        if not QDesktopServices.openUrl(QUrl.fromLocalFile(p)):
+            subprocess.run(["xdg-open", p], check=False)
 
 
 def open_url(url: str) -> None:

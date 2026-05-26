@@ -1500,8 +1500,8 @@ class SetupTab(QWidget):
         from gui.platform_utils import open_folder
         try:
             open_folder(_DATA_DIR)
-        except Exception:
-            pass
+        except Exception as exc:
+            _log.warning("open_folder failed: %s", exc)
 
     def _on_purge(self, scope: str, label: str) -> None:
         if QMessageBox.question(
