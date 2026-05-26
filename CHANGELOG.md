@@ -1,3 +1,24 @@
+[2026-05-26] — refactor(gui): make all color lookups theme-live; no more stale QColor snapshots
+
+Changed
+
+  gui/lbdir_tab.py: Removed _C_PASS/_FAIL/_MISSING/_NO_LB/_GREY module-level aliases and
+    class-level _LB_STATUS_COLOR dict. All call sites now reference styles.* directly so
+    each paint picks up the current theme without any signal wiring.
+
+  gui/verify_tab.py: Same pattern; 7 module-level aliases removed.
+
+  gui/rename_tab.py: Removed module-level _STATE_COLORS and _NFT_DISC_COLORS dicts; data()
+    builds inline dicts on each call.
+
+  gui/attachments_tab.py: Removed class-level _STATUS_BG dict; data() uses inline lookup.
+
+  gui/bootlegs_tab.py, gui/search_tab.py: Removed module-level _BG_STATUS string dicts;
+    data() returns styles.ROW_PRIVATE/ROW_GREY directly. Unused QColor import removed.
+
+  gui/collection_tab.py: Removed module-level _BG_LB_STATUS string dict; both model
+    data() methods use inline lookup. Unused QColor import removed.
+
 [2026-05-26] — refactor(gui): extend theme token vocabulary and eliminate all hardcoded hex colors
 
 Changed
