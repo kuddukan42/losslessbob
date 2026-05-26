@@ -14,20 +14,6 @@ Description: Add a SQL input box to the DB Editor tab so the user can run arbitr
 
 
 
-TODO-097: Add purge option for geocoding data
-Priority: Medium
-Status: Open
-Added: 2026-05-24
-Description: Provide a way to purge cached geocoding data from the database.
-  Goals:
-    • Add a button or action (likely in the Setup or Map tab) to clear all geocoded
-      lat/lon data from the concerts/geocoding table(s).
-    • Allow selective purge (e.g. only failed/null results) vs full wipe.
-    • After purge, trigger or prompt user to re-run geocoding so fresh data can be fetched.
-    • Useful when switching geocoding providers or fixing bad cached coordinates.
-
----
-
 TODO-094: Rework UI per Claude design prototype
 Priority: Medium
 Status: Open
@@ -88,24 +74,6 @@ Description: Add an Acknowledgements section to the About dialog crediting key c
 
 ---
 
-TODO-088: Master update — pull lb_master from GitHub repo instead of local file
-Priority: High
-Status: Open
-Added: 2026-05-23
-Description: The "Install Master Update" flow currently looks for a local file to import.
-  It should instead download the latest lb_master data directly from the GitHub repository
-  (kuddukan42/losslessbob) so users get one-click updates without manually sourcing a file.
-  Implementation sketch:
-    • Define a canonical URL for the master data asset in the repo (e.g. a release asset
-      or a raw file at a known path like data/lb_master.db or data/lb_master.json).
-    • Add a download worker (QThread) that fetches the file via requests with progress
-      reporting, then hands off to the existing import/merge logic.
-    • Show a progress dialog during download; handle network errors and HTTP non-200
-      responses gracefully with a user-facing message.
-    • Verify a checksum or file signature after download before importing.
-    • Keep the local-file fallback path available (e.g. "Install from file…" secondary button)
-      for offline or dev use.
-
 ---
 
 
@@ -154,32 +122,6 @@ Description: The exported HTML has six fixed columns (LB#, Status, Date, Locatio
 
 ---
 
-TODO-082: Restructure — move Verify and lbdir into a "Checksums" compound tab
-Priority: Medium
-Status: Open
-Added: 2026-05-21
-Description: Replace the two top-level "Verify" (index 2) and "lbdir" (index 3) tabs with
-  a single "Checksums" main tab whose body is a QTabWidget containing "Verify" and "lbdir"
-  as sub-tabs. This reduces the top-level tab count and groups the two checksum workflows.
-  Changes needed:
-    • gui/main_window.py:
-      - Replace addTab(verify_tab, "Verify") and addTab(lbdir_tab, "lbdir") with a new
-        ChecksumsTab wrapper widget added as addTab(checksums_tab, tr("Checksums")).
-      - Update the tab-order comment at main_window.py:111.
-      - _on_tab_changed: the widget identity checks for verify_tab and lbdir_tab must
-        account for the new nesting — trigger on the Checksums parent tab switching in,
-        then inspect the inner sub-tab's currentWidget() to replicate existing behaviour
-        (lazy folder preload for Verify, resize_columns_to_font for both).
-      - apply_panel_shadow calls for verify_tab and lbdir_tab (main_window.py:199-202)
-        must remain functional after the wrapping.
-    • Create gui/checksums_tab.py (or inline the QTabWidget wrapper in main_window.py)
-      and register it in PROJECT.md file structure.
-    • Any setCurrentIndex(2) / setCurrentIndex(3) references elsewhere must be updated
-        to target the new Checksums index and switch the inner sub-tab as needed.
-    • TODO-081 (cross-tab folder sync) will need updating: lbdir pre-population must
-      trigger off the inner sub-tab switch, not the outer tab switch.
-
----
 
 TODO-079: i18n — wrap table column headers with tr() across all tabs
 Priority: Medium

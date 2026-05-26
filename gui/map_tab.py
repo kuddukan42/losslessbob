@@ -106,6 +106,28 @@ class _GeoWorker(QThread):
             self.error.emit(str(exc))
 
 
+class _PurgeGeoThread(QThread):
+    """POST /api/geocode/purge in a background thread."""
+
+    finished = pyqtSignal(dict)
+
+    def __init__(self, flask_port: int, scope: str) -> None:
+        super().__init__()
+        self.flask_port = flask_port
+        self.scope = scope
+
+    def run(self) -> None:
+        try:
+            resp = requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/geocode/purge",
+                json={"scope": self.scope},
+                timeout=15,
+            )
+            self.finished.emit(resp.json())
+        except Exception as exc:
+            self.finished.emit({"error": str(exc)})
+
+
 # ── Dialogs ────────────────────────────────────────────────────────────────────
 
 class PlaceManualDialog(QDialog):
@@ -217,6 +239,7 @@ class MapTab(QWidget):
         self._geocode_run_thread: _GeocodeRunThread | None = None
         self._geocode_status_thread: _GeocodeStatusThread | None = None
         self._geo_workers: list[_GeoWorker] = []
+        self._purge_geo_thread: _PurgeGeoThread | None = None
         self._build_ui()
 
     # ------------------------------------------------------------------
@@ -322,6 +345,27 @@ class MapTab(QWidget):
         geo_layout.addLayout(geo_opts)
         self._geo_status_label = QLabel(self.tr("Status: idle"))
         geo_layout.addWidget(self._geo_status_label)
+
+        purge_row = QHBoxLayout()
+        self._geo_purge_failed_btn = QPushButton(self.tr("Purge Failed/Null"))
+        self._geo_purge_failed_btn.setToolTip(
+            self.tr("Remove cached geocoding entries where geocoding failed or returned no result")
+        )
+        self._geo_purge_failed_btn.clicked.connect(self._on_geocode_purge_failed)
+        purge_row.addWidget(self._geo_purge_failed_btn)
+
+        self._geo_purge_all_btn = QPushButton(self.tr("Purge All…"))
+        self._geo_purge_all_btn.setToolTip(
+            self.tr("Remove ALL cached geocoding data — manual overrides will also be lost")
+        )
+        self._geo_purge_all_btn.clicked.connect(self._on_geocode_purge_all)
+        purge_row.addWidget(self._geo_purge_all_btn)
+        purge_row.addStretch()
+        geo_layout.addLayout(purge_row)
+
+        self._geo_purge_status_label = QLabel("")
+        geo_layout.addWidget(self._geo_purge_status_label)
+
         self._geocode_box.setVisible(False)
         layout.addWidget(self._geocode_box)
 
@@ -497,6 +541,62 @@ class MapTab(QWidget):
             self._geo_status_label.setText(
                 self.tr("Done: {0} geocoded, {1} failed").format(succeeded, errors)
             )
+
+    def _on_geocode_purge_failed(self) -> None:
+        """Purge geocoding rows where geocoding failed or returned no coordinates."""
+        from PyQt6.QtWidgets import QMessageBox
+        ans = QMessageBox.question(
+            self,
+            self.tr("Purge Failed Geocoding"),
+            self.tr(
+                "Remove all cached geocoding entries that failed or returned no result?\n\n"
+                "This frees up those locations to be re-geocoded on the next run."
+            ),
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+        )
+        if ans != QMessageBox.StandardButton.Yes:
+            return
+        self._start_purge("failed")
+
+    def _on_geocode_purge_all(self) -> None:
+        """Purge the entire geocoding cache, including manual overrides."""
+        from PyQt6.QtWidgets import QMessageBox
+        ans = QMessageBox.warning(
+            self,
+            self.tr("Purge All Geocoding Data"),
+            self.tr(
+                "Remove ALL cached geocoding data from the database?\n\n"
+                "This includes manual pin placements. All coordinates will be lost\n"
+                "and must be re-geocoded from scratch.\n\n"
+                "This cannot be undone."
+            ),
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.Cancel,
+            QMessageBox.StandardButton.Cancel,
+        )
+        if ans != QMessageBox.StandardButton.Yes:
+            return
+        self._start_purge("all")
+
+    def _start_purge(self, scope: str) -> None:
+        self._geo_purge_failed_btn.setEnabled(False)
+        self._geo_purge_all_btn.setEnabled(False)
+        self._geo_purge_status_label.setText(self.tr("Purging…"))
+        self._purge_geo_thread = _PurgeGeoThread(self.flask_port, scope)
+        self._purge_geo_thread.finished.connect(self._on_purge_done)
+        self._purge_geo_thread.start()
+
+    def _on_purge_done(self, result: dict) -> None:
+        self._geo_purge_failed_btn.setEnabled(True)
+        self._geo_purge_all_btn.setEnabled(True)
+        if "error" in result:
+            self._geo_purge_status_label.setText(
+                self.tr("Purge failed: {}").format(result["error"])
+            )
+            return
+        deleted = result.get("deleted", 0)
+        self._geo_purge_status_label.setText(
+            self.tr("Purged {0} row(s). Run geocoder to rebuild.").format(deleted)
+        )
 
     # ------------------------------------------------------------------
     # Location Overrides (curator-only)

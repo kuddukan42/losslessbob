@@ -227,6 +227,128 @@ class _ExportMasterThread(QThread):
             self.finished.emit({"error": str(exc)})
 
 
+class _GitHubMasterThread(QThread):
+    """Download the latest master snapshot from GitHub Releases and apply it.
+
+    Emits progress(str) during download, finished(dict) on completion or error.
+    """
+
+    progress = pyqtSignal(str)
+    finished = pyqtSignal(dict)
+
+    _GITHUB_API = "https://api.github.com/repos/kuddukan42/losslessbob/releases/latest"
+
+    def __init__(self, flask_port: int) -> None:
+        super().__init__()
+        self.flask_port = flask_port
+
+    def run(self) -> None:
+        try:
+            self._run_inner()
+        except Exception as exc:
+            self.finished.emit({"error": str(exc)})
+
+    def _run_inner(self) -> None:
+        import hashlib
+        import json as _json
+
+        # Step 1: fetch release metadata
+        self.progress.emit("Checking GitHub for latest release…")
+        api_resp = requests.get(
+            self._GITHUB_API,
+            headers={"Accept": "application/vnd.github+json"},
+            timeout=15,
+        )
+        if api_resp.status_code == 404:
+            self.finished.emit({"error": "No releases found on GitHub yet."})
+            return
+        api_resp.raise_for_status()
+        release = api_resp.json()
+
+        tag = release.get("tag_name", "?")
+        assets = release.get("assets", [])
+
+        db_asset = next(
+            (a for a in assets
+             if a["name"].endswith(".db") and not a["name"].endswith(".manifest.json.db")),
+            None,
+        )
+        if not db_asset:
+            self.finished.emit({"error": f"No .db asset found in release {tag}."})
+            return
+
+        manifest_name = db_asset["name"] + ".manifest.json"
+        manifest_asset = next((a for a in assets if a["name"] == manifest_name), None)
+        if not manifest_asset:
+            self.finished.emit(
+                {"error": f"Manifest sidecar '{manifest_name}' not found in release {tag}."}
+            )
+            return
+
+        # Step 2: download manifest (small JSON, no progress needed)
+        self.progress.emit(f"Downloading manifest for {tag}…")
+        mresp = requests.get(manifest_asset["browser_download_url"], timeout=30)
+        mresp.raise_for_status()
+        manifest = mresp.json()
+
+        # Step 3: stream-download the .db file with progress reporting
+        dest_dir = _DATA_DIR / "imports"
+        dest_dir.mkdir(parents=True, exist_ok=True)
+        db_dest = dest_dir / db_asset["name"]
+        manifest_dest = dest_dir / manifest_name
+
+        total_bytes = db_asset.get("size", 0)
+        total_mb = total_bytes / (1024 * 1024)
+        self.progress.emit(
+            f"Downloading {db_asset['name']} ({total_mb:.0f} MB)…"
+        )
+        dresp = requests.get(
+            db_asset["browser_download_url"], stream=True, timeout=300
+        )
+        dresp.raise_for_status()
+
+        downloaded = 0
+        with open(db_dest, "wb") as fh:
+            for chunk in dresp.iter_content(chunk_size=262144):  # 256 KB
+                if chunk:
+                    fh.write(chunk)
+                    downloaded += len(chunk)
+                    if total_bytes:
+                        pct = downloaded * 100 // total_bytes
+                        dl_mb = downloaded / (1024 * 1024)
+                        self.progress.emit(
+                            f"Downloading… {pct}%  ({dl_mb:.1f} / {total_mb:.0f} MB)"
+                        )
+
+        # Step 4: verify SHA256
+        self.progress.emit("Verifying checksum…")
+        sha = hashlib.sha256()
+        with open(db_dest, "rb") as fh:
+            for chunk in iter(lambda: fh.read(1 << 20), b""):
+                sha.update(chunk)
+        actual_sha = sha.hexdigest()
+        expected_sha = manifest.get("sha256", "")
+        if actual_sha != expected_sha:
+            db_dest.unlink(missing_ok=True)
+            self.finished.emit(
+                {"error": "SHA256 mismatch — download may be corrupt. Please try again."}
+            )
+            return
+
+        # Step 5: save manifest sidecar so import_master_db() can find it
+        with open(manifest_dest, "w", encoding="utf-8") as fh:
+            _json.dump(manifest, fh, indent=2)
+
+        # Step 6: apply via existing backend route
+        self.progress.emit("Applying update to local database…")
+        imp_resp = requests.post(
+            f"http://127.0.0.1:{self.flask_port}/api/master/import",
+            json={"path": str(db_dest)},
+            timeout=600,
+        )
+        self.finished.emit(imp_resp.json())
+
+
 class _InstallMasterThread(QThread):
     """POST /api/master/import off the main thread."""
 
@@ -661,15 +783,27 @@ class SetupTab(QWidget):
         self.curator_cb.toggled.connect(self._on_curator_toggled)
         master_btn_row.addWidget(self.publish_master_btn)
 
-        self.install_master_btn = QPushButton(self.tr("Install Master Update…"))
+        self.check_github_btn = QPushButton(self.tr("Check for Updates"))
+        self.check_github_btn.setToolTip(
+            self.tr("Download and install the latest master snapshot from the "
+            "GitHub releases page. Requires an internet connection.")
+        )
+        self.check_github_btn.clicked.connect(self._on_check_github)
+        master_btn_row.addWidget(self.check_github_btn)
+
+        self.install_master_btn = QPushButton(self.tr("Install from File…"))
         self.install_master_btn.setToolTip(
-            self.tr("Apply a master snapshot from disk. Your collection, wishlist, "
-            "credentials, and personal settings are preserved.")
+            self.tr("Apply a master snapshot from a local .db file. Your collection, "
+            "wishlist, credentials, and personal settings are preserved.")
         )
         self.install_master_btn.clicked.connect(self._on_install_master)
         master_btn_row.addWidget(self.install_master_btn)
         master_btn_row.addStretch()
         master_layout.addLayout(master_btn_row)
+
+        self._gh_progress_label = QLabel("")
+        self._gh_progress_label.setVisible(False)
+        master_layout.addWidget(self._gh_progress_label)
 
         self._publish_status_label = QLabel("")
         self._publish_status_label.setVisible(False)
@@ -1427,6 +1561,38 @@ class SetupTab(QWidget):
                 url=url,
             ),
         )
+
+    def _on_check_github(self) -> None:
+        """Download and install the latest master snapshot from GitHub Releases."""
+        confirm = QMessageBox.question(
+            self, self.tr("Check for Updates"),
+            self.tr("Download the latest master snapshot from GitHub?\n\n"
+                    "This will fetch release metadata, download the snapshot (~50–200 MB), "
+                    "verify its checksum, and apply it to your local database.\n\n"
+                    "Your collection, wishlist, and personal settings are preserved."),
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+        )
+        if confirm != QMessageBox.StandardButton.Yes:
+            return
+        self.check_github_btn.setEnabled(False)
+        self.install_master_btn.setEnabled(False)
+        self._gh_progress_label.setText(self.tr("Connecting to GitHub…"))
+        self._gh_progress_label.setVisible(True)
+        self._gh_thread = _GitHubMasterThread(self.flask_port)
+        self._gh_thread.progress.connect(self._on_github_progress)
+        self._gh_thread.finished.connect(self._on_github_done)
+        self._gh_thread.start()
+
+    def _on_github_progress(self, msg: str) -> None:
+        """Update the progress label during a GitHub download."""
+        self._gh_progress_label.setText(msg)
+
+    def _on_github_done(self, data: dict) -> None:
+        """Handle GitHub download + install completion."""
+        self.check_github_btn.setEnabled(True)
+        self.install_master_btn.setEnabled(True)
+        self._gh_progress_label.setVisible(False)
+        self._on_install_done(data)
 
     def _on_install_master(self):
         """Pick a master snapshot from disk and apply it locally."""

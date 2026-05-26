@@ -1,3 +1,33 @@
+[2026-05-26] — feat(map): add geocoding cache purge (TODO-097)
+
+Added
+
+  backend/app.py: POST /api/geocode/purge — curator-only route; scope="failed" deletes rows
+    where source='failed' or lat IS NULL; scope="all" deletes entire location_geocoded table.
+    Returns {ok, deleted}.
+
+  gui/map_tab.py: _PurgeGeoThread — background worker calling /api/geocode/purge.
+    Two new buttons in the Geocoding group (curator-only): "Purge Failed/Null" and
+    "Purge All…" (requires confirmation). Status label shows deleted row count and
+    prompts user to re-run geocoder.
+
+[2026-05-26] — feat(setup): one-click master update from GitHub Releases (TODO-088)
+
+Added
+
+  gui/setup_tab.py: _GitHubMasterThread — fetches latest release via GitHub API,
+    streams the .db asset with progress reporting, verifies SHA256, saves sidecar
+    manifest to data/imports/, then applies via existing /api/master/import route.
+  gui/setup_tab.py: "Check for Updates" button in Master Data section; progress label
+    shows download %; _on_check_github/_on_github_progress/_on_github_done handlers.
+
+Changed
+
+  gui/setup_tab.py: Renamed "Install Master Update…" button to "Install from File…"
+    for clarity now that the primary path is the GitHub download.
+
+---
+
 [2026-05-26] — feat(map): add lb_number column to location_geocoded for override traceability (TODO-099)
 
 Added

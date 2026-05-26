@@ -1,6 +1,41 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-097: Add purge option for geocoding data
+Priority: Medium
+Status: Done
+Added: 2026-05-24
+Closed: 2026-05-26
+Description: Provide a way to purge cached geocoding data from the database.
+Fix: Added POST /api/geocode/purge (curator-only) with scope="failed" (removes
+  source='failed'/lat IS NULL rows) and scope="all" (clears entire table). Map tab
+  Geocoding panel (curator-only) now has "Purge Failed/Null" and "Purge All…" buttons
+  with confirmation dialogs. Status label shows deleted count and prompts re-run.
+
+TODO-082: Restructure — move Verify and lbdir into a "Checksums" compound tab
+Priority: Medium
+Status: Cancelled
+Added: 2026-05-21
+Closed: 2026-05-26
+Description: Cancelled — tab restructure not desired.
+
+---
+
+
+TODO-088: Master update — pull lb_master from GitHub repo instead of local file
+Priority: High
+Status: Done
+Added: 2026-05-23
+Closed: 2026-05-26
+Description: Added _GitHubMasterThread that fetches the latest release from
+  https://api.github.com/repos/kuddukan42/losslessbob/releases/latest, streams
+  the .db asset with progress, verifies SHA256, saves manifest sidecar to
+  data/imports/, and applies via /api/master/import. New "Check for Updates"
+  button in Setup → Master Data. "Install from File…" kept as offline fallback.
+
+---
+
+
 TODO-099: Add lb_number column to location_overrides table
 Priority: Low
 Status: Done
