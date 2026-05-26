@@ -23,6 +23,29 @@ HEADER_FG = QColor("#FFFFFF")
 APP_BG = QColor("#F8F8F0")
 SELECTION_COLOR = QColor("#CCE5FF")
 
+# Extended semantic tokens — set by apply_theme(); defaults are Light-theme values
+ROW_FAIL = QColor("#FFCDD2")
+ROW_MISSING_FILE = QColor("#FFE0B2")
+ROW_GREY = QColor("#E0E0E0")
+ROW_PRIVATE = QColor("#B3E5FC")
+ROW_WRONG_LB = QColor("#E1BEE7")
+ROW_MULTIPLE_IDS = QColor("#B2EBF2")
+ROW_DIRTY = QColor("#FFFBE6")
+ROW_AUDIT = QColor("#F0F0FF")
+ROW_READONLY = QColor("#F4F4F4")
+ROW_NFT_MISSING = QColor("#FFCCCC")
+ROW_NFT_STALE = QColor("#FFF9C4")
+ROW_NFT_UNKNOWN = QColor("#FFE8D0")
+STATUS_OK = QColor("#D4EDDA")
+STATUS_WARN = QColor("#FFF3CD")
+STATUS_ERROR = QColor("#F8D7DA")
+STATUS_NEUTRAL = QColor("#E2E3E5")
+FG_MUTED = QColor("#888888")
+FG_LINK = QColor("#1565C0")
+FG_DANGER = QColor("#C0392B")
+FG_SUCCESS = QColor("#2E7D32")
+FG_WARNING = QColor("#E65100")
+
 MAIN_STYLESHEET = ""  # set by apply_theme() at startup
 
 
@@ -223,6 +246,10 @@ QSplitter::handle {{
 def apply_theme(theme_dict, font_family: str = "", font_size: int = 9):
     global ROW_MATCHED, ROW_NOT_FOUND, ROW_MISSING, ROW_DUPLICATE, ROW_XREF, ROW_OWNED, ROW_WISHLIST
     global HEADER_BG, HEADER_FG, APP_BG, SELECTION_COLOR, MAIN_STYLESHEET
+    global ROW_FAIL, ROW_MISSING_FILE, ROW_GREY, ROW_PRIVATE, ROW_WRONG_LB, ROW_MULTIPLE_IDS
+    global ROW_DIRTY, ROW_AUDIT, ROW_READONLY, ROW_NFT_MISSING, ROW_NFT_STALE, ROW_NFT_UNKNOWN
+    global STATUS_OK, STATUS_WARN, STATUS_ERROR, STATUS_NEUTRAL
+    global FG_MUTED, FG_LINK, FG_DANGER, FG_SUCCESS, FG_WARNING
     ROW_MATCHED = QColor(theme_dict["row_matched"])
     ROW_NOT_FOUND = QColor(theme_dict["row_not_found"])
     ROW_MISSING = QColor(theme_dict["row_missing"])
@@ -234,6 +261,27 @@ def apply_theme(theme_dict, font_family: str = "", font_size: int = 9):
     HEADER_FG = QColor(theme_dict["header_fg"])
     APP_BG = QColor(theme_dict["app_bg"])
     SELECTION_COLOR = QColor(theme_dict["selection"])
+    ROW_FAIL = QColor(theme_dict.get("row_fail", "#FFCDD2"))
+    ROW_MISSING_FILE = QColor(theme_dict.get("row_missing_file", "#FFE0B2"))
+    ROW_GREY = QColor(theme_dict.get("row_grey", "#E0E0E0"))
+    ROW_PRIVATE = QColor(theme_dict.get("row_private", "#B3E5FC"))
+    ROW_WRONG_LB = QColor(theme_dict.get("row_wrong_lb", "#E1BEE7"))
+    ROW_MULTIPLE_IDS = QColor(theme_dict.get("row_multiple_ids", "#B2EBF2"))
+    ROW_DIRTY = QColor(theme_dict.get("row_dirty", "#FFFBE6"))
+    ROW_AUDIT = QColor(theme_dict.get("row_audit", "#F0F0FF"))
+    ROW_READONLY = QColor(theme_dict.get("row_readonly", "#F4F4F4"))
+    ROW_NFT_MISSING = QColor(theme_dict.get("row_nft_missing", "#FFCCCC"))
+    ROW_NFT_STALE = QColor(theme_dict.get("row_nft_stale", "#FFF9C4"))
+    ROW_NFT_UNKNOWN = QColor(theme_dict.get("row_nft_unknown", "#FFE8D0"))
+    STATUS_OK = QColor(theme_dict.get("status_ok", "#D4EDDA"))
+    STATUS_WARN = QColor(theme_dict.get("status_warn", "#FFF3CD"))
+    STATUS_ERROR = QColor(theme_dict.get("status_error", "#F8D7DA"))
+    STATUS_NEUTRAL = QColor(theme_dict.get("status_neutral", "#E2E3E5"))
+    FG_MUTED = QColor(theme_dict.get("fg_muted", "#888888"))
+    FG_LINK = QColor(theme_dict.get("fg_link", "#1565C0"))
+    FG_DANGER = QColor(theme_dict.get("fg_danger", "#C0392B"))
+    FG_SUCCESS = QColor(theme_dict.get("fg_success", "#2E7D32"))
+    FG_WARNING = QColor(theme_dict.get("fg_warning", "#E65100"))
     MAIN_STYLESHEET = build_stylesheet(theme_dict, font_family=font_family, font_size=font_size)
 
 
@@ -267,4 +315,12 @@ apply_theme({
     "row_matched": "#90EE90", "row_not_found": "#FFA07A",
     "row_missing": "#FFB6C1", "row_duplicate": "#FFFF99", "row_xref": "#E0E0FF",
     "row_owned": "#C8E6C9", "row_wishlist": "#E8D5FF",
+    "row_fail": "#FFCDD2", "row_missing_file": "#FFE0B2", "row_grey": "#E0E0E0",
+    "row_private": "#B3E5FC", "row_wrong_lb": "#E1BEE7", "row_multiple_ids": "#B2EBF2",
+    "row_dirty": "#FFFBE6", "row_audit": "#F0F0FF", "row_readonly": "#F4F4F4",
+    "row_nft_missing": "#FFCCCC", "row_nft_stale": "#FFF9C4", "row_nft_unknown": "#FFE8D0",
+    "status_ok": "#D4EDDA", "status_warn": "#FFF3CD", "status_error": "#F8D7DA",
+    "status_neutral": "#E2E3E5",
+    "fg_muted": "#888888", "fg_link": "#1565C0", "fg_danger": "#C0392B",
+    "fg_success": "#2E7D32", "fg_warning": "#E65100",
 })
