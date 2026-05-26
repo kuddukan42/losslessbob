@@ -15,6 +15,7 @@ from PyQt6.QtWidgets import (
 )
 
 from backend.paths import attachment_path
+import gui.styles as styles
 import logging
 
 log = logging.getLogger(__name__)
@@ -30,8 +31,8 @@ class _LbModel(QAbstractTableModel):
 
     _HEADERS = ["LB Number", "Files"]
     _STATUS_BG = {
-        "private": QColor("#B3E5FC"),
-        "missing": QColor("#E0E0E0"),
+        "private": styles.ROW_PRIVATE,
+        "missing": styles.ROW_GREY,
     }
 
     def __init__(self, entries: list[dict], parent=None):

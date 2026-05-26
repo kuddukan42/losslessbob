@@ -37,8 +37,8 @@ _COL_DEFAULTS = [80, 300, 80, 50, 200, 40, 60, 65, 50]
 
 _BG_STATUS = {
     "public":  None,
-    "private": "#B3E5FC",
-    "missing": "#E0E0E0",
+    "private": styles.ROW_PRIVATE.name(),
+    "missing": styles.ROW_GREY.name(),
 }
 
 _LBBCD_BASE = "http://www.losslessbob.wonderingwhattochoose.com/"

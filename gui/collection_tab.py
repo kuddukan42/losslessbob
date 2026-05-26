@@ -29,9 +29,9 @@ _COLL_STATUS_COL = 1   # Status column in My Collection
 _MISS_STATUS_COL = 1   # Status column in Missing-from-Collection
 
 _BG_LB_STATUS = {
-    "public":  None,       # default
-    "private": "#B3E5FC",  # light blue
-    "missing": "#E0E0E0",  # light gray
+    "public":  None,                       # default
+    "private": styles.ROW_PRIVATE.name(),  # light blue
+    "missing": styles.ROW_GREY.name(),     # light gray
 }
 
 
@@ -88,9 +88,9 @@ class _CollectionModel(QAbstractTableModel):
             if col in (2, 3):
                 val = row.get("date_str") if col == 2 else row.get("location")
                 if not val:
-                    return QColor("#888888")
+                    return styles.FG_MUTED
             if col == 8 and (row.get("fp_n_hashes") or 0) > 0:
-                return QColor("#2E7D32")
+                return styles.FG_SUCCESS
         if role == Qt.ItemDataRole.BackgroundRole:
             hex_color = _BG_LB_STATUS.get(lb_status)
             if hex_color:
@@ -369,7 +369,7 @@ class _ScanPreviewDialog(QDialog):
             self.table.setItem(i, 2, QTableWidgetItem(path))
             item = QTableWidgetItem(self.tr("Yes") if owned else self.tr("No"))
             if owned:
-                item.setForeground(QColor("#388E3C"))
+                item.setForeground(styles.FG_SUCCESS)
             self.table.setItem(i, 3, item)
         self.table.resizeColumnsToContents()
         layout.addWidget(self.table)
@@ -1214,8 +1214,8 @@ class CollectionTab(QWidget):
                     f"LB-{lb_row['lb_number']:05d}",
                     lb_row.get("rating") or "",
                 ])
-                child.setForeground(0, QColor("#1B5E20"))
-                child.setForeground(1, QColor("#1B5E20"))
+                child.setForeground(0, styles.FG_SUCCESS)
+                child.setForeground(1, styles.FG_SUCCESS)
                 child.setData(0, Qt.ItemDataRole.UserRole, ("owned", lb_row["lb_number"]))
                 show_item.addChild(child)
             for lb_row in group["unowned"]:
@@ -1223,8 +1223,8 @@ class CollectionTab(QWidget):
                     f"LB-{lb_row['lb_number']:05d}",
                     lb_row.get("rating") or "",
                 ])
-                child.setForeground(0, QColor("#757575"))
-                child.setForeground(1, QColor("#757575"))
+                child.setForeground(0, styles.FG_MUTED)
+                child.setForeground(1, styles.FG_MUTED)
                 child.setData(0, Qt.ItemDataRole.UserRole, ("unowned", lb_row["lb_number"]))
                 show_item.addChild(child)
             self.dupes_tree.addTopLevelItem(show_item)
@@ -1400,7 +1400,7 @@ class CollectionTab(QWidget):
             added = self.tr("Yes") if rec.get("added_to_qbt") else self.tr("No")
             item = QTableWidgetItem(added)
             if rec.get("added_to_qbt"):
-                item.setForeground(QColor("#1B5E20"))
+                item.setForeground(styles.FG_SUCCESS)
             self._torrent_hist_table.setItem(row, 5, item)
         self._torrent_hist_table.resizeColumnsToContents()
         self._torrent_hist_status.setText(self.tr("{} torrent record(s) total.").format(len(data)))
@@ -2286,7 +2286,7 @@ class CollectionTab(QWidget):
             self.forum_posts_table.setItem(row, 0, QTableWidgetItem(posted))
             self.forum_posts_table.setItem(row, 1, QTableWidgetItem(rec.get("subject") or ""))
             url_item = QTableWidgetItem(rec.get("topic_url") or "")
-            url_item.setForeground(QColor("#1565C0"))
+            url_item.setForeground(styles.FG_LINK)
             self.forum_posts_table.setItem(row, 2, url_item)
 
     def _on_forum_post_selection(self) -> None:
@@ -2401,13 +2401,13 @@ class CollectionTab(QWidget):
             dot = QTableWidgetItem("●")
             dot.setTextAlignment(Qt.AlignmentFlag.AlignCenter)
             if not folder_ok:
-                dot.setForeground(QColor("#D32F2F"))
+                dot.setForeground(styles.FG_DANGER)
                 dot.setToolTip(self.tr("Source folder not found on disk — use Relocate Source"))
             elif not torrent_ok:
-                dot.setForeground(QColor("#F57C00"))
+                dot.setForeground(styles.FG_WARNING)
                 dot.setToolTip(self.tr("Torrent file missing from data/torrents/ — use Regenerate"))
             else:
-                dot.setForeground(QColor("#388E3C"))
+                dot.setForeground(styles.FG_SUCCESS)
                 dot.setToolTip(self.tr("Source folder and .torrent file both present"))
             self.torrent_history_table.setItem(row, 0, dot)
 
@@ -2420,14 +2420,14 @@ class CollectionTab(QWidget):
             t_item = QTableWidgetItem(t_name)
             t_item.setToolTip(tp)
             if not torrent_ok:
-                t_item.setForeground(QColor("#D32F2F"))
+                t_item.setForeground(styles.FG_DANGER)
             self.torrent_history_table.setItem(row, 2, t_item)
 
             sf = rec.get("source_folder") or ""
             sf_item = QTableWidgetItem(_Path(sf).name if sf else "—")
             sf_item.setToolTip(sf)
             if not folder_ok:
-                sf_item.setForeground(QColor("#D32F2F"))
+                sf_item.setForeground(styles.FG_DANGER)
             self.torrent_history_table.setItem(row, 3, sf_item)
 
             added = rec.get("added_to_qbt", 0)

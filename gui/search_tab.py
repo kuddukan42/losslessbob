@@ -21,8 +21,8 @@ HEADERS = ["LB Number", "Status", "Date", "Location", "Rating", "Description", "
 # Background colours for lb_master status — single source of truth for this tab
 _BG_STATUS = {
     "public":  None,           # default background
-    "private": "#B3E5FC",      # light blue
-    "missing": "#E0E0E0",      # light gray
+    "private": styles.ROW_PRIVATE.name(),  # light blue
+    "missing": styles.ROW_GREY.name(),     # light gray
 }
 
 

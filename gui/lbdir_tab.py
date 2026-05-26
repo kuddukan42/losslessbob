@@ -12,16 +12,17 @@ from PyQt6.QtWidgets import (
     QSplitter, QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget,
 )
 
+import gui.styles as styles
 from gui.widgets.sort_keys import SortableTableItem, sort_key_for
 
 AUDIO_EXTS = {'.flac', '.shn', '.ape', '.wav'}
 LB_DETAIL_URL = "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-{lb:05d}.html"
 
-_C_PASS    = QColor("#C8E6C9")
-_C_FAIL    = QColor("#FFCDD2")
-_C_MISSING = QColor("#FFE0B2")   # orange — files not on disk
-_C_NO_LB   = QColor("#FFFF99")   # yellow — no lbdir but LB# known
-_C_GREY    = QColor("#E0E0E0")   # grey   — no LB# known
+_C_PASS    = styles.ROW_OWNED
+_C_FAIL    = styles.ROW_FAIL
+_C_MISSING = styles.ROW_MISSING_FILE   # orange — files not on disk
+_C_NO_LB   = styles.ROW_DUPLICATE     # yellow — no lbdir but LB# known
+_C_GREY    = styles.ROW_GREY           # grey   — no LB# known
 
 SUMMARY_HEADERS = [
     "Folder", "LB#", "lbdir File", "Mode",
@@ -314,7 +315,7 @@ class ExtraFilesDialog(QDialog):
             ).format(len(extra_files))
         )
         warn.setWordWrap(True)
-        warn.setStyleSheet("color: #c0392b; font-weight: bold;")
+        warn.setStyleSheet(f"color: {styles.FG_DANGER.name()}; font-weight: bold;")
         layout.addWidget(warn)
         layout.addWidget(QLabel(self.tr("Folder: {}").format(folder)))
 
@@ -351,7 +352,7 @@ class ExtraFilesDialog(QDialog):
 
         btn_layout = QHBoxLayout()
         delete_btn = QPushButton(self.tr("Delete Selected"))
-        delete_btn.setStyleSheet("background-color: #c0392b; color: white;")
+        delete_btn.setStyleSheet(f"background-color: {styles.FG_DANGER.name()}; color: {styles.HEADER_FG.name()};")
         delete_btn.clicked.connect(self.accept)
         cancel_btn = QPushButton(self.tr("Cancel"))
         cancel_btn.clicked.connect(self.reject)
@@ -466,7 +467,7 @@ class LbdirTab(QWidget):
 
         sep = QLabel()
         sep.setFixedHeight(1)
-        sep.setStyleSheet("background: #cccccc;")
+        sep.setStyleSheet(f"background: {styles.FG_MUTED.name()};")
         btn_layout.addWidget(sep)
 
         self.check_btn = QPushButton(self.tr("Check lbdir Files"))
@@ -981,7 +982,7 @@ class LbdirTab(QWidget):
             return self.tr("SHNTOOL MISSING"), _C_FAIL
         return self.tr("FAIL"), _C_FAIL
 
-    _LB_STATUS_COLOR = {"private": QColor("#B3E5FC"), "missing": QColor("#E0E0E0")}
+    _LB_STATUS_COLOR = {"private": styles.ROW_PRIVATE, "missing": styles.ROW_GREY}
 
     def _populate_summary(self, results):
         # Batch-fetch lb_status for all lb_numbers in the result set (one query)

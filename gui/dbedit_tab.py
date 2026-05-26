@@ -2,8 +2,9 @@ import logging
 import requests
 from pathlib import Path
 
+import gui.styles as styles
 from PyQt6.QtCore import Qt, QThread, pyqtSignal
-from PyQt6.QtGui import QColor, QAction
+from PyQt6.QtGui import QAction
 from PyQt6.QtWidgets import (
     QWidget, QHBoxLayout, QVBoxLayout, QSplitter,
     QListWidget, QListWidgetItem, QTableWidget, QTableWidgetItem,
@@ -14,10 +15,10 @@ from PyQt6.QtWidgets import (
 
 _log = logging.getLogger(__name__)
 
-_C_DIRTY  = QColor("#fffbe6")
-_C_WARN   = QColor("#fff0f0")
-_C_AUDIT  = QColor("#f0f0ff")
-_C_RDONLY = QColor("#f4f4f4")
+_C_DIRTY  = styles.ROW_DIRTY
+_C_WARN   = styles.ROW_FAIL
+_C_AUDIT  = styles.ROW_AUDIT
+_C_RDONLY = styles.ROW_READONLY
 
 
 class _Worker(QThread):
@@ -203,7 +204,7 @@ class DbEditTab(QWidget):
         # Schema strip
         self.schema_label = QLabel("")
         self.schema_label.setWordWrap(True)
-        self.schema_label.setStyleSheet("font-size:10px; color:#888;")
+        self.schema_label.setStyleSheet(f"font-size:10px; color:{styles.FG_MUTED.name()};")
         rl.addWidget(self.schema_label)
 
         # Data table
@@ -300,13 +301,13 @@ class DbEditTab(QWidget):
             item = QListWidgetItem(label)
             item.setData(Qt.ItemDataRole.UserRole, name)
             if t.get("readonly"):
-                item.setForeground(QColor("#888"))
+                item.setForeground(styles.FG_MUTED)
                 item.setToolTip(self.tr("Read-only virtual table"))
             elif t.get("warn"):
-                item.setForeground(QColor("#c0392b"))
+                item.setForeground(styles.FG_DANGER)
                 item.setToolTip(self.tr("Core archive — deletions affect lookup results"))
             elif t.get("audit"):
-                item.setForeground(QColor("#2980b9"))
+                item.setForeground(styles.FG_LINK)
                 item.setToolTip(self.tr("Audit log — delete only, no editing"))
             self.table_list.addItem(item)
 
@@ -441,7 +442,7 @@ class DbEditTab(QWidget):
                 if not_editable:
                     item.setFlags(item.flags() & ~Qt.ItemFlag.ItemIsEditable)
                 if c_idx == 0:
-                    item.setForeground(QColor("#aaa"))
+                    item.setForeground(styles.FG_MUTED)
                 if meta.get("warn"):
                     item.setBackground(_C_WARN)
                 elif meta.get("audit"):
@@ -583,7 +584,7 @@ class DbEditTab(QWidget):
             item.setBackground(_C_DIRTY)
         else:
             self._dirty.pop((row, col), None)
-            item.setBackground(QColor("white"))
+            item.setBackground(styles.APP_BG)
         has = bool(self._dirty)
         self.save_btn.setEnabled(has)
         self.discard_btn.setEnabled(has)

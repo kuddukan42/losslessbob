@@ -6,6 +6,8 @@ from urllib.parse import quote as _url_quote
 
 import requests
 
+import gui.styles as styles
+
 from backend.rename import write_rename_log
 from backend.folder_naming import (
     apply_nft_suffix, strip_nft_suffix, nft_discrepancy, build_standard_name,
@@ -24,20 +26,23 @@ from PyQt6.QtWidgets import (
 HEADERS = ["Rename", "Current Folder Name", "Proposed New Name", "LB Found", "Reason"]
 
 # Row states → background colors
+# NOTE: These references are captured at import time. After apply_theme() is called,
+# the styles.* globals are replaced with new QColor objects; these dict values will
+# become stale. A theme-change hook is needed to rebuild these dicts. (TODO)
 _STATE_COLORS = {
-    "has_lb":       QColor("#C8E6C9"),  # green  — LB already in folder name
-    "renamed":      QColor("#C8E6C9"),  # green  — just renamed
-    "needs_rename": QColor("#FFE0B2"),  # orange — match found but not yet renamed
-    "wrong_lb":     QColor("#E1BEE7"),  # purple — folder has a different LB number
-    "no_match":     QColor("#FFCDD2"),  # red    — no match
-    "multiple_ids": QColor("#B2EBF2"),  # cyan   — multiple LBs found, unresolved
+    "has_lb":       styles.ROW_OWNED,        # green  — LB already in folder name
+    "renamed":      styles.ROW_OWNED,        # green  — just renamed
+    "needs_rename": styles.ROW_MISSING_FILE, # orange — match found but not yet renamed
+    "wrong_lb":     styles.ROW_WRONG_LB,     # purple — folder has a different LB number
+    "no_match":     styles.ROW_FAIL,         # red    — no match
+    "multiple_ids": styles.ROW_MULTIPLE_IDS, # cyan   — multiple LBs found, unresolved
 }
 
 # NFT discrepancy state → background color (overrides state color when set)
 _NFT_DISC_COLORS = {
-    "missing": QColor("#FFCCCC"),  # pale red    — Private LB, folder lacks -NFT
-    "stale":   QColor("#FFF9C4"),  # pale yellow — Public LB, folder has -NFT
-    "unknown": QColor("#FFE8D0"),  # pale orange — Missing/None LB, folder has -NFT
+    "missing": styles.ROW_NFT_MISSING,  # pale red    — Private LB, folder lacks -NFT
+    "stale":   styles.ROW_NFT_STALE,    # pale yellow — Public LB, folder has -NFT
+    "unknown": styles.ROW_NFT_UNKNOWN,  # pale orange — Missing/None LB, folder has -NFT
 }
 
 # NFT discrepancy → tooltip text
@@ -274,7 +279,7 @@ class RenameModel(QAbstractTableModel):
                 return _NFT_DISC_COLORS.get(disc)
             # LB Found column (col 3) shows lb_status tint when private or missing
             if col == 3 and lb_status in ("private", "missing"):
-                return QColor("#B3E5FC") if lb_status == "private" else QColor("#E0E0E0")
+                return styles.ROW_PRIVATE if lb_status == "private" else styles.ROW_GREY
             state = self._states[index.row()] if index.row() < len(self._states) else None
             return _STATE_COLORS.get(state)
         if role == Qt.ItemDataRole.ToolTipRole:
@@ -440,18 +445,18 @@ class RenameTab(QWidget):
         # Legend
         legend_row = QHBoxLayout()
         for color, text in [
-            ("#C8E6C9", self.tr("LB found in name / renamed")),
-            ("#FFE0B2", self.tr("Match found — rename suggested")),
-            ("#E1BEE7", self.tr("Wrong LB in name — strip needed")),
-            ("#B2EBF2", self.tr("Multiple IDs — right-click to resolve")),
-            ("#FFCDD2", self.tr("No match")),
-            ("#FFCCCC", self.tr("Missing -NFT (Private LB)")),
-            ("#FFF9C4", self.tr("Stale -NFT (LB now Public)")),
-            ("#FFE8D0", self.tr("-NFT but LB is Missing")),
+            (styles.ROW_OWNED.name(),        self.tr("LB found in name / renamed")),
+            (styles.ROW_MISSING_FILE.name(), self.tr("Match found — rename suggested")),
+            (styles.ROW_WRONG_LB.name(),     self.tr("Wrong LB in name — strip needed")),
+            (styles.ROW_MULTIPLE_IDS.name(), self.tr("Multiple IDs — right-click to resolve")),
+            (styles.ROW_FAIL.name(),         self.tr("No match")),
+            (styles.ROW_NFT_MISSING.name(),  self.tr("Missing -NFT (Private LB)")),
+            (styles.ROW_NFT_STALE.name(),    self.tr("Stale -NFT (LB now Public)")),
+            (styles.ROW_NFT_UNKNOWN.name(),  self.tr("-NFT but LB is Missing")),
         ]:
             swatch = QLabel()
             swatch.setFixedSize(14, 14)
-            swatch.setStyleSheet(f"background-color: {color}; border: 1px solid #999;")
+            swatch.setStyleSheet(f"background-color: {color}; border: 1px solid {styles.FG_MUTED.name()};")
             legend_row.addWidget(swatch)
             legend_row.addWidget(QLabel(text))
             legend_row.addSpacing(12)

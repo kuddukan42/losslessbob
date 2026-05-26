@@ -14,6 +14,7 @@ from PyQt6.QtWidgets import (
     QDialog, QDialogButtonBox, QTableWidget, QTableWidgetItem,
 )
 from PyQt6.QtGui import QColor
+import gui.styles as styles
 
 _log = logging.getLogger(__name__)
 
@@ -650,9 +651,9 @@ class SetupTab(QWidget):
         reset_row = QHBoxLayout()
         self.reset_btn = QPushButton(self.tr("Reset Database..."))
         self.reset_btn.setStyleSheet(
-            "QPushButton { background-color: #8B1A1A; color: #FFFFFF; border-radius: 3px; }"
-            "QPushButton:hover { background-color: #B22222; }"
-            "QPushButton:disabled { background-color: #888888; }"
+            f"QPushButton {{ background-color: {styles.FG_DANGER.name()}; color: {styles.HEADER_FG.name()}; border-radius: 3px; }}"
+            f"QPushButton:hover {{ background-color: {styles.ROW_FAIL.name()}; }}"
+            f"QPushButton:disabled {{ background-color: {styles.FG_MUTED.name()}; }}"
         )
         self.reset_btn.setToolTip(self.tr("Drop all data and reinitialize the database from scratch"))
         self.reset_btn.clicked.connect(self._on_reset)
@@ -722,7 +723,7 @@ class SetupTab(QWidget):
 
         # User-data stats (collection, wishlist, etc.)
         self.coll_stats_label = QLabel("Loading…")
-        self.coll_stats_label.setStyleSheet("font-size:11px; color:#666;")
+        self.coll_stats_label.setStyleSheet(f"font-size:11px; color:{styles.FG_MUTED.name()};")
         purge_layout.addWidget(self.coll_stats_label)
 
         purge_items = [
@@ -877,7 +878,7 @@ class SetupTab(QWidget):
         pref_layout.addLayout(lang_row)
 
         self._lang_restart_label = QLabel(self.tr("Restart the app to apply the new language."))
-        self._lang_restart_label.setStyleSheet("color: #E8A000; font-size: 11px;")
+        self._lang_restart_label.setStyleSheet(f"color: {styles.FG_WARNING.name()}; font-size: 11px;")
         self._lang_restart_label.setVisible(False)
         pref_layout.addWidget(self._lang_restart_label)
 
@@ -1370,12 +1371,12 @@ class SetupTab(QWidget):
         tbl = self._ff_history_table
         tbl.setRowCount(0)
         status_colors = {
-            "applied": QColor("#d4edda"),
-            "applied_legacy": QColor("#e2f0d9"),
-            "detected": QColor("#fff3cd"),
-            "downloaded": QColor("#cce5ff"),
-            "deferred": QColor("#e2e3e5"),
-            "failed": QColor("#f8d7da"),
+            "applied": styles.STATUS_OK,
+            "applied_legacy": styles.STATUS_OK,
+            "detected": styles.STATUS_WARN,
+            "downloaded": styles.STATUS_NEUTRAL,
+            "deferred": styles.STATUS_NEUTRAL,
+            "failed": styles.STATUS_ERROR,
         }
         for row_data in releases:
             row = tbl.rowCount()
@@ -1756,30 +1757,30 @@ class SetupTab(QWidget):
 
             if r.get("sox_available"):
                 self.sox_status_label.setText(self.tr("OK — {}").format(r.get('sox_version', '')))
-                self.sox_status_label.setStyleSheet("color: green;")
+                self.sox_status_label.setStyleSheet(f"color: {styles.FG_SUCCESS.name()};")
             else:
                 self.sox_status_label.setText(self._sox_tool_hint("sox"))
-                self.sox_status_label.setStyleSheet("color: red;")
+                self.sox_status_label.setStyleSheet(f"color: {styles.FG_DANGER.name()};")
 
             if r.get("ffmpeg_available"):
                 self.ffmpeg_status_label.setText(self.tr("OK (SHN/APE/WV/M4A supported)"))
-                self.ffmpeg_status_label.setStyleSheet("color: green;")
+                self.ffmpeg_status_label.setStyleSheet(f"color: {styles.FG_SUCCESS.name()};")
             else:
                 self.ffmpeg_status_label.setText(
                     self._sox_tool_hint("ffmpeg")
                     + self.tr("  (needed for SHN/APE/WV spectrograms)")
                 )
-                self.ffmpeg_status_label.setStyleSheet("color: orange;")
+                self.ffmpeg_status_label.setStyleSheet(f"color: {styles.FG_WARNING.name()};")
 
             if r.get("shntool_available"):
                 self.shntool_status_label.setText(self.tr("OK — {}").format(r.get('shntool_version', '')))
-                self.shntool_status_label.setStyleSheet("color: green;")
+                self.shntool_status_label.setStyleSheet(f"color: {styles.FG_SUCCESS.name()};")
             else:
                 self.shntool_status_label.setText(
                     self._sox_tool_hint("shntool")
                     + self.tr("  (needed for SHN verification)")
                 )
-                self.shntool_status_label.setStyleSheet("color: red;")
+                self.shntool_status_label.setStyleSheet(f"color: {styles.FG_DANGER.name()};")
 
         except Exception as e:
             for lbl in (self.sox_status_label, self.ffmpeg_status_label, self.shntool_status_label):
@@ -1838,15 +1839,15 @@ class SetupTab(QWidget):
                 self.qbt_status_label.setText(
                     self.tr("Connected — qBittorrent {}").format(resp.get('version', ''))
                 )
-                self.qbt_status_label.setStyleSheet("color: green;")
+                self.qbt_status_label.setStyleSheet(f"color: {styles.FG_SUCCESS.name()};")
             else:
                 self.qbt_status_label.setText(
                     self.tr("Error: {}").format(resp.get('error', self.tr('unknown')))
                 )
-                self.qbt_status_label.setStyleSheet("color: red;")
+                self.qbt_status_label.setStyleSheet(f"color: {styles.FG_DANGER.name()};")
         except Exception as exc:
             self.qbt_status_label.setText(self.tr("Error: {}").format(exc))
-            self.qbt_status_label.setStyleSheet("color: red;")
+            self.qbt_status_label.setStyleSheet(f"color: {styles.FG_DANGER.name()};")
         finally:
             self.qbt_test_btn.setEnabled(True)
 
@@ -1913,12 +1914,12 @@ class SetupTab(QWidget):
             self.wtrf_status_label.setText(
                 self.tr("Logged in as {}").format(result.get('username', ''))
             )
-            self.wtrf_status_label.setStyleSheet("color: green;")
+            self.wtrf_status_label.setStyleSheet(f"color: {styles.FG_SUCCESS.name()};")
         else:
             self.wtrf_status_label.setText(
                 self.tr("Error: {}").format(result.get('error', self.tr('unknown')))
             )
-            self.wtrf_status_label.setStyleSheet("color: red;")
+            self.wtrf_status_label.setStyleSheet(f"color: {styles.FG_DANGER.name()};")
 
     def _on_wtrf_clear(self):
         from backend.credentials import delete_credentials, SERVICE_WTRF
@@ -1970,14 +1971,14 @@ class SetupTab(QWidget):
             )
             if pw:
                 self.web_pw_status_label.setText(self.tr("Password set — web UI requires login."))
-                self.web_pw_status_label.setStyleSheet("color: green;")
+                self.web_pw_status_label.setStyleSheet(f"color: {styles.FG_SUCCESS.name()};")
             else:
                 self.web_pw_status_label.setText(self.tr("Password cleared — web UI is open access."))
-                self.web_pw_status_label.setStyleSheet("color: orange;")
+                self.web_pw_status_label.setStyleSheet(f"color: {styles.FG_WARNING.name()};")
             self.web_password_edit.clear()
         except Exception as exc:
             self.web_pw_status_label.setText(self.tr("Error: {}").format(exc))
-            self.web_pw_status_label.setStyleSheet("color: red;")
+            self.web_pw_status_label.setStyleSheet(f"color: {styles.FG_DANGER.name()};")
 
     def _on_web_password_clear(self) -> None:
         self.web_password_edit.clear()
@@ -1988,10 +1989,10 @@ class SetupTab(QWidget):
                 timeout=5,
             )
             self.web_pw_status_label.setText(self.tr("Password cleared — web UI is open access."))
-            self.web_pw_status_label.setStyleSheet("color: orange;")
+            self.web_pw_status_label.setStyleSheet(f"color: {styles.FG_WARNING.name()};")
         except Exception as exc:
             self.web_pw_status_label.setText(self.tr("Error: {}").format(exc))
-            self.web_pw_status_label.setStyleSheet("color: red;")
+            self.web_pw_status_label.setStyleSheet(f"color: {styles.FG_DANGER.name()};")
 
     def _load_web_password_status(self) -> None:
         try:
@@ -2000,10 +2001,10 @@ class SetupTab(QWidget):
             ).json()
             if resp.get("web_password") == "set":
                 self.web_pw_status_label.setText(self.tr("Password set — web UI requires login."))
-                self.web_pw_status_label.setStyleSheet("color: green;")
+                self.web_pw_status_label.setStyleSheet(f"color: {styles.FG_SUCCESS.name()};")
             else:
                 self.web_pw_status_label.setText(self.tr("No password — web UI is open access."))
-                self.web_pw_status_label.setStyleSheet("color: orange;")
+                self.web_pw_status_label.setStyleSheet(f"color: {styles.FG_WARNING.name()};")
         except Exception:
             pass
 
@@ -2031,10 +2032,10 @@ class SetupTab(QWidget):
             ).json()
             count = resp.get("count", 0)
             self.tracker_count_label.setText(self.tr("{} trackers loaded").format(count))
-            self.tracker_count_label.setStyleSheet("color: green;" if count else "color: red;")
+            self.tracker_count_label.setStyleSheet(f"color: {styles.FG_SUCCESS.name()};" if count else f"color: {styles.FG_DANGER.name()};")
         except Exception as exc:
             self.tracker_count_label.setText(self.tr("Error: {}").format(exc))
-            self.tracker_count_label.setStyleSheet("color: red;")
+            self.tracker_count_label.setStyleSheet(f"color: {styles.FG_DANGER.name()};")
         finally:
             self.refresh_trackers_btn.setEnabled(True)
 

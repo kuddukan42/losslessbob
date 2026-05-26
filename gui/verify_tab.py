@@ -9,17 +9,18 @@ from PyQt6.QtWidgets import (
     QSplitter, QTableWidget, QVBoxLayout, QWidget,
 )
 
+import gui.styles as styles
 from gui.widgets.sort_keys import SortableTableItem, sort_key_for
 
 AUDIO_EXTS = {'.flac', '.shn', '.ape', '.wav'}
 
-_C_PASS         = QColor("#C8E6C9")
-_C_FAIL         = QColor("#FFCDD2")
-_C_MISSING      = QColor("#FFE0B2")   # orange — files not on disk
-_C_INCOMPLETE   = QColor("#FFFF99")   # yellow — missing checksum type
-_C_EXTRA        = QColor("#FFFF99")   # yellow — on disk, no checksum
-_C_GREY         = QColor("#E0E0E0")   # grey   — N/A
-_C_NO_CHECKSUMS = QColor("#FFFF99")   # yellow — audio present but no checksum files
+_C_PASS         = styles.ROW_OWNED
+_C_FAIL         = styles.ROW_FAIL
+_C_MISSING      = styles.ROW_MISSING_FILE   # orange — files not on disk
+_C_INCOMPLETE   = styles.ROW_DUPLICATE      # yellow — missing checksum type
+_C_EXTRA        = styles.ROW_DUPLICATE      # yellow — on disk, no checksum
+_C_GREY         = styles.ROW_GREY           # grey   — N/A
+_C_NO_CHECKSUMS = styles.ROW_DUPLICATE      # yellow — audio present but no checksum files
 
 SUMMARY_HEADERS = [
     "Folder", "Mode", "FFP", "MD5", "Shntool",
@@ -209,7 +210,7 @@ class VerifyTab(QWidget):
 
         sep = QLabel()
         sep.setFixedHeight(1)
-        sep.setStyleSheet("background: #cccccc;")
+        sep.setStyleSheet(f"background: {styles.FG_MUTED.name()};")
         btn_layout.addWidget(sep)
 
         self.verify_btn = QPushButton(self.tr("Verify Folders"))
