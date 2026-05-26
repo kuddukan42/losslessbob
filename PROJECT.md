@@ -87,10 +87,12 @@ losslessbob/
 │       ├── state_store.py       # GuiStateStore: column widths + window geometry → data/gui_state.json
 │       ├── sort_keys.py         # SortableTableItem + sort_key_for() for typed client-side sort
 │       └── reconcile_dialog.py  # AudioReconcileDialog: shared preview dialog for audio file renames
+├── conftest.py               # pytest: autouse fixture resets DatabaseWriteQueue singleton + thread-local connections between tests
 ├── tests/
 │   ├── test_lb_master.py     # lb_master schema, reconcile, override, forum guard, GUI presence
 │   ├── test_master_data.py   # MASTER/USER table classification, export/import, SHA + schema-version guards
-│   └── test_db_writes.py     # 115-test battery: all DB write functions, constraint violations, rollback, thread safety
+│   ├── test_scraper_crawler.py # scrape_sessions + site_inventory table write functions
+│   └── test_db_writes.py     # 114-test battery: all DB write functions, constraint violations, rollback, thread safety
 ├── losslessbob_linux.spec    # PyInstaller spec for Linux AppImage build (includes fingerprinting stack)
 ├── Dockerfile                # Docker image: python:3.11-slim + Xvfb + x11vnc + noVNC + Qt6 runtime
 ├── docker-compose.yml        # Compose: port 6080 (noVNC), named data volume, music-folder mount examples
@@ -237,6 +239,14 @@ Index: `idx_changes_lb ON entry_changes(lb_number, changed_at DESC)`.
 | board_id | INTEGER | SMF board number posted to |
 | posted_at | TEXT | UTC datetime, defaults to datetime('now') |
 
+### `lb_missing` — Confirmed non-existent LB entries (MASTER table)
+Permanently records LB numbers that are allocated but never had (or permanently lost) a page on the LosslessBob site. Seeded with 36 known entries on first run. Entries in this table receive `lb_status='nonexistent'` in `lb_master` and are never scraped.
+| Column | Type | Notes |
+|--------|------|-------|
+| lb_number | INTEGER PK | LB number confirmed to not exist |
+| confirmed_date | TEXT | ISO date when confirmed |
+| notes | TEXT | Free-text note |
+
 ### `lb_alias` — Curator-authored alias mappings (MASTER table)
 | Column | Type | Notes |
 |--------|------|-------|
@@ -291,14 +301,15 @@ Natural key for diffing: `(lb_number, title, date_str)`. Indexes: `idx_bootleg_l
 | rows_removed | INTEGER | |
 | status | TEXT NOT NULL | `success`, `no_change`, or `failed` |
 
-### `dylan_performances` — Dylan performance location supplement (USER table)
+### `dylan_performances` — Dylan performance location supplement (MASTER table)
 Populated once at startup from `data/2026-05-22_Dylan_Performance_fixed.ods` via
-`import_dylan_performances()`. Provides supplemental date/venue/location data keyed by
-a unique event ID. Read-only reference data; not part of the master-data export.
+`import_dylan_performances()` when the table is empty. Included in master-data export/import
+so all users receive the same reference dataset when installing a master update. Linked to
+`entries` by converting `entries.date_str` → ISO via `geocoder._entry_date_to_iso()`.
 | Column | Type | Notes |
 |--------|------|-------|
 | event_id | TEXT PK | e.g. `'1962092201'` (YYYYMMDDNN) |
-| date_str | TEXT | Raw date from ODS, e.g. `'1962-09-22'` |
+| date_str | TEXT | ISO date from ODS, e.g. `'1962-09-22'` |
 | category | TEXT | `HOME`, `NET`, `MCONCERT`, `RADIO`, etc. |
 | city | TEXT | City name |
 | state | TEXT | State/province code |
@@ -307,6 +318,20 @@ a unique event ID. Read-only reference data; not part of the master-data export.
 | imported_at | TIMESTAMP | When the row was loaded |
 
 Indexes: `idx_perf_date`, `idx_perf_category`, `idx_perf_country`.
+Queried via `GET /api/performances?lb=<n>` or `?date=YYYY-MM-DD`.
+
+### `lb_problems` — Known problems with specific LB entries (MASTER table)
+Curator-authored table for flagging LB entries with known issues (bad checksums,
+incomplete torrent, corrupt files, mislabelled metadata, etc.). Included in master-data export.
+| Column | Type | Notes |
+|--------|------|-------|
+| id | INTEGER PK | Auto-increment |
+| lb_number | INTEGER NOT NULL | FK → lb_master.lb_number |
+| notes | TEXT NOT NULL | Free-text description of the problem |
+| added | TEXT NOT NULL | ISO date (YYYY-MM-DD) the note was added |
+
+Index: `idx_lb_problems_lb ON lb_problems(lb_number)`.
+Managed via `GET/POST /api/lb_problems` and `PUT/DELETE /api/lb_problems/<id>`.
 
 ### `scrape_sessions` — Crawler session log (MASTER table)
 One row per site-crawler run started via POST /api/crawler/start.
@@ -355,6 +380,7 @@ Indexes: `idx_inventory_status`, `idx_inventory_session`.
 | display_name | TEXT | Full display name returned by Nominatim |
 | manual_override | INTEGER | 1 = curator-placed pin; batch run never overwrites |
 | note | TEXT | Optional curator note |
+| lb_number | TEXT | LB entry that prompted this override (traceability) |
 | geocoded_at | TIMESTAMP | Last geocode attempt timestamp |
 
 Index: `idx_geo_source ON location_geocoded(source)`.
@@ -464,7 +490,7 @@ Indexes: `idx_flat_changelog_release(release_id)`, `idx_flat_changelog_lb(lb_num
 ### LB Master Integrity
 | Method | Route | Description |
 |--------|-------|-------------|
-| GET | `/api/lb_master/stats` | Return `{public, private, missing, max_lb, overrides, needs_review}` counts. |
+| GET | `/api/lb_master/stats` | Return `{public, private, missing, nonexistent, max_lb, overrides, needs_review, public_no_checksums}` counts. |
 | GET | `/api/lb_master` | Paginated lb_master rows. Query params: `status`, `override=1`, `review=1`, `limit` (max 2000), `offset`. |
 | GET | `/api/lb_master/<lb>` | Single lb_master row joined with entry metadata. |
 | POST | `/api/lb_master/reconcile` | Full rebuild of lb_master. Backs up DB first. Returns `{ok, stats}`. |
@@ -474,6 +500,26 @@ Indexes: `idx_flat_changelog_release(release_id)`, `idx_flat_changelog_lb(lb_num
 | GET | `/api/lb_master/<lb>/nft` | Return `{nft: bool, reason}` for folder naming guidance. |
 | GET | `/api/lb_master/overrides/export` | Export all `manual_override=1` rows as a JSON array. Read-only; no curator check required. Returns `[{lb_number, manual_status, manual_notes, manual_set_by, manual_set_at}, ...]`. |
 | POST | `/api/lb_master/overrides/import` | **Curator-only.** Body: same JSON array. Upserts each row via `set_lb_manual_override`, writes `lb_status_history` with `trigger_event='import'`, skips lb_numbers outside current max. Returns `{imported, skipped}`. |
+
+### LB Missing (confirmed non-existent entries)
+| Method | Route | Description |
+|--------|-------|-------------|
+| GET | `/api/lb_missing` | List all lb_missing rows ordered by lb_number. |
+| POST | `/api/lb_missing` | **Curator-only.** Add entry. Body: `{lb_number, confirmed_date?, notes?}`. Returns `{ok, lb_number}`. |
+| DELETE | `/api/lb_missing/<lb>` | **Curator-only.** Remove entry; immediately reconciles lb_master status. Returns `{ok, lb_number}`. |
+
+### Dylan Performances
+| Method | Route | Description |
+|--------|-------|-------------|
+| GET | `/api/performances` | Query `dylan_performances`. Params: `date` (YYYY-MM-DD), `lb` (int — resolved via entries.date_str), `category`, `limit` (default 200), `offset`. Returns list of `{event_id, date_str, category, city, state, country, venue}`. |
+
+### LB Problems (known issues with LB entries)
+| Method | Route | Description |
+|--------|-------|-------------|
+| GET | `/api/lb_problems` | List all lb_problems rows. Optional query param `lb=<int>` to filter to one LB. Returns `[{id, lb_number, notes, added}]`. |
+| POST | `/api/lb_problems` | **Curator-only.** Add a problem note. Body: `{lb_number, notes, added?}`. Returns `{ok, id, lb_number}`. |
+| PUT | `/api/lb_problems/<id>` | **Curator-only.** Update notes on a row. Body: `{notes}`. Returns `{ok, id}`. |
+| DELETE | `/api/lb_problems/<id>` | **Curator-only.** Delete a problem note. Returns `{ok, id}`. |
 
 ### Folder Naming
 | Method | Route | Description |
@@ -1100,7 +1146,7 @@ Populated automatically after each lookup. Shows folders from the input file lis
 Paginated browse, inline-edit, and delete for every SQLite table. Left sidebar has a table list (with row counts), a **DB Integrity** panel, and an **LB Aliases** panel.
 
 **DB Integrity sub-panel:**
-- Live stats label: Public / Private / Missing / Max LB / Overrides / Needs review counts (from `GET /api/lb_master/stats`).
+- Live stats label: Public / Private / Missing / Nonexistent / Max LB / Overrides / Needs review / Public-no-checksums counts (from `GET /api/lb_master/stats`).
 - **Reconcile All** — recomputes lb_master status for every LB. Backs up DB first.
 - **Show Needs Review** — filters the lb_master table to rows with `needs_review=1`.
 - **Export Overrides** — calls `GET /api/lb_master/overrides/export`, saves JSON file.
@@ -1296,3 +1342,5 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 | 2026-05-19 | i18n infrastructure (TODO-067): gui/i18n.py (load_language, supported_languages); gui/locales/ directory for .ts/.qm files; ui_language meta key; Preferences group in Setup tab; startup language load in main.py; "ui_language" added to GET /api/db/settings. |
 | 2026-05-20 | Audio filename reconcile: db_filename added to lookup_checksums() detail dicts; POST /api/checksums/reconcile_audio + apply_reconcile_audio routes; gui/widgets/reconcile_dialog.py (AudioReconcileDialog); "Reconcile Audio Files" button on Lookup tab (auto-enabled on filename mismatch) and Rename tab (_ReconcileAudioWorker scans checksum files in checked folders). |
 | 2026-05-20 | Map tab rework (TODO-074): map_tab.py rewritten as browser-only (no QWebEngineView); Open Map in Browser button + Map Filters group (year, lb_status, owned, text); Geocoding group + Location Overrides group moved from setup_tab/dbedit_tab; curator_mode_changed signal added to SetupTab; Tech Stack updated (WebEngine for attachments only). |
+| 2026-05-24 | DB-09 fix: rewrote DatabaseWriteQueue._worker with isolation_level=None and explicit BEGIN/COMMIT/ROLLBACK; added startup ready-event to eliminate WAL-pragma race; purged implicit transaction leak from init_db(); added conftest.py test isolation fixture; updated stale TestWriteConnectionRollback tests. |
+| 2026-05-26 | TODO-086/090: `dylan_performances` promoted from USER→MASTER (schema v3); new `lb_problems` MASTER table (id, lb_number, notes, added); 4 DB functions; `GET /api/performances` (date/lb/category filter); `GET/POST /api/lb_problems` + `PUT/DELETE /api/lb_problems/<id>` (curator-only write). |

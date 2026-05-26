@@ -1,3 +1,229 @@
+[2026-05-26] — feat(map): add lb_number column to location_geocoded for override traceability (TODO-099)
+
+Added
+
+  backend/db.py: Added lb_number TEXT column to location_geocoded schema; migration via
+    ALTER TABLE with try/except-style PRAGMA guard for idempotency.
+  backend/geocoder.py: place_manual() now accepts optional lb_number parameter; stored on
+    INSERT and preserved (COALESCE) on UPDATE.
+  backend/app.py: POST /api/geocode/location reads lb_number from body and passes to
+    place_manual(). GET /api/geocode/locations now JOINs entries to return lb_numbers
+    (comma-separated list of all LBs using each location string).
+  gui/map_tab.py: Location Overrides table expanded to 8 columns with LB# column;
+    _on_geo_row_dblclick() includes lb_number in POST payload when present.
+
+Changed
+
+  PROJECT.md: location_geocoded schema updated to include lb_number column.
+
+---
+
+[2026-05-26] — feat(search): Public / no checksums filter in Search tab (TODO-095)
+
+Added
+
+  gui/search_tab.py: New "Public / no checksums" option in the status filter combo.
+    Filters search results to lb_status='public' entries where public_no_checksums=1,
+    surfacing entries that have a known webpage but zero checksum records in the DB.
+
+Changed
+
+  backend/db.py: All SELECT branches in search_entries() and get_entries_by_lb_list()
+    now include lm.public_no_checksums so the flag is present in every search result row.
+
+---
+
+[2026-05-26] — feat(db): Dylan performances promoted to MASTER; lb_problems table added (TODO-086, TODO-090)
+
+Added
+
+  backend/db.py: `lb_problems` table in SCHEMA_SQL (id, lb_number FK→lb_master, notes, notes, added).
+    Indexed on lb_number. Added 4 DB functions: get_lb_problems(), add_lb_problem(),
+    update_lb_problem(), delete_lb_problem(), get_lb_problem_count().
+
+  backend/db.py: `dylan_performances` added to MASTER_TABLES (was unclassified/USER).
+    `lb_problems` also added to MASTER_TABLES. MASTER_SCHEMA_VERSION bumped 2→3.
+
+  backend/app.py: GET /api/performances — query dylan_performances by ?date=, ?lb= (auto-resolves
+    entry date_str to ISO), ?category=, with pagination.
+
+  backend/app.py: GET /api/lb_problems, POST /api/lb_problems (curator-only),
+    PUT /api/lb_problems/<id> (curator-only), DELETE /api/lb_problems/<id> (curator-only).
+
+---
+
+[2026-05-26] — fix(scraper): "Scrape All Missing Entries" no longer queues private LBs (TODO-100)
+
+Fixed
+
+  backend/app.py (/api/scrape/start): Build the scrape list with a LEFT JOIN to lb_master and
+    exclude rows where lb_status = 'private'. Private LBs are handled exclusively by
+    /api/scrape/private_rescrape ("Re-scrape Private LBs" button) to prevent the two actions
+    from overlapping. Updated docstring to document the exclusion.
+
+---
+
+[2026-05-26] — fix(gui): curator panels not shown on map tab at startup if curator mode already enabled (BUG-109)
+
+Fixed
+
+  gui/main_window.py: curator_mode_changed fires during SetupTab.__init__ (via _load_curator_status)
+    before MapTab is created and before the signal connection is wired. Added a one-shot
+    set_curator_mode(curator_cb.isChecked()) call immediately after connecting the signal so the
+    map tab reflects the persisted curator state on every startup, not just after toggling. (BUG-109)
+
+---
+
+[2026-05-26] — fix(gui): AppImage open-folder fix (BUG-110) + BUG-111/115/107 housekeeping
+
+Fixed
+
+  gui/platform_utils.py: open_folder() and open_file() on Linux now call
+    QDesktopServices.openUrl(QUrl.fromLocalFile(p)) instead of subprocess.run(["xdg-open", ...]).
+    In AppImage environments the modified PATH may hide system xdg-open; QDesktopServices
+    is Qt-native and handles file-manager launch reliably regardless of PATH. xdg-open kept
+    as a fallback if QDesktopServices returns False. (BUG-110)
+
+  gui/setup_tab.py: _on_open_folder: replaced silent except Exception: pass with
+    _log.warning() so failures are visible in the log rather than silently discarded. (BUG-110)
+
+  backend/app.py: (previously fixed, now documented) The allowed_dirs containment check
+    ("Snapshot must be in data/exports/ or data/imports/") was removed from
+    /api/master/import. The route now accepts any readable .db file. (BUG-111)
+
+Changed
+
+  BUGS.md: moved BUG-110, BUG-111, BUG-115, BUG-107 (all Fixed) to BUGS_DONE.md.
+
+[2026-05-26] — feat(db): lb_missing table (TODO-102) + public_no_checksums flag (TODO-098) + nonexistent status
+
+Added
+
+  backend/db.py: lb_missing table (INTEGER PK, confirmed_date, notes) — MASTER_TABLE seeded
+    with 36 confirmed-not-existing LB numbers on init_db(). _LB_MISSING_SEEDS constant.
+    is_lb_missing / add_lb_missing / remove_lb_missing / get_lb_missing_list CRUD functions.
+
+  backend/db.py: public_no_checksums column on lb_master (INTEGER NOT NULL DEFAULT 0) and
+    partial index idx_lb_master_public_no_chk. Set to 1 when lb_status='public' AND
+    has_checksums=0 across all reconcile paths. Count exposed in get_lb_master_stats.
+
+  backend/db.py: 'nonexistent' added as a 4th valid lb_status value (via table recreation
+    migration that also adds public_no_checksums). lb_missing entries are classified
+    'nonexistent' by all reconcile paths.
+
+  backend/scraper.py: scrape_entry() returns {skipped, reason='nonexistent'} for lb_missing
+    entries before any network or DB work.
+
+  backend/app.py: GET/POST /api/lb_missing, DELETE /api/lb_missing/<lb> routes.
+
+  tests/test_db_writes.py: TestLbMissing (8 tests) + TestPublicNoChecksums_Flag (6 tests).
+    Total test count: 121 → 135.
+
+[2026-05-26] — fix(db): reconcile_all_lb_master bails early when checksums table is empty (BUG-116b)
+
+Fixed
+
+  backend/db.py: reconcile_all_lb_master now includes MAX(entries.lb_number) when computing
+    effective_max, so a fresh install with scraped entries but no checksums no longer short-
+    circuits and leaves public-page LBs unclassified.
+
+Added
+
+  tests/test_db_writes.py: test_reconcile_all_no_checksums_public_entry regression test in
+    TestPublicNoChecksums — seeds LB-1506 as status='ok' with no checksums, calls
+    reconcile_all_lb_master, and asserts lb_status='public'.  All 6 tests in the class pass.
+
+[2026-05-25] — test(db): add regression tests for public-page LB with no checksums (BUG-116)
+
+Added
+
+  tests/test_db_writes.py: TestPublicNoChecksums — 5 tests covering reconcile_lb_status,
+    batch_reconcile_lb_status, missing→public transition, get_missing_lb_numbers exclusion,
+    and _compute_lb_status(True, False, False) unit check.  All pass; regression guard for
+    BUG-116 (reconcile_all_lb_master edge case with zero checksums remains open).
+
+[2026-05-25] — fix(scraper): batch-repair 61 missing entries that had locally cached pages
+
+Fixed
+
+  backend/scraper.py / data: Ran scrape_entry(use_local_pages=True) over all 103 missing
+    lb_master entries.  61 had locally cached pages with real content (saved by
+    download_pages_range but never parsed after the entry was marked missing).  All 61 now
+    have lb_status='public' with parsed metadata.  42 remain missing (no local page);
+    a live network scrape will re-check those automatically with the new skip-logic fix.
+
+[2026-05-24] — fix(geocoder): bump performances-sourced confidence from low → medium
+
+Fixed
+
+  backend/geocoder.py: After setting source='performances', promote confidence 'low' → 'medium'
+    because Nominatim's importance score penalises specific venues (stadiums, conference centres)
+    even when the structured venue+city+state+country query is accurate.  The label 'low' was
+    misleading for geocodes that are correct.
+  backend/db.py: One-time migration to retroactively fix existing location_geocoded rows where
+    source='performances' AND confidence='low'.
+
+[2026-05-24] — fix(scraper): live scrapes now re-check entries previously marked missing
+
+Fixed
+
+  backend/scraper.py: Skip condition for `status='missing'` entries changed from
+    `not (use_local_pages and local_page.exists())` to `use_local_pages and not local_page.exists()`.
+    Old logic always skipped missing entries during live network scrapes, so pages added to the
+    archive after the initial scrape were never rediscovered.  New logic: live scrapes always
+    re-fetch missing entries from the server; local-page mode skips only when no local file exists.
+    LB-05126 was repaired in-place by re-scraping from its locally cached page (now public, 10/12/89).
+
+[2026-05-24] — fix(db): rewrote DatabaseWriteQueue._worker — isolation_level=None, explicit BEGIN/COMMIT/ROLLBACK, startup ready-event; fixed implicit transaction leak in init_db(); added conftest.py test isolation fixture; updated stale TestWriteConnectionRollback tests
+
+Changed
+
+  backend/db_queue.py: _run() now opens the writer connection with isolation_level=None so
+    Python's sqlite3 module never issues implicit BEGIN/ROLLBACK of its own. Transaction
+    boundaries are fully explicit: BEGIN before fn(), COMMIT on success, ROLLBACK on error.
+    Removed PRAGMA busy_timeout=0 — contention on the single writer is a bug, not a condition
+    to mask with a timeout. Increased cache_size to -32000 pages. Added a _ready Event so
+    __init__() blocks until the writer has finished its PRAGMA setup (including
+    journal_mode=WAL) before returning — eliminating the race between the writer thread and
+    init_db()'s get_connection() call on a brand-new database file. shutdown() now also closes
+    the writer connection after the thread joins.
+
+  backend/db.py: init_db() now calls conn.commit() unconditionally after the soft-404 UPDATE,
+    regardless of rowcount. Previously a zero-row UPDATE left an implicit Python transaction
+    open on the read connection, holding a RESERVED lock that blocked the write queue's first
+    transaction on every fresh (empty) database.
+
+  conftest.py (new): autouse pytest fixture that shuts down and resets the DatabaseWriteQueue
+    singleton and thread-local read connections between every test, preventing the singleton
+    from routing writes to the first test's database file in subsequent tests.
+
+  tests/test_db_writes.py: TestWriteConnectionRollback updated to use get_write_queue().execute()
+    instead of the removed db.write_connection() context manager.
+
+Fixed
+
+  backend/db_queue.py: "database is locked" OperationalError in site_crawler and
+    lb_master_reconcile caused by BEGIN IMMEDIATE competing with Python's implicit transaction
+    management on the same connection.
+
+[2026-05-24] — feat(geocoder): performances-table lookup before Nominatim geocoding (TODO-087)
+
+Changed
+
+  backend/geocoder.py: run_batch() now checks dylan_performances for each location before
+    calling Nominatim. _entry_date_to_iso() converts M/D/YY entries.date_str to YYYY-MM-DD;
+    _get_performance_location_string() scans associated dates and returns a structured
+    "venue, city, state, country" query string. If a match is found, that string is geocoded
+    and stored with source='performances' + note showing the derived query for provenance.
+    Falls back to the raw entries.location text when no performance record exists.
+    UPSERT now keys by the raw location text (not the geocode input) so the existing
+    map JOIN (entries.location = geo.location_text) remains intact.
+
+Added
+
+  backend/db.py: get_performance_by_date(date_str) — public helper returning the
+    dylan_performances row for an ISO date string; logs a warning on rare same-date doubles.
+
 [2026-05-24] — fix(fingerprint): emit scan-progress updates so UI shows activity during initial folder scan
 
 Fixed

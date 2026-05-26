@@ -1,13 +1,30 @@
-TODO-095: Detect webpage exists but no checksum in DB
+TODO-101: Add SQL query box to DB Editor for manual query execution
+Priority: Medium
+Status: Open
+Added: 2026-05-25
+Description: Add a SQL input box to the DB Editor tab so the user can run arbitrary queries
+  against losslessbob.db directly from the GUI without needing an external SQLite tool.
+  Goals:
+    • Add a multi-line text input (QPlainTextEdit) and a "Run" button to the DB Editor.
+    • Execute the query via the backend (Flask route or direct db call in a QThread worker).
+    • Display results in a table view (QTableWidget or reuse existing table component).
+    • Show row count and any error messages clearly below the results.
+    • Read-only safety: optionally warn or block on destructive statements (DROP, DELETE, etc.)
+        unless the user confirms.
+
+
+
+TODO-097: Add purge option for geocoding data
 Priority: Medium
 Status: Open
 Added: 2026-05-24
-Description: Add a check to identify lb_master entries where a source webpage is known
-  (URL is present) but no checksum data exists in the database for that release.
+Description: Provide a way to purge cached geocoding data from the database.
   Goals:
-    • Query for lb_master rows with a URL but zero associated checksum records.
-    • Surface these as a report or flagged state in the GUI so they can be investigated.
-    • Optionally trigger a scrape/re-scrape for those entries to fill the gap.
+    • Add a button or action (likely in the Setup or Map tab) to clear all geocoded
+      lat/lon data from the concerts/geocoding table(s).
+    • Allow selective purge (e.g. only failed/null results) vs full wipe.
+    • After purge, trigger or prompt user to re-run geocoding so fresh data can be fetched.
+    • Useful when switching geocoding providers or fixing bad cached coordinates.
 
 ---
 
@@ -56,27 +73,6 @@ Description: The Windows shntool binary has been placed in the tools/ folder. It
 
 ---
 
-TODO-090: Create lb_problems master data table for flagging problematic LB entries
-Priority: Medium
-Status: Open
-Added: 2026-05-24
-Description: Add a new table (lb_problems) to the database to track known issues with
-  specific lb_master entries. Each row links to an lb_master record and stores a free-text
-  notes field describing the problem (e.g. bad checksums, incomplete torrent, corrupt files,
-  mislabelled metadata).
-  Minimum schema:
-    • id (PK)
-    • lb_master_id (FK → lb_master.id)
-    • notes (TEXT) — description of the issue
-    • added (DATE)
-  Considerations:
-    • Add migration SQL with try/except for idempotency (no clean-DB assumption).
-    • Expose problem flags in the GUI (e.g. an indicator column in the main table or
-      a detail pane note) so users can see at a glance which entries have known issues.
-    • Include a management interface (add/edit/delete problem notes) — could live in
-      the existing detail panel or a separate dialog.
-
----
 
 TODO-089: Add acknowledgements section to About dialog
 Priority: Low
@@ -112,49 +108,7 @@ Description: The "Install Master Update" flow currently looks for a local file t
 
 ---
 
-TODO-087: Rework geocoding to use Dylan performances table for lb_master locations
-Priority: Medium
-Status: Open
-Added: 2026-05-23
-Description: Replace (or augment) the current geocoding logic with a lookup against the
-  performances table (TODO-086) to get authoritative venue/location data for lb_master
-  entries matched by date. This avoids geocoding freeform text scraped from torrent
-  metadata and instead uses structured, pre-verified performance records.
-  Matching logic:
-    • Join lb_master to performances on date_str (exact match).
-    • Typical case: one performance per date — take the single match directly.
-    • Edge case: two performances on the same date (rare but documented) — both are
-      usually at the same venue/city so either match is valid; log a warning and take
-      the first, or surface an ambiguity flag for manual review.
-    • If no performance record exists for a date, fall back to the current geocoder.
-  Implementation sketch:
-    • Add a get_performance_by_date(date_str) helper in db.py (or a new performances.py).
-    • In the geocoding worker (scraper.py or a dedicated geocode worker), check the
-      performances table first before hitting the geocoding API.
-    • Store the resolved lat/lon + source flag ('performances' vs 'geocoder') in the
-      existing geocoded columns so provenance is clear.
-    • Add a bulk re-geocode option to re-process all lb_master rows that currently have
-      geocoder-sourced coordinates once the performances table is populated.
-  Prerequisite: TODO-086 (performances table must exist and be populated).
 
----
-
-TODO-086: Add Dylan performance table to lb_master data
-Priority: Medium
-Status: Open
-Added: 2026-05-23
-Description: Create a structured performances table in the master data layer that
-  captures known Bob Dylan concert/performance metadata (date, venue, city, state,
-  country, tour name, setlist notes, etc.) and link it to lb_master entries by date
-  or lb_id. This would power richer lookups, map data, and collection cross-referencing.
-  Considerations:
-    • Define schema: performance_id, date, venue, city, state, country, tour, notes.
-    • Populate from an existing source (setlist.fm, bobsboots, or scraped data).
-    • Add FK or join logic linking lb_master rows to performances by date_str.
-    • Expose via a new /api/performances endpoint or extend existing map/collection APIs.
-    • Update PROJECT.md schema section when table is added.
-
----
 
 TODO-085: Map tab — sequential date-linked travel view across the globe
 Priority: Low

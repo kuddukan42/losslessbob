@@ -29,9 +29,10 @@ _bloom_lock = threading.Lock()
 # USER tables stay local to each install and never appear in an export.
 # See instructions/CC_LB_INTEGRITY.md §Data Ownership Model.
 
-MASTER_SCHEMA_VERSION = 2  # bumped: bootleg_titles + bootleg_scrapes added to master
+MASTER_SCHEMA_VERSION = 3  # bumped: dylan_performances promoted to master; lb_problems added
 
 MASTER_TABLES = (
+    "lb_missing",
     "checksums",
     "entries",
     "entry_files",
@@ -44,6 +45,8 @@ MASTER_TABLES = (
     "bootleg_titles",
     "bootleg_scrapes",
     "location_geocoded",
+    "dylan_performances",
+    "lb_problems",
 )
 # Note: `entries_fts` is a virtual FTS5 table whose content is mirrored from
 # `entries` via triggers. It is NOT copied directly during export/import; the
@@ -222,24 +225,27 @@ CREATE TABLE IF NOT EXISTS forum_posts (
 CREATE INDEX IF NOT EXISTS idx_forum_posts_lb ON forum_posts(lb_number, posted_at DESC);
 
 CREATE TABLE IF NOT EXISTS lb_master (
-    lb_number        INTEGER PRIMARY KEY,
-    lb_status        TEXT NOT NULL CHECK (lb_status IN ('public','private','missing')),
-    has_webpage      INTEGER NOT NULL DEFAULT 0,
-    has_checksums    INTEGER NOT NULL DEFAULT 0,
-    has_attachments  INTEGER NOT NULL DEFAULT 0,
-    first_seen_at    TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    last_status_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    previous_status  TEXT,
-    manual_override  INTEGER NOT NULL DEFAULT 0,
-    manual_status    TEXT,
-    manual_notes     TEXT,
-    manual_set_by    TEXT,
-    manual_set_at    TIMESTAMP,
-    needs_review     INTEGER NOT NULL DEFAULT 0
+    lb_number            INTEGER PRIMARY KEY,
+    lb_status            TEXT NOT NULL CHECK (lb_status IN ('public','private','missing','nonexistent')),
+    has_webpage          INTEGER NOT NULL DEFAULT 0,
+    has_checksums        INTEGER NOT NULL DEFAULT 0,
+    has_attachments      INTEGER NOT NULL DEFAULT 0,
+    first_seen_at        TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    last_status_at       TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    previous_status      TEXT,
+    manual_override      INTEGER NOT NULL DEFAULT 0,
+    manual_status        TEXT,
+    manual_notes         TEXT,
+    manual_set_by        TEXT,
+    manual_set_at        TIMESTAMP,
+    needs_review         INTEGER NOT NULL DEFAULT 0,
+    public_no_checksums  INTEGER NOT NULL DEFAULT 0
 );
 CREATE INDEX IF NOT EXISTS idx_lb_master_status   ON lb_master(lb_status);
 CREATE INDEX IF NOT EXISTS idx_lb_master_override ON lb_master(manual_override) WHERE manual_override = 1;
 CREATE INDEX IF NOT EXISTS idx_lb_master_review   ON lb_master(needs_review)   WHERE needs_review = 1;
+CREATE INDEX IF NOT EXISTS idx_lb_master_public_no_chk
+    ON lb_master(public_no_checksums) WHERE public_no_checksums = 1;
 
 CREATE TABLE IF NOT EXISTS lb_status_history (
     id            INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -260,6 +266,7 @@ CREATE TABLE IF NOT EXISTS location_geocoded (
     display_name    TEXT,
     manual_override INTEGER NOT NULL DEFAULT 0,
     note            TEXT,
+    lb_number       TEXT,
     geocoded_at     TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 CREATE INDEX IF NOT EXISTS idx_geo_source ON location_geocoded(source);
@@ -435,6 +442,20 @@ CREATE TABLE IF NOT EXISTS dylan_performances (
 CREATE INDEX IF NOT EXISTS idx_perf_date     ON dylan_performances(date_str);
 CREATE INDEX IF NOT EXISTS idx_perf_category ON dylan_performances(category);
 CREATE INDEX IF NOT EXISTS idx_perf_country  ON dylan_performances(country);
+
+CREATE TABLE IF NOT EXISTS lb_missing (
+    lb_number      INTEGER PRIMARY KEY,
+    confirmed_date TEXT,
+    notes          TEXT
+);
+
+CREATE TABLE IF NOT EXISTS lb_problems (
+    id         INTEGER PRIMARY KEY AUTOINCREMENT,
+    lb_number  INTEGER NOT NULL REFERENCES lb_master(lb_number),
+    notes      TEXT NOT NULL DEFAULT '',
+    added      TEXT NOT NULL DEFAULT (date('now'))
+);
+CREATE INDEX IF NOT EXISTS idx_lb_problems_lb ON lb_problems(lb_number);
 """
 
 _MD5_RE = re.compile(r'^([0-9a-fA-F]{32})\s+\*?(.+)$')
@@ -443,6 +464,16 @@ _FFP_RE = re.compile(r'^(.+\.(?:flac|ape|wav))[:=]([0-9a-fA-F]{32,40})$', re.IGN
 
 TRACKED_ENTRY_FIELDS = ("date_str", "location", "cdr", "rating", "timing",
                         "description", "setlist", "status")
+
+# LB numbers confirmed to not exist on the LosslessBob site.  These are seeded
+# into lb_missing on first run and are never scraped or retried.
+_LB_MISSING_SEEDS: tuple[int, ...] = (
+    7, 36, 42, 63, 65, 241, 288, 374, 375, 433,
+    1346, 1407, 1455, 1614, 1641, 1768, 1909, 2101,
+    2685, 2799, 2835, 3108, 3305, 3327, 3328, 3976,
+    4408, 8989, 9284, 9743, 11748, 12132, 12191, 12345,
+    13797, 14215,
+)
 
 
 def get_connection(db_path=None):
@@ -535,7 +566,83 @@ def init_db(db_path=None):
         ).rowcount
         if soft_404_affected > 0:
             conn.execute("INSERT INTO entries_fts(entries_fts) VALUES('rebuild')")
-            conn.commit()
+        # One-time fix: performances-sourced geocodes stored 'low' confidence because
+        # Nominatim importance penalises specific venues.  Promote them to 'medium'.
+        conn.execute(
+            "UPDATE location_geocoded SET confidence='medium' "
+            "WHERE source='performances' AND confidence='low'"
+        )
+        # Migration: add lb_number column to location_geocoded (TODO-099)
+        _geo_cols = [r[1] for r in conn.execute("PRAGMA table_info(location_geocoded)").fetchall()]
+        if "lb_number" not in _geo_cols:
+            conn.execute("ALTER TABLE location_geocoded ADD COLUMN lb_number TEXT")
+        # Migration: recreate lb_master when the schema is missing 'nonexistent' status or
+        # public_no_checksums column.  SQLite only supports CHECK changes via table recreation.
+        _lbm_schema_row = conn.execute(
+            "SELECT sql FROM sqlite_master WHERE type='table' AND name='lb_master'"
+        ).fetchone()
+        _lbm_schema_sql = _lbm_schema_row[0] if _lbm_schema_row else ""
+        if _lbm_schema_sql and (
+            "nonexistent" not in _lbm_schema_sql or "public_no_checksums" not in _lbm_schema_sql
+        ):
+            _pnc_col = "public_no_checksums" if "public_no_checksums" in [
+                r[1] for r in conn.execute("PRAGMA table_info(lb_master)").fetchall()
+            ] else "0"
+            conn.executescript(f"""
+                PRAGMA foreign_keys = OFF;
+                CREATE TABLE lb_master_new (
+                    lb_number            INTEGER PRIMARY KEY,
+                    lb_status            TEXT NOT NULL CHECK (lb_status IN
+                                            ('public','private','missing','nonexistent')),
+                    has_webpage          INTEGER NOT NULL DEFAULT 0,
+                    has_checksums        INTEGER NOT NULL DEFAULT 0,
+                    has_attachments      INTEGER NOT NULL DEFAULT 0,
+                    first_seen_at        TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    last_status_at       TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    previous_status      TEXT,
+                    manual_override      INTEGER NOT NULL DEFAULT 0,
+                    manual_status        TEXT,
+                    manual_notes         TEXT,
+                    manual_set_by        TEXT,
+                    manual_set_at        TIMESTAMP,
+                    needs_review         INTEGER NOT NULL DEFAULT 0,
+                    public_no_checksums  INTEGER NOT NULL DEFAULT 0
+                );
+                INSERT INTO lb_master_new
+                    (lb_number, lb_status, has_webpage, has_checksums, has_attachments,
+                     first_seen_at, last_status_at, previous_status, manual_override,
+                     manual_status, manual_notes, manual_set_by, manual_set_at,
+                     needs_review, public_no_checksums)
+                SELECT lb_number, lb_status, has_webpage, has_checksums, has_attachments,
+                       first_seen_at, last_status_at, previous_status, manual_override,
+                       manual_status, manual_notes, manual_set_by, manual_set_at,
+                       needs_review, {_pnc_col}
+                FROM lb_master;
+                DROP TABLE lb_master;
+                ALTER TABLE lb_master_new RENAME TO lb_master;
+                CREATE INDEX IF NOT EXISTS idx_lb_master_status
+                    ON lb_master(lb_status);
+                CREATE INDEX IF NOT EXISTS idx_lb_master_override
+                    ON lb_master(manual_override) WHERE manual_override = 1;
+                CREATE INDEX IF NOT EXISTS idx_lb_master_review
+                    ON lb_master(needs_review) WHERE needs_review = 1;
+                CREATE INDEX IF NOT EXISTS idx_lb_master_public_no_chk
+                    ON lb_master(public_no_checksums) WHERE public_no_checksums = 1;
+                PRAGMA foreign_keys = ON;
+            """)
+
+        # Migration: seed lb_missing with confirmed-not-existing LB numbers.
+        for _seed_lb in _LB_MISSING_SEEDS:
+            conn.execute(
+                "INSERT OR IGNORE INTO lb_missing(lb_number, confirmed_date, notes)"
+                " VALUES(?, '2026-05-26', 'Confirmed: LB number allocated but page never existed.')",
+                (_seed_lb,),
+            )
+
+        # Always commit: UPDATE above opens a Python implicit transaction regardless
+        # of rowcount.  Without this, a zero-row UPDATE leaves the read connection
+        # holding a RESERVED lock that blocks the write queue's first transaction.
+        conn.commit()
 
     # Build bloom filter in background so startup is not blocked.
     # checksum_in_bloom() returns True while _bloom is None, so all lookups
@@ -666,6 +773,38 @@ def import_dylan_performances(db_path=None) -> int:
     )
     _log.info("dylan_performances: imported %d rows from %s", len(records), ods_path.name)
     return len(records)
+
+
+def get_performance_by_date(date_str: str, db_path=None) -> dict | None:
+    """Return the dylan_performances row for an ISO date string (YYYY-MM-DD), or None.
+
+    When two performances share the same date (rare), returns the first and logs a
+    warning so callers can decide whether to surface an ambiguity flag.
+
+    Args:
+        date_str: ISO date string, e.g. ``'1978-11-16'``.  Must already be in
+                  YYYY-MM-DD format; use ``_entry_date_to_iso()`` in geocoder.py
+                  to convert entries.date_str values first.
+        db_path:  Optional path override; defaults to :data:`DB_PATH`.
+
+    Returns:
+        Dict with keys ``event_id``, ``date_str``, ``category``, ``city``,
+        ``state``, ``country``, ``venue``; or ``None`` if no match.
+    """
+    conn = get_connection(db_path)
+    rows = conn.execute(
+        "SELECT event_id, date_str, category, city, state, country, venue "
+        "FROM dylan_performances WHERE date_str = ?",
+        (date_str,),
+    ).fetchall()
+    if not rows:
+        return None
+    if len(rows) > 1:
+        logging.getLogger(__name__).warning(
+            "get_performance_by_date: %d performances on %s — returning first",
+            len(rows), date_str,
+        )
+    return dict(rows[0])
 
 
 def get_meta(key, db_path=None):
@@ -1013,7 +1152,7 @@ def search_entries(query, field="all", year=None, limit=None, db_path=None):
         limit_clause = f"LIMIT {int(limit)}" if limit is not None else ""
         sql = f"""
             SELECT e.lb_number, e.date_str, e.location, e.rating,
-                   e.description, e.status, lm.lb_status
+                   e.description, e.status, lm.lb_status, lm.public_no_checksums
             FROM entries_fts
             JOIN entries e ON e.lb_number = entries_fts.rowid
             LEFT JOIN lb_master lm ON lm.lb_number = e.lb_number
@@ -1027,7 +1166,7 @@ def search_entries(query, field="all", year=None, limit=None, db_path=None):
         limit_clause = f"LIMIT {int(limit)}" if limit is not None else ""
         sql = f"""
             SELECT e.lb_number, e.date_str, e.location, e.rating,
-                   e.description, e.status, lm.lb_status
+                   e.description, e.status, lm.lb_status, lm.public_no_checksums
             FROM entries e
             LEFT JOIN lb_master lm ON lm.lb_number = e.lb_number
             WHERE 1=1 {year_clause}
@@ -1043,7 +1182,7 @@ def search_entries(query, field="all", year=None, limit=None, db_path=None):
         like = f"%{query}%"
         fallback_sql = (
             "SELECT e.lb_number, e.date_str, e.location, e.rating,"
-            " e.description, e.status, lm.lb_status"
+            " e.description, e.status, lm.lb_status, lm.public_no_checksums"
             " FROM entries e LEFT JOIN lb_master lm ON lm.lb_number = e.lb_number"
             " WHERE e.description LIKE ? OR e.location LIKE ? OR e.date_str LIKE ?"
             " ORDER BY e.lb_number"
@@ -1065,7 +1204,7 @@ def search_entries(query, field="all", year=None, limit=None, db_path=None):
             if not any(r["lb_number"] == lb_id for r in results):
                 direct = conn.execute(
                     "SELECT e.lb_number, e.date_str, e.location, e.rating,"
-                    " e.description, e.status, lm.lb_status"
+                    " e.description, e.status, lm.lb_status, lm.public_no_checksums"
                     " FROM entries e LEFT JOIN lb_master lm ON lm.lb_number = e.lb_number"
                     " WHERE e.lb_number = ?",
                     (lb_id,),
@@ -1094,7 +1233,7 @@ def get_entries_by_lb_list(lb_numbers: list[int], db_path=None) -> list[dict]:
     placeholders = ",".join("?" * len(lb_numbers))
     rows = conn.execute(
         f"SELECT e.lb_number, e.date_str, e.location, e.rating,"
-        f" e.description, e.status, lm.lb_status"
+        f" e.description, e.status, lm.lb_status, lm.public_no_checksums"
         f" FROM entries e LEFT JOIN lb_master lm ON lm.lb_number = e.lb_number"
         f" WHERE e.lb_number IN ({placeholders})"
         f" ORDER BY e.lb_number",
@@ -1628,21 +1767,30 @@ def migrate_lb_master(db_path=None) -> int:
     attach_set = {r[0] for r in conn.execute(
         "SELECT DISTINCT lb_number FROM entry_files")}
 
+    missing_set = {r[0] for r in conn.execute("SELECT lb_number FROM lb_missing")}
+
     rows = []
     for n in range(1, max_lb + 1):
-        has_web = n in public_set
-        has_chk = n in checksum_set
-        has_att = n in attach_set
-        status, needs_review = _compute_lb_status(has_web, has_chk, has_att)
-        rows.append((n, status, int(has_web), int(has_chk), int(has_att), needs_review))
+        if n in missing_set:
+            status, needs_review = "nonexistent", 0
+            hw = hc = ha = 0
+        else:
+            has_web = n in public_set
+            has_chk = n in checksum_set
+            has_att = n in attach_set
+            status, needs_review = _compute_lb_status(has_web, has_chk, has_att)
+            hw, hc, ha = int(has_web), int(has_chk), int(has_att)
+        pnc = int(status == "public" and hc == 0)
+        rows.append((n, status, hw, hc, ha, needs_review, pnc))
 
     _rows = rows
 
     def _run(c):
         c.executemany(
             """INSERT OR REPLACE INTO lb_master
-               (lb_number, lb_status, has_webpage, has_checksums, has_attachments, needs_review)
-               VALUES (?,?,?,?,?,?)""",
+               (lb_number, lb_status, has_webpage, has_checksums, has_attachments,
+                needs_review, public_no_checksums)
+               VALUES (?,?,?,?,?,?,?)""",
             _rows,
         )
         # Remove tombstone rows — lb_master is now authoritative
@@ -1670,17 +1818,22 @@ def reconcile_lb_status(lb_number: int, trigger: str = "reconcile", db_path=None
     _lb, _trigger = lb_number, trigger
 
     def _run(conn) -> str:
-        has_web = bool(conn.execute(
-            "SELECT 1 FROM entries WHERE lb_number=? AND status='ok'", (_lb,)
-        ).fetchone())
-        has_chk = bool(conn.execute(
-            "SELECT 1 FROM checksums WHERE lb_number=?", (_lb,)
-        ).fetchone())
-        has_att = bool(conn.execute(
-            "SELECT 1 FROM entry_files WHERE lb_number=?", (_lb,)
-        ).fetchone())
-
-        auto_status, needs_review = _compute_lb_status(has_web, has_chk, has_att)
+        if conn.execute(
+            "SELECT 1 FROM lb_missing WHERE lb_number=?", (_lb,)
+        ).fetchone():
+            auto_status, needs_review = "nonexistent", 0
+            has_web = has_chk = has_att = False
+        else:
+            has_web = bool(conn.execute(
+                "SELECT 1 FROM entries WHERE lb_number=? AND status='ok'", (_lb,)
+            ).fetchone())
+            has_chk = bool(conn.execute(
+                "SELECT 1 FROM checksums WHERE lb_number=?", (_lb,)
+            ).fetchone())
+            has_att = bool(conn.execute(
+                "SELECT 1 FROM entry_files WHERE lb_number=?", (_lb,)
+            ).fetchone())
+            auto_status, needs_review = _compute_lb_status(has_web, has_chk, has_att)
 
         existing = conn.execute(
             "SELECT lb_status, manual_override FROM lb_master WHERE lb_number=?",
@@ -1693,11 +1846,14 @@ def reconcile_lb_status(lb_number: int, trigger: str = "reconcile", db_path=None
                 if _trigger == "flat_file_apply" and auto_status == "private"
                 else auto_status
             )
+            pnc = int(initial_status == "public" and not has_chk)
             conn.execute(
                 """INSERT INTO lb_master
-                   (lb_number, lb_status, has_webpage, has_checksums, has_attachments, needs_review)
-                   VALUES (?,?,?,?,?,?)""",
-                (_lb, initial_status, int(has_web), int(has_chk), int(has_att), needs_review),
+                   (lb_number, lb_status, has_webpage, has_checksums, has_attachments,
+                    needs_review, public_no_checksums)
+                   VALUES (?,?,?,?,?,?,?)""",
+                (_lb, initial_status, int(has_web), int(has_chk), int(has_att),
+                 needs_review, pnc),
             )
             conn.execute(
                 "INSERT INTO lb_status_history(lb_number, old_status, new_status, trigger_event) "
@@ -1710,24 +1866,27 @@ def reconcile_lb_status(lb_number: int, trigger: str = "reconcile", db_path=None
         manual_override = existing["manual_override"]
 
         if manual_override:
+            pnc = int(old_status == "public" and not has_chk)
             conn.execute(
                 """UPDATE lb_master
                    SET has_webpage=?, has_checksums=?, has_attachments=?,
-                       needs_review=?, last_status_at=CURRENT_TIMESTAMP
+                       needs_review=?, public_no_checksums=?, last_status_at=CURRENT_TIMESTAMP
                    WHERE lb_number=?""",
-                (int(has_web), int(has_chk), int(has_att), needs_review, _lb),
+                (int(has_web), int(has_chk), int(has_att), needs_review, pnc, _lb),
             )
             return old_status
 
         final_status = auto_status
+        pnc = int(final_status == "public" and not has_chk)
         if final_status != old_status:
             conn.execute(
                 """UPDATE lb_master
                    SET lb_status=?, previous_status=?, has_webpage=?, has_checksums=?,
-                       has_attachments=?, needs_review=?, last_status_at=CURRENT_TIMESTAMP
+                       has_attachments=?, needs_review=?, public_no_checksums=?,
+                       last_status_at=CURRENT_TIMESTAMP
                    WHERE lb_number=?""",
                 (final_status, old_status,
-                 int(has_web), int(has_chk), int(has_att), needs_review, _lb),
+                 int(has_web), int(has_chk), int(has_att), needs_review, pnc, _lb),
             )
             conn.execute(
                 "INSERT INTO lb_status_history(lb_number, old_status, new_status, trigger_event) "
@@ -1738,9 +1897,9 @@ def reconcile_lb_status(lb_number: int, trigger: str = "reconcile", db_path=None
             conn.execute(
                 """UPDATE lb_master
                    SET has_webpage=?, has_checksums=?, has_attachments=?,
-                       needs_review=?, last_status_at=CURRENT_TIMESTAMP
+                       needs_review=?, public_no_checksums=?, last_status_at=CURRENT_TIMESTAMP
                    WHERE lb_number=?""",
-                (int(has_web), int(has_chk), int(has_att), needs_review, _lb),
+                (int(has_web), int(has_chk), int(has_att), needs_review, pnc, _lb),
             )
         return final_status
 
@@ -1766,6 +1925,10 @@ def batch_reconcile_lb_status(lb_numbers: list[int], trigger: str = "reconcile",
     _trigger = trigger
 
     def _run(conn) -> None:
+        missing_set = {r[0] for r in conn.execute(
+            f"SELECT lb_number FROM lb_missing WHERE lb_number IN ({ph})",
+            _lbs,
+        )}
         web_set = {r[0] for r in conn.execute(
             f"SELECT DISTINCT lb_number FROM entries WHERE lb_number IN ({ph}) AND status='ok'",
             _lbs,
@@ -1790,11 +1953,16 @@ def batch_reconcile_lb_status(lb_numbers: list[int], trigger: str = "reconcile",
         upd_same: list[tuple] = []
 
         for lb in _lbs:
-            has_web = lb in web_set
-            has_chk = lb in chk_set
-            has_att = lb in att_set
-            auto_status, needs_review = _compute_lb_status(has_web, has_chk, has_att)
-            hw, hc, ha = int(has_web), int(has_chk), int(has_att)
+            if lb in missing_set:
+                auto_status, needs_review = "nonexistent", 0
+                hw = hc = ha = 0
+            else:
+                has_web = lb in web_set
+                has_chk = lb in chk_set
+                has_att = lb in att_set
+                auto_status, needs_review = _compute_lb_status(has_web, has_chk, has_att)
+                hw, hc, ha = int(has_web), int(has_chk), int(has_att)
+            pnc = int(auto_status == "public" and hc == 0)
 
             if lb not in existing:
                 initial_status = (
@@ -1802,25 +1970,28 @@ def batch_reconcile_lb_status(lb_numbers: list[int], trigger: str = "reconcile",
                     if _trigger == "flat_file_apply" and auto_status == "private"
                     else auto_status
                 )
-                insert_rows.append((lb, initial_status, hw, hc, ha, needs_review))
+                pnc_initial = int(initial_status == "public" and hc == 0)
+                insert_rows.append((lb, initial_status, hw, hc, ha, needs_review, pnc_initial))
                 history_rows.append((lb, None, initial_status, _trigger))
                 continue
 
             old_status = existing[lb]["lb_status"]
             manual = existing[lb]["manual_override"]
             if manual:
-                upd_override.append((hw, hc, ha, needs_review, lb))
+                pnc_manual = int(old_status == "public" and hc == 0)
+                upd_override.append((hw, hc, ha, needs_review, pnc_manual, lb))
             elif auto_status != old_status:
-                upd_changed.append((auto_status, old_status, hw, hc, ha, needs_review, lb))
+                upd_changed.append((auto_status, old_status, hw, hc, ha, needs_review, pnc, lb))
                 history_rows.append((lb, old_status, auto_status, _trigger))
             else:
-                upd_same.append((hw, hc, ha, needs_review, lb))
+                upd_same.append((hw, hc, ha, needs_review, pnc, lb))
 
         if insert_rows:
             conn.executemany(
                 "INSERT INTO lb_master"
-                " (lb_number, lb_status, has_webpage, has_checksums, has_attachments, needs_review)"
-                " VALUES (?,?,?,?,?,?)",
+                " (lb_number, lb_status, has_webpage, has_checksums, has_attachments,"
+                "  needs_review, public_no_checksums)"
+                " VALUES (?,?,?,?,?,?,?)",
                 insert_rows,
             )
         if history_rows:
@@ -1832,20 +2003,22 @@ def batch_reconcile_lb_status(lb_numbers: list[int], trigger: str = "reconcile",
         if upd_override:
             conn.executemany(
                 "UPDATE lb_master SET has_webpage=?, has_checksums=?, has_attachments=?,"
-                " needs_review=?, last_status_at=CURRENT_TIMESTAMP WHERE lb_number=?",
+                " needs_review=?, public_no_checksums=?, last_status_at=CURRENT_TIMESTAMP"
+                " WHERE lb_number=?",
                 upd_override,
             )
         if upd_changed:
             conn.executemany(
                 "UPDATE lb_master SET lb_status=?, previous_status=?, has_webpage=?,"
-                " has_checksums=?, has_attachments=?, needs_review=?,"
+                " has_checksums=?, has_attachments=?, needs_review=?, public_no_checksums=?,"
                 " last_status_at=CURRENT_TIMESTAMP WHERE lb_number=?",
                 upd_changed,
             )
         if upd_same:
             conn.executemany(
                 "UPDATE lb_master SET has_webpage=?, has_checksums=?, has_attachments=?,"
-                " needs_review=?, last_status_at=CURRENT_TIMESTAMP WHERE lb_number=?",
+                " needs_review=?, public_no_checksums=?, last_status_at=CURRENT_TIMESTAMP"
+                " WHERE lb_number=?",
                 upd_same,
             )
 
@@ -1864,7 +2037,9 @@ def reconcile_all_lb_master(db_path=None) -> dict:
     max_lb = conn.execute("SELECT MAX(lb_number) FROM checksums").fetchone()[0] or 0
     # Also include LBs already in lb_master (they may exceed checksums max after deletions)
     master_max = conn.execute("SELECT MAX(lb_number) FROM lb_master").fetchone()[0] or 0
-    effective_max = max(max_lb, master_max)
+    # Also include scraped entries (public pages with no checksums would be missed otherwise)
+    entries_max = conn.execute("SELECT MAX(lb_number) FROM entries").fetchone()[0] or 0
+    effective_max = max(max_lb, master_max, entries_max)
     if effective_max == 0:
         return {"public": 0, "private": 0, "missing": 0, "max_lb": 0}
 
@@ -2007,18 +2182,61 @@ def get_lb_master_stats(db_path=None) -> dict:
     conn = get_connection(db_path)
     row = conn.execute("""
         SELECT
-            COALESCE(SUM(CASE WHEN lb_status='public'  THEN 1 ELSE 0 END), 0) AS public,
-            COALESCE(SUM(CASE WHEN lb_status='private' THEN 1 ELSE 0 END), 0) AS private,
-            COALESCE(SUM(CASE WHEN lb_status='missing' THEN 1 ELSE 0 END), 0) AS missing,
-            COALESCE(MAX(lb_number), 0)                                         AS max_lb,
-            COALESCE(SUM(manual_override), 0)                                   AS overrides,
-            COALESCE(SUM(needs_review), 0)                                      AS needs_review
+            COALESCE(SUM(CASE WHEN lb_status='public'      THEN 1 ELSE 0 END), 0) AS public,
+            COALESCE(SUM(CASE WHEN lb_status='private'     THEN 1 ELSE 0 END), 0) AS private,
+            COALESCE(SUM(CASE WHEN lb_status='missing'     THEN 1 ELSE 0 END), 0) AS missing,
+            COALESCE(SUM(CASE WHEN lb_status='nonexistent' THEN 1 ELSE 0 END), 0) AS nonexistent,
+            COALESCE(MAX(lb_number), 0)                                             AS max_lb,
+            COALESCE(SUM(manual_override), 0)                                       AS overrides,
+            COALESCE(SUM(needs_review), 0)                                          AS needs_review,
+            COALESCE(SUM(public_no_checksums), 0)                                   AS public_no_checksums
         FROM lb_master
     """).fetchone()
     return dict(row) if row else {
-        "public": 0, "private": 0, "missing": 0,
-        "max_lb": 0, "overrides": 0, "needs_review": 0,
+        "public": 0, "private": 0, "missing": 0, "nonexistent": 0,
+        "max_lb": 0, "overrides": 0, "needs_review": 0, "public_no_checksums": 0,
     }
+
+
+def is_lb_missing(lb_number: int, db_path=None) -> bool:
+    """Return True if lb_number is in lb_missing (confirmed to not exist on the LB site)."""
+    conn = get_connection(db_path)
+    return bool(conn.execute(
+        "SELECT 1 FROM lb_missing WHERE lb_number=?", (lb_number,)
+    ).fetchone())
+
+
+def get_lb_missing_list(db_path=None) -> list[dict]:
+    """Return all rows in lb_missing ordered by lb_number."""
+    conn = get_connection(db_path)
+    rows = conn.execute(
+        "SELECT lb_number, confirmed_date, notes FROM lb_missing ORDER BY lb_number"
+    ).fetchall()
+    return [dict(r) for r in rows]
+
+
+def add_lb_missing(lb_number: int, confirmed_date: str = "", notes: str = "",
+                   db_path=None) -> None:
+    """Add an lb_number to lb_missing and immediately reconcile its lb_master status."""
+    _lb, _date, _notes = lb_number, confirmed_date, notes
+
+    def _run(conn) -> None:
+        conn.execute(
+            "INSERT OR IGNORE INTO lb_missing(lb_number, confirmed_date, notes) VALUES(?,?,?)",
+            (_lb, _date, _notes),
+        )
+
+    get_write_queue().execute(_run)
+    reconcile_lb_status(lb_number, trigger="lb_missing_add", db_path=db_path)
+
+
+def remove_lb_missing(lb_number: int, db_path=None) -> None:
+    """Remove an lb_number from lb_missing and immediately reconcile its lb_master status."""
+    _lb = lb_number
+    get_write_queue().execute(
+        lambda c: c.execute("DELETE FROM lb_missing WHERE lb_number=?", (_lb,))
+    )
+    reconcile_lb_status(lb_number, trigger="lb_missing_remove", db_path=db_path)
 
 
 def get_lb_status(lb_number: int, db_path=None) -> str | None:
@@ -3030,3 +3248,98 @@ def get_downloaded_urls(db_path=None) -> set[str]:
             "WHERE status IN ('downloaded', 'not_found', 'skipped')"
         ).fetchall()
     return {r["url"] for r in rows}
+
+
+# ── lb_problems ───────────────────────────────────────────────────────────────
+
+def get_lb_problems(lb_number: int | None = None, db_path=None) -> list[dict]:
+    """Return lb_problems rows, optionally filtered to a single LB number.
+
+    Args:
+        lb_number: When provided, only return rows for that LB number.
+        db_path: Optional database path override.
+
+    Returns:
+        List of dicts with keys: id, lb_number, notes, added.
+    """
+    conn = get_connection(db_path)
+    if lb_number is not None:
+        rows = conn.execute(
+            "SELECT id, lb_number, notes, added FROM lb_problems "
+            "WHERE lb_number=? ORDER BY added DESC",
+            (lb_number,),
+        ).fetchall()
+    else:
+        rows = conn.execute(
+            "SELECT id, lb_number, notes, added FROM lb_problems "
+            "ORDER BY lb_number, added DESC"
+        ).fetchall()
+    return [dict(r) for r in rows]
+
+
+def add_lb_problem(lb_number: int, notes: str, added: str | None = None, db_path=None) -> int:
+    """Insert an lb_problems row and return the new row id.
+
+    Args:
+        lb_number: The LB number this problem applies to.
+        notes: Free-text description of the problem.
+        added: ISO date string (YYYY-MM-DD); defaults to today.
+        db_path: Optional database path override.
+
+    Returns:
+        The rowid of the newly-inserted row.
+    """
+    from datetime import date as _date
+    _lb, _n, _d = lb_number, notes, added or _date.today().isoformat()
+
+    def _run(c):
+        cur = c.execute(
+            "INSERT INTO lb_problems(lb_number, notes, added) VALUES(?,?,?)",
+            (_lb, _n, _d),
+        )
+        return cur.lastrowid
+
+    return get_write_queue().execute(_run)
+
+
+def update_lb_problem(problem_id: int, notes: str, db_path=None) -> None:
+    """Update the notes field of an lb_problems row by id.
+
+    Args:
+        problem_id: The primary key of the row to update.
+        notes: Replacement notes text.
+        db_path: Optional database path override.
+    """
+    _id, _n = problem_id, notes
+    get_write_queue().execute(
+        lambda c: c.execute("UPDATE lb_problems SET notes=? WHERE id=?", (_n, _id))
+    )
+
+
+def delete_lb_problem(problem_id: int, db_path=None) -> None:
+    """Delete an lb_problems row by id.
+
+    Args:
+        problem_id: The primary key of the row to delete.
+        db_path: Optional database path override.
+    """
+    _id = problem_id
+    get_write_queue().execute(
+        lambda c: c.execute("DELETE FROM lb_problems WHERE id=?", (_id,))
+    )
+
+
+def get_lb_problem_count(lb_number: int, db_path=None) -> int:
+    """Return the number of open problem notes for an LB number.
+
+    Args:
+        lb_number: The LB number to count problems for.
+        db_path: Optional database path override.
+
+    Returns:
+        Integer count of rows in lb_problems for this lb_number.
+    """
+    conn = get_connection(db_path)
+    return conn.execute(
+        "SELECT COUNT(*) FROM lb_problems WHERE lb_number=?", (lb_number,)
+    ).fetchone()[0]
