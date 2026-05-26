@@ -1,3 +1,41 @@
+[2026-05-26] — refactor(gui): extend theme token vocabulary and eliminate all hardcoded hex colors
+
+Changed
+
+  gui/styles.py: Added 21 new module-level constants (ROW_FAIL, ROW_MISSING_FILE, ROW_GREY,
+    ROW_PRIVATE, ROW_WRONG_LB, ROW_MULTIPLE_IDS, ROW_DIRTY, ROW_AUDIT, ROW_READONLY,
+    ROW_NFT_MISSING, ROW_NFT_STALE, ROW_NFT_UNKNOWN, STATUS_OK, STATUS_WARN, STATUS_ERROR,
+    STATUS_NEUTRAL, FG_MUTED, FG_LINK, FG_DANGER, FG_SUCCESS, FG_WARNING). All wired into
+    apply_theme() with theme-dict keys; defaults are Light-theme values.
+
+  gui/theme_tab.py: All 13 named themes updated with dark-adapted values for every new token.
+    COLOR_LABELS extended with 21 new swatch entries so users can customise them.
+
+  gui/lbdir_tab.py, gui/verify_tab.py: _C_PASS/FAIL/MISSING/NO_LB/GREY aliases now reference
+    styles.ROW_OWNED/FAIL/MISSING_FILE/DUPLICATE/GREY. Danger/muted inline styles tokenised.
+
+  gui/rename_tab.py: ROW_STATUS_COLORS and NFT_STATUS_COLORS dicts replaced with styles tokens.
+    Legend swatches updated to use .name() from the same tokens.
+
+  gui/dbedit_tab.py: _C_DIRTY/WARN/AUDIT/RDONLY lazy-aliased to styles row tokens.
+    setForeground calls use FG_MUTED/FG_DANGER/FG_LINK.
+
+  gui/spectrogram_tab.py: Drop-zone and hint labels use FG_MUTED; dup highlight uses ROW_FAIL.
+
+  gui/scraper_tab.py: All Bootstrap status-color dicts use STATUS_OK/WARN/ERROR/NEUTRAL.
+    Count labels use FG_MUTED.
+
+  gui/setup_tab.py: Reset button uses FG_DANGER. All 19 tool-status setStyleSheet("color: X")
+    calls replaced with FG_SUCCESS/DANGER/WARNING. Migration status uses STATUS_* tokens.
+
+  gui/attachments_tab.py, gui/bootlegs_tab.py, gui/search_tab.py: private/missing color
+    dicts consolidated to ROW_PRIVATE/ROW_GREY (previously duplicated in 7 files).
+
+  gui/lookup_tab.py: lb_status colors use ROW_PRIVATE/GREY; warning row uses
+    ROW_MISSING_FILE/FG_WARNING.
+
+  gui/collection_tab.py: All foreground color calls replaced with semantic FG_* tokens.
+
 [2026-05-26] — feat(map): add geocoding cache purge (TODO-097)
 
 Added
