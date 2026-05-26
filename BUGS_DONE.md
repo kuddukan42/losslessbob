@@ -1,6 +1,123 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-109: Map geocode layer not shown on load when Curator mode is already checked
+Status: Fixed
+File(s): gui/main_window.py
+Reported: 2026-05-23
+Fixed: 2026-05-26
+Description: When the app starts with Curator mode already enabled, the geocoding and
+  location-overrides panels on the Map tab remained hidden. Toggling the checkbox off
+  and back on would make them appear.
+Root cause: curator_mode_changed is emitted inside SetupTab.__init__ (via _load_curator_status)
+  before MapTab is created and before the signal connection in _build_tabs is wired.
+  The initial emission fires with no listeners, so MapTab starts with both curator
+  panels hidden (setVisible(False)).
+Fix: Added map_tab.set_curator_mode(setup_tab.curator_cb.isChecked()) immediately after
+  connecting the signal in main_window.py._build_tabs(), so the current checkbox state
+  is applied on every startup regardless of signal timing.
+
+---
+
+BUG-115: Fingerprint Build DB shows [0/0] with no feedback during folder scan
+Status: Fixed
+File(s): backend/fingerprint.py, gui/spectrogram_tab.py
+Reported: 2026-05-24
+Fixed: 2026-05-24
+Description: Clicking "Build DB" with a large collection (15,967 folders) left the
+  progress bar in indeterminate mode showing "[0/0]" for several minutes because
+  build_fingerprint_db() collects all audio files before setting total.
+Root cause: File-collection loop emitted no state updates until complete. For a large
+  collection the scan can take several minutes, giving the appearance of being frozen.
+Fix: Emit status="scanning" with folder count every 50 rows during collection;
+  GUI handles the new status by updating the label without touching the queue widgets.
+
+---
+
+BUG-111: Snapshot install fails on AppImage — "must be in data/exports/ or data/imports/"
+Status: Fixed
+File(s): backend/app.py
+Reported: 2026-05-24
+Fixed: 2026-05-25
+Description: When attempting to install a snapshot in the AppImage build, an "Install Failed"
+  dialog was shown with the message "Snapshot must be in data/exports/ or data/imports/".
+  The install worked correctly in non-AppImage (dev) runs.
+Root cause: /api/master/import had an allowed_dirs check that compared the user-selected
+  path against DATA_DIR / "exports" and DATA_DIR / "imports". In AppImage, DATA_DIR resolves
+  to ~/.local/share/LosslessBob/data. A snapshot file placed anywhere else (e.g. ~/Downloads)
+  failed the containment check, while the same path worked in dev because DATA_DIR was the
+  project-relative data/.
+Fix: Removed the allowed_dirs containment check entirely from /api/master/import.
+  The route now only validates that the path has a .db suffix; any readable file is accepted.
+
+---
+
+BUG-110: Open data folder button does nothing on AppImage
+Status: Fixed
+File(s): gui/platform_utils.py, gui/setup_tab.py
+Reported: 2026-05-24
+Fixed: 2026-05-26
+Description: Clicking the "Open data folder" button had no effect when running the AppImage
+  build on Linux. The folder did not open in the file manager.
+Root cause: open_folder() called subprocess.run(["xdg-open", ...], check=False). In AppImage
+  environments the modified PATH may not include xdg-open, causing a FileNotFoundError that
+  was silently swallowed by except Exception: pass in _on_open_folder.
+Fix: Changed Linux path in open_folder() and open_file() to use
+  QDesktopServices.openUrl(QUrl.fromLocalFile(p)) with xdg-open as a fallback. Also replaced
+  except Exception: pass in setup_tab._on_open_folder with a _log.warning() call.
+
+---
+
+BUG-107: Soft-404 pages stored as entry descriptions
+Status: Fixed
+File(s): backend/scraper.py:177, backend/db.py:init_db
+Reported: 2026-05-23
+Fixed: 2026-05-23
+Description: Archive server returns HTTP 200 with a 404 error HTML body for non-existent
+  entries. Scraper parsed the error page text ("The requested URL was not found on this
+  server.") as the entry description, resulting in 68 entries with garbage metadata.
+Root cause: _fetch() only checked the HTTP status code; the server's soft-404 responses
+  always returned 200 so the check was bypassed.
+Fix: Added _is_soft_404() in scraper.py to detect the error text in HTML before parsing.
+  Added one-time cleanup SQL in init_db() to fix existing affected rows.
+
+---
+
+BUG-116b: Public-page LB with no checksums misclassified as 'missing' in reconcile_all_lb_master
+Status: Fixed
+File(s): backend/db.py:reconcile_all_lb_master
+Reported: 2026-05-25
+Fixed: 2026-05-26
+Description: reconcile_all_lb_master computed effective_max = max(checksums max, lb_master max).
+  On a fresh install (no checksums, empty lb_master), effective_max=0 and the function returned
+  early without reconciling any scraped entries.  LBs like LB-1506 (public page, no checksums)
+  were left unclassified or stayed 'missing' after a full rebuild.
+Root cause: effective_max did not consult the entries table — only checksums and lb_master.
+Fix: Added entries_max = MAX(lb_number) FROM entries; effective_max = max(max_lb, master_max,
+  entries_max).  Added regression test test_reconcile_all_no_checksums_public_entry in
+  TestPublicNoChecksums (tests/test_db_writes.py).
+
+---
+
+BUG-116: Live scrape never re-checks entries previously marked missing
+Status: Fixed
+File(s): backend/scraper.py:143-147
+Reported: 2026-05-24
+Fixed: 2026-05-24
+Description: LB-05126 (and potentially others) showed lb_status='missing' even though
+  the archive page is publicly accessible and contains real metadata.  Subsequent live
+  scrapes did not correct the status.
+Root cause: scrape_entry() skip condition `not (use_local_pages and local_page.exists())`
+  evaluated True whenever use_local_pages=False, causing ALL missing-status entries to be
+  silently skipped during live network scrapes regardless of whether the page now exists.
+  61 of 103 missing entries had locally cached pages with real content; all were invisible
+  to normal scrape runs.
+Fix: Condition changed to `use_local_pages and not local_page.exists()` — live scrapes
+  always re-fetch missing entries; local-page mode only skips when no local file is present.
+  LB-05126 repaired immediately by re-scraping from the existing local cache (now public).
+
+---
+
 BUG-114: Attachments tab causes "database is locked" via direct SQLite connection
 Status: Fixed
 File(s): gui/attachments_tab.py:94, backend/app.py

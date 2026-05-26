@@ -290,11 +290,12 @@ class SearchTab(QWidget):
 
         self._status_combo = QComboBox()
         self._status_combo.setMinimumWidth(110)
-        self._status_combo.addItem(self.tr("All statuses"), userData=None)
-        self._status_combo.addItem(self.tr("Public only"),  userData="public")
-        self._status_combo.addItem(self.tr("Private only"), userData="private")
-        self._status_combo.addItem(self.tr("Missing only"), userData="missing")
-        self._status_combo.addItem(self.tr("Needs review"), userData="needs_review")
+        self._status_combo.addItem(self.tr("All statuses"),        userData=None)
+        self._status_combo.addItem(self.tr("Public only"),         userData="public")
+        self._status_combo.addItem(self.tr("Public / no checksums"), userData="public_no_checksums")
+        self._status_combo.addItem(self.tr("Private only"),        userData="private")
+        self._status_combo.addItem(self.tr("Missing only"),        userData="missing")
+        self._status_combo.addItem(self.tr("Needs review"),        userData="needs_review")
         self._status_combo.currentIndexChanged.connect(self._on_filter_changed)
         search_row.addWidget(self._status_combo)
 
@@ -433,6 +434,11 @@ class SearchTab(QWidget):
         if status_filter == "needs_review":
             # needs_review rows aren't in the search result data — fall back to all
             pass
+        elif status_filter == "public_no_checksums":
+            results = [
+                r for r in results
+                if r.get("lb_status") == "public" and r.get("public_no_checksums")
+            ]
         elif status_filter:
             results = [r for r in results if r.get("lb_status") == status_filter]
         owned = self.model._owned

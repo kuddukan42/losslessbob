@@ -704,6 +704,317 @@ class TestInsertMissingEntry:
 # lb_master writes: reconcile, manual override, clear
 # ---------------------------------------------------------------------------
 
+# ---------------------------------------------------------------------------
+# lb_missing table and 'nonexistent' status (TODO-102)
+# ---------------------------------------------------------------------------
+
+class TestLbMissing:
+    """lb_missing table: seeding, CRUD, reconcile integration, scraper skip."""
+
+    def test_seeds_present_after_init(self):
+        """init_db() must seed the 36 confirmed-not-existing LB numbers."""
+        import backend.db as db
+        db_path, conn, tmp = _make_db()
+        try:
+            count = conn.execute("SELECT COUNT(*) FROM lb_missing").fetchone()[0]
+            assert count == 36, f"Expected 36 seed rows, got {count}"
+            # Spot-check a few known entries
+            for lb in (7, 36, 14215):
+                row = conn.execute(
+                    "SELECT lb_number FROM lb_missing WHERE lb_number=?", (lb,)
+                ).fetchone()
+                assert row is not None, f"LB-{lb:05d} missing from lb_missing seeds"
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_is_lb_missing_true_for_seed(self):
+        import backend.db as db
+        db_path, conn, tmp = _make_db()
+        try:
+            assert db.is_lb_missing(7, db_path) is True
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_is_lb_missing_false_for_normal(self):
+        import backend.db as db
+        db_path, conn, tmp = _make_db()
+        try:
+            assert db.is_lb_missing(1, db_path) is False
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_reconcile_nonexistent_status(self):
+        """reconcile_lb_status must set lb_status='nonexistent' for lb_missing entries."""
+        import backend.db as db
+        db_path, conn, tmp = _make_db()
+        try:
+            status = db.reconcile_lb_status(7, db_path=db_path)
+            assert status == "nonexistent"
+            row = db.get_lb_master_row(7, db_path)
+            assert row is not None
+            assert row["lb_status"] == "nonexistent"
+            assert row["has_webpage"] == 0
+            assert row["has_checksums"] == 0
+            assert row["public_no_checksums"] == 0
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_batch_reconcile_nonexistent_status(self):
+        """batch_reconcile_lb_status must give 'nonexistent' for lb_missing entries."""
+        import backend.db as db
+        db_path, conn, tmp = _make_db()
+        try:
+            db.batch_reconcile_lb_status([7, 36], trigger="test", db_path=db_path)
+            for lb in (7, 36):
+                row = db.get_lb_master_row(lb, db_path)
+                assert row is not None
+                assert row["lb_status"] == "nonexistent", f"LB-{lb} should be nonexistent"
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_add_and_remove_lb_missing(self):
+        """add_lb_missing / remove_lb_missing round-trip."""
+        import backend.db as db
+        db_path, conn, tmp = _make_db()
+        try:
+            db.add_lb_missing(9999, confirmed_date="2026-01-01", notes="test", db_path=db_path)
+            assert db.is_lb_missing(9999, db_path) is True
+            row = db.get_lb_master_row(9999, db_path)
+            assert row is not None and row["lb_status"] == "nonexistent"
+
+            db.remove_lb_missing(9999, db_path=db_path)
+            assert db.is_lb_missing(9999, db_path) is False
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_scrape_entry_skips_lb_missing(self):
+        """scrape_entry must return {skipped: True, reason: 'nonexistent'} for lb_missing LBs."""
+        from backend.scraper import scrape_entry
+        import backend.db as db
+        db_path, conn, tmp = _make_db()
+        try:
+            result = scrape_entry(7, db_path=db_path)
+            assert result.get("skipped") is True
+            assert result.get("reason") == "nonexistent"
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_get_lb_missing_list(self):
+        import backend.db as db
+        db_path, conn, tmp = _make_db()
+        try:
+            rows = db.get_lb_missing_list(db_path)
+            assert len(rows) == 36
+            assert all("lb_number" in r for r in rows)
+            # Must be ordered by lb_number
+            nums = [r["lb_number"] for r in rows]
+            assert nums == sorted(nums)
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+
+# ---------------------------------------------------------------------------
+# public_no_checksums flag (TODO-098)
+# ---------------------------------------------------------------------------
+
+class TestPublicNoChecksums_Flag:
+    """public_no_checksums column in lb_master must be set/cleared correctly."""
+
+    def test_flag_set_for_public_no_checksums(self):
+        """Entry with status='ok' and no checksums → public_no_checksums=1."""
+        import backend.db as db
+        db_path, conn, tmp = _make_db()
+        try:
+            _seed_entry(conn, 500, "ok")
+            db.reconcile_lb_status(500, db_path=db_path)
+            row = db.get_lb_master_row(500, db_path)
+            assert row["lb_status"] == "public"
+            assert row["has_checksums"] == 0
+            assert row["public_no_checksums"] == 1
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_flag_clear_for_public_with_checksums(self):
+        """Entry with status='ok' AND checksums → public_no_checksums=0."""
+        import backend.db as db
+        db_path, conn, tmp = _make_db()
+        try:
+            _seed_entry(conn, 501, "ok")
+            _seed_checksum(conn, 501)
+            db.reconcile_lb_status(501, db_path=db_path)
+            row = db.get_lb_master_row(501, db_path)
+            assert row["lb_status"] == "public"
+            assert row["has_checksums"] == 1
+            assert row["public_no_checksums"] == 0
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_flag_clear_for_private(self):
+        """Checksums-only entry (private) → public_no_checksums=0."""
+        import backend.db as db
+        db_path, conn, tmp = _make_db()
+        try:
+            _seed_checksum(conn, 502)
+            db.reconcile_lb_status(502, db_path=db_path)
+            row = db.get_lb_master_row(502, db_path)
+            assert row["lb_status"] == "private"
+            assert row["public_no_checksums"] == 0
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_flag_clear_for_missing(self):
+        """'missing' entry → public_no_checksums=0."""
+        import backend.db as db
+        db_path, conn, tmp = _make_db()
+        try:
+            db.insert_missing_entry(503, db_path=db_path)
+            db.reconcile_lb_status(503, db_path=db_path)
+            row = db.get_lb_master_row(503, db_path)
+            assert row["lb_status"] == "missing"
+            assert row["public_no_checksums"] == 0
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_flag_transitions_when_checksums_added(self):
+        """Adding checksums to a public-no-checksums entry must clear the flag."""
+        import backend.db as db
+        db_path, conn, tmp = _make_db()
+        try:
+            _seed_entry(conn, 504, "ok")
+            db.reconcile_lb_status(504, db_path=db_path)
+            assert db.get_lb_master_row(504, db_path)["public_no_checksums"] == 1
+
+            _seed_checksum(conn, 504)
+            db.reconcile_lb_status(504, db_path=db_path)
+            assert db.get_lb_master_row(504, db_path)["public_no_checksums"] == 0
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_stats_returns_public_no_checksums_count(self):
+        """get_lb_master_stats must include public_no_checksums count."""
+        import backend.db as db
+        db_path, conn, tmp = _make_db()
+        try:
+            _seed_entry(conn, 505, "ok")
+            _seed_entry(conn, 506, "ok")
+            _seed_checksum(conn, 506)  # 505 = public+no-chk, 506 = public+chk
+            db.batch_reconcile_lb_status([505, 506], trigger="test", db_path=db_path)
+            stats = db.get_lb_master_stats(db_path)
+            assert stats["public_no_checksums"] >= 1
+            assert "nonexistent" in stats
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+
+# ---------------------------------------------------------------------------
+# Public page, no checksums — regression guard for BUG-116
+# ---------------------------------------------------------------------------
+
+class TestPublicNoChecksums:
+    """LB with a public webpage but zero checksums must be classified 'public', not 'missing'.
+
+    LB-1506 is a real-world example: the archive page exists but the flat file
+    contains no checksum entries for it.  All reconcile paths must agree.
+    """
+
+    def test_reconcile_single_public_no_checksums(self):
+        """reconcile_lb_status: status='ok' entry with no checksums → lb_status='public'."""
+        import backend.db as db
+        db_path, conn, tmp = _make_db()
+        try:
+            _seed_entry(conn, 1506, "ok")
+            status = db.reconcile_lb_status(1506, db_path=db_path)
+            assert status == "public", f"Expected 'public', got '{status}'"
+            row = db.get_lb_master_row(1506, db_path)
+            assert row is not None
+            assert row["lb_status"] == "public"
+            assert row["has_webpage"] == 1
+            assert row["has_checksums"] == 0
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_batch_reconcile_public_no_checksums(self):
+        """batch_reconcile_lb_status: same scenario via the batch (scrape_range) path."""
+        import backend.db as db
+        db_path, conn, tmp = _make_db()
+        try:
+            _seed_entry(conn, 1506, "ok")
+            db.batch_reconcile_lb_status([1506], trigger="scrape", db_path=db_path)
+            row = db.get_lb_master_row(1506, db_path)
+            assert row is not None
+            assert row["lb_status"] == "public"
+            assert row["has_webpage"] == 1
+            assert row["has_checksums"] == 0
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_previously_missing_gains_webpage_no_checksums(self):
+        """If lb_master starts as 'missing' then a page is scraped (still no checksums),
+        reconcile must transition it to 'public'."""
+        import backend.db as db
+        db_path, conn, tmp = _make_db()
+        try:
+            # Establish a missing row first (simulates a prior 404 scrape)
+            db.insert_missing_entry(1506, db_path=db_path)
+            db.reconcile_lb_status(1506, db_path=db_path)
+            assert db.get_lb_master_row(1506, db_path)["lb_status"] == "missing"
+
+            # Page appears on site — entry is now ok, still no checksums
+            conn.execute(
+                "UPDATE entries SET status='ok' WHERE lb_number=1506"
+            )
+            conn.commit()
+            status = db.reconcile_lb_status(1506, db_path=db_path)
+            assert status == "public"
+            row = db.get_lb_master_row(1506, db_path)
+            assert row["lb_status"] == "public"
+            assert row["has_checksums"] == 0
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_public_no_checksums_absent_from_missing_list(self):
+        """get_missing_lb_numbers must not return an LB whose entry has status='ok',
+        even if that LB has no checksums."""
+        import backend.db as db
+        db_path, conn, tmp = _make_db()
+        try:
+            _seed_entry(conn, 1506, "ok")
+            missing = db.get_missing_lb_numbers(db_path)
+            assert 1506 not in missing
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_reconcile_all_no_checksums_public_entry(self):
+        """reconcile_all_lb_master must not bail out when checksums table is empty.
+
+        Regression for BUG-116: effective_max was computed from checksums and lb_master
+        only, so a fresh DB with a scraped entries row (status='ok') but no checksums
+        yielded effective_max=0 and returned early without reconciling anything.
+        """
+        import backend.db as db
+        db_path, conn, tmp = _make_db()
+        try:
+            _seed_entry(conn, 1506, "ok")
+            stats = db.reconcile_all_lb_master(db_path=db_path)
+            assert stats.get("public", 0) >= 1, (
+                f"Expected at least one 'public' entry, got stats={stats}"
+            )
+            row = db.get_lb_master_row(1506, db_path)
+            assert row is not None, "LB-1506 should exist in lb_master after reconcile_all"
+            assert row["lb_status"] == "public"
+            assert row["has_webpage"] == 1
+            assert row["has_checksums"] == 0
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_compute_lb_status_web_only(self):
+        """Unit-test _compute_lb_status directly: (True, False, False) → 'public'."""
+        from backend.db import _compute_lb_status
+        status, needs_review = _compute_lb_status(has_web=True, has_chk=False, has_att=False)
+        assert status == "public"
+        assert needs_review == 0
+
+
 class TestReconcileAndOverride:
     def test_reconcile_new_entry_inserts_lb_master(self):
         import backend.db as db
@@ -1515,18 +1826,20 @@ class TestUpsertInventory:
 
 class TestWriteConnectionRollback:
     def test_failed_write_is_rolled_back(self):
-        """If an exception is raised inside write_connection, no data must persist."""
+        """If an exception is raised inside a queue callback, no data must persist."""
         import backend.db as db
+        from backend.db_queue import get_write_queue
         db_path, conn, tmp = _make_db()
         try:
             _seed_entry(conn, 2000)
             try:
-                with db.write_connection(db_path) as wconn:
+                def _insert_and_fail(wconn):
                     wconn.execute(
                         "INSERT INTO my_collection(lb_number, folder_name, disk_path)"
                         " VALUES(2000, 'f', '/p')"
                     )
                     raise RuntimeError("deliberate test error")
+                get_write_queue().execute(_insert_and_fail)
             except RuntimeError:
                 pass
             count = conn.execute(
@@ -1538,14 +1851,16 @@ class TestWriteConnectionRollback:
 
     def test_successful_write_is_committed(self):
         import backend.db as db
+        from backend.db_queue import get_write_queue
         db_path, conn, tmp = _make_db()
         try:
             _seed_entry(conn, 2001)
-            with db.write_connection(db_path) as wconn:
-                wconn.execute(
+            get_write_queue().execute(
+                lambda wconn: wconn.execute(
                     "INSERT INTO my_collection(lb_number, folder_name, disk_path)"
                     " VALUES(2001, 'f', '/p')"
                 )
+            )
             count = conn.execute(
                 "SELECT COUNT(*) FROM my_collection WHERE lb_number=2001"
             ).fetchone()[0]

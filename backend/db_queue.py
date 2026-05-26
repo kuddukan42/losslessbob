@@ -17,9 +17,8 @@ _log = logging.getLogger(__name__)
 _PRAGMAS = """
 PRAGMA journal_mode=WAL;
 PRAGMA synchronous=NORMAL;
-PRAGMA cache_size=-8000;
+PRAGMA cache_size=-32000;
 PRAGMA foreign_keys=ON;
-PRAGMA busy_timeout=0;
 """
 
 
@@ -39,34 +38,44 @@ class DatabaseWriteQueue:
         self._db_path = db_path
         self._queue: queue.Queue = queue.Queue()
         self._conn: Optional[sqlite3.Connection] = None
+        self._ready = threading.Event()
         self._thread = threading.Thread(target=self._run, daemon=True, name="db-writer")
         self._thread.start()
+        # Block until the writer has finished its PRAGMA setup.  This ensures
+        # journal_mode=WAL is set before any other connection tries to do the
+        # same — eliminating the race between the writer and init_db()'s
+        # get_connection() call on a brand-new database file.
+        if not self._ready.wait(timeout=10):
+            raise RuntimeError("db-writer thread did not start within 10 s")
 
     def _run(self) -> None:
-        self._conn = sqlite3.connect(self._db_path, check_same_thread=False)
+        self._conn = sqlite3.connect(
+            self._db_path,
+            check_same_thread=False,
+            isolation_level=None,  # autocommit — we manage all transaction boundaries explicitly
+        )
         self._conn.row_factory = sqlite3.Row
         for pragma in _PRAGMAS.strip().splitlines():
             pragma = pragma.strip()
             if pragma:
                 self._conn.execute(pragma)
-        self._conn.commit()
         _log.debug("db-writer: connection open → %s", self._db_path)
+        self._ready.set()  # unblock __init__; WAL mode established before any reader opens
 
         while True:
             item = self._queue.get()
             if item is None:  # shutdown sentinel
-                self._conn.close()
                 self._queue.task_done()
                 break
             fn, result_event, result_box = item
             try:
-                self._conn.execute("BEGIN IMMEDIATE")
+                self._conn.execute("BEGIN")
                 val = fn(self._conn)
-                self._conn.commit()
+                self._conn.execute("COMMIT")
                 result_box[0] = val
             except Exception as exc:
                 try:
-                    self._conn.rollback()
+                    self._conn.execute("ROLLBACK")
                 except Exception:
                     pass
                 result_box[1] = exc
@@ -117,6 +126,11 @@ class DatabaseWriteQueue:
         """
         self._queue.put(None)
         self._thread.join(timeout)
+        if self._conn:
+            try:
+                self._conn.close()
+            except Exception:
+                pass
 
 
 _write_queue: Optional[DatabaseWriteQueue] = None
