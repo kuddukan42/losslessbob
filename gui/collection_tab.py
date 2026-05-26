@@ -8,7 +8,7 @@ import requests
 from PyQt6.QtCore import (
     Qt, QAbstractTableModel, QModelIndex, QThread, pyqtSignal,
 )
-from PyQt6.QtGui import QColor, QFont, QAction
+from PyQt6.QtGui import QFont, QAction
 from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QTabWidget, QTableView, QPushButton,
     QLabel, QLineEdit, QAbstractItemView, QHeaderView, QMenu, QDialog,
@@ -27,13 +27,6 @@ MISS_HEADERS = ["LB Number", "Status", "Date", "Location", "Rating", "Descriptio
 
 _COLL_STATUS_COL = 1   # Status column in My Collection
 _MISS_STATUS_COL = 1   # Status column in Missing-from-Collection
-
-_BG_LB_STATUS = {
-    "public":  None,                       # default
-    "private": styles.ROW_PRIVATE.name(),  # light blue
-    "missing": styles.ROW_GREY.name(),     # light gray
-}
-
 
 def _extract_lb(name):
     m = _LB_RE.search(name)
@@ -92,9 +85,9 @@ class _CollectionModel(QAbstractTableModel):
             if col == 8 and (row.get("fp_n_hashes") or 0) > 0:
                 return styles.FG_SUCCESS
         if role == Qt.ItemDataRole.BackgroundRole:
-            hex_color = _BG_LB_STATUS.get(lb_status)
-            if hex_color:
-                return QColor(hex_color)
+            _lb_color = {"private": styles.ROW_PRIVATE, "missing": styles.ROW_GREY}.get(lb_status)
+            if _lb_color:
+                return _lb_color
             return styles.ROW_OWNED
         if role == Qt.ItemDataRole.TextAlignmentRole and col in (_COLL_STATUS_COL, 8):
             return Qt.AlignmentFlag.AlignCenter
@@ -162,9 +155,9 @@ class _MissingModel(QAbstractTableModel):
             val = row.get(keys[col], "") or "" if col < len(keys) else ""
             return str(val)
         if role == Qt.ItemDataRole.BackgroundRole:
-            hex_color = _BG_LB_STATUS.get(lb_status)
-            if hex_color:
-                return QColor(hex_color)
+            _lb_color = {"private": styles.ROW_PRIVATE, "missing": styles.ROW_GREY}.get(lb_status)
+            if _lb_color:
+                return _lb_color
         if role == Qt.ItemDataRole.TextAlignmentRole and col == _MISS_STATUS_COL:
             return Qt.AlignmentFlag.AlignCenter
         if role == Qt.ItemDataRole.ToolTipRole and col == _MISS_STATUS_COL and lb_status:

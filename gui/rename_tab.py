@@ -25,25 +25,6 @@ from PyQt6.QtWidgets import (
 
 HEADERS = ["Rename", "Current Folder Name", "Proposed New Name", "LB Found", "Reason"]
 
-# Row states → background colors
-# NOTE: These references are captured at import time. After apply_theme() is called,
-# the styles.* globals are replaced with new QColor objects; these dict values will
-# become stale. A theme-change hook is needed to rebuild these dicts. (TODO)
-_STATE_COLORS = {
-    "has_lb":       styles.ROW_OWNED,        # green  — LB already in folder name
-    "renamed":      styles.ROW_OWNED,        # green  — just renamed
-    "needs_rename": styles.ROW_MISSING_FILE, # orange — match found but not yet renamed
-    "wrong_lb":     styles.ROW_WRONG_LB,     # purple — folder has a different LB number
-    "no_match":     styles.ROW_FAIL,         # red    — no match
-    "multiple_ids": styles.ROW_MULTIPLE_IDS, # cyan   — multiple LBs found, unresolved
-}
-
-# NFT discrepancy state → background color (overrides state color when set)
-_NFT_DISC_COLORS = {
-    "missing": styles.ROW_NFT_MISSING,  # pale red    — Private LB, folder lacks -NFT
-    "stale":   styles.ROW_NFT_STALE,    # pale yellow — Public LB, folder has -NFT
-    "unknown": styles.ROW_NFT_UNKNOWN,  # pale orange — Missing/None LB, folder has -NFT
-}
 
 # NFT discrepancy → tooltip text
 _NFT_DISC_TIPS = {
@@ -276,12 +257,23 @@ class RenameModel(QAbstractTableModel):
             # NFT discrepancy overrides the whole row
             disc = nft_discrepancy(Path(row[1]).name, lb_status)
             if disc:
-                return _NFT_DISC_COLORS.get(disc)
+                return {
+                    "missing": styles.ROW_NFT_MISSING,
+                    "stale":   styles.ROW_NFT_STALE,
+                    "unknown": styles.ROW_NFT_UNKNOWN,
+                }.get(disc)
             # LB Found column (col 3) shows lb_status tint when private or missing
             if col == 3 and lb_status in ("private", "missing"):
                 return styles.ROW_PRIVATE if lb_status == "private" else styles.ROW_GREY
             state = self._states[index.row()] if index.row() < len(self._states) else None
-            return _STATE_COLORS.get(state)
+            return {
+                "has_lb":       styles.ROW_OWNED,
+                "renamed":      styles.ROW_OWNED,
+                "needs_rename": styles.ROW_MISSING_FILE,
+                "wrong_lb":     styles.ROW_WRONG_LB,
+                "no_match":     styles.ROW_FAIL,
+                "multiple_ids": styles.ROW_MULTIPLE_IDS,
+            }.get(state)
         if role == Qt.ItemDataRole.ToolTipRole:
             lb_status = row[5] if len(row) > 5 else None
             disc = nft_discrepancy(Path(row[1]).name, lb_status)

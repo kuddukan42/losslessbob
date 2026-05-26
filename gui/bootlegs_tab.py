@@ -7,7 +7,6 @@ import requests
 from PyQt6.QtCore import (
     Qt, QAbstractTableModel, QModelIndex, QThread, QTimer, pyqtSignal,
 )
-from PyQt6.QtGui import QColor
 from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QSplitter,
     QLineEdit, QComboBox, QSpinBox, QLabel, QPushButton,
@@ -35,11 +34,6 @@ _OWNED_COL  = 8
 
 _COL_DEFAULTS = [80, 300, 80, 50, 200, 40, 60, 65, 50]
 
-_BG_STATUS = {
-    "public":  None,
-    "private": styles.ROW_PRIVATE.name(),
-    "missing": styles.ROW_GREY.name(),
-}
 
 _LBBCD_BASE = "http://www.losslessbob.wonderingwhattochoose.com/"
 
@@ -88,9 +82,9 @@ class _BootlegsModel(QAbstractTableModel):
 
         if role == Qt.ItemDataRole.BackgroundRole:
             lb_status = row.get("lb_status") or ""
-            hex_c = _BG_STATUS.get(lb_status)
-            if hex_c:
-                return QColor(hex_c)
+            _lb_color = {"private": styles.ROW_PRIVATE, "missing": styles.ROW_GREY}.get(lb_status)
+            if _lb_color:
+                return _lb_color
             if row.get("owned"):
                 return styles.ROW_OWNED
             return None

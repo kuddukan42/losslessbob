@@ -30,11 +30,6 @@ class _LbModel(QAbstractTableModel):
     """Flat table: one row per LB entry that has cached attachment files."""
 
     _HEADERS = ["LB Number", "Files"]
-    _STATUS_BG = {
-        "private": styles.ROW_PRIVATE,
-        "missing": styles.ROW_GREY,
-    }
-
     def __init__(self, entries: list[dict], parent=None):
         super().__init__(parent)
         self._entries = entries
@@ -56,8 +51,9 @@ class _LbModel(QAbstractTableModel):
             return str(len(entry["files"]))
         if role == Qt.ItemDataRole.BackgroundRole:
             status = entry.get("lb_status")
-            if status in self._STATUS_BG:
-                return QBrush(self._STATUS_BG[status])
+            _lb_color = {"private": styles.ROW_PRIVATE, "missing": styles.ROW_GREY}.get(status)
+            if _lb_color:
+                return QBrush(_lb_color)
         if role == Qt.ItemDataRole.ToolTipRole and col == 0:
             status = entry.get("lb_status")
             if status == "private":

@@ -18,11 +18,6 @@ from gui.widgets.sort_keys import SortableTableItem, sort_key_for
 AUDIO_EXTS = {'.flac', '.shn', '.ape', '.wav'}
 LB_DETAIL_URL = "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-{lb:05d}.html"
 
-_C_PASS    = styles.ROW_OWNED
-_C_FAIL    = styles.ROW_FAIL
-_C_MISSING = styles.ROW_MISSING_FILE   # orange — files not on disk
-_C_NO_LB   = styles.ROW_DUPLICATE     # yellow — no lbdir but LB# known
-_C_GREY    = styles.ROW_GREY           # grey   — no LB# known
 
 SUMMARY_HEADERS = [
     "Folder", "LB#", "lbdir File", "Mode",
@@ -969,20 +964,18 @@ class LbdirTab(QWidget):
     def _result_display_status(self, result):
         if not result.get("lbdir_found"):
             if result.get("lb_number") is not None:
-                return self.tr("NO LBDIR"), _C_NO_LB
-            return self.tr("NO LB#"), _C_GREY
+                return self.tr("NO LBDIR"), styles.ROW_DUPLICATE
+            return self.tr("NO LB#"), styles.ROW_GREY
         if "error" in result:
-            return self.tr("PARSE ERROR"), _C_FAIL
+            return self.tr("PARSE ERROR"), styles.ROW_FAIL
         status = result.get("status", "")
         if status == "pass":
-            return self.tr("PASS"), _C_PASS
+            return self.tr("PASS"), styles.ROW_OWNED
         if result.get("missing", 0) > 0 and result.get("mismatch", 0) == 0:
-            return self.tr("MISSING FILES"), _C_FAIL
+            return self.tr("MISSING FILES"), styles.ROW_FAIL
         if status == "shntool_missing":
-            return self.tr("SHNTOOL MISSING"), _C_FAIL
-        return self.tr("FAIL"), _C_FAIL
-
-    _LB_STATUS_COLOR = {"private": styles.ROW_PRIVATE, "missing": styles.ROW_GREY}
+            return self.tr("SHNTOOL MISSING"), styles.ROW_FAIL
+        return self.tr("FAIL"), styles.ROW_FAIL
 
     def _populate_summary(self, results):
         # Batch-fetch lb_status for all lb_numbers in the result set (one query)
@@ -1025,12 +1018,13 @@ class LbdirTab(QWidget):
                 sk = sort_key_for(raw if raw is not None else text, kind)
                 item = SortableTableItem(text, sk)
                 # Col 1 (LB#): tint by lb_status; other cols use verification color
-                if col == 1 and lb_status in self._LB_STATUS_COLOR:
+                _lb_status_color = {"private": styles.ROW_PRIVATE, "missing": styles.ROW_GREY}
+                if col == 1 and lb_status in _lb_status_color:
                     _lb_tips = {
                         "private": self.tr("Private LB — no published webpage"),
                         "missing": self.tr("LB not in DB"),
                     }
-                    item.setBackground(self._LB_STATUS_COLOR[lb_status])
+                    item.setBackground(_lb_status_color[lb_status])
                     item.setToolTip(_lb_tips.get(lb_status, ""))
                 else:
                     item.setBackground(color)
@@ -1095,13 +1089,13 @@ class LbdirTab(QWidget):
                 continue
 
             if overall == "pass":
-                color = _C_PASS
+                color = styles.ROW_OWNED
             elif overall == "fail":
-                color = _C_FAIL
+                color = styles.ROW_FAIL
             elif overall == "missing":
-                color = _C_MISSING
+                color = styles.ROW_MISSING_FILE
             else:
-                color = _C_GREY
+                color = styles.ROW_GREY
 
             ffp_st = file_info.get("ffp_status", "na")
             shn_st = file_info.get("shntool_status", "na")
