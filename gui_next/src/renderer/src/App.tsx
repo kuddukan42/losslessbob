@@ -9,6 +9,7 @@ import {
   TableShell, TH, TR, TD, GroupRow,
 } from './components'
 import { ScreenHome } from './screens/ScreenHome'
+import { ScreenPipeline } from './screens/ScreenPipeline'
 
 // ── Placeholder screen ────────────────────────────────────────────────────────
 
@@ -201,7 +202,7 @@ export default function App(): React.JSX.Element {
       <AppShell>
         <Routes>
           <Route path="/"            element={<ScreenHome />} />
-          <Route path="/pipeline"    element={<PlaceholderScreen name="Pipeline" />} />
+          <Route path="/pipeline"    element={<ScreenPipeline />} />
           <Route path="/verify"      element={<PlaceholderScreen name="Verify" />} />
           <Route path="/lookup"      element={<PlaceholderScreen name="Lookup" />} />
           <Route path="/rename"      element={<PlaceholderScreen name="Rename" />} />

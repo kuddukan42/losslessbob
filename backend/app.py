@@ -3510,6 +3510,157 @@ def create_app() -> Flask:
             _fp_dup_state["stop_requested"] = True
         return jsonify({"ok": True})
 
+    # ── Pipeline ─────────────────────────────────────────────────────────────
+
+    def _pipeline_process_folder(folder_path: str, steps: set) -> dict:
+        """Run one or more pipeline steps on a single folder and return a PipelineRow dict."""
+        from backend.folder_naming import build_standard_name as _build_name
+
+        folder = Path(folder_path)
+        folder_name = folder.name
+
+        row: dict = {
+            "folder": folder_path,
+            "folderName": folder_name,
+            "verify":  {"status": "mute", "label": "—"},
+            "lookup":  {"status": "mute", "label": "—", "lb_number": None},
+            "rename":  {"status": "mute", "label": "—", "proposed": None},
+            "lbdir":   {"status": "mute", "label": "—"},
+            "severity": "attn",
+            "errors": [],
+        }
+
+        if not folder.exists() or not folder.is_dir():
+            row["errors"].append({"step": "verify", "message": "Folder not found"})
+            row["verify"] = {"status": "bad", "label": "Missing"}
+            return row
+
+        lb_number: int | None = None
+
+        # ── Step 1: Verify ────────────────────────────────────────────────────
+        if "verify" in steps:
+            vr = checksum_utils.verify_folder(folder_path)
+            if vr.get("error"):
+                row["verify"] = {"status": "bad", "label": "Error"}
+                row["errors"].append({"step": "verify", "message": vr["error"]})
+            elif vr["status"] == "pass":
+                row["verify"] = {"status": "ok", "label": "Pass"}
+            elif vr["status"] in ("incomplete", "no_checksums"):
+                row["verify"] = {"status": "warn", "label": "Incomplete"}
+            else:
+                row["verify"] = {"status": "bad", "label": "Mismatch"}
+
+        # ── Step 2: Lookup ────────────────────────────────────────────────────
+        if "lookup" in steps:
+            chk_parts: list[str] = []
+            for f in sorted(folder.iterdir()):
+                if f.suffix.lower() in (".ffp", ".md5", ".st5"):
+                    try:
+                        chk_parts.append(f.read_text(errors="ignore"))
+                    except OSError:
+                        pass
+
+            if not chk_parts:
+                row["lookup"] = {"status": "warn", "label": "No checksums", "lb_number": None}
+            else:
+                chk_text = "\n".join(chk_parts)
+                parsed = database.parse_checksum_text(chk_text)
+                if not parsed:
+                    row["lookup"] = {"status": "bad", "label": "Not found", "lb_number": None}
+                else:
+                    summary, _ = database.lookup_checksums(parsed)
+                    lb_list: list[int] = summary.get("lb_numbers_found", [])
+                    if len(lb_list) == 1:
+                        lb_number = lb_list[0]
+                        row["lookup"] = {"status": "ok", "label": f"LB-{lb_number:05d}", "lb_number": lb_number}
+                    elif len(lb_list) > 1:
+                        row["lookup"] = {"status": "warn", "label": "Conflict", "lb_number": None}
+                        row["errors"].append({"step": "lookup", "message": f"Multiple LBs: {lb_list}"})
+                    else:
+                        row["lookup"] = {"status": "bad", "label": "Not found", "lb_number": None}
+
+        # ── Step 3: Rename proposal ───────────────────────────────────────────
+        if "rename" in steps:
+            if lb_number:
+                entry_data = database.get_entry(lb_number)
+                entry = (entry_data or {}).get("entry", {})
+                date_str = entry.get("date_str") or ""
+                location = (entry.get("location") or "").strip()
+                lb_status = database.get_lb_status(lb_number)
+                proposed = _build_name(lb_number, date_str, location, lb_status)
+                if folder_name == proposed:
+                    row["rename"] = {"status": "ok", "label": "Correct", "proposed": None}
+                else:
+                    row["rename"] = {"status": "warn", "label": "Proposed", "proposed": proposed}
+            # else: stays mute — lookup hasn't resolved an LB#
+
+        # ── Step 4: LBDIR check ───────────────────────────────────────────────
+        if "lbdir" in steps:
+            if lb_number:
+                lbdir_file = _find_lbdir_in_folder(folder)
+                if lbdir_file:
+                    row["lbdir"] = {"status": "ok", "label": "Pass"}
+                else:
+                    row["lbdir"] = {"status": "warn", "label": "No LBDIR"}
+            # else: stays mute
+
+        # ── Severity ──────────────────────────────────────────────────────────
+        statuses = [row["verify"]["status"], row["lookup"]["status"],
+                    row["rename"]["status"], row["lbdir"]["status"]]
+        if "bad" in statuses:
+            row["severity"] = "attn"
+        elif row["rename"].get("label") == "Proposed":
+            row["severity"] = "ready"
+        elif all(s in ("ok", "mute") for s in statuses) and "ok" in statuses:
+            row["severity"] = "done"
+        else:
+            row["severity"] = "attn"
+
+        return row
+
+    @app.route("/api/pipeline/run", methods=["POST"])
+    def pipeline_run() -> Response:
+        """Run pipeline steps on a list of folders.
+
+        Body: {folders: [path, ...], steps: ["verify","lookup","rename","lbdir"]}
+        Returns:
+            JSON {results: [PipelineRow, ...]}
+        """
+        try:
+            data = request.get_json() or {}
+            folders: list[str] = data.get("folders", [])
+            steps: set[str] = set(data.get("steps", ["verify", "lookup", "rename", "lbdir"]))
+            if not folders:
+                return jsonify({"error": "folders list required"}), 400
+            results = [_pipeline_process_folder(f, steps) for f in folders]
+            return jsonify({"results": results})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/folder/rename", methods=["POST"])
+    def folder_rename() -> Response:
+        """Rename a folder on disk to a new name within the same parent directory.
+
+        Body: {folder: "/abs/path/to/folder", new_name: "new folder name"}
+        Returns:
+            JSON {ok: true, new_path: "/abs/path/to/new folder name"}
+        """
+        try:
+            data = request.get_json() or {}
+            folder = Path(data.get("folder", ""))
+            new_name: str = (data.get("new_name") or "").strip()
+            if not folder.exists() or not folder.is_dir():
+                return jsonify({"error": "Folder not found"}), 400
+            if not new_name or "/" in new_name or "\\" in new_name:
+                return jsonify({"error": "Invalid new_name"}), 400
+            new_path = folder.parent / new_name
+            if new_path.exists():
+                return jsonify({"error": f"Target already exists: {new_name}"}), 409
+            folder.rename(new_path)
+            return jsonify({"ok": True, "new_path": str(new_path)})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
     _slog.t("Flask: create_app done")
     return app
 
