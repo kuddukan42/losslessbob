@@ -1,6 +1,18 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-091: Bundle Windows shntool binary from tools/ into the project distribution
+Priority: Medium
+Status: Done
+Added: 2026-05-24
+Closed: 2026-05-26
+Description: tools/shntool.exe was already tracked in git. Added to losslessbob.spec
+  datas so PyInstaller bundles it at _internal/tools/shntool.exe. Updated
+  _find_shntool() in checksum_utils.py to check the frozen (_MEIPASS) path first,
+  then the dev-tree tools/ path, before falling back to WSL/PATH.
+
+---
+
 TODO-097: Add purge option for geocoding data
 Priority: Medium
 Status: Done

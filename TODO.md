@@ -41,23 +41,6 @@ Description: Add an uploader that can publish items (releases, checksums, metada
 
 ---
 
-TODO-091: Bundle Windows shntool binary from tools/ into the project distribution
-Priority: Medium
-Status: Open
-Added: 2026-05-24
-Description: The Windows shntool binary has been placed in the tools/ folder. It should be
-  formally included in the project so it is available to Windows users without a separate
-  manual install.
-  Steps:
-    • Add tools/shntool.exe (or equivalent) to version control (confirm it is not already
-      .gitignored).
-    • Update the Windows build/packaging process (PyInstaller spec or equivalent) to include
-      the binary in the bundled distribution.
-    • Update the shntool path-resolution logic to look in tools/ (relative to the app root or
-      frozen executable path) before falling back to PATH.
-    • Document the binary source/version in PROJECT.md and note any licence considerations.
-
----
 
 
 TODO-089: Add acknowledgements section to About dialog

@@ -1,3 +1,25 @@
+[2026-05-26] — feat(gui): add/remove override buttons in DB Integrity panel
+Added: gui/dbedit_tab.py: "Add Override…" button opens a dialog (LB#, status dropdown, notes) and calls PUT /api/lb_master/<lb>/manual; "Remove Override…" prompts for LB# and calls DELETE /api/lb_master/<lb>/manual; both refresh integrity stats on success
+
+[2026-05-26] — fix(db): startup crash on old DBs missing public_no_checksums column
+Fixed: backend/db.py: moved idx_lb_master_public_no_chk index out of SCHEMA_SQL (which ran before the migration that adds the column) and into a post-migration CREATE INDEX IF NOT EXISTS call; fixes sqlite3.OperationalError on existing databases
+
+[2026-05-26] — docs: add data_ownership.md explaining master vs. user data split
+Added: docs/data_ownership.md: documents MASTER_TABLES, USER_TABLES, MASTER_META_KEYS, USER_META_KEYS, export/import enforcement, and schema versioning
+
+[2026-05-26] — fix(backend): downgrade guard for master import; bundle shntool.exe on Windows
+
+Fixed: backend/db.py: import_master_db() now raises ValueError if the incoming snapshot's
+  master_version is older than the currently installed one, preventing accidental data loss
+  from installing a stale file. (BUG-112)
+Changed: backend/checksum_utils.py: _find_shntool() on Windows now checks the bundled
+  PyInstaller path (_MEIPASS/tools/shntool.exe) and the dev-tree path
+  (project_root/tools/shntool.exe) before falling back to WSL or PATH. (TODO-091)
+Changed: losslessbob.spec: added tools/shntool.exe to datas so PyInstaller bundles it
+  into the Windows distribution under _internal/tools/. (TODO-091)
+Fixed: BUGS.md/BUGS_DONE.md: closed BUG-113 (hardcoded table backgrounds) — fully
+  addressed by the theme-live refactor committed earlier today.
+
 [2026-05-26] — refactor(gui): make all color lookups theme-live; no more stale QColor snapshots
 
 Changed

@@ -14,6 +14,7 @@ a = Analysis(
     datas=[
         # data/ dir is NOT bundled — it's user-specific (DB, attachments, flat files)
         # Keep data/ alongside the exe after packaging
+        ('tools/shntool.exe', 'tools'),  # bundled shntool for Windows users (MIT/GPL-2)
     ],
     hiddenimports=[
         # Flask / Werkzeug internals PyInstaller misses

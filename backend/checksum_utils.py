@@ -24,6 +24,16 @@ def _no_window_kwargs() -> dict:
 def _find_shntool() -> list[str] | None:
     """Return the command prefix to invoke shntool, or None if unavailable."""
     if sys.platform == "win32":
+        # 1. Bundled shntool in PyInstaller frozen build (_MEIPASS/tools/shntool.exe)
+        if getattr(sys, "frozen", False):
+            bundled = Path(sys._MEIPASS) / "tools" / "shntool.exe"  # type: ignore[attr-defined]
+            if bundled.exists():
+                return [str(bundled)]
+        # 2. tools/shntool.exe alongside the source tree (dev and non-frozen installs)
+        _local = Path(__file__).resolve().parent.parent / "tools" / "shntool.exe"
+        if _local.exists():
+            return [str(_local)]
+        # 3. WSL shntool
         if shutil.which("wsl"):
             try:
                 r = subprocess.run(

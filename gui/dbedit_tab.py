@@ -10,7 +10,7 @@ from PyQt6.QtWidgets import (
     QListWidget, QListWidgetItem, QTableWidget, QTableWidgetItem,
     QPushButton, QLabel, QLineEdit, QHeaderView, QAbstractItemView,
     QMessageBox, QFileDialog, QMenu, QComboBox, QApplication, QInputDialog,
-    QGroupBox,
+    QGroupBox, QDialog, QFormLayout, QDialogButtonBox, QSpinBox,
 )
 
 _log = logging.getLogger(__name__)
@@ -101,6 +101,20 @@ class DbEditTab(QWidget):
         )
         needs_review_btn.clicked.connect(self._on_show_needs_review)
         ib_layout.addWidget(needs_review_btn)
+
+        add_override_btn = QPushButton(self.tr("Add Override…"))
+        add_override_btn.setToolTip(
+            self.tr("Manually set lb_status for an LB number, locking it against reconcile.")
+        )
+        add_override_btn.clicked.connect(self._on_add_override)
+        ib_layout.addWidget(add_override_btn)
+
+        remove_override_btn = QPushButton(self.tr("Remove Override…"))
+        remove_override_btn.setToolTip(
+            self.tr("Clear a manual override; lb_status reverts to auto-computed value.")
+        )
+        remove_override_btn.clicked.connect(self._on_remove_override)
+        ib_layout.addWidget(remove_override_btn)
 
         export_overrides_btn = QPushButton(self.tr("Export Overrides"))
         export_overrides_btn.setToolTip(self.tr("Save all manual LB status overrides to a JSON file."))
@@ -902,6 +916,106 @@ class DbEditTab(QWidget):
 
         w.finished.connect(_done)
         w.error.connect(lambda e: QMessageBox.warning(self, self.tr("Import Error"), str(e)))
+        self._workers.append(w)
+        w.start()
+
+    def _on_add_override(self) -> None:
+        """Show a dialog to set a manual lb_status override on one LB number."""
+        dlg = QDialog(self)
+        dlg.setWindowTitle(self.tr("Add / Update Override"))
+        form = QFormLayout(dlg)
+        form.setContentsMargins(12, 12, 12, 8)
+        form.setSpacing(8)
+
+        lb_spin = QSpinBox()
+        lb_spin.setRange(1, 99999)
+        lb_spin.setFixedWidth(90)
+        form.addRow(self.tr("LB #:"), lb_spin)
+
+        status_combo = QComboBox()
+        for s in ("public", "private", "missing", "nonexistent"):
+            status_combo.addItem(s)
+        form.addRow(self.tr("Status:"), status_combo)
+
+        notes_edit = QLineEdit()
+        notes_edit.setPlaceholderText(self.tr("Optional reason…"))
+        notes_edit.setFixedWidth(240)
+        form.addRow(self.tr("Notes:"), notes_edit)
+
+        buttons = QDialogButtonBox(
+            QDialogButtonBox.StandardButton.Ok | QDialogButtonBox.StandardButton.Cancel
+        )
+        buttons.accepted.connect(dlg.accept)
+        buttons.rejected.connect(dlg.reject)
+        form.addRow(buttons)
+
+        if dlg.exec() != QDialog.DialogCode.Accepted:
+            return
+
+        lb = lb_spin.value()
+        status = status_combo.currentText()
+        notes = notes_edit.text().strip()
+
+        def _run():
+            r = requests.put(
+                f"http://127.0.0.1:{self.flask_port}/api/lb_master/{lb}/manual",
+                json={"status": status, "notes": notes},
+                timeout=10,
+            )
+            r.raise_for_status()
+            return r.json()
+
+        w = _Worker(_run)
+
+        def _done(_data: dict) -> None:
+            self.status_label.setText(
+                self.tr("Override set: LB-{lb:05d} → {status}").format(lb=lb, status=status)
+            )
+            self.load_integrity_stats()
+
+        w.finished.connect(_done)
+        w.error.connect(lambda e: QMessageBox.warning(self, self.tr("Override Error"), str(e)))
+        self._workers.append(w)
+        w.start()
+
+    def _on_remove_override(self) -> None:
+        """Ask for an LB number and clear its manual override."""
+        lb, ok = QInputDialog.getInt(
+            self, self.tr("Remove Override"),
+            self.tr("LB number to clear override:"),
+            value=1, min=1, max=99999,
+        )
+        if not ok:
+            return
+
+        reply = QMessageBox.question(
+            self, self.tr("Confirm Remove Override"),
+            self.tr("Clear manual override for LB-{lb:05d}?\n"
+                    "lb_status will revert to the auto-computed value.").format(lb=lb),
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+        )
+        if reply != QMessageBox.StandardButton.Yes:
+            return
+
+        def _run():
+            r = requests.delete(
+                f"http://127.0.0.1:{self.flask_port}/api/lb_master/{lb}/manual",
+                timeout=10,
+            )
+            r.raise_for_status()
+            return r.json()
+
+        w = _Worker(_run)
+
+        def _done(data: dict) -> None:
+            new_status = data.get("lb_status", "?")
+            self.status_label.setText(
+                self.tr("Override cleared: LB-{lb:05d} → {status}").format(lb=lb, status=new_status)
+            )
+            self.load_integrity_stats()
+
+        w.finished.connect(_done)
+        w.error.connect(lambda e: QMessageBox.warning(self, self.tr("Override Error"), str(e)))
         self._workers.append(w)
         w.start()
 
