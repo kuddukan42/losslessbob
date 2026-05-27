@@ -1292,7 +1292,7 @@ def get_collection(db_path=None):
     with get_connection(db_path) as conn:
         rows = conn.execute("""
             SELECT c.id, c.lb_number, c.folder_name, c.disk_path, c.confirmed_at, c.notes,
-                   e.date_str, e.location, lm.lb_status
+                   e.date_str, e.location, e.description, e.rating, e.cdr, lm.lb_status
             FROM my_collection c
             LEFT JOIN entries e ON c.lb_number = e.lb_number
             LEFT JOIN lb_master lm ON lm.lb_number = c.lb_number

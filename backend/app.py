@@ -3661,6 +3661,30 @@ def create_app() -> Flask:
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
+    @app.route("/api/pipeline/scan-tree", methods=["POST"])
+    def pipeline_scan_tree() -> Response:
+        """Walk a root directory and return subdirectories containing audio files.
+
+        Body: {root: "/abs/path"}
+        Returns:
+            JSON {folders: [str, ...]} sorted alphabetically
+        """
+        _AUDIO = {'.flac', '.mp3', '.wav', '.m4a', '.aiff', '.ape', '.ogg', '.wv'}
+        try:
+            data = request.get_json() or {}
+            root = Path(data.get("root", ""))
+            if not root.is_dir():
+                return jsonify({"error": "root is not a directory"}), 400
+            found: list[str] = []
+            for dirpath in root.rglob("*"):
+                if dirpath.is_dir() and any(
+                    f.suffix.lower() in _AUDIO for f in dirpath.iterdir() if f.is_file()
+                ):
+                    found.append(str(dirpath))
+            return jsonify({"folders": sorted(found)})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
     _slog.t("Flask: create_app done")
     return app
 

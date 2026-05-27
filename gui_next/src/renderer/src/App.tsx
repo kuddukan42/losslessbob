@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react'
-import { HashRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { applyTheme, loadTheme, saveTheme, getSystemMode } from './lib/tokens'
 import type { ThemeOptions, Mode, Accent, Density } from './lib/tokens'
 import { AppShell } from './components'
@@ -8,8 +8,18 @@ import {
   Card, Toolbar, Banner, Stat, SectionHead,
   TableShell, TH, TR, TD, GroupRow,
 } from './components'
+import { useSettingsStore } from './store'
 import { ScreenHome } from './screens/ScreenHome'
 import { ScreenPipeline } from './screens/ScreenPipeline'
+import { ScreenSetup } from './screens/ScreenSetup'
+import { ScreenCollection } from './screens/ScreenCollection'
+
+// ── Curator-only route guard ──────────────────────────────────────────────────
+
+function CuratorRoute({ element }: { element: React.ReactNode }) {
+  const curatorMode = useSettingsStore((s) => s.curatorMode)
+  return curatorMode ? <>{element}</> : <Navigate to="/" replace />
+}
 
 // ── Placeholder screen ────────────────────────────────────────────────────────
 
@@ -207,15 +217,15 @@ export default function App(): React.JSX.Element {
           <Route path="/lookup"      element={<PlaceholderScreen name="Lookup" />} />
           <Route path="/rename"      element={<PlaceholderScreen name="Rename" />} />
           <Route path="/lbdir"       element={<PlaceholderScreen name="LBDIR" />} />
-          <Route path="/collection"  element={<PlaceholderScreen name="My Collection" />} />
+          <Route path="/collection"  element={<ScreenCollection />} />
           <Route path="/search"      element={<PlaceholderScreen name="Search" />} />
           <Route path="/bootlegs"    element={<PlaceholderScreen name="Bootlegs" />} />
           <Route path="/attachments" element={<PlaceholderScreen name="Attachments" />} />
           <Route path="/spectrograms"element={<PlaceholderScreen name="Spectrograms" />} />
           <Route path="/map"         element={<PlaceholderScreen name="Map" />} />
-          <Route path="/dbeditor"    element={<PlaceholderScreen name="DB Editor" />} />
-          <Route path="/scraper"     element={<PlaceholderScreen name="Scraper" />} />
-          <Route path="/setup"       element={<PlaceholderScreen name="Setup" />} />
+          <Route path="/dbeditor"    element={<CuratorRoute element={<PlaceholderScreen name="DB Editor" />} />} />
+          <Route path="/scraper"     element={<CuratorRoute element={<PlaceholderScreen name="Scraper" />} />} />
+          <Route path="/setup"       element={<ScreenSetup />} />
           <Route path="/themes"      element={<PlaceholderScreen name="Themes" />} />
         </Routes>
       </AppShell>

@@ -1,3 +1,28 @@
+[2026-05-27] — fix(gui_next): fix Collection table column alignment with virtualizer
+Fixed: gui_next/src/renderer/src/screens/ScreenCollection.tsx: replaced position:absolute rows with spacer-row pattern so tbody rows stay in normal table flow and colgroup widths apply correctly; widened Confirmed column from 90→160px
+
+[2026-05-27] — fix(gui_next): auto-start Flask backend from Electron main process
+Changed: gui_next/src/main/index.ts: spawn run_backend.py if port 5174 is not already open; wait for port before creating the window; kill child on quit
+
+[2026-05-27] — feat(gui_next,backend): wire Collection screen to existing backend endpoints
+Changed: backend/db.py: extend get_collection() SELECT to include e.description, e.rating, e.cdr
+Changed: gui_next/src/renderer/src/screens/ScreenCollection.tsx: replace single /api/collection fetch with Promise.allSettled of 6 existing endpoints (fingerprint/lb_numbers, wishlist, collection/duplicates, forum_posts, torrents); merge into CollectionRow[] client-side matching old GUI pattern
+
+[2026-05-27] — fix(gui_next,backend): wire Pipeline folder-add, scan-tree, and Open actions
+Fixed: gui_next/src/main/index.ts: add ipcMain.handle for dialog:pickFolders, dialog:pickDir, shell:openPath
+Fixed: gui_next/src/preload/index.ts: expose pickFolders/pickDir/openPath via contextBridge
+Fixed: gui_next/src/renderer/src/env.d.ts: add new methods to Window.api interface
+Added: backend/app.py: POST /api/pipeline/scan-tree — walks root dir, returns subdirs containing audio files
+Fixed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: wire "Add folders…" (×2) to pickFolders, "Scan tree…" (×2) to pickDir+scan-tree, "Open" to openPath
+
+[2026-05-27] — feat(gui_next): Phase 4c — My Collection screen with virtualizer, filter chips, and detail panel
+Added: gui_next/src/renderer/src/screens/ScreenCollection.tsx: full Collection screen — heading row with export/qBittorrent buttons, stateful filter chips (All/Missing/Wishlist/Duplicates/Forum/Torrent/Unconfirmed/No FP), inline action toolbar, TanStack-virtualized 10-col table (edge bars, checkbox, LB#, Status, Date, Location, Folder, Disk path, Confirmed, FP), slide-in 360px detail panel (pill row, ID+title block, meta grid, action buttons, history sub-tabs); backend fetch against GET /api/collection with SAMPLE_DATA fallback
+Changed: gui_next/src/renderer/src/App.tsx: replaced PlaceholderScreen at /collection with ScreenCollection
+
+[2026-05-27] — feat(gui_next): Phase 3 — curator mode toggle, Setup screen, and gated route guards
+Added: gui_next/src/renderer/src/screens/ScreenSetup.tsx: full Setup screen — Database card, Master Data card with animated curator toggle (44×24 knob, warn-tinted icon, persist via Zustand), Integrations card (3-col qBit/forum/web), Preferences card, Data purges card, Flat file history table
+Changed: gui_next/src/renderer/src/App.tsx: /setup now routes to ScreenSetup; /dbeditor and /scraper wrapped in CuratorRoute guard (redirects to / when curatorMode is false); added Navigate import and CuratorRoute component
+
 [2026-05-27] — feat(gui_next,backend): Phase 4a Pipeline screen — batch ingest workflow with virtualizer, selection, drag-drop, backend integration
 Added: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: full pipeline screen — top progress banner, folder queue rail, virtualised table (TanStack), filter chips, selection bar with shift-click/⌘A, drag-drop folder ingestion, per-row and bulk apply renames; calls POST /api/pipeline/run and POST /api/folder/rename
 Added: backend/app.py: POST /api/pipeline/run — runs verify/lookup/rename/lbdir steps on a list of folders, returns PipelineRow-shaped results

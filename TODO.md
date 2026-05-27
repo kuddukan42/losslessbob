@@ -1,3 +1,79 @@
+TODO-106: Audio fingerprint matching — identify user recordings by performance date
+Priority: High
+Status: Open
+Added: 2026-05-27
+Description: Given a performance date, fingerprint all LosslessBob recordings for that date,
+  fingerprint the user's local audio folder, compare them, and report similarity scores to
+  determine whether the user's copy is the same recording. Clean up fingerprint data afterward.
+  Goals:
+    • Date picker: user selects a performance date; system fetches all LB recordings for that date.
+    • LB fingerprinting: generate audio fingerprints (e.g. Chromaprint/fpcalc) for each LB
+      recording's audio files (or a representative sample per track).
+    • User audio ingestion: scan a user-specified folder, generate fingerprints for each audio file.
+    • Comparison: score similarity between user files and LB recordings; group by recording/source.
+    • Results: ranked list showing which LB recording each user file most closely matches and the
+      confidence/similarity score — clearly indicating "likely same recording" vs "different source".
+    • Cleanup: delete all generated fingerprint data after the session to avoid stale cache.
+    • Runs in a QThread worker; progress shown in GUI.
+
+
+TODO-105: Checksum lookup — flag matches against user's own collection
+Priority: High
+Status: Open
+Added: 2026-05-27
+Description: When the user performs a checksum lookup, indicate whether the checksum matches a
+  recording they already have in their collection (My Collection / lb_master).
+  Goals:
+    • After a checksum resolves to a show, cross-reference the result against the user's
+      collection records in losslessbob.db.
+    • If the user already owns that recording (same checksum or same show+source), clearly
+      flag it in the results — e.g. "You already have this" or a distinct badge/icon.
+    • If the checksum differs from what the user has for the same show, flag it as a
+      potential upgrade or duplicate-with-mismatch.
+    • Works in both the GUI lookup flow and any CLI checksum check path.
+
+
+TODO-104: Data package restore — import user data and scraped assets from zip
+Priority: Medium
+Status: Open
+Added: 2026-05-27
+Description: Provide a restore/import flow that accepts a zip archive produced by TODO-102 or
+  TODO-103 and unpacks it into the correct locations.
+  Goals:
+    • Accept either package type (user data or scraped assets) — detect by manifest contents.
+    • For user data: restore losslessbob.db, config, lb_master state; prompt before overwriting.
+    • For scraped assets: unpack pages/ and attachments/ into the configured data directory.
+    • Validate the manifest (checksums or file count) before committing the restore.
+    • Surface progress and any conflicts clearly in the GUI or CLI.
+    • Dry-run option: show what would be overwritten without writing anything.
+
+
+TODO-103: Data package — scraped attachments and pages
+Priority: Medium
+Status: Open
+Added: 2026-05-27
+Description: Bundle all scraped data (downloaded HTML pages and attachments from the forum/setlist
+  scraper) into a distributable data package archive.
+  Goals:
+    • Package contents: pages/ folder HTML files and attachments/ folder files.
+    • Output: a dated archive (zip or tar.gz) with a manifest listing file count and total size.
+    • Provide an export action in the GUI or CLI.
+    • Useful for seeding other installs or sharing the scraped corpus without re-scraping.
+
+
+TODO-102: Data package — user data export
+Priority: Medium
+Status: Open
+Added: 2026-05-27
+Description: Bundle all user-generated data (losslessbob.db, any user config, collection state,
+  notes, overrides) into a portable export package for backup or migration.
+  Goals:
+    • Package contents: losslessbob.db, config files, lb_master export if applicable.
+    • Output: a dated archive with a human-readable manifest.
+    • Provide an import/restore path so the user can seed a fresh install from the package.
+    • Exclude scraped assets (covered by TODO-103).
+
+
 TODO-101: Add SQL query box to DB Editor for manual query execution
 Priority: Medium
 Status: Open
@@ -17,7 +93,7 @@ Description: Add a SQL input box to the DB Editor tab so the user can run arbitr
 TODO-094: Rework UI per Claude design prototype
 Priority: Medium
 Status: In Progress
-Stage: Phase 2 (app shell) + Phase 4a (Pipeline screen) + Phase 4b (Home screen) done — next: Phase 3 curator toggle or Phase 4c Collection
+Stage: Phase 2 (app shell) + Phase 3 (curator toggle/Setup) + Phase 4a (Pipeline) + Phase 4b (Home) done — next: Phase 4c Collection
 Added: 2026-05-24
 Description: Overhaul the PyQt6 GUI to match the design prototype produced by Claude.
   Goals:
