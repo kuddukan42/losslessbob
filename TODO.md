@@ -17,7 +17,7 @@ Description: Add a SQL input box to the DB Editor tab so the user can run arbitr
 TODO-094: Rework UI per Claude design prototype
 Priority: Medium
 Status: In Progress
-Stage: Phase 2 (app shell) + Phase 4b (Home screen) done — next: Phase 3 curator toggle or Phase 4a Pipeline
+Stage: Phase 2 (app shell) + Phase 4a (Pipeline screen) + Phase 4b (Home screen) done — next: Phase 3 curator toggle or Phase 4c Collection
 Added: 2026-05-24
 Description: Overhaul the PyQt6 GUI to match the design prototype produced by Claude.
   Goals:

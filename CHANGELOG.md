@@ -1,3 +1,10 @@
+[2026-05-27] — feat(gui_next,backend): Phase 4a Pipeline screen — batch ingest workflow with virtualizer, selection, drag-drop, backend integration
+Added: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: full pipeline screen — top progress banner, folder queue rail, virtualised table (TanStack), filter chips, selection bar with shift-click/⌘A, drag-drop folder ingestion, per-row and bulk apply renames; calls POST /api/pipeline/run and POST /api/folder/rename
+Added: backend/app.py: POST /api/pipeline/run — runs verify/lookup/rename/lbdir steps on a list of folders, returns PipelineRow-shaped results
+Added: backend/app.py: POST /api/folder/rename — renames a folder on disk to a new name within the same parent directory
+Changed: gui_next/src/renderer/src/App.tsx: replaced PlaceholderScreen at /pipeline with ScreenPipeline
+Added: gui_next/package.json: @tanstack/react-virtual ^3.13.26
+
 [2026-05-27] — feat(gui_next,backend): Phase 4b Home/Dashboard screen wired to real backend data
 Added: gui_next/src/renderer/src/screens/ScreenHome.tsx: full Home screen — welcome strip, hero ingest card with 4-step pipeline strip, At a glance stats, Jump to tiles, recent activity table (placeholder), Tips card; fetches /api/home/stats on mount
 Added: backend/app.py: GET /api/home/stats — single-query route returning collection_count, wishlist_count, missing_count, bootleg_count, checksum_count, latest_lb, last_import
