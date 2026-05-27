@@ -254,6 +254,26 @@ export function ScreenPipeline(): React.JSX.Element {
     }
   }, [selectedReady, applyRename])
 
+  // ── Folder picking (Electron IPC) ──────────────────────────────────────────
+  const handlePickFolders = useCallback(async () => {
+    const paths = await window.api.pickFolders()
+    if (paths.length) addFolders(paths)
+  }, [addFolders])
+
+  const handleScanTree = useCallback(async () => {
+    const dir = await window.api.pickDir()
+    if (!dir) return
+    try {
+      const resp = await fetch(`${BASE}/api/pipeline/scan-tree`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ root: dir }),
+      })
+      const data = await resp.json() as { folders?: string[]; error?: string }
+      if (data.folders?.length) addFolders(data.folders)
+    } catch { /* silent */ }
+  }, [addFolders])
+
   // ── Selection ───────────────────────────────────────────────────────────────
   const toggleSelect = useCallback((id: string, shiftKey: boolean) => {
     setRows(prev => {
@@ -455,8 +475,8 @@ export function ScreenPipeline(): React.JSX.Element {
             padding: 12, borderTop: '1px solid var(--lbb-border)',
             display: 'flex', flexDirection: 'column', gap: 6,
           }}>
-            <Button variant="primary" size="sm" icon="folderPlus" block>Add folders…</Button>
-            <Button variant="secondary" size="sm" icon="search" block>Scan tree…</Button>
+            <Button variant="primary" size="sm" icon="folderPlus" block onClick={handlePickFolders}>Add folders…</Button>
+            <Button variant="secondary" size="sm" icon="search" block onClick={handleScanTree}>Scan tree…</Button>
             <Button
               variant="ghost" size="sm" icon="trash" block
               onClick={() => { setRows([]); setActiveQueue(null) }}
@@ -567,8 +587,8 @@ export function ScreenPipeline(): React.JSX.Element {
                 </div>
               </div>
               <div style={{ display: 'flex', gap: 8 }}>
-                <Button variant="primary" size="md" icon="folderPlus">Add folders…</Button>
-                <Button variant="secondary" size="md" icon="search">Scan tree…</Button>
+                <Button variant="primary" size="md" icon="folderPlus" onClick={handlePickFolders}>Add folders…</Button>
+                <Button variant="secondary" size="md" icon="search" onClick={handleScanTree}>Scan tree…</Button>
               </div>
             </div>
           )}
@@ -683,7 +703,7 @@ export function ScreenPipeline(): React.JSX.Element {
                         </TD>
                         <TD align="right" onClick={e => e.stopPropagation()}>
                           {r.severity === 'attn' && (
-                            <Button size="sm" variant="secondary" icon="reveal">Open</Button>
+                            <Button size="sm" variant="secondary" icon="reveal" onClick={() => window.api.openPath(r.folderPath)}>Open</Button>
                           )}
                           {r.severity === 'ready' && (
                             <Button size="sm" variant="primary" icon="check" onClick={() => applyRename(r)}>Apply</Button>

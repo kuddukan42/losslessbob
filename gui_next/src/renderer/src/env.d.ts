@@ -2,7 +2,10 @@
 
 interface Window {
   api: {
-    flaskPort: number
-    flaskBase: string
+    flaskPort:   number
+    flaskBase:   string
+    pickFolders: () => Promise<string[]>
+    pickDir:     () => Promise<string | null>
+    openPath:    (path: string) => Promise<string>
   }
 }
