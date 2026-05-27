@@ -1,6 +1,37 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-113: Hard-coded table backgrounds break theming
+Status: Fixed
+File(s): gui/lbdir_tab.py, gui/verify_tab.py (and other tab files)
+Reported: 2026-05-24
+Fixed: 2026-05-26
+Root cause: Module-level colour aliases and class-level dicts captured QColor values at
+  import time, so they never reflected theme changes after startup.
+Fix: Removed all module-level and class-level colour caches; all call sites now
+  reference styles.* inline at paint time via the theme-live refactor (commits
+  e78e584f and 9327b2f4).
+
+---
+
+BUG-112: Master update install incorrectly restricted to Curator and allows downgrade
+Status: Fixed
+File(s): backend/db.py:import_master_db
+Reported: 2026-05-24
+Fixed: 2026-05-26
+Root cause:
+  1. Curator gate: The /api/master/import route already had "intentionally not
+     curator-gated" (no code change needed); the GUI never gated install_master_btn
+     behind curator mode either — the bug report was describing an obsolete state.
+  2. Downgrade: import_master_db() had no comparison between the incoming snapshot's
+     master_version timestamp and the locally installed one.
+Fix: Added a downgrade guard (Step 2b) in import_master_db() that reads the current
+  master_version from the meta table and raises ValueError if the incoming version
+  string is lexicographically earlier (the format is YYYY-MM-DD_HHMMSS, so string
+  comparison equals date comparison).
+
+---
+
 BUG-109: Map geocode layer not shown on load when Curator mode is already checked
 Status: Fixed
 File(s): gui/main_window.py

@@ -244,8 +244,6 @@ CREATE TABLE IF NOT EXISTS lb_master (
 CREATE INDEX IF NOT EXISTS idx_lb_master_status   ON lb_master(lb_status);
 CREATE INDEX IF NOT EXISTS idx_lb_master_override ON lb_master(manual_override) WHERE manual_override = 1;
 CREATE INDEX IF NOT EXISTS idx_lb_master_review   ON lb_master(needs_review)   WHERE needs_review = 1;
-CREATE INDEX IF NOT EXISTS idx_lb_master_public_no_chk
-    ON lb_master(public_no_checksums) WHERE public_no_checksums = 1;
 
 CREATE TABLE IF NOT EXISTS lb_status_history (
     id            INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -630,6 +628,12 @@ def init_db(db_path=None):
                     ON lb_master(public_no_checksums) WHERE public_no_checksums = 1;
                 PRAGMA foreign_keys = ON;
             """)
+
+        # Ensure index exists whether table was just created or just migrated.
+        conn.execute(
+            "CREATE INDEX IF NOT EXISTS idx_lb_master_public_no_chk"
+            " ON lb_master(public_no_checksums) WHERE public_no_checksums = 1"
+        )
 
         # Migration: seed lb_missing with confirmed-not-existing LB numbers.
         for _seed_lb in _LB_MISSING_SEEDS:
@@ -2693,6 +2697,20 @@ def import_master_db(snapshot_path: "Path | str", db_path=None) -> dict:
             f"Master snapshot schema version {incoming_schema} is newer than "
             f"this app supports (v{MASTER_SCHEMA_VERSION}). Upgrade the app first."
         )
+
+    # Step 2b: downgrade guard — refuse if incoming snapshot is older than installed
+    incoming_version: str = manifest.get("master_version", "")
+    if incoming_version:
+        _conn = get_connection(db_path)
+        _row = _conn.execute(
+            "SELECT value FROM meta WHERE key = 'master_version'"
+        ).fetchone()
+        current_version: str | None = _row[0] if _row else None
+        if current_version and incoming_version < current_version:
+            raise ValueError(
+                f"Snapshot version '{incoming_version}' is older than the installed "
+                f"version '{current_version}'. Install aborted to prevent data loss."
+            )
 
     # Step 3: backup local DB before destructive replace
     backup_path = backup_database(reason="pre_master_import", db_path=db_path)

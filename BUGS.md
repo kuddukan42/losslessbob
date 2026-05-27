@@ -1,33 +1,3 @@
-BUG-113: Hard-coded table backgrounds break theming
-Status: Open
-File(s): gui/ (various table/widget files)
-Reported: 2026-05-24
-Description: Some table widgets still have hard-coded background colours in their
-  stylesheets or palette settings. These colours do not respond to the application
-  theme, making the tables look incorrect (e.g. white backgrounds in dark mode or
-  vice versa).
-Root cause: Unknown — likely inline stylesheet strings with fixed hex/RGB colour values
-  instead of QPalette roles or theme variables.
-Fix: —
-
----
-
-BUG-112: Master update install incorrectly restricted to Curator and allows downgrade
-Status: Open
-File(s): gui/ or backend/ (master update install handler, unknown exact file)
-Reported: 2026-05-24
-Description: Two related issues with the "Install Master Update" flow:
-  1. Permission gate: The install is gated behind Curator mode, but any user should be
-     able to install a master update — it is not a privileged/editorial action.
-  2. No downgrade protection: If a user selects an older master file than the one already
-     installed, the import proceeds without warning or rejection. Installing an older file
-     should be blocked (or at minimum require an explicit confirmation) to prevent data loss.
-Root cause: Unknown — likely the permission check is a copy-paste from a curator-only action,
-  and no version/date comparison is performed before importing.
-Fix: —
-
----
-
 BUG-106: Windows installer does not place app in Program Files
 Status: Open
 File(s): installer/losslessbob.iss (or equivalent Inno Setup script)

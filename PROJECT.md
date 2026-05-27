@@ -109,9 +109,13 @@ losslessbob/
 ├── tools/
 │   ├── geocode_locations.py  # CLI: batch-geocode entries.location via Nominatim (--limit, --retry-failed, --dry-run)
 │   ├── losslessbob.iss       # Inno Setup 6 script — builds LosslessBob_Setup_<ver>.exe from dist/LosslessBob/
-│   └── build_windows.bat     # Local helper: pyinstaller + iscc in sequence (Windows only)
+│   ├── build_windows.bat     # Local helper: pyinstaller + iscc in sequence (Windows only)
+│   └── shntool.exe           # Windows shntool binary (GPL-2); bundled into PyInstaller dist via losslessbob.spec
 ├── docs/
 │   ├── index.html            # GitHub Pages marketing/landing page
+│   ├── CLI.md                # CLI usage reference
+│   ├── scraping.md           # Scraper behaviour and queue logic
+│   ├── data_ownership.md     # Master vs. user data split, export/import enforcement
 │   └── screenshots/          # Screenshot placeholders (replace with real app screenshots)
 │       └── README.md         # Guide for which screenshots to capture
 └── data/
@@ -1289,6 +1293,7 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 | 2026-05-06 | Fixed scraper URL/directory formatting: LB numbers now zero-padded to 5 digits (`LB-{n:05d}`) in `backend/scraper.py` |
 | 2026-05-06 | Added `.claude/settings.json` — restricts file access to project directory + deny rules for sensitive system paths |
 | 2026-05-06 | Created this document |
+| 2026-05-26 | BUG-112: added downgrade guard to `import_master_db()` (db.py). TODO-091: bundled `tools/shntool.exe` into PyInstaller Windows dist via losslessbob.spec; updated `_find_shntool()` (checksum_utils.py) to resolve bundled and dev-tree paths before WSL/PATH. |
 | 2026-05-06 | Removed SDF/Wine/ExportSqlCE40 import path; flat-file only. Renamed `sdf_hash` meta key to `import_hash`. Deleted `tools/` directory. |
 | 2026-05-06 | QSS modernization: Fusion base style, rounded corners, flat buttons, tab underline indicator, slim progress bar, `font-weight 700`, drop shadows on result panels. |
 | 2026-05-06 | Rename tab: added `wrong_lb` state (purple) for folders with mismatched LB numbers; "Select Wrong LB" and "Strip Wrong LB from Selected" buttons; "Select All" now only checks actionable rows. |

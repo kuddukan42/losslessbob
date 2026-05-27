@@ -279,7 +279,12 @@
       "Bash(/home/tjenkins/Documents/losslessbob/.venv/bin/python3 -c ' *)",
       "Bash(/home/tjenkins/Documents/losslessbob/.venv/bin/python3 -m py_compile /home/tjenkins/Documents/losslessbob/gui/platform_utils.py)",
       "Bash(/home/tjenkins/Documents/losslessbob/.venv/bin/python3 -m py_compile /home/tjenkins/Documents/losslessbob/gui/platform_utils.py /home/tjenkins/Documents/losslessbob/gui/setup_tab.py)",
-      "Bash(xargs ls -la)"
+      "Bash(xargs ls -la)",
+      "Bash(xargs grep -l \"theme\\\\|style\\\\|color\\\\|#[0-9A-Fa-f]\\\\{3,6\\\\}\")",
+      "Bash(grep -n \"#[0-9A-Fa-f]\\\\{3,6\\\\}\" /home/tjenkins/Documents/losslessbob/gui/styles.py)",
+      "Bash(grep -rn \"#[0-9A-Fa-f]\\\\{3,6\\\\}\\\\|setStyleSheet\\\\|palette\\\\|QColor\\\\|QPalette\" /home/tjenkins/Documents/losslessbob/gui/ --include=\"*.py\")",
+      "Bash(/home/tjenkins/Documents/losslessbob/.venv/bin/python3 -m py_compile /home/tjenkins/Documents/losslessbob/backend/checksum_utils.py)",
+      "Bash(/home/tjenkins/Documents/losslessbob/.venv/bin/python3 -m py_compile /home/tjenkins/Documents/losslessbob/gui/dbedit_tab.py)"
     ],
     "additionalDirectories": [
       "/home/tjenkins/.ssh",
