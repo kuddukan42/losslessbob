@@ -1,0 +1,28 @@
+{
+  "name": "losslessbob-next",
+  "version": "0.1.0",
+  "description": "LosslessBob — next UI (Electron + React + Vite + TypeScript)",
+  "main": "out/main/index.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "preview": "electron-vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.23.1",
+    "zustand": "^5.0.13"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.9",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^5.2.0",
+    "electron": "^42.3.0",
+    "electron-vite": "^5.0.0",
+    "playwright-core": "^1.60.0",
+    "typescript": "^5.5.3",
+    "vite": "^7.3.3"
+  }
+}

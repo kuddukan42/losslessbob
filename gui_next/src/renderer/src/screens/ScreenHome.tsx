@@ -1,0 +1,309 @@
+import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { Icon } from '../components/Icon'
+import { Button, Card, Stat, Pill } from '../components'
+import { TableShell, TH, TR, TD } from '../components'
+
+const BASE = window.api.flaskBase
+
+interface HomeStats {
+  collection_count: number
+  wishlist_count: number
+  missing_count: number
+  bootleg_count: number
+  checksum_count: number
+  latest_lb: number
+  last_import: string | null
+}
+
+function fmtNum(n: number): string {
+  return n.toLocaleString()
+}
+
+function fmtLb(n: number): string {
+  return `LB-${String(n).padStart(5, '0')}`
+}
+
+function relTime(iso: string | null): string {
+  if (!iso) return 'never'
+  const d = new Date(iso)
+  const diffDays = Math.floor((Date.now() - d.getTime()) / 86_400_000)
+  if (diffDays === 0) return 'today'
+  if (diffDays === 1) return 'yesterday'
+  if (diffDays < 7) return `${diffDays} days ago`
+  return d.toISOString().slice(0, 10)
+}
+
+const STEP_STRIPS = [
+  { n: 1, label: 'Verify checksums', icon: 'verify' },
+  { n: 2, label: 'Lookup LB#',       icon: 'lookup' },
+  { n: 3, label: 'Rename folder',    icon: 'rename' },
+  { n: 4, label: 'Check LBDIR',      icon: 'lbdir'  },
+]
+
+const JUMP_TILES = [
+  { id: 'collection', icon: 'collection', label: 'My Collection'    },
+  { id: 'search',     icon: 'search',     label: 'Search master DB' },
+  { id: 'bootlegs',   icon: 'bootlegs',   label: 'Bootleg catalog'  },
+  { id: 'map',        icon: 'map',        label: 'Concert map'      },
+]
+
+const TIPS = [
+  { icon: 'cmd',  text: <>Press <span className="kbd-pill">⌘K</span> on any screen to jump straight to an LB# or folder.</> },
+  { icon: 'user', text: <>Maintaining master data? Enable <strong>Curator mode</strong> in Settings to reveal DB&nbsp;Editor and Scraper.</> },
+  { icon: 'star', text: <>Star a filter combo in <strong>Search</strong> to make it a one-click saved view.</> },
+]
+
+export function ScreenHome(): React.JSX.Element {
+  const navigate = useNavigate()
+  const [stats, setStats] = useState<HomeStats | null>(null)
+
+  useEffect(() => {
+    fetch(`${BASE}/api/home/stats`)
+      .then(r => (r.ok ? r.json() : Promise.reject()))
+      .then(setStats)
+      .catch(() => { /* stats stay null, UI shows '—' */ })
+  }, [])
+
+  function onNav(id: string): void {
+    navigate(id === 'home' ? '/' : `/${id}`)
+  }
+
+  const d = (n: number | undefined, fallback = '—') =>
+    n !== undefined ? fmtNum(n) : fallback
+
+  return (
+    <div style={{ padding: '24px 28px 36px', maxWidth: 1680, margin: '0 auto' }}>
+
+      {/* ── Welcome strip ──────────────────────────────────────────────────── */}
+      <div style={{
+        display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between',
+        marginBottom: 22, gap: 24,
+      }}>
+        <div>
+          <div style={{ fontSize: 11, letterSpacing: 0.14, textTransform: 'uppercase', color: 'var(--lbb-fg3)', fontWeight: 600 }}>
+            Welcome back, Rolling
+          </div>
+          <h1 style={{ margin: '6px 0 0', fontSize: 28, fontWeight: 700, letterSpacing: -0.015 }}>
+            Your collection ·{' '}
+            <span style={{ fontVariantNumeric: 'tabular-nums' }}>
+              {d(stats?.collection_count, '…')}
+            </span>{' '}entries
+          </h1>
+          <div style={{ marginTop: 4, fontSize: 13, color: 'var(--lbb-fg3)' }}>
+            DB up to date ·{' '}
+            <span style={{ fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-fg2)' }}>
+              {stats ? fmtLb(stats.latest_lb) : '…'}
+            </span>
+            {' '}· imported {stats ? relTime(stats.last_import) : '…'}
+          </div>
+        </div>
+        <div style={{ display: 'flex', gap: 8, flexShrink: 0 }}>
+          <Button icon="refresh" variant="secondary" size="md">Check for DB update</Button>
+          <Button icon="drop" variant="primary" size="md" onClick={() => onNav('pipeline')}>
+            Ingest new folders
+          </Button>
+        </div>
+      </div>
+
+      {/* ── Primary two-column grid ─────────────────────────────────────────── */}
+      <div style={{ display: 'grid', gridTemplateColumns: '1.45fr 1fr', gap: 18, marginBottom: 18 }}>
+
+        {/* Hero ingest card */}
+        <div style={{
+          background: 'linear-gradient(180deg, var(--lbb-accent-soft), var(--lbb-surface))',
+          border: '1px solid var(--lbb-accent-mid)',
+          borderRadius: 12, padding: 22,
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
+            <span style={{
+              fontSize: 10, letterSpacing: 0.14, textTransform: 'uppercase',
+              color: 'var(--lbb-accent-mid)', fontWeight: 700,
+              padding: '2px 7px', borderRadius: 4,
+              background: 'var(--lbb-surface)', border: '1px solid var(--lbb-accent-mid)',
+            }}>PRIMARY WORKFLOW</span>
+            <span style={{ fontSize: 11, color: 'var(--lbb-fg3)' }}>The new-acquisition pipeline</span>
+          </div>
+          <h2 style={{ margin: '2px 0 4px', fontSize: 22, fontWeight: 700, letterSpacing: -0.01 }}>
+            Ingest new music
+          </h2>
+          <p style={{ margin: '0 0 16px', color: 'var(--lbb-fg2)', fontSize: 13.5, maxWidth: '60ch' }}>
+            Drop folders here — the pipeline runs{' '}
+            <strong>verify → lookup → rename → LBDIR</strong>{' '}
+            on the whole batch. No more bouncing tabs.
+          </p>
+
+          <button
+            type="button"
+            onClick={() => onNav('pipeline')}
+            style={{
+              width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 14,
+              padding: '30px 20px', borderRadius: 10,
+              background: 'var(--lbb-surface)',
+              border: '2px dashed var(--lbb-accent-mid)',
+              color: 'var(--lbb-fg2)', fontSize: 13.5, cursor: 'pointer', fontFamily: 'inherit',
+            }}
+          >
+            <Icon name="folderPlus" size={22} style={{ color: 'var(--lbb-accent-mid)' }} />
+            <span>
+              <strong style={{ color: 'var(--lbb-fg)' }}>Drag folders here</strong>
+              {' '}&nbsp;·&nbsp;{' '}or click to browse
+            </span>
+          </button>
+
+          <div style={{ marginTop: 16, display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 8 }}>
+            {STEP_STRIPS.map(s => (
+              <div key={s.n} style={{
+                display: 'flex', alignItems: 'center', gap: 8,
+                padding: '9px 10px', borderRadius: 8,
+                background: 'var(--lbb-surface)',
+                border: '1px solid var(--lbb-border)',
+              }}>
+                <span style={{
+                  width: 18, height: 18, borderRadius: '50%',
+                  background: 'var(--lbb-accent-mid)', color: 'var(--lbb-accent-onMid)',
+                  display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+                  fontSize: 10, fontWeight: 700, flexShrink: 0,
+                }}>{s.n}</span>
+                <Icon name={s.icon} size={14} style={{ color: 'var(--lbb-fg2)' }} />
+                <span style={{ fontSize: 11.5, fontWeight: 500, color: 'var(--lbb-fg2)' }}>{s.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* At a glance + Jump to */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+          <Card title="At a glance" subtitle="your collection right now" pad={16}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
+              <Stat value={d(stats?.collection_count, '…')} label="in My Collection" />
+              <Stat value={d(stats?.missing_count,    '…')} label="missing entries" />
+              <Stat value={d(stats?.wishlist_count,   '…')} label="on wishlist" />
+              <Stat value={d(stats?.bootleg_count,    '…')} label="bootleg titles" />
+            </div>
+            <div style={{
+              marginTop: 14, padding: '10px 12px', borderRadius: 8,
+              background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
+              display: 'flex', alignItems: 'center', gap: 10, fontSize: 11.5, color: 'var(--lbb-fg2)',
+            }}>
+              <Icon name="check" size={13} style={{ color: 'var(--lbb-ok-bar)' }} />
+              <span>
+                <strong style={{ color: 'var(--lbb-fg)' }}>
+                  {d(stats?.checksum_count, '…')}
+                </strong>{' '}checksums indexed
+              </span>
+            </div>
+          </Card>
+
+          <Card title="Jump to" pad={14}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
+              {JUMP_TILES.map(tile => {
+                const sub =
+                  tile.id === 'collection' ? d(stats?.collection_count, '…')
+                  : tile.id === 'bootlegs' ? d(stats?.bootleg_count,    '…')
+                  : tile.id === 'search'   ? d(stats?.latest_lb,        '…')
+                  : '—'
+                return (
+                  <button
+                    key={tile.id}
+                    type="button"
+                    onClick={() => onNav(tile.id)}
+                    style={{
+                      display: 'flex', alignItems: 'center', gap: 10, padding: '9px 10px',
+                      background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)',
+                      borderRadius: 8, cursor: 'pointer', textAlign: 'left', fontFamily: 'inherit',
+                      color: 'var(--lbb-fg)',
+                    }}
+                    onMouseEnter={e => { e.currentTarget.style.background = 'var(--lbb-surface2)' }}
+                    onMouseLeave={e => { e.currentTarget.style.background = 'var(--lbb-surface)' }}
+                  >
+                    <span style={{
+                      width: 30, height: 30, borderRadius: 7, flexShrink: 0,
+                      background: 'var(--lbb-accent-soft)', color: 'var(--lbb-accent-mid)',
+                      display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+                    }}>
+                      <Icon name={tile.icon} size={15} />
+                    </span>
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div style={{ fontSize: 12.5, fontWeight: 600 }}>{tile.label}</div>
+                      <div style={{ fontSize: 10.5, color: 'var(--lbb-fg3)', fontVariantNumeric: 'tabular-nums' }}>
+                        {sub}
+                      </div>
+                    </div>
+                    <Icon name="chevRight" size={12} style={{ color: 'var(--lbb-fg3)' }} />
+                  </button>
+                )
+              })}
+            </div>
+          </Card>
+        </div>
+      </div>
+
+      {/* ── Bottom row ─────────────────────────────────────────────────────── */}
+      <div style={{ display: 'grid', gridTemplateColumns: '1.45fr 1fr', gap: 18 }}>
+
+        {/* Recent activity */}
+        <Card
+          title="Recent activity"
+          subtitle="imports, verifies, renames"
+          action={
+            <button
+              type="button"
+              style={{
+                background: 'transparent', border: 'none',
+                color: 'var(--lbb-accent-mid)',
+                fontSize: 12, fontWeight: 600, cursor: 'pointer', fontFamily: 'inherit',
+              }}
+            >View full log →</button>
+          }
+          pad={0}
+        >
+          <TableShell stickyHeader={false}>
+            <colgroup>
+              <col style={{ width: 3 }} />
+              <col style={{ width: 110 }} />
+              <col style={{ width: 140 }} />
+              <col />
+              <col style={{ width: 180 }} />
+            </colgroup>
+            <thead>
+              <tr>
+                <TH style={{ background: 'var(--lbb-surface)' }}>{' '}</TH>
+                <TH>When</TH>
+                <TH>Action</TH>
+                <TH>Target</TH>
+                <TH>Result</TH>
+              </tr>
+            </thead>
+            <tbody>
+              {/* Activity log — requires app_events table (TODO) */}
+              <TR edge="mute">
+                <TD mono dim>—</TD>
+                <TD colSpan={3} style={{ color: 'var(--lbb-fg3)', fontStyle: 'italic' }}>
+                  Activity log coming in a future update
+                </TD>
+                <TD />
+              </TR>
+            </tbody>
+          </TableShell>
+        </Card>
+
+        {/* Right column */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+          <Card title="Tips" pad={14}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+              {TIPS.map((tip, i) => (
+                <div key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
+                  <Icon name={tip.icon} size={14} style={{ color: 'var(--lbb-fg3)', marginTop: 2 }} />
+                  <div style={{ fontSize: 11.5, color: 'var(--lbb-fg2)', lineHeight: 1.5 }}>
+                    {tip.text}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Card>
+        </div>
+      </div>
+    </div>
+  )
+}

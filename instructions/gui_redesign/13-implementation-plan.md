@@ -2,31 +2,35 @@
 
 A suggested attack order for Claude Code (or any developer) implementing LosslessBob. Each phase is independently shippable.
 
-## Phase 0 — Project setup
+## Phase 0 — Project setup ✅ DONE (2026-05-27)
 
-Skip if there's already a codebase. Otherwise:
+`gui_next/` — Electron 42 + React 18 + Vite 7 + TypeScript 5. Scaffold complete.
+Preload exposes `window.api.flaskBase`. Main window: 1440×900, loads Vite dev server in dev / built files in prod.
 
-- Stack recommendation: **Electron + React + Vite + TypeScript**, with `better-sqlite3` in the main process
-- State: **Zustand** for app state, **TanStack Query** for DB queries
-- Tables: **TanStack Table v8** with row virtualization (`useVirtualizer`)
-- Icons: **Lucide-React** (the prototype's icon set is intentionally Lucide-compatible)
-- Routing: **react-router** with hash history (Electron-friendly)
+~~Skip if there's already a codebase. Otherwise:~~
+
+- Stack: **Electron + React + Vite + TypeScript** ✅
+- State: **Zustand** for app state — TODO when shell is wired
+- Tables: **TanStack Table v8** + `useVirtualizer` — TODO for collection/pipeline screens
+- Icons: **Lucide-React** — TODO when primitives are built
+- Routing: **react-router** with hash history — TODO when shell is built
 
 ## Phase 1 — Foundation
 
 **Read first:** `01-architecture.md`, `02-design-tokens.md`, `03-primitives.md`
 
 Build, in order:
-1. Theme engine — port `_source/lbb-tokens.js` to your project. Export `applyTheme({mode, accent, density})`. Call once on app boot.
-2. Global CSS — port `_source/app.css` (scrollbars, sticky tables, focus rings, density classes, kbd-pill, helper backgrounds for spec/map placeholders)
-3. Icon component — port `_source/lbb-icons.jsx` OR swap to Lucide-React (preferred). Either way, expose `<Icon name="..." size={N}/>`
-4. Primitives, one at a time: Pill → Chip → Button → IconButton → Input → Kbd → Card → Toolbar → Banner → Stat → SectionHead
-5. Table family: TableShell + TH + TR + TD + GroupRow. **This is the most important primitive** — every screen depends on it.
+1. ✅ Theme engine — `src/renderer/src/lib/tokens.ts`. `applyTheme/loadTheme/saveTheme/getSystemMode` exported. Called in `main.tsx` before React mounts. (2026-05-27)
+2. ✅ Global CSS — `src/renderer/src/index.css` is full port of `_source/app.css`. (2026-05-27)
+3. ✅ Icon component — `components/Icon.tsx`. Embedded LBB paths (Lucide-compatible), no extra dep. (2026-05-27)
+4. ✅ Primitives — `components/primitives.tsx`: Pill, Chip, Button, IconButton, Input, Kbd, Card, Toolbar, Banner, Stat, SectionHead. (2026-05-27)
+5. ✅ Table family — `components/table.tsx`: TableShell, TH, TR, TD, GroupRow with 3px edge-bar convention. (2026-05-27)
+   — Barrel export at `components/index.ts`.
 
 > **Claude Code prompt:**
 > Read `design_handoff_losslessbob/01-architecture.md`, `02-design-tokens.md`, and `03-primitives.md`. Implement the design tokens and primitives in our codebase, using `_source/lbb-tokens.js` and `_source/lbb-ui.jsx` as references. Match the visual contract exactly — especially the table family's 3px left-edge bar convention.
 
-## Phase 2 — App shell
+## Phase 2 — App shell ✅ DONE (2026-05-27)
 
 **Read:** `04-app-shell.md`
 
@@ -41,7 +45,7 @@ Build:
 > **Claude Code prompt:**
 > Read `04-app-shell.md` and `_source/app-shell.jsx`. Implement Sidebar, Topbar, StatusBar, and the composing AppShell. Wire to react-router (or our existing router). For now, render a placeholder centered title showing the active screen name as the body.
 
-## Phase 3 — Curator mode toggle
+## Phase 3 — Curator mode toggle 🔲 NEXT
 
 **Read:** Curator-mode sections in `00-overview.md`, `04-app-shell.md`, `12-screens-settings.md`
 
@@ -65,11 +69,15 @@ This is the *reason the app was redesigned*. Ship this first. Real wiring:
 - Selection state w/ ⌘A and shift-click range
 - Bulk apply
 
-### 4b. Home screen — `05-screen-home.md`
-Mostly a composition of cards over real metrics + a recent-activity log. Wire to:
-- Library counts query
-- Recent app-events log (might need to create an `app_events` table)
-- Pipeline state store (for the Resume card)
+### 4b. Home screen — `05-screen-home.md` ✅ DONE (2026-05-27)
+`gui_next/src/renderer/src/screens/ScreenHome.tsx` — all layout sections implemented.
+Real data via `GET /api/home/stats` (added to `backend/app.py`).
+Recent activity table is a placeholder — needs `app_events` table (future work).
+Resume card omitted — needs pipeline state store (future work).
+Wire to:
+- ~~Library counts query~~ ✅ /api/home/stats
+- Recent app-events log (needs `app_events` table — deferred)
+- Pipeline state store for Resume card (deferred)
 
 ### 4c. My Collection — `07-screen-collection.md`
 Virtualized 15K-row table + detail panel. Real wiring:
