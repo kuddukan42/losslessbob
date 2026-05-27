@@ -181,6 +181,47 @@ def create_app() -> Flask:
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
+    @app.route("/api/home/stats", methods=["GET"])
+    def home_stats() -> Response:
+        """Return all counts needed by the Home / Dashboard screen in one query.
+
+        Returns:
+            JSON with collection_count, wishlist_count, missing_count, bootleg_count,
+            checksum_count, latest_lb, and last_import.
+        """
+        try:
+            with database.get_connection() as conn:
+                collection_count = conn.execute(
+                    "SELECT COUNT(*) FROM my_collection"
+                ).fetchone()[0]
+                wishlist_count = conn.execute(
+                    "SELECT COUNT(*) FROM my_wishlist"
+                ).fetchone()[0]
+                missing_count = conn.execute(
+                    "SELECT COUNT(*) FROM lb_master WHERE lb_status='missing'"
+                ).fetchone()[0]
+                bootleg_count = conn.execute(
+                    "SELECT COUNT(*) FROM bootleg_titles"
+                ).fetchone()[0]
+                checksum_count = conn.execute(
+                    "SELECT COUNT(*) FROM checksums"
+                ).fetchone()[0]
+                latest_lb = conn.execute(
+                    "SELECT MAX(lb_number) FROM lb_master"
+                ).fetchone()[0] or 0
+            last_import = database.get_meta("last_import_date")
+            return jsonify({
+                "collection_count": collection_count,
+                "wishlist_count": wishlist_count,
+                "missing_count": missing_count,
+                "bootleg_count": bootleg_count,
+                "checksum_count": checksum_count,
+                "latest_lb": latest_lb,
+                "last_import": last_import,
+            })
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
     @app.route("/api/db/missing_lb_numbers", methods=["GET"])
     def db_missing_lb_numbers() -> Response:
         """Return a list of LB numbers in the checksums table that have no entries row.

@@ -1,3 +1,45 @@
+[2026-05-27] — feat(gui_next,backend): Phase 4b Home/Dashboard screen wired to real backend data
+Added: gui_next/src/renderer/src/screens/ScreenHome.tsx: full Home screen — welcome strip, hero ingest card with 4-step pipeline strip, At a glance stats, Jump to tiles, recent activity table (placeholder), Tips card; fetches /api/home/stats on mount
+Added: backend/app.py: GET /api/home/stats — single-query route returning collection_count, wishlist_count, missing_count, bootleg_count, checksum_count, latest_lb, last_import
+Changed: gui_next/src/renderer/src/App.tsx: replaced PrimitivesScreen at / with ScreenHome; import added
+
+[2026-05-27] — feat(gui_next): Phase 2 app shell — Sidebar, Topbar, StatusBar, AppShell, Zustand settings store, react-router routing
+Added: gui_next/src/renderer/src/store.ts: Zustand settings store with curatorMode persisted to localStorage
+Added: gui_next/src/renderer/src/components/AppShell.tsx: Sidebar (224px, NAV_GROUPS, curator promo, user chip), Topbar (breadcrumbs, search, bell), StatusBar (DB stats), AppShell (composes all; reads active route from react-router, curatorMode from store)
+Changed: gui_next/src/renderer/src/components/index.ts: barrel-export AppShell + AppShellProps
+Changed: gui_next/src/renderer/src/App.tsx: replaced smoke-test root with HashRouter + AppShell + all 16 placeholder routes; PrimitivesScreen moved to /home route
+Changed: instructions/gui_redesign/README.md: Phase 3 app shell marked ✅ Done; 3b curator mode marked 🔄 In Progress (gating works, toggle not in settings UI yet)
+Changed: instructions/gui_redesign/13-implementation-plan.md: Phase 2 marked ✅ Done, Phase 3 promoted to NEXT
+Verified: sidebar nav active-state, breadcrumbs, curator promo card, status bar — all confirmed via Firefox headless screenshots at /home and /pipeline routes
+
+[2026-05-27] — feat(gui_next): Phase 1 primitives — Icon, Pill, Chip, Button, IconButton, Input, Kbd, Card, Toolbar, Banner, Stat, SectionHead, TableShell, TH, TR, TD, GroupRow
+Added: gui_next/src/renderer/src/components/Icon.tsx: embedded LBB icon paths (Lucide-compatible), no added dependency
+Added: gui_next/src/renderer/src/components/primitives.tsx: all 11 primitive components, full TypeScript prop types
+Added: gui_next/src/renderer/src/components/table.tsx: TableShell+TH+TR+TD+GroupRow; TR injects 3px edge-bar <td> automatically
+Added: gui_next/src/renderer/src/components/index.ts: barrel re-export of all components and types
+Changed: gui_next/src/renderer/src/App.tsx: smoke-test UI exercises all primitives (stats, pills, buttons, input, table with edge bars and grouping)
+Changed: instructions/gui_redesign/README.md: Phase 2 primitives marked ✅ Done
+Changed: instructions/gui_redesign/13-implementation-plan.md: Phase 1 items 3-5 marked ✅ Done; Phase 2 marked 🔲 NEXT
+
+[2026-05-27] — feat(gui_next): Phase 1 design tokens — theme engine, global CSS, font wiring
+Added: gui_next/src/renderer/src/lib/tokens.ts: TypeScript port of lbb-tokens.js — applyTheme/loadTheme/saveTheme, 2 modes × 8 accents × 3 densities, status palette, full type exports
+Changed: gui_next/src/renderer/src/index.css: replaced placeholder with full app.css port (scrollbars, sticky headers, focus rings, density rows, kbd-pill, spec/map canvas helpers)
+Changed: gui_next/src/renderer/index.html: CSP widened for Google Fonts; Inter + JetBrains Mono preloaded
+Changed: gui_next/src/renderer/src/main.tsx: applyTheme(loadTheme()) called before React.createRoot to prevent FOUC
+Changed: gui_next/src/renderer/src/App.tsx: placeholder updated to smoke-test tokens (swatches, status pills, mode/accent/density toggles)
+
+[2026-05-27] — feat(gui_next): replace PyQt6 scaffold with Electron + React + Vite + TS project
+Changed: gui_next/: removed __init__.py and main_window.py (PyQt6 stub); replaced with full Electron+Vite project
+Added: gui_next/package.json: Electron 42, React 18, Vite 7, electron-vite 5, TypeScript 5 — zero audit vulnerabilities
+Added: gui_next/src/main/index.ts: Electron main process — 1440×900 window, loads Vite dev server in dev / built files in prod
+Added: gui_next/src/preload/index.ts: contextBridge exposes flaskBase (http://127.0.0.1:5174) to renderer
+Added: gui_next/src/renderer/: React+TS entry, placeholder App.tsx, index.css with LBB warm-cream base
+
+[2026-05-27] — chore: create feat/gui-redesign branch and gui_next scaffold
+Added: gui_next/__init__.py: new package for redesigned UI
+Added: gui_next/main_window.py: stub MainWindow scaffold (same constructor interface as gui/)
+Added: run_next.py: launcher for gui_next — shares Flask backend (port 5174) and DB; logs to losslessbob_next.log
+
 [2026-05-26] — feat(gui): add/remove override buttons in DB Integrity panel
 Added: gui/dbedit_tab.py: "Add Override…" button opens a dialog (LB#, status dropdown, notes) and calls PUT /api/lb_master/<lb>/manual; "Remove Override…" prompts for LB# and calls DELETE /api/lb_master/<lb>/manual; both refresh integrity stats on success
 

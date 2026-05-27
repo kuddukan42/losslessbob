@@ -1,0 +1,105 @@
+/* Global styles for LosslessBob — ported from _source/app.css */
+:root {
+  --lbb-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+html, body, #root {
+  margin: 0; padding: 0; height: 100%;
+  background: var(--lbb-bg);
+  color: var(--lbb-fg);
+  font-family: "Inter", ui-sans-serif, -apple-system, "Segoe UI", system-ui, sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+* { box-sizing: border-box; }
+
+button { font-family: inherit; }
+
+/* Sticky thead for TableShell with className=lbb-sticky */
+table.lbb-sticky thead th {
+  position: sticky; top: 0; z-index: 2;
+}
+table.lbb-sticky thead th { background: var(--lbb-surface2); }
+
+/* Subtle wash for hovered rows */
+table tbody tr:hover td {
+  background: color-mix(in oklab, currentColor 4%, transparent);
+}
+
+/* Custom scrollbar (webkit) */
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb {
+  background: color-mix(in oklab, var(--lbb-fg3) 50%, transparent);
+  border-radius: 6px; border: 2px solid var(--lbb-bg); background-clip: padding-box;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--lbb-fg3); border: 2px solid var(--lbb-bg); background-clip: padding-box;
+}
+
+/* Selection */
+*::selection { background: var(--lbb-accent-soft); color: var(--lbb-fg); }
+
+/* Focus rings */
+:focus-visible { outline: none; box-shadow: var(--lbb-focusRing); border-radius: 6px; }
+
+/* Keyboard hint pill */
+.kbd-pill {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 2px 6px; border-radius: 5px;
+  background: var(--lbb-surface2);
+  border: 1px solid var(--lbb-border);
+  color: var(--lbb-fg2);
+  font-size: 10.5px; font-family: var(--lbb-mono);
+}
+
+/* Density-driven row height */
+[data-density="compact"] table.lbb-sticky tbody td { height: var(--lbb-d-row); }
+[data-density="default"] table.lbb-sticky tbody td { height: var(--lbb-d-row); }
+[data-density="comfortable"] table.lbb-sticky tbody td { height: var(--lbb-d-row); }
+[data-density="compact"] table tbody td { padding-top: 4px; padding-bottom: 4px; }
+
+/* Sidebar nav item */
+.lbb-nav-item { transition: background 120ms ease, color 120ms ease; }
+
+/* Progress bar */
+.lbb-prog {
+  height: 6px; background: var(--lbb-surface2); border-radius: 999px; overflow: hidden;
+  border: 1px solid var(--lbb-border);
+}
+.lbb-prog > div {
+  height: 100%; background: var(--lbb-accent-mid); transition: width 200ms ease;
+}
+
+/* Spectrogram placeholder background */
+.lbb-spec-canvas {
+  background: linear-gradient(180deg,
+    #0c0a14 0%, #261b2e 18%, #4b2236 38%, #88382d 60%, #d68a3b 82%, #f7e6a5 100%);
+  position: relative; overflow: hidden;
+}
+.lbb-spec-canvas::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 2px, rgba(255,255,255,0.04) 2px 3px),
+    repeating-linear-gradient(180deg, transparent 0 10px, rgba(0,0,0,0.10) 10px 11px);
+}
+
+/* Map placeholder background */
+.lbb-map-canvas {
+  background-color: #d7d1bd;
+  background-image:
+    radial-gradient(circle at 22% 38%, rgba(0,0,0,0.18) 0 3px, transparent 4px),
+    radial-gradient(circle at 38% 44%, rgba(0,0,0,0.16) 0 3px, transparent 4px),
+    radial-gradient(circle at 28% 52%, rgba(0,0,0,0.18) 0 3px, transparent 4px),
+    radial-gradient(circle at 46% 56%, rgba(0,0,0,0.16) 0 3px, transparent 4px),
+    radial-gradient(circle at 58% 38%, rgba(0,0,0,0.18) 0 3px, transparent 4px),
+    radial-gradient(circle at 64% 60%, rgba(0,0,0,0.16) 0 3px, transparent 4px),
+    radial-gradient(circle at 72% 30%, rgba(0,0,0,0.18) 0 3px, transparent 4px),
+    radial-gradient(circle at 78% 52%, rgba(0,0,0,0.16) 0 3px, transparent 4px),
+    linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px),
+    radial-gradient(ellipse 60% 35% at 50% 50%, rgba(150,170,195,0.35), transparent);
+  background-size: auto, auto, auto, auto, auto, auto, auto, auto, 80px 80px, 80px 80px, auto;
+}
+[data-mode="dark"] .lbb-map-canvas { background-color: #1f2326; }
