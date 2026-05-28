@@ -1,3 +1,54 @@
+[2026-05-28] — feat(gui_next): TODO-108 — port ScreenMap from source JSX
+Added: gui_next/src/renderer/src/screens/ScreenMap.tsx: filter rail (year range + decade chips, ownership toggle, LB status radio), static world map with absolute-positioned pin buttons, selected-venue side panel
+Changed: gui_next/src/renderer/src/App.tsx: replace PlaceholderScreen with ScreenMap on /map route
+
+[2026-05-28] — feat(gui_next): Sprint 6 — wire ScreenThemes (~44% → 100%)
+Changed: gui_next/src/renderer/src/lib/tokens.ts: add Font/FontSize types, FONT_STACKS, FONTS/FONT_SIZES exports, DEFAULT_THEME export; extend ThemeOptions with font/fontSize/customTokens; update applyTheme to set --lbb-font and --lbb-font-size CSS vars and apply customTokens; update loadTheme to load/validate new fields
+Changed: gui_next/src/renderer/src/index.css: font-family and font-size now driven by --lbb-font/--lbb-font-size CSS variables (defaults preserved in :root)
+Added: gui_next/src/main/index.ts: dialog:saveFile IPC (showSaveDialog + writeFile) and dialog:pickAndReadFile IPC (showOpenDialog + readFile)
+Changed: gui_next/src/preload/index.ts: expose saveFile and pickAndReadFile via contextBridge
+Changed: gui_next/src/renderer/src/env.d.ts: add saveFile and pickAndReadFile to Window.api
+Changed: gui_next/src/renderer/src/screens/ScreenThemes.tsx: typeface buttons wired (onClick setTweak font, active state, per-button font preview); font size 12/13/14pt buttons replace static text; Custom color tokens button toggles inline CustomTokenEditor (7 CSS tokens, color inputs, per-token reset, reset-all); Export JSON calls window.api.saveFile; Import JSON calls window.api.pickAndReadFile → parse/validate/apply; Toast component added
+Changed: gui_next/PLAN_GUI_WIRING.md: Sprint 6 marked done; audit table updated
+
+[2026-05-28] — feat(gui_next): Sprint 5 — wire ScreenBootlegs (79% → 100%)
+Changed: gui_next/src/renderer/src/screens/ScreenBootlegs.tsx: Year filter popover (derived from loaded rows, sorted descending; active-highlight; outside-click close); CDs filter popover (All / 1 CD / 2 CDs / 3+ CDs; active-highlight; outside-click close); both wired into filteredRows useMemo and clearFilters; Export CSV button wired — Blob download of filteredRows as losslessbob_bootlegs.csv
+Changed: gui_next/PLAN_GUI_WIRING.md: Sprint 5 marked done; audit table updated
+
+[2026-05-28] — feat(gui_next,backend): Sprint 4 — wire ScreenHome to backend (70% → 100%)
+Added: backend/app.py: GET /api/activity/log — unified activity feed from flat_file_releases, rename_history, forum_posts; supports ?limit= param
+Changed: gui_next/src/renderer/src/screens/ScreenHome.tsx: "Check for DB update" wired to /api/flat_file/discover with busy state + toast; "View full log" wired to open full-log modal fetching /api/activity/log?limit=0; Recent activity table renders real rows from /api/activity/log?limit=10 with colour-coded type dots; Toast component added; local fmtActivity + TYPE_COLOUR helpers
+Changed: gui_next/PLAN_GUI_WIRING.md: Sprint 4 marked done; audit table updated
+
+[2026-05-28] — feat(gui_next): Sprint 3 — wire ScreenSearch to backend (69% → ~95%)
+Changed: gui_next/src/renderer/src/screens/ScreenSearch.tsx: all stubs wired; row click opens EntryDetailPanel fetching /api/entry/<lb> with description/setlist/files/scrape action; sort popover (6 client-side sort options, localStorage); CSV export via Blob download; Group-by-year toggle with active highlight; Columns visibility popover with localStorage persistence; Saved views (3 built-ins + user-created stored in localStorage with delete); owned field fixed — fetches /api/collection/lb_numbers on mount; per-row ⋯ menu (position:fixed, Scrape entry action); Toast component added
+Changed: gui_next/PLAN_GUI_WIRING.md: Sprint 3 marked done; audit table updated
+
+[2026-05-28] — feat(gui_next): Sprint 2 — wire ScreenCollection to backend (33% → 90%)
+Changed: gui_next/src/renderer/src/screens/ScreenCollection.tsx: full rewrite; all 17 stubs wired; Export HTML/M3U blob downloads; Reveal on disk via openPath IPC; Remove with confirm dialog + DELETE /api/collection/<lb>; Add single folder via pickFolders → AddFolderModal with per-row LB# input; Scan directory/tree via pickDir → /api/pipeline/scan-tree → same modal; Update location via pickDir → PATCH /api/collection/<lb>; All years filter with popover dropdown from /api/search/years; Xref only checkbox from /api/checksums/xref_lb_numbers; Create torrent/Add to qBt header buttons act on checked/selected rows; Regenerate torrent and Post to forum (with BBCode preview modal) in detail panel; Attachments/Spectrograms/Map stub toasts; added lbNumberInt and isXref fields to CollectionRow; version-bump refetch pattern
+
+[2026-05-27] — feat(gui_next,backend): IntegCard clear-credentials + DELETE credential endpoints
+Added: backend/app.py: DELETE /api/credentials/qbt — removes qBt username/password and API key from keyring
+Added: backend/app.py: DELETE /api/credentials/wtrf — removes WTRF credentials from keyring
+Changed: gui_next/src/renderer/src/screens/ScreenSetup.tsx: IntegCard gains optional onClear prop; shows inline "Clear creds → Sure? / Yes, clear / Cancel" confirmation flow; handleQbtClear and handleWtrfClear handlers added
+
+[2026-05-27] — fix(gui_next): ScreenSetup Integrations — Admin web UI card + Torrent Settings card
+Changed: gui_next/src/renderer/src/screens/ScreenSetup.tsx: renamed "Torrent web UI" stub → "Admin web UI" (wired to /admin + web_password setting); added 4th "Torrent Settings" card with tracker list dropdown and Refresh Trackers button; added web_password/tracker_list to AppSettings interface; added handlers handleWebUiSave, handleWebUiTest, handleTrackerListChange, handleRefreshTrackers; Integrations grid changed from 3→4 columns
+
+[2026-05-27] — feat(gui_next,backend): Sprint 1 — wire ScreenSetup to backend (6% → 100%)
+Changed: gui_next/src/renderer/src/screens/ScreenSetup.tsx: full rewrite; all 16 stubs wired to Flask endpoints; real DB stats, master status, flat file history, helpers status loaded on mount; confirm dialogs, toast feedback, inline integration edit forms
+Added: gui_next/src/main/index.ts: pickFile IPC handler (dialog:pickFile)
+Added: gui_next/src/preload/index.ts: window.api.pickFile() bridge
+Added: gui_next/src/renderer/src/env.d.ts: pickFile type declaration
+Added: backend/app.py: POST /api/credentials/wtrf — save WTRF credentials to keyring
+Added: backend/app.py: POST /api/credentials/qbt — save qBt credentials to keyring
+Added: backend/app.py: POST /api/rename_history/purge — clear rename_history (lookup history)
+Added: backend/app.py: POST /api/flat_file/purge — clear flat_file_releases + flat_file_changelog
+Added: backend/app.py: POST /api/scraper/purge — clear scrape_sessions + site_inventory
+Added: backend/app.py: POST /api/fingerprint/purge — delete fingerprints.db file
+Changed: backend/app.py: /api/db/settings GET now includes data_dir in response
+Changed: backend/app.py: /api/spectrogram/check GET now includes flac_available
+
 [2026-05-27] — fix(gui_next): resolve TypeScript errors in ScreenPipeline and table components
 Fixed: gui_next/src/renderer/src/components/table.tsx: added onClick to TDProps/TD and style to GroupRowProps/GroupRow
 Fixed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: cast File to Electron-extended type with path property

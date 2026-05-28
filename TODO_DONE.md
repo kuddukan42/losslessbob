@@ -1,6 +1,15 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-108: gui_next — port ScreenMap from source JSX
+Priority: Low
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-28
+Description: Port instructions/gui_redesign/_source/screen-map.jsx to gui_next/src/renderer/src/screens/ScreenMap.tsx. Filter rail (year range with decade chips, ownership toggle, LB status radio), static map preview using existing .lbb-map-canvas CSS class with absolute-positioned pin buttons, selected-venue side panel. Live interactive map opens in browser at localhost:5174/map — this screen is the filter/launcher.
+
+---
+
 TODO-091: Bundle Windows shntool binary from tools/ into the project distribution
 Priority: Medium
 Status: Done
