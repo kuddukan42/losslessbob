@@ -2530,7 +2530,7 @@ def generate_release_notes(since_timestamp: str | None = None, db_path=None) -> 
     if overrides:
         lines.append(f"## Manual overrides ({len(overrides)})\n")
         for o in overrides:
-            note = f" — {o['manual_notes']}" if o.get("manual_notes") else ""
+            note = f" — {o['manual_notes']}" if o["manual_notes"] else ""
             lines.append(f"- LB-{o['lb_number']:05d}: {o['lb_status']}{note}")
         lines.append("")
 

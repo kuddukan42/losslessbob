@@ -1,3 +1,6 @@
+[2026-05-27] — fix(backend): master update GitHub publish crash
+Fixed: backend/db.py: generate_release_notes() called .get() on a sqlite3.Row (unsupported); changed to subscript access o["manual_notes"] which returns None for NULL, preserving the existing truthiness check
+
 [2026-05-26] — feat(gui): add/remove override buttons in DB Integrity panel
 Added: gui/dbedit_tab.py: "Add Override…" button opens a dialog (LB#, status dropdown, notes) and calls PUT /api/lb_master/<lb>/manual; "Remove Override…" prompts for LB# and calls DELETE /api/lb_master/<lb>/manual; both refresh integrity stats on success
 
