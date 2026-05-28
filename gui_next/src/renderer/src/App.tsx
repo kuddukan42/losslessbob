@@ -16,6 +16,7 @@ import { ScreenCollection } from './screens/ScreenCollection'
 import { ScreenSearch } from './screens/ScreenSearch'
 import { ScreenBootlegs } from './screens/ScreenBootlegs'
 import { ScreenThemes } from './screens/ScreenThemes'
+import { ScreenMap } from './screens/ScreenMap'
 
 // ── Curator-only route guard ──────────────────────────────────────────────────
 
@@ -225,7 +226,7 @@ export default function App(): React.JSX.Element {
           <Route path="/bootlegs"    element={<ScreenBootlegs />} />
           <Route path="/attachments" element={<PlaceholderScreen name="Attachments" />} />
           <Route path="/spectrograms"element={<PlaceholderScreen name="Spectrograms" />} />
-          <Route path="/map"         element={<PlaceholderScreen name="Map" />} />
+          <Route path="/map"         element={<ScreenMap />} />
           <Route path="/dbeditor"    element={<CuratorRoute element={<PlaceholderScreen name="DB Editor" />} />} />
           <Route path="/scraper"     element={<CuratorRoute element={<PlaceholderScreen name="Scraper" />} />} />
           <Route path="/setup"       element={<ScreenSetup />} />

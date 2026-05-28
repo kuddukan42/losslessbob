@@ -1,3 +1,60 @@
+TODO-114: gui_next — port ScreenLBDIR from source JSX
+Priority: Medium
+Status: Open
+Added: 2026-05-28
+Description: Port instructions/gui_redesign/_source/screen-lbdir.jsx to gui_next/src/renderer/src/screens/ScreenLBDIR.tsx. Four sub-tabs: Check (per-file MD5/shntool table), Retrieve (copy lbdir from attachments cache), Reconcile (propose renames for moved files), Extras (list + delete files not in lbdir). Highest complexity of the 7 stub screens — do last.
+
+---
+
+TODO-113: gui_next — port ScreenLookup from source JSX
+Priority: High
+Status: Open
+Added: 2026-05-28
+Description: Port instructions/gui_redesign/_source/screen-lookup.jsx to gui_next/src/renderer/src/screens/ScreenLookup.tsx. Sources rail (clipboard/listbox/files/folders), 5-state status counters (matched/incomplete/not-found/duplicate/xref), per-LB summary table, per-checksum detail table, footer link to Rename. Core feature of the app.
+
+---
+
+TODO-112: gui_next — port ScreenRename from source JSX
+Priority: Medium
+Status: Open
+Added: 2026-05-28
+Description: Port instructions/gui_redesign/_source/screen-rename.jsx to gui_next/src/renderer/src/screens/ScreenRename.tsx. Five row states (has_lb, needs_rename, wrong_lb, multiple_ids, no_match) with filter chips, bulk action bar with checkboxes, expandable disambiguation rows for multi-LB conflicts. Depends on Lookup results being populated first.
+
+---
+
+TODO-111: gui_next — port ScreenSpectrograms from source JSX
+Priority: Medium
+Status: Open
+Added: 2026-05-28
+Description: Port instructions/gui_redesign/_source/screen-spectrograms.jsx to gui_next/src/renderer/src/screens/ScreenSpectrograms.tsx. Folder rail with batch progress, track rail with PNG inventory, spectrogram viewer using existing .lbb-spec-canvas CSS class, thumbnail strip, render options (width/height/dB floor/window). SoX/ffmpeg batch generate.
+
+---
+
+TODO-110: gui_next — port ScreenVerify from source JSX
+Priority: Medium
+Status: Open
+Added: 2026-05-28
+Description: Port instructions/gui_redesign/_source/screen-verify.jsx to gui_next/src/renderer/src/screens/ScreenVerify.tsx. Folder queue rail, 7-stat summary cards (total/pass/mismatch/missing/extra/FFP/MD5), full MD5+FFP+ST5 detail table, shntool-missing error state, per-file inspector panel. Verifies user-generated checksums (distinct from LBDIR which verifies the official archive sidecar).
+
+---
+
+TODO-109: gui_next — port ScreenAttachments from source JSX
+Priority: Medium
+Status: Open
+Added: 2026-05-28
+Description: Port instructions/gui_redesign/_source/screen-attachments.jsx to gui_next/src/renderer/src/screens/ScreenAttachments.tsx. Three-column layout: LB rail (with current/stale/missing status), file list for selected LB, file viewer. Viewer dispatches on file kind: text (pre), html (iframe/render), image (canvas placeholder), binary (no-preview + open-externally). Reads from data/attachments/LB-XXXXX/.
+
+---
+
+TODO-108: gui_next — port ScreenMap from source JSX
+Priority: Low
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-28
+Description: Port instructions/gui_redesign/_source/screen-map.jsx to gui_next/src/renderer/src/screens/ScreenMap.tsx. Filter rail (year range with decade chips, ownership toggle, LB status radio), static map preview using existing .lbb-map-canvas CSS class with absolute-positioned pin buttons, selected-venue side panel. Live interactive map opens in browser at localhost:5174/map — this screen is the filter/launcher. Simplest of the 7.
+
+---
+
 TODO-107: Master publish — real upload progress via GitHub REST API
 Priority: Low
 Status: Open
@@ -101,7 +158,7 @@ Description: Add a SQL input box to the DB Editor tab so the user can run arbitr
 TODO-094: Rework UI per Claude design prototype
 Priority: Medium
 Status: In Progress
-Stage: Phase 2 (app shell) + Phase 3 (curator toggle/Setup) + Phase 4a (Pipeline) + Phase 4b (Home) done — next: Phase 4c Collection
+Stage: Sprint 5 (ScreenBootlegs 100%) done — next: Sprint 6 (ScreenThemes ~44% → 100%)
 Added: 2026-05-24
 Description: Overhaul the PyQt6 GUI to match the design prototype produced by Claude.
   Goals:
