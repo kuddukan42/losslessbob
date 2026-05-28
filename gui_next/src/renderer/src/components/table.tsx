@@ -102,12 +102,14 @@ export interface TDProps {
   align?: 'left' | 'center' | 'right'
   colSpan?: number
   style?: React.CSSProperties
+  onClick?: React.MouseEventHandler<HTMLTableCellElement>
 }
 
-export function TD({ children, mono = false, dim = false, align = 'left', colSpan, style }: TDProps) {
+export function TD({ children, mono = false, dim = false, align = 'left', colSpan, style, onClick }: TDProps) {
   return (
     <td
       colSpan={colSpan}
+      onClick={onClick}
       style={{
         textAlign: align,
         padding: 'calc(var(--lbb-d-pad) - 2px) var(--lbb-d-pad)',
@@ -137,11 +139,12 @@ export interface GroupRowProps {
   expanded?: boolean
   onToggle?: () => void
   colSpan?: number
+  style?: React.CSSProperties
 }
 
-export function GroupRow({ label, count, expanded = true, onToggle, colSpan = 99 }: GroupRowProps) {
+export function GroupRow({ label, count, expanded = true, onToggle, colSpan = 99, style }: GroupRowProps) {
   return (
-    <tr>
+    <tr style={style}>
       <td style={{ width: 3, padding: 0, background: 'transparent' }} />
       <td
         colSpan={colSpan}

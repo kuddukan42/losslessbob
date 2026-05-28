@@ -1,3 +1,7 @@
+[2026-05-27] — fix(gui_next): resolve TypeScript errors in ScreenPipeline and table components
+Fixed: gui_next/src/renderer/src/components/table.tsx: added onClick to TDProps/TD and style to GroupRowProps/GroupRow
+Fixed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: cast File to Electron-extended type with path property
+
 [2026-05-27] — fix(gui,backend): master publish progress bar + timeout increase
 Added: gui/setup_tab.py: indeterminate QProgressBar shown during export+upload, hidden on success or error
 Fixed: backend/app.py: gh subprocess timeout raised from 120s → 600s (was hitting limit on large snapshots); error message updated to match
