@@ -13,6 +13,9 @@ import { ScreenHome } from './screens/ScreenHome'
 import { ScreenPipeline } from './screens/ScreenPipeline'
 import { ScreenSetup } from './screens/ScreenSetup'
 import { ScreenCollection } from './screens/ScreenCollection'
+import { ScreenSearch } from './screens/ScreenSearch'
+import { ScreenBootlegs } from './screens/ScreenBootlegs'
+import { ScreenThemes } from './screens/ScreenThemes'
 
 // ── Curator-only route guard ──────────────────────────────────────────────────
 
@@ -218,15 +221,15 @@ export default function App(): React.JSX.Element {
           <Route path="/rename"      element={<PlaceholderScreen name="Rename" />} />
           <Route path="/lbdir"       element={<PlaceholderScreen name="LBDIR" />} />
           <Route path="/collection"  element={<ScreenCollection />} />
-          <Route path="/search"      element={<PlaceholderScreen name="Search" />} />
-          <Route path="/bootlegs"    element={<PlaceholderScreen name="Bootlegs" />} />
+          <Route path="/search"      element={<ScreenSearch />} />
+          <Route path="/bootlegs"    element={<ScreenBootlegs />} />
           <Route path="/attachments" element={<PlaceholderScreen name="Attachments" />} />
           <Route path="/spectrograms"element={<PlaceholderScreen name="Spectrograms" />} />
           <Route path="/map"         element={<PlaceholderScreen name="Map" />} />
           <Route path="/dbeditor"    element={<CuratorRoute element={<PlaceholderScreen name="DB Editor" />} />} />
           <Route path="/scraper"     element={<CuratorRoute element={<PlaceholderScreen name="Scraper" />} />} />
           <Route path="/setup"       element={<ScreenSetup />} />
-          <Route path="/themes"      element={<PlaceholderScreen name="Themes" />} />
+          <Route path="/themes"      element={<ScreenThemes />} />
         </Routes>
       </AppShell>
     </HashRouter>

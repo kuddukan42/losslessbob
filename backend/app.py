@@ -2881,7 +2881,7 @@ def create_app() -> Flask:
                     "--notes", notes,
                     "--repo", "kuddukan42/losslessbob",
                 ],
-                capture_output=True, text=True, timeout=120,
+                capture_output=True, text=True, timeout=600,
             )
 
             if result.returncode != 0:
@@ -2897,7 +2897,7 @@ def create_app() -> Flask:
             return jsonify({"error": "gh_not_found",
                             "message": "gh CLI not found — install GitHub CLI first."}), 500
         except subprocess.TimeoutExpired:
-            return jsonify({"error": "timeout", "message": "gh upload timed out after 120s"}), 500
+            return jsonify({"error": "timeout", "message": "gh upload timed out after 600s"}), 500
         except Exception as exc:
             return jsonify({"error": str(exc)}), 500
 
