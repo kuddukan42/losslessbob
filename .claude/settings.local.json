@@ -315,7 +315,9 @@
       "Bash(DISPLAY=:0 xdpyinfo)",
       "Bash(DISPLAY=:1 xdpyinfo)",
       "Bash(DISPLAY=:0 npm run dev -- --no-sandbox)",
-      "Bash(echo \"PID=$!\")"
+      "Bash(echo \"PID=$!\")",
+      "Bash(./node_modules/.bin/tsc -p tsconfig.web.json --noEmit)",
+      "Bash(grep -E \"^\\\\s*@app\\\\.route\\\\\\(\" /home/tjenkins/Documents/losslessbob/backend/app.py | sed 's/^[[:space:]]*//' > /tmp/routes.txt && wc -l /tmp/routes.txt)"
     ],
     "additionalDirectories": [
       "/home/tjenkins/.ssh",

@@ -323,7 +323,8 @@ export function ScreenPipeline(): React.JSX.Element {
       const item = e.dataTransfer.items[i]
       if (item.kind === 'file') {
         const file = item.getAsFile()
-        if (file?.path) paths.push(file.path)
+        const ef = file as (File & { path?: string }) | null
+        if (ef?.path) paths.push(ef.path)
       }
     }
     if (paths.length) addFolders(paths)
