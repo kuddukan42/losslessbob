@@ -1,6 +1,31 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-110: gui_next — port ScreenVerify from source JSX
+Priority: Medium
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-28
+Description: Port instructions/gui_redesign/_source/screen-verify.jsx to gui_next/src/renderer/src/screens/ScreenVerify.tsx. Folder queue rail, 7-stat summary cards (total/pass/mismatch/missing/extra/FFP/MD5), full MD5+FFP+ST5 detail table, shntool-missing error state, per-file inspector panel. Verifies user-generated checksums (distinct from LBDIR which verifies the official archive sidecar).
+
+---
+
+TODO-109: gui_next — port ScreenAttachments from source JSX
+Priority: Medium
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-28
+Description: Ported screen-attachments.jsx to ScreenAttachments.tsx. Three-column layout: LB rail with current/stale/missing status dots and search/filter chips; file list for selected LB; viewer pane that dispatches on kind (text → pre, html → rendered table, image → canvas placeholder, binary → no-preview + open-externally). Wired into App.tsx replacing PlaceholderScreen.
+
+---
+
+TODO-107: Master publish — real upload progress via GitHub REST API
+Priority: Low
+Status: Done
+Added: 2026-05-27
+Closed: 2026-05-28
+Description: Replaced gh CLI subprocess in /api/master/github_release with direct GitHub REST API calls. Token obtained via `gh auth token` subprocess. Route now streams SSE events: progress (label + pct), done, error. .db and manifest uploaded in 1 MB generator chunks so pct is byte-accurate. GUI _GithubReleaseThread consumes the SSE stream and emits progress(str, int) signal; progress bar switches from indeterminate to determinate during upload.
+
 TODO-108: gui_next — port ScreenMap from source JSX
 Priority: Low
 Status: Done

@@ -1,3 +1,15 @@
+[2026-05-28] — feat(gui_next): TODO-110 — port ScreenVerify from source JSX
+Added: gui_next/src/renderer/src/screens/ScreenVerify.tsx: folder queue rail, 7-stat cards, MD5/FFP/ST5 detail table, shntool error state, per-file inspector panel
+Changed: gui_next/src/renderer/src/App.tsx: wire /verify route to ScreenVerify, replacing PlaceholderScreen
+
+[2026-05-28] — feat(gui_next): TODO-109 — port ScreenAttachments from source JSX
+Added: gui_next/src/renderer/src/screens/ScreenAttachments.tsx: three-column layout (LB rail, file list, viewer); viewer dispatches on kind: text/html/image/binary
+Changed: gui_next/src/renderer/src/App.tsx: wire /attachments route to ScreenAttachments, replacing PlaceholderScreen
+
+[2026-05-28] — feat(backend,gui): TODO-107 — master publish upload progress via GitHub REST API
+Changed: backend/app.py: /api/master/github_release now streams SSE; replaces gh CLI subprocess with requests + gh auth token; uploads .db and manifest in 1 MB chunks with byte-accurate progress events
+Changed: gui/setup_tab.py: _GithubReleaseThread consumes SSE stream; adds progress signal (label, pct); _on_publish_progress switches progress bar from indeterminate to determinate during upload
+
 [2026-05-28] — feat(gui_next): TODO-108 — port ScreenMap from source JSX
 Added: gui_next/src/renderer/src/screens/ScreenMap.tsx: filter rail (year range + decade chips, ownership toggle, LB status radio), static world map with absolute-positioned pin buttons, selected-venue side panel
 Changed: gui_next/src/renderer/src/App.tsx: replace PlaceholderScreen with ScreenMap on /map route
