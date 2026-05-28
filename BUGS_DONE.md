@@ -1,6 +1,16 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-107: Master update publish fails — 'sqlite3.Row' object has no attribute 'get'
+Status: Fixed
+File(s): backend/db.py:2533
+Reported: 2026-05-27
+Fixed: 2026-05-27
+Root cause: generate_release_notes() called o.get("manual_notes") on a sqlite3.Row result; sqlite3.Row supports subscript access but not the dict .get() method.
+Fix: Changed o.get("manual_notes") → o["manual_notes"]; sqlite3.Row returns None for NULL columns so the truthiness check still works correctly.
+
+---
+
 BUG-113: Hard-coded table backgrounds break theming
 Status: Fixed
 File(s): gui/lbdir_tab.py, gui/verify_tab.py (and other tab files)
