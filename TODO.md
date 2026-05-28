@@ -32,17 +32,10 @@ Description: Port instructions/gui_redesign/_source/screen-spectrograms.jsx to g
 
 TODO-110: gui_next — port ScreenVerify from source JSX
 Priority: Medium
-Status: Open
+Status: Done
 Added: 2026-05-28
+Closed: 2026-05-28
 Description: Port instructions/gui_redesign/_source/screen-verify.jsx to gui_next/src/renderer/src/screens/ScreenVerify.tsx. Folder queue rail, 7-stat summary cards (total/pass/mismatch/missing/extra/FFP/MD5), full MD5+FFP+ST5 detail table, shntool-missing error state, per-file inspector panel. Verifies user-generated checksums (distinct from LBDIR which verifies the official archive sidecar).
-
----
-
-TODO-109: gui_next — port ScreenAttachments from source JSX
-Priority: Medium
-Status: Open
-Added: 2026-05-28
-Description: Port instructions/gui_redesign/_source/screen-attachments.jsx to gui_next/src/renderer/src/screens/ScreenAttachments.tsx. Three-column layout: LB rail (with current/stale/missing status), file list for selected LB, file viewer. Viewer dispatches on file kind: text (pre), html (iframe/render), image (canvas placeholder), binary (no-preview + open-externally). Reads from data/attachments/LB-XXXXX/.
 
 ---
 
@@ -52,14 +45,6 @@ Status: Done
 Added: 2026-05-28
 Closed: 2026-05-28
 Description: Port instructions/gui_redesign/_source/screen-map.jsx to gui_next/src/renderer/src/screens/ScreenMap.tsx. Filter rail (year range with decade chips, ownership toggle, LB status radio), static map preview using existing .lbb-map-canvas CSS class with absolute-positioned pin buttons, selected-venue side panel. Live interactive map opens in browser at localhost:5174/map — this screen is the filter/launcher. Simplest of the 7.
-
----
-
-TODO-107: Master publish — real upload progress via GitHub REST API
-Priority: Low
-Status: Open
-Added: 2026-05-27
-Description: Replace gh CLI subprocess in /api/master/github_release with direct GitHub REST API calls using requests. Get token via `gh auth token`. Upload .db and .manifest.json as release assets in a chunked loop, emitting byte progress back to the GUI the same way download does. Currently upload shows an indeterminate bar because gh suppresses its TTY progress when stdout/stderr are captured pipes.
 
 ---
 
