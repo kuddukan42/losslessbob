@@ -1,3 +1,8 @@
+[2026-05-27] — fix(gui,backend): master publish progress bar + timeout increase
+Added: gui/setup_tab.py: indeterminate QProgressBar shown during export+upload, hidden on success or error
+Fixed: backend/app.py: gh subprocess timeout raised from 120s → 600s (was hitting limit on large snapshots); error message updated to match
+Fixed: gui/setup_tab.py: requests timeout raised from 150s → 660s to match backend
+
 [2026-05-27] — fix(gui_next): fix Collection table column alignment with virtualizer
 Fixed: gui_next/src/renderer/src/screens/ScreenCollection.tsx: replaced position:absolute rows with spacer-row pattern so tbody rows stay in normal table flow and colgroup widths apply correctly; widened Confirmed column from 90→160px
 

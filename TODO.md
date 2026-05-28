@@ -1,3 +1,11 @@
+TODO-107: Master publish — real upload progress via GitHub REST API
+Priority: Low
+Status: Open
+Added: 2026-05-27
+Description: Replace gh CLI subprocess in /api/master/github_release with direct GitHub REST API calls using requests. Get token via `gh auth token`. Upload .db and .manifest.json as release assets in a chunked loop, emitting byte progress back to the GUI the same way download does. Currently upload shows an indeterminate bar because gh suppresses its TTY progress when stdout/stderr are captured pipes.
+
+---
+
 TODO-106: Audio fingerprint matching — identify user recordings by performance date
 Priority: High
 Status: Open

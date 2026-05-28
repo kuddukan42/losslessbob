@@ -189,7 +189,7 @@ class _GithubReleaseThread(QThread):
                     "version": self.version,
                     "prev_published_at": self.prev_published_at,
                 },
-                timeout=150,
+                timeout=660,
             )
             self.finished.emit(resp.json())
         except Exception as exc:
@@ -805,6 +805,12 @@ class SetupTab(QWidget):
         self._gh_progress_label = QLabel("")
         self._gh_progress_label.setVisible(False)
         master_layout.addWidget(self._gh_progress_label)
+
+        self._publish_progress = QProgressBar()
+        self._publish_progress.setRange(0, 0)  # indeterminate
+        self._publish_progress.setVisible(False)
+        self._publish_progress.setFixedHeight(14)
+        master_layout.addWidget(self._publish_progress)
 
         self._publish_status_label = QLabel("")
         self._publish_status_label.setVisible(False)
@@ -1482,6 +1488,7 @@ class SetupTab(QWidget):
         self.publish_master_btn.setEnabled(False)
         self._publish_status_label.setText(self.tr("Exporting master snapshot…"))
         self._publish_status_label.setVisible(True)
+        self._publish_progress.setVisible(True)
 
         self._export_thread = _ExportMasterThread(self.flask_port)
         self._export_thread.finished.connect(self._on_export_done)
@@ -1491,6 +1498,7 @@ class SetupTab(QWidget):
         """Handle export completion and kick off GitHub upload."""
         if not data.get("ok") or "error" in data:
             msg = data.get("message") or data.get("error") or "Unknown error"
+            self._publish_progress.setVisible(False)
             QMessageBox.warning(self, self.tr("Export Failed"), msg)
             self._publish_status_label.setText(self.tr("Export failed: {}").format(msg))
             self.publish_master_btn.setEnabled(self.curator_cb.isChecked())
@@ -1520,6 +1528,7 @@ class SetupTab(QWidget):
     def _on_github_release_done(self, result: dict, manifest: dict,
                                 counts: dict, rc: dict) -> None:
         """Handle the GitHub release result and show a summary dialog."""
+        self._publish_progress.setVisible(False)
         self.publish_master_btn.setEnabled(self.curator_cb.isChecked())
 
         if "error" in result:
