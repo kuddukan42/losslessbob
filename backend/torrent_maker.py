@@ -26,6 +26,13 @@ _TRACKER_CDN = (
 _tracker_cache: dict[str, list[str]] = {}
 _tracker_lock = threading.Lock()
 
+# Guaranteed fallback TCP (http/https) trackers injected when the fetched list
+# has fewer than 2 TCP entries.
+_FALLBACK_TCP_TRACKERS: list[str] = [
+    "https://tracker.opentrackr.org/announce",
+    "https://open.tracker.cl/announce",
+]
+
 # ── Exclusion rules ───────────────────────────────────────────────────────────
 
 # Exact filenames always excluded
@@ -71,6 +78,22 @@ def fetch_trackers(list_name: str = "best", force_refresh: bool = False) -> list
     with _tracker_lock:
         _tracker_cache[list_name] = trackers
     return trackers
+
+
+def _ensure_tcp_trackers(trackers: list[str]) -> list[str]:
+    """Ensure at least 2 TCP (http/https) trackers are present.
+
+    If the list has fewer than 2 http/https entries, injects from
+    _FALLBACK_TCP_TRACKERS until the minimum is met.
+    """
+    tcp_count = sum(1 for t in trackers if t.startswith(("http://", "https://")))
+    if tcp_count >= 2:
+        return trackers
+    needed = 2 - tcp_count
+    extras = [t for t in _FALLBACK_TCP_TRACKERS if t not in trackers][:needed]
+    if extras:
+        logger.info("Injecting %d fallback TCP tracker(s) to meet minimum: %s", len(extras), extras)
+    return trackers + extras
 
 
 def _is_excluded(path: Path) -> bool:
@@ -164,6 +187,7 @@ def make_torrent(
 
     name = _torrent_name(lb_number, db_path=db_path)
     trackers = fetch_trackers(tracker_list, force_refresh=force_refresh_trackers)
+    trackers = _ensure_tcp_trackers(trackers)
 
     # Collect excluded filenames relative to source root
     excluded: list[str] = []

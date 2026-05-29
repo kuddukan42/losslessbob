@@ -9,7 +9,6 @@ export interface SpectroTrack {
 
 interface SpectrogramStore {
   // Screen state — persists across navigation
-  folders:       string[]
   activeFolder:  string | null
   inventory:     Record<string, SpectroTrack[]>
   activeTrack:   SpectroTrack | null
@@ -19,10 +18,9 @@ interface SpectrogramStore {
   dynRange:      string
   forceRerender: boolean
   zoom:          number
-  // Cross-screen queuing (Verify → Spectrograms)
+  // Cross-screen queuing (Collection → Spectrograms)
   pendingFolders: string[]
   // Actions
-  setFolders:       (updater: string[] | ((prev: string[]) => string[])) => void
   setActiveFolder:  (folder: string | null) => void
   setInventory:     (inv: Record<string, SpectroTrack[]>) => void
   setActiveTrack:   (track: SpectroTrack | null) => void
@@ -37,7 +35,6 @@ interface SpectrogramStore {
 }
 
 export const useSpectrogramStore = create<SpectrogramStore>((set, get) => ({
-  folders:        [],
   activeFolder:   null,
   inventory:      {},
   activeTrack:    null,
@@ -48,9 +45,6 @@ export const useSpectrogramStore = create<SpectrogramStore>((set, get) => ({
   forceRerender:  false,
   zoom:           100,
   pendingFolders: [],
-  setFolders: (updater) => set(state => ({
-    folders: typeof updater === 'function' ? updater(state.folders) : updater,
-  })),
   setActiveFolder:  (activeFolder) => set({ activeFolder }),
   setInventory:     (inventory) => set({ inventory }),
   setActiveTrack:   (activeTrack) => set({ activeTrack }),

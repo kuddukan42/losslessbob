@@ -393,8 +393,12 @@ export function ScreenSetup() {
   const [busy, setBusy] = useState<string | null>(null)
   const [qbtTone, setQbtTone] = useState<'ok' | 'warn' | 'mute'>('mute')
   const [wtrfTone, setWtrfTone] = useState<'ok' | 'warn' | 'mute'>('mute')
+  const [webUiTone, setWebUiTone] = useState<'ok' | 'warn' | 'mute'>('ok')
   const [trackerCount, setTrackerCount] = useState<number | null>(null)
   const [trackerBusy, setTrackerBusy] = useState(false)
+  const [pkgBusy, setPkgBusy] = useState<'user' | 'scrape' | 'restore' | null>(null)
+  const [pkgUserResult, setPkgUserResult] = useState<{ path: string; count: number; size: number } | null>(null)
+  const [pkgScrapeResult, setPkgScrapeResult] = useState<{ path: string; count: number; size: number } | null>(null)
   const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   const showToast = useCallback((msg: string, tone: 'ok' | 'bad' | 'info' = 'info') => {
@@ -749,9 +753,15 @@ export function ScreenSetup() {
   const handleWebUiTest = useCallback(async () => {
     try {
       const r = await fetch(`${BASE}/api/admin/status`)
-      if (r.ok) showToast('Admin web UI is reachable.', 'ok')
-      else showToast(`Admin web UI error: HTTP ${r.status}`, 'bad')
+      if (r.ok) {
+        setWebUiTone('ok')
+        showToast('Admin web UI is reachable.', 'ok')
+      } else {
+        setWebUiTone('warn')
+        showToast(`Admin web UI error: HTTP ${r.status}`, 'bad')
+      }
     } catch (e) {
+      setWebUiTone('warn')
       showToast(`Admin web UI unreachable: ${(e as Error).message}`, 'bad')
     }
   }, [showToast])
@@ -862,6 +872,129 @@ export function ScreenSetup() {
     await window.api.openPath(`${dir}/downloads/${rel.zip_filename}`)
   }, [settings.data_dir, showToast])
 
+  // ── Data package export ──────────────────────────────────────────────────────
+
+  const handleExportUserData = useCallback(async () => {
+    setPkgBusy('user')
+    try {
+      const r = await fetch(`${BASE}/api/package/user_data`, { method: 'POST' })
+      const d = await r.json() as {
+        ok?: boolean; path?: string; error?: string; message?: string
+        manifest?: { file_count?: number; total_bytes?: number }
+      }
+      if (!d.ok || d.error) {
+        showToast(`Export failed: ${d.message ?? d.error}`, 'bad')
+      } else {
+        const count = d.manifest?.file_count ?? 0
+        const size = d.manifest?.total_bytes ?? 0
+        setPkgUserResult({ path: d.path ?? '', count, size })
+        showToast(`User data exported — ${count} files, ${(size / 1024).toFixed(0)} KB`, 'ok')
+      }
+    } catch (e) {
+      showToast(`Export failed: ${(e as Error).message}`, 'bad')
+    } finally {
+      setPkgBusy(null)
+    }
+  }, [showToast])
+
+  const handleExportScrapeData = useCallback(async () => {
+    setPkgBusy('scrape')
+    showToast('Building scraped site archive — this may take a moment…', 'info')
+    try {
+      const r = await fetch(`${BASE}/api/package/scrape_data`, { method: 'POST' })
+      const d = await r.json() as {
+        ok?: boolean; path?: string; error?: string; message?: string
+        manifest?: { file_count?: number; total_bytes?: number }
+      }
+      if (!d.ok || d.error) {
+        showToast(`Export failed: ${d.message ?? d.error}`, 'bad')
+      } else {
+        const count = d.manifest?.file_count ?? 0
+        const size = d.manifest?.total_bytes ?? 0
+        setPkgScrapeResult({ path: d.path ?? '', count, size })
+        showToast(`Scraped data exported — ${count} files, ${(size / 1024 / 1024).toFixed(1)} MB`, 'ok')
+      }
+    } catch (e) {
+      showToast(`Export failed: ${(e as Error).message}`, 'bad')
+    } finally {
+      setPkgBusy(null)
+    }
+  }, [showToast])
+
+  const handleRestorePackage = useCallback(async () => {
+    const zipPath = await window.api.pickFile({
+      title: 'Select Package Zip to Restore',
+      filters: [{ name: 'Zip archives', extensions: ['zip'] }],
+    })
+    if (!zipPath) return
+
+    // Dry-run first to detect conflicts.
+    setPkgBusy('restore')
+    try {
+      const dr = await fetch(`${BASE}/api/package/restore`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ zip_path: zipPath, dry_run: true }),
+      })
+      const dd = await dr.json() as {
+        ok?: boolean; type?: string; error?: string; message?: string
+        restored?: { name: string; dest: string }[]
+        conflicts?: { name: string; dest: string }[]
+      }
+      if (!dd.ok || dd.error) {
+        showToast(`Restore failed: ${dd.message ?? dd.error}`, 'bad')
+        setPkgBusy(null)
+        return
+      }
+
+      const allFiles = [...(dd.restored ?? []), ...(dd.conflicts ?? [])]
+      if (allFiles.length === 0) {
+        showToast('Zip contains no recognisable files to restore.', 'bad')
+        setPkgBusy(null)
+        return
+      }
+
+      const conflictNames = (dd.conflicts ?? []).map(f => f.name)
+      const overwriteNote = conflictNames.length > 0
+        ? `\n\nThe following files will be overwritten:\n${conflictNames.join('\n')}`
+        : ''
+
+      setPkgBusy(null)
+      setConfirm({
+        title: 'Confirm Restore',
+        body: `Package type: ${dd.type}\nFiles to restore: ${allFiles.length}${overwriteNote}\n\nProceed?`,
+        onConfirm: async () => {
+          setConfirm(null)
+          setPkgBusy('restore')
+          try {
+            const r = await fetch(`${BASE}/api/package/restore`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ zip_path: zipPath, dry_run: false }),
+            })
+            const d = await r.json() as {
+              ok?: boolean; type?: string; error?: string; message?: string
+              restored?: unknown[]; conflicts?: unknown[]
+            }
+            if (!d.ok || d.error) {
+              showToast(`Restore failed: ${d.message ?? d.error}`, 'bad')
+            } else {
+              const n = (d.restored?.length ?? 0) + (d.conflicts?.length ?? 0)
+              showToast(`Restored ${n} file(s) from ${d.type} package.`, 'ok')
+            }
+          } catch (e) {
+            showToast(`Restore failed: ${(e as Error).message}`, 'bad')
+          } finally {
+            setPkgBusy(null)
+          }
+        },
+      })
+    } catch (e) {
+      showToast(`Restore failed: ${(e as Error).message}`, 'bad')
+      setPkgBusy(null)
+    }
+  }, [showToast])
+
   // ── Render ───────────────────────────────────────────────────────────────────
 
   const fmtNum = (n: number | null | undefined) =>
@@ -881,7 +1014,6 @@ export function ScreenSetup() {
   ]
 
   const webUiPasswordStatus = settings.web_password === 'set' ? 'set' : 'not configured'
-  const webUiTone: 'ok' | 'warn' | 'mute' = settings.web_password === 'set' ? 'ok' : 'mute'
   const webUiRows: [string, string][] = [
     ['URL', `${BASE}/admin`],
     ['Auth', webUiPasswordStatus],
@@ -1106,6 +1238,103 @@ export function ScreenSetup() {
             <p style={{ fontSize: 11, color: 'var(--lbb-fg3)', marginTop: 14, marginBottom: 0, lineHeight: 1.4 }}>
               User data only. The checksum archive is never affected.
             </p>
+          </SetupCard>
+
+          {/* ── Data Packages ── */}
+          <SetupCard title="Data Packages">
+            <p style={{ fontSize: 12, color: 'var(--lbb-fg3)', margin: '0 0 14px', lineHeight: 1.5 }}>
+              Export your data as portable zip archives saved to <code style={{ fontFamily: 'var(--lbb-mono)', fontSize: 11 }}>data/exports/</code>.
+            </p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+              {/* User data */}
+              <div style={{
+                background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
+                borderRadius: 8, padding: 12,
+              }}>
+                <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--lbb-fg)', marginBottom: 4 }}>
+                  User data
+                </div>
+                <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', marginBottom: 10, lineHeight: 1.4 }}>
+                  Bundles <code style={{ fontFamily: 'var(--lbb-mono)', fontSize: 11 }}>losslessbob.db</code>,{' '}
+                  <code style={{ fontFamily: 'var(--lbb-mono)', fontSize: 11 }}>settings.ini</code>, and{' '}
+                  <code style={{ fontFamily: 'var(--lbb-mono)', fontSize: 11 }}>gui_state.json</code>.
+                </div>
+                {pkgUserResult && (
+                  <div style={{ fontSize: 11, color: 'var(--lbb-fg3)', marginBottom: 8, fontFamily: 'var(--lbb-mono)' }}>
+                    ✓ {pkgUserResult.count} files · {(pkgUserResult.size / 1024).toFixed(0)} KB
+                    <br />
+                    <span
+                      style={{ color: 'var(--lbb-accent-mid)', cursor: 'pointer', textDecoration: 'underline' }}
+                      onClick={() => window.api.openPath(pkgUserResult.path)}
+                    >
+                      {pkgUserResult.path}
+                    </span>
+                  </div>
+                )}
+                <Button
+                  variant="secondary" icon="download" size="sm"
+                  disabled={pkgBusy !== null}
+                  onClick={handleExportUserData}
+                >
+                  {pkgBusy === 'user' ? 'Exporting…' : 'Export user data…'}
+                </Button>
+              </div>
+
+              {/* Scraped site data */}
+              <div style={{
+                background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
+                borderRadius: 8, padding: 12,
+              }}>
+                <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--lbb-fg)', marginBottom: 4 }}>
+                  Scraped site data
+                </div>
+                <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', marginBottom: 10, lineHeight: 1.4 }}>
+                  Bundles all HTML pages and attachment files from{' '}
+                  <code style={{ fontFamily: 'var(--lbb-mono)', fontSize: 11 }}>data/site/</code>.
+                  Useful for seeding another install without re-crawling.
+                </div>
+                {pkgScrapeResult && (
+                  <div style={{ fontSize: 11, color: 'var(--lbb-fg3)', marginBottom: 8, fontFamily: 'var(--lbb-mono)' }}>
+                    ✓ {pkgScrapeResult.count} files · {(pkgScrapeResult.size / 1024 / 1024).toFixed(1)} MB
+                    <br />
+                    <span
+                      style={{ color: 'var(--lbb-accent-mid)', cursor: 'pointer', textDecoration: 'underline' }}
+                      onClick={() => window.api.openPath(pkgScrapeResult.path)}
+                    >
+                      {pkgScrapeResult.path}
+                    </span>
+                  </div>
+                )}
+                <Button
+                  variant="secondary" icon="download" size="sm"
+                  disabled={pkgBusy !== null}
+                  onClick={handleExportScrapeData}
+                >
+                  {pkgBusy === 'scrape' ? 'Exporting…' : 'Export scraped site data…'}
+                </Button>
+              </div>
+
+              {/* Restore */}
+              <div style={{
+                background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
+                borderRadius: 8, padding: 12,
+              }}>
+                <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--lbb-fg)', marginBottom: 4 }}>
+                  Restore from zip
+                </div>
+                <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', marginBottom: 10, lineHeight: 1.4 }}>
+                  Import a zip archive exported by this app. Auto-detects package type (user data or
+                  scraped site). Shows a conflict preview before writing anything.
+                </div>
+                <Button
+                  variant="secondary" icon="upload" size="sm"
+                  disabled={pkgBusy !== null}
+                  onClick={handleRestorePackage}
+                >
+                  {pkgBusy === 'restore' ? 'Checking…' : 'Restore from zip…'}
+                </Button>
+              </div>
+            </div>
           </SetupCard>
 
           {/* ── Flat file history ── */}

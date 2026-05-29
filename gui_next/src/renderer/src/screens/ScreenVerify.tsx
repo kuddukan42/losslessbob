@@ -3,6 +3,7 @@ import { Icon } from '../components/Icon'
 import { Button, Chip, Input, Pill } from '../components'
 import { TableShell, TH, TR, TD } from '../components'
 import { useVerifyStore, VerifyFolder, FolderState, CheckStatus } from '../lib/verifyStore'
+import { useFolderQueueStore } from '../lib/folderQueueStore'
 
 const BASE = window.api.flaskBase
 
@@ -75,7 +76,8 @@ function StateBadge({ s }: { s: FolderState }): React.JSX.Element {
 // ── Screen ─────────────────────────────────────────────────────────────────────
 
 export function ScreenVerify(): React.JSX.Element {
-  const { folders, results, activeIdx, showAll, filter, setFolders, setResults, setActiveIdx, setShowAll, setFilter } = useVerifyStore()
+  const { results, activeIdx, showAll, filter, setResults, setActiveIdx, setShowAll, setFilter } = useVerifyStore()
+  const { folders, addFolders } = useFolderQueueStore()
   const [busy,  setBusy]  = useState(false)
   const [tools, setTools] = useState<ToolStatus | null>(null)
   const [toast, setToast] = useState<{ msg: string; tone: ToastTone } | null>(null)
@@ -102,8 +104,8 @@ export function ScreenVerify(): React.JSX.Element {
 
   const handleAddFolders = useCallback(async () => {
     const picked = await window.api.pickFolders()
-    if (picked.length) setFolders(prev => [...new Set([...prev, ...picked])])
-  }, [])
+    if (picked.length) addFolders(picked)
+  }, [addFolders])
 
   const handleAddRoot = useCallback(async () => {
     const root = await window.api.pickDir()
@@ -111,7 +113,7 @@ export function ScreenVerify(): React.JSX.Element {
     try {
       const data = await post('/api/pipeline/scan-tree', { root }) as { folders: string[] }
       if (data.folders?.length) {
-        setFolders(prev => [...new Set([...prev, ...data.folders])])
+        addFolders(data.folders)
         showToast(`Found ${data.folders.length} folders`, 'ok')
       } else {
         showToast('No audio folders found', 'info')
@@ -119,7 +121,7 @@ export function ScreenVerify(): React.JSX.Element {
     } catch {
       showToast('Scan failed', 'bad')
     }
-  }, [post, showToast])
+  }, [post, showToast, addFolders])
 
   const handleVerify = useCallback(async () => {
     if (!folders.length) { showToast('Add folders first', 'info'); return }

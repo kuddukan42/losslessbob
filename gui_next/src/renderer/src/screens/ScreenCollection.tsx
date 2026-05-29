@@ -1,9 +1,10 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { useVirtualizer } from '@tanstack/react-virtual'
 import { Icon } from '../components/Icon'
 import { Button, Chip, IconButton, Input, Pill } from '../components'
-import { TableShell, TH, TR, TD } from '../components'
+import { TableShell, TH, TR, TD, GroupRow } from '../components'
 import { useLookupStore } from '../lib/lookupStore'
 import { useSpectrogramStore } from '../lib/spectrogramStore'
 
@@ -12,7 +13,7 @@ const BASE = window.api.flaskBase
 // ── Types ─────────────────────────────────────────────────────────────────────
 
 type CollectionStatus = 'Public' | 'Private' | 'New' | 'Missing'
-type FilterKey = 'all' | 'missing' | 'wishlist' | 'duplicates' | 'forum' | 'torrent' | 'unconfirmed' | 'nofp' | 'not_owned'
+type FilterKey = 'all' | 'missing' | 'wishlist' | 'duplicates' | 'forum' | 'torrent' | 'unconfirmed' | 'nofp' | 'not_owned' | 'forum_global' | 'torrent_global'
 
 interface MissingLbRow {
   lb_number: number
@@ -42,6 +43,39 @@ interface TorrentRecord {
   added_to_qbt: boolean
 }
 
+interface GlobalForumPost {
+  id: number
+  lb_number: number
+  lbStr: string
+  subject: string
+  topic_url: string
+  posted_at: string
+  date_str: string
+  location: string
+}
+
+interface GlobalTorrentRecord {
+  id: number
+  lb_number: number
+  lbStr: string
+  filename: string
+  source_folder: string
+  torrent_path: string
+  created_at: string
+  added_to_qbt: boolean
+  source_folder_exists: boolean
+  torrent_file_exists: boolean
+  date_str: string
+  location: string
+}
+
+interface DetailForumRecord {
+  id: number
+  subject: string
+  topic_url: string
+  posted_at: string
+}
+
 interface CollectionRow {
   lbNumber: string
   lbNumberInt: number
@@ -50,6 +84,7 @@ interface CollectionRow {
   location: string
   folder: string
   diskPath: string
+  notes: string
   confirmed: string
   fingerprinted: boolean
   title: string
@@ -57,10 +92,20 @@ interface CollectionRow {
   size: string
   rating: string
   wishlist: boolean
+  wishlistPriority: number | null
+  wishlistNotes: string
+  wishlistAddedAt: string
   isDuplicate: boolean
   isXref: boolean
   historyTorrents: HistoryItem[]
   historyForum: HistoryItem[]
+}
+
+interface DuplicateGroup {
+  date_str: string
+  location: string
+  owned: { lb_number: number; rating: string; description: string }[]
+  unowned: { lb_number: number; rating: string; description: string }[]
 }
 
 // ── Sample data (fallback when backend returns nothing) ───────────────────────
@@ -71,8 +116,9 @@ const SAMPLE_DATA: CollectionRow[] = [
     location: "Earl's Court, London, UK",
     folder: 'LB-00018 1981-06-29 Earls Court London',
     diskPath: '/media/dylan/archive/LB-00018 1981-06-29 Earls Court London',
-    confirmed: '2024-03-15', fingerprinted: true, title: "Earl's Court Night 1",
-    discs: 2, size: '1.4 GB', rating: 'A', wishlist: false, isDuplicate: false, isXref: false,
+    notes: '', confirmed: '2024-03-15', fingerprinted: true, title: "Earl's Court Night 1",
+    discs: 2, size: '1.4 GB', rating: 'A', wishlist: false, wishlistPriority: null, wishlistNotes: '', wishlistAddedAt: '',
+    isDuplicate: false, isXref: false,
     historyTorrents: [{ date: '2024-01-10', filename: 'LB-00018.torrent', kind: 'In qBt' }],
     historyForum: [{ date: '2024-01-12', filename: 'Post #8821', kind: 'Local' }],
   },
@@ -81,8 +127,9 @@ const SAMPLE_DATA: CollectionRow[] = [
     location: 'Royal Albert Hall, London, UK',
     folder: 'LB-00042 1966-05-26 Royal Albert Hall London',
     diskPath: '/media/dylan/archive/LB-00042 1966-05-26 Royal Albert Hall London',
-    confirmed: '2024-02-01', fingerprinted: true, title: 'Royal Albert Hall 1966',
-    discs: 2, size: '890 MB', rating: 'A+', wishlist: false, isDuplicate: false, isXref: true,
+    notes: '', confirmed: '2024-02-01', fingerprinted: true, title: 'Royal Albert Hall 1966',
+    discs: 2, size: '890 MB', rating: 'A+', wishlist: false, wishlistPriority: null, wishlistNotes: '', wishlistAddedAt: '',
+    isDuplicate: false, isXref: true,
     historyTorrents: [{ date: '2023-12-01', filename: 'LB-00042.torrent', kind: 'Local' }],
     historyForum: [],
   },
@@ -91,8 +138,9 @@ const SAMPLE_DATA: CollectionRow[] = [
     location: 'Isle of Wight Festival, UK',
     folder: 'LB-01001 1970-08-31 Isle of Wight',
     diskPath: '/media/dylan/imports/LB-01001 1970-08-31 Isle of Wight',
-    confirmed: '', fingerprinted: false, title: 'Isle of Wight 1970',
-    discs: 1, size: '620 MB', rating: 'B+', wishlist: false, isDuplicate: false, isXref: false,
+    notes: '', confirmed: '', fingerprinted: false, title: 'Isle of Wight 1970',
+    discs: 1, size: '620 MB', rating: 'B+', wishlist: false, wishlistPriority: null, wishlistNotes: '', wishlistAddedAt: '',
+    isDuplicate: false, isXref: false,
     historyTorrents: [], historyForum: [],
   },
   {
@@ -100,16 +148,18 @@ const SAMPLE_DATA: CollectionRow[] = [
     location: 'Madison Square Garden, New York, NY',
     folder: 'LB-05421 1974-01-30 Madison Square Garden',
     diskPath: '/media/dylan/archive/LB-05421 1974-01-30 Madison Square Garden',
-    confirmed: '2024-01-05', fingerprinted: true, title: 'Before The Flood Night 1',
-    discs: 2, size: '1.8 GB', rating: 'A', wishlist: false, isDuplicate: true, isXref: false,
+    notes: '', confirmed: '2024-01-05', fingerprinted: true, title: 'Before The Flood Night 1',
+    discs: 2, size: '1.8 GB', rating: 'A', wishlist: false, wishlistPriority: null, wishlistNotes: '', wishlistAddedAt: '',
+    isDuplicate: true, isXref: false,
     historyTorrents: [{ date: '2024-01-05', filename: 'LB-05421.torrent', kind: 'In qBt' }],
     historyForum: [{ date: '2024-01-06', filename: 'Post #4521', kind: 'Local' }],
   },
   {
     lbNumber: 'LB-05422', lbNumberInt: 5422, status: 'Missing', date: '02/03/74',
-    location: 'Forum, Los Angeles, CA', folder: '', diskPath: '', confirmed: '',
+    location: 'Forum, Los Angeles, CA', folder: '', diskPath: '', notes: '', confirmed: '',
     fingerprinted: false, title: 'Before The Flood Night 2',
-    discs: 2, size: '', rating: '', wishlist: true, isDuplicate: false, isXref: false,
+    discs: 2, size: '', rating: '', wishlist: true, wishlistPriority: 3, wishlistNotes: '', wishlistAddedAt: '2024-01-01',
+    isDuplicate: false, isXref: false,
     historyTorrents: [], historyForum: [],
   },
 ]
@@ -391,11 +441,159 @@ function PersonalInfoModal({ lb, lbNumber, onClose, onSaved }: {
   )
 }
 
+// ── ScanEntry type ────────────────────────────────────────────────────────────
+
+interface ScanEntry {
+  lb_number: number
+  folder_name: string
+  path: string
+}
+
+// ── ScanPreviewModal ──────────────────────────────────────────────────────────
+
+type ScanRowState = 'idle' | 'adding' | 'done' | 'error'
+
+function ScanPreviewModal({ entries, skipped, onClose, onAdded }: {
+  entries: ScanEntry[]
+  skipped: number
+  onClose: () => void
+  onAdded: () => void
+}) {
+  const [ownedSet, setOwnedSet]     = useState<Set<number>>(new Set())
+  const [ownedLoaded, setOwnedLoaded] = useState(false)
+  const [rowState, setRowState]     = useState<Record<number, ScanRowState>>({})
+  const [busy, setBusy]             = useState(false)
+
+  useEffect(() => {
+    fetch(`${BASE}/api/collection/lb_numbers`)
+      .then(r => r.json())
+      .then((data: number[]) => { setOwnedSet(new Set(data)); setOwnedLoaded(true) })
+      .catch(() => setOwnedLoaded(true))
+  }, [])
+
+  const addEntry = async (e: ScanEntry) => {
+    setRowState(prev => ({ ...prev, [e.lb_number]: 'adding' }))
+    try {
+      const resp = await fetch(`${BASE}/api/collection`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ lb_number: e.lb_number, folder_name: e.folder_name, disk_path: e.path }),
+      })
+      const data = await resp.json()
+      setRowState(prev => ({ ...prev, [e.lb_number]: data.ok ? 'done' : 'error' }))
+      if (data.ok) onAdded()
+    } catch {
+      setRowState(prev => ({ ...prev, [e.lb_number]: 'error' }))
+    }
+  }
+
+  const pendingEntries = entries.filter(e =>
+    !ownedSet.has(e.lb_number) && (rowState[e.lb_number] ?? 'idle') === 'idle'
+  )
+
+  const addAll = async () => {
+    setBusy(true)
+    for (const e of pendingEntries) await addEntry(e)
+    setBusy(false)
+  }
+
+  const lbStr = (n: number) => `LB-${String(n).padStart(5, '0')}`
+
+  return (
+    <div style={{
+      position: 'fixed', inset: 0, zIndex: 1000,
+      background: 'rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center',
+    }}>
+      <div style={{
+        background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)',
+        borderRadius: 10, padding: 20, width: 860, maxWidth: '96vw',
+        maxHeight: '80vh', display: 'flex', flexDirection: 'column',
+        boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
+      }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12, flexShrink: 0 }}>
+          <span style={{ fontSize: 14, fontWeight: 700, color: 'var(--lbb-fg)' }}>
+            Scan Results — {entries.length} folder{entries.length !== 1 ? 's' : ''} found
+            {skipped > 0 && <span style={{ fontSize: 11.5, fontWeight: 400, color: 'var(--lbb-fg3)', marginLeft: 8 }}>{skipped} skipped (no LB#)</span>}
+          </span>
+          <IconButton icon="x" size={14} title="Close" onClick={onClose} />
+        </div>
+
+        <div style={{ flex: 1, overflow: 'auto', minHeight: 0 }}>
+          <TableShell stickyHeader>
+            <colgroup>
+              <col style={{ width: 3 }} />
+              <col style={{ width: 100 }} />
+              <col style={{ width: 260 }} />
+              <col />
+              <col style={{ width: 110 }} />
+              <col style={{ width: 80 }} />
+            </colgroup>
+            <thead>
+              <tr>
+                <TH />
+                <TH>LB#</TH>
+                <TH>Folder</TH>
+                <TH>Path</TH>
+                <TH align="center">Already Owned</TH>
+                <TH />
+              </tr>
+            </thead>
+            <tbody>
+              {entries.map(e => {
+                const isOwned = ownedLoaded && ownedSet.has(e.lb_number)
+                const state   = rowState[e.lb_number] ?? 'idle'
+                return (
+                  <TR key={e.lb_number}>
+                    <TD />
+                    <TD mono style={{ color: 'var(--lbb-accent-mid)', fontWeight: 600 }}>{lbStr(e.lb_number)}</TD>
+                    <TD mono>{e.folder_name}</TD>
+                    <TD mono dim style={{ fontSize: 10 }}>{e.path}</TD>
+                    <TD align="center">
+                      {!ownedLoaded
+                        ? <span style={{ color: 'var(--lbb-fg3)', fontSize: 11 }}>…</span>
+                        : isOwned
+                          ? <Pill tone="ok" soft>Yes</Pill>
+                          : <span style={{ color: 'var(--lbb-fg3)', fontSize: 11.5 }}>No</span>
+                      }
+                    </TD>
+                    <TD>
+                      <Button
+                        variant={state === 'done' ? 'ghost' : 'secondary'} size="sm"
+                        disabled={isOwned || state === 'done' || state === 'adding'}
+                        onClick={() => addEntry(e)}
+                      >
+                        {state === 'done' ? '✓' : state === 'adding' ? '…' : state === 'error' ? 'Retry' : 'Add'}
+                      </Button>
+                    </TD>
+                  </TR>
+                )
+              })}
+            </tbody>
+          </TableShell>
+        </div>
+
+        <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end', marginTop: 14, flexShrink: 0 }}>
+          <Button variant="ghost" size="sm" onClick={onClose}>Close</Button>
+          <Button
+            variant="primary" size="sm"
+            disabled={!ownedLoaded || busy || pendingEntries.length === 0}
+            onClick={addAll}
+          >
+            {busy ? 'Adding…' : `Add all (${pendingEntries.length})`}
+          </Button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 // ── AddFolderModal ─────────────────────────────────────────────────────────────
 
 interface FolderEntry {
   path: string
   lbInput: string
+  folderNameInput: string
+  notesInput: string
   status: 'idle' | 'adding' | 'done' | 'error'
   errorMsg?: string
 }
@@ -406,11 +604,23 @@ function AddFolderModal({ paths, onClose, onAdded }: {
   onAdded: () => void
 }) {
   const [entries, setEntries] = useState<FolderEntry[]>(
-    () => paths.map(p => ({ path: p, lbInput: '', status: 'idle' as const }))
+    () => paths.map(p => ({
+      path: p,
+      lbInput: '',
+      folderNameInput: p.replace(/\/+$/, '').split('/').pop() || p,
+      notesInput: '',
+      status: 'idle' as const,
+    }))
   )
 
   const updateLb = (idx: number, val: string) =>
     setEntries(prev => prev.map((e, i) => i === idx ? { ...e, lbInput: val } : e))
+
+  const updateFolderName = (idx: number, val: string) =>
+    setEntries(prev => prev.map((e, i) => i === idx ? { ...e, folderNameInput: val } : e))
+
+  const updateNotes = (idx: number, val: string) =>
+    setEntries(prev => prev.map((e, i) => i === idx ? { ...e, notesInput: val } : e))
 
   const addOne = async (idx: number) => {
     // Read current lbInput/path before marking 'adding'
@@ -418,14 +628,17 @@ function AddFolderModal({ paths, onClose, onAdded }: {
     const lb = parseInt(snap.lbInput, 10)
     if (isNaN(lb) || lb <= 0 || snap.status !== 'idle') return
 
-    const folderName = snap.path.replace(/\/+$/, '').split('/').pop() || snap.path
+    const folderName = snap.folderNameInput.trim() || snap.path.replace(/\/+$/, '').split('/').pop() || snap.path
     setEntries(prev => prev.map((r, i) => i === idx ? { ...r, status: 'adding' } : r))
 
     try {
       const resp = await fetch(`${BASE}/api/collection`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ lb_number: lb, folder_name: folderName, disk_path: snap.path }),
+        body: JSON.stringify({
+          lb_number: lb, folder_name: folderName, disk_path: snap.path,
+          ...(snap.notesInput.trim() ? { notes: snap.notesInput.trim() } : {}),
+        }),
       })
       const data = await resp.json()
       setEntries(prev => prev.map((r, i) =>
@@ -447,13 +660,16 @@ function AddFolderModal({ paths, onClose, onAdded }: {
       if (e.status === 'idle' && /^\d+$/.test(e.lbInput)) {
         const lb = parseInt(e.lbInput, 10)
         if (lb <= 0) continue
-        const folderName = e.path.replace(/\/+$/, '').split('/').pop() || e.path
+        const folderName = e.folderNameInput.trim() || e.path.replace(/\/+$/, '').split('/').pop() || e.path
         setEntries(prev => prev.map((r, j) => j === i ? { ...r, status: 'adding' } : r))
         try {
           const resp = await fetch(`${BASE}/api/collection`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ lb_number: lb, folder_name: folderName, disk_path: e.path }),
+            body: JSON.stringify({
+              lb_number: lb, folder_name: folderName, disk_path: e.path,
+              ...(e.notesInput.trim() ? { notes: e.notesInput.trim() } : {}),
+            }),
           })
           const data = await resp.json()
           setEntries(prev => prev.map((r, j) =>
@@ -493,57 +709,68 @@ function AddFolderModal({ paths, onClose, onAdded }: {
 
         <div style={{ flex: 1, overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: 5, paddingRight: 2 }}>
           {entries.map((e, idx) => {
-            const folderName = e.path.replace(/\/+$/, '').split('/').pop() || e.path
             const isDone = e.status === 'done'
             const isErr  = e.status === 'error'
             const isBusy = e.status === 'adding'
+            const inputStyle = {
+              height: 28, padding: '0 8px',
+              fontFamily: 'var(--lbb-mono)', fontSize: 12,
+              background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border2)',
+              borderRadius: 5, color: 'var(--lbb-fg)', outline: 'none',
+            }
             return (
               <div key={idx} style={{
-                display: 'flex', alignItems: 'center', gap: 8,
-                padding: '7px 10px',
+                display: 'flex', flexDirection: 'column', gap: 5,
+                padding: '8px 10px',
                 background: isDone ? 'var(--lbb-ok-bg)' : isErr ? 'var(--lbb-err-bg)' : 'var(--lbb-surface2)',
                 border: `1px solid ${isDone ? 'var(--lbb-ok-bar)' : isErr ? 'var(--lbb-err-bar)' : 'var(--lbb-border)'}`,
                 borderRadius: 6,
               }}>
-                <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{
-                    fontFamily: 'var(--lbb-mono)', fontSize: 11.5, color: 'var(--lbb-fg)',
-                    whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
-                  }}>
-                    {folderName}
-                  </div>
-                  <div style={{
-                    fontFamily: 'var(--lbb-mono)', fontSize: 10, color: 'var(--lbb-fg3)',
-                    whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
-                  }}>
-                    {e.path}
-                  </div>
-                  {isErr && (
-                    <div style={{ fontSize: 10.5, color: 'var(--lbb-err-fg)', marginTop: 2 }}>
-                      {e.errorMsg || 'Failed to add'}
-                    </div>
-                  )}
+                {/* disk path display */}
+                <div style={{
+                  fontFamily: 'var(--lbb-mono)', fontSize: 10, color: 'var(--lbb-fg3)',
+                  whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
+                }}>
+                  {e.path}
                 </div>
+                {/* row: folder name input | LB# | Add */}
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                  <input
+                    placeholder="Folder name"
+                    value={e.folderNameInput}
+                    disabled={isDone || isBusy}
+                    onChange={ev => updateFolderName(idx, ev.target.value)}
+                    style={{ ...inputStyle, flex: 1 }}
+                  />
+                  <input
+                    type="number"
+                    placeholder="LB #"
+                    value={e.lbInput}
+                    disabled={isDone || isBusy}
+                    onChange={ev => updateLb(idx, ev.target.value)}
+                    style={{ ...inputStyle, width: 80 }}
+                  />
+                  <Button
+                    variant={isDone ? 'ghost' : 'secondary'} size="sm"
+                    disabled={isDone || isBusy || !/^\d+$/.test(e.lbInput)}
+                    onClick={() => addOne(idx)}
+                  >
+                    {isDone ? '✓ Added' : isBusy ? '…' : 'Add'}
+                  </Button>
+                </div>
+                {/* notes input */}
                 <input
-                  type="number"
-                  placeholder="LB #"
-                  value={e.lbInput}
+                  placeholder="Notes (optional)"
+                  value={e.notesInput}
                   disabled={isDone || isBusy}
-                  onChange={ev => updateLb(idx, ev.target.value)}
-                  style={{
-                    width: 80, height: 28, padding: '0 8px',
-                    fontFamily: 'var(--lbb-mono)', fontSize: 12,
-                    background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border2)',
-                    borderRadius: 5, color: 'var(--lbb-fg)', outline: 'none',
-                  }}
+                  onChange={ev => updateNotes(idx, ev.target.value)}
+                  style={{ ...inputStyle, width: '100%' }}
                 />
-                <Button
-                  variant={isDone ? 'ghost' : 'secondary'} size="sm"
-                  disabled={isDone || isBusy || !/^\d+$/.test(e.lbInput)}
-                  onClick={() => addOne(idx)}
-                >
-                  {isDone ? '✓ Added' : isBusy ? '…' : 'Add'}
-                </Button>
+                {isErr && (
+                  <div style={{ fontSize: 10.5, color: 'var(--lbb-err-fg)' }}>
+                    {e.errorMsg || 'Failed to add'}
+                  </div>
+                )}
               </div>
             )
           })}
@@ -688,9 +915,20 @@ interface DetailPanelProps {
   personalMetaVersion: number
   onToast: (msg: string, tone: ToastTone) => void
   onRefetch: () => void
+  onSpectrograms: (row: CollectionRow) => void
+  onNavigate: (path: string) => void
 }
 
-function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegenTorrent, onPostForum, onWishlistToggle, onPersonalInfo, personalMetaVersion, onToast, onRefetch }: DetailPanelProps): React.JSX.Element {
+interface AudioInfo {
+  format: string | null
+  bit_depth: number | null
+  sample_rate: number | null
+  mixed: boolean
+  files_probed: number
+  offline?: boolean
+}
+
+function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegenTorrent, onPostForum, onWishlistToggle, onPersonalInfo, personalMetaVersion, onToast, onRefetch, onSpectrograms, onNavigate }: DetailPanelProps): React.JSX.Element {
   const edge = edgeFor(row.status)
 
   const [personalMeta, setPersonalMeta] = useState<PersonalMeta | null>(null)
@@ -698,6 +936,10 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
   const [torrentRecords, setTorrentRecords] = useState<TorrentRecord[]>([])
   const [torrentBusy, setTorrentBusy] = useState(false)
   const [deleteConfirm, setDeleteConfirm] = useState<number | null>(null)
+  const [forumRecords, setForumRecords] = useState<DetailForumRecord[]>([])
+  const [forumBusy, setForumBusy] = useState(false)
+  const [forumDeleteConfirm, setForumDeleteConfirm] = useState<number | null>(null)
+  const [audioInfo, setAudioInfo] = useState<AudioInfo | null>(null)
 
   const fetchTorrentRecords = useCallback(() => {
     setTorrentBusy(true)
@@ -725,6 +967,29 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
     setTorrentRecords([])
     fetchTorrentRecords()
   }, [fetchTorrentRecords])
+
+  const fetchForumRecords = useCallback(() => {
+    setForumBusy(true)
+    fetch(`${BASE}/api/entry/${row.lbNumberInt}/forum_posts`)
+      .then(r => r.json())
+      .then((data: any) => {
+        if (Array.isArray(data)) {
+          setForumRecords(data.map((p: any) => ({
+            id: p.id,
+            subject: p.subject ?? '',
+            topic_url: p.topic_url ?? '',
+            posted_at: (p.posted_at ?? '').slice(0, 10),
+          })))
+        }
+      })
+      .catch(() => {})
+      .finally(() => setForumBusy(false))
+  }, [row.lbNumberInt])
+
+  useEffect(() => {
+    setForumRecords([])
+    fetchForumRecords()
+  }, [fetchForumRecords])
 
   const handleTorrentAddQbt = async (rec: TorrentRecord) => {
     try {
@@ -765,6 +1030,21 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
     } catch { onToast('Torrent creation failed', 'bad') }
   }
 
+  const handleForumOpen = (rec: DetailForumRecord) => {
+    if (!rec.topic_url) { onToast('No URL stored for this post', 'info'); return }
+    window.open(rec.topic_url, '_blank')
+  }
+
+  const handleForumRecordDelete = async (postId: number) => {
+    setForumDeleteConfirm(null)
+    try {
+      const resp = await fetch(`${BASE}/api/forum_post/${postId}`, { method: 'DELETE' })
+      const data = await resp.json()
+      onToast(data.ok ? 'Record removed' : (data.error || 'Delete failed'), data.ok ? 'ok' : 'bad')
+      if (data.ok) { fetchForumRecords(); onRefetch() }
+    } catch { onToast('Delete failed', 'bad') }
+  }
+
   const handleTorrentRelocate = async (rec: TorrentRecord) => {
     const dir = await window.api.pickDir()
     if (!dir) return
@@ -801,6 +1081,15 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
     setPersonalMeta(null)
     fetchPersonalMeta()
   }, [fetchPersonalMeta, personalMetaVersion])
+
+  useEffect(() => {
+    if (!row.diskPath) return
+    setAudioInfo(null)
+    fetch(`${BASE}/api/collection/${row.lbNumberInt}/audioinfo`)
+      .then(r => r.json())
+      .then((d: AudioInfo) => setAudioInfo(d))
+      .catch(() => {})
+  }, [row.lbNumberInt, row.diskPath])
 
   const handleLogListen = async () => {
     setLogListenBusy(true)
@@ -862,7 +1151,14 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
           <Pill tone="ok" soft dot>Owned</Pill>
           <Pill tone={edge} soft>{row.status}</Pill>
           {row.isXref && <Pill tone="info" soft>Xref</Pill>}
-          <Pill tone="mute" soft>FLAC · 16/44</Pill>
+          {audioInfo && audioInfo.format && !audioInfo.offline && (
+            <Pill tone={audioInfo.mixed ? 'info' : 'mute'} soft>
+              {audioInfo.format}
+              {audioInfo.bit_depth  != null ? ` · ${audioInfo.bit_depth}`  : ''}
+              {audioInfo.sample_rate != null ? `/${audioInfo.sample_rate}` : ''}
+              {audioInfo.mixed ? ' (mixed)' : ''}
+            </Pill>
+          )}
         </div>
 
         {/* 2. ID + title block */}
@@ -927,13 +1223,13 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
           <Button variant="ghost" size="sm" onClick={() => onPersonalInfo(row.lbNumber, row.lbNumberInt)}>
             Edit Personal Info
           </Button>
-          <Button variant="ghost" size="sm" onClick={() => onToast('Attachments screen coming soon', 'info')}>
+          <Button variant="ghost" size="sm" onClick={() => onNavigate('/attachments')}>
             Attachments
           </Button>
-          <Button variant="ghost" size="sm" onClick={() => onToast('Spectrograms screen coming soon', 'info')}>
+          <Button variant="ghost" size="sm" disabled={!row.diskPath} onClick={() => onSpectrograms(row)}>
             Spectrograms
           </Button>
-          <Button variant="ghost" size="sm" onClick={() => onToast('Map screen coming soon', 'info')}>
+          <Button variant="ghost" size="sm" onClick={() => onNavigate('/map')}>
             On map
           </Button>
         </div>
@@ -955,7 +1251,7 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
             <Chip
               active={historyTab === 'forum'} size="sm"
               onClick={() => onHistoryTab('forum')}
-              count={row.historyForum.length}
+              count={forumRecords.length || row.historyForum.length}
             >Forum posts</Chip>
           </div>
 
@@ -1031,29 +1327,46 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
             )
           )}
 
-          {/* Forum tab — display only */}
+          {/* Forum tab — actionable */}
           {historyTab === 'forum' && (
-            row.historyForum.length === 0 ? (
+            forumBusy ? (
+              <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', padding: '6px 0' }}>Loading…</div>
+            ) : forumRecords.length === 0 ? (
               <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', padding: '6px 0' }}>No forum history.</div>
             ) : (
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-                {row.historyForum.map((item, i) => (
-                  <div key={i} style={{
-                    display: 'flex', alignItems: 'center', gap: 8,
-                    padding: '6px 8px',
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
+                {forumRecords.map(rec => (
+                  <div key={rec.id} style={{
                     border: '1px solid var(--lbb-border)',
-                    borderRadius: 4, fontSize: 11.5,
+                    borderRadius: 5, padding: '6px 8px',
+                    display: 'flex', flexDirection: 'column', gap: 5,
                   }}>
-                    <span style={{ fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-fg3)', flexShrink: 0, fontSize: 11 }}>
-                      {item.date}
-                    </span>
-                    <span style={{
-                      fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-fg)',
-                      flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', fontSize: 11,
-                    }}>
-                      {item.filename}
-                    </span>
-                    <Pill tone="mute" soft>Local</Pill>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
+                      <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 10, color: 'var(--lbb-fg3)', flexShrink: 0 }}>
+                        {rec.posted_at || '—'}
+                      </span>
+                      <span style={{
+                        fontFamily: 'var(--lbb-mono)', fontSize: 10.5, color: 'var(--lbb-fg)',
+                        flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+                      }}>
+                        {rec.subject || '—'}
+                      </span>
+                      <Pill tone={rec.topic_url ? 'info' : 'mute'} soft>
+                        {rec.topic_url ? 'Posted' : 'Local'}
+                      </Pill>
+                    </div>
+                    <div style={{ display: 'flex', gap: 4, flexWrap: 'wrap' }}>
+                      <Button
+                        variant="ghost" size="sm"
+                        disabled={!rec.topic_url}
+                        onClick={() => handleForumOpen(rec)}
+                      >
+                        Open in Browser
+                      </Button>
+                      <Button variant="danger" size="sm" onClick={() => setForumDeleteConfirm(rec.id)}>
+                        Remove
+                      </Button>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -1088,14 +1401,267 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
         onCancel={() => setDeleteConfirm(null)}
       />
     )}
+
+    {forumDeleteConfirm !== null && (
+      <ConfirmDialog
+        title="Remove forum post record"
+        body="Remove this log entry? This does not delete the actual forum post on the website."
+        onConfirm={() => handleForumRecordDelete(forumDeleteConfirm)}
+        onCancel={() => setForumDeleteConfirm(null)}
+      />
+    )}
     </>
+  )
+}
+
+// ── GlobalForumPanel ─────────────────────────────────────────────────────────
+
+function GlobalForumPanel({ posts, search, onSearch, onOpen, onDelete, onGoToLb }: {
+  posts: GlobalForumPost[]
+  search: string
+  onSearch: (s: string) => void
+  onOpen: (url: string) => void
+  onDelete: (postId: number) => void
+  onGoToLb: (lb: number, lbStr: string) => void
+}) {
+  const [deleteConfirm, setDeleteConfirm] = useState<GlobalForumPost | null>(null)
+
+  const filtered = posts.filter(p => {
+    if (!search) return true
+    const q = search.toLowerCase()
+    return (
+      p.lbStr.toLowerCase().includes(q) ||
+      p.subject.toLowerCase().includes(q) ||
+      p.location.toLowerCase().includes(q) ||
+      p.date_str.toLowerCase().includes(q)
+    )
+  })
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', height: '100%', minHeight: 0 }}>
+      <div style={{
+        display: 'flex', alignItems: 'center', gap: 8,
+        padding: '8px 12px', borderBottom: '1px solid var(--lbb-border)', flexShrink: 0,
+      }}>
+        <span style={{ fontSize: 12.5, color: 'var(--lbb-fg2)', fontWeight: 600 }}>
+          {filtered.length.toLocaleString()} forum post{filtered.length !== 1 ? 's' : ''}
+        </span>
+        <div style={{ flex: 1 }} />
+        <Input
+          icon="filter"
+          placeholder="Filter…"
+          size="sm"
+          value={search}
+          onChange={e => onSearch(e.target.value)}
+          style={{ width: 220 }}
+        />
+      </div>
+      <div style={{ flex: 1, overflow: 'auto', minHeight: 0 }}>
+        <TableShell stickyHeader>
+          <colgroup>
+            <col style={{ width: 3 }} />
+            <col style={{ width: 100 }} />
+            <col style={{ width: 110 }} />
+            <col style={{ width: 220 }} />
+            <col />
+            <col style={{ width: 240 }} />
+          </colgroup>
+          <thead>
+            <tr>
+              <TH />
+              <TH>Posted</TH>
+              <TH>LB#</TH>
+              <TH>Show date · Location</TH>
+              <TH>Subject</TH>
+              <TH>Actions</TH>
+            </tr>
+          </thead>
+          <tbody>
+            {filtered.map(p => (
+              <TR key={p.id}>
+                <TD />
+                <TD mono dim>{p.posted_at || '—'}</TD>
+                <TD mono style={{ color: 'var(--lbb-accent-mid)', fontWeight: 600 }}>{p.lbStr}</TD>
+                <TD dim>{[p.date_str, p.location].filter(Boolean).join(' · ') || '—'}</TD>
+                <TD>{p.subject || '—'}</TD>
+                <TD>
+                  <div style={{ display: 'flex', gap: 4 }}>
+                    <Button
+                      variant="ghost" size="sm"
+                      disabled={!p.topic_url}
+                      onClick={() => onOpen(p.topic_url)}
+                    >
+                      Open in Browser
+                    </Button>
+                    <Button variant="danger" size="sm" onClick={() => setDeleteConfirm(p)}>
+                      Remove
+                    </Button>
+                    <Button variant="ghost" size="sm" onClick={() => onGoToLb(p.lb_number, p.lbStr)}>
+                      Go to LB
+                    </Button>
+                  </div>
+                </TD>
+              </TR>
+            ))}
+          </tbody>
+        </TableShell>
+        {filtered.length === 0 && (
+          <div style={{
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            height: '60%', fontSize: 13, color: 'var(--lbb-fg3)',
+          }}>
+            {posts.length === 0 ? 'No forum posts recorded.' : 'No results match the filter.'}
+          </div>
+        )}
+      </div>
+      {deleteConfirm && (
+        <ConfirmDialog
+          title="Remove forum post record"
+          body="Remove this log entry? This does not delete the actual forum post on the website."
+          onConfirm={() => { onDelete(deleteConfirm.id); setDeleteConfirm(null) }}
+          onCancel={() => setDeleteConfirm(null)}
+        />
+      )}
+    </div>
+  )
+}
+
+// ── GlobalTorrentPanel ────────────────────────────────────────────────────────
+
+function GlobalTorrentPanel({ records, search, onSearch, onGoToLb, onToast, onRefetch }: {
+  records: GlobalTorrentRecord[]
+  search: string
+  onSearch: (s: string) => void
+  onGoToLb: (lb: number, lbStr: string) => void
+  onToast: (msg: string, tone: ToastTone) => void
+  onRefetch: () => void
+}) {
+  const filtered = records.filter(r => {
+    if (!search) return true
+    const q = search.toLowerCase()
+    return (
+      r.lbStr.toLowerCase().includes(q) ||
+      r.filename.toLowerCase().includes(q) ||
+      r.location.toLowerCase().includes(q) ||
+      r.date_str.toLowerCase().includes(q)
+    )
+  })
+
+  const handleAddQbt = async (rec: GlobalTorrentRecord) => {
+    try {
+      const resp = await fetch(`${BASE}/api/qbt/add`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ torrent_id: rec.id }),
+      })
+      const data = await resp.json()
+      onToast(data.ok ? 'Added to qBittorrent' : (data.error || 'qBt add failed'), data.ok ? 'ok' : 'bad')
+      if (data.ok) onRefetch()
+    } catch { onToast('qBittorrent request failed', 'bad') }
+  }
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', height: '100%', minHeight: 0 }}>
+      <div style={{
+        display: 'flex', alignItems: 'center', gap: 8,
+        padding: '8px 12px', borderBottom: '1px solid var(--lbb-border)', flexShrink: 0,
+      }}>
+        <span style={{ fontSize: 12.5, color: 'var(--lbb-fg2)', fontWeight: 600 }}>
+          {filtered.length.toLocaleString()} torrent{filtered.length !== 1 ? 's' : ''}
+        </span>
+        <div style={{ flex: 1 }} />
+        <Input
+          icon="filter"
+          placeholder="Filter…"
+          size="sm"
+          value={search}
+          onChange={e => onSearch(e.target.value)}
+          style={{ width: 220 }}
+        />
+      </div>
+      <div style={{ flex: 1, overflow: 'auto', minHeight: 0 }}>
+        <TableShell stickyHeader>
+          <colgroup>
+            <col style={{ width: 3 }} />
+            <col style={{ width: 100 }} />
+            <col style={{ width: 110 }} />
+            <col style={{ width: 220 }} />
+            <col />
+            <col style={{ width: 110 }} />
+            <col style={{ width: 160 }} />
+          </colgroup>
+          <thead>
+            <tr>
+              <TH />
+              <TH>Created</TH>
+              <TH>LB#</TH>
+              <TH>Show date · Location</TH>
+              <TH>Filename</TH>
+              <TH align="center">Status</TH>
+              <TH>Actions</TH>
+            </tr>
+          </thead>
+          <tbody>
+            {filtered.map(r => (
+              <TR key={r.id}>
+                <TD />
+                <TD mono dim>{r.created_at || '—'}</TD>
+                <TD mono style={{ color: 'var(--lbb-accent-mid)', fontWeight: 600 }}>{r.lbStr}</TD>
+                <TD dim>{[r.date_str, r.location].filter(Boolean).join(' · ') || '—'}</TD>
+                <TD mono>{r.filename || '—'}</TD>
+                <TD align="center">
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 4, justifyContent: 'center' }}>
+                    <span
+                      title={`Source folder: ${r.source_folder_exists ? 'exists' : r.source_folder ? 'missing' : 'none'}`}
+                      style={{
+                        width: 7, height: 7, borderRadius: '50%', flexShrink: 0,
+                        background: r.source_folder_exists ? 'var(--lbb-ok-fg)' : r.source_folder ? 'var(--lbb-err-fg)' : 'var(--lbb-border2)',
+                      }}
+                    />
+                    <span
+                      title={`Torrent file: ${r.torrent_file_exists ? 'exists' : r.torrent_path ? 'missing' : 'none'}`}
+                      style={{
+                        width: 7, height: 7, borderRadius: '50%', flexShrink: 0,
+                        background: r.torrent_file_exists ? 'var(--lbb-ok-fg)' : r.torrent_path ? 'var(--lbb-err-fg)' : 'var(--lbb-border2)',
+                      }}
+                    />
+                    <Pill tone={r.added_to_qbt ? 'info' : 'mute'} soft>
+                      {r.added_to_qbt ? 'In qBt' : 'Local'}
+                    </Pill>
+                  </div>
+                </TD>
+                <TD>
+                  <div style={{ display: 'flex', gap: 4 }}>
+                    {!r.added_to_qbt && (
+                      <Button variant="ghost" size="sm" onClick={() => handleAddQbt(r)}>
+                        Add qBt
+                      </Button>
+                    )}
+                    <Button variant="ghost" size="sm" onClick={() => onGoToLb(r.lb_number, r.lbStr)}>
+                      Go to LB
+                    </Button>
+                  </div>
+                </TD>
+              </TR>
+            ))}
+          </tbody>
+        </TableShell>
+        {filtered.length === 0 && (
+          <div style={{
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            height: '60%', fontSize: 13, color: 'var(--lbb-fg3)',
+          }}>
+            {records.length === 0 ? 'No torrent records.' : 'No results match the filter.'}
+          </div>
+        )}
+      </div>
+    </div>
   )
 }
 
 // ── Main screen ───────────────────────────────────────────────────────────────
 
 export function ScreenCollection(): React.JSX.Element {
-  const [version, setVersion]         = useState(0)
   const [rows, setRows]               = useState<CollectionRow[]>([])
   const [filter, setFilter]           = useState<FilterKey>('all')
   const [search, setSearch]           = useState('')
@@ -1110,11 +1676,24 @@ export function ScreenCollection(): React.JSX.Element {
   const [confirm, setConfirm]         = useState<{ title: string; body: string; onConfirm: () => void } | null>(null)
   const [addModal, setAddModal]       = useState<{ paths: string[] } | null>(null)
   const [forumModal, setForumModal]   = useState<{ lb: number; subject: string; body: string } | null>(null)
-  const [removeProgress, setRemoveProgress] = useState<{ done: number; total: number } | null>(null)
+  const [removeProgress, setRemoveProgress]   = useState<{ done: number; total: number } | null>(null)
+  const [torrentProgress, setTorrentProgress] = useState<{ done: number; total: number; label: string } | null>(null)
   const [ctxMenu, setCtxMenu]               = useState<CtxMenuState | null>(null)
   const [personalModal, setPersonalModal]   = useState<{ lb: string; lbNumber: number } | null>(null)
   const [personalSaveVer, setPersonalSaveVer] = useState(0)
+  const [scanPreviewModal, setScanPreviewModal] = useState<{ entries: ScanEntry[]; skipped: number } | null>(null)
   const [missingLbRows, setMissingLbRows]   = useState<MissingLbRow[]>([])
+  const [rawForumPosts,   setRawForumPosts]   = useState<GlobalForumPost[]>([])
+  const [rawTorrentRecs,  setRawTorrentRecs]  = useState<GlobalTorrentRecord[]>([])
+  const [duplicateGroups,  setDuplicateGroups]  = useState<DuplicateGroup[]>([])
+  const [dupExpanded,      setDupExpanded]      = useState<Set<string>>(new Set())
+  const [wishEditId,       setWishEditId]       = useState<string | null>(null)
+  const [wishEditPriority, setWishEditPriority] = useState<number>(3)
+  const [wishEditNotes,    setWishEditNotes]    = useState<string>('')
+  const [globalForumSearch,   setGlobalForumSearch]   = useState('')
+  const [globalTorrentSearch, setGlobalTorrentSearch] = useState('')
+  const [sortCol, setSortCol]   = useState<string | null>(null)
+  const [sortDir, setSortDir]   = useState<'asc' | 'desc'>('asc')
 
   const tableParentRef = useRef<HTMLDivElement>(null)
   const yearsDropRef   = useRef<HTMLDivElement>(null)
@@ -1122,119 +1701,144 @@ export function ScreenCollection(): React.JSX.Element {
   const navigate                    = useNavigate()
   const { clearSources, addSource } = useLookupStore()
   const addPendingSpectro            = useSpectrogramStore(s => s.addPending)
-  const refetch    = useCallback(() => setVersion(v => v + 1), [])
+  const queryClient = useQueryClient()
+  const refetch    = useCallback(
+    () => queryClient.invalidateQueries({ queryKey: ['collection-prefetch'] }),
+    [queryClient]
+  )
   const showToast  = useCallback((msg: string, tone: ToastTone) => setToast({ msg, tone }), [])
 
   // ── Data loading ───────────────────────────────────────────────────────────
 
+  const { data: prefetch } = useQuery({
+    queryKey: ['collection-prefetch'],
+    queryFn: () => fetch(`${BASE}/api/collection/prefetch`).then(r => r.json()),
+    staleTime: Infinity,
+  })
+
   useEffect(() => {
+    if (!prefetch) return
+
     const STATUS_MAP: Record<string, CollectionStatus> = {
       public: 'Public', private: 'Private', missing: 'Missing',
     }
 
-    Promise.allSettled([
-      fetch(`${BASE}/api/collection`).then(r => r.json()),
-      fetch(`${BASE}/api/fingerprint/lb_numbers`).then(r => r.json()),
-      fetch(`${BASE}/api/wishlist`).then(r => r.json()),
-      fetch(`${BASE}/api/collection/duplicates`).then(r => r.json()),
-      fetch(`${BASE}/api/forum_posts`).then(r => r.json()),
-      fetch(`${BASE}/api/torrents`).then(r => r.json()),
-      fetch(`${BASE}/api/checksums/xref_lb_numbers`).then(r => r.json()),
-      fetch(`${BASE}/api/search/years`).then(r => r.json()),
-    ]).then(([collRes, fpRes, wlRes, dupRes, forumRes, torrentRes, xrefRes, yearsRes]) => {
+    if (Array.isArray(prefetch.years)) {
+      setYears((prefetch.years as number[]).sort((a, b) => b - a))
+    }
 
-      if (yearsRes.status === 'fulfilled' && Array.isArray(yearsRes.value)) {
-        setYears((yearsRes.value as number[]).sort((a, b) => b - a))
-      }
+    const xrefSetLocal = new Set<number>(
+      Array.isArray(prefetch.xref_lb_numbers) ? (prefetch.xref_lb_numbers as number[]) : []
+    )
 
-      const xrefSetLocal = new Set<number>(
-        xrefRes.status === 'fulfilled' && Array.isArray(xrefRes.value)
-          ? (xrefRes.value as number[])
-          : []
-      )
+    if (!Array.isArray(prefetch.collection)) {
+      setRows(SAMPLE_DATA)
+      return
+    }
 
-      if (collRes.status === 'rejected' || !Array.isArray(collRes.value)) {
-        setRows(SAMPLE_DATA)
-        return
-      }
+    const fpMap: Record<string, number> =
+      prefetch.fingerprints && !prefetch.fingerprints.error ? prefetch.fingerprints : {}
 
-      const fpMap: Record<string, number> =
-        fpRes.status === 'fulfilled' && fpRes.value && !fpRes.value.error
-          ? fpRes.value : {}
+    const wishlistMap = new Map<number, { priority: number | null; notes: string; added_at: string }>(
+      Array.isArray(prefetch.wishlist)
+        ? prefetch.wishlist.map((w: any) => [
+            w.lb_number as number,
+            { priority: w.priority ?? null, notes: w.notes ?? '', added_at: (w.added_at ?? '').slice(0, 10) },
+          ])
+        : []
+    )
+    const wishlistSet = new Set<number>(wishlistMap.keys())
 
-      const wishlistSet = new Set<number>(
-        wlRes.status === 'fulfilled' && Array.isArray(wlRes.value)
-          ? wlRes.value.map((w: any) => w.lb_number as number)
-          : []
-      )
-
-      const dupSet = new Set<number>()
-      if (dupRes.status === 'fulfilled' && Array.isArray(dupRes.value)) {
-        for (const group of dupRes.value) {
-          if (Array.isArray(group.owned) && group.owned.length > 1) {
-            for (const o of group.owned) dupSet.add(o.lb_number as number)
-          }
+    const dupSet = new Set<number>()
+    if (Array.isArray(prefetch.duplicates)) {
+      for (const group of prefetch.duplicates) {
+        if (Array.isArray(group.owned) && group.owned.length > 1) {
+          for (const o of group.owned) dupSet.add(o.lb_number as number)
         }
       }
+    }
 
-      const forumByLb: Record<number, any[]> = {}
-      if (forumRes.status === 'fulfilled' && Array.isArray(forumRes.value)) {
-        for (const p of forumRes.value) {
-          ;(forumByLb[p.lb_number] ??= []).push(p)
-        }
+    const forumByLb: Record<number, any[]> = {}
+    if (Array.isArray(prefetch.forum_posts)) {
+      for (const p of prefetch.forum_posts) {
+        ;(forumByLb[p.lb_number] ??= []).push(p)
       }
+    }
 
-      const torrentByLb: Record<number, any[]> = {}
-      if (torrentRes.status === 'fulfilled' && Array.isArray(torrentRes.value)) {
-        for (const t of torrentRes.value) {
-          ;(torrentByLb[t.lb_number] ??= []).push(t)
-        }
+    const torrentByLb: Record<number, any[]> = {}
+    if (Array.isArray(prefetch.torrents)) {
+      for (const t of prefetch.torrents) {
+        ;(torrentByLb[t.lb_number] ??= []).push(t)
       }
+      setRawTorrentRecs((prefetch.torrents as any[]).map((t: any) => ({
+        id: t.id,
+        lb_number: t.lb_number,
+        lbStr: `LB-${String(t.lb_number).padStart(5, '0')}`,
+        filename: t.torrent_path ? (t.torrent_path as string).split('/').pop() ?? '' : '',
+        source_folder: t.source_folder ?? '',
+        torrent_path: t.torrent_path ?? '',
+        created_at: (t.created_at ?? '').slice(0, 10),
+        added_to_qbt: !!t.added_to_qbt,
+        source_folder_exists: !!t.source_folder_exists,
+        torrent_file_exists: !!t.torrent_file_exists,
+        date_str: t.date_str ?? '',
+        location: t.location ?? '',
+      })))
+    }
 
-      const merged: CollectionRow[] = (collRes.value as any[]).map((c: any) => {
-        const lb: number = c.lb_number
-        return {
-          lbNumber:    `LB-${String(lb).padStart(5, '0')}`,
-          lbNumberInt: lb,
-          status:      STATUS_MAP[c.lb_status] ?? 'New',
-          date:        c.date_str ?? '',
-          location:    c.location ?? '',
-          folder:      c.folder_name ?? '',
-          diskPath:    c.disk_path ?? '',
-          confirmed:   c.confirmed_at ?? '',
-          fingerprinted: (fpMap[String(lb)] ?? 0) > 0,
-          title:       c.description ?? '',
-          discs:       parseInt(c.cdr ?? '0') || 0,
-          size:        '',
-          rating:      c.rating ?? '',
-          wishlist:    wishlistSet.has(lb),
-          isDuplicate: dupSet.has(lb),
-          isXref:      xrefSetLocal.has(lb),
-          historyTorrents: (torrentByLb[lb] ?? []).map((t: any) => ({
-            date:     (t.created_at ?? '').slice(0, 10),
-            filename: t.torrent_path ? (t.torrent_path as string).split('/').pop() ?? '' : '',
-            kind:     t.added_to_qbt ? 'In qBt' : 'Local',
-          })),
-          historyForum: (forumByLb[lb] ?? []).map((p: any) => ({
-            date:     (p.posted_at ?? '').slice(0, 10),
-            filename: p.subject ?? '',
-            kind:     'Local',
-          })),
-        }
-      })
+    if (Array.isArray(prefetch.forum_posts)) {
+      setRawForumPosts((prefetch.forum_posts as any[]).map((p: any) => ({
+        id: p.id,
+        lb_number: p.lb_number,
+        lbStr: `LB-${String(p.lb_number).padStart(5, '0')}`,
+        subject: p.subject ?? '',
+        topic_url: p.topic_url ?? '',
+        posted_at: (p.posted_at ?? '').slice(0, 10),
+        date_str: p.date_str ?? '',
+        location: p.location ?? '',
+      })))
+    }
 
-      setRows(merged)
-    }).catch(() => setRows(SAMPLE_DATA))
-  }, [version])
+    const merged: CollectionRow[] = (prefetch.collection as any[]).map((c: any) => {
+      const lb: number = c.lb_number
+      return {
+        lbNumber:    `LB-${String(lb).padStart(5, '0')}`,
+        lbNumberInt: lb,
+        status:      STATUS_MAP[c.lb_status] ?? 'New',
+        date:        c.date_str ?? '',
+        location:    c.location ?? '',
+        folder:      c.folder_name ?? '',
+        diskPath:    c.disk_path ?? '',
+        notes:       c.notes ?? '',
+        confirmed:   c.confirmed_at ?? '',
+        fingerprinted: (fpMap[String(lb)] ?? 0) > 0,
+        title:       c.description ?? '',
+        discs:       parseInt(c.cdr ?? '0') || 0,
+        size:        '',
+        rating:           c.rating ?? '',
+        wishlist:         wishlistSet.has(lb),
+        wishlistPriority: wishlistMap.get(lb)?.priority ?? null,
+        wishlistNotes:    wishlistMap.get(lb)?.notes ?? '',
+        wishlistAddedAt:  wishlistMap.get(lb)?.added_at ?? '',
+        isDuplicate: dupSet.has(lb),
+        isXref:      xrefSetLocal.has(lb),
+        historyTorrents: (torrentByLb[lb] ?? []).map((t: any) => ({
+          date:     (t.created_at ?? '').slice(0, 10),
+          filename: t.torrent_path ? (t.torrent_path as string).split('/').pop() ?? '' : '',
+          kind:     t.added_to_qbt ? 'In qBt' : 'Local',
+        })),
+        historyForum: (forumByLb[lb] ?? []).map((p: any) => ({
+          date:     (p.posted_at ?? '').slice(0, 10),
+          filename: p.subject ?? '',
+          kind:     'Local',
+        })),
+      }
+    })
 
-  // ── Load un-owned (not-in-collection) LBs ─────────────────────────────────
-
-  useEffect(() => {
-    fetch(`${BASE}/api/collection/missing`)
-      .then(r => r.json())
-      .then((data: MissingLbRow[]) => setMissingLbRows(Array.isArray(data) ? data : []))
-      .catch(() => {})
-  }, [version])
+    setRows(merged)
+    setMissingLbRows(Array.isArray(prefetch.missing) ? prefetch.missing : [])
+    setDuplicateGroups(Array.isArray(prefetch.duplicates) ? prefetch.duplicates : [])
+  }, [prefetch])
 
   // ── Close year dropdown on outside click ───────────────────────────────────
 
@@ -1260,7 +1864,9 @@ export function ScreenCollection(): React.JSX.Element {
     torrent:     rows.filter(r => r.historyTorrents.length > 0).length,
     unconfirmed: rows.filter(r => !r.confirmed).length,
     nofp:        rows.filter(r => !r.fingerprinted).length,
-    not_owned:   missingLbRows.length,
+    not_owned:      missingLbRows.length,
+    forum_global:   rawForumPosts.length,
+    torrent_global: rawTorrentRecs.length,
   }
 
   const confirmedCount     = rows.filter(r => r.confirmed).length
@@ -1295,8 +1901,36 @@ export function ScreenCollection(): React.JSX.Element {
 
   const selectedRow = selectedId ? (filteredRows.find(r => r.lbNumber === selectedId) ?? null) : null
 
+  const handleSort = useCallback((col: string) => {
+    setSortCol(prev => {
+      if (prev === col) { setSortDir(d => d === 'asc' ? 'desc' : 'asc'); return col }
+      setSortDir('asc')
+      return col
+    })
+  }, [])
+
+  const sortedFilteredRows = React.useMemo(() => {
+    if (!sortCol) return filteredRows
+    return [...filteredRows].sort((a, b) => {
+      let va: string | number = ''
+      let vb: string | number = ''
+      if (sortCol === 'lb')        { va = a.lbNumberInt;  vb = b.lbNumberInt }
+      else if (sortCol === 'status')    { va = a.status;       vb = b.status }
+      else if (sortCol === 'date')      { va = a.date;         vb = b.date }
+      else if (sortCol === 'location')  { va = a.location;     vb = b.location }
+      else if (sortCol === 'folder')    { va = a.folder;       vb = b.folder }
+      else if (sortCol === 'diskPath')  { va = a.diskPath;     vb = b.diskPath }
+      else if (sortCol === 'confirmed') { va = a.confirmed;    vb = b.confirmed }
+      else if (sortCol === 'fp')        { va = a.fingerprinted ? 1 : 0; vb = b.fingerprinted ? 1 : 0 }
+      const cmp = typeof va === 'number'
+        ? va - (vb as number)
+        : String(va).localeCompare(String(vb))
+      return sortDir === 'asc' ? cmp : -cmp
+    })
+  }, [filteredRows, sortCol, sortDir])
+
   const virtualizer = useVirtualizer({
-    count: filteredRows.length,
+    count: sortedFilteredRows.length,
     getScrollElement: () => tableParentRef.current,
     estimateSize: () => 36,
     overscan: 12,
@@ -1361,7 +1995,9 @@ export function ScreenCollection(): React.JSX.Element {
     const targets = getTargetRows().filter(r => r.diskPath)
     if (!targets.length) { showToast('Select rows with a disk path first', 'info'); return }
     let ok = 0; let fail = 0
-    for (const r of targets) {
+    setTorrentProgress({ done: 0, total: targets.length, label: 'Creating torrents' })
+    for (let i = 0; i < targets.length; i++) {
+      const r = targets[i]
       try {
         const resp = await fetch(`${BASE}/api/torrent/create`, {
           method: 'POST',
@@ -1371,7 +2007,9 @@ export function ScreenCollection(): React.JSX.Element {
         const data = await resp.json()
         if (data.ok) ok++; else fail++
       } catch { fail++ }
+      setTorrentProgress({ done: i + 1, total: targets.length, label: 'Creating torrents' })
     }
+    setTorrentProgress(null)
     showToast(
       `${ok} torrent${ok !== 1 ? 's' : ''} created${fail > 0 ? `, ${fail} failed` : ''}`,
       ok > 0 ? 'ok' : 'bad'
@@ -1382,6 +2020,7 @@ export function ScreenCollection(): React.JSX.Element {
   const handleBatchAddToQbt = async () => {
     const lbs = getTargetRows().map(r => r.lbNumberInt)
     if (!lbs.length) { showToast('Select rows first', 'info'); return }
+    setTorrentProgress({ done: 0, total: lbs.length, label: 'Sending to qBittorrent' })
     try {
       const resp = await fetch(`${BASE}/api/qbt/add`, {
         method: 'POST',
@@ -1389,11 +2028,16 @@ export function ScreenCollection(): React.JSX.Element {
         body: JSON.stringify({ lb_numbers: lbs }),
       })
       const data = await resp.json()
+      setTorrentProgress({ done: lbs.length, total: lbs.length, label: 'Sending to qBittorrent' })
       showToast(
         `Added ${data.added ?? 0}/${data.total ?? lbs.length} to qBittorrent`,
         data.ok ? 'ok' : 'bad'
       )
-    } catch { showToast('qBittorrent request failed', 'bad') }
+    } catch {
+      showToast('qBittorrent request failed', 'bad')
+    } finally {
+      setTorrentProgress(null)
+    }
   }
 
   const handleReveal = useCallback(async (diskPath: string) => {
@@ -1436,43 +2080,108 @@ export function ScreenCollection(): React.JSX.Element {
     setAddModal({ paths })
   }
 
-  const handleScanDir = async () => {
+  const _runScanLb = async (recursive: boolean) => {
     const dir = await window.api.pickDir()
     if (!dir) return
     try {
-      const resp = await fetch(`${BASE}/api/pipeline/scan-tree`, {
+      const resp = await fetch(`${BASE}/api/pipeline/scan-dir`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ root: dir }),
+        body: JSON.stringify({ root: dir, recursive }),
       })
-      const data = await resp.json() as { folders?: string[]; error?: string }
-      if (data.folders?.length) {
-        setAddModal({ paths: data.folders })
+      const data = await resp.json() as { entries?: ScanEntry[]; skipped?: number; error?: string }
+      if (data.entries?.length) {
+        setScanPreviewModal({ entries: data.entries, skipped: data.skipped ?? 0 })
       } else {
-        showToast('No audio folders found in that directory', 'info')
+        const skippedMsg = (data.skipped ?? 0) > 0 ? ` (${data.skipped} folders skipped — no LB#)` : ''
+        showToast(`No LB-numbered folders found${skippedMsg}`, 'info')
       }
     } catch { showToast('Scan failed', 'bad') }
   }
 
+  const handleScanDir  = () => _runScanLb(false)
+  const handleScanTree = () => _runScanLb(true)
+
   const handleUpdateLocation = async () => {
     const targets = getTargetRows()
-    if (targets.length !== 1) {
-      showToast(targets.length === 0 ? 'Select a row first' : 'Select exactly one row to update', 'info')
-      return
+    if (!targets.length) { showToast('Select rows first', 'info'); return }
+
+    if (targets.length === 1) {
+      // Single-row: pick the exact folder, validate name
+      const target = targets[0]
+      const dir = await window.api.pickDir()
+      if (!dir) return
+      const folderName = dir.replace(/\/+$/, '').split('/').pop() || dir
+      // Cross-check folder name against standard
+      try {
+        const stdResp = await fetch(`${BASE}/api/folder_naming/standard/${target.lbNumberInt}`)
+        if (stdResp.ok) {
+          const stdData = await stdResp.json()
+          const stdName: string = stdData.standard_name ?? ''
+          if (stdName && folderName !== stdName) {
+            showToast(`Name mismatch — expected: ${stdName}`, 'info')
+          }
+        }
+      } catch { /* non-blocking */ }
+      try {
+        await fetch(`${BASE}/api/collection/${target.lbNumberInt}`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ disk_path: dir, folder_name: folderName }),
+        })
+        showToast(`Updated location for ${target.lbNumber}`, 'ok')
+        refetch()
+      } catch { showToast('Update failed', 'bad') }
+    } else {
+      // Multi-row: pick a parent dir and scan for LB-XXXXX subfolders
+      const parentDir = await window.api.pickDir()
+      if (!parentDir) return
+      let ok = 0; let skip = 0
+      setTorrentProgress({ done: 0, total: targets.length, label: 'Updating locations' })
+      for (let i = 0; i < targets.length; i++) {
+        const t = targets[i]
+        // Ask backend to find matching subfolder
+        try {
+          const scanResp = await fetch(`${BASE}/api/pipeline/scan-dir`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ root: parentDir, recursive: false }),
+          })
+          const scanData = await scanResp.json()
+          const entries: { lb_number: number; folder: string; path: string }[] = scanData.entries ?? []
+          const match = entries.find(e => e.lb_number === t.lbNumberInt)
+          if (match) {
+            // Validate folder name
+            try {
+              const stdResp = await fetch(`${BASE}/api/folder_naming/standard/${t.lbNumberInt}`)
+              if (stdResp.ok) {
+                const stdData = await stdResp.json()
+                const stdName: string = stdData.standard_name ?? ''
+                const actualName = match.folder
+                if (stdName && actualName !== stdName) {
+                  showToast(`${t.lbNumber}: name mismatch — expected ${stdName}`, 'info')
+                }
+              }
+            } catch { /* non-blocking */ }
+            await fetch(`${BASE}/api/collection/${t.lbNumberInt}`, {
+              method: 'PATCH',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ disk_path: match.path, folder_name: match.folder }),
+            })
+            ok++
+          } else {
+            skip++
+          }
+        } catch { skip++ }
+        setTorrentProgress({ done: i + 1, total: targets.length, label: 'Updating locations' })
+      }
+      setTorrentProgress(null)
+      showToast(
+        `Updated ${ok}${skip > 0 ? `, ${skip} not found` : ''}`,
+        ok > 0 ? 'ok' : 'info'
+      )
+      if (ok > 0) refetch()
     }
-    const target = targets[0]
-    const dir = await window.api.pickDir()
-    if (!dir) return
-    const folderName = dir.replace(/\/+$/, '').split('/').pop() || dir
-    try {
-      await fetch(`${BASE}/api/collection/${target.lbNumberInt}`, {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ disk_path: dir, folder_name: folderName }),
-      })
-      showToast('Location updated', 'ok')
-      refetch()
-    } catch { showToast('Update failed', 'bad') }
   }
 
   const handleRegenTorrent = useCallback(async (lb: number, diskPath: string) => {
@@ -1523,6 +2232,18 @@ export function ScreenCollection(): React.JSX.Element {
       showToast('Wishlist update failed', 'bad')
     }
   }, [showToast, refetch])
+
+  const handleWishlistUpdate = useCallback(async (lb: number, priority: number, notes: string) => {
+    try {
+      await fetch(`${BASE}/api/wishlist/${lb}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ priority, notes }),
+      })
+      refetch()
+      setWishEditId(null)
+    } catch { showToast('Wishlist update failed', 'bad') }
+  }, [refetch, showToast])
 
   // ── Context menu handlers ──────────────────────────────────────────────────
 
@@ -1675,6 +2396,8 @@ export function ScreenCollection(): React.JSX.Element {
         <Chip active={filter === 'duplicates'} onClick={() => setFilter('duplicates')} count={counts.duplicates}>Duplicates</Chip>
         <Chip active={filter === 'forum'}      onClick={() => setFilter('forum')}      count={counts.forum}>Forum history</Chip>
         <Chip active={filter === 'torrent'}    onClick={() => setFilter('torrent')}    count={counts.torrent}>Torrent history</Chip>
+        <Chip active={filter === 'forum_global'}   onClick={() => setFilter('forum_global')}   count={counts.forum_global}>All forum posts</Chip>
+        <Chip active={filter === 'torrent_global'} onClick={() => setFilter('torrent_global')} count={counts.torrent_global}>All torrents</Chip>
         {sep}
         <Chip active={filter === 'unconfirmed'} onClick={() => setFilter('unconfirmed')} count={counts.unconfirmed}>Unconfirmed</Chip>
         <Chip active={filter === 'nofp'}        onClick={() => setFilter('nofp')}        count={counts.nofp}>No fingerprint</Chip>
@@ -1750,7 +2473,7 @@ export function ScreenCollection(): React.JSX.Element {
         <Button variant="secondary" size="sm" icon="search" onClick={handleScanDir}>
           Scan directory
         </Button>
-        <Button variant="secondary" size="sm" icon="folder" onClick={handleScanDir}>
+        <Button variant="secondary" size="sm" icon="folder" onClick={handleScanTree}>
           Scan tree…
         </Button>
         {sep}
@@ -1782,11 +2505,28 @@ export function ScreenCollection(): React.JSX.Element {
         </div>
       )}
 
+      {/* ── Batch-torrent progress bar ────────────────────────────────────────── */}
+      {torrentProgress && (
+        <div style={{ padding: '6px 16px', borderBottom: '1px solid var(--lbb-border)', background: 'var(--lbb-surface2)' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 11.5, color: 'var(--lbb-fg2)' }}>
+            <span>{torrentProgress.label}: {torrentProgress.done} / {torrentProgress.total}…</span>
+            <div style={{ flex: 1, height: 4, borderRadius: 2, background: 'var(--lbb-border)', overflow: 'hidden' }}>
+              <div style={{
+                height: '100%', borderRadius: 2,
+                background: 'var(--lbb-ok-bar)',
+                width: `${Math.round((torrentProgress.done / torrentProgress.total) * 100)}%`,
+                transition: 'width 0.15s',
+              }} />
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* ── Main content: table + detail panel ───────────────────────────────── */}
       <div style={{
         flex: 1, minHeight: 0,
         display: 'grid',
-        gridTemplateColumns: filter === 'not_owned' ? '1fr' : (selectedRow ? '1fr 360px' : '1fr'),
+        gridTemplateColumns: (filter === 'not_owned' || filter === 'forum_global' || filter === 'torrent_global') ? '1fr' : (selectedRow ? '1fr 360px' : '1fr'),
       }}>
 
         {/* Not-in-collection table */}
@@ -1850,8 +2590,266 @@ export function ScreenCollection(): React.JSX.Element {
           </div>
         )}
 
+        {/* Global Forum History */}
+        {filter === 'forum_global' && (
+          <GlobalForumPanel
+            posts={rawForumPosts}
+            search={globalForumSearch}
+            onSearch={setGlobalForumSearch}
+            onOpen={url => window.open(url, '_blank')}
+            onDelete={async postId => {
+              try {
+                const resp = await fetch(`${BASE}/api/forum_post/${postId}`, { method: 'DELETE' })
+                const data = await resp.json()
+                showToast(data.ok ? 'Record removed' : (data.error || 'Delete failed'), data.ok ? 'ok' : 'bad')
+                if (data.ok) refetch()
+              } catch { showToast('Delete failed', 'bad') }
+            }}
+            onGoToLb={(lb, lbStr) => {
+              setFilter('all')
+              setSearch(lbStr)
+              setSelectedId(lbStr)
+            }}
+          />
+        )}
+
+        {/* Global Torrent History */}
+        {filter === 'torrent_global' && (
+          <GlobalTorrentPanel
+            records={rawTorrentRecs}
+            search={globalTorrentSearch}
+            onSearch={setGlobalTorrentSearch}
+            onGoToLb={(lb, lbStr) => {
+              setFilter('all')
+              setSearch(lbStr)
+              setSelectedId(lbStr)
+            }}
+            onToast={showToast}
+            onRefetch={refetch}
+          />
+        )}
+
+        {/* Wishlist table — extra columns + inline edit */}
+        {filter === 'wishlist' && (
+        <div style={{ overflow: 'auto', minHeight: 0 }}>
+          <TableShell stickyHeader>
+            <colgroup>
+              <col style={{ width: 3 }} />
+              <col style={{ width: 100 }} />
+              <col style={{ width: 80 }} />
+              <col style={{ width: 100 }} />
+              <col />
+              <col style={{ width: 60 }} />
+              <col style={{ width: 90 }} />
+              <col style={{ width: 200 }} />
+              <col style={{ width: 80 }} />
+            </colgroup>
+            <thead>
+              <tr>
+                <TH />
+                <TH onClick={() => handleSort('lb')}       sorted={sortCol === 'lb'       ? sortDir : null}>LB#</TH>
+                <TH onClick={() => handleSort('date')}     sorted={sortCol === 'date'     ? sortDir : null}>Date</TH>
+                <TH onClick={() => handleSort('location')} sorted={sortCol === 'location' ? sortDir : null}>Location</TH>
+                <TH>Description</TH>
+                <TH align="center">Rating</TH>
+                <TH>Added</TH>
+                <TH>Notes</TH>
+                <TH align="center">Priority</TH>
+              </tr>
+            </thead>
+            <tbody>
+              {sortedFilteredRows.map(r => {
+                const isEditing = wishEditId === r.lbNumber
+                return (
+                  <TR
+                    key={r.lbNumber}
+                    selected={selectedId === r.lbNumber}
+                    onClick={() => setSelectedId(selectedId === r.lbNumber ? null : r.lbNumber)}
+                    onContextMenu={e => { e.preventDefault(); setCtxMenu({ x: e.clientX, y: e.clientY, row: r }) }}
+                  >
+                    <TD mono style={{ color: 'var(--lbb-accent-mid)', fontWeight: 600 }}>{r.lbNumber}</TD>
+                    <TD mono>{r.date || '—'}</TD>
+                    <TD>{r.location || '—'}</TD>
+                    <TD dim>{r.title || '—'}</TD>
+                    <TD align="center" mono>{r.rating || '—'}</TD>
+                    <TD mono dim>{r.wishlistAddedAt || '—'}</TD>
+                    <TD>
+                      {isEditing ? (
+                        <input
+                          autoFocus
+                          value={wishEditNotes}
+                          onChange={e => setWishEditNotes(e.target.value)}
+                          onBlur={() => handleWishlistUpdate(r.lbNumberInt, wishEditPriority, wishEditNotes)}
+                          onKeyDown={e => {
+                            if (e.key === 'Enter') handleWishlistUpdate(r.lbNumberInt, wishEditPriority, wishEditNotes)
+                            if (e.key === 'Escape') setWishEditId(null)
+                          }}
+                          style={{
+                            width: '100%', background: 'var(--lbb-input-bg)', color: 'var(--lbb-fg)',
+                            border: '1px solid var(--lbb-accent-mid)', borderRadius: 3, fontSize: 12,
+                            padding: '2px 6px', fontFamily: 'inherit',
+                          }}
+                        />
+                      ) : (
+                        <span
+                          title="Click to edit"
+                          style={{ cursor: 'text', color: r.wishlistNotes ? 'var(--lbb-fg2)' : 'var(--lbb-fg3)' }}
+                          onClick={e => {
+                            e.stopPropagation()
+                            setWishEditId(r.lbNumber)
+                            setWishEditPriority(r.wishlistPriority ?? 3)
+                            setWishEditNotes(r.wishlistNotes)
+                          }}
+                        >
+                          {r.wishlistNotes || '—'}
+                        </span>
+                      )}
+                    </TD>
+                    <TD align="center">
+                      {isEditing ? (
+                        <select
+                          value={wishEditPriority}
+                          onChange={e => setWishEditPriority(Number(e.target.value))}
+                          style={{
+                            background: 'var(--lbb-input-bg)', color: 'var(--lbb-fg)',
+                            border: '1px solid var(--lbb-border)', borderRadius: 3, fontSize: 12,
+                          }}
+                        >
+                          {[1,2,3,4,5].map(p => <option key={p} value={p}>{p}</option>)}
+                        </select>
+                      ) : (
+                        <span
+                          style={{ cursor: 'pointer' }}
+                          onClick={e => {
+                            e.stopPropagation()
+                            setWishEditId(r.lbNumber)
+                            setWishEditPriority(r.wishlistPriority ?? 3)
+                            setWishEditNotes(r.wishlistNotes)
+                          }}
+                        >
+                          <Pill
+                            tone={r.wishlistPriority != null && r.wishlistPriority >= 4 ? 'ok' : r.wishlistPriority === 1 ? 'mute' : 'info'}
+                            soft
+                          >
+                            {r.wishlistPriority ?? 3}
+                          </Pill>
+                        </span>
+                      )}
+                    </TD>
+                  </TR>
+                )
+              })}
+            </tbody>
+          </TableShell>
+          {sortedFilteredRows.length === 0 && (
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '60%', fontSize: 13, color: 'var(--lbb-fg3)' }}>
+              No wishlist entries.
+            </div>
+          )}
+        </div>
+        )}
+
+        {/* Duplicates grouped tree */}
+        {filter === 'duplicates' && (
+        <div style={{ overflow: 'auto', minHeight: 0 }}>
+          {duplicateGroups.length === 0 ? (
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '60%', fontSize: 13, color: 'var(--lbb-fg3)' }}>
+              No duplicate entries.
+            </div>
+          ) : (
+            <TableShell stickyHeader>
+              <colgroup>
+                <col style={{ width: 3 }} />
+                <col style={{ width: 100 }} />
+                <col style={{ width: 70 }} />
+                <col style={{ width: 50 }} />
+                <col />
+                <col style={{ width: 160 }} />
+              </colgroup>
+              <thead>
+                <tr>
+                  <TH />
+                  <TH>LB#</TH>
+                  <TH>Owned</TH>
+                  <TH align="center">Rating</TH>
+                  <TH>Description</TH>
+                  <TH>Actions</TH>
+                </tr>
+              </thead>
+              <tbody>
+                {duplicateGroups.map(g => {
+                  const key = `${g.date_str}::${g.location}`
+                  const isOpen = !dupExpanded.has(key)
+                  return (
+                    <React.Fragment key={key}>
+                      <GroupRow
+                        label={`${g.date_str} · ${g.location}`}
+                        count={g.owned.length}
+                        expanded={isOpen}
+                        onToggle={() => setDupExpanded(prev => {
+                          const next = new Set(prev)
+                          if (next.has(key)) next.delete(key); else next.add(key)
+                          return next
+                        })}
+                        colSpan={5}
+                      />
+                      {isOpen && g.owned.map(o => {
+                        const lbStr = `LB-${String(o.lb_number).padStart(5, '0')}`
+                        const collRow = rows.find(r => r.lbNumberInt === o.lb_number)
+                        return (
+                          <TR
+                            key={o.lb_number}
+                            selected={selectedId === lbStr}
+                            onClick={() => setSelectedId(selectedId === lbStr ? null : lbStr)}
+                          >
+                            <TD mono style={{ color: 'var(--lbb-accent-mid)', fontWeight: 600 }}>{lbStr}</TD>
+                            <TD>
+                              <Pill tone="ok" soft dot>Owned</Pill>
+                            </TD>
+                            <TD align="center" mono>{o.rating || '—'}</TD>
+                            <TD dim>{o.description || '—'}</TD>
+                            <TD>
+                              <div style={{ display: 'flex', gap: 4 }}>
+                                <Button variant="ghost" size="sm" onClick={() => {
+                                  clearSources(); addSource({ label: lbStr, lbNumber: o.lb_number }); navigate('/lookup')
+                                }}>
+                                  LosslessBob
+                                </Button>
+                                {collRow?.diskPath && (
+                                  <Button variant="ghost" size="sm" onClick={() => window.api.openPath(collRow.diskPath)}>
+                                    Open
+                                  </Button>
+                                )}
+                                <Button variant="danger" size="sm" onClick={() => {
+                                  setConfirm({
+                                    title: `Remove ${lbStr}?`,
+                                    body: 'Remove from your collection? Files on disk will not be deleted.',
+                                    onConfirm: async () => {
+                                      setConfirm(null)
+                                      await fetch(`${BASE}/api/collection/${o.lb_number}`, { method: 'DELETE' })
+                                      showToast(`Removed ${lbStr}`, 'ok')
+                                      refetch()
+                                    },
+                                  })
+                                }}>
+                                  Remove
+                                </Button>
+                              </div>
+                            </TD>
+                          </TR>
+                        )
+                      })}
+                    </React.Fragment>
+                  )
+                })}
+              </tbody>
+            </TableShell>
+          )}
+        </div>
+        )}
+
         {/* Owned-collection Table */}
-        {filter !== 'not_owned' && (
+        {filter !== 'not_owned' && filter !== 'forum_global' && filter !== 'torrent_global' && filter !== 'wishlist' && filter !== 'duplicates' && (
         <div ref={tableParentRef} style={{ overflow: 'auto', minHeight: 0, position: 'relative' }}>
           <TableShell stickyHeader>
             <colgroup>
@@ -1861,9 +2859,10 @@ export function ScreenCollection(): React.JSX.Element {
               <col style={{ width: 90 }} />
               <col style={{ width: 100 }} />
               <col />
-              <col style={{ width: 240 }} />
-              <col style={{ width: 200 }} />
+              <col style={{ width: 220 }} />
+              <col style={{ width: 180 }} />
               <col style={{ width: 160 }} />
+              <col style={{ width: 120 }} />
               <col style={{ width: 40 }} />
             </colgroup>
             <thead>
@@ -1876,14 +2875,15 @@ export function ScreenCollection(): React.JSX.Element {
                     onChange={toggleAll}
                   />
                 </TH>
-                <TH>LB#</TH>
-                <TH>Status</TH>
-                <TH>Date</TH>
-                <TH>Location</TH>
-                <TH>Folder</TH>
-                <TH>Disk path</TH>
-                <TH>Confirmed</TH>
-                <TH align="center">FP</TH>
+                <TH onClick={() => handleSort('lb')}        sorted={sortCol === 'lb'        ? sortDir : null}>LB#</TH>
+                <TH onClick={() => handleSort('status')}    sorted={sortCol === 'status'    ? sortDir : null}>Status</TH>
+                <TH onClick={() => handleSort('date')}      sorted={sortCol === 'date'      ? sortDir : null}>Date</TH>
+                <TH onClick={() => handleSort('location')}  sorted={sortCol === 'location'  ? sortDir : null}>Location</TH>
+                <TH onClick={() => handleSort('folder')}    sorted={sortCol === 'folder'    ? sortDir : null}>Folder</TH>
+                <TH onClick={() => handleSort('diskPath')}  sorted={sortCol === 'diskPath'  ? sortDir : null}>Disk path</TH>
+                <TH>Notes</TH>
+                <TH onClick={() => handleSort('confirmed')} sorted={sortCol === 'confirmed' ? sortDir : null}>Confirmed</TH>
+                <TH align="center" onClick={() => handleSort('fp')} sorted={sortCol === 'fp' ? sortDir : null}>FP</TH>
               </tr>
             </thead>
             <tbody>
@@ -1896,10 +2896,10 @@ export function ScreenCollection(): React.JSX.Element {
                 return (
                   <>
                     {padTop > 0 && (
-                      <tr><td colSpan={10} style={{ height: padTop, padding: 0, border: 0 }} /></tr>
+                      <tr><td colSpan={11} style={{ height: padTop, padding: 0, border: 0 }} /></tr>
                     )}
                     {items.map(vItem => {
-                      const r = filteredRows[vItem.index]
+                      const r = sortedFilteredRows[vItem.index]
                       if (!r) return null
                       const isSelected = selectedId === r.lbNumber
                       const isChecked  = checkedIds.has(r.lbNumber)
@@ -1930,6 +2930,7 @@ export function ScreenCollection(): React.JSX.Element {
                           <TD>{r.location}</TD>
                           <TD mono>{r.folder || '—'}</TD>
                           <TD mono dim>{r.diskPath || '—'}</TD>
+                          <TD dim>{r.notes || '—'}</TD>
                           <TD mono dim>{r.confirmed || '—'}</TD>
                           <TD align="center">
                             {r.fingerprinted
@@ -1941,7 +2942,7 @@ export function ScreenCollection(): React.JSX.Element {
                       )
                     })}
                     {padBottom > 0 && (
-                      <tr><td colSpan={10} style={{ height: padBottom, padding: 0, border: 0 }} /></tr>
+                      <tr><td colSpan={11} style={{ height: padBottom, padding: 0, border: 0 }} /></tr>
                     )}
                   </>
                 )
@@ -1972,7 +2973,7 @@ export function ScreenCollection(): React.JSX.Element {
         )}
 
         {/* Detail panel */}
-        {filter !== 'not_owned' && selectedRow && (
+        {filter !== 'not_owned' && filter !== 'forum_global' && filter !== 'torrent_global' && selectedRow && (
           <DetailPanel
             row={selectedRow}
             historyTab={historyTab}
@@ -1986,6 +2987,8 @@ export function ScreenCollection(): React.JSX.Element {
             personalMetaVersion={personalSaveVer}
             onToast={showToast}
             onRefetch={refetch}
+            onSpectrograms={handleCtxSpectrograms}
+            onNavigate={navigate}
           />
         )}
       </div>
@@ -2002,6 +3005,15 @@ export function ScreenCollection(): React.JSX.Element {
           body={confirm.body}
           onConfirm={confirm.onConfirm}
           onCancel={() => setConfirm(null)}
+        />
+      )}
+
+      {scanPreviewModal && (
+        <ScanPreviewModal
+          entries={scanPreviewModal.entries}
+          skipped={scanPreviewModal.skipped}
+          onClose={() => setScanPreviewModal(null)}
+          onAdded={refetch}
         />
       )}
 

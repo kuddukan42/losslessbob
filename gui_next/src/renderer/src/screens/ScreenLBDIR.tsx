@@ -4,6 +4,7 @@ import { Icon } from '../components/Icon'
 import { Button, Input, Pill } from '../components'
 import { TableShell, TH, TR, TD } from '../components'
 import { useLbdirStore, LbdirState, SubTab, CheckFile, CheckResult, RetrieveResult, ReconcileProposal, ReconcileResult, ExtrasResult } from '../lib/lbdirStore'
+import { useFolderQueueStore } from '../lib/folderQueueStore'
 
 const BASE = window.api.flaskBase
 
@@ -72,11 +73,12 @@ export function ScreenLBDIR(): React.JSX.Element {
   const navigate = useNavigate()
 
   const {
-    folders, activeFolder, tab, filter, checkResults, retrieveResults, reconcileResults, extrasResults,
+    activeFolder, tab, filter, checkResults, retrieveResults, reconcileResults, extrasResults,
     reconSelected, extrasSelected,
-    setFolders, setActiveFolder, setTab, setFilter, setCheckResults, updateCheckResult,
+    setActiveFolder, setTab, setFilter, setCheckResults, updateCheckResult,
     setRetrieveResults, setReconcileResults, setExtrasResults, setReconSelected, setExtrasSelected,
   } = useLbdirStore()
+  const { folders, addFolders } = useFolderQueueStore()
   const [busy,  setBusy]  = useState(false)
   const [tools, setTools] = useState<{ shntool_available: boolean } | null>(null)
   const [toast, setToast] = useState<{ msg: string; tone: ToastTone } | null>(null)
@@ -103,10 +105,10 @@ export function ScreenLBDIR(): React.JSX.Element {
   const handleAddFolders = useCallback(async () => {
     const picked = await window.api.pickFolders()
     if (picked.length) {
-      setFolders(prev => [...new Set([...prev, ...picked])])
+      addFolders(picked)
       if (!activeFolder) setActiveFolder(picked[0])
     }
-  }, [activeFolder])
+  }, [activeFolder, addFolders, setActiveFolder])
 
   const handleAddRoot = useCallback(async () => {
     const root = await window.api.pickDir()
@@ -114,7 +116,7 @@ export function ScreenLBDIR(): React.JSX.Element {
     try {
       const data = await post('/api/pipeline/scan-tree', { root }) as { folders: string[] }
       if (data.folders?.length) {
-        setFolders(prev => [...new Set([...prev, ...data.folders])])
+        addFolders(data.folders)
         if (!activeFolder) setActiveFolder(data.folders[0])
         showToast(`Found ${data.folders.length} folders`, 'ok')
       } else {

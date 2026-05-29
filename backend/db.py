@@ -1454,6 +1454,23 @@ def remove_from_wishlist(lb_number: int, db_path=None) -> None:
     )
 
 
+def update_wishlist(lb_number: int, fields: dict, db_path=None) -> None:
+    """Update priority and/or notes on a wishlist entry.
+
+    Args:
+        lb_number: LB number to update.
+        fields: Dict with keys 'priority' (int 1-5) and/or 'notes' (str).
+    """
+    allowed = {"priority", "notes"}
+    updates = {k: v for k, v in fields.items() if k in allowed}
+    if not updates:
+        return
+    set_clause = ", ".join(f"{k}=?" for k in updates)
+    _params = list(updates.values()) + [lb_number]
+    _sql = f"UPDATE my_wishlist SET {set_clause} WHERE lb_number=?"
+    get_write_queue().execute(lambda c: c.execute(_sql, _params))
+
+
 def get_wishlist_lb_numbers(db_path=None) -> list:
     """Return a flat list of lb_numbers currently on the wishlist."""
     with get_connection(db_path) as conn:

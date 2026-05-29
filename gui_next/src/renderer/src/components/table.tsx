@@ -40,22 +40,34 @@ export interface THProps {
   align?: 'left' | 'center' | 'right'
   width?: number | string
   style?: React.CSSProperties
+  onClick?: React.MouseEventHandler<HTMLTableCellElement>
+  sorted?: 'asc' | 'desc' | null
 }
 
-export function TH({ children, align = 'left', width, style }: THProps) {
+export function TH({ children, align = 'left', width, style, onClick, sorted }: THProps) {
   return (
-    <th style={{
-      textAlign: align,
-      padding: '8px var(--lbb-d-pad)',
-      fontWeight: 600, fontSize: 10.5,
-      letterSpacing: '0.04em', textTransform: 'uppercase',
-      color: 'var(--lbb-fg3)',
-      background: 'var(--lbb-surface2)',
-      borderBottom: '1px solid var(--lbb-border2)',
-      whiteSpace: 'nowrap',
-      width,
-      ...style,
-    }}>{children}</th>
+    <th
+      onClick={onClick}
+      style={{
+        textAlign: align,
+        padding: '8px var(--lbb-d-pad)',
+        fontWeight: 600, fontSize: 10.5,
+        letterSpacing: '0.04em', textTransform: 'uppercase',
+        color: sorted ? 'var(--lbb-fg2)' : 'var(--lbb-fg3)',
+        background: 'var(--lbb-surface2)',
+        borderBottom: '1px solid var(--lbb-border2)',
+        whiteSpace: 'nowrap',
+        cursor: onClick ? 'pointer' : 'default',
+        userSelect: onClick ? 'none' : undefined,
+        width,
+        ...style,
+      }}
+    >
+      {children}
+      {sorted === 'asc'  && <span style={{ marginLeft: 4, opacity: 0.7 }}>▲</span>}
+      {sorted === 'desc' && <span style={{ marginLeft: 4, opacity: 0.7 }}>▼</span>}
+      {!sorted && onClick && <span style={{ marginLeft: 4, opacity: 0.25 }}>⇅</span>}
+    </th>
   )
 }
 

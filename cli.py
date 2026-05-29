@@ -493,6 +493,19 @@ def _build_parser(klass=argparse.ArgumentParser) -> argparse.ArgumentParser:
     p_recent = sub.add_parser("recent", help="Show recently scraped entries")
     p_recent.add_argument("n", nargs="?", type=int, default=10, metavar="N")
 
+    p_package = sub.add_parser("package", help="Export a portable data package zip")
+    pkg_sub = p_package.add_subparsers(dest="pkg_action", required=True)
+
+    p_pkg_user = pkg_sub.add_parser("user-data",
+                                     help="Bundle DB + settings into a dated zip")
+    p_pkg_user.add_argument("--out", default=None, metavar="FILE",
+                             help="Copy zip to this path after creation")
+
+    p_pkg_scrape = pkg_sub.add_parser("scrape-data",
+                                       help="Bundle data/site/ into a dated zip")
+    p_pkg_scrape.add_argument("--out", default=None, metavar="FILE",
+                               help="Copy zip to this path after creation")
+
     return parser
 
 
@@ -1032,6 +1045,28 @@ def _execute(args: argparse.Namespace, base_url: str) -> None:
                     print(f"LB-{lb:05d}  {date:<10}  {loc}")
                 else:
                     print(f"LB-{lb:05d}  {date:<12}  {loc}")
+
+    elif args.command == "package":
+        action = args.pkg_action
+        if action == "user-data":
+            r = requests.post(f"{base_url}/api/package/user_data", timeout=120).json()
+        else:
+            r = requests.post(f"{base_url}/api/package/scrape_data", timeout=600).json()
+        if args.json:
+            print(json.dumps(r, indent=2))
+        elif r.get("ok"):
+            path = r.get("path", "?")
+            m = r.get("manifest", {})
+            size = m.get("total_bytes", 0)
+            count = m.get("file_count", 0)
+            if getattr(args, "out", None):
+                shutil.copy2(path, args.out)
+                path = args.out
+            print(f"Package saved ({count} files, {size:,} bytes) → {path}")
+        else:
+            msg = r.get("message") or r.get("error") or r
+            print(f"Error: {msg}", file=sys.stderr)
+            sys.exit(1)
 
 
 # ── Interactive shell ─────────────────────────────────────────────────────────
