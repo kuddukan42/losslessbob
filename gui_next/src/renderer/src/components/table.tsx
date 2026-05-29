@@ -66,16 +66,20 @@ export interface TRProps {
   edge?: StatusTone
   selected?: boolean
   onClick?: React.MouseEventHandler<HTMLTableRowElement>
+  onDoubleClick?: React.MouseEventHandler<HTMLTableRowElement>
+  onContextMenu?: React.MouseEventHandler<HTMLTableRowElement>
   style?: React.CSSProperties
   children?: React.ReactNode
 }
 
-export function TR({ edge, selected, onClick, style, children }: TRProps) {
+export function TR({ edge, selected, onClick, onDoubleClick, onContextMenu, style, children }: TRProps) {
   const wash = edge ? `var(--lbb-${edge}-bg)` : 'transparent'
   const bar  = edge ? `var(--lbb-${edge}-bar)` : 'transparent'
   return (
     <tr
       onClick={onClick}
+      onDoubleClick={onDoubleClick}
+      onContextMenu={onContextMenu}
       data-selected={selected ? 'true' : undefined}
       style={{
         background: selected ? 'var(--lbb-accent-soft)' : wash,

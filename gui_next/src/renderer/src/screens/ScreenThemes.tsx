@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 import {
   Button, Pill, Chip, Icon,
   TableShell, TH, TR, TD,
 } from '../components'
 import {
   applyTheme, loadTheme, saveTheme,
-  type ThemeOptions, type Accent, type Density,
+  type ThemeOptions, type Accent, type Density, type Font, type FontSize,
+  DEFAULT_THEME, FONT_SIZES,
 } from '../lib/tokens'
 
 // ── SetupCard (local, same shape as ScreenSetup) ─────────────────────────────
@@ -50,6 +51,95 @@ function SetupCard({
   )
 }
 
+// ── Toast ─────────────────────────────────────────────────────────────────────
+
+type ToastTone = 'ok' | 'bad' | 'info'
+
+function Toast({ msg, tone, onDone }: { msg: string; tone: ToastTone; onDone: () => void }) {
+  useEffect(() => {
+    const t = setTimeout(onDone, 3000)
+    return () => clearTimeout(t)
+  }, [onDone])
+  const bg = tone === 'ok' ? 'var(--lbb-ok-bg)' : tone === 'bad' ? 'var(--lbb-bad-bg)' : 'var(--lbb-info-bg)'
+  const fg = tone === 'ok' ? 'var(--lbb-ok-fg)' : tone === 'bad' ? 'var(--lbb-bad-fg)' : 'var(--lbb-info-fg)'
+  return (
+    <div style={{
+      position: 'fixed', bottom: 24, right: 24, zIndex: 9999,
+      padding: '10px 16px', borderRadius: 8, background: bg, color: fg,
+      fontSize: 13, fontWeight: 500, boxShadow: 'var(--lbb-shadowLg)',
+      border: '1px solid color-mix(in oklab, currentColor 20%, transparent)',
+    }}>
+      {msg}
+    </div>
+  )
+}
+
+// ── Custom token editor ───────────────────────────────────────────────────────
+
+const CUSTOM_EDITABLE_TOKENS = [
+  { key: '--lbb-bg',       label: 'Background' },
+  { key: '--lbb-surface',  label: 'Surface' },
+  { key: '--lbb-surface2', label: 'Surface 2' },
+  { key: '--lbb-border',   label: 'Border' },
+  { key: '--lbb-fg',       label: 'Foreground' },
+  { key: '--lbb-fg2',      label: 'Foreground 2' },
+  { key: '--lbb-fg3',      label: 'Foreground 3' },
+] as const
+
+function CustomTokenEditor({
+  customTokens,
+  onChange,
+}: {
+  customTokens: Record<string, string>
+  onChange: (next: Record<string, string>) => void
+}) {
+  function getLiveColor(key: string): string {
+    return getComputedStyle(document.documentElement).getPropertyValue(key).trim()
+  }
+
+  return (
+    <div style={{ marginTop: 12, display: 'flex', flexDirection: 'column', gap: 8 }}>
+      {CUSTOM_EDITABLE_TOKENS.map(({ key, label }) => {
+        const override = customTokens[key]
+        const displayVal = override ?? getLiveColor(key)
+        return (
+          <div key={key} style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+            <span style={{ fontSize: 12, color: 'var(--lbb-fg2)', minWidth: 96 }}>{label}</span>
+            <input
+              type="color"
+              value={displayVal.startsWith('#') ? displayVal : '#888888'}
+              onChange={(e) => onChange({ ...customTokens, [key]: e.target.value })}
+              style={{
+                width: 30, height: 22, borderRadius: 4, padding: 1,
+                border: '1px solid var(--lbb-border)', cursor: 'pointer', background: 'none',
+              }}
+            />
+            <span style={{ fontSize: 11, fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-fg3)' }}>
+              {displayVal || '—'}
+            </span>
+            {override && (
+              <button
+                type="button"
+                onClick={() => { const n = { ...customTokens }; delete n[key]; onChange(n) }}
+                style={{ fontSize: 11, color: 'var(--lbb-fg3)', background: 'none', border: 'none', cursor: 'pointer', padding: '0 4px' }}
+              >
+                ↩ reset
+              </button>
+            )}
+          </div>
+        )
+      })}
+      {Object.keys(customTokens).length > 0 && (
+        <div style={{ marginTop: 4 }}>
+          <Button variant="ghost" size="sm" onClick={() => onChange({})}>
+            Reset all custom tokens
+          </Button>
+        </div>
+      )}
+    </div>
+  )
+}
+
 // ── Accent swatch data ────────────────────────────────────────────────────────
 
 const ACCENT_SWATCHES: { k: Accent; c: string }[] = [
@@ -78,6 +168,10 @@ const PREVIEW_BTN_VARIANTS = ['primary', 'secondary', 'ghost', 'danger'] as cons
 
 export function ScreenThemes() {
   const [theme, setTheme] = useState<ThemeOptions>(loadTheme)
+  const [showCustomEditor, setShowCustomEditor] = useState(false)
+  const [toast, setToast] = useState<{ msg: string; tone: ToastTone } | null>(null)
+
+  const showToast = useCallback((msg: string, tone: ToastTone = 'ok') => setToast({ msg, tone }), [])
 
   function setTweak<K extends keyof ThemeOptions>(key: K, value: ThemeOptions[K]) {
     const next = { ...theme, [key]: value }
@@ -86,10 +180,51 @@ export function ScreenThemes() {
     setTheme(next)
   }
 
+  async function handleExportTheme() {
+    const json = JSON.stringify(theme, null, 2)
+    const ok = await window.api.saveFile(json, 'losslessbob-theme.json')
+    if (ok) showToast('Theme exported', 'ok')
+  }
+
+  async function handleImportTheme() {
+    const content = await window.api.pickAndReadFile({
+      title: 'Import theme JSON',
+      filters: [{ name: 'JSON', extensions: ['json'] }],
+    })
+    if (!content) return
+    try {
+      const parsed = JSON.parse(content) as Partial<ThemeOptions>
+      if (typeof parsed !== 'object' || !parsed.mode || !parsed.accent) {
+        showToast('Not a valid theme file', 'bad')
+        return
+      }
+      const imported: ThemeOptions = {
+        mode:         parsed.mode         ?? DEFAULT_THEME.mode,
+        accent:       parsed.accent       ?? DEFAULT_THEME.accent,
+        density:      parsed.density      ?? DEFAULT_THEME.density,
+        font:         parsed.font         ?? DEFAULT_THEME.font,
+        fontSize:     parsed.fontSize     ?? DEFAULT_THEME.fontSize,
+        customTokens: parsed.customTokens ?? {},
+      }
+      applyTheme(imported)
+      saveTheme(imported)
+      setTheme(imported)
+      showToast('Theme imported', 'ok')
+    } catch {
+      showToast('Failed to parse theme file', 'bad')
+    }
+  }
+
   const densityTiles: { k: Density; l: string; n: string; bars: number; barH: number; gap: number }[] = [
     { k: 'comfortable', l: 'Comfortable', n: '~25 rows', bars: 4, barH: 11, gap: 8 },
     { k: 'default',     l: 'Default',     n: '~32 rows', bars: 6, barH:  7, gap: 5 },
     { k: 'compact',     l: 'Compact',     n: '~55 rows', bars: 8, barH:  5, gap: 2 },
+  ]
+
+  const typefaceDefs: { k: Font; l: string; n: string; stack: string }[] = [
+    { k: 'inter',    l: 'Inter',         n: 'system default · clean grotesque', stack: 'Inter, sans-serif' },
+    { k: 'ibm-plex', l: 'IBM Plex Sans', n: 'characterful · designed for data', stack: '"IBM Plex Sans", sans-serif' },
+    { k: 'source',   l: 'Source Sans 3', n: 'warmer humanist · book-text feel',  stack: '"Source Sans 3", sans-serif' },
   ]
 
   return (
@@ -227,46 +362,83 @@ export function ScreenThemes() {
           {/* ── Typeface ── */}
           <SetupCard title="Typeface">
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-              {[
-                { k: 'inter',    l: 'Inter',          n: 'system default · clean grotesque' },
-                { k: 'ibm-plex', l: 'IBM Plex Sans',  n: 'characterful · designed for data' },
-                { k: 'source',   l: 'Source Sans 3',  n: 'warmer humanist · book-text feel' },
-              ].map((f, i) => (
+              {typefaceDefs.map((f) => {
+                const active = (theme.font ?? 'inter') === f.k
+                return (
+                  <button
+                    key={f.k}
+                    type="button"
+                    onClick={() => setTweak('font', f.k)}
+                    style={{
+                      padding: '10px 14px',
+                      borderRadius: 8,
+                      background: 'var(--lbb-surface)',
+                      border: `1px solid ${active ? 'var(--lbb-accent-mid)' : 'var(--lbb-border)'}`,
+                      cursor: 'pointer',
+                      fontFamily: 'inherit',
+                      textAlign: 'left',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 12,
+                      transition: 'border-color 0.15s',
+                    }}
+                  >
+                    <div style={{ flex: 1 }}>
+                      <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--lbb-fg)', fontFamily: f.stack }}>{f.l}</div>
+                      <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)' }}>{f.n}</div>
+                    </div>
+                    {active && <Icon name="check" size={14} style={{ color: 'var(--lbb-accent-mid)', flexShrink: 0 }} />}
+                  </button>
+                )
+              })}
+            </div>
+            <div style={{ marginTop: 12, display: 'flex', alignItems: 'center', gap: 6 }}>
+              <span style={{ fontSize: 12, color: 'var(--lbb-fg3)', marginRight: 4 }}>Size</span>
+              {(FONT_SIZES as FontSize[]).map((sz) => (
                 <button
-                  key={f.k}
+                  key={sz}
                   type="button"
+                  onClick={() => setTweak('fontSize', sz)}
                   style={{
-                    padding: '10px 14px',
-                    borderRadius: 8,
-                    background: 'var(--lbb-surface)',
-                    border: `1px solid ${i === 0 ? 'var(--lbb-accent-mid)' : 'var(--lbb-border)'}`,
+                    padding: '3px 10px',
+                    borderRadius: 6,
+                    fontSize: 12,
                     cursor: 'pointer',
                     fontFamily: 'inherit',
-                    textAlign: 'left',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 12,
+                    color: 'var(--lbb-fg)',
+                    background: 'var(--lbb-surface)',
+                    border: `1px solid ${(theme.fontSize ?? 13) === sz ? 'var(--lbb-accent-mid)' : 'var(--lbb-border)'}`,
+                    transition: 'border-color 0.15s',
                   }}
                 >
-                  <div style={{ flex: 1 }}>
-                    <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--lbb-fg)' }}>{f.l}</div>
-                    <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)' }}>{f.n}</div>
-                  </div>
-                  {i === 0 && <Icon name="check" size={14} style={{ color: 'var(--lbb-accent-mid)', flexShrink: 0 }} />}
+                  {sz}pt
                 </button>
               ))}
             </div>
-            <p style={{ marginTop: 12, marginBottom: 0, fontSize: 11, color: 'var(--lbb-fg3)' }}>
-              Size: 12pt · 13pt · 14pt
-            </p>
           </SetupCard>
 
           {/* ── Advanced ── */}
           <SetupCard title="Advanced">
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-              <Button variant="secondary" size="sm">Custom color tokens…</Button>
-              <Button variant="ghost"     size="sm">Export theme as JSON</Button>
-              <Button variant="ghost"     size="sm">Import theme…</Button>
+              <Button
+                variant="secondary"
+                size="sm"
+                onClick={() => setShowCustomEditor((v) => !v)}
+              >
+                {showCustomEditor ? 'Hide custom tokens' : 'Custom color tokens…'}
+              </Button>
+              {showCustomEditor && (
+                <CustomTokenEditor
+                  customTokens={theme.customTokens ?? {}}
+                  onChange={(next) => setTweak('customTokens', next)}
+                />
+              )}
+              <Button variant="ghost" size="sm" onClick={handleExportTheme}>
+                Export theme as JSON
+              </Button>
+              <Button variant="ghost" size="sm" onClick={handleImportTheme}>
+                Import theme…
+              </Button>
             </div>
             <div
               style={{
@@ -358,6 +530,8 @@ export function ScreenThemes() {
 
         </div>
       </div>
+
+      {toast && <Toast msg={toast.msg} tone={toast.tone} onDone={() => setToast(null)} />}
     </div>
   )
 }

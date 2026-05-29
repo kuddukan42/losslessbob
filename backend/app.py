@@ -8,7 +8,7 @@ import threading
 import time
 from pathlib import Path
 
-from flask import Flask, jsonify, request, send_file, send_from_directory, abort, Response
+from flask import Flask, jsonify, request, send_file, send_from_directory, abort, Response, stream_with_context
 from flask_cors import CORS
 
 from backend import db as database
@@ -222,6 +222,62 @@ def create_app() -> Flask:
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
+    @app.route("/api/activity/log", methods=["GET"])
+    def activity_log() -> Response:
+        """Return a unified activity log: DB imports, renames, and forum posts.
+
+        Query params:
+            limit: max rows to return (default 20; 0 = unlimited)
+
+        Returns:
+            JSON array of {when, action, target, result, type}.
+        """
+        limit = int(request.args.get("limit", 20))
+        rows: list[dict] = []
+        try:
+            with database.get_connection() as conn:
+                for row in conn.execute(
+                    "SELECT applied_at, zip_filename, rows_added, rows_changed"
+                    " FROM flat_file_releases"
+                    " WHERE status='applied' AND applied_at IS NOT NULL"
+                    " ORDER BY applied_at DESC"
+                ):
+                    added = row[2] or 0
+                    changed = row[3] or 0
+                    result_str = f"+{added} rows"
+                    if changed:
+                        result_str += f", ~{changed} updated"
+                    rows.append({
+                        "when": row[0], "action": "DB import",
+                        "target": row[1] or "", "result": result_str, "type": "import",
+                    })
+                for row in conn.execute(
+                    "SELECT renamed_at, lb_number, old_path, new_path"
+                    " FROM rename_history ORDER BY renamed_at DESC"
+                ):
+                    lb = f"LB-{row[1]:05d}" if row[1] else "—"
+                    old_name = (row[2] or "").split("/")[-1]
+                    new_name = (row[3] or "").split("/")[-1]
+                    rows.append({
+                        "when": row[0], "action": "Rename",
+                        "target": f"{lb} · {old_name}", "result": new_name, "type": "rename",
+                    })
+                for row in conn.execute(
+                    "SELECT posted_at, lb_number, subject"
+                    " FROM forum_posts ORDER BY posted_at DESC"
+                ):
+                    lb = f"LB-{row[1]:05d}" if row[1] else "—"
+                    rows.append({
+                        "when": row[0], "action": "Forum post",
+                        "target": lb, "result": row[2] or "", "type": "forum",
+                    })
+            rows.sort(key=lambda x: x["when"] or "", reverse=True)
+            if limit > 0:
+                rows = rows[:limit]
+            return jsonify(rows)
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
     @app.route("/api/db/missing_lb_numbers", methods=["GET"])
     def db_missing_lb_numbers() -> Response:
         """Return a list of LB numbers in the checksums table that have no entries row.
@@ -303,6 +359,7 @@ def create_app() -> Flask:
                 result = {k: database.get_meta(k) for k in keys}
                 # Return "set" or "" for web_password — never expose the actual value
                 result["web_password"] = "set" if database.get_meta("web_password") else ""
+                result["data_dir"] = str(DATA_DIR)
                 return jsonify(result)
         except Exception as e:
             return jsonify({"error": str(e)}), 500
@@ -967,6 +1024,56 @@ def create_app() -> Flask:
             return jsonify({"ok": True, "scope": scope})
         except Exception as e:
             return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/rename_history/purge", methods=["POST"])
+    def purge_rename_history() -> Response:
+        """Purge all rows from rename_history (lookup history)."""
+        try:
+            with database._write_lock:
+                conn = database.get_connection()
+                conn.execute("DELETE FROM rename_history")
+                conn.commit()
+            return jsonify({"ok": True})
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/flat_file/purge", methods=["POST"])
+    def purge_flat_file_history() -> Response:
+        """Purge all flat_file_releases and flat_file_changelog rows (import log)."""
+        try:
+            with database._write_lock:
+                conn = database.get_connection()
+                conn.execute("DELETE FROM flat_file_changelog")
+                conn.execute("DELETE FROM flat_file_releases")
+                conn.commit()
+            return jsonify({"ok": True})
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/scraper/purge", methods=["POST"])
+    def purge_scraper_cache() -> Response:
+        """Purge all scrape_sessions and site_inventory rows (scraper cache)."""
+        try:
+            with database._write_lock:
+                conn = database.get_connection()
+                conn.execute("DELETE FROM site_inventory")
+                conn.execute("DELETE FROM scrape_sessions")
+                conn.commit()
+            return jsonify({"ok": True})
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/fingerprint/purge", methods=["POST"])
+    def purge_fingerprint_cache() -> Response:
+        """Delete the fingerprints.db file (fingerprint cache)."""
+        try:
+            from backend.paths import FP_DB_PATH
+            import os
+            if FP_DB_PATH.exists():
+                os.remove(FP_DB_PATH)
+            return jsonify({"ok": True})
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
 
     @app.route("/api/collection/delete_bulk", methods=["POST"])
     def collection_delete_bulk() -> Response:
@@ -1670,22 +1777,45 @@ def create_app() -> Flask:
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
+    # ── Platform helpers ─────────────────────────────────────────────────────
+
+    @app.route("/api/open/vlc", methods=["POST"])
+    def open_vlc_route() -> Response:
+        """Launch VLC with a list of paths.
+
+        Body: {paths: ["/absolute/path", ...]}
+        Returns:
+            JSON {ok: true} or {ok: false, error: "..."}.
+        """
+        try:
+            paths = (request.get_json(silent=True) or {}).get("paths", [])
+            if not paths:
+                return jsonify({"ok": False, "error": "No paths provided"}), 400
+            from gui.platform_utils import open_in_vlc
+            ok, err = open_in_vlc(paths)
+            return jsonify({"ok": ok, "error": err if not ok else None})
+        except Exception as exc:
+            return jsonify({"ok": False, "error": str(exc)}), 500
+
     # ── Spectrogram ──────────────────────────────────────────────────────────
 
     @app.route("/api/spectrogram/check", methods=["GET"])
     def spectrogram_check() -> Response:
         """Return tool availability for the Setup tab indicator."""
+        import shutil as _shutil
         from backend.sox_utils import check_sox_version, get_ffmpeg
         from backend.checksum_utils import check_shntool_version
         sox_ver     = check_sox_version()
         ffmpeg      = get_ffmpeg()
         shntool_ver = check_shntool_version()
+        flac_ver    = _shutil.which("flac")
         return jsonify({
             "sox_available":      bool(sox_ver),
             "sox_version":        sox_ver,
             "ffmpeg_available":   ffmpeg is not None,
             "shntool_available":  bool(shntool_ver),
             "shntool_version":    shntool_ver,
+            "flac_available":     flac_ver is not None,
         })
 
     @app.route("/api/spectrogram/generate", methods=["POST"])
@@ -1777,6 +1907,66 @@ def create_app() -> Flask:
             if entries:
                 result[folder] = entries
         return jsonify(result)
+
+    @app.route("/api/spectrogram/png", methods=["GET"])
+    def spectrogram_png() -> Response:
+        """Serve a spectrogram PNG from an arbitrary absolute path on disk.
+
+        Query param: path (absolute path to the PNG file)
+        Returns:
+            The PNG file bytes with image/png content-type, or 404.
+        """
+        path_str = request.args.get("path", "")
+        if not path_str:
+            abort(400)
+        p = Path(path_str)
+        if not p.exists() or not p.is_file() or p.suffix.lower() != ".png":
+            abort(404)
+        return send_file(str(p), mimetype="image/png")
+
+    @app.route("/api/rename/apply", methods=["POST"])
+    def rename_apply() -> Response:
+        """Apply a list of folder/file renames on disk and log each to rename_history.
+
+        Body: {renames: [{old_path, new_path, lb_number?}]}
+        Returns:
+            JSON {applied: N, errors: [...string]}
+        """
+        import shutil
+        from backend.rename import write_rename_log
+        data = request.get_json() or {}
+        renames = data.get("renames", [])
+        applied = 0
+        errors: list[str] = []
+        for item in renames:
+            old_path = item.get("old_path", "")
+            new_path = item.get("new_path", "")
+            lb_number = item.get("lb_number")
+            if not old_path or not new_path:
+                errors.append(f"Missing old_path or new_path in item: {item}")
+                continue
+            try:
+                src = Path(old_path)
+                dst = Path(new_path)
+                if not src.exists():
+                    errors.append(f"Source not found: {old_path}")
+                    continue
+                if dst.exists():
+                    errors.append(f"Destination already exists: {new_path}")
+                    continue
+                dst.parent.mkdir(parents=True, exist_ok=True)
+                shutil.move(str(src), str(dst))
+                write_rename_log(
+                    folder_path=str(dst.parent),
+                    old_name=src.name,
+                    new_name=dst.name,
+                    source="rename_tab",
+                    lb_number=lb_number,
+                )
+                applied += 1
+            except Exception as exc:
+                errors.append(f"{old_path}: {exc}")
+        return jsonify({"applied": applied, "errors": errors})
 
     # ── FEAT-14: DB Editor ───────────────────────────────────────────────────
 
@@ -2222,6 +2412,77 @@ def create_app() -> Flask:
             if session is None:
                 return jsonify({"ok": False, "error": "Login failed — check username and password."})
             return jsonify({"ok": True, "username": username})
+        except Exception as exc:
+            return jsonify({"ok": False, "error": str(exc)}), 500
+
+    @app.route("/api/credentials/wtrf", methods=["POST"])
+    def credentials_wtrf_save() -> Response:
+        """Save WTRF forum credentials to the OS keyring.
+
+        Body: {username, password}
+        Returns: {ok: true} or {error}.
+        """
+        try:
+            from backend.credentials import save_credentials, SERVICE_WTRF
+            data = request.get_json() or {}
+            username = data.get("username", "").strip()
+            password = data.get("password", "")
+            if not username:
+                return jsonify({"ok": False, "error": "Username required"}), 400
+            save_credentials(SERVICE_WTRF, username, password)
+            return jsonify({"ok": True})
+        except Exception as exc:
+            return jsonify({"ok": False, "error": str(exc)}), 500
+
+    @app.route("/api/credentials/qbt", methods=["POST"])
+    def credentials_qbt_save() -> Response:
+        """Save qBittorrent credentials to the OS keyring.
+
+        Body: {username, password} or {api_key}
+        Returns: {ok: true} or {error}.
+        """
+        try:
+            from backend.credentials import save_credentials, SERVICE_QBT, SERVICE_QBT_KEY
+            data = request.get_json() or {}
+            api_key = data.get("api_key", "").strip()
+            username = data.get("username", "").strip()
+            password = data.get("password", "")
+            if api_key:
+                save_credentials(SERVICE_QBT_KEY, "", api_key)
+            elif username:
+                save_credentials(SERVICE_QBT, username, password)
+            else:
+                return jsonify({"ok": False, "error": "Username or api_key required"}), 400
+            return jsonify({"ok": True})
+        except Exception as exc:
+            return jsonify({"ok": False, "error": str(exc)}), 500
+
+    @app.route("/api/credentials/qbt", methods=["DELETE"])
+    def credentials_qbt_delete() -> Response:
+        """Remove qBittorrent credentials from the OS keyring.
+
+        Returns:
+            JSON {ok: true} or {error}.
+        """
+        try:
+            from backend.credentials import delete_credentials, SERVICE_QBT, SERVICE_QBT_KEY
+            delete_credentials(SERVICE_QBT)
+            delete_credentials(SERVICE_QBT_KEY)
+            return jsonify({"ok": True})
+        except Exception as exc:
+            return jsonify({"ok": False, "error": str(exc)}), 500
+
+    @app.route("/api/credentials/wtrf", methods=["DELETE"])
+    def credentials_wtrf_delete() -> Response:
+        """Remove WTRF forum credentials from the OS keyring.
+
+        Returns:
+            JSON {ok: true} or {error}.
+        """
+        try:
+            from backend.credentials import delete_credentials, SERVICE_WTRF
+            delete_credentials(SERVICE_WTRF)
+            return jsonify({"ok": True})
         except Exception as exc:
             return jsonify({"ok": False, "error": str(exc)}), 500
 
@@ -2824,82 +3085,179 @@ def create_app() -> Flask:
 
     @app.route("/api/master/github_release", methods=["POST"])
     def master_github_release() -> Response:
-        """Create a GitHub release for a just-exported master snapshot. Curator-only.
+        """Create a GitHub release with real upload progress. Curator-only.
 
-        Requires the ``gh`` CLI to be authenticated. Picks a tag in the form
-        ``master-YYYY-MM-DD``, appending ``.2`` / ``.3`` etc. on same-day
-        re-releases. Generates release notes from ``lb_status_history`` since
-        the previous ``master_published_at``.
+        Replaces gh CLI subprocess with direct GitHub REST API calls.
+        Token is obtained via ``gh auth token``.  Assets (.db and manifest)
+        are uploaded in 1 MB chunks so the GUI can display byte-accurate
+        progress, matching the pattern used by the download flow.
 
         Body: {db_path, manifest_path, version, prev_published_at (optional)}.
-        Returns: {ok, tag, url} or {error}.
+        Returns: text/event-stream with events:
+          data: {"type": "progress", "label": "...", "pct": N_or_null}
+          data: {"type": "done", "tag": "...", "url": "..."}
+          data: {"type": "error", "error": "...", "message": "..."}
         """
         import subprocess
+        import queue
+        import json as _json
+        import requests as _req
         from datetime import datetime, timezone
 
-        try:
-            if not database.is_curator():
-                return jsonify({"error": "curator_required"}), 403
+        if not database.is_curator():
+            return jsonify({"error": "curator_required"}), 403
 
-            body = request.get_json(silent=True) or {}
-            db_path_str = body.get("db_path", "")
-            manifest_path_str = body.get("manifest_path", "")
-            version = body.get("version", "")
-            prev_published_at = body.get("prev_published_at")
+        body = request.get_json(silent=True) or {}
+        db_path_str = body.get("db_path", "")
+        manifest_path_str = body.get("manifest_path", "")
+        version = body.get("version", "")
+        prev_published_at = body.get("prev_published_at")
 
-            if not db_path_str or not manifest_path_str:
-                return jsonify({"error": "db_path and manifest_path are required"}), 400
+        if not db_path_str or not manifest_path_str:
+            return jsonify({"error": "db_path and manifest_path are required"}), 400
 
-            # Derive date from version (format: YYYY-MM-DDTHH:MM:SS or timestamp)
+        _REPO = "kuddukan42/losslessbob"
+        _GH_API = "https://api.github.com"
+        ev_q: queue.Queue = queue.Queue()
+
+        def _work() -> None:
             try:
-                date_str = version[:10] if version else datetime.now(timezone.utc).strftime("%Y-%m-%d")
-            except Exception:
-                date_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-
-            # Find an unused tag: master-YYYY-MM-DD[.N]
-            tag = f"master-{date_str}"
-            for suffix in ["", ".2", ".3", ".4", ".5"]:
-                candidate = f"{tag}{suffix}"
-                check = subprocess.run(
-                    ["gh", "release", "view", candidate, "--repo", "kuddukan42/losslessbob"],
-                    capture_output=True,
+                # Obtain token via gh CLI
+                tok = subprocess.run(
+                    ["gh", "auth", "token"], capture_output=True, text=True, timeout=15,
                 )
-                if check.returncode != 0:
-                    tag = candidate
+                if tok.returncode != 0:
+                    ev_q.put({"type": "error", "error": "gh_auth_failed",
+                              "message": tok.stderr.strip() or "gh auth token failed"})
+                    return
+                token = tok.stdout.strip()
+                if not token:
+                    ev_q.put({"type": "error", "error": "gh_no_token",
+                              "message": "gh auth token returned empty — run `gh auth login` first."})
+                    return
+
+                gh_hdr = {
+                    "Authorization": f"token {token}",
+                    "Accept": "application/vnd.github+json",
+                }
+
+                # Derive date for tag
+                try:
+                    date_str = version[:10] if version else datetime.now(timezone.utc).strftime("%Y-%m-%d")
+                except Exception:
+                    date_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
+                # Find an unused tag: master-YYYY-MM-DD[.N]
+                ev_q.put({"type": "progress", "label": "Checking for existing releases…", "pct": None})
+                base_tag = f"master-{date_str}"
+                tag = None
+                for suffix in ["", ".2", ".3", ".4", ".5"]:
+                    candidate = f"{base_tag}{suffix}" if suffix else base_tag
+                    chk = _req.get(
+                        f"{_GH_API}/repos/{_REPO}/releases/tags/{candidate}",
+                        headers=gh_hdr, timeout=15,
+                    )
+                    if chk.status_code == 404:
+                        tag = candidate
+                        break
+                if tag is None:
+                    ev_q.put({"type": "error", "error": "too_many_releases",
+                              "message": f"5 releases already exist for {date_str}."})
+                    return
+
+                # Build release notes
+                ev_q.put({"type": "progress", "label": "Building release notes…", "pct": None})
+                notes = database.generate_release_notes(since_timestamp=prev_published_at)
+
+                # Create the GitHub release
+                ev_q.put({"type": "progress", "label": f"Creating release {tag}…", "pct": None})
+                cr = _req.post(
+                    f"{_GH_API}/repos/{_REPO}/releases",
+                    headers=gh_hdr,
+                    json={"tag_name": tag, "name": f"Master Update {date_str}", "body": notes},
+                    timeout=30,
+                )
+                if not cr.ok:
+                    msg = cr.json().get("message", cr.text[:300]) if cr.content else cr.reason
+                    ev_q.put({"type": "error", "error": "create_failed", "message": msg})
+                    return
+                release = cr.json()
+                # upload_url: "https://uploads.github.com/.../assets{?name,label}" — strip template
+                upload_base = release["upload_url"].split("{")[0]
+                release_url = release["html_url"]
+
+                def _upload_asset(file_path_s: str, label: str) -> None:
+                    fsize = os.path.getsize(file_path_s)
+                    fmb = fsize / (1 << 20)
+                    fname = Path(file_path_s).name
+                    sent_ref = [0]
+
+                    def _reader():
+                        with open(file_path_s, "rb") as fh:
+                            while True:
+                                chunk = fh.read(1 << 20)  # 1 MB chunks
+                                if not chunk:
+                                    break
+                                sent_ref[0] += len(chunk)
+                                pct = int(sent_ref[0] * 100 / fsize) if fsize else 100
+                                ev_q.put({
+                                    "type": "progress",
+                                    "label": (
+                                        f"Uploading {label}… {pct}%"
+                                        f"  ({sent_ref[0] / (1<<20):.1f} / {fmb:.0f} MB)"
+                                    ),
+                                    "pct": pct,
+                                })
+                                yield chunk
+
+                    up = _req.post(
+                        upload_base,
+                        params={"name": fname},
+                        data=_reader(),
+                        headers={
+                            "Authorization": f"token {token}",
+                            "Accept": "application/vnd.github+json",
+                            "Content-Type": "application/octet-stream",
+                            "Content-Length": str(fsize),
+                        },
+                        timeout=600,
+                    )
+                    up.raise_for_status()
+
+                db_fname = Path(db_path_str).name
+                mf_fname = Path(manifest_path_str).name
+                ev_q.put({"type": "progress", "label": f"Uploading {db_fname}…", "pct": 0})
+                _upload_asset(db_path_str, db_fname)
+
+                ev_q.put({"type": "progress", "label": f"Uploading {mf_fname}…", "pct": 0})
+                _upload_asset(manifest_path_str, mf_fname)
+
+                ev_q.put({"type": "done", "tag": tag, "url": release_url})
+
+            except FileNotFoundError:
+                ev_q.put({"type": "error", "error": "gh_not_found",
+                          "message": "gh CLI not found — install GitHub CLI first."})
+            except Exception as exc:
+                ev_q.put({"type": "error", "error": type(exc).__name__, "message": str(exc)})
+
+        threading.Thread(target=_work, daemon=True).start()
+
+        def _stream():
+            while True:
+                try:
+                    ev = ev_q.get(timeout=680)
+                except queue.Empty:
+                    ev = {"type": "error", "error": "timeout",
+                          "message": "Upload timed out after 680 s."}
+                yield f"data: {_json.dumps(ev)}\n\n"
+                if ev.get("type") in ("done", "error"):
                     break
 
-            notes = database.generate_release_notes(
-                since_timestamp=prev_published_at,
-            )
-
-            result = subprocess.run(
-                [
-                    "gh", "release", "create", tag,
-                    db_path_str,
-                    manifest_path_str,
-                    "--title", f"Master Update {date_str}",
-                    "--notes", notes,
-                    "--repo", "kuddukan42/losslessbob",
-                ],
-                capture_output=True, text=True, timeout=600,
-            )
-
-            if result.returncode != 0:
-                return jsonify({
-                    "error": "gh_failed",
-                    "message": result.stderr.strip() or result.stdout.strip(),
-                }), 500
-
-            url = result.stdout.strip()
-            return jsonify({"ok": True, "tag": tag, "url": url})
-
-        except FileNotFoundError:
-            return jsonify({"error": "gh_not_found",
-                            "message": "gh CLI not found — install GitHub CLI first."}), 500
-        except subprocess.TimeoutExpired:
-            return jsonify({"error": "timeout", "message": "gh upload timed out after 600s"}), 500
-        except Exception as exc:
-            return jsonify({"error": str(exc)}), 500
+        return Response(
+            stream_with_context(_stream()),
+            content_type="text/event-stream",
+            headers={"X-Accel-Buffering": "no", "Cache-Control": "no-cache"},
+        )
 
     @app.route("/api/master/import", methods=["POST"])
     def master_import() -> Response:
