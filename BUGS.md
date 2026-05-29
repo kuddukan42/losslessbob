@@ -1,3 +1,4 @@
+
 BUG-106: Windows installer does not place app in Program Files
 Status: Open
 File(s): installer/losslessbob.iss (or equivalent Inno Setup script)

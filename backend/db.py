@@ -1292,7 +1292,7 @@ def get_collection(db_path=None):
     with get_connection(db_path) as conn:
         rows = conn.execute("""
             SELECT c.id, c.lb_number, c.folder_name, c.disk_path, c.confirmed_at, c.notes,
-                   e.date_str, e.location, lm.lb_status
+                   e.date_str, e.location, e.description, e.rating, e.cdr, lm.lb_status
             FROM my_collection c
             LEFT JOIN entries e ON c.lb_number = e.lb_number
             LEFT JOIN lb_master lm ON lm.lb_number = c.lb_number
@@ -1452,6 +1452,23 @@ def remove_from_wishlist(lb_number: int, db_path=None) -> None:
     get_write_queue().execute(
         lambda c: c.execute("DELETE FROM my_wishlist WHERE lb_number=?", (_lb,))
     )
+
+
+def update_wishlist(lb_number: int, fields: dict, db_path=None) -> None:
+    """Update priority and/or notes on a wishlist entry.
+
+    Args:
+        lb_number: LB number to update.
+        fields: Dict with keys 'priority' (int 1-5) and/or 'notes' (str).
+    """
+    allowed = {"priority", "notes"}
+    updates = {k: v for k, v in fields.items() if k in allowed}
+    if not updates:
+        return
+    set_clause = ", ".join(f"{k}=?" for k in updates)
+    _params = list(updates.values()) + [lb_number]
+    _sql = f"UPDATE my_wishlist SET {set_clause} WHERE lb_number=?"
+    get_write_queue().execute(lambda c: c.execute(_sql, _params))
 
 
 def get_wishlist_lb_numbers(db_path=None) -> list:

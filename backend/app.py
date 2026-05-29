@@ -8,7 +8,7 @@ import threading
 import time
 from pathlib import Path
 
-from flask import Flask, jsonify, request, send_file, send_from_directory, abort, Response
+from flask import Flask, jsonify, request, send_file, send_from_directory, abort, Response, stream_with_context
 from flask_cors import CORS
 
 from backend import db as database
@@ -149,6 +149,35 @@ def create_app() -> Flask:
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
+    @app.route("/api/lookup/scan_folders", methods=["POST"])
+    def lookup_scan_folders() -> Response:
+        """Recursively scan folders for checksum sidecar files and return combined text.
+
+        Body: {folders: ["/abs/path", ...]}
+        Returns:
+            JSON {content: str, files: [str, ...]}
+        """
+        _CHECKSUM_EXTS = {".ffp", ".md5", ".st5", ".sha1"}
+        try:
+            data = request.get_json(force=True) or {}
+            folders = data.get("folders", [])
+            all_content: list[str] = []
+            files_found: list[str] = []
+            for folder in folders:
+                p = Path(folder)
+                if not p.is_dir():
+                    continue
+                for f in sorted(p.rglob("*")):
+                    if f.is_file() and f.suffix.lower() in _CHECKSUM_EXTS:
+                        try:
+                            all_content.append(f.read_text(errors="replace"))
+                            files_found.append(str(f))
+                        except OSError:
+                            pass
+            return jsonify({"content": "\n".join(all_content), "files": files_found})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
     # ── Database Management ──────────────────────────────────────────────────
 
     @app.route("/api/status", methods=["GET"])
@@ -178,6 +207,103 @@ def create_app() -> Flask:
         """
         try:
             return jsonify(database.get_stats())
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/home/stats", methods=["GET"])
+    def home_stats() -> Response:
+        """Return all counts needed by the Home / Dashboard screen in one query.
+
+        Returns:
+            JSON with collection_count, wishlist_count, missing_count, bootleg_count,
+            checksum_count, latest_lb, and last_import.
+        """
+        try:
+            with database.get_connection() as conn:
+                collection_count = conn.execute(
+                    "SELECT COUNT(*) FROM my_collection"
+                ).fetchone()[0]
+                wishlist_count = conn.execute(
+                    "SELECT COUNT(*) FROM my_wishlist"
+                ).fetchone()[0]
+                missing_count = conn.execute(
+                    "SELECT COUNT(*) FROM lb_master WHERE lb_status='missing'"
+                ).fetchone()[0]
+                bootleg_count = conn.execute(
+                    "SELECT COUNT(*) FROM bootleg_titles"
+                ).fetchone()[0]
+                checksum_count = conn.execute(
+                    "SELECT COUNT(*) FROM checksums"
+                ).fetchone()[0]
+                latest_lb = conn.execute(
+                    "SELECT MAX(lb_number) FROM lb_master"
+                ).fetchone()[0] or 0
+            last_import = database.get_meta("last_import_date")
+            return jsonify({
+                "collection_count": collection_count,
+                "wishlist_count": wishlist_count,
+                "missing_count": missing_count,
+                "bootleg_count": bootleg_count,
+                "checksum_count": checksum_count,
+                "latest_lb": latest_lb,
+                "last_import": last_import,
+            })
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/activity/log", methods=["GET"])
+    def activity_log() -> Response:
+        """Return a unified activity log: DB imports, renames, and forum posts.
+
+        Query params:
+            limit: max rows to return (default 20; 0 = unlimited)
+
+        Returns:
+            JSON array of {when, action, target, result, type}.
+        """
+        limit = int(request.args.get("limit", 20))
+        rows: list[dict] = []
+        try:
+            with database.get_connection() as conn:
+                for row in conn.execute(
+                    "SELECT applied_at, zip_filename, rows_added, rows_changed"
+                    " FROM flat_file_releases"
+                    " WHERE status='applied' AND applied_at IS NOT NULL"
+                    " ORDER BY applied_at DESC"
+                ):
+                    added = row[2] or 0
+                    changed = row[3] or 0
+                    result_str = f"+{added} rows"
+                    if changed:
+                        result_str += f", ~{changed} updated"
+                    rows.append({
+                        "when": row[0], "action": "DB import",
+                        "target": row[1] or "", "result": result_str, "type": "import",
+                    })
+                for row in conn.execute(
+                    "SELECT renamed_at, lb_number, old_path, new_path"
+                    " FROM rename_history ORDER BY renamed_at DESC"
+                ):
+                    lb = f"LB-{row[1]:05d}" if row[1] else "—"
+                    old_name = (row[2] or "").split("/")[-1]
+                    new_name = (row[3] or "").split("/")[-1]
+                    rows.append({
+                        "when": row[0], "action": "Rename",
+                        "target": f"{lb} · {old_name}", "result": new_name, "type": "rename",
+                    })
+                for row in conn.execute(
+                    "SELECT posted_at, lb_number, subject"
+                    " FROM forum_posts ORDER BY posted_at DESC"
+                ):
+                    lb = f"LB-{row[1]:05d}" if row[1] else "—"
+                    rows.append({
+                        "when": row[0], "action": "Forum post",
+                        "target": lb, "result": row[2] or "", "type": "forum",
+                    })
+            rows.sort(key=lambda x: x["when"] or "", reverse=True)
+            if limit > 0:
+                rows = rows[:limit]
+            return jsonify(rows)
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
@@ -262,6 +388,7 @@ def create_app() -> Flask:
                 result = {k: database.get_meta(k) for k in keys}
                 # Return "set" or "" for web_password — never expose the actual value
                 result["web_password"] = "set" if database.get_meta("web_password") else ""
+                result["data_dir"] = str(DATA_DIR)
                 return jsonify(result)
         except Exception as e:
             return jsonify({"error": str(e)}), 500
@@ -839,6 +966,109 @@ def create_app() -> Flask:
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
+    # ── Audio info cache (in-memory, keyed by disk_path + mtime fingerprint) ──
+    _audioinfo_cache: dict = {}
+
+    @app.route("/api/collection/<int:lb>/audioinfo", methods=["GET"])
+    def collection_audioinfo(lb: int) -> Response:
+        """Return audio format / bit-depth / sample-rate for a collection entry.
+
+        Args:
+            lb: LB number of the collection entry.
+
+        Returns:
+            JSON {format, bit_depth, sample_rate, mixed, files_probed, offline?}.
+        """
+        import os
+        import json as _json
+        import subprocess
+        import soundfile as sf
+
+        _empty = {"format": None, "bit_depth": None, "sample_rate": None,
+                  "mixed": False, "files_probed": 0}
+        try:
+            with database.get_connection() as conn:
+                row = conn.execute(
+                    "SELECT disk_path FROM my_collection WHERE lb_number=?", (lb,)
+                ).fetchone()
+            if not row or not row["disk_path"]:
+                return jsonify(_empty)
+            disk_path = row["disk_path"]
+            if not os.path.isdir(disk_path):
+                return jsonify({**_empty, "offline": True})
+
+            AUDIO_EXTS = {'.flac', '.wav', '.aiff', '.aif', '.shn', '.ape', '.ogg', '.mp3'}
+            audio_files = [
+                os.path.join(root, f)
+                for root, _, files in os.walk(disk_path)
+                for f in files
+                if os.path.splitext(f.lower())[1] in AUDIO_EXTS
+            ]
+            if not audio_files:
+                return jsonify(_empty)
+
+            try:
+                mtime_sum = sum(int(os.path.getmtime(f) * 1000) for f in audio_files[:20])
+            except Exception:
+                mtime_sum = 0
+            cache_key = (disk_path, mtime_sum)
+            if cache_key in _audioinfo_cache:
+                return jsonify(_audioinfo_cache[cache_key])
+
+            sample = audio_files[:5]
+            results = []
+            for fpath in sample:
+                ext = os.path.splitext(fpath.lower())[1]
+                fmt = bit_depth = rate = None
+                try:
+                    info = sf.info(fpath)
+                    fmt = info.format.upper()
+                    rate = info.samplerate
+                    st = info.subtype.upper()
+                    if 'PCM_16' in st:      bit_depth = 16
+                    elif 'PCM_24' in st:    bit_depth = 24
+                    elif 'PCM_32' in st:    bit_depth = 32
+                    elif 'FLOAT' in st or 'DOUBLE' in st: bit_depth = 32
+                    elif '8' in st:         bit_depth = 8
+                except Exception:
+                    try:
+                        out = subprocess.run(
+                            ['ffprobe', '-v', 'quiet', '-print_format', 'json',
+                             '-show_streams', '-select_streams', 'a:0', fpath],
+                            capture_output=True, text=True, timeout=10,
+                        )
+                        if out.returncode == 0:
+                            streams = _json.loads(out.stdout).get('streams', [])
+                            if streams:
+                                s = streams[0]
+                                fmt = ext.lstrip('.').upper()
+                                rate = int(s.get('sample_rate', 0)) or None
+                                bits = s.get('bits_per_raw_sample') or s.get('bits_per_sample')
+                                bit_depth = int(bits) if bits else None
+                    except Exception:
+                        pass
+                if fmt:
+                    results.append({'format': fmt, 'bit_depth': bit_depth, 'sample_rate': rate})
+
+            if not results:
+                return jsonify({**_empty, "files_probed": len(sample)})
+
+            fmts   = {r['format']      for r in results if r['format']}
+            depths = {r['bit_depth']   for r in results if r['bit_depth']}
+            rates  = {r['sample_rate'] for r in results if r['sample_rate']}
+            mixed  = len(fmts) > 1 or len(depths) > 1 or len(rates) > 1
+            result = {
+                "format":       sorted(fmts)[0]   if fmts   else None,
+                "bit_depth":    sorted(depths)[0] if depths else None,
+                "sample_rate":  round(sorted(rates)[0] / 1000, 1) if rates else None,
+                "mixed":        mixed,
+                "files_probed": len(sample),
+            }
+            _audioinfo_cache[cache_key] = result
+            return jsonify(result)
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
     # ── FEAT-04: Wishlist ────────────────────────────────────────────────────
 
     @app.route("/api/wishlist", methods=["GET"])
@@ -868,6 +1098,21 @@ def create_app() -> Flask:
                 return jsonify({"error": "lb_number required"}), 400
             added = database.add_to_wishlist(int(lb), data.get("priority", 3), data.get("notes"))
             return jsonify({"ok": True, "added": added > 0})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/wishlist/<int:lb>", methods=["PATCH"])
+    def wishlist_update(lb: int) -> Response:
+        """Update priority and/or notes on a wishlist entry.
+
+        Body: {priority?, notes?}
+        Returns:
+            JSON {ok: true}.
+        """
+        try:
+            data = request.get_json() or {}
+            database.update_wishlist(lb, data)
+            return jsonify({"ok": True})
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
@@ -901,6 +1146,52 @@ def create_app() -> Flask:
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
+    @app.route("/api/collection/prefetch", methods=["GET"])
+    def collection_prefetch() -> Response:
+        """Return all data needed by the Collection screen in a single request.
+
+        Bundles collection, missing, fingerprints, wishlist, duplicates,
+        forum_posts, torrents, xref_lb_numbers, and years so the GUI only
+        needs one round-trip to warm its React Query cache.
+
+        Returns:
+            JSON dict with one key per dataset.
+        """
+        try:
+            torrents = database.get_all_torrents()
+            for row in torrents:
+                row["source_folder_exists"] = (
+                    bool(row.get("source_folder"))
+                    and Path(row["source_folder"]).is_dir()
+                )
+                row["torrent_file_exists"] = (
+                    bool(row.get("torrent_path"))
+                    and Path(row["torrent_path"]).exists()
+                )
+            try:
+                from backend import fingerprint as _fp
+                fp_conn = _fp._get_fp_conn()
+                fp_rows = fp_conn.execute(
+                    "SELECT lb_number, SUM(n_hashes) AS n "
+                    "FROM audio_tracks GROUP BY lb_number"
+                ).fetchall()
+                fingerprints: dict = {str(r["lb_number"]): r["n"] for r in fp_rows}
+            except Exception:
+                fingerprints = {}
+            return jsonify({
+                "collection":     database.get_collection(),
+                "missing":        database.get_missing_from_collection(),
+                "fingerprints":   fingerprints,
+                "wishlist":       database.get_wishlist(),
+                "duplicates":     database.get_collection_duplicates(),
+                "forum_posts":    database.get_all_forum_posts(),
+                "torrents":       torrents,
+                "xref_lb_numbers": database.get_xref_lb_numbers(),
+                "years":          database.get_distinct_years(),
+            })
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
     # ── FEAT-13: Granular Collection Data Management ─────────────────────────
 
     @app.route("/api/collection/purge", methods=["POST"])
@@ -926,6 +1217,56 @@ def create_app() -> Flask:
             return jsonify({"ok": True, "scope": scope})
         except Exception as e:
             return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/rename_history/purge", methods=["POST"])
+    def purge_rename_history() -> Response:
+        """Purge all rows from rename_history (lookup history)."""
+        try:
+            with database._write_lock:
+                conn = database.get_connection()
+                conn.execute("DELETE FROM rename_history")
+                conn.commit()
+            return jsonify({"ok": True})
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/flat_file/purge", methods=["POST"])
+    def purge_flat_file_history() -> Response:
+        """Purge all flat_file_releases and flat_file_changelog rows (import log)."""
+        try:
+            with database._write_lock:
+                conn = database.get_connection()
+                conn.execute("DELETE FROM flat_file_changelog")
+                conn.execute("DELETE FROM flat_file_releases")
+                conn.commit()
+            return jsonify({"ok": True})
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/scraper/purge", methods=["POST"])
+    def purge_scraper_cache() -> Response:
+        """Purge all scrape_sessions and site_inventory rows (scraper cache)."""
+        try:
+            with database._write_lock:
+                conn = database.get_connection()
+                conn.execute("DELETE FROM site_inventory")
+                conn.execute("DELETE FROM scrape_sessions")
+                conn.commit()
+            return jsonify({"ok": True})
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/fingerprint/purge", methods=["POST"])
+    def purge_fingerprint_cache() -> Response:
+        """Delete the fingerprints.db file (fingerprint cache)."""
+        try:
+            from backend.paths import FP_DB_PATH
+            import os
+            if FP_DB_PATH.exists():
+                os.remove(FP_DB_PATH)
+            return jsonify({"ok": True})
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
 
     @app.route("/api/collection/delete_bulk", methods=["POST"])
     def collection_delete_bulk() -> Response:
@@ -1629,22 +1970,45 @@ def create_app() -> Flask:
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
+    # ── Platform helpers ─────────────────────────────────────────────────────
+
+    @app.route("/api/open/vlc", methods=["POST"])
+    def open_vlc_route() -> Response:
+        """Launch VLC with a list of paths.
+
+        Body: {paths: ["/absolute/path", ...]}
+        Returns:
+            JSON {ok: true} or {ok: false, error: "..."}.
+        """
+        try:
+            paths = (request.get_json(silent=True) or {}).get("paths", [])
+            if not paths:
+                return jsonify({"ok": False, "error": "No paths provided"}), 400
+            from gui.platform_utils import open_in_vlc
+            ok, err = open_in_vlc(paths)
+            return jsonify({"ok": ok, "error": err if not ok else None})
+        except Exception as exc:
+            return jsonify({"ok": False, "error": str(exc)}), 500
+
     # ── Spectrogram ──────────────────────────────────────────────────────────
 
     @app.route("/api/spectrogram/check", methods=["GET"])
     def spectrogram_check() -> Response:
         """Return tool availability for the Setup tab indicator."""
+        import shutil as _shutil
         from backend.sox_utils import check_sox_version, get_ffmpeg
         from backend.checksum_utils import check_shntool_version
         sox_ver     = check_sox_version()
         ffmpeg      = get_ffmpeg()
         shntool_ver = check_shntool_version()
+        flac_ver    = _shutil.which("flac")
         return jsonify({
             "sox_available":      bool(sox_ver),
             "sox_version":        sox_ver,
             "ffmpeg_available":   ffmpeg is not None,
             "shntool_available":  bool(shntool_ver),
             "shntool_version":    shntool_ver,
+            "flac_available":     flac_ver is not None,
         })
 
     @app.route("/api/spectrogram/generate", methods=["POST"])
@@ -1736,6 +2100,66 @@ def create_app() -> Flask:
             if entries:
                 result[folder] = entries
         return jsonify(result)
+
+    @app.route("/api/spectrogram/png", methods=["GET"])
+    def spectrogram_png() -> Response:
+        """Serve a spectrogram PNG from an arbitrary absolute path on disk.
+
+        Query param: path (absolute path to the PNG file)
+        Returns:
+            The PNG file bytes with image/png content-type, or 404.
+        """
+        path_str = request.args.get("path", "")
+        if not path_str:
+            abort(400)
+        p = Path(path_str)
+        if not p.exists() or not p.is_file() or p.suffix.lower() != ".png":
+            abort(404)
+        return send_file(str(p), mimetype="image/png")
+
+    @app.route("/api/rename/apply", methods=["POST"])
+    def rename_apply() -> Response:
+        """Apply a list of folder/file renames on disk and log each to rename_history.
+
+        Body: {renames: [{old_path, new_path, lb_number?}]}
+        Returns:
+            JSON {applied: N, errors: [...string]}
+        """
+        import shutil
+        from backend.rename import write_rename_log
+        data = request.get_json() or {}
+        renames = data.get("renames", [])
+        applied = 0
+        errors: list[str] = []
+        for item in renames:
+            old_path = item.get("old_path", "")
+            new_path = item.get("new_path", "")
+            lb_number = item.get("lb_number")
+            if not old_path or not new_path:
+                errors.append(f"Missing old_path or new_path in item: {item}")
+                continue
+            try:
+                src = Path(old_path)
+                dst = Path(new_path)
+                if not src.exists():
+                    errors.append(f"Source not found: {old_path}")
+                    continue
+                if dst.exists():
+                    errors.append(f"Destination already exists: {new_path}")
+                    continue
+                dst.parent.mkdir(parents=True, exist_ok=True)
+                shutil.move(str(src), str(dst))
+                write_rename_log(
+                    folder_path=str(dst.parent),
+                    old_name=src.name,
+                    new_name=dst.name,
+                    source="rename_tab",
+                    lb_number=lb_number,
+                )
+                applied += 1
+            except Exception as exc:
+                errors.append(f"{old_path}: {exc}")
+        return jsonify({"applied": applied, "errors": errors})
 
     # ── FEAT-14: DB Editor ───────────────────────────────────────────────────
 
@@ -2181,6 +2605,77 @@ def create_app() -> Flask:
             if session is None:
                 return jsonify({"ok": False, "error": "Login failed — check username and password."})
             return jsonify({"ok": True, "username": username})
+        except Exception as exc:
+            return jsonify({"ok": False, "error": str(exc)}), 500
+
+    @app.route("/api/credentials/wtrf", methods=["POST"])
+    def credentials_wtrf_save() -> Response:
+        """Save WTRF forum credentials to the OS keyring.
+
+        Body: {username, password}
+        Returns: {ok: true} or {error}.
+        """
+        try:
+            from backend.credentials import save_credentials, SERVICE_WTRF
+            data = request.get_json() or {}
+            username = data.get("username", "").strip()
+            password = data.get("password", "")
+            if not username:
+                return jsonify({"ok": False, "error": "Username required"}), 400
+            save_credentials(SERVICE_WTRF, username, password)
+            return jsonify({"ok": True})
+        except Exception as exc:
+            return jsonify({"ok": False, "error": str(exc)}), 500
+
+    @app.route("/api/credentials/qbt", methods=["POST"])
+    def credentials_qbt_save() -> Response:
+        """Save qBittorrent credentials to the OS keyring.
+
+        Body: {username, password} or {api_key}
+        Returns: {ok: true} or {error}.
+        """
+        try:
+            from backend.credentials import save_credentials, SERVICE_QBT, SERVICE_QBT_KEY
+            data = request.get_json() or {}
+            api_key = data.get("api_key", "").strip()
+            username = data.get("username", "").strip()
+            password = data.get("password", "")
+            if api_key:
+                save_credentials(SERVICE_QBT_KEY, "", api_key)
+            elif username:
+                save_credentials(SERVICE_QBT, username, password)
+            else:
+                return jsonify({"ok": False, "error": "Username or api_key required"}), 400
+            return jsonify({"ok": True})
+        except Exception as exc:
+            return jsonify({"ok": False, "error": str(exc)}), 500
+
+    @app.route("/api/credentials/qbt", methods=["DELETE"])
+    def credentials_qbt_delete() -> Response:
+        """Remove qBittorrent credentials from the OS keyring.
+
+        Returns:
+            JSON {ok: true} or {error}.
+        """
+        try:
+            from backend.credentials import delete_credentials, SERVICE_QBT, SERVICE_QBT_KEY
+            delete_credentials(SERVICE_QBT)
+            delete_credentials(SERVICE_QBT_KEY)
+            return jsonify({"ok": True})
+        except Exception as exc:
+            return jsonify({"ok": False, "error": str(exc)}), 500
+
+    @app.route("/api/credentials/wtrf", methods=["DELETE"])
+    def credentials_wtrf_delete() -> Response:
+        """Remove WTRF forum credentials from the OS keyring.
+
+        Returns:
+            JSON {ok: true} or {error}.
+        """
+        try:
+            from backend.credentials import delete_credentials, SERVICE_WTRF
+            delete_credentials(SERVICE_WTRF)
+            return jsonify({"ok": True})
         except Exception as exc:
             return jsonify({"ok": False, "error": str(exc)}), 500
 
@@ -2783,82 +3278,179 @@ def create_app() -> Flask:
 
     @app.route("/api/master/github_release", methods=["POST"])
     def master_github_release() -> Response:
-        """Create a GitHub release for a just-exported master snapshot. Curator-only.
+        """Create a GitHub release with real upload progress. Curator-only.
 
-        Requires the ``gh`` CLI to be authenticated. Picks a tag in the form
-        ``master-YYYY-MM-DD``, appending ``.2`` / ``.3`` etc. on same-day
-        re-releases. Generates release notes from ``lb_status_history`` since
-        the previous ``master_published_at``.
+        Replaces gh CLI subprocess with direct GitHub REST API calls.
+        Token is obtained via ``gh auth token``.  Assets (.db and manifest)
+        are uploaded in 1 MB chunks so the GUI can display byte-accurate
+        progress, matching the pattern used by the download flow.
 
         Body: {db_path, manifest_path, version, prev_published_at (optional)}.
-        Returns: {ok, tag, url} or {error}.
+        Returns: text/event-stream with events:
+          data: {"type": "progress", "label": "...", "pct": N_or_null}
+          data: {"type": "done", "tag": "...", "url": "..."}
+          data: {"type": "error", "error": "...", "message": "..."}
         """
         import subprocess
+        import queue
+        import json as _json
+        import requests as _req
         from datetime import datetime, timezone
 
-        try:
-            if not database.is_curator():
-                return jsonify({"error": "curator_required"}), 403
+        if not database.is_curator():
+            return jsonify({"error": "curator_required"}), 403
 
-            body = request.get_json(silent=True) or {}
-            db_path_str = body.get("db_path", "")
-            manifest_path_str = body.get("manifest_path", "")
-            version = body.get("version", "")
-            prev_published_at = body.get("prev_published_at")
+        body = request.get_json(silent=True) or {}
+        db_path_str = body.get("db_path", "")
+        manifest_path_str = body.get("manifest_path", "")
+        version = body.get("version", "")
+        prev_published_at = body.get("prev_published_at")
 
-            if not db_path_str or not manifest_path_str:
-                return jsonify({"error": "db_path and manifest_path are required"}), 400
+        if not db_path_str or not manifest_path_str:
+            return jsonify({"error": "db_path and manifest_path are required"}), 400
 
-            # Derive date from version (format: YYYY-MM-DDTHH:MM:SS or timestamp)
+        _REPO = "kuddukan42/losslessbob"
+        _GH_API = "https://api.github.com"
+        ev_q: queue.Queue = queue.Queue()
+
+        def _work() -> None:
             try:
-                date_str = version[:10] if version else datetime.now(timezone.utc).strftime("%Y-%m-%d")
-            except Exception:
-                date_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-
-            # Find an unused tag: master-YYYY-MM-DD[.N]
-            tag = f"master-{date_str}"
-            for suffix in ["", ".2", ".3", ".4", ".5"]:
-                candidate = f"{tag}{suffix}"
-                check = subprocess.run(
-                    ["gh", "release", "view", candidate, "--repo", "kuddukan42/losslessbob"],
-                    capture_output=True,
+                # Obtain token via gh CLI
+                tok = subprocess.run(
+                    ["gh", "auth", "token"], capture_output=True, text=True, timeout=15,
                 )
-                if check.returncode != 0:
-                    tag = candidate
+                if tok.returncode != 0:
+                    ev_q.put({"type": "error", "error": "gh_auth_failed",
+                              "message": tok.stderr.strip() or "gh auth token failed"})
+                    return
+                token = tok.stdout.strip()
+                if not token:
+                    ev_q.put({"type": "error", "error": "gh_no_token",
+                              "message": "gh auth token returned empty — run `gh auth login` first."})
+                    return
+
+                gh_hdr = {
+                    "Authorization": f"token {token}",
+                    "Accept": "application/vnd.github+json",
+                }
+
+                # Derive date for tag
+                try:
+                    date_str = version[:10] if version else datetime.now(timezone.utc).strftime("%Y-%m-%d")
+                except Exception:
+                    date_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
+                # Find an unused tag: master-YYYY-MM-DD[.N]
+                ev_q.put({"type": "progress", "label": "Checking for existing releases…", "pct": None})
+                base_tag = f"master-{date_str}"
+                tag = None
+                for suffix in ["", ".2", ".3", ".4", ".5"]:
+                    candidate = f"{base_tag}{suffix}" if suffix else base_tag
+                    chk = _req.get(
+                        f"{_GH_API}/repos/{_REPO}/releases/tags/{candidate}",
+                        headers=gh_hdr, timeout=15,
+                    )
+                    if chk.status_code == 404:
+                        tag = candidate
+                        break
+                if tag is None:
+                    ev_q.put({"type": "error", "error": "too_many_releases",
+                              "message": f"5 releases already exist for {date_str}."})
+                    return
+
+                # Build release notes
+                ev_q.put({"type": "progress", "label": "Building release notes…", "pct": None})
+                notes = database.generate_release_notes(since_timestamp=prev_published_at)
+
+                # Create the GitHub release
+                ev_q.put({"type": "progress", "label": f"Creating release {tag}…", "pct": None})
+                cr = _req.post(
+                    f"{_GH_API}/repos/{_REPO}/releases",
+                    headers=gh_hdr,
+                    json={"tag_name": tag, "name": f"Master Update {date_str}", "body": notes},
+                    timeout=30,
+                )
+                if not cr.ok:
+                    msg = cr.json().get("message", cr.text[:300]) if cr.content else cr.reason
+                    ev_q.put({"type": "error", "error": "create_failed", "message": msg})
+                    return
+                release = cr.json()
+                # upload_url: "https://uploads.github.com/.../assets{?name,label}" — strip template
+                upload_base = release["upload_url"].split("{")[0]
+                release_url = release["html_url"]
+
+                def _upload_asset(file_path_s: str, label: str) -> None:
+                    fsize = os.path.getsize(file_path_s)
+                    fmb = fsize / (1 << 20)
+                    fname = Path(file_path_s).name
+                    sent_ref = [0]
+
+                    def _reader():
+                        with open(file_path_s, "rb") as fh:
+                            while True:
+                                chunk = fh.read(1 << 20)  # 1 MB chunks
+                                if not chunk:
+                                    break
+                                sent_ref[0] += len(chunk)
+                                pct = int(sent_ref[0] * 100 / fsize) if fsize else 100
+                                ev_q.put({
+                                    "type": "progress",
+                                    "label": (
+                                        f"Uploading {label}… {pct}%"
+                                        f"  ({sent_ref[0] / (1<<20):.1f} / {fmb:.0f} MB)"
+                                    ),
+                                    "pct": pct,
+                                })
+                                yield chunk
+
+                    up = _req.post(
+                        upload_base,
+                        params={"name": fname},
+                        data=_reader(),
+                        headers={
+                            "Authorization": f"token {token}",
+                            "Accept": "application/vnd.github+json",
+                            "Content-Type": "application/octet-stream",
+                            "Content-Length": str(fsize),
+                        },
+                        timeout=600,
+                    )
+                    up.raise_for_status()
+
+                db_fname = Path(db_path_str).name
+                mf_fname = Path(manifest_path_str).name
+                ev_q.put({"type": "progress", "label": f"Uploading {db_fname}…", "pct": 0})
+                _upload_asset(db_path_str, db_fname)
+
+                ev_q.put({"type": "progress", "label": f"Uploading {mf_fname}…", "pct": 0})
+                _upload_asset(manifest_path_str, mf_fname)
+
+                ev_q.put({"type": "done", "tag": tag, "url": release_url})
+
+            except FileNotFoundError:
+                ev_q.put({"type": "error", "error": "gh_not_found",
+                          "message": "gh CLI not found — install GitHub CLI first."})
+            except Exception as exc:
+                ev_q.put({"type": "error", "error": type(exc).__name__, "message": str(exc)})
+
+        threading.Thread(target=_work, daemon=True).start()
+
+        def _stream():
+            while True:
+                try:
+                    ev = ev_q.get(timeout=680)
+                except queue.Empty:
+                    ev = {"type": "error", "error": "timeout",
+                          "message": "Upload timed out after 680 s."}
+                yield f"data: {_json.dumps(ev)}\n\n"
+                if ev.get("type") in ("done", "error"):
                     break
 
-            notes = database.generate_release_notes(
-                since_timestamp=prev_published_at,
-            )
-
-            result = subprocess.run(
-                [
-                    "gh", "release", "create", tag,
-                    db_path_str,
-                    manifest_path_str,
-                    "--title", f"Master Update {date_str}",
-                    "--notes", notes,
-                    "--repo", "kuddukan42/losslessbob",
-                ],
-                capture_output=True, text=True, timeout=120,
-            )
-
-            if result.returncode != 0:
-                return jsonify({
-                    "error": "gh_failed",
-                    "message": result.stderr.strip() or result.stdout.strip(),
-                }), 500
-
-            url = result.stdout.strip()
-            return jsonify({"ok": True, "tag": tag, "url": url})
-
-        except FileNotFoundError:
-            return jsonify({"error": "gh_not_found",
-                            "message": "gh CLI not found — install GitHub CLI first."}), 500
-        except subprocess.TimeoutExpired:
-            return jsonify({"error": "timeout", "message": "gh upload timed out after 120s"}), 500
-        except Exception as exc:
-            return jsonify({"error": str(exc)}), 500
+        return Response(
+            stream_with_context(_stream()),
+            content_type="text/event-stream",
+            headers={"X-Accel-Buffering": "no", "Cache-Control": "no-cache"},
+        )
 
     @app.route("/api/master/import", methods=["POST"])
     def master_import() -> Response:
@@ -3468,6 +4060,439 @@ def create_app() -> Flask:
         with _fp_dup_lock:
             _fp_dup_state["stop_requested"] = True
         return jsonify({"ok": True})
+
+    # ── Pipeline ─────────────────────────────────────────────────────────────
+
+    def _pipeline_process_folder(folder_path: str, steps: set) -> dict:
+        """Run one or more pipeline steps on a single folder and return a PipelineRow dict."""
+        from backend.folder_naming import build_standard_name as _build_name
+
+        folder = Path(folder_path)
+        folder_name = folder.name
+
+        row: dict = {
+            "folder": folder_path,
+            "folderName": folder_name,
+            "verify":  {"status": "mute", "label": "—"},
+            "lookup":  {"status": "mute", "label": "—", "lb_number": None},
+            "rename":  {"status": "mute", "label": "—", "proposed": None},
+            "lbdir":   {"status": "mute", "label": "—"},
+            "severity": "attn",
+            "errors": [],
+        }
+
+        if not folder.exists() or not folder.is_dir():
+            row["errors"].append({"step": "verify", "message": "Folder not found"})
+            row["verify"] = {"status": "bad", "label": "Missing"}
+            return row
+
+        lb_number: int | None = None
+
+        # ── Step 1: Verify ────────────────────────────────────────────────────
+        if "verify" in steps:
+            vr = checksum_utils.verify_folder(folder_path)
+            if vr.get("error"):
+                row["verify"] = {"status": "bad", "label": "Error"}
+                row["errors"].append({"step": "verify", "message": vr["error"]})
+            elif vr["status"] == "pass":
+                row["verify"] = {"status": "ok", "label": "Pass"}
+            elif vr["status"] in ("incomplete", "no_checksums"):
+                row["verify"] = {"status": "warn", "label": "Incomplete"}
+            else:
+                row["verify"] = {"status": "bad", "label": "Mismatch"}
+
+        # ── Step 2: Lookup ────────────────────────────────────────────────────
+        if "lookup" in steps:
+            chk_parts: list[str] = []
+            for f in sorted(folder.iterdir()):
+                if f.suffix.lower() in (".ffp", ".md5", ".st5"):
+                    try:
+                        chk_parts.append(f.read_text(errors="ignore"))
+                    except OSError:
+                        pass
+
+            if not chk_parts:
+                row["lookup"] = {"status": "warn", "label": "No checksums", "lb_number": None}
+            else:
+                chk_text = "\n".join(chk_parts)
+                parsed = database.parse_checksum_text(chk_text)
+                if not parsed:
+                    row["lookup"] = {"status": "bad", "label": "Not found", "lb_number": None}
+                else:
+                    summary, _ = database.lookup_checksums(parsed)
+                    lb_list: list[int] = summary.get("lb_numbers_found", [])
+                    if len(lb_list) == 1:
+                        lb_number = lb_list[0]
+                        row["lookup"] = {"status": "ok", "label": f"LB-{lb_number:05d}", "lb_number": lb_number}
+                    elif len(lb_list) > 1:
+                        row["lookup"] = {"status": "warn", "label": "Conflict", "lb_number": None}
+                        row["errors"].append({"step": "lookup", "message": f"Multiple LBs: {lb_list}"})
+                    else:
+                        row["lookup"] = {"status": "bad", "label": "Not found", "lb_number": None}
+
+        # ── Step 3: Rename proposal ───────────────────────────────────────────
+        if "rename" in steps:
+            if lb_number:
+                entry_data = database.get_entry(lb_number)
+                entry = (entry_data or {}).get("entry", {})
+                date_str = entry.get("date_str") or ""
+                location = (entry.get("location") or "").strip()
+                lb_status = database.get_lb_status(lb_number)
+                proposed = _build_name(lb_number, date_str, location, lb_status)
+                if folder_name == proposed:
+                    row["rename"] = {"status": "ok", "label": "Correct", "proposed": None}
+                else:
+                    row["rename"] = {"status": "warn", "label": "Proposed", "proposed": proposed}
+            # else: stays mute — lookup hasn't resolved an LB#
+
+        # ── Step 4: LBDIR check ───────────────────────────────────────────────
+        if "lbdir" in steps:
+            if lb_number:
+                lbdir_file = _find_lbdir_in_folder(folder)
+                if lbdir_file:
+                    row["lbdir"] = {"status": "ok", "label": "Pass"}
+                else:
+                    row["lbdir"] = {"status": "warn", "label": "No LBDIR"}
+            # else: stays mute
+
+        # ── Severity ──────────────────────────────────────────────────────────
+        statuses = [row["verify"]["status"], row["lookup"]["status"],
+                    row["rename"]["status"], row["lbdir"]["status"]]
+        if "bad" in statuses:
+            row["severity"] = "attn"
+        elif row["rename"].get("label") == "Proposed":
+            row["severity"] = "ready"
+        elif all(s in ("ok", "mute") for s in statuses) and "ok" in statuses:
+            row["severity"] = "done"
+        else:
+            row["severity"] = "attn"
+
+        return row
+
+    @app.route("/api/pipeline/run", methods=["POST"])
+    def pipeline_run() -> Response:
+        """Run pipeline steps on a list of folders.
+
+        Body: {folders: [path, ...], steps: ["verify","lookup","rename","lbdir"]}
+        Returns:
+            JSON {results: [PipelineRow, ...]}
+        """
+        try:
+            data = request.get_json() or {}
+            folders: list[str] = data.get("folders", [])
+            steps: set[str] = set(data.get("steps", ["verify", "lookup", "rename", "lbdir"]))
+            if not folders:
+                return jsonify({"error": "folders list required"}), 400
+            results = [_pipeline_process_folder(f, steps) for f in folders]
+            return jsonify({"results": results})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/folder/rename", methods=["POST"])
+    def folder_rename() -> Response:
+        """Rename a folder on disk to a new name within the same parent directory.
+
+        Body: {folder: "/abs/path/to/folder", new_name: "new folder name"}
+        Returns:
+            JSON {ok: true, new_path: "/abs/path/to/new folder name"}
+        """
+        try:
+            data = request.get_json() or {}
+            folder = Path(data.get("folder", ""))
+            new_name: str = (data.get("new_name") or "").strip()
+            if not folder.exists() or not folder.is_dir():
+                return jsonify({"error": "Folder not found"}), 400
+            if not new_name or "/" in new_name or "\\" in new_name:
+                return jsonify({"error": "Invalid new_name"}), 400
+            new_path = folder.parent / new_name
+            if new_path.exists():
+                return jsonify({"error": f"Target already exists: {new_name}"}), 409
+            folder.rename(new_path)
+            return jsonify({"ok": True, "new_path": str(new_path)})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/pipeline/scan-tree", methods=["POST"])
+    def pipeline_scan_tree() -> Response:
+        """Walk a root directory and return subdirectories containing audio files.
+
+        Body: {root: "/abs/path"}
+        Returns:
+            JSON {folders: [str, ...]} sorted alphabetically
+        """
+        _AUDIO = {'.flac', '.mp3', '.wav', '.m4a', '.aiff', '.ape', '.ogg', '.wv'}
+        try:
+            data = request.get_json() or {}
+            root = Path(data.get("root", ""))
+            if not root.is_dir():
+                return jsonify({"error": "root is not a directory"}), 400
+            found: list[str] = []
+            # rglob("*") excludes root itself, so check root separately
+            if any(f.suffix.lower() in _AUDIO for f in root.iterdir() if f.is_file()):
+                found.append(str(root))
+            for dirpath in root.rglob("*"):
+                if dirpath.is_dir() and any(
+                    f.suffix.lower() in _AUDIO for f in dirpath.iterdir() if f.is_file()
+                ):
+                    found.append(str(dirpath))
+            return jsonify({"folders": sorted(found)})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    _LB_RE_SCAN = re.compile(r'LB[-\s]0*(\d+)', re.IGNORECASE)
+
+    @app.route("/api/pipeline/scan-dir", methods=["POST"])
+    def pipeline_scan_dir() -> Response:
+        """Walk a directory and return LB-numbered subdirectories.
+
+        Non-recursive (depth-1) by default; pass recursive=true for a full tree walk.
+        Uses folder-name LB matching, not audio-file detection.
+
+        Body: {root: "/abs/path", recursive: false}
+        Returns:
+            JSON {entries: [{lb_number, folder_name, path}], skipped: int}
+        """
+        try:
+            data = request.get_json() or {}
+            root = Path(data.get("root", ""))
+            recursive = bool(data.get("recursive", False))
+            if not root.is_dir():
+                return jsonify({"error": "root is not a directory"}), 400
+
+            skipped = 0
+
+            if recursive:
+                by_lb: dict[int, tuple[int, str, str]] = {}
+                for child in root.rglob("*"):
+                    if not child.is_dir():
+                        continue
+                    m = _LB_RE_SCAN.search(child.name)
+                    if m:
+                        lb = int(m.group(1))
+                        depth = len(child.relative_to(root).parts)
+                        if lb not in by_lb or depth < by_lb[lb][0]:
+                            by_lb[lb] = (depth, child.name, str(child))
+                    else:
+                        skipped += 1
+                entries = [
+                    {"lb_number": lb, "folder_name": name, "path": path}
+                    for lb, (_, name, path) in sorted(by_lb.items())
+                ]
+            else:
+                entries = []
+                for child in sorted(root.iterdir()):
+                    if not child.is_dir():
+                        continue
+                    m = _LB_RE_SCAN.search(child.name)
+                    if m:
+                        entries.append({
+                            "lb_number": int(m.group(1)),
+                            "folder_name": child.name,
+                            "path": str(child),
+                        })
+                    else:
+                        skipped += 1
+
+            return jsonify({"entries": entries, "skipped": skipped})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    # ── Data Package Export ───────────────────────────────────────────────────
+
+    @app.route("/api/package/user_data", methods=["POST"])
+    def package_user_data() -> Response:
+        """Bundle user data (DB + settings + gui_state) into a dated zip in data/exports/.
+
+        Returns: {ok, path, manifest: {type, created_at, files, file_count, total_bytes}}
+        """
+        import zipfile
+        import hashlib
+        from datetime import datetime, date
+
+        try:
+            exports_dir = DATA_DIR / "exports"
+            exports_dir.mkdir(parents=True, exist_ok=True)
+
+            date_str = date.today().isoformat()
+            zip_path = exports_dir / f"losslessbob_userdata_{date_str}.zip"
+            counter = 2
+            while zip_path.exists():
+                zip_path = exports_dir / f"losslessbob_userdata_{date_str}_{counter}.zip"
+                counter += 1
+
+            candidates = [
+                (DATA_DIR / "losslessbob.db", "losslessbob.db"),
+                (DATA_DIR / "settings.ini", "settings.ini"),
+                (DATA_DIR / "gui_state.json", "gui_state.json"),
+            ]
+
+            manifest_files = []
+            with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED) as zf:
+                for src, arc_name in candidates:
+                    if src.exists():
+                        zf.write(src, arc_name)
+                        size = src.stat().st_size
+                        sha256 = hashlib.sha256(src.read_bytes()).hexdigest()
+                        manifest_files.append({"name": arc_name, "size_bytes": size, "sha256": sha256})
+
+            manifest = {
+                "type": "user_data",
+                "created_at": datetime.utcnow().isoformat() + "Z",
+                "files": manifest_files,
+                "file_count": len(manifest_files),
+                "total_bytes": sum(f["size_bytes"] for f in manifest_files),
+            }
+            _log.info("package_user_data: wrote %s (%d files)", zip_path.name, len(manifest_files))
+            return jsonify({"ok": True, "path": str(zip_path), "manifest": manifest})
+        except Exception:
+            _log.exception("package_user_data failed")
+            return jsonify({"error": "internal_error"}), 500
+
+    @app.route("/api/package/scrape_data", methods=["POST"])
+    def package_scrape_data() -> Response:
+        """Bundle scraped site data (data/site/) into a dated zip in data/exports/.
+
+        Returns: {ok, path, manifest: {type, created_at, file_count, total_bytes}}
+        """
+        import zipfile
+        from datetime import datetime, date
+
+        try:
+            if not SITE_DIR.exists():
+                return jsonify({
+                    "error": "no_site_data",
+                    "message": "data/site/ does not exist. Run the site crawler first.",
+                }), 400
+
+            exports_dir = DATA_DIR / "exports"
+            exports_dir.mkdir(parents=True, exist_ok=True)
+
+            date_str = date.today().isoformat()
+            zip_path = exports_dir / f"losslessbob_sitedata_{date_str}.zip"
+            counter = 2
+            while zip_path.exists():
+                zip_path = exports_dir / f"losslessbob_sitedata_{date_str}_{counter}.zip"
+                counter += 1
+
+            file_count = 0
+            total_bytes = 0
+            with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED) as zf:
+                for src in sorted(SITE_DIR.rglob("*")):
+                    if src.is_file():
+                        arc_name = "site/" + src.relative_to(SITE_DIR).as_posix()
+                        zf.write(src, arc_name)
+                        file_count += 1
+                        total_bytes += src.stat().st_size
+
+            manifest = {
+                "type": "scrape_data",
+                "created_at": datetime.utcnow().isoformat() + "Z",
+                "file_count": file_count,
+                "total_bytes": total_bytes,
+            }
+            _log.info("package_scrape_data: wrote %s (%d files)", zip_path.name, file_count)
+            return jsonify({"ok": True, "path": str(zip_path), "manifest": manifest})
+        except Exception:
+            _log.exception("package_scrape_data failed")
+            return jsonify({"error": "internal_error"}), 500
+
+    @app.route("/api/package/restore", methods=["POST"])
+    def package_restore() -> Response:
+        """Restore a zip archive produced by /api/package/user_data or /api/package/scrape_data.
+
+        Body: {zip_path: str, dry_run: bool = false}
+        Returns: {ok, type, restored: [{name, dest}], conflicts: [{name, dest}], dry_run: bool}
+        """
+        import zipfile
+        import hashlib
+
+        body = request.get_json(silent=True) or {}
+        zip_path_str = body.get("zip_path", "")
+        dry_run = bool(body.get("dry_run", False))
+
+        if not zip_path_str:
+            return jsonify({"error": "zip_path is required"}), 400
+
+        zip_path = Path(zip_path_str)
+        if not zip_path.is_file():
+            return jsonify({"error": "file_not_found", "message": f"No file at {zip_path_str}"}), 404
+
+        try:
+            with zipfile.ZipFile(zip_path, "r") as zf:
+                names = zf.namelist()
+
+                # Detect package type from manifest embedded inside zip, or from file names.
+                pkg_type: str | None = None
+                manifest_data: dict = {}
+                if "manifest.json" in names:
+                    import json as _json
+                    manifest_data = _json.loads(zf.read("manifest.json"))
+                    pkg_type = manifest_data.get("type")
+
+                if pkg_type is None:
+                    if any(n.startswith("site/") for n in names):
+                        pkg_type = "scrape_data"
+                    elif any(n in ("losslessbob.db", "settings.ini", "gui_state.json") for n in names):
+                        pkg_type = "user_data"
+                    else:
+                        return jsonify({"error": "unrecognised_package",
+                                        "message": "Cannot determine package type from zip contents."}), 400
+
+                restored = []
+                conflicts = []
+
+                if pkg_type == "user_data":
+                    user_files = [
+                        ("losslessbob.db", DATA_DIR / "losslessbob.db"),
+                        ("settings.ini",   DATA_DIR / "settings.ini"),
+                        ("gui_state.json", DATA_DIR / "gui_state.json"),
+                    ]
+                    for arc_name, dest in user_files:
+                        if arc_name not in names:
+                            continue
+                        entry = {"name": arc_name, "dest": str(dest)}
+                        if dest.exists():
+                            conflicts.append(entry)
+                        else:
+                            restored.append(entry)
+                        if not dry_run:
+                            dest.parent.mkdir(parents=True, exist_ok=True)
+                            dest.write_bytes(zf.read(arc_name))
+                    if not dry_run:
+                        _log.info("package_restore(user_data): restored %d files from %s",
+                                  len(restored) + len(conflicts), zip_path.name)
+
+                elif pkg_type == "scrape_data":
+                    site_dest = DATA_DIR / "site"
+                    for arc_name in names:
+                        if not arc_name.startswith("site/") or arc_name.endswith("/"):
+                            continue
+                        rel = arc_name[len("site/"):]
+                        dest = site_dest / rel
+                        entry = {"name": arc_name, "dest": str(dest)}
+                        if dest.exists():
+                            conflicts.append(entry)
+                        else:
+                            restored.append(entry)
+                        if not dry_run:
+                            dest.parent.mkdir(parents=True, exist_ok=True)
+                            dest.write_bytes(zf.read(arc_name))
+                    if not dry_run:
+                        _log.info("package_restore(scrape_data): restored %d files from %s",
+                                  len(restored) + len(conflicts), zip_path.name)
+
+                return jsonify({
+                    "ok": True,
+                    "type": pkg_type,
+                    "restored": restored,
+                    "conflicts": conflicts,
+                    "dry_run": dry_run,
+                })
+        except zipfile.BadZipFile:
+            return jsonify({"error": "bad_zip", "message": "File is not a valid zip archive."}), 400
+        except Exception:
+            _log.exception("package_restore failed")
+            return jsonify({"error": "internal_error"}), 500
 
     _slog.t("Flask: create_app done")
     return app

@@ -22,6 +22,32 @@ You do **not** need to ship the whole thing at once. The design is structured in
 
 The MD sections below are ordered roughly by build dependency. A developer (or Claude Code) can be pointed at any single section and asked to implement just that piece.
 
+## Build Progress
+
+Track what is done, in-progress, or not yet started. Update this table each session.
+
+| Phase | Item | Status | Notes |
+|---|---|---|---|
+| 0 | Electron + React + Vite + TS scaffold | ✅ Done | `gui_next/` — Electron 42, React 18, Vite 7, electron-vite 5 |
+| 1a | Theme engine (`tokens.ts`) | ✅ Done | `src/renderer/src/lib/tokens.ts` — `applyTheme`, `loadTheme`, `saveTheme`, `getSystemMode`; 2 modes × 8 accents × 3 densities |
+| 1b | Global CSS (`index.css`) | ✅ Done | Full port of `_source/app.css` — scrollbars, sticky headers, focus rings, kbd-pill, density rows |
+| 1c | Font loading | ✅ Done | Inter + JetBrains Mono via Google Fonts; CSP updated in `index.html` |
+| 2 | Primitives | ✅ Done | `components/Icon.tsx`, `primitives.tsx`, `table.tsx`, `index.ts` — all components, barrel export |
+| 3 | App shell | ✅ Done | `AppShell.tsx` — Sidebar, Topbar, StatusBar; Zustand store; HashRouter with all 16 routes wired |
+| 3b | Curator mode gate | 🔄 In Progress | Store + gating done; toggle UI in Settings screen is Phase 6 |
+| 4a | Pipeline screen | 🔲 Todo | Primary workflow — file-drop, per-step ops, virtualized table |
+| 4b | Home screen | 🔲 Todo | Dashboard cards, metrics, recent activity |
+| 4c | My Collection screen | 🔲 Todo | 15K-row virtualized table + detail panel |
+| 5 | Search screen | 🔲 Todo | FTS5 search + facet rail |
+| 5b | Bootlegs screen | 🔲 Todo | LBBCD catalog browser |
+| 6 | Settings / Themes screens | 🔲 Todo | Forms + live theme preview |
+| 7 | Stub screens | 🔲 Todo | Verify, Lookup, Rename, LBDIR, Attachments, Spectrograms, Map |
+| 8 | Curator tools | 🔲 Deferred | DB Editor, Scraper (behind curator-mode gate) |
+
+**Legend:** ✅ Done · 🔄 In Progress · 🔲 Not Started · ⏸ Deferred
+
+---
+
 ## How to read this bundle
 
 | File | What it covers | When to read |

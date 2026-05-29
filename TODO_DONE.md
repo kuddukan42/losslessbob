@@ -1,6 +1,314 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-116: gui_next — identify and wire ScreenPipeline remaining 5% stub
+Priority: Low
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-29
+Description: The unidentified stub was the "Bulk actions" button in the ScreenPipeline header
+  (line ~431). Implemented an inline popover menu with: Select all visible, Clear selection
+  (conditional on selection), and Clear queue (destructive). Follows the same outside-click
+  dismiss pattern as ScreenBootlegs and ScreenSearch.
+
+---
+
+TODO-104: Data package restore — import user data and scraped assets from zip
+Priority: Medium
+Status: Done
+Added: 2026-05-27
+Closed: 2026-05-29
+Description: Restore flow accepting a zip archive produced by the export routes (TODO-102/103).
+  Implemented:
+    • POST /api/package/restore (backend/app.py) — detects type from manifest.json or file names;
+      dry_run mode returns conflicts without writing; user_data restores db/settings/gui_state;
+      scrape_data restores data/site/; validates zip and rejects bad archives.
+    • PyQt6 (gui/setup_tab.py) — _PackageRestoreThread, "Restore from Zip…" button in Data Packages
+      group; dry-run pass then confirm dialog listing overwrites; final restore with status label.
+    • Electron (gui_next ScreenSetup.tsx) — handleRestorePackage; dry-run → ConfirmDialog showing
+      conflicts; "Restore from zip…" card added to Data Packages SetupCard.
+
+TODO-103: Data package — scraped attachments and pages
+Priority: Medium
+Status: Done
+Added: 2026-05-27
+Closed: 2026-05-29
+Description: Bundle all scraped data (data/site/ HTML pages and attachment files) into a
+  distributable zip archive with a JSON manifest (file count, total bytes, timestamp).
+  Implemented via POST /api/package/scrape_data, GUI button in Setup tab "Data Packages"
+  group, and CLI: package scrape-data [--out PATH].
+
+---
+
+TODO-102: Data package — user data export
+Priority: Medium
+Status: Done
+Added: 2026-05-27
+Closed: 2026-05-29
+Description: Bundle user-generated data (losslessbob.db, settings.ini, gui_state.json)
+  into a portable dated zip with a JSON manifest (per-file size + SHA-256).
+  Implemented via POST /api/package/user_data, GUI button in Setup tab "Data Packages"
+  group, and CLI: package user-data [--out PATH].
+
+---
+
+TODO-132: Guarantee ≥2 TCP trackers on every torrent
+Priority: High
+Status: Done
+Added: 2026-05-29
+Closed: 2026-05-29
+Description: Regardless of which tracker list is selected, always ensure at least
+  2 http/https (TCP) trackers are present before writing the torrent. If the
+  fetched list has fewer than 2, inject from _FALLBACK_TCP_TRACKERS.
+
+---
+
+TODO-130: ScreenCollection — multi-select torrent creation / qBittorrent queue
+Priority: Medium
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-29
+Description: Multi-select via checkedIds already existed. Added N/M live progress bar for
+  batch torrent creation (handleBatchCreateTorrent) and qBt add (handleBatchAddToQbt).
+  Operations run sequentially on the frontend; progress bar shows "Creating torrents: N/M…"
+  or "Sending to qBittorrent: N/M…". qBt config already present in ScreenSetup.
+
+TODO-129: Audio format + bitrate detection — surface FLAC/WAV/SHN and 16/44.1 vs 24/96
+Priority: Medium
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-29
+Description: Added GET /api/collection/<lb>/audioinfo backend route — probes up to 5 audio
+  files with soundfile (FLAC/WAV), falls back to ffprobe subprocess for SHN/APE/others;
+  caches by disk_path + mtime fingerprint. DetailPanel fetches on row open and shows a real
+  "FLAC · 16/44.1" pill (or mixed/offline/absent). Removed the hardcoded placeholder pill.
+
+TODO-128: gui_next ScreenCollection — cross-tab nav + replace coming-soon stubs
+Priority: Low
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-29
+Description: Wired the three stub buttons in the DetailPanel: Attachments → navigate('/attachments'),
+  Spectrograms → handleCtxSpectrograms (calls /api/spectrogram/generate then navigates to /spectrograms),
+  On map → navigate('/map'). Added onSpectrograms and onNavigate props to DetailPanelProps.
+
+TODO-127: gui_next ScreenCollection — real Size/codec data or drop placeholder pills
+Priority: Low
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-29
+Description: Removed the hardcoded "FLAC · 16/44" pill from the detail panel pill row.
+  Real audio format pill is now populated by TODO-129. Size row still shows '—' (no size data).
+
+TODO-126: gui_next ScreenCollection — column header sorting
+Priority: Low
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-29
+Description: Added sortCol/sortDir state and handleSort callback. All main-table headers
+  (LB#, Status, Date, Location, Folder, Disk path, Confirmed, FP) are now clickable with ▲▼⇅
+  indicators. sortedFilteredRows drives the virtualizer. Wishlist table headers also sortable.
+  TH component updated to accept onClick + sorted props.
+
+TODO-125: gui_next ScreenCollection — bulk Update Location + standard-name/NFT cross-check
+Priority: Medium
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-29
+Description: handleUpdateLocation now supports both single and multi-row. Single: picks dir,
+  validates folder name against /api/folder_naming/standard/<lb>, toasts mismatch (non-blocking),
+  then PATCHes. Multi: picks parent dir, calls /api/pipeline/scan-dir to find matching LB-XXXXX
+  subfolders, validates each, PATCHes all matches; shows N updated / N not-found toast.
+  Reuses torrentProgress bar for progress feedback.
+
+TODO-122: gui_next ScreenCollection — Wishlist columns/edit + Duplicates grouped tree
+Priority: Medium
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-29
+Description: Wishlist filter now shows dedicated table with LB#, Date, Location, Description,
+  Rating, Added, Notes, Priority columns. Notes and Priority support click-to-edit inline (input
+  + select, saved via PATCH /api/wishlist/<lb>). CollectionRow extended with wishlistPriority,
+  wishlistNotes, wishlistAddedAt. Added update_wishlist() to db.py and PATCH /api/wishlist/<lb>
+  to app.py. Duplicates filter now shows a grouped tree (GroupRow) organised by date·location,
+  with per-variant owned rows showing rating, description, "Open on LosslessBob" (→ /lookup),
+  "Open folder", and "Remove from collection" (with confirm dialog).
+
+TODO-124: gui_next ScreenCollection — non-recursive Scan Directory + owned-aware preview
+Priority: Medium
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-29
+Description: Added /api/pipeline/scan-dir backend route (depth-1 and recursive variants) that
+  matches LB-named folders. Added ScanPreviewModal component to gui_next with LB# / Folder /
+  Path / Already Owned columns, per-row Add buttons, and "Add all (N)" bulk action. Scan
+  directory and Scan tree… buttons now call distinct handlers (non-recursive vs recursive)
+  and both open ScanPreviewModal instead of the old AddFolderModal.
+
+TODO-123: gui_next ScreenCollection — Notes column + notes field in Add dialog
+Priority: Medium
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-29
+Description: Added Notes column to owned-collection table (reads c.notes via GET /api/collection).
+  AddFolderModal now shows editable Folder Name (pre-filled from path) and Notes inputs per entry;
+  both are included in POST /api/collection body.
+
+TODO-121: gui_next ScreenCollection — global Forum & Torrent History views
+Priority: High
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-29
+Description: Old tab had standalone "Forum History" and "Torrent History" sub-tabs; new screen
+  was read-only pills.
+  Implemented:
+    • GlobalForumPanel component (filter='forum_global' chip): lists all GET /api/forum_posts
+      records with Open in Browser, Remove Record (DELETE + confirm), Go to LB actions.
+    • GlobalTorrentPanel component (filter='torrent_global' chip): lists all GET /api/torrents
+      records with Add qBt and Go to LB actions.
+    • DetailPanel forum tab now fetches GET /api/entry/<lb>/forum_posts on open and shows
+      per-post Open in Browser + Remove Record buttons (confirm dialog), replacing read-only pills.
+
+TODO-120: gui_next ScreenCollection — per-torrent-record management in detail panel
+Priority: High
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-28
+Description: DetailPanel now fetches GET /api/torrent/<lb> on open; each torrent record
+  shows source-folder-exists/torrent-file-exists status dots and per-record action buttons:
+  Add/Remove qBt, Regen, Relocate Source, Delete .torrent file (with confirm dialog).
+  Forum tab remains display-only.
+
+---
+
+TODO-119: gui_next ScreenCollection — Personal Info (rating, tags, listen count)
+Priority: High
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-28
+Description: DetailPanel now fetches personal meta on open and shows "My Rating" (personal_rating)
+  and "Listens" (listen_count + last_listened) in the meta grid. "Log Listen" button POSTs to
+  /api/collection/<lb>/listen and refreshes the panel. "Edit Personal Info" button opens
+  PersonalInfoModal from the detail panel. Saving via the modal bumps personalSaveVer to
+  re-fetch meta without a full collection reload.
+
+TODO-117: gui_next ScreenCollection — restore Missing (un-owned LB) view + CSV export
+Priority: High
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-28
+Description: Added "Not in collection" chip backed by GET /api/collection/missing. Renders a
+  separate table (LB# / LB Status / Date / Location / Rating / Description), Export CSV button,
+  and double-click → Lookup navigation. Also added onDoubleClick prop to TR component.
+
+---
+
+TODO-118: gui_next ScreenCollection — row context menu actions
+Priority: High
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-28
+Description: Added right-click ContextMenu on every collection row with 7 actions:
+  Open Folder, View LB Entry (→ Lookup), Scrape Entry, Fingerprint Folder, Play in VLC,
+  Generate Spectrograms, Edit Personal Info (inline modal with rating 1-5 + tags).
+  Also added PersonalInfoModal component (rating 1-5 + tags, GET/POST /api/collection/<lb>/meta).
+  Added backend POST /api/open/vlc endpoint (wraps gui.platform_utils.open_in_vlc).
+  Added onContextMenu prop to TR table component.
+
+---
+
+TODO-115: gui_next — wire ScreenCollection remaining 10%
+Priority: Low
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-28
+Description: All three items complete:
+  • Wishlist add/remove actions — wired to POST /api/wishlist / DELETE /api/wishlist/<lb>.
+  • Batch-remove progress bar — inline progress bar renders during sequential DELETEs.
+  • "My Collection" nav count badge — AppShell fetches GET /api/home/stats on mount and
+    shows collection_count beside the "My Collection" nav item.
+
+---
+
+TODO-094: Rework UI per Claude design prototype
+Priority: Medium
+Status: Done
+Added: 2026-05-24
+Closed: 2026-05-28
+Description: All 6 sprints of PLAN_GUI_WIRING.md complete. ScreenSetup, ScreenCollection,
+  ScreenSearch, ScreenHome, ScreenBootlegs, and ScreenThemes fully wired to backend.
+  New layout, colour scheme, and component structure implemented in gui_next (Electron/React).
+
+---
+
+TODO-114: gui_next — port ScreenLBDIR from source JSX
+Priority: Medium
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-28
+Description: Port instructions/gui_redesign/_source/screen-lbdir.jsx to gui_next/src/renderer/src/screens/ScreenLBDIR.tsx. Four sub-tabs: Check (per-file MD5/shntool table), Retrieve (copy lbdir from attachments cache), Reconcile (propose renames for moved files), Extras (list + delete files not in lbdir). Highest complexity of the 7 stub screens — do last.
+
+---
+
+TODO-113: gui_next — port ScreenLookup from source JSX
+Priority: High
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-28
+Description: Port instructions/gui_redesign/_source/screen-lookup.jsx to gui_next/src/renderer/src/screens/ScreenLookup.tsx. Sources rail (clipboard/listbox/files/folders), 5-state status counters (matched/incomplete/not-found/duplicate/xref), per-LB summary table, per-checksum detail table, footer link to Rename. Core feature of the app.
+
+TODO-112: gui_next — port ScreenRename from source JSX
+Priority: Medium
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-28
+Description: Port instructions/gui_redesign/_source/screen-rename.jsx to gui_next/src/renderer/src/screens/ScreenRename.tsx. Five row states (has_lb, needs_rename, wrong_lb, multiple_ids, no_match) with filter chips, bulk action bar with checkboxes, expandable disambiguation rows for multi-LB conflicts. Depends on Lookup results being populated first.
+
+---
+
+TODO-111: gui_next — port ScreenSpectrograms from source JSX
+Priority: Medium
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-28
+Description: Port instructions/gui_redesign/_source/screen-spectrograms.jsx to gui_next/src/renderer/src/screens/ScreenSpectrograms.tsx. Folder rail with batch progress, track rail with PNG inventory, spectrogram viewer using existing .lbb-spec-canvas CSS class, thumbnail strip, render options (width/height/dB floor/window). SoX/ffmpeg batch generate.
+
+---
+
+TODO-110: gui_next — port ScreenVerify from source JSX
+Priority: Medium
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-28
+Description: Port instructions/gui_redesign/_source/screen-verify.jsx to gui_next/src/renderer/src/screens/ScreenVerify.tsx. Folder queue rail, 7-stat summary cards (total/pass/mismatch/missing/extra/FFP/MD5), full MD5+FFP+ST5 detail table, shntool-missing error state, per-file inspector panel. Verifies user-generated checksums (distinct from LBDIR which verifies the official archive sidecar).
+
+---
+
+TODO-109: gui_next — port ScreenAttachments from source JSX
+Priority: Medium
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-28
+Description: Ported screen-attachments.jsx to ScreenAttachments.tsx. Three-column layout: LB rail with current/stale/missing status dots and search/filter chips; file list for selected LB; viewer pane that dispatches on kind (text → pre, html → rendered table, image → canvas placeholder, binary → no-preview + open-externally). Wired into App.tsx replacing PlaceholderScreen.
+
+---
+
+TODO-107: Master publish — real upload progress via GitHub REST API
+Priority: Low
+Status: Done
+Added: 2026-05-27
+Closed: 2026-05-28
+Description: Replaced gh CLI subprocess in /api/master/github_release with direct GitHub REST API calls. Token obtained via `gh auth token` subprocess. Route now streams SSE events: progress (label + pct), done, error. .db and manifest uploaded in 1 MB generator chunks so pct is byte-accurate. GUI _GithubReleaseThread consumes the SSE stream and emits progress(str, int) signal; progress bar switches from indeterminate to determinate during upload.
+
+TODO-108: gui_next — port ScreenMap from source JSX
+Priority: Low
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-28
+Description: Port instructions/gui_redesign/_source/screen-map.jsx to gui_next/src/renderer/src/screens/ScreenMap.tsx. Filter rail (year range with decade chips, ownership toggle, LB status radio), static map preview using existing .lbb-map-canvas CSS class with absolute-positioned pin buttons, selected-venue side panel. Live interactive map opens in browser at localhost:5174/map — this screen is the filter/launcher.
+
+---
+
 TODO-091: Bundle Windows shntool binary from tools/ into the project distribution
 Priority: Medium
 Status: Done

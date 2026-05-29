@@ -166,8 +166,9 @@ class _DiscoverThread(QThread):
 
 
 class _GithubReleaseThread(QThread):
-    """POST /api/master/github_release in a background thread."""
+    """POST /api/master/github_release and stream SSE upload progress."""
 
+    progress = pyqtSignal(str, int)  # (label, pct)  pct=-1 → indeterminate
     finished = pyqtSignal(dict)
 
     def __init__(self, flask_port: int, db_path: str, manifest_path: str,
@@ -180,6 +181,7 @@ class _GithubReleaseThread(QThread):
         self.prev_published_at = prev_published_at
 
     def run(self) -> None:
+        import json as _json
         try:
             resp = requests.post(
                 f"http://127.0.0.1:{self.flask_port}/api/master/github_release",
@@ -189,9 +191,35 @@ class _GithubReleaseThread(QThread):
                     "version": self.version,
                     "prev_published_at": self.prev_published_at,
                 },
-                timeout=150,
+                stream=True,
+                timeout=700,
             )
-            self.finished.emit(resp.json())
+            resp.raise_for_status()
+            for raw_line in resp.iter_lines():
+                if not raw_line:
+                    continue
+                line = raw_line.decode("utf-8") if isinstance(raw_line, bytes) else raw_line
+                if not line.startswith("data:"):
+                    continue
+                try:
+                    ev = _json.loads(line[5:].strip())
+                except Exception:
+                    continue
+                ev_type = ev.get("type")
+                if ev_type == "progress":
+                    pct = ev.get("pct")
+                    self.progress.emit(
+                        ev.get("label", ""),
+                        int(pct) if pct is not None else -1,
+                    )
+                elif ev_type == "done":
+                    self.finished.emit({"ok": True, "tag": ev.get("tag", ""), "url": ev.get("url", "")})
+                    return
+                elif ev_type == "error":
+                    self.finished.emit({"error": ev.get("error", "unknown"),
+                                        "message": ev.get("message", "")})
+                    return
+            self.finished.emit({"error": "stream_ended", "message": "SSE stream ended without result."})
         except Exception as exc:
             self.finished.emit({"error": str(exc)})
 
@@ -405,6 +433,66 @@ class _ApplyThread(QThread):
             resp = requests.post(
                 f"http://127.0.0.1:{self.flask_port}/api/flat_file/apply/{self.release_id}",
                 timeout=120,
+            )
+            self.finished.emit(resp.json())
+        except Exception as exc:
+            self.finished.emit({"error": str(exc)})
+
+
+class _PackageUserDataThread(QThread):
+    """Calls POST /api/package/user_data in a background thread."""
+    finished = pyqtSignal(dict)
+
+    def __init__(self, flask_port: int) -> None:
+        super().__init__()
+        self.flask_port = flask_port
+
+    def run(self) -> None:
+        try:
+            resp = requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/package/user_data",
+                timeout=120,
+            )
+            self.finished.emit(resp.json())
+        except Exception as exc:
+            self.finished.emit({"error": str(exc)})
+
+
+class _PackageScrapeDataThread(QThread):
+    """Calls POST /api/package/scrape_data in a background thread."""
+    finished = pyqtSignal(dict)
+
+    def __init__(self, flask_port: int) -> None:
+        super().__init__()
+        self.flask_port = flask_port
+
+    def run(self) -> None:
+        try:
+            resp = requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/package/scrape_data",
+                timeout=600,
+            )
+            self.finished.emit(resp.json())
+        except Exception as exc:
+            self.finished.emit({"error": str(exc)})
+
+
+class _PackageRestoreThread(QThread):
+    """Calls POST /api/package/restore in a background thread."""
+    finished = pyqtSignal(dict)
+
+    def __init__(self, flask_port: int, zip_path: str, dry_run: bool = False) -> None:
+        super().__init__()
+        self.flask_port = flask_port
+        self.zip_path = zip_path
+        self.dry_run = dry_run
+
+    def run(self) -> None:
+        try:
+            resp = requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/package/restore",
+                json={"zip_path": self.zip_path, "dry_run": self.dry_run},
+                timeout=300,
             )
             self.finished.emit(resp.json())
         except Exception as exc:
@@ -806,11 +894,58 @@ class SetupTab(QWidget):
         self._gh_progress_label.setVisible(False)
         master_layout.addWidget(self._gh_progress_label)
 
+        self._publish_progress = QProgressBar()
+        self._publish_progress.setRange(0, 0)  # indeterminate
+        self._publish_progress.setVisible(False)
+        self._publish_progress.setFixedHeight(14)
+        master_layout.addWidget(self._publish_progress)
+
         self._publish_status_label = QLabel("")
         self._publish_status_label.setVisible(False)
         master_layout.addWidget(self._publish_status_label)
 
         layout.addWidget(master_group)
+
+        # Data packages export section
+        pkg_group = QGroupBox(self.tr("Data Packages"))
+        pkg_layout = QVBoxLayout(pkg_group)
+
+        pkg_label = QLabel(self.tr(
+            "Export your data as a portable zip archive. "
+            "User data includes the database and settings. "
+            "Scraped data includes the offline site mirror."
+        ))
+        pkg_label.setWordWrap(True)
+        pkg_layout.addWidget(pkg_label)
+
+        pkg_btn_row = QHBoxLayout()
+        self.pkg_user_btn = QPushButton(self.tr("Export User Data…"))
+        self.pkg_user_btn.setToolTip(
+            self.tr("Bundle losslessbob.db, settings.ini, and gui_state.json into a dated zip in data/exports/.")
+        )
+        self.pkg_user_btn.clicked.connect(self._on_export_user_data)
+        pkg_btn_row.addWidget(self.pkg_user_btn)
+
+        self.pkg_scrape_btn = QPushButton(self.tr("Export Scraped Site Data…"))
+        self.pkg_scrape_btn.setToolTip(
+            self.tr("Bundle all files in data/site/ (HTML pages + attachments) into a dated zip in data/exports/.")
+        )
+        self.pkg_scrape_btn.clicked.connect(self._on_export_scrape_data)
+        pkg_btn_row.addWidget(self.pkg_scrape_btn)
+
+        self.pkg_restore_btn = QPushButton(self.tr("Restore from Zip…"))
+        self.pkg_restore_btn.setToolTip(
+            self.tr("Restore user data or scraped site data from a zip archive produced by an export.")
+        )
+        self.pkg_restore_btn.clicked.connect(self._on_restore_package)
+        pkg_btn_row.addWidget(self.pkg_restore_btn)
+        pkg_btn_row.addStretch()
+        pkg_layout.addLayout(pkg_btn_row)
+
+        self._pkg_status_label = QLabel("")
+        pkg_layout.addWidget(self._pkg_status_label)
+
+        layout.addWidget(pkg_group)
 
         # Search settings section
         search_group = QGroupBox(self.tr("Search"))
@@ -1482,6 +1617,7 @@ class SetupTab(QWidget):
         self.publish_master_btn.setEnabled(False)
         self._publish_status_label.setText(self.tr("Exporting master snapshot…"))
         self._publish_status_label.setVisible(True)
+        self._publish_progress.setVisible(True)
 
         self._export_thread = _ExportMasterThread(self.flask_port)
         self._export_thread.finished.connect(self._on_export_done)
@@ -1491,6 +1627,7 @@ class SetupTab(QWidget):
         """Handle export completion and kick off GitHub upload."""
         if not data.get("ok") or "error" in data:
             msg = data.get("message") or data.get("error") or "Unknown error"
+            self._publish_progress.setVisible(False)
             QMessageBox.warning(self, self.tr("Export Failed"), msg)
             self._publish_status_label.setText(self.tr("Export failed: {}").format(msg))
             self.publish_master_btn.setEnabled(self.curator_cb.isChecked())
@@ -1512,14 +1649,26 @@ class SetupTab(QWidget):
         self._github_release_thread = _GithubReleaseThread(
             self.flask_port, db_path, manifest_path, version, prev_published_at,
         )
+        self._github_release_thread.progress.connect(self._on_publish_progress)
         self._github_release_thread.finished.connect(
             lambda result, m=manifest, c=counts, rc_=rc: self._on_github_release_done(result, m, c, rc_)
         )
         self._github_release_thread.start()
 
+    def _on_publish_progress(self, label: str, pct: int) -> None:
+        """Update status label and progress bar during GitHub asset upload."""
+        self._publish_status_label.setText(label)
+        if pct < 0:
+            self._publish_progress.setRange(0, 0)  # indeterminate
+        else:
+            self._publish_progress.setRange(0, 100)
+            self._publish_progress.setValue(pct)
+
     def _on_github_release_done(self, result: dict, manifest: dict,
                                 counts: dict, rc: dict) -> None:
         """Handle the GitHub release result and show a summary dialog."""
+        self._publish_progress.setVisible(False)
+        self._publish_progress.setRange(0, 0)  # reset to indeterminate for next use
         self.publish_master_btn.setEnabled(self.curator_cb.isChecked())
 
         if "error" in result:
@@ -2053,4 +2202,147 @@ class SetupTab(QWidget):
         except Exception:
             pass
 
-            _log.info("Geocoder finished: %d geocoded, %d errors", succeeded, errors)
+    # ── Data package export handlers ─────────────────────────────────────────
+
+    def _on_export_user_data(self) -> None:
+        self._set_pkg_buttons_enabled(False)
+        self._pkg_status_label.setText(self.tr("Building user data package…"))
+        self._pkg_user_thread = _PackageUserDataThread(self.flask_port)
+        self._pkg_user_thread.finished.connect(self._on_pkg_user_done)
+        self._pkg_user_thread.start()
+
+    def _on_pkg_user_done(self, data: dict) -> None:
+        self._set_pkg_buttons_enabled(True)
+        if not data.get("ok") or "error" in data:
+            msg = data.get("message") or data.get("error") or self.tr("Unknown error")
+            self._pkg_status_label.setText(self.tr("Error: {}").format(msg))
+            QMessageBox.warning(self, self.tr("Export Failed"), msg)
+            return
+        manifest = data.get("manifest", {})
+        path = data.get("path", "")
+        total = manifest.get("total_bytes", 0)
+        count = manifest.get("file_count", 0)
+        self._pkg_status_label.setText(
+            self.tr("User data exported: {} files, {:,} bytes → {}").format(count, total, path)
+        )
+        QMessageBox.information(
+            self, self.tr("User Data Exported"),
+            self.tr("Saved {count} files ({size:,} bytes) to:\n{path}").format(
+                count=count, size=total, path=path
+            ),
+        )
+
+    def _on_export_scrape_data(self) -> None:
+        self._set_pkg_buttons_enabled(False)
+        self._pkg_status_label.setText(self.tr("Building scraped site data package (may take a while)…"))
+        self._pkg_scrape_thread = _PackageScrapeDataThread(self.flask_port)
+        self._pkg_scrape_thread.finished.connect(self._on_pkg_scrape_done)
+        self._pkg_scrape_thread.start()
+
+    def _on_pkg_scrape_done(self, data: dict) -> None:
+        self._set_pkg_buttons_enabled(True)
+        if not data.get("ok") or "error" in data:
+            msg = data.get("message") or data.get("error") or self.tr("Unknown error")
+            self._pkg_status_label.setText(self.tr("Error: {}").format(msg))
+            QMessageBox.warning(self, self.tr("Export Failed"), msg)
+            return
+        manifest = data.get("manifest", {})
+        path = data.get("path", "")
+        total = manifest.get("total_bytes", 0)
+        count = manifest.get("file_count", 0)
+        self._pkg_status_label.setText(
+            self.tr("Scraped data exported: {} files, {:,} bytes → {}").format(count, total, path)
+        )
+        QMessageBox.information(
+            self, self.tr("Scraped Site Data Exported"),
+            self.tr("Saved {count} files ({size:,} bytes) to:\n{path}").format(
+                count=count, size=total, path=path
+            ),
+        )
+
+    def _on_restore_package(self) -> None:
+        zip_path, _ = QFileDialog.getOpenFileName(
+            self,
+            self.tr("Select Package Zip to Restore"),
+            "",
+            self.tr("Zip archives (*.zip)"),
+        )
+        if not zip_path:
+            return
+
+        # Dry-run first so the user can see what will be overwritten.
+        self._set_pkg_buttons_enabled(False)
+        self._pkg_status_label.setText(self.tr("Checking zip contents…"))
+        self._pkg_restore_thread = _PackageRestoreThread(self.flask_port, zip_path, dry_run=True)
+        self._pkg_restore_thread.finished.connect(
+            lambda data: self._on_restore_dry_run_done(data, zip_path)
+        )
+        self._pkg_restore_thread.start()
+
+    def _on_restore_dry_run_done(self, data: dict, zip_path: str) -> None:
+        self._set_pkg_buttons_enabled(True)
+        if not data.get("ok") or "error" in data:
+            msg = data.get("message") or data.get("error") or self.tr("Unknown error")
+            self._pkg_status_label.setText(self.tr("Error: {}").format(msg))
+            QMessageBox.warning(self, self.tr("Restore Failed"), msg)
+            return
+
+        pkg_type = data.get("type", "unknown")
+        restored = data.get("restored", [])
+        conflicts = data.get("conflicts", [])
+        all_files = restored + conflicts
+
+        if not all_files:
+            QMessageBox.information(self, self.tr("Nothing to Restore"),
+                                    self.tr("The zip contains no recognisable files to restore."))
+            self._pkg_status_label.setText("")
+            return
+
+        conflict_names = [f["name"] for f in conflicts]
+        msg_lines = [
+            self.tr("Package type: {}").format(pkg_type),
+            self.tr("Files to restore: {}").format(len(all_files)),
+        ]
+        if conflict_names:
+            msg_lines.append("")
+            msg_lines.append(self.tr("The following files will be OVERWRITTEN:"))
+            msg_lines += ["  " + n for n in conflict_names]
+        msg_lines += ["", self.tr("Proceed with restore?")]
+
+        reply = QMessageBox.question(
+            self,
+            self.tr("Confirm Restore"),
+            "\n".join(msg_lines),
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+        )
+        if reply != QMessageBox.StandardButton.Yes:
+            self._pkg_status_label.setText(self.tr("Restore cancelled."))
+            return
+
+        self._set_pkg_buttons_enabled(False)
+        self._pkg_status_label.setText(self.tr("Restoring…"))
+        self._pkg_restore_thread = _PackageRestoreThread(self.flask_port, zip_path, dry_run=False)
+        self._pkg_restore_thread.finished.connect(self._on_restore_done)
+        self._pkg_restore_thread.start()
+
+    def _on_restore_done(self, data: dict) -> None:
+        self._set_pkg_buttons_enabled(True)
+        if not data.get("ok") or "error" in data:
+            msg = data.get("message") or data.get("error") or self.tr("Unknown error")
+            self._pkg_status_label.setText(self.tr("Error: {}").format(msg))
+            QMessageBox.warning(self, self.tr("Restore Failed"), msg)
+            return
+        total = len(data.get("restored", [])) + len(data.get("conflicts", []))
+        pkg_type = data.get("type", "unknown")
+        self._pkg_status_label.setText(
+            self.tr("Restored {} file(s) from {} package.").format(total, pkg_type)
+        )
+        QMessageBox.information(
+            self, self.tr("Restore Complete"),
+            self.tr("Restored {n} file(s) from {t} package.").format(n=total, t=pkg_type),
+        )
+
+    def _set_pkg_buttons_enabled(self, enabled: bool) -> None:
+        self.pkg_user_btn.setEnabled(enabled)
+        self.pkg_scrape_btn.setEnabled(enabled)
+        self.pkg_restore_btn.setEnabled(enabled)
