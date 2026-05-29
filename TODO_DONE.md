@@ -1,6 +1,112 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-120: gui_next ScreenCollection — per-torrent-record management in detail panel
+Priority: High
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-28
+Description: DetailPanel now fetches GET /api/torrent/<lb> on open; each torrent record
+  shows source-folder-exists/torrent-file-exists status dots and per-record action buttons:
+  Add/Remove qBt, Regen, Relocate Source, Delete .torrent file (with confirm dialog).
+  Forum tab remains display-only.
+
+---
+
+TODO-119: gui_next ScreenCollection — Personal Info (rating, tags, listen count)
+Priority: High
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-28
+Description: DetailPanel now fetches personal meta on open and shows "My Rating" (personal_rating)
+  and "Listens" (listen_count + last_listened) in the meta grid. "Log Listen" button POSTs to
+  /api/collection/<lb>/listen and refreshes the panel. "Edit Personal Info" button opens
+  PersonalInfoModal from the detail panel. Saving via the modal bumps personalSaveVer to
+  re-fetch meta without a full collection reload.
+
+TODO-117: gui_next ScreenCollection — restore Missing (un-owned LB) view + CSV export
+Priority: High
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-28
+Description: Added "Not in collection" chip backed by GET /api/collection/missing. Renders a
+  separate table (LB# / LB Status / Date / Location / Rating / Description), Export CSV button,
+  and double-click → Lookup navigation. Also added onDoubleClick prop to TR component.
+
+---
+
+TODO-118: gui_next ScreenCollection — row context menu actions
+Priority: High
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-28
+Description: Added right-click ContextMenu on every collection row with 7 actions:
+  Open Folder, View LB Entry (→ Lookup), Scrape Entry, Fingerprint Folder, Play in VLC,
+  Generate Spectrograms, Edit Personal Info (inline modal with rating 1-5 + tags).
+  Also added PersonalInfoModal component (rating 1-5 + tags, GET/POST /api/collection/<lb>/meta).
+  Added backend POST /api/open/vlc endpoint (wraps gui.platform_utils.open_in_vlc).
+  Added onContextMenu prop to TR table component.
+
+---
+
+TODO-115: gui_next — wire ScreenCollection remaining 10%
+Priority: Low
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-28
+Description: All three items complete:
+  • Wishlist add/remove actions — wired to POST /api/wishlist / DELETE /api/wishlist/<lb>.
+  • Batch-remove progress bar — inline progress bar renders during sequential DELETEs.
+  • "My Collection" nav count badge — AppShell fetches GET /api/home/stats on mount and
+    shows collection_count beside the "My Collection" nav item.
+
+---
+
+TODO-094: Rework UI per Claude design prototype
+Priority: Medium
+Status: Done
+Added: 2026-05-24
+Closed: 2026-05-28
+Description: All 6 sprints of PLAN_GUI_WIRING.md complete. ScreenSetup, ScreenCollection,
+  ScreenSearch, ScreenHome, ScreenBootlegs, and ScreenThemes fully wired to backend.
+  New layout, colour scheme, and component structure implemented in gui_next (Electron/React).
+
+---
+
+TODO-114: gui_next — port ScreenLBDIR from source JSX
+Priority: Medium
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-28
+Description: Port instructions/gui_redesign/_source/screen-lbdir.jsx to gui_next/src/renderer/src/screens/ScreenLBDIR.tsx. Four sub-tabs: Check (per-file MD5/shntool table), Retrieve (copy lbdir from attachments cache), Reconcile (propose renames for moved files), Extras (list + delete files not in lbdir). Highest complexity of the 7 stub screens — do last.
+
+---
+
+TODO-113: gui_next — port ScreenLookup from source JSX
+Priority: High
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-28
+Description: Port instructions/gui_redesign/_source/screen-lookup.jsx to gui_next/src/renderer/src/screens/ScreenLookup.tsx. Sources rail (clipboard/listbox/files/folders), 5-state status counters (matched/incomplete/not-found/duplicate/xref), per-LB summary table, per-checksum detail table, footer link to Rename. Core feature of the app.
+
+TODO-112: gui_next — port ScreenRename from source JSX
+Priority: Medium
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-28
+Description: Port instructions/gui_redesign/_source/screen-rename.jsx to gui_next/src/renderer/src/screens/ScreenRename.tsx. Five row states (has_lb, needs_rename, wrong_lb, multiple_ids, no_match) with filter chips, bulk action bar with checkboxes, expandable disambiguation rows for multi-LB conflicts. Depends on Lookup results being populated first.
+
+---
+
+TODO-111: gui_next — port ScreenSpectrograms from source JSX
+Priority: Medium
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-28
+Description: Port instructions/gui_redesign/_source/screen-spectrograms.jsx to gui_next/src/renderer/src/screens/ScreenSpectrograms.tsx. Folder rail with batch progress, track rail with PNG inventory, spectrogram viewer using existing .lbb-spec-canvas CSS class, thumbnail strip, render options (width/height/dB floor/window). SoX/ffmpeg batch generate.
+
+---
+
 TODO-110: gui_next — port ScreenVerify from source JSX
 Priority: Medium
 Status: Done

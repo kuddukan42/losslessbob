@@ -19,6 +19,10 @@ import { ScreenThemes } from './screens/ScreenThemes'
 import { ScreenMap } from './screens/ScreenMap'
 import { ScreenAttachments } from './screens/ScreenAttachments'
 import { ScreenVerify } from './screens/ScreenVerify'
+import { ScreenRename } from './screens/ScreenRename'
+import { ScreenLookup } from './screens/ScreenLookup'
+import { ScreenLBDIR } from './screens/ScreenLBDIR'
+import { ScreenSpectrograms } from './screens/ScreenSpectrograms'
 
 // ── Curator-only route guard ──────────────────────────────────────────────────
 
@@ -220,14 +224,14 @@ export default function App(): React.JSX.Element {
           <Route path="/"            element={<ScreenHome />} />
           <Route path="/pipeline"    element={<ScreenPipeline />} />
           <Route path="/verify"      element={<ScreenVerify />} />
-          <Route path="/lookup"      element={<PlaceholderScreen name="Lookup" />} />
-          <Route path="/rename"      element={<PlaceholderScreen name="Rename" />} />
-          <Route path="/lbdir"       element={<PlaceholderScreen name="LBDIR" />} />
+          <Route path="/lookup"      element={<ScreenLookup />} />
+          <Route path="/rename"      element={<ScreenRename />} />
+          <Route path="/lbdir"       element={<ScreenLBDIR />} />
           <Route path="/collection"  element={<ScreenCollection />} />
           <Route path="/search"      element={<ScreenSearch />} />
           <Route path="/bootlegs"    element={<ScreenBootlegs />} />
           <Route path="/attachments" element={<ScreenAttachments />} />
-          <Route path="/spectrograms"element={<PlaceholderScreen name="Spectrograms" />} />
+          <Route path="/spectrograms"element={<ScreenSpectrograms />} />
           <Route path="/map"         element={<ScreenMap />} />
           <Route path="/dbeditor"    element={<CuratorRoute element={<PlaceholderScreen name="DB Editor" />} />} />
           <Route path="/scraper"     element={<CuratorRoute element={<PlaceholderScreen name="Scraper" />} />} />

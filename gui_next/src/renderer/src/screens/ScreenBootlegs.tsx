@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useVirtualizer } from '@tanstack/react-virtual'
 import { useNavigate } from 'react-router-dom'
 import { Icon } from '../components/Icon'
@@ -68,14 +68,33 @@ export function ScreenBootlegs(): React.JSX.Element {
   const [statusFilter, setStatusFilter]   = useState<string>('')
   const [ownedFilter, setOwnedFilter]     = useState<OwnedFilter>('any')
   const [selected, setSelected]           = useState<BootlegRow | null>(null)
+  const [yearFilter, setYearFilter]       = useState<string | null>(null)
+  const [cdFilter, setCdFilter]           = useState<'all' | '1' | '2' | '3+'>('all')
+  const [yearsOpen, setYearsOpen]         = useState(false)
+  const [cdsOpen, setCdsOpen]             = useState(false)
+  const [toast, setToast]                 = useState<{ msg: string; tone: 'ok' | 'bad' | 'info' } | null>(null)
+
+  const showToast = useCallback((msg: string, tone: 'ok' | 'bad' | 'info') => setToast({ msg, tone }), [])
 
   const tableParentRef = useRef<HTMLDivElement>(null)
+  const yearsDropRef   = useRef<HTMLDivElement>(null)
+  const cdsDropRef     = useRef<HTMLDivElement>(null)
 
   // Debounce search input 200ms
   useEffect(() => {
     const t = setTimeout(() => setDebouncedQ(search), 200)
     return () => clearTimeout(t)
   }, [search])
+
+  // Close dropdowns on outside click
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (yearsDropRef.current && !yearsDropRef.current.contains(e.target as Node)) setYearsOpen(false)
+      if (cdsDropRef.current   && !cdsDropRef.current.contains(e.target as Node))   setCdsOpen(false)
+    }
+    document.addEventListener('mousedown', handler)
+    return () => document.removeEventListener('mousedown', handler)
+  }, [])
 
   // Load all bootleg rows on mount; fetch a second page if total > 1000
   useEffect(() => {
@@ -103,6 +122,12 @@ export function ScreenBootlegs(): React.JSX.Element {
   const unownedCount = useMemo(() => rows.filter(r => !r.owned).length,              [rows])
   const privateCount = useMemo(() => rows.filter(r => r.status === 'Private').length, [rows])
 
+  const yearList = useMemo(() => {
+    const s = new Set<number>()
+    rows.forEach(r => { if (r.year !== null) s.add(r.year) })
+    return Array.from(s).sort((a, b) => b - a)
+  }, [rows])
+
   // ── Client-side filtering ──────────────────────────────────────────────────
 
   const filteredRows = useMemo(() => {
@@ -112,9 +137,13 @@ export function ScreenBootlegs(): React.JSX.Element {
       if (statusFilter && r.status !== statusFilter) return false
       if (ownedFilter === 'owned'   && !r.owned) return false
       if (ownedFilter === 'unowned' &&  r.owned) return false
+      if (yearFilter !== null && (r.year === null || String(r.year) !== yearFilter)) return false
+      if (cdFilter === '1'  && r.cdCount !== 1) return false
+      if (cdFilter === '2'  && r.cdCount !== 2) return false
+      if (cdFilter === '3+' && r.cdCount < 3)   return false
       return true
     })
-  }, [rows, debouncedSearch, statusFilter, ownedFilter])
+  }, [rows, debouncedSearch, statusFilter, ownedFilter, yearFilter, cdFilter])
 
   // Other bootleg titles that share the same LB number as the selected row
   const detailOthers = useMemo(() => {
@@ -133,12 +162,28 @@ export function ScreenBootlegs(): React.JSX.Element {
 
   // ── Filter helpers ────────────────────────────────────────────────────────
 
-  const hasFilters = search !== '' || statusFilter !== '' || ownedFilter !== 'any'
+  const hasFilters = search !== '' || statusFilter !== '' || ownedFilter !== 'any' || yearFilter !== null || cdFilter !== 'all'
 
   const clearFilters = () => {
     setSearch('')
     setStatusFilter('')
     setOwnedFilter('any')
+    setYearFilter(null)
+    setCdFilter('all')
+  }
+
+  const exportCsv = () => {
+    const header = 'LB#,Title,Date,Year,Location,CDs,Status,Owned\n'
+    const lines = filteredRows.map(r =>
+      [r.lb, r.title, r.dateStr, r.year ?? '', r.location, r.cdCount, r.status, r.owned ? 'Yes' : 'No']
+        .map(v => `"${String(v ?? '').replace(/"/g, '""')}"`)
+        .join(',')
+    )
+    const blob = new Blob([header + lines.join('\n')], { type: 'text/csv' })
+    const url  = URL.createObjectURL(blob)
+    const a    = Object.assign(document.createElement('a'), { href: url, download: 'losslessbob_bootlegs.csv' })
+    a.click()
+    URL.revokeObjectURL(url)
   }
 
   const toggleStatus = (val: string) =>
@@ -162,7 +207,7 @@ export function ScreenBootlegs(): React.JSX.Element {
             {total > 0 ? `${total.toLocaleString()} titles · ` : ''}LBBCD catalog
           </span>
           <div style={{ flex: 1 }} />
-          <Button variant="ghost" size="sm" icon="download">Export CSV</Button>
+          <Button variant="ghost" size="sm" icon="download" onClick={exportCsv}>Export CSV</Button>
           <Button
             variant="secondary"
             size="sm"
@@ -173,6 +218,11 @@ export function ScreenBootlegs(): React.JSX.Element {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ force: false }),
               })
+                .then(r => r.json())
+                .then((d: { ok?: boolean; running?: boolean; error?: string }) =>
+                  showToast(d.ok ? 'Scrape started' : (d.error ?? 'Scrape failed'), d.ok ? 'info' : 'bad')
+                )
+                .catch(() => showToast('Scrape request failed', 'bad'))
             }
           >
             Refresh LBBCD
@@ -189,8 +239,78 @@ export function ScreenBootlegs(): React.JSX.Element {
             onChange={e => setSearch(e.target.value)}
             style={{ width: 360 }}
           />
-          <Button variant="ghost" size="sm" iconRight="chevDown">Year</Button>
-          <Button variant="ghost" size="sm" iconRight="chevDown">CDs</Button>
+          {/* Year filter popover */}
+          <div ref={yearsDropRef} style={{ position: 'relative' }}>
+            <Button
+              variant={yearFilter !== null ? 'secondary' : 'ghost'}
+              size="sm"
+              iconRight="chevDown"
+              onClick={() => setYearsOpen(v => !v)}
+            >
+              {yearFilter ?? 'Year'}
+            </Button>
+            {yearsOpen && (
+              <div style={{
+                position: 'absolute', top: 'calc(100% + 4px)', left: 0, zIndex: 100,
+                background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)',
+                borderRadius: 8, padding: 4,
+                minWidth: 110, maxHeight: 280, overflowY: 'auto',
+                boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
+              }}>
+                {[null, ...yearList].map(y => (
+                  <button
+                    key={y ?? 'all'}
+                    onClick={() => { setYearFilter(y !== null ? String(y) : null); setYearsOpen(false) }}
+                    style={{
+                      display: 'block', width: '100%', textAlign: 'left',
+                      padding: '5px 10px', fontSize: 12, cursor: 'pointer', border: 'none',
+                      background: (y !== null ? String(y) : null) === yearFilter
+                        ? 'var(--lbb-accent-bg)' : 'transparent',
+                      color: 'var(--lbb-fg)', borderRadius: 5,
+                    }}
+                  >
+                    {y ?? 'All years'}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* CDs filter popover */}
+          <div ref={cdsDropRef} style={{ position: 'relative' }}>
+            <Button
+              variant={cdFilter !== 'all' ? 'secondary' : 'ghost'}
+              size="sm"
+              iconRight="chevDown"
+              onClick={() => setCdsOpen(v => !v)}
+            >
+              {cdFilter === 'all' ? 'CDs' : cdFilter === '3+' ? '3+ CDs' : `${cdFilter} CD`}
+            </Button>
+            {cdsOpen && (
+              <div style={{
+                position: 'absolute', top: 'calc(100% + 4px)', left: 0, zIndex: 100,
+                background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)',
+                borderRadius: 8, padding: 4,
+                minWidth: 120,
+                boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
+              }}>
+                {(['all', '1', '2', '3+'] as const).map(opt => (
+                  <button
+                    key={opt}
+                    onClick={() => { setCdFilter(opt); setCdsOpen(false) }}
+                    style={{
+                      display: 'block', width: '100%', textAlign: 'left',
+                      padding: '5px 10px', fontSize: 12, cursor: 'pointer', border: 'none',
+                      background: opt === cdFilter ? 'var(--lbb-accent-bg)' : 'transparent',
+                      color: 'var(--lbb-fg)', borderRadius: 5,
+                    }}
+                  >
+                    {opt === 'all' ? 'All' : opt === '3+' ? '3+ CDs' : `${opt} CD`}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
           <Button
             variant={statusFilter ? 'secondary' : 'ghost'}
             size="sm"
@@ -487,6 +607,17 @@ export function ScreenBootlegs(): React.JSX.Element {
           </aside>
         )}
       </div>
+      {toast && (
+        <div style={{
+          position: 'fixed', bottom: 28, left: '50%', transform: 'translateX(-50%)',
+          background: toast.tone === 'ok' ? 'var(--lbb-ok-bar)' : toast.tone === 'bad' ? 'var(--lbb-err-bar)' : 'var(--lbb-accent-mid)',
+          color: '#fff', padding: '9px 18px', borderRadius: 8,
+          fontSize: 13, fontWeight: 600, zIndex: 9999, boxShadow: '0 4px 16px rgba(0,0,0,.25)',
+          pointerEvents: 'none',
+        }}
+          ref={el => { if (el) setTimeout(() => setToast(null), 3500) }}
+        >{toast.msg}</div>
+      )}
     </div>
   )
 }

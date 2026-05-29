@@ -1,50 +1,147 @@
-TODO-114: gui_next — port ScreenLBDIR from source JSX
+TODO-129: Audio format + bitrate detection — surface FLAC/WAV/SHN and 16/44.1 vs 24/96
 Priority: Medium
 Status: Open
 Added: 2026-05-28
-Description: Port instructions/gui_redesign/_source/screen-lbdir.jsx to gui_next/src/renderer/src/screens/ScreenLBDIR.tsx. Four sub-tabs: Check (per-file MD5/shntool table), Retrieve (copy lbdir from attachments cache), Reconcile (propose renames for moved files), Extras (list + delete files not in lbdir). Highest complexity of the 7 stub screens — do last.
+Description: Detect and display the audio container format and bit-depth/sample-rate for each
+  collection entry, replacing the hardcoded "FLAC · 16/44" pill in ScreenCollection's detail
+  panel (see TODO-127).
+  Goals:
+    • Backend probe: for a given entry's disk_path, inspect representative audio file(s) and
+      report container format (FLAC / WAV / SHN / APE / etc.) and bit depth + sample rate
+      (e.g. 16/44.1, 24/48, 24/96). Use soundfile/libsndfile where it can read the subtype;
+      fall back to ffprobe (and shntool/ffmpeg for SHN/shorten) for formats libsndfile can't open.
+    • Aggregate per folder: if files are mixed, report the dominant format/rate or flag "mixed".
+    • Caching: store results so repeated views don't re-probe (new column on the collection/entry
+      record or a small cache keyed by disk_path + mtime); runs in a QThread/background worker,
+      never on the main thread.
+    • Expose via a backend route (e.g. GET /api/collection/<lb>/audioinfo) returning
+      {format, bit_depth, sample_rate, mixed, files_probed}.
+    • Surface in the GUI: real format + bitrate pill in the My Collection detail panel; consider
+      a column/badge in the collection table and reuse in the Verify tab where useful.
+    • Handle missing/offline folders gracefully (show "—" rather than erroring).
 
 ---
 
-TODO-113: gui_next — port ScreenLookup from source JSX
+TODO-128: gui_next ScreenCollection — cross-tab nav + replace coming-soon stubs
+Priority: Low
+Status: Open
+Added: 2026-05-28
+Description: Parity with old collection_tab.py. New screen lacks the old "Go to LB" navigation
+  (history rows → My Collection, missing → Lookup) and stubs three detail actions with toasts.
+  Goals:
+    • Wire "Attachments", "Spectrograms", "On map" detail buttons to their real screens
+      (ScreenAttachments / ScreenSpectrograms / ScreenMap) instead of "coming soon" toast.
+    • Add cross-screen navigation: detail/history → open LB in Lookup; Missing row → Lookup.
+    • Mirror old lookup_lb / send_to_spectrograms signal behaviour via the renderer router.
+
+---
+
+TODO-127: gui_next ScreenCollection — real Size/codec data or drop placeholder pills
+Priority: Low
+Status: Open
+Added: 2026-05-28
+Description: Detail panel shows hardcoded `size: ''` and a static "FLAC · 16/44" pill that are
+  not backed by real data. Either compute folder size / audio format from the backend and
+  populate them, or remove the placeholder fields to avoid showing fake metadata.
+
+---
+
+TODO-126: gui_next ScreenCollection — column header sorting
+Priority: Low
+Status: Open
+Added: 2026-05-28
+Description: Old collection_tab.py supports click-to-sort on every column header (with persisted
+  widths). The new virtualized table only filters/searches. Add sortable headers (LB#, Status,
+  Date, Location, Folder, Disk path, Confirmed, FP) with typed sort keys.
+
+---
+
+TODO-125: gui_next ScreenCollection — bulk Update Location + standard-name/NFT cross-check
+Priority: Medium
+Status: Open
+Added: 2026-05-28
+Description: New "Update location" requires exactly one row and just PATCHes disk_path/folder_name
+  with no validation. Old tab supports multi-row relocate and runs _cross_check_folder /
+  _get_standard_lb_name (canonical YYYY-MM-DD Location (LB-XXXXX)[-NFT] naming) on relocate.
+  Goals:
+    • Allow bulk relocate across multiple selected rows.
+    • Cross-check folder name against /api/folder_naming/standard/<lb> and surface mismatches
+      (reuse the reconcile/standard-name pattern); honour NFT suffix via /api/lb_master/<lb>/nft.
+
+---
+
+TODO-124: gui_next ScreenCollection — non-recursive Scan Directory + owned-aware preview
+Priority: Medium
+Status: Open
+Added: 2026-05-28
+Description: New UI's "Scan directory" and "Scan tree…" both call /api/pipeline/scan-tree
+  (recursive) and skip the old scan-preview dialog. Old tab distinguishes a non-recursive
+  Scan Directory from recursive Scan Tree and shows a preview listing each found folder with
+  an "Already Owned" column before adding.
+  Goals:
+    • Restore non-recursive directory scan (depth-1) distinct from recursive tree scan.
+    • Add a scan-results preview modal with LB / Folder / Path / Already Owned columns and an
+      "Add All" action (cross-reference /api/collection/lb_numbers for owned state).
+
+---
+
+TODO-123: gui_next ScreenCollection — Notes column + notes field in Add dialog
+Priority: Medium
+Status: Open
+Added: 2026-05-28
+Description: Old tab has a Notes column (COLL_HEADERS) and lets the user edit LB / Folder Name /
+  Disk Path / Notes when adding. New AddFolderModal only captures the LB number and the table
+  has no Notes column.
+  Goals:
+    • Add a Notes column to the collection table (from c.notes).
+    • Add an editable Notes field (and editable folder name) to AddFolderModal, persisted via
+      POST /api/collection.
+
+---
+
+TODO-122: gui_next ScreenCollection — Wishlist columns/edit + Duplicates grouped tree
+Priority: Medium
+Status: Open
+Added: 2026-05-28
+Description: Old tab has dedicated Wishlist and Duplicates sub-views collapsed into flat filter
+  chips in the new screen.
+  Goals:
+    • Wishlist: expose priority / notes / added-date / rating columns and inline edit
+      (currently only a star toggle exists).
+    • Duplicates: render duplicates grouped-by-show (old used a QTreeWidget) with per-variant
+      ratings, plus "Open on LosslessBob" and "Remove from Collection" actions, instead of a
+      flat isDuplicate chip.
+
+---
+
+TODO-121: gui_next ScreenCollection — global Forum & Torrent History views
 Priority: High
 Status: Open
 Added: 2026-05-28
-Description: Port instructions/gui_redesign/_source/screen-lookup.jsx to gui_next/src/renderer/src/screens/ScreenLookup.tsx. Sources rail (clipboard/listbox/files/folders), 5-state status counters (matched/incomplete/not-found/duplicate/xref), per-LB summary table, per-checksum detail table, footer link to Rename. Core feature of the app.
+Description: Old tab has standalone "Forum History" and "Torrent History" sub-tabs listing ALL
+  records across the collection with actions; new screen only shows per-selected-row history as
+  read-only pills.
+  Goals:
+    • Global Forum History list (GET /api/forum_posts): Open in Browser, Remove Record
+      (DELETE /api/forum_post/<id>), and go-to-LB navigation.
+    • Global Torrent History list (GET /api/torrents) with go-to-LB navigation.
+    • Make the per-row history rows actionable rather than display-only.
 
 ---
 
-TODO-112: gui_next — port ScreenRename from source JSX
-Priority: Medium
-Status: Open
-Added: 2026-05-28
-Description: Port instructions/gui_redesign/_source/screen-rename.jsx to gui_next/src/renderer/src/screens/ScreenRename.tsx. Five row states (has_lb, needs_rename, wrong_lb, multiple_ids, no_match) with filter chips, bulk action bar with checkboxes, expandable disambiguation rows for multi-LB conflicts. Depends on Lookup results being populated first.
 
 ---
 
-TODO-111: gui_next — port ScreenSpectrograms from source JSX
-Priority: Medium
-Status: Open
-Added: 2026-05-28
-Description: Port instructions/gui_redesign/_source/screen-spectrograms.jsx to gui_next/src/renderer/src/screens/ScreenSpectrograms.tsx. Folder rail with batch progress, track rail with PNG inventory, spectrogram viewer using existing .lbb-spec-canvas CSS class, thumbnail strip, render options (width/height/dB floor/window). SoX/ffmpeg batch generate.
 
----
 
-TODO-110: gui_next — port ScreenVerify from source JSX
-Priority: Medium
-Status: Done
-Added: 2026-05-28
-Closed: 2026-05-28
-Description: Port instructions/gui_redesign/_source/screen-verify.jsx to gui_next/src/renderer/src/screens/ScreenVerify.tsx. Folder queue rail, 7-stat summary cards (total/pass/mismatch/missing/extra/FFP/MD5), full MD5+FFP+ST5 detail table, shntool-missing error state, per-file inspector panel. Verifies user-generated checksums (distinct from LBDIR which verifies the official archive sidecar).
-
----
-
-TODO-108: gui_next — port ScreenMap from source JSX
+TODO-116: gui_next — identify and wire ScreenPipeline remaining 5% stub
 Priority: Low
-Status: Done
+Status: Open
 Added: 2026-05-28
-Closed: 2026-05-28
-Description: Port instructions/gui_redesign/_source/screen-map.jsx to gui_next/src/renderer/src/screens/ScreenMap.tsx. Filter rail (year range with decade chips, ownership toggle, LB status radio), static map preview using existing .lbb-map-canvas CSS class with absolute-positioned pin buttons, selected-venue side panel. Live interactive map opens in browser at localhost:5174/map — this screen is the filter/launcher. Simplest of the 7.
+Description: PLAN_GUI_WIRING.md notes ScreenPipeline has one pre-existing stub at ~5% (19/20 wired)
+  that was not identified during the audit. Audit ScreenPipeline.tsx for any remaining console.log
+  stubs, no-op handlers, or missing backend calls; identify the endpoint or IPC it should call;
+  wire it up following established patterns.
 
 ---
 
@@ -139,20 +236,6 @@ Description: Add a SQL input box to the DB Editor tab so the user can run arbitr
         unless the user confirms.
 
 
-
-TODO-094: Rework UI per Claude design prototype
-Priority: Medium
-Status: In Progress
-Stage: Sprint 5 (ScreenBootlegs 100%) done — next: Sprint 6 (ScreenThemes ~44% → 100%)
-Added: 2026-05-24
-Description: Overhaul the PyQt6 GUI to match the design prototype produced by Claude.
-  Goals:
-    • Implement the new layout, colour scheme, and component structure from the prototype.
-    • Ensure all existing functionality is preserved during the rework.
-    • Verify Qt repaint/viewport behaviour after layout changes.
-    • Update PROJECT.md file structure and GUI section to reflect new tab/widget organisation.
-
----
 
 TODO-093: Archive.org uploader
 Priority: Low

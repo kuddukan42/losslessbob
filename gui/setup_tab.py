@@ -166,8 +166,9 @@ class _DiscoverThread(QThread):
 
 
 class _GithubReleaseThread(QThread):
-    """POST /api/master/github_release in a background thread."""
+    """POST /api/master/github_release and stream SSE upload progress."""
 
+    progress = pyqtSignal(str, int)  # (label, pct)  pct=-1 → indeterminate
     finished = pyqtSignal(dict)
 
     def __init__(self, flask_port: int, db_path: str, manifest_path: str,
@@ -180,6 +181,7 @@ class _GithubReleaseThread(QThread):
         self.prev_published_at = prev_published_at
 
     def run(self) -> None:
+        import json as _json
         try:
             resp = requests.post(
                 f"http://127.0.0.1:{self.flask_port}/api/master/github_release",
@@ -189,9 +191,35 @@ class _GithubReleaseThread(QThread):
                     "version": self.version,
                     "prev_published_at": self.prev_published_at,
                 },
-                timeout=660,
+                stream=True,
+                timeout=700,
             )
-            self.finished.emit(resp.json())
+            resp.raise_for_status()
+            for raw_line in resp.iter_lines():
+                if not raw_line:
+                    continue
+                line = raw_line.decode("utf-8") if isinstance(raw_line, bytes) else raw_line
+                if not line.startswith("data:"):
+                    continue
+                try:
+                    ev = _json.loads(line[5:].strip())
+                except Exception:
+                    continue
+                ev_type = ev.get("type")
+                if ev_type == "progress":
+                    pct = ev.get("pct")
+                    self.progress.emit(
+                        ev.get("label", ""),
+                        int(pct) if pct is not None else -1,
+                    )
+                elif ev_type == "done":
+                    self.finished.emit({"ok": True, "tag": ev.get("tag", ""), "url": ev.get("url", "")})
+                    return
+                elif ev_type == "error":
+                    self.finished.emit({"error": ev.get("error", "unknown"),
+                                        "message": ev.get("message", "")})
+                    return
+            self.finished.emit({"error": "stream_ended", "message": "SSE stream ended without result."})
         except Exception as exc:
             self.finished.emit({"error": str(exc)})
 
@@ -1520,15 +1548,26 @@ class SetupTab(QWidget):
         self._github_release_thread = _GithubReleaseThread(
             self.flask_port, db_path, manifest_path, version, prev_published_at,
         )
+        self._github_release_thread.progress.connect(self._on_publish_progress)
         self._github_release_thread.finished.connect(
             lambda result, m=manifest, c=counts, rc_=rc: self._on_github_release_done(result, m, c, rc_)
         )
         self._github_release_thread.start()
 
+    def _on_publish_progress(self, label: str, pct: int) -> None:
+        """Update status label and progress bar during GitHub asset upload."""
+        self._publish_status_label.setText(label)
+        if pct < 0:
+            self._publish_progress.setRange(0, 0)  # indeterminate
+        else:
+            self._publish_progress.setRange(0, 100)
+            self._publish_progress.setValue(pct)
+
     def _on_github_release_done(self, result: dict, manifest: dict,
                                 counts: dict, rc: dict) -> None:
         """Handle the GitHub release result and show a summary dialog."""
         self._publish_progress.setVisible(False)
+        self._publish_progress.setRange(0, 0)  # reset to indeterminate for next use
         self.publish_master_btn.setEnabled(self.curator_cb.isChecked())
 
         if "error" in result:

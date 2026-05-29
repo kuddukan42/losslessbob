@@ -1,3 +1,88 @@
+[2026-05-28] — feat(gui_next): ScreenCollection — per-torrent-record management in History tab (TODO-120)
+Added: gui_next/src/renderer/src/screens/ScreenCollection.tsx: DetailPanel fetches GET /api/torrent/<lb> on open to load full TorrentRecord list; each record displays source-folder-exists and torrent-file-exists status dots; per-record action buttons: Add/Remove qBt, Regen (POST /api/torrent/create), Relocate Source (PATCH /api/torrent/<id>), Delete .torrent file (DELETE /api/torrent/<id>/file, with confirm dialog); forum tab unchanged; bottom "Regenerate" renamed to "Create torrent"
+
+[2026-05-28] — feat(gui_next): ScreenCollection — personal rating, listen count, Log Listen in detail panel (TODO-119)
+Added: gui_next/src/renderer/src/screens/ScreenCollection.tsx: DetailPanel fetches /api/collection/<lb>/meta on open; shows "My Rating" (personal_rating 1–5) and "Listens" (listen_count + last_listened) in meta grid; "Log Listen" button POSTs to /api/collection/<lb>/listen; "Edit Personal Info" button opens PersonalInfoModal from panel; saving via modal bumps personalSaveVer to refresh meta without full reload
+
+[2026-05-28] — feat(gui_next): ScreenCollection — restore Missing (un-owned LB) view + CSV export (TODO-117)
+Added: gui_next/src/renderer/src/screens/ScreenCollection.tsx: "Not in collection" chip backed by GET /api/collection/missing; separate table with LB# / LB Status / Date / Location / Rating / Description columns; Export CSV button; double-click row opens in Lookup
+Changed: gui_next/src/renderer/src/components/table.tsx: added onDoubleClick prop to TR
+
+[2026-05-28] — fix(gui_next): screen state lost on tab switch — move per-screen state to Zustand stores
+Added: gui_next/src/renderer/src/lib/verifyStore.ts: Zustand store for ScreenVerify state (folders, results, activeIdx, showAll, filter) + exported types
+Added: gui_next/src/renderer/src/lib/lbdirStore.ts: Zustand store for ScreenLBDIR state (all tab results, selections, filter, activeFolder)
+Added: gui_next/src/renderer/src/lib/attachmentsStore.ts: Zustand store for ScreenAttachments persistent state (activeLb, search, statusFilter)
+Changed: gui_next/src/renderer/src/lib/spectrogramStore.ts: extended with full screen state (folders, activeFolder, inventory, activeTrack, render settings, zoom); exported SpectroTrack type
+Changed: gui_next/src/renderer/src/lib/lookupStore.ts: added filter, filterMy, activeSource fields so Lookup UI state survives navigation
+Changed: gui_next/src/renderer/src/screens/ScreenVerify.tsx: use useVerifyStore — folders/results/filter/selections persist across tab changes
+Changed: gui_next/src/renderer/src/screens/ScreenLBDIR.tsx: use useLbdirStore — folders, results, tab, selections persist
+Changed: gui_next/src/renderer/src/screens/ScreenSpectrograms.tsx: use useSpectrogramStore — folders, inventory, active track, render settings persist
+Changed: gui_next/src/renderer/src/screens/ScreenAttachments.tsx: use useAttachmentsStore — active LB, search, status filter persist
+Changed: gui_next/src/renderer/src/screens/ScreenLookup.tsx: use lookupStore for filter/filterMy/activeSource
+
+[2026-05-28] — fix(gui_next): CSP missing img-src for Flask origin — spectrogram PNGs broken
+Fixed: gui_next/src/renderer/index.html: added img-src http://127.0.0.1:5174 to CSP so <img> tags can load spectrogram PNGs from Flask (connect-src alone does not cover image requests)
+
+[2026-05-28] — feat(gui_next): spectrogramStore + context-menu navigate to Spectrograms screen
+Added: gui_next/src/renderer/src/lib/spectrogramStore.ts: Zustand store for pending folder queue (addPending / takePending)
+Changed: gui_next/src/renderer/src/screens/ScreenSpectrograms.tsx: drain pending folders from store on mount, auto-select first added folder
+Changed: gui_next/src/renderer/src/screens/ScreenCollection.tsx: Generate Spectrograms context-menu action now seeds the store and navigates to /spectrograms
+
+[2026-05-28] — feat(gui_next): row context menu + Personal Info modal in ScreenCollection (TODO-118)
+Added: gui_next/src/renderer/src/screens/ScreenCollection.tsx: ContextMenu component (right-click on any row, ESC/click-outside to dismiss); 7 actions: Open Folder, View LB Entry, Scrape Entry, Fingerprint Folder, Play in VLC, Generate Spectrograms, Edit Personal Info
+Added: gui_next/src/renderer/src/screens/ScreenCollection.tsx: PersonalInfoModal with personal_rating 1-5 and tags fields backed by GET/POST /api/collection/<lb>/meta
+Added: backend/app.py: POST /api/open/vlc endpoint — launches VLC via gui.platform_utils.open_in_vlc
+Changed: gui_next/src/renderer/src/components/table.tsx: added onContextMenu prop to TRProps/TR
+
+[2026-05-28] — feat(gui_next): finish ScreenCollection wiring + AppShell nav badge (TODO-115)
+Changed: gui_next/src/renderer/src/components/AppShell.tsx: fetch GET /api/home/stats on mount; show collection_count as live count badge beside "My Collection" nav item
+Changed: gui_next/src/renderer/src/screens/ScreenCollection.tsx: add removeProgress state; render inline progress bar during batch-remove DELETE loop
+
+[2026-05-28] — docs: log gui_next My Collection parity gaps as TODO-117..128
+Added: TODO.md: 12 tasks (TODO-117..128) capturing old collection_tab.py vs new ScreenCollection.tsx
+  feature gaps from parity audit — Missing/Wishlist/Duplicates views, global Forum/Torrent History,
+  per-torrent-record mgmt, Personal Info, row context menu, Notes, scan preview, bulk relocate,
+  sorting, cross-tab nav. All backing Flask endpoints confirmed present in backend/app.py.
+
+[2026-05-28] — feat(gui_next): wire all stub screens + new backend routes (gap audit)
+Changed: gui_next/src/renderer/src/screens/ScreenBootlegs.tsx: add toast; wire Refresh LBBCD response handler
+Changed: gui_next/src/renderer/src/screens/ScreenCollection.tsx: add wishlist add/remove toggle in detail panel
+Changed: gui_next/src/renderer/src/screens/ScreenVerify.tsx: full backend wiring — folder IPC, verify/generate/retrieve, tool dots
+Changed: gui_next/src/renderer/src/screens/ScreenLBDIR.tsx: full backend wiring — check/retrieve/reconcile/extras panes
+Changed: gui_next/src/renderer/src/screens/ScreenAttachments.tsx: full backend wiring — LB rail, file list, file viewer (text/html/image)
+Changed: gui_next/src/renderer/src/screens/ScreenSpectrograms.tsx: full backend wiring — inventory, generate/stop/poll, PNG display
+Changed: gui_next/src/renderer/src/screens/ScreenLookup.tsx: full backend wiring — clipboard/listbox/files/folders sources, Zustand store
+Changed: gui_next/src/renderer/src/screens/ScreenRename.tsx: consume useLookupStore, wire Apply renames → POST /api/rename/apply
+Added: gui_next/src/renderer/src/lib/lookupStore.ts: Zustand store (sources, summary, detail, folderList)
+Added: backend/app.py: POST /api/rename/apply (shutil.move + write_rename_log per item)
+Added: backend/app.py: GET /api/spectrogram/png (serve PNG by absolute path for viewer)
+Added: gui_next/src/main/index.ts: dialog:pickAndReadFiles IPC (multi-select + read)
+Changed: gui_next/src/preload/index.ts: expose pickAndReadFiles
+Changed: gui_next/src/renderer/src/env.d.ts: add pickAndReadFiles type
+
+[2026-05-28] — chore(docs): close PLAN_GUI_WIRING.md — all 6 sprints done
+Changed: gui_next/PLAN_GUI_WIRING.md → instructions/complete/PLAN_GUI_WIRING.md: plan complete, moved to archive
+Added: TODO.md: TODO-115 (ScreenCollection remaining 10%), TODO-116 (ScreenPipeline remaining 5% stub)
+Changed: TODO.md / TODO_DONE.md: closed TODO-094 (UI redesign), swept Done entries (113/110/108) out of TODO.md
+
+[2026-05-28] — chore(gui_next): wire ScreenSpectrograms into router
+Changed: gui_next/src/renderer/src/App.tsx: import ScreenSpectrograms, replace PlaceholderScreen on /spectrograms route
+
+[2026-05-28] — feat(gui_next): TODO-114 — port ScreenLBDIR from source JSX
+Added: gui_next/src/renderer/src/screens/ScreenLBDIR.tsx: four sub-tabs (Check/Retrieve/Reconcile/Extras), folder queue rail with state dots, per-file MD5+shntool detail table with side inspector, retrieve results table, reconcile rename proposals, extras deletion UI with controlled checkboxes
+Changed: gui_next/src/renderer/src/App.tsx: wire /lbdir route to ScreenLBDIR, replacing PlaceholderScreen
+
+[2026-05-28] — feat(gui_next): TODO-113 — port ScreenLookup from source JSX
+Added: gui_next/src/renderer/src/screens/ScreenLookup.tsx: sources rail (clipboard/listbox/files/folders), 5-state status counter bar (matched/incomplete/not-found/duplicate/xref), per-LB summary table with filterable state, per-checksum detail table, help banner, footer with Rename link and Confirm matches action
+Changed: gui_next/src/renderer/src/App.tsx: wire /lookup route to ScreenLookup, replacing PlaceholderScreen
+
+[2026-05-28] — feat(gui_next): TODO-112 — port ScreenRename from source JSX
+Added: gui_next/src/renderer/src/screens/ScreenRename.tsx: 5 row states (has_lb/needs_rename/wrong_lb/multiple_ids/no_match), state filter chips, bulk action bar with checkbox selection, expandable disambiguation rows for multi-LB conflicts, dry-run banner
+Changed: gui_next/src/renderer/src/App.tsx: wire /rename route to ScreenRename, replacing PlaceholderScreen
+
+[2026-05-28] — feat(gui_next): TODO-111 — port ScreenSpectrograms from source JSX
+Added: gui_next/src/renderer/src/screens/ScreenSpectrograms.tsx: folder rail with batch progress, track rail with PNG inventory, spectrogram viewer (.lbb-spec-canvas), thumbnail strip, render options (width/height/dB floor/window), SHN skip warning
+
 [2026-05-28] — feat(gui_next): TODO-110 — port ScreenVerify from source JSX
 Added: gui_next/src/renderer/src/screens/ScreenVerify.tsx: folder queue rail, 7-stat cards, MD5/FFP/ST5 detail table, shntool error state, per-file inspector panel
 Changed: gui_next/src/renderer/src/App.tsx: wire /verify route to ScreenVerify, replacing PlaceholderScreen

@@ -1,14 +1,16 @@
 /* Global styles for LosslessBob — ported from _source/app.css */
 :root {
   --lbb-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --lbb-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --lbb-font-size: 13px;
 }
 
 html, body, #root {
   margin: 0; padding: 0; height: 100%;
   background: var(--lbb-bg);
   color: var(--lbb-fg);
-  font-family: "Inter", ui-sans-serif, -apple-system, "Segoe UI", system-ui, sans-serif;
-  font-size: 13px;
+  font-family: var(--lbb-font);
+  font-size: var(--lbb-font-size);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }

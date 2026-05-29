@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { Icon } from './Icon'
 import { useSettingsStore } from '../store'
@@ -93,6 +93,16 @@ function Sidebar({
   curatorMode: boolean
 }) {
   const setCuratorMode = useSettingsStore((s) => s.setCuratorMode)
+  const [collectionCount, setCollectionCount] = useState<number | undefined>(undefined)
+
+  useEffect(() => {
+    fetch(`${window.api.flaskBase}/api/home/stats`)
+      .then(r => r.ok ? r.json() : Promise.reject())
+      .then((d: { collection_count?: number }) => {
+        if (typeof d.collection_count === 'number') setCollectionCount(d.collection_count)
+      })
+      .catch(() => {})
+  }, [])
 
   return (
     <aside
@@ -200,6 +210,7 @@ function Sidebar({
               )}
               {group.items.map((item) => {
                 const isActive = item.id === active
+                const dynamicCount = item.id === 'collection' ? collectionCount : item.count
                 return (
                   <button
                     key={item.id}
@@ -255,7 +266,7 @@ function Sidebar({
                         NEW
                       </span>
                     )}
-                    {item.count !== undefined && (
+                    {dynamicCount !== undefined && (
                       <span
                         style={{
                           fontSize: 10.5,
@@ -266,7 +277,7 @@ function Sidebar({
                           fontWeight: 500,
                         }}
                       >
-                        {item.count.toLocaleString()}
+                        {dynamicCount.toLocaleString()}
                       </span>
                     )}
                   </button>

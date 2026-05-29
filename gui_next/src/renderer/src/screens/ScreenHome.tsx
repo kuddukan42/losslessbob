@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Icon } from '../components/Icon'
 import { Button, Card, Stat, Pill } from '../components'
@@ -14,6 +14,33 @@ interface HomeStats {
   checksum_count: number
   latest_lb: number
   last_import: string | null
+}
+
+interface ActivityRow {
+  when: string | null
+  action: string
+  target: string
+  result: string
+  type: 'import' | 'rename' | 'forum'
+}
+
+type ToastTone = 'ok' | 'bad' | 'info'
+
+function Toast({ msg, tone, onDone }: { msg: string; tone: ToastTone; onDone: () => void }) {
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  useEffect(() => {
+    timerRef.current = setTimeout(onDone, 3500)
+    return () => { if (timerRef.current) clearTimeout(timerRef.current) }
+  }, [onDone])
+  const bg = tone === 'ok' ? 'var(--lbb-ok-bar)' : tone === 'bad' ? 'var(--lbb-err-bar)' : 'var(--lbb-accent-mid)'
+  return (
+    <div style={{
+      position: 'fixed', bottom: 28, left: '50%', transform: 'translateX(-50%)',
+      background: bg, color: '#fff', padding: '9px 18px', borderRadius: 8,
+      fontSize: 13, fontWeight: 600, zIndex: 9999, boxShadow: '0 4px 16px rgba(0,0,0,.25)',
+      pointerEvents: 'none',
+    }}>{msg}</div>
+  )
 }
 
 function fmtNum(n: number): string {
@@ -54,9 +81,27 @@ const TIPS = [
   { icon: 'star', text: <>Star a filter combo in <strong>Search</strong> to make it a one-click saved view.</> },
 ]
 
+function fmtActivity(iso: string | null): string {
+  if (!iso) return '—'
+  return new Date(iso).toLocaleString(undefined, { dateStyle: 'short', timeStyle: 'short' })
+}
+
+const TYPE_COLOUR: Record<string, string> = {
+  import: 'var(--lbb-accent-mid)',
+  rename: 'var(--lbb-ok-bar)',
+  forum:  'var(--lbb-fg3)',
+}
+
 export function ScreenHome(): React.JSX.Element {
   const navigate = useNavigate()
-  const [stats, setStats] = useState<HomeStats | null>(null)
+  const [stats,        setStats]        = useState<HomeStats | null>(null)
+  const [activity,     setActivity]     = useState<ActivityRow[]>([])
+  const [activityAll,  setActivityAll]  = useState<ActivityRow[] | null>(null)
+  const [checkBusy,    setCheckBusy]    = useState(false)
+  const [showFullLog,  setShowFullLog]  = useState(false)
+  const [toast,        setToast]        = useState<{ msg: string; tone: ToastTone } | null>(null)
+
+  const showToast = useCallback((msg: string, tone: ToastTone) => setToast({ msg, tone }), [])
 
   useEffect(() => {
     fetch(`${BASE}/api/home/stats`)
@@ -64,6 +109,43 @@ export function ScreenHome(): React.JSX.Element {
       .then(setStats)
       .catch(() => { /* stats stay null, UI shows '—' */ })
   }, [])
+
+  useEffect(() => {
+    fetch(`${BASE}/api/activity/log?limit=10`)
+      .then(r => (r.ok ? r.json() : Promise.reject()))
+      .then((rows: ActivityRow[]) => setActivity(rows))
+      .catch(() => { /* activity stays empty */ })
+  }, [])
+
+  const handleCheckUpdate = useCallback(async () => {
+    setCheckBusy(true)
+    try {
+      const r = await fetch(`${BASE}/api/flat_file/discover`)
+      const data = await r.json() as { new_release?: boolean; zip_filename?: string; error?: string }
+      if (data.error) { showToast(`Error: ${data.error}`, 'bad'); return }
+      if (data.new_release) {
+        showToast(`New release available: ${data.zip_filename ?? ''}`, 'ok')
+      } else {
+        showToast('Already up to date.', 'info')
+      }
+    } catch (e) {
+      showToast(`Check failed: ${(e as Error).message}`, 'bad')
+    } finally {
+      setCheckBusy(false)
+    }
+  }, [showToast])
+
+  const handleViewFullLog = useCallback(async () => {
+    setShowFullLog(true)
+    if (activityAll) return
+    try {
+      const r = await fetch(`${BASE}/api/activity/log?limit=0`)
+      const rows = (await r.json()) as ActivityRow[]
+      setActivityAll(rows)
+    } catch {
+      setActivityAll([])
+    }
+  }, [activityAll])
 
   function onNav(id: string): void {
     navigate(id === 'home' ? '/' : `/${id}`)
@@ -99,7 +181,9 @@ export function ScreenHome(): React.JSX.Element {
           </div>
         </div>
         <div style={{ display: 'flex', gap: 8, flexShrink: 0 }}>
-          <Button icon="refresh" variant="secondary" size="md">Check for DB update</Button>
+          <Button icon="refresh" variant="secondary" size="md" disabled={checkBusy} onClick={handleCheckUpdate}>
+            {checkBusy ? 'Checking…' : 'Check for DB update'}
+          </Button>
           <Button icon="drop" variant="primary" size="md" onClick={() => onNav('pipeline')}>
             Ingest new folders
           </Button>
@@ -245,10 +329,11 @@ export function ScreenHome(): React.JSX.Element {
         {/* Recent activity */}
         <Card
           title="Recent activity"
-          subtitle="imports, verifies, renames"
+          subtitle="imports, renames, forum posts"
           action={
             <button
               type="button"
+              onClick={handleViewFullLog}
               style={{
                 background: 'transparent', border: 'none',
                 color: 'var(--lbb-accent-mid)',
@@ -261,8 +346,8 @@ export function ScreenHome(): React.JSX.Element {
           <TableShell stickyHeader={false}>
             <colgroup>
               <col style={{ width: 3 }} />
-              <col style={{ width: 110 }} />
-              <col style={{ width: 140 }} />
+              <col style={{ width: 130 }} />
+              <col style={{ width: 120 }} />
               <col />
               <col style={{ width: 180 }} />
             </colgroup>
@@ -276,14 +361,32 @@ export function ScreenHome(): React.JSX.Element {
               </tr>
             </thead>
             <tbody>
-              {/* Activity log — requires app_events table (TODO) */}
-              <TR edge="mute">
-                <TD mono dim>—</TD>
-                <TD colSpan={3} style={{ color: 'var(--lbb-fg3)', fontStyle: 'italic' }}>
-                  Activity log coming in a future update
-                </TD>
-                <TD />
-              </TR>
+              {activity.length === 0 ? (
+                <TR edge="mute">
+                  <TD mono dim>—</TD>
+                  <TD colSpan={3} style={{ color: 'var(--lbb-fg3)', fontStyle: 'italic' }}>
+                    No activity yet
+                  </TD>
+                  <TD />
+                </TR>
+              ) : activity.map((row, i) => (
+                <TR key={i} edge={undefined}>
+                  <TD>
+                    <span style={{
+                      display: 'inline-block', width: 6, height: 6, borderRadius: '50%',
+                      background: TYPE_COLOUR[row.type] ?? 'var(--lbb-fg3)',
+                    }} />
+                  </TD>
+                  <TD mono dim>{fmtActivity(row.when)}</TD>
+                  <TD>{row.action}</TD>
+                  <TD style={{ maxWidth: 260, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                    {row.target}
+                  </TD>
+                  <TD style={{ maxWidth: 200, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                    {row.result}
+                  </TD>
+                </TR>
+              ))}
             </tbody>
           </TableShell>
         </Card>
@@ -304,6 +407,92 @@ export function ScreenHome(): React.JSX.Element {
           </Card>
         </div>
       </div>
+
+      {/* ── Full log modal ──────────────────────────────────────────────────── */}
+      {showFullLog && (
+        <div
+          style={{
+            position: 'fixed', inset: 0, background: 'rgba(0,0,0,.55)', zIndex: 200,
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+          }}
+          onClick={() => setShowFullLog(false)}
+        >
+          <div
+            style={{
+              background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)',
+              borderRadius: 12, padding: 0, width: 820, maxWidth: '94vw',
+              maxHeight: '80vh', display: 'flex', flexDirection: 'column',
+            }}
+            onClick={e => e.stopPropagation()}
+          >
+            <div style={{
+              padding: '16px 20px', borderBottom: '1px solid var(--lbb-border)',
+              display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+            }}>
+              <span style={{ fontWeight: 700, fontSize: 15 }}>Full activity log</span>
+              <button
+                type="button"
+                onClick={() => setShowFullLog(false)}
+                style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--lbb-fg3)', fontSize: 18 }}
+              >✕</button>
+            </div>
+            <div style={{ overflow: 'auto', flex: 1 }}>
+              <TableShell stickyHeader>
+                <colgroup>
+                  <col style={{ width: 3 }} />
+                  <col style={{ width: 145 }} />
+                  <col style={{ width: 120 }} />
+                  <col />
+                  <col style={{ width: 220 }} />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <TH>{' '}</TH>
+                    <TH>When</TH>
+                    <TH>Action</TH>
+                    <TH>Target</TH>
+                    <TH>Result</TH>
+                  </tr>
+                </thead>
+                <tbody>
+                  {activityAll === null ? (
+                    <TR edge="mute">
+                      <TD mono dim>—</TD>
+                      <TD colSpan={3} style={{ color: 'var(--lbb-fg3)' }}>Loading…</TD>
+                      <TD />
+                    </TR>
+                  ) : activityAll.length === 0 ? (
+                    <TR edge="mute">
+                      <TD mono dim>—</TD>
+                      <TD colSpan={3} style={{ color: 'var(--lbb-fg3)', fontStyle: 'italic' }}>No activity yet</TD>
+                      <TD />
+                    </TR>
+                  ) : activityAll.map((row, i) => (
+                    <TR key={i} edge={undefined}>
+                      <TD>
+                        <span style={{
+                          display: 'inline-block', width: 6, height: 6, borderRadius: '50%',
+                          background: TYPE_COLOUR[row.type] ?? 'var(--lbb-fg3)',
+                        }} />
+                      </TD>
+                      <TD mono dim>{fmtActivity(row.when)}</TD>
+                      <TD>{row.action}</TD>
+                      <TD style={{ maxWidth: 280, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                        {row.target}
+                      </TD>
+                      <TD style={{ maxWidth: 220, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                        {row.result}
+                      </TD>
+                    </TR>
+                  ))}
+                </tbody>
+              </TableShell>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {toast && <Toast msg={toast.msg} tone={toast.tone} onDone={() => setToast(null)} />}
     </div>
   )
 }

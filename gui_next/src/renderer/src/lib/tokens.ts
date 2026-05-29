@@ -4,17 +4,33 @@
 export type Mode = 'light' | 'dark';
 export type Accent = 'indigo' | 'plum' | 'rust' | 'forest' | 'teal' | 'amber' | 'gray' | 'crimson';
 export type Density = 'compact' | 'default' | 'comfortable';
+export type Font = 'inter' | 'ibm-plex' | 'source';
+export type FontSize = 12 | 13 | 14;
 
 export interface ThemeOptions {
   mode: Mode;
   accent: Accent;
   density: Density;
+  font?: Font;
+  fontSize?: FontSize;
+  customTokens?: Record<string, string>;
 }
 
 export const ACCENTS: Accent[] = ['indigo', 'plum', 'rust', 'forest', 'teal', 'amber', 'gray', 'crimson'];
 export const DENSITIES: Density[] = ['compact', 'default', 'comfortable'];
+export const FONTS: Font[] = ['inter', 'ibm-plex', 'source'];
+export const FONT_SIZES: FontSize[] = [12, 13, 14];
 
-const DEFAULT_THEME: ThemeOptions = { mode: 'light', accent: 'indigo', density: 'default' };
+const FONT_STACKS: Record<Font, string> = {
+  'inter':    '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif',
+  'ibm-plex': '"IBM Plex Sans", "Helvetica Neue", Arial, sans-serif',
+  'source':   '"Source Sans 3", "Source Sans Pro", "Trebuchet MS", sans-serif',
+};
+
+export const DEFAULT_THEME: ThemeOptions = {
+  mode: 'light', accent: 'indigo', density: 'default',
+  font: 'inter', fontSize: 13, customTokens: {},
+};
 const STORAGE_KEY = 'lbb-theme';
 
 interface StatusTone { fg: string; bg: string; bar: string; }
@@ -100,7 +116,7 @@ const DENSITY: Record<Density, DensityScale> = {
   comfortable: { row: 40, pad: 12, gap: 10, font: 13.5, sideRow: 34 },
 };
 
-export function applyTheme({ mode, accent, density }: ThemeOptions): void {
+export function applyTheme({ mode, accent, density, font, fontSize, customTokens }: ThemeOptions): void {
   const root = document.documentElement;
   const m = MODES[mode] ?? MODES.light;
   const a = (ACCENT_PALETTES[accent] ?? ACCENT_PALETTES.indigo)[mode];
@@ -118,6 +134,10 @@ export function applyTheme({ mode, accent, density }: ThemeOptions): void {
     root.style.setProperty(`--lbb-d-${k}`, `${v}px`)
   );
 
+  root.style.setProperty('--lbb-font', FONT_STACKS[font ?? 'inter'] ?? FONT_STACKS.inter);
+  root.style.setProperty('--lbb-font-size', `${fontSize ?? 13}px`);
+  Object.entries(customTokens ?? {}).forEach(([k, v]) => root.style.setProperty(k, v));
+
   root.setAttribute('data-mode',    mode);
   root.setAttribute('data-accent',  accent);
   root.setAttribute('data-density', density);
@@ -130,15 +150,18 @@ export function loadTheme(): ThemeOptions {
     if (stored) {
       const parsed = JSON.parse(stored) as Partial<ThemeOptions>;
       return {
-        mode:    (MODES[parsed.mode as Mode]             ? parsed.mode    : DEFAULT_THEME.mode)    as Mode,
-        accent:  (ACCENT_PALETTES[parsed.accent as Accent] ? parsed.accent : DEFAULT_THEME.accent) as Accent,
-        density: (DENSITY[parsed.density as Density]     ? parsed.density : DEFAULT_THEME.density) as Density,
+        mode:         (MODES[parsed.mode as Mode]               ? parsed.mode    : DEFAULT_THEME.mode)    as Mode,
+        accent:       (ACCENT_PALETTES[parsed.accent as Accent]   ? parsed.accent  : DEFAULT_THEME.accent) as Accent,
+        density:      (DENSITY[parsed.density as Density]         ? parsed.density : DEFAULT_THEME.density) as Density,
+        font:         (FONT_STACKS[parsed.font as Font]            ? parsed.font    : DEFAULT_THEME.font)   as Font,
+        fontSize:     ([12, 13, 14].includes(parsed.fontSize as number) ? parsed.fontSize : DEFAULT_THEME.fontSize) as FontSize,
+        customTokens: (parsed.customTokens && typeof parsed.customTokens === 'object' ? parsed.customTokens : {}) as Record<string, string>,
       };
     }
   } catch {
     // corrupt storage — fall back to default
   }
-  return { ...DEFAULT_THEME };
+  return { ...DEFAULT_THEME, customTokens: {} };
 }
 
 export function saveTheme(opts: ThemeOptions): void {

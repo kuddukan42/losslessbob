@@ -317,7 +317,10 @@
       "Bash(DISPLAY=:0 npm run dev -- --no-sandbox)",
       "Bash(echo \"PID=$!\")",
       "Bash(./node_modules/.bin/tsc -p tsconfig.web.json --noEmit)",
-      "Bash(grep -E \"^\\\\s*@app\\\\.route\\\\\\(\" /home/tjenkins/Documents/losslessbob/backend/app.py | sed 's/^[[:space:]]*//' > /tmp/routes.txt && wc -l /tmp/routes.txt)"
+      "Bash(grep -E \"^\\\\s*@app\\\\.route\\\\\\(\" /home/tjenkins/Documents/losslessbob/backend/app.py | sed 's/^[[:space:]]*//' > /tmp/routes.txt && wc -l /tmp/routes.txt)",
+      "Bash(./node_modules/.bin/tsc --noEmit)",
+      "Bash(/home/tjenkins/Documents/losslessbob/gui_next/node_modules/.bin/tsc --noEmit -p /home/tjenkins/Documents/losslessbob/gui_next/tsconfig.web.json)",
+      "Bash(awk 'NR>=2467' gui/collection_tab.py)"
     ],
     "additionalDirectories": [
       "/home/tjenkins/.ssh",
