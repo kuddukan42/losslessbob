@@ -1,3 +1,313 @@
+[2026-05-29] — feat(gui_next): wire ScreenPipeline Bulk actions menu (TODO-116)
+Added: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: inline popover on "Bulk actions" button with Select all visible, Clear selection (conditional), and Clear queue (destructive) — closes TODO-116
+
+[2026-05-29] — feat(gui_next): shared folder queue across Pipeline and detail screens
+Added: gui_next/src/renderer/src/lib/folderQueueStore.ts: new Zustand store holding the canonical folder list
+Changed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: addFolders/clearQueue syncs to folderQueueStore; useEffect picks up folders added from other screens
+Changed: gui_next/src/renderer/src/screens/ScreenVerify.tsx: reads folders from folderQueueStore instead of verifyStore
+Changed: gui_next/src/renderer/src/screens/ScreenLBDIR.tsx: reads folders from folderQueueStore instead of lbdirStore
+Changed: gui_next/src/renderer/src/screens/ScreenSpectrograms.tsx: reads folders from folderQueueStore; pending folders also routed through shared queue
+Changed: gui_next/src/renderer/src/lib/verifyStore.ts: removed folders/setFolders (moved to folderQueueStore)
+Changed: gui_next/src/renderer/src/lib/lbdirStore.ts: removed folders/setFolders (moved to folderQueueStore)
+Changed: gui_next/src/renderer/src/lib/spectrogramStore.ts: removed folders/setFolders (moved to folderQueueStore)
+
+[2026-05-29] — feat(backend+gui): data package restore from zip (TODO-104)
+Added: backend/app.py: POST /api/package/restore — detects package type, dry_run preview, restores user_data or scrape_data, validates zip
+Added: gui/setup_tab.py: _PackageRestoreThread; "Restore from Zip…" button; dry-run + confirm dialog flow; _set_pkg_buttons_enabled helper
+Added: gui_next/src/renderer/src/screens/ScreenSetup.tsx: handleRestorePackage; ConfirmDialog conflict preview; "Restore from zip…" card in Data Packages SetupCard
+
+[2026-05-29] — feat(gui_next): ScreenSetup — Data Packages card with user data and scraped site data export (TODO-102, TODO-103)
+Added: gui_next/src/renderer/src/screens/ScreenSetup.tsx: pkgBusy/pkgUserResult/pkgScrapeResult state; handleExportUserData and handleExportScrapeData handlers; "Data Packages" SetupCard with per-type sub-cards, inline result display (path, file count, size), and clickable path link
+
+[2026-05-29] — feat(backend+gui+cli): data package export — user data and scraped site data (TODO-102, TODO-103)
+Added: backend/app.py: POST /api/package/user_data — zips losslessbob.db + settings.ini + gui_state.json into data/exports/losslessbob_userdata_YYYY-MM-DD.zip with JSON manifest
+Added: backend/app.py: POST /api/package/scrape_data — zips all of data/site/ into data/exports/losslessbob_sitedata_YYYY-MM-DD.zip with JSON manifest
+Added: gui/setup_tab.py: _PackageUserDataThread, _PackageScrapeDataThread worker classes; "Data Packages" QGroupBox with Export User Data and Export Scraped Site Data buttons and result dialog
+Added: cli.py: package user-data / package scrape-data subcommands with optional --out path
+
+[2026-05-29] — fix(backend): guarantee ≥2 TCP trackers on every torrent (TODO-132)
+Added: backend/torrent_maker.py: _FALLBACK_TCP_TRACKERS constant and _ensure_tcp_trackers() helper
+Changed: backend/torrent_maker.py: make_torrent() calls _ensure_tcp_trackers() after fetch_trackers() so any chosen list always has at least 2 http/https trackers
+
+[2026-05-29] — feat(gui_next): complete TODO-122, TODO-125..130 — ScreenCollection batch of improvements
+Added: gui_next/src/renderer/src/screens/ScreenCollection.tsx: sortable column headers (LB#, Status, Date, Location, Folder, Disk path, Confirmed, FP) with ▲▼ indicators (TODO-126)
+Added: gui_next/src/renderer/src/screens/ScreenCollection.tsx: batch torrent-create and qBittorrent progress bar showing N/M live count (TODO-130)
+Added: gui_next/src/renderer/src/screens/ScreenCollection.tsx: bulk Update Location — multi-row picks parent dir and scans for matching LB-XXXXX subfolders; single-row validates name against /api/folder_naming/standard/<lb> and toasts mismatches (TODO-125)
+Added: backend/app.py: /api/collection/<lb>/audioinfo — probes FLAC/WAV with soundfile, falls back to ffprobe for SHN/APE; caches by mtime fingerprint; returns format, bit_depth, sample_rate, mixed (TODO-129)
+Added: backend/app.py: /api/wishlist/<lb> PATCH — update priority/notes on a wishlist entry (TODO-122)
+Added: backend/db.py: update_wishlist() function (TODO-122)
+Added: gui_next/src/renderer/src/screens/ScreenCollection.tsx: Wishlist filter view — extra Priority/Notes/Added/Rating columns with inline click-to-edit (TODO-122)
+Added: gui_next/src/renderer/src/screens/ScreenCollection.tsx: Duplicates filter view — grouped tree by show (date·location) with "Open on LosslessBob", "Open folder", and "Remove" actions per variant (TODO-122)
+Added: gui_next/src/renderer/src/screens/ScreenCollection.tsx: detail panel fetches /api/collection/<lb>/audioinfo and displays real format·bit/rate pill (TODO-129)
+Changed: gui_next/src/renderer/src/screens/ScreenCollection.tsx: detail panel Attachments → /attachments, Spectrograms → real handler, On map → /map (no more "coming soon" toasts) (TODO-128)
+Changed: gui_next/src/renderer/src/components/table.tsx: TH now accepts onClick + sorted prop with ▲▼⇅ sort indicators
+Fixed: gui_next/src/renderer/src/screens/ScreenCollection.tsx: removed hardcoded "FLAC · 16/44" placeholder pill from detail panel (TODO-127)
+
+[2026-05-29] — fix: resolve BUG-107, BUG-108, BUG-109
+Fixed: backend/app.py: POST /api/lookup/scan_folders endpoint added — recursively finds checksum sidecar files (.ffp, .md5, .st5, .sha1) under given folders (BUG-109)
+Fixed: backend/app.py: pipeline_scan_tree now checks root itself before rglob so flat folders with audio at the root level are included in results (BUG-108)
+Fixed: gui_next/src/renderer/src/screens/ScreenLookup.tsx: handleFolders calls scan_folders endpoint to populate source content, so folder sources work with "Lookup all sources" (BUG-109)
+Fixed: gui_next/src/renderer/src/screens/ScreenSetup.tsx: webUiTone converted to useState('ok') — badge now defaults to "connected" and reflects live test results instead of password config (BUG-107)
+
+[2026-05-28] — fix(gui_next): Pipeline screen no longer loses state when navigating away
+Fixed: gui_next/src/renderer/src/App.tsx: ScreenPipeline was unmounted by React Router on route change, wiping all useState (folders, queue, run status). Replaced the /pipeline Route with a KeepAlivePipeline wrapper that keeps the component permanently mounted and toggles visibility via display:none / display:contents.
+
+[2026-05-28] — perf(gui_next): Collection screen now loads instantly on every visit
+Added: backend/app.py: /api/collection/prefetch endpoint — bundles all 9 collection-screen datasets into a single HTTP response
+Added: gui_next/package.json: @tanstack/react-query dependency
+Changed: gui_next/src/renderer/src/App.tsx: wrapped app in QueryClientProvider; prefetch query fires at module load so cache is warm before user clicks Collection tab
+Changed: gui_next/src/renderer/src/screens/ScreenCollection.tsx: replaced version counter + 8-fetch Promise.allSettled + separate missing useEffect with a single useQuery (staleTime: Infinity); refetch now calls queryClient.invalidateQueries so mutations still trigger a reload
+
+[2026-05-28] — fix(gui_next): Pipeline step pills now align under column headers
+Fixed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: switched virtualizer from absolute-row to padding-based approach — absolute-positioned <tr> breaks table layout so colgroup widths don't apply to cells; replaced position:absolute+top with top/bottom spacer <tr> elements so real rows stay in normal table flow and the colgroup 110px step columns align correctly under their headers
+
+[2026-05-28] — feat(gui_next): Pipeline live progress, column alignment, and Stop button
+Changed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: runSteps now processes folders one at a time (sequential fetch per folder) so each row updates as it completes; added stopRun + stopRef/abortRef to abort the in-progress run; StepPill accepts running prop and shows ··· in mute cells instead of — while processing; removed inline "running…" text from folder cell to restore column alignment; Stop button replaces Bulk actions in the top bar while a run is active
+
+[2026-05-28] — chore(gui_next): dark mode palette shifted to neutral gray
+Changed: gui_next/src/renderer/src/lib/tokens.ts: MODES.dark bg/surface/border/fg tokens replaced warm-brown values with flat neutral grays; mute status bg/fg/bar updated to match
+
+[2026-05-29] — feat(gui_next): ScreenCollection — non-recursive Scan Directory + owned-aware ScanPreviewModal (TODO-124)
+Added: backend/app.py: /api/pipeline/scan-dir route (POST {root, recursive}) — depth-1 or recursive walk matching LB-named folders; returns {entries: [{lb_number, folder_name, path}], skipped}
+Added: gui_next/src/renderer/src/screens/ScreenCollection.tsx: ScanPreviewModal component shows LB# / Folder / Path / Already Owned table (fetches /api/collection/lb_numbers for owned state), per-row Add buttons, and "Add all (N)" bulk action; handleScanDir (depth-1) and handleScanTree (recursive) are now distinct handlers both opening ScanPreviewModal; "Scan tree…" button wired to handleScanTree
+
+[2026-05-29] — feat(gui_next): ScreenCollection — Notes column and editable Folder Name / Notes in AddFolderModal (TODO-123)
+Added: gui_next/src/renderer/src/screens/ScreenCollection.tsx: Notes column added to owned-collection table (reads c.notes from GET /api/collection); AddFolderModal FolderEntry now carries folderNameInput (editable, defaulted from path) and notesInput fields; both POSTed to /api/collection on add; colSpan updated 10→11 for virtualiser padding rows
+
+[2026-05-29] — feat(gui_next): ScreenCollection — global Forum & Torrent History views + actionable per-row forum history (TODO-121)
+Added: gui_next/src/renderer/src/screens/ScreenCollection.tsx: two new filter chips "All forum posts" (filter='forum_global') and "All torrents" (filter='torrent_global'); GlobalForumPanel renders GET /api/forum_posts with columns Posted/LB#/Show/Subject/Actions, actions: Open in Browser (window.open topic_url), Remove Record (DELETE /api/forum_post/<id> with confirm dialog), Go to LB (snaps back to 'all' filter and selects row); GlobalTorrentPanel renders GET /api/torrents with columns Created/LB#/Show/Filename/Status/Actions, actions: Add qBt (POST /api/qbt/add), Go to LB; both panels have a local search box; DetailPanel forum tab now fetches GET /api/entry/<lb>/forum_posts on open (like torrent tab) and shows per-post Open in Browser + Remove Record buttons with confirm dialog, replacing the old read-only pills
+
+[2026-05-28] — feat(gui_next): ScreenCollection — per-torrent-record management in History tab (TODO-120)
+Added: gui_next/src/renderer/src/screens/ScreenCollection.tsx: DetailPanel fetches GET /api/torrent/<lb> on open to load full TorrentRecord list; each record displays source-folder-exists and torrent-file-exists status dots; per-record action buttons: Add/Remove qBt, Regen (POST /api/torrent/create), Relocate Source (PATCH /api/torrent/<id>), Delete .torrent file (DELETE /api/torrent/<id>/file, with confirm dialog); forum tab unchanged; bottom "Regenerate" renamed to "Create torrent"
+
+[2026-05-28] — feat(gui_next): ScreenCollection — personal rating, listen count, Log Listen in detail panel (TODO-119)
+Added: gui_next/src/renderer/src/screens/ScreenCollection.tsx: DetailPanel fetches /api/collection/<lb>/meta on open; shows "My Rating" (personal_rating 1–5) and "Listens" (listen_count + last_listened) in meta grid; "Log Listen" button POSTs to /api/collection/<lb>/listen; "Edit Personal Info" button opens PersonalInfoModal from panel; saving via modal bumps personalSaveVer to refresh meta without full reload
+
+[2026-05-28] — feat(gui_next): ScreenCollection — restore Missing (un-owned LB) view + CSV export (TODO-117)
+Added: gui_next/src/renderer/src/screens/ScreenCollection.tsx: "Not in collection" chip backed by GET /api/collection/missing; separate table with LB# / LB Status / Date / Location / Rating / Description columns; Export CSV button; double-click row opens in Lookup
+Changed: gui_next/src/renderer/src/components/table.tsx: added onDoubleClick prop to TR
+
+[2026-05-28] — fix(gui_next): screen state lost on tab switch — move per-screen state to Zustand stores
+Added: gui_next/src/renderer/src/lib/verifyStore.ts: Zustand store for ScreenVerify state (folders, results, activeIdx, showAll, filter) + exported types
+Added: gui_next/src/renderer/src/lib/lbdirStore.ts: Zustand store for ScreenLBDIR state (all tab results, selections, filter, activeFolder)
+Added: gui_next/src/renderer/src/lib/attachmentsStore.ts: Zustand store for ScreenAttachments persistent state (activeLb, search, statusFilter)
+Changed: gui_next/src/renderer/src/lib/spectrogramStore.ts: extended with full screen state (folders, activeFolder, inventory, activeTrack, render settings, zoom); exported SpectroTrack type
+Changed: gui_next/src/renderer/src/lib/lookupStore.ts: added filter, filterMy, activeSource fields so Lookup UI state survives navigation
+Changed: gui_next/src/renderer/src/screens/ScreenVerify.tsx: use useVerifyStore — folders/results/filter/selections persist across tab changes
+Changed: gui_next/src/renderer/src/screens/ScreenLBDIR.tsx: use useLbdirStore — folders, results, tab, selections persist
+Changed: gui_next/src/renderer/src/screens/ScreenSpectrograms.tsx: use useSpectrogramStore — folders, inventory, active track, render settings persist
+Changed: gui_next/src/renderer/src/screens/ScreenAttachments.tsx: use useAttachmentsStore — active LB, search, status filter persist
+Changed: gui_next/src/renderer/src/screens/ScreenLookup.tsx: use lookupStore for filter/filterMy/activeSource
+
+[2026-05-28] — fix(gui_next): CSP missing img-src for Flask origin — spectrogram PNGs broken
+Fixed: gui_next/src/renderer/index.html: added img-src http://127.0.0.1:5174 to CSP so <img> tags can load spectrogram PNGs from Flask (connect-src alone does not cover image requests)
+
+[2026-05-28] — feat(gui_next): spectrogramStore + context-menu navigate to Spectrograms screen
+Added: gui_next/src/renderer/src/lib/spectrogramStore.ts: Zustand store for pending folder queue (addPending / takePending)
+Changed: gui_next/src/renderer/src/screens/ScreenSpectrograms.tsx: drain pending folders from store on mount, auto-select first added folder
+Changed: gui_next/src/renderer/src/screens/ScreenCollection.tsx: Generate Spectrograms context-menu action now seeds the store and navigates to /spectrograms
+
+[2026-05-28] — feat(gui_next): row context menu + Personal Info modal in ScreenCollection (TODO-118)
+Added: gui_next/src/renderer/src/screens/ScreenCollection.tsx: ContextMenu component (right-click on any row, ESC/click-outside to dismiss); 7 actions: Open Folder, View LB Entry, Scrape Entry, Fingerprint Folder, Play in VLC, Generate Spectrograms, Edit Personal Info
+Added: gui_next/src/renderer/src/screens/ScreenCollection.tsx: PersonalInfoModal with personal_rating 1-5 and tags fields backed by GET/POST /api/collection/<lb>/meta
+Added: backend/app.py: POST /api/open/vlc endpoint — launches VLC via gui.platform_utils.open_in_vlc
+Changed: gui_next/src/renderer/src/components/table.tsx: added onContextMenu prop to TRProps/TR
+
+[2026-05-28] — feat(gui_next): finish ScreenCollection wiring + AppShell nav badge (TODO-115)
+Changed: gui_next/src/renderer/src/components/AppShell.tsx: fetch GET /api/home/stats on mount; show collection_count as live count badge beside "My Collection" nav item
+Changed: gui_next/src/renderer/src/screens/ScreenCollection.tsx: add removeProgress state; render inline progress bar during batch-remove DELETE loop
+
+[2026-05-28] — docs: log gui_next My Collection parity gaps as TODO-117..128
+Added: TODO.md: 12 tasks (TODO-117..128) capturing old collection_tab.py vs new ScreenCollection.tsx
+  feature gaps from parity audit — Missing/Wishlist/Duplicates views, global Forum/Torrent History,
+  per-torrent-record mgmt, Personal Info, row context menu, Notes, scan preview, bulk relocate,
+  sorting, cross-tab nav. All backing Flask endpoints confirmed present in backend/app.py.
+
+[2026-05-28] — feat(gui_next): wire all stub screens + new backend routes (gap audit)
+Changed: gui_next/src/renderer/src/screens/ScreenBootlegs.tsx: add toast; wire Refresh LBBCD response handler
+Changed: gui_next/src/renderer/src/screens/ScreenCollection.tsx: add wishlist add/remove toggle in detail panel
+Changed: gui_next/src/renderer/src/screens/ScreenVerify.tsx: full backend wiring — folder IPC, verify/generate/retrieve, tool dots
+Changed: gui_next/src/renderer/src/screens/ScreenLBDIR.tsx: full backend wiring — check/retrieve/reconcile/extras panes
+Changed: gui_next/src/renderer/src/screens/ScreenAttachments.tsx: full backend wiring — LB rail, file list, file viewer (text/html/image)
+Changed: gui_next/src/renderer/src/screens/ScreenSpectrograms.tsx: full backend wiring — inventory, generate/stop/poll, PNG display
+Changed: gui_next/src/renderer/src/screens/ScreenLookup.tsx: full backend wiring — clipboard/listbox/files/folders sources, Zustand store
+Changed: gui_next/src/renderer/src/screens/ScreenRename.tsx: consume useLookupStore, wire Apply renames → POST /api/rename/apply
+Added: gui_next/src/renderer/src/lib/lookupStore.ts: Zustand store (sources, summary, detail, folderList)
+Added: backend/app.py: POST /api/rename/apply (shutil.move + write_rename_log per item)
+Added: backend/app.py: GET /api/spectrogram/png (serve PNG by absolute path for viewer)
+Added: gui_next/src/main/index.ts: dialog:pickAndReadFiles IPC (multi-select + read)
+Changed: gui_next/src/preload/index.ts: expose pickAndReadFiles
+Changed: gui_next/src/renderer/src/env.d.ts: add pickAndReadFiles type
+
+[2026-05-28] — chore(docs): close PLAN_GUI_WIRING.md — all 6 sprints done
+Changed: gui_next/PLAN_GUI_WIRING.md → instructions/complete/PLAN_GUI_WIRING.md: plan complete, moved to archive
+Added: TODO.md: TODO-115 (ScreenCollection remaining 10%), TODO-116 (ScreenPipeline remaining 5% stub)
+Changed: TODO.md / TODO_DONE.md: closed TODO-094 (UI redesign), swept Done entries (113/110/108) out of TODO.md
+
+[2026-05-28] — chore(gui_next): wire ScreenSpectrograms into router
+Changed: gui_next/src/renderer/src/App.tsx: import ScreenSpectrograms, replace PlaceholderScreen on /spectrograms route
+
+[2026-05-28] — feat(gui_next): TODO-114 — port ScreenLBDIR from source JSX
+Added: gui_next/src/renderer/src/screens/ScreenLBDIR.tsx: four sub-tabs (Check/Retrieve/Reconcile/Extras), folder queue rail with state dots, per-file MD5+shntool detail table with side inspector, retrieve results table, reconcile rename proposals, extras deletion UI with controlled checkboxes
+Changed: gui_next/src/renderer/src/App.tsx: wire /lbdir route to ScreenLBDIR, replacing PlaceholderScreen
+
+[2026-05-28] — feat(gui_next): TODO-113 — port ScreenLookup from source JSX
+Added: gui_next/src/renderer/src/screens/ScreenLookup.tsx: sources rail (clipboard/listbox/files/folders), 5-state status counter bar (matched/incomplete/not-found/duplicate/xref), per-LB summary table with filterable state, per-checksum detail table, help banner, footer with Rename link and Confirm matches action
+Changed: gui_next/src/renderer/src/App.tsx: wire /lookup route to ScreenLookup, replacing PlaceholderScreen
+
+[2026-05-28] — feat(gui_next): TODO-112 — port ScreenRename from source JSX
+Added: gui_next/src/renderer/src/screens/ScreenRename.tsx: 5 row states (has_lb/needs_rename/wrong_lb/multiple_ids/no_match), state filter chips, bulk action bar with checkbox selection, expandable disambiguation rows for multi-LB conflicts, dry-run banner
+Changed: gui_next/src/renderer/src/App.tsx: wire /rename route to ScreenRename, replacing PlaceholderScreen
+
+[2026-05-28] — feat(gui_next): TODO-111 — port ScreenSpectrograms from source JSX
+Added: gui_next/src/renderer/src/screens/ScreenSpectrograms.tsx: folder rail with batch progress, track rail with PNG inventory, spectrogram viewer (.lbb-spec-canvas), thumbnail strip, render options (width/height/dB floor/window), SHN skip warning
+
+[2026-05-28] — feat(gui_next): TODO-110 — port ScreenVerify from source JSX
+Added: gui_next/src/renderer/src/screens/ScreenVerify.tsx: folder queue rail, 7-stat cards, MD5/FFP/ST5 detail table, shntool error state, per-file inspector panel
+Changed: gui_next/src/renderer/src/App.tsx: wire /verify route to ScreenVerify, replacing PlaceholderScreen
+
+[2026-05-28] — feat(gui_next): TODO-109 — port ScreenAttachments from source JSX
+Added: gui_next/src/renderer/src/screens/ScreenAttachments.tsx: three-column layout (LB rail, file list, viewer); viewer dispatches on kind: text/html/image/binary
+Changed: gui_next/src/renderer/src/App.tsx: wire /attachments route to ScreenAttachments, replacing PlaceholderScreen
+
+[2026-05-28] — feat(backend,gui): TODO-107 — master publish upload progress via GitHub REST API
+Changed: backend/app.py: /api/master/github_release now streams SSE; replaces gh CLI subprocess with requests + gh auth token; uploads .db and manifest in 1 MB chunks with byte-accurate progress events
+Changed: gui/setup_tab.py: _GithubReleaseThread consumes SSE stream; adds progress signal (label, pct); _on_publish_progress switches progress bar from indeterminate to determinate during upload
+
+[2026-05-28] — feat(gui_next): TODO-108 — port ScreenMap from source JSX
+Added: gui_next/src/renderer/src/screens/ScreenMap.tsx: filter rail (year range + decade chips, ownership toggle, LB status radio), static world map with absolute-positioned pin buttons, selected-venue side panel
+Changed: gui_next/src/renderer/src/App.tsx: replace PlaceholderScreen with ScreenMap on /map route
+
+[2026-05-28] — feat(gui_next): Sprint 6 — wire ScreenThemes (~44% → 100%)
+Changed: gui_next/src/renderer/src/lib/tokens.ts: add Font/FontSize types, FONT_STACKS, FONTS/FONT_SIZES exports, DEFAULT_THEME export; extend ThemeOptions with font/fontSize/customTokens; update applyTheme to set --lbb-font and --lbb-font-size CSS vars and apply customTokens; update loadTheme to load/validate new fields
+Changed: gui_next/src/renderer/src/index.css: font-family and font-size now driven by --lbb-font/--lbb-font-size CSS variables (defaults preserved in :root)
+Added: gui_next/src/main/index.ts: dialog:saveFile IPC (showSaveDialog + writeFile) and dialog:pickAndReadFile IPC (showOpenDialog + readFile)
+Changed: gui_next/src/preload/index.ts: expose saveFile and pickAndReadFile via contextBridge
+Changed: gui_next/src/renderer/src/env.d.ts: add saveFile and pickAndReadFile to Window.api
+Changed: gui_next/src/renderer/src/screens/ScreenThemes.tsx: typeface buttons wired (onClick setTweak font, active state, per-button font preview); font size 12/13/14pt buttons replace static text; Custom color tokens button toggles inline CustomTokenEditor (7 CSS tokens, color inputs, per-token reset, reset-all); Export JSON calls window.api.saveFile; Import JSON calls window.api.pickAndReadFile → parse/validate/apply; Toast component added
+Changed: gui_next/PLAN_GUI_WIRING.md: Sprint 6 marked done; audit table updated
+
+[2026-05-28] — feat(gui_next): Sprint 5 — wire ScreenBootlegs (79% → 100%)
+Changed: gui_next/src/renderer/src/screens/ScreenBootlegs.tsx: Year filter popover (derived from loaded rows, sorted descending; active-highlight; outside-click close); CDs filter popover (All / 1 CD / 2 CDs / 3+ CDs; active-highlight; outside-click close); both wired into filteredRows useMemo and clearFilters; Export CSV button wired — Blob download of filteredRows as losslessbob_bootlegs.csv
+Changed: gui_next/PLAN_GUI_WIRING.md: Sprint 5 marked done; audit table updated
+
+[2026-05-28] — feat(gui_next,backend): Sprint 4 — wire ScreenHome to backend (70% → 100%)
+Added: backend/app.py: GET /api/activity/log — unified activity feed from flat_file_releases, rename_history, forum_posts; supports ?limit= param
+Changed: gui_next/src/renderer/src/screens/ScreenHome.tsx: "Check for DB update" wired to /api/flat_file/discover with busy state + toast; "View full log" wired to open full-log modal fetching /api/activity/log?limit=0; Recent activity table renders real rows from /api/activity/log?limit=10 with colour-coded type dots; Toast component added; local fmtActivity + TYPE_COLOUR helpers
+Changed: gui_next/PLAN_GUI_WIRING.md: Sprint 4 marked done; audit table updated
+
+[2026-05-28] — feat(gui_next): Sprint 3 — wire ScreenSearch to backend (69% → ~95%)
+Changed: gui_next/src/renderer/src/screens/ScreenSearch.tsx: all stubs wired; row click opens EntryDetailPanel fetching /api/entry/<lb> with description/setlist/files/scrape action; sort popover (6 client-side sort options, localStorage); CSV export via Blob download; Group-by-year toggle with active highlight; Columns visibility popover with localStorage persistence; Saved views (3 built-ins + user-created stored in localStorage with delete); owned field fixed — fetches /api/collection/lb_numbers on mount; per-row ⋯ menu (position:fixed, Scrape entry action); Toast component added
+Changed: gui_next/PLAN_GUI_WIRING.md: Sprint 3 marked done; audit table updated
+
+[2026-05-28] — feat(gui_next): Sprint 2 — wire ScreenCollection to backend (33% → 90%)
+Changed: gui_next/src/renderer/src/screens/ScreenCollection.tsx: full rewrite; all 17 stubs wired; Export HTML/M3U blob downloads; Reveal on disk via openPath IPC; Remove with confirm dialog + DELETE /api/collection/<lb>; Add single folder via pickFolders → AddFolderModal with per-row LB# input; Scan directory/tree via pickDir → /api/pipeline/scan-tree → same modal; Update location via pickDir → PATCH /api/collection/<lb>; All years filter with popover dropdown from /api/search/years; Xref only checkbox from /api/checksums/xref_lb_numbers; Create torrent/Add to qBt header buttons act on checked/selected rows; Regenerate torrent and Post to forum (with BBCode preview modal) in detail panel; Attachments/Spectrograms/Map stub toasts; added lbNumberInt and isXref fields to CollectionRow; version-bump refetch pattern
+
+[2026-05-27] — feat(gui_next,backend): IntegCard clear-credentials + DELETE credential endpoints
+Added: backend/app.py: DELETE /api/credentials/qbt — removes qBt username/password and API key from keyring
+Added: backend/app.py: DELETE /api/credentials/wtrf — removes WTRF credentials from keyring
+Changed: gui_next/src/renderer/src/screens/ScreenSetup.tsx: IntegCard gains optional onClear prop; shows inline "Clear creds → Sure? / Yes, clear / Cancel" confirmation flow; handleQbtClear and handleWtrfClear handlers added
+
+[2026-05-27] — fix(gui_next): ScreenSetup Integrations — Admin web UI card + Torrent Settings card
+Changed: gui_next/src/renderer/src/screens/ScreenSetup.tsx: renamed "Torrent web UI" stub → "Admin web UI" (wired to /admin + web_password setting); added 4th "Torrent Settings" card with tracker list dropdown and Refresh Trackers button; added web_password/tracker_list to AppSettings interface; added handlers handleWebUiSave, handleWebUiTest, handleTrackerListChange, handleRefreshTrackers; Integrations grid changed from 3→4 columns
+
+[2026-05-27] — feat(gui_next,backend): Sprint 1 — wire ScreenSetup to backend (6% → 100%)
+Changed: gui_next/src/renderer/src/screens/ScreenSetup.tsx: full rewrite; all 16 stubs wired to Flask endpoints; real DB stats, master status, flat file history, helpers status loaded on mount; confirm dialogs, toast feedback, inline integration edit forms
+Added: gui_next/src/main/index.ts: pickFile IPC handler (dialog:pickFile)
+Added: gui_next/src/preload/index.ts: window.api.pickFile() bridge
+Added: gui_next/src/renderer/src/env.d.ts: pickFile type declaration
+Added: backend/app.py: POST /api/credentials/wtrf — save WTRF credentials to keyring
+Added: backend/app.py: POST /api/credentials/qbt — save qBt credentials to keyring
+Added: backend/app.py: POST /api/rename_history/purge — clear rename_history (lookup history)
+Added: backend/app.py: POST /api/flat_file/purge — clear flat_file_releases + flat_file_changelog
+Added: backend/app.py: POST /api/scraper/purge — clear scrape_sessions + site_inventory
+Added: backend/app.py: POST /api/fingerprint/purge — delete fingerprints.db file
+Changed: backend/app.py: /api/db/settings GET now includes data_dir in response
+Changed: backend/app.py: /api/spectrogram/check GET now includes flac_available
+
+[2026-05-27] — fix(gui_next): resolve TypeScript errors in ScreenPipeline and table components
+Fixed: gui_next/src/renderer/src/components/table.tsx: added onClick to TDProps/TD and style to GroupRowProps/GroupRow
+Fixed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: cast File to Electron-extended type with path property
+
+[2026-05-27] — fix(gui,backend): master publish progress bar + timeout increase
+Added: gui/setup_tab.py: indeterminate QProgressBar shown during export+upload, hidden on success or error
+Fixed: backend/app.py: gh subprocess timeout raised from 120s → 600s (was hitting limit on large snapshots); error message updated to match
+Fixed: gui/setup_tab.py: requests timeout raised from 150s → 660s to match backend
+
+[2026-05-27] — fix(gui_next): fix Collection table column alignment with virtualizer
+Fixed: gui_next/src/renderer/src/screens/ScreenCollection.tsx: replaced position:absolute rows with spacer-row pattern so tbody rows stay in normal table flow and colgroup widths apply correctly; widened Confirmed column from 90→160px
+
+[2026-05-27] — fix(gui_next): auto-start Flask backend from Electron main process
+Changed: gui_next/src/main/index.ts: spawn run_backend.py if port 5174 is not already open; wait for port before creating the window; kill child on quit
+
+[2026-05-27] — feat(gui_next,backend): wire Collection screen to existing backend endpoints
+Changed: backend/db.py: extend get_collection() SELECT to include e.description, e.rating, e.cdr
+Changed: gui_next/src/renderer/src/screens/ScreenCollection.tsx: replace single /api/collection fetch with Promise.allSettled of 6 existing endpoints (fingerprint/lb_numbers, wishlist, collection/duplicates, forum_posts, torrents); merge into CollectionRow[] client-side matching old GUI pattern
+
+[2026-05-27] — fix(gui_next,backend): wire Pipeline folder-add, scan-tree, and Open actions
+Fixed: gui_next/src/main/index.ts: add ipcMain.handle for dialog:pickFolders, dialog:pickDir, shell:openPath
+Fixed: gui_next/src/preload/index.ts: expose pickFolders/pickDir/openPath via contextBridge
+Fixed: gui_next/src/renderer/src/env.d.ts: add new methods to Window.api interface
+Added: backend/app.py: POST /api/pipeline/scan-tree — walks root dir, returns subdirs containing audio files
+Fixed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: wire "Add folders…" (×2) to pickFolders, "Scan tree…" (×2) to pickDir+scan-tree, "Open" to openPath
+
+[2026-05-27] — feat(gui_next): Phase 4c — My Collection screen with virtualizer, filter chips, and detail panel
+Added: gui_next/src/renderer/src/screens/ScreenCollection.tsx: full Collection screen — heading row with export/qBittorrent buttons, stateful filter chips (All/Missing/Wishlist/Duplicates/Forum/Torrent/Unconfirmed/No FP), inline action toolbar, TanStack-virtualized 10-col table (edge bars, checkbox, LB#, Status, Date, Location, Folder, Disk path, Confirmed, FP), slide-in 360px detail panel (pill row, ID+title block, meta grid, action buttons, history sub-tabs); backend fetch against GET /api/collection with SAMPLE_DATA fallback
+Changed: gui_next/src/renderer/src/App.tsx: replaced PlaceholderScreen at /collection with ScreenCollection
+
+[2026-05-27] — feat(gui_next): Phase 3 — curator mode toggle, Setup screen, and gated route guards
+Added: gui_next/src/renderer/src/screens/ScreenSetup.tsx: full Setup screen — Database card, Master Data card with animated curator toggle (44×24 knob, warn-tinted icon, persist via Zustand), Integrations card (3-col qBit/forum/web), Preferences card, Data purges card, Flat file history table
+Changed: gui_next/src/renderer/src/App.tsx: /setup now routes to ScreenSetup; /dbeditor and /scraper wrapped in CuratorRoute guard (redirects to / when curatorMode is false); added Navigate import and CuratorRoute component
+
+[2026-05-27] — feat(gui_next,backend): Phase 4a Pipeline screen — batch ingest workflow with virtualizer, selection, drag-drop, backend integration
+Added: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: full pipeline screen — top progress banner, folder queue rail, virtualised table (TanStack), filter chips, selection bar with shift-click/⌘A, drag-drop folder ingestion, per-row and bulk apply renames; calls POST /api/pipeline/run and POST /api/folder/rename
+Added: backend/app.py: POST /api/pipeline/run — runs verify/lookup/rename/lbdir steps on a list of folders, returns PipelineRow-shaped results
+Added: backend/app.py: POST /api/folder/rename — renames a folder on disk to a new name within the same parent directory
+Changed: gui_next/src/renderer/src/App.tsx: replaced PlaceholderScreen at /pipeline with ScreenPipeline
+Added: gui_next/package.json: @tanstack/react-virtual ^3.13.26
+
+[2026-05-27] — feat(gui_next,backend): Phase 4b Home/Dashboard screen wired to real backend data
+Added: gui_next/src/renderer/src/screens/ScreenHome.tsx: full Home screen — welcome strip, hero ingest card with 4-step pipeline strip, At a glance stats, Jump to tiles, recent activity table (placeholder), Tips card; fetches /api/home/stats on mount
+Added: backend/app.py: GET /api/home/stats — single-query route returning collection_count, wishlist_count, missing_count, bootleg_count, checksum_count, latest_lb, last_import
+Changed: gui_next/src/renderer/src/App.tsx: replaced PrimitivesScreen at / with ScreenHome; import added
+
+[2026-05-27] — feat(gui_next): Phase 2 app shell — Sidebar, Topbar, StatusBar, AppShell, Zustand settings store, react-router routing
+Added: gui_next/src/renderer/src/store.ts: Zustand settings store with curatorMode persisted to localStorage
+Added: gui_next/src/renderer/src/components/AppShell.tsx: Sidebar (224px, NAV_GROUPS, curator promo, user chip), Topbar (breadcrumbs, search, bell), StatusBar (DB stats), AppShell (composes all; reads active route from react-router, curatorMode from store)
+Changed: gui_next/src/renderer/src/components/index.ts: barrel-export AppShell + AppShellProps
+Changed: gui_next/src/renderer/src/App.tsx: replaced smoke-test root with HashRouter + AppShell + all 16 placeholder routes; PrimitivesScreen moved to /home route
+Changed: instructions/gui_redesign/README.md: Phase 3 app shell marked ✅ Done; 3b curator mode marked 🔄 In Progress (gating works, toggle not in settings UI yet)
+Changed: instructions/gui_redesign/13-implementation-plan.md: Phase 2 marked ✅ Done, Phase 3 promoted to NEXT
+Verified: sidebar nav active-state, breadcrumbs, curator promo card, status bar — all confirmed via Firefox headless screenshots at /home and /pipeline routes
+
+[2026-05-27] — feat(gui_next): Phase 1 primitives — Icon, Pill, Chip, Button, IconButton, Input, Kbd, Card, Toolbar, Banner, Stat, SectionHead, TableShell, TH, TR, TD, GroupRow
+Added: gui_next/src/renderer/src/components/Icon.tsx: embedded LBB icon paths (Lucide-compatible), no added dependency
+Added: gui_next/src/renderer/src/components/primitives.tsx: all 11 primitive components, full TypeScript prop types
+Added: gui_next/src/renderer/src/components/table.tsx: TableShell+TH+TR+TD+GroupRow; TR injects 3px edge-bar <td> automatically
+Added: gui_next/src/renderer/src/components/index.ts: barrel re-export of all components and types
+Changed: gui_next/src/renderer/src/App.tsx: smoke-test UI exercises all primitives (stats, pills, buttons, input, table with edge bars and grouping)
+Changed: instructions/gui_redesign/README.md: Phase 2 primitives marked ✅ Done
+Changed: instructions/gui_redesign/13-implementation-plan.md: Phase 1 items 3-5 marked ✅ Done; Phase 2 marked 🔲 NEXT
+
+[2026-05-27] — feat(gui_next): Phase 1 design tokens — theme engine, global CSS, font wiring
+Added: gui_next/src/renderer/src/lib/tokens.ts: TypeScript port of lbb-tokens.js — applyTheme/loadTheme/saveTheme, 2 modes × 8 accents × 3 densities, status palette, full type exports
+Changed: gui_next/src/renderer/src/index.css: replaced placeholder with full app.css port (scrollbars, sticky headers, focus rings, density rows, kbd-pill, spec/map canvas helpers)
+Changed: gui_next/src/renderer/index.html: CSP widened for Google Fonts; Inter + JetBrains Mono preloaded
+Changed: gui_next/src/renderer/src/main.tsx: applyTheme(loadTheme()) called before React.createRoot to prevent FOUC
+Changed: gui_next/src/renderer/src/App.tsx: placeholder updated to smoke-test tokens (swatches, status pills, mode/accent/density toggles)
+
+[2026-05-27] — feat(gui_next): replace PyQt6 scaffold with Electron + React + Vite + TS project
+Changed: gui_next/: removed __init__.py and main_window.py (PyQt6 stub); replaced with full Electron+Vite project
+Added: gui_next/package.json: Electron 42, React 18, Vite 7, electron-vite 5, TypeScript 5 — zero audit vulnerabilities
+Added: gui_next/src/main/index.ts: Electron main process — 1440×900 window, loads Vite dev server in dev / built files in prod
+Added: gui_next/src/preload/index.ts: contextBridge exposes flaskBase (http://127.0.0.1:5174) to renderer
+Added: gui_next/src/renderer/: React+TS entry, placeholder App.tsx, index.css with LBB warm-cream base
+
+[2026-05-27] — chore: create feat/gui-redesign branch and gui_next scaffold
+Added: gui_next/__init__.py: new package for redesigned UI
+Added: gui_next/main_window.py: stub MainWindow scaffold (same constructor interface as gui/)
+Added: run_next.py: launcher for gui_next — shares Flask backend (port 5174) and DB; logs to losslessbob_next.log
+
 [2026-05-27] — fix(backend): master update GitHub publish crash
 Fixed: backend/db.py: generate_release_notes() called .get() on a sqlite3.Row (unsupported); changed to subscript access o["manual_notes"] which returns None for NULL, preserving the existing truthiness check
 

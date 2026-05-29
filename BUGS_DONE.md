@@ -1,6 +1,45 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-109: Lookup tab — "Add Folders" does not include checksum files, nothing is looked up
+Status: Fixed
+File(s): backend/app.py, gui_next/src/renderer/src/screens/ScreenLookup.tsx
+Reported: 2026-05-28
+Fixed: 2026-05-29
+Root cause: handleFolders added folder sources with content:'', and handleLookupAll
+  filtered out empty-content sources before running the lookup, so folder sources were
+  never scanned or submitted.
+Fix: Added POST /api/lookup/scan_folders backend endpoint that recursively finds .ffp,
+  .md5, .st5, .sha1 files under given folders. handleFolders now calls this endpoint and
+  stores the combined text as the source content, making it available to handleLookupAll.
+
+---
+
+BUG-108: LB directory — adding root folder fails with "no audio found"
+Status: Fixed
+File(s): backend/app.py
+Reported: 2026-05-28
+Fixed: 2026-05-29
+Root cause: pipeline_scan_tree used root.rglob("*") which iterates descendants but never
+  yields root itself. A flat folder (audio files directly in root, no subdirs) produced
+  an empty found list, triggering the "No audio folders found" toast.
+Fix: Added an explicit check of root before the rglob loop so root is included if it
+  directly contains audio files.
+
+---
+
+BUG-107: Admin web UI status badge shows "disabled" after successful connection test
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenSetup.tsx
+Reported: 2026-05-28
+Fixed: 2026-05-29
+Root cause: webUiTone was a derived constant driven solely by settings.web_password
+  ('ok' if set, 'mute' otherwise). handleWebUiTest showed a toast but never updated
+  the badge. The admin UI is always running so the badge defaulted to "disabled" for
+  any user without a password configured.
+Fix: Converted webUiTone to a useState variable initialised to 'ok' (always running).
+  handleWebUiTest now calls setWebUiTone('ok') on success or 'warn' on failure.
+
 BUG-107: Master update publish fails — 'sqlite3.Row' object has no attribute 'get'
 Status: Fixed
 File(s): backend/db.py:2533

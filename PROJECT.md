@@ -670,6 +670,12 @@ Indexes: `idx_flat_changelog_release(release_id)`, `idx_flat_changelog_lb(lb_num
 | GET | `/api/spectrogram/status` | Poll batch state: `{status, current, done, total, errors, skipped, stop_requested}` |
 | POST | `/api/spectrogram/stop` | Request stop after current file |
 | POST | `/api/spectrogram/list` | Inventory PNGs per folder. Body: `{folders}`. Returns `{folder -> [{audio_file, audio_name, png_path, has_png}]}` |
+| GET | `/api/spectrogram/png` | Serve a spectrogram PNG from an arbitrary absolute path. Query param: `path`. Returns PNG bytes. |
+
+### Rename
+| Method | Route | Description |
+|--------|-------|-------------|
+| POST | `/api/rename/apply` | Apply folder/file renames on disk and log each to `rename_history`. Body: `{renames: [{old_path, new_path, lb_number?}]}`. Returns `{applied, errors}`. |
 
 ### Verify (Local Checksums)
 | Method | Route | Description |
@@ -1172,6 +1178,41 @@ Fourteen preset themes (Light, Dark, Black, Dracula, Blue, Purple, Red, Nord, Gr
 
 ---
 
+## GUI (Next): Electron/React Frontend (`gui_next/`)
+
+Second-generation GUI built with **Electron + React + TypeScript** (Vite + electron-vite). Communicates with the same Flask backend on port 5174 via `fetch()`. Preload bridge (`preload/index.ts`) exposes typed IPC handlers (`openPath`, `pickFile`, `pickFiles`, `pickDir`, `pickFolders`). All screens are registered in `ScreenCollection.tsx` and routed via a sidebar nav.
+
+### Screens
+
+| Screen | File | Status | Notes |
+|--------|------|--------|-------|
+| ScreenHome | `screens/ScreenHome.tsx` | 70% wired | Activity feed, stats cards, update check stub |
+| ScreenSetup | `screens/ScreenSetup.tsx` | 100% wired | All credentials, purge, import/export, helpers |
+| ScreenCollection | `screens/ScreenCollection.tsx` | ~90% wired | Full CRUD, year/xref filters, forum/torrent actions, detail panel |
+| ScreenSearch | `screens/ScreenSearch.tsx` | ~95% wired | Virtual table, sort, group-by-year, CSV export, column picker, saved views, entry detail panel, per-row scrape menu |
+| ScreenBootlegs | `screens/ScreenBootlegs.tsx` | 79% wired | Year/CDs filter stubs, export CSV stub |
+| ScreenPipeline | `screens/ScreenPipeline.tsx` | 95% wired | Pre-existing |
+| ScreenThemes | `screens/ScreenThemes.tsx` | 63% wired | Preset themes; typeface/export/import stubs |
+
+### ScreenSearch detail
+
+- **Virtual table** via `@tanstack/react-virtual` — renders only visible rows in DOM.
+- **Client-side sort** — 6 keys (LB# ↑↓, Date ↑↓, Location A–Z/Z–A) applied in `sortedRows` memo.
+- **Group-by-year toggle** — `flatItems` memo injects `GroupRow` separators; button highlights when active.
+- **Column visibility** — `visibleCols` Set persisted to `localStorage` (`lbb_search_cols`).
+- **Saved views** — 3 built-ins + user-created stored in `localStorage` (`lbb_search_views`); `applyView()` maps built-in `[1961,2030]` range to actual `dataYearRange`.
+- **`owned` field** — fetched from `GET /api/collection/lb_numbers` on mount; joined via `ownedRows` memo.
+- **Entry detail panel** — 340 px side panel; fetches `GET /api/entry/<lb>` on row click (toggle); shows status/rating pills, date/location/timing, description (truncated), setlist (truncated), files list with downloaded indicators, "Scrape entry" action.
+- **Per-row ⋯ menu** — rendered `position: fixed` (avoids TD overflow clipping); "Scrape entry" → `POST /api/entry/<lb>/scrape`.
+- **CSV export** — client-side Blob download of `sortedRows` as `losslessbob_search.csv`.
+- **Toast** — `position: fixed` bottom-right; auto-dismisses after 3.5 s.
+
+### Wiring plan
+
+Full sprint-by-sprint wiring plan tracked in `gui_next/PLAN_GUI_WIRING.md`.
+
+---
+
 ## Key Data Flows
 
 ### Lookup
@@ -1276,6 +1317,7 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 
 | Date | Change |
 |------|--------|
+| 2026-05-28 | gui_next Sprint 6: ScreenThemes fully wired — typeface picker, font size buttons, custom token color editor, export/import JSON. New IPC: `dialog:saveFile`, `dialog:pickAndReadFile`. `tokens.ts` extended with `Font`, `FontSize`, `customTokens` fields; `--lbb-font`/`--lbb-font-size` CSS vars drive global typography. |
 | 2026-05-24 | DB-09: DatabaseWriteQueue in `backend/db_queue.py`; all write paths across db.py, scraper.py, site_crawler.py, app.py, importer.py, flat_file.py, geocoder.py routed through single writer thread; write_connection() removed; busy-timeout races eliminated. |
 | 2026-05-22 | Cross-tab folder sync: `add_folders_from_lookup()` added to `gui/lbdir_tab.py`; `main_window.py _on_tab_changed` wires lbdir pre-population on tab switch (mirrors existing Verify guard). (TODO-081) |
 | 2026-05-22 | Multi-LB alias folder naming: `get_aliases_for_canonical()` in `backend/db.py`; Rename tab `populate_from_lookup` and `_on_save_alias` fetch all aliases via `GET /api/lb_alias?canonical_lb=<lb>` after alias collapse and include them in proposed suffix (`LB-canonical-LB-alias1...`). (TODO-080) |
@@ -1350,3 +1392,6 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 | 2026-05-20 | Map tab rework (TODO-074): map_tab.py rewritten as browser-only (no QWebEngineView); Open Map in Browser button + Map Filters group (year, lb_status, owned, text); Geocoding group + Location Overrides group moved from setup_tab/dbedit_tab; curator_mode_changed signal added to SetupTab; Tech Stack updated (WebEngine for attachments only). |
 | 2026-05-24 | DB-09 fix: rewrote DatabaseWriteQueue._worker with isolation_level=None and explicit BEGIN/COMMIT/ROLLBACK; added startup ready-event to eliminate WAL-pragma race; purged implicit transaction leak from init_db(); added conftest.py test isolation fixture; updated stale TestWriteConnectionRollback tests. |
 | 2026-05-26 | TODO-086/090: `dylan_performances` promoted from USER→MASTER (schema v3); new `lb_problems` MASTER table (id, lb_number, notes, added); 4 DB functions; `GET /api/performances` (date/lb/category filter); `GET/POST /api/lb_problems` + `PUT/DELETE /api/lb_problems/<id>` (curator-only write). |
+| 2026-05-27 | gui_next Sprint 1 (ScreenSetup 100%): all stubs wired; new backend routes: `POST /api/credentials/wtrf`, `POST /api/credentials/qbt`, `POST /api/rename_history/purge`, `POST /api/flat_file/purge`, `POST /api/scraper/purge`, `POST /api/fingerprint/purge`; `data_dir` added to `GET /api/db/settings`; `flac_available` added to `GET /api/spectrogram/check`; `pickFile` IPC added to main/preload. |
+| 2026-05-28 | gui_next Sprint 2 (ScreenCollection ~90%): all 17 stubs wired; `lbNumberInt` + `isXref` fields added to `CollectionRow`; year filter via `/api/search/years`; xref filter via `/api/checksums/xref_lb_numbers`; `AddFolderModal` (per-row LB# input); `ForumModal` with editable BBCode before `preview_forum` → `post_forum`; version-bump refetch pattern established. |
+| 2026-05-28 | gui_next Sprint 3 (ScreenSearch ~95%): virtual table sort (6 keys), group-by-year toggle, CSV export, column visibility (localStorage), saved views (localStorage + 3 built-ins), `owned` field wired to `GET /api/collection/lb_numbers`, entry detail panel (`GET /api/entry/<lb>`) with files list + "Scrape entry", per-row ⋯ menu (`position:fixed`, `POST /api/entry/<lb>/scrape`), Toast component. (TODO-094 Stage: Sprint 3 done) |
