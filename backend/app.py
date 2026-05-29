@@ -149,6 +149,35 @@ def create_app() -> Flask:
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
+    @app.route("/api/lookup/scan_folders", methods=["POST"])
+    def lookup_scan_folders() -> Response:
+        """Recursively scan folders for checksum sidecar files and return combined text.
+
+        Body: {folders: ["/abs/path", ...]}
+        Returns:
+            JSON {content: str, files: [str, ...]}
+        """
+        _CHECKSUM_EXTS = {".ffp", ".md5", ".st5", ".sha1"}
+        try:
+            data = request.get_json(force=True) or {}
+            folders = data.get("folders", [])
+            all_content: list[str] = []
+            files_found: list[str] = []
+            for folder in folders:
+                p = Path(folder)
+                if not p.is_dir():
+                    continue
+                for f in sorted(p.rglob("*")):
+                    if f.is_file() and f.suffix.lower() in _CHECKSUM_EXTS:
+                        try:
+                            all_content.append(f.read_text(errors="replace"))
+                            files_found.append(str(f))
+                        except OSError:
+                            pass
+            return jsonify({"content": "\n".join(all_content), "files": files_found})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
     # ── Database Management ──────────────────────────────────────────────────
 
     @app.route("/api/status", methods=["GET"])
@@ -937,6 +966,109 @@ def create_app() -> Flask:
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
+    # ── Audio info cache (in-memory, keyed by disk_path + mtime fingerprint) ──
+    _audioinfo_cache: dict = {}
+
+    @app.route("/api/collection/<int:lb>/audioinfo", methods=["GET"])
+    def collection_audioinfo(lb: int) -> Response:
+        """Return audio format / bit-depth / sample-rate for a collection entry.
+
+        Args:
+            lb: LB number of the collection entry.
+
+        Returns:
+            JSON {format, bit_depth, sample_rate, mixed, files_probed, offline?}.
+        """
+        import os
+        import json as _json
+        import subprocess
+        import soundfile as sf
+
+        _empty = {"format": None, "bit_depth": None, "sample_rate": None,
+                  "mixed": False, "files_probed": 0}
+        try:
+            with database.get_connection() as conn:
+                row = conn.execute(
+                    "SELECT disk_path FROM my_collection WHERE lb_number=?", (lb,)
+                ).fetchone()
+            if not row or not row["disk_path"]:
+                return jsonify(_empty)
+            disk_path = row["disk_path"]
+            if not os.path.isdir(disk_path):
+                return jsonify({**_empty, "offline": True})
+
+            AUDIO_EXTS = {'.flac', '.wav', '.aiff', '.aif', '.shn', '.ape', '.ogg', '.mp3'}
+            audio_files = [
+                os.path.join(root, f)
+                for root, _, files in os.walk(disk_path)
+                for f in files
+                if os.path.splitext(f.lower())[1] in AUDIO_EXTS
+            ]
+            if not audio_files:
+                return jsonify(_empty)
+
+            try:
+                mtime_sum = sum(int(os.path.getmtime(f) * 1000) for f in audio_files[:20])
+            except Exception:
+                mtime_sum = 0
+            cache_key = (disk_path, mtime_sum)
+            if cache_key in _audioinfo_cache:
+                return jsonify(_audioinfo_cache[cache_key])
+
+            sample = audio_files[:5]
+            results = []
+            for fpath in sample:
+                ext = os.path.splitext(fpath.lower())[1]
+                fmt = bit_depth = rate = None
+                try:
+                    info = sf.info(fpath)
+                    fmt = info.format.upper()
+                    rate = info.samplerate
+                    st = info.subtype.upper()
+                    if 'PCM_16' in st:      bit_depth = 16
+                    elif 'PCM_24' in st:    bit_depth = 24
+                    elif 'PCM_32' in st:    bit_depth = 32
+                    elif 'FLOAT' in st or 'DOUBLE' in st: bit_depth = 32
+                    elif '8' in st:         bit_depth = 8
+                except Exception:
+                    try:
+                        out = subprocess.run(
+                            ['ffprobe', '-v', 'quiet', '-print_format', 'json',
+                             '-show_streams', '-select_streams', 'a:0', fpath],
+                            capture_output=True, text=True, timeout=10,
+                        )
+                        if out.returncode == 0:
+                            streams = _json.loads(out.stdout).get('streams', [])
+                            if streams:
+                                s = streams[0]
+                                fmt = ext.lstrip('.').upper()
+                                rate = int(s.get('sample_rate', 0)) or None
+                                bits = s.get('bits_per_raw_sample') or s.get('bits_per_sample')
+                                bit_depth = int(bits) if bits else None
+                    except Exception:
+                        pass
+                if fmt:
+                    results.append({'format': fmt, 'bit_depth': bit_depth, 'sample_rate': rate})
+
+            if not results:
+                return jsonify({**_empty, "files_probed": len(sample)})
+
+            fmts   = {r['format']      for r in results if r['format']}
+            depths = {r['bit_depth']   for r in results if r['bit_depth']}
+            rates  = {r['sample_rate'] for r in results if r['sample_rate']}
+            mixed  = len(fmts) > 1 or len(depths) > 1 or len(rates) > 1
+            result = {
+                "format":       sorted(fmts)[0]   if fmts   else None,
+                "bit_depth":    sorted(depths)[0] if depths else None,
+                "sample_rate":  round(sorted(rates)[0] / 1000, 1) if rates else None,
+                "mixed":        mixed,
+                "files_probed": len(sample),
+            }
+            _audioinfo_cache[cache_key] = result
+            return jsonify(result)
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
     # ── FEAT-04: Wishlist ────────────────────────────────────────────────────
 
     @app.route("/api/wishlist", methods=["GET"])
@@ -969,6 +1101,21 @@ def create_app() -> Flask:
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
+    @app.route("/api/wishlist/<int:lb>", methods=["PATCH"])
+    def wishlist_update(lb: int) -> Response:
+        """Update priority and/or notes on a wishlist entry.
+
+        Body: {priority?, notes?}
+        Returns:
+            JSON {ok: true}.
+        """
+        try:
+            data = request.get_json() or {}
+            database.update_wishlist(lb, data)
+            return jsonify({"ok": True})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
     @app.route("/api/wishlist/<int:lb>", methods=["DELETE"])
     def wishlist_remove(lb: int) -> Response:
         """Remove an LB entry from the user's wishlist.
@@ -996,6 +1143,52 @@ def create_app() -> Flask:
         """
         try:
             return jsonify(database.get_collection_duplicates())
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/collection/prefetch", methods=["GET"])
+    def collection_prefetch() -> Response:
+        """Return all data needed by the Collection screen in a single request.
+
+        Bundles collection, missing, fingerprints, wishlist, duplicates,
+        forum_posts, torrents, xref_lb_numbers, and years so the GUI only
+        needs one round-trip to warm its React Query cache.
+
+        Returns:
+            JSON dict with one key per dataset.
+        """
+        try:
+            torrents = database.get_all_torrents()
+            for row in torrents:
+                row["source_folder_exists"] = (
+                    bool(row.get("source_folder"))
+                    and Path(row["source_folder"]).is_dir()
+                )
+                row["torrent_file_exists"] = (
+                    bool(row.get("torrent_path"))
+                    and Path(row["torrent_path"]).exists()
+                )
+            try:
+                from backend import fingerprint as _fp
+                fp_conn = _fp._get_fp_conn()
+                fp_rows = fp_conn.execute(
+                    "SELECT lb_number, SUM(n_hashes) AS n "
+                    "FROM audio_tracks GROUP BY lb_number"
+                ).fetchall()
+                fingerprints: dict = {str(r["lb_number"]): r["n"] for r in fp_rows}
+            except Exception:
+                fingerprints = {}
+            return jsonify({
+                "collection":     database.get_collection(),
+                "missing":        database.get_missing_from_collection(),
+                "fingerprints":   fingerprints,
+                "wishlist":       database.get_wishlist(),
+                "duplicates":     database.get_collection_duplicates(),
+                "forum_posts":    database.get_all_forum_posts(),
+                "torrents":       torrents,
+                "xref_lb_numbers": database.get_xref_lb_numbers(),
+                "years":          database.get_distinct_years(),
+            })
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
@@ -4034,6 +4227,9 @@ def create_app() -> Flask:
             if not root.is_dir():
                 return jsonify({"error": "root is not a directory"}), 400
             found: list[str] = []
+            # rglob("*") excludes root itself, so check root separately
+            if any(f.suffix.lower() in _AUDIO for f in root.iterdir() if f.is_file()):
+                found.append(str(root))
             for dirpath in root.rglob("*"):
                 if dirpath.is_dir() and any(
                     f.suffix.lower() in _AUDIO for f in dirpath.iterdir() if f.is_file()
@@ -4042,6 +4238,261 @@ def create_app() -> Flask:
             return jsonify({"folders": sorted(found)})
         except Exception as e:
             return jsonify({"error": str(e)}), 500
+
+    _LB_RE_SCAN = re.compile(r'LB[-\s]0*(\d+)', re.IGNORECASE)
+
+    @app.route("/api/pipeline/scan-dir", methods=["POST"])
+    def pipeline_scan_dir() -> Response:
+        """Walk a directory and return LB-numbered subdirectories.
+
+        Non-recursive (depth-1) by default; pass recursive=true for a full tree walk.
+        Uses folder-name LB matching, not audio-file detection.
+
+        Body: {root: "/abs/path", recursive: false}
+        Returns:
+            JSON {entries: [{lb_number, folder_name, path}], skipped: int}
+        """
+        try:
+            data = request.get_json() or {}
+            root = Path(data.get("root", ""))
+            recursive = bool(data.get("recursive", False))
+            if not root.is_dir():
+                return jsonify({"error": "root is not a directory"}), 400
+
+            skipped = 0
+
+            if recursive:
+                by_lb: dict[int, tuple[int, str, str]] = {}
+                for child in root.rglob("*"):
+                    if not child.is_dir():
+                        continue
+                    m = _LB_RE_SCAN.search(child.name)
+                    if m:
+                        lb = int(m.group(1))
+                        depth = len(child.relative_to(root).parts)
+                        if lb not in by_lb or depth < by_lb[lb][0]:
+                            by_lb[lb] = (depth, child.name, str(child))
+                    else:
+                        skipped += 1
+                entries = [
+                    {"lb_number": lb, "folder_name": name, "path": path}
+                    for lb, (_, name, path) in sorted(by_lb.items())
+                ]
+            else:
+                entries = []
+                for child in sorted(root.iterdir()):
+                    if not child.is_dir():
+                        continue
+                    m = _LB_RE_SCAN.search(child.name)
+                    if m:
+                        entries.append({
+                            "lb_number": int(m.group(1)),
+                            "folder_name": child.name,
+                            "path": str(child),
+                        })
+                    else:
+                        skipped += 1
+
+            return jsonify({"entries": entries, "skipped": skipped})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    # ── Data Package Export ───────────────────────────────────────────────────
+
+    @app.route("/api/package/user_data", methods=["POST"])
+    def package_user_data() -> Response:
+        """Bundle user data (DB + settings + gui_state) into a dated zip in data/exports/.
+
+        Returns: {ok, path, manifest: {type, created_at, files, file_count, total_bytes}}
+        """
+        import zipfile
+        import hashlib
+        from datetime import datetime, date
+
+        try:
+            exports_dir = DATA_DIR / "exports"
+            exports_dir.mkdir(parents=True, exist_ok=True)
+
+            date_str = date.today().isoformat()
+            zip_path = exports_dir / f"losslessbob_userdata_{date_str}.zip"
+            counter = 2
+            while zip_path.exists():
+                zip_path = exports_dir / f"losslessbob_userdata_{date_str}_{counter}.zip"
+                counter += 1
+
+            candidates = [
+                (DATA_DIR / "losslessbob.db", "losslessbob.db"),
+                (DATA_DIR / "settings.ini", "settings.ini"),
+                (DATA_DIR / "gui_state.json", "gui_state.json"),
+            ]
+
+            manifest_files = []
+            with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED) as zf:
+                for src, arc_name in candidates:
+                    if src.exists():
+                        zf.write(src, arc_name)
+                        size = src.stat().st_size
+                        sha256 = hashlib.sha256(src.read_bytes()).hexdigest()
+                        manifest_files.append({"name": arc_name, "size_bytes": size, "sha256": sha256})
+
+            manifest = {
+                "type": "user_data",
+                "created_at": datetime.utcnow().isoformat() + "Z",
+                "files": manifest_files,
+                "file_count": len(manifest_files),
+                "total_bytes": sum(f["size_bytes"] for f in manifest_files),
+            }
+            _log.info("package_user_data: wrote %s (%d files)", zip_path.name, len(manifest_files))
+            return jsonify({"ok": True, "path": str(zip_path), "manifest": manifest})
+        except Exception:
+            _log.exception("package_user_data failed")
+            return jsonify({"error": "internal_error"}), 500
+
+    @app.route("/api/package/scrape_data", methods=["POST"])
+    def package_scrape_data() -> Response:
+        """Bundle scraped site data (data/site/) into a dated zip in data/exports/.
+
+        Returns: {ok, path, manifest: {type, created_at, file_count, total_bytes}}
+        """
+        import zipfile
+        from datetime import datetime, date
+
+        try:
+            if not SITE_DIR.exists():
+                return jsonify({
+                    "error": "no_site_data",
+                    "message": "data/site/ does not exist. Run the site crawler first.",
+                }), 400
+
+            exports_dir = DATA_DIR / "exports"
+            exports_dir.mkdir(parents=True, exist_ok=True)
+
+            date_str = date.today().isoformat()
+            zip_path = exports_dir / f"losslessbob_sitedata_{date_str}.zip"
+            counter = 2
+            while zip_path.exists():
+                zip_path = exports_dir / f"losslessbob_sitedata_{date_str}_{counter}.zip"
+                counter += 1
+
+            file_count = 0
+            total_bytes = 0
+            with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED) as zf:
+                for src in sorted(SITE_DIR.rglob("*")):
+                    if src.is_file():
+                        arc_name = "site/" + src.relative_to(SITE_DIR).as_posix()
+                        zf.write(src, arc_name)
+                        file_count += 1
+                        total_bytes += src.stat().st_size
+
+            manifest = {
+                "type": "scrape_data",
+                "created_at": datetime.utcnow().isoformat() + "Z",
+                "file_count": file_count,
+                "total_bytes": total_bytes,
+            }
+            _log.info("package_scrape_data: wrote %s (%d files)", zip_path.name, file_count)
+            return jsonify({"ok": True, "path": str(zip_path), "manifest": manifest})
+        except Exception:
+            _log.exception("package_scrape_data failed")
+            return jsonify({"error": "internal_error"}), 500
+
+    @app.route("/api/package/restore", methods=["POST"])
+    def package_restore() -> Response:
+        """Restore a zip archive produced by /api/package/user_data or /api/package/scrape_data.
+
+        Body: {zip_path: str, dry_run: bool = false}
+        Returns: {ok, type, restored: [{name, dest}], conflicts: [{name, dest}], dry_run: bool}
+        """
+        import zipfile
+        import hashlib
+
+        body = request.get_json(silent=True) or {}
+        zip_path_str = body.get("zip_path", "")
+        dry_run = bool(body.get("dry_run", False))
+
+        if not zip_path_str:
+            return jsonify({"error": "zip_path is required"}), 400
+
+        zip_path = Path(zip_path_str)
+        if not zip_path.is_file():
+            return jsonify({"error": "file_not_found", "message": f"No file at {zip_path_str}"}), 404
+
+        try:
+            with zipfile.ZipFile(zip_path, "r") as zf:
+                names = zf.namelist()
+
+                # Detect package type from manifest embedded inside zip, or from file names.
+                pkg_type: str | None = None
+                manifest_data: dict = {}
+                if "manifest.json" in names:
+                    import json as _json
+                    manifest_data = _json.loads(zf.read("manifest.json"))
+                    pkg_type = manifest_data.get("type")
+
+                if pkg_type is None:
+                    if any(n.startswith("site/") for n in names):
+                        pkg_type = "scrape_data"
+                    elif any(n in ("losslessbob.db", "settings.ini", "gui_state.json") for n in names):
+                        pkg_type = "user_data"
+                    else:
+                        return jsonify({"error": "unrecognised_package",
+                                        "message": "Cannot determine package type from zip contents."}), 400
+
+                restored = []
+                conflicts = []
+
+                if pkg_type == "user_data":
+                    user_files = [
+                        ("losslessbob.db", DATA_DIR / "losslessbob.db"),
+                        ("settings.ini",   DATA_DIR / "settings.ini"),
+                        ("gui_state.json", DATA_DIR / "gui_state.json"),
+                    ]
+                    for arc_name, dest in user_files:
+                        if arc_name not in names:
+                            continue
+                        entry = {"name": arc_name, "dest": str(dest)}
+                        if dest.exists():
+                            conflicts.append(entry)
+                        else:
+                            restored.append(entry)
+                        if not dry_run:
+                            dest.parent.mkdir(parents=True, exist_ok=True)
+                            dest.write_bytes(zf.read(arc_name))
+                    if not dry_run:
+                        _log.info("package_restore(user_data): restored %d files from %s",
+                                  len(restored) + len(conflicts), zip_path.name)
+
+                elif pkg_type == "scrape_data":
+                    site_dest = DATA_DIR / "site"
+                    for arc_name in names:
+                        if not arc_name.startswith("site/") or arc_name.endswith("/"):
+                            continue
+                        rel = arc_name[len("site/"):]
+                        dest = site_dest / rel
+                        entry = {"name": arc_name, "dest": str(dest)}
+                        if dest.exists():
+                            conflicts.append(entry)
+                        else:
+                            restored.append(entry)
+                        if not dry_run:
+                            dest.parent.mkdir(parents=True, exist_ok=True)
+                            dest.write_bytes(zf.read(arc_name))
+                    if not dry_run:
+                        _log.info("package_restore(scrape_data): restored %d files from %s",
+                                  len(restored) + len(conflicts), zip_path.name)
+
+                return jsonify({
+                    "ok": True,
+                    "type": pkg_type,
+                    "restored": restored,
+                    "conflicts": conflicts,
+                    "dry_run": dry_run,
+                })
+        except zipfile.BadZipFile:
+            return jsonify({"error": "bad_zip", "message": "File is not a valid zip archive."}), 400
+        except Exception:
+            _log.exception("package_restore failed")
+            return jsonify({"error": "internal_error"}), 500
 
     _slog.t("Flask: create_app done")
     return app

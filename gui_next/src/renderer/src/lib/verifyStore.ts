@@ -31,12 +31,10 @@ export interface VerifyFolder {
 }
 
 interface VerifyStore {
-  folders:      string[]
   results:      VerifyFolder[]
   activeIdx:    number
   showAll:      boolean
   filter:       string
-  setFolders:   (updater: string[] | ((prev: string[]) => string[])) => void
   setResults:   (results: VerifyFolder[]) => void
   setActiveIdx: (idx: number) => void
   setShowAll:   (v: boolean) => void
@@ -44,14 +42,10 @@ interface VerifyStore {
 }
 
 export const useVerifyStore = create<VerifyStore>(set => ({
-  folders:    [],
   results:    [],
   activeIdx:  0,
   showAll:    false,
   filter:     '',
-  setFolders: (updater) => set(state => ({
-    folders: typeof updater === 'function' ? updater(state.folders) : updater,
-  })),
   setResults:   (results) => set({ results }),
   setActiveIdx: (activeIdx) => set({ activeIdx }),
   setShowAll:   (showAll) => set({ showAll }),

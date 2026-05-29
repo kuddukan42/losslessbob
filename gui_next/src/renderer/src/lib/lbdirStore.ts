@@ -58,7 +58,6 @@ export interface ExtrasResult {
 }
 
 interface LbdirStore {
-  folders:          string[]
   activeFolder:     string | null
   tab:              SubTab
   filter:           string
@@ -68,7 +67,6 @@ interface LbdirStore {
   extrasResults:    ExtrasResult[]
   reconSelected:    Set<string>
   extrasSelected:   Set<string>
-  setFolders:          (updater: string[] | ((prev: string[]) => string[])) => void
   setActiveFolder:     (folder: string | null) => void
   setTab:              (tab: SubTab) => void
   setFilter:           (v: string) => void
@@ -82,7 +80,6 @@ interface LbdirStore {
 }
 
 export const useLbdirStore = create<LbdirStore>(set => ({
-  folders:          [],
   activeFolder:     null,
   tab:              'check',
   filter:           '',
@@ -92,9 +89,6 @@ export const useLbdirStore = create<LbdirStore>(set => ({
   extrasResults:    [],
   reconSelected:    new Set(),
   extrasSelected:   new Set(),
-  setFolders: (updater) => set(state => ({
-    folders: typeof updater === 'function' ? updater(state.folders) : updater,
-  })),
   setActiveFolder: (activeFolder) => set({ activeFolder }),
   setTab:          (tab) => set({ tab }),
   setFilter:       (filter) => set({ filter }),

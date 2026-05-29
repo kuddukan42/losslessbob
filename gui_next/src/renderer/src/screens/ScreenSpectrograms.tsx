@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { Icon } from '../components/Icon'
 import { Button, Chip, IconButton, Input, Pill } from '../components'
 import { useSpectrogramStore, SpectroTrack } from '../lib/spectrogramStore'
+import { useFolderQueueStore } from '../lib/folderQueueStore'
 
 const BASE = window.api.flaskBase
 
@@ -40,10 +41,11 @@ function ToolDot({ ok, label }: { ok: boolean; label: string }): React.JSX.Eleme
 
 export function ScreenSpectrograms(): React.JSX.Element {
   const {
-    folders, activeFolder, inventory, activeTrack, filter, width, height, dynRange, forceRerender, zoom,
-    setFolders, setActiveFolder, setInventory, setActiveTrack, setFilter,
+    activeFolder, inventory, activeTrack, filter, width, height, dynRange, forceRerender, zoom,
+    setActiveFolder, setInventory, setActiveTrack, setFilter,
     setWidth, setHeight, setDynRange, setForceRerender, setZoom, takePending,
   } = useSpectrogramStore()
+  const { folders, addFolders } = useFolderQueueStore()
   const [tools,      setTools]      = useState<ToolStatus | null>(null)
   const [genStatus,  setGenStatus]  = useState<GenerateStatus | null>(null)
   const [generating, setGenerating] = useState(false)
@@ -65,7 +67,7 @@ export function ScreenSpectrograms(): React.JSX.Element {
       .catch(() => {})
     const pending = takePending()
     if (pending.length) {
-      setFolders(prev => [...new Set([...prev, ...pending])])
+      addFolders(pending)
       if (!useSpectrogramStore.getState().activeFolder) setActiveFolder(pending[0])
     }
     return () => stopPoll()
@@ -109,11 +111,10 @@ export function ScreenSpectrograms(): React.JSX.Element {
   const handleAddFolder = useCallback(async () => {
     const picked = await window.api.pickFolders()
     if (!picked.length) return
-    const newFolders = [...new Set([...folders, ...picked])]
-    setFolders(newFolders)
+    addFolders(picked)
     if (!activeFolder) setActiveFolder(picked[0])
-    await loadInventory(newFolders)
-  }, [folders, activeFolder, loadInventory])
+    await loadInventory([...new Set([...folders, ...picked])])
+  }, [folders, activeFolder, loadInventory, addFolders, setActiveFolder])
 
   const handleGenerate = useCallback(async (singleFolder?: string) => {
     const target = singleFolder ? [singleFolder] : folders

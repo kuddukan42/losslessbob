@@ -27,7 +27,7 @@ const NAV_GROUPS: NavGroup[] = [
   {
     label: 'Ingest',
     items: [
-      { id: 'pipeline',  label: 'Pipeline', icon: 'pipeline', featured: true },
+      { id: 'pipeline',  label: 'Pipeline', icon: 'pipeline' },
       { id: 'verify',    label: 'Verify',   icon: 'verify' },
       { id: 'lookup',    label: 'Lookup',   icon: 'lookup' },
       { id: 'rename',    label: 'Rename',   icon: 'rename' },

@@ -184,17 +184,21 @@ export function ScreenLookup(): React.JSX.Element {
   const handleFolders = useCallback(async () => {
     const picked = await window.api.pickFolders()
     if (!picked.length) return
-    const allContent: string[] = []
-    const folderNames: string[] = []
     for (const folder of picked) {
+      const name = folder.split('/').pop() ?? folder
       try {
-        const name = folder.split('/').pop() ?? folder
-        folderNames.push(name)
+        const r = await fetch(`${BASE}/api/lookup/scan_folders`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ folders: [folder] }),
+        })
+        const d = await r.json() as { content: string; files: string[] }
+        addSource({ kind: 'folder', name, content: d.content ?? '', active: true })
+        if (!d.content?.trim()) showToast(`No checksum files found in ${name}`, 'info')
+      } catch {
         addSource({ kind: 'folder', name, content: '', active: true })
-      } catch { /* skip */ }
-    }
-    if (folderNames.length) {
-      showToast('Use "Lookup all sources" to scan these folders via backend', 'info')
+        showToast('Folder scan failed', 'bad')
+      }
     }
   }, [addSource, showToast])
 

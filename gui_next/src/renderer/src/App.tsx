@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from 'react'
-import { HashRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { HashRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { applyTheme, loadTheme, saveTheme, getSystemMode } from './lib/tokens'
 import type { ThemeOptions, Mode, Accent, Density } from './lib/tokens'
 import { AppShell } from './components'
@@ -23,6 +24,16 @@ import { ScreenRename } from './screens/ScreenRename'
 import { ScreenLookup } from './screens/ScreenLookup'
 import { ScreenLBDIR } from './screens/ScreenLBDIR'
 import { ScreenSpectrograms } from './screens/ScreenSpectrograms'
+
+// ── React Query client — prefetch collection data immediately at module load ──
+
+const queryClient = new QueryClient()
+queryClient.prefetchQuery({
+  queryKey: ['collection-prefetch'],
+  queryFn: () =>
+    fetch(`${window.api.flaskBase}/api/collection/prefetch`).then(r => r.json()),
+  staleTime: Infinity,
+})
 
 // ── Curator-only route guard ──────────────────────────────────────────────────
 
@@ -214,15 +225,27 @@ function PrimitivesScreen() {
   )
 }
 
+// ── Keep Pipeline screen mounted so its state survives navigation ─────────────
+
+function KeepAlivePipeline() {
+  const { pathname } = useLocation()
+  return (
+    <div style={{ display: pathname === '/pipeline' ? 'contents' : 'none' }}>
+      <ScreenPipeline />
+    </div>
+  )
+}
+
 // ── App ───────────────────────────────────────────────────────────────────────
 
 export default function App(): React.JSX.Element {
   return (
+    <QueryClientProvider client={queryClient}>
     <HashRouter>
       <AppShell>
+        <KeepAlivePipeline />
         <Routes>
           <Route path="/"            element={<ScreenHome />} />
-          <Route path="/pipeline"    element={<ScreenPipeline />} />
           <Route path="/verify"      element={<ScreenVerify />} />
           <Route path="/lookup"      element={<ScreenLookup />} />
           <Route path="/rename"      element={<ScreenRename />} />
@@ -240,5 +263,6 @@ export default function App(): React.JSX.Element {
         </Routes>
       </AppShell>
     </HashRouter>
+    </QueryClientProvider>
   )
 }
