@@ -1,3 +1,7 @@
+[2026-05-29] — chore: merge feat/gui-redesign → main (gui_next v1.0 complete)
+Changed: PROJECT.md: gui_next marked as PRIMARY GUI, gui/ marked legacy/deprecated; Tech Stack updated
+Note: All 14 gui_next screens now on main with full backend wiring; feat/gui-redesign branch retired
+
 [2026-05-29] — feat(gui_next): wire ScreenPipeline Bulk actions menu (TODO-116)
 Added: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: inline popover on "Bulk actions" button with Select all visible, Clear selection (conditional), and Clear queue (destructive) — closes TODO-116
 

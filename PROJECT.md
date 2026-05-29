@@ -8,7 +8,8 @@
 
 | Layer | Technology | Version |
 |-------|------------|---------|
-| GUI | PyQt6 | 6.7.1 |
+| GUI (primary) | Electron + React + TypeScript | electron-vite |
+| GUI (legacy) | PyQt6 | 6.7.1 — deprecated, no new features |
 | Web view (attachments) | PyQt6-WebEngine | 6.7.0 |
 | REST backend | Flask + Flask-CORS | 3.0.3 / 4.0.1 |
 | WSGI server (optional) | Waitress | 3.0.0 |
@@ -1178,38 +1179,40 @@ Fourteen preset themes (Light, Dark, Black, Dracula, Blue, Purple, Red, Nord, Gr
 
 ---
 
-## GUI (Next): Electron/React Frontend (`gui_next/`)
+## GUI (Next): Electron/React Frontend (`gui_next/`) — PRIMARY GUI
 
-Second-generation GUI built with **Electron + React + TypeScript** (Vite + electron-vite). Communicates with the same Flask backend on port 5174 via `fetch()`. Preload bridge (`preload/index.ts`) exposes typed IPC handlers (`openPath`, `pickFile`, `pickFiles`, `pickDir`, `pickFolders`). All screens are registered in `ScreenCollection.tsx` and routed via a sidebar nav.
+Second-generation GUI (primary, merged into main 2026-05-29) built with **Electron + React + TypeScript** (Vite + electron-vite). Communicates with the same Flask backend on port 5174 via `fetch()`. Preload bridge (`preload/index.ts`) exposes typed IPC handlers (`openPath`, `pickFile`, `pickFiles`, `pickDir`, `pickFolders`). All screens are registered in `App.tsx` and routed via a sidebar nav. The legacy `gui/` PyQt6 frontend remains on disk and is deprecated — do not add new features there.
 
-### Screens
+### Screens (all 14 fully wired as of 2026-05-29)
 
-| Screen | File | Status | Notes |
-|--------|------|--------|-------|
-| ScreenHome | `screens/ScreenHome.tsx` | 70% wired | Activity feed, stats cards, update check stub |
-| ScreenSetup | `screens/ScreenSetup.tsx` | 100% wired | All credentials, purge, import/export, helpers |
-| ScreenCollection | `screens/ScreenCollection.tsx` | ~90% wired | Full CRUD, year/xref filters, forum/torrent actions, detail panel |
-| ScreenSearch | `screens/ScreenSearch.tsx` | ~95% wired | Virtual table, sort, group-by-year, CSV export, column picker, saved views, entry detail panel, per-row scrape menu |
-| ScreenBootlegs | `screens/ScreenBootlegs.tsx` | 79% wired | Year/CDs filter stubs, export CSV stub |
-| ScreenPipeline | `screens/ScreenPipeline.tsx` | 95% wired | Pre-existing |
-| ScreenThemes | `screens/ScreenThemes.tsx` | 63% wired | Preset themes; typeface/export/import stubs |
+| Screen | File | Status |
+|--------|------|--------|
+| ScreenHome | `screens/ScreenHome.tsx` | Done — dashboard, live stats, activity log, flat-file update |
+| ScreenSetup | `screens/ScreenSetup.tsx` | Done — all 16 handlers: credentials, purge, import/export, master, data packages |
+| ScreenCollection | `screens/ScreenCollection.tsx` | Done — sortable columns, wishlist, forum, torrents, duplicates, batch actions |
+| ScreenSearch | `screens/ScreenSearch.tsx` | Done — virtual table, sort, group-by-year, CSV export, column picker, saved views |
+| ScreenBootlegs | `screens/ScreenBootlegs.tsx` | Done — year/CDs filters, catalog browser, CSV export |
+| ScreenThemes | `screens/ScreenThemes.tsx` | Done — preset themes, typeface/font-size, custom color tokens |
+| ScreenPipeline | `screens/ScreenPipeline.tsx` | Done — folder queue, 4-step workflow, bulk-actions menu |
+| ScreenLookup | `screens/ScreenLookup.tsx` | Done — 4-source input, summary + detail tables |
+| ScreenVerify | `screens/ScreenVerify.tsx` | Done — folder verify/generate/retrieve workflow |
+| ScreenRename | `screens/ScreenRename.tsx` | Done — consumes lookup results, applies bulk renames |
+| ScreenLBDIR | `screens/ScreenLBDIR.tsx` | Done — 4-pane check/retrieve/reconcile/extras |
+| ScreenAttachments | `screens/ScreenAttachments.tsx` | Done — LB rail, file list, text/HTML/image/binary viewer |
+| ScreenSpectrograms | `screens/ScreenSpectrograms.tsx` | Done — tool dots, batch generate, PNG viewer |
+| ScreenMap | `screens/ScreenMap.tsx` | Done — filter rail + browser map launcher |
 
-### ScreenSearch detail
+### Shared stores (`lib/`)
 
-- **Virtual table** via `@tanstack/react-virtual` — renders only visible rows in DOM.
-- **Client-side sort** — 6 keys (LB# ↑↓, Date ↑↓, Location A–Z/Z–A) applied in `sortedRows` memo.
-- **Group-by-year toggle** — `flatItems` memo injects `GroupRow` separators; button highlights when active.
-- **Column visibility** — `visibleCols` Set persisted to `localStorage` (`lbb_search_cols`).
-- **Saved views** — 3 built-ins + user-created stored in `localStorage` (`lbb_search_views`); `applyView()` maps built-in `[1961,2030]` range to actual `dataYearRange`.
-- **`owned` field** — fetched from `GET /api/collection/lb_numbers` on mount; joined via `ownedRows` memo.
-- **Entry detail panel** — 340 px side panel; fetches `GET /api/entry/<lb>` on row click (toggle); shows status/rating pills, date/location/timing, description (truncated), setlist (truncated), files list with downloaded indicators, "Scrape entry" action.
-- **Per-row ⋯ menu** — rendered `position: fixed` (avoids TD overflow clipping); "Scrape entry" → `POST /api/entry/<lb>/scrape`.
-- **CSV export** — client-side Blob download of `sortedRows` as `losslessbob_search.csv`.
-- **Toast** — `position: fixed` bottom-right; auto-dismisses after 3.5 s.
-
-### Wiring plan
-
-Full sprint-by-sprint wiring plan tracked in `gui_next/PLAN_GUI_WIRING.md`.
+| Store | Purpose |
+|-------|---------|
+| `folderQueueStore.ts` | Canonical folder list shared across Pipeline, Verify, LBDIR, Spectrograms |
+| `lookupStore.ts` | Lookup results passed to Rename |
+| `verifyStore.ts` | Verify job state |
+| `lbdirStore.ts` | LBDIR job state |
+| `spectrogramStore.ts` | Spectrogram job state |
+| `attachmentsStore.ts` | Attachments viewer state |
+| `tokens.ts` | CSS design tokens (colors, spacing, typography) |
 
 ---
 
