@@ -1,6 +1,174 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-116: gui_next — identify and wire ScreenPipeline remaining 5% stub
+Priority: Low
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-29
+Description: The unidentified stub was the "Bulk actions" button in the ScreenPipeline header
+  (line ~431). Implemented an inline popover menu with: Select all visible, Clear selection
+  (conditional on selection), and Clear queue (destructive). Follows the same outside-click
+  dismiss pattern as ScreenBootlegs and ScreenSearch.
+
+---
+
+TODO-104: Data package restore — import user data and scraped assets from zip
+Priority: Medium
+Status: Done
+Added: 2026-05-27
+Closed: 2026-05-29
+Description: Restore flow accepting a zip archive produced by the export routes (TODO-102/103).
+  Implemented:
+    • POST /api/package/restore (backend/app.py) — detects type from manifest.json or file names;
+      dry_run mode returns conflicts without writing; user_data restores db/settings/gui_state;
+      scrape_data restores data/site/; validates zip and rejects bad archives.
+    • PyQt6 (gui/setup_tab.py) — _PackageRestoreThread, "Restore from Zip…" button in Data Packages
+      group; dry-run pass then confirm dialog listing overwrites; final restore with status label.
+    • Electron (gui_next ScreenSetup.tsx) — handleRestorePackage; dry-run → ConfirmDialog showing
+      conflicts; "Restore from zip…" card added to Data Packages SetupCard.
+
+TODO-103: Data package — scraped attachments and pages
+Priority: Medium
+Status: Done
+Added: 2026-05-27
+Closed: 2026-05-29
+Description: Bundle all scraped data (data/site/ HTML pages and attachment files) into a
+  distributable zip archive with a JSON manifest (file count, total bytes, timestamp).
+  Implemented via POST /api/package/scrape_data, GUI button in Setup tab "Data Packages"
+  group, and CLI: package scrape-data [--out PATH].
+
+---
+
+TODO-102: Data package — user data export
+Priority: Medium
+Status: Done
+Added: 2026-05-27
+Closed: 2026-05-29
+Description: Bundle user-generated data (losslessbob.db, settings.ini, gui_state.json)
+  into a portable dated zip with a JSON manifest (per-file size + SHA-256).
+  Implemented via POST /api/package/user_data, GUI button in Setup tab "Data Packages"
+  group, and CLI: package user-data [--out PATH].
+
+---
+
+TODO-132: Guarantee ≥2 TCP trackers on every torrent
+Priority: High
+Status: Done
+Added: 2026-05-29
+Closed: 2026-05-29
+Description: Regardless of which tracker list is selected, always ensure at least
+  2 http/https (TCP) trackers are present before writing the torrent. If the
+  fetched list has fewer than 2, inject from _FALLBACK_TCP_TRACKERS.
+
+---
+
+TODO-130: ScreenCollection — multi-select torrent creation / qBittorrent queue
+Priority: Medium
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-29
+Description: Multi-select via checkedIds already existed. Added N/M live progress bar for
+  batch torrent creation (handleBatchCreateTorrent) and qBt add (handleBatchAddToQbt).
+  Operations run sequentially on the frontend; progress bar shows "Creating torrents: N/M…"
+  or "Sending to qBittorrent: N/M…". qBt config already present in ScreenSetup.
+
+TODO-129: Audio format + bitrate detection — surface FLAC/WAV/SHN and 16/44.1 vs 24/96
+Priority: Medium
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-29
+Description: Added GET /api/collection/<lb>/audioinfo backend route — probes up to 5 audio
+  files with soundfile (FLAC/WAV), falls back to ffprobe subprocess for SHN/APE/others;
+  caches by disk_path + mtime fingerprint. DetailPanel fetches on row open and shows a real
+  "FLAC · 16/44.1" pill (or mixed/offline/absent). Removed the hardcoded placeholder pill.
+
+TODO-128: gui_next ScreenCollection — cross-tab nav + replace coming-soon stubs
+Priority: Low
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-29
+Description: Wired the three stub buttons in the DetailPanel: Attachments → navigate('/attachments'),
+  Spectrograms → handleCtxSpectrograms (calls /api/spectrogram/generate then navigates to /spectrograms),
+  On map → navigate('/map'). Added onSpectrograms and onNavigate props to DetailPanelProps.
+
+TODO-127: gui_next ScreenCollection — real Size/codec data or drop placeholder pills
+Priority: Low
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-29
+Description: Removed the hardcoded "FLAC · 16/44" pill from the detail panel pill row.
+  Real audio format pill is now populated by TODO-129. Size row still shows '—' (no size data).
+
+TODO-126: gui_next ScreenCollection — column header sorting
+Priority: Low
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-29
+Description: Added sortCol/sortDir state and handleSort callback. All main-table headers
+  (LB#, Status, Date, Location, Folder, Disk path, Confirmed, FP) are now clickable with ▲▼⇅
+  indicators. sortedFilteredRows drives the virtualizer. Wishlist table headers also sortable.
+  TH component updated to accept onClick + sorted props.
+
+TODO-125: gui_next ScreenCollection — bulk Update Location + standard-name/NFT cross-check
+Priority: Medium
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-29
+Description: handleUpdateLocation now supports both single and multi-row. Single: picks dir,
+  validates folder name against /api/folder_naming/standard/<lb>, toasts mismatch (non-blocking),
+  then PATCHes. Multi: picks parent dir, calls /api/pipeline/scan-dir to find matching LB-XXXXX
+  subfolders, validates each, PATCHes all matches; shows N updated / N not-found toast.
+  Reuses torrentProgress bar for progress feedback.
+
+TODO-122: gui_next ScreenCollection — Wishlist columns/edit + Duplicates grouped tree
+Priority: Medium
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-29
+Description: Wishlist filter now shows dedicated table with LB#, Date, Location, Description,
+  Rating, Added, Notes, Priority columns. Notes and Priority support click-to-edit inline (input
+  + select, saved via PATCH /api/wishlist/<lb>). CollectionRow extended with wishlistPriority,
+  wishlistNotes, wishlistAddedAt. Added update_wishlist() to db.py and PATCH /api/wishlist/<lb>
+  to app.py. Duplicates filter now shows a grouped tree (GroupRow) organised by date·location,
+  with per-variant owned rows showing rating, description, "Open on LosslessBob" (→ /lookup),
+  "Open folder", and "Remove from collection" (with confirm dialog).
+
+TODO-124: gui_next ScreenCollection — non-recursive Scan Directory + owned-aware preview
+Priority: Medium
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-29
+Description: Added /api/pipeline/scan-dir backend route (depth-1 and recursive variants) that
+  matches LB-named folders. Added ScanPreviewModal component to gui_next with LB# / Folder /
+  Path / Already Owned columns, per-row Add buttons, and "Add all (N)" bulk action. Scan
+  directory and Scan tree… buttons now call distinct handlers (non-recursive vs recursive)
+  and both open ScanPreviewModal instead of the old AddFolderModal.
+
+TODO-123: gui_next ScreenCollection — Notes column + notes field in Add dialog
+Priority: Medium
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-29
+Description: Added Notes column to owned-collection table (reads c.notes via GET /api/collection).
+  AddFolderModal now shows editable Folder Name (pre-filled from path) and Notes inputs per entry;
+  both are included in POST /api/collection body.
+
+TODO-121: gui_next ScreenCollection — global Forum & Torrent History views
+Priority: High
+Status: Done
+Added: 2026-05-28
+Closed: 2026-05-29
+Description: Old tab had standalone "Forum History" and "Torrent History" sub-tabs; new screen
+  was read-only pills.
+  Implemented:
+    • GlobalForumPanel component (filter='forum_global' chip): lists all GET /api/forum_posts
+      records with Open in Browser, Remove Record (DELETE + confirm), Go to LB actions.
+    • GlobalTorrentPanel component (filter='torrent_global' chip): lists all GET /api/torrents
+      records with Add qBt and Go to LB actions.
+    • DetailPanel forum tab now fetches GET /api/entry/<lb>/forum_posts on open and shows
+      per-post Open in Browser + Remove Record buttons (confirm dialog), replacing read-only pills.
+
 TODO-120: gui_next ScreenCollection — per-torrent-record management in detail panel
 Priority: High
 Status: Done

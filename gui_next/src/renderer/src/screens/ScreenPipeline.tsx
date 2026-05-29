@@ -3,6 +3,7 @@ import { useVirtualizer } from '@tanstack/react-virtual'
 import { Icon } from '../components/Icon'
 import { Button, Chip, IconButton, Input, Pill } from '../components'
 import { TableShell, TH, TR, TD, GroupRow } from '../components'
+import { useFolderQueueStore } from '../lib/folderQueueStore'
 
 const BASE = window.api.flaskBase
 
@@ -37,7 +38,12 @@ type FilterKey = 'all' | 'attn' | 'ready' | 'done'
 
 // ── StepPill ─────────────────────────────────────────────────────────────────
 
-function StepPill({ step }: { step: StepResult }): React.JSX.Element {
+function StepPill({ step, running = false }: { step: StepResult; running?: boolean }): React.JSX.Element {
+  if (running && step.status === 'mute') {
+    return (
+      <Pill tone="mute" soft style={{ minWidth: 64, justifyContent: 'center', opacity: 0.5, letterSpacing: 3 }}>···</Pill>
+    )
+  }
   if (step.status === 'mute') {
     return (
       <Pill tone="mute" soft style={{ minWidth: 64, justifyContent: 'center' }}>—</Pill>
@@ -109,6 +115,8 @@ function serverRowToPipeline(sr: Record<string, unknown>): Partial<PipelineRow> 
 // ── Main screen ───────────────────────────────────────────────────────────────
 
 export function ScreenPipeline(): React.JSX.Element {
+  const { folders: queueFolders, addFolders: addToQueue, clearFolders } = useFolderQueueStore()
+
   const [rows, setRows] = useState<PipelineRow[]>([])
   const [filter, setFilter] = useState<FilterKey>('all')
   const [tableSearch, setTableSearch] = useState('')
@@ -117,8 +125,22 @@ export function ScreenPipeline(): React.JSX.Element {
   const [lastShiftAnchor, setLastShiftAnchor] = useState<string | null>(null)
   const [dragOver, setDragOver] = useState(false)
 
+  // Sync any folders added from other screens into local rows
+  useEffect(() => {
+    setRows(prev => {
+      const existing = new Set(prev.map(r => r.id))
+      const newRows = queueFolders.filter(p => !existing.has(p)).map(emptyRow)
+      if (!newRows.length) return prev
+      return [...prev, ...newRows]
+    })
+  }, [queueFolders])
+
   const tableParentRef = useRef<HTMLDivElement>(null)
   const flatListRef = useRef<VItem[]>([])
+  const stopRef = useRef(false)
+  const abortRef = useRef<AbortController | null>(null)
+  const bulkMenuRef = useRef<HTMLDivElement>(null)
+  const [bulkMenuOpen, setBulkMenuOpen] = useState(false)
 
   // ── Derived counts ──────────────────────────────────────────────────────────
   const counts = {
@@ -128,6 +150,7 @@ export function ScreenPipeline(): React.JSX.Element {
     done:  rows.filter(r => r.severity === 'done').length,
   }
 
+  const isRunning  = rows.some(r => r.running)
   const readyRows  = rows.filter(r => r.severity === 'ready')
   const selectedRows = rows.filter(r => r.selected)
   const selectedReady = selectedRows.filter(r => r.severity === 'ready')
@@ -182,36 +205,56 @@ export function ScreenPipeline(): React.JSX.Element {
   }, [])
 
   const addFolders = useCallback((paths: string[]) => {
+    addToQueue(paths)
     setRows(prev => {
       const existing = new Set(prev.map(r => r.id))
       const newRows = paths.filter(p => !existing.has(p)).map(emptyRow)
       return [...prev, ...newRows]
     })
-  }, [])
+  }, [addToQueue])
 
-  // ── Backend: run steps ──────────────────────────────────────────────────────
+  // ── Backend: run steps (sequential, one folder at a time) ──────────────────
   const runSteps = useCallback(async (targetIds: string[], steps: string[]) => {
     const targets = rows.filter(r => targetIds.includes(r.id))
     if (!targets.length) return
 
-    targets.forEach(r => updateRow(r.id, { running: true }))
+    stopRef.current = false
 
-    try {
-      const resp = await fetch(`${BASE}/api/pipeline/run`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ folders: targets.map(r => r.folderPath), steps }),
-      })
-      if (!resp.ok) return
-      const data = await resp.json() as { results: Record<string, unknown>[] }
-      data.results.forEach((sr, i) => {
-        const id = targets[i]?.id
-        if (id) updateRow(id, serverRowToPipeline(sr))
-      })
-    } catch {
-      targets.forEach(r => updateRow(r.id, { running: false }))
+    for (const target of targets) {
+      if (stopRef.current) break
+
+      updateRow(target.id, { running: true })
+      const ctrl = new AbortController()
+      abortRef.current = ctrl
+
+      try {
+        const resp = await fetch(`${BASE}/api/pipeline/run`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ folders: [target.folderPath], steps }),
+          signal: ctrl.signal,
+        })
+        if (resp.ok) {
+          const data = await resp.json() as { results: Record<string, unknown>[] }
+          if (data.results[0]) updateRow(target.id, serverRowToPipeline(data.results[0]))
+          else updateRow(target.id, { running: false })
+        } else {
+          updateRow(target.id, { running: false })
+        }
+      } catch (e) {
+        if ((e as Error).name !== 'AbortError') updateRow(target.id, { running: false })
+      }
     }
+    abortRef.current = null
   }, [rows, updateRow])
+
+  // ── Stop an in-progress run ─────────────────────────────────────────────────
+  const stopRun = useCallback(() => {
+    stopRef.current = true
+    abortRef.current?.abort()
+    abortRef.current = null
+    setRows(prev => prev.map(r => r.running ? { ...r, running: false } : r))
+  }, [])
 
   // ── Backend: apply a single rename ─────────────────────────────────────────
   const applyRename = useCallback(async (row: PipelineRow) => {
@@ -300,6 +343,16 @@ export function ScreenPipeline(): React.JSX.Element {
     setRows(prev => prev.map(r => ({ ...r, selected: false })))
   }, [])
 
+  // ── Close bulk-actions menu on outside click ────────────────────────────────
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (bulkMenuRef.current && !bulkMenuRef.current.contains(e.target as Node))
+        setBulkMenuOpen(false)
+    }
+    document.addEventListener('mousedown', handler)
+    return () => document.removeEventListener('mousedown', handler)
+  }, [])
+
   // ── ⌘A keyboard shortcut ────────────────────────────────────────────────────
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
@@ -384,8 +437,55 @@ export function ScreenPipeline(): React.JSX.Element {
         <div style={{ flex: 1 }} />
 
         <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-          <Button variant="ghost" size="md" icon="more">Bulk actions</Button>
-          {counts.ready > 0 && (
+          {isRunning ? (
+            <Button variant="secondary" size="md" icon="x" onClick={stopRun}>Stop</Button>
+          ) : (
+            <div ref={bulkMenuRef} style={{ position: 'relative' }}>
+              <Button variant="ghost" size="md" icon="more" onClick={() => setBulkMenuOpen(v => !v)}>
+                Bulk actions
+              </Button>
+              {bulkMenuOpen && (
+                <div style={{
+                  position: 'absolute', top: 'calc(100% + 4px)', right: 0, zIndex: 100,
+                  background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)',
+                  borderRadius: 8, padding: 4, minWidth: 180,
+                  boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
+                }}>
+                  <button
+                    onClick={() => { selectAll(); setBulkMenuOpen(false) }}
+                    style={{
+                      display: 'block', width: '100%', textAlign: 'left',
+                      padding: '6px 12px', fontSize: 12.5, cursor: 'pointer',
+                      border: 'none', background: 'transparent',
+                      color: 'var(--lbb-fg)', borderRadius: 5,
+                    }}
+                  >Select all visible</button>
+                  {selectedRows.length > 0 && (
+                    <button
+                      onClick={() => { clearSelection(); setBulkMenuOpen(false) }}
+                      style={{
+                        display: 'block', width: '100%', textAlign: 'left',
+                        padding: '6px 12px', fontSize: 12.5, cursor: 'pointer',
+                        border: 'none', background: 'transparent',
+                        color: 'var(--lbb-fg)', borderRadius: 5,
+                      }}
+                    >Clear selection ({selectedRows.length})</button>
+                  )}
+                  <div style={{ height: 1, background: 'var(--lbb-border)', margin: '4px 0' }} />
+                  <button
+                    onClick={() => { setRows([]); setActiveQueue(null); clearFolders(); setBulkMenuOpen(false) }}
+                    style={{
+                      display: 'block', width: '100%', textAlign: 'left',
+                      padding: '6px 12px', fontSize: 12.5, cursor: 'pointer',
+                      border: 'none', background: 'transparent',
+                      color: 'var(--lbb-bad, #e05252)', borderRadius: 5,
+                    }}
+                  >Clear queue</button>
+                </div>
+              )}
+            </div>
+          )}
+          {counts.ready > 0 && !isRunning && (
             <Button variant="primary" size="md" icon="check" onClick={applyAllReady}>
               Apply all {counts.ready} proposed rename{counts.ready !== 1 ? 's' : ''}
             </Button>
@@ -465,7 +565,7 @@ export function ScreenPipeline(): React.JSX.Element {
                     fontFamily: 'var(--lbb-mono)', fontSize: 11,
                   }}>{r.folderName}</span>
                   {r.running && (
-                    <span style={{ fontSize: 10, color: 'var(--lbb-fg3)' }}>…</span>
+                    <span style={{ fontSize: 9, color: 'var(--lbb-accent-mid)', letterSpacing: 1 }}>···</span>
                   )}
                 </button>
               )
@@ -480,7 +580,7 @@ export function ScreenPipeline(): React.JSX.Element {
             <Button variant="secondary" size="sm" icon="search" block onClick={handleScanTree}>Scan tree…</Button>
             <Button
               variant="ghost" size="sm" icon="trash" block
-              onClick={() => { setRows([]); setActiveQueue(null) }}
+              onClick={() => { setRows([]); setActiveQueue(null); clearFolders() }}
             >Clear queue</Button>
 
             <div style={{
@@ -628,12 +728,13 @@ export function ScreenPipeline(): React.JSX.Element {
                     <TH align="right"> </TH>
                   </tr>
                 </thead>
-                <tbody
-                  style={{
-                    height: `${virtualizer.getTotalSize()}px`,
-                    position: 'relative',
-                  }}
-                >
+                <tbody>
+                  {/* top spacer — keeps real rows in normal table flow so colgroup widths apply */}
+                  {virtualizer.getVirtualItems().length > 0 && (
+                    <tr aria-hidden="true">
+                      <td colSpan={9} style={{ height: virtualizer.getVirtualItems()[0].start, padding: 0, border: 'none' }} />
+                    </tr>
+                  )}
                   {virtualizer.getVirtualItems().map(vItem => {
                     const item = flatList[vItem.index]
                     if (!item) return null
@@ -645,13 +746,6 @@ export function ScreenPipeline(): React.JSX.Element {
                           label={item.label}
                           count={item.count}
                           colSpan={8}
-                          style={{
-                            position: 'absolute',
-                            top: vItem.start,
-                            left: 0,
-                            width: '100%',
-                            height: vItem.size,
-                          }}
                         />
                       )
                     }
@@ -668,14 +762,6 @@ export function ScreenPipeline(): React.JSX.Element {
                         key={r.id}
                         edge={edge}
                         selected={r.selected}
-                        style={{
-                          position: 'absolute',
-                          top: vItem.start,
-                          left: 0,
-                          width: '100%',
-                          height: vItem.size,
-                          cursor: 'pointer',
-                        }}
                         onClick={(e: React.MouseEvent) => toggleSelect(r.id, e.shiftKey)}
                       >
                         <TD>
@@ -688,14 +774,11 @@ export function ScreenPipeline(): React.JSX.Element {
                         </TD>
                         <TD mono style={{ color: r.severity === 'done' ? 'var(--lbb-fg2)' : 'var(--lbb-fg)' }}>
                           {r.folderName}
-                          {r.running && (
-                            <span style={{ marginLeft: 6, fontSize: 10, color: 'var(--lbb-fg3)' }}>running…</span>
-                          )}
                         </TD>
-                        <TD align="center"><StepPill step={r.steps.verify} /></TD>
-                        <TD align="center"><StepPill step={r.steps.lookup} /></TD>
-                        <TD align="center"><StepPill step={r.steps.rename} /></TD>
-                        <TD align="center"><StepPill step={r.steps.lbdir} /></TD>
+                        <TD align="center"><StepPill step={r.steps.verify} running={r.running} /></TD>
+                        <TD align="center"><StepPill step={r.steps.lookup} running={r.running} /></TD>
+                        <TD align="center"><StepPill step={r.steps.rename} running={r.running} /></TD>
+                        <TD align="center"><StepPill step={r.steps.lbdir} running={r.running} /></TD>
                         <TD mono style={{
                           color: r.severity === 'ready' ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg2)',
                           fontWeight: r.severity === 'ready' ? 600 : undefined,
@@ -716,6 +799,16 @@ export function ScreenPipeline(): React.JSX.Element {
                       </TR>
                     )
                   })}
+                  {/* bottom spacer */}
+                  {virtualizer.getVirtualItems().length > 0 && (() => {
+                    const last = virtualizer.getVirtualItems()[virtualizer.getVirtualItems().length - 1]
+                    const remaining = virtualizer.getTotalSize() - last.end
+                    return remaining > 0 ? (
+                      <tr aria-hidden="true">
+                        <td colSpan={9} style={{ height: remaining, padding: 0, border: 'none' }} />
+                      </tr>
+                    ) : null
+                  })()}
                 </tbody>
               </TableShell>
             </div>

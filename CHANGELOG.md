@@ -1,3 +1,82 @@
+[2026-05-29] — feat(gui_next): wire ScreenPipeline Bulk actions menu (TODO-116)
+Added: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: inline popover on "Bulk actions" button with Select all visible, Clear selection (conditional), and Clear queue (destructive) — closes TODO-116
+
+[2026-05-29] — feat(gui_next): shared folder queue across Pipeline and detail screens
+Added: gui_next/src/renderer/src/lib/folderQueueStore.ts: new Zustand store holding the canonical folder list
+Changed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: addFolders/clearQueue syncs to folderQueueStore; useEffect picks up folders added from other screens
+Changed: gui_next/src/renderer/src/screens/ScreenVerify.tsx: reads folders from folderQueueStore instead of verifyStore
+Changed: gui_next/src/renderer/src/screens/ScreenLBDIR.tsx: reads folders from folderQueueStore instead of lbdirStore
+Changed: gui_next/src/renderer/src/screens/ScreenSpectrograms.tsx: reads folders from folderQueueStore; pending folders also routed through shared queue
+Changed: gui_next/src/renderer/src/lib/verifyStore.ts: removed folders/setFolders (moved to folderQueueStore)
+Changed: gui_next/src/renderer/src/lib/lbdirStore.ts: removed folders/setFolders (moved to folderQueueStore)
+Changed: gui_next/src/renderer/src/lib/spectrogramStore.ts: removed folders/setFolders (moved to folderQueueStore)
+
+[2026-05-29] — feat(backend+gui): data package restore from zip (TODO-104)
+Added: backend/app.py: POST /api/package/restore — detects package type, dry_run preview, restores user_data or scrape_data, validates zip
+Added: gui/setup_tab.py: _PackageRestoreThread; "Restore from Zip…" button; dry-run + confirm dialog flow; _set_pkg_buttons_enabled helper
+Added: gui_next/src/renderer/src/screens/ScreenSetup.tsx: handleRestorePackage; ConfirmDialog conflict preview; "Restore from zip…" card in Data Packages SetupCard
+
+[2026-05-29] — feat(gui_next): ScreenSetup — Data Packages card with user data and scraped site data export (TODO-102, TODO-103)
+Added: gui_next/src/renderer/src/screens/ScreenSetup.tsx: pkgBusy/pkgUserResult/pkgScrapeResult state; handleExportUserData and handleExportScrapeData handlers; "Data Packages" SetupCard with per-type sub-cards, inline result display (path, file count, size), and clickable path link
+
+[2026-05-29] — feat(backend+gui+cli): data package export — user data and scraped site data (TODO-102, TODO-103)
+Added: backend/app.py: POST /api/package/user_data — zips losslessbob.db + settings.ini + gui_state.json into data/exports/losslessbob_userdata_YYYY-MM-DD.zip with JSON manifest
+Added: backend/app.py: POST /api/package/scrape_data — zips all of data/site/ into data/exports/losslessbob_sitedata_YYYY-MM-DD.zip with JSON manifest
+Added: gui/setup_tab.py: _PackageUserDataThread, _PackageScrapeDataThread worker classes; "Data Packages" QGroupBox with Export User Data and Export Scraped Site Data buttons and result dialog
+Added: cli.py: package user-data / package scrape-data subcommands with optional --out path
+
+[2026-05-29] — fix(backend): guarantee ≥2 TCP trackers on every torrent (TODO-132)
+Added: backend/torrent_maker.py: _FALLBACK_TCP_TRACKERS constant and _ensure_tcp_trackers() helper
+Changed: backend/torrent_maker.py: make_torrent() calls _ensure_tcp_trackers() after fetch_trackers() so any chosen list always has at least 2 http/https trackers
+
+[2026-05-29] — feat(gui_next): complete TODO-122, TODO-125..130 — ScreenCollection batch of improvements
+Added: gui_next/src/renderer/src/screens/ScreenCollection.tsx: sortable column headers (LB#, Status, Date, Location, Folder, Disk path, Confirmed, FP) with ▲▼ indicators (TODO-126)
+Added: gui_next/src/renderer/src/screens/ScreenCollection.tsx: batch torrent-create and qBittorrent progress bar showing N/M live count (TODO-130)
+Added: gui_next/src/renderer/src/screens/ScreenCollection.tsx: bulk Update Location — multi-row picks parent dir and scans for matching LB-XXXXX subfolders; single-row validates name against /api/folder_naming/standard/<lb> and toasts mismatches (TODO-125)
+Added: backend/app.py: /api/collection/<lb>/audioinfo — probes FLAC/WAV with soundfile, falls back to ffprobe for SHN/APE; caches by mtime fingerprint; returns format, bit_depth, sample_rate, mixed (TODO-129)
+Added: backend/app.py: /api/wishlist/<lb> PATCH — update priority/notes on a wishlist entry (TODO-122)
+Added: backend/db.py: update_wishlist() function (TODO-122)
+Added: gui_next/src/renderer/src/screens/ScreenCollection.tsx: Wishlist filter view — extra Priority/Notes/Added/Rating columns with inline click-to-edit (TODO-122)
+Added: gui_next/src/renderer/src/screens/ScreenCollection.tsx: Duplicates filter view — grouped tree by show (date·location) with "Open on LosslessBob", "Open folder", and "Remove" actions per variant (TODO-122)
+Added: gui_next/src/renderer/src/screens/ScreenCollection.tsx: detail panel fetches /api/collection/<lb>/audioinfo and displays real format·bit/rate pill (TODO-129)
+Changed: gui_next/src/renderer/src/screens/ScreenCollection.tsx: detail panel Attachments → /attachments, Spectrograms → real handler, On map → /map (no more "coming soon" toasts) (TODO-128)
+Changed: gui_next/src/renderer/src/components/table.tsx: TH now accepts onClick + sorted prop with ▲▼⇅ sort indicators
+Fixed: gui_next/src/renderer/src/screens/ScreenCollection.tsx: removed hardcoded "FLAC · 16/44" placeholder pill from detail panel (TODO-127)
+
+[2026-05-29] — fix: resolve BUG-107, BUG-108, BUG-109
+Fixed: backend/app.py: POST /api/lookup/scan_folders endpoint added — recursively finds checksum sidecar files (.ffp, .md5, .st5, .sha1) under given folders (BUG-109)
+Fixed: backend/app.py: pipeline_scan_tree now checks root itself before rglob so flat folders with audio at the root level are included in results (BUG-108)
+Fixed: gui_next/src/renderer/src/screens/ScreenLookup.tsx: handleFolders calls scan_folders endpoint to populate source content, so folder sources work with "Lookup all sources" (BUG-109)
+Fixed: gui_next/src/renderer/src/screens/ScreenSetup.tsx: webUiTone converted to useState('ok') — badge now defaults to "connected" and reflects live test results instead of password config (BUG-107)
+
+[2026-05-28] — fix(gui_next): Pipeline screen no longer loses state when navigating away
+Fixed: gui_next/src/renderer/src/App.tsx: ScreenPipeline was unmounted by React Router on route change, wiping all useState (folders, queue, run status). Replaced the /pipeline Route with a KeepAlivePipeline wrapper that keeps the component permanently mounted and toggles visibility via display:none / display:contents.
+
+[2026-05-28] — perf(gui_next): Collection screen now loads instantly on every visit
+Added: backend/app.py: /api/collection/prefetch endpoint — bundles all 9 collection-screen datasets into a single HTTP response
+Added: gui_next/package.json: @tanstack/react-query dependency
+Changed: gui_next/src/renderer/src/App.tsx: wrapped app in QueryClientProvider; prefetch query fires at module load so cache is warm before user clicks Collection tab
+Changed: gui_next/src/renderer/src/screens/ScreenCollection.tsx: replaced version counter + 8-fetch Promise.allSettled + separate missing useEffect with a single useQuery (staleTime: Infinity); refetch now calls queryClient.invalidateQueries so mutations still trigger a reload
+
+[2026-05-28] — fix(gui_next): Pipeline step pills now align under column headers
+Fixed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: switched virtualizer from absolute-row to padding-based approach — absolute-positioned <tr> breaks table layout so colgroup widths don't apply to cells; replaced position:absolute+top with top/bottom spacer <tr> elements so real rows stay in normal table flow and the colgroup 110px step columns align correctly under their headers
+
+[2026-05-28] — feat(gui_next): Pipeline live progress, column alignment, and Stop button
+Changed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: runSteps now processes folders one at a time (sequential fetch per folder) so each row updates as it completes; added stopRun + stopRef/abortRef to abort the in-progress run; StepPill accepts running prop and shows ··· in mute cells instead of — while processing; removed inline "running…" text from folder cell to restore column alignment; Stop button replaces Bulk actions in the top bar while a run is active
+
+[2026-05-28] — chore(gui_next): dark mode palette shifted to neutral gray
+Changed: gui_next/src/renderer/src/lib/tokens.ts: MODES.dark bg/surface/border/fg tokens replaced warm-brown values with flat neutral grays; mute status bg/fg/bar updated to match
+
+[2026-05-29] — feat(gui_next): ScreenCollection — non-recursive Scan Directory + owned-aware ScanPreviewModal (TODO-124)
+Added: backend/app.py: /api/pipeline/scan-dir route (POST {root, recursive}) — depth-1 or recursive walk matching LB-named folders; returns {entries: [{lb_number, folder_name, path}], skipped}
+Added: gui_next/src/renderer/src/screens/ScreenCollection.tsx: ScanPreviewModal component shows LB# / Folder / Path / Already Owned table (fetches /api/collection/lb_numbers for owned state), per-row Add buttons, and "Add all (N)" bulk action; handleScanDir (depth-1) and handleScanTree (recursive) are now distinct handlers both opening ScanPreviewModal; "Scan tree…" button wired to handleScanTree
+
+[2026-05-29] — feat(gui_next): ScreenCollection — Notes column and editable Folder Name / Notes in AddFolderModal (TODO-123)
+Added: gui_next/src/renderer/src/screens/ScreenCollection.tsx: Notes column added to owned-collection table (reads c.notes from GET /api/collection); AddFolderModal FolderEntry now carries folderNameInput (editable, defaulted from path) and notesInput fields; both POSTed to /api/collection on add; colSpan updated 10→11 for virtualiser padding rows
+
+[2026-05-29] — feat(gui_next): ScreenCollection — global Forum & Torrent History views + actionable per-row forum history (TODO-121)
+Added: gui_next/src/renderer/src/screens/ScreenCollection.tsx: two new filter chips "All forum posts" (filter='forum_global') and "All torrents" (filter='torrent_global'); GlobalForumPanel renders GET /api/forum_posts with columns Posted/LB#/Show/Subject/Actions, actions: Open in Browser (window.open topic_url), Remove Record (DELETE /api/forum_post/<id> with confirm dialog), Go to LB (snaps back to 'all' filter and selects row); GlobalTorrentPanel renders GET /api/torrents with columns Created/LB#/Show/Filename/Status/Actions, actions: Add qBt (POST /api/qbt/add), Go to LB; both panels have a local search box; DetailPanel forum tab now fetches GET /api/entry/<lb>/forum_posts on open (like torrent tab) and shows per-post Open in Browser + Remove Record buttons with confirm dialog, replacing the old read-only pills
+
 [2026-05-28] — feat(gui_next): ScreenCollection — per-torrent-record management in History tab (TODO-120)
 Added: gui_next/src/renderer/src/screens/ScreenCollection.tsx: DetailPanel fetches GET /api/torrent/<lb> on open to load full TorrentRecord list; each record displays source-folder-exists and torrent-file-exists status dots; per-record action buttons: Add/Remove qBt, Regen (POST /api/torrent/create), Relocate Source (PATCH /api/torrent/<id>), Delete .torrent file (DELETE /api/torrent/<id>/file, with confirm dialog); forum tab unchanged; bottom "Regenerate" renamed to "Create torrent"
 
