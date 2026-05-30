@@ -1,3 +1,9 @@
+[2026-05-29] — chore(deploy): switch Linux AppImage to Electron/React (gui_next)
+Changed: .github/workflows/release.yml: build-linux job now builds the backend as a PyInstaller onefile binary, bundles it as an Electron extraResource, and packages the gui_next Electron app as the AppImage via electron-builder instead of PyInstaller + manual AppDir.
+Added: losslessbob_backend.spec: backend-only onefile PyInstaller spec (no PyQt6, no GUI); produces dist/LosslessBobBackend for bundling.
+Changed: gui_next/package.json: added electron-builder ^25 devDependency + dist:linux script + build config (AppImage target, extraResources for backend binary).
+Changed: gui_next/src/main/index.ts: ensureBackend() now branches on app.isPackaged — packaged mode spawns resources/backend/LosslessBobBackend, dev mode uses .venv/python3 as before.
+
 [2026-05-29] — fix(backend): TOCTOU race + missing error guards in background task start routes
 Fixed: backend/app.py: All four background-task start routes (spectrogram generate, fingerprint build, dup scan, identify-folder) had a TOCTOU race — the "already running" guard ran inside the lock but the thread started after the lock released, allowing concurrent requests to start two workers. Fixed by claiming status="running" inside the lock before releasing it. Guard widened from status=="running" to not-in-(idle, done, error) so the "scanning" phase is also covered.
 Fixed: backend/app.py: Added top-level try/except to _do_fp_build, _do_fp_dup_scan, _do_fp_identify_folder, and _do_spectro_batch so that import failures or unexpected crashes reset status to "error" rather than leaving it permanently stuck at "running".

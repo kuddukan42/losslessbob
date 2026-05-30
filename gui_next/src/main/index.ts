@@ -26,14 +26,24 @@ async function waitForPort(port: number, tries = 40, intervalMs = 250): Promise<
 async function ensureBackend(): Promise<void> {
   if (await portOpen(FLASK_PORT)) return
 
-  // In dev, app.getAppPath() is gui_next/; project root is one level up.
-  const root = join(app.getAppPath(), '..')
-  const python = join(root, '.venv', 'bin', 'python3')
+  let cmd: string
+  let args: string[]
+  let cwd: string
 
-  backendProc = spawn(python, [join(root, 'run_backend.py')], {
-    cwd: root,
-    stdio: 'pipe',
-  })
+  if (app.isPackaged) {
+    // Packaged AppImage: backend binary is bundled as an extraResource
+    cmd = join(process.resourcesPath, 'backend', 'LosslessBobBackend')
+    args = []
+    cwd = app.getPath('home')
+  } else {
+    // Dev: project root is one level above gui_next/
+    const root = join(app.getAppPath(), '..')
+    cmd = join(root, '.venv', 'bin', 'python3')
+    args = [join(root, 'run_backend.py')]
+    cwd = root
+  }
+
+  backendProc = spawn(cmd, args, { cwd, stdio: 'pipe' })
   backendProc.stdout?.on('data', (d: Buffer) => process.stdout.write(`[flask] ${d}`))
   backendProc.stderr?.on('data', (d: Buffer) => process.stderr.write(`[flask] ${d}`))
 }
