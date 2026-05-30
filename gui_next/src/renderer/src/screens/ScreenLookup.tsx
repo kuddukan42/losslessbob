@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { Icon } from '../components/Icon'
 import { Button, Pill } from '../components'
 import { TableShell, TH, TR, TD } from '../components'
@@ -41,6 +42,7 @@ const SRC_ICON: Record<LookupSource['kind'], string> = {
 // ── ListboxModal ───────────────────────────────────────────────────────────────
 
 function ListboxModal({ onDone }: { onDone: (text: string) => void }): React.JSX.Element {
+  const { t } = useTranslation()
   const [text, setText] = useState('')
   return (
     <div
@@ -58,12 +60,12 @@ function ListboxModal({ onDone }: { onDone: (text: string) => void }): React.JSX
         }}
         onClick={e => e.stopPropagation()}
       >
-        <div style={{ fontWeight: 700, fontSize: 15 }}>Paste checksum text</div>
+        <div style={{ fontWeight: 700, fontSize: 15 }}>{t('lookup.listbox.title')}</div>
         <textarea
           autoFocus
           value={text}
           onChange={e => setText(e.target.value)}
-          placeholder="Paste .ffp / .md5 / .st5 lines here…"
+          placeholder={t('lookup.listbox.placeholder')}
           style={{
             width: '100%', height: 220, resize: 'vertical',
             fontFamily: 'var(--lbb-mono)', fontSize: 12, lineHeight: 1.5,
@@ -72,8 +74,8 @@ function ListboxModal({ onDone }: { onDone: (text: string) => void }): React.JSX
           }}
         />
         <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end' }}>
-          <Button variant="ghost" size="sm" onClick={() => onDone('')}>Cancel</Button>
-          <Button variant="primary" size="sm" disabled={!text.trim()} onClick={() => onDone(text)}>Lookup</Button>
+          <Button variant="ghost" size="sm" onClick={() => onDone('')}>{t('common.cancel')}</Button>
+          <Button variant="primary" size="sm" disabled={!text.trim()} onClick={() => onDone(text)}>{t('lookup.listbox.lookup')}</Button>
         </div>
       </div>
     </div>
@@ -103,6 +105,7 @@ function SourceRow({ src, active, onClick }: { src: LookupSource; active: boolea
 // ── Screen ─────────────────────────────────────────────────────────────────────
 
 export function ScreenLookup(): React.JSX.Element {
+  const { t } = useTranslation()
   const navigate = useNavigate()
   const { sources, summary, detail, filter, filterMy, activeSource, addSource, clearSources, setResult, setFolderList, setFilter, setFilterMy, setActiveSource } = useLookupStore()
 
@@ -135,7 +138,7 @@ export function ScreenLookup(): React.JSX.Element {
       )]
       setFolderList(folders)
     } catch {
-      showToast('Lookup failed', 'bad')
+      showToast(t('lookup.toast.lookupFailed'), 'bad')
     } finally {
       setBusy(false)
     }
@@ -144,12 +147,12 @@ export function ScreenLookup(): React.JSX.Element {
   const handleClipboard = useCallback(async () => {
     try {
       const text = await navigator.clipboard.readText()
-      if (!text.trim()) { showToast('Clipboard is empty', 'info'); return }
+      if (!text.trim()) { showToast(t('lookup.toast.clipboardEmpty'), 'info'); return }
       const src: LookupSource = { kind: 'clipboard', name: `Clipboard · ${text.split('\n').filter(Boolean).length} lines`, content: text, active: true }
       addSource(src)
       await runLookup(text, src.name)
     } catch {
-      showToast('Could not read clipboard', 'bad')
+      showToast(t('lookup.toast.clipboardFailed'), 'bad')
     }
   }, [addSource, runLookup, showToast])
 
@@ -194,19 +197,19 @@ export function ScreenLookup(): React.JSX.Element {
         })
         const d = await r.json() as { content: string; files: string[] }
         addSource({ kind: 'folder', name, content: d.content ?? '', active: true })
-        if (!d.content?.trim()) showToast(`No checksum files found in ${name}`, 'info')
+        if (!d.content?.trim()) showToast(t('lookup.toast.noChecksumsInFolder', { name }), 'info')
       } catch {
         addSource({ kind: 'folder', name, content: '', active: true })
-        showToast('Folder scan failed', 'bad')
+        showToast(t('lookup.toast.folderScanFailed'), 'bad')
       }
     }
   }, [addSource, showToast])
 
   const handleLookupAll = useCallback(async () => {
-    if (!sources.length) { showToast('Add sources first', 'info'); return }
+    if (!sources.length) { showToast(t('lookup.toast.addSourcesFirst'), 'info'); return }
     const combined = sources.filter(s => s.content).map(s => s.content).join('\n')
     if (!combined.trim()) {
-      showToast('No text content in sources — try picking files or pasting text', 'info')
+      showToast(t('lookup.toast.noTextContent'), 'info')
       return
     }
     await runLookup(combined, 'all sources')
@@ -214,8 +217,8 @@ export function ScreenLookup(): React.JSX.Element {
 
   const handleGenerate = useCallback(async () => {
     const folders = sources.filter(s => s.kind === 'folder').map(s => s.name)
-    if (!folders.length) { showToast('Add folder sources first', 'info'); return }
-    showToast('Use the Verify screen to generate checksums for folders', 'info')
+    if (!folders.length) { showToast(t('lookup.toast.addSourcesFirst'), 'info'); return }
+    showToast(t('lookup.toast.useVerify'), 'info')
   }, [sources, showToast])
 
   const handleCopySummary = useCallback(() => {
@@ -224,8 +227,8 @@ export function ScreenLookup(): React.JSX.Element {
       [r.lb_number, r.given, r.matched, r.not_found, r.missing_from_set, r.duplicates, r.xrefs, r.status].join('\t')
     )
     navigator.clipboard.writeText(lines.join('\n'))
-      .then(() => showToast('Summary copied', 'ok'))
-      .catch(() => showToast('Copy failed', 'bad'))
+      .then(() => showToast(t('lookup.toast.summaryCopied'), 'ok'))
+      .catch(() => showToast(t('lookup.toast.copyFailed'), 'bad'))
   }, [summary, showToast])
 
   const handleExportCsv = useCallback(() => {
@@ -250,9 +253,9 @@ export function ScreenLookup(): React.JSX.Element {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ lb_number: lbNumber }),
       })
-      showToast(`Added LB-${lbNumber} to wishlist`, 'ok')
+      showToast(t('lookup.toast.addedToWishlist', { lb: lbNumber }), 'ok')
     } catch {
-      showToast('Wishlist add failed', 'bad')
+      showToast(t('lookup.toast.wishlistFailed'), 'bad')
     }
   }, [showToast])
 
@@ -305,17 +308,17 @@ export function ScreenLookup(): React.JSX.Element {
         </div>
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <h1 style={{ margin: 0, fontSize: 18, fontWeight: 700, letterSpacing: -0.01 }}>Lookup</h1>
-            <Pill tone="mute" soft>checksums → master DB</Pill>
+            <h1 style={{ margin: 0, fontSize: 18, fontWeight: 700, letterSpacing: -0.01 }}>{t('lookup.title')}</h1>
+            <Pill tone="mute" soft>{t('lookup.subtitle')}</Pill>
           </div>
           <div style={{ fontSize: 12, color: 'var(--lbb-fg3)', marginTop: 2 }}>
-            Identifies LB numbers for any set of checksums. Per-LB summary + per-checksum detail.
+            {t('lookup.desc')}
           </div>
         </div>
         <div style={{ flex: 1 }} />
         {summary && (
           <span style={{ fontSize: 12, color: 'var(--lbb-fg2)', fontFamily: 'var(--lbb-mono)' }}>
-            {totalSums.toLocaleString()} checksums · {summaryRows.length} LBs
+            {t('lookup.countLabel', { count: totalSums.toLocaleString(), lbs: summaryRows.length })}
           </span>
         )}
       </div>
@@ -330,23 +333,23 @@ export function ScreenLookup(): React.JSX.Element {
         }}>
           <div style={{ padding: '12px 12px 8px', borderBottom: '1px solid var(--lbb-border)' }}>
             <div style={{ fontSize: 10.5, fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase', marginBottom: 8 }}>
-              Sources
+              {t('lookup.sources.label')}
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 4, marginBottom: 8 }}>
-              <Button variant="secondary" size="sm" icon="copy"        block disabled={busy} onClick={handleClipboard}>Clipboard</Button>
-              <Button variant="secondary" size="sm" icon="search"      block disabled={busy} onClick={() => setShowListbox(true)}>Listbox…</Button>
-              <Button variant="secondary" size="sm" icon="attachments" block disabled={busy} onClick={handleFiles}>Files…</Button>
-              <Button variant="secondary" size="sm" icon="folderPlus"  block disabled={busy} onClick={handleFolders}>Folders…</Button>
+              <Button variant="secondary" size="sm" icon="copy"        block disabled={busy} onClick={handleClipboard}>{t('lookup.sources.clipboard')}</Button>
+              <Button variant="secondary" size="sm" icon="search"      block disabled={busy} onClick={() => setShowListbox(true)}>{t('lookup.sources.listbox')}</Button>
+              <Button variant="secondary" size="sm" icon="attachments" block disabled={busy} onClick={handleFiles}>{t('lookup.sources.files')}</Button>
+              <Button variant="secondary" size="sm" icon="folderPlus"  block disabled={busy} onClick={handleFolders}>{t('lookup.sources.folders')}</Button>
             </div>
             <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 11, color: 'var(--lbb-fg2)', cursor: 'pointer' }}>
               <input type="checkbox" checked={filterMy} onChange={() => setFilterMy(!filterMy)} />
-              Hide <span style={{ fontFamily: 'var(--lbb-mono)' }}>_mychecksums</span> files
+              {t('lookup.sources.filterMy')}
             </label>
           </div>
           <div style={{ flex: 1, overflowY: 'auto', padding: '6px 6px' }}>
             {sources.length === 0 ? (
               <div style={{ padding: '16px 10px', textAlign: 'center', color: 'var(--lbb-fg3)', fontSize: 11 }}>
-                No sources yet
+                {t('lookup.sources.noSources')}
               </div>
             ) : sources.map((s, i) => (
               <SourceRow key={i} src={s} active={i === activeSource} onClick={() => setActiveSource(i)} />
@@ -354,10 +357,10 @@ export function ScreenLookup(): React.JSX.Element {
           </div>
           <div style={{ padding: 12, borderTop: '1px solid var(--lbb-border)', display: 'flex', flexDirection: 'column', gap: 6 }}>
             <Button variant="primary"   size="sm" icon="lookup" block disabled={busy || !sources.length} onClick={handleLookupAll}>
-              {busy ? 'Looking up…' : 'Lookup all sources'}
+              {busy ? t('lookup.sources.lookingUp') : t('lookup.sources.lookupAll')}
             </Button>
-            <Button variant="secondary" size="sm" icon="plus"   block disabled={busy} onClick={handleGenerate}>Generate missing</Button>
-            <Button variant="ghost"     size="sm" icon="trash"  block disabled={busy} onClick={clearSources}>Clear sources</Button>
+            <Button variant="secondary" size="sm" icon="plus"   block disabled={busy} onClick={handleGenerate}>{t('lookup.sources.generate')}</Button>
+            <Button variant="ghost"     size="sm" icon="trash"  block disabled={busy} onClick={clearSources}>{t('lookup.sources.clearSources')}</Button>
           </div>
         </aside>
 
@@ -402,7 +405,7 @@ export function ScreenLookup(): React.JSX.Element {
               background: 'var(--lbb-surface)', display: 'flex', alignItems: 'center',
               color: 'var(--lbb-fg3)', fontSize: 12,
             }}>
-              {busy ? 'Running lookup…' : 'Add sources, then click Lookup all sources'}
+              {busy ? t('lookup.status.running') : t('lookup.status.addSourcesFirst')}
             </div>
           )}
 
@@ -414,12 +417,12 @@ export function ScreenLookup(): React.JSX.Element {
                 {/* Summary table */}
                 <div style={{ padding: '16px 24px 6px', display: 'flex', alignItems: 'center', gap: 10 }}>
                   <span style={{ fontSize: 10.5, fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase' }}>
-                    Match summary
+                    {t('lookup.status.matchSummary')}
                   </span>
-                  <span style={{ fontSize: 11, color: 'var(--lbb-fg3)' }}>per LB number · double-click to open on LB.com</span>
+                  <span style={{ fontSize: 11, color: 'var(--lbb-fg3)' }}>{t('lookup.status.matchSummarySub')}</span>
                   <div style={{ flex: 1 }} />
-                  <Button variant="ghost" size="sm" icon="copy" onClick={handleCopySummary}>Copy summary</Button>
-                  <Button variant="ghost" size="sm" icon="download" onClick={handleExportCsv}>Export CSV…</Button>
+                  <Button variant="ghost" size="sm" icon="copy" onClick={handleCopySummary}>{t('lookup.status.copySummary')}</Button>
+                  <Button variant="ghost" size="sm" icon="download" onClick={handleExportCsv}>{t('lookup.status.exportCsv')}</Button>
                 </div>
                 <div style={{ padding: '0 24px' }}>
                   <TableShell>
@@ -433,10 +436,10 @@ export function ScreenLookup(): React.JSX.Element {
                     <thead>
                       <tr>
                         <TH> </TH>
-                        <TH>LB#</TH>
-                        <TH align="right">Given</TH><TH align="right">Matched</TH><TH align="right">Not found</TH>
-                        <TH align="right">Missing</TH><TH align="right">Dups</TH><TH align="right">Xrefs</TH>
-                        <TH>Status</TH><TH align="right"> </TH>
+                        <TH>{t('lookup.table.lb')}</TH>
+                        <TH align="right">{t('lookup.table.given')}</TH><TH align="right">{t('lookup.table.matched')}</TH><TH align="right">{t('lookup.table.notFound')}</TH>
+                        <TH align="right">{t('lookup.table.missing')}</TH><TH align="right">{t('lookup.table.dups')}</TH><TH align="right">{t('lookup.table.xrefs')}</TH>
+                        <TH>{t('lookup.table.status')}</TH><TH align="right"> </TH>
                       </tr>
                     </thead>
                     <tbody>
@@ -457,11 +460,11 @@ export function ScreenLookup(): React.JSX.Element {
                             <TD align="right" style={{ display: 'flex', gap: 4 }}>
                               <Button size="sm" variant="ghost" icon="reveal"
                                 onClick={() => window.open(`http://www.losslessbob.wonderingwhattochoose.com/detail/LB-${String(r.lb_number).padStart(5, '0')}.html`)}>
-                                Open
+                                {t('lookup.table.open')}
                               </Button>
                               <Button size="sm" variant="ghost"
                                 onClick={() => handleAddToWishlist(r.lb_number)}>
-                                +WL
+                                {t('lookup.table.addWishlist')}
                               </Button>
                             </TD>
                           </TR>
@@ -474,10 +477,10 @@ export function ScreenLookup(): React.JSX.Element {
                 {/* Checksum detail */}
                 <div style={{ padding: '20px 24px 6px', display: 'flex', alignItems: 'center', gap: 10 }}>
                   <span style={{ fontSize: 10.5, fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase' }}>
-                    Checksum detail
+                    {t('lookup.status.checksumDetail')}
                   </span>
                   <span style={{ fontSize: 11.5, color: 'var(--lbb-fg2)', fontFamily: 'var(--lbb-mono)' }}>
-                    {filteredDetail.length} rows
+                    {t('lookup.status.rows', { count: filteredDetail.length })}
                   </span>
                   <div style={{ flex: 1 }} />
                 </div>
@@ -492,9 +495,9 @@ export function ScreenLookup(): React.JSX.Element {
                     <thead>
                       <tr>
                         <TH> </TH>
-                        <TH>Checksum</TH><TH>Filename</TH>
-                        <TH align="center">Type</TH><TH>LB#</TH>
-                        <TH align="center">Xref</TH><TH>Status</TH>
+                        <TH>{t('lookup.table.checksum')}</TH><TH>{t('lookup.table.filename')}</TH>
+                        <TH align="center">{t('lookup.table.type')}</TH><TH>{t('lookup.table.lb')}</TH>
+                        <TH align="center">{t('lookup.table.xref')}</TH><TH>{t('lookup.table.status')}</TH>
                       </tr>
                     </thead>
                     <tbody>
@@ -531,8 +534,8 @@ export function ScreenLookup(): React.JSX.Element {
                     }}>
                       <Icon name="info" size={14} style={{ color: 'var(--lbb-info-fg)', marginTop: 1 }} />
                       <span>
-                        <strong style={{ color: 'var(--lbb-info-fg)' }}>Not found?</strong>{' '}
-                        Either this is a new entry the master DB doesn't know about yet, or the checksums don't match what's on file.
+                        <strong style={{ color: 'var(--lbb-info-fg)' }}>{t('lookup.states.notfound')}?</strong>{' '}
+                        {t('lookup.notFoundHint')}
                       </span>
                     </div>
                   )}
@@ -547,11 +550,11 @@ export function ScreenLookup(): React.JSX.Element {
             display: 'flex', alignItems: 'center', gap: 8, background: 'var(--lbb-surface)',
           }}>
             <span style={{ fontSize: 11.5, color: 'var(--lbb-fg3)' }}>
-              Results auto-populate the <strong style={{ color: 'var(--lbb-fg2)' }}>Rename</strong> tab
+              {t('lookup.footer.autoPopulate')}
             </span>
             <div style={{ flex: 1 }} />
-            <Button variant="ghost"     size="sm" disabled={busy || !sources.length} onClick={handleLookupAll}>Re-lookup all</Button>
-            <Button variant="secondary" size="sm" icon="rename" onClick={() => navigate('/rename')}>Go to Rename →</Button>
+            <Button variant="ghost"     size="sm" disabled={busy || !sources.length} onClick={handleLookupAll}>{t('lookup.footer.relookupAll')}</Button>
+            <Button variant="secondary" size="sm" icon="rename" onClick={() => navigate('/rename')}>{t('lookup.footer.goToRename')}</Button>
           </div>
         </section>
       </div>

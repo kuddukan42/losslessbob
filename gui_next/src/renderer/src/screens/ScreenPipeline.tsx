@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { useVirtualizer } from '@tanstack/react-virtual'
+import { useTranslation } from 'react-i18next'
 import { Icon } from '../components/Icon'
 import { Button, Chip, IconButton, Input, Pill } from '../components'
 import { TableShell, TH, TR, TD, GroupRow } from '../components'
@@ -115,6 +116,7 @@ function serverRowToPipeline(sr: Record<string, unknown>): Partial<PipelineRow> 
 // ── Main screen ───────────────────────────────────────────────────────────────
 
 export function ScreenPipeline(): React.JSX.Element {
+  const { t } = useTranslation()
   const { folders: queueFolders, addFolders: addToQueue, clearFolders } = useFolderQueueStore()
 
   const [rows, setRows] = useState<PipelineRow[]>([])
@@ -417,20 +419,20 @@ export function ScreenPipeline(): React.JSX.Element {
 
         <div style={{ minWidth: 260 }}>
           <div style={{ fontSize: 16, fontWeight: 700, letterSpacing: -0.01 }}>
-            Pipeline{counts.all > 0 ? ` · ${counts.all} folder${counts.all !== 1 ? 's' : ''} queued` : ''}
+            {t('pipeline.title')}{counts.all > 0 ? ` ${t('pipeline.folderQueued', { count: counts.all })}` : ''}
           </div>
           <div style={{ fontSize: 12, color: 'var(--lbb-fg2)', marginTop: 2 }}>
             {counts.all === 0
-              ? 'Drop folders to begin · or use "Add folders…" in the queue rail'
-              : 'Drop more folders any time · click "Run all 4 steps" to process the queue'}
+              ? t('pipeline.emptyHint')
+              : t('pipeline.runHint')}
           </div>
         </div>
 
         {counts.all > 0 && (
           <div style={{ display: 'flex', gap: 8, marginLeft: 12 }}>
-            <Pill tone="ok"   soft dot>{counts.done} done</Pill>
-            <Pill tone="warn" soft dot>{counts.ready} ready to rename</Pill>
-            <Pill tone="bad"  soft dot>{counts.attn} need attention</Pill>
+            <Pill tone="ok"   soft dot>{t('pipeline.done', { count: counts.done })}</Pill>
+            <Pill tone="warn" soft dot>{t('pipeline.readyToRename', { count: counts.ready })}</Pill>
+            <Pill tone="bad"  soft dot>{t('pipeline.needAttention', { count: counts.attn })}</Pill>
           </div>
         )}
 
@@ -438,11 +440,11 @@ export function ScreenPipeline(): React.JSX.Element {
 
         <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
           {isRunning ? (
-            <Button variant="secondary" size="md" icon="x" onClick={stopRun}>Stop</Button>
+            <Button variant="secondary" size="md" icon="x" onClick={stopRun}>{t('pipeline.stop')}</Button>
           ) : (
             <div ref={bulkMenuRef} style={{ position: 'relative' }}>
               <Button variant="ghost" size="md" icon="more" onClick={() => setBulkMenuOpen(v => !v)}>
-                Bulk actions
+                {t('pipeline.bulkActions')}
               </Button>
               {bulkMenuOpen && (
                 <div style={{
@@ -459,7 +461,7 @@ export function ScreenPipeline(): React.JSX.Element {
                       border: 'none', background: 'transparent',
                       color: 'var(--lbb-fg)', borderRadius: 5,
                     }}
-                  >Select all visible</button>
+                  >{t('pipeline.selectAllVisible')}</button>
                   {selectedRows.length > 0 && (
                     <button
                       onClick={() => { clearSelection(); setBulkMenuOpen(false) }}
@@ -469,7 +471,7 @@ export function ScreenPipeline(): React.JSX.Element {
                         border: 'none', background: 'transparent',
                         color: 'var(--lbb-fg)', borderRadius: 5,
                       }}
-                    >Clear selection ({selectedRows.length})</button>
+                    >{t('pipeline.clearSelection', { count: selectedRows.length })}</button>
                   )}
                   <div style={{ height: 1, background: 'var(--lbb-border)', margin: '4px 0' }} />
                   <button
@@ -480,14 +482,14 @@ export function ScreenPipeline(): React.JSX.Element {
                       border: 'none', background: 'transparent',
                       color: 'var(--lbb-bad, #e05252)', borderRadius: 5,
                     }}
-                  >Clear queue</button>
+                  >{t('pipeline.clearQueue')}</button>
                 </div>
               )}
             </div>
           )}
           {counts.ready > 0 && !isRunning && (
             <Button variant="primary" size="md" icon="check" onClick={applyAllReady}>
-              Apply all {counts.ready} proposed rename{counts.ready !== 1 ? 's' : ''}
+              {t('pipeline.applyRenames', { count: counts.ready })}
             </Button>
           )}
         </div>
@@ -508,7 +510,7 @@ export function ScreenPipeline(): React.JSX.Element {
               <span style={{
                 fontSize: 10.5, fontWeight: 700, color: 'var(--lbb-fg3)',
                 letterSpacing: 0.1, textTransform: 'uppercase',
-              }}>Folder queue</span>
+              }}>{t('pipeline.queue.label')}</span>
               <span style={{
                 marginLeft: 'auto', fontSize: 11, fontWeight: 600,
                 color: 'var(--lbb-fg2)', fontVariantNumeric: 'tabular-nums',
@@ -517,7 +519,7 @@ export function ScreenPipeline(): React.JSX.Element {
             <div style={{ marginTop: 8 }}>
               <Input
                 icon="search"
-                placeholder="Filter queue…"
+                placeholder={t('pipeline.queue.filterPlaceholder')}
                 size="sm"
                 value={queueSearch}
                 onChange={e => setQueueSearch(e.target.value)}
@@ -533,8 +535,8 @@ export function ScreenPipeline(): React.JSX.Element {
                 fontSize: 11.5, color: 'var(--lbb-fg3)', fontStyle: 'italic',
               }}>
                 {counts.all === 0
-                  ? 'Drop folders or click "Add folders…" below'
-                  : 'No folders match your filter'}
+                  ? t('pipeline.queue.emptyNoFolders')
+                  : t('pipeline.queue.emptyFiltered')}
               </div>
             )}
             {queueRows.map(r => {
@@ -576,12 +578,12 @@ export function ScreenPipeline(): React.JSX.Element {
             padding: 12, borderTop: '1px solid var(--lbb-border)',
             display: 'flex', flexDirection: 'column', gap: 6,
           }}>
-            <Button variant="primary" size="sm" icon="folderPlus" block onClick={handlePickFolders}>Add folders…</Button>
-            <Button variant="secondary" size="sm" icon="search" block onClick={handleScanTree}>Scan tree…</Button>
+            <Button variant="primary" size="sm" icon="folderPlus" block onClick={handlePickFolders}>{t('pipeline.queue.addFolders')}</Button>
+            <Button variant="secondary" size="sm" icon="search" block onClick={handleScanTree}>{t('pipeline.queue.scanTree')}</Button>
             <Button
               variant="ghost" size="sm" icon="trash" block
               onClick={() => { setRows([]); setActiveQueue(null); clearFolders() }}
-            >Clear queue</Button>
+            >{t('pipeline.clearQueue')}</Button>
 
             <div style={{
               marginTop: 10, padding: '8px 10px',
@@ -592,18 +594,18 @@ export function ScreenPipeline(): React.JSX.Element {
                 fontSize: 10, fontWeight: 700, color: 'var(--lbb-fg3)',
                 letterSpacing: 0.08, textTransform: 'uppercase', marginBottom: 6,
               }}>
-                Run on selected ({counts.all})
+                {t('pipeline.queue.runOnSelected', { count: counts.all })}
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
                 <Button
                   variant="primary" size="sm" icon="play" block
                   onClick={() => runSteps(rows.map(r => r.id), ['verify', 'lookup', 'rename', 'lbdir'])}
-                >Run all 4 steps</Button>
+                >{t('pipeline.queue.runAll')}</Button>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 4 }}>
-                  <Button variant="secondary" size="sm" onClick={() => runSteps(rows.map(r => r.id), ['verify'])}>Verify</Button>
-                  <Button variant="secondary" size="sm" onClick={() => runSteps(rows.map(r => r.id), ['lookup'])}>Lookup</Button>
-                  <Button variant="secondary" size="sm" onClick={() => runSteps(rows.map(r => r.id), ['rename'])}>Rename</Button>
-                  <Button variant="secondary" size="sm" onClick={() => runSteps(rows.map(r => r.id), ['lbdir'])}>LBDIR</Button>
+                  <Button variant="secondary" size="sm" onClick={() => runSteps(rows.map(r => r.id), ['verify'])}>{t('pipeline.queue.verify')}</Button>
+                  <Button variant="secondary" size="sm" onClick={() => runSteps(rows.map(r => r.id), ['lookup'])}>{t('pipeline.queue.lookup')}</Button>
+                  <Button variant="secondary" size="sm" onClick={() => runSteps(rows.map(r => r.id), ['rename'])}>{t('pipeline.queue.rename')}</Button>
+                  <Button variant="secondary" size="sm" onClick={() => runSteps(rows.map(r => r.id), ['lbdir'])}>{t('pipeline.queue.lbdir')}</Button>
                 </div>
               </div>
             </div>
@@ -618,18 +620,18 @@ export function ScreenPipeline(): React.JSX.Element {
             padding: '12px 20px', display: 'flex', alignItems: 'center', gap: 6,
             borderBottom: '1px solid var(--lbb-border)', flexWrap: 'wrap', flexShrink: 0,
           }}>
-            <Chip active={filter === 'all'}   onClick={() => setFilter('all')}   count={counts.all}>All</Chip>
-            <Chip active={filter === 'attn'}  onClick={() => setFilter('attn')}  count={counts.attn}>Need attention</Chip>
-            <Chip active={filter === 'ready'} onClick={() => setFilter('ready')} count={counts.ready}>Ready to rename</Chip>
-            <Chip active={filter === 'done'}  onClick={() => setFilter('done')}  count={counts.done}>Done</Chip>
+            <Chip active={filter === 'all'}   onClick={() => setFilter('all')}   count={counts.all}>{t('pipeline.filter.all')}</Chip>
+            <Chip active={filter === 'attn'}  onClick={() => setFilter('attn')}  count={counts.attn}>{t('pipeline.filter.needAttention')}</Chip>
+            <Chip active={filter === 'ready'} onClick={() => setFilter('ready')} count={counts.ready}>{t('pipeline.filter.readyToRename')}</Chip>
+            <Chip active={filter === 'done'}  onClick={() => setFilter('done')}  count={counts.done}>{t('pipeline.filter.done')}</Chip>
             <span style={{ width: 1, height: 16, background: 'var(--lbb-border)', margin: '0 4px' }} />
-            <Chip count={rows.filter(r => r.steps.lookup.label === 'Not found').length}>Not found</Chip>
-            <Chip count={rows.filter(r => r.steps.verify.label === 'Mismatch').length}>Mismatch</Chip>
-            <Chip count={rows.filter(r => r.steps.verify.label === 'Incomplete').length}>Incomplete</Chip>
+            <Chip count={rows.filter(r => r.steps.lookup.label === 'Not found').length}>{t('pipeline.filter.notFound')}</Chip>
+            <Chip count={rows.filter(r => r.steps.verify.label === 'Mismatch').length}>{t('pipeline.filter.mismatch')}</Chip>
+            <Chip count={rows.filter(r => r.steps.verify.label === 'Incomplete').length}>{t('pipeline.filter.incomplete')}</Chip>
             <div style={{ flex: 1 }} />
             <Input
               icon="filter"
-              placeholder="Filter folders…"
+              placeholder={t('pipeline.filter.filterFolders')}
               size="sm"
               value={tableSearch}
               onChange={e => setTableSearch(e.target.value)}
@@ -647,24 +649,24 @@ export function ScreenPipeline(): React.JSX.Element {
               background: 'var(--lbb-accent-soft)', fontSize: 12, flexShrink: 0,
             }}>
               <span style={{ fontWeight: 600, color: 'var(--lbb-accent-mid)' }}>
-                {selectedRows.length} selected
+                {t('pipeline.selection.selected', { count: selectedRows.length })}
               </span>
               <span style={{ color: 'var(--lbb-fg2)' }}>
-                · shift-click to extend · ⌘A all in view
+                {t('pipeline.selection.hint')}
               </span>
               <div style={{ flex: 1 }} />
-              <Button size="sm" variant="ghost" onClick={clearSelection}>Clear</Button>
+              <Button size="sm" variant="ghost" onClick={clearSelection}>{t('common.clear')}</Button>
               <Button
                 size="sm" variant="secondary" icon="verify"
                 onClick={() => runSteps(selectedRows.map(r => r.id), ['verify'])}
-              >Verify selected</Button>
+              >{t('pipeline.selection.verifySelected')}</Button>
               <Button
                 size="sm" variant="secondary" icon="lookup"
                 onClick={() => runSteps(selectedRows.map(r => r.id), ['lookup'])}
-              >Lookup selected</Button>
+              >{t('pipeline.selection.lookupSelected')}</Button>
               {selectedReady.length > 0 && (
                 <Button size="sm" variant="primary" icon="check" onClick={applySelected}>
-                  Apply {selectedReady.length} selected rename{selectedReady.length !== 1 ? 's' : ''}
+                  {t('pipeline.selection.applySelected', { count: selectedReady.length })}
                 </Button>
               )}
             </div>
@@ -681,15 +683,15 @@ export function ScreenPipeline(): React.JSX.Element {
               <Icon name="folderPlus" size={40} style={{ color: 'var(--lbb-fg3)' }} />
               <div style={{ textAlign: 'center' }}>
                 <div style={{ fontSize: 15, fontWeight: 600, color: 'var(--lbb-fg)' }}>
-                  Drop folders here to begin
+                  {t('pipeline.empty.title')}
                 </div>
                 <div style={{ fontSize: 12.5, color: 'var(--lbb-fg3)', marginTop: 4 }}>
-                  Or use "Add folders…" in the queue rail · supports batch ingestion
+                  {t('pipeline.empty.desc')}
                 </div>
               </div>
               <div style={{ display: 'flex', gap: 8 }}>
-                <Button variant="primary" size="md" icon="folderPlus" onClick={handlePickFolders}>Add folders…</Button>
-                <Button variant="secondary" size="md" icon="search" onClick={handleScanTree}>Scan tree…</Button>
+                <Button variant="primary" size="md" icon="folderPlus" onClick={handlePickFolders}>{t('pipeline.queue.addFolders')}</Button>
+                <Button variant="secondary" size="md" icon="search" onClick={handleScanTree}>{t('pipeline.queue.scanTree')}</Button>
               </div>
             </div>
           )}
@@ -719,12 +721,12 @@ export function ScreenPipeline(): React.JSX.Element {
                         onChange={e => e.target.checked ? selectAll() : clearSelection()}
                       />
                     </TH>
-                    <TH>Folder</TH>
-                    <StepTH n={1} label="Verify" />
-                    <StepTH n={2} label="Lookup" />
-                    <StepTH n={3} label="Rename" />
-                    <StepTH n={4} label="LBDIR" />
-                    <TH>LB#</TH>
+                    <TH>{t('pipeline.table.folder')}</TH>
+                    <StepTH n={1} label={t('pipeline.table.verify')} />
+                    <StepTH n={2} label={t('pipeline.table.lookup')} />
+                    <StepTH n={3} label={t('pipeline.table.rename')} />
+                    <StepTH n={4} label={t('pipeline.table.lbdir')} />
+                    <TH>{t('pipeline.table.lb')}</TH>
                     <TH align="right"> </TH>
                   </tr>
                 </thead>

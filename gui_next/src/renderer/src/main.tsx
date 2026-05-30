@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.css'
 import { applyTheme, loadTheme } from './lib/tokens'
+import './i18n'
 
 // Apply persisted (or default) theme before React mounts to avoid FOUC.
 applyTheme(loadTheme())

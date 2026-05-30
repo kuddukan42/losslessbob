@@ -71,6 +71,13 @@ _fp_dup_state: dict = {"status": "idle", "message": "", "results": [], "stop_req
 _fp_dup_lock  = threading.Lock()
 _fp_dup_stop  = threading.Event()
 
+_fp_id_state: dict = {
+    "status": "idle", "current": "", "done": 0, "total": 0,
+    "errors": [], "results": [], "stop_requested": False,
+}
+_fp_id_lock = threading.Lock()
+_fp_id_stop = threading.Event()
+
 
 def _find_lbdir_in_folder(folder: Path) -> "Path | None":
     """Return the first lbdir*.txt (or LBF-*-lbdir.txt) found in folder, or None."""
@@ -624,7 +631,7 @@ def create_app() -> Flask:
                         "lb_status": r["lb_status"],
                     }
                 grouped[lb]["files"].append(
-                    {"filename": r["filename"], "clean_name": r["clean_name"]}
+                    {"filename": r["filename"], "clean_name": r["clean_name"], "downloaded": r["downloaded"]}
                 )
             all_entries = [v for _, v in sorted(grouped.items())]
             total = conn.execute(
@@ -4061,6 +4068,70 @@ def create_app() -> Flask:
             _fp_dup_state["stop_requested"] = True
         return jsonify({"ok": True})
 
+    @app.route("/api/fingerprint/collection_by_date", methods=["GET"])
+    def fp_collection_by_date() -> Response:
+        """Return My Collection entries whose date_str matches the given date.
+
+        Query param: date=YYYY-MM-DD
+        Returns [{lb_number, folder_name, disk_path, date_str, location}].
+        """
+        date = request.args.get("date", "").strip()
+        if not date:
+            return jsonify({"error": "date required"}), 400
+        try:
+            all_rows = database.get_collection()
+            keep = ("lb_number", "folder_name", "disk_path", "date_str", "location")
+            rows = [
+                {k: r.get(k) for k in keep}
+                for r in all_rows
+                if r.get("date_str") == date
+            ]
+            return jsonify(rows)
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/fingerprint/identify_folder", methods=["POST"])
+    def fp_identify_folder() -> Response:
+        """Start background identification of all audio files in a folder.
+
+        Body: {folder: "/abs/path"}
+        Returns {ok} or 409 if already running.
+        """
+        with _fp_id_lock:
+            if _fp_id_state["status"] == "running":
+                return jsonify({"error": "Already running"}), 409
+        try:
+            data = request.get_json() or {}
+            folder = data.get("folder", "").strip()
+            if not folder:
+                return jsonify({"error": "folder required"}), 400
+            p = Path(folder)
+            if not p.is_dir():
+                return jsonify({"error": f"Not a directory: {folder}"}), 400
+            _fp_id_stop.clear()
+            with _fp_id_lock:
+                _fp_id_state["stop_requested"] = False
+            threading.Thread(
+                target=_do_fp_identify_folder, args=(folder,), daemon=True
+            ).start()
+            return jsonify({"ok": True})
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/fingerprint/identify_folder/status", methods=["GET"])
+    def fp_identify_folder_status() -> Response:
+        """Return current state of the folder-identify worker."""
+        with _fp_id_lock:
+            return jsonify(dict(_fp_id_state))
+
+    @app.route("/api/fingerprint/identify_folder/stop", methods=["POST"])
+    def fp_identify_folder_stop() -> Response:
+        """Signal the folder-identify worker to stop after the current file."""
+        _fp_id_stop.set()
+        with _fp_id_lock:
+            _fp_id_state["stop_requested"] = True
+        return jsonify({"ok": True})
+
     # ── Pipeline ─────────────────────────────────────────────────────────────
 
     def _pipeline_process_folder(folder_path: str, steps: set) -> dict:
@@ -4610,6 +4681,46 @@ def _do_fp_dup_scan() -> None:
     )
     with _fp_dup_lock:
         _fp_dup_state.update({"status": "done", "results": results})
+
+
+def _do_fp_identify_folder(folder: str) -> None:
+    """Identify all audio files in folder against fingerprints.db."""
+    from backend import fingerprint as _fp
+
+    def _set(**kw: object) -> None:
+        with _fp_id_lock:
+            _fp_id_state.update(kw)
+
+    folder_path = Path(folder)
+    audio_files = [
+        f for f in sorted(folder_path.rglob("*"))
+        if f.is_file() and f.suffix.lower() in _fp.AUDIO_EXTS
+    ]
+    _set(status="running", done=0, total=len(audio_files),
+         results=[], errors=[], current="", stop_requested=False)
+
+    if not audio_files:
+        _set(status="done", current="")
+        return
+
+    results: list[dict] = []
+    errors: list[str] = []
+    for i, audio_path in enumerate(audio_files):
+        if _fp_id_stop.is_set():
+            break
+        _set(current=audio_path.name, done=i)
+        try:
+            candidates = _fp.identify_file(audio_path)
+            results.append({
+                "user_file": audio_path.name,
+                "user_path": str(audio_path),
+                "candidates": candidates,
+            })
+        except Exception as exc:
+            errors.append(f"{audio_path.name}: {exc}")
+        _set(done=i + 1, results=list(results), errors=list(errors))
+
+    _set(status="done", current="")
 
 
 def _start_scrape_thread(

@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { Icon } from '../components/Icon'
 import { Button, Card, Stat, Pill } from '../components'
 import { TableShell, TH, TR, TD } from '../components'
@@ -94,6 +95,7 @@ const TYPE_COLOUR: Record<string, string> = {
 
 export function ScreenHome(): React.JSX.Element {
   const navigate = useNavigate()
+  const { t } = useTranslation()
   const [stats,        setStats]        = useState<HomeStats | null>(null)
   const [activity,     setActivity]     = useState<ActivityRow[]>([])
   const [activityAll,  setActivityAll]  = useState<ActivityRow[] | null>(null)
@@ -122,14 +124,14 @@ export function ScreenHome(): React.JSX.Element {
     try {
       const r = await fetch(`${BASE}/api/flat_file/discover`)
       const data = await r.json() as { new_release?: boolean; zip_filename?: string; error?: string }
-      if (data.error) { showToast(`Error: ${data.error}`, 'bad'); return }
+      if (data.error) { showToast(t('home.toast.error', { error: data.error }), 'bad'); return }
       if (data.new_release) {
-        showToast(`New release available: ${data.zip_filename ?? ''}`, 'ok')
+        showToast(t('home.toast.newRelease', { filename: data.zip_filename ?? '' }), 'ok')
       } else {
-        showToast('Already up to date.', 'info')
+        showToast(t('home.toast.upToDate'), 'info')
       }
     } catch (e) {
-      showToast(`Check failed: ${(e as Error).message}`, 'bad')
+      showToast(t('home.toast.checkFailed', { message: (e as Error).message }), 'bad')
     } finally {
       setCheckBusy(false)
     }
@@ -164,28 +166,21 @@ export function ScreenHome(): React.JSX.Element {
       }}>
         <div>
           <div style={{ fontSize: 11, letterSpacing: 0.14, textTransform: 'uppercase', color: 'var(--lbb-fg3)', fontWeight: 600 }}>
-            Welcome back, Rolling
+            {t('home.welcome')}
           </div>
           <h1 style={{ margin: '6px 0 0', fontSize: 28, fontWeight: 700, letterSpacing: -0.015 }}>
-            Your collection ·{' '}
-            <span style={{ fontVariantNumeric: 'tabular-nums' }}>
-              {d(stats?.collection_count, '…')}
-            </span>{' '}entries
+            {t('home.collectionTitle', { count: d(stats?.collection_count, '…') })}
           </h1>
           <div style={{ marginTop: 4, fontSize: 13, color: 'var(--lbb-fg3)' }}>
-            DB up to date ·{' '}
-            <span style={{ fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-fg2)' }}>
-              {stats ? fmtLb(stats.latest_lb) : '…'}
-            </span>
-            {' '}· imported {stats ? relTime(stats.last_import) : '…'}
+            {t('home.dbStatus', { when: stats ? relTime(stats.last_import) : '…' })}
           </div>
         </div>
         <div style={{ display: 'flex', gap: 8, flexShrink: 0 }}>
           <Button icon="refresh" variant="secondary" size="md" disabled={checkBusy} onClick={handleCheckUpdate}>
-            {checkBusy ? 'Checking…' : 'Check for DB update'}
+            {checkBusy ? t('home.checking') : t('home.checkUpdate')}
           </Button>
           <Button icon="drop" variant="primary" size="md" onClick={() => onNav('pipeline')}>
-            Ingest new folders
+            {t('home.ingestNew')}
           </Button>
         </div>
       </div>
@@ -205,17 +200,15 @@ export function ScreenHome(): React.JSX.Element {
               color: 'var(--lbb-accent-mid)', fontWeight: 700,
               padding: '2px 7px', borderRadius: 4,
               background: 'var(--lbb-surface)', border: '1px solid var(--lbb-accent-mid)',
-            }}>PRIMARY WORKFLOW</span>
-            <span style={{ fontSize: 11, color: 'var(--lbb-fg3)' }}>The new-acquisition pipeline</span>
+            }}>{t('home.primaryWorkflow')}</span>
+            <span style={{ fontSize: 11, color: 'var(--lbb-fg3)' }}>{t('home.pipelineTagline')}</span>
           </div>
           <h2 style={{ margin: '2px 0 4px', fontSize: 22, fontWeight: 700, letterSpacing: -0.01 }}>
-            Ingest new music
+            {t('home.ingestTitle')}
           </h2>
-          <p style={{ margin: '0 0 16px', color: 'var(--lbb-fg2)', fontSize: 13.5, maxWidth: '60ch' }}>
-            Drop folders here — the pipeline runs{' '}
-            <strong>verify → lookup → rename → LBDIR</strong>{' '}
-            on the whole batch. No more bouncing tabs.
-          </p>
+          <p style={{ margin: '0 0 16px', color: 'var(--lbb-fg2)', fontSize: 13.5, maxWidth: '60ch' }}
+            dangerouslySetInnerHTML={{ __html: t('home.ingestDesc') }}
+          />
 
           <button
             type="button"
@@ -230,8 +223,8 @@ export function ScreenHome(): React.JSX.Element {
           >
             <Icon name="folderPlus" size={22} style={{ color: 'var(--lbb-accent-mid)' }} />
             <span>
-              <strong style={{ color: 'var(--lbb-fg)' }}>Drag folders here</strong>
-              {' '}&nbsp;·&nbsp;{' '}or click to browse
+              <strong style={{ color: 'var(--lbb-fg)' }}>{t('home.dragHere')}</strong>
+              {' '}&nbsp;·&nbsp;{' '}{t('home.orClickBrowse')}
             </span>
           </button>
 
@@ -250,7 +243,9 @@ export function ScreenHome(): React.JSX.Element {
                   fontSize: 10, fontWeight: 700, flexShrink: 0,
                 }}>{s.n}</span>
                 <Icon name={s.icon} size={14} style={{ color: 'var(--lbb-fg2)' }} />
-                <span style={{ fontSize: 11.5, fontWeight: 500, color: 'var(--lbb-fg2)' }}>{s.label}</span>
+                <span style={{ fontSize: 11.5, fontWeight: 500, color: 'var(--lbb-fg2)' }}>
+                  {s.n === 1 ? t('home.stepVerify') : s.n === 2 ? t('home.stepLookup') : s.n === 3 ? t('home.stepRename') : t('home.stepLbdir')}
+                </span>
               </div>
             ))}
           </div>
@@ -258,12 +253,12 @@ export function ScreenHome(): React.JSX.Element {
 
         {/* At a glance + Jump to */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-          <Card title="At a glance" subtitle="your collection right now" pad={16}>
+          <Card title={t('home.atAGlance')} subtitle={t('home.atAGlanceSub')} pad={16}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
-              <Stat value={d(stats?.collection_count, '…')} label="in My Collection" />
-              <Stat value={d(stats?.missing_count,    '…')} label="missing entries" />
-              <Stat value={d(stats?.wishlist_count,   '…')} label="on wishlist" />
-              <Stat value={d(stats?.bootleg_count,    '…')} label="bootleg titles" />
+              <Stat value={d(stats?.collection_count, '…')} label={t('home.inMyCollection')} />
+              <Stat value={d(stats?.missing_count,    '…')} label={t('home.missingEntries')} />
+              <Stat value={d(stats?.wishlist_count,   '…')} label={t('home.onWishlist')} />
+              <Stat value={d(stats?.bootleg_count,    '…')} label={t('home.bootlegTitles')} />
             </div>
             <div style={{
               marginTop: 14, padding: '10px 12px', borderRadius: 8,
@@ -274,12 +269,12 @@ export function ScreenHome(): React.JSX.Element {
               <span>
                 <strong style={{ color: 'var(--lbb-fg)' }}>
                   {d(stats?.checksum_count, '…')}
-                </strong>{' '}checksums indexed
+                </strong>{' '}{t('home.checksumsIndexed')}
               </span>
             </div>
           </Card>
 
-          <Card title="Jump to" pad={14}>
+          <Card title={t('home.jumpTo')} pad={14}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
               {JUMP_TILES.map(tile => {
                 const sub =
@@ -287,6 +282,11 @@ export function ScreenHome(): React.JSX.Element {
                   : tile.id === 'bootlegs' ? d(stats?.bootleg_count,    '…')
                   : tile.id === 'search'   ? d(stats?.latest_lb,        '…')
                   : '—'
+                const tileLabel =
+                  tile.id === 'collection' ? t('home.jumpCollection')
+                  : tile.id === 'search'   ? t('home.jumpSearch')
+                  : tile.id === 'bootlegs' ? t('home.jumpBootlegs')
+                  : t('home.jumpMap')
                 return (
                   <button
                     key={tile.id}
@@ -309,7 +309,7 @@ export function ScreenHome(): React.JSX.Element {
                       <Icon name={tile.icon} size={15} />
                     </span>
                     <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ fontSize: 12.5, fontWeight: 600 }}>{tile.label}</div>
+                      <div style={{ fontSize: 12.5, fontWeight: 600 }}>{tileLabel}</div>
                       <div style={{ fontSize: 10.5, color: 'var(--lbb-fg3)', fontVariantNumeric: 'tabular-nums' }}>
                         {sub}
                       </div>
@@ -328,8 +328,8 @@ export function ScreenHome(): React.JSX.Element {
 
         {/* Recent activity */}
         <Card
-          title="Recent activity"
-          subtitle="imports, renames, forum posts"
+          title={t('home.recentActivity')}
+          subtitle={t('home.recentActivitySub')}
           action={
             <button
               type="button"
@@ -339,7 +339,7 @@ export function ScreenHome(): React.JSX.Element {
                 color: 'var(--lbb-accent-mid)',
                 fontSize: 12, fontWeight: 600, cursor: 'pointer', fontFamily: 'inherit',
               }}
-            >View full log →</button>
+            >{t('home.viewFullLog')}</button>
           }
           pad={0}
         >
@@ -354,10 +354,10 @@ export function ScreenHome(): React.JSX.Element {
             <thead>
               <tr>
                 <TH style={{ background: 'var(--lbb-surface)' }}>{' '}</TH>
-                <TH>When</TH>
-                <TH>Action</TH>
-                <TH>Target</TH>
-                <TH>Result</TH>
+                <TH>{t('home.colWhen')}</TH>
+                <TH>{t('home.colAction')}</TH>
+                <TH>{t('home.colTarget')}</TH>
+                <TH>{t('home.colResult')}</TH>
               </tr>
             </thead>
             <tbody>
@@ -365,7 +365,7 @@ export function ScreenHome(): React.JSX.Element {
                 <TR edge="mute">
                   <TD mono dim>—</TD>
                   <TD colSpan={3} style={{ color: 'var(--lbb-fg3)', fontStyle: 'italic' }}>
-                    No activity yet
+                    {t('home.noActivity')}
                   </TD>
                   <TD />
                 </TR>
@@ -393,13 +393,13 @@ export function ScreenHome(): React.JSX.Element {
 
         {/* Right column */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-          <Card title="Tips" pad={14}>
+          <Card title={t('home.tips')} pad={14}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
               {TIPS.map((tip, i) => (
                 <div key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
                   <Icon name={tip.icon} size={14} style={{ color: 'var(--lbb-fg3)', marginTop: 2 }} />
                   <div style={{ fontSize: 11.5, color: 'var(--lbb-fg2)', lineHeight: 1.5 }}>
-                    {tip.text}
+                    {i === 0 ? t('home.tip1') : i === 1 ? t('home.tip2') : t('home.tip3')}
                   </div>
                 </div>
               ))}
@@ -429,7 +429,7 @@ export function ScreenHome(): React.JSX.Element {
               padding: '16px 20px', borderBottom: '1px solid var(--lbb-border)',
               display: 'flex', alignItems: 'center', justifyContent: 'space-between',
             }}>
-              <span style={{ fontWeight: 700, fontSize: 15 }}>Full activity log</span>
+              <span style={{ fontWeight: 700, fontSize: 15 }}>{t('home.fullActivityLog')}</span>
               <button
                 type="button"
                 onClick={() => setShowFullLog(false)}
@@ -448,23 +448,23 @@ export function ScreenHome(): React.JSX.Element {
                 <thead>
                   <tr>
                     <TH>{' '}</TH>
-                    <TH>When</TH>
-                    <TH>Action</TH>
-                    <TH>Target</TH>
-                    <TH>Result</TH>
+                    <TH>{t('home.colWhen')}</TH>
+                    <TH>{t('home.colAction')}</TH>
+                    <TH>{t('home.colTarget')}</TH>
+                    <TH>{t('home.colResult')}</TH>
                   </tr>
                 </thead>
                 <tbody>
                   {activityAll === null ? (
                     <TR edge="mute">
                       <TD mono dim>—</TD>
-                      <TD colSpan={3} style={{ color: 'var(--lbb-fg3)' }}>Loading…</TD>
+                      <TD colSpan={3} style={{ color: 'var(--lbb-fg3)' }}>{t('common.loading')}</TD>
                       <TD />
                     </TR>
                   ) : activityAll.length === 0 ? (
                     <TR edge="mute">
                       <TD mono dim>—</TD>
-                      <TD colSpan={3} style={{ color: 'var(--lbb-fg3)', fontStyle: 'italic' }}>No activity yet</TD>
+                      <TD colSpan={3} style={{ color: 'var(--lbb-fg3)', fontStyle: 'italic' }}>{t('home.noActivity')}</TD>
                       <TD />
                     </TR>
                   ) : activityAll.map((row, i) => (

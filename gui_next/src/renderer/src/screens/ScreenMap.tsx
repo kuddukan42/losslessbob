@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Icon } from '../components/Icon'
 import { Button, Chip, Input, Pill } from '../components'
 
@@ -59,15 +60,37 @@ const SECTION_LABEL: React.CSSProperties = {
   letterSpacing: 0.08, textTransform: 'uppercase',
 }
 
-export function ScreenMap(): React.JSX.Element {
-  const [yearMin, setYearMin]     = useState(1980)
-  const [yearMax, setYearMax]     = useState(1989)
-  const [owned,   setOwned]       = useState('all')
-  const [status,  setStatus]      = useState('all')
-  const [selectedPin, setSelectedPin] = useState(2)
+const MAP_URL = 'http://localhost:5174/map'
 
-  const selectedPinData = PINS[selectedPin]
-  const ownedLabel = owned === 'all' ? 'all owners' : owned === 'owned' ? 'owned only' : 'not owned'
+export function ScreenMap(): React.JSX.Element {
+  const { t } = useTranslation()
+  const [yearMin, setYearMin] = useState(1980)
+  const [yearMax, setYearMax] = useState(1989)
+  const [owned,   setOwned]   = useState('all')
+  const [status,  setStatus]  = useState('all')
+  const [search,  setSearch]  = useState('')
+  const iframeRef = useRef<HTMLIFrameElement>(null)
+
+  const selectedPinData = PINS[2]
+
+  function handleApplyFilters() {
+    const filters: Record<string, string | boolean> = {}
+    if (status && status !== 'all') filters.status = status
+    if (owned === 'owned')   filters.owned = true
+    if (yearMin)             filters.year_min = String(yearMin)
+    if (yearMax)             filters.year_max = String(yearMax)
+    if (search.trim())       filters.q = search.trim()
+    iframeRef.current?.contentWindow?.postMessage({ type: 'applyFilters', filters }, '*')
+  }
+
+  function handleResetFilters() {
+    setYearMin(1900)
+    setYearMax(2030)
+    setOwned('all')
+    setStatus('all')
+    setSearch('')
+    iframeRef.current?.contentWindow?.postMessage({ type: 'applyFilters', filters: {} }, '*')
+  }
 
   return (
     <div style={{ height: '100%', display: 'flex', flexDirection: 'column', minHeight: 0 }}>
@@ -86,18 +109,17 @@ export function ScreenMap(): React.JSX.Element {
         </div>
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <h1 style={{ margin: 0, fontSize: 18, fontWeight: 700, letterSpacing: -0.01 }}>Concert map</h1>
-            <Pill tone="ok"   soft>6,676 geocoded</Pill>
-            <Pill tone="warn" soft>9,954 awaiting geocoding</Pill>
+            <h1 style={{ margin: 0, fontSize: 18, fontWeight: 700, letterSpacing: -0.01 }}>{t('map.title')}</h1>
+            <Pill tone="ok"   soft>{t('map.geocoded', { count: 6676 })}</Pill>
+            <Pill tone="warn" soft>{t('map.awaitingGeocode', { count: 9954 })}</Pill>
           </div>
           <div style={{ fontSize: 12, color: 'var(--lbb-fg3)', marginTop: 2 }}>
-            Filter venues by year, ownership, or status. Live map opens in your browser at{' '}
-            <span style={{ fontFamily: 'var(--lbb-mono)' }}>localhost:5174/map</span>.
+            {t('map.desc')}
           </div>
         </div>
         <div style={{ flex: 1 }} />
-        <Button variant="ghost"   size="sm" icon="copy">Copy share URL</Button>
-        <Button variant="primary" size="sm" icon="reveal">Open live map ↗</Button>
+        <Button variant="ghost"   size="sm" icon="copy"   onClick={() => navigator.clipboard.writeText(MAP_URL)}>{t('map.copyShareUrl')}</Button>
+        <Button variant="primary" size="sm" icon="reveal" onClick={() => window.open(MAP_URL)}>{t('map.openLiveMap')}</Button>
       </div>
 
       <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '300px 1fr 320px', minHeight: 0 }}>
@@ -110,7 +132,7 @@ export function ScreenMap(): React.JSX.Element {
           {/* Year range */}
           <section>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
-              <span style={SECTION_LABEL}>Year range</span>
+              <span style={SECTION_LABEL}>{t('map.yearRange')}</span>
               <div style={{ flex: 1 }} />
               <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 11.5, fontWeight: 600, color: 'var(--lbb-accent-mid)' }}>
                 {yearMin} – {yearMax}
@@ -139,9 +161,9 @@ export function ScreenMap(): React.JSX.Element {
 
           {/* Ownership */}
           <section>
-            <div style={{ ...SECTION_LABEL, marginBottom: 8 }}>Ownership</div>
+            <div style={{ ...SECTION_LABEL, marginBottom: 8 }}>{t('map.ownership')}</div>
             <div style={{ display: 'flex', padding: 2, background: 'var(--lbb-surface2)', borderRadius: 6, border: '1px solid var(--lbb-border)' }}>
-              {[['all', 'All'], ['owned', 'Owned'], ['unowned', 'Not owned']].map(([k, l]) => (
+              {[['all', t('map.ownerAll')], ['owned', t('map.ownerOwned')], ['unowned', t('map.ownerNotOwned')]].map(([k, l]) => (
                 <button key={k} onClick={() => setOwned(k)} style={{
                   flex: 1, padding: '5px 8px', borderRadius: 4,
                   background: owned === k ? 'var(--lbb-surface)' : 'transparent',
@@ -156,7 +178,7 @@ export function ScreenMap(): React.JSX.Element {
 
           {/* LB status */}
           <section>
-            <div style={{ ...SECTION_LABEL, marginBottom: 8 }}>LB status</div>
+            <div style={{ ...SECTION_LABEL, marginBottom: 8 }}>{t('map.lbStatus')}</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
               {STATUS_OPTIONS.map(o => (
                 <label key={o.k} style={{
@@ -178,15 +200,21 @@ export function ScreenMap(): React.JSX.Element {
 
           {/* Search */}
           <section>
-            <div style={{ ...SECTION_LABEL, marginBottom: 8 }}>Search</div>
-            <Input size="sm" icon="search" placeholder="Location or LB#…" style={{ width: '100%' }} />
+            <div style={{ ...SECTION_LABEL, marginBottom: 8 }}>{t('map.search')}</div>
+            <Input size="sm" icon="search" placeholder={t('map.searchPlaceholder')} style={{ width: '100%' }}
+              value={search} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)} />
           </section>
 
           {/* Display */}
           <section>
-            <div style={{ ...SECTION_LABEL, marginBottom: 8 }}>Display</div>
+            <div style={{ ...SECTION_LABEL, marginBottom: 8 }}>{t('map.display')}</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-              {DISPLAY_OPTS.map((opt, i) => (
+              {[
+                { l: t('map.displayOpts.clusterMarkers'),  v: DISPLAY_OPTS[0].v },
+                { l: t('map.displayOpts.colorByDecade'),   v: DISPLAY_OPTS[1].v },
+                { l: t('map.displayOpts.heatmapOverlay'),  v: DISPLAY_OPTS[2].v },
+                { l: t('map.displayOpts.showVenueLabels'), v: DISPLAY_OPTS[3].v },
+              ].map((opt, i) => (
                 <label key={i} style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 12, color: 'var(--lbb-fg2)' }}>
                   <input type="checkbox" defaultChecked={opt.v} />
                   {opt.l}
@@ -198,113 +226,19 @@ export function ScreenMap(): React.JSX.Element {
           <div style={{ flex: 1 }} />
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-            <Button variant="primary" size="sm" icon="map" block>Apply filters</Button>
-            <Button variant="ghost"   size="sm"            block>Reset to defaults</Button>
+            <Button variant="primary" size="sm" icon="map" block onClick={handleApplyFilters}>{t('map.applyFilters')}</Button>
+            <Button variant="ghost"   size="sm"            block onClick={handleResetFilters}>{t('map.resetDefaults')}</Button>
           </div>
         </aside>
 
-        {/* Map preview */}
+        {/* Map — live Leaflet iframe */}
         <section style={{ position: 'relative', minHeight: 0, overflow: 'hidden' }}>
-          <div className="lbb-map-canvas" style={{ position: 'absolute', inset: 0 }} />
-
-          {/* Pins */}
-          {PINS.map((p, i) => (
-            <button key={i} onClick={() => setSelectedPin(i)} style={{
-              position: 'absolute', left: `${p.x}%`, top: `${p.y}%`,
-              transform: `translate(-50%, -50%) scale(${i === selectedPin ? 1.18 : 1})`,
-              border: 'none', background: 'transparent', padding: 0, cursor: 'pointer',
-              zIndex: i === selectedPin ? 5 : 1,
-              transition: 'transform 120ms ease',
-            }}>
-              <div style={{
-                minWidth: 26, height: 26, padding: '0 7px',
-                borderRadius: 999, background: p.c, color: '#fff',
-                display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-                fontSize: 11.5, fontWeight: 700, fontFamily: 'var(--lbb-mono)',
-                boxShadow: i === selectedPin
-                  ? '0 0 0 4px rgba(255,255,255,0.5), 0 8px 24px rgba(0,0,0,0.35)'
-                  : '0 1px 0 rgba(255,255,255,0.3) inset, 0 4px 12px rgba(0,0,0,0.25)',
-                border: '2px solid #fff',
-              }}>{p.n}</div>
-              {i === selectedPin && (
-                <div style={{
-                  position: 'absolute', top: '100%', left: '50%', transform: 'translateX(-50%)',
-                  marginTop: 6, padding: '5px 9px',
-                  background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)',
-                  borderRadius: 6, fontSize: 11, color: 'var(--lbb-fg)', whiteSpace: 'nowrap',
-                  boxShadow: 'var(--lbb-shadow)', fontFamily: 'inherit',
-                }}>
-                  {p.l} <span style={{ color: 'var(--lbb-fg3)' }}>· {p.era}</span>
-                </div>
-              )}
-            </button>
-          ))}
-
-          {/* Summary card — top-left */}
-          <div style={{
-            position: 'absolute', top: 16, left: 16,
-            padding: '12px 14px', background: 'var(--lbb-surface)',
-            border: '1px solid var(--lbb-border)', borderRadius: 8,
-            boxShadow: 'var(--lbb-shadow)', maxWidth: 320,
-          }}>
-            <div style={{ ...SECTION_LABEL, marginBottom: 4 }}>Visible</div>
-            <div style={{ fontSize: 22, fontWeight: 700, fontVariantNumeric: 'tabular-nums' }}>
-              1,842 <span style={{ fontSize: 12, fontWeight: 500, color: 'var(--lbb-fg3)' }}>pins</span>
-            </div>
-            <div style={{ fontSize: 11.5, color: 'var(--lbb-fg2)', marginTop: 2 }}>
-              {yearMin} – {yearMax} · {ownedLabel} · 312 venues
-            </div>
-            <div style={{ marginTop: 10, paddingTop: 10, borderTop: '1px solid var(--lbb-border)', display: 'flex', gap: 12, fontSize: 11, color: 'var(--lbb-fg3)' }}>
-              <span><strong style={{ color: 'var(--lbb-fg2)' }}>137</strong> owned</span>
-              <span><strong style={{ color: 'var(--lbb-fg2)' }}>1,705</strong> wishlist</span>
-            </div>
-          </div>
-
-          {/* Decade legend — top-right */}
-          <div style={{
-            position: 'absolute', top: 16, right: 16,
-            padding: '12px 14px', background: 'var(--lbb-surface)',
-            border: '1px solid var(--lbb-border)', borderRadius: 8,
-            boxShadow: 'var(--lbb-shadow)',
-          }}>
-            <div style={{ ...SECTION_LABEL, marginBottom: 6 }}>Decades</div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 4, fontSize: 11.5 }}>
-              {DECADES.map((d, i) => (
-                <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                  <span style={{ width: 11, height: 11, borderRadius: '50%', background: d.c, border: '2px solid var(--lbb-surface)', boxShadow: '0 0 0 1px var(--lbb-border2)' }} />
-                  <span style={{ color: 'var(--lbb-fg2)' }}>{d.l}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Zoom controls — bottom-right */}
-          <div style={{
-            position: 'absolute', bottom: 18, right: 18,
-            display: 'flex', flexDirection: 'column', borderRadius: 8, overflow: 'hidden',
-            background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)',
-            boxShadow: 'var(--lbb-shadow)',
-          }}>
-            <button style={{ width: 32, height: 32, background: 'transparent', border: 'none', borderBottom: '1px solid var(--lbb-border)', color: 'var(--lbb-fg2)', cursor: 'pointer' }}>
-              <Icon name="plus" size={14} />
-            </button>
-            <button style={{ width: 32, height: 32, background: 'transparent', border: 'none', color: 'var(--lbb-fg2)', cursor: 'pointer', fontSize: 16, fontWeight: 700 }}>
-              −
-            </button>
-          </div>
-
-          {/* Unplottable banner — bottom-left */}
-          <div style={{
-            position: 'absolute', bottom: 18, left: 18,
-            padding: '8px 12px', background: 'var(--lbb-surface)',
-            border: '1px solid var(--lbb-border)', borderRadius: 8,
-            fontSize: 11, color: 'var(--lbb-fg2)',
-            display: 'flex', alignItems: 'center', gap: 8,
-          }}>
-            <Icon name="info" size={12} style={{ color: 'var(--lbb-info-fg)' }} />
-            <span><strong>9,954 entries</strong> have no coordinates yet</span>
-            <Button size="sm" variant="ghost">View in Curator</Button>
-          </div>
+          <iframe
+            ref={iframeRef}
+            src={`${MAP_URL}?embedded=1`}
+            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 'none' }}
+            title="Concert map"
+          />
         </section>
 
         {/* Selected venue panel */}
@@ -314,21 +248,21 @@ export function ScreenMap(): React.JSX.Element {
         }}>
           <div style={{ padding: '14px 16px', borderBottom: '1px solid var(--lbb-border)' }}>
             <div style={{ ...SECTION_LABEL, marginBottom: 6 }}>
-              Selected · {selectedPinData.era}
+              {t('map.selected', { era: selectedPinData.era })}
             </div>
             <div style={{ fontSize: 16, fontWeight: 700, color: 'var(--lbb-fg)' }}>{selectedPinData.l}</div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 6 }}>
-              <Pill tone="info" soft>{selectedPinData.n} shows</Pill>
+              <Pill tone="info" soft>{t('map.shows', { count: selectedPinData.n })}</Pill>
               <span style={{ fontSize: 11, color: 'var(--lbb-fg3)' }}>· 4 owned · 3 wishlist · 1 missing</span>
             </div>
             <div style={{ display: 'flex', gap: 6, marginTop: 10 }}>
-              <Button size="sm" variant="primary" icon="search" block>Open list in Search</Button>
+              <Button size="sm" variant="primary" icon="search" block>{t('map.openInSearch')}</Button>
               <Button size="sm" variant="ghost" icon="copy">Copy</Button>
             </div>
           </div>
 
           <div style={{ padding: '10px 14px 4px', ...SECTION_LABEL }}>
-            Entries at this location
+            {t('map.entriesHere')}
           </div>
           <div style={{ flex: 1, overflowY: 'auto', padding: '0 6px 8px' }}>
             {SELECTED_LBS.map((r, i) => (
@@ -364,8 +298,7 @@ export function ScreenMap(): React.JSX.Element {
             }}>
               <Icon name="info" size={11} style={{ color: 'var(--lbb-info-fg)', marginTop: 2 }} />
               <span>
-                Double-click any entry to open it on losslessbob.com. Use{' '}
-                <strong>Open in Search</strong> to bring this list into the main search view.
+                {t('map.mapInfoHint')}
               </span>
             </div>
           </div>

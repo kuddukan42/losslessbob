@@ -1,6 +1,58 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-106: Audio fingerprint matching — identify user recordings by performance date
+Priority: High
+Status: Done
+Added: 2026-05-27
+Closed: 2026-05-29
+Description: ScreenFingerprint (gui_next Assets group): date picker → collection_by_date
+  → build LB fingerprints via existing /api/fingerprint/build → identify mystery folder
+  via new /api/fingerprint/identify_folder → ranked results table → cleanup purge.
+  New backend: GET /api/fingerprint/collection_by_date, POST /api/fingerprint/identify_folder,
+  GET /api/fingerprint/identify_folder/status, POST /api/fingerprint/identify_folder/stop.
+  All strings wrapped with t() for i18n.
+
+---
+
+TODO-079: i18n — wrap table column headers with tr() across all tabs
+Priority: Medium
+Status: Cancelled
+Added: 2026-05-21
+Closed: 2026-05-29
+Description: Table column headers set via QTableWidget.setHorizontalHeaderLabels(),
+  QHeaderView, or QTreeWidget column titles are not wrapped in self.tr() calls,
+  so they are excluded from translation and remain in English in all locales.
+  Audit every tab (Collection, DB Editor, Map, Scraper, Setup, Rename, Attachments,
+  Fingerprint) and wrap all header strings with tr(), then regenerate .ts/.qm files.
+
+---
+
+TODO-070: i18n integration testing — all 5 languages end-to-end
+Priority: Medium
+Status: Cancelled
+Added: 2026-05-19
+Closed: 2026-05-29
+Description: For each of the 5 languages: set ui_language in meta, restart app,
+  verify tab titles, button labels, column headers, placeholder text, and QMessageBox
+  dialogs are translated. Verify LB numbers and checksums are not garbled. Verify
+  English still works as default. Run py_compile on all gui files.
+  Prerequisite: TODO-069. See instructions/CC_I18N.md TODO-070 section for checklist.
+
+---
+
+TODO-133: gui_next — react-i18next full UI translation (all screens)
+Priority: High
+Status: Done
+Added: 2026-05-29
+Closed: 2026-05-29
+Description: Add react-i18next to gui_next. Install i18next + react-i18next, create
+  i18n.ts initialiser, create en/de/fr/es/it/nl locale JSON files ported from Qt .ts
+  sources, add language field to store, wire changeLanguage in App.tsx, add language
+  selector to ScreenSetup Preferences card, wrap all hardcoded UI strings with t()
+  in AppShell + all 10 translatable screen files, add TypeScript key-safety declaration.
+
+
 TODO-116: gui_next — identify and wire ScreenPipeline remaining 5% stub
 Priority: Low
 Status: Done

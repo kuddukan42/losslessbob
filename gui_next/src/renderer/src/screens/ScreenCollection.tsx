@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { useVirtualizer } from '@tanstack/react-virtual'
@@ -217,6 +218,7 @@ function Toast({ msg, tone, onDone }: { msg: string; tone: ToastTone; onDone: ()
 function ConfirmDialog({ title, body, onConfirm, onCancel }: {
   title: string; body: string; onConfirm: () => void; onCancel: () => void
 }) {
+  const { t } = useTranslation()
   return (
     <div style={{
       position: 'fixed', inset: 0, zIndex: 1000,
@@ -230,8 +232,8 @@ function ConfirmDialog({ title, body, onConfirm, onCancel }: {
         <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--lbb-fg)', marginBottom: 8 }}>{title}</div>
         <div style={{ fontSize: 12.5, color: 'var(--lbb-fg2)', marginBottom: 20, lineHeight: 1.5 }}>{body}</div>
         <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end' }}>
-          <Button variant="ghost" size="sm" onClick={onCancel}>Cancel</Button>
-          <Button variant="danger" size="sm" onClick={onConfirm}>Confirm</Button>
+          <Button variant="ghost" size="sm" onClick={onCancel}>{t('common.cancel')}</Button>
+          <Button variant="danger" size="sm" onClick={onConfirm}>{t('common.confirm')}</Button>
         </div>
       </div>
     </div>
@@ -328,6 +330,7 @@ function PersonalInfoModal({ lb, lbNumber, onClose, onSaved }: {
   onClose: () => void
   onSaved: (msg: string) => void
 }) {
+  const { t } = useTranslation()
   const [rating, setRating] = useState<number | null>(null)
   const [tags,   setTags]   = useState('')
   const [busy,   setBusy]   = useState(false)
@@ -352,7 +355,7 @@ function PersonalInfoModal({ lb, lbNumber, onClose, onSaved }: {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ personal_rating: rating, tags: tags.trim() || null }),
       })
-      onSaved(`Saved personal info for ${lb}`)
+      onSaved(t('collection.toast.savedPersonalInfo', { lb }))
       onClose()
     } catch {
       setBusy(false)
@@ -370,7 +373,7 @@ function PersonalInfoModal({ lb, lbNumber, onClose, onSaved }: {
         boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
       }}>
         <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--lbb-fg)', marginBottom: 16 }}>
-          Personal Info — {lb}
+          {t('collection.personalInfo.title', { lb })}
         </div>
 
         {!loaded ? (
@@ -379,7 +382,7 @@ function PersonalInfoModal({ lb, lbNumber, onClose, onSaved }: {
           <>
             <div style={{ marginBottom: 14 }}>
               <div style={{ fontSize: 11.5, fontWeight: 600, color: 'var(--lbb-fg2)', marginBottom: 6 }}>
-                Personal Rating (1–5)
+                {t('collection.personalInfo.rating')}
               </div>
               <div style={{ display: 'flex', gap: 6 }}>
                 {[1, 2, 3, 4, 5].map(n => (
@@ -410,13 +413,13 @@ function PersonalInfoModal({ lb, lbNumber, onClose, onSaved }: {
 
             <div style={{ marginBottom: 20 }}>
               <div style={{ fontSize: 11.5, fontWeight: 600, color: 'var(--lbb-fg2)', marginBottom: 6 }}>
-                Tags
+                {t('collection.personalInfo.tags')}
               </div>
               <input
                 type="text"
                 value={tags}
                 onChange={e => setTags(e.target.value)}
-                placeholder="e.g. favourite, soundboard"
+                placeholder={t('collection.personalInfo.tagsPlaceholder')}
                 style={{
                   width: '100%', boxSizing: 'border-box',
                   padding: '7px 10px', fontSize: 13,
@@ -431,9 +434,9 @@ function PersonalInfoModal({ lb, lbNumber, onClose, onSaved }: {
         )}
 
         <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end' }}>
-          <Button variant="ghost" size="sm" onClick={onClose}>Cancel</Button>
+          <Button variant="ghost" size="sm" onClick={onClose}>{t('common.cancel')}</Button>
           <Button variant="primary" size="sm" disabled={!loaded || busy} onClick={handleSave}>
-            {busy ? 'Saving…' : 'Save'}
+            {busy ? t('collection.personalInfo.saving') : t('common.save')}
           </Button>
         </div>
       </div>
@@ -459,6 +462,7 @@ function ScanPreviewModal({ entries, skipped, onClose, onAdded }: {
   onClose: () => void
   onAdded: () => void
 }) {
+  const { t } = useTranslation()
   const [ownedSet, setOwnedSet]     = useState<Set<number>>(new Set())
   const [ownedLoaded, setOwnedLoaded] = useState(false)
   const [rowState, setRowState]     = useState<Record<number, ScanRowState>>({})
@@ -512,8 +516,8 @@ function ScanPreviewModal({ entries, skipped, onClose, onAdded }: {
       }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12, flexShrink: 0 }}>
           <span style={{ fontSize: 14, fontWeight: 700, color: 'var(--lbb-fg)' }}>
-            Scan Results — {entries.length} folder{entries.length !== 1 ? 's' : ''} found
-            {skipped > 0 && <span style={{ fontSize: 11.5, fontWeight: 400, color: 'var(--lbb-fg3)', marginLeft: 8 }}>{skipped} skipped (no LB#)</span>}
+            {t('collection.scanPreview.title', { count: entries.length })}
+            {skipped > 0 && <span style={{ fontSize: 11.5, fontWeight: 400, color: 'var(--lbb-fg3)', marginLeft: 8 }}>{t('collection.scanPreview.skipped', { count: skipped })}</span>}
           </span>
           <IconButton icon="x" size={14} title="Close" onClick={onClose} />
         </div>
@@ -534,7 +538,7 @@ function ScanPreviewModal({ entries, skipped, onClose, onAdded }: {
                 <TH>LB#</TH>
                 <TH>Folder</TH>
                 <TH>Path</TH>
-                <TH align="center">Already Owned</TH>
+                <TH align="center">{t('collection.scanPreview.alreadyOwned')}</TH>
                 <TH />
               </tr>
             </thead>
@@ -573,13 +577,13 @@ function ScanPreviewModal({ entries, skipped, onClose, onAdded }: {
         </div>
 
         <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end', marginTop: 14, flexShrink: 0 }}>
-          <Button variant="ghost" size="sm" onClick={onClose}>Close</Button>
+          <Button variant="ghost" size="sm" onClick={onClose}>{t('common.close')}</Button>
           <Button
             variant="primary" size="sm"
             disabled={!ownedLoaded || busy || pendingEntries.length === 0}
             onClick={addAll}
           >
-            {busy ? 'Adding…' : `Add all (${pendingEntries.length})`}
+            {busy ? t('collection.scanPreview.adding') : t('collection.scanPreview.addAll', { count: pendingEntries.length })}
           </Button>
         </div>
       </div>
@@ -603,6 +607,7 @@ function AddFolderModal({ paths, onClose, onAdded }: {
   onClose: () => void
   onAdded: () => void
 }) {
+  const { t } = useTranslation()
   const [entries, setEntries] = useState<FolderEntry[]>(
     () => paths.map(p => ({
       path: p,
@@ -698,13 +703,13 @@ function AddFolderModal({ paths, onClose, onAdded }: {
       }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14 }}>
           <span style={{ fontSize: 14, fontWeight: 700, color: 'var(--lbb-fg)' }}>
-            Add to Collection — {entries.length} folder{entries.length !== 1 ? 's' : ''}
+            {t('collection.addFolder.title', { count: entries.length })}
           </span>
           <IconButton icon="x" size={14} title="Close" onClick={onClose} />
         </div>
 
         <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', marginBottom: 10 }}>
-          Enter the LB number for each folder and click Add.
+          {t('collection.addFolder.instruction')}
         </div>
 
         <div style={{ flex: 1, overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: 5, paddingRight: 2 }}>
@@ -736,7 +741,7 @@ function AddFolderModal({ paths, onClose, onAdded }: {
                 {/* row: folder name input | LB# | Add */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                   <input
-                    placeholder="Folder name"
+                    placeholder={t('collection.addFolder.folderName')}
                     value={e.folderNameInput}
                     disabled={isDone || isBusy}
                     onChange={ev => updateFolderName(idx, ev.target.value)}
@@ -744,7 +749,7 @@ function AddFolderModal({ paths, onClose, onAdded }: {
                   />
                   <input
                     type="number"
-                    placeholder="LB #"
+                    placeholder={t('collection.addFolder.lbNumber')}
                     value={e.lbInput}
                     disabled={isDone || isBusy}
                     onChange={ev => updateLb(idx, ev.target.value)}
@@ -755,12 +760,12 @@ function AddFolderModal({ paths, onClose, onAdded }: {
                     disabled={isDone || isBusy || !/^\d+$/.test(e.lbInput)}
                     onClick={() => addOne(idx)}
                   >
-                    {isDone ? '✓ Added' : isBusy ? '…' : 'Add'}
+                    {isDone ? t('collection.addFolder.added') : isBusy ? '…' : t('common.add')}
                   </Button>
                 </div>
                 {/* notes input */}
                 <input
-                  placeholder="Notes (optional)"
+                  placeholder={t('collection.addFolder.notes')}
                   value={e.notesInput}
                   disabled={isDone || isBusy}
                   onChange={ev => updateNotes(idx, ev.target.value)}
@@ -777,13 +782,13 @@ function AddFolderModal({ paths, onClose, onAdded }: {
         </div>
 
         <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end', marginTop: 14, flexShrink: 0 }}>
-          <Button variant="ghost" size="sm" onClick={onClose}>Close</Button>
+          <Button variant="ghost" size="sm" onClick={onClose}>{t('common.close')}</Button>
           <Button
             variant="primary" size="sm"
             disabled={pendingCount === 0}
             onClick={addAll}
           >
-            Add all ({pendingCount})
+            {t('collection.addFolder.addAll', { count: pendingCount })}
           </Button>
         </div>
       </div>
@@ -800,6 +805,7 @@ function ForumModal({ lb, subject: initSubject, body: initBody, onClose, onPoste
   onClose: () => void
   onPosted: (topicUrl: string) => void
 }) {
+  const { t } = useTranslation()
   const [subject, setSubject] = useState(initSubject)
   const [body, setBody]       = useState(initBody)
   const [busy, setBusy]       = useState(false)
@@ -839,14 +845,14 @@ function ForumModal({ lb, subject: initSubject, body: initBody, onClose, onPoste
         boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
       }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14 }}>
-          <span style={{ fontSize: 14, fontWeight: 700, color: 'var(--lbb-fg)' }}>Post to WTRF Forum</span>
+          <span style={{ fontSize: 14, fontWeight: 700, color: 'var(--lbb-fg)' }}>{t('collection.forum.modalTitle')}</span>
           <IconButton icon="x" size={14} title="Close" onClick={onClose} />
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10, flex: 1, minHeight: 0, overflow: 'hidden' }}>
           <div>
             <label style={{ fontSize: 10.5, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: 'var(--lbb-fg3)', display: 'block', marginBottom: 4 }}>
-              Subject
+              {t('collection.forum.subject')}
             </label>
             <input
               value={subject}
@@ -861,7 +867,7 @@ function ForumModal({ lb, subject: initSubject, body: initBody, onClose, onPoste
           </div>
           <div style={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}>
             <label style={{ fontSize: 10.5, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: 'var(--lbb-fg3)', display: 'block', marginBottom: 4 }}>
-              Body (BBCode)
+              {t('collection.forum.body')}
             </label>
             <textarea
               value={body}
@@ -884,9 +890,9 @@ function ForumModal({ lb, subject: initSubject, body: initBody, onClose, onPoste
         </div>
 
         <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end', marginTop: 14, flexShrink: 0 }}>
-          <Button variant="ghost" size="sm" onClick={onClose}>Cancel</Button>
+          <Button variant="ghost" size="sm" onClick={onClose}>{t('common.cancel')}</Button>
           <Button variant="primary" size="sm" disabled={busy} onClick={handlePost}>
-            {busy ? 'Posting…' : 'Post topic'}
+            {busy ? t('collection.forum.posting') : t('collection.forum.postTopic')}
           </Button>
         </div>
       </div>
@@ -929,6 +935,7 @@ interface AudioInfo {
 }
 
 function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegenTorrent, onPostForum, onWishlistToggle, onPersonalInfo, personalMetaVersion, onToast, onRefetch, onSpectrograms, onNavigate }: DetailPanelProps): React.JSX.Element {
+  const { t } = useTranslation()
   const edge = edgeFor(row.status)
 
   const [personalMeta, setPersonalMeta] = useState<PersonalMeta | null>(null)
@@ -999,22 +1006,22 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
         body: JSON.stringify({ torrent_id: rec.id }),
       })
       const data = await resp.json()
-      onToast(data.ok ? 'Added to qBittorrent' : (data.error || 'qBt add failed'), data.ok ? 'ok' : 'bad')
+      onToast(data.ok ? t('collection.toast.addedToQbt') : (data.error || t('collection.toast.qbtAddFailed')), data.ok ? 'ok' : 'bad')
       if (data.ok) { fetchTorrentRecords(); onRefetch() }
-    } catch { onToast('qBittorrent request failed', 'bad') }
+    } catch { onToast(t('collection.toast.qbtRequestFailed'), 'bad') }
   }
 
   const handleTorrentQbtRemove = async (rec: TorrentRecord) => {
     try {
       const resp = await fetch(`${BASE}/api/torrent/${rec.id}/qbt_remove`, { method: 'POST' })
       const data = await resp.json()
-      onToast(data.ok ? 'Removed from qBittorrent' : (data.error || 'qBt remove failed'), data.ok ? 'ok' : 'bad')
+      onToast(data.ok ? t('collection.toast.removedFromQbt') : (data.error || t('collection.toast.qbtRemoveFailed')), data.ok ? 'ok' : 'bad')
       if (data.ok) { fetchTorrentRecords(); onRefetch() }
-    } catch { onToast('qBittorrent request failed', 'bad') }
+    } catch { onToast(t('collection.toast.qbtRequestFailed'), 'bad') }
   }
 
   const handleTorrentRegen = async (rec: TorrentRecord) => {
-    if (!rec.source_folder) { onToast('No source folder for this record', 'info'); return }
+    if (!rec.source_folder) { onToast(t('collection.toast.noSourceFolder'), 'info'); return }
     try {
       const resp = await fetch(`${BASE}/api/torrent/create`, {
         method: 'POST',
@@ -1023,15 +1030,15 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
       })
       const data = await resp.json()
       onToast(
-        data.ok ? `Torrent regenerated: ${data.name ?? ''}` : (data.error || 'Torrent failed'),
+        data.ok ? t('collection.toast.torrentRegenerated', { name: data.name ?? '' }) : (data.error || t('collection.toast.torrentFailed')),
         data.ok ? 'ok' : 'bad',
       )
       if (data.ok) { fetchTorrentRecords(); onRefetch() }
-    } catch { onToast('Torrent creation failed', 'bad') }
+    } catch { onToast(t('collection.toast.torrentCreationFailed'), 'bad') }
   }
 
   const handleForumOpen = (rec: DetailForumRecord) => {
-    if (!rec.topic_url) { onToast('No URL stored for this post', 'info'); return }
+    if (!rec.topic_url) { onToast(t('collection.toast.noUrlStored'), 'info'); return }
     window.open(rec.topic_url, '_blank')
   }
 
@@ -1040,9 +1047,9 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
     try {
       const resp = await fetch(`${BASE}/api/forum_post/${postId}`, { method: 'DELETE' })
       const data = await resp.json()
-      onToast(data.ok ? 'Record removed' : (data.error || 'Delete failed'), data.ok ? 'ok' : 'bad')
+      onToast(data.ok ? t('collection.toast.recordRemoved') : (data.error || t('collection.toast.deleteFailed')), data.ok ? 'ok' : 'bad')
       if (data.ok) { fetchForumRecords(); onRefetch() }
-    } catch { onToast('Delete failed', 'bad') }
+    } catch { onToast(t('collection.toast.deleteFailed'), 'bad') }
   }
 
   const handleTorrentRelocate = async (rec: TorrentRecord) => {
@@ -1055,9 +1062,9 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
         body: JSON.stringify({ source_folder: dir }),
       })
       const data = await resp.json()
-      onToast(data.ok ? 'Source folder updated' : (data.error || 'Update failed'), data.ok ? 'ok' : 'bad')
+      onToast(data.ok ? t('collection.toast.sourceFolderUpdated') : (data.error || t('collection.toast.updateFailed')), data.ok ? 'ok' : 'bad')
       if (data.ok) fetchTorrentRecords()
-    } catch { onToast('Update failed', 'bad') }
+    } catch { onToast(t('collection.toast.updateFailed'), 'bad') }
   }
 
   const handleTorrentFileDelete = async (torrentId: number) => {
@@ -1065,9 +1072,9 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
     try {
       const resp = await fetch(`${BASE}/api/torrent/${torrentId}/file`, { method: 'DELETE' })
       const data = await resp.json()
-      onToast(data.ok ? '.torrent file deleted' : (data.error || 'Delete failed'), data.ok ? 'ok' : 'bad')
+      onToast(data.ok ? t('collection.toast.torrentFileDeleted') : (data.error || t('collection.toast.deleteFailed')), data.ok ? 'ok' : 'bad')
       if (data.ok) { fetchTorrentRecords(); onRefetch() }
-    } catch { onToast('Delete failed', 'bad') }
+    } catch { onToast(t('collection.toast.deleteFailed'), 'bad') }
   }
 
   const fetchPersonalMeta = useCallback(() => {
@@ -1096,29 +1103,29 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
     try {
       await fetch(`${BASE}/api/collection/${row.lbNumberInt}/listen`, { method: 'POST' })
       fetchPersonalMeta()
-      onToast(`Listen logged for ${row.lbNumber}`, 'ok')
+      onToast(t('collection.toast.listenLogged', { lb: row.lbNumber }), 'ok')
     } catch {
-      onToast('Failed to log listen', 'warn')
+      onToast(t('collection.toast.failedLogListen'), 'warn')
     } finally {
       setLogListenBusy(false)
     }
   }
 
   const META_ROWS: [string, React.ReactNode][] = [
-    ['Folder',        <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 11 }}>{row.folder || '—'}</span>],
-    ['Disk path',     <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 11, color: 'var(--lbb-fg3)' }}>{row.diskPath || '—'}</span>],
-    ['Size',          <span style={{ fontFamily: 'var(--lbb-mono)' }}>{row.size || '—'}</span>],
-    ['Confirmed',     <span style={{ fontFamily: 'var(--lbb-mono)' }}>{row.confirmed || '—'}</span>],
-    ['Fingerprinted', row.fingerprinted
-      ? <Pill tone="ok" soft>Yes · acoustid</Pill>
-      : <Pill tone="mute" soft>No</Pill>],
-    ['Arch. Rating',  row.rating
+    [t('collection.detail.folder'),        <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 11 }}>{row.folder || '—'}</span>],
+    [t('collection.detail.diskPath'),     <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 11, color: 'var(--lbb-fg3)' }}>{row.diskPath || '—'}</span>],
+    [t('collection.detail.size'),          <span style={{ fontFamily: 'var(--lbb-mono)' }}>{row.size || '—'}</span>],
+    [t('collection.detail.confirmed'),     <span style={{ fontFamily: 'var(--lbb-mono)' }}>{row.confirmed || '—'}</span>],
+    [t('collection.detail.fingerprinted'), row.fingerprinted
+      ? <Pill tone="ok" soft>{t('collection.detail.fingerprintedYes')}</Pill>
+      : <Pill tone="mute" soft>{t('collection.detail.fingerprintedNo')}</Pill>],
+    [t('collection.detail.archRating'),  row.rating
       ? <Pill tone="ok" soft>{row.rating}</Pill>
       : <span style={{ color: 'var(--lbb-fg3)' }}>—</span>],
-    ['My Rating',     personalMeta?.personal_rating != null
-      ? <span style={{ fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-accent-mid)', fontWeight: 600 }}>{personalMeta.personal_rating} / 5</span>
+    [t('collection.detail.myRating'),     personalMeta?.personal_rating != null
+      ? <span style={{ fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-accent-mid)', fontWeight: 600 }}>{personalMeta.personal_rating} {t('collection.detail.perFive')}</span>
       : <span style={{ color: 'var(--lbb-fg3)' }}>—</span>],
-    ['Listens',       personalMeta
+    [t('collection.detail.listens'),       personalMeta
       ? <span style={{ fontFamily: 'var(--lbb-mono)' }}>
           {personalMeta.listen_count}
           {personalMeta.last_listened && (
@@ -1148,9 +1155,9 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
 
         {/* 1. Pill row */}
         <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
-          <Pill tone="ok" soft dot>Owned</Pill>
+          <Pill tone="ok" soft dot>{t('collection.detail.owned')}</Pill>
           <Pill tone={edge} soft>{row.status}</Pill>
-          {row.isXref && <Pill tone="info" soft>Xref</Pill>}
+          {row.isXref && <Pill tone="info" soft>{t('collection.detail.xref')}</Pill>}
           {audioInfo && audioInfo.format && !audioInfo.offline && (
             <Pill tone={audioInfo.mixed ? 'info' : 'mute'} soft>
               {audioInfo.format}
@@ -1208,29 +1215,29 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
             disabled={!row.diskPath}
             onClick={() => onReveal(row.diskPath)}
           >
-            Reveal on disk
+            {t('collection.detail.revealOnDisk')}
           </Button>
           <Button
             variant={row.wishlist ? 'primary' : 'ghost'} size="sm" icon="star"
             onClick={() => onWishlistToggle(row.lbNumberInt, row.wishlist)}
             title={row.wishlist ? 'Remove from wishlist' : 'Add to wishlist'}
           >
-            {row.wishlist ? 'On wishlist' : 'Wishlist'}
+            {row.wishlist ? t('collection.detail.onWishlist') : t('collection.detail.wishlist')}
           </Button>
           <Button variant="ghost" size="sm" disabled={logListenBusy} onClick={handleLogListen}>
-            Log Listen
+            {t('collection.detail.logListen')}
           </Button>
           <Button variant="ghost" size="sm" onClick={() => onPersonalInfo(row.lbNumber, row.lbNumberInt)}>
-            Edit Personal Info
+            {t('collection.detail.editPersonalInfo')}
           </Button>
           <Button variant="ghost" size="sm" onClick={() => onNavigate('/attachments')}>
-            Attachments
+            {t('collection.detail.attachments')}
           </Button>
           <Button variant="ghost" size="sm" disabled={!row.diskPath} onClick={() => onSpectrograms(row)}>
-            Spectrograms
+            {t('collection.detail.spectrograms')}
           </Button>
           <Button variant="ghost" size="sm" onClick={() => onNavigate('/map')}>
-            On map
+            {t('collection.detail.onMap')}
           </Button>
         </div>
 
@@ -1240,27 +1247,27 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
             fontSize: 11, fontWeight: 700, color: 'var(--lbb-fg3)',
             letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8,
           }}>
-            History
+            {t('collection.detail.history')}
           </div>
           <div style={{ display: 'flex', gap: 6, marginBottom: 8 }}>
             <Chip
               active={historyTab === 'torrents'} size="sm"
               onClick={() => onHistoryTab('torrents')}
               count={torrentRecords.length || row.historyTorrents.length}
-            >Torrents</Chip>
+            >{t('collection.detail.torrents')}</Chip>
             <Chip
               active={historyTab === 'forum'} size="sm"
               onClick={() => onHistoryTab('forum')}
               count={forumRecords.length || row.historyForum.length}
-            >Forum posts</Chip>
+            >{t('collection.detail.forumPosts')}</Chip>
           </div>
 
           {/* Torrents tab — per-record management */}
           {historyTab === 'torrents' && (
             torrentBusy ? (
-              <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', padding: '6px 0' }}>Loading…</div>
+              <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', padding: '6px 0' }}>{t('collection.detail.loadingTorrents')}</div>
             ) : torrentRecords.length === 0 ? (
-              <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', padding: '6px 0' }}>No torrent records.</div>
+              <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', padding: '6px 0' }}>{t('collection.detail.noTorrents')}</div>
             ) : (
               <div style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
                 {torrentRecords.map(rec => (
@@ -1297,28 +1304,28 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
                         }}
                       />
                       <Pill tone={rec.added_to_qbt ? 'info' : 'mute'} soft>
-                        {rec.added_to_qbt ? 'In qBt' : 'Local'}
+                        {rec.added_to_qbt ? t('collection.detail.inQbt') : t('collection.detail.local')}
                       </Pill>
                     </div>
                     {/* action row */}
                     <div style={{ display: 'flex', gap: 4, flexWrap: 'wrap' }}>
                       {rec.added_to_qbt ? (
                         <Button variant="ghost" size="sm" onClick={() => handleTorrentQbtRemove(rec)}>
-                          Remove qBt
+                          {t('collection.detail.removeQbt')}
                         </Button>
                       ) : (
                         <Button variant="ghost" size="sm" onClick={() => handleTorrentAddQbt(rec)}>
-                          Add qBt
+                          {t('collection.detail.addQbt')}
                         </Button>
                       )}
                       <Button variant="ghost" size="sm" disabled={!rec.source_folder} onClick={() => handleTorrentRegen(rec)}>
-                        Regen
+                        {t('collection.detail.regen')}
                       </Button>
                       <Button variant="ghost" size="sm" onClick={() => handleTorrentRelocate(rec)}>
-                        Relocate
+                        {t('collection.detail.relocate')}
                       </Button>
                       <Button variant="danger" size="sm" disabled={!rec.torrent_file_exists} onClick={() => setDeleteConfirm(rec.id)}>
-                        Del file
+                        {t('collection.detail.delFile')}
                       </Button>
                     </div>
                   </div>
@@ -1330,9 +1337,9 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
           {/* Forum tab — actionable */}
           {historyTab === 'forum' && (
             forumBusy ? (
-              <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', padding: '6px 0' }}>Loading…</div>
+              <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', padding: '6px 0' }}>{t('collection.detail.loadingTorrents')}</div>
             ) : forumRecords.length === 0 ? (
-              <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', padding: '6px 0' }}>No forum history.</div>
+              <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', padding: '6px 0' }}>{t('collection.detail.noForumHistory')}</div>
             ) : (
               <div style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
                 {forumRecords.map(rec => (
@@ -1361,10 +1368,10 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
                         disabled={!rec.topic_url}
                         onClick={() => handleForumOpen(rec)}
                       >
-                        Open in Browser
+                        {t('collection.detail.openInBrowser')}
                       </Button>
                       <Button variant="danger" size="sm" onClick={() => setForumDeleteConfirm(rec.id)}>
-                        Remove
+                        {t('common.remove')}
                       </Button>
                     </div>
                   </div>
@@ -1379,13 +1386,13 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
               disabled={!row.diskPath}
               onClick={() => onRegenTorrent(row.lbNumberInt, row.diskPath)}
             >
-              Create torrent
+              {t('collection.detail.createTorrent')}
             </Button>
             <Button
               variant="ghost" size="sm"
               onClick={() => onPostForum(row.lbNumberInt)}
             >
-              Post to forum
+              {t('collection.detail.postToForum')}
             </Button>
           </div>
         </div>
@@ -1395,8 +1402,8 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
 
     {deleteConfirm !== null && (
       <ConfirmDialog
-        title="Delete .torrent file"
-        body="Delete the .torrent file from disk? This does not remove the torrent from qBittorrent."
+        title={t('collection.confirmDelete.torrentTitle')}
+        body={t('collection.confirmDelete.torrentBody')}
         onConfirm={() => handleTorrentFileDelete(deleteConfirm)}
         onCancel={() => setDeleteConfirm(null)}
       />
@@ -1404,8 +1411,8 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
 
     {forumDeleteConfirm !== null && (
       <ConfirmDialog
-        title="Remove forum post record"
-        body="Remove this log entry? This does not delete the actual forum post on the website."
+        title={t('collection.confirmDelete.forumTitle')}
+        body={t('collection.confirmDelete.forumBody')}
         onConfirm={() => handleForumRecordDelete(forumDeleteConfirm)}
         onCancel={() => setForumDeleteConfirm(null)}
       />
@@ -1424,6 +1431,7 @@ function GlobalForumPanel({ posts, search, onSearch, onOpen, onDelete, onGoToLb 
   onDelete: (postId: number) => void
   onGoToLb: (lb: number, lbStr: string) => void
 }) {
+  const { t } = useTranslation()
   const [deleteConfirm, setDeleteConfirm] = useState<GlobalForumPost | null>(null)
 
   const filtered = posts.filter(p => {
@@ -1444,12 +1452,12 @@ function GlobalForumPanel({ posts, search, onSearch, onOpen, onDelete, onGoToLb 
         padding: '8px 12px', borderBottom: '1px solid var(--lbb-border)', flexShrink: 0,
       }}>
         <span style={{ fontSize: 12.5, color: 'var(--lbb-fg2)', fontWeight: 600 }}>
-          {filtered.length.toLocaleString()} forum post{filtered.length !== 1 ? 's' : ''}
+          {t('collection.globalForum.postsCount', { count: filtered.length })}
         </span>
         <div style={{ flex: 1 }} />
         <Input
           icon="filter"
-          placeholder="Filter…"
+          placeholder={t('collection.globalForum.filter')}
           size="sm"
           value={search}
           onChange={e => onSearch(e.target.value)}
@@ -1469,9 +1477,9 @@ function GlobalForumPanel({ posts, search, onSearch, onOpen, onDelete, onGoToLb 
           <thead>
             <tr>
               <TH />
-              <TH>Posted</TH>
+              <TH>{t('collection.globalForum.colPosted')}</TH>
               <TH>LB#</TH>
-              <TH>Show date · Location</TH>
+              <TH>{t('collection.globalForum.colShowDate')}</TH>
               <TH>Subject</TH>
               <TH>Actions</TH>
             </tr>
@@ -1491,13 +1499,13 @@ function GlobalForumPanel({ posts, search, onSearch, onOpen, onDelete, onGoToLb 
                       disabled={!p.topic_url}
                       onClick={() => onOpen(p.topic_url)}
                     >
-                      Open in Browser
+                      {t('collection.globalForum.openInBrowser')}
                     </Button>
                     <Button variant="danger" size="sm" onClick={() => setDeleteConfirm(p)}>
-                      Remove
+                      {t('common.remove')}
                     </Button>
                     <Button variant="ghost" size="sm" onClick={() => onGoToLb(p.lb_number, p.lbStr)}>
-                      Go to LB
+                      {t('collection.globalForum.goToLb')}
                     </Button>
                   </div>
                 </TD>
@@ -1510,14 +1518,14 @@ function GlobalForumPanel({ posts, search, onSearch, onOpen, onDelete, onGoToLb 
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             height: '60%', fontSize: 13, color: 'var(--lbb-fg3)',
           }}>
-            {posts.length === 0 ? 'No forum posts recorded.' : 'No results match the filter.'}
+            {posts.length === 0 ? t('collection.globalForum.noPostsRecorded') : t('collection.globalForum.noResultsMatch')}
           </div>
         )}
       </div>
       {deleteConfirm && (
         <ConfirmDialog
-          title="Remove forum post record"
-          body="Remove this log entry? This does not delete the actual forum post on the website."
+          title={t('collection.confirmDelete.forumTitle')}
+          body={t('collection.confirmDelete.forumBody')}
           onConfirm={() => { onDelete(deleteConfirm.id); setDeleteConfirm(null) }}
           onCancel={() => setDeleteConfirm(null)}
         />
@@ -1536,6 +1544,7 @@ function GlobalTorrentPanel({ records, search, onSearch, onGoToLb, onToast, onRe
   onToast: (msg: string, tone: ToastTone) => void
   onRefetch: () => void
 }) {
+  const { t } = useTranslation()
   const filtered = records.filter(r => {
     if (!search) return true
     const q = search.toLowerCase()
@@ -1555,9 +1564,9 @@ function GlobalTorrentPanel({ records, search, onSearch, onGoToLb, onToast, onRe
         body: JSON.stringify({ torrent_id: rec.id }),
       })
       const data = await resp.json()
-      onToast(data.ok ? 'Added to qBittorrent' : (data.error || 'qBt add failed'), data.ok ? 'ok' : 'bad')
+      onToast(data.ok ? t('collection.toast.addedToQbt') : (data.error || t('collection.toast.qbtAddFailed')), data.ok ? 'ok' : 'bad')
       if (data.ok) onRefetch()
-    } catch { onToast('qBittorrent request failed', 'bad') }
+    } catch { onToast(t('collection.toast.qbtRequestFailed'), 'bad') }
   }
 
   return (
@@ -1567,12 +1576,12 @@ function GlobalTorrentPanel({ records, search, onSearch, onGoToLb, onToast, onRe
         padding: '8px 12px', borderBottom: '1px solid var(--lbb-border)', flexShrink: 0,
       }}>
         <span style={{ fontSize: 12.5, color: 'var(--lbb-fg2)', fontWeight: 600 }}>
-          {filtered.length.toLocaleString()} torrent{filtered.length !== 1 ? 's' : ''}
+          {t('collection.globalTorrent.count', { count: filtered.length })}
         </span>
         <div style={{ flex: 1 }} />
         <Input
           icon="filter"
-          placeholder="Filter…"
+          placeholder={t('collection.globalTorrent.filter')}
           size="sm"
           value={search}
           onChange={e => onSearch(e.target.value)}
@@ -1593,11 +1602,11 @@ function GlobalTorrentPanel({ records, search, onSearch, onGoToLb, onToast, onRe
           <thead>
             <tr>
               <TH />
-              <TH>Created</TH>
+              <TH>{t('collection.globalTorrent.colCreated')}</TH>
               <TH>LB#</TH>
-              <TH>Show date · Location</TH>
+              <TH>{t('collection.globalForum.colShowDate')}</TH>
               <TH>Filename</TH>
-              <TH align="center">Status</TH>
+              <TH align="center">{t('collection.globalTorrent.colStatus')}</TH>
               <TH>Actions</TH>
             </tr>
           </thead>
@@ -1626,7 +1635,7 @@ function GlobalTorrentPanel({ records, search, onSearch, onGoToLb, onToast, onRe
                       }}
                     />
                     <Pill tone={r.added_to_qbt ? 'info' : 'mute'} soft>
-                      {r.added_to_qbt ? 'In qBt' : 'Local'}
+                      {r.added_to_qbt ? t('collection.detail.inQbt') : t('collection.detail.local')}
                     </Pill>
                   </div>
                 </TD>
@@ -1634,11 +1643,11 @@ function GlobalTorrentPanel({ records, search, onSearch, onGoToLb, onToast, onRe
                   <div style={{ display: 'flex', gap: 4 }}>
                     {!r.added_to_qbt && (
                       <Button variant="ghost" size="sm" onClick={() => handleAddQbt(r)}>
-                        Add qBt
+                        {t('collection.globalTorrent.addQbt')}
                       </Button>
                     )}
                     <Button variant="ghost" size="sm" onClick={() => onGoToLb(r.lb_number, r.lbStr)}>
-                      Go to LB
+                      {t('collection.globalTorrent.goToLb')}
                     </Button>
                   </div>
                 </TD>
@@ -1651,7 +1660,7 @@ function GlobalTorrentPanel({ records, search, onSearch, onGoToLb, onToast, onRe
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             height: '60%', fontSize: 13, color: 'var(--lbb-fg3)',
           }}>
-            {records.length === 0 ? 'No torrent records.' : 'No results match the filter.'}
+            {records.length === 0 ? t('collection.detail.noTorrents') : t('collection.globalForum.noResultsMatch')}
           </div>
         )}
       </div>
@@ -1662,6 +1671,7 @@ function GlobalTorrentPanel({ records, search, onSearch, onGoToLb, onToast, onRe
 // ── Main screen ───────────────────────────────────────────────────────────────
 
 export function ScreenCollection(): React.JSX.Element {
+  const { t } = useTranslation()
   const [rows, setRows]               = useState<CollectionRow[]>([])
   const [filter, setFilter]           = useState<FilterKey>('all')
   const [search, setSearch]           = useState('')
@@ -2206,11 +2216,11 @@ export function ScreenCollection(): React.JSX.Element {
       const resp = await fetch(`${BASE}/api/entry/${lb}/preview_forum`)
       const data = await resp.json()
       setForumModal({ lb, subject: data.subject ?? '', body: data.body ?? '' })
-    } catch { showToast('Could not load forum preview', 'bad') }
+    } catch { showToast(t('collection.toast.couldNotLoadForumPreview'), 'bad') }
   }, [showToast])
 
   const handleForumPosted = useCallback((topicUrl: string) => {
-    showToast(topicUrl ? `Posted: ${topicUrl}` : 'Posted to forum', 'ok')
+    showToast(topicUrl ? t('collection.toast.postedWithUrl', { url: topicUrl }) : t('collection.toast.postedToForum'), 'ok')
     refetch()
   }, [showToast, refetch])
 
@@ -2218,18 +2228,18 @@ export function ScreenCollection(): React.JSX.Element {
     try {
       if (currentlyOn) {
         await fetch(`${BASE}/api/wishlist/${lb}`, { method: 'DELETE' })
-        showToast(`Removed LB-${lb} from wishlist`, 'ok')
+        showToast(t('collection.toast.removedFromWishlist', { lb }), 'ok')
       } else {
         await fetch(`${BASE}/api/wishlist`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ lb_number: lb }),
         })
-        showToast(`Added LB-${lb} to wishlist`, 'ok')
+        showToast(t('collection.toast.addedToWishlist', { lb }), 'ok')
       }
       refetch()
     } catch {
-      showToast('Wishlist update failed', 'bad')
+      showToast(t('collection.toast.wishlistUpdateFailed'), 'bad')
     }
   }, [showToast, refetch])
 
@@ -2264,10 +2274,10 @@ export function ScreenCollection(): React.JSX.Element {
       const resp = await fetch(`${BASE}/api/entry/${row.lbNumberInt}/scrape`, { method: 'POST' })
       const data = await resp.json()
       showToast(
-        data.ok !== false ? `Queued scrape for ${row.lbNumber}` : (data.error || 'Scrape failed'),
+        data.ok !== false ? t('collection.toast.queuedScrape', { lb: row.lbNumber }) : (data.error || t('collection.toast.scrapeFailed')),
         data.ok !== false ? 'ok' : 'bad',
       )
-    } catch { showToast('Scrape request failed', 'bad') }
+    } catch { showToast(t('collection.toast.scrapeRequestFailed'), 'bad') }
   }, [showToast])
 
   const handleCtxFingerprint = useCallback(async (row: CollectionRow) => {
@@ -2280,10 +2290,10 @@ export function ScreenCollection(): React.JSX.Element {
       })
       const data = await resp.json()
       showToast(
-        data.ok ? `Fingerprinting ${row.lbNumber}…` : (data.error || 'Fingerprint failed'),
+        data.ok ? t('collection.toast.fingerprinting', { lb: row.lbNumber }) : (data.error || t('collection.toast.fingerprintFailed')),
         data.ok ? 'ok' : 'bad',
       )
-    } catch { showToast('Fingerprint request failed', 'bad') }
+    } catch { showToast(t('collection.toast.fingerprintRequestFailed'), 'bad') }
   }, [showToast])
 
   const handleCtxVlc = useCallback(async (row: CollectionRow) => {
@@ -2295,8 +2305,8 @@ export function ScreenCollection(): React.JSX.Element {
         body: JSON.stringify({ paths: [row.diskPath] }),
       })
       const data = await resp.json()
-      if (!data.ok) showToast(data.error || 'VLC not found on this system', 'bad')
-    } catch { showToast('VLC request failed', 'bad') }
+      if (!data.ok) showToast(data.error || t('collection.toast.vlcNotFound'), 'bad')
+    } catch { showToast(t('collection.toast.vlcRequestFailed'), 'bad') }
   }, [showToast])
 
   const handleCtxSpectrograms = useCallback(async (row: CollectionRow) => {
@@ -2312,9 +2322,9 @@ export function ScreenCollection(): React.JSX.Element {
         addPendingSpectro([row.diskPath])
         navigate('/spectrograms')
       } else {
-        showToast(data.error || 'Spectrogram failed', 'bad')
+        showToast(data.error || t('collection.toast.spectrogramFailed'), 'bad')
       }
-    } catch { showToast('Spectrogram request failed', 'bad') }
+    } catch { showToast(t('collection.toast.spectrogramRequestFailed'), 'bad') }
   }, [showToast, addPendingSpectro, navigate])
 
   // ── Missing LB (not-owned) handlers ───────────────────────────────────────
@@ -2601,9 +2611,9 @@ export function ScreenCollection(): React.JSX.Element {
               try {
                 const resp = await fetch(`${BASE}/api/forum_post/${postId}`, { method: 'DELETE' })
                 const data = await resp.json()
-                showToast(data.ok ? 'Record removed' : (data.error || 'Delete failed'), data.ok ? 'ok' : 'bad')
+                showToast(data.ok ? t('collection.toast.recordRemoved') : (data.error || t('collection.toast.deleteFailed')), data.ok ? 'ok' : 'bad')
                 if (data.ok) refetch()
-              } catch { showToast('Delete failed', 'bad') }
+              } catch { showToast(t('collection.toast.deleteFailed'), 'bad') }
             }}
             onGoToLb={(lb, lbStr) => {
               setFilter('all')
@@ -2875,14 +2885,14 @@ export function ScreenCollection(): React.JSX.Element {
                     onChange={toggleAll}
                   />
                 </TH>
-                <TH onClick={() => handleSort('lb')}        sorted={sortCol === 'lb'        ? sortDir : null}>LB#</TH>
-                <TH onClick={() => handleSort('status')}    sorted={sortCol === 'status'    ? sortDir : null}>Status</TH>
-                <TH onClick={() => handleSort('date')}      sorted={sortCol === 'date'      ? sortDir : null}>Date</TH>
-                <TH onClick={() => handleSort('location')}  sorted={sortCol === 'location'  ? sortDir : null}>Location</TH>
-                <TH onClick={() => handleSort('folder')}    sorted={sortCol === 'folder'    ? sortDir : null}>Folder</TH>
-                <TH onClick={() => handleSort('diskPath')}  sorted={sortCol === 'diskPath'  ? sortDir : null}>Disk path</TH>
+                <TH onClick={() => handleSort('lb')}        sorted={sortCol === 'lb'        ? sortDir : null}>{t('collection.table.lb')}</TH>
+                <TH onClick={() => handleSort('status')}    sorted={sortCol === 'status'    ? sortDir : null}>{t('collection.table.status')}</TH>
+                <TH onClick={() => handleSort('date')}      sorted={sortCol === 'date'      ? sortDir : null}>{t('collection.table.date')}</TH>
+                <TH onClick={() => handleSort('location')}  sorted={sortCol === 'location'  ? sortDir : null}>{t('collection.table.location')}</TH>
+                <TH onClick={() => handleSort('folder')}    sorted={sortCol === 'folder'    ? sortDir : null}>{t('collection.table.folder')}</TH>
+                <TH onClick={() => handleSort('diskPath')}  sorted={sortCol === 'diskPath'  ? sortDir : null}>{t('collection.detail.diskPath')}</TH>
                 <TH>Notes</TH>
-                <TH onClick={() => handleSort('confirmed')} sorted={sortCol === 'confirmed' ? sortDir : null}>Confirmed</TH>
+                <TH onClick={() => handleSort('confirmed')} sorted={sortCol === 'confirmed' ? sortDir : null}>{t('collection.detail.confirmed')}</TH>
                 <TH align="center" onClick={() => handleSort('fp')} sorted={sortCol === 'fp' ? sortDir : null}>FP</TH>
               </tr>
             </thead>

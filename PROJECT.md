@@ -9,8 +9,8 @@
 | Layer | Technology | Version |
 |-------|------------|---------|
 | GUI (primary) | Electron + React + TypeScript | electron-vite |
-| GUI (legacy) | PyQt6 | 6.7.1 — deprecated, no new features |
-| Web view (attachments) | PyQt6-WebEngine | 6.7.0 |
+| GUI (legacy) | PyQt6 | 6.7.1 — **frozen**, no new features |
+| Web view (attachments) | PyQt6-WebEngine | 6.7.0 — used by legacy GUI only |
 | REST backend | Flask + Flask-CORS | 3.0.3 / 4.0.1 |
 | WSGI server (optional) | Waitress | 3.0.0 |
 | Database | SQLite3 | (stdlib) |
@@ -27,7 +27,9 @@
 | JIT compilation | numba | 0.65.1 |
 | Language | Python | 3.11+ |
 
-**Architecture pattern:** The GUI and backend are separated by a local Flask REST API (port 5174). The GUI makes HTTP requests to `localhost:5174` for all data operations. Flask runs in a daemon thread started before the PyQt6 event loop.
+**Architecture pattern:** The GUI and backend are separated by a local Flask REST API (port 5174). The GUI makes HTTP requests to `localhost:5174` for all data operations. `gui_next` (Electron/React) is the active development target; Flask is launched as a child process from the Electron main process. The legacy `gui/` (PyQt6) starts Flask in a daemon thread and is frozen at its current state — no new features will be added there.
+
+**GUI strategy (as of 2026-05-29):** All new screens, features, and bug fixes target `gui_next`. The PyQt6 GUI (`gui/`) is locked in place as a fallback reference; it receives no further changes.
 
 ---
 
@@ -35,7 +37,7 @@
 
 ```
 losslessbob/
-├── main.py                   # Entrypoint: starts Flask thread, then PyQt6 app
+├── main.py                   # Legacy entrypoint: starts Flask thread, then PyQt6 app (frozen)
 ├── cli.py                    # Headless CLI: lookup / search / stats / import / serve
 ├── run_backend.py            # Headless entrypoint: Flask only, no GUI (phone/LAN use)
 ├── requirements.txt
@@ -63,7 +65,7 @@ losslessbob/
 │   ├── qbittorrent.py        # qBittorrent WebUI API v2 integration
 │   ├── forum_poster.py       # SMF 2.x WTRF forum topic posting
 │   └── geocoder.py           # Nominatim geocoder: geocode_one, place_manual, run_batch, get_progress
-├── gui/
+├── gui/                      # FROZEN — PyQt6 legacy GUI; no new features or bug fixes
 │   ├── main_window.py        # Main window, tab container, menu, status bar
 │   ├── lookup_tab.py         # Core feature: paste/load checksums, view results
 │   ├── verify_tab.py         # Verify local checksum files (.ffp/.md5/.st5) against audio
@@ -1181,7 +1183,7 @@ Fourteen preset themes (Light, Dark, Black, Dracula, Blue, Purple, Red, Nord, Gr
 
 ## GUI (Next): Electron/React Frontend (`gui_next/`) — PRIMARY GUI
 
-Second-generation GUI (primary, merged into main 2026-05-29) built with **Electron + React + TypeScript** (Vite + electron-vite). Communicates with the same Flask backend on port 5174 via `fetch()`. Preload bridge (`preload/index.ts`) exposes typed IPC handlers (`openPath`, `pickFile`, `pickFiles`, `pickDir`, `pickFolders`). All screens are registered in `App.tsx` and routed via a sidebar nav. The legacy `gui/` PyQt6 frontend remains on disk and is deprecated — do not add new features there.
+Second-generation GUI (primary, merged into main 2026-05-29) built with **Electron + React + TypeScript** (Vite + electron-vite). Communicates with the same Flask backend on port 5174 via `fetch()`. Preload bridge (`preload/index.ts`) exposes typed IPC handlers (`openPath`, `pickFile`, `pickFiles`, `pickDir`, `pickFolders`). All screens are registered in `App.tsx` and routed via a sidebar nav. **All future development happens here.** The legacy `gui/` PyQt6 frontend is frozen — it receives no new features or bug fixes.
 
 ### Screens (all 14 fully wired as of 2026-05-29)
 
@@ -1320,6 +1322,8 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 
 | Date | Change |
 |------|--------|
+| 2026-05-29 | TODO-106: ScreenFingerprint (gui_next Assets group) — date → collection_by_date → build LB fingerprints → identify mystery folder → ranked results. New backend routes: GET /api/fingerprint/collection_by_date, POST /api/fingerprint/identify_folder + status + stop. Icon + nav item + route registered. All strings i18n-wrapped. |
+| 2026-05-29 | Development direction locked: `gui_next` (Electron/React) is the sole active development target. `gui/` (PyQt6) is frozen — no new features or bug fixes. PROJECT.md, tech stack, architecture note, and file structure all updated to reflect this. |
 | 2026-05-28 | gui_next Sprint 6: ScreenThemes fully wired — typeface picker, font size buttons, custom token color editor, export/import JSON. New IPC: `dialog:saveFile`, `dialog:pickAndReadFile`. `tokens.ts` extended with `Font`, `FontSize`, `customTokens` fields; `--lbb-font`/`--lbb-font-size` CSS vars drive global typography. |
 | 2026-05-24 | DB-09: DatabaseWriteQueue in `backend/db_queue.py`; all write paths across db.py, scraper.py, site_crawler.py, app.py, importer.py, flat_file.py, geocoder.py routed through single writer thread; write_connection() removed; busy-timeout races eliminated. |
 | 2026-05-22 | Cross-tab folder sync: `add_folders_from_lookup()` added to `gui/lbdir_tab.py`; `main_window.py _on_tab_changed` wires lbdir pre-population on tab switch (mirrors existing Verify guard). (TODO-081) |

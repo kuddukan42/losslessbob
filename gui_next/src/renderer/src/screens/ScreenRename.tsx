@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { Icon } from '../components/Icon'
 import { Button, Pill } from '../components'
 import { TableShell, TH, TR, TD } from '../components'
@@ -108,6 +109,7 @@ function buildProposals(detail: LookupDetail[], folderList: string[]): RenameRow
 function StateChip({ state, count, active, onClick }: {
   state: RowState; count: number; active: boolean; onClick: () => void
 }): React.JSX.Element {
+  const { t } = useTranslation()
   const s = STATES[state]
   return (
     <button onClick={onClick} style={{
@@ -119,7 +121,7 @@ function StateChip({ state, count, active, onClick }: {
       fontFamily: 'inherit', fontSize: 11.5, fontWeight: active ? 600 : 500, cursor: 'pointer',
     }}>
       <span style={{ width: 7, height: 7, borderRadius: '50%', background: s.color }} />
-      {s.label}
+      {t(`rename.states.${state}` as const)}
       <span style={{ fontSize: 10, opacity: 0.65, marginLeft: 2 }}>{count}</span>
     </button>
   )
@@ -128,6 +130,7 @@ function StateChip({ state, count, active, onClick }: {
 // ── Screen ─────────────────────────────────────────────────────────────────────
 
 export function ScreenRename(): React.JSX.Element {
+  const { t } = useTranslation()
   const navigate = useNavigate()
   const { summary, detail, folderList } = useLookupStore()
 
@@ -160,7 +163,7 @@ export function ScreenRename(): React.JSX.Element {
 
   const handleApply = useCallback(async () => {
     const selected = rows.filter(r => r.sel && r.state === 'needs_rename' && r.prop !== '(no change)' && r.prop !== '(select LB# to populate)')
-    if (!selected.length) { showToast('No valid renames selected', 'info'); return }
+    if (!selected.length) { showToast(t('rename.toast.noValidRenames'), 'info'); return }
     setBusy(true)
     try {
       const renames = selected.map(r => ({
@@ -174,7 +177,7 @@ export function ScreenRename(): React.JSX.Element {
         body: JSON.stringify({ renames }),
       })
       const data = await resp.json() as { applied: number; errors: string[] }
-      showToast(`Applied ${data.applied} renames${data.errors.length > 0 ? ` · ${data.errors.length} errors` : ''}`, data.errors.length > 0 ? 'info' : 'ok')
+      showToast(t('rename.toast.applied', { count: data.applied, errors: data.errors.length > 0 ? ` · ${data.errors.length} errors` : '' }), data.errors.length > 0 ? 'info' : 'ok')
       setRows(prev => prev.map(r => {
         if (!r.sel) return r
         const found = renames.find(ren => ren.old_path === r.folder)
@@ -184,19 +187,19 @@ export function ScreenRename(): React.JSX.Element {
         return r
       }))
     } catch {
-      showToast('Apply failed', 'bad')
+      showToast(t('rename.toast.applyFailed'), 'bad')
     } finally {
       setBusy(false)
     }
-  }, [rows, showToast])
+  }, [rows, showToast, t])
 
   const handleCopyDiff = useCallback(() => {
     const lines = rows
       .filter(r => r.state === 'needs_rename' || r.state === 'renamed')
       .map(r => `${r.cur} → ${r.prop}`)
     navigator.clipboard.writeText(lines.join('\n'))
-      .then(() => showToast('Diff copied', 'ok'))
-      .catch(() => showToast('Copy failed', 'bad'))
+      .then(() => showToast(t('rename.toast.diffCopied'), 'ok'))
+      .catch(() => showToast(t('rename.toast.copyFailed'), 'bad'))
   }, [rows, showToast])
 
   const handleExport = useCallback(async () => {
@@ -225,25 +228,25 @@ export function ScreenRename(): React.JSX.Element {
         </div>
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <h1 style={{ margin: 0, fontSize: 18, fontWeight: 700, letterSpacing: -0.01 }}>Rename</h1>
-            <Pill tone="mute" soft>{rows.length} folders · auto-populated from Lookup</Pill>
+            <h1 style={{ margin: 0, fontSize: 18, fontWeight: 700, letterSpacing: -0.01 }}>{t('rename.title')}</h1>
+            <Pill tone="mute" soft>{t('rename.subtitle', { count: rows.length })}</Pill>
           </div>
           <div style={{ fontSize: 12, color: 'var(--lbb-fg3)', marginTop: 2 }}>
-            Append <span style={{ fontFamily: 'var(--lbb-mono)' }}>(LB-XXXXX)</span> to verified folders. Reversible from Recent activity for 30 days.
+            {t('rename.desc')}
           </div>
         </div>
         <div style={{ flex: 1 }} />
-        <Button variant="ghost" size="sm" icon="refresh" onClick={() => navigate('/lookup')}>Go to Lookup</Button>
+        <Button variant="ghost" size="sm" icon="refresh" onClick={() => navigate('/lookup')}>{t('rename.goToLookup')}</Button>
       </div>
 
       {rows.length === 0 ? (
         <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 14, color: 'var(--lbb-fg3)' }}>
           <Icon name="rename" size={40} style={{ opacity: 0.15 }} />
           <div style={{ textAlign: 'center' }}>
-            <div style={{ fontSize: 15, fontWeight: 600, color: 'var(--lbb-fg2)' }}>No lookup results yet</div>
-            <div style={{ fontSize: 12, marginTop: 4 }}>Run a lookup first — results populate here automatically</div>
+            <div style={{ fontSize: 15, fontWeight: 600, color: 'var(--lbb-fg2)' }}>{t('rename.noResults')}</div>
+            <div style={{ fontSize: 12, marginTop: 4 }}>{t('rename.noResultsDesc')}</div>
           </div>
-          <Button variant="primary" size="md" icon="lookup" onClick={() => navigate('/lookup')}>Go to Lookup</Button>
+          <Button variant="primary" size="md" icon="lookup" onClick={() => navigate('/lookup')}>{t('rename.goToLookup')}</Button>
         </div>
       ) : (
         <>
@@ -259,7 +262,7 @@ export function ScreenRename(): React.JSX.Element {
               color: !filter ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg2)',
               fontFamily: 'inherit', fontSize: 11.5, fontWeight: !filter ? 600 : 500, cursor: 'pointer',
             }}>
-              All <span style={{ fontSize: 10, opacity: 0.65, marginLeft: 4 }}>{rows.length}</span>
+              {t('rename.filterAll')} <span style={{ fontSize: 10, opacity: 0.65, marginLeft: 4 }}>{rows.length}</span>
             </button>
             {(Object.keys(STATES) as RowState[]).filter(k => k !== 'renamed' && counts[k]).map(k => (
               <StateChip key={k} state={k} count={counts[k] ?? 0}
@@ -274,13 +277,13 @@ export function ScreenRename(): React.JSX.Element {
             display: 'flex', alignItems: 'center', gap: 12,
           }}>
             <span style={{ fontSize: 12, color: selected > 0 ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg2)', fontWeight: 600 }}>
-              {selected} of {rows.length} selected
+              {t('rename.bulk.selectedOf', { selected, total: rows.length })}
             </span>
             <div style={{ flex: 1 }} />
-            <Button variant="ghost"     size="sm" onClick={handleClear}>Clear</Button>
-            <Button variant="secondary" size="sm" onClick={handleSelectAll}>Select all confident</Button>
+            <Button variant="ghost"     size="sm" onClick={handleClear}>{t('common.clear')}</Button>
+            <Button variant="secondary" size="sm" onClick={handleSelectAll}>{t('rename.bulk.selectAllConfident')}</Button>
             <Button variant="primary"   size="sm" icon="check" disabled={busy || selected === 0} onClick={handleApply}>
-              {busy ? 'Applying…' : `Apply ${selected} renames`}
+              {busy ? t('rename.bulk.applying') : t('rename.bulk.apply', { count: selected })}
             </Button>
           </div>
 
@@ -299,11 +302,11 @@ export function ScreenRename(): React.JSX.Element {
                   <tr>
                     <TH> </TH>
                     <TH><input type="checkbox" onChange={e => e.target.checked ? handleSelectAll() : handleClear()} /></TH>
-                    <TH>Current name</TH>
+                    <TH>{t('rename.table.currentName')}</TH>
                     <TH> </TH>
-                    <TH>Proposed name</TH>
-                    <TH>LB#</TH>
-                    <TH>State</TH>
+                    <TH>{t('rename.table.proposedName')}</TH>
+                    <TH>{t('rename.table.lb')}</TH>
+                    <TH>{t('rename.table.state')}</TH>
                     <TH> </TH>
                   </tr>
                 </thead>
@@ -340,9 +343,17 @@ export function ScreenRename(): React.JSX.Element {
                           </TD>
                           <TD>
                             <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                              <Pill tone={s.tone} soft dot={r.state !== 'has_lb' && r.state !== 'renamed'}>{s.label}</Pill>
+                              <Pill tone={s.tone} soft dot={r.state !== 'has_lb' && r.state !== 'renamed'}>{t(`rename.states.${r.state}` as const)}</Pill>
                             </div>
-                            <div style={{ fontSize: 10.5, color: 'var(--lbb-fg3)', marginTop: 3 }}>{r.hint}</div>
+                            <div style={{ fontSize: 10.5, color: 'var(--lbb-fg3)', marginTop: 3 }}>
+                              {r.state === 'multiple_ids'
+                                ? t('rename.hints.multiple_ids', { count: (r.hint.match(/\d+/) ?? [''])[0] })
+                                : r.state === 'has_lb'
+                                  ? t('rename.hints.has_lb')
+                                  : r.state === 'needs_rename'
+                                    ? t('rename.hints.needs_rename')
+                                    : r.hint}
+                            </div>
                           </TD>
                           <TD>
                             {r.state === 'multiple_ids' && (
@@ -369,13 +380,13 @@ export function ScreenRename(): React.JSX.Element {
                                 background: 'var(--lbb-info-bg)', borderBottom: '1px solid var(--lbb-border)',
                               }}>
                                 <div style={{ fontSize: 10.5, fontWeight: 700, color: 'var(--lbb-info-fg)', letterSpacing: 0.08, textTransform: 'uppercase', marginBottom: 8 }}>
-                                  Disambiguate · pick one
+                                  {t('rename.disambiguate.title')}
                                 </div>
                                 <div style={{ fontSize: 11.5, color: 'var(--lbb-fg2)' }}>
-                                  Multiple LB numbers matched. Select the correct one, then click "Pin selection".
+                                  {t('rename.disambiguate.desc')}
                                 </div>
                                 <div style={{ display: 'flex', gap: 6, marginTop: 10 }}>
-                                  <Button size="sm" variant="ghost" onClick={() => setExpandedRow(null)}>Skip for now</Button>
+                                  <Button size="sm" variant="ghost" onClick={() => setExpandedRow(null)}>{t('rename.disambiguate.skip')}</Button>
                                 </div>
                               </div>
                             </td>
@@ -396,12 +407,11 @@ export function ScreenRename(): React.JSX.Element {
               }}>
                 <Icon name="info" size={14} style={{ color: 'var(--lbb-info-fg)', marginTop: 1 }} />
                 <div style={{ flex: 1 }}>
-                  <strong style={{ color: 'var(--lbb-info-fg)' }}>Dry-run preview</strong> — nothing is renamed until you click <em>Apply selected</em>.
-                  Renames write to <span style={{ fontFamily: 'var(--lbb-mono)' }}>rename_history</span> and appear in <strong>Recent activity</strong>.
+                  <strong style={{ color: 'var(--lbb-info-fg)' }}>{t('rename.dryrun.title')}</strong> — {t('rename.dryrun.desc')}
                 </div>
                 <div style={{ display: 'flex', gap: 6 }}>
-                  <Button size="sm" variant="ghost"     icon="copy"     onClick={handleCopyDiff}>Copy diff…</Button>
-                  <Button size="sm" variant="secondary" icon="download" onClick={handleExport}>Export plan…</Button>
+                  <Button size="sm" variant="ghost"     icon="copy"     onClick={handleCopyDiff}>{t('rename.dryrun.copyDiff')}</Button>
+                  <Button size="sm" variant="secondary" icon="download" onClick={handleExport}>{t('rename.dryrun.exportPlan')}</Button>
                 </div>
               </div>
             </div>
