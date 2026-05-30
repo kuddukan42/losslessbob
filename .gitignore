@@ -44,3 +44,4 @@ Thumbs.db
 # Docker secrets — never commit real credential files
 secrets/*.txt
  
+.claude/settings.local.json

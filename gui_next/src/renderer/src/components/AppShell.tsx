@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { Icon } from './Icon'
 import { useSettingsStore } from '../store'
 
@@ -48,6 +49,7 @@ const NAV_GROUPS: NavGroup[] = [
       { id: 'attachments',  label: 'Attachments',  icon: 'attachments' },
       { id: 'spectrograms', label: 'Spectrograms', icon: 'spectro' },
       { id: 'map',          label: 'Map',          icon: 'map' },
+      { id: 'fingerprint',  label: 'Fingerprint',  icon: 'fingerprint' },
     ],
   },
   {
@@ -92,6 +94,7 @@ function Sidebar({
   onNav: (id: string) => void
   curatorMode: boolean
 }) {
+  const { t } = useTranslation()
   const setCuratorMode = useSettingsStore((s) => s.setCuratorMode)
   const [collectionCount, setCollectionCount] = useState<number | undefined>(undefined)
 
@@ -154,7 +157,7 @@ function Sidebar({
               lineHeight: 1.1,
             }}
           >
-            LosslessBob
+            {t('appShell.brand')}
           </div>
           <div
             style={{
@@ -164,7 +167,7 @@ function Sidebar({
               letterSpacing: 0.04,
             }}
           >
-            Checksum Lookup · v1.0.6
+            {t('appShell.version')}
           </div>
         </div>
       </div>
@@ -189,7 +192,7 @@ function Sidebar({
                     gap: 6,
                   }}
                 >
-                  <span>{group.label}</span>
+                  <span>{group.label ? t('appShell.nav.' + group.label.toLowerCase()) : null}</span>
                   {group.gatedGroup && (
                     <span
                       style={{
@@ -203,7 +206,7 @@ function Sidebar({
                         border: '1px solid var(--lbb-warn-bar)',
                       }}
                     >
-                      CURATOR
+                      {t('appShell.nav.curatorBadge')}
                     </span>
                   )}
                 </div>
@@ -250,7 +253,7 @@ function Sidebar({
                     }}
                   >
                     <Icon name={item.icon} size={15} />
-                    <span style={{ flex: 1 }}>{item.label}</span>
+                    <span style={{ flex: 1 }}>{t('appShell.nav.' + item.id)}</span>
                     {item.featured && !isActive && (
                       <span
                         style={{
@@ -300,7 +303,7 @@ function Sidebar({
               lineHeight: 1.4,
             }}
           >
-            Maintaining the master DB?
+            {t('appShell.curatorHint')}
             <div style={{ marginTop: 6 }}>
               <span
                 style={{
@@ -310,7 +313,7 @@ function Sidebar({
                 }}
                 onClick={() => setCuratorMode(true)}
               >
-                Enable Curator mode →
+                {t('appShell.curatorEnable')}
               </span>
             </div>
           </div>
@@ -385,6 +388,7 @@ function Topbar({
   actions?: React.ReactNode
   hasNotification?: boolean
 }) {
+  const { t } = useTranslation()
   return (
     <header
       style={{
@@ -456,7 +460,7 @@ function Topbar({
       >
         <Icon name="search" size={14} />
         <span style={{ flex: 1, textAlign: 'left' }}>
-          Find LB#, folder, location…
+          {t('appShell.search')}
         </span>
         <span className="kbd-pill">⌘K</span>
       </button>
@@ -501,6 +505,7 @@ function Topbar({
 // ── StatusBar ────────────────────────────────────────────────────────────────
 
 function StatusBar({ extra }: { extra?: React.ReactNode }) {
+  const { t } = useTranslation()
   const sep = (
     <span style={{ color: 'var(--lbb-border2)', margin: '0 2px' }}>·</span>
   )
@@ -551,13 +556,13 @@ function StatusBar({ extra }: { extra?: React.ReactNode }) {
         fontFamily: 'var(--lbb-mono)',
       }}
     >
-      {item('DB:', 'LB-16630', 'ok')}
+      {item(t('appShell.statusBar.db'), 'LB-16630', 'ok')}
       {sep}
-      {item('Checksums:', '704,624')}
+      {item(t('appShell.statusBar.checksums'), '704,624')}
       {sep}
-      {item('Last import:', '2026-05-21')}
+      {item(t('appShell.statusBar.lastImport'), '2026-05-21')}
       {sep}
-      {item('Bootlegs:', '1,380')}
+      {item(t('appShell.statusBar.bootlegs'), '1,380')}
       {extra && (
         <>
           {sep}
@@ -574,7 +579,7 @@ function StatusBar({ extra }: { extra?: React.ReactNode }) {
         }}
       >
         <Icon name="shield" size={11} />
-        Synced · idle
+        {t('appShell.statusBar.synced')}
       </span>
     </footer>
   )

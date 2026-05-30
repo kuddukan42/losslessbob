@@ -1,23 +1,3 @@
-TODO-106: Audio fingerprint matching — identify user recordings by performance date
-Priority: High
-Status: Open
-Added: 2026-05-27
-Description: Given a performance date, fingerprint all LosslessBob recordings for that date,
-  fingerprint the user's local audio folder, compare them, and report similarity scores to
-  determine whether the user's copy is the same recording. Clean up fingerprint data afterward.
-  Goals:
-    • Date picker: user selects a performance date; system fetches all LB recordings for that date.
-    • LB fingerprinting: generate audio fingerprints (e.g. Chromaprint/fpcalc) for each LB
-      recording's audio files (or a representative sample per track).
-    • User audio ingestion: scan a user-specified folder, generate fingerprints for each audio file.
-    • Comparison: score similarity between user files and LB recordings; group by recording/source.
-    • Results: ranked list showing which LB recording each user file most closely matches and the
-      confidence/similarity score — clearly indicating "likely same recording" vs "different source".
-    • Cleanup: delete all generated fingerprint data after the session to avoid stale cache.
-    • Runs in a QThread worker; progress shown in GUI.
-
----
-
 TODO-105: Checksum lookup — flag matches against user's own collection
 Priority: High
 Status: Open
@@ -126,24 +106,3 @@ Description: The exported HTML has six fixed columns (LB#, Status, Date, Locatio
 
 ---
 
-TODO-079: i18n — wrap table column headers with tr() across all tabs
-Priority: Medium
-Status: Open
-Added: 2026-05-21
-Description: Table column headers set via QTableWidget.setHorizontalHeaderLabels(),
-  QHeaderView, or QTreeWidget column titles are not wrapped in self.tr() calls,
-  so they are excluded from translation and remain in English in all locales.
-  Audit every tab (Collection, DB Editor, Map, Scraper, Setup, Rename, Attachments,
-  Fingerprint) and wrap all header strings with tr(), then regenerate .ts/.qm files.
-
----
-
-TODO-070: i18n integration testing — all 5 languages end-to-end
-Priority: Medium
-Status: Open
-Added: 2026-05-19
-Description: For each of the 5 languages: set ui_language in meta, restart app,
-  verify tab titles, button labels, column headers, placeholder text, and QMessageBox
-  dialogs are translated. Verify LB numbers and checksums are not garbled. Verify
-  English still works as default. Run py_compile on all gui files.
-  Prerequisite: TODO-069. See instructions/CC_I18N.md TODO-070 section for checklist.

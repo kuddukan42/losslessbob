@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Icon } from '../components/Icon'
 import { Button, Chip, Input, Pill } from '../components'
 import { TableShell, TH, TR, TD } from '../components'
@@ -64,18 +65,20 @@ function FolderRow({ row, active, onClick }: { row: VerifyFolder; active: boolea
 }
 
 function StateBadge({ s }: { s: FolderState }): React.JSX.Element {
-  if (s === 'pass')         return <Pill tone="ok"   soft>Pass</Pill>
-  if (s === 'mismatch')     return <Pill tone="bad"  soft dot>Mismatch</Pill>
-  if (s === 'fail')         return <Pill tone="bad"  soft dot>Fail · missing files</Pill>
-  if (s === 'incomplete')   return <Pill tone="warn" soft>Incomplete</Pill>
-  if (s === 'shntool')      return <Pill tone="warn" soft dot>shntool missing</Pill>
-  if (s === 'no_checksums') return <Pill tone="warn" soft>No checksum files</Pill>
+  const { t } = useTranslation()
+  if (s === 'pass')         return <Pill tone="ok"   soft>{t('verify.states.pass')}</Pill>
+  if (s === 'mismatch')     return <Pill tone="bad"  soft dot>{t('verify.states.mismatch')}</Pill>
+  if (s === 'fail')         return <Pill tone="bad"  soft dot>{t('verify.states.fail')}</Pill>
+  if (s === 'incomplete')   return <Pill tone="warn" soft>{t('verify.states.incomplete')}</Pill>
+  if (s === 'shntool')      return <Pill tone="warn" soft dot>{t('verify.states.shntool')}</Pill>
+  if (s === 'no_checksums') return <Pill tone="warn" soft>{t('verify.states.noChecksums')}</Pill>
   return <Pill tone="mute" soft>—</Pill>
 }
 
 // ── Screen ─────────────────────────────────────────────────────────────────────
 
 export function ScreenVerify(): React.JSX.Element {
+  const { t } = useTranslation()
   const { results, activeIdx, showAll, filter, setResults, setActiveIdx, setShowAll, setFilter } = useVerifyStore()
   const { folders, addFolders } = useFolderQueueStore()
   const [busy,  setBusy]  = useState(false)
@@ -114,63 +117,63 @@ export function ScreenVerify(): React.JSX.Element {
       const data = await post('/api/pipeline/scan-tree', { root }) as { folders: string[] }
       if (data.folders?.length) {
         addFolders(data.folders)
-        showToast(`Found ${data.folders.length} folders`, 'ok')
+        showToast(t('verify.toast.foundFolders', { count: data.folders.length }), 'ok')
       } else {
-        showToast('No audio folders found', 'info')
+        showToast(t('verify.toast.noAudioFolders'), 'info')
       }
     } catch {
-      showToast('Scan failed', 'bad')
+      showToast(t('verify.toast.scanFailed'), 'bad')
     }
-  }, [post, showToast, addFolders])
+  }, [post, showToast, addFolders, t])
 
   const handleVerify = useCallback(async () => {
-    if (!folders.length) { showToast('Add folders first', 'info'); return }
+    if (!folders.length) { showToast(t('verify.toast.addFoldersFirst'), 'info'); return }
     setBusy(true)
     try {
       const data = await post('/api/verify', { folders }) as { results: VerifyFolder[] }
       setResults(data.results ?? [])
       setActiveIdx(0)
     } catch {
-      showToast('Verify failed', 'bad')
+      showToast(t('verify.toast.verifyFailed'), 'bad')
     } finally {
       setBusy(false)
     }
-  }, [folders, post, showToast])
+  }, [folders, post, showToast, t])
 
   const handleGenerate = useCallback(async () => {
-    if (!folders.length) { showToast('Add folders first', 'info'); return }
+    if (!folders.length) { showToast(t('verify.toast.addFoldersFirst'), 'info'); return }
     setBusy(true)
     try {
       await post('/api/verify/generate', { folders })
-      showToast('Checksums generated — re-verifying…', 'info')
+      showToast(t('verify.toast.checksumsGenerated'), 'info')
       const data = await post('/api/verify', { folders }) as { results: VerifyFolder[] }
       setResults(data.results ?? [])
       setActiveIdx(0)
     } catch {
-      showToast('Generate failed', 'bad')
+      showToast(t('verify.toast.generateFailed'), 'bad')
     } finally {
       setBusy(false)
     }
-  }, [folders, post, showToast])
+  }, [folders, post, showToast, t])
 
   const handleRetrieve = useCallback(async () => {
-    if (!folders.length) { showToast('Add folders first', 'info'); return }
+    if (!folders.length) { showToast(t('verify.toast.addFoldersFirst'), 'info'); return }
     setBusy(true)
     try {
       const data = await post('/api/lbdir/retrieve', { folders }) as { results: { status: string }[] }
       const copied = data.results?.filter(r => r.status === 'copied' || r.status === 'scraped_and_copied').length ?? 0
-      showToast(copied > 0 ? `Retrieved ${copied} lbdir files — re-verifying…` : 'Nothing retrieved', copied > 0 ? 'ok' : 'info')
+      showToast(copied > 0 ? t('verify.toast.retrieved', { count: copied }) : t('verify.toast.nothingRetrieved'), copied > 0 ? 'ok' : 'info')
       if (copied > 0) {
         const vdata = await post('/api/verify', { folders }) as { results: VerifyFolder[] }
         setResults(vdata.results ?? [])
         setActiveIdx(0)
       }
     } catch {
-      showToast('Retrieve failed', 'bad')
+      showToast(t('verify.toast.retrieveFailed'), 'bad')
     } finally {
       setBusy(false)
     }
-  }, [folders, post, showToast])
+  }, [folders, post, showToast, t])
 
   const handleCopyReport = useCallback(() => {
     if (!results[activeIdx]) return
@@ -179,8 +182,8 @@ export function ScreenVerify(): React.JSX.Element {
       `${f.overall === 'pass' ? '✓' : '✗'} ${f.filename}\t[md5] ${f.md5_status}\t[ffp] ${f.ffp_status}`
     )
     navigator.clipboard.writeText(lines.join('\n'))
-      .then(() => showToast('Report copied', 'ok'))
-      .catch(() => showToast('Copy failed', 'bad'))
+      .then(() => showToast(t('verify.toast.reportCopied'), 'ok'))
+      .catch(() => showToast(t('verify.toast.copyFailed'), 'bad'))
   }, [results, activeIdx, showToast])
 
   const row = results[activeIdx] ?? null
@@ -198,18 +201,18 @@ export function ScreenVerify(): React.JSX.Element {
   }
 
   const stats = row ? [
-    { l: 'Total',    v: row.total,    color: 'var(--lbb-fg)' },
-    { l: 'Pass',     v: row.pass,     color: row.pass === row.total ? 'var(--lbb-ok-fg)' : 'var(--lbb-fg)' },
-    { l: 'Mismatch', v: row.mismatch, color: row.mismatch > 0 ? 'var(--lbb-bad-fg)'  : 'var(--lbb-fg3)' },
-    { l: 'Missing',  v: row.missing,  color: row.missing  > 0 ? 'var(--lbb-warn-fg)' : 'var(--lbb-fg3)' },
-    { l: 'Extra',    v: row.extra,    color: row.extra    > 0 ? 'var(--lbb-info-fg)' : 'var(--lbb-fg3)' },
+    { l: t('verify.stats.total'),    v: row.total,    color: 'var(--lbb-fg)' },
+    { l: t('verify.stats.pass'),     v: row.pass,     color: row.pass === row.total ? 'var(--lbb-ok-fg)' : 'var(--lbb-fg)' },
+    { l: t('verify.stats.mismatch'), v: row.mismatch, color: row.mismatch > 0 ? 'var(--lbb-bad-fg)'  : 'var(--lbb-fg3)' },
+    { l: t('verify.stats.missing'),  v: row.missing,  color: row.missing  > 0 ? 'var(--lbb-warn-fg)' : 'var(--lbb-fg3)' },
+    { l: t('verify.stats.extra'),    v: row.extra,    color: row.extra    > 0 ? 'var(--lbb-info-fg)' : 'var(--lbb-fg3)' },
     {
-      l: 'FFP',
+      l: t('verify.stats.ffp'),
       v: row.missing_types?.includes('ffp') ? '—' : '✓',
       color: row.missing_types?.includes('ffp') ? 'var(--lbb-warn-fg)' : 'var(--lbb-ok-fg)',
     },
     {
-      l: 'MD5',
+      l: t('verify.stats.md5'),
       v: row.missing_types?.includes('md5') ? '—' : '✓',
       color: row.missing_types?.includes('md5') ? 'var(--lbb-warn-fg)' : 'var(--lbb-ok-fg)',
     },
@@ -232,11 +235,11 @@ export function ScreenVerify(): React.JSX.Element {
         </div>
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <h1 style={{ margin: 0, fontSize: 18, fontWeight: 700, letterSpacing: -0.01 }}>Verify</h1>
-            <Pill tone="mute" soft>local checksums · _mychecksums</Pill>
+            <h1 style={{ margin: 0, fontSize: 18, fontWeight: 700, letterSpacing: -0.01 }}>{t('verify.title')}</h1>
+            <Pill tone="mute" soft>{t('verify.subtitle')}</Pill>
           </div>
           <div style={{ fontSize: 12, color: 'var(--lbb-fg3)', marginTop: 2 }}>
-            FFP · MD5 · ST5 against audio on disk. Use <strong>LBDIR</strong> for the official archive sidecar.
+            {t('verify.desc')}
           </div>
         </div>
         <div style={{ flex: 1 }} />
@@ -245,7 +248,7 @@ export function ScreenVerify(): React.JSX.Element {
           <ToolDot ok                              label="MD5" />
           <ToolDot ok={!!tools?.shntool_available} label="shntool" />
         </div>
-        <Button variant="ghost" size="sm" icon="folderPlus" onClick={handleAddFolders}>Add folders…</Button>
+        <Button variant="ghost" size="sm" icon="folderPlus" onClick={handleAddFolders}>{t('verify.addFolders')}</Button>
       </div>
 
       <div style={{ flex: 1, display: 'flex', minHeight: 0 }}>
@@ -259,18 +262,18 @@ export function ScreenVerify(): React.JSX.Element {
           <div style={{ padding: '12px 12px 8px', borderBottom: '1px solid var(--lbb-border)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 8 }}>
               <Icon name="folder" size={13} style={{ color: 'var(--lbb-fg3)' }} />
-              <span style={{ fontSize: 10.5, fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.1, textTransform: 'uppercase' }}>Folders</span>
+              <span style={{ fontSize: 10.5, fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.1, textTransform: 'uppercase' }}>{t('verify.rail.foldersLabel')}</span>
               <span style={{ marginLeft: 'auto', fontSize: 11, fontWeight: 600, color: 'var(--lbb-fg2)', fontVariantNumeric: 'tabular-nums' }}>{folders.length}</span>
             </div>
             <Input
-              icon="search" placeholder="Filter folders…" size="sm" style={{ width: '100%' }}
+              icon="search" placeholder={t('verify.rail.filterPlaceholder')} size="sm" style={{ width: '100%' }}
               value={filter} onChange={e => setFilter(e.target.value)}
             />
           </div>
           <div style={{ flex: 1, overflowY: 'auto', padding: '6px 6px' }}>
             {filteredFolders.length === 0 ? (
               <div style={{ padding: '24px 12px', textAlign: 'center', color: 'var(--lbb-fg3)', fontSize: 11 }}>
-                {folders.length === 0 ? 'No folders added' : 'No matches'}
+                {folders.length === 0 ? t('verify.rail.noFolders') : t('verify.rail.noMatches')}
               </div>
             ) : filteredFolders.map((f, i) => {
               const res = results.find(r => r.folder === f)
@@ -294,11 +297,11 @@ export function ScreenVerify(): React.JSX.Element {
           </div>
           <div style={{ padding: 12, borderTop: '1px solid var(--lbb-border)', display: 'flex', flexDirection: 'column', gap: 6 }}>
             <Button variant="primary"   size="sm" icon="verify"     block disabled={busy || !folders.length} onClick={handleVerify}>
-              {busy ? 'Running…' : 'Verify all folders'}
+              {busy ? t('verify.rail.running') : t('verify.rail.verifyAll')}
             </Button>
-            <Button variant="secondary" size="sm" icon="plus"       block disabled={busy || !folders.length} onClick={handleGenerate}>Generate checksums</Button>
-            <Button variant="ghost"     size="sm" icon="download"   block disabled={busy || !folders.length} onClick={handleRetrieve}>Retrieve from LB</Button>
-            <Button variant="ghost"     size="sm" icon="folderPlus" block onClick={handleAddRoot}>Add root folder…</Button>
+            <Button variant="secondary" size="sm" icon="plus"       block disabled={busy || !folders.length} onClick={handleGenerate}>{t('verify.rail.generate')}</Button>
+            <Button variant="ghost"     size="sm" icon="download"   block disabled={busy || !folders.length} onClick={handleRetrieve}>{t('verify.rail.retrieve')}</Button>
+            <Button variant="ghost"     size="sm" icon="folderPlus" block onClick={handleAddRoot}>{t('verify.rail.addRoot')}</Button>
           </div>
         </aside>
 
@@ -312,7 +315,7 @@ export function ScreenVerify(): React.JSX.Element {
             }}>
               <Icon name="verify" size={36} style={{ opacity: 0.15 }} />
               <span style={{ fontSize: 13 }}>
-                {folders.length === 0 ? 'Add folders, then click Verify all folders' : 'Click Verify all folders to run'}
+                {folders.length === 0 ? t('verify.emptyFolders') : t('verify.clickToRun')}
               </span>
             </div>
           ) : (
@@ -347,13 +350,13 @@ export function ScreenVerify(): React.JSX.Element {
 
               {/* Toolbar */}
               <div style={{ padding: '10px 24px', borderBottom: '1px solid var(--lbb-border)', display: 'flex', alignItems: 'center', gap: 10 }}>
-                <span style={{ fontSize: 10.5, fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase' }}>Files</span>
-                <Chip active={!showAll} onClick={() => setShowAll(false)} size="sm" count={row.files.filter(f => f.overall !== 'pass').length}>Problems</Chip>
-                <Chip active={showAll}  onClick={() => setShowAll(true)}  size="sm" count={row.files.length}>Show all</Chip>
+                <span style={{ fontSize: 10.5, fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase' }}>{t('verify.toolbar.files')}</span>
+                <Chip active={!showAll} onClick={() => setShowAll(false)} size="sm" count={row.files.filter(f => f.overall !== 'pass').length}>{t('verify.toolbar.problems')}</Chip>
+                <Chip active={showAll}  onClick={() => setShowAll(true)}  size="sm" count={row.files.length}>{t('verify.toolbar.showAll')}</Chip>
                 <div style={{ flex: 1 }} />
-                <Button variant="ghost"     size="sm" icon="reveal"   onClick={() => window.api.openPath(row.folder)}>Open in Finder</Button>
-                <Button variant="ghost"     size="sm" icon="copy"     onClick={handleCopyReport}>Copy report</Button>
-                <Button variant="secondary" size="sm" icon="plus"     disabled={busy} onClick={handleGenerate}>Generate missing FFP</Button>
+                <Button variant="ghost"     size="sm" icon="reveal"   onClick={() => window.api.openPath(row.folder)}>{t('verify.toolbar.openFinder')}</Button>
+                <Button variant="ghost"     size="sm" icon="copy"     onClick={handleCopyReport}>{t('verify.toolbar.copyReport')}</Button>
+                <Button variant="secondary" size="sm" icon="plus"     disabled={busy} onClick={handleGenerate}>{t('verify.toolbar.generateMissing')}</Button>
               </div>
 
               {/* Detail area */}
@@ -367,12 +370,12 @@ export function ScreenVerify(): React.JSX.Element {
                     }}>
                       <Icon name="info" size={18} style={{ color: 'var(--lbb-warn-fg)', flex: '0 0 18px', marginTop: 2 }} />
                       <div style={{ flex: 1 }}>
-                        <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--lbb-warn-fg)' }}>shntool is not installed</div>
+                        <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--lbb-warn-fg)' }}>{t('verify.shntoolWarning')}</div>
                         <div style={{ fontSize: 12, color: 'var(--lbb-fg2)', marginTop: 4 }}>
-                          This folder contains SHN files. FFP/MD5 can be verified without shntool, but per-disc length checks require it.
+                          {t('verify.shntoolDesc')}
                         </div>
                         <div style={{ display: 'flex', gap: 6, marginTop: 10 }}>
-                          <Button variant="ghost" size="sm" disabled={busy} onClick={handleVerify}>Verify without shntool</Button>
+                          <Button variant="ghost" size="sm" disabled={busy} onClick={handleVerify}>{t('verify.verifyWithoutShntool')}</Button>
                         </div>
                       </div>
                     </div>
@@ -389,10 +392,10 @@ export function ScreenVerify(): React.JSX.Element {
                       </colgroup>
                       <thead>
                         <tr>
-                          <TH> </TH><TH>Filename</TH>
-                          <TH align="right">MD5 expected</TH><TH align="right">MD5 actual</TH><TH align="center">MD5</TH>
-                          <TH align="right">FFP expected</TH><TH align="right">FFP actual</TH><TH align="center">FFP</TH>
-                          <TH align="center">ST5</TH><TH align="center">Disk</TH><TH>Overall</TH>
+                          <TH> </TH><TH>{t('verify.table.filename')}</TH>
+                          <TH align="right">{t('verify.table.md5Expected')}</TH><TH align="right">{t('verify.table.md5Actual')}</TH><TH align="center">{t('verify.table.md5')}</TH>
+                          <TH align="right">{t('verify.table.ffpExpected')}</TH><TH align="right">{t('verify.table.ffpActual')}</TH><TH align="center">{t('verify.table.ffp')}</TH>
+                          <TH align="center">{t('verify.table.st5')}</TH><TH align="center">{t('verify.table.disk')}</TH><TH>{t('verify.table.overall')}</TH>
                         </tr>
                       </thead>
                       <tbody>
@@ -425,7 +428,7 @@ export function ScreenVerify(): React.JSX.Element {
                               </TD>
                               <TD>
                                 <Pill tone={edge} soft>
-                                  {f.overall === 'pass' ? 'Pass' : f.overall === 'missing' ? 'Missing' : f.overall === 'extra' ? 'Extra' : 'Fail'}
+                                  {f.overall === 'pass' ? t('verify.fileStates.pass') : f.overall === 'missing' ? t('verify.fileStates.missing') : f.overall === 'extra' ? t('verify.fileStates.extra') : t('verify.fileStates.fail')}
                                 </Pill>
                               </TD>
                             </TR>
@@ -436,7 +439,7 @@ export function ScreenVerify(): React.JSX.Element {
 
                     {!showAll && (
                       <div style={{ marginTop: 10, fontSize: 11.5, color: 'var(--lbb-fg3)', fontStyle: 'italic', textAlign: 'center' }}>
-                        Showing {visible.length} problem files ·{' '}
+                        {t('verify.showingProblems', { count: visible.length })}{' '}
                         <button
                           onClick={() => setShowAll(true)}
                           style={{
@@ -445,7 +448,7 @@ export function ScreenVerify(): React.JSX.Element {
                             padding: 0, font: 'inherit',
                           }}
                         >
-                          show all {row.files.length}
+                          {t('verify.showAllCount', { count: row.files.length })}
                         </button>
                       </div>
                     )}

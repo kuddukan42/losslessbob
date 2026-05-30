@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useSettingsStore } from '../store'
 import { Button, Pill, Icon } from '../components'
 
@@ -152,6 +153,7 @@ function CuratorToggle({
   onPublish: () => void
   onInstall: () => void
 }) {
+  const { t } = useTranslation()
   const curatorMode = useSettingsStore((s) => s.curatorMode)
   const setCuratorMode = useSettingsStore((s) => s.setCuratorMode)
 
@@ -179,10 +181,10 @@ function CuratorToggle({
         </div>
         <div style={{ flex: 1 }}>
           <div style={{ fontSize: 13, fontWeight: 600, lineHeight: 1.2, color: 'var(--lbb-fg)' }}>
-            Curator Mode
+            {t('setup.masterData.curatorMode')}
           </div>
           <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', marginTop: 3, lineHeight: 1.4 }}>
-            Enable direct DB editing, scraping, and master data publishing.
+            {t('setup.masterData.curatorDesc')}
           </div>
         </div>
         <button
@@ -206,16 +208,16 @@ function CuratorToggle({
       </div>
 
       <MetaGrid rows={[
-        ['Master version', version],
-        ['Last published', publishedAt],
+        [t('setup.masterData.masterVersion'), version],
+        [t('setup.masterData.lastPublished'), publishedAt],
       ]} />
 
       <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
         <Button variant="secondary" icon="upload" disabled={!curatorMode} onClick={onPublish}>
-          Publish master update…
+          {t('setup.masterData.publishUpdate')}
         </Button>
         <Button variant="ghost" icon="download" onClick={onInstall}>
-          Install master update…
+          {t('setup.masterData.installUpdate')}
         </Button>
       </div>
     </div>
@@ -235,6 +237,7 @@ function IntegCard({
   onClear?: () => void
   editFields?: { key: string; label: string; type?: string; placeholder?: string }[]
 }) {
+  const { t } = useTranslation()
   const [editing, setEditing] = useState(false)
   const [confirming, setConfirming] = useState(false)
   const [values, setValues] = useState<Record<string, string>>({})
@@ -243,7 +246,7 @@ function IntegCard({
 
   const handleTest = async () => {
     setTestTone(null)
-    setTestMsg('Testing…')
+    setTestMsg(t('setup.integrations.testing'))
     await onTest()
   }
 
@@ -265,7 +268,7 @@ function IntegCard({
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <span style={{ fontSize: 12, fontWeight: 600, color: 'var(--lbb-fg)' }}>{title}</span>
         <Pill tone={tone} soft dot>
-          {tone === 'ok' ? 'connected' : tone === 'warn' ? 'degraded' : 'disabled'}
+          {tone === 'ok' ? t('setup.integrations.connected') : tone === 'warn' ? t('setup.integrations.degraded') : t('setup.integrations.disabled')}
         </Pill>
       </div>
 
@@ -305,24 +308,24 @@ function IntegCard({
       )}
 
       <div style={{ display: 'flex', gap: 6, marginTop: 2 }}>
-        <Button variant="ghost" size="sm" onClick={handleTest}>Test</Button>
+        <Button variant="ghost" size="sm" onClick={handleTest}>{t('setup.integrations.test')}</Button>
         {editFields && !editing && (
-          <Button variant="secondary" size="sm" onClick={() => setEditing(true)}>Edit…</Button>
+          <Button variant="secondary" size="sm" onClick={() => setEditing(true)}>{t('setup.integrations.edit')}</Button>
         )}
         {onClear && !editing && !confirming && (
-          <Button variant="ghost" size="sm" onClick={() => setConfirming(true)}>Clear creds</Button>
+          <Button variant="ghost" size="sm" onClick={() => setConfirming(true)}>{t('setup.integrations.clearCreds')}</Button>
         )}
         {confirming && (
           <>
-            <span style={{ fontSize: 11, color: 'var(--lbb-fg3)', alignSelf: 'center' }}>Sure?</span>
-            <Button variant="danger" size="sm" onClick={handleClearConfirmed}>Yes, clear</Button>
-            <Button variant="ghost" size="sm" onClick={() => setConfirming(false)}>Cancel</Button>
+            <span style={{ fontSize: 11, color: 'var(--lbb-fg3)', alignSelf: 'center' }}>{t('setup.integrations.sure')}</span>
+            <Button variant="danger" size="sm" onClick={handleClearConfirmed}>{t('setup.integrations.yesClear')}</Button>
+            <Button variant="ghost" size="sm" onClick={() => setConfirming(false)}>{t('common.cancel')}</Button>
           </>
         )}
         {editing && (
           <>
-            <Button variant="secondary" size="sm" onClick={handleSave}>Save</Button>
-            <Button variant="ghost" size="sm" onClick={() => setEditing(false)}>Cancel</Button>
+            <Button variant="secondary" size="sm" onClick={handleSave}>{t('common.save')}</Button>
+            <Button variant="ghost" size="sm" onClick={() => setEditing(false)}>{t('common.cancel')}</Button>
           </>
         )}
       </div>
@@ -377,6 +380,8 @@ function HelpersStrip({
 // ── ScreenSetup ───────────────────────────────────────────────────────────────
 
 export function ScreenSetup() {
+  const { t } = useTranslation()
+  const { language, setLanguage } = useSettingsStore()
   const [dbStats, setDbStats] = useState<DbStats | null>(null)
   const [helpers, setHelpers] = useState<HelperStatus | null>(null)
   const [settings, setSettings] = useState<AppSettings>({
@@ -449,13 +454,31 @@ export function ScreenSetup() {
     } catch { /* ignore */ }
   }, [])
 
+  const loadQbtStatus = useCallback(async () => {
+    try {
+      const r = await fetch(`${BASE}/api/qbt/test`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: '{}' })
+      const d = await r.json() as { ok?: boolean }
+      setQbtTone(d.ok ? 'ok' : 'warn')
+    } catch { /* ignore — service unavailable */ }
+  }, [])
+
+  const loadWtrfStatus = useCallback(async () => {
+    try {
+      const r = await fetch(`${BASE}/api/wtrf/test`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: '{}' })
+      const d = await r.json() as { ok?: boolean }
+      setWtrfTone(d.ok ? 'ok' : 'warn')
+    } catch { /* ignore — service unavailable */ }
+  }, [])
+
   useEffect(() => {
     loadSettings()
     loadDbStats()
     loadHelpers()
     loadMasterStatus()
     loadFlatReleases()
-  }, [loadSettings, loadDbStats, loadHelpers, loadMasterStatus, loadFlatReleases])
+    loadQbtStatus()
+    loadWtrfStatus()
+  }, [loadSettings, loadDbStats, loadHelpers, loadMasterStatus, loadFlatReleases, loadQbtStatus, loadWtrfStatus])
 
   // ── Settings save helper ─────────────────────────────────────────────────────
 
@@ -468,9 +491,9 @@ export function ScreenSetup() {
       })
       if (!r.ok) throw new Error((await r.json()).error ?? 'Save failed')
     } catch (e) {
-      showToast(`Save failed: ${(e as Error).message}`, 'bad')
+      showToast(t('setup.toast.saveFailed', { error: (e as Error).message }), 'bad')
     }
-  }, [showToast])
+  }, [showToast, t])
 
   // ── Handlers ─────────────────────────────────────────────────────────────────
 
@@ -479,19 +502,19 @@ export function ScreenSetup() {
     try {
       const r = await fetch(`${BASE}/api/flat_file/discover`)
       const data = await r.json() as { new_release?: boolean; zip_filename?: string; error?: string }
-      if (data.error) { showToast(`Error: ${data.error}`, 'bad'); return }
+      if (data.error) { showToast(t('setup.toast.error', { error: data.error }), 'bad'); return }
       if (data.new_release) {
-        showToast(`New release available: ${data.zip_filename ?? ''}`, 'ok')
+        showToast(t('setup.toast.newRelease', { filename: data.zip_filename ?? '' }), 'ok')
         loadFlatReleases()
       } else {
-        showToast('Already up to date.', 'info')
+        showToast(t('setup.toast.upToDate'), 'info')
       }
     } catch (e) {
-      showToast(`Check failed: ${(e as Error).message}`, 'bad')
+      showToast(t('setup.toast.checkFailed', { message: (e as Error).message }), 'bad')
     } finally {
       setBusy(null)
     }
-  }, [showToast, loadFlatReleases])
+  }, [showToast, loadFlatReleases, t])
 
   const handleImportDb = useCallback(async () => {
     const path = await window.api.pickFile({
@@ -500,7 +523,7 @@ export function ScreenSetup() {
     })
     if (!path) return
     setBusy('import')
-    showToast('Starting import…', 'info')
+    showToast(t('setup.toast.startingImport'), 'info')
     try {
       const r = await fetch(`${BASE}/api/db/import`, {
         method: 'POST',
@@ -509,7 +532,7 @@ export function ScreenSetup() {
       })
       if (!r.ok) {
         const err = (await r.json()).error ?? 'Import failed'
-        showToast(`Import error: ${err}`, 'bad')
+        showToast(t('setup.toast.importError', { error: err }), 'bad')
         setBusy(null)
         return
       }
@@ -521,9 +544,9 @@ export function ScreenSetup() {
           if (!st.running) {
             clearInterval(poll)
             setBusy(null)
-            if (st.error) { showToast(`Import failed: ${st.error}`, 'bad') }
+            if (st.error) { showToast(t('setup.toast.importFailed', { error: st.error }), 'bad') }
             else {
-              showToast(`Import complete — ${st.rows_added ?? 0} rows added`, 'ok')
+              showToast(t('setup.toast.importComplete', { count: st.rows_added ?? 0 }), 'ok')
               loadDbStats()
               loadFlatReleases()
             }
@@ -531,16 +554,16 @@ export function ScreenSetup() {
         } catch { clearInterval(poll); setBusy(null) }
       }, 800)
     } catch (e) {
-      showToast(`Import error: ${(e as Error).message}`, 'bad')
+      showToast(t('setup.toast.importError', { error: (e as Error).message }), 'bad')
       setBusy(null)
     }
-  }, [showToast, loadDbStats, loadFlatReleases])
+  }, [showToast, loadDbStats, loadFlatReleases, t])
 
   const handleOpenDataFolder = useCallback(async () => {
     const dir = settings.data_dir
-    if (!dir) { showToast('Data folder path not available', 'bad'); return }
+    if (!dir) { showToast(t('setup.toast.dataFolderUnavailable'), 'bad'); return }
     await window.api.openPath(dir)
-  }, [settings.data_dir, showToast])
+  }, [settings.data_dir, showToast, t])
 
   const handleResetDb = useCallback(() => {
     setConfirm({
@@ -551,16 +574,16 @@ export function ScreenSetup() {
         setBusy('reset')
         try {
           const r = await fetch(`${BASE}/api/db/reset`, { method: 'POST' })
-          if (r.ok) { showToast('Database reset.', 'ok'); loadDbStats() }
-          else showToast(`Reset failed: ${(await r.json()).error}`, 'bad')
+          if (r.ok) { showToast(t('setup.toast.dbReset'), 'ok'); loadDbStats() }
+          else showToast(t('setup.toast.resetFailed', { error: (await r.json()).error }), 'bad')
         } catch (e) {
-          showToast(`Reset failed: ${(e as Error).message}`, 'bad')
+          showToast(t('setup.toast.resetFailed', { error: (e as Error).message }), 'bad')
         } finally {
           setBusy(null)
         }
       },
     })
-  }, [showToast, loadDbStats])
+  }, [showToast, loadDbStats, t])
 
   const handleRecheckHelpers = useCallback(async () => {
     setHelpers(null)
@@ -576,7 +599,7 @@ export function ScreenSetup() {
       onConfirm: async () => {
         setConfirm(null)
         setBusy('publish')
-        showToast('Exporting master snapshot…', 'info')
+        showToast(t('setup.toast.exportingMaster'), 'info')
         try {
           // Step 1: export
           const er = await fetch(`${BASE}/api/master/export`, {
@@ -589,12 +612,12 @@ export function ScreenSetup() {
             path?: string; manifest_path?: string; manifest?: { master_version?: string }
           }
           if (!ed.ok || ed.error) {
-            showToast(`Export failed: ${ed.message ?? ed.error}`, 'bad')
+            showToast(t('setup.toast.exportFailed', { message: ed.message ?? ed.error }), 'bad')
             setBusy(null)
             return
           }
 
-          showToast('Uploading to GitHub…', 'info')
+          showToast(t('setup.toast.uploadingGithub'), 'info')
 
           // Step 2: GitHub release
           const gr = await fetch(`${BASE}/api/master/github_release`, {
@@ -609,19 +632,19 @@ export function ScreenSetup() {
           })
           const gd = await gr.json() as { ok?: boolean; tag?: string; url?: string; error?: string; message?: string }
           if (gd.ok) {
-            showToast(`Released ${gd.tag ?? ''}`, 'ok')
+            showToast(t('setup.toast.released', { tag: gd.tag ?? '' }), 'ok')
             loadMasterStatus()
           } else {
-            showToast(`GitHub upload failed: ${gd.message ?? gd.error}`, 'bad')
+            showToast(t('setup.toast.githubFailed', { message: gd.message ?? gd.error }), 'bad')
           }
         } catch (e) {
-          showToast(`Publish failed: ${(e as Error).message}`, 'bad')
+          showToast(t('setup.toast.publishFailed', { message: (e as Error).message }), 'bad')
         } finally {
           setBusy(null)
         }
       },
     })
-  }, [showToast, masterStatus, loadMasterStatus])
+  }, [showToast, masterStatus, loadMasterStatus, t])
 
   // ── Install master ──────────────────────────────────────────────────────────
 
@@ -645,20 +668,20 @@ export function ScreenSetup() {
           })
           const d = await r.json() as { ok?: boolean; error?: string; message?: string }
           if (d.ok) {
-            showToast('Master update installed.', 'ok')
+            showToast(t('setup.toast.masterInstalled'), 'ok')
             loadDbStats()
             loadMasterStatus()
           } else {
-            showToast(`Install failed: ${d.message ?? d.error}`, 'bad')
+            showToast(t('setup.toast.installFailed', { message: d.message ?? d.error }), 'bad')
           }
         } catch (e) {
-          showToast(`Install failed: ${(e as Error).message}`, 'bad')
+          showToast(t('setup.toast.installFailed', { message: (e as Error).message }), 'bad')
         } finally {
           setBusy(null)
         }
       },
     })
-  }, [showToast, loadDbStats, loadMasterStatus])
+  }, [showToast, loadDbStats, loadMasterStatus, t])
 
   // ── qBt ─────────────────────────────────────────────────────────────────────
 
@@ -666,13 +689,13 @@ export function ScreenSetup() {
     try {
       const r = await fetch(`${BASE}/api/qbt/test`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: '{}' })
       const d = await r.json() as { ok?: boolean; version?: string; error?: string }
-      if (d.ok) { showToast(`qBittorrent OK${d.version ? ` — v${d.version}` : ''}`, 'ok'); setQbtTone('ok') }
-      else { showToast(`qBittorrent: ${d.error ?? 'connection failed'}`, 'bad'); setQbtTone('warn') }
+      if (d.ok) { showToast(t('setup.toast.qbtOk', { version: d.version ?? '' }), 'ok'); setQbtTone('ok') }
+      else { showToast(t('setup.toast.qbtError', { error: d.error ?? 'connection failed' }), 'bad'); setQbtTone('warn') }
     } catch (e) {
-      showToast(`qBt test error: ${(e as Error).message}`, 'bad')
+      showToast(t('setup.toast.qbtTestError', { error: (e as Error).message }), 'bad')
       setQbtTone('mute')
     }
-  }, [showToast])
+  }, [showToast, t])
 
   const handleQbtSave = useCallback(async (values: Record<string, string>) => {
     try {
@@ -691,22 +714,22 @@ export function ScreenSetup() {
           body: JSON.stringify({ username: values.qbt_username, password: values.qbt_password, api_key: values.qbt_api_key }),
         })
       }
-      showToast('qBittorrent settings saved.', 'ok')
+      showToast(t('setup.toast.qbtSaved'), 'ok')
       loadSettings()
     } catch (e) {
-      showToast(`Save failed: ${(e as Error).message}`, 'bad')
+      showToast(t('setup.toast.saveFailed', { error: (e as Error).message }), 'bad')
     }
-  }, [showToast, loadSettings])
+  }, [showToast, loadSettings, t])
 
   const handleQbtClear = useCallback(async () => {
     try {
       await fetch(`${BASE}/api/credentials/qbt`, { method: 'DELETE' })
-      showToast('qBittorrent credentials cleared.', 'ok')
+      showToast(t('setup.toast.qbtCleared'), 'ok')
       setQbtTone('mute')
     } catch (e) {
-      showToast(`Clear failed: ${(e as Error).message}`, 'bad')
+      showToast(t('setup.toast.saveFailed', { error: (e as Error).message }), 'bad')
     }
-  }, [showToast])
+  }, [showToast, t])
 
   // ── WTRF ─────────────────────────────────────────────────────────────────────
 
@@ -714,13 +737,13 @@ export function ScreenSetup() {
     try {
       const r = await fetch(`${BASE}/api/wtrf/test`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: '{}' })
       const d = await r.json() as { ok?: boolean; username?: string; error?: string }
-      if (d.ok) { showToast(`WTRF OK — logged in as ${d.username ?? ''}`, 'ok'); setWtrfTone('ok') }
-      else { showToast(`WTRF: ${d.error ?? 'login failed'}`, 'bad'); setWtrfTone('warn') }
+      if (d.ok) { showToast(t('setup.toast.wtrfOk', { username: d.username ?? '' }), 'ok'); setWtrfTone('ok') }
+      else { showToast(t('setup.toast.wtrfError', { error: d.error ?? 'login failed' }), 'bad'); setWtrfTone('warn') }
     } catch (e) {
-      showToast(`WTRF test error: ${(e as Error).message}`, 'bad')
+      showToast(t('setup.toast.wtrfTestError', { message: (e as Error).message }), 'bad')
       setWtrfTone('mute')
     }
-  }, [showToast])
+  }, [showToast, t])
 
   const handleWtrfSave = useCallback(async (values: Record<string, string>) => {
     try {
@@ -730,23 +753,23 @@ export function ScreenSetup() {
           body: JSON.stringify({ username: values.wtrf_username, password: values.wtrf_password }),
         })
         const d = await r.json() as { ok?: boolean; error?: string }
-        if (!d.ok) { showToast(`Save failed: ${d.error}`, 'bad'); return }
+        if (!d.ok) { showToast(t('setup.toast.saveFailed', { error: d.error }), 'bad'); return }
       }
-      showToast('Forum credentials saved.', 'ok')
+      showToast(t('setup.toast.forumSaved'), 'ok')
     } catch (e) {
-      showToast(`Save failed: ${(e as Error).message}`, 'bad')
+      showToast(t('setup.toast.saveFailed', { error: (e as Error).message }), 'bad')
     }
-  }, [showToast])
+  }, [showToast, t])
 
   const handleWtrfClear = useCallback(async () => {
     try {
       await fetch(`${BASE}/api/credentials/wtrf`, { method: 'DELETE' })
-      showToast('Forum credentials cleared.', 'ok')
+      showToast(t('setup.toast.forumCleared'), 'ok')
       setWtrfTone('mute')
     } catch (e) {
-      showToast(`Clear failed: ${(e as Error).message}`, 'bad')
+      showToast(t('setup.toast.saveFailed', { error: (e as Error).message }), 'bad')
     }
-  }, [showToast])
+  }, [showToast, t])
 
   // ── Admin web UI ─────────────────────────────────────────────────────────────
 
@@ -755,16 +778,16 @@ export function ScreenSetup() {
       const r = await fetch(`${BASE}/api/admin/status`)
       if (r.ok) {
         setWebUiTone('ok')
-        showToast('Admin web UI is reachable.', 'ok')
+        showToast(t('setup.toast.adminReachable'), 'ok')
       } else {
         setWebUiTone('warn')
-        showToast(`Admin web UI error: HTTP ${r.status}`, 'bad')
+        showToast(t('setup.toast.adminHttpError', { status: r.status }), 'bad')
       }
     } catch (e) {
       setWebUiTone('warn')
-      showToast(`Admin web UI unreachable: ${(e as Error).message}`, 'bad')
+      showToast(t('setup.toast.adminUnreachable', { error: (e as Error).message }), 'bad')
     }
-  }, [showToast])
+  }, [showToast, t])
 
   const handleWebUiSave = useCallback(async (values: Record<string, string>) => {
     try {
@@ -773,14 +796,14 @@ export function ScreenSetup() {
         body: JSON.stringify({ web_password: values.web_password ?? '' }),
       })
       const msg = values.web_password
-        ? 'Password set — admin UI requires login.'
-        : 'Password cleared — admin UI is open access.'
+        ? t('setup.toast.passwordSet')
+        : t('setup.toast.passwordCleared')
       showToast(msg, 'ok')
       loadSettings()
     } catch (e) {
-      showToast(`Save failed: ${(e as Error).message}`, 'bad')
+      showToast(t('setup.toast.saveFailed', { error: (e as Error).message }), 'bad')
     }
-  }, [showToast, loadSettings])
+  }, [showToast, loadSettings, t])
 
   // ── Tracker settings ─────────────────────────────────────────────────────────
 
@@ -795,15 +818,15 @@ export function ScreenSetup() {
       const list = settings.tracker_list ?? 'best'
       const r = await fetch(`${BASE}/api/trackers?list_name=${encodeURIComponent(list)}&force_refresh=1`)
       const d = await r.json() as { count?: number; error?: string }
-      if (d.error) { showToast(`Tracker fetch error: ${d.error}`, 'bad'); return }
+      if (d.error) { showToast(t('setup.toast.trackerFetchError', { error: d.error }), 'bad'); return }
       setTrackerCount(d.count ?? 0)
-      showToast(`${d.count ?? 0} trackers loaded.`, d.count ? 'ok' : 'bad')
+      showToast(t('setup.toast.trackersLoaded', { count: d.count ?? 0 }), d.count ? 'ok' : 'bad')
     } catch (e) {
-      showToast(`Tracker fetch failed: ${(e as Error).message}`, 'bad')
+      showToast(t('setup.toast.trackerFetchFailed', { error: (e as Error).message }), 'bad')
     } finally {
       setTrackerBusy(false)
     }
-  }, [showToast, settings.tracker_list])
+  }, [showToast, settings.tracker_list, t])
 
   // ── Preferences ─────────────────────────────────────────────────────────────
 
@@ -820,12 +843,12 @@ export function ScreenSetup() {
   // ── Data purges ──────────────────────────────────────────────────────────────
 
   const PURGE_ITEMS: { label: string; endpoint: string | string[] }[] = [
-    { label: 'Lookup history',    endpoint: '/api/rename_history/purge' },
-    { label: 'Import log',        endpoint: '/api/flat_file/purge' },
-    { label: 'Scraper cache',     endpoint: '/api/scraper/purge' },
-    { label: 'Fingerprint cache', endpoint: '/api/fingerprint/purge' },
+    { label: t('setup.purges.lookupHistory'),    endpoint: '/api/rename_history/purge' },
+    { label: t('setup.purges.importLog'),        endpoint: '/api/flat_file/purge' },
+    { label: t('setup.purges.scraperCache'),     endpoint: '/api/scraper/purge' },
+    { label: t('setup.purges.fingerprintCache'), endpoint: '/api/fingerprint/purge' },
     {
-      label: 'All user data',
+      label: t('setup.purges.allUserData'),
       endpoint: [
         '/api/rename_history/purge', '/api/flat_file/purge',
         '/api/scraper/purge', '/api/fingerprint/purge',
@@ -855,22 +878,22 @@ export function ScreenSetup() {
               body: scope ? JSON.stringify({ scope }) : '{}',
             })
           }
-          showToast(`${item.label} purged.`, 'ok')
+          showToast(t('setup.toast.purged', { label: item.label }), 'ok')
           if (endpoints.some((e) => e.includes('flat_file'))) loadFlatReleases()
         } catch (e) {
-          showToast(`Purge failed: ${(e as Error).message}`, 'bad')
+          showToast(t('setup.toast.purgeFailed', { error: (e as Error).message }), 'bad')
         }
       },
     })
-  }, [showToast, loadFlatReleases])
+  }, [showToast, loadFlatReleases, t])
 
   // ── Flat file Reveal ─────────────────────────────────────────────────────────
 
   const handleReveal = useCallback(async (rel: FlatRelease) => {
     const dir = settings.data_dir
-    if (!dir) { showToast('Data folder unknown', 'bad'); return }
+    if (!dir) { showToast(t('setup.toast.dataFolderUnknown'), 'bad'); return }
     await window.api.openPath(`${dir}/downloads/${rel.zip_filename}`)
-  }, [settings.data_dir, showToast])
+  }, [settings.data_dir, showToast, t])
 
   // ── Data package export ──────────────────────────────────────────────────────
 
@@ -883,7 +906,7 @@ export function ScreenSetup() {
         manifest?: { file_count?: number; total_bytes?: number }
       }
       if (!d.ok || d.error) {
-        showToast(`Export failed: ${d.message ?? d.error}`, 'bad')
+        showToast(t('setup.toast.packageExportFailed', { error: d.message ?? d.error }), 'bad')
       } else {
         const count = d.manifest?.file_count ?? 0
         const size = d.manifest?.total_bytes ?? 0
@@ -891,15 +914,15 @@ export function ScreenSetup() {
         showToast(`User data exported — ${count} files, ${(size / 1024).toFixed(0)} KB`, 'ok')
       }
     } catch (e) {
-      showToast(`Export failed: ${(e as Error).message}`, 'bad')
+      showToast(t('setup.toast.packageExportFailed', { error: (e as Error).message }), 'bad')
     } finally {
       setPkgBusy(null)
     }
-  }, [showToast])
+  }, [showToast, t])
 
   const handleExportScrapeData = useCallback(async () => {
     setPkgBusy('scrape')
-    showToast('Building scraped site archive — this may take a moment…', 'info')
+    showToast(t('setup.toast.buildingArchive'), 'info')
     try {
       const r = await fetch(`${BASE}/api/package/scrape_data`, { method: 'POST' })
       const d = await r.json() as {
@@ -907,19 +930,19 @@ export function ScreenSetup() {
         manifest?: { file_count?: number; total_bytes?: number }
       }
       if (!d.ok || d.error) {
-        showToast(`Export failed: ${d.message ?? d.error}`, 'bad')
+        showToast(t('setup.toast.packageExportFailed', { error: d.message ?? d.error }), 'bad')
       } else {
         const count = d.manifest?.file_count ?? 0
         const size = d.manifest?.total_bytes ?? 0
         setPkgScrapeResult({ path: d.path ?? '', count, size })
-        showToast(`Scraped data exported — ${count} files, ${(size / 1024 / 1024).toFixed(1)} MB`, 'ok')
+        showToast(t('setup.toast.scrapedExported', { count, size: (size / 1024 / 1024).toFixed(1) }), 'ok')
       }
     } catch (e) {
-      showToast(`Export failed: ${(e as Error).message}`, 'bad')
+      showToast(t('setup.toast.packageExportFailed', { error: (e as Error).message }), 'bad')
     } finally {
       setPkgBusy(null)
     }
-  }, [showToast])
+  }, [showToast, t])
 
   const handleRestorePackage = useCallback(async () => {
     const zipPath = await window.api.pickFile({
@@ -942,14 +965,14 @@ export function ScreenSetup() {
         conflicts?: { name: string; dest: string }[]
       }
       if (!dd.ok || dd.error) {
-        showToast(`Restore failed: ${dd.message ?? dd.error}`, 'bad')
+        showToast(t('setup.toast.packageExportFailed', { error: dd.message ?? dd.error }), 'bad')
         setPkgBusy(null)
         return
       }
 
       const allFiles = [...(dd.restored ?? []), ...(dd.conflicts ?? [])]
       if (allFiles.length === 0) {
-        showToast('Zip contains no recognisable files to restore.', 'bad')
+        showToast(t('setup.toast.noRecognisableFiles'), 'bad')
         setPkgBusy(null)
         return
       }
@@ -977,23 +1000,23 @@ export function ScreenSetup() {
               restored?: unknown[]; conflicts?: unknown[]
             }
             if (!d.ok || d.error) {
-              showToast(`Restore failed: ${d.message ?? d.error}`, 'bad')
+              showToast(t('setup.toast.packageExportFailed', { error: d.message ?? d.error }), 'bad')
             } else {
               const n = (d.restored?.length ?? 0) + (d.conflicts?.length ?? 0)
-              showToast(`Restored ${n} file(s) from ${d.type} package.`, 'ok')
+              showToast(t('setup.toast.restored', { n, type: d.type }), 'ok')
             }
           } catch (e) {
-            showToast(`Restore failed: ${(e as Error).message}`, 'bad')
+            showToast(t('setup.toast.packageExportFailed', { error: (e as Error).message }), 'bad')
           } finally {
             setPkgBusy(null)
           }
         },
       })
     } catch (e) {
-      showToast(`Restore failed: ${(e as Error).message}`, 'bad')
+      showToast(t('setup.toast.packageExportFailed', { error: (e as Error).message }), 'bad')
       setPkgBusy(null)
     }
-  }, [showToast])
+  }, [showToast, t])
 
   // ── Render ───────────────────────────────────────────────────────────────────
 
@@ -1003,14 +1026,14 @@ export function ScreenSetup() {
   const displayPageSize = settings.search_page_size === '0' ? 'All' : (settings.search_page_size ?? '100')
 
   const qbtRows: [string, string][] = [
-    ['Host', `${settings.qbt_host ?? '—'}:${settings.qbt_port ?? '—'}`],
-    ['Category', settings.qbt_category ?? '—'],
-    ['Tags', settings.qbt_tags || '—'],
+    [t('setup.integrations.host'), `${settings.qbt_host ?? '—'}:${settings.qbt_port ?? '—'}`],
+    [t('setup.integrations.category'), settings.qbt_category ?? '—'],
+    [t('setup.integrations.tags'), settings.qbt_tags || '—'],
   ]
 
   const wtrfRows: [string, string][] = [
     ['Board ID', settings.wtrf_board_id ?? '—'],
-    ['Status', wtrfTone === 'ok' ? 'connected' : 'not tested'],
+    ['Status', wtrfTone === 'ok' ? t('setup.integrations.connected') : wtrfTone === 'warn' ? 'error' : 'not tested'],
   ]
 
   const webUiPasswordStatus = settings.web_password === 'set' ? 'set' : 'not configured'
@@ -1039,24 +1062,24 @@ export function ScreenSetup() {
 
       <div style={{ padding: '24px 32px 40px', maxWidth: 1500, margin: '0 auto' }}>
         <h1 style={{ fontSize: 22, fontWeight: 700, letterSpacing: -0.02, color: 'var(--lbb-fg)', margin: 0 }}>
-          Setup
+          {t('setup.title')}
         </h1>
         <p style={{ fontSize: 13, color: 'var(--lbb-fg3)', marginTop: 4, marginBottom: 0 }}>
-          Database management, integrations, and preferences.
+          {t('setup.subtitle')}
         </p>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginTop: 24 }}>
 
           {/* ── Database ── */}
           <SetupCard
-            title="Database"
-            badge={<Pill tone={dbStats ? 'ok' : 'mute'} soft dot>{dbStats ? 'connected' : 'loading'}</Pill>}
+            title={t('setup.database.title')}
+            badge={<Pill tone={dbStats ? 'ok' : 'mute'} soft dot>{dbStats ? t('setup.database.connected') : t('setup.database.loading')}</Pill>}
           >
             <MetaGrid rows={[
-              ['Active', 'LosslessBob'],
-              ['Checksums', fmtNum(dbStats?.total_checksums)],
-              ['LB entries', fmtNum(dbStats?.total_lb_numbers)],
-              ['Last import', dbStats?.last_import ?? '—'],
+              [t('setup.database.active'), 'LosslessBob'],
+              [t('setup.database.checksums'), fmtNum(dbStats?.total_checksums)],
+              [t('setup.database.lbEntries'), fmtNum(dbStats?.total_lb_numbers)],
+              [t('setup.database.lastImport'), dbStats?.last_import ?? '—'],
             ]} />
             <div style={{ display: 'flex', gap: 8, marginTop: 14, flexWrap: 'wrap' }}>
               <Button
@@ -1064,27 +1087,27 @@ export function ScreenSetup() {
                 disabled={busy === 'import'}
                 onClick={handleImportDb}
               >
-                {busy === 'import' ? 'Importing…' : 'Import DB file…'}
+                {busy === 'import' ? t('setup.database.importing') : t('setup.database.importDb')}
               </Button>
               <Button
                 variant="secondary" icon="refresh" size="sm"
                 disabled={busy === 'update'}
                 onClick={handleCheckUpdate}
               >
-                {busy === 'update' ? 'Checking…' : 'Check for update'}
+                {busy === 'update' ? t('setup.database.checking') : t('setup.database.checkUpdate')}
               </Button>
               <Button variant="ghost" icon="folder" size="sm" onClick={handleOpenDataFolder}>
-                Open data folder
+                {t('setup.database.openDataFolder')}
               </Button>
               <Button variant="danger" icon="trash" size="sm" disabled={busy === 'reset'} onClick={handleResetDb}>
-                Reset DB…
+                {t('setup.database.resetDb')}
               </Button>
             </div>
             <HelpersStrip helpers={helpers} onRecheck={handleRecheckHelpers} />
           </SetupCard>
 
           {/* ── Master Data ── */}
-          <SetupCard title="Master Data">
+          <SetupCard title={t('setup.masterData.title')}>
             <CuratorToggle
               masterStatus={masterStatus}
               onPublish={handlePublishMaster}
@@ -1093,45 +1116,45 @@ export function ScreenSetup() {
           </SetupCard>
 
           {/* ── Integrations ── */}
-          <SetupCard title="Integrations" style={{ gridColumn: 'span 2' }}>
+          <SetupCard title={t('setup.integrations.title')} style={{ gridColumn: 'span 2' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: 12 }}>
               <IntegCard
-                title="qBittorrent"
+                title={t('setup.integrations.qbt')}
                 tone={qbtTone}
                 rows={qbtRows}
                 onTest={handleQbtTest}
                 onSave={handleQbtSave}
                 onClear={handleQbtClear}
                 editFields={[
-                  { key: 'qbt_host', label: 'Host', placeholder: 'localhost' },
-                  { key: 'qbt_port', label: 'Port', placeholder: '8080' },
-                  { key: 'qbt_category', label: 'Category', placeholder: 'losslessbob' },
-                  { key: 'qbt_tags', label: 'Tags', placeholder: 'optional' },
-                  { key: 'qbt_username', label: 'Username', placeholder: 'optional' },
-                  { key: 'qbt_password', label: 'Password', type: 'password', placeholder: 'optional' },
-                  { key: 'qbt_api_key', label: 'API Key', type: 'password', placeholder: 'optional' },
+                  { key: 'qbt_host', label: t('setup.integrations.host'), placeholder: 'localhost' },
+                  { key: 'qbt_port', label: t('setup.integrations.port'), placeholder: '8080' },
+                  { key: 'qbt_category', label: t('setup.integrations.category'), placeholder: 'losslessbob' },
+                  { key: 'qbt_tags', label: t('setup.integrations.tags'), placeholder: 'optional' },
+                  { key: 'qbt_username', label: t('setup.integrations.username'), placeholder: 'optional' },
+                  { key: 'qbt_password', label: t('setup.integrations.password'), type: 'password', placeholder: 'optional' },
+                  { key: 'qbt_api_key', label: t('setup.integrations.apiKey'), type: 'password', placeholder: 'optional' },
                 ]}
               />
               <IntegCard
-                title="Watching the River Flow"
+                title={t('setup.integrations.wtrf')}
                 tone={wtrfTone}
                 rows={wtrfRows}
                 onTest={handleWtrfTest}
                 onSave={handleWtrfSave}
                 onClear={handleWtrfClear}
                 editFields={[
-                  { key: 'wtrf_username', label: 'Username' },
-                  { key: 'wtrf_password', label: 'Password', type: 'password' },
+                  { key: 'wtrf_username', label: t('setup.integrations.username') },
+                  { key: 'wtrf_password', label: t('setup.integrations.password'), type: 'password' },
                 ]}
               />
               <IntegCard
-                title="Admin web UI"
+                title={t('setup.integrations.adminUi')}
                 tone={webUiTone}
                 rows={webUiRows}
                 onTest={handleWebUiTest}
                 onSave={handleWebUiSave}
                 editFields={[
-                  { key: 'web_password', label: 'Password', type: 'password', placeholder: 'leave empty to disable auth' },
+                  { key: 'web_password', label: t('setup.integrations.password'), type: 'password', placeholder: 'leave empty to disable auth' },
                 ]}
               />
               {/* ── Torrent Settings ── */}
@@ -1139,9 +1162,9 @@ export function ScreenSetup() {
                 background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
                 borderRadius: 8, padding: 14, display: 'flex', flexDirection: 'column', gap: 10,
               }}>
-                <span style={{ fontSize: 12, fontWeight: 600, color: 'var(--lbb-fg)' }}>Torrent Settings</span>
+                <span style={{ fontSize: 12, fontWeight: 600, color: 'var(--lbb-fg)' }}>{t('setup.torrent.title')}</span>
                 <div style={{ display: 'grid', gridTemplateColumns: '90px 1fr', gap: '6px 8px', fontSize: 11.5, alignItems: 'center' }}>
-                  <span style={{ color: 'var(--lbb-fg3)' }}>Tracker list</span>
+                  <span style={{ color: 'var(--lbb-fg3)' }}>{t('setup.torrent.trackerList')}</span>
                   <select
                     value={currentTrackerList}
                     onChange={(e) => handleTrackerListChange(e.target.value)}
@@ -1158,7 +1181,7 @@ export function ScreenSetup() {
                   </select>
                   {trackerCount !== null && (
                     <>
-                      <span style={{ color: 'var(--lbb-fg3)' }}>Trackers</span>
+                      <span style={{ color: 'var(--lbb-fg3)' }}>{t('setup.torrent.trackers')}</span>
                       <span style={{ fontFamily: 'var(--lbb-mono)', color: trackerCount > 0 ? 'var(--lbb-ok-bar)' : 'var(--lbb-err-bar)' }}>
                         {trackerCount} loaded
                       </span>
@@ -1167,7 +1190,7 @@ export function ScreenSetup() {
                 </div>
                 <div style={{ display: 'flex', gap: 6, marginTop: 2 }}>
                   <Button variant="ghost" size="sm" onClick={handleRefreshTrackers} disabled={trackerBusy}>
-                    {trackerBusy ? 'Fetching…' : 'Refresh Trackers'}
+                    {trackerBusy ? t('setup.torrent.fetching') : t('setup.torrent.refresh')}
                   </Button>
                 </div>
               </div>
@@ -1175,12 +1198,12 @@ export function ScreenSetup() {
           </SetupCard>
 
           {/* ── Preferences ── */}
-          <SetupCard title="Preferences">
+          <SetupCard title={t('setup.preferences.title')}>
             <div style={{
               display: 'grid', gridTemplateColumns: '140px 1fr',
               gap: '8px 16px', fontSize: 12.5, alignItems: 'center',
             }}>
-              <span style={{ color: 'var(--lbb-fg3)' }}>Results per page</span>
+              <span style={{ color: 'var(--lbb-fg3)' }}>{t('setup.preferences.resultsPerPage')}</span>
               <div style={{ display: 'flex', gap: 4 }}>
                 {['50', '100', '250', 'All'].map((v) => {
                   const active = v === displayPageSize
@@ -1204,7 +1227,7 @@ export function ScreenSetup() {
                 })}
               </div>
 
-              <span style={{ color: 'var(--lbb-fg3)' }}>Auto-scrape on import</span>
+              <span style={{ color: 'var(--lbb-fg3)' }}>{t('setup.preferences.autoScrape')}</span>
               <label style={{ display: 'flex', alignItems: 'center', gap: 6, cursor: 'pointer' }}>
                 <input
                   type="checkbox"
@@ -1213,14 +1236,30 @@ export function ScreenSetup() {
                   style={{ accentColor: 'var(--lbb-accent-mid)' }}
                 />
                 <span style={{ fontSize: 11.5, color: 'var(--lbb-fg3)' }}>
-                  {autoScrape ? 'enabled' : 'disabled'}
+                  {autoScrape ? t('setup.preferences.enabled') : t('setup.preferences.disabled')}
                 </span>
               </label>
+
+              <span style={{ color: 'var(--lbb-fg3)' }}>{t('setup.preferences.language')}</span>
+              <select
+                value={language}
+                onChange={e => setLanguage(e.target.value)}
+                style={{
+                  height: 28, padding: '0 8px', fontSize: 12.5,
+                  background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border2)',
+                  borderRadius: 5, color: 'var(--lbb-fg)', cursor: 'pointer',
+                  fontFamily: 'inherit',
+                }}
+              >
+                {(['en','de','fr','es','it','nl'] as const).map(code => (
+                  <option key={code} value={code}>{t(`setup.languages.${code}`)}</option>
+                ))}
+              </select>
             </div>
           </SetupCard>
 
           {/* ── Data purges ── */}
-          <SetupCard title="Data purges">
+          <SetupCard title={t('setup.purges.title')}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               {PURGE_ITEMS.map((item) => (
                 <div
@@ -1231,19 +1270,19 @@ export function ScreenSetup() {
                   }}
                 >
                   <span>{item.label}</span>
-                  <Button variant="ghost" size="sm" onClick={() => handlePurge(item)}>Purge…</Button>
+                  <Button variant="ghost" size="sm" onClick={() => handlePurge(item)}>{t('setup.purges.purge')}</Button>
                 </div>
               ))}
             </div>
             <p style={{ fontSize: 11, color: 'var(--lbb-fg3)', marginTop: 14, marginBottom: 0, lineHeight: 1.4 }}>
-              User data only. The checksum archive is never affected.
+              {t('setup.purges.disclaimer')}
             </p>
           </SetupCard>
 
           {/* ── Data Packages ── */}
-          <SetupCard title="Data Packages">
+          <SetupCard title={t('setup.packages.title')}>
             <p style={{ fontSize: 12, color: 'var(--lbb-fg3)', margin: '0 0 14px', lineHeight: 1.5 }}>
-              Export your data as portable zip archives saved to <code style={{ fontFamily: 'var(--lbb-mono)', fontSize: 11 }}>data/exports/</code>.
+              {t('setup.packages.desc')}
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
               {/* User data */}
@@ -1252,12 +1291,10 @@ export function ScreenSetup() {
                 borderRadius: 8, padding: 12,
               }}>
                 <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--lbb-fg)', marginBottom: 4 }}>
-                  User data
+                  {t('setup.packages.userData')}
                 </div>
                 <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', marginBottom: 10, lineHeight: 1.4 }}>
-                  Bundles <code style={{ fontFamily: 'var(--lbb-mono)', fontSize: 11 }}>losslessbob.db</code>,{' '}
-                  <code style={{ fontFamily: 'var(--lbb-mono)', fontSize: 11 }}>settings.ini</code>, and{' '}
-                  <code style={{ fontFamily: 'var(--lbb-mono)', fontSize: 11 }}>gui_state.json</code>.
+                  {t('setup.packages.userDataDesc')}
                 </div>
                 {pkgUserResult && (
                   <div style={{ fontSize: 11, color: 'var(--lbb-fg3)', marginBottom: 8, fontFamily: 'var(--lbb-mono)' }}>
@@ -1276,7 +1313,7 @@ export function ScreenSetup() {
                   disabled={pkgBusy !== null}
                   onClick={handleExportUserData}
                 >
-                  {pkgBusy === 'user' ? 'Exporting…' : 'Export user data…'}
+                  {pkgBusy === 'user' ? t('setup.packages.exporting') : t('setup.packages.exportUserData')}
                 </Button>
               </div>
 
@@ -1286,12 +1323,10 @@ export function ScreenSetup() {
                 borderRadius: 8, padding: 12,
               }}>
                 <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--lbb-fg)', marginBottom: 4 }}>
-                  Scraped site data
+                  {t('setup.packages.scrapedData')}
                 </div>
                 <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', marginBottom: 10, lineHeight: 1.4 }}>
-                  Bundles all HTML pages and attachment files from{' '}
-                  <code style={{ fontFamily: 'var(--lbb-mono)', fontSize: 11 }}>data/site/</code>.
-                  Useful for seeding another install without re-crawling.
+                  {t('setup.packages.scrapedDataDesc')}
                 </div>
                 {pkgScrapeResult && (
                   <div style={{ fontSize: 11, color: 'var(--lbb-fg3)', marginBottom: 8, fontFamily: 'var(--lbb-mono)' }}>
@@ -1310,7 +1345,7 @@ export function ScreenSetup() {
                   disabled={pkgBusy !== null}
                   onClick={handleExportScrapeData}
                 >
-                  {pkgBusy === 'scrape' ? 'Exporting…' : 'Export scraped site data…'}
+                  {pkgBusy === 'scrape' ? t('setup.packages.exporting') : t('setup.packages.exportScraped')}
                 </Button>
               </div>
 
@@ -1320,30 +1355,29 @@ export function ScreenSetup() {
                 borderRadius: 8, padding: 12,
               }}>
                 <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--lbb-fg)', marginBottom: 4 }}>
-                  Restore from zip
+                  {t('setup.packages.restore')}
                 </div>
                 <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', marginBottom: 10, lineHeight: 1.4 }}>
-                  Import a zip archive exported by this app. Auto-detects package type (user data or
-                  scraped site). Shows a conflict preview before writing anything.
+                  {t('setup.packages.restoreDesc')}
                 </div>
                 <Button
                   variant="secondary" icon="upload" size="sm"
                   disabled={pkgBusy !== null}
                   onClick={handleRestorePackage}
                 >
-                  {pkgBusy === 'restore' ? 'Checking…' : 'Restore from zip…'}
+                  {pkgBusy === 'restore' ? t('setup.database.checking') : t('setup.packages.restoreBtn')}
                 </Button>
               </div>
             </div>
           </SetupCard>
 
           {/* ── Flat file history ── */}
-          <SetupCard title="Flat file history" style={{ gridColumn: 'span 2' }}>
+          <SetupCard title={t('setup.flatFile.title')} style={{ gridColumn: 'span 2' }}>
             <div style={{ overflowX: 'auto' }}>
               <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 12 }}>
                 <thead>
                   <tr style={{ borderBottom: '1px solid var(--lbb-border)' }}>
-                    {['Detected', 'Filename', 'Status', 'Applied', 'Added', 'Changed', ''].map((h) => (
+                    {[t('setup.flatFile.colDetected'), t('setup.flatFile.colFilename'), t('setup.flatFile.colStatus'), t('setup.flatFile.colApplied'), t('setup.flatFile.colAdded'), t('setup.flatFile.colChanged'), ''].map((h) => (
                       <th
                         key={h}
                         style={{
@@ -1361,7 +1395,7 @@ export function ScreenSetup() {
                   {flatReleases.length === 0 && (
                     <tr>
                       <td colSpan={7} style={{ padding: '16px 10px', color: 'var(--lbb-fg3)', fontSize: 12, textAlign: 'center' }}>
-                        No import history yet.
+                        {t('setup.flatFile.noHistory')}
                       </td>
                     </tr>
                   )}
@@ -1375,7 +1409,7 @@ export function ScreenSetup() {
                         <td style={{ padding: '8px 10px', fontFamily: 'var(--lbb-mono)' }}>{rel.zip_filename}</td>
                         <td style={{ padding: '8px 10px' }}>
                           <Pill tone={isActive ? 'ok' : 'mute'} soft dot>
-                            {isActive ? 'active' : rel.status}
+                            {isActive ? t('setup.flatFile.active') : rel.status}
                           </Pill>
                         </td>
                         <td style={{ padding: '8px 10px', fontFamily: 'var(--lbb-mono)', fontSize: 11.5 }}>
@@ -1388,7 +1422,7 @@ export function ScreenSetup() {
                           {rel.rows_changed != null ? `~${rel.rows_changed}` : '—'}
                         </td>
                         <td style={{ padding: '8px 10px' }}>
-                          <Button variant="ghost" size="sm" onClick={() => handleReveal(rel)}>Reveal</Button>
+                          <Button variant="ghost" size="sm" onClick={() => handleReveal(rel)}>{t('setup.flatFile.reveal')}</Button>
                         </td>
                       </tr>
                     )

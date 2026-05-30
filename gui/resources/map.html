@@ -586,7 +586,31 @@
     // Bootstrap
     // ---------------------------------------------------------------------------
 
+    // ---------------------------------------------------------------------------
+    // postMessage bridge — allows parent frame (Electron React UI) to push
+    // filter updates without navigating the iframe.
+    // Expected message shape: { type: 'applyFilters', filters: { status, owned,
+    //   year_min, year_max, q, cluster, heatmap } }
+    // ---------------------------------------------------------------------------
+    window.addEventListener('message', function(evt) {
+        if (!evt.data || evt.data.type !== 'applyFilters') return;
+        const f = evt.data.filters || {};
+        loadMarkers({
+            status:   f.status   || undefined,
+            owned:    f.owned    || undefined,
+            year_min: f.year_min || undefined,
+            year_max: f.year_max || undefined,
+            q:        f.q        || undefined,
+        });
+    });
+
     document.addEventListener('DOMContentLoaded', function() {
+        // Hide the built-in filter bar when embedded inside the Electron UI so
+        // the React panel on the left drives filtering instead.
+        if (new URLSearchParams(window.location.search).get('embedded') === '1') {
+            const bar = document.getElementById('filterBar');
+            if (bar) bar.style.display = 'none';
+        }
         _initBridge();
         loadMarkers({});
     });

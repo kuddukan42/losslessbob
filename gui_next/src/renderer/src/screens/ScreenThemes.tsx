@@ -1,4 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import {
   Button, Pill, Chip, Icon,
   TableShell, TH, TR, TD,
@@ -93,13 +94,26 @@ function CustomTokenEditor({
   customTokens: Record<string, string>
   onChange: (next: Record<string, string>) => void
 }) {
+  const { t } = useTranslation()
+
   function getLiveColor(key: string): string {
     return getComputedStyle(document.documentElement).getPropertyValue(key).trim()
   }
 
   return (
     <div style={{ marginTop: 12, display: 'flex', flexDirection: 'column', gap: 8 }}>
-      {CUSTOM_EDITABLE_TOKENS.map(({ key, label }) => {
+      {CUSTOM_EDITABLE_TOKENS.map(({ key }) => {
+        const tokenKey = key.replace('--lbb-', '').replace('-', '')
+        const labelMap: Record<string, string> = {
+          'bg': t('themes.tokens.background'),
+          'surface': t('themes.tokens.surface'),
+          'surface2': t('themes.tokens.surface2'),
+          'border': t('themes.tokens.border'),
+          'fg': t('themes.tokens.foreground'),
+          'fg2': t('themes.tokens.foreground2'),
+          'fg3': t('themes.tokens.foreground3'),
+        }
+        const label = labelMap[tokenKey] ?? tokenKey
         const override = customTokens[key]
         const displayVal = override ?? getLiveColor(key)
         return (
@@ -123,7 +137,7 @@ function CustomTokenEditor({
                 onClick={() => { const n = { ...customTokens }; delete n[key]; onChange(n) }}
                 style={{ fontSize: 11, color: 'var(--lbb-fg3)', background: 'none', border: 'none', cursor: 'pointer', padding: '0 4px' }}
               >
-                ↩ reset
+                {t('themes.tokens.reset')}
               </button>
             )}
           </div>
@@ -132,7 +146,7 @@ function CustomTokenEditor({
       {Object.keys(customTokens).length > 0 && (
         <div style={{ marginTop: 4 }}>
           <Button variant="ghost" size="sm" onClick={() => onChange({})}>
-            Reset all custom tokens
+            {t('themes.advanced.resetAll')}
           </Button>
         </div>
       )}
@@ -167,6 +181,7 @@ const PREVIEW_BTN_VARIANTS = ['primary', 'secondary', 'ghost', 'danger'] as cons
 // ── ScreenThemes ──────────────────────────────────────────────────────────────
 
 export function ScreenThemes() {
+  const { t } = useTranslation()
   const [theme, setTheme] = useState<ThemeOptions>(loadTheme)
   const [showCustomEditor, setShowCustomEditor] = useState(false)
   const [toast, setToast] = useState<{ msg: string; tone: ToastTone } | null>(null)
@@ -183,7 +198,7 @@ export function ScreenThemes() {
   async function handleExportTheme() {
     const json = JSON.stringify(theme, null, 2)
     const ok = await window.api.saveFile(json, 'losslessbob-theme.json')
-    if (ok) showToast('Theme exported', 'ok')
+    if (ok) showToast(t('themes.toast.exported'), 'ok')
   }
 
   async function handleImportTheme() {
@@ -195,7 +210,7 @@ export function ScreenThemes() {
     try {
       const parsed = JSON.parse(content) as Partial<ThemeOptions>
       if (typeof parsed !== 'object' || !parsed.mode || !parsed.accent) {
-        showToast('Not a valid theme file', 'bad')
+        showToast(t('themes.toast.notValid'), 'bad')
         return
       }
       const imported: ThemeOptions = {
@@ -209,22 +224,22 @@ export function ScreenThemes() {
       applyTheme(imported)
       saveTheme(imported)
       setTheme(imported)
-      showToast('Theme imported', 'ok')
+      showToast(t('themes.toast.imported'), 'ok')
     } catch {
-      showToast('Failed to parse theme file', 'bad')
+      showToast(t('themes.toast.parseFailed'), 'bad')
     }
   }
 
   const densityTiles: { k: Density; l: string; n: string; bars: number; barH: number; gap: number }[] = [
-    { k: 'comfortable', l: 'Comfortable', n: '~25 rows', bars: 4, barH: 11, gap: 8 },
-    { k: 'default',     l: 'Default',     n: '~32 rows', bars: 6, barH:  7, gap: 5 },
-    { k: 'compact',     l: 'Compact',     n: '~55 rows', bars: 8, barH:  5, gap: 2 },
+    { k: 'comfortable', l: t('themes.density.comfortable'), n: t('themes.density.comfortableRows'), bars: 4, barH: 11, gap: 8 },
+    { k: 'default',     l: t('themes.density.default'),     n: t('themes.density.defaultRows'),     bars: 6, barH:  7, gap: 5 },
+    { k: 'compact',     l: t('themes.density.compact'),     n: t('themes.density.compactRows'),     bars: 8, barH:  5, gap: 2 },
   ]
 
   const typefaceDefs: { k: Font; l: string; n: string; stack: string }[] = [
-    { k: 'inter',    l: 'Inter',         n: 'system default · clean grotesque', stack: 'Inter, sans-serif' },
-    { k: 'ibm-plex', l: 'IBM Plex Sans', n: 'characterful · designed for data', stack: '"IBM Plex Sans", sans-serif' },
-    { k: 'source',   l: 'Source Sans 3', n: 'warmer humanist · book-text feel',  stack: '"Source Sans 3", sans-serif' },
+    { k: 'inter',    l: 'Inter',         n: t('themes.typeface.interDesc'),   stack: 'Inter, sans-serif' },
+    { k: 'ibm-plex', l: 'IBM Plex Sans', n: t('themes.typeface.ibmPlexDesc'), stack: '"IBM Plex Sans", sans-serif' },
+    { k: 'source',   l: 'Source Sans 3', n: t('themes.typeface.sourceDesc'),  stack: '"Source Sans 3", sans-serif' },
   ]
 
   return (
@@ -232,21 +247,21 @@ export function ScreenThemes() {
       <div style={{ padding: '24px 32px 40px', maxWidth: 1500, margin: '0 auto' }}>
 
         <h1 style={{ margin: 0, fontSize: 22, fontWeight: 700, letterSpacing: -0.02, color: 'var(--lbb-fg)' }}>
-          Themes
+          {t('themes.title')}
         </h1>
         <p style={{ fontSize: 13, color: 'var(--lbb-fg3)', marginTop: 4, marginBottom: 0 }}>
-          Mode × accent × density. Status colors stay fixed for accessibility.
+          {t('themes.subtitle')}
         </p>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginTop: 24 }}>
 
           {/* ── Mode ── */}
-          <SetupCard title="Mode">
+          <SetupCard title={t('themes.mode.title')}>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10 }}>
               {[
-                { k: 'light',  l: 'Light',  bg: '#faf8f3', side: '#e2dfd2' },
-                { k: 'dark',   l: 'Dark',   bg: '#27251d', side: '#161510' },
-                { k: 'system', l: 'System', bg: '#faf8f3', side: '#161510' },
+                { k: 'light',  l: t('themes.mode.light'),  bg: '#faf8f3', side: '#e2dfd2' },
+                { k: 'dark',   l: t('themes.mode.dark'),   bg: '#27251d', side: '#161510' },
+                { k: 'system', l: t('themes.mode.system'), bg: '#faf8f3', side: '#161510' },
               ].map((m) => (
                 <button
                   key={m.k}
@@ -279,7 +294,7 @@ export function ScreenThemes() {
           </SetupCard>
 
           {/* ── Density ── */}
-          <SetupCard title="Density">
+          <SetupCard title={t('themes.density.title')}>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10 }}>
               {densityTiles.map((d) => (
                 <button
@@ -319,7 +334,7 @@ export function ScreenThemes() {
           </SetupCard>
 
           {/* ── Accent (span 2) ── */}
-          <SetupCard title="Accent" style={{ gridColumn: 'span 2' }}>
+          <SetupCard title={t('themes.accent.title')} style={{ gridColumn: 'span 2' }}>
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
               {ACCENT_SWATCHES.map((a) => (
                 <button
@@ -360,7 +375,7 @@ export function ScreenThemes() {
           </SetupCard>
 
           {/* ── Typeface ── */}
-          <SetupCard title="Typeface">
+          <SetupCard title={t('themes.typeface.title')}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               {typefaceDefs.map((f) => {
                 const active = (theme.font ?? 'inter') === f.k
@@ -393,7 +408,7 @@ export function ScreenThemes() {
               })}
             </div>
             <div style={{ marginTop: 12, display: 'flex', alignItems: 'center', gap: 6 }}>
-              <span style={{ fontSize: 12, color: 'var(--lbb-fg3)', marginRight: 4 }}>Size</span>
+              <span style={{ fontSize: 12, color: 'var(--lbb-fg3)', marginRight: 4 }}>{t('themes.typeface.size')}</span>
               {(FONT_SIZES as FontSize[]).map((sz) => (
                 <button
                   key={sz}
@@ -418,14 +433,14 @@ export function ScreenThemes() {
           </SetupCard>
 
           {/* ── Advanced ── */}
-          <SetupCard title="Advanced">
+          <SetupCard title={t('themes.advanced.title')}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
               <Button
                 variant="secondary"
                 size="sm"
                 onClick={() => setShowCustomEditor((v) => !v)}
               >
-                {showCustomEditor ? 'Hide custom tokens' : 'Custom color tokens…'}
+                {showCustomEditor ? t('themes.advanced.hideTokens') : t('themes.advanced.showTokens')}
               </Button>
               {showCustomEditor && (
                 <CustomTokenEditor
@@ -434,10 +449,10 @@ export function ScreenThemes() {
                 />
               )}
               <Button variant="ghost" size="sm" onClick={handleExportTheme}>
-                Export theme as JSON
+                {t('themes.advanced.exportTheme')}
               </Button>
               <Button variant="ghost" size="sm" onClick={handleImportTheme}>
-                Import theme…
+                {t('themes.advanced.importTheme')}
               </Button>
             </div>
             <div
@@ -451,16 +466,15 @@ export function ScreenThemes() {
                 lineHeight: 1.5,
               }}
             >
-              <strong>Status colors</strong> (green / amber / red) are pinned to the
-              row-status bar and pills so they never collide with your accent choice.
+              {t('themes.advanced.statusColorsNote')}
             </div>
           </SetupCard>
 
           {/* ── Live preview (span 2) ── */}
           <SetupCard
-            title="Live preview"
+            title={t('themes.preview.title')}
             style={{ gridColumn: 'span 2' }}
-            badge={<Pill tone="mute" soft>reflects every change above</Pill>}
+            badge={<Pill tone="mute" soft>{t('themes.preview.subtitle')}</Pill>}
           >
             <div style={{ border: '1px solid var(--lbb-border)', borderRadius: 8, overflow: 'hidden' }}>
               {/* Mock titlebar */}
@@ -477,9 +491,9 @@ export function ScreenThemes() {
                 }}
               >
                 <Icon name="collection" size={14} />
-                Library / My Collection
+                {t('themes.preview.collectionLabel')}
                 <div style={{ flex: 1 }} />
-                <span style={{ fontSize: 11, opacity: 0.85 }}>preview · 4 of 15,967</span>
+                <span style={{ fontSize: 11, opacity: 0.85 }}>{t('themes.preview.previewSub')}</span>
               </div>
 
               {/* Mock content area */}

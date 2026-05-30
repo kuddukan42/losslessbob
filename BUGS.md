@@ -1,4 +1,20 @@
 
+BUG-108: All attachment entries shown as stale regardless of download state
+Status: Fixed
+File(s): backend/app.py:626
+Reported: 2026-05-29
+Fixed: 2026-05-29
+Root cause: attachments_cached response omitted the "downloaded" field from each file object. Frontend stale check (f.downloaded === 1) always saw undefined, so every entry with files evaluated to "stale".
+Fix: Added "downloaded": r["downloaded"] to the file dict in attachments_cached.
+
+BUG-107: Attachment viewer always shows 404 for text/html/image files
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenAttachments.tsx:134,198
+Reported: 2026-05-29
+Fixed: 2026-05-29
+Root cause: Frontend passed activeFile.filename (raw LBF-prefixed name) to /api/attachment/<lb>/<name>, but the backend route queries entry_files WHERE clean_name=? — the LBF- prefix caused every lookup to miss.
+Fix: Changed both the text-content fetch and fileUrl to use activeFile.clean_name || activeFile.filename.
+
 BUG-106: Windows installer does not place app in Program Files
 Status: Open
 File(s): installer/losslessbob.iss (or equivalent Inno Setup script)

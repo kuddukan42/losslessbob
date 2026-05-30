@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { HashRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { applyTheme, loadTheme, saveTheme, getSystemMode } from './lib/tokens'
@@ -10,6 +10,7 @@ import {
   TableShell, TH, TR, TD, GroupRow,
 } from './components'
 import { useSettingsStore } from './store'
+import i18n from './i18n'
 import { ScreenHome } from './screens/ScreenHome'
 import { ScreenPipeline } from './screens/ScreenPipeline'
 import { ScreenSetup } from './screens/ScreenSetup'
@@ -24,6 +25,7 @@ import { ScreenRename } from './screens/ScreenRename'
 import { ScreenLookup } from './screens/ScreenLookup'
 import { ScreenLBDIR } from './screens/ScreenLBDIR'
 import { ScreenSpectrograms } from './screens/ScreenSpectrograms'
+import { ScreenFingerprint } from './screens/ScreenFingerprint'
 
 // ── React Query client — prefetch collection data immediately at module load ──
 
@@ -239,6 +241,9 @@ function KeepAlivePipeline() {
 // ── App ───────────────────────────────────────────────────────────────────────
 
 export default function App(): React.JSX.Element {
+  const language = useSettingsStore((s) => s.language)
+  useEffect(() => { i18n.changeLanguage(language) }, [language])
+
   return (
     <QueryClientProvider client={queryClient}>
     <HashRouter>
@@ -255,6 +260,7 @@ export default function App(): React.JSX.Element {
           <Route path="/bootlegs"    element={<ScreenBootlegs />} />
           <Route path="/attachments" element={<ScreenAttachments />} />
           <Route path="/spectrograms"element={<ScreenSpectrograms />} />
+          <Route path="/fingerprint" element={<ScreenFingerprint />} />
           <Route path="/map"         element={<ScreenMap />} />
           <Route path="/dbeditor"    element={<CuratorRoute element={<PlaceholderScreen name="DB Editor" />} />} />
           <Route path="/scraper"     element={<CuratorRoute element={<PlaceholderScreen name="Scraper" />} />} />

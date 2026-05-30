@@ -131,7 +131,7 @@ export function ScreenAttachments(): React.JSX.Element {
     if (!activeFile || !activeLb) return
     const kind = fileKind(activeFile.filename)
     if (kind !== 'text') { setFileContent(null); return }
-    fetch(`${BASE}/api/attachment/${activeLb}/${encodeURIComponent(activeFile.filename)}`)
+    fetch(`${BASE}/api/attachment/${activeLb}/${encodeURIComponent(activeFile.clean_name || activeFile.filename)}`)
       .then(r => r.text())
       .then(setFileContent)
       .catch(() => setFileContent(null))
@@ -195,7 +195,7 @@ export function ScreenAttachments(): React.JSX.Element {
   const kind     = activeFile ? fileKind(activeFile.filename) : null
   const ext      = activeFile ? (activeFile.filename.split('.').pop()?.toLowerCase() ?? '') : ''
   const fileUrl  = activeFile && activeLb
-    ? `${BASE}/api/attachment/${activeLb}/${encodeURIComponent(activeFile.filename)}`
+    ? `${BASE}/api/attachment/${activeLb}/${encodeURIComponent(activeFile.clean_name || activeFile.filename)}`
     : null
 
   return (
