@@ -15,6 +15,8 @@ from backend import db as database
 from backend import importer, scraper, scheduler
 from backend import checksum_utils
 from backend import bootleg_scraper
+from backend import bobdylan_scraper
+from backend import setlistfm as setlistfm_mod
 from backend import site_crawler
 
 from backend.paths import DATA_DIR, SITE_DIR, SITE_FILES_DIR, attachment_path, find_lbdir_attachment
@@ -4790,6 +4792,296 @@ def create_app() -> Flask:
         except Exception:
             _log.exception("package_restore failed")
             return jsonify({"error": "internal_error"}), 500
+
+    # ------------------------------------------------------------------
+    # bobdylan.com setlist routes
+    # ------------------------------------------------------------------
+
+    @app.route("/api/bobdylan/update", methods=["POST"])
+    def bobdylan_update():
+        """Start background discover + scrape of bobdylan.com setlists.
+
+        Body: {force: bool}  — if true, re-scrapes already-scraped shows.
+        Long-running; poll GET /api/bobdylan/status for progress.
+
+        Returns:
+            JSON: {ok: true, running: true}
+        """
+        try:
+            data = request.get_json() or {}
+            force = bool(data.get("force", False))
+            if bobdylan_scraper.is_running():
+                return jsonify({"ok": False, "error": "Already running"}), 409
+            threading.Thread(
+                target=bobdylan_scraper.run_update,
+                kwargs={"force": force},
+                daemon=True,
+            ).start()
+            return jsonify({"ok": True, "running": True})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/bobdylan/discover", methods=["POST"])
+    def bobdylan_discover():
+        """Start background sitemap URL discovery (no page scraping).
+
+        Returns:
+            JSON: {ok: true, running: true}
+        """
+        try:
+            if bobdylan_scraper.is_running():
+                return jsonify({"ok": False, "error": "Already running"}), 409
+            threading.Thread(
+                target=bobdylan_scraper.run_discover,
+                daemon=True,
+            ).start()
+            return jsonify({"ok": True, "running": True})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/bobdylan/scrape", methods=["POST"])
+    def bobdylan_scrape():
+        """Start background scrape of unscraped show pages.
+
+        Body: {force: bool}  — if true, re-scrapes all shows.
+
+        Returns:
+            JSON: {ok: true, running: true}
+        """
+        try:
+            data = request.get_json() or {}
+            force = bool(data.get("force", False))
+            if bobdylan_scraper.is_running():
+                return jsonify({"ok": False, "error": "Already running"}), 409
+            threading.Thread(
+                target=bobdylan_scraper.run_scrape,
+                kwargs={"force": force},
+                daemon=True,
+            ).start()
+            return jsonify({"ok": True, "running": True})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/bobdylan/stop", methods=["POST"])
+    def bobdylan_stop():
+        """Signal the active bobdylan scrape worker to stop."""
+        bobdylan_scraper.stop()
+        return jsonify({"ok": True})
+
+    @app.route("/api/bobdylan/status", methods=["GET"])
+    def bobdylan_status():
+        """Return the current bobdylan scraper progress state."""
+        return jsonify(bobdylan_scraper.get_status())
+
+    @app.route("/api/bobdylan/show", methods=["GET"])
+    def bobdylan_show():
+        """Return the bobdylan.com show record and setlist for a given date.
+
+        Query params:
+            date (str) — YYYY-MM-DD
+
+        Returns:
+            JSON: {bobdylan_url, venue, location, notes, scraped_at, tracks: [{name, song_url}]}
+            204 (no body) if no show is found for this date.
+        """
+        try:
+            date = request.args.get("date", "").strip()
+            if not date:
+                return jsonify({"error": "date param required"}), 400
+            conn = database.get_connection()
+            show = conn.execute(
+                """SELECT bobdylan_url, venue, location, notes, scraped_at
+                   FROM bobdylan_shows WHERE date_str=? LIMIT 1""",
+                (date,),
+            ).fetchone()
+            if not show:
+                return "", 204
+            tracks = conn.execute(
+                """SELECT track_name, song_url
+                   FROM bobdylan_setlist WHERE bobdylan_url=? ORDER BY position""",
+                (show["bobdylan_url"],),
+            ).fetchall()
+            return jsonify({
+                "bobdylan_url": show["bobdylan_url"],
+                "venue": show["venue"],
+                "location": show["location"],
+                "notes": show["notes"],
+                "scraped_at": show["scraped_at"],
+                "tracks": [{"name": r["track_name"], "song_url": r["song_url"]} for r in tracks],
+            })
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/bobdylan/stats", methods=["GET"])
+    def bobdylan_stats():
+        """Return counts for bobdylan_shows coverage.
+
+        Returns:
+            JSON: {total: int, scraped: int, pending: int}
+        """
+        try:
+            conn = database.get_connection()
+            total = conn.execute("SELECT COUNT(*) FROM bobdylan_shows").fetchone()[0]
+            scraped = conn.execute(
+                "SELECT COUNT(*) FROM bobdylan_shows WHERE scraped_at IS NOT NULL"
+            ).fetchone()[0]
+            return jsonify({"total": total, "scraped": scraped, "pending": total - scraped})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    # ------------------------------------------------------------------
+    # setlist.fm routes
+    # ------------------------------------------------------------------
+
+    @app.route("/api/setlistfm/key", methods=["POST"])
+    def setlistfm_set_key():
+        """Store the setlist.fm API key. Body: {api_key: str}.
+
+        Returns:
+            JSON: {ok: true}
+        """
+        try:
+            data = request.get_json() or {}
+            key = (data.get("api_key") or "").strip()
+            if not key:
+                return jsonify({"error": "api_key is required"}), 400
+            setlistfm_mod.save_api_key(key)
+            return jsonify({"ok": True})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/setlistfm/key", methods=["GET"])
+    def setlistfm_get_key():
+        """Return whether an API key is configured (never returns the key itself).
+
+        Returns:
+            JSON: {configured: bool}
+        """
+        return jsonify({"configured": bool(setlistfm_mod.get_api_key())})
+
+    @app.route("/api/setlistfm/update", methods=["POST"])
+    def setlistfm_update():
+        """Start background fetch of all setlist.fm setlists.
+
+        Body: {force: bool, api_key: str (optional override)}
+        Long-running; poll GET /api/setlistfm/status for progress.
+
+        Returns:
+            JSON: {ok: true, running: true}
+        """
+        try:
+            data = request.get_json() or {}
+            force = bool(data.get("force", False))
+            api_key = (data.get("api_key") or "").strip() or None
+            if setlistfm_mod.is_running():
+                return jsonify({"ok": False, "error": "Already running"}), 409
+            threading.Thread(
+                target=setlistfm_mod.run_update,
+                kwargs={"force": force, "api_key": api_key},
+                daemon=True,
+            ).start()
+            return jsonify({"ok": True, "running": True})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/setlistfm/stop", methods=["POST"])
+    def setlistfm_stop():
+        """Signal the active setlistfm worker to stop."""
+        setlistfm_mod.stop()
+        return jsonify({"ok": True})
+
+    @app.route("/api/setlistfm/status", methods=["GET"])
+    def setlistfm_status():
+        """Return the current setlistfm worker progress state."""
+        return jsonify(setlistfm_mod.get_status())
+
+    @app.route("/api/setlistfm/show", methods=["GET"])
+    def setlistfm_show():
+        """Return setlist.fm show + structured setlist for a given date.
+
+        Query params:
+            date (str) — YYYY-MM-DD
+
+        Returns:
+            JSON: {setlistfm_id, date_str, tour_name, venue_name, city, country,
+                   info, setlistfm_url,
+                   sets: [{set_index, set_name, is_encore,
+                           songs: [{position, set_position, track_name, info,
+                                    is_cover, cover_artist, is_tape}]}]}
+            204 if no show found for this date.
+        """
+        try:
+            date = request.args.get("date", "").strip()
+            if not date:
+                return jsonify({"error": "date param required"}), 400
+            conn = database.get_connection()
+            show = conn.execute(
+                """SELECT setlistfm_id, date_str, tour_name, venue_name,
+                          city, country, info, setlistfm_url
+                   FROM setlistfm_shows WHERE date_str=? LIMIT 1""",
+                (date,),
+            ).fetchone()
+            if not show:
+                return "", 204
+            songs = conn.execute(
+                """SELECT set_index, set_name, is_encore, position, set_position,
+                          track_name, info, is_cover, cover_artist, is_tape
+                   FROM setlistfm_setlist
+                   WHERE setlistfm_id=?
+                   ORDER BY position""",
+                (show["setlistfm_id"],),
+            ).fetchall()
+            # Group songs by set_index
+            sets: dict[int, dict] = {}
+            for s in songs:
+                idx = s["set_index"]
+                if idx not in sets:
+                    sets[idx] = {
+                        "set_index": idx,
+                        "set_name": s["set_name"],
+                        "is_encore": s["is_encore"],
+                        "songs": [],
+                    }
+                sets[idx]["songs"].append({
+                    "position": s["position"],
+                    "set_position": s["set_position"],
+                    "track_name": s["track_name"],
+                    "info": s["info"],
+                    "is_cover": s["is_cover"],
+                    "cover_artist": s["cover_artist"],
+                    "is_tape": s["is_tape"],
+                })
+            return jsonify({
+                "setlistfm_id": show["setlistfm_id"],
+                "date_str": show["date_str"],
+                "tour_name": show["tour_name"],
+                "venue_name": show["venue_name"],
+                "city": show["city"],
+                "country": show["country"],
+                "info": show["info"],
+                "setlistfm_url": show["setlistfm_url"],
+                "sets": list(sets.values()),
+            })
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/setlistfm/stats", methods=["GET"])
+    def setlistfm_stats():
+        """Return setlistfm coverage counts.
+
+        Returns:
+            JSON: {shows: int, tracks: int, tours: int}
+        """
+        try:
+            conn = database.get_connection()
+            shows  = conn.execute("SELECT COUNT(*) FROM setlistfm_shows").fetchone()[0]
+            tracks = conn.execute("SELECT COUNT(*) FROM setlistfm_setlist").fetchone()[0]
+            tours  = conn.execute(
+                "SELECT COUNT(DISTINCT tour_name) FROM setlistfm_shows WHERE tour_name != ''"
+            ).fetchone()[0]
+            return jsonify({"shows": shows, "tracks": tracks, "tours": tours})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
 
     _slog.t("Flask: create_app done")
     return app

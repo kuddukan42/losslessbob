@@ -29,7 +29,7 @@ _bloom_lock = threading.Lock()
 # USER tables stay local to each install and never appear in an export.
 # See instructions/CC_LB_INTEGRITY.md §Data Ownership Model.
 
-MASTER_SCHEMA_VERSION = 3  # bumped: dylan_performances promoted to master; lb_problems added
+MASTER_SCHEMA_VERSION = 5  # bumped: setlistfm_shows + setlistfm_setlist added
 
 MASTER_TABLES = (
     "lb_missing",
@@ -47,6 +47,10 @@ MASTER_TABLES = (
     "location_geocoded",
     "dylan_performances",
     "lb_problems",
+    "bobdylan_shows",
+    "bobdylan_setlist",
+    "setlistfm_shows",
+    "setlistfm_setlist",
 )
 # Note: `entries_fts` is a virtual FTS5 table whose content is mirrored from
 # `entries` via triggers. It is NOT copied directly during export/import; the
@@ -90,6 +94,7 @@ USER_META_KEYS = frozenset({
     "tracker_list",
     "wtrf_board_id", "wtrf_username", "wtrf_password",
     "is_curator",
+    "setlistfm_api_key",
 })
 
 SCHEMA_SQL = """
@@ -454,6 +459,62 @@ CREATE TABLE IF NOT EXISTS lb_problems (
     added      TEXT NOT NULL DEFAULT (date('now'))
 );
 CREATE INDEX IF NOT EXISTS idx_lb_problems_lb ON lb_problems(lb_number);
+
+-- bobdylan.com official setlist data
+-- bobdylan_shows: one row per concert page on bobdylan.com/date/
+--   date_str is YYYY-MM-DD; join to entries/dylan_performances on date_str
+CREATE TABLE IF NOT EXISTS bobdylan_shows (
+    bobdylan_url  TEXT PRIMARY KEY,
+    date_str      TEXT NOT NULL DEFAULT '',
+    venue         TEXT NOT NULL DEFAULT '',
+    location      TEXT NOT NULL DEFAULT '',
+    notes         TEXT NOT NULL DEFAULT '',
+    scraped_at    TEXT
+);
+CREATE INDEX IF NOT EXISTS idx_bobdylan_shows_date ON bobdylan_shows(date_str);
+
+-- bobdylan_setlist: ordered track list for each show
+CREATE TABLE IF NOT EXISTS bobdylan_setlist (
+    bobdylan_url  TEXT NOT NULL REFERENCES bobdylan_shows(bobdylan_url) ON DELETE CASCADE,
+    position      INTEGER NOT NULL,
+    track_name    TEXT NOT NULL DEFAULT '',
+    song_url      TEXT NOT NULL DEFAULT '',
+    PRIMARY KEY (bobdylan_url, position)
+);
+CREATE INDEX IF NOT EXISTS idx_bobdylan_setlist_url ON bobdylan_setlist(bobdylan_url);
+
+-- setlist.fm API data
+-- setlistfm_shows: one row per setlist, joined to entries/bobdylan_shows via date_str
+CREATE TABLE IF NOT EXISTS setlistfm_shows (
+    setlistfm_id   TEXT PRIMARY KEY,
+    date_str       TEXT NOT NULL DEFAULT '',
+    tour_name      TEXT NOT NULL DEFAULT '',
+    venue_name     TEXT NOT NULL DEFAULT '',
+    city           TEXT NOT NULL DEFAULT '',
+    country        TEXT NOT NULL DEFAULT '',
+    info           TEXT NOT NULL DEFAULT '',
+    setlistfm_url  TEXT NOT NULL DEFAULT ''
+);
+CREATE INDEX IF NOT EXISTS idx_setlistfm_shows_date ON setlistfm_shows(date_str);
+CREATE INDEX IF NOT EXISTS idx_setlistfm_shows_tour ON setlistfm_shows(tour_name);
+
+-- setlistfm_setlist: one row per song; (set_index, position) reconstructs full set structure
+CREATE TABLE IF NOT EXISTS setlistfm_setlist (
+    setlistfm_id  TEXT NOT NULL REFERENCES setlistfm_shows(setlistfm_id) ON DELETE CASCADE,
+    set_index     INTEGER NOT NULL,
+    set_name      TEXT NOT NULL DEFAULT '',
+    is_encore     INTEGER NOT NULL DEFAULT 0,
+    position      INTEGER NOT NULL,
+    set_position  INTEGER NOT NULL,
+    track_name    TEXT NOT NULL DEFAULT '',
+    info          TEXT NOT NULL DEFAULT '',
+    is_cover      INTEGER NOT NULL DEFAULT 0,
+    cover_artist  TEXT NOT NULL DEFAULT '',
+    is_tape       INTEGER NOT NULL DEFAULT 0,
+    PRIMARY KEY (setlistfm_id, position)
+);
+CREATE INDEX IF NOT EXISTS idx_setlistfm_setlist_id   ON setlistfm_setlist(setlistfm_id);
+CREATE INDEX IF NOT EXISTS idx_setlistfm_setlist_track ON setlistfm_setlist(track_name);
 """
 
 _MD5_RE = re.compile(r'^([0-9a-fA-F]{32})\s+\*?(.+)$')

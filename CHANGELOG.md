@@ -1,3 +1,18 @@
+[2026-05-30] — feat(gui_next): ScreenScraper — full 6-tab scraper management screen
+Added: gui_next/src/renderer/src/screens/ScreenScraper.tsx: new screen with status strip (all 6 scrapers at a glance), tab switcher, left controls + right live log panel per tab, session/scrape history tables; covers LB Crawler, Entry Metadata, Bootleg Catalog, Dylan.com, Setlist.fm, Geocoder
+Changed: gui_next/src/renderer/src/App.tsx: replaced PlaceholderScreen for /scraper route with ScreenScraper; added import
+Changed: gui_next/src/renderer/src/index.css: added lbb-pulse and lbb-indeterminate CSS keyframe animations used by the scraper screen
+
+[2026-05-30] — feat(backend): setlist.fm API integration
+Added: backend/setlistfm.py: run_update(api_key, force) paginates /artist/{mbid}/setlists (~160 pages, ~0.55s/req); stores tour_name, venue, city, country, show info; setlist split by set_index/set_name/is_encore + song-level info/is_cover/cover_artist/is_tape; get_status()/stop()/save_api_key()/get_api_key() helpers
+Added: backend/db.py: setlistfm_shows (PK setlistfm_id, date_str indexed, tour_name indexed) + setlistfm_setlist (PK setlistfm_id+position, set_index, track_name indexed); added to MASTER_TABLES; MASTER_SCHEMA_VERSION bumped to 5; setlistfm_api_key added to USER_META_KEYS
+Added: backend/app.py: POST /api/setlistfm/key, /update, /stop + GET /api/setlistfm/key, /status, /show?date=YYYY-MM-DD, /stats
+
+[2026-05-30] — feat(backend): bobdylan.com official setlist scraper
+Added: backend/bobdylan_scraper.py: new module — fetch_sitemap_urls() discovers 4139 show URLs from 3 WordPress sitemaps; parse_show_page() parses venue/location/track list from each /date/ page; run_discover() upserts URL+date rows; run_scrape(force) scrapes unscraped pages; run_update(force) runs both idempotently; get_status()/stop() for progress/cancellation
+Added: backend/db.py: bobdylan_shows table (bobdylan_url PK, date_str indexed) and bobdylan_setlist table (bobdylan_url+position PK, track_name, song_url); both added to MASTER_TABLES; MASTER_SCHEMA_VERSION bumped to 4
+Added: backend/app.py: POST /api/bobdylan/update, /discover, /scrape, /stop + GET /api/bobdylan/status, /show?date=YYYY-MM-DD, /stats routes; join to entries/dylan_performances via date_str
+
 [2026-05-30] — feat(gui_next/scraper): setlist file-name fallback + scrape always repopulates setlist
 Changed: gui_next/src/renderer/src/screens/ScreenSearch.tsx: EntryDetailPanel setlist section falls back to entry_files list when no setlist available — shows track index, download status icon, and filename in monospace; Files section suppressed when fallback is active to avoid duplication
 Changed: backend/scraper.py: setlist now always re-derived on scrape — if _is_setlist_para() finds nothing, falls back to extract_setlist_from_description() on the built description so a re-scrape never wipes a populated setlist
