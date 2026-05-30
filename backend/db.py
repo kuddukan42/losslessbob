@@ -463,6 +463,277 @@ _FFP_RE = re.compile(r'^(.+\.(?:flac|ape|wav))[:=]([0-9a-fA-F]{32,40})$', re.IGN
 TRACKED_ENTRY_FIELDS = ("date_str", "location", "cdr", "rating", "timing",
                         "description", "setlist", "status")
 
+# ── Taper / source-chain extractor ────────────────────────────────────────────
+
+_CHAIN_TOKEN = re.compile(
+    r'(?:Schoeps|Neumann|Neuman|DPA|B&K|AKG|AT\d|Sennheiser|Sonic\s*Studios|Core\s*Sound|'
+    r'CSB|CSHEB|DSM|Sony|Tascam|Zoom|Marantz|Sharp|Roland|M-Audio|Minidisc|'
+    r'\bDAT\b|\bSBD\b|\bAUD\b|\bCDR\b|cassette|FLAC|WAV|SHN|EAC|dbPower|TLH|mkwACT|'
+    r'Cooledit|CoolEdit|SoundForge|Wavelab|Sound\s*Devices)',
+    re.IGNORECASE,
+)
+
+def _looks_like_chain(s: str) -> bool:
+    return bool(re.search(r'[>\-–]', s)) and bool(_CHAIN_TOKEN.search(s))
+
+
+def _strip_bt_parens(text: str) -> str:
+    """Remove leading (a bittorrent …) / (a close eac match …) blocks."""
+    out = text
+    for _ in range(8):
+        m = re.match(r'^\s*\([^\)]{20,600}\)\s*;?\s*', out, re.DOTALL)
+        if m:
+            out = out[m.end():]
+        else:
+            break
+    return out
+
+
+def extract_taper_and_source(description: str) -> tuple[str | None, str | None]:
+    """Parse free-text description into (taper_name, source_chain).
+
+    Both values may be None when the description carries no recording metadata
+    (pure setlist, or only bittorrent-comparison notes).
+
+    Values are kept short: taper_name ≤ 80 chars, source_chain ≤ 160 chars.
+    """
+    if not description or not description.strip():
+        return None, None
+
+    raw = description.strip()
+    d   = _strip_bt_parens(raw)
+    if not d:
+        d = raw
+    d600 = d[:600]
+    fl   = d.split('\n')[0][:300].strip()
+
+    taper_name: str | None   = None
+    source_chain: str | None = None
+
+    # ── 1. Explicit Taper: label (skip inside parentheticals) ────────────
+    for m in re.finditer(
+        r'\bTaper\s*:\s*(.+?)(?:[,)]\s*(?=(?:Source|Recording|Lineage|Location|Microphone|Recorder)\s*:)|[\n;]|$)',
+        d600, re.IGNORECASE,
+    ):
+        pre = d600[:m.start()]
+        if pre.count('(') > pre.count(')'):
+            continue  # inside a parenthetical reference block
+        # Trim to first comma-separated token
+        v = m.group(1).strip().split(',')[0].strip().rstrip(',;.')
+        # Strip trailing parenthetical (email addresses, dates, etc.)
+        v = re.sub(r'\s*\([^)]{3,}\)\s*$', '', v).strip().rstrip(',;.')
+        # If "by <NAME>" is embedded, extract just the name
+        by_m = re.search(r'\bby\s+([A-Z][A-Z\s]{2,40})', v)
+        if by_m:
+            v = by_m.group(1).strip().title()
+        _BAD_TAPER = {'unidentified', 'unknown', 'no info', 'n/a', 'none', 'no taper info'}
+        if v and len(v) > 1 and v.lower() not in _BAD_TAPER:
+            taper_name = v[:80]
+        break
+
+    # ── 2. Recording: label (skip inside parentheticals) → source_chain ──
+    for m in re.finditer(
+        r'\bRecording\s*:\s*(.+?)(?:,\s*Transfer|;\s*Transfer|[\n]|$)',
+        d600, re.IGNORECASE,
+    ):
+        pre = d600[:m.start()]
+        if pre.count('(') > pre.count(')'):
+            continue
+        v = m.group(1).strip().rstrip(',;.')
+        if v and len(v) > 2:
+            source_chain = v[:160]
+        break
+
+    # ── 3. Source: label (skip inside parentheticals) → source_chain ─────
+    if not source_chain:
+        for m in re.finditer(
+            r'\bSource\s*:\s*(.+?)(?:,\s*(?:Lineage|Transfer|Taper)|;\s*|[\n]|$)',
+            d600, re.IGNORECASE,
+        ):
+            pre = d600[:m.start()]
+            if pre.count('(') <= pre.count(')'):
+                v = m.group(1).strip().rstrip(',;.')
+                if v and len(v) > 2:
+                    source_chain = v[:160]
+                    break
+
+    # ── 4. Lineage: label (skip inside parentheticals) → source_chain ────
+    if not source_chain:
+        for m in re.finditer(r'\bLineage\s*:\s*(.+?)(?:[\n]|$)', d600, re.IGNORECASE):
+            pre = d600[:m.start()]
+            if pre.count('(') <= pre.count(')'):
+                v = m.group(1).strip().rstrip(',;.')
+                if v and len(v) > 2 and _looks_like_chain(v):
+                    source_chain = v[:160]
+                    break
+
+    # ── 5. Technical Info: label → source_chain ──────────────────────────
+    if not source_chain:
+        m = re.search(r'\bTechnical\s*Info\s*:\s*(.+?)(?:[;\n]|$)', d600, re.IGNORECASE)
+        if m:
+            v = m.group(1).strip().rstrip(',;.')
+            if v and len(v) > 4 and _looks_like_chain(v):
+                source_chain = v[:160]
+
+    # ── 6. BOOTLEG: title → taper_name; rip chain → source_chain ─────────
+    bm = re.match(r'BOOTLEG\s*:\s*(.+?)(?:;|,|\n|$)', fl, re.IGNORECASE)
+    if bm:
+        if not taper_name:
+            taper_name = ('BOOTLEG: ' + bm.group(1).strip())[:80]
+        if not source_chain:
+            # Look only in non-paren lines after the first line
+            rest_lines = _strip_bt_parens('\n'.join(d.split('\n')[1:]))
+            cm = re.search(r'(?:cd|dvd)\s*(?:>|->)\s*(?:EAC|rip|wav|flac)', rest_lines, re.IGNORECASE)
+            if cm:
+                candidate = rest_lines[cm.start():cm.start() + 120].split('\n')[0].strip()
+                if _looks_like_chain(candidate):
+                    source_chain = candidate[:160]
+
+    # ── 7. AUD DAT / DAUD → source_chain ─────────────────────────────────
+    if not source_chain:
+        am = re.match(
+            r'\(?((?:AUD\s*DAT[- ]?\d*|DAUD)[- ]?\d*)\)?\s*,?\s*(?:\[.{1,30}\])?\s*,?\s*(.{0,80}?)(?:[,;]|$)',
+            fl, re.IGNORECASE,
+        )
+        if am:
+            prefix = am.group(1).strip()
+            rest_part = (am.group(2) or '').strip().rstrip(',;.')
+            # Only append rest_part if it looks like equipment info, not a rating/quality note
+            if rest_part and _looks_like_chain(rest_part):
+                source_chain = (prefix + ', ' + rest_part)[:160]
+            else:
+                source_chain = prefix
+
+    # ── 8. Raw > chain at first line → source_chain ───────────────────────
+    if not source_chain:
+        m = re.match(r'^(.{4,160}?>+.{4,120}?)(?:[,;]\s*(?!$)|\n|$)', fl)
+        if m:
+            v = m.group(1).strip().split('(')[0].strip().rstrip(',;.')
+            if _looks_like_chain(v):
+                source_chain = v[:160]
+
+    # ── 9. legendary / net taper patterns ────────────────────────────────
+    if not taper_name:
+        m = re.search(
+            r'\b(legendary\s+taper\s+[A-Z]|net\s*taper\s*[A-Z#]?\d*)',
+            d[:200], re.IGNORECASE,
+        )
+        if m:
+            taper_name = m.group(1).strip()[:60]
+
+    # ── 10. Seeded … by <name> ────────────────────────────────────────────
+    if not taper_name:
+        m = re.search(r'\bSeeded\s+\S+\s+\S+\s+by\s+([A-Za-z]\w{1,30})', fl, re.IGNORECASE)
+        if m:
+            taper_name = m.group(1).strip()[:60]
+
+    # ── 11. version "x" → strip prefix, recurse on rest ──────────────────
+    if not taper_name and not source_chain:
+        vm = re.match(r'^version\s*["\'][^"\']*["\'][,;]?\s*', fl, re.IGNORECASE)
+        if vm:
+            rest_line = fl[vm.end():].strip()
+            rest_full = rest_line + ('\n' + '\n'.join(d.split('\n')[1:6]) if '\n' in d else '')
+            t2, s2 = extract_taper_and_source(rest_full)
+            taper_name   = taper_name   or t2
+            source_chain = source_chain or s2
+
+    # ── 12. Short handle / taper code at start ────────────────────────────
+    if not taper_name:
+        # Allow 1-char second token (e.g. "sbd f", "lta"), semicolon separators
+        handle_re = re.compile(
+            r'^([A-Za-z][A-Za-z0-9_\-]{0,20}(?:\s+[A-Za-z0-9_\-]{1,15}){0,3})\s*[,;\n]',
+        )
+        _STOPWORDS = re.compile(
+            r'\b(the|and|or|of|in|a|an|is|was|has|have|from|this|that|by|also|'
+            r'bittorrent|version|alternate|audience|recorded|received|transfer|upgrade|'
+            r'floor|center|centre|section|row|seat|stage|balcony|orchestra|main|front|back|side)\b',
+            re.IGNORECASE,
+        )
+        m = handle_re.match(fl) or handle_re.match(d)
+        if m:
+            handle = m.group(1).strip()
+            if not _STOPWORDS.search(handle) and len(handle) >= 2:
+                taper_name = handle[:60]
+
+    # ── 13. taped by <name> ───────────────────────────────────────────────
+    if not taper_name:
+        m = re.search(
+            r'\btaped\s+by\s+([A-Za-z][A-Za-z0-9\s_\-]{1,30}?)(?:[,.\n]|$)',
+            fl, re.IGNORECASE,
+        )
+        if m:
+            taper_name = m.group(1).strip()[:60]
+
+    # ── 14. from <X> master/vine/collection ──────────────────────────────
+    if not taper_name:
+        m = re.search(
+            r'\bfrom\s+(?:the\s+)?([A-Za-z][A-Za-z0-9\s_\-]{1,25}?(?:\s+(?:master|vine|collection|recording)))',
+            fl, re.IGNORECASE,
+        )
+        if m:
+            v = m.group(1).strip()
+            # Strip leading articles
+            v = re.sub(r'^(?:the|a|an)\s+', '', v, flags=re.IGNORECASE).strip()
+            if v and len(v) > 2:
+                taper_name = v[:60]
+
+    # ── Post-process ───────────────────────────────────────────────────────
+
+    def _clean(v: str | None) -> str | None:
+        if not v:
+            return None
+        # Strip incomplete opening parenthetical at end (e.g. "George Wang (email...")
+        v = re.sub(r'\s*\([^)]*$', '', v).strip()
+        # Strip leading or inline stray closing paren before a chain arrow
+        v = re.sub(r'^\)+\s*', '', v).strip()
+        v = re.sub(r'\)\s*>', '>', v)
+        # Discard if contains unmatched quote characters (leaked from quoted strings)
+        if v.count('"') % 2 != 0:
+            v = re.sub(r'\s*"[^"]*$', '', v).strip()
+        return v.rstrip(',;. ') or None
+
+    taper_name   = _clean(taper_name)
+    source_chain = _clean(source_chain)
+
+    # Strip taper handle prefix from source_chain if chain starts with same text
+    if taper_name and source_chain:
+        prefix_pat = re.escape(taper_name.split(',')[0].strip())
+        source_chain = re.sub(
+            r'^' + prefix_pat + r'\s*[,;]\s*', '', source_chain, flags=re.IGNORECASE,
+        ).strip().lstrip(',;').strip() or None
+
+    return taper_name or None, source_chain or None
+
+
+# ── Track-listing patterns used by extract_setlist_from_description ──────────
+
+_SL_DOT = re.compile(r'\b0?\d{1,2}[.)]\s')                                 # "1. " / "01." / "1) "
+_SL_NUM = re.compile(r'(?:^|,\s*)(\d{1,2})\s+[A-Z*\"]', re.MULTILINE)     # "1 Song" num-only
+
+
+def extract_setlist_from_description(description: str) -> str:
+    """Extract track-listing paragraphs from a description string.
+
+    Paragraphs containing ≥ 3 numbered track markers are considered setlists.
+    Returns a joined string for the ``setlist`` DB column.  The description
+    itself is not modified.
+    """
+    if not description:
+        return ""
+    setlist_paras: list[str] = []
+    for para in description.split("\n\n"):
+        para = para.strip()
+        if not para:
+            continue
+        if len(_SL_DOT.findall(para)) >= 3:
+            setlist_paras.append(para)
+            continue
+        nums = _SL_NUM.findall(para)
+        if len(nums) >= 3 and min(int(n) for n in nums) <= 2:
+            setlist_paras.append(para)
+    return "\n\n".join(setlist_paras)
+
+
 # LB numbers confirmed to not exist on the LosslessBob site.  These are seeded
 # into lb_missing on first run and are never scraped or retried.
 _LB_MISSING_SEEDS: tuple[int, ...] = (
@@ -547,6 +818,25 @@ def init_db(db_path=None):
         if "status" not in cols:
             conn.execute("ALTER TABLE entries ADD COLUMN status TEXT DEFAULT 'ok'")
             conn.commit()
+        if "taper_name" not in cols:
+            conn.execute("ALTER TABLE entries ADD COLUMN taper_name TEXT")
+            conn.execute("ALTER TABLE entries ADD COLUMN source_chain TEXT")
+            conn.commit()
+            # Backfill from existing descriptions
+            _rows = conn.execute(
+                "SELECT lb_number, description FROM entries WHERE description IS NOT NULL AND description != ''"
+            ).fetchall()
+            for _lb, _desc in _rows:
+                _t, _s = extract_taper_and_source(_desc)
+                if _t or _s:
+                    conn.execute(
+                        "UPDATE entries SET taper_name=?, source_chain=? WHERE lb_number=?",
+                        (_t, _s, _lb),
+                    )
+            conn.commit()
+            logging.getLogger(__name__).info(
+                "entries: backfilled taper_name/source_chain for %d rows", len(_rows)
+            )
 
         # Populate FTS index if empty (first run after adding FTS)
         fts_count = conn.execute("SELECT COUNT(*) FROM entries_fts").fetchone()[0]
@@ -641,6 +931,33 @@ def init_db(db_path=None):
                 "INSERT OR IGNORE INTO lb_missing(lb_number, confirmed_date, notes)"
                 " VALUES(?, '2026-05-26', 'Confirmed: LB number allocated but page never existed.')",
                 (_seed_lb,),
+            )
+
+        # Migration: backfill setlist from description for entries that were scraped
+        # before the scraper learned to detect track-listing paragraphs.
+        # Gated by a meta flag so it only runs once.
+        if not conn.execute("SELECT 1 FROM meta WHERE key='setlist_backfill_v1'").fetchone():
+            _need_backfill = conn.execute(
+                "SELECT lb_number, description FROM entries "
+                "WHERE (setlist IS NULL OR length(setlist) <= 10) "
+                "AND description IS NOT NULL AND length(description) > 30"
+            ).fetchall()
+            _backfilled = 0
+            for _row in _need_backfill:
+                _sl = extract_setlist_from_description(_row["description"])
+                if _sl:
+                    conn.execute(
+                        "UPDATE entries SET setlist=? WHERE lb_number=?",
+                        (_sl, _row["lb_number"]),
+                    )
+                    _backfilled += 1
+            conn.execute(
+                "INSERT OR REPLACE INTO meta(key, value) VALUES('setlist_backfill_v1', '1')"
+            )
+            if _backfilled:
+                conn.execute("INSERT INTO entries_fts(entries_fts) VALUES('rebuild')")
+            logging.getLogger(__name__).info(
+                "entries: backfilled setlist for %d rows", _backfilled
             )
 
         # Always commit: UPDATE above opens a Python implicit transaction regardless
@@ -1156,7 +1473,8 @@ def search_entries(query, field="all", year=None, limit=None, db_path=None):
         limit_clause = f"LIMIT {int(limit)}" if limit is not None else ""
         sql = f"""
             SELECT e.lb_number, e.date_str, e.location, e.rating,
-                   e.description, e.status, lm.lb_status, lm.public_no_checksums
+                   e.description, e.status, lm.lb_status, lm.public_no_checksums,
+                   e.taper_name, e.source_chain
             FROM entries_fts
             JOIN entries e ON e.lb_number = entries_fts.rowid
             LEFT JOIN lb_master lm ON lm.lb_number = e.lb_number
@@ -1170,7 +1488,8 @@ def search_entries(query, field="all", year=None, limit=None, db_path=None):
         limit_clause = f"LIMIT {int(limit)}" if limit is not None else ""
         sql = f"""
             SELECT e.lb_number, e.date_str, e.location, e.rating,
-                   e.description, e.status, lm.lb_status, lm.public_no_checksums
+                   e.description, e.status, lm.lb_status, lm.public_no_checksums,
+                   e.taper_name, e.source_chain
             FROM entries e
             LEFT JOIN lb_master lm ON lm.lb_number = e.lb_number
             WHERE 1=1 {year_clause}
@@ -1186,7 +1505,8 @@ def search_entries(query, field="all", year=None, limit=None, db_path=None):
         like = f"%{query}%"
         fallback_sql = (
             "SELECT e.lb_number, e.date_str, e.location, e.rating,"
-            " e.description, e.status, lm.lb_status, lm.public_no_checksums"
+            " e.description, e.status, lm.lb_status, lm.public_no_checksums,"
+            " e.taper_name, e.source_chain"
             " FROM entries e LEFT JOIN lb_master lm ON lm.lb_number = e.lb_number"
             " WHERE e.description LIKE ? OR e.location LIKE ? OR e.date_str LIKE ?"
             " ORDER BY e.lb_number"
@@ -1208,7 +1528,8 @@ def search_entries(query, field="all", year=None, limit=None, db_path=None):
             if not any(r["lb_number"] == lb_id for r in results):
                 direct = conn.execute(
                     "SELECT e.lb_number, e.date_str, e.location, e.rating,"
-                    " e.description, e.status, lm.lb_status, lm.public_no_checksums"
+                    " e.description, e.status, lm.lb_status, lm.public_no_checksums,"
+                    " e.taper_name, e.source_chain"
                     " FROM entries e LEFT JOIN lb_master lm ON lm.lb_number = e.lb_number"
                     " WHERE e.lb_number = ?",
                     (lb_id,),
@@ -1556,6 +1877,42 @@ def purge_wishlist(db_path=None) -> None:
 def purge_collection_meta(db_path=None) -> None:
     """Delete all personal ratings and tags (collection_meta only)."""
     get_write_queue().execute(lambda c: c.execute("DELETE FROM collection_meta"))
+
+
+def log_integrity_event(lb_number: int, disk_path: str, event_type: str, detail: str,
+                         db_path=None) -> None:
+    """Insert a watchdog filesystem event into integrity_events."""
+    get_write_queue().execute(
+        lambda c: c.execute(
+            "INSERT INTO integrity_events(lb_number, disk_path, event_type, detail) "
+            "VALUES(?,?,?,?)",
+            (lb_number, disk_path, event_type, detail),
+        )
+    )
+
+
+def get_integrity_events(unacked_only: bool = True, limit: int = 100, db_path=None) -> list:
+    """Return integrity events, newest first."""
+    where = "WHERE acknowledged=0" if unacked_only else ""
+    with get_connection(db_path) as conn:
+        rows = conn.execute(
+            f"SELECT * FROM integrity_events {where} ORDER BY occurred_at DESC LIMIT ?",
+            (limit,),
+        ).fetchall()
+    return [dict(r) for r in rows]
+
+
+def ack_integrity_events(ids: list, db_path=None) -> None:
+    """Mark the given integrity_events rows as acknowledged."""
+    if not ids:
+        return
+    placeholders = ",".join("?" * len(ids))
+    get_write_queue().execute(
+        lambda c: c.execute(
+            f"UPDATE integrity_events SET acknowledged=1 WHERE id IN ({placeholders})",
+            list(ids),
+        )
+    )
 
 
 def purge_integrity_events(db_path=None) -> None:

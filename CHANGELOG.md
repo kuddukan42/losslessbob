@@ -1,3 +1,42 @@
+[2026-05-30] — feat(gui_next/scraper): setlist file-name fallback + scrape always repopulates setlist
+Changed: gui_next/src/renderer/src/screens/ScreenSearch.tsx: EntryDetailPanel setlist section falls back to entry_files list when no setlist available — shows track index, download status icon, and filename in monospace; Files section suppressed when fallback is active to avoid duplication
+Changed: backend/scraper.py: setlist now always re-derived on scrape — if _is_setlist_para() finds nothing, falls back to extract_setlist_from_description() on the built description so a re-scrape never wipes a populated setlist
+
+[2026-05-30] — fix(db/scraper/gui_next): setlist coverage 10% → 69% via backfill + scraper + parser fixes
+Changed: backend/db.py: added _SL_DOT/_SL_NUM regexes; extract_setlist_from_description() — detects track-listing paragraphs via ≥3 dot/paren markers or num-only sequential pattern; init_db() migration setlist_backfill_v1 — one-time backfill of 9,794 entries using extract_setlist_from_description()
+Changed: backend/scraper.py: replaced track_pattern bare-text-node-only detection with _is_setlist_para() helper (same two-pattern logic) applied to all <p> tags — future scrapes now correctly route track listings to setlist column
+Changed: gui_next/src/renderer/src/screens/ScreenSearch.tsx: updated parseSetlist() to handle zero-padded numbers (01.), comma-separated dot format (1. Song, 2. Song), comma-separated num-only (1 Song, 2 Song), and space-separated num-only (1 Song 2 Song) formats; added normNum() to strip leading zeros
+
+[2026-05-30] — feat(gui_next): setlist rendered as structured track table in entry detail panel
+Changed: gui_next/src/renderer/src/screens/ScreenSearch.tsx: added parseSetlist() helper — detects inline format ("1. Song 2. Song …" all on one line) vs newline-separated format; splits inline format on /\s+(?=\d{1,2}[.)]\s)/ boundaries; parses each part with "N. Title" / "N) Title" regex into {kind:'track',num,title} items, other non-empty lines become section headers; replaced raw <pre> setlist block in EntryDetailPanel with a two-column table (track # | song title), header rows span columns; collapse defaults to first 12 items with "Show N more…" toggle; setlist label shows track count
+
+[2026-05-30] — feat(db/scraper/gui_next): taper_name + source_chain columns extracted from description
+Added: backend/db.py: extract_taper_and_source() — 14-step regex extractor covering Taper:/Recording:/Source:/Lineage:/BOOTLEG: labels, raw > chains, AUD DAT codes, short taper handles, legendary/NET taper patterns; ~80.5% coverage on 16k entries; two new TEXT columns taper_name + source_chain on entries table; ALTER TABLE migration with one-time backfill
+Added: backend/scraper.py: compute taper_name/source_chain via extract_taper_and_source() on every scrape; included in INSERT OR REPLACE
+Added: gui_next/src/renderer/src/screens/ScreenSearch.tsx: Taper and Source columns in search table (toggleable, with col widths); taper/source rows in entry detail panel meta grid; SearchRow interface extended; CSV export updated
+
+[2026-05-30] — feat(gui_next): best-per-date filter on Search screen
+Added: gui_next/src/renderer/src/screens/ScreenSearch.tsx: RATING_RANK constant; bestPerDate state; bestPerDateRows memo (keeps only highest-rated entry per unique concert date, pass-through for undated rows); "Best per date" checkbox in facet sidebar with description; filter chip in result strip; clearAll + hasActiveFilters wired to new toggle
+
+[2026-05-30] — feat(backend/gui): FEAT-11 remote data ZIP retrieval
+Added: backend/app.py: POST /api/data/download + GET /api/data/download/status routes; _do_data_download() background worker; _DATA_PROTECTED/EXTS guards; _data_dl_state + _data_dl_lock
+Added: gui/setup_tab.py: Remote Data group — ZIP URL field, Download & Extract button, progress bar, _DataDownloadThread, polling logic
+
+[2026-05-30] — feat(backend/gui): FEAT-10 GitHub auto-updater + enhanced About dialog
+Added: VERSION: single source of truth for app version (1.2.0)
+Added: backend/version.py: get_version() reads VERSION file; VERSION constant
+Added: backend/updater.py: restart_application() — cross-platform process relaunch
+Added: backend/app.py: GET /api/app/version, GET /api/update/check, GET /api/update/status, POST /api/update/apply; _do_update() background download+apply; github_repo/data_zip_url in settings keys
+Changed: gui/main_window.py: VERSION now imported from backend.version; _on_about shows Python/PyQt6/Qt/platform info
+Added: gui/setup_tab.py: Application Updates group — GitHub repo field, Check/Download/Restart buttons, progress bar, _UpdateCheckThread, _UpdateApplyThread
+
+[2026-05-30] — feat(backend/gui): FEAT-09 collection folder integrity watchdog
+Added: backend/db.py: log_integrity_event(), get_integrity_events(), ack_integrity_events() helpers
+Added: backend/scheduler.py: _CollectionEventHandler + start_collection_watcher() — watches all my_collection disk_path dirs for deletions/moves
+Added: backend/app.py: GET /api/integrity/events + POST /api/integrity/ack routes; call start_collection_watcher() at startup
+Added: gui/main_window.py: yellow ⚠ alert label in status bar; click opens dialog listing events with Acknowledge All button
+Cancelled: instructions/CC_INSTRUCTIONS.md: FEAT-06 (info.txt generator) marked cancelled
+
 [2026-05-30] — feat(gui_next): finish wiring gaps — disambiguation panel, NFT suffix, Cache missing, queue location
 Changed: gui_next/src/renderer/src/screens/ScreenRename.tsx: added `candidates[]` to RenameRow; added NFT suffix logic (applyNftSuffix); replaced stub disambiguation panel with fully wired panel that fetches GET /api/folder_link + GET /api/lb_alias/resolve, shows LB candidate buttons, and wires Pin (PUT /api/folder_link), Unlink (DELETE /api/folder_link), and Standardize (GET /api/folder_naming/standard) actions.
 Added: gui_next/src/renderer/src/locales/en.json: new i18n keys for rename.disambiguate (pin/unpin/loading/pinned/standardize) and rename.toast (pinned/unpinned/pinFailed/unpinFailed/standardized/standardizeFailed).

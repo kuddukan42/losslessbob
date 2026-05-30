@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup, NavigableString
 from backend.db import (
     get_connection, DB_PATH, insert_missing_entry,
     record_entry_changes, reconcile_lb_status, batch_reconcile_lb_status,
-    is_lb_missing,
+    is_lb_missing, extract_taper_and_source,
 )
 from backend.db_queue import get_write_queue
 from backend.paths import (
@@ -232,15 +232,25 @@ def scrape_entry(
             entry_data["timing"] = row_dict.get("timing", "")
         break
 
-    # Collect text content — <p> tags are description; bare text nodes between <hr/>
-    # separators may be notes (description) or track listings (setlist)
-    track_pattern = re.compile(r'^\d{1,2}[.)]\s')
+    # Collect text content — classify each paragraph as description or setlist.
+    # A paragraph is treated as a setlist if it contains >= 3 track-number markers.
+    from backend.db import extract_setlist_from_description as _extract_sl, _SL_DOT, _SL_NUM
     desc_parts = []
     setlist_parts = []
 
+    def _is_setlist_para(text: str) -> bool:
+        if len(_SL_DOT.findall(text)) >= 3:
+            return True
+        nums = _SL_NUM.findall(text)
+        return len(nums) >= 3 and min(int(n) for n in nums) <= 2
+
     for p in soup.find_all("p"):
         text = p.get_text(strip=True)
-        if text:
+        if not text:
+            continue
+        if _is_setlist_para(text):
+            setlist_parts.append(text)
+        else:
             desc_parts.append(text)
 
     body = soup.find("body")
@@ -251,13 +261,16 @@ def scrape_entry(
             text = str(node).strip()
             if not text:
                 continue
-            if track_pattern.search(text):
+            if _is_setlist_para(text):
                 setlist_parts.append(text)
             else:
                 desc_parts.append(text)
 
     entry_data["description"] = "\n\n".join(desc_parts)
-    entry_data["setlist"] = "\n\n".join(setlist_parts)
+    # If the HTML parser found no setlist paragraphs, fall back to extracting
+    # from description (covers pages where tracks land in desc_parts).
+    _sl_raw = "\n\n".join(setlist_parts)
+    entry_data["setlist"] = _sl_raw or _extract_sl(entry_data["description"])
 
     # Collect attachment links
     file_links = []
@@ -272,6 +285,7 @@ def scrape_entry(
     record_entry_changes(lb_number, entry_data, db_path)
 
     _lb_entry = lb_number
+    _t, _s = extract_taper_and_source(entry_data.get("description", ""))
     _entry_row = {
         "lb_number": lb_number,
         "date_str": entry_data.get("date_str", ""),
@@ -281,13 +295,17 @@ def scrape_entry(
         "timing": entry_data.get("timing", ""),
         "description": entry_data.get("description", ""),
         "setlist": entry_data.get("setlist", ""),
+        "taper_name": _t,
+        "source_chain": _s,
     }
     _file_links = list(file_links)
 
     def _save_entry(c) -> None:
         c.execute(
-            """INSERT OR REPLACE INTO entries(lb_number, date_str, location, cdr, rating, timing, description, setlist)
-               VALUES(:lb_number,:date_str,:location,:cdr,:rating,:timing,:description,:setlist)""",
+            """INSERT OR REPLACE INTO entries(lb_number, date_str, location, cdr, rating, timing,
+               description, setlist, taper_name, source_chain)
+               VALUES(:lb_number,:date_str,:location,:cdr,:rating,:timing,
+                      :description,:setlist,:taper_name,:source_chain)""",
             _entry_row,
         )
         for filename, clean, file_url in _file_links:
