@@ -27,6 +27,7 @@ import { ScreenLBDIR } from './screens/ScreenLBDIR'
 import { ScreenSpectrograms } from './screens/ScreenSpectrograms'
 import { ScreenFingerprint } from './screens/ScreenFingerprint'
 import { ScreenDbEditor } from './screens/ScreenDbEditor'
+import { ScreenScraper } from './screens/ScreenScraper'
 
 // ── React Query client — prefetch collection data immediately at module load ──
 
@@ -264,7 +265,7 @@ export default function App(): React.JSX.Element {
           <Route path="/fingerprint" element={<ScreenFingerprint />} />
           <Route path="/map"         element={<ScreenMap />} />
           <Route path="/dbeditor"    element={<ScreenDbEditor />} />
-          <Route path="/scraper"     element={<CuratorRoute element={<PlaceholderScreen name="Scraper" />} />} />
+          <Route path="/scraper"     element={<CuratorRoute element={<ScreenScraper />} />} />
           <Route path="/setup"       element={<ScreenSetup />} />
           <Route path="/themes"      element={<ScreenThemes />} />
         </Routes>

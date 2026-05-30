@@ -343,7 +343,10 @@
       "Bash(jobs *)",
       "Bash(echo \"pid=$!\")",
       "Bash(SCREENSHOT_DIR=/home/tjenkins/Documents/losslessbob/gui_next/test_shots xvfb-run -a node test_setlist.mjs)",
-      "Bash(pkill -f \"start_backend_nowatcher\")"
+      "Bash(pkill -f \"start_backend_nowatcher\")",
+      "WebFetch(domain:www.bobdylan.com)",
+      "WebFetch(domain:api.setlist.fm)",
+      "Bash(xargs -I{} basename {})"
     ],
     "additionalDirectories": [
       "/home/tjenkins/.ssh",
