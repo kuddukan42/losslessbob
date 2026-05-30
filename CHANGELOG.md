@@ -1,3 +1,57 @@
+[2026-05-29] — chore(i18n): gui_next locale refresh — add 60 missing keys, DeepL fill all gaps
+Added: .claude/commands/gui-next-i18n.md: new skill for React locale workflow (Step 1 count → Step 2 Qt port warning → Step 3 DeepL → Step 4 verify)
+Changed: gui_next/src/renderer/src/locales/{de,fr,es,it,nl}.json: 60 new keys added (fingerprint, collection toast strings); ~582 strings per language translated via DeepL (57,254 chars total); 53 remaining gaps are intentional proper-noun/abbrev strings (Pipeline, LBDIR, LB#, etc.)
+Changed: .claude/settings.local.json: DEEPL_API_KEY added to env block for future sessions
+
+[2026-05-29] — feat(gui_next+backend): ScreenFingerprint — audio fingerprint match by date (TODO-106)
+Added: gui_next/src/renderer/src/screens/ScreenFingerprint.tsx: new screen under Assets group; date picker finds collection entries for that date, builds LB fingerprints via existing /api/fingerprint/build, then identifies a user mystery folder; two-phase progress view; ranked results table; cleanup button; all strings wrapped with t() for i18n
+Added: backend/app.py: GET /api/fingerprint/collection_by_date, POST /api/fingerprint/identify_folder, GET /api/fingerprint/identify_folder/status, POST /api/fingerprint/identify_folder/stop; _do_fp_identify_folder worker; _fp_id_state/_fp_id_lock/_fp_id_stop module-level state
+Added: gui_next/src/renderer/src/components/Icon.tsx: fingerprint icon (scan-crosshair)
+Changed: gui_next/src/renderer/src/components/AppShell.tsx: Fingerprint nav item added to Assets group
+Changed: gui_next/src/renderer/src/App.tsx: /fingerprint route registered
+Changed: gui_next/src/renderer/src/locales/en.json: appShell.nav.fingerprint + full fingerprint i18n namespace
+
+[2026-05-29] — docs: lock gui/ (PyQt6) as frozen; gui_next is sole development target
+Changed: PROJECT.md: tech stack, architecture pattern, file structure, GUI strategy note, and change log all updated to reflect gui_next as the only active GUI; gui/ marked FROZEN
+
+[2026-05-29] — feat(gui_next): DeepL machine-translation pass for all 5 gui_next locales
+Added: gui_next/src/renderer/src/locales/{de,fr,es,it,nl}.json: ~520 previously-untranslated strings (new GUI text with no Qt equivalent) translated via DeepL API; {{varName}} placeholders protected before transmission and restored after, 0 broken vars; coverage now 92–94% per locale
+Added: scripts/deepl_translate_gui_next.py: one-off DeepL translation script (retranslates strings still identical to English or with broken {{var}} placeholders)
+
+[2026-05-29] — feat(gui_next): wrap hardcoded UI strings with t() in AppShell + ScreenHome
+Changed: gui_next/src/renderer/src/components/AppShell.tsx: added useTranslation to Sidebar, Topbar, StatusBar; wrapped appShell.* keys including brand, version, nav group/item labels (dynamic via item.id), curator badge/hint/enable, search placeholder, and status bar labels
+Changed: gui_next/src/renderer/src/screens/ScreenHome.tsx: added useTranslation; wrapped all home.* keys including collection title, DB status, buttons, hero card (with dangerouslySetInnerHTML for HTML desc), step strips, stats, jump tiles, recent activity table, tips, and all toasts
+
+[2026-05-29] — feat(gui_next): wrap hardcoded UI strings with t() in ScreenSetup + ScreenCollection; add TypeScript key safety
+Changed: gui_next/src/renderer/src/screens/ScreenSetup.tsx: added useTranslation to ScreenSetup, CuratorToggle, IntegCard; wrapped all setup.* keys (database, masterData, integrations, torrent, preferences, purges, packages, flatFile, all toasts); added language selector to Preferences card bound to store.language/setLanguage
+Changed: gui_next/src/renderer/src/screens/ScreenCollection.tsx: added useTranslation to 9 sub-components; wrapped all collection.* keys (PersonalInfoModal, ScanPreviewModal, AddFolderModal, ForumModal, DetailPanel, ConfirmDialogs, GlobalForumPanel, GlobalTorrentPanel, main table headers, all toasts)
+Added: gui_next/src/renderer/src/i18next.d.ts: TypeScript CustomTypeOptions declaration for compile-time t() key safety
+Added: gui_next/src/renderer/src/locales/en.json: added setup.toast.buildingArchive, setup.toast.noRecognisableFiles, setup.toast.scrapedExported keys
+
+[2026-05-29] — feat(gui_next): wrap hardcoded UI strings with t() in six screen files
+Changed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: added useTranslation hook; wrapped all pipeline.* keys including header, status pills, bulk actions, queue rail labels, filter chips, selection bar, empty state, and table headers
+Changed: gui_next/src/renderer/src/screens/ScreenLookup.tsx: added useTranslation to ScreenLookup and ListboxModal; wrapped all lookup.* keys including header, sources rail, status counters, summary/detail table headers, footer, and all toast messages
+Changed: gui_next/src/renderer/src/screens/ScreenRename.tsx: added useTranslation to ScreenRename and StateChip; wrapped all rename.* keys including header, state labels (in render), hints, bulk bar, table headers, disambiguate panel, dry-run banner, and toasts
+Changed: gui_next/src/renderer/src/screens/ScreenVerify.tsx: added useTranslation to ScreenVerify and StateBadge; wrapped all verify.* keys including header, rail, stats labels, toolbar, shntool warning, file-state pills, showing-problems text, table headers, and toasts
+Changed: gui_next/src/renderer/src/screens/ScreenThemes.tsx: added useTranslation to ScreenThemes and CustomTokenEditor; wrapped all themes.* keys including page title, mode/density/accent/typeface/advanced cards, token labels, preview section, and toasts
+Changed: gui_next/src/renderer/src/screens/ScreenMap.tsx: added useTranslation hook; wrapped all map.* keys including header, filter rail labels, ownership buttons, display options, selected venue panel, entries section, and info hint
+
+[2026-05-29] — fix(gui_next): embed real Leaflet map in ScreenMap
+Changed: gui/resources/map.html: added postMessage listener (type:'applyFilters') so React panel can push filter updates without navigation; added ?embedded=1 support to hide the built-in filter bar when shown inside the Electron UI
+Changed: gui_next/src/renderer/src/screens/ScreenMap.tsx: replaced fake static canvas + hardcoded pin overlays with a live iframe pointing to http://localhost:5174/map?embedded=1; wired Apply filters, Reset to defaults, Copy share URL, and Open live map buttons
+
+[2026-05-29] — fix(gui_next): HTML attachments blocked by CSP in iframe
+Fixed: gui_next/src/renderer/index.html: added frame-src directive to CSP to allow iframes to load from http://127.0.0.1:5174; default-src 'self' was blocking HTML attachment previews with ERR_BLOCKED_BY_CSP
+
+[2026-05-29] — feat(gui_next): integrations startup status check
+Changed: gui_next/src/renderer/src/screens/ScreenSetup.tsx: added loadQbtStatus + loadWtrfStatus silent startup checks so integration cards show real status on mount without requiring a manual Test click; also fixes WTRF status label showing "error" instead of "not tested" when tone is warn
+
+[2026-05-29] — fix(backend): all attachment entries shown as stale
+Fixed: backend/app.py: attachments_cached omitted "downloaded" field from file objects; frontend stale check (f.downloaded === 1) saw undefined for every file and marked every entry stale.
+
+[2026-05-29] — fix(gui_next): attachment viewer 404 for all file types
+Fixed: gui_next/src/renderer/src/screens/ScreenAttachments.tsx: frontend was passing raw LBF-prefixed filename to /api/attachment route which queries by clean_name; changed to use clean_name || filename in both the text-fetch and fileUrl.
+
 [2026-05-29] — chore: merge feat/gui-redesign → main (gui_next v1.0 complete)
 Changed: PROJECT.md: gui_next marked as PRIMARY GUI, gui/ marked legacy/deprecated; Tech Stack updated
 Note: All 14 gui_next screens now on main with full backend wiring; feat/gui-redesign branch retired
