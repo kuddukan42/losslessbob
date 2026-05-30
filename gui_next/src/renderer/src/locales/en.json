@@ -303,7 +303,12 @@
     "disambiguate": {
       "title": "Disambiguate · pick one",
       "desc": "Multiple LB numbers matched. Select the correct one, then click \"Pin selection\".",
-      "skip": "Skip for now"
+      "skip": "Skip for now",
+      "pin": "Pin selection",
+      "unpin": "Unlink",
+      "loading": "Resolving…",
+      "pinned": "Pinned to {{lb}}",
+      "standardize": "Standardize name"
     },
     "dryrun": {
       "title": "Dry-run preview",
@@ -316,7 +321,13 @@
       "applied": "Applied {{count}} renames{{errors}}",
       "applyFailed": "Apply failed",
       "diffCopied": "Diff copied",
-      "copyFailed": "Copy failed"
+      "copyFailed": "Copy failed",
+      "pinned": "Pinned {{lb}}",
+      "unpinned": "Unlinked",
+      "pinFailed": "Pin failed",
+      "unpinFailed": "Unlink failed",
+      "standardized": "Standardized name",
+      "standardizeFailed": "Standardize failed"
     }
   },
   "pipeline": {

@@ -6,25 +6,25 @@ frontend wiring can be ported directly.
 
 ---
 
-## Summary — Updated 2026-05-28
+## Summary — Updated 2026-05-30
 
-All screens are now wired. Six previously-stub screens received full backend wiring.
+All screens are now wired. Remaining gaps from the 2026-05-28 audit have been closed.
 
 | Screen | Status | Wired% | Notes |
 |---|---|---|---|
 | ScreenSetup | ✓ done | ~100% | |
 | ScreenSearch | ✓ done | ~95% | |
-| ScreenCollection | partial | ~92% | Wishlist wired; batch-remove progress + tab badge still pending |
+| ScreenCollection | ✓ done | ~100% | Wishlist, batch-remove progress bar, tab badge all wired |
 | ScreenHome | ✓ done | ~100% | |
-| ScreenBootlegs | ✓ done | ~100% | Scrape .then() chain fixed 2026-05-28 |
+| ScreenBootlegs | ✓ done | ~100% | |
 | ScreenThemes | ✓ done | 100% | |
-| ScreenPipeline | partial | ~95% | One pre-existing stub unidentified |
-| **ScreenLookup** | **✓ wired** | **~90%** | All 4 source buttons + Zustand store; folders use advisory toast |
-| **ScreenVerify** | **✓ wired** | **~95%** | All actions wired; tool dots, IPC, verify/generate/retrieve |
-| **ScreenRename** | **✓ wired** | **~90%** | Consumes useLookupStore; POST /api/rename/apply; disambiguation UI stub |
-| **ScreenLBDIR** | **✓ wired** | **~95%** | All 4 panes wired; check/retrieve/reconcile/extras |
-| **ScreenAttachments** | **✓ wired** | **~95%** | LB rail, file list, text/html/image/binary viewer |
-| **ScreenSpectrograms** | **✓ wired** | **~95%** | Tool dots, inventory, generate/stop/poll, PNG viewer |
+| ScreenPipeline | ✓ done | ~98% | "Open queue location" IconButton wired 2026-05-30 |
+| **ScreenLookup** | **✓ done** | **~90%** | "Generate missing" shows advisory toast (intentional — delegates to Verify) |
+| **ScreenVerify** | **✓ done** | **~95%** | All actions wired |
+| **ScreenRename** | **✓ done** | **~98%** | Disambiguation panel fully wired 2026-05-30; NFT suffix logic added |
+| **ScreenLBDIR** | **✓ done** | **~95%** | All 4 panes wired |
+| **ScreenAttachments** | **✓ done** | **~98%** | "Cache missing" batch button added 2026-05-30 |
+| **ScreenSpectrograms** | **✓ done** | **~95%** | Tool dots, inventory, generate/stop/poll, PNG viewer |
 | ScreenMap | ✓ done | — | |
 
 ---

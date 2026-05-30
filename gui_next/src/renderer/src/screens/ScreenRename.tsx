@@ -14,14 +14,21 @@ type RowState  = 'has_lb' | 'needs_rename' | 'wrong_lb' | 'multiple_ids' | 'no_m
 type ToastTone = 'ok' | 'bad' | 'info'
 
 interface RenameRow {
-  folder:   string
-  cur:      string
-  prop:     string
-  lbNumber: number | null
-  lbStr:    string
-  state:    RowState
-  hint:     string
-  sel:      boolean
+  folder:     string
+  cur:        string
+  prop:       string
+  lbNumber:   number | null
+  lbStr:      string
+  state:      RowState
+  hint:       string
+  sel:        boolean
+  candidates: number[]
+}
+
+interface DisambigState {
+  loading:   boolean
+  pinnedLb:  number | null
+  canonical: number[]
 }
 
 // ── Static maps ────────────────────────────────────────────────────────────────
@@ -37,6 +44,12 @@ const STATES: Record<RowState, { tone: 'ok' | 'warn' | 'bad' | 'info' | 'mute'; 
 
 function lbStr(n: number): string {
   return `LB-${String(n).padStart(5, '0')}`
+}
+
+function applyNftSuffix(name: string, lbStatus: string | undefined): string {
+  if (lbStatus !== 'private') return name
+  if (name.toUpperCase().endsWith('-NFT')) return name.slice(0, -4) + '-NFT'
+  return name + '-NFT'
 }
 
 function buildProposals(detail: LookupDetail[], folderList: string[]): RenameRow[] {
@@ -67,7 +80,7 @@ function buildProposals(detail: LookupDetail[], folderList: string[]): RenameRow
         folder, cur, prop: '(no change)',
         lbNumber: null, lbStr: '—',
         state: 'no_match', hint: 'No checksums matched',
-        sel: false,
+        sel: false, candidates: [],
       })
       continue
     }
@@ -78,26 +91,27 @@ function buildProposals(detail: LookupDetail[], folderList: string[]): RenameRow
         folder, cur, prop: '(no change)',
         lbNumber: lbArray[0], lbStr: lbStr(lbArray[0]),
         state: 'has_lb', hint: 'LB# already in folder name',
-        sel: false,
+        sel: false, candidates: lbArray,
       })
       continue
     }
 
     if (lbArray.length === 1) {
       const lb = lbArray[0]
-      const proposed = `${cur} (${lbStr(lb)})`
+      const lbStatus = detail.find(d => d.lb_number === lb)?.lb_status
+      const proposed = applyNftSuffix(`${cur} (${lbStr(lb)})`, lbStatus)
       rows.push({
         folder, cur, prop: proposed,
         lbNumber: lb, lbStr: lbStr(lb),
         state: 'needs_rename', hint: 'Single complete match in master DB',
-        sel: true,
+        sel: true, candidates: [lb],
       })
     } else {
       rows.push({
         folder, cur, prop: '(select LB# to populate)',
         lbNumber: lbArray[0], lbStr: `${lbStr(lbArray[0])}?`,
         state: 'multiple_ids', hint: `${lbArray.length} candidate LBs · resolve below`,
-        sel: false,
+        sel: false, candidates: lbArray,
       })
     }
   }
@@ -134,11 +148,13 @@ export function ScreenRename(): React.JSX.Element {
   const navigate = useNavigate()
   const { summary, detail, folderList } = useLookupStore()
 
-  const [rows,        setRows]        = useState<RenameRow[]>([])
-  const [filter,      setFilter]      = useState<RowState | null>(null)
-  const [expandedRow, setExpandedRow] = useState<number | null>(null)
-  const [busy,        setBusy]        = useState(false)
-  const [toast,       setToast]       = useState<{ msg: string; tone: ToastTone } | null>(null)
+  const [rows,         setRows]         = useState<RenameRow[]>([])
+  const [filter,       setFilter]       = useState<RowState | null>(null)
+  const [expandedRow,  setExpandedRow]  = useState<number | null>(null)
+  const [busy,         setBusy]         = useState(false)
+  const [toast,        setToast]        = useState<{ msg: string; tone: ToastTone } | null>(null)
+  const [disambig,     setDisambig]     = useState<DisambigState | null>(null)
+  const [disambigLbSel, setDisambigLbSel] = useState<number | null>(null)
 
   const showToast = useCallback((msg: string, tone: ToastTone) => setToast({ msg, tone }), [])
 
@@ -206,6 +222,86 @@ export function ScreenRename(): React.JSX.Element {
     const lines = rows.map(r => `${r.cur}\t→\t${r.prop}\t${r.lbStr}\t${STATES[r.state].label}`)
     await window.api.saveFile(lines.join('\n'), 'rename_plan.txt')
   }, [rows])
+
+  const handleExpand = useCallback((i: number, row: RenameRow) => {
+    if (expandedRow === i) {
+      setExpandedRow(null)
+      setDisambig(null)
+      setDisambigLbSel(null)
+      return
+    }
+    setExpandedRow(i)
+    setDisambig(null)
+    setDisambigLbSel(null)
+    if (row.state !== 'multiple_ids' || !row.candidates.length) return
+    setDisambig({ loading: true, pinnedLb: null, canonical: row.candidates })
+    Promise.all([
+      fetch(`${BASE}/api/folder_link?path=${encodeURIComponent(row.folder)}`).then(r => r.json()),
+      fetch(`${BASE}/api/lb_alias/resolve?lbs=${row.candidates.join(',')}`).then(r => r.json()),
+    ]).then(([linkData, aliasData]: [any, any]) => {
+      const pinnedLb: number | null = typeof linkData.lb_number === 'number' ? linkData.lb_number : null
+      const canonical: number[] = Array.isArray(aliasData.canonical) && aliasData.canonical.length
+        ? aliasData.canonical : row.candidates
+      setDisambig({ loading: false, pinnedLb, canonical })
+      if (pinnedLb) setDisambigLbSel(pinnedLb)
+    }).catch(() => {
+      setDisambig({ loading: false, pinnedLb: null, canonical: row.candidates })
+    })
+  }, [expandedRow])
+
+  const handlePin = useCallback(async (row: RenameRow, lb: number) => {
+    try {
+      const resp = await fetch(`${BASE}/api/folder_link`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ folder_path: row.folder, lb_number: lb }),
+      })
+      const data = await resp.json() as { ok?: boolean; error?: string }
+      if (!data.ok) throw new Error(data.error)
+      setDisambig(prev => prev ? { ...prev, pinnedLb: lb } : prev)
+      const lbStatus = detail.find(d => d.lb_number === lb)?.lb_status
+      const proposed = applyNftSuffix(`${row.cur} (${lbStr(lb)})`, lbStatus)
+      setRows(prev => prev.map(r => r.folder === row.folder
+        ? { ...r, lbNumber: lb, lbStr: lbStr(lb), prop: proposed, state: 'needs_rename', sel: true }
+        : r
+      ))
+      setExpandedRow(null)
+      setDisambig(null)
+      showToast(`${t('rename.toast.pinned', { lb: lbStr(lb) })}`, 'ok')
+    } catch {
+      showToast(t('rename.toast.pinFailed'), 'bad')
+    }
+  }, [detail, showToast, t])
+
+  const handleUnpin = useCallback(async (folder: string) => {
+    try {
+      const resp = await fetch(`${BASE}/api/folder_link?path=${encodeURIComponent(folder)}`, { method: 'DELETE' })
+      const data = await resp.json() as { ok?: boolean }
+      if (!data.ok) throw new Error()
+      setDisambig(prev => prev ? { ...prev, pinnedLb: null } : prev)
+      setDisambigLbSel(null)
+      showToast(t('rename.toast.unpinned'), 'ok')
+    } catch {
+      showToast(t('rename.toast.unpinFailed'), 'bad')
+    }
+  }, [showToast, t])
+
+  const handleStandardize = useCallback(async (folder: string, lb: number) => {
+    try {
+      const resp = await fetch(`${BASE}/api/folder_naming/standard/${lb}`)
+      const data = await resp.json() as { standard_name?: string; error?: string }
+      if (!data.standard_name) throw new Error(data.error)
+      setRows(prev => prev.map(r => r.folder === folder
+        ? { ...r, prop: data.standard_name!, state: 'needs_rename', sel: true }
+        : r
+      ))
+      setExpandedRow(null)
+      setDisambig(null)
+      showToast(t('rename.toast.standardized'), 'ok')
+    } catch {
+      showToast(t('rename.toast.standardizeFailed'), 'bad')
+    }
+  }, [showToast, t])
 
   const counts  = rows.reduce<Partial<Record<RowState, number>>>((a, r) => { a[r.state] = (a[r.state] ?? 0) + 1; return a }, {})
   const selected = rows.filter(r => r.sel).length
@@ -359,7 +455,7 @@ export function ScreenRename(): React.JSX.Element {
                             {r.state === 'multiple_ids' && (
                               <button
                                 title="Disambiguate"
-                                onClick={() => setExpandedRow(expanded ? null : i)}
+                                onClick={() => handleExpand(i, r)}
                                 style={{
                                   background: 'none', border: '1px solid var(--lbb-border2)',
                                   borderRadius: 4, padding: '2px 4px', cursor: 'pointer',
@@ -382,12 +478,52 @@ export function ScreenRename(): React.JSX.Element {
                                 <div style={{ fontSize: 10.5, fontWeight: 700, color: 'var(--lbb-info-fg)', letterSpacing: 0.08, textTransform: 'uppercase', marginBottom: 8 }}>
                                   {t('rename.disambiguate.title')}
                                 </div>
-                                <div style={{ fontSize: 11.5, color: 'var(--lbb-fg2)' }}>
-                                  {t('rename.disambiguate.desc')}
-                                </div>
-                                <div style={{ display: 'flex', gap: 6, marginTop: 10 }}>
-                                  <Button size="sm" variant="ghost" onClick={() => setExpandedRow(null)}>{t('rename.disambiguate.skip')}</Button>
-                                </div>
+
+                                {(!disambig || disambig.loading) ? (
+                                  <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', fontStyle: 'italic' }}>
+                                    {t('rename.disambiguate.loading')}
+                                  </div>
+                                ) : (
+                                  <>
+                                    {disambig.pinnedLb && (
+                                      <div style={{ fontSize: 11.5, color: 'var(--lbb-ok-fg)', marginBottom: 8 }}>
+                                        {t('rename.disambiguate.pinned', { lb: lbStr(disambig.pinnedLb) })}
+                                      </div>
+                                    )}
+                                    <div style={{ fontSize: 11.5, color: 'var(--lbb-fg2)', marginBottom: 10 }}>
+                                      {t('rename.disambiguate.desc')}
+                                    </div>
+                                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: 10 }}>
+                                      {disambig.canonical.map(lb => (
+                                        <button key={lb} onClick={() => setDisambigLbSel(lb)} style={{
+                                          padding: '4px 12px', borderRadius: 6, cursor: 'pointer', fontFamily: 'var(--lbb-mono)',
+                                          fontSize: 12, fontWeight: disambigLbSel === lb ? 700 : 500,
+                                          border: `1px solid ${disambigLbSel === lb ? 'var(--lbb-accent-mid)' : 'var(--lbb-border2)'}`,
+                                          background: disambigLbSel === lb ? 'var(--lbb-accent-soft)' : 'var(--lbb-surface)',
+                                          color: disambigLbSel === lb ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg2)',
+                                        }}>
+                                          {lbStr(lb)}
+                                        </button>
+                                      ))}
+                                    </div>
+                                    <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+                                      <Button size="sm" variant="primary" disabled={!disambigLbSel} onClick={() => disambigLbSel && handlePin(r, disambigLbSel)}>
+                                        {t('rename.disambiguate.pin')}
+                                      </Button>
+                                      <Button size="sm" variant="secondary" disabled={!disambigLbSel} onClick={() => disambigLbSel && handleStandardize(r.folder, disambigLbSel)}>
+                                        {t('rename.disambiguate.standardize')}
+                                      </Button>
+                                      {disambig.pinnedLb && (
+                                        <Button size="sm" variant="ghost" onClick={() => handleUnpin(r.folder)}>
+                                          {t('rename.disambiguate.unpin')}
+                                        </Button>
+                                      )}
+                                      <Button size="sm" variant="ghost" onClick={() => { setExpandedRow(null); setDisambig(null) }}>
+                                        {t('rename.disambiguate.skip')}
+                                      </Button>
+                                    </div>
+                                  </>
+                                )}
                               </div>
                             </td>
                           </tr>

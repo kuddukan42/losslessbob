@@ -1,3 +1,9 @@
+[2026-05-30] — feat(gui_next): finish wiring gaps — disambiguation panel, NFT suffix, Cache missing, queue location
+Changed: gui_next/src/renderer/src/screens/ScreenRename.tsx: added `candidates[]` to RenameRow; added NFT suffix logic (applyNftSuffix); replaced stub disambiguation panel with fully wired panel that fetches GET /api/folder_link + GET /api/lb_alias/resolve, shows LB candidate buttons, and wires Pin (PUT /api/folder_link), Unlink (DELETE /api/folder_link), and Standardize (GET /api/folder_naming/standard) actions.
+Added: gui_next/src/renderer/src/locales/en.json: new i18n keys for rename.disambiguate (pin/unpin/loading/pinned/standardize) and rename.toast (pinned/unpinned/pinFailed/unpinFailed/standardized/standardizeFailed).
+Added: gui_next/src/renderer/src/screens/ScreenAttachments.tsx: "Cache missing" batch button — POSTs /api/entry/<lb>/scrape for each missing entry, shows progress, reloads tree on completion.
+Changed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: wired "Open queue location" IconButton to openPath(parent of first queued folder).
+
 [2026-05-29] — chore(deploy): switch Windows installer + portable to Electron/React (gui_next)
 Changed: losslessbob_backend.spec: made cross-platform — Windows uses watchdog.observers.read_directory_changes, no fingerprinting stack, bundles shntool.exe; Linux keeps fingerprinting + inotify.
 Changed: backend/paths.py: frozen Windows now uses %LOCALAPPDATA%\LosslessBob for data dir (backend binary lives inside resources/backend/ which is read-only in the installed app).
