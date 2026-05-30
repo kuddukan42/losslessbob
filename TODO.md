@@ -18,22 +18,6 @@ Description: When the user performs a checksum lookup, indicate whether the chec
 ---
 
 
-TODO-101: Add SQL query box to DB Editor for manual query execution
-Priority: Medium
-Status: Open
-Added: 2026-05-25
-Description: Add a SQL input box to the DB Editor tab so the user can run arbitrary queries
-  against losslessbob.db directly from the GUI without needing an external SQLite tool.
-  Goals:
-    • Add a multi-line text input (QPlainTextEdit) and a "Run" button to the DB Editor.
-    • Execute the query via the backend (Flask route or direct db call in a QThread worker).
-    • Display results in a table view (QTableWidget or reuse existing table component).
-    • Show row count and any error messages clearly below the results.
-    • Read-only safety: optionally warn or block on destructive statements (DROP, DELETE, etc.)
-        unless the user confirms.
-
----
-
 TODO-093: Archive.org uploader
 Priority: Low
 Status: Open
