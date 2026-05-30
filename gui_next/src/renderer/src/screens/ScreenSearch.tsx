@@ -13,7 +13,7 @@ type RatingGrade     = 'A' | 'A−' | 'B+' | 'B' | 'B−' | 'C' | '—'
 type OwnershipFilter = 'any' | 'owned' | 'not-owned'
 type ToastTone       = 'ok' | 'bad' | 'info'
 type SortKey         = 'lb_asc' | 'lb_desc' | 'date_asc' | 'date_desc' | 'loc_asc' | 'loc_desc'
-type ColKey          = 'status' | 'date' | 'location' | 'rating' | 'description' | 'xref' | 'own'
+type ColKey          = 'status' | 'date' | 'location' | 'rating' | 'description' | 'taper' | 'source' | 'xref' | 'own'
 
 interface SearchRow {
   lb: string
@@ -25,6 +25,8 @@ interface SearchRow {
   location: string
   rating: RatingGrade
   description: string
+  taperName: string
+  sourceChain: string
   xref: string | null
   owned: boolean
 }
@@ -59,11 +61,15 @@ interface EntryDetail {
     cdr?: string
     status?: string
     scraped_at?: string
+    taper_name?: string
+    source_chain?: string
   }
   files: Array<{ filename: string; clean_name: string; downloaded: number }>
 }
 
 // ── Constants ─────────────────────────────────────────────────────────────────
+
+const RATING_RANK: Record<string, number> = { 'A': 6, 'A−': 5, 'B+': 4, 'B': 3, 'B−': 2, 'C': 1, '—': 0 }
 
 const SORT_OPTS: { key: SortKey; label: string }[] = [
   { key: 'lb_asc',   label: 'LB# ↑'       },
@@ -74,10 +80,11 @@ const SORT_OPTS: { key: SortKey; label: string }[] = [
   { key: 'loc_desc', label: 'Location Z–A' },
 ]
 
-const ALL_COLS: ColKey[] = ['status', 'date', 'location', 'rating', 'description', 'xref', 'own']
+const ALL_COLS: ColKey[] = ['status', 'date', 'location', 'rating', 'description', 'taper', 'source', 'xref', 'own']
 const COL_LABELS: Record<ColKey, string> = {
   status: 'Status', date: 'Date', location: 'Location',
-  rating: '★ Rating', description: 'Description', xref: 'Xref', own: 'Owned',
+  rating: '★ Rating', description: 'Description',
+  taper: 'Taper', source: 'Source', xref: 'Xref', own: 'Owned',
 }
 
 const LS_COLS_KEY  = 'lbb_search_cols'
@@ -101,6 +108,42 @@ const BUILT_IN_VIEWS: { id: string; name: string; state: FilterState }[] = [
 const VALID_RATINGS = new Set(['A', 'A−', 'B+', 'B', 'B−', 'C'])
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
+
+type SetlistItem =
+  | { kind: 'track'; num: string; title: string }
+  | { kind: 'header'; text: string }
+
+function parseSetlist(raw: string): SetlistItem[] {
+  // Normalise num: strip leading zero ("01" → "1")
+  const normNum = (n: string) => String(parseInt(n, 10))
+
+  let parts: string[]
+  if (/\n/.test(raw)) {
+    parts = raw.split('\n').map(l => l.trim()).filter(Boolean)
+  } else if (/,\s*0?\d{1,2}[.)]\s/.test(raw)) {
+    // Comma-separated dot/paren: "1. Song, 2. Song" or "01. Song, 02. Song"
+    parts = raw.split(/,\s*(?=0?\d{1,2}[.)]\s)/).map(p => p.trim()).filter(Boolean)
+  } else if (/,\s*\d{1,2}\s+[A-Z*"]/.test(raw)) {
+    // Comma-separated num-only: "1 Song, 2 Song"
+    parts = raw.split(/,\s*(?=\d{1,2}\s+[A-Z*"])/).map(p => p.trim()).filter(Boolean)
+  } else if (/\s+(?=0?\d{1,2}[.)]\s)/.test(raw)) {
+    // Space-separated dot/paren: "1. Song 2. Song"
+    parts = raw.split(/\s+(?=0?\d{1,2}[.)]\s)/).map(p => p.trim()).filter(Boolean)
+  } else {
+    // Space-separated num-only: "1 Song 2 Song"
+    parts = raw.split(/\s+(?=\d{1,2}\s+[A-Z*"])/).map(p => p.trim()).filter(Boolean)
+  }
+
+  return parts.map(line => {
+    // Dot / paren: "1. Title" / "01. Title" / "1) Title"
+    let m = line.match(/^(0?\d{1,2})[.)]\s+(.+)$/)
+    if (m) return { kind: 'track' as const, num: normNum(m[1]), title: m[2] }
+    // Num-only: "1 Title" (title starts with capital, *, or quote)
+    m = line.match(/^(0?\d{1,2})\s+([A-Z*"].+)$/)
+    if (m) return { kind: 'track' as const, num: normNum(m[1]), title: m[2] }
+    return { kind: 'header' as const, text: line }
+  })
+}
 
 function extractYear(dateStr: string): number {
   if (!dateStr) return 0
@@ -153,9 +196,9 @@ function loadStoredViews(): StoredView[] {
 }
 
 function exportToCsv(rows: SearchRow[]) {
-  const header = 'LB#,Status,Date,Location,Rating,Description\n'
+  const header = 'LB#,Status,Date,Location,Rating,Taper,Source,Description\n'
   const lines = rows.map(r =>
-    [r.lb, r.status, r.date, r.location, r.rating, r.description]
+    [r.lb, r.status, r.date, r.location, r.rating, r.taperName, r.sourceChain, r.description]
       .map(v => `"${(v ?? '').replace(/"/g, '""')}"`)
       .join(',')
   )
@@ -389,13 +432,25 @@ function EntryDetailPanel({ lbNumber, status, rating, owned, detail, loading, on
           )}
 
           {/* Meta grid */}
-          {e && (e.cdr || e.scraped_at) && (
+          {e && (e.taper_name || e.source_chain || e.cdr || e.scraped_at) && (
             <div style={{
               background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
               borderRadius: 6, padding: '8px 12px',
               display: 'grid', gridTemplateColumns: '72px 1fr',
               rowGap: 6, columnGap: 8, fontSize: 11.5,
             }}>
+              {e.taper_name && (
+                <React.Fragment>
+                  <span style={{ color: 'var(--lbb-fg3)', fontWeight: 600, alignSelf: 'center' }}>Taper</span>
+                  <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{e.taper_name}</span>
+                </React.Fragment>
+              )}
+              {e.source_chain && (
+                <React.Fragment>
+                  <span style={{ color: 'var(--lbb-fg3)', fontWeight: 600, alignSelf: 'center' }}>Source</span>
+                  <span style={{ wordBreak: 'break-word', lineHeight: 1.4 }}>{e.source_chain}</span>
+                </React.Fragment>
+              )}
               {e.cdr && (
                 <React.Fragment>
                   <span style={{ color: 'var(--lbb-fg3)', fontWeight: 600, alignSelf: 'center' }}>CDR</span>
@@ -435,32 +490,126 @@ function EntryDetailPanel({ lbNumber, status, rating, owned, detail, loading, on
             </div>
           )}
 
-          {/* Setlist */}
-          {e?.setlist && (
-            <div>
-              <div style={{
-                fontSize: 10.5, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
-                color: 'var(--lbb-fg3)', marginBottom: 4,
-              }}>
-                Setlist
-              </div>
-              <pre style={{ fontSize: 11.5, color: 'var(--lbb-fg2)', lineHeight: 1.6, margin: 0, whiteSpace: 'pre-wrap', fontFamily: 'var(--lbb-mono)' }}>
-                {slExpanded ? e.setlist : e.setlist.slice(0, 320) + (e.setlist.length > 320 ? '…' : '')}
-              </pre>
-              {e.setlist.length > 320 && (
-                <button
-                  type="button"
-                  onClick={() => setSlExpanded(v => !v)}
-                  style={{ fontSize: 11, color: 'var(--lbb-accent-mid)', background: 'none', border: 'none', cursor: 'pointer', marginTop: 3, padding: 0 }}
-                >
-                  {slExpanded ? 'Show less' : 'Show more'}
-                </button>
-              )}
-            </div>
-          )}
+          {/* Setlist — or file-name fallback when no setlist is available */}
+          {(() => {
+            const SL_LIMIT   = 12
+            const hasSetlist = !!(e?.setlist && e.setlist.trim().length > 0)
+            const files      = detail?.files ?? []
 
-          {/* Files */}
-          {detail && detail.files.length > 0 && (
+            if (!hasSetlist && files.length === 0) return null
+
+            if (hasSetlist) {
+              const items   = parseSetlist(e!.setlist!)
+              const trackCt = items.filter(t => t.kind === 'track').length
+              const visible = slExpanded ? items : items.slice(0, SL_LIMIT)
+              const hasNums = items.some(t => t.kind === 'track' && t.num !== '')
+              return (
+                <div>
+                  <div style={{
+                    fontSize: 10.5, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
+                    color: 'var(--lbb-fg3)', marginBottom: 4,
+                  }}>
+                    Setlist{trackCt > 0 ? ` (${trackCt})` : ''}
+                  </div>
+                  <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+                    <tbody>
+                      {visible.map((item, i) =>
+                        item.kind === 'header' ? (
+                          <tr key={i}>
+                            <td
+                              colSpan={hasNums ? 2 : 1}
+                              style={{
+                                fontSize: 10.5, fontWeight: 700, color: 'var(--lbb-fg3)',
+                                padding: i === 0 ? '0 4px 2px' : '8px 4px 2px',
+                                letterSpacing: '0.04em', textTransform: 'uppercase',
+                              }}
+                            >
+                              {item.text}
+                            </td>
+                          </tr>
+                        ) : (
+                          <tr key={i} style={{ borderBottom: '1px solid var(--lbb-border)' }}>
+                            {hasNums && (
+                              <td style={{
+                                color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)',
+                                padding: '3px 6px 3px 0', width: 22, textAlign: 'right',
+                                fontSize: 10.5, verticalAlign: 'top', userSelect: 'none',
+                              }}>
+                                {item.num}
+                              </td>
+                            )}
+                            <td style={{ padding: '3px 0 3px 4px', color: 'var(--lbb-fg2)', fontSize: 11.5, lineHeight: 1.4 }}>
+                              {item.title}
+                            </td>
+                          </tr>
+                        )
+                      )}
+                    </tbody>
+                  </table>
+                  {items.length > SL_LIMIT && (
+                    <button
+                      type="button"
+                      onClick={() => setSlExpanded(v => !v)}
+                      style={{ fontSize: 11, color: 'var(--lbb-accent-mid)', background: 'none', border: 'none', cursor: 'pointer', marginTop: 4, padding: 0 }}
+                    >
+                      {slExpanded ? 'Show less' : `Show ${items.length - SL_LIMIT} more…`}
+                    </button>
+                  )}
+                </div>
+              )
+            }
+
+            // Fallback: no setlist — show file names so there's always a track listing
+            const visible = slExpanded ? files : files.slice(0, SL_LIMIT)
+            return (
+              <div>
+                <div style={{
+                  fontSize: 10.5, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
+                  color: 'var(--lbb-fg3)', marginBottom: 4,
+                }}>
+                  Files ({files.length})
+                </div>
+                <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+                  <tbody>
+                    {visible.map((f, i) => (
+                      <tr key={i} style={{ borderBottom: '1px solid var(--lbb-border)' }}>
+                        <td style={{
+                          color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)',
+                          padding: '3px 6px 3px 0', width: 22, textAlign: 'right',
+                          fontSize: 10.5, verticalAlign: 'top', userSelect: 'none',
+                        }}>
+                          {i + 1}
+                        </td>
+                        <td style={{ padding: '3px 0 3px 4px', color: 'var(--lbb-fg2)', fontSize: 11.5, lineHeight: 1.4 }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                            <Icon
+                              name={f.downloaded ? 'check' : 'x'} size={10}
+                              style={{ color: f.downloaded ? 'var(--lbb-ok-fg)' : 'var(--lbb-fg3)', flexShrink: 0 }}
+                            />
+                            <span style={{ fontFamily: 'var(--lbb-mono)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                              {f.clean_name || f.filename}
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+                {files.length > SL_LIMIT && (
+                  <button
+                    type="button"
+                    onClick={() => setSlExpanded(v => !v)}
+                    style={{ fontSize: 11, color: 'var(--lbb-accent-mid)', background: 'none', border: 'none', cursor: 'pointer', marginTop: 4, padding: 0 }}
+                  >
+                    {slExpanded ? 'Show less' : `Show ${files.length - SL_LIMIT} more…`}
+                  </button>
+                )}
+              </div>
+            )
+          })()}
+
+          {/* Files — only when a setlist is also shown; suppressed when files are the fallback */}
+          {detail && detail.files.length > 0 && !!(e?.setlist && e.setlist.trim().length > 0) && (
             <div>
               <div style={{
                 fontSize: 10.5, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
@@ -531,6 +680,7 @@ export function ScreenSearch(): React.JSX.Element {
   const [activeStatus, setActiveStatus] = useState<Set<string>>(new Set())
   const [activeRating, setActiveRating] = useState<Set<string>>(new Set())
   const [ownership,    setOwnership]    = useState<OwnershipFilter>('any')
+  const [bestPerDate,  setBestPerDate]  = useState(false)
 
   // ── UI ───────────────────────────────────────────────────────────────────
   const [sortKey,      setSortKey]      = useState<SortKey>('lb_asc')
@@ -606,6 +756,8 @@ export function ScreenSearch(): React.JSX.Element {
               location:    d.location ?? '',
               rating:      (VALID_RATINGS.has(raw) ? raw : '—') as RatingGrade,
               description: d.description ?? '',
+              taperName:   d.taper_name ?? '',
+              sourceChain: d.source_chain ?? '',
               xref:        null,
               owned:       false,  // set in ownedRows memo
             }
@@ -694,10 +846,34 @@ export function ScreenSearch(): React.JSX.Element {
     [ownedRows, activeStatus, activeRating, activeDec, ownership, yearRange]
   )
 
+  // ── Best-per-date filter ─────────────────────────────────────────────────
+
+  const bestPerDateRows = useMemo(() => {
+    if (!bestPerDate) return filteredRows
+    // For each unique non-empty date keep only the entry/entries with the max rating.
+    // Undated entries (empty string) are always included as-is.
+    const byDate = new Map<string, SearchRow[]>()
+    const undated: SearchRow[] = []
+    for (const r of filteredRows) {
+      if (!r.date) { undated.push(r); continue }
+      const bucket = byDate.get(r.date)
+      if (bucket) bucket.push(r)
+      else byDate.set(r.date, [r])
+    }
+    const result: SearchRow[] = [...undated]
+    for (const bucket of byDate.values()) {
+      const maxRank = Math.max(...bucket.map(r => RATING_RANK[r.rating] ?? 0))
+      for (const r of bucket) {
+        if ((RATING_RANK[r.rating] ?? 0) === maxRank) result.push(r)
+      }
+    }
+    return result
+  }, [filteredRows, bestPerDate])
+
   // ── Sorting ──────────────────────────────────────────────────────────────
 
   const sortedRows = useMemo(() => {
-    const arr = [...filteredRows]
+    const arr = [...bestPerDateRows]
     switch (sortKey) {
       case 'lb_asc':    return arr.sort((a, b) => a.lbNumber - b.lbNumber)
       case 'lb_desc':   return arr.sort((a, b) => b.lbNumber - a.lbNumber)
@@ -707,7 +883,7 @@ export function ScreenSearch(): React.JSX.Element {
       case 'loc_desc':  return arr.sort((a, b) => b.location.localeCompare(a.location))
       default:          return arr
     }
-  }, [filteredRows, sortKey])
+  }, [bestPerDateRows, sortKey])
 
   // ── Grouping ─────────────────────────────────────────────────────────────
 
@@ -761,10 +937,10 @@ export function ScreenSearch(): React.JSX.Element {
 
   const clearAll = () => {
     setActiveDec(new Set()); setActiveStatus(new Set()); setActiveRating(new Set())
-    setOwnership('any'); setYearRange(dataYearRange)
+    setOwnership('any'); setYearRange(dataYearRange); setBestPerDate(false)
   }
 
-  const hasActiveFilters = activeDec.size > 0 || activeStatus.size > 0 || activeRating.size > 0 || ownership !== 'any'
+  const hasActiveFilters = activeDec.size > 0 || activeStatus.size > 0 || activeRating.size > 0 || ownership !== 'any' || bestPerDate
 
   const filterChips: Array<{ label: string; onRemove: () => void }> = [
     ...[...activeStatus].map(s => ({ label: `Status: ${s}`, onRemove: () => toggleSet(setActiveStatus, s) })),
@@ -773,6 +949,7 @@ export function ScreenSearch(): React.JSX.Element {
     ...(ownership !== 'any'
       ? [{ label: ownership === 'owned' ? 'Owned' : 'Not owned', onRemove: () => setOwnership('any') }]
       : []),
+    ...(bestPerDate ? [{ label: 'Best per date', onRemove: () => setBestPerDate(false) }] : []),
   ]
 
   // ── Saved views ───────────────────────────────────────────────────────────
@@ -939,6 +1116,25 @@ export function ScreenSearch(): React.JSX.Element {
           />
         </div>
 
+        {/* Best per date */}
+        <div style={{ borderBottom: '1px solid var(--lbb-border)', padding: '8px 12px' }}>
+          <label style={{
+            display: 'flex', alignItems: 'center', gap: 8,
+            cursor: 'pointer', fontSize: 12, color: 'var(--lbb-fg2)',
+          }}>
+            <input
+              type="checkbox"
+              checked={bestPerDate}
+              onChange={e => setBestPerDate(e.target.checked)}
+              style={{ accentColor: 'var(--lbb-accent-mid)', flexShrink: 0 }}
+            />
+            <span>Best per date</span>
+          </label>
+          <div style={{ fontSize: 10.5, color: 'var(--lbb-fg3)', marginTop: 4, paddingLeft: 20 }}>
+            Show only the highest-rated entry for each concert date
+          </div>
+        </div>
+
         {/* Clear all */}
         <div style={{ padding: '10px 12px', marginTop: 'auto' }}>
           <Button
@@ -1093,6 +1289,8 @@ export function ScreenSearch(): React.JSX.Element {
                 {visibleCols.has('location')    && <col style={{ width: 180 }} />}
                 {visibleCols.has('rating')      && <col style={{ width: 50  }} />}
                 {visibleCols.has('description') && <col />}
+                {visibleCols.has('taper')       && <col style={{ width: 140 }} />}
+                {visibleCols.has('source')      && <col style={{ width: 200 }} />}
                 {visibleCols.has('xref')        && <col style={{ width: 80  }} />}
                 {visibleCols.has('own')         && <col style={{ width: 36  }} />}
                 <col style={{ width: 28 }} />
@@ -1105,6 +1303,8 @@ export function ScreenSearch(): React.JSX.Element {
                   {visibleCols.has('location')    && <TH>Location</TH>}
                   {visibleCols.has('rating')      && <TH align="center">★</TH>}
                   {visibleCols.has('description') && <TH>Description</TH>}
+                  {visibleCols.has('taper')       && <TH>Taper</TH>}
+                  {visibleCols.has('source')      && <TH>Source</TH>}
                   {visibleCols.has('xref')        && <TH align="right">Xref</TH>}
                   {visibleCols.has('own')         && <TH align="center">Own</TH>}
                   <TH />
@@ -1168,6 +1368,8 @@ export function ScreenSearch(): React.JSX.Element {
                               </TD>
                             )}
                             {visibleCols.has('description') && <TD dim>{r.description}</TD>}
+                            {visibleCols.has('taper')       && <TD dim>{r.taperName}</TD>}
+                            {visibleCols.has('source')      && <TD dim>{r.sourceChain}</TD>}
                             {visibleCols.has('xref')        && <TD mono dim align="right">{r.xref ?? ''}</TD>}
                             {visibleCols.has('own') && (
                               <TD align="center">
