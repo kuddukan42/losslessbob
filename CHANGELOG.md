@@ -1,3 +1,19 @@
+[2026-05-29] — fix(backend): TOCTOU race + missing error guards in background task start routes
+Fixed: backend/app.py: All four background-task start routes (spectrogram generate, fingerprint build, dup scan, identify-folder) had a TOCTOU race — the "already running" guard ran inside the lock but the thread started after the lock released, allowing concurrent requests to start two workers. Fixed by claiming status="running" inside the lock before releasing it. Guard widened from status=="running" to not-in-(idle, done, error) so the "scanning" phase is also covered.
+Fixed: backend/app.py: Added top-level try/except to _do_fp_build, _do_fp_dup_scan, _do_fp_identify_folder, and _do_spectro_batch so that import failures or unexpected crashes reset status to "error" rather than leaving it permanently stuck at "running".
+
+[2026-05-29] — feat(gui_next+backend): SQL query panel in DB Editor (TODO-101)
+Added: backend/app.py: POST /api/dbedit/query — run arbitrary SQL, returns columns+rows for SELECT or rows_affected for DML; blocks DROP/TRUNCATE/VACUUM/ATTACH/DETACH
+Added: gui_next/src/renderer/src/screens/ScreenDbEditor.tsx: SqlQueryPanel component (textarea, Run/Clear, results table, status line with row count / error); toggle button in action row; Ctrl+Enter shortcut to run
+Changed: gui_next/src/renderer/src/locales/{en,de,fr,es,it,nl}.json: added dbeditor.query.* keys
+
+[2026-05-29] — feat(gui_next): ScreenDbEditor — full DB editor screen ported from legacy dbedit_tab
+Added: gui_next/src/renderer/src/screens/ScreenDbEditor.tsx: full DB editor screen with table browser, inline editing, pagination, sort, search, Commit/Discard/Delete/Export CSV, DB Integrity panel (reconcile, overrides, backup), and LB Aliases panel (curator-gated add/delete)
+Changed: gui_next/src/renderer/src/App.tsx: wired ScreenDbEditor at /dbeditor, replacing PlaceholderScreen
+Changed: gui_next/src/renderer/src/components/AppShell.tsx: moved DB Editor nav item from Curator group to Settings group (alongside Setup and Themes); Curator group now only contains Scraper
+Changed: gui_next/src/renderer/src/locales/en.json: added dbeditor i18n section (80+ keys)
+Changed: gui_next/src/renderer/src/locales/{de,es,fr,it,nl}.json: added dbeditor section (English placeholder text, ready for DeepL pass)
+
 [2026-05-29] — chore(i18n): gui_next locale refresh — add 60 missing keys, DeepL fill all gaps
 Added: .claude/commands/gui-next-i18n.md: new skill for React locale workflow (Step 1 count → Step 2 Qt port warning → Step 3 DeepL → Step 4 verify)
 Changed: gui_next/src/renderer/src/locales/{de,fr,es,it,nl}.json: 60 new keys added (fingerprint, collection toast strings); ~582 strings per language translated via DeepL (57,254 chars total); 53 remaining gaps are intentional proper-noun/abbrev strings (Pipeline, LBDIR, LB#, etc.)
