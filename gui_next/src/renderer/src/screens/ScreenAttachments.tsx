@@ -69,6 +69,7 @@ export function ScreenAttachments(): React.JSX.Element {
   const [activeFile,  setActiveFile]  = useState<EntryFile | null>(null)
   const [fileContent, setFileContent] = useState<string | null>(null)
   const [busy,        setBusy]        = useState(false)
+  const [caching,     setCaching]     = useState(false)
   const [dataDir,     setDataDir]     = useState<string | null>(null)
   const [toast,       setToast]       = useState<{ msg: string; tone: ToastTone } | null>(null)
 
@@ -154,6 +155,26 @@ export function ScreenAttachments(): React.JSX.Element {
     }
   }, [loadTree, showToast])
 
+  const handleCacheMissing = useCallback(async () => {
+    const missing = entries.filter(e => e.att_status === 'missing')
+    if (!missing.length) return
+    setCaching(true)
+    let done = 0
+    for (const e of missing) {
+      try {
+        await fetch(`${BASE}/api/entry/${e.lb_number}/scrape`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ force: false }),
+        })
+        done++
+      } catch { /* continue */ }
+    }
+    showToast(`Queued ${done} / ${missing.length} entries for caching`, 'info')
+    setCaching(false)
+    setTimeout(loadTree, 3000)
+  }, [entries, loadTree, showToast])
+
   const handleOpenFolder = useCallback((lb: number) => {
     if (!dataDir) { showToast('Data directory unknown', 'info'); return }
     const path = `${dataDir}/attachments/${lbFolder(lb)}`
@@ -222,6 +243,11 @@ export function ScreenAttachments(): React.JSX.Element {
           {counts.current > 0 && <Pill tone="ok"   soft>{counts.current.toLocaleString()} current</Pill>}
           {counts.stale   > 0 && <Pill tone="warn" soft>{counts.stale} stale</Pill>}
           {counts.missing > 0 && <Pill tone="bad"  soft>{counts.missing} missing</Pill>}
+          {counts.missing > 0 && (
+            <Button variant="secondary" size="sm" icon="download" disabled={busy || caching} onClick={handleCacheMissing}>
+              {caching ? 'Caching…' : `Cache ${counts.missing} missing`}
+            </Button>
+          )}
           <Button variant="ghost" size="sm" icon="refresh" disabled={busy} onClick={loadTree}>
             {busy ? 'Refreshing…' : 'Refresh tree'}
           </Button>

@@ -638,7 +638,15 @@ export function ScreenPipeline(): React.JSX.Element {
               style={{ width: 240 }}
             />
             <IconButton icon="more" title="Density" />
-            <IconButton icon="reveal" title="Open queue location" />
+            <IconButton icon="reveal" title="Open queue location"
+              disabled={!rows.length}
+              onClick={() => {
+                const first = rows[0]?.folderPath
+                if (!first) return
+                const parent = first.replace(/[/\\][^/\\]+$/, '')
+                window.api.openPath(parent || first)
+              }}
+            />
           </div>
 
           {/* Selection bar */}
