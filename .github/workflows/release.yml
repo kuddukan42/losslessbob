@@ -23,19 +23,15 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install dependencies
+      - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install pyinstaller
 
-      - name: Build with PyInstaller
-        run: pyinstaller losslessbob.spec
+      - name: Build backend binary (onefile)
+        run: pyinstaller losslessbob_backend.spec
 
-      - name: Create data directory in dist
-        run: mkdir dist\LosslessBob\data
-
-      # Strip leading 'v' so installer version is "1.0.3" not "v1.0.3"
       - name: Compute version string
         id: version
         shell: pwsh
@@ -43,26 +39,31 @@ jobs:
           $v = "${{ github.ref_name }}" -replace '^v', ''
           "VERSION=$v" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
 
-      # windows-latest includes Inno Setup 6 pre-installed
-      - name: Build installer
-        shell: pwsh
-        run: |
-          $iscc = "C:\Program Files (x86)\Inno Setup 6\ISCC.exe"
-          & $iscc /DAppVersion=${{ steps.version.outputs.VERSION }} tools\losslessbob.iss
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
 
-      # Keep a portable zip alongside the installer for users who prefer it
-      - name: Create portable zip
+      - name: Install gui_next dependencies
+        working-directory: gui_next
+        run: npm ci
+
+      - name: Prepare build resources
         shell: pwsh
         run: |
-          Compress-Archive -Path dist\LosslessBob `
-            -DestinationPath dist\LosslessBob-${{ steps.version.outputs.VERSION }}-windows-portable.zip
+          New-Item -ItemType Directory -Force -Path gui_next\resources\backend
+          Copy-Item dist\LosslessBobBackend.exe gui_next\resources\backend\LosslessBobBackend.exe
+
+      - name: Build and package Windows app
+        working-directory: gui_next
+        run: npm run dist:win -- --config.extraMetadata.version=${{ steps.version.outputs.VERSION }}
 
       - name: Upload to GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            dist/LosslessBob-${{ steps.version.outputs.VERSION }}-windows-portable.zip
-            tools/Output/LosslessBob_Setup_${{ steps.version.outputs.VERSION }}.exe
+            gui_next/dist/*-windows-Setup.exe
+            gui_next/dist/*-windows-portable.exe
           generate_release_notes: true
 
   build-linux:

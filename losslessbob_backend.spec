@@ -1,6 +1,34 @@
 # losslessbob_backend.spec
-# Backend-only onefile build — bundled as a resource inside the Electron AppImage.
-# Run: pyinstaller losslessbob_backend.spec
+# Backend-only onefile build — bundled inside the Electron AppImage (Linux) or
+# Windows installer/portable. Run: pyinstaller losslessbob_backend.spec
+
+import sys
+
+# Platform-specific Watchdog observer
+_watchdog = ['watchdog', 'watchdog.observers']
+if sys.platform == 'linux':
+    _watchdog += ['watchdog.observers.inotify']
+elif sys.platform == 'darwin':
+    _watchdog += ['watchdog.observers.fsevents']
+elif sys.platform == 'win32':
+    _watchdog += ['watchdog.observers.read_directory_changes']
+
+# Fingerprinting stack: Linux only — large deps, matches old losslessbob_linux.spec.
+_fp = []
+if sys.platform == 'linux':
+    _fp = [
+        'numpy', 'scipy', 'scipy.signal', 'scipy.fft', 'scipy.ndimage',
+        'librosa', 'librosa.core', 'soundfile', 'numba', 'llvmlite',
+    ]
+
+_excludes = ['tkinter', 'matplotlib', 'pandas', 'cv2', 'PyQt6', 'test', 'unittest']
+if sys.platform != 'linux':
+    _excludes += ['numpy', 'scipy', 'librosa', 'soundfile', 'numba', 'llvmlite']
+
+# shntool.exe bundled on Windows (GPL-2 binary for SHN verification)
+_datas = []
+if sys.platform == 'win32':
+    _datas = [('tools/shntool.exe', 'tools')]
 
 block_cipher = None
 
@@ -8,7 +36,7 @@ a = Analysis(
     ['run_backend.py'],
     pathex=['.'],
     binaries=[],
-    datas=[],
+    datas=_datas,
     hiddenimports=[
         'flask',
         'flask_cors',
@@ -24,38 +52,17 @@ a = Analysis(
         'waitress',
         'waitress.task',
         'waitress.server',
-        'watchdog',
-        'watchdog.observers',
-        'watchdog.observers.inotify',
         'requests',
         'urllib3',
         'charset_normalizer',
         'certifi',
         'sqlite3',
         '_sqlite3',
-        'numpy',
-        'scipy',
-        'scipy.signal',
-        'scipy.fft',
-        'scipy.ndimage',
-        'librosa',
-        'librosa.core',
-        'soundfile',
-        'numba',
-        'llvmlite',
-    ],
+    ] + _watchdog + _fp,
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
-    excludes=[
-        'tkinter',
-        'matplotlib',
-        'pandas',
-        'cv2',
-        'PyQt6',
-        'test',
-        'unittest',
-    ],
+    excludes=_excludes,
     win_no_prefer_redirects=False,
     win_private_assemblies=False,
     cipher=block_cipher,

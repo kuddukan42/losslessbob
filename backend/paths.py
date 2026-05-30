@@ -10,10 +10,14 @@ def _app_root() -> Path:
     """Return the directory that contains the data/ folder."""
     if getattr(sys, "frozen", False):
         if sys.platform == "linux":
-            # AppImage mounts are read-only squashfs; --appimage-extract-and-run uses an
-            # ephemeral temp path. Use XDG_DATA_HOME so data persists across runs.
+            # AppImage: read-only squashfs mount. Use XDG_DATA_HOME so data persists.
             xdg = Path(os.environ.get("XDG_DATA_HOME", Path.home() / ".local" / "share"))
             return xdg / "LosslessBob"
+        if sys.platform == "win32":
+            # Electron-packaged: backend binary lives inside resources/backend/ which is
+            # inside the installation tree and may be read-only. Store data in LocalAppData.
+            localappdata = Path(os.environ.get("LOCALAPPDATA", Path.home() / "AppData" / "Local"))
+            return localappdata / "LosslessBob"
         return Path(sys.executable).parent
     return Path(__file__).parent.parent
 

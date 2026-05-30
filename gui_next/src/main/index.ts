@@ -31,8 +31,8 @@ async function ensureBackend(): Promise<void> {
   let cwd: string
 
   if (app.isPackaged) {
-    // Packaged AppImage: backend binary is bundled as an extraResource
-    cmd = join(process.resourcesPath, 'backend', 'LosslessBobBackend')
+    const backendBin = process.platform === 'win32' ? 'LosslessBobBackend.exe' : 'LosslessBobBackend'
+    cmd = join(process.resourcesPath, 'backend', backendBin)
     args = []
     cwd = app.getPath('home')
   } else {

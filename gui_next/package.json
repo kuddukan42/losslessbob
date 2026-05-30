@@ -7,12 +7,12 @@
     "dev": "electron-vite dev",
     "build": "electron-vite build",
     "preview": "electron-vite preview",
-    "dist:linux": "electron-vite build && electron-builder --linux AppImage"
+    "dist:linux": "electron-vite build && electron-builder --linux AppImage",
+    "dist:win": "electron-vite build && electron-builder --win"
   },
   "build": {
     "appId": "com.kuddukan42.losslessbob",
     "productName": "LosslessBob",
-    "artifactName": "${productName}-${version}-linux-${arch}.AppImage",
     "directories": {
       "buildResources": "resources",
       "output": "dist"
@@ -27,9 +27,29 @@
         "filter": ["**/*"]
       }
     ],
+    "fileAssociations": [
+      { "ext": "ffp", "name": "FFP Checksum", "description": "LosslessBob FFP Checksum", "role": "Viewer" },
+      { "ext": "md5", "name": "MD5 Checksum", "description": "LosslessBob MD5 Checksum", "role": "Viewer" },
+      { "ext": "st5", "name": "ST5 Checksum", "description": "LosslessBob ST5 Checksum", "role": "Viewer" }
+    ],
     "linux": {
       "target": "AppImage",
-      "category": "Utility;Audio;"
+      "category": "Utility;Audio;",
+      "artifactName": "${productName}-${version}-linux-${arch}.AppImage"
+    },
+    "win": {
+      "target": ["nsis", "portable"]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": false,
+      "createDesktopShortcut": "always",
+      "createStartMenuShortcut": true,
+      "artifactName": "${productName}-${version}-windows-Setup.${ext}"
+    },
+    "portable": {
+      "artifactName": "${productName}-${version}-windows-portable.${ext}"
     }
   },
   "dependencies": {
