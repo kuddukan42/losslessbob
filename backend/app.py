@@ -2031,8 +2031,9 @@ def create_app() -> Flask:
         }
         """
         with _spectro_lock:
-            if _spectro_state["status"] == "running":
+            if _spectro_state["status"] not in ("idle", "done", "error"):
                 return jsonify({"error": "Generation already running"}), 409
+            _spectro_state["status"] = "running"
 
         data    = request.get_json() or {}
         folders = data.get("folders", [])
@@ -2381,6 +2382,62 @@ def create_app() -> Flask:
             )
         except Exception as e:
             return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/dbedit/query", methods=["POST"])
+    def dbedit_query() -> Response:
+        """Execute an arbitrary SQL query against losslessbob.db.
+
+        Body: {sql: str, limit: int (optional, default 500, max 2000)}
+        Returns:
+            SELECT/PRAGMA/WITH: {columns, rows, row_count, truncated}
+            DML (INSERT/UPDATE/DELETE): {ok, rows_affected}
+            Error: {error: str} with 400 status.
+        """
+        body = request.get_json(force=True, silent=True) or {}
+        sql: str = (body.get("sql") or "").strip()
+        if not sql:
+            return jsonify({"error": "No SQL provided."}), 400
+
+        limit = min(int(body.get("limit", 500)), 2000)
+
+        upper = sql.upper()
+        for blocked in ("DROP ", "TRUNCATE ", "VACUUM", "ATTACH ", "DETACH "):
+            if upper.startswith(blocked):
+                return jsonify({
+                    "error": f"Statement type blocked: {blocked.strip()}."
+                             " Use the schema editor for structural changes."
+                }), 400
+
+        is_read = any(upper.startswith(kw) for kw in
+                      ("SELECT", "PRAGMA", "WITH", "EXPLAIN", "VALUES"))
+        try:
+            if is_read:
+                conn = database.get_connection()
+                cur = conn.execute(sql)
+            else:
+                result_holder: list = []
+
+                def _run(c: object) -> None:
+                    cur = c.execute(sql)  # type: ignore[attr-defined]
+                    result_holder.append(cur)
+
+                database.get_write_queue().execute(_run)
+                cur = result_holder[0] if result_holder else None
+
+            if cur is not None and cur.description:
+                columns = [d[0] for d in cur.description]
+                rows = [list(r) for r in cur.fetchmany(limit)]
+                return jsonify({
+                    "columns": columns,
+                    "rows": rows,
+                    "row_count": len(rows),
+                    "truncated": len(rows) >= limit,
+                })
+            else:
+                affected = cur.rowcount if cur is not None else 0
+                return jsonify({"ok": True, "rows_affected": affected, "columns": [], "rows": []})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 400
 
     # ── Torrent Generation ───────────────────────────────────────────────────
 
@@ -3942,8 +3999,9 @@ def create_app() -> Flask:
         Returns {ok, total} or 409 if already running.
         """
         with _fp_build_lock:
-            if _fp_build_state["status"] == "running":
+            if _fp_build_state["status"] not in ("idle", "done", "error"):
                 return jsonify({"error": "Build already running"}), 409
+            _fp_build_state["status"] = "running"
         try:
             data    = request.get_json(silent=True) or {}
             force   = bool(data.get("force", False))
@@ -4041,8 +4099,9 @@ def create_app() -> Flask:
         Returns {ok} or 409 if already running.
         """
         with _fp_dup_lock:
-            if _fp_dup_state["status"] == "running":
+            if _fp_dup_state["status"] not in ("idle", "done", "error"):
                 return jsonify({"error": "Scan already running"}), 409
+            _fp_dup_state["status"] = "running"
         try:
             _fp_dup_stop.clear()
             with _fp_dup_lock:
@@ -4098,8 +4157,9 @@ def create_app() -> Flask:
         Returns {ok} or 409 if already running.
         """
         with _fp_id_lock:
-            if _fp_id_state["status"] == "running":
+            if _fp_id_state["status"] not in ("idle", "done", "error"):
                 return jsonify({"error": "Already running"}), 409
+            _fp_id_state["status"] = "running"
         try:
             data = request.get_json() or {}
             folder = data.get("folder", "").strip()
@@ -4579,14 +4639,18 @@ def _do_spectro_batch(folders: list[str], opts: dict) -> None:
         folders: List of absolute folder paths to process.
         opts: Generation options — width, height, dyn_range (int), force (bool).
     """
-    from backend.sox_utils import (
-        generate_spectrogram, AUDIO_EXTS_ALL,
-        SoxNotFoundError, ConversionError, SpectrogenError,
-    )
-
     def _set(**kw):
         with _spectro_lock:
             _spectro_state.update(kw)
+
+    try:
+        from backend.sox_utils import (
+            generate_spectrogram, AUDIO_EXTS_ALL,
+            SoxNotFoundError, ConversionError, SpectrogenError,
+        )
+    except Exception as exc:
+        _set(status="error", current=str(exc))
+        return
 
     all_files: list[tuple[Path, Path]] = []
     for folder in folders:
@@ -4653,74 +4717,79 @@ def _do_spectro_batch(folders: list[str], opts: dict) -> None:
 
 def _do_fp_build(collection_rows: list[dict], force: bool = False) -> None:
     """Run fingerprint.build_fingerprint_db in a daemon thread."""
-    from backend import fingerprint as _fp
-
     def _set(kw: dict) -> None:
         with _fp_build_lock:
             _fp_build_state.update(kw)
 
-    _fp.build_fingerprint_db(
-        collection_rows,
-        force=force,
-        state_setter=_set,
-        stop_event=_fp_build_stop,
-    )
+    try:
+        from backend import fingerprint as _fp
+        _fp.build_fingerprint_db(
+            collection_rows,
+            force=force,
+            state_setter=_set,
+            stop_event=_fp_build_stop,
+        )
+    except Exception as exc:
+        _set({"status": "error", "current": str(exc)})
 
 
 def _do_fp_dup_scan() -> None:
     """Run fingerprint.find_duplicate_recordings in a daemon thread."""
-    from backend import fingerprint as _fp
-
     def _set(kw: dict) -> None:
         with _fp_dup_lock:
             _fp_dup_state.update(kw)
 
-    results = _fp.find_duplicate_recordings(
-        state_setter=_set,
-        stop_event=_fp_dup_stop,
-    )
-    with _fp_dup_lock:
-        _fp_dup_state.update({"status": "done", "results": results})
+    try:
+        from backend import fingerprint as _fp
+        results = _fp.find_duplicate_recordings(
+            state_setter=_set,
+            stop_event=_fp_dup_stop,
+        )
+        _set({"status": "done", "results": results})
+    except Exception as exc:
+        _set({"status": "error", "message": str(exc)})
 
 
 def _do_fp_identify_folder(folder: str) -> None:
     """Identify all audio files in folder against fingerprints.db."""
-    from backend import fingerprint as _fp
-
     def _set(**kw: object) -> None:
         with _fp_id_lock:
             _fp_id_state.update(kw)
 
-    folder_path = Path(folder)
-    audio_files = [
-        f for f in sorted(folder_path.rglob("*"))
-        if f.is_file() and f.suffix.lower() in _fp.AUDIO_EXTS
-    ]
-    _set(status="running", done=0, total=len(audio_files),
-         results=[], errors=[], current="", stop_requested=False)
+    try:
+        from backend import fingerprint as _fp
+        folder_path = Path(folder)
+        audio_files = [
+            f for f in sorted(folder_path.rglob("*"))
+            if f.is_file() and f.suffix.lower() in _fp.AUDIO_EXTS
+        ]
+        _set(status="running", done=0, total=len(audio_files),
+             results=[], errors=[], current="", stop_requested=False)
 
-    if not audio_files:
+        if not audio_files:
+            _set(status="done", current="")
+            return
+
+        results: list[dict] = []
+        errors: list[str] = []
+        for i, audio_path in enumerate(audio_files):
+            if _fp_id_stop.is_set():
+                break
+            _set(current=audio_path.name, done=i)
+            try:
+                candidates = _fp.identify_file(audio_path)
+                results.append({
+                    "user_file": audio_path.name,
+                    "user_path": str(audio_path),
+                    "candidates": candidates,
+                })
+            except Exception as exc:
+                errors.append(f"{audio_path.name}: {exc}")
+            _set(done=i + 1, results=list(results), errors=list(errors))
+
         _set(status="done", current="")
-        return
-
-    results: list[dict] = []
-    errors: list[str] = []
-    for i, audio_path in enumerate(audio_files):
-        if _fp_id_stop.is_set():
-            break
-        _set(current=audio_path.name, done=i)
-        try:
-            candidates = _fp.identify_file(audio_path)
-            results.append({
-                "user_file": audio_path.name,
-                "user_path": str(audio_path),
-                "candidates": candidates,
-            })
-        except Exception as exc:
-            errors.append(f"{audio_path.name}: {exc}")
-        _set(done=i + 1, results=list(results), errors=list(errors))
-
-    _set(status="done", current="")
+    except Exception as exc:
+        _set(status="error", current=str(exc))
 
 
 def _start_scrape_thread(
