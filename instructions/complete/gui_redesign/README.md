@@ -34,15 +34,15 @@ Track what is done, in-progress, or not yet started. Update this table each sess
 | 1c | Font loading | ✅ Done | Inter + JetBrains Mono via Google Fonts; CSP updated in `index.html` |
 | 2 | Primitives | ✅ Done | `components/Icon.tsx`, `primitives.tsx`, `table.tsx`, `index.ts` — all components, barrel export |
 | 3 | App shell | ✅ Done | `AppShell.tsx` — Sidebar, Topbar, StatusBar; Zustand store; HashRouter with all 16 routes wired |
-| 3b | Curator mode gate | 🔄 In Progress | Store + gating done; toggle UI in Settings screen is Phase 6 |
-| 4a | Pipeline screen | 🔲 Todo | Primary workflow — file-drop, per-step ops, virtualized table |
-| 4b | Home screen | 🔲 Todo | Dashboard cards, metrics, recent activity |
-| 4c | My Collection screen | 🔲 Todo | 15K-row virtualized table + detail panel |
-| 5 | Search screen | 🔲 Todo | FTS5 search + facet rail |
-| 5b | Bootlegs screen | 🔲 Todo | LBBCD catalog browser |
-| 6 | Settings / Themes screens | 🔲 Todo | Forms + live theme preview |
-| 7 | Stub screens | 🔲 Todo | Verify, Lookup, Rename, LBDIR, Attachments, Spectrograms, Map |
-| 8 | Curator tools | 🔲 Deferred | DB Editor, Scraper (behind curator-mode gate) |
+| 3b | Curator mode gate | ✅ Done | Store + gating done; curator toggle in ScreenSetup |
+| 4a | Pipeline screen | ✅ Done | `ScreenPipeline.tsx` — file-drop, per-step ops, virtualized table, queue location |
+| 4b | Home screen | ✅ Done | `ScreenHome.tsx` — dashboard cards, metrics, recent activity |
+| 4c | My Collection screen | ✅ Done | `ScreenCollection.tsx` — 15K-row virtualized table + detail panel |
+| 5 | Search screen | ✅ Done | `ScreenSearch.tsx` — FTS5 search + facet rail |
+| 5b | Bootlegs screen | ✅ Done | `ScreenBootlegs.tsx` — LBBCD catalog browser |
+| 6 | Settings / Themes screens | ✅ Done | `ScreenSetup.tsx`, `ScreenThemes.tsx` — forms + live theme preview |
+| 7 | Stub screens | ✅ Done | `ScreenVerify.tsx`, `ScreenLookup.tsx`, `ScreenRename.tsx`, `ScreenLBDIR.tsx`, `ScreenAttachments.tsx`, `ScreenSpectrograms.tsx`, `ScreenMap.tsx`, `ScreenFingerprint.tsx` |
+| 8 | Curator tools | ✅ Done | `ScreenDbEditor.tsx` — behind curator-mode gate |
 
 **Legend:** ✅ Done · 🔄 In Progress · 🔲 Not Started · ⏸ Deferred
 

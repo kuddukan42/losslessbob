@@ -107,3 +107,67 @@ def stop_file_watcher():
         _observer.stop()
         _observer.join()
         _observer = None
+
+
+# ── Collection folder integrity watchdog ──────────────────────────────────────
+
+_collection_observer = None
+
+
+class _CollectionEventHandler(FileSystemEventHandler):
+    def __init__(self, lb_number: int, disk_path: str):
+        super().__init__()
+        self.lb_number = lb_number
+        self.disk_path = disk_path
+
+    def on_deleted(self, event):
+        from backend.db import log_integrity_event
+        log_integrity_event(
+            self.lb_number, self.disk_path,
+            "deleted", f"Deleted: {event.src_path}",
+        )
+
+    def on_moved(self, event):
+        from backend.db import log_integrity_event
+        log_integrity_event(
+            self.lb_number, self.disk_path,
+            "moved", f"Moved: {event.src_path} -> {event.dest_path}",
+        )
+
+
+def start_collection_watcher(db_path=None):
+    """Watch every disk_path in my_collection for deletions and moves."""
+    global _collection_observer
+    from backend.db import get_connection, DB_PATH
+    if _collection_observer and _collection_observer.is_alive():
+        _collection_observer.stop()
+        _collection_observer.join()
+    import sys as _sys
+    if _sys.platform == "win32":
+        try:
+            from watchdog.observers.winapi import WindowsApiObserver
+            obs = WindowsApiObserver()
+        except ImportError:
+            obs = Observer()
+    else:
+        obs = Observer()
+    with get_connection(db_path) as conn:
+        rows = conn.execute(
+            "SELECT lb_number, disk_path FROM my_collection WHERE disk_path IS NOT NULL"
+        ).fetchall()
+    for row in rows:
+        dp = Path(row["disk_path"])
+        if dp.is_dir():
+            handler = _CollectionEventHandler(row["lb_number"], row["disk_path"])
+            obs.schedule(handler, str(dp), recursive=False)
+    obs.daemon = True
+    obs.start()
+    _collection_observer = obs
+
+
+def stop_collection_watcher():
+    global _collection_observer
+    if _collection_observer:
+        _collection_observer.stop()
+        _collection_observer.join()
+        _collection_observer = None

@@ -173,6 +173,8 @@ Unique index on `(checksum, lb_number)`.
 | setlist | TEXT | Setlist text |
 | status | TEXT | `'ok'`, `'missing'` |
 | scraped_at | TIMESTAMP | When row was last scraped |
+| taper_name | TEXT | Parsed taper handle/name (via `extract_taper_and_source`) |
+| source_chain | TEXT | Parsed recording equipment chain (via `extract_taper_and_source`) |
 
 ### `entry_files` — Attachment files per entry
 | Column | Type | Notes |
@@ -1323,6 +1325,7 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 
 | Date | Change |
 |------|--------|
+| 2026-05-30 | `taper_name` + `source_chain` TEXT columns added to `entries` via ALTER TABLE migration. `extract_taper_and_source()` in `db.py` parses free-text descriptions with 14 pattern rules; ~80.5% coverage on 16k entries. Backfill run on first `init_db()` after migration. `scraper.py` computes both columns on every scrape. `ScreenSearch.tsx` shows Taper/Source as toggleable columns and in the detail panel meta grid. |
 | 2026-05-29 | Windows installer + portable switched to Electron/React (gui_next): `losslessbob_backend.spec` made cross-platform (Windows watchdog, shntool.exe, no fingerprinting); `backend/paths.py` frozen-Windows data dir → `%LOCALAPPDATA%\LosslessBob`; electron-builder NSIS + portable targets; `release.yml` build-windows rebuilt. |
 | 2026-05-29 | Linux AppImage switched to Electron/React (gui_next): new `losslessbob_backend.spec` (onefile PyInstaller, no PyQt6); `gui_next/package.json` gains electron-builder + dist:linux script; `gui_next/src/main/index.ts` ensureBackend() uses bundled binary when packaged; `release.yml` build-linux job rebuilt around electron-builder. |
 | 2026-05-29 | TODO-106: ScreenFingerprint (gui_next Assets group) — date → collection_by_date → build LB fingerprints → identify mystery folder → ranked results. New backend routes: GET /api/fingerprint/collection_by_date, POST /api/fingerprint/identify_folder + status + stop. Icon + nav item + route registered. All strings i18n-wrapped. |

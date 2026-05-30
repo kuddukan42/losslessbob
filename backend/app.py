@@ -29,6 +29,26 @@ _reconcile_lock = threading.Lock()  # prevents concurrent lb_master reconcile ru
 
 _scrape_thread = None
 
+_update_state = {
+    "status": "idle",
+    "progress": 0,
+    "message": "",
+    "latest_version": None,
+    "update_available": False,
+}
+_update_lock = threading.Lock()
+
+_data_dl_state = {
+    "status": "idle",
+    "progress": 0,
+    "downloaded_bytes": 0,
+    "total_bytes": 0,
+    "message": "",
+    "files_extracted": [],
+    "files_skipped": [],
+}
+_data_dl_lock = threading.Lock()
+
 # ── Restart callback (set by main.py so only the Flask server restarts) ───────
 _restart_callback = None
 
@@ -133,6 +153,7 @@ def create_app() -> Flask:
     _slog.t("Flask: init_fp_db done")
     _slog.t("Flask: start_file_watcher start")
     scheduler.start_file_watcher()
+    scheduler.start_collection_watcher()
     _slog.t("Flask: routes registering")
 
     # ── Checksum Lookup ──────────────────────────────────────────────────────
@@ -389,7 +410,7 @@ def create_app() -> Flask:
                 return jsonify({"ok": True})
             else:
                 keys = ["scrape_attachments", "scrape_delay_ms", "auto_scrape", "use_local_pages",
-                        "force_scrape", "search_page_size",
+                        "force_scrape", "search_page_size", "github_repo", "data_zip_url",
                         "qbt_host", "qbt_port", "qbt_category", "qbt_tags",
                         "tracker_list", "wtrf_board_id", "ui_language"]
                 result = {k: database.get_meta(k) for k in keys}
@@ -1384,6 +1405,151 @@ def create_app() -> Flask:
             )
         except Exception as e:
             return jsonify({"error": str(e)}), 500
+
+    # ── FEAT-10: Application version + update ─────────────────────────────────
+
+    @app.route("/api/app/version", methods=["GET"])
+    def app_version() -> Response:
+        """Return current app version and runtime info."""
+        import sys, platform
+        from backend.version import VERSION as _VER
+        try:
+            from PyQt6.QtCore import QT_VERSION_STR
+        except Exception:
+            QT_VERSION_STR = "n/a"
+        return jsonify({
+            "version": _VER,
+            "python": sys.version.split()[0],
+            "platform": f"{platform.system()} {platform.release()}",
+            "qt": QT_VERSION_STR,
+        })
+
+    @app.route("/api/update/check", methods=["GET"])
+    def update_check() -> Response:
+        """Query GitHub releases API for a newer version.
+
+        Requires github_repo setting (owner/repo).
+        Returns:
+            JSON with current, latest, update_available, release_notes, zipball_url.
+        """
+        try:
+            import requests as _req
+            from backend.version import VERSION as _VER
+            repo = database.get_meta("github_repo") or ""
+            if not repo or "/" not in repo:
+                return jsonify({"error": "github_repo not configured"}), 400
+            api_url = f"https://api.github.com/repos/{repo}/releases/latest"
+            resp = _req.get(api_url, timeout=10,
+                            headers={"Accept": "application/vnd.github+json",
+                                     "X-GitHub-Api-Version": "2022-11-28"})
+            if resp.status_code == 404:
+                return jsonify({"error": "No releases found for this repository"}), 404
+            resp.raise_for_status()
+            data = resp.json()
+            latest_tag = data.get("tag_name", "").lstrip("v")
+            release_notes = data.get("body", "")
+            zipball_url = data.get("zipball_url", "")
+
+            def _ver(v):
+                try:
+                    return tuple(int(x) for x in v.split(".")[:3])
+                except Exception:
+                    return (0, 0, 0)
+
+            update_available = _ver(latest_tag) > _ver(_VER)
+            with _update_lock:
+                _update_state.update({
+                    "latest_version": latest_tag,
+                    "update_available": update_available,
+                })
+            return jsonify({
+                "current": _VER, "latest": latest_tag,
+                "update_available": update_available,
+                "release_notes": release_notes,
+                "zipball_url": zipball_url,
+            })
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/update/status", methods=["GET"])
+    def update_status() -> Response:
+        """Return current update download/apply progress."""
+        with _update_lock:
+            return jsonify(dict(_update_state))
+
+    @app.route("/api/update/apply", methods=["POST"])
+    def update_apply() -> Response:
+        """Start a background download + apply of the update.
+
+        Body: {zipball_url: str}
+        Returns:
+            JSON {ok: true} immediately; poll /api/update/status for progress.
+        """
+        try:
+            repo = database.get_meta("github_repo") or ""
+            if not repo:
+                return jsonify({"error": "github_repo not configured"}), 400
+            data = request.get_json() or {}
+            zipball_url = data.get("zipball_url", "")
+            if not zipball_url:
+                return jsonify({"error": "zipball_url required"}), 400
+            threading.Thread(target=_do_update, args=(zipball_url,), daemon=True).start()
+            return jsonify({"ok": True})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    # ── FEAT-11: Remote Data ZIP ──────────────────────────────────────────────
+
+    @app.route("/api/data/download", methods=["POST"])
+    def data_download() -> Response:
+        """Start a background download+extract of the configured data_zip_url.
+
+        Returns:
+            JSON {ok: true} immediately; poll /api/data/download/status for progress.
+        """
+        try:
+            url = database.get_meta("data_zip_url") or ""
+            if not url:
+                return jsonify({"error": "data_zip_url not configured"}), 400
+            with _data_dl_lock:
+                if _data_dl_state["status"] in ("downloading", "extracting"):
+                    return jsonify({"error": "Download already in progress"}), 409
+            threading.Thread(target=_do_data_download, args=(url,), daemon=True).start()
+            return jsonify({"ok": True})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/data/download/status", methods=["GET"])
+    def data_download_status() -> Response:
+        """Return current data ZIP download/extract progress."""
+        with _data_dl_lock:
+            return jsonify(dict(_data_dl_state))
+
+    # ── FEAT-09: Collection Folder Integrity ──────────────────────────────────
+
+    @app.route("/api/integrity/events", methods=["GET"])
+    def integrity_events_route() -> Response:
+        """Return watchdog integrity events.
+
+        Query params:
+            unacked (default 1): 1 = unacknowledged only, 0 = all
+        Returns:
+            JSON list of event rows.
+        """
+        unacked = request.args.get("unacked", "1") == "1"
+        return jsonify(database.get_integrity_events(unacked_only=unacked))
+
+    @app.route("/api/integrity/ack", methods=["POST"])
+    def integrity_ack() -> Response:
+        """Acknowledge integrity events by ID.
+
+        Body: {ids: [int, ...]}
+        Returns:
+            JSON {ok: true}
+        """
+        ids = (request.get_json() or {}).get("ids", [])
+        database.ack_integrity_events(ids)
+        return jsonify({"ok": True})
 
     # ── Scraper Control ──────────────────────────────────────────────────────
 
@@ -4790,6 +4956,142 @@ def _do_fp_identify_folder(folder: str) -> None:
         _set(status="done", current="")
     except Exception as exc:
         _set(status="error", current=str(exc))
+
+
+# Files/names _do_data_download never overwrites
+_DATA_PROTECTED = frozenset({
+    "losslessbob.db", "settings.ini", "scraper.log", "temp_import.db",
+})
+_DATA_PROTECTED_EXTS = frozenset({".db", ".ini"})
+
+
+def _do_data_download(url: str) -> None:
+    """Download a ZIP from url and extract safe files into DATA_DIR."""
+    import zipfile, shutil, tempfile
+    import requests as _req
+    from pathlib import Path as _Path
+    from backend.paths import DATA_DIR as _DATA_DIR, to_long_path
+
+    def _set(status, progress, message, **kw):
+        with _data_dl_lock:
+            _data_dl_state.update({"status": status, "progress": progress,
+                                    "message": message, **kw})
+
+    try:
+        _set("downloading", 2, "Connecting…",
+             downloaded_bytes=0, total_bytes=0, files_extracted=[], files_skipped=[])
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            zip_path = _Path(tmpdir) / "data_update.zip"
+            resp = _req.get(url, stream=True, timeout=60)
+            resp.raise_for_status()
+            total = int(resp.headers.get("Content-Length", 0))
+            downloaded = 0
+            with open(zip_path, "wb") as fh:
+                for chunk in resp.iter_content(chunk_size=65536):
+                    if chunk:
+                        fh.write(chunk)
+                        downloaded += len(chunk)
+                        pct = int(downloaded / total * 45) + 2 if total else 30
+                        _set("downloading", pct,
+                             f"Downloading… {downloaded // 1024:,} KB"
+                             + (f" / {total // 1024:,} KB" if total else ""),
+                             downloaded_bytes=downloaded, total_bytes=total)
+
+            if not zipfile.is_zipfile(zip_path):
+                _set("error", 0, "Downloaded file is not a valid ZIP archive.")
+                return
+
+            _set("extracting", 50, "Extracting…")
+            extracted, skipped = [], []
+
+            with zipfile.ZipFile(zip_path, "r") as zf:
+                members = zf.namelist()
+                roots = {m.split("/")[0] for m in members if "/" in m}
+                strip_prefix = (list(roots)[0] + "/") if len(roots) == 1 else ""
+
+                for i, member in enumerate(members):
+                    rel = member[len(strip_prefix):] if strip_prefix else member
+                    if not rel or rel.endswith("/"):
+                        continue
+                    rel_path = _Path(rel)
+                    name = rel_path.name
+                    if name in _DATA_PROTECTED or rel_path.suffix.lower() in _DATA_PROTECTED_EXTS:
+                        skipped.append(rel)
+                        continue
+                    dest = to_long_path(_DATA_DIR / rel_path)
+                    dest.parent.mkdir(parents=True, exist_ok=True)
+                    with zf.open(member) as src, open(dest, "wb") as dst:
+                        shutil.copyfileobj(src, dst)
+                    extracted.append(rel)
+                    pct = int(i / max(len(members), 1) * 45) + 50
+                    _set("extracting", min(pct, 95),
+                         f"Extracting… ({i + 1}/{len(members)} files)",
+                         files_extracted=extracted, files_skipped=skipped)
+
+        _set("done", 100,
+             f"Done. {len(extracted)} file(s) extracted, {len(skipped)} skipped (protected).",
+             files_extracted=extracted, files_skipped=skipped)
+    except Exception as e:
+        _set("error", 0, f"Download failed: {e}")
+
+
+# Source dirs/exts _do_update never overwrites
+_UPDATE_SKIP_DIRS = frozenset({"data", ".git", "__pycache__", ".venv", "venv", "dist", "build"})
+_UPDATE_SKIP_EXTS = frozenset({".db", ".ini", ".log", ".sdf"})
+
+
+def _do_update(zipball_url: str) -> None:
+    """Download a GitHub zipball and apply source files to APP_ROOT."""
+    import zipfile, shutil, tempfile
+    import requests as _req
+    from pathlib import Path as _Path
+    from backend.paths import APP_ROOT as _ROOT
+
+    def _set(status, progress, message):
+        with _update_lock:
+            _update_state.update({"status": status, "progress": progress, "message": message})
+
+    try:
+        _set("downloading", 5, "Connecting to GitHub…")
+        with tempfile.TemporaryDirectory() as tmpdir:
+            zip_path = _Path(tmpdir) / "update.zip"
+            resp = _req.get(zipball_url, stream=True, timeout=60,
+                            headers={"Accept": "application/octet-stream"})
+            resp.raise_for_status()
+            total = int(resp.headers.get("Content-Length", 0))
+            downloaded = 0
+            with open(zip_path, "wb") as fh:
+                for chunk in resp.iter_content(chunk_size=65536):
+                    if chunk:
+                        fh.write(chunk)
+                        downloaded += len(chunk)
+                        pct = int(downloaded / total * 40) + 5 if total else 30
+                        _set("downloading", pct, f"Downloading… {downloaded // 1024:,} KB")
+
+            _set("applying", 50, "Extracting…")
+            with zipfile.ZipFile(zip_path, "r") as zf:
+                members = zf.namelist()
+                prefix = (members[0].split("/")[0] + "/") if members else ""
+                for i, member in enumerate(members):
+                    rel = member[len(prefix):]
+                    if not rel or member.endswith("/"):
+                        continue
+                    parts = _Path(rel).parts
+                    if parts and parts[0] in _UPDATE_SKIP_DIRS:
+                        continue
+                    if _Path(rel).suffix.lower() in _UPDATE_SKIP_EXTS:
+                        continue
+                    dest = _ROOT / rel
+                    dest.parent.mkdir(parents=True, exist_ok=True)
+                    with zf.open(member) as src, open(dest, "wb") as dst:
+                        shutil.copyfileobj(src, dst)
+                    pct = int(i / max(len(members), 1) * 45) + 50
+                    _set("applying", min(pct, 95), f"Applying… ({i + 1} files)")
+
+        _set("done", 100, "Update applied. Click Restart to reload the application.")
+    except Exception as e:
+        _set("error", 0, f"Update failed: {e}")
 
 
 def _start_scrape_thread(

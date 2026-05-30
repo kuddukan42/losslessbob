@@ -5,6 +5,7 @@ from PyQt6.QtCore import pyqtSignal
 from PyQt6.QtGui import QAction
 from PyQt6.QtWidgets import (
     QMainWindow, QTabWidget, QStatusBar, QMessageBox,
+    QDialog, QVBoxLayout, QLabel, QPushButton, QScrollArea, QWidget,
 )
 
 import gui.styles as styles
@@ -13,11 +14,12 @@ from gui.widgets.state_store import GuiStateStore
 from backend.paths import DATA_DIR
 
 APP_NAME = "LosslessBobLookup"
-VERSION = "1.0.2"
+from backend.version import VERSION
 
 
 class MainWindow(QMainWindow):
     _status_message = pyqtSignal(str)
+    _integrity_update = pyqtSignal(list)  # emits list of unacked event dicts
 
     def __init__(self, flask_port, ignore_saved_pos=False, parent=None):
         import backend.startup_log as _slog
@@ -47,6 +49,7 @@ class MainWindow(QMainWindow):
         _slog.t("MainWindow.__init__: done")
 
         self._status_message.connect(self.status_bar.showMessage)
+        self._integrity_update.connect(self._on_integrity_update)
 
         self._status_stop = threading.Event()
         self._status_wake = threading.Event()
@@ -212,8 +215,15 @@ class MainWindow(QMainWindow):
         apply_panel_shadow(self.bootlegs_tab.view)
 
     def _build_status_bar(self):
+        from PyQt6.QtCore import Qt
         self.status_bar = QStatusBar()
         self.setStatusBar(self.status_bar)
+        self._integrity_label = QLabel()
+        self._integrity_label.setCursor(Qt.CursorShape.PointingHandCursor)
+        self._integrity_label.setStyleSheet("color: #f0c040; padding: 0 8px;")
+        self._integrity_label.hide()
+        self._integrity_label.mousePressEvent = lambda _e: self._show_integrity_dialog()
+        self.status_bar.addPermanentWidget(self._integrity_label)
         self.status_bar.showMessage(self.tr("Connecting to database…"))
 
     def _restore_geometry(self):
@@ -263,10 +273,76 @@ class MainWindow(QMainWindow):
         except Exception:
             msg = self.tr("Database not connected.")
         self._status_message.emit(msg)
+        try:
+            events = requests.get(
+                f"http://127.0.0.1:{self.flask_port}/api/integrity/events?unacked=1",
+                timeout=3,
+            ).json()
+        except Exception:
+            events = []
+        self._integrity_update.emit(events)
 
     def _refresh_status(self) -> None:
         """Wake the persistent status poller to fetch immediately."""
         self._status_wake.set()
+
+    def _on_integrity_update(self, events: list) -> None:
+        """Show or hide the integrity alert widget based on unacked event count."""
+        self._integrity_events = events
+        if events:
+            self._integrity_label.setText(
+                self.tr("⚠ {} integrity alert(s)").format(len(events))
+            )
+            self._integrity_label.show()
+        else:
+            self._integrity_label.hide()
+
+    def _show_integrity_dialog(self) -> None:
+        """Open a dialog listing unacknowledged integrity events."""
+        events = getattr(self, "_integrity_events", [])
+        dlg = QDialog(self)
+        dlg.setWindowTitle(self.tr("Collection Integrity Alerts"))
+        dlg.setMinimumWidth(500)
+        layout = QVBoxLayout(dlg)
+
+        scroll = QScrollArea()
+        scroll.setWidgetResizable(True)
+        container = QWidget()
+        inner = QVBoxLayout(container)
+        if events:
+            for ev in events:
+                text = "[{}]  LB-{}  {}  —  {}".format(
+                    ev.get("occurred_at", "")[:19],
+                    ev.get("lb_number", "?"),
+                    ev.get("event_type", ""),
+                    ev.get("detail", ""),
+                )
+                inner.addWidget(QLabel(text))
+        else:
+            inner.addWidget(QLabel(self.tr("No unacknowledged alerts.")))
+        inner.addStretch()
+        scroll.setWidget(container)
+        layout.addWidget(scroll)
+
+        ack_btn = QPushButton(self.tr("Acknowledge All"))
+        ack_btn.clicked.connect(lambda: self._ack_all_integrity(dlg, events))
+        layout.addWidget(ack_btn)
+        dlg.exec()
+
+    def _ack_all_integrity(self, dlg: QDialog, events: list) -> None:
+        ids = [ev["id"] for ev in events if "id" in ev]
+        if ids:
+            try:
+                requests.post(
+                    f"http://127.0.0.1:{self.flask_port}/api/integrity/ack",
+                    json={"ids": ids},
+                    timeout=5,
+                )
+            except Exception:
+                pass
+        dlg.accept()
+        self._integrity_label.hide()
+        self._integrity_events = []
 
     def _on_tab_changed(self, index: int):
         widget = self.tabs.widget(index)
@@ -342,12 +418,17 @@ class MainWindow(QMainWindow):
         )
 
     def _on_about(self):
-        QMessageBox.about(
-            self, self.tr("About"),
-            self.tr(
-                "LosslessBob Checksum Lookup v{version}\n\n"
-                "Cross-platform replacement for the original Windows Checksum_Lookup utility.\n"
-                "Supports the LosslessBob Bob Dylan lossless recording archive.\n\n"
-                "Built with Python, PyQt6, and Flask."
-            ).format(version=VERSION),
+        import sys, platform
+        from PyQt6.QtCore import PYQT_VERSION_STR, QT_VERSION_STR
+        info = (
+            f"LosslessBob Checksum Lookup\n"
+            f"Version: {VERSION}\n\n"
+            f"Python: {sys.version.split()[0]}\n"
+            f"PyQt6: {PYQT_VERSION_STR}  |  Qt: {QT_VERSION_STR}\n"
+            f"Platform: {platform.system()} {platform.release()} "
+            f"({'64-bit' if platform.machine().endswith('64') else '32-bit'})\n\n"
+            "Cross-platform replacement for the original Windows Checksum_Lookup utility.\n"
+            "Supports the LosslessBob Bob Dylan lossless recording archive.\n\n"
+            "Built with Python, PyQt6, and Flask."
         )
+        QMessageBox.about(self, "About LosslessBob", info)

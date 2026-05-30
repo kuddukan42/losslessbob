@@ -967,7 +967,7 @@ def get_collection_duplicates(db_path=None):
 
 ---
 
-### FEAT-06: Auto-Generate `info.txt` Per Recording
+### FEAT-06: Auto-Generate `info.txt` Per Recording ## CANCELLED
 
 **Files:** `backend/app.py`, `gui/collection_tab.py`  
 **Dependencies:** DB-01  
@@ -1153,7 +1153,7 @@ def get_collection_duplicates(db_path=None):
 
 ---
 
-### FEAT-09: Collection Folder Integrity Watchdog
+### FEAT-09: Collection Folder Integrity Watchdog ## COMPLETE
 
 **Files:** `backend/scheduler.py`, `backend/app.py`  
 **Dependencies:** DB-01  
@@ -1385,7 +1385,7 @@ args, _ = parser.parse_known_args()
 
 ---
 
-### FEAT-10: GitHub Auto-Updater + Enhanced About Dialog
+### FEAT-10: GitHub Auto-Updater + Enhanced About Dialog ## COMPLETE
 
 **Files:** `VERSION` (new, project root), `backend/version.py` (new), `backend/app.py`, `gui/main_window.py`, `gui/setup_tab.py`  
 **Dependencies:** `backend/paths.py` exists (WIN-01 done)  
@@ -1818,7 +1818,7 @@ Add update slots:
 
 ---
 
-### FEAT-11: Remote Data ZIP Retrieval
+### FEAT-11: Remote Data ZIP Retrieval ## COMPLETE
 
 **Files:** `backend/app.py`, `gui/setup_tab.py`  
 **Dependencies:** `backend/paths.py` exists (WIN-01 done)  

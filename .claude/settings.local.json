@@ -1,4 +1,7 @@
 {
+  "env": {
+    "DEEPL_API_KEY": "b4b8af48-b364-4318-a662-b70ffc3e1e80:fx"
+  },
   "permissions": {
     "allow": [
       "Bash(python -c ' *)",
@@ -326,7 +329,21 @@
       "Bash(/home/tjenkins/Documents/losslessbob/.venv/bin/python3 -m py_compile backend/app.py)",
       "Bash(npm list *)",
       "Bash(xargs ls -1)",
-      "Bash(/home/tjenkins/Documents/losslessbob/.venv/bin/python3 -m py_compile /home/tjenkins/Documents/losslessbob/backend/torrent_maker.py)"
+      "Bash(/home/tjenkins/Documents/losslessbob/.venv/bin/python3 -m py_compile /home/tjenkins/Documents/losslessbob/backend/torrent_maker.py)",
+      "Bash(grep -v \"t\\(\\\\`\")",
+      "Bash(grep \"\\\\`\")",
+      "Bash(printenv)",
+      "Bash(DEEPL_API_KEY=b4b8af48-b364-4318-a662-b70ffc3e1e80:fx .venv/bin/python3 *)",
+      "Bash(kill 585223)",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('src/renderer/src/locales/en.json','utf8'\\)\\)\")",
+      "Bash(xargs -I{} sh -c 'echo \"=== {} ===\" && head -20 {}')",
+      "Bash(awk '{print $6, $7, $8, $9}')",
+      "Bash(sudo apt install -y xvfb)",
+      "Bash(grep -n \"except Exception\\\\|pass$\" /home/tjenkins/Documents/losslessbob/backend/site_crawler.py)",
+      "Bash(jobs *)",
+      "Bash(echo \"pid=$!\")",
+      "Bash(SCREENSHOT_DIR=/home/tjenkins/Documents/losslessbob/gui_next/test_shots xvfb-run -a node test_setlist.mjs)",
+      "Bash(pkill -f \"start_backend_nowatcher\")"
     ],
     "additionalDirectories": [
       "/home/tjenkins/.ssh",
