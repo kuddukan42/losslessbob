@@ -1,3 +1,10 @@
+[2026-05-29] — chore(deploy): switch Windows installer + portable to Electron/React (gui_next)
+Changed: losslessbob_backend.spec: made cross-platform — Windows uses watchdog.observers.read_directory_changes, no fingerprinting stack, bundles shntool.exe; Linux keeps fingerprinting + inotify.
+Changed: backend/paths.py: frozen Windows now uses %LOCALAPPDATA%\LosslessBob for data dir (backend binary lives inside resources/backend/ which is read-only in the installed app).
+Changed: gui_next/package.json: added NSIS + portable Windows targets; file associations (.ffp/.md5/.st5); dist:win script.
+Changed: gui_next/src/main/index.ts: packaged backend binary name is LosslessBobBackend.exe on Windows, LosslessBobBackend on Linux.
+Changed: .github/workflows/release.yml: build-windows job now builds backend onefile → npm ci → copies binary to resources → electron-builder --win → uploads Setup.exe + portable.exe.
+
 [2026-05-29] — chore(deploy): switch Linux AppImage to Electron/React (gui_next)
 Changed: .github/workflows/release.yml: build-linux job now builds the backend as a PyInstaller onefile binary, bundles it as an Electron extraResource, and packages the gui_next Electron app as the AppImage via electron-builder instead of PyInstaller + manual AppDir.
 Added: losslessbob_backend.spec: backend-only onefile PyInstaller spec (no PyQt6, no GUI); produces dist/LosslessBobBackend for bundling.
