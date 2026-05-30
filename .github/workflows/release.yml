@@ -80,15 +80,16 @@ jobs:
       - name: Install system dependencies
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y libgl1 upx-ucl \
-            libxcb-cursor0 libxcb-icccm4 libxcb-image0 \
-            libxcb-keysyms1 libxcb-render-util0 libxkbcommon-x11-0
+          sudo apt-get install -y libgl1 upx-ucl fuse libfuse2
 
       - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install pyinstaller
+
+      - name: Build backend binary (onefile)
+        run: pyinstaller losslessbob_backend.spec
 
       - name: Compute version string
         id: version
@@ -97,75 +98,47 @@ jobs:
           VERSION="${VERSION#v}"
           echo "VERSION=$VERSION" >> "$GITHUB_OUTPUT"
 
-      - name: Build with PyInstaller (Linux)
-        run: pyinstaller losslessbob_linux.spec
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
 
-      - name: Create data directory in dist
-        run: mkdir -p dist/LosslessBob/data
+      - name: Install gui_next dependencies
+        working-directory: gui_next
+        run: npm ci
 
-      - name: Create AppDir structure
+      - name: Prepare build resources
         run: |
-          mkdir -p AppDir/opt/LosslessBob
-          cp -r dist/LosslessBob/. AppDir/opt/LosslessBob/
+          mkdir -p gui_next/resources/backend
+          cp dist/LosslessBobBackend gui_next/resources/backend/LosslessBobBackend
+          chmod +x gui_next/resources/backend/LosslessBobBackend
 
-          # AppRun — entry point executed by the AppImage runtime
-          cat > AppDir/AppRun << 'APPRUN'
-          #!/bin/bash
-          HERE="$(dirname "$(readlink -f "${0}")")"
-          export LD_LIBRARY_PATH="${HERE}/opt/LosslessBob:${LD_LIBRARY_PATH}"
-          exec "${HERE}/opt/LosslessBob/LosslessBob" "$@"
-          APPRUN
-          chmod +x AppDir/AppRun
-
-          # Desktop integration file
-          cat > AppDir/losslessbob.desktop << 'DESKTOP'
-          [Desktop Entry]
-          Name=LosslessBob
-          Comment=Bob Dylan lossless archive checksum lookup
-          Exec=LosslessBob
-          Icon=losslessbob
-          Type=Application
-          Categories=Utility;Audio;
-          StartupNotify=true
-          DESKTOP
-
-          # 256x256 solid-blue placeholder icon (pure Python, no PIL required)
+          # Generate 512×512 solid-blue placeholder icon
           python3 - << 'PYEOF'
           import struct, zlib
-
           def _w32(n): return struct.pack('>I', n)
           def _chunk(tag, data):
               payload = tag + data
               return _w32(len(data)) + payload + _w32(zlib.crc32(payload) & 0xffffffff)
-
-          W = H = 256
+          W = H = 512
           r, g, b = 26, 107, 204
           sig  = b'\x89PNG\r\n\x1a\n'
           ihdr = _chunk(b'IHDR', _w32(W) + _w32(H) + b'\x08\x02\x00\x00\x00')
           raw  = b''.join(b'\x00' + bytes([r, g, b] * W) for _ in range(H))
           idat = _chunk(b'IDAT', zlib.compress(raw, 9))
           iend = _chunk(b'IEND', b'')
-          with open('AppDir/losslessbob.png', 'wb') as f:
+          with open('gui_next/resources/losslessbob.png', 'wb') as f:
               f.write(sig + ihdr + idat + iend)
           PYEOF
 
-      - name: Download appimagetool
-        run: |
-          curl -fsSL \
-            "https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage" \
-            -o /tmp/appimagetool
-          chmod +x /tmp/appimagetool
-
-      - name: Build AppImage
-        run: |
-          ARCH=x86_64 /tmp/appimagetool --appimage-extract-and-run \
-            AppDir \
-            "dist/LosslessBob-${{ steps.version.outputs.VERSION }}-linux-x86_64.AppImage"
+      - name: Build and package AppImage
+        working-directory: gui_next
+        run: npm run dist:linux -- --config.extraMetadata.version=${{ steps.version.outputs.VERSION }}
 
       - name: Upload to GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          files: dist/LosslessBob-${{ steps.version.outputs.VERSION }}-linux-x86_64.AppImage
+          files: gui_next/dist/*.AppImage
           generate_release_notes: true
 
   build-docker:

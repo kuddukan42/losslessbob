@@ -96,7 +96,8 @@ losslessbob/
 │   ├── test_master_data.py   # MASTER/USER table classification, export/import, SHA + schema-version guards
 │   ├── test_scraper_crawler.py # scrape_sessions + site_inventory table write functions
 │   └── test_db_writes.py     # 114-test battery: all DB write functions, constraint violations, rollback, thread safety
-├── losslessbob_linux.spec    # PyInstaller spec for Linux AppImage build (includes fingerprinting stack)
+├── losslessbob_backend.spec  # PyInstaller onefile spec: backend-only (no PyQt6); bundled inside Electron AppImage
+├── losslessbob_linux.spec    # LEGACY — old PyInstaller full-app spec (PyQt6 GUI); superseded by losslessbob_backend.spec + electron-builder
 ├── Dockerfile                # Docker image: python:3.11-slim + Xvfb + x11vnc + noVNC + Qt6 runtime
 ├── docker-compose.yml        # Compose: port 6080 (noVNC), named data volume, music-folder mount examples
 ├── .dockerignore             # Excludes .git, .venv, data/, dist/ from build context
@@ -1322,6 +1323,7 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 
 | Date | Change |
 |------|--------|
+| 2026-05-29 | Linux AppImage switched to Electron/React (gui_next): new `losslessbob_backend.spec` (onefile PyInstaller, no PyQt6); `gui_next/package.json` gains electron-builder + dist:linux script; `gui_next/src/main/index.ts` ensureBackend() uses bundled binary when packaged; `release.yml` build-linux job rebuilt around electron-builder. |
 | 2026-05-29 | TODO-106: ScreenFingerprint (gui_next Assets group) — date → collection_by_date → build LB fingerprints → identify mystery folder → ranked results. New backend routes: GET /api/fingerprint/collection_by_date, POST /api/fingerprint/identify_folder + status + stop. Icon + nav item + route registered. All strings i18n-wrapped. |
 | 2026-05-29 | Development direction locked: `gui_next` (Electron/React) is the sole active development target. `gui/` (PyQt6) is frozen — no new features or bug fixes. PROJECT.md, tech stack, architecture note, and file structure all updated to reflect this. |
 | 2026-05-28 | gui_next Sprint 6: ScreenThemes fully wired — typeface picker, font size buttons, custom token color editor, export/import JSON. New IPC: `dialog:saveFile`, `dialog:pickAndReadFile`. `tokens.ts` extended with `Font`, `FontSize`, `customTokens` fields; `--lbb-font`/`--lbb-font-size` CSS vars drive global typography. |

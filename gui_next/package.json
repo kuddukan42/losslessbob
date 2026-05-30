@@ -1,12 +1,36 @@
 {
   "name": "losslessbob-next",
-  "version": "0.1.0",
+  "version": "1.2.0",
   "description": "LosslessBob — next UI (Electron + React + Vite + TypeScript)",
   "main": "out/main/index.js",
   "scripts": {
     "dev": "electron-vite dev",
     "build": "electron-vite build",
-    "preview": "electron-vite preview"
+    "preview": "electron-vite preview",
+    "dist:linux": "electron-vite build && electron-builder --linux AppImage"
+  },
+  "build": {
+    "appId": "com.kuddukan42.losslessbob",
+    "productName": "LosslessBob",
+    "artifactName": "${productName}-${version}-linux-${arch}.AppImage",
+    "directories": {
+      "buildResources": "resources",
+      "output": "dist"
+    },
+    "files": [
+      "out/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "resources/backend",
+        "to": "backend",
+        "filter": ["**/*"]
+      }
+    ],
+    "linux": {
+      "target": "AppImage",
+      "category": "Utility;Audio;"
+    }
   },
   "dependencies": {
     "@tanstack/react-query": "^5.80.5",
@@ -24,6 +48,7 @@
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^5.2.0",
     "electron": "^42.3.0",
+    "electron-builder": "^25.0.0",
     "electron-vite": "^5.0.0",
     "playwright-core": "^1.60.0",
     "typescript": "^5.5.3",
