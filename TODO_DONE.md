@@ -1,6 +1,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-101: Add SQL query box to DB Editor for manual query execution
+Priority: Medium
+Status: Done
+Added: 2026-05-25
+Closed: 2026-05-29
+Description: POST /api/dbedit/query; SqlQueryPanel in ScreenDbEditor (textarea, Run/Clear,
+  results table, row count, error display, Ctrl+Enter shortcut); blocks DROP/TRUNCATE etc.
+
 TODO-106: Audio fingerprint matching — identify user recordings by performance date
 Priority: High
 Status: Done

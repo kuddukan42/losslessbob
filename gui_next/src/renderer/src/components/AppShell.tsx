@@ -56,15 +56,15 @@ const NAV_GROUPS: NavGroup[] = [
     label: 'Curator',
     gatedGroup: true,
     items: [
-      { id: 'dbeditor', label: 'DB Editor', icon: 'dbeditor' },
-      { id: 'scraper',  label: 'Scraper',   icon: 'scraper' },
+      { id: 'scraper', label: 'Scraper', icon: 'scraper' },
     ],
   },
   {
     label: 'Settings',
     items: [
-      { id: 'setup',  label: 'Setup',  icon: 'setup' },
-      { id: 'themes', label: 'Themes', icon: 'themes' },
+      { id: 'setup',    label: 'Setup',     icon: 'setup' },
+      { id: 'themes',   label: 'Themes',    icon: 'themes' },
+      { id: 'dbeditor', label: 'DB Editor', icon: 'dbeditor' },
     ],
   },
 ]

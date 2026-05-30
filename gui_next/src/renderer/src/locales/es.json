@@ -53,8 +53,8 @@
       "themes": "Temas"
     },
     "statusBar": {
-      "db": "DB:",
-      "checksums": "Checksums:",
+      "db": "BD:",
+      "checksums": "Sumas de comprobación:",
       "lastImport": "Última importación:",
       "bootlegs": "Bootlegs:",
       "synced": "Sincronizado - inactivo"
@@ -207,8 +207,8 @@
       "pass": "Pase",
       "mismatch": "Desajuste",
       "missing": "Faltante",
-      "extra": "Extra",
-      "ffp": "FFP",
+      "extra": "Más información en",
+      "ffp": "PFC",
       "md5": "MD5"
     },
     "toolbar": {
@@ -230,7 +230,7 @@
     "fileStates": {
       "pass": "Pase",
       "missing": "Faltante",
-      "extra": "Extra",
+      "extra": "Más información en",
       "fail": "Falla"
     },
     "shntoolWarning": "shntool no está instalado",
@@ -247,7 +247,7 @@
       "md5": "MD5",
       "ffpExpected": "PFC previsto",
       "ffpActual": "FFP real",
-      "ffp": "FFP",
+      "ffp": "PFC",
       "st5": "ST5",
       "disk": "Disco",
       "overall": "En general"
@@ -331,7 +331,7 @@
     "readyToRename_other": "{{count}} listo para renombrar",
     "needAttention_one": "{{count}} necesitan atención",
     "needAttention_other": "{{count}} necesitan atención",
-    "stop": "Stop",
+    "stop": "Detener",
     "bulkActions": "Acciones masivas",
     "selectAllVisible": "Seleccionar todo lo visible",
     "clearSelection": "Borrar selección ({{count}})",
@@ -408,7 +408,7 @@
       "title_plural": "Añadir a la colección - {{count}} folders",
       "instruction": "Introduzca el número LB de cada carpeta y haga clic en Añadir.",
       "folderName": "Nombre de la carpeta",
-      "lbNumber": "LB #",
+      "lbNumber": "LB",
       "notes": "Notas (opcional)",
       "added": "✓ Añadido",
       "addAll": "Añadir todo ({{count}})"
@@ -809,7 +809,7 @@
       "phase2": "Fase 2 - Identificación de los expedientes",
       "files": "Ficheros {{done}} / {{total}}",
       "current": "{{name}}",
-      "stop": "Stop"
+      "stop": "Detener"
     },
     "results": {
       "title": "Resultados",
@@ -837,6 +837,127 @@
       "cleanupDone": "Datos de huellas dactilares purgados.",
       "cleanupFailed": "Limpieza fallida.",
       "noEntries": "No se han encontrado entradas de colección para {{date}}."
+    }
+  },
+  "dbeditor": {
+    "tables": "Tablas",
+    "refresh": "Actualizar",
+    "selectTable": "Seleccione una tabla",
+    "readOnly": "[Sólo lectura]",
+    "auditOnly": "[auditoría: sólo eliminar]",
+    "coreWarning": "ADVERTENCIA: tabla de archivo principal",
+    "loadRecords": "Cargar grabaciones",
+    "lbFilter": "LB#:",
+    "searchPlaceholder": "Columnas de texto de búsqueda...",
+    "search": "Buscar en",
+    "loading": "Cargando...",
+    "noRows": "Sin filas: seleccione una tabla o ejecute una búsqueda.",
+    "prev": "< Anterior",
+    "next": "Siguiente",
+    "pageInfo": "Página {{page}}/{{pages}} ({{total}} filas en total)",
+    "rowsPerPage": "Filas por página:",
+    "commitChanges": "Comprometer cambios",
+    "discardChanges": "Descartar cambios",
+    "deleteSelected": "Eliminar seleccionados",
+    "exportCsv": "Exportación CSV...",
+    "dirtyCount": "{{count}} sin guardar",
+    "ok": "OK",
+    "cancel": "Cancelar",
+    "status": {
+      "rows": "{{count}} filas",
+      "selectTable": "Seleccione primero una tabla.",
+      "selectRows": "Seleccione las filas que desea eliminar.",
+      "readOnly": "No se puede eliminar de una tabla de sólo lectura.",
+      "committed": "Fila(s) {{count}} comprometida(s).",
+      "commitErrors": "{{count}} error(es) durante la compilación.",
+      "deleted": "Fila(s) {{count}} eliminada(s).",
+      "exported": "Exportado {{table}}.csv"
+    },
+    "delete": {
+      "confirm": "¿Borrar fila(s) {{count}} de '{{table}}'?",
+      "coreWarning": "ADVERTENCIA: Se trata de una tabla de archivo central. La eliminación de sumas de comprobación o entradas afecta a los resultados de la búsqueda."
+    },
+    "error": {
+      "loadTables": "Error al cargar tablas."
+    },
+    "integrity": {
+      "title": "Integridad de la base de datos",
+      "public": "Público",
+      "private": "Privado",
+      "missing": "Falta",
+      "maxLb": "Max LB",
+      "overrides": "Anulaciones",
+      "needsReview": "Revisión de necesidades",
+      "reconcileAll": "Conciliar todo",
+      "reconcileHint": "Recalcular el estado de lb_master para cada número de LB. Realiza primero una copia de seguridad de la base de datos.",
+      "reconcileConfirm": "¿Recalcular el estado lb_master para cada número LB?\nPrimero se creará una copia de seguridad de la base de datos.",
+      "reconciling": "Conciliación...",
+      "reconcileDone": "Conciliación completa.",
+      "showNeedsReview": "Mostrar revisión de necesidades",
+      "needsReviewHint": "Carga de filas lb_master marcadas como necesitadas de revisión por un conservador.",
+      "addOverride": "Añadir anulación...",
+      "addOverrideHint": "Establecer manualmente lb_status para un número LB, bloqueándolo contra reconciliación.",
+      "removeOverride": "Eliminar anulación...",
+      "removeOverrideHint": "Borrar una anulación manual; lb_status vuelve al valor calculado automáticamente.",
+      "removeOverrideConfirm": "La anulación manual de LB-{{lb}}?\nlb_status volverá al valor calculado automáticamente.",
+      "exportOverrides": "Anulaciones de exportación",
+      "exportOverridesHint": "Guarde todas las anulaciones manuales de estado de LB en un archivo JSON.",
+      "exportedOverrides": "Control(es) {{count}} exportado(s).",
+      "importOverrides": "Anulaciones de importación",
+      "importOverridesHint": "Carga manual de anulaciones de estado LB desde un archivo JSON.",
+      "importTitle": "Anulaciones de importación",
+      "importInvalid": "El archivo debe contener una matriz JSON.",
+      "importConfirm": "¿Importar modificación(es) de {{count}}? Esto sobrescribirá las modificaciones existentes para esos LB.",
+      "importDone": "Anulación(es) importada(s) de {{imported}}. Entradas {{skipped}} omitidas fuera de rango.",
+      "backup": "Backup DB Ahora",
+      "backupHint": "Crear una instantánea manual de la base de datos.",
+      "backupDone": "Copia de seguridad guardada: {{path}} ({{mb}} MB)",
+      "overrideSet": "Conjunto de anulaciones: LB-{{lb}} → {{status}}",
+      "overrideCleared": "Anulación anulada: LB-{{lb}} → {{status}}"
+    },
+    "overrides": {
+      "addTitle": "Añadir / Actualizar anulación",
+      "removeTitle": "Eliminar anulación",
+      "lbNumber": "LB #:",
+      "status": "Estado:",
+      "notes": "Notas:",
+      "notesPlaceholder": "Motivo opcional...",
+      "clear": "Borrar anulación"
+    },
+    "aliases": {
+      "title": "Alias de LB",
+      "aliasLb": "Alias LB",
+      "canonicalLb": "LB canónico",
+      "rel": "Rel",
+      "empty": "Sin alias.",
+      "count": "{{count}} alias(s)",
+      "readOnly": " (sólo lectura)",
+      "add": "Añada",
+      "addHint": "Añadir una nueva asignación de alias (sólo curador)",
+      "delete": "Borrar",
+      "deleteHint": "Eliminar el alias seleccionado (sólo curador)",
+      "reload": "Recargar",
+      "addTitle": "Añadir alias LB",
+      "aliasLbFull": "Alias LB (secundario):",
+      "canonLbFull": "LB canónico (primario):",
+      "relationship": "Relación:",
+      "noteFull": "Nota:",
+      "notePlaceholder": "Nota opcional...",
+      "deleteConfirm": "Eliminar el alias LB-{{lb}}?",
+      "removed": "Alias LB-{{lb}} eliminado.",
+      "saved": "Alias LB-{{alias}} → LB-{{canon}} saved{{suffix}}.",
+      "chainRewritten": " (reescritura en cadena)"
+    },
+    "query": {
+      "toggle": "Consulta SQL…",
+      "placeholder": "SELECT * FROM entries LIMIT 10…",
+      "run": "Ejecutar",
+      "clear": "Borrar",
+      "rows": "{{count}} fila(s) devuelta(s).",
+      "affected": "{{count}} fila(s) afectada(s).",
+      "noResults": "La consulta no devolvió filas.",
+      "truncated": "(limitado a 500 filas)",
+      "error": "Error: {{msg}}"
     }
   }
 }
