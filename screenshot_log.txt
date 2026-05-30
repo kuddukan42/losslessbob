@@ -1,0 +1,6 @@
+Starting Flask backend…
+[flask] 2026-05-29 22:04:43,721 DEBUG    backend.db_queue: db-writer: connection open → /home/tjenkins/Documents/losslessbob/data/losslessbob.db
+[flask] 2026-05-29 22:04:43,721 INFO     backend.db_queue: DatabaseWriteQueue initialised → /home/tjenkins/Documents/losslessbob/data/losslessbob.db
+Flask ready.
+Launching Electron — route: /lookup
+Screenshot saved: /home/tjenkins/Documents/losslessbob/screenshot-lookup.png

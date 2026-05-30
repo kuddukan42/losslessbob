@@ -670,6 +670,63 @@ class _UpdateAvailableDialog(QDialog):
         self.reject()
 
 
+class _DataDownloadThread(QThread):
+    """Calls POST /api/data/download in a background thread."""
+    finished = pyqtSignal(dict)
+
+    def __init__(self, flask_port: int) -> None:
+        super().__init__()
+        self.flask_port = flask_port
+
+    def run(self) -> None:
+        try:
+            resp = requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/data/download", timeout=10
+            )
+            self.finished.emit(resp.json())
+        except Exception as exc:
+            self.finished.emit({"error": str(exc)})
+
+
+class _UpdateCheckThread(QThread):
+    """Calls GET /api/update/check in a background thread."""
+    finished = pyqtSignal(dict)
+
+    def __init__(self, flask_port: int) -> None:
+        super().__init__()
+        self.flask_port = flask_port
+
+    def run(self) -> None:
+        try:
+            resp = requests.get(
+                f"http://127.0.0.1:{self.flask_port}/api/update/check", timeout=15
+            )
+            self.finished.emit(resp.json())
+        except Exception as exc:
+            self.finished.emit({"error": str(exc)})
+
+
+class _UpdateApplyThread(QThread):
+    """Calls POST /api/update/apply in a background thread."""
+    finished = pyqtSignal(dict)
+
+    def __init__(self, flask_port: int, zipball_url: str) -> None:
+        super().__init__()
+        self.flask_port = flask_port
+        self.zipball_url = zipball_url
+
+    def run(self) -> None:
+        try:
+            resp = requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/update/apply",
+                json={"zipball_url": self.zipball_url},
+                timeout=10,
+            )
+            self.finished.emit(resp.json())
+        except Exception as exc:
+            self.finished.emit({"error": str(exc)})
+
+
 class SetupTab(QWidget):
     stats_changed = pyqtSignal()
     search_page_size_changed = pyqtSignal(int)
@@ -686,6 +743,12 @@ class SetupTab(QWidget):
         self._wtrf_test_thread = None
         self._discover_thread: _DiscoverThread | None = None
         self._github_release_thread: _GithubReleaseThread | None = None
+        self._update_check_thread: _UpdateCheckThread | None = None
+        self._update_apply_thread: _UpdateApplyThread | None = None
+        self._zipball_url: str = ""
+        self._update_poll_timer = None
+        self._data_dl_thread: _DataDownloadThread | None = None
+        self._data_dl_poll_timer = None
         self._build_ui()
         self._refresh_col_defaults_status()
         self._load_settings()
@@ -1207,6 +1270,71 @@ class SetupTab(QWidget):
 
         layout.addWidget(ff_group)
 
+        update_group = QGroupBox(self.tr("Application Updates"))
+        upd_layout = QVBoxLayout(update_group)
+
+        repo_row = QHBoxLayout()
+        repo_row.addWidget(QLabel(self.tr("GitHub Repo (owner/repo):")))
+        self.github_repo_input = QLineEdit()
+        self.github_repo_input.setPlaceholderText("e.g. johndoe/losslessbob")
+        self.github_repo_input.editingFinished.connect(self._save_github_repo)
+        repo_row.addWidget(self.github_repo_input)
+        upd_layout.addLayout(repo_row)
+
+        upd_btn_row = QHBoxLayout()
+        self.check_app_update_btn = QPushButton(self.tr("Check for Updates"))
+        self.check_app_update_btn.clicked.connect(self._on_check_app_update)
+        upd_btn_row.addWidget(self.check_app_update_btn)
+        self.apply_update_btn = QPushButton(self.tr("Download && Apply Update"))
+        self.apply_update_btn.setEnabled(False)
+        self.apply_update_btn.clicked.connect(self._on_apply_update)
+        upd_btn_row.addWidget(self.apply_update_btn)
+        self.restart_app_btn = QPushButton(self.tr("Restart Application"))
+        self.restart_app_btn.setEnabled(False)
+        self.restart_app_btn.clicked.connect(self._on_restart_app)
+        upd_btn_row.addWidget(self.restart_app_btn)
+        upd_btn_row.addStretch()
+        upd_layout.addLayout(upd_btn_row)
+
+        self.update_progress = QProgressBar()
+        self.update_progress.setVisible(False)
+        upd_layout.addWidget(self.update_progress)
+        self.update_status_label = QLabel("")
+        upd_layout.addWidget(self.update_status_label)
+        layout.addWidget(update_group)
+
+        data_dl_group = QGroupBox(self.tr("Remote Data"))
+        ddl_layout = QVBoxLayout(data_dl_group)
+
+        zip_url_row = QHBoxLayout()
+        zip_url_row.addWidget(QLabel(self.tr("Data ZIP URL:")))
+        self.data_zip_url_input = QLineEdit()
+        self.data_zip_url_input.setPlaceholderText("https://example.com/losslessbob_data.zip")
+        self.data_zip_url_input.editingFinished.connect(self._save_data_zip_url)
+        zip_url_row.addWidget(self.data_zip_url_input)
+        ddl_layout.addLayout(zip_url_row)
+
+        ddl_btn_row = QHBoxLayout()
+        self.data_download_btn = QPushButton(self.tr("Download && Extract Data"))
+        self.data_download_btn.setToolTip(
+            self.tr(
+                "Download the ZIP from the configured URL and extract into data/.\n"
+                "Your database and settings are never overwritten."
+            )
+        )
+        self.data_download_btn.clicked.connect(self._on_data_download)
+        ddl_btn_row.addWidget(self.data_download_btn)
+        ddl_btn_row.addStretch()
+        ddl_layout.addLayout(ddl_btn_row)
+
+        self.data_dl_progress = QProgressBar()
+        self.data_dl_progress.setVisible(False)
+        ddl_layout.addWidget(self.data_dl_progress)
+        self.data_dl_status_label = QLabel("")
+        self.data_dl_status_label.setWordWrap(True)
+        ddl_layout.addWidget(self.data_dl_status_label)
+        layout.addWidget(data_dl_group)
+
     # _build_ui end — scraper and bootleg catalog panels moved to ScraperTab
 
     # ── Column-width defaults ────────────────────────────────────────────────
@@ -1255,6 +1383,8 @@ class SetupTab(QWidget):
             data = resp.json()
             self.search_page_spin.setValue(int(data.get("search_page_size") or 50))
             self._load_language_setting(data.get("ui_language") or "en")
+            self.github_repo_input.setText(data.get("github_repo") or "")
+            self.data_zip_url_input.setText(data.get("data_zip_url") or "")
         except Exception:
             pass
         finally:
@@ -2346,3 +2476,173 @@ class SetupTab(QWidget):
         self.pkg_user_btn.setEnabled(enabled)
         self.pkg_scrape_btn.setEnabled(enabled)
         self.pkg_restore_btn.setEnabled(enabled)
+
+    # ── App updater ───────────────────────────────────────────────────────────
+
+    def _save_github_repo(self) -> None:
+        try:
+            requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/db/settings",
+                json={"github_repo": self.github_repo_input.text().strip()},
+                timeout=5,
+            )
+        except Exception:
+            pass
+
+    def _on_check_app_update(self) -> None:
+        self.check_app_update_btn.setEnabled(False)
+        self.apply_update_btn.setEnabled(False)
+        self.update_status_label.setText(self.tr("Checking GitHub…"))
+        self._update_check_thread = _UpdateCheckThread(self.flask_port)
+        self._update_check_thread.finished.connect(self._on_update_check_done)
+        self._update_check_thread.start()
+
+    def _on_update_check_done(self, data: dict) -> None:
+        self.check_app_update_btn.setEnabled(True)
+        if "error" in data:
+            self.update_status_label.setText(self.tr("Error: {}").format(data["error"]))
+            return
+        current = data.get("current", "?")
+        latest = data.get("latest", "?")
+        if data.get("update_available"):
+            self._zipball_url = data.get("zipball_url", "")
+            self.apply_update_btn.setEnabled(True)
+            notes = (data.get("release_notes") or "").strip()[:200]
+            self.update_status_label.setText(
+                self.tr("Update available: v{} → v{}\n{}").format(current, latest, notes)
+            )
+        else:
+            self.update_status_label.setText(self.tr("Up to date (v{})").format(current))
+
+    def _on_apply_update(self) -> None:
+        if not self._zipball_url:
+            return
+        if QMessageBox.question(
+            self, self.tr("Apply Update"),
+            self.tr(
+                "Download and apply the update now?\n\n"
+                "Python source files will be replaced.\n"
+                "Your data/ folder and settings are never modified.\n\n"
+                "Click Restart after the update completes."
+            ),
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+        ) != QMessageBox.StandardButton.Yes:
+            return
+        self.apply_update_btn.setEnabled(False)
+        self.update_progress.setVisible(True)
+        self.update_progress.setValue(0)
+        self.update_status_label.setText(self.tr("Starting download…"))
+        self._update_apply_thread = _UpdateApplyThread(self.flask_port, self._zipball_url)
+        self._update_apply_thread.finished.connect(self._on_apply_started)
+        self._update_apply_thread.start()
+
+    def _on_apply_started(self, result: dict) -> None:
+        if result.get("error"):
+            self.update_status_label.setText(self.tr("Error: {}").format(result["error"]))
+            self.apply_update_btn.setEnabled(True)
+            return
+        self._start_update_poll()
+
+    def _start_update_poll(self) -> None:
+        from PyQt6.QtCore import QTimer
+        self._update_poll_timer = QTimer(self)
+        self._update_poll_timer.timeout.connect(self._poll_update_status)
+        self._update_poll_timer.start(1000)
+
+    def _poll_update_status(self) -> None:
+        try:
+            r = requests.get(
+                f"http://127.0.0.1:{self.flask_port}/api/update/status", timeout=5
+            ).json()
+            status = r.get("status", "")
+            self.update_progress.setValue(r.get("progress", 0))
+            self.update_status_label.setText(r.get("message", ""))
+            if status in ("done", "error"):
+                self._update_poll_timer.stop()
+                self.update_progress.setVisible(False)
+                if status == "done":
+                    self.restart_app_btn.setEnabled(True)
+                else:
+                    self.apply_update_btn.setEnabled(True)
+        except Exception:
+            pass
+
+    def _on_restart_app(self) -> None:
+        try:
+            from backend.updater import restart_application
+            restart_application()
+        except RuntimeError as e:
+            QMessageBox.information(self, self.tr("Restart Required"), str(e))
+
+    # ── Remote data ZIP ───────────────────────────────────────────────────────
+
+    def _save_data_zip_url(self) -> None:
+        try:
+            requests.post(
+                f"http://127.0.0.1:{self.flask_port}/api/db/settings",
+                json={"data_zip_url": self.data_zip_url_input.text().strip()},
+                timeout=5,
+            )
+        except Exception:
+            pass
+
+    def _on_data_download(self) -> None:
+        url = self.data_zip_url_input.text().strip()
+        if not url:
+            self.data_dl_status_label.setText(self.tr("Configure a Data ZIP URL first."))
+            return
+        if QMessageBox.question(
+            self, self.tr("Download Remote Data"),
+            self.tr(
+                "Download and extract data from:\n{url}\n\n"
+                "Contents will be placed in the data/ directory.\n"
+                "Database, settings, and logs will NOT be overwritten.\n\nProceed?"
+            ).format(url=url),
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+        ) != QMessageBox.StandardButton.Yes:
+            return
+        self.data_download_btn.setEnabled(False)
+        self.data_dl_progress.setVisible(True)
+        self.data_dl_progress.setValue(0)
+        self.data_dl_status_label.setText(self.tr("Starting…"))
+        self._data_dl_thread = _DataDownloadThread(self.flask_port)
+        self._data_dl_thread.finished.connect(self._on_data_download_started)
+        self._data_dl_thread.start()
+
+    def _on_data_download_started(self, result: dict) -> None:
+        if result.get("error"):
+            self.data_dl_status_label.setText(self.tr("Error: {}").format(result["error"]))
+            self.data_download_btn.setEnabled(True)
+            self.data_dl_progress.setVisible(False)
+            return
+        self._start_data_dl_poll()
+
+    def _start_data_dl_poll(self) -> None:
+        from PyQt6.QtCore import QTimer
+        self._data_dl_poll_timer = QTimer(self)
+        self._data_dl_poll_timer.timeout.connect(self._poll_data_dl_status)
+        self._data_dl_poll_timer.start(1000)
+
+    def _poll_data_dl_status(self) -> None:
+        try:
+            r = requests.get(
+                f"http://127.0.0.1:{self.flask_port}/api/data/download/status", timeout=5
+            ).json()
+            status = r.get("status", "")
+            self.data_dl_progress.setValue(r.get("progress", 0))
+            self.data_dl_status_label.setText(r.get("message", ""))
+            if status in ("done", "error"):
+                self._data_dl_poll_timer.stop()
+                self.data_dl_progress.setVisible(False)
+                self.data_download_btn.setEnabled(True)
+                if status == "done":
+                    self._refresh_stats()
+                    self.stats_changed.emit()
+                    skipped = r.get("files_skipped", [])
+                    if skipped:
+                        self.data_dl_status_label.setText(
+                            r.get("message", "")
+                            + self.tr("\nSkipped (protected): {}").format(", ".join(skipped))
+                        )
+        except Exception:
+            pass
