@@ -286,7 +286,8 @@ def remove_torrent(
         if not api_key:
             session.post(base + _LOGOUT_PATH, timeout=5)
 
-        if r.status_code == 200:
+        # qBittorrent <5 → 200 "Ok."; qBittorrent 5+ may return 200 with JSON or 204
+        if r.status_code in (200, 204):
             return {"ok": True}
         return {"ok": False, "error": f"qBittorrent responded HTTP {r.status_code}: {r.text[:200]}"}
 
@@ -294,3 +295,67 @@ def remove_torrent(
         return {"ok": False, "error": f"Cannot connect to {base}"}
     except Exception as exc:
         return {"ok": False, "error": str(exc)}
+
+
+def check_torrent_presence(
+    infohash: str,
+    host: str,
+    port: int,
+    username: str = "",
+    password: str = "",
+    api_key: str = "",
+) -> dict:
+    """Check whether a torrent exists in qBittorrent by infohash.
+
+    Queries GET /api/v2/torrents/info?hashes=<hash>.  An empty result list
+    means the torrent is not known to qBittorrent (e.g. removed manually).
+
+    Args:
+        infohash: Hex infohash to look up.
+        host: qBittorrent WebUI host.
+        port: Port.
+        username: WebUI username (ignored when api_key is set).
+        password: WebUI password (ignored when api_key is set).
+        api_key: API key (qBittorrent 5+). Takes priority over username/password.
+
+    Returns:
+        Dict with keys: ok (bool), present (bool), error (str if ok=False).
+    """
+    if not infohash:
+        return {"ok": True, "present": False}
+
+    base = _base_url(host, port)
+    session = _make_session(base, api_key)
+
+    try:
+        if not api_key:
+            err = _login(session, base, username, password)
+            if err:
+                return {**err, "present": False}
+
+        r = session.get(
+            base + "/api/v2/torrents/info",
+            params={"hashes": infohash.lower()},
+            timeout=10,
+        )
+
+        if not api_key:
+            session.post(base + _LOGOUT_PATH, timeout=5)
+
+        if r.status_code in (401, 403):
+            return {"ok": False, "present": False, "error": f"Unauthorized (HTTP {r.status_code})"}
+        if r.status_code != 200:
+            return {"ok": False, "present": False, "error": f"qBittorrent responded HTTP {r.status_code}"}
+
+        try:
+            data = r.json()
+            present = isinstance(data, list) and len(data) > 0
+        except Exception:
+            present = False
+
+        return {"ok": True, "present": present}
+
+    except requests.exceptions.ConnectionError:
+        return {"ok": False, "present": False, "error": f"Cannot connect to {base}"}
+    except Exception as exc:
+        return {"ok": False, "present": False, "error": str(exc)}
