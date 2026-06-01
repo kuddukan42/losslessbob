@@ -303,7 +303,8 @@
     "disambiguate": {
       "title": "Disambiguieren - eines auswählen",
       "desc": "Mehrere LB-Nummern wurden gefunden. Wählen Sie die richtige aus und klicken Sie dann auf \"Pin-Auswahl\".",
-      "skip": "Vorerst überspringen"
+      "skip": "Vorerst überspringen",
+      "pinned": "Angeheftet an {{lb}}"
     },
     "dryrun": {
       "title": "Vorschau auf Trockenübungen",
@@ -316,7 +317,8 @@
       "applied": "Angewandte {{count}} umbenannt in{{errors}}",
       "applyFailed": "Anwendung gescheitert",
       "diffCopied": "Diff kopiert",
-      "copyFailed": "Kopie fehlgeschlagen"
+      "copyFailed": "Kopie fehlgeschlagen",
+      "pinned": "Angepinnt {{lb}}"
     }
   },
   "pipeline": {
@@ -456,14 +458,19 @@
       "delFile": "Datei löschen",
       "openInBrowser": "Im Browser öffnen",
       "loadingTorrents": "Laden…",
+      "loadingForum": "Laden…",
       "noTorrents": "Keine Torrent-Aufzeichnungen.",
-      "noForumHistory": "Keine Forumshistorie."
+      "noForumHistory": "Keine Forumshistorie.",
+      "forumLoadError": "Forumhistorie konnte nicht geladen werden.",
+      "delRecord": "Aufzeichnung"
     },
     "confirmDelete": {
       "torrentTitle": ".torrent-Datei löschen",
       "torrentBody": "Die .torrent-Datei von der Festplatte löschen? Dadurch wird der Torrent nicht aus qBittorrent entfernt.",
       "forumTitle": "Forumsbeitragssatz entfernen",
-      "forumBody": "Diesen Protokolleintrag entfernen? Dadurch wird der eigentliche Forumsbeitrag auf der Website nicht gelöscht."
+      "forumBody": "Diesen Protokolleintrag entfernen? Dadurch wird der eigentliche Forumsbeitrag auf der Website nicht gelöscht.",
+      "recordTitle": "Torrent-Datensatz löschen",
+      "recordBody": "Diesen Datensatz aus der Datenbank löschen? Die .torrent-Datei wird ebenfalls entfernt, falls sie existiert. Der Torrent muss zuerst aus qBittorrent entfernt werden."
     },
     "globalForum": {
       "postsCount_one": "{{count}} Forenbeitrag",
@@ -531,7 +538,8 @@
       "vlcNotFound": "VLC wird auf diesem System nicht gefunden",
       "vlcRequestFailed": "VLC-Anfrage fehlgeschlagen",
       "spectrogramFailed": "Spektrogramm fehlgeschlagen",
-      "spectrogramRequestFailed": "Spektrogramm-Anforderung fehlgeschlagen"
+      "spectrogramRequestFailed": "Spektrogramm-Anforderung fehlgeschlagen",
+      "torrentRecordDeleted": "Torrent-Datensatz gelöscht"
     }
   },
   "map": {
@@ -950,7 +958,7 @@
     },
     "query": {
       "toggle": "SQL-Abfrage…",
-      "placeholder": "SELECT * FROM entries LIMIT 10…",
+      "placeholder": "SELECT * FROM Einträge LIMIT 10...",
       "run": "Ausführen",
       "clear": "Löschen",
       "rows": "{{count}} Zeile(n) zurückgegeben.",

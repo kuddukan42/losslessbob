@@ -303,7 +303,8 @@
     "disambiguate": {
       "title": "Désambiguïser - choisir",
       "desc": "Plusieurs numéros de LB correspondent. Sélectionnez le bon numéro, puis cliquez sur \"Sélection de l'épingle\".",
-      "skip": "Sauter pour l'instant"
+      "skip": "Sauter pour l'instant",
+      "pinned": "Épinglé à {{lb}}"
     },
     "dryrun": {
       "title": "Aperçu de la course à vide",
@@ -316,7 +317,8 @@
       "applied": "Appliqué {{count}} renommé{{errors}}",
       "applyFailed": "Appliquer échoué",
       "diffCopied": "Copie de la différence",
-      "copyFailed": "Échec de la copie"
+      "copyFailed": "Échec de la copie",
+      "pinned": "Épinglé {{lb}}"
     }
   },
   "pipeline": {
@@ -456,14 +458,19 @@
       "delFile": "Suppression du fichier",
       "openInBrowser": "Ouvrir dans le navigateur",
       "loadingTorrents": "Chargement…",
+      "loadingForum": "Chargement…",
       "noTorrents": "Aucun enregistrement de torrent.",
-      "noForumHistory": "Pas d'historique de forum."
+      "noForumHistory": "Pas d'historique de forum.",
+      "forumLoadError": "Échec du chargement de l'historique du forum.",
+      "delRecord": "Enregistrement Del"
     },
     "confirmDelete": {
       "torrentTitle": "Supprimer un fichier .torrent",
       "torrentBody": "Supprimer le fichier .torrent du disque ? Cela ne supprime pas le torrent de qBittorrent.",
       "forumTitle": "Supprimer l'enregistrement d'un message dans un forum",
-      "forumBody": "Supprimer cette entrée de journal ? Cela ne supprime pas le message du forum sur le site web."
+      "forumBody": "Supprimer cette entrée de journal ? Cela ne supprime pas le message du forum sur le site web.",
+      "recordTitle": "Supprimer l'enregistrement d'un torrent",
+      "recordBody": "Supprimer cet enregistrement de la base de données ? Le fichier .torrent sera également supprimé s'il existe. Le torrent doit d'abord être supprimé de qBittorrent."
     },
     "globalForum": {
       "postsCount_one": "Message du forum {{count}}",
@@ -531,7 +538,8 @@
       "vlcNotFound": "VLC introuvable sur ce système",
       "vlcRequestFailed": "Échec de la demande VLC",
       "spectrogramFailed": "Échec du spectrogramme",
-      "spectrogramRequestFailed": "Échec de la demande de spectrogramme"
+      "spectrogramRequestFailed": "Échec de la demande de spectrogramme",
+      "torrentRecordDeleted": "Enregistrement Torrent supprimé"
     }
   },
   "map": {
@@ -950,7 +958,7 @@
     },
     "query": {
       "toggle": "Requête SQL…",
-      "placeholder": "SELECT * FROM entries LIMIT 10…",
+      "placeholder": "SELECT * FROM entrées LIMIT 10...",
       "run": "Exécuter",
       "clear": "Effacer",
       "rows": "{{count}} ligne(s) retournée(s).",

@@ -50,7 +50,9 @@
       "scraper": "Scraper",
       "settings": "Settings",
       "setup": "Setup",
-      "themes": "Themes"
+      "themes": "Themes",
+      "trading": "Trading",
+      "sharing": "Sharing"
     },
     "statusBar": {
       "db": "DB:",
@@ -465,14 +467,19 @@
       "regen": "Regen",
       "relocate": "Relocate",
       "delFile": "Del file",
+      "delRecord": "Del record",
       "openInBrowser": "Open in Browser",
       "loadingTorrents": "Loading…",
+      "loadingForum": "Loading…",
       "noTorrents": "No torrent records.",
-      "noForumHistory": "No forum history."
+      "noForumHistory": "No forum history.",
+      "forumLoadError": "Failed to load forum history."
     },
     "confirmDelete": {
       "torrentTitle": "Delete .torrent file",
       "torrentBody": "Delete the .torrent file from disk? This does not remove the torrent from qBittorrent.",
+      "recordTitle": "Delete torrent record",
+      "recordBody": "Delete this record from the database? The .torrent file will also be removed if it exists. The torrent must be removed from qBittorrent first.",
       "forumTitle": "Remove forum post record",
       "forumBody": "Remove this log entry? This does not delete the actual forum post on the website."
     },
@@ -527,6 +534,7 @@
       "sourceFolderUpdated": "Source folder updated",
       "updateFailed": "Update failed",
       "torrentFileDeleted": ".torrent file deleted",
+      "torrentRecordDeleted": "Torrent record deleted",
       "couldNotLoadForumPreview": "Could not load forum preview",
       "postedWithUrl": "Posted: {{url}}",
       "postedToForum": "Posted to forum",
@@ -637,7 +645,8 @@
       "autoScrape": "Auto-scrape on import",
       "enabled": "enabled",
       "disabled": "disabled",
-      "language": "Interface language"
+      "language": "Interface language",
+      "rowHighlight": "Row highlight colors"
     },
     "languages": {
       "en": "English",
@@ -649,13 +658,26 @@
     },
     "purges": {
       "title": "Data purges",
+      "subtitle": "reclaim local storage",
+      "recoverable": "recoverable",
       "lookupHistory": "Lookup history",
+      "lookupHistoryDesc": "Recent lookup queries",
+      "lookupHistoryUnit": "queries",
       "importLog": "Import log",
+      "importLogDesc": "Flat-file import audit lines",
+      "importLogUnit": "lines",
       "scraperCache": "Scraper cache",
+      "scraperCacheDesc": "Cached detail-page HTML",
+      "scraperCacheUnit": "pages",
       "fingerprintCache": "Fingerprint cache",
-      "allUserData": "All user data",
-      "purge": "Purge…",
-      "disclaimer": "User data only. The checksum archive is never affected."
+      "fingerprintCacheDesc": "Audio fingerprint blobs",
+      "fingerprintCacheUnit": "blobs",
+      "allUserData": "Purge all user data",
+      "allUserDataDesc": "Collection, wishlist, ratings, alerts & logs — not reversible.",
+      "purge": "Purge",
+      "purgeAll": "Purge all…",
+      "disclaimer": "User data only. The checksum archive is never affected.",
+      "archiveProtected": "The checksum archive is never touched by any purge."
     },
     "packages": {
       "title": "Data Packages",
@@ -767,6 +789,7 @@
       "resetAll": "Reset all custom tokens",
       "exportTheme": "Export theme as JSON",
       "importTheme": "Import theme…",
+      "rowHighlight": "Row highlight colors",
       "statusColorsNote": "Status colors (green / amber / red) are pinned to the row-status bar and pills so they never collide with your accent choice."
     },
     "tokens": {
@@ -970,5 +993,43 @@
       "truncated": "(capped at 500 rows)",
       "error": "Error: {{msg}}"
     }
+  },
+  "archiveOrg": {
+    "title": "Archive.org Upload",
+    "desc": "Upload audio files for an LB entry to the Internet Archive. Requires a free archive.org account and S3-like API keys.",
+    "credentials": "Credentials",
+    "accessKey": "Access Key",
+    "secretKey": "Secret Key",
+    "saveCredentials": "Save",
+    "testCredentials": "Test",
+    "clearCredentials": "Clear",
+    "credentialsSaved": "Credentials saved.",
+    "credentialsCleared": "Credentials cleared.",
+    "credentialsOk": "Credentials valid.",
+    "credentialsStored": "Credentials stored.",
+    "credentialsNotStored": "No credentials stored.",
+    "uploadTitle": "Upload",
+    "lbNumber": "LB Number",
+    "folderPath": "Folder Path",
+    "identifier": "IA Identifier",
+    "identifierPlaceholder": "losslessbob-lb-01234 (auto)",
+    "collection": "Collection",
+    "collectionPlaceholder": "opensource_audio",
+    "itemTitle": "Item Title",
+    "itemTitlePlaceholder": "Bob Dylan – LB-01234 (auto)",
+    "startUpload": "Upload to Archive.org",
+    "stopUpload": "Stop",
+    "uploading": "Uploading…",
+    "uploadDone": "Upload complete.",
+    "uploadStopped": "Upload stopped.",
+    "uploadFailed": "Upload failed.",
+    "history": "Upload History",
+    "histColLb": "LB",
+    "histColIdentifier": "IA Identifier",
+    "histColFiles": "Files",
+    "histColStatus": "Status",
+    "histColStarted": "Started",
+    "noHistory": "No uploads yet.",
+    "keysHelp": "Get your S3 keys at archive.org/account/s3.php (free account required)."
   }
 }
