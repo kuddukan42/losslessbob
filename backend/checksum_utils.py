@@ -197,6 +197,32 @@ def parse_lbdir_file(path):
                     'ratio': m.group(7),
                 })
 
+    # Flat-format fallback: if no section headers were found, treat every line as a
+    # plain MD5/FFP entry (handles *.flacf.md5.txt, *.wavf.md5.txt, etc.)
+    if not result['md5'] and not result['ffp'] and not result['shntool']:
+        for line in text.splitlines():
+            stripped = line.strip()
+            if not stripped or stripped.startswith('#') or stripped.startswith(';'):
+                continue
+            if re.match(r'^=+$', stripped) or stripped.lower().startswith('==='):
+                continue
+            m = _FFP_RE.match(stripped)
+            if m:
+                fname = m.group(1).replace('\\', '/')
+                if Path(fname).suffix.lower() == '.flac':
+                    has_flac = True
+                result['ffp'].append((fname, m.group(2).lower()))
+                continue
+            m = _MD5_RE.match(stripped)
+            if m:
+                fname = m.group(2).strip().replace('\\', '/')
+                ext = Path(fname).suffix.lower()
+                if ext == '.shn':
+                    has_shn = True
+                elif ext == '.flac':
+                    has_flac = True
+                result['md5'].append((fname, m.group(1).lower()))
+
     if has_shn and has_flac:
         result['mode'] = 'mixed'
     elif has_shn:
@@ -332,8 +358,8 @@ def compute_shntool(filepath):
 def detect_folder_mode(folder_path):
     """Return 'flac', 'shn', or 'mixed' based on audio files present in folder."""
     folder = Path(folder_path)
-    has_flac = any(folder.glob('*.flac'))
-    has_shn = any(folder.glob('*.shn'))
+    has_flac = any(folder.rglob('*.flac'))
+    has_shn = any(folder.rglob('*.shn'))
     if has_flac and has_shn:
         return 'mixed'
     return 'shn' if has_shn else 'flac'
@@ -422,7 +448,14 @@ def verify_folder(folder_path):
     mode = detect_folder_mode(folder_path)
     shntool_ok = _get_shntool_cmd() is not None
 
-    disk_audio = {f.name for f in folder.iterdir() if f.suffix.lower() in AUDIO_EXTS}
+    # Build relative-posix-path→Path map recursively so files in subfolders are found.
+    # Keys are posix-style relative paths ("subdir/file.flac") to match checksum entries
+    # that store Windows backslash paths (normalised below when parsing checksums).
+    disk_audio_map: dict[str, Path] = {}
+    for f in folder.rglob('*'):
+        if f.is_file() and f.suffix.lower() in AUDIO_EXTS:
+            disk_audio_map[f.relative_to(folder).as_posix()] = f
+    disk_audio = set(disk_audio_map.keys())
 
     expected = {}  # filename -> {hash_type: hash_value}
     has_ffp = has_md5 = has_shntool_entries = False
@@ -432,6 +465,8 @@ def verify_folder(folder_path):
         if ext not in ('.ffp', '.md5', '.st5'):
             continue
         for fname, htype, hval in _parse_checksum_file(cf):
+            # Normalise Windows backslash paths to posix so they match disk_audio_map keys
+            fname = fname.replace('\\', '/')
             if fname not in expected:
                 expected[fname] = {}
             if ext == '.st5':
@@ -470,7 +505,7 @@ def verify_folder(folder_path):
     n_pass = n_mismatch = n_missing = 0
 
     for fname in sorted(audio_in_chk):
-        fpath = folder / fname
+        fpath = disk_audio_map.get(fname, folder / fname)
         on_disk = fpath.exists()
         ext = Path(fname).suffix.lower()
         is_flac = ext == '.flac'
@@ -576,15 +611,40 @@ def verify_folder_lbdir(folder_path, lbdir_path):
     parsed = parse_lbdir_file(lbdir_path)
 
     if 'error' in parsed:
-        return {'folder': str(folder_path), 'error': parsed['error']}
+        return {
+            'folder': str(folder_path), 'error': parsed['error'],
+            'mode': 'unknown', 'status': 'no_lbdir',
+            'total': 0, 'pass': 0, 'mismatch': 0, 'missing': 0,
+            'extra': 0, 'missing_types': [], 'files': [],
+        }
 
     mode = parsed['mode']
     shntool_ok = _get_shntool_cmd() is not None
 
     md5_map = dict(parsed['md5'])
     ffp_map = dict(parsed['ffp'])
-    shn_map = dict(parsed['shntool'])
-    len_map = {e['filename']: e for e in parsed['shntool_len']}
+    raw_shn_map = dict(parsed['shntool'])
+    raw_len_map = {e['filename']: e for e in parsed['shntool_len']}
+
+    # shntool replaces spaces AND special chars (e.g. '&') with underscores, so the
+    # shntool-hash section's filenames differ from the md5 section's disk filenames.
+    # Normalize both to "only alphanumerics kept, everything else → '_'" for matching,
+    # then remap shntool keys to md5 canonical names to avoid duplicate file rows.
+    def _norm(name: str) -> str:
+        return re.sub(r'[^a-z0-9]', '_', name.lower())
+
+    norm_to_canon: dict[str, str] = {_norm(k): k for k in set(md5_map) | set(ffp_map)}
+    shn_map: dict[str, str] = {}
+    key_remap: dict[str, str] = {}
+    for k, v in raw_shn_map.items():
+        canon = norm_to_canon.get(_norm(k), k)
+        shn_map[canon] = v
+        if canon != k:
+            key_remap[k] = canon
+    len_map: dict[str, dict] = {
+        key_remap.get(e['filename'], norm_to_canon.get(_norm(e['filename']), e['filename'])): e
+        for e in parsed['shntool_len']
+    }
 
     all_files = set(md5_map) | set(ffp_map) | set(shn_map)
     files = []
@@ -673,7 +733,7 @@ def verify_folder_lbdir(folder_path, lbdir_path):
     elif n_mismatch > 0:
         status = 'fail'
     elif n_missing > 0:
-        status = 'incomplete'
+        status = 'missing_files'
     else:
         status = 'pass'
 
