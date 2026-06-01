@@ -132,11 +132,11 @@ function StateChip({ state, count, active, onClick }: {
       border: `1px solid ${active ? s.color : 'var(--lbb-border2)'}`,
       background: active ? `var(--lbb-${s.tone}-bg)` : 'var(--lbb-surface)',
       color: active ? `var(--lbb-${s.tone}-fg)` : 'var(--lbb-fg2)',
-      fontFamily: 'inherit', fontSize: 11.5, fontWeight: active ? 600 : 500, cursor: 'pointer',
+      fontFamily: 'inherit', fontSize: 'var(--lbb-fs-11-5)', fontWeight: active ? 600 : 500, cursor: 'pointer',
     }}>
       <span style={{ width: 7, height: 7, borderRadius: '50%', background: s.color }} />
       {t(`rename.states.${state}` as const)}
-      <span style={{ fontSize: 10, opacity: 0.65, marginLeft: 2 }}>{count}</span>
+      <span style={{ fontSize: 'var(--lbb-fs-10)', opacity: 0.65, marginLeft: 2 }}>{count}</span>
     </button>
   )
 }
@@ -324,10 +324,10 @@ export function ScreenRename(): React.JSX.Element {
         </div>
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <h1 style={{ margin: 0, fontSize: 18, fontWeight: 700, letterSpacing: -0.01 }}>{t('rename.title')}</h1>
+            <h1 style={{ margin: 0, fontSize: 'var(--lbb-fs-18)', fontWeight: 700, letterSpacing: -0.01 }}>{t('rename.title')}</h1>
             <Pill tone="mute" soft>{t('rename.subtitle', { count: rows.length })}</Pill>
           </div>
-          <div style={{ fontSize: 12, color: 'var(--lbb-fg3)', marginTop: 2 }}>
+          <div style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg3)', marginTop: 2 }}>
             {t('rename.desc')}
           </div>
         </div>
@@ -339,8 +339,8 @@ export function ScreenRename(): React.JSX.Element {
         <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 14, color: 'var(--lbb-fg3)' }}>
           <Icon name="rename" size={40} style={{ opacity: 0.15 }} />
           <div style={{ textAlign: 'center' }}>
-            <div style={{ fontSize: 15, fontWeight: 600, color: 'var(--lbb-fg2)' }}>{t('rename.noResults')}</div>
-            <div style={{ fontSize: 12, marginTop: 4 }}>{t('rename.noResultsDesc')}</div>
+            <div style={{ fontSize: 'var(--lbb-fs-15)', fontWeight: 600, color: 'var(--lbb-fg2)' }}>{t('rename.noResults')}</div>
+            <div style={{ fontSize: 'var(--lbb-fs-12)', marginTop: 4 }}>{t('rename.noResultsDesc')}</div>
           </div>
           <Button variant="primary" size="md" icon="lookup" onClick={() => navigate('/lookup')}>{t('rename.goToLookup')}</Button>
         </div>
@@ -356,9 +356,9 @@ export function ScreenRename(): React.JSX.Element {
               border: `1px solid ${!filter ? 'var(--lbb-accent-mid)' : 'var(--lbb-border2)'}`,
               background: !filter ? 'var(--lbb-accent-soft)' : 'var(--lbb-surface)',
               color: !filter ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg2)',
-              fontFamily: 'inherit', fontSize: 11.5, fontWeight: !filter ? 600 : 500, cursor: 'pointer',
+              fontFamily: 'inherit', fontSize: 'var(--lbb-fs-11-5)', fontWeight: !filter ? 600 : 500, cursor: 'pointer',
             }}>
-              {t('rename.filterAll')} <span style={{ fontSize: 10, opacity: 0.65, marginLeft: 4 }}>{rows.length}</span>
+              {t('rename.filterAll')} <span style={{ fontSize: 'var(--lbb-fs-10)', opacity: 0.65, marginLeft: 4 }}>{rows.length}</span>
             </button>
             {(Object.keys(STATES) as RowState[]).filter(k => k !== 'renamed' && counts[k]).map(k => (
               <StateChip key={k} state={k} count={counts[k] ?? 0}
@@ -372,7 +372,7 @@ export function ScreenRename(): React.JSX.Element {
             background: selected > 0 ? 'var(--lbb-accent-soft)' : 'var(--lbb-surface)',
             display: 'flex', alignItems: 'center', gap: 12,
           }}>
-            <span style={{ fontSize: 12, color: selected > 0 ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg2)', fontWeight: 600 }}>
+            <span style={{ fontSize: 'var(--lbb-fs-12)', color: selected > 0 ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg2)', fontWeight: 600 }}>
               {t('rename.bulk.selectedOf', { selected, total: rows.length })}
             </span>
             <div style={{ flex: 1 }} />
@@ -441,7 +441,7 @@ export function ScreenRename(): React.JSX.Element {
                             <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
                               <Pill tone={s.tone} soft dot={r.state !== 'has_lb' && r.state !== 'renamed'}>{t(`rename.states.${r.state}` as const)}</Pill>
                             </div>
-                            <div style={{ fontSize: 10.5, color: 'var(--lbb-fg3)', marginTop: 3 }}>
+                            <div style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)', marginTop: 3 }}>
                               {r.state === 'multiple_ids'
                                 ? t('rename.hints.multiple_ids', { count: (r.hint.match(/\d+/) ?? [''])[0] })
                                 : r.state === 'has_lb'
@@ -475,29 +475,29 @@ export function ScreenRename(): React.JSX.Element {
                                 padding: '14px 16px 16px 56px',
                                 background: 'var(--lbb-info-bg)', borderBottom: '1px solid var(--lbb-border)',
                               }}>
-                                <div style={{ fontSize: 10.5, fontWeight: 700, color: 'var(--lbb-info-fg)', letterSpacing: 0.08, textTransform: 'uppercase', marginBottom: 8 }}>
+                                <div style={{ fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: 'var(--lbb-info-fg)', letterSpacing: 0.08, textTransform: 'uppercase', marginBottom: 8 }}>
                                   {t('rename.disambiguate.title')}
                                 </div>
 
                                 {(!disambig || disambig.loading) ? (
-                                  <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', fontStyle: 'italic' }}>
+                                  <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)', fontStyle: 'italic' }}>
                                     {t('rename.disambiguate.loading')}
                                   </div>
                                 ) : (
                                   <>
                                     {disambig.pinnedLb && (
-                                      <div style={{ fontSize: 11.5, color: 'var(--lbb-ok-fg)', marginBottom: 8 }}>
+                                      <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-ok-fg)', marginBottom: 8 }}>
                                         {t('rename.disambiguate.pinned', { lb: lbStr(disambig.pinnedLb) })}
                                       </div>
                                     )}
-                                    <div style={{ fontSize: 11.5, color: 'var(--lbb-fg2)', marginBottom: 10 }}>
+                                    <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)', marginBottom: 10 }}>
                                       {t('rename.disambiguate.desc')}
                                     </div>
                                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: 10 }}>
                                       {disambig.canonical.map(lb => (
                                         <button key={lb} onClick={() => setDisambigLbSel(lb)} style={{
                                           padding: '4px 12px', borderRadius: 6, cursor: 'pointer', fontFamily: 'var(--lbb-mono)',
-                                          fontSize: 12, fontWeight: disambigLbSel === lb ? 700 : 500,
+                                          fontSize: 'var(--lbb-fs-12)', fontWeight: disambigLbSel === lb ? 700 : 500,
                                           border: `1px solid ${disambigLbSel === lb ? 'var(--lbb-accent-mid)' : 'var(--lbb-border2)'}`,
                                           background: disambigLbSel === lb ? 'var(--lbb-accent-soft)' : 'var(--lbb-surface)',
                                           color: disambigLbSel === lb ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg2)',
@@ -538,7 +538,7 @@ export function ScreenRename(): React.JSX.Element {
               <div style={{
                 marginTop: 16, padding: '12px 16px', borderRadius: 6,
                 background: 'var(--lbb-info-bg)', border: '1px solid var(--lbb-info-bar)',
-                fontSize: 12, color: 'var(--lbb-fg2)',
+                fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)',
                 display: 'flex', alignItems: 'flex-start', gap: 12,
               }}>
                 <Icon name="info" size={14} style={{ color: 'var(--lbb-info-fg)', marginTop: 1 }} />
@@ -561,7 +561,7 @@ export function ScreenRename(): React.JSX.Element {
             position: 'fixed', bottom: 28, left: '50%', transform: 'translateX(-50%)',
             background: toast.tone === 'ok' ? 'var(--lbb-ok-bar)' : toast.tone === 'bad' ? 'var(--lbb-err-bar)' : 'var(--lbb-accent-mid)',
             color: '#fff', padding: '9px 18px', borderRadius: 8,
-            fontSize: 13, fontWeight: 600, zIndex: 9999, boxShadow: '0 4px 16px rgba(0,0,0,.25)',
+            fontSize: 'var(--lbb-fs-13)', fontWeight: 600, zIndex: 9999, boxShadow: '0 4px 16px rgba(0,0,0,.25)',
             pointerEvents: 'none',
           }}
           ref={(el: HTMLDivElement | null) => { if (el) setTimeout(() => setToast(null), 3500) }}

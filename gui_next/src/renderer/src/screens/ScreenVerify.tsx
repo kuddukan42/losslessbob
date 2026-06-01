@@ -26,12 +26,12 @@ function StatusDot({ s }: { s: CheckStatus }): React.JSX.Element {
   if (s === 'pass') return <Icon name="check" size={13} style={{ color: 'var(--lbb-ok-bar)' }} />
   if (s === 'fail') return <Icon name="x"     size={13} style={{ color: 'var(--lbb-bad-fg)' }} />
   if (s === 'miss') return <Icon name="x"     size={13} style={{ color: 'var(--lbb-warn-fg)' }} />
-  return <span style={{ color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)', fontSize: 10 }}>na</span>
+  return <span style={{ color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-10)' }}>na</span>
 }
 
 function ToolDot({ ok, label }: { ok: boolean; label: string }): React.JSX.Element {
   return (
-    <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontSize: 11, color: 'var(--lbb-fg2)' }}>
+    <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg2)' }}>
       <span style={{ width: 7, height: 7, borderRadius: '50%', background: ok ? 'var(--lbb-ok-bar)' : 'var(--lbb-bad-fg)' }} />
       {label}
     </span>
@@ -53,8 +53,8 @@ function FolderRow({ row, active, onClick }: { row: VerifyFolder; active: boolea
     }}>
       <span style={{ width: 8, height: 8, borderRadius: 2, background: dotColor, flex: '0 0 8px' }} />
       <span style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
-        <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 11, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{name}</span>
-        <span style={{ fontSize: 10, color: 'var(--lbb-fg3)', fontVariantNumeric: 'tabular-nums' }}>
+        <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{name}</span>
+        <span style={{ fontSize: 'var(--lbb-fs-10)', color: 'var(--lbb-fg3)', fontVariantNumeric: 'tabular-nums' }}>
           {row.mode.toUpperCase()} · {row.pass}/{row.total} pass
           {row.missing > 0 && <> · <span style={{ color: 'var(--lbb-warn-fg)' }}>{row.missing} miss</span></>}
           {row.mismatch > 0 && <> · <span style={{ color: 'var(--lbb-bad-fg)' }}>{row.mismatch} mismatch</span></>}
@@ -196,7 +196,7 @@ export function ScreenVerify(): React.JSX.Element {
     : []
 
   const STAT_LABEL: React.CSSProperties = {
-    fontSize: 9.5, fontWeight: 700, color: 'var(--lbb-fg3)',
+    fontSize: 'var(--lbb-fs-9-5)', fontWeight: 700, color: 'var(--lbb-fg3)',
     letterSpacing: 0.08, textTransform: 'uppercase',
   }
 
@@ -235,10 +235,10 @@ export function ScreenVerify(): React.JSX.Element {
         </div>
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <h1 style={{ margin: 0, fontSize: 18, fontWeight: 700, letterSpacing: -0.01 }}>{t('verify.title')}</h1>
+            <h1 style={{ margin: 0, fontSize: 'var(--lbb-fs-18)', fontWeight: 700, letterSpacing: -0.01 }}>{t('verify.title')}</h1>
             <Pill tone="mute" soft>{t('verify.subtitle')}</Pill>
           </div>
-          <div style={{ fontSize: 12, color: 'var(--lbb-fg3)', marginTop: 2 }}>
+          <div style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg3)', marginTop: 2 }}>
             {t('verify.desc')}
           </div>
         </div>
@@ -262,8 +262,8 @@ export function ScreenVerify(): React.JSX.Element {
           <div style={{ padding: '12px 12px 8px', borderBottom: '1px solid var(--lbb-border)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 8 }}>
               <Icon name="folder" size={13} style={{ color: 'var(--lbb-fg3)' }} />
-              <span style={{ fontSize: 10.5, fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.1, textTransform: 'uppercase' }}>{t('verify.rail.foldersLabel')}</span>
-              <span style={{ marginLeft: 'auto', fontSize: 11, fontWeight: 600, color: 'var(--lbb-fg2)', fontVariantNumeric: 'tabular-nums' }}>{folders.length}</span>
+              <span style={{ fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.1, textTransform: 'uppercase' }}>{t('verify.rail.foldersLabel')}</span>
+              <span style={{ marginLeft: 'auto', fontSize: 'var(--lbb-fs-11)', fontWeight: 600, color: 'var(--lbb-fg2)', fontVariantNumeric: 'tabular-nums' }}>{folders.length}</span>
             </div>
             <Input
               icon="search" placeholder={t('verify.rail.filterPlaceholder')} size="sm" style={{ width: '100%' }}
@@ -272,7 +272,7 @@ export function ScreenVerify(): React.JSX.Element {
           </div>
           <div style={{ flex: 1, overflowY: 'auto', padding: '6px 6px' }}>
             {filteredFolders.length === 0 ? (
-              <div style={{ padding: '24px 12px', textAlign: 'center', color: 'var(--lbb-fg3)', fontSize: 11 }}>
+              <div style={{ padding: '24px 12px', textAlign: 'center', color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-11)' }}>
                 {folders.length === 0 ? t('verify.rail.noFolders') : t('verify.rail.noMatches')}
               </div>
             ) : filteredFolders.map((f, i) => {
@@ -290,7 +290,7 @@ export function ScreenVerify(): React.JSX.Element {
                   textAlign: 'left', fontFamily: 'inherit', cursor: 'default',
                 }}>
                   <span style={{ width: 8, height: 8, borderRadius: 2, background: 'var(--lbb-border)', flex: '0 0 8px' }} />
-                  <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 11, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{name}</span>
+                  <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{name}</span>
                 </button>
               )
             })}
@@ -314,7 +314,7 @@ export function ScreenVerify(): React.JSX.Element {
               flexDirection: 'column', gap: 12, color: 'var(--lbb-fg3)',
             }}>
               <Icon name="verify" size={36} style={{ opacity: 0.15 }} />
-              <span style={{ fontSize: 13 }}>
+              <span style={{ fontSize: 'var(--lbb-fs-13)' }}>
                 {folders.length === 0 ? t('verify.emptyFolders') : t('verify.clickToRun')}
               </span>
             </div>
@@ -324,10 +324,10 @@ export function ScreenVerify(): React.JSX.Element {
               <div style={{ padding: '16px 24px', borderBottom: '1px solid var(--lbb-border)' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
                   <Icon name="folder" size={14} style={{ color: 'var(--lbb-fg3)' }} />
-                  <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 13, fontWeight: 600, color: 'var(--lbb-fg)' }}>
+                  <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-13)', fontWeight: 600, color: 'var(--lbb-fg)' }}>
                     {row.folder.split('/').pop()}
                   </span>
-                  <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 11, color: 'var(--lbb-fg3)' }}>{row.folder}</span>
+                  <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)' }}>{row.folder}</span>
                   <div style={{ flex: 1 }} />
                   <StateBadge s={row.status} />
                   <Pill tone="mute" soft>{row.mode.toUpperCase()}</Pill>
@@ -340,7 +340,7 @@ export function ScreenVerify(): React.JSX.Element {
                       background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)',
                     }}>
                       <div style={STAT_LABEL}>{s.l}</div>
-                      <div style={{ fontSize: 18, fontWeight: 700, fontFamily: 'var(--lbb-mono)', fontVariantNumeric: 'tabular-nums', color: s.color, marginTop: 2 }}>
+                      <div style={{ fontSize: 'var(--lbb-fs-18)', fontWeight: 700, fontFamily: 'var(--lbb-mono)', fontVariantNumeric: 'tabular-nums', color: s.color, marginTop: 2 }}>
                         {s.v}
                       </div>
                     </div>
@@ -350,7 +350,7 @@ export function ScreenVerify(): React.JSX.Element {
 
               {/* Toolbar */}
               <div style={{ padding: '10px 24px', borderBottom: '1px solid var(--lbb-border)', display: 'flex', alignItems: 'center', gap: 10 }}>
-                <span style={{ fontSize: 10.5, fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase' }}>{t('verify.toolbar.files')}</span>
+                <span style={{ fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase' }}>{t('verify.toolbar.files')}</span>
                 <Chip active={!showAll} onClick={() => setShowAll(false)} size="sm" count={row.files.filter(f => f.overall !== 'pass').length}>{t('verify.toolbar.problems')}</Chip>
                 <Chip active={showAll}  onClick={() => setShowAll(true)}  size="sm" count={row.files.length}>{t('verify.toolbar.showAll')}</Chip>
                 <div style={{ flex: 1 }} />
@@ -370,8 +370,8 @@ export function ScreenVerify(): React.JSX.Element {
                     }}>
                       <Icon name="info" size={18} style={{ color: 'var(--lbb-warn-fg)', flex: '0 0 18px', marginTop: 2 }} />
                       <div style={{ flex: 1 }}>
-                        <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--lbb-warn-fg)' }}>{t('verify.shntoolWarning')}</div>
-                        <div style={{ fontSize: 12, color: 'var(--lbb-fg2)', marginTop: 4 }}>
+                        <div style={{ fontSize: 'var(--lbb-fs-13)', fontWeight: 700, color: 'var(--lbb-warn-fg)' }}>{t('verify.shntoolWarning')}</div>
+                        <div style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)', marginTop: 4 }}>
                           {t('verify.shntoolDesc')}
                         </div>
                         <div style={{ display: 'flex', gap: 6, marginTop: 10 }}>
@@ -438,7 +438,7 @@ export function ScreenVerify(): React.JSX.Element {
                     </TableShell>
 
                     {!showAll && (
-                      <div style={{ marginTop: 10, fontSize: 11.5, color: 'var(--lbb-fg3)', fontStyle: 'italic', textAlign: 'center' }}>
+                      <div style={{ marginTop: 10, fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)', fontStyle: 'italic', textAlign: 'center' }}>
                         {t('verify.showingProblems', { count: visible.length })}{' '}
                         <button
                           onClick={() => setShowAll(true)}
@@ -466,7 +466,7 @@ export function ScreenVerify(): React.JSX.Element {
             position: 'fixed', bottom: 28, left: '50%', transform: 'translateX(-50%)',
             background: toast.tone === 'ok' ? 'var(--lbb-ok-bar)' : toast.tone === 'bad' ? 'var(--lbb-err-bar)' : 'var(--lbb-accent-mid)',
             color: '#fff', padding: '9px 18px', borderRadius: 8,
-            fontSize: 13, fontWeight: 600, zIndex: 9999, boxShadow: '0 4px 16px rgba(0,0,0,.25)',
+            fontSize: 'var(--lbb-fs-13)', fontWeight: 600, zIndex: 9999, boxShadow: '0 4px 16px rgba(0,0,0,.25)',
             pointerEvents: 'none',
           }}
           ref={(el: HTMLDivElement | null) => { if (el) setTimeout(() => setToast(null), 3500) }}

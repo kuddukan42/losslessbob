@@ -15,11 +15,12 @@ type ToastTone = 'ok' | 'bad' | 'info'
 
 
 const STATE_LABEL: Record<LbdirState, { tone: Tone; label: string }> = {
-  pass:          { tone: 'ok',   label: 'Pass' },
-  fail:          { tone: 'bad',  label: 'Fail · mismatches' },
-  missing_files: { tone: 'bad',  label: 'Missing files' },
-  no_lbdir:      { tone: 'warn', label: 'No lbdir · retrievable' },
-  no_lb:         { tone: 'mute', label: 'No LB#' },
+  pass:            { tone: 'ok',   label: 'Pass' },
+  fail:            { tone: 'bad',  label: 'Fail · mismatches' },
+  missing_files:   { tone: 'bad',  label: 'Missing files' },
+  no_lbdir:        { tone: 'warn', label: 'No lbdir · retrievable' },
+  no_lb:           { tone: 'mute', label: 'No LB#' },
+  shntool_missing: { tone: 'warn', label: 'Shntool not installed' },
 }
 
 // ── Atoms ──────────────────────────────────────────────────────────────────────
@@ -27,7 +28,7 @@ const STATE_LABEL: Record<LbdirState, { tone: Tone; label: string }> = {
 function CheckDot({ s }: { s: 'pass' | 'miss' | 'na' }): React.JSX.Element {
   if (s === 'pass') return <Icon name="check" size={12} style={{ color: 'var(--lbb-ok-bar)' }} />
   if (s === 'miss') return <Icon name="x"     size={12} style={{ color: 'var(--lbb-warn-fg)' }} />
-  return <span style={{ color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)', fontSize: 10 }}>na</span>
+  return <span style={{ color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-10)' }}>na</span>
 }
 
 function FolderSideRow({ folder, checkResult, active, onClick }: {
@@ -53,9 +54,9 @@ function FolderSideRow({ folder, checkResult, active, onClick }: {
     }}>
       <span style={{ width: 8, height: 8, borderRadius: 2, background: color, flex: '0 0 8px' }} />
       <span style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
-        <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 11, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{name}</span>
+        <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{name}</span>
         {checkResult && (
-          <span style={{ fontSize: 10, color: 'var(--lbb-fg3)', fontVariantNumeric: 'tabular-nums' }}>
+          <span style={{ fontSize: 'var(--lbb-fs-10)', color: 'var(--lbb-fg3)', fontVariantNumeric: 'tabular-nums' }}>
             {checkResult.lb_number
               ? <span style={{ color: 'var(--lbb-accent-mid)' }}>LB-{String(checkResult.lb_number).padStart(5, '0')}</span>
               : <span>—</span>}
@@ -267,16 +268,16 @@ export function ScreenLBDIR(): React.JSX.Element {
         </div>
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <h1 style={{ margin: 0, fontSize: 18, fontWeight: 700, letterSpacing: -0.01 }}>LBDIR</h1>
+            <h1 style={{ margin: 0, fontSize: 'var(--lbb-fs-18)', fontWeight: 700, letterSpacing: -0.01 }}>LBDIR</h1>
             <Pill tone="mute" soft>official sidecar reconciliation</Pill>
           </div>
-          <div style={{ fontSize: 12, color: 'var(--lbb-fg3)', marginTop: 2 }}>
+          <div style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg3)', marginTop: 2 }}>
             Check, retrieve, and reconcile the <span style={{ fontFamily: 'var(--lbb-mono)' }}>lbdir*.txt</span> file from the LosslessBob archive.
           </div>
         </div>
         <div style={{ flex: 1 }} />
         <div style={{ display: 'flex', gap: 14, padding: '0 12px', borderRight: '1px solid var(--lbb-border)' }}>
-          <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontSize: 11, color: 'var(--lbb-fg2)' }}>
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg2)' }}>
             <span style={{ width: 7, height: 7, borderRadius: '50%', background: tools?.shntool_available ? 'var(--lbb-ok-bar)' : 'var(--lbb-warn-bar)' }} /> shntool
           </span>
         </div>
@@ -295,12 +296,12 @@ export function ScreenLBDIR(): React.JSX.Element {
             borderBottomColor: tab === t.k ? 'var(--lbb-accent-mid)' : 'transparent',
             background: 'transparent', border: 'none',
             color: tab === t.k ? 'var(--lbb-fg)' : 'var(--lbb-fg2)',
-            fontFamily: 'inherit', fontSize: 12.5, fontWeight: tab === t.k ? 600 : 500,
+            fontFamily: 'inherit', fontSize: 'var(--lbb-fs-12-5)', fontWeight: tab === t.k ? 600 : 500,
             cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 8,
           }}>
             <Icon name={t.icon} size={13} />
             {t.l}
-            <span style={{ fontSize: 10.5, color: 'var(--lbb-fg3)', fontWeight: 500 }}>{t.hint}</span>
+            <span style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)', fontWeight: 500 }}>{t.hint}</span>
           </button>
         ))}
       </div>
@@ -316,8 +317,8 @@ export function ScreenLBDIR(): React.JSX.Element {
           <div style={{ padding: '12px 12px 8px', borderBottom: '1px solid var(--lbb-border)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 8 }}>
               <Icon name="folder" size={13} style={{ color: 'var(--lbb-fg3)' }} />
-              <span style={{ fontSize: 10.5, fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.1, textTransform: 'uppercase' }}>Folders</span>
-              <span style={{ marginLeft: 'auto', fontSize: 11, fontWeight: 600, color: 'var(--lbb-fg2)' }}>{folders.length}</span>
+              <span style={{ fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.1, textTransform: 'uppercase' }}>Folders</span>
+              <span style={{ marginLeft: 'auto', fontSize: 'var(--lbb-fs-11)', fontWeight: 600, color: 'var(--lbb-fg2)' }}>{folders.length}</span>
             </div>
             <Input
               icon="search" placeholder="Filter…" size="sm" style={{ width: '100%' }}
@@ -326,7 +327,7 @@ export function ScreenLBDIR(): React.JSX.Element {
           </div>
           <div style={{ flex: 1, overflowY: 'auto', padding: '6px 6px' }}>
             {filteredFolders.length === 0 ? (
-              <div style={{ padding: '24px 12px', textAlign: 'center', color: 'var(--lbb-fg3)', fontSize: 11 }}>
+              <div style={{ padding: '24px 12px', textAlign: 'center', color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-11)' }}>
                 {folders.length === 0 ? 'No folders added' : 'No matches'}
               </div>
             ) : filteredFolders.map(f => (
@@ -354,7 +355,7 @@ export function ScreenLBDIR(): React.JSX.Element {
           {!activeFolderStr ? (
             <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 12, color: 'var(--lbb-fg3)' }}>
               <Icon name="lbdir" size={36} style={{ opacity: 0.15 }} />
-              <span style={{ fontSize: 13 }}>Add folders, then click Check all folders</span>
+              <span style={{ fontSize: 'var(--lbb-fs-13)' }}>Add folders, then click Check all folders</span>
             </div>
           ) : (
             <>
@@ -364,7 +365,7 @@ export function ScreenLBDIR(): React.JSX.Element {
                   <>
                     <div style={{ padding: '14px 24px', borderBottom: '1px solid var(--lbb-border)', flexShrink: 0 }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
-                        <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 13, fontWeight: 600 }}>
+                        <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-13)', fontWeight: 600 }}>
                           {activeFolderStr.split('/').pop()}
                         </span>
                         {checkResult.lb_number !== null && (
@@ -373,7 +374,7 @@ export function ScreenLBDIR(): React.JSX.Element {
                           </Pill>
                         )}
                         {checkResult.lbdir_path && (
-                          <Pill tone="mute" soft style={{ fontFamily: 'var(--lbb-mono)', fontSize: 10 }}>
+                          <Pill tone="mute" soft style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-10)' }}>
                             {checkResult.lbdir_path.split('/').pop()}
                           </Pill>
                         )}
@@ -402,8 +403,8 @@ export function ScreenLBDIR(): React.JSX.Element {
                           { l: 'Missing',  v: checkResult.missing,  c: checkResult.missing  > 0 ? 'var(--lbb-bad-fg)' : 'var(--lbb-fg3)' },
                         ].map((st, i) => (
                           <div key={i} style={{ padding: '6px 10px', borderRadius: 6, background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)' }}>
-                            <div style={{ fontSize: 9.5, fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase' }}>{st.l}</div>
-                            <div style={{ fontSize: 16, fontWeight: 700, fontFamily: 'var(--lbb-mono)', color: st.c ?? 'var(--lbb-fg)' }}>{st.v}</div>
+                            <div style={{ fontSize: 'var(--lbb-fs-9-5)', fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase' }}>{st.l}</div>
+                            <div style={{ fontSize: 'var(--lbb-fs-16)', fontWeight: 700, fontFamily: 'var(--lbb-mono)', color: st.c ?? 'var(--lbb-fg)' }}>{st.v}</div>
                           </div>
                         ))}
                       </div>
@@ -449,7 +450,7 @@ export function ScreenLBDIR(): React.JSX.Element {
                 ) : (
                   <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 12, color: 'var(--lbb-fg3)' }}>
                     <Icon name="lbdir" size={36} style={{ opacity: 0.15 }} />
-                    <span style={{ fontSize: 13 }}>Click Check all folders to run</span>
+                    <span style={{ fontSize: 'var(--lbb-fs-13)' }}>Click Check all folders to run</span>
                   </div>
                 )
               )}
@@ -458,7 +459,7 @@ export function ScreenLBDIR(): React.JSX.Element {
               {tab === 'retrieve' && (
                 <div style={{ flex: 1, overflow: 'auto', padding: '16px 24px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
-                    <span style={{ fontSize: 10.5, fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase' }}>
+                    <span style={{ fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase' }}>
                       Retrieve lbdir from cache
                     </span>
                     {retrieveResults.length > 0 && (
@@ -505,7 +506,7 @@ export function ScreenLBDIR(): React.JSX.Element {
                                 {r.lb_number ? `LB-${String(r.lb_number).padStart(5, '0')}` : '—'}
                               </TD>
                               <TD><Pill tone={tone} soft dot={tone !== 'ok'}>{label}</Pill></TD>
-                              <TD style={{ color: 'var(--lbb-fg2)', fontSize: 11.5 }}>{r.msg}</TD>
+                              <TD style={{ color: 'var(--lbb-fg2)', fontSize: 'var(--lbb-fs-11-5)' }}>{r.msg}</TD>
                               <TD align="right">
                                 {r.status === 'no_lb_number' && (
                                   <Button size="sm" variant="secondary" icon="lookup" onClick={() => navigate('/lookup')}>Run Lookup</Button>
@@ -524,7 +525,7 @@ export function ScreenLBDIR(): React.JSX.Element {
                   <div style={{
                     marginTop: 16, padding: '10px 14px', borderRadius: 6,
                     background: 'var(--lbb-info-bg)', border: '1px solid var(--lbb-info-bar)',
-                    fontSize: 11.5, color: 'var(--lbb-fg2)', display: 'flex', alignItems: 'flex-start', gap: 10,
+                    fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)', display: 'flex', alignItems: 'flex-start', gap: 10,
                   }}>
                     <Icon name="info" size={13} style={{ color: 'var(--lbb-info-fg)', marginTop: 1 }} />
                     <div>
@@ -539,7 +540,7 @@ export function ScreenLBDIR(): React.JSX.Element {
               {tab === 'reconcile' && (
                 <div style={{ flex: 1, overflow: 'auto', padding: '16px 24px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
-                    <span style={{ fontSize: 10.5, fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase' }}>
+                    <span style={{ fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase' }}>
                       Reconcile · find moved files
                     </span>
                     {reconResult && (
@@ -610,7 +611,7 @@ export function ScreenLBDIR(): React.JSX.Element {
                   <div style={{
                     marginTop: 16, padding: '12px 16px', borderRadius: 6,
                     background: 'var(--lbb-info-bg)', border: '1px solid var(--lbb-info-bar)',
-                    fontSize: 12, color: 'var(--lbb-fg2)', display: 'flex', alignItems: 'flex-start', gap: 10,
+                    fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)', display: 'flex', alignItems: 'flex-start', gap: 10,
                   }}>
                     <Icon name="info" size={14} style={{ color: 'var(--lbb-info-fg)', marginTop: 1 }} />
                     <div>
@@ -625,7 +626,7 @@ export function ScreenLBDIR(): React.JSX.Element {
               {tab === 'extras' && (
                 <div style={{ flex: 1, overflow: 'auto', padding: '16px 24px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
-                    <span style={{ fontSize: 10.5, fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase' }}>
+                    <span style={{ fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase' }}>
                       Extra files · not in lbdir
                     </span>
                     {extrasResult && <Pill tone="warn" soft>{extrasResult.extra.length} files</Pill>}
@@ -702,7 +703,7 @@ export function ScreenLBDIR(): React.JSX.Element {
                     <div style={{
                       marginTop: 16, padding: '12px 16px', borderRadius: 6,
                       background: 'var(--lbb-bad-bg)', border: '1px solid var(--lbb-bad-fg)',
-                      fontSize: 12, color: 'var(--lbb-fg2)', display: 'flex', alignItems: 'flex-start', gap: 10,
+                      fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)', display: 'flex', alignItems: 'flex-start', gap: 10,
                     }}>
                       <Icon name="info" size={14} style={{ color: 'var(--lbb-bad-fg)', marginTop: 1 }} />
                       <div>
@@ -724,7 +725,7 @@ export function ScreenLBDIR(): React.JSX.Element {
             position: 'fixed', bottom: 28, left: '50%', transform: 'translateX(-50%)',
             background: toast.tone === 'ok' ? 'var(--lbb-ok-bar)' : toast.tone === 'bad' ? 'var(--lbb-err-bar)' : 'var(--lbb-accent-mid)',
             color: '#fff', padding: '9px 18px', borderRadius: 8,
-            fontSize: 13, fontWeight: 600, zIndex: 9999, boxShadow: '0 4px 16px rgba(0,0,0,.25)',
+            fontSize: 'var(--lbb-fs-13)', fontWeight: 600, zIndex: 9999, boxShadow: '0 4px 16px rgba(0,0,0,.25)',
             pointerEvents: 'none',
           }}
           ref={(el: HTMLDivElement | null) => { if (el) setTimeout(() => setToast(null), 3500) }}

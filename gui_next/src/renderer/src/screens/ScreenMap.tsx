@@ -56,7 +56,7 @@ const DISPLAY_OPTS = [
 ]
 
 const SECTION_LABEL: React.CSSProperties = {
-  fontSize: 10.5, fontWeight: 700, color: 'var(--lbb-fg3)',
+  fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: 'var(--lbb-fg3)',
   letterSpacing: 0.08, textTransform: 'uppercase',
 }
 
@@ -109,11 +109,11 @@ export function ScreenMap(): React.JSX.Element {
         </div>
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <h1 style={{ margin: 0, fontSize: 18, fontWeight: 700, letterSpacing: -0.01 }}>{t('map.title')}</h1>
+            <h1 style={{ margin: 0, fontSize: 'var(--lbb-fs-18)', fontWeight: 700, letterSpacing: -0.01 }}>{t('map.title')}</h1>
             <Pill tone="ok"   soft>{t('map.geocoded', { count: 6676 })}</Pill>
             <Pill tone="warn" soft>{t('map.awaitingGeocode', { count: 9954 })}</Pill>
           </div>
-          <div style={{ fontSize: 12, color: 'var(--lbb-fg3)', marginTop: 2 }}>
+          <div style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg3)', marginTop: 2 }}>
             {t('map.desc')}
           </div>
         </div>
@@ -134,7 +134,7 @@ export function ScreenMap(): React.JSX.Element {
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
               <span style={SECTION_LABEL}>{t('map.yearRange')}</span>
               <div style={{ flex: 1 }} />
-              <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 11.5, fontWeight: 600, color: 'var(--lbb-accent-mid)' }}>
+              <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11-5)', fontWeight: 600, color: 'var(--lbb-accent-mid)' }}>
                 {yearMin} – {yearMax}
               </span>
             </div>
@@ -168,7 +168,7 @@ export function ScreenMap(): React.JSX.Element {
                   flex: 1, padding: '5px 8px', borderRadius: 4,
                   background: owned === k ? 'var(--lbb-surface)' : 'transparent',
                   color: owned === k ? 'var(--lbb-fg)' : 'var(--lbb-fg2)',
-                  fontWeight: owned === k ? 600 : 500, fontSize: 11.5,
+                  fontWeight: owned === k ? 600 : 500, fontSize: 'var(--lbb-fs-11-5)',
                   border: owned === k ? '1px solid var(--lbb-border2)' : '1px solid transparent',
                   cursor: 'pointer', fontFamily: 'inherit',
                 }}>{l}</button>
@@ -184,13 +184,13 @@ export function ScreenMap(): React.JSX.Element {
                 <label key={o.k} style={{
                   display: 'flex', alignItems: 'center', gap: 8, padding: '5px 8px', borderRadius: 6,
                   background: status === o.k ? 'var(--lbb-accent-soft)' : 'transparent',
-                  cursor: 'pointer', fontSize: 12,
+                  cursor: 'pointer', fontSize: 'var(--lbb-fs-12)',
                 }}>
                   <input type="radio" name="status" checked={status === o.k} onChange={() => setStatus(o.k)} />
                   <span style={{ flex: 1, color: status === o.k ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg2)', fontWeight: status === o.k ? 600 : 500 }}>
                     {o.l}
                   </span>
-                  <span style={{ fontSize: 10.5, color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)' }}>
+                  <span style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)' }}>
                     {o.n.toLocaleString()}
                   </span>
                 </label>
@@ -215,7 +215,7 @@ export function ScreenMap(): React.JSX.Element {
                 { l: t('map.displayOpts.heatmapOverlay'),  v: DISPLAY_OPTS[2].v },
                 { l: t('map.displayOpts.showVenueLabels'), v: DISPLAY_OPTS[3].v },
               ].map((opt, i) => (
-                <label key={i} style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 12, color: 'var(--lbb-fg2)' }}>
+                <label key={i} style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)' }}>
                   <input type="checkbox" defaultChecked={opt.v} />
                   {opt.l}
                 </label>
@@ -250,10 +250,10 @@ export function ScreenMap(): React.JSX.Element {
             <div style={{ ...SECTION_LABEL, marginBottom: 6 }}>
               {t('map.selected', { era: selectedPinData.era })}
             </div>
-            <div style={{ fontSize: 16, fontWeight: 700, color: 'var(--lbb-fg)' }}>{selectedPinData.l}</div>
+            <div style={{ fontSize: 'var(--lbb-fs-16)', fontWeight: 700, color: 'var(--lbb-fg)' }}>{selectedPinData.l}</div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 6 }}>
               <Pill tone="info" soft>{t('map.shows', { count: selectedPinData.n })}</Pill>
-              <span style={{ fontSize: 11, color: 'var(--lbb-fg3)' }}>· 4 owned · 3 wishlist · 1 missing</span>
+              <span style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)' }}>· 4 owned · 3 wishlist · 1 missing</span>
             </div>
             <div style={{ display: 'flex', gap: 6, marginTop: 10 }}>
               <Button size="sm" variant="primary" icon="search" block>{t('map.openInSearch')}</Button>
@@ -279,11 +279,11 @@ export function ScreenMap(): React.JSX.Element {
                 }} />
                 <span style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
                   <span style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                    <span style={{ fontFamily: 'var(--lbb-mono)', fontWeight: 600, fontSize: 11.5, color: 'var(--lbb-accent-mid)' }}>{r.lb}</span>
-                    <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 10.5, color: 'var(--lbb-fg3)' }}>{r.d}</span>
+                    <span style={{ fontFamily: 'var(--lbb-mono)', fontWeight: 600, fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-accent-mid)' }}>{r.lb}</span>
+                    <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)' }}>{r.d}</span>
                     {r.owned && <Icon name="check" size={10} style={{ color: 'var(--lbb-ok-bar)' }} />}
                   </span>
-                  <span style={{ fontSize: 10.5, color: 'var(--lbb-fg3)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{r.v}</span>
+                  <span style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{r.v}</span>
                 </span>
               </button>
             ))}
@@ -293,7 +293,7 @@ export function ScreenMap(): React.JSX.Element {
             <div style={{
               padding: '8px 10px', borderRadius: 6,
               background: 'var(--lbb-info-bg)', border: '1px solid var(--lbb-info-bar)',
-              fontSize: 11, color: 'var(--lbb-fg2)',
+              fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg2)',
               display: 'flex', alignItems: 'flex-start', gap: 8,
             }}>
               <Icon name="info" size={11} style={{ color: 'var(--lbb-info-fg)', marginTop: 2 }} />

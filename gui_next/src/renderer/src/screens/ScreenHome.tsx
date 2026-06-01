@@ -38,7 +38,7 @@ function Toast({ msg, tone, onDone }: { msg: string; tone: ToastTone; onDone: ()
     <div style={{
       position: 'fixed', bottom: 28, left: '50%', transform: 'translateX(-50%)',
       background: bg, color: '#fff', padding: '9px 18px', borderRadius: 8,
-      fontSize: 13, fontWeight: 600, zIndex: 9999, boxShadow: '0 4px 16px rgba(0,0,0,.25)',
+      fontSize: 'var(--lbb-fs-13)', fontWeight: 600, zIndex: 9999, boxShadow: '0 4px 16px rgba(0,0,0,.25)',
       pointerEvents: 'none',
     }}>{msg}</div>
   )
@@ -165,13 +165,13 @@ export function ScreenHome(): React.JSX.Element {
         marginBottom: 22, gap: 24,
       }}>
         <div>
-          <div style={{ fontSize: 11, letterSpacing: 0.14, textTransform: 'uppercase', color: 'var(--lbb-fg3)', fontWeight: 600 }}>
+          <div style={{ fontSize: 'var(--lbb-fs-11)', letterSpacing: 0.14, textTransform: 'uppercase', color: 'var(--lbb-fg3)', fontWeight: 600 }}>
             {t('home.welcome')}
           </div>
-          <h1 style={{ margin: '6px 0 0', fontSize: 28, fontWeight: 700, letterSpacing: -0.015 }}>
+          <h1 style={{ margin: '6px 0 0', fontSize: 'var(--lbb-fs-28)', fontWeight: 700, letterSpacing: -0.015 }}>
             {t('home.collectionTitle', { count: d(stats?.collection_count, '…') })}
           </h1>
-          <div style={{ marginTop: 4, fontSize: 13, color: 'var(--lbb-fg3)' }}>
+          <div style={{ marginTop: 4, fontSize: 'var(--lbb-fs-13)', color: 'var(--lbb-fg3)' }}>
             {t('home.dbStatus', { when: stats ? relTime(stats.last_import) : '…' })}
           </div>
         </div>
@@ -196,17 +196,17 @@ export function ScreenHome(): React.JSX.Element {
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
             <span style={{
-              fontSize: 10, letterSpacing: 0.14, textTransform: 'uppercase',
+              fontSize: 'var(--lbb-fs-10)', letterSpacing: 0.14, textTransform: 'uppercase',
               color: 'var(--lbb-accent-mid)', fontWeight: 700,
               padding: '2px 7px', borderRadius: 4,
               background: 'var(--lbb-surface)', border: '1px solid var(--lbb-accent-mid)',
             }}>{t('home.primaryWorkflow')}</span>
-            <span style={{ fontSize: 11, color: 'var(--lbb-fg3)' }}>{t('home.pipelineTagline')}</span>
+            <span style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)' }}>{t('home.pipelineTagline')}</span>
           </div>
-          <h2 style={{ margin: '2px 0 4px', fontSize: 22, fontWeight: 700, letterSpacing: -0.01 }}>
+          <h2 style={{ margin: '2px 0 4px', fontSize: 'var(--lbb-fs-22)', fontWeight: 700, letterSpacing: -0.01 }}>
             {t('home.ingestTitle')}
           </h2>
-          <p style={{ margin: '0 0 16px', color: 'var(--lbb-fg2)', fontSize: 13.5, maxWidth: '60ch' }}
+          <p style={{ margin: '0 0 16px', color: 'var(--lbb-fg2)', fontSize: 'var(--lbb-fs-13-5)', maxWidth: '60ch' }}
             dangerouslySetInnerHTML={{ __html: t('home.ingestDesc') }}
           />
 
@@ -218,7 +218,7 @@ export function ScreenHome(): React.JSX.Element {
               padding: '30px 20px', borderRadius: 10,
               background: 'var(--lbb-surface)',
               border: '2px dashed var(--lbb-accent-mid)',
-              color: 'var(--lbb-fg2)', fontSize: 13.5, cursor: 'pointer', fontFamily: 'inherit',
+              color: 'var(--lbb-fg2)', fontSize: 'var(--lbb-fs-13-5)', cursor: 'pointer', fontFamily: 'inherit',
             }}
           >
             <Icon name="folderPlus" size={22} style={{ color: 'var(--lbb-accent-mid)' }} />
@@ -240,10 +240,10 @@ export function ScreenHome(): React.JSX.Element {
                   width: 18, height: 18, borderRadius: '50%',
                   background: 'var(--lbb-accent-mid)', color: 'var(--lbb-accent-onMid)',
                   display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-                  fontSize: 10, fontWeight: 700, flexShrink: 0,
+                  fontSize: 'var(--lbb-fs-10)', fontWeight: 700, flexShrink: 0,
                 }}>{s.n}</span>
                 <Icon name={s.icon} size={14} style={{ color: 'var(--lbb-fg2)' }} />
-                <span style={{ fontSize: 11.5, fontWeight: 500, color: 'var(--lbb-fg2)' }}>
+                <span style={{ fontSize: 'var(--lbb-fs-11-5)', fontWeight: 500, color: 'var(--lbb-fg2)' }}>
                   {s.n === 1 ? t('home.stepVerify') : s.n === 2 ? t('home.stepLookup') : s.n === 3 ? t('home.stepRename') : t('home.stepLbdir')}
                 </span>
               </div>
@@ -263,7 +263,7 @@ export function ScreenHome(): React.JSX.Element {
             <div style={{
               marginTop: 14, padding: '10px 12px', borderRadius: 8,
               background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
-              display: 'flex', alignItems: 'center', gap: 10, fontSize: 11.5, color: 'var(--lbb-fg2)',
+              display: 'flex', alignItems: 'center', gap: 10, fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)',
             }}>
               <Icon name="check" size={13} style={{ color: 'var(--lbb-ok-bar)' }} />
               <span>
@@ -309,8 +309,8 @@ export function ScreenHome(): React.JSX.Element {
                       <Icon name={tile.icon} size={15} />
                     </span>
                     <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ fontSize: 12.5, fontWeight: 600 }}>{tileLabel}</div>
-                      <div style={{ fontSize: 10.5, color: 'var(--lbb-fg3)', fontVariantNumeric: 'tabular-nums' }}>
+                      <div style={{ fontSize: 'var(--lbb-fs-12-5)', fontWeight: 600 }}>{tileLabel}</div>
+                      <div style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)', fontVariantNumeric: 'tabular-nums' }}>
                         {sub}
                       </div>
                     </div>
@@ -337,7 +337,7 @@ export function ScreenHome(): React.JSX.Element {
               style={{
                 background: 'transparent', border: 'none',
                 color: 'var(--lbb-accent-mid)',
-                fontSize: 12, fontWeight: 600, cursor: 'pointer', fontFamily: 'inherit',
+                fontSize: 'var(--lbb-fs-12)', fontWeight: 600, cursor: 'pointer', fontFamily: 'inherit',
               }}
             >{t('home.viewFullLog')}</button>
           }
@@ -398,7 +398,7 @@ export function ScreenHome(): React.JSX.Element {
               {TIPS.map((tip, i) => (
                 <div key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
                   <Icon name={tip.icon} size={14} style={{ color: 'var(--lbb-fg3)', marginTop: 2 }} />
-                  <div style={{ fontSize: 11.5, color: 'var(--lbb-fg2)', lineHeight: 1.5 }}>
+                  <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)', lineHeight: 1.5 }}>
                     {i === 0 ? t('home.tip1') : i === 1 ? t('home.tip2') : t('home.tip3')}
                   </div>
                 </div>
@@ -429,11 +429,11 @@ export function ScreenHome(): React.JSX.Element {
               padding: '16px 20px', borderBottom: '1px solid var(--lbb-border)',
               display: 'flex', alignItems: 'center', justifyContent: 'space-between',
             }}>
-              <span style={{ fontWeight: 700, fontSize: 15 }}>{t('home.fullActivityLog')}</span>
+              <span style={{ fontWeight: 700, fontSize: 'var(--lbb-fs-15)' }}>{t('home.fullActivityLog')}</span>
               <button
                 type="button"
                 onClick={() => setShowFullLog(false)}
-                style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--lbb-fg3)', fontSize: 18 }}
+                style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-18)' }}
               >✕</button>
             </div>
             <div style={{ overflow: 'auto', flex: 1 }}>

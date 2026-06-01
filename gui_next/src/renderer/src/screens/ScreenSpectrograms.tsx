@@ -30,7 +30,7 @@ interface GenerateStatus {
 
 function ToolDot({ ok, label }: { ok: boolean; label: string }): React.JSX.Element {
   return (
-    <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontSize: 11, color: 'var(--lbb-fg2)' }}>
+    <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg2)' }}>
       <span style={{ width: 7, height: 7, borderRadius: '50%', background: ok ? 'var(--lbb-ok-bar)' : 'var(--lbb-bad-fg)' }} />
       {label}
     </span>
@@ -176,10 +176,10 @@ export function ScreenSpectrograms(): React.JSX.Element {
         </div>
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <h1 style={{ margin: 0, fontSize: 18, fontWeight: 700, letterSpacing: -0.01 }}>Spectrograms</h1>
+            <h1 style={{ margin: 0, fontSize: 'var(--lbb-fs-18)', fontWeight: 700, letterSpacing: -0.01 }}>Spectrograms</h1>
             <Pill tone="mute" soft>SoX batch render</Pill>
           </div>
-          <div style={{ fontSize: 12, color: 'var(--lbb-fg3)', marginTop: 2 }}>
+          <div style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg3)', marginTop: 2 }}>
             Per-track PNG spectrograms. Used to spot upsamples, EQ tells, and dropouts.
           </div>
         </div>
@@ -202,8 +202,8 @@ export function ScreenSpectrograms(): React.JSX.Element {
           <div style={{ padding: '12px 12px 8px', borderBottom: '1px solid var(--lbb-border)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 8 }}>
               <Icon name="folder" size={13} style={{ color: 'var(--lbb-fg3)' }} />
-              <span style={{ fontSize: 10.5, fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.1, textTransform: 'uppercase' }}>Folders</span>
-              <span style={{ marginLeft: 'auto', fontSize: 11, fontWeight: 600, color: 'var(--lbb-fg2)' }}>{folders.length}</span>
+              <span style={{ fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.1, textTransform: 'uppercase' }}>Folders</span>
+              <span style={{ marginLeft: 'auto', fontSize: 'var(--lbb-fs-11)', fontWeight: 600, color: 'var(--lbb-fg2)' }}>{folders.length}</span>
             </div>
             <Input
               icon="search" placeholder="Filter folders…" size="sm" style={{ width: '100%' }}
@@ -212,7 +212,7 @@ export function ScreenSpectrograms(): React.JSX.Element {
           </div>
           <div style={{ flex: 1, overflowY: 'auto', padding: '6px 6px' }}>
             {filteredFolders.length === 0 ? (
-              <div style={{ padding: '24px 12px', textAlign: 'center', color: 'var(--lbb-fg3)', fontSize: 11 }}>
+              <div style={{ padding: '24px 12px', textAlign: 'center', color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-11)' }}>
                 {folders.length === 0 ? 'No folders added' : 'No matches'}
               </div>
             ) : filteredFolders.map(f => {
@@ -231,8 +231,8 @@ export function ScreenSpectrograms(): React.JSX.Element {
                 }}>
                   <Icon name="folder" size={11} style={{ color: 'var(--lbb-fg3)' }} />
                   <span style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
-                    <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 11, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{name}</span>
-                    <span style={{ fontSize: 10, color: 'var(--lbb-fg3)', fontVariantNumeric: 'tabular-nums' }}>
+                    <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{name}</span>
+                    <span style={{ fontSize: 'var(--lbb-fs-10)', color: 'var(--lbb-fg3)', fontVariantNumeric: 'tabular-nums' }}>
                       {tracks.length ? `${done}/${tracks.length} · ${pct}%` : 'not scanned'}
                     </span>
                   </span>
@@ -243,7 +243,7 @@ export function ScreenSpectrograms(): React.JSX.Element {
 
           {/* Batch progress */}
           <div style={{ borderTop: '1px solid var(--lbb-border)', padding: '12px' }}>
-            <div style={{ fontSize: 10.5, fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase', marginBottom: 8 }}>
+            <div style={{ fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase', marginBottom: 8 }}>
               {generating && genStatus ? `Batch · ${genStatus.done} / ${genStatus.total}` : `Batch · ${totalDone} / ${totalTracks} tracks`}
             </div>
             {totalTracks > 0 && (
@@ -255,12 +255,12 @@ export function ScreenSpectrograms(): React.JSX.Element {
                   }} />
                 </div>
                 {genStatus && generating && (
-                  <div style={{ marginTop: 4, fontSize: 10.5, color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                  <div style={{ marginTop: 4, fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                     {genStatus.current ?? '—'}
                   </div>
                 )}
                 {genStatus && (
-                  <div style={{ marginTop: 4, display: 'flex', justifyContent: 'space-between', fontSize: 10.5, color: 'var(--lbb-fg3)' }}>
+                  <div style={{ marginTop: 4, display: 'flex', justifyContent: 'space-between', fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)' }}>
                     <span><Icon name="check" size={10} style={{ color: 'var(--lbb-ok-bar)' }} /> {genStatus.done} done</span>
                     <span>· {genStatus.skipped} skipped</span>
                     <span>· {genStatus.errors} errors</span>
@@ -289,7 +289,7 @@ export function ScreenSpectrograms(): React.JSX.Element {
         {!activeFolder ? (
           <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 12, color: 'var(--lbb-fg3)' }}>
             <Icon name="spectro" size={36} style={{ opacity: 0.15 }} />
-            <span style={{ fontSize: 13 }}>Add a folder to get started</span>
+            <span style={{ fontSize: 'var(--lbb-fs-13)' }}>Add a folder to get started</span>
           </div>
         ) : (
           <section style={{ flex: 1, display: 'grid', gridTemplateColumns: '260px 1fr', minHeight: 0 }}>
@@ -300,16 +300,16 @@ export function ScreenSpectrograms(): React.JSX.Element {
               display: 'flex', flexDirection: 'column', minHeight: 0,
             }}>
               <div style={{ padding: '12px 14px', borderBottom: '1px solid var(--lbb-border)', flexShrink: 0 }}>
-                <div style={{ fontFamily: 'var(--lbb-mono)', fontSize: 12, fontWeight: 600 }}>
+                <div style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-12)', fontWeight: 600 }}>
                   {activeFolder.split('/').pop()}
                 </div>
-                <div style={{ marginTop: 4, fontSize: 10.5, color: 'var(--lbb-fg3)' }}>
+                <div style={{ marginTop: 4, fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)' }}>
                   {activeTracks.filter(t => t.has_png).length} / {activeTracks.length} tracks rendered
                 </div>
               </div>
               <div style={{ flex: 1, overflowY: 'auto', padding: '0 8px 8px' }}>
                 {activeTracks.length === 0 ? (
-                  <div style={{ padding: '24px 10px', textAlign: 'center', color: 'var(--lbb-fg3)', fontSize: 11 }}>
+                  <div style={{ padding: '24px 10px', textAlign: 'center', color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-11)' }}>
                     Click Re-scan inventory to load tracks
                   </div>
                 ) : activeTracks.map((t, i) => (
@@ -326,24 +326,24 @@ export function ScreenSpectrograms(): React.JSX.Element {
                       background: activeTrack?.audio_file === t.audio_file ? 'var(--lbb-accent-mid)' : 'var(--lbb-surface2)',
                       color: activeTrack?.audio_file === t.audio_file ? 'var(--lbb-accent-onMid)' : 'var(--lbb-fg3)',
                       display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-                      fontFamily: 'var(--lbb-mono)', fontWeight: 700, fontSize: 10,
+                      fontFamily: 'var(--lbb-mono)', fontWeight: 700, fontSize: 'var(--lbb-fs-10)',
                     }}>{String(i + 1).padStart(2, '0')}</span>
-                    <span style={{ flex: 1, minWidth: 0, fontFamily: 'var(--lbb-mono)', fontSize: 11, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                    <span style={{ flex: 1, minWidth: 0, fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                       {t.audio_name}
                     </span>
                     {t.has_png
-                      ? <Pill tone="ok"   soft style={{ fontSize: 9, padding: '0 4px' }}>PNG</Pill>
-                      : <Pill tone="mute" soft style={{ fontSize: 9, padding: '0 4px' }}>—</Pill>}
+                      ? <Pill tone="ok"   soft style={{ fontSize: 'var(--lbb-fs-9)', padding: '0 4px' }}>PNG</Pill>
+                      : <Pill tone="mute" soft style={{ fontSize: 'var(--lbb-fs-9)', padding: '0 4px' }}>—</Pill>}
                   </button>
                 ))}
               </div>
 
               {/* Render options */}
               <div style={{ padding: 12, borderTop: '1px solid var(--lbb-border)', flexShrink: 0 }}>
-                <div style={{ fontSize: 10.5, fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase', marginBottom: 8 }}>
+                <div style={{ fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase', marginBottom: 8 }}>
                   Render options
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: '70px 1fr', gap: '6px 8px', fontSize: 11.5, alignItems: 'center' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '70px 1fr', gap: '6px 8px', fontSize: 'var(--lbb-fs-11-5)', alignItems: 'center' }}>
                   <span style={{ color: 'var(--lbb-fg3)' }}>Width</span>
                   <Input size="sm" value={width} onChange={e => setWidth(e.target.value)} style={{ width: '100%' }} />
                   <span style={{ color: 'var(--lbb-fg3)' }}>Height</span>
@@ -351,7 +351,7 @@ export function ScreenSpectrograms(): React.JSX.Element {
                   <span style={{ color: 'var(--lbb-fg3)' }}>dB floor</span>
                   <Input size="sm" value={dynRange} onChange={e => setDynRange(e.target.value)} style={{ width: '100%' }} />
                 </div>
-                <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 11, color: 'var(--lbb-fg2)', marginTop: 8 }}>
+                <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg2)', marginTop: 8 }}>
                   <input type="checkbox" checked={forceRerender} onChange={e => setForceRerender(e.target.checked)} /> Force re-render
                 </label>
               </div>
@@ -367,7 +367,7 @@ export function ScreenSpectrograms(): React.JSX.Element {
               }}>
                 <div style={{ flex: 1 }} />
                 <IconButton icon="x"    title="Zoom out" onClick={() => setZoom(z => Math.max(25,  z - 25))} />
-                <span style={{ fontSize: 11, fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-fg2)', width: 50, textAlign: 'center' }}>{zoom}%</span>
+                <span style={{ fontSize: 'var(--lbb-fs-11)', fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-fg2)', width: 50, textAlign: 'center' }}>{zoom}%</span>
                 <IconButton icon="plus" title="Zoom in"  onClick={() => setZoom(z => Math.min(400, z + 25))} />
                 <Button variant="ghost" size="sm" onClick={() => setZoom(100)}>Fit</Button>
                 <span style={{ width: 1, height: 18, background: 'var(--lbb-border)', margin: '0 4px' }} />
@@ -382,7 +382,7 @@ export function ScreenSpectrograms(): React.JSX.Element {
 
               <div style={{ flex: 1, overflow: 'auto', padding: 20, background: 'var(--lbb-surface2)' }}>
                 {!activeTrack ? (
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: 200, color: 'var(--lbb-fg3)', fontSize: 13 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: 200, color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-13)' }}>
                     Select a track
                   </div>
                 ) : !activeTrack.has_png || !pngUrl ? (
@@ -391,12 +391,12 @@ export function ScreenSpectrograms(): React.JSX.Element {
                     height: 200, gap: 12, color: 'var(--lbb-fg3)',
                   }}>
                     <Icon name="spectro" size={32} style={{ opacity: 0.2 }} />
-                    <span style={{ fontSize: 13 }}>No spectrogram yet</span>
+                    <span style={{ fontSize: 'var(--lbb-fs-13)' }}>No spectrogram yet</span>
                     <Button variant="primary" size="sm" disabled={generating} onClick={() => activeFolder && handleGenerate(activeFolder)}>Generate</Button>
                   </div>
                 ) : (
                   <>
-                    <div style={{ fontSize: 11.5, color: 'var(--lbb-fg2)', marginBottom: 8, fontFamily: 'var(--lbb-mono)' }}>
+                    <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)', marginBottom: 8, fontFamily: 'var(--lbb-mono)' }}>
                       {activeTrack.audio_name}
                     </div>
                     <div style={{ overflow: 'auto' }}>
@@ -429,7 +429,7 @@ export function ScreenSpectrograms(): React.JSX.Element {
                                   : '1px solid var(--lbb-border)',
                               }}
                             />
-                            <div style={{ fontSize: 9.5, color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)', marginTop: 2, textAlign: 'center' }}>
+                            <div style={{ fontSize: 'var(--lbb-fs-9-5)', color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)', marginTop: 2, textAlign: 'center' }}>
                               {t.audio_name.split('.')[0]}
                             </div>
                           </button>
@@ -450,7 +450,7 @@ export function ScreenSpectrograms(): React.JSX.Element {
             position: 'fixed', bottom: 28, left: '50%', transform: 'translateX(-50%)',
             background: toast.tone === 'ok' ? 'var(--lbb-ok-bar)' : toast.tone === 'bad' ? 'var(--lbb-err-bar)' : 'var(--lbb-accent-mid)',
             color: '#fff', padding: '9px 18px', borderRadius: 8,
-            fontSize: 13, fontWeight: 600, zIndex: 9999, boxShadow: '0 4px 16px rgba(0,0,0,.25)',
+            fontSize: 'var(--lbb-fs-13)', fontWeight: 600, zIndex: 9999, boxShadow: '0 4px 16px rgba(0,0,0,.25)',
             pointerEvents: 'none',
           }}
           ref={(el: HTMLDivElement | null) => { if (el) setTimeout(() => setToast(null), 3500) }}
