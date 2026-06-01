@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 
-export type LbdirState = 'pass' | 'fail' | 'missing_files' | 'no_lbdir' | 'no_lb'
+export type LbdirState = 'pass' | 'fail' | 'missing_files' | 'no_lbdir' | 'no_lb' | 'shntool_missing'
 export type SubTab     = 'check' | 'retrieve' | 'reconcile' | 'extras'
 
 export interface CheckFile {

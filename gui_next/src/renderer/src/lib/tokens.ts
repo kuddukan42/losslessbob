@@ -136,6 +136,10 @@ export function applyTheme({ mode, accent, density, font, fontSize, customTokens
 
   root.style.setProperty('--lbb-font', FONT_STACKS[font ?? 'inter'] ?? FONT_STACKS.inter);
   root.style.setProperty('--lbb-font-size', `${fontSize ?? 13}px`);
+  const fsScale = (fontSize ?? 13) / 13;
+  for (const v of [8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 12.5, 13, 13.5, 14, 15, 16, 17, 18, 20, 22, 28, 32]) {
+    root.style.setProperty(`--lbb-fs-${String(v).replace('.', '-')}`, `${(v * fsScale).toFixed(2)}px`);
+  }
   Object.entries(customTokens ?? {}).forEach(([k, v]) => root.style.setProperty(k, v));
 
   root.setAttribute('data-mode',    mode);

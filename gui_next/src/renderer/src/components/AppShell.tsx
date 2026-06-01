@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Icon } from './Icon'
@@ -39,6 +39,8 @@ const NAV_GROUPS: NavGroup[] = [
     label: 'Library',
     items: [
       { id: 'collection', label: 'My Collection', icon: 'collection' },
+      { id: 'trading',    label: 'Trading',       icon: 'trading' },
+      { id: 'sharing',    label: 'Sharing',       icon: 'share' },
       { id: 'search',     label: 'Search',        icon: 'search' },
       { id: 'bootlegs',   label: 'Bootlegs',      icon: 'bootlegs' },
     ],
@@ -83,6 +85,15 @@ function deriveCrumbs(active: string): string[] {
   return ['LosslessBob']
 }
 
+const LANG_OPTIONS: { code: string; label: string }[] = [
+  { code: 'en', label: 'English' },
+  { code: 'de', label: 'Deutsch' },
+  { code: 'fr', label: 'Français' },
+  { code: 'es', label: 'Español' },
+  { code: 'it', label: 'Italiano' },
+  { code: 'nl', label: 'Nederlands' },
+]
+
 // ── Sidebar ──────────────────────────────────────────────────────────────────
 
 function Sidebar({
@@ -96,7 +107,20 @@ function Sidebar({
 }) {
   const { t } = useTranslation()
   const setCuratorMode = useSettingsStore((s) => s.setCuratorMode)
+  const language = useSettingsStore((s) => s.language)
+  const setLanguage = useSettingsStore((s) => s.setLanguage)
   const [collectionCount, setCollectionCount] = useState<number | undefined>(undefined)
+  const [langOpen, setLangOpen] = useState(false)
+  const langRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (!langOpen) return
+    function onClickOut(e: MouseEvent) {
+      if (langRef.current && !langRef.current.contains(e.target as Node)) setLangOpen(false)
+    }
+    document.addEventListener('mousedown', onClickOut)
+    return () => document.removeEventListener('mousedown', onClickOut)
+  }, [langOpen])
 
   useEffect(() => {
     fetch(`${window.api.flaskBase}/api/home/stats`)
@@ -140,7 +164,7 @@ function Sidebar({
             alignItems: 'center',
             justifyContent: 'center',
             fontWeight: 800,
-            fontSize: 14,
+            fontSize: 'var(--lbb-fs-14)',
             letterSpacing: -0.02,
             boxShadow:
               '0 1px 0 rgba(255,255,255,0.18) inset, 0 1px 2px rgba(0,0,0,0.12)',
@@ -151,7 +175,7 @@ function Sidebar({
         <div>
           <div
             style={{
-              fontSize: 14,
+              fontSize: 'var(--lbb-fs-14)',
               fontWeight: 700,
               letterSpacing: -0.01,
               lineHeight: 1.1,
@@ -161,7 +185,7 @@ function Sidebar({
           </div>
           <div
             style={{
-              fontSize: 10.5,
+              fontSize: 'var(--lbb-fs-10-5)',
               color: 'var(--lbb-fg3)',
               marginTop: 2,
               letterSpacing: 0.04,
@@ -181,7 +205,7 @@ function Sidebar({
               {group.label && (
                 <div
                   style={{
-                    fontSize: 10,
+                    fontSize: 'var(--lbb-fs-10)',
                     fontWeight: 700,
                     color: 'var(--lbb-fg3)',
                     letterSpacing: 0.12,
@@ -196,7 +220,7 @@ function Sidebar({
                   {group.gatedGroup && (
                     <span
                       style={{
-                        fontSize: 8.5,
+                        fontSize: 'var(--lbb-fs-8-5)',
                         fontWeight: 700,
                         letterSpacing: 0.1,
                         padding: '1px 5px',
@@ -234,7 +258,7 @@ function Sidebar({
                       color: isActive
                         ? 'var(--lbb-accent-mid)'
                         : 'var(--lbb-fg2)',
-                      fontSize: 12.5,
+                      fontSize: 'var(--lbb-fs-12-5)',
                       fontWeight: isActive ? 600 : 500,
                       textAlign: 'left',
                       cursor: 'pointer',
@@ -257,7 +281,7 @@ function Sidebar({
                     {item.featured && !isActive && (
                       <span
                         style={{
-                          fontSize: 8.5,
+                          fontSize: 'var(--lbb-fs-8-5)',
                           fontWeight: 700,
                           padding: '0 5px',
                           borderRadius: 3,
@@ -272,7 +296,7 @@ function Sidebar({
                     {dynamicCount !== undefined && (
                       <span
                         style={{
-                          fontSize: 10.5,
+                          fontSize: 'var(--lbb-fs-10-5)',
                           color: isActive
                             ? 'var(--lbb-accent-mid)'
                             : 'var(--lbb-fg3)',
@@ -298,7 +322,7 @@ function Sidebar({
               background: 'var(--lbb-surface2)',
               borderRadius: 8,
               border: '1px dashed var(--lbb-border2)',
-              fontSize: 11,
+              fontSize: 'var(--lbb-fs-11)',
               color: 'var(--lbb-fg3)',
               lineHeight: 1.4,
             }}
@@ -340,7 +364,7 @@ function Sidebar({
             display: 'inline-flex',
             alignItems: 'center',
             justifyContent: 'center',
-            fontSize: 11,
+            fontSize: 'var(--lbb-fs-11)',
             fontWeight: 700,
             color: 'var(--lbb-fg2)',
           }}
@@ -348,13 +372,87 @@ function Sidebar({
           RW
         </div>
         <div style={{ flex: 1, minWidth: 0 }}>
-          <div style={{ fontSize: 12, fontWeight: 600, lineHeight: 1.1 }}>
+          <div style={{ fontSize: 'var(--lbb-fs-12)', fontWeight: 600, lineHeight: 1.1 }}>
             rolling.thunder
           </div>
-          <div style={{ fontSize: 10.5, color: 'var(--lbb-fg3)' }}>
+          <div style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)' }}>
             Local · 4 mounts
           </div>
         </div>
+
+        {/* Language picker */}
+        <div ref={langRef} style={{ position: 'relative' }}>
+          <button
+            type="button"
+            title={t('setup.preferences.language')}
+            onClick={() => setLangOpen(o => !o)}
+            style={{
+              height: 24,
+              padding: '0 6px',
+              borderRadius: 5,
+              background: langOpen ? 'var(--lbb-surface2)' : 'transparent',
+              border: `1px solid ${langOpen ? 'var(--lbb-border2)' : 'transparent'}`,
+              color: 'var(--lbb-fg3)',
+              cursor: 'pointer',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 4,
+              fontSize: 'var(--lbb-fs-10-5)',
+              fontWeight: 600,
+              fontFamily: 'var(--lbb-mono)',
+              letterSpacing: 0.04,
+            }}
+          >
+            <Icon name="globe" size={12} />
+            {language.toUpperCase()}
+          </button>
+          {langOpen && (
+            <div
+              style={{
+                position: 'absolute',
+                bottom: '100%',
+                right: 0,
+                marginBottom: 4,
+                background: 'var(--lbb-surface)',
+                border: '1px solid var(--lbb-border2)',
+                borderRadius: 8,
+                boxShadow: '0 4px 16px rgba(0,0,0,0.18)',
+                minWidth: 130,
+                padding: '4px 0',
+                zIndex: 200,
+              }}
+            >
+              {LANG_OPTIONS.map(({ code, label }) => (
+                <button
+                  key={code}
+                  type="button"
+                  onClick={() => { setLanguage(code); setLangOpen(false) }}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 8,
+                    width: '100%',
+                    padding: '5px 12px',
+                    background: code === language ? 'var(--lbb-accent-soft)' : 'transparent',
+                    border: 'none',
+                    color: code === language ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg2)',
+                    fontSize: 'var(--lbb-fs-12-5)',
+                    fontWeight: code === language ? 600 : 400,
+                    cursor: 'pointer',
+                    textAlign: 'left',
+                    fontFamily: 'inherit',
+                  }}
+                >
+                  <span style={{ fontSize: 'var(--lbb-fs-10)', fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-fg3)', minWidth: 18 }}>
+                    {code.toUpperCase()}
+                  </span>
+                  {label}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+
         <button
           type="button"
           style={{
@@ -414,11 +512,11 @@ function Topbar({
         {crumbs.map((c, i) => (
           <React.Fragment key={i}>
             {i > 0 && (
-              <span style={{ color: 'var(--lbb-fg3)', fontSize: 12 }}>/</span>
+              <span style={{ color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-12)' }}>/</span>
             )}
             <span
               style={{
-                fontSize: 13,
+                fontSize: 'var(--lbb-fs-13)',
                 fontWeight: i === crumbs.length - 1 ? 600 : 500,
                 color:
                   i === crumbs.length - 1
@@ -452,7 +550,7 @@ function Topbar({
           border: '1px solid var(--lbb-border)',
           borderRadius: 8,
           color: 'var(--lbb-fg3)',
-          fontSize: 12.5,
+          fontSize: 'var(--lbb-fs-12-5)',
           cursor: 'pointer',
           minWidth: 280,
           fontFamily: 'inherit',
@@ -552,7 +650,7 @@ function StatusBar({ extra }: { extra?: React.ReactNode }) {
         gap: 14,
         borderTop: '1px solid var(--lbb-border)',
         background: 'var(--lbb-surface)',
-        fontSize: 11,
+        fontSize: 'var(--lbb-fs-11)',
         fontFamily: 'var(--lbb-mono)',
       }}
     >

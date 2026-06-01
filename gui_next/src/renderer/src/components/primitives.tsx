@@ -25,7 +25,7 @@ export function Pill({ tone = 'mute', soft = false, dot = false, children, style
     <span style={{
       display: 'inline-flex', alignItems: 'center', gap: 5,
       padding: '1px 7px', borderRadius: 999,
-      fontSize: 10.5, fontWeight: 600, letterSpacing: '0.02em',
+      fontSize: 'var(--lbb-fs-10-5)', fontWeight: 600, letterSpacing: '0.02em',
       color: fg,
       background: soft ? `var(--lbb-${tone}-bg)` : 'transparent',
       border: `1px solid ${soft ? 'transparent' : fg}`,
@@ -71,7 +71,7 @@ export function Chip({ active = false, onClick, children, count, icon, size = 'm
       {icon && <Icon name={icon} size={12} />}
       {children}
       {count !== undefined && (
-        <span style={{ fontSize: 10, opacity: 0.6, fontWeight: 500 }}>{count.toLocaleString()}</span>
+        <span style={{ fontSize: 'var(--lbb-fs-10)', opacity: 0.6, fontWeight: 500 }}>{count.toLocaleString()}</span>
       )}
     </button>
   )
@@ -216,7 +216,7 @@ export function Kbd({ children }: { children: React.ReactNode }) {
     <kbd style={{
       display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
       minWidth: 18, height: 18, padding: '0 4px',
-      fontSize: 10.5, fontFamily: 'var(--lbb-mono)', fontWeight: 500,
+      fontSize: 'var(--lbb-fs-10-5)', fontFamily: 'var(--lbb-mono)', fontWeight: 500,
       background: 'var(--lbb-surface2)', color: 'var(--lbb-fg2)',
       border: '1px solid var(--lbb-border)',
       borderRadius: 3, lineHeight: 1,
@@ -251,8 +251,8 @@ export function Card({ title, subtitle, action, children, pad = 16, style }: Car
           borderBottom: '1px solid var(--lbb-border)',
         }}>
           <div style={{ flex: 1, minWidth: 0 }}>
-            {title    && <div style={{ fontSize: 12.5, fontWeight: 600, letterSpacing: 0.01 }}>{title}</div>}
-            {subtitle && <div style={{ fontSize: 11, color: 'var(--lbb-fg3)', marginTop: 2 }}>{subtitle}</div>}
+            {title    && <div style={{ fontSize: 'var(--lbb-fs-12-5)', fontWeight: 600, letterSpacing: 0.01 }}>{title}</div>}
+            {subtitle && <div style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', marginTop: 2 }}>{subtitle}</div>}
           </div>
           {action}
         </div>
@@ -300,7 +300,7 @@ export function Banner({ tone = 'info', icon = 'info', title, children, action, 
       padding: '10px 12px', borderRadius: 6,
       background: `var(--lbb-${tone}-bg)`, color: `var(--lbb-${tone}-fg)`,
       border: `1px solid var(--lbb-${tone}-bar)`,
-      fontSize: 12,
+      fontSize: 'var(--lbb-fs-12)',
       ...style,
     }}>
       <Icon name={icon} size={14} style={{ marginTop: 2, flex: '0 0 auto' }} />
@@ -326,14 +326,14 @@ export function Stat({ value, label, delta, tone = 'ok' }: StatProps) {
   return (
     <div>
       <div style={{
-        fontSize: 22, fontWeight: 700,
+        fontSize: 'var(--lbb-fs-22)', fontWeight: 700,
         fontVariantNumeric: 'tabular-nums',
         fontFamily: 'var(--lbb-mono)',
         letterSpacing: '-0.01em',
       }}>{value}</div>
-      <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', marginTop: 2, display: 'flex', alignItems: 'center', gap: 6 }}>
+      <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)', marginTop: 2, display: 'flex', alignItems: 'center', gap: 6 }}>
         {label}
-        {delta && <Pill tone={tone} soft style={{ fontSize: 9.5, padding: '0 5px' }}>{delta}</Pill>}
+        {delta && <Pill tone={tone} soft style={{ fontSize: 'var(--lbb-fs-9-5)', padding: '0 5px' }}>{delta}</Pill>}
       </div>
     </div>
   )
@@ -353,11 +353,11 @@ export function SectionHead({ title, subtitle, action, style }: SectionHeadProps
     <div style={{ display: 'flex', alignItems: 'baseline', gap: 16, marginBottom: 12, ...style }}>
       <div style={{ flex: 1, minWidth: 0 }}>
         <h3 style={{
-          margin: 0, fontSize: 13, fontWeight: 700,
+          margin: 0, fontSize: 'var(--lbb-fs-13)', fontWeight: 700,
           letterSpacing: '0.04em', textTransform: 'uppercase',
           color: 'var(--lbb-fg2)',
         }}>{title}</h3>
-        {subtitle && <div style={{ marginTop: 4, fontSize: 12, color: 'var(--lbb-fg3)' }}>{subtitle}</div>}
+        {subtitle && <div style={{ marginTop: 4, fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg3)' }}>{subtitle}</div>}
       </div>
       {action}
     </div>
