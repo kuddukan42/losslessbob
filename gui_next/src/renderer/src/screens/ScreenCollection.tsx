@@ -205,7 +205,7 @@ function Toast({ msg, tone, onDone }: { msg: string; tone: ToastTone; onDone: ()
     <div style={{
       position: 'fixed', bottom: 24, right: 24, zIndex: 999,
       background: bg, border: `1px solid ${border}`, borderRadius: 8,
-      padding: '10px 16px', color, fontSize: 13, fontWeight: 500,
+      padding: '10px 16px', color, fontSize: 'var(--lbb-fs-13)', fontWeight: 500,
       boxShadow: '0 4px 16px rgba(0,0,0,0.15)', maxWidth: 400,
     }}>
       {msg}
@@ -229,8 +229,8 @@ function ConfirmDialog({ title, body, onConfirm, onCancel }: {
         borderRadius: 10, padding: 24, maxWidth: 440, width: '90%',
         boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
       }}>
-        <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--lbb-fg)', marginBottom: 8 }}>{title}</div>
-        <div style={{ fontSize: 12.5, color: 'var(--lbb-fg2)', marginBottom: 20, lineHeight: 1.5 }}>{body}</div>
+        <div style={{ fontSize: 'var(--lbb-fs-14)', fontWeight: 700, color: 'var(--lbb-fg)', marginBottom: 8 }}>{title}</div>
+        <div style={{ fontSize: 'var(--lbb-fs-12-5)', color: 'var(--lbb-fg2)', marginBottom: 20, lineHeight: 1.5 }}>{body}</div>
         <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end' }}>
           <Button variant="ghost" size="sm" onClick={onCancel}>{t('common.cancel')}</Button>
           <Button variant="danger" size="sm" onClick={onConfirm}>{t('common.confirm')}</Button>
@@ -287,7 +287,7 @@ function ContextMenu({ state, onClose, items }: {
       borderRadius: 8, padding: '4px 0',
       minWidth: menuW,
       boxShadow: '0 8px 24px rgba(0,0,0,0.22)',
-      fontSize: 13,
+      fontSize: 'var(--lbb-fs-13)',
     }}>
       {items.map((item, i) => {
         if (item === 'sep') {
@@ -300,7 +300,7 @@ function ContextMenu({ state, onClose, items }: {
             onClick={() => { if (!item.disabled) { item.action(); onClose() } }}
             style={{
               display: 'block', width: '100%', textAlign: 'left',
-              padding: '6px 14px', fontSize: 13, border: 'none',
+              padding: '6px 14px', fontSize: 'var(--lbb-fs-13)', border: 'none',
               cursor: item.disabled ? 'default' : 'pointer',
               background: 'transparent',
               color: item.disabled
@@ -372,16 +372,16 @@ function PersonalInfoModal({ lb, lbNumber, onClose, onSaved }: {
         borderRadius: 10, padding: 24, minWidth: 340, maxWidth: 420,
         boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
       }}>
-        <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--lbb-fg)', marginBottom: 16 }}>
+        <div style={{ fontSize: 'var(--lbb-fs-14)', fontWeight: 700, color: 'var(--lbb-fg)', marginBottom: 16 }}>
           {t('collection.personalInfo.title', { lb })}
         </div>
 
         {!loaded ? (
-          <div style={{ fontSize: 12.5, color: 'var(--lbb-fg3)', padding: '12px 0' }}>Loading…</div>
+          <div style={{ fontSize: 'var(--lbb-fs-12-5)', color: 'var(--lbb-fg3)', padding: '12px 0' }}>Loading…</div>
         ) : (
           <>
             <div style={{ marginBottom: 14 }}>
-              <div style={{ fontSize: 11.5, fontWeight: 600, color: 'var(--lbb-fg2)', marginBottom: 6 }}>
+              <div style={{ fontSize: 'var(--lbb-fs-11-5)', fontWeight: 600, color: 'var(--lbb-fg2)', marginBottom: 6 }}>
                 {t('collection.personalInfo.rating')}
               </div>
               <div style={{ display: 'flex', gap: 6 }}>
@@ -393,7 +393,7 @@ function PersonalInfoModal({ lb, lbNumber, onClose, onSaved }: {
                       width: 32, height: 32, borderRadius: 6, border: '1px solid var(--lbb-border)',
                       background: rating === n ? 'var(--lbb-accent-mid)' : 'var(--lbb-surface2)',
                       color: rating === n ? '#fff' : 'var(--lbb-fg)',
-                      cursor: 'pointer', fontSize: 13, fontWeight: 600,
+                      cursor: 'pointer', fontSize: 'var(--lbb-fs-13)', fontWeight: 600,
                     }}
                   >{n}</button>
                 ))}
@@ -404,7 +404,7 @@ function PersonalInfoModal({ lb, lbNumber, onClose, onSaved }: {
                       padding: '0 8px', height: 32, borderRadius: 6,
                       border: '1px solid var(--lbb-border)',
                       background: 'var(--lbb-surface2)',
-                      color: 'var(--lbb-fg3)', cursor: 'pointer', fontSize: 11.5,
+                      color: 'var(--lbb-fg3)', cursor: 'pointer', fontSize: 'var(--lbb-fs-11-5)',
                     }}
                   >Clear</button>
                 )}
@@ -412,7 +412,7 @@ function PersonalInfoModal({ lb, lbNumber, onClose, onSaved }: {
             </div>
 
             <div style={{ marginBottom: 20 }}>
-              <div style={{ fontSize: 11.5, fontWeight: 600, color: 'var(--lbb-fg2)', marginBottom: 6 }}>
+              <div style={{ fontSize: 'var(--lbb-fs-11-5)', fontWeight: 600, color: 'var(--lbb-fg2)', marginBottom: 6 }}>
                 {t('collection.personalInfo.tags')}
               </div>
               <input
@@ -422,7 +422,7 @@ function PersonalInfoModal({ lb, lbNumber, onClose, onSaved }: {
                 placeholder={t('collection.personalInfo.tagsPlaceholder')}
                 style={{
                   width: '100%', boxSizing: 'border-box',
-                  padding: '7px 10px', fontSize: 13,
+                  padding: '7px 10px', fontSize: 'var(--lbb-fs-13)',
                   background: 'var(--lbb-surface2)',
                   border: '1px solid var(--lbb-border)',
                   borderRadius: 6, color: 'var(--lbb-fg)',
@@ -515,9 +515,9 @@ function ScanPreviewModal({ entries, skipped, onClose, onAdded }: {
         boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
       }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12, flexShrink: 0 }}>
-          <span style={{ fontSize: 14, fontWeight: 700, color: 'var(--lbb-fg)' }}>
+          <span style={{ fontSize: 'var(--lbb-fs-14)', fontWeight: 700, color: 'var(--lbb-fg)' }}>
             {t('collection.scanPreview.title', { count: entries.length })}
-            {skipped > 0 && <span style={{ fontSize: 11.5, fontWeight: 400, color: 'var(--lbb-fg3)', marginLeft: 8 }}>{t('collection.scanPreview.skipped', { count: skipped })}</span>}
+            {skipped > 0 && <span style={{ fontSize: 'var(--lbb-fs-11-5)', fontWeight: 400, color: 'var(--lbb-fg3)', marginLeft: 8 }}>{t('collection.scanPreview.skipped', { count: skipped })}</span>}
           </span>
           <IconButton icon="x" size={14} title="Close" onClick={onClose} />
         </div>
@@ -551,13 +551,13 @@ function ScanPreviewModal({ entries, skipped, onClose, onAdded }: {
                     <TD />
                     <TD mono style={{ color: 'var(--lbb-accent-mid)', fontWeight: 600 }}>{lbStr(e.lb_number)}</TD>
                     <TD mono>{e.folder_name}</TD>
-                    <TD mono dim style={{ fontSize: 10 }}>{e.path}</TD>
+                    <TD mono dim style={{ fontSize: 'var(--lbb-fs-10)' }}>{e.path}</TD>
                     <TD align="center">
                       {!ownedLoaded
-                        ? <span style={{ color: 'var(--lbb-fg3)', fontSize: 11 }}>…</span>
+                        ? <span style={{ color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-11)' }}>…</span>
                         : isOwned
                           ? <Pill tone="ok" soft>Yes</Pill>
-                          : <span style={{ color: 'var(--lbb-fg3)', fontSize: 11.5 }}>No</span>
+                          : <span style={{ color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-11-5)' }}>No</span>
                       }
                     </TD>
                     <TD>
@@ -702,13 +702,13 @@ function AddFolderModal({ paths, onClose, onAdded }: {
         boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
       }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14 }}>
-          <span style={{ fontSize: 14, fontWeight: 700, color: 'var(--lbb-fg)' }}>
+          <span style={{ fontSize: 'var(--lbb-fs-14)', fontWeight: 700, color: 'var(--lbb-fg)' }}>
             {t('collection.addFolder.title', { count: entries.length })}
           </span>
           <IconButton icon="x" size={14} title="Close" onClick={onClose} />
         </div>
 
-        <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', marginBottom: 10 }}>
+        <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)', marginBottom: 10 }}>
           {t('collection.addFolder.instruction')}
         </div>
 
@@ -719,7 +719,7 @@ function AddFolderModal({ paths, onClose, onAdded }: {
             const isBusy = e.status === 'adding'
             const inputStyle = {
               height: 28, padding: '0 8px',
-              fontFamily: 'var(--lbb-mono)', fontSize: 12,
+              fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-12)',
               background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border2)',
               borderRadius: 5, color: 'var(--lbb-fg)', outline: 'none',
             }
@@ -733,7 +733,7 @@ function AddFolderModal({ paths, onClose, onAdded }: {
               }}>
                 {/* disk path display */}
                 <div style={{
-                  fontFamily: 'var(--lbb-mono)', fontSize: 10, color: 'var(--lbb-fg3)',
+                  fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-10)', color: 'var(--lbb-fg3)',
                   whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
                 }}>
                   {e.path}
@@ -772,7 +772,7 @@ function AddFolderModal({ paths, onClose, onAdded }: {
                   style={{ ...inputStyle, width: '100%' }}
                 />
                 {isErr && (
-                  <div style={{ fontSize: 10.5, color: 'var(--lbb-err-fg)' }}>
+                  <div style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-err-fg)' }}>
                     {e.errorMsg || 'Failed to add'}
                   </div>
                 )}
@@ -845,13 +845,13 @@ function ForumModal({ lb, subject: initSubject, body: initBody, onClose, onPoste
         boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
       }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14 }}>
-          <span style={{ fontSize: 14, fontWeight: 700, color: 'var(--lbb-fg)' }}>{t('collection.forum.modalTitle')}</span>
+          <span style={{ fontSize: 'var(--lbb-fs-14)', fontWeight: 700, color: 'var(--lbb-fg)' }}>{t('collection.forum.modalTitle')}</span>
           <IconButton icon="x" size={14} title="Close" onClick={onClose} />
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10, flex: 1, minHeight: 0, overflow: 'hidden' }}>
           <div>
-            <label style={{ fontSize: 10.5, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: 'var(--lbb-fg3)', display: 'block', marginBottom: 4 }}>
+            <label style={{ fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: 'var(--lbb-fg3)', display: 'block', marginBottom: 4 }}>
               {t('collection.forum.subject')}
             </label>
             <input
@@ -859,14 +859,14 @@ function ForumModal({ lb, subject: initSubject, body: initBody, onClose, onPoste
               onChange={e => setSubject(e.target.value)}
               style={{
                 width: '100%', boxSizing: 'border-box',
-                height: 30, padding: '0 10px', fontSize: 12.5,
+                height: 30, padding: '0 10px', fontSize: 'var(--lbb-fs-12-5)',
                 background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border2)',
                 borderRadius: 6, color: 'var(--lbb-fg)', outline: 'none',
               }}
             />
           </div>
           <div style={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}>
-            <label style={{ fontSize: 10.5, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: 'var(--lbb-fg3)', display: 'block', marginBottom: 4 }}>
+            <label style={{ fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: 'var(--lbb-fg3)', display: 'block', marginBottom: 4 }}>
               {t('collection.forum.body')}
             </label>
             <textarea
@@ -874,7 +874,7 @@ function ForumModal({ lb, subject: initSubject, body: initBody, onClose, onPoste
               onChange={e => setBody(e.target.value)}
               style={{
                 flex: 1, minHeight: 200, resize: 'vertical',
-                padding: '8px 10px', fontSize: 11.5,
+                padding: '8px 10px', fontSize: 'var(--lbb-fs-11-5)',
                 fontFamily: 'var(--lbb-mono)',
                 background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border2)',
                 borderRadius: 6, color: 'var(--lbb-fg)', outline: 'none',
@@ -883,7 +883,7 @@ function ForumModal({ lb, subject: initSubject, body: initBody, onClose, onPoste
             />
           </div>
           {err && (
-            <div style={{ fontSize: 11.5, color: 'var(--lbb-err-fg)', background: 'var(--lbb-err-bg)', padding: '6px 10px', borderRadius: 5 }}>
+            <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-err-fg)', background: 'var(--lbb-err-bg)', padding: '6px 10px', borderRadius: 5 }}>
               {err}
             </div>
           )}
@@ -944,7 +944,8 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
   const [torrentBusy, setTorrentBusy] = useState(false)
   const [deleteConfirm, setDeleteConfirm] = useState<number | null>(null)
   const [forumRecords, setForumRecords] = useState<DetailForumRecord[]>([])
-  const [forumBusy, setForumBusy] = useState(false)
+  const [forumBusy, setForumBusy] = useState(true)
+  const [forumError, setForumError] = useState(false)
   const [forumDeleteConfirm, setForumDeleteConfirm] = useState<number | null>(null)
   const [audioInfo, setAudioInfo] = useState<AudioInfo | null>(null)
 
@@ -954,7 +955,7 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
       .then(r => r.json())
       .then((data: any) => {
         if (Array.isArray(data)) {
-          setTorrentRecords(data.map((t: any) => ({
+          const records = data.map((t: any) => ({
             id: t.id,
             date: (t.created_at ?? '').slice(0, 10),
             filename: t.torrent_path ? (t.torrent_path as string).split('/').pop() ?? '' : '',
@@ -963,7 +964,30 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
             source_folder_exists: !!t.source_folder_exists,
             torrent_file_exists: !!t.torrent_file_exists,
             added_to_qbt: !!t.added_to_qbt,
-          })))
+          }))
+          setTorrentRecords(records)
+          // Silently sync DB flag for records the DB thinks are in qBittorrent
+          const qbtRecords = records.filter(r => r.added_to_qbt)
+          if (qbtRecords.length > 0) {
+            Promise.all(
+              qbtRecords.map(r =>
+                fetch(`${BASE}/api/torrent/${r.id}/qbt_check`)
+                  .then(res => res.json())
+                  .catch(() => null)
+              )
+            ).then(results => {
+              const syncedIds = new Set(
+                qbtRecords
+                  .filter((_, i) => results[i]?.synced)
+                  .map(r => r.id)
+              )
+              if (syncedIds.size > 0) {
+                setTorrentRecords(prev =>
+                  prev.map(r => syncedIds.has(r.id) ? { ...r, added_to_qbt: false } : r)
+                )
+              }
+            })
+          }
         }
       })
       .catch(() => {})
@@ -977,6 +1001,7 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
 
   const fetchForumRecords = useCallback(() => {
     setForumBusy(true)
+    setForumError(false)
     fetch(`${BASE}/api/entry/${row.lbNumberInt}/forum_posts`)
       .then(r => r.json())
       .then((data: any) => {
@@ -987,9 +1012,11 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
             topic_url: p.topic_url ?? '',
             posted_at: (p.posted_at ?? '').slice(0, 10),
           })))
+        } else {
+          setForumError(true)
         }
       })
-      .catch(() => {})
+      .catch(() => setForumError(true))
       .finally(() => setForumBusy(false))
   }, [row.lbNumberInt])
 
@@ -1077,6 +1104,18 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
     } catch { onToast(t('collection.toast.deleteFailed'), 'bad') }
   }
 
+  const [deleteRecordConfirm, setDeleteRecordConfirm] = useState<number | null>(null)
+
+  const handleTorrentRecordDelete = async (torrentId: number) => {
+    setDeleteRecordConfirm(null)
+    try {
+      const resp = await fetch(`${BASE}/api/torrent/${torrentId}`, { method: 'DELETE' })
+      const data = await resp.json()
+      onToast(data.ok ? t('collection.toast.torrentRecordDeleted') : (data.error || t('collection.toast.deleteFailed')), data.ok ? 'ok' : 'bad')
+      if (data.ok) { fetchTorrentRecords(); onRefetch() }
+    } catch { onToast(t('collection.toast.deleteFailed'), 'bad') }
+  }
+
   const fetchPersonalMeta = useCallback(() => {
     fetch(`${BASE}/api/collection/${row.lbNumberInt}/meta`)
       .then(r => r.json())
@@ -1112,8 +1151,8 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
   }
 
   const META_ROWS: [string, React.ReactNode][] = [
-    [t('collection.detail.folder'),        <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 11 }}>{row.folder || '—'}</span>],
-    [t('collection.detail.diskPath'),     <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 11, color: 'var(--lbb-fg3)' }}>{row.diskPath || '—'}</span>],
+    [t('collection.detail.folder'),        <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11)' }}>{row.folder || '—'}</span>],
+    [t('collection.detail.diskPath'),     <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)' }}>{row.diskPath || '—'}</span>],
     [t('collection.detail.size'),          <span style={{ fontFamily: 'var(--lbb-mono)' }}>{row.size || '—'}</span>],
     [t('collection.detail.confirmed'),     <span style={{ fontFamily: 'var(--lbb-mono)' }}>{row.confirmed || '—'}</span>],
     [t('collection.detail.fingerprinted'), row.fingerprinted
@@ -1171,16 +1210,16 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
         {/* 2. ID + title block */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
           <span style={{
-            fontSize: 16, fontWeight: 700,
+            fontSize: 'var(--lbb-fs-16)', fontWeight: 700,
             fontFamily: 'var(--lbb-mono)',
             color: 'var(--lbb-accent-mid)',
           }}>
             {row.lbNumber}
           </span>
-          <span style={{ fontSize: 16, fontWeight: 700, color: 'var(--lbb-fg)' }}>
+          <span style={{ fontSize: 'var(--lbb-fs-16)', fontWeight: 700, color: 'var(--lbb-fg)' }}>
             {row.title || row.folder || '—'}
           </span>
-          <span style={{ fontSize: 12, color: 'var(--lbb-fg2)' }}>
+          <span style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)' }}>
             {row.date} · {row.location}
             {row.discs > 0 ? ` · ${row.discs} CD${row.discs !== 1 ? 's' : ''}` : ''}
           </span>
@@ -1194,7 +1233,7 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
           display: 'grid',
           gridTemplateColumns: '80px 1fr',
           rowGap: 7, columnGap: 8,
-          fontSize: 11.5,
+          fontSize: 'var(--lbb-fs-11-5)',
         }}>
           {META_ROWS.map(([label, value]) => (
             <React.Fragment key={label}>
@@ -1244,7 +1283,7 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
         {/* 5. History */}
         <div>
           <div style={{
-            fontSize: 11, fontWeight: 700, color: 'var(--lbb-fg3)',
+            fontSize: 'var(--lbb-fs-11)', fontWeight: 700, color: 'var(--lbb-fg3)',
             letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8,
           }}>
             {t('collection.detail.history')}
@@ -1265,9 +1304,9 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
           {/* Torrents tab — per-record management */}
           {historyTab === 'torrents' && (
             torrentBusy ? (
-              <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', padding: '6px 0' }}>{t('collection.detail.loadingTorrents')}</div>
+              <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)', padding: '6px 0' }}>{t('collection.detail.loadingTorrents')}</div>
             ) : torrentRecords.length === 0 ? (
-              <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', padding: '6px 0' }}>{t('collection.detail.noTorrents')}</div>
+              <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)', padding: '6px 0' }}>{t('collection.detail.noTorrents')}</div>
             ) : (
               <div style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
                 {torrentRecords.map(rec => (
@@ -1278,11 +1317,11 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
                   }}>
                     {/* info row */}
                     <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
-                      <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 10, color: 'var(--lbb-fg3)', flexShrink: 0 }}>
+                      <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-10)', color: 'var(--lbb-fg3)', flexShrink: 0 }}>
                         {rec.date || '—'}
                       </span>
                       <span style={{
-                        fontFamily: 'var(--lbb-mono)', fontSize: 10.5, color: 'var(--lbb-fg)',
+                        fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg)',
                         flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
                       }}>
                         {rec.filename || '—'}
@@ -1327,6 +1366,9 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
                       <Button variant="danger" size="sm" disabled={!rec.torrent_file_exists} onClick={() => setDeleteConfirm(rec.id)}>
                         {t('collection.detail.delFile')}
                       </Button>
+                      <Button variant="danger" size="sm" disabled={rec.added_to_qbt} onClick={() => setDeleteRecordConfirm(rec.id)}>
+                        {t('collection.detail.delRecord')}
+                      </Button>
                     </div>
                   </div>
                 ))}
@@ -1337,9 +1379,11 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
           {/* Forum tab — actionable */}
           {historyTab === 'forum' && (
             forumBusy ? (
-              <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', padding: '6px 0' }}>{t('collection.detail.loadingTorrents')}</div>
+              <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)', padding: '6px 0' }}>{t('collection.detail.loadingForum')}</div>
+            ) : forumError ? (
+              <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-danger)', padding: '6px 0' }}>{t('collection.detail.forumLoadError')}</div>
             ) : forumRecords.length === 0 ? (
-              <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', padding: '6px 0' }}>{t('collection.detail.noForumHistory')}</div>
+              <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)', padding: '6px 0' }}>{t('collection.detail.noForumHistory')}</div>
             ) : (
               <div style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
                 {forumRecords.map(rec => (
@@ -1349,11 +1393,11 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
                     display: 'flex', flexDirection: 'column', gap: 5,
                   }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
-                      <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 10, color: 'var(--lbb-fg3)', flexShrink: 0 }}>
+                      <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-10)', color: 'var(--lbb-fg3)', flexShrink: 0 }}>
                         {rec.posted_at || '—'}
                       </span>
                       <span style={{
-                        fontFamily: 'var(--lbb-mono)', fontSize: 10.5, color: 'var(--lbb-fg)',
+                        fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg)',
                         flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
                       }}>
                         {rec.subject || '—'}
@@ -1409,6 +1453,15 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
       />
     )}
 
+    {deleteRecordConfirm !== null && (
+      <ConfirmDialog
+        title={t('collection.confirmDelete.recordTitle')}
+        body={t('collection.confirmDelete.recordBody')}
+        onConfirm={() => handleTorrentRecordDelete(deleteRecordConfirm)}
+        onCancel={() => setDeleteRecordConfirm(null)}
+      />
+    )}
+
     {forumDeleteConfirm !== null && (
       <ConfirmDialog
         title={t('collection.confirmDelete.forumTitle')}
@@ -1451,7 +1504,7 @@ function GlobalForumPanel({ posts, search, onSearch, onOpen, onDelete, onGoToLb 
         display: 'flex', alignItems: 'center', gap: 8,
         padding: '8px 12px', borderBottom: '1px solid var(--lbb-border)', flexShrink: 0,
       }}>
-        <span style={{ fontSize: 12.5, color: 'var(--lbb-fg2)', fontWeight: 600 }}>
+        <span style={{ fontSize: 'var(--lbb-fs-12-5)', color: 'var(--lbb-fg2)', fontWeight: 600 }}>
           {t('collection.globalForum.postsCount', { count: filtered.length })}
         </span>
         <div style={{ flex: 1 }} />
@@ -1516,7 +1569,7 @@ function GlobalForumPanel({ posts, search, onSearch, onOpen, onDelete, onGoToLb 
         {filtered.length === 0 && (
           <div style={{
             display: 'flex', alignItems: 'center', justifyContent: 'center',
-            height: '60%', fontSize: 13, color: 'var(--lbb-fg3)',
+            height: '60%', fontSize: 'var(--lbb-fs-13)', color: 'var(--lbb-fg3)',
           }}>
             {posts.length === 0 ? t('collection.globalForum.noPostsRecorded') : t('collection.globalForum.noResultsMatch')}
           </div>
@@ -1556,6 +1609,8 @@ function GlobalTorrentPanel({ records, search, onSearch, onGoToLb, onToast, onRe
     )
   })
 
+  const [deleteRecordConfirm, setDeleteRecordConfirm] = useState<GlobalTorrentRecord | null>(null)
+
   const handleAddQbt = async (rec: GlobalTorrentRecord) => {
     try {
       const resp = await fetch(`${BASE}/api/qbt/add`, {
@@ -1569,13 +1624,23 @@ function GlobalTorrentPanel({ records, search, onSearch, onGoToLb, onToast, onRe
     } catch { onToast(t('collection.toast.qbtRequestFailed'), 'bad') }
   }
 
+  const handleDeleteRecord = async (rec: GlobalTorrentRecord) => {
+    setDeleteRecordConfirm(null)
+    try {
+      const resp = await fetch(`${BASE}/api/torrent/${rec.id}`, { method: 'DELETE' })
+      const data = await resp.json()
+      onToast(data.ok ? t('collection.toast.torrentRecordDeleted') : (data.error || t('collection.toast.deleteFailed')), data.ok ? 'ok' : 'bad')
+      if (data.ok) onRefetch()
+    } catch { onToast(t('collection.toast.deleteFailed'), 'bad') }
+  }
+
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%', minHeight: 0 }}>
       <div style={{
         display: 'flex', alignItems: 'center', gap: 8,
         padding: '8px 12px', borderBottom: '1px solid var(--lbb-border)', flexShrink: 0,
       }}>
-        <span style={{ fontSize: 12.5, color: 'var(--lbb-fg2)', fontWeight: 600 }}>
+        <span style={{ fontSize: 'var(--lbb-fs-12-5)', color: 'var(--lbb-fg2)', fontWeight: 600 }}>
           {t('collection.globalTorrent.count', { count: filtered.length })}
         </span>
         <div style={{ flex: 1 }} />
@@ -1649,6 +1714,9 @@ function GlobalTorrentPanel({ records, search, onSearch, onGoToLb, onToast, onRe
                     <Button variant="ghost" size="sm" onClick={() => onGoToLb(r.lb_number, r.lbStr)}>
                       {t('collection.globalTorrent.goToLb')}
                     </Button>
+                    <Button variant="danger" size="sm" disabled={r.added_to_qbt} onClick={() => setDeleteRecordConfirm(r)}>
+                      {t('collection.detail.delRecord')}
+                    </Button>
                   </div>
                 </TD>
               </TR>
@@ -1658,12 +1726,20 @@ function GlobalTorrentPanel({ records, search, onSearch, onGoToLb, onToast, onRe
         {filtered.length === 0 && (
           <div style={{
             display: 'flex', alignItems: 'center', justifyContent: 'center',
-            height: '60%', fontSize: 13, color: 'var(--lbb-fg3)',
+            height: '60%', fontSize: 'var(--lbb-fs-13)', color: 'var(--lbb-fg3)',
           }}>
             {records.length === 0 ? t('collection.detail.noTorrents') : t('collection.globalForum.noResultsMatch')}
           </div>
         )}
       </div>
+      {deleteRecordConfirm && (
+        <ConfirmDialog
+          title={t('collection.confirmDelete.recordTitle')}
+          body={t('collection.confirmDelete.recordBody')}
+          onConfirm={() => handleDeleteRecord(deleteRecordConfirm)}
+          onCancel={() => setDeleteRecordConfirm(null)}
+        />
+      )}
     </div>
   )
 }
@@ -2327,6 +2403,127 @@ export function ScreenCollection(): React.JSX.Element {
     } catch { showToast(t('collection.toast.spectrogramRequestFailed'), 'bad') }
   }, [showToast, addPendingSpectro, navigate])
 
+  // Returns rows to act on from a right-click: all checked rows if the clicked row is checked, else just that row.
+  const getCtxRows = useCallback((row: CollectionRow): CollectionRow[] => {
+    if (checkedIds.size > 0 && checkedIds.has(row.lbNumber)) {
+      return rows.filter(r => checkedIds.has(r.lbNumber))
+    }
+    return [row]
+  }, [checkedIds, rows])
+
+  const handleCtxCreateTorrent = useCallback(async (row: CollectionRow) => {
+    const targets = getCtxRows(row).filter(r => r.diskPath)
+    if (!targets.length) { showToast('No disk path for this entry', 'info'); return }
+    let ok = 0; let fail = 0
+    setTorrentProgress({ done: 0, total: targets.length, label: 'Creating torrents' })
+    for (let i = 0; i < targets.length; i++) {
+      const r = targets[i]
+      try {
+        const resp = await fetch(`${BASE}/api/torrent/create`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ lb_number: r.lbNumberInt, source_folder: r.diskPath }),
+        })
+        const data = await resp.json()
+        if (data.ok) ok++; else fail++
+      } catch { fail++ }
+      setTorrentProgress({ done: i + 1, total: targets.length, label: 'Creating torrents' })
+    }
+    setTorrentProgress(null)
+    showToast(
+      `${ok} torrent${ok !== 1 ? 's' : ''} created${fail > 0 ? `, ${fail} failed` : ''}`,
+      ok > 0 ? 'ok' : 'bad'
+    )
+    refetch()
+  }, [getCtxRows, showToast, refetch])
+
+  const handleCtxAddToQbt = useCallback(async (row: CollectionRow) => {
+    const lbs = getCtxRows(row).map(r => r.lbNumberInt)
+    if (!lbs.length) return
+    try {
+      const resp = await fetch(`${BASE}/api/qbt/add`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ lb_numbers: lbs }),
+      })
+      const data = await resp.json()
+      showToast(
+        `Added ${data.added ?? 0}/${data.total ?? lbs.length} to qBittorrent`,
+        data.ok ? 'ok' : 'bad'
+      )
+    } catch { showToast('qBittorrent request failed', 'bad') }
+  }, [getCtxRows, showToast])
+
+  const handleCtxPostForum = useCallback(async (row: CollectionRow) => {
+    const targets = getCtxRows(row)
+    if (targets.length === 1) {
+      await handlePostForum(targets[0].lbNumberInt)
+      return
+    }
+    setConfirm({
+      title: 'Post to forum',
+      body: `Post ${targets.length} entries to the forum? Each will be posted using its auto-generated subject and body.`,
+      onConfirm: async () => {
+        setConfirm(null)
+        let ok = 0; let fail = 0
+        for (const r of targets) {
+          try {
+            const previewResp = await fetch(`${BASE}/api/entry/${r.lbNumberInt}/preview_forum`)
+            const previewData = await previewResp.json()
+            const postResp = await fetch(`${BASE}/api/entry/${r.lbNumberInt}/post_forum`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ subject: previewData.subject ?? '', body: previewData.body ?? '' }),
+            })
+            const postData = await postResp.json()
+            if (postData.ok) ok++; else fail++
+          } catch { fail++ }
+        }
+        showToast(
+          `${ok} post${ok !== 1 ? 's' : ''} created${fail > 0 ? `, ${fail} failed` : ''}`,
+          ok > 0 ? 'ok' : 'bad'
+        )
+        refetch()
+      },
+    })
+  }, [getCtxRows, handlePostForum, showToast, refetch])
+
+  const handleBatchPostForum = useCallback(async () => {
+    const targets = getTargetRows()
+    if (!targets.length) { showToast('Select rows first', 'info'); return }
+    if (targets.length === 1) {
+      await handlePostForum(targets[0].lbNumberInt)
+      return
+    }
+    setConfirm({
+      title: 'Post to forum',
+      body: `Post ${targets.length} entries to the forum? Each will be posted using its auto-generated subject and body.`,
+      onConfirm: async () => {
+        setConfirm(null)
+        let ok = 0; let fail = 0
+        for (const r of targets) {
+          try {
+            const previewResp = await fetch(`${BASE}/api/entry/${r.lbNumberInt}/preview_forum`)
+            const previewData = await previewResp.json()
+            const postResp = await fetch(`${BASE}/api/entry/${r.lbNumberInt}/post_forum`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ subject: previewData.subject ?? '', body: previewData.body ?? '' }),
+            })
+            const postData = await postResp.json()
+            if (postData.ok) ok++; else fail++
+          } catch { fail++ }
+        }
+        showToast(
+          `${ok} post${ok !== 1 ? 's' : ''} created${fail > 0 ? `, ${fail} failed` : ''}`,
+          ok > 0 ? 'ok' : 'bad'
+        )
+        refetch()
+      },
+    })
+  }, [getTargetRows, handlePostForum, showToast, refetch])
+
+
   // ── Missing LB (not-owned) handlers ───────────────────────────────────────
 
   const handleMissingExportCsv = useCallback(() => {
@@ -2374,10 +2571,10 @@ export function ScreenCollection(): React.JSX.Element {
         padding: '12px 20px', borderBottom: '1px solid var(--lbb-border)', flexShrink: 0,
       }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-          <h1 style={{ margin: 0, fontSize: 20, fontWeight: 700, color: 'var(--lbb-fg)', lineHeight: 1.2 }}>
+          <h1 style={{ margin: 0, fontSize: 'var(--lbb-fs-20)', fontWeight: 700, color: 'var(--lbb-fg)', lineHeight: 1.2 }}>
             My Collection
           </h1>
-          <span style={{ fontSize: 13, color: 'var(--lbb-fg3)' }}>
+          <span style={{ fontSize: 'var(--lbb-fs-13)', color: 'var(--lbb-fg3)' }}>
             {rows.length.toLocaleString()} items
           </span>
         </div>
@@ -2388,6 +2585,7 @@ export function ScreenCollection(): React.JSX.Element {
           <>
             <Button variant="ghost"     size="sm" icon="download" onClick={handleExportHtml}>Export HTML</Button>
             <Button variant="ghost"     size="sm" icon="download" onClick={handleExportM3u}>Export M3U</Button>
+            <Button variant="secondary" size="sm" onClick={handleBatchPostForum}>Post to forum</Button>
             <Button variant="secondary" size="sm" onClick={handleBatchCreateTorrent}>Create torrent</Button>
             <Button variant="primary"   size="sm" icon="plus" onClick={handleBatchAddToQbt}>Add to qBittorrent</Button>
           </>
@@ -2408,9 +2606,6 @@ export function ScreenCollection(): React.JSX.Element {
         <Chip active={filter === 'torrent'}    onClick={() => setFilter('torrent')}    count={counts.torrent}>Torrent history</Chip>
         <Chip active={filter === 'forum_global'}   onClick={() => setFilter('forum_global')}   count={counts.forum_global}>All forum posts</Chip>
         <Chip active={filter === 'torrent_global'} onClick={() => setFilter('torrent_global')} count={counts.torrent_global}>All torrents</Chip>
-        {sep}
-        <Chip active={filter === 'unconfirmed'} onClick={() => setFilter('unconfirmed')} count={counts.unconfirmed}>Unconfirmed</Chip>
-        <Chip active={filter === 'nofp'}        onClick={() => setFilter('nofp')}        count={counts.nofp}>No fingerprint</Chip>
         {sep}
         <Chip active={filter === 'not_owned'}   onClick={() => setFilter('not_owned')}   count={counts.not_owned}>Not in collection</Chip>
         <div style={{ flex: 1 }} />
@@ -2445,7 +2640,7 @@ export function ScreenCollection(): React.JSX.Element {
                   onClick={() => { setYearFilter(y !== null ? String(y) : null); setYearsOpen(false) }}
                   style={{
                     display: 'block', width: '100%', textAlign: 'left',
-                    padding: '5px 10px', fontSize: 12, cursor: 'pointer', border: 'none',
+                    padding: '5px 10px', fontSize: 'var(--lbb-fs-12)', cursor: 'pointer', border: 'none',
                     background: (y !== null ? String(y) : null) === yearFilter
                       ? 'var(--lbb-accent-bg)' : 'transparent',
                     color: 'var(--lbb-fg)', borderRadius: 5,
@@ -2459,7 +2654,7 @@ export function ScreenCollection(): React.JSX.Element {
         </div>
 
         <label style={{
-          fontSize: 11.5, color: 'var(--lbb-fg2)',
+          fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)',
           display: 'inline-flex', alignItems: 'center', gap: 4, cursor: 'pointer',
         }}>
           <input
@@ -2491,17 +2686,17 @@ export function ScreenCollection(): React.JSX.Element {
         <Button variant="danger" size="sm" icon="trash" onClick={handleRemoveChecked}>Remove</Button>
         <div style={{ flex: 1 }} />
         <span style={{
-          fontSize: 11.5, color: 'var(--lbb-fg3)',
+          fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)',
           fontFamily: 'var(--lbb-mono)',
         }}>
-          {confirmedCount.toLocaleString()} confirmed · {fingerprintedCount.toLocaleString()} fingerprinted
+          {confirmedCount.toLocaleString()} confirmed
         </span>
       </div>
 
       {/* ── Batch-remove progress bar ─────────────────────────────────────────── */}
       {removeProgress && (
         <div style={{ padding: '6px 16px', borderBottom: '1px solid var(--lbb-border)', background: 'var(--lbb-surface2)' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 11.5, color: 'var(--lbb-fg2)' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)' }}>
             <span>Removing {removeProgress.done} / {removeProgress.total}…</span>
             <div style={{ flex: 1, height: 4, borderRadius: 2, background: 'var(--lbb-border)', overflow: 'hidden' }}>
               <div style={{
@@ -2518,7 +2713,7 @@ export function ScreenCollection(): React.JSX.Element {
       {/* ── Batch-torrent progress bar ────────────────────────────────────────── */}
       {torrentProgress && (
         <div style={{ padding: '6px 16px', borderBottom: '1px solid var(--lbb-border)', background: 'var(--lbb-surface2)' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 11.5, color: 'var(--lbb-fg2)' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)' }}>
             <span>{torrentProgress.label}: {torrentProgress.done} / {torrentProgress.total}…</span>
             <div style={{ flex: 1, height: 4, borderRadius: 2, background: 'var(--lbb-border)', overflow: 'hidden' }}>
               <div style={{
@@ -2592,7 +2787,7 @@ export function ScreenCollection(): React.JSX.Element {
                 color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)',
               }}>
                 <Icon name="check" size={40} style={{ opacity: 0.2 }} />
-                <div style={{ fontSize: 15, fontWeight: 600, color: 'var(--lbb-fg2)' }}>
+                <div style={{ fontSize: 'var(--lbb-fs-15)', fontWeight: 600, color: 'var(--lbb-fg2)' }}>
                   You own everything in the archive
                 </div>
               </div>
@@ -2696,7 +2891,7 @@ export function ScreenCollection(): React.JSX.Element {
                           }}
                           style={{
                             width: '100%', background: 'var(--lbb-input-bg)', color: 'var(--lbb-fg)',
-                            border: '1px solid var(--lbb-accent-mid)', borderRadius: 3, fontSize: 12,
+                            border: '1px solid var(--lbb-accent-mid)', borderRadius: 3, fontSize: 'var(--lbb-fs-12)',
                             padding: '2px 6px', fontFamily: 'inherit',
                           }}
                         />
@@ -2722,7 +2917,7 @@ export function ScreenCollection(): React.JSX.Element {
                           onChange={e => setWishEditPriority(Number(e.target.value))}
                           style={{
                             background: 'var(--lbb-input-bg)', color: 'var(--lbb-fg)',
-                            border: '1px solid var(--lbb-border)', borderRadius: 3, fontSize: 12,
+                            border: '1px solid var(--lbb-border)', borderRadius: 3, fontSize: 'var(--lbb-fs-12)',
                           }}
                         >
                           {[1,2,3,4,5].map(p => <option key={p} value={p}>{p}</option>)}
@@ -2752,7 +2947,7 @@ export function ScreenCollection(): React.JSX.Element {
             </tbody>
           </TableShell>
           {sortedFilteredRows.length === 0 && (
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '60%', fontSize: 13, color: 'var(--lbb-fg3)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '60%', fontSize: 'var(--lbb-fs-13)', color: 'var(--lbb-fg3)' }}>
               No wishlist entries.
             </div>
           )}
@@ -2763,7 +2958,7 @@ export function ScreenCollection(): React.JSX.Element {
         {filter === 'duplicates' && (
         <div style={{ overflow: 'auto', minHeight: 0 }}>
           {duplicateGroups.length === 0 ? (
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '60%', fontSize: 13, color: 'var(--lbb-fg3)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '60%', fontSize: 'var(--lbb-fs-13)', color: 'var(--lbb-fg3)' }}>
               No duplicate entries.
             </div>
           ) : (
@@ -2893,7 +3088,6 @@ export function ScreenCollection(): React.JSX.Element {
                 <TH onClick={() => handleSort('diskPath')}  sorted={sortCol === 'diskPath'  ? sortDir : null}>{t('collection.detail.diskPath')}</TH>
                 <TH>Notes</TH>
                 <TH onClick={() => handleSort('confirmed')} sorted={sortCol === 'confirmed' ? sortDir : null}>{t('collection.detail.confirmed')}</TH>
-                <TH align="center" onClick={() => handleSort('fp')} sorted={sortCol === 'fp' ? sortDir : null}>FP</TH>
               </tr>
             </thead>
             <tbody>
@@ -2906,7 +3100,7 @@ export function ScreenCollection(): React.JSX.Element {
                 return (
                   <>
                     {padTop > 0 && (
-                      <tr><td colSpan={11} style={{ height: padTop, padding: 0, border: 0 }} /></tr>
+                      <tr><td colSpan={10} style={{ height: padTop, padding: 0, border: 0 }} /></tr>
                     )}
                     {items.map(vItem => {
                       const r = sortedFilteredRows[vItem.index]
@@ -2942,17 +3136,11 @@ export function ScreenCollection(): React.JSX.Element {
                           <TD mono dim>{r.diskPath || '—'}</TD>
                           <TD dim>{r.notes || '—'}</TD>
                           <TD mono dim>{r.confirmed || '—'}</TD>
-                          <TD align="center">
-                            {r.fingerprinted
-                              ? <Icon name="check" size={14} style={{ color: 'var(--lbb-ok-fg)' }} />
-                              : <Icon name="x"     size={14} style={{ color: 'var(--lbb-bad-fg)' }} />
-                            }
-                          </TD>
                         </TR>
                       )
                     })}
                     {padBottom > 0 && (
-                      <tr><td colSpan={11} style={{ height: padBottom, padding: 0, border: 0 }} /></tr>
+                      <tr><td colSpan={10} style={{ height: padBottom, padding: 0, border: 0 }} /></tr>
                     )}
                   </>
                 )
@@ -2970,10 +3158,10 @@ export function ScreenCollection(): React.JSX.Element {
             }}>
               <Icon name="collection" size={40} style={{ opacity: 0.2 }} />
               <div style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: 15, fontWeight: 600, color: 'var(--lbb-fg2)' }}>
+                <div style={{ fontSize: 'var(--lbb-fs-15)', fontWeight: 600, color: 'var(--lbb-fg2)' }}>
                   No recordings in your collection
                 </div>
-                <div style={{ fontSize: 11.5, marginTop: 4 }}>
+                <div style={{ fontSize: 'var(--lbb-fs-11-5)', marginTop: 4 }}>
                   Use "Add single folder" to get started
                 </div>
               </div>
@@ -3059,6 +3247,20 @@ export function ScreenCollection(): React.JSX.Element {
               label: 'View LB Entry',
               disabled: !ctxMenu.row.diskPath,
               action: () => handleCtxViewLookup(ctxMenu.row),
+            },
+            'sep',
+            {
+              label: 'Post to forum',
+              action: () => handleCtxPostForum(ctxMenu.row),
+            },
+            {
+              label: 'Create torrent',
+              disabled: !ctxMenu.row.diskPath,
+              action: () => handleCtxCreateTorrent(ctxMenu.row),
+            },
+            {
+              label: 'Add to qBittorrent',
+              action: () => handleCtxAddToQbt(ctxMenu.row),
             },
             'sep',
             {
