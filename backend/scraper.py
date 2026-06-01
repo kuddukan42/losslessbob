@@ -96,6 +96,89 @@ def _fetch(url: str, retries: int = 3, delay: float = 1.5) -> tuple[requests.Res
     return None, 0
 
 
+def _extract_setlist_from_lbbcd(lb_number: int, db_path: str) -> str:
+    """Return a numbered setlist string parsed from the local LBBCD HTML for lb_number.
+
+    Looks up bootleg_titles to find the lbbcd_id for this entry, then parses
+    the cached LBBCD-{id}.html track table. Returns '' if no LBBCD page exists
+    or the table cannot be parsed.
+
+    Args:
+        lb_number: LB entry number to look up.
+        db_path: Path to the SQLite database.
+
+    Returns:
+        Newline-separated numbered setlist, e.g. "1. Song\\n2. Song\\n..."
+        With "CD N" header lines when the bootleg spans multiple discs.
+        Empty string if unavailable.
+    """
+    import sqlite3 as _sqlite3
+    from backend.paths import SITE_LBBCD_DIR
+
+    with _sqlite3.connect(db_path) as _conn:
+        row = _conn.execute(
+            "SELECT lbbcd_id FROM bootleg_titles WHERE lb_number=? AND lbbcd_id IS NOT NULL LIMIT 1",
+            (lb_number,),
+        ).fetchone()
+    if not row:
+        return ""
+
+    lbbcd_id = row[0]
+    # Files may be stored as LBBCD-198.html (no padding) or LBBCD-001.html (3-digit pad).
+    html_path = SITE_LBBCD_DIR / f"LBBCD-{lbbcd_id}.html"
+    if not html_path.exists():
+        html_path = SITE_LBBCD_DIR / f"LBBCD-{lbbcd_id:03d}.html"
+    if not html_path.exists():
+        return ""
+
+    try:
+        html = html_path.read_text(encoding="utf-8", errors="replace")
+    except OSError:
+        return ""
+
+    soup = BeautifulSoup(html, "html.parser")
+    tracks: list[tuple[str, str, str]] = []  # (cd, tr, song)
+
+    for table in soup.find_all("table"):
+        headers_row = table.find("tr")
+        if not headers_row:
+            continue
+        headers = [th.get_text(strip=True).lower() for th in headers_row.find_all(["th", "td"])]
+        if not ("cd" in headers and "tr" in headers):
+            continue
+        song_idx = next((i for i, h in enumerate(headers) if "song" in h), None)
+        if song_idx is None:
+            continue
+        cd_idx = headers.index("cd")
+        tr_idx = headers.index("tr")
+        for data_row in headers_row.find_next_siblings("tr"):
+            cells = data_row.find_all("td")
+            if len(cells) <= max(cd_idx, tr_idx, song_idx):
+                continue
+            cd = cells[cd_idx].get_text(strip=True)
+            tr = cells[tr_idx].get_text(strip=True)
+            song = cells[song_idx].get_text(strip=True)
+            if song:
+                tracks.append((cd, tr, song))
+        break
+
+    if not tracks:
+        return ""
+
+    multi_cd = len({t[0] for t in tracks if t[0]}) > 1
+    lines: list[str] = []
+    n = 0
+    current_cd: str | None = None
+    for cd, _tr, song in tracks:
+        if multi_cd and cd != current_cd:
+            current_cd = cd
+            lines.append(f"CD {cd}")
+        n += 1
+        lines.append(f"{n}. {song}")
+
+    return "\n".join(lines)
+
+
 def scrape_entry(
     lb_number: int,
     force: bool = False,
@@ -271,6 +354,12 @@ def scrape_entry(
     # from description (covers pages where tracks land in desc_parts).
     _sl_raw = "\n\n".join(setlist_parts)
     entry_data["setlist"] = _sl_raw or _extract_sl(entry_data["description"])
+
+    # For bootleg-CD entries, always prefer the structured LBBCD track table over
+    # whatever free-text setlist was parsed from the LB detail page.
+    _lbbcd_sl = _extract_setlist_from_lbbcd(lb_number, db_path)
+    if _lbbcd_sl:
+        entry_data["setlist"] = _lbbcd_sl
 
     # Collect attachment links
     file_links = []
