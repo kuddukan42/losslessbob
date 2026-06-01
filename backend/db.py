@@ -515,6 +515,41 @@ CREATE TABLE IF NOT EXISTS setlistfm_setlist (
 );
 CREATE INDEX IF NOT EXISTS idx_setlistfm_setlist_id   ON setlistfm_setlist(setlistfm_id);
 CREATE INDEX IF NOT EXISTS idx_setlistfm_setlist_track ON setlistfm_setlist(track_name);
+
+-- ── Collection trading tables (USER — never exported in master snapshot) ─────
+CREATE TABLE IF NOT EXISTS friend_collections (
+    id          INTEGER PRIMARY KEY AUTOINCREMENT,
+    friend_name TEXT NOT NULL UNIQUE,
+    imported_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    lb_count    INTEGER DEFAULT 0
+);
+
+CREATE TABLE IF NOT EXISTS friend_collection_entries (
+    id         INTEGER PRIMARY KEY AUTOINCREMENT,
+    friend_id  INTEGER NOT NULL REFERENCES friend_collections(id) ON DELETE CASCADE,
+    lb_number  INTEGER NOT NULL,
+    date_str   TEXT,
+    location   TEXT,
+    lb_status  TEXT,
+    UNIQUE(friend_id, lb_number)
+);
+
+-- ── Archive.org upload history (USER — never exported in master snapshot) ──────
+CREATE TABLE IF NOT EXISTS archive_org_uploads (
+    id              INTEGER PRIMARY KEY AUTOINCREMENT,
+    lb_number       INTEGER NOT NULL,
+    identifier      TEXT NOT NULL,
+    folder_path     TEXT NOT NULL,
+    files_total     INTEGER DEFAULT 0,
+    files_uploaded  INTEGER DEFAULT 0,
+    status          TEXT NOT NULL DEFAULT 'pending',
+    started_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    finished_at     TIMESTAMP,
+    error           TEXT
+);
+CREATE INDEX IF NOT EXISTS idx_archive_uploads_lb ON archive_org_uploads(lb_number);
+CREATE INDEX IF NOT EXISTS idx_archive_uploads_status ON archive_org_uploads(status, started_at DESC);
 """
 
 _MD5_RE = re.compile(r'^([0-9a-fA-F]{32})\s+\*?(.+)$')
@@ -1208,11 +1243,15 @@ def get_stats(db_path=None):
         total_lb = conn.execute("SELECT COUNT(DISTINCT lb_number) FROM checksums").fetchone()[0]
         latest_lb = conn.execute("SELECT MAX(lb_number) FROM checksums").fetchone()[0]
         last_import = get_meta("last_import_date", db_path)
+        ok_entries = conn.execute("SELECT COUNT(*) FROM entries WHERE status='ok'").fetchone()[0]
+        total_entries = conn.execute("SELECT COUNT(*) FROM entries").fetchone()[0]
     return {
         "total_checksums": total_checksums,
         "total_lb_numbers": total_lb,
         "latest_lb": latest_lb,
         "last_import": last_import,
+        "ok_entries": ok_entries,
+        "total_entries": total_entries,
     }
 
 
@@ -2093,6 +2132,29 @@ def update_torrent_record(torrent_id: int, fields: dict, db_path=None) -> None:
     _sql = f"UPDATE torrents SET {set_clause} WHERE id=?"
     _params = list(clean.values()) + [torrent_id]
     get_write_queue().execute(lambda c: c.execute(_sql, _params))
+
+
+def delete_torrent_record(torrent_id: int, db_path=None) -> None:
+    """Delete a torrents row by id."""
+    get_write_queue().execute(
+        lambda c: c.execute("DELETE FROM torrents WHERE id=?", (torrent_id,))
+    )
+
+
+def clear_superseded_torrent_paths(lb_number: int, new_id: int, new_path: str,
+                                   db_path=None) -> None:
+    """Null out torrent_path on older records for the same LB that share new_path.
+
+    Called after a regen so stale records no longer falsely report
+    torrent_file_exists=True when the new file was created at the same path as
+    a previously-deleted one.
+    """
+    def _run(c: object) -> None:
+        c.execute(  # type: ignore[attr-defined]
+            "UPDATE torrents SET torrent_path=NULL WHERE lb_number=? AND id!=? AND torrent_path=?",
+            (lb_number, new_id, new_path),
+        )
+    get_write_queue().execute(_run)
 
 
 # ── Rename History ─────────────────────────────────────────────────────────────
@@ -3796,3 +3858,89 @@ def get_lb_problem_count(lb_number: int, db_path=None) -> int:
     return conn.execute(
         "SELECT COUNT(*) FROM lb_problems WHERE lb_number=?", (lb_number,)
     ).fetchone()[0]
+
+
+# ── Archive.org upload history ────────────────────────────────────────────────
+
+def create_archive_upload(lb_number: int, identifier: str, folder_path: str,
+                          files_total: int, db_path=None) -> int:
+    """Insert a new archive_org_uploads row in 'running' status and return its id.
+
+    Args:
+        lb_number: LosslessBob entry number.
+        identifier: Internet Archive item identifier.
+        folder_path: Absolute path to the source folder.
+        files_total: Total number of files to upload.
+        db_path: Optional database path override.
+
+    Returns:
+        New row id.
+    """
+    _lb, _id, _fp, _ft = lb_number, identifier, folder_path, files_total
+
+    def _run(c):
+        cur = c.execute(
+            "INSERT INTO archive_org_uploads(lb_number, identifier, folder_path, files_total, status) "
+            "VALUES (?, ?, ?, ?, 'running')",
+            (_lb, _id, _fp, _ft),
+        )
+        return cur.lastrowid
+
+    return get_write_queue().execute(_run)
+
+
+def finish_archive_upload(upload_id: int, status: str, error: str | None = None,
+                          files_uploaded: int | None = None, db_path=None) -> None:
+    """Mark an archive upload row as finished.
+
+    Args:
+        upload_id: Row id of the archive_org_uploads row.
+        status: Final status string — 'done', 'failed', 'stopped'.
+        error: Error message if status is 'failed'.
+        files_uploaded: Files successfully uploaded (None = leave unchanged).
+        db_path: Optional database path override.
+    """
+    _uid, _st, _err, _fu = upload_id, status, error, files_uploaded
+
+    def _run(c):
+        if _fu is not None:
+            c.execute(
+                "UPDATE archive_org_uploads "
+                "SET status=?, error=?, files_uploaded=?, finished_at=datetime('now') "
+                "WHERE id=?",
+                (_st, _err, _fu, _uid),
+            )
+        else:
+            c.execute(
+                "UPDATE archive_org_uploads "
+                "SET status=?, error=?, finished_at=datetime('now') WHERE id=?",
+                (_st, _err, _uid),
+            )
+
+    get_write_queue().execute(_run)
+
+
+def get_archive_uploads(lb_number: int | None = None, db_path=None) -> list:
+    """Return archive upload rows, newest first.
+
+    Args:
+        lb_number: If given, restrict to uploads for this LB. Otherwise return all.
+        db_path: Optional database path override.
+
+    Returns:
+        List of row dicts.
+    """
+    with get_connection(db_path) as conn:
+        if lb_number is not None:
+            rows = conn.execute(
+                "SELECT * FROM archive_org_uploads WHERE lb_number=? ORDER BY started_at DESC",
+                (lb_number,),
+            ).fetchall()
+        else:
+            rows = conn.execute(
+                "SELECT au.*, e.date_str, e.location "
+                "FROM archive_org_uploads au "
+                "LEFT JOIN entries e ON e.lb_number = au.lb_number "
+                "ORDER BY au.started_at DESC"
+            ).fetchall()
+    return [dict(r) for r in rows]
