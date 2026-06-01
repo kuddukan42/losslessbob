@@ -54,7 +54,7 @@
     },
     "statusBar": {
       "db": "DB:",
-      "checksums": "Checksums:",
+      "checksums": "Checksommen:",
       "lastImport": "Laatste invoer:",
       "bootlegs": "Bootlegs:",
       "synced": "Gesynchroniseerd - inactief"
@@ -303,7 +303,8 @@
     "disambiguate": {
       "title": "Ondubbelzinnig - kies er een",
       "desc": "Er komen meerdere LB-nummers overeen. Selecteer de juiste en klik vervolgens op \"Pin selection\".",
-      "skip": "Voorlopig overslaan"
+      "skip": "Voorlopig overslaan",
+      "pinned": "Vastgemaakt aan {{lb}}"
     },
     "dryrun": {
       "title": "Voorbeschouwing op de generale repetitie",
@@ -316,7 +317,8 @@
       "applied": "{{count}} hernoemt{{errors}}",
       "applyFailed": "Solliciteer mislukt",
       "diffCopied": "Verschil gekopieerd",
-      "copyFailed": "Kopiëren mislukt"
+      "copyFailed": "Kopiëren mislukt",
+      "pinned": "Vastgemaakt {{lb}}"
     }
   },
   "pipeline": {
@@ -456,14 +458,19 @@
       "delFile": "Bestand verwijderen",
       "openInBrowser": "Openen in browser",
       "loadingTorrents": "Bezig met laden…",
+      "loadingForum": "Bezig met laden…",
       "noTorrents": "Geen torrentrecords.",
-      "noForumHistory": "Geen forumgeschiedenis."
+      "noForumHistory": "Geen forumgeschiedenis.",
+      "forumLoadError": "Forum geschiedenis laden mislukt.",
+      "delRecord": "Opname verwijderen"
     },
     "confirmDelete": {
       "torrentTitle": ".torrent-bestand verwijderen",
       "torrentBody": "Het .torrent-bestand van de schijf verwijderen? Hiermee wordt de torrent niet uit qBittorrent verwijderd.",
       "forumTitle": "Forum bericht verwijderen",
-      "forumBody": "Dit logbericht verwijderen? Hiermee wordt het eigenlijke forumbericht op de website niet verwijderd."
+      "forumBody": "Dit logbericht verwijderen? Hiermee wordt het eigenlijke forumbericht op de website niet verwijderd.",
+      "recordTitle": "Torrentbestand verwijderen",
+      "recordBody": "Deze record uit de database verwijderen? Het .torrent-bestand wordt ook verwijderd als het bestaat. De torrent moet eerst worden verwijderd uit qBittorrent."
     },
     "globalForum": {
       "postsCount_one": "{{count}} forumbericht",
@@ -531,7 +538,8 @@
       "vlcNotFound": "VLC niet gevonden op dit systeem",
       "vlcRequestFailed": "VLC-verzoek mislukt",
       "spectrogramFailed": "Spectrogram mislukt",
-      "spectrogramRequestFailed": "Spectrogram verzoek mislukt"
+      "spectrogramRequestFailed": "Spectrogram verzoek mislukt",
+      "torrentRecordDeleted": "Torrent record verwijderd"
     }
   },
   "map": {
@@ -950,7 +958,7 @@
     },
     "query": {
       "toggle": "SQL-query…",
-      "placeholder": "SELECT * FROM entries LIMIT 10…",
+      "placeholder": "SELECT * FROM entries LIMIT 10...",
       "run": "Uitvoeren",
       "clear": "Wissen",
       "rows": "{{count}} rij(en) geretourneerd.",

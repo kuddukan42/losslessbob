@@ -303,7 +303,8 @@
     "disambiguate": {
       "title": "Disambiguare - sceglierne uno",
       "desc": "Sono stati abbinati più numeri LB. Selezionare quello corretto, quindi fare clic su \"Selezione pin\".",
-      "skip": "Saltare per ora"
+      "skip": "Saltare per ora",
+      "pinned": "Appuntato a {{lb}}"
     },
     "dryrun": {
       "title": "Anteprima della corsa a secco",
@@ -316,7 +317,8 @@
       "applied": "Applicato {{count}} rinominato{{errors}}",
       "applyFailed": "Candidatura fallita",
       "diffCopied": "Diff copiato",
-      "copyFailed": "Copia fallita"
+      "copyFailed": "Copia fallita",
+      "pinned": "Appuntato {{lb}}"
     }
   },
   "pipeline": {
@@ -456,14 +458,19 @@
       "delFile": "File Del",
       "openInBrowser": "Aprire nel browser",
       "loadingTorrents": "Caricamento…",
+      "loadingForum": "Caricamento…",
       "noTorrents": "Nessun record di torrent.",
-      "noForumHistory": "Nessuna storia del forum."
+      "noForumHistory": "Nessuna storia del forum.",
+      "forumLoadError": "Impossibile caricare la cronologia del forum.",
+      "delRecord": "Del record"
     },
     "confirmDelete": {
       "torrentTitle": "Eliminare il file .torrent",
       "torrentBody": "Eliminare il file .torrent dal disco? Questa operazione non rimuove il torrent da qBittorrent.",
       "forumTitle": "Rimuovere il record del messaggio del forum",
-      "forumBody": "Rimuovere questa voce di registro? Questa operazione non elimina l'effettivo messaggio del forum sul sito web."
+      "forumBody": "Rimuovere questa voce di registro? Questa operazione non elimina l'effettivo messaggio del forum sul sito web.",
+      "recordTitle": "Eliminazione del record di torrent",
+      "recordBody": "Eliminare questo record dal database? Verrà rimosso anche il file .torrent, se esistente. Il torrent deve essere prima rimosso da qBittorrent."
     },
     "globalForum": {
       "postsCount_one": "Messaggio del forum {{count}}",
@@ -531,7 +538,8 @@
       "vlcNotFound": "VLC non trovato su questo sistema",
       "vlcRequestFailed": "Richiesta VLC fallita",
       "spectrogramFailed": "Spettrogramma fallito",
-      "spectrogramRequestFailed": "Richiesta di spettrogramma fallita"
+      "spectrogramRequestFailed": "Richiesta di spettrogramma fallita",
+      "torrentRecordDeleted": "Record Torrent cancellato"
     }
   },
   "map": {
@@ -950,7 +958,7 @@
     },
     "query": {
       "toggle": "Query SQL…",
-      "placeholder": "SELECT * FROM entries LIMIT 10…",
+      "placeholder": "SELEZIONARE * DA VOCI LIMIT 10...",
       "run": "Esegui",
       "clear": "Cancella",
       "rows": "{{count}} riga/e restituita/e.",

@@ -303,7 +303,8 @@
     "disambiguate": {
       "title": "Desambiguar - elija uno",
       "desc": "Múltiples números LB coinciden. Seleccione el correcto y, a continuación, haga clic en \"Pin selection\".",
-      "skip": "Saltar por ahora"
+      "skip": "Saltar por ahora",
+      "pinned": "Anclado a {{lb}}"
     },
     "dryrun": {
       "title": "Avance de la carrera en seco",
@@ -316,7 +317,8 @@
       "applied": "Aplicado {{count}} renombra{{errors}}",
       "applyFailed": "Solicitud fallida",
       "diffCopied": "Diff copiado",
-      "copyFailed": "Error de copia"
+      "copyFailed": "Error de copia",
+      "pinned": "Anclado {{lb}}"
     }
   },
   "pipeline": {
@@ -456,14 +458,19 @@
       "delFile": "Archivo Del",
       "openInBrowser": "Abrir en el navegador",
       "loadingTorrents": "Cargando…",
+      "loadingForum": "Cargando…",
       "noTorrents": "No hay registros de torrents.",
-      "noForumHistory": "Sin historial en el foro."
+      "noForumHistory": "Sin historial en el foro.",
+      "forumLoadError": "Error al cargar el historial del foro.",
+      "delRecord": "Del record"
     },
     "confirmDelete": {
       "torrentTitle": "Eliminar archivo .torrent",
       "torrentBody": "¿Eliminar el archivo .torrent del disco? Esto no elimina el torrent de qBittorrent.",
       "forumTitle": "Eliminar el registro de mensajes del foro",
-      "forumBody": "¿Eliminar esta entrada de registro? Esto no elimina la entrada real del foro en el sitio web."
+      "forumBody": "¿Eliminar esta entrada de registro? Esto no elimina la entrada real del foro en el sitio web.",
+      "recordTitle": "Eliminar registro torrent",
+      "recordBody": "¿Eliminar este registro de la base de datos? El archivo .torrent también se eliminará si existe. El torrent debe eliminarse primero de qBittorrent."
     },
     "globalForum": {
       "postsCount_one": "{{count}} mensaje en el foro",
@@ -531,7 +538,8 @@
       "vlcNotFound": "VLC no se encuentra en este sistema",
       "vlcRequestFailed": "Fallo en la solicitud de VLC",
       "spectrogramFailed": "Espectrograma fallido",
-      "spectrogramRequestFailed": "Solicitud de espectrograma fallida"
+      "spectrogramRequestFailed": "Solicitud de espectrograma fallida",
+      "torrentRecordDeleted": "Registro de torrents borrado"
     }
   },
   "map": {
@@ -950,7 +958,7 @@
     },
     "query": {
       "toggle": "Consulta SQL…",
-      "placeholder": "SELECT * FROM entries LIMIT 10…",
+      "placeholder": "SELECT * FROM entradas LIMIT 10...",
       "run": "Ejecutar",
       "clear": "Borrar",
       "rows": "{{count}} fila(s) devuelta(s).",
