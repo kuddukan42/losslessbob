@@ -9,7 +9,7 @@ const BASE = window.api.flaskBase
 // ── Types ─────────────────────────────────────────────────────────────────────
 
 type MasterStatus    = 'Public' | 'Private' | 'Missing'
-type RatingGrade     = 'A' | 'A−' | 'B+' | 'B' | 'B−' | 'C' | '—'
+type RatingGrade     = 'A+' | 'A' | 'A-' | 'B+' | 'B' | 'B-' | 'C+' | 'C' | 'C-' | 'D+' | 'D' | 'D-' | 'F' | '—'
 type OwnershipFilter = 'any' | 'owned' | 'not-owned'
 type ToastTone       = 'ok' | 'bad' | 'info'
 type SortKey         = 'lb_asc' | 'lb_desc' | 'date_asc' | 'date_desc' | 'loc_asc' | 'loc_desc'
@@ -69,7 +69,7 @@ interface EntryDetail {
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 
-const RATING_RANK: Record<string, number> = { 'A': 6, 'A−': 5, 'B+': 4, 'B': 3, 'B−': 2, 'C': 1, '—': 0 }
+const RATING_RANK: Record<string, number> = { 'A+': 13, 'A': 12, 'A-': 11, 'B+': 10, 'B': 9, 'B-': 8, 'C+': 7, 'C': 6, 'C-': 5, 'D+': 4, 'D': 3, 'D-': 2, 'F': 1, '—': 0 }
 
 const SORT_OPTS: { key: SortKey; label: string }[] = [
   { key: 'lb_asc',   label: 'LB# ↑'       },
@@ -96,8 +96,8 @@ const BUILT_IN_VIEWS: { id: string; name: string; state: FilterState }[] = [
     state: { activeStatus: ['Public'],   activeRating: [],       activeDec: [], ownership: 'any', yearRange: [1961, 2030] },
   },
   {
-    id: 'rated',   name: 'Rated A or A−',
-    state: { activeStatus: [],           activeRating: ['A','A−'], activeDec: [], ownership: 'any', yearRange: [1961, 2030] },
+    id: 'rated',   name: 'Rated A or A-',
+    state: { activeStatus: [],           activeRating: ['A+','A','A-'], activeDec: [], ownership: 'any', yearRange: [1961, 2030] },
   },
   {
     id: 'missing', name: 'Missing / wanted',
@@ -105,7 +105,7 @@ const BUILT_IN_VIEWS: { id: string; name: string; state: FilterState }[] = [
   },
 ]
 
-const VALID_RATINGS = new Set(['A', 'A−', 'B+', 'B', 'B−', 'C'])
+const VALID_RATINGS = new Set(['A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', 'D', 'D-', 'F'])
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -156,9 +156,9 @@ function extractYear(dateStr: string): number {
 }
 
 function ratingTone(r: RatingGrade): 'ok' | 'info' | 'warn' | 'mute' {
-  if (r === 'A' || r === 'A−') return 'ok'
-  if (r === 'B+' || r === 'B') return 'info'
-  if (r === 'B−' || r === 'C') return 'warn'
+  if (r === 'A+' || r === 'A' || r === 'A-') return 'ok'
+  if (r === 'B+' || r === 'B' || r === 'B-') return 'info'
+  if (r === 'C+' || r === 'C' || r === 'C-') return 'warn'
   return 'mute'
 }
 
@@ -225,7 +225,7 @@ function Toast({ msg, tone, onDone }: { msg: string; tone: ToastTone; onDone: ()
     <div style={{
       position: 'fixed', bottom: 24, right: 24, zIndex: 999,
       background: bg, border: `1px solid ${border}`, borderRadius: 8,
-      padding: '10px 16px', color, fontSize: 13, fontWeight: 500,
+      padding: '10px 16px', color, fontSize: 'var(--lbb-fs-13)', fontWeight: 500,
       boxShadow: '0 4px 16px rgba(0,0,0,0.15)', maxWidth: 400,
     }}>{msg}</div>
   )
@@ -250,7 +250,7 @@ function FacetGroup({ title, items, active, onToggle }: FacetGroupProps) {
         style={{
           width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
           padding: '8px 12px', background: 'none', border: 'none', cursor: 'pointer',
-          fontSize: 10.5, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
+          fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
           color: 'var(--lbb-fg3)',
         }}
       >
@@ -276,7 +276,7 @@ function ActiveFilter({ label, onRemove }: { label: string; onRemove: () => void
   return (
     <span style={{
       display: 'inline-flex', alignItems: 'center', gap: 4,
-      padding: '2px 8px', borderRadius: 4, fontSize: 11,
+      padding: '2px 8px', borderRadius: 4, fontSize: 'var(--lbb-fs-11)',
       background: 'var(--lbb-accent-soft)', color: 'var(--lbb-accent-mid)',
     }}>
       {label}
@@ -301,24 +301,24 @@ function YearRangeSlider({ min, max, low, high, onChange }: YearRangeProps) {
   return (
     <div style={{ padding: '4px 12px 10px', display: 'flex', flexDirection: 'column', gap: 5 }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-        <span style={{ fontSize: 10, color: 'var(--lbb-fg3)', width: 18, flexShrink: 0 }}>From</span>
+        <span style={{ fontSize: 'var(--lbb-fs-10)', color: 'var(--lbb-fg3)', width: 18, flexShrink: 0 }}>From</span>
         <input
           type="range" min={min} max={max} value={low}
           onChange={e => onChange(Math.min(+e.target.value, high - 1), high)}
           style={{ flex: 1, cursor: 'pointer', accentColor: 'var(--lbb-accent-mid)' }}
         />
-        <span style={{ fontSize: 10.5, fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-fg2)', width: 34, textAlign: 'right' }}>
+        <span style={{ fontSize: 'var(--lbb-fs-10-5)', fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-fg2)', width: 34, textAlign: 'right' }}>
           {low}
         </span>
       </div>
       <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-        <span style={{ fontSize: 10, color: 'var(--lbb-fg3)', width: 18, flexShrink: 0 }}>To</span>
+        <span style={{ fontSize: 'var(--lbb-fs-10)', color: 'var(--lbb-fg3)', width: 18, flexShrink: 0 }}>To</span>
         <input
           type="range" min={min} max={max} value={high}
           onChange={e => onChange(low, Math.max(+e.target.value, low + 1))}
           style={{ flex: 1, cursor: 'pointer', accentColor: 'var(--lbb-accent-mid)' }}
         />
-        <span style={{ fontSize: 10.5, fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-fg2)', width: 34, textAlign: 'right' }}>
+        <span style={{ fontSize: 'var(--lbb-fs-10-5)', fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-fg2)', width: 34, textAlign: 'right' }}>
           {high}
         </span>
       </div>
@@ -343,7 +343,7 @@ function SaveViewDialog({ onSave, onCancel }: {
         borderRadius: 10, padding: 24, maxWidth: 340, width: '90%',
         boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
       }}>
-        <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--lbb-fg)', marginBottom: 12 }}>
+        <div style={{ fontSize: 'var(--lbb-fs-14)', fontWeight: 700, color: 'var(--lbb-fg)', marginBottom: 12 }}>
           Save current filter
         </div>
         <input
@@ -354,7 +354,7 @@ function SaveViewDialog({ onSave, onCancel }: {
           onChange={e => setName(e.target.value)}
           onKeyDown={e => { if (e.key === 'Enter' && name.trim()) onSave(name.trim()) }}
           style={{
-            width: '100%', padding: '6px 10px', borderRadius: 6, fontSize: 13,
+            width: '100%', padding: '6px 10px', borderRadius: 6, fontSize: 'var(--lbb-fs-13)',
             background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border2)',
             color: 'var(--lbb-fg)', outline: 'none', boxSizing: 'border-box',
           }}
@@ -400,14 +400,14 @@ function EntryDetailPanel({ lbNumber, status, rating, owned, detail, loading, on
         display: 'flex', justifyContent: 'space-between', alignItems: 'center',
         padding: '6px 10px', borderBottom: '1px solid var(--lbb-border)', flexShrink: 0,
       }}>
-        <span style={{ fontSize: 13, fontWeight: 700, fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-accent-mid)' }}>
+        <span style={{ fontSize: 'var(--lbb-fs-13)', fontWeight: 700, fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-accent-mid)' }}>
           {lb}
         </span>
         <IconButton icon="x" size={14} title="Close" onClick={onClose} />
       </div>
 
       {loading ? (
-        <div style={{ padding: 20, color: 'var(--lbb-fg3)', fontSize: 12, fontFamily: 'var(--lbb-mono)' }}>
+        <div style={{ padding: 20, color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-12)', fontFamily: 'var(--lbb-mono)' }}>
           Loading…
         </div>
       ) : (
@@ -423,10 +423,10 @@ function EntryDetailPanel({ lbNumber, status, rating, owned, detail, loading, on
           {/* Date + location */}
           {e && (
             <div>
-              <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--lbb-fg)' }}>{e.date_str || '—'}</div>
-              <div style={{ fontSize: 12.5, color: 'var(--lbb-fg2)', marginTop: 2 }}>{e.location || '—'}</div>
+              <div style={{ fontSize: 'var(--lbb-fs-13)', fontWeight: 600, color: 'var(--lbb-fg)' }}>{e.date_str || '—'}</div>
+              <div style={{ fontSize: 'var(--lbb-fs-12-5)', color: 'var(--lbb-fg2)', marginTop: 2 }}>{e.location || '—'}</div>
               {e.timing && (
-                <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', marginTop: 2 }}>{e.timing}</div>
+                <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)', marginTop: 2 }}>{e.timing}</div>
               )}
             </div>
           )}
@@ -437,7 +437,7 @@ function EntryDetailPanel({ lbNumber, status, rating, owned, detail, loading, on
               background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
               borderRadius: 6, padding: '8px 12px',
               display: 'grid', gridTemplateColumns: '72px 1fr',
-              rowGap: 6, columnGap: 8, fontSize: 11.5,
+              rowGap: 6, columnGap: 8, fontSize: 'var(--lbb-fs-11-5)',
             }}>
               {e.taper_name && (
                 <React.Fragment>
@@ -470,19 +470,19 @@ function EntryDetailPanel({ lbNumber, status, rating, owned, detail, loading, on
           {e?.description && (
             <div>
               <div style={{
-                fontSize: 10.5, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
+                fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
                 color: 'var(--lbb-fg3)', marginBottom: 4,
               }}>
                 Description
               </div>
-              <div style={{ fontSize: 12, color: 'var(--lbb-fg2)', lineHeight: 1.5 }}>
+              <div style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)', lineHeight: 1.5 }}>
                 {descExpanded ? e.description : e.description.slice(0, 240) + (e.description.length > 240 ? '…' : '')}
               </div>
               {e.description.length > 240 && (
                 <button
                   type="button"
                   onClick={() => setDescExpanded(v => !v)}
-                  style={{ fontSize: 11, color: 'var(--lbb-accent-mid)', background: 'none', border: 'none', cursor: 'pointer', marginTop: 3, padding: 0 }}
+                  style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-accent-mid)', background: 'none', border: 'none', cursor: 'pointer', marginTop: 3, padding: 0 }}
                 >
                   {descExpanded ? 'Show less' : 'Show more'}
                 </button>
@@ -506,7 +506,7 @@ function EntryDetailPanel({ lbNumber, status, rating, owned, detail, loading, on
               return (
                 <div>
                   <div style={{
-                    fontSize: 10.5, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
+                    fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
                     color: 'var(--lbb-fg3)', marginBottom: 4,
                   }}>
                     Setlist{trackCt > 0 ? ` (${trackCt})` : ''}
@@ -519,7 +519,7 @@ function EntryDetailPanel({ lbNumber, status, rating, owned, detail, loading, on
                             <td
                               colSpan={hasNums ? 2 : 1}
                               style={{
-                                fontSize: 10.5, fontWeight: 700, color: 'var(--lbb-fg3)',
+                                fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: 'var(--lbb-fg3)',
                                 padding: i === 0 ? '0 4px 2px' : '8px 4px 2px',
                                 letterSpacing: '0.04em', textTransform: 'uppercase',
                               }}
@@ -533,12 +533,12 @@ function EntryDetailPanel({ lbNumber, status, rating, owned, detail, loading, on
                               <td style={{
                                 color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)',
                                 padding: '3px 6px 3px 0', width: 22, textAlign: 'right',
-                                fontSize: 10.5, verticalAlign: 'top', userSelect: 'none',
+                                fontSize: 'var(--lbb-fs-10-5)', verticalAlign: 'top', userSelect: 'none',
                               }}>
                                 {item.num}
                               </td>
                             )}
-                            <td style={{ padding: '3px 0 3px 4px', color: 'var(--lbb-fg2)', fontSize: 11.5, lineHeight: 1.4 }}>
+                            <td style={{ padding: '3px 0 3px 4px', color: 'var(--lbb-fg2)', fontSize: 'var(--lbb-fs-11-5)', lineHeight: 1.4 }}>
                               {item.title}
                             </td>
                           </tr>
@@ -550,7 +550,7 @@ function EntryDetailPanel({ lbNumber, status, rating, owned, detail, loading, on
                     <button
                       type="button"
                       onClick={() => setSlExpanded(v => !v)}
-                      style={{ fontSize: 11, color: 'var(--lbb-accent-mid)', background: 'none', border: 'none', cursor: 'pointer', marginTop: 4, padding: 0 }}
+                      style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-accent-mid)', background: 'none', border: 'none', cursor: 'pointer', marginTop: 4, padding: 0 }}
                     >
                       {slExpanded ? 'Show less' : `Show ${items.length - SL_LIMIT} more…`}
                     </button>
@@ -564,7 +564,7 @@ function EntryDetailPanel({ lbNumber, status, rating, owned, detail, loading, on
             return (
               <div>
                 <div style={{
-                  fontSize: 10.5, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
+                  fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
                   color: 'var(--lbb-fg3)', marginBottom: 4,
                 }}>
                   Files ({files.length})
@@ -576,11 +576,11 @@ function EntryDetailPanel({ lbNumber, status, rating, owned, detail, loading, on
                         <td style={{
                           color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)',
                           padding: '3px 6px 3px 0', width: 22, textAlign: 'right',
-                          fontSize: 10.5, verticalAlign: 'top', userSelect: 'none',
+                          fontSize: 'var(--lbb-fs-10-5)', verticalAlign: 'top', userSelect: 'none',
                         }}>
                           {i + 1}
                         </td>
-                        <td style={{ padding: '3px 0 3px 4px', color: 'var(--lbb-fg2)', fontSize: 11.5, lineHeight: 1.4 }}>
+                        <td style={{ padding: '3px 0 3px 4px', color: 'var(--lbb-fg2)', fontSize: 'var(--lbb-fs-11-5)', lineHeight: 1.4 }}>
                           <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
                             <Icon
                               name={f.downloaded ? 'check' : 'x'} size={10}
@@ -599,7 +599,7 @@ function EntryDetailPanel({ lbNumber, status, rating, owned, detail, loading, on
                   <button
                     type="button"
                     onClick={() => setSlExpanded(v => !v)}
-                    style={{ fontSize: 11, color: 'var(--lbb-accent-mid)', background: 'none', border: 'none', cursor: 'pointer', marginTop: 4, padding: 0 }}
+                    style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-accent-mid)', background: 'none', border: 'none', cursor: 'pointer', marginTop: 4, padding: 0 }}
                   >
                     {slExpanded ? 'Show less' : `Show ${files.length - SL_LIMIT} more…`}
                   </button>
@@ -612,14 +612,14 @@ function EntryDetailPanel({ lbNumber, status, rating, owned, detail, loading, on
           {detail && detail.files.length > 0 && !!(e?.setlist && e.setlist.trim().length > 0) && (
             <div>
               <div style={{
-                fontSize: 10.5, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
+                fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
                 color: 'var(--lbb-fg3)', marginBottom: 4,
               }}>
                 Files ({detail.files.length})
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
                 {detail.files.map((f, i) => (
-                  <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 11.5 }}>
+                  <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 'var(--lbb-fs-11-5)' }}>
                     <Icon
                       name={f.downloaded ? 'check' : 'x'} size={10}
                       style={{ color: f.downloaded ? 'var(--lbb-ok-fg)' : 'var(--lbb-fg3)', flexShrink: 0 }}
@@ -635,7 +635,7 @@ function EntryDetailPanel({ lbNumber, status, rating, owned, detail, loading, on
 
           {/* No metadata yet */}
           {!e && (
-            <div style={{ fontSize: 12, color: 'var(--lbb-fg3)' }}>
+            <div style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg3)' }}>
               No metadata. Scrape this entry to populate details.
             </div>
           )}
@@ -995,7 +995,7 @@ export function ScreenSearch(): React.JSX.Element {
 
   const decadeItems = ['1960s','1970s','1980s','1990s','2000s','2010s','2020s'].map(d => ({ label: d, count: facetCounts.decadeC[d] }))
   const statusItems = (['Public','Private','Missing'] as MasterStatus[]).map(s  => ({ label: s, count: facetCounts.statusC[s] }))
-  const ratingItems = (['A','A−','B+','B','B−','C'] as RatingGrade[]).map(r    => ({ label: r, count: facetCounts.ratingC[r] }))
+  const ratingItems = (['A+','A','A-','B+','B','B-','C+','C','C-','D+','D','D-','F'] as RatingGrade[]).map(r => ({ label: r, count: facetCounts.ratingC[r] }))
 
   const sep = <span style={{ width: 1, height: 16, background: 'var(--lbb-border)', margin: '0 4px', flexShrink: 0 }} />
 
@@ -1016,7 +1016,7 @@ export function ScreenSearch(): React.JSX.Element {
         {/* Saved views */}
         <div style={{ borderBottom: '1px solid var(--lbb-border)', paddingBottom: 4 }}>
           <div style={{
-            fontSize: 10.5, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
+            fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
             color: 'var(--lbb-fg3)', padding: '10px 12px 6px',
           }}>
             Saved views
@@ -1027,7 +1027,7 @@ export function ScreenSearch(): React.JSX.Element {
               onClick={() => applyView(v.state)}
               style={{
                 display: 'flex', alignItems: 'center', gap: 7,
-                padding: '5px 12px', cursor: 'pointer', fontSize: 12,
+                padding: '5px 12px', cursor: 'pointer', fontSize: 'var(--lbb-fs-12)',
                 color: 'var(--lbb-fg2)',
               }}
             >
@@ -1041,7 +1041,7 @@ export function ScreenSearch(): React.JSX.Element {
               onClick={() => applyView(v.state)}
               style={{
                 display: 'flex', alignItems: 'center', gap: 7,
-                padding: '5px 12px', cursor: 'pointer', fontSize: 12,
+                padding: '5px 12px', cursor: 'pointer', fontSize: 'var(--lbb-fs-12)',
                 color: 'var(--lbb-fg2)',
               }}
             >
@@ -1061,7 +1061,7 @@ export function ScreenSearch(): React.JSX.Element {
             onClick={() => setSaveViewOpen(true)}
             style={{
               width: '100%', textAlign: 'left', display: 'block',
-              padding: '6px 12px', fontSize: 11.5, marginTop: 4,
+              padding: '6px 12px', fontSize: 'var(--lbb-fs-11-5)', marginTop: 4,
               background: 'none', cursor: 'pointer', color: 'var(--lbb-fg3)',
               border: 'none', borderTop: '1px dashed var(--lbb-border2)',
             }}
@@ -1078,7 +1078,7 @@ export function ScreenSearch(): React.JSX.Element {
         {/* Ownership segmented control */}
         <div style={{ borderBottom: '1px solid var(--lbb-border)', padding: '8px 12px' }}>
           <div style={{
-            fontSize: 10.5, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
+            fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
             color: 'var(--lbb-fg3)', marginBottom: 8,
           }}>
             Ownership
@@ -1088,7 +1088,7 @@ export function ScreenSearch(): React.JSX.Element {
               <button
                 key={opt} type="button" onClick={() => setOwnership(opt)}
                 style={{
-                  flex: 1, padding: '4px 0', fontSize: 11, cursor: 'pointer',
+                  flex: 1, padding: '4px 0', fontSize: 'var(--lbb-fs-11)', cursor: 'pointer',
                   background: ownership === opt ? 'var(--lbb-accent-soft)' : 'var(--lbb-surface)',
                   color: ownership === opt ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg2)',
                   fontWeight: ownership === opt ? 600 : 400,
@@ -1104,7 +1104,7 @@ export function ScreenSearch(): React.JSX.Element {
         {/* Year range */}
         <div style={{ borderBottom: '1px solid var(--lbb-border)' }}>
           <div style={{
-            fontSize: 10.5, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
+            fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
             color: 'var(--lbb-fg3)', padding: '8px 12px 4px',
           }}>
             Year range
@@ -1120,7 +1120,7 @@ export function ScreenSearch(): React.JSX.Element {
         <div style={{ borderBottom: '1px solid var(--lbb-border)', padding: '8px 12px' }}>
           <label style={{
             display: 'flex', alignItems: 'center', gap: 8,
-            cursor: 'pointer', fontSize: 12, color: 'var(--lbb-fg2)',
+            cursor: 'pointer', fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)',
           }}>
             <input
               type="checkbox"
@@ -1130,7 +1130,7 @@ export function ScreenSearch(): React.JSX.Element {
             />
             <span>Best per date</span>
           </label>
-          <div style={{ fontSize: 10.5, color: 'var(--lbb-fg3)', marginTop: 4, paddingLeft: 20 }}>
+          <div style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)', marginTop: 4, paddingLeft: 20 }}>
             Show only the highest-rated entry for each concert date
           </div>
         </div>
@@ -1202,7 +1202,7 @@ export function ScreenSearch(): React.JSX.Element {
                   {ALL_COLS.map(col => (
                     <label key={col} style={{
                       display: 'flex', alignItems: 'center', gap: 8,
-                      padding: '5px 14px', cursor: 'pointer', fontSize: 12, color: 'var(--lbb-fg2)',
+                      padding: '5px 14px', cursor: 'pointer', fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)',
                     }}>
                       <input
                         type="checkbox"
@@ -1231,10 +1231,10 @@ export function ScreenSearch(): React.JSX.Element {
             padding: '5px 14px', borderBottom: '1px solid var(--lbb-border)',
             flexShrink: 0, minHeight: 38,
           }}>
-            <span style={{ fontWeight: 700, fontSize: 12, color: 'var(--lbb-fg)' }}>
+            <span style={{ fontWeight: 700, fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg)' }}>
               {sortedRows.length.toLocaleString()} results
             </span>
-            <span style={{ fontSize: 12, color: 'var(--lbb-fg3)' }}>
+            <span style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg3)' }}>
               of {rows.length.toLocaleString()}
             </span>
             {filterChips.length > 0 && (
@@ -1244,7 +1244,7 @@ export function ScreenSearch(): React.JSX.Element {
               </>
             )}
             <div style={{ flex: 1 }} />
-            <span style={{ fontSize: 11.5, color: 'var(--lbb-fg3)' }}>Sort:</span>
+            <span style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>Sort:</span>
 
             {/* Sort popover */}
             <div ref={sortDropRef} style={{ position: 'relative' }}>
@@ -1264,7 +1264,7 @@ export function ScreenSearch(): React.JSX.Element {
                       onClick={() => { setSortKey(opt.key); setSortOpen(false) }}
                       style={{
                         display: 'block', width: '100%', textAlign: 'left',
-                        padding: '6px 14px', border: 'none', cursor: 'pointer', fontSize: 12,
+                        padding: '6px 14px', border: 'none', cursor: 'pointer', fontSize: 'var(--lbb-fs-12)',
                         background: sortKey === opt.key ? 'var(--lbb-accent-soft)' : 'none',
                         color: sortKey === opt.key ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg2)',
                         fontWeight: sortKey === opt.key ? 600 : 400,
@@ -1406,7 +1406,7 @@ export function ScreenSearch(): React.JSX.Element {
             {loading && rows.length === 0 && (
               <div style={{
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
-                height: '50%', color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)', fontSize: 12,
+                height: '50%', color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-12)',
               }}>
                 Loading…
               </div>
@@ -1421,8 +1421,8 @@ export function ScreenSearch(): React.JSX.Element {
               }}>
                 <Icon name="search" size={40} style={{ opacity: 0.2 }} />
                 <div style={{ textAlign: 'center' }}>
-                  <div style={{ fontSize: 15, fontWeight: 600, color: 'var(--lbb-fg2)' }}>No results</div>
-                  <div style={{ fontSize: 11.5, marginTop: 4 }}>Try adjusting your search or filters</div>
+                  <div style={{ fontSize: 'var(--lbb-fs-15)', fontWeight: 600, color: 'var(--lbb-fg2)' }}>No results</div>
+                  <div style={{ fontSize: 'var(--lbb-fs-11-5)', marginTop: 4 }}>Try adjusting your search or filters</div>
                 </div>
               </div>
             )}
@@ -1475,7 +1475,7 @@ export function ScreenSearch(): React.JSX.Element {
             }}
             style={{
               display: 'block', width: '100%', textAlign: 'left',
-              padding: '6px 14px', border: 'none', cursor: 'pointer', fontSize: 12,
+              padding: '6px 14px', border: 'none', cursor: 'pointer', fontSize: 'var(--lbb-fs-12)',
               background: 'none', color: 'var(--lbb-fg2)',
             }}
           >
