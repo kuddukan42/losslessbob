@@ -267,14 +267,18 @@ def _read_lb_txt(attachments_dir: Path, lb_number: int | None) -> str:
     prefix = f"LBF-{lb_number:05d}-" if lb_number is not None else ""
     candidates = [
         f for f in sorted(attachments_dir.iterdir())
-        if f.suffix.lower() == ".txt"
+        if f.suffixes == [".txt"]  # exclude double-ext files like .ffp.txt, .md5.txt
         and (not prefix or f.name.startswith(prefix))
         and "lbdir" not in f.name.lower()
     ]
     if not candidates:
         return ""
+    # Prefer the file that explicitly carries the LB number — it's the primary info file.
+    lb_tag = f"LB-{lb_number}" if lb_number is not None else ""
+    preferred = [f for f in candidates if lb_tag and lb_tag in f.name]
+    chosen = preferred[0] if preferred else candidates[0]
     try:
-        text = candidates[0].read_text(encoding="utf-8", errors="replace").strip()
+        text = chosen.read_text(encoding="utf-8", errors="replace").strip()
         lines = text.splitlines()
         # Skip the first line (e.g. "Bob Dylan, date, location, NCdr")
         start = 1
@@ -441,6 +445,26 @@ def _extract_smf_error(soup: BeautifulSoup) -> str:
 # Public API: preview (no network)
 # ---------------------------------------------------------------------------
 
+def _build_subject(lb_number: int, entry: dict) -> str:
+    """Build the forum topic subject line for an LB entry.
+
+    For BOOTLEG entries (entry contains 'bootleg_title'), uses the bootleg
+    title in place of the concert location.
+    """
+    from backend.torrent_maker import _parse_date
+    lb_id = f"LB-{lb_number:05d}"
+    date_str = entry.get("date_str") or ""
+    iso_date = _parse_date(date_str)
+    # Prefer bootleg_title (set by caller for BOOTLEG entries) over location
+    bootleg_title = (entry.get("bootleg_title") or "").strip()
+    label = (f"BOOTLEG: {bootleg_title}" if bootleg_title else (entry.get("location") or "")).strip()
+    if iso_date and label:
+        return f"{iso_date} {label} ({lb_id})"
+    if label:
+        return f"{label} ({lb_id})"
+    return lb_id
+
+
 def preview_lb_topic(
     lb_number: int,
     entry: dict,
@@ -451,23 +475,13 @@ def preview_lb_topic(
     Args:
         lb_number: LosslessBob entry number.
         entry: Dict from the entries table (date_str, location, …).
+            Caller may add 'bootleg_title' for BOOTLEG entries.
         attachments_dir: Path to data/site/files/ (for body text).
 
     Returns:
         Dict with keys: subject (str), body (str).
     """
-    lb_id = f"LB-{lb_number:05d}"
-    date_str = entry.get("date_str") or ""
-    location = (entry.get("location") or "").strip()
-
-    from backend.torrent_maker import _parse_date
-    iso_date = _parse_date(date_str)
-    if iso_date and location:
-        subject = f"{iso_date} {location} ({lb_id})"
-    elif location:
-        subject = f"{location} ({lb_id})"
-    else:
-        subject = lb_id
+    subject = _build_subject(lb_number, entry)
 
     attach_path = Path(attachments_dir) if attachments_dir else None
     body = _build_body(entry, attach_path, lb_number)
@@ -512,19 +526,7 @@ def post_lb_topic(
     lb_id = f"LB-{lb_number:05d}"
 
     # --- Build subject ---
-    if subject_override:
-        subject = subject_override
-    else:
-        date_str = entry.get("date_str") or ""
-        location = (entry.get("location") or "").strip()
-        from backend.torrent_maker import _parse_date
-        iso_date = _parse_date(date_str)
-        if iso_date and location:
-            subject = f"{iso_date} {location} ({lb_id})"
-        elif location:
-            subject = f"{location} ({lb_id})"
-        else:
-            subject = lb_id
+    subject = subject_override if subject_override else _build_subject(lb_number, entry)
 
     # --- Login ---
     session = _get_session(username, password)

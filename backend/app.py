@@ -18,6 +18,7 @@ from backend import bootleg_scraper
 from backend import bobdylan_scraper
 from backend import setlistfm as setlistfm_mod
 from backend import site_crawler
+from backend import sharing, archive_org as _archive_org
 
 from backend.paths import DATA_DIR, SITE_DIR, SITE_FILES_DIR, attachment_path, find_lbdir_attachment
 
@@ -637,7 +638,7 @@ def create_app() -> Flask:
             conn = database.get_connection()
             rows = conn.execute(
                 """
-                SELECT ef.lb_number, ef.filename, ef.clean_name, lm.lb_status
+                SELECT ef.lb_number, ef.filename, ef.clean_name, ef.downloaded, lm.lb_status
                 FROM entry_files ef
                 LEFT JOIN lb_master lm ON lm.lb_number = ef.lb_number
                 WHERE ef.downloaded = 1
@@ -1295,6 +1296,49 @@ def create_app() -> Flask:
             if FP_DB_PATH.exists():
                 os.remove(FP_DB_PATH)
             return jsonify({"ok": True})
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/purge/stats", methods=["GET"])
+    def purge_stats() -> Response:
+        """Return row counts for each purgeable data group, plus recoverable disk bytes."""
+        try:
+            conn = database.get_connection()
+
+            def count(table: str) -> int:
+                return conn.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0]
+
+            lookup = count("rename_history")
+            import_log = count("flat_file_releases") + count("flat_file_changelog")
+            scraper = count("scrape_sessions") + count("site_inventory")
+            collection_rows = (
+                count("my_collection") + count("my_wishlist") + count("collection_meta")
+                + count("integrity_events") + count("entry_changes")
+            )
+
+            fp_count = 0
+            try:
+                from backend import fingerprint as _fp
+                fp_count = _fp.get_fp_stats().get("track_count", 0)
+            except Exception:
+                pass
+
+            # Recoverable disk bytes: scraper HTML cache + fingerprint DB
+            from backend.paths import SITE_DIR, FP_DB_PATH
+            recoverable = 0
+            if SITE_DIR.exists():
+                recoverable += sum(f.stat().st_size for f in SITE_DIR.rglob("*") if f.is_file())
+            if FP_DB_PATH.exists():
+                recoverable += FP_DB_PATH.stat().st_size
+
+            return jsonify({
+                "lookup_history":    lookup,
+                "import_log":        import_log,
+                "scraper_cache":     scraper,
+                "fingerprint_cache": fp_count,
+                "all_user_data":     lookup + import_log + scraper + fp_count + collection_rows,
+                "recoverable_bytes": recoverable,
+            })
         except Exception as exc:
             return jsonify({"error": str(exc)}), 500
 
@@ -1958,6 +2002,10 @@ def create_app() -> Flask:
                         "lb_number": lb_number,
                         "lbdir_found": False,
                         "lbdir_path": None,
+                        "status": "no_lbdir",
+                        "mode": "unknown",
+                        "total": 0, "pass": 0, "mismatch": 0, "missing": 0,
+                        "extra": 0, "missing_types": [], "files": [],
                         "error": "No lbdir*.txt found in folder",
                     })
                     continue
@@ -2625,6 +2673,11 @@ def create_app() -> Flask:
             if not lb or not folder:
                 return jsonify({"error": "lb_number and source_folder required"}), 400
             result = make_torrent(int(lb), folder, tracker_list=tracker_list)
+            # Null out torrent_path on older sibling records that share the new file path
+            # so they stop falsely reporting torrent_file_exists=True.
+            database.clear_superseded_torrent_paths(
+                int(lb), result["torrent_id"], result["torrent_path"]
+            )
             return jsonify({"ok": True, **result})
         except Exception as exc:
             return jsonify({"ok": False, "error": str(exc)}), 500
@@ -2751,14 +2804,15 @@ def create_app() -> Flask:
     def qbt_remove(torrent_id: int) -> Response:
         """Remove a torrent from qBittorrent (content files are NOT deleted).
 
-        Uses the stored infohash. Clears added_to_qbt on success.
+        Uses the stored infohash. Clears added_to_qbt on success, and also
+        when qBittorrent confirms the torrent is already gone (manual removal).
         Body: {host?, port?, username?, password?, api_key?}
         Returns: {ok, error?}
         """
         try:
-            from backend.qbittorrent import remove_torrent
+            from backend.qbittorrent import remove_torrent, check_torrent_presence
             from backend.credentials import get_credentials, SERVICE_QBT, SERVICE_QBT_KEY
-            data = request.get_json() or {}
+            data = request.get_json(silent=True) or {}
             host = data.get("host") or database.get_meta("qbt_host") or "localhost"
             port = int(data.get("port") or database.get_meta("qbt_port") or 8080)
             api_key = data.get("api_key") or ""
@@ -2785,9 +2839,65 @@ def create_app() -> Flask:
                 database.update_torrent_record(
                     torrent_id, {"added_to_qbt": 0, "added_to_qbt_at": None}
                 )
+            else:
+                # Remove failed — check if the torrent is simply already gone from qBittorrent
+                # (e.g. user removed it manually). If absent, still clear the DB flag.
+                check = check_torrent_presence(
+                    infohash=row["infohash"] or "",
+                    host=host, port=port,
+                    username=username, password=password, api_key=api_key,
+                )
+                if check.get("ok") and not check.get("present"):
+                    database.update_torrent_record(
+                        torrent_id, {"added_to_qbt": 0, "added_to_qbt_at": None}
+                    )
+                    result = {"ok": True}
             return jsonify(result)
         except Exception as exc:
             return jsonify({"ok": False, "error": str(exc)}), 500
+
+    @app.route("/api/torrent/<int:torrent_id>/qbt_check", methods=["GET"])
+    def qbt_check(torrent_id: int) -> Response:
+        """Check whether a torrent is present in qBittorrent and sync the DB flag.
+
+        Returns: {ok, present, synced, error?}
+        synced=True means added_to_qbt was cleared because the torrent was gone.
+        """
+        try:
+            from backend.qbittorrent import check_torrent_presence
+            from backend.credentials import get_credentials, SERVICE_QBT, SERVICE_QBT_KEY
+            host = database.get_meta("qbt_host") or "localhost"
+            port = int(database.get_meta("qbt_port") or 8080)
+            _, api_key = get_credentials(SERVICE_QBT_KEY)
+            username, password = "", ""
+            if not api_key:
+                username, password = get_credentials(SERVICE_QBT)
+
+            conn = database.get_connection()
+            row = conn.execute(
+                "SELECT infohash, added_to_qbt FROM torrents WHERE id=?", (torrent_id,)
+            ).fetchone()
+            if not row:
+                return jsonify({"ok": False, "present": False, "synced": False,
+                                "error": f"No torrent record id={torrent_id}"}), 404
+
+            result = check_torrent_presence(
+                infohash=row["infohash"] or "",
+                host=host, port=port,
+                username=username, password=password, api_key=api_key,
+            )
+
+            synced = False
+            if result.get("ok") and not result.get("present") and row["added_to_qbt"]:
+                database.update_torrent_record(
+                    torrent_id, {"added_to_qbt": 0, "added_to_qbt_at": None}
+                )
+                synced = True
+
+            return jsonify({**result, "synced": synced})
+        except Exception as exc:
+            return jsonify({"ok": False, "present": False, "synced": False,
+                            "error": str(exc)}), 500
 
     @app.route("/api/torrent/<int:torrent_id>/file", methods=["DELETE"])
     def torrent_file_delete(torrent_id: int) -> Response:
@@ -2810,6 +2920,36 @@ def create_app() -> Flask:
                 if p.exists():
                     p.unlink()
             database.update_torrent_record(torrent_id, {"torrent_path": None})
+            return jsonify({"ok": True})
+        except Exception as exc:
+            return jsonify({"ok": False, "error": str(exc)}), 500
+
+    @app.route("/api/torrent/<int:torrent_id>", methods=["DELETE"])
+    def torrent_record_delete(torrent_id: int) -> Response:
+        """Delete a torrent DB record and its .torrent file if present.
+
+        Blocked when added_to_qbt=1 — remove from qBittorrent first.
+        Returns: {ok, error?}
+        """
+        try:
+            conn = database.get_connection()
+            row = conn.execute(
+                "SELECT torrent_path, added_to_qbt FROM torrents WHERE id=?", (torrent_id,)
+            ).fetchone()
+            if not row:
+                return jsonify({"ok": False, "error": f"No torrent record id={torrent_id}"}), 404
+            if row["added_to_qbt"]:
+                return jsonify({
+                    "ok": False,
+                    "error": "Remove from qBittorrent before deleting this record.",
+                }), 400
+
+            torrent_path = row["torrent_path"]
+            if torrent_path:
+                p = Path(torrent_path)
+                if p.exists():
+                    p.unlink()
+            database.delete_torrent_record(torrent_id)
             return jsonify({"ok": True})
         except Exception as exc:
             return jsonify({"ok": False, "error": str(exc)}), 500
@@ -2932,7 +3072,10 @@ def create_app() -> Flask:
             entry_data = database.get_entry(lb)
             if not entry_data:
                 return jsonify({"ok": False, "error": f"Entry LB-{lb} not found"}), 404
-            entry = entry_data["entry"]
+            entry = dict(entry_data["entry"])
+            bootlegs = database.get_bootlegs_for_lb(lb)
+            if bootlegs:
+                entry["bootleg_title"] = bootlegs[0]["title"]
             result = preview_lb_topic(lb_number=lb, entry=entry, attachments_dir=SITE_FILES_DIR)
             return jsonify(result)
         except Exception as exc:
@@ -2980,7 +3123,10 @@ def create_app() -> Flask:
             entry_data = database.get_entry(lb)
             if not entry_data:
                 return jsonify({"ok": False, "error": f"Entry LB-{lb} not found"}), 404
-            entry = entry_data["entry"]
+            entry = dict(entry_data["entry"])
+            bootlegs = database.get_bootlegs_for_lb(lb)
+            if bootlegs:
+                entry["bootleg_title"] = bootlegs[0]["title"]
 
             # Resolve torrent file
             torrent_id = data.get("torrent_id")
@@ -3937,6 +4083,44 @@ def create_app() -> Flask:
         except ImportError:
             return jsonify({"error": "geocoder module not available"}), 503
 
+    @app.route("/api/geocode/stats")
+    def api_geocode_stats():
+        """Return cache and coverage stats for the geocoder tab.
+
+        Returns:
+            JSON dict with keys: total_cached, geocoded, failed, manual,
+            entries_total, entries_covered, pct_covered.
+        """
+        try:
+            conn = database.get_connection()
+            row = conn.execute("""
+                SELECT
+                    COUNT(*)                                          AS total_cached,
+                    SUM(CASE WHEN lat IS NOT NULL THEN 1 ELSE 0 END) AS geocoded,
+                    SUM(CASE WHEN lat IS NULL     THEN 1 ELSE 0 END) AS failed,
+                    SUM(CASE WHEN manual_override = 1 THEN 1 ELSE 0 END) AS manual
+                FROM location_geocoded
+            """).fetchone()
+            cov = conn.execute("""
+                SELECT
+                    COUNT(DISTINCT e.location)                       AS entries_total,
+                    COUNT(DISTINCT CASE WHEN g.lat IS NOT NULL
+                        THEN e.location END)                         AS entries_covered
+                FROM entries e
+                LEFT JOIN location_geocoded g ON g.location_text = e.location
+                WHERE e.location IS NOT NULL AND e.location != ''
+            """).fetchone()
+            result = dict(row) if row else {}
+            if cov:
+                result["entries_total"]   = cov["entries_total"]
+                result["entries_covered"] = cov["entries_covered"]
+                total = cov["entries_total"] or 0
+                covered = cov["entries_covered"] or 0
+                result["pct_covered"] = round(covered / total * 100, 1) if total else 0
+            return jsonify(result)
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
     @app.route("/api/geocode/location", methods=["POST"])
     def api_geocode_location():
         """Manually place a location's coordinates.
@@ -4519,7 +4703,7 @@ def create_app() -> Flask:
         Returns:
             JSON {folders: [str, ...]} sorted alphabetically
         """
-        _AUDIO = {'.flac', '.mp3', '.wav', '.m4a', '.aiff', '.ape', '.ogg', '.wv'}
+        _AUDIO = {'.flac', '.shn', '.mp3', '.wav', '.m4a', '.aiff', '.ape', '.ogg', '.wv'}
         try:
             data = request.get_json() or {}
             root = Path(data.get("root", ""))
@@ -5082,6 +5266,429 @@ def create_app() -> Flask:
             return jsonify({"shows": shows, "tracks": tracks, "tours": tours})
         except Exception as e:
             return jsonify({"error": str(e)}), 500
+
+    # ── Collection Trading ────────────────────────────────────────────────────
+
+    @app.route("/api/trading/export", methods=["GET"])
+    def trading_export():
+        """Export the user's collection as a .lbcollection JSON blob.
+
+        Returns:
+            JSON: {losslessbob_collection, export_version, exported_at, entries}
+        """
+        try:
+            conn = database.get_connection()
+            rows = conn.execute(
+                "SELECT lb_number, date_str, location, lb_status FROM my_collection ORDER BY lb_number"
+            ).fetchall()
+            import datetime as _dt
+            return jsonify({
+                "losslessbob_collection": True,
+                "export_version": 1,
+                "exported_at": _dt.datetime.now(_dt.timezone.utc).isoformat(),
+                "entries": [
+                    {"lb_number": r[0], "date_str": r[1], "location": r[2], "lb_status": r[3]}
+                    for r in rows
+                ],
+            })
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/trading/friends", methods=["GET"])
+    def trading_friends_list():
+        """List all stored friend collections.
+
+        Returns:
+            JSON: [{id, friend_name, imported_at, updated_at, lb_count}]
+        """
+        try:
+            conn = database.get_connection()
+            rows = conn.execute(
+                "SELECT id, friend_name, imported_at, updated_at, lb_count FROM friend_collections ORDER BY friend_name"
+            ).fetchall()
+            return jsonify([
+                {"id": r[0], "friend_name": r[1], "imported_at": r[2], "updated_at": r[3], "lb_count": r[4]}
+                for r in rows
+            ])
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/trading/friends", methods=["POST"])
+    def trading_friends_upsert():
+        """Import or update a friend's collection.
+
+        Request JSON: {friend_name: str, entries: [{lb_number, date_str?, location?, lb_status?}]}
+
+        Returns:
+            JSON: {ok, friend_id}
+        """
+        try:
+            data = request.get_json(force=True)
+            friend_name = str(data.get("friend_name", "")).strip()
+            entries = data.get("entries", [])
+            if not friend_name:
+                return jsonify({"error": "friend_name required"}), 400
+
+            import datetime as _dt
+            conn = database.get_connection()
+            now = _dt.datetime.now(_dt.timezone.utc).isoformat()
+            existing = conn.execute(
+                "SELECT id FROM friend_collections WHERE friend_name = ?", (friend_name,)
+            ).fetchone()
+
+            if existing:
+                friend_id = existing[0]
+                conn.execute(
+                    "UPDATE friend_collections SET updated_at = ?, lb_count = ? WHERE id = ?",
+                    (now, len(entries), friend_id),
+                )
+                conn.execute("DELETE FROM friend_collection_entries WHERE friend_id = ?", (friend_id,))
+            else:
+                cur = conn.execute(
+                    "INSERT INTO friend_collections (friend_name, lb_count) VALUES (?, ?)",
+                    (friend_name, len(entries)),
+                )
+                friend_id = cur.lastrowid
+
+            conn.executemany(
+                "INSERT OR IGNORE INTO friend_collection_entries (friend_id, lb_number, date_str, location, lb_status) VALUES (?, ?, ?, ?, ?)",
+                [
+                    (friend_id, e.get("lb_number"), e.get("date_str"), e.get("location"), e.get("lb_status"))
+                    for e in entries if e.get("lb_number")
+                ],
+            )
+            conn.commit()
+            return jsonify({"ok": True, "friend_id": friend_id})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/trading/friends/<int:friend_id>", methods=["DELETE"])
+    def trading_friends_delete(friend_id):
+        """Remove a stored friend collection.
+
+        Args:
+            friend_id: Row ID in friend_collections.
+
+        Returns:
+            JSON: {ok}
+        """
+        try:
+            conn = database.get_connection()
+            conn.execute("DELETE FROM friend_collections WHERE id = ?", (friend_id,))
+            conn.commit()
+            return jsonify({"ok": True})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/trading/compare/<int:friend_id>", methods=["GET"])
+    def trading_compare(friend_id):
+        """Diff the user's collection against a friend's.
+
+        Args:
+            friend_id: Row ID in friend_collections.
+
+        Returns:
+            JSON: {friend_name, you_have_they_dont, they_have_you_dont, both_have_count}
+        """
+        try:
+            conn = database.get_connection()
+            row = conn.execute(
+                "SELECT friend_name FROM friend_collections WHERE id = ?", (friend_id,)
+            ).fetchone()
+            if not row:
+                return jsonify({"error": "friend not found"}), 404
+            friend_name = row[0]
+
+            mine = {r[0] for r in conn.execute("SELECT lb_number FROM my_collection").fetchall()}
+            theirs = {r[0] for r in conn.execute(
+                "SELECT lb_number FROM friend_collection_entries WHERE friend_id = ?", (friend_id,)
+            ).fetchall()}
+
+            def _enrich(lb_numbers):
+                if not lb_numbers:
+                    return []
+                result = []
+                for lb in sorted(lb_numbers):
+                    r = conn.execute(
+                        "SELECT mc.lb_number, mc.date_str, mc.location, mc.lb_status "
+                        "FROM my_collection mc WHERE mc.lb_number = ? "
+                        "UNION SELECT fce.lb_number, fce.date_str, fce.location, fce.lb_status "
+                        "FROM friend_collection_entries fce WHERE fce.friend_id = ? AND fce.lb_number = ?",
+                        (lb, friend_id, lb),
+                    ).fetchone()
+                    if r:
+                        result.append({"lb_number": r[0], "date_str": r[1], "location": r[2], "lb_status": r[3]})
+                    else:
+                        result.append({"lb_number": lb, "date_str": None, "location": None, "lb_status": None})
+                return result
+
+            you_have = mine - theirs
+            they_have = theirs - mine
+            both = mine & theirs
+
+            return jsonify({
+                "friend_name": friend_name,
+                "you_have_they_dont": _enrich(you_have),
+                "they_have_you_dont": _enrich(they_have),
+                "both_have_count": len(both),
+            })
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    # ── File Sharing ──────────────────────────────────────────────────────────
+
+    sharing.load_persisted_shares()
+
+    @app.route("/api/share/create", methods=["POST"])
+    def share_create():
+        """Create a new file share for a collection entry folder.
+
+        Request JSON: {lb_number: int, ttl_hours?: int, use_tunnel?: bool}
+
+        Returns:
+            JSON: {token, share_url, tunnel_url?, files, expires_at}
+        """
+        try:
+            data = request.get_json(force=True)
+            lb_number = int(data.get("lb_number", 0))
+            ttl_hours = int(data.get("ttl_hours", sharing.DEFAULT_TTL_HOURS))
+            use_tunnel = bool(data.get("use_tunnel", False))
+
+            conn = database.get_connection()
+            row = conn.execute(
+                "SELECT disk_path FROM my_collection WHERE lb_number = ?", (lb_number,)
+            ).fetchone()
+            if not row or not row[0]:
+                return jsonify({"error": "lb_number not found in collection or no disk_path"}), 404
+
+            folder_path = row[0]
+            if not Path(folder_path).is_dir():
+                return jsonify({"error": f"folder not found: {folder_path}"}), 404
+
+            tunnel_url = None
+            if use_tunnel and not sharing.is_tunnel_alive():
+                tunnel_url = sharing.start_cloudflare_tunnel()
+            elif sharing.is_tunnel_alive():
+                tunnel_url = sharing._tunnel_url
+
+            result = sharing.create_share(folder_path, ttl_hours=ttl_hours, lb_number=lb_number)
+            token = result["token"]
+
+            base = tunnel_url or request.host_url.rstrip("/")
+            share_url = f"{base}/api/share/{token}/"
+
+            return jsonify({
+                "token": token,
+                "share_url": share_url,
+                "tunnel_url": tunnel_url,
+                "files": result["files"],
+                "expires_at": result["expires_at"],
+            })
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/share/<token>/", methods=["GET"])
+    def share_listing(token):
+        """Serve the self-contained HTML file listing for a share.
+
+        Args:
+            token: Share token.
+        """
+        share = sharing.get_share(token)
+        if share is None:
+            abort(404)
+        base_url = request.url.rstrip("/")
+        html = sharing.render_listing(token, share, base_url)
+        return Response(html, mimetype="text/html")
+
+    @app.route("/api/share/<token>/file/<path:filename>", methods=["GET"])
+    def share_file(token, filename):
+        """Serve a single audio file from a share (supports Range / 206).
+
+        Args:
+            token: Share token.
+            filename: Bare filename within the share folder.
+        """
+        share = sharing.get_share(token)
+        if share is None:
+            abort(404)
+        if filename not in share["files"]:
+            abort(404)
+        full_path = Path(share["folder_path"]) / filename
+        return send_file(full_path, conditional=True, as_attachment=True)
+
+    @app.route("/api/share/<token>/zip", methods=["GET"])
+    def share_zip(token):
+        """Stream the entire share as a ZIP archive (chunked transfer).
+
+        Args:
+            token: Share token.
+        """
+        share = sharing.get_share(token)
+        if share is None:
+            abort(404)
+        lb = share.get("lb_number") or "share"
+        disposition = f'attachment; filename="LB-{lb:05d}.zip"' if isinstance(lb, int) else f'attachment; filename="{lb}.zip"'
+        return Response(
+            stream_with_context(sharing.stream_zip(share["folder_path"], share["files"])),
+            mimetype="application/zip",
+            headers={"Content-Disposition": disposition},
+        )
+
+    @app.route("/api/share/list", methods=["GET"])
+    def share_list():
+        """Return JSON list of all active shares for GUI status display.
+
+        Returns:
+            JSON: [{token, folder_path, files, expires_at, lb_number, tunnel_url}]
+        """
+        return jsonify(sharing.list_shares())
+
+    @app.route("/api/share/<token>", methods=["DELETE"])
+    def share_revoke(token):
+        """Revoke a share and stop tunnel if no shares remain.
+
+        Args:
+            token: Share token.
+
+        Returns:
+            JSON: {ok}
+        """
+        sharing.revoke_share(token)
+        return jsonify({"ok": True})
+
+    @app.route("/api/share/tunnel/status", methods=["GET"])
+    def share_tunnel_status():
+        """Return Cloudflare Tunnel availability and current state.
+
+        Returns:
+            JSON: {cloudflared_available, tunnel_alive, tunnel_url, named_tunnel}
+        """
+        return jsonify({
+            "cloudflared_available": sharing.cloudflared_available(),
+            "tunnel_alive": sharing.is_tunnel_alive(),
+            "tunnel_url": sharing._tunnel_url,
+            "named_tunnel": sharing.named_tunnel_running(),
+        })
+
+    # ── Archive.org Upload ────────────────────────────────────────────────────
+
+    @app.route("/api/archive_org/credentials", methods=["POST"])
+    def archive_org_save_credentials():
+        """Save archive.org S3 credentials to keyring.
+
+        Body: {access_key, secret_key}
+        Returns: {ok, label}
+        """
+        from backend.credentials import save_credentials, SERVICE_IA
+        data = request.get_json(force=True) or {}
+        access_key = data.get("access_key", "").strip()
+        secret_key = data.get("secret_key", "").strip()
+        if not access_key or not secret_key:
+            return jsonify({"ok": False, "error": "access_key and secret_key required"}), 400
+        result = save_credentials(SERVICE_IA, access_key, secret_key)
+        return jsonify({"ok": result.ok, "label": result.label})
+
+    @app.route("/api/archive_org/credentials", methods=["GET"])
+    def archive_org_check_credentials():
+        """Return whether archive.org credentials are stored.
+
+        Returns: {stored: bool}
+        """
+        from backend.credentials import credentials_stored, SERVICE_IA
+        return jsonify({"stored": credentials_stored(SERVICE_IA)})
+
+    @app.route("/api/archive_org/credentials", methods=["DELETE"])
+    def archive_org_delete_credentials():
+        """Clear stored archive.org credentials.
+
+        Returns: {ok: bool}
+        """
+        from backend.credentials import delete_credentials, SERVICE_IA
+        delete_credentials(SERVICE_IA)
+        return jsonify({"ok": True})
+
+    @app.route("/api/archive_org/test", methods=["POST"])
+    def archive_org_test():
+        """Test archive.org S3 credentials.
+
+        Body: {access_key?, secret_key?} — if omitted, uses stored credentials.
+        Returns: {ok, error?}
+        """
+        from backend.credentials import get_credentials, SERVICE_IA
+        data = request.get_json(force=True) or {}
+        access_key = data.get("access_key", "").strip()
+        secret_key = data.get("secret_key", "").strip()
+        if not access_key or not secret_key:
+            access_key, secret_key = get_credentials(SERVICE_IA)
+        if not access_key or not secret_key:
+            return jsonify({"ok": False, "error": "No credentials provided or stored"}), 400
+        return jsonify(_archive_org.test_credentials(access_key, secret_key))
+
+    @app.route("/api/archive_org/upload", methods=["POST"])
+    def archive_org_upload():
+        """Start an async archive.org upload for one LB entry.
+
+        Body: {lb_number, folder_path, identifier?, collection?, title?, subject?,
+               access_key?, secret_key?}
+        Returns: {ok, error?}
+        """
+        from backend.credentials import get_credentials, SERVICE_IA
+        data = request.get_json(force=True) or {}
+        lb_number = data.get("lb_number")
+        folder_path = data.get("folder_path", "").strip()
+        if not lb_number or not folder_path:
+            return jsonify({"ok": False, "error": "lb_number and folder_path required"}), 400
+
+        access_key = data.get("access_key", "").strip()
+        secret_key = data.get("secret_key", "").strip()
+        if not access_key or not secret_key:
+            access_key, secret_key = get_credentials(SERVICE_IA)
+        if not access_key or not secret_key:
+            return jsonify({"ok": False, "error": "No credentials provided or stored"}), 400
+
+        result = _archive_org.upload_lb(
+            lb_number=int(lb_number),
+            folder_path=folder_path,
+            access_key=access_key,
+            secret_key=secret_key,
+            identifier=data.get("identifier") or None,
+            collection=data.get("collection") or _archive_org.IA_DEFAULT_COLLECTION,
+            title=data.get("title") or None,
+            subject=data.get("subject") or "Bob Dylan;lossless;bootleg;losslessbob",
+            database=database,
+        )
+        return jsonify(result), (200 if result.get("ok") else 400)
+
+    @app.route("/api/archive_org/status", methods=["GET"])
+    def archive_org_status():
+        """Return current archive.org upload progress.
+
+        Returns: {running, lb_number, identifier, current_file, files_done,
+                  files_total, bytes_done, bytes_total, status, error, stop_requested}
+        """
+        return jsonify(_archive_org.get_status())
+
+    @app.route("/api/archive_org/stop", methods=["POST"])
+    def archive_org_stop():
+        """Request the running archive.org upload to stop after the current file.
+
+        Returns: {ok}
+        """
+        _archive_org.stop_upload()
+        return jsonify({"ok": True})
+
+    @app.route("/api/archive_org/uploads", methods=["GET"])
+    def archive_org_uploads():
+        """Return archive upload history rows, newest first.
+
+        Query params: lb=<int> to filter by LB number.
+        Returns: [{id, lb_number, identifier, folder_path, files_total,
+                   files_uploaded, status, started_at, finished_at, error,
+                   date_str?, location?}]
+        """
+        lb = request.args.get("lb", type=int)
+        return jsonify(database.get_archive_uploads(lb_number=lb))
 
     _slog.t("Flask: create_app done")
     return app

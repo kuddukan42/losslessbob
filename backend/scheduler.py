@@ -1,3 +1,4 @@
+import logging
 import threading
 import time
 from pathlib import Path
@@ -109,65 +110,65 @@ def stop_file_watcher():
         _observer = None
 
 
-# ── Collection folder integrity watchdog ──────────────────────────────────────
+# ── Collection folder integrity poller ────────────────────────────────────────
 
-_collection_observer = None
+_collection_poll_stop: threading.Event | None = None
+_collection_poll_thread: threading.Thread | None = None
+
+_COLLECTION_POLL_INTERVAL = 60  # seconds
 
 
-class _CollectionEventHandler(FileSystemEventHandler):
-    def __init__(self, lb_number: int, disk_path: str):
-        super().__init__()
-        self.lb_number = lb_number
-        self.disk_path = disk_path
-
-    def on_deleted(self, event):
-        from backend.db import log_integrity_event
-        log_integrity_event(
-            self.lb_number, self.disk_path,
-            "deleted", f"Deleted: {event.src_path}",
-        )
-
-    def on_moved(self, event):
-        from backend.db import log_integrity_event
-        log_integrity_event(
-            self.lb_number, self.disk_path,
-            "moved", f"Moved: {event.src_path} -> {event.dest_path}",
-        )
+def _collection_poll_worker(stop_event: threading.Event, db_path=None) -> None:
+    from backend.db import get_connection, log_integrity_event
+    reported_missing: set[int] = set()
+    while not stop_event.wait(_COLLECTION_POLL_INTERVAL):
+        try:
+            with get_connection(db_path) as conn:
+                rows = conn.execute(
+                    "SELECT lb_number, disk_path FROM my_collection WHERE disk_path IS NOT NULL"
+                ).fetchall()
+        except Exception:
+            logging.exception("collection_poll: DB query failed")
+            continue
+        current_ids = {row["lb_number"] for row in rows}
+        reported_missing &= current_ids
+        for row in rows:
+            lb = row["lb_number"]
+            dp = Path(row["disk_path"])
+            if not dp.exists():
+                if lb not in reported_missing:
+                    reported_missing.add(lb)
+                    try:
+                        log_integrity_event(
+                            lb, row["disk_path"],
+                            "missing", f"Path no longer accessible: {dp}",
+                        )
+                    except Exception:
+                        logging.exception("collection_poll: log_integrity_event failed")
+            else:
+                reported_missing.discard(lb)
 
 
 def start_collection_watcher(db_path=None):
-    """Watch every disk_path in my_collection for deletions and moves."""
-    global _collection_observer
-    from backend.db import get_connection, DB_PATH
-    if _collection_observer and _collection_observer.is_alive():
-        _collection_observer.stop()
-        _collection_observer.join()
-    import sys as _sys
-    if _sys.platform == "win32":
-        try:
-            from watchdog.observers.winapi import WindowsApiObserver
-            obs = WindowsApiObserver()
-        except ImportError:
-            obs = Observer()
-    else:
-        obs = Observer()
-    with get_connection(db_path) as conn:
-        rows = conn.execute(
-            "SELECT lb_number, disk_path FROM my_collection WHERE disk_path IS NOT NULL"
-        ).fetchall()
-    for row in rows:
-        dp = Path(row["disk_path"])
-        if dp.is_dir():
-            handler = _CollectionEventHandler(row["lb_number"], row["disk_path"])
-            obs.schedule(handler, str(dp), recursive=False)
-    obs.daemon = True
-    obs.start()
-    _collection_observer = obs
+    """Poll every disk_path in my_collection for missing folders."""
+    global _collection_poll_stop, _collection_poll_thread
+    stop_collection_watcher()
+    _collection_poll_stop = threading.Event()
+    _collection_poll_thread = threading.Thread(
+        target=_collection_poll_worker,
+        args=(_collection_poll_stop,),
+        kwargs={"db_path": db_path},
+        daemon=True,
+        name="collection-poll",
+    )
+    _collection_poll_thread.start()
 
 
 def stop_collection_watcher():
-    global _collection_observer
-    if _collection_observer:
-        _collection_observer.stop()
-        _collection_observer.join()
-        _collection_observer = None
+    global _collection_poll_stop, _collection_poll_thread
+    if _collection_poll_stop:
+        _collection_poll_stop.set()
+    if _collection_poll_thread:
+        _collection_poll_thread.join(timeout=5)
+    _collection_poll_stop = None
+    _collection_poll_thread = None
