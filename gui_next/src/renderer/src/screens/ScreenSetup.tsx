@@ -67,7 +67,7 @@ function Toast({ msg, tone, onDone }: { msg: string; tone: 'ok' | 'bad' | 'info'
     <div style={{
       position: 'fixed', bottom: 24, right: 24, zIndex: 999,
       background: bg, border: `1px solid ${border}`, borderRadius: 8,
-      padding: '10px 16px', color, fontSize: 13, fontWeight: 500,
+      padding: '10px 16px', color, fontSize: 'var(--lbb-fs-13)', fontWeight: 500,
       boxShadow: '0 4px 16px rgba(0,0,0,0.15)', maxWidth: 360,
     }}>
       {msg}
@@ -90,8 +90,8 @@ function ConfirmDialog({ title, body, onConfirm, onCancel }: {
         borderRadius: 10, padding: 24, maxWidth: 440, width: '90%',
         boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
       }}>
-        <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--lbb-fg)', marginBottom: 8 }}>{title}</div>
-        <div style={{ fontSize: 12.5, color: 'var(--lbb-fg2)', marginBottom: 20, lineHeight: 1.5 }}>{body}</div>
+        <div style={{ fontSize: 'var(--lbb-fs-14)', fontWeight: 700, color: 'var(--lbb-fg)', marginBottom: 8 }}>{title}</div>
+        <div style={{ fontSize: 'var(--lbb-fs-12-5)', color: 'var(--lbb-fg2)', marginBottom: 20, lineHeight: 1.5 }}>{body}</div>
         <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end' }}>
           <Button variant="ghost" size="sm" onClick={onCancel}>Cancel</Button>
           <Button variant="danger" size="sm" onClick={onConfirm}>Confirm</Button>
@@ -115,7 +115,7 @@ function SetupCard({
     }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 14 }}>
         <span style={{
-          fontSize: 12, fontWeight: 700, letterSpacing: 0.08,
+          fontSize: 'var(--lbb-fs-12)', fontWeight: 700, letterSpacing: 0.08,
           textTransform: 'uppercase', color: 'var(--lbb-fg)',
         }}>
           {title}
@@ -127,11 +127,126 @@ function SetupCard({
   )
 }
 
+// ── PurgeRow ──────────────────────────────────────────────────────────────────
+
+function PurgeRow({
+  item, count, barPct, onPurge, isLast,
+}: {
+  item: { label: string; desc: string; unit: string }
+  count: number
+  barPct: number
+  onPurge: () => void
+  isLast?: boolean
+}) {
+  const [hov, setHov] = React.useState(false)
+  return (
+    <div style={{
+      display: 'grid',
+      gridTemplateColumns: '9px minmax(140px, 1fr) 140px auto',
+      alignItems: 'center',
+      columnGap: 14,
+      padding: '10px 6px',
+      borderBottom: isLast ? 'none' : '1px solid var(--lbb-border)',
+    }}>
+      <span style={{ width: 7, height: 7, borderRadius: 2, background: 'var(--lbb-border2)', display: 'inline-block', flexShrink: 0 }} />
+      <span style={{ display: 'flex', flexDirection: 'column', gap: 2, minWidth: 0 }}>
+        <span style={{ fontSize: 'var(--lbb-fs-13)', fontWeight: 600, color: 'var(--lbb-fg)' }}>{item.label}</span>
+        <span style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>{item.desc}</span>
+      </span>
+      <span style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
+        <span style={{ fontSize: 'var(--lbb-fs-13)', fontWeight: 600, color: 'var(--lbb-fg2)', fontFamily: 'var(--lbb-mono)' }}>
+          {count.toLocaleString()}
+          <em style={{ fontStyle: 'normal', color: 'var(--lbb-fg3)', fontWeight: 500, fontSize: 'var(--lbb-fs-11)', marginLeft: 4 }}>{item.unit}</em>
+        </span>
+        <span style={{ height: 4, borderRadius: 2, background: 'var(--lbb-surface2)', overflow: 'hidden' }}>
+          <i style={{ display: 'block', height: '100%', borderRadius: 2, background: 'var(--lbb-border2)', width: `${barPct}%` }} />
+        </span>
+      </span>
+      <button
+        onClick={onPurge}
+        onMouseEnter={() => setHov(true)}
+        onMouseLeave={() => setHov(false)}
+        style={{
+          justifySelf: 'end',
+          fontFamily: 'inherit',
+          cursor: 'pointer',
+          border: `1px solid ${hov ? '#e3a99b' : 'var(--lbb-border)'}`,
+          background: hov ? '#fbe6df' : 'var(--lbb-surface)',
+          color: hov ? '#b03f30' : 'var(--lbb-fg2)',
+          fontSize: 'var(--lbb-fs-12)',
+          fontWeight: 500,
+          padding: '5px 12px',
+          borderRadius: 7,
+          transition: 'all 0.12s',
+        }}
+      >
+        Purge
+      </button>
+    </div>
+  )
+}
+
+// ── PurgeDangerZone ───────────────────────────────────────────────────────────
+
+function PurgeDangerZone({
+  item, count, onPurge, purgeAllLabel,
+}: {
+  item: { label: string; desc: string }
+  count: number
+  onPurge: () => void
+  purgeAllLabel: string
+}) {
+  const [hov, setHov] = React.useState(false)
+  return (
+    <div style={{
+      marginTop: 12,
+      padding: '12px 12px 12px 14px',
+      border: '1px solid #efd6cd',
+      borderRadius: 10,
+      background: 'rgba(208, 96, 79, 0.06)',
+      display: 'grid',
+      gridTemplateColumns: '4px 1fr auto',
+      alignItems: 'center',
+      columnGap: 12,
+    }}>
+      <span style={{ width: 4, alignSelf: 'stretch', borderRadius: 2, background: '#d8604f', display: 'block' }} />
+      <span>
+        <span style={{ display: 'block', fontSize: 'var(--lbb-fs-13)', fontWeight: 700, color: '#8f3526' }}>{item.label}</span>
+        <span style={{ display: 'block', fontSize: 'var(--lbb-fs-11-5)', color: '#a86b5e', marginTop: 2, lineHeight: 1.4 }}>
+          Collection, wishlist, ratings, alerts &amp; logs —{' '}
+          <span style={{ fontFamily: 'var(--lbb-mono)', fontWeight: 600, color: '#8f3526' }}>{count.toLocaleString()}</span>
+          {' '}records, not reversible.
+        </span>
+      </span>
+      <button
+        onClick={onPurge}
+        onMouseEnter={() => setHov(true)}
+        onMouseLeave={() => setHov(false)}
+        style={{
+          fontFamily: 'inherit',
+          cursor: 'pointer',
+          border: '1px solid #d8604f',
+          background: hov ? '#b03f30' : 'var(--lbb-surface)',
+          color: hov ? '#fff' : '#b03f30',
+          fontSize: 'var(--lbb-fs-12)',
+          fontWeight: 600,
+          padding: '6px 14px',
+          borderRadius: 7,
+          transition: 'all 0.12s',
+          whiteSpace: 'nowrap',
+        }}
+      >
+        {purgeAllLabel}
+      </button>
+    </div>
+  )
+}
+
 // ── MetaGrid ──────────────────────────────────────────────────────────────────
 
 function MetaGrid({ rows }: { rows: [string, React.ReactNode][] }) {
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: '140px 1fr', gap: '6px 16px', fontSize: 12.5 }}>
+    <div style={{ display: 'grid', gridTemplateColumns: '140px 1fr', gap: '6px 16px', fontSize: 'var(--lbb-fs-12-5)' }}>
       {rows.map(([label, value]) => (
         <React.Fragment key={label}>
           <span style={{ color: 'var(--lbb-fg3)' }}>{label}</span>
@@ -180,10 +295,10 @@ function CuratorToggle({
           <Icon name="dbeditor" size={18} />
         </div>
         <div style={{ flex: 1 }}>
-          <div style={{ fontSize: 13, fontWeight: 600, lineHeight: 1.2, color: 'var(--lbb-fg)' }}>
+          <div style={{ fontSize: 'var(--lbb-fs-13)', fontWeight: 600, lineHeight: 1.2, color: 'var(--lbb-fg)' }}>
             {t('setup.masterData.curatorMode')}
           </div>
-          <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', marginTop: 3, lineHeight: 1.4 }}>
+          <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)', marginTop: 3, lineHeight: 1.4 }}>
             {t('setup.masterData.curatorDesc')}
           </div>
         </div>
@@ -266,14 +381,14 @@ function IntegCard({
       borderRadius: 8, padding: 14, display: 'flex', flexDirection: 'column', gap: 10,
     }}>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <span style={{ fontSize: 12, fontWeight: 600, color: 'var(--lbb-fg)' }}>{title}</span>
+        <span style={{ fontSize: 'var(--lbb-fs-12)', fontWeight: 600, color: 'var(--lbb-fg)' }}>{title}</span>
         <Pill tone={tone} soft dot>
           {tone === 'ok' ? t('setup.integrations.connected') : tone === 'warn' ? t('setup.integrations.degraded') : t('setup.integrations.disabled')}
         </Pill>
       </div>
 
       {!editing && (
-        <div style={{ display: 'grid', gridTemplateColumns: '100px 1fr', gap: '4px 8px', fontSize: 11.5 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '100px 1fr', gap: '4px 8px', fontSize: 'var(--lbb-fs-11-5)' }}>
           {rows.map(([label, value]) => (
             <React.Fragment key={label}>
               <span style={{ color: 'var(--lbb-fg3)' }}>{label}</span>
@@ -287,7 +402,7 @@ function IntegCard({
         <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
           {editFields.map((f) => (
             <div key={f.key} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-              <label style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', width: 80, flexShrink: 0 }}>
+              <label style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)', width: 80, flexShrink: 0 }}>
                 {f.label}
               </label>
               <input
@@ -296,7 +411,7 @@ function IntegCard({
                 value={values[f.key] ?? ''}
                 onChange={(e) => setValues((v) => ({ ...v, [f.key]: e.target.value }))}
                 style={{
-                  flex: 1, height: 24, padding: '0 8px', fontSize: 11.5,
+                  flex: 1, height: 24, padding: '0 8px', fontSize: 'var(--lbb-fs-11-5)',
                   background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border2)',
                   borderRadius: 5, color: 'var(--lbb-fg)', fontFamily: 'var(--lbb-mono)',
                   outline: 'none',
@@ -317,7 +432,7 @@ function IntegCard({
         )}
         {confirming && (
           <>
-            <span style={{ fontSize: 11, color: 'var(--lbb-fg3)', alignSelf: 'center' }}>{t('setup.integrations.sure')}</span>
+            <span style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', alignSelf: 'center' }}>{t('setup.integrations.sure')}</span>
             <Button variant="danger" size="sm" onClick={handleClearConfirmed}>{t('setup.integrations.yesClear')}</Button>
             <Button variant="ghost" size="sm" onClick={() => setConfirming(false)}>{t('common.cancel')}</Button>
           </>
@@ -330,7 +445,7 @@ function IntegCard({
         )}
       </div>
       {testMsg && (
-        <div style={{ fontSize: 11, color: testTone === 'bad' ? 'var(--lbb-err-fg)' : 'var(--lbb-fg3)' }}>
+        <div style={{ fontSize: 'var(--lbb-fs-11)', color: testTone === 'bad' ? 'var(--lbb-err-fg)' : 'var(--lbb-fg3)' }}>
           {testMsg}
         </div>
       )}
@@ -359,7 +474,7 @@ function HelpersStrip({
       background: 'var(--lbb-surface2)', borderRadius: 6, padding: '8px 12px',
       display: 'flex', alignItems: 'center', gap: 16, marginTop: 14,
     }}>
-      <span style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', flex: 1, display: 'flex', gap: 14 }}>
+      <span style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)', flex: 1, display: 'flex', gap: 14 }}>
         {items.map((h) => (
           <span key={h.name} style={{ display: 'inline-flex', alignItems: 'center', gap: 5 }}>
             <span style={{
@@ -382,7 +497,7 @@ function HelpersStrip({
 export function ScreenSetup() {
   const { t } = useTranslation()
   const { language, setLanguage } = useSettingsStore()
-  const [dbStats, setDbStats] = useState<DbStats | null>(null)
+const [dbStats, setDbStats] = useState<DbStats | null>(null)
   const [helpers, setHelpers] = useState<HelperStatus | null>(null)
   const [settings, setSettings] = useState<AppSettings>({
     auto_scrape: null, search_page_size: null,
@@ -404,6 +519,7 @@ export function ScreenSetup() {
   const [pkgBusy, setPkgBusy] = useState<'user' | 'scrape' | 'restore' | null>(null)
   const [pkgUserResult, setPkgUserResult] = useState<{ path: string; count: number; size: number } | null>(null)
   const [pkgScrapeResult, setPkgScrapeResult] = useState<{ path: string; count: number; size: number } | null>(null)
+  const [purgeStats, setPurgeStats] = useState<Record<string, number>>({})
   const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   const showToast = useCallback((msg: string, tone: 'ok' | 'bad' | 'info' = 'info') => {
@@ -454,6 +570,13 @@ export function ScreenSetup() {
     } catch { /* ignore */ }
   }, [])
 
+  const loadPurgeStats = useCallback(async () => {
+    try {
+      const r = await fetch(`${BASE}/api/purge/stats`)
+      if (r.ok) setPurgeStats(await r.json())
+    } catch { /* ignore */ }
+  }, [])
+
   const loadQbtStatus = useCallback(async () => {
     try {
       const r = await fetch(`${BASE}/api/qbt/test`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: '{}' })
@@ -478,7 +601,8 @@ export function ScreenSetup() {
     loadFlatReleases()
     loadQbtStatus()
     loadWtrfStatus()
-  }, [loadSettings, loadDbStats, loadHelpers, loadMasterStatus, loadFlatReleases, loadQbtStatus, loadWtrfStatus])
+    loadPurgeStats()
+  }, [loadSettings, loadDbStats, loadHelpers, loadMasterStatus, loadFlatReleases, loadQbtStatus, loadWtrfStatus, loadPurgeStats])
 
   // ── Settings save helper ─────────────────────────────────────────────────────
 
@@ -842,26 +966,32 @@ export function ScreenSetup() {
 
   // ── Data purges ──────────────────────────────────────────────────────────────
 
-  const PURGE_ITEMS: { label: string; endpoint: string | string[] }[] = [
-    { label: t('setup.purges.lookupHistory'),    endpoint: '/api/rename_history/purge' },
-    { label: t('setup.purges.importLog'),        endpoint: '/api/flat_file/purge' },
-    { label: t('setup.purges.scraperCache'),     endpoint: '/api/scraper/purge' },
-    { label: t('setup.purges.fingerprintCache'), endpoint: '/api/fingerprint/purge' },
-    {
-      label: t('setup.purges.allUserData'),
-      endpoint: [
-        '/api/rename_history/purge', '/api/flat_file/purge',
-        '/api/scraper/purge', '/api/fingerprint/purge',
-        '/api/collection/purge?scope=collection',
-        '/api/collection/purge?scope=wishlist',
-        '/api/collection/purge?scope=personal_meta',
-        '/api/collection/purge?scope=integrity_events',
-        '/api/collection/purge?scope=entry_changes',
-      ],
-    },
+  type PurgeItem = { label: string; desc: string; unit: string; endpoint: string | string[]; statKey: string }
+
+  const SCOPE_ITEMS: PurgeItem[] = [
+    { label: t('setup.purges.lookupHistory'),    desc: t('setup.purges.lookupHistoryDesc'),    unit: t('setup.purges.lookupHistoryUnit'),    endpoint: '/api/rename_history/purge', statKey: 'lookup_history' },
+    { label: t('setup.purges.importLog'),        desc: t('setup.purges.importLogDesc'),        unit: t('setup.purges.importLogUnit'),        endpoint: '/api/flat_file/purge',      statKey: 'import_log' },
+    { label: t('setup.purges.scraperCache'),     desc: t('setup.purges.scraperCacheDesc'),     unit: t('setup.purges.scraperCacheUnit'),     endpoint: '/api/scraper/purge',        statKey: 'scraper_cache' },
+    { label: t('setup.purges.fingerprintCache'), desc: t('setup.purges.fingerprintCacheDesc'), unit: t('setup.purges.fingerprintCacheUnit'), endpoint: '/api/fingerprint/purge',    statKey: 'fingerprint_cache' },
   ]
 
-  const handlePurge = useCallback((item: typeof PURGE_ITEMS[number]) => {
+  const ALL_USER_DATA_ITEM: PurgeItem = {
+    label: t('setup.purges.allUserData'),
+    desc: t('setup.purges.allUserDataDesc'),
+    unit: 'records',
+    statKey: 'all_user_data',
+    endpoint: [
+      '/api/rename_history/purge', '/api/flat_file/purge',
+      '/api/scraper/purge', '/api/fingerprint/purge',
+      '/api/collection/purge?scope=collection',
+      '/api/collection/purge?scope=wishlist',
+      '/api/collection/purge?scope=personal_meta',
+      '/api/collection/purge?scope=integrity_events',
+      '/api/collection/purge?scope=entry_changes',
+    ],
+  }
+
+  const handlePurge = useCallback((item: PurgeItem) => {
     setConfirm({
       title: `Purge ${item.label}?`,
       body: `This will permanently delete all ${item.label.toLowerCase()} data. This cannot be undone.`,
@@ -880,12 +1010,13 @@ export function ScreenSetup() {
           }
           showToast(t('setup.toast.purged', { label: item.label }), 'ok')
           if (endpoints.some((e) => e.includes('flat_file'))) loadFlatReleases()
+          loadPurgeStats()
         } catch (e) {
           showToast(t('setup.toast.purgeFailed', { error: (e as Error).message }), 'bad')
         }
       },
     })
-  }, [showToast, loadFlatReleases, t])
+  }, [showToast, loadFlatReleases, loadPurgeStats, t])
 
   // ── Flat file Reveal ─────────────────────────────────────────────────────────
 
@@ -1061,10 +1192,10 @@ export function ScreenSetup() {
       )}
 
       <div style={{ padding: '24px 32px 40px', maxWidth: 1500, margin: '0 auto' }}>
-        <h1 style={{ fontSize: 22, fontWeight: 700, letterSpacing: -0.02, color: 'var(--lbb-fg)', margin: 0 }}>
+        <h1 style={{ fontSize: 'var(--lbb-fs-22)', fontWeight: 700, letterSpacing: -0.02, color: 'var(--lbb-fg)', margin: 0 }}>
           {t('setup.title')}
         </h1>
-        <p style={{ fontSize: 13, color: 'var(--lbb-fg3)', marginTop: 4, marginBottom: 0 }}>
+        <p style={{ fontSize: 'var(--lbb-fs-13)', color: 'var(--lbb-fg3)', marginTop: 4, marginBottom: 0 }}>
           {t('setup.subtitle')}
         </p>
 
@@ -1162,14 +1293,14 @@ export function ScreenSetup() {
                 background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
                 borderRadius: 8, padding: 14, display: 'flex', flexDirection: 'column', gap: 10,
               }}>
-                <span style={{ fontSize: 12, fontWeight: 600, color: 'var(--lbb-fg)' }}>{t('setup.torrent.title')}</span>
-                <div style={{ display: 'grid', gridTemplateColumns: '90px 1fr', gap: '6px 8px', fontSize: 11.5, alignItems: 'center' }}>
+                <span style={{ fontSize: 'var(--lbb-fs-12)', fontWeight: 600, color: 'var(--lbb-fg)' }}>{t('setup.torrent.title')}</span>
+                <div style={{ display: 'grid', gridTemplateColumns: '90px 1fr', gap: '6px 8px', fontSize: 'var(--lbb-fs-11-5)', alignItems: 'center' }}>
                   <span style={{ color: 'var(--lbb-fg3)' }}>{t('setup.torrent.trackerList')}</span>
                   <select
                     value={currentTrackerList}
                     onChange={(e) => handleTrackerListChange(e.target.value)}
                     style={{
-                      height: 24, padding: '0 6px', fontSize: 11.5,
+                      height: 24, padding: '0 6px', fontSize: 'var(--lbb-fs-11-5)',
                       background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border2)',
                       borderRadius: 5, color: 'var(--lbb-fg)', fontFamily: 'var(--lbb-mono)',
                       outline: 'none', cursor: 'pointer',
@@ -1201,7 +1332,7 @@ export function ScreenSetup() {
           <SetupCard title={t('setup.preferences.title')}>
             <div style={{
               display: 'grid', gridTemplateColumns: '140px 1fr',
-              gap: '8px 16px', fontSize: 12.5, alignItems: 'center',
+              gap: '8px 16px', fontSize: 'var(--lbb-fs-12-5)', alignItems: 'center',
             }}>
               <span style={{ color: 'var(--lbb-fg3)' }}>{t('setup.preferences.resultsPerPage')}</span>
               <div style={{ display: 'flex', gap: 4 }}>
@@ -1213,7 +1344,7 @@ export function ScreenSetup() {
                       type="button"
                       onClick={() => handlePageSize(v)}
                       style={{
-                        height: 24, padding: '0 9px', fontSize: 11.5,
+                        height: 24, padding: '0 9px', fontSize: 'var(--lbb-fs-11-5)',
                         fontWeight: active ? 700 : 500, borderRadius: 5,
                         background: active ? 'var(--lbb-accent-soft)' : 'var(--lbb-surface2)',
                         color: active ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg2)',
@@ -1235,7 +1366,7 @@ export function ScreenSetup() {
                   onChange={(e) => handleAutoScrape(e.target.checked)}
                   style={{ accentColor: 'var(--lbb-accent-mid)' }}
                 />
-                <span style={{ fontSize: 11.5, color: 'var(--lbb-fg3)' }}>
+                <span style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
                   {autoScrape ? t('setup.preferences.enabled') : t('setup.preferences.disabled')}
                 </span>
               </label>
@@ -1245,7 +1376,7 @@ export function ScreenSetup() {
                 value={language}
                 onChange={e => setLanguage(e.target.value)}
                 style={{
-                  height: 28, padding: '0 8px', fontSize: 12.5,
+                  height: 28, padding: '0 8px', fontSize: 'var(--lbb-fs-12-5)',
                   background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border2)',
                   borderRadius: 5, color: 'var(--lbb-fg)', cursor: 'pointer',
                   fontFamily: 'inherit',
@@ -1255,33 +1386,77 @@ export function ScreenSetup() {
                   <option key={code} value={code}>{t(`setup.languages.${code}`)}</option>
                 ))}
               </select>
+
             </div>
           </SetupCard>
 
           {/* ── Data purges ── */}
-          <SetupCard title={t('setup.purges.title')}>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-              {PURGE_ITEMS.map((item) => (
-                <div
-                  key={item.label}
-                  style={{
-                    display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                    fontSize: 12.5, color: 'var(--lbb-fg2)',
-                  }}
-                >
-                  <span>{item.label}</span>
-                  <Button variant="ghost" size="sm" onClick={() => handlePurge(item)}>{t('setup.purges.purge')}</Button>
-                </div>
-              ))}
+          <SetupCard
+            title={t('setup.purges.title')}
+            badge={
+              <span style={{ display: 'flex', alignItems: 'baseline', gap: 8, flex: 1 }}>
+                <span style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
+                  {t('setup.purges.subtitle')}
+                </span>
+                {purgeStats['recoverable_bytes'] != null && purgeStats['recoverable_bytes'] > 0 && (
+                  <span style={{ marginLeft: 'auto', fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)' }}>
+                    <span style={{ fontWeight: 600, color: 'var(--lbb-fg2)' }}>
+                      {purgeStats['recoverable_bytes'] >= 1073741824
+                        ? `≈ ${(purgeStats['recoverable_bytes'] / 1073741824).toFixed(1)} GB`
+                        : `≈ ${(purgeStats['recoverable_bytes'] / 1048576).toFixed(0)} MB`}
+                    </span>
+                    {' '}{t('setup.purges.recoverable')}
+                  </span>
+                )}
+              </span>
+            }
+          >
+            {/* Scope rows */}
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              {(() => {
+                const maxCount = Math.max(...SCOPE_ITEMS.map(i => purgeStats[i.statKey] ?? 0), 1)
+                return SCOPE_ITEMS.map((item, idx) => {
+                  const n = purgeStats[item.statKey] ?? 0
+                  const barPct = Math.round((n / maxCount) * 100)
+                  return (
+                    <PurgeRow
+                      key={item.statKey}
+                      item={item}
+                      count={n}
+                      barPct={barPct}
+                      onPurge={() => handlePurge(item)}
+                      isLast={idx === SCOPE_ITEMS.length - 1}
+                    />
+                  )
+                })
+              })()}
             </div>
-            <p style={{ fontSize: 11, color: 'var(--lbb-fg3)', marginTop: 14, marginBottom: 0, lineHeight: 1.4 }}>
-              {t('setup.purges.disclaimer')}
-            </p>
+
+            {/* Danger zone — all user data */}
+            <PurgeDangerZone
+              item={ALL_USER_DATA_ITEM}
+              count={purgeStats['all_user_data'] ?? 0}
+              onPurge={() => handlePurge(ALL_USER_DATA_ITEM)}
+              purgeAllLabel={t('setup.purges.purgeAll')}
+            />
+
+            {/* Protected archive callout */}
+            <div style={{
+              marginTop: 12, paddingTop: 12,
+              borderTop: '1px solid var(--lbb-border)',
+              display: 'flex', alignItems: 'center', gap: 8,
+              fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)',
+            }}>
+              <span style={{ flex: '0 0 auto', width: 8, height: 8, borderRadius: '50%', background: '#39a360', display: 'inline-block' }} />
+              <span>
+                {t('setup.purges.archiveProtected')}
+              </span>
+            </div>
           </SetupCard>
 
           {/* ── Data Packages ── */}
           <SetupCard title={t('setup.packages.title')}>
-            <p style={{ fontSize: 12, color: 'var(--lbb-fg3)', margin: '0 0 14px', lineHeight: 1.5 }}>
+            <p style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg3)', margin: '0 0 14px', lineHeight: 1.5 }}>
               {t('setup.packages.desc')}
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
@@ -1290,14 +1465,14 @@ export function ScreenSetup() {
                 background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
                 borderRadius: 8, padding: 12,
               }}>
-                <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--lbb-fg)', marginBottom: 4 }}>
+                <div style={{ fontSize: 'var(--lbb-fs-12)', fontWeight: 600, color: 'var(--lbb-fg)', marginBottom: 4 }}>
                   {t('setup.packages.userData')}
                 </div>
-                <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', marginBottom: 10, lineHeight: 1.4 }}>
+                <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)', marginBottom: 10, lineHeight: 1.4 }}>
                   {t('setup.packages.userDataDesc')}
                 </div>
                 {pkgUserResult && (
-                  <div style={{ fontSize: 11, color: 'var(--lbb-fg3)', marginBottom: 8, fontFamily: 'var(--lbb-mono)' }}>
+                  <div style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', marginBottom: 8, fontFamily: 'var(--lbb-mono)' }}>
                     ✓ {pkgUserResult.count} files · {(pkgUserResult.size / 1024).toFixed(0)} KB
                     <br />
                     <span
@@ -1322,14 +1497,14 @@ export function ScreenSetup() {
                 background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
                 borderRadius: 8, padding: 12,
               }}>
-                <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--lbb-fg)', marginBottom: 4 }}>
+                <div style={{ fontSize: 'var(--lbb-fs-12)', fontWeight: 600, color: 'var(--lbb-fg)', marginBottom: 4 }}>
                   {t('setup.packages.scrapedData')}
                 </div>
-                <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', marginBottom: 10, lineHeight: 1.4 }}>
+                <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)', marginBottom: 10, lineHeight: 1.4 }}>
                   {t('setup.packages.scrapedDataDesc')}
                 </div>
                 {pkgScrapeResult && (
-                  <div style={{ fontSize: 11, color: 'var(--lbb-fg3)', marginBottom: 8, fontFamily: 'var(--lbb-mono)' }}>
+                  <div style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', marginBottom: 8, fontFamily: 'var(--lbb-mono)' }}>
                     ✓ {pkgScrapeResult.count} files · {(pkgScrapeResult.size / 1024 / 1024).toFixed(1)} MB
                     <br />
                     <span
@@ -1354,10 +1529,10 @@ export function ScreenSetup() {
                 background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
                 borderRadius: 8, padding: 12,
               }}>
-                <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--lbb-fg)', marginBottom: 4 }}>
+                <div style={{ fontSize: 'var(--lbb-fs-12)', fontWeight: 600, color: 'var(--lbb-fg)', marginBottom: 4 }}>
                   {t('setup.packages.restore')}
                 </div>
-                <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', marginBottom: 10, lineHeight: 1.4 }}>
+                <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)', marginBottom: 10, lineHeight: 1.4 }}>
                   {t('setup.packages.restoreDesc')}
                 </div>
                 <Button
@@ -1374,14 +1549,14 @@ export function ScreenSetup() {
           {/* ── Flat file history ── */}
           <SetupCard title={t('setup.flatFile.title')} style={{ gridColumn: 'span 2' }}>
             <div style={{ overflowX: 'auto' }}>
-              <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 12 }}>
+              <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 'var(--lbb-fs-12)' }}>
                 <thead>
                   <tr style={{ borderBottom: '1px solid var(--lbb-border)' }}>
                     {[t('setup.flatFile.colDetected'), t('setup.flatFile.colFilename'), t('setup.flatFile.colStatus'), t('setup.flatFile.colApplied'), t('setup.flatFile.colAdded'), t('setup.flatFile.colChanged'), ''].map((h) => (
                       <th
                         key={h}
                         style={{
-                          padding: '6px 10px', textAlign: 'left', fontSize: 10.5,
+                          padding: '6px 10px', textAlign: 'left', fontSize: 'var(--lbb-fs-10-5)',
                           fontWeight: 700, letterSpacing: 0.05, textTransform: 'uppercase',
                           color: 'var(--lbb-fg3)',
                         }}
@@ -1394,7 +1569,7 @@ export function ScreenSetup() {
                 <tbody>
                   {flatReleases.length === 0 && (
                     <tr>
-                      <td colSpan={7} style={{ padding: '16px 10px', color: 'var(--lbb-fg3)', fontSize: 12, textAlign: 'center' }}>
+                      <td colSpan={7} style={{ padding: '16px 10px', color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-12)', textAlign: 'center' }}>
                         {t('setup.flatFile.noHistory')}
                       </td>
                     </tr>
@@ -1403,7 +1578,7 @@ export function ScreenSetup() {
                     const isActive = rel.status === 'applied'
                     return (
                       <tr key={rel.id} style={{ borderBottom: '1px solid var(--lbb-border)', color: 'var(--lbb-fg2)' }}>
-                        <td style={{ padding: '8px 10px', fontFamily: 'var(--lbb-mono)', fontSize: 11.5 }}>
+                        <td style={{ padding: '8px 10px', fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11-5)' }}>
                           {rel.detected_at?.slice(0, 16) ?? '—'}
                         </td>
                         <td style={{ padding: '8px 10px', fontFamily: 'var(--lbb-mono)' }}>{rel.zip_filename}</td>
@@ -1412,13 +1587,13 @@ export function ScreenSetup() {
                             {isActive ? t('setup.flatFile.active') : rel.status}
                           </Pill>
                         </td>
-                        <td style={{ padding: '8px 10px', fontFamily: 'var(--lbb-mono)', fontSize: 11.5 }}>
+                        <td style={{ padding: '8px 10px', fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11-5)' }}>
                           {rel.applied_at?.slice(0, 10) ?? '—'}
                         </td>
-                        <td style={{ padding: '8px 10px', fontFamily: 'var(--lbb-mono)', fontSize: 11.5 }}>
+                        <td style={{ padding: '8px 10px', fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11-5)' }}>
                           {rel.rows_added != null ? `+${rel.rows_added}` : '—'}
                         </td>
-                        <td style={{ padding: '8px 10px', fontFamily: 'var(--lbb-mono)', fontSize: 11.5 }}>
+                        <td style={{ padding: '8px 10px', fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11-5)' }}>
                           {rel.rows_changed != null ? `~${rel.rows_changed}` : '—'}
                         </td>
                         <td style={{ padding: '8px 10px' }}>

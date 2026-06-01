@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
-import { AppShell } from '../components/AppShell'
 import { Button, Chip, Pill, Card, SectionHead, Toolbar, Input } from '../components'
 import { TableShell, TH, TR, TD } from '../components'
 import { Icon } from '../components/Icon'
@@ -37,6 +36,10 @@ interface SetlistFmStatus {
 interface GeocoderStatus {
   running: boolean; done: number; total: number
   current: string; errors: number; succeeded: number; stage: string
+}
+interface GeoStats {
+  total_cached: number; geocoded: number; failed: number; manual: number
+  entries_total: number; entries_covered: number; pct_covered: number
 }
 interface CrawlerSession {
   id: number; started_at: string; finished_at: string | null; scope: string
@@ -91,22 +94,22 @@ function LogPanel({ lines, onClear }: { lines: LogLine[]; onClear: () => void })
         padding: '6px 10px', borderBottom: '1px solid var(--lbb-border)',
         background: 'var(--lbb-surface)',
       }}>
-        <span style={{ fontSize: 11, fontWeight: 700, color: 'var(--lbb-fg3)', flex: 1, textTransform: 'uppercase', letterSpacing: 0.08 }}>Live Log</span>
+        <span style={{ fontSize: 'var(--lbb-fs-11)', fontWeight: 700, color: 'var(--lbb-fg3)', flex: 1, textTransform: 'uppercase', letterSpacing: 0.08 }}>Live Log</span>
         <button type="button" onClick={onClear} style={{
-          fontSize: 11, color: 'var(--lbb-fg3)', background: 'none', border: 'none',
+          fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', background: 'none', border: 'none',
           cursor: 'pointer', padding: '2px 6px',
         }}>Clear</button>
         <button type="button" onClick={() => {
           const text = lines.map(l => `${l.ts}  ${l.text}`).join('\n')
           navigator.clipboard.writeText(text).catch(() => {})
         }} style={{
-          fontSize: 11, color: 'var(--lbb-fg3)', background: 'none', border: 'none',
+          fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', background: 'none', border: 'none',
           cursor: 'pointer', padding: '2px 6px',
         }}>Copy</button>
       </div>
       <div style={{
         flex: 1, overflowY: 'auto', padding: '6px 10px',
-        fontFamily: 'var(--lbb-mono)', fontSize: 11.5,
+        fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11-5)',
         background: 'var(--lbb-bg)', minHeight: 0,
       }}>
         {lines.length === 0 && (
@@ -150,17 +153,17 @@ function StripCard({ label, active, running, status, stat, lastDate, onClick }: 
       <div style={{ display: 'flex', alignItems: 'center', gap: 7, marginBottom: 4 }}>
         <span style={{ width: 8, height: 8, borderRadius: '50%', background: dot, flexShrink: 0,
           boxShadow: running ? `0 0 5px ${dot}` : 'none' }} />
-        <span style={{ fontSize: 11.5, fontWeight: 700, color: active ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg)' }}>
+        <span style={{ fontSize: 'var(--lbb-fs-11-5)', fontWeight: 700, color: active ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg)' }}>
           {label}
         </span>
-        <span style={{ fontSize: 10, color: 'var(--lbb-fg3)', marginLeft: 'auto' }}>
+        <span style={{ fontSize: 'var(--lbb-fs-10)', color: 'var(--lbb-fg3)', marginLeft: 'auto' }}>
           {running ? 'running' : status}
         </span>
       </div>
-      <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--lbb-fg2)', fontVariantNumeric: 'tabular-nums' }}>
+      <div style={{ fontSize: 'var(--lbb-fs-12)', fontWeight: 600, color: 'var(--lbb-fg2)', fontVariantNumeric: 'tabular-nums' }}>
         {stat}
       </div>
-      <div style={{ fontSize: 10.5, color: 'var(--lbb-fg3)', marginTop: 2 }}>
+      <div style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)', marginTop: 2 }}>
         Last: {lastDate}
       </div>
     </button>
@@ -191,8 +194,8 @@ function StatGrid({ rows }: { rows: [string, string | number][] }) {
     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3px 12px', marginTop: 8 }}>
       {rows.map(([k, v]) => (
         <div key={k} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-          <span style={{ fontSize: 11, color: 'var(--lbb-fg3)' }}>{k}</span>
-          <span style={{ fontSize: 12, fontWeight: 600, fontVariantNumeric: 'tabular-nums', color: 'var(--lbb-fg2)' }}>
+          <span style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)' }}>{k}</span>
+          <span style={{ fontSize: 'var(--lbb-fs-12)', fontWeight: 600, fontVariantNumeric: 'tabular-nums', color: 'var(--lbb-fg2)' }}>
             {typeof v === 'number' ? v.toLocaleString() : v}
           </span>
         </div>
@@ -204,7 +207,7 @@ function StatGrid({ rows }: { rows: [string, string | number][] }) {
 // ── Section heading row ───────────────────────────────────────────────────────
 
 function CtrlLabel({ children }: { children: React.ReactNode }) {
-  return <div style={{ fontSize: 10.5, fontWeight: 700, color: 'var(--lbb-fg3)', textTransform: 'uppercase', letterSpacing: 0.08, marginTop: 12, marginBottom: 4 }}>{children}</div>
+  return <div style={{ fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: 'var(--lbb-fg3)', textTransform: 'uppercase', letterSpacing: 0.08, marginTop: 12, marginBottom: 4 }}>{children}</div>
 }
 
 // ── Tab: LB Site Crawler ──────────────────────────────────────────────────────
@@ -250,7 +253,7 @@ function CrawlerTab({ status, logs, onClearLog }: {
             ))}
           </div>
           <CtrlLabel>Options</CtrlLabel>
-          <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, color: 'var(--lbb-fg2)', cursor: 'pointer' }}>
+          <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)', cursor: 'pointer' }}>
             <input type="checkbox" checked={force} onChange={e => setForce(e.target.checked)} />
             Force re-fetch cached pages
           </label>
@@ -270,7 +273,7 @@ function CrawlerTab({ status, logs, onClearLog }: {
                 <ProgressBar value={status.fetched} total={parseInt(cap)} indeterminate={running && parseInt(cap) === 0} />
               </div>
               {running && status.current_url && (
-                <div style={{ fontSize: 10.5, color: 'var(--lbb-fg3)', marginTop: 6, fontFamily: 'var(--lbb-mono)', wordBreak: 'break-all' }}>
+                <div style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)', marginTop: 6, fontFamily: 'var(--lbb-mono)', wordBreak: 'break-all' }}>
                   {status.current_url.replace('http://www.losslessbob.wonderingwhattochoose.com', '')}
                 </div>
               )}
@@ -295,7 +298,7 @@ function CrawlerTab({ status, logs, onClearLog }: {
       <div style={{ borderTop: '1px solid var(--lbb-border)', flexShrink: 0 }}>
         <Toolbar pad="6px 14px">
           <SectionHead title="Session History" style={{ flex: 1, marginBottom: 0 }} />
-          <button type="button" onClick={() => setHistOpen(o => !o)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--lbb-fg3)', fontSize: 12 }}>
+          <button type="button" onClick={() => setHistOpen(o => !o)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-12)' }}>
             {histOpen ? '▾' : '▸'}
           </button>
         </Toolbar>
@@ -353,7 +356,7 @@ function EntryTab({ status, logs, onClearLog }: {
           ['Download attachments', dlFiles, setDlFiles],
           ['Use local cached pages', localPages, setLocalPages],
         ].map(([label, val, setter]) => (
-          <label key={label as string} style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, color: 'var(--lbb-fg2)', cursor: 'pointer', marginBottom: 6 }}>
+          <label key={label as string} style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)', cursor: 'pointer', marginBottom: 6 }}>
             <input type="checkbox" checked={val as boolean} onChange={e => (setter as (v: boolean) => void)(e.target.checked)} />
             {label as string}
           </label>
@@ -405,7 +408,7 @@ function EntryTab({ status, logs, onClearLog }: {
           <>
             <div style={{ marginTop: 12 }}>
               <ProgressBar value={status.done} total={status.total} />
-              <div style={{ fontSize: 11, color: 'var(--lbb-fg3)', marginTop: 4 }}>
+              <div style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', marginTop: 4 }}>
                 {status.done.toLocaleString()} / {status.total.toLocaleString()}
               </div>
             </div>
@@ -451,7 +454,7 @@ function BootlegTab({ status, logs, onClearLog }: {
       <div style={{ flex: 1, display: 'flex', minHeight: 0 }}>
         <div style={{ width: 300, flexShrink: 0, padding: '14px 16px', borderRight: '1px solid var(--lbb-border)', overflowY: 'auto' }}>
           <CtrlLabel>Options</CtrlLabel>
-          <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, color: 'var(--lbb-fg2)', cursor: 'pointer' }}>
+          <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)', cursor: 'pointer' }}>
             <input type="checkbox" checked={force} onChange={e => setForce(e.target.checked)} />
             Force re-scrape
           </label>
@@ -463,7 +466,7 @@ function BootlegTab({ status, logs, onClearLog }: {
             <>
               <div style={{ marginTop: 12 }}>
                 <ProgressBar value={0} total={0} indeterminate={running} />
-                <div style={{ fontSize: 11, color: 'var(--lbb-fg3)', marginTop: 4 }}>{status.stage}</div>
+                <div style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', marginTop: 4 }}>{status.stage}</div>
               </div>
               <StatGrid rows={[
                 ['Total rows', status.rows_total],
@@ -471,7 +474,7 @@ function BootlegTab({ status, logs, onClearLog }: {
                 ['Changed', status.rows_changed],
                 ['Removed', status.rows_removed],
               ]} />
-              {status.error && <div style={{ marginTop: 8, fontSize: 11, color: 'var(--lbb-bad-fg)' }}>{status.error}</div>}
+              {status.error && <div style={{ marginTop: 8, fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-bad-fg)' }}>{status.error}</div>}
             </>
           )}
         </div>
@@ -527,7 +530,7 @@ function BobDylanTab({ status, logs, onClearLog }: {
     <div style={{ flex: 1, display: 'flex', minHeight: 0 }}>
       <div style={{ width: 300, flexShrink: 0, padding: '14px 16px', borderRight: '1px solid var(--lbb-border)', overflowY: 'auto' }}>
         <CtrlLabel>Options</CtrlLabel>
-        <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, color: 'var(--lbb-fg2)', cursor: 'pointer' }}>
+        <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)', cursor: 'pointer' }}>
           <input type="checkbox" checked={force} onChange={e => setForce(e.target.checked)} />
           Force re-scrape all shows
         </label>
@@ -556,7 +559,7 @@ function BobDylanTab({ status, logs, onClearLog }: {
           <>
             <div style={{ marginTop: 12 }}>
               <ProgressBar value={status.done} total={status.total} indeterminate={running && status.total === 0} />
-              <div style={{ fontSize: 11, color: 'var(--lbb-fg3)', marginTop: 4 }}>
+              <div style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', marginTop: 4 }}>
                 Phase: {status.phase || '—'} · {status.done}/{status.total}
               </div>
             </div>
@@ -626,17 +629,17 @@ function SetlistFmTab({ status, logs, onClearLog }: {
         <CtrlLabel>API Key</CtrlLabel>
         <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 4 }}>
           <span style={{ width: 8, height: 8, borderRadius: '50%', background: keyConfigured ? 'var(--lbb-ok-bar)' : 'var(--lbb-warn-bar)', flexShrink: 0 }} />
-          <span style={{ fontSize: 11, color: 'var(--lbb-fg3)' }}>{keyConfigured ? 'Configured' : 'Not set'}</span>
+          <span style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)' }}>{keyConfigured ? 'Configured' : 'Not set'}</span>
         </div>
         <div style={{ display: 'flex', gap: 6 }}>
           <Input type="password" placeholder="setlist.fm API key" value={apiKey}
             onChange={e => setApiKey(e.target.value)} size="sm" width={160} />
           <Button variant="secondary" size="sm" onClick={saveKey} disabled={!apiKey}>Save</Button>
         </div>
-        {keyMsg && <div style={{ fontSize: 11, color: 'var(--lbb-ok-fg)', marginTop: 4 }}>{keyMsg}</div>}
+        {keyMsg && <div style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-ok-fg)', marginTop: 4 }}>{keyMsg}</div>}
 
         <CtrlLabel>Options</CtrlLabel>
-        <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, color: 'var(--lbb-fg2)', cursor: 'pointer' }}>
+        <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)', cursor: 'pointer' }}>
           <input type="checkbox" checked={force} onChange={e => setForce(e.target.checked)} />
           Force re-fetch all setlists
         </label>
@@ -652,7 +655,7 @@ function SetlistFmTab({ status, logs, onClearLog }: {
           </Button>
         </div>
         {!keyConfigured && (
-          <div style={{ fontSize: 11, color: 'var(--lbb-warn-fg)', marginTop: 6 }}>
+          <div style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-warn-fg)', marginTop: 6 }}>
             An API key is required. Get one at setlist.fm/settings/api.
           </div>
         )}
@@ -661,7 +664,7 @@ function SetlistFmTab({ status, logs, onClearLog }: {
           <>
             <div style={{ marginTop: 12 }}>
               <ProgressBar value={status.page} total={status.total_pages} indeterminate={status.total_pages === 0} />
-              <div style={{ fontSize: 11, color: 'var(--lbb-fg3)', marginTop: 4 }}>
+              <div style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', marginTop: 4 }}>
                 Page {status.page} / {status.total_pages || '?'}
               </div>
             </div>
@@ -693,8 +696,8 @@ function SetlistFmTab({ status, logs, onClearLog }: {
 
 // ── Tab: Geocoder ─────────────────────────────────────────────────────────────
 
-function GeocoderTab({ status, logs, onClearLog }: {
-  status: GeocoderStatus | null; logs: LogLine[]; onClearLog: () => void
+function GeocoderTab({ status, geoStats, logs, onClearLog }: {
+  status: GeocoderStatus | null; geoStats: GeoStats | null; logs: LogLine[]; onClearLog: () => void
 }) {
   const [manualLoc, setManualLoc] = useState('')
   const [manualLat, setManualLat] = useState('')
@@ -731,7 +734,7 @@ function GeocoderTab({ status, logs, onClearLog }: {
           <>
             <div style={{ marginTop: 12 }}>
               <ProgressBar value={status.done} total={status.total} />
-              <div style={{ fontSize: 11, color: 'var(--lbb-fg3)', marginTop: 4 }}>
+              <div style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', marginTop: 4 }}>
                 {status.done.toLocaleString()} / {status.total.toLocaleString()} · stage: {status.stage}
               </div>
             </div>
@@ -740,10 +743,28 @@ function GeocoderTab({ status, logs, onClearLog }: {
               ['Errors', status.errors],
             ]} />
             {status.current && (
-              <div style={{ fontSize: 10.5, color: 'var(--lbb-fg3)', marginTop: 6, fontFamily: 'var(--lbb-mono)', wordBreak: 'break-all' }}>
+              <div style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)', marginTop: 6, fontFamily: 'var(--lbb-mono)', wordBreak: 'break-all' }}>
                 {status.current}
               </div>
             )}
+          </>
+        )}
+
+        {geoStats && (
+          <>
+            <CtrlLabel>Cache Stats</CtrlLabel>
+            <StatGrid rows={[
+              ['Cached', geoStats.total_cached],
+              ['Geocoded', geoStats.geocoded],
+              ['Failed', geoStats.failed],
+              ['Manual pins', geoStats.manual],
+            ]} />
+            <CtrlLabel>Coverage</CtrlLabel>
+            <StatGrid rows={[
+              ['Unique locations', geoStats.entries_total],
+              ['With coordinates', geoStats.entries_covered],
+              ['Coverage', `${geoStats.pct_covered}%`],
+            ]} />
           </>
         )}
 
@@ -769,7 +790,7 @@ function GeocoderTab({ status, logs, onClearLog }: {
           <Button variant="secondary" size="sm" disabled={!manualLoc || !manualLat || !manualLon} onClick={placeManual}>
             Place Pin
           </Button>
-          {manualMsg && <div style={{ fontSize: 11, color: 'var(--lbb-ok-fg)' }}>{manualMsg}</div>}
+          {manualMsg && <div style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-ok-fg)' }}>{manualMsg}</div>}
         </div>
       </div>
       <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
@@ -808,6 +829,9 @@ export function ScreenScraper() {
   const [bobdylanStats,  setBobdylanStats]  = useState<{ total: number; scraped: number; last: string } | null>(null)
   const [setlistFmStats, setSetlistFmStats] = useState<{ shows: number; tracks: number } | null>(null)
   const [geocoderStats,  setGeocoderStats]  = useState<{ done: number; total: number } | null>(null)
+  const [geoStats,       setGeoStats]       = useState<GeoStats | null>(null)
+  const [invStats,       setInvStats]       = useState<{ total: number } | null>(null)
+  const [entryDbStats,   setEntryDbStats]   = useState<{ ok: number } | null>(null)
 
   // Logs per tab (max 500 lines each)
   const [logs, setLogs] = useState<Record<TabId, LogLine[]>>({
@@ -849,16 +873,18 @@ export function ScreenScraper() {
       fetch(`${BASE}/api/bobdylan/status`).then(r => r.ok ? r.json() : null),
       fetch(`${BASE}/api/setlistfm/status`).then(r => r.ok ? r.json() : null),
       fetch(`${BASE}/api/geocode/status`).then(r => r.ok ? r.json() : null),
+      fetch(`${BASE}/api/geocode/stats`).then(r => r.ok ? r.json() : null),
       // Strip extras
       fetch(`${BASE}/api/crawler/sessions?limit=1`).then(r => r.ok ? r.json() : null),
       fetch(`${BASE}/api/bootlegs/stats`).then(r => r.ok ? r.json() : null),
       fetch(`${BASE}/api/bobdylan/stats`).then(r => r.ok ? r.json() : null),
       fetch(`${BASE}/api/setlistfm/stats`).then(r => r.ok ? r.json() : null),
       fetch(`${BASE}/api/db/stats`).then(r => r.ok ? r.json() : null),
+      fetch(`${BASE}/api/crawler/inventory/stats`).then(r => r.ok ? r.json() : null),
     ])
 
     const v = results.map(r => r.status === 'fulfilled' ? r.value : null)
-    const [crawler, scrape, bootleg, bd, slFm, geo, crawlerSess, bootlegSt, bdSt, slFmSt, dbSt] = v
+    const [crawler, scrape, bootleg, bd, slFm, geo, geoSt, crawlerSess, bootlegSt, bdSt, slFmSt, dbSt, invSt] = v
 
     const p = prevRef.current
 
@@ -946,9 +972,13 @@ export function ScreenScraper() {
       }
       setGeocoderStats({ done: geo.done, total: geo.total })
     }
+    if (geoSt && !geoSt.error) setGeoStats(geoSt)
 
     if (dbSt) {
-      setScrapeStats(prev => prev ?? { done: dbSt.scraped_entries ?? 0, total: dbSt.total_entries ?? 0 })
+      setEntryDbStats({ ok: dbSt.ok_entries ?? 0 })
+    }
+    if (invSt) {
+      setInvStats({ total: invSt.total ?? 0 })
     }
   }, [pushLog])
 
@@ -964,14 +994,16 @@ export function ScreenScraper() {
       id: 'crawler', label: 'LB Crawler',
       running: crawlerStatus?.running ?? false,
       status: crawlerStatus?.stage ?? 'idle',
-      stat: crawlerStats ? `${crawlerStats.fetched.toLocaleString()} fetched` : '—',
+      stat: invStats ? `${invStats.total.toLocaleString()} URLs indexed` : '—',
       lastDate: crawlerStats?.last ?? '—',
     },
     {
       id: 'entry', label: 'Entry Metadata',
       running: scrapeStatus?.running ?? false,
       status: scrapeStatus?.running ? 'running' : 'idle',
-      stat: scrapeStats ? `${scrapeStats.done.toLocaleString()} / ${scrapeStats.total.toLocaleString()}` : '—',
+      stat: scrapeStatus?.running && scrapeStats
+        ? `${scrapeStats.done.toLocaleString()} / ${scrapeStats.total.toLocaleString()}`
+        : entryDbStats ? `${entryDbStats.ok.toLocaleString()} entries` : '—',
       lastDate: '—',
     },
     {
@@ -999,13 +1031,13 @@ export function ScreenScraper() {
       id: 'geocoder', label: 'Geocoder',
       running: geocoderStatus?.running ?? false,
       status: geocoderStatus?.running ? 'running' : 'idle',
-      stat: geocoderStats ? `${geocoderStats.done.toLocaleString()} / ${geocoderStats.total.toLocaleString()}` : '—',
-      lastDate: '—',
+      stat: geoStats ? `${geoStats.pct_covered}% covered` : '—',
+      lastDate: geoStats ? `${geoStats.geocoded.toLocaleString()} cached` : '—',
     },
   ]
 
   return (
-    <AppShell crumbs={['LosslessBob', 'Curator', 'Scraper']}>
+    <>
       <div style={{ display: 'flex', flexDirection: 'column', height: '100%', minHeight: 0 }}>
 
         {/* Status Strip */}
@@ -1020,32 +1052,6 @@ export function ScreenScraper() {
           </div>
         </div>
 
-        {/* Tab bar */}
-        <div style={{
-          display: 'flex', gap: 2, padding: '0 16px',
-          borderBottom: '1px solid var(--lbb-border)',
-          background: 'var(--lbb-surface)', flexShrink: 0,
-        }}>
-          {TABS.map(tab => {
-            const isActive = activeTab === tab.id
-            const isRunning = stripCards.find(c => c.id === tab.id)?.running ?? false
-            return (
-              <button key={tab.id} type="button" onClick={() => setActiveTab(tab.id)} style={{
-                padding: '9px 14px', fontSize: 12.5, fontWeight: isActive ? 600 : 500,
-                color: isActive ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg2)',
-                background: 'none', border: 'none', borderBottom: isActive ? '2px solid var(--lbb-accent-mid)' : '2px solid transparent',
-                cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 6,
-                fontFamily: 'inherit', marginBottom: -1,
-              }}>
-                {isRunning && (
-                  <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--lbb-info-bar)', animation: 'lbb-pulse 1.2s ease-in-out infinite' }} />
-                )}
-                {tab.label}
-              </button>
-            )
-          })}
-        </div>
-
         {/* Tab content */}
         <div style={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}>
           {activeTab === 'crawler'   && <CrawlerTab   status={crawlerStatus}   logs={logs.crawler}   onClearLog={() => clearLog('crawler')} />}
@@ -1053,9 +1059,9 @@ export function ScreenScraper() {
           {activeTab === 'bootlegs'  && <BootlegTab    status={bootlegStatus}   logs={logs.bootlegs}  onClearLog={() => clearLog('bootlegs')} />}
           {activeTab === 'bobdylan'  && <BobDylanTab   status={bobdylanStatus}  logs={logs.bobdylan}  onClearLog={() => clearLog('bobdylan')} />}
           {activeTab === 'setlistfm' && <SetlistFmTab  status={setlistFmStatus} logs={logs.setlistfm} onClearLog={() => clearLog('setlistfm')} />}
-          {activeTab === 'geocoder'  && <GeocoderTab   status={geocoderStatus}  logs={logs.geocoder}  onClearLog={() => clearLog('geocoder')} />}
+          {activeTab === 'geocoder'  && <GeocoderTab   status={geocoderStatus}  geoStats={geoStats}  logs={logs.geocoder}  onClearLog={() => clearLog('geocoder')} />}
         </div>
       </div>
-    </AppShell>
+    </>
   )
 }

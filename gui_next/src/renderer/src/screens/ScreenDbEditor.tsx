@@ -56,7 +56,7 @@ function Toast({ msg, tone, onDone }: { msg: string; tone: ToastTone; onDone: ()
     <div style={{
       position: 'fixed', bottom: 24, right: 24, zIndex: 9999,
       padding: '10px 16px', borderRadius: 8, background: bg, color: fg,
-      fontSize: 13, fontWeight: 500, boxShadow: 'var(--lbb-shadowLg)',
+      fontSize: 'var(--lbb-fs-13)', fontWeight: 500, boxShadow: 'var(--lbb-shadowLg)',
       border: '1px solid color-mix(in oklab, currentColor 20%, transparent)',
     }}>
       {msg}
@@ -85,7 +85,7 @@ function Modal({
         borderRadius: 12, padding: '20px 24px', minWidth: 360, maxWidth: 480,
         boxShadow: 'var(--lbb-shadowLg)',
       }}>
-        <div style={{ fontSize: 15, fontWeight: 700, marginBottom: 16, color: 'var(--lbb-fg)' }}>
+        <div style={{ fontSize: 'var(--lbb-fs-15)', fontWeight: 700, marginBottom: 16, color: 'var(--lbb-fg)' }}>
           {title}
         </div>
         {children}
@@ -97,7 +97,7 @@ function Modal({
 function FormRow({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
-      <span style={{ fontSize: 12, color: 'var(--lbb-fg2)', minWidth: 130, textAlign: 'right' }}>
+      <span style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)', minWidth: 130, textAlign: 'right' }}>
         {label}
       </span>
       {children}
@@ -110,7 +110,7 @@ function ModalInput(props: React.InputHTMLAttributes<HTMLInputElement>) {
     <input
       {...props}
       style={{
-        padding: '5px 8px', borderRadius: 6, fontSize: 13,
+        padding: '5px 8px', borderRadius: 6, fontSize: 'var(--lbb-fs-13)',
         background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
         color: 'var(--lbb-fg)', width: '100%',
         ...props.style,
@@ -124,7 +124,7 @@ function ModalSelect(props: React.SelectHTMLAttributes<HTMLSelectElement>) {
     <select
       {...props}
       style={{
-        padding: '5px 8px', borderRadius: 6, fontSize: 13,
+        padding: '5px 8px', borderRadius: 6, fontSize: 'var(--lbb-fs-13)',
         background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
         color: 'var(--lbb-fg)', width: '100%',
         ...props.style,
@@ -138,7 +138,7 @@ function ModalTextArea(props: React.TextareaHTMLAttributes<HTMLTextAreaElement>)
     <textarea
       {...props}
       style={{
-        padding: '5px 8px', borderRadius: 6, fontSize: 13,
+        padding: '5px 8px', borderRadius: 6, fontSize: 'var(--lbb-fs-13)',
         background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
         color: 'var(--lbb-fg)', width: '100%', resize: 'vertical',
         ...props.style,
@@ -174,11 +174,11 @@ function SideSection({
           width: '100%', display: 'flex', alignItems: 'center', gap: 6,
           padding: '7px 10px', background: 'var(--lbb-surface2)',
           border: 'none', borderBottom: collapsed ? 'none' : '1px solid var(--lbb-border)',
-          cursor: 'pointer', fontSize: 11, fontWeight: 700, letterSpacing: 0.08,
+          cursor: 'pointer', fontSize: 'var(--lbb-fs-11)', fontWeight: 700, letterSpacing: 0.08,
           textTransform: 'uppercase', color: 'var(--lbb-fg2)', fontFamily: 'inherit',
         }}
       >
-        <span style={{ fontSize: 9 }}>{collapsed ? '▶' : '▼'}</span>
+        <span style={{ fontSize: 'var(--lbb-fs-9)' }}>{collapsed ? '▶' : '▼'}</span>
         {title}
       </button>
       {!collapsed && (
@@ -206,7 +206,7 @@ function SideButton({
       title={titleProp}
       style={{
         display: 'block', width: '100%', marginBottom: 4,
-        padding: '5px 8px', borderRadius: 5, fontSize: 11.5,
+        padding: '5px 8px', borderRadius: 5, fontSize: 'var(--lbb-fs-11-5)',
         background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
         color: 'var(--lbb-fg)', cursor: 'pointer', textAlign: 'left',
         fontFamily: 'inherit',
@@ -243,7 +243,7 @@ function IntegrityPanel({
     <div>
       {stats ? (
         <div style={{
-          fontSize: 11, color: 'var(--lbb-fg2)', marginBottom: 8,
+          fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg2)', marginBottom: 8,
           fontFamily: 'var(--lbb-mono)', lineHeight: 1.7,
         }}>
           {t('dbeditor.integrity.public')}: {stats.public.toLocaleString()}{'\n'}
@@ -254,7 +254,7 @@ function IntegrityPanel({
           {t('dbeditor.integrity.needsReview')}: {stats.needs_review.toLocaleString()}
         </div>
       ) : (
-        <div style={{ fontSize: 11, color: 'var(--lbb-fg3)', marginBottom: 8 }}>—</div>
+        <div style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', marginBottom: 8 }}>—</div>
       )}
       <SideButton onClick={onReconcile} title={t('dbeditor.integrity.reconcileHint')}>
         {t('dbeditor.integrity.reconcileAll')}
@@ -304,7 +304,7 @@ function AliasPanel({
   return (
     <div>
       <div style={{ overflowX: 'auto', marginBottom: 6 }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 11 }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 'var(--lbb-fs-11)' }}>
           <thead>
             <tr>
               {[t('dbeditor.aliases.aliasLb'), '→', t('dbeditor.aliases.canonicalLb'),
@@ -336,14 +336,14 @@ function AliasPanel({
                 <td style={{ padding: '3px 5px', color: 'var(--lbb-fg)', fontFamily: 'var(--lbb-mono)' }}>
                   {String(a.canonical_lb).padStart(5, '0')}
                 </td>
-                <td style={{ padding: '3px 5px', color: 'var(--lbb-fg2)', fontSize: 10 }}>
+                <td style={{ padding: '3px 5px', color: 'var(--lbb-fg2)', fontSize: 'var(--lbb-fs-10)' }}>
                   {a.relationship}
                 </td>
               </tr>
             ))}
             {aliases.length === 0 && (
               <tr>
-                <td colSpan={4} style={{ padding: '6px 5px', color: 'var(--lbb-fg3)', fontStyle: 'italic', fontSize: 11 }}>
+                <td colSpan={4} style={{ padding: '6px 5px', color: 'var(--lbb-fg3)', fontStyle: 'italic', fontSize: 'var(--lbb-fs-11)' }}>
                   {t('dbeditor.aliases.empty')}
                 </td>
               </tr>
@@ -359,7 +359,7 @@ function AliasPanel({
           disabled={!isCurator}
           title={t('dbeditor.aliases.addHint')}
           style={{
-            flex: 1, padding: '4px 6px', borderRadius: 5, fontSize: 11,
+            flex: 1, padding: '4px 6px', borderRadius: 5, fontSize: 'var(--lbb-fs-11)',
             background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
             color: isCurator ? 'var(--lbb-fg)' : 'var(--lbb-fg3)',
             cursor: isCurator ? 'pointer' : 'not-allowed', fontFamily: 'inherit',
@@ -373,7 +373,7 @@ function AliasPanel({
           disabled={!isCurator || selected === null}
           title={t('dbeditor.aliases.deleteHint')}
           style={{
-            flex: 1, padding: '4px 6px', borderRadius: 5, fontSize: 11,
+            flex: 1, padding: '4px 6px', borderRadius: 5, fontSize: 'var(--lbb-fs-11)',
             background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
             color: (isCurator && selected !== null) ? 'var(--lbb-fg)' : 'var(--lbb-fg3)',
             cursor: (isCurator && selected !== null) ? 'pointer' : 'not-allowed', fontFamily: 'inherit',
@@ -385,7 +385,7 @@ function AliasPanel({
           type="button"
           onClick={onReload}
           style={{
-            flex: 1, padding: '4px 6px', borderRadius: 5, fontSize: 11,
+            flex: 1, padding: '4px 6px', borderRadius: 5, fontSize: 'var(--lbb-fs-11)',
             background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
             color: 'var(--lbb-fg)', cursor: 'pointer', fontFamily: 'inherit',
           }}
@@ -395,7 +395,7 @@ function AliasPanel({
       </div>
 
       {aliasStatus && (
-        <div style={{ fontSize: 10.5, color: 'var(--lbb-fg3)', marginTop: 2 }}>{aliasStatus}</div>
+        <div style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)', marginTop: 2 }}>{aliasStatus}</div>
       )}
     </div>
   )
@@ -616,7 +616,7 @@ function SqlQueryPanel() {
           rows={3}
           spellCheck={false}
           style={{
-            flex: 1, padding: '5px 8px', borderRadius: 6, fontSize: 12,
+            flex: 1, padding: '5px 8px', borderRadius: 6, fontSize: 'var(--lbb-fs-12)',
             background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
             color: 'var(--lbb-fg)', fontFamily: 'var(--lbb-mono)', resize: 'none',
           }}
@@ -627,7 +627,7 @@ function SqlQueryPanel() {
             onClick={runQuery}
             disabled={running || !sql.trim()}
             style={{
-              padding: '5px 14px', borderRadius: 6, fontSize: 12,
+              padding: '5px 14px', borderRadius: 6, fontSize: 'var(--lbb-fs-12)',
               background: 'var(--lbb-accent-mid)', border: 'none',
               color: 'var(--lbb-accent-onMid)',
               cursor: (running || !sql.trim()) ? 'not-allowed' : 'pointer',
@@ -640,7 +640,7 @@ function SqlQueryPanel() {
             type="button"
             onClick={() => { setSql(''); setResult(null) }}
             style={{
-              padding: '5px 14px', borderRadius: 6, fontSize: 12,
+              padding: '5px 14px', borderRadius: 6, fontSize: 'var(--lbb-fs-12)',
               background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
               color: 'var(--lbb-fg)', cursor: 'pointer', fontFamily: 'inherit',
             }}
@@ -653,7 +653,7 @@ function SqlQueryPanel() {
       {/* Status */}
       {result && (
         <div style={{
-          padding: '2px 12px 4px', fontSize: 11.5, flexShrink: 0,
+          padding: '2px 12px 4px', fontSize: 'var(--lbb-fs-11-5)', flexShrink: 0,
           color: statusColor, fontFamily: 'var(--lbb-mono)',
         }}>
           {statusLine()}
@@ -663,12 +663,12 @@ function SqlQueryPanel() {
       {/* Results table */}
       {result && result.columns.length > 0 && (
         <div style={{ flex: 1, overflow: 'auto', minHeight: 0 }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 11.5, fontFamily: 'var(--lbb-mono)' }}>
+          <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 'var(--lbb-fs-11-5)', fontFamily: 'var(--lbb-mono)' }}>
             <thead>
               <tr>
                 {result.columns.map((col, i) => (
                   <th key={i} style={{
-                    padding: '4px 8px', textAlign: 'left', fontWeight: 700, fontSize: 11,
+                    padding: '4px 8px', textAlign: 'left', fontWeight: 700, fontSize: 'var(--lbb-fs-11)',
                     color: 'var(--lbb-fg3)', borderBottom: '2px solid var(--lbb-border)',
                     background: 'var(--lbb-surface)', position: 'sticky', top: 0, whiteSpace: 'nowrap',
                   }}>
@@ -1267,7 +1267,7 @@ export function ScreenDbEditor() {
         {/* Table list */}
         <div style={{ padding: '10px 8px 4px' }}>
           <div style={{
-            fontSize: 10, fontWeight: 700, textTransform: 'uppercase',
+            fontSize: 'var(--lbb-fs-10)', fontWeight: 700, textTransform: 'uppercase',
             letterSpacing: 0.1, color: 'var(--lbb-fg3)', marginBottom: 4, paddingLeft: 4,
           }}>
             {t('dbeditor.tables')}
@@ -1290,7 +1290,7 @@ export function ScreenDbEditor() {
                   onClick={() => selectTable(name)}
                   style={{
                     display: 'block', width: '100%', textAlign: 'left',
-                    padding: '5px 8px', borderRadius: 5, fontSize: 11.5,
+                    padding: '5px 8px', borderRadius: 5, fontSize: 'var(--lbb-fs-11-5)',
                     background: currentTable === name ? 'var(--lbb-accent-soft)' : 'transparent',
                     border: '1px solid transparent',
                     color: currentTable === name ? 'var(--lbb-accent-mid)' : labelColor,
@@ -1303,14 +1303,14 @@ export function ScreenDbEditor() {
               )
             })}
             {tableList.length === 0 && (
-              <div style={{ fontSize: 11, color: 'var(--lbb-fg3)', padding: '4px 8px' }}>—</div>
+              <div style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', padding: '4px 8px' }}>—</div>
             )}
           </div>
           <button
             type="button"
             onClick={() => { loadTables(); loadIntegrityStats(); loadAliases() }}
             style={{
-              width: '100%', padding: '4px 8px', borderRadius: 5, fontSize: 11,
+              width: '100%', padding: '4px 8px', borderRadius: 5, fontSize: 'var(--lbb-fs-11)',
               background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
               color: 'var(--lbb-fg)', cursor: 'pointer', fontFamily: 'inherit',
             }}
@@ -1365,21 +1365,21 @@ export function ScreenDbEditor() {
           padding: '8px 12px', borderBottom: '1px solid var(--lbb-border)',
           background: 'var(--lbb-surface)', flexShrink: 0,
         }}>
-          <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--lbb-fg)', flex: 1, minWidth: 0 }}>
+          <span style={{ fontSize: 'var(--lbb-fs-13)', fontWeight: 700, color: 'var(--lbb-fg)', flex: 1, minWidth: 0 }}>
             {tableLabel()}
           </span>
           <button
             type="button"
             onClick={onLoadAll}
             style={{
-              padding: '5px 10px', borderRadius: 6, fontSize: 12,
+              padding: '5px 10px', borderRadius: 6, fontSize: 'var(--lbb-fs-12)',
               background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
               color: 'var(--lbb-fg)', cursor: 'pointer', fontFamily: 'inherit',
             }}
           >
             {t('dbeditor.loadRecords')}
           </button>
-          <span style={{ fontSize: 12, color: 'var(--lbb-fg3)' }}>{t('dbeditor.lbFilter')}</span>
+          <span style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg3)' }}>{t('dbeditor.lbFilter')}</span>
           <input
             type="text"
             value={lbFilter}
@@ -1387,7 +1387,7 @@ export function ScreenDbEditor() {
             onKeyDown={(e) => e.key === 'Enter' && doSearch()}
             placeholder="e.g. 1797"
             style={{
-              width: 70, padding: '5px 7px', borderRadius: 6, fontSize: 12,
+              width: 70, padding: '5px 7px', borderRadius: 6, fontSize: 'var(--lbb-fs-12)',
               background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
               color: 'var(--lbb-fg)', fontFamily: 'inherit',
             }}
@@ -1399,7 +1399,7 @@ export function ScreenDbEditor() {
             onKeyDown={(e) => e.key === 'Enter' && doSearch()}
             placeholder={t('dbeditor.searchPlaceholder')}
             style={{
-              width: 200, padding: '5px 7px', borderRadius: 6, fontSize: 12,
+              width: 200, padding: '5px 7px', borderRadius: 6, fontSize: 'var(--lbb-fs-12)',
               background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
               color: 'var(--lbb-fg)', fontFamily: 'inherit',
             }}
@@ -1408,7 +1408,7 @@ export function ScreenDbEditor() {
             type="button"
             onClick={doSearch}
             style={{
-              padding: '5px 10px', borderRadius: 6, fontSize: 12,
+              padding: '5px 10px', borderRadius: 6, fontSize: 'var(--lbb-fs-12)',
               background: 'var(--lbb-accent-mid)', border: 'none',
               color: 'var(--lbb-accent-onMid)', cursor: 'pointer', fontFamily: 'inherit',
             }}
@@ -1420,7 +1420,7 @@ export function ScreenDbEditor() {
         {/* Schema strip */}
         {schemaStr && (
           <div style={{
-            padding: '3px 12px', fontSize: 10.5, color: 'var(--lbb-fg3)',
+            padding: '3px 12px', fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)',
             borderBottom: '1px solid var(--lbb-border)', background: 'var(--lbb-surface)',
             fontFamily: 'var(--lbb-mono)', whiteSpace: 'nowrap', overflowX: 'auto', flexShrink: 0,
           }}>
@@ -1431,13 +1431,13 @@ export function ScreenDbEditor() {
         {/* Data table */}
         <div style={{ flex: 1, overflow: 'auto', minHeight: 0 }}>
           {loading && (
-            <div style={{ padding: 16, color: 'var(--lbb-fg3)', fontSize: 12 }}>
+            <div style={{ padding: 16, color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-12)' }}>
               {t('dbeditor.loading')}
             </div>
           )}
           {!loading && rows.length > 0 && (
             <table style={{
-              width: '100%', borderCollapse: 'collapse', fontSize: 12,
+              width: '100%', borderCollapse: 'collapse', fontSize: 'var(--lbb-fs-12)',
               fontFamily: 'var(--lbb-mono)',
             }}>
               <thead>
@@ -1448,7 +1448,7 @@ export function ScreenDbEditor() {
                       onClick={() => onSortHeader(ci)}
                       style={{
                         padding: '6px 10px', textAlign: 'left', fontWeight: 700,
-                        fontSize: 11, color: 'var(--lbb-fg3)',
+                        fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)',
                         borderBottom: '2px solid var(--lbb-border)',
                         background: 'var(--lbb-surface)',
                         position: 'sticky', top: 0, zIndex: 1,
@@ -1459,7 +1459,7 @@ export function ScreenDbEditor() {
                     >
                       {col}
                       {sortCol === col && (
-                        <span style={{ marginLeft: 4, fontSize: 9 }}>
+                        <span style={{ marginLeft: 4, fontSize: 'var(--lbb-fs-9)' }}>
                           {sortDir === 'asc' ? '▲' : '▼'}
                         </span>
                       )}
@@ -1509,7 +1509,7 @@ export function ScreenDbEditor() {
                               onBlur={commitEditCell}
                               onKeyDown={onEditKeyDown}
                               style={{
-                                width: '100%', padding: '1px 4px', fontSize: 12,
+                                width: '100%', padding: '1px 4px', fontSize: 'var(--lbb-fs-12)',
                                 background: 'var(--lbb-bg)', border: '1px solid var(--lbb-accent-mid)',
                                 borderRadius: 3, color: 'var(--lbb-fg)', fontFamily: 'var(--lbb-mono)',
                                 boxSizing: 'border-box',
@@ -1527,7 +1527,7 @@ export function ScreenDbEditor() {
             </table>
           )}
           {!loading && rows.length === 0 && currentTable && (
-            <div style={{ padding: 20, color: 'var(--lbb-fg3)', fontSize: 12 }}>
+            <div style={{ padding: 20, color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-12)' }}>
               {t('dbeditor.noRows')}
             </div>
           )}
@@ -1543,7 +1543,7 @@ export function ScreenDbEditor() {
             onClick={prevPage}
             disabled={page === 0}
             style={{
-              padding: '4px 10px', borderRadius: 5, fontSize: 12,
+              padding: '4px 10px', borderRadius: 5, fontSize: 'var(--lbb-fs-12)',
               background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
               color: page === 0 ? 'var(--lbb-fg3)' : 'var(--lbb-fg)',
               cursor: page === 0 ? 'not-allowed' : 'pointer', fontFamily: 'inherit',
@@ -1551,7 +1551,7 @@ export function ScreenDbEditor() {
           >
             {t('dbeditor.prev')}
           </button>
-          <span style={{ fontSize: 12, color: 'var(--lbb-fg2)', minWidth: 140 }}>
+          <span style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)', minWidth: 140 }}>
             {t('dbeditor.pageInfo', {
               page: page + 1, pages, total: total.toLocaleString()
             })}
@@ -1561,7 +1561,7 @@ export function ScreenDbEditor() {
             onClick={nextPage}
             disabled={page >= pages - 1}
             style={{
-              padding: '4px 10px', borderRadius: 5, fontSize: 12,
+              padding: '4px 10px', borderRadius: 5, fontSize: 'var(--lbb-fs-12)',
               background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
               color: page >= pages - 1 ? 'var(--lbb-fg3)' : 'var(--lbb-fg)',
               cursor: page >= pages - 1 ? 'not-allowed' : 'pointer', fontFamily: 'inherit',
@@ -1570,12 +1570,12 @@ export function ScreenDbEditor() {
             {t('dbeditor.next')}
           </button>
           <div style={{ flex: 1 }} />
-          <span style={{ fontSize: 12, color: 'var(--lbb-fg3)' }}>{t('dbeditor.rowsPerPage')}</span>
+          <span style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg3)' }}>{t('dbeditor.rowsPerPage')}</span>
           <select
             value={limit}
             onChange={onLimitChange}
             style={{
-              padding: '3px 6px', borderRadius: 5, fontSize: 12,
+              padding: '3px 6px', borderRadius: 5, fontSize: 'var(--lbb-fs-12)',
               background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
               color: 'var(--lbb-fg)', fontFamily: 'inherit',
             }}
@@ -1624,7 +1624,7 @@ export function ScreenDbEditor() {
           )}
           <div style={{ flex: 1 }} />
           {status && (
-            <span style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)' }}>
+            <span style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)' }}>
               {status}
             </span>
           )}

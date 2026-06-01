@@ -57,10 +57,10 @@ function ProgressBar({ done, total, current }: { done: number; total: number; cu
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <span style={{ fontSize: 12, color: 'var(--lbb-fg2)', fontFamily: 'var(--lbb-mono)' }}>
+        <span style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)', fontFamily: 'var(--lbb-mono)' }}>
           {t('fingerprint.progress.files', { done, total })}
         </span>
-        <span style={{ fontSize: 12, color: 'var(--lbb-fg3)' }}>{pct}%</span>
+        <span style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg3)' }}>{pct}%</span>
       </div>
       <div style={{ height: 6, borderRadius: 3, background: 'var(--lbb-surface2)', overflow: 'hidden' }}>
         <div style={{
@@ -70,7 +70,7 @@ function ProgressBar({ done, total, current }: { done: number; total: number; cu
       </div>
       {current && (
         <div style={{
-          fontSize: 11, color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)',
+          fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)',
           overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
         }}>
           {t('fingerprint.progress.current', { name: current })}
@@ -266,7 +266,7 @@ export function ScreenFingerprint(): React.JSX.Element {
           background: `var(--lbb-${toast.tone}-bg)`,
           border: `1px solid var(--lbb-${toast.tone}-bar)`,
           color: `var(--lbb-${toast.tone}-fg)`,
-          fontSize: 12.5, fontWeight: 500,
+          fontSize: 'var(--lbb-fs-12-5)', fontWeight: 500,
           boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
         }}>
           {toast.msg}
@@ -285,7 +285,7 @@ export function ScreenFingerprint(): React.JSX.Element {
           {/* Date row */}
           <div style={{ display: 'flex', gap: 10, alignItems: 'flex-end', marginTop: 14 }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-              <label style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', fontWeight: 600 }}>
+              <label style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)', fontWeight: 600 }}>
                 {t('fingerprint.configure.date')}
               </label>
               <input
@@ -296,7 +296,7 @@ export function ScreenFingerprint(): React.JSX.Element {
                   height: 32, padding: '0 10px', borderRadius: 6,
                   border: '1px solid var(--lbb-border2)',
                   background: 'var(--lbb-bg)', color: 'var(--lbb-fg)',
-                  fontSize: 13, fontFamily: 'var(--lbb-mono)',
+                  fontSize: 'var(--lbb-fs-13)', fontFamily: 'var(--lbb-mono)',
                   cursor: 'pointer',
                 }}
               />
@@ -314,7 +314,7 @@ export function ScreenFingerprint(): React.JSX.Element {
           {/* LB entries table */}
           {lbEntries.length > 0 && (
             <div style={{ marginTop: 14 }}>
-              <div style={{ fontSize: 12, color: 'var(--lbb-fg2)', marginBottom: 8 }}>
+              <div style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)', marginBottom: 8 }}>
                 {t('fingerprint.configure.found', { count: lbEntries.length, withPath: withPath.length })}
               </div>
               <div style={{
@@ -352,14 +352,14 @@ export function ScreenFingerprint(): React.JSX.Element {
           {/* Mystery folder */}
           <div style={{ marginTop: 16, display: 'flex', gap: 10, alignItems: 'flex-end' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 4, flex: 1, minWidth: 0 }}>
-              <label style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', fontWeight: 600 }}>
+              <label style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)', fontWeight: 600 }}>
                 {t('fingerprint.configure.userFolder')}
               </label>
               <div style={{
                 height: 32, padding: '0 10px', borderRadius: 6,
                 border: '1px solid var(--lbb-border2)',
                 background: 'var(--lbb-surface2)',
-                fontSize: 12, fontFamily: 'var(--lbb-mono)',
+                fontSize: 'var(--lbb-fs-12)', fontFamily: 'var(--lbb-mono)',
                 display: 'flex', alignItems: 'center',
                 color: userFolder ? 'var(--lbb-fg)' : 'var(--lbb-fg3)',
                 overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
@@ -378,7 +378,7 @@ export function ScreenFingerprint(): React.JSX.Element {
               {t('fingerprint.configure.match')}
             </Button>
             {!canMatch && phase === 'idle' && (
-              <span style={{ fontSize: 11.5, color: 'var(--lbb-fg3)' }}>
+              <span style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
                 {t('fingerprint.configure.matchHint')}
               </span>
             )}
@@ -403,13 +403,13 @@ export function ScreenFingerprint(): React.JSX.Element {
             {phase === 'building' && buildStatus ? (
               <ProgressBar done={buildStatus.done} total={buildStatus.total} current={buildStatus.current} />
             ) : phase === 'building' ? (
-              <div style={{ fontSize: 12, color: 'var(--lbb-fg3)' }}>{t('common.loading')}</div>
+              <div style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg3)' }}>{t('common.loading')}</div>
             ) : null}
 
             {phase === 'identifying' && idStatus ? (
               <ProgressBar done={idStatus.done} total={idStatus.total} current={idStatus.current} />
             ) : phase === 'identifying' ? (
-              <div style={{ fontSize: 12, color: 'var(--lbb-fg3)' }}>{t('common.loading')}</div>
+              <div style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg3)' }}>{t('common.loading')}</div>
             ) : null}
           </Card>
         )}
@@ -429,7 +429,7 @@ export function ScreenFingerprint(): React.JSX.Element {
             </Toolbar>
 
             {idStatus.results.length === 0 ? (
-              <div style={{ fontSize: 13, color: 'var(--lbb-fg3)', padding: '8px 0' }}>
+              <div style={{ fontSize: 'var(--lbb-fs-13)', color: 'var(--lbb-fg3)', padding: '8px 0' }}>
                 {t('fingerprint.results.noResults')}
               </div>
             ) : (
@@ -474,7 +474,7 @@ export function ScreenFingerprint(): React.JSX.Element {
             )}
 
             {idStatus.errors.length > 0 && (
-              <div style={{ marginTop: 10, fontSize: 11.5, color: 'var(--lbb-bad-fg)' }}>
+              <div style={{ marginTop: 10, fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-bad-fg)' }}>
                 {t('fingerprint.results.errors', { count: idStatus.errors.length })}
               </div>
             )}

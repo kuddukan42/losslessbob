@@ -96,7 +96,7 @@ export function ScreenAttachments(): React.JSX.Element {
         }>
         total: number
       }
-      setTotal(d.total)
+      setTotal(d.total ?? 0)
       const mapped: LbEntry[] = (d.entries ?? []).map(e => ({
         ...e,
         att_status: e.files.length === 0 ? 'missing' : e.files.every(f => f.downloaded === 1) ? 'current' : 'stale' as LbStatus,
@@ -232,10 +232,10 @@ export function ScreenAttachments(): React.JSX.Element {
           }}><Icon name="attachments" size={18} /></div>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-              <h1 style={{ margin: 0, fontSize: 18, fontWeight: 700, letterSpacing: -0.01 }}>Attachments</h1>
+              <h1 style={{ margin: 0, fontSize: 'var(--lbb-fs-18)', fontWeight: 700, letterSpacing: -0.01 }}>Attachments</h1>
               <Pill tone="mute" soft>data/attachments/</Pill>
             </div>
-            <div style={{ fontSize: 12, color: 'var(--lbb-fg3)', marginTop: 2 }}>
+            <div style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg3)', marginTop: 2 }}>
               Cached files (lbdir, ffp, md5, info, html, cover art) — {entries.length.toLocaleString()} / {total.toLocaleString()} LBs
             </div>
           </div>
@@ -275,7 +275,7 @@ export function ScreenAttachments(): React.JSX.Element {
           </div>
           <div style={{ flex: 1, overflowY: 'auto', padding: '6px 6px' }}>
             {filteredEntries.length === 0 ? (
-              <div style={{ padding: '24px 12px', textAlign: 'center', color: 'var(--lbb-fg3)', fontSize: 11 }}>
+              <div style={{ padding: '24px 12px', textAlign: 'center', color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-11)' }}>
                 {busy ? 'Loading…' : entries.length === 0 ? 'Click Refresh tree to load' : 'No matches'}
               </div>
             ) : filteredEntries.map(e => (
@@ -289,9 +289,9 @@ export function ScreenAttachments(): React.JSX.Element {
               }}>
                 <span style={{ width: 6, height: 6, borderRadius: '50%', background: STATUS_COLOR[e.att_status], flex: '0 0 6px' }} />
                 <span style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
-                  <span style={{ fontFamily: 'var(--lbb-mono)', fontWeight: 600, fontSize: 11.5 }}>{lbFolder(e.lb_number)}</span>
+                  <span style={{ fontFamily: 'var(--lbb-mono)', fontWeight: 600, fontSize: 'var(--lbb-fs-11-5)' }}>{lbFolder(e.lb_number)}</span>
                 </span>
-                <span style={{ fontSize: 10, color: 'var(--lbb-fg3)', fontVariantNumeric: 'tabular-nums' }}>{e.files.length}</span>
+                <span style={{ fontSize: 'var(--lbb-fs-10)', color: 'var(--lbb-fg3)', fontVariantNumeric: 'tabular-nums' }}>{e.files.length}</span>
               </button>
             ))}
           </div>
@@ -303,27 +303,27 @@ export function ScreenAttachments(): React.JSX.Element {
           display: 'flex', flexDirection: 'column', minHeight: 0,
         }}>
           {activeLb === null ? (
-            <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--lbb-fg3)', fontSize: 12 }}>
+            <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-12)' }}>
               Select an LB entry
             </div>
           ) : (
             <>
               <div style={{ padding: '12px 14px', borderBottom: '1px solid var(--lbb-border)' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                  <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 13, fontWeight: 700, color: 'var(--lbb-accent-mid)' }}>
+                  <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-13)', fontWeight: 700, color: 'var(--lbb-accent-mid)' }}>
                     {lbFolder(activeLb)}
                   </span>
                   {activeLbEntry && (
                     <Pill tone={STATUS_TONE[activeLbEntry.att_status]} soft>{activeLbEntry.att_status}</Pill>
                   )}
                 </div>
-                <div style={{ fontSize: 10.5, color: 'var(--lbb-fg3)', marginTop: 2, fontFamily: 'var(--lbb-mono)' }}>
+                <div style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)', marginTop: 2, fontFamily: 'var(--lbb-mono)' }}>
                   {entryFiles.length} files · attachments/{lbFolder(activeLb)}/
                 </div>
               </div>
               <div style={{ flex: 1, overflowY: 'auto', padding: '6px 6px' }}>
                 {entryFiles.length === 0 ? (
-                  <div style={{ padding: '16px 12px', textAlign: 'center', color: 'var(--lbb-fg3)', fontSize: 11 }}>
+                  <div style={{ padding: '16px 12px', textAlign: 'center', color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-11)' }}>
                     No cached files
                   </div>
                 ) : entryFiles.map((f, i) => {
@@ -339,10 +339,10 @@ export function ScreenAttachments(): React.JSX.Element {
                       textAlign: 'left', fontFamily: 'inherit', cursor: 'pointer',
                     }}>
                       <Icon name={extIcon(k, fext)} size={11} style={{ color: 'var(--lbb-fg3)' }} />
-                      <span style={{ flex: 1, minWidth: 0, fontFamily: 'var(--lbb-mono)', fontSize: 11, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                      <span style={{ flex: 1, minWidth: 0, fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                         {f.clean_name || f.filename}
                       </span>
-                      {f.downloaded !== 1 && <span style={{ fontSize: 9, color: 'var(--lbb-warn-fg)' }}>not cached</span>}
+                      {f.downloaded !== 1 && <span style={{ fontSize: 'var(--lbb-fs-9)', color: 'var(--lbb-warn-fg)' }}>not cached</span>}
                     </button>
                   )
                 })}
@@ -370,7 +370,7 @@ export function ScreenAttachments(): React.JSX.Element {
               <div style={{
                 padding: '10px 24px', borderBottom: '1px solid var(--lbb-border)',
                 display: 'flex', alignItems: 'center', gap: 12,
-                background: 'var(--lbb-surface)', fontSize: 11.5, flexShrink: 0,
+                background: 'var(--lbb-surface)', fontSize: 'var(--lbb-fs-11-5)', flexShrink: 0,
               }}>
                 <Icon name={extIcon(kind!, ext)} size={14} style={{ color: 'var(--lbb-fg2)' }} />
                 <span style={{ fontFamily: 'var(--lbb-mono)', fontWeight: 600, color: 'var(--lbb-fg)' }}>
@@ -387,7 +387,7 @@ export function ScreenAttachments(): React.JSX.Element {
               {kind === 'text' && (
                 <pre style={{
                   margin: 0, flex: 1, padding: '20px 24px',
-                  fontFamily: 'var(--lbb-mono)', fontSize: 12.5, lineHeight: 1.6,
+                  fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-12-5)', lineHeight: 1.6,
                   color: 'var(--lbb-fg)', whiteSpace: 'pre-wrap',
                   background: 'var(--lbb-bg)', overflow: 'auto',
                 }}>
@@ -429,8 +429,8 @@ export function ScreenAttachments(): React.JSX.Element {
                     color: 'var(--lbb-fg3)',
                   }}><Icon name="attachments" size={32} /></div>
                   <div style={{ textAlign: 'center' }}>
-                    <div style={{ fontFamily: 'var(--lbb-mono)', fontSize: 13, fontWeight: 600 }}>{activeFile.filename}</div>
-                    <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', marginTop: 4 }}>Binary file · no in-app preview</div>
+                    <div style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-13)', fontWeight: 600 }}>{activeFile.filename}</div>
+                    <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)', marginTop: 4 }}>Binary file · no in-app preview</div>
                   </div>
                   <Button variant="primary" size="sm" icon="reveal" onClick={handleOpenExternal}>Open externally</Button>
                 </div>
@@ -442,7 +442,7 @@ export function ScreenAttachments(): React.JSX.Element {
               flexDirection: 'column', gap: 12, color: 'var(--lbb-fg3)',
             }}>
               <Icon name="attachments" size={36} style={{ opacity: 0.15 }} />
-              <span style={{ fontSize: 13 }}>Select an LB entry and file to preview</span>
+              <span style={{ fontSize: 'var(--lbb-fs-13)' }}>Select an LB entry and file to preview</span>
             </div>
           )}
         </section>
@@ -454,7 +454,7 @@ export function ScreenAttachments(): React.JSX.Element {
             position: 'fixed', bottom: 28, left: '50%', transform: 'translateX(-50%)',
             background: toast.tone === 'ok' ? 'var(--lbb-ok-bar)' : toast.tone === 'bad' ? 'var(--lbb-err-bar)' : 'var(--lbb-accent-mid)',
             color: '#fff', padding: '9px 18px', borderRadius: 8,
-            fontSize: 13, fontWeight: 600, zIndex: 9999, boxShadow: '0 4px 16px rgba(0,0,0,.25)',
+            fontSize: 'var(--lbb-fs-13)', fontWeight: 600, zIndex: 9999, boxShadow: '0 4px 16px rgba(0,0,0,.25)',
             pointerEvents: 'none',
           }}
           ref={(el: HTMLDivElement | null) => { if (el) setTimeout(() => setToast(null), 3500) }}

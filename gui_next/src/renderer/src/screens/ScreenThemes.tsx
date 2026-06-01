@@ -1,5 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useSettingsStore } from '../store'
 import {
   Button, Pill, Chip, Icon,
   TableShell, TH, TR, TD,
@@ -36,7 +37,7 @@ function SetupCard({
       <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 14 }}>
         <span
           style={{
-            fontSize: 12,
+            fontSize: 'var(--lbb-fs-12)',
             fontWeight: 700,
             letterSpacing: 0.08,
             textTransform: 'uppercase',
@@ -67,7 +68,7 @@ function Toast({ msg, tone, onDone }: { msg: string; tone: ToastTone; onDone: ()
     <div style={{
       position: 'fixed', bottom: 24, right: 24, zIndex: 9999,
       padding: '10px 16px', borderRadius: 8, background: bg, color: fg,
-      fontSize: 13, fontWeight: 500, boxShadow: 'var(--lbb-shadowLg)',
+      fontSize: 'var(--lbb-fs-13)', fontWeight: 500, boxShadow: 'var(--lbb-shadowLg)',
       border: '1px solid color-mix(in oklab, currentColor 20%, transparent)',
     }}>
       {msg}
@@ -118,7 +119,7 @@ function CustomTokenEditor({
         const displayVal = override ?? getLiveColor(key)
         return (
           <div key={key} style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-            <span style={{ fontSize: 12, color: 'var(--lbb-fg2)', minWidth: 96 }}>{label}</span>
+            <span style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)', minWidth: 96 }}>{label}</span>
             <input
               type="color"
               value={displayVal.startsWith('#') ? displayVal : '#888888'}
@@ -128,14 +129,14 @@ function CustomTokenEditor({
                 border: '1px solid var(--lbb-border)', cursor: 'pointer', background: 'none',
               }}
             />
-            <span style={{ fontSize: 11, fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-fg3)' }}>
+            <span style={{ fontSize: 'var(--lbb-fs-11)', fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-fg3)' }}>
               {displayVal || '—'}
             </span>
             {override && (
               <button
                 type="button"
                 onClick={() => { const n = { ...customTokens }; delete n[key]; onChange(n) }}
-                style={{ fontSize: 11, color: 'var(--lbb-fg3)', background: 'none', border: 'none', cursor: 'pointer', padding: '0 4px' }}
+                style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', background: 'none', border: 'none', cursor: 'pointer', padding: '0 4px' }}
               >
                 {t('themes.tokens.reset')}
               </button>
@@ -183,6 +184,8 @@ const PREVIEW_BTN_VARIANTS = ['primary', 'secondary', 'ghost', 'danger'] as cons
 export function ScreenThemes() {
   const { t } = useTranslation()
   const [theme, setTheme] = useState<ThemeOptions>(loadTheme)
+  const rowHighlight    = useSettingsStore((s) => s.rowHighlight)
+  const setRowHighlight = useSettingsStore((s) => s.setRowHighlight)
   const [showCustomEditor, setShowCustomEditor] = useState(false)
   const [toast, setToast] = useState<{ msg: string; tone: ToastTone } | null>(null)
 
@@ -246,10 +249,10 @@ export function ScreenThemes() {
     <div style={{ overflow: 'auto', height: '100%' }}>
       <div style={{ padding: '24px 32px 40px', maxWidth: 1500, margin: '0 auto' }}>
 
-        <h1 style={{ margin: 0, fontSize: 22, fontWeight: 700, letterSpacing: -0.02, color: 'var(--lbb-fg)' }}>
+        <h1 style={{ margin: 0, fontSize: 'var(--lbb-fs-22)', fontWeight: 700, letterSpacing: -0.02, color: 'var(--lbb-fg)' }}>
           {t('themes.title')}
         </h1>
-        <p style={{ fontSize: 13, color: 'var(--lbb-fg3)', marginTop: 4, marginBottom: 0 }}>
+        <p style={{ fontSize: 'var(--lbb-fs-13)', color: 'var(--lbb-fg3)', marginTop: 4, marginBottom: 0 }}>
           {t('themes.subtitle')}
         </p>
 
@@ -287,7 +290,7 @@ export function ScreenThemes() {
                       <div style={{ height: 4, background: m.side, opacity: 0.3, borderRadius: 2, width: '60%' }} />
                     </div>
                   </div>
-                  <div style={{ marginTop: 8, fontSize: 12, fontWeight: 600 }}>{m.l}</div>
+                  <div style={{ marginTop: 8, fontSize: 'var(--lbb-fs-12)', fontWeight: 600 }}>{m.l}</div>
                 </button>
               ))}
             </div>
@@ -326,8 +329,8 @@ export function ScreenThemes() {
                       />
                     ))}
                   </div>
-                  <div style={{ marginTop: 8, fontSize: 12, fontWeight: 600 }}>{d.l}</div>
-                  <div style={{ fontSize: 10.5, color: 'var(--lbb-fg3)' }}>{d.n}</div>
+                  <div style={{ marginTop: 8, fontSize: 'var(--lbb-fs-12)', fontWeight: 600 }}>{d.l}</div>
+                  <div style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)' }}>{d.n}</div>
                 </button>
               ))}
             </div>
@@ -366,7 +369,7 @@ export function ScreenThemes() {
                       boxShadow: '0 1px 0 rgba(255,255,255,0.3) inset',
                     }}
                   />
-                  <span style={{ fontSize: 11.5, color: 'var(--lbb-fg)', fontWeight: 600, textTransform: 'capitalize' }}>
+                  <span style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg)', fontWeight: 600, textTransform: 'capitalize' }}>
                     {a.k}
                   </span>
                 </button>
@@ -399,8 +402,8 @@ export function ScreenThemes() {
                     }}
                   >
                     <div style={{ flex: 1 }}>
-                      <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--lbb-fg)', fontFamily: f.stack }}>{f.l}</div>
-                      <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)' }}>{f.n}</div>
+                      <div style={{ fontSize: 'var(--lbb-fs-13)', fontWeight: 600, color: 'var(--lbb-fg)', fontFamily: f.stack }}>{f.l}</div>
+                      <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>{f.n}</div>
                     </div>
                     {active && <Icon name="check" size={14} style={{ color: 'var(--lbb-accent-mid)', flexShrink: 0 }} />}
                   </button>
@@ -408,7 +411,7 @@ export function ScreenThemes() {
               })}
             </div>
             <div style={{ marginTop: 12, display: 'flex', alignItems: 'center', gap: 6 }}>
-              <span style={{ fontSize: 12, color: 'var(--lbb-fg3)', marginRight: 4 }}>{t('themes.typeface.size')}</span>
+              <span style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg3)', marginRight: 4 }}>{t('themes.typeface.size')}</span>
               {(FONT_SIZES as FontSize[]).map((sz) => (
                 <button
                   key={sz}
@@ -417,7 +420,7 @@ export function ScreenThemes() {
                   style={{
                     padding: '3px 10px',
                     borderRadius: 6,
-                    fontSize: 12,
+                    fontSize: 'var(--lbb-fs-12)',
                     cursor: 'pointer',
                     fontFamily: 'inherit',
                     color: 'var(--lbb-fg)',
@@ -461,11 +464,20 @@ export function ScreenThemes() {
                 padding: '10px 12px',
                 borderRadius: 6,
                 background: 'var(--lbb-surface2)',
-                fontSize: 11.5,
+                fontSize: 'var(--lbb-fs-11-5)',
                 color: 'var(--lbb-fg2)',
                 lineHeight: 1.5,
               }}
             >
+              <label style={{ display: 'flex', alignItems: 'center', gap: 6, cursor: 'pointer', marginBottom: 8 }}>
+                <input
+                  type="checkbox"
+                  checked={rowHighlight}
+                  onChange={(e) => setRowHighlight(e.target.checked)}
+                  style={{ accentColor: 'var(--lbb-accent-mid)' }}
+                />
+                <span>{t('themes.advanced.rowHighlight')}</span>
+              </label>
               {t('themes.advanced.statusColorsNote')}
             </div>
           </SetupCard>
@@ -483,7 +495,7 @@ export function ScreenThemes() {
                   padding: '10px 16px',
                   background: 'var(--lbb-accent-mid)',
                   color: 'var(--lbb-accent-onMid)',
-                  fontSize: 12,
+                  fontSize: 'var(--lbb-fs-12)',
                   fontWeight: 600,
                   display: 'flex',
                   alignItems: 'center',
@@ -493,7 +505,7 @@ export function ScreenThemes() {
                 <Icon name="collection" size={14} />
                 {t('themes.preview.collectionLabel')}
                 <div style={{ flex: 1 }} />
-                <span style={{ fontSize: 11, opacity: 0.85 }}>{t('themes.preview.previewSub')}</span>
+                <span style={{ fontSize: 'var(--lbb-fs-11)', opacity: 0.85 }}>{t('themes.preview.previewSub')}</span>
               </div>
 
               {/* Mock content area */}

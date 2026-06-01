@@ -60,7 +60,7 @@ function ListboxModal({ onDone }: { onDone: (text: string) => void }): React.JSX
         }}
         onClick={e => e.stopPropagation()}
       >
-        <div style={{ fontWeight: 700, fontSize: 15 }}>{t('lookup.listbox.title')}</div>
+        <div style={{ fontWeight: 700, fontSize: 'var(--lbb-fs-15)' }}>{t('lookup.listbox.title')}</div>
         <textarea
           autoFocus
           value={text}
@@ -68,7 +68,7 @@ function ListboxModal({ onDone }: { onDone: (text: string) => void }): React.JSX
           placeholder={t('lookup.listbox.placeholder')}
           style={{
             width: '100%', height: 220, resize: 'vertical',
-            fontFamily: 'var(--lbb-mono)', fontSize: 12, lineHeight: 1.5,
+            fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-12)', lineHeight: 1.5,
             background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
             borderRadius: 6, padding: 10, color: 'var(--lbb-fg)',
           }}
@@ -95,7 +95,7 @@ function SourceRow({ src, active, onClick }: { src: LookupSource; active: boolea
       textAlign: 'left', fontFamily: 'inherit', cursor: 'pointer',
     }}>
       <Icon name={SRC_ICON[src.kind]} size={12} style={{ color: active ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg3)' }} />
-      <span style={{ flex: 1, minWidth: 0, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', fontFamily: 'var(--lbb-mono)', fontSize: 11 }}>
+      <span style={{ flex: 1, minWidth: 0, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11)' }}>
         {src.name}
       </span>
     </button>
@@ -308,16 +308,16 @@ export function ScreenLookup(): React.JSX.Element {
         </div>
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <h1 style={{ margin: 0, fontSize: 18, fontWeight: 700, letterSpacing: -0.01 }}>{t('lookup.title')}</h1>
+            <h1 style={{ margin: 0, fontSize: 'var(--lbb-fs-18)', fontWeight: 700, letterSpacing: -0.01 }}>{t('lookup.title')}</h1>
             <Pill tone="mute" soft>{t('lookup.subtitle')}</Pill>
           </div>
-          <div style={{ fontSize: 12, color: 'var(--lbb-fg3)', marginTop: 2 }}>
+          <div style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg3)', marginTop: 2 }}>
             {t('lookup.desc')}
           </div>
         </div>
         <div style={{ flex: 1 }} />
         {summary && (
-          <span style={{ fontSize: 12, color: 'var(--lbb-fg2)', fontFamily: 'var(--lbb-mono)' }}>
+          <span style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)', fontFamily: 'var(--lbb-mono)' }}>
             {t('lookup.countLabel', { count: totalSums.toLocaleString(), lbs: summaryRows.length })}
           </span>
         )}
@@ -332,7 +332,7 @@ export function ScreenLookup(): React.JSX.Element {
           display: 'flex', flexDirection: 'column', minHeight: 0,
         }}>
           <div style={{ padding: '12px 12px 8px', borderBottom: '1px solid var(--lbb-border)' }}>
-            <div style={{ fontSize: 10.5, fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase', marginBottom: 8 }}>
+            <div style={{ fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase', marginBottom: 8 }}>
               {t('lookup.sources.label')}
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 4, marginBottom: 8 }}>
@@ -341,14 +341,14 @@ export function ScreenLookup(): React.JSX.Element {
               <Button variant="secondary" size="sm" icon="attachments" block disabled={busy} onClick={handleFiles}>{t('lookup.sources.files')}</Button>
               <Button variant="secondary" size="sm" icon="folderPlus"  block disabled={busy} onClick={handleFolders}>{t('lookup.sources.folders')}</Button>
             </div>
-            <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 11, color: 'var(--lbb-fg2)', cursor: 'pointer' }}>
+            <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg2)', cursor: 'pointer' }}>
               <input type="checkbox" checked={filterMy} onChange={() => setFilterMy(!filterMy)} />
               {t('lookup.sources.filterMy')}
             </label>
           </div>
           <div style={{ flex: 1, overflowY: 'auto', padding: '6px 6px' }}>
             {sources.length === 0 ? (
-              <div style={{ padding: '16px 10px', textAlign: 'center', color: 'var(--lbb-fg3)', fontSize: 11 }}>
+              <div style={{ padding: '16px 10px', textAlign: 'center', color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-11)' }}>
                 {t('lookup.sources.noSources')}
               </div>
             ) : sources.map((s, i) => (
@@ -388,11 +388,11 @@ export function ScreenLookup(): React.JSX.Element {
                   }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
                       <span style={{ width: 8, height: 8, borderRadius: '50%', background: t.color }} />
-                      <span style={{ fontSize: 10.5, fontWeight: 700, color: t.color, letterSpacing: 0.06, textTransform: 'uppercase' }}>
+                      <span style={{ fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: t.color, letterSpacing: 0.06, textTransform: 'uppercase' }}>
                         {c.l}
                       </span>
                     </div>
-                    <span style={{ fontSize: 22, fontWeight: 700, fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-fg)', lineHeight: 1.1 }}>
+                    <span style={{ fontSize: 'var(--lbb-fs-22)', fontWeight: 700, fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-fg)', lineHeight: 1.1 }}>
                       {n}
                     </span>
                   </button>
@@ -403,7 +403,7 @@ export function ScreenLookup(): React.JSX.Element {
             <div style={{
               padding: '12px 24px', borderBottom: '1px solid var(--lbb-border)',
               background: 'var(--lbb-surface)', display: 'flex', alignItems: 'center',
-              color: 'var(--lbb-fg3)', fontSize: 12,
+              color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-12)',
             }}>
               {busy ? t('lookup.status.running') : t('lookup.status.addSourcesFirst')}
             </div>
@@ -416,10 +416,10 @@ export function ScreenLookup(): React.JSX.Element {
               <>
                 {/* Summary table */}
                 <div style={{ padding: '16px 24px 6px', display: 'flex', alignItems: 'center', gap: 10 }}>
-                  <span style={{ fontSize: 10.5, fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase' }}>
+                  <span style={{ fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase' }}>
                     {t('lookup.status.matchSummary')}
                   </span>
-                  <span style={{ fontSize: 11, color: 'var(--lbb-fg3)' }}>{t('lookup.status.matchSummarySub')}</span>
+                  <span style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)' }}>{t('lookup.status.matchSummarySub')}</span>
                   <div style={{ flex: 1 }} />
                   <Button variant="ghost" size="sm" icon="copy" onClick={handleCopySummary}>{t('lookup.status.copySummary')}</Button>
                   <Button variant="ghost" size="sm" icon="download" onClick={handleExportCsv}>{t('lookup.status.exportCsv')}</Button>
@@ -476,10 +476,10 @@ export function ScreenLookup(): React.JSX.Element {
 
                 {/* Checksum detail */}
                 <div style={{ padding: '20px 24px 6px', display: 'flex', alignItems: 'center', gap: 10 }}>
-                  <span style={{ fontSize: 10.5, fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase' }}>
+                  <span style={{ fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase' }}>
                     {t('lookup.status.checksumDetail')}
                   </span>
-                  <span style={{ fontSize: 11.5, color: 'var(--lbb-fg2)', fontFamily: 'var(--lbb-mono)' }}>
+                  <span style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)', fontFamily: 'var(--lbb-mono)' }}>
                     {t('lookup.status.rows', { count: filteredDetail.length })}
                   </span>
                   <div style={{ flex: 1 }} />
@@ -529,7 +529,7 @@ export function ScreenLookup(): React.JSX.Element {
                     <div style={{
                       marginTop: 14, padding: '10px 14px', borderRadius: 6,
                       background: 'var(--lbb-info-bg)', border: '1px solid var(--lbb-info-bar)',
-                      fontSize: 11.5, color: 'var(--lbb-fg2)',
+                      fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)',
                       display: 'flex', alignItems: 'flex-start', gap: 10,
                     }}>
                       <Icon name="info" size={14} style={{ color: 'var(--lbb-info-fg)', marginTop: 1 }} />
@@ -549,7 +549,7 @@ export function ScreenLookup(): React.JSX.Element {
             padding: '10px 24px', borderTop: '1px solid var(--lbb-border)',
             display: 'flex', alignItems: 'center', gap: 8, background: 'var(--lbb-surface)',
           }}>
-            <span style={{ fontSize: 11.5, color: 'var(--lbb-fg3)' }}>
+            <span style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
               {t('lookup.footer.autoPopulate')}
             </span>
             <div style={{ flex: 1 }} />
@@ -567,7 +567,7 @@ export function ScreenLookup(): React.JSX.Element {
             position: 'fixed', bottom: 28, left: '50%', transform: 'translateX(-50%)',
             background: toast.tone === 'ok' ? 'var(--lbb-ok-bar)' : toast.tone === 'bad' ? 'var(--lbb-err-bar)' : 'var(--lbb-accent-mid)',
             color: '#fff', padding: '9px 18px', borderRadius: 8,
-            fontSize: 13, fontWeight: 600, zIndex: 9999, boxShadow: '0 4px 16px rgba(0,0,0,.25)',
+            fontSize: 'var(--lbb-fs-13)', fontWeight: 600, zIndex: 9999, boxShadow: '0 4px 16px rgba(0,0,0,.25)',
             pointerEvents: 'none',
           }}
           ref={(el: HTMLDivElement | null) => { if (el) setTimeout(() => setToast(null), 3500) }}

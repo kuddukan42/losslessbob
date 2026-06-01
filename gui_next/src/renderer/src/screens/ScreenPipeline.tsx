@@ -67,7 +67,7 @@ function StepTH({ n, label }: { n: number; label: string }): React.JSX.Element {
           width: 14, height: 14, borderRadius: '50%',
           background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border2)',
           display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-          fontSize: 9, fontWeight: 700, color: 'var(--lbb-fg2)',
+          fontSize: 'var(--lbb-fs-9)', fontWeight: 700, color: 'var(--lbb-fg2)',
         }}>{n}</span>
         {label}
       </span>
@@ -418,10 +418,10 @@ export function ScreenPipeline(): React.JSX.Element {
         </div>
 
         <div style={{ minWidth: 260 }}>
-          <div style={{ fontSize: 16, fontWeight: 700, letterSpacing: -0.01 }}>
+          <div style={{ fontSize: 'var(--lbb-fs-16)', fontWeight: 700, letterSpacing: -0.01 }}>
             {t('pipeline.title')}{counts.all > 0 ? ` ${t('pipeline.folderQueued', { count: counts.all })}` : ''}
           </div>
-          <div style={{ fontSize: 12, color: 'var(--lbb-fg2)', marginTop: 2 }}>
+          <div style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)', marginTop: 2 }}>
             {counts.all === 0
               ? t('pipeline.emptyHint')
               : t('pipeline.runHint')}
@@ -457,7 +457,7 @@ export function ScreenPipeline(): React.JSX.Element {
                     onClick={() => { selectAll(); setBulkMenuOpen(false) }}
                     style={{
                       display: 'block', width: '100%', textAlign: 'left',
-                      padding: '6px 12px', fontSize: 12.5, cursor: 'pointer',
+                      padding: '6px 12px', fontSize: 'var(--lbb-fs-12-5)', cursor: 'pointer',
                       border: 'none', background: 'transparent',
                       color: 'var(--lbb-fg)', borderRadius: 5,
                     }}
@@ -467,7 +467,7 @@ export function ScreenPipeline(): React.JSX.Element {
                       onClick={() => { clearSelection(); setBulkMenuOpen(false) }}
                       style={{
                         display: 'block', width: '100%', textAlign: 'left',
-                        padding: '6px 12px', fontSize: 12.5, cursor: 'pointer',
+                        padding: '6px 12px', fontSize: 'var(--lbb-fs-12-5)', cursor: 'pointer',
                         border: 'none', background: 'transparent',
                         color: 'var(--lbb-fg)', borderRadius: 5,
                       }}
@@ -478,7 +478,7 @@ export function ScreenPipeline(): React.JSX.Element {
                     onClick={() => { setRows([]); setActiveQueue(null); clearFolders(); setBulkMenuOpen(false) }}
                     style={{
                       display: 'block', width: '100%', textAlign: 'left',
-                      padding: '6px 12px', fontSize: 12.5, cursor: 'pointer',
+                      padding: '6px 12px', fontSize: 'var(--lbb-fs-12-5)', cursor: 'pointer',
                       border: 'none', background: 'transparent',
                       color: 'var(--lbb-bad, #e05252)', borderRadius: 5,
                     }}
@@ -508,11 +508,11 @@ export function ScreenPipeline(): React.JSX.Element {
             <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
               <Icon name="folder" size={13} style={{ color: 'var(--lbb-fg3)' }} />
               <span style={{
-                fontSize: 10.5, fontWeight: 700, color: 'var(--lbb-fg3)',
+                fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: 'var(--lbb-fg3)',
                 letterSpacing: 0.1, textTransform: 'uppercase',
               }}>{t('pipeline.queue.label')}</span>
               <span style={{
-                marginLeft: 'auto', fontSize: 11, fontWeight: 600,
+                marginLeft: 'auto', fontSize: 'var(--lbb-fs-11)', fontWeight: 600,
                 color: 'var(--lbb-fg2)', fontVariantNumeric: 'tabular-nums',
               }}>{counts.all}</span>
             </div>
@@ -532,7 +532,7 @@ export function ScreenPipeline(): React.JSX.Element {
             {queueRows.length === 0 && (
               <div style={{
                 padding: '16px 8px', textAlign: 'center',
-                fontSize: 11.5, color: 'var(--lbb-fg3)', fontStyle: 'italic',
+                fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)', fontStyle: 'italic',
               }}>
                 {counts.all === 0
                   ? t('pipeline.queue.emptyNoFolders')
@@ -554,7 +554,7 @@ export function ScreenPipeline(): React.JSX.Element {
                     background: active ? 'var(--lbb-accent-soft)' : 'transparent',
                     color: active ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg2)',
                     border: '1px solid transparent', textAlign: 'left',
-                    fontFamily: 'inherit', fontSize: 11.5, cursor: 'pointer',
+                    fontFamily: 'inherit', fontSize: 'var(--lbb-fs-11-5)', cursor: 'pointer',
                   }}
                 >
                   <span style={{
@@ -564,10 +564,10 @@ export function ScreenPipeline(): React.JSX.Element {
                   <span style={{
                     flex: 1, minWidth: 0, whiteSpace: 'nowrap',
                     overflow: 'hidden', textOverflow: 'ellipsis',
-                    fontFamily: 'var(--lbb-mono)', fontSize: 11,
+                    fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11)',
                   }}>{r.folderName}</span>
                   {r.running && (
-                    <span style={{ fontSize: 9, color: 'var(--lbb-accent-mid)', letterSpacing: 1 }}>···</span>
+                    <span style={{ fontSize: 'var(--lbb-fs-9)', color: 'var(--lbb-accent-mid)', letterSpacing: 1 }}>···</span>
                   )}
                 </button>
               )
@@ -591,7 +591,7 @@ export function ScreenPipeline(): React.JSX.Element {
               border: '1px solid var(--lbb-border)',
             }}>
               <div style={{
-                fontSize: 10, fontWeight: 700, color: 'var(--lbb-fg3)',
+                fontSize: 'var(--lbb-fs-10)', fontWeight: 700, color: 'var(--lbb-fg3)',
                 letterSpacing: 0.08, textTransform: 'uppercase', marginBottom: 6,
               }}>
                 {t('pipeline.queue.runOnSelected', { count: counts.all })}
@@ -654,7 +654,7 @@ export function ScreenPipeline(): React.JSX.Element {
             <div style={{
               padding: '8px 20px', display: 'flex', alignItems: 'center', gap: 12,
               borderBottom: '1px solid var(--lbb-border)',
-              background: 'var(--lbb-accent-soft)', fontSize: 12, flexShrink: 0,
+              background: 'var(--lbb-accent-soft)', fontSize: 'var(--lbb-fs-12)', flexShrink: 0,
             }}>
               <span style={{ fontWeight: 600, color: 'var(--lbb-accent-mid)' }}>
                 {t('pipeline.selection.selected', { count: selectedRows.length })}
@@ -690,10 +690,10 @@ export function ScreenPipeline(): React.JSX.Element {
             }}>
               <Icon name="folderPlus" size={40} style={{ color: 'var(--lbb-fg3)' }} />
               <div style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: 15, fontWeight: 600, color: 'var(--lbb-fg)' }}>
+                <div style={{ fontSize: 'var(--lbb-fs-15)', fontWeight: 600, color: 'var(--lbb-fg)' }}>
                   {t('pipeline.empty.title')}
                 </div>
-                <div style={{ fontSize: 12.5, color: 'var(--lbb-fg3)', marginTop: 4 }}>
+                <div style={{ fontSize: 'var(--lbb-fs-12-5)', color: 'var(--lbb-fg3)', marginTop: 4 }}>
                   {t('pipeline.empty.desc')}
                 </div>
               </div>

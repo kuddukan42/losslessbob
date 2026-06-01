@@ -200,10 +200,10 @@ export function ScreenBootlegs(): React.JSX.Element {
       {/* ── Header ──────────────────────────────────────────────────────── */}
       <div style={{ padding: '18px 24px 12px', borderBottom: '1px solid var(--lbb-border)', flexShrink: 0 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-          <h1 style={{ margin: 0, fontSize: 20, fontWeight: 700, letterSpacing: '-0.01em' }}>
+          <h1 style={{ margin: 0, fontSize: 'var(--lbb-fs-20)', fontWeight: 700, letterSpacing: '-0.01em' }}>
             Bootleg titles
           </h1>
-          <span style={{ fontSize: 13, color: 'var(--lbb-fg3)', fontVariantNumeric: 'tabular-nums' }}>
+          <span style={{ fontSize: 'var(--lbb-fs-13)', color: 'var(--lbb-fg3)', fontVariantNumeric: 'tabular-nums' }}>
             {total > 0 ? `${total.toLocaleString()} titles · ` : ''}LBBCD catalog
           </span>
           <div style={{ flex: 1 }} />
@@ -263,7 +263,7 @@ export function ScreenBootlegs(): React.JSX.Element {
                     onClick={() => { setYearFilter(y !== null ? String(y) : null); setYearsOpen(false) }}
                     style={{
                       display: 'block', width: '100%', textAlign: 'left',
-                      padding: '5px 10px', fontSize: 12, cursor: 'pointer', border: 'none',
+                      padding: '5px 10px', fontSize: 'var(--lbb-fs-12)', cursor: 'pointer', border: 'none',
                       background: (y !== null ? String(y) : null) === yearFilter
                         ? 'var(--lbb-accent-bg)' : 'transparent',
                       color: 'var(--lbb-fg)', borderRadius: 5,
@@ -300,7 +300,7 @@ export function ScreenBootlegs(): React.JSX.Element {
                     onClick={() => { setCdFilter(opt); setCdsOpen(false) }}
                     style={{
                       display: 'block', width: '100%', textAlign: 'left',
-                      padding: '5px 10px', fontSize: 12, cursor: 'pointer', border: 'none',
+                      padding: '5px 10px', fontSize: 'var(--lbb-fs-12)', cursor: 'pointer', border: 'none',
                       background: opt === cdFilter ? 'var(--lbb-accent-bg)' : 'transparent',
                       color: 'var(--lbb-fg)', borderRadius: 5,
                     }}
@@ -428,7 +428,7 @@ export function ScreenBootlegs(): React.JSX.Element {
           {loading && rows.length === 0 && (
             <div style={{
               display: 'flex', alignItems: 'center', justifyContent: 'center',
-              height: '50%', color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)', fontSize: 12,
+              height: '50%', color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-12)',
             }}>
               Loading…
             </div>
@@ -442,10 +442,10 @@ export function ScreenBootlegs(): React.JSX.Element {
             }}>
               <Icon name="search" size={40} style={{ opacity: 0.2 }} />
               <div style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: 15, fontWeight: 600, color: 'var(--lbb-fg2)' }}>
+                <div style={{ fontSize: 'var(--lbb-fs-15)', fontWeight: 600, color: 'var(--lbb-fg2)' }}>
                   No bootleg titles
                 </div>
-                <div style={{ fontSize: 11.5, marginTop: 4 }}>
+                <div style={{ fontSize: 'var(--lbb-fs-11-5)', marginTop: 4 }}>
                   Try "Refresh LBBCD" to fetch the catalog
                 </div>
               </div>
@@ -463,19 +463,19 @@ export function ScreenBootlegs(): React.JSX.Element {
             flexShrink: 0,
           }}>
             <div style={{
-              fontSize: 10.5, fontWeight: 700, color: 'var(--lbb-fg3)',
+              fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: 'var(--lbb-fg3)',
               letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8,
             }}>
               Bootleg detail
             </div>
 
-            <div style={{ fontFamily: 'var(--lbb-mono)', fontSize: 14, color: 'var(--lbb-accent-mid)', fontWeight: 700 }}>
+            <div style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-14)', color: 'var(--lbb-accent-mid)', fontWeight: 700 }}>
               {selected.lb}
             </div>
-            <h2 style={{ margin: '4px 0 4px', fontSize: 20, fontWeight: 700, letterSpacing: '-0.01em' }}>
+            <h2 style={{ margin: '4px 0 4px', fontSize: 'var(--lbb-fs-20)', fontWeight: 700, letterSpacing: '-0.01em' }}>
               {selected.title}
             </h2>
-            <div style={{ fontSize: 12, color: 'var(--lbb-fg2)' }}>
+            <div style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)' }}>
               {[
                 selected.year,
                 selected.location || null,
@@ -496,13 +496,13 @@ export function ScreenBootlegs(): React.JSX.Element {
                 position: 'absolute', inset: 0, opacity: 0.25,
                 background: 'repeating-linear-gradient(45deg, transparent 0 12px, rgba(255,255,255,0.08) 12px 13px)',
               }} />
-              <div style={{ position: 'relative', fontSize: 10.5, letterSpacing: '0.14em', textTransform: 'uppercase', opacity: 0.7 }}>
+              <div style={{ position: 'relative', fontSize: 'var(--lbb-fs-10-5)', letterSpacing: '0.14em', textTransform: 'uppercase', opacity: 0.7 }}>
                 {selected.lbbcdId != null ? lbbcdLabel(selected.lbbcdId) : 'Bootleg'}{selected.year ? ` · ${selected.year}` : ''}
               </div>
-              <div style={{ position: 'relative', fontSize: 17, fontWeight: 700, marginTop: 2 }}>
+              <div style={{ position: 'relative', fontSize: 'var(--lbb-fs-17)', fontWeight: 700, marginTop: 2 }}>
                 {selected.title}
               </div>
-              <div style={{ position: 'relative', fontSize: 11.5, opacity: 0.8, marginTop: 2 }}>
+              <div style={{ position: 'relative', fontSize: 'var(--lbb-fs-11-5)', opacity: 0.8, marginTop: 2 }}>
                 {[
                   selected.cdCount > 0 ? `${selected.cdCount}-CD set` : null,
                   selected.location || null,
@@ -511,7 +511,7 @@ export function ScreenBootlegs(): React.JSX.Element {
             </div>
 
             {/* Meta grid */}
-            <div style={{ marginTop: 14, display: 'grid', gridTemplateColumns: '90px 1fr', gap: '5px 12px', fontSize: 12 }}>
+            <div style={{ marginTop: 14, display: 'grid', gridTemplateColumns: '90px 1fr', gap: '5px 12px', fontSize: 'var(--lbb-fs-12)' }}>
               <span style={{ color: 'var(--lbb-fg3)' }}>LB#</span>
               <span style={{ fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-fg2)' }}>{selected.lb}</span>
 
@@ -569,14 +569,14 @@ export function ScreenBootlegs(): React.JSX.Element {
             {/* Other titles for same LB */}
             <div style={{ marginTop: 18, paddingTop: 14, borderTop: '1px solid var(--lbb-border)' }}>
               <div style={{
-                fontSize: 10.5, fontWeight: 700, color: 'var(--lbb-fg3)',
+                fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: 'var(--lbb-fg3)',
                 letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 6,
               }}>
                 Other titles for this LB
               </div>
               {detailOthers.length === 0 ? (
                 <div style={{
-                  fontSize: 11.5, color: 'var(--lbb-fg3)',
+                  fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)',
                   padding: '10px 12px',
                   border: '1px dashed var(--lbb-border2)', borderRadius: 6,
                 }}>
@@ -594,8 +594,8 @@ export function ScreenBootlegs(): React.JSX.Element {
                         background: 'var(--lbb-surface2)',
                       }}
                     >
-                      <div style={{ fontSize: 12, fontWeight: 600 }}>{other.title}</div>
-                      <div style={{ fontSize: 11, color: 'var(--lbb-fg3)', marginTop: 2, fontFamily: 'var(--lbb-mono)' }}>
+                      <div style={{ fontSize: 'var(--lbb-fs-12)', fontWeight: 600 }}>{other.title}</div>
+                      <div style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', marginTop: 2, fontFamily: 'var(--lbb-mono)' }}>
                         {other.lbbcdId != null ? lbbcdLabel(other.lbbcdId) : '—'}
                         {other.cdCount > 0 ? ` · ${other.cdCount} CDs` : ''}
                       </div>
@@ -612,7 +612,7 @@ export function ScreenBootlegs(): React.JSX.Element {
           position: 'fixed', bottom: 28, left: '50%', transform: 'translateX(-50%)',
           background: toast.tone === 'ok' ? 'var(--lbb-ok-bar)' : toast.tone === 'bad' ? 'var(--lbb-err-bar)' : 'var(--lbb-accent-mid)',
           color: '#fff', padding: '9px 18px', borderRadius: 8,
-          fontSize: 13, fontWeight: 600, zIndex: 9999, boxShadow: '0 4px 16px rgba(0,0,0,.25)',
+          fontSize: 'var(--lbb-fs-13)', fontWeight: 600, zIndex: 9999, boxShadow: '0 4px 16px rgba(0,0,0,.25)',
           pointerEvents: 'none',
         }}
           ref={el => { if (el) setTimeout(() => setToast(null), 3500) }}
