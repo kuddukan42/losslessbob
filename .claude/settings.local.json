@@ -346,7 +346,20 @@
       "Bash(pkill -f \"start_backend_nowatcher\")",
       "WebFetch(domain:www.bobdylan.com)",
       "WebFetch(domain:api.setlist.fm)",
-      "Bash(xargs -I{} basename {})"
+      "Bash(xargs -I{} basename {})",
+      "Bash(/home/tjenkins/Documents/losslessbob/.venv/bin/python3 -m py_compile backend/sharing.py backend/app.py backend/db.py)",
+      "Bash(node_modules/.bin/tsc --noEmit)",
+      "Bash(/home/tjenkins/Documents/losslessbob/.venv/bin/python3 -m py_compile /home/tjenkins/Documents/losslessbob/backend/scheduler.py)",
+      "Bash(Xvfb --version)",
+      "Bash(Xvfb :99 -screen 0 1280x800x24)",
+      "Bash(echo \"Xvfb PID: $!\")",
+      "Bash(DISPLAY=:99 xdpyinfo)",
+      "WebFetch(domain:api.anthropic.com)",
+      "Bash(/home/tjenkins/Documents/losslessbob/.venv/bin/python3 -m py_compile /home/tjenkins/Documents/losslessbob/backend/forum_poster.py)",
+      "Bash(grep -E \"^LBBCD-[0-9]+\\\\.html$\")",
+      "Bash(grep -E \"^LBBCD-0[0-9]+\\\\.html$\")",
+      "Read(//mnt/DYLAN2/Concerts/1960/1960-05-xx May 1960 collection \\(LB-12220\\)/**)",
+      "Bash(/home/tjenkins/Documents/losslessbob/.venv/bin/python3 -m py_compile /home/tjenkins/Documents/losslessbob/tools/batch_verify.py)"
     ],
     "additionalDirectories": [
       "/home/tjenkins/.ssh",

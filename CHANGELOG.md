@@ -1,3 +1,133 @@
+[2026-06-01] — feat(tools): batch collection verification pipeline + --from-collection mode
+Added: tools/batch_verify.py: headless CLI for lbdir-centric batch verification of large collections; 4-phase pipeline (identify/retrieve/verify/reconcile-preview); report SQLite DB (data/batch_verify.db); --resume/--dry-run/--reprocess/--report modes; --from-collection fetches disk_path+lb_number from GET /api/collection (skips Phase 0 identify); --root walks a directory tree. (BATCH-VERIFY)
+
+[2026-05-31] — chore(tests): pipeline smoke-test 500-folder run; 2 more bugs added
+Added: BUGS.md BUG-120: 2 folders with verify mismatch (audio changed since checksumming); BUG-121: Farm Aid LB-12347 in collection but checksums absent from DB
+Changed: BUGS.md BUG-117: confirmed 12% rate over 500-folder run (was 11%/100); BUG-118: expanded to 11 conflicts including 5-way match and phantom LB-04994/03029/06748/11900 pattern
+
+[2026-05-31] — chore(tests): pipeline smoke-test script + 3 new bugs documented
+Added: tests/test_pipeline_smoke.py: random-sample 100 collection folders through all 4 pipeline steps (verify/lookup/rename/lbdir); outputs detail report + reproducible bug list
+Added: BUGS.md BUG-117/118/119: no-checksum folders in collection, lookup conflict (3 shared-checksum pairs), NFT rename strips date/location
+
+[2026-05-31] — fix(backend): forum post description showed checksums instead of entry info text
+Fixed: backend/forum_poster.py: _read_lb_txt now excludes double-extension files (.ffp.txt, .md5.txt) via f.suffixes == ['.txt']; prefers file containing LB-{number} in its name as the main info file over alphabetical first
+
+[2026-05-31] — fix(backend): verify_folder shows files as Missing when audio is in subfolders
+Fixed: backend/checksum_utils.py: detect_folder_mode now uses rglob instead of glob; verify_folder builds a name→path map with rglob so audio files in subdirectories are found and resolved correctly instead of showing as Missing
+
+[2026-05-31] — fix(backend): LBDIR check inflates track count for SHN recordings with shntool hashes
+Fixed: backend/checksum_utils.py: verify_folder_lbdir() normalizes shntool-section filenames via non-alphanumeric → '_' collapse on both sides before matching against md5 keys; handles shntool's space AND special-char (e.g. '&') → '_' substitution, preventing duplicate file rows
+
+[2026-05-31] — fix(backend): LBDIR check reports 0 tracks / false Pass for flat-format lbdir files
+Fixed: backend/checksum_utils.py: parse_lbdir_file now has a flat-format fallback — if no section headers (=== MD5 for: / === FFP for:) are found after the main parse pass, re-scans each line directly as MD5/FFP entries; handles *.flacf.md5.txt and *.wavf.md5.txt lbdir variants that contain plain HASH  filename lines without section structure
+
+[2026-05-31] — fix(backend/gui_next): LBDIR "Check all folders" crash on missing files or no lbdir
+Fixed: backend/checksum_utils.py: status 'incomplete' renamed to 'missing_files' to match frontend LbdirState; parse-error early-return now emits full schema (status='no_lbdir', mode='unknown', files=[]) instead of bare error dict
+Fixed: backend/app.py: no-lbdir branch now returns complete schema (status='no_lbdir', mode='unknown', files=[]) so all fields exist when the folder is rendered
+Added: gui_next/src/renderer/src/lib/lbdirStore.ts: 'shntool_missing' added to LbdirState union
+Added: gui_next/src/renderer/src/screens/ScreenLBDIR.tsx: shntool_missing → STATE_LABEL entry (tone='warn', label='Shntool not installed')
+
+[2026-05-31] — fix(gui_next): ScreenSearch rating filter — full grade scale and ASCII hyphen fix
+Fixed: gui_next/src/renderer/src/screens/ScreenSearch.tsx: rating chips were missing A+, C+, C-, D+, D, D-, F; Unicode minus U+2212 replaced with ASCII hyphen so A- filter now matches DB values; RATING_RANK, VALID_RATINGS, RatingGrade type, ratingTone, ratingItems, and "Rated A or A-" built-in view all updated
+
+[2026-05-31] — fix(backend/gui_next): stale torrent records cleanup + ghost torrent_file_exists fix
+Fixed: backend/db.py: add delete_torrent_record(); add clear_superseded_torrent_paths() — nulls out torrent_path on older sibling records when a regen reuses the same filename, preventing false torrent_file_exists=True
+Fixed: backend/app.py: torrent_create route calls clear_superseded_torrent_paths after regen; new DELETE /api/torrent/<id> route deletes DB record + file (blocked if still in qBt)
+Added: gui_next/src/renderer/src/screens/ScreenCollection.tsx: "Del record" button in HISTORY torrent panel + GlobalTorrentPanel (disabled if added_to_qbt=1); ConfirmDialog for both
+Added: gui_next/src/renderer/src/locales/*.json: delRecord, recordTitle, recordBody, torrentRecordDeleted keys in all 6 locales
+
+[2026-05-31] — fix(backend): pipeline scan-tree now detects SHN-only folders
+Fixed: backend/app.py:4702: Added '.shn' to _AUDIO extension set in pipeline_scan_tree(); folders containing only SHN files were previously invisible to the scan and never added to the pipeline queue.
+
+[2026-05-31] — feat(backend/scraper): setlist from LBBCD track table for all bootleg-CD entries
+Added: backend/scraper.py: _extract_setlist_from_lbbcd() — queries bootleg_titles for lbbcd_id, parses cached LBBCD-{id}.html track table, formats numbered setlist with CD headers for multi-disc sets; always preferred over scraped free-text when LBBCD page exists; tries LBBCD-N.html then LBBCD-NNN.html (3-digit pad) to cover both naming conventions; bulk-applied to all 327 existing entries
+
+[2026-05-31] — fix(backend/gui_next): qBt remove robustness + auto-detect manually removed torrents
+Fixed: backend/qbittorrent.py: remove_torrent now accepts HTTP 204 as success (qBt 5+ compat); check_torrent_presence() added to detect absent torrents via /api/v2/torrents/info
+Fixed: backend/app.py: qbt_remove route — if remove fails but torrent is already gone from qBt, clears DB flag anyway; added GET /api/torrent/<id>/qbt_check route for presence sync
+Fixed: gui_next/src/renderer/src/screens/ScreenCollection.tsx: fetchTorrentRecords auto-syncs qBt status on load — records marked "In qBt" that were manually removed now update without user action
+
+[2026-05-31] — fix(gui_next): detail panel shows "No forum history" when forum API fails silently
+Fixed: gui_next/src/renderer/src/screens/ScreenCollection.tsx: initialize forumBusy=true; add forumError state; surface API failures as error message instead of "No forum history"; fix copy-paste bug (loadingTorrents key used in forum tab)
+Added: gui_next/src/renderer/src/locales/*.json: loadingForum and forumLoadError i18n keys in all 6 locales
+
+[2026-05-31] — fix(backend): forum post subject uses BOOTLEG title instead of location for BOOTLEG entries
+Changed: backend/forum_poster.py: extracted _build_subject helper; uses entry["bootleg_title"] over location when present
+Changed: backend/app.py: enrich entry dict with bootleg_title from bootleg_titles table before preview_forum / post_forum calls
+
+[2026-05-31] — feat(gui_next): My Collection — remove fingerprint chips/column, add Post to forum button and right-click actions
+Changed: gui_next/src/renderer/src/screens/ScreenCollection.tsx: removed Unconfirmed + No fingerprint filter chips and FP column; added Post to forum header button; added Post to forum / Create torrent / Add to qBittorrent to right-click context menu; all three actions work on multi-selected rows; context menu uses checked rows when the right-clicked row is among them
+
+[2026-05-31] — feat(gui_next/backend): redesign Data Purges card — hierarchy, danger zone, recoverable-space signal
+Changed: gui_next/src/renderer/src/screens/ScreenSetup.tsx: split PURGE_ITEMS into SCOPE_ITEMS + ALL_USER_DATA_ITEM; add PurgeRow + PurgeDangerZone sub-components; new card layout with subtitle, magnitude bars, hover-reveal red buttons, isolated danger zone, green archive callout
+Changed: backend/app.py: purge_stats adds recoverable_bytes (sum of data/site/ + fingerprints.db disk usage)
+Changed: gui_next/src/renderer/src/locales/en.json: add desc/unit strings and new card i18n keys for purges section
+
+[2026-05-31] — refactor(gui_next): move row highlight colors checkbox from Setup to Themes page
+Changed: gui_next/src/renderer/src/screens/ScreenThemes.tsx: add useSettingsStore + rowHighlight checkbox in Advanced card
+Changed: gui_next/src/renderer/src/screens/ScreenSetup.tsx: remove rowHighlight state and checkbox JSX
+Changed: gui_next/src/renderer/src/locales/en.json: add themes.advanced.rowHighlight key
+
+[2026-05-31] — fix(gui_next): typeface Source Sans 3 not loading; font size selector had no effect
+Fixed: gui_next/src/renderer/index.html: add IBM Plex Sans + Source Sans 3 to Google Fonts link (only Inter was loaded)
+Fixed: gui_next/src/renderer/src/lib/tokens.ts: applyTheme now emits --lbb-fs-* CSS variables scaled by fontSize/13 for all 19 sizes in use
+Changed: gui_next/src/renderer/src/ (23 files): replace 538 hardcoded inline fontSize literals with var(--lbb-fs-*) references so they respond to the font size setting
+
+[2026-05-31] — feat(gui_next): global row highlight toggle in Preferences
+Added: gui_next/src/renderer/src/store.ts: rowHighlight boolean (default true) + setRowHighlight action persisted in lbb-settings
+Changed: gui_next/src/renderer/src/components/table.tsx: TR reads rowHighlight from store; when off, row background and left status bar both render transparent
+Added: gui_next/src/renderer/src/screens/ScreenSetup.tsx: "Row highlight colors" checkbox in Preferences card
+Added: gui_next/src/renderer/src/locales/en.json: setup.preferences.rowHighlight key
+
+[2026-05-31] — feat(gui_next): language selector in sidebar user chip
+Added: gui_next/src/renderer/src/components/AppShell.tsx: globe+language-code button in sidebar footer; click opens popover with 6 language options; wired to existing useSettingsStore language/setLanguage
+
+[2026-05-31] — feat(backend/gui_next): purge row counts in Data Purges panel
+Added: backend/app.py: GET /api/purge/stats — returns row counts for rename_history, flat_file, scraper, fingerprint, and all-user-data groups
+Changed: gui_next/src/renderer/src/screens/ScreenSetup.tsx: fetch purge stats on mount and after each purge; display count dimmed next to each item label
+
+[2026-05-30] — fix(backend/gui_next): Attachments screen blank-white crash
+Fixed: backend/app.py: added ef.downloaded to SELECT in attachments_cached — missing column caused IndexError → 500 → undefined total → toLocaleString() crash
+Fixed: gui_next/src/renderer/src/screens/ScreenAttachments.tsx: setTotal(d.total ?? 0) to guard against backend error responses
+
+[2026-05-30] — feat(gui_next/backend): DB stats on LB Crawler and Entry Metadata strip cards
+Changed: backend/db.py: get_stats() now returns ok_entries and total_entries counts from entries table
+Changed: gui_next/src/renderer/src/screens/ScreenScraper.tsx: LB Crawler card shows inventory URL count from /api/crawler/inventory/stats; Entry Metadata card shows ok_entries when idle, session progress when running
+
+[2026-05-30] — feat(gui_next/backend): geocoder cache and coverage stats
+Added: backend/app.py: /api/geocode/stats route — returns total_cached, geocoded, failed, manual, entries_total, entries_covered, pct_covered from location_geocoded and entries tables
+Added: gui_next/src/renderer/src/screens/ScreenScraper.tsx: GeoStats interface, state, and fetch; GeocoderTab renders Cache Stats and Coverage StatGrids; strip card shows pct_covered and geocoded count
+
+[2026-05-30] — fix(db): correct swapped columns in bobdylan_shows for 2046 pending rows
+Fixed: data/losslessbob.db: bobdylan_url and date_str were swapped in 2046 rows inserted by older discover code; one-time UPDATE swapped them back so the scraper can fetch valid URLs
+
+[2026-05-30] — fix(gui_next): remove duplicate AppShell nesting in Trading, Sharing, Scraper screens
+Fixed: gui_next/src/renderer/src/screens/ScreenTrading.tsx: removed inner AppShell wrapper — App.tsx already wraps all routes in one, causing double sidebar + title bar
+Fixed: gui_next/src/renderer/src/screens/ScreenSharing.tsx: same fix
+Fixed: gui_next/src/renderer/src/screens/ScreenScraper.tsx: same fix; deriveCrumbs already auto-resolves "LosslessBob / Curator / Scraper" from NAV_GROUPS
+
+[2026-05-30] — fix(backend): replace inotify collection watcher with polling thread
+Fixed: backend/scheduler.py: start_collection_watcher crashed at startup on systems where Electron exhausts the 128 inotify-instance limit; replaced watchdog Observer with a 60-second polling thread — no inotify usage, works on any system
+
+[2026-05-30] — feat(backend/gui_next): archive.org upload integration on Sharing screen
+Added: backend/archive_org.py: IA S3-like upload module — credentials test, stream-PUT per-file, thread-safe progress state, stop support
+Added: backend/db.py: archive_org_uploads table + create_archive_upload / finish_archive_upload / get_archive_uploads functions
+Changed: backend/credentials.py: added SERVICE_IA constant for archive.org keyring slot
+Changed: backend/app.py: added 7 /api/archive_org/ routes (credentials CRUD+test, upload start/stop/status, history)
+Changed: gui_next/.../ScreenSharing.tsx: added ArchiveOrgSection component — credential form, upload form with progress bar, history table
+Changed: gui_next/.../locales/en.json: added archiveOrg translation namespace
+
+[2026-05-30] — feat(backend/gui_next): collection trading + file sharing features (branch feat/trading-and-sharing)
+Added: backend/sharing.py: ephemeral token-based share state, ZIP streaming, Cloudflare Tunnel lifecycle, expiry reaper daemon thread, HTML listing page renderer
+Added: gui_next/.../ScreenTrading.tsx: friend collection import/export, diff compare, trading list export
+Added: gui_next/.../ScreenSharing.tsx: create/revoke file shares, tunnel status banner, LAN + cloudflared modes
+Changed: backend/db.py: added friend_collections + friend_collection_entries tables to _ensure_schema()
+Changed: backend/app.py: added 5 /api/trading/ routes + 7 /api/share/ routes + sharing module import
+Changed: gui_next/.../AppShell.tsx: added Trading and Sharing nav items under Library group
+Changed: gui_next/.../App.tsx: registered /trading and /sharing routes + screen imports
+Changed: gui_next/.../Icon.tsx: added trading and share icons
+Changed: gui_next/.../locales/en.json: added trading and sharing nav labels
+
 [2026-05-30] — feat(gui_next): ScreenScraper — full 6-tab scraper management screen
 Added: gui_next/src/renderer/src/screens/ScreenScraper.tsx: new screen with status strip (all 6 scrapers at a glance), tab switcher, left controls + right live log panel per tab, session/scrape history tables; covers LB Crawler, Entry Metadata, Bootleg Catalog, Dylan.com, Setlist.fm, Geocoder
 Changed: gui_next/src/renderer/src/App.tsx: replaced PlaceholderScreen for /scraper route with ScreenScraper; added import

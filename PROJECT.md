@@ -455,6 +455,22 @@ Index: `idx_flat_releases_status ON flat_file_releases(status, detected_at DESC)
 
 Indexes: `idx_flat_changelog_release(release_id)`, `idx_flat_changelog_lb(lb_number)`.
 
+### `archive_org_uploads` — Internet Archive upload history (USER table)
+| Column | Type | Notes |
+|--------|------|-------|
+| id | INTEGER PK | Auto-increment |
+| lb_number | INTEGER NOT NULL | LB entry being uploaded |
+| identifier | TEXT NOT NULL | IA item identifier (e.g. `losslessbob-lb-01234`) |
+| folder_path | TEXT NOT NULL | Absolute path to source folder |
+| files_total | INTEGER | Number of audio files to upload |
+| files_uploaded | INTEGER | Files successfully uploaded |
+| status | TEXT NOT NULL | `pending`, `running`, `done`, `failed`, `stopped` |
+| started_at | TIMESTAMP | Upload start time |
+| finished_at | TIMESTAMP | NULL until complete |
+| error | TEXT | Error message if status=failed |
+
+Indexes: `idx_archive_uploads_lb(lb_number)`, `idx_archive_uploads_status(status, started_at DESC)`.
+
 ---
 
 ## Backend: Flask API (`backend/app.py`)
@@ -643,6 +659,18 @@ Indexes: `idx_flat_changelog_release(release_id)`, `idx_flat_changelog_lb(lb_num
 | GET | `/api/entry/<lb>/forum_posts` | List all logged forum posts for an LB entry, newest first. |
 | DELETE | `/api/forum_post/<id>` | Delete a forum post log record by id. |
 | GET | `/api/forum_posts` | List all logged forum posts across every LB entry, newest first. Includes `date_str` and `location` from entries. |
+
+### Archive.org Upload
+| Method | Route | Description |
+|--------|-------|-------------|
+| POST | `/api/archive_org/credentials` | Save IA S3 credentials to keyring. Body: `{access_key, secret_key}`. Returns `{ok, label}`. |
+| GET | `/api/archive_org/credentials` | Check if IA credentials are stored. Returns `{stored: bool}`. |
+| DELETE | `/api/archive_org/credentials` | Clear stored IA credentials. Returns `{ok}`. |
+| POST | `/api/archive_org/test` | Test IA S3 credentials. Body: `{access_key?, secret_key?}`. Returns `{ok, error?}`. |
+| POST | `/api/archive_org/upload` | Start async upload for one LB. Body: `{lb_number, folder_path, identifier?, collection?, title?, subject?, access_key?, secret_key?}`. Returns `{ok, error?}`. |
+| GET | `/api/archive_org/status` | Poll upload progress. Returns `{running, lb_number, identifier, current_file, files_done, files_total, bytes_done, bytes_total, status, error, stop_requested}`. |
+| POST | `/api/archive_org/stop` | Request running upload to stop after current file. Returns `{ok}`. |
+| GET | `/api/archive_org/uploads` | List upload history rows, newest first. Query param: `lb=<int>`. Returns `[{id, lb_number, identifier, folder_path, files_total, files_uploaded, status, started_at, finished_at, error, date_str?, location?}]`. |
 
 ### Map
 | Method | Route | Description |
@@ -1325,6 +1353,8 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 
 | Date | Change |
 |------|--------|
+| 2026-05-30 | Archive.org upload integration: `backend/archive_org.py` (IA S3 PUT, progress state, stop support); `archive_org_uploads` table; `SERVICE_IA` keyring slot; 8 `/api/archive_org/` routes; `ArchiveOrgSection` component in `ScreenSharing` with credentials form, upload form, progress bar, history table. (TODO-093) |
+| 2026-05-30 | Collection Trading + File Sharing features (branch feat/trading-and-sharing): `friend_collections` + `friend_collection_entries` tables; 5 `/api/trading/` routes; `backend/sharing.py` module (ephemeral share state, ZIP streaming, Cloudflare Tunnel); 7 `/api/share/` routes; `ScreenTrading` + `ScreenSharing` in gui_next; Trading + Sharing nav items under Library group. |
 | 2026-05-30 | `taper_name` + `source_chain` TEXT columns added to `entries` via ALTER TABLE migration. `extract_taper_and_source()` in `db.py` parses free-text descriptions with 14 pattern rules; ~80.5% coverage on 16k entries. Backfill run on first `init_db()` after migration. `scraper.py` computes both columns on every scrape. `ScreenSearch.tsx` shows Taper/Source as toggleable columns and in the detail panel meta grid. |
 | 2026-05-29 | Windows installer + portable switched to Electron/React (gui_next): `losslessbob_backend.spec` made cross-platform (Windows watchdog, shntool.exe, no fingerprinting); `backend/paths.py` frozen-Windows data dir → `%LOCALAPPDATA%\LosslessBob`; electron-builder NSIS + portable targets; `release.yml` build-windows rebuilt. |
 | 2026-05-29 | Linux AppImage switched to Electron/React (gui_next): new `losslessbob_backend.spec` (onefile PyInstaller, no PyQt6); `gui_next/package.json` gains electron-builder + dist:linux script; `gui_next/src/main/index.ts` ensureBackend() uses bundled binary when packaged; `release.yml` build-linux job rebuilt around electron-builder. |
@@ -1408,3 +1438,4 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 | 2026-05-27 | gui_next Sprint 1 (ScreenSetup 100%): all stubs wired; new backend routes: `POST /api/credentials/wtrf`, `POST /api/credentials/qbt`, `POST /api/rename_history/purge`, `POST /api/flat_file/purge`, `POST /api/scraper/purge`, `POST /api/fingerprint/purge`; `data_dir` added to `GET /api/db/settings`; `flac_available` added to `GET /api/spectrogram/check`; `pickFile` IPC added to main/preload. |
 | 2026-05-28 | gui_next Sprint 2 (ScreenCollection ~90%): all 17 stubs wired; `lbNumberInt` + `isXref` fields added to `CollectionRow`; year filter via `/api/search/years`; xref filter via `/api/checksums/xref_lb_numbers`; `AddFolderModal` (per-row LB# input); `ForumModal` with editable BBCode before `preview_forum` → `post_forum`; version-bump refetch pattern established. |
 | 2026-05-28 | gui_next Sprint 3 (ScreenSearch ~95%): virtual table sort (6 keys), group-by-year toggle, CSV export, column visibility (localStorage), saved views (localStorage + 3 built-ins), `owned` field wired to `GET /api/collection/lb_numbers`, entry detail panel (`GET /api/entry/<lb>`) with files list + "Scrape entry", per-row ⋯ menu (`position:fixed`, `POST /api/entry/<lb>/scrape`), Toast component. (TODO-094 Stage: Sprint 3 done) |
+| 2026-06-01 | Batch verification pipeline: tools/batch_verify.py — lbdir-centric CLI for large collections; 4-phase pipeline (identify/retrieve/verify/reconcile-preview); report SQLite DB (data/batch_verify.db, never touches losslessbob.db); resume/dry-run/reprocess/report modes. (BATCH-VERIFY) |

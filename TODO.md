@@ -1,3 +1,14 @@
+TODO-106: Trading — multi-friend batch compare
+Priority: Low
+Status: Open
+Added: 2026-05-30
+Description: Extend the Trading screen to compare your collection against multiple friends at
+  once — show a matrix view (friends × shows) so you can find the best candidate to trade
+  any given recording with. Also: add a GET /api/trading/friends/<id>/entries route so the
+  GUI can retrieve raw friend entries without going through the compare diff endpoint.
+
+---
+
 TODO-105: Checksum lookup — flag matches against user's own collection
 Priority: High
 Status: Open
@@ -18,19 +29,6 @@ Description: When the user performs a checksum lookup, indicate whether the chec
 ---
 
 
-TODO-093: Archive.org uploader
-Priority: Low
-Status: Open
-Added: 2026-05-24
-Description: Add an uploader that can publish items (releases, checksums, metadata) to
-  archive.org (Internet Archive). Goals:
-    • Authenticate with archive.org via API key / S3-like credentials.
-    • Upload release files and/or checksum manifests to a designated IA collection.
-    • Track upload status per item in the database to avoid re-uploading.
-    • Expose upload controls in the GUI (select item → upload button, progress, status).
-    • Respect IA rate limits and handle retries gracefully.
-
----
 
 TODO-089: Add acknowledgements section to About dialog
 Priority: Low
