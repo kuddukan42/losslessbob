@@ -1,0 +1,1956 @@
+================================================================================
+PIPELINE SMOKE TEST — FULL DETAIL REPORT
+Tested 500 folders
+================================================================================
+
+[V:✓ L:✓ R:~ D:~] BOB DYLAN 2023-07-07 Perugia, Italy (spot)-LB-15843
+  Path  : /mnt/DYLAN1/LB HOPPER/BOB DYLAN 2023-07-07 Perugia, Italy (spot)-LB-15843
+  ERROR [rename]: Current: 'BOB DYLAN 2023-07-07 Perugia, Italy (spot)-LB-15843' → Proposed: '2023-07-07 Perugia, Italy (LB-15843)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2019-06-26 Stockholm, Sweden (LB-14297)
+  Path  : /mnt/DYLAN1/Concerts/2019/2019-06-26 Stockholm, Sweden (LB-14297)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] 2014-06-29 Klam, Austria - Bach-LB-15702
+  Path  : /mnt/DYLAN1/LB HOPPER/2014-06-29 Klam, Austria - Bach-LB-15702
+  ERROR [rename]: Current: '2014-06-29 Klam, Austria - Bach-LB-15702' → Proposed: '2014-06-29 Klam, Austria (LB-15702)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] Sydney 3-9-1998-NTN No Torrent LB-14065
+  Path  : /mnt/DYLAN2/PRIVATE LB/1998 NOTORRENT/Sydney 3-9-1998-NTN No Torrent LB-14065
+  ERROR [rename]: Current: 'Sydney 3-9-1998-NTN No Torrent LB-14065' → Proposed: 'LB-14065-NFT'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1998-09-23 Portland, Oregon, Rose Garden Arena (LB-00938)
+  Path  : /mnt/DYLAN1/Concerts/1998/1998-09-23 Portland, Oregon, Rose Garden Arena (LB-00938)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 2003-11-23 London, England, Shepherds Bush Empire (LB-01521)
+  Path  : /mnt/DYLAN1/Concerts/2003/2003-11-23 London, England, Shepherds Bush Empire (LB-01521)
+
+[V:~ L:~ R:· D:·] 1996-06-15 Tangkrogen Aarhus, Denmark (LB-01409)
+  Path  : /mnt/DYLAN1/Concerts/1996/1996-06-15 Tangkrogen Aarhus, Denmark (LB-01409)
+
+[V:✓ L:✓ R:~ D:✓] London 12-5-2002-Condor-LB-6013 NO TORRENT
+  Path  : /mnt/DYLAN2/PRIVATE LB/2002 NOTORRENT/London 12-5-2002-Condor-LB-6013 NO TORRENT
+  ERROR [rename]: Current: 'London 12-5-2002-Condor-LB-6013 NO TORRENT' → Proposed: 'LB-06013-NFT'
+
+[V:✓ L:✓ R:~ D:~] Washington 17-1-1993-Blue Jeans Bash-PA No Torrent LB-13843
+  Path  : /mnt/DYLAN2/PRIVATE LB/1993 NOTORRENT/Washington 17-1-1993-Blue Jeans Bash-PA No Torrent LB-13843
+  ERROR [rename]: Current: 'Washington 17-1-1993-Blue Jeans Bash-PA No Torrent LB-13843' → Proposed: 'LB-13843-NFT'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 1995-03-29 London, England, Brixton Academy (LB-02833)
+  Path  : /mnt/DYLAN1/Concerts/1995/1995-03-29 London, England, Brixton Academy (LB-02833)
+
+[V:~ L:~ R:· D:·] 1999-01-28 Sunrise, Fort Lauderdale, Florida (LB-12202)
+  Path  : /mnt/DYLAN1/Concerts/1999/1999-01-28 Sunrise, Fort Lauderdale, Florida (LB-12202)
+
+[V:✓ L:✓ R:~ D:~] Neu-Ulm 12-4-2018-CB No Torrent LB-13404
+  Path  : /mnt/DYLAN2/PRIVATE LB/2018 NOTorrent/Neu-Ulm 12-4-2018-CB No Torrent LB-13404
+  ERROR [rename]: Current: 'Neu-Ulm 12-4-2018-CB No Torrent LB-13404' → Proposed: 'LB-13404-NFT'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2013-10-18 Hannover, GER (LB-11102)
+  Path  : /mnt/DYLAN1/Concerts/2013/2013-10-18 Hannover, GER (LB-11102)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2019-05-03 Seville, Spain (LB-14144)
+  Path  : /mnt/DYLAN1/Concerts/2019/2019-05-03 Seville, Spain (LB-14144)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1994-07-05 Lyon, France (LB-05144)
+  Path  : /mnt/DYLAN1/Concerts/1994/1994-07-05 Lyon, France (LB-05144)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1979-11-26 Tempe, AZ, Gammage Center (LB-04203)
+  Path  : /mnt/DYLAN2/Concerts/1979/1979-11-26 Tempe, AZ, Gammage Center (LB-04203)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:✓] Washington 5-12-1997 GD-LB-10049 NO TORRENT
+  Path  : /mnt/DYLAN2/PRIVATE LB/1997-3 NOTORRENT/Washington 5-12-1997 GD-LB-10049 NO TORRENT
+  ERROR [rename]: Current: 'Washington 5-12-1997 GD-LB-10049 NO TORRENT' → Proposed: 'LB-10049-NFT'
+
+[V:✓ L:✓ R:✓ D:~] 2004-11-13 Rochester, NY, Gordon Fieldhouse, R.I.T. (LB-03553)
+  Path  : /mnt/DYLAN1/Concerts/2004/2004-11-13 Rochester, NY, Gordon Fieldhouse, R.I.T. (LB-03553)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] Washington 5-12-1997-rp-LB 10063 No torrent
+  Path  : /mnt/DYLAN2/PRIVATE LB/1997-3 NOTORRENT/Washington 5-12-1997-rp-LB 10063 No torrent
+  ERROR [rename]: Current: 'Washington 5-12-1997-rp-LB 10063 No torrent' → Proposed: 'LB-10063-NFT'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1997-12-08 Irving Plaza, New York City (LB-00597)
+  Path  : /mnt/DYLAN1/Concerts/1997/1997-12-08 Irving Plaza, New York City (LB-00597)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 1999-05-02 Munich, Germany (LB-09642)
+  Path  : /mnt/DYLAN1/Concerts/1999/1999-05-02 Munich, Germany (LB-09642)
+
+[V:~ L:~ R:· D:·] 2013-10-31 Amsterdan, NL Heineken Music Hall (LB-11291)
+  Path  : /mnt/DYLAN1/Concerts/2013/2013-10-31 Amsterdan, NL Heineken Music Hall (LB-11291)
+
+[V:✓ L:✓ R:✓ D:~] 1974-01-12 Montreal, Quebec, Canada, Forum de Montreal (LB-02653)
+  Path  : /mnt/DYLAN2/Concerts/1974/1974-01-12 Montreal, Quebec, Canada, Forum de Montreal (LB-02653)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:~ R:· D:·] 1993-04-21 Monroe, La, USA (LB-07160)
+  Path  : /mnt/DYLAN1/Concerts/1993/1993-04-21 Monroe, La, USA (LB-07160)
+  ERROR [lookup]: Multiple LBs: [7160, 4653]
+
+[V:✓ L:✓ R:✓ D:~] 1997-08-20 Philadelphia, PA (LB-10586)
+  Path  : /mnt/DYLAN1/Concerts/1997/1997-08-20 Philadelphia, PA (LB-10586)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✗ L:✓ R:✓ D:~] 1978-06-20 London, England (LB-06548)
+  Path  : /mnt/DYLAN2/Concerts/1978/1978-06-20 London, England (LB-06548)
+  ERROR [verify]: status=fail
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1988-07-06 Philadelphia PA. (LB-13317)
+  Path  : /mnt/DYLAN1/Concerts/1988/1988-07-06 Philadelphia PA. (LB-13317)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2015-06-23 Bamberg, Germany (LB-11987)
+  Path  : /mnt/DYLAN1/Concerts/2015/2015-06-23 Bamberg, Germany (LB-11987)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2019-06-29 Oslo Spektrum (LB-14250)
+  Path  : /mnt/DYLAN1/Concerts/2019/2019-06-29 Oslo Spektrum (LB-14250)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2010-03-18 Nagoya, Japan (LB-08451)
+  Path  : /mnt/DYLAN1/Concerts/2010/2010-03-18 Nagoya, Japan (LB-08451)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] bd2022-10-02.mk4v.soomlos-LB-15727.flac24
+  Path  : /mnt/DYLAN1/LB HOPPER/bd2022-10-02.mk4v.soomlos-LB-15727.flac24
+  ERROR [rename]: Current: 'bd2022-10-02.mk4v.soomlos-LB-15727.flac24' → Proposed: '2022-10-02 Flensburg, Germany (LB-15727)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:~ R:· D:·] 2008-06-16 Bergamo, Italy, Summer Sound Festival, Lazzaretto (LB-06195)
+  Path  : /mnt/DYLAN1/Concerts/2008/2008-06-16 Bergamo, Italy, Summer Sound Festival, Lazzaretto (LB-06195)
+  ERROR [lookup]: Multiple LBs: [6195, 6198]
+
+[V:✓ L:✓ R:✓ D:~] 2010-11-22 New York, NY (LB-09031)
+  Path  : /mnt/DYLAN1/Concerts/2010/2010-11-22 New York, NY (LB-09031)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] bd 2022-05-31 Portland, Oregon (spot 44-16) FLACS-LB-15503
+  Path  : /mnt/DYLAN1/LB HOPPER/bd 2022-05-31 Portland, Oregon (spot 44-16) FLACS-LB-15503
+  ERROR [rename]: Current: 'bd 2022-05-31 Portland, Oregon (spot 44-16) FLACS-LB-15503' → Proposed: '2022-05-31 Portland, Oregon (LB-15503)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:✓] Oakland 13-11-1978 NO TORRENT local-taper-cal-c-BW-LB-7394
+  Path  : /mnt/DYLAN2/PRIVATE LB/1978 NOTORRENT/Oakland 13-11-1978 NO TORRENT local-taper-cal-c-BW-LB-7394
+  ERROR [rename]: Current: 'Oakland 13-11-1978 NO TORRENT local-taper-cal-c-BW-LB-7394' → Proposed: '1978-11-13 Oakland, California (LB-07394)'
+
+[V:✓ L:✓ R:✓ D:~] 1990-11-18 Detroit, Michigan (LB-08335)
+  Path  : /mnt/DYLAN1/Concerts/1990/1990-11-18 Detroit, Michigan (LB-08335)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1998-06-20 Newcastle, England, Newcastle Arena (LB-04477)
+  Path  : /mnt/DYLAN1/Concerts/1998/1998-06-20 Newcastle, England, Newcastle Arena (LB-04477)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1995-07-04 Berlin, Germany (LB-14928)
+  Path  : /mnt/DYLAN1/Concerts/1995/1995-07-04 Berlin, Germany (LB-14928)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1993-08-25 Englewood (LB-00600)
+  Path  : /mnt/DYLAN1/Concerts/1993/1993-08-25 Englewood (LB-00600)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] Bozeman 24-3-2000 No Torrent LB-14427
+  Path  : /mnt/DYLAN2/PRIVATE LB/2000 NOTORRENT/Bozeman 24-3-2000 No Torrent LB-14427
+  ERROR [rename]: Current: 'Bozeman 24-3-2000 No Torrent LB-14427' → Proposed: '2000-03-24 Bozeman, Montana (LB-14427)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 1974-01-29 Nassau County Coliseum, Uniondale, NY (LB-00461)
+  Path  : /mnt/DYLAN2/Concerts/1974/1974-01-29 Nassau County Coliseum, Uniondale, NY (LB-00461)
+
+[V:~ L:✓ R:✓ D:✓] 1981-10-23 Philadelphia (LB-06064)
+  Path  : /mnt/DYLAN2/Concerts/1981/1981-10-23 Philadelphia (LB-06064)
+
+[V:✓ L:✓ R:✓ D:~] 1978-11-10 Seattle, WA (LB-07725)
+  Path  : /mnt/DYLAN2/Concerts/1978/1978-11-10 Seattle, WA (LB-07725)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] Bob Dylan and Tom Petty Live Radio Broadcasts (Grace Recordings, 2019)-LB-15440
+  Path  : /mnt/DYLAN1/LB HOPPER/Bob Dylan and Tom Petty Live Radio Broadcasts (Grace Recordings, 2019)-LB-15440
+  ERROR [rename]: Current: 'Bob Dylan and Tom Petty Live Radio Broadcasts (Grace Recordings, 2019)-LB-15440' → Proposed: '1986-02-24 various (LB-15440)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 1978-10-25 Indianapolis, IN (LB-05313)
+  Path  : /mnt/DYLAN2/Concerts/1978/1978-10-25 Indianapolis, IN (LB-05313)
+
+[V:✓ L:✓ R:~ D:~] 1962-xx-xx various (LB-15040)
+  Path  : /mnt/DYLAN2/Concerts/1962/1962-xx-xx various (LB-15040)
+  ERROR [rename]: Current: '1962-xx-xx various (LB-15040)' → Proposed: 'xx/xx/62 various (LB-15040)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:✓] New York 19-10-1994-LTE-LB-6326 no torrent
+  Path  : /mnt/DYLAN2/PRIVATE LB/1994 NOTORRENT/New York 19-10-1994-LTE-LB-6326 no torrent
+  ERROR [rename]: Current: 'New York 19-10-1994-LTE-LB-6326 no torrent' → Proposed: 'LB-06326-NFT'
+
+[V:✓ L:✓ R:✓ D:~] 2008-11-12 Oshawa, Ontario, General Motors Centre (LB-07042)
+  Path  : /mnt/DYLAN1/Concerts/2008/2008-11-12 Oshawa, Ontario, General Motors Centre (LB-07042)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] Kearney 20-4-2001-LB-14772 No Torrent
+  Path  : /mnt/DYLAN2/PRIVATE LB/2001 NOTORRENT/Kearney 20-4-2001-LB-14772 No Torrent
+  ERROR [rename]: Current: 'Kearney 20-4-2001-LB-14772 No Torrent' → Proposed: '2001-04-20 Kearney, NE (LB-14772)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] Glasgow 17-9-2000-schubert LB-14640 No Torrent
+  Path  : /mnt/DYLAN2/PRIVATE LB/2000 NOTORRENT/Glasgow 17-9-2000-schubert LB-14640 No Torrent
+  ERROR [rename]: Current: 'Glasgow 17-9-2000-schubert LB-14640 No Torrent' → Proposed: 'LB-14640-NFT'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 2010-06-11 Prague, Czech Republic, O2 Arena (LB-08726)
+  Path  : /mnt/DYLAN1/Concerts/2010/2010-06-11 Prague, Czech Republic, O2 Arena (LB-08726)
+
+[V:✓ L:✓ R:✓ D:✓] 2001-10-05 Spokane, Washington, Spokane Arena (LB-02756)
+  Path  : /mnt/DYLAN1/Concerts/2001/2001-10-05 Spokane, Washington, Spokane Arena (LB-02756)
+
+[V:✓ L:✓ R:✓ D:✓] 1987-09-13 Turin, Italy (LB-09301)
+  Path  : /mnt/DYLAN1/Concerts/1987/1987-09-13 Turin, Italy (LB-09301)
+
+[V:✓ L:✓ R:✓ D:~] 2005-07-20 Vancouver, British Columbia, The Orpheum Theatre (LB-02973)
+  Path  : /mnt/DYLAN1/Concerts/2005/2005-07-20 Vancouver, British Columbia, The Orpheum Theatre (LB-02973)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1988-08-20 George (LB-03947)
+  Path  : /mnt/DYLAN1/Concerts/1988/1988-08-20 George (LB-03947)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2006-06-27 Cardiff, Wales, Cardiff International Arena (LB-03857)
+  Path  : /mnt/DYLAN1/Concerts/2006/2006-06-27 Cardiff, Wales, Cardiff International Arena (LB-03857)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:~ R:· D:·] 1992-04-16 State Theatre, Sydney (LB-00401)
+  Path  : /mnt/DYLAN1/Concerts/1992/1992-04-16 State Theatre, Sydney (LB-00401)
+
+[V:✓ L:✓ R:✓ D:~] 1997-04-10 Portland, Maine, Sullivan Gymnasium (LB-02961)
+  Path  : /mnt/DYLAN1/Concerts/1997/1997-04-10 Portland, Maine, Sullivan Gymnasium (LB-02961)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1988-08-29 Toronto, Ontario, Canada, Toronto, Ontario, Canada, Exhibition Stadium Grandstand, Canadian National Exhibition (LB-05423)
+  Path  : /mnt/DYLAN1/Concerts/1988/1988-08-29 Toronto, Ontario, Canada, Toronto, Ontario, Canada, Exhibition Stadium Grandstand, Canadian National Exhibition (LB-05423)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] 1973-xx-xx Studio Outtakes 73 to 81; WHERE THE MONKEY DANCES (LB-02909)
+  Path  : /mnt/DYLAN2/Concerts/1973/1973-xx-xx Studio Outtakes 73 to 81; WHERE THE MONKEY DANCES (LB-02909)
+  ERROR [rename]: Current: '1973-xx-xx Studio Outtakes 73 to 81; WHERE THE MONKEY DANCES (LB-02909)' → Proposed: 'xx/xx/73 Studio Outtakes 73 to 81; WHERE THE MONKEY DANCES (LB-02909)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1978-11-24 Fort Worth, TX, Tarrant County Convention Center (LB-02294)
+  Path  : /mnt/DYLAN2/Concerts/1978/1978-11-24 Fort Worth, TX, Tarrant County Convention Center (LB-02294)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 2010-03-21 Tokyo, Japan, Tokyo (LB-08469)
+  Path  : /mnt/DYLAN1/Concerts/2010/2010-03-21 Tokyo, Japan, Tokyo (LB-08469)
+
+[V:✓ L:✓ R:✓ D:~] 2010-03-25 Tokyo, Japan (LB-08470)
+  Path  : /mnt/DYLAN1/Concerts/2010/2010-03-25 Tokyo, Japan (LB-08470)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:✓] San Francisco 23-3-1975-wgv [LB-05991] No Circulation No Torrent
+  Path  : /mnt/DYLAN2/PRIVATE LB/1975 NOTORRENT/San Francisco 23-3-1975-wgv [LB-05991] No Circulation No Torrent
+  ERROR [rename]: Current: 'San Francisco 23-3-1975-wgv [LB-05991] No Circulation No Torrent' → Proposed: 'LB-05991-NFT'
+
+[V:~ L:~ R:· D:·] 2001-xx-xx Europe 2001 - LJK version (LB-08528)
+  Path  : /mnt/DYLAN1/Concerts/2001/2001-xx-xx Europe 2001 - LJK version (LB-08528)
+
+[V:✓ L:✓ R:✓ D:✓] 1988-09-03 Manchester, New Hampshire Riverfront Park (LB-11180)
+  Path  : /mnt/DYLAN1/Concerts/1988/1988-09-03 Manchester, New Hampshire Riverfront Park (LB-11180)
+
+[V:✓ L:✓ R:✓ D:✓] 1987-10-12 Birmingham, England (LB-09291)
+  Path  : /mnt/DYLAN1/Concerts/1987/1987-10-12 Birmingham, England (LB-09291)
+
+[V:~ L:✓ R:✓ D:~] 2005-07-26 Great Falls, Montana, Four Seasons Arena (LB-03050)
+  Path  : /mnt/DYLAN1/Concerts/2005/2005-07-26 Great Falls, Montana, Four Seasons Arena (LB-03050)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] Atlanta 4-5-2001 -nta LB-14803 No Torrent
+  Path  : /mnt/DYLAN2/PRIVATE LB/2001 NOTORRENT/Atlanta 4-5-2001 -nta LB-14803 No Torrent
+  ERROR [rename]: Current: 'Atlanta 4-5-2001 -nta LB-14803 No Torrent' → Proposed: '2001-05-04 Atlanta, Georgia (LB-14803)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:~ R:· D:·] 1996-05-17 Cleveland, Ohio (LB-07407)
+  Path  : /mnt/DYLAN1/Concerts/1996/1996-05-17 Cleveland, Ohio (LB-07407)
+
+[V:✓ L:✓ R:~ D:~] Tampa 22-9-1988-CD LB-13204 No Torrent
+  Path  : /mnt/DYLAN2/PRIVATE LB/1988 NOTORRENT/Tampa 22-9-1988-CD LB-13204 No Torrent
+  ERROR [rename]: Current: 'Tampa 22-9-1988-CD LB-13204 No Torrent' → Proposed: '1988-09-22 Tampa, Florida (LB-13204)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:✓] 1996-xx-xx Live in 96 (LB-06895)
+  Path  : /mnt/DYLAN1/Concerts/1996/1996-xx-xx Live in 96 (LB-06895)
+  ERROR [rename]: Current: '1996-xx-xx Live in 96 (LB-06895)' → Proposed: 'xx/xx/96 Live in 96 (LB-06895)'
+
+[V:✓ L:✓ R:✓ D:✓] 1995-05-26 Berkeley, CA (LB-12175)
+  Path  : /mnt/DYLAN1/Concerts/1995/1995-05-26 Berkeley, CA (LB-12175)
+
+[V:✓ L:✓ R:✓ D:✓] 2010-06-20 Lyon, France, Halle (LB-08720)
+  Path  : /mnt/DYLAN1/Concerts/2010/2010-06-20 Lyon, France, Halle (LB-08720)
+
+[V:✓ L:✓ R:✓ D:~] 2002-02-24 Austin, TX (LB-15021)
+  Path  : /mnt/DYLAN1/Concerts/2002/2002-02-24 Austin, TX (LB-15021)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1998-06-03 Berlin, Germany (LB-15052)
+  Path  : /mnt/DYLAN1/Concerts/1998/1998-06-03 Berlin, Germany (LB-15052)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2017-04-30 London (LB-12645)
+  Path  : /mnt/DYLAN1/Concerts/2017/2017-04-30 London (LB-12645)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:✓ R:✓ D:✓] 1995-10-09 Savannah (LB-06067)
+  Path  : /mnt/DYLAN1/Concerts/1995/1995-10-09 Savannah (LB-06067)
+
+[V:✓ L:✓ R:✓ D:~] 2011-08-13 Wantagh, NY (LB-13089)
+  Path  : /mnt/DYLAN1/Concerts/2011/2011-08-13 Wantagh, NY (LB-13089)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 2001-03-14 Tokyo, Japan (LB-09844)
+  Path  : /mnt/DYLAN1/Concerts/2001/2001-03-14 Tokyo, Japan (LB-09844)
+
+[V:✓ L:✓ R:✓ D:~] 2008-02-26 Mexico City (LB-05894)
+  Path  : /mnt/DYLAN1/Concerts/2008/2008-02-26 Mexico City (LB-05894)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] 1961-xx-xx For Sale or Just On The Shelf (FSorJOTS) - R1 Update (LB-06027)
+  Path  : /mnt/DYLAN2/Concerts/1961/1961-xx-xx For Sale or Just On The Shelf (FSorJOTS) - R1 Update (LB-06027)
+  ERROR [rename]: Current: '1961-xx-xx For Sale or Just On The Shelf (FSorJOTS) - R1 Update (LB-06027)' → Proposed: 'xx/xx/61 For Sale or Just On The Shelf (FSorJOTS) - R1 Update (LB-06027)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] Sacramento 16-6-1999 -loCAB LB-14229 No Torrent
+  Path  : /mnt/DYLAN2/PRIVATE LB/1999 NOTORRENT/Sacramento 16-6-1999 -loCAB LB-14229 No Torrent
+  ERROR [rename]: Current: 'Sacramento 16-6-1999 -loCAB LB-14229 No Torrent' → Proposed: 'LB-14229-NFT'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] Columbus 2019-11-04 Mani R-05-LB-15942
+  Path  : /mnt/DYLAN1/LB HOPPER/Columbus 2019-11-04 Mani R-05-LB-15942
+  ERROR [rename]: Current: 'Columbus 2019-11-04 Mani R-05-LB-15942' → Proposed: '2019-11-04 Columbus, Ohio (LB-15942)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:✓] San Sebastian 17-6-1989-LTJ-JJ-LB-7409 NO TORRENT
+  Path  : /mnt/DYLAN2/PRIVATE LB/1989 NOTORRENT/San Sebastian 17-6-1989-LTJ-JJ-LB-7409 NO TORRENT
+  ERROR [rename]: Current: 'San Sebastian 17-6-1989-LTJ-JJ-LB-7409 NO TORRENT' → Proposed: '1989-06-17 San Sebastian, Spain (LB-07409)'
+
+[V:✓ L:✓ R:✓ D:~] 1974-02-04 St Louis, Missouri, Missouri Arena (LB-02702)
+  Path  : /mnt/DYLAN2/Concerts/1974/1974-02-04 St Louis, Missouri, Missouri Arena (LB-02702)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] 2023-06-26 Carcassonne, France (spot)-LB-15825
+  Path  : /mnt/DYLAN1/LB HOPPER/2023-06-26 Carcassonne, France (spot)-LB-15825
+  ERROR [rename]: Current: '2023-06-26 Carcassonne, France (spot)-LB-15825' → Proposed: '2023-06-26 Carcassonne, France (LB-15825)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1997-08-08 Darien Center, NY (LB-12498)
+  Path  : /mnt/DYLAN1/Concerts/1997/1997-08-08 Darien Center, NY (LB-12498)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 1963-02-08 NY (LB-06653)
+  Path  : /mnt/DYLAN2/Concerts/1963/1963-02-08 NY (LB-06653)
+
+[V:✓ L:✓ R:✓ D:~] 2014-06-27 Kosice, Slovakia Steel Arena (LB-11850)
+  Path  : /mnt/DYLAN1/Concerts/2014/2014-06-27 Kosice, Slovakia Steel Arena (LB-11850)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2016-04-22 Tokyo, Japan (LB-12245)
+  Path  : /mnt/DYLAN1/Concerts/2016/2016-04-22 Tokyo, Japan (LB-12245)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 1986-02-19 Melbourne, Australia (LB-07668)
+  Path  : /mnt/DYLAN1/Concerts/1986/1986-02-19 Melbourne, Australia (LB-07668)
+
+[V:✓ L:✓ R:✓ D:~] 1994-02-07 Yokohama, Japan (LB-10857)
+  Path  : /mnt/DYLAN1/Concerts/1994/1994-02-07 Yokohama, Japan (LB-10857)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] 2010-06-24 Barcelona, Spain (Condor) - NOT FOR TORRENTING-LB-8802-v
+  Path  : /mnt/DYLAN2/Private Clean Ups/2010-06-24 Barcelona, Spain (Condor) - NOT FOR TORRENTING-LB-8802-v
+  ERROR [rename]: Current: '2010-06-24 Barcelona, Spain (Condor) - NOT FOR TORRENTING-LB-8802-v' → Proposed: 'LB-08802-NFT'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2006-10-17 San Francisco, Bill Graham Civic Auditorium (LB-04175)
+  Path  : /mnt/DYLAN1/Concerts/2006/2006-10-17 San Francisco, Bill Graham Civic Auditorium (LB-04175)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:✓] Essex Junction 7-9-1988-JvS-LB-8138 No Torrent
+  Path  : /mnt/DYLAN2/PRIVATE LB/1988 NOTORRENT/Essex Junction 7-9-1988-JvS-LB-8138 No Torrent
+  ERROR [rename]: Current: 'Essex Junction 7-9-1988-JvS-LB-8138 No Torrent' → Proposed: '1988-09-07 Essex Junction, Vermont (LB-08138)'
+
+[V:~ L:✓ R:✓ D:~] 1997-12-13 Chicago, Illinois (LB-04656)
+  Path  : /mnt/DYLAN1/Concerts/1997/1997-12-13 Chicago, Illinois (LB-04656)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] 2010-06-12 Linz +Tour 2010 Compilation (Crystal Cat Linz Box) CC 1129-1132-LB-15324
+  Path  : /mnt/DYLAN1/LB HOPPER/2010-06-12 Linz +Tour 2010 Compilation (Crystal Cat Linz Box) CC 1129-1132-LB-15324
+  ERROR [rename]: Current: '2010-06-12 Linz +Tour 2010 Compilation (Crystal Cat Linz Box) CC 1129-1132-LB-15324' → Proposed: '2010-06-12 Linz (LB-15324)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2009-10-31 Chicago, Illinois (LB-08270)
+  Path  : /mnt/DYLAN1/Concerts/2009/2009-10-31 Chicago, Illinois (LB-08270)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 2001-11-17 Philadelphia, Pennsylvania (LB-08315)
+  Path  : /mnt/DYLAN1/Concerts/2001/2001-11-17 Philadelphia, Pennsylvania (LB-08315)
+
+[V:✓ L:✓ R:✓ D:~] 1980-11-19 San Francisco, California (LB-08556)
+  Path  : /mnt/DYLAN2/Concerts/1980/1980-11-19 San Francisco, California (LB-08556)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2018-10-10 Irving, TX (LB-13777)
+  Path  : /mnt/DYLAN1/Concerts/2018/2018-10-10 Irving, TX (LB-13777)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] Pittsburgh 13-9-1988-LTC LB-13195 No Torrent
+  Path  : /mnt/DYLAN2/PRIVATE LB/1988 NOTORRENT/Pittsburgh 13-9-1988-LTC LB-13195 No Torrent
+  ERROR [rename]: Current: 'Pittsburgh 13-9-1988-LTC LB-13195 No Torrent' → Proposed: '1988-09-13 Pittsburgh, Pennsylvania (LB-13195)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2008-02-23 Dallas, Texas (LB-05896)
+  Path  : /mnt/DYLAN1/Concerts/2008/2008-02-23 Dallas, Texas (LB-05896)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2013-07-27 Wantagh, NY (LB-10969)
+  Path  : /mnt/DYLAN1/Concerts/2013/2013-07-27 Wantagh, NY (LB-10969)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2019-12-02 New York City (LB-14620)
+  Path  : /mnt/DYLAN1/Concerts/2019/2019-12-02 New York City (LB-14620)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1997-05-02 Memphis, Tennessee (LB-07557)
+  Path  : /mnt/DYLAN1/Concerts/1997/1997-05-02 Memphis, Tennessee (LB-07557)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2002-04-08 Copenhagen Forum, DK (LB-14903)
+  Path  : /mnt/DYLAN1/Concerts/2002/2002-04-08 Copenhagen Forum, DK (LB-14903)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:~ R:· D:·] 1997-08-05 Montréal (rb-canada)-LB-14964
+  Path  : /mnt/DYLAN1/Concerts/1997/1997-08-05 Montréal (rb-canada)-LB-14964
+
+[V:✓ L:✓ R:✓ D:~] 1978-10-22 Dayton, Ohio, University Of Dayton Arena (LB-07662)
+  Path  : /mnt/DYLAN2/Concerts/1978/1978-10-22 Dayton, Ohio, University Of Dayton Arena (LB-07662)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 1989-08-26 Houston, Texas, The Summit (LB-05845)
+  Path  : /mnt/DYLAN1/Concerts/1989/1989-08-26 Houston, Texas, The Summit (LB-05845)
+
+[V:✓ L:✓ R:✓ D:✓] 1966-05-10 Bristol, UK (LB-09419)
+  Path  : /mnt/DYLAN2/Concerts/1966/1966-05-10 Bristol, UK (LB-09419)
+
+[V:✓ L:✓ R:✓ D:~] 2015-06-20 Mainz, Germany (LB-12034)
+  Path  : /mnt/DYLAN1/Concerts/2015/2015-06-20 Mainz, Germany (LB-12034)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1994-08-28 Kalamazoo, MI (LB-15247)
+  Path  : /mnt/DYLAN1/Concerts/1994/1994-08-28 Kalamazoo, MI (LB-15247)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:✓] Cleveland 20-8-1994-NTA-LB-9252 no torrent
+  Path  : /mnt/DYLAN2/PRIVATE LB/1994 NOTORRENT/Cleveland 20-8-1994-NTA-LB-9252 no torrent
+  ERROR [rename]: Current: 'Cleveland 20-8-1994-NTA-LB-9252 no torrent' → Proposed: 'LB-09252-NFT'
+
+[V:~ L:~ R:· D:·] 1991-04-27 Sunrise FL (LB-12000)
+  Path  : /mnt/DYLAN1/Concerts/1991/1991-04-27 Sunrise FL (LB-12000)
+
+[V:✓ L:✓ R:~ D:✓] Bremen 14-6-1998-LTB-LB-7589 NO TORRENT
+  Path  : /mnt/DYLAN2/PRIVATE LB/1998 NOTORRENT/Bremen 14-6-1998-LTB-LB-7589 NO TORRENT
+  ERROR [rename]: Current: 'Bremen 14-6-1998-LTB-LB-7589 NO TORRENT' → Proposed: '1998-06-14 Bremen, Germany (LB-07589)'
+
+[V:✓ L:✓ R:✓ D:~] 1988-09-22 Tampa, Florida (LB-08082)
+  Path  : /mnt/DYLAN1/Concerts/1988/1988-09-22 Tampa, Florida (LB-08082)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1994-07-23 Halle, Germany (LB-10922)
+  Path  : /mnt/DYLAN1/Concerts/1994/1994-07-23 Halle, Germany (LB-10922)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2006-04-04 Santa Rosa, CA, Grace Pavilion (LB-03711)
+  Path  : /mnt/DYLAN1/Concerts/2006/2006-04-04 Santa Rosa, CA, Grace Pavilion (LB-03711)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] bd2022-03-04.mk4v.soomlos-LB-15583.flac24
+  Path  : /mnt/DYLAN1/LB HOPPER/bd2022-03-04.mk4v.soomlos-LB-15583.flac24
+  ERROR [rename]: Current: 'bd2022-03-04.mk4v.soomlos-LB-15583.flac24' → Proposed: '2022-03-04 Tucson, Arizona (LB-15583)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 1988-10-19 NYC, Radio City Music Hall (LB-05415)
+  Path  : /mnt/DYLAN1/Concerts/1988/1988-10-19 NYC, Radio City Music Hall (LB-05415)
+
+[V:✓ L:✓ R:~ D:~] Pueblo 24-8-1990-LTC-CD No Torrent LB-13497
+  Path  : /mnt/DYLAN2/PRIVATE LB/1990 NOTORRENT/Pueblo 24-8-1990-LTC-CD No Torrent LB-13497
+  ERROR [rename]: Current: 'Pueblo 24-8-1990-LTC-CD No Torrent LB-13497' → Proposed: '1990-08-24 Pueblo, Colorado (LB-13497)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2014-07-07 Rostock, Germany (LB-11591)
+  Path  : /mnt/DYLAN1/Concerts/2014/2014-07-07 Rostock, Germany (LB-11591)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1978-06-17 London, England (LB-13836)
+  Path  : /mnt/DYLAN2/Concerts/1978/1978-06-17 London, England (LB-13836)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1986-06-11 Reno, NV, Lawlor Events Center (LB-02782)
+  Path  : /mnt/DYLAN1/Concerts/1986/1986-06-11 Reno, NV, Lawlor Events Center (LB-02782)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] Regensburg 25-5-2000-NTF No Torrent LB-14519
+  Path  : /mnt/DYLAN2/PRIVATE LB/2000 NOTORRENT/Regensburg 25-5-2000-NTF No Torrent LB-14519
+  ERROR [rename]: Current: 'Regensburg 25-5-2000-NTF No Torrent LB-14519' → Proposed: 'LB-14519-NFT'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 1978-02-20 Tokyo, Japan (LB-15043)
+  Path  : /mnt/DYLAN2/Concerts/1978/1978-02-20 Tokyo, Japan (LB-15043)
+
+[V:✓ L:✓ R:✓ D:✓] 2000-05-31 Ancona, Italy (LB-10220)
+  Path  : /mnt/DYLAN1/Concerts/2000/2000-05-31 Ancona, Italy (LB-10220)
+
+[V:✓ L:✓ R:✓ D:✓] 2000-10-01 Munster, Germany, The Halle Munsterland (LB-04476)
+  Path  : /mnt/DYLAN1/Concerts/2000/2000-10-01 Munster, Germany, The Halle Munsterland (LB-04476)
+
+[V:✓ L:✓ R:~ D:~] Vienne 28-7-1995-NTL No Torrent LB-12810
+  Path  : /mnt/DYLAN2/PRIVATE LB/1995-3 NOTORRENT/Vienne 28-7-1995-NTL No Torrent LB-12810
+  ERROR [rename]: Current: 'Vienne 28-7-1995-NTL No Torrent LB-12810' → Proposed: 'LB-12810-NFT'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2019-03-31 Dsseldorf, Germany (LB-15100)
+  Path  : /mnt/DYLAN1/Concerts/2019/2019-03-31 Dsseldorf, Germany (LB-15100)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:~ R:· D:·] 1997-12-18 Los Angeles, CA (LB-07970)
+  Path  : /mnt/DYLAN1/Concerts/1997/1997-12-18 Los Angeles, CA (LB-07970)
+
+[V:✓ L:✓ R:✓ D:~] 2007-07-04 Montreal, Quebec, Festival International de Jazz, Salle Wilfrid-Pelletier (LB-05167)
+  Path  : /mnt/DYLAN1/Concerts/2007/2007-07-04 Montreal, Quebec, Festival International de Jazz, Salle Wilfrid-Pelletier (LB-05167)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:✓ R:✓ D:~] 1994-07-08 Milano, Italy (LB-05053)
+  Path  : /mnt/DYLAN1/Concerts/1994/1994-07-08 Milano, Italy (LB-05053)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] 2023-10-04 St Louis, MO (spot) 48-24-LB-15867
+  Path  : /mnt/DYLAN1/LB HOPPER/2023-10-04 St Louis, MO (spot) 48-24-LB-15867
+  ERROR [rename]: Current: '2023-10-04 St Louis, MO (spot) 48-24-LB-15867' → Proposed: '2023-10-04 St. Louis, Missouri (LB-15867)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1974-05-09 Friends Of Chile Benefit, Felt Forum, Madison Square Garden, New York, NY (LB-13245)
+  Path  : /mnt/DYLAN2/Concerts/1974/1974-05-09 Friends Of Chile Benefit, Felt Forum, Madison Square Garden, New York, NY (LB-13245)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:~ R:· D:·] 1978-06-07 Los Angeles, CA (LB-11702)
+  Path  : /mnt/DYLAN2/Concerts/1978/1978-06-07 Los Angeles, CA (LB-11702)
+  ERROR [lookup]: Multiple LBs: [13944, 11702]
+
+[V:~ L:~ R:· D:·] 1996-10-27 Austin, TX (LB-13770)
+  Path  : /mnt/DYLAN1/Concerts/1996/1996-10-27 Austin, TX (LB-13770)
+
+[V:✓ L:✓ R:✓ D:✓] 1994-07-21 Dresden, Germany (LB-08371)
+  Path  : /mnt/DYLAN1/Concerts/1994/1994-07-21 Dresden, Germany (LB-08371)
+
+[V:✓ L:✓ R:✓ D:~] 1974-01-16 Largo, Maryland (LB-09328)
+  Path  : /mnt/DYLAN2/Concerts/1974/1974-01-16 Largo, Maryland (LB-09328)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:✓] Carbondale 12-2-1999-Pdub-LB-8595 NO TORRENT
+  Path  : /mnt/DYLAN2/PRIVATE LB/1999 NOTORRENT/Carbondale 12-2-1999-Pdub-LB-8595 NO TORRENT
+  ERROR [rename]: Current: 'Carbondale 12-2-1999-Pdub-LB-8595 NO TORRENT' → Proposed: 'LB-08595-NFT'
+
+[V:✓ L:✓ R:✓ D:~] 2010-03-11 Osaka, Japan (LB-08422)
+  Path  : /mnt/DYLAN1/Concerts/2010/2010-03-11 Osaka, Japan (LB-08422)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 1978-07-12 Gothenburg, Sweden (LB-10799)
+  Path  : /mnt/DYLAN2/Concerts/1978/1978-07-12 Gothenburg, Sweden (LB-10799)
+
+[V:✓ L:✓ R:✓ D:✓] 2000-06-27 Las Vegas, Nevada (LB-10211)
+  Path  : /mnt/DYLAN1/Concerts/2000/2000-06-27 Las Vegas, Nevada (LB-10211)
+
+[V:✓ L:✓ R:✓ D:✓] 2011-11-21 London, England, HMV Hammersmith Apollo (LB-09753)
+  Path  : /mnt/DYLAN1/Concerts/2011/2011-11-21 London, England, HMV Hammersmith Apollo (LB-09753)
+
+[V:✓ L:✓ R:~ D:✓] 1986-xx-xx Austrailia - Westwood One (LB-06764)
+  Path  : /mnt/DYLAN1/Concerts/1986/1986-xx-xx Austrailia - Westwood One (LB-06764)
+  ERROR [rename]: Current: '1986-xx-xx Austrailia - Westwood One (LB-06764)' → Proposed: 'xx/xx/86 Austrailia - Westwood One (LB-06764)'
+
+[V:~ L:✓ R:✓ D:~] 1998-02-19 Cincinnati, Ohio, Cincinnati Gardens (LB-05205)
+  Path  : /mnt/DYLAN1/Concerts/1998/1998-02-19 Cincinnati, Ohio, Cincinnati Gardens (LB-05205)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] 2015-10-14 Germany, Town- Berlin, Venue- Tempodrom (LB-12117)
+  Path  : /mnt/DYLAN1/Concerts/2015/2015-10-14 Germany, Town- Berlin, Venue- Tempodrom (LB-12117)
+  ERROR [rename]: Current: '2015-10-14 Germany, Town- Berlin, Venue- Tempodrom (LB-12117)' → Proposed: '2015-10-14 Germany, Town: Berlin, Venue: Tempodrom (LB-12117)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1987-10-15 London, Wembley Stadium (LB-03481)
+  Path  : /mnt/DYLAN1/Concerts/1987/1987-10-15 London, Wembley Stadium (LB-03481)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 1986-02-07 Auckland, New Zealand (LB-08120)
+  Path  : /mnt/DYLAN1/Concerts/1986/1986-02-07 Auckland, New Zealand (LB-08120)
+
+[V:✓ L:~ R:· D:·] 2010-03-15 Osaka, Japan Zepp Osaka (LB-08497)
+  Path  : /mnt/DYLAN1/Concerts/2010/2010-03-15 Osaka, Japan Zepp Osaka (LB-08497)
+  ERROR [lookup]: Multiple LBs: [4994, 3029, 6748, 11900, 8497]
+
+[V:✓ L:✓ R:✓ D:✓] 1993-09-08 Vienna (LB-06106)
+  Path  : /mnt/DYLAN1/Concerts/1993/1993-09-08 Vienna (LB-06106)
+
+[V:✓ L:✓ R:~ D:~] Bob Dylan Fox Warfield San Franciso 1995-05-23 DS Archive-LB-15478
+  Path  : /mnt/DYLAN1/LB HOPPER/Bob Dylan Fox Warfield San Franciso 1995-05-23 DS Archive-LB-15478
+  ERROR [rename]: Current: 'Bob Dylan Fox Warfield San Franciso 1995-05-23 DS Archive-LB-15478' → Proposed: '1995-05-23 San Francisco, CA (LB-15478)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2000-03-11 San Luis Obispo, CA (LB-11340)
+  Path  : /mnt/DYLAN1/Concerts/2000/2000-03-11 San Luis Obispo, CA (LB-11340)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:✓ R:✓ D:✓] 2001-10-12 San Jose, California (LB-10334)
+  Path  : /mnt/DYLAN1/Concerts/2001/2001-10-12 San Jose, California (LB-10334)
+
+[V:✓ L:✓ R:~ D:~] Saratoga Springs 23-7-2000 -NTE-CD LB-14607 No Torrent
+  Path  : /mnt/DYLAN2/PRIVATE LB/2000 NOTORRENT/Saratoga Springs 23-7-2000 -NTE-CD LB-14607 No Torrent
+  ERROR [rename]: Current: 'Saratoga Springs 23-7-2000 -NTE-CD LB-14607 No Torrent' → Proposed: 'LB-14607-NFT'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:~ R:· D:·] 2002-10-05 MacArthur Court, Eugene, OR (LB-01249)
+  Path  : /mnt/DYLAN1/Concerts/2002/2002-10-05 MacArthur Court, Eugene, OR (LB-01249)
+
+[V:✓ L:✓ R:~ D:~] Hilversum III Dylan up To Date 1981 Walhalla part 1 1980-02-06 - Walhalla (Dutch radio program) LB-12995
+  Path  : /mnt/DYLAN2/PRIVATE LB/Missing NT/Hilversum III Dylan up To Date 1981 Walhalla part 1 1980-02-06 - Walhalla (Dutch radio program) LB-12995
+  ERROR [rename]: Current: 'Hilversum III Dylan up To Date 1981 Walhalla part 1 1980-02-06 - Walhalla (Dutch radio program) LB-12995' → Proposed: 'LB-12995-NFT'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] 1978-07-15 Camberley (LB-13595)
+  Path  : /mnt/DYLAN2/Concerts/1978/1978-07-15 Camberley (LB-13595)
+  ERROR [rename]: Current: '1978-07-15 Camberley (LB-13595)' → Proposed: '1978-07-15 Camberley, Surrey, England (LB-13595)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2002-11-11 New York, New York, Madison Square Garden (LB-05692)
+  Path  : /mnt/DYLAN1/Concerts/2002/2002-11-11 New York, New York, Madison Square Garden (LB-05692)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2015-06-23 Bamberg, Germany Brose Arena (LB-12035)
+  Path  : /mnt/DYLAN1/Concerts/2015/2015-06-23 Bamberg, Germany Brose Arena (LB-12035)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 1999-04-18 Granda, Spain, Palacio Municipal de Deportes (LB-00143)
+  Path  : /mnt/DYLAN1/Concerts/1999/1999-04-18 Granda, Spain, Palacio Municipal de Deportes (LB-00143)
+
+[V:✓ L:✓ R:~ D:~] 1961-xx-xx various mainly (LB-15038)
+  Path  : /mnt/DYLAN2/Concerts/1961/1961-xx-xx various mainly (LB-15038)
+  ERROR [rename]: Current: '1961-xx-xx various mainly (LB-15038)' → Proposed: 'xx/xx/61 various mainly Minnesota Hotel Tapes (LB-15038)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] Lampe 1-9-1990 No Torrent LB-13506
+  Path  : /mnt/DYLAN2/PRIVATE LB/1990 NOTORRENT/Lampe 1-9-1990 No Torrent LB-13506
+  ERROR [rename]: Current: 'Lampe 1-9-1990 No Torrent LB-13506' → Proposed: '1990-09-01 Lampe, Missouri (LB-13506)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:~ R:· D:·] 1992-11-01 WILKES-BARRE, PENNSYLVANIA, FM KIRBY CENTER FOR PERFORMING ARTS (LB-03208)
+  Path  : /mnt/DYLAN1/Concerts/1992/1992-11-01 WILKES-BARRE, PENNSYLVANIA, FM KIRBY CENTER FOR PERFORMING ARTS (LB-03208)
+
+[V:✓ L:✗ R:· D:·] 1985-09-22 FARM AID 1, Champaign, Illinois (LB-12347)
+  Path  : /mnt/DYLAN1/Concerts/1985/1985-09-22 FARM AID 1, Champaign, Illinois (LB-12347)
+  ERROR [lookup]: Checksums parsed (4 entries) but no LB match
+
+[V:✓ L:✓ R:✓ D:~] 2004-04-10 Columbia, South Carolina, Township Auditorium (LB-01766)
+  Path  : /mnt/DYLAN1/Concerts/2004/2004-04-10 Columbia, South Carolina, Township Auditorium (LB-01766)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2003-04-18 Dallas, TX, Granada Theater (LB-00975)
+  Path  : /mnt/DYLAN1/Concerts/2003/2003-04-18 Dallas, TX, Granada Theater (LB-00975)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2011-08-01 Nashville TN (LB-09531)
+  Path  : /mnt/DYLAN1/Concerts/2011/2011-08-01 Nashville TN (LB-09531)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1984-07-07 London, England, Wembley Stadium (LB-10824)
+  Path  : /mnt/DYLAN1/Concerts/1984/1984-07-07 London, England, Wembley Stadium (LB-10824)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1976-04-22 Bellevue Biltmore Hotel, Clearwater (LB-00813)
+  Path  : /mnt/DYLAN2/Concerts/1976/1976-04-22 Bellevue Biltmore Hotel, Clearwater (LB-00813)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1980-11-22 San Francisco, California, Fox Warfield Theatre (LB-04558)
+  Path  : /mnt/DYLAN2/Concerts/1980/1980-11-22 San Francisco, California, Fox Warfield Theatre (LB-04558)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1984-07-03 Grenoble, France (LB-09815)
+  Path  : /mnt/DYLAN1/Concerts/1984/1984-07-03 Grenoble, France (LB-09815)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:✓ R:✓ D:~] 2006-04-03 Stockton, California, Stockton Arena (LB-03790)
+  Path  : /mnt/DYLAN1/Concerts/2006/2006-04-03 Stockton, California, Stockton Arena (LB-03790)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2013-11-02 Milan, Italy (LB-11311)
+  Path  : /mnt/DYLAN1/Concerts/2013/2013-11-02 Milan, Italy (LB-11311)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2019-10-30 Chicago, Illinois (LB-14500)
+  Path  : /mnt/DYLAN1/Concerts/2019/2019-10-30 Chicago, Illinois (LB-14500)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1986-06-11 Reno, NV (LB-15174)
+  Path  : /mnt/DYLAN1/Concerts/1986/1986-06-11 Reno, NV (LB-15174)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1994-02-15 Kokura, Japan, Kyushu Koseinenkin Kaikan (LB-01769)
+  Path  : /mnt/DYLAN1/Concerts/1994/1994-02-15 Kokura, Japan, Kyushu Koseinenkin Kaikan (LB-01769)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2006-04-18 Kansas City, Missouri (LB-12504)
+  Path  : /mnt/DYLAN1/Concerts/2006/2006-04-18 Kansas City, Missouri (LB-12504)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2010-05-29 Malakasa (Athens), GREECE (LB-08671)
+  Path  : /mnt/DYLAN1/Concerts/2010/2010-05-29 Malakasa (Athens), GREECE (LB-08671)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:~ R:· D:·] 1999-04-27 Sporthalle, Linz, Austria (LB-02291)
+  Path  : /mnt/DYLAN1/Concerts/1999/1999-04-27 Sporthalle, Linz, Austria (LB-02291)
+
+[V:✓ L:✓ R:~ D:~] Troy  22-2-1999-No torrent LB-14146
+  Path  : /mnt/DYLAN2/PRIVATE LB/1999 NOTORRENT/Troy  22-2-1999-No torrent LB-14146
+  ERROR [rename]: Current: 'Troy  22-2-1999-No torrent LB-14146' → Proposed: '1999-02-22 Troy, New York (LB-14146)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1991-07-27 Corfu, New York, Lakeside Amphitheate (LB-04438)
+  Path  : /mnt/DYLAN1/Concerts/1991/1991-07-27 Corfu, New York, Lakeside Amphitheate (LB-04438)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1998-11-05 College Park, Maryland, Cole Field House, University Of Maryland (LB-04091)
+  Path  : /mnt/DYLAN1/Concerts/1998/1998-11-05 College Park, Maryland, Cole Field House, University Of Maryland (LB-04091)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] Evanston 4-11-1991-MJS LB-13666 No Torrent
+  Path  : /mnt/DYLAN2/PRIVATE LB/1991 NOTORRENT/Evanston 4-11-1991-MJS LB-13666 No Torrent
+  ERROR [rename]: Current: 'Evanston 4-11-1991-MJS LB-13666 No Torrent' → Proposed: '1991-11-04 Evanston, Illinois (LB-13666)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 1962-09-22 Carnegie Hall, New York City, New York, Carnegie Hall Hootenanny (LB-03525)
+  Path  : /mnt/DYLAN2/Concerts/1962/1962-09-22 Carnegie Hall, New York City, New York, Carnegie Hall Hootenanny (LB-03525)
+
+[V:✓ L:✓ R:~ D:~] 2022-09-25 Oslo Spektrum, NO (JOY flac 44k1 24b)-LB-15632
+  Path  : /mnt/DYLAN1/LB HOPPER/2022-09-25 Oslo Spektrum, NO (JOY flac 44k1 24b)-LB-15632
+  ERROR [rename]: Current: '2022-09-25 Oslo Spektrum, NO (JOY flac 44k1 24b)-LB-15632' → Proposed: '2022-09-25 Oslo Spektrum, Norway (LB-15632)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:✓ R:✓ D:~] 2019-10-11 Irvine, CA (LB-14583)
+  Path  : /mnt/DYLAN1/Concerts/2019/2019-10-11 Irvine, CA (LB-14583)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2002-10-07 Pauline Davis Pavilion, Tehama County Fairgrounds, Red Bluff, CA (LB-01002)
+  Path  : /mnt/DYLAN1/Concerts/2002/2002-10-07 Pauline Davis Pavilion, Tehama County Fairgrounds, Red Bluff, CA (LB-01002)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 2008-11-16 Kanata, Ontario, Scotiabank Place (LB-07031)
+  Path  : /mnt/DYLAN1/Concerts/2008/2008-11-16 Kanata, Ontario, Scotiabank Place (LB-07031)
+
+[V:✓ L:✓ R:~ D:~] Milwaukee 28-10-2001-GD-CD LB-14875 No Torrent
+  Path  : /mnt/DYLAN2/PRIVATE LB/2001 NOTORRENT/Milwaukee 28-10-2001-GD-CD LB-14875 No Torrent
+  ERROR [rename]: Current: 'Milwaukee 28-10-2001-GD-CD LB-14875 No Torrent' → Proposed: 'LB-14875-NFT'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2003-07-23 Bend, Oregon (LB-11888)
+  Path  : /mnt/DYLAN1/Concerts/2003/2003-07-23 Bend, Oregon (LB-11888)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1964-06-09 Grogan Acetates 64-65 (LB-12588)
+  Path  : /mnt/DYLAN2/Concerts/1964/1964-06-09 Grogan Acetates 64-65 (LB-12588)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1995-12-09 Boston, MA, Oprheum Theater (LB-00534)
+  Path  : /mnt/DYLAN1/Concerts/1995/1995-12-09 Boston, MA, Oprheum Theater (LB-00534)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2000-03-25 Billings, Montana (LB-00943)
+  Path  : /mnt/DYLAN1/Concerts/2000/2000-03-25 Billings, Montana (LB-00943)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1980-05-08 Hartford, Connecticut, Bushnell Memorial Hall (LB-06034)
+  Path  : /mnt/DYLAN2/Concerts/1980/1980-05-08 Hartford, Connecticut, Bushnell Memorial Hall (LB-06034)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2008-03-15 Buenos Aires, Argentina (LB-05999)
+  Path  : /mnt/DYLAN1/Concerts/2008/2008-03-15 Buenos Aires, Argentina (LB-05999)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2005-05-30 Jacksonville, FL, Jacksonville Metro Park (LB-02880)
+  Path  : /mnt/DYLAN1/Concerts/2005/2005-05-30 Jacksonville, FL, Jacksonville Metro Park (LB-02880)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:~ R:· D:·] 2003-11-12 Brussels, Belgium, Forest National (LB-04168)
+  Path  : /mnt/DYLAN1/Concerts/2003/2003-11-12 Brussels, Belgium, Forest National (LB-04168)
+
+[V:✓ L:✓ R:✓ D:~] 2013-10-25 Berlin, Germany Tempodrom (LB-11152)
+  Path  : /mnt/DYLAN1/Concerts/2013/2013-10-25 Berlin, Germany Tempodrom (LB-11152)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:~ R:· D:·] 1986-06-09 Sports Arena, San Diego, CA (LB-00395)
+  Path  : /mnt/DYLAN1/Concerts/1986/1986-06-09 Sports Arena, San Diego, CA (LB-00395)
+
+[V:~ L:~ R:· D:·] 2002-11-17 Hartford, Connecticut, Civic Center Coliseum (LB-01376)
+  Path  : /mnt/DYLAN1/Concerts/2002/2002-11-17 Hartford, Connecticut, Civic Center Coliseum (LB-01376)
+
+[V:~ L:✓ R:✓ D:~] 1984-06-30 Stade Marcel Saupin, Nantes, France (LB-01936)
+  Path  : /mnt/DYLAN1/Concerts/1984/1984-06-30 Stade Marcel Saupin, Nantes, France (LB-01936)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] 1990-06-12 La Crosse, WI (2023 cassette transfer)-LB-15819
+  Path  : /mnt/DYLAN1/LB HOPPER/1990-06-12 La Crosse, WI (2023 cassette transfer)-LB-15819
+  ERROR [rename]: Current: '1990-06-12 La Crosse, WI (2023 cassette transfer)-LB-15819' → Proposed: '1990-06-12 La Crosse, WI (LB-15819)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 2003-07-17 West Valley City, Utah, USANA Amphitheatren (LB-01119)
+  Path  : /mnt/DYLAN1/Concerts/2003/2003-07-17 West Valley City, Utah, USANA Amphitheatren (LB-01119)
+
+[V:~ L:~ R:· D:·] 1981-10-16 Mecca Auditorium, University Of Wisconsin, Milwaukee, Wisconsin (LB-00426)
+  Path  : /mnt/DYLAN2/Concerts/1981/1981-10-16 Mecca Auditorium, University Of Wisconsin, Milwaukee, Wisconsin (LB-00426)
+
+[V:✓ L:✓ R:✓ D:~] 1991-08-14 Porto Alegre (LB-00681)
+  Path  : /mnt/DYLAN1/Concerts/1991/1991-08-14 Porto Alegre (LB-00681)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1965-05-07 Manchester (LB-12092)
+  Path  : /mnt/DYLAN2/Concerts/1965/1965-05-07 Manchester (LB-12092)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:~ R:· D:·] 1997-04-13 Wayne, NJ (LB-15219)
+  Path  : /mnt/DYLAN1/Concerts/1997/1997-04-13 Wayne, NJ (LB-15219)
+
+[V:✓ L:~ R:· D:·] 1981-07-12 Brondby-Hallen, Copenhagen (LB-00355)
+  Path  : /mnt/DYLAN2/Concerts/1981/1981-07-12 Brondby-Hallen, Copenhagen (LB-00355)
+  ERROR [lookup]: Multiple LBs: [355, 2722]
+
+[V:✓ L:✓ R:✓ D:~] 1986-07-31 Tacoma Dome, Tacoma, Washington (LB-06212)
+  Path  : /mnt/DYLAN1/Concerts/1986/1986-07-31 Tacoma Dome, Tacoma, Washington (LB-06212)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:~ R:· D:·] 1976-04-21 Tampa, Florida, Curtis Hixon Convention Center (LB-04271)
+  Path  : /mnt/DYLAN2/Concerts/1976/1976-04-21 Tampa, Florida, Curtis Hixon Convention Center (LB-04271)
+
+[V:✓ L:✓ R:✓ D:~] 1995-10-12 Dothan Civic Center, Dothan, Alabama (LB-02146)
+  Path  : /mnt/DYLAN1/Concerts/1995/1995-10-12 Dothan Civic Center, Dothan, Alabama (LB-02146)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] Roskilde 29-6-1990-NTB No Torrent LB-13475
+  Path  : /mnt/DYLAN2/PRIVATE LB/1990 NOTORRENT/Roskilde 29-6-1990-NTB No Torrent LB-13475
+  ERROR [rename]: Current: 'Roskilde 29-6-1990-NTB No Torrent LB-13475' → Proposed: '1990-06-29 Roskilde (LB-13475)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:~ R:· D:·] bd1997-04-01 St. John's (Cba)-LB-15507
+  Path  : /mnt/DYLAN1/LB HOPPER/bd1997-04-01 St. John's (Cba)-LB-15507
+
+[V:~ L:~ R:· D:·] 2005-04-16 Boston, Orpheum Theatre (LB-02632)
+  Path  : /mnt/DYLAN1/Concerts/2005/2005-04-16 Boston, Orpheum Theatre (LB-02632)
+
+[V:✗ L:✗ R:· D:·] The Bootlegseries Volume 12 The Cutting Edge [24-96] LB 12181 No Torrent No trade
+  Path  : /mnt/DYLAN2/PRIVATE LB/Official Releases with LB NO Torrent/The Bootlegseries Volume 12 The Cutting Edge [24-96] LB 12181 No Torrent No trade
+  ERROR [verify]: status=fail
+  ERROR [lookup]: Checksums parsed (760 entries) but no LB match
+
+[V:✓ L:✓ R:✓ D:~] 1981-10-21 Boston, Massachusetts, The Orpheum Theatre (LB-03081)
+  Path  : /mnt/DYLAN2/Concerts/1981/1981-10-21 Boston, Massachusetts, The Orpheum Theatre (LB-03081)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2010-06-11 Prague (LB-08683)
+  Path  : /mnt/DYLAN1/Concerts/2010/2010-06-11 Prague (LB-08683)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] New Haven 13-11-1975 eve-JF No Torrent LB 11459
+  Path  : /mnt/DYLAN2/PRIVATE LB/1975 NOTORRENT/New Haven 13-11-1975 eve-JF No Torrent LB 11459
+  ERROR [rename]: Current: 'New Haven 13-11-1975 eve-JF No Torrent LB 11459' → Proposed: '1975-11-13 New Haven, Connecticut (LB-11459)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:~ R:· D:·] 2000-11-19 Towson, MD (LB-00033)
+  Path  : /mnt/DYLAN1/Concerts/2000/2000-11-19 Towson, MD (LB-00033)
+
+[V:✓ L:✓ R:✓ D:~] 1999-05-01 Ischgl, Austria Silvretta Ski And Funsport Arena, The Idalpe (LB-06417)
+  Path  : /mnt/DYLAN1/Concerts/1999/1999-05-01 Ischgl, Austria Silvretta Ski And Funsport Arena, The Idalpe (LB-06417)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1984-06-03 Munich, West Germany (LB-09778)
+  Path  : /mnt/DYLAN1/Concerts/1984/1984-06-03 Munich, West Germany (LB-09778)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 1989-08-23 Oklahoma City (LB-00719)
+  Path  : /mnt/DYLAN1/Concerts/1989/1989-08-23 Oklahoma City (LB-00719)
+
+[V:✓ L:✓ R:~ D:~] 1998-05-21 LOS ANGELES (LB-13161)
+  Path  : /mnt/DYLAN1/Concerts/1998/1998-05-21 LOS ANGELES (LB-13161)
+  ERROR [rename]: Current: '1998-05-21 LOS ANGELES (LB-13161)' → Proposed: '1998-05-21 LOS ANGELES, CA @ UCLA PAULEY PAVILION (LB-13161)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:~ R:· D:·] 2006-08-12 Comstock Park, MI, Fifth Third Ballpark (LB-04140)
+  Path  : /mnt/DYLAN1/Concerts/2006/2006-08-12 Comstock Park, MI, Fifth Third Ballpark (LB-04140)
+
+[V:✓ L:✓ R:✓ D:✓] 2000-06-23 Chronicle Pavilion, Concord, CA (LB-02538)
+  Path  : /mnt/DYLAN1/Concerts/2000/2000-06-23 Chronicle Pavilion, Concord, CA (LB-02538)
+
+[V:✓ L:✓ R:~ D:~] bobdylan2024-09-07-16bit-LB-16104
+  Path  : /mnt/DYLAN2/LB HOPPER/bobdylan2024-09-07-16bit-LB-16104
+  ERROR [rename]: Current: 'bobdylan2024-09-07-16bit-LB-16104' → Proposed: '2024-09-07 Tinley Park, IL (LB-16104)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 1987-10-16 Wembley Arena, London (LB-00606)
+  Path  : /mnt/DYLAN1/Concerts/1987/1987-10-16 Wembley Arena, London (LB-00606)
+
+[V:~ L:~ R:· D:·] 1978-11-23 LLoyd Noble Center, Norman, OK (LB-00074)
+  Path  : /mnt/DYLAN2/Concerts/1978/1978-11-23 LLoyd Noble Center, Norman, OK (LB-00074)
+  ERROR [lookup]: Multiple LBs: [74, 7741]
+
+[V:✓ L:✓ R:✓ D:~] 1998-09-27 Reno, Nevada, Reno Hilton Ampitheater (LB-05737)
+  Path  : /mnt/DYLAN1/Concerts/1998/1998-09-27 Reno, Nevada, Reno Hilton Ampitheater (LB-05737)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:✓ R:~ D:~] 1991 06 07 Bob Dylan - Bologna (zuma66)-LB-15548
+  Path  : /mnt/DYLAN1/LB HOPPER/1991 06 07 Bob Dylan - Bologna (zuma66)-LB-15548
+  ERROR [rename]: Current: '1991 06 07 Bob Dylan - Bologna (zuma66)-LB-15548' → Proposed: '1991-06-07 Bologna, Italy (LB-15548)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2011-11-20 London,England,HMV Hammersmith Apollo (LB-10202)
+  Path  : /mnt/DYLAN1/Concerts/2011/2011-11-20 London,England,HMV Hammersmith Apollo (LB-10202)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 1993-02-11 London (LB-10410)
+  Path  : /mnt/DYLAN1/Concerts/1993/1993-02-11 London (LB-10410)
+
+[V:✓ L:✓ R:✓ D:~] 2015-05-10 Kansas City, Missouri (LB-12308)
+  Path  : /mnt/DYLAN1/Concerts/2015/2015-05-10 Kansas City, Missouri (LB-12308)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1981-07-09 Drammen, Norway (LB-12394)
+  Path  : /mnt/DYLAN2/Concerts/1981/1981-07-09 Drammen, Norway (LB-12394)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:~ R:· D:·] 2004-06-29 Bonn, Germany, Museumsplatz (LB-01901)
+  Path  : /mnt/DYLAN1/Concerts/2004/2004-06-29 Bonn, Germany, Museumsplatz (LB-01901)
+  ERROR [lookup]: Multiple LBs: [1901, 4994, 3029, 6748, 11900]
+
+[V:✓ L:✓ R:✓ D:~] 1999-11-10 New Haven, Connecticut, Veterans Memorial Coliseum (LB-04770)
+  Path  : /mnt/DYLAN1/Concerts/1999/1999-11-10 New Haven, Connecticut, Veterans Memorial Coliseum (LB-04770)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 1974-02-11 Oakland Coliseum (LB-05622)
+  Path  : /mnt/DYLAN2/Concerts/1974/1974-02-11 Oakland Coliseum (LB-05622)
+
+[V:✓ L:✓ R:✓ D:~] 2009-10-15 Los Angeles, California, USA Hollywood Palladium (LB-08117)
+  Path  : /mnt/DYLAN1/Concerts/2009/2009-10-15 Los Angeles, California, USA Hollywood Palladium (LB-08117)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:~ R:· D:·] 1993-09-04 Saratoga Springs (LB-00516)
+  Path  : /mnt/DYLAN1/Concerts/1993/1993-09-04 Saratoga Springs (LB-00516)
+
+[V:✓ L:✓ R:✓ D:~] 1986-06-22 Dallas, Texas, Reunion Arena (LB-05148)
+  Path  : /mnt/DYLAN1/Concerts/1986/1986-06-22 Dallas, Texas, Reunion Arena (LB-05148)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2009-04-25 London, England (LB-07456)
+  Path  : /mnt/DYLAN1/Concerts/2009/2009-04-25 London, England (LB-07456)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1993-07-13 Cascais, Portugal (LB-09152)
+  Path  : /mnt/DYLAN1/Concerts/1993/1993-07-13 Cascais, Portugal (LB-09152)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] Dresden 21-7-1994-CB No Torrent LB-12695
+  Path  : /mnt/DYLAN2/PRIVATE LB/1994 NOTORRENT/Dresden 21-7-1994-CB No Torrent LB-12695
+  ERROR [rename]: Current: 'Dresden 21-7-1994-CB No Torrent LB-12695' → Proposed: 'LB-12695-NFT'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:✓] New York 13-10-1989-JF-LB-10036 NO TORRENT
+  Path  : /mnt/DYLAN2/PRIVATE LB/1989 NOTORRENT/New York 13-10-1989-JF-LB-10036 NO TORRENT
+  ERROR [rename]: Current: 'New York 13-10-1989-JF-LB-10036 NO TORRENT' → Proposed: 'LB-10036-NFT'
+
+[V:~ L:~ R:· D:·] 1991-05-11 Danbury, CT (LB-12267)
+  Path  : /mnt/DYLAN1/Concerts/1991/1991-05-11 Danbury, CT (LB-12267)
+
+[V:✓ L:✓ R:✓ D:~] 2002-10-25 Santa Ana Star Casino, Bernalillo, NM (LB-00761)
+  Path  : /mnt/DYLAN1/Concerts/2002/2002-10-25 Santa Ana Star Casino, Bernalillo, NM (LB-00761)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1984-05-23 Los Angeles, CA (LB-14943)
+  Path  : /mnt/DYLAN1/Concerts/1984/1984-05-23 Los Angeles, CA (LB-14943)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:✓ R:✓ D:~] 1998-06-11 Copenhagen, Denmark, Forum (LB-04406)
+  Path  : /mnt/DYLAN1/Concerts/1998/1998-06-11 Copenhagen, Denmark, Forum (LB-04406)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1970-05-01 Columbia Studios B, New York NY (LB-12526)
+  Path  : /mnt/DYLAN2/Concerts/1970/1970-05-01 Columbia Studios B, New York NY (LB-12526)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 1966-05-10 Bristol, England (LB-06685)
+  Path  : /mnt/DYLAN2/Concerts/1966/1966-05-10 Bristol, England (LB-06685)
+
+[V:✓ L:✓ R:~ D:~] Genoa 25-4-2018 partial [p] No Torrent REM LBP51 LB-14286
+  Path  : /mnt/DYLAN2/PRIVATE LB/2018 NOTorrent/Genoa 25-4-2018 partial [p] No Torrent REM LBP51 LB-14286
+  ERROR [rename]: Current: 'Genoa 25-4-2018 partial [p] No Torrent REM LBP51 LB-14286' → Proposed: 'LB-14286-NFT'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] New York City 13-11-2002-GD-CD LB 10307 No Torrent
+  Path  : /mnt/DYLAN2/PRIVATE LB/2002 NOTORRENT/New York City 13-11-2002-GD-CD LB 10307 No Torrent
+  ERROR [rename]: Current: 'New York City 13-11-2002-GD-CD LB 10307 No Torrent' → Proposed: 'LB-10307-NFT'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2011-11-19 London (LB-11686)
+  Path  : /mnt/DYLAN1/Concerts/2011/2011-11-19 London (LB-11686)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 1976-01-25 Houston Astrodome, Houston, TX (LB-02572)
+  Path  : /mnt/DYLAN2/Concerts/1976/1976-01-25 Houston Astrodome, Houston, TX (LB-02572)
+
+[V:✓ L:✓ R:✓ D:✓] 1984-07-08 Slane Ireland (LB-07856)
+  Path  : /mnt/DYLAN1/Concerts/1984/1984-07-08 Slane Ireland (LB-07856)
+
+[V:✓ L:✓ R:~ D:~] Toronto 2023-10-27 krewechief CP version-LB-15890
+  Path  : /mnt/DYLAN1/LB HOPPER/Toronto 2023-10-27 krewechief CP version-LB-15890
+  ERROR [rename]: Current: 'Toronto 2023-10-27 krewechief CP version-LB-15890' → Proposed: '2023-10-27 Toronto, Ontario (LB-15890)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2006-04-21 Des Moines, Iowa, Val Air Ballroom (LB-03772)
+  Path  : /mnt/DYLAN1/Concerts/2006/2006-04-21 Des Moines, Iowa, Val Air Ballroom (LB-03772)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:✓ R:✓ D:✓] 2000-10-01 Munster, Germany (LB-01553)
+  Path  : /mnt/DYLAN1/Concerts/2000/2000-10-01 Munster, Germany (LB-01553)
+
+[V:✓ L:✓ R:✓ D:~] 2013-07-18 Darien Lake, NY (LB-10955)
+  Path  : /mnt/DYLAN1/Concerts/2013/2013-07-18 Darien Lake, NY (LB-10955)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] Wichita 19-5-1976- first gen tape SECRET LB 11392 3 tracks no match ok fault in Lb database
+  Path  : /mnt/DYLAN2/PRIVATE LB/1976 NOTORRENT/Wichita 19-5-1976- first gen tape SECRET LB 11392 3 tracks no match ok fault in Lb database
+  ERROR [rename]: Current: 'Wichita 19-5-1976- first gen tape SECRET LB 11392 3 tracks no match ok fault in Lb database' → Proposed: '1976-05-19 Wichita, Kansas (LB-11392)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 2002-04-12 Leipzig, Germany Messehalle 7 (LB-05278)
+  Path  : /mnt/DYLAN1/Concerts/2002/2002-04-12 Leipzig, Germany Messehalle 7 (LB-05278)
+
+[V:✓ L:✓ R:~ D:~] Wantaugh 10-9-1993-GD-CD No Torrent LB-13891
+  Path  : /mnt/DYLAN2/PRIVATE LB/1993 NOTORRENT/Wantaugh 10-9-1993-GD-CD No Torrent LB-13891
+  ERROR [rename]: Current: 'Wantaugh 10-9-1993-GD-CD No Torrent LB-13891' → Proposed: 'LB-13891-NFT'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:~ R:· D:·] 2003-07-31 Atlanta, Georgia, Hi-Fi Buys Amphitheater (LB-01697)
+  Path  : /mnt/DYLAN1/Concerts/2003/2003-07-31 Atlanta, Georgia, Hi-Fi Buys Amphitheater (LB-01697)
+
+[V:~ L:~ R:· D:·] 1991-11-09 Dayton (LB-00407)
+  Path  : /mnt/DYLAN1/Concerts/1991/1991-11-09 Dayton (LB-00407)
+
+[V:✓ L:✓ R:✓ D:~] 2009-04-26 London, UK (LB-07443)
+  Path  : /mnt/DYLAN1/Concerts/2009/2009-04-26 London, UK (LB-07443)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] Upper Darby 12-11-2017-CB-notorrent LB-13067
+  Path  : /mnt/DYLAN2/PRIVATE LB/2017 NOTORRENT/Upper Darby 12-11-2017-CB-notorrent LB-13067
+  ERROR [rename]: Current: 'Upper Darby 12-11-2017-CB-notorrent LB-13067' → Proposed: 'LB-13067-NFT'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] 1963-05-03 Studs Terkel Wax (LB-14488)
+  Path  : /mnt/DYLAN2/Concerts/1963/1963-05-03 Studs Terkel Wax (LB-14488)
+  ERROR [rename]: Current: '1963-05-03 Studs Terkel Wax (LB-14488)' → Proposed: '1963-05-03 Studs Terkel Wax Museum, Chicago, IL (LB-14488)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] Bob Dylan  Mid South Coliseum Memphis TN 1974-01-23 DS Archive-LB-15706
+  Path  : /mnt/DYLAN1/LB HOPPER/Bob Dylan  Mid South Coliseum Memphis TN 1974-01-23 DS Archive-LB-15706
+  ERROR [rename]: Current: 'Bob Dylan  Mid South Coliseum Memphis TN 1974-01-23 DS Archive-LB-15706' → Proposed: '1974-01-23 Memphis, TN (LB-15706)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1989-06-21 Cava de'Tirreni (LB-02142)
+  Path  : /mnt/DYLAN1/Concerts/1989/1989-06-21 Cava de'Tirreni (LB-02142)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:✓] Concord 7-6-1988-LTD-LB-8604 No Torrent
+  Path  : /mnt/DYLAN2/PRIVATE LB/1988 NOTORRENT/Concord 7-6-1988-LTD-LB-8604 No Torrent
+  ERROR [rename]: Current: 'Concord 7-6-1988-LTD-LB-8604 No Torrent' → Proposed: '1988-06-07 Concord, California (LB-08604)'
+
+[V:✓ L:✓ R:✓ D:✓] 2011-10-21 Rockhal, Esch-sur-Alzette, Luxembourg (LB-09703)
+  Path  : /mnt/DYLAN1/Concerts/2011/2011-10-21 Rockhal, Esch-sur-Alzette, Luxembourg (LB-09703)
+
+[V:✓ L:✓ R:~ D:~] Correggio 5-7-1992 (DAT) LB-12942 No Torrent
+  Path  : /mnt/DYLAN2/PRIVATE LB/1992 NOTORRENT/Correggio 5-7-1992 (DAT) LB-12942 No Torrent
+  ERROR [rename]: Current: 'Correggio 5-7-1992 (DAT) LB-12942 No Torrent' → Proposed: '1992-07-05 Correggio, Italy (LB-12942)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:✓] Poughkeepsie 20-10-1989-LTE-LB-6539 NO TORRENT
+  Path  : /mnt/DYLAN2/PRIVATE LB/1989 NOTORRENT/Poughkeepsie 20-10-1989-LTE-LB-6539 NO TORRENT
+  ERROR [rename]: Current: 'Poughkeepsie 20-10-1989-LTE-LB-6539 NO TORRENT' → Proposed: 'LB-06539-NFT'
+
+[V:✓ L:✓ R:~ D:✓] 1980-11-10 San Francisco, California (LB-08087)
+  Path  : /mnt/DYLAN2/Concerts/1980/1980-11-10 San Francisco, California (LB-08087)
+  ERROR [rename]: Current: '1980-11-10 San Francisco, California (LB-08087)' → Proposed: '1980-11-10 San Francisco, California (LB-07009)'
+
+[V:✓ L:✓ R:~ D:✓] Nara 20-5-1994-a-LB-8545 no torrent
+  Path  : /mnt/DYLAN2/PRIVATE LB/1994 NOTORRENT/Nara 20-5-1994-a-LB-8545 no torrent
+  ERROR [rename]: Current: 'Nara 20-5-1994-a-LB-8545 no torrent' → Proposed: 'LB-08545-NFT'
+
+[V:✓ L:✓ R:✓ D:~] 2007-10-15 Cincinnati, Ohio Taft Theatre (LB-05470)
+  Path  : /mnt/DYLAN1/Concerts/2007/2007-10-15 Cincinnati, Ohio Taft Theatre (LB-05470)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2004-11-06 Brubaker Auditorium, Messiah College, Grantham, Pennsylvania (LB-02412)
+  Path  : /mnt/DYLAN1/Concerts/2004/2004-11-06 Brubaker Auditorium, Messiah College, Grantham, Pennsylvania (LB-02412)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] Lund 13-5-2000-schubert No Torrent LB-14482
+  Path  : /mnt/DYLAN2/PRIVATE LB/2000 NOTORRENT/Lund 13-5-2000-schubert No Torrent LB-14482
+  ERROR [rename]: Current: 'Lund 13-5-2000-schubert No Torrent LB-14482' → Proposed: 'LB-14482-NFT'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] BOB DYLAN 2023-11-20 Newark, NJ (spot)-LB-15906
+  Path  : /mnt/DYLAN1/LB HOPPER/BOB DYLAN 2023-11-20 Newark, NJ (spot)-LB-15906
+  ERROR [rename]: Current: 'BOB DYLAN 2023-11-20 Newark, NJ (spot)-LB-15906' → Proposed: '2023-11-20 Newark, New Jersey (LB-15906)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:✓ R:✓ D:✓] 2000-05-21 Horsens, Denmark, Horsens NY Teater (LB-05685)
+  Path  : /mnt/DYLAN1/Concerts/2000/2000-05-21 Horsens, Denmark, Horsens NY Teater (LB-05685)
+
+[V:✓ L:✓ R:✓ D:~] 1976-05-18 Oklahoma City, Oklahoma, State Fair Arena (LB-04327)
+  Path  : /mnt/DYLAN2/Concerts/1976/1976-05-18 Oklahoma City, Oklahoma, State Fair Arena (LB-04327)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1998-06-02 Leipzig, Germany Messehalle 7 (LB-04371)
+  Path  : /mnt/DYLAN1/Concerts/1998/1998-06-02 Leipzig, Germany Messehalle 7 (LB-04371)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2012-04-27 Buenos Aires, Argentina Teatro Gran Rex (LB-10051)
+  Path  : /mnt/DYLAN1/Concerts/2012/2012-04-27 Buenos Aires, Argentina Teatro Gran Rex (LB-10051)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] 2017-10-27 Chicago, IL Early Roman-King lossy-LB-16102
+  Path  : /mnt/DYLAN2/LB HOPPER/2017-10-27 Chicago, IL Early Roman-King lossy-LB-16102
+  ERROR [rename]: Current: '2017-10-27 Chicago, IL Early Roman-King lossy-LB-16102' → Proposed: '2017-10-27 Chicago, Illinois (LB-16102)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 1981-06-27 London, England (LB-06979)
+  Path  : /mnt/DYLAN2/Concerts/1981/1981-06-27 London, England (LB-06979)
+
+[V:✓ L:✓ R:✓ D:~] 2013-05-04 Charleston, South Carolina (LB-10830)
+  Path  : /mnt/DYLAN1/Concerts/2013/2013-05-04 Charleston, South Carolina (LB-10830)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1978-11-15 The Forum, Inglewood, Los Angeles (LB-00303)
+  Path  : /mnt/DYLAN2/Concerts/1978/1978-11-15 The Forum, Inglewood, Los Angeles (LB-00303)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2014-07-12 Kristiansand, Norway (LB-11590)
+  Path  : /mnt/DYLAN1/Concerts/2014/2014-07-12 Kristiansand, Norway (LB-11590)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2004-03-05 Chicago, Illinois (LB-09258)
+  Path  : /mnt/DYLAN1/Concerts/2004/2004-03-05 Chicago, Illinois (LB-09258)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] Bob Dylan - Boston November 4 2023 FLAC (WhoFan70 + Finbar) FLAC-LB-15894
+  Path  : /mnt/DYLAN1/LB HOPPER/Bob Dylan - Boston November 4 2023 FLAC (WhoFan70 + Finbar) FLAC-LB-15894
+  ERROR [rename]: Current: 'Bob Dylan - Boston November 4 2023 FLAC (WhoFan70 + Finbar) FLAC-LB-15894' → Proposed: '2023-11-04 Boston, Massachusetts (LB-15894)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2004-11-10 Toledo, Ohio, University Of Toledo, John F. Savage Hall (LB-02358)
+  Path  : /mnt/DYLAN1/Concerts/2004/2004-11-10 Toledo, Ohio, University Of Toledo, John F. Savage Hall (LB-02358)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2013-10-19 HAMBURG, GERMANY (LB-11116)
+  Path  : /mnt/DYLAN1/Concerts/2013/2013-10-19 HAMBURG, GERMANY (LB-11116)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2006-07-19 Foggia, Italy, Teatro Mediterraneo (LB-04226)
+  Path  : /mnt/DYLAN1/Concerts/2006/2006-07-19 Foggia, Italy, Teatro Mediterraneo (LB-04226)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1990-11-14 Normal (LB-00561)
+  Path  : /mnt/DYLAN1/Concerts/1990/1990-11-14 Normal (LB-00561)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1975-11-19 Worchester (LB-02212)
+  Path  : /mnt/DYLAN2/Concerts/1975/1975-11-19 Worchester (LB-02212)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:✓ R:✓ D:~] 1988-09-10 Stanhope, NJ, Waterloo Village (LB-02860)
+  Path  : /mnt/DYLAN1/Concerts/1988/1988-09-10 Stanhope, NJ, Waterloo Village (LB-02860)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:~ R:· D:·] 1978-10-29 The Checkerdome, St. Louis, Missouri (LB-01592)
+  Path  : /mnt/DYLAN2/Concerts/1978/1978-10-29 The Checkerdome, St. Louis, Missouri (LB-01592)
+
+[V:~ L:~ R:· D:·] 2009-04-07 Paris, France (LB-07535)
+  Path  : /mnt/DYLAN1/Concerts/2009/2009-04-07 Paris, France (LB-07535)
+
+[V:✓ L:✓ R:~ D:✓] Las Vegas 27-10-2012 soomlos-LB-10531 No Torrent-LB-10531
+  Path  : /mnt/DYLAN2/PRIVATE LB/2012 NOTORRENT/Las Vegas 27-10-2012 soomlos-LB-10531 No Torrent-LB-10531
+  ERROR [rename]: Current: 'Las Vegas 27-10-2012 soomlos-LB-10531 No Torrent-LB-10531' → Proposed: 'LB-10531-NFT'
+
+[V:✓ L:✓ R:✓ D:~] 2006-05-02 Davidson, NC (LB-03874)
+  Path  : /mnt/DYLAN1/Concerts/2006/2006-05-02 Davidson, NC (LB-03874)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:✓ R:✓ D:~] 1989-10-11 New York City (LB-08438)
+  Path  : /mnt/DYLAN1/Concerts/1989/1989-10-11 New York City (LB-08438)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:✓ R:✓ D:~] 1994-07-08 Milano, Italy (LB-15183)
+  Path  : /mnt/DYLAN1/Concerts/1994/1994-07-08 Milano, Italy (LB-15183)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2014-08-25 Brisbane, Queensland, Australia (LB-11733)
+  Path  : /mnt/DYLAN1/Concerts/2014/2014-08-25 Brisbane, Queensland, Australia (LB-11733)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:~ R:· D:·] bd1994-08-24 South Bend (NTA)-LB-15477
+  Path  : /mnt/DYLAN1/LB HOPPER/bd1994-08-24 South Bend (NTA)-LB-15477
+
+[V:~ L:~ R:· D:·] 1986-07-13 Saratoga Performing Arts Center, Saratoga Springs, New York (LB-00526)
+  Path  : /mnt/DYLAN1/Concerts/1986/1986-07-13 Saratoga Performing Arts Center, Saratoga Springs, New York (LB-00526)
+
+[V:~ L:~ R:· D:·] 1999-05-01 Ischgl, Austria, The Idalpe, Silvretta Ski and Funsport Arena (LB-04122)
+  Path  : /mnt/DYLAN1/Concerts/1999/1999-05-01 Ischgl, Austria, The Idalpe, Silvretta Ski and Funsport Arena (LB-04122)
+
+[V:✓ L:✓ R:✓ D:✓] 2006-07-12 Perpignan, France, Campo Santo, Les Estivales de Perpignan (LB-03887)
+  Path  : /mnt/DYLAN1/Concerts/2006/2006-07-12 Perpignan, France, Campo Santo, Les Estivales de Perpignan (LB-03887)
+
+[V:✓ L:✓ R:~ D:~] Esch-zur-Alzette 16-11-2013 U.S No Torrent LB 11829-LB-11829
+  Path  : /mnt/DYLAN2/PRIVATE LB/2013 NOTORRENT/Esch-zur-Alzette 16-11-2013 U.S No Torrent LB 11829-LB-11829
+  ERROR [rename]: Current: 'Esch-zur-Alzette 16-11-2013 U.S No Torrent LB 11829-LB-11829' → Proposed: '2013-11-16 Luxembourg (LB-11829)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:✓] Savannah 8-12-1978-NO TORRENT-LTC-ssrc-PL-LB-7391
+  Path  : /mnt/DYLAN2/PRIVATE LB/1978 NOTORRENT/Savannah 8-12-1978-NO TORRENT-LTC-ssrc-PL-LB-7391
+  ERROR [rename]: Current: 'Savannah 8-12-1978-NO TORRENT-LTC-ssrc-PL-LB-7391' → Proposed: '1978-12-08 Savannah, Georgia (LB-07391)'
+
+[V:~ L:~ R:· D:·] 1990-11-09 Chicago (LB-01220)
+  Path  : /mnt/DYLAN1/Concerts/1990/1990-11-09 Chicago (LB-01220)
+
+[V:✓ L:✓ R:✓ D:~] 1978-03-02 Tokyo, Japan, Nippon Budokan Hall (LB-04190)
+  Path  : /mnt/DYLAN2/Concerts/1978/1978-03-02 Tokyo, Japan, Nippon Budokan Hall (LB-04190)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 2003-10-17 Docks, Hamburg, Germany (LB-01333)
+  Path  : /mnt/DYLAN1/Concerts/2003/2003-10-17 Docks, Hamburg, Germany (LB-01333)
+
+[V:✓ L:✓ R:✓ D:✓] 2002-10-07 Red Bluff, CA (LB-09807)
+  Path  : /mnt/DYLAN1/Concerts/2002/2002-10-07 Red Bluff, CA (LB-09807)
+
+[V:✓ L:✓ R:✓ D:~] 2005-11-24 London, England, Brixton Academy (LB-03816)
+  Path  : /mnt/DYLAN1/Concerts/2005/2005-11-24 London, England, Brixton Academy (LB-03816)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:~ R:· D:·] 2012-07-11 Bilbao, Spain (LB-10350)
+  Path  : /mnt/DYLAN1/Concerts/2012/2012-07-11 Bilbao, Spain (LB-10350)
+
+[V:✓ L:✓ R:~ D:~] Locarno 5-10-1987-CB No Torrent LB-13119
+  Path  : /mnt/DYLAN2/PRIVATE LB/1987 NOTORRENT/Locarno 5-10-1987-CB No Torrent LB-13119
+  ERROR [rename]: Current: 'Locarno 5-10-1987-CB No Torrent LB-13119' → Proposed: '1987-10-05 Locarno, Switzerland (LB-13119)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] Ottawa 30-7-1989-LTM LB-13260 No Torrent
+  Path  : /mnt/DYLAN2/PRIVATE LB/1989 NOTORRENT/Ottawa 30-7-1989-LTM LB-13260 No Torrent
+  ERROR [rename]: Current: 'Ottawa 30-7-1989-LTM LB-13260 No Torrent' → Proposed: '1989-07-30 Ottawa, Ontario, Canada (LB-13260)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 1985-07-13 Live Aid broadcast - Philadelphia, PA (LB-10346)
+  Path  : /mnt/DYLAN1/Concerts/1985/1985-07-13 Live Aid broadcast - Philadelphia, PA (LB-10346)
+
+[V:✓ L:✓ R:✓ D:~] 2014-11-14 Boston, Massachusetts (LB-11757)
+  Path  : /mnt/DYLAN1/Concerts/2014/2014-11-14 Boston, Massachusetts (LB-11757)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:~ R:· D:·] 1961-xx-xx Recording Artist series, Vol. 2 (LB-05993)
+  Path  : /mnt/DYLAN2/Concerts/1961/1961-xx-xx Recording Artist series, Vol. 2 (LB-05993)
+
+[V:~ L:~ R:· D:·] 1997-08-26 Cuyahoga Falls, Ohio, Blossom Music Center (LB-04286)
+  Path  : /mnt/DYLAN1/Concerts/1997/1997-08-26 Cuyahoga Falls, Ohio, Blossom Music Center (LB-04286)
+
+[V:✓ L:✓ R:✓ D:~] 2001-03-04 Tokyo, Japan (LB-11345)
+  Path  : /mnt/DYLAN1/Concerts/2001/2001-03-04 Tokyo, Japan (LB-11345)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2008-11-16 Kanata (LB-07032)
+  Path  : /mnt/DYLAN1/Concerts/2008/2008-11-16 Kanata (LB-07032)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] 1985-06-17 Chicago, Rockline Phone-In (LB-04650)
+  Path  : /mnt/DYLAN1/Concerts/1985/1985-06-17 Chicago, Rockline Phone-In (LB-04650)
+  ERROR [rename]: Current: '1985-06-17 Chicago, Rockline Phone-In (LB-04650)' → Proposed: '1985-06-17 Chicago?, "Rockline Phone-In" (LB-04650)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 2010-06-23 Marseille, France, Le Dome de Marseille (LB-08734)
+  Path  : /mnt/DYLAN1/Concerts/2010/2010-06-23 Marseille, France, Le Dome de Marseille (LB-08734)
+
+[V:✓ L:✓ R:✓ D:~] 2016-04-04 Tokyo (LB-12444)
+  Path  : /mnt/DYLAN1/Concerts/2016/2016-04-04 Tokyo (LB-12444)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:✓ R:✓ D:~] 1999-07-22 Mansfield, Massachusetts, Tweeter Center For The Performing Arts (LB-00085)
+  Path  : /mnt/DYLAN1/Concerts/1999/1999-07-22 Mansfield, Massachusetts, Tweeter Center For The Performing Arts (LB-00085)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1974-02-09 Seattle Coliseum (LB-02533)
+  Path  : /mnt/DYLAN2/Concerts/1974/1974-02-09 Seattle Coliseum (LB-02533)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 1987-10-10 Birmingham, England (LB-00593)
+  Path  : /mnt/DYLAN1/Concerts/1987/1987-10-10 Birmingham, England (LB-00593)
+
+[V:✓ L:✓ R:✓ D:~] 2000-03-15 Santa Cruz, California (LB-06403)
+  Path  : /mnt/DYLAN1/Concerts/2000/2000-03-15 Santa Cruz, California (LB-06403)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 1988-09-04 Lake Compounce Festival,Bristol, CT (LB-06798)
+  Path  : /mnt/DYLAN1/Concerts/1988/1988-09-04 Lake Compounce Festival,Bristol, CT (LB-06798)
+
+[V:✓ L:✓ R:~ D:~] 2005-04-26 New York, Beacon Theatre (LB-02687)
+  Path  : /mnt/DYLAN1/Concerts/2005/2005-04-26 New York, Beacon Theatre (LB-02687)
+  ERROR [rename]: Current: '2005-04-26 New York, Beacon Theatre (LB-02687)' → Proposed: '2005-04-26 New York, NY, Beacon Theatre (LB-02687)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 1999-04-13 Santander, Spain (LB-01868)
+  Path  : /mnt/DYLAN1/Concerts/1999/1999-04-13 Santander, Spain (LB-01868)
+
+[V:✓ L:✓ R:✓ D:~] 1980-11-18 San Francisco (LB-08500)
+  Path  : /mnt/DYLAN2/Concerts/1980/1980-11-18 San Francisco (LB-08500)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2003-11-11 Heineken Music Hall, Amsterdam, The Netherlands (LB-01459)
+  Path  : /mnt/DYLAN1/Concerts/2003/2003-11-11 Heineken Music Hall, Amsterdam, The Netherlands (LB-01459)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:~ R:· D:·] 2006-06-24 Kilkenny, Ireland, Kilkenny Source Festival, Nowlan Park (LB-04026)
+  Path  : /mnt/DYLAN1/Concerts/2006/2006-06-24 Kilkenny, Ireland, Kilkenny Source Festival, Nowlan Park (LB-04026)
+
+[V:✓ L:✓ R:✓ D:~] 2000-07-01 Del Mar Fairgrounds, Del Mar, California (LB-01695)
+  Path  : /mnt/DYLAN1/Concerts/2000/2000-07-01 Del Mar Fairgrounds, Del Mar, California (LB-01695)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:~ R:· D:·] 1991-06-19 Offenbach (LB-01660)
+  Path  : /mnt/DYLAN1/Concerts/1991/1991-06-19 Offenbach (LB-01660)
+
+[V:✓ L:✓ R:✓ D:✓] 1992-04-27 Paramount Theater, Seattle (LB-00333)
+  Path  : /mnt/DYLAN1/Concerts/1992/1992-04-27 Paramount Theater, Seattle (LB-00333)
+
+[V:~ L:~ R:· D:·] 1996-07-09 Salzburg, Austria, Sporthalle Alpenstrasse (LB-03048)
+  Path  : /mnt/DYLAN1/Concerts/1996/1996-07-09 Salzburg, Austria, Sporthalle Alpenstrasse (LB-03048)
+
+[V:~ L:✓ R:✓ D:~] 1974-02-14 Inglewood (Los Angeles), CA (LB-12442)
+  Path  : /mnt/DYLAN2/Concerts/1974/1974-02-14 Inglewood (Los Angeles), CA (LB-12442)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] New York 30-9-1978 NO TORRENT-LTE-LB-3872
+  Path  : /mnt/DYLAN2/PRIVATE LB/1978 NOTORRENT/New York 30-9-1978 NO TORRENT-LTE-LB-3872
+  ERROR [rename]: Current: 'New York 30-9-1978 NO TORRENT-LTE-LB-3872' → Proposed: 'LB-03872-NFT'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2004-03-15 State Theater, Detroit, Michigan (LB-01750)
+  Path  : /mnt/DYLAN1/Concerts/2004/2004-03-15 State Theater, Detroit, Michigan (LB-01750)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1974-01-21 Atlanta, Georgia, The Omni (LB-03638)
+  Path  : /mnt/DYLAN2/Concerts/1974/1974-01-21 Atlanta, Georgia, The Omni (LB-03638)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 1965-11-26 Chicago (LB-00411)
+  Path  : /mnt/DYLAN2/Concerts/1965/1965-11-26 Chicago (LB-00411)
+
+[V:✓ L:✓ R:~ D:✓] Salt Lake City 13-6-1988-LTD-LB-8644 No Torrent
+  Path  : /mnt/DYLAN2/PRIVATE LB/1988 NOTORRENT/Salt Lake City 13-6-1988-LTD-LB-8644 No Torrent
+  ERROR [rename]: Current: 'Salt Lake City 13-6-1988-LTD-LB-8644 No Torrent' → Proposed: '1988-06-13 Salt Lake City, Utah (LB-08644)'
+
+[V:✓ L:✓ R:✓ D:~] 2013-10-19 Hamburg, Germany (LB-11098)
+  Path  : /mnt/DYLAN1/Concerts/2013/2013-10-19 Hamburg, Germany (LB-11098)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 2001-11-11 University Park, Pennsylvania (LB-07717)
+  Path  : /mnt/DYLAN1/Concerts/2001/2001-11-11 University Park, Pennsylvania (LB-07717)
+
+[V:✓ L:✓ R:✓ D:✓] 1996-05-16 Clarkston, Michigan (LB-07544)
+  Path  : /mnt/DYLAN1/Concerts/1996/1996-05-16 Clarkston, Michigan (LB-07544)
+
+[V:✓ L:✓ R:✓ D:~] 2007-06-24 Hershey, Pennsylvania, The Star Pavilion, Hersheypark (LB-05170)
+  Path  : /mnt/DYLAN1/Concerts/2007/2007-06-24 Hershey, Pennsylvania, The Star Pavilion, Hersheypark (LB-05170)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:✓] Lincoln 3-8-1997 NTG-LB-8889 NO TORRENT
+  Path  : /mnt/DYLAN2/PRIVATE LB/1997-2 NOTORRENT/Lincoln 3-8-1997 NTG-LB-8889 NO TORRENT
+  ERROR [rename]: Current: 'Lincoln 3-8-1997 NTG-LB-8889 NO TORRENT' → Proposed: 'LB-08889-NFT'
+
+[V:✓ L:✓ R:✓ D:~] 1998-07-09 Torino, Italy (LB-10641)
+  Path  : /mnt/DYLAN1/Concerts/1998/1998-07-09 Torino, Italy (LB-10641)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 2008-06-27 Vigo, Spain Recinto Ferial (Fairground) (LB-06325)
+  Path  : /mnt/DYLAN1/Concerts/2008/2008-06-27 Vigo, Spain Recinto Ferial (Fairground) (LB-06325)
+
+[V:✓ L:✓ R:✓ D:✓] 1997-12-14 Chicago, Illinois, Metro (LB-03557)
+  Path  : /mnt/DYLAN1/Concerts/1997/1997-12-14 Chicago, Illinois, Metro (LB-03557)
+
+[V:✓ L:✓ R:✓ D:✓] 2003-07-29 Sunrise, Fort Lauderdale, Florida (LB-11347)
+  Path  : /mnt/DYLAN1/Concerts/2003/2003-07-29 Sunrise, Fort Lauderdale, Florida (LB-11347)
+
+[V:✓ L:✓ R:✓ D:~] 2017-04-18 Amsterdam, Netherland (LB-12606)
+  Path  : /mnt/DYLAN1/Concerts/2017/2017-04-18 Amsterdam, Netherland (LB-12606)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:✓ R:~ D:~] Bob Dylan 1988-10-xx New York Radio Radio-LB-15964
+  Path  : /mnt/DYLAN1/LB HOPPER/Bob Dylan 1988-10-xx New York Radio Radio-LB-15964
+  ERROR [rename]: Current: 'Bob Dylan 1988-10-xx New York Radio Radio-LB-15964' → Proposed: '1988-10-17 Radio City Music Hall, New York (LB-15964)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2005-06-24 Montclair, New Jersey, Yogi Berra Stadium, Montclair State University (LB-03519)
+  Path  : /mnt/DYLAN1/Concerts/2005/2005-06-24 Montclair, New Jersey, Yogi Berra Stadium, Montclair State University (LB-03519)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:~ R:· D:·] 2002-08-15 Hamburg, New York (LB-12084)
+  Path  : /mnt/DYLAN1/Concerts/2002/2002-08-15 Hamburg, New York (LB-12084)
+
+[V:✓ L:✓ R:~ D:~] Paris 29-1-1990-CB LB-13356 No torrent
+  Path  : /mnt/DYLAN2/PRIVATE LB/1990 NOTORRENT/Paris 29-1-1990-CB LB-13356 No torrent
+  ERROR [rename]: Current: 'Paris 29-1-1990-CB LB-13356 No torrent' → Proposed: '1990-01-29 Paris, France (LB-13356)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1997-12-20 Los Angeles, Ca, USA (LB-07211)
+  Path  : /mnt/DYLAN1/Concerts/1997/1997-12-20 Los Angeles, Ca, USA (LB-07211)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:~ R:· D:·] 1999-09-08 Antioch, Tennessee (LB-07077)
+  Path  : /mnt/DYLAN1/Concerts/1999/1999-09-08 Antioch, Tennessee (LB-07077)
+
+[V:✓ L:✓ R:✓ D:~] 2010-03-18 Nagoya, Japan (LB-08491)
+  Path  : /mnt/DYLAN1/Concerts/2010/2010-03-18 Nagoya, Japan (LB-08491)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1980-05-04 Syracuse Area Landmark Theater, Syracuse, NY (LB-00358)
+  Path  : /mnt/DYLAN2/Concerts/1980/1980-05-04 Syracuse Area Landmark Theater, Syracuse, NY (LB-00358)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1999-07-03 Duluth, Minnesota (LB-09640)
+  Path  : /mnt/DYLAN1/Concerts/1999/1999-07-03 Duluth, Minnesota (LB-09640)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1984-06-28 Barcelona, Spain (LB-09809)
+  Path  : /mnt/DYLAN1/Concerts/1984/1984-06-28 Barcelona, Spain (LB-09809)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:~ R:· D:·] 1989-07-25 Canandaigua (LB-00851)
+  Path  : /mnt/DYLAN1/Concerts/1989/1989-07-25 Canandaigua (LB-00851)
+
+[V:✓ L:✓ R:~ D:~] Hartford 21-7-2000 LB-14597 No Torrent
+  Path  : /mnt/DYLAN2/PRIVATE LB/2000 NOTORRENT/Hartford 21-7-2000 LB-14597 No Torrent
+  ERROR [rename]: Current: 'Hartford 21-7-2000 LB-14597 No Torrent' → Proposed: '2000-07-21 Hartford, Connecticut (LB-14597)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 1998-07-04 Verona, Italy (LB-06950)
+  Path  : /mnt/DYLAN1/Concerts/1998/1998-07-04 Verona, Italy (LB-06950)
+
+[V:✓ L:✓ R:~ D:~] Bob Dylan_2021_1119_NYC_JF-LB-15390
+  Path  : /mnt/DYLAN1/Concerts/2021/2021-11-19 New York, NY/Bob Dylan_2021_1119_NYC_JF-LB-15390
+  ERROR [rename]: Current: 'Bob Dylan_2021_1119_NYC_JF-LB-15390' → Proposed: '2021-11-19 Beacon Theatre, NYC (LB-15390)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:✓] Reno 27-9-1998-local-taper-Ca-C-LB-8715 NO TORRENT
+  Path  : /mnt/DYLAN2/PRIVATE LB/1998 NOTORRENT/Reno 27-9-1998-local-taper-Ca-C-LB-8715 NO TORRENT
+  ERROR [rename]: Current: 'Reno 27-9-1998-local-taper-Ca-C-LB-8715 NO TORRENT' → Proposed: 'LB-08715-NFT'
+
+[V:✓ L:✓ R:✓ D:✓] 2011-10-06 DUBLIN, IRELAND (LB-09644)
+  Path  : /mnt/DYLAN1/Concerts/2011/2011-10-06 DUBLIN, IRELAND (LB-09644)
+
+[V:✓ L:✓ R:✓ D:~] 1996-07-12 Magdeburg, Germany, Stadthalle (LB-03039)
+  Path  : /mnt/DYLAN1/Concerts/1996/1996-07-12 Magdeburg, Germany, Stadthalle (LB-03039)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1996-05-16 Clarkston, MI (LB-15252)
+  Path  : /mnt/DYLAN1/Concerts/1996/1996-05-16 Clarkston, MI (LB-15252)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1992-04-01 Melbourne (LB-01558)
+  Path  : /mnt/DYLAN1/Concerts/1992/1992-04-01 Melbourne (LB-01558)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:~ R:· D:·] 1979-11-11 San Francisco, CA (LB-10995)
+  Path  : /mnt/DYLAN2/Concerts/1979/1979-11-11 San Francisco, CA (LB-10995)
+
+[V:✓ L:✓ R:~ D:~] Costa Mesa 8-9-1989-CD No Torrent LB-13300
+  Path  : /mnt/DYLAN2/PRIVATE LB/1989 NOTORRENT/Costa Mesa 8-9-1989-CD No Torrent LB-13300
+  ERROR [rename]: Current: 'Costa Mesa 8-9-1989-CD No Torrent LB-13300' → Proposed: '1989-09-08 Costa Mesa, California (LB-13300)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:✓ R:✓ D:~] 2009-07-05 Rothbury, MI - Double JJ Ranch, Rothbury Festival - The Odeon Stage (LB-07971)
+  Path  : /mnt/DYLAN1/Concerts/2009/2009-07-05 Rothbury, MI - Double JJ Ranch, Rothbury Festival - The Odeon Stage (LB-07971)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 1987-09-19 Rotterdam, The Netherlands, Sportpaleis Ahoy (LB-06099)
+  Path  : /mnt/DYLAN1/Concerts/1987/1987-09-19 Rotterdam, The Netherlands, Sportpaleis Ahoy (LB-06099)
+
+[V:✓ L:✓ R:✓ D:~] 1981-06-21 Toulouse, France (LB-00328)
+  Path  : /mnt/DYLAN2/Concerts/1981/1981-06-21 Toulouse, France (LB-00328)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:✓] 1983-xx-xx Infidels Outtakes (LB-08619)
+  Path  : /mnt/DYLAN1/Concerts/1983/1983-xx-xx Infidels Outtakes (LB-08619)
+  ERROR [rename]: Current: '1983-xx-xx Infidels Outtakes (LB-08619)' → Proposed: 'xx/xx/83 Infidels Outtakes (LB-08619)'
+
+[V:~ L:✓ R:~ D:~] Bob Dylan - Port Chester NY 2023-11-07 Nightly Moth FLAC-LB-15921
+  Path  : /mnt/DYLAN1/LB HOPPER/Bob Dylan - Port Chester NY 2023-11-07 Nightly Moth FLAC-LB-15921
+  ERROR [rename]: Current: 'Bob Dylan - Port Chester NY 2023-11-07 Nightly Moth FLAC-LB-15921' → Proposed: '2023-11-07 Port Chester, New York (LB-15921)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:✓ R:~ D:~] bd1979-09-26 Santa Monica (Helena Springs)-LB-15267
+  Path  : /mnt/DYLAN1/LB HOPPER/bd1979-09-26 Santa Monica (Helena Springs)-LB-15267
+  ERROR [rename]: Current: 'bd1979-09-26 Santa Monica (Helena Springs)-LB-15267' → Proposed: 'xx/xx/79 Helena Springs, Rundown Studios Music Touring Co, Santa Monica, CA (LB-15267)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:~ R:· D:·] 1997-04-27 Boalsburg, Pennsylvania, Tussey Mountain Amphitheatre (LB-01992)
+  Path  : /mnt/DYLAN1/Concerts/1997/1997-04-27 Boalsburg, Pennsylvania, Tussey Mountain Amphitheatre (LB-01992)
+  ERROR [lookup]: Multiple LBs: [1993, 1992]
+
+[V:~ L:✓ R:✓ D:✓] 2003-10-24 Budapest, Hungary (LB-10124)
+  Path  : /mnt/DYLAN1/Concerts/2003/2003-10-24 Budapest, Hungary (LB-10124)
+
+[V:✓ L:✓ R:✓ D:✓] 1995-12-09 Boston, Massachusetts (LB-06104)
+  Path  : /mnt/DYLAN1/Concerts/1995/1995-12-09 Boston, Massachusetts (LB-06104)
+
+[V:✓ L:✓ R:~ D:~] 2007-xx-xx Jan Wenner interview excerpts (LB-04828)
+  Path  : /mnt/DYLAN1/Concerts/2007/2007-xx-xx Jan Wenner interview excerpts (LB-04828)
+  ERROR [rename]: Current: '2007-xx-xx Jan Wenner interview excerpts (LB-04828)' → Proposed: 'xx/xx/07 Jan Wenner interview excerpts (LB-04828)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2014-04-08 Tokyo, Japan (LB-11441)
+  Path  : /mnt/DYLAN1/Concerts/2014/2014-04-08 Tokyo, Japan (LB-11441)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] 2022-03-16 -Bass Concert Hall, Austin, TX-LB-15450
+  Path  : /mnt/DYLAN1/LB HOPPER/2022-03-16 -Bass Concert Hall, Austin, TX-LB-15450
+  ERROR [rename]: Current: '2022-03-16 -Bass Concert Hall, Austin, TX-LB-15450' → Proposed: '2022-03-16 Austin TX (LB-15450)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:~ R:· D:·] 2008-06-16 Bergamo, Italy, Summer Sound Festival, Lazzaretto (LB-06198)
+  Path  : /mnt/DYLAN1/Concerts/2008/2008-06-16 Bergamo, Italy, Summer Sound Festival, Lazzaretto (LB-06198)
+  ERROR [lookup]: Multiple LBs: [6198, 6195]
+
+[V:✓ L:✓ R:✓ D:~] 2007-06-30 Bethel, New York, Bethel Woods Center For The Arts (LB-05146)
+  Path  : /mnt/DYLAN1/Concerts/2007/2007-06-30 Bethel, New York, Bethel Woods Center For The Arts (LB-05146)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:~ R:· D:·] 1984-06-28 Barcelona (LB-00321)
+  Path  : /mnt/DYLAN1/Concerts/1984/1984-06-28 Barcelona (LB-00321)
+
+[V:✓ L:✓ R:~ D:~] Lund 13-5-2000-NTB No Torrent LB-14481
+  Path  : /mnt/DYLAN2/PRIVATE LB/2000 NOTORRENT/Lund 13-5-2000-NTB No Torrent LB-14481
+  ERROR [rename]: Current: 'Lund 13-5-2000-NTB No Torrent LB-14481' → Proposed: 'LB-14481-NFT'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1975-11-21 Boston Music Hall (LB-11358)
+  Path  : /mnt/DYLAN2/Concerts/1975/1975-11-21 Boston Music Hall (LB-11358)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 1994-02-07 Yokohama (LB-06856)
+  Path  : /mnt/DYLAN1/Concerts/1994/1994-02-07 Yokohama (LB-06856)
+
+[V:✓ L:✓ R:✓ D:~] 1999-06-14 Eugene Oregon (LB-01683)
+  Path  : /mnt/DYLAN1/Concerts/1999/1999-06-14 Eugene Oregon (LB-01683)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2004-04-10 Columbia, South Carolina, Township Auditorium (LB-01747)
+  Path  : /mnt/DYLAN1/Concerts/2004/2004-04-10 Columbia, South Carolina, Township Auditorium (LB-01747)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2007-06-22 atlantic city,nj. (LB-05096)
+  Path  : /mnt/DYLAN1/Concerts/2007/2007-06-22 atlantic city,nj. (LB-05096)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1998-06-03 Berlin, Germany, Waldbhne (LB-03325)
+  Path  : /mnt/DYLAN1/Concerts/1998/1998-06-03 Berlin, Germany, Waldbhne (LB-03325)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] New York City 16-1-1998-arashi No Torrent LB-13927
+  Path  : /mnt/DYLAN2/PRIVATE LB/1998 NOTORRENT/New York City 16-1-1998-arashi No Torrent LB-13927
+  ERROR [rename]: Current: 'New York City 16-1-1998-arashi No Torrent LB-13927' → Proposed: 'LB-13927-NFT'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:~ R:· D:·] 1980-05-09 Portland, ME (LB-12849)
+  Path  : /mnt/DYLAN2/Concerts/1980/1980-05-09 Portland, ME (LB-12849)
+
+[V:✓ L:✓ R:✓ D:~] 2013-11-02 Milan, Italy (LB-11149)
+  Path  : /mnt/DYLAN1/Concerts/2013/2013-11-02 Milan, Italy (LB-11149)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] 1986-06-12 Sacramento (LB-13677)
+  Path  : /mnt/DYLAN1/Concerts/1986/1986-06-12 Sacramento (LB-13677)
+  ERROR [rename]: Current: '1986-06-12 Sacramento (LB-13677)' → Proposed: '1986-06-12 Sacramento, Ca, Cal Expo (LB-13677)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 1966-03-12 Denver Hotel Tape (LB-00264)
+  Path  : /mnt/DYLAN2/Concerts/1966/1966-03-12 Denver Hotel Tape (LB-00264)
+
+[V:✓ L:✓ R:~ D:~] Baden-Baden 23-4-2018-CB No torrent LB-13454
+  Path  : /mnt/DYLAN2/PRIVATE LB/2018 NOTorrent/Baden-Baden 23-4-2018-CB No torrent LB-13454
+  ERROR [rename]: Current: 'Baden-Baden 23-4-2018-CB No torrent LB-13454' → Proposed: 'LB-13454-NFT'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1978-06-19 Earls Court (LB-07503)
+  Path  : /mnt/DYLAN2/Concerts/1978/1978-06-19 Earls Court (LB-07503)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2003-05-08 Portsmouth, Virginia (LB-00995)
+  Path  : /mnt/DYLAN1/Concerts/2003/2003-05-08 Portsmouth, Virginia (LB-00995)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 1992-04-24 Waikiki Shell, Waikiki (LB-06830)
+  Path  : /mnt/DYLAN1/Concerts/1992/1992-04-24 Waikiki Shell, Waikiki (LB-06830)
+
+[V:✓ L:✓ R:✓ D:~] 2012-10-19 Berkeley, CA (LB-10567)
+  Path  : /mnt/DYLAN1/Concerts/2012/2012-10-19 Berkeley, CA (LB-10567)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2009-10-11 Berkeley, California (LB-08070)
+  Path  : /mnt/DYLAN1/Concerts/2009/2009-10-11 Berkeley, California (LB-08070)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1997-02-09 Tokyo, Japan (LB-07700)
+  Path  : /mnt/DYLAN1/Concerts/1997/1997-02-09 Tokyo, Japan (LB-07700)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1981-07-14 Bad Segeberg, Germany, Freilichttheatre (LB-03488)
+  Path  : /mnt/DYLAN2/Concerts/1981/1981-07-14 Bad Segeberg, Germany, Freilichttheatre (LB-03488)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] Omiya 25-2-2001-ST LB-14735 NO Torrent
+  Path  : /mnt/DYLAN2/PRIVATE LB/2001 NOTORRENT/Omiya 25-2-2001-ST LB-14735 NO Torrent
+  ERROR [rename]: Current: 'Omiya 25-2-2001-ST LB-14735 NO Torrent' → Proposed: 'LB-14735-NFT'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:✓ R:✓ D:~] 2011-11-21 London, England, HMV Hammersmith Apollo (LB-09766)
+  Path  : /mnt/DYLAN1/Concerts/2011/2011-11-21 London, England, HMV Hammersmith Apollo (LB-09766)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:✓] Spartanburg 4-11-1996-gb-a-LB-10174 NO TORRENT
+  Path  : /mnt/DYLAN2/PRIVATE LB/1996-2 NOTORRENT/Spartanburg 4-11-1996-gb-a-LB-10174 NO TORRENT
+  ERROR [rename]: Current: 'Spartanburg 4-11-1996-gb-a-LB-10174 NO TORRENT' → Proposed: 'LB-10174-NFT'
+
+[V:✓ L:✓ R:✓ D:~] 2003-08-03 Somerset, Wisconsin, Float Rite Amphitheater (LB-01223)
+  Path  : /mnt/DYLAN1/Concerts/2003/2003-08-03 Somerset, Wisconsin, Float Rite Amphitheater (LB-01223)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1999-06-09 Salt Lake City (LB-00093)
+  Path  : /mnt/DYLAN1/Concerts/1999/1999-06-09 Salt Lake City (LB-00093)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1999-10-31 Chicago, Illinois, Conference Center Pavilion, University Of Illinois (LB-04742)
+  Path  : /mnt/DYLAN1/Concerts/1999/1999-10-31 Chicago, Illinois, Conference Center Pavilion, University Of Illinois (LB-04742)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:~ R:· D:·] 1992-04-05 Palais Theatre, Melbourne (LB-00406)
+  Path  : /mnt/DYLAN1/Concerts/1992/1992-04-05 Palais Theatre, Melbourne (LB-00406)
+
+[V:✓ L:✓ R:✓ D:✓] 2008-06-19 Grenoble, France, Palais des Sports (LB-06209)
+  Path  : /mnt/DYLAN1/Concerts/2008/2008-06-19 Grenoble, France, Palais des Sports (LB-06209)
+
+[V:✓ L:✓ R:~ D:✓] 1974-05-09 Friends of Chile benefit concert, Felt Forum at Madison Square Garden (LB-05094)
+  Path  : /mnt/DYLAN2/Concerts/1974/1974-05-09 Friends of Chile benefit concert, Felt Forum at Madison Square Garden (LB-05094)
+  ERROR [rename]: Current: '1974-05-09 Friends of Chile benefit concert, Felt Forum at Madison Square Garden (LB-05094)' → Proposed: '1974-05-09 "Friends of Chile" benefit concert, Felt Forum at Madison Square Garden (LB-05094)'
+
+[V:✓ L:✓ R:~ D:~] 2017-06-21-providence-ri-flac_2022-05-28_1617-LB-15496
+  Path  : /mnt/DYLAN1/LB HOPPER/2017-06-21-providence-ri-flac_2022-05-28_1617-LB-15496
+  ERROR [rename]: Current: '2017-06-21-providence-ri-flac_2022-05-28_1617-LB-15496' → Proposed: '2017-06-21 Providence, Rhode Island (LB-15496)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:~ R:· D:·] 1998-04-15 Santiago de Chile, Teatro Monumental (LB-11996)
+  Path  : /mnt/DYLAN1/Concerts/1998/1998-04-15 Santiago de Chile, Teatro Monumental (LB-11996)
+
+[V:✓ L:✓ R:✓ D:✓] 1988-08-04 Greek Theatre, Los Angeles, California (LB-01269)
+  Path  : /mnt/DYLAN1/Concerts/1988/1988-08-04 Greek Theatre, Los Angeles, California (LB-01269)
+
+[V:~ L:~ R:· D:·] 1980-11-24 Tuscon, AZ (LB-03667)
+  Path  : /mnt/DYLAN2/Concerts/1980/1980-11-24 Tuscon, AZ (LB-03667)
+
+[V:~ L:~ R:· D:·] 1989-11-04 Indiana, PA (LB-12515)
+  Path  : /mnt/DYLAN1/Concerts/1989/1989-11-04 Indiana, PA (LB-12515)
+
+[V:✓ L:✓ R:~ D:✓] Melbourne 6-4-1992-c-LB-8145-no torrent
+  Path  : /mnt/DYLAN2/PRIVATE LB/1992 NOTORRENT/Melbourne 6-4-1992-c-LB-8145-no torrent
+  ERROR [rename]: Current: 'Melbourne 6-4-1992-c-LB-8145-no torrent' → Proposed: 'LB-08145-NFT'
+
+[V:✓ L:✓ R:✓ D:~] 1969-08-31 Isle of Wight, England (LB-03224)
+  Path  : /mnt/DYLAN2/Concerts/1969/1969-08-31 Isle of Wight, England (LB-03224)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1995-04-09 SECC Hall 3, Glasgow, Scotland (LB-01945)
+  Path  : /mnt/DYLAN1/Concerts/1995/1995-04-09 SECC Hall 3, Glasgow, Scotland (LB-01945)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1994-04-23 Milwaukee, WI (LB-09482)
+  Path  : /mnt/DYLAN1/Concerts/1994/1994-04-23 Milwaukee, WI (LB-09482)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1994-11-09 Nashville, Tennessee, Ryman Auditorium (LB-06217)
+  Path  : /mnt/DYLAN1/Concerts/1994/1994-11-09 Nashville, Tennessee, Ryman Auditorium (LB-06217)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1998-01-16 New York City, NY, USA Madison Square Garden, The Theater (LB-06518)
+  Path  : /mnt/DYLAN1/Concerts/1998/1998-01-16 New York City, NY, USA Madison Square Garden, The Theater (LB-06518)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:~ R:· D:·] 2014-04-03 Tokyo Zepp Divercity-LB-11862
+  Path  : /mnt/DYLAN1/Concerts/2014/2014 The Tokyo Box-v-NoLB/2014-04-03 Tokyo Zepp Divercity-LB-11862
+  ERROR [lookup]: Multiple LBs: [11381, 11862]
+
+[V:✓ L:✓ R:✓ D:✓] 1975-11-26 Augusta, Maine (LB-07698)
+  Path  : /mnt/DYLAN2/Concerts/1975/1975-11-26 Augusta, Maine (LB-07698)
+
+[V:✓ L:✓ R:✓ D:~] 1993-02-05 The Point Depot, Dublin, Ireland (LB-02343)
+  Path  : /mnt/DYLAN1/Concerts/1993/1993-02-05 The Point Depot, Dublin, Ireland (LB-02343)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2012-10-12 Vancouver, BC (LB-12491)
+  Path  : /mnt/DYLAN1/Concerts/2012/2012-10-12 Vancouver, BC (LB-12491)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2007-07-10 Interlochen,Mi. (LB-05749)
+  Path  : /mnt/DYLAN1/Concerts/2007/2007-07-10 Interlochen,Mi. (LB-05749)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1980-11-22 San Francisco (LB-06573)
+  Path  : /mnt/DYLAN2/Concerts/1980/1980-11-22 San Francisco (LB-06573)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:✓ R:✓ D:~] 1993-02-08 London (LB-14704)
+  Path  : /mnt/DYLAN1/Concerts/1993/1993-02-08 London (LB-14704)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:~ R:· D:·] 2004-09-03 Southwestern Bell Bricktown Ballpark, Oklahoma City, Okla (LB-02044)
+  Path  : /mnt/DYLAN1/Concerts/2004/2004-09-03 Southwestern Bell Bricktown Ballpark, Oklahoma City, Okla (LB-02044)
+
+[V:~ L:✓ R:✓ D:~] 1981-07-09 Drammen, Norway (LB-04246)
+  Path  : /mnt/DYLAN2/Concerts/1981/1981-07-09 Drammen, Norway (LB-04246)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:~ R:· D:·] 2002-04-19 Ravenna, Italy (LB-02045)
+  Path  : /mnt/DYLAN1/Concerts/2002/2002-04-19 Ravenna, Italy (LB-02045)
+
+[V:~ L:~ R:· D:·] 1999-11-09 The Apollo of Temple, Temple University, Philadelphia, Pa (LB-02064)
+  Path  : /mnt/DYLAN1/Concerts/1999/1999-11-09 The Apollo of Temple, Temple University, Philadelphia, Pa (LB-02064)
+
+[V:~ L:~ R:· D:·] 1990-02-01 Paris (LB-01335)
+  Path  : /mnt/DYLAN1/Concerts/1990/1990-02-01 Paris (LB-01335)
+
+[V:✓ L:✓ R:~ D:✓] Ann Arbor 21-11-1996-NTG-LB-10223 NO TORRENT
+  Path  : /mnt/DYLAN2/PRIVATE LB/1996-1 NOTORRENT/Ann Arbor 21-11-1996-NTG-LB-10223 NO TORRENT
+  ERROR [rename]: Current: 'Ann Arbor 21-11-1996-NTG-LB-10223 NO TORRENT' → Proposed: '1996-11-21 Ann Arbor, Michigan (LB-10223)'
+
+[V:~ L:✓ R:✓ D:~] 2019-03-31 Duesseldorf, Germany (LB-14082)
+  Path  : /mnt/DYLAN1/Concerts/2019/2019-03-31 Duesseldorf, Germany (LB-14082)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1976-05-03 New Orleans, The Warehouse (LB-05577)
+  Path  : /mnt/DYLAN2/Concerts/1976/1976-05-03 New Orleans, The Warehouse (LB-05577)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1990-08-29 Falcon Heights, Minnesota (LB-10628)
+  Path  : /mnt/DYLAN1/Concerts/1990/1990-08-29 Falcon Heights, Minnesota (LB-10628)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2004-10-26 Manhattan, Kansas (LB-06507)
+  Path  : /mnt/DYLAN1/Concerts/2004/2004-10-26 Manhattan, Kansas (LB-06507)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] BOB DYLAN 2023-11-19 Philadelphia, PA (spot)-LB-15905
+  Path  : /mnt/DYLAN1/LB HOPPER/BOB DYLAN 2023-11-19 Philadelphia, PA (spot)-LB-15905
+  ERROR [rename]: Current: 'BOB DYLAN 2023-11-19 Philadelphia, PA (spot)-LB-15905' → Proposed: '2023-11-19 Philadelphia, Pennsylvania (LB-15905)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:✓ R:✓ D:~] 2000-11-18 Atlantic City, New Jersey, Tropicana Hotel & Casino - Showroom (LB-03550)
+  Path  : /mnt/DYLAN1/Concerts/2000/2000-11-18 Atlantic City, New Jersey, Tropicana Hotel & Casino - Showroom (LB-03550)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] 1998-xx-xx various (LB-11478)
+  Path  : /mnt/DYLAN1/Concerts/1998/1998-xx-xx various (LB-11478)
+  ERROR [rename]: Current: '1998-xx-xx various (LB-11478)' → Proposed: 'xx/xx/98 various (LB-11478)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:~ R:· D:·] 1991-07-21 Doswell, Virginia, Kings Dominion Amusement Park (LB-01753)
+  Path  : /mnt/DYLAN1/Concerts/1991/1991-07-21 Doswell, Virginia, Kings Dominion Amusement Park (LB-01753)
+
+[V:~ L:~ R:· D:·] 1961-xx-xx Various early radio & TV recordings; 1961-64 (LB-00415)
+  Path  : /mnt/DYLAN2/Concerts/1961/1961-xx-xx Various early radio & TV recordings; 1961-64 (LB-00415)
+
+[V:✓ L:✓ R:~ D:~] 2012-07-03 - Germany, Town- Dresden, Venue- Freilichtbhne Junge Garde (LB-10250)
+  Path  : /mnt/DYLAN1/Concerts/2012/2012-07-03 - Germany, Town- Dresden, Venue- Freilichtbhne Junge Garde (LB-10250)
+  ERROR [rename]: Current: '2012-07-03 - Germany, Town- Dresden, Venue- Freilichtbhne Junge Garde (LB-10250)' → Proposed: '2012-07-03 : Germany, Town: Dresden, Venue: Freilichtbhne Junge Garde (LB-10250)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] Gotha 24-7-1994-NTF No Torrent LB 10926
+  Path  : /mnt/DYLAN2/PRIVATE LB/1994 NOTORRENT/Gotha 24-7-1994-NTF No Torrent LB 10926
+  ERROR [rename]: Current: 'Gotha 24-7-1994-NTF No Torrent LB 10926' → Proposed: '1994-07-24 Gotha, Germany (LB-10926)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1979-11-04 Fox Warfield Theatre, San Francisco, California (LB-07815)
+  Path  : /mnt/DYLAN2/Concerts/1979/1979-11-04 Fox Warfield Theatre, San Francisco, California (LB-07815)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1989-10-11 NEW YORK CITY, NY (LB-12879)
+  Path  : /mnt/DYLAN1/Concerts/1989/1989-10-11 NEW YORK CITY, NY (LB-12879)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] Orlando-31-1-2002-LH-CD No Torrent-LB-11695
+  Path  : /mnt/DYLAN2/PRIVATE LB/2002 NOTORRENT/Orlando-31-1-2002-LH-CD No Torrent-LB-11695
+  ERROR [rename]: Current: 'Orlando-31-1-2002-LH-CD No Torrent-LB-11695' → Proposed: '2002-01-31 Orlando, Florida (LB-11695)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:✓] London 27-6-1981-NTB-LB-8268 No Torrent
+  Path  : /mnt/DYLAN2/PRIVATE LB/1981 NOTORRENT/London 27-6-1981-NTB-LB-8268 No Torrent
+  ERROR [rename]: Current: 'London 27-6-1981-NTB-LB-8268 No Torrent' → Proposed: '1981-06-27 London, England (LB-08268)'
+
+[V:✓ L:✓ R:✓ D:~] 1998-06-06 Malmo, Sweden, Brofastivalen (LB-04847)
+  Path  : /mnt/DYLAN1/Concerts/1998/1998-06-06 Malmo, Sweden, Brofastivalen (LB-04847)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 1996-07-24 Copenhagen, Denmark (LB-05956)
+  Path  : /mnt/DYLAN1/Concerts/1996/1996-07-24 Copenhagen, Denmark (LB-05956)
+
+[V:✓ L:✓ R:~ D:~] Bob Dylan_2023_1116_NYC_JF - WTRF-LB-15904
+  Path  : /mnt/DYLAN1/LB HOPPER/Bob Dylan_2023_1116_NYC_JF - WTRF-LB-15904
+  ERROR [rename]: Current: 'Bob Dylan_2023_1116_NYC_JF - WTRF-LB-15904' → Proposed: '2023-11-16 Brooklyn, NY (LB-15904)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 2001-04-27 Knoxville, TN (LB-07597)
+  Path  : /mnt/DYLAN1/Concerts/2001/2001-04-27 Knoxville, TN (LB-07597)
+
+[V:✓ L:✓ R:✓ D:~] 1992-08-17 Massey Hall, Toronto, Ontario, Canada (LB-02372)
+  Path  : /mnt/DYLAN1/Concerts/1992/1992-08-17 Massey Hall, Toronto, Ontario, Canada (LB-02372)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] Allentown 12-7-1989 No Torrent LB-13236
+  Path  : /mnt/DYLAN2/PRIVATE LB/1989 NOTORRENT/Allentown 12-7-1989 No Torrent LB-13236
+  ERROR [rename]: Current: 'Allentown 12-7-1989 No Torrent LB-13236' → Proposed: '1989-07-12 Allentown, Pennsylvania (LB-13236)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 1995-07-14 Stratford-upon-Avon, England, Phoenix Festival (LB-06242)
+  Path  : /mnt/DYLAN1/Concerts/1995/1995-07-14 Stratford-upon-Avon, England, Phoenix Festival (LB-06242)
+
+[V:~ L:✓ R:✓ D:~] 1996-04-19 Portland, Maine, State Theater (LB-04489)
+  Path  : /mnt/DYLAN1/Concerts/1996/1996-04-19 Portland, Maine, State Theater (LB-04489)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:✓] 1962-xx-xx Witmark Demos (LB-08043)
+  Path  : /mnt/DYLAN2/Concerts/1962/1962-xx-xx Witmark Demos (LB-08043)
+  ERROR [rename]: Current: '1962-xx-xx Witmark Demos (LB-08043)' → Proposed: 'xx/xx/62 Witmark Demos (LB-08043)'
+
+[V:✓ L:✓ R:✓ D:~] 2010-06-24 Barcelona, Spain (LB-08735)
+  Path  : /mnt/DYLAN1/Concerts/2010/2010-06-24 Barcelona, Spain (LB-08735)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1999-02-01 Tallahassee, FL (LB-14341)
+  Path  : /mnt/DYLAN1/Concerts/1999/1999-02-01 Tallahassee, FL (LB-14341)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:✓] 2001-11-19 NYC, NY, USA (LB-07934)
+  Path  : /mnt/DYLAN1/Concerts/2001/2001-11-19 NYC, NY, USA (LB-07934)
+
+[V:✓ L:✓ R:✓ D:~] 2002-10-04 Seattle WA (LB-11931)
+  Path  : /mnt/DYLAN1/Concerts/2002/2002-10-04 Seattle WA (LB-11931)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:✓ R:~ D:~] Bob Dylan - Billy The Kid Sessions_AcidProject 086-LB-15821
+  Path  : /mnt/DYLAN1/LB HOPPER/Bob Dylan - Billy The Kid Sessions_AcidProject 086-LB-15821
+  ERROR [rename]: Current: 'Bob Dylan - Billy The Kid Sessions_AcidProject 086-LB-15821' → Proposed: '1973-01-20 Billy The Kid Sessions_Acid Project 086 (LB-15821)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] 1966-xx-xx Gelston Acetates (LB-12068)
+  Path  : /mnt/DYLAN2/Concerts/1966/1966-xx-xx Gelston Acetates (LB-12068)
+  ERROR [rename]: Current: '1966-xx-xx Gelston Acetates (LB-12068)' → Proposed: 'xx/xx/66 Gelston Acetates (LB-12068)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] Cleveland 2-11-1989-LTC-CD No Torrent LB-13328
+  Path  : /mnt/DYLAN2/PRIVATE LB/1989 NOTORRENT/Cleveland 2-11-1989-LTC-CD No Torrent LB-13328
+  ERROR [rename]: Current: 'Cleveland 2-11-1989-LTC-CD No Torrent LB-13328' → Proposed: '1989-11-02 Cleveland, Ohio (LB-13328)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 2008-11-11 London ON (LB-06966)
+  Path  : /mnt/DYLAN1/Concerts/2008/2008-11-11 London ON (LB-06966)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:~ R:· D:·] bd2016-11-04 Durham (jnspeer)-LB-15443
+  Path  : /mnt/DYLAN1/LB HOPPER/bd2016-11-04 Durham (jnspeer)-LB-15443
+
+[V:✓ L:✓ R:✓ D:~] 1989-11-06 Blacksburg, Virginia (LB-08172)
+  Path  : /mnt/DYLAN1/Concerts/1989/1989-11-06 Blacksburg, Virginia (LB-08172)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1981-10-23 Philadelphia, PA (LB-13852)
+  Path  : /mnt/DYLAN2/Concerts/1981/1981-10-23 Philadelphia, PA (LB-13852)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] Wilkes-Barre 1-11-1992-BW-CD No Torrent LB 11274
+  Path  : /mnt/DYLAN2/PRIVATE LB/Missing NT/Wilkes-Barre 1-11-1992-BW-CD No Torrent LB 11274
+  ERROR [rename]: Current: 'Wilkes-Barre 1-11-1992-BW-CD No Torrent LB 11274' → Proposed: '1992-11-01 Wilkes-Barre, Pennsylvania (LB-11274)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:~ R:· D:·] 1976-05-08 Houston, Texas, Hofheinz Pavilion (LB-04946)
+  Path  : /mnt/DYLAN2/Concerts/1976/1976-05-08 Houston, Texas, Hofheinz Pavilion (LB-04946)
+  ERROR [lookup]: Multiple LBs: [4332, 4946]
+
+[V:✓ L:✓ R:✓ D:✓] 1980-11-13 San Francisco (LB-06567)
+  Path  : /mnt/DYLAN2/Concerts/1980/1980-11-13 San Francisco (LB-06567)
+
+[V:✓ L:✓ R:✓ D:~] 2006-04-21 des moines,ia (LB-03873)
+  Path  : /mnt/DYLAN1/Concerts/2006/2006-04-21 des moines,ia (LB-03873)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:~ R:· D:·] 1999-04-25 Zurich, Switzerland, Hallenstadion (LB-02620)
+  Path  : /mnt/DYLAN1/Concerts/1999/1999-04-25 Zurich, Switzerland, Hallenstadion (LB-02620)
+
+[V:~ L:✓ R:✓ D:~] 2009-10-29 Chicago, Illinois (LB-08118)
+  Path  : /mnt/DYLAN1/Concerts/2009/2009-10-29 Chicago, Illinois (LB-08118)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:✓ D:~] 1992-08-21 Hamilton, Ontario (LB-09894)
+  Path  : /mnt/DYLAN1/Concerts/1992/1992-08-21 Hamilton, Ontario (LB-09894)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:~ R:· D:·] 1976-05-08 Houston, Texas, Hofheinz Pavilion (LB-04332)
+  Path  : /mnt/DYLAN2/Concerts/1976/1976-05-08 Houston, Texas, Hofheinz Pavilion (LB-04332)
+
+[V:✓ L:✓ R:~ D:✓] 1965-xx-xx The Blonde On Blonde Studio Sessions (LB-09104)
+  Path  : /mnt/DYLAN2/Concerts/1965/1965-xx-xx The Blonde On Blonde Studio Sessions (LB-09104)
+  ERROR [rename]: Current: '1965-xx-xx The Blonde On Blonde Studio Sessions (LB-09104)' → Proposed: 'xx/xx/65 The Blonde On Blonde Studio Sessions (LB-09104)'
+
+[V:✓ L:✓ R:✓ D:✓] 1991-04-20 Pelham, Al, USA (LB-07110)
+  Path  : /mnt/DYLAN1/Concerts/1991/1991-04-20 Pelham, Al, USA (LB-07110)
+
+[V:✓ L:✓ R:~ D:~] New York City 8-12-1975 HG No Torrent LB 11527
+  Path  : /mnt/DYLAN2/PRIVATE LB/1975 NOTORRENT/New York City 8-12-1975 HG No Torrent LB 11527
+  ERROR [rename]: Current: 'New York City 8-12-1975 HG No Torrent LB 11527' → Proposed: '1975-12-08 New York City, New York (LB-11527)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:✓ L:✓ R:~ D:~] Berlin 24-10-2013-LTD No Torrent LB 11257-LB-11257
+  Path  : /mnt/DYLAN2/PRIVATE LB/2013 NOTORRENT/Berlin 24-10-2013-LTD No Torrent LB 11257-LB-11257
+  ERROR [rename]: Current: 'Berlin 24-10-2013-LTD No Torrent LB 11257-LB-11257' → Proposed: '2013-10-24 Berlin, Germany, Tempodrom (LB-11257)'
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:~ R:· D:·] 2014-07-09 Aarhus, Denmark (LB-11585)
+  Path  : /mnt/DYLAN1/Concerts/2014/2014-07-09 Aarhus, Denmark (LB-11585)
+
+[V:✓ L:✓ R:✓ D:✓] 2003-11-02 Milan, Italy, Filaforum (LB-01399)
+  Path  : /mnt/DYLAN1/Concerts/2003/2003-11-02 Milan, Italy, Filaforum (LB-01399)
+
+[V:✓ L:✓ R:✓ D:✓] 2011-11-04 Stockholm, Sweden, Ericsson Globe (LB-09719)
+  Path  : /mnt/DYLAN1/Concerts/2011/2011-11-04 Stockholm, Sweden, Ericsson Globe (LB-09719)
+
+[V:✓ L:✓ R:✓ D:~] 1978-02-24 Osaka, Japan, (LB-12066)
+  Path  : /mnt/DYLAN2/Concerts/1978/1978-02-24 Osaka, Japan, (LB-12066)
+  ERROR [lbdir]: No lbdir*.txt found in folder
+
+[V:~ L:~ R:· D:·] 1990-08-28 Merrillville, Indiana (LB-13553)
+  Path  : /mnt/DYLAN1/Concerts/1990/1990-08-28 Merrillville, Indiana (LB-13553)
