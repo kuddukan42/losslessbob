@@ -56,6 +56,8 @@ const PATHS: Record<string, string> = {
   copy:        "M9 9h10v10H9V9z M15 5H5v10",
   link:        "M10 14a4 4 0 0 0 5.66 0l3-3a4 4 0 0 0-5.66-5.66l-1 1 M14 10a4 4 0 0 0-5.66 0l-3 3a4 4 1 0 5.66 5.66l1-1",
   globe:       "M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z M3 12h18 M12 3a13 13 0 0 1 0 18 M12 3a13 13 0 0 0 0 18",
+  trading:     "M16 3l4 4-4 4 M20 7H4 M8 21l-4-4 4-4 M4 17h16",
+  share:       "M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8 M16 6l-4-4-4 4 M12 2v13",
 }
 
 export type IconName = keyof typeof PATHS

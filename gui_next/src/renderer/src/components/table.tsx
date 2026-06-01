@@ -5,6 +5,7 @@
 import React from 'react'
 import { Icon } from './Icon'
 import type { StatusTone } from './primitives'
+import { useSettingsStore } from '../store'
 
 // ── TableShell ───────────────────────────────────────────────────────────────
 
@@ -51,7 +52,7 @@ export function TH({ children, align = 'left', width, style, onClick, sorted }: 
       style={{
         textAlign: align,
         padding: '8px var(--lbb-d-pad)',
-        fontWeight: 600, fontSize: 10.5,
+        fontWeight: 600, fontSize: 'var(--lbb-fs-10-5)',
         letterSpacing: '0.04em', textTransform: 'uppercase',
         color: sorted ? 'var(--lbb-fg2)' : 'var(--lbb-fg3)',
         background: 'var(--lbb-surface2)',
@@ -85,8 +86,9 @@ export interface TRProps {
 }
 
 export function TR({ edge, selected, onClick, onDoubleClick, onContextMenu, style, children }: TRProps) {
-  const wash = edge ? `var(--lbb-${edge}-bg)` : 'transparent'
-  const bar  = edge ? `var(--lbb-${edge}-bar)` : 'transparent'
+  const rowHighlight = useSettingsStore((s) => s.rowHighlight)
+  const wash = (edge && rowHighlight) ? `var(--lbb-${edge}-bg)` : 'transparent'
+  const bar  = (edge && rowHighlight) ? `var(--lbb-${edge}-bar)` : 'transparent'
   return (
     <tr
       onClick={onClick}
@@ -168,7 +170,7 @@ export function GroupRow({ label, count, expanded = true, onToggle, colSpan = 99
         style={{
           padding: '5px var(--lbb-d-pad)',
           background: 'var(--lbb-surface2)',
-          fontSize: 11, fontWeight: 600, letterSpacing: '0.04em',
+          fontSize: 'var(--lbb-fs-11)', fontWeight: 600, letterSpacing: '0.04em',
           textTransform: 'uppercase',
           color: 'var(--lbb-fg2)',
           cursor: onToggle ? 'pointer' : 'default',
@@ -180,7 +182,7 @@ export function GroupRow({ label, count, expanded = true, onToggle, colSpan = 99
         <Icon name={expanded ? 'chevDown' : 'chevRight'} size={11} style={{ marginRight: 4 }} />
         {label}
         {count !== undefined && (
-          <span style={{ marginLeft: 8, fontSize: 10.5, color: 'var(--lbb-fg3)', fontWeight: 500 }}>
+          <span style={{ marginLeft: 8, fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)', fontWeight: 500 }}>
             {count.toLocaleString()}
           </span>
         )}

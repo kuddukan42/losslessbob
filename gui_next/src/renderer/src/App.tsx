@@ -28,6 +28,8 @@ import { ScreenSpectrograms } from './screens/ScreenSpectrograms'
 import { ScreenFingerprint } from './screens/ScreenFingerprint'
 import { ScreenDbEditor } from './screens/ScreenDbEditor'
 import { ScreenScraper } from './screens/ScreenScraper'
+import { ScreenTrading } from './screens/ScreenTrading'
+import { ScreenSharing } from './screens/ScreenSharing'
 
 // ── React Query client — prefetch collection data immediately at module load ──
 
@@ -56,9 +58,9 @@ function PlaceholderScreen({ name }: { name: string }) {
       height: '100%', gap: 12,
       color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)',
     }}>
-      <span style={{ fontSize: 32, opacity: 0.2 }}>◻</span>
-      <span style={{ fontSize: 15, fontWeight: 600, color: 'var(--lbb-fg2)' }}>{name}</span>
-      <span style={{ fontSize: 11.5 }}>Screen not yet implemented</span>
+      <span style={{ fontSize: 'var(--lbb-fs-32)', opacity: 0.2 }}>◻</span>
+      <span style={{ fontSize: 'var(--lbb-fs-15)', fontWeight: 600, color: 'var(--lbb-fg2)' }}>{name}</span>
+      <span style={{ fontSize: 'var(--lbb-fs-11-5)' }}>Screen not yet implemented</span>
     </div>
   )
 }
@@ -90,13 +92,13 @@ function PrimitivesScreen() {
     <div style={{ padding: '0 0 24px', display: 'flex', flexDirection: 'column', gap: 0 }}>
       {/* Theme bar */}
       <Toolbar bordered pad="8px 16px" style={{ gap: 12, flexShrink: 0 }}>
-        <span style={{ fontSize: 11.5, fontWeight: 600, color: 'var(--lbb-fg3)', marginRight: 4 }}>Mode</span>
+        <span style={{ fontSize: 'var(--lbb-fs-11-5)', fontWeight: 600, color: 'var(--lbb-fg3)', marginRight: 4 }}>Mode</span>
         {(['light','dark'] as Mode[]).map(m => (
           <Chip key={m} active={theme.mode === m} size="sm" onClick={() => update({ mode: m })}>{m}</Chip>
         ))}
         <Chip size="sm" onClick={() => update({ mode: getSystemMode() })}>system</Chip>
         <span style={{ flex: 1 }} />
-        <span style={{ fontSize: 11.5, fontWeight: 600, color: 'var(--lbb-fg3)' }}>Density</span>
+        <span style={{ fontSize: 'var(--lbb-fs-11-5)', fontWeight: 600, color: 'var(--lbb-fg3)' }}>Density</span>
         {DENSITIES.map(d => (
           <Chip key={d} active={theme.density === d} size="sm" onClick={() => update({ density: d })}>{d}</Chip>
         ))}
@@ -104,7 +106,7 @@ function PrimitivesScreen() {
 
       {/* Accent row */}
       <Toolbar bordered pad="6px 16px" style={{ gap: 6, flexShrink: 0 }}>
-        <span style={{ fontSize: 11.5, fontWeight: 600, color: 'var(--lbb-fg3)', marginRight: 4 }}>Accent</span>
+        <span style={{ fontSize: 'var(--lbb-fs-11-5)', fontWeight: 600, color: 'var(--lbb-fg3)', marginRight: 4 }}>Accent</span>
         {ACCENTS.map(a => (
           <Chip key={a} active={theme.accent === a} size="sm" onClick={() => update({ accent: a })}>{a}</Chip>
         ))}
@@ -160,7 +162,7 @@ function PrimitivesScreen() {
               onChange={e => setQuery(e.target.value)} width={240} />
             <Input placeholder="No icon" size="sm" width={140} />
             <Input placeholder="Large" size="lg" width={160} />
-            <span style={{ fontSize: 12, color: 'var(--lbb-fg2)' }}>Global search</span>
+            <span style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)' }}>Global search</span>
             <Kbd>⌘</Kbd><Kbd>K</Kbd>
           </div>
         </Card>
@@ -215,13 +217,13 @@ function PrimitivesScreen() {
           </div>
           {selected && (
             <div style={{ padding: '8px 14px', borderTop: '1px solid var(--lbb-border)',
-              fontSize: 11.5, color: 'var(--lbb-fg2)', fontFamily: 'var(--lbb-mono)' }}>
+              fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)', fontFamily: 'var(--lbb-mono)' }}>
               Selected: {selected}
             </div>
           )}
         </Card>
 
-        <div style={{ fontSize: 11, color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)', textAlign: 'center', paddingBottom: 8 }}>
+        <div style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)', textAlign: 'center', paddingBottom: 8 }}>
           gui_next · Phase 2 complete — app shell + routing · active screen shown in sidebar
         </div>
       </div>
@@ -258,6 +260,8 @@ export default function App(): React.JSX.Element {
           <Route path="/rename"      element={<ScreenRename />} />
           <Route path="/lbdir"       element={<ScreenLBDIR />} />
           <Route path="/collection"  element={<ScreenCollection />} />
+          <Route path="/trading"     element={<ScreenTrading />} />
+          <Route path="/sharing"     element={<ScreenSharing />} />
           <Route path="/search"      element={<ScreenSearch />} />
           <Route path="/bootlegs"    element={<ScreenBootlegs />} />
           <Route path="/attachments" element={<ScreenAttachments />} />
