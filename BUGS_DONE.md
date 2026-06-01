@@ -1,6 +1,69 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-111: LBDIR check inflates track count (16 instead of 7) for SHN recordings
+Status: Fixed
+File(s): backend/checksum_utils.py:615-632
+Reported: 2026-05-31
+Fixed: 2026-05-31
+Root cause: shntool section filenames use underscores (shntool converts spaces→underscores), md5 section uses actual disk filenames with spaces. Union of both maps created duplicate entries per file.
+Fix: verify_folder_lbdir() normalizes shntool-section keys by replacing underscores with spaces when a matching md5/ffp key exists, then remaps len_map the same way.
+
+BUG-115: LBDIR check shows 0 total / spurious Pass for flat-format lbdir files (*.flacf.md5.txt)
+Status: Fixed
+File(s): backend/checksum_utils.py:200-204
+Reported: 2026-05-31
+Fixed: 2026-05-31
+Root cause: parse_lbdir_file only collects entries inside known section blocks (=== MD5 for: / === FFP for:). Flat-format lbdir files (*.flacf.md5.txt, *.wavf.md5.txt) have no section headers — plain HASH  filename lines. The main pass left current_section=None throughout; all lines were skipped; md5/ffp/shntool all came back empty → all_files=set() → total=0 → status='pass' (false positive).
+Fix: Added flat-format fallback after the section-based pass: if all three lists are still empty, re-scan the file treating each line directly as a MD5 or FFP entry (same logic as parse_checksum_file). Mode detection (shn/flac/mixed) is applied afterwards to the combined result.
+
+BUG-114: LBDIR "Check all folders" crashes when any folder has missing files or no lbdir
+Status: Fixed
+File(s): backend/checksum_utils.py:576-582,676; backend/app.py:1999-2010; gui_next/src/renderer/src/lib/lbdirStore.ts:3; gui_next/src/renderer/src/screens/ScreenLBDIR.tsx:17-24
+Reported: 2026-05-31
+Fixed: 2026-05-31
+Root cause: Three mismatch paths between backend status strings and the frontend STATE_LABEL record.
+  1. backend emitted `status='incomplete'` (n_missing>0); frontend STATE_LABEL has no 'incomplete' key → `STATE_LABEL['incomplete'].tone` throws TypeError.
+  2. backend emitted `status='shntool_missing'`; same missing-key crash.
+  3. when no lbdir*.txt found, backend returned {folder, lb_number, error} with no mode/status/files fields; frontend's `checkResult.mode.toUpperCase()` threw on undefined.
+Fix:
+  - checksum_utils.py: 'incomplete' → 'missing_files'; parse-error early-return now returns full schema shape with status='no_lbdir'.
+  - app.py: no-lbdir branch now returns complete schema with status='no_lbdir', mode='unknown', files=[].
+  - lbdirStore.ts: added 'shntool_missing' to LbdirState union.
+  - ScreenLBDIR.tsx: added shntool_missing entry to STATE_LABEL.
+
+BUG-113: Pipeline scan-tree misses folders containing only SHN audio files
+Status: Fixed
+File(s): backend/app.py:4702
+Reported: 2026-05-31
+Fixed: 2026-05-31
+Root cause: The _AUDIO extension set in pipeline_scan_tree() omitted '.shn', so folders containing only SHN files matched no extension and were silently excluded from the returned folder list.
+Fix: Added '.shn' to the _AUDIO set on line 4702.
+
+BUG-112: Detail panel shows "No forum history" when Forum posts count > 0
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenCollection.tsx:946-1342
+Reported: 2026-05-31
+Fixed: 2026-05-31
+Root cause: forumBusy initialized to false so first render shows "No forum history" before fetch; fetch errors swallowed silently by .catch(()=>{}) leaving forumRecords=[] while row.historyForum (from prefetch) has count>0; copy-paste bug used loadingTorrents key in forum tab loading state
+Fix: initialize forumBusy=true; add forumError state set in .catch and when API returns non-array; show error message instead of "No forum history" on failure; fix i18n key to loadingForum
+
+BUG-111: Attachments screen blank-white crash — `total.toLocaleString()` on undefined
+Status: Fixed
+File(s): backend/app.py:641, gui_next/src/renderer/src/screens/ScreenAttachments.tsx:99
+Reported: 2026-05-30
+Fixed: 2026-05-30
+Root cause: BUG-108 fix added r["downloaded"] to the file dict in attachments_cached but forgot to add ef.downloaded to the SELECT. The IndexError caused the route to return a 500 error response; the frontend then called setTotal(undefined), and total.toLocaleString() threw during render with no ErrorBoundary — blank white screen.
+Fix: Added ef.downloaded to the SELECT in attachments_cached; added ?? 0 fallback to setTotal(d.total ?? 0) as defence against future backend errors.
+
+BUG-110: bobdylan.com scraper stuck at 2000 — pending rows have swapped columns
+Status: Fixed
+File(s): data/losslessbob.db (bobdylan_shows table)
+Reported: 2026-05-30
+Fixed: 2026-05-30
+Root cause: Older version of run_discover passed (date_str, url) instead of (url, date_str) to executemany INSERT; INSERT OR IGNORE then prevented correction on subsequent runs.
+Fix: One-time UPDATE swapped bobdylan_url and date_str for all 2046 rows where scraped_at IS NULL AND bobdylan_url NOT LIKE 'http%'.
+
 BUG-109: Lookup tab — "Add Folders" does not include checksum files, nothing is looked up
 Status: Fixed
 File(s): backend/app.py, gui_next/src/renderer/src/screens/ScreenLookup.tsx

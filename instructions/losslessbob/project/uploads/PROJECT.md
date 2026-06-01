@@ -8,9 +8,8 @@
 
 | Layer | Technology | Version |
 |-------|------------|---------|
-| GUI (primary) | Electron + React + TypeScript | electron-vite |
-| GUI (legacy) | PyQt6 | 6.7.1 — **frozen**, no new features |
-| Web view (attachments) | PyQt6-WebEngine | 6.7.0 — used by legacy GUI only |
+| GUI | PyQt6 | 6.7.1 |
+| Web view (attachments) | PyQt6-WebEngine | 6.7.0 |
 | REST backend | Flask + Flask-CORS | 3.0.3 / 4.0.1 |
 | WSGI server (optional) | Waitress | 3.0.0 |
 | Database | SQLite3 | (stdlib) |
@@ -27,9 +26,7 @@
 | JIT compilation | numba | 0.65.1 |
 | Language | Python | 3.11+ |
 
-**Architecture pattern:** The GUI and backend are separated by a local Flask REST API (port 5174). The GUI makes HTTP requests to `localhost:5174` for all data operations. `gui_next` (Electron/React) is the active development target; Flask is launched as a child process from the Electron main process. The legacy `gui/` (PyQt6) starts Flask in a daemon thread and is frozen at its current state — no new features will be added there.
-
-**GUI strategy (as of 2026-05-29):** All new screens, features, and bug fixes target `gui_next`. The PyQt6 GUI (`gui/`) is locked in place as a fallback reference; it receives no further changes.
+**Architecture pattern:** The GUI and backend are separated by a local Flask REST API (port 5174). The GUI makes HTTP requests to `localhost:5174` for all data operations. Flask runs in a daemon thread started before the PyQt6 event loop.
 
 ---
 
@@ -37,7 +34,7 @@
 
 ```
 losslessbob/
-├── main.py                   # Legacy entrypoint: starts Flask thread, then PyQt6 app (frozen)
+├── main.py                   # Entrypoint: starts Flask thread, then PyQt6 app
 ├── cli.py                    # Headless CLI: lookup / search / stats / import / serve
 ├── run_backend.py            # Headless entrypoint: Flask only, no GUI (phone/LAN use)
 ├── requirements.txt
@@ -65,7 +62,7 @@ losslessbob/
 │   ├── qbittorrent.py        # qBittorrent WebUI API v2 integration
 │   ├── forum_poster.py       # SMF 2.x WTRF forum topic posting
 │   └── geocoder.py           # Nominatim geocoder: geocode_one, place_manual, run_batch, get_progress
-├── gui/                      # FROZEN — PyQt6 legacy GUI; no new features or bug fixes
+├── gui/
 │   ├── main_window.py        # Main window, tab container, menu, status bar
 │   ├── lookup_tab.py         # Core feature: paste/load checksums, view results
 │   ├── verify_tab.py         # Verify local checksum files (.ffp/.md5/.st5) against audio
@@ -96,8 +93,7 @@ losslessbob/
 │   ├── test_master_data.py   # MASTER/USER table classification, export/import, SHA + schema-version guards
 │   ├── test_scraper_crawler.py # scrape_sessions + site_inventory table write functions
 │   └── test_db_writes.py     # 114-test battery: all DB write functions, constraint violations, rollback, thread safety
-├── losslessbob_backend.spec  # PyInstaller onefile spec: backend-only (no PyQt6); bundled inside Electron AppImage
-├── losslessbob_linux.spec    # LEGACY — old PyInstaller full-app spec (PyQt6 GUI); superseded by losslessbob_backend.spec + electron-builder
+├── losslessbob_linux.spec    # PyInstaller spec for Linux AppImage build (includes fingerprinting stack)
 ├── Dockerfile                # Docker image: python:3.11-slim + Xvfb + x11vnc + noVNC + Qt6 runtime
 ├── docker-compose.yml        # Compose: port 6080 (noVNC), named data volume, music-folder mount examples
 ├── .dockerignore             # Excludes .git, .venv, data/, dist/ from build context
@@ -113,13 +109,9 @@ losslessbob/
 ├── tools/
 │   ├── geocode_locations.py  # CLI: batch-geocode entries.location via Nominatim (--limit, --retry-failed, --dry-run)
 │   ├── losslessbob.iss       # Inno Setup 6 script — builds LosslessBob_Setup_<ver>.exe from dist/LosslessBob/
-│   ├── build_windows.bat     # Local helper: pyinstaller + iscc in sequence (Windows only)
-│   └── shntool.exe           # Windows shntool binary (GPL-2); bundled into PyInstaller dist via losslessbob.spec
+│   └── build_windows.bat     # Local helper: pyinstaller + iscc in sequence (Windows only)
 ├── docs/
 │   ├── index.html            # GitHub Pages marketing/landing page
-│   ├── CLI.md                # CLI usage reference
-│   ├── scraping.md           # Scraper behaviour and queue logic
-│   ├── data_ownership.md     # Master vs. user data split, export/import enforcement
 │   └── screenshots/          # Screenshot placeholders (replace with real app screenshots)
 │       └── README.md         # Guide for which screenshots to capture
 └── data/
@@ -173,8 +165,6 @@ Unique index on `(checksum, lb_number)`.
 | setlist | TEXT | Setlist text |
 | status | TEXT | `'ok'`, `'missing'` |
 | scraped_at | TIMESTAMP | When row was last scraped |
-| taper_name | TEXT | Parsed taper handle/name (via `extract_taper_and_source`) |
-| source_chain | TEXT | Parsed recording equipment chain (via `extract_taper_and_source`) |
 
 ### `entry_files` — Attachment files per entry
 | Column | Type | Notes |
@@ -249,14 +239,6 @@ Index: `idx_changes_lb ON entry_changes(lb_number, changed_at DESC)`.
 | board_id | INTEGER | SMF board number posted to |
 | posted_at | TEXT | UTC datetime, defaults to datetime('now') |
 
-### `lb_missing` — Confirmed non-existent LB entries (MASTER table)
-Permanently records LB numbers that are allocated but never had (or permanently lost) a page on the LosslessBob site. Seeded with 36 known entries on first run. Entries in this table receive `lb_status='nonexistent'` in `lb_master` and are never scraped.
-| Column | Type | Notes |
-|--------|------|-------|
-| lb_number | INTEGER PK | LB number confirmed to not exist |
-| confirmed_date | TEXT | ISO date when confirmed |
-| notes | TEXT | Free-text note |
-
 ### `lb_alias` — Curator-authored alias mappings (MASTER table)
 | Column | Type | Notes |
 |--------|------|-------|
@@ -311,15 +293,14 @@ Natural key for diffing: `(lb_number, title, date_str)`. Indexes: `idx_bootleg_l
 | rows_removed | INTEGER | |
 | status | TEXT NOT NULL | `success`, `no_change`, or `failed` |
 
-### `dylan_performances` — Dylan performance location supplement (MASTER table)
+### `dylan_performances` — Dylan performance location supplement (USER table)
 Populated once at startup from `data/2026-05-22_Dylan_Performance_fixed.ods` via
-`import_dylan_performances()` when the table is empty. Included in master-data export/import
-so all users receive the same reference dataset when installing a master update. Linked to
-`entries` by converting `entries.date_str` → ISO via `geocoder._entry_date_to_iso()`.
+`import_dylan_performances()`. Provides supplemental date/venue/location data keyed by
+a unique event ID. Read-only reference data; not part of the master-data export.
 | Column | Type | Notes |
 |--------|------|-------|
 | event_id | TEXT PK | e.g. `'1962092201'` (YYYYMMDDNN) |
-| date_str | TEXT | ISO date from ODS, e.g. `'1962-09-22'` |
+| date_str | TEXT | Raw date from ODS, e.g. `'1962-09-22'` |
 | category | TEXT | `HOME`, `NET`, `MCONCERT`, `RADIO`, etc. |
 | city | TEXT | City name |
 | state | TEXT | State/province code |
@@ -328,20 +309,6 @@ so all users receive the same reference dataset when installing a master update.
 | imported_at | TIMESTAMP | When the row was loaded |
 
 Indexes: `idx_perf_date`, `idx_perf_category`, `idx_perf_country`.
-Queried via `GET /api/performances?lb=<n>` or `?date=YYYY-MM-DD`.
-
-### `lb_problems` — Known problems with specific LB entries (MASTER table)
-Curator-authored table for flagging LB entries with known issues (bad checksums,
-incomplete torrent, corrupt files, mislabelled metadata, etc.). Included in master-data export.
-| Column | Type | Notes |
-|--------|------|-------|
-| id | INTEGER PK | Auto-increment |
-| lb_number | INTEGER NOT NULL | FK → lb_master.lb_number |
-| notes | TEXT NOT NULL | Free-text description of the problem |
-| added | TEXT NOT NULL | ISO date (YYYY-MM-DD) the note was added |
-
-Index: `idx_lb_problems_lb ON lb_problems(lb_number)`.
-Managed via `GET/POST /api/lb_problems` and `PUT/DELETE /api/lb_problems/<id>`.
 
 ### `scrape_sessions` — Crawler session log (MASTER table)
 One row per site-crawler run started via POST /api/crawler/start.
@@ -390,7 +357,6 @@ Indexes: `idx_inventory_status`, `idx_inventory_session`.
 | display_name | TEXT | Full display name returned by Nominatim |
 | manual_override | INTEGER | 1 = curator-placed pin; batch run never overwrites |
 | note | TEXT | Optional curator note |
-| lb_number | TEXT | LB entry that prompted this override (traceability) |
 | geocoded_at | TIMESTAMP | Last geocode attempt timestamp |
 
 Index: `idx_geo_source ON location_geocoded(source)`.
@@ -455,22 +421,6 @@ Index: `idx_flat_releases_status ON flat_file_releases(status, detected_at DESC)
 
 Indexes: `idx_flat_changelog_release(release_id)`, `idx_flat_changelog_lb(lb_number)`.
 
-### `archive_org_uploads` — Internet Archive upload history (USER table)
-| Column | Type | Notes |
-|--------|------|-------|
-| id | INTEGER PK | Auto-increment |
-| lb_number | INTEGER NOT NULL | LB entry being uploaded |
-| identifier | TEXT NOT NULL | IA item identifier (e.g. `losslessbob-lb-01234`) |
-| folder_path | TEXT NOT NULL | Absolute path to source folder |
-| files_total | INTEGER | Number of audio files to upload |
-| files_uploaded | INTEGER | Files successfully uploaded |
-| status | TEXT NOT NULL | `pending`, `running`, `done`, `failed`, `stopped` |
-| started_at | TIMESTAMP | Upload start time |
-| finished_at | TIMESTAMP | NULL until complete |
-| error | TEXT | Error message if status=failed |
-
-Indexes: `idx_archive_uploads_lb(lb_number)`, `idx_archive_uploads_status(status, started_at DESC)`.
-
 ---
 
 ## Backend: Flask API (`backend/app.py`)
@@ -516,7 +466,7 @@ Indexes: `idx_archive_uploads_lb(lb_number)`, `idx_archive_uploads_status(status
 ### LB Master Integrity
 | Method | Route | Description |
 |--------|-------|-------------|
-| GET | `/api/lb_master/stats` | Return `{public, private, missing, nonexistent, max_lb, overrides, needs_review, public_no_checksums}` counts. |
+| GET | `/api/lb_master/stats` | Return `{public, private, missing, max_lb, overrides, needs_review}` counts. |
 | GET | `/api/lb_master` | Paginated lb_master rows. Query params: `status`, `override=1`, `review=1`, `limit` (max 2000), `offset`. |
 | GET | `/api/lb_master/<lb>` | Single lb_master row joined with entry metadata. |
 | POST | `/api/lb_master/reconcile` | Full rebuild of lb_master. Backs up DB first. Returns `{ok, stats}`. |
@@ -526,26 +476,6 @@ Indexes: `idx_archive_uploads_lb(lb_number)`, `idx_archive_uploads_status(status
 | GET | `/api/lb_master/<lb>/nft` | Return `{nft: bool, reason}` for folder naming guidance. |
 | GET | `/api/lb_master/overrides/export` | Export all `manual_override=1` rows as a JSON array. Read-only; no curator check required. Returns `[{lb_number, manual_status, manual_notes, manual_set_by, manual_set_at}, ...]`. |
 | POST | `/api/lb_master/overrides/import` | **Curator-only.** Body: same JSON array. Upserts each row via `set_lb_manual_override`, writes `lb_status_history` with `trigger_event='import'`, skips lb_numbers outside current max. Returns `{imported, skipped}`. |
-
-### LB Missing (confirmed non-existent entries)
-| Method | Route | Description |
-|--------|-------|-------------|
-| GET | `/api/lb_missing` | List all lb_missing rows ordered by lb_number. |
-| POST | `/api/lb_missing` | **Curator-only.** Add entry. Body: `{lb_number, confirmed_date?, notes?}`. Returns `{ok, lb_number}`. |
-| DELETE | `/api/lb_missing/<lb>` | **Curator-only.** Remove entry; immediately reconciles lb_master status. Returns `{ok, lb_number}`. |
-
-### Dylan Performances
-| Method | Route | Description |
-|--------|-------|-------------|
-| GET | `/api/performances` | Query `dylan_performances`. Params: `date` (YYYY-MM-DD), `lb` (int — resolved via entries.date_str), `category`, `limit` (default 200), `offset`. Returns list of `{event_id, date_str, category, city, state, country, venue}`. |
-
-### LB Problems (known issues with LB entries)
-| Method | Route | Description |
-|--------|-------|-------------|
-| GET | `/api/lb_problems` | List all lb_problems rows. Optional query param `lb=<int>` to filter to one LB. Returns `[{id, lb_number, notes, added}]`. |
-| POST | `/api/lb_problems` | **Curator-only.** Add a problem note. Body: `{lb_number, notes, added?}`. Returns `{ok, id, lb_number}`. |
-| PUT | `/api/lb_problems/<id>` | **Curator-only.** Update notes on a row. Body: `{notes}`. Returns `{ok, id}`. |
-| DELETE | `/api/lb_problems/<id>` | **Curator-only.** Delete a problem note. Returns `{ok, id}`. |
 
 ### Folder Naming
 | Method | Route | Description |
@@ -660,18 +590,6 @@ Indexes: `idx_archive_uploads_lb(lb_number)`, `idx_archive_uploads_status(status
 | DELETE | `/api/forum_post/<id>` | Delete a forum post log record by id. |
 | GET | `/api/forum_posts` | List all logged forum posts across every LB entry, newest first. Includes `date_str` and `location` from entries. |
 
-### Archive.org Upload
-| Method | Route | Description |
-|--------|-------|-------------|
-| POST | `/api/archive_org/credentials` | Save IA S3 credentials to keyring. Body: `{access_key, secret_key}`. Returns `{ok, label}`. |
-| GET | `/api/archive_org/credentials` | Check if IA credentials are stored. Returns `{stored: bool}`. |
-| DELETE | `/api/archive_org/credentials` | Clear stored IA credentials. Returns `{ok}`. |
-| POST | `/api/archive_org/test` | Test IA S3 credentials. Body: `{access_key?, secret_key?}`. Returns `{ok, error?}`. |
-| POST | `/api/archive_org/upload` | Start async upload for one LB. Body: `{lb_number, folder_path, identifier?, collection?, title?, subject?, access_key?, secret_key?}`. Returns `{ok, error?}`. |
-| GET | `/api/archive_org/status` | Poll upload progress. Returns `{running, lb_number, identifier, current_file, files_done, files_total, bytes_done, bytes_total, status, error, stop_requested}`. |
-| POST | `/api/archive_org/stop` | Request running upload to stop after current file. Returns `{ok}`. |
-| GET | `/api/archive_org/uploads` | List upload history rows, newest first. Query param: `lb=<int>`. Returns `[{id, lb_number, identifier, folder_path, files_total, files_uploaded, status, started_at, finished_at, error, date_str?, location?}]`. |
-
 ### Map
 | Method | Route | Description |
 |--------|-------|-------------|
@@ -687,7 +605,6 @@ Indexes: `idx_archive_uploads_lb(lb_number)`, `idx_archive_uploads_status(status
 | GET | `/api/geocode/status` | Poll batch geocode state: `{running, done, total, errors, last_location}`. |
 | POST | `/api/geocode/location` | **Curator-only.** Manually place or correct a coordinate. Body: `{location, lat, lon}`. Sets `manual=1` so the batch geocoder never overwrites it. |
 | GET | `/api/geocode/locations` | **Curator-only.** List all rows in `location_geocoded` with geocode status. Returns `[{location, lat, lon, display_name, geocoded_at, manual}]`. |
-| POST | `/api/geocode/purge` | **Curator-only.** Purge cached geocoding rows. Body: `{scope: "failed"\|"all"}`. `"failed"` removes source='failed'/lat IS NULL rows; `"all"` removes entire table. Returns `{ok, deleted}`. |
 
 ### Admin
 | Method | Route | Description |
@@ -704,12 +621,6 @@ Indexes: `idx_archive_uploads_lb(lb_number)`, `idx_archive_uploads_status(status
 | GET | `/api/spectrogram/status` | Poll batch state: `{status, current, done, total, errors, skipped, stop_requested}` |
 | POST | `/api/spectrogram/stop` | Request stop after current file |
 | POST | `/api/spectrogram/list` | Inventory PNGs per folder. Body: `{folders}`. Returns `{folder -> [{audio_file, audio_name, png_path, has_png}]}` |
-| GET | `/api/spectrogram/png` | Serve a spectrogram PNG from an arbitrary absolute path. Query param: `path`. Returns PNG bytes. |
-
-### Rename
-| Method | Route | Description |
-|--------|-------|-------------|
-| POST | `/api/rename/apply` | Apply folder/file renames on disk and log each to `rename_history`. Body: `{renames: [{old_path, new_path, lb_number?}]}`. Returns `{applied, errors}`. |
 
 ### Verify (Local Checksums)
 | Method | Route | Description |
@@ -1191,7 +1102,7 @@ Populated automatically after each lookup. Shows folders from the input file lis
 Paginated browse, inline-edit, and delete for every SQLite table. Left sidebar has a table list (with row counts), a **DB Integrity** panel, and an **LB Aliases** panel.
 
 **DB Integrity sub-panel:**
-- Live stats label: Public / Private / Missing / Nonexistent / Max LB / Overrides / Needs review / Public-no-checksums counts (from `GET /api/lb_master/stats`).
+- Live stats label: Public / Private / Missing / Max LB / Overrides / Needs review counts (from `GET /api/lb_master/stats`).
 - **Reconcile All** — recomputes lb_master status for every LB. Backs up DB first.
 - **Show Needs Review** — filters the lb_master table to rows with `needs_review=1`.
 - **Export Overrides** — calls `GET /api/lb_master/overrides/export`, saves JSON file.
@@ -1209,43 +1120,6 @@ Paginated browse, inline-edit, and delete for every SQLite table. Left sidebar h
 ## GUI: Theme Tab (`gui/theme_tab.py`)
 
 Fourteen preset themes (Light, Dark, Black, Dracula, Blue, Purple, Red, Nord, Gruvbox, Monokai, Tokyo Night, Solarized, Everforest, Catppuccin) plus custom color picker. Color changes apply immediately via `styles.py` which generates Qt QSS from a color dictionary. Theme name and per-color overrides persist in `QSettings`.
-
----
-
-## GUI (Next): Electron/React Frontend (`gui_next/`) — PRIMARY GUI
-
-Second-generation GUI (primary, merged into main 2026-05-29) built with **Electron + React + TypeScript** (Vite + electron-vite). Communicates with the same Flask backend on port 5174 via `fetch()`. Preload bridge (`preload/index.ts`) exposes typed IPC handlers (`openPath`, `pickFile`, `pickFiles`, `pickDir`, `pickFolders`). All screens are registered in `App.tsx` and routed via a sidebar nav. **All future development happens here.** The legacy `gui/` PyQt6 frontend is frozen — it receives no new features or bug fixes.
-
-### Screens (all 14 fully wired as of 2026-05-29)
-
-| Screen | File | Status |
-|--------|------|--------|
-| ScreenHome | `screens/ScreenHome.tsx` | Done — dashboard, live stats, activity log, flat-file update |
-| ScreenSetup | `screens/ScreenSetup.tsx` | Done — all 16 handlers: credentials, purge, import/export, master, data packages |
-| ScreenCollection | `screens/ScreenCollection.tsx` | Done — sortable columns, wishlist, forum, torrents, duplicates, batch actions |
-| ScreenSearch | `screens/ScreenSearch.tsx` | Done — virtual table, sort, group-by-year, CSV export, column picker, saved views |
-| ScreenBootlegs | `screens/ScreenBootlegs.tsx` | Done — year/CDs filters, catalog browser, CSV export |
-| ScreenThemes | `screens/ScreenThemes.tsx` | Done — preset themes, typeface/font-size, custom color tokens |
-| ScreenPipeline | `screens/ScreenPipeline.tsx` | Done — folder queue, 4-step workflow, bulk-actions menu |
-| ScreenLookup | `screens/ScreenLookup.tsx` | Done — 4-source input, summary + detail tables |
-| ScreenVerify | `screens/ScreenVerify.tsx` | Done — folder verify/generate/retrieve workflow |
-| ScreenRename | `screens/ScreenRename.tsx` | Done — consumes lookup results, applies bulk renames |
-| ScreenLBDIR | `screens/ScreenLBDIR.tsx` | Done — 4-pane check/retrieve/reconcile/extras |
-| ScreenAttachments | `screens/ScreenAttachments.tsx` | Done — LB rail, file list, text/HTML/image/binary viewer |
-| ScreenSpectrograms | `screens/ScreenSpectrograms.tsx` | Done — tool dots, batch generate, PNG viewer |
-| ScreenMap | `screens/ScreenMap.tsx` | Done — filter rail + browser map launcher |
-
-### Shared stores (`lib/`)
-
-| Store | Purpose |
-|-------|---------|
-| `folderQueueStore.ts` | Canonical folder list shared across Pipeline, Verify, LBDIR, Spectrograms |
-| `lookupStore.ts` | Lookup results passed to Rename |
-| `verifyStore.ts` | Verify job state |
-| `lbdirStore.ts` | LBDIR job state |
-| `spectrogramStore.ts` | Spectrogram job state |
-| `attachmentsStore.ts` | Attachments viewer state |
-| `tokens.ts` | CSS design tokens (colors, spacing, typography) |
 
 ---
 
@@ -1353,14 +1227,6 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 
 | Date | Change |
 |------|--------|
-| 2026-05-30 | Archive.org upload integration: `backend/archive_org.py` (IA S3 PUT, progress state, stop support); `archive_org_uploads` table; `SERVICE_IA` keyring slot; 8 `/api/archive_org/` routes; `ArchiveOrgSection` component in `ScreenSharing` with credentials form, upload form, progress bar, history table. (TODO-093) |
-| 2026-05-30 | Collection Trading + File Sharing features (branch feat/trading-and-sharing): `friend_collections` + `friend_collection_entries` tables; 5 `/api/trading/` routes; `backend/sharing.py` module (ephemeral share state, ZIP streaming, Cloudflare Tunnel); 7 `/api/share/` routes; `ScreenTrading` + `ScreenSharing` in gui_next; Trading + Sharing nav items under Library group. |
-| 2026-05-30 | `taper_name` + `source_chain` TEXT columns added to `entries` via ALTER TABLE migration. `extract_taper_and_source()` in `db.py` parses free-text descriptions with 14 pattern rules; ~80.5% coverage on 16k entries. Backfill run on first `init_db()` after migration. `scraper.py` computes both columns on every scrape. `ScreenSearch.tsx` shows Taper/Source as toggleable columns and in the detail panel meta grid. |
-| 2026-05-29 | Windows installer + portable switched to Electron/React (gui_next): `losslessbob_backend.spec` made cross-platform (Windows watchdog, shntool.exe, no fingerprinting); `backend/paths.py` frozen-Windows data dir → `%LOCALAPPDATA%\LosslessBob`; electron-builder NSIS + portable targets; `release.yml` build-windows rebuilt. |
-| 2026-05-29 | Linux AppImage switched to Electron/React (gui_next): new `losslessbob_backend.spec` (onefile PyInstaller, no PyQt6); `gui_next/package.json` gains electron-builder + dist:linux script; `gui_next/src/main/index.ts` ensureBackend() uses bundled binary when packaged; `release.yml` build-linux job rebuilt around electron-builder. |
-| 2026-05-29 | TODO-106: ScreenFingerprint (gui_next Assets group) — date → collection_by_date → build LB fingerprints → identify mystery folder → ranked results. New backend routes: GET /api/fingerprint/collection_by_date, POST /api/fingerprint/identify_folder + status + stop. Icon + nav item + route registered. All strings i18n-wrapped. |
-| 2026-05-29 | Development direction locked: `gui_next` (Electron/React) is the sole active development target. `gui/` (PyQt6) is frozen — no new features or bug fixes. PROJECT.md, tech stack, architecture note, and file structure all updated to reflect this. |
-| 2026-05-28 | gui_next Sprint 6: ScreenThemes fully wired — typeface picker, font size buttons, custom token color editor, export/import JSON. New IPC: `dialog:saveFile`, `dialog:pickAndReadFile`. `tokens.ts` extended with `Font`, `FontSize`, `customTokens` fields; `--lbb-font`/`--lbb-font-size` CSS vars drive global typography. |
 | 2026-05-24 | DB-09: DatabaseWriteQueue in `backend/db_queue.py`; all write paths across db.py, scraper.py, site_crawler.py, app.py, importer.py, flat_file.py, geocoder.py routed through single writer thread; write_connection() removed; busy-timeout races eliminated. |
 | 2026-05-22 | Cross-tab folder sync: `add_folders_from_lookup()` added to `gui/lbdir_tab.py`; `main_window.py _on_tab_changed` wires lbdir pre-population on tab switch (mirrors existing Verify guard). (TODO-081) |
 | 2026-05-22 | Multi-LB alias folder naming: `get_aliases_for_canonical()` in `backend/db.py`; Rename tab `populate_from_lookup` and `_on_save_alias` fetch all aliases via `GET /api/lb_alias?canonical_lb=<lb>` after alias collapse and include them in proposed suffix (`LB-canonical-LB-alias1...`). (TODO-080) |
@@ -1378,7 +1244,6 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 | 2026-05-06 | Fixed scraper URL/directory formatting: LB numbers now zero-padded to 5 digits (`LB-{n:05d}`) in `backend/scraper.py` |
 | 2026-05-06 | Added `.claude/settings.json` — restricts file access to project directory + deny rules for sensitive system paths |
 | 2026-05-06 | Created this document |
-| 2026-05-26 | BUG-112: added downgrade guard to `import_master_db()` (db.py). TODO-091: bundled `tools/shntool.exe` into PyInstaller Windows dist via losslessbob.spec; updated `_find_shntool()` (checksum_utils.py) to resolve bundled and dev-tree paths before WSL/PATH. |
 | 2026-05-06 | Removed SDF/Wine/ExportSqlCE40 import path; flat-file only. Renamed `sdf_hash` meta key to `import_hash`. Deleted `tools/` directory. |
 | 2026-05-06 | QSS modernization: Fusion base style, rounded corners, flat buttons, tab underline indicator, slim progress bar, `font-weight 700`, drop shadows on result panels. |
 | 2026-05-06 | Rename tab: added `wrong_lb` state (purple) for folders with mismatched LB numbers; "Select Wrong LB" and "Strip Wrong LB from Selected" buttons; "Select All" now only checks actionable rows. |
@@ -1434,8 +1299,3 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 | 2026-05-20 | Audio filename reconcile: db_filename added to lookup_checksums() detail dicts; POST /api/checksums/reconcile_audio + apply_reconcile_audio routes; gui/widgets/reconcile_dialog.py (AudioReconcileDialog); "Reconcile Audio Files" button on Lookup tab (auto-enabled on filename mismatch) and Rename tab (_ReconcileAudioWorker scans checksum files in checked folders). |
 | 2026-05-20 | Map tab rework (TODO-074): map_tab.py rewritten as browser-only (no QWebEngineView); Open Map in Browser button + Map Filters group (year, lb_status, owned, text); Geocoding group + Location Overrides group moved from setup_tab/dbedit_tab; curator_mode_changed signal added to SetupTab; Tech Stack updated (WebEngine for attachments only). |
 | 2026-05-24 | DB-09 fix: rewrote DatabaseWriteQueue._worker with isolation_level=None and explicit BEGIN/COMMIT/ROLLBACK; added startup ready-event to eliminate WAL-pragma race; purged implicit transaction leak from init_db(); added conftest.py test isolation fixture; updated stale TestWriteConnectionRollback tests. |
-| 2026-05-26 | TODO-086/090: `dylan_performances` promoted from USER→MASTER (schema v3); new `lb_problems` MASTER table (id, lb_number, notes, added); 4 DB functions; `GET /api/performances` (date/lb/category filter); `GET/POST /api/lb_problems` + `PUT/DELETE /api/lb_problems/<id>` (curator-only write). |
-| 2026-05-27 | gui_next Sprint 1 (ScreenSetup 100%): all stubs wired; new backend routes: `POST /api/credentials/wtrf`, `POST /api/credentials/qbt`, `POST /api/rename_history/purge`, `POST /api/flat_file/purge`, `POST /api/scraper/purge`, `POST /api/fingerprint/purge`; `data_dir` added to `GET /api/db/settings`; `flac_available` added to `GET /api/spectrogram/check`; `pickFile` IPC added to main/preload. |
-| 2026-05-28 | gui_next Sprint 2 (ScreenCollection ~90%): all 17 stubs wired; `lbNumberInt` + `isXref` fields added to `CollectionRow`; year filter via `/api/search/years`; xref filter via `/api/checksums/xref_lb_numbers`; `AddFolderModal` (per-row LB# input); `ForumModal` with editable BBCode before `preview_forum` → `post_forum`; version-bump refetch pattern established. |
-| 2026-05-28 | gui_next Sprint 3 (ScreenSearch ~95%): virtual table sort (6 keys), group-by-year toggle, CSV export, column visibility (localStorage), saved views (localStorage + 3 built-ins), `owned` field wired to `GET /api/collection/lb_numbers`, entry detail panel (`GET /api/entry/<lb>`) with files list + "Scrape entry", per-row ⋯ menu (`position:fixed`, `POST /api/entry/<lb>/scrape`), Toast component. (TODO-094 Stage: Sprint 3 done) |
-| 2026-06-01 | Batch verification pipeline: tools/batch_verify.py — lbdir-centric CLI for large collections; 4-phase pipeline (identify/retrieve/verify/reconcile-preview); report SQLite DB (data/batch_verify.db, never touches losslessbob.db); resume/dry-run/reprocess/report modes. (BATCH-VERIFY) |

@@ -1,6 +1,16 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-093: Archive.org uploader
+Priority: Low
+Status: Done
+Added: 2026-05-24
+Closed: 2026-05-30
+Description: archive.org S3-like upload via backend/archive_org.py; SERVICE_IA keyring
+  slot; 7 Flask routes (/api/archive_org/credentials, /test, /upload, /status, /stop, /uploads);
+  archive_org_uploads DB table; ArchiveOrgSection in ScreenSharing — credentials form,
+  upload form with progress bar + bytes counter, history table.
+
 TODO-101: Add SQL query box to DB Editor for manual query execution
 Priority: Medium
 Status: Done
