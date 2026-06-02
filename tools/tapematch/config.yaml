@@ -1,0 +1,50 @@
+# tapematch configuration
+# These are the empirical knobs. Tune against your real recordings in Claude Code.
+
+audio:
+  # Working sample rate. Everything is resampled to this for comparison.
+  # 16000 is plenty for source-matching (the discriminating signal is mostly
+  # below 8 kHz: noise floor, room tone, W&F, transients). Lower = faster.
+  analysis_sr: 16000
+  mono_mix: false          # keep stereo when available (needed for pan fingerprint)
+
+ingest:
+  audio_exts: [".flac", ".wav", ".aiff", ".aif", ".shn", ".m4a", ".mp3", ".ape"]
+  # Pure track-order ingest: sort by natural path order, concat gaplessly.
+
+trim:
+  # Head/tail crowd-padding removal -> performance envelope.
+  frame_sec: 1.0           # analysis frame for the energy/flatness gate
+  hop_sec: 0.5
+  # A frame is "music" if spectral flatness is BELOW this (tonal/structured)
+  # OR broadband energy is sustained. Crowd-only padding is flat+diffuse.
+  flatness_music_max: 0.45
+  # Require this many continuous music-seconds to declare show start/end,
+  # so a lone clap in the padding doesn't trip it.
+  min_sustain_sec: 8.0
+  pad_keep_sec: 5.0        # keep this much padding either side as a safety margin
+
+anchors:
+  # Crowd-transient anchors for alignment + fingerprinting.
+  n_anchors: 6             # spread early->late across the performance
+  window_sec: 45.0         # correlation window around each anchor
+  # Onset strength percentile to qualify as a candidate transient.
+  onset_percentile: 99.0
+  prefer_quiet: true       # bias toward isolated transients in low-energy regions
+
+align:
+  max_lag_sec: 30.0        # search range for local cross-correlation lag
+  # Speed-ratio detection from first vs last anchor lag.
+  ratio_flag_ppm: 200      # |ratio-1| above this (parts-per-million) -> resample
+  # Lag-vs-position curve interpretation
+  step_flag_sec: 0.5       # a jump > this between adjacent anchors = gap edit / splice
+
+match:
+  # Residual cross-correlation clustering.
+  cluster_threshold: 0.70  # corr above this links two files into same source family
+  # Below ~0.3 = independent; above ~0.95 = clone/EQ-child. Bimodal in practice.
+
+lineage:
+  # Evidence for parent/child direction (interpretive, reported not decided).
+  hf_ceiling_probe_hz: [14000, 16000, 19000, 20000]
+  dropout_z: 6.0           # sample-level drop below local floor by this many sigma
