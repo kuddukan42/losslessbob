@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup, NavigableString
 from backend.db import (
     get_connection, DB_PATH, insert_missing_entry,
     record_entry_changes, reconcile_lb_status, batch_reconcile_lb_status,
-    is_lb_missing, extract_taper_and_source,
+    is_lb_missing, extract_taper_and_source, classify_one_entry,
 )
 from backend.db_queue import get_write_queue
 from backend.paths import (
@@ -390,11 +390,14 @@ def scrape_entry(
     _file_links = list(file_links)
 
     def _save_entry(c) -> None:
+        _entry_row["lb_category"] = classify_one_entry(
+            _entry_row["date_str"], _entry_row["description"], _entry_row["location"], c
+        )
         c.execute(
             """INSERT OR REPLACE INTO entries(lb_number, date_str, location, cdr, rating, timing,
-               description, setlist, taper_name, source_chain)
+               description, setlist, taper_name, source_chain, lb_category)
                VALUES(:lb_number,:date_str,:location,:cdr,:rating,:timing,
-                      :description,:setlist,:taper_name,:source_chain)""",
+                      :description,:setlist,:taper_name,:source_chain,:lb_category)""",
             _entry_row,
         )
         for filename, clean, file_url in _file_links:

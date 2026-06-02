@@ -1,3 +1,21 @@
+[2026-06-01] — fix(backend): BUG-121 add GET /api/collection/audit — flag collection entries missing checksum rows
+Added: backend/db.py:audit_collection_checksums(): query my_collection LEFT JOIN checksums, return {total, missing_checksums, entries} for lb_numbers with zero checksum rows
+Added: backend/app.py: GET /api/collection/audit route exposes audit_collection_checksums(); documented in PROJECT.md
+
+[2026-06-01] — fix(backend): BUG-117 checksum rglob + BUG-119 NFT rename preserves folder date/location
+Fixed: backend/app.py:4604: BUG-117 — changed iterdir() to rglob("*") in pipeline lookup step so checksum files in subfolders are found (was missing ~12% of collection)
+Fixed: backend/app.py:4638: BUG-119 — when DB has no date_str/location for an NFT entry, now preserves current folder name and only toggles -NFT suffix (was proposing bare LB-NNNNN-NFT, silently stripping date/location)
+
+[2026-06-01] — feat(db+scraper): entries.lb_category — add column, classify on scrape, bulk reclassify
+Added: backend/db.py: classify_one_entry(date_str, description, location, conn) for per-entry classification inside write closures
+Changed: backend/scraper.py: _save_entry now computes and stores lb_category on every INSERT OR REPLACE
+Added: backend/db.py: lb_category TEXT column to entries; classify_entry_categories() bulk classify; MASTER_SCHEMA_VERSION→6; POST /api/entries/reclassify (curator)
+
+[2026-06-01] — feat(db): add entries.lb_category column; classify concerts from bobdylan_shows
+Added: backend/db.py: lb_category TEXT column to entries; classify_entry_categories() classifies all 16 630 entries (concert via bobdylan_shows date-join, non-concert categories via dylan_performances + keyword heuristics, unknown fallback); one-time backfill in init_db(); MASTER_SCHEMA_VERSION bumped to 6
+Added: backend/app.py: POST /api/entries/reclassify (curator-only) to re-run classification after bobdylan_shows updates
+Results: concert 84.7%, unknown 12.3%, tv/interview/studio/compilation/rehearsal/radio/soundcheck ~3%
+
 [2026-06-01] — feat(tools): batch collection verification pipeline + --from-collection mode
 Added: tools/batch_verify.py: headless CLI for lbdir-centric batch verification of large collections; 4-phase pipeline (identify/retrieve/verify/reconcile-preview); report SQLite DB (data/batch_verify.db); --resume/--dry-run/--reprocess/--report modes; --from-collection fetches disk_path+lb_number from GET /api/collection (skips Phase 0 identify); --root walks a directory tree. (BATCH-VERIFY)
 

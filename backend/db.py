@@ -29,7 +29,7 @@ _bloom_lock = threading.Lock()
 # USER tables stay local to each install and never appear in an export.
 # See instructions/CC_LB_INTEGRITY.md §Data Ownership Model.
 
-MASTER_SCHEMA_VERSION = 5  # bumped: setlistfm_shows + setlistfm_setlist added
+MASTER_SCHEMA_VERSION = 6  # bumped: entries.lb_category added
 
 MASTER_TABLES = (
     "lb_missing",
@@ -126,7 +126,10 @@ CREATE TABLE IF NOT EXISTS entries (
     description TEXT,
     setlist TEXT,
     status TEXT DEFAULT 'ok',
-    scraped_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    scraped_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    taper_name TEXT,
+    source_chain TEXT,
+    lb_category TEXT
 );
 
 CREATE TABLE IF NOT EXISTS entry_files (
@@ -934,6 +937,10 @@ def init_db(db_path=None):
                 "entries: backfilled taper_name/source_chain for %d rows", len(_rows)
             )
 
+        if "lb_category" not in cols:
+            conn.execute("ALTER TABLE entries ADD COLUMN lb_category TEXT")
+            conn.commit()
+
         # Populate FTS index if empty (first run after adding FTS)
         fts_count = conn.execute("SELECT COUNT(*) FROM entries_fts").fetchone()[0]
         entry_count = conn.execute("SELECT COUNT(*) FROM entries").fetchone()[0]
@@ -1054,6 +1061,19 @@ def init_db(db_path=None):
                 conn.execute("INSERT INTO entries_fts(entries_fts) VALUES('rebuild')")
             logging.getLogger(__name__).info(
                 "entries: backfilled setlist for %d rows", _backfilled
+            )
+
+        # One-time backfill: classify entries using bobdylan_shows + dylan_performances + keywords.
+        if not conn.execute("SELECT 1 FROM meta WHERE key='lb_category_backfill_v1'").fetchone():
+            _classified = classify_entry_categories(db_path, conn=conn)
+            conn.execute(
+                "INSERT OR REPLACE INTO meta(key, value) VALUES('lb_category_backfill_v1', '1')"
+            )
+            logging.getLogger(__name__).info(
+                "entries: classified lb_category for %d rows (concert=%d, unknown=%d)",
+                _classified["classified"],
+                _classified.get("concert", 0),
+                _classified.get("unknown", 0),
             )
 
         # Always commit: UPDATE above opens a Python implicit transaction regardless
@@ -1667,6 +1687,164 @@ def get_entries_by_lb_list(lb_numbers: list[int], db_path=None) -> list[dict]:
     return [dict(r) for r in rows]
 
 
+_PERF_CATEGORY_MAP: dict[str, str] = {
+    "MCONCERT":   "concert",
+    "RADIO":      "radio",
+    "TV":         "tv",
+    "INTERVIEW":  "interview",
+    "SESSION":    "studio",
+    "SDEMO":      "studio",
+    "HOME":       "studio",
+    "REHEARSAL":  "rehearsal",
+    "SOUNDCHECK": "soundcheck",
+    "COMP":       "compilation",
+}
+
+# (category, list-of-lowercase-substrings) checked against description + location
+_KEYWORD_RULES: list[tuple[str, list[str]]] = [
+    ("interview",   ["interview", "press conference", "in conversation with"]),
+    ("radio",       ["radio broadcast", "radio show", "radio station", "for radio", "on the radio"]),
+    ("tv",          ["television", "tv show", "tv broadcast", "tv appearance", "tv special",
+                     "late show", "tonight show", "ed sullivan", "letterman"]),
+    ("studio",      ["studio session", "studio recording", "recording session",
+                     "demo session", "demo recording"]),
+    ("rehearsal",   ["rehearsal"]),
+    ("soundcheck",  ["soundcheck", "sound check"]),
+    ("compilation", ["compilation", "greatest hits", "best of", "anthology"]),
+]
+
+
+def _entry_date_to_iso_local(date_str: str) -> str | None:
+    """Convert entries.date_str (M/D/YY) to YYYY-MM-DD; return None for 'xx' dates."""
+    if not date_str or "xx" in date_str.lower():
+        return None
+    parts = date_str.split("/")
+    if len(parts) != 3:
+        return None
+    try:
+        month, day, year = int(parts[0]), int(parts[1]), int(parts[2])
+        if year < 100:
+            year = 1900 + year if year >= 49 else 2000 + year
+        return f"{year:04d}-{month:02d}-{day:02d}"
+    except ValueError:
+        return None
+
+
+def classify_entry_categories(db_path=None, conn=None) -> dict[str, int]:
+    """Classify every entry in the DB and write lb_category.
+
+    Priority:
+      1. bobdylan_shows date match → 'concert'
+      2. dylan_performances.category → mapped via _PERF_CATEGORY_MAP → known category or 'other'
+      3. Keyword search in description + location → non-concert category
+      4. Fallback → 'unknown'
+
+    Args:
+        db_path: Optional DB path override.
+        conn: Optional existing connection (used during init_db backfill to share
+              the write-locked connection).
+
+    Returns:
+        Dict of counts: {classified, concert, radio, tv, interview, studio,
+        rehearsal, soundcheck, compilation, other, unknown}.
+    """
+    _own_conn = conn is None
+    if _own_conn:
+        conn = get_connection(db_path)
+
+    # Build a set of all dates present in bobdylan_shows for fast lookup
+    bd_dates: set[str] = {
+        r[0] for r in conn.execute("SELECT DISTINCT date_str FROM bobdylan_shows").fetchall()
+    }
+    # Build a dict of ISO date → mapped category from dylan_performances (first match wins)
+    perf_map: dict[str, str] = {}
+    for row in conn.execute("SELECT date_str, category FROM dylan_performances").fetchall():
+        iso = row[0]
+        cat = _PERF_CATEGORY_MAP.get((row[1] or "").upper())
+        if cat and iso not in perf_map:
+            perf_map[iso] = cat
+
+    entries = conn.execute(
+        "SELECT lb_number, date_str, description, location FROM entries"
+    ).fetchall()
+
+    counts: dict[str, int] = {"classified": 0}
+    updates: list[tuple[str, int]] = []
+
+    for row in entries:
+        lb   = row[0]
+        iso  = _entry_date_to_iso_local(row[1] or "")
+        desc = (row[2] or "").lower()
+        loc  = (row[3] or "").lower()
+        text = desc + " " + loc
+
+        # Tier 1: bobdylan.com concert date
+        if iso and iso in bd_dates:
+            category = "concert"
+        # Tier 2: dylan_performances mapping
+        elif iso and iso in perf_map:
+            category = perf_map[iso]
+        # Tier 3: keyword heuristics (non-concert only)
+        else:
+            category = "unknown"
+            for cat, keywords in _KEYWORD_RULES:
+                if any(kw in text for kw in keywords):
+                    category = cat
+                    break
+
+        updates.append((category, lb))
+        counts["classified"] = counts.get("classified", 0) + 1
+        counts[category] = counts.get(category, 0) + 1
+
+    conn.executemany("UPDATE entries SET lb_category=? WHERE lb_number=?", updates)
+    if _own_conn:
+        conn.commit()
+
+    return counts
+
+
+def classify_one_entry(date_str: str, description: str, location: str, conn) -> str:
+    """Return the lb_category for a single entry given its field values and an open connection.
+
+    Uses the same priority order as classify_entry_categories():
+      1. bobdylan_shows date match → 'concert'
+      2. dylan_performances category map
+      3. Keyword heuristics (non-concert)
+      4. 'unknown'
+
+    Intended for use inside write-queue closures where the connection is already open.
+
+    Args:
+        date_str: Raw entries.date_str value (e.g. '7/28/00').
+        description: Entry description text (may be empty).
+        location: Entry location text (may be empty).
+        conn: Open SQLite connection.
+
+    Returns:
+        Category string.
+    """
+    iso = _entry_date_to_iso_local(date_str or "")
+
+    if iso:
+        if conn.execute("SELECT 1 FROM bobdylan_shows WHERE date_str=? LIMIT 1", (iso,)).fetchone():
+            return "concert"
+        perf = conn.execute(
+            "SELECT category FROM dylan_performances WHERE date_str=? LIMIT 1", (iso,)
+        ).fetchone()
+        if perf:
+            mapped = _PERF_CATEGORY_MAP.get((perf[0] or "").upper())
+            if mapped:
+                return mapped
+            return "other"
+
+    text = (description or "").lower() + " " + (location or "").lower()
+    for cat, keywords in _KEYWORD_RULES:
+        if any(kw in text for kw in keywords):
+            return cat
+
+    return "unknown"
+
+
 def get_entry(lb_number, db_path=None):
     with get_connection(db_path) as conn:
         entry = conn.execute("SELECT * FROM entries WHERE lb_number=?", (lb_number,)).fetchone()
@@ -1956,6 +2134,36 @@ def get_collection_duplicates(db_path=None) -> list:
                 "unowned": [dict(r) for r in all_lbs if not r["owned"]],
             })
     return results
+
+
+def audit_collection_checksums(db_path=None) -> dict:
+    """Cross-check my_collection lb_numbers against the checksums table.
+
+    Returns:
+        Dict with keys:
+            total (int): total entries in my_collection.
+            missing_checksums (int): count with zero checksum rows.
+            entries (list[dict]): lb_number, folder_name, disk_path,
+                date_str, location, lb_status for each entry with no checksums.
+    """
+    with get_connection(db_path) as conn:
+        total = conn.execute("SELECT COUNT(*) FROM my_collection").fetchone()[0]
+        rows = conn.execute("""
+            SELECT c.lb_number, c.folder_name, c.disk_path,
+                   e.date_str, e.location, lm.lb_status
+            FROM my_collection c
+            LEFT JOIN entries e ON e.lb_number = c.lb_number
+            LEFT JOIN lb_master lm ON lm.lb_number = c.lb_number
+            WHERE NOT EXISTS (
+                SELECT 1 FROM checksums ch WHERE ch.lb_number = c.lb_number
+            )
+            ORDER BY c.lb_number
+        """).fetchall()
+    return {
+        "total": total,
+        "missing_checksums": len(rows),
+        "entries": [dict(r) for r in rows],
+    }
 
 
 # ── FEAT-13: Granular Collection Data Management ──────────────────────────────
