@@ -1,20 +1,4 @@
 
-BUG-121: Pipeline lookup not found — LB-12347 (Farm Aid) checksums pass verify but have no DB match
-Status: Open
-File(s): backend/db.py:lookup_checksums, backend/app.py:4600
-Reported: 2026-05-31
-Root cause: Farm Aid 1985-09-22 (LB-12347) is registered in my_collection and audio passes verify (V:✓),
-  but parse_checksum_text + lookup_checksums return no match despite 4 parsed checksum entries. The recording
-  is in my_collection but its checksums are absent from the entries/checksums tables. Likely imported via
-  folder-link or manual add without a full checksum import — the DB record exists but the lookup index is
-  incomplete for this entry.
-Fix: After any my_collection add, verify the new lb_number has at least one checksum row in the DB. Add a
-  "re-index checksums" action to the Collection screen for entries where lookup returns no match. Also
-  add a /api/collection/audit endpoint that cross-checks my_collection lb_numbers against the checksums
-  table and flags missing entries.
-Reproduce: run tests/test_pipeline_smoke.py --seed 2 --n 500. Look for V:✓ L:✗ (verify pass, lookup bad):
-  /mnt/DYLAN1/Concerts/1985/1985-09-22 FARM AID 1, Champaign, Illinois (LB-12347)
-
 BUG-120: Pipeline verify mismatch — 2 folders where audio no longer matches stored checksums
 Status: Open
 File(s): backend/checksum_utils.py:verify_folder, backend/app.py:4576
@@ -30,21 +14,6 @@ Reproduce: run tests/test_pipeline_smoke.py --seed 2 --n 500. Look for V:✗ ent
   • /mnt/DYLAN2/Concerts/1978/1978-06-20 London, England (LB-06548) — verify fail, lookup OK
   • /mnt/DYLAN2/PRIVATE LB/Official Releases.../The Bootlegseries Volume 12 The Cutting Edge [24-96] LB 12181
     No Torrent No trade — verify fail AND lookup not found (760 entries parsed)
-
-BUG-119: Pipeline rename — NFT private entries with no date/location produce bare LB-NNNNN-NFT (strips location)
-Status: Open
-File(s): backend/folder_naming.py:build_standard_name, backend/app.py:4617
-Reported: 2026-05-31
-Root cause: build_standard_name falls back to "LB-NNNNN" when date_str or location is empty in the entries
-  table, then apply_nft_suffix appends -NFT. Result is "LB-08985-NFT" even though the folder and source
-  both contain date and location info. These private entries appear to have no date_str/location in the DB.
-  Accepting the rename proposal would silently strip the date and location from the folder name.
-Fix: Investigate why NFT entries (e.g. LB-08985, LB-09233, LB-10436, LB-13072, LB-13294, LB-13753,
-  LB-13848, LB-13877, LB-14594, LB-14836) have no date or location in the entries table. Either populate
-  missing fields during scrape/import, or make build_standard_name use the current folder name as a fallback
-  rather than the bare LB number when date/location are absent.
-Reproduce: run tests/test_pipeline_smoke.py --seed 1 --n 100 and filter for rename proposals ending in -NFT
-  that don't also have the date in the proposed name. Observed 6+ cases in 100-folder sample.
 
 BUG-118: Pipeline lookup conflict — 11 folders whose checksums match 2–5 LB entries
 Status: Open
@@ -71,26 +40,6 @@ Reproduce: run tests/test_pipeline_smoke.py --seed 2 --n 500. All 11 conflicts f
   • LB-06198 vs LB-06195 (2008-06-16 Bergamo — mirror of above)
   • LB-11862 vs LB-11381 (2014 Tokyo)
   • LB-04332 vs LB-04946
-
-BUG-117: Pipeline — ~12% of collection folders have no checksum files on disk
-Status: Open
-File(s): backend/app.py:4587, backend/checksum_utils.py:verify_folder
-Reported: 2026-05-31
-Root cause: 11/100 (seed 1) and 60/500 (seed 2) randomly sampled my_collection entries have no .ffp/.md5/.st5
-  files on disk, producing verify=Incomplete + lookup=No checksums. Folders exist on disk. Could be:
-  (a) recordings imported to collection before checksums were generated, (b) checksum files accidentally
-  deleted, or (c) checksums stored in a subfolder — the pipeline lookup step uses folder.iterdir() (top-level
-  only) while verify_folder uses rglob for audio. If checksums sit one level down, verify finds the audio but
-  lookup misses the checksum. Rate consistent across both runs; extrapolates to ~1,900 of 15,967 entries.
-Fix: Check one of the sample folders manually to determine which case applies. If (c), change the lookup
-  step's checksum scan from iterdir() to rglob('*.ffp') etc., matching how audio is found. Add a Collection
-  audit endpoint that counts entries where no checksum file exists.
-Reproduce: run tests/test_pipeline_smoke.py --seed 2 --n 500. V:~ L:~ (warn/warn) pattern. Sample folders:
-  • /mnt/DYLAN1/Concerts/1996/1996-06-15 Tangkrogen Aarhus, Denmark (LB-01409)
-  • /mnt/DYLAN2/Concerts/1980/1980-11-26 Golden Hall, San Diego, Ca (LB-00476)
-  • /mnt/DYLAN1/Concerts/1984/1984-06-02 Basel, Switzerland, St Jakob Stadion (LB-03897)
-  • /mnt/DYLAN1/Concerts/2005/2005-11-21 London, England, Brixton Academy (LB-03826)
-  • /mnt/DYLAN1/Concerts/1991/1991-11-08 Louisville (LB-00427)
 
 BUG-111: Forum post description shows checksum file contents instead of entry description
 Status: Fixed
