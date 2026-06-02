@@ -807,6 +807,20 @@ def create_app() -> Flask:
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
+    @app.route("/api/entries/reclassify", methods=["POST"])
+    def entries_reclassify() -> Response:
+        """Re-classify all entries lb_category using bobdylan_shows + dylan_performances + keywords.
+
+        Curator-only. Returns classification counts.
+        """
+        if not database.is_curator():
+            return jsonify({"error": "curator_required"}), 403
+        try:
+            counts = database.classify_entry_categories()
+            return jsonify({"ok": True, **counts})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
     # ── My Collection ────────────────────────────────────────────────────────
 
     @app.route("/api/collection", methods=["GET"])
@@ -1358,6 +1372,20 @@ def create_app() -> Flask:
                 [int(lb) for lb in lb_numbers]
             )
             return jsonify({"ok": True, "deleted": deleted})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/collection/audit", methods=["GET"])
+    def collection_audit() -> Response:
+        """Cross-check my_collection against the checksums table.
+
+        Returns:
+            JSON {total, missing_checksums, entries:[{lb_number, folder_name,
+            disk_path, date_str, location, lb_status}]} listing every
+            collection entry that has no checksum rows in the DB.
+        """
+        try:
+            return jsonify(database.audit_collection_checksums())
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
@@ -4548,7 +4576,11 @@ def create_app() -> Flask:
 
     def _pipeline_process_folder(folder_path: str, steps: set) -> dict:
         """Run one or more pipeline steps on a single folder and return a PipelineRow dict."""
-        from backend.folder_naming import build_standard_name as _build_name
+        from backend.folder_naming import (
+            build_standard_name as _build_name,
+            apply_nft_suffix,
+            strip_nft_suffix,
+        )
 
         folder = Path(folder_path)
         folder_name = folder.name
@@ -4587,8 +4619,9 @@ def create_app() -> Flask:
         # ── Step 2: Lookup ────────────────────────────────────────────────────
         if "lookup" in steps:
             chk_parts: list[str] = []
-            for f in sorted(folder.iterdir()):
-                if f.suffix.lower() in (".ffp", ".md5", ".st5"):
+            _chk_exts = {".ffp", ".md5", ".st5"}
+            for f in sorted(folder.rglob("*")):
+                if f.is_file() and f.suffix.lower() in _chk_exts:
                     try:
                         chk_parts.append(f.read_text(errors="ignore"))
                     except OSError:
@@ -4622,6 +4655,12 @@ def create_app() -> Flask:
                 location = (entry.get("location") or "").strip()
                 lb_status = database.get_lb_status(lb_number)
                 proposed = _build_name(lb_number, date_str, location, lb_status)
+                # BUG-119: when DB has no date/location the standard name falls
+                # back to bare LB-NNNNN[-NFT], which would silently strip any
+                # date/location already in the folder name.  Use the current
+                # folder name as the base and only adjust the NFT suffix.
+                if not date_str or not location:
+                    proposed = apply_nft_suffix(strip_nft_suffix(folder_name), lb_status)
                 if folder_name == proposed:
                     row["rename"] = {"status": "ok", "label": "Correct", "proposed": None}
                 else:

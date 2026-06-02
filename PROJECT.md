@@ -175,6 +175,7 @@ Unique index on `(checksum, lb_number)`.
 | scraped_at | TIMESTAMP | When row was last scraped |
 | taper_name | TEXT | Parsed taper handle/name (via `extract_taper_and_source`) |
 | source_chain | TEXT | Parsed recording equipment chain (via `extract_taper_and_source`) |
+| lb_category | TEXT | Entry category: `'concert'`, `'interview'`, `'studio'`, `'compilation'`, `'tv'`, `'radio'`, `'rehearsal'`, `'soundcheck'`, `'other'`, `'unknown'`. Populated via `classify_entry_categories()`. |
 
 ### `entry_files` — Attachment files per entry
 | Column | Type | Notes |
@@ -622,6 +623,7 @@ Indexes: `idx_archive_uploads_lb(lb_number)`, `idx_archive_uploads_status(status
 |--------|-------|-------------|
 | POST | `/api/collection/purge` | Purge a data scope. Body: `{scope}`. Scopes: `collection`, `wishlist`, `personal_meta`, `integrity_events`, `entry_changes`. |
 | POST | `/api/collection/delete_bulk` | Remove specific entries from My Collection. Body: `{lb_numbers:[...]}`. Returns `{ok, deleted}`. |
+| GET | `/api/collection/audit` | Cross-check my_collection against checksums table. Returns `{total, missing_checksums, entries:[{lb_number, folder_name, disk_path, date_str, location, lb_status}]}` for entries with no checksum rows. |
 | GET | `/api/collection/export/html` | Download My Collection as a self-contained HTML table. Returns `collection.html` attachment. |
 | GET | `/api/collection/export/m3u` | Download My Collection as an M3U playlist of audio files. Walks each entry's `disk_path`; skips missing folders. Returns `collection.m3u` attachment. |
 
@@ -1355,6 +1357,7 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 |------|--------|
 | 2026-05-30 | Archive.org upload integration: `backend/archive_org.py` (IA S3 PUT, progress state, stop support); `archive_org_uploads` table; `SERVICE_IA` keyring slot; 8 `/api/archive_org/` routes; `ArchiveOrgSection` component in `ScreenSharing` with credentials form, upload form, progress bar, history table. (TODO-093) |
 | 2026-05-30 | Collection Trading + File Sharing features (branch feat/trading-and-sharing): `friend_collections` + `friend_collection_entries` tables; 5 `/api/trading/` routes; `backend/sharing.py` module (ephemeral share state, ZIP streaming, Cloudflare Tunnel); 7 `/api/share/` routes; `ScreenTrading` + `ScreenSharing` in gui_next; Trading + Sharing nav items under Library group. |
+| 2026-06-01 | `lb_category` TEXT column added to `entries` (MASTER_SCHEMA_VERSION→6). `classify_entry_categories()` in `db.py` classifies all entries: concerts via `bobdylan_shows` date-join (84.7%), other categories via `dylan_performances` map + keyword heuristics, fallback to `'unknown'`. One-time backfill in `init_db()`; re-run via `POST /api/entries/reclassify` (curator). |
 | 2026-05-30 | `taper_name` + `source_chain` TEXT columns added to `entries` via ALTER TABLE migration. `extract_taper_and_source()` in `db.py` parses free-text descriptions with 14 pattern rules; ~80.5% coverage on 16k entries. Backfill run on first `init_db()` after migration. `scraper.py` computes both columns on every scrape. `ScreenSearch.tsx` shows Taper/Source as toggleable columns and in the detail panel meta grid. |
 | 2026-05-29 | Windows installer + portable switched to Electron/React (gui_next): `losslessbob_backend.spec` made cross-platform (Windows watchdog, shntool.exe, no fingerprinting); `backend/paths.py` frozen-Windows data dir → `%LOCALAPPDATA%\LosslessBob`; electron-builder NSIS + portable targets; `release.yml` build-windows rebuilt. |
 | 2026-05-29 | Linux AppImage switched to Electron/React (gui_next): new `losslessbob_backend.spec` (onefile PyInstaller, no PyQt6); `gui_next/package.json` gains electron-builder + dist:linux script; `gui_next/src/main/index.ts` ensureBackend() uses bundled binary when packaged; `release.yml` build-linux job rebuilt around electron-builder. |

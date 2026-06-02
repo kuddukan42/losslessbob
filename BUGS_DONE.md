@@ -1,6 +1,30 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-121: Pipeline lookup not found — LB-12347 (Farm Aid) checksums pass verify but have no DB match
+Status: Fixed
+File(s): backend/db.py:audit_collection_checksums, backend/app.py:collection_audit
+Reported: 2026-05-31
+Fixed: 2026-06-01
+Root cause: Entries added to my_collection via folder-link or manual add have no corresponding rows in the checksums table. The DB record exists but the lookup index is incomplete, so verify passes (using on-disk .ffp/.md5) but lookup returns nothing.
+Fix: Added GET /api/collection/audit endpoint and audit_collection_checksums() DB function. Returns {total, missing_checksums, entries:[...]} listing every collection entry with zero checksum rows, so the user can identify and re-import affected entries.
+
+BUG-119: Pipeline rename — NFT private entries with no date/location produce bare LB-NNNNN-NFT
+Status: Fixed
+File(s): backend/app.py:4638
+Reported: 2026-05-31
+Fixed: 2026-06-01
+Root cause: build_standard_name falls back to "LB-NNNNN" when date_str or location is empty in the entries table, then apply_nft_suffix appends -NFT. Result is "LB-08985-NFT" even though the folder contains date and location in its name. Accepting the rename proposal would silently strip the date and location from the folder name.
+Fix: In _pipeline_process_folder rename step: when date_str or location is absent from DB, use current folder name (NFT suffix stripped) as the base and apply_nft_suffix to toggle the -NFT marker — never touching the date/location portion of the name.
+
+BUG-117: Pipeline — ~12% of collection folders have no checksum files on disk
+Status: Fixed
+File(s): backend/app.py:4604
+Reported: 2026-05-31
+Fixed: 2026-06-01
+Root cause: The pipeline lookup step used folder.iterdir() (top-level only) to find .ffp/.md5/.st5 files, while verify_folder uses rglob for audio. When checksum files sit in a subfolder, verify finds the audio but the lookup step misses the checksum entirely, producing V:~ L:~ (Incomplete / No checksums) instead of a proper match.
+Fix: Changed iterdir() to folder.rglob("*") with an is_file() + suffix check so checksums in subfolders are included.
+
 BUG-111: LBDIR check inflates track count (16 instead of 7) for SHN recordings
 Status: Fixed
 File(s): backend/checksum_utils.py:615-632
