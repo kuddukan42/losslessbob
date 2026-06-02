@@ -8,6 +8,7 @@ import { Button, Chip, IconButton, Input, Pill } from '../components'
 import { TableShell, TH, TR, TD, GroupRow } from '../components'
 import { useLookupStore } from '../lib/lookupStore'
 import { useSpectrogramStore } from '../lib/spectrogramStore'
+import { useFolderQueueStore } from '../lib/folderQueueStore'
 
 const BASE = window.api.flaskBase
 
@@ -252,7 +253,8 @@ interface CtxMenuItem {
   label: string
   disabled?: boolean
   danger?: boolean
-  action: () => void
+  action?: () => void
+  children?: CtxMenuItem[]
 }
 
 function ContextMenu({ state, onClose, items }: {
@@ -261,6 +263,7 @@ function ContextMenu({ state, onClose, items }: {
   items: (CtxMenuItem | 'sep')[]
 }) {
   const ref = useRef<HTMLDivElement>(null)
+  const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null)
 
   useEffect(() => {
     const down = (e: MouseEvent) => {
@@ -278,6 +281,7 @@ function ContextMenu({ state, onClose, items }: {
   const menuW = 216
   const left = Math.min(state.x, window.innerWidth  - menuW - 8)
   const top  = Math.min(state.y, window.innerHeight - 320  - 8)
+  const submenuOnLeft = left + menuW + menuW + 8 > window.innerWidth
 
   return (
     <div ref={ref} style={{
@@ -293,29 +297,70 @@ function ContextMenu({ state, onClose, items }: {
         if (item === 'sep') {
           return <div key={`sep-${i}`} style={{ height: 1, background: 'var(--lbb-border)', margin: '3px 0' }} />
         }
+        const hasSubmenu = !!(item.children?.length)
+        const submenuOpen = activeSubmenu === item.label
         return (
-          <button
-            key={item.label}
-            disabled={item.disabled}
-            onClick={() => { if (!item.disabled) { item.action(); onClose() } }}
-            style={{
-              display: 'block', width: '100%', textAlign: 'left',
-              padding: '6px 14px', fontSize: 'var(--lbb-fs-13)', border: 'none',
-              cursor: item.disabled ? 'default' : 'pointer',
-              background: 'transparent',
-              color: item.disabled
-                ? 'var(--lbb-fg3)'
-                : item.danger ? 'var(--lbb-err-fg)' : 'var(--lbb-fg)',
-            }}
-            onMouseEnter={e => {
-              if (!item.disabled) (e.currentTarget as HTMLElement).style.background = 'var(--lbb-accent-bg)'
-            }}
-            onMouseLeave={e => {
-              (e.currentTarget as HTMLElement).style.background = 'transparent'
-            }}
+          <div key={item.label} style={{ position: 'relative' }}
+            onMouseEnter={() => setActiveSubmenu(hasSubmenu ? item.label : null)}
+            onMouseLeave={() => { if (!hasSubmenu) setActiveSubmenu(null) }}
           >
-            {item.label}
-          </button>
+            <button
+              disabled={item.disabled}
+              onClick={() => { if (!item.disabled && item.action) { item.action(); onClose() } }}
+              style={{
+                display: 'flex', width: '100%', textAlign: 'left', alignItems: 'center',
+                padding: '6px 14px', fontSize: 'var(--lbb-fs-13)', border: 'none',
+                cursor: item.disabled ? 'default' : 'pointer',
+                background: submenuOpen ? 'var(--lbb-accent-bg)' : 'transparent',
+                color: item.disabled
+                  ? 'var(--lbb-fg3)'
+                  : item.danger ? 'var(--lbb-err-fg)' : 'var(--lbb-fg)',
+              }}
+              onMouseEnter={e => {
+                if (!item.disabled) (e.currentTarget as HTMLElement).style.background = 'var(--lbb-accent-bg)'
+              }}
+              onMouseLeave={e => {
+                if (!submenuOpen) (e.currentTarget as HTMLElement).style.background = 'transparent'
+              }}
+            >
+              <span style={{ flex: 1 }}>{item.label}</span>
+              {hasSubmenu && <span style={{ fontSize: 10, opacity: 0.6, marginLeft: 6 }}>›</span>}
+            </button>
+            {hasSubmenu && submenuOpen && (
+              <div style={{
+                position: 'absolute',
+                top: -4,
+                [submenuOnLeft ? 'right' : 'left']: menuW - 2,
+                background: 'var(--lbb-surface)',
+                border: '1px solid var(--lbb-border)',
+                borderRadius: 8, padding: '4px 0',
+                minWidth: 160,
+                boxShadow: '0 8px 24px rgba(0,0,0,0.22)',
+                zIndex: 2001,
+              }}>
+                {item.children!.map(child => (
+                  <button
+                    key={child.label}
+                    disabled={child.disabled}
+                    onClick={() => { if (!child.disabled && child.action) { child.action(); onClose() } }}
+                    style={{
+                      display: 'block', width: '100%', textAlign: 'left',
+                      padding: '6px 14px', fontSize: 'var(--lbb-fs-13)', border: 'none',
+                      cursor: child.disabled ? 'default' : 'pointer',
+                      background: 'transparent',
+                      color: child.disabled ? 'var(--lbb-fg3)' : 'var(--lbb-fg)',
+                    }}
+                    onMouseEnter={e => {
+                      if (!child.disabled) (e.currentTarget as HTMLElement).style.background = 'var(--lbb-accent-bg)'
+                    }}
+                    onMouseLeave={e => {
+                      (e.currentTarget as HTMLElement).style.background = 'transparent'
+                    }}
+                  >{child.label}</button>
+                ))}
+              </div>
+            )}
+          </div>
         )
       })}
     </div>
@@ -1787,6 +1832,7 @@ export function ScreenCollection(): React.JSX.Element {
   const navigate                    = useNavigate()
   const { clearSources, addSource } = useLookupStore()
   const addPendingSpectro            = useSpectrogramStore(s => s.addPending)
+  const addToFolderQueue             = useFolderQueueStore(s => s.addFolders)
   const queryClient = useQueryClient()
   const refetch    = useCallback(
     () => queryClient.invalidateQueries({ queryKey: ['collection-prefetch'] }),
@@ -2402,6 +2448,12 @@ export function ScreenCollection(): React.JSX.Element {
       }
     } catch { showToast(t('collection.toast.spectrogramRequestFailed'), 'bad') }
   }, [showToast, addPendingSpectro, navigate])
+
+  const handleCtxSendTo = useCallback((row: CollectionRow, route: string) => {
+    if (!row.diskPath) return
+    addToFolderQueue([row.diskPath])
+    navigate(route)
+  }, [addToFolderQueue, navigate])
 
   // Returns rows to act on from a right-click: all checked rows if the clicked row is checked, else just that row.
   const getCtxRows = useCallback((row: CollectionRow): CollectionRow[] => {
@@ -3281,6 +3333,16 @@ export function ScreenCollection(): React.JSX.Element {
               label: 'Generate Spectrograms',
               disabled: !ctxMenu.row.diskPath,
               action: () => handleCtxSpectrograms(ctxMenu.row),
+            },
+            {
+              label: 'Send to →',
+              disabled: !ctxMenu.row.diskPath,
+              children: [
+                { label: 'Pipeline', action: () => handleCtxSendTo(ctxMenu.row, '/pipeline') },
+                { label: 'Verify',   action: () => handleCtxSendTo(ctxMenu.row, '/verify') },
+                { label: 'LBDIR',    action: () => handleCtxSendTo(ctxMenu.row, '/lbdir') },
+                { label: 'Spectrograms', action: () => handleCtxSendTo(ctxMenu.row, '/spectrograms') },
+              ],
             },
             'sep',
             {
