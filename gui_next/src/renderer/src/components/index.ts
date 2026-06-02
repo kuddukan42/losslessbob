@@ -16,3 +16,9 @@ export type { TableShellProps, THProps, TRProps, TDProps, GroupRowProps } from '
 
 export { AppShell } from './AppShell'
 export type { AppShellProps } from './AppShell'
+
+export { SplashOverlay } from './SplashOverlay'
+export type { SplashOverlayProps } from './SplashOverlay'
+
+export { AboutDialog } from './AboutDialog'
+export type { AboutDialogProps } from './AboutDialog'

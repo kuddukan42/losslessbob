@@ -100,10 +100,12 @@ function Sidebar({
   active,
   onNav,
   curatorMode,
+  onAbout,
 }: {
   active: string
   onNav: (id: string) => void
   curatorMode: boolean
+  onAbout?: () => void
 }) {
   const { t } = useTranslation()
   const setCuratorMode = useSettingsStore((s) => s.setCuratorMode)
@@ -455,6 +457,8 @@ function Sidebar({
 
         <button
           type="button"
+          title="About LosslessBob"
+          onClick={onAbout}
           style={{
             width: 24,
             height: 24,
@@ -462,7 +466,7 @@ function Sidebar({
             background: 'transparent',
             border: '1px solid transparent',
             color: 'var(--lbb-fg3)',
-            cursor: 'pointer',
+            cursor: onAbout ? 'pointer' : 'default',
             display: 'inline-flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -689,6 +693,7 @@ export interface AppShellProps {
   crumbs?: string[]
   topActions?: React.ReactNode
   statusExtra?: React.ReactNode
+  onAbout?: () => void
   children: React.ReactNode
 }
 
@@ -696,6 +701,7 @@ export function AppShell({
   crumbs,
   topActions,
   statusExtra,
+  onAbout,
   children,
 }: AppShellProps) {
   const navigate = useNavigate()
@@ -724,7 +730,7 @@ export function AppShell({
       }}
     >
       <div style={{ flex: 1, display: 'flex', minHeight: 0 }}>
-        <Sidebar active={active} onNav={onNav} curatorMode={curatorMode} />
+        <Sidebar active={active} onNav={onNav} curatorMode={curatorMode} onAbout={onAbout} />
         <main
           style={{
             flex: 1,

@@ -115,3 +115,9 @@ table tbody tr:hover td {
   0%   { transform: translateX(-100%); }
   100% { transform: translateX(350%); }
 }
+
+/* Splash progress bar — indeterminate sliding fill */
+@keyframes lbbIndet {
+  0%   { transform: translateX(-110%); }
+  100% { transform: translateX(290%); }
+}

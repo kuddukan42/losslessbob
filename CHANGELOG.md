@@ -1,3 +1,13 @@
+[2026-06-01] — feat(gui): SplashOverlay + AboutDialog — startup splash A and tabbed About C
+Added: gui_next/src/renderer/src/components/SplashOverlay.tsx: Splash A "Launch card" — plays real boot-phase sequence at measured speed (~2.4 s), polls Flask for real done signal, indeterminate bar on overrun, fades out on ready
+Added: gui_next/src/renderer/src/components/AboutDialog.tsx: About C "Tabbed" — four tabs (About / Tech / Credits / Changes) with double-square brand header, close on Escape or backdrop click
+Changed: gui_next/src/renderer/src/App.tsx: mount SplashOverlay on startup; manage showAbout state; pass onAbout to AppShell
+Changed: gui_next/src/renderer/src/components/AppShell.tsx: add onAbout prop; wire sidebar "more" button to open About dialog
+Changed: gui_next/src/renderer/src/index.css: add @keyframes lbbIndet for splash progress bar indeterminate state
+
+[2026-06-01] — feat(gui_next): collection right-click "Send to →" submenu for pipeline screens
+Added: gui_next/src/renderer/src/screens/ScreenCollection.tsx: import useFolderQueueStore; extend ContextMenu to support children (submenu flyout); add handleCtxSendTo callback; add "Send to →" context menu item with Pipeline / Verify / LBDIR / Spectrograms sub-options
+
 [2026-06-01] — fix(backend): BUG-121 add GET /api/collection/audit — flag collection entries missing checksum rows
 Added: backend/db.py:audit_collection_checksums(): query my_collection LEFT JOIN checksums, return {total, missing_checksums, entries} for lb_numbers with zero checksum rows
 Added: backend/app.py: GET /api/collection/audit route exposes audit_collection_checksums(); documented in PROJECT.md

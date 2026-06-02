@@ -3,7 +3,7 @@ import { HashRouter, Routes, Route, Navigate, useLocation } from 'react-router-d
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { applyTheme, loadTheme, saveTheme, getSystemMode } from './lib/tokens'
 import type { ThemeOptions, Mode, Accent, Density } from './lib/tokens'
-import { AppShell } from './components'
+import { AppShell, SplashOverlay, AboutDialog } from './components'
 import {
   Pill, Chip, Button, IconButton, Input, Kbd,
   Card, Toolbar, Banner, Stat, SectionHead,
@@ -248,10 +248,15 @@ export default function App(): React.JSX.Element {
   const language = useSettingsStore((s) => s.language)
   useEffect(() => { i18n.changeLanguage(language) }, [language])
 
+  const [splashDone, setSplashDone] = useState(false)
+  const [showAbout, setShowAbout] = useState(false)
+
   return (
     <QueryClientProvider client={queryClient}>
     <HashRouter>
-      <AppShell>
+      {!splashDone && <SplashOverlay onDone={() => setSplashDone(true)} />}
+      {showAbout && <AboutDialog onClose={() => setShowAbout(false)} />}
+      <AppShell onAbout={() => setShowAbout(true)}>
         <KeepAlivePipeline />
         <Routes>
           <Route path="/"            element={<ScreenHome />} />
