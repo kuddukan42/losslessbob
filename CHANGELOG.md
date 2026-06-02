@@ -1,3 +1,6 @@
+[2026-06-01] — refactor(tools): tapematch cli.py — sequential pair processing, one source in RAM at a time
+Changed: tools/tapematch/tapematch/cli.py: replaced streams/trimmed/monos dicts (all N sources simultaneously) with a single trim_bounds pass; added _load_trimmed_mono helper; inlined pairwise matrix loop so each source is loaded per pair and freed immediately; ref_mono kept in RAM for lag + matrix ref-column to avoid redundant reloads; trim bounds saved to root/.tapematch_meta.json after Pass 1; lineage pass loads stereo stream per source and frees after each
+
 [2026-06-01] — feat(gui): SplashOverlay + AboutDialog — startup splash A and tabbed About C
 Added: gui_next/src/renderer/src/components/SplashOverlay.tsx: Splash A "Launch card" — plays real boot-phase sequence at measured speed (~2.4 s), polls Flask for real done signal, indeterminate bar on overrun, fades out on ready
 Added: gui_next/src/renderer/src/components/AboutDialog.tsx: About C "Tabbed" — four tabs (About / Tech / Credits / Changes) with double-square brand header, close on Escape or backdrop click
