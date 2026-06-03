@@ -1,6 +1,35 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-089: Add acknowledgements section to About dialog
+Priority: Low
+Status: Done
+Added: 2026-05-24
+Closed: 2026-06-02
+Description: Add an Acknowledgements section to the About dialog crediting key contributors
+  and resources, including at minimum:
+    • Losslessbob (the original archive/project that inspired this tool)
+    • Robert Cook (contributor)
+    • Rumrunners (community/resource)
+  Include a scrollable or expandable area if the list grows long. Keep styling consistent
+  with the existing About dialog layout.
+
+---
+
+TODO-105: Checksum lookup — flag matches against user's own collection
+Priority: High
+Status: Done
+Added: 2026-05-27
+Closed: 2026-06-02
+Description: lookup_checksums() now cross-references resolved LB numbers against
+  my_collection and annotates each summary/detail item with owned+lbdir_verified.
+  GUI shows a banner (verified=green / unverified=amber) and replaces the +WL button
+  with an ownership pill on owned rows. CLI prints [IN COLLECTION · LBDIR VERIFIED]
+  or [IN COLLECTION] on the LB header line. No "upgrade" logic — lbdir verification
+  is the completeness signal.
+
+---
+
 TODO-093: Archive.org uploader
 Priority: Low
 Status: Done

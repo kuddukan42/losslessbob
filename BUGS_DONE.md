@@ -1,6 +1,46 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-111: Forum post description shows checksum file contents instead of entry description
+Status: Fixed
+File(s): backend/forum_poster.py:268-279
+Reported: 2026-05-31
+Fixed: 2026-05-31
+Root cause: _read_lb_txt picked the first .txt file alphabetically. Entries with .ffp.txt fingerprint files (e.g. LBF-12220-Bob-Dylan-May-1960.ffp.txt) sorted before the actual info txt file, so checksum hashes landed in the forum post description section. Additionally, when multiple plain .txt files exist, the main info file (which contains LB-NNNNN in its name) sorted after short filenames like Note.txt.
+Fix: Changed suffix filter to f.suffixes == ['.txt'] to exclude double-extension files (.ffp.txt, .md5.txt etc). Added a preference step: if any candidate contains LB-{lb_number} in its name, use that file first; otherwise fall back to the alphabetically first candidate.
+
+BUG-110: TOCTOU race in background-task start routes allows double workers
+Status: Fixed
+File(s): backend/app.py:2033,4000,4099,4156
+Reported: 2026-05-29
+Fixed: 2026-05-29
+Root cause: The "already running" guard for spectrogram generate, fingerprint build, dup scan, and identify-folder all checked status inside the lock but released the lock before starting the thread. Two concurrent POST requests could both see "idle", both pass the guard, and both start worker threads simultaneously. Additionally, the guard checked only status=="running", missing the "scanning" state emitted by build_fingerprint_db during its folder-discovery phase.
+Fix: Inside the lock, immediately after the guard, set status="running" to claim the slot atomically. Changed guard to `status not in ("idle", "done", "error")` to block all non-terminal states.
+
+BUG-109: Crashed background workers leave status permanently stuck at "running"
+Status: Fixed
+File(s): backend/app.py:_do_fp_build,_do_fp_dup_scan,_do_fp_identify_folder,_do_spectro_batch
+Reported: 2026-05-29
+Fixed: 2026-05-29
+Root cause: None of the four background worker functions had a top-level exception handler. A crash (e.g., import error, unexpected exception) would leave the state dict at status="running" forever, preventing any future invocation from passing the guard. This was a latent issue; BUG-110's fix (pre-marking status inside the lock) made it immediately observable.
+Fix: Wrapped each worker body in try/except; on exception, sets status="error" with the exception message via the per-worker _set helper.
+
+BUG-108: All attachment entries shown as stale regardless of download state
+Status: Fixed
+File(s): backend/app.py:626
+Reported: 2026-05-29
+Fixed: 2026-05-29
+Root cause: attachments_cached response omitted the "downloaded" field from each file object. Frontend stale check (f.downloaded === 1) always saw undefined, so every entry with files evaluated to "stale".
+Fix: Added "downloaded": r["downloaded"] to the file dict in attachments_cached.
+
+BUG-107: Attachment viewer always shows 404 for text/html/image files
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenAttachments.tsx:134,198
+Reported: 2026-05-29
+Fixed: 2026-05-29
+Root cause: Frontend passed activeFile.filename (raw LBF-prefixed name) to /api/attachment/<lb>/<name>, but the backend route queries entry_files WHERE clean_name=? — the LBF- prefix caused every lookup to miss.
+Fix: Changed both the text-content fetch and fileUrl to use activeFile.clean_name || activeFile.filename.
+
 BUG-121: Pipeline lookup not found — LB-12347 (Farm Aid) checksums pass verify but have no DB match
 Status: Fixed
 File(s): backend/db.py:audit_collection_checksums, backend/app.py:collection_audit
