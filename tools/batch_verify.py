@@ -30,9 +30,13 @@ import json
 import logging
 import os
 import re
+import select
 import sqlite3
 import sys
+import termios
+import threading
 import time
+import tty
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -67,6 +71,7 @@ _VERIFY_STATUS_MAP = {
     "pass": STATUS_PASS,
     "fail": STATUS_FAIL,
     "incomplete": STATUS_MISSING_FILES,
+    "missing_files": STATUS_MISSING_FILES,
     "no_lbdir": STATUS_NO_LBDIR,
     "parse_error": STATUS_PARSE_ERROR,
 }
@@ -561,30 +566,70 @@ def process_folder(
 
 # ── Output ────────────────────────────────────────────────────────────────────
 
-def _progress_suffix(row: sqlite3.Row | None) -> str:
-    if row is None:
-        return ""
-    status = row["verify_status"] or ""
-    parts: list[str] = []
-    if status == STATUS_MISSING_FILES and row["reconcile_proposals"] is not None:
-        parts.append(f"proposals={row['reconcile_proposals']}")
-    if row["lbdir_retrieved"]:
-        parts.append("→ retrieved")
-    if status == STATUS_API_ERROR and row["notes"]:
-        parts.append(f"→ {row['notes'][:60]}")
-    return "  " + "  ".join(parts) if parts else ""
+_STATUS_ABBR: dict[str, str] = {
+    STATUS_PASS:             "OK",
+    STATUS_FAIL:             "FL",
+    STATUS_MISSING_FILES:    "MF",
+    STATUS_NO_LBDIR:         "NL",
+    STATUS_NO_LB:            "--",
+    STATUS_LOOKUP_MULTI:     "LM",
+    STATUS_LOOKUP_NOT_FOUND: "NF",
+    STATUS_PARSE_ERROR:      "PE",
+    STATUS_RETRIEVE_ERROR:   "RE",
+    STATUS_API_ERROR:        "ER",
+    STATUS_DRY_RUN:          "DR",
+}
 
 
-def print_progress(i: int, total: int, folder: Path, row: sqlite3.Row | None) -> None:
-    """Print a single per-folder progress line."""
+def print_progress(
+    i: int, total: int, folder: Path, row: sqlite3.Row | None, *, expanded: bool = False
+) -> None:
+    """Print a progress line.
+
+    Compact (default): ≤30 chars — [{i}/{total}] {abbr} {lb} [{extra}]
+    Expanded:          [{i}/{total}] {full_status} LB-{lb} {folder_name} [{detail}]
+    """
     status = (row["verify_status"] if row else "?") or "?"
-    suffix = _progress_suffix(row)
-    print(f"[{i:6d}/{total}]  {status:<15s} {folder}{suffix}")
+    lb = row["lb_number"] if row and row["lb_number"] is not None else None
+    lb_str = str(lb) if lb is not None else "?????"
+    w = len(str(total))
+    counter = f"[{i:{w}}/{total}]"
+
+    if expanded:
+        lb_tag = f"LB-{lb:05d}" if lb is not None else "LB-?????"
+        detail = ""
+        if row:
+            if status == STATUS_MISSING_FILES:
+                pass_n = row["pass_count"] or 0
+                miss_n = row["missing_count"] or 0
+                prop_n = row["reconcile_proposals"]
+                detail = f"pass={pass_n} missing={miss_n}"
+                if prop_n is not None:
+                    detail += f" proposals={prop_n}"
+            elif status == STATUS_FAIL:
+                detail = f"pass={row['pass_count'] or 0} mismatch={row['mismatch_count'] or 0}"
+            elif status == STATUS_API_ERROR and row["notes"]:
+                detail = str(row["notes"])[:40]
+        name = folder.name[:40]
+        parts = [counter, status, lb_tag, name]
+        if detail:
+            parts.append(detail)
+        print("  ".join(parts))
+    else:
+        abbr = _STATUS_ABBR.get(status, "??")
+        extra = ""
+        if row:
+            if status == STATUS_MISSING_FILES and row["reconcile_proposals"] is not None:
+                extra = f" p={row['reconcile_proposals']}"
+            elif status == STATUS_API_ERROR and row["notes"]:
+                extra = f" {str(row['notes'])[:7]}"
+        print(f"{counter} {abbr} {lb_str}{extra}")
 
 
 def print_summary(
     conn: sqlite3.Connection,
-    skipped_pass: int = 0,
+    skipped: int = 0,
+    skipped_label: str = "(skipped)",
     run_id: int | None = None,
 ) -> None:
     """Print the final run summary to stdout."""
@@ -623,8 +668,8 @@ def print_summary(
     multi_note = "  ← manual queue" if n_multi else ""
     print(f"{'lookup_multi':<20s}: {n_multi:6d}{multi_note}")
     print(f"{'api_error':<20s}: {n_err:6d}")
-    if skipped_pass:
-        print(f"{'(skipped pass)':<20s}: {skipped_pass:6d}")
+    if skipped:
+        print(f"{skipped_label:<20s}: {skipped:6d}")
 
 
 def print_report(db_path: str, status_filter: str | None = None) -> None:
@@ -665,64 +710,206 @@ def print_report(db_path: str, status_filter: str | None = None) -> None:
     conn.close()
 
 
+# ── Interactive keyboard controller ──────────────────────────────────────────
+
+_ABBR_LEGEND = (
+    "OK=pass  FL=fail  MF=missing_files  NL=no_lbdir  --=no_lb\n"
+    "LM=lookup_multi  NF=not_found  PE=parse_err  RE=retrieve_err  ER=api_error  DR=dry_run\n"
+    "MF extra: p=N reconcile proposals"
+)
+
+_FULL_LEGEND = (
+    "Status legend:\n"
+    "  OK  pass              all checksums matched\n"
+    "  FL  fail              one or more checksum mismatches\n"
+    "  MF  missing_files     lbdir lists files not present on disk\n"
+    "                        (p=N = number of reconcile proposals found)\n"
+    "  NL  no_lbdir          no lbdir*.txt found; retrieval failed or skipped\n"
+    "  --  no_lb             LB number could not be determined (manual queue)\n"
+    "  LM  lookup_multi      checksums matched multiple LB entries (manual queue)\n"
+    "  NF  lookup_not_found  checksum lookup returned no match\n"
+    "  PE  parse_error       lbdir*.txt could not be parsed\n"
+    "  RE  retrieve_error    unexpected error during lbdir retrieval\n"
+    "  ER  api_error         backend unreachable, timed out, or returned an error\n"
+    "  DR  dry_run           identification only, verification skipped"
+)
+
+_KEY_LEGEND = "Keys: q=quit  h=abbr legend  l=full legend  s=stats  e=toggle expand"
+
+
+class _KeyboardController:
+    """Read single keypresses from stdin without blocking the main loop.
+
+    Only active when stdin is a TTY. Falls back to a no-op if termios is
+    unavailable (e.g. redirected stdin, Windows).
+    """
+
+    def __init__(self) -> None:
+        self.quit_requested = False
+        self.expanded = False
+        self._action: str | None = None
+        self._lock = threading.Lock()
+        self._thread: threading.Thread | None = None
+        self._old_settings: list | None = None
+        self._active = False
+
+    def start(self) -> None:
+        if not sys.stdin.isatty():
+            return
+        try:
+            fd = sys.stdin.fileno()
+            self._old_settings = termios.tcgetattr(fd)
+            tty.setcbreak(fd)
+            # suppress echo so keypresses don't clutter progress lines
+            settings = termios.tcgetattr(fd)
+            settings[3] &= ~termios.ECHO
+            termios.tcsetattr(fd, termios.TCSADRAIN, settings)
+        except Exception:
+            return
+        self._active = True
+        self._thread = threading.Thread(target=self._read, daemon=True)
+        self._thread.start()
+        print(_KEY_LEGEND)
+
+    def stop(self) -> None:
+        self._active = False
+        if self._old_settings is not None:
+            try:
+                termios.tcsetattr(sys.stdin.fileno(), termios.TCSADRAIN, self._old_settings)
+            except Exception:
+                pass
+
+    def poll(self) -> str | None:
+        """Return and clear the most recent non-quit action key, or None."""
+        with self._lock:
+            action, self._action = self._action, None
+            return action
+
+    def _read(self) -> None:
+        while self._active:
+            try:
+                if select.select([sys.stdin], [], [], 0.1)[0]:
+                    ch = sys.stdin.read(1).lower()
+                    if ch == "q":
+                        self.quit_requested = True
+                        print("\n[q] finishing current folder then stopping …")
+                    elif ch == "e":
+                        self.expanded = not self.expanded
+                        state = "on" if self.expanded else "off"
+                        print(f"\n[e] expanded mode {state}")
+                    elif ch in ("h", "l", "s"):
+                        with self._lock:
+                            self._action = ch
+            except Exception:
+                break
+
+
 # ── Argument parsing ──────────────────────────────────────────────────────────
 
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(
         description=(
-            "Batch lbdir verification pipeline for LosslessBob collections. "
-            "Requires the Flask backend running on --port."
-        )
+            "Batch lbdir verification pipeline for LosslessBob collections.\n"
+            "Requires the Flask backend running on --port (default 5174).\n\n"
+            "Typical usage:\n"
+            "  First run:  batch_verify.py --from-collection\n"
+            "  Resume:     batch_verify.py --from-collection --skip-done\n"
+            "  Re-check failures: batch_verify.py --from-collection --skip-done "
+            "--reprocess fail,api_error\n"
+            "  Report:     batch_verify.py --report [--status missing_files]\n\n"
+            "Progress line format:  [i/total] ABBR lb_number [extra]\n\n"
+            "Status abbreviations:\n"
+            "  OK  pass            — all checksums matched\n"
+            "  FL  fail            — one or more checksum mismatches\n"
+            "  MF  missing_files   — lbdir lists files not present on disk (p=N: reconcile proposals)\n"
+            "  NL  no_lbdir        — no lbdir*.txt found and retrieval failed or was skipped\n"
+            "  --  no_lb           — could not determine LB number (manual queue)\n"
+            "  LM  lookup_multi    — checksums matched multiple LB entries (manual queue)\n"
+            "  NF  lookup_not_found— checksum lookup returned no match\n"
+            "  PE  parse_error     — lbdir*.txt could not be parsed\n"
+            "  RE  retrieve_error  — unexpected error during lbdir retrieval\n"
+            "  ER  api_error       — backend unreachable, timed out, or returned an error\n"
+            "  DR  dry_run         — identification only, verification skipped"
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
     )
-    p.add_argument(
+
+    src = p.add_argument_group("Input source (pick one)")
+    src.add_argument(
         "--root", metavar="PATH",
-        help="Root directory to walk (required unless --from-collection or --report)",
+        help="Walk PATH and process every immediate subdirectory that contains audio "
+             "(.flac/.shn). Use this when the collection DB has no disk_path entries.",
     )
-    p.add_argument(
+    src.add_argument(
         "--from-collection", action="store_true",
-        help="Use disk_path values from the backend collection DB instead of --root",
+        help="Read disk_path + lb_number pairs from the backend collection DB. "
+             "Preferred: LB number is known up-front, skipping the Phase-0 identification step.",
     )
-    p.add_argument(
-        "--port", type=int, default=DEFAULT_PORT,
-        help=f"Flask backend port (default: {DEFAULT_PORT})",
-    )
-    p.add_argument(
-        "--db", default=DEFAULT_DB,
-        help=f"Report SQLite path (default: {DEFAULT_DB}); never touches losslessbob.db",
-    )
-    p.add_argument(
-        "--delay", type=float, default=DEFAULT_DELAY,
-        help=f"Seconds between API calls (default: {DEFAULT_DELAY})",
-    )
-    p.add_argument(
+
+    resume = p.add_argument_group("Resume / skip options")
+    resume.add_argument(
         "--resume", action="store_true",
-        help="Skip folders already at verify_status='pass'",
+        help="Skip folders whose verify_status is already 'pass'. "
+             "All other statuses (fail, missing_files, api_error, …) are reprocessed.",
     )
-    p.add_argument(
+    resume.add_argument(
+        "--skip-done", action="store_true",
+        help="Skip any folder that already has any result in the report DB, "
+             "regardless of status. Use this to continue an interrupted run without "
+             "re-verifying anything. Combine with --reprocess to re-run specific statuses.",
+    )
+    resume.add_argument(
         "--reprocess", metavar="STATUSES",
-        help="Comma-separated statuses to reprocess when --resume is active "
-             "(e.g. fail,missing_files)",
+        help="Comma-separated list of statuses to force-reprocess even when --resume or "
+             "--skip-done would otherwise skip them. "
+             "Example: --skip-done --reprocess fail,api_error",
     )
-    p.add_argument(
+
+    run = p.add_argument_group("Run behaviour")
+    run.add_argument(
         "--dry-run", action="store_true",
-        help="Phase 0 only: identify LB number but skip retrieve and verify",
+        help="Phase 0 only: identify the LB number for each folder and record it, "
+             "but skip lbdir retrieval and verification. Useful for a quick ID pass.",
     )
-    p.add_argument(
+    run.add_argument(
         "--no-retrieve", action="store_true",
-        help="Skip Phase 1: verify whatever lbdir is already on disk",
+        help="Skip Phase 1 (lbdir retrieval). Verify using whatever lbdir*.txt is "
+             "already present on disk; folders without one are recorded as no_lbdir.",
     )
-    p.add_argument(
-        "--report", action="store_true",
-        help="Print summary from existing DB and exit without running",
+    run.add_argument(
+        "--delay", type=float, default=DEFAULT_DELAY,
+        help=f"Seconds to sleep between API calls (default: {DEFAULT_DELAY}). "
+             "Increase if the backend is under heavy load.",
     )
-    p.add_argument(
-        "--status", metavar="STATUS",
-        help="With --report: list folder paths of one specific status",
-    )
-    p.add_argument(
+    run.add_argument(
         "--limit", type=int,
-        help="Stop after N folders (for testing)",
+        help="Stop after processing N folders. Useful for smoke-testing a new run.",
     )
+
+    infra = p.add_argument_group("Infrastructure")
+    infra.add_argument(
+        "--port", type=int, default=DEFAULT_PORT,
+        help=f"Port the Flask backend is listening on (default: {DEFAULT_PORT}).",
+    )
+    infra.add_argument(
+        "--db", default=DEFAULT_DB,
+        help=f"Path to the report SQLite database (default: {DEFAULT_DB}). "
+             "This file is separate from losslessbob.db and is never modified by the backend.",
+    )
+
+    report = p.add_argument_group("Reporting")
+    report.add_argument(
+        "--report", action="store_true",
+        help="Print a status summary from the existing report DB and exit. "
+             "Does not run any verification.",
+    )
+    report.add_argument(
+        "--status", metavar="STATUS",
+        help="With --report: list every folder path that has the given verify_status. "
+             "Valid values: pass, fail, missing_files, no_lbdir, no_lb, "
+             "lookup_multi, api_error, dry_run.",
+    )
+
     return p.parse_args()
 
 
@@ -767,39 +954,70 @@ def main() -> None:
     conn = open_report_db(args.db)
     run_id = insert_run_log(conn, args)
 
-    skipped_pass = 0
+    print(_ABBR_LEGEND)
 
-    for i, (folder, known_lb) in enumerate(work, 1):
-        # --resume skip logic (mirrors spec pseudocode exactly)
-        if args.resume:
-            row = db_get(conn, folder)
-            if row and row["verify_status"] == STATUS_PASS:
-                if not args.reprocess or STATUS_PASS not in args.reprocess.split(","):
-                    skipped_pass += 1
+    skipped = 0
+    reprocess_set = set(args.reprocess.split(",")) if args.reprocess else set()
+
+    kbd = _KeyboardController()
+    kbd.start()
+    try:
+        for i, (folder, known_lb) in enumerate(work, 1):
+            if kbd.quit_requested:
+                break
+
+            action = kbd.poll()
+            if action == "h":
+                print(f"\n{_ABBR_LEGEND}\n{_KEY_LEGEND}")
+            elif action == "l":
+                print(f"\n{_FULL_LEGEND}\n{_KEY_LEGEND}")
+            elif action == "s":
+                print()
+                print_summary(conn, skipped=skipped)
+                print()
+
+            if args.skip_done:
+                row = db_get(conn, folder)
+                if row and row["verify_status"] and row["verify_status"] not in reprocess_set:
+                    skipped += 1
                     continue
-            if args.reprocess and row:
-                if row["verify_status"] not in args.reprocess.split(","):
-                    skipped_pass += 1
-                    continue
+            elif args.resume:
+                row = db_get(conn, folder)
+                if row and row["verify_status"] == STATUS_PASS:
+                    if STATUS_PASS not in reprocess_set:
+                        skipped += 1
+                        continue
+                if reprocess_set and row:
+                    if row["verify_status"] not in reprocess_set:
+                        skipped += 1
+                        continue
 
-        try:
-            process_folder(
-                folder, api, conn,
-                dry_run=args.dry_run,
-                no_retrieve=args.no_retrieve,
-                delay=args.delay,
-                known_lb=known_lb,
-                known_lb_source="collection" if known_lb is not None else None,
-            )
-        except KeyboardInterrupt:
-            raise
-        except Exception as exc:
-            db_upsert(conn, folder=folder, verify_status=STATUS_API_ERROR, notes=str(exc))
+            try:
+                process_folder(
+                    folder, api, conn,
+                    dry_run=args.dry_run,
+                    no_retrieve=args.no_retrieve,
+                    delay=args.delay,
+                    known_lb=known_lb,
+                    known_lb_source="collection" if known_lb is not None else None,
+                )
+            except KeyboardInterrupt:
+                raise
+            except Exception as exc:
+                db_upsert(conn, folder=folder, verify_status=STATUS_API_ERROR, notes=str(exc))
 
-        print_progress(i, total, folder, db_get(conn, folder))
+            print_progress(i, total, folder, db_get(conn, folder), expanded=kbd.expanded)
+    finally:
+        kbd.stop()
 
     finalize_run_log(conn, run_id)
-    print_summary(conn, skipped_pass=skipped_pass, run_id=run_id)
+    if args.skip_done:
+        skipped_label = "(skipped — any result)"
+    elif args.resume:
+        skipped_label = "(skipped — pass)"
+    else:
+        skipped_label = "(skipped)"
+    print_summary(conn, skipped=skipped, skipped_label=skipped_label, run_id=run_id)
 
     db_abs = Path(args.db).resolve()
     print(f"\nReport DB : {db_abs}")
