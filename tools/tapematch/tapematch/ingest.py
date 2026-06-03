@@ -24,7 +24,7 @@ def _natural_key(p: Path):
 
 
 def discover_sources(root: Path):
-    """Return {source_name: [ordered track paths]} for each top-level subfolder."""
+    """Return {source_name: Path} for each top-level subfolder."""
     root = Path(root)
     sources = {}
     for sub in sorted(p for p in root.iterdir() if p.is_dir()):
@@ -34,7 +34,10 @@ def discover_sources(root: Path):
 
 def list_tracks(source_dir: Path, exts):
     exts = {e.lower() for e in exts}
-    tracks = [p for p in Path(source_dir).rglob("*") if p.suffix.lower() in exts]
+    tracks = [p for p in Path(source_dir).rglob("*")
+              if p.suffix.lower() in exts
+              and not p.name.startswith("._")
+              and "__MACOSX" not in p.parts]
     return sorted(tracks, key=_natural_key)
 
 
@@ -46,25 +49,45 @@ def source_report(source_dir: Path, exts):
 
 def concat_source(source_dir: Path, exts, target_sr, mono=False):
     """Load every track in order and concatenate into one continuous stream.
+
+    Pre-allocates the output array from probed durations so each track is
+    loaded, copied into the output, and freed immediately — peak RAM is
+    output + one track rather than output + all tracks (old np.concatenate
+    approach doubled peak memory).
+
     Returns (samples (n,ch), sr, boundaries) where boundaries are the sample
-    offsets of each track start (useful for mapping anchors back to tracks)."""
+    offsets of each track start.
+    """
     tracks = list_tracks(source_dir, exts)
     if not tracks:
         raise ValueError(f"no audio in {source_dir}")
-    chunks, boundaries, pos = [], [], 0
-    ch = None
+
+    # Probe all tracks once: channel count from first, frame totals from all.
+    probes = [audio.probe(t, target_sr) for t in tracks]
+    ch = 1 if mono else probes[0]["channels"]
+
+    # Estimate total frames — add 1 s headroom for duration→samples rounding.
+    total_frames = sum(p["frames"] for p in probes) + target_sr
+
+    out = np.empty((total_frames, ch), dtype="float32")
+    boundaries: list[int] = []
+    pos = 0
+
     for t in tracks:
-        x, sr = audio.load(t, target_sr, mono=mono)
-        if ch is None:
-            ch = x.shape[1]
-        elif x.shape[1] != ch:
-            # normalize channel count (mono<->stereo) so concat is clean
-            x = x.mean(axis=1, keepdims=True) if ch == 1 else np.repeat(x, ch, axis=1)
+        x, _ = audio.load(t, target_sr, mono=mono)
+        if x.ndim == 1:
+            x = x.reshape(-1, 1)
+        # Normalise channel count if tracks differ (e.g. mono track in stereo set).
+        if x.shape[1] != ch:
+            x = (x.mean(axis=1, keepdims=True) if ch == 1
+                 else np.repeat(x, ch, axis=1))
+        n = min(x.shape[0], total_frames - pos)
         boundaries.append(pos)
-        chunks.append(x)
-        pos += x.shape[0]
-    stream = np.concatenate(chunks, axis=0)
-    return stream, target_sr, np.array(boundaries)
+        out[pos:pos + n] = x[:n]
+        pos += n
+        del x  # free track immediately
+
+    return out[:pos], target_sr, np.array(boundaries)
 
 
 def fmt_hms(sec):
