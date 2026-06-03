@@ -1,3 +1,31 @@
+[2026-06-03] — feat(gui): Collection screen — dynamic category filter chips
+Changed: gui_next/src/renderer/src/screens/ScreenCollection.tsx: category chips now derived dynamically from categoryCounts (sorted by count) instead of hardcoded concert/interview; covers all types (concert, tv, studio, interview, compilation, rehearsal, radio, soundcheck)
+
+[2026-06-03] — feat(gui): LBDIR screen — show prior lbdir-verified status in folder sidebar
+Added: backend/app.py: POST /api/lbdir/verified_status — queries my_collection for lbdir_verified_at per folder path
+Changed: gui_next/src/renderer/src/lib/lbdirStore.ts: added lbdir_verified_at to CheckResult type
+Changed: gui_next/src/renderer/src/screens/ScreenLBDIR.tsx: loads verified_status on mount/folder-change; FolderSideRow shows faded green dot + "✓ YYYY-MM-DD" for folders with prior verification and no current check result
+
+[2026-06-03] — refactor(gui): LBDIR screen — unified process flow, no sub-tabs
+Changed: gui_next/src/renderer/src/screens/ScreenLBDIR.tsx: replaced 4 sub-tabs (Check/Retrieve/Reconcile/Extras) with a single Process action that auto-retrieves lbdir then checks; Reconcile button inline below file table; extras moved to /extras/ subfolder instead of deleted
+Changed: gui_next/src/renderer/src/lib/lbdirStore.ts: removed tab/retrieveResults/extrasResults/extrasSelected state; added clearReconcileFor action
+Added: backend/app.py: POST /api/lbdir/move_extras — moves extra files to <folder>/extras/ preserving relative path structure
+
+[2026-06-03] — feat(tools): batch_verify l=full legend, e=expand toggle, updated progress
+Added: tools/batch_verify.py: l key prints full status legend with definitions; e key toggles expanded progress mode (full status name + LB tag + folder name + pass/mismatch/missing counts); h key prints compact abbr legend; print_progress gains expanded kwarg
+
+[2026-06-03] — feat(tools): batch_verify interactive keys (q/h/s) during run
+Added: tools/batch_verify.py: _KeyboardController reads single keypresses via termios cbreak; q=clean quit after current folder, h=re-print abbr+key legend, s=live stats summary; terminal restored in finally block; no-op when stdin is not a TTY
+
+[2026-06-03] — feat(tools): batch_verify compact progress output ≤30 chars/line
+Changed: tools/batch_verify.py: print_progress replaced with compact format [i/total] {abbr} {lb} [{extra}]; status shown as 2-letter code (OK/FL/MF/NL/ER/etc.); extra shows proposal count (MF) or first 7 chars of notes (ER)
+
+[2026-06-03] — feat(tools): batch_verify --skip-done flag + improved --help
+Added: tools/batch_verify.py: --skip-done skips any folder with any existing result (vs --resume which only skips pass); --reprocess still overrides; grouped argparse help with examples and descriptions for every flag
+
+[2026-06-03] — fix(tools): batch_verify misclassifies missing-file folders as api_error
+Fixed: tools/batch_verify.py: _VERIFY_STATUS_MAP was missing "missing_files" key; verify_folder_lbdir returns "missing_files" (not "incomplete") when n_missing > 0, so all such folders fell through to STATUS_API_ERROR; added "missing_files" → STATUS_MISSING_FILES to the map
+
 [2026-06-03] — feat(tools): tapematch iteration pass — six accuracy/quality improvements; threshold calibrated 0.35→0.50
 Changed: tools/tapematch/config.yaml: max_lag_sec 30→90; local_lag_sec 5→10; short_window_sec/short_hop_sec added; fingerprint hf_band_hz [6000,8000] + cluster_threshold calibrated to 0.50 (empirical bimodal gap 0.47/0.51 confirmed across 3 dates)
 Changed: tools/tapematch/tapematch/match.py: fingerprint_window slices STFT to hf_band_hz before peak-finding

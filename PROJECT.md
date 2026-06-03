@@ -728,6 +728,8 @@ Indexes: `idx_archive_uploads_lb(lb_number)`, `idx_archive_uploads_status(status
 | POST | `/api/lbdir/apply_reconcile` | Apply selected rename proposals from `/api/lbdir/reconcile`. Body: `{folder, renames:[{from,to}]}`. Uses `shutil.move`; creates subdirectories as needed; never deletes. Returns `{applied, errors}`. |
 | POST | `/api/lbdir/find_extra` | List files in each folder not referenced in the lbdir MD5 section (lbdir file itself excluded). Returns `{results: [{folder, extra:['rel/path',...], lbdir_rel}]}`. |
 | POST | `/api/lbdir/delete_extra` | Permanently delete selected extra files. Body: `{folder, files:['rel/path',...]}`. After deletion, prunes empty subdirectories bottom-up. Returns `{deleted, removed_dirs, errors}`. |
+| POST | `/api/lbdir/move_extras` | Move extra files (not in lbdir) to `<folder>/extras/`, preserving relative path structure. Body: `{folder, files:['rel/path',...]}`. Prunes empty subdirs after move. Returns `{moved, errors}`. |
+| POST | `/api/lbdir/verified_status` | Return `lbdir_verified_at` timestamp for each folder path. Body: `{folders:[path,...]}`. Returns `{[path]: timestamp\|null}` — null when folder is not in `my_collection` or has never been lbdir-verified. |
 
 ---
 

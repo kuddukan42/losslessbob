@@ -1,4 +1,59 @@
 
+BUG-127: batch_verify misclassifies folders with missing files as api_error
+Status: Fixed
+File(s): tools/batch_verify.py:66
+Reported: 2026-06-03
+Fixed: 2026-06-03
+Root cause: _VERIFY_STATUS_MAP mapped "incomplete" → STATUS_MISSING_FILES but verify_folder_lbdir (checksum_utils.py:736) returns "missing_files" when n_missing > 0. The unmapped key fell through to the default STATUS_API_ERROR, making every folder with a missing lbdir entry appear as api_error with notes=None.
+Fix: Added "missing_files": STATUS_MISSING_FILES to _VERIFY_STATUS_MAP.
+
+BUG-126: tapematch session uses stale last_results.json when tapematch crashes mid-run
+Status: Fixed
+File(s): tools/tapematch/tapematch_session.py:669
+Reported: 2026-06-02
+Fixed: 2026-06-02
+Root cause: last_results.json was not cleared before running tapematch; if tapematch crashed early (before writing new results), the file from the prior run survived and was read in step 7, causing insert_sources/insert_pairs to iterate folder names from the wrong concert date
+Fix: unlink last_results.json (missing_ok=True) immediately before run_tapematch() call
+
+BUG-125: tapematch trim.performance_envelope crashes with TypeError on recordings with no detectable silence tail
+Status: Fixed
+File(s): tools/tapematch/tapematch/trim.py:63
+Reported: 2026-06-02
+Fixed: 2026-06-02
+Root cause: end_i computed as len(is_music)-1 - _first_sustained(reversed) before the None guard; _first_sustained returns None when no sustained music region is found in reversed signal (e.g. vinyl rips that end mid-music); TypeError: unsupported operand type(s) for -: 'int' and 'NoneType'
+Fix: assign to end_raw first, check for None, then compute end_i = len(is_music)-1 - end_raw
+
+BUG-124: tapematch trim report shows negative tail time
+Status: Fixed
+File(s): tools/tapematch/tapematch/cli.py:54
+Reported: 2026-06-02
+Fixed: 2026-06-02
+Root cause: trim_bounds stored rep["total_sec"] (sum of native-rate durations via soundfile/ffprobe)
+  but s1 from performance_envelope is clamped to len(stream)/sr (resampled frame count). These differ
+  by up to ~26s per source. When resampled > native-rate total, total_sec - s1 < 0, and Python's
+  floor division on negatives makes fmt_hms wrap around (e.g. -2s renders as "-1:59:58").
+Fix: compute stream_dur = len(stream)/sr after concat_source and use it for both trim_bounds
+  and the no_trim s1 fallback, so total_sec and s1 share the same frame-count basis.
+
+BUG-123: tapematch source duration non-deterministic for formats without container duration field
+Status: Fixed
+File(s): tools/tapematch/tapematch/audio.py:43
+Reported: 2026-06-02
+Fixed: 2026-06-02
+Root cause: _ffprobe_info fallback (SHN, MP3, etc.) runs "ffmpeg -stats -f null" and uses
+  re.search to find the first "time=" match in stderr. ffmpeg emits multiple progress lines;
+  the first match is an early intermediate timestamp, not the final decode position — giving
+  a shorter-than-actual duration that varies with CPU/IO speed between runs.
+Fix: use re.findall and take matches[-1] (the last progress update = true total duration).
+
+BUG-122: tapematch fills system tmpfs with memmap files
+Status: Fixed
+File(s): tools/tapematch/tapematch/cli.py:37
+Reported: 2026-06-02
+Fixed: 2026-06-02
+Root cause: tempfile.mkdtemp() with no dir= argument writes to /tmp (system tmpfs); ~438 MB per source × N sources exhausts the tmpfs, crashing the run and Claude Code's own /tmp buffer.
+Fix: Pass dir=/mnt/DATA0/tmp (created if absent) to mkdtemp so memmaps land on the data drive.
+
 BUG-120: Pipeline verify mismatch — 2 folders where audio no longer matches stored checksums
 Status: Open
 File(s): backend/checksum_utils.py:verify_folder, backend/app.py:4576
@@ -40,46 +95,6 @@ Reproduce: run tests/test_pipeline_smoke.py --seed 2 --n 500. All 11 conflicts f
   • LB-06198 vs LB-06195 (2008-06-16 Bergamo — mirror of above)
   • LB-11862 vs LB-11381 (2014 Tokyo)
   • LB-04332 vs LB-04946
-
-BUG-111: Forum post description shows checksum file contents instead of entry description
-Status: Fixed
-File(s): backend/forum_poster.py:268-279
-Reported: 2026-05-31
-Fixed: 2026-05-31
-Root cause: _read_lb_txt picked the first .txt file alphabetically. Entries with .ffp.txt fingerprint files (e.g. LBF-12220-Bob-Dylan-May-1960.ffp.txt) sorted before the actual info txt file, so checksum hashes landed in the forum post description section. Additionally, when multiple plain .txt files exist, the main info file (which contains LB-NNNNN in its name) sorted after short filenames like Note.txt.
-Fix: Changed suffix filter to f.suffixes == ['.txt'] to exclude double-extension files (.ffp.txt, .md5.txt etc). Added a preference step: if any candidate contains LB-{lb_number} in its name, use that file first; otherwise fall back to the alphabetically first candidate.
-
-BUG-110: TOCTOU race in background-task start routes allows double workers
-Status: Fixed
-File(s): backend/app.py:2033,4000,4099,4156
-Reported: 2026-05-29
-Fixed: 2026-05-29
-Root cause: The "already running" guard for spectrogram generate, fingerprint build, dup scan, and identify-folder all checked status inside the lock but released the lock before starting the thread. Two concurrent POST requests could both see "idle", both pass the guard, and both start worker threads simultaneously. Additionally, the guard checked only status=="running", missing the "scanning" state emitted by build_fingerprint_db during its folder-discovery phase.
-Fix: Inside the lock, immediately after the guard, set status="running" to claim the slot atomically. Changed guard to `status not in ("idle", "done", "error")` to block all non-terminal states.
-
-BUG-109: Crashed background workers leave status permanently stuck at "running"
-Status: Fixed
-File(s): backend/app.py:_do_fp_build,_do_fp_dup_scan,_do_fp_identify_folder,_do_spectro_batch
-Reported: 2026-05-29
-Fixed: 2026-05-29
-Root cause: None of the four background worker functions had a top-level exception handler. A crash (e.g., import error, unexpected exception) would leave the state dict at status="running" forever, preventing any future invocation from passing the guard. This was a latent issue; BUG-110's fix (pre-marking status inside the lock) made it immediately observable.
-Fix: Wrapped each worker body in try/except; on exception, sets status="error" with the exception message via the per-worker _set helper.
-
-BUG-108: All attachment entries shown as stale regardless of download state
-Status: Fixed
-File(s): backend/app.py:626
-Reported: 2026-05-29
-Fixed: 2026-05-29
-Root cause: attachments_cached response omitted the "downloaded" field from each file object. Frontend stale check (f.downloaded === 1) always saw undefined, so every entry with files evaluated to "stale".
-Fix: Added "downloaded": r["downloaded"] to the file dict in attachments_cached.
-
-BUG-107: Attachment viewer always shows 404 for text/html/image files
-Status: Fixed
-File(s): gui_next/src/renderer/src/screens/ScreenAttachments.tsx:134,198
-Reported: 2026-05-29
-Fixed: 2026-05-29
-Root cause: Frontend passed activeFile.filename (raw LBF-prefixed name) to /api/attachment/<lb>/<name>, but the backend route queries entry_files WHERE clean_name=? — the LBF- prefix caused every lookup to miss.
-Fix: Changed both the text-content fetch and fileUrl to use activeFile.clean_name || activeFile.filename.
 
 BUG-106: Windows installer does not place app in Program Files
 Status: Open

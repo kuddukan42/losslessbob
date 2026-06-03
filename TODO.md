@@ -1,3 +1,51 @@
+TODO-109: Python best practices — BP document and code review
+Priority: Low
+Status: Open
+Added: 2026-06-03
+Description: Create a BEST_PRACTICES.md document summarising agreed Python conventions for
+this project. Then do a pass over existing backend files to apply improvements: add missing
+type hints to older public functions (db.py, app.py, etc.), break up oversized functions
+(e.g. init_db), remove late imports, and fill in missing docstrings on exported functions.
+Start with db.py as the reference — it was rated 8/10 and has the most surface area.
+
+TODO-108: Collection tab — fix header UI problems
+Priority: Medium
+Status: Open
+Added: 2026-06-03
+Description: Investigate and fix UI problems with column headers on the Collection tab.
+  Exact issues to be identified on investigation (misalignment, overflow, sticky behaviour,
+  sort indicators, etc.).
+
+---
+
+TODO-107: Disk Scanner — find audio folders on disk for bulk collection add
+Priority: Medium
+Status: Open
+Added: 2026-06-03
+Description: Add a Disk Scanner screen that walks user-defined root paths (e.g. /mnt/nas,
+  /home/user/music) using os.scandir() with early pruning, finds all directories containing
+  lossless audio files (FLAC, WAV, APE, ALAC, AIFF), and presents them as candidates to
+  add to the collection DB.
+
+  Backend:
+  - POST /api/scanner/scan — accepts {"roots": [...], "extensions": [...]}; walks each root
+    with os.scandir(), skips hidden dirs and a configurable exclude list (system paths,
+    node_modules, .git, etc.); returns list of {path, file_count, extensions, in_collection}
+    where in_collection is True if the path already exists in lbdir.
+  - Scan runs in a background thread; streams progress via SSE or returns a job ID to poll.
+  - No persistent index — one-shot on demand. plocate can be used as an optional fast-path
+    if installed (locate -r '\.flac$' | dirname | sort -u).
+
+  GUI (new ScreenScanner.tsx):
+  - Left panel: editable list of root paths to scan + exclude patterns; Scan button.
+  - Right panel: results table — path, file count, extensions found, "In Collection" badge.
+  - Checkboxes for bulk selection; "Add Selected to Collection" button calls existing
+    LBDIR add logic.
+  - Progress bar / spinner during scan; cancel button to abort background job.
+  - Already-in-collection rows shown but greyed out so user can see full picture.
+
+---
+
 TODO-106: Trading — multi-friend batch compare
 Priority: Low
 Status: Open
@@ -9,40 +57,10 @@ Description: Extend the Trading screen to compare your collection against multip
 
 ---
 
-TODO-105: Checksum lookup — flag matches against user's own collection
-Priority: High
-Status: Open
-Added: 2026-05-27
-Description: When the user performs a checksum lookup, indicate whether the checksum matches a
-  recording they already have in their collection (My Collection / lb_master).
-  Goals:
-    • After a checksum resolves to a show, cross-reference the result against the user's
-      collection records in losslessbob.db.
-    • If the user already owns that recording (same checksum or same show+source), clearly
-      flag it in the results — e.g. "You already have this" or a distinct badge/icon.
-    • If the checksum differs from what the user has for the same show, flag it as a
-      potential upgrade or duplicate-with-mismatch.
-    • Works in both the GUI lookup flow and any CLI checksum check path.
-
----
-
 ---
 
 
 
-TODO-089: Add acknowledgements section to About dialog
-Priority: Low
-Status: Open
-Added: 2026-05-24
-Description: Add an Acknowledgements section to the About dialog crediting key contributors
-  and resources, including at minimum:
-    • Losslessbob (the original archive/project that inspired this tool)
-    • Robert Cook (contributor)
-    • Rumrunners (community/resource)
-  Include a scrollable or expandable area if the list grows long. Keep styling consistent
-  with the existing About dialog layout.
-
----
 
 TODO-085: Map tab — sequential date-linked travel view across the globe
 Priority: Low
