@@ -2233,6 +2233,61 @@ def create_app() -> Flask:
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
+    @app.route("/api/lbdir/verified_status", methods=["POST"])
+    def lbdir_verified_status() -> Response:
+        """Return lbdir_verified_at timestamp for each requested folder path."""
+        try:
+            data = request.get_json() or {}
+            folder_list = data.get("folders", [])
+            if not folder_list:
+                return jsonify({})
+            placeholders = ",".join("?" * len(folder_list))
+            with database.get_connection() as conn:
+                rows = conn.execute(
+                    f"SELECT disk_path, lbdir_verified_at FROM my_collection"
+                    f" WHERE disk_path IN ({placeholders})",
+                    folder_list,
+                ).fetchall()
+            result: dict = {f: None for f in folder_list}
+            for row in rows:
+                result[row["disk_path"]] = row["lbdir_verified_at"]
+            return jsonify(result)
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/lbdir/move_extras", methods=["POST"])
+    def lbdir_move_extras() -> Response:
+        """Move extra files (not in lbdir) to <folder>/extras/, preserving relative path structure."""
+        try:
+            data = request.get_json() or {}
+            folder = Path(data.get("folder", ""))
+            files = data.get("files", [])  # list of relative paths
+            extras_dir = folder / "extras"
+            extras_dir.mkdir(parents=True, exist_ok=True)
+            moved, errors = [], []
+            for rel in files:
+                src = folder / rel
+                dst = extras_dir / rel
+                try:
+                    dst.parent.mkdir(parents=True, exist_ok=True)
+                    shutil.move(str(src), str(dst))
+                    moved.append(rel)
+                except Exception as e:
+                    errors.append({"file": rel, "error": str(e)})
+            # Prune empty subdirectories (never touch folder root or extras_dir)
+            for dirpath, _dirs, _files in os.walk(str(folder), topdown=False):
+                d = Path(dirpath)
+                if d == folder or d == extras_dir or str(d).startswith(str(extras_dir)):
+                    continue
+                try:
+                    if not any(d.iterdir()):
+                        d.rmdir()
+                except Exception:
+                    pass
+            return jsonify({"moved": len(moved), "errors": errors})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
     # ── Platform helpers ─────────────────────────────────────────────────────
 
     @app.route("/api/open/vlc", methods=["POST"])
