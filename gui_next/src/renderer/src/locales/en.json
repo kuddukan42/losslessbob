@@ -167,6 +167,14 @@
       "duplicate": "Duplicate",
       "xref": "XRef"
     },
+    "owned": {
+      "verifiedBanner": "{{count}} already in collection · lbdir-verified",
+      "verifiedNote": "no action needed",
+      "unverifiedBanner": "{{count}} already in collection",
+      "unverifiedNote": "not yet lbdir-verified",
+      "badgeOwned": "In collection",
+      "badgeVerified": "In collection · verified"
+    },
     "notFoundHint": "Either this is a new entry the master DB doesn't know about yet, or the checksums don't match what's on file.",
     "footer": {
       "autoPopulate": "Results auto-populate the Rename tab",

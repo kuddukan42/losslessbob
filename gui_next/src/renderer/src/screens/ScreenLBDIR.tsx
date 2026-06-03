@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { Icon } from '../components/Icon'
 import { Button, Input, Pill } from '../components'
 import { TableShell, TH, TR, TD } from '../components'
-import { useLbdirStore, LbdirState, SubTab, CheckFile, CheckResult, RetrieveResult, ReconcileProposal, ReconcileResult, ExtrasResult } from '../lib/lbdirStore'
+import { useLbdirStore, LbdirState, CheckFile, CheckResult, ReconcileProposal, ReconcileResult } from '../lib/lbdirStore'
 import { useFolderQueueStore } from '../lib/folderQueueStore'
 
 const BASE = window.api.flaskBase
@@ -13,14 +13,13 @@ const BASE = window.api.flaskBase
 type Tone      = 'ok' | 'bad' | 'warn' | 'mute' | 'info'
 type ToastTone = 'ok' | 'bad' | 'info'
 
-
-const STATE_LABEL: Record<LbdirState, { tone: Tone; label: string }> = {
-  pass:            { tone: 'ok',   label: 'Pass' },
-  fail:            { tone: 'bad',  label: 'Fail · mismatches' },
-  missing_files:   { tone: 'bad',  label: 'Missing files' },
-  no_lbdir:        { tone: 'warn', label: 'No lbdir · retrievable' },
-  no_lb:           { tone: 'mute', label: 'No LB#' },
-  shntool_missing: { tone: 'warn', label: 'Shntool not installed' },
+const STATE_LABEL: Record<LbdirState, { tone: Tone; label: string; hint: string }> = {
+  pass:            { tone: 'ok',   label: 'Pass',             hint: 'All files verified' },
+  fail:            { tone: 'bad',  label: 'Fail',             hint: 'Checksum mismatches' },
+  missing_files:   { tone: 'bad',  label: 'Missing files',    hint: 'Files listed in lbdir not found on disk' },
+  no_lbdir:        { tone: 'warn', label: 'No lbdir',         hint: 'No lbdir*.txt found in folder' },
+  no_lb:           { tone: 'mute', label: 'No LB#',           hint: 'Folder not linked to an LB entry' },
+  shntool_missing: { tone: 'warn', label: 'Shntool missing',  hint: 'Install shntool to verify SHN files' },
 }
 
 // ── Atoms ──────────────────────────────────────────────────────────────────────
@@ -31,18 +30,29 @@ function CheckDot({ s }: { s: 'pass' | 'miss' | 'na' }): React.JSX.Element {
   return <span style={{ color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-10)' }}>na</span>
 }
 
-function FolderSideRow({ folder, checkResult, active, onClick }: {
+function FolderSideRow({ folder, checkResult, verifiedAt, active, onClick }: {
   folder: string
   checkResult: CheckResult | undefined
+  verifiedAt: string | null
   active: boolean
   onClick: () => void
 }): React.JSX.Element {
   const state = checkResult?.status ?? null
   const sl = state ? STATE_LABEL[state] : null
+
+  // Resolved verified timestamp: prefer check result, fall back to pre-loaded value
+  const resolvedVerifiedAt = checkResult?.lbdir_verified_at ?? verifiedAt
+
+  // Dot color: use check result status if available; if no check but previously verified, show faded green
   const color = sl
     ? (sl.tone === 'ok' ? 'var(--lbb-ok-bar)' : sl.tone === 'bad' ? 'var(--lbb-bad-bar)' : sl.tone === 'warn' ? 'var(--lbb-warn-bar)' : 'var(--lbb-fg3)')
-    : 'var(--lbb-border)'
+    : resolvedVerifiedAt
+      ? 'var(--lbb-ok-bar)'
+      : 'var(--lbb-border)'
+
   const name = folder.split('/').pop() ?? folder
+  const verifiedDate = resolvedVerifiedAt ? resolvedVerifiedAt.slice(0, 10) : null
+
   return (
     <button onClick={onClick} style={{
       width: '100%', display: 'flex', alignItems: 'center', gap: 8,
@@ -52,19 +62,153 @@ function FolderSideRow({ folder, checkResult, active, onClick }: {
       border: '1px solid ' + (active ? 'var(--lbb-accent-line)' : 'transparent'),
       textAlign: 'left', fontFamily: 'inherit', cursor: 'pointer',
     }}>
-      <span style={{ width: 8, height: 8, borderRadius: 2, background: color, flex: '0 0 8px' }} />
+      <span style={{
+        width: 8, height: 8, borderRadius: 2, flex: '0 0 8px',
+        background: color,
+        opacity: !sl && resolvedVerifiedAt ? 0.55 : 1,
+      }} />
       <span style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
         <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{name}</span>
-        {checkResult && (
-          <span style={{ fontSize: 'var(--lbb-fs-10)', color: 'var(--lbb-fg3)', fontVariantNumeric: 'tabular-nums' }}>
-            {checkResult.lb_number
-              ? <span style={{ color: 'var(--lbb-accent-mid)' }}>LB-{String(checkResult.lb_number).padStart(5, '0')}</span>
-              : <span>—</span>}
-            {checkResult.total > 0 && <> · {checkResult.pass}/{checkResult.total} pass</>}
-          </span>
-        )}
+        <span style={{ fontSize: 'var(--lbb-fs-10)', color: 'var(--lbb-fg3)', fontVariantNumeric: 'tabular-nums', display: 'flex', gap: 4, alignItems: 'center' }}>
+          {checkResult ? (
+            <>
+              {checkResult.lb_number
+                ? <span style={{ color: 'var(--lbb-accent-mid)' }}>LB-{String(checkResult.lb_number).padStart(5, '0')}</span>
+                : <span>—</span>}
+              {checkResult.total > 0 && <span> · {checkResult.pass}/{checkResult.total} pass</span>}
+            </>
+          ) : verifiedDate ? (
+            <span style={{ color: 'var(--lbb-ok-fg)', opacity: 0.7 }}>✓ {verifiedDate}</span>
+          ) : null}
+        </span>
       </span>
     </button>
+  )
+}
+
+// ── Reconcile panel ────────────────────────────────────────────────────────────
+
+function ReconcilePanel({ result, reconSelected, setReconSelected, busy, onRescan, onApply }: {
+  result: ReconcileResult
+  reconSelected: Set<string>
+  setReconSelected: (updater: Set<string> | ((prev: Set<string>) => Set<string>)) => void
+  busy: boolean
+  onRescan: () => void
+  onApply: () => void
+}): React.JSX.Element {
+  const selectedCount = result.proposals.filter(p => reconSelected.has(p.disk_rel)).length
+  const extrasCount = result.unmatched_disk.length
+
+  return (
+    <div style={{
+      margin: '0 24px 20px',
+      borderRadius: 8,
+      border: '1px solid var(--lbb-border)',
+      background: 'var(--lbb-surface)',
+      overflow: 'hidden',
+    }}>
+      {/* Panel header */}
+      <div style={{
+        padding: '10px 16px', background: 'var(--lbb-surface2)',
+        borderBottom: '1px solid var(--lbb-border)',
+        display: 'flex', alignItems: 'center', gap: 10,
+      }}>
+        <Icon name="rename" size={13} style={{ color: 'var(--lbb-fg3)' }} />
+        <span style={{ fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase' }}>
+          Reconcile
+        </span>
+        {result.proposals.length > 0 && (
+          <Pill tone="info" soft>{result.proposals.length} rename{result.proposals.length !== 1 ? 's' : ''}</Pill>
+        )}
+        {extrasCount > 0 && (
+          <Pill tone="warn" soft>{extrasCount} extra{extrasCount !== 1 ? 's' : ''} → /extras/</Pill>
+        )}
+        <div style={{ flex: 1 }} />
+        <Button variant="ghost" size="sm" disabled={busy} onClick={onRescan}>Re-scan</Button>
+        <Button variant="primary" size="sm" icon="check" disabled={busy || (selectedCount === 0 && extrasCount === 0)} onClick={onApply}>
+          Apply{selectedCount > 0 ? ` ${selectedCount} rename${selectedCount !== 1 ? 's' : ''}` : ''}
+          {extrasCount > 0 ? ` + move ${extrasCount} extra${extrasCount !== 1 ? 's' : ''}` : ''}
+        </Button>
+      </div>
+
+      {/* Proposals */}
+      {result.proposals.length > 0 ? (
+        <div style={{ borderBottom: extrasCount > 0 ? '1px solid var(--lbb-border)' : undefined }}>
+          <div style={{ padding: '8px 16px 4px', display: 'flex', alignItems: 'center', gap: 8 }}>
+            <input type="checkbox"
+              checked={result.proposals.length > 0 && result.proposals.every(p => reconSelected.has(p.disk_rel))}
+              onChange={e => setReconSelected(e.target.checked
+                ? new Set(result.proposals.map(p => p.disk_rel))
+                : new Set()
+              )}
+            />
+            <span style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)', fontWeight: 600 }}>
+              Proposed renames — files found by MD5 match
+            </span>
+          </div>
+          <TableShell style={{ margin: 0, borderRadius: 0, border: 'none' }}>
+            <colgroup>
+              <col style={{ width: 3 }} /><col style={{ width: 32 }} />
+              <col /><col style={{ width: 24 }} /><col /><col style={{ width: 140 }} />
+            </colgroup>
+            <thead>
+              <tr>
+                <TH> </TH><TH> </TH>
+                <TH>Current path on disk</TH><TH> </TH>
+                <TH>Will rename to</TH><TH>MD5</TH>
+              </tr>
+            </thead>
+            <tbody>
+              {result.proposals.map((p, i) => (
+                <TR key={i} edge="info">
+                  <TD> </TD>
+                  <TD>
+                    <input type="checkbox"
+                      checked={reconSelected.has(p.disk_rel)}
+                      onChange={e => setReconSelected(prev => {
+                        const next = new Set(prev)
+                        e.target.checked ? next.add(p.disk_rel) : next.delete(p.disk_rel)
+                        return next
+                      })}
+                    />
+                  </TD>
+                  <TD mono style={{ color: 'var(--lbb-fg2)' }}>{p.disk_rel}</TD>
+                  <TD align="center"><Icon name="chevRight" size={12} style={{ color: 'var(--lbb-fg3)' }} /></TD>
+                  <TD mono style={{ color: 'var(--lbb-ok-fg)' }}>{p.lbdir_rel}</TD>
+                  <TD mono dim>{p.md5.slice(0, 12)}…</TD>
+                </TR>
+              ))}
+            </tbody>
+          </TableShell>
+        </div>
+      ) : (
+        <div style={{ padding: '12px 16px', color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-12)', borderBottom: extrasCount > 0 ? '1px solid var(--lbb-border)' : undefined }}>
+          No rename proposals — missing files could not be matched by MD5.
+        </div>
+      )}
+
+      {/* Extras */}
+      {extrasCount > 0 && (
+        <div>
+          <div style={{ padding: '8px 16px 4px' }}>
+            <span style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)', fontWeight: 600 }}>
+              Extra files — not in lbdir, will be moved to <span style={{ fontFamily: 'var(--lbb-mono)' }}>/extras/</span>
+            </span>
+          </div>
+          <div style={{ padding: '4px 16px 12px', display: 'flex', flexDirection: 'column', gap: 3 }}>
+            {result.unmatched_disk.map((f, i) => (
+              <span key={i} style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-warn-fg)' }}>{f}</span>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {result.proposals.length === 0 && extrasCount === 0 && (
+        <div style={{ padding: '12px 16px', color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-12)' }}>
+          Nothing to reconcile for this folder.
+        </div>
+      )}
+    </div>
   )
 }
 
@@ -74,15 +218,15 @@ export function ScreenLBDIR(): React.JSX.Element {
   const navigate = useNavigate()
 
   const {
-    activeFolder, tab, filter, checkResults, retrieveResults, reconcileResults, extrasResults,
-    reconSelected, extrasSelected,
-    setActiveFolder, setTab, setFilter, setCheckResults, updateCheckResult,
-    setRetrieveResults, setReconcileResults, setExtrasResults, setReconSelected, setExtrasSelected,
+    activeFolder, filter, checkResults, reconcileResults, reconSelected,
+    setActiveFolder, setFilter, setCheckResults, updateCheckResult,
+    setReconcileResults, clearReconcileFor, setReconSelected,
   } = useLbdirStore()
   const { folders, addFolders } = useFolderQueueStore()
-  const [busy,  setBusy]  = useState(false)
-  const [tools, setTools] = useState<{ shntool_available: boolean } | null>(null)
-  const [toast, setToast] = useState<{ msg: string; tone: ToastTone } | null>(null)
+  const [busy,      setBusy]      = useState(false)
+  const [tools,     setTools]     = useState<{ shntool_available: boolean } | null>(null)
+  const [toast,     setToast]     = useState<{ msg: string; tone: ToastTone } | null>(null)
+  const [verifiedAt, setVerifiedAt] = useState<Record<string, string | null>>({})
 
   const showToast = useCallback((msg: string, tone: ToastTone) => setToast({ msg, tone }), [])
 
@@ -92,6 +236,19 @@ export function ScreenLBDIR(): React.JSX.Element {
       .then((d: { shntool_available: boolean }) => setTools(d))
       .catch(() => {})
   }, [])
+
+  // Load lbdir_verified_at from collection whenever the folder list changes
+  useEffect(() => {
+    if (!folders.length) return
+    fetch(`${BASE}/api/lbdir/verified_status`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ folders }),
+    })
+      .then(r => r.json())
+      .then((d: Record<string, string | null>) => setVerifiedAt(d))
+      .catch(() => {})
+  }, [folders])
 
   const post = useCallback(async (endpoint: string, body: object): Promise<unknown> => {
     const r = await fetch(`${BASE}${endpoint}`, {
@@ -128,112 +285,81 @@ export function ScreenLBDIR(): React.JSX.Element {
     }
   }, [activeFolder, post, showToast])
 
-  const handleCheckAll = useCallback(async () => {
-    if (!folders.length) { showToast('Add folders first', 'info'); return }
+  // Process: retrieve lbdir for all folders, then check all
+  const handleProcess = useCallback(async (targetFolders: string[]) => {
+    if (!targetFolders.length) { showToast('Add folders first', 'info'); return }
     setBusy(true)
     try {
-      const data = await post('/api/lbdir/check', { folders }) as { results: CheckResult[] }
-      setCheckResults(data.results ?? [])
-      setTab('check')
-      if (activeFolder === null && data.results?.length) {
-        setActiveFolder(data.results[0].folder)
+      // Auto-retrieve lbdir files from cache/LB.com where missing
+      await post('/api/lbdir/retrieve', { folders: targetFolders }).catch(() => {})
+      // Check all folders against their lbdir files
+      const data = await post('/api/lbdir/check', { folders: targetFolders }) as { results: CheckResult[] }
+      const results = data.results ?? []
+      if (targetFolders.length === folders.length) {
+        setCheckResults(results)
+      } else {
+        results.forEach(r => updateCheckResult(r.folder, r))
       }
+      if (!activeFolder && results.length) setActiveFolder(results[0].folder)
+      // Clear any stale reconcile data for re-processed folders
+      results.forEach(r => clearReconcileFor(r.folder))
+      // Refresh local verifiedAt map from the fresh check results
+      setVerifiedAt(prev => {
+        const next = { ...prev }
+        results.forEach(r => { next[r.folder] = r.lbdir_verified_at })
+        return next
+      })
     } catch {
-      showToast('Check failed', 'bad')
+      showToast('Process failed', 'bad')
     } finally {
       setBusy(false)
     }
-  }, [folders, activeFolder, post, showToast])
+  }, [folders, activeFolder, post, showToast, setCheckResults, updateCheckResult, setActiveFolder, clearReconcileFor])
 
-  const handleRecheck = useCallback(async (folder: string) => {
-    setBusy(true)
-    try {
-      const data = await post('/api/lbdir/check', { folders: [folder] }) as { results: CheckResult[] }
-      if (data.results?.length) {
-        updateCheckResult(folder, data.results[0])
-      }
-    } catch {
-      showToast('Re-check failed', 'bad')
-    } finally {
-      setBusy(false)
-    }
-  }, [post, showToast, updateCheckResult])
-
-  const handleRetrieve = useCallback(async () => {
-    if (!folders.length) { showToast('Add folders first', 'info'); return }
-    setBusy(true)
-    try {
-      const data = await post('/api/lbdir/retrieve', { folders }) as { results: RetrieveResult[] }
-      setRetrieveResults(data.results ?? [])
-      setTab('retrieve')
-    } catch {
-      showToast('Retrieve failed', 'bad')
-    } finally {
-      setBusy(false)
-    }
-  }, [folders, post, showToast])
-
-  const handleRescan = useCallback(async (folder: string) => {
+  const handleReconcile = useCallback(async (folder: string) => {
     setBusy(true)
     try {
       const data = await post('/api/lbdir/reconcile', { folders: [folder] }) as { results: ReconcileResult[] }
       if (data.results?.length) {
-        setReconcileResults(data.results)
+        setReconcileResults([...reconcileResults.filter(r => r.folder !== folder), data.results[0]])
         setReconSelected(new Set(data.results[0].proposals.map(p => p.disk_rel)))
       }
     } catch {
-      showToast('Re-scan failed', 'bad')
+      showToast('Reconcile scan failed', 'bad')
     } finally {
       setBusy(false)
     }
-  }, [post, showToast])
+  }, [reconcileResults, post, showToast, setReconcileResults, setReconSelected])
 
-  const handleApplyRecon = useCallback(async (folder: string, proposals: ReconcileProposal[]) => {
-    const renames = proposals
+  const handleApplyReconcile = useCallback(async (folder: string) => {
+    const reconResult = reconcileResults.find(r => r.folder === folder)
+    if (!reconResult) return
+    const renames = reconResult.proposals
       .filter(p => reconSelected.has(p.disk_rel))
       .map(p => ({ from: p.disk_rel, to: p.lbdir_rel }))
-    if (!renames.length) { showToast('No renames selected', 'info'); return }
+    const extras = reconResult.unmatched_disk
     setBusy(true)
     try {
-      const data = await post('/api/lbdir/apply_reconcile', { folder, renames }) as { applied: number; errors: string[] }
-      showToast(`Applied ${data.applied} renames`, 'ok')
-      handleRecheck(folder)
+      if (renames.length) {
+        await post('/api/lbdir/apply_reconcile', { folder, renames })
+      }
+      if (extras.length) {
+        await post('/api/lbdir/move_extras', { folder, files: extras })
+      }
+      const parts: string[] = []
+      if (renames.length) parts.push(`${renames.length} rename${renames.length !== 1 ? 's' : ''}`)
+      if (extras.length) parts.push(`${extras.length} extra${extras.length !== 1 ? 's' : ''} moved to /extras/`)
+      showToast(parts.length ? parts.join(', ') : 'Nothing to apply', 'ok')
+      clearReconcileFor(folder)
+      // Re-check this folder
+      const data = await post('/api/lbdir/check', { folders: [folder] }) as { results: CheckResult[] }
+      if (data.results?.length) updateCheckResult(folder, data.results[0])
     } catch {
       showToast('Apply failed', 'bad')
     } finally {
       setBusy(false)
     }
-  }, [reconSelected, post, showToast, handleRecheck])
-
-  const handleFindExtras = useCallback(async (folder: string) => {
-    setBusy(true)
-    try {
-      const data = await post('/api/lbdir/find_extra', { folders: [folder] }) as { results: ExtrasResult[] }
-      setExtrasResults(data.results ?? [])
-      if (data.results?.[0]) {
-        setExtrasSelected(new Set())
-      }
-    } catch {
-      showToast('Find extras failed', 'bad')
-    } finally {
-      setBusy(false)
-    }
-  }, [post, showToast])
-
-  const handleDeleteExtras = useCallback(async (folder: string, extra: string[]) => {
-    const files = extra.filter(f => extrasSelected.has(f))
-    if (!files.length) { showToast('No files selected', 'info'); return }
-    setBusy(true)
-    try {
-      const data = await post('/api/lbdir/delete_extra', { folder, files }) as { deleted: number; errors: string[] }
-      showToast(`Deleted ${data.deleted} files`, 'ok')
-      handleFindExtras(folder)
-    } catch {
-      showToast('Delete failed', 'bad')
-    } finally {
-      setBusy(false)
-    }
-  }, [extrasSelected, post, showToast, handleFindExtras])
+  }, [reconcileResults, reconSelected, post, showToast, clearReconcileFor, updateCheckResult])
 
   const filteredFolders = filter
     ? folders.filter(f => f.toLowerCase().includes(filter.toLowerCase()))
@@ -242,14 +368,11 @@ export function ScreenLBDIR(): React.JSX.Element {
   const activeFolderStr = activeFolder ?? folders[0] ?? null
   const checkResult  = activeFolderStr ? checkResults.find(r => r.folder === activeFolderStr) ?? null : null
   const reconResult  = activeFolderStr ? reconcileResults.find(r => r.folder === activeFolderStr) ?? null : null
-  const extrasResult = activeFolderStr ? extrasResults.find(r => r.folder === activeFolderStr) ?? null : null
 
-  const SUB_TABS: { k: SubTab; l: string; icon: string; hint: string }[] = [
-    { k: 'check',     l: 'Check',     icon: 'verify',   hint: 'verify lbdir vs disk' },
-    { k: 'retrieve',  l: 'Retrieve',  icon: 'download', hint: 'copy lbdir from cache' },
-    { k: 'reconcile', l: 'Reconcile', icon: 'rename',   hint: 'find moved files' },
-    { k: 'extras',    l: 'Extras',    icon: 'trash',    hint: 'files not in lbdir' },
-  ]
+  const canReconcile = checkResult !== null
+    && checkResult.lbdir_found
+    && checkResult.status !== 'pass'
+    && checkResult.status !== 'no_lb'
 
   return (
     <div style={{ height: '100%', display: 'flex', flexDirection: 'column', minHeight: 0 }}>
@@ -272,7 +395,7 @@ export function ScreenLBDIR(): React.JSX.Element {
             <Pill tone="mute" soft>official sidecar reconciliation</Pill>
           </div>
           <div style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg3)', marginTop: 2 }}>
-            Check, retrieve, and reconcile the <span style={{ fontFamily: 'var(--lbb-mono)' }}>lbdir*.txt</span> file from the LosslessBob archive.
+            Retrieve, verify, and reconcile the <span style={{ fontFamily: 'var(--lbb-mono)' }}>lbdir*.txt</span> archive sidecar for each folder.
           </div>
         </div>
         <div style={{ flex: 1 }} />
@@ -282,28 +405,6 @@ export function ScreenLBDIR(): React.JSX.Element {
           </span>
         </div>
         <Button variant="ghost" size="sm" icon="folderPlus" onClick={handleAddFolders}>Add folders…</Button>
-      </div>
-
-      {/* Sub-flow tabs */}
-      <div style={{
-        padding: '0 24px', borderBottom: '1px solid var(--lbb-border)',
-        display: 'flex', alignItems: 'stretch', gap: 0, background: 'var(--lbb-surface)',
-      }}>
-        {SUB_TABS.map(t => (
-          <button key={t.k} onClick={() => setTab(t.k)} style={{
-            padding: '10px 16px 12px',
-            borderBottomWidth: 2, borderBottomStyle: 'solid',
-            borderBottomColor: tab === t.k ? 'var(--lbb-accent-mid)' : 'transparent',
-            background: 'transparent', border: 'none',
-            color: tab === t.k ? 'var(--lbb-fg)' : 'var(--lbb-fg2)',
-            fontFamily: 'inherit', fontSize: 'var(--lbb-fs-12-5)', fontWeight: tab === t.k ? 600 : 500,
-            cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 8,
-          }}>
-            <Icon name={t.icon} size={13} />
-            {t.l}
-            <span style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)', fontWeight: 500 }}>{t.hint}</span>
-          </button>
-        ))}
       </div>
 
       <div style={{ flex: 1, display: 'flex', minHeight: 0 }}>
@@ -335,385 +436,176 @@ export function ScreenLBDIR(): React.JSX.Element {
                 key={f}
                 folder={f}
                 checkResult={checkResults.find(r => r.folder === f)}
+                verifiedAt={verifiedAt[f] ?? null}
                 active={f === activeFolderStr}
                 onClick={() => setActiveFolder(f)}
               />
             ))}
           </div>
           <div style={{ padding: 12, borderTop: '1px solid var(--lbb-border)', display: 'flex', flexDirection: 'column', gap: 6 }}>
-            <Button variant="primary"   size="sm" icon="lbdir"      block disabled={busy || !folders.length} onClick={handleCheckAll}>
-              {busy ? 'Running…' : 'Check all folders'}
+            <Button variant="primary"   size="sm" icon="lbdir"      block disabled={busy || !folders.length}
+              onClick={() => handleProcess(folders)}>
+              {busy ? 'Processing…' : 'Process all folders'}
             </Button>
-            <Button variant="secondary" size="sm" icon="download"   block disabled={busy || !folders.length} onClick={handleRetrieve}>Retrieve missing lbdir</Button>
             <Button variant="ghost"     size="sm" icon="folderPlus" block onClick={handleAddRoot}>Add root folder…</Button>
           </div>
         </aside>
 
-        {/* Active sub-flow */}
+        {/* Detail panel */}
         <section style={{ flex: 1, display: 'flex', flexDirection: 'column', minWidth: 0, minHeight: 0, overflow: 'auto' }}>
 
           {!activeFolderStr ? (
             <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 12, color: 'var(--lbb-fg3)' }}>
               <Icon name="lbdir" size={36} style={{ opacity: 0.15 }} />
-              <span style={{ fontSize: 'var(--lbb-fs-13)' }}>Add folders, then click Check all folders</span>
+              <span style={{ fontSize: 'var(--lbb-fs-13)' }}>Add folders, then click Process all folders</span>
+            </div>
+          ) : !checkResult ? (
+            <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 12, color: 'var(--lbb-fg3)' }}>
+              <Icon name="lbdir" size={36} style={{ opacity: 0.15 }} />
+              <span style={{ fontSize: 'var(--lbb-fs-13)' }}>Click Process all folders to retrieve and verify</span>
+              <Button variant="secondary" size="sm" icon="lbdir" disabled={busy}
+                onClick={() => handleProcess([activeFolderStr])}>
+                Process this folder
+              </Button>
             </div>
           ) : (
             <>
-              {/* ── CHECK ────────────────────────────────────────────────────── */}
-              {tab === 'check' && (
-                checkResult ? (
-                  <>
-                    <div style={{ padding: '14px 24px', borderBottom: '1px solid var(--lbb-border)', flexShrink: 0 }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
-                        <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-13)', fontWeight: 600 }}>
-                          {activeFolderStr.split('/').pop()}
-                        </span>
-                        {checkResult.lb_number !== null && (
-                          <Pill tone="info" soft style={{ fontFamily: 'var(--lbb-mono)' }}>
-                            LB-{String(checkResult.lb_number).padStart(5, '0')}
-                          </Pill>
-                        )}
-                        {checkResult.lbdir_path && (
-                          <Pill tone="mute" soft style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-10)' }}>
-                            {checkResult.lbdir_path.split('/').pop()}
-                          </Pill>
-                        )}
-                        <Pill tone="mute" soft>{checkResult.mode.toUpperCase()}</Pill>
-                        <Pill tone={STATE_LABEL[checkResult.status].tone} soft dot={checkResult.status !== 'pass'}>
-                          {STATE_LABEL[checkResult.status].label}
-                        </Pill>
-                        <div style={{ flex: 1 }} />
-                        {checkResult.lbdir_path && (
-                          <Button variant="secondary" size="sm" icon="reveal"
-                            onClick={() => window.api.openPath(checkResult.lbdir_path!)}>
-                            Open lbdir.txt
-                          </Button>
-                        )}
-                        <Button variant="primary" size="sm" icon="lbdir" disabled={busy}
-                          onClick={() => handleRecheck(activeFolderStr)}>
-                          Re-check this folder
-                        </Button>
-                      </div>
-
-                      <div style={{ marginTop: 10, display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 8 }}>
-                        {[
-                          { l: 'Total',    v: checkResult.total,    c: undefined },
-                          { l: 'Pass',     v: checkResult.pass,     c: checkResult.pass  > 0 ? 'var(--lbb-ok-fg)'  : 'var(--lbb-fg3)' },
-                          { l: 'Mismatch', v: checkResult.mismatch, c: checkResult.mismatch > 0 ? 'var(--lbb-bad-fg)' : 'var(--lbb-fg3)' },
-                          { l: 'Missing',  v: checkResult.missing,  c: checkResult.missing  > 0 ? 'var(--lbb-bad-fg)' : 'var(--lbb-fg3)' },
-                        ].map((st, i) => (
-                          <div key={i} style={{ padding: '6px 10px', borderRadius: 6, background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)' }}>
-                            <div style={{ fontSize: 'var(--lbb-fs-9-5)', fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase' }}>{st.l}</div>
-                            <div style={{ fontSize: 'var(--lbb-fs-16)', fontWeight: 700, fontFamily: 'var(--lbb-mono)', color: st.c ?? 'var(--lbb-fg)' }}>{st.v}</div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div style={{ flex: 1, overflow: 'auto', padding: '16px 24px' }}>
-                      <TableShell>
-                        <colgroup>
-                          <col style={{ width: 3 }} /><col />
-                          <col style={{ width: 50 }} /><col style={{ width: 60 }} /><col style={{ width: 70 }} />
-                          <col style={{ width: 80 }} /><col style={{ width: 60 }} /><col style={{ width: 70 }} />
-                        </colgroup>
-                        <thead>
-                          <tr>
-                            <TH> </TH><TH>Filename</TH>
-                            <TH align="center">MD5</TH><TH align="center">Disk</TH><TH>Overall</TH>
-                            <TH align="right">Length</TH><TH>Fmt</TH><TH align="right">Ratio</TH>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {checkResult.files.map((f, i) => {
-                            const edge: 'ok' | 'warn' | 'bad' = f.overall === 'pass' ? 'ok' : f.overall === 'missing' ? 'warn' : 'bad'
-                            return (
-                              <TR key={i} edge={edge}>
-                                <TD mono style={{ color: f.overall === 'pass' ? 'var(--lbb-fg)' : 'var(--lbb-bad-fg)' }}>{f.filename}</TD>
-                                <TD align="center"><CheckDot s={f.md5_status} /></TD>
-                                <TD align="center">
-                                  {f.on_disk
-                                    ? <Icon name="check" size={12} style={{ color: 'var(--lbb-ok-bar)' }} />
-                                    : <Icon name="x"     size={12} style={{ color: 'var(--lbb-warn-fg)' }} />}
-                                </TD>
-                                <TD><Pill tone={edge} soft>{f.overall === 'pass' ? 'Pass' : f.overall === 'missing' ? 'Missing' : 'Fail'}</Pill></TD>
-                                <TD align="right" mono dim>{f.length ?? '—'}</TD>
-                                <TD mono dim>{f.fmt ?? '—'}</TD>
-                                <TD align="right" mono dim>{f.ratio ?? '—'}</TD>
-                              </TR>
-                            )
-                          })}
-                        </tbody>
-                      </TableShell>
-                    </div>
-                  </>
-                ) : (
-                  <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 12, color: 'var(--lbb-fg3)' }}>
-                    <Icon name="lbdir" size={36} style={{ opacity: 0.15 }} />
-                    <span style={{ fontSize: 'var(--lbb-fs-13)' }}>Click Check all folders to run</span>
-                  </div>
-                )
-              )}
-
-              {/* ── RETRIEVE ─────────────────────────────────────────────────── */}
-              {tab === 'retrieve' && (
-                <div style={{ flex: 1, overflow: 'auto', padding: '16px 24px' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
-                    <span style={{ fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase' }}>
-                      Retrieve lbdir from cache
-                    </span>
-                    {retrieveResults.length > 0 && (
-                      <>
-                        {retrieveResults.filter(r => r.status === 'copied').length > 0 &&
-                          <Pill tone="ok"   soft>{retrieveResults.filter(r => r.status === 'copied').length} copied</Pill>}
-                        {retrieveResults.filter(r => r.status === 'scraped_and_copied').length > 0 &&
-                          <Pill tone="warn" soft>{retrieveResults.filter(r => r.status === 'scraped_and_copied').length} scraped</Pill>}
-                        {retrieveResults.filter(r => r.status === 'not_found').length > 0 &&
-                          <Pill tone="bad"  soft>{retrieveResults.filter(r => r.status === 'not_found').length} not found</Pill>}
-                        {retrieveResults.filter(r => r.status === 'no_lb_number').length > 0 &&
-                          <Pill tone="mute" soft>{retrieveResults.filter(r => r.status === 'no_lb_number').length} no LB#</Pill>}
-                      </>
-                    )}
-                    <div style={{ flex: 1 }} />
-                    <Button variant="secondary" size="sm" icon="download" disabled={busy || !folders.length} onClick={handleRetrieve}>
-                      {busy ? 'Retrieving…' : 'Re-run retrieve'}
-                    </Button>
-                  </div>
-
-                  {retrieveResults.length === 0 ? (
-                    <div style={{ padding: '32px', textAlign: 'center', color: 'var(--lbb-fg3)' }}>
-                      Click "Retrieve missing lbdir" in the sidebar to run
-                    </div>
-                  ) : (
-                    <TableShell>
-                      <colgroup>
-                        <col style={{ width: 3 }} /><col /><col style={{ width: 100 }} />
-                        <col style={{ width: 160 }} /><col /><col style={{ width: 100 }} />
-                      </colgroup>
-                      <thead>
-                        <tr>
-                          <TH> </TH><TH>Folder</TH><TH>LB#</TH><TH>Result</TH><TH>Message</TH><TH align="right"> </TH>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {retrieveResults.map((r, i) => {
-                          const tone: Tone = r.status === 'copied' || r.status === 'scraped_and_copied' ? 'ok' : r.status === 'not_found' ? 'bad' : 'mute'
-                          const label = r.status === 'copied' ? 'Copied' : r.status === 'scraped_and_copied' ? 'Scraped + copied' : r.status === 'not_found' ? 'Not on LB.com' : 'No LB# known'
-                          return (
-                            <TR key={i} edge={tone === 'mute' ? undefined : tone}>
-                              <TD mono style={{ color: 'var(--lbb-fg)' }}>{r.folder.split('/').pop()}</TD>
-                              <TD mono style={{ color: r.lb_number ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg3)', fontWeight: 600 }}>
-                                {r.lb_number ? `LB-${String(r.lb_number).padStart(5, '0')}` : '—'}
-                              </TD>
-                              <TD><Pill tone={tone} soft dot={tone !== 'ok'}>{label}</Pill></TD>
-                              <TD style={{ color: 'var(--lbb-fg2)', fontSize: 'var(--lbb-fs-11-5)' }}>{r.msg}</TD>
-                              <TD align="right">
-                                {r.status === 'no_lb_number' && (
-                                  <Button size="sm" variant="secondary" icon="lookup" onClick={() => navigate('/lookup')}>Run Lookup</Button>
-                                )}
-                                {(r.status === 'copied' || r.status === 'scraped_and_copied') && (
-                                  <Button size="sm" variant="ghost" icon="reveal" onClick={() => window.api.openPath(r.folder)}>Open</Button>
-                                )}
-                              </TD>
-                            </TR>
-                          )
-                        })}
-                      </tbody>
-                    </TableShell>
+              {/* Folder header */}
+              <div style={{ padding: '14px 24px', borderBottom: '1px solid var(--lbb-border)', flexShrink: 0 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
+                  <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-13)', fontWeight: 600 }}>
+                    {activeFolderStr.split('/').pop()}
+                  </span>
+                  {checkResult.lb_number !== null && (
+                    <Pill tone="info" soft style={{ fontFamily: 'var(--lbb-mono)' }}>
+                      LB-{String(checkResult.lb_number).padStart(5, '0')}
+                    </Pill>
                   )}
+                  {checkResult.lbdir_path && (
+                    <Pill tone="mute" soft style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-10)' }}>
+                      {checkResult.lbdir_path.split('/').pop()}
+                    </Pill>
+                  )}
+                  <Pill tone="mute" soft>{checkResult.mode.toUpperCase()}</Pill>
+                  <Pill tone={STATE_LABEL[checkResult.status].tone} soft dot={checkResult.status !== 'pass'}>
+                    {STATE_LABEL[checkResult.status].label}
+                  </Pill>
+                  <div style={{ flex: 1 }} />
+                  {checkResult.lbdir_path && (
+                    <Button variant="ghost" size="sm" icon="reveal"
+                      onClick={() => window.api.openPath(checkResult.lbdir_path!)}>
+                      Open lbdir.txt
+                    </Button>
+                  )}
+                  <Button variant="secondary" size="sm" icon="lbdir" disabled={busy}
+                    onClick={() => handleProcess([activeFolderStr])}>
+                    Re-process
+                  </Button>
+                </div>
 
-                  <div style={{
-                    marginTop: 16, padding: '10px 14px', borderRadius: 6,
-                    background: 'var(--lbb-info-bg)', border: '1px solid var(--lbb-info-bar)',
-                    fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)', display: 'flex', alignItems: 'flex-start', gap: 10,
-                  }}>
-                    <Icon name="info" size={13} style={{ color: 'var(--lbb-info-fg)', marginTop: 1 }} />
-                    <div>
-                      Cached <span style={{ fontFamily: 'var(--lbb-mono)' }}>lbdir*.txt</span> files live in{' '}
-                      <span style={{ fontFamily: 'var(--lbb-mono)' }}>data/attachments/LB-XXXXX/</span>. Retrieve copies the file to the audio folder. If no cache hit, the Scraper auto-fetches from LB.com.
+                {/* Stats row */}
+                <div style={{ marginTop: 10, display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 8 }}>
+                  {[
+                    { l: 'Total',    v: checkResult.total,    c: undefined },
+                    { l: 'Pass',     v: checkResult.pass,     c: checkResult.pass     > 0 ? 'var(--lbb-ok-fg)'  : 'var(--lbb-fg3)' },
+                    { l: 'Mismatch', v: checkResult.mismatch, c: checkResult.mismatch > 0 ? 'var(--lbb-bad-fg)' : 'var(--lbb-fg3)' },
+                    { l: 'Missing',  v: checkResult.missing,  c: checkResult.missing  > 0 ? 'var(--lbb-bad-fg)' : 'var(--lbb-fg3)' },
+                  ].map((st, i) => (
+                    <div key={i} style={{ padding: '6px 10px', borderRadius: 6, background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)' }}>
+                      <div style={{ fontSize: 'var(--lbb-fs-9-5)', fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase' }}>{st.l}</div>
+                      <div style={{ fontSize: 'var(--lbb-fs-16)', fontWeight: 700, fontFamily: 'var(--lbb-mono)', color: st.c ?? 'var(--lbb-fg)' }}>{st.v}</div>
                     </div>
-                  </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Special-state messages */}
+              {checkResult.status === 'no_lb' && (
+                <div style={{ margin: '16px 24px 0', padding: '10px 14px', borderRadius: 6, background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)', display: 'flex', alignItems: 'center', gap: 10 }}>
+                  <Icon name="info" size={13} style={{ color: 'var(--lbb-fg3)' }} />
+                  <span style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)' }}>
+                    No LB number linked to this folder. Run Lookup to identify it, then link it in My Collection.
+                  </span>
+                  <div style={{ flex: 1 }} />
+                  <Button size="sm" variant="secondary" icon="lookup" onClick={() => navigate('/lookup')}>Run Lookup</Button>
+                </div>
+              )}
+              {checkResult.status === 'no_lbdir' && (
+                <div style={{ margin: '16px 24px 0', padding: '10px 14px', borderRadius: 6, background: 'var(--lbb-info-bg)', border: '1px solid var(--lbb-info-bar)', display: 'flex', alignItems: 'center', gap: 10 }}>
+                  <Icon name="info" size={13} style={{ color: 'var(--lbb-info-fg)' }} />
+                  <span style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)' }}>
+                    No <span style={{ fontFamily: 'var(--lbb-mono)' }}>lbdir*.txt</span> found. The retrieve step ran but no cached file was available — scrape the entry to fetch it from LB.com.
+                  </span>
                 </div>
               )}
 
-              {/* ── RECONCILE ────────────────────────────────────────────────── */}
-              {tab === 'reconcile' && (
-                <div style={{ flex: 1, overflow: 'auto', padding: '16px 24px' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
-                    <span style={{ fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase' }}>
-                      Reconcile · find moved files
-                    </span>
-                    {reconResult && (
-                      <Pill tone="info" soft>
-                        {reconResult.proposals.length} proposals · {reconResult.unmatched_lbdir.length} unmatched
-                      </Pill>
-                    )}
-                    <div style={{ flex: 1 }} />
-                    <Button variant="ghost" size="sm" disabled={busy || !activeFolderStr} onClick={() => activeFolderStr && handleRescan(activeFolderStr)}>
-                      Re-scan disk
-                    </Button>
-                    {reconResult && reconResult.proposals.length > 0 && (
-                      <Button variant="primary" size="sm" icon="check" disabled={busy}
-                        onClick={() => handleApplyRecon(reconResult.folder, reconResult.proposals)}>
-                        Apply {Array.from(reconSelected).filter(k => reconResult.proposals.some(p => p.disk_rel === k)).length} renames
-                      </Button>
-                    )}
-                  </div>
-
-                  {!reconResult ? (
-                    <div style={{ padding: '32px', textAlign: 'center', color: 'var(--lbb-fg3)' }}>
-                      Click "Re-scan disk" to find moved files
-                    </div>
-                  ) : reconResult.proposals.length === 0 ? (
-                    <div style={{ padding: '32px', textAlign: 'center', color: 'var(--lbb-fg3)' }}>
-                      No proposals — files match or none could be matched by MD5
-                    </div>
-                  ) : (
-                    <TableShell>
-                      <colgroup>
-                        <col style={{ width: 3 }} /><col style={{ width: 32 }} />
-                        <col /><col style={{ width: 24 }} /><col /><col style={{ width: 140 }} />
-                      </colgroup>
-                      <thead>
-                        <tr>
-                          <TH> </TH>
-                          <TH><input type="checkbox"
-                            checked={reconResult.proposals.every(p => reconSelected.has(p.disk_rel))}
-                            onChange={e => setReconSelected(e.target.checked ? new Set(reconResult.proposals.map(p => p.disk_rel)) : new Set())}
-                          /></TH>
-                          <TH>Disk file (current path)</TH><TH> </TH>
-                          <TH>Will move to</TH><TH>MD5</TH>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {reconResult.proposals.map((p, i) => (
-                          <TR key={i} edge="info">
-                            <TD><input type="checkbox"
-                              checked={reconSelected.has(p.disk_rel)}
-                              onChange={e => {
-                                setReconSelected(prev => {
-                                  const next = new Set(prev)
-                                  e.target.checked ? next.add(p.disk_rel) : next.delete(p.disk_rel)
-                                  return next
-                                })
-                              }}
-                            /></TD>
-                            <TD mono style={{ color: 'var(--lbb-fg2)' }}>{p.disk_rel}</TD>
-                            <TD align="center"><Icon name="chevRight" size={12} style={{ color: 'var(--lbb-fg3)' }} /></TD>
-                            <TD mono style={{ color: 'var(--lbb-ok-fg)' }}>{p.lbdir_rel}</TD>
-                            <TD mono dim>{p.md5.slice(0, 12)}…</TD>
+              {/* File table */}
+              {checkResult.files.length > 0 && (
+                <div style={{ padding: '16px 24px 0' }}>
+                  <TableShell>
+                    <colgroup>
+                      <col style={{ width: 3 }} /><col />
+                      <col style={{ width: 50 }} /><col style={{ width: 60 }} /><col style={{ width: 70 }} />
+                      <col style={{ width: 80 }} /><col style={{ width: 60 }} /><col style={{ width: 70 }} />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <TH> </TH><TH>Filename</TH>
+                        <TH align="center">MD5</TH><TH align="center">Disk</TH><TH>Overall</TH>
+                        <TH align="right">Length</TH><TH>Fmt</TH><TH align="right">Ratio</TH>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {checkResult.files.map((f, i) => {
+                        const edge: 'ok' | 'warn' | 'bad' = f.overall === 'pass' ? 'ok' : f.overall === 'missing' ? 'warn' : 'bad'
+                        return (
+                          <TR key={i} edge={edge}>
+                            <TD mono style={{ color: f.overall === 'pass' ? 'var(--lbb-fg)' : 'var(--lbb-bad-fg)' }}>{f.filename}</TD>
+                            <TD align="center"><CheckDot s={f.md5_status} /></TD>
+                            <TD align="center">
+                              {f.on_disk
+                                ? <Icon name="check" size={12} style={{ color: 'var(--lbb-ok-bar)' }} />
+                                : <Icon name="x"     size={12} style={{ color: 'var(--lbb-warn-fg)' }} />}
+                            </TD>
+                            <TD><Pill tone={edge} soft>{f.overall === 'pass' ? 'Pass' : f.overall === 'missing' ? 'Missing' : 'Fail'}</Pill></TD>
+                            <TD align="right" mono dim>{f.length ?? '—'}</TD>
+                            <TD mono dim>{f.fmt ?? '—'}</TD>
+                            <TD align="right" mono dim>{f.ratio ?? '—'}</TD>
                           </TR>
-                        ))}
-                      </tbody>
-                    </TableShell>
-                  )}
-
-                  <div style={{
-                    marginTop: 16, padding: '12px 16px', borderRadius: 6,
-                    background: 'var(--lbb-info-bg)', border: '1px solid var(--lbb-info-bar)',
-                    fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)', display: 'flex', alignItems: 'flex-start', gap: 10,
-                  }}>
-                    <Icon name="info" size={14} style={{ color: 'var(--lbb-info-fg)', marginTop: 1 }} />
-                    <div>
-                      For each missing lbdir file, we MD5 every file in the folder tree and propose moves where MD5 matches.{' '}
-                      <strong>Files are moved, never deleted.</strong>
-                    </div>
-                  </div>
+                        )
+                      })}
+                    </tbody>
+                  </TableShell>
                 </div>
               )}
 
-              {/* ── EXTRAS ───────────────────────────────────────────────────── */}
-              {tab === 'extras' && (
-                <div style={{ flex: 1, overflow: 'auto', padding: '16px 24px' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
-                    <span style={{ fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase' }}>
-                      Extra files · not in lbdir
-                    </span>
-                    {extrasResult && <Pill tone="warn" soft>{extrasResult.extra.length} files</Pill>}
-                    <div style={{ flex: 1 }} />
-                    <Button variant="ghost" size="sm" disabled={busy || !activeFolderStr}
-                      onClick={() => activeFolderStr && handleFindExtras(activeFolderStr)}>
-                      {busy ? 'Scanning…' : 'Find extras'}
-                    </Button>
-                    {extrasResult && extrasResult.extra.length > 0 && (
-                      <Button variant="ghost" size="sm"
-                        onClick={() => setExtrasSelected(new Set(
-                          extrasResult.extra.filter(f => f === '.DS_Store' || f === 'Thumbs.db')
-                        ))}>
-                        Select system files
+              {/* Reconcile trigger / panel */}
+              {canReconcile && (
+                <div style={{ padding: '16px 0 0' }}>
+                  {!reconResult ? (
+                    <div style={{ padding: '0 24px' }}>
+                      <Button variant="secondary" size="sm" icon="rename" disabled={busy}
+                        onClick={() => handleReconcile(activeFolderStr)}>
+                        {busy ? 'Scanning…' : 'Reconcile files…'}
                       </Button>
-                    )}
-                    {extrasResult && extrasResult.extra.length > 0 && (
-                      <Button size="sm" icon="trash" disabled={busy || extrasSelected.size === 0}
-                        onClick={() => extrasResult && handleDeleteExtras(extrasResult.folder, extrasResult.extra)}>
-                        Delete {extrasSelected.size > 0 ? `${extrasSelected.size}` : ''}
-                      </Button>
-                    )}
-                  </div>
-
-                  {!extrasResult ? (
-                    <div style={{ padding: '32px', textAlign: 'center', color: 'var(--lbb-fg3)' }}>
-                      Click "Find extras" to scan for files not in lbdir
-                    </div>
-                  ) : extrasResult.extra.length === 0 ? (
-                    <div style={{ padding: '32px', textAlign: 'center', color: 'var(--lbb-fg3)' }}>
-                      No extra files found
+                      <span style={{ marginLeft: 10, fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
+                        Match missing files by MD5 and move extras to <span style={{ fontFamily: 'var(--lbb-mono)' }}>/extras/</span>
+                      </span>
                     </div>
                   ) : (
-                    <TableShell>
-                      <colgroup>
-                        <col style={{ width: 3 }} /><col style={{ width: 32 }} />
-                        <col /><col style={{ width: 110 }} />
-                      </colgroup>
-                      <thead>
-                        <tr>
-                          <TH> </TH>
-                          <TH><input type="checkbox"
-                            checked={extrasResult.extra.length > 0 && extrasResult.extra.every(f => extrasSelected.has(f))}
-                            onChange={e => setExtrasSelected(e.target.checked ? new Set(extrasResult.extra) : new Set())}
-                          /></TH>
-                          <TH>Path</TH><TH>Hint</TH>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {extrasResult.extra.map((f, i) => {
-                          const isSystem = f === '.DS_Store' || f === 'Thumbs.db'
-                          return (
-                            <TR key={i} edge={extrasSelected.has(f) ? 'warn' : undefined}>
-                              <TD><input type="checkbox"
-                                checked={extrasSelected.has(f)}
-                                onChange={e => {
-                                  setExtrasSelected(prev => {
-                                    const next = new Set(prev)
-                                    e.target.checked ? next.add(f) : next.delete(f)
-                                    return next
-                                  })
-                                }}
-                              /></TD>
-                              <TD mono style={{ color: 'var(--lbb-fg)' }}>{f}</TD>
-                              <TD>{isSystem ? <Pill tone="mute" soft>System</Pill> : <Pill tone="info" soft>User file</Pill>}</TD>
-                            </TR>
-                          )
-                        })}
-                      </tbody>
-                    </TableShell>
-                  )}
-
-                  {extrasResult && extrasResult.extra.length > 0 && (
-                    <div style={{
-                      marginTop: 16, padding: '12px 16px', borderRadius: 6,
-                      background: 'var(--lbb-bad-bg)', border: '1px solid var(--lbb-bad-fg)',
-                      fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)', display: 'flex', alignItems: 'flex-start', gap: 10,
-                    }}>
-                      <Icon name="info" size={14} style={{ color: 'var(--lbb-bad-fg)', marginTop: 1 }} />
-                      <div>
-                        <strong style={{ color: 'var(--lbb-bad-fg)' }}>Permanent deletion.</strong>
-                        {' '}Selected files are removed from disk. Review carefully before confirming.
-                      </div>
-                    </div>
+                    <ReconcilePanel
+                      result={reconResult}
+                      reconSelected={reconSelected}
+                      setReconSelected={setReconSelected}
+                      busy={busy}
+                      onRescan={() => handleReconcile(activeFolderStr)}
+                      onApply={() => handleApplyReconcile(activeFolderStr)}
+                    />
                   )}
                 </div>
               )}
+
+              <div style={{ height: 24 }} />
             </>
           )}
         </section>
