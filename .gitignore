@@ -45,3 +45,18 @@ Thumbs.db
 secrets/*.txt
  
 .claude/settings.local.json
+
+# tapematch run artifacts
+tools/tapematch/runs/
+tools/tapematch/last_run.log
+tools/tapematch/last_run_report.md
+tools/tapematch/last_results.json
+tools/tapematch/observations.db
+
+# Generated output files
+losslessbob.db
+backend/losslessbob.db
+batch_verify_run.log
+missing_from_collection.tsv
+public_not_owned.html
+scan.json

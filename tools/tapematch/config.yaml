@@ -26,14 +26,15 @@ trim:
 
 anchors:
   # Crowd-transient anchors for alignment + fingerprinting.
-  n_anchors: 6             # spread early->late across the performance
+  n_anchors: 12            # spread early->late across the performance
   window_sec: 45.0         # correlation window around each anchor
   # Onset strength percentile to qualify as a candidate transient.
   onset_percentile: 99.0
   prefer_quiet: true       # bias toward isolated transients in low-energy regions
 
 align:
-  max_lag_sec: 30.0        # search range for local cross-correlation lag
+  max_lag_sec: 90.0        # search range for local cross-correlation lag
+  # 90s covers recordings with up to ~8 min of extra/missing content (accumulated drift)
   # Speed-ratio detection from first vs last anchor lag.
   ratio_flag_ppm: 200      # |ratio-1| above this (parts-per-million) -> resample
   # Lag-vs-position curve interpretation
@@ -41,10 +42,82 @@ align:
 
 match:
   # Residual cross-correlation clustering.
-  cluster_threshold: 0.70  # corr above this links two files into same source family
+  cluster_threshold: 0.45  # corr above this links two files into same source family
   # Below ~0.3 = independent; above ~0.95 = clone/EQ-child. Bimodal in practice.
+  # 0.45: catches same-source pairs with clipping/level mismatch between transfers
+  #   (e.g. CDR trade copy vs fresh DAT transfer of same tape — observed 0.520 corr).
+  # Safety margin: max observed different-source corr is 0.362 (1995-07-08).
 
 lineage:
   # Evidence for parent/child direction (interpretive, reported not decided).
   hf_ceiling_probe_hz: [14000, 16000, 19000, 20000]
   dropout_z: 6.0           # sample-level drop below local floor by this many sigma
+
+fingerprint:
+  # Spectral-peak landmark fingerprint on a fixed reference window.
+  # Offset-invariant: Δt hashes are relative within each recording, so trim
+  # offsets and timing edits don't affect matching.
+  window_start_sec: 180.0   # skip first 3 min (intro/tuning/crowd)
+  window_dur_sec: 600.0     # use next 10 min (first 2-3 songs — densest content)
+  nperseg: 1024             # STFT window size
+  hop: 512                  # STFT hop (32ms at 16 kHz)
+  peak_neighborhood_t: 5   # local-max filter half-width in time frames (±160ms)
+  peak_neighborhood_f: 3   # local-max filter half-width in freq bins (±47Hz)
+  fanout: 5                 # landmark pairs per anchor peak
+  dt_bins: 100              # max Δt in hops (≈3.2s) for pairing
+  # Restrict peak-finding to the tape-hiss / room-reflection band.
+  # Musical note energy (dominant 0–5 kHz) is shared across all recordings of the
+  # same concert, pushing full-band different-source same-show scores to 0.15–0.50.
+  # The 6–8 kHz band is dominated by mic self-noise and room HF reflections that are
+  # specific to the recording chain; with this restriction, different-source same-show
+  # scores drop to <0.10, making cluster_threshold: 0.35 safe.
+  hf_band_hz: [6000, 8000]
+
+  match_threshold: 0.60     # Dice score above this → shown as fingerprint evidence
+  # Expected ranges with hf_band_hz active (16kHz analysis rate):
+  #   same-source (even with heavy edits): 0.40–0.90
+  #   different source, SAME show:         0.00–0.10  (musical peaks no longer shared)
+  #   different source, different show:    0.00–0.05
+  # cluster_threshold drives actual clustering; match_threshold controls display.
+  cluster_threshold: 0.50   # Dice score above this → fingerprint drives clustering
+  # Empirical calibration across 3 dates (2001-10-07, 1996-07-21, 2001-10-30):
+  #   confirmed different-source same-show (HF band): 0.35–0.47
+  #   confirmed same-source (HF band):                0.51–0.60+
+  # Gap is consistent ~0.04 wide at 0.47/0.51; 0.50 sits safely in it.
+  # Note: 6-8 kHz band still shares room/PA acoustics within a venue, so scores do
+  # NOT drop to ~0.10 as the full-band theory predicted — but the bimodal gap is stable.
+  # Safety: set cluster_threshold only when hf_band_hz is also configured.
+
+secondary_match:
+  # Dense-grid windowed coverage: fraction of 60s windows where two sources agree
+  # after a local lag search.  Catches heavily-edited remasters whose edits cluster
+  # at track boundaries, leaving the within-track audio coherent.
+  window_sec: 60.0
+  hop_sec: 30.0
+  local_lag_sec: 10.0         # ±lag search per window (absorbs accumulated edit drift)
+  window_corr_threshold: 0.30 # per-window residual corr to count as "matching"
+  coverage_threshold: 0.35    # fraction of windows agreeing -> secondary same-source
+
+  # Quiet-segment hiss/crowd fingerprint: correlates between-song sections where
+  # tape hiss / crowd noise dominates.  Catches same-source pairs whose music
+  # correlation is broken by EQ or noise reduction applied to the music signal.
+  quiet_energy_percentile: 25 # energy percentile below which a 1s frame is "quiet"
+  min_quiet_sec: 3.0          # minimum contiguous quiet run to use
+  hiss_lag_sec: 3.0           # ±lag search within quiet segments
+  hiss_corr_threshold: 0.20   # per-segment corr to count as "matching"
+  hiss_frac_threshold: 0.40   # fraction of quiet segs agreeing -> hiss match flag (display only)
+
+  # Hiss-driven merge (when windowed coverage fails, e.g. CDR re-tracking/staircase).
+  # Both fraction AND median must exceed these thresholds.  The median guard blocks
+  # room-ambience false positives on modern digital recordings (different tapers at
+  # the same venue correlate in fraction but not in median — observed median ~0.22
+  # for two Schoeps mics at Oakland 2022 vs median ~0.79 for same Bach DAT transfers
+  # at Graz 1999).
+  hiss_merge_frac: 0.60     # minimum hiss fraction to drive a merge
+  hiss_merge_median: 0.65   # minimum hiss median to drive a merge
+
+  # Short-window fallback for staircase/staircase pairs.
+  # When both recordings have CDR re-tracking edits and windowed_frac < 0.10,
+  # retry with shorter windows to reduce edit-point straddle probability.
+  short_window_sec: 15.0
+  short_hop_sec: 5.0

@@ -967,6 +967,10 @@ def init_db(db_path=None):
         _geo_cols = [r[1] for r in conn.execute("PRAGMA table_info(location_geocoded)").fetchall()]
         if "lb_number" not in _geo_cols:
             conn.execute("ALTER TABLE location_geocoded ADD COLUMN lb_number TEXT")
+        # Migration: add lbdir_verified_at to my_collection
+        _mc_cols = [r[1] for r in conn.execute("PRAGMA table_info(my_collection)").fetchall()]
+        if "lbdir_verified_at" not in _mc_cols:
+            conn.execute("ALTER TABLE my_collection ADD COLUMN lbdir_verified_at TIMESTAMP")
         # Migration: recreate lb_master when the schema is missing 'nonexistent' status or
         # public_no_checksums column.  SQLite only supports CHECK changes via table recreation.
         _lbm_schema_row = conn.execute(
@@ -1891,6 +1895,7 @@ def get_collection(db_path=None):
     with get_connection(db_path) as conn:
         rows = conn.execute("""
             SELECT c.id, c.lb_number, c.folder_name, c.disk_path, c.confirmed_at, c.notes,
+                   c.lbdir_verified_at,
                    e.date_str, e.location, e.description, e.rating, e.cdr, lm.lb_status
             FROM my_collection c
             LEFT JOIN entries e ON c.lb_number = e.lb_number
@@ -1930,6 +1935,28 @@ def delete_from_collection(lb_number, db_path=None):
     get_write_queue().execute(
         lambda c: c.execute("DELETE FROM my_collection WHERE lb_number=?", (_lb,))
     )
+
+
+def set_lbdir_verified(disk_path: str, db_path=None) -> bool:
+    """Stamp lbdir_verified_at = now for the my_collection row with the given disk_path.
+
+    Args:
+        disk_path: Absolute folder path (must match my_collection.disk_path).
+
+    Returns:
+        True if a row was updated, False if disk_path was not found in the collection.
+    """
+    _dp = disk_path
+
+    def _run(c):
+        cur = c.execute(
+            "UPDATE my_collection SET lbdir_verified_at=datetime('now') WHERE disk_path=?",
+            (_dp,)
+        )
+        return cur.rowcount
+
+    rows_updated = get_write_queue().execute(_run)
+    return bool(rows_updated)
 
 
 def get_missing_from_collection(db_path=None):
