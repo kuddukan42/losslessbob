@@ -17,13 +17,35 @@ from .audio import to_mono
 
 
 def onset_strength(mono, sr, hop_sec=0.02):
+    """Spectral-flux onset strength, computed in 1-minute chunks.
+
+    The full-signal STFT for a 2-hour show at 16 kHz with nperseg=640 creates a
+    ~924 MB complex64 Z matrix.  Processing 60-second blocks caps each Z at
+    ~7.7 MB; Z and mag are freed before the next iteration.
+    """
     nper = int(0.04 * sr)
     hop = int(hop_sec * sr)
-    f, t, Z = stft(mono, fs=sr, nperseg=nper, noverlap=nper - hop, boundary=None)
-    mag = np.abs(Z)
-    flux = np.maximum(0, np.diff(mag, axis=1)).sum(axis=0)  # spectral flux
-    flux = np.concatenate([[0], flux])
-    return t, flux
+    chunk_samp = 60 * sr  # 1-minute blocks
+
+    t_parts: list[np.ndarray] = []
+    flux_parts: list[np.ndarray] = []
+
+    for start in range(0, len(mono), chunk_samp):
+        chunk = mono[start:start + chunk_samp]
+        if len(chunk) < nper:
+            break
+        _, t_c, Z = stft(chunk, fs=sr, nperseg=nper, noverlap=nper - hop, boundary=None)
+        mag = np.abs(Z)
+        del Z
+        flux = np.maximum(0, np.diff(mag, axis=1)).sum(axis=0)
+        del mag
+        flux = np.concatenate([[0.0], flux])
+        t_parts.append(t_c + start / sr)
+        flux_parts.append(flux)
+
+    if not t_parts:
+        return np.array([]), np.array([])
+    return np.concatenate(t_parts), np.concatenate(flux_parts)
 
 
 def pick_anchors(mono, sr, cfg):
@@ -34,7 +56,6 @@ def pick_anchors(mono, sr, cfg):
     cand = t[flux >= thr]
     if len(cand) == 0:
         cand = t[np.argsort(flux)[-c["n_anchors"]:]]
-    # spread: split the timeline into n_anchors bins, take the strongest in each
     dur = len(mono) / sr
     edges = np.linspace(0, dur, c["n_anchors"] + 1)
     anchors = []
@@ -59,7 +80,7 @@ def local_lag(ref_mono, other_mono, sr, center_sec, window_sec, max_lag_sec):
     ra = ref_mono[a0:a1]
     ob = other_mono[b0:b1]
     n = min(len(ra), len(ob))
-    if n < sr:  # need at least 1s
+    if n < sr:
         return None, 0.0
     ra, ob = ra[:n], ob[:n]
     ra = (ra - ra.mean()) / (ra.std() + 1e-9)
@@ -94,9 +115,8 @@ def interpret_curve(rows, cfg):
         return {"kind": "insufficient", "ratio": 1.0}
     x = np.array([r["center_sec"] for r in valid])
     y = np.array([r["lag_sec"] for r in valid])
-    # linear fit -> slope is the speed offset (sec of lag per sec of program)
     slope, intercept = np.polyfit(x, y, 1)
-    ratio = 1.0 + slope  # other runs faster/slower than ref by this factor
+    ratio = 1.0 + slope
     resid = y - (slope * x + intercept)
     steps = np.abs(np.diff(y))
     kind = "aligned"
