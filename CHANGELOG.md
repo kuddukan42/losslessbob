@@ -1,3 +1,125 @@
+[2026-06-03] — feat(tools): tapematch iteration pass — six accuracy/quality improvements; threshold calibrated 0.35→0.50
+Changed: tools/tapematch/config.yaml: max_lag_sec 30→90; local_lag_sec 5→10; short_window_sec/short_hop_sec added; fingerprint hf_band_hz [6000,8000] + cluster_threshold calibrated to 0.50 (empirical bimodal gap 0.47/0.51 confirmed across 3 dates)
+Changed: tools/tapematch/tapematch/match.py: fingerprint_window slices STFT to hf_band_hz before peak-finding
+Changed: tools/tapematch/tapematch/cli.py: staircase/staircase short-window fallback; cluster() wired to fingerprint (F=FP, fp_cluster_thr); will_merge uses fp_cluster_thr; [TIMING MISMATCH] diagnostic; diagnostic section renumbered
+Changed: tools/tapematch/WORKFLOW.md: calibration table added; updated config knobs; updated failure mode table
+
+[2026-06-03] — fix(tools): tapematch year_run spawns a fresh subprocess per date
+Fixed: tools/tapematch/tapematch_session.py: year_run() now spawns tapematch_session.py <date> as a subprocess instead of calling run_date() in-process — each date's Python heap, page cache mappings, and OS resources are fully released when the subprocess exits; also added _clean_stale_tmp_dirs() in run_tapematch() to remove any tapematch_* memmaps left by OOM-killed subprocesses
+
+[2026-06-02] — feat(gui): collapsible filter pane in Search screen
+Added: gui_next/src/renderer/src/screens/ScreenSearch.tsx: filterPaneOpen state; aside collapses to 32px strip with chevRight expand button; chevLeft button in open pane collapses it; 180ms CSS transition
+
+[2026-06-02] — fix(gui): Search TYPE filter now shows all categories dynamically
+Fixed: gui_next/src/renderer/src/screens/ScreenSearch.tsx:1009: hardcoded ['concert','interview'] replaced with dynamic list from facetCounts.categoryC sorted by count — tv, studio, compilation, rehearsal, radio, soundcheck were missing
+
+[2026-06-02] — feat(tools): tapematch — year batch mode with resume support
+Added: tools/tapematch/tapematch_session.py: get_year_dates(), run_date() (extracted from main), year_run() — --year YYYY flag loops all collected+paged dates for a year in chronological order, skipping dates already in observations.db; Ctrl+C prints resume command and exits cleanly; --min-entries N (default 2) controls minimum sources per date
+Added: tools/tapematch/run_year.sh: convenience wrapper: ./run_year.sh 1995 [--dry-run]
+
+[2026-06-02] — feat(tools): tapematch — INFLATED duration diagnostic
+Added: tools/tapematch/tapematch/cli.py: flags sources with performance duration >30% above group median as [INFLATED?] in TRIM section and [INFLATED] in DIAGNOSTICS; mirrors existing INCOMPLETE flag; catches duplicate-track subfolders (e.g. "fixed tracks" copies) that corrupt correlation results
+
+[2026-06-02] — fix(tools): tapematch — skip __MACOSX metadata files during ingest
+Fixed: tools/tapematch/tapematch/ingest.py: list_tracks() now filters out ._-prefixed files and paths containing __MACOSX (AppleDouble resource forks created by macOS zip/copy); was crashing on LB-01961 (Brixton Academy 2003-11-25)
+
+[2026-06-02] — fix(tools): tapematch — hiss-driven merge for staircase/CDR re-tracking pairs
+Fixed: tools/tapematch/tapematch/match.py: cluster() now accepts H/H_med matrices; merges pair when hiss_frac >= hiss_merge_frac AND hiss_median >= hiss_merge_median (both required to block room-ambience false positives on modern digital recordings)
+Fixed: tools/tapematch/tapematch/cli.py: track H_med matrix; pass to cluster(); SECONDARY MATCH label now says "→ SECONDARY LINK" only when merge will actually happen, "→ hiss evidence (below merge threshold)" otherwise
+Changed: tools/tapematch/config.yaml: added hiss_merge_frac: 0.60, hiss_merge_median: 0.65 to secondary_match block; clarified hiss_frac_threshold as display-only
+
+[2026-06-02] — feat(tools): tapematch report — enrich Coverage table + save analysis to run folder
+Changed: tools/tapematch/tapematch_session.py: Coverage table now includes Rating, Timing, and source snippet columns from LB page; added _lb_source_snippet() helper; analysis.md written manually to run folder after each session
+Added: tools/tapematch/runs/20260602_184543_1993-07-09/analysis.md: Claude analysis of 1993-07-09 La Coruna run
+
+[2026-06-02] — feat(tools): tapematch fingerprint — Shazam-style spectral peak landmark matching
+Added: tools/tapematch/tapematch/match.py: _stft_mag(), _find_peaks_2d(), fingerprint_window() — builds (f_anchor, f_target, Δt) hash set from 10-min reference window (skip first 3 min); offset-invariant by construction; fingerprint_score() — Dice coefficient between hash sets
+Added: tools/tapematch/tapematch/cli.py: computes fingerprints for all sources upfront; adds fp_score to sec_results per cross-family pair; shows Dice score in SECONDARY MATCH and DIAGNOSTICS sections; does NOT drive clustering (confirmatory only)
+Added: tools/tapematch/config.yaml: fingerprint block with window/nperseg/fanout/threshold knobs
+Fixed: match_threshold raised 0.10→0.60 after discovering live recordings of the same concert score 0.15–0.50 (same musical notes → same Δt hashes); same-source confirmed pairs score 0.60–0.85; documented in config comment
+Verified: 1996-07-21 Pori — LB-06986/LB-00513 scores Dice 0.695 (confirms windowed+hiss evidence); 9 different-source pairs score 0.19–0.49 (correctly below threshold); 4 families preserved
+
+[2026-06-02] — feat(tools): tapematch secondary match — windowed coverage + quiet-segment hiss correlation
+Added: tools/tapematch/tapematch/match.py: find_quiet_segments() — finds low-energy between-song sections from memmap-safe block reads; secondary_corr_pair() — dense 60s-window grid corr (per-window local lag ±5s, no speed-correction to preserve HF fine-structure) + quiet-segment hiss corr; cluster() extended with optional W/w_threshold for secondary linkage
+Added: tools/tapematch/tapematch/cli.py: secondary match pass runs after primary matrix for cross-family pairs only; prints SECONDARY MATCH section; feeds W matrix into combined cluster(); annotates Family output with secondary evidence; adds [SECONDARY SAME-SOURCE] diagnostic; extends JSON output with secondary_matrix and secondary_pairs
+Added: tools/tapematch/config.yaml: secondary_match block with windowed and quiet-segment knobs
+Fixed: tools/tapematch/tapematch/cli.py: do NOT apply resample_poly before secondary_corr_pair — resample_poly smears HF fine-structure, killing residual_corr even for same-source pairs; windowed local lag search absorbs speed differences natively
+Verified: 1996-07-21 Pori — LB-06986 (LTA remaster of LB-00513) now correctly grouped as Family 3 via windowed 0.69 / hiss 0.59; no false positives on remaining 9 cross-family pairs
+
+[2026-06-02] — fix(tools): tapematch LB page relationship detection — bittorrent stripping + full text extraction
+Fixed: tools/tapematch/tapematch_session.py: _page_text used regex tag-stripping which bled bittorrent description paragraphs (describing third-party uploads) into relationship search text; switched to soup.get_text() so bare text nodes between <hr/> separators (where "same recording as LB-XXXX" notes live) are included
+Fixed: tools/tapematch/tapematch_session.py: added _strip_bittorrent_blocks() — balanced-paren walker that removes (a bittorrent from ...) parentheticals from curator text before relationship detection; prevents uploader-asserted "same as LB-XXXX" claims from polluting lb_says_same in observations DB
+Fixed: tools/tapematch/tapematch_session.py: extract_lb_relationship returned None on first ambiguous LB-number mention (e.g. page header) without checking later occurrences; now iterates all matches and only returns None after exhausting them
+Fixed: tools/tapematch/tapematch_session.py: "matching" keyword missed "fingerprints which match"; replaced keyword list with compiled regexes _SAME_RE / _DIFF_RE covering "fingerprints.{0,40}match", "eac match", "close match", "identical"
+
+[2026-06-02] — tune(tools): tapematch cluster_threshold 0.55 → 0.45
+Changed: tools/tapematch/config.yaml: cluster_threshold lowered from 0.55 to 0.45; motivated by 1998-10-28 LB-06564/LB-12485 (confirmed same DAT master, different transfer path — CDR trade copy vs fresh 2016 transfer) scoring 0.520 and being missed at 0.55; safety margin above highest observed different-source corr (0.362, 1995-07-08) is 0.083
+
+[2026-06-02] — fix(tools): tapematch trim None crash + stale results.json on failed run
+Fixed: tools/tapematch/tapematch/trim.py:63: performance_envelope computed end_i = len - 1 - _first_sustained(...) before checking for None; TypeError when no sustained tail region found (vinyl rips / recordings with no silence tail); split into end_raw variable, guard before arithmetic
+Fixed: tools/tapematch/tapematch_session.py:669: stale last_results.json from a prior run was loaded in step 7 when tapematch crashed mid-run without writing new results; now unlinks the file before running tapematch so a crash leaves no stale data to pick up
+
+[2026-06-02] — fix(tools): tapematch page parser + staircase message; private LB path filter; post-matrix central-source reference
+Fixed: tools/tapematch/tapematch_session.py: extract_lb_commentary now falls back to first substantial <p> tag (most LB pages store commentary in <p>, not <td>); only LB-01863-style pages with "SOURCE:" text were parsing before
+Fixed: tools/tapematch/tapematch_session.py: private LB exclusion changed from page-existence check to disk_path substring match ("PRIVATE", "NOTORRENT", "NO TORRENT") — correctly excludes entries that have a local page but private path
+Fixed: tools/tapematch/tapematch/cli.py: removed pre-pass reference selection; post-matrix central-source selection via argmax(M.sum(axis=1)) guarantees selection of most-correlated source; pre-pass failed when median-duration source was a low-corr outlier (cassette)
+Changed: tools/tapematch/tapematch/cli.py: staircase lag-curve annotation changed from "consistent with bootleg press or edited master" to neutral "staircase pattern (CDR re-tracking or tape edits)"
+
+[2026-06-02] — feat(tools): tapematch workflow tooling — --suggest, private LB exclusion, smart reference, WORKFLOW.md
+Added: tools/tapematch/tapematch_session.py: --suggest flag queries DB for 3–5 entry dates not yet analysed; private LBs (no local page) auto-excluded from runs; smart central-source reference selection (1-anchor pre-pass replaces alphabetical default)
+Added: tools/tapematch/tapematch/cli.py: auto-select most-central source as lag-curve reference via quick pre-pass; --json-out flag for structured results
+Added: tools/tapematch/WORKFLOW.md: self-contained process doc for context-clear restarts
+
+[2026-06-02] — feat(tools): tapematch observations DB, run archiving, config/diagnostic tuning
+Added: tools/tapematch/tapematch_session.py: observations.db (runs/sources/pairs tables with full metrics + LB commentary relationship extraction + null human_judgment columns); run archiving to runs/RUN_ID_DATE/ (log, report, config, results.json); --report-only flag; DB-first path resolution via my_collection
+Added: tools/tapematch/tapematch/cli.py: --json-out flag writes structured results JSON; matrix labels now show LB-NNNNN; [DISTINCT SOURCE] replaces spurious [REMASTER?] for near-zero-corr singletons; [SHARED HF CEILING] suppressed when ceiling is Nyquist-limited at analysis_sr
+Changed: tools/tapematch/config.yaml: n_anchors 6→12 (more robust to track-break lag errors); cluster_threshold 0.70→0.55 (catches same-source pairs with different CDR splits)
+
+[2026-06-02] — feat(tools): tapematch_session.py — iterative analysis session orchestrator
+Added: tools/tapematch/tapematch_session.py: script that queries losslessbob.db for a given date, finds LB folders across DYLAN drives, cleans/populates examples/tapematch/, runs tapematch CLI, extracts LB page commentary, and writes a combined last_run_report.md; supports --dry-run and --no-tapematch flags
+
+[2026-06-02] — feat(tools): tapematch diagnostic output improvements
+Changed: tools/tapematch/tapematch/match.py: add cluster_confidence() helper (high/medium/low tier); add asymmetry_dc field to lineage_evidence() return dict
+Changed: tools/tapematch/tapematch/cli.py: duration outlier detection with [INCOMPLETE?] flag in TRIM section; speed_info dict persisted across lag-curve pass; staircase/splice explanation text; confidence label on CLUSTERS; DC asymmetry column in LINEAGE; new DIAGNOSTICS section cross-referencing [INCOMPLETE], [REMASTER?], [HIGH/MEDIUM/LOW CONFIDENCE], and [SHARED HF CEILING] diagnostics
+
+[2026-06-02] — feat(gui): lb_category type filter chips on Lookup, Search, and Collection views
+Added: gui_next/src/renderer/src/screens/ScreenLookup.tsx: Concert/Interview Chip row below status bars; filters filteredSummary
+Added: gui_next/src/renderer/src/screens/ScreenSearch.tsx: activeCategory Set state; Type FacetGroup in sidebar; category filter in filteredRows; chips in active-filter strip
+Added: gui_next/src/renderer/src/screens/ScreenCollection.tsx: categoryFilter Set state; Concert/Interview chips in filter bar; category applied to filteredRows
+
+[2026-06-02] — feat(gui): surface lb_category (concert/interview) as Type pill on Lookup, Search, and Collection views
+Added: backend/db.py: lb_category included in search_entries, get_entries_by_lb_list, get_collection, and lookup_checksums annotation pass
+Added: gui_next/src/renderer/src/lib/lookupStore.ts: lb_category field on LookupDetail and LookupSummaryRow interfaces
+Added: gui_next/src/renderer/src/screens/ScreenLookup.tsx: Type column + pill on summary table rows
+Added: gui_next/src/renderer/src/screens/ScreenSearch.tsx: toggleable "cat" column with Type pill
+Added: gui_next/src/renderer/src/screens/ScreenCollection.tsx: Type column with pill; category field on CollectionRow
+
+[2026-06-02] — fix(tools): tapematch — correct trim duration basis and ffprobe final-timestamp bug
+Fixed: tools/tapematch/tapematch/cli.py:54: use len(stream)/sr as total_sec in trim_bounds; eliminates negative tail display and performance > total anomaly
+Fixed: tools/tapematch/tapematch/audio.py:43: _ffprobe_info fallback uses re.findall[-1] for final ffmpeg stats timestamp; fixes non-deterministic duration for SHN/MP3 sources
+
+[2026-06-02] — feat(gui): lookup — flag owned recordings with collection/lbdir-verified status
+Added: backend/db.py: lookup_checksums() annotates each detail+summary item with owned (bool) and lbdir_verified (bool) by joining against my_collection
+Changed: gui_next/src/renderer/src/lib/lookupStore.ts: added owned+lbdir_verified fields to LookupDetail and LookupSummaryRow
+Changed: gui_next/src/renderer/src/screens/ScreenLookup.tsx: owned/lbdir_verified banner above summary table; owned rows show "In collection · verified" (green) or "In collection" (amber) pill replacing the +WL button; fixed STATE_TONE variable shadow (t → tone) that was breaking button labels
+Added: gui_next/src/renderer/src/locales/en.json: lookup.owned.* keys for banner and badge strings
+Changed: cli.py: _print_lookup_diff prints [IN COLLECTION · LBDIR VERIFIED] or [IN COLLECTION] on the LB header line when owned
+
+[2026-06-02] — fix(tools): tapematch — write memmaps to /mnt/DATA0/tmp instead of system tmpfs
+Fixed: tools/tapematch/tapematch/cli.py: mkdtemp now uses dir=/mnt/DATA0/tmp; avoids filling system tmpfs with ~438 MB memmap per source
+
+[2026-06-02] — feat(backend): track lbdir verify pass timestamp per collection folder
+Added: backend/db.py: lbdir_verified_at column migration on my_collection; set_lbdir_verified(disk_path) writer; get_collection() now returns lbdir_verified_at
+Changed: backend/app.py: lbdir_check() stamps lbdir_verified_at when result status == "pass", returns timestamp in result dict (covers both GUI and batch_verify.py paths)
+
+[2026-06-02] — fix(tools): tapematch — eliminate OOM on large collections (5 fixes)
+Changed: tools/tapematch/tapematch/audio.py: load() always decodes+resamples via ffmpeg pipe; removes sf.read+resample_poly path that held 3–12x native-rate memory for hi-res sources; added probe() helper for channel/frame count without audio decode
+Changed: tools/tapematch/tapematch/ingest.py: concat_source() pre-allocates output from probed durations then loads+copies+frees each track; peak drops from 2× source size to output + 1 track
+Changed: tools/tapematch/tapematch/trim.py: spectral_flatness() processes in 5-min chunks; per-iteration Z capped at ~38 MB vs the ~4.3 GB full-signal STFT matrix
+Changed: tools/tapematch/tapematch/align.py: onset_strength() processes in 1-min chunks with del Z/mag per iteration; per-iteration Z capped at ~7.7 MB
+Changed: tools/tapematch/tapematch/match.py: lineage_evidence() replaced full STFT+PSD with scipy.signal.welch (returns 1-D PSD only, never allocates freq×time matrix)
+Changed: tools/tapematch/tapematch/cli.py: trim pass now writes trimmed mono to disk as np.memmap (.f32 per source); all analysis phases (lag curves, matrix, lineage) open memmaps instead of holding full arrays; peak process heap for 10×2h sources ≈ 2.3 GB vs ~8 GB+ previously
+
 [2026-06-01] — refactor(tools): tapematch cli.py — sequential pair processing, one source in RAM at a time
 Changed: tools/tapematch/tapematch/cli.py: replaced streams/trimmed/monos dicts (all N sources simultaneously) with a single trim_bounds pass; added _load_trimmed_mono helper; inlined pairwise matrix loop so each source is loaded per pair and freed immediately; ref_mono kept in RAM for lag + matrix ref-column to avoid redundant reloads; trim bounds saved to root/.tapematch_meta.json after Pass 1; lineage pass loads stereo stream per source and frees after each
 

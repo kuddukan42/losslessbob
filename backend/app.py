@@ -2042,6 +2042,18 @@ def create_app() -> Flask:
                 result["lb_number"] = lb_number
                 result["lbdir_found"] = True
                 result["lbdir_path"] = str(lbdir_path)
+
+                lbdir_verified_at = None
+                if result["status"] == "pass" and lb_number is not None:
+                    database.set_lbdir_verified(str(folder))
+                    with database.get_connection() as _c:
+                        _row = _c.execute(
+                            "SELECT lbdir_verified_at FROM my_collection WHERE lb_number=?",
+                            (lb_number,)
+                        ).fetchone()
+                    lbdir_verified_at = _row["lbdir_verified_at"] if _row else None
+                result["lbdir_verified_at"] = lbdir_verified_at
+
                 results.append(result)
 
             return jsonify({"results": results})
