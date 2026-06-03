@@ -1671,7 +1671,11 @@ def _print_diff(data: dict, *, base_url: str) -> None:
         st       = lb_sum.get("status", "")
         miss_cnt = lb_sum.get("missing_from_set", 0)
 
-        print(_hr(f"LB-{lb_num:05d}  {st}"))
+        owned_tag = ""
+        if lb_sum.get("owned"):
+            owned_tag = "  [IN COLLECTION · LBDIR VERIFIED]" if lb_sum.get("lbdir_verified") else "  [IN COLLECTION]"
+
+        print(_hr(f"LB-{lb_num:05d}  {st}{owned_tag}"))
 
         seen_fns: set = set()
         for item in items:
