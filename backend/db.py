@@ -1528,6 +1528,42 @@ def lookup_checksums(parsed_entries, db_path=None):
     for s in lb_summary.values():
         s["lb_status"] = _lb_status_map.get(s["lb_number"])
 
+    # Annotate with collection ownership and lbdir verification status so the
+    # lookup tab can flag recordings the user already owns.
+    if _matched_lbs:
+        _owned_rows = conn.execute(
+            "SELECT lb_number, lbdir_verified_at FROM my_collection WHERE lb_number IN ({})".format(
+                ",".join("?" * len(_matched_lbs))
+            ),
+            list(_matched_lbs),
+        ).fetchall()
+        _owned_map = {r["lb_number"]: r["lbdir_verified_at"] for r in _owned_rows}
+    else:
+        _owned_map = {}
+    for item in detail:
+        lb = item["lb_number"]
+        item["owned"] = lb in _owned_map
+        item["lbdir_verified"] = bool(_owned_map.get(lb))
+    for s in lb_summary.values():
+        lb = s["lb_number"]
+        s["owned"] = lb in _owned_map
+        s["lbdir_verified"] = bool(_owned_map.get(lb))
+
+    # Annotate with lb_category so views can badge by recording type.
+    if _matched_lbs:
+        _lb_category_map = dict(conn.execute(
+            "SELECT lb_number, lb_category FROM entries WHERE lb_number IN ({})".format(
+                ",".join("?" * len(_matched_lbs))
+            ),
+            list(_matched_lbs),
+        ).fetchall())
+    else:
+        _lb_category_map = {}
+    for item in detail:
+        item["lb_category"] = _lb_category_map.get(item["lb_number"])
+    for s in lb_summary.values():
+        s["lb_category"] = _lb_category_map.get(s["lb_number"])
+
     return summary, detail
 
 
@@ -1598,7 +1634,7 @@ def search_entries(query, field="all", year=None, limit=None, db_path=None):
         sql = f"""
             SELECT e.lb_number, e.date_str, e.location, e.rating,
                    e.description, e.status, lm.lb_status, lm.public_no_checksums,
-                   e.taper_name, e.source_chain
+                   e.taper_name, e.source_chain, e.lb_category
             FROM entries_fts
             JOIN entries e ON e.lb_number = entries_fts.rowid
             LEFT JOIN lb_master lm ON lm.lb_number = e.lb_number
@@ -1613,7 +1649,7 @@ def search_entries(query, field="all", year=None, limit=None, db_path=None):
         sql = f"""
             SELECT e.lb_number, e.date_str, e.location, e.rating,
                    e.description, e.status, lm.lb_status, lm.public_no_checksums,
-                   e.taper_name, e.source_chain
+                   e.taper_name, e.source_chain, e.lb_category
             FROM entries e
             LEFT JOIN lb_master lm ON lm.lb_number = e.lb_number
             WHERE 1=1 {year_clause}
@@ -1630,7 +1666,7 @@ def search_entries(query, field="all", year=None, limit=None, db_path=None):
         fallback_sql = (
             "SELECT e.lb_number, e.date_str, e.location, e.rating,"
             " e.description, e.status, lm.lb_status, lm.public_no_checksums,"
-            " e.taper_name, e.source_chain"
+            " e.taper_name, e.source_chain, e.lb_category"
             " FROM entries e LEFT JOIN lb_master lm ON lm.lb_number = e.lb_number"
             " WHERE e.description LIKE ? OR e.location LIKE ? OR e.date_str LIKE ?"
             " ORDER BY e.lb_number"
@@ -1653,7 +1689,7 @@ def search_entries(query, field="all", year=None, limit=None, db_path=None):
                 direct = conn.execute(
                     "SELECT e.lb_number, e.date_str, e.location, e.rating,"
                     " e.description, e.status, lm.lb_status, lm.public_no_checksums,"
-                    " e.taper_name, e.source_chain"
+                    " e.taper_name, e.source_chain, e.lb_category"
                     " FROM entries e LEFT JOIN lb_master lm ON lm.lb_number = e.lb_number"
                     " WHERE e.lb_number = ?",
                     (lb_id,),
@@ -1682,7 +1718,8 @@ def get_entries_by_lb_list(lb_numbers: list[int], db_path=None) -> list[dict]:
     placeholders = ",".join("?" * len(lb_numbers))
     rows = conn.execute(
         f"SELECT e.lb_number, e.date_str, e.location, e.rating,"
-        f" e.description, e.status, lm.lb_status, lm.public_no_checksums"
+        f" e.description, e.status, lm.lb_status, lm.public_no_checksums,"
+        f" e.taper_name, e.source_chain, e.lb_category"
         f" FROM entries e LEFT JOIN lb_master lm ON lm.lb_number = e.lb_number"
         f" WHERE e.lb_number IN ({placeholders})"
         f" ORDER BY e.lb_number",
@@ -1896,7 +1933,8 @@ def get_collection(db_path=None):
         rows = conn.execute("""
             SELECT c.id, c.lb_number, c.folder_name, c.disk_path, c.confirmed_at, c.notes,
                    c.lbdir_verified_at,
-                   e.date_str, e.location, e.description, e.rating, e.cdr, lm.lb_status
+                   e.date_str, e.location, e.description, e.rating, e.cdr, e.lb_category,
+                   lm.lb_status
             FROM my_collection c
             LEFT JOIN entries e ON c.lb_number = e.lb_number
             LEFT JOIN lb_master lm ON lm.lb_number = c.lb_number
