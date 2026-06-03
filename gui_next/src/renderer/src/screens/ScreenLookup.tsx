@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Icon } from '../components/Icon'
-import { Button, Pill } from '../components'
+import { Button, Chip, Pill } from '../components'
 import { TableShell, TH, TR, TD } from '../components'
 import { useLookupStore, LookupSource, LookupSummaryRow, LookupDetail } from '../lib/lookupStore'
 
@@ -21,6 +21,13 @@ const STATE_TONE: Record<LookupState, { tone: 'ok' | 'warn' | 'bad' | 'info' | '
   notfound:   { tone: 'bad',  label: 'Not found',  color: 'var(--lbb-bad-fg)'  },
   duplicate:  { tone: 'warn', label: 'Duplicate',  color: '#a08200'             },
   xref:       { tone: 'info', label: 'XRef',       color: 'var(--lbb-info-fg)' },
+}
+
+function categoryPill(cat: string | null | undefined): React.JSX.Element | null {
+  if (!cat || cat === 'unknown') return null
+  const tone = cat === 'concert' ? 'info' : cat === 'interview' ? 'warn' : 'mute'
+  const label = cat.charAt(0).toUpperCase() + cat.slice(1)
+  return <Pill tone={tone} soft>{label}</Pill>
 }
 
 function apiStatusToState(status: string): LookupState {
@@ -109,9 +116,10 @@ export function ScreenLookup(): React.JSX.Element {
   const navigate = useNavigate()
   const { sources, summary, detail, filter, filterMy, activeSource, addSource, clearSources, setResult, setFolderList, setFilter, setFilterMy, setActiveSource } = useLookupStore()
 
-  const [busy,       setBusy]       = useState(false)
-  const [showListbox,setShowListbox] = useState(false)
-  const [toast,      setToast]      = useState<{ msg: string; tone: ToastTone } | null>(null)
+  const [busy,           setBusy]           = useState(false)
+  const [showListbox,    setShowListbox]     = useState(false)
+  const [toast,          setToast]          = useState<{ msg: string; tone: ToastTone } | null>(null)
+  const [categoryFilter, setCategoryFilter] = useState<Set<string>>(new Set())
 
   const showToast = useCallback((msg: string, tone: ToastTone) => setToast({ msg, tone }), [])
 
@@ -263,8 +271,9 @@ export function ScreenLookup(): React.JSX.Element {
   const detailRows  = detail ?? []
 
   const filteredSummary = summaryRows.filter(r => {
-    if (filter === 'all') return true
-    return apiStatusToState(r.status) === filter
+    if (filter !== 'all' && apiStatusToState(r.status) !== filter) return false
+    if (categoryFilter.size > 0 && !categoryFilter.has(r.lb_category ?? '')) return false
+    return true
   })
 
   const filteredDetail = filterMy
@@ -282,6 +291,9 @@ export function ScreenLookup(): React.JSX.Element {
   }, {})
 
   const totalSums = summary?.given ?? 0
+
+  const ownedVerifiedCount   = summaryRows.filter(r => r.owned && r.lbdir_verified).length
+  const ownedUnverifiedCount = summaryRows.filter(r => r.owned && !r.lbdir_verified).length
 
   const statusBars: Array<{ k: LookupState; l: string }> = [
     { k: 'matched',    l: 'Matched'    },
@@ -375,20 +387,20 @@ export function ScreenLookup(): React.JSX.Element {
               display: 'flex', alignItems: 'stretch', gap: 8,
             }}>
               {statusBars.map(c => {
-                const t      = STATE_TONE[c.k]
+                const tone   = STATE_TONE[c.k]
                 const n      = counts[c.k] || 0
                 const active = filter === c.k
                 return (
                   <button key={c.k} onClick={() => setFilter(active ? 'all' : c.k)} style={{
                     flex: 1, padding: '8px 12px', borderRadius: 6,
-                    background: active ? `var(--lbb-${t.tone}-bg)` : 'var(--lbb-surface)',
-                    border: `1px solid ${active ? t.color : 'var(--lbb-border)'}`,
+                    background: active ? `var(--lbb-${tone.tone}-bg)` : 'var(--lbb-surface)',
+                    border: `1px solid ${active ? tone.color : 'var(--lbb-border)'}`,
                     cursor: 'pointer', fontFamily: 'inherit', textAlign: 'left',
                     display: 'flex', flexDirection: 'column', gap: 2,
                   }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                      <span style={{ width: 8, height: 8, borderRadius: '50%', background: t.color }} />
-                      <span style={{ fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: t.color, letterSpacing: 0.06, textTransform: 'uppercase' }}>
+                      <span style={{ width: 8, height: 8, borderRadius: '50%', background: tone.color }} />
+                      <span style={{ fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: tone.color, letterSpacing: 0.06, textTransform: 'uppercase' }}>
                         {c.l}
                       </span>
                     </div>
@@ -409,11 +421,66 @@ export function ScreenLookup(): React.JSX.Element {
             </div>
           )}
 
+          {/* Type filter chips — only when results are present */}
+          {summary && (
+            <div style={{
+              padding: '6px 24px', borderBottom: '1px solid var(--lbb-border)',
+              background: 'var(--lbb-surface)', display: 'flex', gap: 6, flexWrap: 'wrap',
+            }}>
+              {(['concert','interview'] as const).map(cat => {
+                const n = summaryRows.filter(r => r.lb_category === cat).length
+                return (
+                  <Chip key={cat} size="sm"
+                    active={categoryFilter.has(cat)}
+                    count={n}
+                    onClick={() => setCategoryFilter(prev => {
+                      const next = new Set(prev)
+                      next.has(cat) ? next.delete(cat) : next.add(cat)
+                      return next
+                    })}
+                  >
+                    {cat.charAt(0).toUpperCase() + cat.slice(1)}
+                  </Chip>
+                )
+              })}
+            </div>
+          )}
+
           {/* Scrollable body */}
           <div style={{ flex: 1, overflow: 'auto', minHeight: 0 }}>
 
             {summary && (
               <>
+                {/* Owned banner */}
+                {(ownedVerifiedCount + ownedUnverifiedCount) > 0 && (
+                  <div style={{
+                    margin: '12px 24px 0', padding: '10px 14px', borderRadius: 6,
+                    background: 'var(--lbb-warn-bg)', border: '1px solid var(--lbb-warn-bar)',
+                    fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)',
+                    display: 'flex', alignItems: 'flex-start', gap: 10,
+                  }}>
+                    <Icon name="info" size={14} style={{ color: 'var(--lbb-warn-fg)', marginTop: 1 }} />
+                    <span>
+                      {ownedVerifiedCount > 0 && (
+                        <span>
+                          <strong style={{ color: 'var(--lbb-ok-fg)' }}>
+                            {t('lookup.owned.verifiedBanner', { count: ownedVerifiedCount })}
+                          </strong>
+                          {' — '}{t('lookup.owned.verifiedNote')}{ownedUnverifiedCount > 0 ? '  ' : ''}
+                        </span>
+                      )}
+                      {ownedUnverifiedCount > 0 && (
+                        <span>
+                          <strong style={{ color: 'var(--lbb-warn-fg)' }}>
+                            {t('lookup.owned.unverifiedBanner', { count: ownedUnverifiedCount })}
+                          </strong>
+                          {' — '}{t('lookup.owned.unverifiedNote')}
+                        </span>
+                      )}
+                    </span>
+                  </div>
+                )}
+
                 {/* Summary table */}
                 <div style={{ padding: '16px 24px 6px', display: 'flex', alignItems: 'center', gap: 10 }}>
                   <span style={{ fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase' }}>
@@ -429,6 +496,7 @@ export function ScreenLookup(): React.JSX.Element {
                     <colgroup>
                       <col style={{ width: 3 }} />
                       <col style={{ width: 110 }} />
+                      <col style={{ width: 80 }} />
                       <col style={{ width: 70 }} /><col style={{ width: 80 }} /><col style={{ width: 80 }} />
                       <col style={{ width: 80 }} /><col style={{ width: 70 }} /><col style={{ width: 70 }} />
                       <col /><col style={{ width: 130 }} />
@@ -437,6 +505,7 @@ export function ScreenLookup(): React.JSX.Element {
                       <tr>
                         <TH> </TH>
                         <TH>{t('lookup.table.lb')}</TH>
+                        <TH>Type</TH>
                         <TH align="right">{t('lookup.table.given')}</TH><TH align="right">{t('lookup.table.matched')}</TH><TH align="right">{t('lookup.table.notFound')}</TH>
                         <TH align="right">{t('lookup.table.missing')}</TH><TH align="right">{t('lookup.table.dups')}</TH><TH align="right">{t('lookup.table.xrefs')}</TH>
                         <TH>{t('lookup.table.status')}</TH><TH align="right"> </TH>
@@ -445,27 +514,34 @@ export function ScreenLookup(): React.JSX.Element {
                     <tbody>
                       {filteredSummary.map((r, i) => {
                         const state = apiStatusToState(r.status)
-                        const t = STATE_TONE[state]
+                        const tone  = STATE_TONE[state]
                         const lbStr = `LB-${String(r.lb_number).padStart(5, '0')}`
                         return (
-                          <TR key={i} edge={t.tone === 'mute' ? undefined : t.tone}>
+                          <TR key={i} edge={tone.tone === 'mute' ? undefined : tone.tone}>
                             <TD mono style={{ color: 'var(--lbb-accent-mid)', fontWeight: 600 }}>{lbStr}</TD>
+                            <TD>{categoryPill(r.lb_category)}</TD>
                             <TD align="right" mono>{r.given}</TD>
                             <TD align="right" mono style={{ color: r.matched      > 0 ? 'var(--lbb-ok-fg)'   : 'var(--lbb-fg3)' }}>{r.matched      || '—'}</TD>
                             <TD align="right" mono style={{ color: r.not_found    > 0 ? 'var(--lbb-bad-fg)'  : 'var(--lbb-fg3)' }}>{r.not_found    || '—'}</TD>
                             <TD align="right" mono style={{ color: r.missing_from_set > 0 ? 'var(--lbb-warn-fg)' : 'var(--lbb-fg3)' }}>{r.missing_from_set || '—'}</TD>
                             <TD align="right" mono style={{ color: r.duplicates   > 0 ? '#a08200'            : 'var(--lbb-fg3)' }}>{r.duplicates   || '—'}</TD>
                             <TD align="right" mono style={{ color: r.xrefs        > 0 ? 'var(--lbb-info-fg)' : 'var(--lbb-fg3)' }}>{r.xrefs        || '—'}</TD>
-                            <TD><Pill tone={t.tone} soft dot={state !== 'matched'}>{t.label}</Pill></TD>
+                            <TD><Pill tone={tone.tone} soft dot={state !== 'matched'}>{tone.label}</Pill></TD>
                             <TD align="right" style={{ display: 'flex', gap: 4 }}>
                               <Button size="sm" variant="ghost" icon="reveal"
                                 onClick={() => window.open(`http://www.losslessbob.wonderingwhattochoose.com/detail/LB-${String(r.lb_number).padStart(5, '0')}.html`)}>
                                 {t('lookup.table.open')}
                               </Button>
-                              <Button size="sm" variant="ghost"
-                                onClick={() => handleAddToWishlist(r.lb_number)}>
-                                {t('lookup.table.addWishlist')}
-                              </Button>
+                              {r.owned ? (
+                                <Pill tone={r.lbdir_verified ? 'ok' : 'warn'} soft>
+                                  {r.lbdir_verified ? t('lookup.owned.badgeVerified') : t('lookup.owned.badgeOwned')}
+                                </Pill>
+                              ) : (
+                                <Button size="sm" variant="ghost"
+                                  onClick={() => handleAddToWishlist(r.lb_number)}>
+                                  {t('lookup.table.addWishlist')}
+                                </Button>
+                              )}
                             </TD>
                           </TR>
                         )

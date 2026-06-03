@@ -101,6 +101,7 @@ interface CollectionRow {
   isXref: boolean
   historyTorrents: HistoryItem[]
   historyForum: HistoryItem[]
+  category: string | null
 }
 
 interface DuplicateGroup {
@@ -123,6 +124,7 @@ const SAMPLE_DATA: CollectionRow[] = [
     isDuplicate: false, isXref: false,
     historyTorrents: [{ date: '2024-01-10', filename: 'LB-00018.torrent', kind: 'In qBt' }],
     historyForum: [{ date: '2024-01-12', filename: 'Post #8821', kind: 'Local' }],
+    category: 'concert',
   },
   {
     lbNumber: 'LB-00042', lbNumberInt: 42, status: 'Public', date: '05/26/66',
@@ -133,7 +135,7 @@ const SAMPLE_DATA: CollectionRow[] = [
     discs: 2, size: '890 MB', rating: 'A+', wishlist: false, wishlistPriority: null, wishlistNotes: '', wishlistAddedAt: '',
     isDuplicate: false, isXref: true,
     historyTorrents: [{ date: '2023-12-01', filename: 'LB-00042.torrent', kind: 'Local' }],
-    historyForum: [],
+    historyForum: [], category: 'concert',
   },
   {
     lbNumber: 'LB-01001', lbNumberInt: 1001, status: 'New', date: '08/31/70',
@@ -143,7 +145,7 @@ const SAMPLE_DATA: CollectionRow[] = [
     notes: '', confirmed: '', fingerprinted: false, title: 'Isle of Wight 1970',
     discs: 1, size: '620 MB', rating: 'B+', wishlist: false, wishlistPriority: null, wishlistNotes: '', wishlistAddedAt: '',
     isDuplicate: false, isXref: false,
-    historyTorrents: [], historyForum: [],
+    historyTorrents: [], historyForum: [], category: 'concert',
   },
   {
     lbNumber: 'LB-05421', lbNumberInt: 5421, status: 'Public', date: '01/30/74',
@@ -155,6 +157,7 @@ const SAMPLE_DATA: CollectionRow[] = [
     isDuplicate: true, isXref: false,
     historyTorrents: [{ date: '2024-01-05', filename: 'LB-05421.torrent', kind: 'In qBt' }],
     historyForum: [{ date: '2024-01-06', filename: 'Post #4521', kind: 'Local' }],
+    category: 'concert',
   },
   {
     lbNumber: 'LB-05422', lbNumberInt: 5422, status: 'Missing', date: '02/03/74',
@@ -162,7 +165,7 @@ const SAMPLE_DATA: CollectionRow[] = [
     fingerprinted: false, title: 'Before The Flood Night 2',
     discs: 2, size: '', rating: '', wishlist: true, wishlistPriority: 3, wishlistNotes: '', wishlistAddedAt: '2024-01-01',
     isDuplicate: false, isXref: false,
-    historyTorrents: [], historyForum: [],
+    historyTorrents: [], historyForum: [], category: null,
   },
 ]
 
@@ -1795,6 +1798,7 @@ export function ScreenCollection(): React.JSX.Element {
   const { t } = useTranslation()
   const [rows, setRows]               = useState<CollectionRow[]>([])
   const [filter, setFilter]           = useState<FilterKey>('all')
+  const [categoryFilter, setCategoryFilter] = useState<Set<string>>(new Set())
   const [search, setSearch]           = useState('')
   const [selectedId, setSelectedId]   = useState<string | null>(null)
   const [checkedIds, setCheckedIds]   = useState<Set<string>>(new Set())
@@ -1954,6 +1958,7 @@ export function ScreenCollection(): React.JSX.Element {
         wishlistAddedAt:  wishlistMap.get(lb)?.added_at ?? '',
         isDuplicate: dupSet.has(lb),
         isXref:      xrefSetLocal.has(lb),
+        category:    (c.lb_category as string | null) ?? null,
         historyTorrents: (torrentByLb[lb] ?? []).map((t: any) => ({
           date:     (t.created_at ?? '').slice(0, 10),
           filename: t.torrent_path ? (t.torrent_path as string).split('/').pop() ?? '' : '',
@@ -1987,6 +1992,15 @@ export function ScreenCollection(): React.JSX.Element {
 
   // ── Derived state ──────────────────────────────────────────────────────────
 
+  const categoryCounts = React.useMemo(() => {
+    const c: Record<string, number> = {}
+    for (const r of rows) {
+      const cat = r.category && r.category !== 'unknown' ? r.category : null
+      if (cat) c[cat] = (c[cat] ?? 0) + 1
+    }
+    return c
+  }, [rows])
+
   const counts = {
     all:         rows.length,
     missing:     rows.filter(r => r.status === 'Missing').length,
@@ -2019,6 +2033,7 @@ export function ScreenCollection(): React.JSX.Element {
       if (y === null || String(y) !== yearFilter) return false
     }
     if (xrefOnly && !r.isXref) return false
+    if (categoryFilter.size > 0 && !categoryFilter.has(r.category ?? '')) return false
     if (search) {
       const q = search.toLowerCase()
       if (
@@ -2660,6 +2675,19 @@ export function ScreenCollection(): React.JSX.Element {
         <Chip active={filter === 'torrent_global'} onClick={() => setFilter('torrent_global')} count={counts.torrent_global}>All torrents</Chip>
         {sep}
         <Chip active={filter === 'not_owned'}   onClick={() => setFilter('not_owned')}   count={counts.not_owned}>Not in collection</Chip>
+        {sep}
+        {Object.entries(categoryCounts).sort((a, b) => b[1] - a[1]).map(([cat, count]) => (
+          <Chip key={cat} active={categoryFilter.has(cat)}
+            onClick={() => setCategoryFilter(prev => {
+              const next = new Set(prev)
+              next.has(cat) ? next.delete(cat) : next.add(cat)
+              return next
+            })}
+            count={count}
+          >
+            {cat.charAt(0).toUpperCase() + cat.slice(1)}
+          </Chip>
+        ))}
         <div style={{ flex: 1 }} />
         <Input
           icon="filter"
@@ -3134,6 +3162,7 @@ export function ScreenCollection(): React.JSX.Element {
                 </TH>
                 <TH onClick={() => handleSort('lb')}        sorted={sortCol === 'lb'        ? sortDir : null}>{t('collection.table.lb')}</TH>
                 <TH onClick={() => handleSort('status')}    sorted={sortCol === 'status'    ? sortDir : null}>{t('collection.table.status')}</TH>
+                <TH>Type</TH>
                 <TH onClick={() => handleSort('date')}      sorted={sortCol === 'date'      ? sortDir : null}>{t('collection.table.date')}</TH>
                 <TH onClick={() => handleSort('location')}  sorted={sortCol === 'location'  ? sortDir : null}>{t('collection.table.location')}</TH>
                 <TH onClick={() => handleSort('folder')}    sorted={sortCol === 'folder'    ? sortDir : null}>{t('collection.table.folder')}</TH>
@@ -3152,7 +3181,7 @@ export function ScreenCollection(): React.JSX.Element {
                 return (
                   <>
                     {padTop > 0 && (
-                      <tr><td colSpan={10} style={{ height: padTop, padding: 0, border: 0 }} /></tr>
+                      <tr><td colSpan={11} style={{ height: padTop, padding: 0, border: 0 }} /></tr>
                     )}
                     {items.map(vItem => {
                       const r = sortedFilteredRows[vItem.index]
@@ -3182,6 +3211,13 @@ export function ScreenCollection(): React.JSX.Element {
                           <TD>
                             <Pill tone={edgeFor(r.status)} soft dot>{r.status}</Pill>
                           </TD>
+                          <TD>
+                            {r.category && r.category !== 'unknown'
+                              ? <Pill tone={r.category === 'concert' ? 'info' : r.category === 'interview' ? 'warn' : 'mute'} soft>
+                                  {r.category.charAt(0).toUpperCase() + r.category.slice(1)}
+                                </Pill>
+                              : null}
+                          </TD>
                           <TD mono>{r.date}</TD>
                           <TD>{r.location}</TD>
                           <TD mono>{r.folder || '—'}</TD>
@@ -3192,7 +3228,7 @@ export function ScreenCollection(): React.JSX.Element {
                       )
                     })}
                     {padBottom > 0 && (
-                      <tr><td colSpan={10} style={{ height: padBottom, padding: 0, border: 0 }} /></tr>
+                      <tr><td colSpan={11} style={{ height: padBottom, padding: 0, border: 0 }} /></tr>
                     )}
                   </>
                 )

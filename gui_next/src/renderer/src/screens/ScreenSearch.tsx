@@ -13,7 +13,7 @@ type RatingGrade     = 'A+' | 'A' | 'A-' | 'B+' | 'B' | 'B-' | 'C+' | 'C' | 'C-'
 type OwnershipFilter = 'any' | 'owned' | 'not-owned'
 type ToastTone       = 'ok' | 'bad' | 'info'
 type SortKey         = 'lb_asc' | 'lb_desc' | 'date_asc' | 'date_desc' | 'loc_asc' | 'loc_desc'
-type ColKey          = 'status' | 'date' | 'location' | 'rating' | 'description' | 'taper' | 'source' | 'xref' | 'own'
+type ColKey          = 'status' | 'date' | 'location' | 'rating' | 'description' | 'taper' | 'source' | 'xref' | 'own' | 'cat'
 
 interface SearchRow {
   lb: string
@@ -29,6 +29,7 @@ interface SearchRow {
   sourceChain: string
   xref: string | null
   owned: boolean
+  category: string | null
 }
 
 type FlatItem =
@@ -39,6 +40,7 @@ interface FilterState {
   activeStatus: string[]
   activeRating: string[]
   activeDec: string[]
+  activeCategory: string[]
   ownership: OwnershipFilter
   yearRange: [number, number]
 }
@@ -80,9 +82,9 @@ const SORT_OPTS: { key: SortKey; label: string }[] = [
   { key: 'loc_desc', label: 'Location Z–A' },
 ]
 
-const ALL_COLS: ColKey[] = ['status', 'date', 'location', 'rating', 'description', 'taper', 'source', 'xref', 'own']
+const ALL_COLS: ColKey[] = ['status', 'cat', 'date', 'location', 'rating', 'description', 'taper', 'source', 'xref', 'own']
 const COL_LABELS: Record<ColKey, string> = {
-  status: 'Status', date: 'Date', location: 'Location',
+  status: 'Status', cat: 'Type', date: 'Date', location: 'Location',
   rating: '★ Rating', description: 'Description',
   taper: 'Taper', source: 'Source', xref: 'Xref', own: 'Owned',
 }
@@ -93,15 +95,15 @@ const LS_VIEWS_KEY = 'lbb_search_views'
 const BUILT_IN_VIEWS: { id: string; name: string; state: FilterState }[] = [
   {
     id: 'public',  name: 'Public only',
-    state: { activeStatus: ['Public'],   activeRating: [],       activeDec: [], ownership: 'any', yearRange: [1961, 2030] },
+    state: { activeStatus: ['Public'],   activeRating: [], activeDec: [], activeCategory: [], ownership: 'any', yearRange: [1961, 2030] },
   },
   {
     id: 'rated',   name: 'Rated A or A-',
-    state: { activeStatus: [],           activeRating: ['A+','A','A-'], activeDec: [], ownership: 'any', yearRange: [1961, 2030] },
+    state: { activeStatus: [],           activeRating: ['A+','A','A-'], activeDec: [], activeCategory: [], ownership: 'any', yearRange: [1961, 2030] },
   },
   {
     id: 'missing', name: 'Missing / wanted',
-    state: { activeStatus: ['Missing'],  activeRating: [],       activeDec: [], ownership: 'any', yearRange: [1961, 2030] },
+    state: { activeStatus: ['Missing'],  activeRating: [], activeDec: [], activeCategory: [], ownership: 'any', yearRange: [1961, 2030] },
   },
 ]
 
@@ -676,10 +678,11 @@ export function ScreenSearch(): React.JSX.Element {
   const [dataYearRange, setDataYearRange] = useState<[number, number]>([1961, 2030])
   const [yearRange, setYearRange]     = useState<[number, number]>([1961, 2030])
   const [collapsedYears, setCollapsedYears] = useState<Set<string>>(new Set())
-  const [activeDec,    setActiveDec]    = useState<Set<string>>(new Set())
-  const [activeStatus, setActiveStatus] = useState<Set<string>>(new Set())
-  const [activeRating, setActiveRating] = useState<Set<string>>(new Set())
-  const [ownership,    setOwnership]    = useState<OwnershipFilter>('any')
+  const [activeDec,      setActiveDec]      = useState<Set<string>>(new Set())
+  const [activeStatus,   setActiveStatus]   = useState<Set<string>>(new Set())
+  const [activeRating,   setActiveRating]   = useState<Set<string>>(new Set())
+  const [activeCategory, setActiveCategory] = useState<Set<string>>(new Set())
+  const [ownership,      setOwnership]      = useState<OwnershipFilter>('any')
   const [bestPerDate,  setBestPerDate]  = useState(false)
 
   // ── UI ───────────────────────────────────────────────────────────────────
@@ -692,6 +695,7 @@ export function ScreenSearch(): React.JSX.Element {
   const [saveViewOpen, setSaveViewOpen] = useState(false)
   const [toast,        setToast]        = useState<{ msg: string; tone: ToastTone } | null>(null)
   const [rowMenu,      setRowMenu]      = useState<{ lb: number; x: number; y: number } | null>(null)
+  const [filterPaneOpen, setFilterPaneOpen] = useState(true)
 
   // ── Detail panel ─────────────────────────────────────────────────────────
   const [selectedLb,   setSelectedLb]   = useState<number | null>(null)
@@ -760,6 +764,7 @@ export function ScreenSearch(): React.JSX.Element {
               sourceChain: d.source_chain ?? '',
               xref:        null,
               owned:       false,  // set in ownedRows memo
+              category:    (d.lb_category as string | null) ?? null,
             }
           }))
         })
@@ -820,24 +825,28 @@ export function ScreenSearch(): React.JSX.Element {
   // ── Facet counts (from all unfiltered results) ────────────────────────────
 
   const facetCounts = useMemo(() => {
-    const statusC: Record<string, number> = {}
-    const ratingC: Record<string, number> = {}
-    const decadeC: Record<string, number> = {}
+    const statusC:   Record<string, number> = {}
+    const ratingC:   Record<string, number> = {}
+    const decadeC:   Record<string, number> = {}
+    const categoryC: Record<string, number> = {}
     for (const r of ownedRows) {
       statusC[r.status] = (statusC[r.status] ?? 0) + 1
       ratingC[r.rating] = (ratingC[r.rating] ?? 0) + 1
       decadeC[r.decade] = (decadeC[r.decade] ?? 0) + 1
+      const cat = r.category && r.category !== 'unknown' ? r.category : null
+      if (cat) categoryC[cat] = (categoryC[cat] ?? 0) + 1
     }
-    return { statusC, ratingC, decadeC }
+    return { statusC, ratingC, decadeC, categoryC }
   }, [ownedRows])
 
   // ── Filtering ────────────────────────────────────────────────────────────
 
   const filteredRows = useMemo(() =>
     ownedRows.filter(r => {
-      if (activeStatus.size > 0 && !activeStatus.has(r.status)) return false
-      if (activeRating.size > 0 && !activeRating.has(r.rating)) return false
-      if (activeDec.size > 0    && !activeDec.has(r.decade))    return false
+      if (activeStatus.size > 0   && !activeStatus.has(r.status))     return false
+      if (activeRating.size > 0   && !activeRating.has(r.rating))     return false
+      if (activeDec.size > 0      && !activeDec.has(r.decade))        return false
+      if (activeCategory.size > 0 && !activeCategory.has(r.category ?? '')) return false
       if (ownership === 'owned'     && !r.owned) return false
       if (ownership === 'not-owned' &&  r.owned) return false
       if (r.year > 0 && (r.year < yearRange[0] || r.year > yearRange[1])) return false
@@ -940,12 +949,13 @@ export function ScreenSearch(): React.JSX.Element {
     setOwnership('any'); setYearRange(dataYearRange); setBestPerDate(false)
   }
 
-  const hasActiveFilters = activeDec.size > 0 || activeStatus.size > 0 || activeRating.size > 0 || ownership !== 'any' || bestPerDate
+  const hasActiveFilters = activeDec.size > 0 || activeStatus.size > 0 || activeRating.size > 0 || activeCategory.size > 0 || ownership !== 'any' || bestPerDate
 
   const filterChips: Array<{ label: string; onRemove: () => void }> = [
-    ...[...activeStatus].map(s => ({ label: `Status: ${s}`, onRemove: () => toggleSet(setActiveStatus, s) })),
-    ...[...activeRating].map(r => ({ label: `Rating: ${r}`, onRemove: () => toggleSet(setActiveRating, r) })),
-    ...[...activeDec   ].map(d => ({ label: `Decade: ${d}`, onRemove: () => toggleSet(setActiveDec, d) })),
+    ...[...activeStatus  ].map(s => ({ label: `Status: ${s}`, onRemove: () => toggleSet(setActiveStatus, s) })),
+    ...[...activeRating  ].map(r => ({ label: `Rating: ${r}`, onRemove: () => toggleSet(setActiveRating, r) })),
+    ...[...activeDec     ].map(d => ({ label: `Decade: ${d}`, onRemove: () => toggleSet(setActiveDec, d) })),
+    ...[...activeCategory].map(c => ({ label: `Type: ${c.charAt(0).toUpperCase() + c.slice(1)}`, onRemove: () => toggleSet(setActiveCategory, c) })),
     ...(ownership !== 'any'
       ? [{ label: ownership === 'owned' ? 'Owned' : 'Not owned', onRemove: () => setOwnership('any') }]
       : []),
@@ -958,6 +968,7 @@ export function ScreenSearch(): React.JSX.Element {
     setActiveStatus(new Set(state.activeStatus))
     setActiveRating(new Set(state.activeRating))
     setActiveDec(new Set(state.activeDec))
+    setActiveCategory(new Set(state.activeCategory ?? []))
     setOwnership(state.ownership)
     setYearRange(
       state.yearRange[0] === 1961 && state.yearRange[1] === 2030
@@ -970,7 +981,7 @@ export function ScreenSearch(): React.JSX.Element {
     const view: StoredView = {
       id: Date.now().toString(),
       name,
-      state: { activeStatus: [...activeStatus], activeRating: [...activeRating], activeDec: [...activeDec], ownership, yearRange },
+      state: { activeStatus: [...activeStatus], activeRating: [...activeRating], activeDec: [...activeDec], activeCategory: [...activeCategory], ownership, yearRange },
     }
     const updated = [...storedViews, view]
     setStoredViews(updated)
@@ -993,9 +1004,10 @@ export function ScreenSearch(): React.JSX.Element {
 
   // ── Facet items ───────────────────────────────────────────────────────────
 
-  const decadeItems = ['1960s','1970s','1980s','1990s','2000s','2010s','2020s'].map(d => ({ label: d, count: facetCounts.decadeC[d] }))
-  const statusItems = (['Public','Private','Missing'] as MasterStatus[]).map(s  => ({ label: s, count: facetCounts.statusC[s] }))
-  const ratingItems = (['A+','A','A-','B+','B','B-','C+','C','C-','D+','D','D-','F'] as RatingGrade[]).map(r => ({ label: r, count: facetCounts.ratingC[r] }))
+  const decadeItems   = ['1960s','1970s','1980s','1990s','2000s','2010s','2020s'].map(d => ({ label: d, count: facetCounts.decadeC[d] }))
+  const statusItems   = (['Public','Private','Missing'] as MasterStatus[]).map(s  => ({ label: s, count: facetCounts.statusC[s] }))
+  const ratingItems   = (['A+','A','A-','B+','B','B-','C+','C','C-','D+','D','D-','F'] as RatingGrade[]).map(r => ({ label: r, count: facetCounts.ratingC[r] }))
+  const categoryItems = Object.entries(facetCounts.categoryC).sort((a, b) => b[1] - a[1]).map(([c, count]) => ({ label: c.charAt(0).toUpperCase() + c.slice(1), count }))
 
   const sep = <span style={{ width: 1, height: 16, background: 'var(--lbb-border)', margin: '0 4px', flexShrink: 0 }} />
 
@@ -1006,12 +1018,49 @@ export function ScreenSearch(): React.JSX.Element {
 
       {/* ── Facet rail ──────────────────────────────────────────────────── */}
       <aside style={{
-        width: 260, flexShrink: 0,
+        width: filterPaneOpen ? 260 : 32, flexShrink: 0,
         borderRight: '1px solid var(--lbb-border)',
         display: 'flex', flexDirection: 'column',
         background: 'var(--lbb-surface2)',
-        overflowY: 'auto',
+        overflowY: filterPaneOpen ? 'auto' : 'hidden',
+        overflowX: 'hidden',
+        transition: 'width 180ms ease',
       }}>
+
+        {/* Collapse / expand toggle */}
+        {!filterPaneOpen ? (
+          <button
+            type="button"
+            title="Show filters"
+            onClick={() => setFilterPaneOpen(true)}
+            style={{
+              margin: '8px auto', display: 'flex', alignItems: 'center', justifyContent: 'center',
+              width: 24, height: 24, borderRadius: 4, flexShrink: 0,
+              background: 'none', border: '1px solid var(--lbb-border2)',
+              cursor: 'pointer', color: 'var(--lbb-fg3)',
+            }}
+          >
+            <Icon name="chevRight" size={13} />
+          </button>
+        ) : (
+          <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '6px 8px 0', flexShrink: 0 }}>
+            <button
+              type="button"
+              title="Hide filters"
+              onClick={() => setFilterPaneOpen(false)}
+              style={{
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                width: 22, height: 22, borderRadius: 4,
+                background: 'none', border: '1px solid var(--lbb-border2)',
+                cursor: 'pointer', color: 'var(--lbb-fg3)',
+              }}
+            >
+              <Icon name="chevLeft" size={13} />
+            </button>
+          </div>
+        )}
+
+        {filterPaneOpen && <>
 
         {/* Saved views */}
         <div style={{ borderBottom: '1px solid var(--lbb-border)', paddingBottom: 4 }}>
@@ -1074,6 +1123,7 @@ export function ScreenSearch(): React.JSX.Element {
         <FacetGroup title="Decade" items={decadeItems} active={activeDec} onToggle={v => toggleSet(setActiveDec, v)} />
         <FacetGroup title="Status" items={statusItems} active={activeStatus} onToggle={v => toggleSet(setActiveStatus, v)} />
         <FacetGroup title="Rating" items={ratingItems} active={activeRating} onToggle={v => toggleSet(setActiveRating, v)} />
+        <FacetGroup title="Type"   items={categoryItems} active={activeCategory} onToggle={v => toggleSet(setActiveCategory, v.toLowerCase())} />
 
         {/* Ownership segmented control */}
         <div style={{ borderBottom: '1px solid var(--lbb-border)', padding: '8px 12px' }}>
@@ -1146,6 +1196,8 @@ export function ScreenSearch(): React.JSX.Element {
             Clear all filters
           </Button>
         </div>
+
+        </>}
       </aside>
 
       {/* ── Main pane ───────────────────────────────────────────────────── */}
@@ -1285,6 +1337,7 @@ export function ScreenSearch(): React.JSX.Element {
                 <col style={{ width: 3 }} />
                 <col style={{ width: 100 }} />
                 {visibleCols.has('status')      && <col style={{ width: 80  }} />}
+                {visibleCols.has('cat')         && <col style={{ width: 80  }} />}
                 {visibleCols.has('date')        && <col style={{ width: 90  }} />}
                 {visibleCols.has('location')    && <col style={{ width: 180 }} />}
                 {visibleCols.has('rating')      && <col style={{ width: 50  }} />}
@@ -1299,6 +1352,7 @@ export function ScreenSearch(): React.JSX.Element {
                 <tr>
                   <TH /><TH>LB#</TH>
                   {visibleCols.has('status')      && <TH>Status</TH>}
+                  {visibleCols.has('cat')         && <TH>Type</TH>}
                   {visibleCols.has('date')        && <TH>Date</TH>}
                   {visibleCols.has('location')    && <TH>Location</TH>}
                   {visibleCols.has('rating')      && <TH align="center">★</TH>}
@@ -1357,6 +1411,15 @@ export function ScreenSearch(): React.JSX.Element {
                             </TD>
                             {visibleCols.has('status') && (
                               <TD><Pill tone={statusTone(r.status)} soft>{r.status}</Pill></TD>
+                            )}
+                            {visibleCols.has('cat') && (
+                              <TD>
+                                {r.category && r.category !== 'unknown'
+                                  ? <Pill tone={r.category === 'concert' ? 'info' : r.category === 'interview' ? 'warn' : 'mute'} soft>
+                                      {r.category.charAt(0).toUpperCase() + r.category.slice(1)}
+                                    </Pill>
+                                  : null}
+                              </TD>
                             )}
                             {visibleCols.has('date') && <TD mono>{r.date}</TD>}
                             {visibleCols.has('location') && <TD>{r.location}</TD>}

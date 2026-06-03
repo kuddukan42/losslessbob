@@ -1,7 +1,6 @@
 import { create } from 'zustand'
 
 export type LbdirState = 'pass' | 'fail' | 'missing_files' | 'no_lbdir' | 'no_lb' | 'shntool_missing'
-export type SubTab     = 'check' | 'retrieve' | 'reconcile' | 'extras'
 
 export interface CheckFile {
   filename:       string
@@ -17,24 +16,18 @@ export interface CheckFile {
 }
 
 export interface CheckResult {
-  folder:      string
-  lb_number:   number | null
-  lbdir_found: boolean
-  lbdir_path:  string | null
-  mode:        string
-  status:      LbdirState
-  total:       number
-  pass:        number
-  mismatch:    number
-  missing:     number
-  files:       CheckFile[]
-}
-
-export interface RetrieveResult {
-  folder:    string
-  lb_number: number | null
-  status:    'copied' | 'scraped_and_copied' | 'not_found' | 'no_lb_number'
-  msg:       string
+  folder:            string
+  lb_number:         number | null
+  lbdir_found:       boolean
+  lbdir_path:        string | null
+  mode:              string
+  status:            LbdirState
+  total:             number
+  pass:              number
+  mismatch:          number
+  missing:           number
+  files:             CheckFile[]
+  lbdir_verified_at: string | null
 }
 
 export interface ReconcileProposal {
@@ -51,46 +44,28 @@ export interface ReconcileResult {
   warnings:        string[]
 }
 
-export interface ExtrasResult {
-  folder:    string
-  extra:     string[]
-  lbdir_rel: string | null
-}
-
 interface LbdirStore {
   activeFolder:     string | null
-  tab:              SubTab
   filter:           string
   checkResults:     CheckResult[]
-  retrieveResults:  RetrieveResult[]
   reconcileResults: ReconcileResult[]
-  extrasResults:    ExtrasResult[]
   reconSelected:    Set<string>
-  extrasSelected:   Set<string>
   setActiveFolder:     (folder: string | null) => void
-  setTab:              (tab: SubTab) => void
   setFilter:           (v: string) => void
   setCheckResults:     (results: CheckResult[]) => void
   updateCheckResult:   (folder: string, result: CheckResult) => void
-  setRetrieveResults:  (results: RetrieveResult[]) => void
   setReconcileResults: (results: ReconcileResult[]) => void
-  setExtrasResults:    (results: ExtrasResult[]) => void
+  clearReconcileFor:   (folder: string) => void
   setReconSelected:    (updater: Set<string> | ((prev: Set<string>) => Set<string>)) => void
-  setExtrasSelected:   (updater: Set<string> | ((prev: Set<string>) => Set<string>)) => void
 }
 
 export const useLbdirStore = create<LbdirStore>(set => ({
   activeFolder:     null,
-  tab:              'check',
   filter:           '',
   checkResults:     [],
-  retrieveResults:  [],
   reconcileResults: [],
-  extrasResults:    [],
   reconSelected:    new Set(),
-  extrasSelected:   new Set(),
   setActiveFolder: (activeFolder) => set({ activeFolder }),
-  setTab:          (tab) => set({ tab }),
   setFilter:       (filter) => set({ filter }),
   setCheckResults: (checkResults) => set({ checkResults }),
   updateCheckResult: (folder, result) => set(state => {
@@ -102,13 +77,11 @@ export const useLbdirStore = create<LbdirStore>(set => ({
     }
     return { checkResults: [...state.checkResults, result] }
   }),
-  setRetrieveResults:  (retrieveResults) => set({ retrieveResults }),
   setReconcileResults: (reconcileResults) => set({ reconcileResults }),
-  setExtrasResults:    (extrasResults) => set({ extrasResults }),
+  clearReconcileFor: (folder) => set(state => ({
+    reconcileResults: state.reconcileResults.filter(r => r.folder !== folder),
+  })),
   setReconSelected: (updater) => set(state => ({
     reconSelected: typeof updater === 'function' ? updater(state.reconSelected) : updater,
-  })),
-  setExtrasSelected: (updater) => set(state => ({
-    extrasSelected: typeof updater === 'function' ? updater(state.extrasSelected) : updater,
   })),
 }))

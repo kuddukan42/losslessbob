@@ -1,15 +1,18 @@
 import { create } from 'zustand'
 
 export interface LookupDetail {
-  checksum:    string
-  filename:    string
-  type:        string
-  lb_number:   number | null
-  xref:        number
-  status:      string
-  source_file: string | null
-  db_filename: string | null
-  lb_status:   string | null
+  checksum:       string
+  filename:       string
+  type:           string
+  lb_number:      number | null
+  xref:           number
+  status:         string
+  source_file:    string | null
+  db_filename:    string | null
+  lb_status:      string | null
+  lb_category:    string | null
+  owned:          boolean
+  lbdir_verified: boolean
 }
 
 export interface LookupSummaryRow {
@@ -22,6 +25,9 @@ export interface LookupSummaryRow {
   xrefs:              number
   status:             string
   lb_status:          string | null
+  lb_category:        string | null
+  owned:              boolean
+  lbdir_verified:     boolean
 }
 
 export interface LookupSummary {
