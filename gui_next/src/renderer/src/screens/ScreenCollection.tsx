@@ -15,7 +15,29 @@ const BASE = window.api.flaskBase
 // ── Types ─────────────────────────────────────────────────────────────────────
 
 type CollectionStatus = 'Public' | 'Private' | 'New' | 'Missing'
-type FilterKey = 'all' | 'missing' | 'wishlist' | 'duplicates' | 'forum' | 'torrent' | 'unconfirmed' | 'nofp' | 'not_owned' | 'forum_global' | 'torrent_global'
+type FilterKey = 'all' | 'public' | 'private' | 'missing' | 'wishlist' | 'duplicates' | 'forum' | 'torrent' | 'unconfirmed' | 'nofp' | 'forum_global' | 'torrent_global'
+type ColKey = 'status' | 'type' | 'date' | 'location' | 'folder' | 'diskPath' | 'notes' | 'confirmed'
+
+const ALL_COLS: ColKey[] = ['status', 'type', 'date', 'location', 'folder', 'diskPath', 'notes', 'confirmed']
+const COL_LABELS: Record<ColKey, string> = {
+  status: 'Status', type: 'Type', date: 'Date', location: 'Location',
+  folder: 'Folder', diskPath: 'Disk Path', notes: 'Notes', confirmed: 'Confirmed',
+}
+const DEFAULT_COL_WIDTHS: Record<ColKey, number> = {
+  status: 90, type: 100, date: 80, location: 220, folder: 180, diskPath: 160, notes: 120, confirmed: 60,
+}
+const LS_COLS_KEY = 'lbb_collection_cols'
+
+function loadColsFromLS(): Set<ColKey> {
+  try {
+    const raw = localStorage.getItem(LS_COLS_KEY)
+    if (raw) {
+      const arr = JSON.parse(raw) as ColKey[]
+      if (Array.isArray(arr) && arr.length > 0) return new Set(arr)
+    }
+  } catch {}
+  return new Set(ALL_COLS)
+}
 
 interface MissingLbRow {
   lb_number: number
@@ -99,6 +121,7 @@ interface CollectionRow {
   wishlistAddedAt: string
   isDuplicate: boolean
   isXref: boolean
+  linkedLbs: number[]
   historyTorrents: HistoryItem[]
   historyForum: HistoryItem[]
   category: string | null
@@ -121,7 +144,7 @@ const SAMPLE_DATA: CollectionRow[] = [
     diskPath: '/media/dylan/archive/LB-00018 1981-06-29 Earls Court London',
     notes: '', confirmed: '2024-03-15', fingerprinted: true, title: "Earl's Court Night 1",
     discs: 2, size: '1.4 GB', rating: 'A', wishlist: false, wishlistPriority: null, wishlistNotes: '', wishlistAddedAt: '',
-    isDuplicate: false, isXref: false,
+    isDuplicate: false, isXref: false, linkedLbs: [],
     historyTorrents: [{ date: '2024-01-10', filename: 'LB-00018.torrent', kind: 'In qBt' }],
     historyForum: [{ date: '2024-01-12', filename: 'Post #8821', kind: 'Local' }],
     category: 'concert',
@@ -133,7 +156,7 @@ const SAMPLE_DATA: CollectionRow[] = [
     diskPath: '/media/dylan/archive/LB-00042 1966-05-26 Royal Albert Hall London',
     notes: '', confirmed: '2024-02-01', fingerprinted: true, title: 'Royal Albert Hall 1966',
     discs: 2, size: '890 MB', rating: 'A+', wishlist: false, wishlistPriority: null, wishlistNotes: '', wishlistAddedAt: '',
-    isDuplicate: false, isXref: true,
+    isDuplicate: false, isXref: true, linkedLbs: [],
     historyTorrents: [{ date: '2023-12-01', filename: 'LB-00042.torrent', kind: 'Local' }],
     historyForum: [], category: 'concert',
   },
@@ -144,7 +167,7 @@ const SAMPLE_DATA: CollectionRow[] = [
     diskPath: '/media/dylan/imports/LB-01001 1970-08-31 Isle of Wight',
     notes: '', confirmed: '', fingerprinted: false, title: 'Isle of Wight 1970',
     discs: 1, size: '620 MB', rating: 'B+', wishlist: false, wishlistPriority: null, wishlistNotes: '', wishlistAddedAt: '',
-    isDuplicate: false, isXref: false,
+    isDuplicate: false, isXref: false, linkedLbs: [],
     historyTorrents: [], historyForum: [], category: 'concert',
   },
   {
@@ -154,7 +177,7 @@ const SAMPLE_DATA: CollectionRow[] = [
     diskPath: '/media/dylan/archive/LB-05421 1974-01-30 Madison Square Garden',
     notes: '', confirmed: '2024-01-05', fingerprinted: true, title: 'Before The Flood Night 1',
     discs: 2, size: '1.8 GB', rating: 'A', wishlist: false, wishlistPriority: null, wishlistNotes: '', wishlistAddedAt: '',
-    isDuplicate: true, isXref: false,
+    isDuplicate: true, isXref: false, linkedLbs: [],
     historyTorrents: [{ date: '2024-01-05', filename: 'LB-05421.torrent', kind: 'In qBt' }],
     historyForum: [{ date: '2024-01-06', filename: 'Post #4521', kind: 'Local' }],
     category: 'concert',
@@ -164,7 +187,7 @@ const SAMPLE_DATA: CollectionRow[] = [
     location: 'Forum, Los Angeles, CA', folder: '', diskPath: '', notes: '', confirmed: '',
     fingerprinted: false, title: 'Before The Flood Night 2',
     discs: 2, size: '', rating: '', wishlist: true, wishlistPriority: 3, wishlistNotes: '', wishlistAddedAt: '2024-01-01',
-    isDuplicate: false, isXref: false,
+    isDuplicate: false, isXref: false, linkedLbs: [],
     historyTorrents: [], historyForum: [], category: null,
   },
 ]
@@ -1245,6 +1268,12 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
           <Pill tone="ok" soft dot>{t('collection.detail.owned')}</Pill>
           <Pill tone={edge} soft>{row.status}</Pill>
           {row.isXref && <Pill tone="info" soft>{t('collection.detail.xref')}</Pill>}
+          {row.linkedLbs.length > 0 && (
+            <Pill tone="warn" soft
+              title={`Linked LB${row.linkedLbs.length > 1 ? 's' : ''}: ${row.linkedLbs.map(n => `LB-${String(n).padStart(5, '0')}`).join(', ')}`}>
+              ↔ {row.linkedLbs.map(n => `LB-${String(n).padStart(5, '0')}`).join(', ')}
+            </Pill>
+          )}
           {audioInfo && audioInfo.format && !audioInfo.offline && (
             <Pill tone={audioInfo.mixed ? 'info' : 'mute'} soft>
               {audioInfo.format}
@@ -1798,6 +1827,7 @@ export function ScreenCollection(): React.JSX.Element {
   const { t } = useTranslation()
   const [rows, setRows]               = useState<CollectionRow[]>([])
   const [filter, setFilter]           = useState<FilterKey>('all')
+  const [notOwned, setNotOwned]       = useState(false)
   const [categoryFilter, setCategoryFilter] = useState<Set<string>>(new Set())
   const [search, setSearch]           = useState('')
   const [selectedId, setSelectedId]   = useState<string | null>(null)
@@ -1830,8 +1860,14 @@ export function ScreenCollection(): React.JSX.Element {
   const [sortCol, setSortCol]   = useState<string | null>(null)
   const [sortDir, setSortDir]   = useState<'asc' | 'desc'>('asc')
 
+  const [colWidths,   setColWidths]   = useState<Record<ColKey, number>>(DEFAULT_COL_WIDTHS)
+  const [lbColWidth,  setLbColWidth]  = useState(100)
+  const [visibleCols, setVisibleCols] = useState<Set<ColKey>>(loadColsFromLS)
+  const [colsOpen,    setColsOpen]    = useState(false)
+
   const tableParentRef = useRef<HTMLDivElement>(null)
   const yearsDropRef   = useRef<HTMLDivElement>(null)
+  const colsDropRef    = useRef<HTMLDivElement>(null)
 
   const navigate                    = useNavigate()
   const { clearSources, addSource } = useLookupStore()
@@ -1958,6 +1994,7 @@ export function ScreenCollection(): React.JSX.Element {
         wishlistAddedAt:  wishlistMap.get(lb)?.added_at ?? '',
         isDuplicate: dupSet.has(lb),
         isXref:      xrefSetLocal.has(lb),
+        linkedLbs:   Array.isArray(c.linked_lbs) ? (c.linked_lbs as number[]) : [],
         category:    (c.lb_category as string | null) ?? null,
         historyTorrents: (torrentByLb[lb] ?? []).map((t: any) => ({
           date:     (t.created_at ?? '').slice(0, 10),
@@ -1990,6 +2027,17 @@ export function ScreenCollection(): React.JSX.Element {
     return () => document.removeEventListener('mousedown', handler)
   }, [yearsOpen])
 
+  useEffect(() => {
+    if (!colsOpen) return
+    const h = (e: MouseEvent) => { if (!colsDropRef.current?.contains(e.target as Node)) setColsOpen(false) }
+    document.addEventListener('mousedown', h)
+    return () => document.removeEventListener('mousedown', h)
+  }, [colsOpen])
+
+  useEffect(() => {
+    try { localStorage.setItem(LS_COLS_KEY, JSON.stringify([...visibleCols])) } catch {}
+  }, [visibleCols])
+
   // ── Derived state ──────────────────────────────────────────────────────────
 
   const categoryCounts = React.useMemo(() => {
@@ -2001,8 +2049,16 @@ export function ScreenCollection(): React.JSX.Element {
     return c
   }, [rows])
 
+  const filteredMissingRows = React.useMemo(() => {
+    if (filter === 'public')  return missingLbRows.filter(r => r.lb_status === 'public')
+    if (filter === 'private') return missingLbRows.filter(r => r.lb_status === 'private')
+    return missingLbRows
+  }, [missingLbRows, filter])
+
   const counts = {
     all:         rows.length,
+    public:      rows.filter(r => r.status === 'Public').length,
+    private:     rows.filter(r => r.status === 'Private').length,
     missing:     rows.filter(r => r.status === 'Missing').length,
     wishlist:    rows.filter(r => r.wishlist).length,
     duplicates:  rows.filter(r => r.isDuplicate).length,
@@ -2010,7 +2066,7 @@ export function ScreenCollection(): React.JSX.Element {
     torrent:     rows.filter(r => r.historyTorrents.length > 0).length,
     unconfirmed: rows.filter(r => !r.confirmed).length,
     nofp:        rows.filter(r => !r.fingerprinted).length,
-    not_owned:      missingLbRows.length,
+    not_owned:      filteredMissingRows.length,
     forum_global:   rawForumPosts.length,
     torrent_global: rawTorrentRecs.length,
   }
@@ -2020,6 +2076,8 @@ export function ScreenCollection(): React.JSX.Element {
 
   const filteredRows = rows.filter(r => {
     switch (filter) {
+      case 'public':      if (r.status !== 'Public')  return false; break
+      case 'private':     if (r.status !== 'Private') return false; break
       case 'missing':     if (r.status !== 'Missing') return false; break
       case 'wishlist':    if (!r.wishlist) return false; break
       case 'duplicates':  if (!r.isDuplicate) return false; break
@@ -2055,6 +2113,23 @@ export function ScreenCollection(): React.JSX.Element {
       return col
     })
   }, [])
+
+  const startColResize = useCallback((key: ColKey | 'lb', startX: number, startWidth: number) => {
+    const onMove = (e: MouseEvent) => {
+      const newW = Math.max(40, startWidth + e.clientX - startX)
+      if (key === 'lb') setLbColWidth(newW)
+      else setColWidths(ws => ({ ...ws, [key]: newW }))
+    }
+    const onUp = () => {
+      document.removeEventListener('mousemove', onMove)
+      document.removeEventListener('mouseup', onUp)
+    }
+    document.addEventListener('mousemove', onMove)
+    document.addEventListener('mouseup', onUp)
+  }, [])
+
+  const toggleCol = useCallback((col: ColKey) =>
+    setVisibleCols(prev => { const n = new Set(prev); n.has(col) ? n.delete(col) : n.add(col); return n }), [])
 
   const sortedFilteredRows = React.useMemo(() => {
     if (!sortCol) return filteredRows
@@ -2598,7 +2673,7 @@ export function ScreenCollection(): React.JSX.Element {
     const escape  = (v: string) => `"${String(v ?? '').replace(/"/g, '""')}"`
     const lines   = [
       headers.join(','),
-      ...missingLbRows.map(r => [
+      ...filteredMissingRows.map(r => [
         `LB-${String(r.lb_number).padStart(5, '0')}`,
         r.lb_status ?? '',
         r.date_str   ?? '',
@@ -2614,7 +2689,7 @@ export function ScreenCollection(): React.JSX.Element {
     a.download = 'missing_lbs.csv'
     a.click()
     URL.revokeObjectURL(url)
-  }, [missingLbRows])
+  }, [filteredMissingRows])
 
   const handleMissingRowDblClick = useCallback((row: MissingLbRow) => {
     const lb = `LB-${String(row.lb_number).padStart(5, '0')}`
@@ -2646,7 +2721,7 @@ export function ScreenCollection(): React.JSX.Element {
           </span>
         </div>
         <div style={{ flex: 1 }} />
-        {filter === 'not_owned' ? (
+        {notOwned ? (
           <Button variant="ghost" size="sm" icon="download" onClick={handleMissingExportCsv}>Export CSV</Button>
         ) : (
           <>
@@ -2666,15 +2741,18 @@ export function ScreenCollection(): React.JSX.Element {
         flexWrap: 'wrap', flexShrink: 0,
       }}>
         <Chip active={filter === 'all'}        onClick={() => setFilter('all')}        count={counts.all}>All</Chip>
+        <Chip active={filter === 'public'}     onClick={() => setFilter('public')}     count={counts.public}>Public</Chip>
+        <Chip active={filter === 'private'}    onClick={() => setFilter('private')}    count={counts.private}>Private</Chip>
         <Chip active={filter === 'missing'}    onClick={() => setFilter('missing')}    count={counts.missing}>Missing</Chip>
         <Chip active={filter === 'wishlist'}   onClick={() => setFilter('wishlist')}   count={counts.wishlist}>Wishlist</Chip>
         <Chip active={filter === 'duplicates'} onClick={() => setFilter('duplicates')} count={counts.duplicates}>Duplicates</Chip>
+        {sep}
         <Chip active={filter === 'forum'}      onClick={() => setFilter('forum')}      count={counts.forum}>Forum history</Chip>
         <Chip active={filter === 'torrent'}    onClick={() => setFilter('torrent')}    count={counts.torrent}>Torrent history</Chip>
         <Chip active={filter === 'forum_global'}   onClick={() => setFilter('forum_global')}   count={counts.forum_global}>All forum posts</Chip>
         <Chip active={filter === 'torrent_global'} onClick={() => setFilter('torrent_global')} count={counts.torrent_global}>All torrents</Chip>
         {sep}
-        <Chip active={filter === 'not_owned'}   onClick={() => setFilter('not_owned')}   count={counts.not_owned}>Not in collection</Chip>
+        <Chip active={notOwned} onClick={() => setNotOwned(v => !v)} count={counts.not_owned}>Not in collection</Chip>
         {sep}
         {Object.entries(categoryCounts).sort((a, b) => b[1] - a[1]).map(([cat, count]) => (
           <Chip key={cat} active={categoryFilter.has(cat)}
@@ -2745,6 +2823,36 @@ export function ScreenCollection(): React.JSX.Element {
           />
           Xref only
         </label>
+
+        {/* Columns picker */}
+        <div ref={colsDropRef} style={{ position: 'relative' }}>
+          <Button variant="ghost" size="sm" iconRight="chevDown" onClick={() => setColsOpen(o => !o)}>
+            Columns
+          </Button>
+          {colsOpen && (
+            <div style={{
+              position: 'absolute', top: 'calc(100% + 4px)', right: 0, zIndex: 200,
+              background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)',
+              borderRadius: 8, padding: '8px 0', minWidth: 160,
+              boxShadow: '0 4px 16px rgba(0,0,0,0.12)',
+            }}>
+              {ALL_COLS.map(col => (
+                <label key={col} style={{
+                  display: 'flex', alignItems: 'center', gap: 8,
+                  padding: '5px 14px', cursor: 'pointer', fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)',
+                }}>
+                  <input
+                    type="checkbox"
+                    checked={visibleCols.has(col)}
+                    onChange={() => toggleCol(col)}
+                    style={{ accentColor: 'var(--lbb-accent-mid)' }}
+                  />
+                  {COL_LABELS[col]}
+                </label>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
 
       {/* ── Inline action toolbar ─────────────────────────────────────────────── */}
@@ -2811,11 +2919,11 @@ export function ScreenCollection(): React.JSX.Element {
       <div style={{
         flex: 1, minHeight: 0,
         display: 'grid',
-        gridTemplateColumns: (filter === 'not_owned' || filter === 'forum_global' || filter === 'torrent_global') ? '1fr' : (selectedRow ? '1fr 360px' : '1fr'),
+        gridTemplateColumns: (notOwned || filter === 'forum_global' || filter === 'torrent_global') ? '1fr' : (selectedRow ? '1fr 360px' : '1fr'),
       }}>
 
         {/* Not-in-collection table */}
-        {filter === 'not_owned' && (
+        {notOwned && (
           <div style={{ overflow: 'auto', minHeight: 0 }}>
             <TableShell stickyHeader>
               <colgroup>
@@ -2839,7 +2947,7 @@ export function ScreenCollection(): React.JSX.Element {
                 </tr>
               </thead>
               <tbody>
-                {missingLbRows.map(r => {
+                {filteredMissingRows.map(r => {
                   const lb = `LB-${String(r.lb_number).padStart(5, '0')}`
                   return (
                     <TR
@@ -2847,7 +2955,6 @@ export function ScreenCollection(): React.JSX.Element {
                       onDoubleClick={() => handleMissingRowDblClick(r)}
                       style={{ cursor: 'pointer' }}
                     >
-                      <TD />
                       <TD mono style={{ color: 'var(--lbb-accent-mid)', fontWeight: 600 }}>{lb}</TD>
                       <TD><Pill tone="mute" soft dot>{r.lb_status || '—'}</Pill></TD>
                       <TD mono>{r.date_str || '—'}</TD>
@@ -2859,7 +2966,7 @@ export function ScreenCollection(): React.JSX.Element {
                 })}
               </tbody>
             </TableShell>
-            {missingLbRows.length === 0 && (
+            {filteredMissingRows.length === 0 && (
               <div style={{
                 display: 'flex', flexDirection: 'column',
                 alignItems: 'center', justifyContent: 'center',
@@ -3134,21 +3241,16 @@ export function ScreenCollection(): React.JSX.Element {
         )}
 
         {/* Owned-collection Table */}
-        {filter !== 'not_owned' && filter !== 'forum_global' && filter !== 'torrent_global' && filter !== 'wishlist' && filter !== 'duplicates' && (
+        {!notOwned && filter !== 'forum_global' && filter !== 'torrent_global' && filter !== 'wishlist' && filter !== 'duplicates' && (
         <div ref={tableParentRef} style={{ overflow: 'auto', minHeight: 0, position: 'relative' }}>
           <TableShell stickyHeader>
             <colgroup>
               <col style={{ width: 3 }} />
               <col style={{ width: 36 }} />
-              <col style={{ width: 100 }} />
-              <col style={{ width: 90 }} />
-              <col style={{ width: 100 }} />
-              <col />
-              <col style={{ width: 220 }} />
-              <col style={{ width: 180 }} />
-              <col style={{ width: 160 }} />
-              <col style={{ width: 120 }} />
-              <col style={{ width: 40 }} />
+              <col style={{ width: lbColWidth }} />
+              {ALL_COLS.filter(c => visibleCols.has(c)).map(c => (
+                <col key={c} style={{ width: colWidths[c] }} />
+              ))}
             </colgroup>
             <thead>
               <tr>
@@ -3160,19 +3262,20 @@ export function ScreenCollection(): React.JSX.Element {
                     onChange={toggleAll}
                   />
                 </TH>
-                <TH onClick={() => handleSort('lb')}        sorted={sortCol === 'lb'        ? sortDir : null}>{t('collection.table.lb')}</TH>
-                <TH onClick={() => handleSort('status')}    sorted={sortCol === 'status'    ? sortDir : null}>{t('collection.table.status')}</TH>
-                <TH>Type</TH>
-                <TH onClick={() => handleSort('date')}      sorted={sortCol === 'date'      ? sortDir : null}>{t('collection.table.date')}</TH>
-                <TH onClick={() => handleSort('location')}  sorted={sortCol === 'location'  ? sortDir : null}>{t('collection.table.location')}</TH>
-                <TH onClick={() => handleSort('folder')}    sorted={sortCol === 'folder'    ? sortDir : null}>{t('collection.table.folder')}</TH>
-                <TH onClick={() => handleSort('diskPath')}  sorted={sortCol === 'diskPath'  ? sortDir : null}>{t('collection.detail.diskPath')}</TH>
-                <TH>Notes</TH>
-                <TH onClick={() => handleSort('confirmed')} sorted={sortCol === 'confirmed' ? sortDir : null}>{t('collection.detail.confirmed')}</TH>
+                <TH onClick={() => handleSort('lb')} sorted={sortCol === 'lb' ? sortDir : null} onResizeStart={e => startColResize('lb', e.clientX, lbColWidth)}>{t('collection.table.lb')}</TH>
+                {visibleCols.has('status')   && <TH onClick={() => handleSort('status')}   sorted={sortCol === 'status'   ? sortDir : null} onResizeStart={e => startColResize('status',   e.clientX, colWidths.status)}>{t('collection.table.status')}</TH>}
+                {visibleCols.has('type')     && <TH onResizeStart={e => startColResize('type', e.clientX, colWidths.type)}>Type</TH>}
+                {visibleCols.has('date')     && <TH onClick={() => handleSort('date')}     sorted={sortCol === 'date'     ? sortDir : null} onResizeStart={e => startColResize('date',     e.clientX, colWidths.date)}>{t('collection.table.date')}</TH>}
+                {visibleCols.has('location') && <TH onClick={() => handleSort('location')} sorted={sortCol === 'location' ? sortDir : null} onResizeStart={e => startColResize('location', e.clientX, colWidths.location)}>{t('collection.table.location')}</TH>}
+                {visibleCols.has('folder')   && <TH onClick={() => handleSort('folder')}   sorted={sortCol === 'folder'   ? sortDir : null} onResizeStart={e => startColResize('folder',   e.clientX, colWidths.folder)}>{t('collection.table.folder')}</TH>}
+                {visibleCols.has('diskPath') && <TH onClick={() => handleSort('diskPath')} sorted={sortCol === 'diskPath' ? sortDir : null} onResizeStart={e => startColResize('diskPath', e.clientX, colWidths.diskPath)}>{t('collection.detail.diskPath')}</TH>}
+                {visibleCols.has('notes')    && <TH onResizeStart={e => startColResize('notes', e.clientX, colWidths.notes)}>Notes</TH>}
+                {visibleCols.has('confirmed') && <TH onClick={() => handleSort('confirmed')} sorted={sortCol === 'confirmed' ? sortDir : null}>{t('collection.detail.confirmed')}</TH>}
               </tr>
             </thead>
             <tbody>
               {(() => {
+                const colSpanAll = 3 + visibleCols.size
                 const items = virtualizer.getVirtualItems()
                 const padTop    = items.length > 0 ? items[0].start : 0
                 const padBottom = items.length > 0
@@ -3181,7 +3284,7 @@ export function ScreenCollection(): React.JSX.Element {
                 return (
                   <>
                     {padTop > 0 && (
-                      <tr><td colSpan={11} style={{ height: padTop, padding: 0, border: 0 }} /></tr>
+                      <tr><td colSpan={colSpanAll} style={{ height: padTop, padding: 0, border: 0 }} /></tr>
                     )}
                     {items.map(vItem => {
                       const r = sortedFilteredRows[vItem.index]
@@ -3208,27 +3311,25 @@ export function ScreenCollection(): React.JSX.Element {
                           <TD mono style={{ color: 'var(--lbb-accent-mid)', fontWeight: 600 }}>
                             {r.lbNumber}
                           </TD>
-                          <TD>
-                            <Pill tone={edgeFor(r.status)} soft dot>{r.status}</Pill>
-                          </TD>
-                          <TD>
+                          {visibleCols.has('status') && <TD><Pill tone={edgeFor(r.status)} soft dot>{r.status}</Pill></TD>}
+                          {visibleCols.has('type') && <TD>
                             {r.category && r.category !== 'unknown'
                               ? <Pill tone={r.category === 'concert' ? 'info' : r.category === 'interview' ? 'warn' : 'mute'} soft>
                                   {r.category.charAt(0).toUpperCase() + r.category.slice(1)}
                                 </Pill>
                               : null}
-                          </TD>
-                          <TD mono>{r.date}</TD>
-                          <TD>{r.location}</TD>
-                          <TD mono>{r.folder || '—'}</TD>
-                          <TD mono dim>{r.diskPath || '—'}</TD>
-                          <TD dim>{r.notes || '—'}</TD>
-                          <TD mono dim>{r.confirmed || '—'}</TD>
+                          </TD>}
+                          {visibleCols.has('date')     && <TD mono>{r.date}</TD>}
+                          {visibleCols.has('location') && <TD>{r.location}</TD>}
+                          {visibleCols.has('folder')   && <TD mono>{r.folder || '—'}</TD>}
+                          {visibleCols.has('diskPath') && <TD mono dim>{r.diskPath || '—'}</TD>}
+                          {visibleCols.has('notes')    && <TD dim>{r.notes || '—'}</TD>}
+                          {visibleCols.has('confirmed') && <TD mono dim>{r.confirmed || '—'}</TD>}
                         </TR>
                       )
                     })}
                     {padBottom > 0 && (
-                      <tr><td colSpan={11} style={{ height: padBottom, padding: 0, border: 0 }} /></tr>
+                      <tr><td colSpan={colSpanAll} style={{ height: padBottom, padding: 0, border: 0 }} /></tr>
                     )}
                   </>
                 )
@@ -3259,7 +3360,7 @@ export function ScreenCollection(): React.JSX.Element {
         )}
 
         {/* Detail panel */}
-        {filter !== 'not_owned' && filter !== 'forum_global' && filter !== 'torrent_global' && selectedRow && (
+        {!notOwned && filter !== 'forum_global' && filter !== 'torrent_global' && selectedRow && (
           <DetailPanel
             row={selectedRow}
             historyTab={historyTab}

@@ -1,3 +1,87 @@
+[2026-06-04] — feat(backend+gui): duplicate LB alias integration across all workflows
+Changed: backend/db.py: get_missing_from_collection() — exclude alias partners of owned LBs via NOT EXISTS subqueries; get_collection() — annotate each row with linked_lbs list (bidirectional)
+Changed: backend/app.py: /api/lookup route — annotate detail entries with is_alias_lb/canonical_lb; _pipeline_process_folder() — resolve aliases before single/conflict check, store alias_resolved_from; lbdir_retrieve() — cascade fallback to canonical LB when alias has no lbdir attachment
+Changed: gui_next/src/renderer/src/lib/lookupStore.ts: LookupDetail — add is_alias_lb, canonical_lb fields
+Changed: gui_next/src/renderer/src/screens/ScreenLookup.tsx: show ≡ LB-XXXXX badge on summary rows matched to alias LBs
+Changed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: StepResult — add alias_resolved_from field; show ↩ alias note in LB label cell when alias was resolved
+Changed: gui_next/src/renderer/src/screens/ScreenCollection.tsx: CollectionRow — add linkedLbs field; show ↔ LB-XXXXX pill in detail panel for entries with linked LBs
+
+[2026-06-04] — chore(dev): Playwright GUI driver for automated screenshots and UI interaction
+Added: gui_next/gui_driver.mjs: Playwright-based Electron driver; actions: screenshot, navigate, click, fill, eval, session; auto-starts Xvfb when $DISPLAY is unset; waits for splash overlay to detach before acting
+Added: tools/debug_screens.json: session file that screenshots all main screens
+Changed: gui_next/src/renderer/src/components/SplashOverlay.tsx: added data-testid="splash-overlay" so driver can reliably detect when splash has cleared
+Changed: .claude/settings.json: pre-approved Bash rules for gui_driver.mjs and npm build
+
+[2026-06-04] — fix(gui): Lookup tab now syncs folders from the shared folder queue
+Fixed: gui_next/src/renderer/src/screens/ScreenLookup.tsx: imported useFolderQueueStore and added a useEffect that watches the shared queue; any folder added on other tabs is scanned and added as a source automatically
+
+[2026-06-04] — feat(gui): LBDIR screen — hide-verified filter
+Added: gui_next/src/renderer/src/screens/ScreenLBDIR.tsx: "Hide verified" checkbox below the folder search input; when checked, folders with a stored lbdir_verified_at timestamp are excluded from both the listbox and the "Process all folders" operation; sidebar count shows filtered/total when active
+
+[2026-06-04] — feat(tools): tapematch — 1987 analysis-driven diagnostic refinements
+Changed: tools/tapematch/tapematch/cli.py: add --set-offset HH:MM:SS flag to clip all sources to a given start time (for co-headline shows where the target set starts mid-recording)
+Changed: tools/tapematch/tapematch/cli.py: raise TIMING MISMATCH threshold from 3 min to 8 min; AUD recordings of the same show routinely differ by 3–6 min from crowd-intro variation
+Changed: tools/tapematch/tapematch/cli.py: suppress TIMING MISMATCH for INFLATED-flagged sources (the existing [INFLATED] flag already covers the cause)
+Changed: tools/tapematch/tapematch/cli.py: replace [low confidence] label with [fp-linked] when a family was assembled purely by fingerprint Dice evidence rather than primary STFT
+Changed: tools/tapematch/tapematch/cli.py: add [chain-unverified] note to 3+ member families where at least one pair has only transitive evidence (A→B + B→C but A↔C not directly confirmed)
+Changed: tools/tapematch/tapematch_session.py: pass --set-offset through run_date → run_tapematch; expose as CLI arg
+Changed: tools/tapematch/tapematch_session.py: load results.json before build_report in both normal and --report-only paths; add _build_commentary_audit() which compares LB page "same recording as" claims against tapematch family assignments and appends an audit table to each report
+
+[2026-06-03] — feat(tools): tapematch — 1989 log analysis + 5 diagnostic/algorithm improvements
+Changed: tools/tapematch/tapematch/match.py: extend speed-ratio search to ±2.0% (was ±1.5%); many 1989 recordings sit at 14000–15000 ppm boundary
+Changed: tools/tapematch/tapematch/cli.py: suppress TIMING MISMATCH warnings for INCOMPLETE-flagged pair members (removes ~200 redundant lines per year-run)
+Changed: tools/tapematch/tapematch/cli.py: exclude INCOMPLETE/INFLATED sources from central-ref selection so anchors come from a well-formed recording
+Changed: tools/tapematch/tapematch/cli.py: staircase short-window fallback triggers when EITHER source has splice edits, not both
+Changed: tools/tapematch/tapematch/cli.py: [SECONDARY SAME-SOURCE] diagnostic distinguishes NR-processed pairs (music aligns, quiet-segment noise doesn't) from remasters
+
+[2026-06-03] — test: regression tests for BUG-127, BUG-128, BUG-130
+Added: tests/test_batch_verify.py: 8 tests for _map_verify_status (BUG-127) + 8 tests for has_lbdir LBF-format detection (BUG-128)
+Added: tests/test_db_lookup.py: 4 tests for lookup_checksums SHN completeness grouping (BUG-130) — covers MATCHED, partial INCOMPLETE, and mixed .shn/.wav input
+
+[2026-06-03] — feat(gui): Pipeline + Verify — "1 level only" checkbox for root folder scan
+Added: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: shallowScan state + checkbox below "Scan tree…" button; passes shallow: true to /api/pipeline/scan-tree when checked
+Added: gui_next/src/renderer/src/screens/ScreenVerify.tsx: same shallowScan toggle below "Add root folder…" button
+Added: gui_next/src/renderer/src/locales/*.json: common.shallowScan key in all 6 locales
+
+[2026-06-03] — fix(backend+gui): Lookup — SHN sets falsely shown as Incomplete/Not Found
+Fixed: backend/db.py: completeness check now groups .shn/.wav (and any audio ext) entries by base filename; a matched MD5 of foo.shn covers the shntool checksum for foo.wav, so a full SHN set shows MATCHED instead of INCOMPLETE
+Fixed: gui_next/src/renderer/src/screens/ScreenLookup.tsx: apiStatusToState() now maps backend 'INCOMPLETE' → incomplete; previously fell through to notfound fallback showing red "Not Found" for SHN sets
+
+[2026-06-03] — feat(backend+gui): LBDIR reconcile — recover missing files from site/files by MD5
+Added: backend/checksum_utils.py: find_site_recoverable_files() — scans SITE_FILES_DIR for LBF-NNNNN-* files, matches by MD5 against still-missing lbdir entries
+Changed: backend/app.py: /api/lbdir/reconcile appends site_proposals; /api/lbdir/apply_reconcile accepts site_copies and copies matched site files to folder (with SITE_FILES_DIR path guard)
+Changed: gui_next/src/renderer/src/lib/lbdirStore.ts: SiteProposal type, site_proposals on ReconcileResult, siteSelected + setSiteSelected in store
+Changed: gui_next/src/renderer/src/screens/ScreenLBDIR.tsx: ReconcilePanel "Recoverable from site/files" section with checkboxes; apply wires site_copies
+
+[2026-06-03] — fix(backend+tools): lbdir_retrieve skips copy if lbdir already in folder; has_lbdir matches LBF-format files
+Fixed: backend/app.py: lbdir_retrieve now checks for any existing lbdir in folder before copying from cache; previously always overwrote, so a cache update between batch_verify and clicking Process would silently swap in a different lbdir causing a false result change
+Fixed: tools/batch_verify.py: has_lbdir used case-sensitive glob "lbdir*.txt" missing LBF-*-lbdir.txt files on Linux; now uses iterdir+lower() matching _find_lbdir_in_folder
+Fixed: gui_next/src/renderer/src/screens/ScreenLBDIR.tsx: pre-check folder dot now neutral gray instead of green for stale lbdir_verified_at; green reserved for live pass
+
+[2026-06-03] — fix(tools): batch_verify — don't persist transient connection errors; add --purge-connection-errors
+Changed: tools/batch_verify.py: process_folder Phase 1 — connection_error/timeout_error from _api_retrieve no longer written to DB; resume retries them
+Changed: tools/batch_verify.py: process_folder Phase 2 — ConnectionError/Timeout from _api_verify no longer written to DB; resume retries them
+Added: tools/batch_verify.py: purge_connection_errors() + --purge-connection-errors CLI flag to delete existing stale connection-error rows
+
+[2026-06-03] — fix(backend): LBDIR reconcile — lbdir file itself no longer appears as an extra
+Fixed: backend/checksum_utils.py: find_reconcilable_files — skip the lbdir file when building all_disk_rels so it no longer ends up in unmatched_disk and gets proposed for move to /extras/
+
+[2026-06-03] — fix(gui+backend): LBDIR screen — shallow root-folder scan and resizable file-table columns
+Changed: backend/app.py: pipeline_scan_tree — added shallow param; when true, only checks root + immediate subdirs (depth 1) instead of full rglob walk
+Changed: gui_next/src/renderer/src/screens/ScreenLBDIR.tsx: handleAddRoot passes shallow:true to scan-tree; file detail table columns are now drag-resizable via startFileColResize + fileColWidths state
+
+[2026-06-03] — feat(gui+backend): DB Editor — add batch_verify.db as selectable database
+Changed: backend/paths.py: added BATCH_VERIFY_DB_PATH constant
+Changed: backend/app.py: added _dbedit_db_path()/_dbedit_is_batchverify() helpers; all 7 dbedit routes accept ?db=batchverify param; batch_verify tables are all readonly; dbedit_query accepts db in POST body
+Changed: gui_next/src/renderer/src/screens/ScreenDbEditor.tsx: added activeDb state and switchDb(); db selector buttons above table list; all dbedit fetch calls pass ?db=; integrity/alias panels hidden for batch_verify; SqlQueryPanel receives db prop
+
+[2026-06-03] — feat(gui): Collection screen — chip groups, additive Not-in-collection filter, column alignment fix
+Changed: gui_next/src/renderer/src/screens/ScreenCollection.tsx: Filter chips divided into three groups with separators (status, history, not-in-collection); "Not in collection" converted from primary filter to independent additive toggle (notOwned state); filteredMissingRows computed by lb_status when Public/Private filter is active; not-owned table uses filteredMissingRows; column alignment fixed by removing stray extra <TD /> from not-owned table body rows; Export CSV uses filtered rows; all filter === 'not_owned' guards replaced with notOwned boolean
+
+[2026-06-03] — feat(gui): Collection screen — resizable columns + Public/Private filter chips + column picker
+Changed: gui_next/src/renderer/src/components/table.tsx: TH now accepts onResizeStart prop; renders a col-resize drag handle on the right edge with hover indicator
+Changed: gui_next/src/renderer/src/screens/ScreenCollection.tsx: FilterKey extended with 'public'/'private'; counts/filter logic added; Public and Private chips added after All chip; ColKey type + ALL_COLS/COL_LABELS/DEFAULT_COL_WIDTHS constants; colWidths Record + lbColWidth state; visibleCols persisted to localStorage (lbb_collection_cols); Columns popover in filter bar; table colgroup/thead/tbody conditioned on visibleCols; startColResize uses ColKey | 'lb'
+
 [2026-06-03] — feat(gui): Collection screen — dynamic category filter chips
 Changed: gui_next/src/renderer/src/screens/ScreenCollection.tsx: category chips now derived dynamically from categoryCounts (sorted by count) instead of hardcoded concert/interview; covers all types (concert, tv, studio, interview, compilation, rehearsal, radio, soundcheck)
 

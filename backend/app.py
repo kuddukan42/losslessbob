@@ -20,7 +20,7 @@ from backend import setlistfm as setlistfm_mod
 from backend import site_crawler
 from backend import sharing, archive_org as _archive_org
 
-from backend.paths import DATA_DIR, SITE_DIR, SITE_FILES_DIR, attachment_path, find_lbdir_attachment
+from backend.paths import DATA_DIR, SITE_DIR, SITE_FILES_DIR, attachment_path, find_lbdir_attachment, BATCH_VERIFY_DB_PATH
 
 _log = logging.getLogger(__name__)
 
@@ -70,6 +70,17 @@ def set_restart_callback(cb) -> None:
 _DBEDIT_READONLY = frozenset({"entries_fts"})
 _DBEDIT_AUDIT    = frozenset({"entry_changes", "integrity_events"})
 _DBEDIT_WARN     = frozenset({"checksums", "entries", "entry_files"})
+
+
+def _dbedit_db_path() -> str:
+    """Return the SQLite path for the current dbedit request based on ?db= param."""
+    if request.args.get("db", "").lower() == "batchverify":
+        return str(BATCH_VERIFY_DB_PATH)
+    return str(database.DB_PATH)
+
+
+def _dbedit_is_batchverify() -> bool:
+    return request.args.get("db", "").lower() == "batchverify"
 
 _spectro_state = {
     "status":    "idle",
@@ -176,6 +187,14 @@ def create_app() -> Flask:
             if not parsed:
                 return jsonify({"error": "No valid checksums found in input"}), 400
             summary, detail = database.lookup_checksums(parsed)
+            alias_map = {
+                r["alias_lb"]: r["canonical_lb"]
+                for r in database.get_lb_aliases()
+            }
+            for d in detail:
+                lb = d["lb_number"]
+                d["is_alias_lb"] = lb in alias_map
+                d["canonical_lb"] = alias_map.get(lb)
             return jsonify({"summary": summary, "detail": detail})
         except Exception as e:
             return jsonify({"error": str(e)}), 500
@@ -2112,6 +2131,23 @@ def create_app() -> Flask:
                     was_scraped = True
 
                 if not lbdir_src:
+                    # This LB has no lbdir — try the canonical if this is an alias.
+                    canonical_list = database.resolve_aliases([lb_number])
+                    canonical = (
+                        canonical_list[0]
+                        if canonical_list and canonical_list[0] != lb_number
+                        else None
+                    )
+                    if canonical:
+                        lbdir_src = find_lbdir_attachment(canonical)
+                        if not lbdir_src:
+                            scraper.scrape_entry(canonical, force=False, download_files=True)
+                            lbdir_src = find_lbdir_attachment(canonical)
+                            was_scraped = True
+                        if lbdir_src:
+                            lb_number = canonical
+
+                if not lbdir_src:
                     results.append({
                         "folder": str(folder_path),
                         "lb_number": lb_number,
@@ -2121,6 +2157,16 @@ def create_app() -> Flask:
                     continue
 
                 dest = folder / lbdir_src.name
+                existing = _find_lbdir_in_folder(folder)
+                if existing:
+                    results.append({
+                        "folder": str(folder_path),
+                        "lb_number": lb_number,
+                        "status": "already_present",
+                        "lbdir_filename": existing.name,
+                    })
+                    continue
+
                 folder.mkdir(parents=True, exist_ok=True)
                 shutil.copy2(str(lbdir_src), str(dest))
 
@@ -2137,7 +2183,7 @@ def create_app() -> Flask:
 
     @app.route("/api/lbdir/reconcile", methods=["POST"])
     def lbdir_reconcile() -> Response:
-        """Preview: find disk files whose MD5 matches missing lbdir entries. Does NOT move files."""
+        """Preview: find disk/site files whose MD5 matches missing lbdir entries. Does NOT move files."""
         try:
             data = request.get_json() or {}
             folders = data.get("folders", [])
@@ -2153,6 +2199,26 @@ def create_app() -> Flask:
                     continue
                 result = checksum_utils.find_reconcilable_files(folder, lbdir_path)
                 result["folder"] = str(folder)
+
+                # Look up lb_number to scan site/files for still-missing entries
+                with database.get_connection() as conn:
+                    row = conn.execute(
+                        "SELECT lb_number FROM my_collection WHERE disk_path=?", (str(folder),)
+                    ).fetchone()
+                lb_number = row["lb_number"] if row else None
+                if lb_number is None:
+                    m = re.search(r'LB-(\d+)', folder.name, re.IGNORECASE)
+                    if m:
+                        lb_number = int(m.group(1))
+
+                if lb_number is not None:
+                    site_result = checksum_utils.find_site_recoverable_files(
+                        folder, lbdir_path, SITE_FILES_DIR, lb_number
+                    )
+                    result["site_proposals"] = site_result.get("site_proposals", [])
+                else:
+                    result["site_proposals"] = []
+
                 results.append(result)
             return jsonify({"results": results})
         except Exception as e:
@@ -2160,12 +2226,14 @@ def create_app() -> Flask:
 
     @app.route("/api/lbdir/apply_reconcile", methods=["POST"])
     def lbdir_apply_reconcile() -> Response:
-        """Apply verified rename/move proposals inside a single folder. Never deletes files."""
+        """Apply verified rename/move/copy proposals inside a single folder. Never deletes files."""
         try:
             data = request.get_json() or {}
             folder = Path(data.get("folder", ""))
-            renames = data.get("renames", [])  # [{"from": rel, "to": rel}, ...]
+            renames = data.get("renames", [])      # [{"from": rel, "to": rel}, ...]
+            site_copies = data.get("site_copies", [])  # [{"site_path": abs, "lbdir_rel": rel}, ...]
             applied, errors = [], []
+
             for r in renames:
                 src = folder / r["from"]
                 dst = folder / r["to"]
@@ -2175,7 +2243,25 @@ def create_app() -> Flask:
                     applied.append(r)
                 except Exception as e:
                     errors.append({"rename": r, "error": str(e)})
-            return jsonify({"applied": len(applied), "errors": errors})
+
+            site_copied = []
+            for sc in site_copies:
+                src = Path(sc["site_path"])
+                dst = folder / sc["lbdir_rel"]
+                # Security: only allow copies from within SITE_FILES_DIR
+                try:
+                    src.relative_to(SITE_FILES_DIR)
+                except ValueError:
+                    errors.append({"site_copy": sc, "error": "site_path outside SITE_FILES_DIR"})
+                    continue
+                try:
+                    dst.parent.mkdir(parents=True, exist_ok=True)
+                    shutil.copy2(str(src), str(dst))
+                    site_copied.append(sc["lbdir_rel"])
+                except Exception as e:
+                    errors.append({"site_copy": sc, "error": str(e)})
+
+            return jsonify({"applied": len(applied), "site_copied": len(site_copied), "errors": errors})
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
@@ -2490,7 +2576,8 @@ def create_app() -> Flask:
             JSON list of {name, row_count, readonly, audit, warn} dicts.
         """
         try:
-            conn = database.get_connection()
+            is_bv = _dbedit_is_batchverify()
+            conn = database.get_connection(_dbedit_db_path())
             rows = conn.execute(
                 "SELECT name FROM sqlite_master "
                 "WHERE type IN ('table','view') ORDER BY name"
@@ -2512,9 +2599,9 @@ def create_app() -> Flask:
                 result.append({
                     "name":      name,
                     "row_count": count,
-                    "readonly":  name in _DBEDIT_READONLY,
-                    "audit":     name in _DBEDIT_AUDIT,
-                    "warn":      name in _DBEDIT_WARN,
+                    "readonly":  is_bv or name in _DBEDIT_READONLY,
+                    "audit":     not is_bv and name in _DBEDIT_AUDIT,
+                    "warn":      not is_bv and name in _DBEDIT_WARN,
                 })
             return jsonify(result)
         except Exception as e:
@@ -2531,7 +2618,7 @@ def create_app() -> Flask:
             JSON list of column info dicts from PRAGMA table_info.
         """
         try:
-            conn = database.get_connection()
+            conn = database.get_connection(_dbedit_db_path())
             cols = conn.execute(
                 f"PRAGMA table_info([{name}])"
             ).fetchall()
@@ -2556,7 +2643,7 @@ def create_app() -> Flask:
             search   = request.args.get("search", "").strip()
             sort_col = request.args.get("sort_col", "")
             sort_dir = "DESC" if request.args.get("sort_dir", "asc") == "desc" else "ASC"
-            conn     = database.get_connection()
+            conn     = database.get_connection(_dbedit_db_path())
 
             lb_filter = request.args.get("lb_number", "").strip()
             where, params = "", []
@@ -2614,7 +2701,7 @@ def create_app() -> Flask:
         Returns:
             JSON {ok, affected} or 403/400 on permission/validation error.
         """
-        if name in _DBEDIT_READONLY or name in _DBEDIT_AUDIT:
+        if _dbedit_is_batchverify() or name in _DBEDIT_READONLY or name in _DBEDIT_AUDIT:
             return jsonify({"error": f"Table {name!r} is not editable"}), 403
         try:
             data    = request.get_json() or {}
@@ -2650,7 +2737,7 @@ def create_app() -> Flask:
         Returns:
             JSON {ok, deleted} or 403/400 on permission/validation error.
         """
-        if name in _DBEDIT_READONLY:
+        if _dbedit_is_batchverify() or name in _DBEDIT_READONLY:
             return jsonify({"error": f"Table {name!r} cannot be modified"}), 403
         try:
             rowids = (request.get_json() or {}).get("rowids", [])
@@ -2679,7 +2766,7 @@ def create_app() -> Flask:
         """
         try:
             import csv, io
-            conn = database.get_connection()
+            conn = database.get_connection(_dbedit_db_path())
             rows = conn.execute(f"SELECT * FROM [{name}]").fetchall()
             buf  = io.StringIO()
             if rows:
@@ -2710,6 +2797,8 @@ def create_app() -> Flask:
             return jsonify({"error": "No SQL provided."}), 400
 
         limit = min(int(body.get("limit", 500)), 2000)
+        query_db = str(BATCH_VERIFY_DB_PATH) if (body.get("db") or "").lower() == "batchverify" else str(database.DB_PATH)
+        is_bv_query = query_db == str(BATCH_VERIFY_DB_PATH)
 
         upper = sql.upper()
         for blocked in ("DROP ", "TRUNCATE ", "VACUUM", "ATTACH ", "DETACH "):
@@ -2721,9 +2810,11 @@ def create_app() -> Flask:
 
         is_read = any(upper.startswith(kw) for kw in
                       ("SELECT", "PRAGMA", "WITH", "EXPLAIN", "VALUES"))
+        if is_bv_query and not is_read:
+            return jsonify({"error": "batch_verify.db is read-only."}), 403
         try:
             if is_read:
-                conn = database.get_connection()
+                conn = database.get_connection(query_db)
                 cur = conn.execute(sql)
             else:
                 result_holder: list = []
@@ -4703,15 +4794,26 @@ def create_app() -> Flask:
                     row["lookup"] = {"status": "bad", "label": "Not found", "lb_number": None}
                 else:
                     summary, _ = database.lookup_checksums(parsed)
-                    lb_list: list[int] = summary.get("lb_numbers_found", [])
+                    raw_lb_list: list[int] = summary.get("lb_numbers_found", [])
+                    lb_list: list[int] = database.resolve_aliases(raw_lb_list)
+                    alias_resolved_from: list[int] = [
+                        lb for lb in raw_lb_list if lb not in set(lb_list)
+                    ]
                     if len(lb_list) == 1:
                         lb_number = lb_list[0]
-                        row["lookup"] = {"status": "ok", "label": f"LB-{lb_number:05d}", "lb_number": lb_number}
+                        row["lookup"] = {
+                            "status": "ok",
+                            "label": f"LB-{lb_number:05d}",
+                            "lb_number": lb_number,
+                            "alias_resolved_from": alias_resolved_from or None,
+                        }
                     elif len(lb_list) > 1:
-                        row["lookup"] = {"status": "warn", "label": "Conflict", "lb_number": None}
+                        row["lookup"] = {"status": "warn", "label": "Conflict", "lb_number": None,
+                                         "alias_resolved_from": None}
                         row["errors"].append({"step": "lookup", "message": f"Multiple LBs: {lb_list}"})
                     else:
-                        row["lookup"] = {"status": "bad", "label": "Not found", "lb_number": None}
+                        row["lookup"] = {"status": "bad", "label": "Not found", "lb_number": None,
+                                         "alias_resolved_from": None}
 
         # ── Step 3: Rename proposal ───────────────────────────────────────────
         if "rename" in steps:
@@ -4805,7 +4907,8 @@ def create_app() -> Flask:
     def pipeline_scan_tree() -> Response:
         """Walk a root directory and return subdirectories containing audio files.
 
-        Body: {root: "/abs/path"}
+        Body: {root: "/abs/path", shallow: false}
+        shallow=true limits scan to root + immediate subdirectories only (depth 1).
         Returns:
             JSON {folders: [str, ...]} sorted alphabetically
         """
@@ -4813,17 +4916,24 @@ def create_app() -> Flask:
         try:
             data = request.get_json() or {}
             root = Path(data.get("root", ""))
+            shallow: bool = bool(data.get("shallow", False))
             if not root.is_dir():
                 return jsonify({"error": "root is not a directory"}), 400
             found: list[str] = []
-            # rglob("*") excludes root itself, so check root separately
-            if any(f.suffix.lower() in _AUDIO for f in root.iterdir() if f.is_file()):
+
+            def _has_audio(d: Path) -> bool:
+                return any(f.suffix.lower() in _AUDIO for f in d.iterdir() if f.is_file())
+
+            if _has_audio(root):
                 found.append(str(root))
-            for dirpath in root.rglob("*"):
-                if dirpath.is_dir() and any(
-                    f.suffix.lower() in _AUDIO for f in dirpath.iterdir() if f.is_file()
-                ):
-                    found.append(str(dirpath))
+            if shallow:
+                for child in root.iterdir():
+                    if child.is_dir() and _has_audio(child):
+                        found.append(str(child))
+            else:
+                for dirpath in root.rglob("*"):
+                    if dirpath.is_dir() and _has_audio(dirpath):
+                        found.append(str(dirpath))
             return jsonify({"folders": sorted(found)})
         except Exception as e:
             return jsonify({"error": str(e)}), 500

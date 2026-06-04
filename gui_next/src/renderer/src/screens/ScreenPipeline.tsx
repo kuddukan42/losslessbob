@@ -17,6 +17,7 @@ interface StepResult {
   label: string
   lb_number?: number | null
   proposed?: string | null
+  alias_resolved_from?: number[] | null
 }
 
 interface PipelineRow {
@@ -126,6 +127,7 @@ export function ScreenPipeline(): React.JSX.Element {
   const [activeQueue, setActiveQueue] = useState<string | null>(null)
   const [lastShiftAnchor, setLastShiftAnchor] = useState<string | null>(null)
   const [dragOver, setDragOver] = useState(false)
+  const [shallowScan, setShallowScan] = useState(false)
 
   // Sync any folders added from other screens into local rows
   useEffect(() => {
@@ -312,12 +314,12 @@ export function ScreenPipeline(): React.JSX.Element {
       const resp = await fetch(`${BASE}/api/pipeline/scan-tree`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ root: dir }),
+        body: JSON.stringify({ root: dir, shallow: shallowScan }),
       })
       const data = await resp.json() as { folders?: string[]; error?: string }
       if (data.folders?.length) addFolders(data.folders)
     } catch { /* silent */ }
-  }, [addFolders])
+  }, [addFolders, shallowScan])
 
   // ── Selection ───────────────────────────────────────────────────────────────
   const toggleSelect = useCallback((id: string, shiftKey: boolean) => {
@@ -580,6 +582,10 @@ export function ScreenPipeline(): React.JSX.Element {
           }}>
             <Button variant="primary" size="sm" icon="folderPlus" block onClick={handlePickFolders}>{t('pipeline.queue.addFolders')}</Button>
             <Button variant="secondary" size="sm" icon="search" block onClick={handleScanTree}>{t('pipeline.queue.scanTree')}</Button>
+            <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', cursor: 'pointer', paddingLeft: 2 }}>
+              <input type="checkbox" checked={shallowScan} onChange={e => setShallowScan(e.target.checked)} style={{ accentColor: 'var(--lbb-accent)' }} />
+              {t('common.shallowScan')}
+            </label>
             <Button
               variant="ghost" size="sm" icon="trash" block
               onClick={() => { setRows([]); setActiveQueue(null); clearFolders() }}
@@ -766,6 +772,7 @@ export function ScreenPipeline(): React.JSX.Element {
                                : 'ok'
                     const lb = r.steps.lookup.lb_number
                     const lbLabel = lb ? `LB-${String(lb).padStart(5, '0')}` : '—'
+                    const aliasFrom = r.steps.lookup.alias_resolved_from
 
                     return (
                       <TR
@@ -794,6 +801,12 @@ export function ScreenPipeline(): React.JSX.Element {
                           fontWeight: r.severity === 'ready' ? 600 : undefined,
                         }}>
                           {lbLabel}
+                          {aliasFrom && aliasFrom.length > 0 && (
+                            <span style={{ fontSize: 'var(--lbb-fs-9)', color: 'var(--lbb-fg3)', marginLeft: 4 }}
+                              title={`Resolved from alias: ${aliasFrom.map(n => `LB-${String(n).padStart(5, '0')}`).join(', ')}`}>
+                              ↩ alias
+                            </span>
+                          )}
                         </TD>
                         <TD align="right" onClick={e => e.stopPropagation()}>
                           {r.severity === 'attn' && (

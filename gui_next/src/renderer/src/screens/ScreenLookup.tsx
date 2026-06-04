@@ -1,10 +1,11 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Icon } from '../components/Icon'
 import { Button, Chip, Pill } from '../components'
 import { TableShell, TH, TR, TD } from '../components'
 import { useLookupStore, LookupSource, LookupSummaryRow, LookupDetail } from '../lib/lookupStore'
+import { useFolderQueueStore } from '../lib/folderQueueStore'
 
 const BASE = window.api.flaskBase
 
@@ -33,6 +34,7 @@ function categoryPill(cat: string | null | undefined): React.JSX.Element | null 
 function apiStatusToState(status: string): LookupState {
   if (status === 'MATCHED')               return 'matched'
   if (status === 'MATCHED (INCOMPLETE)')  return 'incomplete'
+  if (status === 'INCOMPLETE')            return 'incomplete'
   if (status === 'NOT FOUND')             return 'notfound'
   if (status === 'DUPLICATE')             return 'duplicate'
   if (status === 'XREF')                  return 'xref'
@@ -115,6 +117,27 @@ export function ScreenLookup(): React.JSX.Element {
   const { t } = useTranslation()
   const navigate = useNavigate()
   const { sources, summary, detail, filter, filterMy, activeSource, addSource, clearSources, setResult, setFolderList, setFilter, setFilterMy, setActiveSource } = useLookupStore()
+  const { folders: queueFolders } = useFolderQueueStore()
+
+  // Sync shared folder queue into sources so folders added on other tabs appear here too
+  useEffect(() => {
+    if (!queueFolders.length) return
+    const { sources: cur, addSource: add } = useLookupStore.getState()
+    const existingNames = new Set(cur.filter(s => s.kind === 'folder').map(s => s.name))
+    const toAdd = queueFolders.filter(f => !existingNames.has(f.split('/').pop() ?? f))
+    if (!toAdd.length) return
+    for (const folder of toAdd) {
+      const name = folder.split('/').pop() ?? folder
+      fetch(`${BASE}/api/lookup/scan_folders`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ folders: [folder] }),
+      })
+        .then(r => r.json() as Promise<{ content: string }>)
+        .then(d => add({ kind: 'folder', name, content: d.content ?? '', active: true }))
+        .catch(() => add({ kind: 'folder', name, content: '', active: true }))
+    }
+  }, [queueFolders])
 
   const [busy,           setBusy]           = useState(false)
   const [showListbox,    setShowListbox]     = useState(false)
@@ -516,9 +539,18 @@ export function ScreenLookup(): React.JSX.Element {
                         const state = apiStatusToState(r.status)
                         const tone  = STATE_TONE[state]
                         const lbStr = `LB-${String(r.lb_number).padStart(5, '0')}`
+                        const aliasDetail = detail.find(d => d.lb_number === r.lb_number && d.is_alias_lb)
                         return (
                           <TR key={i} edge={tone.tone === 'mute' ? undefined : tone.tone}>
-                            <TD mono style={{ color: 'var(--lbb-accent-mid)', fontWeight: 600 }}>{lbStr}</TD>
+                            <TD mono style={{ color: 'var(--lbb-accent-mid)', fontWeight: 600 }}>
+                              {lbStr}
+                              {aliasDetail && aliasDetail.canonical_lb != null && (
+                                <Pill tone="warn" soft style={{ marginLeft: 6 }}
+                                  title={`Duplicate LB — canonical: LB-${String(aliasDetail.canonical_lb).padStart(5, '0')}`}>
+                                  ≡ LB-{String(aliasDetail.canonical_lb).padStart(5, '0')}
+                                </Pill>
+                              )}
+                            </TD>
                             <TD>{categoryPill(r.lb_category)}</TD>
                             <TD align="right" mono>{r.given}</TD>
                             <TD align="right" mono style={{ color: r.matched      > 0 ? 'var(--lbb-ok-fg)'   : 'var(--lbb-fg3)' }}>{r.matched      || '—'}</TD>
