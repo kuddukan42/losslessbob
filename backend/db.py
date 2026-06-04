@@ -1423,14 +1423,29 @@ def lookup_checksums(parsed_entries, db_path=None):
     # Evaluating per xref group means a recording that fully matches an xref variant
     # is shown as MATCHED (green) rather than INCOMPLETE — because it IS complete for
     # that xref; the primary LB set simply isn't what the user has.
+    _AUDIO_EXT_RE = re.compile(r'\.(flac|shn|wav|ape|m4a|wv|aif|aiff)$', re.IGNORECASE)
     _lb_xref_missing: dict = {}
     for (lb, xref_val), matched_set in lb_xref_to_matched.items():
-        all_chks = conn.execute(
-            "SELECT checksum FROM checksums WHERE lb_number=? AND xref=?",
+        all_rows = conn.execute(
+            "SELECT checksum, filename FROM checksums WHERE lb_number=? AND xref=?",
             (lb, xref_val)
         ).fetchall()
-        all_chks_set = {r["checksum"] for r in all_chks}
-        _lb_xref_missing[(lb, xref_val)] = all_chks_set - matched_set
+        # Build base-filename → checksums map so that foo.shn (md5) and foo.wav
+        # (shntool) are treated as the same track.  A track is covered if ANY of
+        # its checksums was matched; only uncovered tracks contribute to missing.
+        base_to_chks: dict = {}
+        for row in all_rows:
+            base = _AUDIO_EXT_RE.sub('', row["filename"]).lower()
+            base_to_chks.setdefault(base, set()).add(row["checksum"])
+        missing: set = set()
+        for row in all_rows:
+            chk = row["checksum"]
+            if chk in matched_set:
+                continue
+            base = _AUDIO_EXT_RE.sub('', row["filename"]).lower()
+            if not (base_to_chks[base] & matched_set):
+                missing.add(chk)
+        _lb_xref_missing[(lb, xref_val)] = missing
 
     for item in detail:
         lb = item["lb_number"]
@@ -1940,7 +1955,23 @@ def get_collection(db_path=None):
             LEFT JOIN lb_master lm ON lm.lb_number = c.lb_number
             ORDER BY c.lb_number
         """).fetchall()
-    return [dict(r) for r in rows]
+        alias_rows = conn.execute(
+            "SELECT alias_lb, canonical_lb FROM lb_alias"
+        ).fetchall()
+
+    # Build bidirectional map: lb -> [all linked lbs in either direction]
+    linked: dict[int, list[int]] = {}
+    for ar in alias_rows:
+        a, c = ar["alias_lb"], ar["canonical_lb"]
+        linked.setdefault(a, []).append(c)
+        linked.setdefault(c, []).append(a)
+
+    result = []
+    for r in rows:
+        d = dict(r)
+        d["linked_lbs"] = sorted(linked.get(d["lb_number"], []))
+        result.append(d)
+    return result
 
 
 def add_to_collection(lb_number, folder_name, disk_path, notes=None, db_path=None):
@@ -2005,7 +2036,18 @@ def get_missing_from_collection(db_path=None):
             FROM entries e
             LEFT JOIN my_collection c ON e.lb_number = c.lb_number
             LEFT JOIN lb_master lm ON lm.lb_number = e.lb_number
-            WHERE c.lb_number IS NULL AND e.status = 'ok'
+            WHERE c.lb_number IS NULL
+              AND e.status = 'ok'
+              AND NOT EXISTS (
+                  SELECT 1 FROM lb_alias la
+                  JOIN my_collection mc ON la.canonical_lb = mc.lb_number
+                  WHERE la.alias_lb = e.lb_number
+              )
+              AND NOT EXISTS (
+                  SELECT 1 FROM lb_alias la
+                  JOIN my_collection mc ON la.alias_lb = mc.lb_number
+                  WHERE la.canonical_lb = e.lb_number
+              )
             ORDER BY e.lb_number
         """).fetchall()
     return [dict(r) for r in rows]

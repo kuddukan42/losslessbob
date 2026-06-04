@@ -13,6 +13,8 @@ export interface LookupDetail {
   lb_category:    string | null
   owned:          boolean
   lbdir_verified: boolean
+  is_alias_lb:    boolean
+  canonical_lb:   number | null
 }
 
 export interface LookupSummaryRow {

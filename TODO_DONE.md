@@ -1,6 +1,18 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-110: Pipeline — handling for duplicate and linked LBs
+Priority: Medium
+Status: Done
+Added: 2026-06-03
+Closed: 2026-06-04
+Description: Integrated lb_alias table into all affected workflows:
+- Collection missing section: alias partners of owned LBs are suppressed via NOT EXISTS subqueries in get_missing_from_collection()
+- Collection owned section: linked_lbs field added to each row; ↔ badge shown in detail panel
+- Pipeline lookup step: aliases resolved before single/conflict check; alias_resolved_from stored for display
+- Lookup tab: is_alias_lb/canonical_lb annotated on detail rows; ≡ LB-XXXXX badge shown in summary
+- lbdir_retrieve: fallback cascade to canonical when alias has no lbdir attachment
+
 TODO-089: Add acknowledgements section to About dialog
 Priority: Low
 Status: Done
