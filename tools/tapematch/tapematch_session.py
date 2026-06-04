@@ -50,7 +50,7 @@ SESSION_DIR  = Path(__file__).parent
 REPORT_PATH  = SESSION_DIR / "last_run_report.md"
 LOG_PATH     = SESSION_DIR / "last_run.log"
 OBS_DB_PATH  = SESSION_DIR / "observations.db"
-RUNS_DIR     = SESSION_DIR / "runs"
+RUNS_DIR     = PROJECT_ROOT / "data" / "tapematch" / "runs"
 
 AUDIO_EXTS = {".flac", ".wav", ".shn", ".aiff", ".aif", ".ape", ".m4a", ".mp3"}
 
