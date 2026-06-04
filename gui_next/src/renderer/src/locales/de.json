@@ -17,7 +17,8 @@
     "never": "niemals",
     "today": "heute",
     "yesterday": "gestern",
-    "daysAgo": "{{count}} vor Tagen"
+    "daysAgo": "{{count}} vor Tagen",
+    "shallowScan": "Nur 1 Ebene"
   },
   "appShell": {
     "brand": "VerlustfreiBob",

@@ -6,8 +6,24 @@ import { useSettingsStore } from '../store'
 
 // ── Nav structure ────────────────────────────────────────────────────────────
 
+type NavId =
+  | 'home' | 'pipeline' | 'verify' | 'lookup' | 'rename' | 'lbdir'
+  | 'collection' | 'trading' | 'sharing' | 'search' | 'bootlegs'
+  | 'attachments' | 'spectrograms' | 'map' | 'fingerprint'
+  | 'scraper' | 'setup' | 'themes' | 'dbeditor'
+
+type NavGroupLabel = 'Ingest' | 'Library' | 'Assets' | 'Curator' | 'Settings'
+
+const NAV_GROUP_KEYS: Record<NavGroupLabel, `appShell.nav.${Lowercase<NavGroupLabel>}`> = {
+  Ingest:   'appShell.nav.ingest',
+  Library:  'appShell.nav.library',
+  Assets:   'appShell.nav.assets',
+  Curator:  'appShell.nav.curator',
+  Settings: 'appShell.nav.settings',
+}
+
 interface NavItem {
-  id: string
+  id: NavId
   label: string
   icon: string
   featured?: boolean
@@ -15,7 +31,7 @@ interface NavItem {
 }
 
 interface NavGroup {
-  label: string | null
+  label: NavGroupLabel | null
   gatedGroup?: boolean
   items: NavItem[]
 }
@@ -218,7 +234,7 @@ function Sidebar({
                     gap: 6,
                   }}
                 >
-                  <span>{group.label ? t('appShell.nav.' + group.label.toLowerCase()) : null}</span>
+                  <span>{group.label ? t(NAV_GROUP_KEYS[group.label]) : null}</span>
                   {group.gatedGroup && (
                     <span
                       style={{
@@ -279,7 +295,7 @@ function Sidebar({
                     }}
                   >
                     <Icon name={item.icon} size={15} />
-                    <span style={{ flex: 1 }}>{t('appShell.nav.' + item.id)}</span>
+                    <span style={{ flex: 1 }}>{t(`appShell.nav.${item.id}`)}</span>
                     {item.featured && !isActive && (
                       <span
                         style={{

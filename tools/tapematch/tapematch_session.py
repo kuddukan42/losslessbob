@@ -436,7 +436,7 @@ def _clean_stale_tmp_dirs() -> None:
             print(f"  [cleanup] removed stale tmp dir: {d.name}")
 
 
-def run_tapematch(json_out: Path) -> tuple[str, float]:
+def run_tapematch(json_out: Path, set_offset: str | None = None) -> tuple[str, float]:
     """Run tapematch CLI. Returns (stdout_text, duration_sec)."""
     _clean_stale_tmp_dirs()
     cmd = [
@@ -445,6 +445,8 @@ def run_tapematch(json_out: Path) -> tuple[str, float]:
         "--config", str(SESSION_DIR / "config.yaml"),
         "--json-out", str(json_out),
     ]
+    if set_offset:
+        cmd += ["--set-offset", set_offset]
     t0 = time.monotonic()
     result = subprocess.run(cmd, cwd=str(SESSION_DIR), capture_output=True, text=True)
     duration = time.monotonic() - t0
@@ -565,6 +567,72 @@ def _lb_num_from_folder(folder_name: str) -> int | None:
 
 # ── report writer ──────────────────────────────────────────────────────────────
 
+def _build_commentary_audit(
+    lb_numbers: list[int],
+    found_folders: dict[int, Path],
+    results: dict,
+) -> str:
+    """Return a markdown commentary-vs-tapematch audit block, or '' if nothing to report.
+
+    For every pair of LBs that have a local page commentary which makes an explicit
+    same/different claim, compare that claim against the tapematch family assignment
+    and emit AGREES or DISAGREES.
+    """
+    if not results or "sources" not in results:
+        return ""
+
+    name_to_lb: dict[str, int] = {p.name: n for n, p in found_folders.items()}
+    lb_family: dict[int, int] = {}
+    for folder_name, info in results["sources"].items():
+        lb_num = name_to_lb.get(folder_name)
+        if lb_num is not None:
+            lb_family[lb_num] = info["family_id"]
+
+    rows: list[str] = []
+    checked: set[tuple[int, int]] = set()
+    for lb_a in lb_numbers:
+        if lb_a not in found_folders:
+            continue
+        for lb_b in lb_numbers:
+            if lb_b not in found_folders or lb_b == lb_a:
+                continue
+            key = (min(lb_a, lb_b), max(lb_a, lb_b))
+            if key in checked:
+                continue
+            checked.add(key)
+            lb_says_same, rel_text = extract_lb_relationship(lb_a, lb_b)
+            if lb_says_same is None:
+                lb_says_same, rel_text = extract_lb_relationship(lb_b, lb_a)
+            if lb_says_same is None:
+                continue
+            fam_a = lb_family.get(lb_a)
+            fam_b = lb_family.get(lb_b)
+            tapematch_same = fam_a is not None and fam_b is not None and fam_a == fam_b
+            if lb_says_same == 1 and tapematch_same:
+                verdict = "AGREES"
+            elif lb_says_same == 1 and not tapematch_same:
+                verdict = "**DISAGREES** — commentary says same, tapematch says different family"
+            elif lb_says_same == 0 and not tapematch_same:
+                verdict = "AGREES"
+            else:
+                verdict = "**DISAGREES** — commentary says different, tapematch grouped together"
+            snippet = rel_text[:120].replace("\n", " ").strip()
+            if len(rel_text) > 120:
+                snippet += "…"
+            rows.append(f"| {_lb_tag(lb_a)} / {_lb_tag(lb_b)} | {verdict} | {snippet} |")
+
+    if not rows:
+        return ""
+    lines = [
+        "",
+        "## Commentary vs tapematch audit",
+        "",
+        "| Pair | Verdict | Commentary snippet |",
+        "|------|---------|-------------------|",
+    ] + rows
+    return "\n".join(lines)
+
+
 def _lb_source_snippet(lb_num: int, max_len: int = 90) -> str:
     """Return a short first-line source description from the LB commentary."""
     text = extract_lb_commentary(lb_num)
@@ -583,7 +651,8 @@ def _lb_source_snippet(lb_num: int, max_len: int = 90) -> str:
 
 
 def build_report(date_iso: str, location: str, lb_numbers: list[int],
-                 found_folders: dict[int, Path], tapematch_output: str) -> str:
+                 found_folders: dict[int, Path], tapematch_output: str,
+                 results: dict | None = None) -> str:
     lines: list[str] = [
         f"# tapematch session — {date_iso} — {location}",
         f"*Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}*",
@@ -615,7 +684,10 @@ def build_report(date_iso: str, location: str, lb_numbers: list[int],
         meta   = (f" | rating: {rating}" if rating else "") + (f" | timing: {timing}" if timing else "")
         lines += ["", f"### {_lb_tag(n)}{meta}", extract_lb_commentary(n)]
 
-    return "\n".join(lines)
+    report = "\n".join(lines)
+    if results:
+        report += _build_commentary_audit(lb_numbers, found_folders, results)
+    return report
 
 
 # ── main ───────────────────────────────────────────────────────────────────────
@@ -715,7 +787,8 @@ def get_year_dates(year: str, min_entries: int = 2) -> list[tuple[str, int, str,
 
 
 def run_date(date_iso: str, dry_run: bool = False,
-             no_tapematch: bool = False, report_only: bool = False) -> int:
+             no_tapematch: bool = False, report_only: bool = False,
+             set_offset: str | None = None) -> int:
     """Run a full tapematch session for one concert date."""
     run_id  = make_run_id()
     run_at  = datetime.now().isoformat()
@@ -756,13 +829,14 @@ def run_date(date_iso: str, dry_run: bool = False,
     if report_only:
         json_path = SESSION_DIR / "last_results.json"
         log_text  = LOG_PATH.read_text() if LOG_PATH.exists() else "(no log found)"
+        results   = json.loads(json_path.read_text()) if json_path.exists() else None
         print("\n[REPORT ONLY] — using existing last_run.log + last_results.json")
-        report_text = build_report(date_iso, location, lb_numbers, found_folders, log_text)
+        report_text = build_report(date_iso, location, lb_numbers, found_folders,
+                                   log_text, results)
         REPORT_PATH.write_text(report_text, encoding="utf-8")
         arch = archive_run(run_id, date_iso, log_text, report_text,
                            json_path if json_path.exists() else None)
-        if json_path.exists():
-            results = json.loads(json_path.read_text())
+        if results is not None:
             _log_to_obs_db(run_id, run_at, date_iso, location, lb_numbers,
                            found_folders, results, 0.0, arch)
         print(f"\nReport → {REPORT_PATH}")
@@ -785,21 +859,22 @@ def run_date(date_iso: str, dry_run: bool = False,
     else:
         print("\n[5] Running tapematch …")
         json_path.unlink(missing_ok=True)  # clear stale results from any prior run
-        log_text, duration = run_tapematch(json_path)
+        log_text, duration = run_tapematch(json_path, set_offset=set_offset)
         LOG_PATH.write_text(log_text)
         print(log_text)
 
-    # 6. Archive
+    # 6. Archive — load results first so build_report can include commentary audit
     print("\n[6] Archiving run …")
-    report_text = build_report(date_iso, location, lb_numbers, found_folders, log_text)
+    results = json.loads(json_path.read_text()) if json_path.exists() else None
+    report_text = build_report(date_iso, location, lb_numbers, found_folders,
+                               log_text, results)
     arch = archive_run(run_id, date_iso, log_text, report_text,
                        json_path if json_path.exists() else None)
     print(f"  Archive → {arch}")
 
     # 7. Log to observations DB
-    if json_path.exists():
+    if results is not None:
         print("\n[7] Logging to observations.db …")
-        results = json.loads(json_path.read_text())
         _log_to_obs_db(run_id, run_at, date_iso, location, lb_numbers,
                        found_folders, results, duration, arch)
     else:
@@ -884,6 +959,10 @@ def main(argv=None) -> int:
                     help="Skip the tapematch run (still cleans and copies folders)")
     ap.add_argument("--report-only", action="store_true",
                     help="Skip clean/copy/run; regenerate report+DB from existing last_run.log/results.json")
+    ap.add_argument("--set-offset", default=None, metavar="HH:MM:SS",
+                    help="clip all sources to start at this offset before analysis "
+                         "(HH:MM:SS or decimal seconds); use for co-headline shows where "
+                         "the target set starts mid-recording (e.g. '1:30:00')")
     args = ap.parse_args(argv)
 
     if args.suggest:
@@ -899,7 +978,8 @@ def main(argv=None) -> int:
     return run_date(args.date,
                     dry_run=args.dry_run,
                     no_tapematch=args.no_tapematch,
-                    report_only=args.report_only)
+                    report_only=args.report_only,
+                    set_offset=args.set_offset)
 
 
 def _log_to_obs_db(run_id: str, run_at: str, date_iso: str, location: str,

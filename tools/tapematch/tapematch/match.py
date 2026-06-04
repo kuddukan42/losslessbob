@@ -56,7 +56,7 @@ def estimate_ratio(ref, other, sr, anchors, cfg):
     er, rate = _envelope(ref, sr)
     eo, _ = _envelope(other, sr)
     best_ratio, best_peak = 1.0, -1.0
-    for ratio in np.linspace(0.985, 1.015, 61):
+    for ratio in np.linspace(0.980, 1.020, 81):
         from scipy.signal import resample
         m = max(8, int(len(eo) * ratio))
         eo_r = resample(eo, m)

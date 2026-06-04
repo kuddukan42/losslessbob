@@ -43,9 +43,10 @@ export interface THProps {
   style?: React.CSSProperties
   onClick?: React.MouseEventHandler<HTMLTableCellElement>
   sorted?: 'asc' | 'desc' | null
+  onResizeStart?: (e: React.MouseEvent) => void
 }
 
-export function TH({ children, align = 'left', width, style, onClick, sorted }: THProps) {
+export function TH({ children, align = 'left', width, style, onClick, sorted, onResizeStart }: THProps) {
   return (
     <th
       onClick={onClick}
@@ -60,6 +61,7 @@ export function TH({ children, align = 'left', width, style, onClick, sorted }: 
         whiteSpace: 'nowrap',
         cursor: onClick ? 'pointer' : 'default',
         userSelect: onClick ? 'none' : undefined,
+        position: 'relative',
         width,
         ...style,
       }}
@@ -68,6 +70,19 @@ export function TH({ children, align = 'left', width, style, onClick, sorted }: 
       {sorted === 'asc'  && <span style={{ marginLeft: 4, opacity: 0.7 }}>▲</span>}
       {sorted === 'desc' && <span style={{ marginLeft: 4, opacity: 0.7 }}>▼</span>}
       {!sorted && onClick && <span style={{ marginLeft: 4, opacity: 0.25 }}>⇅</span>}
+      {onResizeStart && (
+        <div
+          onMouseDown={e => { e.stopPropagation(); e.preventDefault(); onResizeStart(e) }}
+          onClick={e => e.stopPropagation()}
+          style={{
+            position: 'absolute', right: 0, top: 0, bottom: 0, width: 6,
+            cursor: 'col-resize', zIndex: 1,
+            borderRight: '2px solid transparent',
+          }}
+          onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.borderRightColor = 'var(--lbb-border2)' }}
+          onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.borderRightColor = 'transparent' }}
+        />
+      )}
     </th>
   )
 }
