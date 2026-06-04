@@ -15,7 +15,7 @@ import sys
 from pathlib import Path
 from datetime import date as Date
 
-RUNS_DIR = Path(__file__).parent / "runs"
+RUNS_DIR = Path(__file__).parent.parent.parent / "data" / "tapematch" / "runs"
 TODAY = Date.today().isoformat()
 MODEL = "claude-sonnet-4-6"
 

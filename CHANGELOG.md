@@ -1,3 +1,8 @@
+[2026-06-04] — chore(tools): move tapematch runs/ to data/tapematch/runs/
+Changed: tools/tapematch/tapematch_session.py: RUNS_DIR now points to PROJECT_ROOT/data/tapematch/runs — user data kept out of repo tree
+Changed: tools/tapematch/gen_analysis.py: RUNS_DIR updated to match new location
+Changed: .gitignore: removed stale tools/tapematch/runs/ entry (/data already covers it)
+
 [2026-06-04] — feat(backend+gui): duplicate LB alias integration across all workflows
 Changed: backend/db.py: get_missing_from_collection() — exclude alias partners of owned LBs via NOT EXISTS subqueries; get_collection() — annotate each row with linked_lbs list (bidirectional)
 Changed: backend/app.py: /api/lookup route — annotate detail entries with is_alias_lb/canonical_lb; _pipeline_process_folder() — resolve aliases before single/conflict check, store alias_resolved_from; lbdir_retrieve() — cascade fallback to canonical LB when alias has no lbdir attachment

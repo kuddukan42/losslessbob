@@ -46,8 +46,7 @@ secrets/*.txt
  
 .claude/settings.local.json
 
-# tapematch run artifacts
-tools/tapematch/runs/
+# tapematch run artifacts (runs/ lives in data/tapematch/runs/ — covered by /data above)
 tools/tapematch/last_run.log
 tools/tapematch/last_run_report.md
 tools/tapematch/last_results.json
