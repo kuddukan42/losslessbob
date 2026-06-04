@@ -1,0 +1,51 @@
+[
+  { "action": "screenshot", "file": "00-home.png" },
+
+  { "action": "navigate", "route": "/lookup" },
+  { "action": "screenshot", "file": "01-lookup.png" },
+
+  { "action": "navigate", "route": "/verify" },
+  { "action": "screenshot", "file": "02-verify.png" },
+
+  { "action": "navigate", "route": "/rename" },
+  { "action": "screenshot", "file": "03-rename.png" },
+
+  { "action": "navigate", "route": "/lbdir" },
+  { "action": "screenshot", "file": "04-lbdir.png" },
+
+  { "action": "navigate", "route": "/collection" },
+  { "action": "screenshot", "file": "05-collection.png" },
+
+  { "action": "navigate", "route": "/trading" },
+  { "action": "screenshot", "file": "06-trading.png" },
+
+  { "action": "navigate", "route": "/sharing" },
+  { "action": "screenshot", "file": "07-sharing.png" },
+
+  { "action": "navigate", "route": "/search" },
+  { "action": "screenshot", "file": "08-search.png" },
+
+  { "action": "navigate", "route": "/bootlegs" },
+  { "action": "screenshot", "file": "09-bootlegs.png" },
+
+  { "action": "navigate", "route": "/attachments" },
+  { "action": "screenshot", "file": "10-attachments.png" },
+
+  { "action": "navigate", "route": "/spectrograms" },
+  { "action": "screenshot", "file": "11-spectrograms.png" },
+
+  { "action": "navigate", "route": "/fingerprint" },
+  { "action": "screenshot", "file": "12-fingerprint.png" },
+
+  { "action": "navigate", "route": "/map" },
+  { "action": "screenshot", "file": "13-map.png" },
+
+  { "action": "navigate", "route": "/dbeditor" },
+  { "action": "screenshot", "file": "14-dbeditor.png" },
+
+  { "action": "navigate", "route": "/setup" },
+  { "action": "screenshot", "file": "15-setup.png" },
+
+  { "action": "navigate", "route": "/themes" },
+  { "action": "screenshot", "file": "16-themes.png" }
+]

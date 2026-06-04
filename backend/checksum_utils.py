@@ -787,6 +787,7 @@ def find_reconcilable_files(
 
     correct_rels: set[str] = set(md5_map.keys()) - set(missing_entries.keys())
 
+    lbdir_rel_self = lbdir.relative_to(folder).as_posix()
     disk_md5_to_rel: dict[str, str] = {}
     warnings: list[str] = []
     all_disk_rels: set[str] = set()
@@ -795,6 +796,8 @@ def find_reconcilable_files(
         if not disk_file.is_file():
             continue
         rel = disk_file.relative_to(folder).as_posix()
+        if rel == lbdir_rel_self:
+            continue
         if rel in correct_rels:
             continue
         md5 = compute_md5(str(disk_file))
@@ -832,6 +835,56 @@ def find_reconcilable_files(
         "unmatched_disk": unmatched_disk,
         "warnings": warnings,
     }
+
+
+def find_site_recoverable_files(
+    folder_path: str | Path,
+    lbdir_path: str | Path,
+    site_files_dir: str | Path,
+    lb_number: int,
+) -> dict:
+    """Find files in SITE_FILES_DIR that match MD5s of entries still missing from folder.
+
+    Args:
+        folder_path: Root folder to check against.
+        lbdir_path: Path to the lbdir*.txt file.
+        site_files_dir: Path to data/site/files/ directory.
+        lb_number: LB number used to filter site files (matches LBF-NNNNN- prefix).
+
+    Returns:
+        {'site_proposals': [{'site_path': str, 'lbdir_rel': str, 'md5': str}, ...]}
+        or {'error': '...'} on parse failure.
+    """
+    folder = Path(folder_path)
+    site_dir = Path(site_files_dir)
+
+    parsed = parse_lbdir_file(str(lbdir_path))
+    if "error" in parsed:
+        return {"error": parsed["error"]}
+
+    md5_map: dict[str, str] = dict(parsed.get("md5", []))
+    missing_by_md5: dict[str, str] = {
+        md5: rel for rel, md5 in md5_map.items()
+        if not (folder / rel).exists()
+    }
+
+    if not missing_by_md5 or not site_dir.exists():
+        return {"site_proposals": []}
+
+    prefix = f"LBF-{lb_number:05d}-"
+    site_proposals: list[dict] = []
+    for site_file in sorted(site_dir.iterdir()):
+        if not site_file.is_file() or not site_file.name.startswith(prefix):
+            continue
+        md5 = compute_md5(str(site_file))
+        if md5 and md5 in missing_by_md5:
+            site_proposals.append({
+                "site_path": str(site_file),
+                "lbdir_rel": missing_by_md5[md5],
+                "md5": md5,
+            })
+
+    return {"site_proposals": site_proposals}
 
 
 def find_extra_files(

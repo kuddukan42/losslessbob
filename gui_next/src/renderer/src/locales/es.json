@@ -17,7 +17,8 @@
     "never": "nunca",
     "today": "hoy",
     "yesterday": "ayer",
-    "daysAgo": "{{count}} días atrás"
+    "daysAgo": "{{count}} días atrás",
+    "shallowScan": "Solo 1 nivel"
   },
   "appShell": {
     "brand": "Sin pérdidasBob",

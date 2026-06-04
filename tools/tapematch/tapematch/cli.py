@@ -23,7 +23,19 @@ def main(argv=None):
     ap.add_argument("--no-trim", action="store_true", help="skip head/tail trim")
     ap.add_argument("--json-out", default=None,
                     help="write structured results JSON to this path")
+    ap.add_argument("--set-offset", default=None, metavar="HH:MM:SS",
+                    help="clip all sources to start at this offset (HH:MM:SS or decimal "
+                         "seconds) before analysis; use when recordings include non-target "
+                         "material before the show (e.g. co-headline concerts where the "
+                         "target set starts mid-recording)")
     args = ap.parse_args(argv)
+
+    def _parse_offset(s: str) -> float:
+        if ":" in s:
+            parts = s.split(":")
+            return sum(float(p) * 60 ** (len(parts) - 1 - i) for i, p in enumerate(parts))
+        return float(s)
+    set_offset_sec: float | None = _parse_offset(args.set_offset) if args.set_offset else None
 
     cfg = yaml.safe_load(open(args.config))
     sr = cfg["audio"]["analysis_sr"]
@@ -55,6 +67,10 @@ def main(argv=None):
         rep = ingest.source_report(sdir, exts)
         print(f"  {name}: {rep['n_tracks']} tracks, {fmt_hms(rep['total_sec'])}")
         stream, _, _ = ingest.concat_source(sdir, exts, sr, mono=mono_mix)
+
+        if set_offset_sec:
+            off_samp = min(int(set_offset_sec * sr), max(0, len(stream) - sr))
+            stream = stream[off_samp:]
 
         stream_dur = len(stream) / sr
         if args.no_trim:
@@ -235,15 +251,14 @@ def main(argv=None):
                 # The per-window local lag search absorbs accumulated drift.
                 sec = match.secondary_corr_pair(ri, rj, sr, cfg)
 
-                # Staircase/staircase fallback: when both recordings have CDR
-                # re-tracking edits and the standard 60s windows scored near-zero,
-                # retry with shorter windows (default 15s) to reduce the chance of
-                # an edit-point boundary landing mid-window and breaking per-window
-                # lag alignment.
+                # Staircase fallback: when either recording has CDR re-tracking edits
+                # and the standard 60s windows scored near-zero, retry with shorter
+                # windows (default 15s) to reduce the chance of an edit-point boundary
+                # landing mid-window and breaking per-window lag alignment.
                 ki = speed_info.get(names[i], {}).get("kind", "")
                 kj = speed_info.get(names[j], {}).get("kind", "")
                 if (sec["windowed_frac"] < 0.10
-                        and "staircase" in ki and "staircase" in kj
+                        and ("staircase" in ki or "staircase" in kj)
                         and "short_window_sec" in cfg.get("secondary_match", {})):
                     sm = cfg["secondary_match"]
                     short_cfg = {**cfg, "secondary_match": {
@@ -316,8 +331,14 @@ def main(argv=None):
     # === Re-select reference as the most central source (highest row-sum in M) ===
     # The alphabetical first source may be an outlier (e.g. a bootleg CD).
     # After the full matrix is computed we know the true structure — pick the
-    # source most similar to all others and re-run the cheap lag-curve pass.
-    central_idx  = int(np.argmax(M.sum(axis=1)))
+    # source most similar to all others, excluding INCOMPLETE/INFLATED sources
+    # (their duration problems mean anchors and lag curves would be misleading).
+    row_sums = M.sum(axis=1)
+    _eligible = {i for i, n in enumerate(names)
+                 if n not in short_flag and n not in long_flag}
+    if not _eligible:
+        _eligible = set(range(n_src))
+    central_idx = max(_eligible, key=lambda i: row_sums[i])
     central_name = names[central_idx]
     if central_name != ref_name:
         print(f"\n=== LAG CURVES / SPEED (re-run vs central ref={central_name}) ===")
@@ -366,7 +387,22 @@ def main(argv=None):
         intra_pairs = [(a, b) for a in g for b in g if a < b]
         intra_corrs = [M[names.index(a), names.index(b)] for a, b in intra_pairs]
         mc = float(np.mean(intra_corrs)) if intra_corrs else 1.0
-        conf = f" [{match.cluster_confidence(mc)} confidence]" if intra_corrs else ""
+        # fp-linked: every sub-threshold pair was bridged by fingerprint, not primary STFT.
+        # "low confidence" would mislead when a Dice score of 0.55+ is the actual evidence.
+        fp_linked = (
+            fp_cluster_thr > 0.0
+            and bool(intra_pairs)
+            and mc < m_thr
+            and all(
+                M[names.index(a2), names.index(b2)] >= m_thr
+                or FP[names.index(a2), names.index(b2)] >= fp_cluster_thr
+                for a2, b2 in intra_pairs
+            )
+        )
+        conf = (
+            " [fp-linked]" if fp_linked
+            else (f" [{match.cluster_confidence(mc)} confidence]" if intra_pairs else "")
+        )
         # Identify any secondary-linked pairs within this family
         sec_links = []
         for a, b in intra_pairs:
@@ -387,7 +423,25 @@ def main(argv=None):
                 if evidence:
                     sec_links.append(f"{_label(a)}/{_label(b)} via {'+'.join(evidence)}")
         sec_note = f"  [secondary: {'; '.join(sec_links)}]" if sec_links else ""
-        print(f"  Family {gi}: {', '.join(g)}  (mean intra-corr {mc:.3f}{conf}){sec_note}")
+        # Flag pairs in a 3+ member family that have no direct evidence (primary or
+        # secondary) — they are only linked transitively through a third member.
+        chain_notes = []
+        if len(g) >= 3:
+            for a2, b2 in intra_pairs:
+                ia2, ib2 = names.index(a2), names.index(b2)
+                i2, j2 = min(ia2, ib2), max(ia2, ib2)
+                direct = (
+                    M[i2, j2] >= m_thr
+                    or (bool(sec_results) and W[i2, j2] >= wc_thr)
+                    or (bool(sec_results) and H[i2, j2] >= hm_thr
+                        and H_med[i2, j2] >= hm_med_thr)
+                    or (fp_cluster_thr > 0.0 and FP[i2, j2] >= fp_cluster_thr)
+                )
+                if not direct:
+                    chain_notes.append(f"{_label(a2)}/{_label(b2)}")
+        chain_note = (f"  [chain-unverified: {'; '.join(chain_notes)} not directly confirmed]"
+                      if chain_notes else "")
+        print(f"  Family {gi}: {', '.join(g)}  (mean intra-corr {mc:.3f}{conf}){sec_note}{chain_note}")
     print(f"  Distinct source families: {len(groups)}")
 
     # === Lineage: mono memmap per source; welch PSD uses only a few MB ===
@@ -431,18 +485,26 @@ def main(argv=None):
         )
 
     # 2. Cross-family pairs with large performance-duration mismatch.
-    # When recordings differ by >3 minutes, the accumulated timing drift between
+    # When recordings differ by >8 minutes, the accumulated timing drift between
     # corresponding segments can exceed the alignment search window (max_lag_sec),
     # causing anchor lag estimates to fail silently and correlation to collapse to ~0.
     # This does NOT mean they are different tapes — it means automatic detection
     # is unreliable for this pair; manual comparison is needed.
-    TIMING_MISMATCH_MIN_SEC = 3.0 * 60
+    # 8 min threshold avoids noise from normal AUD variation (crowd intro length,
+    # fade-in timing) which routinely differs by 3–6 min between independent tapers.
+    # Pairs where at least one member is already flagged INCOMPLETE or INFLATED are
+    # suppressed: the duration anomaly is the obvious cause and the existing flag suffices.
+    TIMING_MISMATCH_MIN_SEC = 8.0 * 60
     for gi1, g1 in enumerate(groups, 1):
         for gi2, g2 in enumerate(groups, 1):
             if gi1 >= gi2:
                 continue
             for a in g1:
                 for b in g2:
+                    if a in short_flag or b in short_flag:
+                        continue  # INCOMPLETE already explains the gap
+                    if a in long_flag or b in long_flag:
+                        continue  # INFLATED already flagged; timing diff is expected
                     dur_a = perf_durs[a]
                     dur_b = perf_durs[b]
                     diff = abs(dur_a - dur_b)
@@ -524,10 +586,17 @@ def main(argv=None):
                         parts.append(f"hiss frac {hf:.2f} ({sec['n_hiss_segs']} segs)")
                     if fps >= f_thr2:
                         parts.append(f"fingerprint Dice {fps:.3f}")
+                    # Distinguish probable NR (music windows match, quiet-segment hiss
+                    # does NOT) from a remaster/edit (primary corr degraded overall).
+                    hiss_med = sec.get("hiss_median", 1.0)
+                    if M[i, j] < 0.05 and wf >= 0.70 and hiss_med < 0.20:
+                        note = "noise reduction likely applied (music aligns, hiss does not)"
+                    else:
+                        note = "likely remaster or heavily edited copy of same tape"
                     diag_lines.append(
                         f"  [SECONDARY SAME-SOURCE] {a} / {b}: "
                         f"{'; '.join(parts)} — primary corr {M[i,j]:.3f} (below threshold); "
-                        f"likely remaster or heavily edited copy of same tape"
+                        f"{note}"
                     )
 
     # 5. Medium/low-confidence family pairs: same source likely but processing degraded the corr.

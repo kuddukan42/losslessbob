@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { Icon } from '../components/Icon'
 import { Button, Input, Pill } from '../components'
 import { TableShell, TH, TR, TD } from '../components'
-import { useLbdirStore, LbdirState, CheckFile, CheckResult, ReconcileProposal, ReconcileResult } from '../lib/lbdirStore'
+import { useLbdirStore, LbdirState, CheckFile, CheckResult, ReconcileProposal, SiteProposal, ReconcileResult } from '../lib/lbdirStore'
 import { useFolderQueueStore } from '../lib/folderQueueStore'
 
 const BASE = window.api.flaskBase
@@ -43,11 +43,11 @@ function FolderSideRow({ folder, checkResult, verifiedAt, active, onClick }: {
   // Resolved verified timestamp: prefer check result, fall back to pre-loaded value
   const resolvedVerifiedAt = checkResult?.lbdir_verified_at ?? verifiedAt
 
-  // Dot color: use check result status if available; if no check but previously verified, show faded green
+  // Dot color: only use green after a live check that passed; stale timestamps are neutral
   const color = sl
     ? (sl.tone === 'ok' ? 'var(--lbb-ok-bar)' : sl.tone === 'bad' ? 'var(--lbb-bad-bar)' : sl.tone === 'warn' ? 'var(--lbb-warn-bar)' : 'var(--lbb-fg3)')
     : resolvedVerifiedAt
-      ? 'var(--lbb-ok-bar)'
+      ? 'var(--lbb-fg3)'
       : 'var(--lbb-border)'
 
   const name = folder.split('/').pop() ?? folder
@@ -65,7 +65,7 @@ function FolderSideRow({ folder, checkResult, verifiedAt, active, onClick }: {
       <span style={{
         width: 8, height: 8, borderRadius: 2, flex: '0 0 8px',
         background: color,
-        opacity: !sl && resolvedVerifiedAt ? 0.55 : 1,
+        opacity: 1,
       }} />
       <span style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
         <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{name}</span>
@@ -78,7 +78,7 @@ function FolderSideRow({ folder, checkResult, verifiedAt, active, onClick }: {
               {checkResult.total > 0 && <span> · {checkResult.pass}/{checkResult.total} pass</span>}
             </>
           ) : verifiedDate ? (
-            <span style={{ color: 'var(--lbb-ok-fg)', opacity: 0.7 }}>✓ {verifiedDate}</span>
+            <span style={{ color: 'var(--lbb-fg3)' }}>✓ {verifiedDate}</span>
           ) : null}
         </span>
       </span>
@@ -88,16 +88,20 @@ function FolderSideRow({ folder, checkResult, verifiedAt, active, onClick }: {
 
 // ── Reconcile panel ────────────────────────────────────────────────────────────
 
-function ReconcilePanel({ result, reconSelected, setReconSelected, busy, onRescan, onApply }: {
+function ReconcilePanel({ result, reconSelected, setReconSelected, siteSelected, setSiteSelected, busy, onRescan, onApply }: {
   result: ReconcileResult
   reconSelected: Set<string>
   setReconSelected: (updater: Set<string> | ((prev: Set<string>) => Set<string>)) => void
+  siteSelected: Set<string>
+  setSiteSelected: (updater: Set<string> | ((prev: Set<string>) => Set<string>)) => void
   busy: boolean
   onRescan: () => void
   onApply: () => void
 }): React.JSX.Element {
   const selectedCount = result.proposals.filter(p => reconSelected.has(p.disk_rel)).length
   const extrasCount = result.unmatched_disk.length
+  const siteProposals: SiteProposal[] = result.site_proposals ?? []
+  const siteSelectedCount = siteProposals.filter(p => siteSelected.has(p.site_path)).length
 
   return (
     <div style={{
@@ -123,11 +127,15 @@ function ReconcilePanel({ result, reconSelected, setReconSelected, busy, onResca
         {extrasCount > 0 && (
           <Pill tone="warn" soft>{extrasCount} extra{extrasCount !== 1 ? 's' : ''} → /extras/</Pill>
         )}
+        {siteProposals.length > 0 && (
+          <Pill tone="ok" soft>{siteProposals.length} in site/files</Pill>
+        )}
         <div style={{ flex: 1 }} />
         <Button variant="ghost" size="sm" disabled={busy} onClick={onRescan}>Re-scan</Button>
-        <Button variant="primary" size="sm" icon="check" disabled={busy || (selectedCount === 0 && extrasCount === 0)} onClick={onApply}>
+        <Button variant="primary" size="sm" icon="check" disabled={busy || (selectedCount === 0 && extrasCount === 0 && siteSelectedCount === 0)} onClick={onApply}>
           Apply{selectedCount > 0 ? ` ${selectedCount} rename${selectedCount !== 1 ? 's' : ''}` : ''}
           {extrasCount > 0 ? ` + move ${extrasCount} extra${extrasCount !== 1 ? 's' : ''}` : ''}
+          {siteSelectedCount > 0 ? ` + copy ${siteSelectedCount} from site/files` : ''}
         </Button>
       </div>
 
@@ -203,7 +211,58 @@ function ReconcilePanel({ result, reconSelected, setReconSelected, busy, onResca
         </div>
       )}
 
-      {result.proposals.length === 0 && extrasCount === 0 && (
+      {/* Site recovery */}
+      {siteProposals.length > 0 && (
+        <div style={{ borderTop: '1px solid var(--lbb-border)' }}>
+          <div style={{ padding: '8px 16px 4px', display: 'flex', alignItems: 'center', gap: 8 }}>
+            <input type="checkbox"
+              checked={siteProposals.length > 0 && siteProposals.every(p => siteSelected.has(p.site_path))}
+              onChange={e => setSiteSelected(e.target.checked
+                ? new Set(siteProposals.map(p => p.site_path))
+                : new Set()
+              )}
+            />
+            <span style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)', fontWeight: 600 }}>
+              Recoverable from site/files — matched by MD5
+            </span>
+          </div>
+          <TableShell style={{ margin: 0, borderRadius: 0, border: 'none' }}>
+            <colgroup>
+              <col style={{ width: 3 }} /><col style={{ width: 32 }} />
+              <col /><col style={{ width: 24 }} /><col /><col style={{ width: 140 }} />
+            </colgroup>
+            <thead>
+              <tr>
+                <TH> </TH><TH> </TH>
+                <TH>File in site/files</TH><TH> </TH>
+                <TH>Will copy to</TH><TH>MD5</TH>
+              </tr>
+            </thead>
+            <tbody>
+              {siteProposals.map((p, i) => (
+                <TR key={i} edge="ok">
+                  <TD>
+                    <input type="checkbox"
+                      checked={siteSelected.has(p.site_path)}
+                      onChange={e => setSiteSelected(prev => {
+                        const next = new Set(prev)
+                        e.target.checked ? next.add(p.site_path) : next.delete(p.site_path)
+                        return next
+                      })}
+                    />
+                  </TD>
+                  <TD mono style={{ color: 'var(--lbb-fg2)' }}>{p.site_path.split('/').pop()}</TD>
+                  <TD align="center"><Icon name="chevRight" size={12} style={{ color: 'var(--lbb-fg3)' }} /></TD>
+                  <TD mono style={{ color: 'var(--lbb-ok-fg)' }}>{p.lbdir_rel}</TD>
+                  <TD mono dim>{p.md5.slice(0, 12)}…</TD>
+                </TR>
+              ))}
+            </tbody>
+          </TableShell>
+        </div>
+      )}
+
+      {result.proposals.length === 0 && extrasCount === 0 && siteProposals.length === 0 && (
         <div style={{ padding: '12px 16px', color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-12)' }}>
           Nothing to reconcile for this folder.
         </div>
@@ -218,15 +277,30 @@ export function ScreenLBDIR(): React.JSX.Element {
   const navigate = useNavigate()
 
   const {
-    activeFolder, filter, checkResults, reconcileResults, reconSelected,
+    activeFolder, filter, checkResults, reconcileResults, reconSelected, siteSelected,
     setActiveFolder, setFilter, setCheckResults, updateCheckResult,
-    setReconcileResults, clearReconcileFor, setReconSelected,
+    setReconcileResults, clearReconcileFor, setReconSelected, setSiteSelected,
   } = useLbdirStore()
   const { folders, addFolders } = useFolderQueueStore()
-  const [busy,      setBusy]      = useState(false)
-  const [tools,     setTools]     = useState<{ shntool_available: boolean } | null>(null)
-  const [toast,     setToast]     = useState<{ msg: string; tone: ToastTone } | null>(null)
-  const [verifiedAt, setVerifiedAt] = useState<Record<string, string | null>>({})
+  const [busy,         setBusy]        = useState(false)
+  const [tools,        setTools]       = useState<{ shntool_available: boolean } | null>(null)
+  const [toast,        setToast]       = useState<{ msg: string; tone: ToastTone } | null>(null)
+  const [verifiedAt,   setVerifiedAt]  = useState<Record<string, string | null>>({})
+  const [hideVerified, setHideVerified] = useState(false)
+  const [fileColWidths, setFileColWidths] = useState({ filename: 260, md5: 50, disk: 60, overall: 80, length: 80, fmt: 60, ratio: 70 })
+
+  const startFileColResize = useCallback((key: keyof typeof fileColWidths, startX: number, startW: number) => {
+    const onMove = (e: MouseEvent) => {
+      const newW = Math.max(36, startW + e.clientX - startX)
+      setFileColWidths(ws => ({ ...ws, [key]: newW }))
+    }
+    const onUp = () => {
+      document.removeEventListener('mousemove', onMove)
+      document.removeEventListener('mouseup', onUp)
+    }
+    document.addEventListener('mousemove', onMove)
+    document.addEventListener('mouseup', onUp)
+  }, [])
 
   const showToast = useCallback((msg: string, tone: ToastTone) => setToast({ msg, tone }), [])
 
@@ -272,7 +346,7 @@ export function ScreenLBDIR(): React.JSX.Element {
     const root = await window.api.pickDir()
     if (!root) return
     try {
-      const data = await post('/api/pipeline/scan-tree', { root }) as { folders: string[] }
+      const data = await post('/api/pipeline/scan-tree', { root, shallow: true }) as { folders: string[] }
       if (data.folders?.length) {
         addFolders(data.folders)
         if (!activeFolder) setActiveFolder(data.folders[0])
@@ -323,13 +397,14 @@ export function ScreenLBDIR(): React.JSX.Element {
       if (data.results?.length) {
         setReconcileResults([...reconcileResults.filter(r => r.folder !== folder), data.results[0]])
         setReconSelected(new Set(data.results[0].proposals.map(p => p.disk_rel)))
+        setSiteSelected(new Set((data.results[0].site_proposals ?? []).map((p: SiteProposal) => p.site_path)))
       }
     } catch {
       showToast('Reconcile scan failed', 'bad')
     } finally {
       setBusy(false)
     }
-  }, [reconcileResults, post, showToast, setReconcileResults, setReconSelected])
+  }, [reconcileResults, post, showToast, setReconcileResults, setReconSelected, setSiteSelected])
 
   const handleApplyReconcile = useCallback(async (folder: string) => {
     const reconResult = reconcileResults.find(r => r.folder === folder)
@@ -338,10 +413,13 @@ export function ScreenLBDIR(): React.JSX.Element {
       .filter(p => reconSelected.has(p.disk_rel))
       .map(p => ({ from: p.disk_rel, to: p.lbdir_rel }))
     const extras = reconResult.unmatched_disk
+    const siteCopies = (reconResult.site_proposals ?? [])
+      .filter((p: SiteProposal) => siteSelected.has(p.site_path))
+      .map((p: SiteProposal) => ({ site_path: p.site_path, lbdir_rel: p.lbdir_rel }))
     setBusy(true)
     try {
-      if (renames.length) {
-        await post('/api/lbdir/apply_reconcile', { folder, renames })
+      if (renames.length || siteCopies.length) {
+        await post('/api/lbdir/apply_reconcile', { folder, renames, site_copies: siteCopies })
       }
       if (extras.length) {
         await post('/api/lbdir/move_extras', { folder, files: extras })
@@ -349,6 +427,7 @@ export function ScreenLBDIR(): React.JSX.Element {
       const parts: string[] = []
       if (renames.length) parts.push(`${renames.length} rename${renames.length !== 1 ? 's' : ''}`)
       if (extras.length) parts.push(`${extras.length} extra${extras.length !== 1 ? 's' : ''} moved to /extras/`)
+      if (siteCopies.length) parts.push(`${siteCopies.length} copied from site/files`)
       showToast(parts.length ? parts.join(', ') : 'Nothing to apply', 'ok')
       clearReconcileFor(folder)
       // Re-check this folder
@@ -359,11 +438,16 @@ export function ScreenLBDIR(): React.JSX.Element {
     } finally {
       setBusy(false)
     }
-  }, [reconcileResults, reconSelected, post, showToast, clearReconcileFor, updateCheckResult])
+  }, [reconcileResults, reconSelected, siteSelected, post, showToast, clearReconcileFor, updateCheckResult])
 
-  const filteredFolders = filter
-    ? folders.filter(f => f.toLowerCase().includes(filter.toLowerCase()))
-    : folders
+  const filteredFolders = folders.filter(f => {
+    if (filter && !f.toLowerCase().includes(filter.toLowerCase())) return false
+    if (hideVerified) {
+      const resolvedVerifiedAt = checkResults.find(r => r.folder === f)?.lbdir_verified_at ?? verifiedAt[f] ?? null
+      if (resolvedVerifiedAt !== null) return false
+    }
+    return true
+  })
 
   const activeFolderStr = activeFolder ?? folders[0] ?? null
   const checkResult  = activeFolderStr ? checkResults.find(r => r.folder === activeFolderStr) ?? null : null
@@ -419,17 +503,25 @@ export function ScreenLBDIR(): React.JSX.Element {
             <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 8 }}>
               <Icon name="folder" size={13} style={{ color: 'var(--lbb-fg3)' }} />
               <span style={{ fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.1, textTransform: 'uppercase' }}>Folders</span>
-              <span style={{ marginLeft: 'auto', fontSize: 'var(--lbb-fs-11)', fontWeight: 600, color: 'var(--lbb-fg2)' }}>{folders.length}</span>
+              <span style={{ marginLeft: 'auto', fontSize: 'var(--lbb-fs-11)', fontWeight: 600, color: 'var(--lbb-fg2)' }}>
+                {hideVerified && filteredFolders.length !== folders.length
+                  ? `${filteredFolders.length}/${folders.length}`
+                  : folders.length}
+              </span>
             </div>
             <Input
               icon="search" placeholder="Filter…" size="sm" style={{ width: '100%' }}
               value={filter} onChange={e => setFilter(e.target.value)}
             />
+            <label style={{ display: 'flex', alignItems: 'center', gap: 6, marginTop: 6, cursor: 'pointer', userSelect: 'none', fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg2)' }}>
+              <input type="checkbox" checked={hideVerified} onChange={e => setHideVerified(e.target.checked)} style={{ accentColor: 'var(--lbb-accent-mid)' }} />
+              Hide verified
+            </label>
           </div>
           <div style={{ flex: 1, overflowY: 'auto', padding: '6px 6px' }}>
             {filteredFolders.length === 0 ? (
               <div style={{ padding: '24px 12px', textAlign: 'center', color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-11)' }}>
-                {folders.length === 0 ? 'No folders added' : 'No matches'}
+                {folders.length === 0 ? 'No folders added' : hideVerified ? 'All folders verified' : 'No matches'}
               </div>
             ) : filteredFolders.map(f => (
               <FolderSideRow
@@ -443,8 +535,8 @@ export function ScreenLBDIR(): React.JSX.Element {
             ))}
           </div>
           <div style={{ padding: 12, borderTop: '1px solid var(--lbb-border)', display: 'flex', flexDirection: 'column', gap: 6 }}>
-            <Button variant="primary"   size="sm" icon="lbdir"      block disabled={busy || !folders.length}
-              onClick={() => handleProcess(folders)}>
+            <Button variant="primary"   size="sm" icon="lbdir"      block disabled={busy || !filteredFolders.length}
+              onClick={() => handleProcess(filteredFolders)}>
               {busy ? 'Processing…' : 'Process all folders'}
             </Button>
             <Button variant="ghost"     size="sm" icon="folderPlus" block onClick={handleAddRoot}>Add root folder…</Button>
@@ -544,15 +636,25 @@ export function ScreenLBDIR(): React.JSX.Element {
                 <div style={{ padding: '16px 24px 0' }}>
                   <TableShell>
                     <colgroup>
-                      <col style={{ width: 3 }} /><col />
-                      <col style={{ width: 50 }} /><col style={{ width: 60 }} /><col style={{ width: 70 }} />
-                      <col style={{ width: 80 }} /><col style={{ width: 60 }} /><col style={{ width: 70 }} />
+                      <col style={{ width: 3 }} />
+                      <col style={{ width: fileColWidths.filename }} />
+                      <col style={{ width: fileColWidths.md5 }} />
+                      <col style={{ width: fileColWidths.disk }} />
+                      <col style={{ width: fileColWidths.overall }} />
+                      <col style={{ width: fileColWidths.length }} />
+                      <col style={{ width: fileColWidths.fmt }} />
+                      <col style={{ width: fileColWidths.ratio }} />
                     </colgroup>
                     <thead>
                       <tr>
-                        <TH> </TH><TH>Filename</TH>
-                        <TH align="center">MD5</TH><TH align="center">Disk</TH><TH>Overall</TH>
-                        <TH align="right">Length</TH><TH>Fmt</TH><TH align="right">Ratio</TH>
+                        <TH> </TH>
+                        <TH onResizeStart={e => startFileColResize('filename', e.clientX, fileColWidths.filename)}>Filename</TH>
+                        <TH align="center" onResizeStart={e => startFileColResize('md5', e.clientX, fileColWidths.md5)}>MD5</TH>
+                        <TH align="center" onResizeStart={e => startFileColResize('disk', e.clientX, fileColWidths.disk)}>Disk</TH>
+                        <TH onResizeStart={e => startFileColResize('overall', e.clientX, fileColWidths.overall)}>Overall</TH>
+                        <TH align="right" onResizeStart={e => startFileColResize('length', e.clientX, fileColWidths.length)}>Length</TH>
+                        <TH onResizeStart={e => startFileColResize('fmt', e.clientX, fileColWidths.fmt)}>Fmt</TH>
+                        <TH align="right" onResizeStart={e => startFileColResize('ratio', e.clientX, fileColWidths.ratio)}>Ratio</TH>
                       </tr>
                     </thead>
                     <tbody>
@@ -597,6 +699,8 @@ export function ScreenLBDIR(): React.JSX.Element {
                       result={reconResult}
                       reconSelected={reconSelected}
                       setReconSelected={setReconSelected}
+                      siteSelected={siteSelected}
+                      setSiteSelected={setSiteSelected}
                       busy={busy}
                       onRescan={() => handleReconcile(activeFolderStr)}
                       onApply={() => handleApplyReconcile(activeFolderStr)}

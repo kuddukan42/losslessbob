@@ -135,7 +135,7 @@ function StateChip({ state, count, active, onClick }: {
       fontFamily: 'inherit', fontSize: 'var(--lbb-fs-11-5)', fontWeight: active ? 600 : 500, cursor: 'pointer',
     }}>
       <span style={{ width: 7, height: 7, borderRadius: '50%', background: s.color }} />
-      {t(`rename.states.${state}` as const)}
+      {t(`rename.states.${state}` as any)}
       <span style={{ fontSize: 'var(--lbb-fs-10)', opacity: 0.65, marginLeft: 2 }}>{count}</span>
     </button>
   )
@@ -439,7 +439,7 @@ export function ScreenRename(): React.JSX.Element {
                           </TD>
                           <TD>
                             <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                              <Pill tone={s.tone} soft dot={r.state !== 'has_lb' && r.state !== 'renamed'}>{t(`rename.states.${r.state}` as const)}</Pill>
+                              <Pill tone={s.tone} soft dot={r.state !== 'has_lb' && r.state !== 'renamed'}>{t(`rename.states.${r.state}` as any)}</Pill>
                             </div>
                             <div style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)', marginTop: 3 }}>
                               {r.state === 'multiple_ids'

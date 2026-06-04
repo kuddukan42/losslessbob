@@ -60,3 +60,4 @@ batch_verify_run.log
 missing_from_collection.tsv
 public_not_owned.html
 scan.json
+.debug/

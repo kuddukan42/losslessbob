@@ -17,7 +17,8 @@
     "never": "nooit",
     "today": "vandaag",
     "yesterday": "gisteren",
-    "daysAgo": "{{count}} dagen geleden"
+    "daysAgo": "{{count}} dagen geleden",
+    "shallowScan": "Slechts 1 niveau"
   },
   "appShell": {
     "brand": "VerliesvrijBob",

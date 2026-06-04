@@ -1,4 +1,57 @@
 
+BUG-134: Map screen — blank center canvas with no fallback when tiles fail to load
+Status: Open
+File(s): gui_next/src/renderer/src/screens/ScreenMap.tsx
+Reported: 2026-06-04
+Root cause: Leaflet tile requests to OpenStreetMap silently fail when offline. No overlay or message indicates this; the center area renders blank white. Left/right sidebars (filters, venue list) are unaffected.
+Fix: Add a Leaflet tile-error listener that shows a "Map tiles couldn't load — check your internet connection" overlay on the map container.
+
+BUG-133: DB Editor — pagination bar and action buttons render before any table is selected
+Status: Open
+File(s): gui_next/src/renderer/src/screens/ScreenDbEditor.tsx:1590-1620
+Reported: 2026-06-04
+Root cause: currentTable is initialised to '' and total to 0. Math.max(1, Math.ceil(0/limit)) = 1, so the bar renders "Page 1/1 (0 rows total)" and all action buttons (Commit, Discard, Delete Selected, Export CSV, SQL Query) are visible even though no table has been loaded. Looks like the selected table has 0 rows rather than no table being selected.
+Fix: Wrap the bottom action bar in {currentTable && ...} so it only renders once a table is chosen.
+
+BUG-132: Attachments — empty-state message misleads user after auto-load finds no entries
+Status: Open
+File(s): gui_next/src/renderer/src/screens/ScreenAttachments.tsx:279
+Reported: 2026-06-04
+Root cause: loadTree() fires automatically on mount (line 114). If data/attachments/ is empty the API returns 0 entries, busy clears, and the list shows "Click Refresh tree to load" — but a load already happened. The message implies the user needs to act when the data is genuinely absent.
+Fix: Distinguish initial-empty from filter-empty: show "No attachments cached yet" when entries === [] and no filter is active; keep "No matches" for the filtered case.
+
+BUG-131: Lookup tab folder list not synced with shared folder queue
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenLookup.tsx:119-138
+Reported: 2026-06-04
+Fixed: 2026-06-04
+Root cause: ScreenLookup never subscribed to useFolderQueueStore, so folders added on Verify/Pipeline/LBDIR tabs were invisible to it. Every other tab reads the shared store.
+Fix: Added useFolderQueueStore subscription and a useEffect that scans+adds any queue folder not already present as a source.
+
+BUG-130: Lookup shows SHN sets as Incomplete due to missing shntool WAV checksums
+Status: Fixed
+File(s): backend/db.py:1422-1448
+Reported: 2026-06-03
+Fixed: 2026-06-03
+Root cause: The DB stores both MD5 checksums of .shn files (chk_type='m', filename='foo.shn') and shntool checksums of the decoded WAV (chk_type='s', filename='foo.wav') for the same track. The completeness check counted unmatched checksums by hash value only, so if the user provided MD5s of their SHN files (matching the 'm' entries), the 18 'wav' shntool entries were marked as missing — incorrectly flagging a fully-owned SHN set as INCOMPLETE.
+Fix: Completeness check now groups DB entries by base filename (stripping audio extension). A track is covered if ANY of its checksums was matched; foo.shn (md5) and foo.wav (shntool) sharing the same base are treated as the same track.
+
+BUG-129: Lookup LB summary shows "Not Found" (red) instead of "Incomplete" (orange) for incomplete SHN sets
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenLookup.tsx:35
+Reported: 2026-06-03
+Fixed: 2026-06-03
+Root cause: apiStatusToState() handled 'MATCHED (INCOMPLETE)' (per-row status) but not 'INCOMPLETE' (LB-level summary status from backend). The fallback returned 'notfound', showing a red "Not Found" pill even though the checksums were matched in the DB.
+Fix: Added if (status === 'INCOMPLETE') return 'incomplete' before the NOT FOUND branch.
+
+BUG-128: LBDIR Process silently replaces lbdir with updated cache version; has_lbdir misses LBF-format files
+Status: Fixed
+File(s): backend/app.py:2134-2136, tools/batch_verify.py:305-307, gui_next/src/renderer/src/screens/ScreenLBDIR.tsx:47-51
+Reported: 2026-06-03
+Fixed: 2026-06-03
+Root cause: (1) lbdir_retrieve always called shutil.copy2 regardless of whether an lbdir already existed in the folder, so if the attachments cache was updated (re-scraped) after batch_verify ran, clicking Process would silently swap in a different lbdir version with more entries, making previously-passing folders appear as missing_files. (2) has_lbdir in batch_verify used case-sensitive glob "lbdir*.txt" which never matched LBF-*-lbdir.txt files on Linux, causing unnecessary retrieve calls and masking the presence of the file. (3) Pre-check folder dot was green for any stale lbdir_verified_at timestamp.
+Fix: (1) lbdir_retrieve now checks _find_lbdir_in_folder first and returns already_present without overwriting. (2) has_lbdir now uses iterdir+lower() matching _find_lbdir_in_folder. (3) Pre-check dot color changed from var(--lbb-ok-bar) to var(--lbb-fg3).
+
 BUG-127: batch_verify misclassifies folders with missing files as api_error
 Status: Fixed
 File(s): tools/batch_verify.py:66

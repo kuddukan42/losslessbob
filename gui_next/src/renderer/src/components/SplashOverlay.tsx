@@ -113,6 +113,7 @@ export function SplashOverlay({ onDone }: SplashOverlayProps): React.JSX.Element
 
   return (
     <div
+      data-testid="splash-overlay"
       style={{
         position: 'fixed', inset: 0, zIndex: 9999,
         backgroundColor: '#131110',

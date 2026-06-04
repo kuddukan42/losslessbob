@@ -36,12 +36,19 @@ export interface ReconcileProposal {
   md5:       string
 }
 
+export interface SiteProposal {
+  site_path: string
+  lbdir_rel: string
+  md5:       string
+}
+
 export interface ReconcileResult {
   folder:          string
   proposals:       ReconcileProposal[]
   unmatched_lbdir: string[]
   unmatched_disk:  string[]
   warnings:        string[]
+  site_proposals:  SiteProposal[]
 }
 
 interface LbdirStore {
@@ -50,6 +57,7 @@ interface LbdirStore {
   checkResults:     CheckResult[]
   reconcileResults: ReconcileResult[]
   reconSelected:    Set<string>
+  siteSelected:     Set<string>
   setActiveFolder:     (folder: string | null) => void
   setFilter:           (v: string) => void
   setCheckResults:     (results: CheckResult[]) => void
@@ -57,6 +65,7 @@ interface LbdirStore {
   setReconcileResults: (results: ReconcileResult[]) => void
   clearReconcileFor:   (folder: string) => void
   setReconSelected:    (updater: Set<string> | ((prev: Set<string>) => Set<string>)) => void
+  setSiteSelected:     (updater: Set<string> | ((prev: Set<string>) => Set<string>)) => void
 }
 
 export const useLbdirStore = create<LbdirStore>(set => ({
@@ -65,6 +74,7 @@ export const useLbdirStore = create<LbdirStore>(set => ({
   checkResults:     [],
   reconcileResults: [],
   reconSelected:    new Set(),
+  siteSelected:     new Set(),
   setActiveFolder: (activeFolder) => set({ activeFolder }),
   setFilter:       (filter) => set({ filter }),
   setCheckResults: (checkResults) => set({ checkResults }),
@@ -83,5 +93,8 @@ export const useLbdirStore = create<LbdirStore>(set => ({
   })),
   setReconSelected: (updater) => set(state => ({
     reconSelected: typeof updater === 'function' ? updater(state.reconSelected) : updater,
+  })),
+  setSiteSelected: (updater) => set(state => ({
+    siteSelected: typeof updater === 'function' ? updater(state.siteSelected) : updater,
   })),
 }))

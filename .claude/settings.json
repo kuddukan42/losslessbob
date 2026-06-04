@@ -1,5 +1,10 @@
 {
   "permissions": {
+    "allow": [
+      "Bash(node gui_next/gui_driver.mjs*)",
+      "Bash(npm run build --prefix gui_next*)",
+      "Read(/home/tjenkins/Documents/losslessbob/.debug/**)"
+    ],
     "deny": [
       "Read(/home/tjenkins/.ssh/**)",
       "Read(/home/tjenkins/.gnupg/**)",

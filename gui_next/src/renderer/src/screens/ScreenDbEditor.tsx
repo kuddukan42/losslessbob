@@ -563,7 +563,7 @@ interface SqlResult {
   error?: string
 }
 
-function SqlQueryPanel() {
+function SqlQueryPanel({ db }: { db: 'losslessbob' | 'batchverify' }) {
   const { t } = useTranslation()
   const [sql, setSql]           = useState('')
   const [running, setRunning]   = useState(false)
@@ -577,7 +577,7 @@ function SqlQueryPanel() {
       const resp = await fetch(`${BASE}/api/dbedit/query`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ sql: sql.trim(), limit: 500 }),
+        body: JSON.stringify({ sql: sql.trim(), limit: 500, db }),
       })
       const data: SqlResult = await resp.json()
       setResult(data)
@@ -706,6 +706,9 @@ type DirtyKey = `${number}_${number}`
 export function ScreenDbEditor() {
   const { t } = useTranslation()
 
+  // Database selector
+  const [activeDb, setActiveDb] = useState<'losslessbob' | 'batchverify'>('losslessbob')
+
   // Table list state
   const [tableMeta, setTableMeta] = useState<Record<string, TableMeta>>({})
   const [tableList, setTableList] = useState<string[]>([])
@@ -764,8 +767,8 @@ export function ScreenDbEditor() {
     loadAliases()
   }, [])
 
-  function loadTables() {
-    fetch(`${BASE}/api/dbedit/tables`)
+  function loadTables(db = activeDb) {
+    fetch(`${BASE}/api/dbedit/tables?db=${db}`)
       .then((r) => r.json())
       .then((data: TableMeta[]) => {
         if (!Array.isArray(data)) return
@@ -779,6 +782,24 @@ export function ScreenDbEditor() {
         setTableList(names)
       })
       .catch(() => setStatus(t('dbeditor.error.loadTables')))
+  }
+
+  function switchDb(db: 'losslessbob' | 'batchverify') {
+    setActiveDb(db)
+    setCurrentTable('')
+    setTableList([])
+    setTableMeta({})
+    setRows([])
+    setColumns([])
+    setSchema([])
+    setTotal(0)
+    setPage(0)
+    setSearch('')
+    setLbFilter('')
+    setDirty({})
+    setSelected(new Set())
+    setStatus('')
+    loadTables(db)
   }
 
   // ── Table selection ───────────────────────────────────────────────────────
@@ -800,7 +821,7 @@ export function ScreenDbEditor() {
   // ── Schema ────────────────────────────────────────────────────────────────
 
   function loadSchema(name: string) {
-    fetch(`${BASE}/api/dbedit/table/${encodeURIComponent(name)}/schema`)
+    fetch(`${BASE}/api/dbedit/table/${encodeURIComponent(name)}/schema?db=${activeDb}`)
       .then((r) => r.json())
       .then((data: ColumnDef[]) => {
         if (Array.isArray(data)) setSchema(data)
@@ -821,7 +842,7 @@ export function ScreenDbEditor() {
   ) {
     if (!table) return
     setLoading(true)
-    let url = `${BASE}/api/dbedit/table/${encodeURIComponent(table)}/rows?page=${pg}&limit=${lim}`
+    let url = `${BASE}/api/dbedit/table/${encodeURIComponent(table)}/rows?page=${pg}&limit=${lim}&db=${activeDb}`
     if (srch) url += `&search=${encodeURIComponent(srch)}`
     if (lb)   url += `&lb_number=${encodeURIComponent(lb)}`
     if (sc)   url += `&sort_col=${encodeURIComponent(sc)}&sort_dir=${sd}`
@@ -945,7 +966,7 @@ export function ScreenDbEditor() {
       const rowid = rowids[Number(rStr)]
       try {
         const resp = await fetch(
-          `${BASE}/api/dbedit/table/${encodeURIComponent(currentTable)}/row`,
+          `${BASE}/api/dbedit/table/${encodeURIComponent(currentTable)}/row?db=${activeDb}`,
           { method: 'PATCH', headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ rowid, updates }) }
         ).then((r) => r.json())
@@ -977,7 +998,7 @@ export function ScreenDbEditor() {
     if (!window.confirm(msg)) return
 
     const ids = [...selected].map((r) => rowids[r])
-    fetch(`${BASE}/api/dbedit/table/${encodeURIComponent(currentTable)}/rows`, {
+    fetch(`${BASE}/api/dbedit/table/${encodeURIComponent(currentTable)}/rows?db=${activeDb}`, {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ rowids: ids }),
@@ -1000,7 +1021,7 @@ export function ScreenDbEditor() {
     if (!currentTable) return
     try {
       const resp = await fetch(
-        `${BASE}/api/dbedit/table/${encodeURIComponent(currentTable)}/export`
+        `${BASE}/api/dbedit/table/${encodeURIComponent(currentTable)}/export?db=${activeDb}`
       )
       const text = await resp.text()
       const ok = await window.api.saveFile(text, `${currentTable}.csv`)
@@ -1264,6 +1285,27 @@ export function ScreenDbEditor() {
         borderRight: '1px solid var(--lbb-border)', overflowY: 'auto',
         background: 'var(--lbb-surface)',
       }}>
+        {/* DB selector */}
+        <div style={{ display: 'flex', padding: '8px 8px 0', gap: 4 }}>
+          {(['losslessbob', 'batchverify'] as const).map((db) => (
+            <button
+              key={db}
+              type="button"
+              onClick={() => switchDb(db)}
+              style={{
+                flex: 1, padding: '4px 6px', borderRadius: 5, fontSize: 'var(--lbb-fs-10-5)',
+                fontFamily: 'inherit', cursor: 'pointer',
+                background: activeDb === db ? 'var(--lbb-accent-soft)' : 'var(--lbb-surface2)',
+                border: `1px solid ${activeDb === db ? 'var(--lbb-accent-mid)' : 'var(--lbb-border)'}`,
+                color: activeDb === db ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg)',
+                fontWeight: activeDb === db ? 700 : 500,
+              }}
+            >
+              {db === 'losslessbob' ? 'losslessbob' : 'batch_verify'}
+            </button>
+          ))}
+        </div>
+
         {/* Table list */}
         <div style={{ padding: '10px 8px 4px' }}>
           <div style={{
@@ -1308,7 +1350,7 @@ export function ScreenDbEditor() {
           </div>
           <button
             type="button"
-            onClick={() => { loadTables(); loadIntegrityStats(); loadAliases() }}
+            onClick={() => { loadTables(); if (activeDb === 'losslessbob') { loadIntegrityStats(); loadAliases() } }}
             style={{
               width: '100%', padding: '4px 8px', borderRadius: 5, fontSize: 'var(--lbb-fs-11)',
               background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
@@ -1319,39 +1361,43 @@ export function ScreenDbEditor() {
           </button>
         </div>
 
-        {/* DB Integrity */}
-        <SideSection
-          title={t('dbeditor.integrity.title')}
-          collapsed={integrityCollapsed}
-          onToggle={() => setIntegrityCollapsed((v) => !v)}
-        >
-          <IntegrityPanel
-            stats={integrityStats}
-            onReconcile={reconcileAll}
-            onShowNeedsReview={showNeedsReview}
-            onAddOverride={() => setShowAddOverride(true)}
-            onRemoveOverride={() => setShowRemoveOverride(true)}
-            onExportOverrides={exportOverrides}
-            onImportOverrides={importOverrides}
-            onBackup={backupDb}
-          />
-        </SideSection>
+        {activeDb === 'losslessbob' && (
+          <>
+            {/* DB Integrity */}
+            <SideSection
+              title={t('dbeditor.integrity.title')}
+              collapsed={integrityCollapsed}
+              onToggle={() => setIntegrityCollapsed((v) => !v)}
+            >
+              <IntegrityPanel
+                stats={integrityStats}
+                onReconcile={reconcileAll}
+                onShowNeedsReview={showNeedsReview}
+                onAddOverride={() => setShowAddOverride(true)}
+                onRemoveOverride={() => setShowRemoveOverride(true)}
+                onExportOverrides={exportOverrides}
+                onImportOverrides={importOverrides}
+                onBackup={backupDb}
+              />
+            </SideSection>
 
-        {/* LB Aliases */}
-        <SideSection
-          title={t('dbeditor.aliases.title')}
-          collapsed={aliasCollapsed}
-          onToggle={() => setAliasCollapsed((v) => !v)}
-        >
-          <AliasPanel
-            aliases={aliases}
-            isCurator={isCurator}
-            status={aliasStatus}
-            onAdd={() => setShowAddAlias(true)}
-            onDelete={deleteAlias}
-            onReload={loadAliases}
-          />
-        </SideSection>
+            {/* LB Aliases */}
+            <SideSection
+              title={t('dbeditor.aliases.title')}
+              collapsed={aliasCollapsed}
+              onToggle={() => setAliasCollapsed((v) => !v)}
+            >
+              <AliasPanel
+                aliases={aliases}
+                isCurator={isCurator}
+                status={aliasStatus}
+                onAdd={() => setShowAddAlias(true)}
+                onDelete={deleteAlias}
+                onReload={loadAliases}
+              />
+            </SideSection>
+          </>
+        )}
 
         <div style={{ flex: 1 }} />
       </div>
@@ -1633,7 +1679,7 @@ export function ScreenDbEditor() {
         {/* SQL Query panel */}
         {sqlPanelOpen && (
           <div style={{ height: 280, flexShrink: 0, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
-            <SqlQueryPanel />
+            <SqlQueryPanel db={activeDb} />
           </div>
         )}
       </div>

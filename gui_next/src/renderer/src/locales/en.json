@@ -17,7 +17,8 @@
     "never": "never",
     "today": "today",
     "yesterday": "yesterday",
-    "daysAgo": "{{count}} days ago"
+    "daysAgo": "{{count}} days ago",
+    "shallowScan": "1 level only"
   },
   "appShell": {
     "brand": "LosslessBob",

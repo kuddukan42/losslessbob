@@ -84,6 +84,7 @@ export function ScreenVerify(): React.JSX.Element {
   const [busy,  setBusy]  = useState(false)
   const [tools, setTools] = useState<ToolStatus | null>(null)
   const [toast, setToast] = useState<{ msg: string; tone: ToastTone } | null>(null)
+  const [shallowScan, setShallowScan] = useState(false)
 
   const showToast = useCallback((msg: string, tone: ToastTone) => setToast({ msg, tone }), [])
 
@@ -114,7 +115,7 @@ export function ScreenVerify(): React.JSX.Element {
     const root = await window.api.pickDir()
     if (!root) return
     try {
-      const data = await post('/api/pipeline/scan-tree', { root }) as { folders: string[] }
+      const data = await post('/api/pipeline/scan-tree', { root, shallow: shallowScan }) as { folders: string[] }
       if (data.folders?.length) {
         addFolders(data.folders)
         showToast(t('verify.toast.foundFolders', { count: data.folders.length }), 'ok')
@@ -124,7 +125,7 @@ export function ScreenVerify(): React.JSX.Element {
     } catch {
       showToast(t('verify.toast.scanFailed'), 'bad')
     }
-  }, [post, showToast, addFolders, t])
+  }, [post, showToast, addFolders, t, shallowScan])
 
   const handleVerify = useCallback(async () => {
     if (!folders.length) { showToast(t('verify.toast.addFoldersFirst'), 'info'); return }
@@ -302,6 +303,10 @@ export function ScreenVerify(): React.JSX.Element {
             <Button variant="secondary" size="sm" icon="plus"       block disabled={busy || !folders.length} onClick={handleGenerate}>{t('verify.rail.generate')}</Button>
             <Button variant="ghost"     size="sm" icon="download"   block disabled={busy || !folders.length} onClick={handleRetrieve}>{t('verify.rail.retrieve')}</Button>
             <Button variant="ghost"     size="sm" icon="folderPlus" block onClick={handleAddRoot}>{t('verify.rail.addRoot')}</Button>
+            <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', cursor: 'pointer', paddingLeft: 2 }}>
+              <input type="checkbox" checked={shallowScan} onChange={e => setShallowScan(e.target.checked)} style={{ accentColor: 'var(--lbb-accent)' }} />
+              {t('common.shallowScan')}
+            </label>
           </div>
         </aside>
 

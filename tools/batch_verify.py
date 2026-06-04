@@ -303,8 +303,11 @@ def _api_reconcile(folder: Path, api: str) -> tuple[int, str | None]:
 # ── Folder discovery ──────────────────────────────────────────────────────────
 
 def has_lbdir(folder: Path) -> bool:
-    """Return True if any lbdir*.txt exists directly in folder."""
-    return any(True for _ in folder.glob("lbdir*.txt"))
+    """Return True if any lbdir*.txt (including LBF-*-lbdir.txt) exists directly in folder."""
+    return any(
+        f for f in folder.iterdir()
+        if f.is_file() and 'lbdir' in f.name.lower() and f.suffix.lower() == '.txt'
+    )
 
 
 def _is_generated_file(name: str) -> bool:
@@ -497,6 +500,9 @@ def process_folder(
                 notes=f"retrieve: {retrieve_status}",
             )
             return
+        elif retrieve_status in ("connection_error", "timeout_error"):
+            log.warning("Transient %s retrieving lbdir for %s — skipping persist", retrieve_status, folder)
+            return
         else:
             error_detail = result.get("error", retrieve_status)
             db_upsert(
@@ -531,6 +537,11 @@ def process_folder(
     # Phase 2 — Verify
     vr = _api_verify(folder, api)
     api_status = vr.get("status", "")
+
+    if api_status == "api_error" and vr.get("error") in ("ConnectionError", "Timeout"):
+        log.warning("Transient %s verifying %s — skipping persist", vr.get("error"), folder)
+        return
+
     notes: str | None = None
 
     if api_status == "shntool_missing":
@@ -708,6 +719,31 @@ def print_report(db_path: str, status_filter: str | None = None) -> None:
             print(f"{r['verify_status']:<20s}: {r['n']:6d}")
 
     conn.close()
+
+
+_CONNECTION_ERROR_NOTES = (
+    "ConnectionError",
+    "Timeout",
+    "retrieve: connection_error",
+    "retrieve: timeout_error",
+)
+
+
+def purge_connection_errors(db_path: str) -> int:
+    """Delete batch_results rows caused by transient connection errors.
+
+    Returns the number of rows deleted.
+    """
+    conn = open_report_db(db_path)
+    placeholders = ",".join("?" * len(_CONNECTION_ERROR_NOTES))
+    cur = conn.execute(
+        f"DELETE FROM batch_results WHERE notes IN ({placeholders})",
+        _CONNECTION_ERROR_NOTES,
+    )
+    deleted = cur.rowcount
+    conn.commit()
+    conn.close()
+    return deleted
 
 
 # ── Interactive keyboard controller ──────────────────────────────────────────
@@ -909,6 +945,12 @@ def parse_args() -> argparse.Namespace:
              "Valid values: pass, fail, missing_files, no_lbdir, no_lb, "
              "lookup_multi, api_error, dry_run.",
     )
+    report.add_argument(
+        "--purge-connection-errors", action="store_true",
+        help="Delete all batch_results rows that failed due to transient connection or "
+             "timeout errors (api_error/retrieve_error with ConnectionError/Timeout notes). "
+             "These will be retried on the next run. Exits after purging.",
+    )
 
     return p.parse_args()
 
@@ -917,6 +959,11 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
+
+    if args.purge_connection_errors:
+        n = purge_connection_errors(args.db)
+        print(f"Purged {n} connection-error rows from {args.db}")
+        return
 
     if args.report:
         print_report(args.db, args.status)
