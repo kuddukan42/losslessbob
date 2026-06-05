@@ -18,7 +18,10 @@
     "today": "heute",
     "yesterday": "gestern",
     "daysAgo": "{{count}} vor Tagen",
-    "shallowScan": "Nur 1 Ebene"
+    "shallowScan": "Nur 1 Ebene",
+    "addFolder": "Ordner hinzufügen…",
+    "clearList": "Liste leeren",
+    "removeFromList": "Aus Liste entfernen"
   },
   "appShell": {
     "brand": "VerlustfreiBob",

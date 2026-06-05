@@ -2475,11 +2475,8 @@ export function ScreenCollection(): React.JSX.Element {
   }, [])
 
   const handleCtxViewLookup = useCallback((row: CollectionRow) => {
-    if (!row.diskPath) return
-    clearSources()
-    addSource({ kind: 'folder', name: row.folder || row.lbNumber, content: row.diskPath, active: true })
-    navigate('/lookup')
-  }, [clearSources, addSource, navigate])
+    window.open(`http://www.losslessbob.wonderingwhattochoose.com/detail/LB-${String(row.lbNumberInt).padStart(5, '0')}.html`, '_blank')
+  }, [])
 
   const handleCtxScrape = useCallback(async (row: CollectionRow) => {
     try {
@@ -3434,7 +3431,6 @@ export function ScreenCollection(): React.JSX.Element {
             },
             {
               label: 'View LB Entry',
-              disabled: !ctxMenu.row.diskPath,
               action: () => handleCtxViewLookup(ctxMenu.row),
             },
             'sep',

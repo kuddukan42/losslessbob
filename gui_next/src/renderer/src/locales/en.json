@@ -18,7 +18,10 @@
     "today": "today",
     "yesterday": "yesterday",
     "daysAgo": "{{count}} days ago",
-    "shallowScan": "1 level only"
+    "shallowScan": "1 level only",
+    "addFolder": "Add folder…",
+    "clearList": "Clear list",
+    "removeFromList": "Remove from list"
   },
   "appShell": {
     "brand": "LosslessBob",

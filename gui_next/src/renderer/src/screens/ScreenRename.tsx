@@ -146,17 +146,32 @@ function StateChip({ state, count, active, onClick }: {
 export function ScreenRename(): React.JSX.Element {
   const { t } = useTranslation()
   const navigate = useNavigate()
-  const { summary, detail, folderList } = useLookupStore()
+  const { summary, detail, folderList, setFolderList } = useLookupStore()
 
-  const [rows,         setRows]         = useState<RenameRow[]>([])
-  const [filter,       setFilter]       = useState<RowState | null>(null)
-  const [expandedRow,  setExpandedRow]  = useState<number | null>(null)
-  const [busy,         setBusy]         = useState(false)
-  const [toast,        setToast]        = useState<{ msg: string; tone: ToastTone } | null>(null)
-  const [disambig,     setDisambig]     = useState<DisambigState | null>(null)
+  const [rows,          setRows]          = useState<RenameRow[]>([])
+  const [filter,        setFilter]        = useState<RowState | null>(null)
+  const [expandedRow,   setExpandedRow]   = useState<number | null>(null)
+  const [busy,          setBusy]          = useState(false)
+  const [toast,         setToast]         = useState<{ msg: string; tone: ToastTone } | null>(null)
+  const [disambig,      setDisambig]      = useState<DisambigState | null>(null)
   const [disambigLbSel, setDisambigLbSel] = useState<number | null>(null)
+  const [ctxMenu,       setCtxMenu]       = useState<{ x: number; y: number; folder: string } | null>(null)
 
   const showToast = useCallback((msg: string, tone: ToastTone) => setToast({ msg, tone }), [])
+
+  const handleAddSingleFolder = useCallback(async () => {
+    const path = await window.api.pickDir()
+    if (!path) return
+    const existing = useLookupStore.getState().folderList
+    setFolderList([...new Set([...existing, path])])
+  }, [setFolderList])
+
+  useEffect(() => {
+    if (!ctxMenu) return
+    const close = () => setCtxMenu(null)
+    document.addEventListener('mousedown', close)
+    return () => document.removeEventListener('mousedown', close)
+  }, [ctxMenu])
 
   // Rebuild proposals whenever lookup store changes
   useEffect(() => {
@@ -332,7 +347,9 @@ export function ScreenRename(): React.JSX.Element {
           </div>
         </div>
         <div style={{ flex: 1 }} />
-        <Button variant="ghost" size="sm" icon="refresh" onClick={() => navigate('/lookup')}>{t('rename.goToLookup')}</Button>
+        <Button variant="secondary" size="sm" icon="folder" onClick={handleAddSingleFolder}>{t('common.addFolder')}</Button>
+        <Button variant="ghost"     size="sm" icon="trash"  disabled={!rows.length} onClick={() => setFolderList([])}>{t('common.clearList')}</Button>
+        <Button variant="ghost"     size="sm" icon="refresh" onClick={() => navigate('/lookup')}>{t('rename.goToLookup')}</Button>
       </div>
 
       {rows.length === 0 ? (
@@ -418,7 +435,7 @@ export function ScreenRename(): React.JSX.Element {
                       'var(--lbb-ok-fg)'
                     return (
                       <React.Fragment key={i}>
-                        <TR edge={s.tone === 'mute' ? undefined : s.tone} selected={r.sel}>
+                        <TR edge={s.tone === 'mute' ? undefined : s.tone} selected={r.sel} onContextMenu={e => { e.preventDefault(); setCtxMenu({ x: e.clientX, y: e.clientY, folder: r.folder }) }}>
                           <TD>
                             <input
                               type="checkbox"
@@ -566,6 +583,31 @@ export function ScreenRename(): React.JSX.Element {
           }}
           ref={(el: HTMLDivElement | null) => { if (el) setTimeout(() => setToast(null), 3500) }}
         >{toast.msg}</div>
+      )}
+
+      {ctxMenu && (
+        <div
+          onMouseDown={e => e.stopPropagation()}
+          style={{
+            position: 'fixed', top: ctxMenu.y, left: ctxMenu.x, zIndex: 1000,
+            background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)',
+            borderRadius: 8, padding: 4, minWidth: 160,
+            boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
+          }}
+        >
+          <button
+            onClick={() => {
+              setFolderList(useLookupStore.getState().folderList.filter(f => f !== ctxMenu.folder))
+              setCtxMenu(null)
+            }}
+            style={{
+              display: 'block', width: '100%', textAlign: 'left',
+              padding: '6px 12px', fontSize: 'var(--lbb-fs-12-5)', cursor: 'pointer',
+              border: 'none', background: 'transparent',
+              color: 'var(--lbb-bad, #e05252)', borderRadius: 5, fontFamily: 'inherit',
+            }}
+          >{t('common.removeFromList')}</button>
+        </div>
       )}
     </div>
   )

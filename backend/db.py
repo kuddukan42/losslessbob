@@ -558,6 +558,7 @@ CREATE INDEX IF NOT EXISTS idx_archive_uploads_status ON archive_org_uploads(sta
 _MD5_RE = re.compile(r'^([0-9a-fA-F]{32})\s+\*?(.+)$')
 _SHA1_RE = re.compile(r'^([0-9a-fA-F]{40})\s+\*?(.+)$')
 _FFP_RE = re.compile(r'^(.+\.(?:flac|ape|wav))[:=]([0-9a-fA-F]{32,40})$', re.IGNORECASE)
+_AUDIO_EXTS = {'.flac', '.shn', '.wav', '.ape', '.m4a', '.wv', '.aif', '.aiff'}
 
 TRACKED_ENTRY_FIELDS = ("date_str", "location", "cdr", "rating", "timing",
                         "description", "setlist", "status")
@@ -1321,6 +1322,8 @@ def parse_checksum_text(text):
         if sha1:
             chk, fname = sha1.group(1).lower(), sha1.group(2).strip()
             ext = Path(fname).suffix.lower()
+            if ext not in _AUDIO_EXTS:
+                continue
             chk_type = 's' if ext == '.shn' else 'm'
             if chk not in results:
                 results[chk] = (chk, fname, chk_type)
@@ -1331,6 +1334,8 @@ def parse_checksum_text(text):
         if md5:
             chk, fname = md5.group(1).lower(), md5.group(2).strip()
             ext = Path(fname).suffix.lower()
+            if ext not in _AUDIO_EXTS:
+                continue
             chk_type = 's' if ext == '.shn' else 'm'
             if chk not in results:
                 results[chk] = (chk, fname, chk_type)
@@ -1424,6 +1429,16 @@ def lookup_checksums(parsed_entries, db_path=None):
     # is shown as MATCHED (green) rather than INCOMPLETE — because it IS complete for
     # that xref; the primary LB set simply isn't what the user has.
     _AUDIO_EXT_RE = re.compile(r'\.(flac|shn|wav|ape|m4a|wv|aif|aiff)$', re.IGNORECASE)
+    _DIR_SEP_RE = re.compile(r'^.*[/\\]')
+
+    def _norm_track_base(filename: str) -> str:
+        # Strip audio extension, then directory prefix, then normalize & → _
+        # (shntool replaces & with _ in decoded WAV names; DB stores both SHN
+        # and WAV entries which may also have Disc1\ prefix on one and not the other).
+        base = _AUDIO_EXT_RE.sub('', filename).lower()
+        base = _DIR_SEP_RE.sub('', base)
+        return base.replace('&', '_')
+
     _lb_xref_missing: dict = {}
     for (lb, xref_val), matched_set in lb_xref_to_matched.items():
         all_rows = conn.execute(
@@ -1433,16 +1448,17 @@ def lookup_checksums(parsed_entries, db_path=None):
         # Build base-filename → checksums map so that foo.shn (md5) and foo.wav
         # (shntool) are treated as the same track.  A track is covered if ANY of
         # its checksums was matched; only uncovered tracks contribute to missing.
+        # Uses _norm_track_base to unify Disc1\dead&dylan.shn and dead_dylan.wav.
         base_to_chks: dict = {}
         for row in all_rows:
-            base = _AUDIO_EXT_RE.sub('', row["filename"]).lower()
+            base = _norm_track_base(row["filename"])
             base_to_chks.setdefault(base, set()).add(row["checksum"])
         missing: set = set()
         for row in all_rows:
             chk = row["checksum"]
             if chk in matched_set:
                 continue
-            base = _AUDIO_EXT_RE.sub('', row["filename"]).lower()
+            base = _norm_track_base(row["filename"])
             if not (base_to_chks[base] & matched_set):
                 missing.add(chk)
         _lb_xref_missing[(lb, xref_val)] = missing

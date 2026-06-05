@@ -58,6 +58,7 @@ interface LookupStoreState {
   activeSource: number | null
   setResult:     (summary: LookupSummary, detail: LookupDetail[]) => void
   addSource:     (src: LookupSource) => void
+  removeSource:  (idx: number) => void
   clearSources:  () => void
   setFolderList: (folders: string[]) => void
   setFilter:     (v: LookupFilterState | 'all') => void
@@ -76,6 +77,12 @@ export const useLookupStore = create<LookupStoreState>(set => ({
   setResult:    (summary, detail) => set({ summary, detail }),
   addSource:    src => set(state => ({
     sources: [...state.sources, src],
+  })),
+  removeSource: idx => set(state => ({
+    sources: state.sources.filter((_, i) => i !== idx),
+    activeSource: state.activeSource === idx ? null
+      : state.activeSource !== null && state.activeSource > idx ? state.activeSource - 1
+      : state.activeSource,
   })),
   clearSources: () => set({ sources: [], summary: null, detail: [], folderList: [] }),
   setFolderList: folders => set({ folderList: folders }),

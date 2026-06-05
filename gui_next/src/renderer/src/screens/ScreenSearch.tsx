@@ -1404,6 +1404,12 @@ export function ScreenSearch(): React.JSX.Element {
                             edge={statusTone(r.status)}
                             selected={r.lbNumber === selectedLb}
                             onClick={() => setSelectedLb(prev => prev === r.lbNumber ? null : r.lbNumber)}
+                            onContextMenu={e => {
+                              e.preventDefault()
+                              setRowMenu(prev =>
+                                prev?.lb === r.lbNumber ? null : { lb: r.lbNumber, x: e.clientX, y: e.clientY }
+                              )
+                            }}
                             style={{ height: vItem.size }}
                           >
                             <TD mono style={{ color: 'var(--lbb-accent-mid)', fontWeight: 600 }}>
@@ -1524,6 +1530,21 @@ export function ScreenSearch(): React.JSX.Element {
             boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
           }}
         >
+          <button
+            type="button"
+            onClick={() => {
+              const lb = rowMenu.lb
+              setRowMenu(null)
+              window.open(`http://www.losslessbob.wonderingwhattochoose.com/detail/LB-${String(lb).padStart(5, '0')}.html`)
+            }}
+            style={{
+              display: 'block', width: '100%', textAlign: 'left',
+              padding: '6px 14px', border: 'none', cursor: 'pointer', fontSize: 'var(--lbb-fs-12)',
+              background: 'none', color: 'var(--lbb-fg2)',
+            }}
+          >
+            Go to LB webpage
+          </button>
           <button
             type="button"
             onClick={() => {

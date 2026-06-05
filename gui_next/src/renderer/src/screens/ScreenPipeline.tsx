@@ -118,7 +118,7 @@ function serverRowToPipeline(sr: Record<string, unknown>): Partial<PipelineRow> 
 
 export function ScreenPipeline(): React.JSX.Element {
   const { t } = useTranslation()
-  const { folders: queueFolders, addFolders: addToQueue, clearFolders } = useFolderQueueStore()
+  const { folders: queueFolders, addFolders: addToQueue, removeFolders, clearFolders } = useFolderQueueStore()
 
   const [rows, setRows] = useState<PipelineRow[]>([])
   const [filter, setFilter] = useState<FilterKey>('all')
@@ -128,6 +128,7 @@ export function ScreenPipeline(): React.JSX.Element {
   const [lastShiftAnchor, setLastShiftAnchor] = useState<string | null>(null)
   const [dragOver, setDragOver] = useState(false)
   const [shallowScan, setShallowScan] = useState(false)
+  const [ctxMenu, setCtxMenu] = useState<{ x: number; y: number; id: string } | null>(null)
 
   // Sync any folders added from other screens into local rows
   useEffect(() => {
@@ -306,6 +307,24 @@ export function ScreenPipeline(): React.JSX.Element {
     const paths = await window.api.pickFolders()
     if (paths.length) addFolders(paths)
   }, [addFolders])
+
+  const handleAddSingleFolder = useCallback(async () => {
+    const path = await window.api.pickDir()
+    if (path) addFolders([path])
+  }, [addFolders])
+
+  const handleRemoveRow = useCallback((id: string) => {
+    setRows(prev => prev.filter(r => r.id !== id))
+    removeFolders([id])
+    setActiveQueue(prev => prev === id ? null : prev)
+  }, [removeFolders])
+
+  useEffect(() => {
+    if (!ctxMenu) return
+    const close = () => setCtxMenu(null)
+    document.addEventListener('mousedown', close)
+    return () => document.removeEventListener('mousedown', close)
+  }, [ctxMenu])
 
   const handleScanTree = useCallback(async () => {
     const dir = await window.api.pickDir()
@@ -550,6 +569,7 @@ export function ScreenPipeline(): React.JSX.Element {
                 <button
                   key={r.id}
                   onClick={() => scrollToRow(r.id)}
+                  onContextMenu={e => { e.preventDefault(); setCtxMenu({ x: e.clientX, y: e.clientY, id: r.id }) }}
                   style={{
                     width: '100%', display: 'flex', alignItems: 'center', gap: 8,
                     padding: '6px 8px', marginBottom: 1, borderRadius: 6,
@@ -581,6 +601,7 @@ export function ScreenPipeline(): React.JSX.Element {
             display: 'flex', flexDirection: 'column', gap: 6,
           }}>
             <Button variant="primary" size="sm" icon="folderPlus" block onClick={handlePickFolders}>{t('pipeline.queue.addFolders')}</Button>
+            <Button variant="secondary" size="sm" icon="folder" block onClick={handleAddSingleFolder}>{t('common.addFolder')}</Button>
             <Button variant="secondary" size="sm" icon="search" block onClick={handleScanTree}>{t('pipeline.queue.scanTree')}</Button>
             <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', cursor: 'pointer', paddingLeft: 2 }}>
               <input type="checkbox" checked={shallowScan} onChange={e => setShallowScan(e.target.checked)} style={{ accentColor: 'var(--lbb-accent)' }} />
@@ -589,7 +610,7 @@ export function ScreenPipeline(): React.JSX.Element {
             <Button
               variant="ghost" size="sm" icon="trash" block
               onClick={() => { setRows([]); setActiveQueue(null); clearFolders() }}
-            >{t('pipeline.clearQueue')}</Button>
+            >{t('common.clearList')}</Button>
 
             <div style={{
               marginTop: 10, padding: '8px 10px',
@@ -838,6 +859,29 @@ export function ScreenPipeline(): React.JSX.Element {
           )}
         </section>
       </div>
+
+      {/* ── Right-click context menu ──────────────────────────────────────────── */}
+      {ctxMenu && (
+        <div
+          onMouseDown={e => e.stopPropagation()}
+          style={{
+            position: 'fixed', top: ctxMenu.y, left: ctxMenu.x, zIndex: 1000,
+            background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)',
+            borderRadius: 8, padding: 4, minWidth: 160,
+            boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
+          }}
+        >
+          <button
+            onClick={() => { handleRemoveRow(ctxMenu.id); setCtxMenu(null) }}
+            style={{
+              display: 'block', width: '100%', textAlign: 'left',
+              padding: '6px 12px', fontSize: 'var(--lbb-fs-12-5)', cursor: 'pointer',
+              border: 'none', background: 'transparent',
+              color: 'var(--lbb-bad, #e05252)', borderRadius: 5, fontFamily: 'inherit',
+            }}
+          >{t('common.removeFromList')}</button>
+        </div>
+      )}
     </div>
   )
 }
