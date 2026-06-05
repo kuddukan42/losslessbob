@@ -30,12 +30,13 @@ function CheckDot({ s }: { s: 'pass' | 'miss' | 'na' }): React.JSX.Element {
   return <span style={{ color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-10)' }}>na</span>
 }
 
-function FolderSideRow({ folder, checkResult, verifiedAt, active, onClick }: {
+function FolderSideRow({ folder, checkResult, verifiedAt, active, onClick, onContextMenu }: {
   folder: string
   checkResult: CheckResult | undefined
   verifiedAt: string | null
   active: boolean
   onClick: () => void
+  onContextMenu?: (e: React.MouseEvent) => void
 }): React.JSX.Element {
   const state = checkResult?.status ?? null
   const sl = state ? STATE_LABEL[state] : null
@@ -54,7 +55,7 @@ function FolderSideRow({ folder, checkResult, verifiedAt, active, onClick }: {
   const verifiedDate = resolvedVerifiedAt ? resolvedVerifiedAt.slice(0, 10) : null
 
   return (
-    <button onClick={onClick} style={{
+    <button onClick={onClick} onContextMenu={onContextMenu} style={{
       width: '100%', display: 'flex', alignItems: 'center', gap: 8,
       padding: '7px 10px', marginBottom: 1, borderRadius: 6,
       background: active ? 'var(--lbb-accent-soft)' : 'transparent',
@@ -157,12 +158,12 @@ function ReconcilePanel({ result, reconSelected, setReconSelected, siteSelected,
           <TableShell style={{ margin: 0, borderRadius: 0, border: 'none' }}>
             <colgroup>
               <col style={{ width: 3 }} /><col style={{ width: 32 }} />
-              <col /><col style={{ width: 24 }} /><col /><col style={{ width: 140 }} />
+              <col style={{ width: 32 }} /><col /><col style={{ width: 24 }} /><col /><col style={{ width: 140 }} />
             </colgroup>
             <thead>
               <tr>
                 <TH> </TH><TH> </TH>
-                <TH>Current path on disk</TH><TH> </TH>
+                <TH> </TH><TH>Current path on disk</TH><TH> </TH>
                 <TH>Will rename to</TH><TH>MD5</TH>
               </tr>
             </thead>
@@ -281,10 +282,11 @@ export function ScreenLBDIR(): React.JSX.Element {
     setActiveFolder, setFilter, setCheckResults, updateCheckResult,
     setReconcileResults, clearReconcileFor, setReconSelected, setSiteSelected,
   } = useLbdirStore()
-  const { folders, addFolders } = useFolderQueueStore()
+  const { folders, addFolders, removeFolders, clearFolders } = useFolderQueueStore()
   const [busy,         setBusy]        = useState(false)
   const [tools,        setTools]       = useState<{ shntool_available: boolean } | null>(null)
   const [toast,        setToast]       = useState<{ msg: string; tone: ToastTone } | null>(null)
+  const [ctxMenu,      setCtxMenu]     = useState<{ x: number; y: number; folder: string } | null>(null)
   const [verifiedAt,   setVerifiedAt]  = useState<Record<string, string | null>>({})
   const [hideVerified, setHideVerified] = useState(false)
   const [fileColWidths, setFileColWidths] = useState({ filename: 260, md5: 50, disk: 60, overall: 80, length: 80, fmt: 60, ratio: 70 })
@@ -341,6 +343,21 @@ export function ScreenLBDIR(): React.JSX.Element {
       if (!activeFolder) setActiveFolder(picked[0])
     }
   }, [activeFolder, addFolders, setActiveFolder])
+
+  const handleAddSingleFolder = useCallback(async () => {
+    const path = await window.api.pickDir()
+    if (path) {
+      addFolders([path])
+      if (!activeFolder) setActiveFolder(path)
+    }
+  }, [activeFolder, addFolders, setActiveFolder])
+
+  useEffect(() => {
+    if (!ctxMenu) return
+    const close = () => setCtxMenu(null)
+    document.addEventListener('mousedown', close)
+    return () => document.removeEventListener('mousedown', close)
+  }, [ctxMenu])
 
   const handleAddRoot = useCallback(async () => {
     const root = await window.api.pickDir()
@@ -531,6 +548,7 @@ export function ScreenLBDIR(): React.JSX.Element {
                 verifiedAt={verifiedAt[f] ?? null}
                 active={f === activeFolderStr}
                 onClick={() => setActiveFolder(f)}
+                onContextMenu={e => { e.preventDefault(); setCtxMenu({ x: e.clientX, y: e.clientY, folder: f }) }}
               />
             ))}
           </div>
@@ -539,7 +557,9 @@ export function ScreenLBDIR(): React.JSX.Element {
               onClick={() => handleProcess(filteredFolders)}>
               {busy ? 'Processing…' : 'Process all folders'}
             </Button>
+            <Button variant="ghost"     size="sm" icon="folder"    block onClick={handleAddSingleFolder}>Add folder…</Button>
             <Button variant="ghost"     size="sm" icon="folderPlus" block onClick={handleAddRoot}>Add root folder…</Button>
+            <Button variant="ghost"     size="sm" icon="trash"     block disabled={!folders.length} onClick={() => clearFolders()}>Clear list</Button>
           </div>
         </aside>
 
@@ -726,6 +746,28 @@ export function ScreenLBDIR(): React.JSX.Element {
           }}
           ref={(el: HTMLDivElement | null) => { if (el) setTimeout(() => setToast(null), 3500) }}
         >{toast.msg}</div>
+      )}
+
+      {ctxMenu && (
+        <div
+          onMouseDown={e => e.stopPropagation()}
+          style={{
+            position: 'fixed', top: ctxMenu.y, left: ctxMenu.x, zIndex: 1000,
+            background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)',
+            borderRadius: 8, padding: 4, minWidth: 160,
+            boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
+          }}
+        >
+          <button
+            onClick={() => { removeFolders([ctxMenu.folder]); setCtxMenu(null) }}
+            style={{
+              display: 'block', width: '100%', textAlign: 'left',
+              padding: '6px 12px', fontSize: 'var(--lbb-fs-12-5)', cursor: 'pointer',
+              border: 'none', background: 'transparent',
+              color: 'var(--lbb-bad, #e05252)', borderRadius: 5, fontFamily: 'inherit',
+            }}
+          >Remove from list</button>
+        </div>
       )}
     </div>
   )

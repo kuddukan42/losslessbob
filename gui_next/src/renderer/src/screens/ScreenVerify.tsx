@@ -38,12 +38,12 @@ function ToolDot({ ok, label }: { ok: boolean; label: string }): React.JSX.Eleme
   )
 }
 
-function FolderRow({ row, active, onClick }: { row: VerifyFolder; active: boolean; onClick: () => void }): React.JSX.Element {
+function FolderRow({ row, active, onClick, onContextMenu }: { row: VerifyFolder; active: boolean; onClick: () => void; onContextMenu?: (e: React.MouseEvent) => void }): React.JSX.Element {
   const tone = row.status === 'pass' ? 'ok' : row.status === 'mismatch' || row.status === 'fail' ? 'bad' : 'warn'
   const dotColor = tone === 'ok' ? 'var(--lbb-ok-bar)' : tone === 'bad' ? 'var(--lbb-bad-bar)' : 'var(--lbb-warn-bar)'
   const name = row.folder.split('/').pop() ?? row.folder
   return (
-    <button onClick={onClick} style={{
+    <button onClick={onClick} onContextMenu={onContextMenu} style={{
       width: '100%', display: 'flex', alignItems: 'center', gap: 8,
       padding: '7px 10px', marginBottom: 1, borderRadius: 6,
       background: active ? 'var(--lbb-accent-soft)' : 'transparent',
@@ -80,11 +80,12 @@ function StateBadge({ s }: { s: FolderState }): React.JSX.Element {
 export function ScreenVerify(): React.JSX.Element {
   const { t } = useTranslation()
   const { results, activeIdx, showAll, filter, setResults, setActiveIdx, setShowAll, setFilter } = useVerifyStore()
-  const { folders, addFolders } = useFolderQueueStore()
-  const [busy,  setBusy]  = useState(false)
-  const [tools, setTools] = useState<ToolStatus | null>(null)
-  const [toast, setToast] = useState<{ msg: string; tone: ToastTone } | null>(null)
+  const { folders, addFolders, removeFolders, clearFolders } = useFolderQueueStore()
+  const [busy,        setBusy]       = useState(false)
+  const [tools,       setTools]      = useState<ToolStatus | null>(null)
+  const [toast,       setToast]      = useState<{ msg: string; tone: ToastTone } | null>(null)
   const [shallowScan, setShallowScan] = useState(false)
+  const [ctxMenu,     setCtxMenu]    = useState<{ x: number; y: number; folder: string } | null>(null)
 
   const showToast = useCallback((msg: string, tone: ToastTone) => setToast({ msg, tone }), [])
 
@@ -110,6 +111,18 @@ export function ScreenVerify(): React.JSX.Element {
     const picked = await window.api.pickFolders()
     if (picked.length) addFolders(picked)
   }, [addFolders])
+
+  const handleAddSingleFolder = useCallback(async () => {
+    const path = await window.api.pickDir()
+    if (path) addFolders([path])
+  }, [addFolders])
+
+  useEffect(() => {
+    if (!ctxMenu) return
+    const close = () => setCtxMenu(null)
+    document.addEventListener('mousedown', close)
+    return () => document.removeEventListener('mousedown', close)
+  }, [ctxMenu])
 
   const handleAddRoot = useCallback(async () => {
     const root = await window.api.pickDir()
@@ -279,11 +292,11 @@ export function ScreenVerify(): React.JSX.Element {
             ) : filteredFolders.map((f, i) => {
               const res = results.find(r => r.folder === f)
               if (res) {
-                return <FolderRow key={f} row={res} active={results.indexOf(res) === activeIdx} onClick={() => { setActiveIdx(results.indexOf(res)); setShowAll(false) }} />
+                return <FolderRow key={f} row={res} active={results.indexOf(res) === activeIdx} onClick={() => { setActiveIdx(results.indexOf(res)); setShowAll(false) }} onContextMenu={e => { e.preventDefault(); setCtxMenu({ x: e.clientX, y: e.clientY, folder: f }) }} />
               }
               const name = f.split('/').pop() ?? f
               return (
-                <button key={f} onClick={() => {}} style={{
+                <button key={f} onClick={() => {}} onContextMenu={e => { e.preventDefault(); setCtxMenu({ x: e.clientX, y: e.clientY, folder: f }) }} style={{
                   width: '100%', display: 'flex', alignItems: 'center', gap: 8,
                   padding: '7px 10px', marginBottom: 1, borderRadius: 6,
                   background: 'transparent', color: 'var(--lbb-fg2)',
@@ -302,11 +315,13 @@ export function ScreenVerify(): React.JSX.Element {
             </Button>
             <Button variant="secondary" size="sm" icon="plus"       block disabled={busy || !folders.length} onClick={handleGenerate}>{t('verify.rail.generate')}</Button>
             <Button variant="ghost"     size="sm" icon="download"   block disabled={busy || !folders.length} onClick={handleRetrieve}>{t('verify.rail.retrieve')}</Button>
+            <Button variant="ghost"     size="sm" icon="folder"    block onClick={handleAddSingleFolder}>{t('common.addFolder')}</Button>
             <Button variant="ghost"     size="sm" icon="folderPlus" block onClick={handleAddRoot}>{t('verify.rail.addRoot')}</Button>
             <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', cursor: 'pointer', paddingLeft: 2 }}>
               <input type="checkbox" checked={shallowScan} onChange={e => setShallowScan(e.target.checked)} style={{ accentColor: 'var(--lbb-accent)' }} />
               {t('common.shallowScan')}
             </label>
+            <Button variant="ghost"     size="sm" icon="trash"     block disabled={!folders.length} onClick={() => clearFolders()}>{t('common.clearList')}</Button>
           </div>
         </aside>
 
@@ -476,6 +491,28 @@ export function ScreenVerify(): React.JSX.Element {
           }}
           ref={(el: HTMLDivElement | null) => { if (el) setTimeout(() => setToast(null), 3500) }}
         >{toast.msg}</div>
+      )}
+
+      {ctxMenu && (
+        <div
+          onMouseDown={e => e.stopPropagation()}
+          style={{
+            position: 'fixed', top: ctxMenu.y, left: ctxMenu.x, zIndex: 1000,
+            background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)',
+            borderRadius: 8, padding: 4, minWidth: 160,
+            boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
+          }}
+        >
+          <button
+            onClick={() => { removeFolders([ctxMenu.folder]); setCtxMenu(null) }}
+            style={{
+              display: 'block', width: '100%', textAlign: 'left',
+              padding: '6px 12px', fontSize: 'var(--lbb-fs-12-5)', cursor: 'pointer',
+              border: 'none', background: 'transparent',
+              color: 'var(--lbb-bad, #e05252)', borderRadius: 5, fontFamily: 'inherit',
+            }}
+          >{t('common.removeFromList')}</button>
+        </div>
       )}
     </div>
   )

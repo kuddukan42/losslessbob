@@ -118,6 +118,19 @@ def parse_lbdir_file(path):
     current_section = None
     has_shn = False
     has_flac = False
+    # Subdirectory context from shntool section headers, e.g.
+    # "=== shntool md5/hash for: archive\Disc1" → current_shn_dir = 'Disc1'
+    # Shntool entries omit the subdirectory prefix, so we restore it here.
+    current_shn_dir = ''
+
+    def _shn_dir_from_header(header_stripped: str) -> str:
+        """Extract subdir from '=== shntool * for: archive[\\subdir]'."""
+        colon_pos = header_stripped.find(':')
+        if colon_pos < 0:
+            return ''
+        after = header_stripped[colon_pos + 1:].strip().replace('\\', '/')
+        slash_pos = after.find('/')
+        return after[slash_pos + 1:] if slash_pos >= 0 else ''
 
     for line in text.splitlines():
         stripped = line.strip()
@@ -135,9 +148,13 @@ def parse_lbdir_file(path):
             continue
         elif sl.startswith('=== shntool md5/hash for:'):
             current_section = 'shntool'
+            # Shntool entries list filenames without the subdirectory prefix;
+            # the header tells us which subdirectory they belong to.
+            current_shn_dir = _shn_dir_from_header(stripped)
             continue
         elif sl.startswith('=== shntool len for:'):
             current_section = 'shntool_len'
+            current_shn_dir = _shn_dir_from_header(stripped)
             continue
         elif sl.startswith('==='):
             current_section = None
@@ -169,6 +186,8 @@ def parse_lbdir_file(path):
             m = _SHNTOOL_LINE_RE.match(stripped)
             if m:
                 wav_fname = m.group(2).strip().replace('\\', '/')
+                if current_shn_dir:
+                    wav_fname = current_shn_dir + '/' + wav_fname
                 # Only convert .wav -> .shn when the md5 section already confirmed SHN files
                 # on disk. WAV-format recordings (e.g. lbdir *.wavf.txt) store .wav files and
                 # shntool hashes them directly — no conversion needed in that case.
@@ -185,6 +204,8 @@ def parse_lbdir_file(path):
                 # Skip the totals summary line
                 if raw_fname.startswith('('):
                     continue
+                if current_shn_dir:
+                    raw_fname = current_shn_dir + '/' + raw_fname
                 # Map .wav -> .shn only for SHN recordings (same logic as shntool section)
                 fname = re.sub(r'\.wav$', '.shn', raw_fname, flags=re.IGNORECASE) if has_shn else raw_fname
                 result['shntool_len'].append({
@@ -631,7 +652,10 @@ def verify_folder_lbdir(folder_path, lbdir_path):
     # Normalize both to "only alphanumerics kept, everything else → '_'" for matching,
     # then remap shntool keys to md5 canonical names to avoid duplicate file rows.
     def _norm(name: str) -> str:
-        return re.sub(r'[^a-z0-9]', '_', name.lower())
+        # Use basename only so shntool entries (bare or wrong-disc-prefixed)
+        # still remap to the md5 canonical key regardless of directory prefix.
+        basename = re.split(r'[/\\]', name)[-1]
+        return re.sub(r'[^a-z0-9]', '_', basename.lower())
 
     norm_to_canon: dict[str, str] = {_norm(k): k for k in set(md5_map) | set(ffp_map)}
     shn_map: dict[str, str] = {}
@@ -650,8 +674,24 @@ def verify_folder_lbdir(folder_path, lbdir_path):
     files = []
     n_pass = n_mismatch = n_missing = 0
 
+    # Build an audio-only basename → actual path index for subdirectory fallback.
+    # When a lbdir lists bare filenames (e.g. LBF-01334 for a track that lives
+    # in Disc3/ of a combined multi-LB folder), fpath won't exist at the root.
+    # Only audio files are remapped — non-audio files (txt, md5…) may share names
+    # across disc dirs so fallback would pick the wrong one.
+    _AUDIO_EXTS = {'.flac', '.shn', '.wav', '.ape', '.m4a', '.wv', '.aif', '.aiff'}
+    _subdir_index: dict[str, Path] = {}
+    for _p in folder.rglob('*'):
+        if _p.is_file() and _p.suffix.lower() in _AUDIO_EXTS:
+            _subdir_index.setdefault(_p.name.lower(), _p)
+
     for fname in sorted(all_files):
         fpath = folder / fname
+        if not fpath.exists() and Path(fname).suffix.lower() in _AUDIO_EXTS:
+            # Bare-filename lbdir entry for audio — check subdirectories by name
+            _alt = _subdir_index.get(Path(fname).name.lower())
+            if _alt is not None:
+                fpath = _alt
         on_disk = fpath.exists()
         ext = Path(fname).suffix.lower()
         is_flac = ext == '.flac'

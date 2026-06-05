@@ -18,7 +18,10 @@
     "today": "vandaag",
     "yesterday": "gisteren",
     "daysAgo": "{{count}} dagen geleden",
-    "shallowScan": "Slechts 1 niveau"
+    "shallowScan": "Slechts 1 niveau",
+    "addFolder": "Map toevoegen…",
+    "clearList": "Lijst wissen",
+    "removeFromList": "Uit lijst verwijderen"
   },
   "appShell": {
     "brand": "VerliesvrijBob",

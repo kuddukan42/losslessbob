@@ -93,9 +93,9 @@ function ListboxModal({ onDone }: { onDone: (text: string) => void }): React.JSX
 
 // ── Atoms ──────────────────────────────────────────────────────────────────────
 
-function SourceRow({ src, active, onClick }: { src: LookupSource; active: boolean; onClick: () => void }): React.JSX.Element {
+function SourceRow({ src, active, onClick, onContextMenu }: { src: LookupSource; active: boolean; onClick: () => void; onContextMenu?: (e: React.MouseEvent) => void }): React.JSX.Element {
   return (
-    <button onClick={onClick} style={{
+    <button onClick={onClick} onContextMenu={onContextMenu} style={{
       width: '100%', display: 'flex', alignItems: 'center', gap: 8,
       padding: '6px 10px', marginBottom: 1, borderRadius: 6,
       background: active ? 'var(--lbb-accent-soft)' : 'transparent',
@@ -116,13 +116,13 @@ function SourceRow({ src, active, onClick }: { src: LookupSource; active: boolea
 export function ScreenLookup(): React.JSX.Element {
   const { t } = useTranslation()
   const navigate = useNavigate()
-  const { sources, summary, detail, filter, filterMy, activeSource, addSource, clearSources, setResult, setFolderList, setFilter, setFilterMy, setActiveSource } = useLookupStore()
+  const { sources, summary, detail, filter, filterMy, activeSource, addSource, removeSource, clearSources, setResult, setFolderList, setFilter, setFilterMy, setActiveSource } = useLookupStore()
   const { folders: queueFolders } = useFolderQueueStore()
 
   // Sync shared folder queue into sources so folders added on other tabs appear here too
   useEffect(() => {
     if (!queueFolders.length) return
-    const { sources: cur, addSource: add } = useLookupStore.getState()
+    const { sources: cur, addSource: add, folderList: curFL, setFolderList: setFL } = useLookupStore.getState()
     const existingNames = new Set(cur.filter(s => s.kind === 'folder').map(s => s.name))
     const toAdd = queueFolders.filter(f => !existingNames.has(f.split('/').pop() ?? f))
     if (!toAdd.length) return
@@ -137,14 +137,23 @@ export function ScreenLookup(): React.JSX.Element {
         .then(d => add({ kind: 'folder', name, content: d.content ?? '', active: true }))
         .catch(() => add({ kind: 'folder', name, content: '', active: true }))
     }
+    setFL([...new Set([...curFL, ...toAdd])])
   }, [queueFolders])
 
   const [busy,           setBusy]           = useState(false)
   const [showListbox,    setShowListbox]     = useState(false)
   const [toast,          setToast]          = useState<{ msg: string; tone: ToastTone } | null>(null)
   const [categoryFilter, setCategoryFilter] = useState<Set<string>>(new Set())
+  const [ctxMenu,        setCtxMenu]        = useState<{ x: number; y: number; idx: number } | null>(null)
 
   const showToast = useCallback((msg: string, tone: ToastTone) => setToast({ msg, tone }), [])
+
+  useEffect(() => {
+    if (!ctxMenu) return
+    const close = () => setCtxMenu(null)
+    document.addEventListener('mousedown', close)
+    return () => document.removeEventListener('mousedown', close)
+  }, [ctxMenu])
 
   const runLookup = useCallback(async (text: string, sourceName: string) => {
     if (!text.trim()) return
@@ -167,7 +176,7 @@ export function ScreenLookup(): React.JSX.Element {
           })
           .filter(Boolean)
       )]
-      setFolderList(folders)
+      if (folders.length) setFolderList(folders)
     } catch {
       showToast(t('lookup.toast.lookupFailed'), 'bad')
     } finally {
@@ -218,6 +227,7 @@ export function ScreenLookup(): React.JSX.Element {
   const handleFolders = useCallback(async () => {
     const picked = await window.api.pickFolders()
     if (!picked.length) return
+    const scanned: string[] = []
     for (const folder of picked) {
       const name = folder.split('/').pop() ?? folder
       try {
@@ -228,13 +238,39 @@ export function ScreenLookup(): React.JSX.Element {
         })
         const d = await r.json() as { content: string; files: string[] }
         addSource({ kind: 'folder', name, content: d.content ?? '', active: true })
+        scanned.push(folder)
         if (!d.content?.trim()) showToast(t('lookup.toast.noChecksumsInFolder', { name }), 'info')
       } catch {
         addSource({ kind: 'folder', name, content: '', active: true })
         showToast(t('lookup.toast.folderScanFailed'), 'bad')
       }
     }
-  }, [addSource, showToast])
+    if (scanned.length) {
+      const existing = useLookupStore.getState().folderList
+      setFolderList([...new Set([...existing, ...scanned])])
+    }
+  }, [addSource, showToast, setFolderList])
+
+  const handleSingleFolder = useCallback(async () => {
+    const folder = await window.api.pickDir()
+    if (!folder) return
+    const name = folder.split('/').pop() ?? folder
+    try {
+      const r = await fetch(`${BASE}/api/lookup/scan_folders`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ folders: [folder] }),
+      })
+      const d = await r.json() as { content: string; files: string[] }
+      addSource({ kind: 'folder', name, content: d.content ?? '', active: true })
+      const existing = useLookupStore.getState().folderList
+      setFolderList([...new Set([...existing, folder])])
+      if (!d.content?.trim()) showToast(t('lookup.toast.noChecksumsInFolder', { name }), 'info')
+    } catch {
+      addSource({ kind: 'folder', name, content: '', active: true })
+      showToast(t('lookup.toast.folderScanFailed'), 'bad')
+    }
+  }, [addSource, showToast, setFolderList, t])
 
   const handleLookupAll = useCallback(async () => {
     if (!sources.length) { showToast(t('lookup.toast.addSourcesFirst'), 'info'); return }
@@ -375,6 +411,7 @@ export function ScreenLookup(): React.JSX.Element {
               <Button variant="secondary" size="sm" icon="search"      block disabled={busy} onClick={() => setShowListbox(true)}>{t('lookup.sources.listbox')}</Button>
               <Button variant="secondary" size="sm" icon="attachments" block disabled={busy} onClick={handleFiles}>{t('lookup.sources.files')}</Button>
               <Button variant="secondary" size="sm" icon="folderPlus"  block disabled={busy} onClick={handleFolders}>{t('lookup.sources.folders')}</Button>
+              <Button variant="secondary" size="sm" icon="folder"      block disabled={busy} onClick={handleSingleFolder} style={{ gridColumn: 'span 2' }}>{t('common.addFolder')}</Button>
             </div>
             <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg2)', cursor: 'pointer' }}>
               <input type="checkbox" checked={filterMy} onChange={() => setFilterMy(!filterMy)} />
@@ -387,7 +424,7 @@ export function ScreenLookup(): React.JSX.Element {
                 {t('lookup.sources.noSources')}
               </div>
             ) : sources.map((s, i) => (
-              <SourceRow key={i} src={s} active={i === activeSource} onClick={() => setActiveSource(i)} />
+              <SourceRow key={i} src={s} active={i === activeSource} onClick={() => setActiveSource(i)} onContextMenu={e => { e.preventDefault(); setCtxMenu({ x: e.clientX, y: e.clientY, idx: i }) }} />
             ))}
           </div>
           <div style={{ padding: 12, borderTop: '1px solid var(--lbb-border)', display: 'flex', flexDirection: 'column', gap: 6 }}>
@@ -609,27 +646,67 @@ export function ScreenLookup(): React.JSX.Element {
                       </tr>
                     </thead>
                     <tbody>
-                      {filteredDetail.map((r, i) => {
-                        const state = apiStatusToState(r.status)
-                        const t = STATE_TONE[state]
-                        const lbStr = r.lb_number !== null ? `LB-${String(r.lb_number).padStart(5, '0')}` : '—'
-                        return (
-                          <TR key={i} edge={t.tone === 'mute' ? undefined : t.tone}>
-                            <TD mono dim>{r.checksum.slice(0, 12)}…</TD>
-                            <TD mono style={{ color: 'var(--lbb-fg)' }}>{r.filename}</TD>
-                            <TD align="center" mono style={{ color: 'var(--lbb-fg3)' }}>{r.type}</TD>
-                            <TD mono style={{ color: r.lb_number !== null ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg3)', fontWeight: r.lb_number !== null ? 600 : 400 }}>
-                              {lbStr}
-                            </TD>
-                            <TD align="center">
-                              {r.xref > 0
-                                ? <Icon name="check" size={11} style={{ color: 'var(--lbb-info-fg)' }} />
-                                : <span style={{ color: 'var(--lbb-fg3)' }}>—</span>}
-                            </TD>
-                            <TD><Pill tone={t.tone} soft>{t.label}</Pill></TD>
-                          </TR>
-                        )
-                      })}
+                      {(() => {
+                        const groupMap = new Map<string, { lbNumber: number | null; rows: LookupDetail[] }>()
+                        for (const row of filteredDetail) {
+                          const key = row.lb_number === null ? '__null__' : String(row.lb_number)
+                          if (!groupMap.has(key)) groupMap.set(key, { lbNumber: row.lb_number, rows: [] })
+                          groupMap.get(key)!.rows.push(row)
+                        }
+                        const groups = Array.from(groupMap.values())
+                        const multiGroup = groups.length > 1
+                        return groups.map((group, gi) => {
+                          const summRow = summaryRows.find(r => r.lb_number === group.lbNumber)
+                          const groupLbStr = group.lbNumber !== null ? `LB-${String(group.lbNumber).padStart(5, '0')}` : '—'
+                          const groupState = summRow ? apiStatusToState(summRow.status) : 'notfound'
+                          const groupTone = STATE_TONE[groupState]
+                          return (
+                            <React.Fragment key={group.lbNumber ?? '__null__'}>
+                              {multiGroup && (
+                                <tr>
+                                  <td colSpan={7} style={{
+                                    padding: '10px 8px 6px',
+                                    background: 'var(--lbb-surface2)',
+                                    borderTop: gi > 0 ? '2px solid var(--lbb-border)' : undefined,
+                                  }}>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                                      <span style={{ fontFamily: 'var(--lbb-mono)', fontWeight: 700, fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-accent-mid)' }}>
+                                        {groupLbStr}
+                                      </span>
+                                      {summRow && categoryPill(summRow.lb_category)}
+                                      <Pill tone={groupTone.tone} soft dot={groupState !== 'matched'}>{groupTone.label}</Pill>
+                                      <span style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)' }}>
+                                        {group.rows.length} {group.rows.length === 1 ? 'row' : 'rows'}
+                                      </span>
+                                    </div>
+                                  </td>
+                                </tr>
+                              )}
+                              {group.rows.map((r, i) => {
+                                const rowState = apiStatusToState(r.status)
+                                const rowTone = STATE_TONE[rowState]
+                                const rowLbStr = r.lb_number !== null ? `LB-${String(r.lb_number).padStart(5, '0')}` : '—'
+                                return (
+                                  <TR key={`${gi}-${i}`} edge={rowTone.tone === 'mute' ? undefined : rowTone.tone}>
+                                    <TD mono dim>{r.checksum.slice(0, 12)}…</TD>
+                                    <TD mono style={{ color: 'var(--lbb-fg)' }}>{r.filename}</TD>
+                                    <TD align="center" mono style={{ color: 'var(--lbb-fg3)' }}>{r.type}</TD>
+                                    <TD mono style={{ color: r.lb_number !== null ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg3)', fontWeight: r.lb_number !== null ? 600 : 400 }}>
+                                      {rowLbStr}
+                                    </TD>
+                                    <TD align="center">
+                                      {r.xref > 0
+                                        ? <Icon name="check" size={11} style={{ color: 'var(--lbb-info-fg)' }} />
+                                        : <span style={{ color: 'var(--lbb-fg3)' }}>—</span>}
+                                    </TD>
+                                    <TD><Pill tone={rowTone.tone} soft>{rowTone.label}</Pill></TD>
+                                  </TR>
+                                )
+                              })}
+                            </React.Fragment>
+                          )
+                        })
+                      })()}
                     </tbody>
                   </TableShell>
 
@@ -680,6 +757,28 @@ export function ScreenLookup(): React.JSX.Element {
           }}
           ref={(el: HTMLDivElement | null) => { if (el) setTimeout(() => setToast(null), 3500) }}
         >{toast.msg}</div>
+      )}
+
+      {ctxMenu && (
+        <div
+          onMouseDown={e => e.stopPropagation()}
+          style={{
+            position: 'fixed', top: ctxMenu.y, left: ctxMenu.x, zIndex: 1000,
+            background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)',
+            borderRadius: 8, padding: 4, minWidth: 160,
+            boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
+          }}
+        >
+          <button
+            onClick={() => { removeSource(ctxMenu.idx); setCtxMenu(null) }}
+            style={{
+              display: 'block', width: '100%', textAlign: 'left',
+              padding: '6px 12px', fontSize: 'var(--lbb-fs-12-5)', cursor: 'pointer',
+              border: 'none', background: 'transparent',
+              color: 'var(--lbb-bad, #e05252)', borderRadius: 5, fontFamily: 'inherit',
+            }}
+          >{t('common.removeFromList')}</button>
+        </div>
       )}
     </div>
   )

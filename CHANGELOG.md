@@ -1,3 +1,43 @@
+[2026-06-05] — feat(gui): clear-list button + right-click remove on all 5 pipeline screens
+Added: ScreenPipeline.tsx: right-click queue item → "Remove from list" context menu; "Clear list" replaces clearQueue label
+Added: ScreenVerify.tsx: "Clear list" trash button in rail; right-click folder row → remove
+Added: ScreenLBDIR.tsx: "Clear list" trash button in rail; right-click folder row → remove
+Added: ScreenLookup.tsx: right-click source row → remove single source; existing "Clear sources" button unchanged
+Added: ScreenRename.tsx: "Clear list" button in header clears folderList; right-click table row → remove that folder
+Added: lookupStore.ts: removeSource(idx) action with active-source index adjustment
+Added: locales/en|de|fr|nl|it.json: common.clearList + common.removeFromList keys
+
+[2026-06-04] — feat(gui): add single-folder button to all 5 pipeline screens
+Added: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: "Add folder…" button (pickDir → add directly, no tree scan) in queue rail
+Added: gui_next/src/renderer/src/screens/ScreenVerify.tsx: "Add folder…" button in rail bottom section
+Added: gui_next/src/renderer/src/screens/ScreenLBDIR.tsx: "Add folder…" button in rail bottom section
+Added: gui_next/src/renderer/src/screens/ScreenLookup.tsx: "Add folder…" button (full-width, spans 2 cols) in sources grid; scans folder via /api/lookup/scan_folders
+Added: gui_next/src/renderer/src/screens/ScreenRename.tsx: "Add folder…" button in header; adds path to lookupStore.folderList so rename proposals are built for that folder
+Added: locales/en|de|fr|nl|it.json: common.addFolder key
+
+[2026-06-04] — fix(gui): Rename screen folder list never populated from folder scans
+Fixed: gui_next/src/renderer/src/screens/ScreenLookup.tsx: handleFolders now pushes scanned folder paths into folderList via setFolderList; queue-sync effect does the same for queue-pushed folders; runLookup no longer overwrites folderList with an empty array (source_file is never set by /api/lookup so the derived list was always [])
+
+[2026-06-04] — fix(gui): LBDIR renames table column misalignment
+Fixed: gui_next/src/renderer/src/screens/ScreenLBDIR.tsx: colgroup had 6 <col> entries but TR auto-injects a 3px edge bar making 7 columns — disk_rel path was squeezed into the 24px arrow column; added 7th <col style={{width:32}}/> for the checkbox and matching <TH> in header
+
+[2026-06-04] — fix(backend): combined-set lookup INCOMPLETE and lbdir bare-filename matching failures
+Fixed: backend/db.py: _norm_track_base() strips directory prefix and normalizes & → _ before grouping DB checksums by track; BUG-130's fix was ineffective for SHN sets where the DB stored Disc1\dead&dylan.shn (md5) and dead_dylan.wav (shntool) as separate base keys — both now map to the same track, so LB-1332 correctly shows MATCHED instead of INCOMPLETE
+Fixed: backend/checksum_utils.py: verify_folder_lbdir _norm now uses basename only; adds audio-only subdirectory fallback so bare-filename lbdirs (e.g. LBF-01334 with dead&dylan2003.8.06.d3t01.shn) resolve against Disc3/ entries in a combined multi-LB folder without ambiguously matching non-audio files like checksum.md5
+
+[2026-06-04] — fix(lbdir): phantom "Missing" rows for SHN sets stored in disc subdirectories
+Fixed: backend/checksum_utils.py: parse_lbdir_file now extracts the subdirectory context from shntool section headers (e.g. "=== shntool md5/hash for: archive\Disc1") and prepends it to every file entry in that section; without this, shntool entries for multi-disc SHN sets had no directory prefix and failed the _norm remap against the md5_map's Disc1/dead&dylan2003.* keys, producing 26 phantom "Missing" rows
+
+[2026-06-04] — feat(search): right-click context menu with "Go to LB webpage" option
+Added: gui_next/src/renderer/src/screens/ScreenSearch.tsx: right-clicking any row opens the row menu at the cursor position; "Go to LB webpage" opens the LosslessBob detail URL in the browser
+
+[2026-06-04] — fix(collection): View LB Entry opens webpage instead of navigating to lookup screen
+Fixed: gui_next/src/renderer/src/screens/ScreenCollection.tsx: handleCtxViewLookup was navigating to /lookup instead of opening the LB entry URL; also removed incorrect diskPath guard that disabled the menu item for unowned entries
+
+[2026-06-04] — fix(lookup): group checksum detail by LB; filter non-audio entries from parser
+Changed: gui_next/src/renderer/src/screens/ScreenLookup.tsx: checksum detail table now renders a group header row per LB when multiple LBs are present
+Fixed: backend/db.py: parse_checksum_text — MD5/SHA1 entries for non-audio files (.txt, .rtf, .html, etc.) are now skipped; previously these appeared as spurious "Not found" rows in lookup results
+
 [2026-06-04] — chore(tools): move tapematch runs/ to data/tapematch/runs/
 Changed: tools/tapematch/tapematch_session.py: RUNS_DIR now points to PROJECT_ROOT/data/tapematch/runs — user data kept out of repo tree
 Changed: tools/tapematch/gen_analysis.py: RUNS_DIR updated to match new location
