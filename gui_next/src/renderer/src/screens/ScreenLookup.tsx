@@ -134,8 +134,14 @@ export function ScreenLookup(): React.JSX.Element {
         body: JSON.stringify({ folders: [folder] }),
       })
         .then(r => r.json() as Promise<{ content: string }>)
-        .then(d => add({ kind: 'folder', name, content: d.content ?? '', active: true }))
-        .catch(() => add({ kind: 'folder', name, content: '', active: true }))
+        .then(d => {
+          if (useLookupStore.getState().sources.some(s => s.path === folder)) return
+          add({ kind: 'folder', name, content: d.content ?? '', active: true, path: folder })
+        })
+        .catch(() => {
+          if (useLookupStore.getState().sources.some(s => s.path === folder)) return
+          add({ kind: 'folder', name, content: '', active: true, path: folder })
+        })
     }
     setFL([...new Set([...curFL, ...toAdd])])
   }, [queueFolders])
@@ -155,7 +161,7 @@ export function ScreenLookup(): React.JSX.Element {
     return () => document.removeEventListener('mousedown', close)
   }, [ctxMenu])
 
-  const runLookup = useCallback(async (text: string, sourceName: string) => {
+  const runLookup = useCallback(async (text: string, sourceName: string, checksumToFolder?: Map<string, string>) => {
     if (!text.trim()) return
     setBusy(true)
     try {
@@ -165,9 +171,16 @@ export function ScreenLookup(): React.JSX.Element {
         body: JSON.stringify({ text }),
       })
       const d = await r.json() as { summary: { lb_summary: LookupSummaryRow[]; matched: number; given: number; lb_numbers_found: number[] }; detail: LookupDetail[] }
-      setResult(d.summary, d.detail)
+      // Tag each detail row with source_file (full path) so ScreenRename can map checksums → folders
+      const taggedDetail = (checksumToFolder && checksumToFolder.size > 0)
+        ? (d.detail ?? []).map(row => {
+            const folderPath = checksumToFolder.get(row.checksum.toLowerCase())
+            return folderPath ? { ...row, source_file: `${folderPath}/${row.filename}` } : row
+          })
+        : (d.detail ?? [])
+      setResult(d.summary, taggedDetail)
       const folders = [...new Set(
-        (d.detail ?? [])
+        taggedDetail
           .filter(row => row.source_file)
           .map(row => {
             const parts = (row.source_file ?? '').split('/')
@@ -229,6 +242,7 @@ export function ScreenLookup(): React.JSX.Element {
     if (!picked.length) return
     const scanned: string[] = []
     for (const folder of picked) {
+      if (useLookupStore.getState().sources.some(s => s.path === folder)) continue
       const name = folder.split('/').pop() ?? folder
       try {
         const r = await fetch(`${BASE}/api/lookup/scan_folders`, {
@@ -237,11 +251,11 @@ export function ScreenLookup(): React.JSX.Element {
           body: JSON.stringify({ folders: [folder] }),
         })
         const d = await r.json() as { content: string; files: string[] }
-        addSource({ kind: 'folder', name, content: d.content ?? '', active: true })
+        addSource({ kind: 'folder', name, content: d.content ?? '', active: true, path: folder })
         scanned.push(folder)
         if (!d.content?.trim()) showToast(t('lookup.toast.noChecksumsInFolder', { name }), 'info')
       } catch {
-        addSource({ kind: 'folder', name, content: '', active: true })
+        addSource({ kind: 'folder', name, content: '', active: true, path: folder })
         showToast(t('lookup.toast.folderScanFailed'), 'bad')
       }
     }
@@ -254,6 +268,7 @@ export function ScreenLookup(): React.JSX.Element {
   const handleSingleFolder = useCallback(async () => {
     const folder = await window.api.pickDir()
     if (!folder) return
+    if (useLookupStore.getState().sources.some(s => s.path === folder)) return
     const name = folder.split('/').pop() ?? folder
     try {
       const r = await fetch(`${BASE}/api/lookup/scan_folders`, {
@@ -262,24 +277,35 @@ export function ScreenLookup(): React.JSX.Element {
         body: JSON.stringify({ folders: [folder] }),
       })
       const d = await r.json() as { content: string; files: string[] }
-      addSource({ kind: 'folder', name, content: d.content ?? '', active: true })
+      addSource({ kind: 'folder', name, content: d.content ?? '', active: true, path: folder })
       const existing = useLookupStore.getState().folderList
       setFolderList([...new Set([...existing, folder])])
       if (!d.content?.trim()) showToast(t('lookup.toast.noChecksumsInFolder', { name }), 'info')
     } catch {
-      addSource({ kind: 'folder', name, content: '', active: true })
+      addSource({ kind: 'folder', name, content: '', active: true, path: folder })
       showToast(t('lookup.toast.folderScanFailed'), 'bad')
     }
   }, [addSource, showToast, setFolderList, t])
 
   const handleLookupAll = useCallback(async () => {
     if (!sources.length) { showToast(t('lookup.toast.addSourcesFirst'), 'info'); return }
-    const combined = sources.filter(s => s.content).map(s => s.content).join('\n')
+    const activeSources = sources.filter(s => s.content)
+    const combined = activeSources.map(s => s.content).join('\n')
     if (!combined.trim()) {
       showToast(t('lookup.toast.noTextContent'), 'info')
       return
     }
-    await runLookup(combined, 'all sources')
+    // Build checksum → folder path map so Rename can link detail rows to real folder paths
+    const checksumToFolder = new Map<string, string>()
+    for (const src of activeSources) {
+      if (!src.path) continue
+      const hexMatches = src.content.match(/[0-9a-f]{32,64}/gi) ?? []
+      for (const chk of hexMatches) {
+        const lc = chk.toLowerCase()
+        if (!checksumToFolder.has(lc)) checksumToFolder.set(lc, src.path)
+      }
+    }
+    await runLookup(combined, 'all sources', checksumToFolder)
   }, [sources, runLookup, showToast])
 
   const handleGenerate = useCallback(async () => {

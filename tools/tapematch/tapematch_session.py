@@ -199,7 +199,7 @@ def _lb_tag(lb_num: int) -> str:
 
 def _has_audio(folder: Path) -> bool:
     try:
-        return any(f.suffix.lower() in AUDIO_EXTS for f in folder.iterdir() if f.is_file())
+        return any(f.suffix.lower() in AUDIO_EXTS for f in folder.rglob("*") if f.is_file())
     except PermissionError:
         return False
 
@@ -436,12 +436,13 @@ def _clean_stale_tmp_dirs() -> None:
             print(f"  [cleanup] removed stale tmp dir: {d.name}")
 
 
-def run_tapematch(json_out: Path, set_offset: str | None = None) -> tuple[str, float]:
+def run_tapematch(json_out: Path, root_dir: Path = EXAMPLES_DIR,
+                  set_offset: str | None = None) -> tuple[str, float]:
     """Run tapematch CLI. Returns (stdout_text, duration_sec)."""
     _clean_stale_tmp_dirs()
     cmd = [
         str(VENV_PYTHON), "-m", "tapematch.cli",
-        str(EXAMPLES_DIR),
+        str(root_dir),
         "--config", str(SESSION_DIR / "config.yaml"),
         "--json-out", str(json_out),
     ]
@@ -487,11 +488,12 @@ def insert_run(conn: sqlite3.Connection, run_id: str, date_iso: str, location: s
 
 
 def insert_sources(conn: sqlite3.Connection, run_id: str, date_iso: str,
-                   results: dict, found_folders: dict[int, Path], run_at: str) -> None:
+                   results: dict, found_folders: dict[int, Path], run_at: str,
+                   root_dir: Path = EXAMPLES_DIR) -> None:
     for folder_name, s in results["sources"].items():
         lb_num = _lb_num_from_folder(folder_name)
-        src_path = found_folders.get(lb_num, EXAMPLES_DIR / folder_name)
-        dom_ext = _dominant_ext(EXAMPLES_DIR / folder_name)
+        src_path = found_folders.get(lb_num, root_dir / folder_name)
+        dom_ext = _dominant_ext(root_dir / folder_name)
         hdr = extract_lb_header(lb_num) if lb_num else {}
         commentary = extract_lb_commentary(lb_num) if lb_num else ""
         conn.execute(
@@ -513,7 +515,7 @@ def insert_sources(conn: sqlite3.Connection, run_id: str, date_iso: str,
 
 
 def insert_pairs(conn: sqlite3.Connection, run_id: str, date_iso: str,
-                 results: dict, run_at: str) -> None:
+                 results: dict, run_at: str, root_dir: Path = EXAMPLES_DIR) -> None:
     names  = results["correlation_matrix"]["names"]
     matrix = results["correlation_matrix"]["values"]
     srcs   = results["sources"]
@@ -555,7 +557,7 @@ def insert_pairs(conn: sqlite3.Connection, run_id: str, date_iso: str,
              sa["dc_asymmetry"], sb["dc_asymmetry"],
              sa["perf_dur_sec"], sb["perf_dur_sec"],
              sa["track_count"], sb["track_count"],
-             _dominant_ext(EXAMPLES_DIR / na), _dominant_ext(EXAMPLES_DIR / nb),
+             _dominant_ext(root_dir / na), _dominant_ext(root_dir / nb),
              lb_says_same, lb_rel, None, None, run_at),
         )
 
@@ -652,13 +654,16 @@ def _lb_source_snippet(lb_num: int, max_len: int = 90) -> str:
 
 def build_report(date_iso: str, location: str, lb_numbers: list[int],
                  found_folders: dict[int, Path], tapematch_output: str,
-                 results: dict | None = None) -> str:
+                 results: dict | None = None,
+                 extra_folders: list[Path] | None = None) -> str:
+    extra_folders = extra_folders or []
     lines: list[str] = [
         f"# tapematch session — {date_iso} — {location}",
         f"*Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}*",
         "",
         "## Coverage",
-        f"DB entries: **{len(lb_numbers)}** | Found on disk: **{len(found_folders)}**",
+        f"DB entries: **{len(lb_numbers)}** | Found on disk: **{len(found_folders)}**"
+        + (f" | Manual (no LB): **{len(extra_folders)}**" if extra_folders else ""),
         "",
         "| LB | On disk | Rating | Timing | Source | Folder |",
         "|----|---------|--------|--------|--------|--------|",
@@ -671,6 +676,8 @@ def build_report(date_iso: str, location: str, lb_numbers: list[int],
         timing  = hdr.get("timing", "")
         snippet = _lb_source_snippet(n) if n in found_folders else ""
         lines.append(f"| {_lb_tag(n)} | {on_disk} | {rating} | {timing} | {snippet} | {folder} |")
+    for ef in extra_folders:
+        lines.append(f"| *(no LB)* | ✓ | | | | {ef.name} |")
 
     lines += ["", "## tapematch output", "```", tapematch_output.strip(), "```", "",
               "## LB page commentary"]
@@ -683,6 +690,8 @@ def build_report(date_iso: str, location: str, lb_numbers: list[int],
         timing = hdr.get("timing", "")
         meta   = (f" | rating: {rating}" if rating else "") + (f" | timing: {timing}" if timing else "")
         lines += ["", f"### {_lb_tag(n)}{meta}", extract_lb_commentary(n)]
+    for ef in extra_folders:
+        lines += ["", f"### {ef.name}", "*(no LB page — manual source)*"]
 
     report = "\n".join(lines)
     if results:
@@ -942,6 +951,71 @@ def year_run(year: str, min_entries: int = 2, dry_run: bool = False) -> int:
     return 0
 
 
+def run_manual(root_dir: Path, date_iso: str | None = None, location: str = "",
+               set_offset: str | None = None) -> int:
+    """Run a full tapematch session on an arbitrary folder without DB lookup or copying."""
+    run_id = make_run_id()
+    run_at = datetime.now().isoformat()
+    if date_iso is None:
+        date_iso = datetime.now().strftime("%Y-%m-%d")
+    label = location or root_dir.name
+
+    print(f"=== tapematch manual session: {root_dir}  [{run_id}] ===")
+
+    if not root_dir.is_dir():
+        print(f"Error: {root_dir} is not a directory", file=sys.stderr)
+        return 1
+
+    subfolders = sorted(d for d in root_dir.iterdir() if d.is_dir() and _has_audio(d))
+    if len(subfolders) < 2:
+        print(f"Need ≥2 subfolders with audio in {root_dir}", file=sys.stderr)
+        return 1
+
+    print(f"  Sources ({len(subfolders)}):")
+    for sf in subfolders:
+        print(f"    {sf.name}")
+
+    # Split subfolders into LB-numbered and anonymous
+    found_folders: dict[int, Path] = {}
+    extra_folders: list[Path] = []
+    for sf in subfolders:
+        lb_num = _lb_num_from_folder(sf.name)
+        if lb_num is not None:
+            found_folders[lb_num] = sf
+        else:
+            extra_folders.append(sf)
+    lb_numbers = sorted(found_folders.keys())
+
+    # Run tapematch
+    json_path = SESSION_DIR / "last_results.json"
+    json_path.unlink(missing_ok=True)
+    print("\n[5] Running tapematch …")
+    log_text, duration = run_tapematch(json_path, root_dir=root_dir, set_offset=set_offset)
+    LOG_PATH.write_text(log_text)
+    print(log_text)
+
+    # Archive
+    print("\n[6] Archiving run …")
+    results = json.loads(json_path.read_text()) if json_path.exists() else None
+    report_text = build_report(date_iso, label, lb_numbers, found_folders, log_text, results,
+                               extra_folders=extra_folders)
+    arch = archive_run(run_id, date_iso, log_text, report_text,
+                       json_path if json_path.exists() else None)
+    print(f"  Archive → {arch}")
+
+    # Log to observations.db
+    if results is not None:
+        print("\n[7] Logging to observations.db …")
+        _log_to_obs_db(run_id, run_at, date_iso, label, lb_numbers, found_folders,
+                       results, duration, arch, root_dir=root_dir)
+    else:
+        print("\n[7] No results.json — skipping DB logging")
+
+    REPORT_PATH.write_text(report_text, encoding="utf-8")
+    print(f"\nReport → {REPORT_PATH}")
+    return 0
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description="Run a full tapematch analysis session for a concert date")
     ap.add_argument("date", nargs="?", help="Concert date YYYY-MM-DD  (e.g. 1995-07-08)")
@@ -963,6 +1037,10 @@ def main(argv=None) -> int:
                     help="clip all sources to start at this offset before analysis "
                          "(HH:MM:SS or decimal seconds); use for co-headline shows where "
                          "the target set starts mid-recording (e.g. '1:30:00')")
+    ap.add_argument("--manual-dir", default=None, metavar="DIR",
+                    help="Run on this folder directly, skipping DB lookup and copy steps")
+    ap.add_argument("--label", default="", metavar="LABEL",
+                    help="Location/label for --manual-dir run (used in report; defaults to folder name)")
     args = ap.parse_args(argv)
 
     if args.suggest:
@@ -972,8 +1050,14 @@ def main(argv=None) -> int:
     if args.year:
         return year_run(args.year, args.min_entries, dry_run=args.dry_run)
 
+    if args.manual_dir:
+        return run_manual(Path(args.manual_dir),
+                          date_iso=args.date,
+                          location=args.label,
+                          set_offset=args.set_offset)
+
     if not args.date:
-        ap.error("date is required unless --suggest or --year is used")
+        ap.error("date is required unless --suggest, --year, or --manual-dir is used")
 
     return run_date(args.date,
                     dry_run=args.dry_run,
@@ -984,9 +1068,8 @@ def main(argv=None) -> int:
 
 def _log_to_obs_db(run_id: str, run_at: str, date_iso: str, location: str,
                    lb_numbers: list[int], found_folders: dict[int, Path],
-                   results: dict, duration: float, arch: Path) -> None:
-    import yaml
-    cfg_path = SESSION_DIR / "config.yaml"
+                   results: dict, duration: float, arch: Path,
+                   root_dir: Path = EXAMPLES_DIR) -> None:
     cfg_json = json.dumps(results.get("config", {}))
 
     conn = open_obs_db()
@@ -1002,8 +1085,8 @@ def _log_to_obs_db(run_id: str, run_at: str, date_iso: str, location: str,
             run_at=run_at,
             duration_sec=duration,
         )
-        insert_sources(conn, run_id, date_iso, results, found_folders, run_at)
-        insert_pairs(conn, run_id, date_iso, results, run_at)
+        insert_sources(conn, run_id, date_iso, results, found_folders, run_at, root_dir=root_dir)
+        insert_pairs(conn, run_id, date_iso, results, run_at, root_dir=root_dir)
         conn.commit()
         n_pairs = len(results["correlation_matrix"]["names"])
         n_pairs = n_pairs * (n_pairs - 1) // 2

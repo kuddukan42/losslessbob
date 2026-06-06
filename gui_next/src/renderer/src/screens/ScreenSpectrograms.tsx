@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { Icon } from '../components/Icon'
 import { Button, Chip, IconButton, Input, Pill } from '../components'
+import { FolderQueueRail } from '../components/FolderQueueRail'
 import { useSpectrogramStore, SpectroTrack } from '../lib/spectrogramStore'
 import { useFolderQueueStore } from '../lib/folderQueueStore'
 
@@ -72,6 +73,11 @@ export function ScreenSpectrograms(): React.JSX.Element {
     }
     return () => stopPoll()
   }, [stopPoll, takePending])
+
+  // Reset activeFolder when it's been removed from the shared queue (e.g. cleared on another screen)
+  useEffect(() => {
+    if (activeFolder && !folders.includes(activeFolder)) setActiveFolder(null)
+  }, [folders, activeFolder, setActiveFolder])
 
   const startPoll = useCallback(() => {
     stopPoll()
@@ -194,55 +200,14 @@ export function ScreenSpectrograms(): React.JSX.Element {
       <div style={{ flex: 1, display: 'flex', minHeight: 0 }}>
 
         {/* Folder rail */}
-        <aside style={{
-          width: 300, flex: '0 0 300px',
-          background: 'var(--lbb-surface)', borderRight: '1px solid var(--lbb-border)',
-          display: 'flex', flexDirection: 'column', minHeight: 0,
-        }}>
-          <div style={{ padding: '12px 12px 8px', borderBottom: '1px solid var(--lbb-border)' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 8 }}>
-              <Icon name="folder" size={13} style={{ color: 'var(--lbb-fg3)' }} />
-              <span style={{ fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.1, textTransform: 'uppercase' }}>Folders</span>
-              <span style={{ marginLeft: 'auto', fontSize: 'var(--lbb-fs-11)', fontWeight: 600, color: 'var(--lbb-fg2)' }}>{folders.length}</span>
-            </div>
-            <Input
-              icon="search" placeholder="Filter folders…" size="sm" style={{ width: '100%' }}
-              value={filter} onChange={e => setFilter(e.target.value)}
-            />
-          </div>
-          <div style={{ flex: 1, overflowY: 'auto', padding: '6px 6px' }}>
-            {filteredFolders.length === 0 ? (
-              <div style={{ padding: '24px 12px', textAlign: 'center', color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-11)' }}>
-                {folders.length === 0 ? 'No folders added' : 'No matches'}
-              </div>
-            ) : filteredFolders.map(f => {
-              const tracks = inventory[f] ?? []
-              const done   = tracks.filter(t => t.has_png).length
-              const name   = f.split('/').pop() ?? f
-              const pct    = tracks.length ? Math.round(done / tracks.length * 100) : 0
-              return (
-                <button key={f} onClick={() => { setActiveFolder(f); setActiveTrack(tracks[0] ?? null) }} style={{
-                  width: '100%', display: 'flex', alignItems: 'center', gap: 8,
-                  padding: '7px 10px', marginBottom: 1, borderRadius: 6,
-                  background: f === activeFolder ? 'var(--lbb-accent-soft)' : 'transparent',
-                  color: f === activeFolder ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg2)',
-                  border: '1px solid ' + (f === activeFolder ? 'var(--lbb-accent-line)' : 'transparent'),
-                  textAlign: 'left', fontFamily: 'inherit', cursor: 'pointer',
-                }}>
-                  <Icon name="folder" size={11} style={{ color: 'var(--lbb-fg3)' }} />
-                  <span style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
-                    <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{name}</span>
-                    <span style={{ fontSize: 'var(--lbb-fs-10)', color: 'var(--lbb-fg3)', fontVariantNumeric: 'tabular-nums' }}>
-                      {tracks.length ? `${done}/${tracks.length} · ${pct}%` : 'not scanned'}
-                    </span>
-                  </span>
-                </button>
-              )
-            })}
-          </div>
-
-          {/* Batch progress */}
-          <div style={{ borderTop: '1px solid var(--lbb-border)', padding: '12px' }}>
+        <FolderQueueRail
+          label="Folders"
+          filter={filter}
+          onFilterChange={setFilter}
+          filterPlaceholder="Filter folders…"
+          width={300}
+          onClear={() => { setActiveFolder(null); setActiveTrack(null) }}
+          footer={<>
             <div style={{ fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase', marginBottom: 8 }}>
               {generating && genStatus ? `Batch · ${genStatus.done} / ${genStatus.total}` : `Batch · ${totalDone} / ${totalTracks} tracks`}
             </div>
@@ -268,22 +233,49 @@ export function ScreenSpectrograms(): React.JSX.Element {
                 )}
               </>
             )}
-            <div style={{ marginTop: 10, display: 'flex', flexDirection: 'column', gap: 6 }}>
-              <Button variant="primary"   size="sm" icon="play" block disabled={generating || !folders.length}
+            <div style={{ marginTop: totalTracks > 0 ? 10 : 0, display: 'flex', flexDirection: 'column', gap: 6 }}>
+              <Button variant="primary"   size="sm" icon="play"    block disabled={generating || !folders.length}
                 onClick={() => handleGenerate()}>
                 {generating ? 'Generating…' : `Generate missing (${totalMissing})`}
               </Button>
-              <Button variant="secondary" size="sm" icon="pause" block disabled={!generating}
-                onClick={handleStop}>
+              <Button variant="secondary" size="sm" icon="pause"   block disabled={!generating} onClick={handleStop}>
                 Stop after current
               </Button>
-              <Button variant="ghost"     size="sm" icon="refresh" block disabled={!folders.length}
-                onClick={handleRescan}>
+              <Button variant="ghost"     size="sm" icon="refresh" block disabled={!folders.length} onClick={handleRescan}>
                 Re-scan inventory
               </Button>
             </div>
-          </div>
-        </aside>
+          </>}
+        >
+          {filteredFolders.length === 0 ? (
+            <div style={{ padding: '24px 12px', textAlign: 'center', color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-11)' }}>
+              {folders.length === 0 ? 'No folders added' : 'No matches'}
+            </div>
+          ) : filteredFolders.map(f => {
+            const tracks = inventory[f] ?? []
+            const done   = tracks.filter(t => t.has_png).length
+            const name   = f.split('/').pop() ?? f
+            const pct    = tracks.length ? Math.round(done / tracks.length * 100) : 0
+            return (
+              <button key={f} onClick={() => { setActiveFolder(f); setActiveTrack(tracks[0] ?? null) }} style={{
+                width: '100%', display: 'flex', alignItems: 'center', gap: 8,
+                padding: '7px 10px', marginBottom: 1, borderRadius: 6,
+                background: f === activeFolder ? 'var(--lbb-accent-soft)' : 'transparent',
+                color: f === activeFolder ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg2)',
+                border: '1px solid ' + (f === activeFolder ? 'var(--lbb-accent-line)' : 'transparent'),
+                textAlign: 'left', fontFamily: 'inherit', cursor: 'pointer',
+              }}>
+                <Icon name="folder" size={11} style={{ color: 'var(--lbb-fg3)' }} />
+                <span style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
+                  <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{name}</span>
+                  <span style={{ fontSize: 'var(--lbb-fs-10)', color: 'var(--lbb-fg3)', fontVariantNumeric: 'tabular-nums' }}>
+                    {tracks.length ? `${done}/${tracks.length} · ${pct}%` : 'not scanned'}
+                  </span>
+                </span>
+              </button>
+            )
+          })}
+        </FolderQueueRail>
 
         {/* Track + viewer */}
         {!activeFolder ? (

@@ -1,4 +1,58 @@
 
+BUG-145: batch_verify --skip-done silently preserves api_error/retrieve_error from transient backend failures
+Status: Fixed
+File(s): tools/batch_verify.py:1007-1009
+Reported: 2026-06-05
+Fixed: 2026-06-05
+Root cause: --skip-done skips any folder with any stored result, including api_error and retrieve_error. A transient backend crash (run 15, 2026-06-04 18:52–19:00) wrote ~9,300 api_error/retrieve_error rows with notes=''. Subsequent runs with --skip-done preserved these stale results indefinitely; only way to fix was --reprocess api_error,retrieve_error.
+Fix: When --skip-done is active, api_error and retrieve_error are automatically added to reprocess_set so they are always reprocessed regardless of prior result.
+
+BUG-144: tapematch Pass 1 OOM — stereo ingest + mono copy peaks at ~1.2 GB per source
+Status: Fixed
+File(s): tools/tapematch/tapematch/cli.py:57-98
+Reported: 2026-06-05
+Fixed: 2026-06-05
+Root cause: concat_source loaded stereo (shape N×2, ~776 MB for a 2h show at 16 kHz).
+  performance_envelope then called to_mono() which allocated a second mono copy (~388 MB).
+  Both lived simultaneously, peaking at ~1.16 GB per source. For 1990-06-02 with 6 sources,
+  the tapematch CLI subprocess was OOM-killed after completing the first source (LB-12209)
+  and starting the second (LB-12888). Orphaned tmp dir left at /mnt/DATA0/tmp/tapematch_f9d_8xw7.
+Fix: Changed ingest to mono=True always. to_mono() now returns a zero-cost view. Trimmed
+  slice written directly to memmap via ravel() view — no third heap array. Peak per source
+  drops from ~1.2 GB to ~500 MB.
+
+BUG-143: Verify — filenames with curly/smart apostrophes don't match disk files
+Status: Fixed
+File(s): backend/checksum_utils.py:_parse_checksum_file, verify_folder, parse_lbdir_file, verify_folder_lbdir
+Reported: 2026-06-05
+Fixed: 2026-06-05
+Root cause: Checksum files (e.g. created by EAC) can use typographic RIGHT SINGLE QUOTATION MARK (U+2019) in filenames like "04 Talkin' New York.flac", while the actual files on disk use a straight apostrophe (U+0027). The string comparison used as dict keys failed silently, causing both a "disk-only extra" row and a "checksum-only missing" row.
+Fix: Added _norm_fname() using str.maketrans to normalise U+2018/2019/201B/02BC/02B9 → U+0027. Applied to disk_audio_map keys in verify_folder and to all filenames parsed in _parse_checksum_file. Extended to parse_lbdir_file (md5/ffp/shntool/shntool_len sections) and verify_folder_lbdir (normalised _disk_audio_map + _subdir_index replace bare folder/fname lookup).
+
+BUG-142: Pipeline — apply rename renames folder but does not write rename_log.txt
+Status: Fixed
+File(s): backend/app.py:4920
+Reported: 2026-06-05
+Fixed: 2026-06-05
+Root cause: The /api/folder/rename route performed folder.rename() without calling write_rename_log(), so no rename_log.txt was created inside the folder and no rename_history DB row was inserted.
+Fix: Import write_rename_log in folder_rename() and call it with source='pipeline' before the os-level rename, matching the pattern used by /api/rename/apply.
+
+BUG-141: Verify — shntool-format .md5 entries for FLAC files show as "Missing" duplicates
+Status: Fixed
+File(s): backend/checksum_utils.py:435-444
+Reported: 2026-06-05
+Fixed: 2026-06-05
+Root cause: _SHNTOOL_LINE_RE only matches .wav filenames, so "hash  [shntool]  file.flac" lines from externally-run shntool fell through to _MD5_RE, which captured "[shntool]  file.flac" as the literal filename. These bogus keys didn't match disk files → "Missing", doubling the TOTAL count.
+Fix: In _parse_checksum_file, after _MD5_RE matches, detect a [shntool] prefix in the captured filename, strip it, and store the entry as 'shntool' type instead of 'md5'.
+
+BUG-140: Lookup — adding a folder once shows it twice in sources list
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenLookup.tsx:129-145, 247, 265
+Reported: 2026-06-05
+Fixed: 2026-06-05
+Root cause: handleSingleFolder and handleFolders called addSource without checking if the folder was already present. The useEffect queue-sync also added folders asynchronously after a fetch, but checked for duplicates synchronously before the fetch — so if a folder was manually added while the sync fetch was in-flight, the sync's .then() would add it a second time. Together these two paths produced duplicates whenever a folder existed in both the shared queue store and was manually added on the Lookup tab.
+Fix: Added path-based dedup guard at the start of handleSingleFolder and handleFolders (skip if path already in sources). Also re-check inside the useEffect's .then()/.catch() callbacks so the async race no longer causes duplicates.
+
 BUG-139: LBDIR renames table — current path column collapsed to ~24px
 Status: Fixed
 File(s): gui_next/src/renderer/src/screens/ScreenLBDIR.tsx:158-167

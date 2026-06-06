@@ -1,10 +1,12 @@
 import { app, BrowserWindow, shell, ipcMain, dialog } from 'electron'
 import { join } from 'path'
+import { tmpdir } from 'os'
 import { spawn, ChildProcess } from 'child_process'
 import { createConnection } from 'net'
-import { writeFile, readFile } from 'fs/promises'
+import { writeFile, readFile, unlink } from 'fs/promises'
 
 const FLASK_PORT = 5174
+const PID_FILE = join(tmpdir(), 'losslessbob_backend.pid')
 let backendProc: ChildProcess | null = null
 
 function portOpen(port: number): Promise<boolean> {
@@ -23,8 +25,21 @@ async function waitForPort(port: number, tries = 40, intervalMs = 250): Promise<
   return false
 }
 
+async function killStalePid(): Promise<void> {
+  try {
+    const raw = await readFile(PID_FILE, 'utf8')
+    const pid = parseInt(raw.trim(), 10)
+    if (pid) {
+      try { process.kill(pid, 'SIGTERM') } catch { /* already dead */ }
+      await new Promise(r => setTimeout(r, 400))
+    }
+    await unlink(PID_FILE).catch(() => {})
+  } catch { /* no PID file — nothing to kill */ }
+}
+
 async function ensureBackend(): Promise<void> {
-  if (await portOpen(FLASK_PORT)) return
+  // Kill any backend left over from a previous session or a hot-reload restart
+  await killStalePid()
 
   let cmd: string
   let args: string[]
@@ -46,6 +61,10 @@ async function ensureBackend(): Promise<void> {
   backendProc = spawn(cmd, args, { cwd, stdio: 'pipe' })
   backendProc.stdout?.on('data', (d: Buffer) => process.stdout.write(`[flask] ${d}`))
   backendProc.stderr?.on('data', (d: Buffer) => process.stderr.write(`[flask] ${d}`))
+
+  if (backendProc.pid) {
+    writeFile(PID_FILE, String(backendProc.pid), 'utf8').catch(() => {})
+  }
 }
 
 function createWindow(): void {
@@ -152,7 +171,9 @@ app.whenReady().then(async () => {
 })
 
 app.on('before-quit', () => {
-  backendProc?.kill()
+  backendProc?.kill('SIGTERM')
+  backendProc = null
+  unlink(PID_FILE).catch(() => {})
 })
 
 app.on('window-all-closed', () => {
