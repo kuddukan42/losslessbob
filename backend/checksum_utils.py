@@ -86,6 +86,35 @@ class ShntoolNotFoundError(Exception):
 
 AUDIO_EXTS = {'.flac', '.shn', '.wav', '.ape', '.m4a', '.wv', '.aif', '.aiff'}
 
+# Typographic apostrophes that differ between checksum files (e.g. EAC) and disk filenames.
+_APOSTROPHE_TRANS = str.maketrans({
+    '\u2018': "'",  # LEFT SINGLE QUOTATION MARK
+    '\u2019': "'",  # RIGHT SINGLE QUOTATION MARK
+    '\u201b': "'",  # SINGLE HIGH-REVERSED-9 QUOTATION MARK
+    '\u02bc': "'",  # MODIFIER LETTER APOSTROPHE
+    '\u02b9': "'",  # MODIFIER LETTER PRIME
+})
+
+
+def _read_checksum_text(filepath) -> str:
+    """Read a checksum file, auto-detecting UTF-8 vs Windows-1252 encoding.
+
+    EAC and similar tools write cp1252 files where 0x92 = RIGHT SINGLE QUOTATION MARK.
+    Decoding as UTF-8 with errors='replace' silently converts 0x92 to U+FFFD, which
+    then fails filename matching. Instead: try strict UTF-8; on failure use cp1252.
+    """
+    raw = Path(filepath).read_bytes()
+    try:
+        return raw.decode('utf-8')
+    except UnicodeDecodeError:
+        return raw.decode('cp1252', errors='replace')
+
+
+def _norm_fname(s: str) -> str:
+    """Normalise typographic apostrophes → straight apostrophe for filename matching."""
+    return s.translate(_APOSTROPHE_TRANS)
+
+
 _MD5_RE = re.compile(r'^([0-9a-fA-F]{32})\s+\*?(.+)$')
 _FFP_RE = re.compile(r'^(.+\.(?:flac|ape|wav))[:=]([0-9a-fA-F]{32,40})$', re.IGNORECASE)
 _SHNTOOL_LINE_RE = re.compile(
@@ -107,7 +136,7 @@ def parse_lbdir_file(path):
     """
     path = Path(path)
     try:
-        text = path.read_text(encoding='utf-8', errors='replace')
+        text = _read_checksum_text(path)
     except (IOError, OSError) as e:
         return {
             'error': str(e), 'mode': 'flac',
@@ -166,7 +195,7 @@ def parse_lbdir_file(path):
         if current_section == 'md5':
             m = _MD5_RE.match(stripped)
             if m:
-                fname = m.group(2).strip().replace('\\', '/')
+                fname = _norm_fname(m.group(2).strip().replace('\\', '/'))
                 ext = Path(fname).suffix.lower()
                 if ext == '.shn':
                     has_shn = True
@@ -177,7 +206,7 @@ def parse_lbdir_file(path):
         elif current_section == 'ffp':
             m = _FFP_RE.match(stripped)
             if m:
-                fname = m.group(1).replace('\\', '/')
+                fname = _norm_fname(m.group(1).replace('\\', '/'))
                 if Path(fname).suffix.lower() == '.flac':
                     has_flac = True
                 result['ffp'].append((fname, m.group(2).lower()))
@@ -185,7 +214,7 @@ def parse_lbdir_file(path):
         elif current_section == 'shntool':
             m = _SHNTOOL_LINE_RE.match(stripped)
             if m:
-                wav_fname = m.group(2).strip().replace('\\', '/')
+                wav_fname = _norm_fname(m.group(2).strip().replace('\\', '/'))
                 if current_shn_dir:
                     wav_fname = current_shn_dir + '/' + wav_fname
                 # Only convert .wav -> .shn when the md5 section already confirmed SHN files
@@ -200,7 +229,7 @@ def parse_lbdir_file(path):
         elif current_section == 'shntool_len':
             m = _SHNTOOL_LEN_RE.match(line)
             if m:
-                raw_fname = m.group(8).strip().replace('\\', '/')
+                raw_fname = _norm_fname(m.group(8).strip().replace('\\', '/'))
                 # Skip the totals summary line
                 if raw_fname.startswith('('):
                     continue
@@ -411,7 +440,7 @@ def _parse_checksum_file(filepath):
     """
     entries = []
     try:
-        text = Path(filepath).read_text(encoding='utf-8', errors='replace')
+        text = _read_checksum_text(filepath)
     except (IOError, OSError):
         return entries
 
@@ -422,19 +451,27 @@ def _parse_checksum_file(filepath):
 
         m = _SHNTOOL_LINE_RE.match(stripped)
         if m:
-            wav_fname = m.group(2).strip()
+            wav_fname = _norm_fname(m.group(2).strip())
             shn_fname = re.sub(r'\.wav$', '.shn', wav_fname, flags=re.IGNORECASE)
             entries.append((shn_fname, 'shntool', m.group(1).lower()))
             continue
 
         m = _FFP_RE.match(stripped)
         if m:
-            entries.append((m.group(1), 'ffp', m.group(2).lower()))
+            entries.append((_norm_fname(m.group(1)), 'ffp', m.group(2).lower()))
             continue
 
         m = _MD5_RE.match(stripped)
         if m:
-            entries.append((m.group(2).strip(), 'md5', m.group(1).lower()))
+            fname = _norm_fname(m.group(2).strip())
+            # Shntool run on non-.wav files produces "hash  [shntool]  file.flac";
+            # _SHNTOOL_LINE_RE only matches .wav so this falls through here.
+            # Strip the prefix and reclassify so the filename matches disk files.
+            shn_pfx = re.match(r'^\[shntool\]\s+', fname, re.IGNORECASE)
+            if shn_pfx:
+                entries.append((fname[shn_pfx.end():], 'shntool', m.group(1).lower()))
+            else:
+                entries.append((fname, 'md5', m.group(1).lower()))
 
     return entries
 
@@ -475,7 +512,7 @@ def verify_folder(folder_path):
     disk_audio_map: dict[str, Path] = {}
     for f in folder.rglob('*'):
         if f.is_file() and f.suffix.lower() in AUDIO_EXTS:
-            disk_audio_map[f.relative_to(folder).as_posix()] = f
+            disk_audio_map[_norm_fname(f.relative_to(folder).as_posix())] = f
     disk_audio = set(disk_audio_map.keys())
 
     expected = {}  # filename -> {hash_type: hash_value}
@@ -674,24 +711,27 @@ def verify_folder_lbdir(folder_path, lbdir_path):
     files = []
     n_pass = n_mismatch = n_missing = 0
 
-    # Build an audio-only basename → actual path index for subdirectory fallback.
-    # When a lbdir lists bare filenames (e.g. LBF-01334 for a track that lives
-    # in Disc3/ of a combined multi-LB folder), fpath won't exist at the root.
-    # Only audio files are remapped — non-audio files (txt, md5…) may share names
-    # across disc dirs so fallback would pick the wrong one.
-    _AUDIO_EXTS = {'.flac', '.shn', '.wav', '.ape', '.m4a', '.wv', '.aif', '.aiff'}
-    _subdir_index: dict[str, Path] = {}
+    # Normalised relpath → actual Path for all audio under the folder.
+    # Keys are apostrophe-normalised so lbdir entries (possibly with typographic
+    # apostrophes) match disk files regardless of which apostrophe variant either side uses.
+    _disk_audio_map: dict[str, Path] = {}
     for _p in folder.rglob('*'):
-        if _p.is_file() and _p.suffix.lower() in _AUDIO_EXTS:
-            _subdir_index.setdefault(_p.name.lower(), _p)
+        if _p.is_file() and _p.suffix.lower() in AUDIO_EXTS:
+            _disk_audio_map[_norm_fname(_p.relative_to(folder).as_posix())] = _p
+    # Bare-name fallback: when a lbdir lists filenames without a disc prefix
+    # (e.g. LBF-01334 tracks that live in Disc3/), look up by basename only.
+    # Only audio files are indexed — non-audio names may collide across disc dirs.
+    _subdir_index: dict[str, Path] = {
+        _norm_fname(_p.name).lower(): _p for _p in _disk_audio_map.values()
+    }
 
     for fname in sorted(all_files):
-        fpath = folder / fname
-        if not fpath.exists() and Path(fname).suffix.lower() in _AUDIO_EXTS:
-            # Bare-filename lbdir entry for audio — check subdirectories by name
-            _alt = _subdir_index.get(Path(fname).name.lower())
-            if _alt is not None:
-                fpath = _alt
+        fpath = _disk_audio_map.get(fname)
+        if fpath is None and Path(fname).suffix.lower() in AUDIO_EXTS:
+            # Bare-filename lbdir entry — try subdirectory fallback by normalised name
+            fpath = _subdir_index.get(Path(fname).name.lower())
+        if fpath is None:
+            fpath = folder / fname
         on_disk = fpath.exists()
         ext = Path(fname).suffix.lower()
         is_flac = ext == '.flac'

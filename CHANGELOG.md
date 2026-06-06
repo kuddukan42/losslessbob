@@ -1,3 +1,52 @@
+[2026-06-05] — fix(tools): batch_verify --skip-done now auto-reprocesses api_error/retrieve_error
+Changed: tools/batch_verify.py: --skip-done treats api_error and retrieve_error as transient (never skips them); updated help text and usage examples to remove api_error from --reprocess examples
+
+[2026-06-05] — feat(tapematch): manual-dir mode for run.sh
+Changed: tools/tapematch/run.sh: now calls tapematch_session.py --manual-dir instead of bare tapematch.cli, giving full post-processing (archive, observations.db, report)
+Added: tools/tapematch/tapematch_session.py: run_manual() function + --manual-dir/--label/--date CLI args; root_dir parameter threaded through run_tapematch(), insert_sources(), insert_pairs(), _log_to_obs_db()
+
+[2026-06-05] — fix(gui): Flask backend persists after Electron closes
+Fixed: gui_next/src/main/index.ts: added PID file tracking so stale Flask processes from prior or hot-reloaded sessions are killed on startup; removed the port-open short-circuit that left backendProc=null when a prior backend was still running; before-quit now also clears the PID file
+
+[2026-06-05] — fix(tapematch): OOM kill in Pass 1 on dates with 6+ sources
+Fixed: tools/tapematch/tapematch/cli.py: changed ingest to mono=True always; to_mono() now returns a zero-cost view instead of a ~388 MB copy; trimmed slice written directly to memmap via ravel() view with no intermediate heap array; peak per source drops from ~1.2 GB to ~500 MB (BUG-144)
+Changed: tools/tapematch/config.yaml: marked mono_mix as unused
+
+[2026-06-05] — fix(backend): extend apostrophe normalisation to lbdir verify path (BUG-143)
+Fixed: backend/checksum_utils.py: parse_lbdir_file now applies _norm_fname() to all parsed filenames (md5/ffp/shntool/shntool_len sections); verify_folder_lbdir replaces bare folder/fname lookup with a normalised _disk_audio_map (relpath→Path) and normalised _subdir_index (basename→Path), matching the same apostrophe-safe pattern as verify_folder
+
+[2026-06-05] — fix(backend): Verify fails to match filenames with curly apostrophes
+Fixed: backend/checksum_utils.py: added _norm_fname() to translate typographic apostrophes (U+2018/2019/etc.) → straight apostrophe before building disk_audio_map keys and before storing parsed checksum filenames; prevents mismatch when checksum files use smart-quotes but disk files use straight apostrophes (BUG-143)
+
+[2026-06-05] — fix(backend): pipeline apply-rename missing rename_log.txt and rename_history row
+Fixed: backend/app.py: folder_rename route now calls write_rename_log(source='pipeline') before os.rename(), writing rename_log.txt into the folder and inserting a rename_history row (BUG-142)
+
+[2026-06-05] — feat(pipeline+gui): LBDIR retrieve+check in pipeline step 4 with inline reconcile panel
+Changed: backend/app.py: _pipeline_process_folder lbdir step now retrieves lbdir*.txt from attachments cache (scraping if needed) and runs verify_folder_lbdir; returns check summary (status/total/pass/missing/mismatch) instead of bare presence flag
+Added: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: LbdirMiniPanel slide-in right panel shows check stats, per-file status table, reconcile proposals and apply workflow; "LBDIR" action button appears in any pipeline row whose lbdir step is not Pass; action column widened to 172px to fit two buttons
+
+[2026-06-05] — fix(backend): Verify shows shntool-format FLAC checksums as missing duplicates
+Fixed: backend/checksum_utils.py: _parse_checksum_file now strips [shntool] prefix from MD5-regex captures and reclassifies as shntool type, preventing bogus "[shntool] filename.flac" entries that don't match disk files (BUG-141)
+
+[2026-06-05] — fix(gui): Lookup folder added once showing twice in sources list
+Fixed: ScreenLookup.tsx: handleSingleFolder and handleFolders now guard against duplicate adds by checking sources by path before calling addSource; useEffect queue-sync callbacks also re-check after async fetch resolves to prevent race where a folder already added manually gets added again by the sync
+
+[2026-06-05] — fix(gui): Rename screen always showed "No match" for folder sources that matched in Lookup
+Fixed: ScreenLookup.tsx + lookupStore.ts: folder sources now store their full path; handleLookupAll builds a checksum→folder map so detail rows are tagged with source_file (full path) after lookup; without this, buildProposals could never map checksums back to folder paths and showed no_match for every row
+Fixed: ScreenRename.tsx: buildProposals now compares the matched LB# against LB numbers already in the folder name; a different existing LB# shows wrong_lb state instead of incorrectly showing has_lb
+
+[2026-06-05] — fix(gui): shared folder queue — bidirectional clear sync across Pipeline, Verify, LBDIR, Spectrograms
+Fixed: ScreenPipeline.tsx: sync effect now handles removals bidirectionally — clearing on Verify/LBDIR/Spectrograms now also clears Pipeline rows (previously only additions were synced)
+Fixed: ScreenPipeline.tsx: applyRename() now updates folderQueueStore with renamed path so the sync effect stays coherent after a rename
+Added: FolderQueueRail.tsx: shared sidebar component (header, filter, scroll area, consistent Clear button + onClear callback for screen-specific state reset)
+Changed: ScreenVerify.tsx: replaced inline aside with FolderQueueRail; removed redundant clearFolders destructure
+Changed: ScreenLBDIR.tsx: replaced inline aside with FolderQueueRail; onClear resets activeFolder; removed redundant clearFolders destructure
+Changed: ScreenSpectrograms.tsx: replaced inline aside with FolderQueueRail (adds Clear list button that was missing); onClear resets activeFolder+activeTrack; added useEffect to reset activeFolder when removed from queue on another screen
+Changed: components/index.ts: export FolderQueueRail
+
+[2026-06-05] — fix(backend): lookup duplicate resolution — show all equally-complete matches as Matched
+Changed: backend/db.py: when a checksum appears in multiple LBs and all are fully complete, promote all to MATCHED (green) instead of leaving them as DUPLICATE (yellow); per-LB duplicates count still reflects the overlap
+
 [2026-06-05] — feat(gui): clear-list button + right-click remove on all 5 pipeline screens
 Added: ScreenPipeline.tsx: right-click queue item → "Remove from list" context menu; "Clear list" replaces clearQueue label
 Added: ScreenVerify.tsx: "Clear list" trash button in rail; right-click folder row → remove

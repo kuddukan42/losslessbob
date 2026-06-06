@@ -39,7 +39,6 @@ def main(argv=None):
 
     cfg = yaml.safe_load(open(args.config))
     sr = cfg["audio"]["analysis_sr"]
-    mono_mix = cfg["audio"]["mono_mix"]
     exts = cfg["ingest"]["audio_exts"]
 
     root = Path(args.root)
@@ -55,10 +54,13 @@ def main(argv=None):
     atexit.register(shutil.rmtree, tmp_dir, ignore_errors=True)
 
     # === Pass 1: ingest + trim + write trimmed mono to disk as memmap ===
-    # One load per source.  Peak RAM per source: stream (~922 MB) +
-    # performance_envelope internal mono (~461 MB) + chunk bufs (~38 MB).
-    # Everything is freed before moving to the next source; what persists
-    # on disk is only the trimmed mono (.f32 memmap, ~438 MB per source).
+    # Always ingests as mono (stereo never needed — all downstream phases use
+    # mono memmaps).  Peak RAM per source: stream (~461 MB mono for a 2h show
+    # at 16 kHz) + STFT chunk bufs (~38 MB).  performance_envelope's to_mono()
+    # returns a zero-cost view when the stream is already mono, eliminating the
+    # ~461 MB stereo-→-mono copy that previously pushed peak to ~1.2 GB.
+    # The trimmed slice is written directly to the memmap via a view (no third
+    # array); stream is freed before moving to the next source.
     print("=== INGEST / TRIM ===")
     trim_bounds: dict[str, tuple[float, float, float]] = {}
     mono_paths: dict[str, tuple[Path, int]] = {}  # name -> (path, n_samples)
@@ -66,7 +68,7 @@ def main(argv=None):
     for name, sdir in sources.items():
         rep = ingest.source_report(sdir, exts)
         print(f"  {name}: {rep['n_tracks']} tracks, {fmt_hms(rep['total_sec'])}")
-        stream, _, _ = ingest.concat_source(sdir, exts, sr, mono=mono_mix)
+        stream, _, _ = ingest.concat_source(sdir, exts, sr, mono=True)
 
         if set_offset_sec:
             off_samp = min(int(set_offset_sec * sr), max(0, len(stream) - sr))
@@ -79,23 +81,16 @@ def main(argv=None):
             s0, s1 = trim.performance_envelope(stream, sr, cfg)
         trim_bounds[name] = (s0, s1, stream_dur)
 
-        # Slice + convert to independent mono; del stream immediately after.
+        # stream has shape (N, 1) from mono ingest; ravel() is a zero-copy view.
+        # Write trimmed slice directly to memmap — no intermediate heap copy.
         a, b = int(s0 * sr), int(s1 * sr)
-        if stream.ndim == 2 and stream.shape[1] > 1:
-            mono = stream[a:b].mean(axis=1)   # new independent float32 array
-        else:
-            mono = stream[a:b].ravel().copy()  # copy to ensure independence
-        del stream
-
-        # Write to disk memmap so subsequent phases never hold full-length
-        # mono arrays in process heap simultaneously.
-        n = len(mono)
+        n = b - a
         mpath = tmp_dir / f"{name}.f32"
         mm = np.memmap(str(mpath), dtype="float32", mode="w+", shape=(n,))
-        mm[:] = mono
+        mm[:] = stream[a:b].ravel()
         mm.flush()
         mono_paths[name] = (mpath, n)
-        del mono, mm
+        del stream, mm
 
     # Persist trim metadata for re-runs / resume.
     (root / ".tapematch_meta.json").write_text(json.dumps(

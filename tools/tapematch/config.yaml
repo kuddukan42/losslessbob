@@ -6,7 +6,7 @@ audio:
   # 16000 is plenty for source-matching (the discriminating signal is mostly
   # below 8 kHz: noise floor, room tone, W&F, transients). Lower = faster.
   analysis_sr: 16000
-  mono_mix: false          # keep stereo when available (needed for pan fingerprint)
+  mono_mix: false          # (unused — cli.py always ingests mono to halve peak RAM)
 
 ingest:
   audio_exts: [".flac", ".wav", ".aiff", ".aif", ".shn", ".m4a", ".mp3", ".ape"]

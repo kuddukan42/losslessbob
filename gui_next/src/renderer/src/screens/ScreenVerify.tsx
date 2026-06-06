@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { Icon } from '../components/Icon'
 import { Button, Chip, Input, Pill } from '../components'
 import { TableShell, TH, TR, TD } from '../components'
+import { FolderQueueRail } from '../components/FolderQueueRail'
 import { useVerifyStore, VerifyFolder, FolderState, CheckStatus } from '../lib/verifyStore'
 import { useFolderQueueStore } from '../lib/folderQueueStore'
 
@@ -80,7 +81,7 @@ function StateBadge({ s }: { s: FolderState }): React.JSX.Element {
 export function ScreenVerify(): React.JSX.Element {
   const { t } = useTranslation()
   const { results, activeIdx, showAll, filter, setResults, setActiveIdx, setShowAll, setFilter } = useVerifyStore()
-  const { folders, addFolders, removeFolders, clearFolders } = useFolderQueueStore()
+  const { folders, addFolders, removeFolders } = useFolderQueueStore()
   const [busy,        setBusy]       = useState(false)
   const [tools,       setTools]      = useState<ToolStatus | null>(null)
   const [toast,       setToast]      = useState<{ msg: string; tone: ToastTone } | null>(null)
@@ -268,62 +269,50 @@ export function ScreenVerify(): React.JSX.Element {
       <div style={{ flex: 1, display: 'flex', minHeight: 0 }}>
 
         {/* Queue rail */}
-        <aside style={{
-          width: 300, flex: '0 0 300px',
-          background: 'var(--lbb-surface)', borderRight: '1px solid var(--lbb-border)',
-          display: 'flex', flexDirection: 'column', minHeight: 0,
-        }}>
-          <div style={{ padding: '12px 12px 8px', borderBottom: '1px solid var(--lbb-border)' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 8 }}>
-              <Icon name="folder" size={13} style={{ color: 'var(--lbb-fg3)' }} />
-              <span style={{ fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.1, textTransform: 'uppercase' }}>{t('verify.rail.foldersLabel')}</span>
-              <span style={{ marginLeft: 'auto', fontSize: 'var(--lbb-fs-11)', fontWeight: 600, color: 'var(--lbb-fg2)', fontVariantNumeric: 'tabular-nums' }}>{folders.length}</span>
-            </div>
-            <Input
-              icon="search" placeholder={t('verify.rail.filterPlaceholder')} size="sm" style={{ width: '100%' }}
-              value={filter} onChange={e => setFilter(e.target.value)}
-            />
-          </div>
-          <div style={{ flex: 1, overflowY: 'auto', padding: '6px 6px' }}>
-            {filteredFolders.length === 0 ? (
-              <div style={{ padding: '24px 12px', textAlign: 'center', color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-11)' }}>
-                {folders.length === 0 ? t('verify.rail.noFolders') : t('verify.rail.noMatches')}
-              </div>
-            ) : filteredFolders.map((f, i) => {
-              const res = results.find(r => r.folder === f)
-              if (res) {
-                return <FolderRow key={f} row={res} active={results.indexOf(res) === activeIdx} onClick={() => { setActiveIdx(results.indexOf(res)); setShowAll(false) }} onContextMenu={e => { e.preventDefault(); setCtxMenu({ x: e.clientX, y: e.clientY, folder: f }) }} />
-              }
-              const name = f.split('/').pop() ?? f
-              return (
-                <button key={f} onClick={() => {}} onContextMenu={e => { e.preventDefault(); setCtxMenu({ x: e.clientX, y: e.clientY, folder: f }) }} style={{
-                  width: '100%', display: 'flex', alignItems: 'center', gap: 8,
-                  padding: '7px 10px', marginBottom: 1, borderRadius: 6,
-                  background: 'transparent', color: 'var(--lbb-fg2)',
-                  border: '1px solid transparent',
-                  textAlign: 'left', fontFamily: 'inherit', cursor: 'default',
-                }}>
-                  <span style={{ width: 8, height: 8, borderRadius: 2, background: 'var(--lbb-border)', flex: '0 0 8px' }} />
-                  <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{name}</span>
-                </button>
-              )
-            })}
-          </div>
-          <div style={{ padding: 12, borderTop: '1px solid var(--lbb-border)', display: 'flex', flexDirection: 'column', gap: 6 }}>
+        <FolderQueueRail
+          label={t('verify.rail.foldersLabel')}
+          filter={filter}
+          onFilterChange={setFilter}
+          filterPlaceholder={t('verify.rail.filterPlaceholder')}
+          width={300}
+          footer={<>
             <Button variant="primary"   size="sm" icon="verify"     block disabled={busy || !folders.length} onClick={handleVerify}>
               {busy ? t('verify.rail.running') : t('verify.rail.verifyAll')}
             </Button>
             <Button variant="secondary" size="sm" icon="plus"       block disabled={busy || !folders.length} onClick={handleGenerate}>{t('verify.rail.generate')}</Button>
             <Button variant="ghost"     size="sm" icon="download"   block disabled={busy || !folders.length} onClick={handleRetrieve}>{t('verify.rail.retrieve')}</Button>
-            <Button variant="ghost"     size="sm" icon="folder"    block onClick={handleAddSingleFolder}>{t('common.addFolder')}</Button>
+            <Button variant="ghost"     size="sm" icon="folder"     block onClick={handleAddSingleFolder}>{t('common.addFolder')}</Button>
             <Button variant="ghost"     size="sm" icon="folderPlus" block onClick={handleAddRoot}>{t('verify.rail.addRoot')}</Button>
             <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', cursor: 'pointer', paddingLeft: 2 }}>
               <input type="checkbox" checked={shallowScan} onChange={e => setShallowScan(e.target.checked)} style={{ accentColor: 'var(--lbb-accent)' }} />
               {t('common.shallowScan')}
             </label>
-            <Button variant="ghost"     size="sm" icon="trash"     block disabled={!folders.length} onClick={() => clearFolders()}>{t('common.clearList')}</Button>
-          </div>
-        </aside>
+          </>}
+        >
+          {filteredFolders.length === 0 ? (
+            <div style={{ padding: '24px 12px', textAlign: 'center', color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-11)' }}>
+              {folders.length === 0 ? t('verify.rail.noFolders') : t('verify.rail.noMatches')}
+            </div>
+          ) : filteredFolders.map((f) => {
+            const res = results.find(r => r.folder === f)
+            if (res) {
+              return <FolderRow key={f} row={res} active={results.indexOf(res) === activeIdx} onClick={() => { setActiveIdx(results.indexOf(res)); setShowAll(false) }} onContextMenu={e => { e.preventDefault(); setCtxMenu({ x: e.clientX, y: e.clientY, folder: f }) }} />
+            }
+            const name = f.split('/').pop() ?? f
+            return (
+              <button key={f} onClick={() => {}} onContextMenu={e => { e.preventDefault(); setCtxMenu({ x: e.clientX, y: e.clientY, folder: f }) }} style={{
+                width: '100%', display: 'flex', alignItems: 'center', gap: 8,
+                padding: '7px 10px', marginBottom: 1, borderRadius: 6,
+                background: 'transparent', color: 'var(--lbb-fg2)',
+                border: '1px solid transparent',
+                textAlign: 'left', fontFamily: 'inherit', cursor: 'default',
+              }}>
+                <span style={{ width: 8, height: 8, borderRadius: 2, background: 'var(--lbb-border)', flex: '0 0 8px' }} />
+                <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{name}</span>
+              </button>
+            )
+          })}
+        </FolderQueueRail>
 
         {/* Main pane */}
         <section style={{ flex: 1, display: 'flex', flexDirection: 'column', minWidth: 0, minHeight: 0 }}>

@@ -44,6 +44,7 @@ export interface LookupSource {
   name:    string
   content: string
   active:  boolean
+  path?:   string  // full filesystem path, set for folder/file sources
 }
 
 export type LookupFilterState = 'matched' | 'incomplete' | 'notfound' | 'duplicate' | 'xref'

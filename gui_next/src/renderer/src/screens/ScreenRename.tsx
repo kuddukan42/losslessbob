@@ -85,11 +85,12 @@ function buildProposals(detail: LookupDetail[], folderList: string[]): RenameRow
       continue
     }
 
-    const alreadyHasLb = /LB-\d{4,5}/i.test(cur)
-    if (alreadyHasLb) {
+    const lbNumsInName = (cur.match(/LB-(\d{4,5})/gi) ?? []).map(s => parseInt(s.slice(3), 10))
+    const correctLb = lbArray[0]
+    if (lbNumsInName.includes(correctLb)) {
       rows.push({
         folder, cur, prop: '(no change)',
-        lbNumber: lbArray[0], lbStr: lbStr(lbArray[0]),
+        lbNumber: correctLb, lbStr: lbStr(correctLb),
         state: 'has_lb', hint: 'LB# already in folder name',
         sel: false, candidates: lbArray,
       })
@@ -100,10 +101,15 @@ function buildProposals(detail: LookupDetail[], folderList: string[]): RenameRow
       const lb = lbArray[0]
       const lbStatus = detail.find(d => d.lb_number === lb)?.lb_status
       const proposed = applyNftSuffix(`${cur} (${lbStr(lb)})`, lbStatus)
+      // If folder already has a different LB number, flag it as wrong_lb
+      const state: RowState = lbNumsInName.length > 0 ? 'wrong_lb' : 'needs_rename'
+      const hint = lbNumsInName.length > 0
+        ? `Contains LB-${lbNumsInName[0]} but matched ${lbStr(lb)}`
+        : 'Single complete match in master DB'
       rows.push({
         folder, cur, prop: proposed,
         lbNumber: lb, lbStr: lbStr(lb),
-        state: 'needs_rename', hint: 'Single complete match in master DB',
+        state, hint,
         sel: true, candidates: [lb],
       })
     } else {

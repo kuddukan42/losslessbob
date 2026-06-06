@@ -4,6 +4,12 @@ Follow every session. No asking.
 
 ---
 
+## Tool Usage
+
+- When reading large files, ALWAYS use the Read tool with `offset`/`limit` parameters instead of `sed`, `head`, or `tail` via Bash. Avoid Bash for file inspection when Read can do it — it triggers unnecessary approval prompts.
+
+---
+
 ## Before Any Task
 1. Read `PROJECT.md`, `BUGS.md`, `TODO.md`.
 2. State files you plan to change before changing them.
@@ -61,8 +67,27 @@ New task → TODO.md. Done/cancelled → move to top of TODO_DONE.md.
 
 ---
 
+## Backend Development
+
+- After making backend code changes, ALWAYS restart the backend before verifying behavior. Stale running processes are a common source of false "fix didn't work" confusion.
+
+---
+
+## Workflow Conventions
+
+When updating user-facing features, also update: (1) CHANGELOG.md, (2) locale/i18n files, and (3) any relevant TODO entries. These are part of every feature change in this repo.
+
+---
+
+## Known Pitfalls
+
+- For encoding/filename bugs, check BOTH Unicode normalization (curly vs straight apostrophes) AND Windows-1252 byte encoding (`\x92` etc). The repo handles legacy md5/checksum files that may be cp1252.
+
+---
+
 ## Debugging
 
+- Before diagnosing a bug, ask: "is the running process the latest code?" Verify with a version check or restart before deep investigation.
 - Find root cause before fixing. State hypothesis, verify with logs/tests.
 - Multi-symptom bug? Look for one shared root cause.
 - "Still didn't work" → don't retry same fix. Re-read error, find different cause.

@@ -851,7 +851,7 @@ def parse_args() -> argparse.Namespace:
             "  First run:  batch_verify.py --from-collection\n"
             "  Resume:     batch_verify.py --from-collection --skip-done\n"
             "  Re-check failures: batch_verify.py --from-collection --skip-done "
-            "--reprocess fail,api_error\n"
+            "--reprocess fail,missing_files\n"
             "  Report:     batch_verify.py --report [--status missing_files]\n\n"
             "Progress line format:  [i/total] ABBR lb_number [extra]\n\n"
             "Status abbreviations:\n"
@@ -890,15 +890,15 @@ def parse_args() -> argparse.Namespace:
     )
     resume.add_argument(
         "--skip-done", action="store_true",
-        help="Skip any folder that already has any result in the report DB, "
-             "regardless of status. Use this to continue an interrupted run without "
-             "re-verifying anything. Combine with --reprocess to re-run specific statuses.",
+        help="Skip any folder that already has a definitive result in the report DB. "
+             "api_error and retrieve_error are always reprocessed (transient failures). "
+             "Combine with --reprocess to also re-run other specific statuses.",
     )
     resume.add_argument(
         "--reprocess", metavar="STATUSES",
         help="Comma-separated list of statuses to force-reprocess even when --resume or "
              "--skip-done would otherwise skip them. "
-             "Example: --skip-done --reprocess fail,api_error",
+             "Example: --skip-done --reprocess fail,missing_files",
     )
 
     run = p.add_argument_group("Run behaviour")
@@ -1005,6 +1005,9 @@ def main() -> None:
 
     skipped = 0
     reprocess_set = set(args.reprocess.split(",")) if args.reprocess else set()
+    # Transient errors are never a definitive result — always reprocess under --skip-done
+    if args.skip_done:
+        reprocess_set.update({STATUS_API_ERROR, STATUS_RETRIEVE_ERROR})
 
     kbd = _KeyboardController()
     kbd.start()

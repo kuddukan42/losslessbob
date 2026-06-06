@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { Icon } from '../components/Icon'
 import { Button, Input, Pill } from '../components'
 import { TableShell, TH, TR, TD } from '../components'
+import { FolderQueueRail } from '../components/FolderQueueRail'
 import { useLbdirStore, LbdirState, CheckFile, CheckResult, ReconcileProposal, SiteProposal, ReconcileResult } from '../lib/lbdirStore'
 import { useFolderQueueStore } from '../lib/folderQueueStore'
 
@@ -282,7 +283,7 @@ export function ScreenLBDIR(): React.JSX.Element {
     setActiveFolder, setFilter, setCheckResults, updateCheckResult,
     setReconcileResults, clearReconcileFor, setReconSelected, setSiteSelected,
   } = useLbdirStore()
-  const { folders, addFolders, removeFolders, clearFolders } = useFolderQueueStore()
+  const { folders, addFolders, removeFolders } = useFolderQueueStore()
   const [busy,         setBusy]        = useState(false)
   const [tools,        setTools]       = useState<{ shntool_available: boolean } | null>(null)
   const [toast,        setToast]       = useState<{ msg: string; tone: ToastTone } | null>(null)
@@ -511,57 +512,46 @@ export function ScreenLBDIR(): React.JSX.Element {
       <div style={{ flex: 1, display: 'flex', minHeight: 0 }}>
 
         {/* Queue rail */}
-        <aside style={{
-          width: 280, flex: '0 0 280px',
-          background: 'var(--lbb-surface)', borderRight: '1px solid var(--lbb-border)',
-          display: 'flex', flexDirection: 'column', minHeight: 0,
-        }}>
-          <div style={{ padding: '12px 12px 8px', borderBottom: '1px solid var(--lbb-border)' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 8 }}>
-              <Icon name="folder" size={13} style={{ color: 'var(--lbb-fg3)' }} />
-              <span style={{ fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.1, textTransform: 'uppercase' }}>Folders</span>
-              <span style={{ marginLeft: 'auto', fontSize: 'var(--lbb-fs-11)', fontWeight: 600, color: 'var(--lbb-fg2)' }}>
-                {hideVerified && filteredFolders.length !== folders.length
-                  ? `${filteredFolders.length}/${folders.length}`
-                  : folders.length}
-              </span>
-            </div>
-            <Input
-              icon="search" placeholder="Filter…" size="sm" style={{ width: '100%' }}
-              value={filter} onChange={e => setFilter(e.target.value)}
-            />
+        <FolderQueueRail
+          label="Folders"
+          countLabel={hideVerified && filteredFolders.length !== folders.length
+            ? `${filteredFolders.length}/${folders.length}`
+            : String(folders.length)}
+          filter={filter}
+          onFilterChange={setFilter}
+          width={280}
+          headerExtra={
             <label style={{ display: 'flex', alignItems: 'center', gap: 6, marginTop: 6, cursor: 'pointer', userSelect: 'none', fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg2)' }}>
               <input type="checkbox" checked={hideVerified} onChange={e => setHideVerified(e.target.checked)} style={{ accentColor: 'var(--lbb-accent-mid)' }} />
               Hide verified
             </label>
-          </div>
-          <div style={{ flex: 1, overflowY: 'auto', padding: '6px 6px' }}>
-            {filteredFolders.length === 0 ? (
-              <div style={{ padding: '24px 12px', textAlign: 'center', color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-11)' }}>
-                {folders.length === 0 ? 'No folders added' : hideVerified ? 'All folders verified' : 'No matches'}
-              </div>
-            ) : filteredFolders.map(f => (
-              <FolderSideRow
-                key={f}
-                folder={f}
-                checkResult={checkResults.find(r => r.folder === f)}
-                verifiedAt={verifiedAt[f] ?? null}
-                active={f === activeFolderStr}
-                onClick={() => setActiveFolder(f)}
-                onContextMenu={e => { e.preventDefault(); setCtxMenu({ x: e.clientX, y: e.clientY, folder: f }) }}
-              />
-            ))}
-          </div>
-          <div style={{ padding: 12, borderTop: '1px solid var(--lbb-border)', display: 'flex', flexDirection: 'column', gap: 6 }}>
-            <Button variant="primary"   size="sm" icon="lbdir"      block disabled={busy || !filteredFolders.length}
+          }
+          onClear={() => setActiveFolder(null)}
+          footer={<>
+            <Button variant="primary" size="sm" icon="lbdir" block disabled={busy || !filteredFolders.length}
               onClick={() => handleProcess(filteredFolders)}>
               {busy ? 'Processing…' : 'Process all folders'}
             </Button>
-            <Button variant="ghost"     size="sm" icon="folder"    block onClick={handleAddSingleFolder}>Add folder…</Button>
-            <Button variant="ghost"     size="sm" icon="folderPlus" block onClick={handleAddRoot}>Add root folder…</Button>
-            <Button variant="ghost"     size="sm" icon="trash"     block disabled={!folders.length} onClick={() => clearFolders()}>Clear list</Button>
-          </div>
-        </aside>
+            <Button variant="ghost" size="sm" icon="folder"     block onClick={handleAddSingleFolder}>Add folder…</Button>
+            <Button variant="ghost" size="sm" icon="folderPlus" block onClick={handleAddRoot}>Add root folder…</Button>
+          </>}
+        >
+          {filteredFolders.length === 0 ? (
+            <div style={{ padding: '24px 12px', textAlign: 'center', color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-11)' }}>
+              {folders.length === 0 ? 'No folders added' : hideVerified ? 'All folders verified' : 'No matches'}
+            </div>
+          ) : filteredFolders.map(f => (
+            <FolderSideRow
+              key={f}
+              folder={f}
+              checkResult={checkResults.find(r => r.folder === f)}
+              verifiedAt={verifiedAt[f] ?? null}
+              active={f === activeFolderStr}
+              onClick={() => setActiveFolder(f)}
+              onContextMenu={e => { e.preventDefault(); setCtxMenu({ x: e.clientX, y: e.clientY, folder: f }) }}
+            />
+          ))}
+        </FolderQueueRail>
 
         {/* Detail panel */}
         <section style={{ flex: 1, display: 'flex', flexDirection: 'column', minWidth: 0, minHeight: 0, overflow: 'auto' }}>

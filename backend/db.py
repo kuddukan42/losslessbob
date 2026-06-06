@@ -1477,9 +1477,11 @@ def lookup_checksums(parsed_entries, db_path=None):
     for (lb, _xv), missing_set in _lb_xref_missing.items():
         _lb_missing_count[lb] = _lb_missing_count.get(lb, 0) + len(missing_set)
 
-    # Duplicate resolution: when the same checksum appears in multiple LBs (DUPLICATE),
-    # and one of those LBs is fully matched (no missing files) while others are not,
-    # prefer the fully-matched LB — reclassify its items as MATCHED so it is the primary result.
+    # Duplicate resolution: when the same checksum appears in multiple LBs (DUPLICATE):
+    # - If all competing LBs are fully complete → promote ALL to MATCHED (keep is_duplicate=True
+    #   so the per-LB duplicates column still shows the overlap count).
+    # - If some are complete and others are not → promote only the complete ones and clear
+    #   is_duplicate so they are treated as the definitive match.
     from collections import defaultdict as _dd
     _dup_by_chk: dict = _dd(list)
     for item in detail:
@@ -1489,9 +1491,14 @@ def lookup_checksums(parsed_entries, db_path=None):
         fully_matched = [i for i in _items if not i["missing_from_set"]]
         incomplete = [i for i in _items if i["missing_from_set"]]
         if fully_matched and incomplete:
+            # Clear winner — only the complete LB(s) win.
             for item in fully_matched:
                 item["status"] = "MATCHED"
                 item["is_duplicate"] = False
+        elif fully_matched:
+            # All competing LBs are equally complete — show all as MATCHED.
+            for item in fully_matched:
+                item["status"] = "MATCHED"
 
     # Build summary per LB
     lb_summary = {}

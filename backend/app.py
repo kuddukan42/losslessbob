@@ -4836,14 +4836,52 @@ def create_app() -> Flask:
                     row["rename"] = {"status": "warn", "label": "Proposed", "proposed": proposed}
             # else: stays mute — lookup hasn't resolved an LB#
 
-        # ── Step 4: LBDIR check ───────────────────────────────────────────────
+        # ── Step 4: LBDIR retrieve + verify ──────────────────────────────────
         if "lbdir" in steps:
             if lb_number:
                 lbdir_file = _find_lbdir_in_folder(folder)
+                if not lbdir_file:
+                    # Try to pull from attachments cache; scrape if not yet cached.
+                    try:
+                        lbdir_src = find_lbdir_attachment(lb_number)
+                        if not lbdir_src:
+                            scraper.scrape_entry(lb_number, force=False, download_files=True)
+                            lbdir_src = find_lbdir_attachment(lb_number)
+                        if not lbdir_src:
+                            # Might be an alias — try canonical
+                            canonicals = database.resolve_aliases([lb_number])
+                            canonical = canonicals[0] if canonicals and canonicals[0] != lb_number else None
+                            if canonical:
+                                lbdir_src = find_lbdir_attachment(canonical)
+                                if not lbdir_src:
+                                    scraper.scrape_entry(canonical, force=False, download_files=True)
+                                    lbdir_src = find_lbdir_attachment(canonical)
+                        if lbdir_src:
+                            shutil.copy2(str(lbdir_src), str(folder / lbdir_src.name))
+                            lbdir_file = folder / lbdir_src.name
+                    except Exception:
+                        pass
+
                 if lbdir_file:
-                    row["lbdir"] = {"status": "ok", "label": "Pass"}
+                    check = checksum_utils.verify_folder_lbdir(str(folder), lbdir_file)
+                    chk_status = check.get("status", "fail")
+                    n_total = check.get("total", 0)
+                    n_pass  = check.get("pass", 0)
+                    n_miss  = check.get("missing", 0)
+                    n_mm    = check.get("mismatch", 0)
+                    detail  = {"status": chk_status, "total": n_total,
+                               "pass": n_pass, "missing": n_miss, "mismatch": n_mm}
+                    if chk_status == "pass":
+                        row["lbdir"] = {"status": "ok",   "label": "Pass",              "check": detail}
+                    elif chk_status == "missing_files":
+                        row["lbdir"] = {"status": "warn", "label": f"Missing {n_miss}", "check": detail}
+                    elif chk_status == "shntool_missing":
+                        row["lbdir"] = {"status": "warn", "label": "No shntool",         "check": detail}
+                    else:
+                        label = f"Fail {n_mm}" if n_mm else "Fail"
+                        row["lbdir"] = {"status": "bad",  "label": label,               "check": detail}
                 else:
-                    row["lbdir"] = {"status": "warn", "label": "No LBDIR"}
+                    row["lbdir"] = {"status": "warn", "label": "No LBDIR", "check": None}
             # else: stays mute
 
         # ── Severity ──────────────────────────────────────────────────────────
@@ -4888,6 +4926,7 @@ def create_app() -> Flask:
             JSON {ok: true, new_path: "/abs/path/to/new folder name"}
         """
         try:
+            from backend.rename import write_rename_log
             data = request.get_json() or {}
             folder = Path(data.get("folder", ""))
             new_name: str = (data.get("new_name") or "").strip()
@@ -4898,6 +4937,12 @@ def create_app() -> Flask:
             new_path = folder.parent / new_name
             if new_path.exists():
                 return jsonify({"error": f"Target already exists: {new_name}"}), 409
+            write_rename_log(
+                folder_path=folder,
+                old_name=folder.name,
+                new_name=new_name,
+                source="pipeline",
+            )
             folder.rename(new_path)
             return jsonify({"ok": True, "new_path": str(new_path)})
         except Exception as e:
