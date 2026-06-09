@@ -22,7 +22,6 @@ import tempfile
 
 import pytest
 
-
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
@@ -311,9 +310,10 @@ def test_import_preserves_user_data_and_user_meta():
         assert coll is not None and coll[0] == "user-folder"
 
         # User meta preserved (untouched by import)
-        get = lambda k: user_conn.execute(
-            "SELECT value FROM meta WHERE key=?", (k,)
-        ).fetchone()
+        def get(k):
+            return user_conn.execute(
+                "SELECT value FROM meta WHERE key=?", (k,)
+            ).fetchone()
         assert get("qbt_host")[0] == "user-qbt.local"
         assert get("qbt_password")[0] == "user-secret"
         assert get("search_page_size")[0] == "75"
@@ -368,7 +368,7 @@ def test_import_rejects_newer_schema_version():
         )
         # Hack the manifest to claim a higher schema version
         manifest_path = export_path.parent / (export_path.name + ".manifest.json")
-        with open(manifest_path, "r") as f:
+        with open(manifest_path) as f:
             m = json.load(f)
         m["master_schema_version"] = db.MASTER_SCHEMA_VERSION + 1
         with open(manifest_path, "w") as f:
@@ -427,9 +427,9 @@ def test_master_export_endpoint_requires_curator():
         _seed_master_and_user_data(conn, db_path)
         import backend.db as db
         db.set_curator(False, db_path)
-        from backend.app import create_app
         # The Flask app uses the default DB_PATH; redirect it for the test.
         import backend.paths as _paths
+        from backend.app import create_app
         _orig = _paths.DB_PATH
         _paths.DB_PATH = db_path
         # backend.db uses module-level DB_PATH for some calls; also rebind it

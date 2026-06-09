@@ -1,6 +1,16 @@
-Starting Flask backend…
-[flask] 2026-05-29 22:04:43,721 DEBUG    backend.db_queue: db-writer: connection open → /home/tjenkins/Documents/losslessbob/data/losslessbob.db
-[flask] 2026-05-29 22:04:43,721 INFO     backend.db_queue: DatabaseWriteQueue initialised → /home/tjenkins/Documents/losslessbob/data/losslessbob.db
-Flask ready.
-Launching Electron — route: /lookup
-Screenshot saved: /home/tjenkins/Documents/losslessbob/screenshot-lookup.png
+[gui-driver] No $DISPLAY — starting Xvfb on :2
+[gui-driver] Launching Electron...
+Fatal: electron.launch: Timeout 180000ms exceeded.
+Call log:
+[2m  - <launching> /home/tjenkins/Documents/losslessbob/gui_next/node_modules/electron/dist/electron --no-sandbox --inspect=0 --remote-debugging-port=0 /home/tjenkins/Documents/losslessbob/gui_next/out/main/index.js --disable-gpu --disable-software-rasterizer[22m
+[2m  - <launched> pid=1209730[22m
+[2m  - [pid=1209730][err] Debugger listening on ws://127.0.0.1:42999/44df9941-c5d2-41b6-8d64-c3e067daa04f[22m
+[2m  - [pid=1209730][err] For help, see: https://nodejs.org/en/docs/inspector[22m
+[2m  - <ws connecting> ws://127.0.0.1:42999/44df9941-c5d2-41b6-8d64-c3e067daa04f[22m
+[2m  - <ws connected> ws://127.0.0.1:42999/44df9941-c5d2-41b6-8d64-c3e067daa04f[22m
+[2m  - [pid=1209730][err] Debugger attached.[22m
+[2m  - [pid=1209730][err][22m
+[2m  - [pid=1209730][err] DevTools listening on ws://127.0.0.1:41019/devtools/browser/7a0ccc18-e652-4332-a125-e1f4c543f0bd[22m
+[2m  - <ws connecting> ws://127.0.0.1:41019/devtools/browser/7a0ccc18-e652-4332-a125-e1f4c543f0bd[22m
+
+EXIT:1

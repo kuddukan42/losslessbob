@@ -1,16 +1,16 @@
 import logging
 import os
-import sys
 import socket
+import sys
 import threading
 import time
 from logging.handlers import RotatingFileHandler
 
 from PyQt6.QtWidgets import QApplication
 
-from backend.app import create_app
-from backend.paths import ensure_data_dirs, DATA_DIR
 import backend.startup_log as _slog
+from backend.app import create_app
+from backend.paths import DATA_DIR, ensure_data_dirs
 
 FLASK_PORT = 5174
 _FLASK_READY = threading.Event()
@@ -180,6 +180,7 @@ def main() -> None:
     # Load UI language before any windows are constructed so all tr() calls use
     # the right translator from the start.
     import sqlite3 as _sqlite3
+
     from backend.paths import DB_PATH as _DB_PATH
     from gui.i18n import load_language as _load_language
 
@@ -196,9 +197,9 @@ def main() -> None:
     _load_language(qt_app, _read_saved_lang())
     _slog.t("i18n language loaded")
 
-    from PyQt6.QtWidgets import QSplashScreen
-    from PyQt6.QtGui import QPixmap, QColor
     from PyQt6.QtCore import Qt
+    from PyQt6.QtGui import QColor, QPixmap
+    from PyQt6.QtWidgets import QSplashScreen
 
     _screen = qt_app.primaryScreen()
     dpr = _screen.devicePixelRatio() if _screen else 1.0

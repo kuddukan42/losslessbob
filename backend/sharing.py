@@ -11,9 +11,9 @@ import subprocess
 import threading
 import time
 import zipfile
-from datetime import datetime, timedelta, timezone
+from collections.abc import Generator
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
-from typing import Generator
 
 log = logging.getLogger(__name__)
 
@@ -62,7 +62,7 @@ def load_persisted_shares() -> None:
         log.warning("sharing: could not read state file: %s", exc)
         return
 
-    now = datetime.now(timezone.utc)
+    now = datetime.now(UTC)
     with _shares_lock:
         _tunnel_pid = payload.get("tunnel_pid")
         _tunnel_url = payload.get("tunnel_url")
@@ -76,7 +76,7 @@ def load_persisted_shares() -> None:
             try:
                 exp = datetime.fromisoformat(share["expires_at"])
                 if exp.tzinfo is None:
-                    exp = exp.replace(tzinfo=timezone.utc)
+                    exp = exp.replace(tzinfo=UTC)
                 if exp <= now:
                     continue
                 _active_shares[token] = {
@@ -112,7 +112,7 @@ def create_share(folder_path: str, ttl_hours: int = DEFAULT_TTL_HOURS,
         if f.is_file() and f.suffix.lower() in AUDIO_EXTENSIONS
     )
     token = secrets.token_urlsafe(16)
-    expires_at = (datetime.now(timezone.utc) + timedelta(hours=ttl_hours)).isoformat()
+    expires_at = (datetime.now(UTC) + timedelta(hours=ttl_hours)).isoformat()
     share = {
         "folder_path": folder_path,
         "files": files,
@@ -135,8 +135,8 @@ def get_share(token: str) -> dict | None:
         return None
     exp = datetime.fromisoformat(share["expires_at"])
     if exp.tzinfo is None:
-        exp = exp.replace(tzinfo=timezone.utc)
-    if exp <= datetime.now(timezone.utc):
+        exp = exp.replace(tzinfo=UTC)
+    if exp <= datetime.now(UTC):
         revoke_share(token)
         return None
     return share
@@ -155,13 +155,13 @@ def revoke_share(token: str) -> None:
 
 def list_shares() -> list[dict]:
     """Return all active (non-expired) shares for GUI status display."""
-    now = datetime.now(timezone.utc)
+    now = datetime.now(UTC)
     result = []
     with _shares_lock:
         for token, share in list(_active_shares.items()):
             exp = datetime.fromisoformat(share["expires_at"])
             if exp.tzinfo is None:
-                exp = exp.replace(tzinfo=timezone.utc)
+                exp = exp.replace(tzinfo=UTC)
             if exp > now:
                 result.append({"token": token, **share})
             else:
@@ -336,13 +336,13 @@ def stop_cloudflare_tunnel() -> None:
 def _reaper_loop() -> None:
     while True:
         time.sleep(_REAPER_INTERVAL)
-        now = datetime.now(timezone.utc)
+        now = datetime.now(UTC)
         expired = []
         with _shares_lock:
             for token, share in list(_active_shares.items()):
                 exp = datetime.fromisoformat(share["expires_at"])
                 if exp.tzinfo is None:
-                    exp = exp.replace(tzinfo=timezone.utc)
+                    exp = exp.replace(tzinfo=UTC)
                 if exp <= now:
                     expired.append(token)
         for token in expired:

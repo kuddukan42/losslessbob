@@ -1,6 +1,30 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-134: Map screen — blank center canvas with no fallback when tiles fail to load
+Status: Fixed
+File(s): gui/resources/map.html
+Reported: 2026-06-04
+Fixed: 2026-06-09
+Root cause: Leaflet tile requests to OpenStreetMap silently fail when offline. No overlay or message indicates this; the center area renders blank white. Left/right sidebars (filters, venue list) are unaffected.
+Fix: Added tileerror/tileload listeners on the tile layer; tileerror shows a "Map tiles couldn't load — check your internet connection" banner overlay (z-index 1000, pointer-events:none, bottom-anchored) inside #map; tileload hides it again if tiles subsequently succeed.
+
+BUG-133: DB Editor — pagination bar and action buttons render before any table is selected
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenDbEditor.tsx:1582-1679
+Reported: 2026-06-04
+Fixed: 2026-06-09
+Root cause: currentTable is initialised to '' and total to 0. Math.max(1, Math.ceil(0/limit)) = 1, so the bar renders "Page 1/1 (0 rows total)" and all action buttons (Commit, Discard, Delete Selected, Export CSV, SQL Query) are visible even though no table has been loaded. Looks like the selected table has 0 rows rather than no table being selected.
+Fix: Wrapped both the pagination row and action row in {currentTable && (<>...</>)} so they only render once a table is chosen.
+
+BUG-132: Attachments — empty-state message misleads user after auto-load finds no entries
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenAttachments.tsx:279
+Reported: 2026-06-04
+Fixed: 2026-06-09
+Root cause: loadTree() fires automatically on mount. If the cache is empty, busy clears and entries.length === 0 shows "Click Refresh tree to load" — implying the user needs to act when the data is genuinely absent.
+Fix: Added hasLoaded state (false until loadTree's finally block runs). Empty-state message now shows "Loading…" until hasLoaded is true, then "No attachments cached yet" when entries is empty, and "No matches" when a filter reduces a non-empty list to zero.
+
 BUG-111: Forum post description shows checksum file contents instead of entry description
 Status: Fixed
 File(s): backend/forum_poster.py:268-279

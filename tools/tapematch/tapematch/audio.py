@@ -9,9 +9,6 @@ from __future__ import annotations
 import json
 import subprocess
 import numpy as np
-from scipy.signal import resample_poly
-from math import gcd
-
 
 def _ffprobe_info(path: str) -> dict:
     """Return {channels, samplerate, duration} via ffprobe.
@@ -110,9 +107,22 @@ def duration_sec(path):
         return _ffprobe_info(str(path))["duration"]
 
 
-def resample_ratio(x, ratio):
-    """Resample x by `ratio` (output_len ≈ len*ratio) to correct a speed offset.
-    ratio>1 stretches (was running fast), ratio<1 compresses."""
-    from fractions import Fraction
-    frac = Fraction(ratio).limit_denominator(100000)
-    return resample_poly(x, frac.numerator, frac.denominator, axis=0).astype("float32")
+def resample_ratio(x: np.ndarray, ratio: float, sr: int = 16000) -> np.ndarray:
+    """Resample x by ratio (output_len ≈ len*ratio) to correct a speed offset.
+    ratio>1 stretches (was running fast), ratio<1 compresses.
+    Uses soxr for float32-native resampling — avoids scipy's internal float64
+    promotion which peaks at ~1.84 GB for a 2-hour source at 16 kHz.
+    Falls back to resample_poly if soxr is unavailable.
+    """
+    try:
+        import soxr
+        return soxr.resample(
+            x.astype(np.float32, copy=False),
+            sr, round(sr * ratio),
+            quality="HQ",
+        ).astype(np.float32, copy=False)
+    except ImportError:
+        from fractions import Fraction
+        from scipy.signal import resample_poly
+        frac = Fraction(ratio).limit_denominator(100000)
+        return resample_poly(x, frac.numerator, frac.denominator, axis=0).astype("float32")

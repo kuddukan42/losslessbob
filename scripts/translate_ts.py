@@ -34,7 +34,7 @@ LANGUAGES: dict[str, str] = {
 # Strings that should never be translated
 SKIP_SOURCES: set[str] = {
     "", "LB", "LBBCD", "qBittorrent", "→", "◀ Prev", "Next ▶",
-    "◀ Prev", "Next ▶", "Page 1 / 1", "304",
+    "Page 1 / 1", "304",
 }
 
 # Regex that matches Python format placeholders: {}, {0}, {name}, {name!r}, etc.
@@ -115,7 +115,7 @@ def _translate_batch(
     )
 
     translated = []
-    for result, tokens in zip(results, all_tokens):
+    for result, tokens in zip(results, all_tokens, strict=False):
         restored = _restore(result.text, tokens)
         translated.append(restored)
     return translated
@@ -155,7 +155,7 @@ def translate_file(
             time.sleep(0.2)
 
     # Write translations back into the tree
-    for el, text in zip(elements, translated_all):
+    for el, text in zip(elements, translated_all, strict=False):
         el.text = text
         if "type" in el.attrib:
             del el.attrib["type"]

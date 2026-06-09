@@ -9,11 +9,10 @@ DB is data/fingerprints.db — separate from losslessbob.db, never exported.
 import hashlib
 import logging
 import sqlite3
-import tempfile
 import threading
 from collections import defaultdict
+from collections.abc import Callable
 from pathlib import Path
-from typing import Callable
 
 from backend.paths import FP_DB_PATH
 
@@ -98,7 +97,6 @@ def _load_audio_mono(path: Path) -> tuple[object, int]:
     Returns (samples_ndarray, sample_rate).
     Uses soundfile for native formats; sox_utils.decode_to_wav for others.
     """
-    import numpy as np
     import soundfile as sf
 
     ext = path.suffix.lower()
@@ -147,7 +145,7 @@ def _compute_stft_peaks(samples: object, sr: int) -> list[tuple[int, float]]:
     freqs, times = np.where(peak_mask)
     time_secs = librosa.frames_to_time(times, sr=sr, hop_length=HOP_LENGTH)
 
-    return list(zip(freqs.tolist(), time_secs.tolist()))
+    return list(zip(freqs.tolist(), time_secs.tolist(), strict=False))
 
 
 def _peaks_to_hashes(peaks: list[tuple[int, float]]) -> list[tuple[int, float]]:

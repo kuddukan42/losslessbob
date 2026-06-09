@@ -16,7 +16,6 @@ import sys
 import tempfile
 from pathlib import Path
 
-
 # ── Console suppression (inline — no gui imports in backend) ──────────────────
 
 def _no_window() -> dict:
@@ -214,7 +213,7 @@ def _convert_to_wav(audio_path: Path) -> Path:
         raise ConversionError(
             f"ffmpeg timed out (>600s) decoding {audio_path.name}. "
             "The file may be corrupt."
-        )
+        ) from None
 
     if r.returncode != 0 or not tmp_path.exists() or tmp_path.stat().st_size == 0:
         tmp_path.unlink(missing_ok=True)
@@ -358,7 +357,7 @@ def _run_sox_spectrogram(
         raise SpectrogenError(
             f"SoX timed out after 300s on {input_wav.name}. "
             "Try reducing image width or check available memory."
-        )
+        ) from None
 
     if r.returncode != 0:
         raise SpectrogenError(

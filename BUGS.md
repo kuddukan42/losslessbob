@@ -86,25 +86,21 @@ Root cause: parse_lbdir_file ignored the subdirectory context embedded in shntoo
 Fix: parse_lbdir_file now extracts the subdirectory path from shntool section headers via _shn_dir_from_header() and prepends it to each file entry in that section.
 
 BUG-134: Map screen — blank center canvas with no fallback when tiles fail to load
-Status: Open
-File(s): gui_next/src/renderer/src/screens/ScreenMap.tsx
+Status: Fixed
+File(s): gui/resources/map.html
 Reported: 2026-06-04
+Fixed: 2026-06-09
 Root cause: Leaflet tile requests to OpenStreetMap silently fail when offline. No overlay or message indicates this; the center area renders blank white. Left/right sidebars (filters, venue list) are unaffected.
-Fix: Add a Leaflet tile-error listener that shows a "Map tiles couldn't load — check your internet connection" overlay on the map container.
+Fix: Added tileerror/tileload listeners on the tile layer; tileerror shows a "Map tiles couldn't load — check your internet connection" banner overlay (z-index 1000, pointer-events:none, bottom-anchored) inside #map; tileload hides it again if tiles subsequently succeed.
 
 BUG-133: DB Editor — pagination bar and action buttons render before any table is selected
-Status: Open
-File(s): gui_next/src/renderer/src/screens/ScreenDbEditor.tsx:1590-1620
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenDbEditor.tsx:1582-1679
 Reported: 2026-06-04
+Fixed: 2026-06-09
 Root cause: currentTable is initialised to '' and total to 0. Math.max(1, Math.ceil(0/limit)) = 1, so the bar renders "Page 1/1 (0 rows total)" and all action buttons (Commit, Discard, Delete Selected, Export CSV, SQL Query) are visible even though no table has been loaded. Looks like the selected table has 0 rows rather than no table being selected.
-Fix: Wrap the bottom action bar in {currentTable && ...} so it only renders once a table is chosen.
+Fix: Wrapped both the pagination row and action row in {currentTable && (<>...</>)} so they only render once a table is chosen.
 
-BUG-132: Attachments — empty-state message misleads user after auto-load finds no entries
-Status: Open
-File(s): gui_next/src/renderer/src/screens/ScreenAttachments.tsx:279
-Reported: 2026-06-04
-Root cause: loadTree() fires automatically on mount (line 114). If data/attachments/ is empty the API returns 0 entries, busy clears, and the list shows "Click Refresh tree to load" — but a load already happened. The message implies the user needs to act when the data is genuinely absent.
-Fix: Distinguish initial-empty from filter-empty: show "No attachments cached yet" when entries === [] and no filter is active; keep "No matches" for the filtered case.
 
 BUG-131: Lookup tab folder list not synced with shared folder queue
 Status: Fixed
@@ -243,11 +239,3 @@ Description: The Windows installer does not install the application to the stand
 Root cause: Unknown
 Fix: —
 
-
-BUG-067: PyQt6 + lxml SIGABRT when Qt widget tests run before lxml-importing tests
-Status: Open
-File(s): tests/test_scraper_crawler.py, tests/test_lb_master.py
-Reported: 2026-05-18
-Description: Running all three test files in a single pytest process causes a Fatal Python error: Aborted when tests/test_lb_master.py Qt widget tests (TestSearchTabStatusColumn, TestDbEditorIntegrityPanel) run before tests/test_scraper_crawler.py which imports BeautifulSoup (bs4 loads lxml at import time). The SIGABRT is a known incompatibility between PyQt6 cleanup and lxml's memory allocator on Linux.
-Root cause: bs4 unconditionally imports lxml at bs4 import time regardless of which parser is used. When lxml's .so is loaded into the same process as PyQt6 objects, Qt's atexit/destructor sequence may SIGABRT.
-Fix: Run test files separately (`pytest tests/test_scraper_crawler.py`) or exclude Qt widget tests when running combined (`pytest tests/ -k "not SearchTab and not DbEditor and not CollectionTab"`). All three files pass independently (59 + 27 + 13 = 99 total tests, all green).

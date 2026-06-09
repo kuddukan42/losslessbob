@@ -15,8 +15,10 @@ import requests
 from bs4 import BeautifulSoup
 
 from backend.db import (
-    DB_PATH, get_connection, backup_database,
     _BOOTLEG_SOURCE_URL,
+    DB_PATH,
+    backup_database,
+    get_connection,
 )
 
 logger = logging.getLogger(__name__)
@@ -183,8 +185,6 @@ def _diff(incoming: list[dict], current: list[dict]) -> tuple[list[dict], list[d
         return tuple(row[k] for k in _NATURAL_KEY)
 
     current_by_nk = {nk(r): r for r in current}
-    incoming_nk_set = {nk(r) for r in incoming}
-
     to_add: list[dict] = []
     to_change: list[dict] = []
     ids_to_remove: list[int] = []

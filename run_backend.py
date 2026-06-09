@@ -18,8 +18,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from backend.paths import ensure_data_dirs
 from backend.app import create_app, set_restart_callback
+from backend.paths import ensure_data_dirs
 
 _srv = None
 _restart_flag = False

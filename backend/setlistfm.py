@@ -16,14 +16,13 @@ Rate limit: 0.5 s between requests (API allows ~2/s for free tier).
 from __future__ import annotations
 
 import logging
-import re
 import threading
 import time
 from datetime import datetime
 
 import requests
 
-from backend.db import get_connection, DB_PATH, get_meta, set_meta
+from backend.db import DB_PATH, get_meta, set_meta
 from backend.db_queue import get_write_queue, init_write_queue
 
 _log = logging.getLogger(__name__)

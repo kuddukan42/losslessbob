@@ -181,6 +181,37 @@
             background: #4CAF50;
             vertical-align: middle;
         }
+
+        /* ---- Tile error overlay ---- */
+        #tileErrorOverlay {
+            display: none;
+            position: absolute;
+            inset: 0;
+            z-index: 1000;
+            pointer-events: none;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 24px;
+        }
+        #tileErrorOverlay.visible {
+            display: flex;
+        }
+        #tileErrorOverlay .tile-error-banner {
+            background: rgba(30, 30, 30, 0.88);
+            color: #f5f5f5;
+            border-radius: 8px;
+            padding: 10px 18px;
+            font-size: 13px;
+            font-family: sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+        }
+        #tileErrorOverlay .tile-error-icon {
+            font-size: 16px;
+            line-height: 1;
+        }
     </style>
 </head>
 <body>
@@ -223,7 +254,14 @@
     </div>
 
     <!-- Map -->
-    <div id="map"></div>
+    <div id="map">
+        <div id="tileErrorOverlay">
+            <div class="tile-error-banner">
+                <span class="tile-error-icon">⚠</span>
+                Map tiles couldn't load — check your internet connection
+            </div>
+        </div>
+    </div>
 
     <!-- Stats bar -->
     <div id="statsBar">Loading&hellip;</div>
@@ -259,12 +297,19 @@
     // Map initialisation
     // ---------------------------------------------------------------------------
 
-    const map = L.map('map').setView([30, 0], 2);
+    const map = L.map('map', { preferCanvas: true }).setView([30, 0], 2);
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    const tileLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         maxZoom: 19,
     }).addTo(map);
+
+    tileLayer.on('tileerror', function() {
+        document.getElementById('tileErrorOverlay').classList.add('visible');
+    });
+    tileLayer.on('tileload', function() {
+        document.getElementById('tileErrorOverlay').classList.remove('visible');
+    });
 
     // Active layers
     let clusterLayer = null;

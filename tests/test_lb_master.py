@@ -13,7 +13,6 @@ import tempfile
 
 import pytest
 
-
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
@@ -367,7 +366,7 @@ _HAVE_DISPLAY = bool(os.environ.get("DISPLAY") or os.environ.get("WAYLAND_DISPLA
 @pytest.mark.skipif(not _HAVE_DISPLAY, reason="No display available")
 class TestSearchTabStatusColumn:
     def test_status_column_in_headers(self, qtbot):
-        from gui.search_tab import SearchTab, HEADERS
+        from gui.search_tab import HEADERS
         assert "Status" in HEADERS
 
     def test_status_combobox_exists(self, qtbot):

@@ -1,3 +1,38 @@
+[2026-06-09] — chore(backend): set up ruff linter + pre-commit hook
+Added: pyproject.toml: ruff config (E/W/F/I/UP/B/G/LOG, line-length 100, py311, excludes gui/ and tools/)
+Added: .pre-commit-config.yaml: local pre-commit hook running ruff check --fix on staged Python files
+Added: requirements-dev.txt: pinned ruff==0.15.16 and pre-commit==4.6.0
+Changed: backend/: 102 auto-fixes applied (import ordering, deprecated typing imports, OSError aliases, unused imports, f-string cleanup, missing newlines)
+Changed: BEST_PRACTICES.md: added §13 Tooling Setup (install steps, ruff rules table, config file reference)
+
+[2026-06-09] — docs: expand BEST_PRACTICES.md with external standards and references
+Added: BEST_PRACTICES.md: structured logging with extra=, TypedDict for dict-heavy return types, exception chaining (PEP 3151), pytest parametrize guidance, external references table (PEP 8/257/484/585/604/655/673/3151, Google style guide, Logging HOWTO/Cookbook, pytest docs, Effective Python)
+
+[2026-06-09] — docs: add BEST_PRACTICES.md — Python conventions reference for this project
+Added: BEST_PRACTICES.md: covers logging, type hints, docstrings, DB access patterns, error handling, threading, Flask routes, testing, and a pre-PR checklist
+
+[2026-06-09] — perf(gui): Map — Canvas renderer + compositor layer promotion reduce pan/zoom lag
+Changed: gui/resources/map.html: pass preferCanvas:true to L.map() so Leaflet uses Canvas instead of SVG for marker rendering; SVG DOM is O(n) with marker count, Canvas is not
+Changed: gui_next/src/renderer/src/screens/ScreenMap.tsx: added transform:translateZ(0) to iframe style to promote it to its own GPU compositor layer, reducing repaint cost during interaction
+
+[2026-06-09] — fix(gui): Map tiles offline — add error banner overlay when tiles fail to load
+Fixed: gui/resources/map.html: captured tileLayer reference; added tileerror listener that shows a "Map tiles couldn't load — check your internet connection" banner (z-index 1000, pointer-events:none) anchored to the bottom of the map container; added tileload listener that clears it when tiles subsequently succeed (BUG-134)
+
+[2026-06-09] — fix(gui): DB Editor pagination and action bar hidden until a table is selected
+Fixed: gui_next/src/renderer/src/screens/ScreenDbEditor.tsx: wrapped pagination row and action row in {currentTable && ...} so "Page 1/1 (0 rows total)" and all buttons (Commit, Discard, Delete Selected, Export CSV, SQL Query) no longer appear on initial load before any table is chosen (BUG-133)
+
+[2026-06-09] — fix(gui): Attachments empty-state message no longer misleads after auto-load
+Fixed: gui_next/src/renderer/src/screens/ScreenAttachments.tsx: added hasLoaded flag set in loadTree's finally block; empty-state now shows "Loading…" until first load completes, "No attachments cached yet" when the cache is genuinely empty, and "No matches" when a filter narrows an existing list to zero (BUG-132)
+
+[2026-06-07] — fix(tapematch): year_run now skips dates with existing run folders in RUNS_DIR
+Changed: tools/tapematch/tapematch_session.py: year_run() augments `done` set by scanning RUNS_DIR for folders named YYYYMMDD_HHMMSS_{date_iso}; catches dates whose DB insert failed or whose runs were archived without a successful observations.db entry
+
+[2026-06-06] — fix(tapematch): OOM kill in Pass 4 + add per-run debug log
+Fixed: tools/tapematch/tapematch/audio.py: resample_ratio now uses soxr instead of scipy.signal.resample_poly; soxr operates natively in float32 so the ~1.84 GB float64 intermediate (922 MB input copy + 922 MB output) is eliminated; peak per speed-correction call drops from ~2.3 GB to ~461 MB; falls back to resample_poly if soxr is unavailable; added sr parameter (default 16000)
+Changed: tools/tapematch/tapematch/cli.py: pass sr to resample_ratio call in Pass 4; added _rss_mb()/_DebugLog helpers; added --debug-log PATH argument; log elapsed time + RSS at every pass boundary (INGEST per source, PASS1_DONE, ANCHORS, LAG_CURVES_START, MATRIX_START/DONE, each RESAMPLE event with ratio+ppm, FINGERPRINT_START, SECONDARY_START, LINEAGE_START, DONE)
+Changed: tools/tapematch/tapematch_session.py: run_tapematch() replaced subprocess.run(capture_output=True) with Popen + line-by-line stream so tapematch progress and any crash output appear immediately in the terminal; removed redundant print(log_text) after the call; passes --debug-log last_debug.log to cli; archive_run() copies last_debug.log to debug.log in each run archive
+Added: requirements.txt: soxr==1.1.0
+
 [2026-06-05] — fix(tools): batch_verify --skip-done now auto-reprocesses api_error/retrieve_error
 Changed: tools/batch_verify.py: --skip-done treats api_error and retrieve_error as transient (never skips them); updated help text and usage examples to remove api_error from --reprocess examples
 

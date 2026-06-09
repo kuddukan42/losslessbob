@@ -1,0 +1,6 @@
+# Development-only tools — not required at runtime
+# Install with: pip install -r requirements-dev.txt
+# Then activate pre-commit hooks with: pre-commit install
+
+ruff==0.15.16
+pre-commit==4.6.0

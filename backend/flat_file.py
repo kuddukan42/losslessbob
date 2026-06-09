@@ -11,9 +11,9 @@ import hashlib
 import logging
 import re
 import zipfile
+from collections.abc import Callable
 from datetime import datetime, timedelta
 from pathlib import Path
-from typing import Callable
 
 import requests
 from bs4 import BeautifulSoup

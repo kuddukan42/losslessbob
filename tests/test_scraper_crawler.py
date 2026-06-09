@@ -18,7 +18,6 @@ from unittest.mock import patch
 
 import pytest
 
-
 # ── Shared helpers ────────────────────────────────────────────────────────────
 
 def _make_db() -> tuple[str, object, str]:
@@ -29,8 +28,8 @@ def _make_db() -> tuple[str, object, str]:
     tmp_dir = tempfile.mkdtemp(prefix="lbtest_crawler_")
     db_path = os.path.join(tmp_dir, "test.db")
 
-    import backend.paths as _paths
     import backend.db as _db
+    import backend.paths as _paths
     _paths.DATA_DIR = Path(tmp_dir)
     _db.DB_PATH = Path(db_path)
 
@@ -47,8 +46,8 @@ def client():
     tmp_dir = tempfile.mkdtemp(prefix="lbtest_flask_")
     db_path = os.path.join(tmp_dir, "test.db")
 
-    import backend.paths as _paths
     import backend.db as _db
+    import backend.paths as _paths
     orig_data = _paths.DATA_DIR
     orig_db   = _db.DB_PATH
     _paths.DATA_DIR = Path(tmp_dir)
@@ -147,7 +146,7 @@ class TestPaths:
         assert SITE_DIR.name == "site"
 
     def test_site_detail_dir_is_under_site_dir(self):
-        from backend.paths import SITE_DIR, SITE_DETAIL_DIR
+        from backend.paths import SITE_DETAIL_DIR, SITE_DIR
         assert SITE_DETAIL_DIR.parent == SITE_DIR
 
     def test_site_files_dir_is_under_site_dir(self):
@@ -183,9 +182,9 @@ class TestPaths:
             shutil.rmtree(tmp_dir, ignore_errors=True)
 
     def test_find_lbdir_attachment_returns_none_when_dir_missing(self):
-        from backend.paths import find_lbdir_attachment
         # SITE_FILES_DIR doesn't exist in a clean temp env → should return None, not crash
         import backend.paths as _paths
+        from backend.paths import find_lbdir_attachment
         orig = _paths.SITE_FILES_DIR
         _paths.SITE_FILES_DIR = Path("/nonexistent_path_lbtest")
         result = find_lbdir_attachment(1)
@@ -497,21 +496,21 @@ class TestCrawlerUrlUtils:
 
     def test_extract_links_finds_same_domain_links(self):
         from backend.site_crawler import _extract_links
-        html = f"""
+        html = """
         <html><body>
           <a href="/detail/LB-00001.html">entry 1</a>
           <a href="/detail/LB-00002.html">entry 2</a>
         </body></html>
         """
         links = _extract_links(html, self.BASE + "/")
-        urls = [l for l in links if "LB-00001" in l or "LB-00002" in l]
+        urls = [u for u in links if "LB-00001" in u or "LB-00002" in u]
         assert len(urls) == 2
 
     def test_extract_links_ignores_external(self):
         from backend.site_crawler import _extract_links
         html = '<a href="https://google.com/">ext</a>'
         links = _extract_links(html, self.BASE + "/")
-        assert not any("google.com" in l for l in links)
+        assert not any("google.com" in u for u in links)
 
     def test_extract_links_ignores_mailto(self):
         from backend.site_crawler import _extract_links

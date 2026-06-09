@@ -236,7 +236,7 @@ export function ScreenMap(): React.JSX.Element {
           <iframe
             ref={iframeRef}
             src={`${MAP_URL}?embedded=1`}
-            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 'none' }}
+            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 'none', transform: 'translateZ(0)' }}
             title="Concert map"
           />
         </section>

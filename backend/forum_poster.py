@@ -10,9 +10,8 @@ from pathlib import Path
 import requests
 from bs4 import BeautifulSoup
 
+from backend.credentials import SERVICE_WTRF, get_credentials
 from backend.paths import APP_VERSION
-from backend.credentials import get_credentials, SERVICE_WTRF
-
 
 logger = logging.getLogger(__name__)
 
@@ -356,11 +355,16 @@ def _build_body(entry: dict, attachments_dir: Path | None, lb_number: int | None
     timing   = (entry.get("timing") or "").strip()
 
     meta_fields = []
-    if date_str: meta_fields.append(f"[b]Date:[/b] {date_str}")
-    if location: meta_fields.append(f"[b]Location:[/b] {location}")
-    if cdr:      meta_fields.append(f"[b]CDR:[/b] {cdr}")
-    if rating:   meta_fields.append(f"[b]Rating:[/b] {rating}")
-    if timing:   meta_fields.append(f"[b]Timing:[/b] {timing}")
+    if date_str:
+        meta_fields.append(f"[b]Date:[/b] {date_str}")
+    if location:
+        meta_fields.append(f"[b]Location:[/b] {location}")
+    if cdr:
+        meta_fields.append(f"[b]CDR:[/b] {cdr}")
+    if rating:
+        meta_fields.append(f"[b]Rating:[/b] {rating}")
+    if timing:
+        meta_fields.append(f"[b]Timing:[/b] {timing}")
     if lb_number is not None:
         lb_id = f"LB-{lb_number:05d}"
         detail_url = (

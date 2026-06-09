@@ -97,7 +97,7 @@ async function runSession(actions, keepOpen = false) {
   log('Launching Electron...')
   const electronApp = await electronLauncher.launch({
     executablePath: ELECTRON_BIN,
-    args: [MAIN_JS],
+    args: [MAIN_JS, '--disable-gpu', '--disable-software-rasterizer'],
     env,
   })
 

@@ -6,9 +6,11 @@ from pathlib import Path
 
 from pybloom_live import ScalableBloomFilter as _SBF
 
-from backend.paths import DB_PATH  # noqa: F401  — re-exported for callers
-from backend.paths import to_long_path
-from backend.db_queue import init_write_queue, get_write_queue  # DB-09
+from backend.db_queue import get_write_queue, init_write_queue  # DB-09
+from backend.paths import (
+    DB_PATH,  # noqa: F401  — re-exported for callers
+    to_long_path,
+)
 
 # --- Thread-local persistent connection pool (DB-02) ---
 _local = threading.local()
@@ -1151,6 +1153,7 @@ def import_dylan_performances(db_path=None) -> int:
     """
     import xml.etree.ElementTree as ET
     import zipfile as _zf
+
     from backend.paths import DATA_DIR as _DATA
 
     _log = logging.getLogger(__name__)
@@ -2540,6 +2543,7 @@ def backup_database(reason: str = "manual", db_path=None) -> "Path":
     """
     import logging
     from datetime import datetime as _dt
+
     from backend.paths import DATA_DIR as _DATA
 
     backup_dir = _DATA / "backups"
@@ -2991,13 +2995,12 @@ def import_overrides(overrides: list[dict], db_path=None) -> dict:
         )
         # The history row for the manual call is already written by
         # set_lb_manual_override; add a second row to record the import event.
-        _lb_import = lb
         get_write_queue().execute(
-            lambda c: c.execute(
+            lambda c, _lb=lb: c.execute(
                 """INSERT INTO lb_status_history (lb_number, old_status, new_status, trigger_event)
                    SELECT lb_number, previous_status, lb_status, 'import'
                    FROM lb_master WHERE lb_number=?""",
-                (_lb_import,),
+                (_lb,),
             )
         )
         imported += 1
@@ -3204,6 +3207,7 @@ def export_master_db(reason: str = "publish", db_path=None) -> "tuple[Path, dict
     import json
     import logging
     from datetime import datetime as _dt
+
     from backend.paths import DATA_DIR as _DATA
 
     log = logging.getLogger(__name__)
@@ -3504,7 +3508,7 @@ def import_master_db(snapshot_path: "Path | str", db_path=None) -> dict:
             f"Manifest not found alongside snapshot: {manifest_path}"
         )
 
-    with open(manifest_path, "r", encoding="utf-8") as f:
+    with open(manifest_path, encoding="utf-8") as f:
         manifest = json.load(f)
 
     # Step 1: SHA256 validation
@@ -3561,7 +3565,7 @@ def import_master_db(snapshot_path: "Path | str", db_path=None) -> dict:
     with _write_lock:
         conn.execute("PRAGMA foreign_keys = OFF")
         try:
-            conn.execute(f"ATTACH DATABASE ? AS incoming", (str(snapshot_path),))
+            conn.execute("ATTACH DATABASE ? AS incoming", (str(snapshot_path),))
             try:
                 row_counts: dict[str, int] = {}
                 # Order matters when FKs exist (entries before entry_files etc.),

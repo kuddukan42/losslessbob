@@ -1579,6 +1579,7 @@ export function ScreenDbEditor() {
           )}
         </div>
 
+        {currentTable && (<>
         {/* Pagination row */}
         <div style={{
           display: 'flex', alignItems: 'center', gap: 8, padding: '6px 12px',
@@ -1675,9 +1676,10 @@ export function ScreenDbEditor() {
             </span>
           )}
         </div>
+        </>)}
 
         {/* SQL Query panel */}
-        {sqlPanelOpen && (
+        {currentTable && sqlPanelOpen && (
           <div style={{ height: 280, flexShrink: 0, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
             <SqlQueryPanel db={activeDb} />
           </div>

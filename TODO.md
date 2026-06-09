@@ -1,12 +1,16 @@
 TODO-109: Python best practices — BP document and code review
 Priority: Low
-Status: Open
+Status: In Progress
 Added: 2026-06-03
 Description: Create a BEST_PRACTICES.md document summarising agreed Python conventions for
 this project. Then do a pass over existing backend files to apply improvements: add missing
 type hints to older public functions (db.py, app.py, etc.), break up oversized functions
 (e.g. init_db), remove late imports, and fill in missing docstrings on exported functions.
 Start with db.py as the reference — it was rated 8/10 and has the most surface area.
+Note: BEST_PRACTICES.md written 2026-06-09. ruff + pre-commit configured 2026-06-09.
+Code-pass over backend files deferred. 36 pre-existing ruff violations remain (E701 x12,
+B023 x9, F841 x5, B905 x3, B007 x2, B904 x2, LOG015 x2, F821 x1) — will surface as
+blockers when those files are next edited. E501 suppressed in pyproject.toml until then.
 
 TODO-108: Collection tab — fix header UI problems
 Priority: Medium

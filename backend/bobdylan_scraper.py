@@ -19,7 +19,7 @@ from xml.etree import ElementTree
 import requests
 from bs4 import BeautifulSoup
 
-from backend.db import get_connection, DB_PATH
+from backend.db import DB_PATH, get_connection
 from backend.db_queue import get_write_queue, init_write_queue
 
 _log = logging.getLogger(__name__)

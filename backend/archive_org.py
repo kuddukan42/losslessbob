@@ -13,7 +13,7 @@ from typing import TYPE_CHECKING
 import requests
 
 if TYPE_CHECKING:
-    from backend import db as _db_mod
+    pass
 
 log = logging.getLogger(__name__)
 

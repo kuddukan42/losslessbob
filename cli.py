@@ -35,8 +35,8 @@ import shlex
 import shutil
 import sys
 import textwrap
-import time
 import threading
+import time
 from pathlib import Path
 
 # ── Version ───────────────────────────────────────────────────────────────────
@@ -987,7 +987,7 @@ def _execute(args: argparse.Namespace, base_url: str) -> None:
                 pg += 1
 
             if args.fmt == "json":
-                records = [dict(zip(cols, row)) for row in all_rows]
+                records = [dict(zip(cols, row, strict=False)) for row in all_rows]
                 out_str = json.dumps(records, indent=2)
                 if args.out:
                     Path(args.out).write_text(out_str)
