@@ -7,7 +7,7 @@ import { useSettingsStore } from '../store'
 // ── Nav structure ────────────────────────────────────────────────────────────
 
 type NavId =
-  | 'home' | 'pipeline' | 'verify' | 'lookup' | 'rename' | 'lbdir'
+  | 'home' | 'pipeline' | 'verify' | 'lookup' | 'quicklookup' | 'rename' | 'lbdir'
   | 'collection' | 'trading' | 'sharing' | 'search' | 'bootlegs'
   | 'attachments' | 'spectrograms' | 'map' | 'fingerprint'
   | 'scraper' | 'setup' | 'themes' | 'dbeditor'
@@ -44,11 +44,12 @@ const NAV_GROUPS: NavGroup[] = [
   {
     label: 'Ingest',
     items: [
-      { id: 'pipeline',  label: 'Pipeline', icon: 'pipeline' },
-      { id: 'verify',    label: 'Verify',   icon: 'verify' },
-      { id: 'lookup',    label: 'Lookup',   icon: 'lookup' },
-      { id: 'rename',    label: 'Rename',   icon: 'rename' },
-      { id: 'lbdir',     label: 'LBDIR',    icon: 'lbdir' },
+      { id: 'pipeline',    label: 'Pipeline',      icon: 'pipeline' },
+      { id: 'verify',      label: 'Verify',        icon: 'verify' },
+      { id: 'lookup',      label: 'Lookup',        icon: 'lookup' },
+      { id: 'quicklookup', label: 'Quick Lookup',  icon: 'lookup' },
+      { id: 'rename',      label: 'Rename',        icon: 'rename' },
+      { id: 'lbdir',       label: 'LBDIR',         icon: 'lbdir' },
     ],
   },
   {

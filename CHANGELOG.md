@@ -1,3 +1,23 @@
+[2026-06-09] — docs: pipeline v2 phase 9 — documentation and verification
+Changed: PROJECT.md: added collection_mounts + collection_routes schema tables; added "Collection Routing & Pipeline Filing" API section (10 routes); updated ScreenPipeline to 5-step; added ScreenQuickLookup entry; added Change Log row
+Changed: instructions/pipeline_new/CHECKLIST.md: phases 9 items ticked off
+
+[2026-06-09] — feat(gui): pipeline v2 phase 8 — Quick Lookup screen
+Added: gui_next/src/renderer/src/screens/ScreenQuickLookup.tsx: new screen — paste input, clipboard button, drag-and-drop .md5/.ffp zone, results table (Checksum | Filename | LB# | Status)
+Changed: gui_next/src/renderer/src/components/AppShell.tsx: added quicklookup nav entry under Ingest group
+Changed: gui_next/src/renderer/src/App.tsx: added /quicklookup route and import
+Changed: gui_next/src/renderer/src/locales/*.json: added appShell.nav.quicklookup and quickLookup namespace to all 6 locales
+
+[2026-06-09] — feat(gui+backend): pipeline v2 phase 7 — stage detail panels
+Changed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: replaced GenericStageContent stub with four dedicated stage panels — VerifyStageContent (stats grid, no-checksums generate flow, re-verify), LookupStageContent (LB# matched card, conflict/not-found states, re-run), RenameStageContent (current/proposed diff view, apply rename button), CollectStageContent (route box staging→destination, error-code cards for no_date/no_route/mount_offline/dest_exists/db_error, filed success card); DetailPanel gains onRename prop wired to applyRename callback
+Changed: backend/app.py: _pipeline_process_folder verify step now includes total/pass/missing/mismatch/extra/no_checksums counts in the step result dict
+
+[2026-06-09] — feat(gui+backend): pipeline v2 phase 6 — Collect step wired into pipeline screen
+Changed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: added 5th step column "Collect" with StepPill; "File" action button per-row (opens confirm dialog, calls /api/pipeline/file); "File selected" bulk button in selection bar; "File all ready" button in header; "Collect" individual run button in queue rail; "Run All" now runs all 5 steps; ConfirmDialog for file action shows dest path and mount; severity 'blocked' escalates to attn; right-click context menu wired via onContextMenu on TR rows; filter chip and group row labels now use t() with new pipeline.filter.{needs,ready,running,shelf} i18n keys; "File into Collection" action button in detail panel file stage
+Changed: backend/app.py: _pipeline_process_folder severity — file_status=='blocked' now escalates to 'attn'; comment explains why 'ready' does not
+Added: gui_next/src/renderer/src/components/pipeline/ConfirmDialog.tsx: useConfirm integration in ScreenPipeline
+Changed: gui_next/src/renderer/src/locales/en.json + de/fr/es/it/nl: new keys — pipeline.table.collect, pipeline.file.*, pipeline.queue.collect, pipeline.fileAllReady, pipeline.selection.fileSelected; queue.runAll and runHint updated to "5 steps"; ingestDesc updated to include collect step; pipeline.filter.{needs,ready,running,shelf} added for bucket filter chips
+
 [2026-06-09] — feat(backend+gui): Pipeline v2 — Step 5 File into Collection + Mounts & Routes
 Added: backend/filer.py: year extraction, route resolution, timeout-guarded mount reachability check, move/copy filing, my_collection registration
 Added: backend/db.py: collection_mounts, collection_routes tables + schema migration guards + meta key pipeline_file_mode; DB helper functions for all CRUD

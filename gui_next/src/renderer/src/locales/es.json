@@ -34,6 +34,7 @@
       "pipeline": "Pipeline",
       "verify": "Verifique",
       "lookup": "Búsqueda",
+      "quicklookup": "Búsqueda rápida",
       "rename": "Cambie el nombre de",
       "lbdir": "LBDIR",
       "library": "Biblioteca",
@@ -71,7 +72,7 @@
     "primaryWorkflow": "FLUJO DE TRABAJO PRIMARIO",
     "pipelineTagline": "El proceso de nuevas adquisiciones",
     "ingestTitle": "Ingerir música nueva",
-    "ingestDesc": "Suelte las carpetas aquí y el proceso ejecutará <strong>verificar → buscar → renombrar → LBDIR</strong> en todo el lote. Se acabaron las pestañas rebotantes.",
+    "ingestDesc": "Suelte las carpetas aquí y el proceso ejecutará <strong>verificar → buscar → renombrar → LBDIR → recopilar</strong> en todo el lote. Se acabaron las pestañas rebotantes.",
     "dragHere": "Arrastre las carpetas aquí",
     "orClickBrowse": "o haga clic para navegar",
     "stepVerify": "Verificar las sumas de comprobación",
@@ -327,7 +328,7 @@
     "folderQueued_one": "- {{count}} carpeta en cola",
     "folderQueued_other": "- {{count}} carpetas en cola",
     "emptyHint": "Suelte las carpetas para empezar, o utilice \"Añadir carpetas...\" en el carril de cola.",
-    "runHint": "Suelte más carpetas en cualquier momento: haga clic en \"Ejecutar los 4 pasos\" para procesar la cola.",
+    "runHint": "Suelte más carpetas en cualquier momento: haga clic en \"Ejecutar los 5 pasos\" para procesar la cola.",
     "done_one": "{{count}} hecho",
     "done_other": "{{count}} hecho",
     "readyToRename_one": "{{count}} listo para renombrar",
@@ -341,6 +342,8 @@
     "clearQueue": "Borrar cola",
     "applyRenames": "Aplicar todos los {{count}} propuestos renombrar",
     "applyRenames_plural": "Aplicar todos los cambios de nombre propuestos por {{count}}.",
+    "fileAllReady": "Archivar {{count}} listo para recopilar",
+    "fileAllReady_plural": "Archivar {{count}} listos para recopilar",
     "queue": {
       "label": "Cola de carpetas",
       "filterPlaceholder": "Filtrar cola...",
@@ -349,14 +352,19 @@
       "addFolders": "Añadir carpetas...",
       "scanTree": "Escanea el árbol...",
       "runOnSelected": "Ejecutar en seleccionado ({{count}})",
-      "runAll": "Ejecute los 4 pasos",
+      "runAll": "Ejecute los 5 pasos",
       "verify": "Verifique",
       "lookup": "Búsqueda",
       "rename": "Cambie el nombre de",
-      "lbdir": "LBDIR"
+      "lbdir": "LBDIR",
+      "collect": "Recopilar"
     },
     "filter": {
       "all": "Todos",
+      "needs": "Requiere atención",
+      "ready": "Listo",
+      "running": "En curso",
+      "shelf": "Aplazado",
       "needAttention": "Necesita atención",
       "readyToRename": "Listo para renombrar",
       "done": "Hecho",
@@ -371,7 +379,9 @@
       "verifySelected": "Verificar seleccionado",
       "lookupSelected": "Búsqueda seleccionada",
       "applySelected": "Aplicar el cambio de nombre seleccionado {{count}}.",
-      "applySelected_plural": "Aplicar los cambios de nombre seleccionados {{count}}."
+      "applySelected_plural": "Aplicar los cambios de nombre seleccionados {{count}}.",
+      "fileSelected": "Archivar {{count}} seleccionado",
+      "fileSelected_plural": "Archivar {{count}} seleccionados"
     },
     "empty": {
       "title": "Suelte las carpetas aquí para empezar",
@@ -383,7 +393,15 @@
       "lookup": "Búsqueda",
       "rename": "Cambie el nombre de",
       "lbdir": "LBDIR",
+      "collect": "Recopilar",
       "lb": "LB#"
+    },
+    "file": {
+      "action": "Archivar",
+      "confirmTitle": "Archivar en la colección",
+      "confirmBody": "Archivar \"{{folder}}\" en {{mount}}",
+      "confirmNote": "La carpeta se moverá a su destino de colección y se registrará en Mi colección.",
+      "confirmAction": "Archivar"
     }
   },
   "collection": {
@@ -967,6 +985,48 @@
       "noResults": "La consulta no devolvió filas.",
       "truncated": "(limitado a 500 filas)",
       "error": "Error: {{msg}}"
+    }
+  },
+"quickLookup": {
+    "title": "Búsqueda rápida",
+    "subtitle": "Suma de verificación",
+    "desc": "Pegue o suelte líneas de suma de verificación para identificar grabaciones al instante.",
+    "header": {
+      "matched": "encontrado"
+    },
+    "input": {
+      "label": "Entrada",
+      "placeholder": "Pegue el contenido .md5 o .ffp aquí…\np.ej.  a1b2c3d4…  Mi Concierto.flac"
+    },
+    "drop": {
+      "hint": "Suelte un archivo de suma de verificación aquí",
+      "ext": ".md5 · .ffp · .st5 · .sha1"
+    },
+    "btn": {
+      "clipboard": "Portapapeles",
+      "files": "Archivos…",
+      "lookup": "Buscar",
+      "running": "Buscando…",
+      "clear": "Borrar resultados"
+    },
+    "filePicker": {
+      "title": "Seleccionar archivos de suma de verificación"
+    },
+    "empty": {
+      "title": "Sin resultados aún",
+      "desc": "Pegue texto de suma de verificación, suelte un archivo o use el botón Portapapeles."
+    },
+    "table": {
+      "checksum": "Suma de verificación",
+      "filename": "Nombre de archivo",
+      "lb": "LB#",
+      "status": "Estado"
+    },
+    "toast": {
+      "failed": "Búsqueda fallida",
+      "clipboardEmpty": "El portapapeles está vacío",
+      "clipboardFailed": "No se puede leer el portapapeles",
+      "noValidFiles": "No se encontraron archivos de suma de verificación (.md5, .ffp, .st5, .sha1)"
     }
   }
 }

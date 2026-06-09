@@ -1,4 +1,11 @@
 
+BUG-146: build_standard_name produces xx/xx/YY folder date prefix for entries with unknown month/day
+Status: Open
+File(s): backend/torrent_maker.py:129, backend/folder_naming.py:72
+Reported: 2026-06-09
+Root cause: `_parse_date` catches `ValueError` from `int('xx')` and falls back to `date_str.strip()`, returning the raw DB string (e.g. `'xx/xx/65'`) unchanged. `build_standard_name` then uses this as the date prefix, producing `'xx/xx/65 HIGHWAY 61 ROM... (LB-12205)'`. Existing folders for these entries already use ISO-style `'1965-xx-xx ...'` format.
+Fix: In `_parse_date`, detect `xx` parts before trying `int()` and emit ISO-style `YYYY-xx-xx` (or `YYYY-MM-xx`) for the known parts — e.g. `xx/xx/65` → `1965-xx-xx`, `3/xx/72` → `1972-03-xx`.
+
 BUG-145: batch_verify --skip-done silently preserves api_error/retrieve_error from transient backend failures
 Status: Fixed
 File(s): tools/batch_verify.py:1007-1009

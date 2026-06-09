@@ -472,6 +472,27 @@ Indexes: `idx_flat_changelog_release(release_id)`, `idx_flat_changelog_lb(lb_num
 
 Indexes: `idx_archive_uploads_lb(lb_number)`, `idx_archive_uploads_status(status, started_at DESC)`.
 
+### `collection_mounts` — User-defined collection storage mounts (USER table)
+Named root paths where filed recordings are stored. Referenced by `collection_routes`.
+| Column | Type | Notes |
+|--------|------|-------|
+| id | INTEGER PK | Auto-increment |
+| label | TEXT NOT NULL UNIQUE | Human-readable name (e.g. `"NAS"`, `"External SSD"`) |
+| root_path | TEXT NOT NULL | POSIX-normalised absolute path to mount root |
+| notes | TEXT | Optional free-text notes |
+| created_at | TIMESTAMP | Defaults to CURRENT_TIMESTAMP |
+
+### `collection_routes` — Year → mount routing table (USER table)
+Maps each concert year to a destination mount + optional sub-path. Used by `filer.py` to resolve where to file a recording.
+| Column | Type | Notes |
+|--------|------|-------|
+| year | INTEGER PK | Concert year (1958–2026+) |
+| mount_id | INTEGER NOT NULL | FK → `collection_mounts(id)` ON DELETE RESTRICT |
+| sub_path | TEXT NOT NULL | Sub-directory under mount root (default `''`) |
+
+Index: `idx_routes_mount ON collection_routes(mount_id)`.
+`meta` key `pipeline_file_mode` (`'move'` or `'copy'`) controls whether `filer.py` moves or copies folders.
+
 ---
 
 ## Backend: Flask API (`backend/app.py`)
@@ -626,6 +647,20 @@ Indexes: `idx_archive_uploads_lb(lb_number)`, `idx_archive_uploads_status(status
 | GET | `/api/collection/audit` | Cross-check my_collection against checksums table. Returns `{total, missing_checksums, entries:[{lb_number, folder_name, disk_path, date_str, location, lb_status}]}` for entries with no checksum rows. |
 | GET | `/api/collection/export/html` | Download My Collection as a self-contained HTML table. Returns `collection.html` attachment. |
 | GET | `/api/collection/export/m3u` | Download My Collection as an M3U playlist of audio files. Walks each entry's `disk_path`; skips missing folders. Returns `collection.m3u` attachment. |
+
+### Collection Routing & Pipeline Filing (Step 5)
+| Method | Route | Description |
+|--------|-------|-------------|
+| GET | `/api/collection/mounts` | List all mounts with live `online` boolean (concurrent reachability checks). Returns `{mounts:[{id, label, root_path, notes, created_at, online}]}`. |
+| POST | `/api/collection/mounts` | Create a mount. Body: `{label, root_path, notes?}`. Normalises `root_path` to POSIX. Returns `{ok, id}`. |
+| PATCH | `/api/collection/mounts/<id>` | Update mount fields. Body: any subset of `{label, root_path, notes}`. Returns `{ok}`. |
+| DELETE | `/api/collection/mounts/<id>` | Delete mount. Returns 409 if any routes reference it. Returns `{ok}` or `{ok:false, error}`. |
+| GET | `/api/collection/routes` | List all year routes joined with mount label. Returns `{routes:[{year, mount_id, sub_path, label, root_path}]}`. |
+| POST | `/api/collection/routes/bulk` | Upsert routes for a year range. Body: `{year_from, year_to, mount_id, sub_path}`. Returns `{ok, rows_written}`. |
+| DELETE | `/api/collection/routes/<year>` | Remove route for one year. Returns `{ok}`. |
+| GET | `/api/collection/routes/preview/<year>` | Dry-run resolve for a year: returns `{ok, year, mount_label, mount_root, sub_path, dest_parent, mount_online, error, error_code}`. |
+| POST | `/api/pipeline/file` | File one or more folders into the collection. Body: `{folders:[{path, lb_number}]}`. Each folder processed independently. Returns `{results:[{path, lb_number, ok, filed_to, dest, file_mode, error?, error_code?}]}`. Error codes: `no_date`, `no_route`, `mount_offline`, `dest_exists`, `db_error`. |
+| POST | `/api/pipeline/file/preview` | Pre-flight resolve without moving files. Same body as `/api/pipeline/file`. Returns per-folder `{ok, dest, mount_label, error, error_code}`. |
 
 ### DB Editor
 | Method | Route | Description |
@@ -1230,7 +1265,8 @@ Second-generation GUI (primary, merged into main 2026-05-29) built with **Electr
 | ScreenSearch | `screens/ScreenSearch.tsx` | Done — virtual table, sort, group-by-year, CSV export, column picker, saved views |
 | ScreenBootlegs | `screens/ScreenBootlegs.tsx` | Done — year/CDs filters, catalog browser, CSV export |
 | ScreenThemes | `screens/ScreenThemes.tsx` | Done — preset themes, typeface/font-size, custom color tokens |
-| ScreenPipeline | `screens/ScreenPipeline.tsx` | Done — folder queue, 4-step workflow, bulk-actions menu |
+| ScreenPipeline | `screens/ScreenPipeline.tsx` | Done — folder queue, 5-step workflow (verify/lookup/rename/lbdir/collect), bulk-actions menu |
+| ScreenQuickLookup | `screens/ScreenQuickLookup.tsx` | Done — paste/clipboard/drop zone, per-row checksum results table |
 | ScreenLookup | `screens/ScreenLookup.tsx` | Done — 4-source input, summary + detail tables |
 | ScreenVerify | `screens/ScreenVerify.tsx` | Done — folder verify/generate/retrieve workflow |
 | ScreenRename | `screens/ScreenRename.tsx` | Done — consumes lookup results, applies bulk renames |
@@ -1357,6 +1393,7 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 
 | Date | Change |
 |------|--------|
+| 2026-06-09 | Pipeline v2: `collection_mounts` + `collection_routes` DB tables; `backend/filer.py` (normalise_path, resolve_destination_for_lb, file_folder); 10 new API routes (mounts CRUD, routes bulk/delete/preview, pipeline/file, pipeline/file/preview); `CollectionRoutingCard` in ScreenSetup (mounts list, year routing, filing mode, preview tester); 5 stage detail panels in ScreenPipeline (VerifyStage, LookupStage, RenameStage, LBDIRStage, CollectStage); ScreenQuickLookup (paste/clipboard/drop zone, results table); pipeline/filer/PipelineParts/ConfirmDialog components added. |
 | 2026-05-30 | Archive.org upload integration: `backend/archive_org.py` (IA S3 PUT, progress state, stop support); `archive_org_uploads` table; `SERVICE_IA` keyring slot; 8 `/api/archive_org/` routes; `ArchiveOrgSection` component in `ScreenSharing` with credentials form, upload form, progress bar, history table. (TODO-093) |
 | 2026-05-30 | Collection Trading + File Sharing features (branch feat/trading-and-sharing): `friend_collections` + `friend_collection_entries` tables; 5 `/api/trading/` routes; `backend/sharing.py` module (ephemeral share state, ZIP streaming, Cloudflare Tunnel); 7 `/api/share/` routes; `ScreenTrading` + `ScreenSharing` in gui_next; Trading + Sharing nav items under Library group. |
 | 2026-06-01 | `lb_category` TEXT column added to `entries` (MASTER_SCHEMA_VERSION→6). `classify_entry_categories()` in `db.py` classifies all entries: concerts via `bobdylan_shows` date-join (84.7%), other categories via `dylan_performances` map + keyword heuristics, fallback to `'unknown'`. One-time backfill in `init_db()`; re-run via `POST /api/entries/reclassify` (curator). |

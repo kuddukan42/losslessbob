@@ -5018,15 +5018,23 @@ def create_app() -> Flask:
         # ── Step 1: Verify ────────────────────────────────────────────────────
         if "verify" in steps:
             vr = checksum_utils.verify_folder(folder_path)
+            _vcounts = {
+                "total":        vr.get("total", 0),
+                "pass":         vr.get("pass", 0),
+                "missing":      vr.get("missing", 0),
+                "mismatch":     vr.get("mismatch", 0),
+                "extra":        vr.get("extra", 0),
+                "no_checksums": vr.get("status") == "no_checksums",
+            }
             if vr.get("error"):
-                row["verify"] = {"status": "bad", "label": "Error"}
+                row["verify"] = {"status": "bad", "label": "Error", **_vcounts}
                 row["errors"].append({"step": "verify", "message": vr["error"]})
             elif vr["status"] == "pass":
-                row["verify"] = {"status": "ok", "label": "Pass"}
+                row["verify"] = {"status": "ok", "label": "Pass", **_vcounts}
             elif vr["status"] in ("incomplete", "no_checksums"):
-                row["verify"] = {"status": "warn", "label": "Incomplete"}
+                row["verify"] = {"status": "warn", "label": "Incomplete", **_vcounts}
             else:
-                row["verify"] = {"status": "bad", "label": "Mismatch"}
+                row["verify"] = {"status": "bad", "label": "Mismatch", **_vcounts}
 
         # ── Step 2: Lookup ────────────────────────────────────────────────────
         if "lookup" in steps:
@@ -5181,9 +5189,12 @@ def create_app() -> Flask:
             row["file"] = {"status": "mute", "label": "—", "error": None, "error_code": None}
 
         # ── Severity ──────────────────────────────────────────────────────────
+        # file_status "blocked" escalates to attn (route/mount misconfigured);
+        # "ready" does not change severity — the File button in the row handles it.
         statuses = [row["verify"]["status"], row["lookup"]["status"],
                     row["rename"]["status"], row["lbdir"]["status"]]
-        if "bad" in statuses:
+        file_status = row["file"]["status"]
+        if "bad" in statuses or file_status == "blocked":
             row["severity"] = "attn"
         elif row["rename"].get("label") == "Proposed":
             row["severity"] = "ready"

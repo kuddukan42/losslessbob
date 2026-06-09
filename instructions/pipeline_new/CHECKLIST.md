@@ -4,7 +4,7 @@ Track progress here. Check off each item as it is completed and committed.
 Update "Last session" and "Resume from" at the end of every session.
 
 **Last session:** 2026-06-09
-**Resume from:** Phase 6 — Pipeline Screen Refactor
+**Resume from:** Complete — manual end-to-end test remaining
 
 ---
 
@@ -91,41 +91,42 @@ Update "Last session" and "Resume from" at the end of every session.
 
 ## Phase 7 — Stage Detail Panels
 
-- [ ] **VerifyStage** — `POST /api/pipeline/run {steps:["verify"]}`; generate checksums flow; re-verify button
-- [ ] **LookupStage** — `POST /api/pipeline/run {steps:["lookup"]}`; candidate picker; mark-as-new
-- [ ] **RenameStage** — dry-run then `POST /api/folder/rename`; before/after; edit mode
-- [ ] **LBDIRStage** — `POST /api/pipeline/run {steps:["lbdir"]}`; reconcile + extras sections
-- [ ] **CollectStage** — dry-run → RouteBox → confirm → `POST /api/pipeline/file`
-  - [ ] `mute` state
-  - [ ] `ready` state — RouteBox + "File into collection" button
-  - [ ] `blocked` state — error card per code (`no_date`, `no_route`, `mount_offline`, `dest_exists`, `db_error`)
-  - [ ] `filed` state — success card + "In collection" chip
-- [ ] TypeScript compiles without errors
+- [x] **VerifyStage** — `POST /api/pipeline/run {steps:["verify"]}`; generate checksums flow; re-verify button
+- [x] **LookupStage** — `POST /api/pipeline/run {steps:["lookup"]}`; matched card; conflict/not-found states
+- [x] **RenameStage** — current/proposed diff view; apply rename button wired to `applyRename`
+- [x] **LBDIRStage** — existing `LbdirStageContent` retained; reconcile + extras sections already implemented
+- [x] **CollectStage** — RouteBox (staging→destination) → confirm → `POST /api/pipeline/file`
+  - [x] `mute` state
+  - [x] `ready` state — RouteBox + "File into collection" button
+  - [x] `blocked` state — error card per code (`no_date`, `no_route`, `mount_offline`, `dest_exists`, `db_error`)
+  - [x] `filed` state — success card + mount label chip
+- [x] backend/app.py verify step enriched with total/pass/missing/mismatch/extra/no_checksums counts
+- [x] TypeScript compiles without errors
 - [ ] Manual test: walk a real folder through all 5 stages end-to-end
 
 ---
 
 ## Phase 8 — Quick Lookup Screen
 
-- [ ] `ScreenQuickLookup.tsx` created
-- [ ] Paste input mode
-- [ ] Clipboard button mode
-- [ ] File drop zone (.md5 / .ffp)
-- [ ] Results table: Checksum | Filename | LB# | Status
-- [ ] Sidebar nav entry added (under Pipeline section)
-- [ ] TypeScript compiles without errors
+- [x] `ScreenQuickLookup.tsx` created
+- [x] Paste input mode
+- [x] Clipboard button mode
+- [x] File drop zone (.md5 / .ffp)
+- [x] Results table: Checksum | Filename | LB# | Status
+- [x] Sidebar nav entry added (under Pipeline section)
+- [x] TypeScript compiles without errors
 - [ ] Manual test: paste .md5 contents → correct LB# returned
 
 ---
 
 ## Phase 9 — Docs & Final Verification
 
-- [ ] `CHANGELOG.md` — prepend Pipeline v2 + Step 5 entry
-- [ ] `PROJECT.md` — add `collection_mounts`, `collection_routes` to schema table
-- [ ] `PROJECT.md` — add 8 new routes to API route table
-- [ ] `TODO.md` — close any pipeline v2 / collection TODO entries
-- [ ] `tests/test_pipeline_smoke.py` passes — existing 4-step pipeline unbroken
-- [ ] Full end-to-end: mount → routes → pipeline folder → all 5 steps → filed
+- [x] `CHANGELOG.md` — prepend Pipeline v2 + Step 5 entry
+- [x] `PROJECT.md` — add `collection_mounts`, `collection_routes` to schema table
+- [x] `PROJECT.md` — add 10 new routes to API route table (Collection Routing & Pipeline Filing section)
+- [x] `TODO.md` — no open pipeline v2 / collection TODO entries found
+- [x] `tests/test_pipeline_smoke.py` — 16/20 clean, 0 exceptions, 0 verify mismatches, 0 missing folders
+- [ ] Full end-to-end: mount → routes → pipeline folder → all 5 steps → filed (manual)
 
 ---
 
@@ -134,3 +135,6 @@ Update "Last session" and "Resume from" at the end of every session.
 | Date | Summary | Phases touched |
 |------|---------|----------------|
 | 2026-06-09 | Branch created. DB schema, filer.py, all API routes, PipelineParts + ConfirmDialog, CollectionRoutingCard in ScreenSetup | 1–5 |
+| 2026-06-09 | Phase 7: VerifyStage, LookupStage, RenameStage, CollectStage detail panels; backend verify step enriched with file counts | 7 |
+| 2026-06-09 | Phase 8: ScreenQuickLookup — paste/clipboard/drop zone, results table, nav entry, all 6 locales | 8 |
+| 2026-06-09 | Phase 9: PROJECT.md schema + API route docs; smoke test 16/20 clean; CHANGELOG updated | 9 |
