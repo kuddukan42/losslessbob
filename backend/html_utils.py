@@ -8,10 +8,9 @@ from __future__ import annotations
 
 import os
 from pathlib import PurePosixPath
-from urllib.parse import urlparse, urljoin
+from urllib.parse import urljoin, urlparse
 
 from bs4 import BeautifulSoup
-
 
 _ATTRS = ("href", "src", "action")
 

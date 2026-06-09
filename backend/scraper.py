@@ -1,24 +1,33 @@
 from __future__ import annotations
 
 import re
-import time
 import threading
-from typing import Callable
+import time
+from collections.abc import Callable
 
 import requests
 from bs4 import BeautifulSoup, NavigableString
 
 from backend.db import (
-    get_connection, DB_PATH, insert_missing_entry,
-    record_entry_changes, reconcile_lb_status, batch_reconcile_lb_status,
-    is_lb_missing, extract_taper_and_source, classify_one_entry,
+    DB_PATH,
+    batch_reconcile_lb_status,
+    classify_one_entry,
+    extract_taper_and_source,
+    get_connection,
+    insert_missing_entry,
+    is_lb_missing,
+    reconcile_lb_status,
+    record_entry_changes,
 )
 from backend.db_queue import get_write_queue
-from backend.paths import (
-    SITE_DETAIL_DIR, SITE_FILES_DIR, to_long_path,
-    detail_page_path, attachment_path,
-)
 from backend.html_utils import rewrite_links
+from backend.paths import (
+    SITE_DETAIL_DIR,
+    SITE_FILES_DIR,
+    attachment_path,
+    detail_page_path,
+    to_long_path,
+)
 
 BASE_URL = "http://www.losslessbob.wonderingwhattochoose.com"
 DETAIL_URL = BASE_URL + "/detail/LB-{n}.html"
@@ -113,6 +122,7 @@ def _extract_setlist_from_lbbcd(lb_number: int, db_path: str) -> str:
         Empty string if unavailable.
     """
     import sqlite3 as _sqlite3
+
     from backend.paths import SITE_LBBCD_DIR
 
     with _sqlite3.connect(db_path) as _conn:
@@ -307,7 +317,7 @@ def scrape_entry(
         data_row = headers_row.find_next_sibling("tr")
         if data_row:
             values = [td.get_text(strip=True) for td in data_row.find_all("td")]
-            row_dict = dict(zip(headers, values))
+            row_dict = dict(zip(headers, values, strict=False))
             entry_data["date_str"] = row_dict.get("date", row_dict.get("date_str", ""))
             entry_data["location"] = row_dict.get("location", "")
             entry_data["cdr"] = row_dict.get("cdr", "")
@@ -317,7 +327,8 @@ def scrape_entry(
 
     # Collect text content — classify each paragraph as description or setlist.
     # A paragraph is treated as a setlist if it contains >= 3 track-number markers.
-    from backend.db import extract_setlist_from_description as _extract_sl, _SL_DOT, _SL_NUM
+    from backend.db import _SL_DOT, _SL_NUM
+    from backend.db import extract_setlist_from_description as _extract_sl
     desc_parts = []
     setlist_parts = []
 

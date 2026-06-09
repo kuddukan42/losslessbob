@@ -61,6 +61,7 @@ def keyring_available() -> bool:
         return _keyring_ok
     try:
         import keyring  # noqa: F401
+
         # A no-op probe reveals missing/broken backends before the user tries to save
         import keyring as _kr
         _kr.get_password("_losslessbob_probe", "_probe")
@@ -207,7 +208,12 @@ def prompt_if_missing(service: str, label: str, parent=None) -> tuple[str, str] 
 
     try:
         from PyQt6.QtWidgets import (
-            QDialog, QFormLayout, QLineEdit, QDialogButtonBox, QLabel, QVBoxLayout,
+            QDialog,
+            QDialogButtonBox,
+            QFormLayout,
+            QLabel,
+            QLineEdit,
+            QVBoxLayout,
         )
 
         dlg = QDialog(parent)

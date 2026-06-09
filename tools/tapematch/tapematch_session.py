@@ -438,22 +438,34 @@ def _clean_stale_tmp_dirs() -> None:
 
 def run_tapematch(json_out: Path, root_dir: Path = EXAMPLES_DIR,
                   set_offset: str | None = None) -> tuple[str, float]:
-    """Run tapematch CLI. Returns (stdout_text, duration_sec)."""
+    """Run tapematch CLI, streaming output live. Returns (stdout_text, duration_sec)."""
     _clean_stale_tmp_dirs()
+    debug_log = SESSION_DIR / "last_debug.log"
     cmd = [
         str(VENV_PYTHON), "-m", "tapematch.cli",
         str(root_dir),
         "--config", str(SESSION_DIR / "config.yaml"),
         "--json-out", str(json_out),
+        "--debug-log", str(debug_log),
     ]
     if set_offset:
         cmd += ["--set-offset", set_offset]
     t0 = time.monotonic()
-    result = subprocess.run(cmd, cwd=str(SESSION_DIR), capture_output=True, text=True)
+    # Popen + line-by-line streaming so progress and any errors appear immediately.
+    # stderr merged into stdout so nothing is silently swallowed on crash.
+    proc = subprocess.Popen(
+        cmd, cwd=str(SESSION_DIR),
+        stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True,
+    )
+    lines: list[str] = []
+    for line in proc.stdout:
+        print(line, end="", flush=True)
+        lines.append(line)
+    proc.wait()
     duration = time.monotonic() - t0
-    output = result.stdout
-    if result.returncode != 0:
-        output += f"\n[STDERR]\n{result.stderr}"
+    output = "".join(lines)
+    if proc.returncode != 0:
+        output += f"\n[EXIT CODE {proc.returncode}]\n"
     return output, duration
 
 
@@ -469,6 +481,9 @@ def archive_run(run_id: str, date_iso: str, log_text: str, report_text: str,
     shutil.copy(SESSION_DIR / "config.yaml", arch / "config.yaml")
     if results_json and results_json.exists():
         shutil.copy(results_json, arch / "results.json")
+    debug_log = SESSION_DIR / "last_debug.log"
+    if debug_log.exists():
+        shutil.copy(debug_log, arch / "debug.log")
     return arch
 
 
@@ -870,7 +885,6 @@ def run_date(date_iso: str, dry_run: bool = False,
         json_path.unlink(missing_ok=True)  # clear stale results from any prior run
         log_text, duration = run_tapematch(json_path, set_offset=set_offset)
         LOG_PATH.write_text(log_text)
-        print(log_text)
 
     # 6. Archive — load results first so build_report can include commentary audit
     print("\n[6] Archiving run …")
@@ -913,6 +927,15 @@ def year_run(year: str, min_entries: int = 2, dry_run: bool = False) -> int:
         conn = open_obs_db()
         done = {r[0] for r in conn.execute("SELECT DISTINCT concert_date FROM runs").fetchall()}
         conn.close()
+
+    # Also skip dates that already have a run folder in RUNS_DIR (catches runs whose
+    # DB insert failed or partial runs that were archived but not logged).
+    if RUNS_DIR.exists():
+        for d in RUNS_DIR.iterdir():
+            if d.is_dir():
+                parts = d.name.split("_", 2)
+                if len(parts) == 3:
+                    done.add(parts[2])
 
     todo = [(iso, n, loc) for iso, n, loc, _ in dates if iso not in done]
     n_skip = len(dates) - len(todo)

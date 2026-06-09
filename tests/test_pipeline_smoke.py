@@ -22,9 +22,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-from backend import checksum_utils, db as database
-from backend.folder_naming import build_standard_name
-from backend.paths import DB_PATH
+from backend import checksum_utils  # noqa: E402
+from backend import db as database  # noqa: E402
+from backend.folder_naming import build_standard_name  # noqa: E402
+from backend.paths import DB_PATH  # noqa: E402
 
 
 def _find_lbdir_in_folder(folder: Path) -> "Path | None":
@@ -59,7 +60,7 @@ def run_pipeline(folder_path: str) -> dict:
         row["severity"] = "attn"
         return row
 
-    lb_number: "int | None" = None
+    lb_number: int | None = None
 
     # ── Step 1: Verify ────────────────────────────────────────────────────────
     try:
@@ -235,10 +236,10 @@ def write_detail_report(rows: list[dict], path: Path) -> None:
     lines.append("=" * 80)
     for row in rows:
         v = _status_char(row["verify"]["status"])
-        l = _status_char(row["lookup"]["status"])
+        lk = _status_char(row["lookup"]["status"])
         r = _status_char(row["rename"]["status"])
         d = _status_char(row["lbdir"]["status"])
-        lines.append(f"\n[V:{v} L:{l} R:{r} D:{d}] {row['folderName']}")
+        lines.append(f"\n[V:{v} L:{lk} R:{r} D:{d}] {row['folderName']}")
         lines.append(f"  Path  : {row['folder']}")
         for err in row["errors"]:
             lines.append(f"  ERROR [{err['step']}]: {err['message']}")
@@ -259,10 +260,10 @@ def write_bugs_report(buckets: dict[str, list[dict]], path: Path, start_bug: int
             return
         lines.append(f"BUG-{bug_n:03d}: Pipeline smoke — {title} ({len(items)} folders)")
         lines.append("Status: Open")
-        lines.append(f"File(s): backend/app.py:4547, backend/checksum_utils.py:439")
+        lines.append("File(s): backend/app.py:4547, backend/checksum_utils.py:439")
         lines.append("Reported: 2026-05-31")
         lines.append("Root cause: (TBD — see samples below)")
-        lines.append(f"Fix: (TBD)")
+        lines.append("Fix: (TBD)")
         lines.append("Samples:")
         for row in items[:10]:
             lines.append(f"  • {desc_fn(row)}")
@@ -337,11 +338,11 @@ def main() -> None:
     for i, (lb_number, disk_path) in enumerate(sample, 1):
         row = run_pipeline(disk_path)
         v = _status_char(row["verify"]["status"])
-        l = _status_char(row["lookup"]["status"])
+        lk = _status_char(row["lookup"]["status"])
         r = _status_char(row["rename"]["status"])
         d = _status_char(row["lbdir"]["status"])
         exc_flag = " [EXC]" if row["exceptions"] else ""
-        print(f"  [{i:>{width}}/{len(sample)}] V:{v} L:{l} R:{r} D:{d}{exc_flag}  {row['folderName'][:70]}")
+        print(f"  [{i:>{width}}/{len(sample)}] V:{v} L:{lk} R:{r} D:{d}{exc_flag}  {row['folderName'][:70]}")
         results.append(row)
 
     buckets = classify_errors(results)

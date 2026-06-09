@@ -7,13 +7,46 @@ trim report, lag-curve diagnosis per pair, residual-corr matrix, clusters,
 and lineage evidence.
 """
 from __future__ import annotations
-import argparse, atexit, json, shutil, sys, tempfile
+import argparse, atexit, json, shutil, sys, tempfile, time
 from pathlib import Path
 import numpy as np
 import yaml
 from . import ingest, trim, align, match
 from .audio import to_mono, resample_ratio
 from .ingest import fmt_hms
+
+
+def _rss_mb() -> float:
+    """Current process RSS in MB via /proc/self/status (Linux). Returns -1 elsewhere."""
+    try:
+        with open("/proc/self/status") as _f:
+            for _line in _f:
+                if _line.startswith("VmRSS:"):
+                    return int(_line.split()[1]) / 1024.0
+    except Exception:
+        pass
+    return -1.0
+
+
+class _DebugLog:
+    """Per-run debug log: elapsed time + RSS at each pass boundary."""
+
+    def __init__(self, path: Path | None) -> None:
+        self._f = open(path, "w", buffering=1) if path else None
+        self._t0 = time.monotonic()
+
+    def log(self, msg: str) -> None:
+        if self._f is None:
+            return
+        elapsed = time.monotonic() - self._t0
+        rss = _rss_mb()
+        rss_str = f"{rss:.0f}MB" if rss >= 0 else "n/a"
+        self._f.write(f"[{elapsed:8.2f}s  RSS={rss_str:>8}]  {msg}\n")
+
+    def close(self) -> None:
+        if self._f:
+            self._f.close()
+            self._f = None
 
 
 def main(argv=None):
@@ -28,6 +61,8 @@ def main(argv=None):
                          "seconds) before analysis; use when recordings include non-target "
                          "material before the show (e.g. co-headline concerts where the "
                          "target set starts mid-recording)")
+    ap.add_argument("--debug-log", default=None, metavar="PATH",
+                    help="write per-pass timing and RSS to this file")
     args = ap.parse_args(argv)
 
     def _parse_offset(s: str) -> float:
@@ -45,6 +80,10 @@ def main(argv=None):
     sources = ingest.discover_sources(root)
     if not sources:
         print(f"no source subfolders in {root}", file=sys.stderr); return 1
+
+    dbg = _DebugLog(Path(args.debug_log) if args.debug_log else None)
+    atexit.register(dbg.close)
+    dbg.log(f"START  n_sources={len(sources)}  sr={sr}  analysis_sr={sr}")
 
     # Temp dir for trimmed-mono memmaps — auto-deleted on normal exit.
     # Uses /mnt/DATA0/tmp to avoid filling the system tmpfs (~438 MB per source).
@@ -91,6 +130,9 @@ def main(argv=None):
         mm.flush()
         mono_paths[name] = (mpath, n)
         del stream, mm
+        dbg.log(f"INGEST  {name}  mmap_mb={mpath.stat().st_size / 1048576:.1f}")
+
+    dbg.log(f"PASS1_DONE  n_sources={len(mono_paths)}")
 
     # Persist trim metadata for re-runs / resume.
     (root / ".tapematch_meta.json").write_text(json.dumps(
@@ -136,9 +178,11 @@ def main(argv=None):
     anchors = align.pick_anchors(ref_mono, sr, cfg)
     print(f"\n=== ANCHORS (ref={ref_name}) ===")
     print("  " + ", ".join(fmt_hms(a) for a in anchors))
+    dbg.log(f"ANCHORS  ref={ref_name}  n={len(anchors)}")
 
     # === Lag curves: ref_mono stays as memmap; one other source at a time ===
     print("\n=== LAG CURVES / SPEED (vs ref) ===")
+    dbg.log("LAG_CURVES_START")
     ppm_thr = cfg["align"]["ratio_flag_ppm"]
     speed_info: dict[str, dict] = {ref_name: {"kind": "reference", "ppm": 0.0, "ratio": 1.0}}
     for name, (s0, s1, _) in trim_bounds.items():
@@ -171,6 +215,7 @@ def main(argv=None):
     win = cfg["anchors"]["window_sec"]
     ref_idx = names.index(ref_name)
     pair_ratios: dict[tuple[int, int], float] = {}  # (i,j) i<j -> speed ratio
+    dbg.log(f"MATRIX_START  n_src={n_src}  n_pairs={n_src*(n_src-1)//2}")
 
     for i in range(n_src - 1):
         ri = ref_mono if i == ref_idx else _mmap(names[i])
@@ -178,7 +223,10 @@ def main(argv=None):
             rj = ref_mono if j == ref_idx else _mmap(names[j])
             ratio = match.estimate_ratio(ri, rj, sr, anchors, cfg)
             pair_ratios[(i, j)] = ratio
-            rj_c = resample_ratio(rj, ratio) if abs(ratio - 1.0) * 1e6 > ppm_thr else rj
+            ppm_val = (ratio - 1.0) * 1e6
+            if abs(ppm_val) > ppm_thr:
+                dbg.log(f"RESAMPLE  {names[i]}/{names[j]}  ratio={ratio:.6f}  ppm={ppm_val:+.0f}")
+            rj_c = resample_ratio(rj, ratio, sr) if abs(ratio - 1.0) * 1e6 > ppm_thr else rj
             corrs = []
             for ctr in anchors:
                 lag, _ = align.local_lag(ri, rj_c, sr, ctr, win, a_cfg["max_lag_sec"])
@@ -193,6 +241,8 @@ def main(argv=None):
                 del rj
         if i != ref_idx:
             del ri
+
+    dbg.log("MATRIX_DONE")
 
     def _label(name: str) -> str:
         """Extract 'LB-NNNNN' from folder name, or fall back to first 8 chars."""
@@ -221,6 +271,7 @@ def main(argv=None):
     # === Fingerprint: compute for all sources upfront (10-min window each, cheap) ===
     fp_hashes: dict[str, set] = {}
     if "fingerprint" in cfg:
+        dbg.log("FINGERPRINT_START")
         for name in names:
             fp_mono = _mmap(name)
             fp_hashes[name] = match.fingerprint_window(fp_mono, sr, cfg)
@@ -234,6 +285,7 @@ def main(argv=None):
             for j in range(i + 1, n_src)
             if M[i, j] < m_thr
         ]
+        dbg.log(f"SECONDARY_START  cross_pairs={len(cross_pairs)}")
         if cross_pairs:
             print(f"\n=== SECONDARY MATCH (windowed coverage + quiet-segment hiss + fingerprint) ===")
             print(f"  {len(cross_pairs)} cross-family pair(s) — computing secondary evidence ...")
@@ -441,6 +493,7 @@ def main(argv=None):
 
     # === Lineage: mono memmap per source; welch PSD uses only a few MB ===
     print("\n=== LINEAGE EVIDENCE (interpret manually) ===")
+    dbg.log(f"LINEAGE_START  n_families={len(groups)}")
     print(f"  {'source':>8}  {'HF ceiling':>11}  {'noise floor':>11}  {'DC asymmetry':>12}")
     capped = False
     lineage_results: dict[str, dict] = {}
@@ -689,6 +742,8 @@ def main(argv=None):
         }
         Path(args.json_out).write_text(json.dumps(results, indent=2))
 
+    dbg.log(f"DONE  n_families={len(groups)}")
+    dbg.close()
     return 0
 
 

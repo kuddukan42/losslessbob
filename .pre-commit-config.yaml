@@ -1,0 +1,9 @@
+repos:
+  - repo: local
+    hooks:
+      - id: ruff
+        name: ruff (lint + auto-fix)
+        entry: .venv/bin/ruff check --fix --force-exclude
+        language: system
+        types: [python]
+        pass_filenames: true

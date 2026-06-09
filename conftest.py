@@ -17,8 +17,8 @@ def reset_write_queue():
     are released, then clears the module-level reference so the next
     init_write_queue() call creates a fresh queue for the new temp DB.
     """
-    import backend.db_queue as _dq
     import backend.db as _db
+    import backend.db_queue as _dq
 
     # Tear down any leftover queue from a previous test
     if _dq._write_queue is not None:

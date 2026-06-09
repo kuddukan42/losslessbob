@@ -4,8 +4,15 @@ from datetime import datetime
 from pathlib import Path
 
 from backend.db import (
-    get_connection, close_connection, init_db, get_meta, set_meta, DB_PATH,
-    rebuild_bloom, reconcile_lb_status, migrate_lb_master,
+    DB_PATH,
+    close_connection,
+    get_connection,
+    get_meta,
+    init_db,
+    migrate_lb_master,
+    rebuild_bloom,
+    reconcile_lb_status,
+    set_meta,
 )
 from backend.db_queue import get_write_queue
 from backend.paths import DATA_DIR
@@ -48,7 +55,7 @@ def _import_flat_file(flat_path, temp_db_path):
     init_db(temp_db_path)
     conn = get_connection(temp_db_path)
     inserted = 0
-    with open(flat_path, "r", encoding="utf-8", errors="replace") as f:
+    with open(flat_path, encoding="utf-8", errors="replace") as f:
         for line in f:
             line = line.strip()
             if not line or line.startswith('#'):
@@ -145,8 +152,6 @@ def run_import(source_path, progress_callback=None, db_path=None):
                        message=f"Merging — {i + len(chunk):,} / {_total:,} rows")
 
     get_write_queue().execute(_do_merge, timeout=300.0)
-    merged = total_rows
-
     close_connection(temp_db_path)
     temp_db_path.unlink(missing_ok=True)
 

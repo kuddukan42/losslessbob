@@ -8,6 +8,23 @@ Follow every session. No asking.
 
 - When reading large files, ALWAYS use the Read tool with `offset`/`limit` parameters instead of `sed`, `head`, or `tail` via Bash. Avoid Bash for file inspection when Read can do it — it triggers unnecessary approval prompts.
 
+## Screenshots / GUI Verification
+
+**Only use `gui_next/gui_driver.mjs`** for all Electron screenshots and UI automation. The old `scripts/screenshot_app.mjs` has been deleted.
+
+```
+# Single screen
+node gui_next/gui_driver.mjs --no-build navigate /attachments attachments.png
+
+# All screens
+node gui_next/gui_driver.mjs --no-build session tools/debug_screens.json
+```
+
+- Screenshots land in `.debug/`
+- `--no-build` skips rebuild when source is already compiled
+- Driver handles Xvfb automatically — do NOT wrap with `xvfb-run`
+- Waits for the splash overlay to detach before acting
+
 ---
 
 ## Before Any Task

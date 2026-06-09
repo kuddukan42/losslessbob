@@ -12,22 +12,19 @@ All tests are pure unit tests; no network, no Flask, no real DB.
 import sys
 from pathlib import Path
 
-import pytest
-
 # Make tools/ importable when running from the project root
 sys.path.insert(0, str(Path(__file__).parent.parent / "tools"))
 
 from batch_verify import (
-    STATUS_MISSING_FILES,
     STATUS_API_ERROR,
-    STATUS_PASS,
     STATUS_FAIL,
+    STATUS_MISSING_FILES,
     STATUS_NO_LBDIR,
     STATUS_PARSE_ERROR,
+    STATUS_PASS,
     _map_verify_status,
     has_lbdir,
 )
-
 
 # ---------------------------------------------------------------------------
 # BUG-127: _map_verify_status

@@ -10,7 +10,8 @@ import logging
 import queue
 import sqlite3
 import threading
-from typing import Any, Callable, Optional
+from collections.abc import Callable
+from typing import Any
 
 _log = logging.getLogger(__name__)
 
@@ -37,7 +38,7 @@ class DatabaseWriteQueue:
     def __init__(self, db_path: str) -> None:
         self._db_path = db_path
         self._queue: queue.Queue = queue.Queue()
-        self._conn: Optional[sqlite3.Connection] = None
+        self._conn: sqlite3.Connection | None = None
         self._ready = threading.Event()
         self._thread = threading.Thread(target=self._run, daemon=True, name="db-writer")
         self._thread.start()
@@ -133,7 +134,7 @@ class DatabaseWriteQueue:
                 pass
 
 
-_write_queue: Optional[DatabaseWriteQueue] = None
+_write_queue: DatabaseWriteQueue | None = None
 _wq_lock = threading.Lock()
 
 

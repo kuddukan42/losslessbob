@@ -1,0 +1,39 @@
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+exclude = [
+    ".venv",
+    "gui",        # frozen legacy GUI — no new features, not linted
+    "tools",      # standalone scripts, not part of the importable package
+]
+
+[tool.ruff.lint]
+select = [
+    "E",    # pycodestyle errors
+    "W",    # pycodestyle warnings
+    "F",    # pyflakes (unused imports, undefined names, etc.)
+    "I",    # isort (import ordering)
+    "UP",   # pyupgrade (modern Python syntax)
+    "B",    # flake8-bugbear (common bugs and design issues)
+    "G",    # flake8-logging-format (enforce % formatting in log calls)
+    "LOG",  # flake8-logging (logger hygiene)
+]
+ignore = [
+    # E501 (line-too-long) is documented in BEST_PRACTICES.md as a hard rule
+    # but is temporarily suppressed here because app.py and db.py carry ~75
+    # pre-existing violations.  Re-enable after the TODO-109 code pass.
+    "E501",
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["backend"]
+
+[tool.ruff.lint.per-file-ignores]
+# Tests use fixtures and helpers in ways that look unused to static analysis
+"tests/*" = ["F841", "B"]
+# conftest fixtures are injected by pytest, not called directly
+"conftest.py" = ["F401"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

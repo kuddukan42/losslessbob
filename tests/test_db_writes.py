@@ -14,7 +14,6 @@ import threading
 
 import pytest
 
-
 # ---------------------------------------------------------------------------
 # Shared helpers
 # ---------------------------------------------------------------------------
@@ -517,7 +516,6 @@ class TestWishlist:
 
     def test_priority_check_constraint_violation(self):
         """priority CHECK(BETWEEN 1 AND 5) — value 6 must fail."""
-        import backend.db as db
         db_path, conn, tmp = _make_db()
         try:
             _seed_entry(conn, 73)
@@ -530,7 +528,6 @@ class TestWishlist:
             shutil.rmtree(tmp, ignore_errors=True)
 
     def test_priority_zero_constraint_violation(self):
-        import backend.db as db
         db_path, conn, tmp = _make_db()
         try:
             _seed_entry(conn, 74)
@@ -713,7 +710,6 @@ class TestLbMissing:
 
     def test_seeds_present_after_init(self):
         """init_db() must seed the 36 confirmed-not-existing LB numbers."""
-        import backend.db as db
         db_path, conn, tmp = _make_db()
         try:
             count = conn.execute("SELECT COUNT(*) FROM lb_missing").fetchone()[0]
@@ -790,7 +786,6 @@ class TestLbMissing:
     def test_scrape_entry_skips_lb_missing(self):
         """scrape_entry must return {skipped: True, reason: 'nonexistent'} for lb_missing LBs."""
         from backend.scraper import scrape_entry
-        import backend.db as db
         db_path, conn, tmp = _make_db()
         try:
             result = scrape_entry(7, db_path=db_path)
@@ -1320,7 +1315,6 @@ class TestLbAlias:
 
     def test_alias_check_constraint_same_lb_via_sql(self):
         """The CHECK(alias_lb != canonical_lb) fires at the DB level too."""
-        import backend.db as db
         db_path, conn, tmp = _make_db()
         try:
             with pytest.raises(sqlite3.IntegrityError):
@@ -1546,7 +1540,6 @@ class TestForumPostWrites:
 
     def test_forum_post_not_null_lb_number(self):
         """lb_number NOT NULL must raise on NULL insert."""
-        import backend.db as db
         db_path, conn, tmp = _make_db()
         try:
             with pytest.raises(sqlite3.IntegrityError):
@@ -1747,7 +1740,6 @@ class TestScrapeSessions:
 
     def test_scrape_session_scope_not_null(self):
         """scope NOT NULL must raise on NULL scope."""
-        import backend.db as db
         db_path, conn, tmp = _make_db()
         try:
             with pytest.raises(sqlite3.IntegrityError):
@@ -1827,7 +1819,6 @@ class TestUpsertInventory:
 class TestWriteConnectionRollback:
     def test_failed_write_is_rolled_back(self):
         """If an exception is raised inside a queue callback, no data must persist."""
-        import backend.db as db
         from backend.db_queue import get_write_queue
         db_path, conn, tmp = _make_db()
         try:
@@ -1850,7 +1841,6 @@ class TestWriteConnectionRollback:
             shutil.rmtree(tmp, ignore_errors=True)
 
     def test_successful_write_is_committed(self):
-        import backend.db as db
         from backend.db_queue import get_write_queue
         db_path, conn, tmp = _make_db()
         try:
@@ -1876,7 +1866,6 @@ class TestWriteConnectionRollback:
 class TestSQLConstraints:
     def test_checksums_unique_checksum_lb(self):
         """UNIQUE(checksum, lb_number) — duplicate must raise."""
-        import backend.db as db
         db_path, conn, tmp = _make_db()
         try:
             conn.execute(
@@ -1894,7 +1883,6 @@ class TestSQLConstraints:
             shutil.rmtree(tmp, ignore_errors=True)
 
     def test_checksums_not_null_checksum(self):
-        import backend.db as db
         db_path, conn, tmp = _make_db()
         try:
             with pytest.raises(sqlite3.IntegrityError):
@@ -1907,7 +1895,6 @@ class TestSQLConstraints:
             shutil.rmtree(tmp, ignore_errors=True)
 
     def test_checksums_not_null_filename(self):
-        import backend.db as db
         db_path, conn, tmp = _make_db()
         try:
             with pytest.raises(sqlite3.IntegrityError):
@@ -1920,7 +1907,6 @@ class TestSQLConstraints:
             shutil.rmtree(tmp, ignore_errors=True)
 
     def test_my_collection_lb_number_unique(self):
-        import backend.db as db
         db_path, conn, tmp = _make_db()
         try:
             _seed_entry(conn, 3000)
@@ -1939,7 +1925,6 @@ class TestSQLConstraints:
             shutil.rmtree(tmp, ignore_errors=True)
 
     def test_lb_master_status_check_constraint(self):
-        import backend.db as db
         db_path, conn, tmp = _make_db()
         try:
             with pytest.raises(sqlite3.IntegrityError):
@@ -1951,7 +1936,6 @@ class TestSQLConstraints:
             shutil.rmtree(tmp, ignore_errors=True)
 
     def test_lb_alias_self_reference_check_constraint(self):
-        import backend.db as db
         db_path, conn, tmp = _make_db()
         try:
             with pytest.raises(sqlite3.IntegrityError):
@@ -1964,7 +1948,6 @@ class TestSQLConstraints:
             shutil.rmtree(tmp, ignore_errors=True)
 
     def test_my_wishlist_lb_number_not_null(self):
-        import backend.db as db
         db_path, conn, tmp = _make_db()
         try:
             with pytest.raises(sqlite3.IntegrityError):
@@ -1977,7 +1960,6 @@ class TestSQLConstraints:
 
     def test_entry_files_primary_key(self):
         """entry_files PK is (lb_number, filename) — duplicate must raise."""
-        import backend.db as db
         db_path, conn, tmp = _make_db()
         try:
             conn.execute(
@@ -1996,7 +1978,6 @@ class TestSQLConstraints:
 
     def test_flat_file_changelog_release_fk(self):
         """flat_file_changelog.release_id must reference flat_file_releases.id."""
-        import backend.db as db
         db_path, conn, tmp = _make_db()
         try:
             with pytest.raises(sqlite3.IntegrityError):
@@ -2011,7 +1992,6 @@ class TestSQLConstraints:
 
     def test_location_geocoded_primary_key(self):
         """location_geocoded.location_text is PK — duplicate insert must raise."""
-        import backend.db as db
         db_path, conn, tmp = _make_db()
         try:
             conn.execute(

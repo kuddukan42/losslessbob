@@ -69,6 +69,7 @@ export function ScreenAttachments(): React.JSX.Element {
   const [activeFile,  setActiveFile]  = useState<EntryFile | null>(null)
   const [fileContent, setFileContent] = useState<string | null>(null)
   const [busy,        setBusy]        = useState(false)
+  const [hasLoaded,   setHasLoaded]   = useState(false)
   const [caching,     setCaching]     = useState(false)
   const [dataDir,     setDataDir]     = useState<string | null>(null)
   const [toast,       setToast]       = useState<{ msg: string; tone: ToastTone } | null>(null)
@@ -107,6 +108,7 @@ export function ScreenAttachments(): React.JSX.Element {
       showToast('Refresh failed', 'bad')
     } finally {
       setBusy(false)
+      setHasLoaded(true)
     }
   }, [activeLb, showToast])
 
@@ -276,7 +278,7 @@ export function ScreenAttachments(): React.JSX.Element {
           <div style={{ flex: 1, overflowY: 'auto', padding: '6px 6px' }}>
             {filteredEntries.length === 0 ? (
               <div style={{ padding: '24px 12px', textAlign: 'center', color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-11)' }}>
-                {busy ? 'Loading…' : entries.length === 0 ? 'Click Refresh tree to load' : 'No matches'}
+                {busy || !hasLoaded ? 'Loading…' : entries.length === 0 ? 'No attachments cached yet' : 'No matches'}
               </div>
             ) : filteredEntries.map(e => (
               <button key={e.lb_number} onClick={() => setActiveLb(e.lb_number)} style={{

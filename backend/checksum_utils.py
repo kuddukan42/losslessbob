@@ -137,7 +137,7 @@ def parse_lbdir_file(path):
     path = Path(path)
     try:
         text = _read_checksum_text(path)
-    except (IOError, OSError) as e:
+    except OSError as e:
         return {
             'error': str(e), 'mode': 'flac',
             'md5': [], 'ffp': [], 'shntool': [], 'shntool_len': [],
@@ -303,7 +303,7 @@ def compute_ffp(filepath):
                 f.seek(block_len, 1)
                 if is_last:
                     return None
-    except (IOError, OSError):
+    except OSError:
         return None
 
 
@@ -315,7 +315,7 @@ def compute_md5(filepath):
             for chunk in iter(lambda: f.read(65536), b''):
                 h.update(chunk)
         return h.hexdigest()
-    except (IOError, OSError):
+    except OSError:
         return None
 
 
@@ -441,7 +441,7 @@ def _parse_checksum_file(filepath):
     entries = []
     try:
         text = _read_checksum_text(filepath)
-    except (IOError, OSError):
+    except OSError:
         return entries
 
     for line in text.splitlines():
@@ -682,7 +682,6 @@ def verify_folder_lbdir(folder_path, lbdir_path):
     md5_map = dict(parsed['md5'])
     ffp_map = dict(parsed['ffp'])
     raw_shn_map = dict(parsed['shntool'])
-    raw_len_map = {e['filename']: e for e in parsed['shntool_len']}
 
     # shntool replaces spaces AND special chars (e.g. '&') with underscores, so the
     # shntool-hash section's filenames differ from the md5 section's disk filenames.

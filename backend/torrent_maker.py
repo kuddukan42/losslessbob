@@ -8,11 +8,11 @@ in-process for the session.
 import logging
 import re
 import threading
+from collections.abc import Callable
 from pathlib import Path
-from typing import Callable
 
-from backend.paths import TORRENTS_DIR
 from backend import db
+from backend.paths import TORRENTS_DIR
 
 logger = logging.getLogger(__name__)
 
@@ -175,7 +175,7 @@ def make_torrent(
         On error raises RuntimeError with a description.
     """
     try:
-        from torf import Torrent, TorfError
+        from torf import TorfError, Torrent
     except ImportError as exc:
         raise RuntimeError("torf is not installed. Run: pip install torf") from exc
 

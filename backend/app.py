@@ -6,21 +6,42 @@ import shutil
 import sqlite3
 import threading
 import time
+from datetime import UTC
 from pathlib import Path
 
-from flask import Flask, jsonify, request, send_file, send_from_directory, abort, Response, stream_with_context
+from flask import (
+    Flask,
+    Response,
+    abort,
+    jsonify,
+    request,
+    send_file,
+    send_from_directory,
+    stream_with_context,
+)
 from flask_cors import CORS
 
+from backend import archive_org as _archive_org
+from backend import (
+    bobdylan_scraper,
+    bootleg_scraper,
+    checksum_utils,
+    importer,
+    scheduler,
+    scraper,
+    sharing,
+    site_crawler,
+)
 from backend import db as database
-from backend import importer, scraper, scheduler
-from backend import checksum_utils
-from backend import bootleg_scraper
-from backend import bobdylan_scraper
 from backend import setlistfm as setlistfm_mod
-from backend import site_crawler
-from backend import sharing, archive_org as _archive_org
-
-from backend.paths import DATA_DIR, SITE_DIR, SITE_FILES_DIR, attachment_path, find_lbdir_attachment, BATCH_VERIFY_DB_PATH
+from backend.paths import (
+    BATCH_VERIFY_DB_PATH,
+    DATA_DIR,
+    SITE_DIR,
+    SITE_FILES_DIR,
+    attachment_path,
+    find_lbdir_attachment,
+)
 
 _log = logging.getLogger(__name__)
 
@@ -722,7 +743,6 @@ def create_app() -> Flask:
         try:
             data = request.get_json() or {}
             force = data.get("force", False)
-            delay = int(database.get_meta("scrape_delay_ms") or 1500)
             download = database.get_meta("scrape_attachments") != "0"
             use_local_pages = database.get_meta("use_local_pages") == "1"
             result = scraper.scrape_entry(lb_number, force=force, download_files=download, use_local_pages=use_local_pages)
@@ -1043,9 +1063,10 @@ def create_app() -> Flask:
         Returns:
             JSON {format, bit_depth, sample_rate, mixed, files_probed, offline?}.
         """
-        import os
         import json as _json
+        import os
         import subprocess
+
         import soundfile as sf
 
         _empty = {"format": None, "bit_depth": None, "sample_rate": None,
@@ -1089,11 +1110,16 @@ def create_app() -> Flask:
                     fmt = info.format.upper()
                     rate = info.samplerate
                     st = info.subtype.upper()
-                    if 'PCM_16' in st:      bit_depth = 16
-                    elif 'PCM_24' in st:    bit_depth = 24
-                    elif 'PCM_32' in st:    bit_depth = 32
-                    elif 'FLOAT' in st or 'DOUBLE' in st: bit_depth = 32
-                    elif '8' in st:         bit_depth = 8
+                    if 'PCM_16' in st:
+                        bit_depth = 16
+                    elif 'PCM_24' in st:
+                        bit_depth = 24
+                    elif 'PCM_32' in st:
+                        bit_depth = 32
+                    elif 'FLOAT' in st or 'DOUBLE' in st:
+                        bit_depth = 32
+                    elif '8' in st:
+                        bit_depth = 8
                 except Exception:
                     try:
                         out = subprocess.run(
@@ -1324,8 +1350,9 @@ def create_app() -> Flask:
     def purge_fingerprint_cache() -> Response:
         """Delete the fingerprints.db file (fingerprint cache)."""
         try:
-            from backend.paths import FP_DB_PATH
             import os
+
+            from backend.paths import FP_DB_PATH
             if FP_DB_PATH.exists():
                 os.remove(FP_DB_PATH)
             return jsonify({"ok": True})
@@ -1357,7 +1384,7 @@ def create_app() -> Flask:
                 pass
 
             # Recoverable disk bytes: scraper HTML cache + fingerprint DB
-            from backend.paths import SITE_DIR, FP_DB_PATH
+            from backend.paths import FP_DB_PATH, SITE_DIR
             recoverable = 0
             if SITE_DIR.exists():
                 recoverable += sum(f.stat().st_size for f in SITE_DIR.rglob("*") if f.is_file())
@@ -1504,7 +1531,9 @@ def create_app() -> Flask:
     @app.route("/api/app/version", methods=["GET"])
     def app_version() -> Response:
         """Return current app version and runtime info."""
-        import sys, platform
+        import platform
+        import sys
+
         from backend.version import VERSION as _VER
         try:
             from PyQt6.QtCore import QT_VERSION_STR
@@ -1527,6 +1556,7 @@ def create_app() -> Flask:
         """
         try:
             import requests as _req
+
             from backend.version import VERSION as _VER
             repo = database.get_meta("github_repo") or ""
             if not repo or "/" not in repo:
@@ -1838,8 +1868,10 @@ def create_app() -> Flask:
         try:
             def _bool(key: str) -> bool | None:
                 v = request.args.get(key, "").lower()
-                if v == "true":  return True
-                if v == "false": return False
+                if v == "true":
+                    return True
+                if v == "false":
+                    return False
                 return None
 
             rows, total = database.get_bootlegs(
@@ -2120,8 +2152,6 @@ def create_app() -> Flask:
                         "lbdir_filename": None,
                     })
                     continue
-                lb_id = f"{lb_number:05d}"
-
                 lbdir_src = find_lbdir_attachment(lb_number)
                 was_scraped = False
 
@@ -2305,7 +2335,7 @@ def create_app() -> Flask:
                     errors.append({"file": rel, "error": str(e)})
             # Prune subdirectories that are now empty (bottom-up, never touch folder root)
             removed_dirs = []
-            for dirpath, dirnames, filenames in os.walk(str(folder), topdown=False):
+            for dirpath, _dirnames, _filenames in os.walk(str(folder), topdown=False):
                 d = Path(dirpath)
                 if d == folder:
                     continue
@@ -2400,8 +2430,9 @@ def create_app() -> Flask:
     def spectrogram_check() -> Response:
         """Return tool availability for the Setup tab indicator."""
         import shutil as _shutil
-        from backend.sox_utils import check_sox_version, get_ffmpeg
+
         from backend.checksum_utils import check_shntool_version
+        from backend.sox_utils import check_sox_version, get_ffmpeg
         sox_ver     = check_sox_version()
         ffmpeg      = get_ffmpeg()
         shntool_ver = check_shntool_version()
@@ -2531,6 +2562,7 @@ def create_app() -> Flask:
             JSON {applied: N, errors: [...string]}
         """
         import shutil
+
         from backend.rename import write_rename_log
         data = request.get_json() or {}
         renames = data.get("renames", [])
@@ -2765,7 +2797,8 @@ def create_app() -> Flask:
             CSV file attachment with Content-Disposition header.
         """
         try:
-            import csv, io
+            import csv
+            import io
             conn = database.get_connection(_dbedit_db_path())
             rows = conn.execute(f"SELECT * FROM [{name}]").fetchall()
             buf  = io.StringIO()
@@ -2921,8 +2954,8 @@ def create_app() -> Flask:
         Body: {host, port, username?, password?, api_key?} — credentials optional (uses keyring).
         """
         try:
+            from backend.credentials import SERVICE_QBT, SERVICE_QBT_KEY, get_credentials
             from backend.qbittorrent import test_connection
-            from backend.credentials import get_credentials, SERVICE_QBT, SERVICE_QBT_KEY
             data = request.get_json() or {}
             host = data.get("host") or database.get_meta("qbt_host") or "localhost"
             port = int(data.get("port") or database.get_meta("qbt_port") or 8080)
@@ -2947,8 +2980,8 @@ def create_app() -> Flask:
         torrents for those entries (latest record per LB).
         """
         try:
+            from backend.credentials import SERVICE_QBT, SERVICE_QBT_KEY, get_credentials
             from backend.qbittorrent import add_torrent_from_db
-            from backend.credentials import get_credentials, SERVICE_QBT, SERVICE_QBT_KEY
             data = request.get_json() or {}
             host = data.get("host") or database.get_meta("qbt_host") or "localhost"
             port = int(data.get("port") or database.get_meta("qbt_port") or 8080)
@@ -2996,8 +3029,8 @@ def create_app() -> Flask:
         Returns: {ok, error?}
         """
         try:
-            from backend.qbittorrent import remove_torrent, check_torrent_presence
-            from backend.credentials import get_credentials, SERVICE_QBT, SERVICE_QBT_KEY
+            from backend.credentials import SERVICE_QBT, SERVICE_QBT_KEY, get_credentials
+            from backend.qbittorrent import check_torrent_presence, remove_torrent
             data = request.get_json(silent=True) or {}
             host = data.get("host") or database.get_meta("qbt_host") or "localhost"
             port = int(data.get("port") or database.get_meta("qbt_port") or 8080)
@@ -3050,8 +3083,8 @@ def create_app() -> Flask:
         synced=True means added_to_qbt was cleared because the torrent was gone.
         """
         try:
+            from backend.credentials import SERVICE_QBT, SERVICE_QBT_KEY, get_credentials
             from backend.qbittorrent import check_torrent_presence
-            from backend.credentials import get_credentials, SERVICE_QBT, SERVICE_QBT_KEY
             host = database.get_meta("qbt_host") or "localhost"
             port = int(database.get_meta("qbt_port") or 8080)
             _, api_key = get_credentials(SERVICE_QBT_KEY)
@@ -3150,8 +3183,8 @@ def create_app() -> Flask:
         Returns: {ok, username} or {ok=False, error}.
         """
         try:
+            from backend.credentials import SERVICE_WTRF, get_credentials
             from backend.forum_poster import _get_session
-            from backend.credentials import get_credentials, SERVICE_WTRF
             data = request.get_json() or {}
             username = data.get("username") or ""
             password = data.get("password") or ""
@@ -3174,7 +3207,7 @@ def create_app() -> Flask:
         Returns: {ok: true} or {error}.
         """
         try:
-            from backend.credentials import save_credentials, SERVICE_WTRF
+            from backend.credentials import SERVICE_WTRF, save_credentials
             data = request.get_json() or {}
             username = data.get("username", "").strip()
             password = data.get("password", "")
@@ -3193,7 +3226,7 @@ def create_app() -> Flask:
         Returns: {ok: true} or {error}.
         """
         try:
-            from backend.credentials import save_credentials, SERVICE_QBT, SERVICE_QBT_KEY
+            from backend.credentials import SERVICE_QBT, SERVICE_QBT_KEY, save_credentials
             data = request.get_json() or {}
             api_key = data.get("api_key", "").strip()
             username = data.get("username", "").strip()
@@ -3216,7 +3249,7 @@ def create_app() -> Flask:
             JSON {ok: true} or {error}.
         """
         try:
-            from backend.credentials import delete_credentials, SERVICE_QBT, SERVICE_QBT_KEY
+            from backend.credentials import SERVICE_QBT, SERVICE_QBT_KEY, delete_credentials
             delete_credentials(SERVICE_QBT)
             delete_credentials(SERVICE_QBT_KEY)
             return jsonify({"ok": True})
@@ -3231,7 +3264,7 @@ def create_app() -> Flask:
             JSON {ok: true} or {error}.
         """
         try:
-            from backend.credentials import delete_credentials, SERVICE_WTRF
+            from backend.credentials import SERVICE_WTRF, delete_credentials
             delete_credentials(SERVICE_WTRF)
             return jsonify({"ok": True})
         except Exception as exc:
@@ -3293,8 +3326,8 @@ def create_app() -> Flask:
                 }.get(reason, f"LB-{lb:05d} cannot be posted.")
                 return jsonify({"error": reason, "message": _msg}), 403
 
+            from backend.credentials import SERVICE_WTRF, get_credentials
             from backend.forum_poster import post_lb_topic
-            from backend.credentials import get_credentials, SERVICE_WTRF
             data = request.get_json() or {}
 
             # Resolve credentials
@@ -3855,11 +3888,12 @@ def create_app() -> Flask:
           data: {"type": "done", "tag": "...", "url": "..."}
           data: {"type": "error", "error": "...", "message": "..."}
         """
-        import subprocess
-        import queue
         import json as _json
+        import queue
+        import subprocess
+        from datetime import datetime
+
         import requests as _req
-        from datetime import datetime, timezone
 
         if not database.is_curator():
             return jsonify({"error": "curator_required"}), 403
@@ -3900,9 +3934,9 @@ def create_app() -> Flask:
 
                 # Derive date for tag
                 try:
-                    date_str = version[:10] if version else datetime.now(timezone.utc).strftime("%Y-%m-%d")
+                    date_str = version[:10] if version else datetime.now(UTC).strftime("%Y-%m-%d")
                 except Exception:
-                    date_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+                    date_str = datetime.now(UTC).strftime("%Y-%m-%d")
 
                 # Find an unused tag: master-YYYY-MM-DD[.N]
                 ev_q.put({"type": "progress", "label": "Checking for existing releases…", "pct": None})
@@ -4194,7 +4228,7 @@ def create_app() -> Flask:
         try:
             results = database.get_entries_by_lb_list(lb_numbers)
         except Exception:
-            log.exception("api_entries_by_lb_list failed")
+            _log.exception("api_entries_by_lb_list failed")
             return jsonify({"error": "internal_error"}), 500
         return jsonify(results)
 
@@ -4735,9 +4769,11 @@ def create_app() -> Flask:
     def _pipeline_process_folder(folder_path: str, steps: set) -> dict:
         """Run one or more pipeline steps on a single folder and return a PipelineRow dict."""
         from backend.folder_naming import (
-            build_standard_name as _build_name,
             apply_nft_suffix,
             strip_nft_suffix,
+        )
+        from backend.folder_naming import (
+            build_standard_name as _build_name,
         )
 
         folder = Path(folder_path)
@@ -5049,9 +5085,9 @@ def create_app() -> Flask:
 
         Returns: {ok, path, manifest: {type, created_at, files, file_count, total_bytes}}
         """
-        import zipfile
         import hashlib
-        from datetime import datetime, date
+        import zipfile
+        from datetime import date, datetime
 
         try:
             exports_dir = DATA_DIR / "exports"
@@ -5099,7 +5135,7 @@ def create_app() -> Flask:
         Returns: {ok, path, manifest: {type, created_at, file_count, total_bytes}}
         """
         import zipfile
-        from datetime import datetime, date
+        from datetime import date, datetime
 
         try:
             if not SITE_DIR.exists():
@@ -5148,7 +5184,6 @@ def create_app() -> Flask:
         Returns: {ok, type, restored: [{name, dest}], conflicts: [{name, dest}], dry_run: bool}
         """
         import zipfile
-        import hashlib
 
         body = request.get_json(silent=True) or {}
         zip_path_str = body.get("zip_path", "")
@@ -5546,7 +5581,7 @@ def create_app() -> Flask:
             return jsonify({
                 "losslessbob_collection": True,
                 "export_version": 1,
-                "exported_at": _dt.datetime.now(_dt.timezone.utc).isoformat(),
+                "exported_at": _dt.datetime.now(_dt.UTC).isoformat(),
                 "entries": [
                     {"lb_number": r[0], "date_str": r[1], "location": r[2], "lb_status": r[3]}
                     for r in rows
@@ -5592,7 +5627,7 @@ def create_app() -> Flask:
 
             import datetime as _dt
             conn = database.get_connection()
-            now = _dt.datetime.now(_dt.timezone.utc).isoformat()
+            now = _dt.datetime.now(_dt.UTC).isoformat()
             existing = conn.execute(
                 "SELECT id FROM friend_collections WHERE friend_name = ?", (friend_name,)
             ).fetchone()
@@ -5841,7 +5876,7 @@ def create_app() -> Flask:
         Body: {access_key, secret_key}
         Returns: {ok, label}
         """
-        from backend.credentials import save_credentials, SERVICE_IA
+        from backend.credentials import SERVICE_IA, save_credentials
         data = request.get_json(force=True) or {}
         access_key = data.get("access_key", "").strip()
         secret_key = data.get("secret_key", "").strip()
@@ -5856,7 +5891,7 @@ def create_app() -> Flask:
 
         Returns: {stored: bool}
         """
-        from backend.credentials import credentials_stored, SERVICE_IA
+        from backend.credentials import SERVICE_IA, credentials_stored
         return jsonify({"stored": credentials_stored(SERVICE_IA)})
 
     @app.route("/api/archive_org/credentials", methods=["DELETE"])
@@ -5865,7 +5900,7 @@ def create_app() -> Flask:
 
         Returns: {ok: bool}
         """
-        from backend.credentials import delete_credentials, SERVICE_IA
+        from backend.credentials import SERVICE_IA, delete_credentials
         delete_credentials(SERVICE_IA)
         return jsonify({"ok": True})
 
@@ -5876,7 +5911,7 @@ def create_app() -> Flask:
         Body: {access_key?, secret_key?} — if omitted, uses stored credentials.
         Returns: {ok, error?}
         """
-        from backend.credentials import get_credentials, SERVICE_IA
+        from backend.credentials import SERVICE_IA, get_credentials
         data = request.get_json(force=True) or {}
         access_key = data.get("access_key", "").strip()
         secret_key = data.get("secret_key", "").strip()
@@ -5894,7 +5929,7 @@ def create_app() -> Flask:
                access_key?, secret_key?}
         Returns: {ok, error?}
         """
-        from backend.credentials import get_credentials, SERVICE_IA
+        from backend.credentials import SERVICE_IA, get_credentials
         data = request.get_json(force=True) or {}
         lb_number = data.get("lb_number")
         folder_path = data.get("folder_path", "").strip()
@@ -5971,8 +6006,11 @@ def _do_spectro_batch(folders: list[str], opts: dict) -> None:
 
     try:
         from backend.sox_utils import (
-            generate_spectrogram, AUDIO_EXTS_ALL,
-            SoxNotFoundError, ConversionError, SpectrogenError,
+            AUDIO_EXTS_ALL,
+            ConversionError,
+            SoxNotFoundError,
+            SpectrogenError,
+            generate_spectrogram,
         )
     except Exception as exc:
         _set(status="error", current=str(exc))
@@ -6127,10 +6165,15 @@ _DATA_PROTECTED_EXTS = frozenset({".db", ".ini"})
 
 def _do_data_download(url: str) -> None:
     """Download a ZIP from url and extract safe files into DATA_DIR."""
-    import zipfile, shutil, tempfile
-    import requests as _req
+    import shutil
+    import tempfile
+    import zipfile
     from pathlib import Path as _Path
-    from backend.paths import DATA_DIR as _DATA_DIR, to_long_path
+
+    import requests as _req
+
+    from backend.paths import DATA_DIR as _DATA_DIR
+    from backend.paths import to_long_path
 
     def _set(status, progress, message, **kw):
         with _data_dl_lock:
@@ -6203,9 +6246,13 @@ _UPDATE_SKIP_EXTS = frozenset({".db", ".ini", ".log", ".sdf"})
 
 def _do_update(zipball_url: str) -> None:
     """Download a GitHub zipball and apply source files to APP_ROOT."""
-    import zipfile, shutil, tempfile
-    import requests as _req
+    import shutil
+    import tempfile
+    import zipfile
     from pathlib import Path as _Path
+
+    import requests as _req
+
     from backend.paths import APP_ROOT as _ROOT
 
     def _set(status, progress, message):
@@ -6734,6 +6781,7 @@ function toast(msg){
 
 if __name__ == "__main__":
     import sys
+
     from backend.paths import ensure_data_dirs
     ensure_data_dirs()
     port = int(sys.argv[1]) if len(sys.argv) > 1 else 5174
