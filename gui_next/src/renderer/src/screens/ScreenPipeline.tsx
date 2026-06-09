@@ -7,10 +7,16 @@ import { Button, Chip, IconButton, Input, Pill } from '../components'
 import { TableShell, TH, TR, TD, GroupRow } from '../components'
 import { useFolderQueueStore } from '../lib/folderQueueStore'
 import { CheckResult, ReconcileResult, ReconcileProposal, SiteProposal } from '../lib/lbdirStore'
+import { useConfirm } from '../components/pipeline/ConfirmDialog'
+import {
+  StageTracker, QueueRow, StageStepper, StatusTag,
+  DEFAULT_STAGES,
+  type Bucket, type StepData, type FolderRow,
+} from '../components/pipeline/PipelineParts'
 
 const BASE = window.api.flaskBase
 
-// ── Types ────────────────────────────────────────────────────────────────────
+// ── Types ─────────────────────────────────────────────────────────────────────
 
 type StepStatus = 'ok' | 'warn' | 'bad' | 'mute'
 
@@ -28,7 +34,21 @@ interface StepResult {
   lb_number?: number | null
   proposed?: string | null
   alias_resolved_from?: number[] | null
-  check?: LbdirCheckSummary | null  // only populated for lbdir step
+  check?: LbdirCheckSummary | null
+  // verify step fields
+  total?: number | null
+  pass?: number | null
+  missing?: number | null
+  mismatch?: number | null
+  extra?: number | null
+  no_checksums?: boolean | null
+  // file step fields
+  dest?: string | null
+  dest_parent?: string | null
+  mount_label?: string | null
+  year?: number | null
+  error?: string | null
+  error_code?: string | null
 }
 
 interface PipelineRow {
@@ -36,62 +56,17 @@ interface PipelineRow {
   folderName: string
   folderPath: string
   selected: boolean
-  severity: 'attn' | 'ready' | 'done'
+  bucket: Bucket
   steps: {
     verify: StepResult
     lookup: StepResult
     rename: StepResult
     lbdir:  StepResult
+    file:   StepResult
   }
   errors: { step: string; message: string }[]
   running: boolean
 }
-
-type FilterKey = 'all' | 'attn' | 'ready' | 'done'
-
-// ── StepPill ─────────────────────────────────────────────────────────────────
-
-function StepPill({ step, running = false }: { step: StepResult; running?: boolean }): React.JSX.Element {
-  if (running && step.status === 'mute') {
-    return (
-      <Pill tone="mute" soft style={{ minWidth: 64, justifyContent: 'center', opacity: 0.5, letterSpacing: 3 }}>···</Pill>
-    )
-  }
-  if (step.status === 'mute') {
-    return (
-      <Pill tone="mute" soft style={{ minWidth: 64, justifyContent: 'center' }}>—</Pill>
-    )
-  }
-  return (
-    <Pill tone={step.status} soft dot style={{ minWidth: 64, justifyContent: 'center' }}>
-      {step.label}
-    </Pill>
-  )
-}
-
-// ── Numbered step header ──────────────────────────────────────────────────────
-
-function StepTH({ n, label }: { n: number; label: string }): React.JSX.Element {
-  return (
-    <TH align="center">
-      <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4 }}>
-        <span style={{
-          width: 14, height: 14, borderRadius: '50%',
-          background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border2)',
-          display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-          fontSize: 'var(--lbb-fs-9)', fontWeight: 700, color: 'var(--lbb-fg2)',
-        }}>{n}</span>
-        {label}
-      </span>
-    </TH>
-  )
-}
-
-// ── Virtualizer item type ─────────────────────────────────────────────────────
-
-type VItem =
-  | { type: 'group'; label: string; count: number; severity: string }
-  | { type: 'row';   row: PipelineRow }
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -104,28 +79,97 @@ function emptyRow(folderPath: string): PipelineRow {
     folderName: name,
     folderPath,
     selected: false,
-    severity: 'attn',
-    steps: { verify: MUTE, lookup: MUTE, rename: MUTE, lbdir: MUTE },
+    bucket: 'needs',
+    steps: { verify: MUTE, lookup: MUTE, rename: MUTE, lbdir: MUTE, file: MUTE },
     errors: [],
     running: false,
   }
 }
 
-function serverRowToPipeline(sr: Record<string, unknown>): Partial<PipelineRow> {
+function normalizeFileStep(raw: unknown): StepResult {
+  if (!raw || typeof raw !== 'object') return MUTE
+  const r = raw as Record<string, unknown>
+  const rawStatus = r.status as string
+  const status: StepStatus =
+    rawStatus === 'ready'   ? 'warn' :
+    rawStatus === 'blocked' ? 'bad'  :
+    (rawStatus as StepStatus) ?? 'mute'
   return {
-    severity: sr.severity as PipelineRow['severity'],
+    status,
+    label:       (r.label       as string) ?? '—',
+    dest:        (r.dest        as string) ?? null,
+    dest_parent: (r.dest_parent as string) ?? null,
+    mount_label: (r.mount_label as string) ?? null,
+    year:        (r.year        as number) ?? null,
+    error:       (r.error       as string) ?? null,
+    error_code:  (r.error_code  as string) ?? null,
+  }
+}
+
+function serverRowToPipeline(sr: Record<string, unknown>): Partial<PipelineRow> {
+  const sev = sr.severity as string
+  const bucket: Bucket =
+    sev === 'attn'  ? 'needs' :
+    sev === 'ready' ? 'ready' :
+    sev === 'done'  ? 'done'  : 'needs'
+  return {
+    bucket,
     steps: {
       verify: (sr.verify as StepResult) ?? MUTE,
       lookup: (sr.lookup as StepResult) ?? MUTE,
       rename: (sr.rename as StepResult) ?? MUTE,
       lbdir:  (sr.lbdir  as StepResult) ?? MUTE,
+      file:   normalizeFileStep(sr.file),
     },
     errors: (sr.errors as PipelineRow['errors']) ?? [],
     running: false,
   }
 }
 
-// ── LBDIR Mini Panel ─────────────────────────────────────────────────────────
+const STATUS_TO_STATE: Record<StepStatus, StepData['state']> = {
+  ok: 'pass', warn: 'action', bad: 'blocked', mute: 'mute',
+}
+
+function toFolderRow(r: PipelineRow): FolderRow {
+  const rawSteps: Record<string, StepData> = {}
+  for (const key of ['verify', 'lookup', 'rename', 'lbdir', 'file'] as const) {
+    const s = r.steps[key]
+    rawSteps[key] = { state: STATUS_TO_STATE[s.status], label: s.label }
+  }
+  if (r.running) {
+    for (const key of ['verify', 'lookup', 'rename', 'lbdir', 'file']) {
+      if (rawSteps[key].state === 'mute') {
+        rawSteps[key] = { state: 'running' }
+        break
+      }
+    }
+  }
+  return {
+    folder: r.folderPath,
+    folderName: r.folderName,
+    steps: rawSteps,
+    bucket: r.running ? 'running' : r.bucket,
+    lb: r.steps.lookup.lb_number
+      ? `LB-${String(r.steps.lookup.lb_number).padStart(5, '0')}`
+      : null,
+  }
+}
+
+function firstActiveStage(r: PipelineRow): string {
+  for (const key of ['verify', 'lookup', 'rename', 'lbdir', 'file'] as const) {
+    if (r.steps[key].status !== 'ok' && r.steps[key].status !== 'mute') return key
+    if (r.steps[key].status === 'mute') return key
+  }
+  return 'verify'
+}
+
+// ── Virtualizer item type ─────────────────────────────────────────────────────
+
+type VItem =
+  | { type: 'group'; label: string; count: number; bucket: Bucket }
+  | { type: 'row';   row: PipelineRow }
+
+// ── LBDIR state labels ────────────────────────────────────────────────────────
 
 const STATE_LABEL: Record<string, { tone: 'ok'|'bad'|'warn'|'mute'|'info'; label: string }> = {
   pass:            { tone: 'ok',   label: 'Pass' },
@@ -136,9 +180,10 @@ const STATE_LABEL: Record<string, { tone: 'ok'|'bad'|'warn'|'mute'|'info'; label
   shntool_missing: { tone: 'warn', label: 'No shntool' },
 }
 
-function LbdirMiniPanel({ row, onClose, onRowRefresh }: {
+// ── LbdirStageContent ─────────────────────────────────────────────────────────
+
+function LbdirStageContent({ row, onRowRefresh }: {
   row: PipelineRow
-  onClose: () => void
   onRowRefresh: (id: string) => void
 }): React.JSX.Element {
   const navigate = useNavigate()
@@ -164,7 +209,6 @@ function LbdirMiniPanel({ row, onClose, onRowRefresh }: {
     setTimeout(() => setToast(null), 3500)
   }
 
-  // Fetch check result when panel opens
   useEffect(() => {
     setBusy(true)
     fetch(`${BASE}/api/lbdir/check`, {
@@ -209,10 +253,8 @@ function LbdirMiniPanel({ row, onClose, onRowRefresh }: {
         await post('/api/lbdir/move_extras', { folder: row.folderPath, files: extras })
       showToast('Applied', true)
       setReconResult(null)
-      // Re-check after apply
       const d2 = await post('/api/lbdir/check', { folders: [row.folderPath] }) as { results: CheckResult[] }
       if (d2.results?.[0]) setCheckResult(d2.results[0])
-      // Tell pipeline to re-run lbdir step on this row so the pill updates
       onRowRefresh(row.id)
     } catch { showToast('Apply failed', false) }
     finally { setBusy(false) }
@@ -223,197 +265,172 @@ function LbdirMiniPanel({ row, onClose, onRowRefresh }: {
   const canReconcile = cr !== null && cr.lbdir_found && cr.status !== 'pass' && cr.status !== 'no_lb'
 
   return (
-    <div style={{
-      position: 'absolute', top: 0, right: 0, bottom: 0, width: 420,
-      background: 'var(--lbb-bg)', borderLeft: '1px solid var(--lbb-border)',
-      display: 'flex', flexDirection: 'column', zIndex: 50,
-      boxShadow: '-4px 0 20px rgba(0,0,0,0.12)',
-    }}>
-      {/* Header */}
-      <div style={{
-        padding: '12px 16px', borderBottom: '1px solid var(--lbb-border)',
-        display: 'flex', alignItems: 'center', gap: 10, flexShrink: 0,
-      }}>
-        <Icon name="lbdir" size={15} style={{ color: 'var(--lbb-fg3)' }} />
-        <span style={{ fontWeight: 600, fontSize: 'var(--lbb-fs-11)', flex: 1, minWidth: 0,
-          whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
-          fontFamily: 'var(--lbb-mono)' }}>
-          {row.folderName}
-        </span>
-        <Button variant="ghost" size="sm" onClick={() => { navigate('/lbdir') }}>Open full LBDIR →</Button>
-        <IconButton icon="x" title="Close" onClick={onClose} />
-      </div>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 14, position: 'relative' }}>
+      {busy && !cr && (
+        <div style={{ color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-12)', textAlign: 'center', padding: 24 }}>
+          Loading…
+        </div>
+      )}
 
-      <div style={{ flex: 1, overflowY: 'auto', padding: '14px 16px', display: 'flex', flexDirection: 'column', gap: 14 }}>
-        {busy && !cr && (
-          <div style={{ color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-12)', textAlign: 'center', padding: 24 }}>
-            Loading…
+      {cr && (
+        <>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
+            {cr.lb_number !== null && (
+              <Pill tone="info" soft style={{ fontFamily: 'var(--lbb-mono)' }}>
+                LB-{String(cr.lb_number).padStart(5, '0')}
+              </Pill>
+            )}
+            {sl && <Pill tone={sl.tone} soft dot={cr.status !== 'pass'}>{sl.label}</Pill>}
+            {cr.lbdir_path && (
+              <Pill tone="mute" soft style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-10)' }}>
+                {cr.lbdir_path.split('/').pop()}
+              </Pill>
+            )}
+            {cr.lbdir_path && (
+              <Button variant="ghost" size="sm" icon="reveal"
+                onClick={() => window.api.openPath(cr.lbdir_path!)}>
+                Open file
+              </Button>
+            )}
+            <Button variant="ghost" size="sm" onClick={() => navigate('/lbdir')}>
+              Full LBDIR screen →
+            </Button>
           </div>
-        )}
 
-        {cr && (
-          <>
-            {/* Status + LB# */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
-              {cr.lb_number !== null && (
-                <Pill tone="info" soft style={{ fontFamily: 'var(--lbb-mono)' }}>
-                  LB-{String(cr.lb_number).padStart(5, '0')}
-                </Pill>
-              )}
-              {sl && <Pill tone={sl.tone} soft dot={cr.status !== 'pass'}>{sl.label}</Pill>}
-              {cr.lbdir_path && (
-                <Pill tone="mute" soft style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-10)' }}>
-                  {cr.lbdir_path.split('/').pop()}
-                </Pill>
-              )}
-              {cr.lbdir_path && (
-                <Button variant="ghost" size="sm" icon="reveal"
-                  onClick={() => window.api.openPath(cr.lbdir_path!)}>
-                  Open file
-                </Button>
-              )}
-            </div>
-
-            {/* Stats */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 6 }}>
-              {[
-                { l: 'Total',    v: cr.total,    c: undefined },
-                { l: 'Pass',     v: cr.pass,     c: cr.pass     > 0 ? 'var(--lbb-ok-fg)'  : 'var(--lbb-fg3)' },
-                { l: 'Missing',  v: cr.missing,  c: cr.missing  > 0 ? 'var(--lbb-bad-fg)' : 'var(--lbb-fg3)' },
-                { l: 'Mismatch', v: cr.mismatch, c: cr.mismatch > 0 ? 'var(--lbb-bad-fg)' : 'var(--lbb-fg3)' },
-              ].map((st, i) => (
-                <div key={i} style={{ padding: '6px 8px', borderRadius: 6, background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)', textAlign: 'center' }}>
-                  <div style={{ fontSize: 'var(--lbb-fs-9-5)', fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase' }}>{st.l}</div>
-                  <div style={{ fontSize: 'var(--lbb-fs-16)', fontWeight: 700, fontFamily: 'var(--lbb-mono)', color: st.c ?? 'var(--lbb-fg)' }}>{st.v}</div>
-                </div>
-              ))}
-            </div>
-
-            {/* no_lbdir hint */}
-            {cr.status === 'no_lbdir' && (
-              <div style={{ padding: '8px 12px', borderRadius: 6, background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)', fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)' }}>
-                No <span style={{ fontFamily: 'var(--lbb-mono)' }}>lbdir*.txt</span> found. The retrieve step ran but
-                no cached file was available — try scraping the entry from the LBDIR screen.
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 6 }}>
+            {[
+              { l: 'Total',    v: cr.total,    c: undefined },
+              { l: 'Pass',     v: cr.pass,     c: cr.pass     > 0 ? 'var(--lbb-ok-fg)'  : 'var(--lbb-fg3)' },
+              { l: 'Missing',  v: cr.missing,  c: cr.missing  > 0 ? 'var(--lbb-bad-fg)' : 'var(--lbb-fg3)' },
+              { l: 'Mismatch', v: cr.mismatch, c: cr.mismatch > 0 ? 'var(--lbb-bad-fg)' : 'var(--lbb-fg3)' },
+            ].map((st, i) => (
+              <div key={i} style={{ padding: '6px 8px', borderRadius: 6, background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)', textAlign: 'center' }}>
+                <div style={{ fontSize: 'var(--lbb-fs-9-5)', fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase' }}>{st.l}</div>
+                <div style={{ fontSize: 'var(--lbb-fs-16)', fontWeight: 700, fontFamily: 'var(--lbb-mono)', color: st.c ?? 'var(--lbb-fg)' }}>{st.v}</div>
               </div>
-            )}
+            ))}
+          </div>
 
-            {/* File list (truncated) */}
-            {cr.files.length > 0 && (
-              <div style={{ borderRadius: 6, border: '1px solid var(--lbb-border)', overflow: 'hidden' }}>
-                <div style={{ padding: '6px 10px', background: 'var(--lbb-surface2)', borderBottom: '1px solid var(--lbb-border)',
-                  fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase' }}>
-                  Files
-                </div>
-                {cr.files.slice(0, 12).map((f, i) => {
-                  const edge = f.overall === 'pass' ? 'var(--lbb-ok-bar)' : f.overall === 'missing' ? 'var(--lbb-warn-bar)' : 'var(--lbb-bad-bar)'
-                  return (
-                    <div key={i} style={{
-                      display: 'flex', alignItems: 'center', gap: 8, padding: '5px 10px',
-                      borderTop: i > 0 ? '1px solid var(--lbb-border)' : undefined,
-                    }}>
-                      <span style={{ width: 6, height: 6, borderRadius: 1, background: edge, flexShrink: 0 }} />
-                      <span style={{ flex: 1, minWidth: 0, fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-10-5)',
-                        whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
-                        color: f.overall === 'pass' ? 'var(--lbb-fg2)' : 'var(--lbb-bad-fg)' }}>
-                        {f.filename}
-                      </span>
-                      <Pill tone={f.overall === 'pass' ? 'ok' : f.overall === 'missing' ? 'warn' : 'bad'} soft>
-                        {f.overall === 'pass' ? 'Pass' : f.overall === 'missing' ? 'Missing' : 'Fail'}
-                      </Pill>
-                    </div>
-                  )
-                })}
-                {cr.files.length > 12 && (
-                  <div style={{ padding: '5px 10px', fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', borderTop: '1px solid var(--lbb-border)' }}>
-                    +{cr.files.length - 12} more — open full LBDIR view for details
+          {cr.status === 'no_lbdir' && (
+            <div style={{ padding: '8px 12px', borderRadius: 6, background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)', fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)' }}>
+              No <span style={{ fontFamily: 'var(--lbb-mono)' }}>lbdir*.txt</span> found. Try scraping the entry from the LBDIR screen.
+            </div>
+          )}
+
+          {cr.files.length > 0 && (
+            <div style={{ borderRadius: 6, border: '1px solid var(--lbb-border)', overflow: 'hidden' }}>
+              <div style={{ padding: '6px 10px', background: 'var(--lbb-surface2)', borderBottom: '1px solid var(--lbb-border)',
+                fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase' }}>
+                Files
+              </div>
+              {cr.files.slice(0, 12).map((f, i) => {
+                const edge = f.overall === 'pass' ? 'var(--lbb-ok-bar)' : f.overall === 'missing' ? 'var(--lbb-warn-bar)' : 'var(--lbb-bad-bar)'
+                return (
+                  <div key={i} style={{
+                    display: 'flex', alignItems: 'center', gap: 8, padding: '5px 10px',
+                    borderTop: i > 0 ? '1px solid var(--lbb-border)' : undefined,
+                  }}>
+                    <span style={{ width: 6, height: 6, borderRadius: 1, background: edge, flexShrink: 0 }} />
+                    <span style={{ flex: 1, minWidth: 0, fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-10-5)',
+                      whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
+                      color: f.overall === 'pass' ? 'var(--lbb-fg2)' : 'var(--lbb-bad-fg)' }}>
+                      {f.filename}
+                    </span>
+                    <Pill tone={f.overall === 'pass' ? 'ok' : f.overall === 'missing' ? 'warn' : 'bad'} soft>
+                      {f.overall === 'pass' ? 'Pass' : f.overall === 'missing' ? 'Missing' : 'Fail'}
+                    </Pill>
                   </div>
-                )}
-              </div>
-            )}
+                )
+              })}
+              {cr.files.length > 12 && (
+                <div style={{ padding: '5px 10px', fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', borderTop: '1px solid var(--lbb-border)' }}>
+                  +{cr.files.length - 12} more — open full LBDIR view for details
+                </div>
+              )}
+            </div>
+          )}
 
-            {/* Reconcile section */}
-            {canReconcile && !reconResult && (
-              <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                <Button variant="secondary" size="sm" icon="rename" disabled={busy} onClick={handleReconcile}>
-                  {busy ? 'Scanning…' : 'Reconcile files…'}
-                </Button>
-                <span style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
-                  Match missing files by MD5
+          {canReconcile && !reconResult && (
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+              <Button variant="secondary" size="sm" icon="rename" disabled={busy} onClick={handleReconcile}>
+                {busy ? 'Scanning…' : 'Reconcile files…'}
+              </Button>
+              <span style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
+                Match missing files by MD5
+              </span>
+            </div>
+          )}
+
+          {reconResult && (
+            <div style={{ borderRadius: 6, border: '1px solid var(--lbb-border)', overflow: 'hidden' }}>
+              <div style={{ padding: '8px 12px', background: 'var(--lbb-surface2)', borderBottom: '1px solid var(--lbb-border)',
+                display: 'flex', alignItems: 'center', gap: 8 }}>
+                <Icon name="rename" size={12} style={{ color: 'var(--lbb-fg3)' }} />
+                <span style={{ fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase', flex: 1 }}>
+                  Reconcile
                 </span>
-              </div>
-            )}
-
-            {reconResult && (
-              <div style={{ borderRadius: 6, border: '1px solid var(--lbb-border)', overflow: 'hidden' }}>
-                <div style={{ padding: '8px 12px', background: 'var(--lbb-surface2)', borderBottom: '1px solid var(--lbb-border)',
-                  display: 'flex', alignItems: 'center', gap: 8 }}>
-                  <Icon name="rename" size={12} style={{ color: 'var(--lbb-fg3)' }} />
-                  <span style={{ fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase', flex: 1 }}>
-                    Reconcile
-                  </span>
-                  {reconResult.proposals.length > 0 && (
-                    <Pill tone="info" soft>{reconResult.proposals.length} rename{reconResult.proposals.length !== 1 ? 's' : ''}</Pill>
-                  )}
-                  {reconResult.unmatched_disk.length > 0 && (
-                    <Pill tone="warn" soft>{reconResult.unmatched_disk.length} extras</Pill>
-                  )}
-                  <Button variant="ghost" size="sm" disabled={busy} onClick={handleReconcile}>Re-scan</Button>
-                  <Button variant="primary" size="sm" icon="check" disabled={busy} onClick={handleApply}>Apply</Button>
-                </div>
-
-                {reconResult.proposals.length > 0 ? (
-                  <div style={{ padding: '6px 10px', display: 'flex', flexDirection: 'column', gap: 3 }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 4 }}>
-                      <input type="checkbox"
-                        checked={reconResult.proposals.every(p => reconSel.has(p.disk_rel))}
-                        onChange={e => setReconSel(e.target.checked ? new Set(reconResult.proposals.map(p => p.disk_rel)) : new Set())}
-                      />
-                      <span style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)' }}>Proposed renames</span>
-                    </div>
-                    {reconResult.proposals.map((p, i) => (
-                      <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                        <input type="checkbox"
-                          checked={reconSel.has(p.disk_rel)}
-                          onChange={e => setReconSel(prev => { const n = new Set(prev); e.target.checked ? n.add(p.disk_rel) : n.delete(p.disk_rel); return n })}
-                        />
-                        <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-10)', color: 'var(--lbb-fg2)', flex: 1, minWidth: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{p.disk_rel}</span>
-                        <Icon name="chevRight" size={10} style={{ color: 'var(--lbb-fg3)', flexShrink: 0 }} />
-                        <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-10)', color: 'var(--lbb-ok-fg)', flexShrink: 0, maxWidth: '45%', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{p.lbdir_rel}</span>
-                      </div>
-                    ))}
-                  </div>
-                ) : (
-                  <div style={{ padding: '8px 12px', color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-12)' }}>
-                    No rename proposals — missing files could not be matched by MD5.
-                  </div>
+                {reconResult.proposals.length > 0 && (
+                  <Pill tone="info" soft>{reconResult.proposals.length} rename{reconResult.proposals.length !== 1 ? 's' : ''}</Pill>
                 )}
-
                 {reconResult.unmatched_disk.length > 0 && (
-                  <div style={{ borderTop: '1px solid var(--lbb-border)', padding: '6px 12px' }}>
-                    <div style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)', fontWeight: 600, marginBottom: 4 }}>
-                      Extras → will move to <span style={{ fontFamily: 'var(--lbb-mono)' }}>/extras/</span>
-                    </div>
-                    {reconResult.unmatched_disk.map((f, i) => (
-                      <div key={i} style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-warn-fg)' }}>{f}</div>
-                    ))}
-                  </div>
+                  <Pill tone="warn" soft>{reconResult.unmatched_disk.length} extras</Pill>
                 )}
+                <Button variant="ghost" size="sm" disabled={busy} onClick={handleReconcile}>Re-scan</Button>
+                <Button variant="primary" size="sm" icon="check" disabled={busy} onClick={handleApply}>Apply</Button>
               </div>
-            )}
 
-            {cr.status === 'pass' && (
-              <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: 'var(--lbb-ok-fg)', fontSize: 'var(--lbb-fs-12)', fontWeight: 600 }}>
-                <Icon name="check" size={14} />
-                All files verified against lbdir
-              </div>
-            )}
-          </>
-        )}
-      </div>
+              {reconResult.proposals.length > 0 ? (
+                <div style={{ padding: '6px 10px', display: 'flex', flexDirection: 'column', gap: 3 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 4 }}>
+                    <input type="checkbox"
+                      checked={reconResult.proposals.every(p => reconSel.has(p.disk_rel))}
+                      onChange={e => setReconSel(e.target.checked ? new Set(reconResult.proposals.map(p => p.disk_rel)) : new Set())}
+                    />
+                    <span style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)' }}>Proposed renames</span>
+                  </div>
+                  {reconResult.proposals.map((p, i) => (
+                    <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                      <input type="checkbox"
+                        checked={reconSel.has(p.disk_rel)}
+                        onChange={e => setReconSel(prev => { const n = new Set(prev); e.target.checked ? n.add(p.disk_rel) : n.delete(p.disk_rel); return n })}
+                      />
+                      <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-10)', color: 'var(--lbb-fg2)', flex: 1, minWidth: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{p.disk_rel}</span>
+                      <Icon name="chevRight" size={10} style={{ color: 'var(--lbb-fg3)', flexShrink: 0 }} />
+                      <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-10)', color: 'var(--lbb-ok-fg)', flexShrink: 0, maxWidth: '45%', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{p.lbdir_rel}</span>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div style={{ padding: '8px 12px', color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-12)' }}>
+                  No rename proposals — missing files could not be matched by MD5.
+                </div>
+              )}
+
+              {reconResult.unmatched_disk.length > 0 && (
+                <div style={{ borderTop: '1px solid var(--lbb-border)', padding: '6px 12px' }}>
+                  <div style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)', fontWeight: 600, marginBottom: 4 }}>
+                    Extras → will move to <span style={{ fontFamily: 'var(--lbb-mono)' }}>/extras/</span>
+                  </div>
+                  {reconResult.unmatched_disk.map((f, i) => (
+                    <div key={i} style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-warn-fg)' }}>{f}</div>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+
+          {cr.status === 'pass' && (
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: 'var(--lbb-ok-fg)', fontSize: 'var(--lbb-fs-12)', fontWeight: 600 }}>
+              <Icon name="check" size={14} />
+              All files verified against lbdir
+            </div>
+          )}
+        </>
+      )}
 
       {toast && (
         <div style={{
-          position: 'absolute', bottom: 16, left: '50%', transform: 'translateX(-50%)',
+          position: 'fixed', bottom: 80, left: '50%', transform: 'translateX(-50%)',
           background: toast.ok ? 'var(--lbb-ok-bar)' : 'var(--lbb-err-bar)',
           color: '#fff', padding: '7px 16px', borderRadius: 6,
           fontSize: 'var(--lbb-fs-12)', fontWeight: 600, zIndex: 9999,
@@ -425,25 +442,456 @@ function LbdirMiniPanel({ row, onClose, onRowRefresh }: {
   )
 }
 
+// ── Stage detail panels ───────────────────────────────────────────────────────
+
+function VerifyStageContent({ step, row, onRun }: {
+  step: StepResult
+  row: PipelineRow
+  onRun: (steps: string[]) => void
+}): React.JSX.Element {
+  const [generating, setGenerating] = useState(false)
+
+  const handleGenerate = useCallback(async () => {
+    setGenerating(true)
+    try {
+      await fetch(`${BASE}/api/verify/generate`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ folders: [row.folderPath] }),
+      })
+      onRun(['verify'])
+    } catch { /* silent */ }
+    finally { setGenerating(false) }
+  }, [row.folderPath, onRun])
+
+  if (step.status === 'mute') {
+    return (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+        <div style={{ color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-12)', fontStyle: 'italic' }}>
+          Verify hasn't run yet.
+        </div>
+        <Button variant="secondary" size="sm" icon="play" onClick={() => onRun(['verify'])}>Run verify</Button>
+      </div>
+    )
+  }
+
+  if (step.no_checksums) {
+    return (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+        <div style={{ display: 'flex', gap: 14, padding: '16px 18px', background: 'var(--lbb-warn-bg)', border: '1px solid var(--lbb-warn-bar)', borderRadius: 9 }}>
+          <div style={{ width: 40, height: 40, borderRadius: 9, flexShrink: 0, background: 'var(--lbb-warn-bar)', color: '#fff', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
+            <Icon name="shield" size={20} />
+          </div>
+          <div style={{ flex: 1 }}>
+            <div style={{ fontSize: 'var(--lbb-fs-13-5)', fontWeight: 700, marginBottom: 4 }}>No checksum sidecar found</div>
+            <div style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)', lineHeight: 1.5, marginBottom: 10 }}>
+              Audio files are present but there's no <span style={{ fontFamily: 'var(--lbb-mono)' }}>.ffp</span> or <span style={{ fontFamily: 'var(--lbb-mono)' }}>.md5</span> sidecar. Generate checksums to unblock the pipeline.
+            </div>
+            <Button variant="primary" size="sm" icon="shield" disabled={generating}
+              onClick={handleGenerate}>
+              {generating ? 'Generating…' : 'Generate FFP + MD5'}
+            </Button>
+          </div>
+        </div>
+        <div style={{ padding: '8px 10px', borderRadius: 6, background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)', fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
+          Writes <span style={{ fontFamily: 'var(--lbb-mono)' }}>_mychecksums.ffp</span> and <span style={{ fontFamily: 'var(--lbb-mono)' }}>.md5</span> into the folder — audio files are not modified.
+        </div>
+      </div>
+    )
+  }
+
+  const total    = step.total    ?? 0
+  const pass     = step.pass     ?? 0
+  const missing  = step.missing  ?? 0
+  const mismatch = step.mismatch ?? 0
+  const extra    = step.extra    ?? 0
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+        <StatusTag state={STATUS_TO_STATE[step.status]}>{step.label}</StatusTag>
+        <div style={{ flex: 1 }} />
+        <Button variant="ghost" size="sm" icon="refresh" onClick={() => onRun(['verify'])}>Re-verify</Button>
+      </div>
+
+      {total > 0 && (
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 6 }}>
+          {([
+            { l: 'Total',    v: total,    c: undefined },
+            { l: 'Pass',     v: pass,     c: pass === total && total > 0 ? 'var(--lbb-ok-fg)' : undefined },
+            { l: 'Missing',  v: missing,  c: missing  > 0 ? 'var(--lbb-bad-fg)' : 'var(--lbb-fg3)' },
+            { l: 'Mismatch', v: mismatch, c: mismatch > 0 ? 'var(--lbb-bad-fg)' : 'var(--lbb-fg3)' },
+            { l: 'Extra',    v: extra,    c: extra    > 0 ? 'var(--lbb-info-fg)' : 'var(--lbb-fg3)' },
+          ] as { l: string; v: number; c: string | undefined }[]).map(({ l, v, c }) => (
+            <div key={l} style={{ padding: '6px 8px', borderRadius: 6, background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)', textAlign: 'center' }}>
+              <div style={{ fontSize: 'var(--lbb-fs-9-5)', fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase' }}>{l}</div>
+              <div style={{ fontSize: 'var(--lbb-fs-16)', fontWeight: 700, fontFamily: 'var(--lbb-mono)', color: c ?? 'var(--lbb-fg)' }}>{v}</div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {step.status === 'ok' && (
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: 'var(--lbb-ok-fg)', fontSize: 'var(--lbb-fs-12)', fontWeight: 600 }}>
+          <Icon name="check" size={14} />
+          All {total} files verified
+        </div>
+      )}
+
+      {step.status === 'bad' && missing > 0 && (
+        <div style={{ padding: '10px 12px', borderRadius: 6, background: 'var(--lbb-bad-bg)', border: '1px solid var(--lbb-bad-bar)', fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-bad-fg)' }}>
+          {missing} file{missing !== 1 ? 's' : ''} in the checksum list are not on disk. Restore the missing files, then re-verify.
+        </div>
+      )}
+
+      {step.status === 'bad' && mismatch > 0 && (
+        <div style={{ padding: '10px 12px', borderRadius: 6, background: 'var(--lbb-bad-bg)', border: '1px solid var(--lbb-bad-bar)', fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-bad-fg)' }}>
+          {mismatch} file{mismatch !== 1 ? 's' : ''} have mismatched checksums — the audio may be corrupted or modified.
+        </div>
+      )}
+    </div>
+  )
+}
+
+function LookupStageContent({ step, row, onRun }: {
+  step: StepResult
+  row: PipelineRow
+  onRun: (steps: string[]) => void
+}): React.JSX.Element {
+  if (step.status === 'mute') {
+    return (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+        <div style={{ color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-12)', fontStyle: 'italic' }}>
+          Lookup runs automatically after verify passes.
+        </div>
+        <Button variant="secondary" size="sm" icon="play" onClick={() => onRun(['lookup'])}>Run lookup</Button>
+      </div>
+    )
+  }
+
+  const lbFormatted = step.lb_number
+    ? `LB-${String(step.lb_number).padStart(5, '0')}`
+    : null
+
+  if (step.status === 'ok' && lbFormatted) {
+    return (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 14, padding: '14px 16px', background: 'var(--lbb-ok-bg)', border: '1px solid var(--lbb-ok-bar)', borderRadius: 8 }}>
+          <div style={{ width: 40, height: 40, borderRadius: 9, background: 'var(--lbb-ok-bar)', color: '#fff', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+            <Icon name="check" size={22} />
+          </div>
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <div style={{ fontSize: 'var(--lbb-fs-16)', fontWeight: 700, fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-accent-mid)' }}>{lbFormatted}</div>
+            {step.alias_resolved_from && step.alias_resolved_from.length > 0 && (
+              <div style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', marginTop: 2 }}>
+                ↩ resolved from {step.alias_resolved_from.map(n => `LB-${String(n).padStart(5, '0')}`).join(', ')}
+              </div>
+            )}
+          </div>
+          <StatusTag state="pass">Matched</StatusTag>
+        </div>
+        <div style={{ padding: '8px 10px', borderRadius: 6, background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)', fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
+          The match flows into <strong>Rename</strong> automatically — no extra step needed.
+        </div>
+        <Button variant="ghost" size="sm" icon="refresh" onClick={() => onRun(['lookup'])}>Re-run lookup</Button>
+      </div>
+    )
+  }
+
+  if (step.status === 'warn') {
+    const conflicts = row.errors.filter(e => e.step === 'lookup')
+    return (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+        <StatusTag state="action">{step.label}</StatusTag>
+        {conflicts.length > 0 && (
+          <div style={{ padding: '8px 12px', borderRadius: 6, background: 'var(--lbb-warn-bg)', border: '1px solid var(--lbb-warn-bar)', fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-warn-fg)' }}>
+            {conflicts[0].message}
+          </div>
+        )}
+        <Button variant="ghost" size="sm" icon="refresh" onClick={() => onRun(['lookup'])}>Re-run lookup</Button>
+      </div>
+    )
+  }
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '12px 14px', background: 'var(--lbb-bad-bg)', border: '1px solid var(--lbb-bad-bar)', borderRadius: 8 }}>
+        <Icon name="alert" size={15} style={{ color: 'var(--lbb-bad-fg)', flexShrink: 0 }} />
+        <div>
+          <div style={{ fontSize: 'var(--lbb-fs-13)', fontWeight: 700, color: 'var(--lbb-bad-fg)' }}>Not in the archive</div>
+          <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)', marginTop: 2 }}>
+            None of these checksums match any archive entry. This may be a new or unknown source.
+          </div>
+        </div>
+      </div>
+      <Button variant="ghost" size="sm" icon="refresh" onClick={() => onRun(['lookup'])}>Re-run lookup</Button>
+    </div>
+  )
+}
+
+function RenameStageContent({ step, row, onRun, onRename }: {
+  step: StepResult
+  row: PipelineRow
+  onRun: (steps: string[]) => void
+  onRename: () => void
+}): React.JSX.Element {
+  if (step.status === 'mute') {
+    return (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+        <div style={{ color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-12)', fontStyle: 'italic' }}>
+          Rename unlocks after lookup resolves an LB#.
+        </div>
+        <Button variant="secondary" size="sm" icon="play" onClick={() => onRun(['rename'])}>Check rename</Button>
+      </div>
+    )
+  }
+
+  if (step.status === 'ok' || !step.proposed) {
+    return (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: 'var(--lbb-ok-fg)', fontSize: 'var(--lbb-fs-12)', fontWeight: 600 }}>
+          <Icon name="check" size={14} />
+          Folder name is already correct
+        </div>
+        <div style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)', padding: '8px 10px', background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)', borderRadius: 6, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+          {row.folderName}
+        </div>
+        <Button variant="ghost" size="sm" icon="refresh" onClick={() => onRun(['rename'])}>Re-check</Button>
+      </div>
+    )
+  }
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+      <div style={{ border: '1px solid var(--lbb-border)', borderRadius: 8, overflow: 'hidden' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 12px', background: 'var(--lbb-bad-bg)' }}>
+          <Icon name="x" size={13} style={{ color: 'var(--lbb-bad-fg)', flexShrink: 0 }} />
+          <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg)', flex: 1, minWidth: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{row.folderName}</span>
+          <span style={{ fontSize: 'var(--lbb-fs-10)', fontWeight: 700, color: 'var(--lbb-bad-fg)', textTransform: 'uppercase', letterSpacing: 0.06, flexShrink: 0 }}>current</span>
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 12px', background: 'var(--lbb-ok-bg)', borderTop: '1px solid var(--lbb-border)' }}>
+          <Icon name="check" size={13} style={{ color: 'var(--lbb-ok-fg)', flexShrink: 0 }} />
+          <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg)', fontWeight: 600, flex: 1, minWidth: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{step.proposed}</span>
+          <span style={{ fontSize: 'var(--lbb-fs-10)', fontWeight: 700, color: 'var(--lbb-ok-fg)', textTransform: 'uppercase', letterSpacing: 0.06, flexShrink: 0 }}>proposed</span>
+        </div>
+      </div>
+      <div style={{ display: 'flex', gap: 8 }}>
+        <Button variant="primary" size="sm" icon="check" onClick={onRename}>Apply rename</Button>
+        <Button variant="ghost" size="sm" icon="refresh" onClick={() => onRun(['rename'])}>Re-check</Button>
+      </div>
+      <div style={{ padding: '8px 10px', borderRadius: 6, background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)', fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
+        Logged to <span style={{ fontFamily: 'var(--lbb-mono)' }}>rename_history</span> — reversible for 30 days.
+      </div>
+    </div>
+  )
+}
+
+function CollectStageContent({ step, row, onRun, onFile }: {
+  step: StepResult
+  row: PipelineRow
+  onRun: (steps: string[]) => void
+  onFile?: () => void
+}): React.JSX.Element {
+  const ERROR_MSG: Record<string, string> = {
+    no_date:       "This entry has no concert date — can't determine the year for routing.",
+    no_route:      'No collection route is configured for this year. Add one in Setup → Collection Routing.',
+    mount_offline: 'The storage mount is offline or unreachable.',
+    dest_exists:   'A folder with this name already exists at the destination.',
+    db_error:      'A database error occurred while resolving the route.',
+  }
+
+  if (step.status === 'ok') {
+    return (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 14, padding: '14px 16px', background: 'var(--lbb-ok-bg)', border: '1px solid var(--lbb-ok-bar)', borderRadius: 9 }}>
+          <div style={{ width: 40, height: 40, borderRadius: 9, flexShrink: 0, background: 'var(--lbb-ok-bar)', color: '#fff', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
+            <Icon name="check" size={22} />
+          </div>
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <div style={{ fontSize: 'var(--lbb-fs-14)', fontWeight: 700 }}>Added to collection</div>
+            {step.dest && (
+              <div style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)', marginTop: 3, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{step.dest}</div>
+            )}
+          </div>
+          {step.mount_label && <Pill tone="ok" soft dot>{step.mount_label}</Pill>}
+        </div>
+        <div style={{ padding: '8px 10px', borderRadius: 6, background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)', fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
+          Logged to <span style={{ fontFamily: 'var(--lbb-mono)' }}>rename_history</span> — reversible for 30 days.
+        </div>
+      </div>
+    )
+  }
+
+  if (step.status === 'bad') {
+    const msg = step.error_code ? (ERROR_MSG[step.error_code] ?? step.error) : step.error
+    return (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+        <div style={{ padding: '12px 14px', borderRadius: 8, background: 'var(--lbb-bad-bg)', border: '1px solid var(--lbb-bad-bar)' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
+            <Icon name="alert" size={14} style={{ color: 'var(--lbb-bad-fg)', flexShrink: 0 }} />
+            <span style={{ fontWeight: 700, fontSize: 'var(--lbb-fs-13)', color: 'var(--lbb-bad-fg)' }}>Can't file</span>
+            {step.error_code && (
+              <Pill tone="bad" soft style={{ fontFamily: 'var(--lbb-mono)', marginLeft: 'auto' }}>{step.error_code}</Pill>
+            )}
+          </div>
+          <div style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)' }}>{msg ?? 'Unknown error'}</div>
+        </div>
+        <Button variant="ghost" size="sm" icon="refresh" onClick={() => onRun(['file'])}>Re-check route</Button>
+      </div>
+    )
+  }
+
+  if (step.status === 'warn') {
+    return (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+        <div style={{ border: '1px solid var(--lbb-border)', borderRadius: 9, overflow: 'hidden' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 12px', background: 'var(--lbb-surface)' }}>
+            <Icon name="folder" size={13} style={{ color: 'var(--lbb-fg3)', flexShrink: 0 }} />
+            <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)', flex: 1, minWidth: 0, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{row.folderPath}</span>
+            <span style={{ fontSize: 'var(--lbb-fs-10)', fontWeight: 700, color: 'var(--lbb-fg3)', textTransform: 'uppercase', letterSpacing: 0.06, flexShrink: 0 }}>staging</span>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '3px 0', background: 'var(--lbb-surface)' }}>
+            <Icon name="drop" size={13} style={{ color: 'var(--lbb-accent-mid)' }} />
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '12px 14px', background: 'var(--lbb-accent-soft)', borderTop: '1px solid var(--lbb-border)' }}>
+            <Icon name="folder" size={13} style={{ color: 'var(--lbb-accent-mid)', flexShrink: 0 }} />
+            <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-12)', fontWeight: 600, color: 'var(--lbb-fg)', flex: 1, minWidth: 0, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+              {step.mount_label && (
+                <mark style={{ background: 'var(--lbb-accent-mid)', color: 'var(--lbb-accent-onMid)', borderRadius: 3, padding: '1px 4px', marginRight: 4 }}>{step.mount_label}</mark>
+              )}
+              {step.dest ?? '—'}
+            </span>
+            <span style={{ fontSize: 'var(--lbb-fs-10)', fontWeight: 700, color: 'var(--lbb-accent-mid)', textTransform: 'uppercase', letterSpacing: 0.06, flexShrink: 0 }}>final storage</span>
+          </div>
+        </div>
+        <div style={{ display: 'flex', gap: 8 }}>
+          <Button variant="primary" size="sm" icon="folder" onClick={onFile}>File into collection</Button>
+          <Button variant="ghost" size="sm" icon="refresh" onClick={() => onRun(['file'])}>Re-check route</Button>
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+      <div style={{ color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-12)', fontStyle: 'italic' }}>
+        Filing is the last step. Complete verify, lookup, rename, and LBDIR first.
+      </div>
+      <Button variant="ghost" size="sm" icon="refresh" onClick={() => onRun(['file'])}>Check route now</Button>
+    </div>
+  )
+}
+
+function StageContent({ step, stageKey, row, onRun, onRename, onFile }: {
+  step: StepResult
+  stageKey: string
+  row: PipelineRow
+  onRun: (steps: string[]) => void
+  onRename: () => void
+  onFile?: () => void
+}): React.JSX.Element {
+  if (stageKey === 'verify')  return <VerifyStageContent  step={step} row={row} onRun={onRun} />
+  if (stageKey === 'lookup')  return <LookupStageContent  step={step} row={row} onRun={onRun} />
+  if (stageKey === 'rename')  return <RenameStageContent  step={step} row={row} onRun={onRun} onRename={onRename} />
+  if (stageKey === 'file')    return <CollectStageContent step={step} row={row} onRun={onRun} onFile={onFile} />
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+      <StatusTag state={STATUS_TO_STATE[step.status]}>{step.label}</StatusTag>
+      <Button variant="ghost" size="sm" icon="refresh" onClick={() => onRun([stageKey])}>Re-run</Button>
+    </div>
+  )
+}
+
+// ── DetailPanel ───────────────────────────────────────────────────────────────
+
+function DetailPanel({ row, initialStage, onClose, onRowRefresh, onRun, onRename, onFile }: {
+  row: PipelineRow
+  initialStage: string
+  onClose: () => void
+  onRowRefresh: (id: string) => void
+  onRun: (id: string, steps: string[]) => void
+  onRename: () => void
+  onFile?: () => void
+}): React.JSX.Element {
+  const [activeStage, setActiveStage] = useState(initialStage)
+  const folderRow = toFolderRow(row)
+
+  return (
+    <div style={{
+      position: 'absolute', top: 0, right: 0, bottom: 0, width: 460,
+      background: 'var(--lbb-bg)', borderLeft: '1px solid var(--lbb-border)',
+      display: 'flex', flexDirection: 'column', zIndex: 50,
+      boxShadow: '-4px 0 20px rgba(0,0,0,0.12)',
+    }}>
+      {/* Header */}
+      <div style={{
+        padding: '12px 16px', borderBottom: '1px solid var(--lbb-border)',
+        display: 'flex', alignItems: 'center', gap: 10, flexShrink: 0,
+      }}>
+        <Icon name="folder" size={13} style={{ color: 'var(--lbb-fg3)' }} />
+        <span style={{
+          fontWeight: 600, fontSize: 'var(--lbb-fs-12)', flex: 1, minWidth: 0,
+          whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
+          fontFamily: 'var(--lbb-mono)',
+        }}>
+          {row.folderName}
+        </span>
+        <Button variant="ghost" size="sm" icon="reveal"
+          onClick={() => window.api.openPath(row.folderPath)}>
+          Open
+        </Button>
+        <IconButton icon="x" title="Close" onClick={onClose} />
+      </div>
+
+      {/* Stage stepper */}
+      <div style={{ padding: '12px 16px', borderBottom: '1px solid var(--lbb-border)', flexShrink: 0 }}>
+        <StageStepper
+          folder={folderRow}
+          stages={DEFAULT_STAGES}
+          activeKey={activeStage}
+          onPick={setActiveStage}
+        />
+      </div>
+
+      {/* Stage content */}
+      <div style={{ flex: 1, overflowY: 'auto', padding: '14px 16px' }}>
+        {activeStage === 'lbdir' ? (
+          <LbdirStageContent row={row} onRowRefresh={onRowRefresh} />
+        ) : (
+          <StageContent
+            step={row.steps[activeStage as keyof typeof row.steps] ?? MUTE}
+            stageKey={activeStage}
+            row={row}
+            onRun={(steps) => onRun(row.id, steps)}
+            onRename={onRename}
+            onFile={activeStage === 'file' ? onFile : undefined}
+          />
+        )}
+      </div>
+    </div>
+  )
+}
+
 // ── Main screen ───────────────────────────────────────────────────────────────
 
 export function ScreenPipeline(): React.JSX.Element {
   const { t } = useTranslation()
   const { folders: queueFolders, addFolders: addToQueue, removeFolders, clearFolders } = useFolderQueueStore()
 
-  const [rows, setRows] = useState<PipelineRow[]>([])
-  const [filter, setFilter] = useState<FilterKey>('all')
-  const [tableSearch, setTableSearch] = useState('')
-  const [queueSearch, setQueueSearch] = useState('')
-  const [activeQueue, setActiveQueue] = useState<string | null>(null)
+  const [rows, setRows]                     = useState<PipelineRow[]>([])
+  const [filter, setFilter]                 = useState<Bucket>('all')
+  const [tableSearch, setTableSearch]       = useState('')
+  const [queueSearch, setQueueSearch]       = useState('')
+  const [activeQueue, setActiveQueue]       = useState<string | null>(null)
   const [lastShiftAnchor, setLastShiftAnchor] = useState<string | null>(null)
-  const [dragOver, setDragOver] = useState(false)
-  const [shallowScan, setShallowScan] = useState(false)
-  const [ctxMenu, setCtxMenu] = useState<{ x: number; y: number; id: string } | null>(null)
-  const [lbdirPanelId, setLbdirPanelId] = useState<string | null>(null)
+  const [dragOver, setDragOver]             = useState(false)
+  const [shallowScan, setShallowScan]       = useState(false)
+  const [ctxMenu, setCtxMenu]               = useState<{ x: number; y: number; id: string } | null>(null)
+  const [detailId, setDetailId]             = useState<string | null>(null)
+  const [detailStage, setDetailStage]       = useState<string>('verify')
+  const [confirm, ConfirmHost]              = useConfirm()
 
-  // Sync shared folder queue into local rows — handles both additions and removals
-  // (so clearing on Verify/LBDIR/Spectrograms also clears Pipeline's rows)
+  // Sync shared folder queue → local rows
   useEffect(() => {
     setRows(prev => {
       const queueSet = new Set(queueFolders)
@@ -456,28 +904,32 @@ export function ScreenPipeline(): React.JSX.Element {
   }, [queueFolders])
 
   const tableParentRef = useRef<HTMLDivElement>(null)
-  const flatListRef = useRef<VItem[]>([])
-  const stopRef = useRef(false)
-  const abortRef = useRef<AbortController | null>(null)
-  const bulkMenuRef = useRef<HTMLDivElement>(null)
+  const flatListRef    = useRef<VItem[]>([])
+  const stopRef        = useRef(false)
+  const abortRef       = useRef<AbortController | null>(null)
+  const bulkMenuRef    = useRef<HTMLDivElement>(null)
   const [bulkMenuOpen, setBulkMenuOpen] = useState(false)
 
-  // ── Derived counts ──────────────────────────────────────────────────────────
+  // ── Derived counts ───────────────────────────────────────────────────────────
   const counts = {
-    all:   rows.length,
-    attn:  rows.filter(r => r.severity === 'attn').length,
-    ready: rows.filter(r => r.severity === 'ready').length,
-    done:  rows.filter(r => r.severity === 'done').length,
+    all:     rows.length,
+    needs:   rows.filter(r => !r.running && r.bucket === 'needs').length,
+    ready:   rows.filter(r => !r.running && r.bucket === 'ready').length,
+    running: rows.filter(r => r.running).length,
+    shelf:   rows.filter(r => r.bucket === 'shelf').length,
+    done:    rows.filter(r => !r.running && r.bucket === 'done').length,
   }
 
-  const isRunning  = rows.some(r => r.running)
-  const readyRows  = rows.filter(r => r.severity === 'ready')
-  const selectedRows = rows.filter(r => r.selected)
-  const selectedReady = selectedRows.filter(r => r.severity === 'ready')
+  const isRunning       = rows.some(r => r.running)
+  const selectedRows    = rows.filter(r => r.selected)
+  const selectedReady   = selectedRows.filter(r => r.bucket === 'ready')
+  const fileableRows    = rows.filter(r => r.steps.file.status === 'warn' && !!r.steps.file.dest)
+  const selectedFileable = selectedRows.filter(r => r.steps.file.status === 'warn' && !!r.steps.file.dest)
 
-  // ── Filtered + grouped rows for the table ───────────────────────────────────
+  // ── Filtered rows ────────────────────────────────────────────────────────────
   const visibleRows = rows.filter(r => {
-    if (filter !== 'all' && r.severity !== filter) return false
+    const effectiveBucket: Bucket = r.running ? 'running' : r.bucket
+    if (filter !== 'all' && effectiveBucket !== filter) return false
     if (tableSearch) {
       const q = tableSearch.toLowerCase()
       if (!r.folderName.toLowerCase().includes(q)) return false
@@ -485,26 +937,35 @@ export function ScreenPipeline(): React.JSX.Element {
     return true
   })
 
-  const attnRows  = visibleRows.filter(r => r.severity === 'attn')
-  const renaRows  = visibleRows.filter(r => r.severity === 'ready')
-  const doneRows  = visibleRows.filter(r => r.severity === 'done')
+  const needsVis   = visibleRows.filter(r => !r.running && r.bucket === 'needs')
+  const runningVis = visibleRows.filter(r => r.running)
+  const readyVis   = visibleRows.filter(r => !r.running && r.bucket === 'ready')
+  const shelfVis   = visibleRows.filter(r => r.bucket === 'shelf')
+  const doneVis    = visibleRows.filter(r => !r.running && r.bucket === 'done')
 
-  // ── Virtualizer flat list: group headers + data rows ────────────────────────
+  // ── Virtualizer flat list ────────────────────────────────────────────────────
   const flatList: VItem[] = []
-  if (attnRows.length > 0) {
-    flatList.push({ type: 'group', label: 'Need attention', count: counts.attn, severity: 'attn' })
-    attnRows.forEach(r => flatList.push({ type: 'row', row: r }))
+  if (needsVis.length > 0) {
+    flatList.push({ type: 'group', label: t('pipeline.filter.needs'), count: counts.needs, bucket: 'needs' })
+    needsVis.forEach(r => flatList.push({ type: 'row', row: r }))
   }
-  if (renaRows.length > 0) {
-    flatList.push({ type: 'group', label: 'Ready to rename', count: counts.ready, severity: 'ready' })
-    renaRows.forEach(r => flatList.push({ type: 'row', row: r }))
+  if (runningVis.length > 0) {
+    flatList.push({ type: 'group', label: t('pipeline.filter.running'), count: counts.running, bucket: 'running' })
+    runningVis.forEach(r => flatList.push({ type: 'row', row: r }))
   }
-  if (doneRows.length > 0) {
-    flatList.push({ type: 'group', label: 'Done', count: counts.done, severity: 'done' })
-    doneRows.forEach(r => flatList.push({ type: 'row', row: r }))
+  if (readyVis.length > 0) {
+    flatList.push({ type: 'group', label: t('pipeline.filter.ready'), count: counts.ready, bucket: 'ready' })
+    readyVis.forEach(r => flatList.push({ type: 'row', row: r }))
+  }
+  if (shelfVis.length > 0) {
+    flatList.push({ type: 'group', label: t('pipeline.filter.shelf'), count: counts.shelf, bucket: 'shelf' })
+    shelfVis.forEach(r => flatList.push({ type: 'row', row: r }))
+  }
+  if (doneVis.length > 0) {
+    flatList.push({ type: 'group', label: t('pipeline.filter.done'), count: counts.done, bucket: 'done' })
+    doneVis.forEach(r => flatList.push({ type: 'row', row: r }))
   }
 
-  // Keep ref in sync so callbacks can look up indices without stale closure issues
   flatListRef.current = flatList
 
   const virtualizer = useVirtualizer({
@@ -519,7 +980,7 @@ export function ScreenPipeline(): React.JSX.Element {
     ? rows.filter(r => r.folderName.toLowerCase().includes(queueSearch.toLowerCase()))
     : rows
 
-  // ── Row mutation helpers ────────────────────────────────────────────────────
+  // ── Row mutation helpers ─────────────────────────────────────────────────────
   const updateRow = useCallback((id: string, patch: Partial<PipelineRow>) => {
     setRows(prev => prev.map(r => r.id === id ? { ...r, ...patch } : r))
   }, [])
@@ -533,7 +994,7 @@ export function ScreenPipeline(): React.JSX.Element {
     })
   }, [addToQueue])
 
-  // ── Backend: run steps (sequential, one folder at a time) ──────────────────
+  // ── Backend: run steps ───────────────────────────────────────────────────────
   const runSteps = useCallback(async (targetIds: string[], steps: string[]) => {
     const targets = rows.filter(r => targetIds.includes(r.id))
     if (!targets.length) return
@@ -568,7 +1029,6 @@ export function ScreenPipeline(): React.JSX.Element {
     abortRef.current = null
   }, [rows, updateRow])
 
-  // ── Stop an in-progress run ─────────────────────────────────────────────────
   const stopRun = useCallback(() => {
     stopRef.current = true
     abortRef.current?.abort()
@@ -576,8 +1036,8 @@ export function ScreenPipeline(): React.JSX.Element {
     setRows(prev => prev.map(r => r.running ? { ...r, running: false } : r))
   }, [])
 
-  // ── Refresh just the lbdir step for one row (called after reconcile apply) ──
-  const refreshLbdirRow = useCallback(async (id: string) => {
+  // Refresh one row's lbdir step (called after reconcile apply in detail panel)
+  const refreshDetailRow = useCallback(async (id: string) => {
     const target = rows.find(r => r.id === id)
     if (!target) return
     try {
@@ -593,7 +1053,7 @@ export function ScreenPipeline(): React.JSX.Element {
     } catch { /* silent */ }
   }, [rows, updateRow])
 
-  // ── Backend: apply a single rename ─────────────────────────────────────────
+  // ── Apply a single rename ────────────────────────────────────────────────────
   const applyRename = useCallback(async (row: PipelineRow) => {
     const proposed = row.steps.rename.proposed
     if (!proposed) return
@@ -606,39 +1066,99 @@ export function ScreenPipeline(): React.JSX.Element {
       const data = await resp.json() as { ok?: boolean; new_path?: string; error?: string }
       if (data.ok && data.new_path) {
         const newName = data.new_path.split(/[/\\]/).pop() ?? proposed
-        // Update local rows first so the sync effect sees the new id when the store change propagates
+        // If the detail panel was open for this row, update its id
+        if (detailId === row.id) setDetailId(data.new_path)
         setRows(prev => prev.map(r =>
           r.id === row.id ? {
             ...r,
             folderPath: data.new_path!,
             folderName: newName,
             id: data.new_path!,
-            severity: 'done',
+            bucket: 'done',
             steps: { ...r.steps, rename: { status: 'ok', label: 'Renamed' } },
           } : r
         ))
-        // Keep queue store in sync: swap old path for new path
         useFolderQueueStore.getState().removeFolders([row.folderPath])
         useFolderQueueStore.getState().addFolders([data.new_path])
       }
     } catch { /* silent */ }
-  }, [])
+  }, [detailId])
 
-  // ── Bulk apply all ready rows ───────────────────────────────────────────────
   const applyAllReady = useCallback(async () => {
+    const readyRows = rows.filter(r => r.bucket === 'ready')
     for (const row of readyRows) {
       if (row.steps.rename.proposed) await applyRename(row)
     }
-  }, [readyRows, applyRename])
+  }, [rows, applyRename])
 
-  // ── Bulk apply selected ready rows ─────────────────────────────────────────
   const applySelected = useCallback(async () => {
     for (const row of selectedReady) {
       if (row.steps.rename.proposed) await applyRename(row)
     }
   }, [selectedReady, applyRename])
 
-  // ── Folder picking (Electron IPC) ──────────────────────────────────────────
+  // ── File a folder into the collection ────────────────────────────────────────
+  const applyFile = useCallback(async (row: PipelineRow) => {
+    const lb = row.steps.lookup.lb_number
+    const dest = row.steps.file.dest
+    if (!lb || !dest) return
+
+    const mountLabel = row.steps.file.mount_label ?? 'collection mount'
+    const destName = dest.split(/[/\\]/).pop() ?? dest
+
+    const ok = await confirm({
+      tone: 'info',
+      title: t('pipeline.file.confirmTitle'),
+      body: t('pipeline.file.confirmBody', { folder: row.folderName, mount: mountLabel }),
+      items: [{ label: destName, icon: 'folder', meta: mountLabel }],
+      note: t('pipeline.file.confirmNote'),
+      confirmLabel: t('pipeline.file.confirmAction'),
+      confirmIcon: 'check',
+      icon: 'folder',
+    })
+    if (!ok) return
+
+    setRows(prev => prev.map(r => r.id === row.id ? { ...r, running: true } : r))
+    try {
+      const resp = await fetch(`${BASE}/api/pipeline/file`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ folders: [{ path: row.folderPath, lb_number: lb }] }),
+      })
+      const data = await resp.json() as { results: Array<{ ok: boolean; dest?: string; filed_to?: string; error?: string }> }
+      const result = data.results?.[0]
+      if (result?.ok) {
+        setRows(prev => prev.map(r =>
+          r.id === row.id ? {
+            ...r,
+            running: false,
+            bucket: 'done',
+            steps: { ...r.steps, file: { status: 'ok', label: 'Filed', dest: result.dest ?? null, mount_label: result.filed_to ?? null, error: null, error_code: null } },
+          } : r
+        ))
+      } else {
+        setRows(prev => prev.map(r =>
+          r.id === row.id ? {
+            ...r,
+            running: false,
+            steps: { ...r.steps, file: { ...r.steps.file, status: 'bad', label: (result?.error ?? 'Failed').slice(0, 24), error: result?.error ?? null } },
+          } : r
+        ))
+      }
+    } catch {
+      setRows(prev => prev.map(r => r.id === row.id ? { ...r, running: false } : r))
+    }
+  }, [confirm, t])
+
+  const applyAllFileable = useCallback(async () => {
+    for (const row of fileableRows) await applyFile(row)
+  }, [fileableRows, applyFile])
+
+  const applySelectedFileable = useCallback(async () => {
+    for (const row of selectedFileable) await applyFile(row)
+  }, [selectedFileable, applyFile])
+
+  // ── Folder picking ───────────────────────────────────────────────────────────
   const handlePickFolders = useCallback(async () => {
     const paths = await window.api.pickFolders()
     if (paths.length) addFolders(paths)
@@ -653,7 +1173,8 @@ export function ScreenPipeline(): React.JSX.Element {
     setRows(prev => prev.filter(r => r.id !== id))
     removeFolders([id])
     setActiveQueue(prev => prev === id ? null : prev)
-  }, [removeFolders])
+    if (detailId === id) setDetailId(null)
+  }, [removeFolders, detailId])
 
   useEffect(() => {
     if (!ctxMenu) return
@@ -676,10 +1197,10 @@ export function ScreenPipeline(): React.JSX.Element {
     } catch { /* silent */ }
   }, [addFolders, shallowScan])
 
-  // ── Selection ───────────────────────────────────────────────────────────────
-  const toggleSelect = useCallback((id: string, shiftKey: boolean) => {
+  // ── Selection ────────────────────────────────────────────────────────────────
+  const toggleSelect = useCallback((id: string, shift: boolean) => {
     setRows(prev => {
-      if (shiftKey && lastShiftAnchor) {
+      if (shift && lastShiftAnchor) {
         const ids = prev.map(r => r.id)
         const a = ids.indexOf(lastShiftAnchor)
         const b = ids.indexOf(id)
@@ -702,7 +1223,18 @@ export function ScreenPipeline(): React.JSX.Element {
     setRows(prev => prev.map(r => ({ ...r, selected: false })))
   }, [])
 
-  // ── Close bulk-actions menu on outside click ────────────────────────────────
+  // ── Detail panel open/close ──────────────────────────────────────────────────
+  const openDetail = useCallback((id: string, stage?: string) => {
+    if (detailId === id && !stage) {
+      setDetailId(null)
+      return
+    }
+    const row = rows.find(r => r.id === id)
+    setDetailId(id)
+    setDetailStage(stage ?? (row ? firstActiveStage(row) : 'verify'))
+  }, [detailId, rows])
+
+  // ── Bulk-actions menu close on outside click ─────────────────────────────────
   useEffect(() => {
     const handler = (e: MouseEvent) => {
       if (bulkMenuRef.current && !bulkMenuRef.current.contains(e.target as Node))
@@ -724,7 +1256,7 @@ export function ScreenPipeline(): React.JSX.Element {
     return () => window.removeEventListener('keydown', handler)
   }, [selectAll])
 
-  // ── Drag-and-drop folder ingestion ──────────────────────────────────────────
+  // ── Drag-and-drop ────────────────────────────────────────────────────────────
   const onDragOver = (e: React.DragEvent) => { e.preventDefault(); setDragOver(true) }
   const onDragLeave = () => setDragOver(false)
   const onDrop = useCallback((e: React.DragEvent) => {
@@ -751,6 +1283,7 @@ export function ScreenPipeline(): React.JSX.Element {
 
   // ── Render ───────────────────────────────────────────────────────────────────
   const hasSelection = selectedRows.length > 0
+  const detailRow = detailId ? rows.find(r => r.id === detailId) ?? null : null
 
   return (
     <div
@@ -779,17 +1312,15 @@ export function ScreenPipeline(): React.JSX.Element {
             {t('pipeline.title')}{counts.all > 0 ? ` ${t('pipeline.folderQueued', { count: counts.all })}` : ''}
           </div>
           <div style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)', marginTop: 2 }}>
-            {counts.all === 0
-              ? t('pipeline.emptyHint')
-              : t('pipeline.runHint')}
+            {counts.all === 0 ? t('pipeline.emptyHint') : t('pipeline.runHint')}
           </div>
         </div>
 
         {counts.all > 0 && (
           <div style={{ display: 'flex', gap: 8, marginLeft: 12 }}>
-            <Pill tone="ok"   soft dot>{t('pipeline.done', { count: counts.done })}</Pill>
+            <Pill tone="ok"   soft dot>{t('pipeline.done',          { count: counts.done })}</Pill>
             <Pill tone="warn" soft dot>{t('pipeline.readyToRename', { count: counts.ready })}</Pill>
-            <Pill tone="bad"  soft dot>{t('pipeline.needAttention', { count: counts.attn })}</Pill>
+            <Pill tone="bad"  soft dot>{t('pipeline.needAttention', { count: counts.needs })}</Pill>
           </div>
         )}
 
@@ -810,29 +1341,20 @@ export function ScreenPipeline(): React.JSX.Element {
                   borderRadius: 8, padding: 4, minWidth: 180,
                   boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
                 }}>
-                  <button
-                    onClick={() => { selectAll(); setBulkMenuOpen(false) }}
-                    style={{
+                  {([
+                    { label: t('pipeline.selectAllVisible'), action: () => { selectAll(); setBulkMenuOpen(false) }, color: undefined },
+                    ...(selectedRows.length > 0 ? [{ label: t('pipeline.clearSelection', { count: selectedRows.length }), action: () => { clearSelection(); setBulkMenuOpen(false) }, color: undefined }] : []),
+                  ]).map((item, i) => (
+                    <button key={i} onClick={item.action} style={{
                       display: 'block', width: '100%', textAlign: 'left',
                       padding: '6px 12px', fontSize: 'var(--lbb-fs-12-5)', cursor: 'pointer',
                       border: 'none', background: 'transparent',
-                      color: 'var(--lbb-fg)', borderRadius: 5,
-                    }}
-                  >{t('pipeline.selectAllVisible')}</button>
-                  {selectedRows.length > 0 && (
-                    <button
-                      onClick={() => { clearSelection(); setBulkMenuOpen(false) }}
-                      style={{
-                        display: 'block', width: '100%', textAlign: 'left',
-                        padding: '6px 12px', fontSize: 'var(--lbb-fs-12-5)', cursor: 'pointer',
-                        border: 'none', background: 'transparent',
-                        color: 'var(--lbb-fg)', borderRadius: 5,
-                      }}
-                    >{t('pipeline.clearSelection', { count: selectedRows.length })}</button>
-                  )}
+                      color: item.color ?? 'var(--lbb-fg)', borderRadius: 5,
+                    }}>{item.label}</button>
+                  ))}
                   <div style={{ height: 1, background: 'var(--lbb-border)', margin: '4px 0' }} />
                   <button
-                    onClick={() => { setRows([]); setActiveQueue(null); clearFolders(); setBulkMenuOpen(false) }}
+                    onClick={() => { setRows([]); setActiveQueue(null); setDetailId(null); clearFolders(); setBulkMenuOpen(false) }}
                     style={{
                       display: 'block', width: '100%', textAlign: 'left',
                       padding: '6px 12px', fontSize: 'var(--lbb-fs-12-5)', cursor: 'pointer',
@@ -847,6 +1369,11 @@ export function ScreenPipeline(): React.JSX.Element {
           {counts.ready > 0 && !isRunning && (
             <Button variant="primary" size="md" icon="check" onClick={applyAllReady}>
               {t('pipeline.applyRenames', { count: counts.ready })}
+            </Button>
+          )}
+          {fileableRows.length > 0 && !isRunning && (
+            <Button variant="primary" size="md" icon="folder" onClick={applyAllFileable}>
+              {t('pipeline.fileAllReady', { count: fileableRows.length })}
             </Button>
           )}
         </div>
@@ -896,40 +1423,17 @@ export function ScreenPipeline(): React.JSX.Element {
                   : t('pipeline.queue.emptyFiltered')}
               </div>
             )}
-            {queueRows.map(r => {
-              const active = activeQueue === r.id
-              const dotColor = r.severity === 'done'  ? 'var(--lbb-ok-bar)'
-                             : r.severity === 'ready' ? 'var(--lbb-warn-bar)'
-                             : 'var(--lbb-bad-bar)'
-              return (
-                <button
-                  key={r.id}
-                  onClick={() => scrollToRow(r.id)}
-                  onContextMenu={e => { e.preventDefault(); setCtxMenu({ x: e.clientX, y: e.clientY, id: r.id }) }}
-                  style={{
-                    width: '100%', display: 'flex', alignItems: 'center', gap: 8,
-                    padding: '6px 8px', marginBottom: 1, borderRadius: 6,
-                    background: active ? 'var(--lbb-accent-soft)' : 'transparent',
-                    color: active ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg2)',
-                    border: '1px solid transparent', textAlign: 'left',
-                    fontFamily: 'inherit', fontSize: 'var(--lbb-fs-11-5)', cursor: 'pointer',
-                  }}
-                >
-                  <span style={{
-                    width: 8, height: 8, borderRadius: 2,
-                    background: dotColor, flexShrink: 0,
-                  }} />
-                  <span style={{
-                    flex: 1, minWidth: 0, whiteSpace: 'nowrap',
-                    overflow: 'hidden', textOverflow: 'ellipsis',
-                    fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11)',
-                  }}>{r.folderName}</span>
-                  {r.running && (
-                    <span style={{ fontSize: 'var(--lbb-fs-9)', color: 'var(--lbb-accent-mid)', letterSpacing: 1 }}>···</span>
-                  )}
-                </button>
-              )
-            })}
+            {queueRows.map(r => (
+              <QueueRow
+                key={r.id}
+                folder={toFolderRow(r)}
+                active={activeQueue === r.id || detailId === r.id}
+                onClick={() => {
+                  scrollToRow(r.id)
+                  openDetail(r.id)
+                }}
+              />
+            ))}
           </div>
 
           <div style={{
@@ -945,7 +1449,7 @@ export function ScreenPipeline(): React.JSX.Element {
             </label>
             <Button
               variant="ghost" size="sm" icon="trash" block
-              onClick={() => { setRows([]); setActiveQueue(null); clearFolders() }}
+              onClick={() => { setRows([]); setActiveQueue(null); setDetailId(null); clearFolders() }}
             >{t('common.clearList')}</Button>
 
             <div style={{
@@ -962,13 +1466,14 @@ export function ScreenPipeline(): React.JSX.Element {
               <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
                 <Button
                   variant="primary" size="sm" icon="play" block
-                  onClick={() => runSteps(rows.map(r => r.id), ['verify', 'lookup', 'rename', 'lbdir'])}
+                  onClick={() => runSteps(rows.map(r => r.id), ['verify', 'lookup', 'rename', 'lbdir', 'file'])}
                 >{t('pipeline.queue.runAll')}</Button>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 4 }}>
                   <Button variant="secondary" size="sm" onClick={() => runSteps(rows.map(r => r.id), ['verify'])}>{t('pipeline.queue.verify')}</Button>
                   <Button variant="secondary" size="sm" onClick={() => runSteps(rows.map(r => r.id), ['lookup'])}>{t('pipeline.queue.lookup')}</Button>
                   <Button variant="secondary" size="sm" onClick={() => runSteps(rows.map(r => r.id), ['rename'])}>{t('pipeline.queue.rename')}</Button>
                   <Button variant="secondary" size="sm" onClick={() => runSteps(rows.map(r => r.id), ['lbdir'])}>{t('pipeline.queue.lbdir')}</Button>
+                  <Button variant="secondary" size="sm" onClick={() => runSteps(rows.map(r => r.id), ['file'])}>{t('pipeline.queue.collect')}</Button>
                 </div>
               </div>
             </div>
@@ -978,19 +1483,21 @@ export function ScreenPipeline(): React.JSX.Element {
         {/* ── Main table area ─────────────────────────────────────────────────── */}
         <section style={{ display: 'flex', flexDirection: 'column', minWidth: 0, minHeight: 0, position: 'relative' }}>
 
-          {/* Filter chips bar */}
+          {/* Bucket filter bar */}
           <div style={{
             padding: '12px 20px', display: 'flex', alignItems: 'center', gap: 6,
             borderBottom: '1px solid var(--lbb-border)', flexWrap: 'wrap', flexShrink: 0,
           }}>
-            <Chip active={filter === 'all'}   onClick={() => setFilter('all')}   count={counts.all}>{t('pipeline.filter.all')}</Chip>
-            <Chip active={filter === 'attn'}  onClick={() => setFilter('attn')}  count={counts.attn}>{t('pipeline.filter.needAttention')}</Chip>
-            <Chip active={filter === 'ready'} onClick={() => setFilter('ready')} count={counts.ready}>{t('pipeline.filter.readyToRename')}</Chip>
-            <Chip active={filter === 'done'}  onClick={() => setFilter('done')}  count={counts.done}>{t('pipeline.filter.done')}</Chip>
-            <span style={{ width: 1, height: 16, background: 'var(--lbb-border)', margin: '0 4px' }} />
-            <Chip count={rows.filter(r => r.steps.lookup.label === 'Not found').length}>{t('pipeline.filter.notFound')}</Chip>
-            <Chip count={rows.filter(r => r.steps.verify.label === 'Mismatch').length}>{t('pipeline.filter.mismatch')}</Chip>
-            <Chip count={rows.filter(r => r.steps.verify.label === 'Incomplete').length}>{t('pipeline.filter.incomplete')}</Chip>
+            <Chip active={filter === 'all'}     onClick={() => setFilter('all')}     count={counts.all}>{t('pipeline.filter.all')}</Chip>
+            <Chip active={filter === 'needs'}   onClick={() => setFilter('needs')}   count={counts.needs}>{t('pipeline.filter.needs')}</Chip>
+            <Chip active={filter === 'ready'}   onClick={() => setFilter('ready')}   count={counts.ready}>{t('pipeline.filter.ready')}</Chip>
+            {counts.running > 0 && (
+              <Chip active={filter === 'running'} onClick={() => setFilter('running')} count={counts.running}>{t('pipeline.filter.running')}</Chip>
+            )}
+            {counts.shelf > 0 && (
+              <Chip active={filter === 'shelf'}   onClick={() => setFilter('shelf')}   count={counts.shelf}>{t('pipeline.filter.shelf')}</Chip>
+            )}
+            <Chip active={filter === 'done'}    onClick={() => setFilter('done')}    count={counts.done}>{t('pipeline.filter.done')}</Chip>
             <div style={{ flex: 1 }} />
             <Input
               icon="filter"
@@ -1000,7 +1507,6 @@ export function ScreenPipeline(): React.JSX.Element {
               onChange={e => setTableSearch(e.target.value)}
               style={{ width: 240 }}
             />
-            <IconButton icon="more" title="Density" />
             <IconButton icon="reveal" title="Open queue location"
               disabled={!rows.length}
               onClick={() => {
@@ -1022,9 +1528,7 @@ export function ScreenPipeline(): React.JSX.Element {
               <span style={{ fontWeight: 600, color: 'var(--lbb-accent-mid)' }}>
                 {t('pipeline.selection.selected', { count: selectedRows.length })}
               </span>
-              <span style={{ color: 'var(--lbb-fg2)' }}>
-                {t('pipeline.selection.hint')}
-              </span>
+              <span style={{ color: 'var(--lbb-fg2)' }}>{t('pipeline.selection.hint')}</span>
               <div style={{ flex: 1 }} />
               <Button size="sm" variant="ghost" onClick={clearSelection}>{t('common.clear')}</Button>
               <Button
@@ -1038,6 +1542,11 @@ export function ScreenPipeline(): React.JSX.Element {
               {selectedReady.length > 0 && (
                 <Button size="sm" variant="primary" icon="check" onClick={applySelected}>
                   {t('pipeline.selection.applySelected', { count: selectedReady.length })}
+                </Button>
+              )}
+              {selectedFileable.length > 0 && (
+                <Button size="sm" variant="primary" icon="folder" onClick={applySelectedFileable}>
+                  {t('pipeline.selection.fileSelected', { count: selectedFileable.length })}
                 </Button>
               )}
             </div>
@@ -1073,18 +1582,14 @@ export function ScreenPipeline(): React.JSX.Element {
               <TableShell>
                 <colgroup>
                   <col style={{ width: 3 }} />
-                  <col style={{ width: 36 }} />
+                  <col style={{ width: 32 }} />
                   <col />
-                  <col style={{ width: 110 }} />
-                  <col style={{ width: 110 }} />
-                  <col style={{ width: 110 }} />
-                  <col style={{ width: 110 }} />
-                  <col style={{ width: 140 }} />
-                  <col style={{ width: 172 }} />
+                  <col style={{ width: 220 }} />
+                  <col style={{ width: 120 }} />
+                  <col style={{ width: 120 }} />
                 </colgroup>
                 <thead>
                   <tr>
-                    <TH> </TH>
                     <TH>
                       <input
                         type="checkbox"
@@ -1093,19 +1598,15 @@ export function ScreenPipeline(): React.JSX.Element {
                       />
                     </TH>
                     <TH>{t('pipeline.table.folder')}</TH>
-                    <StepTH n={1} label={t('pipeline.table.verify')} />
-                    <StepTH n={2} label={t('pipeline.table.lookup')} />
-                    <StepTH n={3} label={t('pipeline.table.rename')} />
-                    <StepTH n={4} label={t('pipeline.table.lbdir')} />
+                    <TH>Stages</TH>
                     <TH>{t('pipeline.table.lb')}</TH>
                     <TH align="right"> </TH>
                   </tr>
                 </thead>
                 <tbody>
-                  {/* top spacer — keeps real rows in normal table flow so colgroup widths apply */}
                   {virtualizer.getVirtualItems().length > 0 && (
                     <tr aria-hidden="true">
-                      <td colSpan={9} style={{ height: virtualizer.getVirtualItems()[0].start, padding: 0, border: 'none' }} />
+                      <td colSpan={6} style={{ height: virtualizer.getVirtualItems()[0].start, padding: 0, border: 'none' }} />
                     </tr>
                   )}
                   {virtualizer.getVirtualItems().map(vItem => {
@@ -1113,49 +1614,62 @@ export function ScreenPipeline(): React.JSX.Element {
                     if (!item) return null
 
                     if (item.type === 'group') {
+                      const edgeMap: Record<Bucket, string> = {
+                        needs: 'bad', ready: 'warn', running: 'info', shelf: 'mute', done: 'ok', all: 'mute',
+                      }
                       return (
                         <GroupRow
                           key={`group-${item.label}`}
                           label={item.label}
                           count={item.count}
-                          colSpan={8}
+                          colSpan={5}
+                          style={{ color: `var(--lbb-${edgeMap[item.bucket] ?? 'mute'}-fg)` }}
                         />
                       )
                     }
 
                     const r = item.row
-                    const edge = r.severity === 'attn' ? 'bad'
-                               : r.severity === 'ready' ? 'warn'
-                               : 'ok'
+                    const edgeMap: Record<Bucket, 'ok'|'warn'|'bad'|'info'|'mute'> = {
+                      needs: 'bad', ready: 'warn', running: 'info', shelf: 'mute', done: 'ok', all: 'mute',
+                    }
+                    const edge = r.running ? 'info' : edgeMap[r.bucket]
                     const lb = r.steps.lookup.lb_number
                     const lbLabel = lb ? `LB-${String(lb).padStart(5, '0')}` : '—'
                     const aliasFrom = r.steps.lookup.alias_resolved_from
+                    const isDetailOpen = detailId === r.id
 
                     return (
                       <TR
                         key={r.id}
                         edge={edge}
-                        selected={r.selected}
-                        onClick={(e: React.MouseEvent) => toggleSelect(r.id, e.shiftKey)}
+                        selected={r.selected || isDetailOpen}
+                        onClick={() => openDetail(r.id)}
+                        onContextMenu={e => { e.preventDefault(); setCtxMenu({ x: e.clientX, y: e.clientY, id: r.id }) }}
                       >
-                        <TD>
+                        <TD onClick={e => e.stopPropagation()}>
                           <input
                             type="checkbox"
                             checked={r.selected}
-                            onChange={() => {/* handled by TR click */}}
-                            onClick={e => e.stopPropagation()}
+                            onChange={e => toggleSelect(r.id, e.shiftKey)}
                           />
                         </TD>
-                        <TD mono style={{ color: r.severity === 'done' ? 'var(--lbb-fg2)' : 'var(--lbb-fg)' }}>
+                        <TD mono style={{ color: r.bucket === 'done' ? 'var(--lbb-fg2)' : 'var(--lbb-fg)' }}>
                           {r.folderName}
+                          {r.running && (
+                            <span style={{ marginLeft: 6, fontSize: 'var(--lbb-fs-9)', color: 'var(--lbb-info-fg)', letterSpacing: 1 }}>···</span>
+                          )}
                         </TD>
-                        <TD align="center"><StepPill step={r.steps.verify} running={r.running} /></TD>
-                        <TD align="center"><StepPill step={r.steps.lookup} running={r.running} /></TD>
-                        <TD align="center"><StepPill step={r.steps.rename} running={r.running} /></TD>
-                        <TD align="center"><StepPill step={r.steps.lbdir} running={r.running} /></TD>
+                        <TD onClick={e => e.stopPropagation()}>
+                          <StageTracker
+                            folder={toFolderRow(r)}
+                            stages={DEFAULT_STAGES}
+                            currentKey={isDetailOpen ? detailStage : null}
+                            onPick={key => openDetail(r.id, key)}
+                          />
+                        </TD>
                         <TD mono style={{
-                          color: r.severity === 'ready' ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg2)',
-                          fontWeight: r.severity === 'ready' ? 600 : undefined,
+                          color: r.bucket === 'ready' ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg2)',
+                          fontWeight: r.bucket === 'ready' ? 600 : undefined,
                         }}>
                           {lbLabel}
                           {aliasFrom && aliasFrom.length > 0 && (
@@ -1167,21 +1681,15 @@ export function ScreenPipeline(): React.JSX.Element {
                         </TD>
                         <TD align="right" onClick={e => e.stopPropagation()}>
                           <div style={{ display: 'flex', gap: 4, justifyContent: 'flex-end', alignItems: 'center' }}>
-                            {r.steps.lbdir.status !== 'mute' && r.steps.lbdir.status !== 'ok' && (
-                              <Button
-                                size="sm"
-                                variant={lbdirPanelId === r.id ? 'primary' : 'ghost'}
-                                icon="lbdir"
-                                onClick={() => setLbdirPanelId(prev => prev === r.id ? null : r.id)}
-                              >LBDIR</Button>
-                            )}
-                            {r.severity === 'attn' && (
-                              <Button size="sm" variant="secondary" icon="reveal" onClick={() => window.api.openPath(r.folderPath)}>Open</Button>
-                            )}
-                            {r.severity === 'ready' && (
+                            {r.bucket === 'ready' && (
                               <Button size="sm" variant="primary" icon="check" onClick={() => applyRename(r)}>Apply</Button>
                             )}
-                            {r.severity === 'done' && r.steps.lbdir.status === 'ok' && (
+                            {r.steps.file.status === 'warn' && !!r.steps.file.dest && (
+                              <Button size="sm" variant="primary" icon="folder" onClick={() => applyFile(r)}>
+                                {t('pipeline.file.action')}
+                              </Button>
+                            )}
+                            {r.bucket === 'done' && r.steps.file.status === 'ok' && (
                               <Pill tone="ok" soft>Done</Pill>
                             )}
                           </div>
@@ -1189,13 +1697,12 @@ export function ScreenPipeline(): React.JSX.Element {
                       </TR>
                     )
                   })}
-                  {/* bottom spacer */}
                   {virtualizer.getVirtualItems().length > 0 && (() => {
                     const last = virtualizer.getVirtualItems()[virtualizer.getVirtualItems().length - 1]
                     const remaining = virtualizer.getTotalSize() - last.end
                     return remaining > 0 ? (
                       <tr aria-hidden="true">
-                        <td colSpan={9} style={{ height: remaining, padding: 0, border: 'none' }} />
+                        <td colSpan={6} style={{ height: remaining, padding: 0, border: 'none' }} />
                       </tr>
                     ) : null
                   })()}
@@ -1204,20 +1711,23 @@ export function ScreenPipeline(): React.JSX.Element {
             </div>
           )}
 
-          {/* ── LBDIR mini panel ─────────────────────────────────────────────── */}
-          {lbdirPanelId && (() => {
-            const panelRow = rows.find(r => r.id === lbdirPanelId)
-            return panelRow ? (
-              <LbdirMiniPanel
-                key={lbdirPanelId}
-                row={panelRow}
-                onClose={() => setLbdirPanelId(null)}
-                onRowRefresh={refreshLbdirRow}
-              />
-            ) : null
-          })()}
+          {/* ── Detail panel (slide-in on row click) ──────────────────────────── */}
+          {detailRow && (
+            <DetailPanel
+              key={detailRow.id}
+              row={detailRow}
+              initialStage={detailStage}
+              onClose={() => setDetailId(null)}
+              onRowRefresh={refreshDetailRow}
+              onRun={(id, steps) => runSteps([id], steps)}
+              onRename={() => applyRename(detailRow)}
+              onFile={() => applyFile(detailRow)}
+            />
+          )}
         </section>
       </div>
+
+      <ConfirmHost />
 
       {/* ── Right-click context menu ──────────────────────────────────────────── */}
       {ctxMenu && (
@@ -1230,6 +1740,33 @@ export function ScreenPipeline(): React.JSX.Element {
             boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
           }}
         >
+          <button
+            onClick={() => {
+              setRows(prev => prev.map(r => r.id === ctxMenu.id ? { ...r, bucket: 'shelf' } : r))
+              setCtxMenu(null)
+            }}
+            style={{
+              display: 'block', width: '100%', textAlign: 'left',
+              padding: '6px 12px', fontSize: 'var(--lbb-fs-12-5)', cursor: 'pointer',
+              border: 'none', background: 'transparent',
+              color: 'var(--lbb-fg)', borderRadius: 5, fontFamily: 'inherit',
+            }}
+          >Shelve (skip for now)</button>
+          {rows.find(r => r.id === ctxMenu.id)?.bucket === 'shelf' && (
+            <button
+              onClick={() => {
+                setRows(prev => prev.map(r => r.id === ctxMenu.id ? { ...r, bucket: 'needs' } : r))
+                setCtxMenu(null)
+              }}
+              style={{
+                display: 'block', width: '100%', textAlign: 'left',
+                padding: '6px 12px', fontSize: 'var(--lbb-fs-12-5)', cursor: 'pointer',
+                border: 'none', background: 'transparent',
+                color: 'var(--lbb-fg)', borderRadius: 5, fontFamily: 'inherit',
+              }}
+            >Unshelve</button>
+          )}
+          <div style={{ height: 1, background: 'var(--lbb-border)', margin: '4px 0' }} />
           <button
             onClick={() => { handleRemoveRow(ctxMenu.id); setCtxMenu(null) }}
             style={{

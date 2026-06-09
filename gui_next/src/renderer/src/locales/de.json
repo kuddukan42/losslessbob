@@ -37,6 +37,7 @@
       "pipeline": "Pipeline",
       "verify": "Überprüfen Sie",
       "lookup": "Nachschlagen",
+      "quicklookup": "Schnellsuche",
       "rename": "Umbenennen",
       "lbdir": "LBDIR",
       "library": "Bibliothek",
@@ -74,7 +75,7 @@
     "primaryWorkflow": "PRIMÄRER WORKFLOW",
     "pipelineTagline": "Die Pipeline für Neuakquisitionen",
     "ingestTitle": "Neue Musik aufnehmen",
-    "ingestDesc": "Legen Sie Ordner hier ab - die Pipeline führt <strong>Überprüfen → Nachschlagen → Umbenennen → LBDIR</strong> für den gesamten Stapel aus. Keine hüpfenden Tabs mehr.",
+    "ingestDesc": "Legen Sie Ordner hier ab - die Pipeline führt <strong>Überprüfen → Nachschlagen → Umbenennen → LBDIR → Sammeln</strong> für den gesamten Stapel aus. Keine hüpfenden Tabs mehr.",
     "dragHere": "Ordner hierher ziehen",
     "orClickBrowse": "oder klicken Sie zum Blättern",
     "stepVerify": "Prüfsummen verifizieren",
@@ -330,7 +331,7 @@
     "folderQueued_one": "- {{count}} Ordner in der Warteschlange",
     "folderQueued_other": "- {{count}} Ordner in der Warteschlange",
     "emptyHint": "Ordner ablegen, um zu beginnen - oder \"Ordner hinzufügen...\" in der Warteschlangenleiste verwenden",
-    "runHint": "Legen Sie jederzeit weitere Ordner ab - klicken Sie auf \"Alle 4 Schritte ausführen\", um die Warteschlange zu bearbeiten",
+    "runHint": "Legen Sie jederzeit weitere Ordner ab - klicken Sie auf \"Alle 5 Schritte ausführen\", um die Warteschlange zu bearbeiten",
     "done_one": "{{count}} erledigt",
     "done_other": "{{count}} erledigt",
     "readyToRename_one": "{{count}} bereit zur Umbenennung",
@@ -344,6 +345,8 @@
     "clearQueue": "Warteschlange löschen",
     "applyRenames": "Alle von {{count}} vorgeschlagenen Umbenennungen anwenden",
     "applyRenames_plural": "Alle von {{count}} vorgeschlagenen Umbenennungen anwenden",
+    "fileAllReady": "{{count}} zur Sammlung ablegen",
+    "fileAllReady_plural": "{{count}} zur Sammlung ablegen",
     "queue": {
       "label": "Ordner-Warteschlange",
       "filterPlaceholder": "Warteschlange filtern...",
@@ -352,14 +355,19 @@
       "addFolders": "Ordner hinzufügen...",
       "scanTree": "Baum scannen...",
       "runOnSelected": "Lauf auf ausgewählt ({{count}})",
-      "runAll": "Alle 4 Schritte ausführen",
+      "runAll": "Alle 5 Schritte ausführen",
       "verify": "Überprüfen Sie",
       "lookup": "Nachschlagen",
       "rename": "Umbenennen",
-      "lbdir": "LBDIR"
+      "lbdir": "LBDIR",
+      "collect": "Sammeln"
     },
     "filter": {
       "all": "Alle",
+      "needs": "Aktion erforderlich",
+      "ready": "Bereit",
+      "running": "Läuft",
+      "shelf": "Zurückgestellt",
       "needAttention": "Aufmerksamkeit erforderlich",
       "readyToRename": "Bereit zum Umbenennen",
       "done": "Erledigt",
@@ -374,7 +382,9 @@
       "verifySelected": "Überprüfen Sie die ausgewählte",
       "lookupSelected": "Nachschlagen ausgewählt",
       "applySelected": "{{count}} ausgewählte Umbenennung anwenden",
-      "applySelected_plural": "{{count}} ausgewählte Umbenennungen anwenden"
+      "applySelected_plural": "{{count}} ausgewählte Umbenennungen anwenden",
+      "fileSelected": "{{count}} Ausgewählte ablegen",
+      "fileSelected_plural": "{{count}} Ausgewählte ablegen"
     },
     "empty": {
       "title": "Ordner hier ablegen und beginnen",
@@ -386,7 +396,15 @@
       "lookup": "Nachschlagen",
       "rename": "Umbenennen",
       "lbdir": "LBDIR",
+      "collect": "Sammeln",
       "lb": "LB#"
+    },
+    "file": {
+      "action": "Ablegen",
+      "confirmTitle": "In Sammlung ablegen",
+      "confirmBody": "\"{{folder}}\" nach {{mount}} ablegen",
+      "confirmNote": "Der Ordner wird an sein Sammlungsziel verschoben und in Meine Sammlung eingetragen.",
+      "confirmAction": "Ablegen"
     }
   },
   "collection": {
@@ -970,6 +988,48 @@
       "noResults": "Abfrage hat keine Zeilen zurückgegeben.",
       "truncated": "(auf 500 Zeilen begrenzt)",
       "error": "Fehler: {{msg}}"
+    }
+  },
+  "quickLookup": {
+    "title": "Schnellsuche",
+    "subtitle": "Prüfsumme",
+    "desc": "Fügen Sie Prüfsummenzeilen ein oder legen Sie sie ab, um Aufnahmen sofort zu identifizieren.",
+    "header": {
+      "matched": "übereinstimmend"
+    },
+    "input": {
+      "label": "Eingabe",
+      "placeholder": "Fügen Sie hier .md5- oder .ffp-Inhalt ein…\nz.B.  a1b2c3d4…  Mein Konzert.flac"
+    },
+    "drop": {
+      "hint": "Prüfsummendatei hier ablegen",
+      "ext": ".md5 · .ffp · .st5 · .sha1"
+    },
+    "btn": {
+      "clipboard": "Zwischenablage",
+      "files": "Dateien…",
+      "lookup": "Nachschlagen",
+      "running": "Wird nachgeschlagen…",
+      "clear": "Ergebnisse löschen"
+    },
+    "filePicker": {
+      "title": "Prüfsummendateien auswählen"
+    },
+    "empty": {
+      "title": "Noch keine Ergebnisse",
+      "desc": "Prüfsummentext einfügen, Datei ablegen oder die Schaltfläche Zwischenablage verwenden."
+    },
+    "table": {
+      "checksum": "Prüfsumme",
+      "filename": "Dateiname",
+      "lb": "LB#",
+      "status": "Status"
+    },
+    "toast": {
+      "failed": "Suche fehlgeschlagen",
+      "clipboardEmpty": "Zwischenablage ist leer",
+      "clipboardFailed": "Zwischenablage kann nicht gelesen werden",
+      "noValidFiles": "Keine Prüfsummendateien gefunden (.md5, .ffp, .st5, .sha1)"
     }
   }
 }

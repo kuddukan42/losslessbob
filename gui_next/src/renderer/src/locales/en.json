@@ -37,6 +37,7 @@
       "pipeline": "Pipeline",
       "verify": "Verify",
       "lookup": "Lookup",
+      "quicklookup": "Quick Lookup",
       "rename": "Rename",
       "lbdir": "LBDIR",
       "library": "Library",
@@ -76,7 +77,7 @@
     "primaryWorkflow": "PRIMARY WORKFLOW",
     "pipelineTagline": "The new-acquisition pipeline",
     "ingestTitle": "Ingest new music",
-    "ingestDesc": "Drop folders here — the pipeline runs <strong>verify → lookup → rename → LBDIR</strong> on the whole batch. No more bouncing tabs.",
+    "ingestDesc": "Drop folders here — the pipeline runs <strong>verify → lookup → rename → LBDIR → collect</strong> on the whole batch. No more bouncing tabs.",
     "dragHere": "Drag folders here",
     "orClickBrowse": "or click to browse",
     "stepVerify": "Verify checksums",
@@ -349,7 +350,7 @@
     "folderQueued_one": "· {{count}} folder queued",
     "folderQueued_other": "· {{count}} folders queued",
     "emptyHint": "Drop folders to begin · or use \"Add folders…\" in the queue rail",
-    "runHint": "Drop more folders any time · click \"Run all 4 steps\" to process the queue",
+    "runHint": "Drop more folders any time · click \"Run all 5 steps\" to process the queue",
     "done_one": "{{count}} done",
     "done_other": "{{count}} done",
     "readyToRename_one": "{{count}} ready to rename",
@@ -363,6 +364,8 @@
     "clearQueue": "Clear queue",
     "applyRenames": "Apply all {{count}} proposed rename",
     "applyRenames_plural": "Apply all {{count}} proposed renames",
+    "fileAllReady": "File {{count}} ready to collect",
+    "fileAllReady_plural": "File {{count}} ready to collect",
     "queue": {
       "label": "Folder queue",
       "filterPlaceholder": "Filter queue…",
@@ -371,14 +374,19 @@
       "addFolders": "Add folders…",
       "scanTree": "Scan tree…",
       "runOnSelected": "Run on selected ({{count}})",
-      "runAll": "Run all 4 steps",
+      "runAll": "Run all 5 steps",
       "verify": "Verify",
       "lookup": "Lookup",
       "rename": "Rename",
-      "lbdir": "LBDIR"
+      "lbdir": "LBDIR",
+      "collect": "Collect"
     },
     "filter": {
       "all": "All",
+      "needs": "Needs attention",
+      "ready": "Ready",
+      "running": "Running",
+      "shelf": "Shelf",
       "needAttention": "Need attention",
       "readyToRename": "Ready to rename",
       "done": "Done",
@@ -393,7 +401,9 @@
       "verifySelected": "Verify selected",
       "lookupSelected": "Lookup selected",
       "applySelected": "Apply {{count}} selected rename",
-      "applySelected_plural": "Apply {{count}} selected renames"
+      "applySelected_plural": "Apply {{count}} selected renames",
+      "fileSelected": "File {{count}} selected",
+      "fileSelected_plural": "File {{count}} selected"
     },
     "empty": {
       "title": "Drop folders here to begin",
@@ -405,7 +415,15 @@
       "lookup": "Lookup",
       "rename": "Rename",
       "lbdir": "LBDIR",
+      "collect": "Collect",
       "lb": "LB#"
+    },
+    "file": {
+      "action": "File",
+      "confirmTitle": "File into Collection",
+      "confirmBody": "File \"{{folder}}\" to {{mount}}",
+      "confirmNote": "The folder will be moved to its collection destination and registered in My Collection.",
+      "confirmAction": "File"
     }
   },
   "collection": {
@@ -1043,5 +1061,47 @@
     "histColStarted": "Started",
     "noHistory": "No uploads yet.",
     "keysHelp": "Get your S3 keys at archive.org/account/s3.php (free account required)."
+  },
+  "quickLookup": {
+    "title": "Quick Lookup",
+    "subtitle": "Checksum",
+    "desc": "Paste or drop checksum lines to identify recordings instantly.",
+    "header": {
+      "matched": "matched"
+    },
+    "input": {
+      "label": "Input",
+      "placeholder": "Paste .md5 or .ffp content here…\ne.g.  a1b2c3d4…  My Concert.flac"
+    },
+    "drop": {
+      "hint": "Drop a checksum file here",
+      "ext": ".md5 · .ffp · .st5 · .sha1"
+    },
+    "btn": {
+      "clipboard": "Clipboard",
+      "files": "Files…",
+      "lookup": "Look up",
+      "running": "Looking up…",
+      "clear": "Clear results"
+    },
+    "filePicker": {
+      "title": "Select checksum files"
+    },
+    "empty": {
+      "title": "No results yet",
+      "desc": "Paste checksum text, drop a file, or use the clipboard button."
+    },
+    "table": {
+      "checksum": "Checksum",
+      "filename": "Filename",
+      "lb": "LB#",
+      "status": "Status"
+    },
+    "toast": {
+      "failed": "Lookup failed",
+      "clipboardEmpty": "Clipboard is empty",
+      "clipboardFailed": "Cannot read clipboard",
+      "noValidFiles": "No checksum files found (.md5, .ffp, .st5, .sha1)"
+    }
   }
 }

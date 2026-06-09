@@ -30,6 +30,7 @@ import { ScreenDbEditor } from './screens/ScreenDbEditor'
 import { ScreenScraper } from './screens/ScreenScraper'
 import { ScreenTrading } from './screens/ScreenTrading'
 import { ScreenSharing } from './screens/ScreenSharing'
+import { ScreenQuickLookup } from './screens/ScreenQuickLookup'
 
 // ── React Query client — prefetch collection data immediately at module load ──
 
@@ -261,7 +262,8 @@ export default function App(): React.JSX.Element {
         <Routes>
           <Route path="/"            element={<ScreenHome />} />
           <Route path="/verify"      element={<ScreenVerify />} />
-          <Route path="/lookup"      element={<ScreenLookup />} />
+          <Route path="/lookup"       element={<ScreenLookup />} />
+          <Route path="/quicklookup" element={<ScreenQuickLookup />} />
           <Route path="/rename"      element={<ScreenRename />} />
           <Route path="/lbdir"       element={<ScreenLBDIR />} />
           <Route path="/collection"  element={<ScreenCollection />} />
