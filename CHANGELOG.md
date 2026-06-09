@@ -1,3 +1,11 @@
+[2026-06-09] — feat(backend+gui): Pipeline v2 — Step 5 File into Collection + Mounts & Routes
+Added: backend/filer.py: year extraction, route resolution, timeout-guarded mount reachability check, move/copy filing, my_collection registration
+Added: backend/db.py: collection_mounts, collection_routes tables + schema migration guards + meta key pipeline_file_mode; DB helper functions for all CRUD
+Added: backend/app.py: 10 new API routes (/api/collection/mounts, /api/collection/routes/*, /api/collection/routes/preview/*, /api/pipeline/file, /api/pipeline/file/preview); pipeline_file_mode in db_settings; step 5 in _pipeline_process_folder
+Added: gui_next/src/renderer/src/components/pipeline/PipelineParts.tsx: StateGlyph, StatusTag, StageNode, StageTracker, StageStepper, QueueRow
+Added: gui_next/src/renderer/src/components/pipeline/ConfirmDialog.tsx: useConfirm hook, ConfirmDialog, ConfirmDialogProvider
+Added: gui_next/src/renderer/src/screens/ScreenSetup.tsx: CollectionRoutingCard (Mounts, Year Routes, Coverage bar, Preview tester, Filing Mode)
+
 [2026-06-09] — chore(backend): set up ruff linter + pre-commit hook
 Added: pyproject.toml: ruff config (E/W/F/I/UP/B/G/LOG, line-length 100, py311, excludes gui/ and tools/)
 Added: .pre-commit-config.yaml: local pre-commit hook running ruff check --fix on staged Python files
