@@ -1,3 +1,21 @@
+[2026-06-09] — fix(gui): pipeline screen — remove filter chips, fix column alignment, wire auto-run
+Changed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: (1) removed bucket filter Chip bar from content area; (2) added missing 3px edge-bar <th> spacer to thead so headers align with data rows; (3) wired autorun toggle — addFolders now queues new folder IDs in autorunPendingRef and a useEffect drains the queue via runSteps(['verify','lookup']) once rows state settles
+
+[2026-06-10] — feat(gui): pipeline progress banner — bucket pills, auto-run toggle, correct CTAs
+Changed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: replaced old banner right-side (bulk menu + conditional CTAs) with: (1) interactive bucket filter pills — one per non-zero bucket (needs/ready/running/shelf/done), clicking toggles table filter, correct labels/tones per spec; (2) auto-run toggle — sliding pill, default on; (3) "Apply all N ready" — always visible, disabled when 0; (4) "File all N into collection" — only shown when shelf > 0; removed dead bulkMenuRef/bulkMenuOpen state and click-away handler; title now "Pipeline · N folders" with fixed subtitle
+Changed: gui_next/src/renderer/src/locales/en.json: added titleFolders, autoRun, autoRunHint, applyAllReady, fileAllCollection keys; updated filter.done to "In collection"
+
+[2026-06-09] — fix(gui): pipeline v2 rename panel — full content (Issue 9); applyRename accepts custom name
+Fixed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: RenameStageContent replaced with full panel — StageHead (state badge, title, LB# pill, Edit name… button), wrong-LB amber banner (auto-detected from folder name vs lookup LB#), diff box (red/green rows; green becomes input in edit mode, with LB# highlighted/struck-through), dry-run info banner with Copy diff, success banner after apply; onRename threaded as (customName?) so edited name reaches applyRename; Issue 8 already resolved (step key 'file' correct throughout)
+
+[2026-06-09] — feat(gui): guaranteed fresh backend on every `npm run dev` launch
+Changed: gui_next/src/main/index.ts: added killPortProcess() — after killStalePid(), scans port 5174 with lsof (Linux/Mac) or netstat (Windows) and kills any occupying process before spawning the backend; ensures stale backends started outside Electron are always evicted
+
+[2026-06-09] — fix(gui): pipeline v2 UX corrections — detail layout, nav, queue rail, table columns
+Fixed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: detail panel now replaces main content area instead of opening as a narrow right drawer (Issue 1); removed Run On Selected panel + singular Add Folder + shallowScan checkbox from queue rail footer; added Scan/Clear two-column grid, Quick Lookup button-link, and drag hint box (Issue 3); added Status column (deriveFolderStatus + StatusTag + reason) between Stages and LB# in batch table (Issue 6); colgroup updated to 7 columns; spacer/grouprow colSpan updated accordingly
+Fixed: gui_next/src/renderer/src/components/AppShell.tsx: Verify/Lookup/Rename/LBDIR moved under collapsible "Advanced tools" disclosure (starts closed); removed Quick Lookup from sidebar nav (Issue 4)
+Fixed: gui_next/src/renderer/src/locales/en.json + de/es/fr/it/nl: filter.needs → "Needs you"; filter.ready → "Ready to apply"; filter.shelf → "Ready to file"; runHint updated to remove "Run all 5 steps" reference; added advancedTools nav key (Issues 5, 7)
+
 [2026-06-09] — docs: pipeline v2 phase 9 — documentation and verification
 Changed: PROJECT.md: added collection_mounts + collection_routes schema tables; added "Collection Routing & Pipeline Filing" API section (10 routes); updated ScreenPipeline to 5-step; added ScreenQuickLookup entry; added Change Log row
 Changed: instructions/pipeline_new/CHECKLIST.md: phases 9 items ticked off

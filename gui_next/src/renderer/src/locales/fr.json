@@ -55,7 +55,8 @@
       "scraper": "Grattoir",
       "settings": "Paramètres",
       "setup": "Mise en place",
-      "themes": "Thèmes"
+      "themes": "Thèmes",
+      "advancedTools": "Outils avancés"
     },
     "statusBar": {
       "db": "DB :",
@@ -331,7 +332,7 @@
     "folderQueued_one": "- {{count}} dossier en attente",
     "folderQueued_other": "- {{count}} dossiers en attente",
     "emptyHint": "Déposez des dossiers pour commencer - ou utilisez \"Ajouter des dossiers...\" dans le rail de la file d'attente.",
-    "runHint": "Déposez d'autres dossiers à tout moment - cliquez sur \"Exécuter les 5 étapes\" pour traiter la file d'attente.",
+    "runHint": "Déposez un dossier et il vérifie → identifie → propose un renommage tout seul.",
     "done_one": "{{count}} fait",
     "done_other": "{{count}} fait",
     "readyToRename_one": "{{count}} prêt à être renommé",
@@ -364,10 +365,10 @@
     },
     "filter": {
       "all": "Tous",
-      "needs": "Action requise",
-      "ready": "Prêt",
+      "needs": "Besoin de vous",
+      "ready": "Prêt à appliquer",
       "running": "En cours",
-      "shelf": "En attente",
+      "shelf": "Prêt à classer",
       "needAttention": "Besoin d'attention",
       "readyToRename": "Prêt à renommer",
       "done": "Terminé",

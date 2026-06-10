@@ -1,3 +1,22 @@
+TODO-111: Collection integrity monitor — hash-based change detection for collection folders
+Priority: Medium
+Status: Open
+Added: 2026-06-09
+Description: Build a hashing system that watches collection mount folders for file changes.
+On initial scan, compute a fast hash (e.g. xxHash or MD5 of size+mtime as a quick fingerprint,
+with optional full-content hash) for every file and store results in the DB. On subsequent
+scans, detect: deleted/missing files, new files, and changed files (hash mismatch). Surface
+findings in the GUI — e.g. a badge or alert on the affected collection mount card or a
+dedicated integrity report view. Should be runnable on-demand and optionally on a schedule.
+
+TODO-110: Pipeline — add free space and drive stats to mount cards
+Priority: Medium
+Status: Open
+Added: 2026-06-09
+Description: Display disk usage information on each mount card in the Pipeline screen. Show
+free space remaining, total capacity, and used percentage for the drive backing each mount
+point. Update reactively so the card reflects current state when the pipeline is running.
+
 TODO-109: Python best practices — BP document and code review
 Priority: Low
 Status: In Progress

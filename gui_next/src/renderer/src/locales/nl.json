@@ -55,7 +55,8 @@
       "scraper": "Schraper",
       "settings": "Instellingen",
       "setup": "Setup",
-      "themes": "Thema's"
+      "themes": "Thema's",
+      "advancedTools": "Geavanceerde tools"
     },
     "statusBar": {
       "db": "DB:",
@@ -331,7 +332,7 @@
     "folderQueued_one": "- {{count}} map in de wachtrij",
     "folderQueued_other": "- {{count}} mappen in de wachtrij",
     "emptyHint": "Laat mappen vallen om te beginnen - of gebruik \"Mappen toevoegen...\" in de wachtrijrail",
-    "runHint": "Laat op elk moment meer mappen vallen - klik op \"Alle 5 stappen uitvoeren\" om de wachtrij te verwerken",
+    "runHint": "Laat een map vallen en die verifieert → identificeert → stelt een hernoeming voor.",
     "done_one": "{{count}} gedaan",
     "done_other": "{{count}} gedaan",
     "readyToRename_one": "{{count}} klaar om te hernoemen",
@@ -364,10 +365,10 @@
     },
     "filter": {
       "all": "Alle",
-      "needs": "Vereist aandacht",
-      "ready": "Klaar",
+      "needs": "Heeft u nodig",
+      "ready": "Klaar om toe te passen",
       "running": "Bezig",
-      "shelf": "Uitgesteld",
+      "shelf": "Klaar om te archiveren",
       "needAttention": "Aandacht nodig",
       "readyToRename": "Klaar om te hernoemen",
       "done": "Gedaan",
