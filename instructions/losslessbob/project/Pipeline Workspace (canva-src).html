@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>LosslessBob — Pipeline Workspace</title>
+<template id="__bundler_thumbnail" data-bg-color="#0b0a08">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#0b0a08"></rect>
+    <g transform="translate(360 360)">
+      <circle cx="40" cy="50" r="34" fill="none" stroke="#7c7cf0" stroke-width="10"></circle>
+      <line x1="74" y1="50" x2="200" y2="50" stroke="#3a3a52" stroke-width="10"></line>
+      <circle cx="240" cy="50" r="34" fill="none" stroke="#7c7cf0" stroke-width="10"></circle>
+      <line x1="274" y1="50" x2="400" y2="50" stroke="#3a3a52" stroke-width="10"></line>
+      <circle cx="440" cy="50" r="34" fill="#7c7cf0"></circle>
+    </g>
+    <text x="600" y="500" text-anchor="middle" fill="#cfcfe6" font-family="-apple-system, sans-serif" font-size="40" font-weight="700">LosslessBob</text>
+    <text x="600" y="552" text-anchor="middle" fill="#7c7cf0" font-family="-apple-system, sans-serif" font-size="26" font-weight="500">Pipeline Workspace</text>
+  </svg>
+</template>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css" />
+<style>
+  html, body { margin: 0; height: 100%; background: #0b0a08; overflow: hidden; }
+  #stage { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; }
+  #frame {
+    width: 1920px; height: 1080px; flex: 0 0 1920px;
+    transform-origin: center center;
+    background: var(--lbb-bg, #faf8f3);
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.45), 0 1px 0 rgba(255,255,255,0.04) inset;
+    border-radius: 12px;
+  }
+  /* Pipeline Workspace — stage spinner */
+  .p2-spin { animation: p2spin 0.8s linear infinite; }
+  @keyframes p2spin { to { transform: rotate(360deg); } }
+  /* Confirm dialog */
+  @keyframes p2cfade { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes p2cpop { from { opacity: 0; transform: translateY(8px) scale(0.98); } to { opacity: 1; transform: none; } }
+  @media print { html, body, #stage { background: #fff; } #frame { box-shadow: none; border-radius: 0; } }
+</style>
+</head>
+<body>
+<div id="stage"><div id="frame"><div id="root"></div></div></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<!-- Design system -->
+<script src="lbb-tokens.js"></script>
+<script>window.LBB_TOKENS.applyTheme({ mode: "light", accent: "indigo", density: "default" });</script>
+<script type="text/babel" src="lbb-icons.jsx"></script>
+<script type="text/babel">window.LBB_Icon = Icon;</script>
+<script type="text/babel" src="lbb-ui.jsx"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+
+<!-- Refined Pipeline Workspace -->
+<script src="pipeline2-data.js"></script>
+<script type="text/babel" src="pipeline2-confirm.jsx"></script>
+<script type="text/babel" src="pipeline2-parts.jsx"></script>
+<script type="text/babel" src="pipeline2-stages.jsx"></script>
+<script type="text/babel" src="pipeline2-quicklookup.jsx"></script>
+<script type="text/babel" src="pipeline2-app.jsx"></script>
+<script type="text/babel" src="pipeline2-shell.jsx"></script>
+
+<script type="text/babel">
+  function fit() {
+    const stage = document.getElementById("stage");
+    const frame = document.getElementById("frame");
+    const w = stage.clientWidth, h = stage.clientHeight;
+    frame.style.transform = `scale(${Math.min(w / 1920, h / 1080)})`;
+  }
+  window.addEventListener("resize", fit); fit();
+  ReactDOM.createRoot(document.getElementById("root")).render(<window.LBB_P2_Root />);
+</script>
+</body>
+</html>

@@ -55,7 +55,8 @@
       "scraper": "Abstreifer",
       "settings": "Einstellungen",
       "setup": "Einrichtung",
-      "themes": "Themen"
+      "themes": "Themen",
+      "advancedTools": "Erweiterte Tools"
     },
     "statusBar": {
       "db": "DB:",
@@ -331,7 +332,7 @@
     "folderQueued_one": "- {{count}} Ordner in der Warteschlange",
     "folderQueued_other": "- {{count}} Ordner in der Warteschlange",
     "emptyHint": "Ordner ablegen, um zu beginnen - oder \"Ordner hinzufügen...\" in der Warteschlangenleiste verwenden",
-    "runHint": "Legen Sie jederzeit weitere Ordner ab - klicken Sie auf \"Alle 5 Schritte ausführen\", um die Warteschlange zu bearbeiten",
+    "runHint": "Legen Sie einen Ordner ab und er prüft → identifiziert → schlägt eine Umbenennung von selbst vor.",
     "done_one": "{{count}} erledigt",
     "done_other": "{{count}} erledigt",
     "readyToRename_one": "{{count}} bereit zur Umbenennung",
@@ -364,10 +365,10 @@
     },
     "filter": {
       "all": "Alle",
-      "needs": "Aktion erforderlich",
-      "ready": "Bereit",
+      "needs": "Braucht Sie",
+      "ready": "Bereit zur Anwendung",
       "running": "Läuft",
-      "shelf": "Zurückgestellt",
+      "shelf": "Bereit zur Ablage",
       "needAttention": "Aufmerksamkeit erforderlich",
       "readyToRename": "Bereit zum Umbenennen",
       "done": "Erledigt",

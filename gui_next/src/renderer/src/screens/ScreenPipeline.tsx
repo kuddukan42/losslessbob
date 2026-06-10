@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useVirtualizer } from '@tanstack/react-virtual'
 import { useTranslation } from 'react-i18next'
 import { Icon } from '../components/Icon'
-import { Button, Chip, IconButton, Input, Pill } from '../components'
+import { Button, IconButton, Input, Pill } from '../components'
 import { TableShell, TH, TR, TD, GroupRow } from '../components'
 import { useFolderQueueStore } from '../lib/folderQueueStore'
 import { CheckResult, ReconcileResult, ReconcileProposal, SiteProposal } from '../lib/lbdirStore'
@@ -71,6 +71,14 @@ interface PipelineRow {
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
 const MUTE: StepResult = { status: 'mute', label: '—' }
+
+const BANNER_BUCKETS: { key: Exclude<Bucket, 'all'>; tone: string }[] = [
+  { key: 'needs',   tone: 'bad'  },
+  { key: 'ready',   tone: 'warn' },
+  { key: 'running', tone: 'info' },
+  { key: 'shelf',   tone: 'info' },
+  { key: 'done',    tone: 'ok'   },
+]
 
 function emptyRow(folderPath: string): PipelineRow {
   const name = folderPath.split(/[/\\]/).pop() ?? folderPath
@@ -161,6 +169,31 @@ function firstActiveStage(r: PipelineRow): string {
     if (r.steps[key].status === 'mute') return key
   }
   return 'verify'
+}
+
+type StatusInfo = { state: StepData['state']; label: string; reason: string }
+
+function deriveFolderStatus(r: PipelineRow): StatusInfo {
+  if (r.running) return { state: 'running', label: 'Running', reason: 'In progress' }
+  if (r.bucket === 'done') return {
+    state: 'pass', label: 'In collection',
+    reason: r.steps.file.mount_label ? `Filed to ${r.steps.file.mount_label}` : 'Filed & tagged',
+  }
+  if (r.bucket === 'shelf') return {
+    state: 'action', label: 'Ready to file',
+    reason: 'Archive-clean — file into the collection',
+  }
+  if (r.bucket === 'ready') return {
+    state: 'action', label: 'Ready to apply',
+    reason: 'Confident match — just apply the rename',
+  }
+  for (const key of ['verify', 'lookup', 'rename', 'lbdir', 'file'] as const) {
+    const s = r.steps[key]
+    if (s.status === 'bad')  return { state: 'blocked', label: 'Blocked',    reason: s.label }
+    if (s.status === 'warn') return { state: 'action',  label: 'Needs you',  reason: s.label }
+    if (s.status === 'mute') return { state: 'mute',    label: '—',          reason: '' }
+  }
+  return { state: 'mute', label: '—', reason: '' }
 }
 
 // ── Virtualizer item type ─────────────────────────────────────────────────────
@@ -629,12 +662,36 @@ function LookupStageContent({ step, row, onRun }: {
   )
 }
 
+function highlightLb(name: string, lb: string, strike?: boolean): React.JSX.Element {
+  const idx = name.toUpperCase().indexOf(lb.toUpperCase())
+  if (idx < 0) return <>{name}</>
+  return (
+    <>
+      {name.slice(0, idx)}
+      <span style={{ fontWeight: 700, color: strike ? 'var(--lbb-bad-fg)' : 'var(--lbb-ok-fg)',
+        textDecoration: strike ? 'line-through' : 'none' }}>
+        {name.slice(idx, idx + lb.length)}
+      </span>
+      {name.slice(idx + lb.length)}
+    </>
+  )
+}
+
 function RenameStageContent({ step, row, onRun, onRename }: {
   step: StepResult
   row: PipelineRow
   onRun: (steps: string[]) => void
-  onRename: () => void
+  onRename: (customName?: string) => void
 }): React.JSX.Element {
+  const [editing, setEditing] = useState(false)
+  const [editValue, setEditValue] = useState('')
+
+  const lb = row.steps.lookup.lb_number
+  const lbTag = lb ? `LB-${String(lb).padStart(5, '0')}` : null
+  const folderLbMatch = row.folderName.match(/LB-(\d+)/i)
+  const folderLb = folderLbMatch ? `LB-${String(parseInt(folderLbMatch[1], 10)).padStart(5, '0')}` : null
+  const hasWrongLb = !!(lbTag && folderLb && folderLb !== lbTag)
+
   if (step.status === 'mute') {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
@@ -646,14 +703,39 @@ function RenameStageContent({ step, row, onRun, onRename }: {
     )
   }
 
+  if (step.status === 'ok' && step.label === 'Renamed') {
+    return (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '12px 14px',
+          background: 'var(--lbb-ok-bg)', border: '1px solid var(--lbb-ok-bar)', borderRadius: 8 }}>
+          <Icon name="check" size={16} style={{ color: 'var(--lbb-ok-fg)', flexShrink: 0 }} />
+          <div>
+            <div style={{ fontWeight: 700, fontSize: 'var(--lbb-fs-13)', color: 'var(--lbb-ok-fg)' }}>Renamed</div>
+            <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)', marginTop: 2 }}>
+              Logged to <span style={{ fontFamily: 'var(--lbb-mono)' }}>rename_history</span> · reversible for 30 days · LBDIR will reconcile next
+            </div>
+          </div>
+        </div>
+        <div style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)',
+          padding: '8px 10px', background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)',
+          borderRadius: 6, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+          {row.folderName}
+        </div>
+      </div>
+    )
+  }
+
   if (step.status === 'ok' || !step.proposed) {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: 'var(--lbb-ok-fg)', fontSize: 'var(--lbb-fs-12)', fontWeight: 600 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: 'var(--lbb-ok-fg)',
+          fontSize: 'var(--lbb-fs-12)', fontWeight: 600 }}>
           <Icon name="check" size={14} />
           Folder name is already correct
         </div>
-        <div style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)', padding: '8px 10px', background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)', borderRadius: 6, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+        <div style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)',
+          padding: '8px 10px', background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)',
+          borderRadius: 6, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
           {row.folderName}
         </div>
         <Button variant="ghost" size="sm" icon="refresh" onClick={() => onRun(['rename'])}>Re-check</Button>
@@ -661,26 +743,96 @@ function RenameStageContent({ step, row, onRun, onRename }: {
     )
   }
 
+  const title = hasWrongLb ? 'Fix the wrong LB# and apply' : 'Review the proposed rename'
+
+  const copyDiff = () => {
+    const target = editing ? editValue : step.proposed!
+    navigator.clipboard.writeText(`Current:  ${row.folderName}\nProposed: ${target}`)
+  }
+
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+      {/* 1. Stage head */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
+        <StatusTag state="action" style={{ flexShrink: 0 }} />
+        <span style={{ fontWeight: 700, fontSize: 'var(--lbb-fs-13)', flex: 1, minWidth: 0 }}>{title}</span>
+        {lbTag && <Pill tone="ok" soft dot style={{ flexShrink: 0, fontFamily: 'var(--lbb-mono)' }}>{lbTag}</Pill>}
+        {editing ? (
+          <Button variant="ghost" size="sm" onClick={() => setEditing(false)} style={{ flexShrink: 0 }}>Cancel</Button>
+        ) : (
+          <Button variant="ghost" size="sm" icon="rename" onClick={() => { setEditValue(step.proposed!); setEditing(true) }} style={{ flexShrink: 0 }}>Edit name…</Button>
+        )}
+      </div>
+
+      {/* 2. Wrong-LB banner */}
+      {hasWrongLb && (
+        <div style={{ display: 'flex', alignItems: 'flex-start', gap: 8, padding: '10px 12px',
+          borderRadius: 7, background: 'var(--lbb-warn-bg)', border: '1px solid var(--lbb-warn-bar)',
+          fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)' }}>
+          <Icon name="alert" size={13} style={{ color: 'var(--lbb-warn-fg)', flexShrink: 0, marginTop: 1 }} />
+          <span>
+            Folder already carries <span style={{ fontFamily: 'var(--lbb-mono)', fontWeight: 700,
+              color: 'var(--lbb-warn-fg)' }}>{folderLb}</span> — old tag will be stripped and replaced
+            with <span style={{ fontFamily: 'var(--lbb-mono)', fontWeight: 700,
+              color: 'var(--lbb-ok-fg)' }}>{lbTag}</span>.
+          </span>
+        </div>
+      )}
+
+      {/* 3. Diff box */}
       <div style={{ border: '1px solid var(--lbb-border)', borderRadius: 8, overflow: 'hidden' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 12px', background: 'var(--lbb-bad-bg)' }}>
           <Icon name="x" size={13} style={{ color: 'var(--lbb-bad-fg)', flexShrink: 0 }} />
-          <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg)', flex: 1, minWidth: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{row.folderName}</span>
-          <span style={{ fontSize: 'var(--lbb-fs-10)', fontWeight: 700, color: 'var(--lbb-bad-fg)', textTransform: 'uppercase', letterSpacing: 0.06, flexShrink: 0 }}>current</span>
+          <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg)',
+            flex: 1, minWidth: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+            {hasWrongLb && folderLb ? highlightLb(row.folderName, folderLb, true) : row.folderName}
+          </span>
+          <span style={{ fontSize: 'var(--lbb-fs-10)', fontWeight: 700, color: 'var(--lbb-bad-fg)',
+            textTransform: 'uppercase', letterSpacing: 0.06, flexShrink: 0 }}>current</span>
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 12px', background: 'var(--lbb-ok-bg)', borderTop: '1px solid var(--lbb-border)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 12px',
+          background: 'var(--lbb-ok-bg)', borderTop: '1px solid var(--lbb-border)' }}>
           <Icon name="check" size={13} style={{ color: 'var(--lbb-ok-fg)', flexShrink: 0 }} />
-          <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg)', fontWeight: 600, flex: 1, minWidth: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{step.proposed}</span>
-          <span style={{ fontSize: 'var(--lbb-fs-10)', fontWeight: 700, color: 'var(--lbb-ok-fg)', textTransform: 'uppercase', letterSpacing: 0.06, flexShrink: 0 }}>proposed</span>
+          {editing ? (
+            <input
+              value={editValue}
+              onChange={e => setEditValue(e.target.value)}
+              autoFocus
+              style={{ flex: 1, minWidth: 0, fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-12)',
+                background: 'transparent', border: 'none', outline: '1px solid var(--lbb-ok-bar)',
+                borderRadius: 4, padding: '2px 6px', color: 'var(--lbb-fg)' }}
+            />
+          ) : (
+            <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg)',
+              fontWeight: 600, flex: 1, minWidth: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+              {lbTag ? highlightLb(step.proposed!, lbTag) : step.proposed}
+            </span>
+          )}
+          <span style={{ fontSize: 'var(--lbb-fs-10)', fontWeight: 700, color: 'var(--lbb-ok-fg)',
+            textTransform: 'uppercase', letterSpacing: 0.06, flexShrink: 0 }}>
+            {editing ? 'editing' : 'proposed'}
+          </span>
         </div>
       </div>
-      <div style={{ display: 'flex', gap: 8 }}>
-        <Button variant="primary" size="sm" icon="check" onClick={onRename}>Apply rename</Button>
-        <Button variant="ghost" size="sm" icon="refresh" onClick={() => onRun(['rename'])}>Re-check</Button>
+
+      {/* 4. Info banner */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '8px 10px', borderRadius: 6,
+        background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)',
+        fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
+        <Icon name="info" size={12} style={{ flexShrink: 0 }} />
+        <span style={{ flex: 1 }}>Dry-run — nothing changes until you apply.</span>
+        <Button variant="ghost" size="sm" icon="copy" onClick={copyDiff} style={{ flexShrink: 0 }}>Copy diff</Button>
       </div>
-      <div style={{ padding: '8px 10px', borderRadius: 6, background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)', fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
+      <div style={{ padding: '8px 10px', borderRadius: 6, background: 'var(--lbb-surface)',
+        border: '1px solid var(--lbb-border)', fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
         Logged to <span style={{ fontFamily: 'var(--lbb-mono)' }}>rename_history</span> — reversible for 30 days.
+      </div>
+
+      {/* Action buttons */}
+      <div style={{ display: 'flex', gap: 8 }}>
+        <Button variant="primary" size="sm" icon="check"
+          onClick={() => onRename(editing ? editValue : undefined)}>Apply rename</Button>
+        <Button variant="ghost" size="sm" icon="refresh" onClick={() => onRun(['rename'])}>Re-check</Button>
       </div>
     </div>
   )
@@ -787,7 +939,7 @@ function StageContent({ step, stageKey, row, onRun, onRename, onFile }: {
   stageKey: string
   row: PipelineRow
   onRun: (steps: string[]) => void
-  onRename: () => void
+  onRename: (customName?: string) => void
   onFile?: () => void
 }): React.JSX.Element {
   if (stageKey === 'verify')  return <VerifyStageContent  step={step} row={row} onRun={onRun} />
@@ -810,7 +962,7 @@ function DetailPanel({ row, initialStage, onClose, onRowRefresh, onRun, onRename
   onClose: () => void
   onRowRefresh: (id: string) => void
   onRun: (id: string, steps: string[]) => void
-  onRename: () => void
+  onRename: (customName?: string) => void
   onFile?: () => void
 }): React.JSX.Element {
   const [activeStage, setActiveStage] = useState(initialStage)
@@ -818,19 +970,28 @@ function DetailPanel({ row, initialStage, onClose, onRowRefresh, onRun, onRename
 
   return (
     <div style={{
-      position: 'absolute', top: 0, right: 0, bottom: 0, width: 460,
-      background: 'var(--lbb-bg)', borderLeft: '1px solid var(--lbb-border)',
-      display: 'flex', flexDirection: 'column', zIndex: 50,
-      boxShadow: '-4px 0 20px rgba(0,0,0,0.12)',
+      flex: 1, display: 'flex', flexDirection: 'column', minHeight: 0,
+      background: 'var(--lbb-bg)',
     }}>
-      {/* Header */}
+      {/* Header: ← Batch breadcrumb + folder name */}
       <div style={{
-        padding: '12px 16px', borderBottom: '1px solid var(--lbb-border)',
+        padding: '12px 20px', borderBottom: '1px solid var(--lbb-border)',
         display: 'flex', alignItems: 'center', gap: 10, flexShrink: 0,
       }}>
+        <button
+          onClick={onClose}
+          style={{
+            display: 'inline-flex', alignItems: 'center', gap: 5,
+            background: 'none', border: '1px solid var(--lbb-border2)',
+            borderRadius: 6, padding: '4px 10px', color: 'var(--lbb-fg2)',
+            fontFamily: 'inherit', fontSize: 'var(--lbb-fs-12)', cursor: 'pointer',
+          }}
+        >
+          <Icon name="chevLeft" size={13} /> Batch
+        </button>
         <Icon name="folder" size={13} style={{ color: 'var(--lbb-fg3)' }} />
         <span style={{
-          fontWeight: 600, fontSize: 'var(--lbb-fs-12)', flex: 1, minWidth: 0,
+          fontWeight: 600, fontSize: 'var(--lbb-fs-13)', flex: 1, minWidth: 0,
           whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
           fontFamily: 'var(--lbb-mono)',
         }}>
@@ -840,11 +1001,10 @@ function DetailPanel({ row, initialStage, onClose, onRowRefresh, onRun, onRename
           onClick={() => window.api.openPath(row.folderPath)}>
           Open
         </Button>
-        <IconButton icon="x" title="Close" onClick={onClose} />
       </div>
 
-      {/* Stage stepper */}
-      <div style={{ padding: '12px 16px', borderBottom: '1px solid var(--lbb-border)', flexShrink: 0 }}>
+      {/* Stage stepper — full width, all 5 stages */}
+      <div style={{ padding: '14px 24px', borderBottom: '1px solid var(--lbb-border)', flexShrink: 0 }}>
         <StageStepper
           folder={folderRow}
           stages={DEFAULT_STAGES}
@@ -853,8 +1013,8 @@ function DetailPanel({ row, initialStage, onClose, onRowRefresh, onRun, onRename
         />
       </div>
 
-      {/* Stage content */}
-      <div style={{ flex: 1, overflowY: 'auto', padding: '14px 16px' }}>
+      {/* Stage panel (scrollable) */}
+      <div style={{ flex: 1, overflowY: 'auto', padding: '20px 24px' }}>
         {activeStage === 'lbdir' ? (
           <LbdirStageContent row={row} onRowRefresh={onRowRefresh} />
         ) : (
@@ -876,16 +1036,17 @@ function DetailPanel({ row, initialStage, onClose, onRowRefresh, onRun, onRename
 
 export function ScreenPipeline(): React.JSX.Element {
   const { t } = useTranslation()
+  const navigate = useNavigate()
   const { folders: queueFolders, addFolders: addToQueue, removeFolders, clearFolders } = useFolderQueueStore()
 
   const [rows, setRows]                     = useState<PipelineRow[]>([])
   const [filter, setFilter]                 = useState<Bucket>('all')
+  const [autorun, setAutorun]               = useState(true)
   const [tableSearch, setTableSearch]       = useState('')
   const [queueSearch, setQueueSearch]       = useState('')
   const [activeQueue, setActiveQueue]       = useState<string | null>(null)
   const [lastShiftAnchor, setLastShiftAnchor] = useState<string | null>(null)
   const [dragOver, setDragOver]             = useState(false)
-  const [shallowScan, setShallowScan]       = useState(false)
   const [ctxMenu, setCtxMenu]               = useState<{ x: number; y: number; id: string } | null>(null)
   const [detailId, setDetailId]             = useState<string | null>(null)
   const [detailStage, setDetailStage]       = useState<string>('verify')
@@ -903,12 +1064,11 @@ export function ScreenPipeline(): React.JSX.Element {
     })
   }, [queueFolders])
 
-  const tableParentRef = useRef<HTMLDivElement>(null)
-  const flatListRef    = useRef<VItem[]>([])
-  const stopRef        = useRef(false)
-  const abortRef       = useRef<AbortController | null>(null)
-  const bulkMenuRef    = useRef<HTMLDivElement>(null)
-  const [bulkMenuOpen, setBulkMenuOpen] = useState(false)
+  const tableParentRef    = useRef<HTMLDivElement>(null)
+  const flatListRef       = useRef<VItem[]>([])
+  const stopRef           = useRef(false)
+  const abortRef          = useRef<AbortController | null>(null)
+  const autorunPendingRef = useRef<string[]>([])
 
   // ── Derived counts ───────────────────────────────────────────────────────────
   const counts = {
@@ -990,9 +1150,12 @@ export function ScreenPipeline(): React.JSX.Element {
     setRows(prev => {
       const existing = new Set(prev.map(r => r.id))
       const newRows = paths.filter(p => !existing.has(p)).map(emptyRow)
+      if (autorun && newRows.length) {
+        autorunPendingRef.current = [...autorunPendingRef.current, ...newRows.map(r => r.id)]
+      }
       return [...prev, ...newRows]
     })
-  }, [addToQueue])
+  }, [addToQueue, autorun])
 
   // ── Backend: run steps ───────────────────────────────────────────────────────
   const runSteps = useCallback(async (targetIds: string[], steps: string[]) => {
@@ -1036,6 +1199,16 @@ export function ScreenPipeline(): React.JSX.Element {
     setRows(prev => prev.map(r => r.running ? { ...r, running: false } : r))
   }, [])
 
+  // ── Auto-run: drain pending queue after state settles ────────────────────────
+  useEffect(() => {
+    const pending = autorunPendingRef.current
+    if (!pending.length) return
+    const ready = pending.filter(id => rows.some(r => r.id === id))
+    if (!ready.length) return
+    autorunPendingRef.current = pending.filter(id => !ready.includes(id))
+    runSteps(ready, ['verify', 'lookup'])
+  }, [rows, runSteps])
+
   // Refresh one row's lbdir step (called after reconcile apply in detail panel)
   const refreshDetailRow = useCallback(async (id: string) => {
     const target = rows.find(r => r.id === id)
@@ -1054,8 +1227,8 @@ export function ScreenPipeline(): React.JSX.Element {
   }, [rows, updateRow])
 
   // ── Apply a single rename ────────────────────────────────────────────────────
-  const applyRename = useCallback(async (row: PipelineRow) => {
-    const proposed = row.steps.rename.proposed
+  const applyRename = useCallback(async (row: PipelineRow, customName?: string) => {
+    const proposed = customName ?? row.steps.rename.proposed
     if (!proposed) return
     try {
       const resp = await fetch(`${BASE}/api/folder/rename`, {
@@ -1164,11 +1337,6 @@ export function ScreenPipeline(): React.JSX.Element {
     if (paths.length) addFolders(paths)
   }, [addFolders])
 
-  const handleAddSingleFolder = useCallback(async () => {
-    const path = await window.api.pickDir()
-    if (path) addFolders([path])
-  }, [addFolders])
-
   const handleRemoveRow = useCallback((id: string) => {
     setRows(prev => prev.filter(r => r.id !== id))
     removeFolders([id])
@@ -1190,12 +1358,12 @@ export function ScreenPipeline(): React.JSX.Element {
       const resp = await fetch(`${BASE}/api/pipeline/scan-tree`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ root: dir, shallow: shallowScan }),
+        body: JSON.stringify({ root: dir, shallow: false }),
       })
       const data = await resp.json() as { folders?: string[]; error?: string }
       if (data.folders?.length) addFolders(data.folders)
     } catch { /* silent */ }
-  }, [addFolders, shallowScan])
+  }, [addFolders])
 
   // ── Selection ────────────────────────────────────────────────────────────────
   const toggleSelect = useCallback((id: string, shift: boolean) => {
@@ -1233,16 +1401,6 @@ export function ScreenPipeline(): React.JSX.Element {
     setDetailId(id)
     setDetailStage(stage ?? (row ? firstActiveStage(row) : 'verify'))
   }, [detailId, rows])
-
-  // ── Bulk-actions menu close on outside click ─────────────────────────────────
-  useEffect(() => {
-    const handler = (e: MouseEvent) => {
-      if (bulkMenuRef.current && !bulkMenuRef.current.contains(e.target as Node))
-        setBulkMenuOpen(false)
-    }
-    document.addEventListener('mousedown', handler)
-    return () => document.removeEventListener('mousedown', handler)
-  }, [])
 
   // ── ⌘A keyboard shortcut ────────────────────────────────────────────────────
   useEffect(() => {
@@ -1296,87 +1454,106 @@ export function ScreenPipeline(): React.JSX.Element {
       <div style={{
         padding: '12px 24px', borderBottom: '1px solid var(--lbb-border)',
         background: 'linear-gradient(180deg, var(--lbb-accent-soft) 0%, transparent 140%)',
-        display: 'flex', alignItems: 'center', gap: 18, flexShrink: 0,
+        display: 'flex', alignItems: 'center', gap: 16, flexShrink: 0,
       }}>
+        {/* Icon square */}
         <div style={{
           width: 36, height: 36, borderRadius: 9,
           background: 'var(--lbb-accent-mid)', color: 'var(--lbb-accent-onMid)',
           display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-          boxShadow: '0 1px 0 rgba(255,255,255,0.18) inset', flexShrink: 0,
+          boxShadow: '0 1px 0 rgba(255,255,255,0.18) inset', flex: '0 0 36px',
         }}>
           <Icon name="pipeline" size={18} />
         </div>
 
-        <div style={{ minWidth: 260 }}>
+        {/* Title block */}
+        <div style={{ minWidth: 230 }}>
           <div style={{ fontSize: 'var(--lbb-fs-16)', fontWeight: 700, letterSpacing: -0.01 }}>
-            {t('pipeline.title')}{counts.all > 0 ? ` ${t('pipeline.folderQueued', { count: counts.all })}` : ''}
+            {t('pipeline.titleFolders', { count: counts.all })}
           </div>
           <div style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)', marginTop: 2 }}>
-            {counts.all === 0 ? t('pipeline.emptyHint') : t('pipeline.runHint')}
+            {t('pipeline.runHint')}
           </div>
         </div>
 
-        {counts.all > 0 && (
-          <div style={{ display: 'flex', gap: 8, marginLeft: 12 }}>
-            <Pill tone="ok"   soft dot>{t('pipeline.done',          { count: counts.done })}</Pill>
-            <Pill tone="warn" soft dot>{t('pipeline.readyToRename', { count: counts.ready })}</Pill>
-            <Pill tone="bad"  soft dot>{t('pipeline.needAttention', { count: counts.needs })}</Pill>
-          </div>
-        )}
+        {/* Bucket filter pills — one per non-zero bucket, clicking toggles table filter */}
+        <div style={{ display: 'flex', gap: 7, marginLeft: 8 }}>
+          {BANNER_BUCKETS.map(({ key, tone }) => counts[key] > 0 && (
+            <button
+              key={key}
+              onClick={() => setFilter(filter === key ? 'all' : key)}
+              style={{
+                display: 'inline-flex', alignItems: 'center', gap: 6,
+                padding: '3px 10px', borderRadius: 999,
+                cursor: 'pointer', fontFamily: 'inherit', whiteSpace: 'nowrap',
+                background: filter === key ? `var(--lbb-${tone}-bg)` : 'var(--lbb-surface)',
+                border: `1px solid ${filter === key ? `var(--lbb-${tone}-bar)` : 'var(--lbb-border2)'}`,
+                color: `var(--lbb-${tone}-fg)`,
+                fontSize: 11.5, fontWeight: 600,
+              }}
+            >
+              <span style={{
+                width: 7, height: 7, borderRadius: '50%',
+                background: `var(--lbb-${tone}-bar)`,
+              }} />
+              {counts[key]} {t(`pipeline.filter.${key}`).toLowerCase()}
+            </button>
+          ))}
+        </div>
 
         <div style={{ flex: 1 }} />
 
-        <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-          {isRunning ? (
-            <Button variant="secondary" size="md" icon="x" onClick={stopRun}>{t('pipeline.stop')}</Button>
-          ) : (
-            <div ref={bulkMenuRef} style={{ position: 'relative' }}>
-              <Button variant="ghost" size="md" icon="more" onClick={() => setBulkMenuOpen(v => !v)}>
-                {t('pipeline.bulkActions')}
-              </Button>
-              {bulkMenuOpen && (
-                <div style={{
-                  position: 'absolute', top: 'calc(100% + 4px)', right: 0, zIndex: 100,
-                  background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)',
-                  borderRadius: 8, padding: 4, minWidth: 180,
-                  boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
-                }}>
-                  {([
-                    { label: t('pipeline.selectAllVisible'), action: () => { selectAll(); setBulkMenuOpen(false) }, color: undefined },
-                    ...(selectedRows.length > 0 ? [{ label: t('pipeline.clearSelection', { count: selectedRows.length }), action: () => { clearSelection(); setBulkMenuOpen(false) }, color: undefined }] : []),
-                  ]).map((item, i) => (
-                    <button key={i} onClick={item.action} style={{
-                      display: 'block', width: '100%', textAlign: 'left',
-                      padding: '6px 12px', fontSize: 'var(--lbb-fs-12-5)', cursor: 'pointer',
-                      border: 'none', background: 'transparent',
-                      color: item.color ?? 'var(--lbb-fg)', borderRadius: 5,
-                    }}>{item.label}</button>
-                  ))}
-                  <div style={{ height: 1, background: 'var(--lbb-border)', margin: '4px 0' }} />
-                  <button
-                    onClick={() => { setRows([]); setActiveQueue(null); setDetailId(null); clearFolders(); setBulkMenuOpen(false) }}
-                    style={{
-                      display: 'block', width: '100%', textAlign: 'left',
-                      padding: '6px 12px', fontSize: 'var(--lbb-fs-12-5)', cursor: 'pointer',
-                      border: 'none', background: 'transparent',
-                      color: 'var(--lbb-bad, #e05252)', borderRadius: 5,
-                    }}
-                  >{t('pipeline.clearQueue')}</button>
-                </div>
-              )}
-            </div>
-          )}
-          {counts.ready > 0 && !isRunning && (
-            <Button variant="primary" size="md" icon="check" onClick={applyAllReady}>
-              {t('pipeline.applyRenames', { count: counts.ready })}
-            </Button>
-          )}
-          {fileableRows.length > 0 && !isRunning && (
-            <Button variant="primary" size="md" icon="folder" onClick={applyAllFileable}>
-              {t('pipeline.fileAllReady', { count: fileableRows.length })}
-            </Button>
-          )}
-        </div>
+        {/* Auto-run toggle */}
+        <button
+          onClick={() => setAutorun(a => !a)}
+          title={t('pipeline.autoRunHint')}
+          style={{
+            display: 'inline-flex', alignItems: 'center', gap: 8,
+            padding: '5px 10px', borderRadius: 8,
+            cursor: 'pointer', fontFamily: 'inherit', whiteSpace: 'nowrap',
+            background: autorun ? 'var(--lbb-accent-soft)' : 'var(--lbb-surface)',
+            border: `1px solid ${autorun ? 'var(--lbb-accent-mid)' : 'var(--lbb-border2)'}`,
+            color: autorun ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg2)',
+            fontSize: 12, fontWeight: 600,
+          }}
+        >
+          <span style={{
+            width: 26, height: 15, borderRadius: 999,
+            background: autorun ? 'var(--lbb-accent-mid)' : 'var(--lbb-border2)',
+            position: 'relative', transition: 'background 120ms',
+          }}>
+            <span style={{
+              position: 'absolute', top: 2,
+              left: autorun ? 13 : 2,
+              width: 11, height: 11, borderRadius: '50%',
+              background: '#fff', transition: 'left 120ms',
+            }} />
+          </span>
+          {t('pipeline.autoRun')}
+        </button>
+
+        {/* Apply all N ready — always visible, disabled when 0 */}
+        <Button
+          variant="primary"
+          size="md"
+          icon="check"
+          disabled={counts.ready === 0}
+          onClick={applyAllReady}
+        >
+          {t('pipeline.applyAllReady', { count: counts.ready })}
+        </Button>
+
+        {/* File all N into collection — only when shelf > 0 */}
+        {counts.shelf > 0 && (
+          <Button
+            variant="primary"
+            size="md"
+            icon="collection"
+            onClick={applyAllFileable}
+          >
+            {t('pipeline.fileAllCollection', { count: counts.shelf })}
+          </Button>
+        )}
       </div>
 
       {/* ── Two-pane body ────────────────────────────────────────────────────── */}
@@ -1429,7 +1606,7 @@ export function ScreenPipeline(): React.JSX.Element {
                 folder={toFolderRow(r)}
                 active={activeQueue === r.id || detailId === r.id}
                 onClick={() => {
-                  scrollToRow(r.id)
+                  if (!detailRow) scrollToRow(r.id)
                   openDetail(r.id)
                 }}
               />
@@ -1440,64 +1617,67 @@ export function ScreenPipeline(): React.JSX.Element {
             padding: 12, borderTop: '1px solid var(--lbb-border)',
             display: 'flex', flexDirection: 'column', gap: 6,
           }}>
-            <Button variant="primary" size="sm" icon="folderPlus" block onClick={handlePickFolders}>{t('pipeline.queue.addFolders')}</Button>
-            <Button variant="secondary" size="sm" icon="folder" block onClick={handleAddSingleFolder}>{t('common.addFolder')}</Button>
-            <Button variant="secondary" size="sm" icon="search" block onClick={handleScanTree}>{t('pipeline.queue.scanTree')}</Button>
-            <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', cursor: 'pointer', paddingLeft: 2 }}>
-              <input type="checkbox" checked={shallowScan} onChange={e => setShallowScan(e.target.checked)} style={{ accentColor: 'var(--lbb-accent)' }} />
-              {t('common.shallowScan')}
-            </label>
-            <Button
-              variant="ghost" size="sm" icon="trash" block
-              onClick={() => { setRows([]); setActiveQueue(null); setDetailId(null); clearFolders() }}
-            >{t('common.clearList')}</Button>
-
+            <Button variant="primary" size="sm" icon="folderPlus" block onClick={handlePickFolders}>
+              {t('pipeline.queue.addFolders')}
+            </Button>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 6 }}>
+              <Button variant="secondary" size="sm" icon="search" onClick={handleScanTree}>
+                {t('pipeline.queue.scanTree')}
+              </Button>
+              <Button variant="ghost" size="sm" icon="trash"
+                onClick={() => { setRows([]); setActiveQueue(null); setDetailId(null); clearFolders() }}>
+                {t('common.clear')}
+              </Button>
+            </div>
+            <button
+              onClick={() => navigate('/quicklookup')}
+              style={{
+                display: 'flex', alignItems: 'center', gap: 8, width: '100%',
+                padding: '8px 10px', borderRadius: 7, cursor: 'pointer',
+                fontFamily: 'inherit', textAlign: 'left',
+                background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border2)',
+                color: 'var(--lbb-fg2)', fontSize: 'var(--lbb-fs-12)', fontWeight: 600,
+              }}
+            >
+              <Icon name="lookup" size={14} />
+              <span style={{ flex: 1 }}>Quick lookup</span>
+              <span style={{ fontSize: 'var(--lbb-fs-10)', color: 'var(--lbb-fg3)', fontWeight: 500 }}>no folder</span>
+            </button>
             <div style={{
-              marginTop: 10, padding: '8px 10px',
-              background: 'var(--lbb-surface2)', borderRadius: 6,
-              border: '1px solid var(--lbb-border)',
+              padding: '9px 11px', background: 'var(--lbb-surface2)', borderRadius: 7,
+              border: '1px dashed var(--lbb-border2)', fontSize: 'var(--lbb-fs-10-5)',
+              color: 'var(--lbb-fg3)', lineHeight: 1.45, display: 'flex', gap: 8, alignItems: 'flex-start',
             }}>
-              <div style={{
-                fontSize: 'var(--lbb-fs-10)', fontWeight: 700, color: 'var(--lbb-fg3)',
-                letterSpacing: 0.08, textTransform: 'uppercase', marginBottom: 6,
-              }}>
-                {t('pipeline.queue.runOnSelected', { count: counts.all })}
-              </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-                <Button
-                  variant="primary" size="sm" icon="play" block
-                  onClick={() => runSteps(rows.map(r => r.id), ['verify', 'lookup', 'rename', 'lbdir', 'file'])}
-                >{t('pipeline.queue.runAll')}</Button>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 4 }}>
-                  <Button variant="secondary" size="sm" onClick={() => runSteps(rows.map(r => r.id), ['verify'])}>{t('pipeline.queue.verify')}</Button>
-                  <Button variant="secondary" size="sm" onClick={() => runSteps(rows.map(r => r.id), ['lookup'])}>{t('pipeline.queue.lookup')}</Button>
-                  <Button variant="secondary" size="sm" onClick={() => runSteps(rows.map(r => r.id), ['rename'])}>{t('pipeline.queue.rename')}</Button>
-                  <Button variant="secondary" size="sm" onClick={() => runSteps(rows.map(r => r.id), ['lbdir'])}>{t('pipeline.queue.lbdir')}</Button>
-                  <Button variant="secondary" size="sm" onClick={() => runSteps(rows.map(r => r.id), ['file'])}>{t('pipeline.queue.collect')}</Button>
-                </div>
-              </div>
+              <Icon name="drop" size={13} style={{ marginTop: 1, flex: '0 0 auto' }} />
+              <span>Drag folders anywhere to queue them. They'll verify + look up automatically.</span>
             </div>
           </div>
         </aside>
 
-        {/* ── Main table area ─────────────────────────────────────────────────── */}
+        {/* ── Main content area ──────────────────────────────────────────────── */}
         <section style={{ display: 'flex', flexDirection: 'column', minWidth: 0, minHeight: 0, position: 'relative' }}>
 
-          {/* Bucket filter bar */}
+          {/* Detail view replaces batch table when a folder is open */}
+          {detailRow && (
+            <DetailPanel
+              key={detailRow.id}
+              row={detailRow}
+              initialStage={detailStage}
+              onClose={() => setDetailId(null)}
+              onRowRefresh={refreshDetailRow}
+              onRun={(id, steps) => runSteps([id], steps)}
+              onRename={(customName) => applyRename(detailRow, customName)}
+              onFile={() => applyFile(detailRow)}
+            />
+          )}
+
+          {!detailRow && (<>
+
+          {/* Filter bar */}
           <div style={{
-            padding: '12px 20px', display: 'flex', alignItems: 'center', gap: 6,
-            borderBottom: '1px solid var(--lbb-border)', flexWrap: 'wrap', flexShrink: 0,
+            padding: '8px 20px', display: 'flex', alignItems: 'center', gap: 6,
+            borderBottom: '1px solid var(--lbb-border)', flexShrink: 0,
           }}>
-            <Chip active={filter === 'all'}     onClick={() => setFilter('all')}     count={counts.all}>{t('pipeline.filter.all')}</Chip>
-            <Chip active={filter === 'needs'}   onClick={() => setFilter('needs')}   count={counts.needs}>{t('pipeline.filter.needs')}</Chip>
-            <Chip active={filter === 'ready'}   onClick={() => setFilter('ready')}   count={counts.ready}>{t('pipeline.filter.ready')}</Chip>
-            {counts.running > 0 && (
-              <Chip active={filter === 'running'} onClick={() => setFilter('running')} count={counts.running}>{t('pipeline.filter.running')}</Chip>
-            )}
-            {counts.shelf > 0 && (
-              <Chip active={filter === 'shelf'}   onClick={() => setFilter('shelf')}   count={counts.shelf}>{t('pipeline.filter.shelf')}</Chip>
-            )}
-            <Chip active={filter === 'done'}    onClick={() => setFilter('done')}    count={counts.done}>{t('pipeline.filter.done')}</Chip>
             <div style={{ flex: 1 }} />
             <Input
               icon="filter"
@@ -1583,13 +1763,15 @@ export function ScreenPipeline(): React.JSX.Element {
                 <colgroup>
                   <col style={{ width: 3 }} />
                   <col style={{ width: 32 }} />
+                  <col style={{ width: 380 }} />
+                  <col style={{ width: 232 }} />
                   <col />
-                  <col style={{ width: 220 }} />
-                  <col style={{ width: 120 }} />
-                  <col style={{ width: 120 }} />
+                  <col style={{ width: 104 }} />
+                  <col style={{ width: 128 }} />
                 </colgroup>
                 <thead>
                   <tr>
+                    <th style={{ width: 3, padding: 0 }} />
                     <TH>
                       <input
                         type="checkbox"
@@ -1599,6 +1781,7 @@ export function ScreenPipeline(): React.JSX.Element {
                     </TH>
                     <TH>{t('pipeline.table.folder')}</TH>
                     <TH>Stages</TH>
+                    <TH>Status</TH>
                     <TH>{t('pipeline.table.lb')}</TH>
                     <TH align="right"> </TH>
                   </tr>
@@ -1606,7 +1789,7 @@ export function ScreenPipeline(): React.JSX.Element {
                 <tbody>
                   {virtualizer.getVirtualItems().length > 0 && (
                     <tr aria-hidden="true">
-                      <td colSpan={6} style={{ height: virtualizer.getVirtualItems()[0].start, padding: 0, border: 'none' }} />
+                      <td colSpan={7} style={{ height: virtualizer.getVirtualItems()[0].start, padding: 0, border: 'none' }} />
                     </tr>
                   )}
                   {virtualizer.getVirtualItems().map(vItem => {
@@ -1622,7 +1805,7 @@ export function ScreenPipeline(): React.JSX.Element {
                           key={`group-${item.label}`}
                           label={item.label}
                           count={item.count}
-                          colSpan={5}
+                          colSpan={6}
                           style={{ color: `var(--lbb-${edgeMap[item.bucket] ?? 'mute'}-fg)` }}
                         />
                       )
@@ -1667,6 +1850,21 @@ export function ScreenPipeline(): React.JSX.Element {
                             onPick={key => openDetail(r.id, key)}
                           />
                         </TD>
+                        <TD style={{ whiteSpace: 'normal' }}>
+                          {(() => {
+                            const st = deriveFolderStatus(r)
+                            return (
+                              <div style={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+                                <StatusTag state={st.state}>{st.label}</StatusTag>
+                                {st.reason && (
+                                  <span style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)', lineHeight: 1.35 }}>
+                                    {st.reason}
+                                  </span>
+                                )}
+                              </div>
+                            )
+                          })()}
+                        </TD>
                         <TD mono style={{
                           color: r.bucket === 'ready' ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg2)',
                           fontWeight: r.bucket === 'ready' ? 600 : undefined,
@@ -1702,7 +1900,7 @@ export function ScreenPipeline(): React.JSX.Element {
                     const remaining = virtualizer.getTotalSize() - last.end
                     return remaining > 0 ? (
                       <tr aria-hidden="true">
-                        <td colSpan={6} style={{ height: remaining, padding: 0, border: 'none' }} />
+                        <td colSpan={7} style={{ height: remaining, padding: 0, border: 'none' }} />
                       </tr>
                     ) : null
                   })()}
@@ -1711,19 +1909,7 @@ export function ScreenPipeline(): React.JSX.Element {
             </div>
           )}
 
-          {/* ── Detail panel (slide-in on row click) ──────────────────────────── */}
-          {detailRow && (
-            <DetailPanel
-              key={detailRow.id}
-              row={detailRow}
-              initialStage={detailStage}
-              onClose={() => setDetailId(null)}
-              onRowRefresh={refreshDetailRow}
-              onRun={(id, steps) => runSteps([id], steps)}
-              onRename={() => applyRename(detailRow)}
-              onFile={() => applyFile(detailRow)}
-            />
-          )}
+          </>)}
         </section>
       </div>
 

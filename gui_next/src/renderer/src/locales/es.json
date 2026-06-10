@@ -52,7 +52,8 @@
       "scraper": "Rascador",
       "settings": "Ajustes",
       "setup": "Configurar",
-      "themes": "Temas"
+      "themes": "Temas",
+      "advancedTools": "Herramientas avanzadas"
     },
     "statusBar": {
       "db": "BD:",
@@ -328,7 +329,7 @@
     "folderQueued_one": "- {{count}} carpeta en cola",
     "folderQueued_other": "- {{count}} carpetas en cola",
     "emptyHint": "Suelte las carpetas para empezar, o utilice \"Añadir carpetas...\" en el carril de cola.",
-    "runHint": "Suelte más carpetas en cualquier momento: haga clic en \"Ejecutar los 5 pasos\" para procesar la cola.",
+    "runHint": "Suelte una carpeta y verificará → identificará → propondrá un renombre por sí sola.",
     "done_one": "{{count}} hecho",
     "done_other": "{{count}} hecho",
     "readyToRename_one": "{{count}} listo para renombrar",
@@ -361,10 +362,10 @@
     },
     "filter": {
       "all": "Todos",
-      "needs": "Requiere atención",
-      "ready": "Listo",
+      "needs": "Necesita su atención",
+      "ready": "Listo para aplicar",
       "running": "En curso",
-      "shelf": "Aplazado",
+      "shelf": "Listo para archivar",
       "needAttention": "Necesita atención",
       "readyToRename": "Listo para renombrar",
       "done": "Hecho",

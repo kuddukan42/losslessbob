@@ -1,6 +1,13 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-134: GUI dev launch — kill stale backend, start fresh on every `npm run dev`
+Priority: High
+Status: Done
+Added: 2026-06-09
+Closed: 2026-06-09
+Description: Added killPortProcess() in gui_next/src/main/index.ts. After the existing killStalePid() call, it uses lsof (Linux/Mac) or netstat+taskkill (Windows) to find and SIGTERM any process on port 5174, then waits 400ms before spawning a fresh backend. Guarantees a clean slate even when the previous backend was started outside Electron or the PID file was missing.
+
 TODO-110: Pipeline — handling for duplicate and linked LBs
 Priority: Medium
 Status: Done

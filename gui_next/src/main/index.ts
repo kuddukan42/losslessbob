@@ -1,7 +1,7 @@
 import { app, BrowserWindow, shell, ipcMain, dialog } from 'electron'
 import { join } from 'path'
 import { tmpdir } from 'os'
-import { spawn, ChildProcess } from 'child_process'
+import { spawn, ChildProcess, execSync } from 'child_process'
 import { createConnection } from 'net'
 import { writeFile, readFile, unlink } from 'fs/promises'
 
@@ -37,9 +37,33 @@ async function killStalePid(): Promise<void> {
   } catch { /* no PID file — nothing to kill */ }
 }
 
+async function killPortProcess(port: number): Promise<void> {
+  try {
+    if (process.platform === 'win32') {
+      const out = execSync(`netstat -ano | findstr LISTENING | findstr :${port}`, { encoding: 'utf8' })
+      const pids = [...new Set(out.trim().split('\n')
+        .map(l => l.trim().split(/\s+/).pop())
+        .filter((p): p is string => !!p && /^\d+$/.test(p)))]
+      pids.forEach(pid => { try { execSync(`taskkill /F /PID ${pid}`, { stdio: 'ignore' }) } catch {} })
+    } else {
+      const out = execSync(`lsof -ti :${port}`, { encoding: 'utf8' }).trim()
+      if (out) {
+        out.split('\n').forEach(pid => {
+          const n = parseInt(pid.trim(), 10)
+          if (n) { try { process.kill(n, 'SIGTERM') } catch {} }
+        })
+        await new Promise(r => setTimeout(r, 400))
+      }
+    }
+  } catch { /* nothing on port — nothing to do */ }
+}
+
 async function ensureBackend(): Promise<void> {
-  // Kill any backend left over from a previous session or a hot-reload restart
+  // Kill any backend left over from a previous session or a hot-reload restart.
+  // Two-pass kill: PID file first (fast path), then port scan (catches manually
+  // started backends or cases where the PID file was never written).
   await killStalePid()
+  await killPortProcess(FLASK_PORT)
 
   let cmd: string
   let args: string[]

@@ -55,7 +55,8 @@
       "scraper": "Raschietto",
       "settings": "Impostazioni",
       "setup": "Impostazione",
-      "themes": "Temi"
+      "themes": "Temi",
+      "advancedTools": "Strumenti avanzati"
     },
     "statusBar": {
       "db": "DB:",
@@ -331,7 +332,7 @@
     "folderQueued_one": "- Cartella {{count}} in coda",
     "folderQueued_other": "- {{count}} cartelle in coda",
     "emptyHint": "Per iniziare, rilasciare le cartelle o utilizzare \"Aggiungi cartelle...\" nella guida in coda.",
-    "runHint": "Lasciare cadere altre cartelle in qualsiasi momento - fare clic su \"Esegui tutti e 5 i passaggi\" per elaborare la coda",
+    "runHint": "Lascia cadere una cartella e verifica → identifica → propone un rinominamento da sola.",
     "done_one": "{{count}} fatto",
     "done_other": "{{count}} fatto",
     "readyToRename_one": "{{count}} pronto per essere rinominato",
@@ -364,10 +365,10 @@
     },
     "filter": {
       "all": "Tutti",
-      "needs": "Richiede attenzione",
-      "ready": "Pronto",
+      "needs": "Ha bisogno di lei",
+      "ready": "Pronto ad applicare",
       "running": "In corso",
-      "shelf": "In attesa",
+      "shelf": "Pronto per l'archiviazione",
       "needAttention": "Necessità di attenzione",
       "readyToRename": "Pronti a rinominare",
       "done": "Fatto",
