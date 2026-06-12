@@ -14,6 +14,7 @@ import i18n from './i18n'
 import { ScreenHome } from './screens/ScreenHome'
 import { ScreenPipeline } from './screens/ScreenPipeline'
 import { ScreenSetup } from './screens/ScreenSetup'
+import { ScreenMounts } from './screens/ScreenMounts'
 import { ScreenCollection } from './screens/ScreenCollection'
 import { ScreenSearch } from './screens/ScreenSearch'
 import { ScreenBootlegs } from './screens/ScreenBootlegs'
@@ -278,6 +279,7 @@ export default function App(): React.JSX.Element {
           <Route path="/dbeditor"    element={<ScreenDbEditor />} />
           <Route path="/scraper"     element={<CuratorRoute element={<ScreenScraper />} />} />
           <Route path="/setup"       element={<ScreenSetup />} />
+          <Route path="/mounts"      element={<ScreenMounts />} />
           <Route path="/themes"      element={<ScreenThemes />} />
         </Routes>
       </AppShell>

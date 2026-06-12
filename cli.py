@@ -39,9 +39,8 @@ import threading
 import time
 from pathlib import Path
 
-# ── Version ───────────────────────────────────────────────────────────────────
+from backend.version import VERSION as _VERSION
 
-_VERSION = "1.0.3"
 _HISTORY_FILE = Path.home() / ".losslessbob_history"
 
 

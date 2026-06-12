@@ -82,11 +82,18 @@ def get_mounts_with_stats(db_path=None) -> list[dict]:
         mount["online"] = _path_reachable(mount["root_path"])
         if mount["online"]:
             try:
-                mount["free"] = _human_bytes(shutil.disk_usage(mount["root_path"]).free)
+                usage = shutil.disk_usage(mount["root_path"])
+                mount["free"] = _human_bytes(usage.free)
+                mount["total"] = _human_bytes(usage.total)
+                mount["used_pct"] = round(usage.used / usage.total * 100) if usage.total else 0
             except OSError:
                 mount["free"] = "—"
+                mount["total"] = "—"
+                mount["used_pct"] = None
         else:
             mount["free"] = "—"
+            mount["total"] = "—"
+            mount["used_pct"] = None
     return mounts
 
 

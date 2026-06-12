@@ -1,6 +1,82 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-110: Pipeline — add free space and drive stats to mount cards
+Priority: Medium
+Status: Done
+Added: 2026-06-09
+Closed: 2026-06-12
+Description: Display disk usage information on each mount card in the Pipeline screen. Show
+free space remaining, total capacity, and used percentage for the drive backing each mount
+point. Update reactively so the card reflects current state when the pipeline is running.
+Implementation: backend/filer.py get_mounts_with_stats() now returns total (capacity) and
+used_pct alongside free/span/online via shutil.disk_usage(). gui_next CollectDetail.tsx
+MountPicker cards show "free of total" plus a colour-coded usage bar (warn >=75%, bad >=90%);
+reactively re-resolved by the existing pipeline polling.
+
+TODO-112: Backend uptime clock for debugging
+Priority: Low
+Status: Done
+Added: 2026-06-10
+Closed: 2026-06-12
+Description: Added a small running clock showing how long the Flask backend process has
+been up, for debugging purposes (e.g. confirming whether a restart actually happened
+after a backend code change). Backend exposes process start time via a new
+GET /api/system/uptime endpoint (uptime_seconds); /api/admin/status now shares the
+same start-time reference. GUI displays it on the About screen's About tab, next to
+version/build info, as a live HH:MM:SS clock.
+
+TODO-113: Make app version numbering consistent
+Priority: Low
+Status: Done
+Added: 2026-06-10
+Closed: 2026-06-12
+Description: The app version number appeared in multiple places (gui_next/package.json,
+splash screen, About dialog, sidebar tagline, forum post footer, CLI banner, backend
+VERSION file) and these didn't all match (1.0.3 - 1.4.0 across locations). Fix:
+gui_next/package.json (1.4.0) is now the source of truth for the GUI; the root
+VERSION file (used by backend.version.VERSION) is kept in sync and is the source
+of truth for the Python backend/CLI/forum poster. Renderer build now defines
+__APP_VERSION__ from package.json for SplashOverlay, AboutDialog, and the
+AppShell sidebar tagline (locale "appShell.version" now interpolates {{version}}).
+Removed duplicate hardcoded constants: backend/paths.py APP_VERSION (1.2.0),
+cli.py _VERSION (1.0.3).
+
+TODO-138: Pipeline — "Auto-rename" toggle for confident single-match renames
+Priority: Medium
+Status: Done
+Added: 2026-06-12
+Closed: 2026-06-12
+Description: Added an "Auto-rename" toggle to the pipeline screen header, next
+to "Auto-run on drop" (off by default). When a folder has verify, lookup, and
+lbdir all passing ("ok") and the rename step has resolved a single confident
+LB match with a proposed name (bucket "ready"), turning the toggle on applies
+that rename automatically via the existing applyRename() path — marking step 4
+(rename) green/"Renamed" and advancing the row toward the collect stage (step 5)
+without requiring the user to click "Apply rename". When the toggle is off,
+behavior is unchanged from before: proposed renames sit in the "ready" bucket
+for manual review/Apply. Implemented as a new effect (autoRenamedRef tracks
+which rows have already been auto-renamed to avoid re-triggering) in
+ScreenPipeline.tsx. Added pipeline.autoRename / pipeline.autoRenameHint locale
+strings to en.json; other locales not refreshed (DeepL key currently disabled).
+
+TODO-137: Pipeline — swap step order so LBDIR runs before Rename
+Priority: Medium
+Status: Done
+Added: 2026-06-11
+Closed: 2026-06-12
+Description: In the pipeline workflow (ScreenPipeline.tsx / backend/app.py
+_pipeline_process_folder), step 3 (Rename proposal) used to run before step 4
+(LBDIR retrieve + verify). Swapped the order so LBDIR reconcile/verify runs first and
+Rename runs after — running Rename before LBDIR has reconciled the folder's contents
+could lead to proposing/applying the wrong folder rename. Updated step numbering/labels
+in both the backend (_pipeline_process_folder, pipeline_run steps default list) and
+the GUI (PipelineRow.steps ordering, step-key iteration order, status derivation) to
+match the new order: verify -> lookup -> lbdir -> rename -> collect. Also added an
+optional lb_number_hint body param to /api/lbdir/check and /api/lbdir/reconcile (and
+wired it from the pipeline's Lookup result) since LBDIR now runs before the folder is
+renamed/filed and won't yet have "LB-NNNNN" in its name or my_collection row.
+
 TODO-134: GUI dev launch — kill stale backend, start fresh on every `npm run dev`
 Priority: High
 Status: Done

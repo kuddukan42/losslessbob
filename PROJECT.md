@@ -508,6 +508,7 @@ Index: `idx_routes_mount ON collection_routes(mount_id)`.
 | Method | Route | Description |
 |--------|-------|-------------|
 | GET | `/api/db/stats` | Row counts, latest LB number, last import date |
+| GET | `/api/system/uptime` | `{uptime_seconds}` since the Flask process started (About screen uptime clock) |
 | GET | `/api/db/missing_lb_numbers` | List of integers in 1..max_lb absent from checksums table |
 | POST | `/api/db/import` | Start async flat-file import. Returns `{ok, running}` immediately. |
 | GET | `/api/db/import/status` | Poll import progress: `{running, stage, rows_parsed, rows_total, rows_merged, new_lb_count, message, error}` |
@@ -758,9 +759,9 @@ Index: `idx_routes_mount ON collection_routes(mount_id)`.
 ### LBDir
 | Method | Route | Description |
 |--------|-------|-------------|
-| POST | `/api/lbdir/check` | Find `lbdir*.txt` in each folder, parse, and verify all listed files. Returns extended result with `lbdir_found`, `lbdir_path`, `lb_number`, plus `length`/`expanded_size`/`cdr`/`wave_problems`/`fmt`/`ratio` per file from shntool_len section. |
-| POST | `/api/lbdir/retrieve` | Copy `lbdir*.txt` from `data/attachments/LB-{N:05d}/` to the target folder (triggering a scrape if not yet cached). Looks up LB number from `my_collection` by `disk_path`. |
-| POST | `/api/lbdir/reconcile` | Preview-only: scan disk files recursively, compute MD5, match against missing lbdir entries. Returns `{results: [{folder, proposals:[{disk_rel,lbdir_rel,md5}], unmatched_lbdir, unmatched_disk, warnings}]}`. Does NOT move any files. |
+| POST | `/api/lbdir/check` | Find `lbdir*.txt` in each folder, parse, and verify all listed files. Returns extended result with `lbdir_found`, `lbdir_path`, `lb_number`, plus `length`/`expanded_size`/`cdr`/`wave_problems`/`fmt`/`ratio` per file from shntool_len section. `lb_number` resolves via `my_collection.disk_path` -> `LB-NNNNN` in the folder name -> optional `lb_number_hint` body param (pipeline passes the Lookup step's resolved LB# since LBDIR now runs before Rename). |
+| POST | `/api/lbdir/retrieve` | Copy `lbdir*.txt` from `data/attachments/LB-{N:05d}/` to the target folder (triggering a scrape if not yet cached). Looks up LB number from `my_collection` by `disk_path`, then folder name, then optional `lb_number_hint` body param. |
+| POST | `/api/lbdir/reconcile` | Preview-only: scan disk files recursively, compute MD5, match against missing lbdir entries. Returns `{results: [{folder, proposals:[{disk_rel,lbdir_rel,md5}], unmatched_lbdir, unmatched_disk, warnings}]}`. Does NOT move any files. `site_proposals` lb_number resolves via `my_collection` -> folder name -> optional `lb_number_hint` body param. |
 | POST | `/api/lbdir/apply_reconcile` | Apply selected rename proposals from `/api/lbdir/reconcile`. Body: `{folder, renames:[{from,to}]}`. Uses `shutil.move`; creates subdirectories as needed; never deletes. Returns `{applied, errors}`. |
 | POST | `/api/lbdir/find_extra` | List files in each folder not referenced in the lbdir MD5 section (lbdir file itself excluded). Returns `{results: [{folder, extra:['rel/path',...], lbdir_rel}]}`. |
 | POST | `/api/lbdir/delete_extra` | Permanently delete selected extra files. Body: `{folder, files:['rel/path',...]}`. After deletion, prunes empty subdirectories bottom-up. Returns `{deleted, removed_dirs, errors}`. |
@@ -1256,17 +1257,18 @@ Fourteen preset themes (Light, Dark, Black, Dracula, Blue, Purple, Red, Nord, Gr
 
 Second-generation GUI (primary, merged into main 2026-05-29) built with **Electron + React + TypeScript** (Vite + electron-vite). Communicates with the same Flask backend on port 5174 via `fetch()`. Preload bridge (`preload/index.ts`) exposes typed IPC handlers (`openPath`, `pickFile`, `pickFiles`, `pickDir`, `pickFolders`). All screens are registered in `App.tsx` and routed via a sidebar nav. **All future development happens here.** The legacy `gui/` PyQt6 frontend is frozen — it receives no new features or bug fixes.
 
-### Screens (all 14 fully wired as of 2026-05-29)
+### Screens (16 fully wired as of 2026-06-12)
 
 | Screen | File | Status |
 |--------|------|--------|
 | ScreenHome | `screens/ScreenHome.tsx` | Done — dashboard, live stats, activity log, flat-file update |
 | ScreenSetup | `screens/ScreenSetup.tsx` | Done — all 16 handlers: credentials, purge, import/export, master, data packages |
+| ScreenMounts | `screens/ScreenMounts.tsx` | Done — storage mounts, year routing, filing mode, preview tester (split out of ScreenSetup) |
 | ScreenCollection | `screens/ScreenCollection.tsx` | Done — sortable columns, wishlist, forum, torrents, duplicates, batch actions |
 | ScreenSearch | `screens/ScreenSearch.tsx` | Done — virtual table, sort, group-by-year, CSV export, column picker, saved views |
 | ScreenBootlegs | `screens/ScreenBootlegs.tsx` | Done — year/CDs filters, catalog browser, CSV export |
 | ScreenThemes | `screens/ScreenThemes.tsx` | Done — preset themes, typeface/font-size, custom color tokens |
-| ScreenPipeline | `screens/ScreenPipeline.tsx` | Done — folder queue, 5-step workflow (verify/lookup/rename/lbdir/collect), bulk-actions menu |
+| ScreenPipeline | `screens/ScreenPipeline.tsx` | Done — folder queue, 5-step workflow (verify/lookup/lbdir/rename/collect), bulk-actions menu, Auto-run + Auto-rename toggles |
 | ScreenQuickLookup | `screens/ScreenQuickLookup.tsx` | Done — paste/clipboard/drop zone, per-row checksum results table |
 | ScreenLookup | `screens/ScreenLookup.tsx` | Done — 4-source input, summary + detail tables |
 | ScreenVerify | `screens/ScreenVerify.tsx` | Done — folder verify/generate/retrieve workflow |
@@ -1394,6 +1396,9 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 
 | Date | Change |
 |------|--------|
+| 2026-06-12 | GUI reorg: `CollectionRoutingCard` (mounts, year routing, filing mode, preview tester) split out of `ScreenSetup` into a new `ScreenMounts` screen, with its own nav item directly below Setup in the Settings group, `/mounts` route, and "mounts" hard-drive icon. |
+| 2026-06-12 | TODO-110: `get_mounts_with_stats()` adds `total` (capacity) and `used_pct` to each mount via `shutil.disk_usage()`; pipeline Collect step's `CollectDetail.tsx` MountPicker cards show "free of total" plus a colour-coded usage bar (warn ≥75%, bad ≥90%), updating reactively as the pipeline re-resolves the Collect step. |
+| 2026-06-12 | TODO-112: backend uptime clock — new `GET /api/system/uptime` (`{uptime_seconds}`) sharing a single `_process_start_time` with `/api/admin/status`; About dialog's About tab shows a live HH:MM:SS uptime field next to version/build, to help confirm whether a backend restart actually happened. |
 | 2026-06-11 | BUG-161: pipeline `/api/pipeline/run` LBDIR step (step 4) now calls `database.set_lbdir_verified()` on a `pass`, so the Collect stage's "Confirmed" date (`my_collection.lbdir_verified_at`) updates for owned folders re-checked in place. |
 | 2026-06-11 | BUG-159: `verify_folder_lbdir()` whitelists `extras/` (from `/api/lbdir/move_extras`) and `rename_log.txt` when computing unclaimed "extra" files — once those are the only leftovers, status resolves to `pass` so pipeline step 4 turns green after a reconcile. |
 | 2026-06-11 | BUG-158: `verify_folder_lbdir()` now detects files on disk not referenced by any lbdir entry, reporting them as `overall: "extra"` rows and a real `extra` count; new lbdir status `extra_files` (everything checksums-clean but stray files present) so such folders no longer show green and the reconcile/move-to-extras flow is reachable. |
@@ -1491,3 +1496,5 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 | 2026-06-11 | BUG-160 fix: `rename_history.renamed_at` now written as local time by `add_rename_history()` instead of SQLite's UTC `CURRENT_TIMESTAMP` default; one-time migration converts existing rows to local time. |
 | 2026-06-11 | Pipeline Collect tag preview (`CollectDetail.tsx` TagTable) now shows real data: `lb_master.lb_status` + collection-ownership for "Status" and `my_collection.lbdir_verified_at` for "Confirmed", replacing hardcoded "Public · Owned"/"Today"; removed the unused "Fingerprint: Queued · AcoustID" row. `/api/pipeline/status` file step gains `lb_status`/`owned`/`lbdir_verified_at`. |
 | 2026-06-12 | v1.4.0 release: merged `feat/pipeline-v2-storage-mounts` into `main` — collection mount management, Quick Lookup screen, pipeline lookup/rename/lbdir/collect stage panels, background copy/move with progress; `gui_next/package.json` version bumped 1.3.0 -> 1.4.0. |
+| 2026-06-12 | TODO-137: pipeline step order swapped so LBDIR (now step 3) reconciles before Rename (now step 4) — `verify -> lookup -> lbdir -> rename -> collect`. `_pipeline_process_folder` reordered; `/api/lbdir/check` and `/api/lbdir/reconcile` gained an `lb_number_hint` fallback (LBDIR runs before the folder has `LB-NNNNN` in its name); `DEFAULT_STAGES` and all step-key iteration orders in ScreenPipeline.tsx updated to match, including the auto-complete "stale" check (now resumes on `lbdir.status === 'mute'`). |
+| 2026-06-12 | TODO-138: Pipeline "Auto-rename" toggle added to ScreenPipeline.tsx header (default off). When on, rows with verify/lookup/lbdir all "ok" and a single proposed rename auto-apply via the existing `applyRename()` path, marking step 4 green and advancing to Collect with no manual click. |

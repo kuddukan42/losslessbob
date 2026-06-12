@@ -7,7 +7,7 @@ import { Icon } from './Icon'
 // ── Static content ────────────────────────────────────────────────────────────
 
 const META = {
-  version:    '1.2.0',
+  version:    __APP_VERSION__,
   channel:    'stable',
   build:      '2026.05.29',
   db:         'LB-16630',
@@ -71,7 +71,7 @@ const ACKS: Ack[] = [
 ]
 
 const CHANGELOG = {
-  version: '1.2.0',
+  version: __APP_VERSION__,
   date: 'May 29, 2026',
   entries: [
     ['new',      'Unified ingest Pipeline — verify → lookup → rename → LBDIR in one pass.'],
@@ -95,6 +95,48 @@ const LINKS: Link[] = [
 
 // Warm-white at alpha — for the double-frame strokes (works on dark surface).
 const w = (a: number) => `rgba(241,236,223,${a})`
+
+// Format a duration in seconds as HH:MM:SS (TODO-112: backend uptime clock).
+function formatUptime(totalSeconds: number): string {
+  const pad = (n: number): string => String(n).padStart(2, '0')
+  const h = Math.floor(totalSeconds / 3600)
+  const m = Math.floor((totalSeconds % 3600) / 60)
+  const s = totalSeconds % 60
+  return `${pad(h)}:${pad(m)}:${pad(s)}`
+}
+
+// Fetches backend process uptime once, then ticks it locally every second.
+// Lets the user confirm whether a backend restart actually happened after a
+// code change (TODO-112).
+function useBackendUptime(): string | null {
+  const [display, setDisplay] = useState<string | null>(null)
+
+  useEffect(() => {
+    let base: number | null = null
+    let fetchedAt = 0
+
+    const tick = (): void => {
+      if (base === null) return
+      const elapsed = base + Math.floor((Date.now() - fetchedAt) / 1000)
+      setDisplay(formatUptime(elapsed))
+    }
+
+    fetch(`${window.api.flaskBase}/api/system/uptime`)
+      .then(r => r.json())
+      .then((data: { uptime_seconds?: number }) => {
+        if (typeof data.uptime_seconds !== 'number') return
+        base = data.uptime_seconds
+        fetchedAt = Date.now()
+        tick()
+      })
+      .catch(() => {})
+
+    const id = setInterval(tick, 1000)
+    return () => clearInterval(id)
+  }, [])
+
+  return display
+}
 
 function BlockTitle({ children }: { children: React.ReactNode }): React.JSX.Element {
   return (
@@ -244,11 +286,13 @@ function TabBar({ tab, onTab }: { tab: TabId; onTab: (t: TabId) => void }): Reac
 // ── Tab: About ────────────────────────────────────────────────────────────────
 
 function TabAbout(): React.JSX.Element {
+  const uptime = useBackendUptime()
   const metaItems = [
     { key: 'version',  value: `${META.version} · ${META.channel}`, accent: true },
     { key: 'build',    value: META.build },
     { key: 'database', value: META.db },
     { key: 'index',    value: META.checksums },
+    { key: 'uptime',   value: uptime ?? '—' },
   ]
 
   return (

@@ -25,7 +25,7 @@
   },
   "appShell": {
     "brand": "LosslessBob",
-    "version": "Checksum Lookup · v1.0.6",
+    "version": "Checksum Lookup · v{{version}}",
     "search": "Find LB#, folder, location…",
     "curatorHint": "Maintaining the master DB?",
     "curatorEnable": "Enable Curator mode →",
@@ -55,6 +55,7 @@
       "scraper": "Scraper",
       "settings": "Settings",
       "setup": "Setup",
+      "mounts": "Mounts",
       "themes": "Themes",
       "trading": "Trading",
       "sharing": "Sharing",
@@ -365,6 +366,8 @@
     "needAttention_other": "{{count}} need attention",
     "autoRun": "Auto-run on drop",
     "autoRunHint": "When on, dropped folders verify + look up automatically",
+    "autoRename": "Auto-rename",
+    "autoRenameHint": "When on, a confident single-match rename is applied automatically and the folder advances to Collect",
     "applyAllReady": "Apply all {{count}} ready",
     "fileAllCollection": "File all {{count}} into collection",
     "stop": "Stop",
@@ -448,8 +451,8 @@
       "resetToSuggested": "Reset to suggested",
       "suggested": "suggested",
       "mountOffline": "Offline",
-      "mountTooltip": "{{span}} · {{free}} free",
-      "freeAmount": "{{free}} free",
+      "mountTooltip": "{{span}} · {{free}} free of {{total}} ({{pct}}% used)",
+      "freeOfTotal": "{{free}} free of {{total}}",
       "tagInCollection": "Tag in the collection",
       "itemsCounter": "{{count}} → {{next}} items",
       "rowLb": "LB#",
@@ -823,6 +826,10 @@
       "noRecognisableFiles": "Zip contains no recognisable files to restore.",
       "scrapedExported": "Scraped data exported — {{count}} files, {{size}} MB"
     }
+  },
+  "mounts": {
+    "title": "Mounts",
+    "subtitle": "Storage drives, year routing, and filing mode for the collection pipeline."
   },
   "themes": {
     "title": "Themes",

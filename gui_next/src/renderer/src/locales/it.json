@@ -25,7 +25,7 @@
   },
   "appShell": {
     "brand": "LosslessBob",
-    "version": "Ricerca Checksum - v1.0.6",
+    "version": "Ricerca Checksum - v{{version}}",
     "search": "Trova LB#, cartella, posizione...",
     "curatorHint": "Mantenere il DB principale?",
     "curatorEnable": "Abilita la modalità Curatore →",
@@ -55,6 +55,7 @@
       "scraper": "Raschietto",
       "settings": "Impostazioni",
       "setup": "Impostazione",
+      "mounts": "Unità",
       "themes": "Temi",
       "advancedTools": "Strumenti avanzati"
     },
@@ -422,8 +423,8 @@
       "resetToSuggested": "Ripristina suggerimento",
       "suggested": "suggerito",
       "mountOffline": "Non in linea",
-      "mountTooltip": "{{span}} · {{free}} liberi",
-      "freeAmount": "{{free}} liberi",
+      "mountTooltip": "{{span}} · {{free}} liberi su {{total}} ({{pct}}% usato)",
+      "freeOfTotal": "{{free}} liberi su {{total}}",
       "tagInCollection": "Etichetta nella raccolta",
       "itemsCounter": "{{count}} → {{next}} elementi",
       "rowLb": "LB#",
@@ -783,6 +784,10 @@
       "noRecognisableFiles": "Il zip non contiene file riconoscibili da ripristinare.",
       "scrapedExported": "Dati esportati - file {{count}}, {{size}} MB"
     }
+  },
+  "mounts": {
+    "title": "Unità",
+    "subtitle": "Unità di archiviazione, instradamento per anno e modalità di archiviazione per il pipeline della collezione."
   },
   "themes": {
     "title": "Temi",

@@ -22,7 +22,7 @@
   },
   "appShell": {
     "brand": "Sin pérdidasBob",
-    "version": "Búsqueda de sumas de comprobación - v1.0.6",
+    "version": "Búsqueda de sumas de comprobación - v{{version}}",
     "search": "Buscar LB#, carpeta, ubicación...",
     "curatorHint": "¿Mantenimiento de la BD maestra?",
     "curatorEnable": "Activar el modo Conservador →",
@@ -52,6 +52,7 @@
       "scraper": "Rascador",
       "settings": "Ajustes",
       "setup": "Configurar",
+      "mounts": "Unidades",
       "themes": "Temas",
       "advancedTools": "Herramientas avanzadas"
     },
@@ -419,8 +420,8 @@
       "resetToSuggested": "Restablecer sugerencia",
       "suggested": "sugerido",
       "mountOffline": "Sin conexión",
-      "mountTooltip": "{{span}} · {{free}} libres",
-      "freeAmount": "{{free}} libres",
+      "mountTooltip": "{{span}} · {{free}} libres de {{total}} ({{pct}}% usado)",
+      "freeOfTotal": "{{free}} libres de {{total}}",
       "tagInCollection": "Etiquetar en la colección",
       "itemsCounter": "{{count}} → {{next}} elementos",
       "rowLb": "LB#",
@@ -780,6 +781,10 @@
       "noRecognisableFiles": "Zip no contiene archivos reconocibles para restaurar.",
       "scrapedExported": "Datos raspados exportados - Archivos {{count}}, {{size}} MB"
     }
+  },
+  "mounts": {
+    "title": "Unidades",
+    "subtitle": "Unidades de almacenamiento, enrutamiento por año y modo de archivado para el pipeline de la colección."
   },
   "themes": {
     "title": "Temas",

@@ -42,8 +42,8 @@ export interface StageDesc {
 export const DEFAULT_STAGES: StageDesc[] = [
   { key: 'verify', label: 'Verify',  n: 1 },
   { key: 'lookup', label: 'Lookup',  n: 2 },
-  { key: 'rename', label: 'Rename',  n: 3 },
-  { key: 'lbdir',  label: 'LBDIR',   n: 4 },
+  { key: 'lbdir',  label: 'LBDIR',   n: 3 },
+  { key: 'rename', label: 'Rename',  n: 4 },
   { key: 'file',   label: 'Collect', n: 5 },
 ]
 

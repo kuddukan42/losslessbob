@@ -7,6 +7,8 @@ export interface Mount {
   label: string
   span: string
   free: string
+  total: string
+  used_pct: number | null
   online: boolean
 }
 
@@ -54,7 +56,7 @@ export function MountPicker({
             <label
               key={m.id}
               title={m.online
-                ? t('pipeline.collect.mountTooltip', { span: m.span, free: m.free })
+                ? t('pipeline.collect.mountTooltip', { span: m.span, free: m.free, total: m.total, pct: m.used_pct })
                 : t('pipeline.collect.mountOffline')}
               style={{
                 display: 'flex', flexDirection: 'column', gap: 3, padding: '10px 12px',
@@ -76,8 +78,17 @@ export function MountPicker({
               </span>
               <span style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg2)' }}>{m.span}</span>
               <span style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)', fontVariantNumeric: 'tabular-nums' }}>
-                {m.online ? t('pipeline.collect.freeAmount', { free: m.free }) : t('pipeline.collect.mountOffline')}
+                {m.online ? t('pipeline.collect.freeOfTotal', { free: m.free, total: m.total }) : t('pipeline.collect.mountOffline')}
               </span>
+              {m.online && m.used_pct != null && (
+                <div style={{ height: 4, borderRadius: 2, background: 'var(--lbb-border)', overflow: 'hidden' }}>
+                  <div style={{
+                    height: '100%', width: `${m.used_pct}%`,
+                    background: m.used_pct >= 90 ? 'var(--lbb-bad-bar)'
+                      : m.used_pct >= 75 ? 'var(--lbb-warn-bar)' : 'var(--lbb-accent-mid)',
+                  }} />
+                </div>
+              )}
             </label>
           )
         })}
