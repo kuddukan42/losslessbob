@@ -1,3 +1,32 @@
+[2026-06-12] — feat(backend+gui): TODO-111 — collection integrity monitor (lbdir-based)
+Added: backend/integrity_monitor.py: new scan engine. scan_collection() iterates
+  my_collection, locates each folder's lbdir manifest (folder-local or attached),
+  and reuses checksum_utils.verify_folder_lbdir() to classify results — ffp_status
+  'fail' = content_issue (bitrot/corruption), md5_status 'fail' with ffp pass/na =
+  tag_issue (metadata-only edit), overall 'missing' = missing_files. Files with
+  overall == 'extra' are ignored. start_scan_async/get_scan_status/cancel_scan
+  provide a background-thread job with progress, modeled on filer.py's _FILE_JOB.
+Added: backend/db.py: new tables collection_integrity_status (latest per-LB
+  result) and collection_integrity_scans (scan history); idempotent
+  integrity_events.mount_id column migration; new functions
+  upsert_collection_integrity_status, get_collection_integrity_status,
+  get_mount_integrity_summary, record_integrity_scan_start, finish_integrity_scan,
+  get_integrity_scan_history; log_integrity_event() gains mount_id param.
+Added: backend/scheduler.py: _integrity_scan_worker + start/stop_integrity_scan_scheduler
+  — hourly check against meta key integrity_scan_interval_hours (default "0" =
+  disabled), triggers a whole-collection scan via integrity_monitor.start_scan_async().
+Changed: backend/app.py: new routes POST /api/collection/integrity/scan (+/cancel),
+  GET /api/collection/integrity/scan/status, /scan/history, /summary, /status;
+  /api/db/settings GET now includes integrity_scan_interval_hours;
+  start_integrity_scan_scheduler() wired alongside start_collection_watcher().
+Changed: gui_next/src/renderer/src/screens/ScreenMounts.tsx: MountCard shows an
+  integrity severity badge (corrupt/missing/tag-only/verified) and a per-mount
+  "Scan integrity" button. New "4 · Integrity Monitor" section: scan now (whole
+  collection or per-mount) with a live progress bar and cancel button, auto-scan
+  interval dropdown (off/daily/weekly/monthly), findings table for non-passing
+  folders, and a recent-changes list (content/tags/missing/restored) with
+  per-row and bulk acknowledge.
+
 [2026-06-12] — fix(backend): BUG-163 — undefined `_time` in admin restart handler
 Fixed: backend/app.py: `_do_restart()` called `_time.sleep(0.3)` but only `time`
   is imported; renamed to `time.sleep(0.3)`. Caught by ruff (F821) on commit.
