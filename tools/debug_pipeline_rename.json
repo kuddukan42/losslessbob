@@ -1,0 +1,9 @@
+[
+  { "action": "navigate", "route": "/pipeline" },
+  { "action": "eval", "js": "window.__calls = []; const _f = window.fetch; window.fetch = (url, opts) => { try { if (String(url).includes('/api/')) window.__calls.push({ url: String(url), body: opts && opts.body ? String(opts.body) : null }) } catch {} ; return _f(url, opts) }; window.api.pickFolders = async () => ['/tmp/pipe_parent2/2011-10-26 Munich, Germany Bach']; 'instrumented'" },
+  { "action": "click", "selector": "button:has-text(\"Add folders…\") >> nth=0" },
+  { "action": "wait-for", "selector": "text=LB-16298", "timeout": 120000 },
+  { "action": "wait", "ms": 4000 },
+  { "action": "screenshot", "file": "pipe_diag_4_row.png" },
+  { "action": "eval", "js": "JSON.stringify(window.__calls)" }
+]

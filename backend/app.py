@@ -2127,11 +2127,22 @@ def create_app() -> Flask:
             if not folders:
                 return jsonify({"error": "folders list required"}), 400
 
+            # Optional single-folder hint: pipeline passes this when LB is known from
+            # lookup but the folder has not yet been renamed or filed.
+            lb_number_hint: int | None = None
+            raw_hint = data.get("lb_number_hint")
+            if raw_hint is not None:
+                try:
+                    lb_number_hint = int(raw_hint)
+                except (ValueError, TypeError):
+                    pass
+
             results = []
             for folder_path in folders:
                 folder = Path(folder_path)
 
-                # Look up LB number: try my_collection first, then parse folder name
+                # Look up LB number: try my_collection first, then parse folder name,
+                # then fall back to the caller-supplied hint (pipeline lookup result).
                 with database.get_connection() as conn:
                     row = conn.execute(
                         "SELECT lb_number FROM my_collection WHERE disk_path=?",
@@ -2144,6 +2155,9 @@ def create_app() -> Flask:
                     m = re.search(r'LB-(\d+)', folder.name, re.IGNORECASE)
                     if m:
                         lb_number = int(m.group(1))
+
+                if lb_number is None and lb_number_hint is not None:
+                    lb_number = lb_number_hint
 
                 if lb_number is None:
                     results.append({
@@ -4905,8 +4919,10 @@ def create_app() -> Flask:
     def pipeline_file() -> Response:
         """Execute step 5: file one or more folders into the collection.
 
-        Body: {folders: [{path: str, lb_number: int}, ...]}
-        Each entry is processed independently; failures do not abort the batch.
+        Body: {folders: [{path: str, lb_number: int, mount_id?: int}, ...]}
+        mount_id, if given, overrides the year-routed mount (see the Collect
+        mount picker). Each entry is processed independently; failures do not
+        abort the batch.
         """
         try:
             from backend.filer import file_folder
@@ -4919,6 +4935,7 @@ def create_app() -> Flask:
             for item in folders:
                 path = item.get("path", "")
                 lb = item.get("lb_number")
+                mount_id = item.get("mount_id")
                 if not path or not lb:
                     results.append({
                         "path": path,
@@ -4931,7 +4948,10 @@ def create_app() -> Flask:
                         "error_code": "bad_input",
                     })
                     continue
-                result = file_folder(int(lb), path, file_mode=file_mode)
+                result = file_folder(
+                    int(lb), path, file_mode=file_mode,
+                    mount_id_override=int(mount_id) if mount_id is not None else None,
+                )
                 result["path"] = path
                 result["lb_number"] = lb
                 results.append(result)
@@ -4943,7 +4963,9 @@ def create_app() -> Flask:
     def pipeline_file_preview() -> Response:
         """Pre-flight check: resolve destinations without moving anything.
 
-        Body: {folders: [{path: str, lb_number: int}, ...]}
+        Body: {folders: [{path: str, lb_number: int, mount_id?: int}, ...]}
+        mount_id, if given, previews filing under that mount instead of the
+        year-routed default.
         """
         try:
             from backend.filer import _path_reachable, resolve_destination_for_lb
@@ -4953,6 +4975,7 @@ def create_app() -> Flask:
             for item in folders:
                 path = item.get("path", "")
                 lb = item.get("lb_number")
+                mount_id = item.get("mount_id")
                 if not path or not lb:
                     results.append({
                         "path": path,
@@ -4962,7 +4985,10 @@ def create_app() -> Flask:
                         "error_code": "bad_input",
                     })
                     continue
-                r = resolve_destination_for_lb(int(lb), path)
+                r = resolve_destination_for_lb(
+                    int(lb), path,
+                    mount_id_override=int(mount_id) if mount_id is not None else None,
+                )
                 r["path"] = path
                 r["lb_number"] = lb
                 if r["ok"]:
@@ -4996,6 +5022,12 @@ def create_app() -> Flask:
         folder = Path(folder_path)
         folder_name = folder.name
 
+        # Rename/LBDIR/File all key off the LB# resolved by Lookup.  Force the
+        # lookup step into any run that includes a downstream step so the link
+        # between stages never depends on the caller sending the right combo.
+        if steps & {"rename", "lbdir", "file"}:
+            steps = steps | {"lookup"}
+
         row: dict = {
             "folder": folder_path,
             "folderName": folder_name,
@@ -5025,6 +5057,7 @@ def create_app() -> Flask:
                 "mismatch":     vr.get("mismatch", 0),
                 "extra":        vr.get("extra", 0),
                 "no_checksums": vr.get("status") == "no_checksums",
+                "files":        vr.get("files", []),
             }
             if vr.get("error"):
                 row["verify"] = {"status": "bad", "label": "Error", **_vcounts}
@@ -5033,6 +5066,8 @@ def create_app() -> Flask:
                 row["verify"] = {"status": "ok", "label": "Pass", **_vcounts}
             elif vr["status"] in ("incomplete", "no_checksums"):
                 row["verify"] = {"status": "warn", "label": "Incomplete", **_vcounts}
+            elif vr["status"] == "shntool_missing":
+                row["verify"] = {"status": "warn", "label": "No shntool", "shntool_missing": True, **_vcounts}
             else:
                 row["verify"] = {"status": "bad", "label": "Mismatch", **_vcounts}
 
@@ -5055,27 +5090,54 @@ def create_app() -> Flask:
                 if not parsed:
                     row["lookup"] = {"status": "bad", "label": "Not found", "lb_number": None}
                 else:
-                    summary, _ = database.lookup_checksums(parsed)
+                    summary, detail = database.lookup_checksums(parsed)
+                    alias_map = {
+                        r["alias_lb"]: r["canonical_lb"]
+                        for r in database.get_lb_aliases()
+                    }
+                    for d in detail:
+                        d["is_alias_lb"] = d["lb_number"] in alias_map
+                        d["canonical_lb"] = alias_map.get(d["lb_number"])
                     raw_lb_list: list[int] = summary.get("lb_numbers_found", [])
                     lb_list: list[int] = database.resolve_aliases(raw_lb_list)
                     alias_resolved_from: list[int] = [
                         lb for lb in raw_lb_list if lb not in set(lb_list)
                     ]
-                    if len(lb_list) == 1:
+
+                    # A sticky folder→LB link (set via "Pin & continue") resolves
+                    # ambiguity permanently — it wins over the raw checksum match set.
+                    link = database.get_folder_link(folder_path)
+                    pinned_lb = link["lb_number"] if link else None
+
+                    if pinned_lb is not None:
+                        lb_number = pinned_lb
+                        row["lookup"] = {
+                            "status": "ok",
+                            "label": f"LB-{lb_number:05d}",
+                            "lb_number": lb_number,
+                            "alias_resolved_from": alias_resolved_from or None,
+                            "summary": summary,
+                            "detail": detail,
+                        }
+                    elif len(lb_list) == 1:
                         lb_number = lb_list[0]
                         row["lookup"] = {
                             "status": "ok",
                             "label": f"LB-{lb_number:05d}",
                             "lb_number": lb_number,
                             "alias_resolved_from": alias_resolved_from or None,
+                            "summary": summary,
+                            "detail": detail,
                         }
                     elif len(lb_list) > 1:
                         row["lookup"] = {"status": "warn", "label": "Conflict", "lb_number": None,
-                                         "alias_resolved_from": None}
+                                         "alias_resolved_from": None,
+                                         "summary": summary, "detail": detail}
                         row["errors"].append({"step": "lookup", "message": f"Multiple LBs: {lb_list}"})
                     else:
                         row["lookup"] = {"status": "bad", "label": "Not found", "lb_number": None,
-                                         "alias_resolved_from": None}
+                                         "alias_resolved_from": None,
+                                         "summary": summary, "detail": detail}
 
         # ── Step 3: Rename proposal ───────────────────────────────────────────
         if "rename" in steps:
@@ -5148,11 +5210,19 @@ def create_app() -> Flask:
 
         # ── Step 5: File (resolve only — no filesystem action here) ─────────
         if "file" in steps and lb_number:
-            from backend.filer import _path_reachable, resolve_destination_for_lb
+            from backend.filer import (
+                _path_reachable,
+                get_mounts_with_stats,
+                resolve_destination_for_lb,
+            )
             resolution = resolve_destination_for_lb(lb_number, folder_path)
             if resolution["ok"]:
                 mount_online = _path_reachable(resolution["mount_root"])
                 if mount_online:
+                    with database.get_connection() as conn:
+                        collection_count = conn.execute(
+                            "SELECT COUNT(*) FROM my_collection"
+                        ).fetchone()[0]
                     row["file"] = {
                         "status": "ready",
                         "label": "Ready to file",
@@ -5162,6 +5232,10 @@ def create_app() -> Flask:
                         "year": resolution["year"],
                         "error": None,
                         "error_code": None,
+                        "mounts": get_mounts_with_stats(),
+                        "recommended_mount": resolution["mount_id"],
+                        "routed_year": resolution["year"],
+                        "collection_count": collection_count,
                     }
                 else:
                     row["file"] = {
@@ -5198,6 +5272,9 @@ def create_app() -> Flask:
             row["severity"] = "attn"
         elif row["rename"].get("label") == "Proposed":
             row["severity"] = "ready"
+        elif lb_number and (row["rename"]["status"] == "mute" or row["lbdir"]["status"] == "mute"):
+            # Lookup resolved but downstream steps weren't run yet — not done
+            row["severity"] = "attn"
         elif all(s in ("ok", "mute") for s in statuses) and "ok" in statuses:
             row["severity"] = "done"
         else:

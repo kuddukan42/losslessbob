@@ -239,6 +239,10 @@
       "extra": "Extra",
       "fail": "Fail"
     },
+    "allClear": {
+      "title": "Alle Dateien sind in Ordnung",
+      "desc": "Alle {{count}} Dateien stimmen mit ihren FFP- und MD5-Prüfsummen überein. Hier gibt es nichts zu beheben."
+    },
     "shntoolWarning": "shntool ist nicht installiert",
     "shntoolDesc": "Dieser Ordner enthält SHN-Dateien. FFP/MD5 kann ohne shntool überprüft werden, aber die Überprüfung der Länge pro Scheibe erfordert es.",
     "verifyWithoutShntool": "Überprüfen ohne shntool",
@@ -406,6 +410,25 @@
       "confirmBody": "\"{{folder}}\" nach {{mount}} ablegen",
       "confirmNote": "Der Ordner wird an sein Sammlungsziel verschoben und in Meine Sammlung eingetragen.",
       "confirmAction": "Ablegen"
+    },
+    "collect": {
+      "storageMount": "Speicherlaufwerk",
+      "routedByYear": "Nach Jahr geroutet · {{year}} → {{mount}}",
+      "resetToSuggested": "Auf Vorschlag zurücksetzen",
+      "suggested": "vorgeschlagen",
+      "mountOffline": "Offline",
+      "mountTooltip": "{{span}} · {{free}} frei",
+      "freeAmount": "{{free}} frei",
+      "tagInCollection": "In der Sammlung markieren",
+      "itemsCounter": "{{count}} → {{next}} Einträge",
+      "rowLb": "LB#",
+      "rowStatus": "Status",
+      "rowConfirmed": "Bestätigt",
+      "rowFingerprint": "Fingerabdruck",
+      "valueStatus": "Öffentlich · Im Besitz",
+      "valueConfirmed": "Heute",
+      "valueFingerprint": "Ausstehend · AcoustID",
+      "valueUnassigned": "Nicht zugewiesen"
     }
   },
   "collection": {

@@ -1,0 +1,16 @@
+[
+  { "action": "navigate", "route": "/pipeline" },
+  { "action": "eval", "js": "window.api.pickFolders = async () => ['/home/tjenkins/Documents/losslessbob/data/examples/1980-05-20 columbus.shnf (mix of 2 tapes) LB-309 and LB-3230 (Track 208)', '/home/tjenkins/Documents/losslessbob/data/examples/The New York Tapes [vinyl, 16-44]']" },
+  { "action": "click", "selector": "button:has-text(\"Add folders…\") >> nth=0" },
+  { "action": "wait", "ms": 18000 },
+  { "action": "click", "selector": "text=1980-05-20 columbus" },
+  { "action": "wait", "ms": 800 },
+  { "action": "click", "selector": "text=\"Lookup\"" },
+  { "action": "wait", "ms": 800 },
+  { "action": "screenshot", "file": "pipeline_lookup_matched.png" },
+  { "action": "click", "selector": "text=New York Tapes" },
+  { "action": "wait", "ms": 800 },
+  { "action": "click", "selector": "text=\"Lookup\"" },
+  { "action": "wait", "ms": 800 },
+  { "action": "screenshot", "file": "pipeline_lookup_notfound.png" }
+]

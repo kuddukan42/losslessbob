@@ -1,6 +1,42 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-157: Pipeline — "File into collection" succeeds but My Collection screen doesn't show the new entry
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenPipeline.tsx:1488-1521
+Reported: 2026-06-11
+Fixed: 2026-06-11
+Root cause: applyFile() POSTs to /api/pipeline/file, which moves/copies the folder and inserts a
+  my_collection row (verified directly in data/losslessbob.db — the LB-16298 row and dest path
+  were correct). The My Collection screen reads from a single react-query cache keyed
+  ['collection-prefetch'] with staleTime: Infinity, refreshed only via queryClient.invalidateQueries.
+  applyFile never called invalidateQueries, so if the Collection screen's cache was already warm
+  from earlier in the session, it kept showing the pre-filing snapshot — the newly filed LB
+  appeared as "not in collection" even though the DB and filesystem were correct.
+Fix: Imported useQueryClient in ScreenPipeline and called
+  queryClient.invalidateQueries({ queryKey: ['collection-prefetch'] }) after a successful
+  /api/pipeline/file result, so the My Collection screen refetches and shows the new entry.
+
+BUG-156: Pipeline — folder shows "In collection"/"Filed to X" before Collect step is run
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenPipeline.tsx:140-163
+Reported: 2026-06-11
+Fixed: 2026-06-11
+Root cause: backend/app.py severity logic (app.py:5278) returns "done" once
+  verify/lookup/rename/lbdir all pass, regardless of the file (Collect) step's
+  status — by design, "ready" doesn't change severity so the row keeps its
+  per-row File button. serverRowToPipeline mapped severity "done" straight to
+  bucket 'done', and deriveFolderStatus treats bucket 'done' as "In collection" /
+  "Filed to <mount>" unconditionally. Result: the detail panel correctly showed
+  Collect as "Action — File into collection" while the list/status badge claimed
+  the folder was already filed.
+Fix: serverRowToPipeline now reclassifies bucket 'done' as 'shelf' when the
+  normalized file step status is 'warn' (i.e. backend file.status == "ready",
+  not yet filed). The existing 'shelf' bucket already renders "Ready to file" /
+  "Archive-clean — file into the collection" via deriveFolderStatus and is
+  counted in the "Ready to file" banner pill / "File all N into collection"
+  action, so no new UI states were needed.
+
 BUG-134: Map screen — blank center canvas with no fallback when tiles fail to load
 Status: Fixed
 File(s): gui/resources/map.html

@@ -249,6 +249,10 @@
       "extra": "Extra",
       "fail": "Fail"
     },
+    "allClear": {
+      "title": "Every file checks out",
+      "desc": "All {{count}} files match their FFP + MD5 checksums. Nothing to fix here."
+    },
     "shntoolWarning": "shntool is not installed",
     "shntoolDesc": "This folder contains SHN files. FFP/MD5 can be verified without shntool, but per-disc length checks require it.",
     "verifyWithoutShntool": "Verify without shntool",
@@ -430,6 +434,25 @@
       "confirmBody": "File \"{{folder}}\" to {{mount}}",
       "confirmNote": "The folder will be moved to its collection destination and registered in My Collection.",
       "confirmAction": "File"
+    },
+    "collect": {
+      "storageMount": "Storage mount",
+      "routedByYear": "Routed by year · {{year}} → {{mount}}",
+      "resetToSuggested": "Reset to suggested",
+      "suggested": "suggested",
+      "mountOffline": "Offline",
+      "mountTooltip": "{{span}} · {{free}} free",
+      "freeAmount": "{{free}} free",
+      "tagInCollection": "Tag in the collection",
+      "itemsCounter": "{{count}} → {{next}} items",
+      "rowLb": "LB#",
+      "rowStatus": "Status",
+      "rowConfirmed": "Confirmed",
+      "rowFingerprint": "Fingerprint",
+      "valueStatus": "Public · Owned",
+      "valueConfirmed": "Today",
+      "valueFingerprint": "Queued · AcoustID",
+      "valueUnassigned": "Unassigned"
     }
   },
   "collection": {

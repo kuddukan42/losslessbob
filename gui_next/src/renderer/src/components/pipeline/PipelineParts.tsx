@@ -217,7 +217,7 @@ export function StageStepper({
         const s = STATE[state]
         return (
           <React.Fragment key={st.key}>
-            <button type="button" onClick={() => onPick(st.key)} style={{
+            <button type="button" data-testid={`stage-tab-${st.key}`} onClick={() => onPick(st.key)} style={{
               flex: '0 0 auto', display: 'flex', alignItems: 'center', gap: 10,
               padding: '8px 12px', borderRadius: 8, cursor: 'pointer',
               background: active ? 'var(--lbb-accent-soft)' : 'transparent',
