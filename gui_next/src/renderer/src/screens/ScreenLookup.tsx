@@ -3,43 +3,18 @@ import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Icon } from '../components/Icon'
 import { Button, Chip, Pill } from '../components'
-import { TableShell, TH, TR, TD } from '../components'
 import { useLookupStore, LookupSource, LookupSummaryRow, LookupDetail } from '../lib/lookupStore'
 import { useFolderQueueStore } from '../lib/folderQueueStore'
+import {
+  LookupSummaryTable, LookupChecksumTable, LookupNotFoundHint,
+  STATE_TONE, apiStatusToState, type LookupState,
+} from '../components/pipeline/LookupDetail'
 
 const BASE = window.api.flaskBase
 
 // ── Types ──────────────────────────────────────────────────────────────────────
 
-type LookupState = 'matched' | 'incomplete' | 'notfound' | 'duplicate' | 'xref'
 type ToastTone   = 'ok' | 'bad' | 'info'
-
-// ── Lookup state → tone/label/color ──────────────────────────────────────────
-
-const STATE_TONE: Record<LookupState, { tone: 'ok' | 'warn' | 'bad' | 'info' | 'mute'; label: string; color: string }> = {
-  matched:    { tone: 'ok',   label: 'Matched',    color: 'var(--lbb-ok-fg)'   },
-  incomplete: { tone: 'warn', label: 'Incomplete', color: 'var(--lbb-warn-fg)' },
-  notfound:   { tone: 'bad',  label: 'Not found',  color: 'var(--lbb-bad-fg)'  },
-  duplicate:  { tone: 'warn', label: 'Duplicate',  color: '#a08200'             },
-  xref:       { tone: 'info', label: 'XRef',       color: 'var(--lbb-info-fg)' },
-}
-
-function categoryPill(cat: string | null | undefined): React.JSX.Element | null {
-  if (!cat || cat === 'unknown') return null
-  const tone = cat === 'concert' ? 'info' : cat === 'interview' ? 'warn' : 'mute'
-  const label = cat.charAt(0).toUpperCase() + cat.slice(1)
-  return <Pill tone={tone} soft>{label}</Pill>
-}
-
-function apiStatusToState(status: string): LookupState {
-  if (status === 'MATCHED')               return 'matched'
-  if (status === 'MATCHED (INCOMPLETE)')  return 'incomplete'
-  if (status === 'INCOMPLETE')            return 'incomplete'
-  if (status === 'NOT FOUND')             return 'notfound'
-  if (status === 'DUPLICATE')             return 'duplicate'
-  if (status === 'XREF')                  return 'xref'
-  return 'notfound'
-}
 
 const SRC_ICON: Record<LookupSource['kind'], string> = {
   folder:    'folder',
@@ -578,71 +553,7 @@ export function ScreenLookup(): React.JSX.Element {
                   <Button variant="ghost" size="sm" icon="download" onClick={handleExportCsv}>{t('lookup.status.exportCsv')}</Button>
                 </div>
                 <div style={{ padding: '0 24px' }}>
-                  <TableShell>
-                    <colgroup>
-                      <col style={{ width: 3 }} />
-                      <col style={{ width: 110 }} />
-                      <col style={{ width: 80 }} />
-                      <col style={{ width: 70 }} /><col style={{ width: 80 }} /><col style={{ width: 80 }} />
-                      <col style={{ width: 80 }} /><col style={{ width: 70 }} /><col style={{ width: 70 }} />
-                      <col /><col style={{ width: 130 }} />
-                    </colgroup>
-                    <thead>
-                      <tr>
-                        <TH> </TH>
-                        <TH>{t('lookup.table.lb')}</TH>
-                        <TH>Type</TH>
-                        <TH align="right">{t('lookup.table.given')}</TH><TH align="right">{t('lookup.table.matched')}</TH><TH align="right">{t('lookup.table.notFound')}</TH>
-                        <TH align="right">{t('lookup.table.missing')}</TH><TH align="right">{t('lookup.table.dups')}</TH><TH align="right">{t('lookup.table.xrefs')}</TH>
-                        <TH>{t('lookup.table.status')}</TH><TH align="right"> </TH>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {filteredSummary.map((r, i) => {
-                        const state = apiStatusToState(r.status)
-                        const tone  = STATE_TONE[state]
-                        const lbStr = `LB-${String(r.lb_number).padStart(5, '0')}`
-                        const aliasDetail = detail.find(d => d.lb_number === r.lb_number && d.is_alias_lb)
-                        return (
-                          <TR key={i} edge={tone.tone === 'mute' ? undefined : tone.tone}>
-                            <TD mono style={{ color: 'var(--lbb-accent-mid)', fontWeight: 600 }}>
-                              {lbStr}
-                              {aliasDetail && aliasDetail.canonical_lb != null && (
-                                <Pill tone="warn" soft style={{ marginLeft: 6 }}
-                                  title={`Duplicate LB — canonical: LB-${String(aliasDetail.canonical_lb).padStart(5, '0')}`}>
-                                  ≡ LB-{String(aliasDetail.canonical_lb).padStart(5, '0')}
-                                </Pill>
-                              )}
-                            </TD>
-                            <TD>{categoryPill(r.lb_category)}</TD>
-                            <TD align="right" mono>{r.given}</TD>
-                            <TD align="right" mono style={{ color: r.matched      > 0 ? 'var(--lbb-ok-fg)'   : 'var(--lbb-fg3)' }}>{r.matched      || '—'}</TD>
-                            <TD align="right" mono style={{ color: r.not_found    > 0 ? 'var(--lbb-bad-fg)'  : 'var(--lbb-fg3)' }}>{r.not_found    || '—'}</TD>
-                            <TD align="right" mono style={{ color: r.missing_from_set > 0 ? 'var(--lbb-warn-fg)' : 'var(--lbb-fg3)' }}>{r.missing_from_set || '—'}</TD>
-                            <TD align="right" mono style={{ color: r.duplicates   > 0 ? '#a08200'            : 'var(--lbb-fg3)' }}>{r.duplicates   || '—'}</TD>
-                            <TD align="right" mono style={{ color: r.xrefs        > 0 ? 'var(--lbb-info-fg)' : 'var(--lbb-fg3)' }}>{r.xrefs        || '—'}</TD>
-                            <TD><Pill tone={tone.tone} soft dot={state !== 'matched'}>{tone.label}</Pill></TD>
-                            <TD align="right" style={{ display: 'flex', gap: 4 }}>
-                              <Button size="sm" variant="ghost" icon="reveal"
-                                onClick={() => window.open(`http://www.losslessbob.wonderingwhattochoose.com/detail/LB-${String(r.lb_number).padStart(5, '0')}.html`)}>
-                                {t('lookup.table.open')}
-                              </Button>
-                              {r.owned ? (
-                                <Pill tone={r.lbdir_verified ? 'ok' : 'warn'} soft>
-                                  {r.lbdir_verified ? t('lookup.owned.badgeVerified') : t('lookup.owned.badgeOwned')}
-                                </Pill>
-                              ) : (
-                                <Button size="sm" variant="ghost"
-                                  onClick={() => handleAddToWishlist(r.lb_number)}>
-                                  {t('lookup.table.addWishlist')}
-                                </Button>
-                              )}
-                            </TD>
-                          </TR>
-                        )
-                      })}
-                    </tbody>
-                  </TableShell>
+                  <LookupSummaryTable summaryRows={filteredSummary} detail={detail} onAddToWishlist={handleAddToWishlist} />
                 </div>
 
                 {/* Checksum detail */}
@@ -656,99 +567,10 @@ export function ScreenLookup(): React.JSX.Element {
                   <div style={{ flex: 1 }} />
                 </div>
                 <div style={{ padding: '0 24px 24px' }}>
-                  <TableShell>
-                    <colgroup>
-                      <col style={{ width: 3 }} />
-                      <col style={{ width: 170 }} /><col />
-                      <col style={{ width: 50 }} /><col style={{ width: 100 }} />
-                      <col style={{ width: 60 }} /><col style={{ width: 110 }} />
-                    </colgroup>
-                    <thead>
-                      <tr>
-                        <TH> </TH>
-                        <TH>{t('lookup.table.checksum')}</TH><TH>{t('lookup.table.filename')}</TH>
-                        <TH align="center">{t('lookup.table.type')}</TH><TH>{t('lookup.table.lb')}</TH>
-                        <TH align="center">{t('lookup.table.xref')}</TH><TH>{t('lookup.table.status')}</TH>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {(() => {
-                        const groupMap = new Map<string, { lbNumber: number | null; rows: LookupDetail[] }>()
-                        for (const row of filteredDetail) {
-                          const key = row.lb_number === null ? '__null__' : String(row.lb_number)
-                          if (!groupMap.has(key)) groupMap.set(key, { lbNumber: row.lb_number, rows: [] })
-                          groupMap.get(key)!.rows.push(row)
-                        }
-                        const groups = Array.from(groupMap.values())
-                        const multiGroup = groups.length > 1
-                        return groups.map((group, gi) => {
-                          const summRow = summaryRows.find(r => r.lb_number === group.lbNumber)
-                          const groupLbStr = group.lbNumber !== null ? `LB-${String(group.lbNumber).padStart(5, '0')}` : '—'
-                          const groupState = summRow ? apiStatusToState(summRow.status) : 'notfound'
-                          const groupTone = STATE_TONE[groupState]
-                          return (
-                            <React.Fragment key={group.lbNumber ?? '__null__'}>
-                              {multiGroup && (
-                                <tr>
-                                  <td colSpan={7} style={{
-                                    padding: '10px 8px 6px',
-                                    background: 'var(--lbb-surface2)',
-                                    borderTop: gi > 0 ? '2px solid var(--lbb-border)' : undefined,
-                                  }}>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                                      <span style={{ fontFamily: 'var(--lbb-mono)', fontWeight: 700, fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-accent-mid)' }}>
-                                        {groupLbStr}
-                                      </span>
-                                      {summRow && categoryPill(summRow.lb_category)}
-                                      <Pill tone={groupTone.tone} soft dot={groupState !== 'matched'}>{groupTone.label}</Pill>
-                                      <span style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)' }}>
-                                        {group.rows.length} {group.rows.length === 1 ? 'row' : 'rows'}
-                                      </span>
-                                    </div>
-                                  </td>
-                                </tr>
-                              )}
-                              {group.rows.map((r, i) => {
-                                const rowState = apiStatusToState(r.status)
-                                const rowTone = STATE_TONE[rowState]
-                                const rowLbStr = r.lb_number !== null ? `LB-${String(r.lb_number).padStart(5, '0')}` : '—'
-                                return (
-                                  <TR key={`${gi}-${i}`} edge={rowTone.tone === 'mute' ? undefined : rowTone.tone}>
-                                    <TD mono dim>{r.checksum.slice(0, 12)}…</TD>
-                                    <TD mono style={{ color: 'var(--lbb-fg)' }}>{r.filename}</TD>
-                                    <TD align="center" mono style={{ color: 'var(--lbb-fg3)' }}>{r.type}</TD>
-                                    <TD mono style={{ color: r.lb_number !== null ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg3)', fontWeight: r.lb_number !== null ? 600 : 400 }}>
-                                      {rowLbStr}
-                                    </TD>
-                                    <TD align="center">
-                                      {r.xref > 0
-                                        ? <Icon name="check" size={11} style={{ color: 'var(--lbb-info-fg)' }} />
-                                        : <span style={{ color: 'var(--lbb-fg3)' }}>—</span>}
-                                    </TD>
-                                    <TD><Pill tone={rowTone.tone} soft>{rowTone.label}</Pill></TD>
-                                  </TR>
-                                )
-                              })}
-                            </React.Fragment>
-                          )
-                        })
-                      })()}
-                    </tbody>
-                  </TableShell>
+                  <LookupChecksumTable summaryRows={summaryRows} detailRows={filteredDetail} />
 
                   {filteredDetail.length === 0 && (
-                    <div style={{
-                      marginTop: 14, padding: '10px 14px', borderRadius: 6,
-                      background: 'var(--lbb-info-bg)', border: '1px solid var(--lbb-info-bar)',
-                      fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)',
-                      display: 'flex', alignItems: 'flex-start', gap: 10,
-                    }}>
-                      <Icon name="info" size={14} style={{ color: 'var(--lbb-info-fg)', marginTop: 1 }} />
-                      <span>
-                        <strong style={{ color: 'var(--lbb-info-fg)' }}>{t('lookup.states.notfound')}?</strong>{' '}
-                        {t('lookup.notFoundHint')}
-                      </span>
-                    </div>
+                    <LookupNotFoundHint style={{ marginTop: 14 }} />
                   )}
                 </div>
               </>

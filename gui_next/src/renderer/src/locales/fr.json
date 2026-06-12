@@ -37,6 +37,7 @@
       "pipeline": "Pipeline",
       "verify": "Vérifier",
       "lookup": "Recherche",
+      "quicklookup": "Recherche rapide",
       "rename": "Renommer",
       "lbdir": "LBDIR",
       "library": "Bibliothèque",
@@ -54,7 +55,8 @@
       "scraper": "Grattoir",
       "settings": "Paramètres",
       "setup": "Mise en place",
-      "themes": "Thèmes"
+      "themes": "Thèmes",
+      "advancedTools": "Outils avancés"
     },
     "statusBar": {
       "db": "DB :",
@@ -74,7 +76,7 @@
     "primaryWorkflow": "FLUX DE TRAVAIL PRIMAIRE",
     "pipelineTagline": "Le pipeline des nouvelles acquisitions",
     "ingestTitle": "Ingérer de la nouvelle musique",
-    "ingestDesc": "Déposez les dossiers ici - le pipeline exécute <strong>vérification → recherche → renommage → LBDIR</strong> sur l'ensemble du lot. Plus d'onglets rebondissants.",
+    "ingestDesc": "Déposez les dossiers ici - le pipeline exécute <strong>vérification → recherche → renommage → LBDIR → collecter</strong> sur l'ensemble du lot. Plus d'onglets rebondissants.",
     "dragHere": "Faire glisser les dossiers ici",
     "orClickBrowse": "ou cliquez pour naviguer",
     "stepVerify": "Vérifier les sommes de contrôle",
@@ -237,6 +239,10 @@
       "extra": "Extra",
       "fail": "Échec"
     },
+    "allClear": {
+      "title": "Tous les fichiers sont conformes",
+      "desc": "Les {{count}} fichiers correspondent à leurs sommes de contrôle FFP et MD5. Rien à corriger ici."
+    },
     "shntoolWarning": "shntool n'est pas installé",
     "shntoolDesc": "Ce dossier contient les fichiers SHN. FFP/MD5 peut être vérifié sans shntool, mais les vérifications de longueur par disque le nécessitent.",
     "verifyWithoutShntool": "Vérifier sans shntool",
@@ -330,7 +336,7 @@
     "folderQueued_one": "- {{count}} dossier en attente",
     "folderQueued_other": "- {{count}} dossiers en attente",
     "emptyHint": "Déposez des dossiers pour commencer - ou utilisez \"Ajouter des dossiers...\" dans le rail de la file d'attente.",
-    "runHint": "Déposez d'autres dossiers à tout moment - cliquez sur \"Exécuter les 4 étapes\" pour traiter la file d'attente.",
+    "runHint": "Déposez un dossier et il vérifie → identifie → propose un renommage tout seul.",
     "done_one": "{{count}} fait",
     "done_other": "{{count}} fait",
     "readyToRename_one": "{{count}} prêt à être renommé",
@@ -344,6 +350,8 @@
     "clearQueue": "Effacer la file d'attente",
     "applyRenames": "Appliquer tous les renommages proposés par {{count}}",
     "applyRenames_plural": "Appliquer tous les renommages proposés par {{count}}",
+    "fileAllReady": "Classer {{count}} prêt à collecter",
+    "fileAllReady_plural": "Classer {{count}} prêts à collecter",
     "queue": {
       "label": "File d'attente",
       "filterPlaceholder": "File d'attente du filtre...",
@@ -352,14 +360,19 @@
       "addFolders": "Ajouter des dossiers...",
       "scanTree": "Arbre à balayage...",
       "runOnSelected": "Exécuter sur sélectionné ({{count}})",
-      "runAll": "Exécuter les 4 étapes",
+      "runAll": "Exécuter les 5 étapes",
       "verify": "Vérifier",
       "lookup": "Recherche",
       "rename": "Renommer",
-      "lbdir": "LBDIR"
+      "lbdir": "LBDIR",
+      "collect": "Collecter"
     },
     "filter": {
       "all": "Tous",
+      "needs": "Besoin de vous",
+      "ready": "Prêt à appliquer",
+      "running": "En cours",
+      "shelf": "Prêt à classer",
       "needAttention": "Besoin d'attention",
       "readyToRename": "Prêt à renommer",
       "done": "Terminé",
@@ -374,7 +387,9 @@
       "verifySelected": "Vérifier la sélection",
       "lookupSelected": "Recherche sélectionnée",
       "applySelected": "Appliquer le renommage sélectionné {{count}}",
-      "applySelected_plural": "Appliquer les renommages sélectionnés {{count}}"
+      "applySelected_plural": "Appliquer les renommages sélectionnés {{count}}",
+      "fileSelected": "Classer {{count}} sélectionné",
+      "fileSelected_plural": "Classer {{count}} sélectionnés"
     },
     "empty": {
       "title": "Déposez des dossiers ici pour commencer",
@@ -386,7 +401,43 @@
       "lookup": "Recherche",
       "rename": "Renommer",
       "lbdir": "LBDIR",
+      "collect": "Collecter",
       "lb": "LB#"
+    },
+    "file": {
+      "action": "Classer",
+      "confirmTitle": "Classer dans la collection",
+      "confirmBody": "Classer \"{{folder}}\" dans {{mount}}",
+      "confirmNote": "Le dossier sera déplacé vers sa destination de collection et enregistré dans Ma collection.",
+      "confirmAction": "Classer",
+      "progress": {
+        "scanning": "Analyse…",
+        "copying": "Copie…",
+        "moving": "Déplacement…"
+      }
+    },
+    "collect": {
+      "storageMount": "Volume de stockage",
+      "routedByYear": "Routé par année · {{year}} → {{mount}}",
+      "resetToSuggested": "Revenir à la suggestion",
+      "suggested": "suggéré",
+      "mountOffline": "Hors ligne",
+      "mountTooltip": "{{span}} · {{free}} libre",
+      "freeAmount": "{{free}} libre",
+      "tagInCollection": "Marquer dans la collection",
+      "itemsCounter": "{{count}} → {{next}} éléments",
+      "rowLb": "LB#",
+      "rowStatus": "Statut",
+      "rowConfirmed": "Confirmé",
+      "statusPublic": "Public",
+      "statusPrivate": "Privé",
+      "statusMissing": "Manquant",
+      "statusNonexistent": "Inexistant",
+      "statusUnknown": "Inconnu",
+      "ownedYes": "Possédé",
+      "ownedNo": "Pas dans la collection",
+      "notConfirmed": "Pas encore confirmé",
+      "valueUnassigned": "Non attribué"
     }
   },
   "collection": {
@@ -970,6 +1021,48 @@
       "noResults": "La requête n’a retourné aucune ligne.",
       "truncated": "(limité à 500 lignes)",
       "error": "Erreur : {{msg}}"
+    }
+  },
+  "quickLookup": {
+    "title": "Recherche rapide",
+    "subtitle": "Somme de contrôle",
+    "desc": "Collez ou déposez des lignes de sommes de contrôle pour identifier instantanément des enregistrements.",
+    "header": {
+      "matched": "trouvé"
+    },
+    "input": {
+      "label": "Entrée",
+      "placeholder": "Collez le contenu .md5 ou .ffp ici…\nex.  a1b2c3d4…  Mon Concert.flac"
+    },
+    "drop": {
+      "hint": "Déposez un fichier de somme de contrôle ici",
+      "ext": ".md5 · .ffp · .st5 · .sha1"
+    },
+    "btn": {
+      "clipboard": "Presse-papiers",
+      "files": "Fichiers…",
+      "lookup": "Rechercher",
+      "running": "Recherche en cours…",
+      "clear": "Effacer les résultats"
+    },
+    "filePicker": {
+      "title": "Sélectionner des fichiers de sommes de contrôle"
+    },
+    "empty": {
+      "title": "Aucun résultat pour l'instant",
+      "desc": "Collez du texte de somme de contrôle, déposez un fichier ou utilisez le bouton Presse-papiers."
+    },
+    "table": {
+      "checksum": "Somme de contrôle",
+      "filename": "Nom du fichier",
+      "lb": "LB#",
+      "status": "Statut"
+    },
+    "toast": {
+      "failed": "Recherche échouée",
+      "clipboardEmpty": "Le presse-papiers est vide",
+      "clipboardFailed": "Impossible de lire le presse-papiers",
+      "noValidFiles": "Aucun fichier de somme de contrôle trouvé (.md5, .ffp, .st5, .sha1)"
     }
   }
 }

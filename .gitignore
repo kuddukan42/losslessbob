@@ -9,6 +9,9 @@ __pycache__/
 .venv/
 venv/
 env/
+
+# Node
+node_modules/
  
 # PyInstaller
 build/
@@ -50,6 +53,7 @@ secrets/*.txt
 tools/tapematch/last_run.log
 tools/tapematch/last_run_report.md
 tools/tapematch/last_results.json
+tools/tapematch/last_debug.log
 tools/tapematch/observations.db
 
 # Generated output files

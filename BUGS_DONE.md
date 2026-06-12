@@ -1,6 +1,379 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-162: Pipeline Lookup shows green "Pass" on a half-matched checksum set with no detail widget
+Status: Fixed
+File(s): backend/app.py:_pipeline_process_folder (lookup step), gui_next/src/renderer/src/screens/ScreenPipeline.tsx:LookupStageContent
+Reported: 2026-06-12
+Fixed: 2026-06-12
+Root cause: When exactly one LB# was found, `_pipeline_process_folder` set
+  `lookup.status = "ok"` (green Pass) purely on `len(lb_list) == 1`, ignoring
+  `summary.matched` vs `summary.given`. For "2018-08-06 Singapore Mani R-05"
+  (LB-13718) the folder's local .ffp checksums matched all 21 DB 'f' (ffp/audio)
+  rows for that LB, so the per-LB xref-group was "complete" — but the folder's
+  local .md5 checksums (21 more) matched none of the DB's 'm' (md5/whole-file)
+  rows, giving an overall 21/42 match. The pipeline showed a green Pass with only
+  a small "21/42 matched" caption, and the LookupStageContent "ok" branch never
+  rendered <LookupDetail>, so the 21 NOT FOUND checksums were never surfaced.
+Fix: In _pipeline_process_folder, a resolved LB# (pinned or single match) is only
+  "ok" (Pass) when `summary.matched == summary.given` (42/42). Otherwise status is
+  "warn" / label "Incomplete match" with an error row noting the X/Y ratio — lb_number
+  stays set so Rename/LBDIR/Collect can still proceed, but the stage shows as
+  "Needs you" instead of Pass. ScreenPipeline.tsx's LookupStageContent gained a new
+  warn branch (lb_number set, non-Conflict) that explains the mismatch and renders
+  <LookupDetail> (LookupSummaryTable + LookupChecksumTable), so the 21 NOT FOUND
+  checksum rows are visible.
+
+BUG-154: Pipeline — stale tsc-emitted .js files shadow .tsx sources; app runs pre-BUG-149 pipeline code
+Status: Fixed
+File(s): gui_next/src/renderer/src/**/*.js (45 untracked build artifacts, e.g. screens/ScreenPipeline.js)
+Reported: 2026-06-10
+Fixed: 2026-06-11
+Root cause: A tsc run with emit (no --noEmit) on 2026-06-10 ~17:09 wrote compiled .js files next to
+  every .tsx/.ts source under gui_next/src/renderer/src. Vite resolves extensionless imports
+  (e.g. `import { ScreenPipeline } from './screens/ScreenPipeline'` in App.tsx:15) with .js BEFORE
+  .tsx, so the dev/build app silently loads the stale compiled code. screens/ScreenPipeline.js
+  predates the BUG-149/151/152/153 fixes: auto-run only sends ['verify','lookup'] (rename/lbdir/file
+  stay mute → "Rename unlocks after lookup resolves an LB#" even though lookup shows LB-NNNNN),
+  no _pipelineCache (statuses cleared on tab navigation), no auto-complete effect.
+Fix: Untracked .js artifacts under gui_next/src/renderer/src no longer present (removed in a prior
+  session). tsconfig.web.json and tsconfig.node.json already set "noEmit": true, so a `tsc -p` run
+  on either project config can't regenerate them. Added gui_next/.gitignore entries for
+  src/{renderer,main,preload}/**/*.js as a guard against any future stray emitted file shadowing
+  a .tsx/.ts source.
+
+BUG-153: Pipeline — step results lost on tab navigation; component remount resets all rows to emptyRow
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenPipeline.tsx:87,1199,1290,1409
+Reported: 2026-06-10
+Fixed: 2026-06-10
+Root cause: Pipeline step results (verify, lookup, rename, lbdir, file) live only in ScreenPipeline's local useState. Every time the user navigates away and back, the component unmounts/remounts and useState resets to []. The queue sync effect then re-adds folders as emptyRow (all steps mute), losing all previously-run results.
+Fix: Added module-level _pipelineCache Map (keyed by folder path). updateRow writes to cache on every result update. Queue sync restores from cache for any folder already processed in this session. Cache is cleared on queue Clear and on individual row removal; updated (key migrated) on rename apply.
+
+BUG-152: Pipeline — stale folders (lookup=ok, rename=mute) never auto-complete after BUG-149 fix
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenPipeline.tsx:1344
+Reported: 2026-06-10
+Fixed: 2026-06-10
+Root cause: BUG-149 fixed auto-run for NEW folders but existing queue rows that were already processed with old auto-run (verify+lookup only) stayed with rename=mute forever — no mechanism re-ran the missing steps.
+Fix: Added auto-complete useEffect that detects rows where lookup=ok and rename=mute, adds them to autocompleteStarted ref (prevents re-triggering), and runs ['lookup','rename','lbdir','file'] to complete the pipeline.
+
+BUG-151: Pipeline — partial-step runs (Check rename, Re-check) wipe existing Verify/Lookup results
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenPipeline.tsx:1304
+Reported: 2026-06-10
+Fixed: 2026-06-10
+Root cause: serverRowToPipeline always returns all 5 steps from the server response. The backend initialises unrun steps as mute, so a partial run (e.g. ['lookup','rename']) overwrites the client's existing verify=Pass and lbdir results with mute. updateRow replaced the whole steps object unconditionally.
+Fix: In runSteps, after calling serverRowToPipeline, iterate all 5 step keys and for any key NOT in the requested steps set, restore target.steps[key] (the pre-run value) into fresh.steps before calling updateRow.
+
+BUG-150: Pipeline — per-stage re-run buttons send only their stage; lb_number is always None → rename/lbdir/file stay mute
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenPipeline.tsx:733,773,860,960,1037,1055,1075
+Reported: 2026-06-10
+Fixed: 2026-06-10
+Root cause: "Check rename", "Re-check", "Check route now" etc. called onRun(['rename'|'file'|stageKey])
+  with only the target stage. The backend rebuilds lb_number from scratch each call, so without 'lookup'
+  in the steps list lb_number is always None → downstream stages stay mute.
+Fix: Prepend 'lookup' to steps for all 7 per-stage re-run buttons that depend on lb_number
+  (rename×3, file×3, lbdir×1).
+
+BUG-149: Pipeline — auto-run only ran verify+lookup; rename/lbdir stayed mute → false "In collection"
+Status: Fixed
+File(s): backend/app.py:5251-5258, gui_next/src/renderer/src/screens/ScreenPipeline.tsx:1328
+Reported: 2026-06-10
+Fixed: 2026-06-10
+Root cause: (1) Auto-run fired runSteps(['verify','lookup']) — rename, lbdir, file steps were never
+  requested so they stayed 'mute'. (2) The backend severity formula treated 'mute' as equivalent to 'ok'
+  (all steps in ("ok","mute") and at least one "ok"), so a folder with verify+lookup passing but
+  rename/lbdir never run got severity="done" → bucket="done" → shown as "IN COLLECTION" in batch view,
+  and "Done · LB-NNNNN" in the queue sidebar — a false positive. (3) The mute LBDIR panel's
+  "Retrieve sidecar now" button called /api/lbdir/retrieve with no way to supply the LB# resolved
+  by lookup; endpoint only checked my_collection.disk_path and folder-name regex — both fail for an
+  un-filed, un-renamed folder.
+Fix: (1) Auto-run now runs ['verify','lookup','rename','lbdir','file'] in one pass. (2) Severity
+  now returns "attn" when lb_number is resolved but rename or lbdir are still mute. (3)
+  lbdir_retrieve accepts lb_number_hint in the request body; handleRetrieve passes
+  row.steps.lookup.lb_number as the hint.
+
+BUG-145: batch_verify --skip-done silently preserves api_error/retrieve_error from transient backend failures
+Status: Fixed
+File(s): tools/batch_verify.py:1007-1009
+Reported: 2026-06-05
+Fixed: 2026-06-05
+Root cause: --skip-done skips any folder with any stored result, including api_error and retrieve_error. A transient backend crash (run 15, 2026-06-04 18:52–19:00) wrote ~9,300 api_error/retrieve_error rows with notes=''. Subsequent runs with --skip-done preserved these stale results indefinitely; only way to fix was --reprocess api_error,retrieve_error.
+Fix: When --skip-done is active, api_error and retrieve_error are automatically added to reprocess_set so they are always reprocessed regardless of prior result.
+
+BUG-144: tapematch Pass 1 OOM — stereo ingest + mono copy peaks at ~1.2 GB per source
+Status: Fixed
+File(s): tools/tapematch/tapematch/cli.py:57-98
+Reported: 2026-06-05
+Fixed: 2026-06-05
+Root cause: concat_source loaded stereo (shape N×2, ~776 MB for a 2h show at 16 kHz).
+  performance_envelope then called to_mono() which allocated a second mono copy (~388 MB).
+  Both lived simultaneously, peaking at ~1.16 GB per source. For 1990-06-02 with 6 sources,
+  the tapematch CLI subprocess was OOM-killed after completing the first source (LB-12209)
+  and starting the second (LB-12888). Orphaned tmp dir left at /mnt/DATA0/tmp/tapematch_f9d_8xw7.
+Fix: Changed ingest to mono=True always. to_mono() now returns a zero-cost view. Trimmed
+  slice written directly to memmap via ravel() view — no third heap array. Peak per source
+  drops from ~1.2 GB to ~500 MB.
+
+BUG-143: Verify — filenames with curly/smart apostrophes don't match disk files
+Status: Fixed
+File(s): backend/checksum_utils.py:_parse_checksum_file, verify_folder, parse_lbdir_file, verify_folder_lbdir
+Reported: 2026-06-05
+Fixed: 2026-06-05
+Root cause: Checksum files (e.g. created by EAC) can use typographic RIGHT SINGLE QUOTATION MARK (U+2019) in filenames like "04 Talkin' New York.flac", while the actual files on disk use a straight apostrophe (U+0027). The string comparison used as dict keys failed silently, causing both a "disk-only extra" row and a "checksum-only missing" row.
+Fix: Added _norm_fname() using str.maketrans to normalise U+2018/2019/201B/02BC/02B9 → U+0027. Applied to disk_audio_map keys in verify_folder and to all filenames parsed in _parse_checksum_file. Extended to parse_lbdir_file (md5/ffp/shntool/shntool_len sections) and verify_folder_lbdir (normalised _disk_audio_map + _subdir_index replace bare folder/fname lookup).
+
+BUG-142: Pipeline — apply rename renames folder but does not write rename_log.txt
+Status: Fixed
+File(s): backend/app.py:4920
+Reported: 2026-06-05
+Fixed: 2026-06-05
+Root cause: The /api/folder/rename route performed folder.rename() without calling write_rename_log(), so no rename_log.txt was created inside the folder and no rename_history DB row was inserted.
+Fix: Import write_rename_log in folder_rename() and call it with source='pipeline' before the os-level rename, matching the pattern used by /api/rename/apply.
+
+BUG-141: Verify — shntool-format .md5 entries for FLAC files show as "Missing" duplicates
+Status: Fixed
+File(s): backend/checksum_utils.py:435-444
+Reported: 2026-06-05
+Fixed: 2026-06-05
+Root cause: _SHNTOOL_LINE_RE only matches .wav filenames, so "hash  [shntool]  file.flac" lines from externally-run shntool fell through to _MD5_RE, which captured "[shntool]  file.flac" as the literal filename. These bogus keys didn't match disk files → "Missing", doubling the TOTAL count.
+Fix: In _parse_checksum_file, after _MD5_RE matches, detect a [shntool] prefix in the captured filename, strip it, and store the entry as 'shntool' type instead of 'md5'.
+
+BUG-140: Lookup — adding a folder once shows it twice in sources list
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenLookup.tsx:129-145, 247, 265
+Reported: 2026-06-05
+Fixed: 2026-06-05
+Root cause: handleSingleFolder and handleFolders called addSource without checking if the folder was already present. The useEffect queue-sync also added folders asynchronously after a fetch, but checked for duplicates synchronously before the fetch — so if a folder was manually added while the sync fetch was in-flight, the sync's .then() would add it a second time. Together these two paths produced duplicates whenever a folder existed in both the shared queue store and was manually added on the Lookup tab.
+Fix: Added path-based dedup guard at the start of handleSingleFolder and handleFolders (skip if path already in sources). Also re-check inside the useEffect's .then()/.catch() callbacks so the async race no longer causes duplicates.
+
+BUG-139: LBDIR renames table — current path column collapsed to ~24px
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenLBDIR.tsx:158-167
+Reported: 2026-06-04
+Fixed: 2026-06-04
+Root cause: colgroup had 6 <col> entries but TR component auto-injects a 3px edge-bar <td>, giving 7 actual columns. With tableLayout:fixed the disk_rel path column (col 4) was mapped to the 24px arrow <col>, truncating filenames to "1..".
+Fix: Added <col style={{width:32}}/> for the checkbox column and a matching <TH> in the header, shifting disk_rel to the correct auto-width col.
+
+BUG-138: verify_folder_lbdir _norm uses full path — patch track and multi-LB bare-filename lbdirs mismatch
+Status: Fixed
+File(s): backend/checksum_utils.py:654-657
+Reported: 2026-06-04
+Fixed: 2026-06-04
+Root cause: _norm in verify_folder_lbdir normalized full paths (Disc2/dead_dylan2003.8.05.d2t04.shn), so the shntool key for the patch track (incorrectly assigned to Disc2/ by the section parser) did not match the md5 canonical key (dead&dylan2003.8.05.d2t04.patch/dead&dylan2003.8.05.d2t04.shn). Also, LBF-01334 lbdirs list bare filenames; when used against a combined multi-LB folder where audio is in Disc3/, the files were not found.
+Fix: (1) _norm now strips the directory component and uses basename only before normalizing, so disc-prefix differences never block remapping. (2) verify_folder_lbdir builds an audio-only subdir index and falls back to it when a bare-filename lbdir entry is not found at the exact path — only for audio extensions, preventing ambiguous non-audio name matches (checksum.md5).
+
+BUG-137: lookup_checksums base grouping fails for SHN sets with & → _ and disc prefix differences
+Status: Fixed
+File(s): backend/db.py:1431-1453
+Reported: 2026-06-04
+Fixed: 2026-06-04
+Root cause: BUG-130's fix grouped DB entries by _AUDIO_EXT_RE.sub('', filename).lower() to unify foo.shn and foo.wav as the same track. But the DB stores SHN entries as Disc1\dead&dylan2003.*.shn (with disc prefix and &) and shntool WAV entries as dead_dylan2003.*.wav (bare filename, & replaced by _ by shntool). The bases Disc1\dead&dylan2003.7.29.d1t01 and dead_dylan2003.7.29.d1t01 do not match, so all 26 shntool WAV entries for LB-1332 were counted as uncovered tracks and the set showed INCOMPLETE instead of MATCHED.
+Fix: Added _norm_track_base() which strips the directory prefix and replaces & with _ before grouping. Now Disc1\dead&dylan2003.*.shn and dead_dylan2003.*.wav both normalize to dead_dylan2003_* and are correctly treated as the same track.
+
+BUG-135: LBDIR shows phantom "Missing" rows for all SHN disc-subdirectory entries
+Status: Fixed
+File(s): backend/checksum_utils.py:136-199
+Reported: 2026-06-04
+Fixed: 2026-06-04
+Root cause: parse_lbdir_file ignored the subdirectory context embedded in shntool section headers ("=== shntool md5/hash for: archive\Disc1"). Shntool entries list bare filenames (dead_dylan2003.*.wav) without the Disc1/ prefix. The _norm remap in verify_folder_lbdir requires matching normalized keys between md5_map (Disc1/dead&dylan2003.*) and shn_map. Without the prefix, "disc1_dead_dylan2003_*" != "dead_dylan2003_*", so all 26 shntool entries for a 3-disc SHN set added phantom underscore-named files to all_files that didn't exist on disk.
+Fix: parse_lbdir_file now extracts the subdirectory path from shntool section headers via _shn_dir_from_header() and prepends it to each file entry in that section.
+
+BUG-131: Lookup tab folder list not synced with shared folder queue
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenLookup.tsx:119-138
+Reported: 2026-06-04
+Fixed: 2026-06-04
+Root cause: ScreenLookup never subscribed to useFolderQueueStore, so folders added on Verify/Pipeline/LBDIR tabs were invisible to it. Every other tab reads the shared store.
+Fix: Added useFolderQueueStore subscription and a useEffect that scans+adds any queue folder not already present as a source.
+
+BUG-130: Lookup shows SHN sets as Incomplete due to missing shntool WAV checksums
+Status: Fixed
+File(s): backend/db.py:1422-1448
+Reported: 2026-06-03
+Fixed: 2026-06-03
+Root cause: The DB stores both MD5 checksums of .shn files (chk_type='m', filename='foo.shn') and shntool checksums of the decoded WAV (chk_type='s', filename='foo.wav') for the same track. The completeness check counted unmatched checksums by hash value only, so if the user provided MD5s of their SHN files (matching the 'm' entries), the 18 'wav' shntool entries were marked as missing — incorrectly flagging a fully-owned SHN set as INCOMPLETE.
+Fix: Completeness check now groups DB entries by base filename (stripping audio extension). A track is covered if ANY of its checksums was matched; foo.shn (md5) and foo.wav (shntool) sharing the same base are treated as the same track.
+
+BUG-129: Lookup LB summary shows "Not Found" (red) instead of "Incomplete" (orange) for incomplete SHN sets
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenLookup.tsx:35
+Reported: 2026-06-03
+Fixed: 2026-06-03
+Root cause: apiStatusToState() handled 'MATCHED (INCOMPLETE)' (per-row status) but not 'INCOMPLETE' (LB-level summary status from backend). The fallback returned 'notfound', showing a red "Not Found" pill even though the checksums were matched in the DB.
+Fix: Added if (status === 'INCOMPLETE') return 'incomplete' before the NOT FOUND branch.
+
+BUG-128: LBDIR Process silently replaces lbdir with updated cache version; has_lbdir misses LBF-format files
+Status: Fixed
+File(s): backend/app.py:2134-2136, tools/batch_verify.py:305-307, gui_next/src/renderer/src/screens/ScreenLBDIR.tsx:47-51
+Reported: 2026-06-03
+Fixed: 2026-06-03
+Root cause: (1) lbdir_retrieve always called shutil.copy2 regardless of whether an lbdir already existed in the folder, so if the attachments cache was updated (re-scraped) after batch_verify ran, clicking Process would silently swap in a different lbdir version with more entries, making previously-passing folders appear as missing_files. (2) has_lbdir in batch_verify used case-sensitive glob "lbdir*.txt" which never matched LBF-*-lbdir.txt files on Linux, causing unnecessary retrieve calls and masking the presence of the file. (3) Pre-check folder dot was green for any stale lbdir_verified_at timestamp.
+Fix: (1) lbdir_retrieve now checks _find_lbdir_in_folder first and returns already_present without overwriting. (2) has_lbdir now uses iterdir+lower() matching _find_lbdir_in_folder. (3) Pre-check dot color changed from var(--lbb-ok-bar) to var(--lbb-fg3).
+
+BUG-127: batch_verify misclassifies folders with missing files as api_error
+Status: Fixed
+File(s): tools/batch_verify.py:66
+Reported: 2026-06-03
+Fixed: 2026-06-03
+Root cause: _VERIFY_STATUS_MAP mapped "incomplete" → STATUS_MISSING_FILES but verify_folder_lbdir (checksum_utils.py:736) returns "missing_files" when n_missing > 0. The unmapped key fell through to the default STATUS_API_ERROR, making every folder with a missing lbdir entry appear as api_error with notes=None.
+Fix: Added "missing_files": STATUS_MISSING_FILES to _VERIFY_STATUS_MAP.
+
+BUG-126: tapematch session uses stale last_results.json when tapematch crashes mid-run
+Status: Fixed
+File(s): tools/tapematch/tapematch_session.py:669
+Reported: 2026-06-02
+Fixed: 2026-06-02
+Root cause: last_results.json was not cleared before running tapematch; if tapematch crashed early (before writing new results), the file from the prior run survived and was read in step 7, causing insert_sources/insert_pairs to iterate folder names from the wrong concert date
+Fix: unlink last_results.json (missing_ok=True) immediately before run_tapematch() call
+
+BUG-125: tapematch trim.performance_envelope crashes with TypeError on recordings with no detectable silence tail
+Status: Fixed
+File(s): tools/tapematch/tapematch/trim.py:63
+Reported: 2026-06-02
+Fixed: 2026-06-02
+Root cause: end_i computed as len(is_music)-1 - _first_sustained(reversed) before the None guard; _first_sustained returns None when no sustained music region is found in reversed signal (e.g. vinyl rips that end mid-music); TypeError: unsupported operand type(s) for -: 'int' and 'NoneType'
+Fix: assign to end_raw first, check for None, then compute end_i = len(is_music)-1 - end_raw
+
+BUG-124: tapematch trim report shows negative tail time
+Status: Fixed
+File(s): tools/tapematch/tapematch/cli.py:54
+Reported: 2026-06-02
+Fixed: 2026-06-02
+Root cause: trim_bounds stored rep["total_sec"] (sum of native-rate durations via soundfile/ffprobe)
+  but s1 from performance_envelope is clamped to len(stream)/sr (resampled frame count). These differ
+  by up to ~26s per source. When resampled > native-rate total, total_sec - s1 < 0, and Python's
+  floor division on negatives makes fmt_hms wrap around (e.g. -2s renders as "-1:59:58").
+Fix: compute stream_dur = len(stream)/sr after concat_source and use it for both trim_bounds
+  and the no_trim s1 fallback, so total_sec and s1 share the same frame-count basis.
+
+BUG-123: tapematch source duration non-deterministic for formats without container duration field
+Status: Fixed
+File(s): tools/tapematch/tapematch/audio.py:43
+Reported: 2026-06-02
+Fixed: 2026-06-02
+Root cause: _ffprobe_info fallback (SHN, MP3, etc.) runs "ffmpeg -stats -f null" and uses
+  re.search to find the first "time=" match in stderr. ffmpeg emits multiple progress lines;
+  the first match is an early intermediate timestamp, not the final decode position — giving
+  a shorter-than-actual duration that varies with CPU/IO speed between runs.
+Fix: use re.findall and take matches[-1] (the last progress update = true total duration).
+
+BUG-122: tapematch fills system tmpfs with memmap files
+Status: Fixed
+File(s): tools/tapematch/tapematch/cli.py:37
+Reported: 2026-06-02
+Fixed: 2026-06-02
+Root cause: tempfile.mkdtemp() with no dir= argument writes to /tmp (system tmpfs); ~438 MB per source × N sources exhausts the tmpfs, crashing the run and Claude Code's own /tmp buffer.
+Fix: Pass dir=/mnt/DATA0/tmp (created if absent) to mkdtemp so memmaps land on the data drive.
+
+BUG-161: Pipeline Collect "Confirmed" date never updates on LBDIR pass for owned folders
+Status: Fixed
+File(s): backend/app.py:5197-5201
+Reported: 2026-06-11
+Fixed: 2026-06-11
+Root cause: The Collect stage's "Tag in the collection" preview shows a "Confirmed" row
+  sourced from my_collection.lbdir_verified_at (CollectDetail.tsx TagTable, fed via
+  step.lbdir_verified_at). The /api/pipeline/run LBDIR step (step 4) computed a "pass"
+  result but never called database.set_lbdir_verified(), so for an already-owned folder
+  that's re-checked in place, lbdir_verified_at was never refreshed and "Confirmed"
+  stayed stuck on "Not yet confirmed" (or a stale date) even after a fresh Pass.
+Fix: When the pipeline LBDIR step result is "pass", call database.set_lbdir_verified
+  (str(folder)) — same call already used by /api/lbdir/verify. It's a no-op (rowcount 0)
+  if the folder has no matching my_collection.disk_path row (not yet filed), so
+  not-yet-filed folders still correctly show "Not yet confirmed". Step 5 (file) already
+  re-queries lbdir_verified_at after step 4 runs, in the same request, so the updated
+  timestamp is picked up immediately.
+
+BUG-160: rename_history.renamed_at stored in UTC instead of local time
+Status: Fixed
+File(s): backend/db.py:add_rename_history, backend/db.py:init_db
+Reported: 2026-06-11
+Fixed: 2026-06-11
+Root cause: The `rename_history` table's `renamed_at` column relied on SQLite's
+  `DEFAULT CURRENT_TIMESTAMP`, which SQLite always evaluates in UTC. Meanwhile
+  rename.py's rename_log.txt entries used `datetime.now()` (local time), so the
+  two records of the same event disagreed by the local UTC offset.
+Fix: `add_rename_history()` now computes and inserts an explicit local-time
+  timestamp (`datetime.now()`), overriding the UTC default. Added a one-time
+  migration in `init_db()` (gated by meta key `rename_history_localtime_v1`)
+  that converts existing `renamed_at` values from UTC to local time via
+  SQLite's `datetime(renamed_at, 'localtime')`.
+
+BUG-159: LBDIR status stuck on "Extra files" after extras moved to extras/ and rename logged
+Status: Fixed
+File(s): backend/checksum_utils.py:verify_folder_lbdir
+Reported: 2026-06-11
+Fixed: 2026-06-11
+Root cause: BUG-158 made verify_folder_lbdir() scan the whole folder recursively for files not
+  claimed by the lbdir manifest. After a user reconciles a folder (move_extras relocates strays
+  to extras/, and a rename appends rename_log.txt), those two now-expected artifacts were still
+  counted as "extra", so `status` stayed 'extra_files' (warn) forever and pipeline step 4 never
+  turned green even though the folder was fully reconciled.
+Fix: Added `_is_reconciled_extra()` — unclaimed files under `extras/` or named `rename_log.txt`
+  are excluded from `extra_names`/`extra` count. If those are the only unclaimed files, status
+  now resolves to 'pass' (green); any other stray file still yields 'extra_files'.
+
+BUG-158: LBDIR check — extra files on disk not detected unless another problem already exists
+Status: Fixed
+File(s): backend/checksum_utils.py:verify_folder_lbdir; backend/app.py (pipeline lbdir step);
+  gui_next/src/renderer/src/lib/lbdirStore.ts; gui_next/src/renderer/src/screens/ScreenLBDIR.tsx;
+  gui_next/src/renderer/src/screens/ScreenPipeline.tsx;
+  gui_next/src/renderer/src/components/pipeline/LbdirDetail.tsx
+Reported: 2026-06-11
+Fixed: 2026-06-11
+Root cause: verify_folder_lbdir() only iterated files referenced in the lbdir's md5/ffp/shntool
+  sections and hardcoded `'extra': 0`, never scanning disk for unreferenced files. As long as
+  every lbdir-listed file was present and matched, status was 'pass' (green), and the GUI's
+  canReconcile gate (status !== 'pass') skipped /api/lbdir/reconcile entirely — so extra files
+  were silently invisible. They were only surfaced as a side effect of find_reconcilable_files's
+  unmatched_disk once a missing/mismatched file already made canReconcile true.
+Fix: verify_folder_lbdir now tracks which on-disk paths are claimed by an lbdir entry, scans the
+  folder recursively for unclaimed files (excluding the lbdir manifest itself), appends them to
+  `files` with overall='extra', and reports the real `extra` count. Added a new 'extra_files'
+  status (between missing_files/fail and pass in priority) so a folder with otherwise-clean
+  checksums but stray files no longer shows green and now triggers the reconcile/move-to-extras
+  flow. Updated the pipeline lbdir step label, GUI LbdirState type + STATE_LABEL maps in
+  ScreenLBDIR/ScreenPipeline, and LbdirFileTable's row styling for overall='extra' (was
+  mis-rendered as a red "Fail").
+
+BUG-157: Pipeline — "File into collection" succeeds but My Collection screen doesn't show the new entry
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenPipeline.tsx:1488-1521
+Reported: 2026-06-11
+Fixed: 2026-06-11
+Root cause: applyFile() POSTs to /api/pipeline/file, which moves/copies the folder and inserts a
+  my_collection row (verified directly in data/losslessbob.db — the LB-16298 row and dest path
+  were correct). The My Collection screen reads from a single react-query cache keyed
+  ['collection-prefetch'] with staleTime: Infinity, refreshed only via queryClient.invalidateQueries.
+  applyFile never called invalidateQueries, so if the Collection screen's cache was already warm
+  from earlier in the session, it kept showing the pre-filing snapshot — the newly filed LB
+  appeared as "not in collection" even though the DB and filesystem were correct.
+Fix: Imported useQueryClient in ScreenPipeline and called
+  queryClient.invalidateQueries({ queryKey: ['collection-prefetch'] }) after a successful
+  /api/pipeline/file result, so the My Collection screen refetches and shows the new entry.
+
+BUG-156: Pipeline — folder shows "In collection"/"Filed to X" before Collect step is run
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenPipeline.tsx:140-163
+Reported: 2026-06-11
+Fixed: 2026-06-11
+Root cause: backend/app.py severity logic (app.py:5278) returns "done" once
+  verify/lookup/rename/lbdir all pass, regardless of the file (Collect) step's
+  status — by design, "ready" doesn't change severity so the row keeps its
+  per-row File button. serverRowToPipeline mapped severity "done" straight to
+  bucket 'done', and deriveFolderStatus treats bucket 'done' as "In collection" /
+  "Filed to <mount>" unconditionally. Result: the detail panel correctly showed
+  Collect as "Action — File into collection" while the list/status badge claimed
+  the folder was already filed.
+Fix: serverRowToPipeline now reclassifies bucket 'done' as 'shelf' when the
+  normalized file step status is 'warn' (i.e. backend file.status == "ready",
+  not yet filed). The existing 'shelf' bucket already renders "Ready to file" /
+  "Archive-clean — file into the collection" via deriveFolderStatus and is
+  counted in the "Ready to file" banner pill / "File all N into collection"
+  action, so no new UI states were needed.
+
 BUG-134: Map screen — blank center canvas with no fallback when tiles fail to load
 Status: Fixed
 File(s): gui/resources/map.html

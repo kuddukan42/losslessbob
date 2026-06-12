@@ -69,6 +69,8 @@ USER_TABLES = (
     "folder_lb_link",
     "scrape_sessions",
     "site_inventory",
+    "collection_mounts",
+    "collection_routes",
 )
 
 # Guard against f-string injection if a table name is ever mis-typed (#10)
@@ -555,6 +557,23 @@ CREATE TABLE IF NOT EXISTS archive_org_uploads (
 );
 CREATE INDEX IF NOT EXISTS idx_archive_uploads_lb ON archive_org_uploads(lb_number);
 CREATE INDEX IF NOT EXISTS idx_archive_uploads_status ON archive_org_uploads(status, started_at DESC);
+
+-- ── Collection Mounts & Routes (USER — named storage roots + year routing) ────
+CREATE TABLE IF NOT EXISTS collection_mounts (
+    id         INTEGER PRIMARY KEY AUTOINCREMENT,
+    label      TEXT NOT NULL UNIQUE,
+    root_path  TEXT NOT NULL,
+    notes      TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS collection_routes (
+    year      INTEGER PRIMARY KEY,
+    mount_id  INTEGER NOT NULL
+              REFERENCES collection_mounts(id) ON DELETE RESTRICT,
+    sub_path  TEXT NOT NULL DEFAULT ''
+);
+CREATE INDEX IF NOT EXISTS idx_routes_mount ON collection_routes(mount_id);
 """
 
 _MD5_RE = re.compile(r'^([0-9a-fA-F]{32})\s+\*?(.+)$')
@@ -974,6 +993,32 @@ def init_db(db_path=None):
         _mc_cols = [r[1] for r in conn.execute("PRAGMA table_info(my_collection)").fetchall()]
         if "lbdir_verified_at" not in _mc_cols:
             conn.execute("ALTER TABLE my_collection ADD COLUMN lbdir_verified_at TIMESTAMP")
+        # Migration: collection_mounts / collection_routes tables (pipeline step 5)
+        if not conn.execute(
+            "SELECT name FROM sqlite_master WHERE type='table' AND name='collection_mounts'"
+        ).fetchone():
+            conn.execute("""CREATE TABLE collection_mounts (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                label TEXT NOT NULL UNIQUE,
+                root_path TEXT NOT NULL,
+                notes TEXT,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )""")
+        if not conn.execute(
+            "SELECT name FROM sqlite_master WHERE type='table' AND name='collection_routes'"
+        ).fetchone():
+            conn.execute("""CREATE TABLE collection_routes (
+                year INTEGER PRIMARY KEY,
+                mount_id INTEGER NOT NULL
+                    REFERENCES collection_mounts(id) ON DELETE RESTRICT,
+                sub_path TEXT NOT NULL DEFAULT ''
+            )""")
+            conn.execute(
+                "CREATE INDEX IF NOT EXISTS idx_routes_mount ON collection_routes(mount_id)"
+            )
+        conn.execute(
+            "INSERT OR IGNORE INTO meta(key, value) VALUES('pipeline_file_mode', 'move')"
+        )
         # Migration: recreate lb_master when the schema is missing 'nonexistent' status or
         # public_no_checksums column.  SQLite only supports CHECK changes via table recreation.
         _lbm_schema_row = conn.execute(
@@ -1081,6 +1126,18 @@ def init_db(db_path=None):
                 _classified["classified"],
                 _classified.get("concert", 0),
                 _classified.get("unknown", 0),
+            )
+
+        # One-time migration: rename_history.renamed_at previously defaulted to
+        # SQLite's CURRENT_TIMESTAMP, which is UTC. Convert existing rows to local
+        # time to match the now-explicit local timestamps written going forward.
+        if not conn.execute("SELECT 1 FROM meta WHERE key='rename_history_localtime_v1'").fetchone():
+            conn.execute(
+                "UPDATE rename_history SET renamed_at = datetime(renamed_at, 'localtime') "
+                "WHERE renamed_at IS NOT NULL"
+            )
+            conn.execute(
+                "INSERT OR REPLACE INTO meta(key, value) VALUES('rename_history_localtime_v1', '1')"
             )
 
         # Always commit: UPDATE above opens a Python implicit transaction regardless
@@ -2502,13 +2559,15 @@ def clear_superseded_torrent_paths(lb_number: int, new_id: int, new_path: str,
 
 def add_rename_history(lb_number: int | None, old_path: str, new_path: str,
                        source: str, notes: str = "", db_path=None) -> None:
-    """Insert a rename_history row."""
+    """Insert a rename_history row with a local-time timestamp."""
+    from datetime import datetime as _dt
     _lb, _op, _np, _src, _nt = lb_number, old_path, new_path, source, notes
+    _ts = _dt.now().strftime("%Y-%m-%d %H:%M:%S")
     get_write_queue().execute(
         lambda c: c.execute(
-            """INSERT INTO rename_history(lb_number, old_path, new_path, source, notes)
-               VALUES(?,?,?,?,?)""",
-            (_lb, _op, _np, _src, _nt)
+            """INSERT INTO rename_history(lb_number, old_path, new_path, source, notes, renamed_at)
+               VALUES(?,?,?,?,?,?)""",
+            (_lb, _op, _np, _src, _nt, _ts)
         )
     )
 
@@ -4286,3 +4345,108 @@ def get_archive_uploads(lb_number: int | None = None, db_path=None) -> list:
                 "ORDER BY au.started_at DESC"
             ).fetchall()
     return [dict(r) for r in rows]
+
+
+# ── Collection Mounts ──────────────────────────────────────────────────────────
+
+def get_collection_mounts(db_path=None) -> list[dict]:
+    """Return all mounts; online status is checked by the caller via filer._path_reachable."""
+    with get_connection(db_path) as conn:
+        rows = conn.execute(
+            "SELECT id, label, root_path, notes, created_at "
+            "FROM collection_mounts ORDER BY label"
+        ).fetchall()
+    return [dict(r) for r in rows]
+
+
+def add_collection_mount(label: str, root_path: str, notes: str | None = None,
+                         db_path=None) -> int:
+    """Insert a new mount. Returns the new row id."""
+    _l, _r, _n = label, root_path, notes
+
+    def _run(c):
+        c.execute(
+            "INSERT INTO collection_mounts(label, root_path, notes) VALUES(?,?,?)",
+            (_l, _r, _n),
+        )
+        return c.execute("SELECT last_insert_rowid()").fetchone()[0]
+
+    return get_write_queue().execute(_run)
+
+
+def update_collection_mount(mount_id: int, fields: dict, db_path=None) -> None:
+    """Update allowed fields on a mount row."""
+    allowed = {"label", "root_path", "notes"}
+    updates = {k: v for k, v in fields.items() if k in allowed}
+    if not updates:
+        return
+    set_clause = ", ".join(f"{k}=?" for k in updates)
+    params = list(updates.values()) + [mount_id]
+    get_write_queue().execute(
+        lambda c: c.execute(
+            f"UPDATE collection_mounts SET {set_clause} WHERE id=?", params
+        )
+    )
+
+
+def delete_collection_mount(mount_id: int, db_path=None) -> dict:
+    """Delete a mount. Returns {ok, error} — fails if any routes reference it."""
+    _id = mount_id
+
+    def _run(c):
+        in_use = c.execute(
+            "SELECT COUNT(*) FROM collection_routes WHERE mount_id=?", (_id,)
+        ).fetchone()[0]
+        if in_use:
+            return {"ok": False, "error": f"Mount is referenced by {in_use} route(s)"}
+        c.execute("DELETE FROM collection_mounts WHERE id=?", (_id,))
+        return {"ok": True, "error": None}
+
+    return get_write_queue().execute(_run)
+
+
+# ── Collection Routes ──────────────────────────────────────────────────────────
+
+def get_collection_routes(db_path=None) -> list[dict]:
+    """Return all routes joined with mount label and root_path, ordered by year."""
+    with get_connection(db_path) as conn:
+        rows = conn.execute(
+            """SELECT r.year, r.mount_id, r.sub_path,
+                      m.label AS mount_label, m.root_path
+               FROM collection_routes r
+               JOIN collection_mounts m ON m.id = r.mount_id
+               ORDER BY r.year"""
+        ).fetchall()
+    return [dict(r) for r in rows]
+
+
+def upsert_collection_routes(
+    year_from: int,
+    year_to: int,
+    mount_id: int,
+    sub_path: str,
+    db_path=None,
+) -> int:
+    """Insert or replace one route row per year in [year_from, year_to] inclusive.
+
+    Returns the number of rows written.
+    """
+    years = list(range(year_from, year_to + 1))
+    _mid, _sp = mount_id, sub_path
+
+    def _run(c):
+        c.executemany(
+            "INSERT OR REPLACE INTO collection_routes(year, mount_id, sub_path) VALUES(?,?,?)",
+            [(y, _mid, _sp) for y in years],
+        )
+        return len(years)
+
+    return get_write_queue().execute(_run)
+
+
+def delete_collection_route(year: int, db_path=None) -> None:
+    """Remove the route for a single year."""
+    _y = year
+    get_write_queue().execute(
+        lambda c: c.execute("DELETE FROM collection_routes WHERE year=?", (_y,))
+    )

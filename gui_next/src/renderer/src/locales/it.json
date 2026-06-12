@@ -37,6 +37,7 @@
       "pipeline": "Pipeline",
       "verify": "Verifica",
       "lookup": "Ricerca",
+      "quicklookup": "Ricerca rapida",
       "rename": "Rinominare",
       "lbdir": "LBDIR",
       "library": "Biblioteca",
@@ -54,7 +55,8 @@
       "scraper": "Raschietto",
       "settings": "Impostazioni",
       "setup": "Impostazione",
-      "themes": "Temi"
+      "themes": "Temi",
+      "advancedTools": "Strumenti avanzati"
     },
     "statusBar": {
       "db": "DB:",
@@ -74,7 +76,7 @@
     "primaryWorkflow": "FLUSSO DI LAVORO PRIMARIO",
     "pipelineTagline": "La pipeline delle nuove acquisizioni",
     "ingestTitle": "Ingerire nuova musica",
-    "ingestDesc": "Lasciate le cartelle qui: la pipeline esegue <strong>verifica → ricerca → rinomina → LBDIR</strong> sull'intero batch. Non ci sono più schede che rimbalzano.",
+    "ingestDesc": "Lasciate le cartelle qui: la pipeline esegue <strong>verifica → ricerca → rinomina → LBDIR → raccogliere</strong> sull'intero batch. Non ci sono più schede che rimbalzano.",
     "dragHere": "Trascinare le cartelle qui",
     "orClickBrowse": "o fare clic per sfogliare",
     "stepVerify": "Verifica delle checksum",
@@ -237,6 +239,10 @@
       "extra": "Extra",
       "fail": "Bocciatura"
     },
+    "allClear": {
+      "title": "Tutti i file sono a posto",
+      "desc": "Tutti i {{count}} file corrispondono ai rispettivi checksum FFP e MD5. Non c'è nulla da correggere qui."
+    },
     "shntoolWarning": "shntool non è installato",
     "shntoolDesc": "Questa cartella contiene i file SHN. FFP/MD5 possono essere verificati senza shntool, ma i controlli della lunghezza per disco lo richiedono.",
     "verifyWithoutShntool": "Verifica senza shntool",
@@ -330,7 +336,7 @@
     "folderQueued_one": "- Cartella {{count}} in coda",
     "folderQueued_other": "- {{count}} cartelle in coda",
     "emptyHint": "Per iniziare, rilasciare le cartelle o utilizzare \"Aggiungi cartelle...\" nella guida in coda.",
-    "runHint": "Lasciare cadere altre cartelle in qualsiasi momento - fare clic su \"Esegui tutti e 4 i passaggi\" per elaborare la coda",
+    "runHint": "Lascia cadere una cartella e verifica → identifica → propone un rinominamento da sola.",
     "done_one": "{{count}} fatto",
     "done_other": "{{count}} fatto",
     "readyToRename_one": "{{count}} pronto per essere rinominato",
@@ -344,6 +350,8 @@
     "clearQueue": "Cancella la coda",
     "applyRenames": "Applicare tutte le proposte di ridenominazione {{count}}",
     "applyRenames_plural": "Applicare tutte le ridenominazioni proposte da {{count}}",
+    "fileAllReady": "Archivia {{count}} pronto per raccogliere",
+    "fileAllReady_plural": "Archivia {{count}} pronti per raccogliere",
     "queue": {
       "label": "Cartella in coda",
       "filterPlaceholder": "Filtro coda...",
@@ -352,14 +360,19 @@
       "addFolders": "Aggiungere cartelle...",
       "scanTree": "Scansione dell'albero...",
       "runOnSelected": "Esecuzione su selezionato ({{count}})",
-      "runAll": "Eseguire tutti e 4 i passaggi",
+      "runAll": "Eseguire tutti e 5 i passaggi",
       "verify": "Verifica",
       "lookup": "Ricerca",
       "rename": "Rinominare",
-      "lbdir": "LBDIR"
+      "lbdir": "LBDIR",
+      "collect": "Raccogliere"
     },
     "filter": {
       "all": "Tutti",
+      "needs": "Ha bisogno di lei",
+      "ready": "Pronto ad applicare",
+      "running": "In corso",
+      "shelf": "Pronto per l'archiviazione",
       "needAttention": "Necessità di attenzione",
       "readyToRename": "Pronti a rinominare",
       "done": "Fatto",
@@ -374,7 +387,9 @@
       "verifySelected": "Verificare la selezione",
       "lookupSelected": "Ricerca selezionata",
       "applySelected": "Applicare la rinominazione di {{count}} selezionato",
-      "applySelected_plural": "Applicare i nomi selezionati di {{count}}"
+      "applySelected_plural": "Applicare i nomi selezionati di {{count}}",
+      "fileSelected": "Archivia {{count}} selezionato",
+      "fileSelected_plural": "Archivia {{count}} selezionati"
     },
     "empty": {
       "title": "Per iniziare, lasciate qui le cartelle",
@@ -386,7 +401,43 @@
       "lookup": "Ricerca",
       "rename": "Rinominare",
       "lbdir": "LBDIR",
+      "collect": "Raccogliere",
       "lb": "LB#"
+    },
+    "file": {
+      "action": "Archivia",
+      "confirmTitle": "Archivia nella raccolta",
+      "confirmBody": "Archivia \"{{folder}}\" in {{mount}}",
+      "confirmNote": "La cartella verrà spostata nella sua destinazione di raccolta e registrata in La mia raccolta.",
+      "confirmAction": "Archivia",
+      "progress": {
+        "scanning": "Scansione…",
+        "copying": "Copia…",
+        "moving": "Spostamento…"
+      }
+    },
+    "collect": {
+      "storageMount": "Unità di archiviazione",
+      "routedByYear": "Indirizzato per anno · {{year}} → {{mount}}",
+      "resetToSuggested": "Ripristina suggerimento",
+      "suggested": "suggerito",
+      "mountOffline": "Non in linea",
+      "mountTooltip": "{{span}} · {{free}} liberi",
+      "freeAmount": "{{free}} liberi",
+      "tagInCollection": "Etichetta nella raccolta",
+      "itemsCounter": "{{count}} → {{next}} elementi",
+      "rowLb": "LB#",
+      "rowStatus": "Stato",
+      "rowConfirmed": "Confermato",
+      "statusPublic": "Pubblico",
+      "statusPrivate": "Privato",
+      "statusMissing": "Mancante",
+      "statusNonexistent": "Inesistente",
+      "statusUnknown": "Sconosciuto",
+      "ownedYes": "Posseduto",
+      "ownedNo": "Non in collezione",
+      "notConfirmed": "Non ancora confermato",
+      "valueUnassigned": "Non assegnato"
     }
   },
   "collection": {
@@ -970,6 +1021,48 @@
       "noResults": "La query non ha restituito righe.",
       "truncated": "(limitato a 500 righe)",
       "error": "Errore: {{msg}}"
+    }
+  },
+  "quickLookup": {
+    "title": "Ricerca rapida",
+    "subtitle": "Checksum",
+    "desc": "Incolla o trascina righe di checksum per identificare le registrazioni istantaneamente.",
+    "header": {
+      "matched": "trovato"
+    },
+    "input": {
+      "label": "Input",
+      "placeholder": "Incolla qui il contenuto .md5 o .ffp…\nes.  a1b2c3d4…  Il mio Concerto.flac"
+    },
+    "drop": {
+      "hint": "Trascina qui un file di checksum",
+      "ext": ".md5 · .ffp · .st5 · .sha1"
+    },
+    "btn": {
+      "clipboard": "Appunti",
+      "files": "File…",
+      "lookup": "Cerca",
+      "running": "Ricerca in corso…",
+      "clear": "Cancella risultati"
+    },
+    "filePicker": {
+      "title": "Seleziona file di checksum"
+    },
+    "empty": {
+      "title": "Nessun risultato ancora",
+      "desc": "Incolla testo di checksum, trascina un file o usa il pulsante Appunti."
+    },
+    "table": {
+      "checksum": "Checksum",
+      "filename": "Nome file",
+      "lb": "LB#",
+      "status": "Stato"
+    },
+    "toast": {
+      "failed": "Ricerca fallita",
+      "clipboardEmpty": "Gli appunti sono vuoti",
+      "clipboardFailed": "Impossibile leggere gli appunti",
+      "noValidFiles": "Nessun file di checksum trovato (.md5, .ffp, .st5, .sha1)"
     }
   }
 }

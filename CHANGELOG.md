@@ -1,3 +1,298 @@
+[2026-06-12] — chore(release): v1.4.0 — pipeline v2 (storage mounts, lookup, lbdir, rename, collect)
+Changed: gui_next/package.json: version bumped 1.3.0 -> 1.4.0.
+Changed: merged feat/pipeline-v2-storage-mounts into main — collection mount management,
+  Quick Lookup screen, pipeline lookup/rename/lbdir/collect stage panels, background
+  copy/move with progress, and associated bugfixes (see entries below).
+
+[2026-06-12] — fix(backend+gui): BUG-162 — pipeline Lookup no longer Passes on a partial checksum match
+Fixed: backend/app.py: _pipeline_process_folder's lookup step now requires
+  summary.matched == summary.given (e.g. 42/42) for a resolved LB# to report
+  status "ok"/Pass. A single-LB match with fewer matches than given checksums
+  (e.g. 21/42 — ffp matches but md5 doesn't) now reports status "warn" /
+  label "Incomplete match", with lb_number still set so Rename/LBDIR/Collect
+  proceed, plus a row["errors"] entry noting the X/Y ratio.
+Changed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: LookupStageContent
+  gained a warn branch for "Incomplete match" (lb_number set, not a Conflict)
+  that explains the mismatch and renders <LookupDetail> (summary + per-checksum
+  table) so the unmatched (NOT FOUND) checksum rows are visible — previously the
+  "ok" branch showed only a green banner with a small "21/42 matched" caption and
+  no detail table at all.
+Changed: BUGS.md, BUGS_DONE.md: added BUG-162 (Fixed).
+
+[2026-06-11] — fix(gui): BUG-154 — guard against stray tsc-emitted .js shadowing .tsx sources
+Fixed: gui_next/.gitignore: added src/{renderer,main,preload}/**/*.js entries. The stale
+  build artifacts from BUG-154 were already removed and tsconfig.web.json/tsconfig.node.json
+  already set noEmit:true; this closes the remaining gap so a future non --noEmit tsc run
+  can't silently reintroduce shadow .js files.
+Changed: BUGS.md, BUGS_DONE.md: moved BUG-154 to the archive as Fixed.
+
+[2026-06-11] — chore(docs): move 25 fixed bugs (BUG-122–153) from BUGS.md to BUGS_DONE.md
+Changed: BUGS.md, BUGS_DONE.md: moved all "Fixed" entries to the archive, keeping only
+  Open bugs (BUG-106, 118, 120, 146, 154, 155) in BUGS.md. Also removed BUG-133/134 from
+  BUGS.md — they were duplicates already present in BUGS_DONE.md.
+
+[2026-06-11] — fix(backend): pipeline — Collect "Confirmed" date now stamps on LBDIR pass
+Fixed: backend/app.py: BUG-161 — the pipeline's LBDIR step (step 4) computed a "pass"
+  result but never called database.set_lbdir_verified(), so the Collect stage's
+  "Confirmed" row (my_collection.lbdir_verified_at) never updated for an owned folder
+  re-checked in place. Now calls set_lbdir_verified() on pass, same as /api/lbdir/verify;
+  no-op for not-yet-filed folders (no matching my_collection.disk_path row).
+
+[2026-06-11] — feat(backend+gui): pipeline — Collect tag preview shows real status/confirmed data
+Changed: gui_next/src/renderer/src/components/pipeline/CollectDetail.tsx: TagTable's
+  "Status" row now shows the real lb_master.lb_status (Public/Private/Missing/Nonexistent)
+  plus owned/not-in-collection, and "Confirmed" shows the real my_collection.lbdir_verified_at
+  date (or "Not yet confirmed") instead of hardcoded "Public · Owned" / "Today".
+Removed: gui_next/src/renderer/src/components/pipeline/CollectDetail.tsx: dropped the
+  "Fingerprint: Queued · AcoustID" row — a stale design-mockup placeholder never wired to a
+  real queue (unrelated to the completed audio-fingerprint-identify feature, TODO-106).
+Changed: backend/app.py: `/api/pipeline/status` file step now returns lb_status, owned, and
+  lbdir_verified_at (queried from lb_master / my_collection) for the Collect stage.
+Changed: gui_next/src/renderer/src/locales/*.json: removed rowFingerprint/valueFingerprint/
+  valueStatus/valueConfirmed; added statusPublic/statusPrivate/statusMissing/
+  statusNonexistent/statusUnknown/ownedYes/ownedNo/notConfirmed (all 6 languages).
+
+[2026-06-11] — feat(backend+gui): pipeline — progress bar for Collect step copy/move
+Added: backend/filer.py: replaced synchronous `file_folder()` with `start_file_job()` +
+  `get_file_job_status()` — a background-thread job (shared `_FILE_JOB` dict + lock) that
+  scans the source tree for file count/bytes, then moves (os.rename, falling back to
+  copy+rmtree across filesystems) or copies (shutil.copytree with a progress-tracking
+  copy_function) the folder, updating files_done/bytes_done as it goes.
+Changed: backend/app.py: `/api/pipeline/file` replaced by `POST /api/pipeline/file/start`
+  (returns immediately) and `GET /api/pipeline/file/status` (poll for progress + result).
+Changed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: applyFile() now starts the
+  job and polls status every 400ms, storing progress on the row (`fileProgress`). Added
+  FileProgressBar component — shown in the Collect detail panel's "File into collection"
+  banner and in the table row's action cell while filing is in progress, so large
+  copy/move operations no longer look like nothing is happening.
+Changed: gui_next/src/renderer/src/locales/*.json: added pipeline.file.progress.{scanning,
+  copying,moving} strings (all 6 languages).
+Changed: PROJECT.md: updated Collection Routing & Pipeline Filing API table.
+
+[2026-06-11] — fix(backend): db — BUG-160 rename_history.renamed_at now stored in local time
+Fixed: backend/db.py: add_rename_history() now writes an explicit local-time timestamp instead
+  of relying on SQLite's CURRENT_TIMESTAMP default (which is UTC). init_db() runs a one-time
+  migration (meta key rename_history_localtime_v1) converting existing renamed_at values from
+  UTC to local time via datetime(renamed_at, 'localtime').
+Changed: PROJECT.md: rename_history.renamed_at column note updated.
+
+[2026-06-11] — chore(gui): pipeline — drop inaccurate "reversible for 30 days" claim
+Changed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: all "Logged to rename_history"
+  notes (Rename and Collect tabs) no longer claim a 30-day reversal window, since
+  rename_history has no time-based retention/auto-purge (purge is manual and deletes all
+  rows).
+
+[2026-06-11] — fix(backend): lbdir — BUG-159 whitelist extras/ and rename_log.txt for green status
+Fixed: backend/checksum_utils.py: verify_folder_lbdir() no longer counts files under `extras/`
+  (created by /api/lbdir/move_extras) or `rename_log.txt` (written by write_rename_log) as
+  "extra". If those are the only unclaimed files, status now resolves to 'pass' so the lbdir
+  step (pipeline step 4) turns green once a folder has been reconciled. Added
+  `_is_reconciled_extra()` helper plus `RENAME_LOG_NAME`/`EXTRAS_DIRNAME` constants.
+
+[2026-06-11] — fix(backend+gui): lbdir — BUG-158 detect extra files on disk during lbdir check
+Fixed: backend/checksum_utils.py: verify_folder_lbdir() now scans the folder recursively for
+  files not claimed by any lbdir md5/ffp/shntool entry (excluding the manifest itself), adds
+  them to `files` with overall='extra', and reports a real `extra` count instead of a hardcoded
+  0. New 'extra_files' status is returned when checksums otherwise pass but stray files exist,
+  so the folder no longer shows green/Pass while hiding extras.
+Changed: backend/app.py: pipeline lbdir step now maps 'extra_files' to a "warn"/"Extra N" label
+  and includes `extra` in the check detail.
+Changed: gui_next/src/renderer/src/lib/lbdirStore.ts: LbdirState gains 'extra_files'; CheckResult
+  gains `extra: number`.
+Changed: gui_next/src/renderer/src/screens/ScreenLBDIR.tsx,
+  gui_next/src/renderer/src/screens/ScreenPipeline.tsx: STATE_LABEL entries for 'extra_files'
+  (warn tone). Since it's not 'pass', the existing canReconcile gate now triggers the
+  reconcile/move-to-extras flow for extra-only folders.
+Fixed: gui_next/src/renderer/src/components/pipeline/LbdirDetail.tsx: LbdirFileTable rows with
+  overall='extra' now render as a "warn" Extra pill instead of a red "Fail".
+
+[2026-06-11] — fix(gui): pipeline — BUG-157 My Collection screen now refreshes after filing a folder
+Fixed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: applyFile now calls
+  queryClient.invalidateQueries({ queryKey: ['collection-prefetch'] }) on a successful
+  /api/pipeline/file result, so a folder filed from the pipeline (e.g. LB-16298) appears
+  immediately in My Collection instead of requiring an app restart to refresh the stale
+  staleTime: Infinity react-query cache.
+
+[2026-06-11] — fix(gui): pipeline — BUG-156 folder no longer shows "In collection" before it's actually filed
+Fixed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: serverRowToPipeline reclassifies bucket
+  'done' as 'shelf' when the file (Collect) step status is 'warn' (ready to file, not yet filed) —
+  fixes status column showing "In collection · Filed to DYLAN1" and the header "1 in collection"
+  pill while the detail panel's Collect stage still shows "Action — File into collection". Folder
+  now correctly shows "Ready to file" and counts toward the shelf/"File all N into collection"
+  group until the Collect step actually runs.
+
+[2026-06-10] — docs(gui): diagnosed BUG-154 — stale tsc-emitted .js files shadow .tsx sources, app ran pre-BUG-149 pipeline code
+Added: BUGS.md: BUG-154 (Open) — 45 untracked compiled .js files under gui_next/src/renderer/src (tsc emit, 2026-06-10 17:09) shadow the .tsx sources; Vite resolves .js before .tsx so the running app lacked the BUG-149/151/152/153 fixes (rename/lbdir/file mute, statuses cleared on navigation). Backend verified correct via direct /api/pipeline/run + /api/folder/rename on the Munich example folder.
+Added: BUGS.md: BUG-155 (Open) — entries.location for LB-16298 is "Mnchen, Germany" (ü dropped, cp1252 decode suspect); pipeline proposes misspelled rename.
+Added: tools/debug_pipeline_rename.json: browser_driver session reproducing the pipeline rename stall (add Munich folder → wait for LB# → open Rename stage).
+
+[2026-06-10] — fix(gui): pipeline — step results persist across tab navigation; partial-step runs no longer wipe steps
+Fixed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: added module-level _pipelineCache (Map keyed by folder path); updateRow writes to cache on every result, queue sync restores from cache on component remount — results survive tab navigation within the session
+Fixed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: queue sync effect now schedules auto-run for unprocessed (all-mute) rows, so folders already in the queue on page load/tab-return run automatically when auto-run is on
+Fixed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: runSteps and refreshDetailRow now preserve existing step results for stages not included in the requested steps list — "Check rename" no longer resets Verify/Lookup to mute
+Fixed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: auto-complete effect detects rows where lookup=ok but rename=mute and automatically runs remaining steps
+Added: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: cache cleared on queue Clear and on individual row removal; folder path updated in cache on rename apply
+
+[2026-06-10] — fix(gui): pipeline — per-stage re-run buttons now include lookup so lb_number resolves
+Fixed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: "Check rename", "Re-check" (rename/lbdir/file), "Check route now" buttons were sending only their own stage to the backend; since the backend rebuilds everything from scratch, lb_number was always None → rename/lbdir/file stayed mute. All 7 per-stage re-run calls now include 'lookup' in the steps list.
+
+[2026-06-10] — fix(backend+gui): pipeline — false "In collection", mute rename, lbdir retrieve with no LB in folder name
+Fixed: backend/app.py: severity logic now returns "attn" (not "done") when lookup resolved an LB# but rename or lbdir steps are still mute (not yet run) — prevents folder from being classified as "In collection" too early
+Fixed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: auto-run now fires all 5 steps (verify+lookup+rename+lbdir+file) instead of only verify+lookup — rename and lbdir were always mute for auto-dropped folders
+Fixed: backend/app.py: lbdir_retrieve now accepts an optional lb_number_hint in the request body; falls back to it when neither my_collection nor folder name contains an LB# — allows "Retrieve sidecar now" to work for un-renamed folders whose LB was resolved by lookup
+Fixed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: handleRetrieve passes lb_number_hint from row.steps.lookup.lb_number when calling /api/lbdir/retrieve
+
+[2026-06-10] — feat(gui+backend): pipeline v2 phase 6 — polish: running progress, shntool state, collect pass rows, tooltips
+Changed: backend/app.py: pipeline verify step now handles shntool_missing status from verify_folder (was falling through to bad/Mismatch); returns {status: "warn", label: "No shntool", shntool_missing: true}
+Changed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: VerifyStageContent — running-state banner when step is mute+row.running ("Hashing files…"); shntool-missing banner when step.shntool_missing; shntool_missing added to StepResult interface
+Changed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: CollectStageContent pass state — LB#/Mount detail rows added below "Added to collection" banner
+Changed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: title= tooltips on all re-run/re-check/re-verify buttons ("Re-run this stage"), Copy diff ("Copy to clipboard"), and DetailPanel Open button ("Reveal folder in Finder")
+
+[2026-06-10] — feat(gui+backend): pipeline v2 cleanup phase 5 — Collect mount picker + tag table
+Added: backend/filer.py: get_mounts_with_stats() returns collection_mounts with span (decade
+range from collection_routes), free (human-readable via shutil.disk_usage), and online
+(_path_reachable); new helpers _human_bytes() and _year_span_label()
+Changed: backend/filer.py: resolve_destination_for_lb() and file_folder() take an optional
+mount_id_override — when set and different from the year-routed mount, files under that
+mount's root while keeping the routed sub_path (year subfolder)
+Changed: backend/app.py: _pipeline_process_folder() Step 5 "file" result now includes mounts,
+recommended_mount, routed_year, and collection_count when the folder is ready to file;
+/api/pipeline/file and /api/pipeline/file/preview accept an optional mount_id per folder item
+and pass it through as mount_id_override
+Added: gui_next/src/renderer/src/components/pipeline/CollectDetail.tsx: new shared component —
+MountPicker (storage-mount picker grid with span/free/"suggested" pill, routed-by-year pill,
+"Reset to suggested") and TagTable ("Tag in the collection" preview rows with live item
+counter), composed by CollectDetail
+Changed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: StepResult/normalizeFileStep
+gain mounts/recommended_mount/routed_year/collection_count; new CollectReadyDetail component
+renders the route card + <CollectDetail> and live-previews the destination via
+/api/pipeline/file/preview when the user picks a different mount; onFile/applyFile now accept
+an optional mountId, forwarded to /api/pipeline/file as mount_id when it differs from the
+recommended mount
+Added: gui_next/src/renderer/src/locales/{en,de,fr,es,it,nl}.json: pipeline.collect.* strings
+(storageMount, routedByYear, resetToSuggested, suggested, mountOffline, mountTooltip,
+freeAmount, tagInCollection, itemsCounter, row*/value* tag-table labels) — de/fr/es/it/nl
+translated by hand this session (DeepL API key returned AuthorizationException: key disabled)
+Fixed: gui_next/src/renderer/src/components/pipeline/CollectDetail.tsx: MountPicker now
+disables radio selection on offline mounts (greyed out, "Offline" label) — previously a user
+could select an unreachable mount and the live preview would silently fail, leaving the
+picker and route card out of sync
+Fixed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: CollectReadyDetail's "File into
+collection" button is disabled while a mount-override preview is pending/unresolved, and now
+passes the previewed dest/mount_label through onFile/applyFile so the confirm dialog shows
+the destination that will actually be used (previously showed the recommended mount's
+dest/label even when a different mount was selected)
+
+[2026-06-10] — feat(gui): pipeline v2 cleanup phase 4 — harvest LbdirDetail into pipeline LBDIR panel
+Added: gui_next/src/renderer/src/components/pipeline/LbdirDetail.tsx: new shared component —
+CheckDot, LbdirFileTable (resizable Filename/MD5/Disk/Overall/Length/Fmt/Ratio columns), and
+ReconcilePanel (rename proposals, extras-to-/extras/, and site/files recovery section), composed
+by LbdirDetail with a compact prop, harvested from ScreenLBDIR.tsx
+Changed: gui_next/src/renderer/src/screens/ScreenLBDIR.tsx: removed inline CheckDot,
+ReconcilePanel, file table, and column-resize state; now renders the shared <LbdirDetail>
+non-compact; no behavior change
+Changed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: LbdirStageContent's truncated
+12-row file list and reconcile block (which lacked the site/files recovery section) replaced
+with <LbdirDetail compact> — the pipeline LBDIR panel now shows the full file table and full
+reconcile UI matching the standalone LBDIR screen
+
+[2026-06-10] — chore(gui+docs): data-testid hooks for nav/stage tabs + GUI verification gotchas
+Added: gui_next/src/renderer/src/components/pipeline/PipelineParts.tsx: StageStepper tab buttons get
+data-testid="stage-tab-{verify|lookup|rename|lbdir|file}"
+Added: gui_next/src/renderer/src/components/AppShell.tsx: main sidebar nav buttons get
+data-testid="nav-{id}"; Advanced Tools sub-nav (Verify/Lookup/Rename/LBDIR) get
+data-testid="nav-adv-{id}"
+Added: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: Quick Lookup sidebar button gets
+data-testid="sidebar-quick-lookup"
+Changed: .claude/CLAUDE.md: new "Verification gotchas" subsection under GUI Verification —
+prefer curl for data-shape checks, use data-testid selectors instead of :has-text() (which
+case-insensitive substring-matched "Lookup" tab vs "Quick lookup" sidebar button this session),
+Unicode ellipsis in button labels, wait-for over fixed waits, kill stray dev-server processes,
+absolute paths for browser_driver.mjs
+Note: prompted by a session retrospective — GUI screenshot verification looped for ~30min on
+selector mismatches; these hooks + doc notes target that directly
+
+[2026-06-10] — feat(gui+backend): pipeline v2 cleanup phase 3 — harvest LookupDetail into pipeline lookup panel
+Added: gui_next/src/renderer/src/components/pipeline/LookupDetail.tsx: new shared component —
+LookupSummaryTable (per-LB summary with category pill, alias-canonical pill, optional "Pin {lb} &
+continue" column), LookupChecksumTable (grouped per-checksum detail with xref column), and
+LookupNotFoundHint, harvested from ScreenLookup.tsx; also exports STATE_TONE/apiStatusToState/
+categoryPill/LookupState for reuse
+Changed: gui_next/src/renderer/src/screens/ScreenLookup.tsx: replaced inline summary/checksum
+tables and status-tone helpers with the shared LookupDetail components; no behavior change
+Changed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: LookupStageContent now renders
+LookupDetail scoped to the active folder — matched state shows category pill + {matched}/{given}
+stat; ambiguous (Conflict) state shows "Which show is this?" + per-LB "Pin {lb} & continue" wired
+to PUT /api/folder_link (writes folder_lb_link, then re-runs lookup); not-found state shows the
+shared checksum table + not-found hint; StepResult gains summary/detail fields
+Changed: backend/app.py: _pipeline_process_folder lookup step now calls database.lookup_checksums
+to get (summary, detail), annotates detail with is_alias_lb/canonical_lb via
+database.get_lb_aliases(), includes summary/detail in the lookup result for all branches, and
+honors an existing folder_lb_link pin (wins over raw checksum match set) to resolve ambiguity
+Note: design doc 14 §2.2/§3 "Mark as new entry…" button intentionally not implemented — no
+backend support exists yet for creating new lb_master entries (would be a no-op stub)
+
+[2026-06-10] — chore(gui): replace Electron GUI driver with headless-Chromium browser driver
+Added: tools/browser_driver.mjs: Playwright Chromium driver for GUI verification — same
+session JSON / CLI shape as the old gui_driver.mjs (screenshot, navigate, click, fill,
+eval, session); spawns `npm run dev` (or `npm run preview` with --preview), stubs
+window.api (Electron preload bridge) via addInitScript, no Electron/Xvfb/display needed
+Removed: gui_next/gui_driver.mjs: Electron+Playwright+Xvfb driver — consistently failed
+in this sandbox (Electron CDP target never connects / GTK aborts under headless ozone);
+replaced entirely by tools/browser_driver.mjs
+Changed: .claude/CLAUDE.md: GUI verification section now documents tools/browser_driver.mjs
+and the requirement to start the Flask backend first so the splash clears quickly
+Changed: .claude/settings.json: pre-approved Bash rule updated from gui_driver.mjs to
+tools/browser_driver.mjs
+Changed: package.json/package-lock.json (root): added playwright devDependency (Chromium
+browser binary cached via `npx playwright install chromium`)
+
+[2026-06-09] — fix(gui): pipeline screen — remove filter chips, fix column alignment, wire auto-run
+Changed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: (1) removed bucket filter Chip bar from content area; (2) added missing 3px edge-bar <th> spacer to thead so headers align with data rows; (3) wired autorun toggle — addFolders now queues new folder IDs in autorunPendingRef and a useEffect drains the queue via runSteps(['verify','lookup']) once rows state settles
+
+[2026-06-10] — feat(gui): pipeline progress banner — bucket pills, auto-run toggle, correct CTAs
+Changed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: replaced old banner right-side (bulk menu + conditional CTAs) with: (1) interactive bucket filter pills — one per non-zero bucket (needs/ready/running/shelf/done), clicking toggles table filter, correct labels/tones per spec; (2) auto-run toggle — sliding pill, default on; (3) "Apply all N ready" — always visible, disabled when 0; (4) "File all N into collection" — only shown when shelf > 0; removed dead bulkMenuRef/bulkMenuOpen state and click-away handler; title now "Pipeline · N folders" with fixed subtitle
+Changed: gui_next/src/renderer/src/locales/en.json: added titleFolders, autoRun, autoRunHint, applyAllReady, fileAllCollection keys; updated filter.done to "In collection"
+
+[2026-06-09] — fix(gui): pipeline v2 rename panel — full content (Issue 9); applyRename accepts custom name
+Fixed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: RenameStageContent replaced with full panel — StageHead (state badge, title, LB# pill, Edit name… button), wrong-LB amber banner (auto-detected from folder name vs lookup LB#), diff box (red/green rows; green becomes input in edit mode, with LB# highlighted/struck-through), dry-run info banner with Copy diff, success banner after apply; onRename threaded as (customName?) so edited name reaches applyRename; Issue 8 already resolved (step key 'file' correct throughout)
+
+[2026-06-09] — feat(gui): guaranteed fresh backend on every `npm run dev` launch
+Changed: gui_next/src/main/index.ts: added killPortProcess() — after killStalePid(), scans port 5174 with lsof (Linux/Mac) or netstat (Windows) and kills any occupying process before spawning the backend; ensures stale backends started outside Electron are always evicted
+
+[2026-06-09] — fix(gui): pipeline v2 UX corrections — detail layout, nav, queue rail, table columns
+Fixed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: detail panel now replaces main content area instead of opening as a narrow right drawer (Issue 1); removed Run On Selected panel + singular Add Folder + shallowScan checkbox from queue rail footer; added Scan/Clear two-column grid, Quick Lookup button-link, and drag hint box (Issue 3); added Status column (deriveFolderStatus + StatusTag + reason) between Stages and LB# in batch table (Issue 6); colgroup updated to 7 columns; spacer/grouprow colSpan updated accordingly
+Fixed: gui_next/src/renderer/src/components/AppShell.tsx: Verify/Lookup/Rename/LBDIR moved under collapsible "Advanced tools" disclosure (starts closed); removed Quick Lookup from sidebar nav (Issue 4)
+Fixed: gui_next/src/renderer/src/locales/en.json + de/es/fr/it/nl: filter.needs → "Needs you"; filter.ready → "Ready to apply"; filter.shelf → "Ready to file"; runHint updated to remove "Run all 5 steps" reference; added advancedTools nav key (Issues 5, 7)
+
+[2026-06-09] — docs: pipeline v2 phase 9 — documentation and verification
+Changed: PROJECT.md: added collection_mounts + collection_routes schema tables; added "Collection Routing & Pipeline Filing" API section (10 routes); updated ScreenPipeline to 5-step; added ScreenQuickLookup entry; added Change Log row
+Changed: instructions/pipeline_new/CHECKLIST.md: phases 9 items ticked off
+
+[2026-06-09] — feat(gui): pipeline v2 phase 8 — Quick Lookup screen
+Added: gui_next/src/renderer/src/screens/ScreenQuickLookup.tsx: new screen — paste input, clipboard button, drag-and-drop .md5/.ffp zone, results table (Checksum | Filename | LB# | Status)
+Changed: gui_next/src/renderer/src/components/AppShell.tsx: added quicklookup nav entry under Ingest group
+Changed: gui_next/src/renderer/src/App.tsx: added /quicklookup route and import
+Changed: gui_next/src/renderer/src/locales/*.json: added appShell.nav.quicklookup and quickLookup namespace to all 6 locales
+
+[2026-06-09] — feat(gui+backend): pipeline v2 phase 7 — stage detail panels
+Changed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: replaced GenericStageContent stub with four dedicated stage panels — VerifyStageContent (stats grid, no-checksums generate flow, re-verify), LookupStageContent (LB# matched card, conflict/not-found states, re-run), RenameStageContent (current/proposed diff view, apply rename button), CollectStageContent (route box staging→destination, error-code cards for no_date/no_route/mount_offline/dest_exists/db_error, filed success card); DetailPanel gains onRename prop wired to applyRename callback
+Changed: backend/app.py: _pipeline_process_folder verify step now includes total/pass/missing/mismatch/extra/no_checksums counts in the step result dict
+
+[2026-06-09] — feat(gui+backend): pipeline v2 phase 6 — Collect step wired into pipeline screen
+Changed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: added 5th step column "Collect" with StepPill; "File" action button per-row (opens confirm dialog, calls /api/pipeline/file); "File selected" bulk button in selection bar; "File all ready" button in header; "Collect" individual run button in queue rail; "Run All" now runs all 5 steps; ConfirmDialog for file action shows dest path and mount; severity 'blocked' escalates to attn; right-click context menu wired via onContextMenu on TR rows; filter chip and group row labels now use t() with new pipeline.filter.{needs,ready,running,shelf} i18n keys; "File into Collection" action button in detail panel file stage
+Changed: backend/app.py: _pipeline_process_folder severity — file_status=='blocked' now escalates to 'attn'; comment explains why 'ready' does not
+Added: gui_next/src/renderer/src/components/pipeline/ConfirmDialog.tsx: useConfirm integration in ScreenPipeline
+Changed: gui_next/src/renderer/src/locales/en.json + de/fr/es/it/nl: new keys — pipeline.table.collect, pipeline.file.*, pipeline.queue.collect, pipeline.fileAllReady, pipeline.selection.fileSelected; queue.runAll and runHint updated to "5 steps"; ingestDesc updated to include collect step; pipeline.filter.{needs,ready,running,shelf} added for bucket filter chips
+
+[2026-06-09] — feat(backend+gui): Pipeline v2 — Step 5 File into Collection + Mounts & Routes
+Added: backend/filer.py: year extraction, route resolution, timeout-guarded mount reachability check, move/copy filing, my_collection registration
+Added: backend/db.py: collection_mounts, collection_routes tables + schema migration guards + meta key pipeline_file_mode; DB helper functions for all CRUD
+Added: backend/app.py: 10 new API routes (/api/collection/mounts, /api/collection/routes/*, /api/collection/routes/preview/*, /api/pipeline/file, /api/pipeline/file/preview); pipeline_file_mode in db_settings; step 5 in _pipeline_process_folder
+Added: gui_next/src/renderer/src/components/pipeline/PipelineParts.tsx: StateGlyph, StatusTag, StageNode, StageTracker, StageStepper, QueueRow
+Added: gui_next/src/renderer/src/components/pipeline/ConfirmDialog.tsx: useConfirm hook, ConfirmDialog, ConfirmDialogProvider
+Added: gui_next/src/renderer/src/screens/ScreenSetup.tsx: CollectionRoutingCard (Mounts, Year Routes, Coverage bar, Preview tester, Filing Mode)
+
 [2026-06-09] — chore(backend): set up ruff linter + pre-commit hook
 Added: pyproject.toml: ruff config (E/W/F/I/UP/B/G/LOG, line-length 100, py311, excludes gui/ and tools/)
 Added: .pre-commit-config.yaml: local pre-commit hook running ruff check --fix on staged Python files

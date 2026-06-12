@@ -7,10 +7,17 @@ import { useSettingsStore } from '../store'
 // ── Nav structure ────────────────────────────────────────────────────────────
 
 type NavId =
-  | 'home' | 'pipeline' | 'verify' | 'lookup' | 'rename' | 'lbdir'
+  | 'home' | 'pipeline' | 'verify' | 'lookup' | 'quicklookup' | 'rename' | 'lbdir'
   | 'collection' | 'trading' | 'sharing' | 'search' | 'bootlegs'
   | 'attachments' | 'spectrograms' | 'map' | 'fingerprint'
   | 'scraper' | 'setup' | 'themes' | 'dbeditor'
+
+const ADVANCED_TOOLS: NavItem[] = [
+  { id: 'verify', label: 'Verify', icon: 'verify' },
+  { id: 'lookup', label: 'Lookup', icon: 'lookup' },
+  { id: 'rename', label: 'Rename', icon: 'rename' },
+  { id: 'lbdir',  label: 'LBDIR',  icon: 'lbdir'  },
+]
 
 type NavGroupLabel = 'Ingest' | 'Library' | 'Assets' | 'Curator' | 'Settings'
 
@@ -44,11 +51,7 @@ const NAV_GROUPS: NavGroup[] = [
   {
     label: 'Ingest',
     items: [
-      { id: 'pipeline',  label: 'Pipeline', icon: 'pipeline' },
-      { id: 'verify',    label: 'Verify',   icon: 'verify' },
-      { id: 'lookup',    label: 'Lookup',   icon: 'lookup' },
-      { id: 'rename',    label: 'Rename',   icon: 'rename' },
-      { id: 'lbdir',     label: 'LBDIR',    icon: 'lbdir' },
+      { id: 'pipeline', label: 'Pipeline', icon: 'pipeline' },
     ],
   },
   {
@@ -129,6 +132,7 @@ function Sidebar({
   const setLanguage = useSettingsStore((s) => s.setLanguage)
   const [collectionCount, setCollectionCount] = useState<number | undefined>(undefined)
   const [langOpen, setLangOpen] = useState(false)
+  const [advancedOpen, setAdvancedOpen] = useState(false)
   const langRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -260,6 +264,7 @@ function Sidebar({
                   <button
                     key={item.id}
                     type="button"
+                    data-testid={`nav-${item.id}`}
                     onClick={() => onNav(item.id)}
                     style={{
                       width: '100%',
@@ -331,6 +336,64 @@ function Sidebar({
             </div>
           )
         })}
+
+        {/* Advanced tools — collapsible, under Ingest */}
+        <div style={{ marginTop: 2 }}>
+          <button
+            type="button"
+            onClick={() => setAdvancedOpen(o => !o)}
+            style={{
+              width: '100%', display: 'flex', alignItems: 'center', gap: 10,
+              padding: '6px 10px', marginBottom: 1,
+              border: '1px solid transparent', borderRadius: 6,
+              background: 'transparent', color: 'var(--lbb-fg3)',
+              fontSize: 'var(--lbb-fs-11-5)', fontWeight: 600,
+              textAlign: 'left', cursor: 'pointer', fontFamily: 'inherit',
+              letterSpacing: 0.02,
+            }}
+            onMouseEnter={e => { e.currentTarget.style.background = 'var(--lbb-surface2)' }}
+            onMouseLeave={e => { e.currentTarget.style.background = 'transparent' }}
+          >
+            <Icon name={advancedOpen ? 'chevDown' : 'chevRight'} size={12} style={{ flexShrink: 0 }} />
+            <span style={{ flex: 1 }}>{t('appShell.nav.advancedTools')}</span>
+          </button>
+          {advancedOpen && (
+            <div style={{ paddingLeft: 10 }}>
+              {ADVANCED_TOOLS.map(item => {
+                const isActive = item.id === active
+                return (
+                  <button
+                    key={item.id}
+                    type="button"
+                    data-testid={`nav-adv-${item.id}`}
+                    onClick={() => onNav(item.id)}
+                    style={{
+                      width: '100%', display: 'flex', alignItems: 'center', gap: 10,
+                      padding: '7px 10px', marginBottom: 1,
+                      border: '1px solid transparent', borderRadius: 6,
+                      background: isActive ? 'var(--lbb-accent-soft)' : 'transparent',
+                      color: isActive ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg2)',
+                      fontSize: 'var(--lbb-fs-12-5)', fontWeight: isActive ? 600 : 500,
+                      textAlign: 'left', cursor: 'pointer', fontFamily: 'inherit',
+                      lineHeight: 1.2, transition: 'background 0.1s',
+                    }}
+                    onMouseEnter={e => { if (!isActive) e.currentTarget.style.background = 'var(--lbb-surface2)' }}
+                    onMouseLeave={e => { if (!isActive) e.currentTarget.style.background = 'transparent' }}
+                  >
+                    <Icon name={item.icon} size={15} />
+                    <span style={{ flex: 1 }}>{t(`appShell.nav.${item.id}`)}</span>
+                  </button>
+                )
+              })}
+              <div style={{
+                padding: '5px 10px 8px', fontSize: 'var(--lbb-fs-10-5)',
+                color: 'var(--lbb-fg3)', fontStyle: 'italic', lineHeight: 1.4,
+              }}>
+                Everyday work happens in the Pipeline.
+              </div>
+            </div>
+          )}
+        </div>
 
         {!curatorMode && (
           <div

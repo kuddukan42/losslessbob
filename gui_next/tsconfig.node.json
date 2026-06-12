@@ -1,8 +1,10 @@
 {
   "compilerOptions": {
     "composite": true,
+    "noEmit": true,
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
     "target": "ES2022",
-    "module": "CommonJS",
+    "module": "ESNext",
     "moduleResolution": "bundler",
     "types": ["node"],
     "strict": true,

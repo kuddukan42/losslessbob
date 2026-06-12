@@ -455,7 +455,8 @@ def create_app() -> Flask:
                 keys = ["scrape_attachments", "scrape_delay_ms", "auto_scrape", "use_local_pages",
                         "force_scrape", "search_page_size", "github_repo", "data_zip_url",
                         "qbt_host", "qbt_port", "qbt_category", "qbt_tags",
-                        "tracker_list", "wtrf_board_id", "ui_language"]
+                        "tracker_list", "wtrf_board_id", "ui_language",
+                        "pipeline_file_mode"]
                 result = {k: database.get_meta(k) for k in keys}
                 # Return "set" or "" for web_password — never expose the actual value
                 result["web_password"] = "set" if database.get_meta("web_password") else ""
@@ -2126,11 +2127,22 @@ def create_app() -> Flask:
             if not folders:
                 return jsonify({"error": "folders list required"}), 400
 
+            # Optional single-folder hint: pipeline passes this when LB is known from
+            # lookup but the folder has not yet been renamed or filed.
+            lb_number_hint: int | None = None
+            raw_hint = data.get("lb_number_hint")
+            if raw_hint is not None:
+                try:
+                    lb_number_hint = int(raw_hint)
+                except (ValueError, TypeError):
+                    pass
+
             results = []
             for folder_path in folders:
                 folder = Path(folder_path)
 
-                # Look up LB number: try my_collection first, then parse folder name
+                # Look up LB number: try my_collection first, then parse folder name,
+                # then fall back to the caller-supplied hint (pipeline lookup result).
                 with database.get_connection() as conn:
                     row = conn.execute(
                         "SELECT lb_number FROM my_collection WHERE disk_path=?",
@@ -2143,6 +2155,9 @@ def create_app() -> Flask:
                     m = re.search(r'LB-(\d+)', folder.name, re.IGNORECASE)
                     if m:
                         lb_number = int(m.group(1))
+
+                if lb_number is None and lb_number_hint is not None:
+                    lb_number = lb_number_hint
 
                 if lb_number is None:
                     results.append({
@@ -4764,7 +4779,232 @@ def create_app() -> Flask:
             _fp_id_state["stop_requested"] = True
         return jsonify({"ok": True})
 
+    # ── Collection Mounts & Routes (Pipeline Step 5) ─────────────────────────
+
+    @app.route("/api/collection/mounts", methods=["GET"])
+    def collection_mounts_list() -> Response:
+        """List all configured storage mounts with live online status."""
+        try:
+            import concurrent.futures as _cf
+
+            from backend.filer import _path_reachable
+            mounts = database.get_collection_mounts()
+            if mounts:
+                with _cf.ThreadPoolExecutor(max_workers=len(mounts)) as ex:
+                    online_flags = list(ex.map(lambda m: _path_reachable(m["root_path"]), mounts))
+                for mount, online in zip(mounts, online_flags, strict=True):
+                    mount["online"] = online
+            return jsonify({"mounts": mounts})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/collection/mounts", methods=["POST"])
+    def collection_mounts_create() -> Response:
+        """Create a new storage mount. Body: {label, root_path, notes?}"""
+        try:
+            from backend.filer import normalise_path
+            data = request.get_json() or {}
+            label = (data.get("label") or "").strip()
+            root_path = (data.get("root_path") or "").strip()
+            if not label or not root_path:
+                return jsonify({"error": "label and root_path are required"}), 400
+            mount_id = database.add_collection_mount(
+                label, normalise_path(root_path), data.get("notes")
+            )
+            return jsonify({"ok": True, "id": mount_id})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/collection/mounts/<int:mount_id>", methods=["PATCH"])
+    def collection_mounts_update(mount_id: int) -> Response:
+        """Update label/root_path/notes for a mount."""
+        try:
+            from backend.filer import normalise_path
+            data = request.get_json() or {}
+            if "root_path" in data and data["root_path"]:
+                data["root_path"] = normalise_path(data["root_path"])
+            database.update_collection_mount(mount_id, data)
+            return jsonify({"ok": True})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/collection/mounts/<int:mount_id>", methods=["DELETE"])
+    def collection_mounts_delete(mount_id: int) -> Response:
+        """Delete a mount. Returns 409 if any routes reference it."""
+        try:
+            result = database.delete_collection_mount(mount_id)
+            if not result["ok"]:
+                return jsonify(result), 409
+            return jsonify(result)
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/collection/routes", methods=["GET"])
+    def collection_routes_list() -> Response:
+        """List all year routes joined with mount label and root_path."""
+        try:
+            return jsonify({"routes": database.get_collection_routes()})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/collection/routes/bulk", methods=["POST"])
+    def collection_routes_bulk() -> Response:
+        """Upsert routes for a year range. Body: {year_from, year_to, mount_id, sub_path}"""
+        try:
+            data = request.get_json() or {}
+            year_from = data.get("year_from")
+            year_to = data.get("year_to")
+            mount_id = data.get("mount_id")
+            sub_path = data.get("sub_path", "")
+            if year_from is None or year_to is None or mount_id is None:
+                return jsonify({"error": "year_from, year_to, mount_id required"}), 400
+            year_from, year_to = int(year_from), int(year_to)
+            if year_from > year_to:
+                return jsonify({"error": "year_from must be <= year_to"}), 400
+            count = database.upsert_collection_routes(
+                year_from, year_to, int(mount_id), sub_path or ""
+            )
+            return jsonify({"ok": True, "rows_written": count})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/collection/routes/<int:year>", methods=["DELETE"])
+    def collection_routes_delete(year: int) -> Response:
+        """Remove the route for a single year."""
+        try:
+            database.delete_collection_route(year)
+            return jsonify({"ok": True})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/collection/routes/preview/<int:year>", methods=["GET"])
+    def collection_routes_preview(year: int) -> Response:
+        """Dry-run: show what year YYYY would resolve to without filing anything."""
+        try:
+            from backend.filer import _path_reachable
+            with database.get_connection() as conn:
+                route = conn.execute(
+                    """SELECT r.year, r.sub_path, m.id, m.label, m.root_path
+                       FROM collection_routes r
+                       JOIN collection_mounts m ON m.id = r.mount_id
+                       WHERE r.year = ?""",
+                    (year,),
+                ).fetchone()
+            if route is None:
+                return jsonify({
+                    "ok": False,
+                    "year": year,
+                    "error": f"No route configured for {year}",
+                    "error_code": "no_route",
+                })
+            from pathlib import Path as _Path
+            root = route["root_path"]
+            sub = route["sub_path"] or ""
+            dest_parent = str(_Path(root) / sub) if sub else root
+            return jsonify({
+                "ok": True,
+                "year": year,
+                "mount_label": route["label"],
+                "mount_root": root,
+                "sub_path": sub,
+                "dest_parent": dest_parent,
+                "mount_online": _path_reachable(root),
+                "error": None,
+                "error_code": None,
+            })
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/pipeline/file/start", methods=["POST"])
+    def pipeline_file_start() -> Response:
+        """Start step 5: file one folder into the collection (async, progress-tracked).
+
+        Body: {folders: [{path: str, lb_number: int, mount_id?: int}]}
+        Only the first entry is processed; mount_id, if given, overrides the
+        year-routed mount (see the Collect mount picker). Returns {ok, error?,
+        error_code?} immediately — poll /api/pipeline/file/status for progress
+        and the final result.
+        """
+        try:
+            from backend.filer import start_file_job
+            data = request.get_json() or {}
+            folders = data.get("folders", [])
+            if not folders:
+                return jsonify({"ok": False, "error": "folders list required", "error_code": "bad_input"}), 400
+            item = folders[0]
+            path = item.get("path", "")
+            lb = item.get("lb_number")
+            mount_id = item.get("mount_id")
+            if not path or not lb:
+                return jsonify({
+                    "ok": False,
+                    "error": "path and lb_number are required",
+                    "error_code": "bad_input",
+                }), 400
+            file_mode = database.get_meta("pipeline_file_mode") or "move"
+            result = start_file_job(
+                int(lb), path, file_mode=file_mode,
+                mount_id_override=int(mount_id) if mount_id is not None else None,
+            )
+            return jsonify(result)
+        except Exception as e:
+            return jsonify({"ok": False, "error": str(e)}), 500
+
+    @app.route("/api/pipeline/file/status", methods=["GET"])
+    def pipeline_file_status() -> Response:
+        """Poll progress of the filing job started via /api/pipeline/file/start."""
+        from backend.filer import get_file_job_status
+        return jsonify(get_file_job_status())
+
+    @app.route("/api/pipeline/file/preview", methods=["POST"])
+    def pipeline_file_preview() -> Response:
+        """Pre-flight check: resolve destinations without moving anything.
+
+        Body: {folders: [{path: str, lb_number: int, mount_id?: int}, ...]}
+        mount_id, if given, previews filing under that mount instead of the
+        year-routed default.
+        """
+        try:
+            from backend.filer import _path_reachable, resolve_destination_for_lb
+            data = request.get_json() or {}
+            folders = data.get("folders", [])
+            results = []
+            for item in folders:
+                path = item.get("path", "")
+                lb = item.get("lb_number")
+                mount_id = item.get("mount_id")
+                if not path or not lb:
+                    results.append({
+                        "path": path,
+                        "lb_number": lb,
+                        "ok": False,
+                        "error": "path and lb_number required",
+                        "error_code": "bad_input",
+                    })
+                    continue
+                r = resolve_destination_for_lb(
+                    int(lb), path,
+                    mount_id_override=int(mount_id) if mount_id is not None else None,
+                )
+                r["path"] = path
+                r["lb_number"] = lb
+                if r["ok"]:
+                    r["mount_online"] = _path_reachable(r["mount_root"])
+                results.append(r)
+            return jsonify({"results": results})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
     # ── Pipeline ─────────────────────────────────────────────────────────────
+
+    def _file_blocked_label(error_code: str | None) -> str:
+        return {
+            "no_date":       "No date",
+            "no_route":      "No route",
+            "mount_offline": "Mount offline",
+            "dest_exists":   "Already exists",
+            "db_error":      "DB error",
+        }.get(error_code or "", "Blocked")
 
     def _pipeline_process_folder(folder_path: str, steps: set) -> dict:
         """Run one or more pipeline steps on a single folder and return a PipelineRow dict."""
@@ -4779,6 +5019,12 @@ def create_app() -> Flask:
         folder = Path(folder_path)
         folder_name = folder.name
 
+        # Rename/LBDIR/File all key off the LB# resolved by Lookup.  Force the
+        # lookup step into any run that includes a downstream step so the link
+        # between stages never depends on the caller sending the right combo.
+        if steps & {"rename", "lbdir", "file"}:
+            steps = steps | {"lookup"}
+
         row: dict = {
             "folder": folder_path,
             "folderName": folder_name,
@@ -4786,6 +5032,7 @@ def create_app() -> Flask:
             "lookup":  {"status": "mute", "label": "—", "lb_number": None},
             "rename":  {"status": "mute", "label": "—", "proposed": None},
             "lbdir":   {"status": "mute", "label": "—"},
+            "file":    {"status": "mute", "label": "—", "error": None, "error_code": None},
             "severity": "attn",
             "errors": [],
         }
@@ -4800,15 +5047,26 @@ def create_app() -> Flask:
         # ── Step 1: Verify ────────────────────────────────────────────────────
         if "verify" in steps:
             vr = checksum_utils.verify_folder(folder_path)
+            _vcounts = {
+                "total":        vr.get("total", 0),
+                "pass":         vr.get("pass", 0),
+                "missing":      vr.get("missing", 0),
+                "mismatch":     vr.get("mismatch", 0),
+                "extra":        vr.get("extra", 0),
+                "no_checksums": vr.get("status") == "no_checksums",
+                "files":        vr.get("files", []),
+            }
             if vr.get("error"):
-                row["verify"] = {"status": "bad", "label": "Error"}
+                row["verify"] = {"status": "bad", "label": "Error", **_vcounts}
                 row["errors"].append({"step": "verify", "message": vr["error"]})
             elif vr["status"] == "pass":
-                row["verify"] = {"status": "ok", "label": "Pass"}
+                row["verify"] = {"status": "ok", "label": "Pass", **_vcounts}
             elif vr["status"] in ("incomplete", "no_checksums"):
-                row["verify"] = {"status": "warn", "label": "Incomplete"}
+                row["verify"] = {"status": "warn", "label": "Incomplete", **_vcounts}
+            elif vr["status"] == "shntool_missing":
+                row["verify"] = {"status": "warn", "label": "No shntool", "shntool_missing": True, **_vcounts}
             else:
-                row["verify"] = {"status": "bad", "label": "Mismatch"}
+                row["verify"] = {"status": "bad", "label": "Mismatch", **_vcounts}
 
         # ── Step 2: Lookup ────────────────────────────────────────────────────
         if "lookup" in steps:
@@ -4829,27 +5087,74 @@ def create_app() -> Flask:
                 if not parsed:
                     row["lookup"] = {"status": "bad", "label": "Not found", "lb_number": None}
                 else:
-                    summary, _ = database.lookup_checksums(parsed)
+                    summary, detail = database.lookup_checksums(parsed)
+                    alias_map = {
+                        r["alias_lb"]: r["canonical_lb"]
+                        for r in database.get_lb_aliases()
+                    }
+                    for d in detail:
+                        d["is_alias_lb"] = d["lb_number"] in alias_map
+                        d["canonical_lb"] = alias_map.get(d["lb_number"])
                     raw_lb_list: list[int] = summary.get("lb_numbers_found", [])
                     lb_list: list[int] = database.resolve_aliases(raw_lb_list)
                     alias_resolved_from: list[int] = [
                         lb for lb in raw_lb_list if lb not in set(lb_list)
                     ]
-                    if len(lb_list) == 1:
+
+                    # A sticky folder→LB link (set via "Pin & continue") resolves
+                    # ambiguity permanently — it wins over the raw checksum match set.
+                    link = database.get_folder_link(folder_path)
+                    pinned_lb = link["lb_number"] if link else None
+
+                    if pinned_lb is not None:
+                        lb_number = pinned_lb
+                    elif len(lb_list) == 1:
                         lb_number = lb_list[0]
+                    else:
+                        lb_number = None
+
+                    # A single resolved LB# is only a true "pass" when every
+                    # parsed checksum (across all types — ffp/md5/st5) found a
+                    # home in the DB. A 50% match (e.g. ffp matches but md5
+                    # doesn't) means the files on disk diverge from the
+                    # archived copy and needs human review, even though the
+                    # LB# itself is correctly identified.
+                    full_match = summary.get("matched") == summary.get("given")
+
+                    if lb_number is not None and full_match:
                         row["lookup"] = {
                             "status": "ok",
                             "label": f"LB-{lb_number:05d}",
                             "lb_number": lb_number,
                             "alias_resolved_from": alias_resolved_from or None,
+                            "summary": summary,
+                            "detail": detail,
                         }
+                    elif lb_number is not None:
+                        row["lookup"] = {
+                            "status": "warn",
+                            "label": "Incomplete match",
+                            "lb_number": lb_number,
+                            "alias_resolved_from": alias_resolved_from or None,
+                            "summary": summary,
+                            "detail": detail,
+                        }
+                        row["errors"].append({
+                            "step": "lookup",
+                            "message": (
+                                f"{summary['matched']}/{summary['given']} checksums "
+                                f"matched for LB-{lb_number:05d}"
+                            ),
+                        })
                     elif len(lb_list) > 1:
                         row["lookup"] = {"status": "warn", "label": "Conflict", "lb_number": None,
-                                         "alias_resolved_from": None}
+                                         "alias_resolved_from": None,
+                                         "summary": summary, "detail": detail}
                         row["errors"].append({"step": "lookup", "message": f"Multiple LBs: {lb_list}"})
                     else:
                         row["lookup"] = {"status": "bad", "label": "Not found", "lb_number": None,
-                                         "alias_resolved_from": None}
+                                         "alias_resolved_from": None,
+                                         "summary": summary, "detail": detail}
 
         # ── Step 3: Rename proposal ───────────────────────────────────────────
         if "rename" in steps:
@@ -4905,12 +5210,20 @@ def create_app() -> Flask:
                     n_pass  = check.get("pass", 0)
                     n_miss  = check.get("missing", 0)
                     n_mm    = check.get("mismatch", 0)
+                    n_extra = check.get("extra", 0)
                     detail  = {"status": chk_status, "total": n_total,
-                               "pass": n_pass, "missing": n_miss, "mismatch": n_mm}
+                               "pass": n_pass, "missing": n_miss, "mismatch": n_mm,
+                               "extra": n_extra}
                     if chk_status == "pass":
                         row["lbdir"] = {"status": "ok",   "label": "Pass",              "check": detail}
+                        # If this folder is already an owned collection item (re-check
+                        # of an in-place folder), stamp lbdir_verified_at so the Collect
+                        # stage's "Confirmed" date reflects this pass. No-op otherwise.
+                        database.set_lbdir_verified(str(folder))
                     elif chk_status == "missing_files":
                         row["lbdir"] = {"status": "warn", "label": f"Missing {n_miss}", "check": detail}
+                    elif chk_status == "extra_files":
+                        row["lbdir"] = {"status": "warn", "label": f"Extra {n_extra}",  "check": detail}
                     elif chk_status == "shntool_missing":
                         row["lbdir"] = {"status": "warn", "label": "No shntool",         "check": detail}
                     else:
@@ -4920,13 +5233,83 @@ def create_app() -> Flask:
                     row["lbdir"] = {"status": "warn", "label": "No LBDIR", "check": None}
             # else: stays mute
 
+        # ── Step 5: File (resolve only — no filesystem action here) ─────────
+        if "file" in steps and lb_number:
+            from backend.filer import (
+                _path_reachable,
+                get_mounts_with_stats,
+                resolve_destination_for_lb,
+            )
+            resolution = resolve_destination_for_lb(lb_number, folder_path)
+            if resolution["ok"]:
+                mount_online = _path_reachable(resolution["mount_root"])
+                if mount_online:
+                    with database.get_connection() as conn:
+                        collection_count = conn.execute(
+                            "SELECT COUNT(*) FROM my_collection"
+                        ).fetchone()[0]
+                        lb_status_row = conn.execute(
+                            "SELECT lb_status FROM lb_master WHERE lb_number=?", (lb_number,)
+                        ).fetchone()
+                        owned_row = conn.execute(
+                            "SELECT lbdir_verified_at FROM my_collection WHERE lb_number=?",
+                            (lb_number,),
+                        ).fetchone()
+                    row["file"] = {
+                        "status": "ready",
+                        "label": "Ready to file",
+                        "dest_parent": resolution["dest_parent"],
+                        "dest": resolution["dest"],
+                        "mount_label": resolution["mount_label"],
+                        "year": resolution["year"],
+                        "error": None,
+                        "error_code": None,
+                        "mounts": get_mounts_with_stats(),
+                        "recommended_mount": resolution["mount_id"],
+                        "routed_year": resolution["year"],
+                        "collection_count": collection_count,
+                        "lb_status": lb_status_row["lb_status"] if lb_status_row else None,
+                        "owned": owned_row is not None,
+                        "lbdir_verified_at": owned_row["lbdir_verified_at"] if owned_row else None,
+                    }
+                else:
+                    row["file"] = {
+                        "status": "blocked",
+                        "label": "Mount offline",
+                        "dest_parent": "",
+                        "dest": "",
+                        "mount_label": resolution["mount_label"],
+                        "year": resolution["year"],
+                        "error": f"Mount '{resolution['mount_label']}' is offline",
+                        "error_code": "mount_offline",
+                    }
+            else:
+                row["file"] = {
+                    "status": "blocked",
+                    "label": _file_blocked_label(resolution["error_code"]),
+                    "dest_parent": "",
+                    "dest": "",
+                    "mount_label": "",
+                    "year": resolution["year"],
+                    "error": resolution["error"],
+                    "error_code": resolution["error_code"],
+                }
+        else:
+            row["file"] = {"status": "mute", "label": "—", "error": None, "error_code": None}
+
         # ── Severity ──────────────────────────────────────────────────────────
+        # file_status "blocked" escalates to attn (route/mount misconfigured);
+        # "ready" does not change severity — the File button in the row handles it.
         statuses = [row["verify"]["status"], row["lookup"]["status"],
                     row["rename"]["status"], row["lbdir"]["status"]]
-        if "bad" in statuses:
+        file_status = row["file"]["status"]
+        if "bad" in statuses or file_status == "blocked":
             row["severity"] = "attn"
         elif row["rename"].get("label") == "Proposed":
             row["severity"] = "ready"
+        elif lb_number and (row["rename"]["status"] == "mute" or row["lbdir"]["status"] == "mute"):
+            # Lookup resolved but downstream steps weren't run yet — not done
+            row["severity"] = "attn"
         elif all(s in ("ok", "mute") for s in statuses) and "ok" in statuses:
             row["severity"] = "done"
         else:
@@ -4945,7 +5328,7 @@ def create_app() -> Flask:
         try:
             data = request.get_json() or {}
             folders: list[str] = data.get("folders", [])
-            steps: set[str] = set(data.get("steps", ["verify", "lookup", "rename", "lbdir"]))
+            steps: set[str] = set(data.get("steps", ["verify", "lookup", "rename", "lbdir", "file"]))
             if not folders:
                 return jsonify({"error": "folders list required"}), 400
             results = [_pipeline_process_folder(f, steps) for f in folders]
