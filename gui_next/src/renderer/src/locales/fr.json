@@ -25,7 +25,7 @@
   },
   "appShell": {
     "brand": "LosslessBob",
-    "version": "Recherche de la somme de contrôle - v1.0.6",
+    "version": "Recherche de la somme de contrôle - v{{version}}",
     "search": "Rechercher LB#, dossier, emplacement...",
     "curatorHint": "Maintenance de la base de données principale ?",
     "curatorEnable": "Activer le mode Curator →",
@@ -55,6 +55,7 @@
       "scraper": "Grattoir",
       "settings": "Paramètres",
       "setup": "Mise en place",
+      "mounts": "Volumes",
       "themes": "Thèmes",
       "advancedTools": "Outils avancés"
     },
@@ -422,8 +423,8 @@
       "resetToSuggested": "Revenir à la suggestion",
       "suggested": "suggéré",
       "mountOffline": "Hors ligne",
-      "mountTooltip": "{{span}} · {{free}} libre",
-      "freeAmount": "{{free}} libre",
+      "mountTooltip": "{{span}} · {{free}} libre sur {{total}} ({{pct}}% utilisé)",
+      "freeOfTotal": "{{free}} libre sur {{total}}",
       "tagInCollection": "Marquer dans la collection",
       "itemsCounter": "{{count}} → {{next}} éléments",
       "rowLb": "LB#",
@@ -783,6 +784,10 @@
       "noRecognisableFiles": "Zip ne contient aucun fichier reconnaissable à restaurer.",
       "scrapedExported": "Données exportées - Fichiers {{count}}, {{size}} MB"
     }
+  },
+  "mounts": {
+    "title": "Volumes",
+    "subtitle": "Disques de stockage, routage par année et mode de classement pour le pipeline de la collection."
   },
   "themes": {
     "title": "Thèmes",

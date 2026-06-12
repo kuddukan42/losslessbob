@@ -1,3 +1,91 @@
+[2026-06-12] — feat(gui): move Mounts & Routes out of Setup into its own screen
+Added: gui_next/src/renderer/src/screens/ScreenMounts.tsx: new screen hosting the
+  storage-mounts/year-routing/filing-mode card (extracted from ScreenSetup).
+Changed: gui_next/src/renderer/src/screens/ScreenSetup.tsx: removed the
+  CollectionRoutingCard and its helper components (now in ScreenMounts.tsx);
+  dropped now-unused Input/IconButton imports.
+Changed: gui_next/src/renderer/src/components/AppShell.tsx: added 'mounts' nav
+  item (Settings group, directly below Setup); added 'mounts' to NavId.
+Changed: gui_next/src/renderer/src/App.tsx: added /mounts route -> ScreenMounts.
+Added: gui_next/src/renderer/src/components/Icon.tsx: new "mounts" (hard-drive)
+  icon for the nav entry.
+Added: gui_next locales (en/de/es/fr/it/nl): appShell.nav.mounts and new
+  mounts.title/mounts.subtitle keys.
+
+[2026-06-12] — feat(backend+gui): TODO-110 — drive stats on pipeline mount cards
+Changed: backend/filer.py: get_mounts_with_stats() now also returns total
+  capacity (total) and used percentage (used_pct), via shutil.disk_usage(),
+  alongside the existing free space and span fields.
+Changed: gui_next/src/renderer/src/components/pipeline/CollectDetail.tsx: Mount
+  interface gains total/used_pct; MountPicker mount cards now show "free of
+  total" and a colour-coded usage bar (warn at 75%, bad at 90%), updating
+  reactively as the pipeline re-resolves the Collect step.
+Changed: gui_next locales (en/de/es/fr/it/nl): replaced collect.freeAmount with
+  collect.freeOfTotal and added total/used % to collect.mountTooltip.
+
+[2026-06-12] — feat(backend+gui): TODO-112 — backend uptime clock on About screen
+Added: backend/app.py: new GET /api/system/uptime endpoint returning
+  uptime_seconds since the Flask process started.
+Changed: backend/app.py: /api/admin/status now shares the same process-start
+  timestamp (_process_start_time) instead of its own duplicate.
+Changed: gui_next/src/renderer/src/components/AboutDialog.tsx: About tab now
+  shows a live "uptime" field (HH:MM:SS) fetched from /api/system/uptime and
+  ticked locally, to help confirm whether a backend restart actually happened.
+
+[2026-06-12] — fix(backend+gui): TODO-113 — consolidate app version numbering
+Changed: VERSION: bumped 1.3.0 -> 1.4.0 to match gui_next/package.json (now the
+  source of truth, mirrored here for the Python backend/CLI).
+Changed: backend/paths.py: removed stale duplicate APP_VERSION constant (1.2.0).
+Changed: backend/forum_poster.py: forum post footer now uses backend.version.VERSION
+  instead of the removed APP_VERSION.
+Changed: cli.py: interactive shell banner now uses backend.version.VERSION instead
+  of a separate hardcoded _VERSION ("1.0.3").
+Changed: gui_next/electron.vite.config.ts: renderer build now defines __APP_VERSION__
+  from gui_next/package.json's version field; declared in env.d.ts.
+Changed: gui_next/src/renderer/src/components/SplashOverlay.tsx,
+  components/AboutDialog.tsx: replaced hardcoded "1.2.0" version strings with
+  __APP_VERSION__.
+Changed: gui_next/src/renderer/src/components/AppShell.tsx + locales/*.json:
+  sidebar tagline "version" string now interpolates {{version}} = __APP_VERSION__
+  instead of a stale hardcoded "v1.0.6".
+
+[2026-06-12] — feat(gui): TODO-138 — Pipeline "Auto-rename" toggle
+Added: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: new "Auto-rename"
+  toggle in the pipeline header (off by default, alongside "Auto-run on drop").
+  When on, any folder where verify/lookup/lbdir all pass and rename has a single
+  confident proposed name (bucket "ready") is auto-renamed via the existing
+  applyRename() path — marking step 4 (rename) green and advancing the row to
+  the collect stage — with no "Apply rename" click needed. When off, behavior
+  is unchanged: proposed renames sit in the "ready" bucket for manual Apply.
+Added: gui_next/src/renderer/src/locales/en.json: pipeline.autoRename /
+  pipeline.autoRenameHint strings. Note: DeepL key in .claude/settings.local.json
+  is currently disabled (AuthorizationException), so de/fr/es/it/nl translations
+  for these two keys (and the pre-existing ~27/N pipeline-section gap in those
+  locales) were not refreshed — i18next falls back to English for now.
+
+[2026-06-12] — feat(backend+gui): TODO-137 — pipeline step order: LBDIR now runs before Rename
+Changed: backend/app.py: _pipeline_process_folder reorders steps to
+  verify -> lookup -> lbdir -> rename -> file (collect); LBDIR retrieve+verify
+  is now step 3 and Rename proposal is step 4. Severity status list reordered
+  to match. pipeline_run's default steps list/docstring updated.
+Changed: backend/app.py: /api/lbdir/check and /api/lbdir/reconcile accept an
+  optional lb_number_hint body param, falling back to my_collection ->
+  folder-name regex -> hint, since LBDIR now runs before the folder is
+  renamed/filed and won't yet have "LB-NNNNN" in its name.
+Changed: gui_next/src/renderer/src/components/pipeline/PipelineParts.tsx:
+  DEFAULT_STAGES reordered/renumbered to verify(1)/lookup(2)/lbdir(3)/rename(4)/
+  collect(5).
+Changed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: all step-key
+  iteration orders (toFolderRow, firstActiveStage, deriveFolderStatus,
+  mergeServerRow, autorun/auto-complete) reordered to verify/lookup/lbdir/
+  rename/file; the auto-complete "stale" check now resumes on
+  lbdir.status === 'mute' (was rename) and re-runs ['lookup','lbdir','rename',
+  'file']. LbdirStageContent passes lb_number_hint (from the Lookup step) to
+  /api/lbdir/check and /api/lbdir/reconcile. Updated stage copy: "Runs after
+  lookup" (was "after rename"), Lookup's "flows into LBDIR" (was "Rename"),
+  and Rename's success banner now says "Ready to collect next" (was "LBDIR
+  will reconcile next").
+
 [2026-06-12] — chore(release): v1.4.0 — pipeline v2 (storage mounts, lookup, lbdir, rename, collect)
 Changed: gui_next/package.json: version bumped 1.3.0 -> 1.4.0.
 Changed: merged feat/pipeline-v2-storage-mounts into main — collection mount management,

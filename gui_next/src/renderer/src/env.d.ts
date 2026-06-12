@@ -1,5 +1,8 @@
 /// <reference types="vite/client" />
 
+/** App version string injected at build time from gui_next/package.json. */
+declare const __APP_VERSION__: string
+
 interface Window {
   api: {
     flaskPort:       number

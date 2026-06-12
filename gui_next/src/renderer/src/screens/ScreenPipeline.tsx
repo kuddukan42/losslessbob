@@ -87,8 +87,8 @@ interface PipelineRow {
   steps: {
     verify: StepResult
     lookup: StepResult
-    rename: StepResult
     lbdir:  StepResult
+    rename: StepResult
     file:   StepResult
   }
   errors: { step: string; message: string }[]
@@ -167,7 +167,7 @@ function emptyRow(folderPath: string): PipelineRow {
     folderPath,
     selected: false,
     bucket: 'needs',
-    steps: { verify: MUTE, lookup: MUTE, rename: MUTE, lbdir: MUTE, file: MUTE },
+    steps: { verify: MUTE, lookup: MUTE, lbdir: MUTE, rename: MUTE, file: MUTE },
     errors: [],
     running: false,
   }
@@ -216,8 +216,8 @@ function serverRowToPipeline(sr: Record<string, unknown>): Partial<PipelineRow> 
     steps: {
       verify: (sr.verify as StepResult) ?? MUTE,
       lookup: (sr.lookup as StepResult) ?? MUTE,
-      rename: (sr.rename as StepResult) ?? MUTE,
       lbdir:  (sr.lbdir  as StepResult) ?? MUTE,
+      rename: (sr.rename as StepResult) ?? MUTE,
       file,
     },
     errors: (sr.errors as PipelineRow['errors']) ?? [],
@@ -231,12 +231,12 @@ const STATUS_TO_STATE: Record<StepStatus, StepData['state']> = {
 
 function toFolderRow(r: PipelineRow): FolderRow {
   const rawSteps: Record<string, StepData> = {}
-  for (const key of ['verify', 'lookup', 'rename', 'lbdir', 'file'] as const) {
+  for (const key of ['verify', 'lookup', 'lbdir', 'rename', 'file'] as const) {
     const s = r.steps[key]
     rawSteps[key] = { state: STATUS_TO_STATE[s.status], label: s.label }
   }
   if (r.running) {
-    for (const key of ['verify', 'lookup', 'rename', 'lbdir', 'file']) {
+    for (const key of ['verify', 'lookup', 'lbdir', 'rename', 'file']) {
       if (rawSteps[key].state === 'mute') {
         rawSteps[key] = { state: 'running' }
         break
@@ -255,7 +255,7 @@ function toFolderRow(r: PipelineRow): FolderRow {
 }
 
 function firstActiveStage(r: PipelineRow): string {
-  for (const key of ['verify', 'lookup', 'rename', 'lbdir', 'file'] as const) {
+  for (const key of ['verify', 'lookup', 'lbdir', 'rename', 'file'] as const) {
     if (r.steps[key].status !== 'ok' && r.steps[key].status !== 'mute') return key
     if (r.steps[key].status === 'mute') return key
   }
@@ -278,7 +278,7 @@ function deriveFolderStatus(r: PipelineRow): StatusInfo {
     state: 'action', label: 'Ready to apply',
     reason: 'Confident match — just apply the rename',
   }
-  for (const key of ['verify', 'lookup', 'rename', 'lbdir', 'file'] as const) {
+  for (const key of ['verify', 'lookup', 'lbdir', 'rename', 'file'] as const) {
     const s = r.steps[key]
     if (s.status === 'bad')  return { state: 'blocked', label: 'Blocked',    reason: s.label }
     if (s.status === 'warn') return { state: 'action',  label: 'Needs you',  reason: s.label }
@@ -337,22 +337,30 @@ function LbdirStageContent({ row, onRowRefresh }: {
   useEffect(() => {
     if (row.steps.lbdir.status === 'mute') return
     setBusy(true)
+    const lbHint = row.steps.lookup.lb_number ?? null
     fetch(`${BASE}/api/lbdir/check`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ folders: [row.folderPath] }),
+      body: JSON.stringify({
+        folders: [row.folderPath],
+        ...(lbHint !== null ? { lb_number_hint: lbHint } : {}),
+      }),
     })
       .then(r => r.json())
       .then((d: { results: CheckResult[] }) => { if (d.results?.[0]) setCheckResult(d.results[0]) })
       .catch(() => {})
       .finally(() => setBusy(false))
-  }, [row.folderPath, row.steps.lbdir.status])
+  }, [row.folderPath, row.steps.lbdir.status, row.steps.lookup.lb_number])
 
   const handleReconcile = useCallback(async () => {
     if (!checkResult) return
     setBusy(true)
     try {
-      const d = await post('/api/lbdir/reconcile', { folders: [row.folderPath] }) as { results: ReconcileResult[] }
+      const lbHint = row.steps.lookup.lb_number ?? null
+      const d = await post('/api/lbdir/reconcile', {
+        folders: [row.folderPath],
+        ...(lbHint !== null ? { lb_number_hint: lbHint } : {}),
+      }) as { results: ReconcileResult[] }
       if (d.results?.[0]) {
         setReconResult(d.results[0])
         setReconSel(new Set(d.results[0].proposals.map((p: ReconcileProposal) => p.disk_rel)))
@@ -360,7 +368,7 @@ function LbdirStageContent({ row, onRowRefresh }: {
       }
     } catch { showToast('Reconcile scan failed', false) }
     finally { setBusy(false) }
-  }, [checkResult, row.folderPath, post])
+  }, [checkResult, row.folderPath, row.steps.lookup.lb_number, post])
 
   const handleApply = useCallback(async () => {
     if (!reconResult) return
@@ -401,13 +409,13 @@ function LbdirStageContent({ row, onRowRefresh }: {
 
   if (row.steps.lbdir.status === 'mute') {
     return (
-      <Banner tone="info" icon="info" title="Runs after rename"
+      <Banner tone="info" icon="info" title="Runs after lookup"
         action={
           <Button size="sm" variant="secondary" icon="download" disabled={busy} onClick={handleRetrieve}>
             Retrieve sidecar now
           </Button>
         }>
-        Once renamed, we retrieve <span style={{ fontFamily: 'var(--lbb-mono)' }}>lbdir*.txt</span> from
+        Once lookup resolves an LB#, we retrieve <span style={{ fontFamily: 'var(--lbb-mono)' }}>lbdir*.txt</span> from
         the archive cache and reconcile it against the files on disk. You can pull it early if you like.
       </Banner>
     )
@@ -724,7 +732,7 @@ function LookupStageContent({ step, row, onRun }: {
           <StatusTag state="pass">Matched</StatusTag>
         </div>
         <div style={{ padding: '8px 10px', borderRadius: 6, background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)', fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
-          The match flows into <strong>Rename</strong> automatically — no extra step needed.
+          The match flows into <strong>LBDIR</strong> automatically — no extra step needed.
         </div>
         <Button variant="ghost" size="sm" icon="refresh" title="Re-run this stage" onClick={() => onRun(['lookup'])}>Re-run lookup</Button>
       </div>
@@ -845,7 +853,7 @@ function RenameStageContent({ step, row, onRun, onRename }: {
           <div>
             <div style={{ fontWeight: 700, fontSize: 'var(--lbb-fs-13)', color: 'var(--lbb-ok-fg)' }}>Renamed</div>
             <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)', marginTop: 2 }}>
-              Logged to <span style={{ fontFamily: 'var(--lbb-mono)' }}>rename_history</span>. LBDIR will reconcile next.
+              Logged to <span style={{ fontFamily: 'var(--lbb-mono)' }}>rename_history</span>. Ready to collect next.
             </div>
           </div>
         </div>
@@ -1274,6 +1282,7 @@ export function ScreenPipeline(): React.JSX.Element {
   const [rows, setRows]                     = useState<PipelineRow[]>([])
   const [filter, setFilter]                 = useState<Bucket>('all')
   const [autorun, setAutorun]               = useState(true)
+  const [autoRename, setAutoRename]         = useState(false)
   const [tableSearch, setTableSearch]       = useState('')
   const [queueSearch, setQueueSearch]       = useState('')
   const [activeQueue, setActiveQueue]       = useState<string | null>(null)
@@ -1310,6 +1319,7 @@ export function ScreenPipeline(): React.JSX.Element {
   const abortRef             = useRef<AbortController | null>(null)
   const autorunPendingRef    = useRef<string[]>([])
   const autocompleteStarted  = useRef<Set<string>>(new Set())
+  const autoRenamedRef       = useRef<Set<string>>(new Set())
 
   // ── Derived counts ───────────────────────────────────────────────────────────
   const counts = {
@@ -1403,7 +1413,7 @@ export function ScreenPipeline(): React.JSX.Element {
     setRows(prev => prev.map(r => {
       if (r.id !== id) return r
       const steps = { ...fresh.steps! }
-      for (const key of ['verify', 'lookup', 'rename', 'lbdir', 'file'] as const) {
+      for (const key of ['verify', 'lookup', 'lbdir', 'rename', 'file'] as const) {
         if (!stepSet.has(key) && steps[key].status === 'mute') steps[key] = r.steps[key]
       }
       const updated = { ...r, ...fresh, steps }
@@ -1475,20 +1485,20 @@ export function ScreenPipeline(): React.JSX.Element {
     const ready = pending.filter(id => rows.some(r => r.id === id))
     if (!ready.length) return
     autorunPendingRef.current = pending.filter(id => !ready.includes(id))
-    runSteps(ready, ['verify', 'lookup', 'rename', 'lbdir', 'file'])
+    runSteps(ready, ['verify', 'lookup', 'lbdir', 'rename', 'file'])
   }, [rows, runSteps])
 
-  // ── Auto-complete: resume folders where lookup resolved but rename/lbdir weren't run ──
+  // ── Auto-complete: resume folders where lookup resolved but lbdir/rename weren't run ──
   useEffect(() => {
     const stale = rows.filter(r =>
       !r.running &&
       r.steps.lookup.status === 'ok' &&
-      r.steps.rename.status === 'mute' &&
+      r.steps.lbdir.status === 'mute' &&
       !autocompleteStarted.current.has(r.id)
     )
     if (!stale.length) return
     stale.forEach(r => autocompleteStarted.current.add(r.id))
-    runSteps(stale.map(r => r.id), ['lookup', 'rename', 'lbdir', 'file'])
+    runSteps(stale.map(r => r.id), ['lookup', 'lbdir', 'rename', 'file'])
   }, [rows, runSteps])
 
   // Refresh one row's lbdir step (called after reconcile apply in detail panel)
@@ -1552,6 +1562,27 @@ export function ScreenPipeline(): React.JSX.Element {
       if (row.steps.rename.proposed) await applyRename(row)
     }
   }, [rows, applyRename])
+
+  // ── Auto-rename: when verify/lookup/lbdir all pass with a single confident LB
+  // match and rename has a proposal queued, apply it automatically and advance
+  // straight to the collect stage — no "Apply rename" click needed.
+  useEffect(() => {
+    if (!autoRename) return
+    const candidates = rows.filter(r =>
+      !r.running &&
+      r.steps.verify.status === 'ok' &&
+      r.steps.lookup.status === 'ok' &&
+      r.steps.lbdir.status === 'ok' &&
+      r.steps.rename.status === 'warn' &&
+      !!r.steps.rename.proposed &&
+      !autoRenamedRef.current.has(r.id)
+    )
+    if (!candidates.length) return
+    candidates.forEach(r => {
+      autoRenamedRef.current.add(r.id)
+      void applyRename(r)
+    })
+  }, [rows, autoRename, applyRename])
 
   const applySelected = useCallback(async () => {
     for (const row of selectedReady) {
@@ -1867,6 +1898,35 @@ export function ScreenPipeline(): React.JSX.Element {
             }} />
           </span>
           {t('pipeline.autoRun')}
+        </button>
+
+        {/* Auto-rename toggle */}
+        <button
+          onClick={() => setAutoRename(a => !a)}
+          title={t('pipeline.autoRenameHint')}
+          style={{
+            display: 'inline-flex', alignItems: 'center', gap: 8,
+            padding: '5px 10px', borderRadius: 8,
+            cursor: 'pointer', fontFamily: 'inherit', whiteSpace: 'nowrap',
+            background: autoRename ? 'var(--lbb-accent-soft)' : 'var(--lbb-surface)',
+            border: `1px solid ${autoRename ? 'var(--lbb-accent-mid)' : 'var(--lbb-border2)'}`,
+            color: autoRename ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg2)',
+            fontSize: 12, fontWeight: 600,
+          }}
+        >
+          <span style={{
+            width: 26, height: 15, borderRadius: 999,
+            background: autoRename ? 'var(--lbb-accent-mid)' : 'var(--lbb-border2)',
+            position: 'relative', transition: 'background 120ms',
+          }}>
+            <span style={{
+              position: 'absolute', top: 2,
+              left: autoRename ? 13 : 2,
+              width: 11, height: 11, borderRadius: '50%',
+              background: '#fff', transition: 'left 120ms',
+            }} />
+          </span>
+          {t('pipeline.autoRename')}
         </button>
 
         {/* Apply all N ready — always visible, disabled when 0 */}

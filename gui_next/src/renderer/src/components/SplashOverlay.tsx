@@ -225,7 +225,7 @@ export function SplashOverlay({ onDone }: SplashOverlayProps): React.JSX.Element
         position: 'absolute', bottom: 26, left: 30,
         fontFamily: 'var(--lbb-mono)', fontSize: 10.5, color: w(0.3),
       }}>
-        v1.2.0 · stable
+        v{__APP_VERSION__} · stable
       </div>
       <div style={{
         position: 'absolute', bottom: 26, right: 30,

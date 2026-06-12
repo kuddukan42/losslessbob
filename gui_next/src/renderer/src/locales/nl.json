@@ -25,7 +25,7 @@
   },
   "appShell": {
     "brand": "VerliesvrijBob",
-    "version": "Checksum opzoeken - v1.0.6",
+    "version": "Checksum opzoeken - v{{version}}",
     "search": "LB#, map, locatie zoeken...",
     "curatorHint": "De master-DB onderhouden?",
     "curatorEnable": "Curatormodus inschakelen →",
@@ -55,6 +55,7 @@
       "scraper": "Schraper",
       "settings": "Instellingen",
       "setup": "Setup",
+      "mounts": "Opslag",
       "themes": "Thema's",
       "advancedTools": "Geavanceerde tools"
     },
@@ -422,8 +423,8 @@
       "resetToSuggested": "Terug naar voorstel",
       "suggested": "voorgesteld",
       "mountOffline": "Offline",
-      "mountTooltip": "{{span}} · {{free}} vrij",
-      "freeAmount": "{{free}} vrij",
+      "mountTooltip": "{{span}} · {{free}} vrij van {{total}} ({{pct}}% gebruikt)",
+      "freeOfTotal": "{{free}} vrij van {{total}}",
       "tagInCollection": "Markeren in verzameling",
       "itemsCounter": "{{count}} → {{next}} items",
       "rowLb": "LB#",
@@ -783,6 +784,10 @@
       "noRecognisableFiles": "Zip bevat geen herkenbare bestanden om te herstellen.",
       "scrapedExported": "Geëxporteerde geschraapte gegevens - {{count}} bestanden, {{size}} MB"
     }
+  },
+  "mounts": {
+    "title": "Opslag",
+    "subtitle": "Opslagstations, jaarroutering en archiveringsmodus voor de verzamel-pipeline."
   },
   "themes": {
     "title": "Thema's",

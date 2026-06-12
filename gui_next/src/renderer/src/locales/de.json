@@ -25,7 +25,7 @@
   },
   "appShell": {
     "brand": "VerlustfreiBob",
-    "version": "Prüfsummen-Suche - v1.0.6",
+    "version": "Prüfsummen-Suche - v{{version}}",
     "search": "LB#, Ordner, Ort suchen...",
     "curatorHint": "Pflegen Sie die Master-DB?",
     "curatorEnable": "Aktivieren des Kuratormodus →",
@@ -55,6 +55,7 @@
       "scraper": "Abstreifer",
       "settings": "Einstellungen",
       "setup": "Einrichtung",
+      "mounts": "Speicherorte",
       "themes": "Themen",
       "advancedTools": "Erweiterte Tools"
     },
@@ -422,8 +423,8 @@
       "resetToSuggested": "Auf Vorschlag zurücksetzen",
       "suggested": "vorgeschlagen",
       "mountOffline": "Offline",
-      "mountTooltip": "{{span}} · {{free}} frei",
-      "freeAmount": "{{free}} frei",
+      "mountTooltip": "{{span}} · {{free}} frei von {{total}} ({{pct}}% belegt)",
+      "freeOfTotal": "{{free}} frei von {{total}}",
       "tagInCollection": "In der Sammlung markieren",
       "itemsCounter": "{{count}} → {{next}} Einträge",
       "rowLb": "LB#",
@@ -783,6 +784,10 @@
       "noRecognisableFiles": "Die Zip-Datei enthält keine erkennbaren Dateien zum Wiederherstellen.",
       "scrapedExported": "Exportierte gescrapte Daten - {{count}} Dateien, {{size}} MB"
     }
+  },
+  "mounts": {
+    "title": "Speicherorte",
+    "subtitle": "Speicherlaufwerke, Jahres-Routing und Ablagemodus für die Sammlungs-Pipeline."
   },
   "themes": {
     "title": "Themen",

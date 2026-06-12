@@ -11,7 +11,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from backend.credentials import SERVICE_WTRF, get_credentials
-from backend.paths import APP_VERSION
+from backend.version import VERSION as APP_VERSION
 
 logger = logging.getLogger(__name__)
 

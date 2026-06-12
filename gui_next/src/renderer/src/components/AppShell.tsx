@@ -10,7 +10,7 @@ type NavId =
   | 'home' | 'pipeline' | 'verify' | 'lookup' | 'quicklookup' | 'rename' | 'lbdir'
   | 'collection' | 'trading' | 'sharing' | 'search' | 'bootlegs'
   | 'attachments' | 'spectrograms' | 'map' | 'fingerprint'
-  | 'scraper' | 'setup' | 'themes' | 'dbeditor'
+  | 'scraper' | 'setup' | 'mounts' | 'themes' | 'dbeditor'
 
 const ADVANCED_TOOLS: NavItem[] = [
   { id: 'verify', label: 'Verify', icon: 'verify' },
@@ -84,6 +84,7 @@ const NAV_GROUPS: NavGroup[] = [
     label: 'Settings',
     items: [
       { id: 'setup',    label: 'Setup',     icon: 'setup' },
+      { id: 'mounts',   label: 'Mounts',    icon: 'mounts' },
       { id: 'themes',   label: 'Themes',    icon: 'themes' },
       { id: 'dbeditor', label: 'DB Editor', icon: 'dbeditor' },
     ],
@@ -213,7 +214,7 @@ function Sidebar({
               letterSpacing: 0.04,
             }}
           >
-            {t('appShell.version')}
+            {t('appShell.version', { version: __APP_VERSION__ })}
           </div>
         </div>
       </div>

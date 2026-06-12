@@ -151,6 +151,10 @@ def create_app() -> Flask:
     app = Flask(__name__)
     CORS(app)
 
+    # Process start time, used by /api/system/uptime and /api/admin/status to
+    # show how long the backend has been running (TODO-112).
+    _process_start_time = time.monotonic()
+
     # ── Web GUI basic-auth (TODO-064) ─────────────────────────────────────────
     # Protects /web/* and /frontend/* when meta key web_password is set.
     # /api/* routes are intentionally left open (desktop app calls them directly).
@@ -268,6 +272,17 @@ def create_app() -> Flask:
             return jsonify(data)
         except Exception as e:
             return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/system/uptime", methods=["GET"])
+    def system_uptime() -> Response:
+        """Return how long the backend process has been running.
+
+        Returns:
+            JSON dict with uptime_seconds (int) since this Flask process
+            started, for confirming whether a restart actually happened
+            after a backend code change.
+        """
+        return jsonify({"uptime_seconds": round(time.monotonic() - _process_start_time)})
 
     @app.route("/api/db/stats", methods=["GET"])
     def db_stats() -> Response:
@@ -2052,7 +2067,7 @@ def create_app() -> Flask:
     def lbdir_check() -> Response:
         """Verify each folder's files against its lbdir*.txt checksum list.
 
-        Body: {folders: ["/path/to/folder", ...]}
+        Body: {folders: ["/path/to/folder", ...], lb_number_hint?: int}
         Returns:
             JSON {results: [lbdir_check_result, ...]} or 400 if folders is empty.
         """
@@ -2062,17 +2077,37 @@ def create_app() -> Flask:
             if not folders:
                 return jsonify({"error": "folders list required"}), 400
 
+            # Optional single-folder hint: pipeline passes this when LB is known from
+            # lookup but the folder has not yet been renamed (LBDIR now runs before
+            # Rename, so neither my_collection nor the folder name has the LB# yet).
+            lb_number_hint: int | None = None
+            raw_hint = data.get("lb_number_hint")
+            if raw_hint is not None:
+                try:
+                    lb_number_hint = int(raw_hint)
+                except (ValueError, TypeError):
+                    pass
+
             results = []
             for folder_path in folders:
                 folder = Path(folder_path)
 
-                # Look up LB number from collection by disk_path
+                # Look up LB number: try my_collection first, then parse folder name,
+                # then fall back to the caller-supplied hint (pipeline lookup result).
                 with database.get_connection() as conn:
                     row = conn.execute(
                         "SELECT lb_number FROM my_collection WHERE disk_path=?",
                         (str(folder),)
                     ).fetchone()
                 lb_number = row["lb_number"] if row else None
+
+                if lb_number is None:
+                    m = re.search(r'LB-(\d+)', folder.name, re.IGNORECASE)
+                    if m:
+                        lb_number = int(m.group(1))
+
+                if lb_number is None and lb_number_hint is not None:
+                    lb_number = lb_number_hint
 
                 lbdir_path = _find_lbdir_in_folder(folder)
 
@@ -2228,12 +2263,26 @@ def create_app() -> Flask:
 
     @app.route("/api/lbdir/reconcile", methods=["POST"])
     def lbdir_reconcile() -> Response:
-        """Preview: find disk/site files whose MD5 matches missing lbdir entries. Does NOT move files."""
+        """Preview: find disk/site files whose MD5 matches missing lbdir entries. Does NOT move files.
+
+        Body: {folders: ["/path/to/folder", ...], lb_number_hint?: int}
+        """
         try:
             data = request.get_json() or {}
             folders = data.get("folders", [])
             if not folders:
                 return jsonify({"error": "folders list required"}), 400
+
+            # Optional single-folder hint: pipeline passes this when LB is known from
+            # lookup but the folder has not yet been renamed (LBDIR now runs before
+            # Rename, so neither my_collection nor the folder name has the LB# yet).
+            lb_number_hint: int | None = None
+            raw_hint = data.get("lb_number_hint")
+            if raw_hint is not None:
+                try:
+                    lb_number_hint = int(raw_hint)
+                except (ValueError, TypeError):
+                    pass
 
             results = []
             for folder_path in folders:
@@ -2255,6 +2304,9 @@ def create_app() -> Flask:
                     m = re.search(r'LB-(\d+)', folder.name, re.IGNORECASE)
                     if m:
                         lb_number = int(m.group(1))
+
+                if lb_number is None and lb_number_hint is not None:
+                    lb_number = lb_number_hint
 
                 if lb_number is not None:
                     site_result = checksum_utils.find_site_recoverable_files(
@@ -4449,8 +4501,6 @@ def create_app() -> Flask:
             return jsonify({"error": str(exc)}), 500
 
     # ── Admin page ───────────────────────────────────────────────────────────
-    import time as _time
-    _admin_start_time = _time.monotonic()
 
     @app.route("/admin")
     def admin_page() -> Response:
@@ -4468,7 +4518,7 @@ def create_app() -> Flask:
         """
         try:
             result: dict = {}
-            result["uptime_seconds"] = round(_time.monotonic() - _admin_start_time)
+            result["uptime_seconds"] = round(time.monotonic() - _process_start_time)
             try:
                 result["db"] = database.get_stats()
             except Exception:
@@ -4510,7 +4560,7 @@ def create_app() -> Flask:
         import threading as _threading
 
         def _do_restart():
-            _time.sleep(0.3)
+            time.sleep(0.3)
             if _restart_callback is not None:
                 _restart_callback()
             else:
@@ -5156,28 +5206,7 @@ def create_app() -> Flask:
                                          "alias_resolved_from": None,
                                          "summary": summary, "detail": detail}
 
-        # ── Step 3: Rename proposal ───────────────────────────────────────────
-        if "rename" in steps:
-            if lb_number:
-                entry_data = database.get_entry(lb_number)
-                entry = (entry_data or {}).get("entry", {})
-                date_str = entry.get("date_str") or ""
-                location = (entry.get("location") or "").strip()
-                lb_status = database.get_lb_status(lb_number)
-                proposed = _build_name(lb_number, date_str, location, lb_status)
-                # BUG-119: when DB has no date/location the standard name falls
-                # back to bare LB-NNNNN[-NFT], which would silently strip any
-                # date/location already in the folder name.  Use the current
-                # folder name as the base and only adjust the NFT suffix.
-                if not date_str or not location:
-                    proposed = apply_nft_suffix(strip_nft_suffix(folder_name), lb_status)
-                if folder_name == proposed:
-                    row["rename"] = {"status": "ok", "label": "Correct", "proposed": None}
-                else:
-                    row["rename"] = {"status": "warn", "label": "Proposed", "proposed": proposed}
-            # else: stays mute — lookup hasn't resolved an LB#
-
-        # ── Step 4: LBDIR retrieve + verify ──────────────────────────────────
+        # ── Step 3: LBDIR retrieve + verify ──────────────────────────────────
         if "lbdir" in steps:
             if lb_number:
                 lbdir_file = _find_lbdir_in_folder(folder)
@@ -5232,6 +5261,27 @@ def create_app() -> Flask:
                 else:
                     row["lbdir"] = {"status": "warn", "label": "No LBDIR", "check": None}
             # else: stays mute
+
+        # ── Step 4: Rename proposal ───────────────────────────────────────────
+        if "rename" in steps:
+            if lb_number:
+                entry_data = database.get_entry(lb_number)
+                entry = (entry_data or {}).get("entry", {})
+                date_str = entry.get("date_str") or ""
+                location = (entry.get("location") or "").strip()
+                lb_status = database.get_lb_status(lb_number)
+                proposed = _build_name(lb_number, date_str, location, lb_status)
+                # BUG-119: when DB has no date/location the standard name falls
+                # back to bare LB-NNNNN[-NFT], which would silently strip any
+                # date/location already in the folder name.  Use the current
+                # folder name as the base and only adjust the NFT suffix.
+                if not date_str or not location:
+                    proposed = apply_nft_suffix(strip_nft_suffix(folder_name), lb_status)
+                if folder_name == proposed:
+                    row["rename"] = {"status": "ok", "label": "Correct", "proposed": None}
+                else:
+                    row["rename"] = {"status": "warn", "label": "Proposed", "proposed": proposed}
+            # else: stays mute — lookup hasn't resolved an LB#
 
         # ── Step 5: File (resolve only — no filesystem action here) ─────────
         if "file" in steps and lb_number:
@@ -5301,7 +5351,7 @@ def create_app() -> Flask:
         # file_status "blocked" escalates to attn (route/mount misconfigured);
         # "ready" does not change severity — the File button in the row handles it.
         statuses = [row["verify"]["status"], row["lookup"]["status"],
-                    row["rename"]["status"], row["lbdir"]["status"]]
+                    row["lbdir"]["status"], row["rename"]["status"]]
         file_status = row["file"]["status"]
         if "bad" in statuses or file_status == "blocked":
             row["severity"] = "attn"
@@ -5321,14 +5371,14 @@ def create_app() -> Flask:
     def pipeline_run() -> Response:
         """Run pipeline steps on a list of folders.
 
-        Body: {folders: [path, ...], steps: ["verify","lookup","rename","lbdir"]}
+        Body: {folders: [path, ...], steps: ["verify","lookup","lbdir","rename","file"]}
         Returns:
             JSON {results: [PipelineRow, ...]}
         """
         try:
             data = request.get_json() or {}
             folders: list[str] = data.get("folders", [])
-            steps: set[str] = set(data.get("steps", ["verify", "lookup", "rename", "lbdir", "file"]))
+            steps: set[str] = set(data.get("steps", ["verify", "lookup", "lbdir", "rename", "file"]))
             if not folders:
                 return jsonify({"error": "folders list required"}), 400
             results = [_pipeline_process_folder(f, steps) for f in folders]
