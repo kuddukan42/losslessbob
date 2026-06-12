@@ -1,6 +1,17 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-163: NameError on /api/admin/restart — stray `_time.sleep` undefined name
+Status: Fixed
+File(s): backend/app.py:_do_restart (admin restart endpoint)
+Reported: 2026-06-12
+Fixed: 2026-06-12
+Root cause: `_do_restart()` called `_time.sleep(0.3)`, but only `time` is imported
+  at module scope (no `_time` alias). Caught by ruff (F821 undefined name) during
+  pre-commit; would have raised NameError at runtime the first time
+  /api/admin/restart was hit.
+Fix: changed `_time.sleep(0.3)` to `time.sleep(0.3)`.
+
 BUG-162: Pipeline Lookup shows green "Pass" on a half-matched checksum set with no detail widget
 Status: Fixed
 File(s): backend/app.py:_pipeline_process_folder (lookup step), gui_next/src/renderer/src/screens/ScreenPipeline.tsx:LookupStageContent
