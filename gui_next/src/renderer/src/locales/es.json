@@ -236,6 +236,10 @@
       "extra": "Más información en",
       "fail": "Falla"
     },
+    "allClear": {
+      "title": "Todos los archivos son correctos",
+      "desc": "Los {{count}} archivos coinciden con sus sumas de verificación FFP y MD5. No hay nada que corregir aquí."
+    },
     "shntoolWarning": "shntool no está instalado",
     "shntoolDesc": "Esta carpeta contiene archivos SHN. FFP/MD5 puede verificarse sin shntool, pero las comprobaciones de longitud por disco lo requieren.",
     "verifyWithoutShntool": "Verificar sin shntool",
@@ -403,6 +407,25 @@
       "confirmBody": "Archivar \"{{folder}}\" en {{mount}}",
       "confirmNote": "La carpeta se moverá a su destino de colección y se registrará en Mi colección.",
       "confirmAction": "Archivar"
+    },
+    "collect": {
+      "storageMount": "Unidad de almacenamiento",
+      "routedByYear": "Enrutado por año · {{year}} → {{mount}}",
+      "resetToSuggested": "Restablecer sugerencia",
+      "suggested": "sugerido",
+      "mountOffline": "Sin conexión",
+      "mountTooltip": "{{span}} · {{free}} libres",
+      "freeAmount": "{{free}} libres",
+      "tagInCollection": "Etiquetar en la colección",
+      "itemsCounter": "{{count}} → {{next}} elementos",
+      "rowLb": "LB#",
+      "rowStatus": "Estado",
+      "rowConfirmed": "Confirmado",
+      "rowFingerprint": "Huella digital",
+      "valueStatus": "Público · Propio",
+      "valueConfirmed": "Hoy",
+      "valueFingerprint": "Pendiente · AcoustID",
+      "valueUnassigned": "Sin asignar"
     }
   },
   "collection": {
@@ -988,7 +1011,7 @@
       "error": "Error: {{msg}}"
     }
   },
-"quickLookup": {
+  "quickLookup": {
     "title": "Búsqueda rápida",
     "subtitle": "Suma de verificación",
     "desc": "Pegue o suelte líneas de suma de verificación para identificar grabaciones al instante.",

@@ -1,4 +1,84 @@
 
+BUG-155: DB — entry locations with non-ASCII chars stored corrupted (LB-16298 "Mnchen, Germany", ü dropped)
+Status: Open
+File(s): data/losslessbob.db (entries.location); likely backend/scraper.py or importer encoding path
+Reported: 2026-06-10
+Root cause: Not yet isolated. entries row for LB-16298 has location "Mnchen, Germany" — the "ü" was
+  dropped (not mojibake'd), consistent with a cp1252/latin-1 decode that discarded the byte (see
+  Known Pitfalls in CLAUDE.md). Effect: pipeline rename proposes the misspelled
+  "2011-10-26 Mnchen, Germany (LB-16298)". Audit needed: other entries with umlauts/accents.
+Fix: TBD — re-scrape affected entries with correct decoding; add an audit query for stripped chars.
+
+BUG-154: Pipeline — stale tsc-emitted .js files shadow .tsx sources; app runs pre-BUG-149 pipeline code
+Status: Open
+File(s): gui_next/src/renderer/src/**/*.js (45 untracked build artifacts, e.g. screens/ScreenPipeline.js)
+Reported: 2026-06-10
+Root cause: A tsc run with emit (no --noEmit) on 2026-06-10 ~17:09 wrote compiled .js files next to
+  every .tsx/.ts source under gui_next/src/renderer/src. Vite resolves extensionless imports
+  (e.g. `import { ScreenPipeline } from './screens/ScreenPipeline'` in App.tsx:15) with .js BEFORE
+  .tsx, so the dev/build app silently loads the stale compiled code. screens/ScreenPipeline.js
+  predates the BUG-149/151/152/153 fixes: auto-run only sends ['verify','lookup'] (rename/lbdir/file
+  stay mute → "Rename unlocks after lookup resolves an LB#" even though lookup shows LB-NNNNN),
+  no _pipelineCache (statuses cleared on tab navigation), no auto-complete effect.
+  Backend verified OK: /api/pipeline/run with all 5 steps on data/examples/2011-10-26 Munich,
+  Germany Bach returns lookup=LB-16298 (16/16 matched) and rename proposed; /api/folder/rename works.
+Fix: Delete the untracked .js artifacts (git clean -f -- 'gui_next/src/renderer/src/*.js' pattern or
+  find -name '*.js' -delete within that tree), add src-tree .js to .gitignore guard, and ensure
+  typecheck script uses tsc --noEmit so this can't recur.
+
+BUG-153: Pipeline — step results lost on tab navigation; component remount resets all rows to emptyRow
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenPipeline.tsx:87,1199,1290,1409
+Reported: 2026-06-10
+Fixed: 2026-06-10
+Root cause: Pipeline step results (verify, lookup, rename, lbdir, file) live only in ScreenPipeline's local useState. Every time the user navigates away and back, the component unmounts/remounts and useState resets to []. The queue sync effect then re-adds folders as emptyRow (all steps mute), losing all previously-run results.
+Fix: Added module-level _pipelineCache Map (keyed by folder path). updateRow writes to cache on every result update. Queue sync restores from cache for any folder already processed in this session. Cache is cleared on queue Clear and on individual row removal; updated (key migrated) on rename apply.
+
+BUG-152: Pipeline — stale folders (lookup=ok, rename=mute) never auto-complete after BUG-149 fix
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenPipeline.tsx:1344
+Reported: 2026-06-10
+Fixed: 2026-06-10
+Root cause: BUG-149 fixed auto-run for NEW folders but existing queue rows that were already processed with old auto-run (verify+lookup only) stayed with rename=mute forever — no mechanism re-ran the missing steps.
+Fix: Added auto-complete useEffect that detects rows where lookup=ok and rename=mute, adds them to autocompleteStarted ref (prevents re-triggering), and runs ['lookup','rename','lbdir','file'] to complete the pipeline.
+
+BUG-151: Pipeline — partial-step runs (Check rename, Re-check) wipe existing Verify/Lookup results
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenPipeline.tsx:1304
+Reported: 2026-06-10
+Fixed: 2026-06-10
+Root cause: serverRowToPipeline always returns all 5 steps from the server response. The backend initialises unrun steps as mute, so a partial run (e.g. ['lookup','rename']) overwrites the client's existing verify=Pass and lbdir results with mute. updateRow replaced the whole steps object unconditionally.
+Fix: In runSteps, after calling serverRowToPipeline, iterate all 5 step keys and for any key NOT in the requested steps set, restore target.steps[key] (the pre-run value) into fresh.steps before calling updateRow.
+
+BUG-150: Pipeline — per-stage re-run buttons send only their stage; lb_number is always None → rename/lbdir/file stay mute
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenPipeline.tsx:733,773,860,960,1037,1055,1075
+Reported: 2026-06-10
+Fixed: 2026-06-10
+Root cause: "Check rename", "Re-check", "Check route now" etc. called onRun(['rename'|'file'|stageKey])
+  with only the target stage. The backend rebuilds lb_number from scratch each call, so without 'lookup'
+  in the steps list lb_number is always None → downstream stages stay mute.
+Fix: Prepend 'lookup' to steps for all 7 per-stage re-run buttons that depend on lb_number
+  (rename×3, file×3, lbdir×1).
+
+BUG-149: Pipeline — auto-run only ran verify+lookup; rename/lbdir stayed mute → false "In collection"
+Status: Fixed
+File(s): backend/app.py:5251-5258, gui_next/src/renderer/src/screens/ScreenPipeline.tsx:1328
+Reported: 2026-06-10
+Fixed: 2026-06-10
+Root cause: (1) Auto-run fired runSteps(['verify','lookup']) — rename, lbdir, file steps were never
+  requested so they stayed 'mute'. (2) The backend severity formula treated 'mute' as equivalent to 'ok'
+  (all steps in ("ok","mute") and at least one "ok"), so a folder with verify+lookup passing but
+  rename/lbdir never run got severity="done" → bucket="done" → shown as "IN COLLECTION" in batch view,
+  and "Done · LB-NNNNN" in the queue sidebar — a false positive. (3) The mute LBDIR panel's
+  "Retrieve sidecar now" button called /api/lbdir/retrieve with no way to supply the LB# resolved
+  by lookup; endpoint only checked my_collection.disk_path and folder-name regex — both fail for an
+  un-filed, un-renamed folder.
+Fix: (1) Auto-run now runs ['verify','lookup','rename','lbdir','file'] in one pass. (2) Severity
+  now returns "attn" when lb_number is resolved but rename or lbdir are still mute. (3)
+  lbdir_retrieve accepts lb_number_hint in the request body; handleRetrieve passes
+  row.steps.lookup.lb_number as the hint.
+
 BUG-146: build_standard_name produces xx/xx/YY folder date prefix for entries with unknown month/day
 Status: Open
 File(s): backend/torrent_maker.py:129, backend/folder_naming.py:72
@@ -225,6 +305,10 @@ Root cause: The database has duplicate checksum entries — identical file hashe
 Fix: (1) SQL query to find all checksum hashes shared across 2+ lb_numbers and report them. (2) Investigate
   the phantom LBs 04994/03029/06748/11900 for a common/generic track that should be excluded from lookup
   indexing. (3) Add a de-dup guard in importer so checksums already present under a different LB are flagged.
+Note (2026-06-10): The "no resolution path in the GUI" symptom is now mitigated — the pipeline Lookup
+  panel's Conflict state shows a "Which show is this?" picker with per-LB "Pin {lb} & continue", which
+  writes a folder_lb_link row that wins over the raw multi-match set on the next lookup run. The
+  underlying duplicate-checksum data issue (fix items 1-3 above) is still open.
 Reproduce: run tests/test_pipeline_smoke.py --seed 2 --n 500. All 11 conflicts found:
   • LB-07160 vs LB-04653 (1993-04-21 Monroe, LA)
   • LB-06195 vs LB-06198 (2008-06-16 Bergamo — same show, two LB entries)

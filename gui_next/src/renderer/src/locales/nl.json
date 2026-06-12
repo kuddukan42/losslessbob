@@ -239,6 +239,10 @@
       "extra": "Extra",
       "fail": "Storing"
     },
+    "allClear": {
+      "title": "Alle bestanden zijn in orde",
+      "desc": "Alle {{count}} bestanden komen overeen met hun FFP- en MD5-controlesommen. Hier is niets te repareren."
+    },
     "shntoolWarning": "shntool is niet geïnstalleerd",
     "shntoolDesc": "Deze map bevat SHN-bestanden. FFP/MD5 kan worden geverifieerd zonder shntool, maar voor lengtecontroles per schijf is het nodig.",
     "verifyWithoutShntool": "Controleren zonder shntool",
@@ -406,6 +410,25 @@
       "confirmBody": "\"{{folder}}\" archiveren in {{mount}}",
       "confirmNote": "De map wordt verplaatst naar de bestemmingslocatie van de verzameling en geregistreerd in Mijn verzameling.",
       "confirmAction": "Archiveren"
+    },
+    "collect": {
+      "storageMount": "Opslagstation",
+      "routedByYear": "Gerouteerd op jaar · {{year}} → {{mount}}",
+      "resetToSuggested": "Terug naar voorstel",
+      "suggested": "voorgesteld",
+      "mountOffline": "Offline",
+      "mountTooltip": "{{span}} · {{free}} vrij",
+      "freeAmount": "{{free}} vrij",
+      "tagInCollection": "Markeren in verzameling",
+      "itemsCounter": "{{count}} → {{next}} items",
+      "rowLb": "LB#",
+      "rowStatus": "Status",
+      "rowConfirmed": "Bevestigd",
+      "rowFingerprint": "Vingerafdruk",
+      "valueStatus": "Openbaar · In bezit",
+      "valueConfirmed": "Vandaag",
+      "valueFingerprint": "In wachtrij · AcoustID",
+      "valueUnassigned": "Niet toegewezen"
     }
   },
   "collection": {
@@ -991,7 +1014,7 @@
       "error": "Fout: {{msg}}"
     }
   },
-"quickLookup": {
+  "quickLookup": {
     "title": "Snel opzoeken",
     "subtitle": "Controlesom",
     "desc": "Plak of sleep controlesomregels om opnames direct te identificeren.",

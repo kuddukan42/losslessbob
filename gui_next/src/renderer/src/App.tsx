@@ -249,7 +249,7 @@ export default function App(): React.JSX.Element {
   const language = useSettingsStore((s) => s.language)
   useEffect(() => { i18n.changeLanguage(language) }, [language])
 
-  const [splashDone, setSplashDone] = useState(false)
+  const [splashDone, setSplashDone] = useState(true) // TODO: re-enable splash screen
   const [showAbout, setShowAbout] = useState(false)
 
   return (

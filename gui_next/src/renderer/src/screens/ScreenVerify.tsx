@@ -1,10 +1,10 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Icon } from '../components/Icon'
-import { Button, Chip, Input, Pill } from '../components'
-import { TableShell, TH, TR, TD } from '../components'
+import { Button, Input, Pill } from '../components'
 import { FolderQueueRail } from '../components/FolderQueueRail'
-import { useVerifyStore, VerifyFolder, FolderState, CheckStatus } from '../lib/verifyStore'
+import { VerifyDetail } from '../components/pipeline/VerifyDetail'
+import { useVerifyStore, VerifyFolder, FolderState } from '../lib/verifyStore'
 import { useFolderQueueStore } from '../lib/folderQueueStore'
 
 const BASE = window.api.flaskBase
@@ -22,13 +22,6 @@ interface ToolStatus {
 
 
 // ── Atoms ──────────────────────────────────────────────────────────────────────
-
-function StatusDot({ s }: { s: CheckStatus }): React.JSX.Element {
-  if (s === 'pass') return <Icon name="check" size={13} style={{ color: 'var(--lbb-ok-bar)' }} />
-  if (s === 'fail') return <Icon name="x"     size={13} style={{ color: 'var(--lbb-bad-fg)' }} />
-  if (s === 'miss') return <Icon name="x"     size={13} style={{ color: 'var(--lbb-warn-fg)' }} />
-  return <span style={{ color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-10)' }}>na</span>
-}
 
 function ToolDot({ ok, label }: { ok: boolean; label: string }): React.JSX.Element {
   return (
@@ -206,9 +199,6 @@ export function ScreenVerify(): React.JSX.Element {
     ? folders.filter(f => f.toLowerCase().includes(filter.toLowerCase()))
     : folders
 
-  const visible = row
-    ? (showAll ? row.files : row.files.filter(f => f.overall !== 'pass'))
-    : []
 
   const STAT_LABEL: React.CSSProperties = {
     fontSize: 'var(--lbb-fs-9-5)', fontWeight: 700, color: 'var(--lbb-fg3)',
@@ -357,20 +347,8 @@ export function ScreenVerify(): React.JSX.Element {
                 </div>
               </div>
 
-              {/* Toolbar */}
-              <div style={{ padding: '10px 24px', borderBottom: '1px solid var(--lbb-border)', display: 'flex', alignItems: 'center', gap: 10 }}>
-                <span style={{ fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase' }}>{t('verify.toolbar.files')}</span>
-                <Chip active={!showAll} onClick={() => setShowAll(false)} size="sm" count={row.files.filter(f => f.overall !== 'pass').length}>{t('verify.toolbar.problems')}</Chip>
-                <Chip active={showAll}  onClick={() => setShowAll(true)}  size="sm" count={row.files.length}>{t('verify.toolbar.showAll')}</Chip>
-                <div style={{ flex: 1 }} />
-                <Button variant="ghost"     size="sm" icon="reveal"   onClick={() => window.api.openPath(row.folder)}>{t('verify.toolbar.openFinder')}</Button>
-                <Button variant="ghost"     size="sm" icon="copy"     onClick={handleCopyReport}>{t('verify.toolbar.copyReport')}</Button>
-                <Button variant="secondary" size="sm" icon="plus"     disabled={busy} onClick={handleGenerate}>{t('verify.toolbar.generateMissing')}</Button>
-              </div>
-
-              {/* Detail area */}
-              <div style={{ flex: 1, overflow: 'auto', minHeight: 0 }}>
-                {row.status === 'shntool' ? (
+              {row.status === 'shntool' ? (
+                <div style={{ flex: 1, overflow: 'auto', minHeight: 0 }}>
                   <div style={{ padding: '32px 24px' }}>
                     <div style={{
                       padding: '16px 18px', borderRadius: 8,
@@ -389,81 +367,18 @@ export function ScreenVerify(): React.JSX.Element {
                       </div>
                     </div>
                   </div>
-                ) : (
-                  <div style={{ padding: '0 24px 24px' }}>
-                    <TableShell>
-                      <colgroup>
-                        <col style={{ width: 3 }} />
-                        <col />
-                        <col style={{ width: 130 }} /><col style={{ width: 130 }} /><col style={{ width: 60 }} />
-                        <col style={{ width: 130 }} /><col style={{ width: 130 }} /><col style={{ width: 60 }} />
-                        <col style={{ width: 60 }} /><col style={{ width: 60 }} /><col style={{ width: 90 }} />
-                      </colgroup>
-                      <thead>
-                        <tr>
-                          <TH> </TH><TH>{t('verify.table.filename')}</TH>
-                          <TH align="right">{t('verify.table.md5Expected')}</TH><TH align="right">{t('verify.table.md5Actual')}</TH><TH align="center">{t('verify.table.md5')}</TH>
-                          <TH align="right">{t('verify.table.ffpExpected')}</TH><TH align="right">{t('verify.table.ffpActual')}</TH><TH align="center">{t('verify.table.ffp')}</TH>
-                          <TH align="center">{t('verify.table.st5')}</TH><TH align="center">{t('verify.table.disk')}</TH><TH>{t('verify.table.overall')}</TH>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {visible.map((f, i) => {
-                          const edge: 'ok' | 'warn' | 'bad' = f.overall === 'pass' ? 'ok' : f.overall === 'missing' ? 'warn' : 'bad'
-                          const md5e = f.md5_expected ? f.md5_expected.slice(0, 12) + '…' : '—'
-                          const md5a = f.md5_actual   ? f.md5_actual.slice(0, 12)   + '…' : '—'
-                          const ffpe = f.ffp_expected ? f.ffp_expected.slice(0, 12) + '…' : '—'
-                          const ffpa = f.ffp_actual   ? f.ffp_actual.slice(0, 12)   + '…' : '—'
-                          return (
-                            <TR key={i} edge={edge}>
-                              <TD mono style={{ color: f.overall === 'pass' ? 'var(--lbb-fg)' : f.overall === 'missing' ? 'var(--lbb-warn-fg)' : 'var(--lbb-bad-fg)' }}>
-                                {f.filename}
-                              </TD>
-                              <TD align="right" mono dim>{md5e}</TD>
-                              <TD align="right" mono style={{ color: f.md5_status === 'fail' ? 'var(--lbb-bad-fg)' : f.md5_status === 'miss' ? 'var(--lbb-fg3)' : 'var(--lbb-fg2)' }}>
-                                {md5a}
-                              </TD>
-                              <TD align="center"><StatusDot s={f.md5_status} /></TD>
-                              <TD align="right" mono dim>{ffpe}</TD>
-                              <TD align="right" mono style={{ color: f.ffp_status === 'fail' ? 'var(--lbb-bad-fg)' : f.ffp_status === 'miss' ? 'var(--lbb-fg3)' : 'var(--lbb-fg2)' }}>
-                                {ffpa}
-                              </TD>
-                              <TD align="center"><StatusDot s={f.ffp_status} /></TD>
-                              <TD align="center"><StatusDot s={f.shntool_status} /></TD>
-                              <TD align="center">
-                                {f.on_disk
-                                  ? <Icon name="check" size={12} style={{ color: 'var(--lbb-ok-bar)' }} />
-                                  : <Icon name="x"     size={12} style={{ color: 'var(--lbb-warn-fg)' }} />}
-                              </TD>
-                              <TD>
-                                <Pill tone={edge} soft>
-                                  {f.overall === 'pass' ? t('verify.fileStates.pass') : f.overall === 'missing' ? t('verify.fileStates.missing') : f.overall === 'extra' ? t('verify.fileStates.extra') : t('verify.fileStates.fail')}
-                                </Pill>
-                              </TD>
-                            </TR>
-                          )
-                        })}
-                      </tbody>
-                    </TableShell>
-
-                    {!showAll && (
-                      <div style={{ marginTop: 10, fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)', fontStyle: 'italic', textAlign: 'center' }}>
-                        {t('verify.showingProblems', { count: visible.length })}{' '}
-                        <button
-                          onClick={() => setShowAll(true)}
-                          style={{
-                            background: 'none', border: 'none', color: 'var(--lbb-accent-mid)',
-                            cursor: 'pointer', textDecoration: 'underline', fontStyle: 'italic',
-                            padding: 0, font: 'inherit',
-                          }}
-                        >
-                          {t('verify.showAllCount', { count: row.files.length })}
-                        </button>
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
+                </div>
+              ) : (
+                <VerifyDetail
+                  files={row.files}
+                  showAll={showAll}
+                  onShowAllChange={setShowAll}
+                  onCopyReport={handleCopyReport}
+                  onOpenFinder={() => window.api.openPath(row.folder)}
+                  onGenerateMissing={handleGenerate}
+                  generateBusy={busy}
+                />
+              )}
             </>
           )}
         </section>

@@ -264,6 +264,7 @@ function Sidebar({
                   <button
                     key={item.id}
                     type="button"
+                    data-testid={`nav-${item.id}`}
                     onClick={() => onNav(item.id)}
                     style={{
                       width: '100%',
@@ -364,6 +365,7 @@ function Sidebar({
                   <button
                     key={item.id}
                     type="button"
+                    data-testid={`nav-adv-${item.id}`}
                     onClick={() => onNav(item.id)}
                     style={{
                       width: '100%', display: 'flex', alignItems: 'center', gap: 10,

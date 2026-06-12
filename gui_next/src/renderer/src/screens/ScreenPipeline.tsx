@@ -1,13 +1,20 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useQueryClient } from '@tanstack/react-query'
 import { useVirtualizer } from '@tanstack/react-virtual'
 import { useTranslation } from 'react-i18next'
 import { Icon } from '../components/Icon'
-import { Button, IconButton, Input, Pill } from '../components'
+import { Button, IconButton, Input, Pill, Banner, Chip } from '../components'
 import { TableShell, TH, TR, TD, GroupRow } from '../components'
 import { useFolderQueueStore } from '../lib/folderQueueStore'
 import { CheckResult, ReconcileResult, ReconcileProposal, SiteProposal } from '../lib/lbdirStore'
+import { FileRow } from '../lib/verifyStore'
 import { useConfirm } from '../components/pipeline/ConfirmDialog'
+import { VerifyDetail } from '../components/pipeline/VerifyDetail'
+import { LookupDetail, categoryPill } from '../components/pipeline/LookupDetail'
+import { LbdirDetail } from '../components/pipeline/LbdirDetail'
+import { CollectDetail, Mount } from '../components/pipeline/CollectDetail'
+import { LookupSummary, LookupDetail as LookupDetailRow } from '../lib/lookupStore'
 import {
   StageTracker, QueueRow, StageStepper, StatusTag,
   DEFAULT_STAGES,
@@ -34,6 +41,8 @@ interface StepResult {
   lb_number?: number | null
   proposed?: string | null
   alias_resolved_from?: number[] | null
+  summary?: LookupSummary | null
+  detail?: LookupDetailRow[] | null
   check?: LbdirCheckSummary | null
   // verify step fields
   total?: number | null
@@ -42,6 +51,8 @@ interface StepResult {
   mismatch?: number | null
   extra?: number | null
   no_checksums?: boolean | null
+  shntool_missing?: boolean | null
+  files?: FileRow[]
   // file step fields
   dest?: string | null
   dest_parent?: string | null
@@ -49,6 +60,10 @@ interface StepResult {
   year?: number | null
   error?: string | null
   error_code?: string | null
+  mounts?: Mount[] | null
+  recommended_mount?: number | null
+  routed_year?: number | null
+  collection_count?: number | null
 }
 
 interface PipelineRow {
@@ -71,6 +86,11 @@ interface PipelineRow {
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
 const MUTE: StepResult = { status: 'mute', label: '—' }
+
+// Module-level cache: persists step results across tab navigation within a session.
+// Keyed by folder path; cleared only on explicit queue clear.
+type CachedRow = { steps: PipelineRow['steps']; bucket: Bucket; errors: PipelineRow['errors'] }
+const _pipelineCache = new Map<string, CachedRow>()
 
 const BANNER_BUCKETS: { key: Exclude<Bucket, 'all'>; tone: string }[] = [
   { key: 'needs',   tone: 'bad'  },
@@ -104,22 +124,31 @@ function normalizeFileStep(raw: unknown): StepResult {
     (rawStatus as StepStatus) ?? 'mute'
   return {
     status,
-    label:       (r.label       as string) ?? '—',
-    dest:        (r.dest        as string) ?? null,
-    dest_parent: (r.dest_parent as string) ?? null,
-    mount_label: (r.mount_label as string) ?? null,
-    year:        (r.year        as number) ?? null,
-    error:       (r.error       as string) ?? null,
-    error_code:  (r.error_code  as string) ?? null,
+    label:            (r.label            as string)  ?? '—',
+    dest:             (r.dest             as string)  ?? null,
+    dest_parent:      (r.dest_parent      as string)  ?? null,
+    mount_label:      (r.mount_label      as string)  ?? null,
+    year:             (r.year             as number)  ?? null,
+    error:            (r.error            as string)  ?? null,
+    error_code:       (r.error_code       as string)  ?? null,
+    mounts:           (r.mounts           as Mount[]) ?? null,
+    recommended_mount: (r.recommended_mount as number) ?? null,
+    routed_year:      (r.routed_year      as number)  ?? null,
+    collection_count: (r.collection_count as number)  ?? null,
   }
 }
 
 function serverRowToPipeline(sr: Record<string, unknown>): Partial<PipelineRow> {
   const sev = sr.severity as string
-  const bucket: Bucket =
+  const file = normalizeFileStep(sr.file)
+  let bucket: Bucket =
     sev === 'attn'  ? 'needs' :
     sev === 'ready' ? 'ready' :
     sev === 'done'  ? 'done'  : 'needs'
+  // Backend reports "done" once verify/lookup/rename/lbdir all pass, even if
+  // the folder hasn't been filed into the collection yet — reclassify those
+  // as "shelf" so the status column doesn't claim "In collection" early.
+  if (bucket === 'done' && file.status === 'warn') bucket = 'shelf'
   return {
     bucket,
     steps: {
@@ -127,7 +156,7 @@ function serverRowToPipeline(sr: Record<string, unknown>): Partial<PipelineRow> 
       lookup: (sr.lookup as StepResult) ?? MUTE,
       rename: (sr.rename as StepResult) ?? MUTE,
       lbdir:  (sr.lbdir  as StepResult) ?? MUTE,
-      file:   normalizeFileStep(sr.file),
+      file,
     },
     errors: (sr.errors as PipelineRow['errors']) ?? [],
     running: false,
@@ -243,6 +272,7 @@ function LbdirStageContent({ row, onRowRefresh }: {
   }
 
   useEffect(() => {
+    if (row.steps.lbdir.status === 'mute') return
     setBusy(true)
     fetch(`${BASE}/api/lbdir/check`, {
       method: 'POST',
@@ -253,7 +283,7 @@ function LbdirStageContent({ row, onRowRefresh }: {
       .then((d: { results: CheckResult[] }) => { if (d.results?.[0]) setCheckResult(d.results[0]) })
       .catch(() => {})
       .finally(() => setBusy(false))
-  }, [row.folderPath])
+  }, [row.folderPath, row.steps.lbdir.status])
 
   const handleReconcile = useCallback(async () => {
     if (!checkResult) return
@@ -293,6 +323,33 @@ function LbdirStageContent({ row, onRowRefresh }: {
     finally { setBusy(false) }
   }, [reconResult, reconSel, siteSel, row.folderPath, row.id, post, onRowRefresh])
 
+  const handleRetrieve = useCallback(async () => {
+    setBusy(true)
+    try {
+      const lbHint = row.steps.lookup.lb_number ?? null
+      await post('/api/lbdir/retrieve', {
+        folders: [row.folderPath],
+        ...(lbHint !== null ? { lb_number_hint: lbHint } : {}),
+      })
+      onRowRefresh(row.id)
+    } catch { showToast('Retrieve failed', false) }
+    finally { setBusy(false) }
+  }, [row.folderPath, row.id, row.steps.lookup.lb_number, post, onRowRefresh])
+
+  if (row.steps.lbdir.status === 'mute') {
+    return (
+      <Banner tone="info" icon="info" title="Runs after rename"
+        action={
+          <Button size="sm" variant="secondary" icon="download" disabled={busy} onClick={handleRetrieve}>
+            Retrieve sidecar now
+          </Button>
+        }>
+        Once renamed, we retrieve <span style={{ fontFamily: 'var(--lbb-mono)' }}>lbdir*.txt</span> from
+        the archive cache and reconcile it against the files on disk. You can pull it early if you like.
+      </Banner>
+    )
+  }
+
   const cr = checkResult
   const sl = cr ? (STATE_LABEL[cr.status] ?? { tone: 'mute' as const, label: cr.status }) : null
   const canReconcile = cr !== null && cr.lbdir_found && cr.status !== 'pass' && cr.status !== 'no_lb'
@@ -322,7 +379,7 @@ function LbdirStageContent({ row, onRowRefresh }: {
             {cr.lbdir_path && (
               <Button variant="ghost" size="sm" icon="reveal"
                 onClick={() => window.api.openPath(cr.lbdir_path!)}>
-                Open file
+                Open lbdir.txt
               </Button>
             )}
             <Button variant="ghost" size="sm" onClick={() => navigate('/lbdir')}>
@@ -350,113 +407,24 @@ function LbdirStageContent({ row, onRowRefresh }: {
             </div>
           )}
 
-          {cr.files.length > 0 && (
-            <div style={{ borderRadius: 6, border: '1px solid var(--lbb-border)', overflow: 'hidden' }}>
-              <div style={{ padding: '6px 10px', background: 'var(--lbb-surface2)', borderBottom: '1px solid var(--lbb-border)',
-                fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase' }}>
-                Files
-              </div>
-              {cr.files.slice(0, 12).map((f, i) => {
-                const edge = f.overall === 'pass' ? 'var(--lbb-ok-bar)' : f.overall === 'missing' ? 'var(--lbb-warn-bar)' : 'var(--lbb-bad-bar)'
-                return (
-                  <div key={i} style={{
-                    display: 'flex', alignItems: 'center', gap: 8, padding: '5px 10px',
-                    borderTop: i > 0 ? '1px solid var(--lbb-border)' : undefined,
-                  }}>
-                    <span style={{ width: 6, height: 6, borderRadius: 1, background: edge, flexShrink: 0 }} />
-                    <span style={{ flex: 1, minWidth: 0, fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-10-5)',
-                      whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
-                      color: f.overall === 'pass' ? 'var(--lbb-fg2)' : 'var(--lbb-bad-fg)' }}>
-                      {f.filename}
-                    </span>
-                    <Pill tone={f.overall === 'pass' ? 'ok' : f.overall === 'missing' ? 'warn' : 'bad'} soft>
-                      {f.overall === 'pass' ? 'Pass' : f.overall === 'missing' ? 'Missing' : 'Fail'}
-                    </Pill>
-                  </div>
-                )
-              })}
-              {cr.files.length > 12 && (
-                <div style={{ padding: '5px 10px', fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', borderTop: '1px solid var(--lbb-border)' }}>
-                  +{cr.files.length - 12} more — open full LBDIR view for details
-                </div>
-              )}
-            </div>
-          )}
-
-          {canReconcile && !reconResult && (
-            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-              <Button variant="secondary" size="sm" icon="rename" disabled={busy} onClick={handleReconcile}>
-                {busy ? 'Scanning…' : 'Reconcile files…'}
-              </Button>
-              <span style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
-                Match missing files by MD5
-              </span>
-            </div>
-          )}
-
-          {reconResult && (
-            <div style={{ borderRadius: 6, border: '1px solid var(--lbb-border)', overflow: 'hidden' }}>
-              <div style={{ padding: '8px 12px', background: 'var(--lbb-surface2)', borderBottom: '1px solid var(--lbb-border)',
-                display: 'flex', alignItems: 'center', gap: 8 }}>
-                <Icon name="rename" size={12} style={{ color: 'var(--lbb-fg3)' }} />
-                <span style={{ fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase', flex: 1 }}>
-                  Reconcile
-                </span>
-                {reconResult.proposals.length > 0 && (
-                  <Pill tone="info" soft>{reconResult.proposals.length} rename{reconResult.proposals.length !== 1 ? 's' : ''}</Pill>
-                )}
-                {reconResult.unmatched_disk.length > 0 && (
-                  <Pill tone="warn" soft>{reconResult.unmatched_disk.length} extras</Pill>
-                )}
-                <Button variant="ghost" size="sm" disabled={busy} onClick={handleReconcile}>Re-scan</Button>
-                <Button variant="primary" size="sm" icon="check" disabled={busy} onClick={handleApply}>Apply</Button>
-              </div>
-
-              {reconResult.proposals.length > 0 ? (
-                <div style={{ padding: '6px 10px', display: 'flex', flexDirection: 'column', gap: 3 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 4 }}>
-                    <input type="checkbox"
-                      checked={reconResult.proposals.every(p => reconSel.has(p.disk_rel))}
-                      onChange={e => setReconSel(e.target.checked ? new Set(reconResult.proposals.map(p => p.disk_rel)) : new Set())}
-                    />
-                    <span style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)' }}>Proposed renames</span>
-                  </div>
-                  {reconResult.proposals.map((p, i) => (
-                    <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                      <input type="checkbox"
-                        checked={reconSel.has(p.disk_rel)}
-                        onChange={e => setReconSel(prev => { const n = new Set(prev); e.target.checked ? n.add(p.disk_rel) : n.delete(p.disk_rel); return n })}
-                      />
-                      <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-10)', color: 'var(--lbb-fg2)', flex: 1, minWidth: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{p.disk_rel}</span>
-                      <Icon name="chevRight" size={10} style={{ color: 'var(--lbb-fg3)', flexShrink: 0 }} />
-                      <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-10)', color: 'var(--lbb-ok-fg)', flexShrink: 0, maxWidth: '45%', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{p.lbdir_rel}</span>
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <div style={{ padding: '8px 12px', color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-12)' }}>
-                  No rename proposals — missing files could not be matched by MD5.
-                </div>
-              )}
-
-              {reconResult.unmatched_disk.length > 0 && (
-                <div style={{ borderTop: '1px solid var(--lbb-border)', padding: '6px 12px' }}>
-                  <div style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)', fontWeight: 600, marginBottom: 4 }}>
-                    Extras → will move to <span style={{ fontFamily: 'var(--lbb-mono)' }}>/extras/</span>
-                  </div>
-                  {reconResult.unmatched_disk.map((f, i) => (
-                    <div key={i} style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-warn-fg)' }}>{f}</div>
-                  ))}
-                </div>
-              )}
-            </div>
-          )}
+          <LbdirDetail
+            checkResult={cr}
+            reconResult={reconResult}
+            reconSelected={reconSel}
+            setReconSelected={setReconSel}
+            siteSelected={siteSel}
+            setSiteSelected={setSiteSel}
+            busy={busy}
+            canReconcile={canReconcile}
+            onReconcile={handleReconcile}
+            onApplyReconcile={handleApply}
+            compact
+          />
 
           {cr.status === 'pass' && (
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: 'var(--lbb-ok-fg)', fontSize: 'var(--lbb-fs-12)', fontWeight: 600 }}>
-              <Icon name="check" size={14} />
-              All files verified against lbdir
-            </div>
+            <Banner tone="ok" icon="check" title="Archive-clean">
+              Every file referenced in the official sidecar is present and matches. This folder is fully reconciled.
+            </Banner>
           )}
         </>
       )}
@@ -483,6 +451,14 @@ function VerifyStageContent({ step, row, onRun }: {
   onRun: (steps: string[]) => void
 }): React.JSX.Element {
   const [generating, setGenerating] = useState(false)
+  const [showAll, setShowAll] = useState(false)
+
+  const handleCopyReport = useCallback(() => {
+    const lines = (step.files ?? []).map(f =>
+      `${f.overall === 'pass' ? '✓' : '✗'} ${f.filename}\t[md5] ${f.md5_status}\t[ffp] ${f.ffp_status}`
+    )
+    navigator.clipboard.writeText(lines.join('\n')).catch(() => {})
+  }, [step.files])
 
   const handleGenerate = useCallback(async () => {
     setGenerating(true)
@@ -497,6 +473,19 @@ function VerifyStageContent({ step, row, onRun }: {
     finally { setGenerating(false) }
   }, [row.folderPath, onRun])
 
+  if (step.status === 'mute' && row.running) {
+    return (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+        <Banner tone="info" icon="info">
+          <strong>Hashing files…</strong>
+          <div style={{ marginTop: 4, fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)' }}>
+            This folder will advance to Lookup automatically.
+          </div>
+        </Banner>
+      </div>
+    )
+  }
+
   if (step.status === 'mute') {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
@@ -504,6 +493,19 @@ function VerifyStageContent({ step, row, onRun }: {
           Verify hasn't run yet.
         </div>
         <Button variant="secondary" size="sm" icon="play" onClick={() => onRun(['verify'])}>Run verify</Button>
+      </div>
+    )
+  }
+
+  if (step.shntool_missing) {
+    return (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+        <Banner tone="warn" icon="alert" title="Can't decode .shn without shntool">
+          This folder uses SHN files, but shntool is not installed. Install shntool so checksums
+          can be decoded and verified.
+        </Banner>
+        <Button variant="ghost" size="sm" icon="refresh" title="Re-run this stage"
+          onClick={() => onRun(['verify'])}>Re-verify</Button>
       </div>
     )
   }
@@ -516,9 +518,9 @@ function VerifyStageContent({ step, row, onRun }: {
             <Icon name="shield" size={20} />
           </div>
           <div style={{ flex: 1 }}>
-            <div style={{ fontSize: 'var(--lbb-fs-13-5)', fontWeight: 700, marginBottom: 4 }}>No checksum sidecar found</div>
+            <div style={{ fontSize: 'var(--lbb-fs-13-5)', fontWeight: 700, marginBottom: 4 }}>No checksums in this folder yet</div>
             <div style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)', lineHeight: 1.5, marginBottom: 10 }}>
-              Audio files are present but there's no <span style={{ fontFamily: 'var(--lbb-mono)' }}>.ffp</span> or <span style={{ fontFamily: 'var(--lbb-mono)' }}>.md5</span> sidecar. Generate checksums to unblock the pipeline.
+              There's no <span style={{ fontFamily: 'var(--lbb-mono)' }}>.ffp</span> or <span style={{ fontFamily: 'var(--lbb-mono)' }}>.md5</span> sidecar here, so there's nothing to verify against. Generate them from the audio on disk — then this folder verifies and looks up automatically.
             </div>
             <Button variant="primary" size="sm" icon="shield" disabled={generating}
               onClick={handleGenerate}>
@@ -527,7 +529,7 @@ function VerifyStageContent({ step, row, onRun }: {
           </div>
         </div>
         <div style={{ padding: '8px 10px', borderRadius: 6, background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)', fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
-          Writes <span style={{ fontFamily: 'var(--lbb-mono)' }}>_mychecksums.ffp</span> and <span style={{ fontFamily: 'var(--lbb-mono)' }}>.md5</span> into the folder — audio files are not modified.
+          Writes <span style={{ fontFamily: 'var(--lbb-mono)' }}>_mychecksums.ffp</span> and <span style={{ fontFamily: 'var(--lbb-mono)' }}>.md5</span> into the folder. Non-destructive — your audio files aren't touched.
         </div>
       </div>
     )
@@ -544,7 +546,8 @@ function VerifyStageContent({ step, row, onRun }: {
       <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
         <StatusTag state={STATUS_TO_STATE[step.status]}>{step.label}</StatusTag>
         <div style={{ flex: 1 }} />
-        <Button variant="ghost" size="sm" icon="refresh" onClick={() => onRun(['verify'])}>Re-verify</Button>
+        <Button variant="ghost" size="sm" icon="refresh" title="Re-run this stage"
+          onClick={() => onRun(['verify'])}>Re-verify</Button>
       </div>
 
       {total > 0 && (
@@ -564,11 +567,17 @@ function VerifyStageContent({ step, row, onRun }: {
         </div>
       )}
 
-      {step.status === 'ok' && (
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: 'var(--lbb-ok-fg)', fontSize: 'var(--lbb-fs-12)', fontWeight: 600 }}>
-          <Icon name="check" size={14} />
-          All {total} files verified
-        </div>
+      {(step.files?.length ?? 0) > 0 && (
+        <VerifyDetail
+          files={step.files!}
+          showAll={showAll}
+          onShowAllChange={setShowAll}
+          onCopyReport={handleCopyReport}
+          onOpenFinder={() => window.api.openPath(row.folderPath)}
+          onGenerateMissing={handleGenerate}
+          generateBusy={generating}
+          compact
+        />
       )}
 
       {step.status === 'bad' && missing > 0 && (
@@ -591,6 +600,25 @@ function LookupStageContent({ step, row, onRun }: {
   row: PipelineRow
   onRun: (steps: string[]) => void
 }): React.JSX.Element {
+  const [pinBusyLb, setPinBusyLb] = useState<number | null>(null)
+
+  const handlePin = useCallback(async (lb: number) => {
+    setPinBusyLb(lb)
+    try {
+      await fetch(`${BASE}/api/folder_link`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          folder_path: row.folderPath,
+          lb_number: lb,
+          note: 'Pinned from pipeline lookup',
+        }),
+      })
+      onRun(['lookup'])
+    } catch { /* silent */ }
+    finally { setPinBusyLb(null) }
+  }, [row.folderPath, onRun])
+
   if (step.status === 'mute') {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
@@ -607,6 +635,7 @@ function LookupStageContent({ step, row, onRun }: {
     : null
 
   if (step.status === 'ok' && lbFormatted) {
+    const summRow = step.summary?.lb_summary.find(r => r.lb_number === step.lb_number)
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 14, padding: '14px 16px', background: 'var(--lbb-ok-bg)', border: '1px solid var(--lbb-ok-bar)', borderRadius: 8 }}>
@@ -614,7 +643,15 @@ function LookupStageContent({ step, row, onRun }: {
             <Icon name="check" size={22} />
           </div>
           <div style={{ flex: 1, minWidth: 0 }}>
-            <div style={{ fontSize: 'var(--lbb-fs-16)', fontWeight: 700, fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-accent-mid)' }}>{lbFormatted}</div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+              <span style={{ fontSize: 'var(--lbb-fs-16)', fontWeight: 700, fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-accent-mid)' }}>{lbFormatted}</span>
+              {summRow && categoryPill(summRow.lb_category)}
+              {step.summary && (
+                <span style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)' }}>
+                  {step.summary.matched}/{step.summary.given} matched
+                </span>
+              )}
+            </div>
             {step.alias_resolved_from && step.alias_resolved_from.length > 0 && (
               <div style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', marginTop: 2 }}>
                 ↩ resolved from {step.alias_resolved_from.map(n => `LB-${String(n).padStart(5, '0')}`).join(', ')}
@@ -626,38 +663,44 @@ function LookupStageContent({ step, row, onRun }: {
         <div style={{ padding: '8px 10px', borderRadius: 6, background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)', fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
           The match flows into <strong>Rename</strong> automatically — no extra step needed.
         </div>
-        <Button variant="ghost" size="sm" icon="refresh" onClick={() => onRun(['lookup'])}>Re-run lookup</Button>
+        <Button variant="ghost" size="sm" icon="refresh" title="Re-run this stage" onClick={() => onRun(['lookup'])}>Re-run lookup</Button>
       </div>
     )
   }
 
   if (step.status === 'warn') {
-    const conflicts = row.errors.filter(e => e.step === 'lookup')
+    const summaryRows = step.summary?.lb_summary ?? []
+    const detailRows = step.detail ?? []
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-        <StatusTag state="action">{step.label}</StatusTag>
-        {conflicts.length > 0 && (
-          <div style={{ padding: '8px 12px', borderRadius: 6, background: 'var(--lbb-warn-bg)', border: '1px solid var(--lbb-warn-bar)', fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-warn-fg)' }}>
-            {conflicts[0].message}
-          </div>
-        )}
-        <Button variant="ghost" size="sm" icon="refresh" onClick={() => onRun(['lookup'])}>Re-run lookup</Button>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          <StatusTag state="action">{step.label}</StatusTag>
+          <span style={{ fontSize: 'var(--lbb-fs-13)', fontWeight: 700 }}>Which show is this?</span>
+          <div style={{ flex: 1 }} />
+          <Button variant="ghost" size="sm" icon="refresh" title="Re-run this stage" onClick={() => onRun(['lookup'])}>Re-run lookup</Button>
+        </div>
+        <LookupDetail summaryRows={summaryRows} detailRows={detailRows} onPin={handlePin} pinBusyLb={pinBusyLb} />
+        <div style={{ padding: '8px 10px', borderRadius: 6, background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)', fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
+          Pinning writes a folder→LB link, so it never asks again.
+        </div>
       </div>
     )
   }
 
+  const summaryRows = step.summary?.lb_summary ?? []
+  const detailRows = step.detail ?? []
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '12px 14px', background: 'var(--lbb-bad-bg)', border: '1px solid var(--lbb-bad-bar)', borderRadius: 8 }}>
-        <Icon name="alert" size={15} style={{ color: 'var(--lbb-bad-fg)', flexShrink: 0 }} />
-        <div>
-          <div style={{ fontSize: 'var(--lbb-fs-13)', fontWeight: 700, color: 'var(--lbb-bad-fg)' }}>Not in the archive</div>
-          <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)', marginTop: 2 }}>
-            None of these checksums match any archive entry. This may be a new or unknown source.
-          </div>
-        </div>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+        <StatusTag state={STATUS_TO_STATE[step.status]}>{step.label}</StatusTag>
+        <span style={{ fontSize: 'var(--lbb-fs-13)', fontWeight: 700 }}>No matches found</span>
+        <div style={{ flex: 1 }} />
+        <Button variant="ghost" size="sm" icon="refresh" title="Re-run this stage" onClick={() => onRun(['lookup'])}>Re-run lookup</Button>
       </div>
-      <Button variant="ghost" size="sm" icon="refresh" onClick={() => onRun(['lookup'])}>Re-run lookup</Button>
+      <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)' }}>
+        None of these checksums match any archive entry. This may be a new or unknown source.
+      </div>
+      <LookupDetail summaryRows={summaryRows} detailRows={detailRows} />
     </div>
   )
 }
@@ -698,7 +741,7 @@ function RenameStageContent({ step, row, onRun, onRename }: {
         <div style={{ color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-12)', fontStyle: 'italic' }}>
           Rename unlocks after lookup resolves an LB#.
         </div>
-        <Button variant="secondary" size="sm" icon="play" onClick={() => onRun(['rename'])}>Check rename</Button>
+        <Button variant="secondary" size="sm" icon="play" onClick={() => onRun(['lookup', 'rename'])}>Check rename</Button>
       </div>
     )
   }
@@ -712,7 +755,7 @@ function RenameStageContent({ step, row, onRun, onRename }: {
           <div>
             <div style={{ fontWeight: 700, fontSize: 'var(--lbb-fs-13)', color: 'var(--lbb-ok-fg)' }}>Renamed</div>
             <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)', marginTop: 2 }}>
-              Logged to <span style={{ fontFamily: 'var(--lbb-mono)' }}>rename_history</span> · reversible for 30 days · LBDIR will reconcile next
+              Logged to <span style={{ fontFamily: 'var(--lbb-mono)' }}>rename_history</span> — reversible from Recent activity for 30 days. LBDIR will reconcile next.
             </div>
           </div>
         </div>
@@ -738,7 +781,7 @@ function RenameStageContent({ step, row, onRun, onRename }: {
           borderRadius: 6, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
           {row.folderName}
         </div>
-        <Button variant="ghost" size="sm" icon="refresh" onClick={() => onRun(['rename'])}>Re-check</Button>
+        <Button variant="ghost" size="sm" icon="refresh" title="Re-run this stage" onClick={() => onRun(['lookup', 'rename'])}>Re-check</Button>
       </div>
     )
   }
@@ -766,17 +809,10 @@ function RenameStageContent({ step, row, onRun, onRename }: {
 
       {/* 2. Wrong-LB banner */}
       {hasWrongLb && (
-        <div style={{ display: 'flex', alignItems: 'flex-start', gap: 8, padding: '10px 12px',
-          borderRadius: 7, background: 'var(--lbb-warn-bg)', border: '1px solid var(--lbb-warn-bar)',
-          fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)' }}>
-          <Icon name="alert" size={13} style={{ color: 'var(--lbb-warn-fg)', flexShrink: 0, marginTop: 1 }} />
-          <span>
-            Folder already carries <span style={{ fontFamily: 'var(--lbb-mono)', fontWeight: 700,
-              color: 'var(--lbb-warn-fg)' }}>{folderLb}</span> — old tag will be stripped and replaced
-            with <span style={{ fontFamily: 'var(--lbb-mono)', fontWeight: 700,
-              color: 'var(--lbb-ok-fg)' }}>{lbTag}</span>.
-          </span>
-        </div>
+        <Banner tone="warn" icon="alert" title={`This folder is mislabeled ${folderLb}`}>
+          The existing tag doesn't match the archive. Applying will <strong>remove {folderLb}</strong> and
+          append the correct <span style={{ fontFamily: 'var(--lbb-mono)' }}>{lbTag}</span> in one step.
+        </Banner>
       )}
 
       {/* 3. Diff box */}
@@ -821,7 +857,7 @@ function RenameStageContent({ step, row, onRun, onRename }: {
         fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
         <Icon name="info" size={12} style={{ flexShrink: 0 }} />
         <span style={{ flex: 1 }}>Dry-run — nothing changes until you apply.</span>
-        <Button variant="ghost" size="sm" icon="copy" onClick={copyDiff} style={{ flexShrink: 0 }}>Copy diff</Button>
+        <Button variant="ghost" size="sm" icon="copy" onClick={copyDiff} title="Copy to clipboard" style={{ flexShrink: 0 }}>Copy diff</Button>
       </div>
       <div style={{ padding: '8px 10px', borderRadius: 6, background: 'var(--lbb-surface)',
         border: '1px solid var(--lbb-border)', fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
@@ -832,8 +868,107 @@ function RenameStageContent({ step, row, onRun, onRename }: {
       <div style={{ display: 'flex', gap: 8 }}>
         <Button variant="primary" size="sm" icon="check"
           onClick={() => onRename(editing ? editValue : undefined)}>Apply rename</Button>
-        <Button variant="ghost" size="sm" icon="refresh" onClick={() => onRun(['rename'])}>Re-check</Button>
+        <Button variant="ghost" size="sm" icon="refresh" title="Re-run this stage" onClick={() => onRun(['lookup', 'rename'])}>Re-check</Button>
       </div>
+    </div>
+  )
+}
+
+/** Mount picker preview — refetches dest/mount_label when the user overrides the suggested mount. */
+function CollectReadyDetail({ step, row, onRun, onFile }: {
+  step: StepResult
+  row: PipelineRow
+  onRun: (steps: string[]) => void
+  onFile?: (mountId?: number | null, dest?: string | null, mountLabel?: string | null) => void
+}): React.JSX.Element {
+  const [selectedMount, setSelectedMount] = useState<number | null>(step.recommended_mount ?? null)
+  const [preview, setPreview] = useState<{ dest: string | null; mount_label: string | null } | null>(null)
+
+  useEffect(() => {
+    setSelectedMount(step.recommended_mount ?? null)
+    setPreview(null)
+  }, [step.recommended_mount, row.folderPath])
+
+  useEffect(() => {
+    const lb = row.steps.lookup.lb_number
+    if (selectedMount == null || selectedMount === step.recommended_mount || !lb) {
+      setPreview(null)
+      return
+    }
+    let cancelled = false
+    fetch(`${BASE}/api/pipeline/file/preview`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ folders: [{ path: row.folderPath, lb_number: lb, mount_id: selectedMount }] }),
+    })
+      .then(r => r.json())
+      .then((data: { results?: Array<{ ok: boolean; dest?: string; mount_label?: string }> }) => {
+        if (cancelled) return
+        const result = data.results?.[0]
+        if (result?.ok) setPreview({ dest: result.dest ?? null, mount_label: result.mount_label ?? null })
+      })
+      .catch(() => {})
+    return () => { cancelled = true }
+  }, [selectedMount, step.recommended_mount, row.folderPath, row.steps.lookup.lb_number])
+
+  const overrideSelected = selectedMount != null && selectedMount !== step.recommended_mount
+  const previewPending = overrideSelected && preview == null
+  const dest = preview?.dest ?? step.dest
+  const mountLabel = preview?.mount_label ?? step.mount_label
+  const lb = row.steps.lookup.lb_number
+  const lbLabel = lb ? `LB-${String(lb).padStart(5, '0')}` : null
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+      <div style={{ border: '1px solid var(--lbb-border)', borderRadius: 9, overflow: 'hidden' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 12px', background: 'var(--lbb-surface)' }}>
+          <Icon name="folder" size={13} style={{ color: 'var(--lbb-fg3)', flexShrink: 0 }} />
+          <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)', flex: 1, minWidth: 0, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{row.folderPath}</span>
+          <span style={{ fontSize: 'var(--lbb-fs-10)', fontWeight: 700, color: 'var(--lbb-fg3)', textTransform: 'uppercase', letterSpacing: 0.06, flexShrink: 0 }}>staging</span>
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '3px 0', background: 'var(--lbb-surface)' }}>
+          <Icon name="drop" size={13} style={{ color: 'var(--lbb-accent-mid)' }} />
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '12px 14px', background: 'var(--lbb-accent-soft)', borderTop: '1px solid var(--lbb-border)' }}>
+          <Icon name="folder" size={13} style={{ color: 'var(--lbb-accent-mid)', flexShrink: 0 }} />
+          <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-12)', fontWeight: 600, color: 'var(--lbb-fg)', flex: 1, minWidth: 0, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+            {mountLabel && (
+              <mark style={{ background: 'var(--lbb-accent-mid)', color: 'var(--lbb-accent-onMid)', borderRadius: 3, padding: '1px 4px', marginRight: 4 }}>{mountLabel}</mark>
+            )}
+            {dest ?? '—'}
+          </span>
+          <span style={{ fontSize: 'var(--lbb-fs-10)', fontWeight: 700, color: 'var(--lbb-accent-mid)', textTransform: 'uppercase', letterSpacing: 0.06, flexShrink: 0 }}>final storage</span>
+        </div>
+      </div>
+      {step.mounts && step.mounts.length > 0 && (
+        <CollectDetail
+          mounts={step.mounts}
+          selectedMount={selectedMount}
+          recommendedMount={step.recommended_mount ?? null}
+          routedYear={step.routed_year}
+          lbLabel={lbLabel}
+          collectionCount={step.collection_count}
+          onSelectMount={setSelectedMount}
+        />
+      )}
+      <Banner tone="info" icon="info" title="What filing does"
+        action={
+          <Button variant="primary" size="sm" icon="folder" disabled={previewPending}
+            onClick={() => onFile?.(selectedMount, dest, mountLabel)}>
+            File into collection
+          </Button>
+        }>
+        Moves the folder to <span style={{ fontFamily: 'var(--lbb-mono)' }}>{dest ?? '—'}</span>, writes the
+        collection row, and tags it <strong>owned · public</strong>. Logged to <span style={{ fontFamily: 'var(--lbb-mono)' }}>rename_history</span> — reversible for 30 days.
+        {previewPending && (
+          <div style={{ marginTop: 6, fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)' }}>
+            Resolving the destination for the selected mount — if this doesn't clear, try
+            "Reset to suggested".
+          </div>
+        )}
+      </Banner>
+      <Button variant="ghost" size="sm" icon="refresh" title="Re-run this stage"
+      onClick={() => onRun(['lookup', 'file'])} style={{ alignSelf: 'flex-start' }}>Re-check route</Button>
     </div>
   )
 }
@@ -842,7 +977,7 @@ function CollectStageContent({ step, row, onRun, onFile }: {
   step: StepResult
   row: PipelineRow
   onRun: (steps: string[]) => void
-  onFile?: () => void
+  onFile?: (mountId?: number | null, dest?: string | null, mountLabel?: string | null) => void
 }): React.JSX.Element {
   const ERROR_MSG: Record<string, string> = {
     no_date:       "This entry has no concert date — can't determine the year for routing.",
@@ -867,6 +1002,28 @@ function CollectStageContent({ step, row, onRun, onFile }: {
           </div>
           {step.mount_label && <Pill tone="ok" soft dot>{step.mount_label}</Pill>}
         </div>
+        {(step.lb_number || step.mount_label) && (
+          <div style={{ border: '1px solid var(--lbb-border)', borderRadius: 8, overflow: 'hidden' }}>
+            {step.lb_number && (
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '9px 14px',
+                background: 'var(--lbb-surface)', borderBottom: step.mount_label ? '1px solid var(--lbb-border)' : 'none' }}>
+                <span style={{ fontSize: 'var(--lbb-fs-11)', fontWeight: 700, color: 'var(--lbb-fg3)',
+                  textTransform: 'uppercase', letterSpacing: 0.04, width: 80, flexShrink: 0 }}>LB#</span>
+                <span style={{ fontFamily: 'var(--lbb-mono)', fontWeight: 700, color: 'var(--lbb-accent-mid)' }}>
+                  {`LB-${String(step.lb_number).padStart(5, '0')}`}
+                </span>
+              </div>
+            )}
+            {step.mount_label && (
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '9px 14px',
+                background: 'var(--lbb-surface2)' }}>
+                <span style={{ fontSize: 'var(--lbb-fs-11)', fontWeight: 700, color: 'var(--lbb-fg3)',
+                  textTransform: 'uppercase', letterSpacing: 0.04, width: 80, flexShrink: 0 }}>Mount</span>
+                <span style={{ fontSize: 'var(--lbb-fs-12-5)', color: 'var(--lbb-fg)' }}>{step.mount_label}</span>
+              </div>
+            )}
+          </div>
+        )}
         <div style={{ padding: '8px 10px', borderRadius: 6, background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)', fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
           Logged to <span style={{ fontFamily: 'var(--lbb-mono)' }}>rename_history</span> — reversible for 30 days.
         </div>
@@ -888,48 +1045,25 @@ function CollectStageContent({ step, row, onRun, onFile }: {
           </div>
           <div style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)' }}>{msg ?? 'Unknown error'}</div>
         </div>
-        <Button variant="ghost" size="sm" icon="refresh" onClick={() => onRun(['file'])}>Re-check route</Button>
+        <Button variant="ghost" size="sm" icon="refresh" title="Re-run this stage" onClick={() => onRun(['lookup', 'file'])}>Re-check route</Button>
       </div>
     )
   }
 
   if (step.status === 'warn') {
-    return (
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-        <div style={{ border: '1px solid var(--lbb-border)', borderRadius: 9, overflow: 'hidden' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 12px', background: 'var(--lbb-surface)' }}>
-            <Icon name="folder" size={13} style={{ color: 'var(--lbb-fg3)', flexShrink: 0 }} />
-            <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)', flex: 1, minWidth: 0, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{row.folderPath}</span>
-            <span style={{ fontSize: 'var(--lbb-fs-10)', fontWeight: 700, color: 'var(--lbb-fg3)', textTransform: 'uppercase', letterSpacing: 0.06, flexShrink: 0 }}>staging</span>
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '3px 0', background: 'var(--lbb-surface)' }}>
-            <Icon name="drop" size={13} style={{ color: 'var(--lbb-accent-mid)' }} />
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '12px 14px', background: 'var(--lbb-accent-soft)', borderTop: '1px solid var(--lbb-border)' }}>
-            <Icon name="folder" size={13} style={{ color: 'var(--lbb-accent-mid)', flexShrink: 0 }} />
-            <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-12)', fontWeight: 600, color: 'var(--lbb-fg)', flex: 1, minWidth: 0, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-              {step.mount_label && (
-                <mark style={{ background: 'var(--lbb-accent-mid)', color: 'var(--lbb-accent-onMid)', borderRadius: 3, padding: '1px 4px', marginRight: 4 }}>{step.mount_label}</mark>
-              )}
-              {step.dest ?? '—'}
-            </span>
-            <span style={{ fontSize: 'var(--lbb-fs-10)', fontWeight: 700, color: 'var(--lbb-accent-mid)', textTransform: 'uppercase', letterSpacing: 0.06, flexShrink: 0 }}>final storage</span>
-          </div>
-        </div>
-        <div style={{ display: 'flex', gap: 8 }}>
-          <Button variant="primary" size="sm" icon="folder" onClick={onFile}>File into collection</Button>
-          <Button variant="ghost" size="sm" icon="refresh" onClick={() => onRun(['file'])}>Re-check route</Button>
-        </div>
-      </div>
-    )
+    return <CollectReadyDetail step={step} row={row} onRun={onRun} onFile={onFile} />
   }
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-      <div style={{ color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-12)', fontStyle: 'italic' }}>
-        Filing is the last step. Complete verify, lookup, rename, and LBDIR first.
-      </div>
-      <Button variant="ghost" size="sm" icon="refresh" onClick={() => onRun(['file'])}>Check route now</Button>
+      <Banner tone="info" icon="info">
+        This is the last step — the bridge into <strong>My Collection</strong>. Once the sidecar reconciles
+        in <strong>LBDIR</strong>, the folder is routed to the right storage mount, moved there, and tagged as
+        owned. Finish the earlier stages first — or use <strong>Mark complete</strong> on any stage to bypass
+        the locks and file from here.
+      </Banner>
+      <Button variant="ghost" size="sm" icon="refresh" title="Re-run this stage"
+          onClick={() => onRun(['lookup', 'file'])} style={{ alignSelf: 'flex-start' }}>Check route now</Button>
     </div>
   )
 }
@@ -940,7 +1074,7 @@ function StageContent({ step, stageKey, row, onRun, onRename, onFile }: {
   row: PipelineRow
   onRun: (steps: string[]) => void
   onRename: (customName?: string) => void
-  onFile?: () => void
+  onFile?: (mountId?: number | null, dest?: string | null, mountLabel?: string | null) => void
 }): React.JSX.Element {
   if (stageKey === 'verify')  return <VerifyStageContent  step={step} row={row} onRun={onRun} />
   if (stageKey === 'lookup')  return <LookupStageContent  step={step} row={row} onRun={onRun} />
@@ -949,7 +1083,7 @@ function StageContent({ step, stageKey, row, onRun, onRename, onFile }: {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
       <StatusTag state={STATUS_TO_STATE[step.status]}>{step.label}</StatusTag>
-      <Button variant="ghost" size="sm" icon="refresh" onClick={() => onRun([stageKey])}>Re-run</Button>
+      <Button variant="ghost" size="sm" icon="refresh" title="Re-run this stage" onClick={() => onRun(['lookup', stageKey])}>Re-run</Button>
     </div>
   )
 }
@@ -963,7 +1097,7 @@ function DetailPanel({ row, initialStage, onClose, onRowRefresh, onRun, onRename
   onRowRefresh: (id: string) => void
   onRun: (id: string, steps: string[]) => void
   onRename: (customName?: string) => void
-  onFile?: () => void
+  onFile?: (mountId?: number | null, dest?: string | null, mountLabel?: string | null) => void
 }): React.JSX.Element {
   const [activeStage, setActiveStage] = useState(initialStage)
   const folderRow = toFolderRow(row)
@@ -997,7 +1131,7 @@ function DetailPanel({ row, initialStage, onClose, onRowRefresh, onRun, onRename
         }}>
           {row.folderName}
         </span>
-        <Button variant="ghost" size="sm" icon="reveal"
+        <Button variant="ghost" size="sm" icon="reveal" title="Reveal folder in Finder"
           onClick={() => window.api.openPath(row.folderPath)}>
           Open
         </Button>
@@ -1037,6 +1171,7 @@ function DetailPanel({ row, initialStage, onClose, onRowRefresh, onRun, onRename
 export function ScreenPipeline(): React.JSX.Element {
   const { t } = useTranslation()
   const navigate = useNavigate()
+  const queryClient = useQueryClient()
   const { folders: queueFolders, addFolders: addToQueue, removeFolders, clearFolders } = useFolderQueueStore()
 
   const [rows, setRows]                     = useState<PipelineRow[]>([])
@@ -1058,17 +1193,26 @@ export function ScreenPipeline(): React.JSX.Element {
       const queueSet = new Set(queueFolders)
       const kept = prev.filter(r => queueSet.has(r.id))
       const existingIds = new Set(kept.map(r => r.id))
-      const added = queueFolders.filter(p => !existingIds.has(p)).map(emptyRow)
+      const added = queueFolders.filter(p => !existingIds.has(p)).map(p => {
+        const cached = _pipelineCache.get(p)
+        return cached ? { ...emptyRow(p), ...cached } : emptyRow(p)
+      })
       if (kept.length === prev.length && !added.length) return prev
+      if (autorun && added.length) {
+        // Only auto-run rows with no prior results (verify still mute = never processed)
+        const toRun = added.filter(r => r.steps.verify.status === 'mute').map(r => r.id)
+        if (toRun.length) autorunPendingRef.current = [...autorunPendingRef.current, ...toRun]
+      }
       return [...kept, ...added]
     })
-  }, [queueFolders])
+  }, [queueFolders, autorun])
 
   const tableParentRef    = useRef<HTMLDivElement>(null)
   const flatListRef       = useRef<VItem[]>([])
-  const stopRef           = useRef(false)
-  const abortRef          = useRef<AbortController | null>(null)
-  const autorunPendingRef = useRef<string[]>([])
+  const stopRef              = useRef(false)
+  const abortRef             = useRef<AbortController | null>(null)
+  const autorunPendingRef    = useRef<string[]>([])
+  const autocompleteStarted  = useRef<Set<string>>(new Set())
 
   // ── Derived counts ───────────────────────────────────────────────────────────
   const counts = {
@@ -1142,7 +1286,33 @@ export function ScreenPipeline(): React.JSX.Element {
 
   // ── Row mutation helpers ─────────────────────────────────────────────────────
   const updateRow = useCallback((id: string, patch: Partial<PipelineRow>) => {
-    setRows(prev => prev.map(r => r.id === id ? { ...r, ...patch } : r))
+    setRows(prev => prev.map(r => {
+      if (r.id !== id) return r
+      const updated = { ...r, ...patch }
+      if (patch.steps !== undefined || patch.bucket !== undefined || patch.errors !== undefined) {
+        _pipelineCache.set(id, { steps: updated.steps, bucket: updated.bucket, errors: updated.errors })
+      }
+      return updated
+    }))
+  }, [])
+
+  // Merge a server result into the current row. Requested steps always take the
+  // fresh value; unrequested steps keep their current result unless the server
+  // ran them anyway (the backend auto-includes lookup with rename/lbdir/file so
+  // the LB# link survives partial runs). Merging against the live row (not a
+  // snapshot captured when the run started) prevents wiping results that landed
+  // while the request was in flight.
+  const mergeServerRow = useCallback((id: string, fresh: Partial<PipelineRow>, stepSet: Set<string>) => {
+    setRows(prev => prev.map(r => {
+      if (r.id !== id) return r
+      const steps = { ...fresh.steps! }
+      for (const key of ['verify', 'lookup', 'rename', 'lbdir', 'file'] as const) {
+        if (!stepSet.has(key) && steps[key].status === 'mute') steps[key] = r.steps[key]
+      }
+      const updated = { ...r, ...fresh, steps }
+      _pipelineCache.set(id, { steps: updated.steps, bucket: updated.bucket, errors: updated.errors })
+      return updated
+    }))
   }, [])
 
   const addFolders = useCallback((paths: string[]) => {
@@ -1180,8 +1350,10 @@ export function ScreenPipeline(): React.JSX.Element {
         })
         if (resp.ok) {
           const data = await resp.json() as { results: Record<string, unknown>[] }
-          if (data.results[0]) updateRow(target.id, serverRowToPipeline(data.results[0]))
-          else updateRow(target.id, { running: false })
+          if (data.results[0]) {
+            const fresh = serverRowToPipeline(data.results[0])
+            mergeServerRow(target.id, fresh, new Set(steps))
+          } else updateRow(target.id, { running: false })
         } else {
           updateRow(target.id, { running: false })
         }
@@ -1190,7 +1362,7 @@ export function ScreenPipeline(): React.JSX.Element {
       }
     }
     abortRef.current = null
-  }, [rows, updateRow])
+  }, [rows, updateRow, mergeServerRow])
 
   const stopRun = useCallback(() => {
     stopRef.current = true
@@ -1206,7 +1378,20 @@ export function ScreenPipeline(): React.JSX.Element {
     const ready = pending.filter(id => rows.some(r => r.id === id))
     if (!ready.length) return
     autorunPendingRef.current = pending.filter(id => !ready.includes(id))
-    runSteps(ready, ['verify', 'lookup'])
+    runSteps(ready, ['verify', 'lookup', 'rename', 'lbdir', 'file'])
+  }, [rows, runSteps])
+
+  // ── Auto-complete: resume folders where lookup resolved but rename/lbdir weren't run ──
+  useEffect(() => {
+    const stale = rows.filter(r =>
+      !r.running &&
+      r.steps.lookup.status === 'ok' &&
+      r.steps.rename.status === 'mute' &&
+      !autocompleteStarted.current.has(r.id)
+    )
+    if (!stale.length) return
+    stale.forEach(r => autocompleteStarted.current.add(r.id))
+    runSteps(stale.map(r => r.id), ['lookup', 'rename', 'lbdir', 'file'])
   }, [rows, runSteps])
 
   // Refresh one row's lbdir step (called after reconcile apply in detail panel)
@@ -1221,10 +1406,13 @@ export function ScreenPipeline(): React.JSX.Element {
       })
       if (resp.ok) {
         const data = await resp.json() as { results: Record<string, unknown>[] }
-        if (data.results[0]) updateRow(id, serverRowToPipeline(data.results[0]))
+        if (data.results[0]) {
+          const fresh = serverRowToPipeline(data.results[0])
+          mergeServerRow(id, fresh, new Set(['lbdir']))
+        }
       }
     } catch { /* silent */ }
-  }, [rows, updateRow])
+  }, [rows, mergeServerRow])
 
   // ── Apply a single rename ────────────────────────────────────────────────────
   const applyRename = useCallback(async (row: PipelineRow, customName?: string) => {
@@ -1241,16 +1429,20 @@ export function ScreenPipeline(): React.JSX.Element {
         const newName = data.new_path.split(/[/\\]/).pop() ?? proposed
         // If the detail panel was open for this row, update its id
         if (detailId === row.id) setDetailId(data.new_path)
-        setRows(prev => prev.map(r =>
-          r.id === row.id ? {
+        setRows(prev => prev.map(r => {
+          if (r.id !== row.id) return r
+          const updated = {
             ...r,
             folderPath: data.new_path!,
             folderName: newName,
             id: data.new_path!,
-            bucket: 'done',
-            steps: { ...r.steps, rename: { status: 'ok', label: 'Renamed' } },
-          } : r
-        ))
+            bucket: 'done' as Bucket,
+            steps: { ...r.steps, rename: { status: 'ok' as const, label: 'Renamed' } },
+          }
+          _pipelineCache.delete(row.id)
+          _pipelineCache.set(data.new_path!, { steps: updated.steps, bucket: updated.bucket, errors: updated.errors })
+          return updated
+        }))
         useFolderQueueStore.getState().removeFolders([row.folderPath])
         useFolderQueueStore.getState().addFolders([data.new_path])
       }
@@ -1271,12 +1463,14 @@ export function ScreenPipeline(): React.JSX.Element {
   }, [selectedReady, applyRename])
 
   // ── File a folder into the collection ────────────────────────────────────────
-  const applyFile = useCallback(async (row: PipelineRow) => {
+  const applyFile = useCallback(async (
+    row: PipelineRow, mountId?: number | null, overrideDest?: string | null, overrideMountLabel?: string | null,
+  ) => {
     const lb = row.steps.lookup.lb_number
-    const dest = row.steps.file.dest
+    const dest = overrideDest ?? row.steps.file.dest
     if (!lb || !dest) return
 
-    const mountLabel = row.steps.file.mount_label ?? 'collection mount'
+    const mountLabel = overrideMountLabel ?? row.steps.file.mount_label ?? 'collection mount'
     const destName = dest.split(/[/\\]/).pop() ?? dest
 
     const ok = await confirm({
@@ -1296,7 +1490,12 @@ export function ScreenPipeline(): React.JSX.Element {
       const resp = await fetch(`${BASE}/api/pipeline/file`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ folders: [{ path: row.folderPath, lb_number: lb }] }),
+        body: JSON.stringify({
+          folders: [{
+            path: row.folderPath, lb_number: lb,
+            ...(mountId != null && mountId !== row.steps.file.recommended_mount ? { mount_id: mountId } : {}),
+          }],
+        }),
       })
       const data = await resp.json() as { results: Array<{ ok: boolean; dest?: string; filed_to?: string; error?: string }> }
       const result = data.results?.[0]
@@ -1309,6 +1508,7 @@ export function ScreenPipeline(): React.JSX.Element {
             steps: { ...r.steps, file: { status: 'ok', label: 'Filed', dest: result.dest ?? null, mount_label: result.filed_to ?? null, error: null, error_code: null } },
           } : r
         ))
+        queryClient.invalidateQueries({ queryKey: ['collection-prefetch'] })
       } else {
         setRows(prev => prev.map(r =>
           r.id === row.id ? {
@@ -1340,6 +1540,7 @@ export function ScreenPipeline(): React.JSX.Element {
   const handleRemoveRow = useCallback((id: string) => {
     setRows(prev => prev.filter(r => r.id !== id))
     removeFolders([id])
+    _pipelineCache.delete(id)
     setActiveQueue(prev => prev === id ? null : prev)
     if (detailId === id) setDetailId(null)
   }, [removeFolders, detailId])
@@ -1625,11 +1826,12 @@ export function ScreenPipeline(): React.JSX.Element {
                 {t('pipeline.queue.scanTree')}
               </Button>
               <Button variant="ghost" size="sm" icon="trash"
-                onClick={() => { setRows([]); setActiveQueue(null); setDetailId(null); clearFolders() }}>
+                onClick={() => { setRows([]); setActiveQueue(null); setDetailId(null); clearFolders(); _pipelineCache.clear() }}>
                 {t('common.clear')}
               </Button>
             </div>
             <button
+              data-testid="sidebar-quick-lookup"
               onClick={() => navigate('/quicklookup')}
               style={{
                 display: 'flex', alignItems: 'center', gap: 8, width: '100%',
@@ -1667,7 +1869,7 @@ export function ScreenPipeline(): React.JSX.Element {
               onRowRefresh={refreshDetailRow}
               onRun={(id, steps) => runSteps([id], steps)}
               onRename={(customName) => applyRename(detailRow, customName)}
-              onFile={() => applyFile(detailRow)}
+              onFile={(mountId, dest, mountLabel) => applyFile(detailRow, mountId, dest, mountLabel)}
             />
           )}
 

@@ -239,6 +239,10 @@
       "extra": "Extra",
       "fail": "Échec"
     },
+    "allClear": {
+      "title": "Tous les fichiers sont conformes",
+      "desc": "Les {{count}} fichiers correspondent à leurs sommes de contrôle FFP et MD5. Rien à corriger ici."
+    },
     "shntoolWarning": "shntool n'est pas installé",
     "shntoolDesc": "Ce dossier contient les fichiers SHN. FFP/MD5 peut être vérifié sans shntool, mais les vérifications de longueur par disque le nécessitent.",
     "verifyWithoutShntool": "Vérifier sans shntool",
@@ -406,6 +410,25 @@
       "confirmBody": "Classer \"{{folder}}\" dans {{mount}}",
       "confirmNote": "Le dossier sera déplacé vers sa destination de collection et enregistré dans Ma collection.",
       "confirmAction": "Classer"
+    },
+    "collect": {
+      "storageMount": "Volume de stockage",
+      "routedByYear": "Routé par année · {{year}} → {{mount}}",
+      "resetToSuggested": "Revenir à la suggestion",
+      "suggested": "suggéré",
+      "mountOffline": "Hors ligne",
+      "mountTooltip": "{{span}} · {{free}} libre",
+      "freeAmount": "{{free}} libre",
+      "tagInCollection": "Marquer dans la collection",
+      "itemsCounter": "{{count}} → {{next}} éléments",
+      "rowLb": "LB#",
+      "rowStatus": "Statut",
+      "rowConfirmed": "Confirmé",
+      "rowFingerprint": "Empreinte",
+      "valueStatus": "Public · Possédé",
+      "valueConfirmed": "Aujourd'hui",
+      "valueFingerprint": "En attente · AcoustID",
+      "valueUnassigned": "Non attribué"
     }
   },
   "collection": {

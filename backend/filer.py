@@ -42,6 +42,52 @@ def _path_reachable(path: str, timeout: float = MOUNT_CHECK_TIMEOUT) -> bool:
             return False
 
 
+# ── Mount stats (for the Collect mount picker) ─────────────────────────────────
+
+def _human_bytes(n: float) -> str:
+    """Format a byte count as a short human-readable string, e.g. '6.4 TB'."""
+    for unit in ("B", "KB", "MB", "GB"):
+        if n < 1024:
+            return f"{n:.0f} {unit}" if unit == "B" else f"{n:.1f} {unit}"
+        n /= 1024
+    return f"{n:.1f} TB"
+
+
+def _year_span_label(years: list[int]) -> str:
+    """Format a list of years as a decade-range label, e.g. '1970s-1980s'."""
+    lo_decade, hi_decade = (min(years) // 10) * 10, (max(years) // 10) * 10
+    if lo_decade == hi_decade:
+        return f"{lo_decade}s"
+    return f"{lo_decade}s–{hi_decade}s"
+
+
+def get_mounts_with_stats(db_path=None) -> list[dict]:
+    """Return all collection mounts with online status, free space, and span.
+
+    Each mount dict gains:
+        span (str): decade range of years routed to this mount, or "—" if none.
+        free (str): human-readable free space, or "—" if offline/unreadable.
+        online (bool): whether root_path is currently reachable.
+    """
+    mounts = database.get_collection_mounts(db_path)
+    years_by_mount: dict[int, list[int]] = {}
+    for route in database.get_collection_routes(db_path):
+        years_by_mount.setdefault(route["mount_id"], []).append(route["year"])
+
+    for mount in mounts:
+        years = years_by_mount.get(mount["id"])
+        mount["span"] = _year_span_label(years) if years else "—"
+        mount["online"] = _path_reachable(mount["root_path"])
+        if mount["online"]:
+            try:
+                mount["free"] = _human_bytes(shutil.disk_usage(mount["root_path"]).free)
+            except OSError:
+                mount["free"] = "—"
+        else:
+            mount["free"] = "—"
+    return mounts
+
+
 # ── Year extraction ────────────────────────────────────────────────────────────
 
 def year_from_date_str(date_str: str) -> int | None:
@@ -70,9 +116,18 @@ def year_from_date_str(date_str: str) -> int | None:
 def resolve_destination_for_lb(
     lb_number: int,
     folder_path: str,
+    mount_id_override: int | None = None,
     db_path=None,
 ) -> dict:
     """Resolve the filing destination for a known LB entry.
+
+    Args:
+        lb_number: LB number (must be in entries table).
+        folder_path: Absolute path to the source folder on disk.
+        mount_id_override: If given and different from the year-routed mount,
+            file under this mount's root instead — keeping the same sub_path
+            (e.g. year subfolder) the route would otherwise use.
+        db_path: Optional SQLite path override.
 
     Returns a dict with keys:
         ok (bool), year (int|None), mount_id (int|None), mount_label (str),
@@ -120,9 +175,25 @@ def resolve_destination_for_lb(
             f"No route configured for year {year} — add one in Settings → Mounts & Routes",
         )
 
+    mount_id = route["mount_id"]
     mount_label = route["label"]
     mount_root = route["root_path"]
     sub_path = route["sub_path"] or ""
+
+    if mount_id_override is not None and mount_id_override != mount_id:
+        try:
+            with database.get_connection(db_path) as conn:
+                override = conn.execute(
+                    "SELECT id, label, root_path FROM collection_mounts WHERE id = ?",
+                    (mount_id_override,),
+                ).fetchone()
+        except Exception as exc:
+            return _err("db_error", f"DB error reading mount {mount_id_override}: {exc}")
+        if override is None:
+            return _err("db_error", f"Mount {mount_id_override} not found")
+        mount_id = override["id"]
+        mount_label = override["label"]
+        mount_root = override["root_path"]
 
     if not _path_reachable(mount_root):
         return _err(
@@ -139,7 +210,7 @@ def resolve_destination_for_lb(
     return {
         "ok": True,
         "year": year,
-        "mount_id": route["mount_id"],
+        "mount_id": mount_id,
         "mount_label": mount_label,
         "mount_root": mount_root,
         "sub_path": sub_path,
@@ -171,6 +242,7 @@ def file_folder(
     lb_number: int,
     folder_path: str,
     file_mode: str = "move",
+    mount_id_override: int | None = None,
     db_path=None,
 ) -> dict:
     """Resolve destination and physically move or copy the folder.
@@ -179,6 +251,8 @@ def file_folder(
         lb_number:   LB number (must be in entries table).
         folder_path: Absolute path to the source folder on disk.
         file_mode:   "move" (default) or "copy".
+        mount_id_override: If given, file under this mount instead of the
+            year-routed default (see resolve_destination_for_lb).
         db_path:     Optional SQLite path override.
 
     Returns dict with keys: ok, filed_to, dest, file_mode, error, error_code.
@@ -194,7 +268,7 @@ def file_folder(
             "error_code": "src_missing",
         }
 
-    resolution = resolve_destination_for_lb(lb_number, folder_path, db_path)
+    resolution = resolve_destination_for_lb(lb_number, folder_path, mount_id_override, db_path)
     if not resolution["ok"]:
         return {
             "ok": False,

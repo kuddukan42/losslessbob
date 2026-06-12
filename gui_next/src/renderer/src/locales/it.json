@@ -239,6 +239,10 @@
       "extra": "Extra",
       "fail": "Bocciatura"
     },
+    "allClear": {
+      "title": "Tutti i file sono a posto",
+      "desc": "Tutti i {{count}} file corrispondono ai rispettivi checksum FFP e MD5. Non c'è nulla da correggere qui."
+    },
     "shntoolWarning": "shntool non è installato",
     "shntoolDesc": "Questa cartella contiene i file SHN. FFP/MD5 possono essere verificati senza shntool, ma i controlli della lunghezza per disco lo richiedono.",
     "verifyWithoutShntool": "Verifica senza shntool",
@@ -406,6 +410,25 @@
       "confirmBody": "Archivia \"{{folder}}\" in {{mount}}",
       "confirmNote": "La cartella verrà spostata nella sua destinazione di raccolta e registrata in La mia raccolta.",
       "confirmAction": "Archivia"
+    },
+    "collect": {
+      "storageMount": "Unità di archiviazione",
+      "routedByYear": "Indirizzato per anno · {{year}} → {{mount}}",
+      "resetToSuggested": "Ripristina suggerimento",
+      "suggested": "suggerito",
+      "mountOffline": "Non in linea",
+      "mountTooltip": "{{span}} · {{free}} liberi",
+      "freeAmount": "{{free}} liberi",
+      "tagInCollection": "Etichetta nella raccolta",
+      "itemsCounter": "{{count}} → {{next}} elementi",
+      "rowLb": "LB#",
+      "rowStatus": "Stato",
+      "rowConfirmed": "Confermato",
+      "rowFingerprint": "Impronta",
+      "valueStatus": "Pubblico · Posseduto",
+      "valueConfirmed": "Oggi",
+      "valueFingerprint": "In coda · AcoustID",
+      "valueUnassigned": "Non assegnato"
     }
   },
   "collection": {
@@ -991,7 +1014,7 @@
       "error": "Errore: {{msg}}"
     }
   },
-"quickLookup": {
+  "quickLookup": {
     "title": "Ricerca rapida",
     "subtitle": "Checksum",
     "desc": "Incolla o trascina righe di checksum per identificare le registrazioni istantaneamente.",
