@@ -1,3 +1,7 @@
+[2026-06-12] — fix(backend): BUG-163 — undefined `_time` in admin restart handler
+Fixed: backend/app.py: `_do_restart()` called `_time.sleep(0.3)` but only `time`
+  is imported; renamed to `time.sleep(0.3)`. Caught by ruff (F821) on commit.
+
 [2026-06-12] — feat(gui): move Mounts & Routes out of Setup into its own screen
 Added: gui_next/src/renderer/src/screens/ScreenMounts.tsx: new screen hosting the
   storage-mounts/year-routing/filing-mode card (extracted from ScreenSetup).
