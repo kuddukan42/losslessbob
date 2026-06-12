@@ -64,6 +64,18 @@ interface StepResult {
   recommended_mount?: number | null
   routed_year?: number | null
   collection_count?: number | null
+  lb_status?: string | null
+  owned?: boolean | null
+  lbdir_verified_at?: string | null
+}
+
+interface FileProgress {
+  stage: string // scanning | copying | moving | verifying | removing
+  files_done: number
+  files_total: number
+  bytes_done: number
+  bytes_total: number
+  current_file: string | null
 }
 
 interface PipelineRow {
@@ -81,11 +93,58 @@ interface PipelineRow {
   }
   errors: { step: string; message: string }[]
   running: boolean
+  fileProgress?: FileProgress | null
 }
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
 const MUTE: StepResult = { status: 'mute', label: '—' }
+
+function pctOf(done: number, total: number): number {
+  if (total <= 0) return 0
+  return Math.min(100, Math.round((done / total) * 100))
+}
+
+function humanBytes(n: number): string {
+  if (n < 1024) return `${n} B`
+  if (n < 1048576) return `${(n / 1024).toFixed(1)} KB`
+  if (n < 1073741824) return `${(n / 1048576).toFixed(1)} MB`
+  return `${(n / 1073741824).toFixed(2)} GB`
+}
+
+/** Inline progress bar shown while a Collect step's copy/move is running. */
+function FileProgressBar({ progress, compact = false }: { progress: FileProgress; compact?: boolean }): React.JSX.Element {
+  const { t } = useTranslation()
+  const percent = pctOf(progress.bytes_done, progress.bytes_total)
+  const indeterminate = progress.bytes_total === 0
+  const stageLabel = t(`pipeline.file.progress.${progress.stage}`, t('pipeline.file.progress.copying'))
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 6, minWidth: compact ? 100 : 160 }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', gap: 8, fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)' }}>
+        <span>
+          {stageLabel}
+          {progress.files_total > 0 && ` · ${progress.files_done}/${progress.files_total}`}
+        </span>
+        {!indeterminate && (
+          <span>{compact ? `${percent}%` : `${humanBytes(progress.bytes_done)} / ${humanBytes(progress.bytes_total)} · ${percent}%`}</span>
+        )}
+      </div>
+      <div style={{ height: 6, borderRadius: 3, background: 'var(--lbb-surface2)', overflow: 'hidden' }}>
+        <div style={{
+          height: '100%', borderRadius: 3, background: 'var(--lbb-accent-mid)',
+          width: indeterminate ? '40%' : `${percent}%`,
+          transition: indeterminate ? 'none' : 'width 0.3s ease',
+          animation: indeterminate ? 'lbb-indeterminate 1.4s ease-in-out infinite' : 'none',
+        }} />
+      </div>
+      {!compact && progress.current_file && (
+        <div style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+          {progress.current_file}
+        </div>
+      )}
+    </div>
+  )
+}
 
 // Module-level cache: persists step results across tab navigation within a session.
 // Keyed by folder path; cleared only on explicit queue clear.
@@ -135,6 +194,9 @@ function normalizeFileStep(raw: unknown): StepResult {
     recommended_mount: (r.recommended_mount as number) ?? null,
     routed_year:      (r.routed_year      as number)  ?? null,
     collection_count: (r.collection_count as number)  ?? null,
+    lb_status:        (r.lb_status        as string)  ?? null,
+    owned:            (r.owned            as boolean) ?? null,
+    lbdir_verified_at: (r.lbdir_verified_at as string) ?? null,
   }
 }
 
@@ -237,6 +299,7 @@ const STATE_LABEL: Record<string, { tone: 'ok'|'bad'|'warn'|'mute'|'info'; label
   pass:            { tone: 'ok',   label: 'Pass' },
   fail:            { tone: 'bad',  label: 'Fail' },
   missing_files:   { tone: 'warn', label: 'Missing files' },
+  extra_files:     { tone: 'warn', label: 'Extra files' },
   no_lbdir:        { tone: 'warn', label: 'No lbdir' },
   no_lb:           { tone: 'mute', label: 'No LB#' },
   shntool_missing: { tone: 'warn', label: 'No shntool' },
@@ -668,7 +731,7 @@ function LookupStageContent({ step, row, onRun }: {
     )
   }
 
-  if (step.status === 'warn') {
+  if (step.status === 'warn' && step.lb_number == null) {
     const summaryRows = step.summary?.lb_summary ?? []
     const detailRows = step.detail ?? []
     return (
@@ -683,6 +746,33 @@ function LookupStageContent({ step, row, onRun }: {
         <div style={{ padding: '8px 10px', borderRadius: 6, background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)', fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
           Pinning writes a folder→LB link, so it never asks again.
         </div>
+      </div>
+    )
+  }
+
+  if (step.status === 'warn' && step.lb_number != null) {
+    const summaryRows = step.summary?.lb_summary ?? []
+    const detailRows = step.detail ?? []
+    const lbStr = `LB-${String(step.lb_number).padStart(5, '0')}`
+    return (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          <StatusTag state="action">{step.label}</StatusTag>
+          <span style={{ fontSize: 'var(--lbb-fs-13)', fontWeight: 700 }}>{lbStr}</span>
+          {step.summary && (
+            <span style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)' }}>
+              {step.summary.matched}/{step.summary.given} matched
+            </span>
+          )}
+          <div style={{ flex: 1 }} />
+          <Button variant="ghost" size="sm" icon="refresh" title="Re-run this stage" onClick={() => onRun(['lookup'])}>Re-run lookup</Button>
+        </div>
+        <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)' }}>
+          {lbStr} was identified, but not every checksum in this folder matches the archive
+          record — some files on disk may differ from the official copy. Review the unmatched
+          checksums below before filing this folder.
+        </div>
+        <LookupDetail summaryRows={summaryRows} detailRows={detailRows} />
       </div>
     )
   }
@@ -755,7 +845,7 @@ function RenameStageContent({ step, row, onRun, onRename }: {
           <div>
             <div style={{ fontWeight: 700, fontSize: 'var(--lbb-fs-13)', color: 'var(--lbb-ok-fg)' }}>Renamed</div>
             <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)', marginTop: 2 }}>
-              Logged to <span style={{ fontFamily: 'var(--lbb-mono)' }}>rename_history</span> — reversible from Recent activity for 30 days. LBDIR will reconcile next.
+              Logged to <span style={{ fontFamily: 'var(--lbb-mono)' }}>rename_history</span>. LBDIR will reconcile next.
             </div>
           </div>
         </div>
@@ -861,7 +951,7 @@ function RenameStageContent({ step, row, onRun, onRename }: {
       </div>
       <div style={{ padding: '8px 10px', borderRadius: 6, background: 'var(--lbb-surface)',
         border: '1px solid var(--lbb-border)', fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
-        Logged to <span style={{ fontFamily: 'var(--lbb-mono)' }}>rename_history</span> — reversible for 30 days.
+        Logged to <span style={{ fontFamily: 'var(--lbb-mono)' }}>rename_history</span>.
       </div>
 
       {/* Action buttons */}
@@ -948,18 +1038,25 @@ function CollectReadyDetail({ step, row, onRun, onFile }: {
           routedYear={step.routed_year}
           lbLabel={lbLabel}
           collectionCount={step.collection_count}
+          lbStatus={step.lb_status ?? null}
+          owned={step.owned ?? false}
+          confirmedAt={step.lbdir_verified_at ?? null}
           onSelectMount={setSelectedMount}
         />
       )}
       <Banner tone="info" icon="info" title="What filing does"
         action={
-          <Button variant="primary" size="sm" icon="folder" disabled={previewPending}
-            onClick={() => onFile?.(selectedMount, dest, mountLabel)}>
-            File into collection
-          </Button>
+          row.running && row.fileProgress ? (
+            <FileProgressBar progress={row.fileProgress} />
+          ) : (
+            <Button variant="primary" size="sm" icon="folder" disabled={previewPending}
+              onClick={() => onFile?.(selectedMount, dest, mountLabel)}>
+              File into collection
+            </Button>
+          )
         }>
         Moves the folder to <span style={{ fontFamily: 'var(--lbb-mono)' }}>{dest ?? '—'}</span>, writes the
-        collection row, and tags it <strong>owned · public</strong>. Logged to <span style={{ fontFamily: 'var(--lbb-mono)' }}>rename_history</span> — reversible for 30 days.
+        collection row, and tags it <strong>owned · public</strong>. Logged to <span style={{ fontFamily: 'var(--lbb-mono)' }}>rename_history</span>.
         {previewPending && (
           <div style={{ marginTop: 6, fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)' }}>
             Resolving the destination for the selected mount — if this doesn't clear, try
@@ -1025,7 +1122,7 @@ function CollectStageContent({ step, row, onRun, onFile }: {
           </div>
         )}
         <div style={{ padding: '8px 10px', borderRadius: 6, background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)', fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
-          Logged to <span style={{ fontFamily: 'var(--lbb-mono)' }}>rename_history</span> — reversible for 30 days.
+          Logged to <span style={{ fontFamily: 'var(--lbb-mono)' }}>rename_history</span>.
         </div>
       </div>
     )
@@ -1485,9 +1582,9 @@ export function ScreenPipeline(): React.JSX.Element {
     })
     if (!ok) return
 
-    setRows(prev => prev.map(r => r.id === row.id ? { ...r, running: true } : r))
+    setRows(prev => prev.map(r => r.id === row.id ? { ...r, running: true, fileProgress: { stage: 'scanning', files_done: 0, files_total: 0, bytes_done: 0, bytes_total: 0, current_file: null } } : r))
     try {
-      const resp = await fetch(`${BASE}/api/pipeline/file`, {
+      const startResp = await fetch(`${BASE}/api/pipeline/file/start`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -1497,15 +1594,53 @@ export function ScreenPipeline(): React.JSX.Element {
           }],
         }),
       })
-      const data = await resp.json() as { results: Array<{ ok: boolean; dest?: string; filed_to?: string; error?: string }> }
-      const result = data.results?.[0]
-      if (result?.ok) {
+      const started = await startResp.json() as { ok: boolean; error?: string; error_code?: string }
+      if (!started.ok) {
         setRows(prev => prev.map(r =>
           r.id === row.id ? {
             ...r,
             running: false,
+            fileProgress: null,
+            steps: { ...r.steps, file: { ...r.steps.file, status: 'bad', label: (started.error ?? 'Failed').slice(0, 24), error: started.error ?? null, error_code: started.error_code ?? null } },
+          } : r
+        ))
+        return
+      }
+
+      // Poll until the background copy/move finishes, updating the progress bar.
+      let result: { ok: boolean; dest?: string; filed_to?: string; error?: string } | null = null
+      while (!result) {
+        await new Promise(r => setTimeout(r, 400))
+        const statusResp = await fetch(`${BASE}/api/pipeline/file/status`)
+        const status = await statusResp.json() as {
+          running: boolean; stage: string
+          files_done: number; files_total: number; bytes_done: number; bytes_total: number
+          current_file: string | null
+          result: { ok: boolean; dest?: string; filed_to?: string; error?: string } | null
+        }
+        if (status.running) {
+          setRows(prev => prev.map(r =>
+            r.id === row.id ? {
+              ...r,
+              fileProgress: {
+                stage: status.stage, files_done: status.files_done, files_total: status.files_total,
+                bytes_done: status.bytes_done, bytes_total: status.bytes_total, current_file: status.current_file,
+              },
+            } : r
+          ))
+        } else {
+          result = status.result
+        }
+      }
+
+      if (result.ok) {
+        setRows(prev => prev.map(r =>
+          r.id === row.id ? {
+            ...r,
+            running: false,
+            fileProgress: null,
             bucket: 'done',
-            steps: { ...r.steps, file: { status: 'ok', label: 'Filed', dest: result.dest ?? null, mount_label: result.filed_to ?? null, error: null, error_code: null } },
+            steps: { ...r.steps, file: { status: 'ok', label: 'Filed', dest: result!.dest ?? null, mount_label: result!.filed_to ?? null, error: null, error_code: null } },
           } : r
         ))
         queryClient.invalidateQueries({ queryKey: ['collection-prefetch'] })
@@ -1514,12 +1649,13 @@ export function ScreenPipeline(): React.JSX.Element {
           r.id === row.id ? {
             ...r,
             running: false,
-            steps: { ...r.steps, file: { ...r.steps.file, status: 'bad', label: (result?.error ?? 'Failed').slice(0, 24), error: result?.error ?? null } },
+            fileProgress: null,
+            steps: { ...r.steps, file: { ...r.steps.file, status: 'bad', label: (result!.error ?? 'Failed').slice(0, 24), error: result!.error ?? null } },
           } : r
         ))
       }
     } catch {
-      setRows(prev => prev.map(r => r.id === row.id ? { ...r, running: false } : r))
+      setRows(prev => prev.map(r => r.id === row.id ? { ...r, running: false, fileProgress: null } : r))
     }
   }, [confirm, t])
 
@@ -2085,9 +2221,13 @@ export function ScreenPipeline(): React.JSX.Element {
                               <Button size="sm" variant="primary" icon="check" onClick={() => applyRename(r)}>Apply</Button>
                             )}
                             {r.steps.file.status === 'warn' && !!r.steps.file.dest && (
-                              <Button size="sm" variant="primary" icon="folder" onClick={() => applyFile(r)}>
-                                {t('pipeline.file.action')}
-                              </Button>
+                              r.running && r.fileProgress ? (
+                                <FileProgressBar progress={r.fileProgress} compact />
+                              ) : (
+                                <Button size="sm" variant="primary" icon="folder" onClick={() => applyFile(r)}>
+                                  {t('pipeline.file.action')}
+                                </Button>
+                              )
                             )}
                             {r.bucket === 'done' && r.steps.file.status === 'ok' && (
                               <Pill tone="ok" soft>Done</Pill>

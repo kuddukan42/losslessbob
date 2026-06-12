@@ -18,6 +18,7 @@ const STATE_LABEL: Record<LbdirState, { tone: Tone; label: string; hint: string 
   pass:            { tone: 'ok',   label: 'Pass',             hint: 'All files verified' },
   fail:            { tone: 'bad',  label: 'Fail',             hint: 'Checksum mismatches' },
   missing_files:   { tone: 'bad',  label: 'Missing files',    hint: 'Files listed in lbdir not found on disk' },
+  extra_files:     { tone: 'warn', label: 'Extra files',      hint: 'Files on disk not listed in lbdir' },
   no_lbdir:        { tone: 'warn', label: 'No lbdir',         hint: 'No lbdir*.txt found in folder' },
   no_lb:           { tone: 'mute', label: 'No LB#',           hint: 'Folder not linked to an LB entry' },
   shntool_missing: { tone: 'warn', label: 'Shntool missing',  hint: 'Install shntool to verify SHN files' },

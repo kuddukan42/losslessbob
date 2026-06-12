@@ -1,3 +1,111 @@
+[2026-06-12] — chore(release): v1.4.0 — pipeline v2 (storage mounts, lookup, lbdir, rename, collect)
+Changed: gui_next/package.json: version bumped 1.3.0 -> 1.4.0.
+Changed: merged feat/pipeline-v2-storage-mounts into main — collection mount management,
+  Quick Lookup screen, pipeline lookup/rename/lbdir/collect stage panels, background
+  copy/move with progress, and associated bugfixes (see entries below).
+
+[2026-06-12] — fix(backend+gui): BUG-162 — pipeline Lookup no longer Passes on a partial checksum match
+Fixed: backend/app.py: _pipeline_process_folder's lookup step now requires
+  summary.matched == summary.given (e.g. 42/42) for a resolved LB# to report
+  status "ok"/Pass. A single-LB match with fewer matches than given checksums
+  (e.g. 21/42 — ffp matches but md5 doesn't) now reports status "warn" /
+  label "Incomplete match", with lb_number still set so Rename/LBDIR/Collect
+  proceed, plus a row["errors"] entry noting the X/Y ratio.
+Changed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: LookupStageContent
+  gained a warn branch for "Incomplete match" (lb_number set, not a Conflict)
+  that explains the mismatch and renders <LookupDetail> (summary + per-checksum
+  table) so the unmatched (NOT FOUND) checksum rows are visible — previously the
+  "ok" branch showed only a green banner with a small "21/42 matched" caption and
+  no detail table at all.
+Changed: BUGS.md, BUGS_DONE.md: added BUG-162 (Fixed).
+
+[2026-06-11] — fix(gui): BUG-154 — guard against stray tsc-emitted .js shadowing .tsx sources
+Fixed: gui_next/.gitignore: added src/{renderer,main,preload}/**/*.js entries. The stale
+  build artifacts from BUG-154 were already removed and tsconfig.web.json/tsconfig.node.json
+  already set noEmit:true; this closes the remaining gap so a future non --noEmit tsc run
+  can't silently reintroduce shadow .js files.
+Changed: BUGS.md, BUGS_DONE.md: moved BUG-154 to the archive as Fixed.
+
+[2026-06-11] — chore(docs): move 25 fixed bugs (BUG-122–153) from BUGS.md to BUGS_DONE.md
+Changed: BUGS.md, BUGS_DONE.md: moved all "Fixed" entries to the archive, keeping only
+  Open bugs (BUG-106, 118, 120, 146, 154, 155) in BUGS.md. Also removed BUG-133/134 from
+  BUGS.md — they were duplicates already present in BUGS_DONE.md.
+
+[2026-06-11] — fix(backend): pipeline — Collect "Confirmed" date now stamps on LBDIR pass
+Fixed: backend/app.py: BUG-161 — the pipeline's LBDIR step (step 4) computed a "pass"
+  result but never called database.set_lbdir_verified(), so the Collect stage's
+  "Confirmed" row (my_collection.lbdir_verified_at) never updated for an owned folder
+  re-checked in place. Now calls set_lbdir_verified() on pass, same as /api/lbdir/verify;
+  no-op for not-yet-filed folders (no matching my_collection.disk_path row).
+
+[2026-06-11] — feat(backend+gui): pipeline — Collect tag preview shows real status/confirmed data
+Changed: gui_next/src/renderer/src/components/pipeline/CollectDetail.tsx: TagTable's
+  "Status" row now shows the real lb_master.lb_status (Public/Private/Missing/Nonexistent)
+  plus owned/not-in-collection, and "Confirmed" shows the real my_collection.lbdir_verified_at
+  date (or "Not yet confirmed") instead of hardcoded "Public · Owned" / "Today".
+Removed: gui_next/src/renderer/src/components/pipeline/CollectDetail.tsx: dropped the
+  "Fingerprint: Queued · AcoustID" row — a stale design-mockup placeholder never wired to a
+  real queue (unrelated to the completed audio-fingerprint-identify feature, TODO-106).
+Changed: backend/app.py: `/api/pipeline/status` file step now returns lb_status, owned, and
+  lbdir_verified_at (queried from lb_master / my_collection) for the Collect stage.
+Changed: gui_next/src/renderer/src/locales/*.json: removed rowFingerprint/valueFingerprint/
+  valueStatus/valueConfirmed; added statusPublic/statusPrivate/statusMissing/
+  statusNonexistent/statusUnknown/ownedYes/ownedNo/notConfirmed (all 6 languages).
+
+[2026-06-11] — feat(backend+gui): pipeline — progress bar for Collect step copy/move
+Added: backend/filer.py: replaced synchronous `file_folder()` with `start_file_job()` +
+  `get_file_job_status()` — a background-thread job (shared `_FILE_JOB` dict + lock) that
+  scans the source tree for file count/bytes, then moves (os.rename, falling back to
+  copy+rmtree across filesystems) or copies (shutil.copytree with a progress-tracking
+  copy_function) the folder, updating files_done/bytes_done as it goes.
+Changed: backend/app.py: `/api/pipeline/file` replaced by `POST /api/pipeline/file/start`
+  (returns immediately) and `GET /api/pipeline/file/status` (poll for progress + result).
+Changed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: applyFile() now starts the
+  job and polls status every 400ms, storing progress on the row (`fileProgress`). Added
+  FileProgressBar component — shown in the Collect detail panel's "File into collection"
+  banner and in the table row's action cell while filing is in progress, so large
+  copy/move operations no longer look like nothing is happening.
+Changed: gui_next/src/renderer/src/locales/*.json: added pipeline.file.progress.{scanning,
+  copying,moving} strings (all 6 languages).
+Changed: PROJECT.md: updated Collection Routing & Pipeline Filing API table.
+
+[2026-06-11] — fix(backend): db — BUG-160 rename_history.renamed_at now stored in local time
+Fixed: backend/db.py: add_rename_history() now writes an explicit local-time timestamp instead
+  of relying on SQLite's CURRENT_TIMESTAMP default (which is UTC). init_db() runs a one-time
+  migration (meta key rename_history_localtime_v1) converting existing renamed_at values from
+  UTC to local time via datetime(renamed_at, 'localtime').
+Changed: PROJECT.md: rename_history.renamed_at column note updated.
+
+[2026-06-11] — chore(gui): pipeline — drop inaccurate "reversible for 30 days" claim
+Changed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: all "Logged to rename_history"
+  notes (Rename and Collect tabs) no longer claim a 30-day reversal window, since
+  rename_history has no time-based retention/auto-purge (purge is manual and deletes all
+  rows).
+
+[2026-06-11] — fix(backend): lbdir — BUG-159 whitelist extras/ and rename_log.txt for green status
+Fixed: backend/checksum_utils.py: verify_folder_lbdir() no longer counts files under `extras/`
+  (created by /api/lbdir/move_extras) or `rename_log.txt` (written by write_rename_log) as
+  "extra". If those are the only unclaimed files, status now resolves to 'pass' so the lbdir
+  step (pipeline step 4) turns green once a folder has been reconciled. Added
+  `_is_reconciled_extra()` helper plus `RENAME_LOG_NAME`/`EXTRAS_DIRNAME` constants.
+
+[2026-06-11] — fix(backend+gui): lbdir — BUG-158 detect extra files on disk during lbdir check
+Fixed: backend/checksum_utils.py: verify_folder_lbdir() now scans the folder recursively for
+  files not claimed by any lbdir md5/ffp/shntool entry (excluding the manifest itself), adds
+  them to `files` with overall='extra', and reports a real `extra` count instead of a hardcoded
+  0. New 'extra_files' status is returned when checksums otherwise pass but stray files exist,
+  so the folder no longer shows green/Pass while hiding extras.
+Changed: backend/app.py: pipeline lbdir step now maps 'extra_files' to a "warn"/"Extra N" label
+  and includes `extra` in the check detail.
+Changed: gui_next/src/renderer/src/lib/lbdirStore.ts: LbdirState gains 'extra_files'; CheckResult
+  gains `extra: number`.
+Changed: gui_next/src/renderer/src/screens/ScreenLBDIR.tsx,
+  gui_next/src/renderer/src/screens/ScreenPipeline.tsx: STATE_LABEL entries for 'extra_files'
+  (warn tone). Since it's not 'pass', the existing canReconcile gate now triggers the
+  reconcile/move-to-extras flow for extra-only folders.
+Fixed: gui_next/src/renderer/src/components/pipeline/LbdirDetail.tsx: LbdirFileTable rows with
+  overall='extra' now render as a "warn" Extra pill instead of a red "Fail".
+
 [2026-06-11] — fix(gui): pipeline — BUG-157 My Collection screen now refreshes after filing a folder
 Fixed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: applyFile now calls
   queryClient.invalidateQueries({ queryKey: ['collection-prefetch'] }) on a successful

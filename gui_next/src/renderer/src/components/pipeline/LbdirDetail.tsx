@@ -62,17 +62,20 @@ export function LbdirFileTable({ files }: LbdirFileTableProps): React.JSX.Elemen
       </thead>
       <tbody>
         {files.map((f, i) => {
-          const edge: 'ok' | 'warn' | 'bad' = f.overall === 'pass' ? 'ok' : f.overall === 'missing' ? 'warn' : 'bad'
+          const edge: 'ok' | 'warn' | 'bad' =
+            f.overall === 'pass' ? 'ok' : f.overall === 'missing' || f.overall === 'extra' ? 'warn' : 'bad'
+          const overallLabel =
+            f.overall === 'pass' ? 'Pass' : f.overall === 'missing' ? 'Missing' : f.overall === 'extra' ? 'Extra' : 'Fail'
           return (
             <TR key={i} edge={edge}>
-              <TD mono style={{ color: f.overall === 'pass' ? 'var(--lbb-fg)' : 'var(--lbb-bad-fg)' }}>{f.filename}</TD>
+              <TD mono style={{ color: f.overall === 'pass' || f.overall === 'extra' ? 'var(--lbb-fg)' : 'var(--lbb-bad-fg)' }}>{f.filename}</TD>
               <TD align="center"><CheckDot s={f.md5_status} /></TD>
               <TD align="center">
                 {f.on_disk
                   ? <Icon name="check" size={12} style={{ color: 'var(--lbb-ok-bar)' }} />
                   : <Icon name="x"     size={12} style={{ color: 'var(--lbb-warn-fg)' }} />}
               </TD>
-              <TD><Pill tone={edge} soft>{f.overall === 'pass' ? 'Pass' : f.overall === 'missing' ? 'Missing' : 'Fail'}</Pill></TD>
+              <TD><Pill tone={edge} soft>{overallLabel}</Pill></TD>
               <TD align="right" mono dim>{f.length ?? '—'}</TD>
               <TD mono dim>{f.fmt ?? '—'}</TD>
               <TD align="right" mono dim>{f.ratio ?? '—'}</TD>

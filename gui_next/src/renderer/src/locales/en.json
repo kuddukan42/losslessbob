@@ -433,7 +433,14 @@
       "confirmTitle": "File into Collection",
       "confirmBody": "File \"{{folder}}\" to {{mount}}",
       "confirmNote": "The folder will be moved to its collection destination and registered in My Collection.",
-      "confirmAction": "File"
+      "confirmAction": "File",
+      "progress": {
+        "scanning": "Scanning…",
+        "copying": "Copying…",
+        "moving": "Moving…",
+        "verifying": "Verifying…",
+        "removing": "Removing original…"
+      }
     },
     "collect": {
       "storageMount": "Storage mount",
@@ -448,10 +455,14 @@
       "rowLb": "LB#",
       "rowStatus": "Status",
       "rowConfirmed": "Confirmed",
-      "rowFingerprint": "Fingerprint",
-      "valueStatus": "Public · Owned",
-      "valueConfirmed": "Today",
-      "valueFingerprint": "Queued · AcoustID",
+      "statusPublic": "Public",
+      "statusPrivate": "Private",
+      "statusMissing": "Missing",
+      "statusNonexistent": "Nonexistent",
+      "statusUnknown": "Unknown",
+      "ownedYes": "Owned",
+      "ownedNo": "Not in collection",
+      "notConfirmed": "Not yet confirmed",
       "valueUnassigned": "Unassigned"
     }
   },

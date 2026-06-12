@@ -91,16 +91,27 @@ export function MountPicker({
 export interface TagTableProps {
   lbLabel?: string | null
   collectionCount?: number | null
+  lbStatus?: string | null
+  owned?: boolean | null
+  confirmedAt?: string | null
 }
 
 /** "Tag in the collection" preview rows — design doc 14 §2.5 / pipeline2-stages.jsx L616-630. */
-export function TagTable({ lbLabel, collectionCount }: TagTableProps): React.JSX.Element {
+export function TagTable({ lbLabel, collectionCount, lbStatus, owned, confirmedAt }: TagTableProps): React.JSX.Element {
   const { t } = useTranslation()
+  const statusLabel = lbStatus === 'public' ? t('pipeline.collect.statusPublic')
+    : lbStatus === 'private' ? t('pipeline.collect.statusPrivate')
+    : lbStatus === 'missing' ? t('pipeline.collect.statusMissing')
+    : lbStatus === 'nonexistent' ? t('pipeline.collect.statusNonexistent')
+    : t('pipeline.collect.statusUnknown')
+  const ownedLabel = t(owned ? 'pipeline.collect.ownedYes' : 'pipeline.collect.ownedNo')
+  const confirmedLabel = confirmedAt
+    ? confirmedAt.slice(0, 10)
+    : t('pipeline.collect.notConfirmed')
   const rows: [string, string, boolean?][] = [
     [t('pipeline.collect.rowLb'), lbLabel ?? t('pipeline.collect.valueUnassigned'), true],
-    [t('pipeline.collect.rowStatus'), t('pipeline.collect.valueStatus')],
-    [t('pipeline.collect.rowConfirmed'), t('pipeline.collect.valueConfirmed')],
-    [t('pipeline.collect.rowFingerprint'), t('pipeline.collect.valueFingerprint')],
+    [t('pipeline.collect.rowStatus'), `${statusLabel} · ${ownedLabel}`],
+    [t('pipeline.collect.rowConfirmed'), confirmedLabel],
   ]
   return (
     <div>
@@ -140,6 +151,9 @@ export interface CollectDetailProps {
   routedYear?: number | null
   lbLabel?: string | null
   collectionCount?: number | null
+  lbStatus?: string | null
+  owned?: boolean | null
+  confirmedAt?: string | null
   onSelectMount: (id: number) => void
 }
 
@@ -149,7 +163,8 @@ export interface CollectDetailProps {
  * everything else in the gap punch-list is harvested from existing screens.
  */
 export function CollectDetail({
-  mounts, selectedMount, recommendedMount, routedYear, lbLabel, collectionCount, onSelectMount,
+  mounts, selectedMount, recommendedMount, routedYear, lbLabel, collectionCount,
+  lbStatus, owned, confirmedAt, onSelectMount,
 }: CollectDetailProps): React.JSX.Element {
   return (
     <>
@@ -160,7 +175,13 @@ export function CollectDetail({
         routedYear={routedYear}
         onSelectMount={onSelectMount}
       />
-      <TagTable lbLabel={lbLabel} collectionCount={collectionCount} />
+      <TagTable
+        lbLabel={lbLabel}
+        collectionCount={collectionCount}
+        lbStatus={lbStatus}
+        owned={owned}
+        confirmedAt={confirmedAt}
+      />
     </>
   )
 }
