@@ -193,6 +193,7 @@ def create_app() -> Flask:
     _slog.t("Flask: start_file_watcher start")
     scheduler.start_file_watcher()
     scheduler.start_collection_watcher()
+    scheduler.start_integrity_scan_scheduler()
     _slog.t("Flask: routes registering")
 
     # ── Checksum Lookup ──────────────────────────────────────────────────────
@@ -471,7 +472,7 @@ def create_app() -> Flask:
                         "force_scrape", "search_page_size", "github_repo", "data_zip_url",
                         "qbt_host", "qbt_port", "qbt_category", "qbt_tags",
                         "tracker_list", "wtrf_board_id", "ui_language",
-                        "pipeline_file_mode"]
+                        "pipeline_file_mode", "integrity_scan_interval_hours"]
                 result = {k: database.get_meta(k) for k in keys}
                 # Return "set" or "" for web_password — never expose the actual value
                 result["web_password"] = "set" if database.get_meta("web_password") else ""
@@ -4962,6 +4963,77 @@ def create_app() -> Flask:
                 "error": None,
                 "error_code": None,
             })
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    # ── Collection Integrity Monitor (TODO-111) ──────────────────────────────
+
+    @app.route("/api/collection/integrity/scan", methods=["POST"])
+    def collection_integrity_scan_start() -> Response:
+        """Start a background integrity scan. Body: {mount_id?: int} (omit = whole collection)."""
+        try:
+            from backend import integrity_monitor
+            data = request.get_json(silent=True) or {}
+            mount_id = data.get("mount_id")
+            started = integrity_monitor.start_scan_async(
+                int(mount_id) if mount_id is not None else None
+            )
+            if not started:
+                return jsonify({"ok": False, "error": "A scan is already running"}), 409
+            return jsonify({"ok": True})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/collection/integrity/scan/cancel", methods=["POST"])
+    def collection_integrity_scan_cancel() -> Response:
+        """Request cancellation of the running integrity scan, if any."""
+        try:
+            from backend import integrity_monitor
+            cancelled = integrity_monitor.cancel_scan()
+            return jsonify({"ok": cancelled})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/collection/integrity/scan/status", methods=["GET"])
+    def collection_integrity_scan_status() -> Response:
+        """Return progress of the current/last integrity scan for GUI polling."""
+        try:
+            from backend import integrity_monitor
+            return jsonify(integrity_monitor.get_scan_status())
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/collection/integrity/scan/history", methods=["GET"])
+    def collection_integrity_scan_history() -> Response:
+        """Return recent integrity scan history. Query param: mount_id (optional)."""
+        try:
+            mount_id = request.args.get("mount_id")
+            history = database.get_integrity_scan_history(
+                mount_id=int(mount_id) if mount_id else None
+            )
+            return jsonify({"history": history})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/collection/integrity/summary", methods=["GET"])
+    def collection_integrity_summary() -> Response:
+        """Return per-mount integrity status counts for MountCard badges."""
+        try:
+            return jsonify(database.get_mount_integrity_summary())
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/collection/integrity/status", methods=["GET"])
+    def collection_integrity_status() -> Response:
+        """Return per-LB integrity status rows. Query params: mount_id, status (optional)."""
+        try:
+            mount_id = request.args.get("mount_id")
+            status = request.args.get("status")
+            rows = database.get_collection_integrity_status(
+                mount_id=int(mount_id) if mount_id else None,
+                status=status or None,
+            )
+            return jsonify({"status": rows})
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 

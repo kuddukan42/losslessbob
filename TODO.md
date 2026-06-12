@@ -22,17 +22,6 @@ the existing `forum_posts` table (or a parallel `scraped_posts` table) so the GU
 Should be runnable on-demand (e.g. "Sync from WTRF" button) and optionally on startup.
 Credentials already managed by credentials.py; HTTP session logic already in forum_poster.py.
 
-TODO-111: Collection integrity monitor — hash-based change detection for collection folders
-Priority: Medium
-Status: Open
-Added: 2026-06-09
-Description: Build a hashing system that watches collection mount folders for file changes.
-On initial scan, compute a fast hash (e.g. xxHash or MD5 of size+mtime as a quick fingerprint,
-with optional full-content hash) for every file and store results in the DB. On subsequent
-scans, detect: deleted/missing files, new files, and changed files (hash mismatch). Surface
-findings in the GUI — e.g. a badge or alert on the affected collection mount card or a
-dedicated integrity report view. Should be runnable on-demand and optionally on a schedule.
-
 TODO-109: Python best practices — BP document and code review
 Priority: Low
 Status: In Progress

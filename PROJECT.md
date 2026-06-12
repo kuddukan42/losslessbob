@@ -57,7 +57,8 @@ losslessbob/
 │   ├── site_crawler.py       # Full-domain BFS site mirror spider (data/site/)
 │   ├── html_utils.py         # rewrite_links(): server-absolute → relative for file:// browsing
 │   ├── bootleg_scraper.py    # Bootleg-CD catalog (LBBCD index) scraper
-│   ├── scheduler.py          # Watchdog file watcher, auto-import
+│   ├── scheduler.py          # Watchdog file watcher, auto-import, scheduled integrity scans
+│   ├── integrity_monitor.py  # TODO-111: lbdir-based collection integrity scan engine
 │   ├── fingerprint.py        # Acoustic fingerprinting engine (Wang/Shazam landmark algorithm)
 │   ├── sox_utils.py          # SoX/ffmpeg tool detection + spectrogram generation
 │   ├── startup_log.py        # Startup timing logger → data/startup.log
@@ -203,16 +204,17 @@ Content table over `entries`. Columns: `description`, `setlist`, `location`, `da
 
 Index: `idx_changes_lb ON entry_changes(lb_number, changed_at DESC)`.
 
-### `integrity_events` — Watchdog file-change alert log
+### `integrity_events` — Watchdog file-change / integrity-scan alert log
 | Column | Type | Notes |
 |--------|------|-------|
 | id | INTEGER PK | Auto-increment |
 | lb_number | INTEGER | Owning collection entry |
 | disk_path | TEXT | Path being watched |
-| event_type | TEXT | e.g. `'deleted'`, `'modified'` |
+| event_type | TEXT | `'missing'` (watcher); `'content_changed'`, `'tags_changed'`, `'files_missing'`, `'restored'` (TODO-111 integrity scan) |
 | detail | TEXT | Human-readable description |
 | occurred_at | TIMESTAMP | Defaults to CURRENT_TIMESTAMP |
 | acknowledged | INTEGER | 0 = unread, 1 = dismissed |
+| mount_id | INTEGER | TODO-111: FK → `collection_mounts(id)`, set by integrity scans (NULL for watcher events) |
 
 ### `torrents` — Generated .torrent file records
 | Column | Type | Notes |
@@ -493,6 +495,36 @@ Maps each concert year to a destination mount + optional sub-path. Used by `file
 Index: `idx_routes_mount ON collection_routes(mount_id)`.
 `meta` key `pipeline_file_mode` (`'move'` or `'copy'`) controls whether `filer.py` moves or copies folders.
 
+### `collection_integrity_status` — TODO-111: latest per-LB integrity scan result
+| Column | Type | Notes |
+|--------|------|-------|
+| lb_number | INTEGER PK | Owning collection entry |
+| mount_id | INTEGER | FK → `collection_mounts(id)` ON DELETE SET NULL; best-prefix match of `disk_path` |
+| disk_path | TEXT NOT NULL | Folder verified |
+| status | TEXT NOT NULL | `pass \| content_issue \| tag_issue \| missing_files \| no_lbdir \| error` |
+| content_issues | INTEGER | Count of files with `ffp_status == 'fail'` (bitrot/corruption) |
+| tag_issues | INTEGER | Count of files with `md5_status == 'fail'` and `ffp_status` pass/na (tags-only edit) |
+| missing_count | INTEGER | Count of lbdir-listed files with `overall == 'missing'` |
+| total_files | INTEGER | Total lbdir-listed files considered (excludes `overall == 'extra'`) |
+| checked_at | TIMESTAMP | Defaults to CURRENT_TIMESTAMP, updated on each scan |
+
+Index: `idx_cistatus_mount ON collection_integrity_status(mount_id, status)`.
+
+### `collection_integrity_scans` — TODO-111: integrity scan run history
+| Column | Type | Notes |
+|--------|------|-------|
+| id | INTEGER PK | Auto-increment |
+| mount_id | INTEGER | FK → `collection_mounts(id)` ON DELETE CASCADE; NULL = whole-collection scan |
+| status | TEXT NOT NULL | `running \| done \| error \| cancelled` |
+| started_at | TIMESTAMP | Defaults to CURRENT_TIMESTAMP |
+| finished_at | TIMESTAMP | NULL while running |
+| folders_checked / folders_pass / folders_content_issue / folders_tag_issue / folders_missing / folders_no_lbdir | INTEGER | Aggregate per-status folder counts |
+| error | TEXT | Error message if status=error |
+
+Index: `idx_ciscans_mount ON collection_integrity_scans(mount_id, started_at DESC)`.
+`meta` key `integrity_scan_interval_hours` (default `"0"` = disabled) controls the
+scheduled scan interval, checked hourly by `scheduler._integrity_scan_worker`.
+
 ---
 
 ## Backend: Flask API (`backend/app.py`)
@@ -663,6 +695,16 @@ Index: `idx_routes_mount ON collection_routes(mount_id)`.
 | POST | `/api/pipeline/file/start` | Start filing one folder into the collection (async, background thread). Body: `{folders:[{path, lb_number, mount_id?}]}` — only the first entry is used. `mount_id`, if given and different from the year-routed mount, overrides the destination mount (same routed sub_path). Returns `{ok, error?, error_code?}` immediately; error codes include `busy`, `src_missing`, `no_date`, `no_route`, `mount_offline`, `dest_exists`, `db_error`. Poll `/api/pipeline/file/status` for progress and the final result. |
 | GET | `/api/pipeline/file/status` | Poll the running/last filing job started via `/api/pipeline/file/start`. Returns `{running, stage, path, dest, file_mode, lb_number, files_done, files_total, bytes_done, bytes_total, current_file, result}` where `stage` is `idle\|scanning\|copying\|moving\|done\|failed` and `result` (once `running` is false) is `{ok, filed_to, dest, file_mode, error, error_code}`. |
 | POST | `/api/pipeline/file/preview` | Pre-flight resolve without moving files. Same body as `/api/pipeline/file/start` (incl. optional `mount_id`). Returns per-folder `{ok, dest, mount_label, error, error_code}`. |
+
+### Collection Integrity Monitor (TODO-111)
+| Method | Route | Description |
+|--------|-------|-------------|
+| POST | `/api/collection/integrity/scan` | Start a background integrity scan. Body: `{mount_id?}` — omit for whole-collection scan. Returns `{ok}` or `409 {ok:false, error}` if a scan is already running. |
+| POST | `/api/collection/integrity/scan/cancel` | Request cancellation of the running scan. Returns `{ok}` (false if none running). |
+| GET | `/api/collection/integrity/scan/status` | Poll scan progress. Returns `{running, mount_id, folders_done, folders_total, current_folder, result}`. |
+| GET | `/api/collection/integrity/scan/history` | Recent scan history. Query param: `mount_id` (optional; omit = whole-collection scans). Returns `{history:[...]}` rows from `collection_integrity_scans`. |
+| GET | `/api/collection/integrity/summary` | Per-mount status counts for GUI badges. Returns `{<mount_id>: {pass, content_issue, tag_issue, missing_files, no_lbdir, error}, ...}` (mount_id `"0"` = unmatched). |
+| GET | `/api/collection/integrity/status` | Per-LB integrity rows. Query params: `mount_id`, `status` (both optional). Returns `{status:[...]}` rows from `collection_integrity_status`. |
 
 ### DB Editor
 | Method | Route | Description |
@@ -1396,6 +1438,7 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 
 | Date | Change |
 |------|--------|
+| 2026-06-12 | TODO-111: collection integrity monitor — new `backend/integrity_monitor.py` reuses `checksum_utils.verify_folder_lbdir()` per collection folder, classifying `ffp_status`/`md5_status`/`overall` into `content_issue`/`tag_issue`/`missing_files`/`no_lbdir`/`pass` (ignoring `overall == 'extra'`); new `collection_integrity_status`/`collection_integrity_scans` tables, `integrity_events.mount_id` column + new event types, 6 new `/api/collection/integrity/*` routes, optional hourly-checked scheduler (`integrity_scan_interval_hours`); `ScreenMounts.tsx` gains MountCard integrity badges/scan buttons and a "4 · Integrity Monitor" section (scan controls, progress, findings table, change log with acknowledge). |
 | 2026-06-12 | GUI reorg: `CollectionRoutingCard` (mounts, year routing, filing mode, preview tester) split out of `ScreenSetup` into a new `ScreenMounts` screen, with its own nav item directly below Setup in the Settings group, `/mounts` route, and "mounts" hard-drive icon. |
 | 2026-06-12 | TODO-110: `get_mounts_with_stats()` adds `total` (capacity) and `used_pct` to each mount via `shutil.disk_usage()`; pipeline Collect step's `CollectDetail.tsx` MountPicker cards show "free of total" plus a colour-coded usage bar (warn ≥75%, bad ≥90%), updating reactively as the pipeline re-resolves the Collect step. |
 | 2026-06-12 | TODO-112: backend uptime clock — new `GET /api/system/uptime` (`{uptime_seconds}`) sharing a single `_process_start_time` with `/api/admin/status`; About dialog's About tab shows a live HH:MM:SS uptime field next to version/build, to help confirm whether a backend restart actually happened. |

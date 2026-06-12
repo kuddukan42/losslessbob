@@ -22,6 +22,92 @@ interface CollectionRoute {
   root_path?: string
 }
 
+// ── Integrity Monitor types (TODO-111) ─────────────────────────────────────────
+
+interface IntegritySummaryEntry {
+  pass: number
+  content_issue: number
+  tag_issue: number
+  missing_files: number
+  no_lbdir: number
+  error: number
+}
+
+interface IntegrityStatusRow {
+  lb_number: number
+  mount_id: number | null
+  disk_path: string
+  status: string
+  content_issues: number
+  tag_issues: number
+  missing_count: number
+  total_files: number
+  checked_at: string
+}
+
+interface IntegrityEvent {
+  id: number
+  lb_number: number | null
+  disk_path: string | null
+  event_type: string
+  detail: string | null
+  occurred_at: string
+  acknowledged: number
+  mount_id: number | null
+}
+
+interface ScanStatus {
+  running: boolean
+  mount_id: number | null
+  folders_done: number
+  folders_total: number
+  current_folder: string | null
+  result: Record<string, number> | null
+}
+
+const SCAN_INTERVAL_OPTIONS: { value: string; label: string }[] = [
+  { value: '0', label: 'Off' },
+  { value: '24', label: 'Daily' },
+  { value: '168', label: 'Weekly' },
+  { value: '720', label: 'Monthly' },
+]
+
+const INTEGRITY_STATUS_LABELS: Record<string, string> = {
+  content_issue: 'Corrupted audio',
+  tag_issue: 'Tags changed',
+  missing_files: 'Missing files',
+  no_lbdir: 'No lbdir manifest',
+  error: 'Scan error',
+}
+
+const INTEGRITY_EVENT_LABELS: Record<string, string> = {
+  content_changed: 'Audio content changed',
+  tags_changed: 'Tags/metadata changed',
+  files_missing: 'Files missing',
+  restored: 'Integrity restored',
+  missing: 'Folder unreachable',
+}
+
+function toneForIntegrityStatus(status: string): 'ok' | 'warn' | 'bad' | 'info' | 'mute' {
+  switch (status) {
+    case 'content_issue': return 'bad'
+    case 'error': return 'bad'
+    case 'missing_files': return 'warn'
+    case 'tag_issue': return 'warn'
+    default: return 'mute'
+  }
+}
+
+function toneForIntegrityEvent(eventType: string): 'ok' | 'warn' | 'bad' | 'info' | 'mute' {
+  switch (eventType) {
+    case 'content_changed': return 'bad'
+    case 'files_missing': return 'warn'
+    case 'tags_changed': return 'warn'
+    case 'restored': return 'ok'
+    default: return 'mute'
+  }
+}
+
 const YEAR_MIN = 1958
 const YEAR_MAX = 2026
 
@@ -83,8 +169,27 @@ function MountForm({
   )
 }
 
-function MountCard({ m, routeCount, onEdit, onDelete }: {
-  m: CollectionMount; routeCount: number; onEdit: (m: CollectionMount) => void; onDelete: (m: CollectionMount) => void
+function IntegrityBadge({ summary }: { summary?: IntegritySummaryEntry }) {
+  if (!summary) return null
+  if (summary.content_issue > 0) {
+    return <Pill tone="bad" soft dot>{summary.content_issue} corrupt</Pill>
+  }
+  if (summary.missing_files > 0) {
+    return <Pill tone="warn" soft dot>{summary.missing_files} missing</Pill>
+  }
+  if (summary.tag_issue > 0) {
+    return <Pill tone="warn" soft dot>{summary.tag_issue} tag-only</Pill>
+  }
+  if (summary.pass > 0) {
+    return <Pill tone="ok" soft dot>verified</Pill>
+  }
+  return null
+}
+
+function MountCard({ m, routeCount, summary, scanning, onEdit, onDelete, onScan }: {
+  m: CollectionMount; routeCount: number; summary?: IntegritySummaryEntry; scanning?: boolean
+  onEdit: (m: CollectionMount) => void; onDelete: (m: CollectionMount) => void
+  onScan: (m: CollectionMount) => void
 }) {
   const [hover, setHover] = useState(false)
   return (
@@ -99,7 +204,9 @@ function MountCard({ m, routeCount, onEdit, onDelete }: {
         <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 13, fontWeight: 700, color: 'var(--lbb-fg)' }}>{m.label}</span>
         <div style={{ flex: 1 }} />
         {!m.online && <Pill tone="bad" soft>offline</Pill>}
+        <IntegrityBadge summary={summary} />
         <div style={{ display: 'flex', gap: 2, opacity: hover ? 1 : 0, transition: 'opacity 120ms' }}>
+          <IconButton icon="verify" size={24} title="Scan integrity" active={scanning} onClick={() => onScan(m)} />
           <IconButton icon="rename" size={24} title="Edit mount" onClick={() => onEdit(m)} />
           <IconButton icon="trash" size={24} title="Delete mount" onClick={() => onDelete(m)} />
         </div>
@@ -278,6 +385,13 @@ function CollectionRoutingCard() {
   const [expanded, setExpanded] = useState<Set<number>>(new Set())
   const [toast, setToast] = useState<string | null>(null)
 
+  // Integrity monitor (TODO-111)
+  const [integritySummary, setIntegritySummary] = useState<Record<string, IntegritySummaryEntry>>({})
+  const [integrityStatus, setIntegrityStatus] = useState<IntegrityStatusRow[]>([])
+  const [integrityEvents, setIntegrityEvents] = useState<IntegrityEvent[]>([])
+  const [scanStatus, setScanStatus] = useState<ScanStatus | null>(null)
+  const [scanInterval, setScanInterval] = useState('0')
+
   function showMsg(msg: string) {
     setToast(msg)
     setTimeout(() => setToast(null), 3000)
@@ -304,14 +418,63 @@ function CollectionRoutingCard() {
       const r = await fetch(`${BASE}/api/db/settings`)
       const d = await r.json()
       if (d.pipeline_file_mode) setFileMode(d.pipeline_file_mode)
+      if (d.integrity_scan_interval_hours) setScanInterval(String(d.integrity_scan_interval_hours))
     } catch { /* silent */ }
   }, [])
+
+  const loadIntegritySummary = useCallback(async () => {
+    try {
+      const r = await fetch(`${BASE}/api/collection/integrity/summary`)
+      const d = await r.json()
+      setIntegritySummary(d ?? {})
+    } catch { /* silent */ }
+  }, [])
+
+  const loadIntegrityStatus = useCallback(async () => {
+    try {
+      const r = await fetch(`${BASE}/api/collection/integrity/status`)
+      const d = await r.json()
+      setIntegrityStatus(((d.status ?? []) as IntegrityStatusRow[]).filter(row => row.status !== 'pass'))
+    } catch { /* silent */ }
+  }, [])
+
+  const loadIntegrityEvents = useCallback(async () => {
+    try {
+      const r = await fetch(`${BASE}/api/integrity/events`)
+      const d = await r.json()
+      setIntegrityEvents(Array.isArray(d) ? d : [])
+    } catch { /* silent */ }
+  }, [])
+
+  const loadScanStatus = useCallback(async () => {
+    try {
+      const r = await fetch(`${BASE}/api/collection/integrity/scan/status`)
+      const d = await r.json()
+      setScanStatus(prev => {
+        if (prev?.running && !d.running) {
+          loadIntegritySummary()
+          loadIntegrityStatus()
+          loadIntegrityEvents()
+        }
+        return d
+      })
+    } catch { /* silent */ }
+  }, [loadIntegritySummary, loadIntegrityStatus, loadIntegrityEvents])
 
   useEffect(() => {
     loadMounts()
     loadRoutes()
     loadFileMode()
-  }, [loadMounts, loadRoutes, loadFileMode])
+    loadIntegritySummary()
+    loadIntegrityStatus()
+    loadIntegrityEvents()
+    loadScanStatus()
+  }, [loadMounts, loadRoutes, loadFileMode, loadIntegritySummary, loadIntegrityStatus, loadIntegrityEvents, loadScanStatus])
+
+  useEffect(() => {
+    const poll = setInterval(loadScanStatus, 1500)
+    return () => clearInterval(poll)
+  }, [loadScanStatus])
 
   async function saveMount(data: Partial<CollectionMount>) {
     try {
@@ -373,6 +536,39 @@ function CollectionRoutingCard() {
     })
   }
 
+  async function startScan(mountId?: number) {
+    try {
+      const r = await fetch(`${BASE}/api/collection/integrity/scan`, {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(mountId !== undefined ? { mount_id: mountId } : {}),
+      })
+      const d = await r.json()
+      if (!d.ok) showMsg(d.error || 'A scan is already running')
+      else loadScanStatus()
+    } catch (e) { showMsg((e as Error).message) }
+  }
+
+  async function cancelScan() {
+    await fetch(`${BASE}/api/collection/integrity/scan/cancel`, { method: 'POST' })
+  }
+
+  async function saveScanInterval(hours: string) {
+    setScanInterval(hours)
+    await fetch(`${BASE}/api/db/settings`, {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ integrity_scan_interval_hours: hours }),
+    })
+  }
+
+  async function ackEvents(ids: number[]) {
+    if (!ids.length) return
+    await fetch(`${BASE}/api/integrity/ack`, {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ids }),
+    })
+    loadIntegrityEvents()
+  }
+
   const routeCountFor = (id: number) => routes.filter(r => r.mount_id === id).length
   const toggleExpand = (id: number) => setExpanded(s => { const n = new Set(s); n.has(id) ? n.delete(id) : n.add(id); return n })
   const offlineCount = mounts.filter(m => !m.online).length
@@ -420,8 +616,11 @@ function CollectionRoutingCard() {
             </div>
           ) : (
             <MountCard key={m.id} m={m} routeCount={routeCountFor(m.id)}
+              summary={integritySummary[String(m.id)]}
+              scanning={!!scanStatus?.running && scanStatus.mount_id === m.id}
               onEdit={mm => { setEditId(mm.id); setAdding(false) }}
-              onDelete={deleteMount} />
+              onDelete={deleteMount}
+              onScan={mm => startScan(mm.id)} />
           ))}
         </div>
         {adding && (
@@ -541,6 +740,99 @@ function CollectionRoutingCard() {
             <Banner tone="warn" icon="alert" title="Copy mode leaves originals in place">
               Filed folders are duplicated to the collection mount; the staging copy is <strong>not removed</strong>. Reclaim space by clearing staging manually once you've confirmed the copy.
             </Banner>
+          </div>
+        )}
+      </div>
+
+      {/* 4 · Integrity Monitor */}
+      <div style={{ marginTop: 22, paddingTop: 18, borderTop: '1px solid var(--lbb-border)' }}>
+        <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginBottom: 12 }}>
+          <span style={{ width: 18, height: 18, flex: '0 0 18px', borderRadius: 5, background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border2)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: 10, fontWeight: 700, color: 'var(--lbb-fg2)', fontFamily: 'var(--lbb-mono)' }}>4</span>
+          <div style={{ flex: 1 }}>
+            <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--lbb-fg)' }}>Integrity monitor</div>
+            <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', marginTop: 2, lineHeight: 1.4 }}>
+              Verifies collection folders against their lbdir manifests — catches bitrot/corruption, missing or moved files, and tag-only edits.
+            </div>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+            <span style={{ fontSize: 11, color: 'var(--lbb-fg3)' }}>Auto-scan</span>
+            <div style={{ position: 'relative', display: 'inline-flex' }}>
+              <select value={scanInterval} onChange={e => saveScanInterval(e.target.value)} style={selectStyle}>
+                {SCAN_INTERVAL_OPTIONS.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
+              </select>
+              <Icon name="chevDown" size={12} style={{ position: 'absolute', right: 8, top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none', color: 'var(--lbb-fg3)' }} />
+            </div>
+            {scanStatus?.running ? (
+              <Button variant="danger" size="sm" icon="x" onClick={cancelScan}>Cancel scan</Button>
+            ) : (
+              <Button variant="secondary" size="sm" icon="verify" onClick={() => startScan()}>Scan now</Button>
+            )}
+          </div>
+        </div>
+
+        {scanStatus?.running && (
+          <div style={{ marginBottom: 12 }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 11, color: 'var(--lbb-fg3)', marginBottom: 4 }}>
+              <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', fontFamily: 'var(--lbb-mono)' }}>
+                Scanning{scanStatus.current_folder ? `: ${scanStatus.current_folder}` : '…'}
+              </span>
+              <span style={{ fontVariantNumeric: 'tabular-nums', flex: '0 0 auto', marginLeft: 8 }}>{scanStatus.folders_done} / {scanStatus.folders_total}</span>
+            </div>
+            <div style={{ height: 6, borderRadius: 3, background: 'var(--lbb-surface2)', overflow: 'hidden', border: '1px solid var(--lbb-border)' }}>
+              <div style={{
+                height: '100%',
+                width: `${scanStatus.folders_total ? Math.round((scanStatus.folders_done / scanStatus.folders_total) * 100) : 0}%`,
+                background: 'var(--lbb-accent-mid)', transition: 'width 200ms ease',
+              }} />
+            </div>
+          </div>
+        )}
+
+        {integrityStatus.length > 0 ? (
+          <div style={{ border: '1px solid var(--lbb-border)', borderRadius: 8, overflow: 'hidden' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '70px 110px 130px 1fr 150px', gap: 0, padding: '6px 12px', background: 'var(--lbb-surface2)', borderBottom: '1px solid var(--lbb-border)', fontSize: 10.5, fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.06, textTransform: 'uppercase' }}>
+              <span>LB#</span><span>Mount</span><span>Issue</span><span>Folder</span><span>Checked</span>
+            </div>
+            {integrityStatus.map(row => (
+              <div key={row.lb_number} style={{ display: 'grid', gridTemplateColumns: '70px 110px 130px 1fr 150px', gap: 0, padding: '6px 12px', borderBottom: '1px solid var(--lbb-border)', fontSize: 12, alignItems: 'center' }}>
+                <span style={{ fontFamily: 'var(--lbb-mono)', fontWeight: 600 }}>{row.lb_number}</span>
+                <span style={{ fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-fg2)' }}>{mounts.find(m => m.id === row.mount_id)?.label ?? '—'}</span>
+                <Pill tone={toneForIntegrityStatus(row.status)} soft dot>{INTEGRITY_STATUS_LABELS[row.status] ?? row.status}</Pill>
+                <span style={{ fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-fg3)', fontSize: 11.5, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }} title={row.disk_path}>
+                  {row.disk_path}
+                  {row.content_issues > 0 && ` · ${row.content_issues} corrupt`}
+                  {row.tag_issues > 0 && ` · ${row.tag_issues} tag-only`}
+                  {row.missing_count > 0 && ` · ${row.missing_count} missing`}
+                </span>
+                <span style={{ fontSize: 11, color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)' }}>{row.checked_at}</span>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div style={{ padding: '14px', textAlign: 'center', color: 'var(--lbb-fg3)', fontSize: 12 }}>
+            No integrity issues found. Run a scan to check your collection against its lbdir manifests.
+          </div>
+        )}
+
+        {integrityEvents.length > 0 && (
+          <div style={{ marginTop: 14 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
+              <span style={{ fontSize: 10.5, fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase' }}>Recent changes</span>
+              <Pill tone="info" soft dot>{integrityEvents.length} unacknowledged</Pill>
+              <div style={{ flex: 1 }} />
+              <Button variant="ghost" size="sm" onClick={() => ackEvents(integrityEvents.map(e => e.id))}>Acknowledge all</Button>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+              {integrityEvents.map(ev => (
+                <div key={ev.id} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '8px 12px', borderRadius: 7, border: '1px solid var(--lbb-border)', background: 'var(--lbb-surface2)' }}>
+                  <Pill tone={toneForIntegrityEvent(ev.event_type)} soft dot>{INTEGRITY_EVENT_LABELS[ev.event_type] ?? ev.event_type}</Pill>
+                  {ev.lb_number != null && <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 12, fontWeight: 600 }}>LB-{ev.lb_number}</span>}
+                  <span style={{ fontSize: 11.5, color: 'var(--lbb-fg2)', flex: 1, minWidth: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{ev.detail}</span>
+                  <span style={{ fontSize: 11, color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)', flex: '0 0 auto' }}>{ev.occurred_at}</span>
+                  <IconButton icon="check" size={24} title="Acknowledge" onClick={() => ackEvents([ev.id])} />
+                </div>
+              ))}
+            </div>
           </div>
         )}
       </div>

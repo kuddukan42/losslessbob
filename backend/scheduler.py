@@ -1,12 +1,13 @@
 import logging
 import threading
 import time
+from datetime import datetime, timedelta
 from pathlib import Path
 
 from watchdog.events import FileSystemEventHandler
 from watchdog.observers import Observer
 
-from backend.db import DB_PATH, get_meta
+from backend.db import DB_PATH, get_integrity_scan_history, get_meta
 from backend.importer import md5_file, run_import
 from backend.paths import DATA_DIR
 
@@ -172,3 +173,54 @@ def stop_collection_watcher():
         _collection_poll_thread.join(timeout=5)
     _collection_poll_stop = None
     _collection_poll_thread = None
+
+
+# ── Scheduled collection integrity scans (TODO-111) ────────────────────────────
+
+_integrity_scan_stop: threading.Event | None = None
+_integrity_scan_thread: threading.Thread | None = None
+
+_INTEGRITY_SCAN_CHECK_INTERVAL = 3600  # seconds; re-check the schedule hourly
+
+
+def _integrity_scan_worker(stop_event: threading.Event, db_path=None) -> None:
+    from backend import integrity_monitor
+    while not stop_event.wait(_INTEGRITY_SCAN_CHECK_INTERVAL):
+        try:
+            raw_hours = get_meta("integrity_scan_interval_hours", db_path)
+            interval_hours = float(raw_hours) if raw_hours else 0
+            if interval_hours <= 0:
+                continue
+            history = get_integrity_scan_history(mount_id=None, limit=1, db_path=db_path)
+            if history:
+                started_at = datetime.fromisoformat(history[0]["started_at"])
+                if datetime.now() - started_at < timedelta(hours=interval_hours):
+                    continue
+            integrity_monitor.start_scan_async()
+        except Exception:
+            _log.exception("integrity_scan: scheduler check failed")
+
+
+def start_integrity_scan_scheduler(db_path=None):
+    """Start the background thread that triggers scheduled integrity scans."""
+    global _integrity_scan_stop, _integrity_scan_thread
+    stop_integrity_scan_scheduler()
+    _integrity_scan_stop = threading.Event()
+    _integrity_scan_thread = threading.Thread(
+        target=_integrity_scan_worker,
+        args=(_integrity_scan_stop,),
+        kwargs={"db_path": db_path},
+        daemon=True,
+        name="integrity-scan-scheduler",
+    )
+    _integrity_scan_thread.start()
+
+
+def stop_integrity_scan_scheduler():
+    global _integrity_scan_stop, _integrity_scan_thread
+    if _integrity_scan_stop:
+        _integrity_scan_stop.set()
+    if _integrity_scan_thread:
+        _integrity_scan_thread.join(timeout=5)
+    _integrity_scan_stop = None
+    _integrity_scan_thread = None

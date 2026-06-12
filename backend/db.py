@@ -574,6 +574,36 @@ CREATE TABLE IF NOT EXISTS collection_routes (
     sub_path  TEXT NOT NULL DEFAULT ''
 );
 CREATE INDEX IF NOT EXISTS idx_routes_mount ON collection_routes(mount_id);
+
+-- ── Collection Integrity Monitor (TODO-111) ────────────────────────────────
+CREATE TABLE IF NOT EXISTS collection_integrity_status (
+    lb_number      INTEGER PRIMARY KEY,
+    mount_id       INTEGER REFERENCES collection_mounts(id) ON DELETE SET NULL,
+    disk_path      TEXT NOT NULL,
+    status         TEXT NOT NULL,
+    content_issues INTEGER DEFAULT 0,
+    tag_issues     INTEGER DEFAULT 0,
+    missing_count  INTEGER DEFAULT 0,
+    total_files    INTEGER DEFAULT 0,
+    checked_at     TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+CREATE INDEX IF NOT EXISTS idx_cistatus_mount ON collection_integrity_status(mount_id, status);
+
+CREATE TABLE IF NOT EXISTS collection_integrity_scans (
+    id                    INTEGER PRIMARY KEY AUTOINCREMENT,
+    mount_id              INTEGER REFERENCES collection_mounts(id) ON DELETE CASCADE,
+    status                TEXT NOT NULL DEFAULT 'running',
+    started_at            TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    finished_at           TIMESTAMP,
+    folders_checked       INTEGER DEFAULT 0,
+    folders_pass          INTEGER DEFAULT 0,
+    folders_content_issue INTEGER DEFAULT 0,
+    folders_tag_issue     INTEGER DEFAULT 0,
+    folders_missing       INTEGER DEFAULT 0,
+    folders_no_lbdir      INTEGER DEFAULT 0,
+    error                 TEXT
+);
+CREATE INDEX IF NOT EXISTS idx_ciscans_mount ON collection_integrity_scans(mount_id, started_at DESC);
 """
 
 _MD5_RE = re.compile(r'^([0-9a-fA-F]{32})\s+\*?(.+)$')
@@ -993,6 +1023,10 @@ def init_db(db_path=None):
         _mc_cols = [r[1] for r in conn.execute("PRAGMA table_info(my_collection)").fetchall()]
         if "lbdir_verified_at" not in _mc_cols:
             conn.execute("ALTER TABLE my_collection ADD COLUMN lbdir_verified_at TIMESTAMP")
+        # Migration: add mount_id to integrity_events (TODO-111)
+        _ie_cols = [r[1] for r in conn.execute("PRAGMA table_info(integrity_events)").fetchall()]
+        if "mount_id" not in _ie_cols:
+            conn.execute("ALTER TABLE integrity_events ADD COLUMN mount_id INTEGER")
         # Migration: collection_mounts / collection_routes tables (pipeline step 5)
         if not conn.execute(
             "SELECT name FROM sqlite_master WHERE type='table' AND name='collection_mounts'"
@@ -2378,13 +2412,13 @@ def purge_collection_meta(db_path=None) -> None:
 
 
 def log_integrity_event(lb_number: int, disk_path: str, event_type: str, detail: str,
-                         db_path=None) -> None:
-    """Insert a watchdog filesystem event into integrity_events."""
+                         mount_id: int | None = None, db_path=None) -> None:
+    """Insert a watchdog filesystem or integrity-scan event into integrity_events."""
     get_write_queue().execute(
         lambda c: c.execute(
-            "INSERT INTO integrity_events(lb_number, disk_path, event_type, detail) "
-            "VALUES(?,?,?,?)",
-            (lb_number, disk_path, event_type, detail),
+            "INSERT INTO integrity_events(lb_number, disk_path, event_type, detail, mount_id) "
+            "VALUES(?,?,?,?,?)",
+            (lb_number, disk_path, event_type, detail, mount_id),
         )
     )
 
@@ -2416,6 +2450,183 @@ def ack_integrity_events(ids: list, db_path=None) -> None:
 def purge_integrity_events(db_path=None) -> None:
     """Delete all watchdog integrity events."""
     get_write_queue().execute(lambda c: c.execute("DELETE FROM integrity_events"))
+
+
+# ── TODO-111: Collection Integrity Monitor ───────────────────────────────────
+
+def upsert_collection_integrity_status(
+    lb_number: int,
+    mount_id: int | None,
+    disk_path: str,
+    status: str,
+    content_issues: int = 0,
+    tag_issues: int = 0,
+    missing_count: int = 0,
+    total_files: int = 0,
+    db_path=None,
+) -> None:
+    """Insert or replace the latest integrity-scan result for a collection entry.
+
+    Args:
+        lb_number: Collection entry LB number (primary key of the status row).
+        mount_id: Owning collection_mounts.id, or None if unmatched.
+        disk_path: Folder path that was verified.
+        status: One of pass, content_issue, tag_issue, missing_files, no_lbdir, error.
+        content_issues: Count of files with ffp_status == 'fail' (audio/bitrot).
+        tag_issues: Count of files with md5 fail but ffp pass/na (tags only).
+        missing_count: Count of lbdir-listed files missing from disk.
+        total_files: Total lbdir-listed files considered (excluding 'extra').
+    """
+    _args = (lb_number, mount_id, disk_path, status, content_issues, tag_issues,
+             missing_count, total_files)
+    get_write_queue().execute(
+        lambda c: c.execute(
+            "INSERT INTO collection_integrity_status "
+            "(lb_number, mount_id, disk_path, status, content_issues, tag_issues, "
+            " missing_count, total_files, checked_at) "
+            "VALUES(?,?,?,?,?,?,?,?,datetime('now')) "
+            "ON CONFLICT(lb_number) DO UPDATE SET "
+            "mount_id=excluded.mount_id, disk_path=excluded.disk_path, "
+            "status=excluded.status, content_issues=excluded.content_issues, "
+            "tag_issues=excluded.tag_issues, missing_count=excluded.missing_count, "
+            "total_files=excluded.total_files, checked_at=excluded.checked_at",
+            _args,
+        )
+    )
+
+
+def get_collection_integrity_status(
+    mount_id: int | None = None, status: str | None = None, db_path=None
+) -> list[dict]:
+    """Return collection_integrity_status rows, optionally filtered by mount and status.
+
+    Args:
+        mount_id: If given, only rows for this collection_mounts.id.
+        status: If given, only rows with this status value.
+
+    Returns:
+        List of row dicts, ordered by lb_number.
+    """
+    where = []
+    params: list = []
+    if mount_id is not None:
+        where.append("mount_id=?")
+        params.append(mount_id)
+    if status is not None:
+        where.append("status=?")
+        params.append(status)
+    clause = f"WHERE {' AND '.join(where)}" if where else ""
+    with get_connection(db_path) as conn:
+        rows = conn.execute(
+            f"SELECT * FROM collection_integrity_status {clause} ORDER BY lb_number",
+            params,
+        ).fetchall()
+    return [dict(r) for r in rows]
+
+
+def get_mount_integrity_summary(db_path=None) -> dict[int, dict[str, int]]:
+    """Return per-mount counts of integrity statuses for GUI badges.
+
+    Returns:
+        Mapping of mount_id (or 0 for unmatched/None) to a dict with keys
+        pass, content_issue, tag_issue, missing_files, no_lbdir, error — each
+        the count of collection_integrity_status rows with that status.
+    """
+    statuses = ("pass", "content_issue", "tag_issue", "missing_files", "no_lbdir", "error")
+    with get_connection(db_path) as conn:
+        rows = conn.execute(
+            "SELECT COALESCE(mount_id, 0) AS mid, status, COUNT(*) AS n "
+            "FROM collection_integrity_status GROUP BY mid, status"
+        ).fetchall()
+    summary: dict[int, dict[str, int]] = {}
+    for r in rows:
+        bucket = summary.setdefault(r["mid"], {s: 0 for s in statuses})
+        if r["status"] in bucket:
+            bucket[r["status"]] = r["n"]
+    return summary
+
+
+def record_integrity_scan_start(mount_id: int | None = None, db_path=None) -> int:
+    """Insert a new collection_integrity_scans row in 'running' state.
+
+    Args:
+        mount_id: Mount being scanned, or None for a whole-collection scan.
+
+    Returns:
+        The new scan row's id.
+    """
+    def _run(c):
+        cur = c.execute(
+            "INSERT INTO collection_integrity_scans(mount_id, status) VALUES(?, 'running')",
+            (mount_id,),
+        )
+        return cur.lastrowid
+
+    return get_write_queue().execute(_run)
+
+
+def finish_integrity_scan(
+    scan_id: int,
+    status: str,
+    counts: dict[str, int],
+    error: str | None = None,
+    db_path=None,
+) -> None:
+    """Mark a collection_integrity_scans row finished and record aggregate counts.
+
+    Args:
+        scan_id: Row id returned by record_integrity_scan_start.
+        status: Final scan status — done, error, or cancelled.
+        counts: Dict with keys folders_checked, folders_pass, folders_content_issue,
+            folders_tag_issue, folders_missing, folders_no_lbdir.
+        error: Optional error message if status == 'error'.
+    """
+    get_write_queue().execute(
+        lambda c: c.execute(
+            "UPDATE collection_integrity_scans SET "
+            "status=?, finished_at=datetime('now'), "
+            "folders_checked=?, folders_pass=?, folders_content_issue=?, "
+            "folders_tag_issue=?, folders_missing=?, folders_no_lbdir=?, error=? "
+            "WHERE id=?",
+            (
+                status,
+                counts.get("folders_checked", 0),
+                counts.get("folders_pass", 0),
+                counts.get("folders_content_issue", 0),
+                counts.get("folders_tag_issue", 0),
+                counts.get("folders_missing", 0),
+                counts.get("folders_no_lbdir", 0),
+                error,
+                scan_id,
+            ),
+        )
+    )
+
+
+def get_integrity_scan_history(
+    mount_id: int | None = None, limit: int = 20, db_path=None
+) -> list[dict]:
+    """Return recent collection_integrity_scans rows, newest first.
+
+    Args:
+        mount_id: If given, only scans for this mount (None matches whole-collection
+            scans where mount_id IS NULL).
+        limit: Maximum number of rows to return.
+    """
+    with get_connection(db_path) as conn:
+        if mount_id is None:
+            rows = conn.execute(
+                "SELECT * FROM collection_integrity_scans "
+                "WHERE mount_id IS NULL ORDER BY started_at DESC LIMIT ?",
+                (limit,),
+            ).fetchall()
+        else:
+            rows = conn.execute(
+                "SELECT * FROM collection_integrity_scans "
+                "WHERE mount_id=? ORDER BY started_at DESC LIMIT ?",
+                (mount_id, limit),
+            ).fetchall()
+    return [dict(r) for r in rows]
 
 
 def purge_entry_changes(db_path=None) -> None:

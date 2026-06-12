@@ -1,6 +1,29 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-111: Collection integrity monitor — hash-based change detection for collection folders
+Priority: Medium
+Status: Done
+Added: 2026-06-09
+Closed: 2026-06-12
+Description: Build a hashing system that watches collection mount folders for file changes.
+On initial scan, compute a fast hash for every file and store results in the DB. On
+subsequent scans, detect: deleted/missing files, new files, and changed files. Surface
+findings in the GUI. Should be runnable on-demand and optionally on a schedule.
+Implementation: Reused the existing lbdir batch-verify machinery
+(checksum_utils.verify_folder_lbdir) instead of a new fingerprint DB — per-file
+ffp_status/md5_status/overall already distinguish bitrot/corruption (ffp fail) from
+tag-only edits (md5 fail, ffp pass/na) from missing/moved files (overall missing).
+Files with overall == 'extra' are ignored — this tracks integrity of known key files,
+not folder tidiness. New backend/integrity_monitor.py orchestrates a per-folder scan
+(background thread, progress polling, cancel), new collection_integrity_status/
+collection_integrity_scans tables persist results and history, integrity_events gains
+mount_id and new transition types (content_changed/tags_changed/files_missing/restored).
+Optional hourly-checked scheduler (integrity_scan_interval_hours meta key). GUI:
+ScreenMounts.tsx MountCard severity badges + per-mount scan button, plus a new
+"4 · Integrity Monitor" section (scan controls/progress, findings table, change log
+with acknowledge).
+
 TODO-110: Pipeline — add free space and drive stats to mount cards
 Priority: Medium
 Status: Done
