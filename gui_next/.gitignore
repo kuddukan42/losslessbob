@@ -2,3 +2,8 @@ node_modules/
 out/
 dist/
 *.tsbuildinfo
+
+# guard against stray tsc-emitted .js shadowing .tsx sources (BUG-154)
+src/renderer/src/**/*.js
+src/main/**/*.js
+src/preload/**/*.js

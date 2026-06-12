@@ -1,3 +1,80 @@
+TODO-137: Pipeline — swap step order so LBDIR runs before Rename
+Priority: Medium
+Status: Open
+Added: 2026-06-11
+Description: In the pipeline workflow (ScreenPipeline.tsx / backend/app.py
+_pipeline_process_folder), step 3 (Rename proposal) currently runs before step 4
+(LBDIR retrieve + verify). Swap the order so LBDIR reconcile/verify runs first and
+Rename runs after — running Rename before LBDIR has reconciled the folder's contents
+can lead to proposing/applying the wrong folder rename. Update step numbering/labels
+in both the backend (_pipeline_process_folder, pipeline_run steps default list) and
+the GUI (PipelineRow.steps ordering, step-key iteration order, status derivation) to
+match the new order: verify -> lookup -> lbdir -> rename -> collect.
+
+TODO-136: Post editor form for existing WTRF posts
+Priority: Low
+Status: Open
+Added: 2026-06-10
+Description: Add a UI form to edit the subject and body of a WTRF forum topic that was
+previously posted through the app (or discovered via TODO-135 scraper). The backend
+already has the topic_url stored in forum_posts; use SMF's edit-post endpoint (POST to
+index.php?action=post2 with the existing msg ID and sa=useredit or equivalent). The GUI
+should surface this as an "Edit post…" action on the forum post history entry for an LB
+entry — pre-populate subject/body from a scrape of the existing topic, allow editing in a
+textarea, then submit. Depends on TODO-135 for posts not originally made through this app.
+
+TODO-135: Scrape WTRF board for existing LB posts
+Priority: Medium
+Status: Open
+Added: 2026-06-10
+Description: Scrape the WTRF SMF board(s) to discover which LB entries already have a forum
+topic, regardless of whether they were posted through this app. Parse board index pages
+(sorted by date) and individual topic subjects to extract the LB number. Store results in
+the existing `forum_posts` table (or a parallel `scraped_posts` table) so the GUI can show
+"already posted" status on the Rename/post panel without relying solely on the local log.
+Should be runnable on-demand (e.g. "Sync from WTRF" button) and optionally on startup.
+Credentials already managed by credentials.py; HTTP session logic already in forum_poster.py.
+
+TODO-113: Make app version numbering consistent
+Priority: Low
+Status: Open
+Added: 2026-06-10
+Description: The app version number appears in multiple places (e.g. package.json,
+splash screen "v1.2.0 · stable", About dialog, etc.) and these don't all match. Audit
+every location the version string is hardcoded or displayed and make them consistent —
+ideally driven from a single source of truth (e.g. package.json version) rather than
+duplicated literals.
+
+TODO-112: Backend uptime clock for debugging
+Priority: Low
+Status: Open
+Added: 2026-06-10
+Description: Add a small running clock showing how long the Flask backend process has
+been up, for debugging purposes (e.g. confirming whether a restart actually happened
+after a backend code change). Likely placement: About screen, near version/build info.
+Backend should expose process start time (or uptime) via an existing or new endpoint
+(e.g. /api/db/stats or a dedicated /api/status); GUI polls/displays it as HH:MM:SS or
+similar.
+
+TODO-111: Collection integrity monitor — hash-based change detection for collection folders
+Priority: Medium
+Status: Open
+Added: 2026-06-09
+Description: Build a hashing system that watches collection mount folders for file changes.
+On initial scan, compute a fast hash (e.g. xxHash or MD5 of size+mtime as a quick fingerprint,
+with optional full-content hash) for every file and store results in the DB. On subsequent
+scans, detect: deleted/missing files, new files, and changed files (hash mismatch). Surface
+findings in the GUI — e.g. a badge or alert on the affected collection mount card or a
+dedicated integrity report view. Should be runnable on-demand and optionally on a schedule.
+
+TODO-110: Pipeline — add free space and drive stats to mount cards
+Priority: Medium
+Status: Open
+Added: 2026-06-09
+Description: Display disk usage information on each mount card in the Pipeline screen. Show
+free space remaining, total capacity, and used percentage for the drive backing each mount
+point. Update reactively so the card reflects current state when the pipeline is running.
+
 TODO-109: Python best practices — BP document and code review
 Priority: Low
 Status: In Progress

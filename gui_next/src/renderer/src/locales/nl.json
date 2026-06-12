@@ -37,6 +37,7 @@
       "pipeline": "Pipeline",
       "verify": "Controleer",
       "lookup": "Opzoeken",
+      "quicklookup": "Snel opzoeken",
       "rename": "Hernoem",
       "lbdir": "LBDIR",
       "library": "Bibliotheek",
@@ -54,7 +55,8 @@
       "scraper": "Schraper",
       "settings": "Instellingen",
       "setup": "Setup",
-      "themes": "Thema's"
+      "themes": "Thema's",
+      "advancedTools": "Geavanceerde tools"
     },
     "statusBar": {
       "db": "DB:",
@@ -74,7 +76,7 @@
     "primaryWorkflow": "PRIMAIRE WORKFLOW",
     "pipelineTagline": "De pijplijn voor nieuwe aankopen",
     "ingestTitle": "Nieuwe muziek downloaden",
-    "ingestDesc": "Drop mappen hier - de pijplijn voert <strong>verifiëren → opzoeken → hernoemen → LBDIR</strong> uit op de hele batch. Geen stuiterende tabbladen meer.",
+    "ingestDesc": "Drop mappen hier - de pijplijn voert <strong>verifiëren → opzoeken → hernoemen → LBDIR → verzamelen</strong> uit op de hele batch. Geen stuiterende tabbladen meer.",
     "dragHere": "Sleep mappen hierheen",
     "orClickBrowse": "of klik om te bladeren",
     "stepVerify": "Controlesommen controleren",
@@ -237,6 +239,10 @@
       "extra": "Extra",
       "fail": "Storing"
     },
+    "allClear": {
+      "title": "Alle bestanden zijn in orde",
+      "desc": "Alle {{count}} bestanden komen overeen met hun FFP- en MD5-controlesommen. Hier is niets te repareren."
+    },
     "shntoolWarning": "shntool is niet geïnstalleerd",
     "shntoolDesc": "Deze map bevat SHN-bestanden. FFP/MD5 kan worden geverifieerd zonder shntool, maar voor lengtecontroles per schijf is het nodig.",
     "verifyWithoutShntool": "Controleren zonder shntool",
@@ -330,7 +336,7 @@
     "folderQueued_one": "- {{count}} map in de wachtrij",
     "folderQueued_other": "- {{count}} mappen in de wachtrij",
     "emptyHint": "Laat mappen vallen om te beginnen - of gebruik \"Mappen toevoegen...\" in de wachtrijrail",
-    "runHint": "Laat op elk moment meer mappen vallen - klik op \"Alle 4 stappen uitvoeren\" om de wachtrij te verwerken",
+    "runHint": "Laat een map vallen en die verifieert → identificeert → stelt een hernoeming voor.",
     "done_one": "{{count}} gedaan",
     "done_other": "{{count}} gedaan",
     "readyToRename_one": "{{count}} klaar om te hernoemen",
@@ -344,6 +350,8 @@
     "clearQueue": "Wachtrij wissen",
     "applyRenames": "Alle {{count}} voorgestelde hernoemen toepassen",
     "applyRenames_plural": "Alle {{count}} voorgestelde hernoemingen toepassen",
+    "fileAllReady": "{{count}} klaar om te archiveren",
+    "fileAllReady_plural": "{{count}} klaar om te archiveren",
     "queue": {
       "label": "Map wachtrij",
       "filterPlaceholder": "Filter wachtrij...",
@@ -352,14 +360,19 @@
       "addFolders": "Mappen toevoegen...",
       "scanTree": "Boom scannen...",
       "runOnSelected": "Uitvoeren op geselecteerd ({{count}})",
-      "runAll": "Voer alle 4 stappen uit",
+      "runAll": "Voer alle 5 stappen uit",
       "verify": "Controleer",
       "lookup": "Opzoeken",
       "rename": "Hernoem",
-      "lbdir": "LBDIR"
+      "lbdir": "LBDIR",
+      "collect": "Verzamelen"
     },
     "filter": {
       "all": "Alle",
+      "needs": "Heeft u nodig",
+      "ready": "Klaar om toe te passen",
+      "running": "Bezig",
+      "shelf": "Klaar om te archiveren",
       "needAttention": "Aandacht nodig",
       "readyToRename": "Klaar om te hernoemen",
       "done": "Gedaan",
@@ -374,7 +387,9 @@
       "verifySelected": "Controleer geselecteerde",
       "lookupSelected": "Lookup geselecteerd",
       "applySelected": "Pas {{count}} geselecteerde hernoeming toe",
-      "applySelected_plural": "{{count}} geselecteerde hernamen toepassen"
+      "applySelected_plural": "{{count}} geselecteerde hernamen toepassen",
+      "fileSelected": "{{count}} geselecteerde archiveren",
+      "fileSelected_plural": "{{count}} geselecteerde archiveren"
     },
     "empty": {
       "title": "Drop folders hier om te beginnen",
@@ -386,7 +401,43 @@
       "lookup": "Opzoeken",
       "rename": "Hernoem",
       "lbdir": "LBDIR",
+      "collect": "Verzamelen",
       "lb": "LB#"
+    },
+    "file": {
+      "action": "Archiveren",
+      "confirmTitle": "Archiveren in verzameling",
+      "confirmBody": "\"{{folder}}\" archiveren in {{mount}}",
+      "confirmNote": "De map wordt verplaatst naar de bestemmingslocatie van de verzameling en geregistreerd in Mijn verzameling.",
+      "confirmAction": "Archiveren",
+      "progress": {
+        "scanning": "Scannen…",
+        "copying": "Kopiëren…",
+        "moving": "Verplaatsen…"
+      }
+    },
+    "collect": {
+      "storageMount": "Opslagstation",
+      "routedByYear": "Gerouteerd op jaar · {{year}} → {{mount}}",
+      "resetToSuggested": "Terug naar voorstel",
+      "suggested": "voorgesteld",
+      "mountOffline": "Offline",
+      "mountTooltip": "{{span}} · {{free}} vrij",
+      "freeAmount": "{{free}} vrij",
+      "tagInCollection": "Markeren in verzameling",
+      "itemsCounter": "{{count}} → {{next}} items",
+      "rowLb": "LB#",
+      "rowStatus": "Status",
+      "rowConfirmed": "Bevestigd",
+      "statusPublic": "Openbaar",
+      "statusPrivate": "Privé",
+      "statusMissing": "Ontbrekend",
+      "statusNonexistent": "Niet bestaand",
+      "statusUnknown": "Onbekend",
+      "ownedYes": "In bezit",
+      "ownedNo": "Niet in collectie",
+      "notConfirmed": "Nog niet bevestigd",
+      "valueUnassigned": "Niet toegewezen"
     }
   },
   "collection": {
@@ -970,6 +1021,48 @@
       "noResults": "De query leverde geen rijen op.",
       "truncated": "(beperkt tot 500 rijen)",
       "error": "Fout: {{msg}}"
+    }
+  },
+  "quickLookup": {
+    "title": "Snel opzoeken",
+    "subtitle": "Controlesom",
+    "desc": "Plak of sleep controlesomregels om opnames direct te identificeren.",
+    "header": {
+      "matched": "gevonden"
+    },
+    "input": {
+      "label": "Invoer",
+      "placeholder": "Plak hier .md5- of .ffp-inhoud…\nbijv.  a1b2c3d4…  Mijn Concert.flac"
+    },
+    "drop": {
+      "hint": "Sleep hier een controlesombestand naartoe",
+      "ext": ".md5 · .ffp · .st5 · .sha1"
+    },
+    "btn": {
+      "clipboard": "Klembord",
+      "files": "Bestanden…",
+      "lookup": "Opzoeken",
+      "running": "Bezig met opzoeken…",
+      "clear": "Resultaten wissen"
+    },
+    "filePicker": {
+      "title": "Selecteer controlesombestanden"
+    },
+    "empty": {
+      "title": "Nog geen resultaten",
+      "desc": "Plak controlesomtekst, sleep een bestand of gebruik de klembordknop."
+    },
+    "table": {
+      "checksum": "Controlesom",
+      "filename": "Bestandsnaam",
+      "lb": "LB#",
+      "status": "Status"
+    },
+    "toast": {
+      "failed": "Opzoeken mislukt",
+      "clipboardEmpty": "Klembord is leeg",
+      "clipboardFailed": "Kan klembord niet lezen",
+      "noValidFiles": "Geen controlesombestanden gevonden (.md5, .ffp, .st5, .sha1)"
     }
   }
 }

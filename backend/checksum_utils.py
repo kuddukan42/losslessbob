@@ -86,6 +86,22 @@ class ShntoolNotFoundError(Exception):
 
 AUDIO_EXTS = {'.flac', '.shn', '.wav', '.ape', '.m4a', '.wv', '.aif', '.aiff'}
 
+# Name of the rename-audit log written by rename.write_rename_log().
+RENAME_LOG_NAME = 'rename_log.txt'
+
+# Destination subfolder used by /api/lbdir/move_extras.
+EXTRAS_DIRNAME = 'extras'
+
+
+def _is_reconciled_extra(rel_path: str) -> bool:
+    """Whether an unclaimed disk file is an expected post-reconcile artifact.
+
+    Once extras have been moved to ``extras/`` and a rename has logged to
+    ``rename_log.txt``, those entries are no longer "stray" files and shouldn't
+    keep the lbdir status stuck on extra_files.
+    """
+    return rel_path == RENAME_LOG_NAME or rel_path.startswith(EXTRAS_DIRNAME + '/')
+
 # Typographic apostrophes that differ between checksum files (e.g. EAC) and disk filenames.
 _APOSTROPHE_TRANS = str.maketrans({
     '\u2018': "'",  # LEFT SINGLE QUOTATION MARK
@@ -709,6 +725,7 @@ def verify_folder_lbdir(folder_path, lbdir_path):
     all_files = set(md5_map) | set(ffp_map) | set(shn_map)
     files = []
     n_pass = n_mismatch = n_missing = 0
+    claimed_paths: set[Path] = set()
 
     # Normalised relpath → actual Path for all audio under the folder.
     # Keys are apostrophe-normalised so lbdir entries (possibly with typographic
@@ -732,6 +749,8 @@ def verify_folder_lbdir(folder_path, lbdir_path):
         if fpath is None:
             fpath = folder / fname
         on_disk = fpath.exists()
+        if on_disk:
+            claimed_paths.add(fpath.resolve())
         ext = Path(fname).suffix.lower()
         is_flac = ext == '.flac'
         is_shn = ext == '.shn'
@@ -799,6 +818,27 @@ def verify_folder_lbdir(folder_path, lbdir_path):
             'ratio': len_info.get('ratio'),
         })
 
+    # Files on disk that aren't claimed by any lbdir entry (md5/ffp/shntool sections)
+    # and aren't the lbdir manifest itself.
+    lbdir_self = Path(lbdir_path).resolve()
+    extra_names = sorted(
+        p.relative_to(folder).as_posix()
+        for p in folder.rglob('*')
+        if p.is_file() and p.resolve() not in claimed_paths and p.resolve() != lbdir_self
+        and not _is_reconciled_extra(p.relative_to(folder).as_posix())
+    )
+    for fname in extra_names:
+        files.append({
+            'filename': fname,
+            'md5_expected': None, 'md5_actual': None, 'md5_status': 'na',
+            'ffp_expected': None, 'ffp_actual': None, 'ffp_status': 'na',
+            'shntool_expected': None, 'shntool_actual': None, 'shntool_status': 'na',
+            'st5_expected': None, 'st5_status': 'na',
+            'on_disk': True, 'overall': 'extra',
+            'length': None, 'expanded_size': None, 'cdr': None,
+            'wave_problems': None, 'fmt': None, 'ratio': None,
+        })
+
     missing_types = []
     if mode in ('flac', 'mixed') and not ffp_map:
         missing_types.append('ffp')
@@ -813,6 +853,8 @@ def verify_folder_lbdir(folder_path, lbdir_path):
         status = 'fail'
     elif n_missing > 0:
         status = 'missing_files'
+    elif extra_names:
+        status = 'extra_files'
     else:
         status = 'pass'
 
@@ -824,7 +866,7 @@ def verify_folder_lbdir(folder_path, lbdir_path):
         'pass': n_pass,
         'mismatch': n_mismatch,
         'missing': n_missing,
-        'extra': 0,
+        'extra': len(extra_names),
         'missing_types': missing_types,
         'files': files,
     }
