@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 
-export type LbdirState = 'pass' | 'fail' | 'missing_files' | 'no_lbdir' | 'no_lb' | 'shntool_missing'
+export type LbdirState = 'pass' | 'fail' | 'missing_files' | 'extra_files' | 'no_lbdir' | 'no_lb' | 'shntool_missing'
 
 export interface CheckFile {
   filename:       string
@@ -26,6 +26,7 @@ export interface CheckResult {
   pass:              number
   mismatch:          number
   missing:           number
+  extra:             number
   files:             CheckFile[]
   lbdir_verified_at: string | null
 }

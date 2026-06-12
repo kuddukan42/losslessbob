@@ -1128,6 +1128,18 @@ def init_db(db_path=None):
                 _classified.get("unknown", 0),
             )
 
+        # One-time migration: rename_history.renamed_at previously defaulted to
+        # SQLite's CURRENT_TIMESTAMP, which is UTC. Convert existing rows to local
+        # time to match the now-explicit local timestamps written going forward.
+        if not conn.execute("SELECT 1 FROM meta WHERE key='rename_history_localtime_v1'").fetchone():
+            conn.execute(
+                "UPDATE rename_history SET renamed_at = datetime(renamed_at, 'localtime') "
+                "WHERE renamed_at IS NOT NULL"
+            )
+            conn.execute(
+                "INSERT OR REPLACE INTO meta(key, value) VALUES('rename_history_localtime_v1', '1')"
+            )
+
         # Always commit: UPDATE above opens a Python implicit transaction regardless
         # of rowcount.  Without this, a zero-row UPDATE leaves the read connection
         # holding a RESERVED lock that blocks the write queue's first transaction.
@@ -2547,13 +2559,15 @@ def clear_superseded_torrent_paths(lb_number: int, new_id: int, new_path: str,
 
 def add_rename_history(lb_number: int | None, old_path: str, new_path: str,
                        source: str, notes: str = "", db_path=None) -> None:
-    """Insert a rename_history row."""
+    """Insert a rename_history row with a local-time timestamp."""
+    from datetime import datetime as _dt
     _lb, _op, _np, _src, _nt = lb_number, old_path, new_path, source, notes
+    _ts = _dt.now().strftime("%Y-%m-%d %H:%M:%S")
     get_write_queue().execute(
         lambda c: c.execute(
-            """INSERT INTO rename_history(lb_number, old_path, new_path, source, notes)
-               VALUES(?,?,?,?,?)""",
-            (_lb, _op, _np, _src, _nt)
+            """INSERT INTO rename_history(lb_number, old_path, new_path, source, notes, renamed_at)
+               VALUES(?,?,?,?,?,?)""",
+            (_lb, _op, _np, _src, _nt, _ts)
         )
     )
 

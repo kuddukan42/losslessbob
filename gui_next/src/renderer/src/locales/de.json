@@ -409,7 +409,12 @@
       "confirmTitle": "In Sammlung ablegen",
       "confirmBody": "\"{{folder}}\" nach {{mount}} ablegen",
       "confirmNote": "Der Ordner wird an sein Sammlungsziel verschoben und in Meine Sammlung eingetragen.",
-      "confirmAction": "Ablegen"
+      "confirmAction": "Ablegen",
+      "progress": {
+        "scanning": "Wird gescannt…",
+        "copying": "Wird kopiert…",
+        "moving": "Wird verschoben…"
+      }
     },
     "collect": {
       "storageMount": "Speicherlaufwerk",
@@ -424,10 +429,14 @@
       "rowLb": "LB#",
       "rowStatus": "Status",
       "rowConfirmed": "Bestätigt",
-      "rowFingerprint": "Fingerabdruck",
-      "valueStatus": "Öffentlich · Im Besitz",
-      "valueConfirmed": "Heute",
-      "valueFingerprint": "Ausstehend · AcoustID",
+      "statusPublic": "Öffentlich",
+      "statusPrivate": "Privat",
+      "statusMissing": "Fehlend",
+      "statusNonexistent": "Nicht vorhanden",
+      "statusUnknown": "Unbekannt",
+      "ownedYes": "Im Besitz",
+      "ownedNo": "Nicht in Sammlung",
+      "notConfirmed": "Noch nicht bestätigt",
       "valueUnassigned": "Nicht zugewiesen"
     }
   },

@@ -409,7 +409,12 @@
       "confirmTitle": "Archivia nella raccolta",
       "confirmBody": "Archivia \"{{folder}}\" in {{mount}}",
       "confirmNote": "La cartella verrà spostata nella sua destinazione di raccolta e registrata in La mia raccolta.",
-      "confirmAction": "Archivia"
+      "confirmAction": "Archivia",
+      "progress": {
+        "scanning": "Scansione…",
+        "copying": "Copia…",
+        "moving": "Spostamento…"
+      }
     },
     "collect": {
       "storageMount": "Unità di archiviazione",
@@ -424,10 +429,14 @@
       "rowLb": "LB#",
       "rowStatus": "Stato",
       "rowConfirmed": "Confermato",
-      "rowFingerprint": "Impronta",
-      "valueStatus": "Pubblico · Posseduto",
-      "valueConfirmed": "Oggi",
-      "valueFingerprint": "In coda · AcoustID",
+      "statusPublic": "Pubblico",
+      "statusPrivate": "Privato",
+      "statusMissing": "Mancante",
+      "statusNonexistent": "Inesistente",
+      "statusUnknown": "Sconosciuto",
+      "ownedYes": "Posseduto",
+      "ownedNo": "Non in collezione",
+      "notConfirmed": "Non ancora confermato",
       "valueUnassigned": "Non assegnato"
     }
   },

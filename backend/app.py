@@ -4915,49 +4915,46 @@ def create_app() -> Flask:
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
-    @app.route("/api/pipeline/file", methods=["POST"])
-    def pipeline_file() -> Response:
-        """Execute step 5: file one or more folders into the collection.
+    @app.route("/api/pipeline/file/start", methods=["POST"])
+    def pipeline_file_start() -> Response:
+        """Start step 5: file one folder into the collection (async, progress-tracked).
 
-        Body: {folders: [{path: str, lb_number: int, mount_id?: int}, ...]}
-        mount_id, if given, overrides the year-routed mount (see the Collect
-        mount picker). Each entry is processed independently; failures do not
-        abort the batch.
+        Body: {folders: [{path: str, lb_number: int, mount_id?: int}]}
+        Only the first entry is processed; mount_id, if given, overrides the
+        year-routed mount (see the Collect mount picker). Returns {ok, error?,
+        error_code?} immediately — poll /api/pipeline/file/status for progress
+        and the final result.
         """
         try:
-            from backend.filer import file_folder
+            from backend.filer import start_file_job
             data = request.get_json() or {}
             folders = data.get("folders", [])
             if not folders:
-                return jsonify({"error": "folders list required"}), 400
+                return jsonify({"ok": False, "error": "folders list required", "error_code": "bad_input"}), 400
+            item = folders[0]
+            path = item.get("path", "")
+            lb = item.get("lb_number")
+            mount_id = item.get("mount_id")
+            if not path or not lb:
+                return jsonify({
+                    "ok": False,
+                    "error": "path and lb_number are required",
+                    "error_code": "bad_input",
+                }), 400
             file_mode = database.get_meta("pipeline_file_mode") or "move"
-            results = []
-            for item in folders:
-                path = item.get("path", "")
-                lb = item.get("lb_number")
-                mount_id = item.get("mount_id")
-                if not path or not lb:
-                    results.append({
-                        "path": path,
-                        "lb_number": lb,
-                        "ok": False,
-                        "filed_to": "",
-                        "dest": "",
-                        "file_mode": file_mode,
-                        "error": "path and lb_number are required",
-                        "error_code": "bad_input",
-                    })
-                    continue
-                result = file_folder(
-                    int(lb), path, file_mode=file_mode,
-                    mount_id_override=int(mount_id) if mount_id is not None else None,
-                )
-                result["path"] = path
-                result["lb_number"] = lb
-                results.append(result)
-            return jsonify({"results": results})
+            result = start_file_job(
+                int(lb), path, file_mode=file_mode,
+                mount_id_override=int(mount_id) if mount_id is not None else None,
+            )
+            return jsonify(result)
         except Exception as e:
-            return jsonify({"error": str(e)}), 500
+            return jsonify({"ok": False, "error": str(e)}), 500
+
+    @app.route("/api/pipeline/file/status", methods=["GET"])
+    def pipeline_file_status() -> Response:
+        """Poll progress of the filing job started via /api/pipeline/file/start."""
+        from backend.filer import get_file_job_status
+        return jsonify(get_file_job_status())
 
     @app.route("/api/pipeline/file/preview", methods=["POST"])
     def pipeline_file_preview() -> Response:
@@ -5111,16 +5108,20 @@ def create_app() -> Flask:
 
                     if pinned_lb is not None:
                         lb_number = pinned_lb
-                        row["lookup"] = {
-                            "status": "ok",
-                            "label": f"LB-{lb_number:05d}",
-                            "lb_number": lb_number,
-                            "alias_resolved_from": alias_resolved_from or None,
-                            "summary": summary,
-                            "detail": detail,
-                        }
                     elif len(lb_list) == 1:
                         lb_number = lb_list[0]
+                    else:
+                        lb_number = None
+
+                    # A single resolved LB# is only a true "pass" when every
+                    # parsed checksum (across all types — ffp/md5/st5) found a
+                    # home in the DB. A 50% match (e.g. ffp matches but md5
+                    # doesn't) means the files on disk diverge from the
+                    # archived copy and needs human review, even though the
+                    # LB# itself is correctly identified.
+                    full_match = summary.get("matched") == summary.get("given")
+
+                    if lb_number is not None and full_match:
                         row["lookup"] = {
                             "status": "ok",
                             "label": f"LB-{lb_number:05d}",
@@ -5129,6 +5130,22 @@ def create_app() -> Flask:
                             "summary": summary,
                             "detail": detail,
                         }
+                    elif lb_number is not None:
+                        row["lookup"] = {
+                            "status": "warn",
+                            "label": "Incomplete match",
+                            "lb_number": lb_number,
+                            "alias_resolved_from": alias_resolved_from or None,
+                            "summary": summary,
+                            "detail": detail,
+                        }
+                        row["errors"].append({
+                            "step": "lookup",
+                            "message": (
+                                f"{summary['matched']}/{summary['given']} checksums "
+                                f"matched for LB-{lb_number:05d}"
+                            ),
+                        })
                     elif len(lb_list) > 1:
                         row["lookup"] = {"status": "warn", "label": "Conflict", "lb_number": None,
                                          "alias_resolved_from": None,
@@ -5193,12 +5210,20 @@ def create_app() -> Flask:
                     n_pass  = check.get("pass", 0)
                     n_miss  = check.get("missing", 0)
                     n_mm    = check.get("mismatch", 0)
+                    n_extra = check.get("extra", 0)
                     detail  = {"status": chk_status, "total": n_total,
-                               "pass": n_pass, "missing": n_miss, "mismatch": n_mm}
+                               "pass": n_pass, "missing": n_miss, "mismatch": n_mm,
+                               "extra": n_extra}
                     if chk_status == "pass":
                         row["lbdir"] = {"status": "ok",   "label": "Pass",              "check": detail}
+                        # If this folder is already an owned collection item (re-check
+                        # of an in-place folder), stamp lbdir_verified_at so the Collect
+                        # stage's "Confirmed" date reflects this pass. No-op otherwise.
+                        database.set_lbdir_verified(str(folder))
                     elif chk_status == "missing_files":
                         row["lbdir"] = {"status": "warn", "label": f"Missing {n_miss}", "check": detail}
+                    elif chk_status == "extra_files":
+                        row["lbdir"] = {"status": "warn", "label": f"Extra {n_extra}",  "check": detail}
                     elif chk_status == "shntool_missing":
                         row["lbdir"] = {"status": "warn", "label": "No shntool",         "check": detail}
                     else:
@@ -5223,6 +5248,13 @@ def create_app() -> Flask:
                         collection_count = conn.execute(
                             "SELECT COUNT(*) FROM my_collection"
                         ).fetchone()[0]
+                        lb_status_row = conn.execute(
+                            "SELECT lb_status FROM lb_master WHERE lb_number=?", (lb_number,)
+                        ).fetchone()
+                        owned_row = conn.execute(
+                            "SELECT lbdir_verified_at FROM my_collection WHERE lb_number=?",
+                            (lb_number,),
+                        ).fetchone()
                     row["file"] = {
                         "status": "ready",
                         "label": "Ready to file",
@@ -5236,6 +5268,9 @@ def create_app() -> Flask:
                         "recommended_mount": resolution["mount_id"],
                         "routed_year": resolution["year"],
                         "collection_count": collection_count,
+                        "lb_status": lb_status_row["lb_status"] if lb_status_row else None,
+                        "owned": owned_row is not None,
+                        "lbdir_verified_at": owned_row["lbdir_verified_at"] if owned_row else None,
                     }
                 else:
                     row["file"] = {

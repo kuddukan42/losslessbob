@@ -8,59 +8,11 @@ Follow every session. No asking.
 
 - When reading large files, ALWAYS use the Read tool with `offset`/`limit` parameters instead of `sed`, `head`, or `tail` via Bash. Avoid Bash for file inspection when Read can do it — it triggers unnecessary approval prompts.
 
-## Screenshots / GUI Verification
+## GUI Verification
 
-**Only use `tools/browser_driver.mjs`** for all screenshots and UI automation. The old
-`gui_next/gui_driver.mjs` (Electron+Playwright via Xvfb) and `scripts/screenshot_app.mjs`
-are both unreliable in this sandbox (Electron CDP never connects / GTK aborts) — do not
-use them.
-
-`tools/browser_driver.mjs` drives the renderer with headless Chromium against the Vite
-dev server, with `window.api` (the Electron preload bridge) stubbed via `addInitScript`.
-No Electron, no Xvfb, no display manipulation.
-
-**Start the Flask backend first** (port 5174) so the splash overlay clears quickly
-(~2.4s) instead of timing out (~11s):
-```
-nohup .venv/bin/python3 run_backend.py > /tmp/flask_backend.log 2>&1 & disown
-```
-
-```
-# Single screen
-node tools/browser_driver.mjs navigate /attachments attachments.png
-
-# All screens
-node tools/browser_driver.mjs session tools/debug_screens.json
-```
-
-- Screenshots land in `.debug/`
-- Spawns `npm run dev` (port 5173) automatically — pass `--no-server` if one is already running
-- `--preview` uses `npm run preview` (port 4173) and builds first unless `--no-build`
-- Waits for the splash overlay to detach before acting
-
-### Verification gotchas (read before writing a session JSON)
-
-- **Prefer API checks over screenshots for data-shape changes.** If you only need to confirm
-  a backend field/shape change (e.g. a new key in an API response), `curl` the endpoint
-  directly. Reserve `browser_driver.mjs` sessions for layout/interaction checks that actually
-  need a render.
-- **Use `data-testid` selectors, not `:has-text()`.** `:has-text()` is a case-insensitive
-  *substring* match — `"Lookup"` matches both the "Lookup" stage tab and the "Quick lookup"
-  sidebar button, and clicking the wrong one silently navigates away. Stable testids exist:
-  `[data-testid="stage-tab-verify|lookup|rename|lbdir|file"]` (pipeline DetailPanel tabs),
-  `[data-testid="nav-<id>"]` (main sidebar nav), `[data-testid="nav-adv-<id>"]` (Advanced
-  tools sub-nav: verify/lookup/rename/lbdir), `[data-testid="sidebar-quick-lookup"]`.
-- **Button labels use the Unicode ellipsis `…` (U+2026)**, not three periods (`...`) —
-  e.g. `"Add folders…"`. A selector with `...` will never match.
-- **Use `wait-for` on a real condition, not a fixed `wait` ms.** Fixed waits are either too
-  short (verify+lookup on a real folder can take >10s) or wastefully long. Wait for the
-  status pill/text that indicates completion instead of guessing a duration.
-- **Kill stray dev-server processes before starting a new session** — a previous
-  `browser_driver.mjs` run that didn't exit cleanly leaves `electron-vite dev`/esbuild
-  processes that hold port 5173 and can hang unrelated commands (e.g. `tsc`):
-  `pkill -9 -f "electron-vite dev"; pkill -9 -f esbuild`
-- **Always use absolute/repo-relative paths** for `node tools/browser_driver.mjs ...` —
-  don't rely on a prior `cd` having persisted.
+Do **not** take screenshots or run browser/UI automation to verify GUI changes.
+Implement the code change, run applicable code checks (type checking, lint,
+`py_compile`, build), and stop there — the user verifies visuals themselves.
 
 ---
 

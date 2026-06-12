@@ -409,7 +409,12 @@
       "confirmTitle": "Classer dans la collection",
       "confirmBody": "Classer \"{{folder}}\" dans {{mount}}",
       "confirmNote": "Le dossier sera déplacé vers sa destination de collection et enregistré dans Ma collection.",
-      "confirmAction": "Classer"
+      "confirmAction": "Classer",
+      "progress": {
+        "scanning": "Analyse…",
+        "copying": "Copie…",
+        "moving": "Déplacement…"
+      }
     },
     "collect": {
       "storageMount": "Volume de stockage",
@@ -424,10 +429,14 @@
       "rowLb": "LB#",
       "rowStatus": "Statut",
       "rowConfirmed": "Confirmé",
-      "rowFingerprint": "Empreinte",
-      "valueStatus": "Public · Possédé",
-      "valueConfirmed": "Aujourd'hui",
-      "valueFingerprint": "En attente · AcoustID",
+      "statusPublic": "Public",
+      "statusPrivate": "Privé",
+      "statusMissing": "Manquant",
+      "statusNonexistent": "Inexistant",
+      "statusUnknown": "Inconnu",
+      "ownedYes": "Possédé",
+      "ownedNo": "Pas dans la collection",
+      "notConfirmed": "Pas encore confirmé",
       "valueUnassigned": "Non attribué"
     }
   },

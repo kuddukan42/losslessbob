@@ -409,7 +409,12 @@
       "confirmTitle": "Archiveren in verzameling",
       "confirmBody": "\"{{folder}}\" archiveren in {{mount}}",
       "confirmNote": "De map wordt verplaatst naar de bestemmingslocatie van de verzameling en geregistreerd in Mijn verzameling.",
-      "confirmAction": "Archiveren"
+      "confirmAction": "Archiveren",
+      "progress": {
+        "scanning": "Scannen…",
+        "copying": "Kopiëren…",
+        "moving": "Verplaatsen…"
+      }
     },
     "collect": {
       "storageMount": "Opslagstation",
@@ -424,10 +429,14 @@
       "rowLb": "LB#",
       "rowStatus": "Status",
       "rowConfirmed": "Bevestigd",
-      "rowFingerprint": "Vingerafdruk",
-      "valueStatus": "Openbaar · In bezit",
-      "valueConfirmed": "Vandaag",
-      "valueFingerprint": "In wachtrij · AcoustID",
+      "statusPublic": "Openbaar",
+      "statusPrivate": "Privé",
+      "statusMissing": "Ontbrekend",
+      "statusNonexistent": "Niet bestaand",
+      "statusUnknown": "Onbekend",
+      "ownedYes": "In bezit",
+      "ownedNo": "Niet in collectie",
+      "notConfirmed": "Nog niet bevestigd",
       "valueUnassigned": "Niet toegewezen"
     }
   },

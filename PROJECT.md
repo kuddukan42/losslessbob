@@ -236,7 +236,7 @@ Index: `idx_changes_lb ON entry_changes(lb_number, changed_at DESC)`.
 | lb_number | INTEGER | FK to entries (nullable) |
 | old_path | TEXT | Full path before rename |
 | new_path | TEXT | Full path after rename |
-| renamed_at | TIMESTAMP | Defaults to CURRENT_TIMESTAMP |
+| renamed_at | TIMESTAMP | Set explicitly to local time by `add_rename_history()` |
 | source | TEXT | 'rename_tab', 'collection_tab', or 'auto' |
 | notes | TEXT | Warnings, mismatch details, relocation notes |
 
@@ -659,8 +659,9 @@ Index: `idx_routes_mount ON collection_routes(mount_id)`.
 | POST | `/api/collection/routes/bulk` | Upsert routes for a year range. Body: `{year_from, year_to, mount_id, sub_path}`. Returns `{ok, rows_written}`. |
 | DELETE | `/api/collection/routes/<year>` | Remove route for one year. Returns `{ok}`. |
 | GET | `/api/collection/routes/preview/<year>` | Dry-run resolve for a year: returns `{ok, year, mount_label, mount_root, sub_path, dest_parent, mount_online, error, error_code}`. |
-| POST | `/api/pipeline/file` | File one or more folders into the collection. Body: `{folders:[{path, lb_number, mount_id?}]}`. `mount_id`, if given and different from the year-routed mount, overrides the destination mount (same routed sub_path). Each folder processed independently. Returns `{results:[{path, lb_number, ok, filed_to, dest, file_mode, error?, error_code?}]}`. Error codes: `no_date`, `no_route`, `mount_offline`, `dest_exists`, `db_error`. |
-| POST | `/api/pipeline/file/preview` | Pre-flight resolve without moving files. Same body as `/api/pipeline/file` (incl. optional `mount_id`). Returns per-folder `{ok, dest, mount_label, error, error_code}`. |
+| POST | `/api/pipeline/file/start` | Start filing one folder into the collection (async, background thread). Body: `{folders:[{path, lb_number, mount_id?}]}` — only the first entry is used. `mount_id`, if given and different from the year-routed mount, overrides the destination mount (same routed sub_path). Returns `{ok, error?, error_code?}` immediately; error codes include `busy`, `src_missing`, `no_date`, `no_route`, `mount_offline`, `dest_exists`, `db_error`. Poll `/api/pipeline/file/status` for progress and the final result. |
+| GET | `/api/pipeline/file/status` | Poll the running/last filing job started via `/api/pipeline/file/start`. Returns `{running, stage, path, dest, file_mode, lb_number, files_done, files_total, bytes_done, bytes_total, current_file, result}` where `stage` is `idle\|scanning\|copying\|moving\|done\|failed` and `result` (once `running` is false) is `{ok, filed_to, dest, file_mode, error, error_code}`. |
+| POST | `/api/pipeline/file/preview` | Pre-flight resolve without moving files. Same body as `/api/pipeline/file/start` (incl. optional `mount_id`). Returns per-folder `{ok, dest, mount_label, error, error_code}`. |
 
 ### DB Editor
 | Method | Route | Description |
@@ -823,7 +824,7 @@ Shared module for local file verification and checksum generation. Used by `/api
 | `detect_folder_mode(folder_path)` | Returns `'flac'`, `'shn'`, or `'mixed'` by globbing for `.flac`/`.shn` files. |
 | `_mychecksums_path(folder, basename, ext)` | Returns `<folder>/<basename>_mychecksums.<ext>`, incrementing to `_mychecksums_2`, `_mychecksums_3`, … until a non-existent path is found. |
 | `verify_folder(folder_path)` | Verify audio files against standalone `.ffp`/`.md5`/`.st5` checksum files in the folder. |
-| `verify_folder_lbdir(folder_path, lbdir_path)` | Verify all files listed in a `lbdir*.txt` (audio + non-audio), including `length`/`cdr`/`wave_problems` from shntool_len section. |
+| `verify_folder_lbdir(folder_path, lbdir_path)` | Verify all files listed in a `lbdir*.txt` (audio + non-audio), including `length`/`cdr`/`wave_problems` from shntool_len section. Also scans the folder for files not referenced by any lbdir entry (excluding the manifest itself), appends them to `files` with `overall: "extra"`, and reports them in `extra`/status `extra_files`. Files under `extras/` (from `/api/lbdir/move_extras`) and `rename_log.txt` are whitelisted via `_is_reconciled_extra()` — if those are the only unclaimed files, status resolves to `pass` instead of `extra_files`. |
 | `find_reconcilable_files(folder_path, lbdir_path)` | Scan disk files recursively, compute MD5, match against missing lbdir entries. Returns `{proposals, unmatched_lbdir, unmatched_disk, warnings}`. |
 | `find_extra_files(folder_path, lbdir_path)` | Return all disk files not referenced in the lbdir MD5 section (lbdir file itself excluded). Returns `{extra:['rel/path',...], lbdir_rel}`. |
 | `generate_checksums(folder_path)` | FLAC: write `_mychecksums.ffp` + `_mychecksums.md5`. SHN: write `_mychecksums.md5` with shntool `[shntool]` format lines. Never overwrites existing files. |
@@ -848,7 +849,7 @@ Shared module for local file verification and checksum generation. Used by `/api
   ]
 }
 ```
-`/api/lbdir/check` adds `lbdir_found`, `lbdir_path`, `lb_number` at the top level and `length`, `expanded_size`, `cdr`, `wave_problems`, `fmt`, `ratio` per file (all six shntool_len fields).
+`/api/lbdir/check` adds `lbdir_found`, `lbdir_path`, `lb_number` at the top level and `length`, `expanded_size`, `cdr`, `wave_problems`, `fmt`, `ratio` per file (all six shntool_len fields). Its `status` is one of `pass|fail|missing_files|extra_files|shntool_missing|no_lbdir|no_lb`, where `extra_files` means every lbdir-listed file is present and verified but disk has files not referenced in the lbdir manifest (listed in `files` with `overall: "extra"`).
 
 ### lbdir file format
 ```
@@ -1393,6 +1394,9 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 
 | Date | Change |
 |------|--------|
+| 2026-06-11 | BUG-161: pipeline `/api/pipeline/run` LBDIR step (step 4) now calls `database.set_lbdir_verified()` on a `pass`, so the Collect stage's "Confirmed" date (`my_collection.lbdir_verified_at`) updates for owned folders re-checked in place. |
+| 2026-06-11 | BUG-159: `verify_folder_lbdir()` whitelists `extras/` (from `/api/lbdir/move_extras`) and `rename_log.txt` when computing unclaimed "extra" files — once those are the only leftovers, status resolves to `pass` so pipeline step 4 turns green after a reconcile. |
+| 2026-06-11 | BUG-158: `verify_folder_lbdir()` now detects files on disk not referenced by any lbdir entry, reporting them as `overall: "extra"` rows and a real `extra` count; new lbdir status `extra_files` (everything checksums-clean but stray files present) so such folders no longer show green and the reconcile/move-to-extras flow is reachable. |
 | 2026-06-10 | Pipeline v2 cleanup phase 5: `backend/filer.py` gains `get_mounts_with_stats()` (mount span/free/online) and a `mount_id_override` param on `resolve_destination_for_lb`/`file_folder`; `/api/pipeline/file` and `/api/pipeline/file/preview` accept optional `mount_id`; pipeline file step result gains `mounts`/`recommended_mount`/`routed_year`/`collection_count`; new `components/pipeline/CollectDetail.tsx` (MountPicker + TagTable) rendered by `CollectReadyDetail` in the pipeline Collect panel, with live `/api/pipeline/file/preview` re-resolve on mount override. |
 | 2026-06-10 | Pipeline v2 cleanup phase 4: `components/pipeline/LbdirDetail.tsx` (CheckDot, LbdirFileTable with resizable MD5/Disk/Overall/Length/Fmt/Ratio columns, ReconcilePanel incl. site/files recovery) harvested from ScreenLBDIR, shared by ScreenLBDIR and the pipeline LBDIR panel; pipeline `LbdirStageContent` now shows the full file table and reconcile UI (previously a truncated 12-row list with no site recovery section). |
 | 2026-06-10 | Pipeline v2 cleanup phase 3: `components/pipeline/LookupDetail.tsx` (LookupSummaryTable, LookupChecksumTable, LookupNotFoundHint) harvested from ScreenLookup, shared by ScreenLookup and the pipeline Lookup panel; pipeline `LookupStageContent` now shows category pill + matched/given stat, "Which show is this?" picker with per-LB "Pin {lb} & continue" → `PUT /api/folder_link`; backend lookup step returns `summary`/`detail` and honors `folder_lb_link` pins. |
@@ -1484,3 +1488,6 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 | 2026-05-28 | gui_next Sprint 2 (ScreenCollection ~90%): all 17 stubs wired; `lbNumberInt` + `isXref` fields added to `CollectionRow`; year filter via `/api/search/years`; xref filter via `/api/checksums/xref_lb_numbers`; `AddFolderModal` (per-row LB# input); `ForumModal` with editable BBCode before `preview_forum` → `post_forum`; version-bump refetch pattern established. |
 | 2026-05-28 | gui_next Sprint 3 (ScreenSearch ~95%): virtual table sort (6 keys), group-by-year toggle, CSV export, column visibility (localStorage), saved views (localStorage + 3 built-ins), `owned` field wired to `GET /api/collection/lb_numbers`, entry detail panel (`GET /api/entry/<lb>`) with files list + "Scrape entry", per-row ⋯ menu (`position:fixed`, `POST /api/entry/<lb>/scrape`), Toast component. (TODO-094 Stage: Sprint 3 done) |
 | 2026-06-01 | Batch verification pipeline: tools/batch_verify.py — lbdir-centric CLI for large collections; 4-phase pipeline (identify/retrieve/verify/reconcile-preview); report SQLite DB (data/batch_verify.db, never touches losslessbob.db); resume/dry-run/reprocess/report modes. (BATCH-VERIFY) |
+| 2026-06-11 | BUG-160 fix: `rename_history.renamed_at` now written as local time by `add_rename_history()` instead of SQLite's UTC `CURRENT_TIMESTAMP` default; one-time migration converts existing rows to local time. |
+| 2026-06-11 | Pipeline Collect tag preview (`CollectDetail.tsx` TagTable) now shows real data: `lb_master.lb_status` + collection-ownership for "Status" and `my_collection.lbdir_verified_at` for "Confirmed", replacing hardcoded "Public · Owned"/"Today"; removed the unused "Fingerprint: Queued · AcoustID" row. `/api/pipeline/status` file step gains `lb_status`/`owned`/`lbdir_verified_at`. |
+| 2026-06-12 | v1.4.0 release: merged `feat/pipeline-v2-storage-mounts` into `main` — collection mount management, Quick Lookup screen, pipeline lookup/rename/lbdir/collect stage panels, background copy/move with progress; `gui_next/package.json` version bumped 1.3.0 -> 1.4.0. |

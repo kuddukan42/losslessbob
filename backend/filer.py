@@ -3,9 +3,11 @@
 from __future__ import annotations
 
 import concurrent.futures
+import hashlib
 import logging
 import os
 import shutil
+import threading
 from pathlib import Path, PurePosixPath
 
 from backend import db as database
@@ -236,16 +238,107 @@ def _err(code: str, message: str) -> dict:
     }
 
 
-# ── Filing execution ───────────────────────────────────────────────────────────
+# ── Filing execution (background job with progress) ────────────────────────────
 
-def file_folder(
+_FILE_JOB_LOCK = threading.Lock()
+_FILE_JOB: dict = {
+    "running": False,
+    "stage": "idle",  # idle | scanning | copying | moving | done | failed
+    "path": None,
+    "dest": None,
+    "file_mode": None,
+    "lb_number": None,
+    "files_done": 0,
+    "files_total": 0,
+    "bytes_done": 0,
+    "bytes_total": 0,
+    "current_file": None,
+    "result": None,
+}
+
+
+def get_file_job_status() -> dict:
+    """Return a snapshot of the current/last filing job for GUI polling."""
+    with _FILE_JOB_LOCK:
+        return dict(_FILE_JOB)
+
+
+def _scan_tree(root: Path) -> tuple[int, int]:
+    """Return (file_count, total_bytes) for every file under root."""
+    total_files = 0
+    total_bytes = 0
+    for dirpath, _dirnames, filenames in os.walk(root):
+        for name in filenames:
+            try:
+                total_bytes += (Path(dirpath) / name).stat().st_size
+            except OSError:
+                pass
+            total_files += 1
+    return total_files, total_bytes
+
+
+def _progress_copy_file(src: str, dst: str, *, follow_symlinks: bool = True) -> str:
+    """shutil.copy2-compatible copy_function that updates _FILE_JOB progress."""
+    result = shutil.copy2(src, dst, follow_symlinks=follow_symlinks)
+    try:
+        size = os.path.getsize(result)
+    except OSError:
+        size = 0
+    with _FILE_JOB_LOCK:
+        _FILE_JOB["bytes_done"] += size
+        _FILE_JOB["files_done"] += 1
+        _FILE_JOB["current_file"] = os.path.basename(src)
+    return result
+
+
+class _HashVerificationError(Exception):
+    """Raised when a copied folder's hash does not match its source."""
+
+    def __init__(self, dest: Path):
+        super().__init__(f"copied folder hash does not match source: {dest}")
+        self.dest = dest
+
+
+def hash_tree(root: Path) -> str:
+    """Compute a deterministic SHA-256 digest over every file's contents under root.
+
+    Combines each file's path (relative to root) and content hash, sorted by
+    path, so the result changes if any file is added, removed, renamed, or
+    its content differs. Used to verify a copied folder is byte-identical to
+    its source before the source is removed.
+    """
+    root = Path(root)
+    tree_digest = hashlib.sha256()
+    rel_paths = sorted(str(p.relative_to(root)) for p in root.rglob("*") if p.is_file())
+    for rel_path in rel_paths:
+        file_digest = hashlib.sha256()
+        with open(root / rel_path, "rb") as f:
+            for chunk in iter(lambda: f.read(1024 * 1024), b""):
+                file_digest.update(chunk)
+        tree_digest.update(rel_path.encode("utf-8", "surrogatepass"))
+        tree_digest.update(file_digest.digest())
+    return tree_digest.hexdigest()
+
+
+def start_file_job(
     lb_number: int,
     folder_path: str,
     file_mode: str = "move",
     mount_id_override: int | None = None,
     db_path=None,
 ) -> dict:
-    """Resolve destination and physically move or copy the folder.
+    """Resolve destination and start a background move/copy with progress tracking.
+
+    Returns immediately with {ok, error?, error_code?}. On success, poll
+    get_file_job_status() until "running" is False, then read its "result"
+    key — a dict with the same shape previously returned synchronously:
+    {ok, filed_to, dest, file_mode, error, error_code}.
+
+    Whenever data is actually copied (file_mode="copy", or a cross-device
+    "move" that falls back to copy+delete), the copy is hash-verified against
+    the source with hash_tree() before the source is removed (move) or the
+    job is reported done (copy). A same-device "move" uses os.rename(), which
+    is atomic and rewrites no file content, so it is not hash-verified.
 
     Args:
         lb_number:   LB number (must be in entries table).
@@ -254,110 +347,151 @@ def file_folder(
         mount_id_override: If given, file under this mount instead of the
             year-routed default (see resolve_destination_for_lb).
         db_path:     Optional SQLite path override.
-
-    Returns dict with keys: ok, filed_to, dest, file_mode, error, error_code.
     """
+    with _FILE_JOB_LOCK:
+        if _FILE_JOB["running"]:
+            return {"ok": False, "error": "A filing job is already in progress", "error_code": "busy"}
+
     folder = Path(folder_path)
     if not folder.exists() or not folder.is_dir():
         return {
             "ok": False,
-            "filed_to": "",
-            "dest": "",
-            "file_mode": file_mode,
             "error": f"Source folder not found: {folder_path}",
             "error_code": "src_missing",
         }
 
     resolution = resolve_destination_for_lb(lb_number, folder_path, mount_id_override, db_path)
     if not resolution["ok"]:
-        return {
-            "ok": False,
-            "filed_to": "",
-            "dest": "",
-            "file_mode": file_mode,
-            "error": resolution["error"],
-            "error_code": resolution["error_code"],
-        }
+        return {"ok": False, "error": resolution["error"], "error_code": resolution["error_code"]}
 
     dest_parent = Path(resolution["dest_parent"])
     dest = Path(resolution["dest"])
     mount_label = resolution["mount_label"]
 
-    try:
-        dest_parent.mkdir(parents=True, exist_ok=True)
-    except OSError as exc:
-        return {
-            "ok": False,
-            "filed_to": "",
-            "dest": "",
-            "file_mode": file_mode,
-            "error": f"Cannot create destination directory {dest_parent}: {exc}",
-            "error_code": "mkdir_failed",
-        }
-
-    try:
-        if file_mode == "copy":
-            shutil.copytree(str(folder), str(dest))
-        else:
-            shutil.move(str(folder), str(dest))
-    except Exception as exc:
-        if file_mode == "copy" and dest.exists():
-            try:
-                shutil.rmtree(str(dest))
-            except Exception:
-                pass
-        return {
-            "ok": False,
-            "filed_to": "",
-            "dest": "",
-            "file_mode": file_mode,
-            "error": f"Filesystem {file_mode} failed: {exc}",
-            "error_code": "fs_error",
-        }
-
-    folder_name = folder.name
-    try:
-        database.add_to_collection(
-            lb_number,
-            folder_name,
-            str(dest),
-            notes=None,
-            db_path=db_path,
-        )
-    except Exception as exc:
-        logger.error(
-            "file_folder: filesystem %s succeeded but my_collection insert failed "
-            "for LB-%05d at %s: %s",
-            file_mode,
-            lb_number,
-            dest,
-            exc,
-        )
-        return {
-            "ok": False,
-            "filed_to": mount_label,
+    with _FILE_JOB_LOCK:
+        _FILE_JOB.update({
+            "running": True,
+            "stage": "scanning",
+            "path": folder_path,
             "dest": str(dest),
             "file_mode": file_mode,
-            "error": (
-                f"Folder {file_mode}d to {dest} but collection registration failed: {exc}. "
-                "The folder exists on disk — use My Collection → Add folder to register it manually."
-            ),
-            "error_code": "db_write_failed",
-        }
+            "lb_number": lb_number,
+            "files_done": 0,
+            "files_total": 0,
+            "bytes_done": 0,
+            "bytes_total": 0,
+            "current_file": None,
+            "result": None,
+        })
 
-    logger.info(
-        "file_folder: LB-%05d %sd to %s (mount: %s)",
-        lb_number,
-        file_mode,
-        dest,
-        mount_label,
-    )
+    def _finish(result: dict) -> None:
+        with _FILE_JOB_LOCK:
+            _FILE_JOB["running"] = False
+            _FILE_JOB["stage"] = "done" if result["ok"] else "failed"
+            _FILE_JOB["current_file"] = None
+            _FILE_JOB["result"] = result
 
-    return {
-        "ok": True,
-        "filed_to": mount_label,
-        "dest": str(dest),
-        "file_mode": file_mode,
-        "error": None,
-        "error_code": None,
-    }
+    def _run() -> None:
+        files_total, bytes_total = _scan_tree(folder)
+        with _FILE_JOB_LOCK:
+            _FILE_JOB["files_total"] = files_total
+            _FILE_JOB["bytes_total"] = bytes_total
+            _FILE_JOB["stage"] = "copying" if file_mode == "copy" else "moving"
+
+        try:
+            dest_parent.mkdir(parents=True, exist_ok=True)
+        except OSError as exc:
+            _finish({
+                "ok": False, "filed_to": "", "dest": "", "file_mode": file_mode,
+                "error": f"Cannot create destination directory {dest_parent}: {exc}",
+                "error_code": "mkdir_failed",
+            })
+            return
+
+        try:
+            if file_mode == "copy":
+                shutil.copytree(str(folder), str(dest), copy_function=_progress_copy_file)
+                with _FILE_JOB_LOCK:
+                    _FILE_JOB["stage"] = "verifying"
+                if hash_tree(dest) != hash_tree(folder):
+                    raise _HashVerificationError(dest)
+            else:
+                try:
+                    os.rename(str(folder), str(dest))
+                    with _FILE_JOB_LOCK:
+                        _FILE_JOB["files_done"] = files_total
+                        _FILE_JOB["bytes_done"] = bytes_total
+                except OSError:
+                    # Cross-device move: copy with progress, verify the copy's
+                    # hash against the source, then remove the source.
+                    shutil.copytree(str(folder), str(dest), copy_function=_progress_copy_file)
+                    with _FILE_JOB_LOCK:
+                        _FILE_JOB["stage"] = "verifying"
+                    if hash_tree(dest) != hash_tree(folder):
+                        raise _HashVerificationError(dest) from None
+                    with _FILE_JOB_LOCK:
+                        _FILE_JOB["stage"] = "removing"
+                    try:
+                        shutil.rmtree(str(folder))
+                    except OSError as exc:
+                        logger.warning(
+                            "start_file_job: LB-%05d copy verified at %s but removing "
+                            "the original at %s failed: %s",
+                            lb_number, dest, folder, exc,
+                        )
+        except _HashVerificationError as exc:
+            try:
+                shutil.rmtree(str(exc.dest))
+            except Exception:
+                pass
+            _finish({
+                "ok": False, "filed_to": "", "dest": "", "file_mode": file_mode,
+                "error": (
+                    f"Integrity check failed: {file_mode}d copy at {exc.dest} does not "
+                    "match the source folder's hash. The copy was removed; the "
+                    "original is untouched."
+                ),
+                "error_code": "hash_mismatch",
+            })
+            return
+        except Exception as exc:
+            # Only clean up a partial dest while the source is still intact —
+            # if folder is gone, dest is the only remaining copy of the data.
+            if dest.exists() and folder.exists():
+                try:
+                    shutil.rmtree(str(dest))
+                except Exception:
+                    pass
+            _finish({
+                "ok": False, "filed_to": "", "dest": "", "file_mode": file_mode,
+                "error": f"Filesystem {file_mode} failed: {exc}",
+                "error_code": "fs_error",
+            })
+            return
+
+        try:
+            database.add_to_collection(lb_number, folder.name, str(dest), notes=None, db_path=db_path)
+        except Exception as exc:
+            logger.error(
+                "start_file_job: filesystem %s succeeded but my_collection insert failed "
+                "for LB-%05d at %s: %s",
+                file_mode, lb_number, dest, exc,
+            )
+            _finish({
+                "ok": False, "filed_to": mount_label, "dest": str(dest), "file_mode": file_mode,
+                "error": (
+                    f"Folder {file_mode}d to {dest} but collection registration failed: {exc}. "
+                    "The folder exists on disk — use My Collection → Add folder to register it manually."
+                ),
+                "error_code": "db_write_failed",
+            })
+            return
+
+        logger.info("start_file_job: LB-%05d %sd to %s (mount: %s)", lb_number, file_mode, dest, mount_label)
+        _finish({
+            "ok": True, "filed_to": mount_label, "dest": str(dest), "file_mode": file_mode,
+            "error": None, "error_code": None,
+        })
+
+    threading.Thread(target=_run, name=f"pipeline-file-lb{lb_number}", daemon=True).start()
+    return {"ok": True}

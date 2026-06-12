@@ -1,3 +1,16 @@
+TODO-137: Pipeline — swap step order so LBDIR runs before Rename
+Priority: Medium
+Status: Open
+Added: 2026-06-11
+Description: In the pipeline workflow (ScreenPipeline.tsx / backend/app.py
+_pipeline_process_folder), step 3 (Rename proposal) currently runs before step 4
+(LBDIR retrieve + verify). Swap the order so LBDIR reconcile/verify runs first and
+Rename runs after — running Rename before LBDIR has reconciled the folder's contents
+can lead to proposing/applying the wrong folder rename. Update step numbering/labels
+in both the backend (_pipeline_process_folder, pipeline_run steps default list) and
+the GUI (PipelineRow.steps ordering, step-key iteration order, status derivation) to
+match the new order: verify -> lookup -> lbdir -> rename -> collect.
+
 TODO-136: Post editor form for existing WTRF posts
 Priority: Low
 Status: Open
