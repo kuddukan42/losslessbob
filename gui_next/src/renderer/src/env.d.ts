@@ -7,6 +7,7 @@ interface Window {
   api: {
     flaskPort:       number
     flaskBase:       string
+    platform:        NodeJS.Platform
     pickFolders:     () => Promise<string[]>
     pickDir:         () => Promise<string | null>
     pickFile:        (opts?: { title?: string; filters?: { name: string; extensions: string[] }[] }) => Promise<string | null>

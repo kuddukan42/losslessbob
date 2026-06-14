@@ -411,10 +411,16 @@
       "confirmBody": "\"{{folder}}\" archiveren in {{mount}}",
       "confirmNote": "De map wordt verplaatst naar de bestemmingslocatie van de verzameling en geregistreerd in Mijn verzameling.",
       "confirmAction": "Archiveren",
+      "qbtSynced": "qBittorrent-opslagpad bijgewerkt — seeden gaat verder vanaf de nieuwe locatie",
+      "qbtSyncFailed": "Opgeslagen, maar het bijwerken van het qBittorrent-opslagpad is mislukt: {{error}}",
+      "busy": "Er loopt al een archiveertaak — wacht tot deze is voltooid",
+      "jobMismatch": "De archiveerstatus is overgenomen door een andere taak — controleer het resultaat in Mijn collectie",
       "progress": {
         "scanning": "Scannen…",
         "copying": "Kopiëren…",
-        "moving": "Verplaatsen…"
+        "moving": "Verplaatsen…",
+        "verifying": "Verifiëren…",
+        "removing": "Origineel verwijderen…"
       }
     },
     "collect": {
@@ -653,7 +659,10 @@
       "masterVersion": "Master-versie",
       "lastPublished": "Laatst gepubliceerd",
       "publishUpdate": "Master-update publiceren...",
-      "installUpdate": "Master-update installeren..."
+      "checkUpdate": "Controleren op updates",
+      "checkingUpdate": "Controleren…",
+      "installUpdate": "Installeren vanuit bestand...",
+      "githubUpdateBody": "Er is een nieuwe master-snapshot beschikbaar op GitHub ({{tag}}).\n\nNu downloaden en toepassen? Je collectie, verlanglijst en persoonlijke instellingen blijven behouden."
     },
     "integrations": {
       "title": "Integraties",
@@ -757,6 +766,8 @@
       "publishFailed": "Publiceren mislukt: {{message}}",
       "installFailed": "Installeren mislukt: {{message}}",
       "masterInstalled": "Master-update geïnstalleerd.",
+      "githubCheckFailed": "GitHub-controle mislukt: {{message}}",
+      "masterUpToDate": "Stamgegevens zijn up-to-date.",
       "qbtOk": "qBittorrent OK - v{{version}}",
       "qbtError": "qBittorrent: {{error}}",
       "qbtTestError": "qBt-testfout: {{error}}",
@@ -787,7 +798,9 @@
   },
   "mounts": {
     "title": "Opslag",
-    "subtitle": "Opslagstations, jaarroutering en archiveringsmodus voor de verzamel-pipeline."
+    "subtitle": "Opslagstations, jaarroutering en archiveringsmodus voor de verzamel-pipeline.",
+    "freeOfTotal": "{{free}} vrij van {{total}}",
+    "usageTooltip": "{{free}} vrij van {{total}} ({{pct}}% gebruikt)"
   },
   "themes": {
     "title": "Thema's",

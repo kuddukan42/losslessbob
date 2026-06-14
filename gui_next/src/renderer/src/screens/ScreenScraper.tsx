@@ -331,8 +331,9 @@ function CrawlerTab({ status, logs, onClearLog }: {
 
 // ── Tab: Entry Metadata Scraper ───────────────────────────────────────────────
 
-function EntryTab({ status, logs, onClearLog }: {
+function EntryTab({ status, logs, onClearLog, onLog }: {
   status: ScrapeStatus | null; logs: LogLine[]; onClearLog: () => void
+  onLog: (text: string, tone?: LogLine['tone']) => void
 }) {
   const [force, setForce] = useState(false)
   const [dlFiles, setDlFiles] = useState(false)
@@ -341,6 +342,7 @@ function EntryTab({ status, logs, onClearLog }: {
   const [startLb, setStartLb] = useState('')
   const [endLb, setEndLb] = useState('')
   const [singleLb, setSingleLb] = useState('')
+  const [singleBusy, setSingleBusy] = useState(false)
   const running = status?.running ?? false
 
   const post = async (path: string, body: object) => {
@@ -394,9 +396,32 @@ function EntryTab({ status, logs, onClearLog }: {
         <CtrlLabel>Single Entry</CtrlLabel>
         <div style={{ display: 'flex', gap: 6 }}>
           <Input placeholder="LB number" value={singleLb} onChange={e => setSingleLb(e.target.value)} size="sm" width={110} />
-          <Button variant="secondary" size="sm" disabled={running || !singleLb}
-            onClick={() => post(`/api/entry/${singleLb}/scrape`, { force })}>
-            Go
+          <Button variant="secondary" size="sm" disabled={running || singleBusy || !singleLb}
+            onClick={async () => {
+              const lbId = String(parseInt(singleLb)).padStart(5, '0')
+              setSingleBusy(true)
+              onLog(`scraping  LB-${lbId}...`)
+              try {
+                const res = await fetch(`${BASE}/api/entry/${singleLb}/scrape`, {
+                  method: 'POST', headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ force }),
+                })
+                const data = await res.json().catch(() => ({}))
+                if (!res.ok || data.error) {
+                  onLog(`LB-${lbId} error: ${data.error ?? res.status}`, 'bad')
+                } else if (data.skipped) {
+                  onLog(`LB-${lbId} skipped${data.reason ? ` (${data.reason})` : ' — already up to date'}`, 'warn')
+                } else {
+                  const n = data.files_downloaded?.length ?? 0
+                  onLog(`LB-${lbId} done — ${n} file${n === 1 ? '' : 's'} downloaded`, 'ok')
+                }
+              } catch (e) {
+                onLog(`LB-${lbId} request failed: ${e}`, 'bad')
+              } finally {
+                setSingleBusy(false)
+              }
+            }}>
+            {singleBusy ? 'Working…' : 'Go'}
           </Button>
         </div>
 
@@ -1055,7 +1080,7 @@ export function ScreenScraper() {
         {/* Tab content */}
         <div style={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}>
           {activeTab === 'crawler'   && <CrawlerTab   status={crawlerStatus}   logs={logs.crawler}   onClearLog={() => clearLog('crawler')} />}
-          {activeTab === 'entry'     && <EntryTab      status={scrapeStatus}    logs={logs.entry}     onClearLog={() => clearLog('entry')} />}
+          {activeTab === 'entry'     && <EntryTab      status={scrapeStatus}    logs={logs.entry}     onClearLog={() => clearLog('entry')} onLog={(text, tone) => pushLog('entry', text, tone)} />}
           {activeTab === 'bootlegs'  && <BootlegTab    status={bootlegStatus}   logs={logs.bootlegs}  onClearLog={() => clearLog('bootlegs')} />}
           {activeTab === 'bobdylan'  && <BobDylanTab   status={bobdylanStatus}  logs={logs.bobdylan}  onClearLog={() => clearLog('bobdylan')} />}
           {activeTab === 'setlistfm' && <SetlistFmTab  status={setlistFmStatus} logs={logs.setlistfm} onClearLog={() => clearLog('setlistfm')} />}

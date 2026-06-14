@@ -5,6 +5,7 @@ const FLASK_PORT = 5174
 contextBridge.exposeInMainWorld('api', {
   flaskPort:       FLASK_PORT,
   flaskBase:       `http://127.0.0.1:${FLASK_PORT}`,
+  platform:        process.platform,
   pickFolders:     (): Promise<string[]>      => ipcRenderer.invoke('dialog:pickFolders'),
   pickDir:         (): Promise<string | null> => ipcRenderer.invoke('dialog:pickDir'),
   pickFile:        (opts?: { title?: string; filters?: { name: string; extensions: string[] }[] }): Promise<string | null> => ipcRenderer.invoke('dialog:pickFile', opts),

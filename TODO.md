@@ -1,3 +1,38 @@
+TODO-140: tapematch — low-band/time-warp fallback for speed-offset misses
+Priority: Low
+Status: Open
+Added: 2026-06-13
+Description: Follow-up from TODO-139 Task 4 (CC_TAPEMATCH_FIXES.md step 5). On
+1989-06-04 and 1990-01-12, predicted-lag mode activates correctly but doesn't
+recover any of the 8/9 baseline misses — windowed/hiss correlation is ~100x below
+threshold at every lag for these pairs, not just near zero, so the limiting factor
+is signal content, not search range. Spec's fallback: low-band (250-2000 Hz)
+envelope comparison with time-warped *features* (never resample waveforms — see
+WORKFLOW.md prohibition). Investigate whether envelope-domain comparison surfaces
+correlation these HF-residual/hiss checks miss for these specific pairs. See
+tools/tapematch/BASELINE.md "Task 4 results" for full diagnostics (windowed_median/
+hiss_median/fp_score ranges per pair).
+
+TODO-144: tapematch — piecewise alignment for staircase/staircase pairs
+Priority: Low
+Status: Open
+Added: 2026-06-13
+Description: Follow-up from TODO-139 Task 5 (CC_TAPEMATCH_FIXES.md step 4,
+"implement only if step 3 calibration fails"). Calibration of a 5s/2s
+short-window residual_corr pass on 2001-10-30 found no usable gap: the
+same-source pair (LB-07888/LB-08413) has median residual_corr 0.0118 vs 0.0153
+for the different-source-same-show pair (LB-08413/LB-13258) — the
+different-source pair scores *higher*, and both distributions' frac>=0.10 is
+~0.000-0.002. No fixed threshold at any window size tried (60s/15s/5s) separates
+these. Spec's alternative: piecewise alignment — use the staircase lag curve to
+locate splice/edit points, split each recording into contiguous segments between
+edits, and align+correlate each segment independently rather than via a single
+global lag search. Investigate whether per-segment correlation recovers signal
+that whole-recording windowed/hiss correlation misses for staircase/staircase
+pairs (2001-10-30: 6 misses, 2001-10-07/1996-07-21 also staircase-heavy). See
+tools/tapematch/BASELINE.md "Task 5 results" and calibrate_staircase.py for the
+calibration data/tooling.
+
 TODO-136: Post editor form for existing WTRF posts
 Priority: Low
 Status: Open

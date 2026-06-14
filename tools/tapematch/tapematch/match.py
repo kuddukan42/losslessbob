@@ -12,7 +12,7 @@ from __future__ import annotations
 import numpy as np
 from scipy.signal import stft, correlate
 from .audio import to_mono
-from .align import local_lag
+from .align import local_lag, local_lag_centered
 
 
 def aligned_window(ref_mono, other_mono, sr, center_sec, window_sec, lag_sec):
@@ -69,35 +69,6 @@ def estimate_ratio(ref, other, sr, anchors, cfg):
     return best_ratio
 
 
-def pairwise_matrix(streams_mono, sr, anchors, cfg):
-    """streams_mono: dict name->mono array, already trimmed.
-    For each pair: estimate speed ratio, resample to remove it, then average
-    residual correlation over speed-corrected anchor windows."""
-    from .audio import resample_ratio
-    names = list(streams_mono.keys())
-    n = len(names)
-    M = np.eye(n)
-    a = cfg["align"]; w = cfg["anchors"]["window_sec"]
-    ppm_thr = a["ratio_flag_ppm"]
-    for i in range(n):
-        for j in range(i + 1, n):
-            ri = streams_mono[names[i]]
-            rj = streams_mono[names[j]]
-            ratio = estimate_ratio(ri, rj, sr, anchors, cfg)
-            if abs(ratio - 1.0) * 1e6 > ppm_thr:
-                rj = resample_ratio(rj, ratio)
-            corrs = []
-            for ctr in anchors:
-                lag, peak = local_lag(ri, rj, sr, ctr, w, a["max_lag_sec"])
-                if lag is None:
-                    continue
-                ra, ob = aligned_window(ri, rj, sr, ctr, w, lag)
-                corrs.append(abs(residual_corr(ra, ob)))
-            val = float(np.median(corrs)) if corrs else 0.0
-            M[i, j] = M[j, i] = val
-    return names, M
-
-
 def find_quiet_segments(
     mono: np.ndarray,
     sr: int,
@@ -147,6 +118,8 @@ def secondary_corr_pair(
     other: np.ndarray,
     sr: int,
     cfg: dict,
+    predicted_lag: dict | None = None,
+    return_raw: bool = False,
 ) -> dict:
     """Windowed coverage + quiet-segment correlation for one cross-family pair.
 
@@ -163,6 +136,15 @@ def secondary_corr_pair(
         other: trimmed mono array for the other source (speed-corrected if needed).
         sr: sample rate.
         cfg: full config dict (must contain secondary_match block).
+        predicted_lag: optional dict with keys "ppm" (pair speed offset from
+            estimate_ratio), "lag_0" (lag in seconds at anchor0_sec) and
+            "anchor0_sec" (the anchor time lag_0 was measured at). When
+            |ppm| >= secondary_match.high_ppm_threshold, each window's lag
+            search is centered on the predicted drift
+            expected_lag(t) = lag_0 + (ppm/1e6) * (t - anchor0_sec)
+            instead of zero (CC_TAPEMATCH_FIXES.md Task 4).
+        return_raw: if True, also include the raw per-window/per-segment
+            correlation lists ("win_corrs", "hiss_corrs") for calibration.
 
     Returns:
         dict with keys: windowed_frac, windowed_median, n_windows,
@@ -177,11 +159,26 @@ def secondary_corr_pair(
     win_samp = int(win_sec * sr)
     hop_samp = int(hop_sec * sr)
 
+    high_ppm_thr = float(sec.get("high_ppm_threshold", 0))
+    use_predicted = (
+        predicted_lag is not None
+        and high_ppm_thr > 0
+        and abs(predicted_lag["ppm"]) >= high_ppm_thr
+    )
+    if use_predicted:
+        ppm_ratio = predicted_lag["ppm"] / 1e6
+        lag_0 = predicted_lag["lag_0"]
+        anchor0_sec = predicted_lag["anchor0_sec"]
+
     # --- Windowed coverage ---
     win_corrs: list[float] = []
     for s0 in range(0, len(ref) - win_samp, hop_samp):
         center_sec = (s0 + win_samp // 2) / sr
-        lag, _ = local_lag(ref, other, sr, center_sec, win_sec, lag_sec)
+        if use_predicted:
+            expected_lag = lag_0 + ppm_ratio * (center_sec - anchor0_sec)
+            lag, _ = local_lag_centered(ref, other, sr, center_sec, win_sec, lag_sec, expected_lag)
+        else:
+            lag, _ = local_lag(ref, other, sr, center_sec, win_sec, lag_sec)
         if lag is None:
             continue
         ra, ob = aligned_window(ref, other, sr, center_sec, win_sec, lag)
@@ -216,7 +213,7 @@ def secondary_corr_pair(
         hiss_frac = float((arr >= float(sec["hiss_corr_threshold"])).mean())
         hiss_median = float(np.median(arr))
 
-    return {
+    result = {
         "windowed_frac": windowed_frac,
         "windowed_median": windowed_median,
         "n_windows": len(win_corrs),
@@ -224,6 +221,10 @@ def secondary_corr_pair(
         "hiss_median": hiss_median,
         "n_hiss_segs": len(hiss_corrs),
     }
+    if return_raw:
+        result["win_corrs"] = win_corrs
+        result["hiss_corrs"] = hiss_corrs
+    return result
 
 
 def _stft_mag(window: np.ndarray, sr: int, nperseg: int, hop: int) -> np.ndarray:

@@ -411,10 +411,16 @@
       "confirmBody": "Classer \"{{folder}}\" dans {{mount}}",
       "confirmNote": "Le dossier sera déplacé vers sa destination de collection et enregistré dans Ma collection.",
       "confirmAction": "Classer",
+      "qbtSynced": "Chemin d'enregistrement qBittorrent mis à jour — le partage continue depuis le nouvel emplacement",
+      "qbtSyncFailed": "Classé, mais la mise à jour du chemin d'enregistrement qBittorrent a échoué : {{error}}",
+      "busy": "Un classement est déjà en cours — veuillez attendre la fin",
+      "jobMismatch": "Le suivi du classement a été repris par une autre tâche — vérifiez le résultat dans Ma collection",
       "progress": {
         "scanning": "Analyse…",
         "copying": "Copie…",
-        "moving": "Déplacement…"
+        "moving": "Déplacement…",
+        "verifying": "Vérification…",
+        "removing": "Suppression de l'original…"
       }
     },
     "collect": {
@@ -653,7 +659,10 @@
       "masterVersion": "Version maître",
       "lastPublished": "Dernière publication",
       "publishUpdate": "Publier la mise à jour principale...",
-      "installUpdate": "Installer la mise à jour principale..."
+      "checkUpdate": "Vérifier les mises à jour",
+      "checkingUpdate": "Vérification…",
+      "installUpdate": "Installer depuis un fichier...",
+      "githubUpdateBody": "Un nouvel instantané principal est disponible sur GitHub ({{tag}}).\n\nLe télécharger et l'appliquer maintenant ? Votre collection, votre liste de souhaits et vos paramètres personnels sont conservés."
     },
     "integrations": {
       "title": "Intégrations",
@@ -757,6 +766,8 @@
       "publishFailed": "La publication a échoué : {{message}}",
       "installFailed": "L'installation a échoué : {{message}}",
       "masterInstalled": "La mise à jour principale a été installée.",
+      "githubCheckFailed": "Échec de la vérification GitHub : {{message}}",
+      "masterUpToDate": "Les données de base sont à jour.",
       "qbtOk": "qBittorrent OK - v{{version}}",
       "qbtError": "qBittorrent : {{error}}",
       "qbtTestError": "qBt test error : {{error}}",
@@ -787,7 +798,9 @@
   },
   "mounts": {
     "title": "Volumes",
-    "subtitle": "Disques de stockage, routage par année et mode de classement pour le pipeline de la collection."
+    "subtitle": "Disques de stockage, routage par année et mode de classement pour le pipeline de la collection.",
+    "freeOfTotal": "{{free}} libre sur {{total}}",
+    "usageTooltip": "{{free}} libre sur {{total}} ({{pct}}% utilisé)"
   },
   "themes": {
     "title": "Thèmes",

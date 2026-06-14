@@ -55,6 +55,8 @@ tools/tapematch/last_run_report.md
 tools/tapematch/last_results.json
 tools/tapematch/last_debug.log
 tools/tapematch/observations.db
+tools/tapematch/observations.db.bak-*
+tools/tapematch/rerun_queue.txt
 
 # Generated output files
 losslessbob.db

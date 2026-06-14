@@ -408,10 +408,16 @@
       "confirmBody": "Archivar \"{{folder}}\" en {{mount}}",
       "confirmNote": "La carpeta se moverá a su destino de colección y se registrará en Mi colección.",
       "confirmAction": "Archivar",
+      "qbtSynced": "Ruta de guardado de qBittorrent actualizada: la siembra continúa desde la nueva ubicación",
+      "qbtSyncFailed": "Archivado, pero la actualización de la ruta de guardado de qBittorrent ha fallado: {{error}}",
+      "busy": "Ya hay un trabajo de archivado en curso — espere a que termine",
+      "jobMismatch": "El estado del archivado fue tomado por otro trabajo — compruebe el resultado en Mi colección",
       "progress": {
         "scanning": "Escaneando…",
         "copying": "Copiando…",
-        "moving": "Moviendo…"
+        "moving": "Moviendo…",
+        "verifying": "Verificando…",
+        "removing": "Eliminando el original…"
       }
     },
     "collect": {
@@ -650,7 +656,10 @@
       "masterVersion": "Versión Master",
       "lastPublished": "Última publicación",
       "publishUpdate": "Publicar actualización maestra...",
-      "installUpdate": "Instalar actualización maestra..."
+      "checkUpdate": "Buscar actualizaciones",
+      "checkingUpdate": "Comprobando…",
+      "installUpdate": "Instalar desde archivo...",
+      "githubUpdateBody": "Hay disponible una nueva instantánea maestra en GitHub ({{tag}}).\n\n¿Descargarla y aplicarla ahora? Tu colección, lista de deseos y configuración personal se conservarán."
     },
     "integrations": {
       "title": "Integraciones",
@@ -754,6 +763,8 @@
       "publishFailed": "Publicación fallida: {{message}}",
       "installFailed": "Instalación fallida: {{message}}",
       "masterInstalled": "Actualización maestra instalada.",
+      "githubCheckFailed": "Error al comprobar GitHub: {{message}}",
+      "masterUpToDate": "Los datos maestros están actualizados.",
       "qbtOk": "qBittorrent OK - v{{version}}",
       "qbtError": "qBittorrent: {{error}}",
       "qbtTestError": "qBt error de prueba: {{error}}",
@@ -784,7 +795,9 @@
   },
   "mounts": {
     "title": "Unidades",
-    "subtitle": "Unidades de almacenamiento, enrutamiento por año y modo de archivado para el pipeline de la colección."
+    "subtitle": "Unidades de almacenamiento, enrutamiento por año y modo de archivado para el pipeline de la colección.",
+    "freeOfTotal": "{{free}} libres de {{total}}",
+    "usageTooltip": "{{free}} libres de {{total}} ({{pct}}% usado)"
   },
   "themes": {
     "title": "Temas",

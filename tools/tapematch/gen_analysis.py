@@ -53,6 +53,7 @@ def parse_report(path: Path) -> dict:
         "output": "",
         "lb_commentary": {},   # lb_id -> {header, text}
         "has_error": False,
+        "insufficient_sources": False,
         "n_families": 0,
         "clusters": [],        # {id, members, intra_corr, low_conf, secondary}
         "secondary_pairs": [], # (lb_a, lb_b)
@@ -102,6 +103,10 @@ def parse_report(path: Path) -> dict:
     # Error?
     if re.search(r'Traceback|LibsndfileError|RuntimeError.*duration', out):
         r["has_error"] = True
+
+    # Insufficient sources (run_date marks these instead of running tapematch)?
+    if re.search(r'\*\*insufficient_sources\*\*', text):
+        r["insufficient_sources"] = True
 
     # Clusters
     cl_m = re.search(r'=== CLUSTERS ===\n(.*?)(?:===|$)', out, re.DOTALL)
@@ -297,8 +302,13 @@ def _build_observations(r: dict, rows: list[dict]) -> list[str]:
                 )
                 continue
 
-            is_same = _same_signal(snip) or _same_signal(text[:200])
             is_diff = _diff_signal(snip)
+            # A snippet can match both patterns, e.g. "Alternative recording to
+            # LB-0491/LB-0569 ... which all appear to be same recording" — the
+            # "same recording" there describes the other LBs' relationship to
+            # each other, not to the subject. Treat such snippets as ambiguous
+            # rather than a same-source signal.
+            is_same = not is_diff and (_same_signal(snip) or _same_signal(text[:200]))
 
             if is_same and fa is not None and fb is not None:
                 if fa == fb:
@@ -423,6 +433,24 @@ def build_analysis(run_dir: Path, r: dict, results: dict) -> str:
     lines.append(f"# Analysis — {r['date']} — {r['venue']}")
     lines.append(f"*Claude {MODEL} — {TODAY}*")
     lines.append("")
+
+    # ── Insufficient sources ──────────────────────────────────────────────
+    if r["insufficient_sources"]:
+        lines.append("## Status: insufficient sources — tapematch not run")
+        lines.append("")
+        lines.append(f"Coverage: {r['coverage_db']} DB / {r['coverage_disk']} on disk "
+                      "(after excluding private/no-torrent and no-audio folders)")
+        lines.append("")
+        if r["sources"]:
+            lines.append("| LB | Rating | Timing | Source |")
+            lines.append("|----|--------|--------|--------|")
+            for src in r["sources"]:
+                marker = "✓" if src["on_disk"] else "—"
+                lines.append(f"| {src['lb']} {marker} | {src['rating']} | {src['timing']} | {src['source_brief']} |")
+        lines.append("")
+        lines.append("Fewer than 2 locally analyzable recordings — no clustering possible. "
+                      "Not an error; no action required.")
+        return "\n".join(lines)
 
     # ── Error ──────────────────────────────────────────────────────────────
     if r["has_error"]:
@@ -600,7 +628,12 @@ def main() -> None:
             content = build_analysis(run_dir, r, results)
             analysis_path.write_text(content)
 
-            status = "ERROR" if r["has_error"] else f"{r.get('n_families','?')}fam/{r['coverage_disk']}src"
+            if r["has_error"]:
+                status = "ERROR"
+            elif r["insufficient_sources"]:
+                status = f"insufficient_sources/{r['coverage_disk']}src"
+            else:
+                status = f"{r.get('n_families','?')}fam/{r['coverage_disk']}src"
             print(f"  ✓  {date_str}  [{status}]  {run_dir.name}")
             ok += 1
         except Exception as exc:

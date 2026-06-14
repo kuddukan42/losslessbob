@@ -1,3 +1,463 @@
+[2026-06-13] — fix(tools): TODO-139 Task 7 — tapematch error/no-verdict triage (BUG-180/181/182)
+Fixed: tools/tapematch/tapematch/ingest.py: list_tracks now requires p.is_file()
+  in addition to suffix matching (BUG-180) — a subdirectory named
+  "1987-10-05locarno+asm.flac" was matched as a track and crashed
+  audio.duration_sec() with LibsndfileError. Re-run of 1987-10-05 now
+  completes (5 sources, 2 families).
+Fixed: tools/tapematch/tapematch_session.py: find_lb_folders now drops
+  collection folders with no audio files via _has_audio() (BUG-181), printing
+  "Excluded (no audio found): LB-XXXXX" — previously such a folder made
+  ingest.concat_source raise ValueError("no audio in ...") and crash the
+  entire date's run. Re-runs of 1987-10-05/1989-08-26/1989-09-03 now complete
+  (2/2/8 families); 1989-09-01 (left with 1 source) now gets the new
+  insufficient_sources report below instead of crashing.
+Fixed: tools/tapematch/tapematch_session.py: resolve_from_collection now
+  catches OSError from p.is_dir() and treats an unreachable collection path
+  (e.g. /mnt/DYLAN2 offline) as "missing" instead of crashing the session
+  (BUG-182, found during validation).
+Added: tools/tapematch/tapematch_session.py: run_date now writes an explicit
+  **insufficient_sources** status into report.md (and archives the run) when
+  fewer than 2 sources remain after exclusion, instead of returning early with
+  nothing written.
+Added: tools/tapematch/gen_analysis.py: parse_report/build_analysis/main
+  recognize the insufficient_sources marker and render a clean status section
+  instead of ERROR.
+Added: tools/tapematch/tests/test_ingest_list_tracks.py,
+  test_find_lb_folders_no_audio.py, test_insufficient_sources.py (6 new tests;
+  full tapematch suite 33/33 pass).
+Added: data/tapematch/runs/20260605_214549_2026-06-05/SKIP_REASON,
+  20260605_215513_2026-06-05/SKIP_REASON — mark these as test/calibration
+  artifacts (2000-03-14 Visalia content under a fake date), kept not deleted.
+Note: 1993-04-23 (LB-04994, d1t01.flac, 4186 bytes truncated) and 2001-07-07
+  (LB-14942, d1t01.flac, 0 bytes) are genuinely corrupted source files —
+  reported to user, not modified per spec. Full writeup in
+  tools/tapematch/BASELINE.md "Task 7 results". This completes the TODO-139
+  task sequence (Tasks 2-7).
+
+[2026-06-13] — fix(gui): BUG-179 — Pipeline "File all into collection" left stuck-running ghost rows
+Fixed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: applyFile now guards
+  against re-entrant filing jobs (filingRef/filingActive — bails with a toast if a
+  filing job is already in flight) and the "File all N into collection" button is
+  disabled while a batch is running. The /api/pipeline/file/status polling loop now
+  checks status.path against row.folderPath and bails with a "job mismatch" error
+  if the global _FILE_JOB has been taken over by a different job, instead of
+  spinning forever with running:true and a frozen progress bar.
+Added: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: local toast state +
+  showToast() in ScreenPipeline (three existing calls referenced a non-existent
+  LbdirStageContent-scoped showToast — also fixed by this).
+Added: gui_next/src/renderer/src/locales/{en,de,es,fr,it,nl}.json: pipeline.file.busy,
+  pipeline.file.jobMismatch.
+
+[2026-06-13] — fix(gui): BUG-178 — Pipeline "Final storage" destination stale after Apply rename
+Fixed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: applyRename updated
+  row.folderPath/folderName to the renamed path and re-runs the "file" step against
+  the new path, merging the refreshed dest/dest_parent/mount_label into the row —
+  previously "Final storage" kept showing the destination built from the pre-rename
+  folder name even though "Staging" already reflected the applied rename.
+
+[2026-06-13] — fix(gui): BUG-177 — Pipeline "Apply rename" failed silently on duplicate folder
+Fixed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: applyRename ignored error/409
+  responses from /api/folder/rename (e.g. "Target already exists" when a folder with the
+  proposed name already exists at the destination) and swallowed network errors, leaving the
+  Rename step looking unchanged with no feedback. Now stores the error on
+  row.steps.rename.error and RenameStageContent shows a "Rename failed" banner with the
+  message; status stays 'warn' so the user can edit the name and retry.
+
+[2026-06-13] — fix(gui): TODO-145 — Pipeline table dead space before LB#/Apply/File columns
+Fixed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: Pipeline queue
+  table colgroup gave the Status column no fixed width, so on wide windows it
+  absorbed all leftover space while its content stayed left-aligned,
+  stranding the LB#/Apply/File columns far to the right. Capped the Status
+  column at 240px and made the folder-name column (previously fixed 380px)
+  the flexible one that absorbs remaining width.
+
+[2026-06-13] — feat(tools): TODO-139 Task 6 — re-run queue generator + batch mode
+Added: tools/tapematch/build_rerun_queue.py: queries observations.db's
+  `latest_pairs` view (Task 2) for concert dates with >=1
+  `lb_says_same=1 AND tapematch_verdict='different_family'` pair (a miss
+  against LB commentary), ordered by miss count desc. Writes
+  `tools/tapematch/rerun_queue.txt` (232 dates), one date per line with the
+  miss count as a trailing comment. `--since TIMESTAMP|REF` excludes dates
+  whose latest run is already at/after a given ISO timestamp or git ref (for
+  re-running the queue after a future fix commit lands). `--dry-run` previews
+  without writing.
+Added: tools/tapematch/tapematch_session.py: `run_batch()` + `--batch FILE`
+  consumes a re-run queue file sequentially via the existing `run_date()`.
+  Blank/comment/already-`# done`-marked lines are skipped; each completed
+  line gets `# done <timestamp>` appended (resumable after interruption or
+  KeyboardInterrupt, which leaves the in-progress line unmarked and exits 130).
+Added: tools/tapematch/tests/test_build_rerun_queue.py (4 tests),
+  tools/tapematch/tests/test_batch_queue.py (4 tests).
+Changed: .gitignore: tools/tapematch/rerun_queue.txt is a generated/mutable
+  artifact (gets `# done` markers as the queue is processed) — gitignored
+  alongside observations.db.
+Note: queue currently lists all 232 dates with >=1 lb_says_same miss (no
+  --since applied yet — Task 4/5 fixes are uncommitted). Per Task 6 spec
+  step 5, dates with 0 misses are never queued. Next: Task 7 (error/no-verdict
+  triage).
+
+[2026-06-13] — fix(backend): BUG-176 — pipeline rename now flags folders missing their (LB-NNNNN) tag
+Fixed: backend/app.py: in the BUG-119 fallback (rename step when the DB entry has no
+  date_str/location), the proposed name was derived from the current folder name with
+  no check that it actually contains "(LB-NNNNN)", so untagged folders were reported as
+  "Folder name is already correct" and could be promoted to "ready to file". Now, if the
+  entry's location is blank but date_str is present, the rename step first looks up
+  bobdylan_shows by date to fill in the location, so the standard "date Location (LB-NNNNN)"
+  order can still be proposed (e.g. LB-16311 → "2022-10-06 Berlin, Germany (LB-16311)").
+  Only when no bobdylan_shows match exists does it fall back to checking for the correct
+  "(LB-{lb_number:05d})" tag on the existing name, stripping any stale tag, and proposing
+  to append the correct one — without touching date/location (BUG-119 stays fixed).
+
+[2026-06-13] — fix(gui): Animate "Running" spinner in pipeline stage indicators
+Fixed: gui_next/src/renderer/src/index.css: the `.p2-spin` class used by
+  StateGlyph and StageNode (PipelineParts.tsx) for the "Running" state circle
+  had no animation defined, so the spinner rendered static. Added a
+  `p2-spin` keyframes rule (360° rotation, 0.8s linear infinite) and the
+  `.p2-spin` class.
+
+[2026-06-13] — fix(gui): BUG-166 — Pipeline "In collection" badge shown before filing
+Fixed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: applyRename's success branch
+  hardcoded `bucket: 'done'` after a rename, even when the File step (step 5) was still
+  `'warn'` (not yet filed). Now derives bucket as `r.steps.file.status === 'warn' ? 'shelf'
+  : 'done'`, matching serverRowToPipeline's guard. Fixes the green "In collection"/"Filed to
+  <mount>" badge appearing prematurely, and restores the "File all N into collection" button
+  (was hidden because these rows weren't counted in counts.shelf).
+
+[2026-06-13] — feat(tapematch): TODO-139 Task 5 — staircase union-flag fix + short-window calibration
+Added: tools/tapematch/tapematch/align.py: union_staircase_sources() — a source
+  counts as "staircase" if classified "staircase/splice" in either lag-curve pass
+  (vs initial ref, or vs re-selected central ref). Fixes a reference-ambiguity bug:
+  speed_info[ref_name]["kind"] is always "reference" under a single pass, so a pair
+  involving the current reference source could never be flagged staircase on that
+  source.
+Changed: tools/tapematch/tapematch/cli.py: central-ref lag-curve pass
+  (speed_info_central) now computed before the secondary-match loop so
+  staircase_sources = union_staircase_sources(speed_info, speed_info_central) can
+  drive the existing 15s short-window OR-fallback; central-ref pass still printed
+  in its original later output position (section order unchanged).
+Changed: tools/tapematch/tapematch/match.py: secondary_corr_pair() takes optional
+  return_raw bool — adds win_corrs/hiss_corrs (raw per-window correlations) to the
+  returned dict for calibration use.
+Added: tools/tapematch/calibrate_staircase.py — one-off tool computing per-window
+  residual_corr distributions at a short window size for known same-source /
+  different-source-same-show staircase pairs (2001-10-30).
+Added: tools/tapematch/config.yaml: secondary_match.staircase_window_sec/hop_sec
+  (5.0/2.0) and staircase_window_corr_threshold/coverage_threshold (both null) —
+  documented but disabled, see Note below.
+Added: tools/tapematch/tests/test_staircase_union.py: 3 tests covering the
+  2001-10-30 reference-ambiguity scenario, empty-second-pass case, and the
+  no-staircase-sources case.
+Note: calibration of the new 5s/2s pass on 2001-10-30 found no usable
+  residual_corr gap — same-source median 0.0118 vs different-source-same-show
+  median 0.0153 (higher), distributions fully overlap at every threshold tried. Per
+  spec, the new pass was NOT wired into cli.py (thresholds left null/disabled). The
+  union-flag fix itself is regression-free on 3 control dates and on 2001-10-30
+  (byte-identical CLUSTERS/LINEAGE/DIAGNOSTICS, same 6/6 lb_says_same misses,
+  identical corr values pre/post fix). Full writeup in
+  tools/tapematch/BASELINE.md "Task 5 results". Piecewise alignment (spec step 4)
+  deferred — tracked as TODO-144.
+
+[2026-06-13] — fix(gui): BUG-175 — Windows fonts render badly (fallback font + blurry ClearType)
+Changed: gui_next/src/renderer/index.html: removed the Google Fonts <link>/preconnect
+  tags and tightened the CSP — style-src/font-src no longer allow
+  fonts.googleapis.com/fonts.gstatic.com.
+Changed: gui_next/package.json: added @fontsource/inter, ibm-plex-sans, source-sans-3,
+  jetbrains-mono (pinned exact versions) so fonts ship inside the app bundle.
+Changed: gui_next/src/renderer/src/main.tsx: imports local font CSS for every
+  weight previously requested from Google Fonts; sets a `platform-<platform>`
+  class on <html> before React mounts.
+Changed: gui_next/src/preload/index.ts, src/renderer/src/env.d.ts: expose
+  `process.platform` to the renderer as `window.api.platform`.
+Fixed: gui_next/src/renderer/src/index.css: scoped `-webkit-font-smoothing:
+  antialiased` to `html.platform-darwin` only — on Windows this property
+  disables ClearType subpixel rendering, making all text look blurry/thin
+  regardless of which font is loaded.
+
+[2026-06-13] — feat(backend+gui): TODO-143 — "Check for Updates" master snapshot install from GitHub
+Added: backend/app.py: GET /api/master/github_check — queries the latest
+  kuddukan42/losslessbob GitHub release, downloads its manifest sidecar, and
+  compares master_version against the local meta table to report whether a
+  newer master snapshot is available.
+Added: backend/app.py: POST /api/master/github_install — text/event-stream
+  endpoint that downloads the latest master .db + manifest from GitHub
+  Releases into data/imports/, verifies SHA256, and applies it via
+  database.import_master_db(), streaming progress events (mirrors
+  /api/master/github_release's event shape).
+Changed: gui_next/src/renderer/src/screens/ScreenSetup.tsx: CuratorToggle gains
+  a "Check for updates" button (handleCheckGithubMaster + runGithubInstall)
+  that checks GitHub, confirms with the user, then streams install progress
+  as toasts. Existing file-picker button relabeled "Install from file…"
+  (installUpdate key) to disambiguate from the new GitHub path.
+Changed: gui_next/src/renderer/src/locales/{en,de,es,fr,it,nl}.json: added
+  setup.masterData.checkUpdate/checkingUpdate/githubUpdateBody and
+  setup.toast.githubCheckFailed/masterUpToDate; reworded installUpdate to
+  "Install from file…".
+Note: porting gap from TODO-088 (PyQt _GitHubMasterThread) — gui_next only
+  had the file-picker fallback; this restores the GitHub-check path.
+
+[2026-06-13] — fix(gui): Scraper "Single Entry" Go button gave no feedback
+Fixed: gui_next/src/renderer/src/screens/ScreenScraper.tsx: the Go button's POST
+  to /api/entry/<lb>/scrape discarded the response, so a skip (e.g. entry already
+  up to date with force/download off) or error appeared as "nothing happened".
+  Now awaits the response and writes a result line (done/skipped/error) to the
+  Entry Metadata Live Log, and disables the button with a "Working…" label while
+  the request is in flight.
+
+[2026-06-13] — feat(tapematch): TODO-139 Task 4 — predicted-lag mode for speed-offset secondary match
+Added: tools/tapematch/tapematch/align.py: local_lag_centered() — like local_lag()
+  but centers the +-max_lag_sec residual search on an arbitrary lag_center_sec
+  instead of zero, via scipy.signal.correlate(mode="valid"). No waveform resampling.
+Added: tools/tapematch/config.yaml: secondary_match.high_ppm_threshold: 5000 — pairs
+  whose speed offset (ppm, from estimate_ratio) is at or above this center each
+  window's lag search on expected_lag(t) = lag_0 + ppm_ratio*(t - anchor0) instead
+  of zero; below threshold, behavior unchanged.
+Changed: tools/tapematch/tapematch/match.py: secondary_corr_pair() takes optional
+  predicted_lag dict (ppm/lag_0/anchor0_sec) and uses local_lag_centered() for the
+  windowed-coverage pass when |ppm| >= high_ppm_threshold.
+Changed: tools/tapematch/tapematch/cli.py: computes pair_ppm from existing
+  pair_ratios and lag_0 from local_lag() at anchors[0] for each cross-pair, passes
+  predicted_lag into both secondary_corr_pair() call sites (main + staircase
+  short-window fallback); logs PREDICTED_LAG debug lines.
+Added: tools/tapematch/tests/test_predicted_lag.py: 3 tests covering
+  local_lag_centered (finds a lag beyond +-max_lag_sec when centered correctly,
+  not when centered on zero) and secondary_corr_pair predicted-lag activation/
+  threshold gating.
+Note: validated on 1989-06-04, 1990-01-12 (targets) and 3 control dates incl.
+  1988-07-28 (high-ppm) — zero regressions, activates as specified, but does not
+  reduce misses on either target date (root cause is not search-range for these
+  pairs; see tools/tapematch/BASELINE.md "Task 4 results" and TODO-140).
+
+[2026-06-12] — fix(backend+gui): LBDIR reconcile now recovers self-referencing/regenerated files from site/files (BUG-174)
+Fixed: backend/checksum_utils.py: find_site_recoverable_files() only matched
+  data/site/files/LBF-{N}-* candidates against missing lbdir entries by exact MD5.
+  The lbdir manifest's self-checksum entry and regenerated report files (e.g.
+  DigiFlawFinder-*.wavf.html) can never match by MD5 across lbdir revisions — the
+  cached site copy is a different version of the same file — so they never produced
+  a site_proposal even though a same-named LBF-{N}-* file existed. Added a
+  filename-based fallback: strip the LBF-{N:05d}- prefix and compare (case/apostrophe
+  -normalised) against the missing entry's basename, returning matched_by:'name' plus
+  both md5 (site copy) and expected_md5 (what the folder's lbdir requires) so the user
+  can see they differ.
+Changed: gui_next/src/renderer/src/lib/lbdirStore.ts: SiteProposal gains
+  expected_md5 and matched_by:'md5'|'name'.
+Changed: gui_next/src/renderer/src/components/pipeline/LbdirDetail.tsx: "Recoverable
+  from site/files" rows matched by name only render an "MD5 mismatch" warning pill
+  (tooltip shows both hashes) plus a banner explaining the copy won't pass
+  verification as-is.
+Added: tests/test_checksum_utils_site_recovery.py: covers MD5 match, name-fallback
+  match (self-referencing lbdir + DigiFlawFinder report), and the no-missing-entries
+  empty case.
+
+[2026-06-12] — fix(backend): qBittorrent save-path sync — match renamed folders moved between staging dirs (BUG-173)
+Fixed: backend/qbittorrent.py: find_torrent_by_path()'s BUG-172 rename_history fallback
+  computed the pre-rename path as old_folder.parent / <pre-rename name>, assuming the
+  pipeline rename happened in the same directory qBittorrent's content_path points at.
+  When the folder had been relocated between staging directories (e.g. hopper-bob ->
+  1-DYLAN) before that in-place rename, the computed path never matched and sync silently
+  no-op'd. Now also matches on the pre-rename folder name alone (basename), regardless of
+  directory, when exactly one torrent's content_path basename matches.
+
+[2026-06-12] — fix(backend): qBittorrent save-path sync now also fixes folders renamed before filing (BUG-172)
+Fixed: backend/qbittorrent.py: find_torrent_by_path()'s fallback for torrents added outside
+  the app workflow only matched on an exact content_path string, so it missed folders
+  renamed by the pipeline's rename step before filing (qBittorrent still has the
+  pre-rename name recorded). Now also checks rename_history for the most recent row whose
+  new_path is the pre-filing folder, and matches qBittorrent torrents against the
+  pre-rename name from old_path.
+Added: backend/qbittorrent.py: rename_torrent_root() (POST /api/v2/torrents/renameFolder)
+  and recheck_torrent() (POST /api/v2/torrents/recheck). relocate_tracked_torrent()'s
+  external-match branch now relocates + renames the torrent's root folder to match the
+  on-disk name, then triggers a recheck so qBittorrent immediately re-validates against
+  the new location without re-downloading.
+
+[2026-06-12] — fix(backend): Publish Master Update — GitHub asset upload returned 400 Bad Request (BUG-171)
+Fixed: backend/app.py: master_github_release's _upload_asset() streamed the .db/.manifest
+  asset via a plain generator while also setting a manual Content-Length header. requests
+  can't size a bare generator, so it added Transfer-Encoding: chunked alongside
+  Content-Length — uploads.github.com rejects that combination with 400 Bad Request at
+  the first chunk. Replaced the generator with a _ProgressFile object exposing __len__
+  (real file size) and read() (1 MB chunks + progress events), so requests sends a real
+  Content-Length with no chunked encoding.
+
+[2026-06-12] — fix(backend): Pipeline scan-tree finds top-level folders whose audio is in subfolders (BUG-170)
+Fixed: backend/app.py: pipeline_scan_tree's shallow mode checked each immediate child of
+  the picked root with `_has_audio()` (direct files only), so release folders whose audio
+  lives in CD1/CD2/Extras subfolders (no audio directly in the release folder) were skipped
+  entirely after BUG-167 switched the GUI to shallow scanning. Added `_has_audio_anywhere()`
+  (rglob-based) for the immediate-children check — a top-level folder is now returned if it
+  contains audio anywhere beneath it, while only that top-level path is added (not the
+  nested subfolders).
+
+[2026-06-12] — feat(backend): qBittorrent save-path sync now finds torrents added outside the app
+Added: backend/qbittorrent.py: find_torrent_by_path() — GET /api/v2/torrents/info (unfiltered)
+  and matches each torrent's content_path (or save_path/name fallback) against a folder path.
+  _track_external_torrent() records a discovered torrent's infohash into the torrents table
+  (updating an existing row or inserting a minimal one) so future relocations use the
+  DB-tracked lookup.
+Changed: backend/qbittorrent.py: relocate_tracked_torrent() now falls back to
+  find_torrent_by_path() when no torrents row has added_to_qbt=1 with a matching
+  source_folder/infohash, so folders seeded outside the "Add to qBittorrent" workflow still
+  get their save path synced on filing.
+
+[2026-06-12] — feat(backend+gui): sync qBittorrent save path when filing a tracked folder
+Added: backend/qbittorrent.py: set_location() (POST /api/v2/torrents/setLocation) and
+  relocate_tracked_torrent() — after a pipeline filing move, looks up torrents rows for
+  the LB with added_to_qbt=1 and a known infohash whose source_folder matches the
+  pre-move path, points qBittorrent at the new parent directory (triggering its normal
+  hash recheck so seeding resumes without re-downloading), and updates source_folder in
+  the torrents table on success.
+Changed: backend/filer.py: start_file_job's _run() calls the new
+  _sync_qbt_location() helper after a successful move + collection registration;
+  result dict now includes qbt_synced/qbt_error (best-effort — never fails the filing job).
+Changed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: applyFile shows a toast
+  on the filing result's qbt_synced/qbt_error. Added pipeline.file.qbtSynced /
+  qbtSyncFailed to all 6 locale files.
+
+[2026-06-12] — feat(gui): Pipeline status group headers are now collapsible (TODO-141)
+Added: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: per-bucket collapsed
+  state (collapsedBuckets) and toggleBucket callback. GroupRow now receives
+  expanded/onToggle so clicking NEEDS YOU/READY/RUNNING/ON SHELF/DONE headers
+  toggles the chevron and hides/shows that bucket's rows in the virtualized list.
+
+[2026-06-12] — fix(backend): Publish Master Update now refreshes "Master version" / "Last published" (BUG-169)
+Fixed: backend/app.py: master_github_release's _work() uploaded the exported snapshot to
+  GitHub but never wrote master_version/master_published_at back into the live DB —
+  export_master_db() only stamps those keys inside the exported .db, not the source DB.
+  /api/master/status reads from the live DB's meta table, so the Setup screen's "Master
+  version" / "Last published" fields stayed stale after every publish. Now reads the
+  manifest sidecar after both assets upload successfully and calls database.set_meta()
+  to write master_version/master_published_at into the live DB before the "done" event.
+
+[2026-06-12] — fix(backend): master release notes summarize status changes by category instead of listing every LB number
+Changed: backend/db.py: generate_release_notes now groups lb_status_history rows by
+  (old_status, new_status, trigger_event) and emits one summary line per group with a
+  count and date range, instead of one line per LB number — a 353-row status change
+  (e.g. all "— → private" via flat_file_apply) is now a single "— → private: 353
+  _2026-05-21_ flat_file_apply" line rather than 353 individual "LB-NNNNN: ..." lines.
+
+[2026-06-12] — feat(gui): TODO-142 — pipeline batch filing skips per-folder confirmation
+Changed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: applyFile now accepts a
+  skipConfirm flag that bypasses the "File into Collection" confirm dialog and applies
+  the recommended mount path directly. applyAllFileable and applySelectedFileable pass
+  skipConfirm=true so batch filing runs with no per-folder prompts; the single-row
+  "File" button still confirms.
+
+[2026-06-12] — fix(gui): Publish Master Update no longer fails with a JSON parse error (BUG-168)
+Fixed: gui_next/src/renderer/src/screens/ScreenSetup.tsx: handlePublishMaster called
+  `gr.json()` on the response from POST /api/master/github_release, but that endpoint
+  (since TODO-115..120) responds with `text/event-stream` progress events, not JSON —
+  `.json()` threw a SyntaxError, surfaced as "Publish failed: ... is not valid JSON",
+  and the release was never created. Now reads the SSE stream via `body.getReader()`,
+  shows each `progress` event as a toast, and handles `done`/`error` events.
+
+[2026-06-12] — fix(gui): Pipeline "Scan tree…" now scans only 1 level deep (BUG-167)
+Fixed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: handleScanTree now passes
+  shallow: true to POST /api/pipeline/scan-tree (was shallow: false), matching the
+  depth-1 behaviour already used by ScreenLBDIR's "Add Root" scan.
+
+[2026-06-12] — feat(tools): TODO-139 Task 3 — OOM audit + validation (1994-02-20 now completes)
+Changed: tools/tapematch/tapematch/match.py: removed dead `pairwise_matrix()` — unused
+  (no callers anywhere in the repo), held a `streams_mono` dict of every source's full
+  mono array in RAM simultaneously. This was the retained-reference pattern the Task 3
+  OOM hypothesis described; cli.py's per-pair memmap loop superseded it in the 2026-06-05/06
+  OOM fixes (BUG-144 and the Pass-4 OOM fix) but the dead function was left behind.
+  tools/tapematch/tapematch/cli.py: added a pre-run estimate log line
+  ("est. peak RAM ~X GB (N sources, largest H:MM:SS)") computed from probed durations
+  (header reads only) — mono float32 @ analysis_sr is sr*4 bytes/sec; estimate is
+  2x the largest source + 300 MB fixed overhead, documented as an order-of-magnitude
+  lower bound, not a hard cap.
+Fixed: (validation only, no further code change needed) — audited dtype/rate handling
+  across ingest.py/audio.py/match.py/align.py/cli.py per CC_TAPEMATCH_FIXES.md Task 3.
+  The float64/96kHz-stereo OOM hypothesis was already resolved by prior sessions:
+  audio.py's ffmpeg-pipe decode+resample keeps native-rate arrays out of Python entirely
+  (only the 16kHz float32 output lands in RAM); ingest.concat_source frees each track
+  immediately after copying into a pre-allocated float32 buffer; cli.py Pass 1 writes
+  that buffer to a float32 memmap and frees it; resample_ratio uses soxr natively in
+  float32. Confirmed empirically (numpy 2.4.6/scipy 1.17.1) that scipy.signal.correlate
+  and numpy mean/std preserve float32 — no float64 promotion at any correlation call site.
+  1994-02-20 (8 sources, the OOM case study with no prior run dir) now completes:
+  5 families, peak RSS 2.6 GB, archived to data/tapematch/runs/20260612_140009_1994-02-20,
+  28 pairs logged to observations.db. Re-ran 1993-04-16 (3-source control,
+  data/tapematch/runs/20260612_143159_1993-04-16): family assignments, correlation
+  matrix, and speed-ppm values are bit-identical to the 2026-06-07 run — float32
+  pipeline is deterministic and unchanged.
+
+[2026-06-12] — feat(backend+gui): TODO-110 follow-up — drive stats on Mounts settings screen
+Changed: backend/filer.py: disk-usage calculation extracted into new
+  get_disk_usage_stats(root_path, online) helper (free/total/used_pct), reused by
+  get_mounts_with_stats() and the /api/collection/mounts endpoint.
+Changed: backend/app.py: collection_mounts_list() (/api/collection/mounts GET) now
+  attaches free/total/used_pct to each mount alongside the existing online flag.
+Changed: gui_next/src/renderer/src/screens/ScreenMounts.tsx: CollectionMount gains
+  free/total/used_pct; MountCard on the Mounts settings screen now shows "free of
+  total" with a colour-coded usage bar (warn at 75%, bad at 90%), matching the
+  Collect step's mount picker.
+Changed: gui_next locales (en/de/es/fr/it/nl): added mounts.freeOfTotal and
+  mounts.usageTooltip.
+
+[2026-06-12] — feat(backend): pipeline filing — hash-verify copies before deleting source
+Added: backend/filer.py: hash_tree(root) computes a SHA-256 digest over every file's
+  relative path + content under a folder, used to confirm a copy is byte-identical
+  to its source. New _HashVerificationError exception.
+Changed: backend/filer.py: start_file_job's _run() now hash-verifies the destination
+  against the source whenever data is actually copied (file_mode="copy", or a
+  cross-device move that falls back to copy+rmtree) — new "verifying" stage before
+  comparing hashes, and "removing" stage before deleting the original (move only).
+  A hash mismatch deletes the bad copy, leaves the source untouched, and returns
+  error_code "hash_mismatch". Same-device moves still use atomic os.rename (no file
+  content is rewritten, so no hash check). If the verified copy succeeds but removing
+  the original fails, the job still succeeds (warning logged) rather than discarding
+  the verified copy.
+  gui_next/src/renderer/src/screens/ScreenPipeline.tsx: updated FileProgress stage
+  comment to include verifying|removing.
+  gui_next/src/renderer/src/locales/{en,de,es,fr,it,nl}.json: added
+  pipeline.file.progress.verifying/removing labels.
+  PROJECT.md: documented new stages and hash_mismatch error code for
+  /api/pipeline/file/status.
+
+[2026-06-12] — feat(scraper): TODO-139 Task 2 — observations.db run versioning + latest_pairs view
+Added: tools/tapematch/migrate_observations.py: one-shot, idempotent migration. Normalizes
+  pair-key ordering (`lb_a < lb_b`, swapping all `*_a`/`*_b` columns on violating rows) and
+  creates `idx_pairs_latest` + the `latest_pairs` view (one row per (concert_date, lb_a, lb_b)
+  key — the most recent verdict by run_at, ties broken by id). Dry-run by default; `--apply`
+  backs up observations.db to `observations.db.bak-<timestamp>` first.
+  tools/tapematch/tests/test_migrate_observations.py: unit tests for normalization,
+  idempotency, and the latest_pairs view.
+Changed: tools/tapematch/tapematch_session.py: OBS_SCHEMA now creates `idx_pairs_latest` and
+  `latest_pairs` (idempotent, CREATE IF NOT EXISTS) so fresh/future DBs get them automatically.
+  insert_pairs() now normalizes lb_a/lb_b (and all paired fields) to lb_a < lb_b before
+  insert, so new rows never violate the ordering migrate_observations.py enforces.
+  .gitignore: added `tools/tapematch/observations.db.bak-*`.
+Fixed: tools/tapematch/observations.db: migration applied — 1719 of 4318 rows had
+  lb_a > lb_b and were normalized (swapped); 0 remain. latest_pairs view verified: 4105
+  distinct (concert_date, lb_a, lb_b) keys → 4105 rows. Backed up to
+  observations.db.bak-20260612_124147 before applying (gitignored, not committed).
+  Found and logged BUG-165 (lb_a==lb_b degenerate rows from a folder-name regex
+  cross-reference bug) — out of scope for this task, left for separate triage.
+
+[2026-06-12] — fix(scraper): BUG-164 — TODO-139 Task 1: gen_analysis.py parser fix + re-baseline
+Fixed: tools/tapematch/gen_analysis.py: _build_observations no longer treats
+  "alternative recording to X/Y ... which all appear to be same recording" snippets
+  as a same-source signal for the subject LB — _diff_signal(snip) now suppresses
+  _same_signal(snip), falling through to FALSE MERGE / neutral "→" instead of a
+  false MISS. See BUG-164 in BUGS_DONE.md.
+Added: tools/tapematch/tests/test_gen_analysis.py: unit tests for the ambiguous
+  snippet plus clean positive/negative same/diff-source snippets.
+  tools/tapematch/BASELINE.md: corrected reference numbers (totals, corr-bucket
+  distribution, per-date worst-miss table, lb_says_same caveat, and a documented
+  live example of the Task 2 conflicting-verdicts problem on 1996-07-21).
+Changed: data/tapematch/runs/*/analysis.md: all 429 regenerated via
+  `gen_analysis.py --overwrite --all` (0 errors); analysis.md-level MISS count for
+  2001-10-30 dropped 5→0 (confirmed parser noise).
+
+[2026-06-12] — fix(db): BUG-155 — correct "Mnchen" location typo on 5 entries
+Fixed: data/losslessbob.db: entries.location for LB-9546, 10083, 12969, 16298,
+  16626 corrected from "Mnchen..." (source-site typo, missing "u" — not an
+  encoding/ü-drop issue as originally reported) to "Munchen..." matching the
+  existing ASCII convention. Cleaned up matching location_geocoded cache rows
+  (renamed two, removed two now-duplicate rows); entries_fts updated via the
+  existing AFTER UPDATE trigger.
+
 [2026-06-12] — feat(backend+gui): TODO-111 — collection integrity monitor (lbdir-based)
 Added: backend/integrity_monitor.py: new scan engine. scan_collection() iterates
   my_collection, locates each folder's lbdir manifest (folder-local or attached),

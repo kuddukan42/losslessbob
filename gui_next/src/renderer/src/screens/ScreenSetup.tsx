@@ -261,11 +261,15 @@ function MetaGrid({ rows }: { rows: [string, React.ReactNode][] }) {
 
 function CuratorToggle({
   masterStatus,
+  busy,
   onPublish,
+  onCheckGithub,
   onInstall,
 }: {
   masterStatus: MasterStatus | null
+  busy: string | null
   onPublish: () => void
+  onCheckGithub: () => void
   onInstall: () => void
 }) {
   const { t } = useTranslation()
@@ -330,6 +334,11 @@ function CuratorToggle({
       <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
         <Button variant="secondary" icon="upload" disabled={!curatorMode} onClick={onPublish}>
           {t('setup.masterData.publishUpdate')}
+        </Button>
+        <Button variant="secondary" icon="download" disabled={busy === 'checkGithub' || busy === 'githubInstall'} onClick={onCheckGithub}>
+          {busy === 'checkGithub' || busy === 'githubInstall'
+            ? t('setup.masterData.checkingUpdate')
+            : t('setup.masterData.checkUpdate')}
         </Button>
         <Button variant="ghost" icon="download" onClick={onInstall}>
           {t('setup.masterData.installUpdate')}
@@ -743,7 +752,7 @@ const [dbStats, setDbStats] = useState<DbStats | null>(null)
 
           showToast(t('setup.toast.uploadingGithub'), 'info')
 
-          // Step 2: GitHub release
+          // Step 2: GitHub release — server responds with text/event-stream progress
           const gr = await fetch(`${BASE}/api/master/github_release`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -754,12 +763,35 @@ const [dbStats, setDbStats] = useState<DbStats | null>(null)
               prev_published_at: masterStatus?.master_published_at,
             }),
           })
-          const gd = await gr.json() as { ok?: boolean; tag?: string; url?: string; error?: string; message?: string }
-          if (gd.ok) {
-            showToast(t('setup.toast.released', { tag: gd.tag ?? '' }), 'ok')
-            loadMasterStatus()
-          } else {
-            showToast(t('setup.toast.githubFailed', { message: gd.message ?? gd.error }), 'bad')
+          if (!gr.ok || !gr.body) {
+            const errBody = await gr.json().catch(() => ({})) as { error?: string; message?: string }
+            showToast(t('setup.toast.githubFailed', { message: errBody.message ?? errBody.error ?? gr.statusText }), 'bad')
+            return
+          }
+          const reader = gr.body.getReader()
+          const decoder = new TextDecoder()
+          let buf = ''
+          for (;;) {
+            const { done, value } = await reader.read()
+            if (done) break
+            buf += decoder.decode(value, { stream: true })
+            let nl: number
+            while ((nl = buf.indexOf('\n\n')) >= 0) {
+              const frame = buf.slice(0, nl)
+              buf = buf.slice(nl + 2)
+              if (!frame.startsWith('data: ')) continue
+              const ev = JSON.parse(frame.slice(6)) as {
+                type: string; label?: string; tag?: string; url?: string; error?: string; message?: string
+              }
+              if (ev.type === 'progress' && ev.label) {
+                showToast(ev.label, 'info')
+              } else if (ev.type === 'done') {
+                showToast(t('setup.toast.released', { tag: ev.tag ?? '' }), 'ok')
+                loadMasterStatus()
+              } else if (ev.type === 'error') {
+                showToast(t('setup.toast.githubFailed', { message: ev.message ?? ev.error }), 'bad')
+              }
+            }
           }
         } catch (e) {
           showToast(t('setup.toast.publishFailed', { message: (e as Error).message }), 'bad')
@@ -806,6 +838,78 @@ const [dbStats, setDbStats] = useState<DbStats | null>(null)
       },
     })
   }, [showToast, loadDbStats, loadMasterStatus, t])
+
+  // ── Check GitHub for master update ───────────────────────────────────────────
+
+  const runGithubInstall = useCallback(async () => {
+    setBusy('githubInstall')
+    try {
+      const gr = await fetch(`${BASE}/api/master/github_install`, { method: 'POST' })
+      if (!gr.ok || !gr.body) {
+        const errBody = await gr.json().catch(() => ({})) as { error?: string; message?: string }
+        showToast(t('setup.toast.installFailed', { message: errBody.message ?? errBody.error ?? gr.statusText }), 'bad')
+        return
+      }
+      const reader = gr.body.getReader()
+      const decoder = new TextDecoder()
+      let buf = ''
+      for (;;) {
+        const { done, value } = await reader.read()
+        if (done) break
+        buf += decoder.decode(value, { stream: true })
+        let nl: number
+        while ((nl = buf.indexOf('\n\n')) >= 0) {
+          const frame = buf.slice(0, nl)
+          buf = buf.slice(nl + 2)
+          if (!frame.startsWith('data: ')) continue
+          const ev = JSON.parse(frame.slice(6)) as { type: string; label?: string; error?: string; message?: string }
+          if (ev.type === 'progress' && ev.label) {
+            showToast(ev.label, 'info')
+          } else if (ev.type === 'done') {
+            showToast(t('setup.toast.masterInstalled'), 'ok')
+            loadDbStats()
+            loadMasterStatus()
+          } else if (ev.type === 'error') {
+            showToast(t('setup.toast.installFailed', { message: ev.message ?? ev.error }), 'bad')
+          }
+        }
+      }
+    } catch (e) {
+      showToast(t('setup.toast.installFailed', { message: (e as Error).message }), 'bad')
+    } finally {
+      setBusy(null)
+    }
+  }, [showToast, loadDbStats, loadMasterStatus, t])
+
+  const handleCheckGithubMaster = useCallback(async () => {
+    setBusy('checkGithub')
+    try {
+      const r = await fetch(`${BASE}/api/master/github_check`)
+      const d = await r.json() as {
+        available?: boolean; error?: string; message?: string; tag?: string
+      }
+      if (d.error) {
+        showToast(t('setup.toast.githubCheckFailed', { message: d.message ?? d.error }), 'bad')
+        return
+      }
+      if (!d.available) {
+        showToast(d.message ?? t('setup.toast.masterUpToDate'), 'info')
+        return
+      }
+      setConfirm({
+        title: 'Install Master Update?',
+        body: t('setup.masterData.githubUpdateBody', { tag: d.tag ?? '' }),
+        onConfirm: () => {
+          setConfirm(null)
+          void runGithubInstall()
+        },
+      })
+    } catch (e) {
+      showToast(t('setup.toast.githubCheckFailed', { message: (e as Error).message }), 'bad')
+    } finally {
+      setBusy(null)
+    }
+  }, [showToast, t, runGithubInstall])
 
   // ── qBt ─────────────────────────────────────────────────────────────────────
 
@@ -1241,7 +1345,9 @@ const [dbStats, setDbStats] = useState<DbStats | null>(null)
           <SetupCard title={t('setup.masterData.title')}>
             <CuratorToggle
               masterStatus={masterStatus}
+              busy={busy}
               onPublish={handlePublishMaster}
+              onCheckGithub={handleCheckGithubMaster}
               onInstall={handleInstallMaster}
             />
           </SetupCard>

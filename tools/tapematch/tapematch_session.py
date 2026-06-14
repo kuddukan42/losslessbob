@@ -6,6 +6,7 @@ Usage:
     python tapematch_session.py 1995-07-08 --dry-run
     python tapematch_session.py 1995-07-08 --no-tapematch
     python tapematch_session.py 1995-07-08 --report-only
+    python tapematch_session.py --batch rerun_queue.txt
 
 Steps:
     1. Query losslessbob.db for LB entries matching the date
@@ -134,6 +135,23 @@ CREATE TABLE IF NOT EXISTS pairs (
     run_at              TEXT,
     FOREIGN KEY (run_id) REFERENCES runs(run_id)
 );
+
+CREATE INDEX IF NOT EXISTS idx_pairs_latest ON pairs(concert_date, lb_a, lb_b, run_at);
+
+-- One row per normalized (concert_date, lb_a, lb_b) key: the most recent
+-- verdict by run_at (ties broken by id). See migrate_observations.py (Task 2
+-- of instructions/CC_TAPEMATCH_FIXES.md).
+CREATE VIEW IF NOT EXISTS latest_pairs AS
+SELECT p.*
+FROM pairs p
+WHERE p.id = (
+    SELECT p2.id FROM pairs p2
+    WHERE p2.concert_date = p.concert_date
+      AND p2.lb_a = p.lb_a
+      AND p2.lb_b = p.lb_b
+    ORDER BY p2.run_at DESC, p2.id DESC
+    LIMIT 1
+);
 """
 
 def open_obs_db() -> sqlite3.Connection:
@@ -185,8 +203,13 @@ def resolve_from_collection(lb_numbers: list[int]) -> tuple[dict[int, Path], lis
     found: dict[int, Path] = {}
     for lb_num, disk_path in rows:
         p = Path(disk_path)
-        if p.is_dir():
-            found[lb_num] = p
+        try:
+            if p.is_dir():
+                found[lb_num] = p
+        except OSError:
+            # Drive unmounted/unreachable (e.g. I/O error) — treat as not found
+            # rather than crashing the whole session.
+            continue
     missing = [n for n in lb_numbers if n not in found]
     return found, missing
 
@@ -255,6 +278,13 @@ def find_lb_folders(lb_numbers: list[int], year: str) -> dict[int, Path]:
         del found[n]
     if private:
         print(f"  Excluded (private/no-torrent): {', '.join(_lb_tag(n) for n in sorted(private))}")
+    # Drop folders with no locally analyzable audio (e.g. cover-scan/EAC-log-only
+    # entries) — including one crashes ingest.concat_source with "no audio in ...".
+    no_audio = [n for n, p in found.items() if not _has_audio(p)]
+    for n in no_audio:
+        del found[n]
+    if no_audio:
+        print(f"  Excluded (no audio found): {', '.join(_lb_tag(n) for n in sorted(no_audio))}")
     return found
 
 
@@ -540,6 +570,14 @@ def insert_pairs(conn: sqlite3.Connection, run_id: str, date_iso: str,
         sa, sb = srcs[na], srcs[nb]
         lb_a = _lb_num_from_folder(na)
         lb_b = _lb_num_from_folder(nb)
+
+        # Normalize pair-key ordering so (A, B) and (B, A) never coexist as
+        # distinct rows (see migrate_observations.py, Task 2).
+        if lb_a is not None and lb_b is not None and lb_a > lb_b:
+            lb_a, lb_b = lb_b, lb_a
+            na, nb = nb, na
+            sa, sb = sb, sa
+
         corr = matrix[i][j]
         same_family = sa["family_id"] == sb["family_id"]
 
@@ -838,11 +876,19 @@ def run_date(date_iso: str, dry_run: bool = False,
         print(f"    {_lb_tag(n)}: {p}")
     if missing:
         print(f"  Not found: {', '.join(_lb_tag(n) for n in missing)}")
-    if not found_folders:
-        print("  No folders found — cannot proceed.", file=sys.stderr)
-        return 1
     if len(found_folders) < 2:
-        print(f"  Only {len(found_folders)} folder found — need ≥2 sources for tapematch. Skipping.")
+        print(f"  Only {len(found_folders)} folder(s) with audio found — "
+              f"need ≥2 sources for tapematch.")
+        no_run_output = "(insufficient sources — tapematch not run)"
+        report_text = build_report(date_iso, location, lb_numbers, found_folders, no_run_output)
+        report_text += (
+            "\n\n## Status\n\n"
+            f"**insufficient_sources** — only {len(found_folders)} of {len(lb_numbers)} "
+            "DB entries have a locally analyzable recording (private/no-torrent and "
+            "no-audio folders excluded). tapematch requires ≥2 sources to compare.\n"
+        )
+        REPORT_PATH.write_text(report_text, encoding="utf-8")
+        archive_run(run_id, date_iso, no_run_output + "\n", report_text, None)
         return 2
 
     if dry_run:
@@ -974,6 +1020,51 @@ def year_run(year: str, min_entries: int = 2, dry_run: bool = False) -> int:
     return 0
 
 
+def run_batch(queue_path: Path, dry_run: bool = False, no_tapematch: bool = False,
+              report_only: bool = False, set_offset: str | None = None) -> int:
+    """Process a re-run queue file sequentially (see build_rerun_queue.py).
+
+    Blank lines, lines starting with '#', and lines already marked with a
+    trailing '# done <timestamp>' are skipped. For each remaining line, the
+    first whitespace-delimited token is treated as a concert date (YYYY-MM-DD).
+    On completion (any return code other than a KeyboardInterrupt), '# done
+    <timestamp>' is appended to that line and the file is rewritten, so an
+    interrupted batch is resumable by re-running with the same file.
+    """
+    lines = queue_path.read_text().splitlines()
+    todo = [
+        (idx, line.split()[0]) for idx, line in enumerate(lines)
+        if line.strip() and not line.lstrip().startswith("#") and "# done" not in line
+    ]
+
+    print(f"=== tapematch batch run: {queue_path} ===")
+    print(f"  {len(todo)} date(s) to process")
+
+    for n, (idx, date_iso) in enumerate(todo, 1):
+        print(f"\n{'='*60}")
+        print(f"  [{n}/{len(todo)}]  {date_iso}")
+        print(f"{'='*60}")
+        try:
+            rc = run_date(date_iso, dry_run=dry_run, no_tapematch=no_tapematch,
+                          report_only=report_only, set_offset=set_offset)
+        except KeyboardInterrupt:
+            print(f"\nInterrupted at {date_iso} ({n}/{len(todo)}).")
+            print(f"Resume:  tapematch_session.py --batch {queue_path}")
+            return 130
+
+        if rc == 2:
+            print(f"  [SKIP] {date_iso}: only 1 source folder on disk")
+        elif rc != 0:
+            print(f"  [WARN] {date_iso}: run_date returned rc={rc} — continuing")
+
+        if not dry_run:
+            lines[idx] = lines[idx].rstrip() + f"  # done {datetime.now().isoformat()}"
+            queue_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+    print(f"\n=== Batch complete: {len(todo)} date(s) processed. ===")
+    return 0
+
+
 def run_manual(root_dir: Path, date_iso: str | None = None, location: str = "",
                set_offset: str | None = None) -> int:
     """Run a full tapematch session on an arbitrary folder without DB lookup or copying."""
@@ -1060,6 +1151,9 @@ def main(argv=None) -> int:
                     help="clip all sources to start at this offset before analysis "
                          "(HH:MM:SS or decimal seconds); use for co-headline shows where "
                          "the target set starts mid-recording (e.g. '1:30:00')")
+    ap.add_argument("--batch", default=None, type=Path, metavar="FILE",
+                    help="Process dates from a re-run queue file sequentially "
+                         "(see build_rerun_queue.py); resumable across interruptions")
     ap.add_argument("--manual-dir", default=None, metavar="DIR",
                     help="Run on this folder directly, skipping DB lookup and copy steps")
     ap.add_argument("--label", default="", metavar="LABEL",
@@ -1073,6 +1167,12 @@ def main(argv=None) -> int:
     if args.year:
         return year_run(args.year, args.min_entries, dry_run=args.dry_run)
 
+    if args.batch:
+        return run_batch(args.batch, dry_run=args.dry_run,
+                         no_tapematch=args.no_tapematch,
+                         report_only=args.report_only,
+                         set_offset=args.set_offset)
+
     if args.manual_dir:
         return run_manual(Path(args.manual_dir),
                           date_iso=args.date,
@@ -1080,7 +1180,7 @@ def main(argv=None) -> int:
                           set_offset=args.set_offset)
 
     if not args.date:
-        ap.error("date is required unless --suggest, --year, or --manual-dir is used")
+        ap.error("date is required unless --suggest, --year, --batch, or --manual-dir is used")
 
     return run_date(args.date,
                     dry_run=args.dry_run,
