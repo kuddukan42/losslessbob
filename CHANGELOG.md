@@ -1,3 +1,7 @@
+[2026-06-14] — chore: v1.5.0 release
+Changed: gui_next/package.json, gui_next/package-lock.json: version bumped
+  1.4.0 -> 1.5.0.
+
 [2026-06-13] — fix(tools): TODO-139 Task 7 — tapematch error/no-verdict triage (BUG-180/181/182)
 Fixed: tools/tapematch/tapematch/ingest.py: list_tracks now requires p.is_file()
   in addition to suffix matching (BUG-180) — a subdirectory named
