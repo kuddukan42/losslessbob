@@ -38,9 +38,11 @@ export interface ReconcileProposal {
 }
 
 export interface SiteProposal {
-  site_path: string
-  lbdir_rel: string
-  md5:       string
+  site_path:    string
+  lbdir_rel:    string
+  md5:          string
+  expected_md5: string
+  matched_by:   'md5' | 'name'
 }
 
 export interface ReconcileResult {

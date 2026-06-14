@@ -234,9 +234,16 @@ export function ReconcilePanel({
               )}
             />
             <span style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)', fontWeight: 600 }}>
-              Recoverable from site/files — matched by MD5
+              Recoverable from site/files
             </span>
           </div>
+          {siteProposals.some(p => p.matched_by === 'name') && (
+            <div style={{ padding: '0 16px 8px', fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-warn-fg)' }}>
+              Rows marked "MD5 mismatch" matched by filename only — the copy in site/files is a
+              different revision than what this folder's lbdir expects, and won't pass MD5
+              verification after copying. Review before applying.
+            </div>
+          )}
           <TableShell style={{ margin: 0, borderRadius: 0, border: 'none' }}>
             <colgroup>
               <col style={{ width: 3 }} /><col style={{ width: 32 }} />
@@ -251,7 +258,7 @@ export function ReconcilePanel({
             </thead>
             <tbody>
               {siteProposals.map((p, i) => (
-                <TR key={i} edge="ok">
+                <TR key={i} edge={p.matched_by === 'name' ? 'warn' : 'ok'}>
                   <TD>
                     <input type="checkbox"
                       checked={siteSelected.has(p.site_path)}
@@ -265,7 +272,15 @@ export function ReconcilePanel({
                   <TD mono style={{ color: 'var(--lbb-fg2)' }}>{p.site_path.split('/').pop()}</TD>
                   <TD align="center"><Icon name="chevRight" size={12} style={{ color: 'var(--lbb-fg3)' }} /></TD>
                   <TD mono style={{ color: 'var(--lbb-ok-fg)' }}>{p.lbdir_rel}</TD>
-                  <TD mono dim>{p.md5.slice(0, 12)}…</TD>
+                  {p.matched_by === 'name' ? (
+                    <TD>
+                      <span title={`site/files copy: ${p.md5.slice(0, 12)}… — folder's lbdir expects: ${p.expected_md5.slice(0, 12)}…`}>
+                        <Pill tone="warn" soft>MD5 mismatch</Pill>
+                      </span>
+                    </TD>
+                  ) : (
+                    <TD mono dim>{p.md5.slice(0, 12)}…</TD>
+                  )}
                 </TR>
               ))}
             </tbody>

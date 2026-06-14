@@ -12,6 +12,9 @@ interface CollectionMount {
   root_path: string
   notes: string | null
   online?: boolean
+  free?: string
+  total?: string
+  used_pct?: number | null
 }
 
 interface CollectionRoute {
@@ -191,7 +194,9 @@ function MountCard({ m, routeCount, summary, scanning, onEdit, onDelete, onScan 
   onEdit: (m: CollectionMount) => void; onDelete: (m: CollectionMount) => void
   onScan: (m: CollectionMount) => void
 }) {
+  const { t } = useTranslation()
   const [hover, setHover] = useState(false)
+  const hasUsage = m.online && !!m.free && !!m.total && m.free !== '—'
   return (
     <div
       onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}
@@ -215,6 +220,24 @@ function MountCard({ m, routeCount, summary, scanning, onEdit, onDelete, onScan 
         <Icon name="folder" size={12} style={{ color: 'var(--lbb-fg3)', flex: '0 0 auto' }} />
         <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{m.root_path}</span>
       </div>
+      {hasUsage && (
+        <div style={{ marginBottom: 6 }}
+          title={t('mounts.usageTooltip', { free: m.free, total: m.total, pct: m.used_pct })}
+        >
+          <span style={{ fontSize: 11, color: 'var(--lbb-fg3)', fontVariantNumeric: 'tabular-nums' }}>
+            {t('mounts.freeOfTotal', { free: m.free, total: m.total })}
+          </span>
+          {m.used_pct != null && (
+            <div style={{ height: 4, borderRadius: 2, background: 'var(--lbb-border)', overflow: 'hidden', marginTop: 4 }}>
+              <div style={{
+                height: '100%', width: `${m.used_pct}%`,
+                background: m.used_pct >= 90 ? 'var(--lbb-bad-bar)'
+                  : m.used_pct >= 75 ? 'var(--lbb-warn-bar)' : 'var(--lbb-accent-mid)',
+              }} />
+            </div>
+          )}
+        </div>
+      )}
       <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
         <span style={{ fontSize: 11, color: 'var(--lbb-fg3)', flex: 1, minWidth: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{m.notes || '—'}</span>
         <span style={{ fontSize: 10.5, color: 'var(--lbb-fg3)', fontVariantNumeric: 'tabular-nums', flex: '0 0 auto' }}>
