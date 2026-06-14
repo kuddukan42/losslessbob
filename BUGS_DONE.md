@@ -1,6 +1,387 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-182: tapematch resolve_from_collection crashes with OSError on unreachable drive mount
+Status: Fixed
+File(s): tools/tapematch/tapematch_session.py:resolve_from_collection
+Reported: 2026-06-13
+Fixed: 2026-06-13
+Root cause: p.is_dir() raised OSError("[Errno 5] Input/output error") for a
+  my_collection disk_path on /mnt/DYLAN2 while that drive was unreachable
+  (DYLAN2 is intermittently offline), crashing the whole tapematch session
+  before find_lb_folders' private/no-torrent/no-audio exclusion logic ever ran.
+  Found while validating BUG-181's fix against 1989-09-01 (LB-13295 lives on
+  DYLAN2).
+Fix: wrap p.is_dir() in try/except OSError; an unreachable path is treated as
+  "missing" (falls through to scan_drives_for / not-found) instead of crashing
+  the session. Re-run of 1989-09-01 with DYLAN2 offline now completes and
+  produces the new insufficient_sources report (TODO-139 Task 7).
+
+BUG-181: tapematch find_lb_folders includes no-audio folders, crashing
+  ingest.concat_source (1989-08-26 / 1989-09-01 / 1989-09-03)
+Status: Fixed
+File(s): tools/tapematch/tapematch_session.py:find_lb_folders
+Reported: 2026-06-13
+Fixed: 2026-06-13
+Root cause: resolve_from_collection returns folder paths that exist on disk
+  but contain only text/image/md5 files and no audio (cover-scan / EAC-log-only
+  collection entries) — LB-01430 (1989-08-26), LB-01588 (1989-09-01), LB-02245
+  (1989-09-03). find_lb_folders included these as tapematch sources, and
+  ingest.concat_source then raised ValueError("no audio in <folder>") for the
+  *entire date*, even though other folders for the same date had real audio.
+Fix: find_lb_folders now drops folders failing the existing _has_audio() helper
+  the same way it already drops private/no-torrent folders, printing
+  "Excluded (no audio found): LB-XXXXX". Unit-tested
+  (tests/test_find_lb_folders_no_audio.py, 2/2 pass). Validated: 1987-10-05 and
+  1989-08-26 now complete full tapematch runs; 1989-09-01 (left with only 1
+  source after exclusion) now gets the new insufficient_sources report instead
+  of crashing.
+
+BUG-180: tapematch ingest.list_tracks matches a directory named like an audio
+  file as a track (1987-10-05 crash)
+Status: Fixed
+File(s): tools/tapematch/tapematch/ingest.py:list_tracks
+Reported: 2026-06-13
+Fixed: 2026-06-13
+Root cause: list_tracks used Path.rglob("*") + suffix matching with no
+  is_file() check. The 1987-10-05 LB-10681 source folder contains a
+  *subdirectory* named "1987-10-05locarno+asm.flac" holding the real per-track
+  .flac files; that directory's name also ends in ".flac", so it was matched as
+  a "track" itself. audio.duration_sec() then called sf.info() on the
+  directory, raising LibsndfileError("Format not recognised") and crashing the
+  whole 1987-10-05 session.
+Fix: list_tracks now requires p.is_file() in addition to suffix matching.
+  Unit-tested (tests/test_ingest_list_tracks.py, 2/2 pass). Validated:
+  1987-10-05 now completes a full 5-source tapematch run (2 families).
+
+BUG-179: Pipeline "File all into collection" leaves duplicate stuck-running ghost rows
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenPipeline.tsx:1675-1768 (applyFile),
+  :2010-2020 ("File all into collection" button)
+Reported: 2026-06-13
+Fixed: 2026-06-13
+Root cause: TODO-142 (batch filing with skipConfirm=true) made `applyAllFileable`
+  loop through `fileableRows` quickly with no per-folder confirm dialog, but the
+  "File all N into collection" button had no `disabled` guard and `applyFile` had
+  no re-entrancy guard. A second click (or a second batch trigger) while a batch
+  was still in flight started a second `applyFile`/`applyAllFileable` loop that
+  raced against the first against the single global `_FILE_JOB` in
+  backend/filer.py. The second loop's polling could read `/api/pipeline/file/status`
+  for a job belonging to a *different* row (no row/job correlation existed), so its
+  own row's `while (!result)` loop never saw its own job's `result` and stayed
+  `running:true` with a frozen `fileProgress` forever — even though the folder had
+  actually been filed (the other loop's row correctly flipped to `bucket:'done'`).
+Fix: (1) Added a `filingRef`/`filingActive` re-entrancy guard — `applyFile` now
+  bails out (with a toast) if a filing job is already in flight, and the
+  "File all N into collection" button is disabled (`disabled={filingActive}`)
+  while a batch is running. (2) `applyFile`'s polling loop now checks
+  `status.path` (already present in `_FILE_JOB`/`get_file_job_status()`) against
+  `row.folderPath`; if `_FILE_JOB` has been taken over by a different job, the
+  loop exits with an error result (`pipeline.file.jobMismatch`) instead of
+  spinning forever. Added `pipeline.file.busy`/`pipeline.file.jobMismatch` i18n
+  strings (all locales) and a local toast (`showToast`/`toast` state — previously
+  missing from ScreenPipeline, three call sites referenced a non-existent
+  LbdirStageContent-scoped `showToast`).
+
+BUG-178: Pipeline "Final storage" destination uses pre-rename folder name after Apply rename
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenPipeline.tsx:1570-1593 (applyRename)
+Reported: 2026-06-13
+Fixed: 2026-06-13
+Root cause: resolve_destination_for_lb() builds `dest = dest_parent / Path(folder_path).name`
+  (backend/filer.py:224), so the "file" step's dest/dest_parent are tied to whatever folder
+  basename was current at the time `/api/pipeline/run` last ran. applyRename() renames the
+  folder on disk and updates row.folderPath/folderName plus steps.rename to "Renamed", but
+  never recomputed steps.file — so CollectReadyDetail's "Final storage" box kept showing the
+  destination built from the OLD (pre-rename) folder name even though "Staging" already showed
+  the new, already-applied name and Rename read "Pass".
+Fix: After a successful /api/folder/rename, applyRename now POSTs /api/pipeline/run
+  {folders: [new_path], steps: ['file']} and merges the returned `file` step (dest,
+  dest_parent, mount_label, etc., via normalizeFileStep) into the row, so "Final storage"
+  reflects the renamed folder immediately without re-running verify/lookup/lbdir.
+
+BUG-177: Pipeline "Apply rename" fails silently when a folder with the proposed name already exists
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenPipeline.tsx:1535-1592 (applyRename), :913-919 (RenameStageContent)
+Reported: 2026-06-13
+Fixed: 2026-06-13
+Root cause: `applyRename` POSTs to `/api/folder/rename`, which already returns 409
+  `{error: "Target already exists: <name>"}` when `new_path.exists()` (backend/app.py:5721-5722).
+  The frontend only handled the `data.ok && data.new_path` success branch — any error response
+  (including this 409) and the `catch` block were both no-ops, so the Rename step just stayed in
+  its "ready to apply" state with no indication anything went wrong.
+Fix: When the response is not `ok`/`new_path`, store `data.error` (or a generic message for network
+  failures) on `row.steps.rename.error` while keeping `status: 'warn'` so "Apply rename" remains
+  available for retry. RenameStageContent now renders a "Rename failed" banner with that message
+  above the diff box when `step.error` is set; it clears on the next successful apply or "Re-check".
+
+BUG-176: Pipeline rename reports "Folder name is already correct" even when folder is missing its (LB-NNNNN) tag — causes Shelf folders to be promoted to "ready to file"
+Status: Fixed
+File(s): backend/app.py:5566-5596 (rename step, BUG-119 fallback)
+Reported: 2026-06-13
+Fixed: 2026-06-13
+Root cause: When the DB entry for the resolved LB# has an empty `location` (or `date_str`), the BUG-119
+  fallback set `proposed = apply_nft_suffix(strip_nft_suffix(folder_name), lb_status)` — i.e. it derived
+  the "proposed" name directly from the *current* folder name instead of validating against the canonical
+  `build_standard_name()` output. The fallback never checked whether `folder_name` actually contained
+  "(LB-NNNNN)". So `folder_name == proposed` was trivially true whenever lb_status didn't require an
+  -NFT change, and the rename step reported status "ok" / label "Correct" — surfaced in the GUI as
+  "Folder name is already correct" (ScreenPipeline.tsx:875) — even though the folder had no LB# tag at all.
+  Example: LB-16311 has date_str='10/6/22', location='' (empty), lb_status='public'. Folder on disk is
+  "Berlin 2022-10-06 TK" (no "(LB-16311)" suffix). Rename step still reported "Correct".
+  Downstream effect: with verify/lookup/lbdir/rename all "ok", severity computed to "done"
+  (backend/app.py:5656), and if the file step resolved a destination the folder was counted in
+  "ready to file" — so a folder still sitting in "Shelf" status with an untagged name was surfaced
+  as ready to file, even though filing it would leave the LB# tag permanently missing from the name.
+Fix: Before checking date_str/location, if location is blank but date_str is present, look up
+  bobdylan_shows by the ISO-converted date and use its location (e.g. "Berlin, Germany" for
+  2022-10-06) as a fallback so build_standard_name can still produce the canonical
+  "YYYY-MM-DD Location (LB-NNNNN)" order (for LB-16311: "2022-10-06 Berlin, Germany (LB-16311)").
+  Only if no bobdylan_shows match exists either does the BUG-119 fallback apply: strip the -NFT
+  suffix and check whether the base name already ends with the correct "(LB-{lb_number:05d})" tag.
+  If so, only the NFT suffix is adjusted as before. If not, any existing/stale "(LB-NNNNN)" tag is
+  stripped via regex and the correct tag is appended before re-applying the NFT suffix — so the
+  rename step proposes adding the missing tag instead of reporting "Correct". Date/location text
+  already present in the folder name is never touched in this last-resort path, so BUG-119 remains
+  fixed.
+
+BUG-166: Pipeline status badge shows "In collection" (green) while step 5 (File) is still "Needs you"
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenPipeline.tsx:1556
+Reported: 2026-06-12
+Fixed: 2026-06-13
+Root cause: `applyRename` hardcoded `bucket: 'done'` on a successful rename, without checking
+  `r.steps.file.status`. `deriveFolderStatus`'s `bucket === 'done'` branch renders the green
+  "In collection" / "Filed to <mount>" badge purely from `bucket`, regardless of the per-step
+  statuses — so a folder whose rename just succeeded but whose File step (step 5) is still
+  `'warn'` ("Ready to file", not yet moved into the collection mount) showed the green
+  "In collection" badge with a yellow "!" on step 5. `serverRowToPipeline` already had a guard
+  for exactly this case (`if (bucket === 'done' && file.status === 'warn') bucket = 'shelf'`),
+  but `applyRename`'s direct bucket assignment bypassed it.
+  Secondary effect: these rows were also miscounted as not-`shelf`, so `counts.shelf` stayed 0
+  for them and the "File all N into collection" button (gated on `counts.shelf > 0`) did not
+  appear even though `fileableRows` (based on `file.status === 'warn'` alone) still included them.
+Fix: `applyRename`'s success branch now derives `bucket` the same way `serverRowToPipeline`
+  does: `bucket: r.steps.file.status === 'warn' ? 'shelf' : 'done'`.
+
+BUG-175: Windows — fonts render badly (wrong fallback font / blurry ClearType)
+Status: Fixed
+File(s): gui_next/src/renderer/index.html, gui_next/src/renderer/src/index.css,
+  gui_next/src/renderer/src/main.tsx, gui_next/src/preload/index.ts,
+  gui_next/src/renderer/src/env.d.ts, gui_next/package.json
+Reported: 2026-06-13
+Fixed: 2026-06-13
+Root cause: Two compounding issues. (1) index.html loaded Inter/IBM Plex Sans/Source Sans 3/
+  JetBrains Mono from fonts.googleapis.com at runtime. On a Windows install without a live
+  connection to Google (firewall/offline/captive portal), that request fails and the
+  app silently falls back to generic system fonts. (2) index.css applied
+  `-webkit-font-smoothing: antialiased` globally. On Windows, Chromium honours this and
+  disables ClearType subpixel rendering, making *all* text — including the fallback
+  fonts — look noticeably blurrier/thinner than native Windows apps.
+Fix: Self-hosted all four font families via @fontsource (pinned exact versions: inter
+  5.2.8, ibm-plex-sans 5.2.8, source-sans-3 5.2.9, jetbrains-mono 5.2.8), imported per-weight
+  in main.tsx for the same weights previously requested from Google Fonts. Removed the
+  Google Fonts <link>/preconnect tags from index.html and tightened the CSP (no more
+  fonts.googleapis.com/fonts.gstatic.com in style-src/font-src). Exposed `process.platform`
+  via the preload bridge (`window.api.platform`) and have main.tsx set a
+  `platform-<platform>` class on <html> before React mounts; scoped
+  `-webkit-font-smoothing: antialiased` to `html.platform-darwin` only.
+
+BUG-174: LBDIR reconcile doesn't pull matching files from data/site/files for self-referencing/regenerated entries
+Status: Fixed
+File(s): backend/checksum_utils.py:find_site_recoverable_files, gui_next/src/renderer/src/components/pipeline/LbdirDetail.tsx, gui_next/src/renderer/src/lib/lbdirStore.ts
+Reported: 2026-06-12
+Fixed: 2026-06-12
+Root cause: find_site_recoverable_files() matched data/site/files/LBF-{N}-* candidates
+  against missing lbdir entries by exact MD5 only. For a folder whose on-disk lbdir
+  manifest lists itself (e.g. lbdir-bd92-09-12-PDub-Dolphinsmile.flac1648.txt) and a
+  DigiFlawFinder report (DigiFlawFinder-bd92-09-12-PDub-Dolphinsmile.flac1648.wavf.html)
+  in its === md5 for: === section, both files were "Missing" with overall='missing'.
+  Same-named copies existed in data/site/files/ as
+  LBF-13333-lbdir-bd92-09-12-pdub-dolphinsmile.flac1648.txt and
+  LBF-13333-DigiFlawFinder-bd92-09-12-pdub-dolphinsmile.flac1648.wavf.html, but their
+  content (and therefore MD5) differs from what this folder's (older) lbdir expects —
+  a manifest necessarily can't checksum a byte-identical copy of a different lbdir
+  revision, and report files get regenerated over time. MD5-only matching could never
+  recover them, so site_proposals stayed empty and the Reconcile panel showed "No
+  rename proposals" / "Nothing to reconcile" despite the files being present in
+  data/site/files/.
+Fix: Added a filename-based fallback in find_site_recoverable_files(): for missing
+  entries with no MD5 match, strip the LBF-{lb_number:05d}- prefix from each
+  data/site/files/ candidate and compare (case/apostrophe-normalised) against the
+  missing entry's basename. Matches are returned with matched_by:'name' plus both
+  md5 (site copy's actual hash) and expected_md5 (the folder's lbdir requirement) so
+  the caller can see they differ. gui_next's ReconcilePanel renders these rows with
+  an "MD5 mismatch" warning pill (tooltip shows both hashes) and a banner noting the
+  copy won't pass verification as-is — the user can still apply it (better than
+  missing) but is warned the content is a different revision.
+
+BUG-173: qBittorrent save-path sync still missed renamed folders moved between staging dirs
+Status: Fixed
+File(s): backend/qbittorrent.py:find_torrent_by_path
+Reported: 2026-06-12
+Fixed: 2026-06-12
+Root cause: BUG-172's rename_history fallback computes the pre-rename path as
+  `old_folder.parent / <pre-rename name>` — i.e. it assumes the pipeline rename happened
+  in the same directory qBittorrent's content_path still points at. LB-16295/16309/16211
+  were renamed in place under /mnt/MEDIA1/1-DYLAN/, but their qBittorrent torrents'
+  content_path is still under /mnt/MEDIA1/hopper-bob/ (the files were relocated between
+  those two staging directories at an earlier step not captured in rename_history), so the
+  computed `expected` path never matched and sync silently no-op'd (synced: False) for 3 of
+  5 folders filed in one batch.
+Fix: find_torrent_by_path() now also falls back to matching qBittorrent torrents on the
+  pre-rename folder *name* alone (basename of old_path), regardless of directory, when the
+  directory-aware `expected` match fails — but only if exactly one torrent's content_path
+  basename matches, to avoid relocating the wrong torrent. Verified live: LB-16295/16309/
+  16211 now resolve to their correct infohashes; LB-16227 (genuinely never added to
+  qBittorrent) still correctly returns no match.
+
+BUG-172: qBittorrent save-path sync didn't relocate a torrent renamed before filing
+Status: Fixed
+File(s): backend/qbittorrent.py:find_torrent_by_path, relocate_tracked_torrent
+Reported: 2026-06-12
+Fixed: 2026-06-12
+Root cause: The pipeline's rename step renames a folder in place (e.g. "Bob Dylan Aarhus
+  Festival at Tangkrugen DK 1996-06-15 Dolphinsmile Archive" → "1996-06-15 Aarhus, Denmark
+  (LB-16281)") before filing moves it, but never tells qBittorrent — qBittorrent still has
+  the pre-rename name in content_path. find_torrent_by_path()'s fallback for torrents
+  added outside the app workflow only did an exact content_path string match against the
+  pre-filing path, so a renamed-then-moved folder (LB-16281) matched nothing and was
+  silently skipped (synced: False).
+Fix: find_torrent_by_path() now also checks rename_history for the most recent row whose
+  new_path is the pre-filing folder, derives the pre-rename root folder name from
+  old_path, and matches qBittorrent torrents on that name. New rename_torrent_root()
+  (POST /api/v2/torrents/renameFolder) and recheck_torrent() (POST
+  /api/v2/torrents/recheck) let relocate_tracked_torrent() fix both the save path and the
+  root folder name in one pass. Verified live against LB-16281's torrent
+  (23704b9e2974...): save_path/content_path now point at the new location, progress
+  stayed at 1 (no re-download), state stoppedUP.
+
+BUG-171: Publish Master Update fails with "400 Client Error: Bad Request" uploading to GitHub
+Status: Fixed
+File(s): backend/app.py:master_github_release._upload_asset
+Reported: 2026-06-12
+Fixed: 2026-06-12
+Root cause: _upload_asset() streamed the asset body via a plain generator (`_reader()`)
+  while also setting a `Content-Length` header manually. `requests` cannot determine a
+  length from a bare generator (no `__len__`/`fileno`), so `prepare_content_length` adds
+  `Transfer-Encoding: chunked` regardless — sending both `Content-Length` and
+  `Transfer-Encoding: chunked` to uploads.github.com, which rejects the request with
+  `400 Bad Request` as soon as the first chunk is sent (confirmed by re-running
+  master_github_release directly: release `master-2026-06-13.2` was created, then the
+  .db asset upload failed at 0%).
+Fix: Replaced the generator with a `_ProgressFile` file-like object exposing `__len__`
+  (returns the real file size) and `read()` (returns 1 MB chunks while emitting the same
+  progress events). `requests`' `super_len()` then finds `__len__` and sets a real
+  `Content-Length` with no `Transfer-Encoding` header, matching what uploads.github.com
+  requires.
+Note: The diagnostic re-run created an empty GitHub release `master-2026-06-13.2`
+  (id 338888978, no assets) on kuddukan42/losslessbob — left in place pending user
+  decision on whether to delete it.
+
+BUG-170: Pipeline scan-tree (shallow) misses top-level folders whose audio is in subfolders
+Status: Fixed
+File(s): backend/app.py:pipeline_scan_tree
+Reported: 2026-06-12
+Fixed: 2026-06-12
+Root cause: BUG-167 switched the GUI's "Scan tree…" to `shallow: true`, which checks each
+  immediate child of the picked root via `_has_audio(child)` — a non-recursive check of
+  that child's direct files only. Release folders organized with audio inside CD1/CD2/Extras
+  subfolders (no audio directly in the release folder itself) have no direct audio files,
+  so `_has_audio(child)` returns False and the whole release folder is silently skipped.
+Fix: Added `_has_audio_anywhere(d)` (uses `d.rglob("*")`) and used it for the shallow
+  immediate-children check, so a top-level folder is added if it contains audio anywhere
+  beneath it, while only the top-level folder path itself (not its nested subfolders) is
+  returned. Root's own direct-audio check (BUG-108) is unchanged.
+
+BUG-169: Publish Master Update does not update "Master version" / "Last published" in GUI
+Status: Fixed
+File(s): backend/app.py:4086-4106 (master_github_release), backend/db.py:3510-3522 (export_master_db)
+Reported: 2026-06-12
+Fixed: 2026-06-12
+Root cause: export_master_db() stamps master_version/master_published_at/master_schema_version
+  into the *exported snapshot* (a separate sqlite3 connection on the .db copy created via
+  VACUUM INTO), not into the live database's meta table. master_github_release uploaded
+  that snapshot to GitHub but never wrote those keys back to the live DB. /api/master/status
+  reads master_version/master_published_at from the live DB's meta table, so the Setup
+  screen's "Master version" / "Last published" fields stayed stale (or blank) after every
+  publish, even though loadMasterStatus() correctly re-fetched on the "done" SSE event.
+Fix: After both assets (db + manifest) upload successfully, master_github_release reads
+  the manifest sidecar JSON and calls database.set_meta() to write master_version and
+  master_published_at into the live DB, so the post-publish /api/master/status refresh
+  reflects the just-published snapshot.
+
+BUG-168: Publish Master Update fails with "json failed" / does not complete
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenSetup.tsx:744-786
+Reported: 2026-06-12
+Fixed: 2026-06-12
+Root cause: `handlePublishMaster`'s step 2 called `await gr.json()` on the response from
+  `POST /api/master/github_release`. That endpoint was rewritten to a `text/event-stream`
+  response (progress events for tag selection, release notes, and chunked asset upload)
+  during the TODO-115..120 stub-screen wiring (commit df708ce8), but the frontend caller
+  was never updated to match — it still expected a single `{ok, tag, url}` JSON body.
+  `gr.json()` threw a SyntaxError parsing the `data: {...}\n\n` SSE frames, caught by the
+  outer try/catch and surfaced as "Publish failed: ... is not valid JSON" — the GitHub
+  release was never created (or its result was never reported) and `master_published_at`
+  was never refreshed.
+Fix: Read `gr.body` via `getReader()`/`TextDecoder`, split on `\n\n`, and parse each
+  `data: {...}` frame. `progress` events are shown as toasts, `done` triggers the
+  "Released <tag>" toast + `loadMasterStatus()`, and `error` shows the existing
+  "GitHub upload failed" toast.
+
+BUG-167: Pipeline "Scan tree…" button scans recursively instead of 1 level deep
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenPipeline.tsx:1726-1733
+Reported: 2026-06-12
+Fixed: 2026-06-12
+Root cause: `handleScanTree` called `POST /api/pipeline/scan-tree` with `shallow: false`,
+  which triggers `pipeline_scan_tree()`'s `root.rglob("*")` branch — every audio-containing
+  subdirectory at any depth under the picked folder was added to the queue, including
+  nested CD/disc/extras subfolders that shouldn't be queued as separate pipeline entries.
+  The backend already supports `shallow: true` (root + immediate subdirs only, depth 1),
+  used by ScreenLBDIR's equivalent scan.
+Fix: Changed `handleScanTree` to pass `shallow: true`.
+
+BUG-164: gen_analysis.py false MISS on "alternative recording to X/Y ... same recording" snippets
+Status: Fixed
+File(s): tools/tapematch/gen_analysis.py:_build_observations
+Reported: 2026-06-12
+Fixed: 2026-06-12
+Root cause: `_build_observations` computed `is_same = _same_signal(snip) or _same_signal(text[:200])`
+  independent of `_diff_signal(snip)`. A snippet like "Alternative recording to LB-0491/LB-0569
+  which all appear to be same recording" matches both patterns — the "same recording" clause
+  describes the LB-0491/LB-0569 group's relationship to *each other*, not to the subject LB —
+  so the pair was wrongly flagged "MISS" whenever tapematch (correctly) placed the subject in a
+  different family.
+Fix: `is_same` is now `not is_diff and (_same_signal(snip) or _same_signal(text[:200]))`. When
+  `_diff_signal(snip)` matches, the pair falls through to the existing FALSE MERGE check (if
+  tapematch grouped them together) or the neutral `→` observation (if not), per
+  instructions/CC_TAPEMATCH_FIXES.md Task 1. Added unit tests
+  (tools/tapematch/tests/test_gen_analysis.py) covering the ambiguous snippet plus clean
+  positive/negative same/diff snippets. Regenerated all 429 analysis.md (--overwrite --all,
+  0 errors); 2001-10-30's MISS count dropped 5→0 (was entirely parser noise). Corrected
+  baseline written to tools/tapematch/BASELINE.md, superseding instructions/TAPEMATCH_PLAN.md.
+
+BUG-155: DB — entry locations with non-ASCII chars stored corrupted (LB-16298 "Mnchen, Germany", ü dropped)
+Status: Fixed
+File(s): data/losslessbob.db (entries.location, location_geocoded)
+Reported: 2026-06-10
+Fixed: 2026-06-12
+Root cause: Not an encoding bug — verified against the live site (and the local
+  cached detail pages) that the source HTML for LB-9546, 10083, 12969, 16298, and
+  16626 literally contains the byte string "Mnchen" (the letter "u" is simply
+  missing). No "ü"/accented character is involved and 0 rows in entries.location
+  contain any non-ASCII character, so the scraper/decode path is not at fault —
+  this is a typo on the LosslessBob site itself. Re-scraping cannot fix it since
+  the upstream page is wrong.
+Fix: One-time data correction. Updated entries.location for LB-9546, 10083,
+  12969, 16298, 16626 from "Mnchen..." to "Munchen..." (matches the existing
+  ASCII-transliteration convention used by entries 671, 2634, 3320, 3391, 4123).
+  Renamed/cleaned the corresponding location_geocoded cache rows so geocoding
+  isn't re-run unnecessarily. entries_fts picked up the change automatically via
+  the existing AFTER UPDATE trigger.
+
 BUG-163: NameError on /api/admin/restart — stray `_time.sleep` undefined name
 Status: Fixed
 File(s): backend/app.py:_do_restart (admin restart endpoint)

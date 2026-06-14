@@ -98,6 +98,17 @@ secondary_match:
   window_corr_threshold: 0.30 # per-window residual corr to count as "matching"
   coverage_threshold: 0.35    # fraction of windows agreeing -> secondary same-source
 
+  # Predicted-lag mode (CC_TAPEMATCH_FIXES.md Task 4): under a constant speed
+  # offset, accumulated drift over a 2hr show can reach minutes -- far beyond
+  # local_lag_sec's +-10s residual search.  When |pair speed offset| (ppm, from
+  # estimate_ratio) is at or above this threshold, each window's lag search is
+  # centered on expected_lag(t) = lag_0 + ppm_ratio * (t - anchor0), the
+  # deterministic drift predicted from the pair's speed ratio, with
+  # local_lag_sec still applied as the residual +-search half-width around that
+  # center.  Below this threshold, behavior is unchanged (search centered on 0).
+  # No waveform resampling -- only the search offset is shifted.
+  high_ppm_threshold: 5000
+
   # Quiet-segment hiss/crowd fingerprint: correlates between-song sections where
   # tape hiss / crowd noise dominates.  Catches same-source pairs whose music
   # correlation is broken by EQ or noise reduction applied to the music signal.
@@ -121,3 +132,14 @@ secondary_match:
   # retry with shorter windows to reduce edit-point straddle probability.
   short_window_sec: 15.0
   short_hop_sec: 5.0
+
+  # Staircase/staircase short-window pass (CC_TAPEMATCH_FIXES.md Task 5).
+  # Activates only when BOTH sides of a cross-family pair carry the staircase
+  # flag (union of both lag-curve passes -- see cli.py). Correlation variance
+  # grows as window length shrinks, so window_corr_threshold/coverage_threshold
+  # (calibrated for 60s windows) are NOT valid here -- these get their own
+  # calibrated values, set by calibrate_staircase.py. Both null until calibrated.
+  staircase_window_sec: 5.0
+  staircase_hop_sec: 2.0
+  staircase_window_corr_threshold: null   # set after calibration step below
+  staircase_coverage_threshold: null      # set after calibration step below

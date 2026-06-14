@@ -35,7 +35,8 @@ def discover_sources(root: Path):
 def list_tracks(source_dir: Path, exts):
     exts = {e.lower() for e in exts}
     tracks = [p for p in Path(source_dir).rglob("*")
-              if p.suffix.lower() in exts
+              if p.is_file()
+              and p.suffix.lower() in exts
               and not p.name.startswith("._")
               and "__MACOSX" not in p.parts]
     return sorted(tracks, key=_natural_key)

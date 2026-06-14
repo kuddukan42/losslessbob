@@ -4051,12 +4051,21 @@ def create_app() -> Flask:
                     fname = Path(file_path_s).name
                     sent_ref = [0]
 
-                    def _reader():
-                        with open(file_path_s, "rb") as fh:
-                            while True:
-                                chunk = fh.read(1 << 20)  # 1 MB chunks
-                                if not chunk:
-                                    break
+                    # A plain generator has no __len__, so requests can't determine
+                    # Content-Length and falls back to Transfer-Encoding: chunked —
+                    # which uploads.github.com rejects with a 400 Bad Request. A
+                    # file-like object with __len__ lets requests send a real
+                    # Content-Length while still reporting progress via read().
+                    class _ProgressFile:
+                        def __init__(self, path: str) -> None:
+                            self._fh = open(path, "rb")
+
+                        def __len__(self) -> int:
+                            return fsize
+
+                        def read(self, _amt: int = -1) -> bytes:
+                            chunk = self._fh.read(1 << 20)  # 1 MB chunks
+                            if chunk:
                                 sent_ref[0] += len(chunk)
                                 pct = int(sent_ref[0] * 100 / fsize) if fsize else 100
                                 ev_q.put({
@@ -4067,20 +4076,27 @@ def create_app() -> Flask:
                                     ),
                                     "pct": pct,
                                 })
-                                yield chunk
+                            return chunk
 
-                    up = _req.post(
-                        upload_base,
-                        params={"name": fname},
-                        data=_reader(),
-                        headers={
-                            "Authorization": f"token {token}",
-                            "Accept": "application/vnd.github+json",
-                            "Content-Type": "application/octet-stream",
-                            "Content-Length": str(fsize),
-                        },
-                        timeout=600,
-                    )
+                        def close(self) -> None:
+                            self._fh.close()
+
+                    body = _ProgressFile(file_path_s)
+                    try:
+                        up = _req.post(
+                            upload_base,
+                            params={"name": fname},
+                            data=body,
+                            headers={
+                                "Authorization": f"token {token}",
+                                "Accept": "application/vnd.github+json",
+                                "Content-Type": "application/octet-stream",
+                                "Content-Length": str(fsize),
+                            },
+                            timeout=600,
+                        )
+                    finally:
+                        body.close()
                     up.raise_for_status()
 
                 db_fname = Path(db_path_str).name
@@ -4090,6 +4106,20 @@ def create_app() -> Flask:
 
                 ev_q.put({"type": "progress", "label": f"Uploading {mf_fname}…", "pct": 0})
                 _upload_asset(manifest_path_str, mf_fname)
+
+                # Stamp the live DB so the GUI reflects what was just published —
+                # the snapshot's meta rows only existed inside the exported .db.
+                try:
+                    with open(manifest_path_str, encoding="utf-8") as mf:
+                        manifest_data = _json.load(mf)
+                    database.set_meta(
+                        "master_version", manifest_data.get("master_version", version)
+                    )
+                    database.set_meta(
+                        "master_published_at", manifest_data.get("master_published_at", "")
+                    )
+                except Exception:
+                    _log.exception("Failed to record published master_version/master_published_at")
 
                 ev_q.put({"type": "done", "tag": tag, "url": release_url})
 
@@ -4150,6 +4180,196 @@ def create_app() -> Flask:
         except Exception as exc:
             _log.exception("master_import failed")
             return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
+    @app.route("/api/master/github_check", methods=["GET"])
+    def master_github_check() -> Response:
+        """Check GitHub Releases for a master snapshot newer than the local one.
+
+        Returns:
+            JSON dict with ``available`` (bool) plus ``tag``, ``remote_version``,
+            ``remote_published_at``, ``local_version``, ``local_published_at``,
+            ``asset_name``, ``asset_size``, ``release_url`` when a release is found.
+            If no usable release exists, ``available`` is ``false`` with a
+            human-readable ``message``.
+        """
+        import requests as _req
+
+        _REPO = "kuddukan42/losslessbob"
+        try:
+            resp = _req.get(
+                f"https://api.github.com/repos/{_REPO}/releases/latest",
+                headers={"Accept": "application/vnd.github+json"}, timeout=15,
+            )
+            if resp.status_code == 404:
+                return jsonify({"available": False, "message": "No master releases found on GitHub yet."})
+            resp.raise_for_status()
+            release = resp.json()
+            tag = release.get("tag_name", "?")
+            assets = release.get("assets", [])
+
+            db_asset = next(
+                (a for a in assets
+                 if a["name"].endswith(".db") and not a["name"].endswith(".manifest.json.db")),
+                None,
+            )
+            if not db_asset:
+                return jsonify({"available": False, "message": f"No .db asset found in release {tag}."})
+
+            manifest_name = db_asset["name"] + ".manifest.json"
+            manifest_asset = next((a for a in assets if a["name"] == manifest_name), None)
+            if not manifest_asset:
+                return jsonify({"available": False,
+                                "message": f"Manifest sidecar not found in release {tag}."})
+
+            mresp = _req.get(manifest_asset["browser_download_url"], timeout=30)
+            mresp.raise_for_status()
+            manifest = mresp.json()
+            remote_version = manifest.get("master_version", "")
+            remote_published_at = manifest.get("master_published_at", "")
+
+            conn = database.get_connection()
+            rows = conn.execute(
+                "SELECT key, value FROM meta WHERE key IN ('master_version', 'master_published_at')"
+            ).fetchall()
+            local = {r["key"]: r["value"] for r in rows}
+
+            return jsonify({
+                "available": bool(remote_version) and remote_version != local.get("master_version", ""),
+                "tag": tag,
+                "remote_version": remote_version,
+                "remote_published_at": remote_published_at,
+                "local_version": local.get("master_version", ""),
+                "local_published_at": local.get("master_published_at", ""),
+                "asset_name": db_asset["name"],
+                "asset_size": db_asset.get("size", 0),
+                "release_url": release.get("html_url", ""),
+            })
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/master/github_install", methods=["POST"])
+    def master_github_install() -> Response:
+        """Download and apply the latest master snapshot from GitHub Releases.
+
+        Streams progress via ``text/event-stream``, mirroring
+        ``/api/master/github_release``'s event shape:
+          data: {"type": "progress", "label": "...", "pct": N_or_null}
+          data: {"type": "done", "summary": {...}}
+          data: {"type": "error", "error": "...", "message": "..."}
+        """
+        import hashlib
+        import json as _json
+        import queue
+
+        import requests as _req
+
+        _REPO = "kuddukan42/losslessbob"
+        ev_q: queue.Queue = queue.Queue()
+
+        def _work() -> None:
+            try:
+                ev_q.put({"type": "progress", "label": "Checking GitHub for latest release…", "pct": None})
+                resp = _req.get(
+                    f"https://api.github.com/repos/{_REPO}/releases/latest",
+                    headers={"Accept": "application/vnd.github+json"}, timeout=15,
+                )
+                if resp.status_code == 404:
+                    ev_q.put({"type": "error", "error": "no_releases",
+                              "message": "No master releases found on GitHub yet."})
+                    return
+                resp.raise_for_status()
+                release = resp.json()
+                tag = release.get("tag_name", "?")
+                assets = release.get("assets", [])
+
+                db_asset = next(
+                    (a for a in assets
+                     if a["name"].endswith(".db") and not a["name"].endswith(".manifest.json.db")),
+                    None,
+                )
+                if not db_asset:
+                    ev_q.put({"type": "error", "error": "no_db_asset",
+                              "message": f"No .db asset found in release {tag}."})
+                    return
+
+                manifest_name = db_asset["name"] + ".manifest.json"
+                manifest_asset = next((a for a in assets if a["name"] == manifest_name), None)
+                if not manifest_asset:
+                    ev_q.put({"type": "error", "error": "no_manifest",
+                              "message": f"Manifest sidecar not found in release {tag}."})
+                    return
+
+                ev_q.put({"type": "progress", "label": f"Downloading manifest for {tag}…", "pct": None})
+                mresp = _req.get(manifest_asset["browser_download_url"], timeout=30)
+                mresp.raise_for_status()
+                manifest = mresp.json()
+
+                dest_dir = DATA_DIR / "imports"
+                dest_dir.mkdir(parents=True, exist_ok=True)
+                db_dest = dest_dir / db_asset["name"]
+                manifest_dest = dest_dir / manifest_name
+
+                total_bytes = db_asset.get("size", 0)
+                total_mb = total_bytes / (1 << 20)
+                ev_q.put({"type": "progress",
+                          "label": f"Downloading {db_asset['name']} ({total_mb:.0f} MB)…", "pct": 0})
+                dresp = _req.get(db_asset["browser_download_url"], stream=True, timeout=600)
+                dresp.raise_for_status()
+
+                downloaded = 0
+                with open(db_dest, "wb") as fh:
+                    for chunk in dresp.iter_content(chunk_size=1 << 18):
+                        if chunk:
+                            fh.write(chunk)
+                            downloaded += len(chunk)
+                            if total_bytes:
+                                pct = downloaded * 100 // total_bytes
+                                dl_mb = downloaded / (1 << 20)
+                                ev_q.put({
+                                    "type": "progress",
+                                    "label": f"Downloading… {pct}%  ({dl_mb:.1f} / {total_mb:.0f} MB)",
+                                    "pct": pct,
+                                })
+
+                ev_q.put({"type": "progress", "label": "Verifying checksum…", "pct": None})
+                sha = hashlib.sha256()
+                with open(db_dest, "rb") as fh:
+                    for chunk in iter(lambda: fh.read(1 << 20), b""):
+                        sha.update(chunk)
+                expected_sha = manifest.get("sha256", "")
+                if sha.hexdigest() != expected_sha:
+                    db_dest.unlink(missing_ok=True)
+                    ev_q.put({"type": "error", "error": "sha256_mismatch",
+                              "message": "SHA256 mismatch — download may be corrupt. Please try again."})
+                    return
+
+                with open(manifest_dest, "w", encoding="utf-8") as fh:
+                    _json.dump(manifest, fh, indent=2)
+
+                ev_q.put({"type": "progress", "label": "Applying update to local database…", "pct": None})
+                summary = database.import_master_db(str(db_dest))
+                ev_q.put({"type": "done", "summary": summary})
+
+            except Exception as exc:
+                ev_q.put({"type": "error", "error": type(exc).__name__, "message": str(exc)})
+
+        threading.Thread(target=_work, daemon=True).start()
+
+        def _stream():
+            while True:
+                try:
+                    ev = ev_q.get(timeout=680)
+                except queue.Empty:
+                    ev = {"type": "error", "error": "timeout", "message": "Update timed out after 680 s."}
+                yield f"data: {_json.dumps(ev)}\n\n"
+                if ev.get("type") in ("done", "error"):
+                    break
+
+        return Response(
+            stream_with_context(_stream()),
+            content_type="text/event-stream",
+            headers={"X-Accel-Buffering": "no", "Cache-Control": "no-cache"},
+        )
 
     # ── lb_alias endpoints ────────────────────────────────────────────────────
 
@@ -4834,17 +5054,18 @@ def create_app() -> Flask:
 
     @app.route("/api/collection/mounts", methods=["GET"])
     def collection_mounts_list() -> Response:
-        """List all configured storage mounts with live online status."""
+        """List all configured storage mounts with live online status and disk usage."""
         try:
             import concurrent.futures as _cf
 
-            from backend.filer import _path_reachable
+            from backend.filer import _path_reachable, get_disk_usage_stats
             mounts = database.get_collection_mounts()
             if mounts:
                 with _cf.ThreadPoolExecutor(max_workers=len(mounts)) as ex:
                     online_flags = list(ex.map(lambda m: _path_reachable(m["root_path"]), mounts))
                 for mount, online in zip(mounts, online_flags, strict=True):
                     mount["online"] = online
+                    mount.update(get_disk_usage_stats(mount["root_path"], online))
             return jsonify({"mounts": mounts})
         except Exception as e:
             return jsonify({"error": str(e)}), 500
@@ -5342,13 +5563,34 @@ def create_app() -> Flask:
                 date_str = entry.get("date_str") or ""
                 location = (entry.get("location") or "").strip()
                 lb_status = database.get_lb_status(lb_number)
+                # BUG-176: when the LB entry's location is blank, fall back to
+                # bobdylan.com's location for the same date so the canonical
+                # "date Location (LB-NNNNN)" order can still be built.
+                if date_str and not location:
+                    from backend.torrent_maker import _parse_date
+                    iso_date = _parse_date(date_str)
+                    with database.get_connection() as conn:
+                        show = conn.execute(
+                            "SELECT location FROM bobdylan_shows WHERE date_str=?", (iso_date,)
+                        ).fetchone()
+                    if show and show["location"]:
+                        location = show["location"].strip()
                 proposed = _build_name(lb_number, date_str, location, lb_status)
                 # BUG-119: when DB has no date/location the standard name falls
                 # back to bare LB-NNNNN[-NFT], which would silently strip any
                 # date/location already in the folder name.  Use the current
-                # folder name as the base and only adjust the NFT suffix.
+                # folder name as the base and only adjust the NFT suffix and
+                # (LB-NNNNN) tag — never touch the date/location portion.
                 if not date_str or not location:
-                    proposed = apply_nft_suffix(strip_nft_suffix(folder_name), lb_status)
+                    base = strip_nft_suffix(folder_name)
+                    correct_tag = f"(LB-{lb_number:05d})"
+                    if base.rstrip().lower().endswith(correct_tag.lower()):
+                        proposed = apply_nft_suffix(base, lb_status)
+                    else:
+                        # BUG-176: folder is missing (or has a stale) LB# tag —
+                        # strip any existing tag and append the correct one.
+                        untagged = re.sub(r"\s*\(LB-\d+\)\s*$", "", base, flags=re.IGNORECASE).rstrip()
+                        proposed = apply_nft_suffix(f"{untagged} {correct_tag}", lb_status)
                 if folder_name == proposed:
                     row["rename"] = {"status": "ok", "label": "Correct", "proposed": None}
                 else:
@@ -5494,7 +5736,10 @@ def create_app() -> Flask:
         """Walk a root directory and return subdirectories containing audio files.
 
         Body: {root: "/abs/path", shallow: false}
-        shallow=true limits scan to root + immediate subdirectories only (depth 1).
+        shallow=true limits results to root + immediate subdirectories only (depth 1),
+        but each immediate subdirectory is checked for audio at any depth below it
+        (e.g. a release folder whose audio lives in CD1/CD2/Extras subfolders still
+        counts as containing audio).
         Returns:
             JSON {folders: [str, ...]} sorted alphabetically
         """
@@ -5510,11 +5755,14 @@ def create_app() -> Flask:
             def _has_audio(d: Path) -> bool:
                 return any(f.suffix.lower() in _AUDIO for f in d.iterdir() if f.is_file())
 
+            def _has_audio_anywhere(d: Path) -> bool:
+                return any(f.suffix.lower() in _AUDIO for f in d.rglob("*") if f.is_file())
+
             if _has_audio(root):
                 found.append(str(root))
             if shallow:
                 for child in root.iterdir():
-                    if child.is_dir() and _has_audio(child):
+                    if child.is_dir() and _has_audio_anywhere(child):
                         found.append(str(child))
             else:
                 for dirpath in root.rglob("*"):

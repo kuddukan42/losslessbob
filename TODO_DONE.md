@@ -1,6 +1,195 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-139: tapematch reliability fixes (CC_TAPEMATCH_FIXES sequence)
+Priority: Medium
+Status: Done
+Added: 2026-06-12
+Closed: 2026-06-13
+Description: Implement instructions/CC_TAPEMATCH_FIXES.md Tasks 2-7 (supersedes
+instructions/TAPEMATCH_PLAN.md). Task order: 2) observations.db run versioning +
+latest_pairs view, 3) OOM dtype/rate audit (1994-02-20 case study), 4) speed-offset
+secondary via predicted lag (1989-06-04, 1990-01-12), 5) staircase short-window
+recalibration (2001-10-30, 2001-10-07, 1996-07-21), 6) re-run queue generator,
+7) error/no-verdict triage (6 error dates, 7 no-verdict dates). Validate every fix
+against tools/tapematch/BASELINE.md (not TAPEMATCH_PLAN.md).
+Note (2026-06-12): Task 1 (gen_analysis.py parser fix + re-baseline) done — see
+BUG-164 in BUGS_DONE.md. BASELINE.md also flags that 1996-07-21 and 2001-10-07
+need a fresh re-run before being used as Task 4/5 control/validation dates, since
+their existing observations.db rows reflect a stale experimental run (see
+BASELINE.md "Live example of the Task 2 problem").
+Note (2026-06-12): Task 2 (run versioning + latest_pairs view) done. run_id +
+run_at already covered the run-versioning requirement (no new columns); migration
+normalized 1719 lb_a>lb_b rows and added idx_pairs_latest + latest_pairs view
+(tools/tapematch/migrate_observations.py, idempotent). tapematch_session.py now
+normalizes lb_a<lb_b on insert and creates the index/view in OBS_SCHEMA. Spot-check
+on 1996-07-21 confirms latest_pairs surfaces the stale-experimental-run rows flagged
+in BASELINE.md as-is (expected — that date still needs the fresh re-run before
+Task 4/5 use). Logged BUG-165 (separate _lb_num_from_folder regex issue found during
+the audit, left open for triage). Next: Task 3 (OOM dtype/rate audit, 1994-02-20).
+Note (2026-06-12): Task 3 (OOM dtype/rate audit) done. Audit found the float64/96kHz-
+stereo OOM hypothesis was already resolved by the 2026-06-05/06 sessions (BUG-144 +
+Pass-4 OOM fix): ffmpeg-pipe decode keeps native-rate arrays out of Python, ingest
+writes float32 mono memmaps and frees streams immediately, soxr resample_ratio stays
+float32, and scipy.signal.correlate/numpy mean/std preserve float32 at every
+correlation site (confirmed empirically). Removed the one remaining retained-reference
+pattern: dead `match.pairwise_matrix()` (unused, held all sources in RAM). Added a
+pre-run "est. peak RAM" log line to cli.py. Validation: 1994-02-20 (8 sources, the
+case study with no prior run dir) now completes — 5 families, peak RSS 2.6 GB
+(data/tapematch/runs/20260612_140009_1994-02-20). Re-ran 1993-04-16 (3-source
+control) — family assignments/corr matrix/speed-ppm bit-identical to the 2026-06-07
+run (data/tapematch/runs/20260612_143159_1993-04-16). Next: Task 4 (speed-offset
+secondary via predicted lag, 1989-06-04 / 1990-01-12).
+Note (2026-06-13): Task 4 (predicted-lag mode) done. Added `align.local_lag_centered`,
+`secondary_match.high_ppm_threshold` (config.yaml), and threaded per-pair
+`pair_ratios`/`lag_0`/`anchor0` from cli.py into `match.secondary_corr_pair`. Unit
+tests pass (tests/test_predicted_lag.py, 3/3). Activates correctly on both target
+dates (11/14 and 54/65 cross-pairs with plausible lag_0/ppm) and is regression-free
+on 3 control dates including a high-ppm control. However miss counts unchanged
+(1989-06-04: 8->8 vs target <=2; 1990-01-12: 9->9 vs target <=3) — for every missed
+pair, windowed/hiss correlation is ~100x below threshold at every lag, not just the
+zero-centered one, so search-range was never the limiting factor for these specific
+pairs. Full writeup in tools/tapematch/BASELINE.md "Task 4 results". Code kept (correct,
+tested, regression-free, useful for any future pair where drift-range *is* the issue).
+Follow-up tracked as TODO-140 (low-band/time-warp fallback, Task 4 spec step 5). Next:
+Task 5 (staircase short-window recalibration, 2001-10-30 / 2001-10-07 / 1996-07-21).
+Note (2026-06-13): Task 5 (staircase short-window recalibration) done. Added
+`align.union_staircase_sources` (union of both lag-curve passes' staircase
+classifications — fixes a reference-ambiguity bug where the current ref source
+could never be flagged staircase) and wired it into the existing 15s OR-fallback
+in cli.py. Unit-tested (tests/test_staircase_union.py, 3/3). Calibration (step 3)
+of a new 5s/2s short-window pass on 2001-10-30 found NO usable residual_corr gap —
+same-source median 0.0118 vs different-source-same-show median 0.0153 (higher!),
+distributions fully overlap. Per spec, the new 5s pass was therefore NOT wired in;
+`config.yaml` carries the documented-but-disabled
+staircase_window_sec/hop_sec/window_corr_threshold/coverage_threshold knobs
+(thresholds null). The union-flag fix itself is regression-free on 3 control
+dates (byte-identical CLUSTERS/LINEAGE/DIAGNOSTICS) and on 2001-10-30
+(byte-identical output, same 6/6 lb_says_same misses, identical corr values —
+the fix newly flags one pair (LB-10594/LB-08413) for the 15s fallback but that
+fallback still has no usable signal there either). Target (<=3 misses) not met —
+same root cause as Task 4 (signal content, not search mechanism). Full writeup in
+tools/tapematch/BASELINE.md "Task 5 results". Piecewise alignment (spec step 4)
+deferred — tracked as TODO-144. Next: Task 6 (re-run queue generator).
+Note (2026-06-13): Task 6 (re-run queue generator) done. Added
+tools/tapematch/build_rerun_queue.py — queries the Task 2 `latest_pairs` view
+for dates with >=1 `lb_says_same=1 AND tapematch_verdict='different_family'`
+pair, ordered by miss count desc, writes tools/tapematch/rerun_queue.txt
+(232 dates currently; `--since TIMESTAMP|REF` will exclude already-revalidated
+dates once the Task 4/5 fixes are committed; 0-miss dates never queued per
+spec step 5). Added `run_batch()`/`--batch FILE` to tapematch_session.py —
+resumable sequential re-run consuming the queue, appending `# done <ts>` to
+completed lines, skipping blank/comment/done lines, exits 130 on
+KeyboardInterrupt without marking the in-progress line. Unit-tested
+(tests/test_build_rerun_queue.py + test_batch_queue.py, 8/8 pass; full
+tapematch suite 27/27 pass). rerun_queue.txt gitignored (generated/mutable,
+like observations.db). Next: Task 7 (error/no-verdict triage — 6 error dates,
+7 no-verdict dates).
+Note (2026-06-13): Task 7 (error/no-verdict triage) done — sequence complete.
+Fixed two root-cause code bugs found across the 6 error dates: BUG-180
+(ingest.list_tracks matched a directory named like a .flac file as a track —
+1987-10-05) and BUG-181 (find_lb_folders included no-audio collection folders,
+crashing ingest.concat_source for the whole date — 1989-08-26/09-01/09-03).
+Also fixed BUG-182 (resolve_from_collection crashed with OSError when
+/mnt/DYLAN2 was unreachable), found during validation. Added an explicit
+insufficient_sources report path to run_date + matching gen_analysis.py
+support, so <2-source dates (1989-09-01) get a clean report instead of
+crashing/being skipped. Re-ran all 4 affected dates for real: 1987-10-05 (5
+sources, 2 families), 1989-08-26 (2 sources, 2 families), 1989-09-01
+(insufficient_sources, 1 source), 1989-09-03 (8 sources, 8 families) — all
+complete cleanly. The remaining 2 error dates (1993-04-23, 2001-07-07) are
+genuinely corrupted source FLAC files (truncated/0-byte) — reported to user,
+not modified per spec. All 7 no-verdict dates resolved: 6 already had valid
+verdicts post-Task-1 (no fix needed), 2026-06-05 confirmed as a test/
+calibration artifact and marked with SKIP_REASON files (not deleted). 3 new
+test files added (6 tests; full suite 33/33 pass). Full writeup in
+tools/tapematch/BASELINE.md "Task 7 results".
+Overall: TODO-139 (CC_TAPEMATCH_FIXES Tasks 2-7) is complete. Tasks 4/5's
+numeric accuracy targets were not met (root cause is recording signal
+content, not the alignment mechanism — documented in BASELINE.md); follow-ups
+tracked separately as TODO-140 (low-band/time-warp fallback) and TODO-144
+(piecewise alignment for staircase pairs).
+
+TODO-145: Pipeline table — fix dead space before LB#/Apply/File columns
+Priority: Low
+Status: Done
+Added: 2026-06-13
+Closed: 2026-06-13
+Description: On wide windows, the Pipeline folder queue table
+(gui_next/src/renderer/src/screens/ScreenPipeline.tsx, colgroup around line
+2179) left a large empty gap between the status column and the LB#/Apply/File
+columns. The status column was the only `<col />` without a fixed width, so
+it absorbed all leftover table width while its content (a short status badge
++ one-line reason) stayed left-aligned, stranding the LB# and action buttons
+far to the right.
+Fix: Capped the Status column at 240px and removed the fixed 380px width from
+the folder-name column, making it the flexible column that absorbs leftover
+table width instead.
+
+TODO-143: gui_next — restore "Check for Updates" GitHub path for master snapshots
+Priority: Medium
+Status: Done
+Added: 2026-06-13
+Closed: 2026-06-13
+Description: TODO-088 added a GitHub-based "Check for Updates" button to the
+  PyQt GUI (_GitHubMasterThread: fetch latest release, download .db + manifest,
+  verify SHA256, apply via /api/master/import), keeping "Install from File…" as
+  an offline fallback. Only the file-picker fallback was ported to gui_next, so
+  "Install master update" prompted for a local file with no GitHub path. Added
+  GET /api/master/github_check (compares local vs. latest GitHub release
+  master_version) and POST /api/master/github_install (text/event-stream:
+  downloads latest master .db + manifest into data/imports/, verifies SHA256,
+  applies via database.import_master_db(), mirrors /api/master/github_release's
+  event shape) to backend/app.py. ScreenSetup.tsx's CuratorToggle gains a
+  "Check for updates" button (handleCheckGithubMaster + runGithubInstall);
+  existing button relabeled "Install from file…". i18n keys added to all 6
+  locales.
+
+TODO-141: Make Pipeline status group headers actually collapsible
+Priority: Low
+Status: Done
+Added: 2026-06-12
+Closed: 2026-06-12
+Description: On the Pipeline screen, the status group header rows (NEEDS YOU,
+READY, RUNNING, ON SHELF, DONE, etc.) already rendered a chevron icon and had
+cursor:pointer styling via GroupRow (gui_next/src/renderer/src/components/table.tsx),
+but ScreenPipeline.tsx never passed an `onToggle` handler or `expanded` state when
+constructing these GroupRow items, so clicking the header did nothing.
+Implementation: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: added
+  collapsedBuckets state (Set<Bucket>) and toggleBucket callback. flatList
+  construction now skips pushing row VItems for a bucket whose header is
+  collapsed (group header itself is still pushed). GroupRow now receives
+  expanded={!collapsedBuckets.has(item.bucket)} and onToggle={() =>
+  toggleBucket(item.bucket)}.
+
+TODO-142: Pipeline batch filing — skip per-folder confirmation, auto-apply mount paths
+Priority: Medium
+Status: Done
+Added: 2026-06-12
+Closed: 2026-06-12
+Description: When filing multiple "ready to file" folders (step 5), applyFile popped
+  up a "File into Collection" confirmation dialog for every folder during a batch run.
+Implementation: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: applyFile gained
+  a skipConfirm parameter that bypasses the confirm() dialog and applies the
+  recommended mount path (overrideDest ?? row.steps.file.dest) directly. applyAllFileable
+  and applySelectedFileable now call applyFile(row, undefined, undefined, undefined, true).
+  The single-row "File" button (line 2287) is unchanged and still confirms.
+
+TODO-140: Mounts screen — add drive stats to mount cards (TODO-110 follow-up)
+Priority: Low
+Status: Done
+Added: 2026-06-12
+Closed: 2026-06-12
+Description: TODO-110 added free/total/used_pct mount stats only to the pipeline
+Collect step's mount picker. Extend the same disk-usage display to the Mounts
+settings screen's mount cards.
+Implementation: backend/filer.py disk-usage calc extracted into
+get_disk_usage_stats(root_path, online), reused by get_mounts_with_stats() and the
+/api/collection/mounts endpoint (now returns free/total/used_pct per mount).
+ScreenMounts.tsx CollectionMount gains free/total/used_pct; MountCard shows "free of
+total" with the same colour-coded usage bar (warn ≥75%, bad ≥90%). New locale keys
+mounts.freeOfTotal/mounts.usageTooltip added to all 6 locales.
+
 TODO-111: Collection integrity monitor — hash-based change detection for collection folders
 Priority: Medium
 Status: Done

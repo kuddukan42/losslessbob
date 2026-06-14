@@ -95,6 +95,45 @@ def local_lag(ref_mono, other_mono, sr, center_sec, window_sec, max_lag_sec):
     return lags[k] / sr, float(peak)
 
 
+def local_lag_centered(ref_mono, other_mono, sr, center_sec, window_sec, max_lag_sec, lag_center_sec):
+    """Like `local_lag`, but centers the +-max_lag_sec residual search on
+    `lag_center_sec` instead of zero.
+
+    Used for predicted-lag mode (CC_TAPEMATCH_FIXES.md Task 4): under a constant
+    speed offset, accumulated drift at a given window can exceed max_lag_sec, so
+    the search is re-centered on the drift predicted from the pair's speed ratio.
+    Only the search offset changes -- no waveform resampling.
+
+    Returns (lag_sec, peak_corr) where lag_sec is the absolute lag (i.e.
+    lag_center_sec plus whatever residual offset the search finds), in the same
+    sign convention as `local_lag`.
+    """
+    half = int(window_sec * sr / 2)
+    c = int(center_sec * sr)
+    a0, a1 = max(0, c - half), min(len(ref_mono), c + half)
+    ra = ref_mono[a0:a1]
+    n_ref = len(ra)
+    if n_ref < sr:
+        return None, 0.0
+
+    center_shift = int(round(lag_center_sec * sr))
+    maxl = int(max_lag_sec * sr)
+    b0 = max(0, a0 + center_shift - maxl)
+    b1 = min(len(other_mono), a1 + center_shift + maxl)
+    ob = other_mono[b0:b1]
+    if len(ob) < n_ref:
+        return None, 0.0
+
+    ra_n = (ra - ra.mean()) / (ra.std() + 1e-9)
+    ob_n = (ob - ob.mean()) / (ob.std() + 1e-9)
+
+    xc = correlate(ob_n, ra_n, mode="valid")
+    k = np.argmax(np.abs(xc))
+    peak = xc[k] / n_ref
+    lag_sec = (b0 + k - a0) / sr
+    return lag_sec, float(peak)
+
+
 def lag_curve(ref_mono, other_mono, sr, anchors, cfg):
     """Lag and peak-corr at each anchor -> the diagnostic curve."""
     a = cfg["align"]
@@ -127,3 +166,28 @@ def interpret_curve(rows, cfg):
     return {"kind": kind, "ratio": float(ratio),
             "ppm": float((ratio - 1.0) * 1e6),
             "max_step_sec": float(steps.max() if len(steps) else 0.0)}
+
+
+def union_staircase_sources(*speed_infos: dict[str, dict]) -> set[str]:
+    """Sources classified "staircase/splice" in ANY of the given speed_info dicts.
+
+    A source's lag-curve "kind" is always "reference" relative to itself, so a
+    single speed_info pass can never flag the current reference source as
+    staircase. Each lag-curve pass uses a different reference (initial ref,
+    then re-selected central ref), so taking the union across passes lets a
+    source's staircase status be detected from whichever pass it isn't the
+    reference in (CC_TAPEMATCH_FIXES.md Task 5).
+
+    Args:
+        *speed_infos: one or more {source_name: {"kind": ..., ...}} dicts,
+            one per lag-curve pass.
+
+    Returns:
+        Set of source names classified "staircase/splice" in at least one pass.
+    """
+    return {
+        name
+        for info in speed_infos
+        for name, d in info.items()
+        if d.get("kind") == "staircase/splice"
+    }

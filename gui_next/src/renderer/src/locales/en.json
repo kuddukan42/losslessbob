@@ -437,6 +437,10 @@
       "confirmBody": "File \"{{folder}}\" to {{mount}}",
       "confirmNote": "The folder will be moved to its collection destination and registered in My Collection.",
       "confirmAction": "File",
+      "qbtSynced": "qBittorrent save path updated — seeding continues from the new location",
+      "qbtSyncFailed": "Filed, but qBittorrent save path update failed: {{error}}",
+      "busy": "A filing job is already in progress — please wait for it to finish",
+      "jobMismatch": "Filing status was taken over by another job — check My Collection for the result",
       "progress": {
         "scanning": "Scanning…",
         "copying": "Copying…",
@@ -681,7 +685,10 @@
       "masterVersion": "Master version",
       "lastPublished": "Last published",
       "publishUpdate": "Publish master update…",
-      "installUpdate": "Install master update…"
+      "checkUpdate": "Check for updates",
+      "checkingUpdate": "Checking…",
+      "installUpdate": "Install from file…",
+      "githubUpdateBody": "A new master snapshot is available on GitHub ({{tag}}).\n\nDownload and apply it now? Your collection, wishlist, and personal settings are preserved."
     },
     "integrations": {
       "title": "Integrations",
@@ -799,6 +806,8 @@
       "publishFailed": "Publish failed: {{message}}",
       "installFailed": "Install failed: {{message}}",
       "masterInstalled": "Master update installed.",
+      "githubCheckFailed": "GitHub check failed: {{message}}",
+      "masterUpToDate": "Master data is up to date.",
       "qbtOk": "qBittorrent OK — v{{version}}",
       "qbtError": "qBittorrent: {{error}}",
       "qbtTestError": "qBt test error: {{error}}",
@@ -829,7 +838,9 @@
   },
   "mounts": {
     "title": "Mounts",
-    "subtitle": "Storage drives, year routing, and filing mode for the collection pipeline."
+    "subtitle": "Storage drives, year routing, and filing mode for the collection pipeline.",
+    "freeOfTotal": "{{free}} free of {{total}}",
+    "usageTooltip": "{{free}} free of {{total}} ({{pct}}% used)"
   },
   "themes": {
     "title": "Themes",

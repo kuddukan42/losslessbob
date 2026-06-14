@@ -1,13 +1,87 @@
 
-BUG-155: DB — entry locations with non-ASCII chars stored corrupted (LB-16298 "Mnchen, Germany", ü dropped)
+BUG-175: LBDIR reconcile leaves self-referencing/regenerated entries permanently "MD5 mismatch" — BUG-174 fix may not be the final answer
 Status: Open
-File(s): data/losslessbob.db (entries.location); likely backend/scraper.py or importer encoding path
-Reported: 2026-06-10
-Root cause: Not yet isolated. entries row for LB-16298 has location "Mnchen, Germany" — the "ü" was
-  dropped (not mojibake'd), consistent with a cp1252/latin-1 decode that discarded the byte (see
-  Known Pitfalls in CLAUDE.md). Effect: pipeline rename proposes the misspelled
-  "2011-10-26 Mnchen, Germany (LB-16298)". Audit needed: other entries with umlauts/accents.
-Fix: TBD — re-scrape affected entries with correct decoding; add an audit query for stripped chars.
+File(s): backend/checksum_utils.py:find_site_recoverable_files, backend/checksum_utils.py:find_reconcilable_files
+Reported: 2026-06-13
+Root cause: Investigated by reproducing against the real LB-16216 pipeline folder
+  (/mnt/MEDIA1/1-DYLAN/Bob Dylan  Bayfront Amphitheater Pensacola FL 1992-09-12
+  Dolphinsmile Archive), whose 24-entry lbdir (LBF-16216-lbdir-bd92-09-12-PDub-
+  Dolphinsmile.flac1648.txt) lists itself and DigiFlawFinder-bd92-09-12-PDub-
+  Dolphinsmile.flac1648.wavf.html as "missing" — same shape as the BUG-174 screenshot,
+  just for LB-16216 instead of LB-13333 (data/site/files now holds near-duplicate
+  LBF-13333-* and LBF-16216-* attachment sets for what appears to be the same Pensacola
+  1992-09-12 PDub/Dolphinsmile recording, differing only by case in "pdub-dolphinsmile"
+  vs "PDub-Dolphinsmile" — this is what the user's file-search screenshot showed).
+  Confirmed via live API call (lb_number_hint=16216) that BUG-174's fix correctly
+  produces 2 site_proposals, both matched_by:'name' with an MD5-mismatch warning, and
+  that the LBF-13333-* vs LBF-16216-* sets do NOT cross-contaminate (prefix filter
+  works as intended).
+  However, three things suggest "MD5 mismatch" is not actually resolvable, and BUG-174's
+  fix may just be the best available band-aid rather than a real fix:
+    1. lbdir self-checksum (lbdir-bd92-09-12-PDub-Dolphinsmile.flac1648.txt, expected
+       552493726c8ef51482445bf9dfd93649) is circular by construction — no copy of this
+       file (cached site copy md5 82021addc07439e01c9e6f35b0ec7bb1, live site copy same,
+       on-disk extras/ copy same) can ever match it.
+    2. DigiFlawFinder-bd92-09-12-PDub-Dolphinsmile.flac1648.wavf.html (expected
+       27b2c69b9ab753cec77fa1a4a7e7dc7c) is dynamically regenerated server-side: cached
+       copy (May 23 scrape) is md5 9884fdafd42e61e4274aaa827ab297be (67345 B), but a
+       fresh download today is md5 c36f0fce06e24b238cbc1dbee229e0be (63700 B) — despite
+       an unchanged Last-Modified: Dec 2024 header. Neither matches expected_md5, and
+       re-scraping will never produce a match since the content isn't stable.
+    3. The folder also has extras/LBF-16216-lbdir-bd92-09-12-PDub-Dolphinsmile.flac1648.txt
+       on disk, byte-identical (md5 82021add...) to the data/site/files copy BUG-174
+       proposes copying in. find_reconcilable_files's on-disk scan only matches by exact
+       MD5, so this local near-duplicate sits in unmatched_disk and is never offered as
+       a rename candidate — the reconcile panel can show an "unmatched disk" file and a
+       "site recovery" proposal that are really the same bytes under the same filename,
+       which could read as two different candidate files to the user.
+Fix: TBD — discussed but not yet implemented: extend find_reconcilable_files with the
+  same name-based fallback (matched_by/expected_md5/MD5-mismatch flag) BUG-174 added to
+  find_site_recoverable_files, so on-disk near-duplicates like extras/LBF-16216-lbdir-...
+  surface as rename proposals too. Separately worth deciding whether self-referencing
+  lbdir entries and regenerated report files should just be excluded from "missing"
+  counts/integrity status entirely, since they can never pass by MD5 regardless of
+  source. Revisit after more thought — user is not yet convinced BUG-174 is the final
+  word here.
+
+BUG-168: Windows — "Check for update" does not prompt to install new DB from LB website
+Status: Open
+File(s): gui_next/src/renderer/src/screens/ScreenHome.tsx:122-138, gui_next/src/renderer/src/screens/ScreenSetup.tsx:624-627, backend/flat_file.py:discover_flat_file_release
+Reported: 2026-06-12
+Root cause: Unknown. `handleCheckUpdate` calls `/api/flat_file/discover` and only shows a toast
+  ("New release available" / "Already up to date" / error); on Windows the discover call may be
+  failing silently (network/cert issue) or returning no update, and even when an update is found
+  there appears to be no follow-up prompt/dialog offering to download and apply it.
+Fix: — Reproduce on Windows, log the `/api/flat_file/discover` response. If a "New release
+  available" toast appears but no install prompt follows, add a confirm dialog that triggers the
+  download→diff→apply pipeline.
+
+BUG-167: Windows — clicking "Scraper" menu item shows blank screen, requires app restart
+Status: Open
+File(s): gui_next/src/renderer/src/screens/ScreenScraper.tsx, gui_next/src/renderer/src/components/AppShell.tsx:80
+Reported: 2026-06-12
+Root cause: Unknown — reported only on Windows; ScreenScraper renders fine elsewhere. Possibly a
+  renderer crash (uncaught exception) when mounting one of the 6 tabs (LB Crawler, Entry Metadata,
+  Bootleg Catalog, Dylan.com, Setlist.fm, Geocoder) or its 2s status-polling effect, leaving a
+  blank window with no error boundary to recover from.
+Fix: — Reproduce on Windows, check renderer devtools console for the thrown error; add an error
+  boundary around ScreenScraper (or its tabs) so a crash shows a message instead of a blank screen.
+
+BUG-165: _lb_num_from_folder picks up a cross-referenced LB number instead of the entry's own
+Status: Open
+File(s): tools/tapematch/tapematch_session.py:_lb_num_from_folder
+Reported: 2026-06-12
+Root cause: `_lb_num_from_folder` uses `re.search(r"LB-(\d+)", folder_name)`, returning the
+  *first* "LB-XXXX" match in the folder name. Folder names that embed a cross-reference
+  earlier than the entry's own LB number (e.g. "1989-07-16 Bristol, CT [fixed LB-2204]-LB-10437-v",
+  whose own entry is LB-10437) resolve to the cross-referenced number (2204) instead. When the
+  *other* source in the pair is the actual LB-02204 folder, both `lb_a` and `lb_b` resolve to
+  2204 — a degenerate self-pair row in observations.db (`pairs.lb_a == pairs.lb_b`).
+  Found while auditing observations.db for TODO-139 Task 2 (7 such rows: dates 1989-07-16,
+  1988-06-07, 1988-06-25, 1988-07-20, 1988-09-11, 1988-09-23, 1993-06-19).
+Fix: Prefer the LB number matching the entry's own `losslessbob.db` record for that folder
+  (already resolved earlier in the session via `found_folders`/`lb_numbers`) over a regex
+  scan of the folder name; fall back to the regex only if no DB-known number applies.
 
 BUG-146: build_standard_name produces xx/xx/YY folder date prefix for entries with unknown month/day
 Status: Open

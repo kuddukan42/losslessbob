@@ -411,10 +411,16 @@
       "confirmBody": "Archivia \"{{folder}}\" in {{mount}}",
       "confirmNote": "La cartella verrà spostata nella sua destinazione di raccolta e registrata in La mia raccolta.",
       "confirmAction": "Archivia",
+      "qbtSynced": "Percorso di salvataggio di qBittorrent aggiornato: il seeding continua dalla nuova posizione",
+      "qbtSyncFailed": "Archiviato, ma l'aggiornamento del percorso di salvataggio di qBittorrent non è riuscito: {{error}}",
+      "busy": "È già in corso un'operazione di archiviazione — attendere il completamento",
+      "jobMismatch": "Lo stato dell'archiviazione è stato rilevato da un'altra operazione — controllare il risultato in La mia collezione",
       "progress": {
         "scanning": "Scansione…",
         "copying": "Copia…",
-        "moving": "Spostamento…"
+        "moving": "Spostamento…",
+        "verifying": "Verifica…",
+        "removing": "Rimozione dell'originale…"
       }
     },
     "collect": {
@@ -653,7 +659,10 @@
       "masterVersion": "Versione master",
       "lastPublished": "Ultimo pubblicato",
       "publishUpdate": "Pubblicare l'aggiornamento master...",
-      "installUpdate": "Installare l'aggiornamento principale..."
+      "checkUpdate": "Controlla aggiornamenti",
+      "checkingUpdate": "Verifica in corso…",
+      "installUpdate": "Installa da file...",
+      "githubUpdateBody": "Su GitHub è disponibile un nuovo snapshot master ({{tag}}).\n\nScaricarlo e applicarlo ora? La tua collezione, la lista dei desideri e le impostazioni personali verranno conservate."
     },
     "integrations": {
       "title": "Integrazioni",
@@ -757,6 +766,8 @@
       "publishFailed": "Pubblicazione fallita: {{message}}",
       "installFailed": "Installazione fallita: {{message}}",
       "masterInstalled": "Aggiornamento master installato.",
+      "githubCheckFailed": "Controllo GitHub non riuscito: {{message}}",
+      "masterUpToDate": "I dati anagrafici sono aggiornati.",
       "qbtOk": "qBittorrent OK - v{{version}}",
       "qbtError": "qBittorrent: {{error}}",
       "qbtTestError": "Errore del test qBt: {{error}}",
@@ -787,7 +798,9 @@
   },
   "mounts": {
     "title": "Unità",
-    "subtitle": "Unità di archiviazione, instradamento per anno e modalità di archiviazione per il pipeline della collezione."
+    "subtitle": "Unità di archiviazione, instradamento per anno e modalità di archiviazione per il pipeline della collezione.",
+    "freeOfTotal": "{{free}} liberi su {{total}}",
+    "usageTooltip": "{{free}} liberi su {{total}} ({{pct}}% usato)"
   },
   "themes": {
     "title": "Temi",

@@ -913,6 +913,13 @@ function RenameStageContent({ step, row, onRun, onRename }: {
         </Banner>
       )}
 
+      {/* 2b. Rename failure banner (e.g. duplicate folder at destination) */}
+      {step.error && (
+        <Banner tone="bad" icon="alert" title="Rename failed">
+          {step.error}
+        </Banner>
+      )}
+
       {/* 3. Diff box */}
       <div style={{ border: '1px solid var(--lbb-border)', borderRadius: 8, overflow: 'hidden' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 12px', background: 'var(--lbb-bad-bg)' }}>
@@ -1292,6 +1299,23 @@ export function ScreenPipeline(): React.JSX.Element {
   const [detailId, setDetailId]             = useState<string | null>(null)
   const [detailStage, setDetailStage]       = useState<string>('verify')
   const [confirm, ConfirmHost]              = useConfirm()
+  const [collapsedBuckets, setCollapsedBuckets] = useState<Set<Bucket>>(new Set())
+  const [filingActive, setFilingActive]     = useState(false)
+  const [toast, setToast]                   = useState<{ msg: string; ok: boolean } | null>(null)
+
+  const showToast = useCallback((msg: string, ok: boolean) => {
+    setToast({ msg, ok })
+    setTimeout(() => setToast(null), 3500)
+  }, [])
+
+  const toggleBucket = useCallback((bucket: Bucket) => {
+    setCollapsedBuckets(prev => {
+      const next = new Set(prev)
+      if (next.has(bucket)) next.delete(bucket)
+      else next.add(bucket)
+      return next
+    })
+  }, [])
 
   // Sync shared folder queue → local rows
   useEffect(() => {
@@ -1320,6 +1344,7 @@ export function ScreenPipeline(): React.JSX.Element {
   const autorunPendingRef    = useRef<string[]>([])
   const autocompleteStarted  = useRef<Set<string>>(new Set())
   const autoRenamedRef       = useRef<Set<string>>(new Set())
+  const filingRef            = useRef(false)
 
   // ── Derived counts ───────────────────────────────────────────────────────────
   const counts = {
@@ -1358,23 +1383,23 @@ export function ScreenPipeline(): React.JSX.Element {
   const flatList: VItem[] = []
   if (needsVis.length > 0) {
     flatList.push({ type: 'group', label: t('pipeline.filter.needs'), count: counts.needs, bucket: 'needs' })
-    needsVis.forEach(r => flatList.push({ type: 'row', row: r }))
+    if (!collapsedBuckets.has('needs')) needsVis.forEach(r => flatList.push({ type: 'row', row: r }))
   }
   if (runningVis.length > 0) {
     flatList.push({ type: 'group', label: t('pipeline.filter.running'), count: counts.running, bucket: 'running' })
-    runningVis.forEach(r => flatList.push({ type: 'row', row: r }))
+    if (!collapsedBuckets.has('running')) runningVis.forEach(r => flatList.push({ type: 'row', row: r }))
   }
   if (readyVis.length > 0) {
     flatList.push({ type: 'group', label: t('pipeline.filter.ready'), count: counts.ready, bucket: 'ready' })
-    readyVis.forEach(r => flatList.push({ type: 'row', row: r }))
+    if (!collapsedBuckets.has('ready')) readyVis.forEach(r => flatList.push({ type: 'row', row: r }))
   }
   if (shelfVis.length > 0) {
     flatList.push({ type: 'group', label: t('pipeline.filter.shelf'), count: counts.shelf, bucket: 'shelf' })
-    shelfVis.forEach(r => flatList.push({ type: 'row', row: r }))
+    if (!collapsedBuckets.has('shelf')) shelfVis.forEach(r => flatList.push({ type: 'row', row: r }))
   }
   if (doneVis.length > 0) {
     flatList.push({ type: 'group', label: t('pipeline.filter.done'), count: counts.done, bucket: 'done' })
-    doneVis.forEach(r => flatList.push({ type: 'row', row: r }))
+    if (!collapsedBuckets.has('done')) doneVis.forEach(r => flatList.push({ type: 'row', row: r }))
   }
 
   flatListRef.current = flatList
@@ -1543,7 +1568,7 @@ export function ScreenPipeline(): React.JSX.Element {
             folderPath: data.new_path!,
             folderName: newName,
             id: data.new_path!,
-            bucket: 'done' as Bucket,
+            bucket: (r.steps.file.status === 'warn' ? 'shelf' : 'done') as Bucket,
             steps: { ...r.steps, rename: { status: 'ok' as const, label: 'Renamed' } },
           }
           _pipelineCache.delete(row.id)
@@ -1552,8 +1577,45 @@ export function ScreenPipeline(): React.JSX.Element {
         }))
         useFolderQueueStore.getState().removeFolders([row.folderPath])
         useFolderQueueStore.getState().addFolders([data.new_path])
+
+        // The "file" step's destination was resolved against the pre-rename
+        // folder name — refresh it now that the rename has been applied on disk.
+        try {
+          const fresp = await fetch(`${BASE}/api/pipeline/run`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ folders: [data.new_path], steps: ['file'] }),
+          })
+          if (fresp.ok) {
+            const fdata = await fresp.json() as { results: Record<string, unknown>[] }
+            const file = fdata.results[0] ? normalizeFileStep(fdata.results[0].file) : null
+            if (file) {
+              setRows(prev => prev.map(r => {
+                if (r.id !== data.new_path) return r
+                const updated = { ...r, steps: { ...r.steps, file } }
+                _pipelineCache.set(r.id, { steps: updated.steps, bucket: updated.bucket, errors: updated.errors })
+                return updated
+              }))
+            }
+          }
+        } catch { /* silent */ }
+      } else {
+        const message = data.error || 'Rename failed'
+        setRows(prev => prev.map(r => {
+          if (r.id !== row.id) return r
+          const updated = { ...r, steps: { ...r.steps, rename: { ...r.steps.rename, status: 'warn' as const, error: message } } }
+          _pipelineCache.set(r.id, { steps: updated.steps, bucket: updated.bucket, errors: updated.errors })
+          return updated
+        }))
       }
-    } catch { /* silent */ }
+    } catch {
+      setRows(prev => prev.map(r => {
+        if (r.id !== row.id) return r
+        const updated = { ...r, steps: { ...r.steps, rename: { ...r.steps.rename, status: 'warn' as const, error: 'Rename failed — could not reach backend' } } }
+        _pipelineCache.set(r.id, { steps: updated.steps, bucket: updated.bucket, errors: updated.errors })
+        return updated
+      }))
+    }
   }, [detailId])
 
   const applyAllReady = useCallback(async () => {
@@ -1593,6 +1655,7 @@ export function ScreenPipeline(): React.JSX.Element {
   // ── File a folder into the collection ────────────────────────────────────────
   const applyFile = useCallback(async (
     row: PipelineRow, mountId?: number | null, overrideDest?: string | null, overrideMountLabel?: string | null,
+    skipConfirm?: boolean,
   ) => {
     const lb = row.steps.lookup.lb_number
     const dest = overrideDest ?? row.steps.file.dest
@@ -1601,17 +1664,26 @@ export function ScreenPipeline(): React.JSX.Element {
     const mountLabel = overrideMountLabel ?? row.steps.file.mount_label ?? 'collection mount'
     const destName = dest.split(/[/\\]/).pop() ?? dest
 
-    const ok = await confirm({
-      tone: 'info',
-      title: t('pipeline.file.confirmTitle'),
-      body: t('pipeline.file.confirmBody', { folder: row.folderName, mount: mountLabel }),
-      items: [{ label: destName, icon: 'folder', meta: mountLabel }],
-      note: t('pipeline.file.confirmNote'),
-      confirmLabel: t('pipeline.file.confirmAction'),
-      confirmIcon: 'check',
-      icon: 'folder',
-    })
-    if (!ok) return
+    if (!skipConfirm) {
+      const ok = await confirm({
+        tone: 'info',
+        title: t('pipeline.file.confirmTitle'),
+        body: t('pipeline.file.confirmBody', { folder: row.folderName, mount: mountLabel }),
+        items: [{ label: destName, icon: 'folder', meta: mountLabel }],
+        note: t('pipeline.file.confirmNote'),
+        confirmLabel: t('pipeline.file.confirmAction'),
+        confirmIcon: 'check',
+        icon: 'folder',
+      })
+      if (!ok) return
+    }
+
+    if (filingRef.current) {
+      showToast(t('pipeline.file.busy'), false)
+      return
+    }
+    filingRef.current = true
+    setFilingActive(true)
 
     setRows(prev => prev.map(r => r.id === row.id ? { ...r, running: true, fileProgress: { stage: 'scanning', files_done: 0, files_total: 0, bytes_done: 0, bytes_total: 0, current_file: null } } : r))
     try {
@@ -1639,17 +1711,20 @@ export function ScreenPipeline(): React.JSX.Element {
       }
 
       // Poll until the background copy/move finishes, updating the progress bar.
-      let result: { ok: boolean; dest?: string; filed_to?: string; error?: string } | null = null
+      let result: { ok: boolean; dest?: string; filed_to?: string; error?: string; qbt_synced?: boolean; qbt_error?: string | null } | null = null
       while (!result) {
         await new Promise(r => setTimeout(r, 400))
         const statusResp = await fetch(`${BASE}/api/pipeline/file/status`)
         const status = await statusResp.json() as {
-          running: boolean; stage: string
+          running: boolean; stage: string; path: string | null
           files_done: number; files_total: number; bytes_done: number; bytes_total: number
           current_file: string | null
-          result: { ok: boolean; dest?: string; filed_to?: string; error?: string } | null
+          result: { ok: boolean; dest?: string; filed_to?: string; error?: string; qbt_synced?: boolean; qbt_error?: string | null } | null
         }
-        if (status.running) {
+        if (status.path !== null && status.path !== row.folderPath) {
+          // _FILE_JOB now belongs to a different job — ours is no longer trackable here.
+          result = { ok: false, error: t('pipeline.file.jobMismatch') }
+        } else if (status.running) {
           setRows(prev => prev.map(r =>
             r.id === row.id ? {
               ...r,
@@ -1675,6 +1750,11 @@ export function ScreenPipeline(): React.JSX.Element {
           } : r
         ))
         queryClient.invalidateQueries({ queryKey: ['collection-prefetch'] })
+        if (result.qbt_synced) {
+          showToast(t('pipeline.file.qbtSynced'), true)
+        } else if (result.qbt_error) {
+          showToast(t('pipeline.file.qbtSyncFailed', { error: result.qbt_error }), false)
+        }
       } else {
         setRows(prev => prev.map(r =>
           r.id === row.id ? {
@@ -1687,15 +1767,18 @@ export function ScreenPipeline(): React.JSX.Element {
       }
     } catch {
       setRows(prev => prev.map(r => r.id === row.id ? { ...r, running: false, fileProgress: null } : r))
+    } finally {
+      filingRef.current = false
+      setFilingActive(false)
     }
-  }, [confirm, t])
+  }, [confirm, t, showToast])
 
   const applyAllFileable = useCallback(async () => {
-    for (const row of fileableRows) await applyFile(row)
+    for (const row of fileableRows) await applyFile(row, undefined, undefined, undefined, true)
   }, [fileableRows, applyFile])
 
   const applySelectedFileable = useCallback(async () => {
-    for (const row of selectedFileable) await applyFile(row)
+    for (const row of selectedFileable) await applyFile(row, undefined, undefined, undefined, true)
   }, [selectedFileable, applyFile])
 
   // ── Folder picking ───────────────────────────────────────────────────────────
@@ -1726,7 +1809,7 @@ export function ScreenPipeline(): React.JSX.Element {
       const resp = await fetch(`${BASE}/api/pipeline/scan-tree`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ root: dir, shallow: false }),
+        body: JSON.stringify({ root: dir, shallow: true }),
       })
       const data = await resp.json() as { folders?: string[]; error?: string }
       if (data.folders?.length) addFolders(data.folders)
@@ -1946,6 +2029,7 @@ export function ScreenPipeline(): React.JSX.Element {
             variant="primary"
             size="md"
             icon="collection"
+            disabled={filingActive}
             onClick={applyAllFileable}
           >
             {t('pipeline.fileAllCollection', { count: counts.shelf })}
@@ -2161,9 +2245,9 @@ export function ScreenPipeline(): React.JSX.Element {
                 <colgroup>
                   <col style={{ width: 3 }} />
                   <col style={{ width: 32 }} />
-                  <col style={{ width: 380 }} />
-                  <col style={{ width: 232 }} />
                   <col />
+                  <col style={{ width: 232 }} />
+                  <col style={{ width: 240 }} />
                   <col style={{ width: 104 }} />
                   <col style={{ width: 128 }} />
                 </colgroup>
@@ -2204,6 +2288,8 @@ export function ScreenPipeline(): React.JSX.Element {
                           label={item.label}
                           count={item.count}
                           colSpan={6}
+                          expanded={!collapsedBuckets.has(item.bucket)}
+                          onToggle={() => toggleBucket(item.bucket)}
                           style={{ color: `var(--lbb-${edgeMap[item.bucket] ?? 'mute'}-fg)` }}
                         />
                       )
@@ -2316,6 +2402,17 @@ export function ScreenPipeline(): React.JSX.Element {
       </div>
 
       <ConfirmHost />
+
+      {toast && (
+        <div style={{
+          position: 'fixed', bottom: 80, left: '50%', transform: 'translateX(-50%)',
+          background: toast.ok ? 'var(--lbb-ok-bar)' : 'var(--lbb-err-bar)',
+          color: '#fff', padding: '7px 16px', borderRadius: 6,
+          fontSize: 'var(--lbb-fs-12)', fontWeight: 600, zIndex: 9999,
+          boxShadow: '0 2px 8px rgba(0,0,0,.2)', pointerEvents: 'none',
+          whiteSpace: 'nowrap',
+        }}>{toast.msg}</div>
+      )}
 
       {/* ── Right-click context menu ──────────────────────────────────────────── */}
       {ctxMenu && (

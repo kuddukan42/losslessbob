@@ -411,10 +411,16 @@
       "confirmBody": "\"{{folder}}\" nach {{mount}} ablegen",
       "confirmNote": "Der Ordner wird an sein Sammlungsziel verschoben und in Meine Sammlung eingetragen.",
       "confirmAction": "Ablegen",
+      "qbtSynced": "qBittorrent-Speicherpfad aktualisiert – Seeding wird am neuen Ort fortgesetzt",
+      "qbtSyncFailed": "Abgelegt, aber Aktualisierung des qBittorrent-Speicherpfads fehlgeschlagen: {{error}}",
+      "busy": "Ein Ablagevorgang läuft bereits – bitte warten, bis er abgeschlossen ist",
+      "jobMismatch": "Der Ablagestatus wurde von einem anderen Vorgang übernommen – Ergebnis in „Meine Sammlung“ prüfen",
       "progress": {
         "scanning": "Wird gescannt…",
         "copying": "Wird kopiert…",
-        "moving": "Wird verschoben…"
+        "moving": "Wird verschoben…",
+        "verifying": "Wird überprüft…",
+        "removing": "Original wird entfernt…"
       }
     },
     "collect": {
@@ -653,7 +659,10 @@
       "masterVersion": "Master-Version",
       "lastPublished": "Zuletzt veröffentlicht",
       "publishUpdate": "Master-Update veröffentlichen...",
-      "installUpdate": "Master-Update installieren..."
+      "checkUpdate": "Nach Updates suchen",
+      "checkingUpdate": "Wird geprüft…",
+      "installUpdate": "Aus Datei installieren...",
+      "githubUpdateBody": "Auf GitHub ist ein neuer Master-Snapshot verfügbar ({{tag}}).\n\nJetzt herunterladen und anwenden? Ihre Sammlung, Wunschliste und persönlichen Einstellungen bleiben erhalten."
     },
     "integrations": {
       "title": "Integrationen",
@@ -757,6 +766,8 @@
       "publishFailed": "Veröffentlichung fehlgeschlagen: {{message}}",
       "installFailed": "Installation fehlgeschlagen: {{message}}",
       "masterInstalled": "Master-Update installiert.",
+      "githubCheckFailed": "GitHub-Prüfung fehlgeschlagen: {{message}}",
+      "masterUpToDate": "Master-Daten sind aktuell.",
       "qbtOk": "qBittorrent OK - v{{version}}",
       "qbtError": "qBittorrent: {{error}}",
       "qbtTestError": "qBt-Testfehler: {{error}}",
@@ -787,7 +798,9 @@
   },
   "mounts": {
     "title": "Speicherorte",
-    "subtitle": "Speicherlaufwerke, Jahres-Routing und Ablagemodus für die Sammlungs-Pipeline."
+    "subtitle": "Speicherlaufwerke, Jahres-Routing und Ablagemodus für die Sammlungs-Pipeline.",
+    "freeOfTotal": "{{free}} frei von {{total}}",
+    "usageTooltip": "{{free}} frei von {{total}} ({{pct}}% belegt)"
   },
   "themes": {
     "title": "Themen",

@@ -83,7 +83,23 @@ def main(argv=None):
 
     dbg = _DebugLog(Path(args.debug_log) if args.debug_log else None)
     atexit.register(dbg.close)
-    dbg.log(f"START  n_sources={len(sources)}  sr={sr}  analysis_sr={sr}")
+
+    # Pre-run RAM estimate from probed durations (header reads only, no decode).
+    # Each source's mono float32 stream is sr*4 bytes/sec. This is a rough
+    # order-of-magnitude lower bound (2x the largest source + fixed STFT/
+    # secondary chunk-buffer overhead), not a hard cap: actual peak RSS also
+    # grows with source count, since memmap pages touched during the n^2
+    # matrix/secondary passes accumulate in the page cache. Calibration runs:
+    # 3 sources/3 pairs (1993-04-16) -> est 1.3 GB, actual peak 2.3 GB;
+    # 8 sources/28 pairs (1994-02-20) -> est 1.4 GB, actual peak 2.6 GB.
+    # Both are far below typical available RAM (30+ GB) and complete normally.
+    _durs_sec = [ingest.source_report(sdir, exts)["total_sec"] for sdir in sources.values()]
+    _max_src_mb = max(_durs_sec) * sr * 4 / 1e6
+    _est_peak_mb = 2 * _max_src_mb + 300
+    print(f"  est. peak RAM ~{_est_peak_mb / 1024:.1f} GB "
+          f"({len(sources)} sources, largest {fmt_hms(max(_durs_sec))})")
+    dbg.log(f"START  n_sources={len(sources)}  sr={sr}  analysis_sr={sr}  "
+            f"est_peak_mb={_est_peak_mb:.0f}")
 
     # Temp dir for trimmed-mono memmaps — auto-deleted on normal exit.
     # Uses /mnt/DATA0/tmp to avoid filling the system tmpfs (~438 MB per source).
@@ -257,6 +273,50 @@ def main(argv=None):
         row = "  ".join(f"{M[i,j]:8.3f}" for j in range(n_src))
         print(f"  {lb:>8}  {row}")
 
+    # === Re-select reference as the most central source (highest row-sum in M) ===
+    # Computed here (before the secondary match loop) so its lag-curve pass can
+    # inform the both-staircase union flags below. Printed later, in its
+    # original position, to keep output section order unchanged.
+    row_sums = M.sum(axis=1)
+    _eligible = {i for i, n in enumerate(names)
+                 if n not in short_flag and n not in long_flag}
+    if not _eligible:
+        _eligible = set(range(n_src))
+    central_idx = max(_eligible, key=lambda i: row_sums[i])
+    central_name = names[central_idx]
+
+    # Second lag-curve pass vs the central ref (only if different from ref_name).
+    speed_info_central: dict[str, dict] = {}
+    central_mono = ref_mono
+    anchors_central = anchors
+    if central_name != ref_name:
+        central_mono = _mmap(central_name)
+        anchors_central = align.pick_anchors(central_mono, sr, cfg)
+        speed_info_central[central_name] = {"kind": "reference", "ppm": 0.0, "ratio": 1.0}
+        for name in names:
+            if name == central_name:
+                continue
+            other_mono = _mmap(name)
+            ratio = match.estimate_ratio(central_mono, other_mono, sr, anchors_central, cfg)
+            ppm = (ratio - 1.0) * 1e6
+            rows = align.lag_curve(central_mono, other_mono, sr, anchors_central, cfg)
+            d = align.interpret_curve(rows, cfg)
+            kind = d["kind"]
+            if abs(ppm) > ppm_thr:
+                kind = "constant-speed-offset"
+            elif kind == "constant-speed-offset":
+                kind = "aligned"
+            speed_info_central[name] = {"kind": kind, "ppm": ppm, "ratio": ratio}
+            del other_mono
+
+    # Both-staircase union flags (CC_TAPEMATCH_FIXES.md Task 5): a source counts
+    # as "staircase" if EITHER lag-curve pass (vs the initial ref, or vs the
+    # re-selected central ref) classifies it as "staircase/splice". Fixes a
+    # reference-ambiguity bug: speed_info[ref_name]["kind"] is always
+    # "reference" under a single pass, so a pair involving the current
+    # reference source could never be flagged as staircase on that source.
+    staircase_sources = align.union_staircase_sources(speed_info, speed_info_central)
+
     # === Secondary match: windowed coverage + quiet-segment hiss ===
     # Only computed for cross-family pairs (primary M below threshold) to save time.
     # Catches remasters whose edits are confined to track boundaries, leaving
@@ -289,23 +349,41 @@ def main(argv=None):
         if cross_pairs:
             print(f"\n=== SECONDARY MATCH (windowed coverage + quiet-segment hiss + fingerprint) ===")
             print(f"  {len(cross_pairs)} cross-family pair(s) — computing secondary evidence ...")
+            high_ppm_thr = cfg["secondary_match"].get("high_ppm_threshold", 0)
             for i, j in cross_pairs:
                 ri = ref_mono if i == ref_idx else _mmap(names[i])
                 rj = ref_mono if j == ref_idx else _mmap(names[j])
+
+                # Predicted-lag mode (Task 4): under a large constant speed offset,
+                # accumulated drift can exceed local_lag_sec's residual search.
+                # lag_0 is the lag at the first anchor; expected_lag(t) extrapolates
+                # from there using the pair's speed ratio (pair_ratios, from
+                # estimate_ratio above). Only computed when the offset is large
+                # enough to matter.
+                predicted_lag = None
+                pair_ppm = (pair_ratios[(i, j)] - 1.0) * 1e6
+                if high_ppm_thr and abs(pair_ppm) >= high_ppm_thr:
+                    lag_0, _ = align.local_lag(ri, rj, sr, anchors[0], win, a_cfg["max_lag_sec"])
+                    if lag_0 is not None:
+                        predicted_lag = {"ppm": pair_ppm, "lag_0": lag_0, "anchor0_sec": anchors[0]}
+                        dbg.log(f"PREDICTED_LAG  {names[i]}/{names[j]}  ppm={pair_ppm:+.0f}  "
+                                f"lag_0={lag_0:+.2f}s @ anchor0={anchors[0]:.1f}s")
+
                 # Do NOT apply resample_ratio before secondary_corr_pair.
                 # resample_poly smears the HF fine-structure that residual_corr
                 # relies on, killing correlation even for same-source pairs.
                 # The per-window local lag search absorbs accumulated drift.
-                sec = match.secondary_corr_pair(ri, rj, sr, cfg)
+                sec = match.secondary_corr_pair(ri, rj, sr, cfg, predicted_lag=predicted_lag)
 
                 # Staircase fallback: when either recording has CDR re-tracking edits
                 # and the standard 60s windows scored near-zero, retry with shorter
                 # windows (default 15s) to reduce the chance of an edit-point boundary
                 # landing mid-window and breaking per-window lag alignment.
-                ki = speed_info.get(names[i], {}).get("kind", "")
-                kj = speed_info.get(names[j], {}).get("kind", "")
+                # staircase_sources (Task 5) is the union over both lag-curve passes,
+                # so a pair involving the current reference source is still correctly
+                # flagged when that source is staircase relative to the central ref.
                 if (sec["windowed_frac"] < 0.10
-                        and ("staircase" in ki or "staircase" in kj)
+                        and (names[i] in staircase_sources or names[j] in staircase_sources)
                         and "short_window_sec" in cfg.get("secondary_match", {})):
                     sm = cfg["secondary_match"]
                     short_cfg = {**cfg, "secondary_match": {
@@ -313,7 +391,7 @@ def main(argv=None):
                         "window_sec": sm["short_window_sec"],
                         "hop_sec": sm.get("short_hop_sec", sm["short_window_sec"] / 3),
                     }}
-                    sec_short = match.secondary_corr_pair(ri, rj, sr, short_cfg)
+                    sec_short = match.secondary_corr_pair(ri, rj, sr, short_cfg, predicted_lag=predicted_lag)
                     if sec_short["windowed_frac"] > sec["windowed_frac"]:
                         sec = {**sec,
                                "windowed_frac": sec_short["windowed_frac"],
@@ -377,40 +455,23 @@ def main(argv=None):
 
     # === Re-select reference as the most central source (highest row-sum in M) ===
     # The alphabetical first source may be an outlier (e.g. a bootleg CD).
-    # After the full matrix is computed we know the true structure — pick the
-    # source most similar to all others, excluding INCOMPLETE/INFLATED sources
-    # (their duration problems mean anchors and lag curves would be misleading).
-    row_sums = M.sum(axis=1)
-    _eligible = {i for i, n in enumerate(names)
-                 if n not in short_flag and n not in long_flag}
-    if not _eligible:
-        _eligible = set(range(n_src))
-    central_idx = max(_eligible, key=lambda i: row_sums[i])
-    central_name = names[central_idx]
+    # central_name/speed_info_central were already computed above (before the
+    # secondary match loop, so the both-staircase union flags could use them);
+    # this just prints the section in its original position and switches the
+    # active reference for the downstream CLUSTERS/lineage sections.
     if central_name != ref_name:
         print(f"\n=== LAG CURVES / SPEED (re-run vs central ref={central_name}) ===")
-        ref_mono = _mmap(central_name)
-        anchors  = align.pick_anchors(ref_mono, sr, cfg)
-        print("  anchors: " + ", ".join(fmt_hms(a) for a in anchors))
-        speed_info = {central_name: {"kind": "reference", "ppm": 0.0, "ratio": 1.0}}
-        for name in names:
+        print("  anchors: " + ", ".join(fmt_hms(a) for a in anchors_central))
+        for name, d in speed_info_central.items():
             if name == central_name:
                 continue
-            other_mono = _mmap(name)
-            ratio = match.estimate_ratio(ref_mono, other_mono, sr, anchors, cfg)
-            ppm   = (ratio - 1.0) * 1e6
-            rows  = align.lag_curve(ref_mono, other_mono, sr, anchors, cfg)
-            d     = align.interpret_curve(rows, cfg)
-            kind  = d["kind"]
-            if abs(ppm) > ppm_thr:
-                kind = "constant-speed-offset"
-            elif kind == "constant-speed-offset":
-                kind = "aligned"
-            speed_info[name] = {"kind": kind, "ppm": ppm, "ratio": ratio}
-            print(f"  {central_name}->{name}: {kind}  speed ratio={ratio:.6f} ({ppm:+.0f} ppm)")
-            if kind == "staircase/splice":
+            print(f"  {central_name}->{name}: {d['kind']}  "
+                  f"speed ratio={d['ratio']:.6f} ({d['ppm']:+.0f} ppm)")
+            if d["kind"] == "staircase/splice":
                 print(f"    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)")
-            del other_mono
+        speed_info = speed_info_central
+        ref_mono = central_mono
+        anchors = anchors_central
         ref_name = central_name
 
     print("\n=== CLUSTERS ===")
