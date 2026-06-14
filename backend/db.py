@@ -3627,13 +3627,20 @@ def generate_release_notes(since_timestamp: str | None = None, db_path=None) -> 
     lines: list[str] = []
 
     if rows:
-        lines.append(f"## Status changes ({len(rows)})\n")
+        groups: dict[tuple[str, str, str], list[str]] = {}
         for r in rows:
             old = r["old_status"] or "—"
             new = r["new_status"]
-            ts = (r["changed_at"] or "")[:10]
             trigger = r["trigger_event"] or ""
-            lines.append(f"- LB-{r['lb_number']:05d}: {old} → {new}  _{ts}_ {trigger}")
+            ts = (r["changed_at"] or "")[:10]
+            groups.setdefault((old, new, trigger), []).append(ts)
+
+        lines.append(f"## Status changes ({len(rows)})\n")
+        for (old, new, trigger), dates in groups.items():
+            dmin, dmax = min(dates), max(dates)
+            date_str = dmin if dmin == dmax else f"{dmin} – {dmax}"
+            trig = f" _{trigger}_" if trigger else ""
+            lines.append(f"- {old} → {new}: {len(dates)}  _{date_str}_{trig}")
         lines.append("")
 
     if overrides:

@@ -964,7 +964,13 @@ def find_site_recoverable_files(
     site_files_dir: str | Path,
     lb_number: int,
 ) -> dict:
-    """Find files in SITE_FILES_DIR that match MD5s of entries still missing from folder.
+    """Find files in SITE_FILES_DIR that can recover entries still missing from folder.
+
+    Tries an MD5 match first. Self-referencing entries (the lbdir manifest itself)
+    and regenerated reports (e.g. DigiFlawFinder html) can never match by MD5 across
+    lbdir revisions, so entries with no MD5 match fall back to a filename match:
+    the site file's `LBF-{lb_number:05d}-` prefix is stripped and the remainder is
+    compared (case/apostrophe-normalised) against the missing entry's basename.
 
     Args:
         folder_path: Root folder to check against.
@@ -973,8 +979,11 @@ def find_site_recoverable_files(
         lb_number: LB number used to filter site files (matches LBF-NNNNN- prefix).
 
     Returns:
-        {'site_proposals': [{'site_path': str, 'lbdir_rel': str, 'md5': str}, ...]}
-        or {'error': '...'} on parse failure.
+        {'site_proposals': [{'site_path': str, 'lbdir_rel': str, 'md5': str,
+        'expected_md5': str, 'matched_by': 'md5'|'name'}, ...]} or {'error': '...'}
+        on parse failure. For 'name' matches, 'md5' (the site file's actual hash)
+        differs from 'expected_md5' (what this folder's lbdir requires) — the site
+        copy is a different revision of the same file.
     """
     folder = Path(folder_path)
     site_dir = Path(site_files_dir)
@@ -984,26 +993,51 @@ def find_site_recoverable_files(
         return {"error": parsed["error"]}
 
     md5_map: dict[str, str] = dict(parsed.get("md5", []))
-    missing_by_md5: dict[str, str] = {
-        md5: rel for rel, md5 in md5_map.items()
+    missing_entries: dict[str, str] = {
+        rel: md5 for rel, md5 in md5_map.items()
         if not (folder / rel).exists()
     }
 
-    if not missing_by_md5 or not site_dir.exists():
+    if not missing_entries or not site_dir.exists():
         return {"site_proposals": []}
+
+    missing_by_md5: dict[str, str] = {md5: rel for rel, md5 in missing_entries.items()}
+    missing_by_name: dict[str, str] = {
+        _norm_fname(Path(rel).name).lower(): rel for rel in missing_entries
+    }
 
     prefix = f"LBF-{lb_number:05d}-"
     site_proposals: list[dict] = []
+    matched_rels: set[str] = set()
     for site_file in sorted(site_dir.iterdir()):
         if not site_file.is_file() or not site_file.name.startswith(prefix):
             continue
         md5 = compute_md5(str(site_file))
         if md5 and md5 in missing_by_md5:
+            lbdir_rel = missing_by_md5[md5]
+            if lbdir_rel in matched_rels:
+                continue
             site_proposals.append({
                 "site_path": str(site_file),
-                "lbdir_rel": missing_by_md5[md5],
+                "lbdir_rel": lbdir_rel,
                 "md5": md5,
+                "expected_md5": md5,
+                "matched_by": "md5",
             })
+            matched_rels.add(lbdir_rel)
+            continue
+
+        stripped = _norm_fname(site_file.name[len(prefix):]).lower()
+        lbdir_rel = missing_by_name.get(stripped)
+        if lbdir_rel and lbdir_rel not in matched_rels:
+            site_proposals.append({
+                "site_path": str(site_file),
+                "lbdir_rel": lbdir_rel,
+                "md5": md5 or "",
+                "expected_md5": missing_entries[lbdir_rel],
+                "matched_by": "name",
+            })
+            matched_rels.add(lbdir_rel)
 
     return {"site_proposals": site_proposals}
 

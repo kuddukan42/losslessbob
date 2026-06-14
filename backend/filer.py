@@ -55,6 +55,29 @@ def _human_bytes(n: float) -> str:
     return f"{n:.1f} TB"
 
 
+def get_disk_usage_stats(root_path: str, online: bool) -> dict:
+    """Return free/total/used_pct for a mount root, or placeholders if offline/unreadable.
+
+    Args:
+        root_path: Filesystem path backing the mount.
+        online: Whether the path is currently reachable.
+
+    Returns:
+        Dict with free (str), total (str), used_pct (int | None).
+    """
+    if online:
+        try:
+            usage = shutil.disk_usage(root_path)
+            return {
+                "free": _human_bytes(usage.free),
+                "total": _human_bytes(usage.total),
+                "used_pct": round(usage.used / usage.total * 100) if usage.total else 0,
+            }
+        except OSError:
+            pass
+    return {"free": "—", "total": "—", "used_pct": None}
+
+
 def _year_span_label(years: list[int]) -> str:
     """Format a list of years as a decade-range label, e.g. '1970s-1980s'."""
     lo_decade, hi_decade = (min(years) // 10) * 10, (max(years) // 10) * 10
@@ -80,20 +103,7 @@ def get_mounts_with_stats(db_path=None) -> list[dict]:
         years = years_by_mount.get(mount["id"])
         mount["span"] = _year_span_label(years) if years else "—"
         mount["online"] = _path_reachable(mount["root_path"])
-        if mount["online"]:
-            try:
-                usage = shutil.disk_usage(mount["root_path"])
-                mount["free"] = _human_bytes(usage.free)
-                mount["total"] = _human_bytes(usage.total)
-                mount["used_pct"] = round(usage.used / usage.total * 100) if usage.total else 0
-            except OSError:
-                mount["free"] = "—"
-                mount["total"] = "—"
-                mount["used_pct"] = None
-        else:
-            mount["free"] = "—"
-            mount["total"] = "—"
-            mount["used_pct"] = None
+        mount.update(get_disk_usage_stats(mount["root_path"], mount["online"]))
     return mounts
 
 
@@ -327,6 +337,48 @@ def hash_tree(root: Path) -> str:
     return tree_digest.hexdigest()
 
 
+def _sync_qbt_location(lb_number: int, old_folder: Path, new_folder: Path, db_path=None) -> tuple[bool, str | None]:
+    """Best-effort qBittorrent save-path sync after a successful filing move.
+
+    No-ops (returns (False, None)) unless this folder is currently tracked
+    in qBittorrent (torrents.added_to_qbt=1 with a known infohash). Never
+    raises — a sync failure is logged and surfaced via the returned error
+    string but does not affect the filing job's own success/failure.
+
+    Returns:
+        Tuple of (synced, error). synced is True if qBittorrent's save path
+        was updated; error is a message if the sync was attempted but failed.
+    """
+    try:
+        from backend.credentials import SERVICE_QBT, SERVICE_QBT_KEY, get_credentials
+        from backend.qbittorrent import relocate_tracked_torrent
+
+        host = database.get_meta("qbt_host", db_path=db_path) or "localhost"
+        port = int(database.get_meta("qbt_port", db_path=db_path) or 8080)
+        _, api_key = get_credentials(SERVICE_QBT_KEY)
+        username, password = ("", "")
+        if not api_key:
+            username, password = get_credentials(SERVICE_QBT)
+
+        result = relocate_tracked_torrent(
+            lb_number, old_folder, new_folder,
+            host=host, port=port, username=username, password=password, api_key=api_key,
+            db_path=db_path,
+        )
+        if not result["ok"]:
+            logger.warning(
+                "start_file_job: LB-%05d filed to %s but qBittorrent location sync failed: %s",
+                lb_number, new_folder, result["error"],
+            )
+            return False, result["error"]
+        if result["synced"]:
+            logger.info("start_file_job: LB-%05d qBittorrent save path synced to %s", lb_number, new_folder)
+        return result["synced"], None
+    except Exception as exc:
+        logger.warning("start_file_job: LB-%05d qBittorrent sync raised: %s", lb_number, exc)
+        return False, str(exc)
+
+
 def start_file_job(
     lb_number: int,
     folder_path: str,
@@ -495,9 +547,13 @@ def start_file_job(
             return
 
         logger.info("start_file_job: LB-%05d %sd to %s (mount: %s)", lb_number, file_mode, dest, mount_label)
+
+        qbt_synced, qbt_error = _sync_qbt_location(lb_number, folder, dest, db_path)
+
         _finish({
             "ok": True, "filed_to": mount_label, "dest": str(dest), "file_mode": file_mode,
             "error": None, "error_code": None,
+            "qbt_synced": qbt_synced, "qbt_error": qbt_error,
         })
 
     threading.Thread(target=_run, name=f"pipeline-file-lb{lb_number}", daemon=True).start()
