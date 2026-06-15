@@ -1,6 +1,24 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-184: Backend subprocesses (ffmpeg/sox/shntool) orphaned on normal app quit
+Status: Fixed
+File(s): gui_next/src/main/index.ts
+Reported: 2026-06-14
+Fixed: 2026-06-14
+Root cause: `backend/app.py`, `checksum_utils.py`, `sox_utils.py`, `updater.py`, and
+  `sharing.py` all shell out via `subprocess.Popen/run/call` (ffmpeg, sox, shntool.exe)
+  during checksum/verify/scan operations. `before-quit`'s `backendProc.kill('SIGTERM')`
+  maps to Windows `TerminateProcess(pid)`, which kills only `LosslessBobBackend.exe`
+  itself — it does not cascade to subprocess children. If the user quits while such an
+  operation is running, the child process (e.g. shntool.exe holding a handle on an LB
+  mount) becomes an orphan, separate from the crash-only scenario fixed in BUG-183.
+Fix: Added `killProcessTree(pid)` in `gui_next/src/main/index.ts` — on Windows runs
+  `taskkill /F /T /PID <pid>` (the `/T` flag kills the whole descendant process tree);
+  on POSIX falls back to `process.kill`. Used in `before-quit` (was a plain
+  `backendProc.kill('SIGTERM')`) and in `killStalePid` (was a plain `process.kill`),
+  and added `/T` to the existing `taskkill` call in `killPortProcess`.
+
 BUG-183: Windows installer/updater shows "LosslessBob cannot be closed" — requires manual intervention
 Status: Fixed
 File(s): gui_next/resources/installer.nsh (new), gui_next/src/main/index.ts
