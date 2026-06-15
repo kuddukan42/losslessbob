@@ -1,3 +1,7 @@
+[2026-06-15] — chore: v1.5.1 release
+Changed: gui_next/package.json, gui_next/package-lock.json: version bumped
+  1.5.0 -> 1.5.1.
+
 [2026-06-15] — test: add unit test coverage for the scraper/integration backends
 Added: tests/test_scraper.py: 20 tests for backend/scraper.py — _is_soft_404,
   _extract_setlist_from_lbbcd, scrape_entry/scrape_range against local cached pages
