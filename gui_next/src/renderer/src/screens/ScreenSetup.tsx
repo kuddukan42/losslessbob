@@ -515,6 +515,7 @@ const [dbStats, setDbStats] = useState<DbStats | null>(null)
   })
   const [masterStatus, setMasterStatus] = useState<MasterStatus | null>(null)
   const [flatReleases, setFlatReleases] = useState<FlatRelease[]>([])
+  const [flatBusyId, setFlatBusyId] = useState<number | null>(null)
   const [toast, setToast] = useState<{ msg: string; tone: 'ok' | 'bad' | 'info' } | null>(null)
   const [confirm, setConfirm] = useState<{ title: string; body: string; onConfirm: () => void } | null>(null)
   const [pageSize, setPageSize] = useState('100')
@@ -634,10 +635,14 @@ const [dbStats, setDbStats] = useState<DbStats | null>(null)
     setBusy('update')
     try {
       const r = await fetch(`${BASE}/api/flat_file/discover`)
-      const data = await r.json() as { new_release?: boolean; zip_filename?: string; error?: string }
+      const data = await r.json() as {
+        available?: boolean | null
+        current_release?: { zip_filename?: string } | null
+        error?: string
+      }
       if (data.error) { showToast(t('setup.toast.error', { error: data.error }), 'bad'); return }
-      if (data.new_release) {
-        showToast(t('setup.toast.newRelease', { filename: data.zip_filename ?? '' }), 'ok')
+      if (data.available) {
+        showToast(t('setup.toast.newRelease', { filename: data.current_release?.zip_filename ?? '' }), 'ok')
         loadFlatReleases()
       } else {
         showToast(t('setup.toast.upToDate'), 'info')
@@ -648,6 +653,67 @@ const [dbStats, setDbStats] = useState<DbStats | null>(null)
       setBusy(null)
     }
   }, [showToast, loadFlatReleases, t])
+
+  // ── Flat-file release: download + review/apply ───────────────────────────────
+
+  const handleDownloadRelease = useCallback(async (id: number) => {
+    setFlatBusyId(id)
+    try {
+      const r = await fetch(`${BASE}/api/flat_file/download/${id}`, { method: 'POST' })
+      const d = await r.json() as { error?: string }
+      if (d.error) { showToast(t('setup.toast.error', { error: d.error }), 'bad'); return }
+      showToast(t('setup.flatFile.downloadDone'), 'ok')
+      loadFlatReleases()
+    } catch (e) {
+      showToast(t('setup.toast.checkFailed', { message: (e as Error).message }), 'bad')
+    } finally {
+      setFlatBusyId(null)
+    }
+  }, [showToast, loadFlatReleases, t])
+
+  const handleApplyRelease = useCallback((id: number) => {
+    setConfirm(null)
+    setFlatBusyId(id)
+    fetch(`${BASE}/api/flat_file/apply/${id}`, { method: 'POST' })
+      .then((r) => r.json())
+      .then((d: { error?: string; rows_added?: number; rows_changed?: number; rows_removed?: number }) => {
+        if (d.error) { showToast(t('setup.toast.error', { error: d.error }), 'bad'); return }
+        showToast(t('setup.flatFile.applyDone', {
+          added: d.rows_added ?? 0, changed: d.rows_changed ?? 0, removed: d.rows_removed ?? 0,
+        }), 'ok')
+        loadFlatReleases()
+        loadDbStats()
+      })
+      .catch((e: Error) => showToast(t('setup.toast.checkFailed', { message: e.message }), 'bad'))
+      .finally(() => setFlatBusyId(null))
+  }, [showToast, loadFlatReleases, loadDbStats, t])
+
+  const handleReviewRelease = useCallback(async (rel: FlatRelease) => {
+    setFlatBusyId(rel.id)
+    try {
+      const r = await fetch(`${BASE}/api/flat_file/diff/${rel.id}`)
+      const d = await r.json() as {
+        error?: string
+        rows_added?: number; rows_changed?: number; rows_removed?: number
+        new_lb_min?: number | null; new_lb_max?: number | null
+      }
+      if (d.error) { showToast(t('setup.toast.error', { error: d.error }), 'bad'); return }
+      setConfirm({
+        title: t('setup.flatFile.applyConfirmTitle'),
+        body: t('setup.flatFile.applyConfirmBody', {
+          filename: rel.zip_filename,
+          added: d.rows_added ?? 0,
+          changed: d.rows_changed ?? 0,
+          removed: d.rows_removed ?? 0,
+        }),
+        onConfirm: () => handleApplyRelease(rel.id),
+      })
+    } catch (e) {
+      showToast(t('setup.toast.checkFailed', { message: (e as Error).message }), 'bad')
+    } finally {
+      setFlatBusyId(null)
+    }
+  }, [showToast, handleApplyRelease, t])
 
   const handleImportDb = useCallback(async () => {
     const path = await window.api.pickFile({
@@ -1702,7 +1768,25 @@ const [dbStats, setDbStats] = useState<DbStats | null>(null)
                         <td style={{ padding: '8px 10px', fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11-5)' }}>
                           {rel.rows_changed != null ? `~${rel.rows_changed}` : '—'}
                         </td>
-                        <td style={{ padding: '8px 10px' }}>
+                        <td style={{ padding: '8px 10px', display: 'flex', gap: 6 }}>
+                          {(rel.status === 'detected' || rel.status === 'failed' || rel.status === 'deferred') && (
+                            <Button
+                              variant="secondary" size="sm" icon="download"
+                              disabled={flatBusyId === rel.id}
+                              onClick={() => handleDownloadRelease(rel.id)}
+                            >
+                              {flatBusyId === rel.id ? t('setup.flatFile.downloading') : t('setup.flatFile.download')}
+                            </Button>
+                          )}
+                          {rel.status === 'downloaded' && (
+                            <Button
+                              variant="secondary" size="sm" icon="check"
+                              disabled={flatBusyId === rel.id}
+                              onClick={() => handleReviewRelease(rel)}
+                            >
+                              {flatBusyId === rel.id ? t('setup.flatFile.applying') : t('setup.flatFile.reviewApply')}
+                            </Button>
+                          )}
                           <Button variant="ghost" size="sm" onClick={() => handleReveal(rel)}>{t('setup.flatFile.reveal')}</Button>
                         </td>
                       </tr>

@@ -96,6 +96,11 @@ losslessbob/
 │   ├── test_lb_master.py     # lb_master schema, reconcile, override, forum guard, GUI presence
 │   ├── test_master_data.py   # MASTER/USER table classification, export/import, SHA + schema-version guards
 │   ├── test_scraper_crawler.py # scrape_sessions + site_inventory table write functions
+│   ├── test_scraper.py       # backend/scraper.py: entry metadata parsing, scrape_entry/scrape_range, download_pages_range
+│   ├── test_bootleg_scraper.py # backend/bootleg_scraper.py: date/row parsing, diff/apply, scrape_bootlegs (mocked HTTP)
+│   ├── test_bobdylan_scraper.py # backend/bobdylan_scraper.py: sitemap + show-page parsing, run_discover/run_scrape/run_update (mocked HTTP)
+│   ├── test_setlistfm.py     # backend/setlistfm.py: date/setlist parsing, API key storage, run_update pagination (mocked HTTP)
+│   ├── test_geocoder.py      # backend/geocoder.py: date conversion, performances lookup, geocode_one/run_batch (mocked urllib)
 │   ├── test_checksum_utils_site_recovery.py # find_site_recoverable_files: MD5 + filename-fallback matching against data/site/files/
 │   └── test_db_writes.py     # 114-test battery: all DB write functions, constraint violations, rollback, thread safety
 ├── losslessbob_backend.spec  # PyInstaller onefile spec: backend-only (no PyQt6); bundled inside Electron AppImage
@@ -541,6 +546,8 @@ scheduled scan interval, checked hourly by `scheduler._integrity_scan_worker`.
 | Method | Route | Description |
 |--------|-------|-------------|
 | GET | `/api/db/stats` | Row counts, latest LB number, last import date |
+| GET | `/api/home/stats` | `{collection_count, wishlist_count, missing_count, bootleg_count, checksum_count, latest_lb, last_import}` — single-query counts for the Home dashboard and AppShell footer. |
+| GET | `/api/activity/busy` | `{busy, activity}` — polls import/scrape/bootleg-scrape/integrity-scan/file-job workers plus app-update/data-download state. `activity` is one of `importing`, `scraping`, `scraping_bootlegs`, `scanning`, `filing`, `updating_app`, `downloading_data`, or `null` when idle. Used by the AppShell footer busy indicator. |
 | GET | `/api/system/uptime` | `{uptime_seconds}` since the Flask process started (About screen uptime clock) |
 | GET | `/api/db/missing_lb_numbers` | List of integers in 1..max_lb absent from checksums table |
 | POST | `/api/db/import` | Start async flat-file import. Returns `{ok, running}` immediately. |
@@ -1441,6 +1448,10 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 
 | Date | Change |
 |------|--------|
+| 2026-06-15 | Added 115 unit tests across 5 new files covering the scraper/integration backends: `tests/test_scraper.py` (entry metadata scraper), `tests/test_bootleg_scraper.py` (LBBCD catalog), `tests/test_bobdylan_scraper.py` (bobdylan.com setlists), `tests/test_setlistfm.py` (setlist.fm API), `tests/test_geocoder.py` (Nominatim geocoding). All network calls mocked via `unittest.mock`. Discovered and documented BUG-187 (pre-existing, Open): a global `_bloom` filter rebuilt by a background thread in `init_db()` leaks between test DBs, causing intermittent `tests/test_db_lookup.py` failures in full-suite runs. |
+| 2026-06-15 | BUG-168: `ScreenHome.tsx`/`ScreenSetup.tsx` `handleCheckUpdate` fixed to read the real `/api/flat_file/discover` response shape (`available`/`current_release.zip_filename` instead of nonexistent `new_release`/`zip_filename`), so "Check for update" correctly reports an available release on a fresh install. `ScreenSetup.tsx`'s flat file history table gained per-row "Download" and "Review & Apply" actions wired to the existing `/api/flat_file/download/<id>`, `/diff/<id>`, `/apply/<id>` routes, with a confirm dialog showing added/changed/removed counts before applying. New `setup.flatFile.{download,downloading,downloadDone,reviewApply,applying,applyConfirmTitle,applyConfirmBody,applyDone}` locale keys (de/fr/es/it/nl pending DeepL translation). |
+| 2026-06-15 | BUG-185/186: `gui_next/.../AppShell.tsx` footer `StatusBar` now shows live data instead of hardcoded placeholders — `DB/Checksums/Last import/Bootlegs` fetch `GET /api/home/stats`; the "Synced/idle" badge now reflects `GET /api/master/github_check` (master-data sync vs. curator's GitHub release) and a new `GET /api/activity/busy` (aggregates import/scrape/bootleg-scrape/integrity-scan/file-job/update-download worker state, polled every 5s). New backend route `activity_busy()` in `backend/app.py`. New locale keys under `appShell.statusBar.{synced,updateAvailable,idle,activity.*}` in all 6 languages. |
+| 2026-06-15 | BUG-146/165/176: `backend/torrent_maker.py` `_parse_date` preserves `xx` month/day placeholders as ISO `YYYY-xx-xx`/`YYYY-MM-xx`; `tools/tapematch/tapematch_session.py` `_lb_num_from_folder` prefers a DB-resolved `name_to_lb` map over its regex scan (fixes self-pair rows from cross-referenced folder names); `tools/tapematch/tapematch/{audio,ingest,cli}.py` add `UnreadableAudioError`/`UnreadableSourceError` so one undecodable source file is skipped with a `[SKIP]` message instead of aborting the whole tapematch run. |
 | 2026-06-14 | BUG-184: `gui_next/src/main/index.ts` gains `killProcessTree(pid)` — on Windows `taskkill /F /T /PID` kills the full process tree (not just `LosslessBobBackend.exe`), so in-flight ffmpeg/sox/shntool subprocesses no longer survive a normal app quit. Used in `before-quit` and `killStalePid`; `/T` added to `killPortProcess`'s taskkill. |
 | 2026-06-14 | BUG-183: new `gui_next/resources/installer.nsh` (`customInit` NSIS macro, `taskkill /F /IM LosslessBobBackend.exe`) — fixes Windows installer "LosslessBob cannot be closed" prompt caused by an orphaned backend process locking its own exe. |
 | 2026-06-14 | v1.5.0 release: tapematch reliability fixes (TODO-139 tasks 2-7), qBittorrent save-path sync, hash-verified pipeline filing, LBDIR site recovery, mount drive stats, pipeline GUI fixes (BUG-166/172-182, TODO-110/143/145), Windows font fix (BUG-175); `gui_next/package.json` version bumped 1.4.0 -> 1.5.0. |

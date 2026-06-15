@@ -61,7 +61,18 @@
       "checksums": "Sumas de comprobación:",
       "lastImport": "Última importación:",
       "bootlegs": "Bootlegs:",
-      "synced": "Sincronizado - inactivo"
+      "synced": "Sincronizado",
+      "updateAvailable": "Actualización disponible",
+      "idle": "Inactivo",
+      "activity": {
+        "importing": "Importando…",
+        "scraping": "Extrayendo…",
+        "scraping_bootlegs": "Extrayendo bootlegs…",
+        "scanning": "Analizando la colección…",
+        "filing": "Archivando carpeta…",
+        "updating_app": "Actualizando la aplicación…",
+        "downloading_data": "Descargando datos…"
+      }
     }
   },
   "home": {
@@ -740,7 +751,15 @@
       "colChanged": "Cambiado",
       "noHistory": "Aún no hay historial de importaciones.",
       "active": "activo",
-      "reveal": "Revelar"
+      "reveal": "Revelar",
+      "download": "Download",
+      "downloading": "Downloading…",
+      "downloadDone": "Download complete.",
+      "reviewApply": "Review & Apply",
+      "applying": "Applying…",
+      "applyConfirmTitle": "Apply Update?",
+      "applyConfirmBody": "Apply {{filename}} to your database?\n\n+{{added}} added, ~{{changed}} changed, -{{removed}} removed.\n\nA backup is taken automatically first.",
+      "applyDone": "Update applied: +{{added}} added, ~{{changed}} changed, -{{removed}} removed."
     },
     "toast": {
       "dataFolderUnavailable": "Ruta de carpeta de datos no disponible",

@@ -1,6 +1,131 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-168: "Check for update" does not prompt to install new DB from LB website
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenHome.tsx:122-138,
+  gui_next/src/renderer/src/screens/ScreenSetup.tsx:634-697,1749-1788,
+  backend/flat_file.py:discover_flat_file_release
+Reported: 2026-06-12
+Fixed: 2026-06-15
+Root cause: Two issues. (1) Both "Check for update" handlers (Home and Setup) read
+  non-existent response fields `data.new_release` / top-level `data.zip_filename`
+  from GET /api/flat_file/discover. The real response shape is `{available,
+  current_release: {zip_filename, ...}, last_applied_release, error}`. Since
+  `data.new_release` was always `undefined`, the handlers always took the "up to
+  date" branch regardless of whether `available` was true — including on a fresh
+  install with an empty database, where `discover_flat_file_release()` correctly
+  returns `available=True` and inserts a 'detected' row. (2) Even when an update
+  was correctly detected, there was no GUI action to download/apply it — the
+  backend's /api/flat_file/download/<id>, /diff/<id>, and /apply/<id> routes were
+  never called from the frontend.
+Fix: (1) Both handlers now read `data.available` and
+  `data.current_release?.zip_filename`. (2) Added per-row actions to the Setup
+  screen's flat-file history table: "Download" (POST /flat_file/download/<id>) for
+  detected/failed/deferred releases, and "Review & Apply" (GET /flat_file/diff/<id>
+  → confirm dialog with added/changed/removed counts → POST /flat_file/apply/<id>)
+  for downloaded releases.
+
+BUG-186: Footer "Synced · idle" badge is static text, not a live sync/activity indicator
+Status: Fixed
+File(s): gui_next/src/renderer/src/components/AppShell.tsx, backend/app.py:341-368
+Reported: 2026-06-15
+Fixed: 2026-06-15
+Root cause: The shield badge in StatusBar always rendered the literal string
+  "Synced · idle" regardless of actual master-data sync state or background
+  activity — same placeholder problem as BUG-185, for the right-hand badge.
+Fix: Split into two independent signals. (1) "Synced"/"Update available" now
+  reflects GET /api/master/github_check (compares local meta.master_version
+  against the curator's latest GitHub master-data release — the curator-published
+  master export, NOT the LB website's flat-file zip, which stays a curator-only
+  Setup-tab concept). Checked once on mount; falls back to "Synced" if the check
+  fails (e.g. offline). (2) New GET /api/activity/busy aggregates
+  importer.get_import_status(), scraper.get_scrape_status(),
+  bootleg_scraper.get_scrape_status(), integrity_monitor.get_scan_status(),
+  filer.get_file_job_status(), plus the app-update/data-download states, into
+  {busy, activity}. Polled every 5s; footer shows "Idle" or a translated
+  activity label (Importing…/Scraping…/Filing folder…/etc). New locale keys
+  added to all 6 languages.
+
+BUG-185: Footer status bar shows hardcoded placeholder counts instead of live DB stats
+Status: Fixed
+File(s): gui_next/src/renderer/src/components/AppShell.tsx:687-772
+Reported: 2026-06-15
+Fixed: 2026-06-15
+Root cause: StatusBar (footer) rendered fixed literal strings ("LB-16630", "704,624",
+  "2026-05-21", "1,380") with no fetch/state — a fresh install with an empty database
+  showed the same non-zero counts as a fully populated one.
+Fix: StatusBar now fetches GET /api/home/stats on mount (same endpoint already used by
+  Sidebar and ScreenHome) and renders latest_lb, checksum_count, last_import, and
+  bootleg_count via new fmtLb/fmtNum/fmtLastImport helpers, showing '…' while loading.
+
+BUG-176: tapematch run aborts entirely when one source file can't be decoded
+Status: Fixed
+File(s): tools/tapematch/tapematch/audio.py, tools/tapematch/tapematch/ingest.py,
+  tools/tapematch/tapematch/cli.py
+Reported: 2026-06-14
+Fixed: 2026-06-15
+Root cause: During the 1997 tapematch year run, date 1997-02-09 (6 sources) failed at the
+  pre-run RAM-estimate step. `duration_sec()` for .../LB-14923/disc1/bd1997-02-09-d1t04.flac
+  first tries `sf.info()` (libsndfile), which raises `LibsndfileError: Format not
+  recognised` — the file is not readable as FLAC despite its extension. `duration_sec()`
+  falls back to `_ffprobe_info()`, which also has no `format.duration` and falls back to
+  scanning `ffmpeg -stats` output for `time=` timestamps; ffmpeg apparently produced no
+  decodable output either, so `_ffprobe_info` raised `RuntimeError("could not determine
+  duration for ...")`. This exception was uncaught all the way up through `source_report`
+  → `cli.py main()`'s `_durs_sec = [...]` comprehension (cli.py:96), crashing the whole
+  date's run before any alignment/matching happened — the session script then found no
+  results.json and skipped DB logging for all 6 sources, not just the bad LB-14923 one.
+Fix: `audio.duration_sec()` now raises a dedicated `UnreadableAudioError` when neither
+  libsndfile nor the ffprobe/ffmpeg fallback can determine a file's duration.
+  `ingest.source_report()` catches that per-track and re-raises `UnreadableSourceError`
+  (carrying `source_dir`/`track`). `cli.py main()` now runs `source_report` on every
+  discovered source up front, drops any source that raises `UnreadableSourceError` with a
+  printed `[SKIP] source excluded: unreadable file <path>` message, and only proceeds if
+  ≥2 readable sources remain — so the rest of the date's sources are still compared.
+  LB-14923's bd1997-02-09-d1t04.flac itself was not separately investigated (out of scope
+  for this fix; the run now completes regardless).
+Reproduce: tapematch 1997 year run, date 1997-02-09, source LB-14923, file
+  disc1/bd1997-02-09-d1t04.flac — see session 20260614_215503.
+
+BUG-165: _lb_num_from_folder picks up a cross-referenced LB number instead of the entry's own
+Status: Fixed
+File(s): tools/tapematch/tapematch_session.py
+Reported: 2026-06-12
+Fixed: 2026-06-15
+Root cause: `_lb_num_from_folder` used `re.search(r"LB-(\d+)", folder_name)`, returning the
+  *first* "LB-XXXX" match in the folder name. Folder names that embed a cross-reference
+  earlier than the entry's own LB number (e.g. "1989-07-16 Bristol, CT [fixed LB-2204]-LB-10437-v",
+  whose own entry is LB-10437) resolved to the cross-referenced number (2204) instead. When
+  the *other* source in the pair was the actual LB-02204 folder, both `lb_a` and `lb_b`
+  resolved to 2204 — a degenerate self-pair row in observations.db (`pairs.lb_a == pairs.lb_b`).
+  Found while auditing observations.db for TODO-139 Task 2 (7 such rows: dates 1989-07-16,
+  1988-06-07, 1988-06-25, 1988-07-20, 1988-09-11, 1988-09-23, 1993-06-19).
+Fix: `_lb_num_from_folder` now takes an optional `name_to_lb` map (folder name -> LB number,
+  built from `found_folders`) and prefers that DB-resolved mapping over the regex scan,
+  falling back to the regex only when the folder isn't in the map. `insert_sources` and
+  `insert_pairs` (which gained a `found_folders` parameter) now build and pass this map.
+  The 7 pre-existing self-pair rows in observations.db were not corrected in place — the
+  upgrade-folder LB numbers involved (10437, 14661, 14665, 14672, 10934, 14683, 2072) aren't
+  in `my_collection` for these dates, so reconstructing the correct mapping requires the
+  drive-scan fallback (`scan_drives_for`) from a live session, not just DB data. Future runs
+  for these dates will log correct rows.
+
+BUG-146: build_standard_name produces xx/xx/YY folder date prefix for entries with unknown month/day
+Status: Fixed
+File(s): backend/torrent_maker.py, backend/folder_naming.py
+Reported: 2026-06-09
+Fixed: 2026-06-15
+Root cause: `_parse_date` caught `ValueError` from `int('xx')` and fell back to
+  `date_str.strip()`, returning the raw DB string (e.g. `'xx/xx/65'`) unchanged.
+  `build_standard_name` then used this as the date prefix, producing
+  `'xx/xx/65 HIGHWAY 61 ROM... (LB-12205)'`. Existing folders for these entries already use
+  ISO-style `'1965-xx-xx ...'` format.
+Fix: `_parse_date` now parses month/day/year independently, preserving an `'xx'` component
+  as `'xx'` in the ISO output while still formatting any numeric component normally —
+  e.g. `xx/xx/65` -> `1965-xx-xx`, `3/xx/72` -> `1972-03-xx`, `xx/15/72` -> `1972-xx-15`.
+  Falls back to the original string only if the year itself can't be parsed.
+
 BUG-184: Backend subprocesses (ffmpeg/sox/shntool) orphaned on normal app quit
 Status: Fixed
 File(s): gui_next/src/main/index.ts

@@ -42,9 +42,27 @@ def list_tracks(source_dir: Path, exts):
     return sorted(tracks, key=_natural_key)
 
 
+class UnreadableSourceError(Exception):
+    """Raised by source_report when one of a source's tracks can't be decoded.
+
+    Carries the offending source directory and track path so callers can
+    exclude the whole source with a clear message rather than aborting.
+    """
+
+    def __init__(self, source_dir: Path, track: Path, cause: Exception):
+        self.source_dir = source_dir
+        self.track = track
+        super().__init__(f"source {source_dir} excluded: unreadable file {track} ({cause})")
+
+
 def source_report(source_dir: Path, exts):
     tracks = list_tracks(source_dir, exts)
-    total = sum(audio.duration_sec(t) for t in tracks)
+    total = 0.0
+    for t in tracks:
+        try:
+            total += audio.duration_sec(t)
+        except audio.UnreadableAudioError as e:
+            raise UnreadableSourceError(source_dir, t, e) from e
     return {"n_tracks": len(tracks), "total_sec": total, "tracks": tracks}
 
 

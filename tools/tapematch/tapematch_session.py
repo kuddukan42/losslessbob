@@ -535,8 +535,9 @@ def insert_run(conn: sqlite3.Connection, run_id: str, date_iso: str, location: s
 def insert_sources(conn: sqlite3.Connection, run_id: str, date_iso: str,
                    results: dict, found_folders: dict[int, Path], run_at: str,
                    root_dir: Path = EXAMPLES_DIR) -> None:
+    name_to_lb: dict[str, int] = {p.name: n for n, p in found_folders.items()}
     for folder_name, s in results["sources"].items():
-        lb_num = _lb_num_from_folder(folder_name)
+        lb_num = _lb_num_from_folder(folder_name, name_to_lb)
         src_path = found_folders.get(lb_num, root_dir / folder_name)
         dom_ext = _dominant_ext(root_dir / folder_name)
         hdr = extract_lb_header(lb_num) if lb_num else {}
@@ -560,16 +561,18 @@ def insert_sources(conn: sqlite3.Connection, run_id: str, date_iso: str,
 
 
 def insert_pairs(conn: sqlite3.Connection, run_id: str, date_iso: str,
-                 results: dict, run_at: str, root_dir: Path = EXAMPLES_DIR) -> None:
+                 results: dict, found_folders: dict[int, Path], run_at: str,
+                 root_dir: Path = EXAMPLES_DIR) -> None:
     names  = results["correlation_matrix"]["names"]
     matrix = results["correlation_matrix"]["values"]
     srcs   = results["sources"]
+    name_to_lb: dict[str, int] = {p.name: n for n, p in found_folders.items()}
 
     for i, j in combinations(range(len(names)), 2):
         na, nb = names[i], names[j]
         sa, sb = srcs[na], srcs[nb]
-        lb_a = _lb_num_from_folder(na)
-        lb_b = _lb_num_from_folder(nb)
+        lb_a = _lb_num_from_folder(na, name_to_lb)
+        lb_b = _lb_num_from_folder(nb, name_to_lb)
 
         # Normalize pair-key ordering so (A, B) and (B, A) never coexist as
         # distinct rows (see migrate_observations.py, Task 2).
@@ -615,7 +618,18 @@ def insert_pairs(conn: sqlite3.Connection, run_id: str, date_iso: str,
         )
 
 
-def _lb_num_from_folder(folder_name: str) -> int | None:
+def _lb_num_from_folder(folder_name: str, name_to_lb: dict[str, int] | None = None) -> int | None:
+    """Return the LB number that *folder_name* belongs to.
+
+    Prefers the entry's own DB-resolved LB number (via *name_to_lb*, built from
+    ``found_folders``) over a regex scan of the folder name. Some folder names
+    embed a cross-referenced LB number ahead of the entry's own (e.g.
+    "1989-07-16 Bristol, CT [fixed LB-2204]-LB-10437-v"), which a plain regex
+    scan would mistake for the folder's own number. Falls back to the regex
+    scan only when no DB-known number applies to this folder.
+    """
+    if name_to_lb is not None and folder_name in name_to_lb:
+        return name_to_lb[folder_name]
     m = re.search(r"LB-(\d+)", folder_name)
     return int(m.group(1)) if m else None
 
@@ -1209,7 +1223,7 @@ def _log_to_obs_db(run_id: str, run_at: str, date_iso: str, location: str,
             duration_sec=duration,
         )
         insert_sources(conn, run_id, date_iso, results, found_folders, run_at, root_dir=root_dir)
-        insert_pairs(conn, run_id, date_iso, results, run_at, root_dir=root_dir)
+        insert_pairs(conn, run_id, date_iso, results, found_folders, run_at, root_dir=root_dir)
         conn.commit()
         n_pairs = len(results["correlation_matrix"]["names"])
         n_pairs = n_pairs * (n_pairs - 1) // 2

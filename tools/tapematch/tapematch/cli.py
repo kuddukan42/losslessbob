@@ -81,6 +81,23 @@ def main(argv=None):
     if not sources:
         print(f"no source subfolders in {root}", file=sys.stderr); return 1
 
+    # Drop sources with an undecodable track up front so one corrupt/placeholder
+    # file doesn't abort the whole run -- the remaining sources can still be
+    # ingested and compared.
+    good_sources = {}
+    for name, sdir in sources.items():
+        try:
+            ingest.source_report(sdir, exts)
+        except ingest.UnreadableSourceError as e:
+            print(f"  [SKIP] source excluded: unreadable file {e.track}", file=sys.stderr)
+            continue
+        good_sources[name] = sdir
+    sources = good_sources
+    if len(sources) < 2:
+        print(f"Need >=2 readable source subfolders in {root} "
+              f"(after excluding unreadable sources)", file=sys.stderr)
+        return 1
+
     dbg = _DebugLog(Path(args.debug_log) if args.debug_log else None)
     atexit.register(dbg.close)
 

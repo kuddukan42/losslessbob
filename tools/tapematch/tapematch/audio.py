@@ -10,6 +10,13 @@ import json
 import subprocess
 import numpy as np
 
+
+class UnreadableAudioError(RuntimeError):
+    """Raised when a file's audio duration/format can't be read by libsndfile
+    or determined via the ffprobe/ffmpeg fallback (e.g. corrupt/truncated
+    file, or a non-audio file with an audio extension)."""
+
+
 def _ffprobe_info(path: str) -> dict:
     """Return {channels, samplerate, duration} via ffprobe.
 
@@ -104,7 +111,12 @@ def duration_sec(path):
         info = sf.info(str(path))
         return info.frames / info.samplerate
     except Exception:
-        return _ffprobe_info(str(path))["duration"]
+        try:
+            return _ffprobe_info(str(path))["duration"]
+        except Exception as e:
+            raise UnreadableAudioError(
+                f"could not determine duration for {path!r}: {e}"
+            ) from e
 
 
 def resample_ratio(x: np.ndarray, ratio: float, sr: int = 16000) -> np.ndarray:

@@ -64,7 +64,18 @@
       "checksums": "Checksommen:",
       "lastImport": "Laatste invoer:",
       "bootlegs": "Bootlegs:",
-      "synced": "Gesynchroniseerd - inactief"
+      "synced": "Gesynchroniseerd",
+      "updateAvailable": "Update beschikbaar",
+      "idle": "Inactief",
+      "activity": {
+        "importing": "Importeren…",
+        "scraping": "Scrapen…",
+        "scraping_bootlegs": "Bootlegs scrapen…",
+        "scanning": "Collectie scannen…",
+        "filing": "Map archiveren…",
+        "updating_app": "App bijwerken…",
+        "downloading_data": "Gegevens downloaden…"
+      }
     }
   },
   "home": {
@@ -743,7 +754,15 @@
       "colChanged": "Gewijzigd",
       "noHistory": "Nog geen importgeschiedenis.",
       "active": "actief",
-      "reveal": "Onthullen"
+      "reveal": "Onthullen",
+      "download": "Download",
+      "downloading": "Downloading…",
+      "downloadDone": "Download complete.",
+      "reviewApply": "Review & Apply",
+      "applying": "Applying…",
+      "applyConfirmTitle": "Apply Update?",
+      "applyConfirmBody": "Apply {{filename}} to your database?\n\n+{{added}} added, ~{{changed}} changed, -{{removed}} removed.\n\nA backup is taken automatically first.",
+      "applyDone": "Update applied: +{{added}} added, ~{{changed}} changed, -{{removed}} removed."
     },
     "toast": {
       "dataFolderUnavailable": "Pad gegevensmap niet beschikbaar",

@@ -1,3 +1,91 @@
+[2026-06-15] — test: add unit test coverage for the scraper/integration backends
+Added: tests/test_scraper.py: 20 tests for backend/scraper.py — _is_soft_404,
+  _extract_setlist_from_lbbcd, scrape_entry/scrape_range against local cached pages
+  (parsing, attachments, soft-404 handling, force re-parse, lb_missing skip path),
+  download_pages_range with mocked _fetch, and scrape status/stop helpers.
+Added: tests/test_bootleg_scraper.py: 30 tests for backend/bootleg_scraper.py —
+  _parse_date (year-pivot/partial-date cases), _parse_row, _diff (add/change/remove/
+  dedup), _apply_diff/_record_scrape DB writes, and scrape_bootlegs with mocked
+  requests.head/get (ETag no-change, successful scrape, HEAD/GET failures).
+Added: tests/test_bobdylan_scraper.py: 15 tests for backend/bobdylan_scraper.py —
+  fetch_sitemap_urls (mocked sitemap XML), parse_show_page, run_discover/run_scrape/
+  run_update against bobdylan_shows + bobdylan_setlist with mocked _fetch, and status/
+  stop/is_running helpers.
+Added: tests/test_setlistfm.py: 20 tests for backend/setlistfm.py — _parse_date,
+  _fetch_page (429/401/retry handling), _parse_setlist (sets/encore/cover/tape
+  flattening), save_api_key/get_api_key, run_update pagination (force vs non-force,
+  missing API key, stop mid-pagination) with mocked _fetch_page, and status helpers.
+Added: tests/test_geocoder.py: 30 tests for backend/geocoder.py — _entry_date_to_iso,
+  _get_performance_location_string, geocode_one (mocked urllib, confidence tiers,
+  429 rate-limit, HTTP/generic errors), place_manual, run_batch (dry_run, limit,
+  manual_override skip, retry_failed, dylan_performances structured-query path,
+  429 retry/exhaustion), and get_progress.
+  All 115 new tests mock requests/urllib entirely — no live HTTP calls.
+Fixed: BUGS.md: documented BUG-187 (new, Open) — a pre-existing test-isolation issue
+  where init_db()'s background bloom-filter rebuild thread leaks a global `_bloom`
+  state across test DBs, intermittently breaking tests/test_db_lookup.py in full-suite
+  runs. Reproduced on main without the new test files; not caused by this change.
+
+[2026-06-15] — fix: BUG-168 — "Check for update" always reported "already up to date"; add download/apply flow
+Fixed: gui_next/src/renderer/src/screens/ScreenHome.tsx: handleCheckUpdate read
+  non-existent `data.new_release` / top-level `data.zip_filename` fields from the
+  GET /api/flat_file/discover response (which actually returns `available` and
+  `current_release.zip_filename`), so the condition was always falsy and the
+  "up to date" toast showed even when a new release was available — including on
+  a fresh install with no database loaded.
+Fixed: gui_next/src/renderer/src/screens/ScreenSetup.tsx: handleCheckUpdate had the
+  same field-name mismatch; fixed identically and now correctly triggers
+  loadFlatReleases() when an update is available.
+Added: gui_next/src/renderer/src/screens/ScreenSetup.tsx: Flat file history table now
+  has per-row actions — "Download" for detected/failed/deferred releases (POSTs
+  /api/flat_file/download/<id>), and "Review & Apply" for downloaded releases (GETs
+  /api/flat_file/diff/<id>, shows a confirm dialog with the added/changed/removed
+  counts, then POSTs /api/flat_file/apply/<id> on confirm and refreshes db stats).
+  Previously "Check for update" could only detect availability with no way to pull
+  the file down from the GUI.
+Added: gui_next/src/renderer/src/locales/{en,de,fr,es,it,nl}.json: new
+  setup.flatFile.{download,downloading,downloadDone,reviewApply,applying,
+  applyConfirmTitle,applyConfirmBody,applyDone} keys (de/fr/es/it/nl pending DeepL
+  translation — DEEPL_API_KEY is currently disabled, so these fall back to English).
+
+[2026-06-15] — fix: BUG-186 — footer "Synced · idle" badge now reflects live master-sync and worker activity
+Added: backend/app.py: new GET /api/activity/busy aggregates importer/scraper/
+  bootleg_scraper/integrity_monitor/filer worker status plus app-update and
+  data-download state into {busy, activity}.
+Fixed: gui_next/src/renderer/src/components/AppShell.tsx: StatusBar's shield badge
+  always read the literal "Synced · idle". Now checks GET /api/master/github_check
+  once on mount for "Synced" vs "Update available" (curator's GitHub master-data
+  release, not the LB-website flat-file), and polls /api/activity/busy every 5s for
+  "Idle" vs a translated activity label (Importing.../Scraping.../Filing folder.../etc).
+Added: gui_next/src/renderer/src/locales/{en,de,fr,es,it,nl}.json: new
+  appShell.statusBar.{synced,updateAvailable,idle,activity.*} keys.
+
+[2026-06-15] — fix: BUG-185 — footer status bar now shows live DB stats
+Fixed: gui_next/src/renderer/src/components/AppShell.tsx: StatusBar fetched no data and
+  rendered hardcoded placeholder values (LB-16630, 704,624, 2026-05-21, 1,380). Now
+  fetches GET /api/home/stats on mount and renders live latest_lb, checksum_count,
+  last_import, and bootleg_count, matching the pattern already used by Sidebar/ScreenHome.
+
+[2026-06-15] — fix: BUG-146/165/176 — date-prefix, tapematch LB-number resolution, undecodable-source resilience
+Fixed: backend/torrent_maker.py: _parse_date now preserves 'xx' month/day placeholders
+  as ISO-style 'YYYY-xx-xx' / 'YYYY-MM-xx' instead of returning the raw 'xx/xx/65' string
+  (BUG-146), so build_standard_name no longer proposes non-standard date prefixes for
+  entries with unknown month/day.
+Fixed: tools/tapematch/tapematch_session.py: _lb_num_from_folder now accepts an optional
+  name_to_lb map (built from found_folders) and prefers the entry's own DB-resolved LB
+  number over a regex scan of the folder name (BUG-165) — fixes degenerate self-pair rows
+  in observations.db.pairs for folders whose name embeds a cross-referenced LB number
+  ahead of their own (e.g. "...[fixed LB-2204]-LB-10437-v"). insert_sources and
+  insert_pairs now build and pass this map; insert_pairs gained a found_folders param.
+Fixed: tools/tapematch/tapematch/audio.py, ingest.py, cli.py: a single undecodable source
+  track no longer aborts the whole tapematch run (BUG-176). duration_sec() now raises
+  UnreadableAudioError on decode failure; ingest.source_report() wraps this into
+  UnreadableSourceError(source_dir, track); cli.py main() now drops any source that
+  raises this error up front, prints "[SKIP] source excluded: unreadable file <path>",
+  and continues with the remaining sources (requires >=2 to proceed).
+Added: tools/tapematch/tests/test_unreadable_source.py: covers UnreadableAudioError and
+  UnreadableSourceError for a corrupt/non-audio file with a .flac extension.
+
 [2026-06-14] — fix(gui): BUG-184 — backend subprocesses (ffmpeg/sox/shntool) orphaned on quit
 Fixed: gui_next/src/main/index.ts: added killProcessTree(pid) — on Windows runs
   `taskkill /F /T /PID` so the entire process tree spawned by LosslessBobBackend.exe is
