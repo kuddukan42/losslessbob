@@ -25,12 +25,25 @@ async function waitForPort(port: number, tries = 40, intervalMs = 250): Promise<
   return false
 }
 
+// Kills pid and its whole descendant tree (e.g. ffmpeg/sox/shntool subprocesses the
+// backend spawns for checksum/verify operations) — a plain kill()/TerminateProcess on
+// Windows only kills the named pid and leaves those children running as orphans.
+function killProcessTree(pid: number): void {
+  try {
+    if (process.platform === 'win32') {
+      execSync(`taskkill /F /T /PID ${pid}`, { stdio: 'ignore' })
+    } else {
+      process.kill(pid, 'SIGTERM')
+    }
+  } catch { /* already dead */ }
+}
+
 async function killStalePid(): Promise<void> {
   try {
     const raw = await readFile(PID_FILE, 'utf8')
     const pid = parseInt(raw.trim(), 10)
     if (pid) {
-      try { process.kill(pid, 'SIGTERM') } catch { /* already dead */ }
+      killProcessTree(pid)
       await new Promise(r => setTimeout(r, 400))
     }
     await unlink(PID_FILE).catch(() => {})
@@ -44,7 +57,7 @@ async function killPortProcess(port: number): Promise<void> {
       const pids = [...new Set(out.trim().split('\n')
         .map(l => l.trim().split(/\s+/).pop())
         .filter((p): p is string => !!p && /^\d+$/.test(p)))]
-      pids.forEach(pid => { try { execSync(`taskkill /F /PID ${pid}`, { stdio: 'ignore' }) } catch {} })
+      pids.forEach(pid => { try { execSync(`taskkill /F /T /PID ${pid}`, { stdio: 'ignore' }) } catch {} })
     } else {
       const out = execSync(`lsof -ti :${port}`, { encoding: 'utf8' }).trim()
       if (out) {
@@ -195,7 +208,7 @@ app.whenReady().then(async () => {
 })
 
 app.on('before-quit', () => {
-  backendProc?.kill('SIGTERM')
+  if (backendProc?.pid) killProcessTree(backendProc.pid)
   backendProc = null
   unlink(PID_FILE).catch(() => {})
 })

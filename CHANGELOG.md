@@ -1,3 +1,11 @@
+[2026-06-14] — fix(gui): BUG-184 — backend subprocesses (ffmpeg/sox/shntool) orphaned on quit
+Fixed: gui_next/src/main/index.ts: added killProcessTree(pid) — on Windows runs
+  `taskkill /F /T /PID` so the entire process tree spawned by LosslessBobBackend.exe is
+  killed, not just the exe itself. backendProc.kill('SIGTERM') only TerminateProcess'd
+  the backend exe, leaving any in-flight ffmpeg/sox/shntool.exe child process running as
+  an orphan after a normal app quit. Used in before-quit and killStalePid; also added
+  /T to the existing taskkill in killPortProcess.
+
 [2026-06-14] — fix(gui): BUG-183 — Windows installer "cannot be closed" prompt on orphaned backend
 Fixed: gui_next/resources/installer.nsh (new): added `customInit` NSIS macro that force-kills
   any leftover LosslessBobBackend.exe before file extraction. Root cause: that backend
