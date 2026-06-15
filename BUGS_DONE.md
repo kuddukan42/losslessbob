@@ -1,6 +1,28 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-183: Windows installer/updater shows "LosslessBob cannot be closed" — requires manual intervention
+Status: Fixed
+File(s): gui_next/resources/installer.nsh (new), gui_next/src/main/index.ts
+Reported: 2026-06-14
+Fixed: 2026-06-14
+Root cause: `LosslessBobBackend.exe` (the Flask backend, spawned as a child process by the
+  Electron main process — see `ensureBackend()` in `gui_next/src/main/index.ts`) becomes an
+  orphan if LosslessBob.exe exits abnormally (crash, Task Manager "End Task", etc.), since
+  `before-quit`'s `backendProc.kill()` never runs and Windows does not kill child processes
+  when their parent dies. The orphaned LosslessBobBackend.exe keeps its own exe file (under
+  `resources\backend\`) locked. electron-builder's NSIS "app is running" check
+  (`_CHECK_APP_RUNNING`) only knows about `LosslessBob.exe` (APP_EXECUTABLE_FILENAME), so it
+  never detects or closes the orphaned backend — file extraction/overwrite of
+  LosslessBobBackend.exe then repeatedly fails, surfacing electron-builder's generic
+  "${PRODUCT_NAME} cannot be closed. Please close it manually and click Retry to continue."
+  message (app-builder-lib/templates/nsis/messages.yml: appCannotBeClosed).
+Fix: Added `gui_next/resources/installer.nsh` defining a `customInit` NSIS macro (runs early
+  in .onInit, before file extraction) that force-kills any leftover `LosslessBobBackend.exe`
+  via `taskkill /F /IM`. electron-builder auto-discovers this file as the installer's custom
+  include (no nsis.include config needed since it matches the default `installer.nsh` name
+  in `directories.buildResources`).
+
 BUG-182: tapematch resolve_from_collection crashes with OSError on unreachable drive mount
 Status: Fixed
 File(s): tools/tapematch/tapematch_session.py:resolve_from_collection
@@ -381,7 +403,6 @@ Fix: One-time data correction. Updated entries.location for LB-9546, 10083,
   Renamed/cleaned the corresponding location_geocoded cache rows so geocoding
   isn't re-run unnecessarily. entries_fts picked up the change automatically via
   the existing AFTER UPDATE trigger.
-
 BUG-163: NameError on /api/admin/restart — stray `_time.sleep` undefined name
 Status: Fixed
 File(s): backend/app.py:_do_restart (admin restart endpoint)

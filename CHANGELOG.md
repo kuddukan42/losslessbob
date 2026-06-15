@@ -1,3 +1,12 @@
+[2026-06-14] — fix(gui): BUG-183 — Windows installer "cannot be closed" prompt on orphaned backend
+Fixed: gui_next/resources/installer.nsh (new): added `customInit` NSIS macro that force-kills
+  any leftover LosslessBobBackend.exe before file extraction. Root cause: that backend
+  process can outlive LosslessBob.exe after an abnormal exit (Windows doesn't kill children
+  when a parent dies), and electron-builder's built-in "app is running" check only knows
+  about LosslessBob.exe, so the locked backend exe made every install/update show
+  "LosslessBob cannot be closed. Please close it manually and click Retry to continue."
+  electron-builder auto-picks up resources/installer.nsh as the NSIS custom include.
+
 [2026-06-14] — chore: v1.5.0 release
 Changed: gui_next/package.json, gui_next/package-lock.json: version bumped
   1.4.0 -> 1.5.0.
@@ -461,7 +470,6 @@ Fixed: data/losslessbob.db: entries.location for LB-9546, 10083, 12969, 16298,
   existing ASCII convention. Cleaned up matching location_geocoded cache rows
   (renamed two, removed two now-duplicate rows); entries_fts updated via the
   existing AFTER UPDATE trigger.
-
 [2026-06-12] — feat(backend+gui): TODO-111 — collection integrity monitor (lbdir-based)
 Added: backend/integrity_monitor.py: new scan engine. scan_collection() iterates
   my_collection, locates each folder's lbdir manifest (folder-local or attached),

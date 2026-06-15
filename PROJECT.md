@@ -1441,6 +1441,7 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 
 | Date | Change |
 |------|--------|
+| 2026-06-14 | BUG-183: new `gui_next/resources/installer.nsh` (`customInit` NSIS macro, `taskkill /F /IM LosslessBobBackend.exe`) — fixes Windows installer "LosslessBob cannot be closed" prompt caused by an orphaned backend process locking its own exe. |
 | 2026-06-14 | v1.5.0 release: tapematch reliability fixes (TODO-139 tasks 2-7), qBittorrent save-path sync, hash-verified pipeline filing, LBDIR site recovery, mount drive stats, pipeline GUI fixes (BUG-166/172-182, TODO-110/143/145), Windows font fix (BUG-175); `gui_next/package.json` version bumped 1.4.0 -> 1.5.0. |
 | 2026-06-13 | TODO-143: Restored the GitHub "Check for Updates" path for master snapshots in `gui_next` (previously only the file-picker `Install from file…` fallback was ported from the frozen PyQt GUI's `_GitHubMasterThread`). New `GET /api/master/github_check` and `POST /api/master/github_install` (SSE) routes in `backend/app.py`; new button + handlers in `ScreenSetup.tsx`'s `CuratorToggle`. |
 | 2026-06-12 | BUG-172: `find_torrent_by_path()` now also matches torrents renamed by the pipeline's rename step before filing — checks `rename_history` for the pre-rename folder name and matches qBittorrent's `content_path` on that. New `rename_torrent_root()` (`POST /api/v2/torrents/renameFolder`) and `recheck_torrent()` (`POST /api/v2/torrents/recheck`); `relocate_tracked_torrent()`'s external-match branch relocates, renames the root folder to the on-disk name, then rechecks. |
