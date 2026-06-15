@@ -64,7 +64,18 @@
       "checksums": "Sommes de contrôle :",
       "lastImport": "Dernière importation :",
       "bootlegs": "Bootlegs :",
-      "synced": "Synchronisé - inactif"
+      "synced": "Synchronisé",
+      "updateAvailable": "Mise à jour disponible",
+      "idle": "Inactif",
+      "activity": {
+        "importing": "Importation…",
+        "scraping": "Extraction…",
+        "scraping_bootlegs": "Extraction des bootlegs…",
+        "scanning": "Analyse de la collection…",
+        "filing": "Classement du dossier…",
+        "updating_app": "Mise à jour de l'application…",
+        "downloading_data": "Téléchargement des données…"
+      }
     }
   },
   "home": {
@@ -743,7 +754,15 @@
       "colChanged": "Modifié",
       "noHistory": "Pas encore d'historique d'importation.",
       "active": "actif",
-      "reveal": "Révéler"
+      "reveal": "Révéler",
+      "download": "Download",
+      "downloading": "Downloading…",
+      "downloadDone": "Download complete.",
+      "reviewApply": "Review & Apply",
+      "applying": "Applying…",
+      "applyConfirmTitle": "Apply Update?",
+      "applyConfirmBody": "Apply {{filename}} to your database?\n\n+{{added}} added, ~{{changed}} changed, -{{removed}} removed.\n\nA backup is taken automatically first.",
+      "applyDone": "Update applied: +{{added}} added, ~{{changed}} changed, -{{removed}} removed."
     },
     "toast": {
       "dataFolderUnavailable": "Le chemin du dossier de données n'est pas disponible",

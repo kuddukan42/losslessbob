@@ -123,10 +123,14 @@ export function ScreenHome(): React.JSX.Element {
     setCheckBusy(true)
     try {
       const r = await fetch(`${BASE}/api/flat_file/discover`)
-      const data = await r.json() as { new_release?: boolean; zip_filename?: string; error?: string }
+      const data = await r.json() as {
+        available?: boolean | null
+        current_release?: { zip_filename?: string } | null
+        error?: string
+      }
       if (data.error) { showToast(t('home.toast.error', { error: data.error }), 'bad'); return }
-      if (data.new_release) {
-        showToast(t('home.toast.newRelease', { filename: data.zip_filename ?? '' }), 'ok')
+      if (data.available) {
+        showToast(t('home.toast.newRelease', { filename: data.current_release?.zip_filename ?? '' }), 'ok')
       } else {
         showToast(t('home.toast.upToDate'), 'info')
       }

@@ -112,20 +112,25 @@ def _is_excluded(path: Path) -> bool:
 def _parse_date(date_str: str) -> str:
     """Convert LosslessBob date_str (M/D/YY or M/D/YYYY) to YYYY-MM-DD.
 
-    Falls back to the original string when parsing fails.
+    Unknown month/day components written as ``xx`` are preserved as ``xx``
+    in the output (e.g. ``xx/xx/65`` -> ``1965-xx-xx``, ``3/xx/72`` ->
+    ``1972-03-xx``), matching the ISO-style placeholders already used by
+    existing folder names. Falls back to the original string when parsing
+    fails entirely (e.g. an unparseable year).
     """
     if not date_str:
         return ""
     parts = date_str.split("/")
     if len(parts) != 3:
         return date_str.strip()
+    month_str, day_str, year_str = (p.strip() for p in parts)
     try:
-        month = int(parts[0].strip())
-        day = int(parts[1].strip())
-        year = int(parts[2].strip())
+        year = int(year_str)
         if year < 100:
             year = 1900 + year if year >= 49 else 2000 + year
-        return f"{year:04d}-{month:02d}-{day:02d}"
+        month = "xx" if month_str.lower() == "xx" else f"{int(month_str):02d}"
+        day = "xx" if day_str.lower() == "xx" else f"{int(day_str):02d}"
+        return f"{year:04d}-{month}-{day}"
     except ValueError:
         return date_str.strip()
 

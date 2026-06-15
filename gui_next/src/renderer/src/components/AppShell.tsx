@@ -686,8 +686,80 @@ function Topbar({
 
 // ── StatusBar ────────────────────────────────────────────────────────────────
 
+interface FooterStats {
+  checksum_count: number
+  latest_lb: number
+  last_import: string | null
+  bootleg_count: number
+}
+
+function fmtNum(n: number): string {
+  return n.toLocaleString()
+}
+
+function fmtLb(n: number): string {
+  return `LB-${String(n).padStart(5, '0')}`
+}
+
+function fmtLastImport(iso: string | null): string {
+  if (!iso) return '—'
+  const d = new Date(iso)
+  const diffDays = Math.floor((Date.now() - d.getTime()) / 86_400_000)
+  if (diffDays === 0) return 'today'
+  if (diffDays === 1) return 'yesterday'
+  if (diffDays < 7) return `${diffDays} days ago`
+  return d.toISOString().slice(0, 10)
+}
+
+interface MasterSyncStatus {
+  available: boolean
+}
+
+interface BusyStatus {
+  busy: boolean
+  activity: string | null
+}
+
+const BUSY_POLL_MS = 5000
+
 function StatusBar({ extra }: { extra?: React.ReactNode }) {
   const { t } = useTranslation()
+  const [stats, setStats] = useState<FooterStats | null>(null)
+  const [masterSync, setMasterSync] = useState<MasterSyncStatus | null>(null)
+  const [activity, setActivity] = useState<BusyStatus | null>(null)
+
+  useEffect(() => {
+    fetch(`${window.api.flaskBase}/api/home/stats`)
+      .then((r) => (r.ok ? r.json() : Promise.reject()))
+      .then(setStats)
+      .catch(() => { /* stats stay null, footer shows placeholders */ })
+  }, [])
+
+  useEffect(() => {
+    fetch(`${window.api.flaskBase}/api/master/github_check`)
+      .then((r) => (r.ok ? r.json() : Promise.reject()))
+      .then((d: { available?: boolean }) => {
+        if (typeof d.available === 'boolean') setMasterSync({ available: d.available })
+      })
+      .catch(() => { /* masterSync stays null, footer falls back to "Synced" */ })
+  }, [])
+
+  useEffect(() => {
+    let cancelled = false
+    function poll() {
+      fetch(`${window.api.flaskBase}/api/activity/busy`)
+        .then((r) => (r.ok ? r.json() : Promise.reject()))
+        .then((d: BusyStatus) => { if (!cancelled) setActivity(d) })
+        .catch(() => { /* activity stays as last-known value */ })
+    }
+    poll()
+    const id = setInterval(poll, BUSY_POLL_MS)
+    return () => {
+      cancelled = true
+      clearInterval(id)
+    }
+  }, [])
+
   const sep = (
     <span style={{ color: 'var(--lbb-border2)', margin: '0 2px' }}>·</span>
   )
@@ -738,13 +810,13 @@ function StatusBar({ extra }: { extra?: React.ReactNode }) {
         fontFamily: 'var(--lbb-mono)',
       }}
     >
-      {item(t('appShell.statusBar.db'), 'LB-16630', 'ok')}
+      {item(t('appShell.statusBar.db'), stats ? fmtLb(stats.latest_lb) : '…', 'ok')}
       {sep}
-      {item(t('appShell.statusBar.checksums'), '704,624')}
+      {item(t('appShell.statusBar.checksums'), stats ? fmtNum(stats.checksum_count) : '…')}
       {sep}
-      {item(t('appShell.statusBar.lastImport'), '2026-05-21')}
+      {item(t('appShell.statusBar.lastImport'), stats ? fmtLastImport(stats.last_import) : '…')}
       {sep}
-      {item(t('appShell.statusBar.bootlegs'), '1,380')}
+      {item(t('appShell.statusBar.bootlegs'), stats ? fmtNum(stats.bootleg_count) : '…')}
       {extra && (
         <>
           {sep}
@@ -761,7 +833,42 @@ function StatusBar({ extra }: { extra?: React.ReactNode }) {
         }}
       >
         <Icon name="shield" size={11} />
-        {t('appShell.statusBar.synced')}
+        {masterSync?.available
+          ? t('appShell.statusBar.updateAvailable')
+          : t('appShell.statusBar.synced')}
+        {masterSync?.available && (
+          <span
+            style={{
+              width: 6,
+              height: 6,
+              borderRadius: '50%',
+              background: 'var(--lbb-warn-bar)',
+            }}
+          />
+        )}
+      </span>
+      {sep}
+      <span
+        style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: 6,
+          color: 'var(--lbb-fg3)',
+        }}
+      >
+        {activity?.busy && (
+          <span
+            style={{
+              width: 6,
+              height: 6,
+              borderRadius: '50%',
+              background: 'var(--lbb-info-bar)',
+            }}
+          />
+        )}
+        {activity?.busy && activity.activity
+          ? t(`appShell.statusBar.activity.${activity.activity}`)
+          : t('appShell.statusBar.idle')}
       </span>
     </footer>
   )

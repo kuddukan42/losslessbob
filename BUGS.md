@@ -1,4 +1,32 @@
 
+BUG-187: Full pytest run is order-dependent — global bloom filter leaks between test DBs
+Status: Open
+File(s): backend/db.py:25 (_bloom global), backend/db.py:947 (_rebuild_bloom_bg), backend/db.py:1185 (init_db spawns it), tests/test_db_lookup.py:71-167 (TestLookupChecksumsSnhCompleteness)
+Reported: 2026-06-15
+Root cause: init_db() unconditionally spawns a daemon thread (_rebuild_bloom_bg) that calls
+  rebuild_bloom(db_path) and overwrites the process-global `_bloom` filter (backend/db.py:25)
+  with checksums from whichever db_path it was given. Every test that calls init_db() via a
+  `_make_db()`-style fixture (now used by ~7 test modules) triggers one of these threads
+  against its own temp DB. TestLookupChecksumsSnhCompleteness relies on `_bloom is None`
+  (its docstring says "the bloom filter is not populated... all checksums pass through to
+  SQLite") — true when run alone, but when other tests' background rebuild threads finish
+  later and overwrite `_bloom` with a filter built from a *different* (often already-deleted)
+  temp DB, checksum_in_bloom() starts returning real (stale) results for this test's
+  checksums, causing lookup_checksums() to treat its SHN/WAV entries as definite misses.
+  This is why `tests/test_db_lookup.py::TestLookupChecksumsSnhCompleteness` fails
+  intermittently in full-suite runs (different sub-test fails depending on what else ran,
+  e.g. test_shn_md5s_only_yields_matched_not_incomplete vs
+  test_mixed_shn_and_wav_checksums_still_matched) but always passes in isolation. Confirmed
+  reproducible on main without any new test files — pre-existing, not caused by the new
+  tests/test_scraper.py / test_bootleg_scraper.py / test_bobdylan_scraper.py / test_setlistfm.py
+  / test_geocoder.py added 2026-06-15.
+Fix: TBD. Options: (1) have lookup_checksums()/checksum_in_bloom() validate the bloom filter
+  against the db_path it was built for (e.g. store the path alongside `_bloom` and skip the
+  filter if it doesn't match); (2) let tests pass an explicit empty/None bloom filter into
+  lookup_checksums() instead of relying on global state; (3) don't spawn _rebuild_bloom_bg
+  from init_db() when called from tests (e.g. add a `build_bloom: bool = True` kwarg).
+  Note: BUG-175 above is unrelated despite the proximity.
+
 BUG-175: LBDIR reconcile leaves self-referencing/regenerated entries permanently "MD5 mismatch" — BUG-174 fix may not be the final answer
 Status: Open
 File(s): backend/checksum_utils.py:find_site_recoverable_files, backend/checksum_utils.py:find_reconcilable_files
@@ -44,18 +72,6 @@ Fix: TBD — discussed but not yet implemented: extend find_reconcilable_files w
   source. Revisit after more thought — user is not yet convinced BUG-174 is the final
   word here.
 
-BUG-168: Windows — "Check for update" does not prompt to install new DB from LB website
-Status: Open
-File(s): gui_next/src/renderer/src/screens/ScreenHome.tsx:122-138, gui_next/src/renderer/src/screens/ScreenSetup.tsx:624-627, backend/flat_file.py:discover_flat_file_release
-Reported: 2026-06-12
-Root cause: Unknown. `handleCheckUpdate` calls `/api/flat_file/discover` and only shows a toast
-  ("New release available" / "Already up to date" / error); on Windows the discover call may be
-  failing silently (network/cert issue) or returning no update, and even when an update is found
-  there appears to be no follow-up prompt/dialog offering to download and apply it.
-Fix: — Reproduce on Windows, log the `/api/flat_file/discover` response. If a "New release
-  available" toast appears but no install prompt follows, add a confirm dialog that triggers the
-  download→diff→apply pipeline.
-
 BUG-167: Windows — clicking "Scraper" menu item shows blank screen, requires app restart
 Status: Open
 File(s): gui_next/src/renderer/src/screens/ScreenScraper.tsx, gui_next/src/renderer/src/components/AppShell.tsx:80
@@ -66,29 +82,6 @@ Root cause: Unknown — reported only on Windows; ScreenScraper renders fine els
   blank window with no error boundary to recover from.
 Fix: — Reproduce on Windows, check renderer devtools console for the thrown error; add an error
   boundary around ScreenScraper (or its tabs) so a crash shows a message instead of a blank screen.
-
-BUG-165: _lb_num_from_folder picks up a cross-referenced LB number instead of the entry's own
-Status: Open
-File(s): tools/tapematch/tapematch_session.py:_lb_num_from_folder
-Reported: 2026-06-12
-Root cause: `_lb_num_from_folder` uses `re.search(r"LB-(\d+)", folder_name)`, returning the
-  *first* "LB-XXXX" match in the folder name. Folder names that embed a cross-reference
-  earlier than the entry's own LB number (e.g. "1989-07-16 Bristol, CT [fixed LB-2204]-LB-10437-v",
-  whose own entry is LB-10437) resolve to the cross-referenced number (2204) instead. When the
-  *other* source in the pair is the actual LB-02204 folder, both `lb_a` and `lb_b` resolve to
-  2204 — a degenerate self-pair row in observations.db (`pairs.lb_a == pairs.lb_b`).
-  Found while auditing observations.db for TODO-139 Task 2 (7 such rows: dates 1989-07-16,
-  1988-06-07, 1988-06-25, 1988-07-20, 1988-09-11, 1988-09-23, 1993-06-19).
-Fix: Prefer the LB number matching the entry's own `losslessbob.db` record for that folder
-  (already resolved earlier in the session via `found_folders`/`lb_numbers`) over a regex
-  scan of the folder name; fall back to the regex only if no DB-known number applies.
-
-BUG-146: build_standard_name produces xx/xx/YY folder date prefix for entries with unknown month/day
-Status: Open
-File(s): backend/torrent_maker.py:129, backend/folder_naming.py:72
-Reported: 2026-06-09
-Root cause: `_parse_date` catches `ValueError` from `int('xx')` and falls back to `date_str.strip()`, returning the raw DB string (e.g. `'xx/xx/65'`) unchanged. `build_standard_name` then uses this as the date prefix, producing `'xx/xx/65 HIGHWAY 61 ROM... (LB-12205)'`. Existing folders for these entries already use ISO-style `'1965-xx-xx ...'` format.
-Fix: In `_parse_date`, detect `xx` parts before trying `int()` and emit ISO-style `YYYY-xx-xx` (or `YYYY-MM-xx`) for the known parts — e.g. `xx/xx/65` → `1965-xx-xx`, `3/xx/72` → `1972-03-xx`.
 
 BUG-120: Pipeline verify mismatch — 2 folders where audio no longer matches stored checksums
 Status: Open

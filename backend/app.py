@@ -338,6 +338,39 @@ def create_app() -> Flask:
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
+    @app.route("/api/activity/busy", methods=["GET"])
+    def activity_busy() -> Response:
+        """Report whether any background worker is currently running.
+
+        Polls the in-memory status of the import, scrape, bootleg-scrape,
+        integrity-scan, file-job, and update/data-download workers.
+
+        Returns:
+            JSON {busy: bool, activity: str|None}. ``activity`` is a short
+            machine-readable key identifying the first running job found,
+            or None if every worker is idle.
+        """
+        from backend import integrity_monitor
+        from backend.filer import get_file_job_status
+
+        checks = [
+            (importer.get_import_status(), "importing"),
+            (scraper.get_scrape_status(), "scraping"),
+            (bootleg_scraper.get_scrape_status(), "scraping_bootlegs"),
+            (integrity_monitor.get_scan_status(), "scanning"),
+            (get_file_job_status(), "filing"),
+        ]
+        for status, activity in checks:
+            if status.get("running"):
+                return jsonify({"busy": True, "activity": activity})
+        with _update_lock:
+            if _update_state.get("status", "idle") != "idle":
+                return jsonify({"busy": True, "activity": "updating_app"})
+        with _data_dl_lock:
+            if _data_dl_state.get("status", "idle") != "idle":
+                return jsonify({"busy": True, "activity": "downloading_data"})
+        return jsonify({"busy": False, "activity": None})
+
     @app.route("/api/activity/log", methods=["GET"])
     def activity_log() -> Response:
         """Return a unified activity log: DB imports, renames, and forum posts.

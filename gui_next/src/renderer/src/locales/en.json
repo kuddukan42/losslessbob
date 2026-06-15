@@ -66,7 +66,18 @@
       "checksums": "Checksums:",
       "lastImport": "Last import:",
       "bootlegs": "Bootlegs:",
-      "synced": "Synced · idle"
+      "synced": "Synced",
+      "updateAvailable": "Update available",
+      "idle": "Idle",
+      "activity": {
+        "importing": "Importing…",
+        "scraping": "Scraping…",
+        "scraping_bootlegs": "Scraping bootlegs…",
+        "scanning": "Scanning collection…",
+        "filing": "Filing folder…",
+        "updating_app": "Updating app…",
+        "downloading_data": "Downloading data…"
+      }
     }
   },
   "home": {
@@ -783,7 +794,15 @@
       "colChanged": "Changed",
       "noHistory": "No import history yet.",
       "active": "active",
-      "reveal": "Reveal"
+      "reveal": "Reveal",
+      "download": "Download",
+      "downloading": "Downloading…",
+      "downloadDone": "Download complete.",
+      "reviewApply": "Review & Apply",
+      "applying": "Applying…",
+      "applyConfirmTitle": "Apply Update?",
+      "applyConfirmBody": "Apply {{filename}} to your database?\n\n+{{added}} added, ~{{changed}} changed, -{{removed}} removed.\n\nA backup is taken automatically first.",
+      "applyDone": "Update applied: +{{added}} added, ~{{changed}} changed, -{{removed}} removed."
     },
     "toast": {
       "dataFolderUnavailable": "Data folder path not available",

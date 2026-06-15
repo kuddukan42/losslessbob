@@ -64,7 +64,18 @@
       "checksums": "Prüfsummen:",
       "lastImport": "Letzte Einfuhr:",
       "bootlegs": "Bootlegs:",
-      "synced": "Synchronisiert - im Leerlauf"
+      "synced": "Synchronisiert",
+      "updateAvailable": "Update verfügbar",
+      "idle": "Inaktiv",
+      "activity": {
+        "importing": "Wird importiert…",
+        "scraping": "Wird gescrapt…",
+        "scraping_bootlegs": "Bootlegs werden gescrapt…",
+        "scanning": "Sammlung wird gescannt…",
+        "filing": "Ordner wird abgelegt…",
+        "updating_app": "App wird aktualisiert…",
+        "downloading_data": "Daten werden heruntergeladen…"
+      }
     }
   },
   "home": {
@@ -743,7 +754,15 @@
       "colChanged": "Geändert",
       "noHistory": "Noch keine Importgeschichte.",
       "active": "aktiv",
-      "reveal": "Enthüllen Sie"
+      "reveal": "Enthüllen Sie",
+      "download": "Download",
+      "downloading": "Downloading…",
+      "downloadDone": "Download complete.",
+      "reviewApply": "Review & Apply",
+      "applying": "Applying…",
+      "applyConfirmTitle": "Apply Update?",
+      "applyConfirmBody": "Apply {{filename}} to your database?\n\n+{{added}} added, ~{{changed}} changed, -{{removed}} removed.\n\nA backup is taken automatically first.",
+      "applyDone": "Update applied: +{{added}} added, ~{{changed}} changed, -{{removed}} removed."
     },
     "toast": {
       "dataFolderUnavailable": "Datenordnerpfad nicht verfügbar",
