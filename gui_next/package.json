@@ -24,13 +24,30 @@
       {
         "from": "resources/backend",
         "to": "backend",
-        "filter": ["**/*"]
+        "filter": [
+          "**/*"
+        ]
       }
     ],
     "fileAssociations": [
-      { "ext": "ffp", "name": "FFP Checksum", "description": "LosslessBob FFP Checksum", "role": "Viewer" },
-      { "ext": "md5", "name": "MD5 Checksum", "description": "LosslessBob MD5 Checksum", "role": "Viewer" },
-      { "ext": "st5", "name": "ST5 Checksum", "description": "LosslessBob ST5 Checksum", "role": "Viewer" }
+      {
+        "ext": "ffp",
+        "name": "FFP Checksum",
+        "description": "LosslessBob FFP Checksum",
+        "role": "Viewer"
+      },
+      {
+        "ext": "md5",
+        "name": "MD5 Checksum",
+        "description": "LosslessBob MD5 Checksum",
+        "role": "Viewer"
+      },
+      {
+        "ext": "st5",
+        "name": "ST5 Checksum",
+        "description": "LosslessBob ST5 Checksum",
+        "role": "Viewer"
+      }
     ],
     "linux": {
       "target": "AppImage",
@@ -38,7 +55,10 @@
       "artifactName": "${productName}-${version}-linux-${arch}.AppImage"
     },
     "win": {
-      "target": ["nsis", "portable"]
+      "target": [
+        "nsis",
+        "portable"
+      ]
     },
     "nsis": {
       "oneClick": false,
@@ -71,7 +91,7 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^5.2.0",
-    "electron": "^42.3.0",
+    "electron": "^42.4.0",
     "electron-builder": "^25.0.0",
     "electron-vite": "^5.0.0",
     "playwright-core": "^1.60.0",

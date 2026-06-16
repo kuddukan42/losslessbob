@@ -1,4 +1,15 @@
 
+BUG-192: Windows — test_batch_verify.py and tools/batch_verify.py not runnable on Windows (termios)
+Status: Open
+File(s): tools/batch_verify.py:36, tests/test_batch_verify.py:18
+Reported: 2026-06-15
+Root cause: tools/batch_verify.py imports termios at module level (line 36). termios is a
+  Unix-only stdlib module for terminal I/O control and does not exist on Windows. pytest
+  collection of tests/test_batch_verify.py fails immediately with ModuleNotFoundError.
+Fix: Either (a) guard the import with sys.platform != 'win32' and provide a stub, or (b)
+  move the termios import inside the function(s) that need it and add a Windows fallback,
+  or (c) mark the test module to skip on Windows with @pytest.mark.skipif.
+
 BUG-187: Full pytest run is order-dependent — global bloom filter leaks between test DBs
 Status: Open
 File(s): backend/db.py:25 (_bloom global), backend/db.py:947 (_rebuild_bloom_bg), backend/db.py:1185 (init_db spawns it), tests/test_db_lookup.py:71-167 (TestLookupChecksumsSnhCompleteness)
@@ -72,16 +83,6 @@ Fix: TBD — discussed but not yet implemented: extend find_reconcilable_files w
   source. Revisit after more thought — user is not yet convinced BUG-174 is the final
   word here.
 
-BUG-167: Windows — clicking "Scraper" menu item shows blank screen, requires app restart
-Status: Open
-File(s): gui_next/src/renderer/src/screens/ScreenScraper.tsx, gui_next/src/renderer/src/components/AppShell.tsx:80
-Reported: 2026-06-12
-Root cause: Unknown — reported only on Windows; ScreenScraper renders fine elsewhere. Possibly a
-  renderer crash (uncaught exception) when mounting one of the 6 tabs (LB Crawler, Entry Metadata,
-  Bootleg Catalog, Dylan.com, Setlist.fm, Geocoder) or its 2s status-polling effect, leaving a
-  blank window with no error boundary to recover from.
-Fix: — Reproduce on Windows, check renderer devtools console for the thrown error; add an error
-  boundary around ScreenScraper (or its tabs) so a crash shows a message instead of a blank screen.
 
 BUG-120: Pipeline verify mismatch — 2 folders where audio no longer matches stored checksums
 Status: Open

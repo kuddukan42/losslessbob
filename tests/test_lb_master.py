@@ -196,15 +196,16 @@ class TestReconcileLbStatus:
     def test_reconcile_logs_transition(self):
         import backend.db as db
         db_path, conn = _make_db()
-        _seed_checksums(conn, [7])
+        # Use LB 11 — not in _LB_MISSING_SEEDS (7 is seeded as nonexistent)
+        _seed_checksums(conn, [11])
         # Start as private (no entry)
-        db.reconcile_lb_status(7, db_path=db_path)
+        db.reconcile_lb_status(11, db_path=db_path)
         # Add entry row → now public
-        _seed_entries(conn, [(7, "ok")])
-        db.reconcile_lb_status(7, db_path=db_path)
+        _seed_entries(conn, [(11, "ok")])
+        db.reconcile_lb_status(11, db_path=db_path)
         hist = conn.execute(
             "SELECT old_status, new_status FROM lb_status_history "
-            "WHERE lb_number=7 ORDER BY changed_at"
+            "WHERE lb_number=11 ORDER BY changed_at"
         ).fetchall()
         statuses = [(r["old_status"], r["new_status"]) for r in hist]
         assert (None, "private") in statuses or ("private", "public") in statuses

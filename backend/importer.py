@@ -1,6 +1,7 @@
 import hashlib
+import sqlite3
 import threading
-from datetime import datetime
+from datetime import UTC, datetime
 from pathlib import Path
 
 from backend.db import (
@@ -51,9 +52,18 @@ def md5_file(path):
 
 
 def _import_flat_file(flat_path, temp_db_path):
-    """Parse tab-delimited flat file into temporary SQLite database."""
-    init_db(temp_db_path)
-    conn = get_connection(temp_db_path)
+    """Parse tab-delimited flat file into temporary SQLite database.
+
+    Uses a raw sqlite3 connection (not init_db) so no background threads are
+    spawned against the temp file.  On Windows, background threads keep the
+    file locked, making unlink() fail after the import completes.
+    """
+    # Only the checksums table is needed in the temp DB.
+    conn = sqlite3.connect(str(temp_db_path))
+    conn.execute(
+        "CREATE TABLE IF NOT EXISTS checksums"
+        "(checksum TEXT, filename TEXT, chk_type TEXT, lb_number INTEGER, xref INTEGER)"
+    )
     inserted = 0
     with open(flat_path, encoding="utf-8", errors="replace") as f:
         for line in f:
@@ -74,6 +84,7 @@ def _import_flat_file(flat_path, temp_db_path):
             except Exception:
                 pass
     conn.commit()
+    conn.close()
     _set_state(rows_parsed=inserted, rows_total=inserted,
                message=f"Parsed {inserted:,} rows")
     return inserted
@@ -122,16 +133,21 @@ def run_import(source_path, progress_callback=None, db_path=None):
     with get_connection(temp_db_path) as temp_conn:
         temp_lbs = {r[0] for r in temp_conn.execute("SELECT DISTINCT lb_number FROM checksums").fetchall()}
         new_lbs = temp_lbs - before_lbs
+        rows = (
+            temp_conn.execute(
+                "SELECT checksum, filename, chk_type, lb_number, xref FROM checksums"
+            ).fetchall()
+            if temp_lbs else []
+        )
 
-        if not temp_lbs:
-            close_connection(temp_db_path)
-            temp_db_path.unlink(missing_ok=True)
-            _set_state(running=False, stage="error", error="No checksums found in file.")
-            return {"error": "No checksums found in file. Check the file format."}
+    # Close and delete the temp DB outside the with-block so its __exit__ (commit)
+    # runs on an open connection regardless of the early-exit path below.
+    close_connection(temp_db_path)
+    temp_db_path.unlink(missing_ok=True)
 
-        rows = temp_conn.execute(
-            "SELECT checksum, filename, chk_type, lb_number, xref FROM checksums"
-        ).fetchall()
+    if not temp_lbs:
+        _set_state(running=False, stage="error", error="No checksums found in file.")
+        return {"error": "No checksums found in file. Check the file format."}
 
     # Batch merge with row-count progress updates
     CHUNK = 10_000
@@ -152,14 +168,12 @@ def run_import(source_path, progress_callback=None, db_path=None):
                        message=f"Merging — {i + len(chunk):,} / {_total:,} rows")
 
     get_write_queue().execute(_do_merge, timeout=300.0)
-    close_connection(temp_db_path)
-    temp_db_path.unlink(missing_ok=True)
 
     _set_state(stage="optimizing", message="Updating statistics…")
     if progress_callback:
         progress_callback(f"Import complete. {len(new_lbs)} new LB numbers.")
 
-    now = datetime.utcnow().isoformat()
+    now = datetime.now(UTC).isoformat()
     with get_connection(db_path) as conn:
         after_max = conn.execute("SELECT MAX(lb_number) FROM checksums").fetchone()[0] or 0
         total_lbs = conn.execute("SELECT COUNT(DISTINCT lb_number) FROM checksums").fetchone()[0]

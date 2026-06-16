@@ -516,33 +516,42 @@ def create_app() -> Flask:
 
     @app.route("/api/db/reset", methods=["POST"])
     def db_reset() -> Response:
-        """Drop all checksum/entry tables and reinitialise the schema from scratch.
+        """Wipe all master-data tables and reinitialise the schema from scratch.
 
-        Preserves collection, wishlist, and personal metadata.
+        Uses MASTER_TABLES as the canonical list so the reset stays in sync
+        as new master tables are added.  User data (collection, wishlist,
+        mounts, routes, rename history, torrents, forum posts, etc.) is
+        preserved.
+
         Returns:
             JSON {ok: true} or 500 on error.
         """
         try:
             with database._write_lock:
                 conn = database.get_connection()
-                # Disable FK enforcement for the duration of the drop so that
-                # my_collection's FK on entries(lb_number) doesn't block the drop.
-                conn.executescript(
+                # Drop FTS triggers + virtual table linked to entries.
+                # executescript() issues an implicit COMMIT before running.
+                fts_script = (
                     "PRAGMA foreign_keys=OFF;"
-                    "DROP TABLE IF EXISTS entry_changes;"
-                    "DROP TABLE IF EXISTS rename_history;"
-                    "DROP TABLE IF EXISTS torrents;"
                     "DROP TRIGGER IF EXISTS entries_fts_insert;"
                     "DROP TRIGGER IF EXISTS entries_fts_update;"
                     "DROP TRIGGER IF EXISTS entries_fts_delete;"
                     "DROP TABLE IF EXISTS entries_fts;"
-                    "DROP TABLE IF EXISTS checksums;"
-                    "DROP TABLE IF EXISTS entries;"
-                    "DROP TABLE IF EXISTS entry_files;"
-                    "DROP TABLE IF EXISTS meta;"
                 )
-                # executescript() doesn't restore PRAGMAs — re-enable explicitly on
-                # the persistent connection before init_db() recreates the schema.
+                master_drops = "".join(
+                    f"DROP TABLE IF EXISTS {tbl};"
+                    for tbl in database.MASTER_TABLES
+                )
+                conn.executescript(fts_script + master_drops)
+                # Wipe master meta keys; leave user meta keys intact.
+                placeholders = ",".join("?" * len(database.MASTER_META_KEYS))
+                conn.execute(
+                    f"DELETE FROM meta WHERE key IN ({placeholders})",
+                    tuple(database.MASTER_META_KEYS),
+                )
+                conn.commit()
+                # executescript() doesn't restore PRAGMAs — re-enable explicitly
+                # before init_db() recreates the schema.
                 conn.execute("PRAGMA foreign_keys=ON")
                 database.init_db()
             return jsonify({"ok": True})
@@ -1499,7 +1508,7 @@ def create_app() -> Flask:
         """
         try:
             import json as _json
-            from datetime import datetime
+            from datetime import UTC, datetime
 
             rows = database.get_collection()
             entries = []
@@ -1527,7 +1536,7 @@ def create_app() -> Flask:
                 })
 
             data_json = _json.dumps(entries, ensure_ascii=False)
-            generated_at = datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
+            generated_at = datetime.now(UTC).strftime("%Y-%m-%d %H:%M UTC")
 
             html = (
                 _COLLECTION_HTML_TEMPLATE
@@ -2771,8 +2780,8 @@ def create_app() -> Flask:
             JSON {columns, rows, total, page, limit}.
         """
         try:
-            page     = int(request.args.get("page", 0))
-            limit    = min(int(request.args.get("limit", 100)), 500)
+            page     = max(0, int(request.args.get("page", 0)))
+            limit    = max(1, min(int(request.args.get("limit", 100)), 500))
             search   = request.args.get("search", "").strip()
             sort_col = request.args.get("sort_col", "")
             sort_dir = "DESC" if request.args.get("sort_dir", "asc") == "desc" else "ASC"
@@ -4214,6 +4223,44 @@ def create_app() -> Flask:
             _log.exception("master_import failed")
             return jsonify({"error": "internal_error", "message": str(exc)}), 500
 
+    def _find_master_release(_req):
+        """Search recent GitHub releases for the latest one containing a .db master asset.
+
+        Returns (release, db_asset, manifest_asset) or raises RuntimeError with a
+        human-readable message when nothing usable is found.
+        """
+        _REPO = "kuddukan42/losslessbob"
+        page = 1
+        while page <= 5:
+            resp = _req.get(
+                f"https://api.github.com/repos/{_REPO}/releases",
+                headers={"Accept": "application/vnd.github+json"},
+                params={"per_page": 20, "page": page},
+                timeout=15,
+            )
+            if resp.status_code == 404 or (page == 1 and resp.json() == []):
+                raise RuntimeError("No releases found on GitHub yet.")
+            resp.raise_for_status()
+            releases = resp.json()
+            if not releases:
+                break
+            for release in releases:
+                assets = release.get("assets", [])
+                db_asset = next(
+                    (a for a in assets
+                     if a["name"].endswith(".db") and not a["name"].endswith(".manifest.json.db")),
+                    None,
+                )
+                if not db_asset:
+                    continue
+                manifest_name = db_asset["name"] + ".manifest.json"
+                manifest_asset = next((a for a in assets if a["name"] == manifest_name), None)
+                if not manifest_asset:
+                    continue
+                return release, db_asset, manifest_asset
+            page += 1
+        raise RuntimeError("No release with a master .db asset found on GitHub.")
+
     @app.route("/api/master/github_check", methods=["GET"])
     def master_github_check() -> Response:
         """Check GitHub Releases for a master snapshot newer than the local one.
@@ -4227,33 +4274,13 @@ def create_app() -> Flask:
         """
         import requests as _req
 
-        _REPO = "kuddukan42/losslessbob"
         try:
-            resp = _req.get(
-                f"https://api.github.com/repos/{_REPO}/releases/latest",
-                headers={"Accept": "application/vnd.github+json"}, timeout=15,
-            )
-            if resp.status_code == 404:
-                return jsonify({"available": False, "message": "No master releases found on GitHub yet."})
-            resp.raise_for_status()
-            release = resp.json()
+            try:
+                release, db_asset, manifest_asset = _find_master_release(_req)
+            except RuntimeError as exc:
+                return jsonify({"available": False, "message": str(exc)})
+
             tag = release.get("tag_name", "?")
-            assets = release.get("assets", [])
-
-            db_asset = next(
-                (a for a in assets
-                 if a["name"].endswith(".db") and not a["name"].endswith(".manifest.json.db")),
-                None,
-            )
-            if not db_asset:
-                return jsonify({"available": False, "message": f"No .db asset found in release {tag}."})
-
-            manifest_name = db_asset["name"] + ".manifest.json"
-            manifest_asset = next((a for a in assets if a["name"] == manifest_name), None)
-            if not manifest_asset:
-                return jsonify({"available": False,
-                                "message": f"Manifest sidecar not found in release {tag}."})
-
             mresp = _req.get(manifest_asset["browser_download_url"], timeout=30)
             mresp.raise_for_status()
             manifest = mresp.json()
@@ -4296,41 +4323,18 @@ def create_app() -> Flask:
 
         import requests as _req
 
-        _REPO = "kuddukan42/losslessbob"
         ev_q: queue.Queue = queue.Queue()
 
         def _work() -> None:
             try:
                 ev_q.put({"type": "progress", "label": "Checking GitHub for latest release…", "pct": None})
-                resp = _req.get(
-                    f"https://api.github.com/repos/{_REPO}/releases/latest",
-                    headers={"Accept": "application/vnd.github+json"}, timeout=15,
-                )
-                if resp.status_code == 404:
-                    ev_q.put({"type": "error", "error": "no_releases",
-                              "message": "No master releases found on GitHub yet."})
+                try:
+                    release, db_asset, manifest_asset = _find_master_release(_req)
+                except RuntimeError as exc:
+                    ev_q.put({"type": "error", "error": "no_releases", "message": str(exc)})
                     return
-                resp.raise_for_status()
-                release = resp.json()
+
                 tag = release.get("tag_name", "?")
-                assets = release.get("assets", [])
-
-                db_asset = next(
-                    (a for a in assets
-                     if a["name"].endswith(".db") and not a["name"].endswith(".manifest.json.db")),
-                    None,
-                )
-                if not db_asset:
-                    ev_q.put({"type": "error", "error": "no_db_asset",
-                              "message": f"No .db asset found in release {tag}."})
-                    return
-
-                manifest_name = db_asset["name"] + ".manifest.json"
-                manifest_asset = next((a for a in assets if a["name"] == manifest_name), None)
-                if not manifest_asset:
-                    ev_q.put({"type": "error", "error": "no_manifest",
-                              "message": f"Manifest sidecar not found in release {tag}."})
-                    return
 
                 ev_q.put({"type": "progress", "label": f"Downloading manifest for {tag}…", "pct": None})
                 mresp = _req.get(manifest_asset["browser_download_url"], timeout=30)
@@ -4340,7 +4344,7 @@ def create_app() -> Flask:
                 dest_dir = DATA_DIR / "imports"
                 dest_dir.mkdir(parents=True, exist_ok=True)
                 db_dest = dest_dir / db_asset["name"]
-                manifest_dest = dest_dir / manifest_name
+                manifest_dest = dest_dir / manifest_asset["name"]
 
                 total_bytes = db_asset.get("size", 0)
                 total_mb = total_bytes / (1 << 20)
@@ -4636,10 +4640,10 @@ def create_app() -> Flask:
             conn = database.get_connection()
             row = conn.execute("""
                 SELECT
-                    COUNT(*)                                          AS total_cached,
-                    SUM(CASE WHEN lat IS NOT NULL THEN 1 ELSE 0 END) AS geocoded,
-                    SUM(CASE WHEN lat IS NULL     THEN 1 ELSE 0 END) AS failed,
-                    SUM(CASE WHEN manual_override = 1 THEN 1 ELSE 0 END) AS manual
+                    COUNT(*)                                                   AS total_cached,
+                    COALESCE(SUM(CASE WHEN lat IS NOT NULL THEN 1 ELSE 0 END), 0) AS geocoded,
+                    COALESCE(SUM(CASE WHEN lat IS NULL     THEN 1 ELSE 0 END), 0) AS failed,
+                    COALESCE(SUM(CASE WHEN manual_override = 1 THEN 1 ELSE 0 END), 0) AS manual
                 FROM location_geocoded
             """).fetchone()
             cov = conn.execute("""
@@ -5873,7 +5877,7 @@ def create_app() -> Flask:
         """
         import hashlib
         import zipfile
-        from datetime import date, datetime
+        from datetime import UTC, date, datetime
 
         try:
             exports_dir = DATA_DIR / "exports"
@@ -5903,7 +5907,7 @@ def create_app() -> Flask:
 
             manifest = {
                 "type": "user_data",
-                "created_at": datetime.utcnow().isoformat() + "Z",
+                "created_at": datetime.now(UTC).isoformat() + "Z",
                 "files": manifest_files,
                 "file_count": len(manifest_files),
                 "total_bytes": sum(f["size_bytes"] for f in manifest_files),
@@ -5921,7 +5925,7 @@ def create_app() -> Flask:
         Returns: {ok, path, manifest: {type, created_at, file_count, total_bytes}}
         """
         import zipfile
-        from datetime import date, datetime
+        from datetime import UTC, date, datetime
 
         try:
             if not SITE_DIR.exists():
@@ -5952,7 +5956,7 @@ def create_app() -> Flask:
 
             manifest = {
                 "type": "scrape_data",
-                "created_at": datetime.utcnow().isoformat() + "Z",
+                "created_at": datetime.now(UTC).isoformat() + "Z",
                 "file_count": file_count,
                 "total_bytes": total_bytes,
             }
