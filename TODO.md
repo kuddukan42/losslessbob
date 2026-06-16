@@ -1,3 +1,31 @@
+TODO-147: Setup — HelpersStrip install hints for missing tools (ffmpeg, sox)
+Priority: Low
+Status: Open
+Added: 2026-06-15
+Description: When ffmpeg or sox show yellow in HelpersStrip (ScreenSetup), the user
+has no idea how to fix it. The `/api/spectrogram/check` response should include an
+`install_hint` field per tool (already have the winget strings in sox_utils.py at
+lines 163 and 280). HelpersStrip should surface the hint as a tooltip or small info
+row under each yellow dot.
+  Windows hints:
+    ffmpeg → winget install Gyan.FFmpeg  (or https://ffmpeg.org/download.html)
+    sox    → winget install SoX.SoX      (or https://sox.sourceforge.net)
+Do NOT invoke winget from the app — inform only, let the user run the command.
+See conversation 2026-06-15 for design rationale.
+
+TODO-146: Setup — bundle flac.exe in tools/ like shntool.exe
+Priority: Low
+Status: Open
+Added: 2026-06-15
+Description: flac is detected via shutil.which("flac") only, so it shows yellow on
+every fresh Windows install. flac.exe is a small static binary (~1 MB). Bundle it in
+tools/flac.exe and update _find_flac() logic in app.py's spectrogram_check route to
+probe tools/flac.exe before PATH (same pattern as _find_shntool() in checksum_utils.py
+lines 24-35). This would make flac silently green on all installs with zero user
+friction, matching the shntool experience.
+  Source: https://xiph.org/flac/download.html  (Windows builds — grab flac.exe only)
+  Winget fallback (for TODO-147 hint): winget install xiph.FLAC
+
 TODO-140: tapematch — low-band/time-warp fallback for speed-offset misses
 Priority: Low
 Status: Open

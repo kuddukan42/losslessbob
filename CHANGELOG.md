@@ -1,3 +1,61 @@
+[2026-06-15] — fix(backend): importer empty-file error, dbedit DoS guard, datetime.utcnow deprecations
+Fixed: backend/importer.py:run_import: moved close_connection(temp_db_path) and unlink() outside
+  the `with get_connection() as conn:` block. Previously, calling close_connection() inside the
+  with-block then returning caused sqlite3's __exit__ to call commit() on the already-closed
+  connection, raising ProgrammingError instead of the intended "No checksums found" error.
+Fixed: backend/app.py:dbedit_rows: added max(1,...) guard on `limit` and max(0,...) on `page`.
+  Previously a caller passing limit=-1 would produce LIMIT -1 in SQLite, returning unlimited
+  rows — a memory/timeout hazard on large tables.
+Fixed: backend/importer.py, db.py, flat_file.py, qbittorrent.py, app.py: replaced all
+  datetime.utcnow() calls with datetime.now(UTC). utcnow() is deprecated since Python 3.12
+  and was generating DeprecationWarnings in every test run. Added UTC to relevant imports.
+
+[2026-06-15] — fix(backend): db_reset now wipes all master data, not just early-era tables
+Fixed: backend/app.py:db_reset: rewrote to use MASTER_TABLES as the canonical drop list instead
+  of a hardcoded 6-table subset. Now clears all 19 master tables (lb_master, lb_alias,
+  lb_missing, bootleg_titles, flat_file_releases/changelog, location_geocoded, etc.) and wipes
+  MASTER_META_KEYS from meta while preserving all user data. Also removed the incorrect dropping
+  of rename_history and torrents (USER_TABLES) that the old reset included.
+
+[2026-06-15] — fix(backend+tests): BUG-190/191 — first Windows pytest run; fixed 2 blocking failures
+Fixed: backend/importer.py:_import_flat_file: replaced init_db(temp_db_path) with a raw
+  sqlite3.connect() that creates only the checksums table and closes explicitly. init_db spawns
+  bloom-filter and migrate_lb_master daemon threads that hold the temp file open; on Windows
+  this caused PermissionError on unlink() (BUG-191).
+Fixed: tests/test_lb_master.py:test_reconcile_logs_transition: changed test LB from 7 → 11.
+  LB 7 is in _LB_MISSING_SEEDS (seeded into lb_missing by init_db), so reconcile_lb_status
+  always returned 'nonexistent' rather than 'private' (BUG-190).
+Added: BUGS.md: BUG-192 — tools/batch_verify.py imports termios (Unix-only), blocking
+  test_batch_verify.py collection on Windows.
+Added: pytest installed in .venv (was missing; required for first Windows test run).
+Result: 349 passed, 5 skipped, 1 known-flaky (BUG-187 bloom filter race) in 21s.
+
+[2026-06-15] — fix(backend): BUG-189 — master data "Check for Updates" fails when latest app release has no .db asset
+Fixed: backend/app.py: master_github_check / master_github_install both used /releases/latest,
+  which returns the newest release by tag (e.g. v1.5.1 — an app release with no master snapshot).
+  Extracted _find_master_release() helper that pages through /releases (up to 5 pages × 20) and
+  returns the first release containing both a .db asset and its .manifest.json sidecar, so master
+  data check/install always finds the most recent master data release regardless of app releases
+  that arrive in between.
+
+[2026-06-15] — fix(backend+gui): BUG-188 — Windows mount paths display with mixed slashes (c:\/1958/)
+Fixed: backend/filer.py:normalise_path: replaced PurePosixPath(Path(raw)).as_posix() with
+  Path(raw).as_posix() — on Windows the PurePosixPath wrapper received a backslash-formatted
+  str, treated backslash as a literal char, and stored it unchanged in the DB.
+Fixed: gui_next/src/renderer/src/screens/ScreenMounts.tsx: added joinRoute() helper that
+  strips backslashes (legacy data) and trailing slashes from root_path before joining with
+  sub_path, preventing double-slash or mixed-slash display in all four path display sites.
+
+[2026-06-15] — fix(gui+backend): BUG-167 — Scraper shows blank screen on Windows
+Fixed: backend/app.py: SQLite SUM() returns NULL on an empty table; wrapped geocoded/
+  failed/manual columns in COALESCE(..., 0) so /api/geocode/stats always returns integers
+  even when location_geocoded is empty.
+Fixed: gui_next/src/renderer/src/screens/ScreenScraper.tsx: added (geocoded ?? 0) guard
+  on the Geocoder strip-card lastDate; updated GeoStats interface to mark geocoded/failed/
+  manual as number|null (accurate).
+Changed: gui_next/src/renderer/src/screens/ScreenScraper.tsx: added ScraperErrorBoundary
+  so future render crashes show an error message + "Try again" button instead of blank screen.
+
 [2026-06-15] — chore: v1.5.1 release
 Changed: gui_next/package.json, gui_next/package-lock.json: version bumped
   1.5.0 -> 1.5.1.

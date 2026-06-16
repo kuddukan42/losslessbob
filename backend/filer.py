@@ -8,7 +8,7 @@ import logging
 import os
 import shutil
 import threading
-from pathlib import Path, PurePosixPath
+from pathlib import Path
 
 from backend import db as database
 
@@ -20,12 +20,15 @@ MOUNT_CHECK_TIMEOUT = 2.0  # seconds; prevents Flask thread hang on dead UNC pat
 # ── Path normalisation ─────────────────────────────────────────────────────────
 
 def normalise_path(raw: str) -> str:
-    """Store paths as POSIX strings so they round-trip correctly on Windows and Linux.
+    """Store paths as forward-slash strings so they round-trip correctly on Windows and Linux.
 
-    \\\\NAS\\archive is stored as //NAS/archive and pathlib.Path() resolves it back
-    to the correct OS-native form on read.
+    Uses Path.as_posix() which correctly converts Windows separators (c:\\ → c:/)
+    and UNC paths (\\\\NAS\\archive → //NAS/archive).
+    PurePosixPath(Path(raw)) is intentionally avoided: on Windows it receives the
+    backslash-formatted str() of a WindowsPath, treats backslashes as literal chars,
+    and returns them unchanged.
     """
-    return PurePosixPath(Path(raw)).as_posix()
+    return Path(raw).as_posix()
 
 
 # ── Mount reachability (timeout-guarded) ──────────────────────────────────────

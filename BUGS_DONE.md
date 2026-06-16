@@ -1,6 +1,102 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-194: dbedit /rows endpoint: negative limit bypasses 500-row cap, returns unlimited rows
+Status: Fixed
+File(s): backend/app.py:dbedit_rows (~2784)
+Reported: 2026-06-15
+Fixed: 2026-06-15
+Root cause: limit = min(int(request.args.get("limit", 100)), 500) has no lower bound.
+  limit=-1 passes LIMIT -1 to SQLite, which returns all rows — memory/timeout hazard on
+  large tables (checksums has millions of rows). page=-1 similarly maps to OFFSET -N,
+  which SQLite treats as OFFSET 0, silently returning the first page.
+Fix: limit = max(1, min(int(...), 500)); page = max(0, int(...))
+
+BUG-193: importer.run_import: ProgrammingError on empty flat file — close_connection inside with-block
+Status: Fixed
+File(s): backend/importer.py:run_import (~138)
+Reported: 2026-06-15
+Fixed: 2026-06-15
+Root cause: When the flat file contained 0 parseable rows, close_connection(temp_db_path)
+  was called inside `with get_connection(temp_db_path) as temp_conn:`. The with-block's
+  __exit__ then called conn.commit() on the already-closed connection, raising
+  sqlite3.ProgrammingError ("Cannot operate on a closed database") instead of returning
+  the intended {"error": "No checksums found in file."} dict. The ProgrammingError was
+  caught by start_import_async and shown as a confusing internal error.
+Fix: Restructured to read all data inside the with-block (using a conditional fetchall),
+  then call close_connection() and unlink() outside the with-block, then return the error.
+
+BUG-191: Windows — importer._import_flat_file background threads keep temp DB locked, causing PermissionError on unlink
+Status: Fixed
+File(s): backend/importer.py:_import_flat_file
+Reported: 2026-06-15
+Fixed: 2026-06-15
+Root cause: _import_flat_file called init_db(temp_db_path) to create the temp checksums DB.
+  init_db spawns two daemon threads (bloom filter rebuild + migrate_lb_master) that hold open
+  connections to temp_db_path. On Windows, open file handles prevent deletion; close_connection()
+  only closes the main thread's connection, so unlink() raised PermissionError: [WinError 32].
+  Reproduced by test_run_import_updates_lb_master.
+Fix: Replaced init_db(temp_db_path) + get_connection(temp_db_path) in _import_flat_file with a
+  raw sqlite3.connect() that creates only the checksums table and is explicitly closed before
+  returning. No background threads are spawned, so unlink() succeeds on Windows.
+
+BUG-190: test_reconcile_logs_transition used LB 7 which is in _LB_MISSING_SEEDS
+Status: Fixed
+File(s): tests/test_lb_master.py:TestReconcileLbStatus.test_reconcile_logs_transition
+Reported: 2026-06-15
+Fixed: 2026-06-15
+Root cause: The test seeded checksums for lb_number=7 and expected reconcile_lb_status to
+  classify it as 'private', but init_db() seeds lb_missing with 7 (it is a confirmed
+  non-existent LB), so reconcile_lb_status always returns 'nonexistent' for it regardless
+  of checksums. Fails on all platforms, not Windows-specific.
+Fix: Changed test to use lb_number=11 (not in _LB_MISSING_SEEDS) so reconcile_lb_status
+  correctly transitions private → public as expected.
+
+BUG-189: Master data "Check for Updates" fails when latest app release has no .db asset
+Status: Fixed
+File(s): backend/app.py:master_github_check, backend/app.py:master_github_install
+Reported: 2026-06-15
+Fixed: 2026-06-15
+Root cause: Both routes called GET /releases/latest, which returns the newest GitHub release by
+  creation date. When a new app release (e.g. v1.5.1) is pushed without a master snapshot, the
+  endpoint returned "No .db asset found in release v1.5.1" even though an older release held a
+  valid master .db + .manifest.json pair.
+Fix: Extracted _find_master_release() helper (backend/app.py) that paginates /releases (up to
+  5 pages × 20) and returns the first release containing both a .db asset and its .manifest.json
+  sidecar. Both github_check and github_install now use this helper.
+
+BUG-167: Windows — clicking "Scraper" menu item shows blank screen, requires app restart
+Status: Fixed
+File(s): backend/app.py:api_geocode_stats, gui_next/src/renderer/src/screens/ScreenScraper.tsx
+Reported: 2026-06-12
+Fixed: 2026-06-15
+Root cause: SQLite SUM() returns NULL (not 0) on an empty table. When location_geocoded is
+  empty (fresh install, no geocoding run yet), /api/geocode/stats returned {"geocoded": null, ...}.
+  The Geocoder strip card then evaluated `null.toLocaleString()` → TypeError → React had no error
+  boundary → entire screen went blank with no recovery path.
+Fix: (1) backend/app.py: wrap SUM aggregates in COALESCE(..., 0) so the API always returns integers.
+  (2) gui_next/src/renderer/src/screens/ScreenScraper.tsx: add `?? 0` guard on the geocoded field
+  in the strip card; update GeoStats interface to type geocoded/failed/manual as number|null.
+  (3) Add ScraperErrorBoundary class so any future render crash shows an error + retry button
+  instead of a blank screen.
+
+BUG-188: Windows mount root paths display with mixed slashes — c:\/1958/
+Status: Fixed
+File(s): backend/filer.py:22 (normalise_path), gui_next/src/renderer/src/screens/ScreenMounts.tsx (joinRoute)
+Reported: 2026-06-15
+Fixed: 2026-06-15
+Root cause: normalise_path() used PurePosixPath(Path(raw)).as_posix(). On Windows,
+  Path("c:\\") is a WindowsPath; PurePosixPath received its str() form ("c:\\") and
+  treated the backslash as a literal character (not a path separator), so .as_posix()
+  returned "c:\\" unchanged and stored the backslash in the DB. The GUI then built
+  paths as root_path + "/" + sub_path = "c:\" + "/" + "1958" = "c:\/1958/".
+Fix: (1) backend/filer.py — use Path(raw).as_posix() directly; WindowsPath.as_posix()
+  correctly converts "c:\\" → "c:/" and "\\NAS\share" → "//NAS/share".
+  (2) gui_next ScreenMounts.tsx — added joinRoute(root, sub) helper that strips
+  backslashes (handles legacy DB data) and trailing slashes from root_path before
+  joining, used in BulkFill preview, PreviewTester, routes table header, and per-row
+  destination columns.
+
 BUG-168: "Check for update" does not prompt to install new DB from LB website
 Status: Fixed
 File(s): gui_next/src/renderer/src/screens/ScreenHome.tsx:122-138,

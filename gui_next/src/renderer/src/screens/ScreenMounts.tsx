@@ -114,6 +114,14 @@ function toneForIntegrityEvent(eventType: string): 'ok' | 'warn' | 'bad' | 'info
 const YEAR_MIN = 1958
 const YEAR_MAX = 2026
 
+// Normalise a stored root_path for display: convert any backslashes (legacy Windows
+// entries stored before normalise_path was fixed) and strip trailing slashes so that
+// joining with '/' + sub_path never produces double slashes like "c:\/1958/".
+function joinRoute(rootPath: string, subPath?: string): string {
+  const root = rootPath.replace(/\\/g, '/').replace(/\/+$/, '')
+  return subPath ? `${root}/${subPath}/` : `${root}/`
+}
+
 // ── Collection Routing sub-components ────────────────────────────────────────
 
 function OnlineDot({ online }: { online?: boolean }) {
@@ -259,7 +267,7 @@ function BulkFill({ mounts, onApply }: {
   const [custom, setCustom] = useState('')
   const mount = mounts.find(m => m.id === mountId)
   const exampleSub = mode === 'per-year' ? '{year}' : mode === 'flat' ? '' : (custom || '…')
-  const exampleDest = `${mount?.root_path ?? ''}${exampleSub ? '/' + exampleSub : ''}/`
+  const exampleDest = joinRoute(mount?.root_path ?? '', exampleSub || undefined)
   const span = Math.max(0, (parseInt(to) || 0) - (parseInt(from) || 0) + 1)
 
   return (
@@ -376,7 +384,7 @@ function PreviewTester({ routes, mounts }: { routes: CollectionRoute[]; mounts: 
   if (!y) out = { tone: 'mute', text: 'Enter a year to test the route' }
   else if (!r || !m) out = { tone: 'bad', text: `No route configured for ${year}` }
   else {
-    const dest = `${m.root_path}${r.sub_path ? '/' + r.sub_path : ''}/`
+    const dest = joinRoute(m.root_path, r.sub_path || undefined)
     out = { tone: m.online ? 'ok' : 'warn', dest, label: m.label, online: m.online }
   }
 
@@ -700,7 +708,7 @@ function CollectionRoutingCard() {
                         <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 12, fontWeight: 700, color: 'var(--lbb-fg)' }}>{m.label}</span>
                         <span style={{ fontSize: 11, color: 'var(--lbb-fg3)' }}>· {span}</span>
                         <span style={{ fontSize: 11, color: 'var(--lbb-fg3)', fontVariantNumeric: 'tabular-nums' }}>· {rows.length} {rows.length === 1 ? 'year' : 'years'}</span>
-                        <span style={{ marginLeft: 'auto', fontFamily: 'var(--lbb-mono)', fontSize: 11, color: 'var(--lbb-fg3)' }}>{m.root_path}/</span>
+                        <span style={{ marginLeft: 'auto', fontFamily: 'var(--lbb-mono)', fontSize: 11, color: 'var(--lbb-fg3)' }}>{joinRoute(m.root_path)}</span>
                       </div>
                       {open && rows.map(r => (
                         <div key={r.year} style={{ display: 'grid', gridTemplateColumns: '80px 140px 140px 1fr 40px', alignItems: 'center', gap: 0, padding: '5px 12px', borderBottom: '1px solid var(--lbb-border)', fontSize: 12 }}>
@@ -708,7 +716,7 @@ function CollectionRoutingCard() {
                           <span style={{ fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-fg2)' }}>{m.label}</span>
                           <span style={{ fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-fg3)' }}>{r.sub_path || '(flat)'}</span>
                           <span style={{ fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-fg3)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                            {m.root_path}{r.sub_path ? '/' + r.sub_path : ''}/
+                            {joinRoute(m.root_path, r.sub_path || undefined)}
                           </span>
                           <IconButton icon="x" size={22} title={`Remove ${r.year}`} onClick={() => deleteRoute(r.year)} />
                         </div>

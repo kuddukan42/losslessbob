@@ -2227,9 +2227,9 @@ def set_collection_meta(lb_number: int, fields: dict, db_path=None) -> None:
 
 def increment_listen_count(lb_number: int, db_path=None) -> None:
     """Increment listen count and update last_listened timestamp."""
-    from datetime import datetime
+    from datetime import UTC, datetime
     _lb = lb_number
-    _ts = datetime.utcnow().isoformat()
+    _ts = datetime.now(UTC).isoformat()
     get_write_queue().execute(
         lambda c: c.execute(
             "INSERT INTO collection_meta(lb_number, listen_count, last_listened) "
@@ -2812,6 +2812,7 @@ def backup_database(reason: str = "manual", db_path=None) -> "Path":
     Returns the Path of the new backup file.
     """
     import logging
+    from datetime import UTC
     from datetime import datetime as _dt
 
     from backend.paths import DATA_DIR as _DATA
@@ -2819,7 +2820,7 @@ def backup_database(reason: str = "manual", db_path=None) -> "Path":
     backup_dir = _DATA / "backups"
     backup_dir.mkdir(parents=True, exist_ok=True)
 
-    ts = _dt.utcnow().strftime("%Y-%m-%d_%H%M%S_%f")
+    ts = _dt.now(UTC).strftime("%Y-%m-%d_%H%M%S_%f")
     safe_reason = "".join(c if c.isalnum() or c in "-_" else "_" for c in reason)
     out_path = backup_dir / f"losslessbob_{ts}_{safe_reason}.db"
 
@@ -3165,9 +3166,10 @@ def reconcile_all_lb_master(db_path=None) -> dict:
 def set_lb_manual_override(lb_number: int, status: str, notes: str,
                            set_by: str = "user", db_path=None) -> None:
     """Set a manual override on an lb_master row."""
+    from datetime import UTC
     from datetime import datetime as _dt
     _lb, _status, _notes, _set_by = lb_number, status, notes, set_by
-    _now = _dt.utcnow().isoformat()
+    _now = _dt.now(UTC).isoformat()
 
     def _run(conn) -> None:
         existing = conn.execute(
@@ -3476,6 +3478,7 @@ def export_master_db(reason: str = "publish", db_path=None) -> "tuple[Path, dict
     import hashlib
     import json
     import logging
+    from datetime import UTC
     from datetime import datetime as _dt
 
     from backend.paths import DATA_DIR as _DATA
@@ -3484,7 +3487,7 @@ def export_master_db(reason: str = "publish", db_path=None) -> "tuple[Path, dict
     export_dir = _DATA / "exports"
     export_dir.mkdir(parents=True, exist_ok=True)
 
-    ts = _dt.utcnow().strftime("%Y-%m-%d_%H%M%S")
+    ts = _dt.now(UTC).strftime("%Y-%m-%d_%H%M%S")
     safe_reason = "".join(c if c.isalnum() or c in "-_" else "_" for c in reason)
     out_path = export_dir / f"losslessbob_master_{ts}_{safe_reason}.db"
     manifest_path = export_dir.joinpath(out_path.name + ".manifest.json")
@@ -3509,7 +3512,7 @@ def export_master_db(reason: str = "publish", db_path=None) -> "tuple[Path, dict
         )
         # Stamp version + publish timestamp + schema version
         master_version = ts  # human-readable + sortable
-        published_at = _dt.utcnow().isoformat()
+        published_at = _dt.now(UTC).isoformat()
         for k, v in (
             ("master_version", master_version),
             ("master_published_at", published_at),
@@ -3773,6 +3776,7 @@ def import_master_db(snapshot_path: "Path | str", db_path=None) -> dict:
     import hashlib
     import json
     import logging
+    from datetime import UTC
     from datetime import datetime as _dt
 
     log = logging.getLogger(__name__)
@@ -3906,7 +3910,7 @@ def import_master_db(snapshot_path: "Path | str", db_path=None) -> dict:
         "post_status_counts": post_status,
         "lb_status_changes": changed,
         "backup_path": str(backup_path),
-        "imported_at": _dt.utcnow().isoformat(),
+        "imported_at": _dt.now(UTC).isoformat(),
     }
 
 

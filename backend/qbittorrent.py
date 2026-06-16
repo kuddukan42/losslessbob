@@ -231,10 +231,10 @@ def add_torrent_from_db(
     )
 
     if result["ok"]:
-        from datetime import datetime
+        from datetime import UTC, datetime
         db.update_torrent_record(
             torrent_db_id,
-            {"added_to_qbt": 1, "added_to_qbt_at": datetime.utcnow().isoformat()},
+            {"added_to_qbt": 1, "added_to_qbt_at": datetime.now(UTC).isoformat()},
             db_path=db_path,
         )
 
@@ -597,9 +597,9 @@ def _track_external_torrent(
         infohash: Infohash reported by qBittorrent for this content.
         db_path: Optional SQLite path override.
     """
-    from datetime import datetime
+    from datetime import UTC, datetime
 
-    now = datetime.utcnow().isoformat()
+    now = datetime.now(UTC).isoformat()
     conn = db.get_connection(db_path)
     row = conn.execute(
         "SELECT id FROM torrents WHERE lb_number=? AND source_folder=?",

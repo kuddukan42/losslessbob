@@ -12,7 +12,7 @@ import logging
 import re
 import zipfile
 from collections.abc import Callable
-from datetime import datetime, timedelta
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
 import requests
@@ -126,7 +126,7 @@ def discover_flat_file_release(db_path=None) -> dict:
 
     try:
         resp = requests.get(
-            f"{_PAGE_URL}?t={int(datetime.utcnow().timestamp())}",
+            f"{_PAGE_URL}?t={int(datetime.now(UTC).timestamp())}",
             timeout=15,
         )
         resp.raise_for_status()
@@ -546,7 +546,7 @@ def apply_flat_file_release(release_id: int, db_path=None) -> dict:
     database.set_meta("import_hash", row["zip_sha256"] or "", db_path)
     database.set_meta(
         "last_import_date",
-        datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S"),
+        datetime.now(UTC).strftime("%Y-%m-%d %H:%M:%S"),
         db_path,
     )
     if new_lb_max:
@@ -592,7 +592,7 @@ def defer_flat_file_release(
     if until_next:
         deferred_until = "9999-12-31 00:00:00"
     elif days is not None:
-        deferred_until = (datetime.utcnow() + timedelta(days=days)).strftime(
+        deferred_until = (datetime.now(UTC) + timedelta(days=days)).strftime(
             "%Y-%m-%d %H:%M:%S"
         )
     else:

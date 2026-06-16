@@ -3,6 +3,53 @@ import { Button, Chip, Pill, Card, SectionHead, Toolbar, Input } from '../compon
 import { TableShell, TH, TR, TD } from '../components'
 import { Icon } from '../components/Icon'
 
+// ── Error Boundary ─────────────────────────────────────────────────────────────
+
+interface EBState { error: Error | null }
+class ScraperErrorBoundary extends React.Component<{ children: React.ReactNode }, EBState> {
+  state: EBState = { error: null }
+  static getDerivedStateFromError(error: Error): EBState { return { error } }
+  componentDidCatch(error: Error, info: React.ErrorInfo) {
+    console.error('[ScreenScraper] render error:', error, info.componentStack)
+  }
+  render() {
+    const { error } = this.state
+    if (error) {
+      return (
+        <div style={{
+          display: 'flex', flexDirection: 'column', alignItems: 'center',
+          justifyContent: 'center', height: '100%', gap: 16,
+          color: 'var(--lbb-fg2)', fontFamily: 'var(--lbb-mono)',
+        }}>
+          <span style={{ fontSize: 'var(--lbb-fs-32)', opacity: 0.25 }}>⚠</span>
+          <span style={{ fontSize: 'var(--lbb-fs-14)', fontWeight: 600, color: 'var(--lbb-bad-fg)' }}>
+            Scraper failed to render
+          </span>
+          <span style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg3)', maxWidth: 480, textAlign: 'center' }}>
+            {error.message}
+          </span>
+          <button
+            type="button"
+            onClick={() => this.setState({ error: null })}
+            style={{
+              marginTop: 8, padding: '6px 16px', borderRadius: 6,
+              background: 'var(--lbb-accent-soft)', color: 'var(--lbb-accent-mid)',
+              border: '1px solid var(--lbb-accent-mid)', cursor: 'pointer',
+              fontSize: 'var(--lbb-fs-12)', fontFamily: 'inherit',
+            }}
+          >
+            Try again
+          </button>
+          <span style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)' }}>
+            Check the DevTools console (Ctrl+Shift+I) for the full stack trace.
+          </span>
+        </div>
+      )
+    }
+    return this.props.children
+  }
+}
+
 const BASE = window.api.flaskBase
 
 // ── Types ────────────────────────────────────────────────────────────────────
@@ -38,7 +85,7 @@ interface GeocoderStatus {
   current: string; errors: number; succeeded: number; stage: string
 }
 interface GeoStats {
-  total_cached: number; geocoded: number; failed: number; manual: number
+  total_cached: number; geocoded: number | null; failed: number | null; manual: number | null
   entries_total: number; entries_covered: number; pct_covered: number
 }
 interface CrawlerSession {
@@ -836,7 +883,7 @@ const TABS: { id: TabId; label: string }[] = [
   { id: 'geocoder',  label: 'Geocoder' },
 ]
 
-export function ScreenScraper() {
+function ScreenScraperInner() {
   const [activeTab, setActiveTab] = useState<TabId>('crawler')
 
   // All statuses
@@ -1057,7 +1104,7 @@ export function ScreenScraper() {
       running: geocoderStatus?.running ?? false,
       status: geocoderStatus?.running ? 'running' : 'idle',
       stat: geoStats ? `${geoStats.pct_covered}% covered` : '—',
-      lastDate: geoStats ? `${geoStats.geocoded.toLocaleString()} cached` : '—',
+      lastDate: geoStats ? `${(geoStats.geocoded ?? 0).toLocaleString()} cached` : '—',
     },
   ]
 
@@ -1088,5 +1135,13 @@ export function ScreenScraper() {
         </div>
       </div>
     </>
+  )
+}
+
+export function ScreenScraper() {
+  return (
+    <ScraperErrorBoundary>
+      <ScreenScraperInner />
+    </ScraperErrorBoundary>
   )
 }

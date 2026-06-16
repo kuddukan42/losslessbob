@@ -90,7 +90,9 @@ async function ensureBackend(): Promise<void> {
   } else {
     // Dev: project root is one level above gui_next/
     const root = join(app.getAppPath(), '..')
-    cmd = join(root, '.venv', 'bin', 'python3')
+    cmd = process.platform === 'win32'
+      ? join(root, '.venv', 'Scripts', 'python.exe')
+      : join(root, '.venv', 'bin', 'python3')
     args = [join(root, 'run_backend.py')]
     cwd = root
   }
