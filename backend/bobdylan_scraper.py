@@ -29,7 +29,8 @@ _BROWSER_UA = (
     "(KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
 )
 _HEADERS = {"User-Agent": _BROWSER_UA}
-_SITEMAP_URLS = [
+_SITEMAP_INDEX_URL = "https://www.bobdylan.com/wp-sitemap.xml"
+_SITEMAP_URLS_FALLBACK = [
     "https://www.bobdylan.com/wp-sitemap-posts-date-1.xml",
     "https://www.bobdylan.com/wp-sitemap-posts-date-2.xml",
     "https://www.bobdylan.com/wp-sitemap-posts-date-3.xml",
@@ -105,6 +106,7 @@ def _fetch(url: str, retries: int = 3, delay: float = 1.5) -> requests.Response 
                 time.sleep(60)
                 continue
             if resp.status_code == 404:
+                _log.warning("bobdylan_scraper: 404 for %s", url)
                 return None
             resp.raise_for_status()
             return resp
@@ -120,22 +122,59 @@ def _fetch(url: str, retries: int = 3, delay: float = 1.5) -> requests.Response 
 # Parsing
 # ---------------------------------------------------------------------------
 
+def _get_date_sitemap_urls() -> list[str]:
+    """Fetch the WordPress sitemap index and return all date-post sitemap URLs.
+
+    Falls back to _SITEMAP_URLS_FALLBACK if the index is unavailable or contains
+    no date sitemaps (e.g. network error or site restructure).
+
+    Returns:
+        Ordered list of sitemap URLs to fetch.
+    """
+    ns = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+    resp = _fetch(_SITEMAP_INDEX_URL, retries=3, delay=2.0)
+    if not resp:
+        _log.warning("bobdylan_scraper: sitemap index unavailable, using fallback list")
+        return list(_SITEMAP_URLS_FALLBACK)
+    try:
+        root = ElementTree.fromstring(resp.content)
+        urls = [
+            (loc.text or "").strip()
+            for loc in root.findall(".//sm:loc", ns)
+            if "posts-date" in (loc.text or "")
+        ]
+        if urls:
+            _log.info("bobdylan_scraper: sitemap index lists %d date sitemap(s)", len(urls))
+            _set(message=f"Sitemap index: {len(urls)} date sitemap(s) found")
+            return urls
+        _log.warning("bobdylan_scraper: no date sitemaps in index, using fallback list")
+        _set(message="No date sitemaps in index — using fallback list")
+        return list(_SITEMAP_URLS_FALLBACK)
+    except ElementTree.ParseError as exc:
+        _log.error("bobdylan_scraper: sitemap index parse error: %s", exc)
+        _set(message=f"Sitemap index parse error: {exc}")
+        return list(_SITEMAP_URLS_FALLBACK)
+
+
 def fetch_sitemap_urls() -> list[tuple[str, str]]:
     """Fetch all date sitemaps and return a list of (date_str, bobdylan_url).
 
-    date_str is YYYY-MM-DD extracted from the URL slug.  Requires 3 HTTP
-    requests (one per sitemap).
+    Discovers available sitemaps dynamically via the WordPress sitemap index
+    (wp-sitemap.xml) so new sitemaps are picked up automatically as the site grows.
 
     Returns:
         List of (date_str, url) pairs for every show page listed in the sitemaps.
     """
     results: list[tuple[str, str]] = []
     ns = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
-    for sitemap_url in _SITEMAP_URLS:
+    sitemap_urls = _get_date_sitemap_urls()
+    for i, sitemap_url in enumerate(sitemap_urls):
+        _set(message=f"Fetching sitemap {i + 1}/{len(sitemap_urls)}…")
         time.sleep(3.0)  # polite gap between sitemap requests
         resp = _fetch(sitemap_url, retries=5, delay=3.0)
         if not resp:
             _log.error("bobdylan_scraper: failed to fetch sitemap %s", sitemap_url)
+            _set(message=f"Sitemap {i + 1}/{len(sitemap_urls)} failed (404) — skipping")
             continue
         try:
             root = ElementTree.fromstring(resp.content)
@@ -193,10 +232,11 @@ def parse_show_page(html: str) -> dict:
 # ---------------------------------------------------------------------------
 
 def run_discover(db_path: str | None = None) -> int:
-    """Fetch the 3 WordPress sitemaps and upsert bobdylan_shows (URL + date).
+    """Fetch WordPress sitemaps, upsert bobdylan_shows, and reset stale scrapes.
 
-    This is fast — only 3 HTTP requests total.  Show pages are not fetched.
-    Safe to re-run; existing rows are left unchanged (INSERT OR IGNORE).
+    "Stale" means a show was scraped before it happened (scraped_at < date_str),
+    the show date has now passed, and it has no setlist tracks.  These are reset
+    to scraped_at = NULL so run_scrape picks them up again.
 
     Args:
         db_path: Optional override for the SQLite database path.
@@ -218,19 +258,36 @@ def run_discover(db_path: str | None = None) -> int:
         init_write_queue(str(db_path or DB_PATH))
         wq = get_write_queue()
         inserted = 0
+        reset = 0
 
         def _upsert(conn):
-            nonlocal inserted
+            nonlocal inserted, reset
             for date_str, url in pairs:
                 cur = conn.execute(
                     "INSERT OR IGNORE INTO bobdylan_shows(bobdylan_url, date_str) VALUES (?, ?)",
                     (url, date_str),
                 )
                 inserted += cur.rowcount
+            # Reset shows scraped before they happened, now passed, with no setlist.
+            today = time.strftime("%Y-%m-%d")
+            cur = conn.execute(
+                """UPDATE bobdylan_shows SET scraped_at = NULL
+                   WHERE scraped_at IS NOT NULL
+                     AND date_str <= ?
+                     AND scraped_at < date_str
+                     AND NOT EXISTS (
+                         SELECT 1 FROM bobdylan_setlist
+                         WHERE bobdylan_url = bobdylan_shows.bobdylan_url
+                     )""",
+                (today,),
+            )
+            reset = cur.rowcount
 
         wq.execute(_upsert)
+        if reset:
+            _log.info("bobdylan_scraper: reset %d stale show(s) for re-scrape", reset)
         _set(done=len(pairs), status="done", phase="discover",
-             message=f"Discovered {len(pairs)} URLs, {inserted} new", current_url=None)
+             message=f"Discovered {len(pairs)} URLs, {inserted} new, {reset} reset", current_url=None)
         return inserted
 
     except Exception as exc:
@@ -271,7 +328,7 @@ def run_scrape(db_path: str | None = None, force: bool = False) -> int:
                 "SELECT bobdylan_url FROM bobdylan_shows WHERE scraped_at IS NULL ORDER BY date_str"
             ).fetchall()
         urls = [r[0] for r in rows]
-        _set(total=len(urls))
+        _set(total=len(urls), message=f"{len(urls)} show(s) queued for scrape")
         _log.info("bobdylan_scraper: %d show pages to scrape (force=%s)", len(urls), force)
 
         init_write_queue(str(db_path or DB_PATH))

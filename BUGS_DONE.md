@@ -1,6 +1,181 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-209: tapematch run_crawl.sh loops forever on a date with missing sources
+Status: Fixed
+File(s): tools/tapematch/tapematch_session.py:962-977 (run_date), tools/tapematch/gen_analysis.py
+Reported: 2026-06-18
+Fixed: 2026-06-18
+Root cause: run_date() returned rc=3 for a date with sources missing from disk (and
+  --allow-missing not passed) without calling archive_run() or logging to observations.db —
+  unlike the analogous rc=2 "only 1 source" path, which does archive. next_run() (backing
+  run_crawl.sh's --next loop) recomputes its "done" set from observations.db + RUNS_DIR on
+  every invocation, so an unarchived missing-sources date never became "done" and was
+  re-selected as the highest-priority todo item every single loop iteration, forever.
+Fix: run_date() now writes a report.md marked **missing_sources** and calls archive_run() for
+  this case too, mirroring the existing insufficient_sources (rc=2) handling, so the date gets
+  a RUNS_DIR folder and is correctly skipped by --next/--year/--crawl on subsequent runs (delete
+  the run's archive dir to retry once the missing source appears on disk). gen_analysis.py now
+  recognizes the **missing_sources** marker (parse_report/build_analysis/status line) so these
+  archived runs get a clean "missing sources" status instead of being misread. Added
+  tools/tapematch/tests/test_missing_sources.py covering the parse/build path.
+
+BUG-207: rename_history — pipeline renames log a doubled old_path (folder/folder.name)
+Status: Fixed
+File(s): backend/rename.py:57-71 (write_rename_log path computation)
+Reported: 2026-06-17
+Fixed: 2026-06-17
+Root cause: write_rename_log built old_path as str(folder / old_name). When folder_rename()
+  called it with folder_path=folder and old_name=folder.name, this produced
+  /parent/FolderName/FolderName — the name doubled.
+Fix: Detect the "folder_path is the folder itself" convention (old_name == folder.name) and
+  set old_path = str(folder) directly. Also fixed the complementary new_path bug that
+  affected the rename_tab call site (parent_dir convention produced new_path one level too high).
+
+BUG-206: Pipeline — auto-rename after filing leaves my_collection with stale folder path
+Status: Fixed
+File(s): backend/app.py:5802-5813 (folder_rename, after folder.rename())
+Reported: 2026-06-17
+Fixed: 2026-06-17
+Root cause: /api/folder/rename renamed the folder on disk and logged the rename but never
+  updated my_collection, leaving disk_path and folder_name pointing to the old name.
+  Folders opened from Collection screen would fail because the path no longer existed.
+Fix: After folder.rename(new_path) succeeds, query my_collection WHERE disk_path = old path;
+  if a row is found, call database.update_collection() to sync folder_name and disk_path.
+Note: Two affected rows were patched manually on 2026-06-17:
+  LB-16388: /mnt/DYLAN2/Concerts/1974/1974-01-19 Hollywood, FL (LB-16388)
+  LB-15905: /mnt/DYLAN1/LB HOPPER/2023-11-19 Philadelphia, Pennsylvania (LB-15905)
+
+BUG-200: Pipeline Verify tab shows "no checksums" for disc-subfolder layouts
+Status: Fixed
+File(s): backend/checksum_utils.py:537
+Reported: 2026-06-17
+Fixed: 2026-06-17
+Root cause: verify_folder used folder.iterdir() (top-level only) to find checksum sidecar files.
+  Folders with disc subdirectories (disc1/, disc2/ etc.) store checksums inside those subdirs,
+  so they were never found and the folder appeared to have no checksums.
+Fix: Changed to folder.rglob('*') and when a checksum file is found in a subdirectory, bare
+  filenames in its entries are qualified with the subdir prefix (e.g. "song.flac" →
+  "disc1/song.flac") so they match the disk_audio_map keys.
+
+BUG-199: tapematch — prep_analysis_input.py misreads truncated LB numbers in report.md commentary, pulls in unrelated info files
+Status: Fixed
+File(s): tools/tapematch/prep_analysis_input.py:36-76
+Reported: 2026-06-17
+Fixed: 2026-06-17
+Root cause: report.md truncates long commentary/audit snippets with an ellipsis ("…" or
+  "..."). When truncation lands mid multi-digit LB number (e.g. "...sennheiser LB-4794…"
+  cut to "LB-47…"), lb_numbers_in_report()'s regex (\bLB-(\d+)\b) matched the truncated
+  digits as a complete, distinct LB number — "47" zero-padded to "00047" — and pulled in
+  that LB's unrelated info file (a 2000-09-23 Cardiff show spliced into the 1998-06-24
+  Birmingham bundle). Found while writing tapematch-batch analysis.md entries. A repo-wide
+  scan of all 923 run dirs under data/tapematch/runs/ found exactly 2 where this actually
+  pulled a wrong file: 20260615_170155_1998-06-24 (→ LB-00047) and 20260616_231225_1990-10-26
+  (→ LB-00090). The first already has analysis.md, written with the contamination correctly
+  noticed and excluded by the writer rather than used in the verdict; the second had only a
+  stale analysis_input.md bundle (no analysis.md yet), now regenerated clean. No other run
+  dirs were affected — most other candidates the old broader regex would also flag turned
+  out to be legitimate, untruncated cross-references (e.g. "see 7/26/88 LB-7841 for info as
+  part of that set", matrix/remix lineage notes like "Lineage: LB-2337+LB-10411") that are
+  useful context and should still be pulled in.
+Fix: Added a negative lookahead to LB_TAG_RE so it no longer matches an LB number immediately
+  followed by "…" or "..." (rather than restricting extraction to just the Coverage table,
+  which would also have dropped the legitimate cross-references above). Verified against
+  both true-positive contamination cases (now excluded) and several true-negative legitimate-
+  reference cases (still included).
+
+BUG-192: Windows — test_batch_verify.py and tools/batch_verify.py not runnable on Windows (termios)
+Status: Fixed
+File(s): tools/batch_verify.py:36-42
+Reported: 2026-06-15
+Fixed: 2026-06-16
+Root cause: tools/batch_verify.py imported termios and tty at module level. Both are Unix-only
+  stdlib modules; their absence on Windows raised ModuleNotFoundError during import, blocking
+  pytest collection of test_batch_verify.py entirely.
+Fix: Replaced module-level imports with a guarded try/except block that sets _HAS_TERMIOS=True/False.
+  _KeyboardController.start() checks _HAS_TERMIOS before attempting terminal setup; stop() guards
+  the tcsetattr call the same way. The module is now importable on Windows and the keyboard
+  controller degrades gracefully (same as when stdin is not a TTY).
+
+BUG-187: Full pytest run is order-dependent — global bloom filter leaks between test DBs
+Status: Fixed
+File(s): backend/db.py:25 (_bloom/_bloom_db_path globals), backend/db.py:936 (rebuild_bloom), backend/db.py:1448 (lookup_checksums)
+Reported: 2026-06-15
+Fixed: 2026-06-16
+Root cause: init_db() spawns a daemon thread that calls rebuild_bloom(db_path), overwriting the
+  process-global _bloom filter. When multiple tests each call init_db() with their own temp DB,
+  the background rebuild from one test could overwrite _bloom with checksums from a different
+  (unrelated) temp DB. lookup_checksums() then used this stale filter to short-circuit lookups,
+  treating valid checksums as definite misses. TestLookupChecksumsSnhCompleteness failed
+  intermittently depending on which background thread finished last.
+Fix: Added _bloom_db_path global (set alongside _bloom in rebuild_bloom). lookup_checksums()
+  reads both under _bloom_lock and only uses the filter if _bloom_db_path matches the active
+  db_path; otherwise all entries are treated as candidates and fall through to SQLite. No change
+  to production behavior (single DB path, so bloom always matches).
+
+BUG-198: Pipeline — folder_rename has TOCTOU race under concurrent rename requests
+Status: Fixed
+File(s): backend/app.py:5757-5786 (folder_rename route)
+Reported: 2026-06-15
+Fixed: 2026-06-16
+Root cause: The `/api/pipeline/folder/rename` route checks `new_path.exists()` and then
+  calls `folder.rename(new_path)` as two separate non-atomic operations. Under Flask's
+  default threaded mode, two concurrent rename requests for different source folders that
+  both resolve to the same `new_path` can both pass the `exists()` check before either
+  has called `rename()`, causing the second call to raise `FileExistsError`/`OSError`.
+  The backend then returned 500 instead of a structured conflict response.
+Fix: Added inner try/except around `folder.rename(new_path)` that catches
+  `FileExistsError`/`OSError` and returns 409 `{error: "Target already exists: <name>"}`.
+  The pre-existing `if new_path.exists()` guard is retained as the fast path; the new
+  catch handles the race window between that check and the actual rename call.
+
+BUG-197: Pipeline — multiple simultaneous "Running" rows for the same show during bulk auto-rename
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenPipeline.tsx:1628-1647
+Reported: 2026-06-15
+Fixed: 2026-06-16
+Root cause: The auto-rename effect fired `void applyRename(r)` for ALL rename candidates
+  simultaneously via `candidates.forEach(...)` — no await, no serial queue. Each call
+  immediately set `running: true` on its row before any network round-trip. When BUG-196's
+  scan-tree shallow mode added both the parent folder AND every child disc-folder of a
+  multi-disc concert, all rows became rename candidates at once, causing 5–10 identical-looking
+  "Running - In progress" rows simultaneously. Confirmed by 2026-06-15 screenshots
+  (5× Stuttgart LB-16264, ~10× Prague LB-16201).
+Fix: Replaced the `forEach` with a sequential async IIFE (`for...of` + `await applyRename(r)`)
+  so only one row is in the Running state at a time. The `autoRenamedRef.current.add(r.id)`
+  before the await prevents double-processing if the effect re-fires while the loop is in
+  progress.
+
+BUG-196: Pipeline — scan-tree shallow mode adds parent folder AND all child folders, duplicating multi-disc sets
+Status: Fixed
+File(s): backend/app.py:5815-5820 (pipeline_scan_tree)
+Reported: 2026-06-15
+Fixed: 2026-06-16
+Root cause: When `shallow=True`, `pipeline_scan_tree` checked `_has_audio(root)` and if
+  true appended `root` to `found`, then unconditionally iterated all children and appended
+  any child dir that `_has_audio_anywhere()`. If the root folder also contained a direct
+  audio file (flat rip with mirror/extras subfolders), both the root AND every child
+  disc-folder were added to the queue, producing 4–11 pipeline rows for what the user
+  intended as one concert entry.
+Fix: Store `root_has_audio = _has_audio(root)` once and only iterate children when
+  `not root_has_audio`. When root has direct audio, only root is returned.
+
+BUG-195: Pipeline — virtualizer fixed estimateSize causes blank space between sections
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenPipeline.tsx:1407-1412,
+  gui_next/src/renderer/src/components/table.tsx:103-127,181-211
+Reported: 2026-06-15
+Fixed: 2026-06-16
+Root cause: The virtualizer was configured with `estimateSize: () => 38` and no
+  `measureElement` callback. Running rows displaying the `FileProgressBar` are ~70–80 px
+  tall; the underestimate caused incorrect scroll offset calculations and blank space
+  between the Running section and the next section header.
+Fix: Added `measureElement: (el) => el?.getBoundingClientRect().height ?? 38` to the
+  virtualizer config. Converted TR and GroupRow in components/table.tsx to
+  `React.forwardRef`. Each rendered virtual item now uses a ref callback that stamps
+  `node.dataset.index = String(vItem.index)` then calls `virtualizer.measureElement(node)`
+  so TanStack Virtual uses actual DOM heights for all position calculations.
+
 BUG-194: dbedit /rows endpoint: negative limit bypasses 500-row cap, returns unlimited rows
 Status: Fixed
 File(s): backend/app.py:dbedit_rows (~2784)

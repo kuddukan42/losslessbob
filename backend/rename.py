@@ -54,9 +54,21 @@ def write_rename_log(
     except OSError as exc:
         logger.warning("Could not write rename_log.txt in %s: %s", folder, exc)
 
-    # Insert into rename_history table
-    old_path = str(folder / old_name) if old_name != str(folder) else str(folder)
-    new_path = str(folder.parent / new_name) if old_name != new_name else str(folder)
+    # Insert into rename_history table.
+    # Two calling conventions exist:
+    #   A) folder_path = the folder being renamed  →  old_name == folder.name
+    #   B) folder_path = the parent directory       →  old_name is just the child name
+    # old_path: if old_name is the last component of folder_path, folder IS the old path.
+    if old_name == str(folder) or old_name == folder.name:
+        old_path = str(folder)
+    else:
+        old_path = str(folder / old_name)
+    # new_path: always parent_of_old / new_name.
+    if old_name != new_name:
+        parent = folder.parent if (old_name == folder.name) else folder
+        new_path = str(parent / new_name)
+    else:
+        new_path = str(folder)
     try:
         db.add_rename_history(
             lb_number=lb_number,

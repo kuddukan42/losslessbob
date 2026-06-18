@@ -73,6 +73,10 @@
         "scraping_bootlegs": "Scraping bootlegs in corso…",
         "scanning": "Scansione della collezione…",
         "filing": "Archiviazione cartella…",
+        "crawling": "Scansione del sito…",
+        "bobdylan_scraping": "Scraping di bobdylan.com…",
+        "setlistfm_syncing": "Sincronizzazione setlist.fm…",
+        "geocoding": "Geocodifica…",
         "updating_app": "Aggiornamento dell'app…",
         "downloading_data": "Download dei dati…"
       }
@@ -173,7 +177,7 @@
       "filename": "Nome del file",
       "type": "Tipo",
       "xref": "Xref",
-      "open": "Aperto",
+      "open": "Apri su LB Website",
       "addWishlist": "+WL"
     },
     "states": {
@@ -426,6 +430,7 @@
       "qbtSyncFailed": "Archiviato, ma l'aggiornamento del percorso di salvataggio di qBittorrent non è riuscito: {{error}}",
       "busy": "È già in corso un'operazione di archiviazione — attendere il completamento",
       "jobMismatch": "Lo stato dell'archiviazione è stato rilevato da un'altra operazione — controllare il risultato in La mia collezione",
+      "renamePending": "Applicare prima la ridenominazione — questa cartella non può essere archiviata mentre è in attesa una ridenominazione.",
       "progress": {
         "scanning": "Scansione…",
         "copying": "Copia…",
@@ -455,7 +460,11 @@
       "ownedYes": "Posseduto",
       "ownedNo": "Non in collezione",
       "notConfirmed": "Non ancora confermato",
-      "valueUnassigned": "Non assegnato"
+      "valueUnassigned": "Non assegnato",
+      "alreadyInCollectionTitle": "Già nella collezione",
+      "alreadyInCollectionBody": "Questa registrazione è già registrata nella tua collezione in {{path}}. L'archiviazione sposterà la cartella nella nuova posizione e aggiornerà il record della collezione.",
+      "renamePendingTitle": "Ridenominazione richiesta prima dell'archiviazione",
+      "renamePendingBody": "Questa cartella ha una ridenominazione non applicata. Passa al passaggio Rinomina e applicala prima di archiviare."
     }
   },
   "collection": {

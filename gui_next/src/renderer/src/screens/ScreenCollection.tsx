@@ -2098,7 +2098,8 @@ export function ScreenCollection(): React.JSX.Element {
         !r.lbNumber.toLowerCase().includes(q) &&
         !r.location.toLowerCase().includes(q) &&
         !r.folder.toLowerCase().includes(q) &&
-        !r.date.includes(q)
+        !r.date.includes(q) &&
+        !r.diskPath.toLowerCase().includes(q)
       ) return false
     }
     return true
@@ -2536,12 +2537,6 @@ export function ScreenCollection(): React.JSX.Element {
     } catch { showToast(t('collection.toast.spectrogramRequestFailed'), 'bad') }
   }, [showToast, addPendingSpectro, navigate])
 
-  const handleCtxSendTo = useCallback((row: CollectionRow, route: string) => {
-    if (!row.diskPath) return
-    addToFolderQueue([row.diskPath])
-    navigate(route)
-  }, [addToFolderQueue, navigate])
-
   // Returns rows to act on from a right-click: all checked rows if the clicked row is checked, else just that row.
   const getCtxRows = useCallback((row: CollectionRow): CollectionRow[] => {
     if (checkedIds.size > 0 && checkedIds.has(row.lbNumber)) {
@@ -2549,6 +2544,13 @@ export function ScreenCollection(): React.JSX.Element {
     }
     return [row]
   }, [checkedIds, rows])
+
+  const handleCtxSendTo = useCallback((row: CollectionRow, route: string) => {
+    const targets = getCtxRows(row).filter(r => r.diskPath)
+    if (targets.length === 0) return
+    addToFolderQueue(targets.map(r => r.diskPath))
+    navigate(route)
+  }, [getCtxRows, addToFolderQueue, navigate])
 
   const handleCtxCreateTorrent = useCallback(async (row: CollectionRow) => {
     const targets = getCtxRows(row).filter(r => r.diskPath)
@@ -3425,6 +3427,15 @@ export function ScreenCollection(): React.JSX.Element {
           onClose={() => setCtxMenu(null)}
           items={[
             {
+              label: 'Select All Visible',
+              action: () => setCheckedIds(prev => {
+                const next = new Set(prev)
+                sortedFilteredRows.forEach(r => next.add(r.lbNumber))
+                return next
+              }),
+            },
+            'sep',
+            {
               label: 'Open Folder',
               disabled: !ctxMenu.row.diskPath,
               action: () => handleCtxOpenFolder(ctxMenu.row),
@@ -3469,7 +3480,9 @@ export function ScreenCollection(): React.JSX.Element {
             },
             {
               label: 'Send to →',
-              disabled: !ctxMenu.row.diskPath,
+              disabled: (checkedIds.size > 0 && checkedIds.has(ctxMenu.row.lbNumber))
+                ? !rows.some(r => checkedIds.has(r.lbNumber) && r.diskPath)
+                : !ctxMenu.row.diskPath,
               children: [
                 { label: 'Pipeline', action: () => handleCtxSendTo(ctxMenu.row, '/pipeline') },
                 { label: 'Verify',   action: () => handleCtxSendTo(ctxMenu.row, '/verify') },

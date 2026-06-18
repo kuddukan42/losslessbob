@@ -257,6 +257,9 @@ export function QueueRow({ folder, active, onClick }: QueueRowProps) {
   const bucket = folder.bucket ?? 'needs'
   const b = BUCKET[bucket]
   const name = folder.folderName ?? folder.folder.split('/').pop() ?? folder.folder
+  const hasBlocked = Object.values(folder.steps).some(s => s.state === 'blocked')
+  const tone = hasBlocked ? 'bad' : b.tone
+  const statusLabel = hasBlocked ? 'Blocked' : b.label
   return (
     <button
       onClick={onClick}
@@ -272,16 +275,16 @@ export function QueueRow({ folder, active, onClick }: QueueRowProps) {
       onMouseLeave={e => { if (!active) e.currentTarget.style.background = 'transparent' }}
     >
       <span style={{ width: 8, height: 8, borderRadius: 2,
-        background: `var(--lbb-${b.tone}-bar)`, flex: '0 0 8px' }} />
+        background: `var(--lbb-${tone}-bar)`, flex: '0 0 8px' }} />
       <span style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', gap: 2 }}>
         <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 11,
           whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
           color: active ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg)' }}>{name}</span>
-        <span style={{ fontSize: 10, color: `var(--lbb-${b.tone}-fg)`,
+        <span style={{ fontSize: 10, color: `var(--lbb-${tone}-fg)`,
           fontWeight: 600, letterSpacing: 0.02 }}>
           {bucket === 'running' && folder.progress
             ? `Verifying ${folder.progress.done}/${folder.progress.total}…`
-            : folder.lb ? `${b.label} · ${folder.lb}` : b.label}
+            : folder.lb ? `${statusLabel} · ${folder.lb}` : statusLabel}
         </span>
       </span>
     </button>

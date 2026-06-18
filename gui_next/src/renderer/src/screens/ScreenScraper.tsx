@@ -1006,15 +1006,13 @@ function ScreenScraperInner() {
 
     if (bd) {
       setBobdylanStatus(bd)
-      if (bd.status === 'running') {
-        if (bd.current_url && bd.current_url !== p.bdUrl) {
-          const shortUrl = (bd.current_url as string).replace('https://www.bobdylan.com', '')
-          pushLog('bobdylan', `${(bd.phase || 'scraping').padEnd(10)} ${shortUrl}`)
-          p.bdUrl = bd.current_url
-        } else if (bd.message && bd.message !== p.bdMsg) {
-          pushLog('bobdylan', bd.message)
-          p.bdMsg = bd.message
-        }
+      if (bd.status === 'running' && bd.current_url && bd.current_url !== p.bdUrl) {
+        const shortUrl = (bd.current_url as string).replace('https://www.bobdylan.com', '')
+        pushLog('bobdylan', `${(bd.phase || 'scraping').padEnd(10)} ${shortUrl}`)
+        p.bdUrl = bd.current_url
+      } else if (bd.message && bd.message !== p.bdMsg) {
+        pushLog('bobdylan', bd.message, bd.status === 'error' ? 'bad' : undefined)
+        p.bdMsg = bd.message
       }
     }
     if (bdSt) setBobdylanStats({ total: bdSt.total, scraped: bdSt.scraped, last: '—' })

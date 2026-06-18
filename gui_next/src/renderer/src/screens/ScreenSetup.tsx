@@ -20,6 +20,10 @@ interface HelperStatus {
   ffmpeg_available: boolean
   shntool_available: boolean
   flac_available: boolean
+  ffmpeg_install_hint: string | null
+  sox_install_hint: string | null
+  flac_install_hint: string | null
+  shntool_install_hint: string | null
 }
 
 interface AppSettings {
@@ -472,31 +476,46 @@ function HelpersStrip({
   onRecheck: () => void
 }) {
   const items = [
-    { name: 'shntool', ok: helpers?.shntool_available ?? false },
-    { name: 'flac',    ok: helpers?.flac_available    ?? false },
-    { name: 'ffmpeg',  ok: helpers?.ffmpeg_available  ?? false },
-    { name: 'sox',     ok: helpers?.sox_available     ?? false },
+    { name: 'shntool', ok: helpers?.shntool_available ?? false, hint: helpers?.shntool_install_hint ?? null },
+    { name: 'flac',    ok: helpers?.flac_available    ?? false, hint: helpers?.flac_install_hint    ?? null },
+    { name: 'ffmpeg',  ok: helpers?.ffmpeg_available  ?? false, hint: helpers?.ffmpeg_install_hint  ?? null },
+    { name: 'sox',     ok: helpers?.sox_available     ?? false, hint: helpers?.sox_install_hint     ?? null },
   ]
+  const missingWithHints = items.filter(h => !h.ok && h.hint)
 
   return (
     <div style={{
       background: 'var(--lbb-surface2)', borderRadius: 6, padding: '8px 12px',
-      display: 'flex', alignItems: 'center', gap: 16, marginTop: 14,
+      marginTop: 14,
     }}>
-      <span style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)', flex: 1, display: 'flex', gap: 14 }}>
-        {items.map((h) => (
-          <span key={h.name} style={{ display: 'inline-flex', alignItems: 'center', gap: 5 }}>
-            <span style={{
-              width: 7, height: 7, borderRadius: '50%', flexShrink: 0,
-              background: helpers == null
-                ? 'var(--lbb-border2)'
-                : h.ok ? 'var(--lbb-ok-bar)' : 'var(--lbb-warn-bar)',
-            }} />
-            {h.name}
-          </span>
-        ))}
-      </span>
-      <Button variant="ghost" size="sm" icon="refresh" onClick={onRecheck}>Re-check</Button>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+        <span style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)', flex: 1, display: 'flex', gap: 14 }}>
+          {items.map((h) => (
+            <span key={h.name} style={{ display: 'inline-flex', alignItems: 'center', gap: 5 }}>
+              <span style={{
+                width: 7, height: 7, borderRadius: '50%', flexShrink: 0,
+                background: helpers == null
+                  ? 'var(--lbb-border2)'
+                  : h.ok ? 'var(--lbb-ok-bar)' : 'var(--lbb-warn-bar)',
+              }} />
+              {h.name}
+            </span>
+          ))}
+        </span>
+        <Button variant="ghost" size="sm" icon="refresh" onClick={onRecheck}>Re-check</Button>
+      </div>
+      {missingWithHints.length > 0 && (
+        <div style={{ marginTop: 7, display: 'flex', flexDirection: 'column', gap: 3 }}>
+          {missingWithHints.map((h) => (
+            <div key={h.name} style={{
+              fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)',
+              fontFamily: 'var(--lbb-mono)',
+            }}>
+              <span style={{ color: 'var(--lbb-warn-bar)' }}>↳</span> {h.name}: {h.hint}
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   )
 }

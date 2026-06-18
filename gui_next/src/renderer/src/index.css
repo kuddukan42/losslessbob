@@ -135,3 +135,43 @@ table tbody tr:hover td {
 .p2-spin {
   animation: p2-spin 0.8s linear infinite;
 }
+
+/* Framed-card separation (shared) — ported from design handoff app.css.
+   Inert by default (flush look, no effect on existing screens); [data-sep="framed"]
+   lifts rail/table/detail into elevated cards on a gutter. Components read these
+   --sep-* tokens via var(..., fallback) so this is purely additive — nothing consumes
+   them yet (the unified Library screen, not yet built, will). The reference CSS scopes
+   these to a #frame wrapper element that doesn't exist in this app; data-mode/data-sep
+   are both set on document.documentElement by applyTheme(), so the selectors below
+   target :root instead. */
+[data-sep="framed"] {
+  --sep-body-bg:    var(--lbb-bg);
+  --sep-body-gap:   12px;
+  --sep-body-pad:   14px;
+  --sep-rail-bg:    var(--lbb-surface);
+  --sep-detail-bg:  var(--lbb-surface);
+  --sep-table-bg:   var(--lbb-surface);
+  --sep-chrome-bg:  var(--lbb-surface);
+  --sep-summary-bg: var(--lbb-surface);
+  --sep-radius:     12px;
+  --sep-rail-edge:   transparent;
+  --sep-detail-edge: transparent;
+  --sep-rail-bw:     0px;
+  --sep-detail-bw:   0px;
+
+  --sep-ring: 0 0 0 1px var(--lbb-border);
+  --sep-lift: 0 10px 28px rgba(0,0,0,0.22);
+  --sep-top:  inset 0 1px 0 rgba(255,255,255,0.06);
+
+  --sep-rail-shadow:   var(--sep-ring), var(--sep-lift), var(--sep-top);
+  --sep-detail-shadow: var(--sep-ring), var(--sep-lift), var(--sep-top);
+  --sep-table-shadow:  var(--sep-ring), var(--sep-lift), var(--sep-top);
+}
+:root[data-mode="dark"][data-sep="framed"] {
+  --sep-lift: 0 14px 34px rgba(0,0,0,0.52);
+  --sep-top:  inset 0 1px 0 rgba(255,255,255,0.07);
+}
+:root[data-mode="light"][data-sep="framed"] {
+  --sep-lift: 0 10px 26px rgba(40,30,15,0.14);
+  --sep-top:  inset 0 1px 0 rgba(255,255,255,0.85);
+}

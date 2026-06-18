@@ -33,10 +33,14 @@ import re
 import select
 import sqlite3
 import sys
-import termios
 import threading
 import time
-import tty
+try:
+    import termios
+    import tty
+    _HAS_TERMIOS = True
+except ImportError:
+    _HAS_TERMIOS = False
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -790,7 +794,7 @@ class _KeyboardController:
         self._active = False
 
     def start(self) -> None:
-        if not sys.stdin.isatty():
+        if not sys.stdin.isatty() or not _HAS_TERMIOS:
             return
         try:
             fd = sys.stdin.fileno()
@@ -809,7 +813,7 @@ class _KeyboardController:
 
     def stop(self) -> None:
         self._active = False
-        if self._old_settings is not None:
+        if _HAS_TERMIOS and self._old_settings is not None:
             try:
                 termios.tcsetattr(sys.stdin.fileno(), termios.TCSADRAIN, self._old_settings)
             except Exception:

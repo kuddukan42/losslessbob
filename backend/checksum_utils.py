@@ -534,13 +534,22 @@ def verify_folder(folder_path):
     expected = {}  # filename -> {hash_type: hash_value}
     has_ffp = has_md5 = has_shntool_entries = False
 
-    for cf in sorted(folder.iterdir()):
+    for cf in sorted(folder.rglob('*')):
+        if not cf.is_file():
+            continue
         ext = cf.suffix.lower()
         if ext not in ('.ffp', '.md5', '.st5'):
             continue
+        # When the checksum file lives in a subdirectory (e.g. disc1/),
+        # bare filenames in its entries need to be qualified so they match
+        # the disc1/song.flac keys in disk_audio_map.
+        cf_rel = cf.parent.relative_to(folder).as_posix()
+        subdir_prefix = '' if cf_rel == '.' else cf_rel + '/'
         for fname, htype, hval in _parse_checksum_file(cf):
             # Normalise Windows backslash paths to posix so they match disk_audio_map keys
             fname = fname.replace('\\', '/')
+            if subdir_prefix and '/' not in fname:
+                fname = subdir_prefix + fname
             if fname not in expected:
                 expected[fname] = {}
             if ext == '.st5':

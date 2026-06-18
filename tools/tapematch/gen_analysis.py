@@ -54,6 +54,7 @@ def parse_report(path: Path) -> dict:
         "lb_commentary": {},   # lb_id -> {header, text}
         "has_error": False,
         "insufficient_sources": False,
+        "missing_sources": False,
         "n_families": 0,
         "clusters": [],        # {id, members, intra_corr, low_conf, secondary}
         "secondary_pairs": [], # (lb_a, lb_b)
@@ -107,6 +108,10 @@ def parse_report(path: Path) -> dict:
     # Insufficient sources (run_date marks these instead of running tapematch)?
     if re.search(r'\*\*insufficient_sources\*\*', text):
         r["insufficient_sources"] = True
+
+    # Sources missing from disk and --allow-missing wasn't passed?
+    if re.search(r'\*\*missing_sources\*\*', text):
+        r["missing_sources"] = True
 
     # Clusters
     cl_m = re.search(r'=== CLUSTERS ===\n(.*?)(?:===|$)', out, re.DOTALL)
@@ -452,6 +457,24 @@ def build_analysis(run_dir: Path, r: dict, results: dict) -> str:
                       "Not an error; no action required.")
         return "\n".join(lines)
 
+    # ── Missing sources ───────────────────────────────────────────────────
+    if r["missing_sources"]:
+        lines.append("## Status: missing sources — tapematch not run")
+        lines.append("")
+        lines.append(f"Coverage: {r['coverage_db']} DB / {r['coverage_disk']} on disk "
+                      "(after excluding private/no-torrent and no-audio folders)")
+        lines.append("")
+        if r["sources"]:
+            lines.append("| LB | Rating | Timing | Source |")
+            lines.append("|----|--------|--------|--------|")
+            for src in r["sources"]:
+                marker = "✓" if src["on_disk"] else "—"
+                lines.append(f"| {src['lb']} {marker} | {src['rating']} | {src['timing']} | {src['source_brief']} |")
+        lines.append("")
+        lines.append("Run skipped because one or more DB-listed sources aren't on disk and "
+                      "--allow-missing wasn't passed. Not an error; no action required.")
+        return "\n".join(lines)
+
     # ── Error ──────────────────────────────────────────────────────────────
     if r["has_error"]:
         lines.append("## Status: ERROR — tapematch did not complete")
@@ -632,6 +655,8 @@ def main() -> None:
                 status = "ERROR"
             elif r["insufficient_sources"]:
                 status = f"insufficient_sources/{r['coverage_disk']}src"
+            elif r["missing_sources"]:
+                status = f"missing_sources/{r['coverage_disk']}src"
             else:
                 status = f"{r.get('n_families','?')}fam/{r['coverage_disk']}src"
             print(f"  ✓  {date_str}  [{status}]  {run_dir.name}")

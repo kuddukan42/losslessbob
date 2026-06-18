@@ -183,6 +183,7 @@ Unique index on `(checksum, lb_number)`.
 | taper_name | TEXT | Parsed taper handle/name (via `extract_taper_and_source`) |
 | source_chain | TEXT | Parsed recording equipment chain (via `extract_taper_and_source`) |
 | lb_category | TEXT | Entry category: `'concert'`, `'interview'`, `'studio'`, `'compilation'`, `'tv'`, `'radio'`, `'rehearsal'`, `'soundcheck'`, `'other'`, `'unknown'`. Populated via `classify_entry_categories()`. |
+| source_type | TEXT | Curator-edited source type: `'Soundboard'`, `'Audience'`, `'FM/Pre-FM'`, `'Master'`, `'Mixed'` (SBD/AUD/FM/MST/MTX badge in the Library screen). NULL until a curator sets it — never heuristically parsed or backfilled. |
 
 ### `entry_files` — Attachment files per entry
 | Column | Type | Notes |
@@ -329,7 +330,7 @@ so all users receive the same reference dataset when installing a master update.
 |--------|------|-------|
 | event_id | TEXT PK | e.g. `'1962092201'` (YYYYMMDDNN) |
 | date_str | TEXT | ISO date from ODS, e.g. `'1962-09-22'` |
-| category | TEXT | `HOME`, `NET`, `MCONCERT`, `RADIO`, etc. |
+| category | TEXT | `HOME`, `NET` (Never Ending Tour era, not "internet"), `MCONCERT`, `GUEST` (other artist's show), `SIDEMAN`, `RADIO`, etc. — see `_PERF_CATEGORY_MAP` in `db.py` for which map to `entries.lb_category` |
 | city | TEXT | City name |
 | state | TEXT | State/province code |
 | country | TEXT | Country code (e.g. `USA`) |
@@ -338,6 +339,44 @@ so all users receive the same reference dataset when installing a master update.
 
 Indexes: `idx_perf_date`, `idx_perf_category`, `idx_perf_country`.
 Queried via `GET /api/performances?lb=<n>` or `?date=YYYY-MM-DD`.
+
+### `recording_families` / `tapematch_family_meta` — TapeMatch family clustering (MASTER tables)
+Synced from `tools/tapematch/observations.db` via `backend/tapematch_sync.py:sync_tapematch_families()`,
+triggered manually via `POST /api/tapematch/sync` (not run at startup). Groups circulating LB#
+recordings of the same show that are the same master tape transferred multiple times. Singletons
+(family of one) are excluded — those recordings fall through to the no-families fallback. `fam_id`
+is deterministic (`"{concert_date}#" + "-".join(sorted member lb_numbers)`), not tied to tapematch's
+own run-scoped `family_id` integer, so re-syncs never silently repoint an existing `fam_id` at a
+different recording set. See `instructions/design_handoff_unified_library/07-tapematch-backend-integration.md`.
+| Column (`recording_families`) | Type | Notes |
+|--------|------|-------|
+| lb_number | INTEGER PK | |
+| fam_id | TEXT NOT NULL | Deterministic, see above |
+| concert_date | TEXT NOT NULL | ISO date |
+| run_id | TEXT | tapematch run that produced this membership |
+| imported_at | TIMESTAMP | |
+
+| Column (`tapematch_family_meta`) | Type | Notes |
+|--------|------|-------|
+| fam_id | TEXT PK | |
+| concert_date | TEXT NOT NULL | |
+| label | TEXT | Auto-generated `"Family A"`/`"Family B"`/… by member_count desc |
+| label_override | TEXT | Reserved for a future curator-naming UI; never touched by sync upserts |
+| by | TEXT NOT NULL | `'ai'`, bumped to `'ai+lb'` if the LB page text corroborates the grouping |
+| conf | REAL | Mean pairwise correlation within the family |
+| note | TEXT | Unused (NULL) in this pass |
+| member_count | INTEGER NOT NULL | |
+| run_id | TEXT | |
+| imported_at | TIMESTAMP | |
+
+Exposed flat (no clustering logic client-side) via `GET /api/tapematch/families` →
+`[{lb_number, fam_id, fam_label, fam_conf, fam_by, concert_date}]`, merged client-side by
+`lb_number` rather than joined into `/api/search`.
+
+Sync trigger: manual only, two equivalent entry points — `POST /api/tapematch/sync` (needs the
+Flask backend up) or `.venv/bin/python3 -m backend.tapematch_sync` (standalone CLI, no backend
+needed). The latter is wired as the final step of the `/tapematch-batch` skill
+(`.claude/commands/tapematch-batch.md`), run once a batch of analysis write-ups is done.
 
 ### `lb_problems` — Known problems with specific LB entries (MASTER table)
 Curator-authored table for flagging LB entries with known issues (bad checksums,
@@ -604,6 +643,17 @@ scheduled scan interval, checked hourly by `scheduler._integrity_scan_worker`.
 |--------|-------|-------------|
 | GET | `/api/performances` | Query `dylan_performances`. Params: `date` (YYYY-MM-DD), `lb` (int — resolved via entries.date_str), `category`, `limit` (default 200), `offset`. Returns list of `{event_id, date_str, category, city, state, country, venue}`. |
 
+### TapeMatch Family Sync
+| Method | Route | Description |
+|--------|-------|-------------|
+| POST | `/api/tapematch/sync` | Ingests `tools/tapematch/observations.db` into `recording_families`/`tapematch_family_meta` via `tapematch_sync.sync_tapematch_families()`. Manual trigger only. Returns `{ok, dates_processed, families_written, recordings_linked, errors}`. |
+| GET | `/api/tapematch/families` | Flat list for client-side merge by `lb_number`. Returns `[{lb_number, fam_id, fam_label, fam_conf, fam_by, concert_date}]`. |
+
+### Library — Performance/Show Grouping
+| Method | Route | Description |
+|--------|-------|-------------|
+| GET | `/api/library/performances` | `db.get_performances()` — groups `entries` by raw `(date_str, location)` into shows for the Library screen's performance lens (TODO-150 step 5). `lb_category = 'concert'` entries are always grouped — as of TODO-151 (2026-06-18) this includes dates only known via `dylan_performances` category `GUEST` (guest spot at another artist's show) or `NET` (Never Ending Tour era), both now mapped to `'concert'` in `_PERF_CATEGORY_MAP`; when `bobdylan_shows` has no row for the date, `venue` falls back to `dylan_performances.venue`. `lb_category = 'unknown'` entries are ALSO grouped when they have a fully-specified date + non-blank location, flagged `confirmed: false` (degraded fallback for whatever `dylan_performances` still doesn't cover, e.g. category `FILM` — ~19 shows after the GUEST/NET fix, down from 198). Other non-concert categories (radio/tv/interview/studio/etc.) and bare 'unknown' rows (no date or no location) stay recording-lens-only. Cross-references `bobdylan_shows` (venue/setlist key/track count), `dylan_performances` (venue fallback), `setlistfm_shows` (tour), `bootleg_titles` (release title). Returns `[{id, date, disp, year, venue, city, status, recordings: [{lb, lbNumber, src, rating, status}], dow?, tour?, setlist?, tracks?, title?, confirmed?}]` — optional keys omitted (not null-faked) when no source data exists; `confirmed` omitted (true by default) except `false` on degraded unknown-only rows. TapeMatch family data is **not** joined in; the GUI merges `/api/tapematch/families` client-side by `lb_number`, same pattern as `/api/collection/prefetch`. |
+
 ### LB Problems (known issues with LB entries)
 | Method | Route | Description |
 |--------|-------|-------------|
@@ -689,7 +739,7 @@ scheduled scan interval, checked hourly by `scheduler._integrity_scan_worker`.
 | POST | `/api/collection/delete_bulk` | Remove specific entries from My Collection. Body: `{lb_numbers:[...]}`. Returns `{ok, deleted}`. |
 | GET | `/api/collection/audit` | Cross-check my_collection against checksums table. Returns `{total, missing_checksums, entries:[{lb_number, folder_name, disk_path, date_str, location, lb_status}]}` for entries with no checksum rows. |
 | GET | `/api/collection/export/html` | Download My Collection as a self-contained HTML table. Returns `collection.html` attachment. |
-| GET | `/api/collection/export/m3u` | Download My Collection as an M3U playlist of audio files. Walks each entry's `disk_path`; skips missing folders. Returns `collection.m3u` attachment. |
+| GET | `/api/collection/export/m3u` | Download My Collection (or a subset) as an M3U playlist of audio files. Walks each entry's `disk_path`; skips missing folders. Optional `?lb_numbers=1,2,3` restricts the export (used by the Library performance lens's "Export show as M3U" action, TODO-150 step 9 follow-up) — returns `show.m3u` when filtered, `collection.m3u` for the full export. |
 
 ### Collection Routing & Pipeline Filing (Step 5)
 | Method | Route | Description |
@@ -1318,8 +1368,9 @@ Second-generation GUI (primary, merged into main 2026-05-29) built with **Electr
 | ScreenMounts | `screens/ScreenMounts.tsx` | Done — storage mounts, year routing, filing mode, preview tester (split out of ScreenSetup) |
 | ScreenCollection | `screens/ScreenCollection.tsx` | Done — sortable columns, wishlist, forum, torrents, duplicates, batch actions |
 | ScreenSearch | `screens/ScreenSearch.tsx` | Done — virtual table, sort, group-by-year, CSV export, column picker, saved views |
+| ScreenLibrary | `screens/ScreenLibrary.tsx`, `components/library/actions.tsx`, `components/library/DetailPanel.tsx` | In progress (TODO-150) — "By performance \| By recording" lens toggle (defaults to performance). Both lenses share the same merged `RecordingRow[]` (from `/api/search` + `/api/collection/prefetch`); the performance lens additionally fetches `/api/library/performances` + `/api/tapematch/families` and groups recordings by show → TapeMatch family → member. Each lens has its own facet rail and virtual year-grouped table. Right-click context menu and a checkbox bulk-select bar (recording lens: Create torrent/Add to qBittorrent/Update location/Remove) are wired in via `actions.tsx`'s shared registry. Selecting a row opens a zoned detail panel (`DetailPanel.tsx`: ActionBar/ShareSeed/AssetStrip/Setlist, step 8) as a third column on either lens. Live at `/library`, sidebar nav item "Library" (featured, top of the Library group, above My Collection) — step 9. Performance lens show rows and the detail panel render an "Unconfirmed" pill for degraded (`confirmed: false`) shows recovered from the `lb_category='unknown'` bucket (TODO-151). `m3u` (Export show as M3U) is wired for performance rows. `sources`/`notify` row actions and the TapeMatch family `note` field remain unexposed (no backend/UI to wire to). i18n pass (step 10) deferred per user decision — English-only is fine for now. |
 | ScreenBootlegs | `screens/ScreenBootlegs.tsx` | Done — year/CDs filters, catalog browser, CSV export |
-| ScreenThemes | `screens/ScreenThemes.tsx` | Done — preset themes, typeface/font-size, custom color tokens |
+| ScreenThemes | `screens/ScreenThemes.tsx` | Done — mode/density/accent, frame theme (palette) + card style (framed/flat), typeface/font-size, custom color tokens |
 | ScreenPipeline | `screens/ScreenPipeline.tsx` | Done — folder queue, 5-step workflow (verify/lookup/lbdir/rename/collect), bulk-actions menu, Auto-run + Auto-rename toggles |
 | ScreenQuickLookup | `screens/ScreenQuickLookup.tsx` | Done — paste/clipboard/drop zone, per-row checksum results table |
 | ScreenLookup | `screens/ScreenLookup.tsx` | Done — 4-source input, summary + detail tables |
@@ -1448,6 +1499,17 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 
 | Date | Change |
 |------|--------|
+| 2026-06-18 | TODO-150 loose ends tied up: (1) TODO-151 audit — root cause was `_PERF_CATEGORY_MAP` missing `GUEST`/`NET`/`SIDEMAN` mappings for `dylan_performances` categories, so guest-spot/Never-Ending-Tour dates fell through to 'unknown' instead of 'concert'; fixed + backfill version bumped to `_v2` to auto-reclassify existing installs (concert 14092→14329). `get_performances()` also gained a `dylan_performances.venue` fallback and a `confirmed: false` degraded-row path for the remainder (~19 shows now, down from an earlier 198-show heuristic-only estimate); GUI renders an "Unconfirmed" pill on these. (2) `m3u` performance-row action wired: `/api/collection/export/m3u` gained an optional `lb_numbers` filter, `buildPerformanceActions()`/`ScreenLibrary.tsx` wired the handler. `sources`/`notify` actions and the TapeMatch family `note` field stay unexposed — no backend/UI to wire to (would be new features, not loose ends). i18n (step 10) deferred per user decision — English-only is fine for now. |
+| 2026-06-18 | TODO-150 phase 9: `ScreenLibrary.tsx` wired into real nav/routing — `App.tsx`'s temporary `/library-dev` route replaced with `/library`; `AppShell.tsx`'s `NAV_GROUPS` Library group gained a new featured "Library" item (id `library`, icon `library`) above "My Collection", showing the existing "NEW" badge. No i18n changes needed — `appShell.nav.library` already existed (reused from the group-header translation) in all 6 locales. i18n for in-screen Library strings (step 10) still open. |
+| 2026-06-18 | TODO-150 phase 8: new `components/library/DetailPanel.tsx` — `RecordingDetailPanel`/`PerformanceDetailPanel`, zoned per the design handoff (header, ActionBar, ShareSeed, AssetStrip, optional Setlist). ShareSeed's unified activity log is built client-side from `/api/collection/prefetch`'s existing `torrents`/`forum_posts` arrays (no new endpoint); AssetStrip adds a bulk `/api/attachments/cached` query and a lazy per-row `/api/spectrogram/list` check. `ScreenLibrary.tsx`: both lenses render the panel as a third column on row selection (recording lens reuses its existing `selectedLb`; performance lens adds `selectedMemberLb` alongside `selectedId`, member-row selection taking precedence). |
+| 2026-06-18 | TODO-150 decision: `get_performances()` filters to `lb_category = 'concert'` — non-concert recordings (radio/tv/interview/studio/rehearsal/soundcheck/compilation/other/unknown) no longer get grouped into bare show rows; recording lens unaffected. See TODO-151 to audit `lb_category` accuracy now that it gates lens membership. |
+| 2026-06-18 | TODO-150 phase 7: new `components/library/actions.tsx` — shared Library action registry (`LibAction` vocabulary, `buildRecordingActions()`/`buildPerformanceActions()`, grouped `ActionMenu`/`useActionMenu()`, `BulkActionBar`); `components/primitives.tsx` gained shared `Toast`/`ConfirmDialog` (ported from ScreenCollection.tsx's local copies). `ScreenLibrary.tsx`: recording lens gained a checkbox column + bulk bar (Create torrent/Add to qBittorrent/Update location/Remove, batched); right-click context menu wired into both lenses (recording rows, performance show rows, performance member rows). All handlers reuse ScreenCollection.tsx's existing backend endpoints — no backend changes. `sources`/`notify`/performance `m3u` action ids omitted (no backend/UI to wire to yet). |
+| 2026-06-18 | TODO-150 phase 6: `ScreenLibrary.tsx` gained a performance lens — "By performance \| By recording" toggle, new `PerformanceLensView` merging `/api/library/performances` + `/api/tapematch/families` into the recording lens's existing `RecordingRow[]` (shared by reference, not re-derived), `familiesOf()`/`rollupOf()` TS port of the design handoff's family-clustering/coverage helpers, show → family → member expandable virtualized table with its own facet rail. No detail panel/bulk bar/context menu yet (steps 7/8). |
+| 2026-06-18 | TODO-150 phase 5: new `db.get_performances()` + `GET /api/library/performances` — groups `entries` by `(date_str, location)` into shows, cross-referencing `bobdylan_shows`/`setlistfm_shows`/`bootleg_titles` for venue/tour/setlist-key/track-count/title. Dedicated backend aggregate endpoint per the locked TODO-150 decision (not client-side groupBy, not bolted onto `/api/search`); family data stays a separate client-side merge of `/api/tapematch/families`. |
+| 2026-06-18 | TODO-150 phase 4: new `ScreenLibrary.tsx` recording lens — flat LB#-keyed table, client-side adapter merging `/api/search` (catalog incl. `source_type`) with `/api/collection/prefetch` (collection/fingerprints/wishlist/duplicates/xref), facet rail (scope/decade/status/rating/source/health), virtualized year-grouped table. No backend changes. Deliberately bare: no context menu/detail panel/bulk bar (steps 7/8) and no nav entry yet — reachable via a temporary `/library-dev` route in `App.tsx` (same pattern as `/quicklookup`). |
+| 2026-06-18 | TODO-150 phase 3: `entries.source_type` TEXT column added (MASTER_SCHEMA_VERSION 7→8) for the Library design doc's `src` field (Soundboard/Audience/FM-Pre-FM/Master/Mixed). Curator-edited only — never heuristically parsed/backfilled, unlike `taper_name`/`source_chain`/`lb_category`. Wired into `search_entries()`, `get_entries_by_lb_list()`, `get_collection()` read paths. |
+| 2026-06-18 | TODO-150 phase 2: theme engine additions (unified Library design handoff doc 01) — `tokens.ts` ThemeOptions gained `palette` (frame theme: slate/blue/purple/green/graphite, tints surfaces over the mode) and `cardStyle` (`framed`\|`flat`, default `flat`); `applyTheme()` now resolves `mode: 'system'` via `getSystemMode()` before indexing any color table, fixing a silent fallback-to-light bug; `index.css` gained the `--sep-*` framed-card token block (inert until `data-sep="framed"`); `ScreenThemes.tsx` gained "Frame theme" and "Card style" panel cards and a fix so theme-JSON import round-trips the new fields. i18n for the two new keys deferred — `en.json` only for now. |
+| 2026-06-18 | TODO-150 phase 1: TapeMatch backend integration — `recording_families`/`tapematch_family_meta` MASTER tables (schema v7); `backend/tapematch_sync.py` ingests `tools/tapematch/observations.db` with deterministic, re-sync-safe `fam_id`s; `POST /api/tapematch/sync` + `GET /api/tapematch/families`; `import_master_db()` gained a missing-table skip guard (`skipped_tables` in its return) so older pre-feature snapshots import cleanly. |
 | 2026-06-15 | v1.5.1 release: BUG-146/165/168/176/185/186 fixes (flat-file update download/apply flow, live footer status bar, date-prefix and tapematch reliability fixes) plus 115 new scraper/integration unit tests; `gui_next/package.json` version bumped 1.5.0 -> 1.5.1. |
 | 2026-06-15 | Added 115 unit tests across 5 new files covering the scraper/integration backends: `tests/test_scraper.py` (entry metadata scraper), `tests/test_bootleg_scraper.py` (LBBCD catalog), `tests/test_bobdylan_scraper.py` (bobdylan.com setlists), `tests/test_setlistfm.py` (setlist.fm API), `tests/test_geocoder.py` (Nominatim geocoding). All network calls mocked via `unittest.mock`. Discovered and documented BUG-187 (pre-existing, Open): a global `_bloom` filter rebuilt by a background thread in `init_db()` leaks between test DBs, causing intermittent `tests/test_db_lookup.py` failures in full-suite runs. |
 | 2026-06-15 | BUG-168: `ScreenHome.tsx`/`ScreenSetup.tsx` `handleCheckUpdate` fixed to read the real `/api/flat_file/discover` response shape (`available`/`current_release.zip_filename` instead of nonexistent `new_release`/`zip_filename`), so "Check for update" correctly reports an available release on a fresh install. `ScreenSetup.tsx`'s flat file history table gained per-row "Download" and "Review & Apply" actions wired to the existing `/api/flat_file/download/<id>`, `/diff/<id>`, `/apply/<id>` routes, with a confirm dialog showing added/changed/removed counts before applying. New `setup.flatFile.{download,downloading,downloadDone,reviewApply,applying,applyConfirmTitle,applyConfirmBody,applyDone}` locale keys (de/fr/es/it/nl pending DeepL translation). |

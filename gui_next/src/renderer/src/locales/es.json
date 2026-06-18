@@ -70,6 +70,10 @@
         "scraping_bootlegs": "Extrayendo bootlegs…",
         "scanning": "Analizando la colección…",
         "filing": "Archivando carpeta…",
+        "crawling": "Rastreando el sitio…",
+        "bobdylan_scraping": "Extrayendo bobdylan.com…",
+        "setlistfm_syncing": "Sincronizando setlist.fm…",
+        "geocoding": "Geocodificando…",
         "updating_app": "Actualizando la aplicación…",
         "downloading_data": "Descargando datos…"
       }
@@ -170,7 +174,7 @@
       "filename": "Archivo",
       "type": "Tipo",
       "xref": "Xref",
-      "open": "Abrir",
+      "open": "Abrir en LB Website",
       "addWishlist": "+WL"
     },
     "states": {
@@ -423,6 +427,7 @@
       "qbtSyncFailed": "Archivado, pero la actualización de la ruta de guardado de qBittorrent ha fallado: {{error}}",
       "busy": "Ya hay un trabajo de archivado en curso — espere a que termine",
       "jobMismatch": "El estado del archivado fue tomado por otro trabajo — compruebe el resultado en Mi colección",
+      "renamePending": "Aplique primero el cambio de nombre — esta carpeta no puede archivarse mientras haya un cambio de nombre pendiente.",
       "progress": {
         "scanning": "Escaneando…",
         "copying": "Copiando…",
@@ -452,7 +457,11 @@
       "ownedYes": "En propiedad",
       "ownedNo": "No en la colección",
       "notConfirmed": "Aún no confirmado",
-      "valueUnassigned": "Sin asignar"
+      "valueUnassigned": "Sin asignar",
+      "alreadyInCollectionTitle": "Ya en la colección",
+      "alreadyInCollectionBody": "Esta grabación ya está registrada en su colección en {{path}}. Al archivar, la carpeta se moverá a la nueva ubicación y se actualizará el registro de la colección.",
+      "renamePendingTitle": "Cambio de nombre requerido antes de archivar",
+      "renamePendingBody": "Esta carpeta tiene un cambio de nombre sin aplicar. Cambie al paso Renombrar y aplíquelo antes de archivar."
     }
   },
   "collection": {

@@ -262,13 +262,17 @@ def scan_drives_for(lb_numbers: list[int], year: str) -> dict[int, Path]:
     return found
 
 
-def find_lb_folders(lb_numbers: list[int], year: str) -> dict[int, Path]:
+def find_lb_folders(lb_numbers: list[int], year: str) -> tuple[dict[int, Path], set[int]]:
     """Resolve LB folder paths: my_collection first, drive scan as fallback.
-    Private LBs (no local commentary page) are excluded automatically.
+
+    Returns (found, excluded) where excluded contains LB numbers dropped because
+    they are private/no-torrent or have no locally analyzable audio.  Callers
+    can use excluded to distinguish "deliberately skipped" from "missing on disk".
     """
     found, missing = resolve_from_collection(lb_numbers)
     if missing:
         found.update(scan_drives_for(missing, year))
+    excluded: set[int] = set()
     # Drop private LBs — no local page means no commentary to compare against
     private = [
         n for n, p in list(found.items())
@@ -276,6 +280,7 @@ def find_lb_folders(lb_numbers: list[int], year: str) -> dict[int, Path]:
     ]
     for n in private:
         del found[n]
+        excluded.add(n)
     if private:
         print(f"  Excluded (private/no-torrent): {', '.join(_lb_tag(n) for n in sorted(private))}")
     # Drop folders with no locally analyzable audio (e.g. cover-scan/EAC-log-only
@@ -283,9 +288,10 @@ def find_lb_folders(lb_numbers: list[int], year: str) -> dict[int, Path]:
     no_audio = [n for n, p in found.items() if not _has_audio(p)]
     for n in no_audio:
         del found[n]
+        excluded.add(n)
     if no_audio:
         print(f"  Excluded (no audio found): {', '.join(_lb_tag(n) for n in sorted(no_audio))}")
-    return found
+    return found, excluded
 
 
 # ── LB page parsing ────────────────────────────────────────────────────────────
@@ -862,10 +868,73 @@ def get_year_dates(year: str, min_entries: int = 2) -> list[tuple[str, int, str,
     return sorted(results, key=lambda x: x[0])
 
 
+def get_all_dates(min_entries: int = 2) -> list[tuple[str, int, str, list[int]]]:
+    """Return all collected+paged concert dates across every year, sorted chronologically."""
+    paged = {
+        int(m.group(1))
+        for p in PAGES_DIR.glob("LB-*.html")
+        if (m := re.search(r"LB-(\d+)\.html", p.name))
+    }
+    lb_conn = sqlite3.connect(str(DB_PATH))
+    rows = lb_conn.execute("""
+        SELECT e.date_str, e.location, GROUP_CONCAT(e.lb_number ORDER BY e.lb_number) as lbs
+        FROM entries e
+        JOIN my_collection mc ON e.lb_number = mc.lb_number
+        WHERE e.lb_category = 'concert'
+        GROUP BY e.date_str
+        ORDER BY e.date_str
+    """).fetchall()
+    lb_conn.close()
+
+    results = []
+    for date_str, location, lbs_csv in rows:
+        try:
+            d = datetime.strptime(date_str, "%m/%d/%y")
+            iso = d.strftime("%Y-%m-%d")
+        except ValueError:
+            continue
+        lbs = [int(x) for x in lbs_csv.split(",")]
+        paged_lbs = [lb for lb in lbs if lb in paged]
+        if len(paged_lbs) >= min_entries:
+            results.append((iso, len(paged_lbs), location, paged_lbs))
+    return sorted(results, key=lambda x: x[0])
+
+
+def _decade_priority(date_iso: str) -> int:
+    year = int(date_iso[:4])
+    if 1990 <= year <= 1999:
+        return 0
+    if 2000 <= year <= 2009:
+        return 1
+    if 2010 <= year <= 2019:
+        return 2
+    if 2020 <= year <= 2029:
+        return 3
+    return 4
+
+
+def _decade_label(date_iso: str) -> str:
+    year = int(date_iso[:4])
+    if 1990 <= year <= 1999:
+        return "1990s"
+    if 2000 <= year <= 2009:
+        return "2000s"
+    if 2010 <= year <= 2019:
+        return "2010s"
+    if 2020 <= year <= 2029:
+        return "2020s"
+    return "pre-1990"
+
+
 def run_date(date_iso: str, dry_run: bool = False,
              no_tapematch: bool = False, report_only: bool = False,
-             set_offset: str | None = None) -> int:
-    """Run a full tapematch session for one concert date."""
+             set_offset: str | None = None, allow_missing: bool = False) -> int:
+    """Run a full tapematch session for one concert date.
+
+    By default (allow_missing=False) the run is skipped with RC=3 if any
+    non-excluded source is absent from disk.  Pass allow_missing=True (or
+    --allow-missing on the CLI) to proceed with whatever is found.
+    """
     run_id  = make_run_id()
     run_at  = datetime.now().isoformat()
     year    = date_iso[:4]
@@ -883,13 +952,29 @@ def run_date(date_iso: str, dry_run: bool = False,
 
     # 2. Resolve paths
     print("\n[2] Resolving paths from my_collection …")
-    found_folders = find_lb_folders(lb_numbers, year)
-    missing = [n for n in lb_numbers if n not in found_folders]
+    found_folders, excluded = find_lb_folders(lb_numbers, year)
+    truly_missing = [n for n in lb_numbers if n not in found_folders and n not in excluded]
     print(f"  Found {len(found_folders)}/{len(lb_numbers)}")
     for n, p in sorted(found_folders.items()):
         print(f"    {_lb_tag(n)}: {p}")
-    if missing:
-        print(f"  Not found: {', '.join(_lb_tag(n) for n in missing)}")
+    if truly_missing:
+        print(f"  Not found on disk: {', '.join(_lb_tag(n) for n in truly_missing)}")
+    if truly_missing and not allow_missing:
+        print(f"  [SKIP] {len(truly_missing)} source(s) missing from disk — "
+              f"use --allow-missing to run anyway.")
+        no_run_output = "(source(s) missing from disk — tapematch not run)"
+        report_text = build_report(date_iso, location, lb_numbers, found_folders, no_run_output)
+        report_text += (
+            "\n\n## Status\n\n"
+            f"**missing_sources** — {len(truly_missing)} of {len(lb_numbers)} DB entries "
+            f"have no folder on disk: {', '.join(_lb_tag(n) for n in truly_missing)}. "
+            "Re-run with --allow-missing to proceed with what's available, or delete this "
+            "run's archive dir under data/tapematch/runs/ once the source(s) appear on disk "
+            "to make --next/--year/--crawl pick the date up again.\n"
+        )
+        REPORT_PATH.write_text(report_text, encoding="utf-8")
+        archive_run(run_id, date_iso, no_run_output + "\n", report_text, None)
+        return 3
     if len(found_folders) < 2:
         print(f"  Only {len(found_folders)} folder(s) with audio found — "
               f"need ≥2 sources for tapematch.")
@@ -970,7 +1055,8 @@ def run_date(date_iso: str, dry_run: bool = False,
     return 0
 
 
-def year_run(year: str, min_entries: int = 2, dry_run: bool = False) -> int:
+def year_run(year: str, min_entries: int = 2, dry_run: bool = False,
+             allow_missing: bool = False) -> int:
     """Process all candidate dates for a year, skipping already-done ones.
 
     Each date is run as a fresh subprocess so that Python heap, page cache,
@@ -1018,11 +1104,15 @@ def year_run(year: str, min_entries: int = 2, dry_run: bool = False) -> int:
         cmd = [str(VENV_PYTHON), script, iso]
         if dry_run:
             cmd.append("--dry-run")
+        if allow_missing:
+            cmd.append("--allow-missing")
         try:
             result = subprocess.run(cmd, check=False)
             rc = result.returncode
             if rc == 2:
                 print(f"  [SKIP] {iso}: only 1 source folder on disk")
+            elif rc == 3:
+                print(f"  [SKIP] {iso}: sources missing from disk")
             elif rc != 0:
                 print(f"  [WARN] {iso}: run_date returned rc={rc} — continuing")
         except KeyboardInterrupt:
@@ -1034,8 +1124,119 @@ def year_run(year: str, min_entries: int = 2, dry_run: bool = False) -> int:
     return 0
 
 
+def crawl_run(min_entries: int = 2, dry_run: bool = False,
+              allow_missing: bool = False) -> int:
+    """Process all unprocessed concert dates, prioritised 90s→00s→10s→20s→pre-1990.
+
+    Resumable: dates already in observations.db are skipped.
+    Ctrl+C cleanly aborts; re-run with --crawl to continue.
+    """
+    from collections import Counter
+
+    all_dates = get_all_dates(min_entries)
+
+    done: set[str] = set()
+    if OBS_DB_PATH.exists():
+        conn = open_obs_db()
+        done = {r[0] for r in conn.execute("SELECT DISTINCT concert_date FROM runs").fetchall()}
+        conn.close()
+
+    if RUNS_DIR.exists():
+        for d in RUNS_DIR.iterdir():
+            if d.is_dir():
+                parts = d.name.split("_", 2)
+                if len(parts) == 3:
+                    done.add(parts[2])
+
+    todo = [(iso, n, loc) for iso, n, loc, _ in all_dates if iso not in done]
+    todo.sort(key=lambda x: (_decade_priority(x[0]), x[0]))
+
+    n_skip = len(all_dates) - len(todo)
+    print(f"=== tapematch crawl run ===")
+    print(f"  Total candidate dates  : {len(all_dates)}")
+    print(f"  Already done (skipping): {n_skip}")
+    print(f"  To process             : {len(todo)}")
+    print(f"  Priority order         : 90s → 00s → 10s → 20s → pre-1990")
+
+    decade_counts: Counter = Counter(_decade_label(iso) for iso, _, _ in todo)
+    for label in ["1990s", "2000s", "2010s", "2020s", "pre-1990"]:
+        if decade_counts[label]:
+            print(f"    {label}: {decade_counts[label]}")
+
+    if not todo:
+        print("  Nothing to do.")
+        return 0
+
+    script = str(Path(__file__).resolve())
+
+    for idx, (iso, n, loc) in enumerate(todo, 1):
+        print(f"\n{'='*60}")
+        print(f"  [{idx}/{len(todo)}]  {iso}  —  {loc[:50]}  ({n} entries)")
+        print(f"{'='*60}")
+        cmd = [str(VENV_PYTHON), script, iso]
+        if dry_run:
+            cmd.append("--dry-run")
+        if allow_missing:
+            cmd.append("--allow-missing")
+        try:
+            result = subprocess.run(cmd, check=False)
+            rc = result.returncode
+            if rc == 2:
+                print(f"  [SKIP] {iso}: only 1 source folder on disk")
+            elif rc == 3:
+                print(f"  [SKIP] {iso}: sources missing from disk")
+            elif rc != 0:
+                print(f"  [WARN] {iso}: run_date returned rc={rc} — continuing")
+        except KeyboardInterrupt:
+            print(f"\nInterrupted at {iso} (date {idx}/{len(todo)}).")
+            print(f"Resume:  tapematch_session.py --crawl")
+            return 130
+
+    print(f"\n=== Crawl complete: processed {len(todo)} date(s). ===")
+    return 0
+
+
+RC_QUEUE_EMPTY = 75  # exit code: no unprocessed dates remain
+
+
+def next_run(min_entries: int = 2, dry_run: bool = False,
+             allow_missing: bool = False) -> int:
+    """Process exactly one unprocessed concert date (highest priority) then exit.
+
+    Returns RC_QUEUE_EMPTY (75) when nothing remains so the caller (run_crawl.sh)
+    knows to stop.  Every other return code mirrors run_date().
+    """
+    all_dates = get_all_dates(min_entries)
+
+    done: set[str] = set()
+    if OBS_DB_PATH.exists():
+        conn = open_obs_db()
+        done = {r[0] for r in conn.execute("SELECT DISTINCT concert_date FROM runs").fetchall()}
+        conn.close()
+
+    if RUNS_DIR.exists():
+        for d in RUNS_DIR.iterdir():
+            if d.is_dir():
+                parts = d.name.split("_", 2)
+                if len(parts) == 3:
+                    done.add(parts[2])
+
+    todo = [(iso, n, loc) for iso, n, loc, _ in all_dates if iso not in done]
+    todo.sort(key=lambda x: (_decade_priority(x[0]), x[0]))
+
+    if not todo:
+        print("=== tapematch --next: queue empty, nothing to do. ===")
+        return RC_QUEUE_EMPTY
+
+    iso, n, loc = todo[0]
+    remaining = len(todo)
+    print(f"=== tapematch --next: {iso}  —  {loc[:50]}  ({n} entries, {remaining} remaining) ===")
+    return run_date(iso, dry_run=dry_run, allow_missing=allow_missing)
+
+
 def run_batch(queue_path: Path, dry_run: bool = False, no_tapematch: bool = False,
-              report_only: bool = False, set_offset: str | None = None) -> int:
+              report_only: bool = False, set_offset: str | None = None,
+              allow_missing: bool = False) -> int:
     """Process a re-run queue file sequentially (see build_rerun_queue.py).
 
     Blank lines, lines starting with '#', and lines already marked with a
@@ -1054,13 +1255,28 @@ def run_batch(queue_path: Path, dry_run: bool = False, no_tapematch: bool = Fals
     print(f"=== tapematch batch run: {queue_path} ===")
     print(f"  {len(todo)} date(s) to process")
 
+    script = str(Path(__file__).resolve())
+
     for n, (idx, date_iso) in enumerate(todo, 1):
         print(f"\n{'='*60}")
         print(f"  [{n}/{len(todo)}]  {date_iso}")
         print(f"{'='*60}")
+        # Spawn a fresh subprocess per date so Python heap, page cache, and OS
+        # resources are fully released between runs (mirrors year_run/crawl_run).
+        cmd = [str(VENV_PYTHON), script, date_iso]
+        if dry_run:
+            cmd.append("--dry-run")
+        if no_tapematch:
+            cmd.append("--no-tapematch")
+        if report_only:
+            cmd.append("--report-only")
+        if set_offset:
+            cmd += ["--set-offset", set_offset]
+        if allow_missing:
+            cmd.append("--allow-missing")
         try:
-            rc = run_date(date_iso, dry_run=dry_run, no_tapematch=no_tapematch,
-                          report_only=report_only, set_offset=set_offset)
+            result = subprocess.run(cmd, check=False)
+            rc = result.returncode
         except KeyboardInterrupt:
             print(f"\nInterrupted at {date_iso} ({n}/{len(todo)}).")
             print(f"Resume:  tapematch_session.py --batch {queue_path}")
@@ -1068,6 +1284,8 @@ def run_batch(queue_path: Path, dry_run: bool = False, no_tapematch: bool = Fals
 
         if rc == 2:
             print(f"  [SKIP] {date_iso}: only 1 source folder on disk")
+        elif rc == 3:
+            print(f"  [SKIP] {date_iso}: sources missing from disk")
         elif rc != 0:
             print(f"  [WARN] {date_iso}: run_date returned rc={rc} — continuing")
 
@@ -1153,8 +1371,14 @@ def main(argv=None) -> int:
                     help="How many candidates to show with --suggest (default 20)")
     ap.add_argument("--year", metavar="YYYY",
                     help="Process all candidate dates for a year, skipping already-done ones")
+    ap.add_argument("--crawl", action="store_true",
+                    help="Process all unprocessed dates across every year, "
+                         "prioritised 90s→00s→10s→20s→pre-1990; resumable")
+    ap.add_argument("--next", action="store_true",
+                    help="Process exactly one unprocessed date (highest priority) then exit; "
+                         "exits 75 when the queue is empty (used by run_crawl.sh loop)")
     ap.add_argument("--min-entries", type=int, default=2, metavar="N",
-                    help="Minimum collected+paged entries per date for --year (default 2)")
+                    help="Minimum collected+paged entries per date for --year/--crawl (default 2)")
     ap.add_argument("--dry-run",     action="store_true",
                     help="Show what would be done without cleaning/copying/running")
     ap.add_argument("--no-tapematch", action="store_true",
@@ -1172,6 +1396,8 @@ def main(argv=None) -> int:
                     help="Run on this folder directly, skipping DB lookup and copy steps")
     ap.add_argument("--label", default="", metavar="LABEL",
                     help="Location/label for --manual-dir run (used in report; defaults to folder name)")
+    ap.add_argument("--allow-missing", action="store_true",
+                    help="Run even if some sources are absent from disk (default: skip such dates)")
     args = ap.parse_args(argv)
 
     if args.suggest:
@@ -1179,13 +1405,23 @@ def main(argv=None) -> int:
         return 0
 
     if args.year:
-        return year_run(args.year, args.min_entries, dry_run=args.dry_run)
+        return year_run(args.year, args.min_entries, dry_run=args.dry_run,
+                        allow_missing=args.allow_missing)
+
+    if args.crawl:
+        return crawl_run(args.min_entries, dry_run=args.dry_run,
+                         allow_missing=args.allow_missing)
+
+    if args.next:
+        return next_run(args.min_entries, dry_run=args.dry_run,
+                        allow_missing=args.allow_missing)
 
     if args.batch:
         return run_batch(args.batch, dry_run=args.dry_run,
                          no_tapematch=args.no_tapematch,
                          report_only=args.report_only,
-                         set_offset=args.set_offset)
+                         set_offset=args.set_offset,
+                         allow_missing=args.allow_missing)
 
     if args.manual_dir:
         return run_manual(Path(args.manual_dir),
@@ -1194,13 +1430,14 @@ def main(argv=None) -> int:
                           set_offset=args.set_offset)
 
     if not args.date:
-        ap.error("date is required unless --suggest, --year, --batch, or --manual-dir is used")
+        ap.error("date is required unless --suggest, --year, --crawl, --batch, or --manual-dir is used")
 
     return run_date(args.date,
                     dry_run=args.dry_run,
                     no_tapematch=args.no_tapematch,
                     report_only=args.report_only,
-                    set_offset=args.set_offset)
+                    set_offset=args.set_offset,
+                    allow_missing=args.allow_missing)
 
 
 def _log_to_obs_db(run_id: str, run_at: str, date_iso: str, location: str,

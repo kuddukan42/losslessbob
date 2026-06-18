@@ -3,7 +3,8 @@ repos:
     hooks:
       - id: ruff
         name: ruff (lint + auto-fix)
-        entry: C:/Users/bob/Documents/GitHub/losslessbob/.venv/Scripts/ruff.exe check --fix --force-exclude
-        language: system
+        entry: ruff check --fix --force-exclude
+        language: python
+        additional_dependencies: ["ruff==0.15.16"]
         types: [python]
         pass_filenames: true
