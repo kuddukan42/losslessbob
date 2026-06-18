@@ -1,6 +1,59 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-151: Audit lb_category classification accuracy
+Priority: Medium
+Status: Done
+Added: 2026-06-18
+Closed: 2026-06-18
+Description: classify_entry_categories() (backend/db.py:2138) assigns lb_category via a
+  3-tier heuristic. Audited the live DB (16,630 entries): concert=14092, unknown=2043
+  (~12.3%), tv=97, studio=96, interview=96, compilation=84, rehearsal=81, radio=30,
+  soundcheck=11. Spot-checked the 252 'unknown' rows with a fully-specified date + location
+  and found most are real performances bobdylan_shows doesn't track — largely guest
+  appearances at OTHER artists' shows (Dire Straits, U2, Tom Petty, Grateful Dead, Bruce
+  Springsteen, Eric Clapton).
+  Root cause found: `dylan_performances` (5127 rows, imported from a fan-maintained
+  performance database) already has these dates tagged with category `GUEST` (66 rows) and
+  `NET` (3433 rows — "Never Ending Tour" era, NOT "internet" as the code first suggested;
+  ~97% already overlap bobdylan_shows via tier 1, but ~106 long-tail NET dates didn't) —
+  neither code was in `_PERF_CATEGORY_MAP`, so tier 2 silently skipped them and they fell
+  through to tier 3/unknown. Also found `SIDEMAN` (38 rows, backing-musician studio
+  sessions for other artists, e.g. the Harry Belafonte session) unmapped. Fix: added
+  GUEST -> concert, NET -> concert, SIDEMAN -> studio to `_PERF_CATEGORY_MAP`; bumped the
+  one-time classification backfill from `lb_category_backfill_v1` to `_v2` so existing
+  installs reclassify automatically on next launch. Verified end-to-end via a real backend
+  restart (not a raw DB script): concert 14092->14329 (+237), unknown 2043->1811 (-232),
+  studio 96->101 (+5); confirmed via `/api/library/performances` that 1986-02-19 Melbourne,
+  1987-02-19 Palomino Club, 1987-04-20 LA Sports Arena, 1988-05-29 Lone Star Cafe, and
+  1992-03-28 Brisbane all now resolve as normal (non-degraded) shows.
+  Also added a `get_performances()` venue fallback: when `bobdylan_shows` has no row for a
+  show's date (true for nearly all GUEST dates, since they're not Dylan's own shows), venue
+  now falls back to `dylan_performances.venue` instead of staying null — e.g. the Melbourne
+  show now shows "Melbourne Sports And Entertainment Centre" instead of just the raw
+  location text.
+  Kept the earlier degraded-row fallback for whatever `dylan_performances` still doesn't
+  cover: 'unknown' entries with a non-'xx' date + non-blank location are grouped as a show
+  flagged `confirmed: False` (rendered as an "Unconfirmed" pill in ScreenLibrary.tsx /
+  PerformanceDetailPanel). After the GUEST/NET/SIDEMAN fix this fallback only fires for ~19
+  shows — mostly category `FILM` (e.g. the 1986 Bristol Colston Hall "Hearts of Fire" concert
+  scene filming) and a few TV-awards/White-House/studio-session dates with no clean mapping;
+  deliberately left FILM unmapped since some FILM rows are non-performance B-roll (hotel
+  rooms, a gas station), not shows — a blanket mapping would risk false positives.
+  py_compile + full pytest suite pass (same one pre-existing unrelated failure as before,
+  TestFolderLink::test_replace_existing). tsc --noEmit + npm run build pass.
+
+TODO-147: Setup — HelpersStrip install hints for missing tools (ffmpeg, sox)
+Priority: Low
+Status: Done
+Added: 2026-06-15
+Closed: 2026-06-16
+Description: When ffmpeg or sox show yellow in HelpersStrip (ScreenSetup), user had
+no idea how to fix it. Added get_install_hints() to sox_utils.py with per-OS hints
+(winget/brew/apt) for ffmpeg, sox, flac, shntool. /api/spectrogram/check now includes
+*_install_hint fields per tool. HelpersStrip renders a monospace hint row below the
+dot strip for each missing tool that has a hint.
+
 TODO-139: tapematch reliability fixes (CC_TAPEMATCH_FIXES sequence)
 Priority: Medium
 Status: Done

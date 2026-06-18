@@ -90,6 +90,38 @@ def get_ffmpeg() -> list | None:
     return _FFMPEG_CMD
 
 
+# ── Install hints ────────────────────────────────────────────────────────────
+
+_INSTALL_HINTS: dict[str, dict[str, str | None]] = {
+    "ffmpeg": {
+        "win32":  "winget install Gyan.FFmpeg",
+        "darwin": "brew install ffmpeg",
+        "linux":  "sudo apt install ffmpeg",
+    },
+    "sox": {
+        "win32":  "winget install SoX.SoX",
+        "darwin": "brew install sox",
+        "linux":  "sudo apt install sox libsox-fmt-all",
+    },
+    "flac": {
+        "win32":  "winget install xiph.FLAC",
+        "darwin": "brew install flac",
+        "linux":  "sudo apt install flac",
+    },
+    "shntool": {
+        "win32":  None,  # bundled in tools/shntool.exe
+        "darwin": "brew install shntool",
+        "linux":  "sudo apt install shntool",
+    },
+}
+
+
+def get_install_hints() -> dict[str, str | None]:
+    """Return per-tool install hint strings for the current OS platform."""
+    platform_key = sys.platform if sys.platform in ("win32", "darwin") else "linux"
+    return {tool: hints.get(platform_key) for tool, hints in _INSTALL_HINTS.items()}
+
+
 def check_sox_version() -> str:
     """Return version string, or empty string if unavailable."""
     sox = get_sox()

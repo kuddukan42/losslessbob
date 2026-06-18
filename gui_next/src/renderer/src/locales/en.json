@@ -75,6 +75,10 @@
         "scraping_bootlegs": "Scraping bootlegs…",
         "scanning": "Scanning collection…",
         "filing": "Filing folder…",
+        "crawling": "Crawling site…",
+        "bobdylan_scraping": "Scraping bobdylan.com…",
+        "setlistfm_syncing": "Syncing setlist.fm…",
+        "geocoding": "Geocoding…",
         "updating_app": "Updating app…",
         "downloading_data": "Downloading data…"
       }
@@ -175,7 +179,7 @@
       "filename": "Filename",
       "type": "Type",
       "xref": "Xref",
-      "open": "Open",
+      "open": "Open on LB Website",
       "addWishlist": "+WL"
     },
     "states": {
@@ -452,6 +456,7 @@
       "qbtSyncFailed": "Filed, but qBittorrent save path update failed: {{error}}",
       "busy": "A filing job is already in progress — please wait for it to finish",
       "jobMismatch": "Filing status was taken over by another job — check My Collection for the result",
+      "renamePending": "Apply the rename first — this folder cannot be filed while a rename is pending.",
       "progress": {
         "scanning": "Scanning…",
         "copying": "Copying…",
@@ -481,7 +486,11 @@
       "ownedYes": "Owned",
       "ownedNo": "Not in collection",
       "notConfirmed": "Not yet confirmed",
-      "valueUnassigned": "Unassigned"
+      "valueUnassigned": "Unassigned",
+      "alreadyInCollectionTitle": "Already in collection",
+      "alreadyInCollectionBody": "This recording is already registered in your collection at {{path}}. Filing will move the folder to the new location and update the collection record.",
+      "renamePendingTitle": "Rename required before filing",
+      "renamePendingBody": "This folder has an unapplied rename. Switch to the Rename step and apply it before filing."
     }
   },
   "collection": {
@@ -863,12 +872,21 @@
   },
   "themes": {
     "title": "Themes",
-    "subtitle": "Mode × accent × density. Status colors stay fixed for accessibility.",
+    "subtitle": "Mode × frame theme × accent × density × card style. Status colors stay fixed for accessibility.",
     "mode": {
       "title": "Mode",
       "light": "Light",
       "dark": "Dark",
       "system": "System"
+    },
+    "palette": {
+      "title": "Frame theme",
+      "default": "Default"
+    },
+    "cardStyle": {
+      "title": "Card style",
+      "framed": "Framed",
+      "flat": "Flat"
     },
     "density": {
       "title": "Density",

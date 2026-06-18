@@ -3,32 +3,13 @@ import { useTranslation } from 'react-i18next'
 import { Icon } from '../Icon'
 import { Button, Pill, Banner, TableShell, TH, TR, TD } from '../index'
 import { LookupSummaryRow, LookupDetail as LookupDetailRow } from '../../lib/lookupStore'
-
-export type LookupState = 'matched' | 'incomplete' | 'notfound' | 'duplicate' | 'xref'
-
-export const STATE_TONE: Record<LookupState, { tone: 'ok' | 'warn' | 'bad' | 'info' | 'mute'; label: string; color: string }> = {
-  matched:    { tone: 'ok',   label: 'Matched',    color: 'var(--lbb-ok-fg)'   },
-  incomplete: { tone: 'warn', label: 'Incomplete', color: 'var(--lbb-warn-fg)' },
-  notfound:   { tone: 'bad',  label: 'Not found',  color: 'var(--lbb-bad-fg)'  },
-  duplicate:  { tone: 'warn', label: 'Duplicate',  color: '#a08200'             },
-  xref:       { tone: 'info', label: 'XRef',       color: 'var(--lbb-info-fg)' },
-}
+import { LookupState, STATE_TONE, apiStatusToState } from './lookupState'
 
 export function categoryPill(cat: string | null | undefined): React.JSX.Element | null {
   if (!cat || cat === 'unknown') return null
   const tone = cat === 'concert' ? 'info' : cat === 'interview' ? 'warn' : 'mute'
   const label = cat.charAt(0).toUpperCase() + cat.slice(1)
   return <Pill tone={tone} soft>{label}</Pill>
-}
-
-export function apiStatusToState(status: string): LookupState {
-  if (status === 'MATCHED')               return 'matched'
-  if (status === 'MATCHED (INCOMPLETE)')  return 'incomplete'
-  if (status === 'INCOMPLETE')            return 'incomplete'
-  if (status === 'NOT FOUND')             return 'notfound'
-  if (status === 'DUPLICATE')             return 'duplicate'
-  if (status === 'XREF')                  return 'xref'
-  return 'notfound'
 }
 
 export interface LookupSummaryTableProps {
@@ -55,7 +36,7 @@ export function LookupSummaryTable({
         <col style={{ width: 80 }} />
         <col style={{ width: 70 }} /><col style={{ width: 80 }} /><col style={{ width: 80 }} />
         <col style={{ width: 80 }} /><col style={{ width: 70 }} /><col style={{ width: 70 }} />
-        <col /><col style={{ width: onPin ? 200 : 130 }} />
+        <col /><col style={{ width: onPin ? 360 : 180 }} />
       </colgroup>
       <thead>
         <tr>
@@ -92,7 +73,7 @@ export function LookupSummaryTable({
               <TD align="right" mono style={{ color: r.duplicates   > 0 ? '#a08200'            : 'var(--lbb-fg3)' }}>{r.duplicates   || '—'}</TD>
               <TD align="right" mono style={{ color: r.xrefs        > 0 ? 'var(--lbb-info-fg)' : 'var(--lbb-fg3)' }}>{r.xrefs        || '—'}</TD>
               <TD><Pill tone={tone.tone} soft dot={state !== 'matched'}>{tone.label}</Pill></TD>
-              <TD align="right" style={{ display: 'flex', gap: 4, justifyContent: 'flex-end' }}>
+              <TD align="right" style={{ display: 'flex', gap: 8, justifyContent: 'flex-end' }}>
                 <Button size="sm" variant="ghost" icon="reveal"
                   onClick={() => window.open(`http://www.losslessbob.wonderingwhattochoose.com/detail/LB-${String(r.lb_number).padStart(5, '0')}.html`)}
                   title="Open this entry on losslessbob.com">

@@ -39,6 +39,7 @@ interface StepResult {
   status: StepStatus
   label: string
   lb_number?: number | null
+  lb_numbers?: number[] | null
   proposed?: string | null
   alias_resolved_from?: number[] | null
   summary?: LookupSummary | null
@@ -66,6 +67,7 @@ interface StepResult {
   collection_count?: number | null
   lb_status?: string | null
   owned?: boolean | null
+  existing_disk_path?: string | null
   lbdir_verified_at?: string | null
 }
 
@@ -93,6 +95,7 @@ interface PipelineRow {
   }
   errors: { step: string; message: string }[]
   running: boolean
+  shelved: boolean
   fileProgress?: FileProgress | null
 }
 
@@ -170,6 +173,7 @@ function emptyRow(folderPath: string): PipelineRow {
     steps: { verify: MUTE, lookup: MUTE, lbdir: MUTE, rename: MUTE, file: MUTE },
     errors: [],
     running: false,
+    shelved: false,
   }
 }
 
@@ -196,6 +200,7 @@ function normalizeFileStep(raw: unknown): StepResult {
     collection_count: (r.collection_count as number)  ?? null,
     lb_status:        (r.lb_status        as string)  ?? null,
     owned:            (r.owned            as boolean) ?? null,
+    existing_disk_path: (r.existing_disk_path as string) ?? null,
     lbdir_verified_at: (r.lbdir_verified_at as string) ?? null,
   }
 }
@@ -266,6 +271,7 @@ type StatusInfo = { state: StepData['state']; label: string; reason: string }
 
 function deriveFolderStatus(r: PipelineRow): StatusInfo {
   if (r.running) return { state: 'running', label: 'Running', reason: 'In progress' }
+  if (r.shelved) return { state: 'mute', label: 'Shelved', reason: 'Deferred — unshelve to continue' }
   if (r.bucket === 'done') return {
     state: 'pass', label: 'In collection',
     reason: r.steps.file.mount_label ? `Filed to ${r.steps.file.mount_label}` : 'Filed & tagged',
@@ -685,7 +691,7 @@ function LookupStageContent({ step, row, onRun }: {
           note: 'Pinned from pipeline lookup',
         }),
       })
-      onRun(['lookup'])
+      onRun(['lookup', 'lbdir', 'rename', 'file'])
     } catch { /* silent */ }
     finally { setPinBusyLb(null) }
   }, [row.folderPath, onRun])
@@ -704,9 +710,13 @@ function LookupStageContent({ step, row, onRun }: {
   const lbFormatted = step.lb_number
     ? `LB-${String(step.lb_number).padStart(5, '0')}`
     : null
+  const isMultiLb = (step.lb_numbers?.length ?? 0) > 1
 
   if (step.status === 'ok' && lbFormatted) {
     const summRow = step.summary?.lb_summary.find(r => r.lb_number === step.lb_number)
+    const multiLabel = isMultiLb
+      ? step.lb_numbers!.map(n => `LB-${String(n).padStart(5, '0')}`).join(' + ')
+      : null
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 14, padding: '14px 16px', background: 'var(--lbb-ok-bg)', border: '1px solid var(--lbb-ok-bar)', borderRadius: 8 }}>
@@ -715,11 +725,18 @@ function LookupStageContent({ step, row, onRun }: {
           </div>
           <div style={{ flex: 1, minWidth: 0 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-              <span style={{ fontSize: 'var(--lbb-fs-16)', fontWeight: 700, fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-accent-mid)' }}>{lbFormatted}</span>
-              {summRow && categoryPill(summRow.lb_category)}
-              {step.summary && (
+              <span style={{ fontSize: 'var(--lbb-fs-16)', fontWeight: 700, fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-accent-mid)' }}>
+                {multiLabel ?? lbFormatted}
+              </span>
+              {!isMultiLb && summRow && categoryPill(summRow.lb_category)}
+              {!isMultiLb && step.summary && (
                 <span style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)' }}>
                   {step.summary.matched}/{step.summary.given} matched
+                </span>
+              )}
+              {isMultiLb && (
+                <span style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
+                  same recording, both entries
                 </span>
               )}
             </div>
@@ -729,10 +746,12 @@ function LookupStageContent({ step, row, onRun }: {
               </div>
             )}
           </div>
-          <StatusTag state="pass">Matched</StatusTag>
+          <StatusTag state="pass">{isMultiLb ? 'Multi-LB' : 'Matched'}</StatusTag>
         </div>
         <div style={{ padding: '8px 10px', borderRadius: 6, background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)', fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
-          The match flows into <strong>LBDIR</strong> automatically — no extra step needed.
+          {isMultiLb
+            ? <>Both entries are auto-linked. The folder will be renamed with both LB numbers.</>
+            : <>The match flows into <strong>LBDIR</strong> automatically — no extra step needed.</>}
         </div>
         <Button variant="ghost" size="sm" icon="refresh" title="Re-run this stage" onClick={() => onRun(['lookup'])}>Re-run lookup</Button>
       </div>
@@ -777,10 +796,14 @@ function LookupStageContent({ step, row, onRun }: {
         </div>
         <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)' }}>
           {lbStr} was identified, but not every checksum in this folder matches the archive
-          record — some files on disk may differ from the official copy. Review the unmatched
-          checksums below before filing this folder.
+          record — some files on disk may differ from the official copy.{' '}
+          <strong>LBDIR, rename, and file are blocked</strong> until you confirm this is the right
+          show. If you're sure, pin it to proceed.
         </div>
-        <LookupDetail summaryRows={summaryRows} detailRows={detailRows} />
+        <LookupDetail summaryRows={summaryRows} detailRows={detailRows} onPin={handlePin} pinBusyLb={pinBusyLb} />
+        <div style={{ padding: '8px 10px', borderRadius: 6, background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)', fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
+          Pinning confirms this folder belongs to {lbStr} and unlocks all downstream steps.
+        </div>
       </div>
     )
   }
@@ -986,6 +1009,7 @@ function CollectReadyDetail({ step, row, onRun, onFile }: {
   onRun: (steps: string[]) => void
   onFile?: (mountId?: number | null, dest?: string | null, mountLabel?: string | null) => void
 }): React.JSX.Element {
+  const { t } = useTranslation()
   const [selectedMount, setSelectedMount] = useState<number | null>(step.recommended_mount ?? null)
   const [preview, setPreview] = useState<{ dest: string | null; mount_label: string | null } | null>(null)
 
@@ -1022,6 +1046,7 @@ function CollectReadyDetail({ step, row, onRun, onFile }: {
   const mountLabel = preview?.mount_label ?? step.mount_label
   const lb = row.steps.lookup.lb_number
   const lbLabel = lb ? `LB-${String(lb).padStart(5, '0')}` : null
+  const renamePending = row.steps.rename.status === 'warn' && !!row.steps.rename.proposed
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
@@ -1059,12 +1084,22 @@ function CollectReadyDetail({ step, row, onRun, onFile }: {
           onSelectMount={setSelectedMount}
         />
       )}
+      {renamePending && (
+        <Banner tone="warn" icon="alert" title={t('pipeline.collect.renamePendingTitle')}>
+          {t('pipeline.collect.renamePendingBody')}
+        </Banner>
+      )}
+      {step.owned && step.existing_disk_path && (
+        <Banner tone="warn" icon="warn" title={t('pipeline.collect.alreadyInCollectionTitle')}>
+          {t('pipeline.collect.alreadyInCollectionBody', { path: step.existing_disk_path })}
+        </Banner>
+      )}
       <Banner tone="info" icon="info" title="What filing does"
         action={
           row.running && row.fileProgress ? (
             <FileProgressBar progress={row.fileProgress} />
           ) : (
-            <Button variant="primary" size="sm" icon="folder" disabled={previewPending}
+            <Button variant="primary" size="sm" icon="folder" disabled={previewPending || renamePending}
               onClick={() => onFile?.(selectedMount, dest, mountLabel)}>
               File into collection
             </Button>
@@ -1352,15 +1387,15 @@ export function ScreenPipeline(): React.JSX.Element {
     needs:   rows.filter(r => !r.running && r.bucket === 'needs').length,
     ready:   rows.filter(r => !r.running && r.bucket === 'ready').length,
     running: rows.filter(r => r.running).length,
-    shelf:   rows.filter(r => r.bucket === 'shelf').length,
+    shelf:   rows.filter(r => !r.running && r.bucket === 'shelf' && !r.shelved).length,
     done:    rows.filter(r => !r.running && r.bucket === 'done').length,
   }
 
   const isRunning       = rows.some(r => r.running)
   const selectedRows    = rows.filter(r => r.selected)
   const selectedReady   = selectedRows.filter(r => r.bucket === 'ready')
-  const fileableRows    = rows.filter(r => r.steps.file.status === 'warn' && !!r.steps.file.dest)
-  const selectedFileable = selectedRows.filter(r => r.steps.file.status === 'warn' && !!r.steps.file.dest)
+  const fileableRows    = rows.filter(r => !r.running && r.steps.file.status === 'warn' && !!r.steps.file.dest && !r.shelved && !(r.steps.rename.status === 'warn' && !!r.steps.rename.proposed))
+  const selectedFileable = selectedRows.filter(r => !r.running && r.steps.file.status === 'warn' && !!r.steps.file.dest && !r.shelved && !(r.steps.rename.status === 'warn' && !!r.steps.rename.proposed))
 
   // ── Filtered rows ────────────────────────────────────────────────────────────
   const visibleRows = rows.filter(r => {
@@ -1376,7 +1411,7 @@ export function ScreenPipeline(): React.JSX.Element {
   const needsVis   = visibleRows.filter(r => !r.running && r.bucket === 'needs')
   const runningVis = visibleRows.filter(r => r.running)
   const readyVis   = visibleRows.filter(r => !r.running && r.bucket === 'ready')
-  const shelfVis   = visibleRows.filter(r => r.bucket === 'shelf')
+  const shelfVis   = visibleRows.filter(r => !r.running && r.bucket === 'shelf')
   const doneVis    = visibleRows.filter(r => !r.running && r.bucket === 'done')
 
   // ── Virtualizer flat list ────────────────────────────────────────────────────
@@ -1409,6 +1444,7 @@ export function ScreenPipeline(): React.JSX.Element {
     getScrollElement: () => tableParentRef.current,
     estimateSize: () => 38,
     overscan: 12,
+    measureElement: (el) => el?.getBoundingClientRect().height ?? 38,
   })
 
   // ── Queue rail filtered list ─────────────────────────────────────────────────
@@ -1640,10 +1676,12 @@ export function ScreenPipeline(): React.JSX.Element {
       !autoRenamedRef.current.has(r.id)
     )
     if (!candidates.length) return
-    candidates.forEach(r => {
-      autoRenamedRef.current.add(r.id)
-      void applyRename(r)
-    })
+    ;(async () => {
+      for (const r of candidates) {
+        autoRenamedRef.current.add(r.id)
+        await applyRename(r)
+      }
+    })()
   }, [rows, autoRename, applyRename])
 
   const applySelected = useCallback(async () => {
@@ -1657,6 +1695,11 @@ export function ScreenPipeline(): React.JSX.Element {
     row: PipelineRow, mountId?: number | null, overrideDest?: string | null, overrideMountLabel?: string | null,
     skipConfirm?: boolean,
   ) => {
+    if (row.steps.rename.status === 'warn' && row.steps.rename.proposed) {
+      showToast(t('pipeline.file.renamePending'), false)
+      return
+    }
+
     const lb = row.steps.lookup.lb_number
     const dest = overrideDest ?? row.steps.file.dest
     if (!lb || !dest) return
@@ -1740,15 +1783,13 @@ export function ScreenPipeline(): React.JSX.Element {
       }
 
       if (result.ok) {
-        setRows(prev => prev.map(r =>
-          r.id === row.id ? {
-            ...r,
-            running: false,
-            fileProgress: null,
-            bucket: 'done',
-            steps: { ...r.steps, file: { status: 'ok', label: 'Filed', dest: result!.dest ?? null, mount_label: result!.filed_to ?? null, error: null, error_code: null } },
-          } : r
-        ))
+        const filedStep = { status: 'ok' as const, label: 'Filed', dest: result!.dest ?? null, mount_label: result!.filed_to ?? null, error: null, error_code: null }
+        setRows(prev => prev.map(r => {
+          if (r.id !== row.id) return r
+          const updated = { ...r, running: false, fileProgress: null, bucket: 'done' as const, steps: { ...r.steps, file: filedStep } }
+          _pipelineCache.set(r.id, { steps: updated.steps, bucket: updated.bucket, errors: updated.errors })
+          return updated
+        }))
         queryClient.invalidateQueries({ queryKey: ['collection-prefetch'] })
         if (result.qbt_synced) {
           showToast(t('pipeline.file.qbtSynced'), true)
@@ -2247,9 +2288,9 @@ export function ScreenPipeline(): React.JSX.Element {
                   <col style={{ width: 32 }} />
                   <col />
                   <col style={{ width: 232 }} />
-                  <col style={{ width: 240 }} />
+                  <col style={{ width: 420 }} />
                   <col style={{ width: 104 }} />
-                  <col style={{ width: 128 }} />
+                  <col style={{ width: 224 }} />
                 </colgroup>
                 <thead>
                   <tr>
@@ -2284,6 +2325,7 @@ export function ScreenPipeline(): React.JSX.Element {
                       }
                       return (
                         <GroupRow
+                          ref={node => { if (node) node.dataset.index = String(vItem.index); virtualizer.measureElement(node) }}
                           key={`group-${item.label}`}
                           label={item.label}
                           count={item.count}
@@ -2307,6 +2349,7 @@ export function ScreenPipeline(): React.JSX.Element {
 
                     return (
                       <TR
+                        ref={node => { if (node) node.dataset.index = String(vItem.index); virtualizer.measureElement(node) }}
                         key={r.id}
                         edge={edge}
                         selected={r.selected || isDetailOpen}
@@ -2366,7 +2409,8 @@ export function ScreenPipeline(): React.JSX.Element {
                             {r.bucket === 'ready' && (
                               <Button size="sm" variant="primary" icon="check" onClick={() => applyRename(r)}>Apply</Button>
                             )}
-                            {r.steps.file.status === 'warn' && !!r.steps.file.dest && (
+                            {r.steps.file.status === 'warn' && !!r.steps.file.dest && !r.shelved &&
+                             !(['verify', 'lookup', 'lbdir', 'rename'] as const).some(k => r.steps[k].status === 'bad') && (
                               r.running && r.fileProgress ? (
                                 <FileProgressBar progress={r.fileProgress} compact />
                               ) : (
@@ -2427,7 +2471,7 @@ export function ScreenPipeline(): React.JSX.Element {
         >
           <button
             onClick={() => {
-              setRows(prev => prev.map(r => r.id === ctxMenu.id ? { ...r, bucket: 'shelf' } : r))
+              setRows(prev => prev.map(r => r.id === ctxMenu.id ? { ...r, bucket: 'shelf', shelved: true } : r))
               setCtxMenu(null)
             }}
             style={{
@@ -2437,10 +2481,16 @@ export function ScreenPipeline(): React.JSX.Element {
               color: 'var(--lbb-fg)', borderRadius: 5, fontFamily: 'inherit',
             }}
           >Shelve (skip for now)</button>
-          {rows.find(r => r.id === ctxMenu.id)?.bucket === 'shelf' && (
+          {rows.find(r => r.id === ctxMenu.id)?.shelved && (
             <button
               onClick={() => {
-                setRows(prev => prev.map(r => r.id === ctxMenu.id ? { ...r, bucket: 'needs' } : r))
+                setRows(prev => prev.map(r => {
+                  if (r.id !== ctxMenu.id) return r
+                  const preFileOk = (['verify', 'lookup', 'lbdir', 'rename'] as const)
+                    .every(k => r.steps[k].status === 'ok')
+                  const restoredBucket: Bucket = (preFileOk && r.steps.file.status === 'warn') ? 'shelf' : 'needs'
+                  return { ...r, shelved: false, bucket: restoredBucket }
+                }))
                 setCtxMenu(null)
               }}
               style={{

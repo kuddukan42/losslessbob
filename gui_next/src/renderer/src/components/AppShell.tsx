@@ -8,7 +8,7 @@ import { useSettingsStore } from '../store'
 
 type NavId =
   | 'home' | 'pipeline' | 'verify' | 'lookup' | 'quicklookup' | 'rename' | 'lbdir'
-  | 'collection' | 'trading' | 'sharing' | 'search' | 'bootlegs'
+  | 'library' | 'collection' | 'trading' | 'sharing' | 'search' | 'bootlegs'
   | 'attachments' | 'spectrograms' | 'map' | 'fingerprint'
   | 'scraper' | 'setup' | 'mounts' | 'themes' | 'dbeditor'
 
@@ -57,6 +57,7 @@ const NAV_GROUPS: NavGroup[] = [
   {
     label: 'Library',
     items: [
+      { id: 'library',    label: 'Library',       icon: 'library', featured: true },
       { id: 'collection', label: 'My Collection', icon: 'collection' },
       { id: 'trading',    label: 'Trading',       icon: 'trading' },
       { id: 'sharing',    label: 'Sharing',       icon: 'share' },

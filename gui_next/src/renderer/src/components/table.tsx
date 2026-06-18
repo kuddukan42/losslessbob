@@ -100,31 +100,34 @@ export interface TRProps {
   children?: React.ReactNode
 }
 
-export function TR({ edge, selected, onClick, onDoubleClick, onContextMenu, style, children }: TRProps) {
-  const rowHighlight = useSettingsStore((s) => s.rowHighlight)
-  const wash = (edge && rowHighlight) ? `var(--lbb-${edge}-bg)` : 'transparent'
-  const bar  = (edge && rowHighlight) ? `var(--lbb-${edge}-bar)` : 'transparent'
-  return (
-    <tr
-      onClick={onClick}
-      onDoubleClick={onDoubleClick}
-      onContextMenu={onContextMenu}
-      data-selected={selected ? 'true' : undefined}
-      style={{
-        background: selected ? 'var(--lbb-accent-soft)' : wash,
-        cursor: onClick ? 'pointer' : 'default',
-        ...style,
-      }}
-    >
-      <td style={{
-        width: 3, padding: 0,
-        background: bar,
-        borderBottom: '1px solid var(--lbb-border)',
-      }} />
-      {children}
-    </tr>
-  )
-}
+export const TR = React.forwardRef<HTMLTableRowElement, TRProps>(
+  function TR({ edge, selected, onClick, onDoubleClick, onContextMenu, style, children }, ref) {
+    const rowHighlight = useSettingsStore((s) => s.rowHighlight)
+    const wash = (edge && rowHighlight) ? `var(--lbb-${edge}-bg)` : 'transparent'
+    const bar  = (edge && rowHighlight) ? `var(--lbb-${edge}-bar)` : 'transparent'
+    return (
+      <tr
+        ref={ref}
+        onClick={onClick}
+        onDoubleClick={onDoubleClick}
+        onContextMenu={onContextMenu}
+        data-selected={selected ? 'true' : undefined}
+        style={{
+          background: selected ? 'var(--lbb-accent-soft)' : wash,
+          cursor: onClick ? 'pointer' : 'default',
+          ...style,
+        }}
+      >
+        <td style={{
+          width: 3, padding: 0,
+          background: bar,
+          borderBottom: '1px solid var(--lbb-border)',
+        }} />
+        {children}
+      </tr>
+    )
+  }
+)
 
 // ── TD ───────────────────────────────────────────────────────────────────────
 
@@ -175,33 +178,35 @@ export interface GroupRowProps {
   style?: React.CSSProperties
 }
 
-export function GroupRow({ label, count, expanded = true, onToggle, colSpan = 99, style }: GroupRowProps) {
-  return (
-    <tr style={style}>
-      <td style={{ width: 3, padding: 0, background: 'transparent' }} />
-      <td
-        colSpan={colSpan}
-        onClick={onToggle}
-        style={{
-          padding: '5px var(--lbb-d-pad)',
-          background: 'var(--lbb-surface2)',
-          fontSize: 'var(--lbb-fs-11)', fontWeight: 600, letterSpacing: '0.04em',
-          textTransform: 'uppercase',
-          color: 'var(--lbb-fg2)',
-          cursor: onToggle ? 'pointer' : 'default',
-          borderBottom: '1px solid var(--lbb-border)',
-          borderTop: '1px solid var(--lbb-border)',
-          userSelect: 'none',
-        }}
-      >
-        <Icon name={expanded ? 'chevDown' : 'chevRight'} size={11} style={{ marginRight: 4 }} />
-        {label}
-        {count !== undefined && (
-          <span style={{ marginLeft: 8, fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)', fontWeight: 500 }}>
-            {count.toLocaleString()}
-          </span>
-        )}
-      </td>
-    </tr>
-  )
-}
+export const GroupRow = React.forwardRef<HTMLTableRowElement, GroupRowProps>(
+  function GroupRow({ label, count, expanded = true, onToggle, colSpan = 99, style }, ref) {
+    return (
+      <tr ref={ref} style={style}>
+        <td style={{ width: 3, padding: 0, background: 'transparent' }} />
+        <td
+          colSpan={colSpan}
+          onClick={onToggle}
+          style={{
+            padding: '5px var(--lbb-d-pad)',
+            background: 'var(--lbb-surface2)',
+            fontSize: 'var(--lbb-fs-11)', fontWeight: 600, letterSpacing: '0.04em',
+            textTransform: 'uppercase',
+            color: 'var(--lbb-fg2)',
+            cursor: onToggle ? 'pointer' : 'default',
+            borderBottom: '1px solid var(--lbb-border)',
+            borderTop: '1px solid var(--lbb-border)',
+            userSelect: 'none',
+          }}
+        >
+          <Icon name={expanded ? 'chevDown' : 'chevRight'} size={11} style={{ marginRight: 4 }} />
+          {label}
+          {count !== undefined && (
+            <span style={{ marginLeft: 8, fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)', fontWeight: 500 }}>
+              {count.toLocaleString()}
+            </span>
+          )}
+        </td>
+      </tr>
+    )
+  }
+)

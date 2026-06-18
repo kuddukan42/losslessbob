@@ -73,6 +73,10 @@
         "scraping_bootlegs": "Bootlegs scrapen…",
         "scanning": "Collectie scannen…",
         "filing": "Map archiveren…",
+        "crawling": "Site crawlen…",
+        "bobdylan_scraping": "bobdylan.com scrapen…",
+        "setlistfm_syncing": "setlist.fm synchroniseren…",
+        "geocoding": "Geocoderen…",
         "updating_app": "App bijwerken…",
         "downloading_data": "Gegevens downloaden…"
       }
@@ -173,7 +177,7 @@
       "filename": "Bestandsnaam",
       "type": "Type",
       "xref": "Xref",
-      "open": "Open",
+      "open": "Openen op LB Website",
       "addWishlist": "+WL"
     },
     "states": {
@@ -426,6 +430,7 @@
       "qbtSyncFailed": "Opgeslagen, maar het bijwerken van het qBittorrent-opslagpad is mislukt: {{error}}",
       "busy": "Er loopt al een archiveertaak — wacht tot deze is voltooid",
       "jobMismatch": "De archiveerstatus is overgenomen door een andere taak — controleer het resultaat in Mijn collectie",
+      "renamePending": "Pas eerst de hernoeming toe — deze map kan niet worden gearchiveerd zolang een hernoeming in behandeling is.",
       "progress": {
         "scanning": "Scannen…",
         "copying": "Kopiëren…",
@@ -455,7 +460,11 @@
       "ownedYes": "In bezit",
       "ownedNo": "Niet in collectie",
       "notConfirmed": "Nog niet bevestigd",
-      "valueUnassigned": "Niet toegewezen"
+      "valueUnassigned": "Niet toegewezen",
+      "alreadyInCollectionTitle": "Al in de collectie",
+      "alreadyInCollectionBody": "Deze opname is al geregistreerd in uw collectie op {{path}}. Bij het archiveren wordt de map naar de nieuwe locatie verplaatst en de collectierecord bijgewerkt.",
+      "renamePendingTitle": "Hernoeming vereist vóór archivering",
+      "renamePendingBody": "Deze map heeft een niet-toegepaste hernoeming. Ga naar de stap Hernoemen en pas deze toe vóór het archiveren."
     }
   },
   "collection": {

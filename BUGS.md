@@ -1,42 +1,153 @@
 
-BUG-192: Windows — test_batch_verify.py and tools/batch_verify.py not runnable on Windows (termios)
-Status: Open
-File(s): tools/batch_verify.py:36, tests/test_batch_verify.py:18
-Reported: 2026-06-15
-Root cause: tools/batch_verify.py imports termios at module level (line 36). termios is a
-  Unix-only stdlib module for terminal I/O control and does not exist on Windows. pytest
-  collection of tests/test_batch_verify.py fails immediately with ModuleNotFoundError.
-Fix: Either (a) guard the import with sys.platform != 'win32' and provide a stub, or (b)
-  move the termios import inside the function(s) that need it and add a Windows fallback,
-  or (c) mark the test module to skip on Windows with @pytest.mark.skipif.
+BUG-208: Pipeline — "File all" and explicit filing bypass a pending rename
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenPipeline.tsx:1376-1377 (fileableRows/selectedFileable), 1679 (applyFile), 993 (CollectReadyDetail)
+Reported: 2026-06-17
+Fixed: 2026-06-17
+Root cause: fileableRows and selectedFileable only checked file.status==='warn' and dest; a folder
+  with a pending rename (rename.status==='warn' && proposed set) could be included and silently
+  filed under its old name. applyFile had no guard either. CollectReadyDetail also lacked a
+  useTranslation() call, causing t() to be undefined when step.owned && existing_disk_path
+  (latent crash from BUG-204 fix).
+Fix: Exclude rename-pending rows from fileableRows and selectedFileable. Add early-return guard in
+  applyFile with toast. Add useTranslation() + renamePending banner + disabled File button in
+  CollectReadyDetail. Added 3 i18n keys (pipeline.file.renamePending,
+  pipeline.collect.renamePendingTitle/Body) to all 6 locales.
 
-BUG-187: Full pytest run is order-dependent — global bloom filter leaks between test DBs
+BUG-205: Pipeline — filing creates duplicate visible rows; row stays in running section after completion
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenPipeline.tsx:1369,1393,1376-1377,1760
+Reported: 2026-06-17
+Fixed: 2026-06-17
+Root cause: shelfVis filter did not exclude running rows, so a row being filed (bucket='shelf', running=true)
+  appeared in both the Running section AND the Shelf section simultaneously. Also: counts.shelf and
+  fileableRows included running rows, inflating counts during filing. _pipelineCache not updated on
+  successful filing meant a component remount would restore the row as "ready to file."
+Fix: Added !r.running to shelfVis, counts.shelf, fileableRows, selectedFileable. Updated _pipelineCache
+  inside the success setRows callback after filing completes.
+
+BUG-204: Pipeline — filing a folder already in collection at a different path silently loses the new path
+Status: Fixed
+File(s): backend/filer.py:534-550, backend/app.py:5684-5687, gui_next/src/renderer/src/screens/ScreenPipeline.tsx
+Reported: 2026-06-17
+Fixed: 2026-06-18
+Root cause: add_to_collection uses INSERT OR IGNORE; lb_number has a UNIQUE constraint in
+  my_collection, so if the lb was already registered at any path, the INSERT silently did
+  nothing. The folder was physically moved to the new location but the collection record
+  still pointed to the old (now missing) path. No warning was shown before filing.
+Fix: filer.py _run(): after filesystem op succeeds, check for an existing my_collection row
+  by lb_number; if found, call update_collection(folder_name, disk_path) to update the
+  path instead of relying on INSERT OR IGNORE. app.py file-step: query disk_path alongside
+  lbdir_verified_at and include existing_disk_path in the step result. Frontend: when
+  owned=true and existing_disk_path is set, show a warn banner before the File button
+  explaining that the collection record will be updated. All 6 locale files updated.
+
+BUG-203: Pipeline — shelving a folder leaves the File button visible and item counts in "File all"
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenPipeline.tsx
+Reported: 2026-06-17
+Fixed: 2026-06-17
+Root cause: Shelving only changed `bucket` to 'shelf', but 'shelf' is also the natural "ready to file"
+  state. So a shelved folder still satisfied the File button condition (file.status==='warn' && dest set)
+  and was still included in fileableRows / counts.shelf used by "File all N".
+Fix: Added `shelved: boolean` flag to PipelineRow. Shelve sets it; unshelve clears it and restores the
+  correct bucket (shelf if steps are all done, needs otherwise). File button, fileableRows,
+  selectedFileable, and counts.shelf all exclude shelved rows. deriveFolderStatus returns "Shelved /
+  Deferred" when shelved flag is set.
+
+BUG-202: Pipeline — blocked folders show "Needs you" in sidebar panel; File button visible on blocked rows
+Status: Fixed
+File(s): gui_next/src/renderer/src/components/pipeline/PipelineParts.tsx:256-289
+         gui_next/src/renderer/src/screens/ScreenPipeline.tsx:2378
+Reported: 2026-06-17
+Fixed: 2026-06-17
+Root cause: QueueRow in PipelineParts always used BUCKET[folder.bucket].label; since all "bad"
+  severity folders land in bucket "needs", they showed "Needs you" not "Blocked". Separately,
+  the File button in the main table row checked only file.status === 'warn' without verifying
+  that upstream steps are not blocked.
+Fix: QueueRow now checks if any step has state 'blocked' and overrides tone+label to bad/Blocked.
+  File button condition extended to exclude rows where any of verify/lookup/lbdir/rename is bad.
+
+BUG-201: Pipeline screen — extensive untranslated English when non-English locale is active
 Status: Open
-File(s): backend/db.py:25 (_bloom global), backend/db.py:947 (_rebuild_bloom_bg), backend/db.py:1185 (init_db spawns it), tests/test_db_lookup.py:71-167 (TestLookupChecksumsSnhCompleteness)
+File(s): gui_next/src/renderer/src/components/pipeline/PipelineParts.tsx:43-47
+         gui_next/src/renderer/src/components/pipeline/LookupDetail.tsx:10-13,104
+         gui_next/src/renderer/src/screens/ScreenPipeline.tsx (throughout)
+Reported: 2026-06-17
+Root cause: Three distinct gaps:
+  1. DEFAULT_STAGES (PipelineParts.tsx:43-47) hard-codes English step labels "Verify",
+     "Lookup", "LBDIR", "Rename", "Collect" for the progress-bar header. The locale already
+     has keys pipeline.stepVerify / stepLookup / stepLbdir / stepRename but they are never
+     used here.
+  2. STATE_TONE (LookupDetail.tsx:10-13) hard-codes English pill/badge labels "Matched",
+     "Incomplete", "Not found", "Duplicate", "Xref" used throughout the Lookup stage UI and
+     the per-row status column.
+  3. ScreenPipeline.tsx contains dozens of hard-coded English inline strings with no i18n
+     key: button labels (Re-run lookup, Re-verify, Run lookup, Run verify, Re-check,
+     Apply rename, Check rename, Check route now, Re-check route), status tags ("Matched"),
+     inline guidance text ("Lookup runs automatically after verify passes.",
+     "LBDIR, rename, and file are blocked until you confirm…", "This folder will advance to
+     Lookup automatically.", etc.), and the "Pin LB-XXXXX & continue" button
+     (LookupDetail.tsx:104).
+  Additionally, backend-returned step.label values ("Action", "Incomplete match", "Renamed",
+  "Filed", "Filed to X") are backend English strings rendered directly — these need either
+  a frontend translation map or backend i18n plumbing.
+Fix: TBD — requires (a) wiring DEFAULT_STAGES labels through t(), (b) moving STATE_TONE
+     labels to locale keys, (c) systematic pass through ScreenPipeline.tsx and
+     LookupDetail.tsx to replace all hard-coded English with t() calls + new locale keys in
+     all 6 language files, (d) decide on backend label strategy.
+
+BUG-200: tapematch — report.md for 1999-02-25 Portland, Maine contains another session's tapematch output verbatim
+Status: Open
+File(s): data/tapematch/runs/20260602_205451_1999-02-25/report.md
+Reported: 2026-06-17
+Root cause: Unknown — found incidentally while scanning tapematch run dirs for BUG-199. The
+  Coverage table and LB page commentary in this report.md are correctly for 1999-02-25
+  Portland, Maine (LB-04452, LB-05683, LB-09627, LB-12715), but the entire `## tapematch
+  output` fenced block (INGEST/TRIM through DIAGNOSTICS) is verbatim output from an unrelated
+  2018-08-26 Auckland, New Zealand session (LB-13696, LB-13704, LB-13729) — none of the
+  Portland LB numbers appear in that block and none of the Auckland LB numbers appear in the
+  Coverage table. Looks like the wrong cached tapematch stdout was attached when this
+  report.md was generated. Already flagged by a prior session in this run's own analysis.md
+  but never logged as a tracked bug until now.
+Fix: TBD — re-run tapematch for the 1999-02-25 Portland, Maine session to regenerate a
+  correct report.md before any source-identity verdict can be drawn for LB-04452/LB-05683/
+  LB-09627/LB-12715. Also worth checking the run/report-generation pipeline for how a
+  different session's stdout could get attached, in case other run dirs are silently
+  affected without an obvious Coverage-table/tapematch-output mismatch to notice it by.
+
+
+BUG-195: Pipeline — incomplete-match folders (FFP-only) show yellow LBDIR/rename/file and allow action
+Status: Fixed
+File(s): backend/app.py:5535-5556, gui_next/src/renderer/src/screens/ScreenPipeline.tsx:688,761-785
+Reported: 2026-06-17
+Fixed: 2026-06-17
+Root cause: When lookup resolved an LB# from a partial checksum match (e.g. FFP matched but
+  MD5 did not), the local lb_number variable stayed set. Downstream steps (lbdir, rename, file)
+  all gate on lb_number being non-null, so they ran and showed actionable UI even though the
+  files on disk hadn't been confirmed against the archive. The frontend warn+lb_number branch
+  also showed no pin option, so there was no recovery path.
+Fix: Backend clears lb_number for downstream steps after an incomplete-match lookup unless
+  pinned_lb is set (user explicitly confirmed the folder via "Pin & continue"). Frontend:
+  warn+lb_number branch now passes onPin/pinBusyLb to LookupDetail and explains the block.
+  handlePin now runs all downstream steps (lookup/lbdir/rename/file) after pinning, not
+  just re-lookup.
+
+
+BUG-193: Scraper — new shows not discovered; hardcoded sitemap list misses dynamic sitemaps
+Status: Fixed
+File(s): backend/bobdylan_scraper.py:32-36, 123-149
 Reported: 2026-06-15
-Root cause: init_db() unconditionally spawns a daemon thread (_rebuild_bloom_bg) that calls
-  rebuild_bloom(db_path) and overwrites the process-global `_bloom` filter (backend/db.py:25)
-  with checksums from whichever db_path it was given. Every test that calls init_db() via a
-  `_make_db()`-style fixture (now used by ~7 test modules) triggers one of these threads
-  against its own temp DB. TestLookupChecksumsSnhCompleteness relies on `_bloom is None`
-  (its docstring says "the bloom filter is not populated... all checksums pass through to
-  SQLite") — true when run alone, but when other tests' background rebuild threads finish
-  later and overwrite `_bloom` with a filter built from a *different* (often already-deleted)
-  temp DB, checksum_in_bloom() starts returning real (stale) results for this test's
-  checksums, causing lookup_checksums() to treat its SHN/WAV entries as definite misses.
-  This is why `tests/test_db_lookup.py::TestLookupChecksumsSnhCompleteness` fails
-  intermittently in full-suite runs (different sub-test fails depending on what else ran,
-  e.g. test_shn_md5s_only_yields_matched_not_incomplete vs
-  test_mixed_shn_and_wav_checksums_still_matched) but always passes in isolation. Confirmed
-  reproducible on main without any new test files — pre-existing, not caused by the new
-  tests/test_scraper.py / test_bootleg_scraper.py / test_bobdylan_scraper.py / test_setlistfm.py
-  / test_geocoder.py added 2026-06-15.
-Fix: TBD. Options: (1) have lookup_checksums()/checksum_in_bloom() validate the bloom filter
-  against the db_path it was built for (e.g. store the path alongside `_bloom` and skip the
-  filter if it doesn't match); (2) let tests pass an explicit empty/None bloom filter into
-  lookup_checksums() instead of relying on global state; (3) don't spawn _rebuild_bloom_bg
-  from init_db() when called from tests (e.g. add a `build_bloom: bool = True` kwarg).
-  Note: BUG-175 above is unrelated despite the proximity.
+Fixed: 2026-06-15
+Root cause: _SITEMAP_URLS was hardcoded to 3 URLs. WordPress generates date sitemaps
+  dynamically; as the site grows past 2000 entries a new numbered file appears. Sitemaps 2
+  and 3 returned 404 (silent in _fetch), so only sitemap 1 was used. New shows landing in
+  sitemap 2+ were never discovered and therefore never scraped.
+Fix: Added _get_date_sitemap_urls() which fetches wp-sitemap.xml (the WP sitemap index)
+  and extracts all posts-date sitemaps dynamically. Falls back to _SITEMAP_URLS_FALLBACK
+  if the index is unavailable. Also added WARNING log for 404 responses in _fetch so
+  future silent failures are visible.
+
 
 BUG-175: LBDIR reconcile leaves self-referencing/regenerated entries permanently "MD5 mismatch" — BUG-174 fix may not be the final answer
 Status: Open

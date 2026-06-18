@@ -414,6 +414,29 @@
     <div id="crawl-log" class="status-line"></div>
   </div>
 
+  <!-- ── Bob Dylan Scraper ───────────────────────── -->
+  <div class="card">
+    <div class="card-header"><span class="card-icon">🎸</span> Bob Dylan Scraper</div>
+    <div class="stat-grid">
+      <div class="stat">
+        <div class="stat-label">Status</div>
+        <div class="stat-value small" id="bd-status-text">—</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Progress</div>
+        <div class="stat-value small" id="bd-progress">—</div>
+      </div>
+    </div>
+    <div class="prog-wrap" id="bd-prog-wrap" style="display:none">
+      <div class="prog-bar" id="bd-prog-bar" style="width:0%"></div>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-success" id="bd-start-btn" onclick="bdStart()">▶ Update</button>
+      <button class="btn btn-warning" id="bd-stop-btn"  onclick="bdStop()" disabled>⏹ Stop</button>
+    </div>
+    <div id="bd-log" class="status-line"></div>
+  </div>
+
   <!-- ── LB Master ───────────────────────────────── -->
   <div class="card">
     <div class="card-header"><span class="card-icon">📋</span> LB Master</div>
@@ -614,6 +637,9 @@
       // Import
       updateImportUI(d.import_status);
 
+      // Bob Dylan scraper
+      updateBdScraperUI(d.bobdylan);
+
       // Master
       if (d.master) {
         document.getElementById('master-total').textContent     = fmt(d.master.total);
@@ -645,6 +671,28 @@
     document.getElementById('scrape-start-btn').disabled = running;
     document.getElementById('scrape-stop-btn').disabled  = !running;
     if (s.current) setStatus('scrape-log', s.current, 'running');
+  }
+
+  function updateBdScraperUI(s) {
+    if (!s) return;
+    const running = s.status === 'running';
+    const phase = s.phase || '';
+    const phaseLabel = phase === 'discover' ? 'Discovering' : phase === 'scrape' ? 'Scraping' : '';
+    document.getElementById('bd-status-text').textContent = running
+      ? (phaseLabel ? '🟡 ' + phaseLabel : '🟡 Running')
+      : (s.status === 'done' ? '✅ Done' : '⚪ Idle');
+    const done = s.done || 0, total = s.total || 0;
+    document.getElementById('bd-progress').textContent =
+      total > 0 ? done + ' / ' + fmt(total) : (running ? 'starting…' : '—');
+    const wrap = document.getElementById('bd-prog-wrap');
+    wrap.style.display = (running && total > 0) ? '' : 'none';
+    if (running && total > 0)
+      document.getElementById('bd-prog-bar').style.width = Math.round(done / total * 100) + '%';
+    document.getElementById('bd-start-btn').disabled = running;
+    document.getElementById('bd-stop-btn').disabled  = !running;
+    const msg = s.message || '';
+    if (msg) setStatus('bd-log', msg,
+      running ? 'running' : s.status === 'done' ? 'ok' : s.status === 'error' ? 'err' : '');
   }
 
   function updateImportUI(s) {
@@ -742,6 +790,24 @@
       await api('POST', '/api/scrape/stop');
       toast('Stop signal sent', 'warning');
       setStatus('scrape-log', 'Stop requested…', 'running');
+    } catch (e) { toast('Network error', 'error'); }
+  }
+
+  // ── Bob Dylan scraper ──────────────────────────────
+  async function bdStart() {
+    try {
+      const d = await api('POST', '/api/bobdylan/update', {});
+      if (d.ok) toast('Bob Dylan scraper started', 'success');
+      else toast('Could not start: ' + (d.error || '?'), 'error');
+      pollStatus();
+    } catch (e) { toast('Network error', 'error'); }
+  }
+
+  async function bdStop() {
+    try {
+      await api('POST', '/api/bobdylan/stop');
+      toast('Stop signal sent', 'warning');
+      setStatus('bd-log', 'Stop requested…', 'running');
     } catch (e) { toast('Network error', 'error'); }
   }
 

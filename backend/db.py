@@ -23,6 +23,7 @@ _write_lock = threading.RLock()
 
 # --- Bloom filter for fast NOT-FOUND short-circuit (DB-07) ---
 _bloom: _SBF | None = None
+_bloom_db_path: str | None = None  # path the filter was built from (BUG-187)
 _bloom_lock = threading.Lock()
 
 
@@ -31,7 +32,7 @@ _bloom_lock = threading.Lock()
 # USER tables stay local to each install and never appear in an export.
 # See instructions/CC_LB_INTEGRITY.md §Data Ownership Model.
 
-MASTER_SCHEMA_VERSION = 6  # bumped: entries.lb_category added
+MASTER_SCHEMA_VERSION = 8  # bumped: entries.source_type (curator-edited) added
 
 MASTER_TABLES = (
     "lb_missing",
@@ -53,6 +54,8 @@ MASTER_TABLES = (
     "bobdylan_setlist",
     "setlistfm_shows",
     "setlistfm_setlist",
+    "recording_families",
+    "tapematch_family_meta",
 )
 # Note: `entries_fts` is a virtual FTS5 table whose content is mirrored from
 # `entries` via triggers. It is NOT copied directly during export/import; the
@@ -133,7 +136,8 @@ CREATE TABLE IF NOT EXISTS entries (
     scraped_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     taper_name TEXT,
     source_chain TEXT,
-    lb_category TEXT
+    lb_category TEXT,
+    source_type TEXT
 );
 
 CREATE TABLE IF NOT EXISTS entry_files (
@@ -362,10 +366,11 @@ CREATE TABLE IF NOT EXISTS lb_alias (
 CREATE INDEX IF NOT EXISTS idx_lb_alias_canonical ON lb_alias(canonical_lb);
 
 CREATE TABLE IF NOT EXISTS folder_lb_link (
-    folder_path    TEXT PRIMARY KEY,
+    folder_path    TEXT NOT NULL,
     lb_number      INTEGER NOT NULL,
     linked_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    note           TEXT
+    note           TEXT,
+    PRIMARY KEY (folder_path, lb_number)
 );
 CREATE INDEX IF NOT EXISTS idx_folder_link_lb ON folder_lb_link(lb_number);
 
@@ -452,6 +457,34 @@ CREATE TABLE IF NOT EXISTS dylan_performances (
 CREATE INDEX IF NOT EXISTS idx_perf_date     ON dylan_performances(date_str);
 CREATE INDEX IF NOT EXISTS idx_perf_category ON dylan_performances(category);
 CREATE INDEX IF NOT EXISTS idx_perf_country  ON dylan_performances(country);
+
+-- TapeMatch family clustering, synced from tools/tapematch/observations.db
+-- via backend/tapematch_sync.py. See instructions/design_handoff_unified_library/
+-- 07-tapematch-backend-integration.md for the design.
+CREATE TABLE IF NOT EXISTS recording_families (
+    lb_number      INTEGER PRIMARY KEY,
+    fam_id         TEXT NOT NULL,
+    concert_date   TEXT NOT NULL,
+    run_id         TEXT,
+    imported_at    TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+CREATE INDEX IF NOT EXISTS idx_recording_families_concert_date
+    ON recording_families(concert_date);
+CREATE INDEX IF NOT EXISTS idx_recording_families_fam_id
+    ON recording_families(fam_id);
+
+CREATE TABLE IF NOT EXISTS tapematch_family_meta (
+    fam_id          TEXT PRIMARY KEY,
+    concert_date    TEXT NOT NULL,
+    label           TEXT,
+    label_override  TEXT,
+    by              TEXT NOT NULL DEFAULT 'ai',
+    conf            REAL,
+    note            TEXT,
+    member_count    INTEGER NOT NULL,
+    run_id          TEXT,
+    imported_at     TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 
 CREATE TABLE IF NOT EXISTS lb_missing (
     lb_number      INTEGER PRIMARY KEY,
@@ -935,13 +968,14 @@ def close_connection(db_path) -> None:
 
 def rebuild_bloom(db_path=None):
     """Load all checksums into an in-process bloom filter. Call after import/init."""
-    global _bloom
+    global _bloom, _bloom_db_path
     bf = _SBF(mode=_SBF.LARGE_SET_GROWTH, error_rate=0.01)
     conn = get_connection(db_path)
     for row in conn.execute("SELECT checksum FROM checksums"):
         bf.add(row[0])
     with _bloom_lock:
         _bloom = bf
+        _bloom_db_path = str(db_path or DB_PATH)
 
 
 def _rebuild_bloom_bg(db_path=None) -> None:
@@ -991,6 +1025,13 @@ def init_db(db_path=None):
 
         if "lb_category" not in cols:
             conn.execute("ALTER TABLE entries ADD COLUMN lb_category TEXT")
+            conn.commit()
+
+        if "source_type" not in cols:
+            # Curator-edited (Soundboard/Audience/FM-Pre-FM/Master/Mixed) — unlike
+            # taper_name/source_chain/lb_category this is never heuristically
+            # backfilled from description text; it stays NULL until a curator sets it.
+            conn.execute("ALTER TABLE entries ADD COLUMN source_type TEXT")
             conn.commit()
 
         # Populate FTS index if empty (first run after adding FTS)
@@ -1150,10 +1191,12 @@ def init_db(db_path=None):
             )
 
         # One-time backfill: classify entries using bobdylan_shows + dylan_performances + keywords.
-        if not conn.execute("SELECT 1 FROM meta WHERE key='lb_category_backfill_v1'").fetchone():
+        # v2 (2026-06-18, TODO-151): _PERF_CATEGORY_MAP gained GUEST/NET/SIDEMAN mappings that
+        # were missing from v1 — bumped to force reclassification on existing installs.
+        if not conn.execute("SELECT 1 FROM meta WHERE key='lb_category_backfill_v2'").fetchone():
             _classified = classify_entry_categories(db_path, conn=conn)
             conn.execute(
-                "INSERT OR REPLACE INTO meta(key, value) VALUES('lb_category_backfill_v1', '1')"
+                "INSERT OR REPLACE INTO meta(key, value) VALUES('lb_category_backfill_v2', '1')"
             )
             logging.getLogger(__name__).info(
                 "entries: classified lb_category for %d rows (concert=%d, unknown=%d)",
@@ -1173,6 +1216,32 @@ def init_db(db_path=None):
             conn.execute(
                 "INSERT OR REPLACE INTO meta(key, value) VALUES('rename_history_localtime_v1', '1')"
             )
+
+        # Migration: folder_lb_link composite PK to support multi-LB folder links.
+        _fll_row = conn.execute(
+            "SELECT sql FROM sqlite_master WHERE type='table' AND name='folder_lb_link'"
+        ).fetchone()
+        _fll_sql = _fll_row[0] if _fll_row else ""
+        if "folder_path TEXT PRIMARY KEY" in _fll_sql:
+            conn.executescript("""
+                PRAGMA foreign_keys = OFF;
+                CREATE TABLE folder_lb_link_new (
+                    folder_path    TEXT NOT NULL,
+                    lb_number      INTEGER NOT NULL,
+                    linked_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    note           TEXT,
+                    PRIMARY KEY (folder_path, lb_number)
+                );
+                INSERT OR IGNORE INTO folder_lb_link_new
+                    (folder_path, lb_number, linked_at, note)
+                    SELECT folder_path, lb_number, linked_at, note
+                    FROM folder_lb_link;
+                DROP TABLE folder_lb_link;
+                ALTER TABLE folder_lb_link_new RENAME TO folder_lb_link;
+                CREATE INDEX IF NOT EXISTS idx_folder_link_lb
+                    ON folder_lb_link(lb_number);
+                PRAGMA foreign_keys = ON;
+            """)
 
         # Always commit: UPDATE above opens a Python implicit transaction regardless
         # of rowcount.  Without this, a zero-row UPDATE leaves the read connection
@@ -1445,9 +1514,19 @@ def lookup_checksums(parsed_entries, db_path=None):
     if not parsed_entries:
         return {}, []
 
-    # Bloom pre-filter: separate definite misses from candidates (DB-07)
-    candidates = [e for e in parsed_entries if checksum_in_bloom(e[0])]
-    definite_misses = [e for e in parsed_entries if not checksum_in_bloom(e[0])]
+    # Bloom pre-filter: separate definite misses from candidates (DB-07).
+    # Only use the bloom if it was built for this exact db_path; a filter built
+    # from a different DB (common in tests with multiple temp DBs) would give
+    # false negatives, silently dropping valid checksums (BUG-187).
+    active_path = str(db_path or DB_PATH)
+    with _bloom_lock:
+        _active_bloom = _bloom if _bloom_db_path == active_path else None
+    if _active_bloom is not None:
+        candidates = [e for e in parsed_entries if e[0] in _active_bloom]
+        definite_misses = [e for e in parsed_entries if e[0] not in _active_bloom]
+    else:
+        candidates = list(parsed_entries)
+        definite_misses = []
     checksums = [e[0] for e in candidates]
 
     # Temp-table bulk lookup — avoids dynamic IN clause and the 999-param limit (DB-04)
@@ -1766,7 +1845,7 @@ def search_entries(query, field="all", year=None, limit=None, db_path=None):
         sql = f"""
             SELECT e.lb_number, e.date_str, e.location, e.rating,
                    e.description, e.status, lm.lb_status, lm.public_no_checksums,
-                   e.taper_name, e.source_chain, e.lb_category
+                   e.taper_name, e.source_chain, e.lb_category, e.source_type
             FROM entries_fts
             JOIN entries e ON e.lb_number = entries_fts.rowid
             LEFT JOIN lb_master lm ON lm.lb_number = e.lb_number
@@ -1781,7 +1860,7 @@ def search_entries(query, field="all", year=None, limit=None, db_path=None):
         sql = f"""
             SELECT e.lb_number, e.date_str, e.location, e.rating,
                    e.description, e.status, lm.lb_status, lm.public_no_checksums,
-                   e.taper_name, e.source_chain, e.lb_category
+                   e.taper_name, e.source_chain, e.lb_category, e.source_type
             FROM entries e
             LEFT JOIN lb_master lm ON lm.lb_number = e.lb_number
             WHERE 1=1 {year_clause}
@@ -1798,7 +1877,7 @@ def search_entries(query, field="all", year=None, limit=None, db_path=None):
         fallback_sql = (
             "SELECT e.lb_number, e.date_str, e.location, e.rating,"
             " e.description, e.status, lm.lb_status, lm.public_no_checksums,"
-            " e.taper_name, e.source_chain, e.lb_category"
+            " e.taper_name, e.source_chain, e.lb_category, e.source_type"
             " FROM entries e LEFT JOIN lb_master lm ON lm.lb_number = e.lb_number"
             " WHERE e.description LIKE ? OR e.location LIKE ? OR e.date_str LIKE ?"
             " ORDER BY e.lb_number"
@@ -1821,7 +1900,7 @@ def search_entries(query, field="all", year=None, limit=None, db_path=None):
                 direct = conn.execute(
                     "SELECT e.lb_number, e.date_str, e.location, e.rating,"
                     " e.description, e.status, lm.lb_status, lm.public_no_checksums,"
-                    " e.taper_name, e.source_chain, e.lb_category"
+                    " e.taper_name, e.source_chain, e.lb_category, e.source_type"
                     " FROM entries e LEFT JOIN lb_master lm ON lm.lb_number = e.lb_number"
                     " WHERE e.lb_number = ?",
                     (lb_id,),
@@ -1851,7 +1930,7 @@ def get_entries_by_lb_list(lb_numbers: list[int], db_path=None) -> list[dict]:
     rows = conn.execute(
         f"SELECT e.lb_number, e.date_str, e.location, e.rating,"
         f" e.description, e.status, lm.lb_status, lm.public_no_checksums,"
-        f" e.taper_name, e.source_chain, e.lb_category"
+        f" e.taper_name, e.source_chain, e.lb_category, e.source_type"
         f" FROM entries e LEFT JOIN lb_master lm ON lm.lb_number = e.lb_number"
         f" WHERE e.lb_number IN ({placeholders})"
         f" ORDER BY e.lb_number",
@@ -1860,14 +1939,212 @@ def get_entries_by_lb_list(lb_numbers: list[int], db_path=None) -> list[dict]:
     return [dict(r) for r in rows]
 
 
+def _year_from_date_str(date_str: str) -> int:
+    """Extract a year from entries.date_str (M/D/YY, possibly 'xx' for M/D).
+
+    Mirrors gui_next's extractYear() so server- and client-derived years
+    never disagree for the same row.
+    """
+    if not date_str:
+        return 0
+    parts = date_str.split("/")
+    if len(parts) < 3:
+        return 0
+    try:
+        n = int(parts[-1].strip())
+    except ValueError:
+        return 0
+    if n < 100:
+        return 1900 + n if n >= 49 else 2000 + n
+    return n
+
+
+_STATUS_RANK: dict[str, int] = {"public": 0, "private": 1, "missing": 2}
+_STATUS_LABEL: dict[str, str] = {"public": "Public", "private": "Private", "missing": "Missing"}
+
+
+def get_performances(db_path=None) -> list[dict]:
+    """Group catalog entries into shows for the Library screen's performance lens.
+
+    Aggregates by raw `(date_str, location)` — the same pair
+    `06-gap-analysis.md` §B3 identifies as the grouping key. This lives in the
+    backend (per the TODO-150 step 5 decision) rather than as a client-side
+    groupBy because building real show metadata means cross-referencing
+    `bobdylan_shows`, `setlistfm_shows`, and `bootleg_titles` — none of which
+    `/api/search` exposes, and duplicating those joins client-side would mean
+    re-fetching/re-indexing three more tables in the GUI for no benefit.
+
+    TapeMatch family data is deliberately NOT joined in here — per
+    `07-tapematch-backend-integration.md` §4, the Library's data adapter
+    fetches `/api/tapematch/families` separately and merges by `lb_number`,
+    same as it already does for `/api/collection/prefetch`.
+
+    `lb_category = 'concert'` entries are grouped into shows as before — this
+    now includes dates whose only source is `dylan_performances` with category
+    `GUEST` (appearance at another artist's show, e.g. Dire Straits/U2/Tom
+    Petty/Grateful Dead sets) or `NET` (a Never Ending Tour-era tag, not
+    "internet" — both were missing from `_PERF_CATEGORY_MAP` until the
+    TODO-151 audit, 2026-06-18). When `bobdylan_shows` has no row for the date
+    (true for nearly all GUEST dates, since they're not Dylan's own shows),
+    `venue` falls back to `dylan_performances.venue` instead of staying null.
+
+    `lb_category = 'unknown'` entries are ALSO included, but only when they
+    have a fully-specified date (no `xx` placeholder) and a non-blank
+    location — i.e. when the raw data is concrete enough to form a real show
+    grouping even though nothing matched. These render as a degraded row
+    (`confirmed: False` — no venue/setlist/tour, since by definition nothing
+    matched). This is the fallback for cases `dylan_performances` doesn't
+    cover either (e.g. category `FILM` — concert-like footage shoots such as
+    the 1986 Bristol Colston Hall "Hearts of Fire" filming — deliberately left
+    unmapped since some FILM rows are non-performance B-roll, not shows).
+    radio/tv/interview/studio/rehearsal/soundcheck/compilation/other
+    recordings, and 'unknown' ones with no usable date+location, still have no
+    real show to group into; they remain visible in the recording lens instead
+    (TODO-150 decision, 2026-06-18).
+
+    Args:
+        db_path: Optional path to the SQLite database file.
+
+    Returns:
+        List of performance dicts (data contract Entity 2 shape): `id`,
+        `date`, `disp`, `year`, `venue`, `city`, `status`, `recordings`
+        always present; `dow`, `tour`, `tracks`, `setlist`, `title` omitted
+        (not null-faked) when no source data exists for that show; `confirmed`
+        omitted (true by default) except `False` on degraded unknown-only rows.
+    """
+    from datetime import datetime as _dt
+
+    conn = get_connection(db_path)
+
+    rows = conn.execute(
+        """
+        SELECT e.lb_number, e.date_str, e.location, e.rating, e.source_type,
+               e.lb_category, lm.lb_status
+        FROM entries e
+        LEFT JOIN lb_master lm ON lm.lb_number = e.lb_number
+        WHERE e.lb_category IN ('concert', 'unknown')
+        """
+    ).fetchall()
+
+    bd_shows: dict[str, sqlite3.Row] = {
+        r["date_str"]: r
+        for r in conn.execute(
+            "SELECT date_str, venue, location, bobdylan_url FROM bobdylan_shows"
+        ).fetchall()
+    }
+    # Fallback venue source for shows bobdylan_shows doesn't track (guest spots,
+    # tour dates it's missing) — dylan_performances has real venue names for
+    # these (TODO-151). Only consulted when bd_shows has no match.
+    dp_venues: dict[str, sqlite3.Row] = {}
+    for r in conn.execute(
+        "SELECT date_str, venue, city, country FROM dylan_performances"
+        " WHERE venue NOT IN ('', '?')"
+    ).fetchall():
+        dp_venues.setdefault(r["date_str"], r)
+    setlist_counts: dict[str, int] = {
+        r["bobdylan_url"]: r["n"]
+        for r in conn.execute(
+            "SELECT bobdylan_url, COUNT(*) AS n FROM bobdylan_setlist GROUP BY bobdylan_url"
+        ).fetchall()
+    }
+    tours: dict[str, str] = {}
+    for r in conn.execute(
+        "SELECT date_str, tour_name FROM setlistfm_shows WHERE tour_name != ''"
+    ).fetchall():
+        tours.setdefault(r["date_str"], r["tour_name"])
+    titles: dict[int, str] = {}
+    for r in conn.execute(
+        "SELECT lb_number, title FROM bootleg_titles WHERE title != ''"
+    ).fetchall():
+        titles.setdefault(r["lb_number"], r["title"])
+
+    groups: dict[tuple[str, str], dict] = {}
+    order: list[tuple[str, str]] = []
+    for r in rows:
+        date_str = r["date_str"] or ""
+        location = r["location"] or ""
+        if r["lb_category"] == "unknown":
+            # Only degraded-confirm 'unknown' rows with a real date + location —
+            # see TODO-151 audit note above. Skip the rest (blank/'xx' dates,
+            # no location) just like before.
+            if not location.strip() or not _entry_date_to_iso_local(date_str):
+                continue
+        key = (date_str, location)
+        g = groups.get(key)
+        if g is None:
+            g = groups[key] = {"recordings": [], "best_status": "missing", "any_concert": False}
+            order.append(key)
+        if r["lb_category"] == "concert":
+            g["any_concert"] = True
+        status_raw = r["lb_status"] or "missing"
+        if _STATUS_RANK.get(status_raw, 2) < _STATUS_RANK.get(g["best_status"], 2):
+            g["best_status"] = status_raw
+        g["recordings"].append({
+            "lb": f"LB-{r['lb_number']:05d}",
+            "lbNumber": r["lb_number"],
+            "src": r["source_type"],
+            "rating": r["rating"] or "",
+            "status": _STATUS_LABEL.get(status_raw, "Missing"),
+        })
+
+    performances: list[dict] = []
+    for date_str, location in order:
+        g = groups[(date_str, location)]
+        iso = _entry_date_to_iso_local(date_str)
+        disp = date_str
+        dow = None
+        if iso:
+            try:
+                dt = _dt.strptime(iso, "%Y-%m-%d")
+                disp = f"{dt.strftime('%b')} {dt.day}, {dt.year}"
+                dow = dt.strftime("%a")
+            except ValueError:
+                iso = None
+
+        bd = bd_shows.get(iso) if iso else None
+        dp = dp_venues.get(iso) if (iso and not bd) else None
+        perf: dict = {
+            "id": f"{date_str}::{location}",
+            "date": date_str,
+            "disp": disp,
+            "year": _year_from_date_str(date_str),
+            "venue": bd["venue"] if bd else (dp["venue"] if dp else None),
+            "city": location or None,
+            "status": _STATUS_LABEL.get(g["best_status"], "Missing"),
+            "recordings": sorted(g["recordings"], key=lambda x: x["lbNumber"]),
+        }
+        if dow:
+            perf["dow"] = dow
+        if not g["any_concert"]:
+            perf["confirmed"] = False
+        tour = tours.get(iso) if iso else None
+        if tour:
+            perf["tour"] = tour
+        if bd:
+            perf["setlist"] = iso
+            n = setlist_counts.get(bd["bobdylan_url"])
+            if n:
+                perf["tracks"] = n
+        title = next((titles[rec["lbNumber"]] for rec in g["recordings"]
+                       if rec["lbNumber"] in titles), None)
+        if title:
+            perf["title"] = title
+        performances.append(perf)
+
+    return performances
+
+
 _PERF_CATEGORY_MAP: dict[str, str] = {
     "MCONCERT":   "concert",
+    "NET":        "concert",   # "Never Ending Tour" era tag, not "internet" — real shows
+    "GUEST":      "concert",   # guest appearance at another artist's show — still a real show
     "RADIO":      "radio",
     "TV":         "tv",
     "INTERVIEW":  "interview",
     "SESSION":    "studio",
     "SDEMO":      "studio",
     "HOME":       "studio",
+    "SIDEMAN":    "studio",    # backing-musician recording session for another artist
     "REHEARSAL":  "rehearsal",
     "SOUNDCHECK": "soundcheck",
     "COMP":       "compilation",
@@ -2066,7 +2343,7 @@ def get_collection(db_path=None):
             SELECT c.id, c.lb_number, c.folder_name, c.disk_path, c.confirmed_at, c.notes,
                    c.lbdir_verified_at,
                    e.date_str, e.location, e.description, e.rating, e.cdr, e.lb_category,
-                   lm.lb_status
+                   e.source_type, lm.lb_status
             FROM my_collection c
             LEFT JOIN entries e ON c.lb_number = e.lb_number
             LEFT JOIN lb_master lm ON lm.lb_number = c.lb_number
@@ -3756,9 +4033,12 @@ def import_master_db(snapshot_path: "Path | str", db_path=None) -> dict:
          :data:`MASTER_SCHEMA_VERSION`.
       3. Take an automatic backup (``reason='pre_master_import'``).
       4. ``ATTACH DATABASE`` the incoming snapshot as ``incoming``.
-      5. For each table in :data:`MASTER_TABLES`:
+      5. For each table in :data:`MASTER_TABLES`, if present in ``incoming``:
             ``DELETE FROM main.<t>;
              INSERT INTO main.<t> SELECT * FROM incoming.<t>;``
+         Tables absent from ``incoming`` (an older snapshot predating a later
+         schema addition) are skipped, not treated as an error, and listed in
+         the returned ``skipped_tables``.
       6. For meta: replace only the keys in :data:`MASTER_META_KEYS`;
          leave user keys (theme, qbt_*, wtrf_*, is_curator, ...) untouched.
       7. ``INSERT INTO entries_fts(entries_fts) VALUES('rebuild');``
@@ -3766,7 +4046,7 @@ def import_master_db(snapshot_path: "Path | str", db_path=None) -> dict:
 
     Returns:
         Summary dict: ``{master_version, rows_per_table, lb_status_counts,
-        backup_path, lb_status_changes}``.
+        backup_path, lb_status_changes, skipped_tables}``.
 
     Raises:
         FileNotFoundError: snapshot or manifest missing.
@@ -3849,9 +4129,20 @@ def import_master_db(snapshot_path: "Path | str", db_path=None) -> dict:
             conn.execute("ATTACH DATABASE ? AS incoming", (str(snapshot_path),))
             try:
                 row_counts: dict[str, int] = {}
+                skipped_tables: list[str] = []
                 # Order matters when FKs exist (entries before entry_files etc.),
                 # but with foreign_keys OFF for this scope it doesn't.
                 for tbl in MASTER_TABLES:
+                    exists = conn.execute(
+                        "SELECT 1 FROM incoming.sqlite_master "
+                        "WHERE type='table' AND name=?",
+                        (tbl,),
+                    ).fetchone()
+                    if not exists:
+                        # Older snapshot predates this table — leave local copy
+                        # untouched rather than failing the whole import.
+                        skipped_tables.append(tbl)
+                        continue
                     conn.execute(f"DELETE FROM main.{tbl}")
                     conn.execute(
                         f"INSERT INTO main.{tbl} SELECT * FROM incoming.{tbl}"
@@ -3911,6 +4202,7 @@ def import_master_db(snapshot_path: "Path | str", db_path=None) -> dict:
         "lb_status_changes": changed,
         "backup_path": str(backup_path),
         "imported_at": _dt.now(UTC).isoformat(),
+        "skipped_tables": skipped_tables,
     }
 
 
@@ -3952,26 +4244,36 @@ def resolve_aliases(lb_numbers: list[int], db_path=None) -> list[int]:
     return out
 
 
-def get_folder_link(folder_path: str, db_path=None) -> dict | None:
-    """Return the folder_lb_link row for a path, or None.
+def get_folder_links(folder_path: str, db_path=None) -> list[dict]:
+    """Return all folder_lb_link rows for a path, sorted by lb_number.
 
     Args:
         folder_path: Absolute path of the folder.
         db_path: Optional path to the SQLite database file.
 
     Returns:
-        Row as a dict with keys folder_path, lb_number, linked_at, note,
-        or None if no link is stored.
+        List of row dicts (keys: folder_path, lb_number, linked_at, note).
+        Empty list if no links are stored.
     """
     conn = get_connection(db_path)
-    row = conn.execute(
-        "SELECT * FROM folder_lb_link WHERE folder_path=?", (folder_path,)
-    ).fetchone()
-    return dict(row) if row else None
+    rows = conn.execute(
+        "SELECT * FROM folder_lb_link WHERE folder_path=? ORDER BY lb_number",
+        (folder_path,),
+    ).fetchall()
+    return [dict(r) for r in rows]
+
+
+def get_folder_link(folder_path: str, db_path=None) -> dict | None:
+    """Return the first folder_lb_link row for a path, or None.
+
+    Prefer get_folder_links() when multi-LB links are possible.
+    """
+    rows = get_folder_links(folder_path, db_path)
+    return rows[0] if rows else None
 
 
 def set_folder_link(folder_path: str, lb_number: int, note: str = "", db_path=None) -> None:
-    """Create or replace a folder→LB link.
+    """Add a folder→LB link (ignored if the pair already exists).
 
     Args:
         folder_path: Absolute path of the folder.
@@ -3982,7 +4284,7 @@ def set_folder_link(folder_path: str, lb_number: int, note: str = "", db_path=No
     _fp, _lb, _note = folder_path, lb_number, note
     get_write_queue().execute(
         lambda c: c.execute(
-            "INSERT OR REPLACE INTO folder_lb_link (folder_path, lb_number, note, linked_at) "
+            "INSERT OR IGNORE INTO folder_lb_link (folder_path, lb_number, note, linked_at) "
             "VALUES (?,?,?,CURRENT_TIMESTAMP)",
             (_fp, _lb, _note),
         )

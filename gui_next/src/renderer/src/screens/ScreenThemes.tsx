@@ -6,9 +6,10 @@ import {
   TableShell, TH, TR, TD,
 } from '../components'
 import {
-  applyTheme, loadTheme, saveTheme,
-  type ThemeOptions, type Accent, type Density, type Font, type FontSize,
-  DEFAULT_THEME, FONT_SIZES,
+  applyTheme, loadTheme, saveTheme, getSystemMode,
+  type ThemeOptions, type Mode, type Accent, type Density, type Font, type FontSize,
+  type Palette, type CardStyle,
+  DEFAULT_THEME, FONT_SIZES, PALETTE_OPTIONS, PALETTES,
 } from '../lib/tokens'
 
 // ── SetupCard (local, same shape as ScreenSetup) ─────────────────────────────
@@ -190,6 +191,7 @@ export function ScreenThemes() {
   const [toast, setToast] = useState<{ msg: string; tone: ToastTone } | null>(null)
 
   const showToast = useCallback((msg: string, tone: ToastTone = 'ok') => setToast({ msg, tone }), [])
+  const resolvedMode = theme.mode === 'system' ? getSystemMode() : theme.mode
 
   function setTweak<K extends keyof ThemeOptions>(key: K, value: ThemeOptions[K]) {
     const next = { ...theme, [key]: value }
@@ -220,6 +222,8 @@ export function ScreenThemes() {
         mode:         parsed.mode         ?? DEFAULT_THEME.mode,
         accent:       parsed.accent       ?? DEFAULT_THEME.accent,
         density:      parsed.density      ?? DEFAULT_THEME.density,
+        palette:      parsed.palette,
+        cardStyle:    parsed.cardStyle    ?? DEFAULT_THEME.cardStyle,
         font:         parsed.font         ?? DEFAULT_THEME.font,
         fontSize:     parsed.fontSize     ?? DEFAULT_THEME.fontSize,
         customTokens: parsed.customTokens ?? {},
@@ -261,15 +265,15 @@ export function ScreenThemes() {
           {/* ── Mode ── */}
           <SetupCard title={t('themes.mode.title')}>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10 }}>
-              {[
+              {([
                 { k: 'light',  l: t('themes.mode.light'),  bg: '#faf8f3', side: '#e2dfd2' },
                 { k: 'dark',   l: t('themes.mode.dark'),   bg: '#27251d', side: '#161510' },
                 { k: 'system', l: t('themes.mode.system'), bg: '#faf8f3', side: '#161510' },
-              ].map((m) => (
+              ] as { k: Mode; l: string; bg: string; side: string }[]).map((m) => (
                 <button
                   key={m.k}
                   type="button"
-                  onClick={() => setTweak('mode', m.k as ThemeOptions['mode'])}
+                  onClick={() => setTweak('mode', m.k)}
                   style={{
                     padding: 10,
                     borderRadius: 10,
@@ -331,6 +335,92 @@ export function ScreenThemes() {
                   </div>
                   <div style={{ marginTop: 8, fontSize: 'var(--lbb-fs-12)', fontWeight: 600 }}>{d.l}</div>
                   <div style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)' }}>{d.n}</div>
+                </button>
+              ))}
+            </div>
+          </SetupCard>
+
+          {/* ── Frame theme (palette) ── */}
+          <SetupCard title={t('themes.palette.title')}>
+            <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+              {(['default', ...PALETTE_OPTIONS] as ('default' | Palette)[]).map((p) => {
+                const active = (theme.palette ?? 'default') === p
+                const tone = p === 'default' ? undefined : PALETTES[resolvedMode][p]
+                return (
+                  <button
+                    key={p}
+                    type="button"
+                    onClick={() => setTweak('palette', p === 'default' ? undefined : p)}
+                    style={{
+                      padding: 8,
+                      borderRadius: 10,
+                      background: 'var(--lbb-surface)',
+                      border: `2px solid ${active ? 'var(--lbb-accent-mid)' : 'var(--lbb-border)'}`,
+                      cursor: 'pointer',
+                      fontFamily: 'inherit',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      gap: 6,
+                      width: 84,
+                      transition: 'border-color 0.15s',
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: 50,
+                        height: 50,
+                        borderRadius: '50%',
+                        background: tone ? tone.surface : 'var(--lbb-surface)',
+                        border: `2px solid ${tone ? tone.bg : 'var(--lbb-border2)'}`,
+                        boxShadow: '0 1px 0 rgba(255,255,255,0.3) inset',
+                      }}
+                    />
+                    <span style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg)', fontWeight: 600, textTransform: 'capitalize' }}>
+                      {p === 'default' ? t('themes.palette.default') : p}
+                    </span>
+                  </button>
+                )
+              })}
+            </div>
+          </SetupCard>
+
+          {/* ── Card style ── */}
+          <SetupCard title={t('themes.cardStyle.title')}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 10 }}>
+              {([
+                { k: 'flat',   l: t('themes.cardStyle.flat') },
+                { k: 'framed', l: t('themes.cardStyle.framed') },
+              ] as { k: CardStyle; l: string }[]).map((c) => (
+                <button
+                  key={c.k}
+                  type="button"
+                  onClick={() => setTweak('cardStyle', c.k)}
+                  style={{
+                    padding: 10,
+                    borderRadius: 10,
+                    background: 'var(--lbb-surface)',
+                    border: `2px solid ${(theme.cardStyle ?? 'flat') === c.k ? 'var(--lbb-accent-mid)' : 'var(--lbb-border)'}`,
+                    cursor: 'pointer',
+                    fontFamily: 'inherit',
+                    color: 'var(--lbb-fg)',
+                    transition: 'border-color 0.15s',
+                  }}
+                >
+                  <div style={{ height: 80, borderRadius: 6, background: 'var(--lbb-surface2)', padding: 10, display: 'flex', gap: 6 }}>
+                    {c.k === 'framed' ? (
+                      <>
+                        <div style={{ flex: 1, background: 'var(--lbb-surface)', borderRadius: 6, boxShadow: '0 4px 10px rgba(0,0,0,0.18)' }} />
+                        <div style={{ flex: 2, background: 'var(--lbb-surface)', borderRadius: 6, boxShadow: '0 4px 10px rgba(0,0,0,0.18)' }} />
+                      </>
+                    ) : (
+                      <>
+                        <div style={{ flex: 1, borderRight: '1px solid var(--lbb-border)' }} />
+                        <div style={{ flex: 2 }} />
+                      </>
+                    )}
+                  </div>
+                  <div style={{ marginTop: 8, fontSize: 'var(--lbb-fs-12)', fontWeight: 600 }}>{c.l}</div>
                 </button>
               ))}
             </div>

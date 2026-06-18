@@ -3,12 +3,13 @@ export type { IconName, IconProps } from './Icon'
 
 export {
   Pill, Chip, Button, IconButton, Input, Kbd,
-  Card, Toolbar, Banner, Stat, SectionHead,
+  Card, Toolbar, Banner, Stat, SectionHead, Toast, ConfirmDialog,
 } from './primitives'
 export type {
   StatusTone, ButtonVariant, ComponentSize,
   PillProps, ChipProps, ButtonProps, IconButtonProps, InputProps,
   CardProps, ToolbarProps, BannerProps, StatProps, SectionHeadProps,
+  ToastTone, ToastProps, ConfirmDialogProps,
 } from './primitives'
 
 export { TableShell, TH, TR, TD, GroupRow } from './table'

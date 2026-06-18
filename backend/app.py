@@ -342,27 +342,40 @@ def create_app() -> Flask:
     def activity_busy() -> Response:
         """Report whether any background worker is currently running.
 
-        Polls the in-memory status of the import, scrape, bootleg-scrape,
-        integrity-scan, file-job, and update/data-download workers.
+        Polls the in-memory status of all background workers.
 
         Returns:
             JSON {busy: bool, activity: str|None}. ``activity`` is a short
             machine-readable key identifying the first running job found,
             or None if every worker is idle.
         """
+        import backend.geocoder as _geocoder
         from backend import integrity_monitor
         from backend.filer import get_file_job_status
 
-        checks = [
+        # Workers that expose {"running": bool, ...}
+        running_checks = [
             (importer.get_import_status(), "importing"),
             (scraper.get_scrape_status(), "scraping"),
             (bootleg_scraper.get_scrape_status(), "scraping_bootlegs"),
             (integrity_monitor.get_scan_status(), "scanning"),
             (get_file_job_status(), "filing"),
+            (site_crawler.get_crawler_status(), "crawling"),
+            (_geocoder.get_progress(), "geocoding"),
         ]
-        for status, activity in checks:
+        for status, activity in running_checks:
             if status.get("running"):
                 return jsonify({"busy": True, "activity": activity})
+
+        # Workers that expose {"status": "idle|running|...", ...}
+        status_checks = [
+            (bobdylan_scraper.get_status(), "bobdylan_scraping"),
+            (setlistfm_mod.get_status(), "setlistfm_syncing"),
+        ]
+        for status, activity in status_checks:
+            if status.get("status") == "running":
+                return jsonify({"busy": True, "activity": activity})
+
         with _update_lock:
             if _update_state.get("status", "idle") != "idle":
                 return jsonify({"busy": True, "activity": "updating_app"})
@@ -1553,17 +1566,27 @@ def create_app() -> Flask:
 
     @app.route("/api/collection/export/m3u", methods=["GET"])
     def collection_export_m3u() -> Response:
-        """Export the full My Collection as an M3U playlist.
+        """Export My Collection (or a subset) as an M3U playlist.
 
         Iterates each entry's disk_path folder and includes all audio files
         (FLAC, SHN, APE, WAV, MP3) in sorted order.  Entries with no valid
         disk_path are silently skipped.
 
+        Query args:
+            lb_numbers: optional comma-separated LB numbers to restrict the
+                export to (e.g. a single show's owned recordings in the
+                Library performance lens). Omit for the full collection.
+
         Returns:
-            M3U file attachment (collection.m3u).
+            M3U file attachment (collection.m3u, or show.m3u when filtered).
         """
         try:
             rows = database.get_collection()
+            lb_numbers_param = request.args.get("lb_numbers", "")
+            filtered = bool(lb_numbers_param)
+            if filtered:
+                wanted = {int(x) for x in lb_numbers_param.split(",") if x.strip().isdigit()}
+                rows = [r for r in rows if r.get("lb_number") in wanted]
             audio_exts = {".flac", ".shn", ".ape", ".wav", ".mp3"}
             lines = ["#EXTM3U"]
             for r in rows:
@@ -1577,10 +1600,11 @@ def create_app() -> Flask:
                             f"{r.get('location', '')}"
                         )
                         lines.append(str(f))
+            filename = "show.m3u" if filtered else "collection.m3u"
             return Response(
                 "\n".join(lines),
                 mimetype="audio/x-mpegurl",
-                headers={"Content-Disposition": "attachment; filename=collection.m3u"},
+                headers={"Content-Disposition": f"attachment; filename={filename}"},
             )
         except Exception as e:
             return jsonify({"error": str(e)}), 500
@@ -2542,18 +2566,23 @@ def create_app() -> Flask:
         import shutil as _shutil
 
         from backend.checksum_utils import check_shntool_version
-        from backend.sox_utils import check_sox_version, get_ffmpeg
+        from backend.sox_utils import check_sox_version, get_ffmpeg, get_install_hints
         sox_ver     = check_sox_version()
         ffmpeg      = get_ffmpeg()
         shntool_ver = check_shntool_version()
         flac_ver    = _shutil.which("flac")
+        hints       = get_install_hints()
         return jsonify({
-            "sox_available":      bool(sox_ver),
-            "sox_version":        sox_ver,
-            "ffmpeg_available":   ffmpeg is not None,
-            "shntool_available":  bool(shntool_ver),
-            "shntool_version":    shntool_ver,
-            "flac_available":     flac_ver is not None,
+            "sox_available":        bool(sox_ver),
+            "sox_version":          sox_ver,
+            "ffmpeg_available":     ffmpeg is not None,
+            "shntool_available":    bool(shntool_ver),
+            "shntool_version":      shntool_ver,
+            "flac_available":       flac_ver is not None,
+            "ffmpeg_install_hint":  hints.get("ffmpeg"),
+            "sox_install_hint":     hints.get("sox"),
+            "flac_install_hint":    hints.get("flac"),
+            "shntool_install_hint": hints.get("shntool"),
         })
 
     @app.route("/api/spectrogram/generate", methods=["POST"])
@@ -4223,6 +4252,61 @@ def create_app() -> Flask:
             _log.exception("master_import failed")
             return jsonify({"error": "internal_error", "message": str(exc)}), 500
 
+    @app.route("/api/tapematch/sync", methods=["POST"])
+    def tapematch_sync() -> Response:
+        """Ingest TapeMatch family clusters from tools/tapematch/observations.db.
+
+        Manual trigger only — not run automatically at startup, since that
+        would make backend boot depend on observations.db existing/unlocked.
+        """
+        from backend import tapematch_sync as _tapematch_sync
+
+        try:
+            stats = _tapematch_sync.sync_tapematch_families()
+            return jsonify({"ok": True, **stats})
+        except FileNotFoundError as exc:
+            return jsonify({"error": "not_found", "message": str(exc)}), 404
+        except RuntimeError as exc:
+            return jsonify({"error": "locked", "message": str(exc)}), 409
+        except sqlite3.Error as exc:
+            _log.exception("tapematch_sync: SQLite error")
+            return jsonify({"error": "db_error", "message": str(exc)}), 500
+        except Exception as exc:
+            _log.exception("tapematch_sync failed")
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
+    @app.route("/api/tapematch/families", methods=["GET"])
+    def tapematch_families() -> Response:
+        """Flat list of recordings with their TapeMatch family assignment.
+
+        No pagination — a couple thousand rows max at full catalog scale.
+        Merge client-side by lb_number; not joined into /api/search.
+        """
+        conn = database.get_connection()
+        rows = conn.execute(
+            """
+            SELECT rf.lb_number, rf.fam_id, rf.concert_date,
+                   COALESCE(m.label_override, m.label) AS fam_label,
+                   m.conf AS fam_conf, m.by AS fam_by
+            FROM recording_families rf
+            JOIN tapematch_family_meta m ON m.fam_id = rf.fam_id
+            """
+        ).fetchall()
+        return jsonify([dict(r) for r in rows])
+
+    @app.route("/api/library/performances", methods=["GET"])
+    def library_performances() -> Response:
+        """Shows (date+location groups) with their recordings, for the Library
+        screen's performance lens (TODO-150 step 5).
+
+        Not merged with TapeMatch family data — the GUI fetches
+        /api/tapematch/families separately, same pattern as /api/collection/prefetch.
+        """
+        try:
+            return jsonify(database.get_performances())
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
     def _find_master_release(_req):
         """Search recent GitHub releases for the latest one containing a .db master asset.
 
@@ -4793,6 +4877,10 @@ def create_app() -> Flask:
                 result["crawler"] = site_crawler.get_crawler_status()
             except Exception:
                 result["crawler"] = None
+            try:
+                result["bobdylan"] = bobdylan_scraper.get_status()
+            except Exception:
+                result["bobdylan"] = None
             try:
                 conn = database.get_connection()
                 total = conn.execute("SELECT COUNT(*) FROM lb_master").fetchone()[0]
@@ -5393,6 +5481,9 @@ def create_app() -> Flask:
             strip_nft_suffix,
         )
         from backend.folder_naming import (
+            build_multi_lb_name as _build_multi_name,
+        )
+        from backend.folder_naming import (
             build_standard_name as _build_name,
         )
 
@@ -5423,6 +5514,7 @@ def create_app() -> Flask:
             return row
 
         lb_number: int | None = None
+        lb_numbers: list[int] = []
 
         # ── Step 1: Verify ────────────────────────────────────────────────────
         if "verify" in steps:
@@ -5481,17 +5573,47 @@ def create_app() -> Flask:
                         lb for lb in raw_lb_list if lb not in set(lb_list)
                     ]
 
-                    # A sticky folder→LB link (set via "Pin & continue") resolves
-                    # ambiguity permanently — it wins over the raw checksum match set.
-                    link = database.get_folder_link(folder_path)
-                    pinned_lb = link["lb_number"] if link else None
+                    # Sticky folder→LB links (set via "Pin & continue", or
+                    # auto-written for multi-LB perfect matches) win over the
+                    # raw checksum match set.
+                    pinned_links = database.get_folder_links(folder_path)
+                    pinned_lbs = sorted(r["lb_number"] for r in pinned_links)
 
-                    if pinned_lb is not None:
-                        lb_number = pinned_lb
+                    if pinned_lbs:
+                        lb_numbers = pinned_lbs
+                        lb_number = pinned_lbs[0]
                     elif len(lb_list) == 1:
+                        lb_numbers = lb_list
                         lb_number = lb_list[0]
                     else:
+                        lb_numbers = []
                         lb_number = None
+
+                    # When multiple LBs all have perfect (MATCHED) status in the
+                    # summary, the recording is genuinely archived under both
+                    # entries — auto-link all and proceed rather than blocking.
+                    if lb_number is None and len(lb_list) > 1 and not pinned_lbs:
+                        _lb_summary_map = {
+                            s["lb_number"]: s
+                            for s in summary.get("lb_summary", [])
+                        }
+                        _all_perfect = all(
+                            _lb_summary_map.get(lb, {}).get("status") == "MATCHED"
+                            for lb in lb_list
+                        )
+                        if _all_perfect:
+                            lb_numbers = sorted(lb_list)
+                            lb_number = lb_numbers[0]
+                            for _lb in lb_numbers:
+                                database.set_folder_link(
+                                    folder_path, _lb,
+                                    "Auto-linked (multi-LB perfect match)",
+                                )
+
+                    # For the single-pin incomplete-match guard below.
+                    pinned_lb = pinned_lbs[0] if len(pinned_lbs) == 1 else (
+                        lb_number if pinned_lbs else None
+                    )
 
                     # A single resolved LB# is only a true "pass" when every
                     # parsed checksum (across all types — ffp/md5/st5) found a
@@ -5499,13 +5621,21 @@ def create_app() -> Flask:
                     # doesn't) means the files on disk diverge from the
                     # archived copy and needs human review, even though the
                     # LB# itself is correctly identified.
+                    # For multi-LB matches matched == given * N (one row per LB)
+                    # so skip the ratio check and treat it as ok.
                     full_match = summary.get("matched") == summary.get("given")
+                    is_multi_lb = len(lb_numbers) > 1
 
-                    if lb_number is not None and full_match:
+                    if lb_number is not None and (full_match or is_multi_lb):
+                        label = (
+                            "+".join(f"LB-{lb:05d}" for lb in lb_numbers)
+                            if is_multi_lb else f"LB-{lb_number:05d}"
+                        )
                         row["lookup"] = {
                             "status": "ok",
-                            "label": f"LB-{lb_number:05d}",
+                            "label": label,
                             "lb_number": lb_number,
+                            "lb_numbers": lb_numbers,
                             "alias_resolved_from": alias_resolved_from or None,
                             "summary": summary,
                             "detail": detail,
@@ -5515,6 +5645,7 @@ def create_app() -> Flask:
                             "status": "warn",
                             "label": "Incomplete match",
                             "lb_number": lb_number,
+                            "lb_numbers": lb_numbers,
                             "alias_resolved_from": alias_resolved_from or None,
                             "summary": summary,
                             "detail": detail,
@@ -5526,13 +5657,22 @@ def create_app() -> Flask:
                                 f"matched for LB-{lb_number:05d}"
                             ),
                         })
+                        # Downstream steps (lbdir/rename/file) must stay mute for an
+                        # incomplete match — the files on disk haven't been confirmed
+                        # against the archive.  Only allow them through if the user
+                        # has explicitly pinned this folder (they've reviewed and
+                        # accepted the partial match).
+                        if pinned_lb is None:
+                            lb_number = None
                     elif len(lb_list) > 1:
-                        row["lookup"] = {"status": "warn", "label": "Conflict", "lb_number": None,
+                        row["lookup"] = {"status": "warn", "label": "Conflict",
+                                         "lb_number": None, "lb_numbers": [],
                                          "alias_resolved_from": None,
                                          "summary": summary, "detail": detail}
                         row["errors"].append({"step": "lookup", "message": f"Multiple LBs: {lb_list}"})
                     else:
-                        row["lookup"] = {"status": "bad", "label": "Not found", "lb_number": None,
+                        row["lookup"] = {"status": "bad", "label": "Not found",
+                                         "lb_number": None, "lb_numbers": [],
                                          "alias_resolved_from": None,
                                          "summary": summary, "detail": detail}
 
@@ -5612,13 +5752,24 @@ def create_app() -> Flask:
                         ).fetchone()
                     if show and show["location"]:
                         location = show["location"].strip()
-                proposed = _build_name(lb_number, date_str, location, lb_status)
+                if len(lb_numbers) > 1:
+                    proposed = _build_multi_name(lb_numbers, date_str, location, lb_status)
+                    if not date_str or not location:
+                        base = strip_nft_suffix(folder_name)
+                        multi_tag = "(" + "+".join(f"LB-{lb:05d}" for lb in lb_numbers) + ")"
+                        if not base.rstrip().upper().endswith(multi_tag.upper()):
+                            untagged = re.sub(
+                                r"\s*\(LB-[\d+LB-]+\)\s*$", "", base, flags=re.IGNORECASE
+                            ).rstrip()
+                            proposed = apply_nft_suffix(f"{untagged} {multi_tag}", lb_status)
+                else:
+                    proposed = _build_name(lb_number, date_str, location, lb_status)
                 # BUG-119: when DB has no date/location the standard name falls
                 # back to bare LB-NNNNN[-NFT], which would silently strip any
                 # date/location already in the folder name.  Use the current
                 # folder name as the base and only adjust the NFT suffix and
                 # (LB-NNNNN) tag — never touch the date/location portion.
-                if not date_str or not location:
+                if len(lb_numbers) <= 1 and (not date_str or not location):
                     base = strip_nft_suffix(folder_name)
                     correct_tag = f"(LB-{lb_number:05d})"
                     if base.rstrip().lower().endswith(correct_tag.lower()):
@@ -5653,7 +5804,7 @@ def create_app() -> Flask:
                             "SELECT lb_status FROM lb_master WHERE lb_number=?", (lb_number,)
                         ).fetchone()
                         owned_row = conn.execute(
-                            "SELECT lbdir_verified_at FROM my_collection WHERE lb_number=?",
+                            "SELECT disk_path, lbdir_verified_at FROM my_collection WHERE lb_number=?",
                             (lb_number,),
                         ).fetchone()
                     row["file"] = {
@@ -5671,6 +5822,7 @@ def create_app() -> Flask:
                         "collection_count": collection_count,
                         "lb_status": lb_status_row["lb_status"] if lb_status_row else None,
                         "owned": owned_row is not None,
+                        "existing_disk_path": owned_row["disk_path"] if owned_row else None,
                         "lbdir_verified_at": owned_row["lbdir_verified_at"] if owned_row else None,
                     }
                 else:
@@ -5763,7 +5915,24 @@ def create_app() -> Flask:
                 new_name=new_name,
                 source="pipeline",
             )
-            folder.rename(new_path)
+            try:
+                folder.rename(new_path)
+            except (FileExistsError, OSError):
+                if new_path.exists():
+                    return jsonify({"error": f"Target already exists: {new_name}"}), 409
+                raise
+            # BUG-206: sync my_collection if this folder was already filed
+            old_disk_path = str(folder)
+            with database.get_connection() as conn:
+                row = conn.execute(
+                    "SELECT lb_number FROM my_collection WHERE disk_path=?",
+                    (old_disk_path,),
+                ).fetchone()
+            if row:
+                database.update_collection(
+                    row["lb_number"],
+                    {"folder_name": new_name, "disk_path": str(new_path)},
+                )
             return jsonify({"ok": True, "new_path": str(new_path)})
         except Exception as e:
             return jsonify({"error": str(e)}), 500
@@ -5795,12 +5964,14 @@ def create_app() -> Flask:
             def _has_audio_anywhere(d: Path) -> bool:
                 return any(f.suffix.lower() in _AUDIO for f in d.rglob("*") if f.is_file())
 
-            if _has_audio(root):
+            root_has_audio = _has_audio(root)
+            if root_has_audio:
                 found.append(str(root))
             if shallow:
-                for child in root.iterdir():
-                    if child.is_dir() and _has_audio_anywhere(child):
-                        found.append(str(child))
+                if not root_has_audio:
+                    for child in root.iterdir():
+                        if child.is_dir() and _has_audio_anywhere(child):
+                            found.append(str(child))
             else:
                 for dirpath in root.rglob("*"):
                     if dirpath.is_dir() and _has_audio(dirpath):

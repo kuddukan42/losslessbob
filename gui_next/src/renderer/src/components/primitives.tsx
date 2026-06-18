@@ -363,3 +363,72 @@ export function SectionHead({ title, subtitle, action, style }: SectionHeadProps
     </div>
   )
 }
+
+// ── Toast ───────────────────────────────────────────────────────────────────
+// Ported from ScreenCollection.tsx's local Toast — shared so other screens
+// (e.g. the Library action system) don't reimplement the same fixed-position
+// notice.
+
+export type ToastTone = 'ok' | 'bad' | 'info'
+
+export interface ToastProps {
+  msg: string
+  tone: ToastTone
+  onDone: () => void
+}
+
+export function Toast({ msg, tone, onDone }: ToastProps) {
+  React.useEffect(() => {
+    const t = setTimeout(onDone, 3500)
+    return () => clearTimeout(t)
+  }, [onDone])
+
+  const bg     = tone === 'ok'  ? 'var(--lbb-ok-bg)'   : tone === 'bad' ? 'var(--lbb-err-bg)'  : 'var(--lbb-surface2)'
+  const border = tone === 'ok'  ? 'var(--lbb-ok-bar)'  : tone === 'bad' ? 'var(--lbb-err-bar)' : 'var(--lbb-border2)'
+  const color  = tone === 'ok'  ? 'var(--lbb-ok-fg)'   : tone === 'bad' ? 'var(--lbb-err-fg)'  : 'var(--lbb-fg)'
+
+  return (
+    <div style={{
+      position: 'fixed', bottom: 24, right: 24, zIndex: 999,
+      background: bg, border: `1px solid ${border}`, borderRadius: 8,
+      padding: '10px 16px', color, fontSize: 'var(--lbb-fs-13)', fontWeight: 500,
+      boxShadow: '0 4px 16px rgba(0,0,0,0.15)', maxWidth: 400,
+    }}>
+      {msg}
+    </div>
+  )
+}
+
+// ── ConfirmDialog ─────────────────────────────────────────────────────────────
+// Ported from ScreenCollection.tsx's local ConfirmDialog.
+
+export interface ConfirmDialogProps {
+  title: string
+  body: string
+  onConfirm: () => void
+  onCancel: () => void
+  confirmLabel?: string
+  cancelLabel?: string
+}
+
+export function ConfirmDialog({ title, body, onConfirm, onCancel, confirmLabel = 'Confirm', cancelLabel = 'Cancel' }: ConfirmDialogProps) {
+  return (
+    <div style={{
+      position: 'fixed', inset: 0, zIndex: 1000,
+      background: 'rgba(0,0,0,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center',
+    }}>
+      <div style={{
+        background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)',
+        borderRadius: 10, padding: 24, maxWidth: 440, width: '90%',
+        boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
+      }}>
+        <div style={{ fontSize: 'var(--lbb-fs-14)', fontWeight: 700, color: 'var(--lbb-fg)', marginBottom: 8 }}>{title}</div>
+        <div style={{ fontSize: 'var(--lbb-fs-12-5)', color: 'var(--lbb-fg2)', marginBottom: 20, lineHeight: 1.5 }}>{body}</div>
+        <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end' }}>
+          <Button variant="ghost" size="sm" onClick={onCancel}>{cancelLabel}</Button>
+          <Button variant="danger" size="sm" onClick={onConfirm}>{confirmLabel}</Button>
+        </div>
+      </div>
+    </div>
+  )
+}

@@ -73,6 +73,10 @@
         "scraping_bootlegs": "Bootlegs werden gescrapt…",
         "scanning": "Sammlung wird gescannt…",
         "filing": "Ordner wird abgelegt…",
+        "crawling": "Seite wird gecrawlt…",
+        "bobdylan_scraping": "bobdylan.com wird gescrapt…",
+        "setlistfm_syncing": "setlist.fm wird synchronisiert…",
+        "geocoding": "Geocodierung…",
         "updating_app": "App wird aktualisiert…",
         "downloading_data": "Daten werden heruntergeladen…"
       }
@@ -173,7 +177,7 @@
       "filename": "Dateiname",
       "type": "Typ",
       "xref": "Xref",
-      "open": "Öffnen Sie",
+      "open": "Auf LB Website öffnen",
       "addWishlist": "+WL"
     },
     "states": {
@@ -425,7 +429,8 @@
       "qbtSynced": "qBittorrent-Speicherpfad aktualisiert – Seeding wird am neuen Ort fortgesetzt",
       "qbtSyncFailed": "Abgelegt, aber Aktualisierung des qBittorrent-Speicherpfads fehlgeschlagen: {{error}}",
       "busy": "Ein Ablagevorgang läuft bereits – bitte warten, bis er abgeschlossen ist",
-      "jobMismatch": "Der Ablagestatus wurde von einem anderen Vorgang übernommen – Ergebnis in „Meine Sammlung“ prüfen",
+      "jobMismatch": "Der Ablagestatus wurde von einem anderen Vorgang übernommen – Ergebnis in „Meine Sammlung” prüfen",
+      "renamePending": "Umbenennung zuerst anwenden — dieser Ordner kann nicht abgelegt werden, solange eine Umbenennung aussteht.",
       "progress": {
         "scanning": "Wird gescannt…",
         "copying": "Wird kopiert…",
@@ -455,7 +460,11 @@
       "ownedYes": "Im Besitz",
       "ownedNo": "Nicht in Sammlung",
       "notConfirmed": "Noch nicht bestätigt",
-      "valueUnassigned": "Nicht zugewiesen"
+      "valueUnassigned": "Nicht zugewiesen",
+      "alreadyInCollectionTitle": "Bereits in der Sammlung",
+      "alreadyInCollectionBody": "Diese Aufnahme ist bereits unter {{path}} in Ihrer Sammlung registriert. Die Ablage verschiebt den Ordner an den neuen Speicherort und aktualisiert den Sammlungseintrag.",
+      "renamePendingTitle": "Umbenennung vor der Ablage erforderlich",
+      "renamePendingBody": "Dieser Ordner hat eine nicht angewendete Umbenennung. Wechseln Sie zum Schritt „Umbenennen” und wenden Sie sie vor der Ablage an."
     }
   },
   "collection": {

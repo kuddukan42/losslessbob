@@ -7,8 +7,8 @@ import { useLookupStore, LookupSource, LookupSummaryRow, LookupDetail } from '..
 import { useFolderQueueStore } from '../lib/folderQueueStore'
 import {
   LookupSummaryTable, LookupChecksumTable, LookupNotFoundHint,
-  STATE_TONE, apiStatusToState, type LookupState,
 } from '../components/pipeline/LookupDetail'
+import { STATE_TONE, apiStatusToState, type LookupState } from '../components/pipeline/lookupState'
 
 const BASE = window.api.flaskBase
 

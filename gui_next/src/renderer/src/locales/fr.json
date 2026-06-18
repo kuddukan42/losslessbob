@@ -73,6 +73,10 @@
         "scraping_bootlegs": "Extraction des bootlegs…",
         "scanning": "Analyse de la collection…",
         "filing": "Classement du dossier…",
+        "crawling": "Exploration du site…",
+        "bobdylan_scraping": "Extraction de bobdylan.com…",
+        "setlistfm_syncing": "Synchronisation setlist.fm…",
+        "geocoding": "Géocodage…",
         "updating_app": "Mise à jour de l'application…",
         "downloading_data": "Téléchargement des données…"
       }
@@ -173,7 +177,7 @@
       "filename": "Nom de fichier",
       "type": "Type d'application",
       "xref": "Xref",
-      "open": "Ouvrir",
+      "open": "Ouvrir sur LB Website",
       "addWishlist": "+WL"
     },
     "states": {
@@ -426,6 +430,7 @@
       "qbtSyncFailed": "Classé, mais la mise à jour du chemin d'enregistrement qBittorrent a échoué : {{error}}",
       "busy": "Un classement est déjà en cours — veuillez attendre la fin",
       "jobMismatch": "Le suivi du classement a été repris par une autre tâche — vérifiez le résultat dans Ma collection",
+      "renamePending": "Appliquez d'abord le renommage — ce dossier ne peut pas être classé tant qu'un renommage est en attente.",
       "progress": {
         "scanning": "Analyse…",
         "copying": "Copie…",
@@ -455,7 +460,11 @@
       "ownedYes": "Possédé",
       "ownedNo": "Pas dans la collection",
       "notConfirmed": "Pas encore confirmé",
-      "valueUnassigned": "Non attribué"
+      "valueUnassigned": "Non attribué",
+      "alreadyInCollectionTitle": "Déjà dans la collection",
+      "alreadyInCollectionBody": "Cet enregistrement est déjà répertorié dans votre collection sous {{path}}. L'archivage déplacera le dossier vers le nouvel emplacement et mettra à jour la fiche de la collection.",
+      "renamePendingTitle": "Renommage requis avant le classement",
+      "renamePendingBody": "Ce dossier a un renommage non appliqué. Passez à l'étape Renommer et appliquez-le avant de classer."
     }
   },
   "collection": {

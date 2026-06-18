@@ -1,3 +1,384 @@
+[2026-06-18] — fix(backend): make the ruff pre-commit hook cross-platform
+Fixed: .pre-commit-config.yaml: entry hardcoded an absolute Windows path to ruff.exe (set in a
+  prior Windows session), which failed every commit on Linux. Switched the hook from
+  `language: system` (relies on a hardcoded interpreter path) to `language: python` with
+  `additional_dependencies: ["ruff==0.15.16"]` — pre-commit now manages its own isolated venv
+  for the hook on whichever OS runs `git commit`, so no machine-specific path is needed.
+Fixed: backend/app.py: two ruff-flagged unsorted import blocks (geocoder/integrity_monitor
+  imports in _running_jobs_summary, folder_naming imports in _pipeline_process_folder),
+  auto-fixed via `ruff check --fix`.
+
+[2026-06-18] — fix(gui): collection "Send to →" now sends all checked rows to pipeline/verify/etc
+Fixed: gui_next/src/renderer/src/screens/ScreenCollection.tsx: handleCtxSendTo used single row.diskPath; now uses getCtxRows to collect all checked rows' paths into the folder queue. Disabled state updated to match.
+
+[2026-06-18] — feat(gui): collection view right-click "Select All Visible"
+Added: gui_next/src/renderer/src/screens/ScreenCollection.tsx: context menu item at top that adds all currently filtered+sorted rows to checkedIds
+
+[2026-06-18] — fix(backend): TODO-151 follow-up — root-cause the guest-spot/NET classification gap
+Changed: backend/db.py: `_PERF_CATEGORY_MAP` gained `GUEST -> concert`, `NET -> concert`,
+  `SIDEMAN -> studio`. Root cause of the prior degraded-row workaround: `dylan_performances`
+  (already imported, 5127 rows) tags guest appearances at other artists' shows as `GUEST`
+  (66 rows) and Never Ending Tour-era shows as `NET` (3433 rows — not "internet"), but neither
+  code was in the category map, so classify_entry_categories() silently dropped them to tier-3
+  keyword matching or 'unknown' instead of tier-2 `dylan_performances` matching. `SIDEMAN`
+  (38 rows, backing-musician studio sessions) was unmapped too.
+Changed: backend/db.py: bumped the one-time classification backfill meta key from
+  `lb_category_backfill_v1` to `_v2` so existing installs reclassify automatically on next
+  launch (verified via a real backend restart, not a raw DB edit): concert 14092->14329
+  (+237), unknown 2043->1811 (-232), studio 96->101 (+5).
+Changed: backend/db.py: get_performances() now falls back to `dylan_performances.venue` when
+  `bobdylan_shows` has no row for a show's date (true for nearly all GUEST dates) — e.g. the
+  1986-02-19 Melbourne show now reports "Melbourne Sports And Entertainment Centre" instead of
+  just the entry's raw location text.
+Note: the prior session's `confirmed: false` degraded-row fallback (TODO-151, below) stays in
+  place for whatever this still doesn't cover — it now only fires for ~19 shows instead of 198
+  (mostly category `FILM`, e.g. the 1986 Bristol Colston Hall "Hearts of Fire" filming, plus a
+  few TV-awards/White-House/studio-session dates with no clean mapping). FILM stays unmapped —
+  some FILM rows are non-performance B-roll (hotel rooms, a gas station), not shows.
+
+[2026-06-18] — fix(backend+gui): TODO-151 — performance lens recovers misclassified shows
+Changed: backend/db.py: get_performances() now also includes lb_category='unknown' entries
+  that have a fully-specified date (no 'xx' placeholder) and a non-blank location, grouping
+  them the same way as 'concert' entries but flagging the show `confirmed: False`. Audit of
+  the live DB found 252 such 'unknown' rows (of 2043 total); spot-checking ~40 showed most
+  are real performances bobdylan_shows doesn't track (guest appearances at other artists'
+  shows — Dire Straits, U2, Tom Petty, Grateful Dead, Springsteen, Clapton — plus a few
+  legitimate Dylan dates missing from bobdylan_shows, e.g. 1986-09-19 Bristol Colston Hall).
+  Recovers 198 shows previously invisible in the performance lens. The other 1791 'unknown'
+  rows (no date or only an 'xx' date) have no reliable grouping signal and stay excluded.
+Changed: gui_next/src/renderer/src/screens/ScreenLibrary.tsx, components/library/DetailPanel.tsx:
+  PerformanceRow gained an optional `confirmed` field; show rows and the performance detail
+  panel render an "Unconfirmed" pill (tooltip explains it's inferred from the recording's own
+  date/location, not a matched show) when `confirmed === false`.
+Closed: TODO-151 (was Open in TODO.md, moved to TODO_DONE.md).
+
+[2026-06-18] — feat(gui+backend): TODO-150 step-7 follow-up — wire the m3u performance action
+Changed: backend/app.py: GET /api/collection/export/m3u accepts an optional `lb_numbers`
+  comma-separated query param to restrict the export to specific LB numbers; returns
+  `show.m3u` when filtered (vs `collection.m3u` for the full export). Verified against the
+  live backend: full export unchanged, `?lb_numbers=1` produces a correct 2-track playlist,
+  non-matching/junk LB numbers degrade to an empty-but-valid `#EXTM3U` file rather than erroring.
+Added: gui_next/src/renderer/src/components/library/actions.tsx: `onM3u` to `ActionHandlers`
+  and the `m3u` action (Export show as M3U) to `buildPerformanceActions()`, operating on the
+  show's owned recordings — this was deferred at step 7 pending the backend filter above.
+Changed: gui_next/src/renderer/src/screens/ScreenLibrary.tsx: added a local `blobDownload()`
+  helper (same pattern as ScreenCollection.tsx/ScreenTrading.tsx) and an `onM3u` handler.
+  `sources`/`notify` action ids and the TapeMatch family `note` field remain unexposed —
+  there's no "find sources"/notification system or family-note write path anywhere in the
+  app to wire them to; building either would be a new feature, not a loose end of this ticket.
+Note: i18n (TODO-150 step 10, in-screen Library strings) is deferred per user decision —
+  English-only is acceptable for now.
+
+[2026-06-18] — feat(gui): TODO-150 phase 9 — Library screen/route/nav wiring
+Changed: gui_next/src/renderer/src/App.tsx: replaced the temporary, nav-hidden `/library-dev`
+  route with the real `/library` route.
+Changed: gui_next/src/renderer/src/components/AppShell.tsx: `NAV_GROUPS`'s Library group gained
+  a new item (`{ id: 'library', label: 'Library', icon: 'library', featured: true }`) above
+  "My Collection", per instructions/design_handoff_unified_library/05-integration.md's nav
+  placement spec — picks up the existing featured "NEW" badge for free. No i18n work needed:
+  `appShell.nav.library` already existed in all 6 locales (previously only used for the group
+  header, which reads the same word). `tsc --noEmit` and `npm run build` both pass.
+  Build order step (9) of TODO-150 is done; step (10) (i18n for in-screen Library strings)
+  remains.
+
+[2026-06-18] — feat(gui): TODO-150 phase 8 — Library detail-panel zones
+Added: gui_next/src/renderer/src/components/library/DetailPanel.tsx: `RecordingDetailPanel`
+  and `PerformanceDetailPanel`, zoned per instructions/design_handoff_unified_library/
+  02-action-system-parity.md — header, `ActionBar` (primary + Reveal + grouped "More" using
+  the step-7 action registry/menu), `ShareSeed` (status line + qBittorrent/torrent/forum
+  actions + a unified date-sorted activity log merged client-side from the existing
+  `/api/collection/prefetch` torrents/forum_posts arrays), `AssetStrip` (attachments/
+  spectrograms/map as state chips, spectrogram readiness checked lazily via the existing
+  `/api/spectrogram/list`), and an optional Setlist line for the performance panel.
+Changed: gui_next/src/renderer/src/screens/ScreenLibrary.tsx: both lenses now render the
+  detail panel as a third column on row selection. Recording lens activates the
+  already-existing but previously-unused `selectedLb` state; performance lens adds
+  `selectedMemberLb` next to the existing `selectedId` (member-row selection takes
+  precedence). Added a bulk `/api/attachments/cached` query and a `historyMap`/
+  `attachCountMap` built from `prefetch`, shared by both lenses.
+
+[2026-06-18] — fix(backend): TODO-150 — performance lens excludes non-concert recordings
+Changed: backend/db.py: get_performances() now filters its source query to
+  `lb_category = 'concert'` so radio/tv/interview/studio/rehearsal/soundcheck/
+  compilation/other/unknown recordings no longer get grouped into bare, misleading
+  show rows in the Library performance lens; they remain visible via the recording
+  lens. Added TODO-151 to audit lb_category classification accuracy now that it gates
+  lens membership rather than just a cosmetic badge.
+
+[2026-06-18] — feat(gui): TODO-150 phase 7 — Library shared action registry + bulk bar
+Added: gui_next/src/renderer/src/components/library/actions.tsx: the shared Library action
+  registry per instructions/design_handoff_unified_library/02-action-system-parity.md — `LibAction`
+  vocabulary grouped into open/listen/acquire/share/assets/maintain, `buildRecordingActions()`
+  and `buildPerformanceActions()`, a grouped fixed-position `ActionMenu` + `useActionMenu()`
+  hook, and `BulkActionBar`.
+Added: gui_next/src/renderer/src/components/primitives.tsx: `Toast` and `ConfirmDialog`,
+  ported from ScreenCollection.tsx's local copies so other screens can reuse them; exported
+  from components/index.ts.
+Changed: gui_next/src/renderer/src/screens/ScreenLibrary.tsx: wired the action registry into
+  both lenses. Recording lens gained a checkbox column + `BulkActionBar` (Create torrent / Add
+  to qBittorrent / Update location / Remove, batched over the checked set) and a right-click
+  context menu; performance lens show rows and member rows now open the matching grouped menu.
+  All action handlers call the same backend endpoints ScreenCollection.tsx already uses
+  (qbt/add, torrent/create, preview_forum+post_forum, collection PATCH/DELETE, wishlist,
+  fingerprint/build, spectrogram/generate, open/vlc, window.api.openPath/pickDir) — no backend
+  changes this step. `sources`/`notify`/performance-row `m3u` action ids are omitted (no
+  existing backend/UI to wire them to) rather than shipped inert.
+  Build order step (7) of TODO-150 is done; steps (8)-(10) (detail-panel zones, screen/route/
+  nav, i18n) remain.
+
+[2026-06-18] — feat(gui): TODO-150 phase 6 — Library screen performance lens
+Added: gui_next/src/renderer/src/screens/ScreenLibrary.tsx: "By performance | By recording"
+  segmented toggle (defaults to performance). New `PerformanceLensView` component fetches
+  `/api/library/performances` + `/api/tapematch/families`, merging family data into the same
+  `RecordingRow` objects the recording lens already built from `/api/search` +
+  `/api/collection/prefetch` (by reference, keyed by `lbNumber`) — both lenses always agree on
+  a recording's owned/wish/dup/fp state, no second merge implementation. Ported the design
+  handoff's `families()`/`rollup()` reference helpers (`_source/perf-data.js`) into TS as
+  `familiesOf()`/`rollupOf()`: clusters recordings by `fam` (or by `lb` for ungrouped ones),
+  computes per-show coverage (Covered/Upgrade/Gap/Undocumented). Ungrouped recordings become
+  singleton families, so the no-families fallback (03-data-contract.md) falls out of the same
+  code path with no special-casing. Year-grouped virtualized table with show → family → member
+  expand/collapse, own facet rail (decade/coverage/source-available/best-rating). Deliberately
+  bare per the step-4 precedent: no detail panel, no bulk bar, no context menu (steps 7/8); the
+  family `note` field is omitted since `/api/tapematch/families` doesn't expose it and extending
+  that endpoint is out of scope here.
+Changed: gui_next/src/renderer/src/screens/ScreenLibrary.tsx: hoisted `RATING_RANK` and added
+  `SOURCE_FULL` to module scope (was recording-lens-local) so the new performance lens can share
+  them; extended `RecordingRow` with optional `fam`/`famLabel`/`famConf`/`famBy` fields, set only
+  by the performance lens's adapter.
+
+[2026-06-18] — feat(backend): TODO-150 phase 5 — performance/show grouping aggregate endpoint
+Added: backend/db.py: `get_performances()` groups `entries` by raw `(date_str, location)` into
+  shows, cross-referencing `bobdylan_shows` (venue, setlist key, track count via `bobdylan_setlist`),
+  `setlistfm_shows` (tour name), and `bootleg_titles` (release title) — none of which `/api/search`
+  exposes. Per the locked TODO-150 decision this is a dedicated backend endpoint, not a client-side
+  groupBy over `/api/search` results (06-gap-analysis.md §B3 open decision 1) and not a join bolted
+  onto `/api/search` (same reasoning as the TapeMatch families endpoint, 07 §4). Optional fields
+  (`dow`, `tour`, `setlist`, `tracks`, `title`) are omitted, never null-faked, when no source data
+  exists for a show. Verified against a migrated copy of the live dev DB: 16,630 entries → 10,718
+  shows in ~150ms.
+Added: backend/app.py: `GET /api/library/performances` — new route, returns `get_performances()`.
+  TapeMatch family data deliberately not joined in; the GUI's future performance-lens adapter
+  fetches `/api/tapematch/families` separately and merges by `lb_number`, same pattern the
+  recording lens already uses for `/api/collection/prefetch`.
+
+[2026-06-18] — feat(gui): TODO-150 phase 4 — Library screen recording lens (no-families fallback)
+Added: gui_next/src/renderer/src/screens/ScreenLibrary.tsx: new flat, LB#-keyed table over the
+  full catalog — toolbar (search, group-by-year toggle), left facet rail (scope, decade, status,
+  rating, source, a derived "health" group for wishlist/duplicates/unconfirmed/no-fingerprint),
+  summary strip (live result/owned counts), virtualized year-grouped table. Client-side adapter
+  merges the existing `/api/search` catalog with `/api/collection/prefetch` (collection,
+  fingerprints, wishlist, duplicates, xref_lb_numbers) — no backend changes. This is also the
+  literal no-families fallback row the performance lens (TODO-150 step 6) will reuse. Deliberately
+  bare this step: no context menu, no detail panel, no bulk action bar — those are TODO-150 steps
+  7/8, scoped separately to avoid building throwaway versions now. Owned-row file-card fields
+  (size/files/format/cds) and the design doc's "New" status value are omitted — nothing in the
+  backend computes them today and the project doesn't ship placeholder data.
+Changed: gui_next/src/renderer/src/App.tsx: registered `/library-dev` as a temporary, nav-hidden
+  route (same pattern as the existing `/quicklookup`) so the new screen is reachable during
+  development; real nav/route wiring is TODO-150 step 9.
+
+[2026-06-18] — feat(backend): TODO-150 phase 3 — curator-edited entries.source_type column
+Added: backend/db.py: new `entries.source_type` column (schema v8, MASTER_SCHEMA_VERSION 7→8)
+  for the Library design doc's `src` field (Soundboard/Audience/FM-Pre-FM/Master/Mixed →
+  SBD/AUD/FM/MST/MTX badge). Unlike `taper_name`/`source_chain`/`lb_category`, this column is
+  never heuristically parsed or backfilled — it stays NULL until a curator sets it via the
+  (not-yet-built) detail-panel editor. Migration follows the existing `ALTER TABLE ... ADD
+  COLUMN` idiom in `init_db()`. Wired into the existing read paths that already surface
+  `lb_category` (`search_entries()`, `get_entries_by_lb_list()`, `get_collection()`) so it's
+  available to Search/Collection/Library without a separate fetch.
+
+[2026-06-18] — feat(gui): TODO-150 phase 2 — theme engine additions (frame theme + card style)
+Added: gui_next/src/renderer/src/lib/tokens.ts: new `palette` (frame theme: slate/blue/purple/
+  green/graphite, tints bg/surface/border/fg over the mode, layered like the existing accent
+  system) and `cardStyle` ('framed' | 'flat', default 'flat' — preserves current look) fields on
+  ThemeOptions. `PALETTES` table ported verbatim from the design handoff's `_source/lbb-tokens.js`.
+Fixed: gui_next/src/renderer/src/lib/tokens.ts: `Mode` now properly includes 'system' as a type
+  (previously only reachable via an `as ThemeOptions['mode']` cast in ScreenThemes.tsx that
+  silently fell back to light on every reload). `applyTheme()` resolves 'system' to a concrete
+  light/dark via `getSystemMode()` before indexing MODES/PALETTES/ACCENT_PALETTES/STATUS, and
+  `loadTheme()` now validates 'system' as a legal stored value instead of dropping it.
+Added: gui_next/src/renderer/src/index.css: ported the `--sep-*` framed-card CSS token block
+  from the design handoff's `app.css` (gutter/card/ring/lift/top-highlight, per-mode shadow
+  overrides), adapted from the handoff's nonexistent `#frame` element to `:root` since
+  applyTheme() already sets data-mode/data-sep on document.documentElement. Inert until
+  data-sep="framed" is set — no existing screen reads these tokens yet.
+Changed: gui_next/src/renderer/src/screens/ScreenThemes.tsx: added "Frame theme" (palette
+  swatches, with a "Default" tile to opt out / keep current look) and "Card style" (framed/flat
+  segmented control) cards to the Themes panel. Fixed handleImportTheme() to round-trip the new
+  palette/cardStyle fields instead of silently dropping them on import.
+Note: i18n for the two new themes.palette.*/themes.cardStyle.* keys deferred to de/fr/es/it/nl —
+  added to en.json only for now; other locales fall back to English until the Library screen
+  (TODO-150 build order steps 3-9) is further along.
+
+[2026-06-18] — feat(backend): TODO-150 phase 1 — TapeMatch backend integration
+Added: backend/db.py: recording_families + tapematch_family_meta tables (SCHEMA_SQL), added to
+  MASTER_TABLES, MASTER_SCHEMA_VERSION bumped 6 → 7.
+Added: backend/tapematch_sync.py: sync_tapematch_families() ingests tools/tapematch/observations.db
+  into the main DB — picks the best run per concert_date (highest n_sources_ran, tie-break latest
+  run_id), computes a deterministic fam_id (not run-scoped), upserts both tables preserving
+  label_override across re-syncs, and cleans up dissolved/changed families.
+Added: backend/app.py: POST /api/tapematch/sync (manual trigger, not run at startup) and
+  GET /api/tapematch/families (flat lb_number → fam_id/fam_label/fam_conf/fam_by list for
+  client-side merge).
+Fixed: backend/db.py: import_master_db() now checks each MASTER_TABLES table exists in the
+  attached incoming DB before DELETE+INSERT, skipping (not erroring on) tables absent from an
+  older pre-feature snapshot; skipped tables are reported in the returned skipped_tables list.
+Added: backend/tapematch_sync.py: `__main__` CLI entry point (`.venv/bin/python3 -m
+  backend.tapematch_sync`) — runs the sync standalone without the Flask backend, since tapematch
+  batch runs happen via shell scripts that don't have the app server up. Wired as step 7 of the
+  `/tapematch-batch` skill (`.claude/commands/tapematch-batch.md`) per doc 07 §3 — the manual
+  trigger point for getting a finished batch's families into the main DB.
+
+[2026-06-18] — fix(tools): BUG-209 — tapematch run_crawl.sh infinite loop on missing-sources date
+Fixed: tools/tapematch/tapematch_session.py: run_date() now archives a **missing_sources**
+  report.md (mirrors the existing insufficient_sources/rc=2 path) instead of returning rc=3
+  with nothing recorded, so next_run()'s --next loop stops re-picking the same unrunnable date
+  forever. Delete the run's archive dir under data/tapematch/runs/ to retry once the missing
+  source(s) appear on disk.
+Changed: tools/tapematch/gen_analysis.py: parse_report/build_analysis/status-line now recognize
+  the missing_sources marker, same treatment as insufficient_sources.
+Added: tools/tapematch/tests/test_missing_sources.py: regression coverage for the new marker.
+
+[2026-06-18] — feat(backend+gui): multi-LB pipeline — same recording under two archive entries
+Added: backend/db.py: folder_lb_link migrated to composite PRIMARY KEY (folder_path, lb_number); added
+  get_folder_links() returning all links per folder; set_folder_link now INSERT OR IGNORE (idempotent).
+Added: backend/folder_naming.py: build_multi_lb_name() produces compound tag e.g. (LB-16308+LB-16340).
+Changed: backend/app.py: lookup step detects all-perfect multi-LB match (all lb_summary statuses
+  "MATCHED"), auto-writes links for all LBs, passes lb_numbers list through; rename step builds compound
+  folder name when lb_numbers > 1; true ambiguous conflict still blocks as before.
+Changed: gui_next/.../ScreenPipeline.tsx: ok lookup block renders multi-LB label ("LB-16308 + LB-16340"),
+  "same recording, both entries" annotation, "Multi-LB" status tag, and updated hint text.
+
+[2026-06-17] — fix(backend): BUG-206/207 — pipeline rename leaves stale collection row and logs doubled old_path
+Fixed: backend/rename.py: write_rename_log now correctly computes old_path and new_path under both
+  calling conventions (folder_path = folder itself, or = parent directory); fixes old_path doubling
+  (BUG-207) and pre-existing new_path miscalculation in rename_tab call site.
+Fixed: backend/app.py: folder_rename() now queries my_collection after rename and updates disk_path
+  + folder_name if the folder was already in the collection (BUG-206).
+
+[2026-06-17] — fix(gui): BUG-208 — pipeline "File all" and explicit filing bypass a pending rename
+Fixed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: fileableRows/selectedFileable now
+  exclude rows where rename.status==='warn' && proposed is set. applyFile bails with a toast if
+  rename is pending. CollectReadyDetail gains useTranslation(), a renamePending warning banner, and
+  a disabled File button when a rename is outstanding. Also fixes latent crash (t undefined in
+  CollectReadyDetail, introduced by BUG-204 fix). 3 i18n keys added to all 6 locale files.
+
+[2026-06-17] — fix(gui): BUG-205 — filing duplicates visible rows and leaves running-state row in shelf section
+Fixed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: shelfVis was missing !r.running guard, causing
+  a row being filed (bucket='shelf', running=true) to appear in both Running and Shelf sections simultaneously.
+  Also fixed counts.shelf, fileableRows, and selectedFileable to exclude running rows. Updated _pipelineCache
+  on successful filing so component remount restores correct 'done' state instead of stale 'shelf' state.
+
+[2026-06-18] — fix(backend+gui): BUG-204 — filing a folder already in collection silently dropped the new path
+Fixed: backend/filer.py: after move/copy, check for existing my_collection row by lb_number;
+  call update_collection() to update disk_path/folder_name if already registered, instead of
+  relying on INSERT OR IGNORE which silently discarded the new path.
+Fixed: backend/app.py: file-step result now includes existing_disk_path from my_collection.
+Fixed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: warn banner shown in Collect
+  step when owned=true and existing_disk_path is set, explaining the record will be updated.
+Added: all 6 locale files: pipeline.collect.alreadyInCollectionTitle/Body keys.
+
+[2026-06-17] — feat(gui): collection text filter now searches disk path
+Changed: gui_next/src/renderer/src/screens/ScreenCollection.tsx: added diskPath to the search predicate so typing any part of the path filters matching rows
+
+[2026-06-17] — fix(gui): BUG-203 — shelving a pipeline folder leaves File button visible
+Fixed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: added `shelved` boolean flag to
+  PipelineRow; Shelve sets it, Unshelve clears it and restores computed bucket. File button,
+  fileableRows, selectedFileable, and counts.shelf all exclude shelved rows.
+  deriveFolderStatus returns "Shelved / Deferred" when flag is set.
+
+[2026-06-17] — fix(backend): BUG-200 — Pipeline Verify tab shows "no checksums" for disc-subfolder layouts
+Fixed: backend/checksum_utils.py: verify_folder now uses rglob to find checksum files in subdirectories (disc1/, disc2/ etc.) and qualifies bare filenames with the subdir prefix so they match disk_audio_map keys
+
+[2026-06-17] — fix(gui): pipeline Lookup action column — label, spacing, and column width
+Changed: gui_next/src/renderer/src/components/pipeline/LookupDetail.tsx: renamed "Open" button to "Open on LB Website"; gap between buttons 4→8px; action column 200→360px (pin) / 130→180px (non-pin)
+Changed: locales/en|de|fr|es|it|nl.json: updated lookup.table.open to localised "Open on LB Website"
+
+[2026-06-17] — fix(gui): BUG-202 — blocked folders in Pipeline sidebar and stray File button
+Fixed: gui_next/src/renderer/src/components/pipeline/PipelineParts.tsx: QueueRow now detects
+  any step with state 'blocked' and overrides the sidebar dot and label to red/"Blocked" instead
+  of yellow/"Needs you"; previously all "attn" severity folders shared the same needs bucket
+Fixed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: File button in the table row now
+  suppressed when any upstream step (verify/lookup/lbdir/rename) has status 'bad'
+
+[2026-06-17] — fix(tools): run_batch OOM after many in-process date runs
+Fixed: tools/tapematch/tapematch_session.py: run_batch() now spawns a fresh subprocess per date (same as year_run/crawl_run) instead of calling run_date() in-process; after ~300 iterations the accumulated heap caused an OOM when tapematch tried to mmap 5 audio sources
+
+[2026-06-17] — chore(gui): widen Pipeline table Status and actions columns
+Changed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: batch table Status column 240px→420px and actions/buttons column 128px→224px (+75% each); folder name column has no fixed width so it absorbs the difference, shifting the Stages/LB columns left
+
+[2026-06-17] — fix(tools): BUG-199, prep_analysis_input.py misread truncated LB numbers in report.md commentary
+Fixed: tools/tapematch/prep_analysis_input.py: LB_TAG_RE now excludes LB numbers immediately followed by an ellipsis ("…"/"...") so a truncated commentary snippet (e.g. "LB-4794…" cut to "LB-47…") can't be misread as a real, distinct LB number and pull in an unrelated info file, while still picking up legitimate untruncated cross-references elsewhere in report.md
+Added: 5 more data/tapematch/runs/*/analysis.md write-ups (1998-06-21/23/24/25/26); repo-wide scan of all 923 run dirs for BUG-199 found 2 actually-affected dirs (1998-06-24 already correctly excluded the contamination in its analysis.md; 1990-10-26's stale analysis_input.md regenerated clean) and surfaced a second, separate bug (BUG-200, logged Open) — 1999-02-25 Portland's report.md has another session's tapematch output verbatim
+
+[2026-06-17] — feat(tools): tapematch analysis.md backfill tooling + repeatable batch procedure
+Added: tools/tapematch/prep_analysis_input.py: bundles each run's report.md with matched data/site/files/LBF-*.txt lineage prose (checksum/shntool noise stripped) into analysis_input.md
+Added: tools/tapematch/ANALYSIS_WRITER_PROMPT.md: fixed spec for writing analysis.md (verdict wording rules, per-LB table/notes/callout conventions) so the procedure doesn't need re-negotiating each run
+Added: .claude/commands/tapematch-batch.md: /tapematch-batch slash command — processes the next N missing analysis.md write-ups directly in-session (subagents hit a hard Write-tool block on .md files and cost about the same per file, so direct in-session writing is the reliable path)
+Added: 98 of 438 missing data/tapematch/runs/*/analysis.md write-ups generated; caught several real bugs along the way — a report.md with another session's tapematch stdout spliced in (1999-02-25 Portland run), a tapematch ingest crash on a malformed duration read, and a likely date-mis-tagged LB-06939 (its own info file says 1/17/98 New London CT, catalogued under 1998-06-17 Brussels)
+
+[2026-06-17] — fix(backend+gui): BUG-195, incomplete-match folders block downstream pipeline steps
+Fixed: backend/app.py: after an incomplete checksum match (e.g. FFP matches but MD5 does not), clear lb_number so lbdir/rename/file steps stay mute unless the folder was explicitly pinned by the user
+Fixed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: warn+lb_number branch now shows pin option with explanation; handlePin now re-runs all downstream steps after pinning
+
+[2026-06-16] — feat(tapematch): single-date wrapper, decade-priority crawl mode, require-all-sources-by-default
+Added: tools/tapematch/run_date.sh: shell wrapper for running a single concert date
+Added: tools/tapematch/run_crawl.sh: shell wrapper for --crawl mode
+Added: tools/tapematch/tapematch_session.py: get_all_dates(), _decade_priority(), _decade_label(), crawl_run() — processes all unrun dates prioritised 90s→00s→10s→20s→pre-1990, resumable
+Changed: tools/tapematch/tapematch_session.py: find_lb_folders() now returns (found, excluded) so truly-missing sources can be distinguished from private/no-audio exclusions
+Changed: tools/tapematch/tapematch_session.py: run_date() skips with RC=3 by default when any non-excluded source is absent from disk; --allow-missing overrides
+Changed: tools/tapematch/tapematch_session.py: year_run(), crawl_run(), run_batch() propagate allow_missing and handle RC=3 as a labelled [SKIP]
+
+[2026-06-16] — feat(backend+gui): TODO-147 — install hints for missing helper tools in Setup tab
+Added: backend/sox_utils.py: get_install_hints() returns per-tool winget/brew/apt install commands for current OS
+Changed: backend/app.py: /api/spectrogram/check now includes ffmpeg/sox/flac/shntool _install_hint fields
+Changed: gui_next/src/renderer/src/screens/ScreenSetup.tsx: HelpersStrip shows install commands below yellow dots
+
+[2026-06-16] — fix(backend+tools): BUG-187/192, bloom filter path isolation and Windows termios
+Fixed: backend/db.py: BUG-187 — track _bloom_db_path alongside _bloom; lookup_checksums skips
+  the bloom filter when it was built for a different db_path, preventing stale filters from one
+  test's temp DB silently dropping checksums in another test's lookup.
+Fixed: tools/batch_verify.py: BUG-192 — moved termios/tty to guarded try/except at module level
+  (_HAS_TERMIOS flag); _KeyboardController.start/stop check the flag so the module is importable
+  on Windows and pytest collection of test_batch_verify.py no longer fails.
+
+[2026-06-16] — fix(backend+gui): bobdylan scraper intermediate messages now appear in Electron log
+Fixed: backend/bobdylan_scraper.py: added _set(message=…) at sitemap index result, per-sitemap
+  fetch start/failure, and scrape queue count — these only wrote to Python logger before.
+Fixed: gui_next/…/ScreenScraper.tsx: moved bobdylan message→log push outside status==='running'
+  gate so terminal messages (done/error) now appear; errors rendered with 'bad' tone.
+
+[2026-06-16] — fix(gui+backend): BUG-195/196/197/198, pipeline display bugs and race conditions
+Fixed: backend/app.py: BUG-196 — scan-tree shallow mode no longer adds both parent AND child
+  folders when root has direct audio; store root_has_audio once and skip child iteration.
+Fixed: backend/app.py: BUG-198 — folder_rename TOCTOU race: inner try/except around
+  folder.rename() catches FileExistsError/OSError and returns 409 instead of 500.
+Fixed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: BUG-197 — auto-rename effect
+  changed from forEach (all concurrent) to sequential async IIFE (for-of + await applyRename).
+Fixed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: BUG-195 — added measureElement
+  callback to virtualizer so actual DOM heights are used instead of fixed 38 px estimate.
+Fixed: gui_next/src/renderer/src/components/table.tsx: BUG-195 — TR and GroupRow converted
+  to React.forwardRef so virtualizer can measure their inner <tr> elements.
+
+[2026-06-15] — feat(backend+gui): Bob Dylan scraper card in admin dashboard with stale-reset context
+Added: backend/app.py: bobdylan_scraper.get_status() included in /api/admin/status response
+Added: backend/admin.html: Bob Dylan Scraper card (status, phase label, progress bar, Start/Stop)
+Added: backend/admin.html: updateBdScraperUI() / bdStart() / bdStop() JS; wired into pollStatus()
+  The status message (e.g. "Discovered 2000 URLs, 0 new, 7 reset") is shown in the log line.
+
+[2026-06-15] — fix(backend+gui): status bar now reflects all background workers (was always "Idle")
+Fixed: backend/app.py: /api/activity/busy was missing site_crawler, bobdylan_scraper,
+  setlistfm, and geocoder — four workers that use different status formats. Added them
+  with format-aware checks (running bool vs status=="running"). Added matching i18n keys
+  in all 6 locale files: crawling, bobdylan_scraping, setlistfm_syncing, geocoding.
+
+[2026-06-15] — fix(backend): dynamic sitemap discovery so new bobdylan.com shows are found
+Fixed: backend/bobdylan_scraper.py: replaced hardcoded 3-sitemap list with dynamic index
+  fetch (_get_date_sitemap_urls) that reads wp-sitemap.xml and discovers all posts-date
+  sitemaps; fallback to _SITEMAP_URLS_FALLBACK if index unavailable. Added 404 WARNING log
+  to _fetch so silent failures are visible. Fixes BUG-193.
+
 [2026-06-15] — fix(backend): importer empty-file error, dbedit DoS guard, datetime.utcnow deprecations
 Fixed: backend/importer.py:run_import: moved close_connection(temp_db_path) and unlink() outside
   the `with get_connection() as conn:` block. Previously, calling close_connection() inside the

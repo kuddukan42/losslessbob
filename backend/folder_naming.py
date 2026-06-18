@@ -78,6 +78,36 @@ def build_standard_name(
     return apply_nft_suffix(base, lb_status)
 
 
+def build_multi_lb_name(
+    lb_numbers: list[int],
+    date_str: str,
+    location: str,
+    lb_status: str | None,
+) -> str:
+    """Build canonical name for a folder matched to multiple LB entries.
+
+    Args:
+        lb_numbers: Sorted list of LB numbers (must have ≥ 2).
+        date_str: Date string in M/D/YY format from the database.
+        location: Event location string.
+        lb_status: 'public', 'private', 'missing', or None.
+
+    Returns:
+        Canonical name like ``YYYY-MM-DD Location (LB-NNNNN+LB-MMMMM)[-NFT]``.
+        Falls back to ``(LB-NNNNN+LB-MMMMM)[-NFT]`` when date/location missing.
+    """
+    from backend.torrent_maker import _parse_date
+
+    iso_date = _parse_date(date_str) if date_str else ""
+    loc = location.strip() if location else ""
+    tag = "+".join(f"LB-{lb:05d}" for lb in sorted(lb_numbers))
+    if iso_date and loc:
+        base = f"{iso_date} {loc} ({tag})"
+    else:
+        base = f"({tag})"
+    return apply_nft_suffix(base, lb_status)
+
+
 def nft_discrepancy(folder_name: str, lb_status: str | None) -> str | None:
     """Classify the NFT-suffix vs lb_status alignment for a folder.
 
