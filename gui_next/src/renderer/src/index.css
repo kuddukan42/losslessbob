@@ -175,3 +175,114 @@ table tbody tr:hover td {
   --sep-lift: 0 10px 26px rgba(40,30,15,0.14);
   --sep-top:  inset 0 1px 0 rgba(255,255,255,0.85);
 }
+
+/* ============================================================
+   Pipeline stage icons — ported from
+   instructions/design_handoff_pipeline_icons/pipeline-icons.css
+   Direction: Option D (tactile tile) · Pulse animation · Vivid palette.
+   Markup is rendered by components/pipeline/PipelineIcon.tsx.
+   ============================================================ */
+:root {
+  /* ── Vivid status palette ─────────────────────────────── */
+  --pipe-pending: #a8a293;
+  --pipe-running: #4c89c4;
+  --pipe-pass:    #39a360;
+  --pipe-action:  #cc9f3d;
+  --pipe-blocked: #d8604f;
+}
+
+/* ── Tile shell ───────────────────────────────────────────
+   The tile colour is driven by a single custom property,
+   --pipe-mid, set per status (see .pipe-tile--* modifiers).
+   All other shades are derived from it via color-mix.
+   ------------------------------------------------------- */
+.pipe-tile {
+  --pipe-mid: var(--pipe-pending);
+  --pipe-hi:    color-mix(in oklab, var(--pipe-mid) 74%, #fff);
+  --pipe-lo:    color-mix(in oklab, var(--pipe-mid) 82%, #000);
+  --pipe-shadow:color-mix(in oklab, var(--pipe-mid) 40%, transparent);
+  --pipe-glow:  color-mix(in oklab, var(--pipe-mid) 92%, transparent);
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--pipe-size, 48px);
+  height: var(--pipe-size, 48px);
+  border-radius: calc(var(--pipe-size, 48px) * 0.30);
+  color: #fff;
+  background: radial-gradient(118% 118% at 50% 16%,
+              var(--pipe-hi) 0%, var(--pipe-mid) 54%, var(--pipe-lo) 100%);
+  border: 1px solid var(--pipe-lo);
+  box-shadow:
+    0 4px 9px var(--pipe-shadow),
+    0 1px 2px rgba(40, 34, 24, 0.12),
+    inset 0 1.5px 0.5px rgba(255, 255, 255, 0.6),
+    inset 0 -2px 2px rgba(0, 0, 0, 0.18);
+  transition: opacity 0.3s ease;
+}
+
+/* Status modifiers — just swap the mid colour */
+.pipe-tile--pending { --pipe-mid: var(--pipe-pending); opacity: 0.5; }
+.pipe-tile--running { --pipe-mid: var(--pipe-running); }
+.pipe-tile--pass    { --pipe-mid: var(--pipe-pass); }
+.pipe-tile--action  { --pipe-mid: var(--pipe-action); }
+.pipe-tile--blocked { --pipe-mid: var(--pipe-blocked); }
+
+/* The glyph itself */
+.pipe-tile__glyph {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+}
+.pipe-tile__glyph svg { display: block; }
+
+/* ── Pulse animation (running state only) ─────────────────
+   Two expanding rings on a stagger + a diagonal sheen sweep.
+   Add .pipe-tile--running AND render the .pipe-tile__ring
+   elements + .pipe-tile__sheen to activate.
+   ------------------------------------------------------- */
+.pipe-tile__ring {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.pipe-tile__sheen-clip {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  overflow: hidden;
+  pointer-events: none;
+}
+.pipe-tile__sheen {
+  position: absolute;
+  inset: 0;
+  transform: translateX(-120%);
+  background: linear-gradient(115deg,
+              transparent 33%, rgba(255, 255, 255, 0.65) 50%, transparent 67%);
+}
+
+@keyframes pipeRing {
+  0%        { box-shadow: 0 0 0 0 var(--pipe-glow); opacity: 1; }
+  70%, 100% { box-shadow: 0 0 0 22px transparent;   opacity: 0; }
+}
+@keyframes pipeSheen {
+  0%        { transform: translateX(-120%); }
+  55%, 100% { transform: translateX(120%); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pipe-tile--running .pipe-tile__ring   { animation: pipeRing 1.2s ease-out infinite; }
+  .pipe-tile--running .pipe-tile__ring--b { animation-delay: 0.55s; }
+  .pipe-tile--running .pipe-tile__sheen  { animation: pipeSheen 1.7s ease-in-out infinite; }
+}
+
+/* Pipeline queue table — light vertical column dividers for visual reference.
+   Skips the first (3px edge bar) and last (no trailing edge line) cells; the
+   full-width group-header rows have their spanning cell as :last-child, so they
+   stay clean. */
+.pipe-queue-table td:not(:first-child):not(:last-child),
+.pipe-queue-table th:not(:first-child):not(:last-child) {
+  border-right: 1px solid color-mix(in oklab, var(--lbb-border) 60%, transparent);
+}

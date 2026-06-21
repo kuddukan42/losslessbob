@@ -132,11 +132,18 @@ def _sync_one_date(
     for row in sources:
         members_by_family.setdefault(row["family_id"], []).append(row["lb_number"])
 
-    # Singletons aren't a "family" for UI purposes.
     families = {
         fam_id: sorted(set(lbs))
         for fam_id, lbs in members_by_family.items()
         if len(set(lbs)) >= 2
+    }
+    # Singletons: TapeMatch processed these but found no acoustic match among
+    # siblings on the same date.  Synced as label='Solo' so the Library UI
+    # renders them as "Solo LB-XXXXX" rather than a raw orphan "Recording" row.
+    singletons: dict[int, int] = {
+        fam_id: sorted(set(lbs))[0]
+        for fam_id, lbs in members_by_family.items()
+        if len(set(lbs)) == 1
     }
 
     pair_rows = obs_conn.execute(
@@ -176,6 +183,13 @@ def _sync_one_date(
         for lb_number in lb_numbers:
             fresh_lb_numbers.add(lb_number)
             member_rows.append((lb_number, fam_id, concert_date, run_id))
+
+    for _tm_fam_id, lb_number in singletons.items():
+        fam_id = f"{concert_date}#{lb_number}"
+        fresh_fam_ids.add(fam_id)
+        family_rows.append((fam_id, concert_date, "Solo", "ai", None, 1, run_id))
+        fresh_lb_numbers.add(lb_number)
+        member_rows.append((lb_number, fam_id, concert_date, run_id))
 
     with conn:
         conn.execute("BEGIN IMMEDIATE")

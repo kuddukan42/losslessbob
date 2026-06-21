@@ -1391,6 +1391,58 @@ class TestFolderLink:
         finally:
             shutil.rmtree(tmp, ignore_errors=True)
 
+    def test_rekey_moves_link_to_new_path(self):
+        """BUG-212: a pin must survive a folder rename."""
+        import backend.db as db
+        db_path, conn, tmp = _make_db()
+        try:
+            db.set_folder_link("/music/old_name", 605, note="pinned", db_path=db_path)
+            db.rekey_folder_link("/music/old_name", "/music/new_name", db_path=db_path)
+            assert db.get_folder_link("/music/old_name", db_path=db_path) is None
+            result = db.get_folder_link("/music/new_name", db_path=db_path)
+            assert result is not None
+            assert result["lb_number"] == 605
+            assert result["note"] == "pinned"
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_rekey_preserves_multi_lb_links(self):
+        import backend.db as db
+        db_path, conn, tmp = _make_db()
+        try:
+            db.set_folder_link("/music/old_multi", 606, db_path=db_path)
+            db.set_folder_link("/music/old_multi", 607, db_path=db_path)
+            db.rekey_folder_link("/music/old_multi", "/music/new_multi", db_path=db_path)
+            result = db.get_folder_links("/music/new_multi", db_path=db_path)
+            assert sorted(r["lb_number"] for r in result) == [606, 607]
+            assert db.get_folder_links("/music/old_multi", db_path=db_path) == []
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_rekey_drops_stale_row_on_conflict(self):
+        """If new_path already has a link for the same LB#, the old row is dropped, not duplicated."""
+        import backend.db as db
+        db_path, conn, tmp = _make_db()
+        try:
+            db.set_folder_link("/music/old_conflict", 608, note="from old", db_path=db_path)
+            db.set_folder_link("/music/new_conflict", 608, note="already pinned", db_path=db_path)
+            db.rekey_folder_link("/music/old_conflict", "/music/new_conflict", db_path=db_path)
+            assert db.get_folder_link("/music/old_conflict", db_path=db_path) is None
+            result = db.get_folder_links("/music/new_conflict", db_path=db_path)
+            assert len(result) == 1
+            assert result[0]["note"] == "already pinned"
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_rekey_nonexistent_is_no_op(self):
+        import backend.db as db
+        db_path, conn, tmp = _make_db()
+        try:
+            db.rekey_folder_link("/nonexistent/path", "/music/new_path", db_path=db_path)
+            assert db.get_folder_link("/music/new_path", db_path=db_path) is None
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
 
 # ---------------------------------------------------------------------------
 # Torrent writes

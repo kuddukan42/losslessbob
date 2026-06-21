@@ -9,7 +9,7 @@
     "add": "Voeg  toe",
     "retry": "Opnieuw proberen",
     "remove": "Verwijder",
-    "open": "Open",
+    "open": "Openen",
     "copy": "Kopie",
     "export": "Exporteer",
     "yes": "Ja",
@@ -54,10 +54,12 @@
       "dbeditor": "DB-editor",
       "scraper": "Schraper",
       "settings": "Instellingen",
-      "setup": "Setup",
+      "setup": "Installatie",
       "mounts": "Opslag",
       "themes": "Thema's",
-      "advancedTools": "Geavanceerde tools"
+      "advancedTools": "Geavanceerde tools",
+      "trading": "Handel",
+      "sharing": "Delen"
     },
     "statusBar": {
       "db": "DB:",
@@ -161,7 +163,7 @@
       "matchSummarySub": "per LB-nummer - dubbelklik om te openen op LB.com",
       "copySummary": "Samenvatting kopiëren",
       "exportCsv": "CSV exporteren…",
-      "checksumDetail": "Checksum detail",
+      "checksumDetail": "Details checksum",
       "rows": "{{count}} rijen"
     },
     "table": {
@@ -206,6 +208,14 @@
       "lookupFailed": "Opzoeken mislukt",
       "addedToWishlist": "LB-{{lb}} toegevoegd aan verlanglijstje",
       "wishlistFailed": "Wensenlijst toevoegen mislukt"
+    },
+    "owned": {
+      "verifiedBanner": "{{count}} al in de collectie · lbdir-geverifieerd",
+      "unverifiedBanner": "{{count}} bevindt zich al in de collectie",
+      "verifiedNote": "geen actie nodig",
+      "unverifiedNote": "nog niet door lbdir geverifieerd",
+      "badgeOwned": "In collectie",
+      "badgeVerified": "In collectie · geverifieerd"
     }
   },
   "verify": {
@@ -330,7 +340,11 @@
       "title": "Ondubbelzinnig - kies er een",
       "desc": "Er komen meerdere LB-nummers overeen. Selecteer de juiste en klik vervolgens op \"Pin selection\".",
       "skip": "Voorlopig overslaan",
-      "pinned": "Vastgemaakt aan {{lb}}"
+      "pinned": "Vastgemaakt aan {{lb}}",
+      "pin": "Selectie vastzetten",
+      "unpin": "Koppeling verwijderen",
+      "loading": "Bezig met oplossen…",
+      "standardize": "Naam standaardiseren"
     },
     "dryrun": {
       "title": "Voorbeschouwing op de generale repetitie",
@@ -344,7 +358,12 @@
       "applyFailed": "Solliciteer mislukt",
       "diffCopied": "Verschil gekopieerd",
       "copyFailed": "Kopiëren mislukt",
-      "pinned": "Vastgemaakt {{lb}}"
+      "pinned": "Vastgemaakt {{lb}}",
+      "unpinned": "Niet gekoppeld",
+      "pinFailed": "Vastzetten mislukt",
+      "unpinFailed": "Ontkoppelen mislukt",
+      "standardized": "Gestandaardiseerde naam",
+      "standardizeFailed": "Standaardisatie mislukt"
     }
   },
   "pipeline": {
@@ -448,7 +467,7 @@
       "mountTooltip": "{{span}} · {{free}} vrij van {{total}} ({{pct}}% gebruikt)",
       "freeOfTotal": "{{free}} vrij van {{total}}",
       "tagInCollection": "Markeren in verzameling",
-      "itemsCounter": "{{count}} → {{next}} items",
+      "itemsCounter": "{{count}} → {{next}}-items",
       "rowLb": "LB#",
       "rowStatus": "Status",
       "rowConfirmed": "Bevestigd",
@@ -465,7 +484,14 @@
       "alreadyInCollectionBody": "Deze opname is al geregistreerd in uw collectie op {{path}}. Bij het archiveren wordt de map naar de nieuwe locatie verplaatst en de collectierecord bijgewerkt.",
       "renamePendingTitle": "Hernoeming vereist vóór archivering",
       "renamePendingBody": "Deze map heeft een niet-toegepaste hernoeming. Ga naar de stap Hernoemen en pas deze toe vóór het archiveren."
-    }
+    },
+    "titleFolders": "Pipeline · {{count}}-mappen",
+    "applyAllReady": "Pas alle {{count}}-ready toe",
+    "fileAllCollection": "Alle {{count}}-bestanden in de collectie opslaan",
+    "autoRun": "Automatisch starten bij het neerzetten",
+    "autoRunHint": "Wanneer deze functie is ingeschakeld, worden gesleepte mappen automatisch geverifieerd en opgezocht",
+    "autoRename": "Automatisch hernoemen",
+    "autoRenameHint": "Wanneer deze optie is ingeschakeld, wordt automatisch een definitieve naamswijziging op basis van één overeenkomst toegepast en gaat de map door naar ‘Verzamelen’"
   },
   "collection": {
     "confirmDialog": {
@@ -655,7 +681,7 @@
     }
   },
   "setup": {
-    "title": "Setup",
+    "title": "Installatie",
     "subtitle": "Databasebeheer, integraties en voorkeuren.",
     "database": {
       "title": "Database",
@@ -719,7 +745,8 @@
       "autoScrape": "Automatisch schrapen bij importeren",
       "enabled": "ingeschakeld",
       "disabled": "uitgeschakeld",
-      "language": "Interfacetaal"
+      "language": "Interfacetaal",
+      "rowHighlight": "Kleuren voor het markeren van rijen"
     },
     "languages": {
       "en": "Engels",
@@ -733,11 +760,24 @@
       "title": "Gegevens verwijderen",
       "lookupHistory": "Geschiedenis opzoeken",
       "importLog": "Logboek importeren",
-      "scraperCache": "Scraper cache",
+      "scraperCache": "Cache van de scraper",
       "fingerprintCache": "Vingerafdruk cache",
       "allUserData": "Alle gebruikersgegevens",
       "purge": "Zuiveren…",
-      "disclaimer": "Alleen gebruikersgegevens. Het controlesomarchief wordt nooit beïnvloed."
+      "disclaimer": "Alleen gebruikersgegevens. Het controlesomarchief wordt nooit beïnvloed.",
+      "subtitle": "lokale opslag vrijmaken",
+      "recoverable": "herstelbaar",
+      "lookupHistoryDesc": "Recente zoekopdrachten",
+      "lookupHistoryUnit": "zoekopdrachten",
+      "importLogDesc": "Controleregels voor het importeren van platte bestanden",
+      "importLogUnit": "regels",
+      "scraperCacheDesc": "In de cache opgeslagen HTML van de detailpagina",
+      "scraperCacheUnit": "pagina's",
+      "fingerprintCacheDesc": "Audio-vingerafdrukblobs",
+      "fingerprintCacheUnit": "blobs",
+      "allUserDataDesc": "Collectie, verlanglijst, beoordelingen, meldingen en logboeken — niet ongedaan te maken.",
+      "purgeAll": "Alles verwijderen…",
+      "archiveProtected": "Het checksum-archief wordt nooit door een opschoonactie aangeraakt."
     },
     "packages": {
       "title": "Gegevenspakketten",
@@ -765,13 +805,13 @@
       "active": "actief",
       "reveal": "Onthullen",
       "download": "Download",
-      "downloading": "Downloading…",
-      "downloadDone": "Download complete.",
-      "reviewApply": "Review & Apply",
-      "applying": "Applying…",
-      "applyConfirmTitle": "Apply Update?",
-      "applyConfirmBody": "Apply {{filename}} to your database?\n\n+{{added}} added, ~{{changed}} changed, -{{removed}} removed.\n\nA backup is taken automatically first.",
-      "applyDone": "Update applied: +{{added}} added, ~{{changed}} changed, -{{removed}} removed."
+      "downloading": "Bezig met downloaden…",
+      "downloadDone": "Download voltooid.",
+      "reviewApply": "Controleren en toepassen",
+      "applying": "Wordt toegepast…",
+      "applyConfirmTitle": "Update toepassen?",
+      "applyConfirmBody": "{{filename}} toepassen op uw database?\n\n+{{added}} toegevoegd, ~{{changed}} gewijzigd, -{{removed}} verwijderd.\n\nEr wordt eerst automatisch een back-up gemaakt.",
+      "applyDone": "Update toegepast: +{{added}} toegevoegd, ~{{changed}} gewijzigd, -{{removed}} verwijderd."
     },
     "toast": {
       "dataFolderUnavailable": "Pad gegevensmap niet beschikbaar",
@@ -839,6 +879,15 @@
       "dark": "Donker",
       "system": "Systeem"
     },
+    "palette": {
+      "title": "Kaderthema",
+      "default": "Standaard"
+    },
+    "cardStyle": {
+      "title": "Kaartstijl",
+      "framed": "Omkaderd",
+      "flat": "Plat"
+    },
     "density": {
       "title": "Dichtheid",
       "comfortable": "Comfortabel",
@@ -865,7 +914,8 @@
       "resetAll": "Reset alle aangepaste tokens",
       "exportTheme": "Thema exporteren als JSON",
       "importTheme": "Thema importeren...",
-      "statusColorsNote": "Statuskleuren (groen / oranje / rood) worden vastgemaakt aan de rij-statusbalk en pillen zodat ze nooit botsen met je accentkeuze."
+      "statusColorsNote": "Statuskleuren (groen / oranje / rood) worden vastgemaakt aan de rij-statusbalk en pillen zodat ze nooit botsen met je accentkeuze.",
+      "rowHighlight": "Kleuren voor het markeren van rijen"
     },
     "tokens": {
       "background": "Achtergrond",
@@ -1109,6 +1159,307 @@
       "clipboardEmpty": "Klembord is leeg",
       "clipboardFailed": "Kan klembord niet lezen",
       "noValidFiles": "Geen controlesombestanden gevonden (.md5, .ffp, .st5, .sha1)"
+    }
+  },
+  "archiveOrg": {
+    "title": "Uploaden naar Archive.org",
+    "desc": "Upload audiobestanden voor een LB-vermelding naar het Internet Archive. Hiervoor zijn een gratis account op archive.org en S3-achtige API-sleutels vereist.",
+    "credentials": "Inloggegevens",
+    "accessKey": "Toegangstoets",
+    "secretKey": "Geheime sleutel",
+    "saveCredentials": "Opslaan",
+    "testCredentials": "Test",
+    "clearCredentials": "Wissen",
+    "credentialsSaved": "Inloggegevens opgeslagen.",
+    "credentialsCleared": "Inloggegevens gewist.",
+    "credentialsOk": "Inloggegevens geldig.",
+    "credentialsStored": "Inloggegevens opgeslagen.",
+    "credentialsNotStored": "Er worden geen inloggegevens opgeslagen.",
+    "uploadTitle": "Uploaden",
+    "lbNumber": "LB-nummer",
+    "folderPath": "Map pad",
+    "identifier": "IA-identificatie",
+    "identifierPlaceholder": "losslessbob-lb-01234 (auto)",
+    "collection": "Collectie",
+    "collectionPlaceholder": "opensource_audio",
+    "itemTitle": "Titel van het item",
+    "itemTitlePlaceholder": "Bob Dylan – LB-01234 (auto)",
+    "startUpload": "Uploaden naar Archive.org",
+    "stopUpload": "Stop",
+    "uploading": "Bezig met uploaden…",
+    "uploadDone": "Uploaden voltooid.",
+    "uploadStopped": "Het uploaden is gestopt.",
+    "uploadFailed": "Uploaden is mislukt.",
+    "history": "Uploadgeschiedenis",
+    "histColLb": "LB",
+    "histColIdentifier": "IA-identificatie",
+    "histColFiles": "Bestanden",
+    "histColStatus": "Status",
+    "histColStarted": "Gestart",
+    "noHistory": "Nog geen uploads.",
+    "keysHelp": "Vraag je S3-sleutels aan op archive.org/account/s3.php (gratis account vereist)."
+  },
+  "library": {
+    "lens": {
+      "byPerformance": "Op basis van prestaties",
+      "byRecording": "Door opname"
+    },
+    "actions": {
+      "open": "LB-pagina openen",
+      "copyLb": "LB-nummer kopiëren",
+      "play": "Afspelen",
+      "reveal": "Op schijf weergeven",
+      "copyPath": "Schijfpad kopiëren",
+      "qbtAdd_one": "Toevoegen aan qBittorrent",
+      "qbtAdd_other": "Voeg {{count}} toe aan qBittorrent",
+      "torrent": "Torrent aanmaken / opnieuw genereren",
+      "forumPost_one": "Plaats op het forum",
+      "forumPost_other": "Plaats {{count}} op het forum",
+      "attachments": "Bijlagen",
+      "spectrograms": "Spectrogrammen",
+      "showOnMap": "Op kaart weergeven",
+      "reconfirm": "Controlesommen opnieuw bevestigen",
+      "relocate_one": "Locatie bijwerken…",
+      "relocate_other": "Locatie bijwerken… ({{count}})",
+      "remove_one": "Uit verzameling verwijderen",
+      "remove_other": "{{count}} uit de collectie verwijderen",
+      "onWishlist": "Op verlanglijstje",
+      "addWishlist": "Toevoegen aan verlanglijstje",
+      "playBest": "De beste opname afspelen",
+      "revealBest": "Het beste resultaat op schijf",
+      "m3u": "Uitzending exporteren als M3U",
+      "qbtAddOwned": "'In bezit' toevoegen aan qBittorrent",
+      "createTorrent": "Torrent aanmaken…",
+      "wishlistGaps_one": "Bron ontbreekt in verlanglijst",
+      "wishlistGaps_other": "Ontbrekende bronnen op de verlanglijst"
+    },
+    "groups": {
+      "acquire": "Acquire",
+      "share": "Delen en seeden",
+      "assets": "Bestanden",
+      "maintain": "Onderhouden"
+    },
+    "bulk": {
+      "selected": "{{count}} geselecteerd",
+      "createTorrent": "Torrent aanmaken",
+      "addQbt": "Toevoegen aan qBittorrent",
+      "updateLocation": "Locatie bijwerken",
+      "remove": "Verwijderen",
+      "clearSelection": "Selectie wissen"
+    },
+    "toolbar": {
+      "searchRecording": "Zoeken op LB#, locatie, beschrijving…",
+      "searchPerformance": "Zoeken op datum, locatie, stad, tournee, LB#…",
+      "columns": "Kolommen",
+      "export": "Exporteren",
+      "more": "Meer",
+      "expandAll": "Alles uitvouwen",
+      "collapseAll": "Alles samenvouwen",
+      "expandAllShows": "Alles uitvouwen",
+      "collapseAllShows": "Alles samenvouwen",
+      "sort": "Sorteren"
+    },
+    "facets": {
+      "decade": "Decade",
+      "status": "Status",
+      "rating": "Beoordeling",
+      "source": "Bron",
+      "health": "Gezondheid",
+      "collectionHealth": "Status van de collectie",
+      "year": "Jaar",
+      "coverageLabel": "Omvang",
+      "bestRating": "Hoogste beoordeling",
+      "clear": "Wissen {{count}}",
+      "views": "Weergaven"
+    },
+    "views": {
+      "allPerformances": "Alle uitvoeringen",
+      "myCollection": "Mijn verzameling",
+      "coverageGaps": "Hiaten in de dekking",
+      "wishlist": "Verlanglijstje",
+      "duplicates": "Duplicaten"
+    },
+    "statusValue": {
+      "public": "Openbaar",
+      "private": "Privé",
+      "missing": "Ontbreekt"
+    },
+    "columns": {
+      "status": "Status",
+      "date": "Datum",
+      "location": "Locatie",
+      "description": "Beschrijving",
+      "folder": "Map",
+      "confirmed": "Bevestigd",
+      "source": "Bron",
+      "own": "Eigen",
+      "flags": "Vlaggen",
+      "show": "Weergeven",
+      "tour": "Rondleiding",
+      "families": "Families",
+      "recs": "Aanbevelingen",
+      "coverage": "Omvang"
+    },
+    "summary": {
+      "ofMaster": "van {{count}} in de master-database",
+      "owned": "in bezit",
+      "toGo": "{{count}} to go",
+      "shows_one": "{{count}} weergeven",
+      "shows_other": "{{count}} toont",
+      "recordings_one": "{{count}} opname",
+      "recordings_other": "{{count}}-opnames",
+      "familyCount_one": "{{count}}-serie",
+      "familyCount_other": "{{count}}-families",
+      "gaps_one": "{{count}} gap",
+      "gaps_other": "{{count}} hiaten",
+      "recShort_one": "{{count}} rec",
+      "recShort_other": "{{count}} rec"
+    },
+    "empty": {
+      "loading": "Bezig met laden…",
+      "nothingMatches": "Er is geen overeenkomst",
+      "tryAdjust": "Probeer je zoekopdracht of filters aan te passen",
+      "unknownYear": "Onbekend"
+    },
+    "tooltip": {
+      "inferred": "Afgeleid uit de datum en locatie van de opname zelf — niet gekoppeld aan een bekende concertdatum van Dylan",
+      "tapematchGroup": "TapeMatch-groep voor akoestische overeenkomsten"
+    },
+    "ctx": {
+      "postForum": "Plaats op het forum",
+      "removeCollection": "Uit verzameling verwijderen"
+    },
+    "toast": {
+      "vlcNotFound": "VLC niet gevonden",
+      "vlcFailed": "VLC-verzoek mislukt",
+      "noDiskPath": "Geen schijfpad voor dit item",
+      "qbtAdded": "{{added}}/{{total}} toegevoegd aan qBittorrent",
+      "qbtFailed": "qBittorrent-verzoek mislukt",
+      "torrentsCreated_one": "{{count}} torrent aangemaakt",
+      "torrentsCreated_other": "{{count}}-torrents aangemaakt",
+      "postsCreated_one": "{{count}} bericht geplaatst",
+      "postsCreated_other": "{{count}} berichten aangemaakt",
+      "failedSuffix": ", {{count}} is mislukt",
+      "notFoundSuffix": ", {{count}} niet gevonden",
+      "postedForum": "{{lb}} op het forum geplaatst",
+      "postedForumCopied": "{{lb}} op het forum geplaatst — link gekopieerd naar klembord",
+      "linksCopiedSuffix_one": " — {{count}} link gekopieerd naar klembord",
+      "linksCopiedSuffix_other": " — {{count}} links gekopieerd naar klembord",
+      "forumPostFailed": "Het plaatsen van een forumbericht is mislukt",
+      "noOwnedExport": "Er zijn geen eigen opnames om te exporteren",
+      "m3uFailed": "M3U-export mislukt",
+      "spectroFailed": "Het opvragen van het spectrogram is mislukt",
+      "locationUpdated": "Bijgewerkte locatie voor {{lb}}",
+      "updateFailed": "Update is mislukt",
+      "updated": "Bijgewerkt {{count}}",
+      "removed": "{{count}} verwijderd",
+      "wishlistRemoved": "{{lb}} verwijderd uit de verlanglijst",
+      "wishlistAdded": "{{lb}} toegevoegd aan verlanglijstje",
+      "wishlistAddedCount": "{{count}} toegevoegd aan verlanglijstje",
+      "wishlistFailed": "Update van verlanglijstje is mislukt",
+      "confirmForumBody": "{{count}}-berichten op het forum plaatsen? Elk bericht wordt geplaatst met het automatisch gegenereerde onderwerp en de automatisch gegenereerde tekst.",
+      "confirmRemoveBody_one": "Wilt u het item {{count}} uit uw verzameling verwijderen? Bestanden op de schijf worden niet verwijderd.",
+      "confirmRemoveBody_other": "Wilt u de {{count}}-items uit uw verzameling verwijderen? De bestanden op de schijf worden niet verwijderd."
+    },
+    "panel": {
+      "details": "Details",
+      "performance": "Prestaties",
+      "showDetails": "Details weergeven",
+      "collapseDetails": "Details verbergen",
+      "lbPage": "LB-pagina",
+      "openLbPage": "LB-pagina openen",
+      "more": "Meer",
+      "selectRow": "Selecteer een rij om details te bekijken",
+      "selectPerformance": "Selecteer een uitvoering om de bijbehorende opnames te bekijken",
+      "owned": "In bezit",
+      "notOwned": "Niet in bezit",
+      "wishlist": "Verlanglijstje",
+      "dup": "dup",
+      "xref": "xref",
+      "folder": "Map",
+      "confirmed": "Bevestigd",
+      "rating": "Beoordeling",
+      "catalogNote": "Metadata van de catalogus, afkomstig uit de hoofddatabase.",
+      "unconfirmed": "Niet bevestigd",
+      "releasedAs": "Uitgebracht als „{{title}}“",
+      "bestOwned": "best owned",
+      "noRecording": "Geen opnames in uw verzameling",
+      "youHold_one": "Je hebt {{owned}} van de {{count}}-bronfamilie",
+      "youHold_other": "U beschikt over de {{owned}}- of {{count}}-bronfamilies",
+      "foldedNote": "TapeMatch heeft de {{uploads}}-uploads samengevoegd tot {{families}} · {{dupes}}.",
+      "familyCount_one": "{{count}}-serie",
+      "familyCount_other": "{{count}}-families",
+      "dupeCount_one": "{{count}} gemarkeerd als duplicaat",
+      "dupeCount_other": "{{count}} gemarkeerd als duplicaten",
+      "upgradeNote": "Er is een hoger gewaardeerde serie in omloop die je zelf niet bezit.",
+      "factFamilies": "Families",
+      "factSetlist": "Setlist",
+      "factLength": "Lengte",
+      "ofRec": "van {{count}} rec",
+      "tracksUnit": "nummers",
+      "recordingFamilies": "Opnamefamilies · {{count}}",
+      "groupedByTapeMatch": "gegroepeerd op TapeMatch"
+    },
+    "coverage": {
+      "ownedFull": "Eigen {{owned}}/{{total}}",
+      "owned": "In bezit",
+      "upgrade": "Upgrade {{owned}}/{{total}}",
+      "gap": "Gap",
+      "noSource": "Geen bron"
+    },
+    "family": {
+      "recording": "Opname",
+      "bestInFamily": "De beste in zijn soort",
+      "duplicate": "Duplicaat",
+      "owned": "In bezit",
+      "wishlist": "Verlanglijstje",
+      "notOwned": "Niet in bezit",
+      "best": "Beste",
+      "uploads_one": "{{count}} uploaden",
+      "uploads_other": "{{count}} uploads",
+      "ownCount": "Eigen {{owned}}/{{total}}"
+    },
+    "setlist": {
+      "loading": "Setlist wordt geladen…",
+      "notScraped": "De setlist voor dit optreden is nog niet verzameld",
+      "title": "Setlist",
+      "tracksCount_one": "{{count}} track",
+      "tracksCount_other": "{{count}}-tracks"
+    },
+    "share": {
+      "label": "Delen en seeden",
+      "seeding_one": "{{count}}-torrent seeden",
+      "seeding_other": "{{count}}-torrents seeden",
+      "lastForumPost": "laatste forumbericht {{date}}",
+      "notSharedYet": "Nog niet gedeeld",
+      "addQbt": "Toevoegen aan qBittorrent",
+      "regenerate": "Opnieuw genereren",
+      "post": "Bericht…",
+      "filterAll": "Alles",
+      "filterTorrents": "Torrents",
+      "filterForum": "Forum",
+      "note": "Distributie voor de beste eigen bron · {{lb}}"
+    },
+    "assets": {
+      "label": "Bestanden",
+      "spectrograms": "Spectrogrammen",
+      "spectrogramsChecking": "Spectrogrammen — wordt gecontroleerd…",
+      "spectrogramsNone": "Spectrogrammen — geen",
+      "spectrogramsReady": "Spectrogrammen {{ready}}/{{total}}",
+      "attachments": "Bijlagen {{count}}",
+      "noAttachments": "Geen bijlagen",
+      "showOnMap": "Op kaart weergeven"
+    },
+    "scope": {
+      "everything": "Alles",
+      "myCollection": "Mijn verzameling",
+      "notOwned": "Niet in bezit"
+    },
+    "coverageValue": {
+      "covered": "Behandeld",
+      "upgrade": "Upgrade",
+      "gap": "Gap",
+      "undocumented": "Niet gedocumenteerd"
     }
   }
 }

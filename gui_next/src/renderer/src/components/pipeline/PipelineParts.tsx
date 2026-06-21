@@ -2,6 +2,8 @@ import React from 'react'
 import { Icon } from '../Icon'
 import { Pill } from '../primitives'
 import type { IconName } from '../Icon'
+import { PipelineIcon } from './PipelineIcon'
+import type { PipelineStage, PipelineStatus } from './PipelineIcon'
 
 // ── State vocabulary ───────────────────────────────────────────────────────────
 
@@ -112,42 +114,40 @@ export function StatusTag({ state, children, soft = true, style }: StatusTagProp
 
 // ── StageNode ─────────────────────────────────────────────────────────────────
 
+// Map the pipeline's stage keys/states onto the PipelineIcon vocabulary. The
+// tracker uses 'file' for the Collect stage and a 'mute' (not-applicable) state;
+// the tiles only know 'collect' and treat the absence of progress as 'pending'.
+const STAGE_TO_TILE: Record<string, PipelineStage> = {
+  verify: 'verify', lookup: 'lookup', lbdir: 'lbdir', rename: 'rename',
+  file: 'collect', collect: 'collect',
+}
+const STATE_TO_TILE: Record<StepState, PipelineStatus> = {
+  pass: 'pass', blocked: 'blocked', action: 'action',
+  running: 'running', pending: 'pending', mute: 'pending',
+}
+
 interface StageNodeProps {
   stage: StageDesc
   state: StepState
   current: boolean
-  n: number
+  /** Retained for API compatibility; tiles render the glyph, not the number. */
+  n?: number
+  size?: number
 }
 
-export function StageNode({ stage, state, current, n }: StageNodeProps) {
-  const tone = STATE[state].tone
-  const filled = state === 'pass' || state === 'action' || state === 'blocked'
-  const bg = filled ? `var(--lbb-${tone}-bar)` : 'var(--lbb-surface)'
-  const fg = filled ? '#fff' : (state === 'running' ? 'var(--lbb-info-fg)' : 'var(--lbb-fg3)')
-  const border = state === 'pending' ? 'var(--lbb-border2)'
-    : state === 'running' ? 'var(--lbb-info-bar)'
-    : `var(--lbb-${tone}-bar)`
-
+export function StageNode({ stage, state, current, size = 24 }: StageNodeProps) {
+  const tileStage = STAGE_TO_TILE[stage.key] ?? 'verify'
+  const tileStatus = STATE_TO_TILE[state]
   return (
     <span
       title={`${stage.label}: ${STATE[state].label}`}
       style={{
-        position: 'relative', width: 22, height: 22, borderRadius: '50%',
-        background: bg, border: `1.5px solid ${border}`, color: fg,
-        display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-        flex: '0 0 22px', zIndex: 1,
+        position: 'relative', display: 'inline-flex', flex: `0 0 ${size}px`,
+        borderRadius: size * 0.30, zIndex: 1,
         boxShadow: current ? '0 0 0 3px var(--lbb-accent-soft)' : 'none',
       }}
     >
-      {state === 'pass'    ? <Icon name="check" size={12} />
-      : state === 'blocked' ? <Icon name="x" size={11} />
-      : state === 'action'  ? <span style={{ fontWeight: 800, fontSize: 12, lineHeight: 1 }}>!</span>
-      : state === 'running' ? (
-          <span className="p2-spin" style={{ width: 11, height: 11, borderRadius: '50%',
-            border: '2px solid color-mix(in oklab, var(--lbb-info-fg) 30%, transparent)',
-            borderTopColor: 'var(--lbb-info-fg)' }} />
-        )
-      : <span style={{ fontSize: 10.5, fontWeight: 700 }}>{n}</span>}
+      <PipelineIcon stage={tileStage} status={tileStatus} size={size} />
     </span>
   )
 }
@@ -159,13 +159,22 @@ interface StageTrackerProps {
   stages?: StageDesc[]
   currentKey?: string | null
   onPick?: (key: string) => void
+  /** Tile px (default 30). Glyph + Pulse animation scale with this. */
+  size?: number
 }
 
 export function StageTracker({
-  folder, stages = DEFAULT_STAGES, currentKey, onPick,
+  folder, stages = DEFAULT_STAGES, currentKey, onPick, size = 30,
 }: StageTrackerProps) {
+  // Fixed-width connectors keep the group compact and left-aligned (rather than
+  // stretching edge-to-edge), and the generous padding gives the running Pulse
+  // rings — which expand ~22px past each tile — room to breathe on all sides
+  // without being clipped by the column edges.
   return (
-    <div style={{ display: 'flex', alignItems: 'center', width: '100%' }}>
+    <div style={{
+      display: 'flex', alignItems: 'center', justifyContent: 'flex-start',
+      padding: '14px 36px',
+    }}>
       {stages.map((st, i) => {
         const stepData = folder.steps[st.key] ?? { state: 'mute' as StepState }
         const state = stepData.state
@@ -179,11 +188,11 @@ export function StageTracker({
                 cursor: onPick ? 'pointer' : 'default',
                 display: 'inline-flex', alignItems: 'center' }}
             >
-              <StageNode stage={st} state={state} current={currentKey === st.key} n={st.n} />
+              <StageNode stage={st} state={state} current={currentKey === st.key} n={st.n} size={size} />
             </button>
             {next && (
               <span style={{
-                flex: 1, height: 2, minWidth: 14, margin: '0 2px',
+                flex: '0 0 18px', height: 2, margin: '0 4px',
                 background: state === 'pass' ? 'var(--lbb-ok-bar)' : 'var(--lbb-border2)',
                 borderRadius: 2,
               }} />

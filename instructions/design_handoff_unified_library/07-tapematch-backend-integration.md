@@ -75,11 +75,18 @@ CREATE TABLE IF NOT EXISTS tapematch_family_meta (
 );
 ```
 
-- **Singletons are excluded.** Every tapematch `source` row gets *some*
-  `family_id` (even families of one), but a family of one recording isn't a
-  "family" for UI purposes — only groups with `member_count >= 2` get rows
-  here. Recordings with no row fall through to the existing no-families
-  fallback (`03-data-contract.md`) automatically — no extra branching needed.
+- **Singletons are synced as `label='Solo'` (member_count 1).** Every tapematch
+  `source` row gets *some* `family_id` (even families of one).
+  *Originally this plan excluded singletons (`member_count >= 2` only), expecting
+  them to fall through to the no-families fallback.* **As shipped (CHANGELOG
+  2026-06-19) that was changed:** a singleton is a recording TapeMatch *did*
+  process and confirm had no acoustic sibling on the date — that's a real signal,
+  not absence of data. Dropping it made the performance lens render a confusing
+  bare "Recording LB-XXXXX" fallback row indistinguishable from a never-analysed
+  recording. So singletons now get a `fam_id` of `f"{concert_date}#{lb_number}"`,
+  `label='Solo'`, `by='ai'`, `conf=NULL`, `member_count=1`, and render as
+  "Solo LB-XXXXX". Only recordings TapeMatch never ran at all (no `source` row)
+  fall through to the no-families fallback (`03-data-contract.md`).
 - **`fam_id` is deterministic, not run-scoped**:
   `f"{concert_date}#" + "-".join(str(lb) for lb in sorted(member_lb_numbers))`.
   Same membership → same id across re-syncs (safe to cache, safe to
@@ -152,8 +159,10 @@ import is visibly reported, not silently incomplete.
    Tie-break-by-latest is the reasonable default (assume later calibration is
    better) but this specific date (and any others like it) is worth a manual
    spot-check — not a blocker for shipping v1.
-3. From that run's `sources`, group by `family_id`, drop groups with
-   `member_count < 2`, compute the deterministic `fam_id`.
+3. From that run's `sources`, group by `family_id` and compute the
+   deterministic `fam_id`. Groups with `member_count >= 2` become normal
+   families (`label='Family A/B/…'`); singletons (`member_count == 1`) are
+   emitted as `label='Solo'` rows rather than dropped (see §1).
 4. From that run's `pairs` (filtered to `tapematch_verdict='same_family' AND
    family_id_a=family_id_b`), average `corr` per family → `conf`; check
    `lb_says_same` for the `by` bump.
@@ -243,8 +252,9 @@ grouping the merged rows — exactly mirroring the already-planned client-side
 2. Restart the backend (per project rule: always restart after backend
    changes before verifying).
 3. `curl -X POST http://localhost:5174/api/tapematch/sync` — confirm stats
-   JSON, check `dates_processed` / `families_written` look sane (~804 dates,
-   member counts > 0).
+   JSON, check `dates_processed` / `families_written` look sane (~804 dates;
+   `families_written` includes `'Solo'` singleton rows, so it tracks the count
+   of distinct analysed recordings, not just multi-member clusters).
 4. `curl http://localhost:5174/api/tapematch/families | python3 -m json.tool | head` —
    spot-check a known multi-source date (e.g. `1995-07-08`) appears with the
    right `lb_number`s grouped under one `fam_id`.

@@ -1,4 +1,65 @@
 
+BUG-214: Library — family label slot conflates source type with TapeMatch match group
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenLibrary.tsx:1251-1263, 1880-1889
+Reported: 2026-06-19
+Fixed: 2026-06-19
+Root cause: familiesOf() rendered a single bold label per family row using
+  `famLabel || sourceType` — famLabel is TapeMatch's match-group name ("Solo",
+  "Family A", "Family B"...), only present once TapeMatch has processed that
+  date; sourceType is the tape's source ("Audience", "Soundboard"...). Two
+  unrelated dimensions sharing one text slot meant sibling rows for the same
+  AUD-source date could read "Solo" or "Audience" with no visual cue that
+  these aren't parallel categories — confusing in the UI (reported via
+  screenshot of McCarter Theater 1990-01-15 rows).
+Fix: label now always shows source type (consistent across every row).
+  TapeMatch's match-group name moved to its own `tmLabel` field, rendered as
+  a separate info-toned Pill badge next to the source pill, with a tooltip
+  clarifying it's a TapeMatch acoustic match group.
+Follow-up (2026-06-19): the spelled-out source label (e.g. "Audience") was
+  itself 100% redundant with the existing AUD/SBD/etc. source pill once the
+  fix above made it always derive from the same `fam.src` value (reported via
+  a second screenshot showing "AUD" + "Audience" side by side on every row).
+  Removed the FamilyGroup.label field and its rendered span entirely — the
+  source pill alone now carries that information; tmLabel badge unaffected.
+
+BUG-213: Library — TapeMatch singletons appear as orphan "Recording LB-XXXXX" rows
+Status: Fixed
+File(s): backend/tapematch_sync.py:136
+Reported: 2026-06-19
+Fixed: 2026-06-19
+Root cause: _sync_one_date filtered out any TapeMatch family with only 1 member (len >= 2 guard).
+  Recordings TapeMatch analyzed and found acoustically distinct from all siblings on the same date
+  were silently excluded from recording_families, so the frontend had no fam assignment for them
+  and fell through to the "Recording" label fallback in familiesOf().
+Fix: Extract singletons after the >= 2 filter; sync them into recording_families and
+  tapematch_family_meta with label='Solo', by='ai'. Frontend already handles single-member
+  families correctly — they now render as "└ Solo LB-XXXXX" at family level.
+
+BUG-211: Diacritic issue — LB16155 not matched / logged incorrectly
+Status: Open
+File(s): TBD
+Reported: 2026-06-18
+Root cause: TBD — diacritic character in LB16155 causes a match or logging failure (exact symptom not yet investigated).
+Fix: TBD
+
+BUG-210: backend/lossless_bob.db keeps reappearing in repo root (untracked, empty)
+Status: Open
+File(s): backend/lossless_bob.db (unknown origin)
+Reported: 2026-06-18
+Root cause: Unconfirmed. The real DB path is APP_ROOT/data/losslessbob.db (no underscore,
+  see backend/paths.py:25 DB_PATH), and grepping the entire codebase (backend/, tools/,
+  tests/, gui_next/src) for the literal string "lossless_bob" (with underscore) returns zero
+  matches — no application code, test, fixture, or config constructs this filename. Deleting
+  the file and re-running the full pytest suite + test_db_writes.py from backend/ as cwd did
+  not recreate it. Likely created by an ad hoc shell/Python one-liner run with backend/ as cwd
+  (e.g. a manual `sqlite3.connect("lossless_bob.db")` sanity check using a mistyped/placeholder
+  filename instead of the real DB_PATH) rather than a reproducible app code path. Needs a repro
+  case next time it reappears — note what command/action immediately preceded its creation.
+Fix: TBD — pending repro. Stray file deleted from working tree each time it's noticed; it has
+  never been committed (untracked since it doesn't match any .gitignore rule, but also isn't
+  staged/added).
+
 BUG-208: Pipeline — "File all" and explicit filing bypass a pending rename
 Status: Fixed
 File(s): gui_next/src/renderer/src/screens/ScreenPipeline.tsx:1376-1377 (fileableRows/selectedFileable), 1679 (applyFile), 993 (CollectReadyDetail)

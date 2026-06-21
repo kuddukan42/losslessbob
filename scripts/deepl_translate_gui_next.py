@@ -47,7 +47,9 @@ def leaves(node: object, path: str = "") -> list[tuple[str, str]]:
 def set_leaf(node: dict, path: str, value: str) -> None:
     keys = path.split(".")
     for k in keys[:-1]:
-        node = node[k]
+        # Create intermediate dicts so keys whose parent subtree is absent from
+        # the target locale (new sections not yet present) don't KeyError.
+        node = node.setdefault(k, {})
     node[keys[-1]] = value
 
 
@@ -100,7 +102,7 @@ def translate_batch(
         context=CONTEXT,
     )
 
-    return [restore_vars(r.text, toks) for r, toks in zip(results, token_map)]
+    return [restore_vars(r.text, toks) for r, toks in zip(results, token_map, strict=True)]
 
 
 def process_lang(translator: deepl.Translator, lang: str, deepl_lang: str) -> None:
@@ -122,10 +124,11 @@ def process_lang(translator: deepl.Translator, lang: str, deepl_lang: str) -> No
             continue
         if path in SKIP_KEYS:
             continue
+        missing = path not in target_leaves
         tr_val = target_leaves.get(path, "")
         still_english = tr_val == en_val
         broken_vars = set(VAR_RE_LOCAL.findall(en_val)) != set(VAR_RE_LOCAL.findall(tr_val))
-        if still_english or broken_vars:
+        if missing or still_english or broken_vars:
             to_translate.append((path, en_val))
 
     if not to_translate:
@@ -145,7 +148,7 @@ def process_lang(translator: deepl.Translator, lang: str, deepl_lang: str) -> No
             time.sleep(0.2)
 
     # Write translations back into the target JSON
-    for (path, _), translated in zip(to_translate, translated_values):
+    for (path, _), translated in zip(to_translate, translated_values, strict=True):
         set_leaf(target, path, translated)
 
     target_path.write_text(json.dumps(target, ensure_ascii=False, indent=2) + "\n")

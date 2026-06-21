@@ -41,12 +41,41 @@ align:
   step_flag_sec: 0.5       # a jump > this between adjacent anchors = gap edit / splice
 
 match:
+  # Coarse speed-ratio search (energy-envelope correlation, estimate_ratio).
+  # Range widened from the historical 0.980-1.020 (±20000 ppm): ~18% of corpus
+  # pairs were railing at the old ±20000 boundary — true >2% cassette/DAT speed
+  # offsets clamped to the edge produce a wrong resample and a false-distinct
+  # verdict. The grid stays ~500 ppm coarse on purpose; the refine block below
+  # supplies the fine accuracy the sample-level residual_corr actually needs.
+  ratio_search_min: 0.970   # -30000 ppm
+  ratio_search_max: 1.030   # +30000 ppm
+  ratio_search_steps: 121   # ~500 ppm coarse grid across the widened range
   # Residual cross-correlation clustering.
   cluster_threshold: 0.45  # corr above this links two files into same source family
   # Below ~0.3 = independent; above ~0.95 = clone/EQ-child. Bimodal in practice.
   # 0.45: catches same-source pairs with clipping/level mismatch between transfers
   #   (e.g. CDR trade copy vs fresh DAT transfer of same tape — observed 0.520 corr).
   # Safety margin: max observed different-source corr is 0.362 (1995-07-08).
+
+refine:
+  # Lag-curve-slope speed refinement (primary residual matrix).
+  # Problem it fixes: the coarse envelope estimate_ratio leaves up to ~250 ppm
+  # speed error, but a 45s residual_corr window decorrelates above ~20 ppm
+  # residual (measured: corr 1.0 at <=20 ppm, 0.015 at 50 ppm). This produced
+  # the dominant false-distinct failure: across the corpus, curator-says-same
+  # pairs that tapematch called "different" had median |speed| ~9500 ppm and
+  # median corr 0.004, vs median 0 ppm / 0.815 corr for the pairs it got right.
+  # Fix: after the coarse resample, the per-anchor lag-vs-position slope measures
+  # the residual speed directly (lags come from drift-robust music correlation,
+  # which survives speed offset even when residual_corr has collapsed), and the
+  # ratio is corrected to ratio/(1+slope), iterated until residual < stop_ppm.
+  # Self-limiting + keep-if-improves in cli.py: cannot manufacture a false merge
+  # and never regresses a pair.
+  enabled: true
+  max_iter: 2               # lag-slope correction passes (each = 1 resample)
+  stop_ppm: 5.0             # stop once residual speed error is below this
+  trigger_min_ppm: 2000     # only refine pairs whose coarse offset exceeds this
+  trigger_corr_ceiling: 0.60  # ...and that aren't already clearly clustered
 
 lineage:
   # Evidence for parent/child direction (interpretive, reported not decided).

@@ -11,7 +11,7 @@ Clustering is decided automatically. Lineage DIRECTION is reported as evidence
 from __future__ import annotations
 import numpy as np
 from scipy.signal import stft, correlate
-from .audio import to_mono
+from .audio import to_mono, resample_ratio
 from .align import local_lag, local_lag_centered
 
 
@@ -52,14 +52,28 @@ def _envelope(mono, sr, env_rate=100):
 
 
 def estimate_ratio(ref, other, sr, anchors, cfg):
-    """Coarse speed-ratio search on energy envelopes."""
+    """Coarse speed-ratio search on energy envelopes.
+
+    Search range/resolution come from cfg["match"] (ratio_search_min/max/steps);
+    defaults reproduce the historical ±20000 ppm / 500 ppm grid. The range was
+    widened to ±30000 ppm because ~18% of corpus pairs were railing at the old
+    ±20000 boundary (true >2% cassette/DAT offsets clamped to the edge → wrong
+    resample → false-distinct). The coarse grid is deliberately left ~500 ppm;
+    `refine_speed_ratio` supplies the fine (≤~5 ppm) accuracy that the
+    sample-level residual_corr actually needs (a 45s window tolerates only
+    ~20 ppm residual speed error).
+    """
+    m = cfg.get("match", {}) if isinstance(cfg, dict) else {}
+    lo = float(m.get("ratio_search_min", 0.980))
+    hi = float(m.get("ratio_search_max", 1.020))
+    steps = int(m.get("ratio_search_steps", 81))
     er, rate = _envelope(ref, sr)
     eo, _ = _envelope(other, sr)
     best_ratio, best_peak = 1.0, -1.0
-    for ratio in np.linspace(0.980, 1.020, 81):
+    for ratio in np.linspace(lo, hi, steps):
         from scipy.signal import resample
-        m = max(8, int(len(eo) * ratio))
-        eo_r = resample(eo, m)
+        m_len = max(8, int(len(eo) * ratio))
+        eo_r = resample(eo, m_len)
         eo_r = (eo_r - eo_r.mean()) / (eo_r.std() + 1e-9)
         n = min(len(er), len(eo_r))
         xc = correlate(er[:n], eo_r[:n], mode="full")
@@ -67,6 +81,81 @@ def estimate_ratio(ref, other, sr, anchors, cfg):
         if peak > best_peak:
             best_peak, best_ratio = peak, ratio
     return best_ratio
+
+
+def corrected_ratio_from_lags(centers, lags, ratio):
+    """Correct a speed ratio from residual per-anchor lags measured after `ratio`.
+
+    When a residual speed error remains after a coarse resample, the per-anchor
+    lag trends linearly with anchor position: slope == the residual rate. Because
+    these lags come from drift-robust *music-level* cross-correlation (local_lag),
+    they stay measurable even when the sample-level residual_corr has already
+    collapsed to ~0 — so the slope is a far finer speed estimate than the coarse
+    envelope grid. Dividing by (1 + slope) removes the residual.
+
+    Args:
+        centers: anchor center times (sec).
+        lags: residual lag (sec) measured at each center after applying `ratio`.
+        ratio: the speed ratio that was applied to produce those lags.
+
+    Returns:
+        (corrected_ratio, residual_ppm). With < 3 points the input is returned
+        unchanged (slope under-determined).
+    """
+    if len(centers) < 3:
+        return ratio, 0.0
+    slope = float(np.polyfit(np.asarray(centers, float), np.asarray(lags, float), 1)[0])
+    return ratio / (1.0 + slope), slope * 1e6
+
+
+def refine_speed_ratio(ref, other, sr, anchors, cfg, coarse_ratio):
+    """Iteratively refine a coarse speed ratio via the lag-curve slope.
+
+    After resampling `other` by the current ratio, the residual per-anchor lag
+    slope measures the leftover speed error directly (see
+    `corrected_ratio_from_lags`); the ratio is corrected and the step repeated
+    until the residual falls below ``refine.stop_ppm`` or ``refine.max_iter`` is
+    reached. Only the search ratio changes — the matcher and cluster threshold
+    are untouched.
+
+    Self-limiting: for genuinely different sources the lags are noise, the fitted
+    slope does not converge to a real speed, and the resulting residual_corr stays
+    low — so this can recover a true same-source high-ppm pair but cannot
+    manufacture a false merge. The caller keeps whichever of the coarse/refined
+    ratio yields the higher median residual_corr, so refinement never regresses a
+    pair.
+
+    Returns:
+        (ratio, corrs): the refined ratio and the per-anchor residual_corr list
+        measured at it (median'd by the caller).
+    """
+    rc = cfg.get("refine", {}) if isinstance(cfg, dict) else {}
+    max_iter = int(rc.get("max_iter", 2))
+    stop_ppm = float(rc.get("stop_ppm", 5.0))
+    win = float(cfg["anchors"]["window_sec"])
+    maxlag = float(cfg["align"]["max_lag_sec"])
+
+    ratio = float(coarse_ratio)
+    corrs: list[float] = []
+    for _ in range(max(1, max_iter)):
+        rj = resample_ratio(other, ratio, sr)
+        centers: list[float] = []
+        lags: list[float] = []
+        corrs = []
+        for ctr in anchors:
+            lag, _ = local_lag(ref, rj, sr, ctr, win, maxlag)
+            if lag is None:
+                continue
+            centers.append(ctr)
+            lags.append(lag)
+            ra, ob = aligned_window(ref, rj, sr, ctr, win, lag)
+            corrs.append(abs(residual_corr(ra, ob)))
+        del rj
+        new_ratio, resid_ppm = corrected_ratio_from_lags(centers, lags, ratio)
+        if abs(resid_ppm) < stop_ppm:
+            break
+        ratio = new_ratio
+    return ratio, corrs
 
 
 def find_quiet_segments(

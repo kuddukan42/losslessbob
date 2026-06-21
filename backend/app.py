@@ -5933,6 +5933,10 @@ def create_app() -> Flask:
                     row["lb_number"],
                     {"folder_name": new_name, "disk_path": str(new_path)},
                 )
+            # BUG-212: a "Pin & continue" link is keyed on the exact folder
+            # path — move it forward so the pinned LB# survives the rename
+            # instead of being silently lost on the next pipeline run.
+            database.rekey_folder_link(old_disk_path, str(new_path))
             return jsonify({"ok": True, "new_path": str(new_path)})
         except Exception as e:
             return jsonify({"error": str(e)}), 500
