@@ -59,6 +59,7 @@ const PATHS: Record<string, string> = {
   globe:       "M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z M3 12h18 M12 3a13 13 0 0 1 0 18 M12 3a13 13 0 0 0 0 18",
   trading:     "M16 3l4 4-4 4 M20 7H4 M8 21l-4-4 4-4 M4 17h16",
   share:       "M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8 M16 6l-4-4-4 4 M12 2v13",
+  tapematch:   "M3 9a2 2 0 0 1 2-2h2l2-4 4 8 2-4 2 4h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z",
 }
 
 export type IconName = keyof typeof PATHS

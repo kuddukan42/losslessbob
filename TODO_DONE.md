@@ -1,6 +1,251 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-150: Unified Library — TapeMatch backend integration + Library screen
+Priority: High
+Status: Done
+Added: 2026-06-18
+Closed: 2026-06-20
+Description: Build the unified Library screen per instructions/design_handoff_unified_library/
+(see README.md for doc index). Decisions locked in: TapeMatch family backend integration
+happens FIRST (doc 07 — recording_families + tapematch_family_meta tables, schema v7,
+import_master_db() backward-compat guard, backend/tapematch_sync.py, POST /api/tapematch/sync,
+GET /api/tapematch/families), so the performance lens reads real family data from day one
+instead of shipping the no-families flat fallback. src source-type gets a new curator-edited
+DB column (not heuristic-parsed) — populated manually per-entry via the step (8) detail-panel
+editor only; no one-time classifier off source_chain/description to pre-seed values, even
+though source_chain already has equipment-chain text for ~52% of entries (8613/16630) that
+would hint at SBD vs AUD — confirmed-by-curator beats inferred-and-maybe-wrong.
+Performance/show grouping gets its own dedicated backend
+aggregate endpoint (not client-side, not bolted onto /api/search); family data stays a
+separate fetch merged client-side by lb_number (doc 07 §4/§5), not JOINed into that endpoint.
+"system" theme mode resolves explicitly via getSystemMode() before indexing the new palette
+table. Batched relocate/remove handlers ship as part of bulk-action parity, not deferred.
+Search/Collection screens stay live, untouched, not retired this pass.
+  Build order: (1) TapeMatch backend integration [doc 07] (2) theme additions [doc 01]
+  (3) src column migration (4) recording lens / no-families fallback (5) performance-grouping
+  backend endpoint (6) performance lens (7) shared action registry + batched relocate/remove
+  (8) detail-panel zones (9) screen/route/nav (10) i18n.
+  Build order step (1), TapeMatch backend integration [doc 07], is DONE (2026-06-18):
+  schema tables (recording_families/tapematch_family_meta, schema v7), import_master_db()
+  backward-compat skip guard, backend/tapematch_sync.py, POST /api/tapematch/sync +
+  GET /api/tapematch/families, end-to-end verified against the live DB (859 dates / 552
+  families / 1320 recordings linked; idempotency + label_override survival + 1996-07-21
+  ambiguous-rerun spot-check + backward-compat import all confirmed).
+  Build order step (2), theme additions [doc 01], is DONE (2026-06-18): tokens.ts gained
+  `palette` (frame theme: slate/blue/purple/green/graphite, PALETTES table ported verbatim
+  from the handoff) and `cardStyle` ('framed'|'flat', default 'flat') on ThemeOptions;
+  applyTheme() now resolves 'system' mode via getSystemMode() before indexing
+  MODES/PALETTES/ACCENT_PALETTES/STATUS (closes the silent fallback-to-light bug); index.css
+  got the --sep-* framed-card token block (adapted from the handoff's #frame to :root, since
+  this app has no #frame element); ScreenThemes.tsx got new "Frame theme" and "Card style"
+  cards plus a fix so handleImportTheme() round-trips the new fields. tsc --noEmit and
+  `npm run build` both pass. i18n for the two new keys deferred to de/fr/es/it/nl per user
+  request — revisit once the Library screen itself is further along; en.json has them, other
+  locales fall back to English meanwhile.
+  Build order step (3), src column migration [doc 03], is DONE (2026-06-18): `entries`
+  gained a curator-edited `source_type` TEXT column (schema v8, MASTER_SCHEMA_VERSION
+  7→8) for the `Soundboard|Audience|FM/Pre-FM|Master|Mixed` enum (SBD/AUD/FM/MST/MTX
+  badge). Unlike `taper_name`/`source_chain`/`lb_category` this is never heuristically
+  parsed — stays NULL until a curator sets it (editor UI is step 8, detail-panel zones).
+  Wired into search_entries()/get_entries_by_lb_list()/get_collection() read paths.
+  py_compile + full pytest suite pass (one pre-existing unrelated failure in
+  TestFolderLink::test_replace_existing, from in-flight multi-LB folder-link work,
+  not touched here).
+  Build order step (4), recording lens / no-families fallback [doc 03], is DONE (2026-06-18):
+  new `ScreenLibrary.tsx` — flat LB#-keyed table, client-side adapter merging `/api/search`
+  (full catalog, incl. `source_type`) with `/api/collection/prefetch` (collection, fingerprints,
+  wishlist, duplicates, xref_lb_numbers); no backend changes. Facet rail (scope/decade/status/
+  rating/source/health), summary strip with live owned %, virtualized year-grouped table —
+  this row shape is the no-families fallback the performance lens (step 6) will reuse.
+  Deliberately bare per user decision: no context menu/detail panel/bulk bar this step (those
+  are steps 7/8, to avoid throwaway rework); owned-row file-card fields (size/files/format/cds)
+  and the "New" status value omitted (no backing data exists yet, not shipping placeholders).
+  Reachable via a temporary nav-hidden `/library-dev` route in `App.tsx` (same pattern as the
+  existing `/quicklookup`) pending real nav/route wiring in step 9. `tsc --noEmit` and
+  `npm run build` both pass.
+  Build order step (5), performance-grouping backend endpoint, is DONE (2026-06-18):
+  `backend/db.py` gained `get_performances()`, exposed via new `GET /api/library/performances`
+  in `backend/app.py`. Groups `entries` by raw `(date_str, location)` into shows, joining
+  `bobdylan_shows` (venue/setlist-key/track-count), `setlistfm_shows` (tour), `bootleg_titles`
+  (title) — a dedicated backend endpoint per the locked decision, not a client-side groupBy and
+  not bolted onto `/api/search`. TapeMatch family data intentionally excluded (separate
+  `/api/tapematch/families` fetch, merged client-side later in step 6). Optional fields (`dow`,
+  `tour`, `setlist`, `tracks`, `title`) omitted rather than null-faked when no source data exists.
+  Verified against a migrated copy of the live dev DB: 16,630 entries → 10,718 shows, ~150ms.
+  py_compile passes on both touched files.
+  Build order step (6), performance lens, is DONE (2026-06-18): `ScreenLibrary.tsx` gained a
+  "By performance | By recording" lens toggle (defaults to performance — the new, richer view
+  per `00-overview.md`). New `PerformanceLensView` fetches `/api/library/performances` +
+  `/api/tapematch/families`, merges families by `lb_number` into the SAME `RecordingRow` objects
+  already built for the recording lens (no separate owned/wish/dup/fp merge logic — reused
+  by reference) so both lenses always agree on a recording's state. Ported `families()`/
+  `rollup()` from the handoff's `perf-data.js` reference into TS (`familiesOf`/`rollupOf`):
+  groups recordings by `fam` (or by `lb` when ungrouped), derives coverage
+  (Covered/Upgrade/Gap/Undocumented). When no recording has a `fam`, every family collapses to
+  one member — the no-families fallback falls out of this for free, no separate flat-rendering
+  branch needed. Year-grouped virtualized table, show → family → member expand/collapse, its
+  own facet rail (decade/coverage/source/best-rating) separate from the recording lens's.
+  Deliberately bare per the established step-4 pattern: no detail panel, no bulk bar, no
+  context menu, no family `note` (not exposed by `/api/tapematch/families` — out of scope to
+  extend that endpoint here) — those remain steps 7/8. `tsc --noEmit` and `npm run build` pass.
+  Build order step (7), shared action registry + batched relocate/remove [doc 02], is DONE
+  (2026-06-18): new `components/library/actions.tsx` — one `LibAction` vocabulary
+  (open/listen/acquire/share/assets/maintain groups), `buildRecordingActions()` and
+  `buildPerformanceActions()`, a fixed-position grouped `ActionMenu` + `useActionMenu()` hook
+  (same right-click convention as ScreenCollection.tsx's local ContextMenu), and
+  `BulkActionBar`. Wired into both `ScreenLibrary.tsx` lenses: recording lens gained a
+  checkbox column + multi-select bulk bar (Create torrent / Add to qBittorrent / Update
+  location / Remove, batched); right-click on recording rows (both lenses' member rows) and
+  performance-lens show rows opens the full grouped menu. All handlers call the SAME backend
+  endpoints ScreenCollection.tsx already uses for these ids (qbt/add, torrent/create,
+  preview_forum+post_forum, collection PATCH/DELETE, wishlist, fingerprint/build,
+  spectrogram/generate, open/vlc, openPath) — no backend changes. Action ids with no existing
+  backend/UI integration (`sources`, `notify`, performance-row `m3u`) are omitted rather than
+  shipped inert, per 04-seed-data-and-punchlist.md's "wire it or hide it" rule — `m3u` would
+  need a new `?lb_numbers=` filter on `/api/collection/export/m3u`, deferred as its own ticket
+  rather than scope-creeping into this step. Added shared `Toast`/`ConfirmDialog` to
+  `components/primitives.tsx` (ported from ScreenCollection.tsx's local copies) since Library
+  needed action feedback and had neither. `tsc --noEmit` and `npm run build` both pass.
+  Remaining build-order steps (8)-(10) — detail-panel zones, screen/route/nav, i18n — not
+  started.
+  Build order step (8), detail-panel zones [doc 02], is DONE (2026-06-18): new
+  `components/library/DetailPanel.tsx` — `RecordingDetailPanel` and `PerformanceDetailPanel`,
+  each zoned per the handoff: header (title/LB#/rating/source/status badges) -> `ActionBar`
+  (1 primary action + Reveal inline, everything else in a `⋯ More` button that opens the
+  SAME grouped `ActionMenu`/`openMenu` step 7 already wired for right-click) -> `ShareSeed`
+  (status line + Add to qBittorrent / Regenerate / Post… + a single date-sorted, filterable
+  torrents+forum activity log) -> `AssetStrip` (Attachments/Spectrograms/Map as state-bearing
+  chips, not buttons) -> an optional Setlist line (performance panel only, when `tracks` is
+  present). The unified activity log needed by ShareSeed is built **client-side** from
+  `prefetch.torrents`/`prefetch.forum_posts` (already bundled by `/api/collection/prefetch`,
+  grouped by `lb_number`) — no new backend endpoint, since the raw data already existed and
+  ScreenCollection.tsx's own torrent/forum tabs were never actually merged either. Spectrogram
+  readiness is the one bit of real per-row state that didn't already exist anywhere: checked
+  lazily via the existing `/api/spectrogram/list` while the panel is open, not bulk-fetched.
+  Attachment counts come from a new bulk `/api/attachments/cached` query (existing endpoint,
+  not previously consumed outside ScreenAttachments.tsx) shared across both lenses. Wired into
+  `ScreenLibrary.tsx`: recording lens renders the panel as a third flex column when a row is
+  selected (`selectedLb`, already-existing dead state from step 4 — now live); performance
+  lens adds `selectedMemberLb` alongside the existing `selectedId` (mutually exclusive —
+  clicking a show row opens the performance panel, clicking a member row opens that single
+  recording's panel instead). `tsc --noEmit` and `npm run build` both pass.
+  Build order step (9), screen/route/nav, is DONE (2026-06-18): `App.tsx`'s temporary
+  `/library-dev` route is now the real `/library` route; `AppShell.tsx`'s `NAV_GROUPS` Library
+  group gained a featured "Library" nav item (id `library`, icon `library`) above "My
+  Collection", per doc 05's nav placement spec — the existing featured "NEW" badge logic
+  picks it up for free. No i18n changes needed: `appShell.nav.library` already existed in all
+  6 locales (previously only the Library group header used it; same word, no real collision).
+  `tsc --noEmit` and `npm run build` both pass. Remaining: step (10), i18n for in-screen
+  Library strings (facet labels, lens toggle, etc. are currently hardcoded English).
+  Loose ends tied up (2026-06-18): the step-7 `m3u` performance-row action (deferred at
+  the time — "would need a new `?lb_numbers=` filter on `/api/collection/export/m3u`") is
+  now wired: `/api/collection/export/m3u` accepts an optional `lb_numbers` query param
+  (filename becomes `show.m3u` when filtered), `buildPerformanceActions()` gained the
+  `m3u` action (exports the show's owned recordings), `ScreenLibrary.tsx` gained an
+  `onM3u` handler using the same `blobDownload()` pattern as ScreenCollection.tsx/
+  ScreenTrading.tsx. Verified against the live backend (full export still produces
+  `collection.m3u`; `?lb_numbers=1` produces a 2-track `show.m3u`; non-matching/junk LB
+  numbers degrade gracefully to an empty-but-valid `#EXTM3U` file). `sources`/`notify`
+  stay omitted — there is no "find sources" search or notification system anywhere in
+  the app to wire them to; building one would be a new feature, not a loose end of this
+  ticket. The TapeMatch family `note` field also stays unexposed — `tapematch_family_meta.note`
+  is always NULL today (no sync path or curator UI ever writes it), so exposing it via
+  `/api/tapematch/families` would just be a permanently-empty field, which the project's
+  "don't ship placeholder data" rule argues against. i18n (step 10) is DONE (2026-06-20): all in-screen Library strings extracted to a new
+  `library` namespace (~214 keys, plural-aware) and the three files (ScreenLibrary.tsx,
+  DetailPanel.tsx, actions.tsx) converted to `t()`; the shared action registry + coverageLabel()
+  take a TFunction param since they are plain functions. de/fr/es/it/nl filled via DeepL (a few
+  values flagged for a human pass in CHANGELOG). All build-order steps (1)-(10) complete; tsc-clean,
+  `npm run build` passes. See TODO-151 (now in TODO_DONE.md)
+  for the lb_category audit this step also prompted.
+  Decision (2026-06-18): performance lens (step 6/`get_performances()`) now filters to
+  `lb_category = 'concert'` only — radio/tv/interview/studio/rehearsal/soundcheck/
+  compilation/other/unknown recordings have no real venue/setlist/tour and would render
+  as bare, misleading show rows. They remain visible via the recording lens. TODO-151
+  (now closed, see TODO_DONE.md) audited `lb_category` accuracy and decided/implemented
+  the fix: `get_performances()` now also includes date+location-complete 'unknown' rows
+  as degraded `confirmed: false` shows, recovering 198 real performances bobdylan_shows
+  didn't track (mostly guest spots at other artists' shows).
+
+TODO-155: Pipeline stage icons — implement design_handoff_pipeline_icons in gui_next
+Priority: Medium
+Status: Done
+Added: 2026-06-20
+Closed: 2026-06-20
+Description: Ported the locked "Pipeline Stage Icons" handoff (Option D tactile tile · Pulse
+  animation · Vivid palette) into the gui_next React + global-CSS stack. New reusable component
+  components/pipeline/PipelineIcon.tsx exposes <PipelineIcon stage status size /> plus
+  PipelineGlyph, PIPELINE_STAGES, and the PipelineStage/PipelineStatus types. The five glyphs
+  (verify/lookup/rename/lbdir/collect) are original 24×24 line paths copied verbatim from the
+  handoff. All tile geometry, the radial-gradient fill, the bevel/lift box-shadows, and the
+  Pulse keyframes (double expanding ring + diagonal sheen, wrapped in prefers-reduced-motion:
+  no-preference) live in index.css under .pipe-tile*; derived shades use color-mix(in oklab,…)
+  off a single --pipe-mid per status so the palette stays consistent. Wired into the live pipeline:
+  StageNode (PipelineParts.tsx) now renders a PipelineIcon tile instead of the old 22px circle, so
+  both the per-row StageTracker in the queue table and the full-width StageStepper in the detail
+  view show the tiles; STAGE_TO_TILE / STATE_TO_TILE maps bridge the tracker's 'file'/'mute'
+  vocabulary to 'collect'/'pending', running stages now Pulse instead of spin, and the
+  current-stage accent ring is preserved.
+
+TODO-154: Unified Library — default views should exclude Private/Missing LB entries
+Priority: Medium
+Status: Done
+Added: 2026-06-19
+Closed: 2026-06-19
+Description: Both lenses showed Private and Missing-status entries by default, mixed in with
+  Public ones, with no visual distinction beyond the Status badge color. User wants both
+  hidden from the default view. Recording lens: filteredRows now hides Private/Missing when
+  no Status filter chip is active; explicitly selecting the Public/Private/Missing chips still
+  works exactly as before (additive toggle), so Private/Missing remain reachable, just not the
+  default. Performance lens: has no per-recording Status filter, so Private/Missing recordings
+  are now dropped unconditionally from each show's recordings array before family grouping and
+  coverage rollup (rollupOf/familiesOf), not just hidden by a default — there's no chip there
+  to opt back in with. Side effect: a show whose only recordings were Private/Missing now
+  rolls up as coverage='Undocumented' rather than showing hidden entries; family/coverage
+  counts shrink accordingly when a private member existed.
+
+TODO-153: Unified Library — SourceBadge always blank (entries.source_type is NULL for all rows)
+Priority: Medium
+Status: Done
+Added: 2026-06-19
+Closed: 2026-06-19
+Description: Data audit during PerformanceDetailPanel rewrite found entries.source_type
+  (curator-edited) is NULL for all 16,630 entries, so SourceBadge in the Unified Library
+  detail panel always rendered the dashed empty placeholder. Added classify_source_type()/
+  _classify_source_text() in backend/db.py: a conservative keyword classifier over
+  entries.source_chain (preferred — already label-extracted by extract_taper_and_source)
+  falling back to raw description, recognizing Soundboard/FM-Pre-FM/Mixed/Audience.
+  Deliberately excludes "Master" — in trader lineage text it almost always means "first-gen
+  copy off a master tape" (a generation marker), not an actual studio/soundboard master
+  source; guessing wrong there would mislabel large numbers of audience tapes. Also guards
+  against vinyl "Matrix: BDGD"-style runout/catalog codes being misread as a SBD+AUD matrix
+  mixdown. search_entries() and get_performances() apply this as a display-only fallback when
+  the column is empty. Classifies ~3,805 of 16,630 entries (Audience 3160, Soundboard 579,
+  Mixed 34, FM/Pre-FM 32); the rest still show "—" rather than risk a wrong label.
+  Follow-up same day, at user's explicit request: bulk-persisted those 3,805 guesses into the
+  actual entries.source_type column (backed up DB first via backup_database()), reversing the
+  original "never heuristically backfilled" design intent for this field. The live classifier
+  fallback in search_entries()/get_performances() is now redundant for those specific rows but
+  left in place — harmless, and still useful for any new entries added later.
+  Second follow-up same day, at user's explicit request: per tape-trading convention (audience
+  is the unstated default for live recordings — soundboard/FM/mixed get called out explicitly
+  because they're notable), defaulted source_type='Audience' for the remaining NULL rows where
+  lb_category IN ('concert','unknown') AND description is non-empty (10,972 rows; backed up
+  DB first). Deliberately skipped the 408 non-concert rows (studio/tv/interview/compilation/
+  rehearsal/radio/soundcheck) and the 1,445 rows with a completely empty description — neither
+  fits the "default to Audience" rule. entries.source_type is now populated for 14,777/16,630
+  rows (88.8%); 1,853 remain NULL.
+  Third follow-up same day: user identified a 6th real source category the original taxonomy
+  was missing — ALD (Assisted Listening Device, a venue's wireless feed for hard-of-hearing
+  patrons, tapped with a receiver; neither true Audience nor true Soundboard). Added _SRC_ALD_RE
+  to backend/db.py (checked first, ahead of Soundboard, since "Soundboard...(ALD is the source)"
+  is a clarification, not two competing guesses) and ALD entries to the SRC_ABBR/SOURCE_FULL/
+  SRC_HUE maps in ScreenLibrary.tsx and DetailPanel.tsx. Re-tagged the 37 entries whose
+  description names ALD explicitly with source_type='ALD' (backed up DB first), overriding
+  whatever the two earlier bulk passes had swept them into (21 Audience, 13 Soundboard, 3
+  Mixed).
+
 TODO-151: Audit lb_category classification accuracy
 Priority: Medium
 Status: Done

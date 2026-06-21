@@ -889,6 +889,62 @@ def extract_taper_and_source(description: str) -> tuple[str | None, str | None]:
     return taper_name or None, source_chain or None
 
 
+# Conservative keyword classifier, display-only fallback for the GUI source
+# badge when the curator-edited entries.source_type is NULL (true for the
+# whole catalog as of 2026-06 — see TODO-153). Never written back to the DB;
+# recomputed per API response. Deliberately narrow: "Master" is excluded
+# because in trader lineage text it almost always means "first-gen copy off
+# a master tape" (a generation, not a source type), not an actual studio/
+# soundboard master — guessing wrong there would mislabel audience tapes.
+# ALD = Assisted Listening Device — a venue's wireless feed for hard-of-hearing
+# patrons, tapped with a receiver. Checked first: when a description calls a
+# tape both "soundboard" and "ALD" (e.g. "Digitally Remastered Soundboard,
+# (assisted listening device (ALD) is the source)"), the ALD note is a
+# clarification of the true source, not a second, lower-confidence guess.
+_SRC_ALD_RE = re.compile(r'\bald\b', re.IGNORECASE)
+_SRC_SBD_RE = re.compile(r'\b(soundboard|sbd)\b', re.IGNORECASE)
+_SRC_FM_RE = re.compile(r'\b(pre-?fm|fm\s*(?:broadcast|stereo|simulcast)|radio\s*broadcast)\b', re.IGNORECASE)
+# Excludes "Matrix: BDGD" etc — vinyl runout/matrix-number listings, unrelated
+# to a SBD+AUD matrix mixdown (caught a real false positive in LB entries
+# with "Source: Audience, ... Matrix: BDGD (1-10)" being misread as Mixed).
+_SRC_MIXED_RE = re.compile(r'\bmatrix\b(?!\s*[:#]|\s+\d)', re.IGNORECASE)
+_SRC_AUD_RE = re.compile(r'\b(audience|aud)\b', re.IGNORECASE)
+
+
+def _classify_source_text(text: str) -> str | None:
+    if _SRC_ALD_RE.search(text):
+        return 'ALD'
+    if _SRC_SBD_RE.search(text):
+        return 'Soundboard'
+    if _SRC_FM_RE.search(text):
+        return 'FM/Pre-FM'
+    if _SRC_MIXED_RE.search(text):
+        return 'Mixed'
+    if _SRC_AUD_RE.search(text):
+        return 'Audience'
+    return None
+
+
+def classify_source_type(description: str | None, source_chain: str | None) -> str | None:
+    """Best-effort source-type guess from free-text lineage, for display only.
+
+    Returns one of 'ALD', 'Soundboard', 'FM/Pre-FM', 'Mixed', 'Audience', or
+    None when no confident signal is found. Checks `source_chain` first — it's
+    already isolated by the Source:/Recording:/Lineage: label extraction in
+    :func:`extract_taper_and_source`, so it's far less noisy than the raw
+    description (which may mention an unrelated term, e.g. a vinyl release's
+    "Matrix: BDGD" runout code, elsewhere in the same entry). Only falls back
+    to scanning the full description when source_chain gives no signal.
+    """
+    if source_chain:
+        hit = _classify_source_text(source_chain)
+        if hit:
+            return hit
+    if description:
+        return _classify_source_text(description)
+    return None
+
+
 # ── Track-listing patterns used by extract_setlist_from_description ──────────
 
 _SL_DOT = re.compile(r'\b0?\d{1,2}[.)]\s')                                 # "1. " / "01." / "1) "
@@ -1910,6 +1966,10 @@ def search_entries(query, field="all", year=None, limit=None, db_path=None):
         except ValueError:
             pass
 
+    for r in results:
+        if not r.get("source_type"):
+            r["source_type"] = classify_source_type(r.get("description"), r.get("source_chain"))
+
     return results
 
 
@@ -2019,7 +2079,7 @@ def get_performances(db_path=None) -> list[dict]:
     rows = conn.execute(
         """
         SELECT e.lb_number, e.date_str, e.location, e.rating, e.source_type,
-               e.lb_category, lm.lb_status
+               e.description, e.source_chain, e.lb_category, lm.lb_status
         FROM entries e
         LEFT JOIN lb_master lm ON lm.lb_number = e.lb_number
         WHERE e.lb_category IN ('concert', 'unknown')
@@ -2058,21 +2118,32 @@ def get_performances(db_path=None) -> list[dict]:
     ).fetchall():
         titles.setdefault(r["lb_number"], r["title"])
 
-    groups: dict[tuple[str, str], dict] = {}
-    order: list[tuple[str, str]] = []
+    # Group key: ISO date when the date is fully parseable (Bob Dylan never
+    # plays two venues on the same calendar day), else raw "date_str::location"
+    # for entries whose date can't be resolved (ambiguous/incomplete dates).
+    # Using ISO date as the primary key collapses the common case where different
+    # recordings of the same show have slightly different `location` strings
+    # (e.g. "Munich" vs "Munich, West Germany") that previously produced
+    # multiple duplicate show rows for the same concert.
+    groups: dict[str, dict] = {}
+    order: list[str] = []
     for r in rows:
         date_str = r["date_str"] or ""
         location = r["location"] or ""
+        iso = _entry_date_to_iso_local(date_str)
         if r["lb_category"] == "unknown":
             # Only degraded-confirm 'unknown' rows with a real date + location —
             # see TODO-151 audit note above. Skip the rest (blank/'xx' dates,
             # no location) just like before.
-            if not location.strip() or not _entry_date_to_iso_local(date_str):
+            if not location.strip() or not iso:
                 continue
-        key = (date_str, location)
+        key = iso if iso else f"{date_str}::{location}"
         g = groups.get(key)
         if g is None:
-            g = groups[key] = {"recordings": [], "best_status": "missing", "any_concert": False}
+            g = groups[key] = {
+                "recordings": [], "best_status": "missing", "any_concert": False,
+                "date_str": date_str, "location": location, "iso": iso,
+            }
             order.append(key)
         if r["lb_category"] == "concert":
             g["any_concert"] = True
@@ -2082,15 +2153,17 @@ def get_performances(db_path=None) -> list[dict]:
         g["recordings"].append({
             "lb": f"LB-{r['lb_number']:05d}",
             "lbNumber": r["lb_number"],
-            "src": r["source_type"],
+            "src": r["source_type"] or classify_source_type(r["description"], r["source_chain"]),
             "rating": r["rating"] or "",
             "status": _STATUS_LABEL.get(status_raw, "Missing"),
         })
 
     performances: list[dict] = []
-    for date_str, location in order:
-        g = groups[(date_str, location)]
-        iso = _entry_date_to_iso_local(date_str)
+    for key in order:
+        g = groups[key]
+        date_str = g["date_str"]
+        location = g["location"]
+        iso = g["iso"]
         disp = date_str
         dow = None
         if iso:
@@ -2104,12 +2177,12 @@ def get_performances(db_path=None) -> list[dict]:
         bd = bd_shows.get(iso) if iso else None
         dp = dp_venues.get(iso) if (iso and not bd) else None
         perf: dict = {
-            "id": f"{date_str}::{location}",
-            "date": date_str,
+            "id": iso or f"{date_str}::{location}",
+            "date": iso if iso else date_str,
             "disp": disp,
             "year": _year_from_date_str(date_str),
             "venue": bd["venue"] if bd else (dp["venue"] if dp else None),
-            "city": location or None,
+            "city": (dp["city"] if dp else None) or location or None,
             "status": _STATUS_LABEL.get(g["best_status"], "Missing"),
             "recordings": sorted(g["recordings"], key=lambda x: x["lbNumber"]),
         }
@@ -4302,6 +4375,32 @@ def delete_folder_link(folder_path: str, db_path=None) -> None:
     get_write_queue().execute(
         lambda c: c.execute("DELETE FROM folder_lb_link WHERE folder_path=?", (_fp,))
     )
+
+
+def rekey_folder_link(old_path: str, new_path: str, db_path=None) -> None:
+    """Move folder_lb_link rows from old_path to new_path after a folder rename.
+
+    A pin ("Pin & continue") is keyed on the exact folder path, so without this
+    the link is orphaned the moment the folder is renamed and downstream steps
+    (lbdir/rename/file) lose the pinned LB# on their next run.
+
+    Args:
+        old_path: Absolute path of the folder before renaming.
+        new_path: Absolute path of the folder after renaming.
+        db_path: Optional path to the SQLite database file.
+    """
+    _old, _new = old_path, new_path
+
+    def _rekey(c):
+        c.execute(
+            "UPDATE OR IGNORE folder_lb_link SET folder_path=? WHERE folder_path=?",
+            (_new, _old),
+        )
+        # Any rows left under _old conflicted with an existing (_new, lb_number)
+        # link and were skipped by OR IGNORE — that link already exists, drop the stale one.
+        c.execute("DELETE FROM folder_lb_link WHERE folder_path=?", (_old,))
+
+    get_write_queue().execute(_rekey)
 
 
 def add_lb_alias(

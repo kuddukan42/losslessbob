@@ -8,6 +8,8 @@
 // "wire it or hide it" rule.
 
 import React, { useCallback, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import type { TFunction } from 'i18next'
 import { Icon } from '../Icon'
 import type { IconName } from '../Icon'
 import { Button } from '../primitives'
@@ -49,7 +51,6 @@ export interface ActionHandlers {
   onSpectro: (row: ActionRow) => void
   onMap: () => void
   onReconfirm: (row: ActionRow) => void
-  onRefp: (row: ActionRow) => void
   onRelocate: (rows: ActionRow[]) => void
   onRemove: (rows: ActionRow[]) => void
   onWishlistToggle: (row: ActionRow) => void
@@ -57,42 +58,45 @@ export interface ActionHandlers {
 }
 
 const GROUP_ORDER: LibActionGroup[] = ['open', 'listen', 'acquire', 'share', 'assets', 'maintain']
-const GROUP_LABEL: Record<LibActionGroup, string | null> = {
-  open: null, listen: null, acquire: 'Acquire', share: 'Share & seed', assets: 'Assets', maintain: 'Maintain',
+// i18n key per group (null = no header rendered for that group).
+const GROUP_LABEL_KEY: Record<LibActionGroup, 'library.groups.acquire' | 'library.groups.share' | 'library.groups.assets' | 'library.groups.maintain' | null> = {
+  open: null, listen: null,
+  acquire: 'library.groups.acquire', share: 'library.groups.share',
+  assets: 'library.groups.assets', maintain: 'library.groups.maintain',
 }
 
 // ── Recording (LB#) action registry ─────────────────────────────────────────
 // `batch` is the right-click target set (checked rows if the clicked row is
 // checked, else just the row) — matches ScreenCollection.tsx's getCtxRows().
 // Batchable ids (qbt/torrent/forum/relocate/remove) act on it; everything
-// else always acts on the single clicked `row`.
-export function buildRecordingActions(row: ActionRow, batch: ActionRow[], h: ActionHandlers): LibAction[] {
+// else always acts on the single clicked `row`. `t` is passed in because the
+// registry is a plain function, not a component.
+export function buildRecordingActions(row: ActionRow, batch: ActionRow[], h: ActionHandlers, t: TFunction): LibAction[] {
   const targets = batch.length > 0 ? batch : [row]
   const n = targets.length
   const A: LibAction[] = [
-    { id: 'open',   label: 'Open LB page',   icon: 'globe', group: 'open', run: () => h.onOpen(row) },
-    { id: 'copyLb', label: 'Copy LB number', icon: 'copy',  group: 'open', run: () => h.onCopyLb(row) },
+    { id: 'open',   label: t('library.actions.open'),   icon: 'globe', group: 'open', run: () => h.onOpen(row) },
+    { id: 'copyLb', label: t('library.actions.copyLb'), icon: 'copy',  group: 'open', run: () => h.onCopyLb(row) },
   ]
   if (row.owned) {
     A.push(
-      { id: 'play',     label: 'Play',                       icon: 'play',     group: 'listen', primary: true, disabled: !row.path, run: () => h.onPlay(row) },
-      { id: 'reveal',   label: 'Reveal on disk',              icon: 'reveal',   group: 'listen', disabled: !row.path, run: () => h.onReveal(row) },
-      { id: 'copyPath', label: 'Copy disk path',              icon: 'copy',     group: 'listen', disabled: !row.path, run: () => h.onCopyPath(row) },
-      { id: 'qbt',      label: n > 1 ? `Add ${n} to qBittorrent` : 'Add to qBittorrent', icon: 'upload', group: 'share', run: () => h.onQbt(targets) },
-      { id: 'torrent',  label: 'Create / regenerate torrent', icon: 'copy',     group: 'share', disabled: !targets.some(r => r.path), run: () => h.onTorrent(targets) },
-      { id: 'forum',    label: n > 1 ? `Post ${n} to forum` : 'Post to forum', icon: 'globe', group: 'share', run: () => h.onForum(targets) },
-      { id: 'attach',   label: 'Attachments',                 icon: 'attachments', group: 'assets', run: () => h.onAttach(row) },
-      { id: 'spectro',  label: 'Spectrograms',                icon: 'spectro',  group: 'assets', disabled: !row.path, run: () => h.onSpectro(row) },
-      { id: 'map',      label: 'Show on map',                 icon: 'map',      group: 'assets', run: () => h.onMap() },
-      { id: 'reconfirm',label: 'Re-confirm checksums',        icon: 'verify',   group: 'maintain', disabled: !row.path, run: () => h.onReconfirm(row) },
-      { id: 'refp',     label: 'Re-fingerprint',               icon: 'fingerprint', group: 'maintain', disabled: !row.path, run: () => h.onRefp(row) },
-      { id: 'relocate', label: n > 1 ? `Update location… (${n})` : 'Update location…', icon: 'reveal', group: 'maintain', run: () => h.onRelocate(targets) },
-      { id: 'remove',   label: n > 1 ? `Remove ${n} from collection` : 'Remove from collection', icon: 'trash', group: 'maintain', danger: true, run: () => h.onRemove(targets) },
+      { id: 'play',     label: t('library.actions.play'),     icon: 'play',     group: 'listen', primary: true, disabled: !row.path, run: () => h.onPlay(row) },
+      { id: 'reveal',   label: t('library.actions.reveal'),   icon: 'reveal',   group: 'listen', disabled: !row.path, run: () => h.onReveal(row) },
+      { id: 'copyPath', label: t('library.actions.copyPath'), icon: 'copy',     group: 'listen', disabled: !row.path, run: () => h.onCopyPath(row) },
+      { id: 'qbt',      label: t('library.actions.qbtAdd', { count: n }), icon: 'upload', group: 'share', run: () => h.onQbt(targets) },
+      { id: 'torrent',  label: t('library.actions.torrent'),  icon: 'copy',     group: 'share', disabled: !targets.some(r => r.path), run: () => h.onTorrent(targets) },
+      { id: 'forum',    label: t('library.actions.forumPost', { count: n }), icon: 'globe', group: 'share', run: () => h.onForum(targets) },
+      { id: 'attach',   label: t('library.actions.attachments'), icon: 'attachments', group: 'assets', run: () => h.onAttach(row) },
+      { id: 'spectro',  label: t('library.actions.spectrograms'), icon: 'spectro',  group: 'assets', disabled: !row.path, run: () => h.onSpectro(row) },
+      { id: 'map',      label: t('library.actions.showOnMap'), icon: 'map',      group: 'assets', run: () => h.onMap() },
+      { id: 'reconfirm',label: t('library.actions.reconfirm'), icon: 'verify',   group: 'maintain', disabled: !row.path, run: () => h.onReconfirm(row) },
+      { id: 'relocate', label: t('library.actions.relocate', { count: n }), icon: 'reveal', group: 'maintain', run: () => h.onRelocate(targets) },
+      { id: 'remove',   label: t('library.actions.remove', { count: n }), icon: 'trash', group: 'maintain', danger: true, run: () => h.onRemove(targets) },
     )
   } else {
     A.push({
       id: 'wishlist',
-      label: row.wish ? 'On wishlist' : 'Add to wishlist',
+      label: row.wish ? t('library.actions.onWishlist') : t('library.actions.addWishlist'),
       icon: row.wish ? 'starFill' : 'star',
       group: 'acquire',
       primary: !row.wish,
@@ -105,24 +109,24 @@ export function buildRecordingActions(row: ActionRow, batch: ActionRow[], h: Act
 // ── Performance (show) action registry ──────────────────────────────────────
 // `canonical` is the show's best-rated recording (any owned/unowned tie-break
 // already resolved by the caller — ScreenLibrary's bestOf()/rollupOf()).
-export function buildPerformanceActions(recordings: ActionRow[], canonical: ActionRow | null, h: ActionHandlers): LibAction[] {
+export function buildPerformanceActions(recordings: ActionRow[], canonical: ActionRow | null, h: ActionHandlers, t: TFunction): LibAction[] {
   const owned = recordings.filter(r => r.owned)
   const gaps = recordings.filter(r => !r.owned && !r.wish)
   const A: LibAction[] = [
-    { id: 'open', label: 'Open LB page', icon: 'globe', group: 'open', run: () => h.onOpen(canonical ?? recordings[0]) },
+    { id: 'open', label: t('library.actions.open'), icon: 'globe', group: 'open', run: () => h.onOpen(canonical ?? recordings[0]) },
   ]
   if (owned.length > 0 && canonical) {
     A.push(
-      { id: 'play',    label: 'Play best recording',      icon: 'play',   group: 'listen', primary: true, disabled: !canonical.path, run: () => h.onPlay(canonical) },
-      { id: 'reveal',  label: 'Reveal best on disk',       icon: 'reveal', group: 'listen', disabled: !canonical.path, run: () => h.onReveal(canonical) },
-      { id: 'm3u',     label: 'Export show as M3U',        icon: 'download', group: 'share', disabled: !owned.some(r => r.path), run: () => h.onM3u(owned) },
-      { id: 'qbt',     label: 'Add owned to qBittorrent',  icon: 'upload', group: 'share', run: () => h.onQbt(owned) },
-      { id: 'torrent', label: 'Create torrent…',           icon: 'copy',   group: 'share', disabled: !canonical.path, run: () => h.onTorrent([canonical]) },
-      { id: 'forum',   label: 'Post to forum',             icon: 'globe',  group: 'share', run: () => h.onForum([canonical]) },
+      { id: 'play',    label: t('library.actions.playBest'),     icon: 'play',   group: 'listen', primary: true, disabled: !canonical.path, run: () => h.onPlay(canonical) },
+      { id: 'reveal',  label: t('library.actions.revealBest'),   icon: 'reveal', group: 'listen', disabled: !canonical.path, run: () => h.onReveal(canonical) },
+      { id: 'm3u',     label: t('library.actions.m3u'),          icon: 'download', group: 'share', disabled: !owned.some(r => r.path), run: () => h.onM3u(owned) },
+      { id: 'qbt',     label: t('library.actions.qbtAddOwned'),  icon: 'upload', group: 'share', run: () => h.onQbt(owned) },
+      { id: 'torrent', label: t('library.actions.createTorrent'), icon: 'copy',   group: 'share', disabled: !canonical.path, run: () => h.onTorrent([canonical]) },
+      { id: 'forum',   label: t('library.actions.forumPost', { count: 1 }), icon: 'globe',  group: 'share', run: () => h.onForum([canonical]) },
     )
   }
   if (gaps.length > 0) {
-    A.push({ id: 'wishlistGaps', label: `Wishlist missing source${gaps.length > 1 ? 's' : ''}`, icon: 'star', group: 'acquire', run: () => h.onWishlistAddMany(gaps) })
+    A.push({ id: 'wishlistGaps', label: t('library.actions.wishlistGaps', { count: gaps.length }), icon: 'star', group: 'acquire', run: () => h.onWishlistAddMany(gaps) })
   }
   return A
 }
@@ -130,7 +134,7 @@ export function buildPerformanceActions(recordings: ActionRow[], canonical: Acti
 function groupActions(actions: LibAction[]) {
   const by: Partial<Record<LibActionGroup, LibAction[]>> = {}
   for (const a of actions) (by[a.group] ??= []).push(a)
-  return GROUP_ORDER.filter(g => by[g]).map(g => ({ group: g, label: GROUP_LABEL[g], items: by[g]! }))
+  return GROUP_ORDER.filter(g => by[g]).map(g => ({ group: g, labelKey: GROUP_LABEL_KEY[g], items: by[g]! }))
 }
 
 // ── ActionMenu — right-click context menu. Fixed-position, matching the
@@ -144,6 +148,7 @@ export interface ActionMenuState {
 }
 
 export function ActionMenu({ state, onClose }: { state: ActionMenuState; onClose: () => void }) {
+  const { t } = useTranslation()
   const ref = React.useRef<HTMLDivElement>(null)
 
   React.useEffect(() => {
@@ -179,11 +184,11 @@ export function ActionMenu({ state, onClose }: { state: ActionMenuState; onClose
       {groups.map((grp, gi) => (
         <React.Fragment key={grp.group}>
           {gi > 0 && <div style={{ height: 1, background: 'var(--lbb-border)', margin: '3px 0' }} />}
-          {grp.label && (
+          {grp.labelKey && (
             <div style={{
               fontSize: 9.5, fontWeight: 700, letterSpacing: 0.1, textTransform: 'uppercase',
               color: 'var(--lbb-fg3)', padding: '5px 14px 3px',
-            }}>{grp.label}</div>
+            }}>{t(grp.labelKey)}</div>
           )}
           {grp.items.map(a => (
             <button
@@ -237,6 +242,7 @@ export function BulkActionBar({
   onRemove: () => void
   onClear: () => void
 }) {
+  const { t } = useTranslation()
   return (
     <div style={{
       display: 'flex', alignItems: 'center', gap: 8,
@@ -244,14 +250,14 @@ export function BulkActionBar({
       background: 'var(--lbb-accent-soft)',
     }}>
       <span style={{ fontSize: 'var(--lbb-fs-12)', fontWeight: 600, color: 'var(--lbb-accent-mid)' }}>
-        {count.toLocaleString()} selected
+        {t('library.bulk.selected', { count })}
       </span>
-      <Button variant="secondary" size="sm" icon="copy" disabled={busy} onClick={onCreateTorrent}>Create torrent</Button>
-      <Button variant="secondary" size="sm" icon="upload" disabled={busy} onClick={onAddQbt}>Add to qBittorrent</Button>
-      <Button variant="ghost" size="sm" disabled={busy} onClick={onRelocate}>Update location</Button>
-      <Button variant="danger" size="sm" icon="trash" disabled={busy} onClick={onRemove}>Remove</Button>
+      <Button variant="secondary" size="sm" icon="copy" disabled={busy} onClick={onCreateTorrent}>{t('library.bulk.createTorrent')}</Button>
+      <Button variant="secondary" size="sm" icon="upload" disabled={busy} onClick={onAddQbt}>{t('library.bulk.addQbt')}</Button>
+      <Button variant="ghost" size="sm" disabled={busy} onClick={onRelocate}>{t('library.bulk.updateLocation')}</Button>
+      <Button variant="danger" size="sm" icon="trash" disabled={busy} onClick={onRemove}>{t('library.bulk.remove')}</Button>
       <div style={{ flex: 1 }} />
-      <Button variant="ghost" size="sm" onClick={onClear}>Clear selection</Button>
+      <Button variant="ghost" size="sm" onClick={onClear}>{t('library.bulk.clearSelection')}</Button>
     </div>
   )
 }

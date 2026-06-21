@@ -57,7 +57,9 @@
       "setup": "Mise en place",
       "mounts": "Volumes",
       "themes": "Thèmes",
-      "advancedTools": "Outils avancés"
+      "advancedTools": "Outils avancés",
+      "trading": "Trading",
+      "sharing": "Partage"
     },
     "statusBar": {
       "db": "DB :",
@@ -171,12 +173,12 @@
       "notFound": "Non trouvé",
       "missing": "Manquant",
       "dups": "Dups",
-      "xrefs": "Xrefs",
+      "xrefs": "Références croisées",
       "status": "Statut",
       "checksum": "Somme de contrôle",
       "filename": "Nom de fichier",
       "type": "Type d'application",
-      "xref": "Xref",
+      "xref": "Référence croisée",
       "open": "Ouvrir sur LB Website",
       "addWishlist": "+WL"
     },
@@ -191,7 +193,7 @@
     "footer": {
       "autoPopulate": "Les résultats remplissent automatiquement l'onglet Renommer",
       "goToRename": "Aller dans Renommer →",
-      "relookupAll": "Re-lookup all"
+      "relookupAll": "Relancer la recherche pour tout"
     },
     "toast": {
       "clipboardEmpty": "Le presse-papiers est vide",
@@ -206,6 +208,14 @@
       "lookupFailed": "La recherche a échoué",
       "addedToWishlist": "Ajouté LB-{{lb}} à la liste de souhaits",
       "wishlistFailed": "L'ajout à la liste de souhaits a échoué"
+    },
+    "owned": {
+      "verifiedBanner": "{{count}} déjà présent dans la collection · lbdir-verified",
+      "unverifiedBanner": "{{count}} déjà présent dans la collection",
+      "verifiedNote": "Aucune action requise",
+      "unverifiedNote": "pas encore vérifié par lbdir",
+      "badgeOwned": "Dans la collection",
+      "badgeVerified": "Dans la collection · vérifié"
     }
   },
   "verify": {
@@ -229,7 +239,7 @@
       "pass": "Passez",
       "mismatch": "Inadéquation",
       "missing": "Manquant",
-      "extra": "Extra",
+      "extra": "Supplément",
       "ffp": "FFP",
       "md5": "MD5"
     },
@@ -252,7 +262,7 @@
     "fileStates": {
       "pass": "Passez",
       "missing": "Manquant",
-      "extra": "Extra",
+      "extra": "Supplément",
       "fail": "Échec"
     },
     "allClear": {
@@ -330,7 +340,11 @@
       "title": "Désambiguïser - choisir",
       "desc": "Plusieurs numéros de LB correspondent. Sélectionnez le bon numéro, puis cliquez sur \"Sélection de l'épingle\".",
       "skip": "Sauter pour l'instant",
-      "pinned": "Épinglé à {{lb}}"
+      "pinned": "Épinglé à {{lb}}",
+      "pin": "Sélection d'épingles",
+      "unpin": "Désassocier",
+      "loading": "Résolution en cours…",
+      "standardize": "Normaliser les noms"
     },
     "dryrun": {
       "title": "Aperçu de la course à vide",
@@ -344,7 +358,12 @@
       "applyFailed": "Appliquer échoué",
       "diffCopied": "Copie de la différence",
       "copyFailed": "Échec de la copie",
-      "pinned": "Épinglé {{lb}}"
+      "pinned": "Épinglé {{lb}}",
+      "unpinned": "Non lié",
+      "pinFailed": "Échec de l'épinglage",
+      "unpinFailed": "Échec de la suppression du lien",
+      "standardized": "Nom normalisé",
+      "standardizeFailed": "Normalisation échouée"
     }
   },
   "pipeline": {
@@ -465,7 +484,14 @@
       "alreadyInCollectionBody": "Cet enregistrement est déjà répertorié dans votre collection sous {{path}}. L'archivage déplacera le dossier vers le nouvel emplacement et mettra à jour la fiche de la collection.",
       "renamePendingTitle": "Renommage requis avant le classement",
       "renamePendingBody": "Ce dossier a un renommage non appliqué. Passez à l'étape Renommer et appliquez-le avant de classer."
-    }
+    },
+    "titleFolders": "Pipeline · Dossiers {{count}}",
+    "applyAllReady": "Appliquer toutes les modifications {{count}}",
+    "fileAllCollection": "Classer tous les fichiers {{count}} dans la collection",
+    "autoRun": "Exécution automatique au glisser-déposer",
+    "autoRunHint": "Lorsqu'elles sont activées, les fonctions de vérification et de recherche des dossiers déposés s'exécutent automatiquement.",
+    "autoRename": "Renommage automatique",
+    "autoRenameHint": "Lorsque cette option est activée, un renommage en une seule correspondance est appliqué automatiquement et le dossier passe à l'étape « Collect »."
   },
   "collection": {
     "confirmDialog": {
@@ -475,7 +501,7 @@
     "personalInfo": {
       "title": "Informations personnelles - {{lb}}",
       "rating": "Note personnelle (1-5)",
-      "tags": "Tags",
+      "tags": "Balises",
       "tagsPlaceholder": "par exemple, favori, table d'harmonie",
       "saving": "Économiser..."
     },
@@ -506,7 +532,7 @@
     },
     "detail": {
       "owned": "Propriétaire",
-      "xref": "Xref",
+      "xref": "Référence croisée",
       "folder": "Dossier",
       "diskPath": "Chemin d'accès au disque",
       "size": "Taille",
@@ -591,7 +617,7 @@
       "failedLogListen": "Échec de l'enregistrement de l'écoute",
       "listenLogged": "Écouter connecté pour {{lb}}",
       "addedToQbt": "Ajouté à qBittorrent",
-      "qbtAddFailed": "qBt add failed",
+      "qbtAddFailed": "Échec de l'ajout de qBt",
       "qbtRequestFailed": "Échec de la requête qBittorrent",
       "removedFromQbt": "Supprimé de qBittorrent",
       "qbtRemoveFailed": "Échec de la suppression du qBt",
@@ -695,7 +721,7 @@
       "host": "Hôte",
       "port": "Port",
       "category": "Catégorie",
-      "tags": "Tags",
+      "tags": "Balises",
       "username": "Nom d'utilisateur",
       "password": "Mot de passe",
       "apiKey": "Clé API",
@@ -719,7 +745,8 @@
       "autoScrape": "Gratte-papier automatique à l'importation",
       "enabled": "activée",
       "disabled": "handicapé",
-      "language": "Langue de l'interface"
+      "language": "Langue de l'interface",
+      "rowHighlight": "Couleurs de mise en surbrillance des lignes"
     },
     "languages": {
       "en": "Anglais",
@@ -737,7 +764,20 @@
       "fingerprintCache": "Cache d'empreintes digitales",
       "allUserData": "Toutes les données de l'utilisateur",
       "purge": "Purge...",
-      "disclaimer": "Données de l'utilisateur uniquement. L'archive des sommes de contrôle n'est jamais affectée."
+      "disclaimer": "Données de l'utilisateur uniquement. L'archive des sommes de contrôle n'est jamais affectée.",
+      "subtitle": "récupérer l'espace de stockage local",
+      "recoverable": "récupérable",
+      "lookupHistoryDesc": "Requêtes de recherche récentes",
+      "lookupHistoryUnit": "requêtes",
+      "importLogDesc": "Lignes d'audit pour l'importation de fichiers plats",
+      "importLogUnit": "lignes",
+      "scraperCacheDesc": "Code HTML mis en cache de la page de détails",
+      "scraperCacheUnit": "pages",
+      "fingerprintCacheDesc": "Blobs d’empreintes audio",
+      "fingerprintCacheUnit": "blobs",
+      "allUserDataDesc": "Collection, liste de souhaits, notes, alertes et journaux — non réversibles.",
+      "purgeAll": "Tout supprimer…",
+      "archiveProtected": "L'archive de sommes de contrôle n'est jamais affectée par aucune purge."
     },
     "packages": {
       "title": "Paquets de données",
@@ -764,14 +804,14 @@
       "noHistory": "Pas encore d'historique d'importation.",
       "active": "actif",
       "reveal": "Révéler",
-      "download": "Download",
-      "downloading": "Downloading…",
-      "downloadDone": "Download complete.",
-      "reviewApply": "Review & Apply",
-      "applying": "Applying…",
-      "applyConfirmTitle": "Apply Update?",
-      "applyConfirmBody": "Apply {{filename}} to your database?\n\n+{{added}} added, ~{{changed}} changed, -{{removed}} removed.\n\nA backup is taken automatically first.",
-      "applyDone": "Update applied: +{{added}} added, ~{{changed}} changed, -{{removed}} removed."
+      "download": "Télécharger",
+      "downloading": "Téléchargement en cours…",
+      "downloadDone": "Téléchargement terminé.",
+      "reviewApply": "Vérifier et appliquer",
+      "applying": "Application en cours…",
+      "applyConfirmTitle": "Appliquer la mise à jour ?",
+      "applyConfirmBody": "Appliquer {{filename}} à votre base de données ?\n\n+{{added}} ajouté, ~{{changed}} modifié, -{{removed}} supprimé.\n\nUne sauvegarde est d'abord effectuée automatiquement.",
+      "applyDone": "Mise à jour appliquée : +{{added}} ajouté, ~{{changed}} modifié, -{{removed}} supprimé."
     },
     "toast": {
       "dataFolderUnavailable": "Le chemin du dossier de données n'est pas disponible",
@@ -839,6 +879,15 @@
       "dark": "Sombre",
       "system": "Système"
     },
+    "palette": {
+      "title": "Thème du cadre",
+      "default": "Par défaut"
+    },
+    "cardStyle": {
+      "title": "Style de carte",
+      "framed": "Encadré",
+      "flat": "Plat"
+    },
     "density": {
       "title": "Densité",
       "comfortable": "Confortable",
@@ -865,7 +914,8 @@
       "resetAll": "Réinitialiser tous les jetons personnalisés",
       "exportTheme": "Exporter le thème au format JSON",
       "importTheme": "Importer un thème...",
-      "statusColorsNote": "Les couleurs d'état (vert / ambre / rouge) sont épinglées à la barre d'état de la ligne et aux pilules, de sorte qu'elles n'entrent jamais en conflit avec votre choix d'accent."
+      "statusColorsNote": "Les couleurs d'état (vert / ambre / rouge) sont épinglées à la barre d'état de la ligne et aux pilules, de sorte qu'elles n'entrent jamais en conflit avec votre choix d'accent.",
+      "rowHighlight": "Couleurs de mise en surbrillance des lignes"
     },
     "tokens": {
       "background": "Contexte",
@@ -1011,14 +1061,14 @@
       "removeOverrideConfirm": "Effacer la dérogation manuelle pour LB-{{lb}} ?\nlb_status reviendra à la valeur calculée automatiquement.",
       "exportOverrides": "Exceptions à l'exportation",
       "exportOverridesHint": "Sauvegarde de toutes les modifications manuelles de l'état de LB dans un fichier JSON.",
-      "exportedOverrides": "Exported {{count}} override(s).",
+      "exportedOverrides": "Remplacement(s) {{count}} exporté(s).",
       "importOverrides": "Priorités d'importation",
       "importOverridesHint": "Chargement de modifications manuelles de l'état de LB à partir d'un fichier JSON.",
       "importTitle": "Priorités d'importation",
       "importInvalid": "Le fichier doit contenir un tableau JSON.",
       "importConfirm": "Importer une (des) surcharge(s) {{count}} ? Cela écrasera les surcharges existantes pour ces LB.",
       "importDone": "Importation d'un ou de plusieurs surclassements {{imported}}. Ignore les entrées hors limites de {{skipped}}.",
-      "backup": "Backup DB Now",
+      "backup": "Sauvegarder la base de données maintenant",
       "backupHint": "Créer un instantané manuel de la base de données.",
       "backupDone": "Sauvegarde sauvegardée : {{path}} ({{mb}} MB)",
       "overrideSet": "Jeu de remplacement : LB-{{lb}} → {{status}}",
@@ -1109,6 +1159,307 @@
       "clipboardEmpty": "Le presse-papiers est vide",
       "clipboardFailed": "Impossible de lire le presse-papiers",
       "noValidFiles": "Aucun fichier de somme de contrôle trouvé (.md5, .ffp, .st5, .sha1)"
+    }
+  },
+  "archiveOrg": {
+    "title": "Mise en ligne sur Archive.org",
+    "desc": "Téléverser des fichiers audio pour une entrée LB vers Internet Archive. Nécessite un compte archive.org gratuit et des clés API de type S3.",
+    "credentials": "Identifiants",
+    "accessKey": "Touche d'accès",
+    "secretKey": "Clé secrète",
+    "saveCredentials": "Enregistrer",
+    "testCredentials": "Test",
+    "clearCredentials": "Effacer",
+    "credentialsSaved": "Identifiants enregistrés.",
+    "credentialsCleared": "Identifiants effacés.",
+    "credentialsOk": "Identifiants valides.",
+    "credentialsStored": "Identifiants enregistrés.",
+    "credentialsNotStored": "Aucune information d'identification n'est stockée.",
+    "uploadTitle": "Téléverser",
+    "lbNumber": "Numéro LB",
+    "folderPath": "Chemin d'accès au dossier",
+    "identifier": "Identifiant IA",
+    "identifierPlaceholder": "losslessbob-lb-01234 (auto)",
+    "collection": "Collection",
+    "collectionPlaceholder": "opensource_audio",
+    "itemTitle": "Titre de l'élément",
+    "itemTitlePlaceholder": "Bob Dylan – LB-01234 (auto)",
+    "startUpload": "Téléverser sur Archive.org",
+    "stopUpload": "Arrêter",
+    "uploading": "Téléchargement en cours…",
+    "uploadDone": "Téléchargement terminé.",
+    "uploadStopped": "Le téléchargement est interrompu.",
+    "uploadFailed": "Échec du téléchargement.",
+    "history": "Historique des téléchargements",
+    "histColLb": "LB",
+    "histColIdentifier": "Identifiant IA",
+    "histColFiles": "Fichiers",
+    "histColStatus": "État",
+    "histColStarted": "Lancé",
+    "noHistory": "Aucun fichier n'a encore été mis en ligne.",
+    "keysHelp": "Récupérez vos clés S3 sur archive.org/account/s3.php (compte gratuit requis)."
+  },
+  "library": {
+    "lens": {
+      "byPerformance": "Par performance",
+      "byRecording": "Par enregistrement"
+    },
+    "actions": {
+      "open": "Ouvrir la page LB",
+      "copyLb": "Copier le numéro LB",
+      "play": "Lire",
+      "reveal": "Afficher sur le disque",
+      "copyPath": "Copier le chemin d'accès au disque",
+      "qbtAdd_one": "Ajouter à qBittorrent",
+      "qbtAdd_other": "Ajouter {{count}} à qBittorrent",
+      "torrent": "Créer / régénérer un torrent",
+      "forumPost_one": "Publier sur le forum",
+      "forumPost_other": "Publier {{count}} sur le forum",
+      "attachments": "Pièces jointes",
+      "spectrograms": "Spectrogrammes",
+      "showOnMap": "Afficher sur la carte",
+      "reconfirm": "Vérification des sommes de contrôle",
+      "relocate_one": "Emplacement de mise à jour…",
+      "relocate_other": "Emplacement de mise à jour… ({{count}})",
+      "remove_one": "Supprimer de la collection",
+      "remove_other": "Supprimer {{count}} de la collection",
+      "onWishlist": "Sur la liste de souhaits",
+      "addWishlist": "Ajouter à la liste de souhaits",
+      "playBest": "Lire le meilleur enregistrement",
+      "revealBest": "Afficher les meilleurs fichiers sur le disque",
+      "m3u": "Exporter l'émission au format M3U",
+      "qbtAddOwned": "Ajouter « owned » à qBittorrent",
+      "createTorrent": "Créer un torrent…",
+      "wishlistGaps_one": "Source manquante dans la liste de souhaits",
+      "wishlistGaps_other": "Sources manquantes dans la liste de souhaits"
+    },
+    "groups": {
+      "acquire": "Acquire",
+      "share": "Partager et semer",
+      "assets": "Ressources",
+      "maintain": "Maintenir"
+    },
+    "bulk": {
+      "selected": "{{count}} sélectionné",
+      "createTorrent": "Créer un torrent",
+      "addQbt": "Ajouter à qBittorrent",
+      "updateLocation": "Emplacement de mise à jour",
+      "remove": "Supprimer",
+      "clearSelection": "Effacer la sélection"
+    },
+    "toolbar": {
+      "searchRecording": "Recherche par numéro de référence (LB#), emplacement, description…",
+      "searchPerformance": "Recherche par date, salle, ville, tournée, n° LB…",
+      "columns": "Colonnes",
+      "export": "Exporter",
+      "more": "Plus",
+      "expandAll": "Tout développer",
+      "collapseAll": "Tout réduire",
+      "expandAllShows": "Déplier tout pour afficher",
+      "collapseAllShows": "Masquer tout",
+      "sort": "Trier"
+    },
+    "facets": {
+      "decade": "Décennie",
+      "status": "État",
+      "rating": "Évaluation",
+      "source": "Source",
+      "health": "Santé",
+      "collectionHealth": "État de la collection",
+      "year": "Année",
+      "coverageLabel": "Portée",
+      "bestRating": "Meilleure note",
+      "clear": "Effacer {{count}}",
+      "views": "Vues"
+    },
+    "views": {
+      "allPerformances": "Toutes les performances",
+      "myCollection": "Ma collection",
+      "coverageGaps": "Lacunes dans la couverture",
+      "wishlist": "Liste de souhaits",
+      "duplicates": "Doublons"
+    },
+    "statusValue": {
+      "public": "Public",
+      "private": "Privé",
+      "missing": "Manquant"
+    },
+    "columns": {
+      "status": "État",
+      "date": "Date",
+      "location": "Lieu",
+      "description": "Description",
+      "folder": "Dossier",
+      "confirmed": "Confirmé",
+      "source": "Source",
+      "own": "Propre",
+      "flags": "Drapeaux",
+      "show": "Afficher",
+      "tour": "Présentation",
+      "families": "Familles",
+      "recs": "Recommandations",
+      "coverage": "Portée"
+    },
+    "summary": {
+      "ofMaster": "de {{count}} dans la base de données « master »",
+      "owned": "propre",
+      "toGo": "{{count}} à emporter",
+      "shows_one": "{{count}} afficher",
+      "shows_other": "{{count}} affiche",
+      "recordings_one": "{{count}} enregistrement",
+      "recordings_other": "Enregistrements {{count}}",
+      "familyCount_one": "Famille {{count}}",
+      "familyCount_other": "Familles {{count}}",
+      "gaps_one": "{{count}} gap",
+      "gaps_other": "{{count}} lacunes",
+      "recShort_one": "{{count}} rec",
+      "recShort_other": "{{count}} rec"
+    },
+    "empty": {
+      "loading": "Chargement en cours…",
+      "nothingMatches": "Aucun résultat ne correspond",
+      "tryAdjust": "Essayez d'affiner votre recherche ou vos filtres",
+      "unknownYear": "Inconnu"
+    },
+    "tooltip": {
+      "inferred": "Déduites de la date et du lieu de l'enregistrement lui-même — non associées à une date de concert connue de Dylan",
+      "tapematchGroup": "Groupe de correspondances acoustiques TapeMatch"
+    },
+    "ctx": {
+      "postForum": "Publier sur le forum",
+      "removeCollection": "Supprimer de la collection"
+    },
+    "toast": {
+      "vlcNotFound": "VLC introuvable",
+      "vlcFailed": "Échec de la requête VLC",
+      "noDiskPath": "Aucun chemin d'accès au disque pour cette entrée",
+      "qbtAdded": "Ajout de {{added}}/{{total}} à qBittorrent",
+      "qbtFailed": "Échec de la requête qBittorrent",
+      "torrentsCreated_one": "Torrent {{count}} créé",
+      "torrentsCreated_other": "Torrents {{count}} créés",
+      "postsCreated_one": "Publication {{count}} créée",
+      "postsCreated_other": "Messages {{count}} créés",
+      "failedSuffix": ", {{count}} a échoué",
+      "notFoundSuffix": ", {{count}} introuvable",
+      "postedForum": "Publié {{lb}} sur le forum",
+      "postedForumCopied": "Publié {{lb}} sur le forum — lien copié dans le presse-papiers",
+      "linksCopiedSuffix_one": " — {{count}} lien copié dans le presse-papiers",
+      "linksCopiedSuffix_other": " — {{count}} liens copiés dans le presse-papiers",
+      "forumPostFailed": "Échec de la publication sur le forum",
+      "noOwnedExport": "Aucun enregistrement personnel à exporter",
+      "m3uFailed": "Échec de l'exportation M3U",
+      "spectroFailed": "Échec de la requête de spectrogramme",
+      "locationUpdated": "Emplacement mis à jour pour {{lb}}",
+      "updateFailed": "Échec de la mise à jour",
+      "updated": "Mise à jour de {{count}}",
+      "removed": "Supprimé {{count}}",
+      "wishlistRemoved": "Suppression de {{lb}} de la liste de souhaits",
+      "wishlistAdded": "Ajout de {{lb}} à la liste de souhaits",
+      "wishlistAddedCount": "Ajout de {{count}} à la liste de souhaits",
+      "wishlistFailed": "Échec de la mise à jour de la liste de souhaits",
+      "confirmForumBody": "Publier les entrées {{count}} sur le forum ? Chacune sera publiée avec son objet et son corps générés automatiquement.",
+      "confirmRemoveBody_one": "Souhaitez-vous supprimer l'élément {{count}} de votre collection ? Les fichiers présents sur le disque ne seront pas supprimés.",
+      "confirmRemoveBody_other": "Souhaitez-vous supprimer les éléments {{count}} de votre collection ? Les fichiers présents sur le disque ne seront pas supprimés."
+    },
+    "panel": {
+      "details": "Détails",
+      "performance": "Performances",
+      "showDetails": "Afficher les détails",
+      "collapseDetails": "Masquer les détails",
+      "lbPage": "Page LB",
+      "openLbPage": "Ouvrir la page LB",
+      "more": "Plus",
+      "selectRow": "Sélectionnez une ligne pour afficher les détails",
+      "selectPerformance": "Sélectionnez un spectacle pour afficher ses enregistrements",
+      "owned": "Propriétaire",
+      "notOwned": "Non détenu",
+      "wishlist": "Liste de souhaits",
+      "dup": "dup",
+      "xref": "xref",
+      "folder": "Dossier",
+      "confirmed": "Confirmé",
+      "rating": "Évaluation",
+      "catalogNote": "Métadonnées du catalogue issues de la base de données principale.",
+      "unconfirmed": "Non confirmé",
+      "releasedAs": "Publiée sous le nom « {{title}} »",
+      "bestOwned": "best owned",
+      "noRecording": "Aucun enregistrement dans votre collection",
+      "youHold_one": "Vous disposez de la famille de sources {{owned}} ou {{count}}",
+      "youHold_other": "Vous disposez des familles sources {{owned}} et {{count}}",
+      "foldedNote": "TapeMatch a regroupé les téléchargements {{uploads}} dans {{families}} · {{dupes}}.",
+      "familyCount_one": "Famille {{count}}",
+      "familyCount_other": "Familles {{count}}",
+      "dupeCount_one": "{{count}} signalé comme doublon",
+      "dupeCount_other": "{{count}} signalés comme doublons",
+      "upgradeNote": "Une famille mieux notée circule, mais vous ne la possédez pas.",
+      "factFamilies": "Familles",
+      "factSetlist": "Setlist",
+      "factLength": "Longueur",
+      "ofRec": "de {{count}} rec",
+      "tracksUnit": "pistes",
+      "recordingFamilies": "Familles d'enregistrements · {{count}}",
+      "groupedByTapeMatch": "regroupées par TapeMatch"
+    },
+    "coverage": {
+      "ownedFull": "Propriétaire : {{owned}}/{{total}}",
+      "owned": "Propriétaire",
+      "upgrade": "Mise à jour {{owned}}/{{total}}",
+      "gap": "Gap",
+      "noSource": "Pas de source"
+    },
+    "family": {
+      "recording": "Enregistrement",
+      "bestInFamily": "Le meilleur de la gamme",
+      "duplicate": "En double",
+      "owned": "Propriétaire",
+      "wishlist": "Liste de souhaits",
+      "notOwned": "Non détenu",
+      "best": "Meilleur",
+      "uploads_one": "{{count}} upload",
+      "uploads_other": "{{count}} téléchargements",
+      "ownCount": "Propre {{owned}}/{{total}}"
+    },
+    "setlist": {
+      "loading": "Chargement de la setlist…",
+      "notScraped": "La setlist de ce concert n'a pas encore été récupérée.",
+      "title": "Setlist",
+      "tracksCount_one": "Piste {{count}}",
+      "tracksCount_other": "Pistes {{count}}"
+    },
+    "share": {
+      "label": "Partager et semer",
+      "seeding_one": "Partage du torrent {{count}}",
+      "seeding_other": "Partage de torrents {{count}}",
+      "lastForumPost": "Dernier message sur le forum : {{date}}",
+      "notSharedYet": "Pas encore partagé",
+      "addQbt": "Ajouter à qBittorrent",
+      "regenerate": "Régénérer",
+      "post": "Publier…",
+      "filterAll": "Tout",
+      "filterTorrents": "Torrents",
+      "filterForum": "Forum",
+      "note": "Distribution pour la meilleure source disponible · {{lb}}"
+    },
+    "assets": {
+      "label": "Ressources",
+      "spectrograms": "Spectrogrammes",
+      "spectrogramsChecking": "Spectrogrammes — vérification en cours…",
+      "spectrogramsNone": "Spectrogrammes — aucun",
+      "spectrogramsReady": "Spectrogrammes {{ready}}/{{total}}",
+      "attachments": "Pièces jointes {{count}}",
+      "noAttachments": "Aucune pièce jointe",
+      "showOnMap": "Afficher sur la carte"
+    },
+    "scope": {
+      "everything": "Tout",
+      "myCollection": "Ma collection",
+      "notOwned": "Non détenu"
+    },
+    "coverageValue": {
+      "covered": "Contenu couvert",
+      "upgrade": "Mise à jour",
+      "gap": "Gap",
+      "undocumented": "Non documenté"
     }
   }
 }

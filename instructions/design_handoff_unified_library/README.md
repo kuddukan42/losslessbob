@@ -40,6 +40,7 @@ broke or shipped fake values. This bundle is written to make that impossible:
 | `03-data-contract.md` | Field shapes the UI reads (performance, recording, family, history) + the **no-families fallback** |
 | `04-seed-data-and-punchlist.md` | Every illustrative value to replace + every inert control as a TODO |
 | `05-integration.md` | How the new tab slots in **additively** without disturbing Search / Collection |
+| `06-pixel-spec.md` | **Exact layout geometry** — every dimension lifted from source. **Use as the layout source of truth; it overrides the `00` ASCII diagram.** |
 
 ## Source files
 

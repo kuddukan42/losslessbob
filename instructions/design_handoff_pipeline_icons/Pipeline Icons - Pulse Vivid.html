@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>LosslessBob — Pipeline Icons · Pulse / Vivid</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="pipeline-icons.css">
+<style>
+  :root {
+    --bg:#faf8f3; --surface:#fff; --fg:#1c1a17; --fg2:#5a5650; --fg3:#8a857c;
+    --border:#ece7db; --border2:#ddd6c7; --accent:#2b5fd0;
+    --mono:"JetBrains Mono", ui-monospace, Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); }
+  body { font-family: "Inter", system-ui, sans-serif; color: var(--fg);
+         display: flex; justify-content: center; padding: 48px 24px 72px; }
+  #root { width: 100%; max-width: 860px; }
+  h1 { margin: 0; font-size: 23px; font-weight: 800; letter-spacing: -0.02em; }
+  .sub { margin: 7px 0 0; font-size: 13px; color: var(--fg3); line-height: 1.5; max-width: 520px; }
+  .chip { display: inline-flex; align-items: center; gap: 7px; font-family: var(--mono);
+          font-size: 10px; font-weight: 600; letter-spacing: 0.1em; color: var(--accent);
+          background: #e3ebf8; padding: 4px 10px; border-radius: 6px; }
+
+  .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+           padding: 26px 28px; margin-top: 22px; box-shadow: 0 1px 2px rgba(40,34,24,0.03); }
+  .panel h2 { margin: 0 0 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.04em;
+              text-transform: uppercase; color: var(--fg2); }
+  .panel .note { margin: 0 0 20px; font-size: 12px; color: var(--fg3); }
+
+  /* matrix: rows = stages, cols = states */
+  .matrix { display: grid; grid-template-columns: 96px repeat(5, 1fr); gap: 0 8px; align-items: center; }
+  .matrix .colh { font-family: var(--mono); font-size: 10px; font-weight: 600; letter-spacing: 0.06em;
+                  text-transform: uppercase; color: var(--fg3); text-align: center; padding-bottom: 14px; }
+  .matrix .rowh { font-size: 12.5px; font-weight: 600; color: var(--fg2); }
+  .matrix .cell { display: flex; justify-content: center; padding: 13px 0; }
+  .matrix .rrow { display: contents; }
+
+  .sizes { display: flex; align-items: flex-end; gap: 28px; flex-wrap: wrap; }
+  .sizes .item { display: flex; flex-direction: column; align-items: center; gap: 9px; }
+  .sizes .item .lbl { font-family: var(--mono); font-size: 10px; color: var(--fg3); }
+
+  .swatches { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 4px; }
+  .sw { display: flex; flex-direction: column; gap: 8px; font-family: var(--mono);
+        font-size: 10.5px; color: var(--fg2); }
+  .sw .box { width: 100%; height: 34px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.08); }
+  .sw .hex { color: var(--fg3); }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<!-- the actual production component, loaded verbatim from the handoff bundle -->
+<script type="text/babel" src="PipelineIcon.jsx"></script>
+
+<script type="text/babel">
+const STATES = [
+  ["pending", "Pending"], ["running", "Running"], ["pass", "Pass"],
+  ["action", "Action"], ["blocked", "Blocked"],
+];
+const PALETTE = [
+  ["Pending", "#a8a293"], ["Running", "#4c89c4"], ["Pass", "#39a360"],
+  ["Action", "#cc9f3d"], ["Blocked", "#d8604f"],
+];
+
+function App() {
+  return (
+    <div>
+      <span className="chip">OPTION D · PULSE · VIVID</span>
+      <h1 style={{ marginTop: 12 }}>Pipeline stage icons</h1>
+      <p className="sub">The locked icon set: tactile tiles, the Pulse running animation (double ripple + sheen), and the Vivid status palette. Every stage in every state below is rendered by the production <code style={{fontFamily:"var(--mono)", fontSize:12}}>&lt;PipelineIcon&gt;</code> component.</p>
+
+      <div className="panel">
+        <h2>Stage × State matrix</h2>
+        <p className="note">Rows are the five pipeline stages; columns are the five run states. The Running column is animating live.</p>
+        <div className="matrix">
+          <div className="colh"></div>
+          {STATES.map(([k, l]) => <div key={k} className="colh">{l}</div>)}
+          {PIPELINE_STAGES.map(stage => (
+            <div key={stage.key} className="rrow">
+              <div className="rowh">{stage.label}</div>
+              {STATES.map(([st]) => (
+                <div key={st} className="cell">
+                  <PipelineIcon stage={stage.key} status={st} size={46} />
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="panel">
+        <h2>Sizes</h2>
+        <p className="note">Tile radius and glyph scale are proportional, so the icon holds up from list rows to hero badges. Shown running.</p>
+        <div className="sizes">
+          {[24, 32, 40, 48, 64, 88].map(sz => (
+            <div className="item" key={sz}>
+              <PipelineIcon stage="verify" status="running" size={sz} />
+              <span className="lbl">{sz}px</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="panel">
+        <h2>Vivid palette</h2>
+        <p className="note">One mid colour per status drives the whole tile; highlight, shadow and glow are derived via color-mix.</p>
+        <div className="swatches">
+          {PALETTE.map(([name, hex]) => (
+            <div className="sw" key={name} style={{ width: 132 }}>
+              <div className="box" style={{ background: hex }} />
+              <span>{name}</span>
+              <span className="hex">{hex}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>

@@ -1,6 +1,60 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-215: Unified Library — blank family names in performance detail panel
+Status: Fixed
+File(s): gui_next/src/renderer/src/components/library/DetailPanel.tsx (FamilyCard, FamilyMeter,
+  PerfFamily/PerfRecording interfaces); gui_next/src/renderer/src/screens/ScreenLibrary.tsx:2022
+Reported: 2026-06-19
+Fixed: 2026-06-19
+Root cause: FamilyGroup.label was renamed to tmLabel when the source-type pill replaced the inline
+  source label, but the detail-panel PerfFamily interface still declared `label` and FamilyCard /
+  FamilyMeter still read `fam.label` / `f.label`. The PerformanceDetailPanel call site passed the
+  families with `as any`, suppressing the type error, so `fam.label` resolved to undefined at
+  runtime and every family card heading + meter tooltip rendered an empty name.
+Fix: Aligned PerfFamily with FamilyGroup (label → tmLabel: string | null; removed unused dupes;
+  widened PerfRecording.famConf to number | null to match RecordingRow). FamilyCard/FamilyMeter now
+  render `tmLabel ?? src ?? 'Recording'`. Removed the `as any` cast so tsc enforces the shape —
+  which immediately surfaced the second (FamilyMeter) blank-label site that grep alone had missed.
+
+BUG-212: Pipeline — File blocked after pin-and-continue + rename; must re-pin to unblock
+Status: Fixed
+File(s): backend/app.py:5892-5939 (folder_rename), backend/db.py:rekey_folder_link
+Reported: 2026-06-18
+Fixed: 2026-06-19
+Root cause: folder_lb_link (the "Pin & continue" sticky link) is keyed on the exact folder
+  path. handlePin writes the pin under the pre-rename path. After applyRename physically
+  renames the folder, the frontend refreshes only the file step for the new path — but
+  _pipeline_process_folder always forces lookup back into that step set, and lookup re-runs
+  database.get_folder_links() against the NEW path, finding nothing. For an incomplete-match
+  case this falls through to the unpinned branch, which clears lb_number again, so the file
+  step goes mute and the File button disappears. Re-pinning from Lookup writes a fresh link
+  under the now-current (post-rename) path, which is why a second pin "fixes" it.
+Fix: Added database.rekey_folder_link(old_path, new_path) — UPDATE OR IGNORE moves
+  folder_lb_link row(s) to the new path, then deletes any row left behind by a primary-key
+  conflict (a link already existing under new_path for the same LB#). Wired into
+  folder_rename() right next to the existing BUG-206 my_collection disk_path sync, so both
+  auxiliary tables stay consistent through a rename in one place. 4 new tests in
+  tests/test_db_writes.py::TestFolderLink cover single-link, multi-LB, conflict, and no-op
+  cases.
+
+BUG-214: Performance lens — clicking an ungrouped (non-family) recording row does not update DetailPanel
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenLibrary.tsx:1823-1837 (fam row onClick)
+Reported: 2026-06-19
+Fixed: 2026-06-19
+Root cause: Every "family" row's onClick called setSelectedId(item.perf.id), selecting the
+  parent performance/show rather than the recording. Recordings grouped into a multi-member
+  TapeMatch family render separate indented "member" rows with their own onClick that calls
+  setSelectedMemberLb(rec.lbNumber), correctly showing the recording-specific panel. But
+  recordings with no family grouping render as single-member fam rows (fam.multi === false)
+  with no separate member sub-row — clicking them just re-selected the already-selected
+  performance, so the right panel never changed.
+Fix: fam row onClick now branches on `single` (fam.multi === false): calls
+  setSelectedMemberLb(lone.lbNumber) for ungrouped recordings instead of setSelectedId,
+  matching member-row behavior. Added matching selected-row highlight
+  (var(--lbb-accent-soft)) for the single case.
+
 BUG-209: tapematch run_crawl.sh loops forever on a date with missing sources
 Status: Fixed
 File(s): tools/tapematch/tapematch_session.py:962-977 (run_date), tools/tapematch/gen_analysis.py

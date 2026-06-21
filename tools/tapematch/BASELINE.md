@@ -340,3 +340,45 @@ dates resolved (6 already valid, 1 marked as calibration artifact via
 `SKIP_REASON`). This completes the TODO-139 / CC_TAPEMATCH_FIXES.md task
 sequence (Tasks 2-7); see TODO.md for the final summary and follow-ups
 (TODO-140, TODO-144).
+
+## Speed-offset false-distinct fix — lag-slope ratio refinement (2026-06-21)
+
+**Diagnosis (corpus-wide, latest run per date in `observations.db`).** Of 1580
+curator-says-same (`lb_says_same=1`) pairs, tapematch *disagreed* (called them
+distinct) on 962. The disagreements are sharply speed-correlated:
+
+| group | n | median \|speed\| | median corr |
+|---|---|---|---|
+| tapematch agreed (same) | 618 | 0 ppm | 0.815 |
+| tapematch disagreed (false-distinct) | 962 | **9500 ppm** | **0.004** |
+
+~50% of the false-distinct pairs sit at ≥10000 ppm, and **18% of *all* 7537 pairs
+rail at exactly ≥19500 ppm** — the edge of the old `estimate_ratio` search range
+(0.980–1.020). High-ppm successes exist (e.g. corr 0.988 at 15500 ppm), proving
+the matcher recovers same-source at high ppm *when the ratio estimate is
+accurate* — so the fault was in speed estimation, not the matcher or threshold.
+
+**Mechanism.** The primary residual matrix resamples `other` by the coarse
+envelope `estimate_ratio` (≈500 ppm grid) before the sample-level `residual_corr`
+(`np.diff`). Measured tolerance of a 45 s anchor window: corr 1.0 at ≤20 ppm
+residual, 0.015 at 50 ppm — so the ≤250 ppm left by the coarse grid (and the
+clamped >2% rail) decorrelates true matches.
+
+**Fix (two parts, config-driven; matcher/threshold untouched):**
+1. Widened the coarse search range to ±30000 ppm (`match.ratio_search_*`) so
+   true >2% offsets aren't clamped to the rail.
+2. `match.refine_speed_ratio` — after the coarse resample, the per-anchor
+   lag-vs-position **slope** measures the residual speed directly (lags come from
+   drift-robust music cross-correlation, which survives speed offset even when
+   `residual_corr` has collapsed); ratio ← ratio/(1+slope), iterated to <5 ppm.
+   Only fires for ambiguous high-ppm pairs (`refine.trigger_*`), and cli.py keeps
+   it **only if median residual_corr improves** — self-limiting (cannot
+   manufacture a false merge) and non-regressing.
+
+**Validation.** `tests/test_ratio_refine.py`: recovers known offsets including
++25000 ppm (beyond the old rail) to <60 ppm, sign-checked, with a different-source
+control that stays below `cluster_threshold`. Synthetic corr levels are depressed
+by a double-resample artifact, so ratio recovery is the asserted quantity; the
+production confirmation is a full re-run of the high-ppm dates (e.g. 1990-06-17,
+1990-06-27 from the recent analysis batch) to confirm the false-distinct splits
+collapse into the curator-confirmed families.

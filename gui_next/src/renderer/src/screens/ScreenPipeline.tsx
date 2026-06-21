@@ -2281,21 +2281,21 @@ export function ScreenPipeline(): React.JSX.Element {
 
           {/* Virtualized table */}
           {rows.length > 0 && (
-            <div ref={tableParentRef} style={{ flex: 1, overflow: 'auto', minHeight: 0, position: 'relative' }}>
+            <div ref={tableParentRef} className="pipe-queue-table" style={{ flex: 1, overflow: 'auto', minHeight: 0, position: 'relative' }}>
               <TableShell>
                 <colgroup>
                   <col style={{ width: 3 }} />
                   <col style={{ width: 32 }} />
                   <col />
-                  <col style={{ width: 232 }} />
+                  <col style={{ width: 340 }} />
                   <col style={{ width: 420 }} />
                   <col style={{ width: 104 }} />
-                  <col style={{ width: 224 }} />
+                  <col style={{ width: 160 }} />
                 </colgroup>
                 <thead>
                   <tr>
                     <th style={{ width: 3, padding: 0 }} />
-                    <TH>
+                    <TH align="center">
                       <input
                         type="checkbox"
                         checked={selectedRows.length === visibleRows.length && visibleRows.length > 0}
@@ -2303,9 +2303,9 @@ export function ScreenPipeline(): React.JSX.Element {
                       />
                     </TH>
                     <TH>{t('pipeline.table.folder')}</TH>
-                    <TH>Stages</TH>
-                    <TH>Status</TH>
-                    <TH>{t('pipeline.table.lb')}</TH>
+                    <TH align="center">Stages</TH>
+                    <TH align="center">Status</TH>
+                    <TH align="center">{t('pipeline.table.lb')}</TH>
                     <TH align="right"> </TH>
                   </tr>
                 </thead>
@@ -2356,14 +2356,17 @@ export function ScreenPipeline(): React.JSX.Element {
                         onClick={() => openDetail(r.id)}
                         onContextMenu={e => { e.preventDefault(); setCtxMenu({ x: e.clientX, y: e.clientY, id: r.id }) }}
                       >
-                        <TD onClick={e => e.stopPropagation()}>
+                        <TD align="center" onClick={e => e.stopPropagation()}>
                           <input
                             type="checkbox"
                             checked={r.selected}
                             onChange={e => toggleSelect(r.id, e.shiftKey)}
                           />
                         </TD>
-                        <TD mono style={{ color: r.bucket === 'done' ? 'var(--lbb-fg2)' : 'var(--lbb-fg)' }}>
+                        <TD mono style={{
+                          color: r.bucket === 'done' ? 'var(--lbb-fg2)' : 'var(--lbb-fg)',
+                          whiteSpace: 'normal', overflowWrap: 'anywhere',
+                        }}>
                           {r.folderName}
                           {r.running && (
                             <span style={{ marginLeft: 6, fontSize: 'var(--lbb-fs-9)', color: 'var(--lbb-info-fg)', letterSpacing: 1 }}>···</span>
@@ -2381,8 +2384,8 @@ export function ScreenPipeline(): React.JSX.Element {
                           {(() => {
                             const st = deriveFolderStatus(r)
                             return (
-                              <div style={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
-                                <StatusTag state={st.state}>{st.label}</StatusTag>
+                              <div style={{ display: 'flex', flexDirection: 'column', gap: 3, alignItems: 'center' }}>
+                                <StatusTag state={st.state} style={{ width: '50%', justifyContent: 'center' }}>{st.label}</StatusTag>
                                 {st.reason && (
                                   <span style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)', lineHeight: 1.35 }}>
                                     {st.reason}
@@ -2392,7 +2395,7 @@ export function ScreenPipeline(): React.JSX.Element {
                             )
                           })()}
                         </TD>
-                        <TD mono style={{
+                        <TD mono align="center" style={{
                           color: r.bucket === 'ready' ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg2)',
                           fontWeight: r.bucket === 'ready' ? 600 : undefined,
                         }}>

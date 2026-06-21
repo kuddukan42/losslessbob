@@ -250,6 +250,11 @@ def main(argv=None):
     pair_ratios: dict[tuple[int, int], float] = {}  # (i,j) i<j -> speed ratio
     dbg.log(f"MATRIX_START  n_src={n_src}  n_pairs={n_src*(n_src-1)//2}")
 
+    refine_cfg = cfg.get("refine", {}) if isinstance(cfg, dict) else {}
+    refine_on = bool(refine_cfg.get("enabled", True))
+    refine_min_ppm = float(refine_cfg.get("trigger_min_ppm", 2000.0))
+    refine_corr_ceiling = float(refine_cfg.get("trigger_corr_ceiling", 0.60))
+
     for i in range(n_src - 1):
         ri = ref_mono if i == ref_idx else _mmap(names[i])
         for j in range(i + 1, n_src):
@@ -267,9 +272,30 @@ def main(argv=None):
                     continue
                 ra, ob = match.aligned_window(ri, rj_c, sr, ctr, win, lag)
                 corrs.append(abs(match.residual_corr(ra, ob)))
-            M[i, j] = M[j, i] = float(np.median(corrs)) if corrs else 0.0
+            med = float(np.median(corrs)) if corrs else 0.0
             if rj_c is not rj:
                 del rj_c
+
+            # Lag-slope speed refinement: the coarse envelope grid leaves up to
+            # ~250 ppm error, but a 45s residual_corr window tolerates only ~20 ppm.
+            # For an ambiguous high-ppm pair (not already clearly clustered), refine
+            # the ratio from the per-anchor lag slope and keep it only if median
+            # residual_corr improves — so this can rescue a false-distinct pair but
+            # never regresses one.
+            if (refine_on and abs(ppm_val) >= refine_min_ppm
+                    and med < refine_corr_ceiling and len(corrs) >= 3):
+                refined_ratio, refined_corrs = match.refine_speed_ratio(
+                    ri, rj, sr, anchors, cfg, ratio)
+                refined_med = float(np.median(refined_corrs)) if refined_corrs else 0.0
+                if refined_med > med:
+                    dbg.log(f"REFINE  {names[i]}/{names[j]}  "
+                            f"coarse_ppm={ppm_val:+.0f} -> refined_ppm="
+                            f"{(refined_ratio - 1.0) * 1e6:+.0f}  "
+                            f"corr {med:.3f}->{refined_med:.3f}")
+                    med = refined_med
+                    pair_ratios[(i, j)] = refined_ratio
+
+            M[i, j] = M[j, i] = med
             if j != ref_idx:
                 del rj
         if i != ref_idx:

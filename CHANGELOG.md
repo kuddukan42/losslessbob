@@ -1,3 +1,216 @@
+[2026-06-21] — feat(gui): copy forum topic URL to clipboard after a successful post
+Added: gui_next/src/renderer/src/screens/ScreenLibrary.tsx: onForum now reads topic_url from the
+  /api/entry/<lb>/post_forum response and writes it to the clipboard on success (single post copies the
+  one link; batch copies all successful links newline-joined). Single-post toast switched to
+  library.toast.postedForumCopied; batch toast appends library.toast.linksCopiedSuffix.
+Added: gui_next/src/renderer/src/locales/{en,de,es,fr,it,nl}.json: postedForumCopied + linksCopiedSuffix
+  (pluralized) toast strings.
+
+[2026-06-21] — fix(scraper): tapematch speed-offset false-distinct — lag-slope ratio refinement
+Root cause: across observations.db, curator-says-same pairs that tapematch called "distinct" had
+  median |speed| 9500 ppm / median corr 0.004 (vs 0 ppm / 0.815 for the pairs it got right), and 18%
+  of ALL pairs railed at the ±20000 ppm edge of estimate_ratio's search range. The primary residual
+  matrix resamples by the ~500 ppm coarse envelope ratio before the sample-level residual_corr, but a
+  45s window tolerates only ~20 ppm residual speed error (measured: corr 1.0 at ≤20 ppm, 0.015 at
+  50 ppm) — so coarse-grid error and clamped >2% offsets decorrelated true matches.
+Changed: tools/tapematch/tapematch/match.py: estimate_ratio range/resolution now config-driven
+  (match.ratio_search_min/max/steps); added corrected_ratio_from_lags() (pure slope→ratio math,
+  refined = ratio/(1+slope)) and refine_speed_ratio() (iterates the lag-slope correction to <5 ppm).
+  Lags come from drift-robust music cross-correlation, so they stay measurable when residual_corr has
+  collapsed — a far finer, unbounded speed estimate than the envelope grid.
+Changed: tools/tapematch/tapematch/cli.py: primary residual matrix refines the ratio for ambiguous
+  high-ppm pairs (refine.trigger_min_ppm / trigger_corr_ceiling) and keeps it only if median
+  residual_corr improves — self-limiting (cannot manufacture a false merge) and non-regressing.
+Changed: tools/tapematch/config.yaml: widened coarse search to ±30000 ppm; new `refine` block.
+Added: tools/tapematch/tests/test_ratio_refine.py: recovers offsets incl. +25000 ppm (beyond the old
+  rail) to <60 ppm, sign-checked, with a different-source no-merge control. Full suite: 39 pass, 6 new;
+  the 4 failing tests (test_batch_queue / test_find_lb_folders_no_audio) are pre-existing and unrelated.
+Note: validated synthetically (ratio recovery) + safety guard; production confirmation is a full re-run
+  of high-ppm dates (e.g. 1990-06-17, 1990-06-27) to confirm false-distinct splits collapse into the
+  curator-confirmed families. See tools/tapematch/BASELINE.md (2026-06-21 section).
+
+[2026-06-20] — feat(gui): TODO-150 step 10 — Library screen i18n (in-screen strings)
+Added: gui_next/src/renderer/src/locales/en.json: new top-level `library` namespace (~214 keys:
+  lens/actions/groups/bulk/toolbar/facets/views/scope/statusValue/coverageValue/columns/summary/
+  empty/tooltip/ctx/toast/panel/coverage/family/setlist/share/assets), with `_one`/`_other` plural
+  forms for all counted strings.
+Changed: gui_next/src/renderer/src/screens/ScreenLibrary.tsx, components/library/DetailPanel.tsx,
+  components/library/actions.tsx: extracted every hardcoded English string to `t()` calls. The
+  shared action registry (`buildRecordingActions`/`buildPerformanceActions`) and `coverageLabel()`
+  are plain functions, so they now take a `TFunction` param threaded from each caller's
+  `useTranslation()`; every rendering sub-component gained its own `useTranslation()`. Status/view/
+  coverage display values use typed literal-key maps (STATUS_LABEL_KEY/VIEW_LABEL_KEY/
+  COVERAGE_LABEL_KEY) so the typed `t()` resolves them without template-literal keys. All three
+  files are tsc-clean; `electron-vite build` passes.
+Changed: gui_next/src/renderer/src/locales/{de,fr,es,it,nl}.json: filled the new `library` keys via
+  DeepL (~19.7k chars). A few values need a human pass (DeepL quality, not bugs): de
+  `lens.byPerformance` → "Nach Leistung" (wrong sense of "performance"), `panel.youHold_other`
+  garbled, and `summary.toGo`/`facets.decade` came back English in several locales. (The
+  `scripts/deepl_translate_gui_next.py` missing-key/`set_leaf` fixes that made translating a brand-new
+  namespace possible were logged in the earlier DeepL-sweep entry below.)
+
+[2026-06-20] — feat(gui): TODO-155 pipeline stage icons — implement design_handoff_pipeline_icons
+Added: gui_next/src/renderer/src/components/pipeline/PipelineIcon.tsx: new reusable component
+  porting the locked "Pipeline Stage Icons" handoff (Option D tactile tile · Pulse animation ·
+  Vivid palette) into the React stack. Exports <PipelineIcon stage status size />, PipelineGlyph,
+  PIPELINE_STAGES, and PipelineStage/PipelineStatus types. Glyph paths (verify/lookup/rename/
+  lbdir/collect) copied verbatim from the handoff PIPE_GLYPHS; glyph scales to round(size*0.56).
+Added: gui_next/src/renderer/src/index.css: appended the .pipe-tile* visual + animation rules
+  verbatim from the handoff CSS — radial-gradient fill, bevel/lift box-shadows, status modifiers,
+  and the pipeRing/pipeSheen Pulse keyframes wrapped in @media (prefers-reduced-motion:
+  no-preference). Derived shades (hi/lo/shadow/glow) computed via color-mix(in oklab,…) off a
+  single --pipe-mid per status.
+Changed: gui_next/src/renderer/src/components/pipeline/PipelineParts.tsx: StageNode now renders a
+  PipelineIcon tile instead of the old 22px circle (check/x/!/spinner/number), so both the
+  per-row StageTracker (queue table) and the full-width StageStepper (detail view) in
+  ScreenPipeline show the new tiles. Added STAGE_TO_TILE / STATE_TO_TILE maps (tracker 'file'
+  stage → 'collect'; 'mute' state → 'pending'); StageNode gained an optional `size` (default 24)
+  and `n` is now unused (kept for API compatibility). The `current` accent ring is preserved as
+  an outer box-shadow; running stages now Pulse rather than spin. StageTracker (queue-table row)
+  tiles bumped 25% (24→30px), left-aligned with fixed-width connectors and 14px/24px padding so the
+  Pulse rings (which expand ~22px past each tile) have room on all sides instead of clipping at the
+  column edges; ScreenPipeline.tsx Stages column widened 232→340px, which pulls the icon block
+  left. Folder column is the flexible remainder again (~comfortably wide) with word-wrap
+  (whiteSpace:normal + overflowWrap:anywhere) so the occasional long folder name wraps instead of
+  ellipsis; the right cluster (Stages 340 / Status 420 / LB# 104 / actions 160) is now fixed-width
+  and right-anchored, pinning the LB# column to the right edge (a brief earlier pass left actions
+  flexible, which pushed LB# inward with a large right gap). Icons column horizontal padding raised
+  +50% (24→36px) for extra breathing room on both sides. Status-cell pills constrained to 50%
+  width (they were being stretched full-column by the flex-column's default align-items:stretch)
+  and centered in the column (container alignItems:center; pill justifyContent:center) so each pill
+  sits with equal padding on both sides; the LB# column text is now centered (TD/TH align:center)
+  rather than left-justified. Stages and Status column headers also centered (TH align:center) so
+  they sit visually over the icon cluster / centered pills. Column widths unchanged. Added light
+  vertical column-divider lines to the queue table (index.css .pipe-queue-table cell border-right,
+  color-mix 60% of --lbb-border; wrapper div tagged className="pipe-queue-table") — scoped to this
+  table only (not the shared TD/TH primitives), skipping the edge-bar and last columns and the
+  full-width group-header rows. Centered the select checkboxes (header TH + per-row TD align:center)
+  in the left checkbox column.
+
+[2026-06-20] — fix(gui): DeepL i18n sweep — fill all missing/still-English locale strings
+Fixed: scripts/deepl_translate_gui_next.py: two bugs that left whole sections untranslated.
+  (1) set_leaf() walked into intermediate keys without creating them, so any en.json key whose
+  parent subtree was absent from a locale raised KeyError and aborted the run — now uses
+  setdefault to create missing parents. (2) The to_translate selection only re-sent keys that
+  were present-but-still-English; keys missing entirely from a locale were silently skipped
+  (contradicting the skill's documented "missing keys are picked up on the next run"). Added a
+  `missing = path not in target_leaves` branch so absent keys are translated too.
+Changed: gui_next/src/renderer/src/locales/{de,fr,es,it,nl}.json: ran the fixed script — filled
+  ~70 keys per locale that were never propagated (the entire `archiveOrg` upload screen, plus
+  `setup.purges`, `rename.disambiguate`, `pipeline.autoRun*`, `lookup.owned.*`) and re-translated
+  the remaining still-English strings. All five locales now have 0 keys missing vs en.json;
+  residual still-English values are benign (abbreviations LB#/MD5/FFP/ST5, proper nouns
+  Pipeline/Bootlegs/qBittorrent, language endonyms Deutsch/Italiano, {{var}}-only strings).
+Changed: .claude/settings.local.json: updated the stored DEEPL_API_KEY (the previous one was
+  disabled and rejected by DeepL with an authorization failure). DeepL chars used this session: ~13k.
+
+[2026-06-20] — docs(gui+docs): TODO-150 handoff-vs-code gap sweep — theme i18n + doc 07 reconcile
+Fixed: gui_next/src/renderer/src/locales/{de,fr,es,it,nl}.json: the phase-2 Themes additions
+  (Frame theme / Card style controls) shipped with `themes.palette` and `themes.cardStyle` keys in
+  en.json only, so ScreenThemes rendered English fallback strings in the other 5 languages —
+  violating the "all 6 locales together" rule. Added translated palette/cardStyle blocks to all
+  five; all locales now match en's themes keyset exactly.
+Changed: instructions/design_handoff_unified_library/07-tapematch-backend-integration.md: reconciled
+  the spec with shipped behavior — doc still claimed "singletons are excluded (member_count >= 2
+  only)" but tapematch_sync.py syncs them as label='Solo' (per CHANGELOG 2026-06-19). Updated §1,
+  the sync step (§2.3), and the verification note to describe the as-shipped Solo behavior.
+
+[2026-06-19] — fix(gui): BUG-215 blank family names in Unified Library performance detail panel
+Fixed: gui_next/src/renderer/src/components/library/DetailPanel.tsx: FamilyCard and FamilyMeter
+  read fam.label, but the FamilyGroup objects passed from ScreenLibrary carry tmLabel (the field
+  was renamed when the source pill replaced the inline source label). The PerfFamily interface
+  still declared label, and the call site cast families with `as any`, so the mismatch compiled
+  silently and every family card/meter tooltip rendered an empty name. Aligned PerfFamily with
+  FamilyGroup (label → tmLabel, dropped unused dupes; famConf widened to number | null) and now
+  render `tmLabel ?? src ?? 'Recording'`.
+Changed: gui_next/src/renderer/src/screens/ScreenLibrary.tsx: dropped the `families={... as any}`
+  cast on PerformanceDetailPanel so TypeScript verifies the shape and catches future drift.
+
+[2026-06-19] — fix(backend): BUG-212 pin survives folder rename in pipeline
+Fixed: backend/app.py: folder_rename() — after physically renaming the folder, the sticky
+  "Pin & continue" link in folder_lb_link was left keyed to the old path. The next pipeline
+  run (e.g. the file-step refresh that fires right after a rename) re-resolved lookup against
+  the new path, found no pin, fell back to the raw "Incomplete match" checksum result, and
+  cleared lb_number — leaving the File action unavailable until the user re-pinned manually.
+Added: backend/db.py: rekey_folder_link(old_path, new_path) — moves folder_lb_link row(s) from
+  old_path to new_path (UPDATE OR IGNORE + cleanup of any row left behind by a PK conflict).
+  Wired into folder_rename()'s existing BUG-206 my_collection-sync block.
+Added: tests/test_db_writes.py: TestFolderLink gained 4 cases covering rekey_folder_link
+  (single link, multi-LB links, PK-conflict cleanup, no-op on nonexistent old path).
+
+[2026-06-19] — refactor(gui): remove dup badges from Unified Library performance lens grouped view
+Changed: gui_next/src/renderer/src/screens/ScreenLibrary.tsx: PerformanceLensView family-header row no longer shows the "{N} dup" count Pill, and member rows no longer show the per-recording "dup" Pill — user found them unhelpful. Dropped the now-unused FamilyGroup.dupes field. The flat library list's Dup/Xref column and the DetailPanel's "dup" status pill are unchanged.
+
+[2026-06-19] — refactor(gui): remove acoustic fingerprint references from Unified Library UI
+Changed: gui_next/src/renderer/src/screens/ScreenLibrary.tsx: dropped the FP column/header from the recording-lens table, the "No FP" health filter, the fp field on RecordingRow, the fpMap prefetch merge, and the onRefp/"Re-fingerprint" context-menu handler — the fingerprint feature is being deprecated.
+Changed: gui_next/src/renderer/src/components/library/DetailPanel.tsx: removed the Fingerprint row from the owned-recording metadata card and the "fingerprinted"/"no fingerprint" line from family member rows; dropped fp from DetailRow and PerfRecording.
+Changed: gui_next/src/renderer/src/components/library/actions.tsx: removed the onRefp handler and 'refp' (Re-fingerprint) action from the shared Library action registry.
+Note: ScreenCollection.tsx and the dedicated Fingerprint screen/backend routes are out of scope — they still reference fingerprinting.
+
+[2026-06-19] — feat(gui): add Expand all / Collapse all toggle to Unified Library performance lens
+Added: gui_next/src/renderer/src/screens/ScreenLibrary.tsx: PerformanceLensView filter bar gains an "Expand all"/"Collapse all" button next to the Rating filter — toggles expandedShows for every multi-recording show plus clears collapsedFams in one click, instead of clicking each show's chevron individually; disabled when there are no multi-recording shows to expand
+
+[2026-06-19] — fix(gui): BUG-214 separate source-type label from TapeMatch match-group badge
+Fixed: gui_next/src/renderer/src/screens/ScreenLibrary.tsx: FamilyGroup.label was `famLabel || sourceType`, conflating TapeMatch's match-group name ("Solo"/"Family A"/"Family B") with the tape's source type ("Audience"/"Soundboard"/etc.) in one bold text slot — sibling rows from the same source could show either string with no visual cue they're different dimensions. label now always reflects source type; the TapeMatch name moved to a new tmLabel field rendered as its own info-toned Pill badge with a tooltip.
+Fixed: gui_next/src/renderer/src/screens/ScreenLibrary.tsx: follow-up to the above — the spelled-out source label ("Audience") was then 100% redundant with the existing AUD/SBD source pill since both derived from the same fam.src. Removed FamilyGroup.label and its rendered span; the source pill is now the sole on-screen indicator of source type at the family-row level.
+
+[2026-06-19] — feat(gui): add Year filter to Unified Library performance lens
+Added: gui_next/src/renderer/src/screens/ScreenLibrary.tsx: PerformanceLensView filter bar gains a "Year" dropdown next to "Decade" — activeYear state, facetCounts.yearC, filteredPerfs predicate, clearAll/filterChips/perfActiveCount all wired the same way as the existing Decade filter, just keyed on the exact show year instead of the decade bucket
+
+[2026-06-19] — feat(gui): default Unified Library views hide Private/Missing entries (TODO-154)
+Changed: gui_next/src/renderer/src/screens/ScreenLibrary.tsx: recording lens filteredRows — when no Status filter chip is active (the default), rows with status Private or Missing are now excluded; selecting the Status chip (including Private/Missing themselves) still overrides this and shows exactly the selected statuses, same as any other filter chip
+Changed: gui_next/src/renderer/src/screens/ScreenLibrary.tsx: performance lens performances memo — recordings with status Private/Missing are now dropped from each show's recordings array before family grouping/coverage rollup, unconditionally (no per-recording Status filter exists in that lens, so there's no chip to opt back in with). Shrinks family/coverage counts accordingly (e.g. "3 of 4 families" becomes "3 of 3" if the 4th member was private); a show whose only recordings were private/missing now rolls up as coverage='Undocumented' instead of showing hidden entries
+
+[2026-06-19] — feat(gui+backend): add ALD (Assisted Listening Device) as a 6th source_type value (TODO-153)
+Added: backend/db.py: _SRC_ALD_RE matches \bald\b (case-insensitive); checked first in _classify_source_text(), ahead of Soundboard, since descriptions that mention both (e.g. "Digitally Remastered Soundboard, (assisted listening device (ALD) is the source)") are clarifying the true source, not offering two guesses
+Added: gui_next/src/renderer/src/screens/ScreenLibrary.tsx and gui_next/src/renderer/src/components/library/DetailPanel.tsx: SRC_ABBR/SOURCE_FULL/SRC_HUE maps now include ALD ('ALD' badge, label 'Assisted Listening Device', --lbb-bad-fg hue to stay visually distinct from the other 5)
+Changed: data/losslessbob.db: re-tagged the 37 entries whose description names ALD explicitly with source_type='ALD', overriding whatever the earlier bulk passes had swept them into (21 had become Audience, 13 Soundboard, 3 Mixed); backed up DB first
+
+[2026-06-19] — chore(db): bulk-persisted classify_source_type() guesses into entries.source_type (TODO-153)
+Changed: data/losslessbob.db: entries.source_type was added at schema v8 as a curator-only field, deliberately "never heuristically backfilled" (see comment at backend/db.py:1078-1082) — at user's explicit request, reversed that for this session: ran classify_source_type() over all rows where source_type was NULL and persisted the result for every confident hit. 3,805 rows updated (Audience 3160, Soundboard 579, Mixed 34, FM/Pre-FM 32); the other ~12,825 rows with no confident keyword signal are untouched and remain NULL.
+Changed: data/losslessbob.db: per tape-trading convention (audience is the unstated default for live recordings; soundboard/FM/mixed get called out explicitly because they're notable) — second pass defaults source_type='Audience' for the remaining still-NULL rows where lb_category IN ('concert','unknown') AND description is non-empty (10,972 rows). Deliberately excludes the 408 non-concert rows (studio/tv/interview/compilation/rehearsal/radio/soundcheck — audience-default doesn't fit a TV/radio broadcast or studio session) and the 1,445 rows with a completely empty description (zero text to default from). entries.source_type is now populated for 14,777/16,630 rows (88.8%); 1,853 remain NULL.
+Added: data/backups/losslessbob_2026-06-19_194959_780578_source_type_backfill.db and data/backups/losslessbob_2026-06-19_195814_210904_source_type_audience_default.db: pre-write snapshots via backup_database() for both bulk passes, in case either needs to be reverted.
+
+[2026-06-19] — fix(gui): BUG-214 ungrouped recording rows in performance lens now select into DetailPanel
+Fixed: gui_next/src/renderer/src/screens/ScreenLibrary.tsx: fam row onClick called setSelectedId
+  (the parent performance) for every family row, including single-member (non-TapeMatch-grouped)
+  rows; only true multi-member "member" sub-rows had a click handler that selected the recording
+  itself, so clicking an ungrouped recording silently did nothing to the panel. Single fam rows
+  now call setSelectedMemberLb(lone.lbNumber), matching member-row behavior, and get the same
+  selected-row highlight.
+
+[2026-06-19] — feat(backend): display-only source-type classifier fills SourceBadge gap (TODO-153)
+Added: backend/db.py: classify_source_type()/_classify_source_text() — conservative keyword classifier (Soundboard/FM-Pre-FM/Mixed/Audience) over entries.source_chain (preferred, already label-extracted) falling back to raw description; deliberately excludes "Master" (too ambiguous — usually means tape generation, not source type, in trader lineage text); excludes vinyl "Matrix: BDGD"-style runout codes via negative lookahead so they don't get misread as a SBD+AUD matrix mixdown
+Fixed: backend/db.py: search_entries() and get_performances() now fall back to classify_source_type() display-only when entries.source_type (curator-edited, NULL for all 16,630 rows) is empty — fixes SourceBadge in the Unified Library performance detail panel always rendering blank; classifies ~3,805/16,630 entries (Audience 3160, Soundboard 579, Mixed 34, FM/Pre-FM 32), never written back to the DB column
+Changed: backend/db.py: get_performances() SELECT now also pulls e.description, e.source_chain to feed the classifier
+
+[2026-06-19] — fix(backend): Unified Library date sort now numeric YYYY-MM-DD instead of M/D/YY string
+Fixed: backend/db.py: get_unified_library_performances returned "date" as raw M/D/YY date_str; localeCompare on that sorted Oct 2 after Oct 19; now returns ISO date (YYYY-MM-DD) when available so lexicographic sort is chronologically correct
+
+[2026-06-19] — fix(backend): sync TapeMatch singletons as "Solo" to eliminate orphan Recording rows in Library
+Fixed: backend/tapematch_sync.py: recordings TapeMatch processed but found no acoustic match were silently dropped by the >= 2 singleton filter; now synced into recording_families / tapematch_family_meta with label='Solo', by='ai' so they render as "Solo LB-XXXXX" in the performance lens instead of the confusing fallback "Recording LB-XXXXX"
+
+[2026-06-19] — feat(gui): PerformanceDetailPanel full rewrite to match prototype perf-parts.jsx
+Changed: gui_next/src/renderer/src/components/library/DetailPanel.tsx: complete rewrite of PerformanceDetailPanel; now matches prototype anatomy — DOW badge + CoverageChip identity row → 24px/800-weight date → 14px venue → 12.5px city → 11.5px tour → italic title → ActionBar → weighted FamilyMeter coverage card (with dupe count, upgrade warning, best owned rating) → 3-col Fact cards (Families/Setlist/Length) → RECORDING FAMILIES section with FamilyCard[] (SourceBadge + family label + MatchChip confidence chip + per-member MemberRow with owned/wish/dup pills + fingerprint status) → lazy Setlist from /api/bobdylan/show?date= → AssetStrip scoped to canonical → ShareSeed for owned recordings
+Added: gui_next/src/renderer/src/components/library/DetailPanel.tsx: new subcomponents — CoverageChip, SourceBadge, MatchChip, FamilyMeter, FamilyCard, MemberRow, Setlist, Fact; new PerfFamily and PerfRecording exported interfaces
+Added: gui_next/src/renderer/src/components/Icon.tsx: tapematch icon (tape/waveform shape for TapeMatch AI grouping UI)
+Changed: gui_next/src/renderer/src/screens/ScreenLibrary.tsx: PerformanceDetailPanel call site now passes families={familiesOf(perf.recordings)}
+
+[2026-06-19] — fix(gui): Library filter bar — FilterMenu styling, Views menu, empty Source fix
+Fixed: gui_next/src/renderer/src/screens/ScreenLibrary.tsx: FilterMenu button height 30→28, borderRadius 7→6, inactive fontWeight 550→500, inactive color lbb-fg→lbb-fg2 to match prototype lbb-ui.jsx spec
+Fixed: gui_next/src/renderer/src/screens/ScreenLibrary.tsx: "Recordings" filter label renamed to "Source"; Source filter in both lenses conditionally rendered only when source_type data exists (currently always NULL in DB, so the empty dropdown is hidden rather than showing a broken menu)
+Added: gui_next/src/renderer/src/screens/ScreenLibrary.tsx: PerformanceLensView now has a Views preset menu (All performances / My collection / Coverage gaps / Wishlist / Duplicates) matching the prototype libu-performance.jsx ViewsMenu; wired to perfView state that applies additional post-facet filtering; clearAll resets perfView; active view shows as chip in summary strip
+
+[2026-06-18] — fix(backend): Library performance lens — shows with varying location strings now group correctly
+Fixed: backend/db.py: get_performances() was keying show groups on (date_str, location); recordings for the same concert date with different raw location strings (e.g. "Munich" vs "Munich, West Germany") produced multiple duplicate show rows for the same date. Changed primary grouping key to the resolved ISO date when available — Bob Dylan does not play two venues on the same calendar day, so ISO date alone is the correct deduplication unit. Fallback to raw date_str::location for entries with unresolvable dates (unchanged). Also improved city display: prefers dylan_performances.city over raw entries.location when bobdylan_shows has no match.
+
+[2026-06-18] — feat(gui): Unified Library — detail panel structural fix + performance family auto-expand
+Changed: gui_next/src/renderer/src/components/library/DetailPanel.tsx: rewritten to match prototype panel anatomy — aside container now uses --sep-detail-bg/border/radius/shadow token cascade; width 380 (recording) / 400 (performance); proper header with DETAILS label + Open LB page button + chevRight collapse; scrollable inner div; collapsed-to-40px stub state with info icon; recording panel content restructured (owned-dot pills at top, 16px LB# identity, file metadata grid, catalog note for unowned); performance panel accepts nullable perf with empty-state message; both panels accept open/onToggle props
+Changed: gui_next/src/renderer/src/screens/ScreenLibrary.tsx: added detailPanelOpen state to both recording lens and PerformanceLensView; panels always mounted (collapse to 40px instead of being removed); added useEffect auto-expand of first multi-recording show when performance data loads (mirrors prototype which pre-expands one show so family groups are visible by default)
+
+[2026-06-18] — feat(gui): Unified Library — replace left facet rail with top filter bar per 06-pixel-spec.md
+Changed: gui_next/src/renderer/src/screens/ScreenLibrary.tsx: removed filterPaneOpen state + <aside> facet rail from both lenses; added FilterMenu, MenuLabel, ViewToggle, ScopeControl components; restructured recording lens and PerformanceLensView to 3-bar header stack (toolbar / filter bar / summary strip) with --sep-* CSS tokens; recording lens colgroup updated to 11-col spec (3·34·92·88·88·auto·54·auto·60·52·52 for all/unowned, 3·34·92·88·88·auto·54·250·180·90·44 for owned); performance lens colgroup updated to 10-col spec (3·30·32·116·auto·210·132·56·56·150); BulkActionBar moved to position:absolute float inside table region; ViewToggle moved into each lens toolbar (no longer a separate bar); GroupRow colSpan updated to match new col counts (colCount-1)
+
 [2026-06-18] — fix(backend): make the ruff pre-commit hook cross-platform
 Fixed: .pre-commit-config.yaml: entry hardcoded an absolute Windows path to ruff.exe (set in a
   prior Windows session), which failed every commit on Linux. Switched the hook from

@@ -1,9 +1,11 @@
-import React, { useCallback, useMemo, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import type { TFunction } from 'i18next'
 import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { useVirtualizer } from '@tanstack/react-virtual'
 import { useNavigate } from 'react-router-dom'
 import { Icon } from '../components/Icon'
-import { Chip, IconButton, Input, Pill, Toast, ConfirmDialog } from '../components'
+import { Button, Chip, IconButton, Input, Pill, Toast, ConfirmDialog } from '../components'
 import type { ToastTone } from '../components'
 import { TableShell, TH, TR, TD, GroupRow } from '../components'
 import {
@@ -46,7 +48,7 @@ type RatingGrade = 'A+' | 'A' | 'A-' | 'B+' | 'B' | 'B-' | 'C+' | 'C' | 'C-' | '
 type Scope       = 'all' | 'owned' | 'unowned'
 type SortKey     = 'lb' | 'date' | 'rating'
 type SortDir     = 'asc' | 'desc'
-type HealthFlag  = 'Wishlist' | 'Duplicates' | 'Unconfirmed' | 'No FP'
+type HealthFlag  = 'Wishlist' | 'Duplicates' | 'Unconfirmed'
 
 interface RecordingRow {
   lb: string
@@ -63,7 +65,6 @@ interface RecordingRow {
   wish: boolean
   dup: boolean
   xref: boolean
-  fp: boolean
   unconf: boolean
   folder: string
   path: string
@@ -83,12 +84,12 @@ type FlatItem =
 const VALID_RATINGS = new Set(['A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', 'D', 'D-', 'F'])
 
 const SRC_ABBR: Record<string, string> = {
-  Soundboard: 'SBD', Audience: 'AUD', 'FM/Pre-FM': 'FM', Master: 'MST', Mixed: 'MTX',
+  Soundboard: 'SBD', Audience: 'AUD', 'FM/Pre-FM': 'FM', Master: 'MST', Mixed: 'MTX', ALD: 'ALD',
 }
 
 const SOURCE_FULL: Record<string, string> = {
   Soundboard: 'Soundboard', Audience: 'Audience', 'FM/Pre-FM': 'FM / Pre-FM',
-  Master: 'Master / Studio', Mixed: 'Matrix / Mixed',
+  Master: 'Master / Studio', Mixed: 'Matrix / Mixed', ALD: 'Assisted Listening Device',
 }
 
 const RATING_RANK: Record<string, number> = {
@@ -118,6 +119,19 @@ function statusTone(s: LibStatus): 'ok' | 'warn' | 'mute' {
   return 'mute'
 }
 
+// i18n key maps (literal keys so the typed t() resolves them, vs. template strings).
+const STATUS_LABEL_KEY = {
+  Public: 'library.statusValue.public', Private: 'library.statusValue.private', Missing: 'library.statusValue.missing',
+} as const
+const VIEW_LABEL_KEY: Record<string, 'library.views.allPerformances' | 'library.views.myCollection' | 'library.views.coverageGaps' | 'library.views.wishlist' | 'library.views.duplicates'> = {
+  all: 'library.views.allPerformances', owned: 'library.views.myCollection', gaps: 'library.views.coverageGaps',
+  wishlist: 'library.views.wishlist', duplicates: 'library.views.duplicates',
+}
+const COVERAGE_LABEL_KEY: Record<string, 'library.coverageValue.covered' | 'library.coverageValue.upgrade' | 'library.coverageValue.gap' | 'library.coverageValue.undocumented'> = {
+  Covered: 'library.coverageValue.covered', Upgrade: 'library.coverageValue.upgrade',
+  Gap: 'library.coverageValue.gap', Undocumented: 'library.coverageValue.undocumented',
+}
+
 function ratingTone(r: RatingGrade): 'ok' | 'info' | 'warn' | 'mute' {
   if (r === 'A+' || r === 'A' || r === 'A-') return 'ok'
   if (r === 'B+' || r === 'B' || r === 'B-') return 'info'
@@ -142,45 +156,135 @@ const HEALTH_CHECK: Record<HealthFlag, (r: RecordingRow) => boolean> = {
   Wishlist:     r => r.wish,
   Duplicates:   r => r.dup,
   Unconfirmed:  r => r.owned && r.unconf,
-  'No FP':      r => r.owned && !r.fp,
 }
 
-// ── FacetGroup (mirrors ScreenSearch.tsx's left-rail facet pattern) ───────────
+// ── FilterMenu — dropdown button + popover ────────────────────────────────────
 
-interface FacetGroupProps<T extends string> {
-  title: string
-  items: Array<{ label: T; count: number }>
-  active: Set<T>
-  onToggle: (label: T) => void
-}
-
-function FacetGroup<T extends string>({ title, items, active, onToggle }: FacetGroupProps<T>) {
-  const [open, setOpen] = useState(true)
-  if (items.length === 0) return null
+function FilterMenu({ label, count = 0, children, width = 256, align = 'left' }: {
+  label: string
+  count?: number
+  children: React.ReactNode | ((close: () => void) => React.ReactNode)
+  width?: number
+  align?: 'left' | 'right'
+}) {
+  const [open, setOpen] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+  React.useEffect(() => {
+    if (!open) return
+    const onDoc = (e: MouseEvent) => { if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false) }
+    const onEsc = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false) }
+    document.addEventListener('mousedown', onDoc)
+    document.addEventListener('keydown', onEsc)
+    return () => { document.removeEventListener('mousedown', onDoc); document.removeEventListener('keydown', onEsc) }
+  }, [open])
+  const lit = count > 0 || open
   return (
-    <div style={{ borderBottom: '1px solid var(--lbb-border)' }}>
-      <button
-        type="button"
-        onClick={() => setOpen(o => !o)}
-        style={{
-          width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-          padding: '8px 12px', background: 'none', border: 'none', cursor: 'pointer',
-          fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
-          color: 'var(--lbb-fg3)',
-        }}
-      >
-        {title}
-        <Icon name={open ? 'chevDown' : 'chevRight'} size={11} />
+    <div ref={ref} style={{ position: 'relative', flex: '0 0 auto' }}>
+      <button type="button" onClick={() => setOpen(o => !o)} style={{
+        display: 'inline-flex', alignItems: 'center', gap: 5,
+        height: 28, padding: '0 8px 0 10px', borderRadius: 6, cursor: 'pointer', fontFamily: 'inherit',
+        fontSize: 12, fontWeight: count > 0 ? 650 : 500, whiteSpace: 'nowrap',
+        background: count > 0 ? 'var(--lbb-accent-soft)' : 'var(--lbb-surface)',
+        color: count > 0 ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg2)',
+        border: `1px solid ${lit ? 'var(--lbb-accent-mid)' : 'var(--lbb-border2)'}`,
+      }}>
+        {label}
+        {count > 0 && (
+          <span style={{
+            minWidth: 16, height: 16, padding: '0 4px', borderRadius: 8,
+            background: 'var(--lbb-accent-mid)', color: 'var(--lbb-accent-onMid)',
+            fontSize: 10, fontWeight: 800, display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+          }}>{count}</span>
+        )}
+        <Icon name={open ? 'chevUp' : 'chevDown'} size={12} style={{ opacity: 0.55 }} />
       </button>
       {open && (
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4, padding: '0 10px 10px' }}>
-          {items.map(({ label, count }) => (
-            <Chip key={label} size="sm" active={active.has(label)} onClick={() => onToggle(label)} count={count}>
-              {label}
-            </Chip>
-          ))}
+        <div onClick={e => e.stopPropagation()} style={{
+          position: 'absolute', top: 'calc(100% + 6px)', [align]: 0, width, zIndex: 80,
+          background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border2)',
+          borderRadius: 10, boxShadow: 'var(--lbb-shadowLg)', padding: 12,
+          maxHeight: 420, overflowY: 'auto',
+        }}>
+          {typeof children === 'function' ? children(() => setOpen(false)) : children}
         </div>
       )}
+    </div>
+  )
+}
+
+function MenuLabel({ children }: { children: React.ReactNode }) {
+  return (
+    <div style={{ marginBottom: 8, fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--lbb-fg3)' }}>
+      {children}
+    </div>
+  )
+}
+
+// ── ViewToggle — segmented lens switcher ──────────────────────────────────────
+
+function ViewToggle({ value, onChange }: {
+  value: 'performance' | 'recording'
+  onChange: (v: 'performance' | 'recording') => void
+}) {
+  const { t } = useTranslation()
+  return (
+    <div style={{
+      display: 'flex', padding: 2, borderRadius: 8, flex: '0 0 auto',
+      background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
+    }}>
+      {(['performance', 'recording'] as const).map(l => {
+        const active = value === l
+        return (
+          <button key={l} type="button" onClick={() => onChange(l)} style={{
+            display: 'inline-flex', alignItems: 'center', height: 28, padding: '0 12px', borderRadius: 6,
+            background: active ? 'var(--lbb-surface)' : 'transparent',
+            color: active ? 'var(--lbb-fg)' : 'var(--lbb-fg2)',
+            border: active ? '1px solid var(--lbb-border2)' : '1px solid transparent',
+            boxShadow: active ? 'var(--lbb-shadow)' : 'none',
+            fontSize: 12, fontWeight: active ? 650 : 500, cursor: 'pointer', fontFamily: 'inherit', whiteSpace: 'nowrap',
+          }}>
+            {l === 'performance' ? t('library.lens.byPerformance') : t('library.lens.byRecording')}
+          </button>
+        )
+      })}
+    </div>
+  )
+}
+
+// ── ScopeControl — segmented ownership scope ──────────────────────────────────
+
+function ScopeControl({ value, onChange, allCount, ownedCount }: {
+  value: Scope; onChange: (v: Scope) => void; allCount: number; ownedCount: number
+}) {
+  const { t } = useTranslation()
+  const opts: [Scope, string, number][] = [
+    ['all', t('library.scope.everything'), allCount],
+    ['owned', t('library.scope.myCollection'), ownedCount],
+    ['unowned', t('library.scope.notOwned'), allCount - ownedCount],
+  ]
+  return (
+    <div style={{
+      display: 'flex', padding: 2, borderRadius: 8, flex: '0 0 auto',
+      background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
+    }}>
+      {opts.map(([opt, lbl, n]) => {
+        const active = value === opt
+        return (
+          <button key={opt} type="button" onClick={() => onChange(opt)} style={{
+            display: 'inline-flex', alignItems: 'center', gap: 7, height: 28, padding: '0 12px', borderRadius: 6,
+            background: active ? 'var(--lbb-surface)' : 'transparent',
+            color: active ? 'var(--lbb-fg)' : 'var(--lbb-fg2)',
+            border: active ? '1px solid var(--lbb-border2)' : '1px solid transparent',
+            boxShadow: active ? 'var(--lbb-shadow)' : 'none',
+            fontSize: 12, fontWeight: active ? 650 : 500, cursor: 'pointer', fontFamily: 'inherit', whiteSpace: 'nowrap',
+          }}>
+            {lbl}
+            <span style={{ fontSize: 10.5, fontVariantNumeric: 'tabular-nums', color: active ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg3)', fontWeight: 600 }}>
+              {n.toLocaleString()}
+            </span>
+          </button>
+        )
+      })}
     </div>
   )
 }
@@ -191,14 +295,16 @@ function ActiveFilter({ label, onRemove }: { label: string; onRemove: () => void
   return (
     <span style={{
       display: 'inline-flex', alignItems: 'center', gap: 4,
-      padding: '2px 8px', borderRadius: 4, fontSize: 'var(--lbb-fs-11)',
-      background: 'var(--lbb-accent-soft)', color: 'var(--lbb-accent-mid)', fontWeight: 600, whiteSpace: 'nowrap',
+      padding: '2px 4px 2px 8px', borderRadius: 4,
+      background: 'var(--lbb-accent-soft)', color: 'var(--lbb-accent-mid)',
+      fontSize: 11, fontWeight: 600, whiteSpace: 'nowrap',
     }}>
       {label}
-      <button
-        type="button" onClick={onRemove}
-        style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'currentColor', padding: 0, display: 'flex' }}
-      >
+      <button type="button" onClick={onRemove} style={{
+        width: 16, height: 16, borderRadius: 3, padding: 0,
+        background: 'transparent', border: 'none', color: 'currentColor',
+        cursor: 'pointer', display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+      }}>
         <Icon name="x" size={10} />
       </button>
     </span>
@@ -211,14 +317,15 @@ export function ScreenLibrary(): React.JSX.Element {
   // ── TODO-150 step 6: lens toggle. "By performance" is the new, richer view
   // (00-overview.md "One catalogue, two lenses"); "By recording" is this
   // screen's original step-4 flat table. Both read the same merged `rows`.
+  const { t } = useTranslation()
   const [lens, setLens] = useState<'performance' | 'recording'>('performance')
 
-  const [filterPaneOpen, setFilterPaneOpen] = useState(true)
   const [scope,    setScope]    = useState<Scope>('all')
   const [query,    setQuery]    = useState('')
   const [groupByYear, setGroupByYear] = useState(true)
   const [collapsedYears, setCollapsedYears] = useState<Set<string>>(new Set())
   const [selectedLb, setSelectedLb] = useState<number | null>(null)
+  const [detailPanelOpen, setDetailPanelOpen] = useState(true)
   const [sortKey, setSortKey] = useState<SortKey>('lb')
   const [sortDir, setSortDir] = useState<SortDir>('asc')
   // TODO-150 step 7: checkbox multi-select for the recording lens's bulk bar.
@@ -266,11 +373,11 @@ export function ScreenLibrary(): React.JSX.Element {
           body: JSON.stringify({ paths: [row.path] }),
         })
         const data = await resp.json()
-        if (!data.ok) showToast(data.error || 'VLC not found', 'bad')
-      } catch { showToast('VLC request failed', 'bad') }
+        if (!data.ok) showToast(data.error || t('library.toast.vlcNotFound'), 'bad')
+      } catch { showToast(t('library.toast.vlcFailed'), 'bad') }
     },
     onReveal: async (row) => {
-      if (!row.path) { showToast('No disk path for this entry', 'info'); return }
+      if (!row.path) { showToast(t('library.toast.noDiskPath'), 'info'); return }
       await window.api.openPath(row.path)
     },
     onQbt: async (rows) => {
@@ -282,12 +389,12 @@ export function ScreenLibrary(): React.JSX.Element {
           body: JSON.stringify({ lb_numbers: lbs }),
         })
         const data = await resp.json()
-        showToast(`Added ${data.added ?? 0}/${data.total ?? lbs.length} to qBittorrent`, data.ok ? 'ok' : 'bad')
-      } catch { showToast('qBittorrent request failed', 'bad') }
+        showToast(t('library.toast.qbtAdded', { added: data.added ?? 0, total: data.total ?? lbs.length }), data.ok ? 'ok' : 'bad')
+      } catch { showToast(t('library.toast.qbtFailed'), 'bad') }
     },
     onTorrent: async (rows) => {
       const targets = rows.filter(r => r.path)
-      if (!targets.length) { showToast('No disk path for this entry', 'info'); return }
+      if (!targets.length) { showToast(t('library.toast.noDiskPath'), 'info'); return }
       setActionBusy(true)
       let ok = 0; let fail = 0
       for (const r of targets) {
@@ -301,10 +408,10 @@ export function ScreenLibrary(): React.JSX.Element {
         } catch { fail++ }
       }
       setActionBusy(false)
-      showToast(`${ok} torrent${ok !== 1 ? 's' : ''} created${fail > 0 ? `, ${fail} failed` : ''}`, ok > 0 ? 'ok' : 'bad')
+      showToast(t('library.toast.torrentsCreated', { count: ok }) + (fail > 0 ? t('library.toast.failedSuffix', { count: fail }) : ''), ok > 0 ? 'ok' : 'bad')
     },
     onForum: (rows) => {
-      const postOne = async (r: ActionRow) => {
+      const postOne = async (r: ActionRow): Promise<{ ok: boolean; topicUrl: string }> => {
         try {
           const previewResp = await fetch(`${BASE}/api/entry/${r.lbNumber}/preview_forum`)
           const previewData = await previewResp.json()
@@ -312,34 +419,52 @@ export function ScreenLibrary(): React.JSX.Element {
             method: 'POST', headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ subject: previewData.subject ?? '', body: previewData.body ?? '' }),
           })
-          return (await postResp.json()).ok as boolean
-        } catch { return false }
+          const data = await postResp.json()
+          return { ok: !!data.ok, topicUrl: data.topic_url ?? '' }
+        } catch { return { ok: false, topicUrl: '' } }
+      }
+      const copyUrls = (urls: string[]) => {
+        if (urls.length === 0) return
+        navigator.clipboard.writeText(urls.join('\n')).catch(() => {})
       }
       if (rows.length === 1) {
-        postOne(rows[0]).then(ok => showToast(ok ? `Posted ${rows[0].lb} to forum` : 'Forum post failed', ok ? 'ok' : 'bad'))
+        postOne(rows[0]).then(({ ok, topicUrl }) => {
+          if (ok && topicUrl) {
+            copyUrls([topicUrl])
+            showToast(t('library.toast.postedForumCopied', { lb: rows[0].lb }), 'ok')
+          } else {
+            showToast(ok ? t('library.toast.postedForum', { lb: rows[0].lb }) : t('library.toast.forumPostFailed'), ok ? 'ok' : 'bad')
+          }
+        })
         return
       }
       setConfirm({
-        title: 'Post to forum',
-        body: `Post ${rows.length} entries to the forum? Each will be posted using its auto-generated subject and body.`,
+        title: t('library.ctx.postForum'),
+        body: t('library.toast.confirmForumBody', { count: rows.length }),
         onConfirm: async () => {
           setConfirm(null)
           setActionBusy(true)
           let ok = 0; let fail = 0
-          for (const r of rows) { if (await postOne(r)) ok++; else fail++ }
+          const urls: string[] = []
+          for (const r of rows) {
+            const res = await postOne(r)
+            if (res.ok) { ok++; if (res.topicUrl) urls.push(res.topicUrl) } else fail++
+          }
+          copyUrls(urls)
           setActionBusy(false)
-          showToast(`${ok} post${ok !== 1 ? 's' : ''} created${fail > 0 ? `, ${fail} failed` : ''}`, ok > 0 ? 'ok' : 'bad')
+          const base = t('library.toast.postsCreated', { count: ok }) + (fail > 0 ? t('library.toast.failedSuffix', { count: fail }) : '')
+          showToast(ok > 0 && urls.length > 0 ? base + t('library.toast.linksCopiedSuffix', { count: urls.length }) : base, ok > 0 ? 'ok' : 'bad')
         },
       })
     },
     onM3u: async (rows) => {
       const lbs = rows.map(r => r.lbNumber)
-      if (!lbs.length) { showToast('No owned recordings to export', 'info'); return }
+      if (!lbs.length) { showToast(t('library.toast.noOwnedExport'), 'info'); return }
       try {
         const resp = await fetch(`${BASE}/api/collection/export/m3u?lb_numbers=${lbs.join(',')}`)
         const blob = await resp.blob()
         blobDownload(blob, 'show.m3u')
-      } catch { showToast('M3U export failed', 'bad') }
+      } catch { showToast(t('library.toast.m3uFailed'), 'bad') }
     },
     onAttach: (row) => { setActiveAttachLb(row.lbNumber); navigate('/attachments') },
     onSpectro: async (row) => {
@@ -351,25 +476,14 @@ export function ScreenLibrary(): React.JSX.Element {
         })
         const data = await resp.json()
         if (data.ok) { addPendingSpectro([row.path]); navigate('/spectrograms') }
-        else showToast(data.error || 'Spectrogram request failed', 'bad')
-      } catch { showToast('Spectrogram request failed', 'bad') }
+        else showToast(data.error || t('library.toast.spectroFailed'), 'bad')
+      } catch { showToast(t('library.toast.spectroFailed'), 'bad') }
     },
     onMap: () => navigate('/map'),
     onReconfirm: (row) => {
       if (!row.path) return
       addToFolderQueue([row.path])
       navigate('/verify')
-    },
-    onRefp: async (row) => {
-      if (!row.path) return
-      try {
-        const resp = await fetch(`${BASE}/api/fingerprint/build`, {
-          method: 'POST', headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ folders: [{ disk_path: row.path, lb_number: row.lbNumber }] }),
-        })
-        const data = await resp.json()
-        showToast(data.ok ? `Fingerprinting ${row.lb}` : (data.error || 'Fingerprint failed'), data.ok ? 'ok' : 'bad')
-      } catch { showToast('Fingerprint request failed', 'bad') }
     },
     onRelocate: async (rows) => {
       if (!rows.length) return
@@ -383,9 +497,9 @@ export function ScreenLibrary(): React.JSX.Element {
             method: 'PATCH', headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ disk_path: dir, folder_name: folderName }),
           })
-          showToast(`Updated location for ${target.lb}`, 'ok')
+          showToast(t('library.toast.locationUpdated', { lb: target.lb }), 'ok')
           refreshCollection()
-        } catch { showToast('Update failed', 'bad') }
+        } catch { showToast(t('library.toast.updateFailed'), 'bad') }
         return
       }
       const parentDir = await window.api.pickDir()
@@ -411,14 +525,14 @@ export function ScreenLibrary(): React.JSX.Element {
         }
       } catch { skip = rows.length }
       setActionBusy(false)
-      showToast(`Updated ${ok}${skip > 0 ? `, ${skip} not found` : ''}`, ok > 0 ? 'ok' : 'info')
+      showToast(t('library.toast.updated', { count: ok }) + (skip > 0 ? t('library.toast.notFoundSuffix', { count: skip }) : ''), ok > 0 ? 'ok' : 'info')
       if (ok > 0) refreshCollection()
     },
     onRemove: (rows) => {
       if (!rows.length) return
       setConfirm({
-        title: 'Remove from collection',
-        body: `Remove ${rows.length} item${rows.length !== 1 ? 's' : ''} from your collection? Files on disk will not be deleted.`,
+        title: t('library.ctx.removeCollection'),
+        body: t('library.toast.confirmRemoveBody', { count: rows.length }),
         onConfirm: async () => {
           setConfirm(null)
           setActionBusy(true)
@@ -427,7 +541,7 @@ export function ScreenLibrary(): React.JSX.Element {
             try { await fetch(`${BASE}/api/collection/${r.lbNumber}`, { method: 'DELETE' }); ok++ } catch { fail++ }
           }
           setActionBusy(false)
-          showToast(`Removed ${ok}${fail > 0 ? `, ${fail} failed` : ''}`, ok > 0 ? 'ok' : 'bad')
+          showToast(t('library.toast.removed', { count: ok }) + (fail > 0 ? t('library.toast.failedSuffix', { count: fail }) : ''), ok > 0 ? 'ok' : 'bad')
           refreshCollection()
         },
       })
@@ -436,16 +550,16 @@ export function ScreenLibrary(): React.JSX.Element {
       try {
         if (row.wish) {
           await fetch(`${BASE}/api/wishlist/${row.lbNumber}`, { method: 'DELETE' })
-          showToast(`Removed ${row.lb} from wishlist`, 'ok')
+          showToast(t('library.toast.wishlistRemoved', { lb: row.lb }), 'ok')
         } else {
           await fetch(`${BASE}/api/wishlist`, {
             method: 'POST', headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ lb_number: row.lbNumber }),
           })
-          showToast(`Added ${row.lb} to wishlist`, 'ok')
+          showToast(t('library.toast.wishlistAdded', { lb: row.lb }), 'ok')
         }
         refreshCollection()
-      } catch { showToast('Wishlist update failed', 'bad') }
+      } catch { showToast(t('library.toast.wishlistFailed'), 'bad') }
     },
     onWishlistAddMany: async (rows) => {
       if (!rows.length) return
@@ -459,10 +573,10 @@ export function ScreenLibrary(): React.JSX.Element {
           ok++
         } catch { /* continue */ }
       }
-      showToast(`Added ${ok} to wishlist`, ok > 0 ? 'ok' : 'bad')
+      showToast(t('library.toast.wishlistAddedCount', { count: ok }), ok > 0 ? 'ok' : 'bad')
       if (ok > 0) refreshCollection()
     },
-  }), [showToast, refreshCollection, navigate, setActiveAttachLb, addPendingSpectro, addToFolderQueue])
+  }), [t, showToast, refreshCollection, navigate, setActiveAttachLb, addPendingSpectro, addToFolderQueue])
 
   const { menu: ctxMenu, openMenu: openCtxMenu, closeMenu: closeCtxMenu } = useActionMenu()
 
@@ -533,8 +647,6 @@ export function ScreenLibrary(): React.JSX.Element {
         })
       }
     }
-    const fpMap: Record<string, number> =
-      prefetch && prefetch.fingerprints && !prefetch.fingerprints.error ? prefetch.fingerprints : {}
     const wishSet = new Set<number>(
       prefetch && Array.isArray(prefetch.wishlist) ? prefetch.wishlist.map((w: any) => w.lb_number) : []
     )
@@ -571,7 +683,6 @@ export function ScreenLibrary(): React.JSX.Element {
         wish:     wishSet.has(lbNumber),
         dup:      dupSet.has(lbNumber),
         xref:     xrefSet.has(lbNumber),
-        fp:       (fpMap[String(lbNumber)] ?? 0) > 0,
         unconf:   owned && !own?.conf,
         folder:   own?.folder ?? '',
         path:     own?.path ?? '',
@@ -613,7 +724,13 @@ export function ScreenLibrary(): React.JSX.Element {
       if (scope === 'unowned' &&  r.owned) return false
       if (q && !`${r.lb} ${r.loc} ${r.desc}`.toLowerCase().includes(q)) return false
       if (activeDecade.size > 0 && !activeDecade.has(r.decade)) return false
-      if (activeStatus.size > 0 && !activeStatus.has(r.status)) return false
+      // Default view hides Private/Missing entries; an explicit Status chip
+      // (including selecting Private or Missing themselves) overrides this.
+      if (activeStatus.size > 0) {
+        if (!activeStatus.has(r.status)) return false
+      } else if (r.status === 'Private' || r.status === 'Missing') {
+        return false
+      }
       if (activeRating.size > 0 && !activeRating.has(r.rating)) return false
       if (activeSource.size > 0 && !activeSource.has(r.src ?? 'Unset')) return false
       if (activeHealth.size > 0 && ![...activeHealth].some(h => HEALTH_CHECK[h](r))) return false
@@ -675,7 +792,7 @@ export function ScreenLibrary(): React.JSX.Element {
     overscan: 12,
   })
 
-  const colCount = 9 // edge + checkbox + LB# + Status + Date + Location + Rating + Source + Own
+  const colCount = 10 // edge + checkbox + LB# + Status + Date + Location + Rating + (scope-dependent cols)
 
   // ── TODO-150 step 7: checkbox selection + right-click target rows ──────────
   // Mirrors ScreenCollection.tsx's getCtxRows(): right-click a checked row to
@@ -710,6 +827,7 @@ export function ScreenLibrary(): React.JSX.Element {
 
   const hasActiveFilters = activeDecade.size > 0 || activeStatus.size > 0 || activeRating.size > 0
     || activeSource.size > 0 || activeHealth.size > 0 || scope !== 'all'
+  const recActiveCount = activeDecade.size + activeStatus.size + activeRating.size + activeSource.size + activeHealth.size + (scope !== 'all' ? 1 : 0)
 
   const clearAll = () => {
     setActiveDecade(new Set()); setActiveStatus(new Set()); setActiveRating(new Set())
@@ -717,37 +835,14 @@ export function ScreenLibrary(): React.JSX.Element {
   }
 
   const filterChips: Array<{ label: string; onRemove: () => void }> = [
-    ...[...activeDecade].map(d => ({ label: `Decade: ${d}`, onRemove: () => toggleSet(setActiveDecade, d) })),
-    ...[...activeStatus].map(s => ({ label: `Status: ${s}`, onRemove: () => toggleSet(setActiveStatus, s) })),
-    ...[...activeRating].map(r => ({ label: `Rating: ${r}`, onRemove: () => toggleSet(setActiveRating, r) })),
-    ...[...activeSource].map(s => ({ label: `Source: ${s}`, onRemove: () => toggleSet(setActiveSource, s) })),
+    ...[...activeDecade].map(d => ({ label: `${t('library.facets.decade')}: ${d}`, onRemove: () => toggleSet(setActiveDecade, d) })),
+    ...[...activeStatus].map(s => ({ label: `${t('library.facets.status')}: ${t(STATUS_LABEL_KEY[s])}`, onRemove: () => toggleSet(setActiveStatus, s) })),
+    ...[...activeRating].map(r => ({ label: `${t('library.facets.rating')}: ${r}`, onRemove: () => toggleSet(setActiveRating, r) })),
+    ...[...activeSource].map(s => ({ label: `${t('library.facets.source')}: ${s}`, onRemove: () => toggleSet(setActiveSource, s) })),
     ...[...activeHealth].map(h => ({ label: h, onRemove: () => toggleSet(setActiveHealth, h) })),
   ]
 
   const loading = catalogLoading && rows.length === 0
-
-  const lensToggle = (
-    <div style={{
-      display: 'flex', alignItems: 'center', gap: 8,
-      padding: '8px 14px', borderBottom: '1px solid var(--lbb-border)', flexShrink: 0,
-    }}>
-      <div style={{ display: 'inline-flex', border: '1px solid var(--lbb-border2)', borderRadius: 6, overflow: 'hidden' }}>
-        {(['performance', 'recording'] as const).map(l => (
-          <button
-            key={l} type="button" onClick={() => setLens(l)}
-            style={{
-              padding: '5px 12px', fontSize: 'var(--lbb-fs-12)', fontWeight: lens === l ? 650 : 500,
-              background: lens === l ? 'var(--lbb-accent-soft)' : 'var(--lbb-surface)',
-              color: lens === l ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg2)',
-              border: 'none', cursor: 'pointer',
-            }}
-          >
-            {l === 'performance' ? 'By performance' : 'By recording'}
-          </button>
-        ))}
-      </div>
-    </div>
-  )
 
   // ── TODO-150 step 7: overlays shared by both lenses (context menu, toast,
   // confirm dialog) — rendered once per branch since each `return` is a
@@ -770,8 +865,8 @@ export function ScreenLibrary(): React.JSX.Element {
   if (lens === 'performance') {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', height: '100%', minHeight: 0 }} data-screen-label="Library (by performance)">
-        {lensToggle}
         <PerformanceLensView
+          lens={lens} setLens={setLens}
           rows={rows} catalogLoading={loading} actionHandlers={actionHandlers} openCtxMenu={openCtxMenu}
           historyMap={historyMap} attachCountMap={attachCountMap}
         />
@@ -782,208 +877,166 @@ export function ScreenLibrary(): React.JSX.Element {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%', minHeight: 0 }} data-screen-label="Library (by recording)">
-      {lensToggle}
-      <div style={{ flex: 1, display: 'flex', minHeight: 0 }}>
 
-      {/* ── Facet rail ──────────────────────────────────────────────────── */}
-      <aside style={{
-        width: filterPaneOpen ? 220 : 32, flexShrink: 0,
-        borderRight: '1px solid var(--lbb-border)',
-        display: 'flex', flexDirection: 'column',
-        background: 'var(--lbb-surface2)',
-        overflowY: filterPaneOpen ? 'auto' : 'hidden',
-        overflowX: 'hidden',
-        transition: 'width 180ms ease',
+      {/* ── Toolbar ──────────────────────────────────────────────────────── */}
+      <div style={{
+        display: 'flex', alignItems: 'center', gap: 10, flexShrink: 0,
+        padding: '12px 20px', borderBottom: '1px solid var(--lbb-border)',
+        background: 'var(--sep-chrome-bg, var(--lbb-surface))', zIndex: 4,
       }}>
-        {!filterPaneOpen ? (
-          <button type="button" title="Show filters" onClick={() => setFilterPaneOpen(true)} style={{
-            margin: '8px auto', display: 'flex', alignItems: 'center', justifyContent: 'center',
-            width: 24, height: 24, borderRadius: 4, flexShrink: 0,
-            background: 'none', border: '1px solid var(--lbb-border2)', cursor: 'pointer', color: 'var(--lbb-fg3)',
-          }}>
-            <Icon name="chevRight" size={13} />
-          </button>
-        ) : (
-          <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '6px 8px 0', flexShrink: 0 }}>
-            <button type="button" title="Hide filters" onClick={() => setFilterPaneOpen(false)} style={{
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              width: 22, height: 22, borderRadius: 4,
-              background: 'none', border: '1px solid var(--lbb-border2)', cursor: 'pointer', color: 'var(--lbb-fg3)',
-            }}>
-              <Icon name="chevLeft" size={13} />
-            </button>
-          </div>
-        )}
+        <ViewToggle value={lens} onChange={setLens} />
+        <span style={{ width: 1, height: 22, background: 'var(--lbb-border)', flexShrink: 0 }} />
+        <ScopeControl value={scope} onChange={setScope} allCount={rows.length} ownedCount={ownedCount} />
+        <Input
+          icon="search" placeholder={t('library.toolbar.searchRecording')}
+          value={query} onChange={e => setQuery(e.target.value)}
+          style={{ flex: 1, height: 32 }}
+        />
+        <Button variant="secondary" size="md" onClick={() => setGroupByYear(g => !g)}>{t('library.toolbar.columns')}</Button>
+        <IconButton icon="download" title={t('library.toolbar.export')} />
+        <IconButton icon="more" title={t('library.toolbar.more')} />
+      </div>
 
-        {filterPaneOpen && <>
-          {/* Scope */}
-          <div style={{ borderBottom: '1px solid var(--lbb-border)', padding: '8px 12px' }}>
-            <div style={{
-              fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
-              color: 'var(--lbb-fg3)', marginBottom: 8,
-            }}>
-              Scope
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', border: '1px solid var(--lbb-border2)', borderRadius: 6, overflow: 'hidden' }}>
-              {([
-                ['all', 'Everything', rows.length],
-                ['owned', 'My collection', ownedCount],
-                ['unowned', 'Not owned', rows.length - ownedCount],
-              ] as [Scope, string, number][]).map(([opt, label, n], i) => (
-                <button
-                  key={opt} type="button" onClick={() => setScope(opt)}
-                  style={{
-                    display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                    padding: '5px 10px', fontSize: 'var(--lbb-fs-11)', cursor: 'pointer',
-                    background: scope === opt ? 'var(--lbb-accent-soft)' : 'var(--lbb-surface)',
-                    color: scope === opt ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg2)',
-                    fontWeight: scope === opt ? 600 : 400,
-                    border: 'none', borderTop: i > 0 ? '1px solid var(--lbb-border2)' : 'none',
-                  }}
-                >
-                  <span>{label}</span>
-                  <span style={{ fontVariantNumeric: 'tabular-nums', color: 'var(--lbb-fg3)' }}>{n.toLocaleString()}</span>
-                </button>
+      {/* ── Filter bar ───────────────────────────────────────────────────── */}
+      <div style={{
+        display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap', flexShrink: 0,
+        padding: '8px 20px', borderBottom: '1px solid var(--lbb-border)',
+        background: 'var(--sep-summary-bg, var(--lbb-surface))', zIndex: 3,
+      }}>
+        <FilterMenu label={t('library.facets.decade')} count={activeDecade.size}>
+          <MenuLabel>{t('library.facets.decade')}</MenuLabel>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
+            {Object.entries(facetCounts.decadeC).sort(([a], [b]) => a.localeCompare(b)).map(([lbl, cnt]) => (
+              <Chip key={lbl} size="sm" active={activeDecade.has(lbl)} onClick={() => toggleSet(setActiveDecade, lbl)} count={cnt}>{lbl}</Chip>
+            ))}
+          </div>
+        </FilterMenu>
+        <FilterMenu label={t('library.facets.status')} count={activeStatus.size}>
+          <MenuLabel>{t('library.facets.status')}</MenuLabel>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
+            {(['Public', 'Private', 'Missing'] as LibStatus[]).map(s => (
+              <Chip key={s} size="sm" active={activeStatus.has(s)} onClick={() => toggleSet(setActiveStatus, s)} count={facetCounts.statusC[s] ?? 0}>{t(STATUS_LABEL_KEY[s])}</Chip>
+            ))}
+          </div>
+        </FilterMenu>
+        <FilterMenu label={t('library.facets.rating')} count={activeRating.size}>
+          <MenuLabel>{t('library.facets.rating')}</MenuLabel>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
+            {Object.entries(facetCounts.ratingC).map(([lbl, cnt]) => (
+              <Chip key={lbl} size="sm" active={activeRating.has(lbl as RatingGrade)} onClick={() => toggleSet(setActiveRating, lbl as RatingGrade)} count={cnt}>{lbl}</Chip>
+            ))}
+          </div>
+        </FilterMenu>
+        {Object.keys(facetCounts.sourceC).length > 0 && (
+          <FilterMenu label={t('library.facets.source')} count={activeSource.size}>
+            <MenuLabel>{t('library.facets.source')}</MenuLabel>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
+              {Object.entries(facetCounts.sourceC).map(([lbl, cnt]) => (
+                <Chip key={lbl} size="sm" active={activeSource.has(lbl)} onClick={() => toggleSet(setActiveSource, lbl)} count={cnt}>{lbl}</Chip>
               ))}
             </div>
-          </div>
-
-          <FacetGroup
-            title="Decade"
-            items={Object.entries(facetCounts.decadeC).sort(([a], [b]) => a.localeCompare(b)).map(([label, count]) => ({ label, count }))}
-            active={activeDecade}
-            onToggle={v => toggleSet(setActiveDecade, v)}
-          />
-          <FacetGroup
-            title="Status"
-            items={(['Public', 'Private', 'Missing'] as LibStatus[]).map(label => ({ label, count: facetCounts.statusC[label] ?? 0 }))}
-            active={activeStatus}
-            onToggle={v => toggleSet(setActiveStatus, v)}
-          />
-          <FacetGroup
-            title="Rating"
-            items={Object.entries(facetCounts.ratingC).map(([label, count]) => ({ label: label as RatingGrade, count }))}
-            active={activeRating}
-            onToggle={v => toggleSet(setActiveRating, v)}
-          />
-          <FacetGroup
-            title="Source"
-            items={Object.entries(facetCounts.sourceC).map(([label, count]) => ({ label, count }))}
-            active={activeSource}
-            onToggle={v => toggleSet(setActiveSource, v)}
-          />
-          <FacetGroup
-            title="Health"
-            items={(Object.keys(HEALTH_CHECK) as HealthFlag[]).map(label => ({ label, count: facetCounts.healthC[label] ?? 0 }))}
-            active={activeHealth}
-            onToggle={v => toggleSet(setActiveHealth, v)}
-          />
-
-          <div style={{ padding: '10px 12px', marginTop: 'auto' }}>
-            <button
-              type="button" onClick={clearAll} disabled={!hasActiveFilters}
-              style={{
-                width: '100%', padding: '6px 0', borderRadius: 6, fontSize: 'var(--lbb-fs-12)',
-                background: 'none', border: '1px solid var(--lbb-border2)', cursor: hasActiveFilters ? 'pointer' : 'default',
-                color: hasActiveFilters ? 'var(--lbb-fg2)' : 'var(--lbb-fg3)', opacity: hasActiveFilters ? 1 : 0.5,
-              }}
-            >
-              Clear all filters
-            </button>
-          </div>
-        </>}
-      </aside>
-
-      {/* ── Main pane ───────────────────────────────────────────────────── */}
-      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', minHeight: 0, minWidth: 0 }}>
-
-        {/* Toolbar */}
-        <div style={{
-          display: 'flex', alignItems: 'center', gap: 6,
-          padding: '10px 14px', borderBottom: '1px solid var(--lbb-border)', flexShrink: 0,
-        }}>
-          <Input
-            icon="search"
-            placeholder="Search LB#, location, description…"
-            size="lg"
-            value={query}
-            onChange={e => setQuery(e.target.value)}
-            style={{ flex: 1 }}
-          />
-          <IconButton
-            icon="filter"
-            title="Group by year"
-            active={groupByYear}
-            onClick={() => setGroupByYear(g => !g)}
-          />
-        </div>
-
-        {/* Summary strip */}
-        <div style={{
-          display: 'flex', alignItems: 'center', gap: 6, flexWrap: 'wrap',
-          padding: '5px 14px', borderBottom: '1px solid var(--lbb-border)', flexShrink: 0, minHeight: 38,
-        }}>
-          <span style={{ fontWeight: 700, fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg)' }}>
-            {sortedRows.length.toLocaleString()} results
-          </span>
-          <span style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg3)' }}>
-            of {rows.length.toLocaleString()} in master DB
-          </span>
-          {filterChips.length > 0 && (
-            <>
-              <span style={{ width: 1, height: 14, background: 'var(--lbb-border)' }} />
-              {filterChips.map((f, i) => <ActiveFilter key={i} label={f.label} onRemove={f.onRemove} />)}
-            </>
-          )}
-          <div style={{ flex: 1 }} />
-          {rows.length > 0 && (
-            <span style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)', fontVariantNumeric: 'tabular-nums' }}>
-              You own <strong style={{ color: 'var(--lbb-ok-fg)' }}>{Math.round((ownedCount / rows.length) * 100)}%</strong>
-              {' · '}{(rows.length - ownedCount).toLocaleString()} to go
-            </span>
-          )}
-        </div>
-
-        {/* TODO-150 step 7: bulk action bar — checkbox multi-select parity with
-            Collection's inline toolbar (Create torrent / Add to qBittorrent /
-            Update location / Remove), batched over the checked rows. */}
-        {checkedIds.size > 0 && (
-          <BulkActionBar
-            count={checkedIds.size}
-            busy={actionBusy}
-            onCreateTorrent={handleBulkCreateTorrent}
-            onAddQbt={handleBulkAddQbt}
-            onRelocate={handleBulkRelocate}
-            onRemove={handleBulkRemove}
-            onClear={() => setCheckedIds(new Set())}
-          />
+          </FilterMenu>
         )}
+        {scope === 'owned' && (
+          <FilterMenu label={t('library.facets.health')} count={activeHealth.size}>
+            <MenuLabel>{t('library.facets.collectionHealth')}</MenuLabel>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
+              {(Object.keys(HEALTH_CHECK) as HealthFlag[]).map(h => (
+                <Chip key={h} size="sm" active={activeHealth.has(h)} onClick={() => toggleSet(setActiveHealth, h)} count={facetCounts.healthC[h] ?? 0}>{h}</Chip>
+              ))}
+            </div>
+          </FilterMenu>
+        )}
+        <div style={{ flex: 1 }} />
+        {recActiveCount > 0 && (
+          <button type="button" onClick={clearAll} style={{
+            background: 'none', border: 'none', cursor: 'pointer', padding: '0 6px',
+            fontSize: 12, color: 'var(--lbb-fg2)', fontFamily: 'inherit', fontWeight: 500,
+          }}>
+            {t('library.facets.clear', { count: recActiveCount })}
+          </button>
+        )}
+      </div>
 
-        {/* Table */}
-        <div ref={tableParentRef} style={{ flex: 1, overflow: 'auto', minHeight: 0 }}>
+      {/* ── Summary strip ────────────────────────────────────────────────── */}
+      <div style={{
+        display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap', flexShrink: 0,
+        padding: '8px 20px', borderBottom: '1px solid var(--lbb-border)',
+        minHeight: 36, fontSize: 12,
+        background: 'var(--sep-summary-bg, var(--lbb-surface))', zIndex: 1,
+      }}>
+        <span style={{ fontWeight: 700, color: 'var(--lbb-fg)' }}>{sortedRows.length.toLocaleString()}</span>
+        <span style={{ color: 'var(--lbb-fg3)' }}>{t('library.summary.ofMaster', { count: rows.length })}</span>
+        {filterChips.map((f, i) => <ActiveFilter key={i} label={f.label} onRemove={f.onRemove} />)}
+        <div style={{ flex: 1 }} />
+        {rows.length > 0 && (
+          <span style={{ color: 'var(--lbb-fg3)', fontVariantNumeric: 'tabular-nums' }}>
+            <strong style={{ color: 'var(--lbb-ok-fg)' }}>{Math.round((ownedCount / rows.length) * 100)}%</strong> {t('library.summary.owned')}
+            {' · '}{t('library.summary.toGo', { count: rows.length - ownedCount })}
+          </span>
+        )}
+        <span style={{ width: 1, height: 14, background: 'var(--lbb-border)', flexShrink: 0 }} />
+        <button type="button"
+          onClick={() => setSortDir(d => d === 'asc' ? 'desc' : 'asc')}
+          style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0 4px', fontSize: 12, color: 'var(--lbb-fg2)', fontFamily: 'inherit' }}
+        >
+          {t('library.toolbar.sort')} {sortDir === 'asc' ? '↑' : '↓'}
+        </button>
+      </div>
+
+      {/* ── Body ─────────────────────────────────────────────────────────── */}
+      <div style={{
+        flex: 1, display: 'flex', minHeight: 0, position: 'relative',
+        background: 'var(--sep-body-bg, transparent)',
+        gap: 'var(--sep-body-gap, 0px)',
+        padding: 'var(--sep-body-pad, 0px)',
+      }}>
+        {/* Table region */}
+        <div ref={tableParentRef} style={{
+          flex: 1, overflow: 'auto', minHeight: 0, minWidth: 0, position: 'relative',
+          background: 'var(--sep-table-bg, transparent)',
+          borderRadius: 'var(--sep-radius, 0px)',
+          boxShadow: 'var(--sep-table-shadow, none)',
+        }}>
           <TableShell stickyHeader>
             <colgroup>
               <col style={{ width: 3 }} />
-              <col style={{ width: 32 }} />
-              <col style={{ width: 100 }} />
-              <col style={{ width: 80 }} />
-              <col style={{ width: 90 }} />
-              <col style={{ width: 220 }} />
-              <col style={{ width: 56 }} />
-              <col style={{ width: 60 }} />
-              <col style={{ width: 44 }} />
+              <col style={{ width: 34 }} />
+              <col style={{ width: 92 }} />
+              <col style={{ width: 88 }} />
+              <col style={{ width: 88 }} />
+              <col />
+              <col style={{ width: 54 }} />
+              {scope === 'owned' ? <>
+                <col style={{ width: 250 }} />
+                <col style={{ width: 180 }} />
+                <col style={{ width: 90 }} />
+              </> : <>
+                <col />
+                <col style={{ width: 60 }} />
+                <col style={{ width: 52 }} />
+                <col style={{ width: 52 }} />
+              </>}
             </colgroup>
             <thead>
               <tr>
                 <TH />
                 <TH><input type="checkbox" checked={allChecked} onChange={toggleAllChecked} /></TH>
                 <TH onClick={() => handleSort('lb')} sorted={sortKey === 'lb' ? sortDir : null}>LB#</TH>
-                <TH>Status</TH>
-                <TH onClick={() => handleSort('date')} sorted={sortKey === 'date' ? sortDir : null}>Date</TH>
-                <TH>Location</TH>
+                <TH>{t('library.columns.status')}</TH>
+                <TH onClick={() => handleSort('date')} sorted={sortKey === 'date' ? sortDir : null}>{t('library.columns.date')}</TH>
+                <TH>{t('library.columns.location')}</TH>
                 <TH align="center" onClick={() => handleSort('rating')} sorted={sortKey === 'rating' ? sortDir : null}>★</TH>
-                <TH>Source</TH>
-                <TH align="center">Own</TH>
+                {scope === 'owned' ? <>
+                  <TH>{t('library.columns.description')}</TH>
+                  <TH>{t('library.columns.folder')}</TH>
+                  <TH>{t('library.columns.confirmed')}</TH>
+                </> : <>
+                  <TH>{t('library.columns.description')}</TH>
+                  <TH>{t('library.columns.source')}</TH>
+                  <TH align="center">{t('library.columns.own')}</TH>
+                  <TH align="center">{t('library.columns.flags')}</TH>
+                </>}
               </tr>
             </thead>
             <tbody>
@@ -1002,7 +1055,7 @@ export function ScreenLibrary(): React.JSX.Element {
                         return (
                           <GroupRow
                             key={`g-${item.year}`}
-                            label={item.year}
+                            label={item.year === 'Unknown' ? t('library.empty.unknownYear') : item.year}
                             count={item.count}
                             expanded={!collapsedYears.has(item.year)}
                             onToggle={() => setCollapsedYears(prev => {
@@ -1023,7 +1076,7 @@ export function ScreenLibrary(): React.JSX.Element {
                           edge={statusTone(r.status)}
                           selected={r.lbNumber === selectedLb}
                           onClick={() => setSelectedLb(prev => prev === r.lbNumber ? null : r.lbNumber)}
-                          onContextMenu={e => openCtxMenu(e, r.lb, buildRecordingActions(toRecAction(r), getCtxBatch(r), actionHandlers))}
+                          onContextMenu={e => openCtxMenu(e, r.lb, buildRecordingActions(toRecAction(r), getCtxBatch(r), actionHandlers, t))}
                           style={{ height: vItem.size }}
                         >
                           <TD>
@@ -1035,7 +1088,7 @@ export function ScreenLibrary(): React.JSX.Element {
                             />
                           </TD>
                           <TD mono style={{ color: 'var(--lbb-accent-mid)', fontWeight: 600 }}>{r.lb}</TD>
-                          <TD><Pill tone={statusTone(r.status)} soft>{r.status}</Pill></TD>
+                          <TD><Pill tone={statusTone(r.status)} soft>{t(STATUS_LABEL_KEY[r.status])}</Pill></TD>
                           <TD mono>{r.date}</TD>
                           <TD>{r.loc}</TD>
                           <TD align="center">
@@ -1043,18 +1096,30 @@ export function ScreenLibrary(): React.JSX.Element {
                               ? <Pill tone={ratingTone(r.rating)} soft>{r.rating}</Pill>
                               : <span style={{ color: 'var(--lbb-fg3)' }}>—</span>}
                           </TD>
-                          <TD>
-                            {r.src
-                              ? <Pill tone="mute" soft>{SRC_ABBR[r.src] ?? r.src}</Pill>
-                              : <span style={{ color: 'var(--lbb-fg3)' }}>—</span>}
-                          </TD>
-                          <TD align="center">
-                            {r.owned
-                              ? <Icon name="check" size={13} style={{ color: 'var(--lbb-ok-fg)' }} />
-                              : r.wish
-                                ? <Icon name="star" size={12} style={{ color: 'var(--lbb-warn-fg)' }} />
-                                : <Icon name="x" size={13} style={{ color: 'var(--lbb-bad-fg)' }} />}
-                          </TD>
+                          {scope === 'owned' ? <>
+                            <TD dim style={{ fontSize: 'var(--lbb-fs-11-5)' }}>{r.desc}</TD>
+                            <TD dim style={{ fontSize: 'var(--lbb-fs-11-5)' }}>{r.folder}</TD>
+                            <TD mono dim style={{ fontSize: 'var(--lbb-fs-11)' }}>{r.conf ? r.conf.slice(0, 10) : '—'}</TD>
+                          </> : <>
+                            <TD dim style={{ fontSize: 'var(--lbb-fs-11-5)' }}>{r.desc}</TD>
+                            <TD>
+                              {r.src ? <Pill tone="mute" soft>{SRC_ABBR[r.src] ?? r.src}</Pill> : <span style={{ color: 'var(--lbb-fg3)' }}>—</span>}
+                            </TD>
+                            <TD align="center">
+                              {r.owned
+                                ? <Icon name="check" size={13} style={{ color: 'var(--lbb-ok-fg)' }} />
+                                : r.wish
+                                  ? <Icon name="star" size={12} style={{ color: 'var(--lbb-warn-fg)' }} />
+                                  : <Icon name="x" size={13} style={{ color: 'var(--lbb-bad-fg)' }} />}
+                            </TD>
+                            <TD align="center">
+                              {r.dup
+                                ? <Pill tone="warn" soft>{t('library.panel.dup')}</Pill>
+                                : r.xref
+                                  ? <Pill tone="info" soft>{t('library.panel.xref')}</Pill>
+                                  : null}
+                            </TD>
+                          </>}
                         </TR>
                       )
                     })}
@@ -1070,7 +1135,7 @@ export function ScreenLibrary(): React.JSX.Element {
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               height: '50%', color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-12)',
             }}>
-              Loading…
+              {t('library.empty.loading')}
             </div>
           )}
 
@@ -1081,28 +1146,47 @@ export function ScreenLibrary(): React.JSX.Element {
             }}>
               <Icon name="search" size={40} style={{ opacity: 0.2 }} />
               <div style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: 'var(--lbb-fs-15)', fontWeight: 600, color: 'var(--lbb-fg2)' }}>Nothing matches</div>
-                <div style={{ fontSize: 'var(--lbb-fs-11-5)', marginTop: 4 }}>Try adjusting your search or filters</div>
+                <div style={{ fontSize: 'var(--lbb-fs-15)', fontWeight: 600, color: 'var(--lbb-fg2)' }}>{t('library.empty.nothingMatches')}</div>
+                <div style={{ fontSize: 'var(--lbb-fs-11-5)', marginTop: 4 }}>{t('library.empty.tryAdjust')}</div>
               </div>
             </div>
           )}
+
+          {/* Floating BulkActionBar */}
+          {checkedIds.size > 0 && (
+            <div style={{
+              position: 'absolute', bottom: 14, left: '50%', transform: 'translateX(-50%)',
+              borderRadius: 10, boxShadow: 'var(--lbb-shadowLg)',
+            }}>
+              <BulkActionBar
+                count={checkedIds.size}
+                busy={actionBusy}
+                onCreateTorrent={handleBulkCreateTorrent}
+                onAddQbt={handleBulkAddQbt}
+                onRelocate={handleBulkRelocate}
+                onRemove={handleBulkRemove}
+                onClear={() => setCheckedIds(new Set())}
+              />
+            </div>
+          )}
         </div>
-      </div>
-      {/* TODO-150 step 8: detail panel — third column, only one row selected at a time. */}
-      {selectedLb !== null && (() => {
-        const selRow = rows.find(r => r.lbNumber === selectedLb)
-        if (!selRow) return null
-        return (
-          <RecordingDetailPanel
-            row={selRow}
-            history={historyMap.get(selRow.lbNumber)}
-            attachCount={attachCountMap.get(selRow.lbNumber)}
-            actionHandlers={actionHandlers}
-            openMenu={openCtxMenu}
-            onClose={() => setSelectedLb(null)}
-          />
-        )
-      })()}
+
+        {/* Detail panel — always mounted so it can collapse to 40px stub */}
+        {(() => {
+          const selRow = selectedLb !== null ? (rows.find(r => r.lbNumber === selectedLb) ?? null) : null
+          return (
+            <RecordingDetailPanel
+              row={selRow}
+              history={selRow ? historyMap.get(selRow.lbNumber) : undefined}
+              attachCount={selRow ? attachCountMap.get(selRow.lbNumber) : undefined}
+              actionHandlers={actionHandlers}
+              openMenu={openCtxMenu}
+              onClose={() => setSelectedLb(null)}
+              open={detailPanelOpen}
+              onToggle={() => setDetailPanelOpen(o => !o)}
+            />
+          )
+        })()}
       </div>
       {overlays}
     </div>
@@ -1112,7 +1196,7 @@ export function ScreenLibrary(): React.JSX.Element {
 // ── TODO-150 step 6: performance lens ───────────────────────────────────────
 // Rows are shows (date + venue); each expands into its TapeMatch families,
 // which expand into member recordings. Reuses the recording lens's already
-// owned/wish/dup/fp-merged `rows` by lbNumber instead of re-deriving that
+// owned/wish/dup-merged `rows` by lbNumber instead of re-deriving that
 // merge — the only new fetches here are /api/library/performances (the
 // show grouping itself) and /api/tapematch/families (per 07 §4/§5, merged
 // client-side, never joined server-side). When no recording has a `fam`,
@@ -1145,7 +1229,7 @@ interface PerformanceRow {
 interface FamilyGroup {
   id: string
   members: RecordingRow[]
-  label: string
+  tmLabel: string | null
   by: 'lb' | 'ai' | 'ai+lb'
   conf: number | null
   src: string | null
@@ -1154,7 +1238,6 @@ interface FamilyGroup {
   ownedCount: number
   total: number
   multi: boolean
-  dupes: number
   canonical: RecordingRow | null
 }
 
@@ -1181,14 +1264,15 @@ function familiesOf(recordings: RecordingRow[]): FamilyGroup[] {
     const src = canonical ? canonical.src : (members[0]?.src ?? null)
     out.push({
       id: key, members,
-      label: members[0]?.famLabel || (src ? (SOURCE_FULL[src] ?? src) : 'Recording'),
+      // TapeMatch's match-group name (Solo / Family A / Family B...); the source
+      // type itself is already shown via the AUD/SBD/etc. pill, so it isn't repeated here.
+      tmLabel: members[0]?.famLabel ?? null,
       by: members[0]?.famBy ?? 'lb',
       conf: members[0]?.famConf ?? null,
       src,
       bestRating: (best?.rating ?? '—') as RatingGrade,
       owned: owned.length > 0, ownedCount: owned.length, total: members.length,
       multi: members.length > 1,
-      dupes: members.filter(r => r.dup).length,
       canonical,
     })
   }
@@ -1222,11 +1306,11 @@ function coverageTone(c: Coverage): 'ok' | 'warn' | 'mute' {
   return 'warn'
 }
 
-function coverageLabel(c: Coverage, ownedCount: number, total: number): string {
-  if (c === 'Covered') return total > 1 ? `Owned ${ownedCount}/${total}` : 'Owned'
-  if (c === 'Upgrade') return `Upgrade ${ownedCount}/${total}`
-  if (c === 'Gap') return 'Gap'
-  return 'No source'
+function coverageLabel(c: Coverage, ownedCount: number, total: number, t: TFunction): string {
+  if (c === 'Covered') return total > 1 ? t('library.coverage.ownedFull', { owned: ownedCount, total }) : t('library.coverage.owned')
+  if (c === 'Upgrade') return t('library.coverage.upgrade', { owned: ownedCount, total })
+  if (c === 'Gap') return t('library.coverage.gap')
+  return t('library.coverage.noSource')
 }
 
 type PerfFlatItem =
@@ -1235,7 +1319,9 @@ type PerfFlatItem =
   | { kind: 'fam'; perf: PerformanceRow; fam: FamilyGroup }
   | { kind: 'member'; perf: PerformanceRow; fam: FamilyGroup; rec: RecordingRow; isLast: boolean; isCanonical: boolean }
 
-function PerformanceLensView({ rows, catalogLoading, actionHandlers, openCtxMenu, historyMap, attachCountMap }: {
+function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandlers, openCtxMenu, historyMap, attachCountMap }: {
+  lens: 'performance' | 'recording'
+  setLens: (v: 'performance' | 'recording') => void
   rows: RecordingRow[]
   catalogLoading: boolean
   actionHandlers: ActionHandlers
@@ -1243,22 +1329,23 @@ function PerformanceLensView({ rows, catalogLoading, actionHandlers, openCtxMenu
   historyMap: Map<number, RowHistory>
   attachCountMap: Map<number, number>
 }) {
-  const [filterPaneOpen, setFilterPaneOpen] = useState(true)
+  const { t } = useTranslation()
   const [query, setQuery] = useState('')
   const [groupByYear, setGroupByYear] = useState(true)
   const [collapsedYears, setCollapsedYears] = useState<Set<string>>(new Set())
   const [expandedShows, setExpandedShows] = useState<Set<string>>(new Set())
   const [collapsedFams, setCollapsedFams] = useState<Set<string>>(new Set())
-  // TODO-150 step 8: detail-panel selection. A show row opens the performance
-  // panel; a member row opens that single recording's panel instead — mutually
-  // exclusive, so selecting one clears the other.
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [selectedMemberLb, setSelectedMemberLb] = useState<number | null>(null)
+  const [detailPanelOpen, setDetailPanelOpen] = useState(true)
+  const autoExpandedRef = useRef(false)
 
   const [activeDecade,   setActiveDecade]   = useState<Set<string>>(new Set())
+  const [activeYear,     setActiveYear]     = useState<Set<number>>(new Set())
   const [activeCoverage, setActiveCoverage] = useState<Set<Coverage>>(new Set())
   const [activeSource,   setActiveSource]   = useState<Set<string>>(new Set())
   const [activeRating,   setActiveRating]   = useState<Set<RatingGrade>>(new Set())
+  const [perfView, setPerfView] = useState<'all'|'owned'|'gaps'|'wishlist'|'duplicates'>('all')
 
   const tableParentRef = useRef<HTMLDivElement>(null)
 
@@ -1290,23 +1377,29 @@ function PerformanceLensView({ rows, catalogLoading, actionHandlers, openCtxMenu
   const performances = useMemo<PerformanceRow[]>(() => {
     if (!Array.isArray(perfData)) return []
     return (perfData as any[]).map((p): PerformanceRow => {
-      const recordings: RecordingRow[] = (p.recordings as any[]).map((stub): RecordingRow => {
-        const base = rowsByLb.get(stub.lbNumber)
-        const fam = famMap.get(stub.lbNumber)
-        const row: RecordingRow = base ? { ...base } : {
-          lb: stub.lb, lbNumber: stub.lbNumber, year: p.year ?? 0, decade: decadeOf(p.year ?? 0),
-          date: p.date ?? '', loc: p.city ?? '', desc: '',
-          rating: (VALID_RATINGS.has(stub.rating) ? stub.rating : '—') as RatingGrade,
-          src: stub.src ?? null, status: (stub.status ?? 'Missing') as LibStatus,
-          owned: false, wish: false, dup: false, xref: false, fp: false, unconf: false,
-          folder: '', path: '', conf: '',
-        }
-        if (fam) {
-          row.fam = fam.fam_id; row.famLabel = fam.fam_label
-          row.famConf = fam.fam_conf; row.famBy = fam.fam_by as RecordingRow['famBy']
-        }
-        return row
-      })
+      const recordings: RecordingRow[] = (p.recordings as any[])
+        .map((stub): RecordingRow => {
+          const base = rowsByLb.get(stub.lbNumber)
+          const fam = famMap.get(stub.lbNumber)
+          const row: RecordingRow = base ? { ...base } : {
+            lb: stub.lb, lbNumber: stub.lbNumber, year: p.year ?? 0, decade: decadeOf(p.year ?? 0),
+            date: p.date ?? '', loc: p.city ?? '', desc: '',
+            rating: (VALID_RATINGS.has(stub.rating) ? stub.rating : '—') as RatingGrade,
+            src: stub.src ?? null, status: (stub.status ?? 'Missing') as LibStatus,
+            owned: false, wish: false, dup: false, xref: false, unconf: false,
+            folder: '', path: '', conf: '',
+          }
+          if (fam) {
+            row.fam = fam.fam_id; row.famLabel = fam.fam_label
+            row.famConf = fam.fam_conf; row.famBy = fam.fam_by as RecordingRow['famBy']
+          }
+          return row
+        })
+        // Performance lens has no per-recording Status filter (unlike the
+        // recording lens), so Private/Missing entries are hidden from
+        // counts/families unconditionally rather than just from a default —
+        // matches the recording lens's default-hidden behavior.
+        .filter(r => r.status !== 'Private' && r.status !== 'Missing')
       return {
         id: p.id, date: p.date ?? '', disp: p.disp ?? p.date ?? '', dow: p.dow,
         year: p.year ?? 0, decade: decadeOf(p.year ?? 0),
@@ -1319,14 +1412,28 @@ function PerformanceLensView({ rows, catalogLoading, actionHandlers, openCtxMenu
     })
   }, [perfData, rowsByLb, famMap])
 
+  // Auto-expand the first multi-recording show when data loads — mirrors the
+  // prototype which starts with one show pre-expanded so family groups are
+  // visible on first render without needing a click.
+  useEffect(() => {
+    if (autoExpandedRef.current || performances.length === 0) return
+    const first = performances.find(p => p.recordings.length > 1)
+    if (first) {
+      setExpandedShows(new Set([first.id]))
+      autoExpandedRef.current = true
+    }
+  }, [performances])
+
   const facetCounts = useMemo(() => {
     const decadeC: Record<string, number> = {}
+    const yearC: Record<number, number> = {}
     const coverageC: Record<string, number> = {}
     const sourceC: Record<string, number> = {}
     const ratingC: Record<string, number> = {}
     for (const p of performances) {
       const ru = rollupOf(p.recordings)
       decadeC[p.decade] = (decadeC[p.decade] ?? 0) + 1
+      if (p.year > 0) yearC[p.year] = (yearC[p.year] ?? 0) + 1
       coverageC[ru.coverage] = (coverageC[ru.coverage] ?? 0) + 1
       ratingC[ru.bestRating] = (ratingC[ru.bestRating] ?? 0) + 1
       const seen = new Set<string>()
@@ -1334,7 +1441,7 @@ function PerformanceLensView({ rows, catalogLoading, actionHandlers, openCtxMenu
         if (r.src && !seen.has(r.src)) { seen.add(r.src); sourceC[r.src] = (sourceC[r.src] ?? 0) + 1 }
       }
     }
-    return { decadeC, coverageC, sourceC, ratingC }
+    return { decadeC, yearC, coverageC, sourceC, ratingC }
   }, [performances])
 
   const filteredPerfs = useMemo(() => {
@@ -1347,12 +1454,17 @@ function PerformanceLensView({ rows, catalogLoading, actionHandlers, openCtxMenu
         if (!hay.includes(q)) return false
       }
       if (activeDecade.size > 0 && !activeDecade.has(p.decade)) return false
+      if (activeYear.size > 0 && !activeYear.has(p.year)) return false
       if (activeCoverage.size > 0 && !activeCoverage.has(ru.coverage)) return false
       if (activeRating.size > 0 && !activeRating.has(ru.bestRating)) return false
       if (activeSource.size > 0 && !p.recordings.some(r => r.src && activeSource.has(r.src))) return false
+      if (perfView === 'owned')     return ru.ownedCount > 0
+      if (perfView === 'gaps')      return ru.coverage === 'Gap'
+      if (perfView === 'wishlist')  return p.recordings.some(r => r.wish)
+      if (perfView === 'duplicates') return p.recordings.some(r => r.dup)
       return true
     })
-  }, [performances, query, activeDecade, activeCoverage, activeSource, activeRating])
+  }, [performances, query, activeDecade, activeYear, activeCoverage, activeSource, activeRating, perfView])
 
   const sortedPerfs = useMemo(
     () => [...filteredPerfs].sort((a, b) => a.date.localeCompare(b.date) || a.id.localeCompare(b.id)),
@@ -1416,169 +1528,240 @@ function PerformanceLensView({ rows, catalogLoading, actionHandlers, openCtxMenu
     overscan: 12,
   })
 
-  const colCount = 8 // edge + date + show + tour + families + recs + ★ + coverage
+  const colCount = 10 // edge + expand + checkbox + date + show + tour + families + recs + ★ + coverage
+  const perfActiveCount = activeDecade.size + activeYear.size + activeCoverage.size + activeSource.size + activeRating.size
+
+  const multiShowIds = useMemo(
+    () => performances.filter(p => p.recordings.length > 1).map(p => p.id),
+    [performances],
+  )
+  const allShowsExpanded = multiShowIds.length > 0
+    && multiShowIds.every(id => expandedShows.has(id))
+    && collapsedFams.size === 0
+  const toggleExpandAll = () => {
+    if (allShowsExpanded) {
+      setExpandedShows(new Set())
+    } else {
+      setExpandedShows(new Set(multiShowIds))
+      setCollapsedFams(new Set())
+    }
+  }
 
   const totalRecs = useMemo(() => filteredPerfs.reduce((n, p) => n + p.recordings.length, 0), [filteredPerfs])
   const totalFams = useMemo(() => filteredPerfs.reduce((n, p) => n + rollupOf(p.recordings).famTotal, 0), [filteredPerfs])
   const gapsShown = useMemo(() => filteredPerfs.filter(p => rollupOf(p.recordings).coverage === 'Gap').length, [filteredPerfs])
 
-  const hasActiveFilters = activeDecade.size > 0 || activeCoverage.size > 0 || activeSource.size > 0 || activeRating.size > 0
+  const viewCounts = useMemo(() => ({
+    owned:     performances.filter(p => rollupOf(p.recordings).ownedCount > 0).length,
+    gaps:      performances.filter(p => rollupOf(p.recordings).coverage === 'Gap').length,
+    wishlist:  performances.filter(p => p.recordings.some(r => r.wish)).length,
+    duplicates: performances.filter(p => p.recordings.some(r => r.dup)).length,
+  }), [performances])
+
+  const hasActiveFilters = activeDecade.size > 0 || activeYear.size > 0 || activeCoverage.size > 0 || activeSource.size > 0 || activeRating.size > 0 || perfView !== 'all'
   const clearAll = () => {
-    setActiveDecade(new Set()); setActiveCoverage(new Set()); setActiveSource(new Set()); setActiveRating(new Set()); setQuery('')
+    setActiveDecade(new Set()); setActiveYear(new Set()); setActiveCoverage(new Set()); setActiveSource(new Set()); setActiveRating(new Set())
+    setPerfView('all'); setQuery('')
   }
+  const viewName = (v: string): string => t(VIEW_LABEL_KEY[v] ?? 'library.views.allPerformances')
+  const coverageName = (c: string): string => t(COVERAGE_LABEL_KEY[c] ?? 'library.coverageValue.gap')
+
   const filterChips: Array<{ label: string; onRemove: () => void }> = [
-    ...[...activeDecade].map(d => ({ label: `Decade: ${d}`, onRemove: () => toggleSet(setActiveDecade, d) })),
-    ...[...activeCoverage].map(c => ({ label: `Coverage: ${c}`, onRemove: () => toggleSet(setActiveCoverage, c) })),
-    ...[...activeSource].map(s => ({ label: `Source: ${s}`, onRemove: () => toggleSet(setActiveSource, s) })),
-    ...[...activeRating].map(r => ({ label: `Rating: ${r}`, onRemove: () => toggleSet(setActiveRating, r) })),
+    ...(perfView !== 'all' ? [{ label: `${t('library.facets.views')}: ${viewName(perfView)}`, onRemove: () => setPerfView('all') }] : []),
+    ...[...activeDecade].map(d => ({ label: `${t('library.facets.decade')}: ${d}`, onRemove: () => toggleSet(setActiveDecade, d) })),
+    ...[...activeYear].map(y => ({ label: `${t('library.facets.year')}: ${y}`, onRemove: () => toggleSet(setActiveYear, y) })),
+    ...[...activeCoverage].map(c => ({ label: `${t('library.facets.coverageLabel')}: ${coverageName(c)}`, onRemove: () => toggleSet(setActiveCoverage, c) })),
+    ...[...activeSource].map(s => ({ label: `${t('library.facets.source')}: ${s}`, onRemove: () => toggleSet(setActiveSource, s) })),
+    ...[...activeRating].map(r => ({ label: `${t('library.facets.bestRating')}: ${r}`, onRemove: () => toggleSet(setActiveRating, r) })),
   ]
 
   const loading = (catalogLoading || perfLoading) && performances.length === 0
 
   return (
-    <div style={{ flex: 1, display: 'flex', minHeight: 0 }}>
+    <div style={{ flex: 1, display: 'flex', flexDirection: 'column', minHeight: 0 }}>
 
-      {/* ── Facet rail ──────────────────────────────────────────────────── */}
-      <aside style={{
-        width: filterPaneOpen ? 220 : 32, flexShrink: 0,
-        borderRight: '1px solid var(--lbb-border)',
-        display: 'flex', flexDirection: 'column',
-        background: 'var(--lbb-surface2)',
-        overflowY: filterPaneOpen ? 'auto' : 'hidden',
-        overflowX: 'hidden',
-        transition: 'width 180ms ease',
+      {/* ── Toolbar ──────────────────────────────────────────────────────── */}
+      <div style={{
+        display: 'flex', alignItems: 'center', gap: 10, flexShrink: 0,
+        padding: '12px 20px', borderBottom: '1px solid var(--lbb-border)',
+        background: 'var(--sep-chrome-bg, var(--lbb-surface))', zIndex: 4,
       }}>
-        {!filterPaneOpen ? (
-          <button type="button" title="Show filters" onClick={() => setFilterPaneOpen(true)} style={{
-            margin: '8px auto', display: 'flex', alignItems: 'center', justifyContent: 'center',
-            width: 24, height: 24, borderRadius: 4, flexShrink: 0,
-            background: 'none', border: '1px solid var(--lbb-border2)', cursor: 'pointer', color: 'var(--lbb-fg3)',
-          }}>
-            <Icon name="chevRight" size={13} />
-          </button>
-        ) : (
-          <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '6px 8px 0', flexShrink: 0 }}>
-            <button type="button" title="Hide filters" onClick={() => setFilterPaneOpen(false)} style={{
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              width: 22, height: 22, borderRadius: 4,
-              background: 'none', border: '1px solid var(--lbb-border2)', cursor: 'pointer', color: 'var(--lbb-fg3)',
-            }}>
-              <Icon name="chevLeft" size={13} />
-            </button>
-          </div>
-        )}
+        <ViewToggle value={lens} onChange={setLens} />
+        <span style={{ width: 1, height: 22, background: 'var(--lbb-border)', flexShrink: 0 }} />
+        <Input
+          icon="search" placeholder={t('library.toolbar.searchPerformance')}
+          value={query} onChange={e => setQuery(e.target.value)}
+          style={{ flex: 1, height: 32 }}
+        />
+        <IconButton icon="download" title={t('library.toolbar.export')} />
+        <IconButton icon="more" title={t('library.toolbar.more')} />
+      </div>
 
-        {filterPaneOpen && <>
-          <FacetGroup
-            title="Decade"
-            items={Object.entries(facetCounts.decadeC).sort(([a], [b]) => a.localeCompare(b)).map(([label, count]) => ({ label, count }))}
-            active={activeDecade}
-            onToggle={v => toggleSet(setActiveDecade, v)}
-          />
-          <FacetGroup
-            title="Coverage"
-            items={(['Covered', 'Upgrade', 'Gap', 'Undocumented'] as Coverage[]).map(label => ({ label, count: facetCounts.coverageC[label] ?? 0 }))}
-            active={activeCoverage}
-            onToggle={v => toggleSet(setActiveCoverage, v)}
-          />
-          <FacetGroup
-            title="Source available"
-            items={Object.entries(facetCounts.sourceC).map(([label, count]) => ({ label, count }))}
-            active={activeSource}
-            onToggle={v => toggleSet(setActiveSource, v)}
-          />
-          <FacetGroup
-            title="Best rating"
-            items={Object.entries(facetCounts.ratingC).map(([label, count]) => ({ label: label as RatingGrade, count }))}
-            active={activeRating}
-            onToggle={v => toggleSet(setActiveRating, v)}
-          />
-
-          <div style={{ padding: '10px 12px', marginTop: 'auto' }}>
-            <button
-              type="button" onClick={clearAll} disabled={!hasActiveFilters && !query}
-              style={{
-                width: '100%', padding: '6px 0', borderRadius: 6, fontSize: 'var(--lbb-fs-12)',
-                background: 'none', border: '1px solid var(--lbb-border2)',
-                cursor: (hasActiveFilters || query) ? 'pointer' : 'default',
-                color: (hasActiveFilters || query) ? 'var(--lbb-fg2)' : 'var(--lbb-fg3)', opacity: (hasActiveFilters || query) ? 1 : 0.5,
-              }}
-            >
-              Clear all filters
-            </button>
-          </div>
-        </>}
-      </aside>
-
-      {/* ── Main pane ───────────────────────────────────────────────────── */}
-      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', minHeight: 0, minWidth: 0 }}>
-
-        {/* Toolbar */}
-        <div style={{
-          display: 'flex', alignItems: 'center', gap: 6,
-          padding: '10px 14px', borderBottom: '1px solid var(--lbb-border)', flexShrink: 0,
-        }}>
-          <Input
-            icon="search"
-            placeholder="Search date, venue, city, tour, LB#…"
-            size="lg"
-            value={query}
-            onChange={e => setQuery(e.target.value)}
-            style={{ flex: 1 }}
-          />
-          <IconButton icon="filter" title="Group by year" active={groupByYear} onClick={() => setGroupByYear(g => !g)} />
-        </div>
-
-        {/* Summary strip */}
-        <div style={{
-          display: 'flex', alignItems: 'center', gap: 6, flexWrap: 'wrap',
-          padding: '5px 14px', borderBottom: '1px solid var(--lbb-border)', flexShrink: 0, minHeight: 38,
-        }}>
-          <span style={{ fontWeight: 700, fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg)' }}>
-            {filteredPerfs.length.toLocaleString()} show{filteredPerfs.length === 1 ? '' : 's'}
-          </span>
-          <span style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg3)' }}>
-            · {totalRecs.toLocaleString()} recordings
-          </span>
-          <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5, color: 'var(--lbb-info-fg)', fontWeight: 600, fontSize: 'var(--lbb-fs-12)' }}>
-            <Icon name="tapematch" size={12} /> {totalFams.toLocaleString()} {totalFams === 1 ? 'family' : 'families'}
-          </span>
-          {gapsShown > 0 && (
-            <span style={{ color: 'var(--lbb-warn-fg)', fontWeight: 600, fontSize: 'var(--lbb-fs-12)' }}>
-              · {gapsShown.toLocaleString()} gap{gapsShown === 1 ? '' : 's'}
-            </span>
-          )}
-          {filterChips.length > 0 && (
-            <>
-              <span style={{ width: 1, height: 14, background: 'var(--lbb-border)' }} />
-              {filterChips.map((f, i) => <ActiveFilter key={i} label={f.label} onRemove={f.onRemove} />)}
+      {/* ── Filter bar ───────────────────────────────────────────────────── */}
+      <div style={{
+        display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap', flexShrink: 0,
+        padding: '8px 20px', borderBottom: '1px solid var(--lbb-border)',
+        background: 'var(--sep-summary-bg, var(--lbb-surface))', zIndex: 3,
+        position: 'relative',
+      }}>
+        {/* Views preset menu */}
+        <FilterMenu label={perfView === 'all' ? t('library.facets.views') : viewName(perfView)} count={perfView !== 'all' ? 1 : 0} width={220}>
+          {close => {
+            const opt = (id: typeof perfView, label: string, count?: number) => (
+              <button key={id} type="button" onClick={() => { setPerfView(id); close() }} style={{
+                display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                width: '100%', padding: '6px 8px', borderRadius: 6, cursor: 'pointer',
+                background: perfView === id ? 'var(--lbb-accent-soft)' : 'transparent',
+                color: perfView === id ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg)',
+                border: 'none', fontFamily: 'inherit', fontSize: 12.5, fontWeight: perfView === id ? 650 : 400,
+                textAlign: 'left',
+              }}>
+                <span>{label}</span>
+                {count !== undefined && <span style={{ fontSize: 10.5, color: 'var(--lbb-fg3)', fontWeight: 500 }}>{count.toLocaleString()}</span>}
+              </button>
+            )
+            return <>
+              {opt('all', t('library.views.allPerformances'), performances.length)}
+              <div style={{ height: 1, background: 'var(--lbb-border)', margin: '4px 0' }} />
+              {opt('owned', t('library.views.myCollection'), viewCounts.owned)}
+              {opt('gaps', t('library.views.coverageGaps'), viewCounts.gaps)}
+              {opt('wishlist', t('library.views.wishlist'), viewCounts.wishlist)}
+              {opt('duplicates', t('library.views.duplicates'), viewCounts.duplicates)}
             </>
-          )}
-        </div>
+          }}
+        </FilterMenu>
+        <span style={{ width: 1, height: 20, background: 'var(--lbb-border)', flexShrink: 0 }} />
+        <FilterMenu label={t('library.facets.decade')} count={activeDecade.size}>
+          <MenuLabel>{t('library.facets.decade')}</MenuLabel>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
+            {Object.entries(facetCounts.decadeC).sort(([a], [b]) => a.localeCompare(b)).map(([lbl, cnt]) => (
+              <Chip key={lbl} size="sm" active={activeDecade.has(lbl)} onClick={() => toggleSet(setActiveDecade, lbl)} count={cnt}>{lbl}</Chip>
+            ))}
+          </div>
+        </FilterMenu>
+        <FilterMenu label={t('library.facets.year')} count={activeYear.size}>
+          <MenuLabel>{t('library.facets.year')}</MenuLabel>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
+            {Object.entries(facetCounts.yearC).sort(([a], [b]) => Number(b) - Number(a)).map(([lbl, cnt]) => (
+              <Chip key={lbl} size="sm" active={activeYear.has(Number(lbl))} onClick={() => toggleSet(setActiveYear, Number(lbl))} count={cnt}>{lbl}</Chip>
+            ))}
+          </div>
+        </FilterMenu>
+        <FilterMenu label={t('library.facets.coverageLabel')} count={activeCoverage.size}>
+          <MenuLabel>{t('library.facets.coverageLabel')}</MenuLabel>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
+            {(['Covered', 'Upgrade', 'Gap', 'Undocumented'] as Coverage[]).map(c => (
+              <Chip key={c} size="sm" active={activeCoverage.has(c)} onClick={() => toggleSet(setActiveCoverage, c)} count={facetCounts.coverageC[c] ?? 0}>{coverageName(c)}</Chip>
+            ))}
+          </div>
+        </FilterMenu>
+        {Object.keys(facetCounts.sourceC).length > 0 && (
+          <FilterMenu label={t('library.facets.source')} count={activeSource.size}>
+            <MenuLabel>{t('library.facets.source')}</MenuLabel>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
+              {Object.entries(facetCounts.sourceC).map(([lbl, cnt]) => (
+                <Chip key={lbl} size="sm" active={activeSource.has(lbl)} onClick={() => toggleSet(setActiveSource, lbl)} count={cnt}>{lbl}</Chip>
+              ))}
+            </div>
+          </FilterMenu>
+        )}
+        <FilterMenu label={t('library.facets.rating')} count={activeRating.size}>
+          <MenuLabel>{t('library.facets.bestRating')}</MenuLabel>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
+            {Object.entries(facetCounts.ratingC).map(([lbl, cnt]) => (
+              <Chip key={lbl} size="sm" active={activeRating.has(lbl as RatingGrade)} onClick={() => toggleSet(setActiveRating, lbl as RatingGrade)} count={cnt}>{lbl}</Chip>
+            ))}
+          </div>
+        </FilterMenu>
+        <span style={{ width: 1, height: 20, background: 'var(--lbb-border)', flexShrink: 0 }} />
+        <button
+          type="button" onClick={toggleExpandAll} disabled={multiShowIds.length === 0}
+          title={allShowsExpanded ? t('library.toolbar.collapseAllShows') : t('library.toolbar.expandAllShows')}
+          style={{
+            display: 'inline-flex', alignItems: 'center', gap: 5,
+            height: 28, padding: '0 10px', borderRadius: 6, fontFamily: 'inherit',
+            fontSize: 12, fontWeight: 500, whiteSpace: 'nowrap',
+            cursor: multiShowIds.length === 0 ? 'not-allowed' : 'pointer',
+            opacity: multiShowIds.length === 0 ? 0.5 : 1,
+            background: 'var(--lbb-surface)', color: 'var(--lbb-fg2)',
+            border: '1px solid var(--lbb-border2)',
+          }}
+        >
+          <Icon name={allShowsExpanded ? 'chevUp' : 'chevDown'} size={12} style={{ opacity: 0.7 }} />
+          {allShowsExpanded ? t('library.toolbar.collapseAll') : t('library.toolbar.expandAll')}
+        </button>
+        <div style={{ flex: 1 }} />
+        {hasActiveFilters && (
+          <button type="button" onClick={clearAll} style={{
+            background: 'none', border: 'none', cursor: 'pointer', padding: '0 6px',
+            fontSize: 12, color: 'var(--lbb-fg2)', fontFamily: 'inherit', fontWeight: 500,
+          }}>
+            {t('library.facets.clear', { count: perfActiveCount + (perfView !== 'all' ? 1 : 0) })}
+          </button>
+        )}
+      </div>
 
-        {/* Table */}
-        <div ref={tableParentRef} style={{ flex: 1, overflow: 'auto', minHeight: 0 }}>
+      {/* ── Summary strip ────────────────────────────────────────────────── */}
+      <div style={{
+        display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap', flexShrink: 0,
+        padding: '8px 20px', borderBottom: '1px solid var(--lbb-border)',
+        minHeight: 36, fontSize: 12,
+        background: 'var(--sep-summary-bg, var(--lbb-surface))', zIndex: 1,
+      }}>
+        <span style={{ fontWeight: 700, color: 'var(--lbb-fg)' }}>
+          {t('library.summary.shows', { count: filteredPerfs.length })}
+        </span>
+        <span style={{ color: 'var(--lbb-fg3)' }}>· {t('library.summary.recordings', { count: totalRecs })}</span>
+        <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5, color: 'var(--lbb-info-fg)', fontWeight: 600 }}>
+          <Icon name="tapematch" size={12} /> {t('library.summary.familyCount', { count: totalFams })}
+        </span>
+        {gapsShown > 0 && (
+          <span style={{ color: 'var(--lbb-warn-fg)', fontWeight: 600 }}>
+            · {t('library.summary.gaps', { count: gapsShown })}
+          </span>
+        )}
+        {filterChips.map((f, i) => <ActiveFilter key={i} label={f.label} onRemove={f.onRemove} />)}
+      </div>
+
+      {/* ── Body ─────────────────────────────────────────────────────────── */}
+      <div style={{
+        flex: 1, display: 'flex', minHeight: 0, position: 'relative',
+        background: 'var(--sep-body-bg, transparent)',
+        gap: 'var(--sep-body-gap, 0px)',
+        padding: 'var(--sep-body-pad, 0px)',
+      }}>
+        {/* Table region */}
+        <div ref={tableParentRef} style={{
+          flex: 1, overflow: 'auto', minHeight: 0, minWidth: 0, position: 'relative',
+          background: 'var(--sep-table-bg, transparent)',
+          borderRadius: 'var(--sep-radius, 0px)',
+          boxShadow: 'var(--sep-table-shadow, none)',
+        }}>
           <TableShell stickyHeader>
             <colgroup>
               <col style={{ width: 3 }} />
-              <col style={{ width: 96 }} />
+              <col style={{ width: 30 }} />
+              <col style={{ width: 32 }} />
+              <col style={{ width: 116 }} />
               <col />
+              <col style={{ width: 210 }} />
+              <col style={{ width: 132 }} />
+              <col style={{ width: 56 }} />
+              <col style={{ width: 56 }} />
               <col style={{ width: 150 }} />
-              <col style={{ width: 200 }} />
-              <col style={{ width: 56 }} />
-              <col style={{ width: 56 }} />
-              <col style={{ width: 140 }} />
             </colgroup>
             <thead>
               <tr>
                 <TH />
-                <TH>Date</TH>
-                <TH>Show</TH>
-                <TH>Tour</TH>
-                <TH>Families</TH>
-                <TH align="center">Recs</TH>
+                <TH />
+                <TH />
+                <TH>{t('library.columns.date')}</TH>
+                <TH>{t('library.columns.show')}</TH>
+                <TH>{t('library.columns.tour')}</TH>
+                <TH>{t('library.columns.families')}</TH>
+                <TH align="center">{t('library.columns.recs')}</TH>
                 <TH align="center">★</TH>
-                <TH>Coverage</TH>
+                <TH>{t('library.columns.coverage')}</TH>
               </tr>
             </thead>
             <tbody>
@@ -1597,7 +1780,7 @@ function PerformanceLensView({ rows, catalogLoading, actionHandlers, openCtxMenu
                         return (
                           <GroupRow
                             key={`g-${item.year}`}
-                            label={item.year}
+                            label={item.year === 'Unknown' ? t('library.empty.unknownYear') : item.year}
                             count={item.count}
                             expanded={!collapsedYears.has(item.year)}
                             onToggle={() => setCollapsedYears(prev => {
@@ -1630,7 +1813,7 @@ function PerformanceLensView({ rows, catalogLoading, actionHandlers, openCtxMenu
                             }}
                             onContextMenu={e => openCtxMenu(
                               e, p.disp,
-                              buildPerformanceActions(p.recordings.map(toRecAction), canonical ? toRecAction(canonical) : null, actionHandlers),
+                              buildPerformanceActions(p.recordings.map(toRecAction), canonical ? toRecAction(canonical) : null, actionHandlers, t),
                             )}
                             style={{ height: vItem.size }}
                           >
@@ -1644,6 +1827,7 @@ function PerformanceLensView({ rows, catalogLoading, actionHandlers, openCtxMenu
                             >
                               {multi && <Icon name={expanded ? 'chevDown' : 'chevRight'} size={13} style={{ color: 'var(--lbb-fg3)' }} />}
                             </TD>
+                            <TD />
                             <TD mono style={{ color: 'var(--lbb-fg)', fontWeight: 600 }}>
                               <span style={{ display: 'inline-flex', flexDirection: 'column', lineHeight: 1.2 }}>
                                 <span>{p.disp}</span>
@@ -1664,9 +1848,9 @@ function PerformanceLensView({ rows, catalogLoading, actionHandlers, openCtxMenu
                                     </span>
                                   )}
                                   {p.confirmed === false && (
-                                    <span title="Inferred from the recording's own date/location — not matched to a known Dylan show date">
+                                    <span title={t('library.tooltip.inferred')}>
                                       <Pill tone="mute" soft style={{ marginLeft: 6, fontSize: 'var(--lbb-fs-9-5)' }}>
-                                        Unconfirmed
+                                        {t('library.panel.unconfirmed')}
                                       </Pill>
                                     </span>
                                   )}
@@ -1691,7 +1875,7 @@ function PerformanceLensView({ rows, catalogLoading, actionHandlers, openCtxMenu
                             <TD align="center" mono style={{ color: multi ? 'var(--lbb-fg)' : 'var(--lbb-fg3)', fontWeight: multi ? 700 : 500 }}>
                               <span style={{ display: 'inline-flex', flexDirection: 'column', lineHeight: 1.1, alignItems: 'center' }}>
                                 <span>{ru.famTotal}</span>
-                                <span style={{ fontSize: 'var(--lbb-fs-9)', fontWeight: 500, color: 'var(--lbb-fg3)' }}>{ru.total} rec</span>
+                                <span style={{ fontSize: 'var(--lbb-fs-9)', fontWeight: 500, color: 'var(--lbb-fg3)' }}>{t('library.summary.recShort', { count: ru.total })}</span>
                               </span>
                             </TD>
                             <TD align="center">
@@ -1701,7 +1885,7 @@ function PerformanceLensView({ rows, catalogLoading, actionHandlers, openCtxMenu
                             </TD>
                             <TD style={{ overflow: 'visible' }}>
                               <Pill tone={coverageTone(ru.coverage)} soft dot={ru.coverage === 'Covered'}>
-                                {coverageLabel(ru.coverage, ru.ownedCount, ru.total)}
+                                {coverageLabel(ru.coverage, ru.ownedCount, ru.total, t)}
                               </Pill>
                             </TD>
                           </TR>
@@ -1715,12 +1899,17 @@ function PerformanceLensView({ rows, catalogLoading, actionHandlers, openCtxMenu
                         return (
                           <tr
                             key={`f-${item.perf.id}-${fam.id}`}
-                            onClick={() => { setSelectedId(item.perf.id); setSelectedMemberLb(null) }}
+                            onClick={() => {
+                              if (single && lone) { setSelectedMemberLb(lone.lbNumber); setSelectedId(null) }
+                              else { setSelectedId(item.perf.id); setSelectedMemberLb(null) }
+                            }}
                             style={{
                               height: vItem.size, cursor: 'pointer',
-                              background: fam.owned
-                                ? 'color-mix(in srgb, var(--lbb-ok-bg) 26%, transparent)'
-                                : 'color-mix(in srgb, var(--lbb-surface2) 55%, transparent)',
+                              background: single && selectedMemberLb === lone?.lbNumber
+                                ? 'var(--lbb-accent-soft)'
+                                : fam.owned
+                                  ? 'color-mix(in srgb, var(--lbb-ok-bg) 26%, transparent)'
+                                  : 'color-mix(in srgb, var(--lbb-surface2) 55%, transparent)',
                             }}
                           >
                             <td style={{ width: 3, padding: 0, background: fam.owned ? 'var(--lbb-ok-bar)' : 'var(--lbb-border2)', borderBottom: '1px solid var(--lbb-border)' }} />
@@ -1735,21 +1924,22 @@ function PerformanceLensView({ rows, catalogLoading, actionHandlers, openCtxMenu
                                 />
                               )}
                             </td>
-                            <td colSpan={3} style={{ borderBottom: '1px solid var(--lbb-border)', padding: '4px 10px', overflow: 'hidden' }}>
+                            <td colSpan={5} style={{ borderBottom: '1px solid var(--lbb-border)', padding: '4px 10px', overflow: 'hidden' }}>
                               <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8, minWidth: 0, maxWidth: '100%' }}>
                                 <span style={{ color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11)', flex: '0 0 auto' }}>
                                   {fam.multi ? '├' : '└'}
                                 </span>
                                 <Pill tone={fam.owned ? 'ok' : 'mute'} soft>{fam.src ? (SRC_ABBR[fam.src] ?? fam.src) : '—'}</Pill>
-                                <span style={{ fontSize: 'var(--lbb-fs-12-5)', fontWeight: 700, color: 'var(--lbb-fg)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', flex: '0 1 auto', minWidth: 0 }}>
-                                  {fam.label}
-                                </span>
+                                {fam.tmLabel && (
+                                  <span title={t('library.tooltip.tapematchGroup')}>
+                                    <Pill tone="info" soft>{fam.tmLabel}</Pill>
+                                  </span>
+                                )}
                                 {single && (
                                   <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11)', fontWeight: 600, color: fam.owned ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg3)', whiteSpace: 'nowrap' }}>
                                     {lone?.lb}
                                   </span>
                                 )}
-                                {fam.dupes > 0 && <Pill tone="mute" soft>{fam.dupes} dup</Pill>}
                               </span>
                             </td>
                             <td style={{ borderBottom: '1px solid var(--lbb-border)', textAlign: 'center', fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg2)' }}>
@@ -1763,9 +1953,9 @@ function PerformanceLensView({ rows, catalogLoading, actionHandlers, openCtxMenu
                             <td style={{ borderBottom: '1px solid var(--lbb-border)', padding: '0 var(--lbb-d-pad)', overflow: 'visible' }}>
                               {fam.owned
                                 ? (fam.ownedCount < fam.total
-                                    ? <Pill tone="ok" soft dot>Own {fam.ownedCount}/{fam.total}</Pill>
-                                    : <Pill tone="ok" soft dot>Owned</Pill>)
-                                : (lone?.wish ? <Pill tone="warn" soft>Wishlist</Pill> : <Pill tone="mute" soft>Not owned</Pill>)}
+                                    ? <Pill tone="ok" soft dot>{t('library.family.ownCount', { owned: fam.ownedCount, total: fam.total })}</Pill>
+                                    : <Pill tone="ok" soft dot>{t('library.family.owned')}</Pill>)
+                                : (lone?.wish ? <Pill tone="warn" soft>{t('library.family.wishlist')}</Pill> : <Pill tone="mute" soft>{t('library.family.notOwned')}</Pill>)}
                             </td>
                           </tr>
                         )
@@ -1777,7 +1967,7 @@ function PerformanceLensView({ rows, catalogLoading, actionHandlers, openCtxMenu
                         <tr
                           key={`m-${item.perf.id}-${item.fam.id}-${rec.lb}`}
                           onClick={() => { setSelectedMemberLb(rec.lbNumber); setSelectedId(null) }}
-                          onContextMenu={e => openCtxMenu(e, rec.lb, buildRecordingActions(toRecAction(rec), [], actionHandlers))}
+                          onContextMenu={e => openCtxMenu(e, rec.lb, buildRecordingActions(toRecAction(rec), [], actionHandlers, t))}
                           style={{
                             height: vItem.size, cursor: 'pointer',
                             background: selectedMemberLb === rec.lbNumber
@@ -1787,20 +1977,20 @@ function PerformanceLensView({ rows, catalogLoading, actionHandlers, openCtxMenu
                         >
                           <td style={{ width: 3, padding: 0, background: rec.owned ? 'var(--lbb-ok-bar)' : 'transparent', borderBottom: '1px solid var(--lbb-border)' }} />
                           <td style={{ borderBottom: '1px solid var(--lbb-border)' }} />
+                          <td style={{ borderBottom: '1px solid var(--lbb-border)' }} />
                           <TD mono dim style={{ paddingLeft: 22 }}>
                             <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
                               <span style={{ color: 'var(--lbb-fg3)' }}>{isLast ? '└' : '├'}</span>
                               <span style={{ color: rec.owned ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg3)', fontWeight: 600 }}>{rec.lb}</span>
                             </span>
                           </TD>
-                          <TD dim style={{ fontSize: 'var(--lbb-fs-11-5)' }}>
+                          <TD dim colSpan={3} style={{ fontSize: 'var(--lbb-fs-11-5)' }}>
                             <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6, minWidth: 0 }}>
-                              {isCanonical && <Pill tone="info" soft>Best</Pill>}
-                              {rec.dup && <Pill tone="mute" soft>dup</Pill>}
+                              {isCanonical && <Pill tone="info" soft>{t('library.family.best')}</Pill>}
                               <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{rec.desc}</span>
+                              <span style={{ color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-11)' }}>{rec.src ? (SOURCE_FULL[rec.src] ?? rec.src) : '—'}</span>
                             </span>
                           </TD>
-                          <TD dim style={{ fontSize: 'var(--lbb-fs-11)' }}>{rec.src ? (SOURCE_FULL[rec.src] ?? rec.src) : '—'}</TD>
                           <td style={{ borderBottom: '1px solid var(--lbb-border)' }} />
                           <TD align="center">
                             {rec.rating !== '—'
@@ -1808,8 +1998,8 @@ function PerformanceLensView({ rows, catalogLoading, actionHandlers, openCtxMenu
                               : <span style={{ color: 'var(--lbb-fg3)' }}>—</span>}
                           </TD>
                           <TD style={{ overflow: 'visible' }}>
-                            {rec.owned ? <Pill tone="ok" soft dot>Owned</Pill>
-                              : rec.wish ? <Pill tone="warn" soft>Wishlist</Pill> : <Pill tone="mute" soft>Not owned</Pill>}
+                            {rec.owned ? <Pill tone="ok" soft dot>{t('library.family.owned')}</Pill>
+                              : rec.wish ? <Pill tone="warn" soft>{t('library.family.wishlist')}</Pill> : <Pill tone="mute" soft>{t('library.family.notOwned')}</Pill>}
                           </TD>
                         </tr>
                       )
@@ -1826,7 +2016,7 @@ function PerformanceLensView({ rows, catalogLoading, actionHandlers, openCtxMenu
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               height: '50%', color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-12)',
             }}>
-              Loading…
+              {t('library.empty.loading')}
             </div>
           )}
 
@@ -1837,45 +2027,52 @@ function PerformanceLensView({ rows, catalogLoading, actionHandlers, openCtxMenu
             }}>
               <Icon name="search" size={40} style={{ opacity: 0.2 }} />
               <div style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: 'var(--lbb-fs-15)', fontWeight: 600, color: 'var(--lbb-fg2)' }}>Nothing matches</div>
-                <div style={{ fontSize: 'var(--lbb-fs-11-5)', marginTop: 4 }}>Try adjusting your search or filters</div>
+                <div style={{ fontSize: 'var(--lbb-fs-15)', fontWeight: 600, color: 'var(--lbb-fg2)' }}>{t('library.empty.nothingMatches')}</div>
+                <div style={{ fontSize: 'var(--lbb-fs-11-5)', marginTop: 4 }}>{t('library.empty.tryAdjust')}</div>
               </div>
             </div>
           )}
         </div>
+
+        {/* Detail panel — always mounted; collapses to 40px stub */}
+        {(() => {
+          const toggle = () => setDetailPanelOpen(o => !o)
+          if (selectedMemberLb !== null) {
+            const rec = rowsByLb.get(selectedMemberLb) ?? null
+            return (
+              <RecordingDetailPanel
+                row={rec}
+                history={rec ? historyMap.get(rec.lbNumber) : undefined}
+                attachCount={rec ? attachCountMap.get(rec.lbNumber) : undefined}
+                actionHandlers={actionHandlers}
+                openMenu={openCtxMenu}
+                onClose={() => setSelectedMemberLb(null)}
+                open={detailPanelOpen}
+                onToggle={toggle}
+              />
+            )
+          }
+          const perf = selectedId !== null ? (performances.find(p => p.id === selectedId) ?? null) : null
+          const canonical = perf ? bestOf(perf.recordings) : null
+          const perfFamilies = perf ? familiesOf(perf.recordings) : []
+          return (
+            <PerformanceDetailPanel
+              perf={perf}
+              recordings={(perf?.recordings ?? []) as any}
+              families={perfFamilies}
+              canonical={canonical as any}
+              history={canonical ? historyMap.get(canonical.lbNumber) : undefined}
+              attachCount={canonical ? attachCountMap.get(canonical.lbNumber) : undefined}
+              actionHandlers={actionHandlers}
+              openMenu={openCtxMenu}
+              onClose={() => setSelectedId(null)}
+              open={detailPanelOpen}
+              onToggle={toggle}
+            />
+          )
+        })()}
       </div>
-      {/* TODO-150 step 8: detail panel — member-row selection wins over show
-          selection (mutually exclusive, enforced where each is set above). */}
-      {selectedMemberLb !== null ? (() => {
-        const rec = rowsByLb.get(selectedMemberLb)
-        if (!rec) return null
-        return (
-          <RecordingDetailPanel
-            row={rec}
-            history={historyMap.get(rec.lbNumber)}
-            attachCount={attachCountMap.get(rec.lbNumber)}
-            actionHandlers={actionHandlers}
-            openMenu={openCtxMenu}
-            onClose={() => setSelectedMemberLb(null)}
-          />
-        )
-      })() : selectedId !== null ? (() => {
-        const perf = performances.find(p => p.id === selectedId)
-        if (!perf) return null
-        const canonical = bestOf(perf.recordings)
-        return (
-          <PerformanceDetailPanel
-            perf={perf}
-            recordings={perf.recordings}
-            canonical={canonical}
-            history={canonical ? historyMap.get(canonical.lbNumber) : undefined}
-            attachCount={canonical ? attachCountMap.get(canonical.lbNumber) : undefined}
-            actionHandlers={actionHandlers}
-            openMenu={openCtxMenu}
-            onClose={() => setSelectedId(null)}
-          />
-        )
-      })() : null}
     </div>
   )
 }
+
