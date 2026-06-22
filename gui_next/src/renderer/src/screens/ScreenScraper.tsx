@@ -436,7 +436,7 @@ function EntryTab({ status, logs, onClearLog, onLog }: {
           <Input placeholder="End LB" value={endLb} onChange={e => setEndLb(e.target.value)} size="sm" width={90} />
         </div>
         <Button variant="secondary" size="sm" style={{ marginTop: 6 }} disabled={running || !startLb || !endLb}
-          onClick={() => post('/api/scrape/start', { lb_numbers: Array.from({ length: parseInt(endLb) - parseInt(startLb) + 1 }, (_, i) => parseInt(startLb) + i), force, download_files: dlFiles, delay_ms: parseInt(delay) })}>
+          onClick={() => post('/api/scrape/start', { start_lb: parseInt(startLb), end_lb: parseInt(endLb), force, download_files: dlFiles, delay_ms: parseInt(delay) })}>
           Scrape Range
         </Button>
 

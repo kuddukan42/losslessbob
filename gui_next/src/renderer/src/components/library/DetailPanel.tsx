@@ -7,7 +7,7 @@
 // arrays — no new backend endpoint) -> AssetStrip (attachments/spectrograms/map as
 // state-bearing chips) -> an optional Setlist line for the performance lens.
 
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useQuery } from '@tanstack/react-query'
 import { Pill, Button, IconButton } from '../primitives'
@@ -159,8 +159,8 @@ function PanelHeader({
       display: 'flex', alignItems: 'center', gap: 8, flexShrink: 0,
     }}>
       <span style={{
-        flex: 1, fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700,
-        letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--lbb-fg3)',
+        flex: 1, fontSize: 'var(--t-label)', fontWeight: 'var(--w-bold)',
+        letterSpacing: 'var(--track-eyebrow)', textTransform: 'uppercase', color: 'var(--lbb-fg3)',
       }}>{label}</span>
       {onOpenLbPage && (
         <Button size="sm" variant="ghost" icon="reveal" onClick={onOpenLbPage}>
@@ -175,7 +175,7 @@ function PanelHeader({
 function ZoneLabel({ children }: { children: React.ReactNode }) {
   return (
     <div style={{
-      fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, letterSpacing: '0.08em',
+      fontSize: 'var(--t-label)', fontWeight: 'var(--w-bold)', letterSpacing: 'var(--track-eyebrow)',
       textTransform: 'uppercase', color: 'var(--lbb-fg3)', margin: '14px 0 8px',
     }}>
       {children}
@@ -190,7 +190,7 @@ function SourceBadge({ src, owned }: { src: string | null; owned: boolean }) {
       <span style={{
         display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
         minWidth: 30, height: 18, padding: '0 5px', borderRadius: 4,
-        fontFamily: 'var(--lbb-mono)', fontSize: 10, fontWeight: 700, letterSpacing: 0.3,
+        fontFamily: 'var(--lbb-mono)', fontSize: 'var(--t-micro)', fontWeight: 'var(--w-bold)', letterSpacing: 0.3,
         border: '1px dashed var(--lbb-border2)', color: 'var(--lbb-fg3)',
       }}>—</span>
     )
@@ -201,7 +201,7 @@ function SourceBadge({ src, owned }: { src: string | null; owned: boolean }) {
     <span style={{
       display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
       minWidth: 30, height: 18, padding: '0 5px', borderRadius: 4,
-      fontFamily: 'var(--lbb-mono)', fontSize: 10, fontWeight: 700, letterSpacing: 0.3,
+      fontFamily: 'var(--lbb-mono)', fontSize: 'var(--t-micro)', fontWeight: 'var(--w-bold)', letterSpacing: 0.3,
       background: owned ? `color-mix(in srgb, ${hue} 18%, transparent)` : 'transparent',
       color: owned ? hue : 'var(--lbb-fg3)',
       border: `1px solid ${owned ? `color-mix(in srgb, ${hue} 45%, transparent)` : 'var(--lbb-border2)'}`,
@@ -226,7 +226,7 @@ function CoverageChip({ coverage, ownedCount, total }: { coverage: string; owned
       padding: '1px 8px 1px 6px', borderRadius: 999, whiteSpace: 'nowrap',
       background: `var(--lbb-${m.tone}-bg)`, color: `var(--lbb-${m.tone}-fg)`,
       border: `1px solid color-mix(in srgb, var(--lbb-${m.tone}-bar) 50%, transparent)`,
-      fontSize: 11, fontWeight: 650, fontVariantNumeric: 'tabular-nums',
+      fontSize: 'var(--t-micro)', fontWeight: 'var(--w-semi)', fontVariantNumeric: 'tabular-nums',
     }}>
       <Icon name={m.icon} size={11} />
       {m.label}
@@ -249,10 +249,10 @@ function MatchChip({ by, conf }: { by: string; conf: number | null }) {
       padding: '1px 7px 1px 5px', height: 18, borderRadius: 4,
       background: `var(--lbb-${m.tone}-bg)`, color: `var(--lbb-${m.tone}-fg)`,
       border: `1px solid color-mix(in srgb, var(--lbb-${m.tone}-bar) 55%, transparent)`,
-      fontSize: 10, fontWeight: 700, letterSpacing: 0.02, whiteSpace: 'nowrap',
+      fontSize: 'var(--t-micro)', fontWeight: 'var(--w-bold)', letterSpacing: 0.02, whiteSpace: 'nowrap',
     }}>
       <Icon name={m.icon} size={10.5} />
-      {m.code}{pct && <span style={{ opacity: 0.85, fontWeight: 600 }}> · {pct}</span>}
+      {m.code}{pct && <span style={{ opacity: 0.85, fontWeight: 'var(--w-semi)' }}> · {pct}</span>}
     </span>
   )
 }
@@ -277,10 +277,10 @@ function FamilyMeter({ families }: { families: PerfFamily[] }) {
 function Fact({ label, value, sub }: { label: string; value: string | number; sub?: string }) {
   return (
     <div style={{ padding: '8px 10px', borderRadius: 8, background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)' }}>
-      <div style={{ fontSize: 18, fontWeight: 700, color: 'var(--lbb-fg)', fontVariantNumeric: 'tabular-nums', letterSpacing: -0.01 }}>
-        {value}{sub && <span style={{ fontSize: 10.5, fontWeight: 500, color: 'var(--lbb-fg3)', marginLeft: 3 }}>{sub}</span>}
+      <div style={{ fontSize: 'var(--lbb-fs-18)', fontWeight: 'var(--w-bold)', color: 'var(--lbb-fg)', fontVariantNumeric: 'tabular-nums', letterSpacing: -0.01 }}>
+        {value}{sub && <span style={{ fontSize: 'var(--t-micro)', fontWeight: 'var(--w-med)', color: 'var(--lbb-fg3)', marginLeft: 3 }}>{sub}</span>}
       </div>
-      <div style={{ fontSize: 10, fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--lbb-fg3)', marginTop: 2 }}>{label}</div>
+      <div style={{ fontSize: 'var(--t-micro)', fontWeight: 'var(--w-semi)', letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--lbb-fg3)', marginTop: 2 }}>{label}</div>
     </div>
   )
 }
@@ -297,24 +297,24 @@ function MemberRow({ r, isCanonical }: { r: PerfRecording; isCanonical: boolean 
       background: isCanonical ? 'color-mix(in srgb, var(--lbb-accent-soft) 60%, transparent)' : 'transparent',
       borderTop: '1px solid var(--lbb-border)',
     }}>
-      <span style={{ color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)', fontSize: 11, flexShrink: 0 }}>
+      <span style={{ color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)', fontSize: 'var(--t-mono-sm)', flexShrink: 0 }}>
         {isCanonical ? '●' : '└'}
       </span>
       <div style={{ flex: 1, minWidth: 0 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-          <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 11.5, fontWeight: 600, color: r.owned ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg2)' }}>
+          <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--t-mono)', fontWeight: 'var(--w-semi)', color: r.owned ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg2)' }}>
             {r.lb}
           </span>
-          {tag && <Pill tone={tag.tone} soft style={{ fontSize: 9, padding: '0 5px' }}>{tag.label}</Pill>}
+          {tag && <Pill tone={tag.tone} soft style={{ fontSize: 'var(--t-micro)', padding: '0 5px' }}>{tag.label}</Pill>}
           <div style={{ flex: 1 }} />
-          {r.rating !== '—' && <Pill tone={ratingTone(r.rating)} soft style={{ fontSize: 9, padding: '0 5px' }}>{r.rating}</Pill>}
+          {r.rating !== '—' && <Pill tone={ratingTone(r.rating)} soft style={{ fontSize: 'var(--t-micro)', padding: '0 5px' }}>{r.rating}</Pill>}
           {r.owned
-            ? <Pill tone="ok" soft dot style={{ fontSize: 9, padding: '0 5px' }}>{t('library.family.owned')}</Pill>
-            : r.wish ? <Pill tone="warn" soft style={{ fontSize: 9, padding: '0 5px' }}>{t('library.family.wishlist')}</Pill>
-            : <Pill tone="mute" soft style={{ fontSize: 9, padding: '0 5px' }}>{t('library.family.notOwned')}</Pill>}
+            ? <Pill tone="ok" soft dot style={{ fontSize: 'var(--t-micro)', padding: '0 5px' }}>{t('library.family.owned')}</Pill>
+            : r.wish ? <Pill tone="warn" soft style={{ fontSize: 'var(--t-micro)', padding: '0 5px' }}>{t('library.family.wishlist')}</Pill>
+            : <Pill tone="mute" soft style={{ fontSize: 'var(--t-micro)', padding: '0 5px' }}>{t('library.family.notOwned')}</Pill>}
         </div>
         {r.src && (
-          <div style={{ fontSize: 10.5, color: 'var(--lbb-fg3)', marginTop: 3 }}>{r.src}</div>
+          <div style={{ fontSize: 'var(--t-micro)', color: 'var(--lbb-fg3)', marginTop: 3 }}>{r.src}</div>
         )}
       </div>
     </div>
@@ -332,10 +332,10 @@ function FamilyCard({ fam }: { fam: PerfFamily }) {
     }}>
       <div style={{ padding: '9px 10px', display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
         <SourceBadge src={fam.src} owned={fam.owned} />
-        <span style={{ fontSize: 12.5, fontWeight: 700, color: 'var(--lbb-fg)' }}>{fam.tmLabel ?? fam.src ?? t('library.family.recording')}</span>
+        <span style={{ fontSize: 'var(--t-title)', fontWeight: 'var(--w-semi)', color: 'var(--lbb-fg)' }}>{fam.tmLabel ?? fam.src ?? t('library.family.recording')}</span>
         <MatchChip by={fam.by} conf={fam.conf} />
         <div style={{ flex: 1 }} />
-        <span style={{ fontSize: 10.5, color: 'var(--lbb-fg3)', fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
+        <span style={{ fontSize: 'var(--t-micro)', color: 'var(--lbb-fg3)', fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
           {t('library.family.uploads', { count: fam.total })}
         </span>
       </div>
@@ -363,12 +363,12 @@ function Setlist({ date }: { date: string }) {
   })
 
   if (isLoading) return (
-    <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', padding: '10px 0' }}>{t('library.setlist.loading')}</div>
+    <div style={{ fontSize: 'var(--t-meta)', color: 'var(--lbb-fg3)', padding: '10px 0' }}>{t('library.setlist.loading')}</div>
   )
   if (!data || !data.tracks?.length) return (
     <div style={{
       padding: '14px 12px', borderRadius: 6, textAlign: 'center',
-      border: '1px dashed var(--lbb-border2)', color: 'var(--lbb-fg3)', fontSize: 11.5,
+      border: '1px dashed var(--lbb-border2)', color: 'var(--lbb-fg3)', fontSize: 'var(--t-meta)',
     }}>
       {t('library.setlist.notScraped')}
     </div>
@@ -380,10 +380,10 @@ function Setlist({ date }: { date: string }) {
         {(data.tracks as { name: string }[]).map((t, ti) => (
           <div key={ti} style={{
             display: 'flex', alignItems: 'baseline', gap: 8, padding: '3.5px 10px',
-            fontSize: 11.5, lineHeight: 1.45,
+            fontSize: 'var(--t-meta)', lineHeight: 1.45,
             background: ti % 2 === 1 ? 'color-mix(in srgb, var(--lbb-surface2) 40%, transparent)' : 'transparent',
           }}>
-            <span style={{ width: 18, textAlign: 'right', fontFamily: 'var(--lbb-mono)', fontSize: 10.5, color: 'var(--lbb-fg3)', flexShrink: 0 }}>
+            <span style={{ width: 18, textAlign: 'right', fontFamily: 'var(--lbb-mono)', fontSize: 'var(--t-mono-sm)', color: 'var(--lbb-fg3)', flexShrink: 0 }}>
               {ti + 1}
             </span>
             <span style={{ flex: 1, color: 'var(--lbb-fg)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
@@ -427,13 +427,14 @@ function ActionBarZone({ actions, onMore }: { actions: LibAction[]; onMore: (e: 
 // in /api/collection/prefetch (per row.lbNumber). Absent history = "Not shared
 // yet" empty state, never a fake log (03-data-contract.md Entity 4). ──────────
 
-function ShareSeedZone({ history, busy, onQbt, onTorrent, onForum, note }: {
+function ShareSeedZone({ history, busy, onQbt, onTorrent, onForum, note, hideLabel }: {
   history: RowHistory | undefined
   busy?: boolean
   onQbt: () => void
   onTorrent: () => void
   onForum: () => void
   note?: string
+  hideLabel?: boolean
 }) {
   const { t } = useTranslation()
   const [filter, setFilter] = useState<'all' | 'torrents' | 'forum'>('all')
@@ -462,8 +463,8 @@ function ShareSeedZone({ history, busy, onQbt, onTorrent, onForum, note }: {
 
   return (
     <div style={{ flexShrink: 0 }}>
-      <ZoneLabel>{t('library.share.label')}</ZoneLabel>
-      {note && <div style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', marginBottom: 6 }}>{note}</div>}
+      {!hideLabel && <ZoneLabel>{t('library.share.label')}</ZoneLabel>}
+      {note && <div style={{ fontSize: 'var(--t-meta)', color: 'var(--lbb-fg3)', marginBottom: 6 }}>{note}</div>}
       <div style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)', marginBottom: 8 }}>{status}</div>
       <div style={{ display: 'flex', gap: 6, marginBottom: 10, flexWrap: 'wrap' }}>
         <Button variant="secondary" size="sm" icon="upload" disabled={busy} onClick={onQbt}>{t('library.share.addQbt')}</Button>
@@ -507,12 +508,13 @@ function ShareSeedZone({ history, busy, onQbt, onTorrent, onForum, note }: {
 // is checked lazily (only while this zone is mounted) via the existing
 // /api/spectrogram/list endpoint, scoped to this row's folder. ───────────────
 
-function AssetStripZone({ row, attachCount, onAttach, onSpectro, onMap }: {
+function AssetStripZone({ row, attachCount, onAttach, onSpectro, onMap, hideLabel }: {
   row: DetailRow
   attachCount: number | undefined
   onAttach: () => void
   onSpectro: () => void
   onMap: () => void
+  hideLabel?: boolean
 }) {
   const { t } = useTranslation()
   const { data: specData, isLoading: specLoading } = useQuery({
@@ -535,7 +537,7 @@ function AssetStripZone({ row, attachCount, onAttach, onSpectro, onMap }: {
 
   return (
     <div style={{ flexShrink: 0 }}>
-      <ZoneLabel>{t('library.assets.label')}</ZoneLabel>
+      {!hideLabel && <ZoneLabel>{t('library.assets.label')}</ZoneLabel>}
       <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
         <button type="button" onClick={onAttach} style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}>
           <Pill tone={attachCount ? 'ok' : 'mute'} soft dot={!!attachCount}>
@@ -555,6 +557,56 @@ function AssetStripZone({ row, attachCount, onAttach, onSpectro, onMap }: {
   )
 }
 
+// ── Tab strip (spec §8) — pinned below the identity block; routes the pane
+// body. Idle tabs are --t-body/500 fg3; the active tab is accent-mid with a
+// 2px inset underline. Count pills sit inline. ──────────────────────────────
+export interface PanelTab { id: string; label: string; count?: number }
+
+function TabStrip({ tabs, active, onChange }: { tabs: PanelTab[]; active: string; onChange: (id: string) => void }) {
+  return (
+    <div style={{
+      display: 'flex', gap: 2, padding: '6px 10px 0',
+      borderBottom: '1px solid var(--lbb-border)', flexShrink: 0,
+    }}>
+      {tabs.map(tab => {
+        const on = tab.id === active
+        return (
+          <button
+            key={tab.id} type="button" onClick={() => onChange(tab.id)}
+            style={{
+              position: 'relative', display: 'inline-flex', alignItems: 'center', gap: 6,
+              padding: '7px 11px 9px', border: 'none', background: 'none', cursor: 'pointer',
+              fontFamily: 'inherit', fontSize: 'var(--t-body)',
+              fontWeight: on ? 'var(--w-semi)' : 'var(--w-med)',
+              color: on ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg3)',
+              whiteSpace: 'nowrap',
+            }}
+            onMouseEnter={e => { if (!on) e.currentTarget.style.color = 'var(--lbb-fg2)' }}
+            onMouseLeave={e => { if (!on) e.currentTarget.style.color = 'var(--lbb-fg3)' }}
+          >
+            {tab.label}
+            {tab.count !== undefined && (
+              <span style={{
+                minWidth: 16, height: 16, padding: '0 4px', borderRadius: 8,
+                display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+                fontSize: 'var(--t-micro)', fontWeight: 'var(--w-bold)', lineHeight: 1,
+                background: on ? 'var(--lbb-accent-mid)' : 'var(--lbb-surface3)',
+                color: on ? 'var(--lbb-accent-onMid)' : 'var(--lbb-fg3)',
+              }}>{tab.count}</span>
+            )}
+            {on && (
+              <span style={{
+                position: 'absolute', left: 8, right: 8, bottom: -1, height: 2,
+                background: 'var(--lbb-accent-mid)', borderRadius: 1,
+              }} />
+            )}
+          </button>
+        )
+      })}
+    </div>
+  )
+}
+
 // ── Recording detail panel ──────────────────────────────────────────────────
 
 export function RecordingDetailPanel({ row, history, attachCount, actionHandlers, openMenu, onClose, open = true, onToggle, width = 380 }: {
@@ -570,6 +622,11 @@ export function RecordingDetailPanel({ row, history, attachCount, actionHandlers
 }) {
   const { t } = useTranslation()
   const toggle = onToggle ?? onClose
+  // Tab state + scroll-reset on tab/row change (spec §8/§11). Hooks run before
+  // any early return to satisfy the rules of hooks.
+  const [tab, setTab] = useState('overview')
+  const paneRef = useRef<HTMLDivElement>(null)
+  useEffect(() => { if (paneRef.current) paneRef.current.scrollTop = 0 }, [tab, row?.lb])
 
   if (!open) return <CollapsedStub onToggle={toggle} />
 
@@ -577,7 +634,7 @@ export function RecordingDetailPanel({ row, history, attachCount, actionHandlers
     return (
       <aside style={panelAsideStyle(width)} data-panel="recording-detail">
         <PanelHeader label={t('library.panel.details')} onToggle={toggle} />
-        <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--lbb-fg3)', fontSize: 12 }}>
+        <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--lbb-fg3)', fontSize: 'var(--t-body)' }}>
           {t('library.panel.selectRow')}
         </div>
       </aside>
@@ -585,6 +642,15 @@ export function RecordingDetailPanel({ row, history, attachCount, actionHandlers
   }
 
   const actions = buildRecordingActions(row, [], actionHandlers, t)
+  // Overview is always present; Assets and Seed & Share only when the recording
+  // is owned (nothing local to act on otherwise — spec §10 unowned note).
+  const tabs: PanelTab[] = [{ id: 'overview', label: t('library.panel.tabOverview') }]
+  if (row.owned) {
+    tabs.push({ id: 'assets', label: t('library.panel.tabAssets') })
+    tabs.push({ id: 'share', label: t('library.panel.tabShare') })
+  }
+  const activeTab = tabs.some(x => x.id === tab) ? tab : 'overview'
+
   return (
     <aside style={panelAsideStyle(width)} data-panel="recording-detail">
       <PanelHeader
@@ -596,8 +662,8 @@ export function RecordingDetailPanel({ row, history, attachCount, actionHandlers
         onToggle={toggle}
       />
 
-      <div style={{ flex: 1, overflowY: 'auto', padding: 16 }}>
-        {/* Status pills */}
+      {/* Identity block — pinned (does not scroll) */}
+      <div style={{ padding: '14px 16px 12px', borderBottom: '1px solid var(--lbb-border)', flexShrink: 0 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 10, flexWrap: 'wrap' }}>
           {row.owned
             ? <Pill tone="ok" soft dot>{t('library.panel.owned')}</Pill>
@@ -607,78 +673,81 @@ export function RecordingDetailPanel({ row, history, attachCount, actionHandlers
           {row.dup && <Pill tone="mute" soft>{t('library.panel.dup')}</Pill>}
           {row.xref && <Pill tone="mute" soft>{t('library.panel.xref')}</Pill>}
         </div>
-
-        {/* Identity */}
-        <div style={{ fontFamily: 'var(--lbb-mono)', fontSize: 16, fontWeight: 700, color: 'var(--lbb-accent-mid)', marginBottom: 2 }}>
+        <div style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--t-display)', fontWeight: 'var(--w-bold)', color: 'var(--lbb-accent-mid)', marginBottom: 2 }}>
           {row.lb}
         </div>
-        <div style={{ fontSize: 12, color: 'var(--lbb-fg2)' }}>
+        <div style={{ fontSize: 'var(--t-body)', color: 'var(--lbb-fg2)' }}>
           {row.date} · {row.loc}
         </div>
         {row.desc && row.desc !== '—' && (
-          <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)', marginTop: 6, lineHeight: 1.5 }}>{row.desc}</div>
+          <div style={{ fontSize: 'var(--t-meta)', color: 'var(--lbb-fg3)', marginTop: 6, lineHeight: 1.5 }}>{row.desc}</div>
         )}
         {row.src && (
-          <div style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', marginTop: 3 }}>
+          <div style={{ fontSize: 'var(--t-meta)', color: 'var(--lbb-fg3)', marginTop: 3 }}>
             {SRC_ABBR[row.src] ?? row.src}
           </div>
         )}
+      </div>
 
-        {/* Action bar */}
-        <ActionBarZone actions={actions} onMore={e => openMenu(e, row.lb, actions)} />
+      <TabStrip tabs={tabs} active={activeTab} onChange={setTab} />
 
-        {/* Owned: file metadata card */}
-        {row.owned && (
-          <div style={{ marginTop: 14, padding: '10px 12px', borderRadius: 6, background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '86px 1fr', gap: '4px 10px', fontSize: 'var(--lbb-fs-11-5)' }}>
-              {row.folder && (
-                <>
-                  <span style={{ color: 'var(--lbb-fg3)' }}>{t('library.panel.folder')}</span>
-                  <span style={{ fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-fg2)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{row.folder}</span>
-                </>
-              )}
-              {row.conf && (
-                <>
-                  <span style={{ color: 'var(--lbb-fg3)' }}>{t('library.panel.confirmed')}</span>
-                  <span style={{ fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-fg2)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{row.conf}</span>
-                </>
-              )}
-              {row.rating && row.rating !== '—' && (
-                <>
-                  <span style={{ color: 'var(--lbb-fg3)' }}>{t('library.panel.rating')}</span>
-                  <span><Pill tone={ratingTone(row.rating)} soft>{row.rating}</Pill></span>
-                </>
-              )}
-            </div>
-          </div>
+      <div ref={paneRef} style={{ flex: 1, overflowY: 'auto', padding: 16 }}>
+        {activeTab === 'overview' && (
+          <>
+            <ActionBarZone actions={actions} onMore={e => openMenu(e, row.lb, actions)} />
+
+            {/* Owned: file & location card */}
+            {row.owned && (
+              <div style={{ marginTop: 14, padding: '10px 12px', borderRadius: 6, background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '80px 1fr', gap: '6px 10px', fontSize: 'var(--t-meta)' }}>
+                  {row.folder && (
+                    <>
+                      <span style={{ color: 'var(--lbb-fg3)' }}>{t('library.panel.folder')}</span>
+                      <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--t-mono-sm)', color: 'var(--lbb-fg2)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{row.folder}</span>
+                    </>
+                  )}
+                  {row.conf && (
+                    <>
+                      <span style={{ color: 'var(--lbb-fg3)' }}>{t('library.panel.confirmed')}</span>
+                      <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--t-mono-sm)', color: 'var(--lbb-fg2)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{row.conf}</span>
+                    </>
+                  )}
+                  {row.rating && row.rating !== '—' && (
+                    <>
+                      <span style={{ color: 'var(--lbb-fg3)' }}>{t('library.panel.rating')}</span>
+                      <span><Pill tone={ratingTone(row.rating)} soft>{row.rating}</Pill></span>
+                    </>
+                  )}
+                </div>
+              </div>
+            )}
+
+            {/* Unowned: catalog note */}
+            {!row.owned && (
+              <div style={{
+                marginTop: 14, padding: '10px 12px', borderRadius: 6,
+                background: 'color-mix(in srgb, var(--lbb-info-bg) 40%, transparent)',
+                border: '1px solid color-mix(in srgb, var(--lbb-info-bar) 30%, transparent)',
+                fontSize: 'var(--t-meta)', color: 'var(--lbb-info-fg)',
+              }}>
+                {t('library.panel.catalogNote')}
+              </div>
+            )}
+          </>
         )}
 
-        {/* Unowned: catalog note */}
-        {!row.owned && (
-          <div style={{
-            marginTop: 14, padding: '10px 12px', borderRadius: 6,
-            background: 'color-mix(in srgb, var(--lbb-info-bg) 40%, transparent)',
-            border: '1px solid color-mix(in srgb, var(--lbb-info-bar) 30%, transparent)',
-            fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-info-fg)',
-          }}>
-            {t('library.panel.catalogNote')}
-          </div>
-        )}
-
-        {/* Assets (owned) */}
-        {row.owned && (
+        {activeTab === 'assets' && row.owned && (
           <AssetStripZone
-            row={row} attachCount={attachCount}
+            row={row} attachCount={attachCount} hideLabel
             onAttach={() => actionHandlers.onAttach(row)}
             onSpectro={() => actionHandlers.onSpectro(row)}
             onMap={() => actionHandlers.onMap()}
           />
         )}
 
-        {/* Share & seed (owned) */}
-        {row.owned && (
+        {activeTab === 'share' && row.owned && (
           <ShareSeedZone
-            history={history}
+            history={history} hideLabel
             onQbt={() => actionHandlers.onQbt([row])}
             onTorrent={() => actionHandlers.onTorrent([row])}
             onForum={() => actionHandlers.onForum([row])}
@@ -707,10 +776,25 @@ export function PerformanceDetailPanel({ perf, recordings, families, canonical, 
 }) {
   const { t } = useTranslation()
   const toggle = onToggle ?? onClose
+  // Tab state + scroll-reset on tab/performance change (spec §8/§11).
+  const [tab, setTab] = useState('overview')
+  const paneRef = useRef<HTMLDivElement>(null)
+  useEffect(() => { if (paneRef.current) paneRef.current.scrollTop = 0 }, [tab, perf?.id])
 
   if (!open) return <CollapsedStub onToggle={toggle} />
 
-  const actions = perf ? buildPerformanceActions(recordings, canonical, actionHandlers, t) : []
+  if (!perf) {
+    return (
+      <aside style={panelAsideStyle(width)} data-panel="performance-detail">
+        <PanelHeader label={t('library.panel.performance')} lbPageLabel={t('library.panel.lbPage')} onToggle={toggle} />
+        <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--lbb-fg3)', fontSize: 'var(--t-body)' }}>
+          {t('library.panel.selectPerformance')}
+        </div>
+      </aside>
+    )
+  }
+
+  const actions = buildPerformanceActions(recordings, canonical, actionHandlers, t)
   const owned = recordings.filter(r => r.owned)
   const ownedFams = families.filter(f => f.owned)
   const coverage = recordings.length === 0 ? 'Undocumented'
@@ -725,64 +809,62 @@ export function PerformanceDetailPanel({ perf, recordings, families, canonical, 
     : null
   const dupeCount = recordings.filter(r => r.dup).length
 
+  // Overview always; Recordings/Setlist/Seed & Share only when they have content
+  // (spec §9). Each focus item is a peer tab, not a footer in a long scroll.
+  const tabs: PanelTab[] = [{ id: 'overview', label: t('library.panel.tabOverview') }]
+  if (families.length > 0) tabs.push({ id: 'recordings', label: t('library.panel.tabRecordings'), count: families.length })
+  if (perf.setlist) tabs.push({ id: 'setlist', label: t('library.panel.tabSetlist') })
+  if (owned.length > 0 && canonical) tabs.push({ id: 'share', label: t('library.panel.tabShare') })
+  const activeTab = tabs.some(x => x.id === tab) ? tab : 'overview'
+
   return (
     <aside style={panelAsideStyle(width)} data-panel="performance-detail">
       <PanelHeader
         label={t('library.panel.performance')}
-        onOpenLbPage={perf ? () => {} : undefined}
+        onOpenLbPage={() => {}}
         lbPageLabel={t('library.panel.lbPage')}
         onToggle={toggle}
       />
 
-      <div style={{ flex: 1, overflowY: 'auto', padding: 16 }}>
-        {!perf ? (
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', color: 'var(--lbb-fg3)', fontSize: 12 }}>
-            {t('library.panel.selectPerformance')}
+      {/* Identity block — pinned (does not scroll) */}
+      <div style={{ padding: '14px 16px 12px', borderBottom: '1px solid var(--lbb-border)', flexShrink: 0 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
+          {perf.dow && (
+            <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--t-meta)', color: 'var(--lbb-fg3)', textTransform: 'uppercase', letterSpacing: 0.5 }}>
+              {perf.dow}
+            </span>
+          )}
+          <CoverageChip coverage={coverage} ownedCount={owned.length} total={recordings.length} />
+        </div>
+        <div style={{ fontSize: 'var(--t-display)', fontWeight: 'var(--w-bold)', color: 'var(--lbb-fg)', letterSpacing: -0.02, lineHeight: 1.05 }}>
+          {perf.disp}
+          {perf.confirmed === false && (
+            <Pill tone="mute" soft style={{ marginLeft: 8, fontSize: 'var(--t-micro)', verticalAlign: 'middle' }}>
+              {t('library.panel.unconfirmed')}
+            </Pill>
+          )}
+        </div>
+        {perf.venue && (
+          <div style={{ fontSize: 'var(--t-title)', fontWeight: 'var(--w-semi)', color: 'var(--lbb-fg)', marginTop: 4 }}>{perf.venue}</div>
+        )}
+        {perf.city && (
+          <div style={{ fontSize: 'var(--t-body)', color: 'var(--lbb-fg2)' }}>{perf.city}</div>
+        )}
+        {perf.tour && (
+          <div style={{ fontSize: 'var(--t-meta)', color: 'var(--lbb-fg3)', marginTop: 6 }}>{perf.tour}</div>
+        )}
+        {perf.title && (
+          <div style={{ fontSize: 'var(--t-body)', fontStyle: 'italic', color: 'var(--lbb-fg2)', marginTop: 6 }}>
+            {t('library.panel.releasedAs', { title: perf.title })}
           </div>
-        ) : (
+        )}
+      </div>
+
+      <TabStrip tabs={tabs} active={activeTab} onChange={setTab} />
+
+      <div ref={paneRef} style={{ flex: 1, overflowY: 'auto', padding: 16 }}>
+        {activeTab === 'overview' && (
           <>
-            {/* DOW + Coverage chip */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
-              {perf.dow && (
-                <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 11, color: 'var(--lbb-fg3)', textTransform: 'uppercase', letterSpacing: 0.5 }}>
-                  {perf.dow}
-                </span>
-              )}
-              <CoverageChip coverage={coverage} ownedCount={owned.length} total={recordings.length} />
-            </div>
-
-            {/* Large date */}
-            <div style={{ fontSize: 24, fontWeight: 800, color: 'var(--lbb-fg)', letterSpacing: -0.02, lineHeight: 1.05 }}>
-              {perf.disp}
-              {perf.confirmed === false && (
-                <Pill tone="mute" soft style={{ marginLeft: 8, fontSize: 'var(--lbb-fs-9-5)', verticalAlign: 'middle' }}>
-                  {t('library.panel.unconfirmed')}
-                </Pill>
-              )}
-            </div>
-
-            {/* Venue */}
-            {perf.venue && (
-              <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--lbb-fg)', marginTop: 4 }}>{perf.venue}</div>
-            )}
-
-            {/* City */}
-            {perf.city && (
-              <div style={{ fontSize: 12.5, color: 'var(--lbb-fg2)' }}>{perf.city}</div>
-            )}
-
-            {/* Tour */}
-            {perf.tour && (
-              <div style={{ fontSize: 11.5, color: 'var(--lbb-fg3)', marginTop: 6 }}>{perf.tour}</div>
-            )}
-
-            {/* Title */}
-            {perf.title && (
-              <div style={{ fontSize: 12, fontStyle: 'italic', color: 'var(--lbb-fg2)', marginTop: 6 }}>
-                {t('library.panel.releasedAs', { title: perf.title })}
-              </div>
-            )}
-
             {/* Action bar */}
             <ActionBarZone actions={actions} onMore={e => openMenu(e, perf.disp, actions)} />
 
@@ -790,14 +872,14 @@ export function PerformanceDetailPanel({ perf, recordings, families, canonical, 
             {recordings.length > 0 && (
               <div style={{ marginTop: 14, padding: '10px 12px', borderRadius: 8, background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)' }}>
                 <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginBottom: 8 }}>
-                  <span style={{ fontSize: 12.5, fontWeight: 700, color: 'var(--lbb-fg)' }}>
+                  <span style={{ fontSize: 'var(--t-strong)', fontWeight: 'var(--w-semi)', color: 'var(--lbb-fg)' }}>
                     {owned.length === 0
                       ? t('library.panel.noRecording')
                       : t('library.panel.youHold', { owned: ownedFams.length, count: families.length })}
                   </span>
                   <div style={{ flex: 1 }} />
                   {bestOwnedRating && (
-                    <span style={{ fontSize: 11, color: 'var(--lbb-fg3)', whiteSpace: 'nowrap' }}>
+                    <span style={{ fontSize: 'var(--t-meta)', color: 'var(--lbb-fg3)', whiteSpace: 'nowrap' }}>
                       {t('library.panel.bestOwned')} <strong style={{ color: 'var(--lbb-fg2)' }}>{bestOwnedRating}</strong>
                     </span>
                   )}
@@ -812,7 +894,7 @@ export function PerformanceDetailPanel({ perf, recordings, families, canonical, 
                     </div>
                   )}
                 {dupeCount > 0 && (
-                  <div style={{ marginTop: 8, fontSize: 11, color: 'var(--lbb-fg3)', display: 'flex', alignItems: 'center', gap: 6 }}>
+                  <div style={{ marginTop: 8, fontSize: 'var(--t-meta)', color: 'var(--lbb-fg3)', display: 'flex', alignItems: 'center', gap: 6 }}>
                     <Icon name="copy" size={12} />
                     {t('library.panel.foldedNote', {
                       uploads: recordings.length,
@@ -822,7 +904,7 @@ export function PerformanceDetailPanel({ perf, recordings, families, canonical, 
                   </div>
                 )}
                 {coverage === 'Upgrade' && (
-                  <div style={{ marginTop: 8, fontSize: 11, color: 'var(--lbb-warn-fg)', display: 'flex', alignItems: 'center', gap: 6 }}>
+                  <div style={{ marginTop: 8, fontSize: 'var(--t-meta)', color: 'var(--lbb-warn-fg)', display: 'flex', alignItems: 'center', gap: 6 }}>
                     <Icon name="upload" size={12} />
                     {t('library.panel.upgradeNote')}
                   </div>
@@ -841,41 +923,7 @@ export function PerformanceDetailPanel({ perf, recordings, families, canonical, 
               <Fact label={t('library.panel.factLength')} value="—" />
             </div>
 
-            {/* Recording families section */}
-            {families.length > 0 && (
-              <div style={{ marginTop: 18 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
-                  <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--lbb-fg3)' }}>
-                    {t('library.panel.recordingFamilies', { count: families.length })}
-                  </span>
-                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4, fontSize: 10, color: 'var(--lbb-fg3)' }}>
-                    <Icon name="tapematch" size={11} style={{ color: 'var(--lbb-info-fg)' }} /> {t('library.panel.groupedByTapeMatch')}
-                  </span>
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-                  {families.map(f => <FamilyCard key={f.id} fam={f} />)}
-                </div>
-              </div>
-            )}
-
-            {/* Setlist */}
-            {perf.setlist && (
-              <div style={{ marginTop: 18 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
-                  <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--lbb-fg3)' }}>
-                    {t('library.setlist.title')}
-                  </span>
-                  {perf.tracks != null && (
-                    <span style={{ fontSize: 11, color: 'var(--lbb-fg3)', fontVariantNumeric: 'tabular-nums' }}>
-                      {t('library.setlist.tracksCount', { count: perf.tracks })}
-                    </span>
-                  )}
-                </div>
-                <Setlist date={perf.setlist} />
-              </div>
-            )}
-
-            {/* Assets + distribution — scoped to the best owned source */}
+            {/* Assets chips — part of Overview (spec §9), scoped to best owned source */}
             {canonical && (
               <AssetStripZone
                 row={canonical} attachCount={attachCount}
@@ -884,16 +932,52 @@ export function PerformanceDetailPanel({ perf, recordings, families, canonical, 
                 onMap={() => actionHandlers.onMap()}
               />
             )}
-            {owned.length > 0 && canonical && (
-              <ShareSeedZone
-                history={history}
-                note={t('library.share.note', { lb: canonical.lb })}
-                onQbt={() => actionHandlers.onQbt(owned)}
-                onTorrent={() => actionHandlers.onTorrent([canonical])}
-                onForum={() => actionHandlers.onForum([canonical])}
-              />
-            )}
           </>
+        )}
+
+        {/* Recordings tab — TapeMatch family cards */}
+        {activeTab === 'recordings' && families.length > 0 && (
+          <div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
+              <span style={{ fontSize: 'var(--t-label)', fontWeight: 'var(--w-bold)', letterSpacing: 'var(--track-eyebrow)', textTransform: 'uppercase', color: 'var(--lbb-fg3)' }}>
+                {t('library.panel.recordingFamilies', { count: families.length })}
+              </span>
+              <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4, fontSize: 'var(--t-micro)', color: 'var(--lbb-fg3)' }}>
+                <Icon name="tapematch" size={11} style={{ color: 'var(--lbb-info-fg)' }} /> {t('library.panel.groupedByTapeMatch')}
+              </span>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+              {families.map(f => <FamilyCard key={f.id} fam={f} />)}
+            </div>
+          </div>
+        )}
+
+        {/* Setlist tab */}
+        {activeTab === 'setlist' && perf.setlist && (
+          <div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
+              <span style={{ fontSize: 'var(--t-label)', fontWeight: 'var(--w-bold)', letterSpacing: 'var(--track-eyebrow)', textTransform: 'uppercase', color: 'var(--lbb-fg3)' }}>
+                {t('library.setlist.title')}
+              </span>
+              {perf.tracks != null && (
+                <span style={{ fontSize: 'var(--t-meta)', color: 'var(--lbb-fg3)', fontVariantNumeric: 'tabular-nums' }}>
+                  {t('library.setlist.tracksCount', { count: perf.tracks })}
+                </span>
+              )}
+            </div>
+            <Setlist date={perf.setlist} />
+          </div>
+        )}
+
+        {/* Seed & Share tab — scoped to the best owned source */}
+        {activeTab === 'share' && owned.length > 0 && canonical && (
+          <ShareSeedZone
+            history={history} hideLabel
+            note={t('library.share.note', { lb: canonical.lb })}
+            onQbt={() => actionHandlers.onQbt(owned)}
+            onTorrent={() => actionHandlers.onTorrent([canonical])}
+            onForum={() => actionHandlers.onForum([canonical])}
+          />
         )}
       </div>
     </aside>

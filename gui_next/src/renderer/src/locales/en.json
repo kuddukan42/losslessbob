@@ -1365,6 +1365,11 @@
     "panel": {
       "details": "Details",
       "performance": "Performance",
+      "tabOverview": "Overview",
+      "tabRecordings": "Recordings",
+      "tabSetlist": "Setlist",
+      "tabAssets": "Assets",
+      "tabShare": "Seed & Share",
       "showDetails": "Show details",
       "collapseDetails": "Collapse details",
       "lbPage": "LB page",

@@ -1364,6 +1364,11 @@
     "panel": {
       "details": "Details",
       "performance": "Prestaties",
+      "tabOverview": "Overzicht",
+      "tabRecordings": "Opnames",
+      "tabSetlist": "Setlist",
+      "tabAssets": "Bestanden",
+      "tabShare": "Seeden & delen",
       "showDetails": "Details weergeven",
       "collapseDetails": "Details verbergen",
       "lbPage": "LB-pagina",

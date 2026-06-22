@@ -1364,6 +1364,11 @@
     "panel": {
       "details": "Dettagli",
       "performance": "Prestazioni",
+      "tabOverview": "Panoramica",
+      "tabRecordings": "Registrazioni",
+      "tabSetlist": "Scaletta",
+      "tabAssets": "Risorse",
+      "tabShare": "Seed e condivisione",
       "showDetails": "Mostra dettagli",
       "collapseDetails": "Nascondi i dettagli",
       "lbPage": "Pagina LB",

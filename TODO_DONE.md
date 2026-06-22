@@ -1,6 +1,24 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-151: Unified Library — visual refinement (typography roles + tabbed detail panels)
+Priority: Medium
+Status: Done
+Added: 2026-06-22
+Closed: 2026-06-22
+Description: Implement the Unified Library Pixel Spec (instructions/library/Unified Library Pixel
+  Spec (standalone).html; reference build "Unified Library (refined)"). Normalize the Library
+  screen's 14 sizes / 6 weights down to nine --t-* type roles + four --w-* weights + --track-eyebrow
+  (tokens.ts), replacing every raw fontSize/fontWeight literal in ScreenLibrary.tsx and
+  DetailPanel.tsx. Convert both detail panels (by-performance and by-recording) from a flat scroll
+  to a pinned identity block + tab strip + swappable pane, making Seed & Share a peer tab. Rework the
+  performance-table column model (drop dead 32px spacer, fixed widths sized to content, trailing flex
+  spacer) and widen the recording ★ column to 48px. Fixed BUG-217 (summary wrap) and BUG-218 (★ clip)
+  in passing. Build + typecheck green; visuals verified by user.
+  Scope notes: table.tsx left unchanged (shared header; spec marks the change optional); recording-lens
+  scope-dependent columns and the existing AssetStripZone/ShareSeedZone reused-in-place rather than
+  rewritten into the spec's asset-row layout (per §12 "repositioned, not rewritten").
+
 TODO-150: Unified Library — TapeMatch backend integration + Library screen
 Priority: High
 Status: Done
