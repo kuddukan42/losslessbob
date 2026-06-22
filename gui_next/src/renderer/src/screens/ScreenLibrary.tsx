@@ -183,7 +183,7 @@ function FilterMenu({ label, count = 0, children, width = 256, align = 'left' }:
       <button type="button" onClick={() => setOpen(o => !o)} style={{
         display: 'inline-flex', alignItems: 'center', gap: 5,
         height: 28, padding: '0 8px 0 10px', borderRadius: 6, cursor: 'pointer', fontFamily: 'inherit',
-        fontSize: 12, fontWeight: count > 0 ? 650 : 500, whiteSpace: 'nowrap',
+        fontSize: 'var(--t-body)', fontWeight: count > 0 ? 'var(--w-semi)' : 'var(--w-med)', whiteSpace: 'nowrap',
         background: count > 0 ? 'var(--lbb-accent-soft)' : 'var(--lbb-surface)',
         color: count > 0 ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg2)',
         border: `1px solid ${lit ? 'var(--lbb-accent-mid)' : 'var(--lbb-border2)'}`,
@@ -193,7 +193,7 @@ function FilterMenu({ label, count = 0, children, width = 256, align = 'left' }:
           <span style={{
             minWidth: 16, height: 16, padding: '0 4px', borderRadius: 8,
             background: 'var(--lbb-accent-mid)', color: 'var(--lbb-accent-onMid)',
-            fontSize: 10, fontWeight: 800, display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+            fontSize: 'var(--t-micro)', fontWeight: 'var(--w-bold)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
           }}>{count}</span>
         )}
         <Icon name={open ? 'chevUp' : 'chevDown'} size={12} style={{ opacity: 0.55 }} />
@@ -214,7 +214,7 @@ function FilterMenu({ label, count = 0, children, width = 256, align = 'left' }:
 
 function MenuLabel({ children }: { children: React.ReactNode }) {
   return (
-    <div style={{ marginBottom: 8, fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--lbb-fg3)' }}>
+    <div style={{ marginBottom: 8, fontSize: 'var(--t-label)', fontWeight: 'var(--w-bold)', letterSpacing: 'var(--track-eyebrow)', textTransform: 'uppercase', color: 'var(--lbb-fg3)' }}>
       {children}
     </div>
   )
@@ -241,7 +241,7 @@ function ViewToggle({ value, onChange }: {
             color: active ? 'var(--lbb-fg)' : 'var(--lbb-fg2)',
             border: active ? '1px solid var(--lbb-border2)' : '1px solid transparent',
             boxShadow: active ? 'var(--lbb-shadow)' : 'none',
-            fontSize: 12, fontWeight: active ? 650 : 500, cursor: 'pointer', fontFamily: 'inherit', whiteSpace: 'nowrap',
+            fontSize: 'var(--t-body)', fontWeight: active ? 'var(--w-semi)' : 'var(--w-med)', cursor: 'pointer', fontFamily: 'inherit', whiteSpace: 'nowrap',
           }}>
             {l === 'performance' ? t('library.lens.byPerformance') : t('library.lens.byRecording')}
           </button>
@@ -276,10 +276,10 @@ function ScopeControl({ value, onChange, allCount, ownedCount }: {
             color: active ? 'var(--lbb-fg)' : 'var(--lbb-fg2)',
             border: active ? '1px solid var(--lbb-border2)' : '1px solid transparent',
             boxShadow: active ? 'var(--lbb-shadow)' : 'none',
-            fontSize: 12, fontWeight: active ? 650 : 500, cursor: 'pointer', fontFamily: 'inherit', whiteSpace: 'nowrap',
+            fontSize: 'var(--t-body)', fontWeight: active ? 'var(--w-semi)' : 'var(--w-med)', cursor: 'pointer', fontFamily: 'inherit', whiteSpace: 'nowrap',
           }}>
             {lbl}
-            <span style={{ fontSize: 10.5, fontVariantNumeric: 'tabular-nums', color: active ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg3)', fontWeight: 600 }}>
+            <span style={{ fontSize: 'var(--t-mono-sm)', fontVariantNumeric: 'tabular-nums', color: active ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg3)', fontWeight: 'var(--w-semi)' }}>
               {n.toLocaleString()}
             </span>
           </button>
@@ -297,7 +297,7 @@ function ActiveFilter({ label, onRemove }: { label: string; onRemove: () => void
       display: 'inline-flex', alignItems: 'center', gap: 4,
       padding: '2px 4px 2px 8px', borderRadius: 4,
       background: 'var(--lbb-accent-soft)', color: 'var(--lbb-accent-mid)',
-      fontSize: 11, fontWeight: 600, whiteSpace: 'nowrap',
+      fontSize: 'var(--t-meta)', fontWeight: 'var(--w-semi)', whiteSpace: 'nowrap',
     }}>
       {label}
       <button type="button" onClick={onRemove} style={{
@@ -951,7 +951,7 @@ export function ScreenLibrary(): React.JSX.Element {
         {recActiveCount > 0 && (
           <button type="button" onClick={clearAll} style={{
             background: 'none', border: 'none', cursor: 'pointer', padding: '0 6px',
-            fontSize: 12, color: 'var(--lbb-fg2)', fontFamily: 'inherit', fontWeight: 500,
+            fontSize: 'var(--t-meta)', color: 'var(--lbb-fg2)', fontFamily: 'inherit', fontWeight: 'var(--w-med)',
           }}>
             {t('library.facets.clear', { count: recActiveCount })}
           </button>
@@ -960,25 +960,25 @@ export function ScreenLibrary(): React.JSX.Element {
 
       {/* ── Summary strip ────────────────────────────────────────────────── */}
       <div style={{
-        display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap', flexShrink: 0,
+        display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'nowrap', overflow: 'hidden', flexShrink: 0,
         padding: '8px 20px', borderBottom: '1px solid var(--lbb-border)',
-        minHeight: 36, fontSize: 12,
+        height: 40, fontSize: 'var(--t-meta)',
         background: 'var(--sep-summary-bg, var(--lbb-surface))', zIndex: 1,
       }}>
-        <span style={{ fontWeight: 700, color: 'var(--lbb-fg)' }}>{sortedRows.length.toLocaleString()}</span>
-        <span style={{ color: 'var(--lbb-fg3)' }}>{t('library.summary.ofMaster', { count: rows.length })}</span>
+        <span style={{ fontWeight: 'var(--w-bold)', color: 'var(--lbb-fg)', whiteSpace: 'nowrap' }}>{sortedRows.length.toLocaleString()}</span>
+        <span style={{ color: 'var(--lbb-fg3)', whiteSpace: 'nowrap' }}>{t('library.summary.ofMaster', { count: rows.length })}</span>
         {filterChips.map((f, i) => <ActiveFilter key={i} label={f.label} onRemove={f.onRemove} />)}
         <div style={{ flex: 1 }} />
         {rows.length > 0 && (
-          <span style={{ color: 'var(--lbb-fg3)', fontVariantNumeric: 'tabular-nums' }}>
-            <strong style={{ color: 'var(--lbb-ok-fg)' }}>{Math.round((ownedCount / rows.length) * 100)}%</strong> {t('library.summary.owned')}
+          <span style={{ color: 'var(--lbb-fg3)', fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
+            <strong style={{ color: 'var(--lbb-ok-fg)', fontWeight: 'var(--w-bold)' }}>{Math.round((ownedCount / rows.length) * 100)}%</strong> {t('library.summary.owned')}
             {' · '}{t('library.summary.toGo', { count: rows.length - ownedCount })}
           </span>
         )}
         <span style={{ width: 1, height: 14, background: 'var(--lbb-border)', flexShrink: 0 }} />
         <button type="button"
           onClick={() => setSortDir(d => d === 'asc' ? 'desc' : 'asc')}
-          style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0 4px', fontSize: 12, color: 'var(--lbb-fg2)', fontFamily: 'inherit' }}
+          style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0 4px', fontSize: 'var(--t-meta)', color: 'var(--lbb-fg2)', fontFamily: 'inherit', whiteSpace: 'nowrap' }}
         >
           {t('library.toolbar.sort')} {sortDir === 'asc' ? '↑' : '↓'}
         </button>
@@ -1006,7 +1006,7 @@ export function ScreenLibrary(): React.JSX.Element {
               <col style={{ width: 88 }} />
               <col style={{ width: 88 }} />
               <col />
-              <col style={{ width: 54 }} />
+              <col style={{ width: 48 }} />{/* ★ rating — spec §6 (was 54) */}
               {scope === 'owned' ? <>
                 <col style={{ width: 250 }} />
                 <col style={{ width: 180 }} />
@@ -1087,7 +1087,7 @@ export function ScreenLibrary(): React.JSX.Element {
                               onChange={e => toggleCheck(r.lbNumber, e.target.checked)}
                             />
                           </TD>
-                          <TD mono style={{ color: 'var(--lbb-accent-mid)', fontWeight: 600 }}>{r.lb}</TD>
+                          <TD mono style={{ color: 'var(--lbb-accent-mid)', fontWeight: 'var(--w-semi)' }}>{r.lb}</TD>
                           <TD><Pill tone={statusTone(r.status)} soft>{t(STATUS_LABEL_KEY[r.status])}</Pill></TD>
                           <TD mono>{r.date}</TD>
                           <TD>{r.loc}</TD>
@@ -1146,7 +1146,7 @@ export function ScreenLibrary(): React.JSX.Element {
             }}>
               <Icon name="search" size={40} style={{ opacity: 0.2 }} />
               <div style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: 'var(--lbb-fs-15)', fontWeight: 600, color: 'var(--lbb-fg2)' }}>{t('library.empty.nothingMatches')}</div>
+                <div style={{ fontSize: 'var(--lbb-fs-15)', fontWeight: 'var(--w-semi)', color: 'var(--lbb-fg2)' }}>{t('library.empty.nothingMatches')}</div>
                 <div style={{ fontSize: 'var(--lbb-fs-11-5)', marginTop: 4 }}>{t('library.empty.tryAdjust')}</div>
               </div>
             </div>
@@ -1613,11 +1613,11 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
                 width: '100%', padding: '6px 8px', borderRadius: 6, cursor: 'pointer',
                 background: perfView === id ? 'var(--lbb-accent-soft)' : 'transparent',
                 color: perfView === id ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg)',
-                border: 'none', fontFamily: 'inherit', fontSize: 12.5, fontWeight: perfView === id ? 650 : 400,
+                border: 'none', fontFamily: 'inherit', fontSize: 'var(--t-body)', fontWeight: perfView === id ? 'var(--w-semi)' : 'var(--w-reg)',
                 textAlign: 'left',
               }}>
                 <span>{label}</span>
-                {count !== undefined && <span style={{ fontSize: 10.5, color: 'var(--lbb-fg3)', fontWeight: 500 }}>{count.toLocaleString()}</span>}
+                {count !== undefined && <span style={{ fontSize: 'var(--t-mono-sm)', color: 'var(--lbb-fg3)', fontWeight: 'var(--w-med)' }}>{count.toLocaleString()}</span>}
               </button>
             )
             return <>
@@ -1680,7 +1680,7 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
           style={{
             display: 'inline-flex', alignItems: 'center', gap: 5,
             height: 28, padding: '0 10px', borderRadius: 6, fontFamily: 'inherit',
-            fontSize: 12, fontWeight: 500, whiteSpace: 'nowrap',
+            fontSize: 'var(--t-body)', fontWeight: 'var(--w-med)', whiteSpace: 'nowrap',
             cursor: multiShowIds.length === 0 ? 'not-allowed' : 'pointer',
             opacity: multiShowIds.length === 0 ? 0.5 : 1,
             background: 'var(--lbb-surface)', color: 'var(--lbb-fg2)',
@@ -1694,7 +1694,7 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
         {hasActiveFilters && (
           <button type="button" onClick={clearAll} style={{
             background: 'none', border: 'none', cursor: 'pointer', padding: '0 6px',
-            fontSize: 12, color: 'var(--lbb-fg2)', fontFamily: 'inherit', fontWeight: 500,
+            fontSize: 'var(--t-meta)', color: 'var(--lbb-fg2)', fontFamily: 'inherit', fontWeight: 'var(--w-med)',
           }}>
             {t('library.facets.clear', { count: perfActiveCount + (perfView !== 'all' ? 1 : 0) })}
           </button>
@@ -1703,20 +1703,20 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
 
       {/* ── Summary strip ────────────────────────────────────────────────── */}
       <div style={{
-        display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap', flexShrink: 0,
+        display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'nowrap', overflow: 'hidden', flexShrink: 0,
         padding: '8px 20px', borderBottom: '1px solid var(--lbb-border)',
-        minHeight: 36, fontSize: 12,
+        height: 40, fontSize: 'var(--t-meta)',
         background: 'var(--sep-summary-bg, var(--lbb-surface))', zIndex: 1,
       }}>
-        <span style={{ fontWeight: 700, color: 'var(--lbb-fg)' }}>
+        <span style={{ fontWeight: 'var(--w-bold)', color: 'var(--lbb-fg)', whiteSpace: 'nowrap' }}>
           {t('library.summary.shows', { count: filteredPerfs.length })}
         </span>
-        <span style={{ color: 'var(--lbb-fg3)' }}>· {t('library.summary.recordings', { count: totalRecs })}</span>
-        <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5, color: 'var(--lbb-info-fg)', fontWeight: 600 }}>
+        <span style={{ color: 'var(--lbb-fg3)', whiteSpace: 'nowrap' }}>· {t('library.summary.recordings', { count: totalRecs })}</span>
+        <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5, color: 'var(--lbb-info-fg)', fontWeight: 'var(--w-semi)', whiteSpace: 'nowrap' }}>
           <Icon name="tapematch" size={12} /> {t('library.summary.familyCount', { count: totalFams })}
         </span>
         {gapsShown > 0 && (
-          <span style={{ color: 'var(--lbb-warn-fg)', fontWeight: 600 }}>
+          <span style={{ color: 'var(--lbb-warn-fg)', fontWeight: 'var(--w-semi)', whiteSpace: 'nowrap' }}>
             · {t('library.summary.gaps', { count: gapsShown })}
           </span>
         )}
@@ -1738,21 +1738,23 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
           boxShadow: 'var(--sep-table-shadow, none)',
         }}>
           <TableShell stickyHeader>
+            {/* Column model (spec §5): every data column fixed to its longest
+                content, dead 32px spacer removed, single trailing flex spacer
+                absorbs leftover width at the table's natural end. */}
             <colgroup>
               <col style={{ width: 3 }} />
               <col style={{ width: 30 }} />
-              <col style={{ width: 32 }} />
+              <col style={{ width: 104 }} />
+              <col style={{ width: 345 }} />
+              <col style={{ width: 155 }} />
               <col style={{ width: 116 }} />
+              <col style={{ width: 52 }} />
+              <col style={{ width: 46 }} />
+              <col style={{ width: 112 }} />
               <col />
-              <col style={{ width: 210 }} />
-              <col style={{ width: 132 }} />
-              <col style={{ width: 56 }} />
-              <col style={{ width: 56 }} />
-              <col style={{ width: 150 }} />
             </colgroup>
             <thead>
               <tr>
-                <TH />
                 <TH />
                 <TH />
                 <TH>{t('library.columns.date')}</TH>
@@ -1762,6 +1764,7 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
                 <TH align="center">{t('library.columns.recs')}</TH>
                 <TH align="center">★</TH>
                 <TH>{t('library.columns.coverage')}</TH>
+                <TH />
               </tr>
             </thead>
             <tbody>
@@ -1827,8 +1830,7 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
                             >
                               {multi && <Icon name={expanded ? 'chevDown' : 'chevRight'} size={13} style={{ color: 'var(--lbb-fg3)' }} />}
                             </TD>
-                            <TD />
-                            <TD mono style={{ color: 'var(--lbb-fg)', fontWeight: 600 }}>
+                            <TD mono style={{ color: 'var(--lbb-fg)', fontWeight: 'var(--w-semi)' }}>
                               <span style={{ display: 'inline-flex', flexDirection: 'column', lineHeight: 1.2 }}>
                                 <span>{p.disp}</span>
                                 {p.dow && (
@@ -1840,10 +1842,10 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
                             </TD>
                             <TD style={{ color: 'var(--lbb-fg)' }}>
                               <span style={{ display: 'inline-flex', flexDirection: 'column', lineHeight: 1.25, minWidth: 0 }}>
-                                <span style={{ fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                                <span style={{ fontWeight: 'var(--w-semi)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                                   {p.venue || p.city || '—'}
                                   {p.title && (
-                                    <span style={{ marginLeft: 6, fontWeight: 500, fontStyle: 'italic', color: 'var(--lbb-accent-mid)', fontSize: 'var(--lbb-fs-11-5)' }}>
+                                    <span style={{ marginLeft: 6, fontWeight: 'var(--w-med)', fontStyle: 'italic', color: 'var(--lbb-accent-mid)', fontSize: 'var(--lbb-fs-11-5)' }}>
                                       "{p.title}"
                                     </span>
                                   )}
@@ -1872,10 +1874,10 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
                                 ))}
                               </span>
                             </TD>
-                            <TD align="center" mono style={{ color: multi ? 'var(--lbb-fg)' : 'var(--lbb-fg3)', fontWeight: multi ? 700 : 500 }}>
+                            <TD align="center" mono style={{ color: multi ? 'var(--lbb-fg)' : 'var(--lbb-fg3)', fontWeight: multi ? 'var(--w-bold)' : 'var(--w-med)' }}>
                               <span style={{ display: 'inline-flex', flexDirection: 'column', lineHeight: 1.1, alignItems: 'center' }}>
                                 <span>{ru.famTotal}</span>
-                                <span style={{ fontSize: 'var(--lbb-fs-9)', fontWeight: 500, color: 'var(--lbb-fg3)' }}>{t('library.summary.recShort', { count: ru.total })}</span>
+                                <span style={{ fontSize: 'var(--lbb-fs-9)', fontWeight: 'var(--w-med)', color: 'var(--lbb-fg3)' }}>{t('library.summary.recShort', { count: ru.total })}</span>
                               </span>
                             </TD>
                             <TD align="center">
@@ -1888,6 +1890,7 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
                                 {coverageLabel(ru.coverage, ru.ownedCount, ru.total, t)}
                               </Pill>
                             </TD>
+                            <TD />
                           </TR>
                         )
                       }
@@ -1924,7 +1927,7 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
                                 />
                               )}
                             </td>
-                            <td colSpan={5} style={{ borderBottom: '1px solid var(--lbb-border)', padding: '4px 10px', overflow: 'hidden' }}>
+                            <td colSpan={4} style={{ borderBottom: '1px solid var(--lbb-border)', padding: '4px 10px', overflow: 'hidden' }}>
                               <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8, minWidth: 0, maxWidth: '100%' }}>
                                 <span style={{ color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11)', flex: '0 0 auto' }}>
                                   {fam.multi ? '├' : '└'}
@@ -1936,7 +1939,7 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
                                   </span>
                                 )}
                                 {single && (
-                                  <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11)', fontWeight: 600, color: fam.owned ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg3)', whiteSpace: 'nowrap' }}>
+                                  <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11)', fontWeight: 'var(--w-semi)', color: fam.owned ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg3)', whiteSpace: 'nowrap' }}>
                                     {lone?.lb}
                                   </span>
                                 )}
@@ -1957,6 +1960,7 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
                                     : <Pill tone="ok" soft dot>{t('library.family.owned')}</Pill>)
                                 : (lone?.wish ? <Pill tone="warn" soft>{t('library.family.wishlist')}</Pill> : <Pill tone="mute" soft>{t('library.family.notOwned')}</Pill>)}
                             </td>
+                            <td style={{ borderBottom: '1px solid var(--lbb-border)' }} />
                           </tr>
                         )
                       }
@@ -1977,11 +1981,10 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
                         >
                           <td style={{ width: 3, padding: 0, background: rec.owned ? 'var(--lbb-ok-bar)' : 'transparent', borderBottom: '1px solid var(--lbb-border)' }} />
                           <td style={{ borderBottom: '1px solid var(--lbb-border)' }} />
-                          <td style={{ borderBottom: '1px solid var(--lbb-border)' }} />
                           <TD mono dim style={{ paddingLeft: 22 }}>
                             <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
                               <span style={{ color: 'var(--lbb-fg3)' }}>{isLast ? '└' : '├'}</span>
-                              <span style={{ color: rec.owned ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg3)', fontWeight: 600 }}>{rec.lb}</span>
+                              <span style={{ color: rec.owned ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg3)', fontWeight: 'var(--w-semi)' }}>{rec.lb}</span>
                             </span>
                           </TD>
                           <TD dim colSpan={3} style={{ fontSize: 'var(--lbb-fs-11-5)' }}>
@@ -2001,6 +2004,7 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
                             {rec.owned ? <Pill tone="ok" soft dot>{t('library.family.owned')}</Pill>
                               : rec.wish ? <Pill tone="warn" soft>{t('library.family.wishlist')}</Pill> : <Pill tone="mute" soft>{t('library.family.notOwned')}</Pill>}
                           </TD>
+                          <td style={{ borderBottom: '1px solid var(--lbb-border)' }} />
                         </tr>
                       )
                     })}
@@ -2027,7 +2031,7 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
             }}>
               <Icon name="search" size={40} style={{ opacity: 0.2 }} />
               <div style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: 'var(--lbb-fs-15)', fontWeight: 600, color: 'var(--lbb-fg2)' }}>{t('library.empty.nothingMatches')}</div>
+                <div style={{ fontSize: 'var(--lbb-fs-15)', fontWeight: 'var(--w-semi)', color: 'var(--lbb-fg2)' }}>{t('library.empty.nothingMatches')}</div>
                 <div style={{ fontSize: 'var(--lbb-fs-11-5)', marginTop: 4 }}>{t('library.empty.tryAdjust')}</div>
               </div>
             </div>

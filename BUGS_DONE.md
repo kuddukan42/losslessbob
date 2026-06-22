@@ -1,6 +1,41 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-218: Library — ★ rating column clipped two-character ratings (A−, B+) to an ellipsis
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenLibrary.tsx (recording-lens colgroup)
+Reported: 2026-06-22
+Fixed: 2026-06-22
+Root cause: The recording-lens ★ column shipped at a width that, combined with cell padding,
+  truncated the rating pill for two-character grades.
+Fix: Set the ★ column to the spec/reference width (48px) so A−/B+ pills render in full.
+  Fixed in passing during the Unified Library visual refinement (Pixel Spec §6).
+
+BUG-217: Library — summary strip wrapped to two lines and clipped on narrow widths
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenLibrary.tsx (both lens summary strips)
+Reported: 2026-06-22
+Fixed: 2026-06-22
+Root cause: The summary strip used min-height:36 with flex-wrap:wrap, so on narrow panels it
+  wrapped to a second line that the fixed-height container then clipped.
+Fix: Changed to height:40 · flex-wrap:nowrap · overflow:hidden with every child white-space:nowrap
+  (Pixel Spec §4). Fixed in passing during the Unified Library visual refinement.
+
+BUG-216: Scraper — Range Scrape with Force re-scrape ignores end_lb, scrapes all entries
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenScraper.tsx:439
+Reported: 2026-06-21
+Fixed: 2026-06-21
+Root cause: The "Scrape Range" button was sending an `lb_numbers` array to /api/scrape/start,
+  but the backend route /api/scrape/start (app.py:1762) expects `start_lb` and `end_lb` as
+  separate integer parameters. The backend route did not recognize the `lb_numbers` parameter,
+  so it defaulted to start_lb=1, end_lb=None, causing a query that selected all LB numbers
+  with checksums from LB-1 onwards, scraping the entire 15,140-entry collection instead of
+  just the specified range.
+Fix: Changed ScreenScraper.tsx line 439 to send `start_lb` and `end_lb` as separate integer
+  parameters matching the backend route's expected API contract. GUI now correctly queries
+  only the specified range, respecting both the lower and upper bounds.
+
 BUG-215: Unified Library — blank family names in performance detail panel
 Status: Fixed
 File(s): gui_next/src/renderer/src/components/library/DetailPanel.tsx (FamilyCard, FamilyMeter,

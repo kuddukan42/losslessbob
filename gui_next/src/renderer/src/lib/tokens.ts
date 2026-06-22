@@ -152,6 +152,29 @@ const DENSITY: Record<Density, DensityScale> = {
   comfortable: { row: 40, pad: 12, gap: 10, font: 13.5, sideRow: 34 },
 };
 
+// Unified Library type scale (spec §2). Nine roles mapping a literal pixel size
+// (at the default fontSize:13 base) to a name; emitted as --t-<role> by
+// applyTheme, scaled by the active fontSize. See §2 "Role → element binding".
+const TYPE_ROLES: Record<string, number> = {
+  'display':  22,    // panel headline (show date)
+  'title':    15,    // venue, family-card primary
+  'strong':   13,    // card titles, family name, emphasis
+  'body':     12.5,  // default reading size — rows & descriptions
+  'meta':     11.5,  // secondary meta · captions · city line
+  'label':    10.5,  // zone label / eyebrow (uppercase)
+  'micro':    10,    // pill text · counts · badges
+  'mono':     11.5,  // LB#, dates (mono)
+  'mono-sm':  10.5,  // timestamps · tree glyphs (mono)
+};
+
+// Weight ramp (spec §2). Four weights replacing the off-ramp 650/800.
+const WEIGHT_RAMP: Record<string, number> = {
+  'reg':  400,  // body, un-emphasized rows
+  'med':  500,  // controls, inactive tabs, meta emphasis
+  'semi': 600,  // titles, active controls, emphasized data (was 600·650)
+  'bold': 700,  // display, eyebrows, stat values, badges (was 700·800)
+};
+
 export function applyTheme({ mode, accent, density, font, fontSize, customTokens, palette, cardStyle }: ThemeOptions): void {
   const root = document.documentElement;
   // Resolve 'system' to a concrete light/dark before indexing any table below.
@@ -180,6 +203,19 @@ export function applyTheme({ mode, accent, density, font, fontSize, customTokens
   for (const v of [8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 12.5, 13, 13.5, 14, 15, 16, 17, 18, 20, 22, 28, 32]) {
     root.style.setProperty(`--lbb-fs-${String(v).replace('.', '-')}`, `${(v * fsScale).toFixed(2)}px`);
   }
+
+  // Type-scale roles for the Unified Library screen (spec §2). Each maps a
+  // single pixel size + intended weight to a named role; sizes scale with the
+  // user's base fontSize like --lbb-fs-* so the light/font-size settings still
+  // apply. The --lbb-fs-* loop above stays — other screens reference it.
+  for (const [role, px] of Object.entries(TYPE_ROLES)) {
+    root.style.setProperty(`--t-${role}`, `${(px * fsScale).toFixed(2)}px`);
+  }
+  for (const [name, weight] of Object.entries(WEIGHT_RAMP)) {
+    root.style.setProperty(`--w-${name}`, String(weight));
+  }
+  root.style.setProperty('--track-eyebrow', '0.09em');
+
   Object.entries(customTokens ?? {}).forEach(([k, v]) => root.style.setProperty(k, v));
 
   root.setAttribute('data-mode',    resolved);

@@ -25,7 +25,8 @@ export function Pill({ tone = 'mute', soft = false, dot = false, children, style
     <span style={{
       display: 'inline-flex', alignItems: 'center', gap: 5,
       padding: '1px 7px', borderRadius: 999,
-      fontSize: 'var(--lbb-fs-10-5)', fontWeight: 600, letterSpacing: '0.02em',
+      // Spec §7: pill text is --t-micro at --w-semi (replaces the old 650 weight).
+      fontSize: 'var(--t-micro)', fontWeight: 'var(--w-semi)' as React.CSSProperties['fontWeight'], letterSpacing: '0.02em',
       color: fg,
       background: soft ? `var(--lbb-${tone}-bg)` : 'transparent',
       border: `1px solid ${soft ? 'transparent' : fg}`,

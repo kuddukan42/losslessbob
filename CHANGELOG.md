@@ -1,3 +1,31 @@
+[2026-06-22] — feat(gui): Unified Library visual refinement — type-scale roles + tabbed detail panels
+Added: gui_next/src/renderer/src/lib/tokens.ts: nine --t-* type-scale role variables (display/title/
+  strong/body/meta/label/micro/mono/mono-sm), four --w-* weight-ramp variables (reg/med/semi/bold),
+  and --track-eyebrow, all emitted in applyTheme() and scaled by the active base fontSize. The legacy
+  --lbb-fs-* loop stays for other screens. Implements instructions/library Pixel Spec §2/§3.
+Changed: gui_next/src/renderer/src/screens/ScreenLibrary.tsx: replaced every raw fontSize/fontWeight
+  literal with --t-*/--w-* roles (650→semi, 800→bold); reworked the performance-table column model —
+  dropped the dead 32px spacer, fixed each data column to its longest content (Date 104 · Show 345 ·
+  Tour 155 · Families 116 · Recs 52 · ★ 46 · Coverage 112) and added a single trailing flex spacer so
+  slack parks at the table's trailing edge; recording-lens ★ column 54→48 (§5/§6). Families column
+  was already collapsed to one SRC ×N pill per source family.
+Changed: gui_next/src/renderer/src/components/library/DetailPanel.tsx: converted both detail panels
+  from a single flat scroll to a pinned identity block + tab strip + swappable pane (new TabStrip
+  component). Performance tabs = Overview / Recordings (count) / Setlist / Seed & Share; recording
+  tabs = Overview / Assets / Seed & Share. Scroll position resets to top on tab change; Seed & Share
+  is now a peer tab reachable in one click. All zone/identity text routed to --t-*/--w-* (§8–§11).
+Changed: gui_next/src/renderer/src/components/primitives.tsx: Pill routed to --t-micro/--w-semi,
+  centralizing the 650→600 weight normalization (§7).
+Added: gui_next/src/renderer/src/locales/{en,de,es,fr,it,nl}.json: library.panel.tab{Overview,
+  Recordings,Setlist,Assets,Share} for the new detail-panel tabs.
+Fixed: BUG-217 (summary strip wrapped to two lines and clipped) and BUG-218 (★ rating ellipsized) —
+  fixed in passing per the spec's column/summary rework.
+
+[2026-06-21] — fix(gui+scraper): Range Scrape with Force re-scrape ignores end_lb, scrapes all entries
+Fixed: gui_next/src/renderer/src/screens/ScreenScraper.tsx:439 was sending lb_numbers array
+  instead of start_lb/end_lb parameters; backend route ignored the array and defaulted to
+  scraping from LB-1 with no upper limit. Now sends correct start_lb and end_lb parameters.
+
 [2026-06-21] — feat(gui): copy forum topic URL to clipboard after a successful post
 Added: gui_next/src/renderer/src/screens/ScreenLibrary.tsx: onForum now reads topic_url from the
   /api/entry/<lb>/post_forum response and writes it to the clipboard on success (single post copies the

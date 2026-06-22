@@ -1364,6 +1364,11 @@
     "panel": {
       "details": "Details",
       "performance": "Leistung",
+      "tabOverview": "Übersicht",
+      "tabRecordings": "Aufnahmen",
+      "tabSetlist": "Setlist",
+      "tabAssets": "Dateien",
+      "tabShare": "Seed & Teilen",
       "showDetails": "Details anzeigen",
       "collapseDetails": "Details ausblenden",
       "lbPage": "LB-Seite",

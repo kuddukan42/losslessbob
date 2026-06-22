@@ -1364,6 +1364,11 @@
     "panel": {
       "details": "Detalles",
       "performance": "Rendimiento",
+      "tabOverview": "Resumen",
+      "tabRecordings": "Grabaciones",
+      "tabSetlist": "Repertorio",
+      "tabAssets": "Archivos",
+      "tabShare": "Sembrar y compartir",
       "showDetails": "Mostrar detalles",
       "collapseDetails": "Ocultar detalles",
       "lbPage": "Página LB",
