@@ -56,6 +56,8 @@ CREATE TABLE IF NOT EXISTS quality_recording_scores (
     rank_in_family INTEGER,
     vetoed         INTEGER DEFAULT 0,
     verdict_text   TEXT,
+    abs_score      REAL,
+    abs_grade      TEXT,
     PRIMARY KEY (lb_number, scan_id),
     FOREIGN KEY (lb_number) REFERENCES entries(lb_number)
 );
@@ -116,6 +118,11 @@ def connect(db_path: str | Path | None = None) -> sqlite3.Connection:
 def ensure_schema(conn: sqlite3.Connection) -> None:
     """Create the three quality tables if they do not already exist."""
     conn.executescript(SCHEMA_SQL)
+    # Migration: absolute-quality columns on an already-created scores table.
+    cols = {r[1] for r in conn.execute("PRAGMA table_info(quality_recording_scores)")}
+    for col, decl in (("abs_score", "REAL"), ("abs_grade", "TEXT")):
+        if col not in cols:
+            conn.execute(f"ALTER TABLE quality_recording_scores ADD COLUMN {col} {decl}")
     conn.commit()
 
 
@@ -256,17 +263,19 @@ def write_scores(conn: sqlite3.Connection, scan_id: int,
     """Bulk-write derived score rows in one transaction.
 
     Each row dict: ``{lb_number, family_id, final_score, rank_in_family,
-    vetoed, verdict_text}``.
+    vetoed, verdict_text, abs_score, abs_grade}``.
     """
     with conn:
         conn.executemany(
             "INSERT OR REPLACE INTO quality_recording_scores"
-            "(lb_number, scan_id, family_id, final_score, rank_in_family, vetoed, verdict_text)"
-            " VALUES(?,?,?,?,?,?,?)",
+            "(lb_number, scan_id, family_id, final_score, rank_in_family, vetoed,"
+            " verdict_text, abs_score, abs_grade)"
+            " VALUES(?,?,?,?,?,?,?,?,?)",
             [
                 (r["lb_number"], scan_id, r.get("family_id"),
                  r.get("final_score"), r.get("rank_in_family"),
-                 1 if r.get("vetoed") else 0, r.get("verdict_text"))
+                 1 if r.get("vetoed") else 0, r.get("verdict_text"),
+                 r.get("abs_score"), r.get("abs_grade"))
                 for r in rows
             ],
         )
@@ -275,7 +284,8 @@ def write_scores(conn: sqlite3.Connection, scan_id: int,
 def load_scores(conn: sqlite3.Connection, scan_id: int,
                 family_id: int | None = None) -> list[dict]:
     """Load derived scores for a scan, optionally restricted to one family."""
-    sql = ("SELECT lb_number, family_id, final_score, rank_in_family, vetoed, verdict_text"
+    sql = ("SELECT lb_number, family_id, final_score, rank_in_family, vetoed,"
+           " verdict_text, abs_score, abs_grade"
            " FROM quality_recording_scores WHERE scan_id=?")
     params: list[Any] = [scan_id]
     if family_id is not None:
