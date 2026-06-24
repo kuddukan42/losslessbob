@@ -168,8 +168,8 @@ def cmd_report(args) -> int:
     elif args.format == "csv":
         buf = io.StringIO()
         w = csv.DictWriter(buf, fieldnames=[
-            "lb_number", "family_id", "final_score", "rank_in_family",
-            "vetoed", "verdict_text"])
+            "lb_number", "abs_grade", "abs_score", "family_id", "final_score",
+            "rank_in_family", "vetoed", "verdict_text"])
         w.writeheader()
         w.writerows(scores)
         print(buf.getvalue(), end="")

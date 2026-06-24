@@ -17,6 +17,7 @@ from __future__ import annotations
 import logging
 import sqlite3
 
+from concert_ranker import quality_score
 from concert_ranker import scoring as S
 
 log = logging.getLogger("concert_ranker.families")
@@ -83,6 +84,9 @@ def rank_group(group: dict[int, dict], family_id: int | None,
         verdict = S.explain_recording(lb, raw, z, rank, n_surv, labels, vetoed,
                                       decade=decades.get(lb),
                                       source_class=group[lb].get("source_class"))
+        # absolute quality grade (standalone, from the metrics — see quality_score)
+        abs_score, abs_grade, _ = quality_score.grade(raw)
+        verdict = f"Grade {abs_grade} ({abs_score:.0f}/100). {verdict}"
         rows.append({
             "lb_number": lb,
             "family_id": family_id,
@@ -90,6 +94,8 @@ def rank_group(group: dict[int, dict], family_id: int | None,
             "rank_in_family": None if vetoed else (rank or None),
             "vetoed": vetoed,
             "verdict_text": verdict,
+            "abs_score": round(abs_score, 1),
+            "abs_grade": abs_grade,
         })
     return rows
 

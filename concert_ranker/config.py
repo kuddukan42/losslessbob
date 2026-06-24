@@ -313,6 +313,28 @@ def resolve_band_set(decade: int | None = None,
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# ABSOLUTE QUALITY MODEL. A ridge regression that predicts the LB rating rank
+# (1=F .. 13=A+) from the validated metrics, giving every recording a standalone
+# 0-100 score + A+..F letter grade — independent of the within-family ranking.
+# Fitted on 466 AUD recordings (scans 6+7); 5-fold cross-validated correlation to
+# the real LB rating: Spearman 0.65, 93% within one letter tier. Inputs are
+# median-imputed then standardized by (mean, std); predicted rank = intercept +
+# weights·z. Re-fit when the metric set or calibration sample changes.
+# (AUD-fit; applied to all classes — SBD/FM grades are approximate, see TODO-183.)
+# ─────────────────────────────────────────────────────────────────────────────
+QUALITY_MODEL = {
+    "predictors": ["hiss_floor_db", "hf_ceiling_hz", "spectral_centroid_hz",
+                   "crest_factor_db", "crowd_snr_db", "air_ratio_db",
+                   "mud_ratio_db", "presence_ratio_db"],
+    "median": [-4.26, 11000.0, 1655.5081, 16.0034, 5.6235, -30.3207, 13.4069, -5.4597],
+    "mean": [-4.8324, 10391.6309, 1670.3744, 16.1413, 5.7208, -30.6178, 14.2726, -5.9588],
+    "std": [3.8833, 3665.5446, 620.8161, 2.8392, 3.2879, 8.6375, 6.6207, 3.4782],
+    "intercept": 7.33121,
+    "weights": [-0.9537, 0.58569, -0.3426, 0.21274, 0.4555, 0.43185, -0.30751, 0.51026],
+}
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # Feature-family fusion weights. Within-family metrics are MAD-z normalized
 # across the sibling set, combined per family, then families combined to a
 # track score; tracks aggregate to a recording score.

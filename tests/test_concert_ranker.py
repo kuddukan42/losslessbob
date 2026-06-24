@@ -178,6 +178,26 @@ def test_hybrid_crowd_global_hiss_per_class():
     assert resolve_band_set(None, "FM") is sbd
 
 
+def test_absolute_quality_grade():
+    """grade() returns a 0-100 score + valid letter, and tracks metric quality."""
+    from concert_ranker import quality_score
+    from concert_ranker.calibrate import RATING_RANK
+
+    good = {"hiss_floor_db": -10, "hf_ceiling_hz": 15000, "spectral_centroid_hz": 2000,
+            "crest_factor_db": 20, "crowd_snr_db": 12, "air_ratio_db": -15,
+            "mud_ratio_db": 10, "presence_ratio_db": -2}
+    bad = {"hiss_floor_db": 0, "hf_ceiling_hz": 6000, "spectral_centroid_hz": 1100,
+           "crest_factor_db": 12, "crowd_snr_db": 2, "air_ratio_db": -40,
+           "mud_ratio_db": 22, "presence_ratio_db": -10}
+    sg, sl, _ = quality_score.grade(good)
+    bg, bl, _ = quality_score.grade(bad)
+    assert 0 <= sg <= 100 and 0 <= bg <= 100
+    assert sg > bg  # clean metrics grade higher than degraded ones
+    assert sl in RATING_RANK and bl in RATING_RANK
+    # missing metrics fall back to the model median (no crash)
+    assert 0 <= quality_score.grade({})[0] <= 100
+
+
 def test_rerank_from_stored_metrics_no_audio(conn):
     """The scan-once guarantee: ranking works purely from stored metric_json."""
     sid = repo.create_scan(conn)
