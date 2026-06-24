@@ -280,25 +280,39 @@ def _event_rate(env, times, thresh_pct=99.0, restrict=None) -> float:
 
 
 def _dropout_count(x: np.ndarray) -> int:
-    """Count ISOLATED sample-level discontinuities (clicks / digital glitches).
+    """Count impulsive clicks / glitches via LOCALLY-NORMALIZED roughness.
 
-    A click is a lone sample that doesn't fit its neighbourhood; sustained
-    high-frequency energy (cymbals, attacks, sibilants) is just music. The old
-    "second-difference z > 12" test flagged all of the latter, so its counts ran
-    into the thousands per track. Here a spike must be BOTH extreme (z > 30 on a
-    robust scale) AND isolated (its immediate neighbours are quiet, z < 8), which
-    excludes sustained musical HF and leaves genuine impulsive glitches.
+    Band-limited music is smooth, so the second difference ``|x[n+1]-2x[n]+x[n-1]|``
+    (a "roughness") is bounded; a click is an impulse with huge roughness. Earlier
+    detectors thresholded that roughness GLOBALLY, so loud/dynamic passages tripped
+    it and the metric rewarded crisp recordings (it correlated +0.43 with the
+    rating — better shows looked glitchier). The fix: normalize each sample's
+    roughness by the LOCAL roughness level (a ~12 ms rolling mean). A click far
+    exceeds its neighbourhood regardless of how loud/dynamic that passage is, so a
+    busy drum fill no longer counts while a real click in a quiet passage still
+    does — level/dynamics independent. Only NARROW events (<= 3 samples, i.e.
+    impulses, not sustained energy) are counted.
     """
-    if len(x) < 100:
+    n = len(x)
+    if n < 512:
         return 0
-    d2 = np.abs(np.diff(x, n=2))
-    med = np.median(d2)
-    mad = np.median(np.abs(d2 - med)) + 1e-12
-    z = (d2 - med) / (1.4826 * mad)
-    hi = z > 30.0
-    hi[1:-1] &= (z[:-2] < 8.0) & (z[2:] < 8.0)   # isolation: quiet on both sides
-    hi[0] = hi[-1] = False
-    return int(hi.sum())
+    from scipy.ndimage import uniform_filter1d
+
+    rough = np.abs(np.diff(x, n=2))                       # local roughness, len n-2
+    local = uniform_filter1d(rough, size=257, mode="nearest") + 1e-9
+    hi = (rough / local) > 12.0                            # >> the local roughness
+    if not hi.any():
+        return 0
+    # count contiguous runs (events); keep only narrow ones (clicks, not passages)
+    edges = np.diff(hi.view(np.int8))
+    starts = np.flatnonzero(edges == 1) + 1
+    ends = np.flatnonzero(edges == -1) + 1
+    if hi[0]:
+        starts = np.r_[0, starts]
+    if hi[-1]:
+        ends = np.r_[ends, len(hi)]
+    widths = ends - starts
+    return int((widths <= 3).sum())
 
 
 def _hum_excess_db(c: TrackCache) -> float:
