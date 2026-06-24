@@ -143,7 +143,8 @@ def cmd_calibrate(args) -> int:
     classes = tuple(args.classes) if args.classes else None
     report = run_calibration(conn, db_path=args.db, per_cell=per_cell,
                              workers=args.workers, classes=classes,
-                             staging_dir=args.staging_dir, by_decade=args.by_decade)
+                             staging_dir=args.staging_dir, by_decade=args.by_decade,
+                             ratings=tuple(args.ratings) if args.ratings else None)
     print(json.dumps(report, indent=2, default=str))
     return 0 if "error" not in report else 1
 
@@ -210,6 +211,9 @@ def build_parser() -> argparse.ArgumentParser:
     cp.add_argument("--by-decade", action="store_true",
                     help="large decade × tier × class sample (all decades, all "
                          "bad-tier); --per-cell caps the good/mid cells")
+    cp.add_argument("--ratings", nargs="+", default=None,
+                    help="restrict to these exact ratings (e.g. C+ C C-), "
+                         "stratified by decade × rating × class — fills a tier")
     cp.add_argument("--staging-dir", default=None,
                     help="copy folders here (fast scratch) before decoding")
     cp.add_argument("--workers", type=int, default=8)

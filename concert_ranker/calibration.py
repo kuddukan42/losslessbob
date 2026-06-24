@@ -90,7 +90,8 @@ def _tier(rating: str) -> str:
 
 
 def decade_stratified_sample(conn: sqlite3.Connection, per_cell: int = 18,
-                             classes: tuple | None = None) -> list[dict]:
+                             classes: tuple | None = None,
+                             ratings: tuple | None = None) -> list[dict]:
     """Decade × rating-tier × source_class stratified sample, on-disk only.
 
     Designed for a large era-balanced calibration run: every decade is
@@ -99,8 +100,15 @@ def decade_stratified_sample(conn: sqlite3.Connection, per_cell: int = 18,
     essential for fitting good-vs-bad cutoffs. Good/mid cells are capped at
     ``per_cell``.
 
+    When ``ratings`` is given (e.g. ``("C+", "C", "C-")``), the sample is
+    restricted to those exact ratings and stratified by decade × EXACT rating ×
+    class (each cell capped at ``per_cell``) — used to fill in an under-sampled
+    band like the C tier. Otherwise it stratifies by decade × tier × class with
+    all bad-tier included.
+
     Returns ``[{lb, disk_path, rating, source_class, year}, ...]``.
     """
+    rating_set = set(ratings) if ratings else None
     rows = conn.execute(
         "SELECT e.lb_number AS lb, e.date_str AS date_str, e.rating AS rating,"
         "       e.description AS description, e.source_chain AS source_chain,"
@@ -114,13 +122,19 @@ def decade_stratified_sample(conn: sqlite3.Connection, per_cell: int = 18,
         year = _entry_year(r["date_str"])
         if year is None or year < 1960:
             continue
+        if rating_set is not None and r["rating"] not in rating_set:
+            continue
         cls = source_type.derive_source_class(
             r["description"], r["source_chain"], r["source_type"])
         if classes and cls not in classes:
             continue
-        tier = _tier(r["rating"])
-        cell = ((year // 10) * 10, tier, cls)
-        cap = 10 ** 9 if tier == "BAD" else per_cell  # take ALL bad-tier
+        if rating_set is not None:
+            cell = ((year // 10) * 10, r["rating"], cls)  # fine-rating cells
+            cap = per_cell
+        else:
+            tier = _tier(r["rating"])
+            cell = ((year // 10) * 10, tier, cls)
+            cap = 10 ** 9 if tier == "BAD" else per_cell  # take ALL bad-tier
         if len(cells[cell]) < cap:
             cells[cell].append({
                 "lb": int(r["lb"]), "disk_path": r["disk_path"],
@@ -172,7 +186,8 @@ def run_calibration(conn: sqlite3.Connection, *, db_path: str | None,
                     per_cell: int = 5, workers: int = 8,
                     classes: tuple | None = None,
                     staging_dir: str | None = None,
-                    by_decade: bool = False) -> dict:
+                    by_decade: bool = False,
+                    ratings: tuple | None = None) -> dict:
     """Full calibration: sample → scan → analyse. Returns a report dict.
 
     The scan's config snapshot is written to ``quality_scans.config_json`` for
@@ -190,8 +205,9 @@ def run_calibration(conn: sqlite3.Connection, *, db_path: str | None,
             decades represented, all bad-tier included) instead of the plain
             rating × class one.
     """
-    if by_decade:
-        sample = decade_stratified_sample(conn, per_cell=per_cell, classes=classes)
+    if by_decade or ratings:
+        sample = decade_stratified_sample(conn, per_cell=per_cell, classes=classes,
+                                          ratings=ratings)
     else:
         sample = stratified_sample(conn, per_cell=per_cell)
         if classes:
@@ -203,7 +219,7 @@ def run_calibration(conn: sqlite3.Connection, *, db_path: str | None,
     scan_id = repo.create_scan(
         conn, config=cfg,
         notes=f"calibration sample (per_cell={per_cell}, classes={classes or 'all'}, "
-              f"by_decade={by_decade}, n={len(sample)})")
+              f"by_decade={by_decade}, ratings={ratings or 'all'}, n={len(sample)})")
 
     worklist = [(s["lb"], s["disk_path"], s["source_class"]) for s in sample]
     log.info("calibration scanning %d recordings (scan_id=%s, staging=%s)",
