@@ -112,11 +112,38 @@ folder links multi-LB), unrelated to the quality tables.
 
 ---
 
+## Next steps (as of 2026-06-24)
+
+State: 6 calibration rounds done; metrics de-confounded (harsh/hiss/hum/dropout);
+bands fitted per-decade + per-class (hybrid, crowd held absolute); absolute quality
+score live (config.QUALITY_MODEL, held-out CV Spearman 0.65 vs LB rating, 94% within
+one letter tier). Scans on record: 3/4/5 (117 each), 6 (697 decade), 7 (256 middle,
+C-rich). Branch `concert-ranker`: package + dropout + ratings + abs-score commits.
+
+Open items, roughly in priority order:
+
+1. **Mono/stereo flag (ready — no rescan).** `stereo_width` already separates it:
+   width < ~0.05 (and `lr_corr` ≈ 1.0) = mono/dual-mono (~133 of 873), width ≥ 0.05
+   = stereo (740). Surface as a derived `channels`/`is_stereo` field in the metrics
+   and/or report. Cheap, deterministic from stored data.
+2. **SBD quality-score model.** QUALITY_MODEL is AUD-fit, applied to all classes —
+   SBD/FM grades are approximate. Fit + validate a separate SBD model.
+3. **Re-scan scan 6 with the current dropout detector** for a fully clean combined
+   training set (dropout isn't a score predictor, so it doesn't change grades — just
+   tidies the data), then refit QUALITY_MODEL + per-decade bands off the unified set.
+4. **dropout disqualifier threshold** is provisional (150) — refit from a current scan.
+5. **lossy_flag** never fires — needs labeled known-lossy files to tune the brick-wall.
+6. **True 5-9 kHz sibilance + dynamic_range_dr** (not yet produced by the scan).
+7. **Per-decade SBD bands** and **per-decade disqualifiers** (currently global).
+8. **GUI surface** for grades/verdicts (backend + CLI only so far).
+
+---
+
 ## CLI quick reference
 
 ```
-concert_ranker scan      --all | --lb N... | --family FAM_ID   [--workers 16]
-concert_ranker calibrate --sample-size 30
-concert_ranker rerank    --scan-id N          # re-band/rank from stored metrics, no audio
+concert_ranker scan      --all | --lb N... | --family FAM_ID   [--workers 16] [--staging-dir DIR]
+concert_ranker calibrate [--by-decade] [--ratings C+ C C-] [--per-cell N] [--classes AUD SBD] [--staging-dir DIR]
+concert_ranker rerank    --scan-id N          # re-band/rank/grade from stored metrics, no audio
 concert_ranker report    --scan-id N [--lb N... | --family INT] [--format text|json|csv]
 ```
