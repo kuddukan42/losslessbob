@@ -110,15 +110,15 @@ class Disqualifier:
 # dropout_count + hum_excess_db were reworked in round 3 (scan_id 5) — dropout now
 # counts only isolated discontinuities and aggregates by WORST track (was median,
 # which hid one-bad-track glitches); hum now requires a 50/60 Hz harmonic COMB (no
-# longer confounded with bass). dropout threshold 6900 = scan_id 6 worst-track p95.
-# Set HIGH on purpose: dropout_count still correlates +0.43 with rating at scale
-# (the isolated-spike test partly catches sharp musical transients in crisp/dynamic
-# well-rated shows), so a low cutoff would wrongly demote good recordings — only
-# flag the genuinely extreme glitch tail until the detector is reworked (TODO-183).
+# longer confounded with bass). dropout_count detector was reworked to locally-
+# normalized roughness (see _dropout_count) — the confound is GONE: rho vs rating
+# +0.43 -> -0.04 on a stratified subset, counts now sane (clean shows ~4-10,
+# glitchy tail ~80-280). Threshold 150 is PROVISIONAL for the new scale; refit from
+# a fresh full scan (scan_id 6's stored dropout values are from the OLD detector).
 # hum kept high pending a real comb-hum case.
 DISQUALIFIERS = [
     Disqualifier("lossy_flag",       0.5,    "above", "lossy source suspected", veto=True),
-    Disqualifier("dropout_count",    6900,   "above", "has dropouts/glitches",  veto=False),
+    Disqualifier("dropout_count",    150,    "above", "has dropouts/glitches",  veto=False),
     Disqualifier("hum_excess_db",    10.0,   "above", "audible mains hum",      veto=False),
     Disqualifier("clip_fraction",    0.02,   "above", "significant clipping",   veto=False),
     Disqualifier("completeness",     0.90,   "below", "incomplete (missing material)", veto=False),
