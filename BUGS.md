@@ -1,4 +1,119 @@
 
+BUG-223: tapematch analysis.md attribution line is hardcoded, not the real model
+Status: Fixed
+File(s): .claude/commands/tapematch-batch.md:4, data/tapematch/runs/*/analysis.md
+Reported: 2026-06-24
+Fixed: 2026-06-24
+Root cause: The tapematch-batch skill (step 4) instructed every session to write the literal
+  string `*Claude claude-sonnet-4-6 — …*` regardless of which model actually ran. gen_analysis.py
+  also hardcodes MODEL = "claude-sonnet-4-6". As a result the attribution in all analysis.md files
+  reflects nothing about the writing model. Session-transcript cross-reference proved 10 analyses
+  (1989-08-29, 1989-08-31, 1989-11-02, 1990-06-29, 1990-06-30, 1990-07-07, 1990-07-08, 1990-08-12,
+  1990-08-20, 1990-09-05) were actually written by claude-haiku-4-5 but stamped sonnet. (10 other
+  files were correctly self-stamped claude-opus-4-8 from a real opus session.)
+Fix: Skill step 4 now requires the actual running session model id (no fixed string). The 10
+  mislabeled haiku files corrected to `*Claude claude-haiku-4-5 — …*`. The remaining ~690 analyses
+  were confirmed by the user to have been written by sonnet, so their existing label is correct.
+  Final on-disk attribution: 690 sonnet, 10 haiku, 10 opus. gen_analysis.py still hardcodes MODEL
+  — left for a follow-up if that path is reused.
+
+BUG-217: Incremental crawler does not pick up new LB website pages when posted
+Status: Open
+File(s): backend/site_crawler.py
+Reported: 2026-06-22
+Root cause: TBD — incremental crawl scope misses newly posted pages on the LB website
+  (related sitemap-discovery gap previously seen in BUG-193, but that was bobdylan_scraper.py;
+  this report is against the site_crawler.py incremental path — needs confirmation whether
+  it's the same root cause or a separate one).
+Fix: TBD
+
+BUG-216: Spectrograms no longer generate via the UI
+Status: Open
+File(s): backend/sox_utils.py, gui_next/src/renderer/src/screens/ScreenSpectrograms.tsx
+Reported: 2026-06-22
+Root cause: TBD — spectrogram generation triggered from the UI no longer produces output.
+Fix: TBD
+
+BUG-222: UI tips show Mac-only "⌘K" shortcut that doesn't work and has no Mac build anyway
+Status: Open
+File(s): gui_next/src/renderer/src/App.tsx:169, gui_next/src/renderer/src/components/AppShell.tsx:648,
+         gui_next/src/renderer/src/screens/ScreenHome.tsx:80
+Reported: 2026-06-22
+Root cause: Three places hint a "⌘K" quick-jump shortcut ("Press ⌘K on any screen to jump
+  straight to an LB# or folder."), but there is no keydown listener for the 'k' key anywhere
+  in the GUI source — grepping for `key === 'k'`/`'K'` across gui_next/src/renderer/src
+  returns zero matches. The shortcut was never implemented. Separately, ⌘ is the Mac Command
+  symbol; this project has no Mac build, so even if implemented, the hint should show the
+  Windows/Linux modifier (Ctrl) instead.
+Fix: TBD — either implement the quick-jump shortcut (Ctrl+K) and wire the App.tsx/AppShell.tsx/
+  ScreenHome.tsx hints to it, or remove the hints if quick-jump isn't planned. Also swap the
+  ⌘ symbol for "Ctrl" in the hint text since there's no Mac version of the app.
+
+BUG-221: "Open LB page" link doesn't work in some locations — inconsistent URL construction
+Status: Open
+File(s): gui_next/src/renderer/src/components/library/DetailPanel.tsx:659-661,
+         gui_next/src/renderer/src/screens/ScreenLibrary.tsx:366,
+         gui_next/src/renderer/src/components/pipeline/LookupDetail.tsx:78,
+         gui_next/src/renderer/src/screens/ScreenSearch.tsx:1538,
+         gui_next/src/renderer/src/screens/ScreenCollection.tsx:2479
+Reported: 2026-06-22
+Root cause: 5 separate call sites build the same losslessbob.wonderingwhattochoose.com
+  detail-page URL with two different, inconsistent formats:
+    - LookupDetail.tsx:78, ScreenSearch.tsx:1538, ScreenCollection.tsx:2479 build
+      `/detail/LB-${padStart(5,'0')}.html` (zero-padded with "LB-" prefix).
+    - DetailPanel.tsx:660, ScreenLibrary.tsx:366 build `/detail/${row.lb}.html` directly
+      from row.lb with no "LB-" prefix and no zero-padding.
+  If row.lb is a bare number (or unpadded), the DetailPanel/Library variant produces a URL
+  that doesn't match the site's actual `/detail/LB-NNNNN.html` path and 404s — which matches
+  "works in some locations [call sites], not others."
+Fix: TBD — consolidate into one shared helper (e.g. lbDetailUrl(lb): string) that always
+  zero-pads and prefixes "LB-", and use it at all 5 call sites instead of duplicating the
+  URL string inline.
+
+BUG-220: LB metadata scraper-by-range excludes start/end LB numbers that have no checksum entry yet
+Status: Open
+File(s): backend/app.py:1762-1809 (scrape_start)
+Reported: 2026-06-22
+Root cause: scrape_start builds the scrape list lb_numbers from
+  "SELECT DISTINCT c.lb_number FROM checksums c ... WHERE c.lb_number >= start_lb AND <= end_lb"
+  — only LB numbers that already have a checksums row are included. Gaps within
+  [start_lb, effective_end] are detected afterward and given an insert_missing_entry()
+  placeholder row, but those gap LB numbers (which may include the start_lb/end_lb the user
+  typed in) are never added to lb_numbers, so _start_scrape_thread never actually scrapes them
+  — they just sit as "missing" stubs. User-specified start/end LB boundaries can silently be
+  skipped if no checksum exists for them yet.
+Fix: TBD — likely needs the gap-filled LB numbers also queued into lb_numbers for the
+  scrape thread (or at minimum guarantee start_lb/end_lb themselves are scraped), not just
+  inserted as missing placeholders.
+
+BUG-219: Search/filter state lost when navigating away from a screen and back
+Status: Open
+File(s): gui_next/src/renderer/src/screens/ScreenLibrary.tsx:326-340 (query, activeDecade,
+  activeStatus, activeRating, activeSource, activeHealth), gui_next/src/renderer/src/App.tsx:265-285
+Reported: 2026-06-22
+Root cause: App.tsx renders each screen behind a react-router <Route>, which unmounts the
+  component when navigating to a different route. Search/filter values (e.g. `query` and the
+  `active*` filter Sets in ScreenLibrary.tsx) are plain local useState, so they reset to
+  default the moment the screen unmounts — navigating away and back loses whatever filter/search
+  was applied. Likely affects other screens with local-state search/filter, not just Library.
+Fix: TBD — needs filter/search state lifted to a persistent store (e.g. the zustand store in
+  store.ts) or kept alive via route state/URL query params instead of component-local useState.
+
+BUG-218: Performance screen — column widths wrong/misaligned
+Status: Open
+File(s): gui_next/src/renderer/src/screens/ScreenLibrary.tsx:1541,1768-1777 (performance-view table)
+Reported: 2026-06-22
+Root cause: TBD — column widths on the performance (date-row) table need fixing; exact
+  symptom (too narrow/too wide/misaligned which column) not yet specified.
+Fix: TBD
+
+BUG-215: Map screen renders white/blank — no map shown in app
+Status: Open
+File(s): gui_next/src/renderer/src/screens/ScreenMap.tsx
+Reported: 2026-06-22
+Root cause: TBD — Map screen shows a blank white screen instead of the map when opened in the app.
+Fix: TBD
+
 BUG-214: Library — family label slot conflates source type with TapeMatch match group
 Status: Fixed
 File(s): gui_next/src/renderer/src/screens/ScreenLibrary.tsx:1251-1263, 1880-1889

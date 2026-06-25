@@ -1313,7 +1313,8 @@
       "gaps_one": "{{count}} gap",
       "gaps_other": "{{count}} hiaten",
       "recShort_one": "{{count}} rec",
-      "recShort_other": "{{count}} rec"
+      "recShort_other": "{{count}} rec",
+      "recShort": "{{count}} rec"
     },
     "empty": {
       "loading": "Bezig met laden…",
@@ -1323,7 +1324,8 @@
     },
     "tooltip": {
       "inferred": "Afgeleid uit de datum en locatie van de opname zelf — niet gekoppeld aan een bekende concertdatum van Dylan",
-      "tapematchGroup": "TapeMatch-groep voor akoestische overeenkomsten"
+      "tapematchGroup": "TapeMatch-groep voor akoestische overeenkomsten",
+      "tapematchReview": "Gemarkeerd voor handmatige controle — een claim dat deze uitzending uit dezelfde bron afkomstig is, wordt tegengesproken door de correlatiegegevens van TapeMatch"
     },
     "ctx": {
       "postForum": "Plaats op het forum",
@@ -1403,7 +1405,8 @@
       "ofRec": "van {{count}} rec",
       "tracksUnit": "nummers",
       "recordingFamilies": "Opnamefamilies · {{count}}",
-      "groupedByTapeMatch": "gegroepeerd op TapeMatch"
+      "groupedByTapeMatch": "gegroepeerd op TapeMatch",
+      "needsReview": "Moet worden gecontroleerd"
     },
     "coverage": {
       "ownedFull": "Eigen {{owned}}/{{total}}",

@@ -8,12 +8,13 @@ instructions/design_handoff_unified_library/07-tapematch-backend-integration.md
 for the full design.
 """
 import logging
+import re
 import sqlite3
 import time
 from pathlib import Path
 
-from backend.db import get_connection
-from backend.paths import TOOLS_DIR
+from backend.db import get_connection, init_db
+from backend.paths import TAPEMATCH_RUNS_DIR, TOOLS_DIR
 
 log = logging.getLogger(__name__)
 
@@ -21,6 +22,62 @@ DEFAULT_OBSERVATIONS_DB_PATH = TOOLS_DIR / "tapematch" / "observations.db"
 
 _OPEN_RETRY_ATTEMPTS = 3
 _OPEN_RETRY_BACKOFF_SEC = 1.0
+
+_VERDICT_LINE_RE = re.compile(r"^## Verdict:\s*(?P<text>.+)$", re.MULTILINE)
+
+
+def _resolve_run_dir(obs_conn: sqlite3.Connection, run_id: str, concert_date: str) -> Path:
+    """Best-effort path to a tapematch run's archive directory.
+
+    observations.db's stored ``archive_dir`` can be stale for older rows
+    (predates a tools/tapematch/runs/ -> data/tapematch/runs/ relocation),
+    so fall back to the current ``<run_id>_<concert_date>`` directory-naming
+    convention when the stored path doesn't exist on disk.
+    """
+    row = obs_conn.execute(
+        "SELECT archive_dir FROM runs WHERE run_id = ?", (run_id,)
+    ).fetchone()
+    if row and row["archive_dir"]:
+        candidate = Path(row["archive_dir"])
+        if candidate.exists():
+            return candidate
+    return TAPEMATCH_RUNS_DIR / f"{run_id}_{concert_date}"
+
+
+def _parse_verdict(analysis_md_text: str) -> "tuple[bool, str | None]":
+    """Parse an analysis.md's ``## Verdict:`` line for a needs-review flag + reason.
+
+    Per tools/tapematch/ANALYSIS_WRITER_PROMPT.md, a flagged verdict always
+    reads ``<N> recordings — <M> families — result needs review — <reason>``.
+    Returns ``(False, None)`` if there's no Verdict line or it doesn't flag
+    review (e.g. "result looks correct" / "all sources confirmed different").
+    """
+    m = _VERDICT_LINE_RE.search(analysis_md_text)
+    if not m:
+        return False, None
+    text = m.group("text")
+    if "needs review" not in text.lower():
+        return False, None
+    parts = text.split("—")
+    for i, part in enumerate(parts):
+        if "needs review" in part.lower():
+            tail = parts[i + 1 :]
+            reason = "—".join(tail).strip() or None
+            return True, reason
+    return True, None
+
+
+def _read_review_flag(run_dir: Path) -> "tuple[bool, str | None]":
+    """Read run_dir/analysis.md (if present) and parse its needs-review verdict."""
+    analysis_path = run_dir / "analysis.md"
+    if not analysis_path.exists():
+        return False, None
+    try:
+        text = analysis_path.read_text(encoding="utf-8")
+    except OSError:
+        log.warning("Could not read %s for review-flag parsing", analysis_path)
+        return False, None
+    return _parse_verdict(text)
 
 
 def _open_observations_db(observations_db_path: "Path | str") -> sqlite3.Connection:
@@ -87,6 +144,11 @@ def sync_tapematch_families(
     observations_db_path = observations_db_path or DEFAULT_OBSERVATIONS_DB_PATH
     if not Path(observations_db_path).exists():
         raise FileNotFoundError(f"observations.db not found: {observations_db_path}")
+
+    # Standalone CLI runs (no Flask backend up) never go through app.py's
+    # startup init_db() call, so the review_flag/review_reason migration
+    # (and any other pending schema migration) wouldn't otherwise apply.
+    init_db(db_path)
 
     obs_conn = _open_observations_db(observations_db_path)
     conn = get_connection(db_path)
@@ -164,6 +226,13 @@ def _sync_one_date(
     # Label order: member_count desc, ties broken by lowest tapematch family_id.
     ordered = sorted(families.items(), key=lambda kv: (-len(kv[1]), kv[0]))
 
+    # The needs-review verdict lives in the batch-write analysis.md for this
+    # date's chosen run, not in observations.db — applies uniformly to every
+    # family on the date since the verdict judges the whole show's identity
+    # picture, not one family in isolation.
+    run_dir = _resolve_run_dir(obs_conn, run_id, concert_date)
+    review_flag, review_reason = _read_review_flag(run_dir)
+
     fresh_fam_ids: set[str] = set()
     fresh_lb_numbers: set[int] = set()
     family_rows = []
@@ -178,7 +247,8 @@ def _sync_one_date(
 
         fresh_fam_ids.add(fam_id)
         family_rows.append(
-            (fam_id, concert_date, label, by, conf, member_count, run_id)
+            (fam_id, concert_date, label, by, conf, member_count, run_id,
+             review_flag, review_reason)
         )
         for lb_number in lb_numbers:
             fresh_lb_numbers.add(lb_number)
@@ -187,27 +257,33 @@ def _sync_one_date(
     for _tm_fam_id, lb_number in singletons.items():
         fam_id = f"{concert_date}#{lb_number}"
         fresh_fam_ids.add(fam_id)
-        family_rows.append((fam_id, concert_date, "Solo", "ai", None, 1, run_id))
+        family_rows.append(
+            (fam_id, concert_date, "Solo", "ai", None, 1, run_id,
+             review_flag, review_reason)
+        )
         fresh_lb_numbers.add(lb_number)
         member_rows.append((lb_number, fam_id, concert_date, run_id))
 
     with conn:
         conn.execute("BEGIN IMMEDIATE")
-        for fam_id, c_date, label, by, conf, member_count, r_id in family_rows:
+        for fam_id, c_date, label, by, conf, member_count, r_id, rev_flag, rev_reason in family_rows:
             conn.execute(
                 """
                 INSERT INTO tapematch_family_meta
-                    (fam_id, concert_date, label, by, conf, member_count, run_id)
-                VALUES (?, ?, ?, ?, ?, ?, ?)
+                    (fam_id, concert_date, label, by, conf, member_count, run_id,
+                     review_flag, review_reason)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
                 ON CONFLICT(fam_id) DO UPDATE SET
                     label=excluded.label,
                     by=excluded.by,
                     conf=excluded.conf,
                     member_count=excluded.member_count,
                     run_id=excluded.run_id,
+                    review_flag=excluded.review_flag,
+                    review_reason=excluded.review_reason,
                     imported_at=CURRENT_TIMESTAMP
                 """,
-                (fam_id, c_date, label, by, conf, member_count, r_id),
+                (fam_id, c_date, label, by, conf, member_count, r_id, rev_flag, rev_reason),
             )
         for lb_number, fam_id, c_date, r_id in member_rows:
             conn.execute(

@@ -1313,7 +1313,8 @@
       "gaps_one": "{{count}} gap",
       "gaps_other": "{{count}} lacune",
       "recShort_one": "{{count}} rec",
-      "recShort_other": "{{count}} rec"
+      "recShort_other": "{{count}} rec",
+      "recShort": "{{count}} rec"
     },
     "empty": {
       "loading": "Caricamento in corso…",
@@ -1323,7 +1324,8 @@
     },
     "tooltip": {
       "inferred": "Dati dedotti dalla data e dal luogo della registrazione stessa — non corrispondenti a una data nota di un concerto di Dylan",
-      "tapematchGroup": "Gruppo di corrispondenze acustiche TapeMatch"
+      "tapematchGroup": "Gruppo di corrispondenze acustiche TapeMatch",
+      "tapematchReview": "Segnalato per revisione manuale — una rivendicazione di stessa origine per questo programma è contraddetta dai dati di correlazione di TapeMatch"
     },
     "ctx": {
       "postForum": "Pubblica sul forum",
@@ -1403,7 +1405,8 @@
       "ofRec": "di {{count}} rec",
       "tracksUnit": "brani",
       "recordingFamilies": "Famiglie di registrazioni · {{count}}",
-      "groupedByTapeMatch": "raggruppate per TapeMatch"
+      "groupedByTapeMatch": "raggruppate per TapeMatch",
+      "needsReview": "Da revisionare"
     },
     "coverage": {
       "ownedFull": "Di proprietà di {{owned}}/{{total}}",

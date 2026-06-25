@@ -77,6 +77,22 @@ refine:
   trigger_min_ppm: 2000     # only refine pairs whose coarse offset exceeds this
   trigger_corr_ceiling: 0.60  # ...and that aren't already clearly clustered
 
+polarity:
+  # Single-channel polarity-inversion rescue (TODO-184). Curator notes like
+  # "right channel inverted" / "channels swapped and wavs inverted" defeat the
+  # L+R mid mixdown that Pass 1 ingests, so a genuine same-source copy reads
+  # near-zero on mid-vs-mid (the match moves into the L-R cross term). When
+  # enabled, Pass 1 also writes an L-R "side" memmap per source, and a near-zero
+  # pair (median corr < rescue_corr_ceiling) is re-scored with
+  # match.polarity_aware_corr (mid-mid / mid-side / side-mid, keep the max).
+  # DEFAULT OFF: enabling decodes stereo in Pass 1 (raises peak RAM from the
+  # ~461 MB mono path toward the old ~1.2 GB stereo path) and the matcher
+  # threshold is calibrated on mid-mid — validate on real multi-source dates,
+  # and confirm no spurious merges, before turning on. rescue_corr_ceiling
+  # mirrors refine.trigger_corr_ceiling so clearly-clustered pairs are skipped.
+  enabled: false
+  rescue_corr_ceiling: 0.60  # only rescue pairs whose mid-mid median is below this
+
 lineage:
   # Evidence for parent/child direction (interpretive, reported not decided).
   hf_ceiling_probe_hz: [14000, 16000, 19000, 20000]

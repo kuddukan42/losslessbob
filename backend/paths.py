@@ -29,6 +29,7 @@ TORRENTS_DIR = DATA_DIR / "torrents"
 LOG_FILE = DATA_DIR / "scraper.log"
 TOOLS_DIR = APP_ROOT / "tools"
 WEBENGINE_DIR = DATA_DIR / "webengine_cache"
+TAPEMATCH_RUNS_DIR = DATA_DIR / "tapematch" / "runs"
 
 # ── Offline site mirror ───────────────────────────────────────────────────────
 # data/site/ mirrors the URL directory structure of losslessbob.wonderingwhattochoose.com

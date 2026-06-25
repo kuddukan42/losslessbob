@@ -75,6 +75,8 @@ interface RecordingRow {
   famLabel?: string
   famConf?: number | null
   famBy?: 'lb' | 'ai' | 'ai+lb'
+  famNeedsReview?: boolean
+  famReviewReason?: string | null
 }
 
 type FlatItem =
@@ -1239,6 +1241,8 @@ interface FamilyGroup {
   total: number
   multi: boolean
   canonical: RecordingRow | null
+  needsReview: boolean
+  reviewReason: string | null
 }
 
 type Coverage = 'Covered' | 'Upgrade' | 'Gap' | 'Undocumented'
@@ -1274,6 +1278,8 @@ function familiesOf(recordings: RecordingRow[]): FamilyGroup[] {
       owned: owned.length > 0, ownedCount: owned.length, total: members.length,
       multi: members.length > 1,
       canonical,
+      needsReview: !!members[0]?.famNeedsReview,
+      reviewReason: members[0]?.famReviewReason ?? null,
     })
   }
   out.sort((a, b) =>
@@ -1369,7 +1375,10 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
   }, [rows])
 
   const famMap = useMemo(() => {
-    const m = new Map<number, { fam_id: string; fam_label: string; fam_conf: number | null; fam_by: string }>()
+    const m = new Map<number, {
+      fam_id: string; fam_label: string; fam_conf: number | null; fam_by: string
+      fam_needs_review?: number | boolean; fam_review_reason?: string | null
+    }>()
     if (Array.isArray(famData)) for (const f of famData as any[]) m.set(f.lb_number, f)
     return m
   }, [famData])
@@ -1392,6 +1401,7 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
           if (fam) {
             row.fam = fam.fam_id; row.famLabel = fam.fam_label
             row.famConf = fam.fam_conf; row.famBy = fam.fam_by as RecordingRow['famBy']
+            row.famNeedsReview = !!fam.fam_needs_review; row.famReviewReason = fam.fam_review_reason ?? null
           }
           return row
         })
@@ -1936,6 +1946,11 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
                                 {fam.tmLabel && (
                                   <span title={t('library.tooltip.tapematchGroup')}>
                                     <Pill tone="info" soft>{fam.tmLabel}</Pill>
+                                  </span>
+                                )}
+                                {fam.needsReview && (
+                                  <span title={fam.reviewReason || t('library.tooltip.tapematchReview')}>
+                                    <Pill tone="warn" soft>{t('library.panel.needsReview')}</Pill>
                                   </span>
                                 )}
                                 {single && (

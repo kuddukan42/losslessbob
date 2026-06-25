@@ -1324,7 +1324,8 @@
     },
     "tooltip": {
       "inferred": "Inferred from the recording’s own date/location — not matched to a known Dylan show date",
-      "tapematchGroup": "TapeMatch acoustic match group"
+      "tapematchGroup": "TapeMatch acoustic match group",
+      "tapematchReview": "Flagged for manual review — a same-source claim for this show is contradicted by TapeMatch's correlation data"
     },
     "ctx": {
       "postForum": "Post to forum",
@@ -1387,6 +1388,7 @@
       "rating": "Rating",
       "catalogNote": "Catalog metadata shown from the master DB.",
       "unconfirmed": "Unconfirmed",
+      "needsReview": "Needs review",
       "releasedAs": "Released as “{{title}}”",
       "bestOwned": "best owned",
       "noRecording": "No recording in your collection",
