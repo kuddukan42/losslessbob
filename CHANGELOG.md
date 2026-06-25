@@ -1,3 +1,90 @@
+[2026-06-25] — tapematch: FINDINGS.md — synthesized performance report and architecture limits
+Added: tools/tapematch/FINDINGS.md: full findings report — accuracy metrics, all 7 approaches
+  tried with outcomes, root-cause analysis, what works, future angles, and recommendation
+
+[2026-06-25] — tapematch: cancel TODO-185/144/140 (all falsified); start TODO-184 polarity batch
+Changed: tools/tapematch/tapematch/match.py: added lowband_envelope_corr() (250-2000 Hz zero-phase
+  bandpass + log-RMS envelope cross-correlation with lag search; unit tests in
+  tests/test_lowband_corr.py, 4 passing). Added windowed_fingerprints() / best_window_fingerprint_match()
+  / _fingerprint_hashes() for TODO-185 windowed-overlap investigation (retained, not wired into cli.py).
+Changed: tools/tapematch/tapematch/align.py: added locate_splice_points() (extracts step indices from
+  lag curve, unit tests in tests/test_splice_points.py, 5 passing; retained, not wired into cli.py).
+Added: tools/tapematch/tests/test_fingerprint_windows.py (4 passing), test_splice_points.py (5 passing),
+  test_lowband_corr.py (4 passing).
+Added: tools/tapematch/calibrate_fingerprint_localize.py, calibrate_fingerprint_baseline.py,
+  calibrate_piecewise.py, calibrate_lowband.py — falsify-first pilot scripts (read-only, no cli.py wire).
+Changed: tools/tapematch/BASELINE.md: Task 8 (TODO-185 — 3 approaches: contig-run audit, HF-band
+  fingerprint, 200-4kHz fingerprint; all falsified); Task 9 (TODO-144 — piecewise pilot, per-seg p50
+  same-source 0.004 < different-source 0.005); Task 10 (TODO-140 — 250-2000 Hz envelope pilot,
+  confirmed-distinct LB-02470/LB-02478 +0.357 > all missed-pairs max +0.201).
+Added: tools/tapematch/validate_polarity.py — batch polarity-rescue dry run across ~474 contradicted-claim
+  dates; JSONL checkpoint output; batch in progress (TODO-184 Checkpoint 1 pending).
+
+[2026-06-25] — fix(scheduler): tapematch tmp-dir cleanup race deletes concurrent run's files (BUG-224)
+Fixed: tools/tapematch/tapematch_session.py: _clean_stale_tmp_dirs() rmtree'd every
+  tapematch_* dir under /mnt/DATA0/tmp unconditionally before each subprocess launch, with no
+  liveness check -- two concurrent tapematch_session.py sessions (1989-06-04, 1990-01-12)
+  deleted the in-flight memmaps of a separate validate_polarity.py batch run, causing
+  cascading FileNotFoundError crashes on 5 dates. Added _tmp_dir_in_use() (open-fd scan via
+  /proc + recent-mtime check); cleanup now skips any dir that's still actively written to or
+  held open by a running process, regardless of which script or session owns it. New tests:
+  tools/tapematch/tests/test_clean_stale_tmp_dirs.py (4 passing).
+Added: tools/tapematch/tapematch/match.py: windowed_fingerprints()/best_window_fingerprint_match()
+  (TODO-185, revised approach) -- landmark-hash-based localized-overlap evidence to replace the
+  falsified "best contiguous run on 60s residual_corr windows" premise (audit on 1991-11-05
+  found zero signal differentiation between 5 curator-claimed same-source pairs and a known-
+  distinct negative control at both +-10s and +-120s lag search). _fingerprint_hashes() extracted
+  from fingerprint_window() as a shared helper. Existing test suite verified unaffected (45
+  passed; the only 4 failures are pre-existing and unrelated, in test_batch_queue.py /
+  test_find_lb_folders_no_audio.py).
+
+[2026-06-25] — feat(concert_ranker): refit AUD QUALITY_MODEL on scan_id 8 (2798 AUD) (TODO-183)
+Changed: concert_ranker/config.py QUALITY_MODEL — refit the absolute-score ridge on the full
+  overnight by-decade scan (scan_id 8, 2798 rated AUD, 6x the prior 466-recording basis). New
+  predictors chosen by forward selection over a 17-metric pool (alpha=0.3): hiss_floor_db,
+  bass_ratio_db, mud_ratio_db, onset_clarity, directness, crowd_snr_db, harsh_ratio_db,
+  presence_ratio_db (dropped the collinear HF set hf_ceiling/centroid/air/crest). Every weight's
+  sign matches its univariate direction — no confound. 5-fold CV (3 seeds) to LB rating: Spearman
+  0.659, 75.6% within one letter tier; verified via the live predict_rank path at 0.661 / 75.9%.
+  The previous 466-fit model scored only 0.561 / 46%-within-1 on this full set (mis-centered
+  intercept fit on a middle-focused sample); the refit re-centers to the collection's true mean
+  rank (~9.8). SBD model (QUALITY_MODEL_SBD) untouched. 16 concert_ranker tests pass.
+
+[2026-06-25] — fix(concert_ranker): disable confounded dropout_count disqualifier (TODO-183)
+Changed: concert_ranker/config.py DISQUALIFIERS — removed the dropout_count>150 "has dropouts/
+  glitches" entry. The overnight calibration scan (scan_id 8, 2798 AUD, by-decade, all ratings —
+  the fresh full scan meant to validate the 06-24 locally-normalized-roughness rework) shows the
+  de-confounding did NOT hold at scale: rho vs rating = +0.417 (p=3e-118), median dropout by tier
+  A:118 A-:55 B:27 B-:12 ... C/D ~6-17, i.e. the best recordings score highest. The detector still
+  tracks transient/HF density, not defects, so the 150 threshold was mislabeling many A-tier
+  recordings. Disabled (commented out) until the detector is reworked; comment block corrected
+  (previously claimed "the confound is GONE"). dropout_count is not a QUALITY_MODEL predictor, so
+  absolute scores/grades are unaffected. 16 concert_ranker tests pass.
+Verified: scan_id 8 finished cleanly overnight (2798/2799 scanned; 1 fail = LB1489 empty folder).
+  Calibration is report-only; band-cutoff refits from scan_id 8 not yet applied (current basis
+  remains scan_id 6).
+
+[2026-06-24] — feat(concert_ranker): dedicated SBD/FM absolute quality model (TODO-183)
+Added: concert_ranker/config.py QUALITY_MODEL_SBD — separate ridge model (predictors hiss_floor_db,
+  hf_ceiling_hz, crest_factor_db, air_ratio_db, harsh_ratio_db, directness) fit on the 223
+  SBD+FM recordings with metrics+rating across scans 3-7 (latest scan per LB). AUD's predictors
+  (mud_ratio_db, presence_ratio_db, spectral_centroid_hz, crowd_snr_db) don't separate SBD tiers
+  (|rho| < 0.25); harsh_ratio_db/directness do and aren't in the AUD set. dropout_count (rho 0.375)
+  deliberately excluded — most of the sample predates the dropout-detector rework, so its values
+  aren't comparable to current scans; revisit once SBD is re-scanned with the current detector.
+  Validation: applying the AUD model to this SBD+FM set gets a comparable rank correlation
+  (Spearman 0.511) but only 48% within-one-letter-tier (wrong absolute level); the dedicated fit
+  gets Spearman 0.53 and 69% within one tier (5-fold CV).
+Changed: concert_ranker/quality_score.py predict_rank()/grade() take an optional source_class arg
+  and route SBD/FM to QUALITY_MODEL_SBD, everything else (incl. unknown/None) to QUALITY_MODEL — same
+  pattern as config.resolve_band_set()'s class resolution.
+Changed: concert_ranker/families.py rank_group() passes group[lb]["source_class"] into
+  quality_score.grade() so each recording's verdict grade uses the right model.
+Added: tests/test_concert_ranker.py test_absolute_quality_grade_sbd_model — SBD/FM route to
+  QUALITY_MODEL_SBD (not the AUD model) and still discriminate good/bad metrics; 16 tests pass.
+Verified: `concert_ranker rerank --scan-id 6` end-to-end against the real DB — SBD/FM grades now
+  cluster B-/A (matching the actual top-heavy SBD rating distribution) instead of the AUD curve.
+
 [2026-06-24] — feat(db): curated_lists / curated_list_entries — carbonbit + 10haaf picks (TODO-181)
 Added: backend/db.py — curated_lists + curated_list_entries tables (MASTER_TABLES, schema v10);
   CRUD: get_or_create_curated_list, get_curated_lists, add_curated_list_entries,
