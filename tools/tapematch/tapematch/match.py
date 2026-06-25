@@ -41,6 +41,86 @@ def residual_corr(ra, ob):
     return float(np.dot(ra, ob) / len(ra))
 
 
+def polarity_aware_corr(ref_mid, ref_side, oth_mid, oth_side):
+    """Best |residual_corr| across channel-polarity variants of an aligned pair.
+
+    Pass 1 ingests the L+R "mid" mixdown only, so a same-source copy with ONE
+    channel polarity-inverted reads as near-zero on mid-vs-mid: if the copy has
+    its right channel flipped, copy_mid == L-R == ref_side and copy_side == L+R
+    == ref_mid, so the genuine match lives in the *cross* terms. (A pure L<->R
+    swap with no inversion is invariant under L+R and needs no rescue; a
+    whole-signal flip is already handled by residual_corr's abs().)
+
+    Given the four already-aligned, equal-length windows, this returns the
+    strongest correlation over { mid-mid, mid-side, side-mid } — the mid-mid
+    term is the normal score, the two cross terms recover a single inverted
+    channel regardless of which copy carries it.
+
+    Args:
+        ref_mid: reference L+R window.
+        ref_side: reference L-R window (same samples as ref_mid).
+        oth_mid: other source L+R window (same length).
+        oth_side: other source L-R window (same length).
+
+    Returns:
+        (best_abs_corr, pairing) where pairing is one of "mid-mid",
+        "mid-side", "side-mid".
+    """
+    cands = (
+        ("mid-mid", abs(residual_corr(ref_mid, oth_mid))),
+        ("mid-side", abs(residual_corr(ref_mid, oth_side))),
+        ("side-mid", abs(residual_corr(ref_side, oth_mid))),
+    )
+    pairing, best = max(cands, key=lambda c: c[1])
+    return best, pairing
+
+
+def polarity_rescue(ref_mid, ref_side, oth_mid, oth_side, sr, anchors, win, max_lag, base_med):
+    """Re-score a near-zero pair across channel-polarity variants (TODO-184).
+
+    A same-source copy with one channel polarity-inverted decorrelates on
+    mid-vs-mid, so `local_lag` cannot lock the alignment there — but for a
+    right-inverted copy `oth_side` == the reference's L+R, so the genuine match
+    (and a strong, lockable lag) lives in the mid-side cross term. Each
+    cross-pairing therefore does its OWN per-anchor lag search before the
+    residual correlation.
+
+    The mid-mid score is the caller's already-computed `base_med`; only the two
+    cross terms are evaluated here. The best median across the three is returned
+    — this can only RAISE a near-zero pair toward a genuine same-source match
+    (independent sources have no correlated cross term), mirroring the
+    keep-if-improves guard used for speed refinement.
+
+    Args:
+        ref_mid, ref_side: reference L+R and L-R memmaps/arrays.
+        oth_mid, oth_side: other source L+R and L-R, speed-corrected to match the
+            reference if the pair has a speed offset (caller resamples both).
+        sr: sample rate.
+        anchors: anchor centre times (sec).
+        win: correlation window length (sec).
+        max_lag: local lag search range (sec).
+        base_med: the mid-mid median residual_corr already computed by the caller.
+
+    Returns:
+        (best_med, pairing) with pairing in {"mid-mid", "mid-side", "side-mid"}.
+    """
+    from .align import local_lag
+    best_med, best_pair = float(base_med), "mid-mid"
+    variants = (("mid-side", ref_mid, oth_side), ("side-mid", ref_side, oth_mid))
+    for pairing, A, B in variants:
+        corrs: list[float] = []
+        for ctr in anchors:
+            lag, _ = local_lag(A, B, sr, ctr, win, max_lag)
+            if lag is None:
+                continue
+            ra, ob = aligned_window(A, B, sr, ctr, win, lag)
+            corrs.append(abs(residual_corr(ra, ob)))
+        med = float(np.median(corrs)) if corrs else 0.0
+        if med > best_med:
+            best_med, best_pair = med, pairing
+    return best_med, best_pair
+
+
 def _envelope(mono, sr, env_rate=100):
     """Low-rate energy envelope -- drift-tolerant coarse alignment feature."""
     win = int(sr / env_rate)

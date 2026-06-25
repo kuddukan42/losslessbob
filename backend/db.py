@@ -32,7 +32,7 @@ _bloom_lock = threading.Lock()
 # USER tables stay local to each install and never appear in an export.
 # See instructions/CC_LB_INTEGRITY.md §Data Ownership Model.
 
-MASTER_SCHEMA_VERSION = 8  # bumped: entries.source_type (curator-edited) added
+MASTER_SCHEMA_VERSION = 10  # bumped: curated_lists/curated_list_entries added
 
 MASTER_TABLES = (
     "lb_missing",
@@ -56,6 +56,8 @@ MASTER_TABLES = (
     "setlistfm_setlist",
     "recording_families",
     "tapematch_family_meta",
+    "curated_lists",
+    "curated_list_entries",
 )
 # Note: `entries_fts` is a virtual FTS5 table whose content is mirrored from
 # `entries` via triggers. It is NOT copied directly during export/import; the
@@ -74,6 +76,9 @@ USER_TABLES = (
     "site_inventory",
     "collection_mounts",
     "collection_routes",
+    "quality_scans",
+    "quality_recording_metrics",
+    "quality_recording_scores",
 )
 
 # Guard against f-string injection if a table name is ever mis-typed (#10)
@@ -483,6 +488,8 @@ CREATE TABLE IF NOT EXISTS tapematch_family_meta (
     note            TEXT,
     member_count    INTEGER NOT NULL,
     run_id          TEXT,
+    review_flag     INTEGER NOT NULL DEFAULT 0,
+    review_reason   TEXT,
     imported_at     TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -499,6 +506,27 @@ CREATE TABLE IF NOT EXISTS lb_problems (
     added      TEXT NOT NULL DEFAULT (date('now'))
 );
 CREATE INDEX IF NOT EXISTS idx_lb_problems_lb ON lb_problems(lb_number);
+
+-- curated_lists / curated_list_entries: named curator "best of" lists
+-- (e.g. carbonbit, 10haaf) mapping lb_number -> list. See TODO-181.
+CREATE TABLE IF NOT EXISTS curated_lists (
+    id         INTEGER PRIMARY KEY AUTOINCREMENT,
+    name       TEXT NOT NULL UNIQUE,
+    label      TEXT NOT NULL DEFAULT '',
+    source     TEXT NOT NULL DEFAULT '',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS curated_list_entries (
+    id        INTEGER PRIMARY KEY AUTOINCREMENT,
+    list_id   INTEGER NOT NULL REFERENCES curated_lists(id),
+    lb_number INTEGER NOT NULL,
+    note      TEXT NOT NULL DEFAULT '',
+    added_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE(list_id, lb_number)
+);
+CREATE INDEX IF NOT EXISTS idx_curated_entries_lb ON curated_list_entries(lb_number);
+CREATE INDEX IF NOT EXISTS idx_curated_entries_list ON curated_list_entries(list_id);
 
 -- bobdylan.com official setlist data
 -- bobdylan_shows: one row per concert page on bobdylan.com/date/
@@ -637,6 +665,42 @@ CREATE TABLE IF NOT EXISTS collection_integrity_scans (
     error                 TEXT
 );
 CREATE INDEX IF NOT EXISTS idx_ciscans_mount ON collection_integrity_scans(mount_id, started_at DESC);
+
+-- ── Concert Ranker (audio quality) — USER-tier derived data ──────────────────
+-- Quality data is the user's own analysis of their own copies. RAW aggregated
+-- metrics (quality_recording_metrics.metric_json) are stored separately from the
+-- derived scores so re-banding/re-ranking never needs an audio rescan.
+CREATE TABLE IF NOT EXISTS quality_scans (
+    scan_id      INTEGER PRIMARY KEY AUTOINCREMENT,
+    started_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    config_json  TEXT,
+    notes        TEXT
+);
+CREATE TABLE IF NOT EXISTS quality_recording_metrics (
+    lb_number    INTEGER NOT NULL,
+    scan_id      INTEGER NOT NULL,
+    source_class TEXT,
+    metric_json  TEXT NOT NULL,
+    completeness REAL,
+    duration_sec REAL,
+    scored_at    TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (lb_number, scan_id),
+    FOREIGN KEY (lb_number) REFERENCES entries(lb_number)
+);
+CREATE INDEX IF NOT EXISTS idx_quality_metrics_scan ON quality_recording_metrics(scan_id);
+CREATE TABLE IF NOT EXISTS quality_recording_scores (
+    lb_number      INTEGER NOT NULL,
+    scan_id        INTEGER NOT NULL,
+    family_id      INTEGER,
+    final_score    REAL,
+    rank_in_family INTEGER,
+    vetoed         INTEGER DEFAULT 0,
+    verdict_text   TEXT,
+    PRIMARY KEY (lb_number, scan_id),
+    FOREIGN KEY (lb_number) REFERENCES entries(lb_number)
+);
+CREATE INDEX IF NOT EXISTS idx_quality_scores_scan ON quality_recording_scores(scan_id);
+CREATE INDEX IF NOT EXISTS idx_quality_scores_family ON quality_recording_scores(scan_id, family_id);
 """
 
 _MD5_RE = re.compile(r'^([0-9a-fA-F]{32})\s+\*?(.+)$')
@@ -1124,6 +1188,15 @@ def init_db(db_path=None):
         _ie_cols = [r[1] for r in conn.execute("PRAGMA table_info(integrity_events)").fetchall()]
         if "mount_id" not in _ie_cols:
             conn.execute("ALTER TABLE integrity_events ADD COLUMN mount_id INTEGER")
+        # Migration: add review_flag/review_reason to tapematch_family_meta —
+        # carries the tapematch-batch skill's human "needs review" verdict
+        # (parsed from each run's analysis.md) into the synced family rows.
+        _tmm_cols = [r[1] for r in conn.execute("PRAGMA table_info(tapematch_family_meta)").fetchall()]
+        if "review_flag" not in _tmm_cols:
+            conn.execute(
+                "ALTER TABLE tapematch_family_meta ADD COLUMN review_flag INTEGER NOT NULL DEFAULT 0"
+            )
+            conn.execute("ALTER TABLE tapematch_family_meta ADD COLUMN review_reason TEXT")
         # Migration: collection_mounts / collection_routes tables (pipeline step 5)
         if not conn.execute(
             "SELECT name FROM sqlite_master WHERE type='table' AND name='collection_mounts'"
@@ -4882,6 +4955,120 @@ def get_lb_problem_count(lb_number: int, db_path=None) -> int:
     return conn.execute(
         "SELECT COUNT(*) FROM lb_problems WHERE lb_number=?", (lb_number,)
     ).fetchone()[0]
+
+
+def get_or_create_curated_list(
+    name: str, label: str = "", source: str = "", db_path=None
+) -> int:
+    """Return the id of the curated list named ``name``, creating it if absent.
+
+    Args:
+        name: Unique slug for the list (e.g. ``'carbonbit'``, ``'10haaf'``).
+        label: Human-readable display name. Only set on first creation.
+        source: Free-text note on where the list came from. Only set on
+            first creation.
+        db_path: Optional database path override.
+
+    Returns:
+        The ``id`` of the curated_lists row.
+    """
+    conn = get_connection(db_path)
+    row = conn.execute("SELECT id FROM curated_lists WHERE name=?", (name,)).fetchone()
+    if row is not None:
+        return row[0]
+    _name, _label, _source = name, label, source
+
+    def _run(c):
+        cur = c.execute(
+            "INSERT INTO curated_lists(name, label, source) VALUES(?,?,?)",
+            (_name, _label, _source),
+        )
+        return cur.lastrowid
+
+    return get_write_queue().execute(_run)
+
+
+def get_curated_lists(db_path=None) -> list[dict]:
+    """Return all curated lists with their entry counts.
+
+    Args:
+        db_path: Optional database path override.
+
+    Returns:
+        List of dicts with keys: id, name, label, source, created_at, entry_count.
+    """
+    conn = get_connection(db_path)
+    rows = conn.execute(
+        "SELECT cl.id, cl.name, cl.label, cl.source, cl.created_at,"
+        " COUNT(ce.id) AS entry_count"
+        " FROM curated_lists cl LEFT JOIN curated_list_entries ce ON ce.list_id = cl.id"
+        " GROUP BY cl.id ORDER BY cl.name"
+    ).fetchall()
+    return [dict(r) for r in rows]
+
+
+def add_curated_list_entries(
+    list_id: int, entries: list[tuple[int, str]], db_path=None
+) -> int:
+    """Bulk-insert (lb_number, note) pairs into curated_list_entries.
+
+    Duplicate (list_id, lb_number) pairs are silently skipped via the
+    table's UNIQUE constraint, so re-running an import is idempotent.
+
+    Args:
+        list_id: The curated_lists row these entries belong to.
+        entries: List of (lb_number, note) tuples.
+        db_path: Optional database path override.
+
+    Returns:
+        The number of entries passed in (not the number actually inserted,
+        since duplicates are ignored without raising).
+    """
+    _list_id = list_id
+    _rows = [(_list_id, lb, note) for lb, note in entries]
+
+    def _run(c):
+        c.executemany(
+            "INSERT OR IGNORE INTO curated_list_entries(list_id, lb_number, note)"
+            " VALUES(?,?,?)",
+            _rows,
+        )
+
+    get_write_queue().execute(_run)
+    return len(entries)
+
+
+def get_curated_list_entries(
+    list_name: str | None = None, lb_number: int | None = None, db_path=None
+) -> list[dict]:
+    """Return curated_list_entries rows, optionally filtered.
+
+    Args:
+        list_name: When provided, only return entries for this list's name.
+        lb_number: When provided, only return entries for this LB number.
+        db_path: Optional database path override.
+
+    Returns:
+        List of dicts with keys: lb_number, note, added_at, list_name, list_label.
+    """
+    conn = get_connection(db_path)
+    clauses = []
+    params: list = []
+    if list_name is not None:
+        clauses.append("cl.name = ?")
+        params.append(list_name)
+    if lb_number is not None:
+        clauses.append("ce.lb_number = ?")
+        params.append(lb_number)
+    where = f"WHERE {' AND '.join(clauses)}" if clauses else ""
+    rows = conn.execute(
+        "SELECT ce.lb_number, ce.note, ce.added_at, cl.name AS list_name,"
+        " cl.label AS list_label"
+        " FROM curated_list_entries ce JOIN curated_lists cl ON cl.id = ce.list_id"
+        f" {where} ORDER BY cl.name, ce.lb_number",
+        params,
+    ).fetchall()
+    return [dict(r) for r in rows]
 
 
 # ── Archive.org upload history ────────────────────────────────────────────────

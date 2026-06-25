@@ -66,6 +66,23 @@ losslessbob/
 │   ├── qbittorrent.py        # qBittorrent WebUI API v2 integration
 │   ├── forum_poster.py       # SMF 2.x WTRF forum topic posting
 │   └── geocoder.py           # Nominatim geocoder: geocode_one, place_manual, run_batch, get_progress
+├── concert_ranker/           # Audio quality scoring + ranking (TODO-183). Run: python -m concert_ranker.cli
+│   ├── config.py             # All thresholds/weights/bands (# CALIBRATE markers), externalized
+│   ├── features.py           # DSP feature extractors: clarity/crowd/tonal/distortion/spatial/hf_native
+│   ├── scoring.py            # Banding, hard disqualifiers, MAD-z sibling normalization, fusion, explain
+│   ├── calibrate.py          # Calibration harness: score_separation/fit_thresholds/validate_labels
+│   ├── scan.py               # Per-folder decode→extract→aggregate (one decode/STFT per track)
+│   ├── runner.py             # Process-pool driver + producer/consumer staging loop (crash=scrap)
+│   ├── families.py           # Rank within recording_families; standalone fallback (absolute bands)
+│   ├── calibration.py        # Orchestration: stratified rating×source_class sample → scan → fit
+│   ├── cli.py                # scan / calibrate / rerank / report subcommands
+│   ├── audio/
+│   │   ├── cache.py          # TrackCache + NativeProbe — the one-decode/one-STFT shared cache
+│   │   └── io.py             # ffmpeg decode (bulk 22.05k + 8×20s native 44.1k windows)
+│   └── lb/                   # LosslessBob DB bridge
+│       ├── repo.py           # USER-table persistence (quality_scans / *_metrics / *_scores)
+│       ├── source_type.py    # SBD/AUD/FM/UNKNOWN derivation (reuses backend.db classifier)
+│       └── commentary.py     # Mine entries.description → calibrate.LABEL_KEYWORDS (validation oracle)
 ├── gui/                      # FROZEN — PyQt6 legacy GUI; no new features or bug fixes
 │   ├── main_window.py        # Main window, tab container, menu, status bar
 │   ├── lookup_tab.py         # Core feature: paste/load checksums, view results
@@ -119,6 +136,7 @@ losslessbob/
 │   └── wtrf_password.txt     # WTRF forum password
 ├── tools/
 │   ├── geocode_locations.py  # CLI: batch-geocode entries.location via Nominatim (--limit, --retry-failed, --dry-run)
+│   ├── import_curated_lists.py # CLI: import curator "best of" picks (TODO-181) — carbonbit's FLglist.xlsx + 10haaf's dylan_boots.zip/years.zip → curated_lists/curated_list_entries
 │   ├── losslessbob.iss       # Inno Setup 6 script — builds LosslessBob_Setup_<ver>.exe from dist/LosslessBob/
 │   ├── build_windows.bat     # Local helper: pyinstaller + iscc in sequence (Windows only)
 │   └── shntool.exe           # Windows shntool binary (GPL-2); bundled into PyInstaller dist via losslessbob.spec
@@ -367,16 +385,55 @@ different recording set. See `instructions/design_handoff_unified_library/07-tap
 | note | TEXT | Unused (NULL) in this pass |
 | member_count | INTEGER NOT NULL | |
 | run_id | TEXT | |
+| review_flag | INTEGER NOT NULL DEFAULT 0 | Set when the run's `analysis.md` verdict line reads "needs review"; applies to every family on that `concert_date` (the verdict judges the whole show, not one family) |
+| review_reason | TEXT | Short reason text parsed from the verdict line, if present |
 | imported_at | TIMESTAMP | |
 
 Exposed flat (no clustering logic client-side) via `GET /api/tapematch/families` →
-`[{lb_number, fam_id, fam_label, fam_conf, fam_by, concert_date}]`, merged client-side by
-`lb_number` rather than joined into `/api/search`.
+`[{lb_number, fam_id, fam_label, fam_conf, fam_by, concert_date, fam_needs_review, fam_review_reason}]`,
+merged client-side by `lb_number` rather than joined into `/api/search`.
 
 Sync trigger: manual only, two equivalent entry points — `POST /api/tapematch/sync` (needs the
 Flask backend up) or `.venv/bin/python3 -m backend.tapematch_sync` (standalone CLI, no backend
 needed). The latter is wired as the final step of the `/tapematch-batch` skill
 (`.claude/commands/tapematch-batch.md`), run once a batch of analysis write-ups is done.
+
+### `quality_scans` / `quality_recording_metrics` / `quality_recording_scores` — Concert Ranker (USER tables)
+Audio-quality analysis of the user's own copies, produced by the `concert_ranker/` package. USER-tier
+(in `USER_TABLES`, never shipped in master). The RAW aggregated metrics (`metric_json`) are stored
+**separately** from the derived scores so re-banding/re-ranking (`concert_ranker rerank`) never needs an
+audio rescan — the "scan once, store RAW metrics" guarantee. Created by `init_db()`.
+| Column (`quality_scans`) | Type | Notes |
+|--------|------|-------|
+| scan_id | INTEGER PK | Auto-increment; one row per scan run |
+| started_at | TIMESTAMP | DEFAULT CURRENT_TIMESTAMP |
+| config_json | TEXT | Thresholds/weights used, for reproducibility |
+| notes | TEXT | Free-text |
+
+| Column (`quality_recording_metrics`) | Type | Notes |
+|--------|------|-------|
+| lb_number | INTEGER | PK part; FK → entries |
+| scan_id | INTEGER | PK part; FK → quality_scans |
+| source_class | TEXT | SBD/AUD/FM/UNKNOWN (derived at scan time) |
+| metric_json | TEXT NOT NULL | RAW aggregated metric dict (`{"_v","metrics","tracks",…}`) |
+| completeness | REAL | Sibling-relative; filled at rank time (NULL at scan time) |
+| duration_sec | REAL | Absolute recording length |
+| scored_at | TIMESTAMP | DEFAULT CURRENT_TIMESTAMP |
+
+PK `(lb_number, scan_id)`; index `idx_quality_metrics_scan`.
+
+| Column (`quality_recording_scores`) | Type | Notes |
+|--------|------|-------|
+| lb_number | INTEGER | PK part; FK → entries |
+| scan_id | INTEGER | PK part |
+| family_id | INTEGER | Dense per-scan id into `recording_families.fam_id`; NULL if ungrouped |
+| final_score | REAL | Fused score; NULL if vetoed |
+| rank_in_family | INTEGER | 1 = best transfer of the show; NULL if vetoed/standalone-singleton |
+| vetoed | INTEGER | 1 = hard-disqualified (lossy/etc.), excluded from ranking |
+| verdict_text | TEXT | `explain_recording()` human-readable verdict |
+
+PK `(lb_number, scan_id)`; indexes `idx_quality_scores_scan`, `idx_quality_scores_family`. Rewritten
+wholesale on every rerank (derived data — recomputable from `quality_recording_metrics`).
 
 ### `lb_problems` — Known problems with specific LB entries (MASTER table)
 Curator-authored table for flagging LB entries with known issues (bad checksums,
@@ -390,6 +447,29 @@ incomplete torrent, corrupt files, mislabelled metadata, etc.). Included in mast
 
 Index: `idx_lb_problems_lb ON lb_problems(lb_number)`.
 Managed via `GET/POST /api/lb_problems` and `PUT/DELETE /api/lb_problems/<id>`.
+
+### `curated_lists` / `curated_list_entries` — Curator "best of" picks (TODO-181, MASTER tables)
+Named lists of curator-picked best LB recordings (e.g. carbonbit, 10haaf), imported via
+`tools/import_curated_lists.py` from `data/lists/`. No GET/POST routes or GUI filter yet — DB +
+import only so far; the Library-screen filter view remains open on TODO-181.
+| Column (`curated_lists`) | Type | Notes |
+|--------|------|-------|
+| id | INTEGER PK | Auto-increment |
+| name | TEXT NOT NULL UNIQUE | Slug, e.g. `'carbonbit'`, `'10haaf'` |
+| label | TEXT NOT NULL | Display name, e.g. `"carbonbit's picks"` |
+| source | TEXT NOT NULL | Free-text note on the source file(s) |
+| created_at | TIMESTAMP | Defaults to CURRENT_TIMESTAMP |
+
+| Column (`curated_list_entries`) | Type | Notes |
+|--------|------|-------|
+| id | INTEGER PK | Auto-increment |
+| list_id | INTEGER NOT NULL | FK → curated_lists.id |
+| lb_number | INTEGER NOT NULL | |
+| note | TEXT NOT NULL | Free-text context (e.g. carbonbit's date/venue line); empty for 10haaf |
+| added_at | TIMESTAMP | Defaults to CURRENT_TIMESTAMP |
+
+UNIQUE `(list_id, lb_number)` — a date can have multiple LB picks (multiple rows, same list_id),
+but re-running the import is idempotent. Indexes: `idx_curated_entries_lb`, `idx_curated_entries_list`.
 
 ### `scrape_sessions` — Crawler session log (MASTER table)
 One row per site-crawler run started via POST /api/crawler/start.
@@ -1499,6 +1579,10 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 
 | Date | Change |
 |------|--------|
+| 2026-06-24 | TODO-181: New MASTER tables `curated_lists` / `curated_list_entries` (schema v9->v10) for curator "best of" picks. `tools/import_curated_lists.py` (stdlib-only) imports carbonbit's `data/lists/FLglist.xlsx` (4503 entries) and 10haaf's `data/lists/dylan_boots.zip`+`years.zip` (7572 entries, unioned across both archives). DB + import only — no API routes or Library-screen filter yet. |
+| 2026-06-24 | TODO-183: Concert Ranker calibrated against real audio (4 rounds + overnight 697-show decade scan). `concert_ranker/features.py` de-confounded harsh/hiss (level-independent) and reworked hum (harmonic comb) + dropout (isolated-discontinuity, worst-track aggregation); `config.py` bands fitted from the corpus and made **per-decade** (`DECADE_BANDS` 1960s-2010s — each recording banded against its own era; `scoring`/`families` thread the decade; `cli --by-decade` sampler). Calibration scans stored as `quality_scans` (scan_id 6 = current basis). hiss is now the strongest AUD quality predictor (rho -0.64). |
+| 2026-06-23 | TODO-183: Concert Ranker v1. New repo-root `concert_ranker/` package (audio quality scoring) — the pre-built scoring brain (`config`/`scoring`/`features`/`calibrate`/`audio/cache`) wired to the real machine: `lb/repo.py` (USER-table persistence, scan-once raw metrics + derived scores), `lb/source_type.py` (SBD/AUD/FM/UNKNOWN), `lb/commentary.py` (commentary mining), `audio/io.py` (ffmpeg decode), `scan.py`/`runner.py` (per-folder scan + staging loop, crash=scrap), `families.py` (rank within `recording_families`, standalone fallback), `calibration.py` (rating×source_class fit harness), `cli.py` (`scan`/`calibrate`/`rerank`/`report`). New USER tables `quality_scans` / `quality_recording_metrics` / `quality_recording_scores` in `backend/db.py`. No new deps. `tests/test_concert_ranker.py`. |
+| 2026-06-22 | `tapematch_family_meta` gained `review_flag`/`review_reason` (schema v8->v9); `backend/tapematch_sync.py` now parses each date's `analysis.md` "## Verdict:" line and upserts the flag/reason so analysis-write-up "needs review" calls are queryable via `GET /api/tapematch/families` and surfaced as a warn-tone "Needs review" Pill in the Library recording lens. |
 | 2026-06-22 | TODO-151: Unified Library visual refinement (instructions/library Pixel Spec). `lib/tokens.ts` gained nine `--t-*` type-scale role variables (display/title/strong/body/meta/label/micro/mono/mono-sm), four `--w-*` weights (reg/med/semi/bold) and `--track-eyebrow`, emitted in `applyTheme()` and scaled by base fontSize (legacy `--lbb-fs-*` retained for other screens). `screens/ScreenLibrary.tsx`: all raw fontSize/fontWeight literals replaced with role vars; performance-table column model reworked (dead 32px spacer removed, fixed widths Date 104·Show 345·Tour 155·Families 116·Recs 52·★ 46·Coverage 112, trailing flex spacer); recording ★ col 54→48; both summary strips height:40·nowrap (fixes BUG-217). `components/library/DetailPanel.tsx`: both detail panels converted from flat scroll to pinned identity + `TabStrip` + swappable pane (perf tabs Overview/Recordings/Setlist/Seed&Share; recording tabs Overview/Assets/Seed&Share; scroll resets on tab change); `ShareSeedZone`/`AssetStripZone` gained `hideLabel`. `components/primitives.tsx`: `Pill` routed to `--t-micro`/`--w-semi`. New i18n keys `library.panel.tab{Overview,Recordings,Setlist,Assets,Share}` in all 6 locales. Fixed BUG-218 (★ clip). |
 | 2026-06-20 | TODO-155: implemented the `design_handoff_pipeline_icons` handoff in gui_next — new `components/pipeline/PipelineIcon.tsx` (`<PipelineIcon stage status size />`, `PipelineGlyph`, `PIPELINE_STAGES`, `PipelineStage`/`PipelineStatus` types) for the five-stage Verify→Lookup→Rename→LBDIR→Collect tiles (Option D tactile tile · Pulse animation · Vivid palette). Tile geometry, radial-gradient fill, bevel/lift shadows, and the `pipeRing`/`pipeSheen` keyframes (wrapped in `prefers-reduced-motion: no-preference`) added to `index.css` under `.pipe-tile*`; derived shades via `color-mix(in oklab,…)` off a single `--pipe-mid` per status. Wired in: `StageNode` in `PipelineParts.tsx` now renders a `PipelineIcon` tile (was a 22px circle), so both the per-row `StageTracker` (queue table) and full-width `StageStepper` (detail view) in ScreenPipeline show the tiles; `STAGE_TO_TILE`/`STATE_TO_TILE` maps bridge the tracker's `file`/`mute` vocabulary to `collect`/`pending`, and running stages now Pulse instead of spin. |
 | 2026-06-18 | TODO-150 loose ends tied up: (1) TODO-151 audit — root cause was `_PERF_CATEGORY_MAP` missing `GUEST`/`NET`/`SIDEMAN` mappings for `dylan_performances` categories, so guest-spot/Never-Ending-Tour dates fell through to 'unknown' instead of 'concert'; fixed + backfill version bumped to `_v2` to auto-reclassify existing installs (concert 14092→14329). `get_performances()` also gained a `dylan_performances.venue` fallback and a `confirmed: false` degraded-row path for the remainder (~19 shows now, down from an earlier 198-show heuristic-only estimate); GUI renders an "Unconfirmed" pill on these. (2) `m3u` performance-row action wired: `/api/collection/export/m3u` gained an optional `lb_numbers` filter, `buildPerformanceActions()`/`ScreenLibrary.tsx` wired the handler. `sources`/`notify` actions and the TapeMatch family `note` field stay unexposed — no backend/UI to wire to (would be new features, not loose ends). i18n (step 10) deferred per user decision — English-only is fine for now. |

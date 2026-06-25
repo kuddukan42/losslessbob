@@ -1,3 +1,222 @@
+[2026-06-24] — feat(db): curated_lists / curated_list_entries — carbonbit + 10haaf picks (TODO-181)
+Added: backend/db.py — curated_lists + curated_list_entries tables (MASTER_TABLES, schema v10);
+  CRUD: get_or_create_curated_list, get_curated_lists, add_curated_list_entries,
+  get_curated_list_entries.
+Added: tools/import_curated_lists.py — stdlib-only (zipfile + ElementTree) importer. Parses
+  data/lists/FLglist.xlsx ("front line G list" sheet: one row per date, column C is carbonbit's
+  pick(s) — multiple LB numbers per date allowed) and data/lists/dylan_boots.zip +
+  data/lists/years.zip (10haaf's per-year HTML bootleg catalogs; every LB-XXXXX found across both
+  archives is unioned, since the older per-year pages and the newer allboots.html disagree on
+  ~1,100 entries and neither is a clean superset). Idempotent via the entries table's
+  UNIQUE(list_id, lb_number) constraint. Ran once against the live DB: carbonbit 4503 entries,
+  10haaf 7572 entries.
+Note: GUI/filter surfacing on the Library screen (the rest of TODO-181) is intentionally not done
+  yet — this pass is DB + import only, per explicit scope decision.
+
+[2026-06-24] — feat(tapematch): polarity-inversion rescue — step 2, wired into the matcher (TODO-184)
+Added: tools/tapematch/tapematch/match.py polarity_rescue(): per-anchor driver that re-scores a
+  near-zero pair across the L-R cross terms (mid-side / side-mid), each doing its OWN lag search
+  (mid-vs-mid can't lock when one channel is inverted), and returns the best median + pairing.
+Changed: tools/tapematch/tapematch/cli.py Pass 1 — when polarity.enabled, decode stereo and persist
+  an L-R "side" memmap per stereo source (identical trim bounds to the mid memmap; mono sources get
+  none); added side_paths dict + _mmap_side() helper. Default OFF, so the mono fast-path is unchanged.
+Changed: tools/tapematch/tapematch/cli.py residual matrix loop — after speed refine, a pair whose
+  median corr is below polarity.rescue_corr_ceiling is re-scored via match.polarity_rescue (speed-
+  correcting both the other source's mid and side by the pair ratio), kept only if it improves, and
+  logged as POLARITY_RESCUE. Keep-if-improves means it can rescue a true inverted-channel pair but
+  cannot manufacture a false merge.
+Added: tools/tapematch/tests/test_polarity_corr.py — 2 driver tests (own-lag recovery of an inverted
+  pair; independent sources stay below threshold). 6 polarity tests + 22-test matcher subset pass.
+Note: step 3 (enable on the ~37 contradicted-claim dates + validate the stereo Pass-1 memory profile
+  on real data, then consider default-on) remains open under TODO-184.
+
+[2026-06-24] — feat(tapematch): polarity-inversion rescue — step 1, config-gated core (TODO-184)
+Added: tools/tapematch/tapematch/match.py polarity_aware_corr(): scores an aligned pair across
+  mid-mid / mid-side / side-mid channel-polarity variants and keeps the strongest, so a genuine
+  same-source copy with one channel polarity-inverted ("right channel inverted") — which collapses
+  the L+R mid-vs-mid correlation that Pass 1 ingests — is recovered via the L-R cross term.
+Added: tools/tapematch/config.yaml polarity block (enabled: false, rescue_corr_ceiling: 0.60),
+  DEFAULT OFF; documents that enabling will require stereo ingest in Pass 1 (raises peak RAM) and
+  validation before turning on.
+Added: tools/tapematch/tests/test_polarity_corr.py: 4 tests — right/left inverted-channel copies
+  rescued ~1.0, independent sources not merged, clean copy still scores on mid-mid.
+Note: this is step 1 (testable core). Step 2 (Pass-1 stereo/side-memmap wiring + matrix-loop rescue
+  branch) and step 3 (re-run the contradicted-claim dates) remain open under TODO-184. Speed-offset
+  false-negatives were found to be ALREADY handled (±30000 ppm + lag-slope refine, committed 06-21).
+
+[2026-06-24] — feat(concert_ranker): absolute quality score — 0-100 + A+..F grade per recording (TODO-183)
+Added: concert_ranker/quality_score.py + config.QUALITY_MODEL — a ridge regression predicting the LB
+  rating rank (1=F..13=A+) from 8 validated metrics (hiss/hf_ceiling/centroid/crest/crowd_snr/air/mud/
+  presence), giving every recording a standalone 0-100 score + +/- letter grade, independent of the
+  within-family ranking. Fitted on 466 AUD (scans 6+7). HELD-OUT (5-fold CV) correlation to the real
+  LB rating: Spearman 0.65, 93% within one letter tier. Stored-grade check across 873 recordings (incl.
+  the C-rich middle): rho 0.67, 94% within one letter; median score per tier A 72 / B 60 / C 46 / D 38.
+Changed: families.rank_group now computes the grade per recording and prepends "Grade X (N/100)." to the
+  verdict; lb/repo.py quality_recording_scores gained abs_score / abs_grade columns (ensure_schema ALTER
+  migration; write_scores/load_scores updated); cli report CSV includes them. Added a unit test (15 total).
+  AUD-fit model applied to all classes — SBD/FM grades are approximate (TODO-183).
+
+[2026-06-24] — fix(tapematch): record real model in analysis attribution (BUG-223)
+Fixed: .claude/commands/tapematch-batch.md: step 4 hardcoded `*Claude claude-sonnet-4-6 — …*` for
+  every session regardless of the running model; now requires the actual session model id. Made all
+  per-model quality audits of the analysis corpus impossible.
+Fixed: data/tapematch/runs/*/analysis.md (x10): corrected attribution to `claude-haiku-4-5` on the
+  analyses proven (via session transcripts) to have been written by haiku, not sonnet — 1989-08-29,
+  1989-08-31, 1989-11-02, 1990-06-29, 1990-06-30, 1990-07-07, 1990-07-08, 1990-08-12, 1990-08-20,
+  1990-09-05. Opus-stamped files left as-is (correctly self-attributed).
+
+[2026-06-24] — fix(concert_ranker): rework dropout click detector — de-confound from dynamics (TODO-183)
+Changed: concert_ranker/features.py _dropout_count(): replaced isolated-2nd-difference detection with
+  LOCALLY-NORMALIZED roughness. A click is flagged where |2nd difference| exceeds the LOCAL roughness
+  level (a ~12 ms rolling mean via scipy.ndimage.uniform_filter1d), so loud/dynamic passages no longer
+  trip it — only narrow (<=3-sample) events count. Validated on a stratified AUD subset: rho vs rating
+  +0.43 -> -0.04 (confound eliminated; it's now a neutral defect flag, not a fidelity proxy), counts
+  sane (clean ~4-10, glitchy tail ~80-280) vs the old thousands. Much faster too (uniform_filter1d, not
+  per-sample median). (A first attempt using a median-filter residual was discarded — it fires on all
+  oscillating audio.)
+Changed: concert_ranker/config.py DISQUALIFIERS: dropout_count 6900 -> 150 (provisional for the new
+  scale). NOTE: scan_id 6's stored dropout values are from the OLD detector — a fresh scan repopulates
+  them and the threshold should be refit then.
+
+[2026-06-24] — feat(concert_ranker): per-class bands (hybrid — crowd held absolute) (TODO-183)
+Added: concert_ranker/config.py: CLASS_BANDS {"SBD": ...} (fit from 165 SBD in scan_id 6) + resolve_band_set(
+  decade, source_class). SBD/FM band hiss + tonal against soundboard norms (SBD hiss floor is much lower,
+  median -9.2 vs AUD -5.2, so a soundboard that's hissy FOR a soundboard now flags); FM (n=27) reuses SBD.
+Changed: scoring.all_bands / explain_recording + families.rank_group/rank_scan take source_class
+  (already present in the loaded metrics) and resolve class+era bands.
+Decision: crowd_snr_db is held on the GLOBAL (absolute) band for every class/era inside _build_decade_bands.
+  Full per-class relativization made ~60% of soundboards read "some crowd"/"crowd-heavy" (an 8.5-dB SBD
+  has far less crowd than any AUD — it should read "clean"); crowd level is meaningful absolutely, and
+  within-class fairness is already handled by MAD-z ranking over same-show siblings. Effect: 0 crowd-label
+  changes on SBD (the A-rated soundboards that wrongly read "crowd-heavy" now read absolute "some crowd").
+  Added tests/test_concert_ranker.py::test_hybrid_crowd_global_hiss_per_class (14 tests pass).
+
+[2026-06-24] — feat(concert_ranker): per-decade bands — era-relative quality labels (TODO-183)
+Added: concert_ranker/config.py: _DECADE_CUTS (AUD percentiles per decade from scan_id 6) +
+  _build_decade_bands() + DECADE_BANDS {1960..2010: {SIGNED/SEVERITY/QUALITY}} + decade_of(). Recording
+  tech shifts the raw scales a lot by era (AUD hiss_floor_db "hissy" cut runs +0.6 in the 1960s tape era
+  to -1.4 in the 2000s digital era), so a single global band over-flagged vintage shows as hissy and
+  NEVER flagged modern ones. Per-decade bands judge each recording against its own era.
+Changed: concert_ranker/scoring.py: band_metric() takes optional per-set band dicts; all_bands(raw,
+  decade) + explain_recording(..., decade) select DECADE_BANDS[decade] (global fallback when the decade
+  is unknown/unrepresented).
+Changed: concert_ranker/families.py: load_decade_map() ({lb: decade} from entries.date_str);
+  rank_group/rank_scan thread decades through. cli._rerank passes the decade map so scan/rerank/report
+  all band per-era. sibilance/dynamic_range + disqualifiers stay global.
+  Effect on scan_id 6 AUD 'hissy': normalized to ~10%/decade (was 1960s-90s over-flagged, 2000s/2010s
+  never flagged). Added tests/test_concert_ranker.py::test_decade_bands_are_era_relative (13 tests pass).
+
+[2026-06-24] — feat(concert_ranker): refit all bands from the 697-show decade scan (TODO-183)
+Fixed: concert_ranker/calibrate.py score_separation(): forced float dtype so stored None metric values
+  (NaN coerced on persist) no longer crash np.isnan — the larger 697-set exposed this (mono spatial /
+  empty HF probe produce None). The scan persisted 696/697 fine; only the post-scan report had crashed.
+Changed: concert_ranker/config.py: SIGNED/SEVERITY/QUALITY band cutoffs + dropout disqualifier refit
+  from scan_id 6 (697 decade-stratified shows, ~320 AUD percentiles — supersedes the scan_id 3 fit).
+  At scale the de-confounding held/strengthened: AUD hiss_floor_db -0.64 (now the single strongest
+  quality predictor), harsh_ratio_db -0.03 (neutral). crowd_snr tiers widened (p10/p30/p60) to restore
+  "crowd-heavy" recall. dropout disqualifier 1000 -> 6900 (worst-track p95) — kept HIGH because the
+  metric still correlates +0.43 with rating (isolated-spike test partly catches sharp musical transients
+  in dynamic well-rated shows), so a low cutoff would wrongly demote good recordings. Net over 696 shows:
+  label-fires 1117 -> 930; verdicts validated against LB comments (A=clean/very-quiet, F=hissy/muddy/buried).
+Noted: AUD hiss_floor_db median swings by era (-2.0 1960s tape -> -8.1 2000s digital) — strong candidate
+  for per-decade band sets (recorded in config + TODO-183); global bands applied for now.
+
+[2026-06-24] — fix(concert_ranker): rework hum + dropout metrics, worst-track aggregation, decade sampler (TODO-183)
+Changed: concert_ranker/features.py:
+  - _dropout_count(): replaced the "2nd-difference z>12" test (counted every musical transient —
+    medians in the thousands, useless) with ISOLATED-discontinuity detection (z>30 AND both neighbours
+    z<8). Clean shows now read 0; LB1233 (comment: "small pop t11 0:15, 1:42…") reads 108 on that track.
+  - _hum_excess_db(): now requires a 50/60 Hz harmonic COMB (>=3 harmonics of one mains family above
+    the local floor), not the worst single peak — a lone bass bin no longer trips it. Round-3 rho
+    +0.45 -> n/a (fires on 0/117, no longer confounded with bass; inert but safe).
+Changed: concert_ranker/scan.py aggregate_tracks(): defect metrics (dropout_count, clip_fraction,
+  hum_excess_db) now aggregate by WORST track (max) instead of median — median hid one-bad-track
+  glitches (e.g. LB2100 had a 1146-glitch track but aggregated to 0). _WORST_TRACK_METRICS set added.
+Changed: concert_ranker/config.py DISQUALIFIERS: dropout_count 25000 -> 1000 (provisional from scan_id 5
+  worst-track distribution), hum_excess_db 15 -> 10. crowd_snr/bands unchanged.
+Added: concert_ranker/calibration.py decade_stratified_sample() + _entry_year() (parses M/D/YY dates);
+  `calibrate --by-decade` CLI flag — large decade × rating-tier × source_class sample (every decade
+  represented, ALL bad-tier included, good/mid capped at --per-cell). Launched an overnight scan_id 6
+  of 697 recordings (all 6 decades, AUD 320/SBD 165/UNKNOWN 184/FM 28) for further iteration.
+
+[2026-06-23] — fix(concert_ranker): de-confound harsh + hiss metrics, calibration round 2 (TODO-183)
+Changed: concert_ranker/features.py: two extractors made level-independent after round-1 calibration
+  found them confounded with overall HF brightness (both rose WITH the rating):
+  - harsh_ratio_db: was harsh(2-5k) - ref_mid; now harsh - 0.5*(ref_mid + sibilance), i.e. a LOCAL
+    2-5 kHz prominence above its flanks. Spearman vs rating +0.44 -> +0.06 (no longer fakes harshness
+    from brightness).
+  - hiss_floor_db: was the absolute native 8-14 kHz level (included musical HF); now computed at bulk
+    rate as 8-11 kHz persistence in quiet vs loud frames (new _hiss_floor_db helper) — real hiss is
+    constant when music drops, musical HF collapses. Spearman +0.31 -> -0.52 (now correctly predicts
+    WORSE ratings, a strong signal). Moved hiss_floor_db out of extract_hf_native into extract_distortion.
+Changed: concert_ranker/config.py: harsh_ratio_db + hiss_floor_db SEVERITY bands refit from scan_id 4.
+  "hissy"/"harsh" now fire only on B-/C/D shows — zero A-tier false positives (round 1 wrongly tagged
+  A-rated LB1419/LB1233 as hissy; both now read "very quiet"). All other metrics/bands unchanged.
+Changed: concert_ranker/calibrate.py: (round-1 fix) score_separation `useful` cast to python bool.
+  scan_id 4 recorded as the CURRENT calibration basis (supersedes scan 3).
+
+[2026-06-23] — feat(concert_ranker): calibrate bands against real audio + staging support (TODO-183)
+Changed: concert_ranker/lb/source_type.py: derive_source_class() now trusts the curator
+  entries.source_type column first (Audience→AUD / Soundboard→SBD / FM/Pre-FM→FM / Mixed,ALD,Master→
+  UNKNOWN), falling back to free-text mining only when NULL. Real collection split is now
+  AUD 11,731 / SBD 480 / FM 28 / UNKNOWN 357 (was ~60% UNKNOWN). classify_entries + calibration +
+  cli worklist updated to pass the column.
+Added: concert_ranker/runner.py group_by_device(); --staging-dir on `scan` and `calibrate`
+  (run_calibration gained classes= + staging_dir=). Staging copies each folder to fast scratch
+  (one producer per physical drive via st_dev) before decoding — used /mnt/DATA2 for the cal run.
+Fixed: concert_ranker/calibrate.py score_separation(): `useful` was a numpy bool (serialized as the
+  string "False"); cast to python bool.
+Changed: concert_ranker/config.py: SIGNED/SEVERITY/QUALITY band cutoffs + the crowd_snr "buried"
+  disqualifier REPLACED with values fitted from scan_id 3 (117-show sample: 73 AUD + 44 SBD, staged).
+  The first-principles guesses fired muddy/dull/boomy on ~95% of real recordings (measured AUD scales
+  were far off — mud_ratio_db 18-34 dB, air_ratio_db -44..-24); calibrated cutoffs cut label-fires
+  476→171 on the sample and made harsh/hissy/thin/bright labels functional. dropout_count/hum_excess
+  parked at "rarely fires" (dropout counts normal transients; hum confounded with level) pending
+  metric rework. Calibration findings (Spearman per class, fitted thresholds, label precision/recall)
+  in concert_ranker/BUILD_REPORT-style notes; scan_id 3 retained as the fit basis.
+
+[2026-06-23] — feat(backend): Concert Ranker v1 — audio quality scoring + ranking (TODO-183)
+Added: concert_ranker/ — new repo-root package. Unzipped the v1 "scoring brain" (config/scoring/
+  features/calibrate/audio.cache, pre-built + tested on synthetic audio) and wired it to the real
+  machine per instructions/CC_CONCERT_RANKER.md:
+  - lb/repo.py: USER-tier persistence (standalone WAL connections, one-transaction-per-recording,
+    scan create, raw-metric + score upsert, restart skip, rerank reads). _jsonable() coerces numpy
+    float32 / NaN to JSON-safe values.
+  - lb/source_type.py: SBD/AUD/FM/UNKNOWN derivation reusing backend.db.classify_source_type
+    (Matrix/ALD → UNKNOWN so they never contaminate a pure source-class curve).
+  - lb/commentary.py: keyword-mines entries.description into calibrate.LABEL_KEYWORDS (the
+    validation oracle), word-boundary matched.
+  - audio/io.py: ffmpeg decode (one bulk decode at 22.05 kHz → build_track_cache; 8×20 s windows at
+    44.1 kHz → build_native_probe), mirroring tools/tapematch/tapematch/audio.py.
+  - scan.py / runner.py: per-folder decode→extract→aggregate(median)→one transaction; direct
+    process-pool driver + producer/consumer staging loop (crash=scrap, skip done LBs on restart).
+  - families.py: rank within recording_families (MAD-z normalize → fuse → rank_in_family), standalone
+    fallback (absolute bands only); sibling-relative completeness injected at rank time.
+  - calibration.py: stratified rating×source_class sample → scan → score_separation/fit_thresholds/
+    validate_labels; returns a report (does NOT auto-rewrite config.py — human-reviewed step).
+  - cli.py: `scan` / `calibrate` / `rerank` / `report` (rerank works purely from stored metric_json).
+Added: backend/db.py: USER tables quality_scans / quality_recording_metrics (raw metric_json stored
+  separately from scores) / quality_recording_scores, registered in USER_TABLES; init_db creates them.
+Added: tests/test_concert_ranker.py — repo roundtrip/idempotency/sanitize, source-class, commentary,
+  family ranking, standalone, and rerank-from-stored-metrics (11 tests). No new dependencies
+  (numpy/scipy already pinned; ffmpeg is a system binary, as for tapematch).
+
+[2026-06-22] — feat(backend+gui): surface TapeMatch "needs review" verdicts as a queryable DB flag
+Added: backend/db.py: tapematch_family_meta.review_flag (INTEGER) and .review_reason (TEXT) columns
+  + init_db() migration; MASTER_SCHEMA_VERSION bumped 8->9.
+Added: backend/paths.py: TAPEMATCH_RUNS_DIR constant (data/tapematch/runs).
+Changed: backend/tapematch_sync.py: parses each synced date's analysis.md "## Verdict:" line
+  (_parse_verdict/_read_review_flag/_resolve_run_dir) and writes review_flag/review_reason into
+  tapematch_family_meta, so the tapematch-batch skill's "needs review" human judgment calls are no
+  longer buried in per-run analysis.md files only — added init_db() call so the standalone CLI sync
+  path (`python -m backend.tapematch_sync`) picks up schema migrations even without app.py running.
+Changed: backend/app.py: GET /api/tapematch/families now selects fam_needs_review/fam_review_reason.
+Changed: gui_next/src/renderer/src/screens/ScreenLibrary.tsx: recording-lens family rows show a
+  "Needs review" warn-tone Pill (with reason as tooltip) when fam.needsReview is set.
+Added: gui_next/src/renderer/src/locales/{en,de,es,fr,it,nl}.json: library.tooltip.tapematchReview,
+  library.panel.needsReview.
+Added: tests/test_tapematch_sync.py: 7 cases covering _parse_verdict's em-dash verdict-line parsing.
+
 [2026-06-22] — feat(gui): Unified Library visual refinement — type-scale roles + tabbed detail panels
 Added: gui_next/src/renderer/src/lib/tokens.ts: nine --t-* type-scale role variables (display/title/
   strong/body/meta/label/micro/mono/mono-sm), four --w-* weight-ramp variables (reg/med/semi/bold),

@@ -1313,7 +1313,8 @@
       "gaps_one": "{{count}} gap",
       "gaps_other": "{{count}} lagunas",
       "recShort_one": "{{count}} rec",
-      "recShort_other": "{{count}} rec"
+      "recShort_other": "{{count}} rec",
+      "recShort": "{{count}} rec"
     },
     "empty": {
       "loading": "Cargando…",
@@ -1323,7 +1324,8 @@
     },
     "tooltip": {
       "inferred": "Datos deducidos a partir de la fecha y la ubicación de la propia grabación; no coinciden con ninguna fecha conocida de un concierto de Dylan.",
-      "tapematchGroup": "Grupo de coincidencias acústicas de TapeMatch"
+      "tapematchGroup": "Grupo de coincidencias acústicas de TapeMatch",
+      "tapematchReview": "Marcado para revisión manual: una afirmación de que se trata de la misma fuente para este programa se contradice con los datos de correlación de TapeMatch."
     },
     "ctx": {
       "postForum": "Publicar en el foro",
@@ -1403,7 +1405,8 @@
       "ofRec": "de {{count}} rec",
       "tracksUnit": "pistas",
       "recordingFamilies": "Familias de grabaciones · {{count}}",
-      "groupedByTapeMatch": "agrupadas por TapeMatch"
+      "groupedByTapeMatch": "agrupadas por TapeMatch",
+      "needsReview": "Necesita revisión"
     },
     "coverage": {
       "ownedFull": "Propiedad de {{owned}}/{{total}}",

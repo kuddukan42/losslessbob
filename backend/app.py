@@ -4287,7 +4287,8 @@ def create_app() -> Flask:
             """
             SELECT rf.lb_number, rf.fam_id, rf.concert_date,
                    COALESCE(m.label_override, m.label) AS fam_label,
-                   m.conf AS fam_conf, m.by AS fam_by
+                   m.conf AS fam_conf, m.by AS fam_by,
+                   m.review_flag AS fam_needs_review, m.review_reason AS fam_review_reason
             FROM recording_families rf
             JOIN tapematch_family_meta m ON m.fam_id = rf.fam_id
             """

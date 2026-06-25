@@ -133,18 +133,41 @@ def main(argv=None):
     # ~461 MB stereo-→-mono copy that previously pushed peak to ~1.2 GB.
     # The trimmed slice is written directly to the memmap via a view (no third
     # array); stream is freed before moving to the next source.
+    # Polarity rescue (TODO-184): when enabled, also decode stereo and persist an
+    # L-R "side" memmap per source so the residual matrix can recover a same-source
+    # copy whose one channel is polarity-inverted (collapses the L+R mid mixdown).
+    # Default OFF; the stereo decode roughly doubles the Pass-1 working set.
+    polarity_cfg = cfg.get("polarity", {}) if isinstance(cfg, dict) else {}
+    polarity_on = bool(polarity_cfg.get("enabled", False))
+
     print("=== INGEST / TRIM ===")
     trim_bounds: dict[str, tuple[float, float, float]] = {}
     mono_paths: dict[str, tuple[Path, int]] = {}  # name -> (path, n_samples)
+    side_paths: dict[str, tuple[Path, int]] = {}  # name -> (path, n) — stereo only
 
     for name, sdir in sources.items():
         rep = ingest.source_report(sdir, exts)
         print(f"  {name}: {rep['n_tracks']} tracks, {fmt_hms(rep['total_sec'])}")
-        stream, _, _ = ingest.concat_source(sdir, exts, sr, mono=True)
+        side = None
+        if polarity_on:
+            # Decode stereo once: mid = channel mean (scale-equivalent to the mono
+            # downmix for the scale-invariant residual_corr); side = L-R (None for
+            # mono sources, which have no inter-channel difference to invert).
+            st, _, _ = ingest.concat_source(sdir, exts, sr, mono=False)
+            if st.ndim == 1:
+                st = st.reshape(-1, 1)
+            stream = st.mean(axis=1, keepdims=True).astype("float32")
+            if st.shape[1] >= 2:
+                side = (st[:, 0] - st[:, 1]).astype("float32")
+            del st
+        else:
+            stream, _, _ = ingest.concat_source(sdir, exts, sr, mono=True)
 
         if set_offset_sec:
             off_samp = min(int(set_offset_sec * sr), max(0, len(stream) - sr))
             stream = stream[off_samp:]
+            if side is not None:
+                side = side[off_samp:]
 
         stream_dur = len(stream) / sr
         if args.no_trim:
@@ -162,8 +185,17 @@ def main(argv=None):
         mm[:] = stream[a:b].ravel()
         mm.flush()
         mono_paths[name] = (mpath, n)
-        del stream, mm
-        dbg.log(f"INGEST  {name}  mmap_mb={mpath.stat().st_size / 1048576:.1f}")
+        # Side channel uses the IDENTICAL trim bounds so mid/side stay sample-aligned.
+        if side is not None:
+            spath = tmp_dir / f"{name}.side.f32"
+            sm = np.memmap(str(spath), dtype="float32", mode="w+", shape=(n,))
+            sm[:] = side[a:b]
+            sm.flush()
+            side_paths[name] = (spath, n)
+            del sm
+        del stream, side, mm
+        dbg.log(f"INGEST  {name}  mmap_mb={mpath.stat().st_size / 1048576:.1f}"
+                f"{'  +side' if name in side_paths else ''}")
 
     dbg.log(f"PASS1_DONE  n_sources={len(mono_paths)}")
 
@@ -202,6 +234,13 @@ def main(argv=None):
         """Open the trimmed-mono memmap for a source (read-only)."""
         mpath, n = mono_paths[name]
         return np.memmap(str(mpath), dtype="float32", mode="r", shape=(n,))
+
+    def _mmap_side(name: str):
+        """Open the trimmed L-R side memmap for a source, or None (mono/disabled)."""
+        if name not in side_paths:
+            return None
+        spath, n = side_paths[name]
+        return np.memmap(str(spath), dtype="float32", mode="r", shape=(n,))
 
     # Reference starts as first source; re-selected after matrix is computed.
     ref_name = next(iter(trim_bounds))
@@ -255,6 +294,8 @@ def main(argv=None):
     refine_min_ppm = float(refine_cfg.get("trigger_min_ppm", 2000.0))
     refine_corr_ceiling = float(refine_cfg.get("trigger_corr_ceiling", 0.60))
 
+    polarity_ceiling = float(polarity_cfg.get("rescue_corr_ceiling", 0.60))
+
     for i in range(n_src - 1):
         ri = ref_mono if i == ref_idx else _mmap(names[i])
         for j in range(i + 1, n_src):
@@ -294,6 +335,34 @@ def main(argv=None):
                             f"corr {med:.3f}->{refined_med:.3f}")
                     med = refined_med
                     pair_ratios[(i, j)] = refined_ratio
+
+            # Channel-polarity rescue (TODO-184): a same-source copy with one
+            # channel polarity-inverted collapses on mid-vs-mid; for such a
+            # near-zero pair, re-score across the L-R cross terms (each with its
+            # own lag lock) and keep it only if it improves — independent sources
+            # have no correlated cross term, so this cannot manufacture a merge.
+            if polarity_on and med < polarity_ceiling:
+                si = _mmap_side(names[i])
+                sj = _mmap_side(names[j])
+                if si is not None and sj is not None:
+                    pratio = pair_ratios[(i, j)]
+                    if abs(pratio - 1.0) * 1e6 > ppm_thr:
+                        rj_mid_c = resample_ratio(rj, pratio, sr)
+                        sj_c = resample_ratio(sj, pratio, sr)
+                    else:
+                        rj_mid_c, sj_c = rj, sj
+                    resc_med, pairing = match.polarity_rescue(
+                        ri, si, rj_mid_c, sj_c, sr, anchors, win,
+                        a_cfg["max_lag_sec"], med)
+                    if resc_med > med:
+                        dbg.log(f"POLARITY_RESCUE  {names[i]}/{names[j]}  "
+                                f"{pairing}  corr {med:.3f}->{resc_med:.3f}")
+                        med = resc_med
+                    if rj_mid_c is not rj:
+                        del rj_mid_c
+                    if sj_c is not sj:
+                        del sj_c
+                    del si, sj
 
             M[i, j] = M[j, i] = med
             if j != ref_idx:
