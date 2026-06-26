@@ -18,21 +18,24 @@ Fix: Skill step 4 now requires the actual running session model id (no fixed str
   — left for a follow-up if that path is reused.
 
 BUG-217: Incremental crawler does not pick up new LB website pages when posted
-Status: Open
-File(s): backend/site_crawler.py
+Status: Fixed
+File(s): backend/site_crawler.py, backend/db.py
 Reported: 2026-06-22
-Root cause: TBD — incremental crawl scope misses newly posted pages on the LB website
-  (related sitemap-discovery gap previously seen in BUG-193, but that was bobdylan_scraper.py;
-  this report is against the site_crawler.py incremental path — needs confirmation whether
-  it's the same root cause or a separate one).
-Fix: TBD
+Fixed: 2026-06-26
+Root cause: crawl() pre-populated `visited` from get_downloaded_urls() — all URLs with
+  status 'downloaded'/'not_found'/'skipped'. _seed() skips URLs already in `visited`,
+  so SEED_URLS (including /bynumber/LBMbynumber.html, the master LB index) were never
+  re-queued after their initial download. The If-Modified-Since logic was present but
+  dead for already-downloaded pages; the queue only ever contained status='pending'/'failed'
+  URLs, which are empty after a successful full crawl. Result: no index page was ever
+  re-fetched incrementally, so newly posted LB detail pages linked from the index were
+  never discovered.
+Fix: Before queuing, temporarily remove SEED_URLS + start_url from `visited` so _seed()
+  re-queues them every run. Load their stored last_modified from site_inventory into
+  lm_map so If-Modified-Since is sent — a 304 means nothing changed (cheap), a 200 means
+  the index changed and new links are extracted and queued. Added get_inventory_last_modified()
+  to backend/db.py to support the targeted last_modified lookup.
 
-BUG-216: Spectrograms no longer generate via the UI
-Status: Open
-File(s): backend/sox_utils.py, gui_next/src/renderer/src/screens/ScreenSpectrograms.tsx
-Reported: 2026-06-22
-Root cause: TBD — spectrogram generation triggered from the UI no longer produces output.
-Fix: TBD
 
 BUG-222: UI tips show Mac-only "⌘K" shortcut that doesn't work and has no Mac build anyway
 Status: Open

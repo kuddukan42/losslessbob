@@ -1,6 +1,61 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-217: Incremental crawler does not pick up new LB website pages when posted
+Status: Fixed
+File(s): backend/site_crawler.py, backend/db.py
+Reported: 2026-06-22
+Fixed: 2026-06-26
+Root cause: crawl() pre-populated `visited` from get_downloaded_urls() — all URLs with
+  status 'downloaded'/'not_found'/'skipped'. _seed() skips URLs already in `visited`,
+  so SEED_URLS (including /bynumber/LBMbynumber.html, the master LB index) were never
+  re-queued after their initial download. The If-Modified-Since logic was present but
+  dead for already-downloaded pages; the queue only ever contained status='pending'/'failed'
+  URLs, which are empty after a successful full crawl. Result: no index page was ever
+  re-fetched incrementally, so newly posted LB detail pages linked from the index were
+  never discovered.
+Fix: Before queuing, temporarily remove SEED_URLS + start_url from `visited` so _seed()
+  re-queues them every run. Load their stored last_modified from site_inventory into
+  lm_map so If-Modified-Since is sent — a 304 means nothing changed (cheap), a 200 means
+  the index changed and new links are extracted and queued. Added get_inventory_last_modified()
+  to backend/db.py to support the targeted last_modified lookup.
+
+BUG-216: Spectrograms no longer generate via the UI
+Status: Fixed
+File(s): gui_next/src/renderer/src/lib/spectrogramStore.ts,
+         gui_next/src/renderer/src/screens/ScreenSpectrograms.tsx
+Reported: 2026-06-22
+Fixed: 2026-06-26
+Root cause: Two bugs. (1) dynRange store default was '-120'; SoX's -z flag requires a positive
+  integer (dynamic range in dB) so every file errored out with no PNG produced. (2) The backend
+  _spectro_state["errors"] was a list of {file,error} dicts, but the TypeScript GenerateStatus
+  interface typed it as number. When SoX failed on every file, the errors list filled with
+  objects; React crashed trying to render {genStatus.errors} in JSX → blank screen.
+Fix: (1) spectrogramStore default '-120' → '120'; handleGenerate uses Math.abs() + positive
+  fallback; UI label "dB floor" → "dB range". (2) backend _spectro_state["errors"] changed to
+  int count (0); _do_spectro_batch now passes errors=len(errors) everywhere; error details
+  logged via _log.error() instead.
+
+BUG-224: tapematch_session.py's tmp-dir cleanup deletes another concurrent run's in-flight files
+Status: Fixed
+File(s): tools/tapematch/tapematch_session.py:461-509 (_clean_stale_tmp_dirs, new _tmp_dir_in_use)
+Reported: 2026-06-25
+Fixed: 2026-06-25
+Root cause: _clean_stale_tmp_dirs() unconditionally rmtree'd every tapematch_* dir under
+  TMP_BASE (/mnt/DATA0/tmp) before launching each new tapematch.cli subprocess, with no
+  check for whether another subprocess -- from this session or a different concurrent
+  Claude Code session -- was still using one. Every tapematch.cli invocation shares this
+  same hardcoded tmp base regardless of which script launched it (tapematch_session.py or
+  the new validate_polarity.py), so two sessions running tapematch_session.py for
+  1989-06-04 and 1990-01-12 deleted the in-flight memmaps of a concurrently-running
+  validate_polarity.py batch, surfacing as cascading FileNotFoundError crashes
+  (1988-08-07, 1988-08-18, 1988-08-20, 1988-08-23, 1988-08-26).
+Fix: Added _tmp_dir_in_use(d) -- skips deletion if any file inside the dir was modified in
+  the last 10 minutes, or if any running process holds an open file descriptor inside it
+  (scans /proc/*/fd; covers memmaps, which keep a duped fd open after the opening Python
+  file object closes). _clean_stale_tmp_dirs() now only removes dirs that are both old and
+  fd-free. New tests: tools/tapematch/tests/test_clean_stale_tmp_dirs.py.
+
 BUG-218: Library — ★ rating column clipped two-character ratings (A−, B+) to an ellipsis
 Status: Fixed
 File(s): gui_next/src/renderer/src/screens/ScreenLibrary.tsx (recording-lens colgroup)

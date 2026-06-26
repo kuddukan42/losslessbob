@@ -28,6 +28,7 @@ from backend.db import (
     create_scrape_session,
     finish_scrape_session,
     get_downloaded_urls,
+    get_inventory_last_modified,
     get_pending_urls,
     upsert_inventory,
 )
@@ -48,8 +49,10 @@ SITE_HOME_URL = BASE_URL + "/LosslessBob.html"
 # Extra seeds queued on every crawl as a safety net in case the home page
 # restructures or doesn't link directly to the index pages.
 SEED_URLS = [
-    BASE_URL + "/bynumber/LBMbynumber.html",       # master LB index (~13 000 entries)
-    BASE_URL + "/detail/LB-bootleg-by-title.html", # bootleg title index
+    BASE_URL + "/bynumber/LBMbynumber.html",                                     # master LB index (~13 000 entries)
+    BASE_URL + "/detail/LB-bootleg-by-title.html",                               # bootleg title index
+    BASE_URL + "/checksum_lookup/checksum_lookup_lb_zip_download.htm",           # flat-file download page
+    BASE_URL + "/detail/LBM-year.html",                                          # entries by year index
 ]
 
 _HEADERS = {"User-Agent": "LosslessBob-Archiver/1.0 (offline mirror)"}
@@ -315,6 +318,19 @@ def crawl(
     visited: set[str] = set() if force else get_downloaded_urls(db_path)
     pending_db = get_pending_urls(db_path)   # [{url, last_modified}]
     lm_map: dict[str, str | None] = {r["url"]: r["last_modified"] for r in pending_db}
+
+    # Always re-crawl the start URL and known index/seed pages so newly posted LB
+    # entries are discovered on every incremental run.  Remove them from `visited`
+    # so _seed() queues them regardless of prior status, and load their stored
+    # Last-Modified header into lm_map so the fetch uses If-Modified-Since — a 304
+    # means nothing changed, a 200 means new links can be extracted and queued.
+    _index_urls = [_normalise(start_url)] + [_normalise(u) for u in SEED_URLS]
+    if not force:
+        visited -= set(_index_urls)
+        stored_lm = get_inventory_last_modified(_index_urls, db_path)
+        for url in _index_urls:
+            if url not in lm_map:
+                lm_map[url] = stored_lm.get(url)
 
     queue: deque[str] = deque()
 

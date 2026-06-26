@@ -1,3 +1,119 @@
+[2026-06-26] — fix(backend): incremental site crawler misses newly posted LB pages (BUG-217)
+Fixed: backend/site_crawler.py: SEED_URLS and start_url are now always removed from
+  `visited` before queuing, so index pages are re-fetched on every incremental run;
+  their stored Last-Modified is loaded into lm_map so If-Modified-Since is used (304 =
+  cheap no-op; 200 = index changed, new links extracted and queued)
+Added: backend/site_crawler.py: flat-file download page added to SEED_URLS
+  (checksum_lookup/checksum_lookup_lb_zip_download.htm)
+Added: backend/db.py: get_inventory_last_modified() — targeted last_modified lookup for
+  a list of URLs from site_inventory
+
+[2026-06-26] — fix(gui+backend): spectrograms blank screen + no output (BUG-216)
+Fixed: gui_next/src/renderer/src/lib/spectrogramStore.ts: dynRange default '-120' → '120'
+Fixed: gui_next/src/renderer/src/screens/ScreenSpectrograms.tsx: dyn_range sent negative to
+  SoX -z (requires positive int); now Math.abs(); label corrected to "dB range"
+Fixed: backend/app.py: _spectro_state["errors"] was a list of dicts; TypeScript typed it as
+  number; React crashed rendering objects in JSX → blank screen. Changed to int count; error
+  details now logged via _log.error()
+
+[2026-06-26] — chore(concert_ranker): validate new metrics on scan 17 — none enter QUALITY_MODEL (TODO-191)
+Changed: tools/fit_aud_quality_model.py: added brickwall_score + single_ch_transient_count to
+  candidate pool; updated speech_band_snr_db comment (rescan no longer pending).
+  Findings: speech_band_snr_db (rho=0.409, Δ/σ=0.75) subsumed by existing predictors;
+  brickwall_score (rho=-0.179, no signal); single_ch_transient_count BACKWARDS vs commentary.
+  QUALITY_MODEL unchanged — scan 8 (2798-sample) fit retained; all three metrics stay in
+  POLARITY for family scoring only.
+
+[2026-06-25] — feat(concert_ranker): text features (TODO-188), brickwall/mic-hit waveform detectors (TODO-191), HF source discrimination (TODO-189), TV band detection (TODO-190)
+Added: concert_ranker/text_features.py — new module: extract_text_features() parses 18 flaw/artifact
+  vocabulary keys from entries.description (txt_clipping, txt_brickwall, txt_digipop, txt_dropout,
+  txt_gap, txt_mic_hit, txt_hf_streak, txt_compression, txt_minidisc, txt_floating_parapet, txt_32k_dat,
+  txt_talking, txt_singing, txt_limiting, txt_remaster, txt_tv_band, txt_cassette, txt_eac_match).
+  Regex patterns cover LB site controlled vocabulary; all keys always present (0.0/1.0 binary).
+Added: concert_ranker/features.py — extract_text() wrapper; _brickwall_score() (normalized slope
+  variance in mid-amp vs loud frames, captures smooth between-peak ramps); _single_channel_transient_count()
+  (L/R ≥2:1 asymmetric impulse events = mic hits, stereo only); _minidisc_parapet_score(), _32k_dat_flag(),
+  _cassette_rolloff_flag() (HF ceiling shape discrimination from averaged NativeProbe PSD); _tv_band_flag()
+  (narrow elevated band at 14.5-16.5 kHz with per-window pulsing variance check). All added to
+  extract_distortion() and extract_hf_native() return dicts.
+Changed: concert_ranker/audio/cache.py — NativeProbe gains window_psds_db field (n_windows × n_freqs,
+  None by default); build_native_probe() populates it so TV band variance can be measured without a second
+  full-file decode.
+Changed: concert_ranker/calibration.py — description field threaded through stratified_sample() and
+  decade_stratified_sample() into build_samples(); text features injected into calibration metrics dict
+  (no rescan needed — DB-side extraction).
+Changed: concert_ranker/cli.py — _inject_text() augments metrics dicts at rerank time (mirrors _inject_dff()
+  pattern); called in _rerank().
+Changed: concert_ranker/config.py — POLARITY entries added for all new features: speech_band_snr_db +1,
+  brickwall_score/single_ch_transient_count/minidisc_score/dat32k_flag/cassette_flag -1, tv_band_flag 0,
+  all 18 txt_* features (mostly -1, tv_band/cassette_flag 0 for informational ones).
+Changed: tests/test_concert_ranker.py — 20 new tests: text feature extraction, brickwall score synthetic
+  validation, single-channel transient detection, 32k DAT flag, cassette rolloff, TV band pulsing. 44 pass.
+
+[2026-06-25] — fix(concert_ranker): remove backwards/noise metrics from family scoring and labeling
+Changed: concert_ranker/config.py — directness polarity set to 0 (excluded from family comparison):
+  scan-8 validation (n=2798 AUD) shows bad recordings score higher (rho=-0.272, commentary Δ/σ=-0.82)
+  — the metric measures spectral imbalance, not recording proximity. Labels ("close/direct" /
+  "distant/roomy") were inverted relative to actual quality. Removed from QUALITY_BANDS and all
+  per-decade QUALITY band dicts. onset_clarity polarity set to 0 (rho=-0.131, commentary Δ/σ=+0.04
+  — crowd noise inflates onset_env; no real clarity signal). Both metrics retained in QUALITY_MODEL
+  where they contribute CV Spearman with correct negative weights.
+Changed: concert_ranker/scoring.py — removed directness and onset_clarity from FAMILY_METRICS
+  "clarity" family and from the _PRETTY verdict label map.
+Added: concert_ranker/features.py — speech_band_snr_db metric in extract_clarity: 1-4 kHz SNR
+  during loud vs quiet frames (same approach as crowd_snr_db but restricted to the vocal
+  intelligibility band). Not yet in QUALITY_MODEL — needs rescan to validate against commentary.
+Changed: tools/fit_aud_quality_model.py — added commentary audit section (Δ/σ per metric vs
+  muffled/distant/upfront labels, with rho column and BACKWARDS detection); added speech_band_snr_db
+  to candidate pool; skips candidates with no scan data.
+
+[2026-06-25] — feat(concert_ranker): refit QUALITY_MODEL_SBD on full scan 9 corpus (TODO-183)
+Changed: concert_ranker/config.py QUALITY_MODEL_SBD — refit on scan_id=9: 506 SBD+FM recordings
+  (479 SBD + 27 FM) all scanned with the current dropout detector. dropout_count tested (rho=-0.077,
+  p=0.082, weight ~0) — not predictive with consistent detector values; old rho=0.375 was a
+  scan-version artifact from mixing old/new detector outputs across scans 3-7. Same 6 predictors
+  as v1 (hiss_floor_db, hf_ceiling_hz, crest_factor_db, air_ratio_db, harsh_ratio_db, directness).
+  Validation: AUD model on this set = Spearman 0.429 / 73.5% within one tier; new fit =
+  Spearman 0.562 / 80.2% within one tier (5-fold CV, alpha=0.5). 24 tests pass.
+
+[2026-06-25] — concert_ranker: hum_excess_db frequency-resolution fix (Δf 5.4 Hz → 0.5 Hz)
+Changed: concert_ranker/features.py: _hum_excess_db now computes a dedicated high-res Welch
+  PSD (nperseg=sr×2, Δf=0.5 Hz) instead of reusing the shared cache PSD (nperseg=4096,
+  Δf≈5.4 Hz). Root cause of +0.117 rho confound: at 5.4 Hz resolution, G1 bass (49 Hz) and
+  50 Hz mains shared the same bin; the 100 Hz and 250 Hz harmonic windows were empty (no bin
+  within ±2 Hz). Peak window tightened from ±2 Hz to ±0.5 Hz; harmonics extended from 5 to 7.
+  Synthetic validation: 49 Hz bass → 0.00, 58 Hz (A#1) → 0.00, genuine 50/60 Hz comb → fires.
+  Needs re-scan to confirm rho improvement (scan_id=8 values computed with broken detector).
+
+[2026-06-25] — concert_ranker: dff_vert_occ added to QUALITY_MODEL; AUD CV Spearman 0.659→0.664
+Changed: concert_ranker/config.py: QUALITY_MODEL refit to include dff_vert_occ = log1p(vert_occ)
+  from dff_reports; forward selection added it as 7th predictor (CV rho +0.006), weight -0.1274
+  (higher vert count → lower rank); 9 total predictors. 5-fold CV Spearman 0.664 / 75.9% within 1 tier.
+Changed: concert_ranker/cli.py: _inject_dff() helper — augments metrics dict at rerank time from
+  dff_reports table (log1p transform); falls back to model median for LBs without DFF data.
+Changed: concert_ranker/calibration.py: build_samples() now injects dff_vert_occ from dff_reports
+  so future calibration runs include it automatically.
+Added: tools/fit_aud_quality_model.py: fitting script for the AUD ridge model; forward selection over
+  14-candidate pool, outputs QUALITY_MODEL dict; accepts --scan-id --alpha --no-forward-select.
+
+[2026-06-25] — tools/parse_dff_reports.py: DFF HTML parser — 12,523 LBs written to dff_reports table
+Added: tools/parse_dff_reports.py: parses all DigiFlawFinder HTML reports in data/site/files/,
+  extracts drop/clip/horz/vert total occurrence counts (handles both the older Totals-section format
+  and the newer "No Flaws Found" format), sums multi-disc primary files per LB, uses xref files only
+  for LBs with no primary file, writes to dff_reports table (lb_number PK). 12,523 LBs written,
+  67 unresolvable errors (~0.5%), 99.5% parse rate. --summary flag prints vert_occ vs rating table.
+Finding: vert_occ gradient confirmed in full corpus: median 1 at A/A- tiers rising to 8 at F.
+
+[2026-06-25] — concert_ranker: dropout_count rework — 3-mode defect detector + DFF vert finding
+Changed: concert_ranker/features.py: replaced locally-normalized roughness (rho=+0.417, measuring
+  musical transient density) with three DigiFlawFinder-modelled detectors: silence gap (DFF Drops),
+  stuck sample (DFF Horizontals), and digipop/vertical (DFF Verticals — exactly-2-wide symmetric
+  first-diff spike; min/max ratio >0.5 rejects asymmetric musical attacks). 8 tests, all pass.
+Added: tests/test_concert_ranker.py: 8 dropout unit tests including digipop detection.
+Finding: DFF vert_occ (from 14,090 downloaded DigiFlawFinder reports) correlates rho=-0.157
+  (p=1.5e-14) with AUD rating on scan_id 8 corpus — monotonic A→F (median 1→8). Drop/clip/horz
+  near zero. DFF parser to extract per-LB vert counts is the next recommended step.
+
 [2026-06-25] — tapematch: FINDINGS.md — synthesized performance report and architecture limits
 Added: tools/tapematch/FINDINGS.md: full findings report — accuracy metrics, all 7 approaches
   tried with outcomes, root-cause analysis, what works, future angles, and recommendation
