@@ -4862,6 +4862,29 @@ def get_downloaded_urls(db_path=None) -> set[str]:
     return {r["url"] for r in rows}
 
 
+def get_inventory_last_modified(urls: list[str], db_path=None) -> dict[str, str | None]:
+    """Return ``{url: last_modified}`` for the given URLs from site_inventory.
+
+    Args:
+        urls:    List of absolute URL strings to look up.
+        db_path: Optional DB path override.
+
+    Returns:
+        Dict mapping each URL to its stored ``Last-Modified`` header value, or
+        ``None`` when the row exists but has no ``last_modified`` stored.  URLs
+        not present in ``site_inventory`` are omitted from the result.
+    """
+    if not urls:
+        return {}
+    placeholders = ",".join("?" * len(urls))
+    with get_connection(db_path) as conn:
+        rows = conn.execute(
+            f"SELECT url, last_modified FROM site_inventory WHERE url IN ({placeholders})",
+            urls,
+        ).fetchall()
+    return {r["url"]: r["last_modified"] for r in rows}
+
+
 # ── lb_problems ───────────────────────────────────────────────────────────────
 
 def get_lb_problems(lb_number: int | None = None, db_path=None) -> list[dict]:
