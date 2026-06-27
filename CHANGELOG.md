@@ -1,3 +1,20 @@
+[2026-06-27] — feat(db): known-taper curated list + taper_name normalisation (TODO-173)
+Changed: backend/db.py: added _KNOWN_TAPER_ALIASES dict (~100+ confirmed taper handles/aliases, all lowercase canonicals); _NOT_TAPER suppression set (mic models, format labels, editorial notes); _LT_TAPER_RE pattern for legendary taper series (lta–ltz); NT series (nta–ntz) aliases; step-0 known-handle scan in extract_taper_and_source fires before all heuristics; prefix-match canonicalization trims equipment bleed-through (e.g. "net taper e schoeps…" → "net taper e"); BOOTLEG: entries now store taper_name='bootleg'; quote-stripping from parsed taper names; taper_name lowercased for case-agnostic storage; _normalise_taper resolves known aliases; _KNOWN_TAPER_KEYS_SORTED pre-computed for prefix lookup
+Changed: TODO.md: TODO-173 known tapers list updated with full confirmed set
+
+[2026-06-27] — feat(db): entry_lineage table + batch parser + lineage API (CC_LINEAGE_PARSE)
+Added: backend/db.py: entry_lineage USER table schema; _SAME_RE/_DIFF_RE/_DERIVED_RE/_BETTER_RE lineage regexes; extract_lb_references(), _normalise_taper(), _compute_parse_confidence(), upsert_entry_lineage(), get_lineage() functions; "entry_lineage" added to USER_TABLES
+Changed: tools/tapematch/tapematch_session.py: _SAME_RE/_DIFF_RE now imported from backend.db (canonical source)
+Added: tools/parse_lineage.py: CLI batch script to populate entry_lineage from entries.description (--force/--lb/--limit/--dry-run)
+Added: backend/app.py: GET /api/lineage/<lb> route returns entry_lineage row as JSON
+Added: tests/test_lineage.py: 8 tests covering extract_lb_references, parse_confidence, taper_normalised, and idempotency
+
+[2026-06-27] — docs(schema): improved contrast, zoom slider, collapse/expand all buttons
+Changed: docs/schema.html: raised contrast on col-type/col-note/stat-label/group-count/group-desc/card-desc/legend text; added zoom slider (60–150%) to header; added Expand All / Collapse All buttons scoped to active DB tab
+
+[2026-06-27] — docs(schema): interactive schema viewer with FK navigation, search, tooltips, collapsible groups
+Changed: docs/schema.html: added table descriptions, FK jump chips, click-to-highlight FK relationships (gold=focused/blue=related/dimmed), table search/filter, collapsible groups, floating column tooltips; JS auto-assigns data-table from card-name; TABLE_INFO covers all 51 tables; FK_SUPPLEMENT adds 12 undocumented foreign key relationships
+
 [2026-06-26] — fix(scraper): diacritic-dropped locations corrected for 45 LB entries across 9 cities (BUG-211)
 Fixed: data/site/detail/LB-*.html (45 files): patched cached HTML so re-scraping from local
   cache preserves correct city names with diacritics
