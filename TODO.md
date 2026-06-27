@@ -1,5 +1,14 @@
 
 
+TODO-192: Library UI — taper name badge on library panel entry rows
+Priority: Low
+Status: Open
+Added: 2026-06-27
+Description: Display the taper_name as a small badge/chip on each concert entry row in the library
+panel, similar to the quality grade badge. Should be omitted when taper_name is null/empty or a
+non-taper source label (e.g. "master", "sbd"). Helps users quickly identify recordings by a
+preferred or known taper without opening the detail view.
+
 TODO-187: Concert ranker / project — document LB rating philosophy and artifact taxonomy
 Priority: Low
 Status: Open
@@ -364,6 +373,20 @@ Description: entries.taper_name (backend/db.py:137) already exists and is popula
   is confirmed — not just whatever extract_taper_and_source guessed from the description text.
   Needs a DB field/table for the confirmed flag (separate from or alongside taper_name) and
   UI work to surface the tag (e.g. as a pill) on confirmed entries.
+  Known tapers now implemented in _KNOWN_TAPER_ALIASES (backend/db.py). Curated list:
+  soomlos, spot, hide, lta, mk, southside butcher (ssb), iar, mjs, bw, dolphinsmile, jtt,
+  pl, cedar, holy grail, vw, cck, jt, cta, tyrus, zimmy21, fine wine, hv, condor, lowgen,
+  schubert, mb, jersey john, theodore, mike savage, m&a, wario, mani (=manie), bach, romeo,
+  cb master, lk, hhtfp, jf, sullylove, ebr, tom moore, dk-wi, tk, bt, vito, glen dundas,
+  nightly moth, csheb, streetcar visions, sk, jerseyboy, spyder9, bob meyer, markp,
+  downfromtheglen, mrsoul, sh, sm, gs, rcm, mike millard (=mm), billie, jgb, tom paine (tp/tompaine56),
+  mango farmer, ironchef, soledriver, goodnitesteve, clapberry, bigjim, teddy ballgame,
+  theshadow, robert, sfy, caretaker, beer (=beerly=mikebeerly), caspar (=jon caspar), kuddukan,
+  pdub, audiowhore, arashi, dopersan, markitospb, krw co, maloney, radioshack, kingrue,
+  warburton (=jimmy warburton), captain acid (=captainacid=acidproject), andrea82, pike1957,
+  sway, whofan70, two of us, mcforce, thelonius (=thelonious), jems, tarantula, lbp51,
+  unwanted man music (uww), travelin man records (tmr), stevemtl, bobby bourbon (=bourbon),
+  elliot, jvs, v4tx, lta–ltz (legendary taper series), nta–ntz (net taper series)
 
 TODO-172: DB Editor — make it more like a real SQL management tool (SSMS-style)
 Priority: Low

@@ -79,6 +79,7 @@ USER_TABLES = (
     "quality_scans",
     "quality_recording_metrics",
     "quality_recording_scores",
+    "entry_lineage",
 )
 
 # Guard against f-string injection if a table name is ever mis-typed (#10)
@@ -701,6 +702,26 @@ CREATE TABLE IF NOT EXISTS quality_recording_scores (
 );
 CREATE INDEX IF NOT EXISTS idx_quality_scores_scan ON quality_recording_scores(scan_id);
 CREATE INDEX IF NOT EXISTS idx_quality_scores_family ON quality_recording_scores(scan_id, family_id);
+
+-- ── Entry lineage (USER — per-LB parsed lineage signals) ─────────────────────
+-- Structured lineage metadata parsed from entries.description for use by the
+-- recording-family clustering / learning phase.  Never exported in master data.
+CREATE TABLE IF NOT EXISTS entry_lineage (
+    lb_number           INTEGER PRIMARY KEY,
+    taper_name          TEXT,
+    source_chain        TEXT,
+    taper_normalised    TEXT,
+    mentions_lb         TEXT,   -- JSON: [[lb_number, snippet], ...]
+    same_as_lb          TEXT,   -- JSON: [lb_number, ...]
+    derived_from_lb     TEXT,   -- JSON: [lb_number, ...]
+    better_than_lb      TEXT,   -- JSON: [lb_number, ...]
+    parse_confidence    TEXT,   -- 'high' / 'medium' / 'low' / 'none'
+    parsed_at           TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    source_text_hash    TEXT
+);
+CREATE INDEX IF NOT EXISTS idx_lineage_taper_norm
+    ON entry_lineage(taper_normalised)
+    WHERE taper_normalised IS NOT NULL;
 """
 
 _MD5_RE = re.compile(r'^([0-9a-fA-F]{32})\s+\*?(.+)$')
@@ -757,6 +778,17 @@ def extract_taper_and_source(description: str) -> tuple[str | None, str | None]:
 
     taper_name: str | None   = None
     source_chain: str | None = None
+
+    # ── 0. Known taper handles — confirmed names, checked before heuristics ─
+    m0 = _KNOWN_TAPER_RE.search(d600)
+    if m0:
+        raw_h = m0.group(1)
+        norm_h = re.sub(r'\s+', ' ', re.sub(r'[^a-z0-9\s]', ' ', raw_h.lower())).strip()
+        taper_name = _KNOWN_TAPER_ALIASES.get(norm_h, raw_h)
+    if not taper_name:
+        m_lt = _LT_TAPER_RE.search(d600)
+        if m_lt:
+            taper_name = m_lt.group(1).lower()
 
     # ── 1. Explicit Taper: label (skip inside parentheticals) ────────────
     for m in re.finditer(
@@ -823,11 +855,10 @@ def extract_taper_and_source(description: str) -> tuple[str | None, str | None]:
             if v and len(v) > 4 and _looks_like_chain(v):
                 source_chain = v[:160]
 
-    # ── 6. BOOTLEG: title → taper_name; rip chain → source_chain ─────────
+    # ── 6. BOOTLEG: title → taper_name = 'bootleg'; rip chain → source_chain
     bm = re.match(r'BOOTLEG\s*:\s*(.+?)(?:;|,|\n|$)', fl, re.IGNORECASE)
     if bm:
-        if not taper_name:
-            taper_name = ('BOOTLEG: ' + bm.group(1).strip())[:80]
+        taper_name = 'bootleg'
         if not source_chain:
             # Look only in non-paren lines after the first line
             rest_lines = _strip_bt_parens('\n'.join(d.split('\n')[1:]))
@@ -901,7 +932,15 @@ def extract_taper_and_source(description: str) -> tuple[str | None, str | None]:
         if m:
             handle = m.group(1).strip()
             if not _STOPWORDS.search(handle) and len(handle) >= 2:
-                taper_name = handle[:60]
+                # Strip trailing sample-rate token (e.g. "24", "48", "48k", "24bit")
+                _tok = handle.split()
+                if len(_tok) > 1 and re.match(r'^\d+(?:k(?:hz)?|bit)?$', _tok[-1], re.IGNORECASE):
+                    _tok = _tok[:-1]
+                # If any non-last token contains a digit (equipment model code like skm140,
+                # mk4v, at853), the last token is the taper handle
+                if len(_tok) > 1 and any(re.search(r'\d', t) for t in _tok[:-1]):
+                    _tok = [_tok[-1]]
+                taper_name = ' '.join(_tok)[:60]
 
     # ── 13. taped by <name> ───────────────────────────────────────────────
     if not taper_name:
@@ -935,6 +974,8 @@ def extract_taper_and_source(description: str) -> tuple[str | None, str | None]:
         # Strip leading or inline stray closing paren before a chain arrow
         v = re.sub(r'^\)+\s*', '', v).strip()
         v = re.sub(r'\)\s*>', '>', v)
+        # Strip surrounding quote characters (e.g. "Bach" → Bach)
+        v = re.sub(r'^["\'](.+)["\']$', r'\1', v).strip()
         # Discard if contains unmatched quote characters (leaked from quoted strings)
         if v.count('"') % 2 != 0:
             v = re.sub(r'\s*"[^"]*$', '', v).strip()
@@ -942,6 +983,21 @@ def extract_taper_and_source(description: str) -> tuple[str | None, str | None]:
 
     taper_name   = _clean(taper_name)
     source_chain = _clean(source_chain)
+
+    # Canonicalize, lowercase, and suppress non-taper labels
+    if taper_name:
+        _norm = re.sub(r'\s+', ' ', re.sub(r'[^a-z0-9\s]', ' ', taper_name.lower())).strip()
+        if _norm in _NOT_TAPER:
+            taper_name = None
+        else:
+            canonical = _KNOWN_TAPER_ALIASES.get(_norm)
+            if canonical is None:
+                # Prefix match: trim equipment/chain bleed (e.g. "net taper e schoeps …")
+                for _key in _KNOWN_TAPER_KEYS_SORTED:
+                    if _norm.startswith(_key + ' '):
+                        canonical = _KNOWN_TAPER_ALIASES[_key]
+                        break
+            taper_name = (canonical or taper_name).lower()
 
     # Strip taper handle prefix from source_chain if chain starts with same text
     if taper_name and source_chain:
@@ -1007,6 +1063,380 @@ def classify_source_type(description: str | None, source_chain: str | None) -> s
     if description:
         return _classify_source_text(description)
     return None
+
+
+# ── Lineage cross-reference regexes ───────────────────────────────────────────
+# Canonical definitions — also imported by tools/tapematch/tapematch_session.py.
+
+_SAME_RE = re.compile(
+    r'same\s+(?:recording|source|tape|transfer|as)|'
+    r'fingerprints?.{0,40}match|eac\s+match|close\s+eac|'
+    r'\bidentical\b|duplicate\s+of',
+    re.IGNORECASE,
+)
+_DERIVED_RE = re.compile(
+    r'\bfrom\b.{0,30}\bmaster\b|\bgen\s+of\b|\bcopy\s+of\b|'
+    r'\bderived\s+from\b|\bdubbed\s+from\b|\btransferred\s+from\b',
+    re.IGNORECASE,
+)
+_BETTER_RE = re.compile(
+    r'\bbetter\s+than\b|\bsupersedes?\b|\bupgrade\s+of\b|\breplaces?\b',
+    re.IGNORECASE,
+)
+_DIFF_RE = re.compile(
+    r'different\s+(?:recording|source|tape|from)|'
+    r'not\s+the\s+same',
+    re.IGNORECASE,
+)
+_LB_REF_RE = re.compile(r'\bLB-0*(\d+)\b', re.IGNORECASE)
+_EXPLICIT_TAPER_LABEL_RE = re.compile(r'\bTaper\s*:', re.IGNORECASE)
+_SEMI_EXPLICIT_TAPER_RE = re.compile(
+    r'\btaped\s+by\b|\bSeeded\b|\bBOOTLEG\s*:|'
+    r'\blegendary\s+taper\b|\bnet\s*taper\b',
+    re.IGNORECASE,
+)
+
+# Curated known tapers: maps every normalised variant → canonical display name.
+# All canonical values are lowercase; taper_name is always stored lowercase.
+# Add new tapers here.
+_KNOWN_TAPER_ALIASES: dict[str, str] = {
+    "soomlos": "soomlos",
+    "spot": "spot",
+    "hide": "hide",
+    "lta": "lta",
+    "mk": "mk",
+    "southside butcher": "southside butcher",
+    "southsidebutcher": "southside butcher",
+    "ssb": "southside butcher",
+    "iar": "iar",
+    "improved air remaster": "iar",
+    "mjs": "mjs",
+    "bw": "bw",
+    "dolphinsmile": "dolphinsmile",
+    "jtt": "jtt",
+    "pl": "pl",
+    "cedar": "cedar",
+    "holy grail": "holy grail",
+    "holygrail": "holy grail",
+    "vw": "vw",
+    "cck": "cck",
+    "jt": "jt",
+    "cta": "cta",
+    "tyrus": "tyrus",
+    "zimmy21": "zimmy21",
+    "fine wine": "fine wine",
+    "finewine": "fine wine",
+    "hv": "hv",
+    "condor": "condor",
+    "lowgen": "lowgen",
+    "schubert": "schubert",
+    "mb": "mb",
+    "jersey john": "jersey john",
+    "jerseyjohn": "jersey john",
+    "theodore": "theodore",
+    "mike savage": "mike savage",
+    "mikesavage": "mike savage",
+    "m&a": "m&a",   # raw form — matched by regex against description text
+    "m a": "m&a",   # normalised form (& strips to space)
+    "wario": "wario",
+    "mani": "mani",
+    "manie": "mani",
+    "bach": "bach",
+    "romeo": "romeo",
+    "cb master": "cb master",
+    "cb": "cb master",
+    "lk": "lk",
+    "hhtfp": "hhtfp",
+    "jf": "jf",
+    "sullylove": "sullylove",
+    "ebr": "ebr",
+    "tom moore": "tom moore",
+    "dk-wi": "dk-wi",
+    "dk wi": "dk-wi",
+    "tk": "tk",
+    "bt": "bt",
+    "vito": "vito",
+    "glen dundas": "glen dundas",
+    "glendundas": "glen dundas",
+    "nightly moth": "nightly moth",
+    "nightlymoth": "nightly moth",
+    "csheb": "csheb",
+    "streetcar visions": "streetcar visions",
+    "streetcarvisions": "streetcar visions",
+    "sk": "sk",
+    "jerseyboy": "jerseyboy",
+    "jersey boy": "jerseyboy",
+    "spyder9": "spyder9",
+    "bob meyer": "bob meyer",
+    "bobmeyer": "bob meyer",
+    "markp": "markp",
+    "mark p": "markp",
+    "downfromtheglen": "downfromtheglen",
+    "down from the glen": "downfromtheglen",
+    "mrsoul": "mrsoul",
+    "mr soul": "mrsoul",
+    "sh": "sh",
+    "sm": "sm",
+    "gs": "gs",
+    "rcm": "rcm",
+    "mike millard": "mike millard",
+    "mikemillard": "mike millard",
+    "mm": "mike millard",
+    "billie": "billie",
+    "jgb": "jgb",
+    "tompaine56": "tom paine",
+    "tom paine 56": "tom paine",
+    "tom paine": "tom paine",
+    "tp": "tom paine",
+    "mango farmer": "mango farmer",
+    "mangofamer": "mango farmer",
+    "ironchef": "ironchef",
+    "iron chef": "ironchef",
+    "soledriver": "soledriver",
+    "sole driver": "soledriver",
+    "goodnitesteve": "goodnitesteve",
+    "goodnite steve": "goodnitesteve",
+    "clapberry": "clapberry",
+    "bigjim": "bigjim",
+    "big jim": "bigjim",
+    "teddy ballgame": "teddy ballgame",
+    "teddyballgame": "teddy ballgame",
+    "theshadow": "theshadow",
+    "the shadow": "theshadow",
+    "robert": "robert",
+    "sfy": "sfy",
+    "caretaker": "caretaker",
+    "beer": "beer",
+    "beerly": "beer",
+    "mikebeerly": "beer",
+    "mike beerly": "beer",
+    "caspar": "caspar",
+    "jon caspar": "caspar",
+    "joncaspar": "caspar",
+    "kuddukan": "kuddukan",
+    "pdub": "pdub",
+    "audiowhore": "audiowhore",
+    "arashi": "arashi",
+    "dopersan": "dopersan",
+    "markitospb": "markitospb",
+    "krw_co": "krw co",   # raw form (underscore) for regex match
+    "krw co": "krw co",   # normalised form (underscore → space)
+    "maloney": "maloney",
+    "radioshack": "radioshack",
+    "radio shack": "radioshack",
+    "kingrue": "kingrue",
+    "king rue": "kingrue",
+    "warburton": "warburton",
+    "jimmy warburton": "warburton",
+    "jimmywarburton": "warburton",
+    "captain acid": "captain acid",
+    "captainacid": "captain acid",
+    "acidproject": "captain acid",
+    "acid project": "captain acid",
+    "andrea82": "andrea82",
+    "pike1957": "pike1957",
+    "sway": "sway",
+    "whofan70": "whofan70",
+    "two of us": "two of us",
+    "twofus": "two of us",
+    "mcforce": "mcforce",
+    "thelonius": "thelonius",
+    "thelonious": "thelonius",
+    "jems": "jems",
+    "tarantula": "tarantula",
+    "lbp51": "lbp51",
+    "unwanted man music": "unwanted man music",
+    "unwanted man": "unwanted man music",
+    "uww": "unwanted man music",
+    "travelin man records": "travelin man records",
+    "travelin man": "travelin man records",
+    "tmr": "travelin man records",
+    "stevemtl": "stevemtl",
+    "bourbon": "bobby bourbon",
+    "bobby bourbon": "bobby bourbon",
+    "bobbybourboon": "bobby bourbon",
+    "elliot": "elliot",
+    "jvs": "jvs",
+    "v4tx": "v4tx",
+    # ── Legendary Taper series (LTA, LTB, … distinct from Net Taper series) ──
+    # "legendary taper X", "taper X", "lt X", "ltX" all → "lt[a-z]"
+    **{f"legendary taper {c}": f"lt{c}" for c in "abcdefghijklmnopqrstuvwxyz"},
+    **{f"taper {c}": f"lt{c}" for c in "abcdefghijklmnopqrstuvwxyz"},
+    **{f"lt {c}": f"lt{c}" for c in "abcdefghijklmnopqrstuvwxyz"},
+    # ── Net Taper series (NTA, NTB, … distinct from Legendary Taper series) ──
+    # "net taper X", "ntX" all → "net taper [a-z]"
+    **{f"net taper {c}": f"net taper {c}" for c in "abcdefghijklmnopqrstuvwxyz"},
+    **{f"nt{c}": f"net taper {c}" for c in "abcdefghijklmnopqrstuvwxyz"},
+}
+
+# Labels that must never be stored as taper_name (mis-parses / source-type labels).
+_NOT_TAPER: frozenset[str] = frozenset({
+    'sbd', 'aud', 'master', 'series', 'incomplete',
+    'aud master', 'master aud', 'excellent sound', 'net tapers',
+    'km140s', 'km140',
+    'unidentified taper', 'dat master', 'same master',
+    'soundcheck', 'low gen reel', 'sp cmc',
+    'very good sound', 'same recording', 'not certain',
+    'cos11pt', 'zoom h2',
+    'late show', 'early show', 'unknown source',
+})
+
+# Sorted known-taper keys longest-first for prefix-match canonicalization.
+_KNOWN_TAPER_KEYS_SORTED: list[str] = sorted(_KNOWN_TAPER_ALIASES, key=len, reverse=True)
+
+# Compiled regex for step-0 known-handle scan in extract_taper_and_source.
+# Sorted longest-first so multi-word phrases match before shorter subsets.
+_KNOWN_TAPER_RE = re.compile(
+    r'\b(' + '|'.join(
+        re.escape(k) for k in sorted(_KNOWN_TAPER_ALIASES, key=len, reverse=True)
+    ) + r')\b',
+    re.IGNORECASE,
+)
+
+# Legendary taper series: LTA, LTB, LTC … matched as a pattern rather than
+# enumerating all letters.  Canonical form is lowercase (e.g. "ltb").
+_LT_TAPER_RE = re.compile(r'\b(lt[a-z])\b', re.IGNORECASE)
+
+
+def _normalise_taper(name: str | None) -> str | None:
+    """Lowercase, strip punctuation, and resolve known-taper aliases.
+
+    Args:
+        name: Raw taper name, e.g. "J. Smith" or "john_smith-taper".
+
+    Returns:
+        Canonical normalised string (e.g. "southside butcher"), or None.
+    """
+    if not name:
+        return None
+    s = name.lower()
+    s = re.sub(r'[^a-z0-9\s]', ' ', s)
+    s = re.sub(r'\s+', ' ', s).strip()
+    if not s:
+        return None
+    return _KNOWN_TAPER_ALIASES.get(s, s)
+
+
+def _compute_parse_confidence(
+    description: str, taper_name: str | None, source_chain: str | None
+) -> str:
+    """Compute parse_confidence label for an entry_lineage row.
+
+    Args:
+        description: Raw entry description text.
+        taper_name:  Parsed taper name (may be None).
+        source_chain: Parsed source chain (may be None).
+
+    Returns:
+        One of 'high', 'medium', 'low', 'none'.
+    """
+    if not taper_name and not source_chain:
+        return 'none'
+    d600 = description[:600]
+    has_taper_label = bool(_EXPLICIT_TAPER_LABEL_RE.search(d600))
+    if has_taper_label and taper_name and source_chain:
+        return 'high'
+    if taper_name and source_chain:
+        return 'medium'
+    if taper_name and not source_chain and not has_taper_label:
+        if not _SEMI_EXPLICIT_TAPER_RE.search(d600):
+            return 'low'
+    return 'medium'
+
+
+def extract_lb_references(description: str) -> dict:
+    """Parse description for LB number cross-references and classify relationships.
+
+    Returns dict with keys:
+        mentions_lb:      list of [lb_number: int, snippet: str] — all LB refs found
+        same_as_lb:       list of int — LB numbers claimed as same source
+        derived_from_lb:  list of int — LB numbers this was derived from
+        better_than_lb:   list of int — LB numbers this supersedes/upgrades
+
+    Classification uses a ±200 char context window around each LB-N mention.
+    A single LB number may appear in multiple output lists when multiple
+    relationship patterns match its context. Snippet is 200 chars centred on
+    the match. `_DIFF_RE` matches are not stored; contradictory same+diff context
+    stores in same_as_lb only when same_count >= diff_count in that window.
+    """
+    mentions: list[list] = []
+    same_as: list[int] = []
+    derived_from: list[int] = []
+    better_than: list[int] = []
+
+    for m in _LB_REF_RE.finditer(description):
+        lb_num = int(m.group(1))
+
+        ctx_start = max(0, m.start() - 200)
+        ctx_end = min(len(description), m.end() + 200)
+        ctx = description[ctx_start:ctx_end]
+
+        mid = (m.start() + m.end()) // 2
+        snip_start = max(0, mid - 100)
+        snip_end = min(len(description), mid + 100)
+        snippet = description[snip_start:snip_end]
+
+        mentions.append([lb_num, snippet])
+
+        same_count = len(_SAME_RE.findall(ctx))
+        diff_count = len(_DIFF_RE.findall(ctx))
+
+        if same_count > 0 and same_count >= diff_count:
+            if lb_num not in same_as:
+                same_as.append(lb_num)
+        if _DERIVED_RE.search(ctx) and lb_num not in derived_from:
+            derived_from.append(lb_num)
+        if _BETTER_RE.search(ctx) and lb_num not in better_than:
+            better_than.append(lb_num)
+
+    return {
+        "mentions_lb": mentions,
+        "same_as_lb": same_as,
+        "derived_from_lb": derived_from,
+        "better_than_lb": better_than,
+    }
+
+
+def upsert_entry_lineage(row: dict, db_path=None) -> None:
+    """Insert or replace an entry_lineage row via the write queue.
+
+    Args:
+        row: Dict with keys matching entry_lineage columns (JSON fields as strings).
+        db_path: Optional database path override.
+    """
+    _row = row
+    get_write_queue().execute(
+        lambda c: c.execute(
+            """INSERT OR REPLACE INTO entry_lineage
+               (lb_number, taper_name, source_chain, taper_normalised,
+                mentions_lb, same_as_lb, derived_from_lb, better_than_lb,
+                parse_confidence, parsed_at, source_text_hash)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, ?)""",
+            (
+                _row["lb_number"], _row["taper_name"], _row["source_chain"],
+                _row["taper_normalised"], _row["mentions_lb"], _row["same_as_lb"],
+                _row["derived_from_lb"], _row["better_than_lb"],
+                _row["parse_confidence"], _row["source_text_hash"],
+            ),
+        )
+    )
+
+
+def get_lineage(lb_number: int, db_path=None) -> dict | None:
+    """Return the entry_lineage row for an LB number, or None if not parsed yet.
+
+    Args:
+        lb_number: LosslessBob entry number.
+        db_path:   Optional database path override.
+
+    Returns:
+        Dict of column → value, or None.
+    """
+    conn = get_connection(db_path)
+    row = conn.execute(
+        "SELECT * FROM entry_lineage WHERE lb_number = ?", (lb_number,)
+    ).fetchone()
+    return dict(row) if row else None
 
 
 # ── Track-listing patterns used by extract_setlist_from_description ──────────
