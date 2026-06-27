@@ -645,7 +645,6 @@ function Topbar({
         <span style={{ flex: 1, textAlign: 'left' }}>
           {t('appShell.search')}
         </span>
-        <span className="kbd-pill">⌘K</span>
       </button>
 
       {/* Bell */}

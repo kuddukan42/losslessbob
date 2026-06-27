@@ -123,9 +123,8 @@
     "colResult": "Ergebnis",
     "noActivity": "Noch keine Aktivität",
     "tips": "Tipps",
-    "tip1": "Drücken Sie [⌘K] auf einem beliebigen Bildschirm, um direkt zu einer LB# oder einem Ordner zu springen.",
-    "tip2": "Pflegen Sie Stammdaten? Aktivieren Sie den Kuratormodus in den Einstellungen, um den DB-Editor und den Scraper anzuzeigen.",
-    "tip3": "Erstellen Sie eine Filterkombination in der Suche, um sie mit einem Klick zu speichern.",
+    "tip1": "Pflegen Sie Stammdaten? Aktivieren Sie den Kuratormodus in den Einstellungen, um den DB-Editor und den Scraper anzuzeigen.",
+    "tip2": "Erstellen Sie eine Filterkombination in der Suche, um sie mit einem Klick zu speichern.",
     "toast": {
       "error": "Fehler: {{error}}",
       "newRelease": "Neue Version verfügbar: {{filename}}",

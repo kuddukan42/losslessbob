@@ -123,9 +123,8 @@
     "colResult": "Resultado",
     "noActivity": "Sin actividad",
     "tips": "Consejos",
-    "tip1": "Pulsa [⌘K] en cualquier pantalla para saltar directamente a un LB# o carpeta.",
-    "tip2": "¿Mantener datos maestros? Active el modo Conservador en Configuración para mostrar el Editor de BD y el Raspador.",
-    "tip3": "Inicie una combinación de filtros en Búsqueda para convertirla en una vista guardada con un solo clic.",
+    "tip1": "¿Mantener datos maestros? Active el modo Conservador en Configuración para mostrar el Editor de BD y el Raspador.",
+    "tip2": "Inicie una combinación de filtros en Búsqueda para convertirla en una vista guardada con un solo clic.",
     "toast": {
       "error": "Error: {{error}}",
       "newRelease": "Nueva versión disponible: {{filename}}",

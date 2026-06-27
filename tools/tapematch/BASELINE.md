@@ -382,3 +382,162 @@ by a double-resample artifact, so ratio recovery is the asserted quantity; the
 production confirmation is a full re-run of the high-ppm dates (e.g. 1990-06-17,
 1990-06-27 from the recent analysis batch) to confirm the false-distinct splits
 collapse into the curator-confirmed families.
+
+---
+
+## Task 8 results — localized segment overlap for patchwork composites (2026-06-25)
+
+**Motivation (TODO-185).** The 1991-11-05 Madison network has five curator-claimed
+same-source pairs based on a short shared region ("same clapping wavs at end of
+d1t1/d1t8/d1t10") inside patchwork/composite recordings; all five score 0.003–0.007
+whole-recording residual_corr (near-zero / distinct). Three independent mechanisms
+were tested as falsify-first pilots; all three failed to find a usable signal gap.
+
+**Approach 1 — best contiguous run on 60 s residual_corr windows**
+(`calibrate_contig_run.py`, 2026-06-25). Ran `secondary_corr_pair(...,
+return_raw=True)` for all 5 claimed pairs plus the negative control (LB-00873/
+LB-06828, same date, uploader explicitly disclaims a match), at the production
+±10 s per-window lag search and a widened ±120 s search. Result: all 6 pairs —
+positives and negative control alike — produced `windowed_median` 0.002–0.013,
+longest contiguous run above any threshold (0.20/0.25/0.30/0.40) = 0 windows
+at both lag search widths. No usable gap. The ±120 s widening was motivated by
+LB-09174 being trimmed ~1100 s shorter than its siblings (patchwork splice), but
+even that failed to surface the claimed-shared segment.
+
+**Approach 2 — windowed landmark fingerprinting, 6–8 kHz HF band**
+(`calibrate_fingerprint_localize.py`, 2026-06-25). Computed `windowed_fingerprints`
+(20 s windows, 5 s hop) per source and `best_window_fingerprint_match` over all
+window pairs. `best_window_fingerprint_match` is offset-invariant by construction
+(Δt hashes are relative within each window), so patchwork splice offsets do not
+prevent detection. Result (6–8 kHz band): all 6 pairs settled to Dice 0.066–0.079;
+negative control 0.074 — indistinguishable. The `best-of-all-pairs` statistic
+maximises over ~1 M comparisons per pair; even independent same-show recordings
+reach a ~0.07 chance floor at this comparison count with fanout=5, dt_bins=100.
+Full-band (no restriction) produced identical scores to the 6–8 kHz band because
+the STFT local-max filter ("above mean+std") selects HF-noise peaks by default
+even when no band clip is applied — the band restriction is redundant at this
+parameterisation.
+
+**Approach 3 — windowed landmark fingerprinting, 200–4000 Hz crowd/clap band**
+(`calibrate_fingerprint_localize.py` + `calibrate_fingerprint_baseline.py`,
+2026-06-25). Motivated by the observation that hand-clap transients concentrate
+more energy in 200–4000 Hz than in 6–8 kHz tape-hiss. Result on 1991-11-05:
+the 3 track-specific claimed pairs scored 0.194–0.244, vs the one negative control
+0.103 — appeared to show signal. Cross-validation on two additional dates:
+
+| Pair | Date | Type | Dice |
+|------|------|------|------|
+| LB-07888/LB-08413 | 2001-10-30 | same-source (confirmed) | 0.249 |
+| LB-08413/LB-13258 | 2001-10-30 | different-source, same show | **0.245** |
+| LB-07888/LB-13258 | 2001-10-30 | different-source, same show | **0.235** |
+| LB-07214/LB-10916 | 1989-06-04 | same-source (confirmed) | 0.675 |
+| LB-02470/LB-07214 | 1989-06-04 | different-source, same show | **0.301** |
+| LB-02470/LB-10916 | 1989-06-04 | different-source, same show | **0.261** |
+| LB-02470/LB-02478 | 1989-06-04 | different-source, same show | **0.248** |
+| LB-02478/LB-06445 | 1989-06-04 | contradicted claim | 0.076 |
+| LB-06445/LB-10916 | 1989-06-04 | contradicted claim | 0.054 |
+
+Different-source same-show pairs score 0.235–0.301 — entirely overlapping the
+1991-11-05 "claimed-positive" range (0.194–0.244). The 1991-11-05 negative
+control (0.103) was an anomalously low same-show different-source score; the
+true ceiling for this band is at least 0.30. The 200–4000 Hz band fingerprints
+shared musical content (same songs, same concert) as strongly as any localized
+clapping-wav match — the signal is indistinguishable. No threshold exists that
+would separate the 1991-11-05 claimed positives from confirmed-distinct same-show
+pairs on other dates.
+
+**Conclusion.** The limiting factor is signal specificity, not the search mechanism
+or lag search width. Shared-concert musical content dominates the 0–4 kHz band;
+the 6–8 kHz tape-hiss band eliminates that inflation but leaves only a ~0.07 chance
+floor at this window size and fanout. A short localized transient (a few seconds of
+shared clapping) cannot be reliably separated from the background same-show musical
+correlation at 20 s window granularity without a substantially different approach
+(e.g. onset-aligned sub-second event matching, or explicit acoustic fingerprinting
+of percussive transients rather than spectral-peak landmark hashing). TODO-185
+cancelled; approach deferred pending a different technical angle if it becomes
+a priority again.
+
+---
+
+## Task 9 results — piecewise alignment for staircase/staircase pairs (2026-06-25)
+
+**Motivation (TODO-144).** BASELINE.md Task 5 found no usable gap between the
+same-source and different-source-same-show pairs on 2001-10-30 using 5 s short-
+window secondary_corr_pair recalibration, concluding "the limiting factor is signal
+content, not the alignment/search mechanism." TODO-144 proposed a different fix:
+use the staircase lag-curve to LOCATE splice points (via new `align.locate_splice_points`),
+split each recording at those points, and run `secondary_corr_pair` independently
+per segment with its own local lag search — so each piecewise segment has a
+well-defined lag, potentially recovering correlation that the whole-recording diverging
+lag curve averaged away.
+
+**Pilot** (`calibrate_piecewise.py`, 2001-10-30 Green Bay WI, 2026-06-25).
+Same pairs as Task 5: LB-07888/LB-08413 (same-source, staircase-flagged) and
+LB-08413/LB-13258 (different-source same-show).
+
+| Pair | Type | Splices detected | Segments scored | Per-seg p50 | Whole-rec baseline |
+|------|------|-----------------|-----------------|-------------|-------------------|
+| LB-07888/LB-08413 | same-source | 11+11=22 (union) | 20/23 | 0.004 | 0.0040 |
+| LB-08413/LB-13258 | diff-source, same show | 1+1=2 (union) | 3/3 | 0.005 | 0.0055 |
+
+The different-source pair scores *higher* per-segment than the same-source pair,
+with no overlap between distributions. Piecewise alignment produced zero improvement
+for the same-source pair vs the whole-recording baseline (0.004 in both cases).
+
+**Additional finding — staircase detection over-triggers.** The same-source pair's
+lag curve found 11 steps on each side of the alignment (step_flag_sec=0.5 s,
+max_step=23.4 s). The 23.4 s step is a real CDR re-tracking splice; the other 10
+are lag-estimation noise (the high residual in this pair's lag curve). Taking the
+union of both sides' detected splice points created 22 boundaries and 23 micro-
+segments, several as short as 14–54 s (too short for secondary_corr_pair, skipped).
+The misaligned noise-triggered segment boundaries actually hurt the pilot by
+mismatching content across segments that share a real lag.
+
+**Conclusion.** Same conclusion as Task 5: the limiting factor is signal content
+(genuine near-zero residual_corr throughout the recording, regardless of alignment
+granularity), not the lag-search mechanism. `align.locate_splice_points` is retained
+in the codebase with unit tests (test_splice_points.py, 5 passing) for potential
+future use, but is not wired into `cli.py`. TODO-144 cancelled.
+
+---
+
+## Task 10 results — low-band (250–2000 Hz) envelope fallback (2026-06-25)
+
+**Motivation (TODO-140).** BASELINE.md Task 4 established that for 1989-06-04 (Dublin)
+and 1990-01-12 (New Haven), several curator-claimed same-source pairs have near-zero
+primary `residual_corr` even after the Task 4 predicted-lag fix — the HF fine-structure
+is absent. CC_TAPEMATCH_FIXES.md step 5 proposed a 250–2000 Hz energy-envelope
+fallback: broad-band dynamics (audience crescendos, song starts, applause patterns)
+might still be correlated even when tape-hiss HF is dead.
+
+**Implementation.** `match.lowband_envelope_corr()`: zero-phase bandpass filter
+(scipy.signal.butter order-6 + sosfiltfilt, no waveform resampling), log-RMS envelope
+via `_envelope()`, cross-correlation with ±90 s offset-shift lag search. Unit tests in
+`tests/test_lowband_corr.py` (4 passing), calibration script `calibrate_lowband.py`.
+
+**Pilot results** (1989-06-04 Dublin + 1990-01-12 New Haven, 2026-06-25):
+
+| Pair | Date | Kind | corr |
+|------|------|------|------|
+| LB-07214/LB-10916 | 1989-06-04 | same-source positive | +0.938 |
+| LB-02470/LB-02478 | 1989-06-04 | confirmed distinct (no claim) | **+0.357** |
+| LB-02470/LB-06445 | 1989-06-04 | missed/claimed-same | +0.201 |
+| LB-02478/LB-14054 | 1989-06-04 | missed/claimed-same | +0.199 |
+| LB-01776/LB-02614 | 1990-01-12 | missed/claimed-same | +0.196 |
+| LB-08421/LB-01776 | 1990-01-12 | confirmed distinct, same show | +0.127 |
+| LB-01776/LB-06613 | 1990-01-12 | missed/claimed-same | +0.070 |
+| LB-02470/LB-14054 | 1989-06-04 | missed/claimed-same | −0.114 |
+| LB-06445/LB-14054 | 1989-06-04 | missed/claimed-same | −0.126 |
+| LB-07214/LB-14054 | 1989-06-04 | missed/claimed-same | −0.128 |
+
+**Conclusion.** The confirmed-distinct no-claim pair (LB-02470/LB-02478) scores +0.357 —
+higher than every "missed" claimed-same pair (max +0.201). No threshold exists that
+catches the missed pairs without also hitting that confirmed-distinct pair. Shared
+musical dynamics in the 250–2000 Hz band (same songs, same show) inflate same-show
+cross-correlation regardless of whether the recordings are the same source — the same
+fundamental problem that eliminated the 200–4kHz fingerprinting approach for TODO-185.
+The negative correlations (−0.11 to −0.13) for the LB-14054 pairs suggest those
+recordings may genuinely be different sources despite the curator claims, or may have
+polarity inversion; either way, there is no recoverable signal.
+`match.lowband_envelope_corr` is retained in the codebase with unit tests for potential
+future use but is not wired into `cli.py`. TODO-140 cancelled.

@@ -41,7 +41,7 @@ export const useSpectrogramStore = create<SpectrogramStore>((set, get) => ({
   filter:         '',
   width:          '1500',
   height:         '400',
-  dynRange:       '-120',
+  dynRange:       '120',
   forceRerender:  false,
   zoom:           100,
   pendingFolders: [],

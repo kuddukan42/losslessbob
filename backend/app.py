@@ -108,7 +108,7 @@ _spectro_state = {
     "current":   "",
     "done":      0,
     "total":     0,
-    "errors":    [],
+    "errors":    0,
     "skipped":   0,
     "stop_requested": False,
 }
@@ -6994,7 +6994,7 @@ def _do_spectro_batch(folders: list[str], opts: dict) -> None:
                 all_files.append((f, png))
 
     _set(status="running", done=0, total=len(all_files),
-         errors=[], skipped=0, stop_requested=False, current="")
+         errors=0, skipped=0, stop_requested=False, current="")
 
     if not all_files:
         _set(status="done", current="", done=0)
@@ -7027,22 +7027,26 @@ def _do_spectro_batch(folders: list[str], opts: dict) -> None:
             )
         except SoxNotFoundError as e:
             errors.append({"file": audio_path.name, "error": str(e)})
-            _set(status="error", errors=list(errors), done=done,
+            _log.error("Spectrogram SoxNotFoundError: %s", e)
+            _set(status="error", errors=len(errors), done=done,
                  current="SoX not found — generation stopped.")
             return
         except ConversionError as e:
             errors.append({"file": audio_path.name, "error": str(e)})
+            _log.error("Spectrogram ConversionError on %s: %s", audio_path.name, e)
         except SpectrogenError as e:
             errors.append({"file": audio_path.name, "error": str(e)})
+            _log.error("Spectrogram SpectrogenError on %s: %s", audio_path.name, e)
         except Exception as e:
             errors.append({"file": audio_path.name,
                            "error": f"Unexpected: {e}"})
+            _log.error("Spectrogram unexpected error on %s: %s", audio_path.name, e)
 
         done += 1
-        _set(done=done, errors=list(errors), skipped=skipped)
+        _set(done=done, errors=len(errors), skipped=skipped)
 
     _set(status="done", current="", done=done,
-         errors=list(errors), skipped=skipped)
+         errors=len(errors), skipped=skipped)
 
 
 def _do_fp_build(collection_rows: list[dict], force: bool = False) -> None:

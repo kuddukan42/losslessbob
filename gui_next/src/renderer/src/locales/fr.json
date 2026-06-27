@@ -123,9 +123,8 @@
     "colResult": "Résultat",
     "noActivity": "Pas encore d'activité",
     "tips": "Conseils",
-    "tip1": "Appuyez sur [⌘K] dans n'importe quel écran pour passer directement à un LB# ou à un dossier.",
-    "tip2": "Gérer les données de base ? Activez le mode curateur dans les paramètres pour faire apparaître l'éditeur de base de données et le scraper.",
-    "tip3": "Établir une combinaison de filtres dans la recherche pour en faire une vue sauvegardée en un seul clic.",
+    "tip1": "Gérer les données de base ? Activez le mode curateur dans les paramètres pour faire apparaître l'éditeur de base de données et le scraper.",
+    "tip2": "Établir une combinaison de filtres dans la recherche pour en faire une vue sauvegardée en un seul clic.",
     "toast": {
       "error": "Erreur : {{error}}",
       "newRelease": "Nouvelle version disponible : {{filename}}",

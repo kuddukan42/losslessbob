@@ -1,6 +1,51 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-211: Diacritic issue — 45 LB entries across 9 cities with dropped diacritics (ü/ö/é) in location
+Status: Fixed
+File(s): data/site/detail/LB-*.html (45 files), data/losslessbob.db (entries table)
+Reported: 2026-06-18
+Fixed: 2026-06-26
+Root cause: The LB website admin consistently omits diacritics when manually entering location
+  data into HTML — e.g. "Dsseldorf" for Düsseldorf, "Malm" for Malmö. This is a data entry
+  error, not an encoding bug (LB site is valid UTF-8; characters are simply absent). Scraper
+  faithfully captured the typos. Effects: (a) location displayed wrong in app; (b) folder-rename
+  proposals use wrong name; (c) FTS searches for the correct name (e.g. "Saarbrücken") miss
+  these entries because unicode61 tokenises "Saarbrücken"→"saarbr"+"ucken" but the corrupted
+  "Saarbrcken"→"saarbrcken" (one token), so no match. Venue sub-location strings were split on
+  comma by the dropped ö — e.g. "Malm, Sweden, Slottsm, llan" for "Malmö, Sweden, Slottsmöllan".
+Cities and entries affected:
+  Saarbrücken (5): LB12124, 16153, 16154, 16155, 16167
+  Düsseldorf (14): LB10133, 11108, 11143, 11256, 11303, 11365, 11555, 12178, 12186, 13307,
+    15100, 16115, 16182, 16183
+  Nürnberg (4): LB13434, 16145, 16147, 16170
+  Tübingen (2): LB11985, 12043
+  Göteborg (3): LB11521, 12566, 13053
+  Malmö (8): LB04999, 05212, 07579, 07751, 09510, 09715, 12930, 13273
+  Montréal (2): LB14964, 15249
+  Zürich (6): LB09198, 10088, 14046, 14047, 14452, 14453
+  Jönköping (1): LB10977
+Fix: Updated entries.location in DB and patched corresponding cached HTML files for all 45
+  entries. Complex Malmö cases: LB04999 "Slottsmöllan", LB07579 "Malmö Arena", LB12930
+  "Mölleplatsen, Malmö". "Malmo" (phonetic anglicisation) entries left unchanged as they are
+  a different data-entry choice, not a truncation. If the LB admin fixes the live site, a fresh
+  scrape will update the DB from the server's UTF-8 response.
+
+BUG-222: UI tips show Mac-only "⌘K" shortcut that doesn't work and has no Mac build anyway
+Status: Fixed
+File(s): gui_next/src/renderer/src/App.tsx:169, gui_next/src/renderer/src/components/AppShell.tsx:648,
+         gui_next/src/renderer/src/screens/ScreenHome.tsx:80
+Reported: 2026-06-22
+Fixed: 2026-06-26
+Root cause: Three places hint a "⌘K" quick-jump shortcut, but no keydown listener for 'k'
+  exists anywhere in the GUI — the shortcut was never implemented. ⌘ is also the Mac Command
+  symbol; this project has no Mac build.
+Fix: Removed all ⌘K references. App.tsx dev-card Kbd combo and "Global search" label
+  removed; AppShell.tsx search-button kbd-pill span removed; ScreenHome.tsx TIPS array
+  dropped the cmd/⌘K entry (now 2 tips instead of 3); render logic updated to match.
+  All 6 locale files: tip1 (⌘K) deleted, tip2→tip1, tip3→tip2. Unused Kbd import
+  removed from App.tsx.
+
 BUG-217: Incremental crawler does not pick up new LB website pages when posted
 Status: Fixed
 File(s): backend/site_crawler.py, backend/db.py

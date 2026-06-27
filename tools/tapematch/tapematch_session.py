@@ -458,18 +458,61 @@ def copy_folders(folders: dict[int, Path]) -> None:
 
 # ── tapematch runner ───────────────────────────────────────────────────────────
 
+def _tmp_dir_in_use(d: Path, recent_sec: float = 600.0) -> bool:
+    """Check whether `d` looks actively in use by any process, from any session.
+
+    Two independent signals, either of which counts as "in use": a live
+    process holds an open file descriptor somewhere inside `d` (memmaps keep
+    a duped fd open even after the opening Python file object is closed), or
+    a file inside `d` was modified within `recent_sec`. The mtime check
+    covers the brief window between a subprocess creating `d` and opening its
+    first memmap, where the fd scan alone could miss it.
+    """
+    try:
+        newest = max((p.stat().st_mtime for p in d.rglob("*") if p.is_file()), default=0.0)
+        if newest and (time.time() - newest) < recent_sec:
+            return True
+    except OSError:
+        pass
+    d_resolved = str(d.resolve())
+    proc_root = Path("/proc")
+    if not proc_root.exists():
+        return False
+    for pid_dir in proc_root.iterdir():
+        if not pid_dir.name.isdigit():
+            continue
+        try:
+            for fd in (pid_dir / "fd").iterdir():
+                try:
+                    if str(fd.resolve()).startswith(d_resolved):
+                        return True
+                except OSError:
+                    continue
+        except (FileNotFoundError, PermissionError, NotADirectoryError):
+            continue
+    return False
+
+
 def _clean_stale_tmp_dirs() -> None:
     """Delete any tapematch_* dirs left behind by a previously OOM-killed subprocess.
 
     cli.py registers atexit cleanup, but SIGKILL bypasses atexit.  Calling this
     before each new subprocess ensures orphaned memmaps don't accumulate on disk.
+    Every tapematch.cli subprocess shares this same TMP_BASE regardless of which
+    script launched it, so a dir is skipped if `_tmp_dir_in_use` finds it's still
+    live -- otherwise a concurrently-running subprocess (this session or another)
+    gets its in-flight memmaps deleted out from under it.
     """
     if not TMP_BASE.exists():
         return
     for d in TMP_BASE.glob("tapematch_*"):
-        if d.is_dir():
-            shutil.rmtree(d, ignore_errors=True)
-            print(f"  [cleanup] removed stale tmp dir: {d.name}")
+        if not d.is_dir():
+            continue
+        if _tmp_dir_in_use(d):
+            print(f"  [cleanup] skipping in-use tmp dir: {d.name}")
+            continue
+        shutil.rmtree(d, ignore_errors=True)
+        print(f"  [cleanup] removed stale tmp dir: {d.name}")
 
 
 def run_tapematch(json_out: Path, root_dir: Path = EXAMPLES_DIR,

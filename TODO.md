@@ -1,34 +1,95 @@
-TODO-185: tapematch — segment-level overlap rescue (clapping-wav / partial-source matching)
+
+
+TODO-187: Concert ranker / project — document LB rating philosophy and artifact taxonomy
+Priority: Low
+Status: Open
+Added: 2026-06-25
+Description: The LB site's two "what the information means" pages define the authoritative
+  semantics behind the rating scale and the controlled vocabulary used in recording descriptions.
+  This knowledge should be captured in a project document so it informs future feature
+  development, calibration decisions, and new contributor onboarding — rather than living only
+  in the source HTML of a page with a self-signed certificate and cp1252 encoding.
+
+  Sources:
+    - http://www.losslessbob.wonderingwhattochoose.com/LosslessBob-what.html
+    - http://www.losslessbob.wonderingwhattochoose.com/LosslessBob-what-images.html
+
+  Content to document:
+    1. Rating scale semantics (from what.html):
+         A+ / 5 = outstanding — casual Bob fans can enjoy
+         A / A- / 4 = excellent — casual fans can enjoy
+         B+/B/B- / 3 = very good — "a little more into Bob" needed
+         C+/C/C- / 2 = average/good — serious devotees only
+         D+/D/D- / 1 = poor — completionists only; "probably listened to once"
+         F / 0 = very poor — completionists only
+       These map exactly to RATING_RANK in `concert_ranker/calibrate.py:27`.
+    2. Comparison methodology (from what.html): 15–30s sample from a quiet vocal passage,
+       levels matched, bias toward warmer/less harsh sound; binaural > cardioid; wider capture
+       > narrower. Most remasters that fiddle with tone add harshness; clipping / midrange boost
+       = bad; vocal peaks clipping = especially penalised.
+    3. Rating subjectivity caveats: can drift ±1 letter tier across sessions; more likely to
+       move down by one tier than up; up moves ≤ 1 sublevel. Not all recordings have letter
+       ratings (older ones may only have numeric 0–5).
+    4. Audience annoyance policy: brief/resolved talking/singing not cited; noted when
+       persistent enough to be annoying.
+    5. Full artifact taxonomy (from what-images page) — all 17 named artifact types with their
+       spectral/waveform signatures and quality implications (DAT, cassette, mini-disc "lego
+       parapets", floating parapets, 32k DAT, digital clipping, limiting, brickwalling,
+       compression, digi-pops, discontinuity pop, square wav static, digital drops, between-track
+       gap, mic hit, TV band, high-end streaking).
+    6. EAC match note: "exact eac match" or "close eac match" in description = recording is a
+       CDR rip of a prior version, offers nothing new. The ranker could use txt_eac_match as a
+       strong negative feature (see [[TODO-188]]).
+
+  The document should also include the 22 reference image filenames and what each depicts,
+  since the images add visual precision the text alone doesn't convey:
+    lb_dat_spectral_view.JPG — full-spectrum DAT benchmark (reference "good" state)
+    lb_cassette.JPG — dense HF noise above 18k, fuzzy grain vs. clean DAT
+    lb_parapet.JPG — continuous alternating step ceiling at 15-17k (mini-disc staircase)
+    lb_floating_parapet.JPG — scattered rectangular islands at irregular intervals (MP3/streaming)
+    lb_dat_at_32k.JPG — perfectly clean wall at 16kHz, completely black above (most distinctive)
+    lb_clipping.JPG — flat-topped peaks at 0dB
+    lb_limiting.JPG, lb_limiting2.JPG — rounded/plateaued peaks, two asymmetry examples
+    lb_brickwall.JPG/.2/.3 — diagonal/curved lines filling the VALLEYS BETWEEN peaks
+    lb_heavily_compressed.JPG — solid rectangle waveform at full-track zoom (no dynamics)
+    lb_heavily_compressed_before.JPG — natural dynamic range on same track pre-compression
+    lb_digipops.JPG — isolated narrow high-amplitude spikes above quiet music
+    lb_discontinuity.JPG — abrupt step-change in signal level (not silence, a DC jump)
+    lb_square_wav_static.JPG — repeating rectangular/square waveform shapes (DAT error)
+    lb_drops.JPG — multiple multi-second silence segments through a track
+    lb_gap.JPG — abrupt step in noise floor level at a precise timestamp (sector boundary)
+    lb_mic_hit.JPG — single-channel only spike (other channel flat); distinguishes from digipop
+    lb_tv_band.JPG — thin horizontal stripe at 15-16k pulsing in brightness over time
+    lb_high_end_streaking.JPG — chaotic vertical noise above 15k during loud passages
+    lb_high_end_streaking_done_right.JPG — same track, clean professional transfer (no streaks)
+  Images are from http://www.losslessbob.wonderingwhattochoose.com/lbjpg/ and were downloaded
+  2026-06-25 (the site uses self-signed HTTPS and cp1252 encoding; curl -sk required).
+  Suggested location: `concert_ranker/LB_KNOWLEDGE.md` (new file). Keep it factual/reference,
+  not opinionated — this is the curator's own words, not our interpretation.
+  Relates to: [[TODO-188]] (text features use this vocabulary), [[TODO-189]], [[TODO-190]], [[TODO-191]].
+
+
+TODO-186: Library UI — quality grade + curated-pick badges, saved curated-list filter views
 Priority: Medium
 Status: Open
 Added: 2026-06-24
-Description: The 1991-11-05 polarity dry-run (TODO-184 step 3) showed the dominant remaining
-  driver of false "distinct" verdicts on the contradicted-claim dates is NOT channel inversion
-  but PARTIAL OVERLAP: curators assert same-source from a SHORT shared region ("same clapping
-  wavs at end of d1t1/d1t8/d1t10") inside patchwork/composite recordings (e.g. LB-09174 = a
-  cassette+CD splice, performance trimmed to 4934s vs ~6100s for its siblings). The primary
-  residual matrix takes the MEDIAN residual_corr across whole-recording anchors, so a genuine
-  match confined to a few track-boundary segments is averaged out to ~0.003 and the pair is
-  called distinct. Whole-recording metrics (incl. the TODO-184 polarity cross-terms) cannot
-  recover this by construction.
-  Goal: detect and surface localized same-source overlap so these pairs read as "same source,
-  partial" rather than "distinct".
-  Notes / direction (not yet decided):
-    - secondary_corr_pair already computes a windowed-coverage FRACTION (fraction of 60s windows
-      above a per-window threshold) + a quiet-segment hiss pass; cluster() can link on
-      W[i,j] >= w_threshold. So some machinery exists — first step is to audit why the
-      windowed/hiss path did NOT link these known-partial pairs (threshold too high? composite's
-      matching region too short relative to the window grid? speed offset defeating per-window
-      lag?). Calibrate against the curator-confirmed partial pairs as positives.
-    - Consider an explicit "best contiguous run" statistic (longest stretch of consecutive
-      high-corr windows / hiss segments) instead of, or alongside, the global fraction — a
-      30-60s genuine overlap is a strong same-chain signal even at low whole-recording coverage.
-    - Reuse the TODO-184 side memmaps: a partial overlap can ALSO be polarity-inverted, so the
-      segment search should run on the best polarity pairing per window.
-    - Report as evidence for manual ratify (like lineage), not an automatic whole-source merge —
-      a partial match means shared lineage of a SECTION, which is exactly the patchwork story.
-  Depends on / relates to: [[TODO-184]] (polarity rescue: side memmaps, rescue plumbing,
-  keep-if-improves safety pattern).
+Description: Surface the two new "best of" signals on the Library screen as at-a-glance chips
+  rather than leaving them buried in detail views:
+    - Quality grade chip: render concert_ranker's `quality_recording_scores.final_score` /
+      A+..F grade (TODO-183) on each recording row/card — likely the recording lens row and
+      DetailPanel.tsx, following the existing "Unconfirmed" pill pattern used for
+      fam_needs_review (ScreenLibrary.tsx).
+    - Curated-pick chip(s): for any LB present in `curated_list_entries`, show a small badge
+      naming the curator(s) (e.g. "carbonbit's pick", "10haaf's pick") — a date/recording can
+      carry more than one.
+    - Saved filter views: add "carbonbit's picks" / "10haaf's picks" (and a combined "any
+      curated pick") as selectable filters alongside the existing activeDecade/activeStatus
+      filter sets (ScreenLibrary.tsx:336-340), backed by the still-open GET /api/curated_lists
+      route from TODO-181.
+  Depends on / relates to: [[TODO-181]] (curated_lists DB + import done; GET routes + filter
+  wiring explicitly deferred from that pass — this TODO is that deferred UI work plus the new
+  badge requirement), [[TODO-183]] (grade field this surfaces).
+
 
 TODO-184: tapematch — rescue same-source false-negatives (channel-polarity inversion + partial overlap)
 Priority: Medium
@@ -123,16 +184,58 @@ Description: New `concert_ranker/` package (repo root) that scores the audio qua
   fairness is already in the MAD-z ranking. 14 tests pass.
   ABSOLUTE SCORE (done 2026-06-24): concert_ranker/quality_score.py + config.QUALITY_MODEL — ridge
   model gives every recording a 0-100 score + A+..F grade (prepended to verdicts; stored as
-  quality_recording_scores.abs_score/abs_grade). Held-out CV correlation to LB rating: Spearman 0.65,
-  93% within one letter tier. Middle filled via scan_id 7 (C tier 7->132).
+  quality_recording_scores.abs_score/abs_grade). Middle filled via scan_id 7 (C tier 7->132).
+  AUD MODEL REFIT (done 2026-06-25) on scan_id 8 = 2798 rated AUD (the full by-decade overnight
+  scan, 6x the prior 466). 5-fold CV (3 seeds) to LB rating: Spearman 0.659, 75.6% within one tier.
+  Predictors forward-selected from a 17-metric pool (alpha=0.3): hiss_floor_db, bass_ratio_db,
+  mud_ratio_db, onset_clarity, directness, crowd_snr_db, harsh_ratio_db, presence_ratio_db — every
+  weight sign matches its univariate direction (no confound). The old HF metrics (hf_ceiling/
+  centroid/air/crest) dropped as collinear. The previous 466-fit "0.65" was small-sample-optimistic:
+  it scored only 0.561 / 46%-within-1 on the full set, mostly from a mis-centered intercept (fit on
+  a middle-focused sample vs the collection's true mean rank ~9.8). New model verified via the live
+  predict_rank path: Spearman 0.661 / 75.9% in-sample; 16 tests pass.
+  SBD QUALITY MODEL (done 2026-06-24, refit 2026-06-25): config.QUALITY_MODEL_SBD — dedicated ridge
+  model for SBD/FM (predictors hiss_floor_db, hf_ceiling_hz, crest_factor_db, air_ratio_db,
+  harsh_ratio_db, directness; AUD's mud_ratio_db/presence_ratio_db/spectral_centroid_hz/crowd_snr_db
+  don't separate SBD tiers). Initial fit (2026-06-24) on 223 recordings (scans 3-7): Spearman 0.53,
+  69% within one tier. Refit (2026-06-25, scan_id=9): 506 SBD+FM recordings all scanned with the
+  current detector. dropout_count tested: rho=-0.077 (p=0.082), weight ~0 — not predictive with
+  consistent detector values (old rho=0.375 was a scan-version artifact). Excluded. Same 6-predictor
+  model, Spearman 0.562, 80.2% within one tier (5-fold CV, alpha=0.5). AUD model on same set:
+  Spearman 0.429, 73.5% within one tier. 24 tests pass.
   REMAINING:
-    - QUALITY_MODEL is AUD-fit, applied to all classes — fit/validate a separate SBD model; refit when
-      scan 6 is re-scanned with the current dropout detector for a fully clean combined set.
+    - RE-SCAN (AUD): re-scan the AUD corpus to get valid hum_excess_db values (scan_id=8 was
+      computed with the broken Δf≈5.4 Hz detector). Then check hum_excess_db rho; if negative,
+      add to QUALITY_MODEL via fit_aud_quality_model.py.
     - SBD-per-decade bands (deferred — sparse, esp. 2010s n=7); per-decade DISQUALIFIERS (still global).
-    - dropout_count FIXED (2026-06-24): reworked to locally-normalized roughness; rho vs rating
-      +0.43 -> -0.04, counts sane. Threshold now provisional 150 — REFIT from a fresh full scan
-      (scan_id 6's stored dropout values are from the old detector).
-    - hum_excess_db comb detector fires on the bigger set with a mild residual +0.22 lean — investigate.
+    - SBD-per-decade bands (deferred — sparse, esp. 2010s n=7); per-decade DISQUALIFIERS (still global).
+    - dropout_count RETIRED AS MODEL PREDICTOR 2026-06-25. Reworked 2026-06-25 to detect
+      3 defect types modelled on DFF (silence gaps / stuck samples / digipops). However the
+      DFF pipeline (dff_vert_occ, 89% corpus coverage) supersedes it for model purposes:
+      DFF drop/horz had near-zero rho; DFF vert_occ already captures the digipop signal with
+      ground-truth data from the reference tool. No validation re-scan needed. Code kept
+      in features.py — useful for per-recording defect display in the UI; not a model input.
+    - POP/CLICK DETECTOR: the digipop arm of dropout_count covers single-sample anomalies
+      (width-2 first-diff spike). A broader multi-sample click detector (2–20 samples, ~0.1–1ms)
+      is NOT worth building for this corpus — DAT/cassette transfers are already well-covered by
+      DFF vert_occ; vinyl clicks are rare here. Deferred/low-priority.
+    - DFF ON LINUX (deferred, low priority): DFF is a Windows-only tool (sffog.com, 2009).
+      New recordings added to the collection won't have pre-existing DFF HTML reports; for those
+      LBs the model falls back to the training median (~2 verticals = A-/B+ level). Investigate
+      whether DFF runs under Wine, or whether a comparable open-source tool exists, only if the
+      fraction of unanalysed new recordings becomes large enough to matter.
+    - DFF PIPELINE COMPLETE 2026-06-25: parse_dff_reports.py (12,523 LBs in dff_reports);
+      dff_vert_occ = log1p(vert_occ) added to QUALITY_MODEL via forward selection — 7th
+      predictor, CV rho 0.659→0.664 (+0.005), weight -0.1274; injected at rerank time by
+      _inject_dff() in cli.py (89% scan_id=8 coverage; falls back to model median). Scan_id=8
+      reranked. fitting script: tools/fit_aud_quality_model.py.
+    - hum_excess_db FIXED 2026-06-25: root cause was PSD frequency resolution (nperseg=4096,
+      Δf≈5.4 Hz) — G1 bass (49 Hz) and 50 Hz mains shared the same bin; 100 Hz and 250 Hz
+      harmonic windows were EMPTY (no bin within ±2 Hz), making detection unreliable. Fixed
+      with dedicated high-res Welch (nperseg=sr×2, Δf=0.5 Hz) and tight ±0.5 Hz peak window.
+      Synthetic tests pass. NEEDS re-scan to confirm rho improvement — scan_id=8 values were
+      computed with the broken detector. Once re-scanned, evaluate as QUALITY_MODEL candidate
+      (expected negative rho if genuine hum tracks recording chain quality).
     - lossy_flag never fires — NOT calibratable without labeled known-lossy files; needs a handful of
       known-lossy recordings to tune the 25 dB brick-wall. Parked/inert.
     - True 5–9 kHz sibilance + dynamic_range_dr from the NativeProbe (not yet produced by the scan).
@@ -548,40 +651,6 @@ friction, matching the shntool experience.
   Source: https://xiph.org/flac/download.html  (Windows builds — grab flac.exe only)
   Winget fallback (for TODO-147 hint): winget install xiph.FLAC
 
-TODO-140: tapematch — low-band/time-warp fallback for speed-offset misses
-Priority: Low
-Status: Open
-Added: 2026-06-13
-Description: Follow-up from TODO-139 Task 4 (CC_TAPEMATCH_FIXES.md step 5). On
-1989-06-04 and 1990-01-12, predicted-lag mode activates correctly but doesn't
-recover any of the 8/9 baseline misses — windowed/hiss correlation is ~100x below
-threshold at every lag for these pairs, not just near zero, so the limiting factor
-is signal content, not search range. Spec's fallback: low-band (250-2000 Hz)
-envelope comparison with time-warped *features* (never resample waveforms — see
-WORKFLOW.md prohibition). Investigate whether envelope-domain comparison surfaces
-correlation these HF-residual/hiss checks miss for these specific pairs. See
-tools/tapematch/BASELINE.md "Task 4 results" for full diagnostics (windowed_median/
-hiss_median/fp_score ranges per pair).
-
-TODO-144: tapematch — piecewise alignment for staircase/staircase pairs
-Priority: Low
-Status: Open
-Added: 2026-06-13
-Description: Follow-up from TODO-139 Task 5 (CC_TAPEMATCH_FIXES.md step 4,
-"implement only if step 3 calibration fails"). Calibration of a 5s/2s
-short-window residual_corr pass on 2001-10-30 found no usable gap: the
-same-source pair (LB-07888/LB-08413) has median residual_corr 0.0118 vs 0.0153
-for the different-source-same-show pair (LB-08413/LB-13258) — the
-different-source pair scores *higher*, and both distributions' frac>=0.10 is
-~0.000-0.002. No fixed threshold at any window size tried (60s/15s/5s) separates
-these. Spec's alternative: piecewise alignment — use the staircase lag curve to
-locate splice/edit points, split each recording into contiguous segments between
-edits, and align+correlate each segment independently rather than via a single
-global lag search. Investigate whether per-segment correlation recovers signal
-that whole-recording windowed/hiss correlation misses for staircase/staircase
-pairs (2001-10-30: 6 misses, 2001-10-07/1996-07-21 also staircase-heavy). See
-tools/tapematch/BASELINE.md "Task 5 results" and calibrate_staircase.py for the
-calibration data/tooling.
 
 TODO-136: Post editor form for existing WTRF posts
 Priority: Low

@@ -135,7 +135,7 @@ def normalize_siblings(sibling_raw: dict[int, dict]) -> dict[int, dict]:
 # 4. Fusion: family scores -> track score -> recording score
 # ─────────────────────────────────────────────────────────────────────────────
 FAMILY_METRICS = {
-    "clarity":    ["presence_ratio_db", "directness", "onset_clarity"],
+    "clarity":    ["presence_ratio_db"],  # directness/onset_clarity excluded: backwards vs data
     "crowd":      ["crowd_snr_db", "intrusion_rate", "handling_rate"],
     "tonal":      ["mud_ratio_db", "harsh_ratio_db", "sibilance_ratio_db"],
     "distortion": ["clip_fraction", "crest_factor_db", "hiss_floor_db", "hum_excess_db"],
@@ -227,7 +227,6 @@ def _join(items):
 
 _PRETTY = {
     "crowd_snr_db": "crowd separation", "presence_ratio_db": "vocal presence",
-    "directness": "directness", "onset_clarity": "transient clarity",
     "mud_ratio_db": "low-mid clarity", "harsh_ratio_db": "smoothness",
     "hiss_floor_db": "noise floor", "hum_excess_db": "freedom from hum",
     "crest_factor_db": "dynamics", "channel_balance_db": "channel balance",

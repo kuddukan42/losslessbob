@@ -37,21 +37,6 @@ Fix: Before queuing, temporarily remove SEED_URLS + start_url from `visited` so 
   to backend/db.py to support the targeted last_modified lookup.
 
 
-BUG-222: UI tips show Mac-only "⌘K" shortcut that doesn't work and has no Mac build anyway
-Status: Open
-File(s): gui_next/src/renderer/src/App.tsx:169, gui_next/src/renderer/src/components/AppShell.tsx:648,
-         gui_next/src/renderer/src/screens/ScreenHome.tsx:80
-Reported: 2026-06-22
-Root cause: Three places hint a "⌘K" quick-jump shortcut ("Press ⌘K on any screen to jump
-  straight to an LB# or folder."), but there is no keydown listener for the 'k' key anywhere
-  in the GUI source — grepping for `key === 'k'`/`'K'` across gui_next/src/renderer/src
-  returns zero matches. The shortcut was never implemented. Separately, ⌘ is the Mac Command
-  symbol; this project has no Mac build, so even if implemented, the hint should show the
-  Windows/Linux modifier (Ctrl) instead.
-Fix: TBD — either implement the quick-jump shortcut (Ctrl+K) and wire the App.tsx/AppShell.tsx/
-  ScreenHome.tsx hints to it, or remove the hints if quick-jump isn't planned. Also swap the
-  ⌘ symbol for "Ctrl" in the hint text since there's no Mac version of the app.
-
 BUG-221: "Open LB page" link doesn't work in some locations — inconsistent URL construction
 Status: Open
 File(s): gui_next/src/renderer/src/components/library/DetailPanel.tsx:659-661,
@@ -153,13 +138,6 @@ Root cause: _sync_one_date filtered out any TapeMatch family with only 1 member 
 Fix: Extract singletons after the >= 2 filter; sync them into recording_families and
   tapematch_family_meta with label='Solo', by='ai'. Frontend already handles single-member
   families correctly — they now render as "└ Solo LB-XXXXX" at family level.
-
-BUG-211: Diacritic issue — LB16155 not matched / logged incorrectly
-Status: Open
-File(s): TBD
-Reported: 2026-06-18
-Root cause: TBD — diacritic character in LB16155 causes a match or logging failure (exact symptom not yet investigated).
-Fix: TBD
 
 BUG-210: backend/lossless_bob.db keeps reappearing in repo root (untracked, empty)
 Status: Open

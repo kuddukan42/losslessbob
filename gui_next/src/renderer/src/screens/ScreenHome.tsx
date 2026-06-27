@@ -77,7 +77,6 @@ const JUMP_TILES = [
 ]
 
 const TIPS = [
-  { icon: 'cmd',  text: <>Press <span className="kbd-pill">⌘K</span> on any screen to jump straight to an LB# or folder.</> },
   { icon: 'user', text: <>Maintaining master data? Enable <strong>Curator mode</strong> in Settings to reveal DB&nbsp;Editor and Scraper.</> },
   { icon: 'star', text: <>Star a filter combo in <strong>Search</strong> to make it a one-click saved view.</> },
 ]
@@ -403,7 +402,7 @@ export function ScreenHome(): React.JSX.Element {
                 <div key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
                   <Icon name={tip.icon} size={14} style={{ color: 'var(--lbb-fg3)', marginTop: 2 }} />
                   <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)', lineHeight: 1.5 }}>
-                    {i === 0 ? t('home.tip1') : i === 1 ? t('home.tip2') : t('home.tip3')}
+                    {i === 0 ? t('home.tip1') : t('home.tip2')}
                   </div>
                 </div>
               ))}

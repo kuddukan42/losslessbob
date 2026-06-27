@@ -1,6 +1,139 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-191: Concert ranker — validate and integrate speech_band_snr_db + new waveform detectors
+Priority: Medium
+Status: Done
+Added: 2026-06-25
+Closed: 2026-06-26
+Description: Validated three new metrics (speech_band_snr_db, brickwall_score,
+  single_ch_transient_count) on scan 17 (320 rated AUD recordings, decade-stratified).
+  Forward selection + commentary Δ/σ audit results:
+    - speech_band_snr_db: rho=+0.409, Δ/σ=+0.75 (good commentary signal) but NOT selected
+      by forward selection — subsumed by existing predictors (hf_ceiling_hz, crowd_snr_db,
+      hiss_floor_db). Kept in POLARITY (+1) for family scoring.
+    - brickwall_score: rho=-0.179, Δ/σ=-0.18 (no signal). Kept in POLARITY (-1).
+    - single_ch_transient_count: rho=+0.239, BACKWARDS vs commentary (bad recordings have
+      MORE transients — confounded by performance energy, not just mic stability). Not selected.
+      Kept in POLARITY (-1).
+  QUALITY_MODEL not updated — scan 8 (2798 samples) model remains authoritative; scan 17
+  fit has higher Spearman (0.716 vs 0.664) but worse within-1-tier (51.7% vs 75.9%)
+  due to smaller, stratified sample. tools/fit_aud_quality_model.py updated to include
+  all three in candidate pool for future full-corpus rescans.
+
+TODO-190: Concert ranker — TV band detection in HF native probe
+Priority: Low
+Status: Done
+Added: 2026-06-25
+Closed: 2026-06-25
+Description: Detect CRT monitor scan-frequency artifact (~15.6 kHz) captured during analog
+  transfers. Implementation: _tv_band_flag(p) added to features.py — checks for a narrow
+  elevated band (>6 dB above 13-14k and 16.5-18k neighbors) in the 14.5-16.5 kHz range with
+  high variance across NativeProbe windows (the band pulses in/out; steady tone = 0). tv_band_flag
+  (0/1) added to extract_hf_native() return dict and POLARITY (0 = informational, not a quality
+  penalty). NativeProbe.window_psds_db field added to audio/cache.py so per-window energy variance
+  can be measured without a second decode. 2 tests pass.
+
+TODO-189: Concert ranker — discriminate mini-disc / 32k DAT / cassette in HF detection
+Priority: Medium
+Status: Done
+Added: 2026-06-25
+Closed: 2026-06-25
+Description: Distinguish three acoustically distinct HF source signatures from the existing
+  generic lossy_brickwall flag. Implementation from averaged NativeProbe PSD:
+  _minidisc_parapet_score(p): looks for partial-energy shoulder in 15-17k range (ATRAC alternating
+  cutoff leaves "stepped" shape averaging to a sub-reference shoulder) with nothing above 17k,
+  including an alternation check (|e_15_16 - e_16_17| > 6 dB). Returns 0-1 score.
+  _32k_dat_flag(p): clean Nyquist wall at 16k — >30 dB drop from 12-16k to 16-20k with above
+  region at noise floor. Most reliable detection of the three.
+  _cassette_rolloff_flag(p): gradual slope above 17k (5-25 dB from 15-17k to 17-18k, some signal
+  in 18-20k as tape hiss). All three added to extract_hf_native() return dict and POLARITY (-1).
+  NativeProbe.window_psds_db populated in build_native_probe(). 4 tests pass.
+  Note: minidisc detection is approximate from averaged PSD (the alternating staircase averages
+  to a shoulder shape, not the per-frame step visible in the spectrogram); a per-frame STFT pass
+  would be more precise but requires a separate decode.
+
+TODO-188: Concert ranker — flaw vocabulary text feature extraction from DB description field
+Priority: Medium
+Status: Done
+Added: 2026-06-25
+Closed: 2026-06-25
+Description: Parse 18 artifact/flaw vocabulary keys from entries.description using regex patterns
+  matching the LB site's controlled vocabulary. Implementation: concert_ranker/text_features.py
+  (new file) — extract_text_features(description) → dict with keys txt_clipping, txt_brickwall,
+  txt_limiting, txt_digipop, txt_dropout, txt_gap, txt_mic_hit, txt_hf_streak, txt_compression,
+  txt_minidisc, txt_floating_parapet, txt_32k_dat, txt_talking, txt_singing, txt_remaster,
+  txt_tv_band, txt_cassette, txt_eac_match (all 0.0/1.0). extract_text() wrapper added to
+  features.py. Injected into calibration metrics in calibration.py:build_samples() (DB-side,
+  no rescan needed) and at rerank time via _inject_text() in cli.py (mirrors _inject_dff()).
+  All 18 keys added to config.POLARITY. 9 tests pass.
+  Next step: calibration run to fit weights; expect txt_clipping/txt_digipop/txt_eac_match
+  to carry strong negative weight; txt_talking/txt_singing moderate negative.
+
+TODO-140: tapematch — low-band/time-warp fallback for speed-offset misses
+Priority: Low
+Status: Cancelled
+Added: 2026-06-13
+Closed: 2026-06-25
+Description: Falsify-first pilot (calibrate_lowband.py) tested 250–2000 Hz energy-envelope
+cross-correlation on 1989-06-04 and 1990-01-12 "missed" pairs. Positive control
+(LB-07214/LB-10916) correctly scored +0.938. Confirmed-distinct same-show pair
+(LB-02470/LB-02478, no curator claim) scored +0.357 — above every "missed" claimed-same
+pair (max +0.201). Several missed pairs scored negative (−0.114 to −0.128), suggesting
+genuine source differences or polarity inversion rather than recoverable low-band signal.
+No threshold can separate missed pairs from confirmed-distinct pairs. Root cause: the
+250–2000 Hz band captures shared musical dynamics (same songs, same concert) equally for
+same-source and different-source recordings — the same fundamental problem that eliminated
+200–4kHz fingerprinting for TODO-185. match.lowband_envelope_corr() retained in codebase
+with unit tests (tests/test_lowband_corr.py, 4 passing) for future use; not wired into
+cli.py. Full data table in BASELINE.md Task 10.
+
+TODO-144: tapematch — piecewise alignment for staircase/staircase pairs
+Priority: Low
+Status: Cancelled
+Added: 2026-06-13
+Closed: 2026-06-25
+Description: Falsify-first pilot on 2001-10-30 (calibrate_piecewise.py). Detected
+  splice points via new align.locate_splice_points() (reuses the steps array that
+  interpret_curve computed but discarded). Same-source pair (LB-07888/LB-08413) found
+  11 splice points on each side (union = 22 boundaries, 23 micro-segments); different-
+  source pair (LB-08413/LB-13258) found 1+1. Per-segment windowed_median p50: same-
+  source 0.004, different-source 0.005 — different-source scored higher again, same
+  conclusion as Task 5. No gap at any granularity. Additional finding: staircase
+  detection over-triggers at step_flag_sec=0.5s (10 of 11 detected steps are lag-
+  estimation noise; only the 23.4s max_step is a real splice). The union-of-splice-
+  points approach creates misaligned segment boundaries that hurt rather than help.
+  BASELINE.md Task 9 documents the full data. align.locate_splice_points() and
+  tests/test_splice_points.py (5 passing) are retained for potential future use.
+
+TODO-185: tapematch — segment-level overlap rescue (clapping-wav / partial-source matching)
+Priority: Medium
+Status: Cancelled
+Added: 2026-06-24
+Closed: 2026-06-25
+Description: Three falsify-first pilots run against 1991-11-05 (the motivating example) and
+  cross-validated on 2001-10-30 + 1989-06-04. All three approaches failed:
+  (1) best contiguous run on 60s residual_corr windows — all pairs (positives and negative
+  control) settled to windowed_median 0.002–0.013, longest run above any threshold = 0 windows,
+  at both ±10s and ±120s lag search.
+  (2) 6–8 kHz HF-band windowed fingerprinting — max-statistic floor ~0.07 for all pairs;
+  full-band produces identical results (HF peaks dominate the local-max filter even without
+  band restriction).
+  (3) 200–4000 Hz crowd/clap-band windowed fingerprinting — found apparent signal on 1991-11-05
+  (0.19–0.24 for 3 claimed pairs vs 0.103 negative control), but cross-validation on 2001-10-30
+  and 1989-06-04 showed confirmed-distinct same-show pairs scoring 0.235–0.301, entirely
+  overlapping the claimed-positive range. The 1991-11-05 negative control (0.103) was an
+  anomalously low same-show score. The 200–4kHz band is dominated by shared musical content
+  (same songs, same concert) and cannot separate a localized clapping-wav match from
+  same-show-different-source background.
+  Root cause: the target (a few seconds of shared crowd noise) cannot be separated from
+  same-show musical content at 20s window granularity without onset-aligned sub-second event
+  matching or a fundamentally different signal. BASELINE.md Task 8 documents all three findings.
+  New code added (not wired into cli.py): windowed_fingerprints(), best_window_fingerprint_match(),
+  _fingerprint_hashes() in match.py; tests in test_fingerprint_windows.py (4 passing).
+  Calibration scripts: calibrate_contig_run.py, calibrate_fingerprint_localize.py,
+  calibrate_fingerprint_baseline.py.
+
 TODO-151: Unified Library — visual refinement (typography roles + tabbed detail panels)
 Priority: Medium
 Status: Done

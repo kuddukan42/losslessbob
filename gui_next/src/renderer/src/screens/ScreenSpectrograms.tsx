@@ -133,7 +133,7 @@ export function ScreenSpectrograms(): React.JSX.Element {
           folders: target,
           width: parseInt(width) || 1500,
           height: parseInt(height) || 400,
-          dyn_range: parseInt(dynRange) || -120,
+          dyn_range: Math.abs(parseInt(dynRange) || 120),
           force: singleFolder ? true : forceRerender,
         }),
       })
@@ -340,7 +340,7 @@ export function ScreenSpectrograms(): React.JSX.Element {
                   <Input size="sm" value={width} onChange={e => setWidth(e.target.value)} style={{ width: '100%' }} />
                   <span style={{ color: 'var(--lbb-fg3)' }}>Height</span>
                   <Input size="sm" value={height} onChange={e => setHeight(e.target.value)} style={{ width: '100%' }} />
-                  <span style={{ color: 'var(--lbb-fg3)' }}>dB floor</span>
+                  <span style={{ color: 'var(--lbb-fg3)' }}>dB range</span>
                   <Input size="sm" value={dynRange} onChange={e => setDynRange(e.target.value)} style={{ width: '100%' }} />
                 </div>
                 <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg2)', marginTop: 8 }}>
