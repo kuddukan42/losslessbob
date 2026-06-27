@@ -85,7 +85,7 @@ def rank_group(group: dict[int, dict], family_id: int | None,
                                       decade=decades.get(lb),
                                       source_class=group[lb].get("source_class"))
         # absolute quality grade (standalone, from the metrics — see quality_score)
-        abs_score, abs_grade, _ = quality_score.grade(raw)
+        abs_score, abs_grade, _ = quality_score.grade(raw, group[lb].get("source_class"))
         verdict = f"Grade {abs_grade} ({abs_score:.0f}/100). {verdict}"
         rows.append({
             "lb_number": lb,

@@ -123,9 +123,8 @@
     "colResult": "Result",
     "noActivity": "No activity yet",
     "tips": "Tips",
-    "tip1": "Press [⌘K] on any screen to jump straight to an LB# or folder.",
-    "tip2": "Maintaining master data? Enable Curator mode in Settings to reveal DB Editor and Scraper.",
-    "tip3": "Star a filter combo in Search to make it a one-click saved view.",
+    "tip1": "Maintaining master data? Enable Curator mode in Settings to reveal DB Editor and Scraper.",
+    "tip2": "Star a filter combo in Search to make it a one-click saved view.",
     "toast": {
       "error": "Error: {{error}}",
       "newRelease": "New release available: {{filename}}",

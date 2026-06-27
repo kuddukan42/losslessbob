@@ -65,14 +65,16 @@ class NativeProbe:
     """High-frequency evidence from a few native-rate windows. Cheap.
 
     Built from NATIVE_N_WINDOWS windows of NATIVE_WINDOW_SEC each, decoded at
-    NATIVE_SR. Carries only the averaged native-rate PSD — enough for hiss,
-    air, HF ceiling and lossy brick-wall detection, none of which need the
-    whole 2-hour file or fine time resolution.
+    NATIVE_SR. Carries the averaged native-rate PSD plus the per-window PSDs
+    (shape: n_windows × n_freqs) — the per-window array enables measuring
+    variance over time (TV band pulsing, mini-disc ceiling stability) without
+    a second full-file decode.
     """
     sr: int
     psd_db: np.ndarray
     psd_freqs: np.ndarray
     nyquist_hz: float
+    window_psds_db: np.ndarray | None = None   # (n_windows, n_freqs) or None
 
     def band_db(self, lo: float, hi: float) -> float:
         m = (self.psd_freqs >= lo) & (self.psd_freqs < hi)
@@ -128,6 +130,9 @@ def build_native_probe(windows, sr) -> NativeProbe:
 
     `windows` is a list of mono float arrays at native `sr`. Real code samples
     these from the file at NATIVE_SR; here it accepts arrays for testability.
+    Also stores per-window PSDs in dB (shape: n_windows × n_freqs) so
+    time-varying HF features (TV band pulsing, mini-disc ceiling) can be
+    measured without a second full-file pass.
     """
     from scipy.signal import welch
     psds = []
@@ -140,11 +145,13 @@ def build_native_probe(windows, sr) -> NativeProbe:
         psds.append(psd)
     if not psds:
         return NativeProbe(sr=sr, psd_db=np.array([]), psd_freqs=np.array([]),
-                           nyquist_hz=sr / 2)
+                           nyquist_hz=sr / 2, window_psds_db=None)
     psd_mean = np.mean(psds, axis=0)
+    window_db = (10.0 * np.log10(np.array(psds) + 1e-12)).astype(np.float32)
     return NativeProbe(
         sr=sr,
         psd_db=(10.0 * np.log10(psd_mean + 1e-12)).astype(np.float32),
         psd_freqs=pf.astype(np.float32),
         nyquist_hz=sr / 2,
+        window_psds_db=window_db,
     )

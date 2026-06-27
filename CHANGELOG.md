@@ -1,3 +1,24 @@
+[2026-06-26] — fix(scraper): diacritic-dropped locations corrected for 45 LB entries across 9 cities (BUG-211)
+Fixed: data/site/detail/LB-*.html (45 files): patched cached HTML so re-scraping from local
+  cache preserves correct city names with diacritics
+Fixed: data/losslessbob.db entries table: corrected location for 45 entries —
+  Saarbrücken (5): LB12124/16153/16154/16155/16167
+  Düsseldorf (14): LB10133/11108/11143/11256/11303/11365/11555/12178/12186/13307/15100/16115/16182/16183
+  Nürnberg (4): LB13434/16145/16147/16170
+  Tübingen (2): LB11985/12043
+  Göteborg (3): LB11521/12566/13053
+  Malmö (8): LB04999/05212/07579/07751/09510/09715/12930/13273
+  Montréal (2): LB14964/15249
+  Zürich (6): LB09198/10088/14046/14047/14452/14453
+  Jönköping (1): LB10977
+  Venue corrections: LB04999 "Slottsmöllan", LB07579 "Malmö Arena", LB12930 "Mölleplatsen, Malmö"
+
+[2026-06-26] — fix(gui): remove unimplemented ⌘K shortcut hints (BUG-222)
+Fixed: gui_next/src/renderer/src/components/AppShell.tsx: removed kbd-pill ⌘K span from search button
+Fixed: gui_next/src/renderer/src/screens/ScreenHome.tsx: dropped cmd/⌘K tip from TIPS array (3→2 tips); updated render index logic
+Fixed: gui_next/src/renderer/src/App.tsx: removed Kbd demo + "Global search" label from dev card; dropped unused Kbd import
+Fixed: gui_next/src/renderer/src/locales/{en,fr,es,de,nl,it}.json: deleted tip1 (⌘K), promoted tip2→tip1, tip3→tip2
+
 [2026-06-26] — fix(backend): incremental site crawler misses newly posted LB pages (BUG-217)
 Fixed: backend/site_crawler.py: SEED_URLS and start_url are now always removed from
   `visited` before queuing, so index pages are re-fetched on every incremental run;

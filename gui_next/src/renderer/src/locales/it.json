@@ -123,9 +123,8 @@
     "colResult": "Risultato",
     "noActivity": "Ancora nessuna attività",
     "tips": "Suggerimenti",
-    "tip1": "Premere [⌘K] in qualsiasi schermata per passare direttamente a un LB# o a una cartella.",
-    "tip2": "Mantenere i dati master? Attivare la modalità Curatore nelle Impostazioni per visualizzare DB Editor e Scraper.",
-    "tip3": "Avviare una combinazione di filtri in Ricerca per renderla una visualizzazione salvata con un solo clic.",
+    "tip1": "Mantenere i dati master? Attivare la modalità Curatore nelle Impostazioni per visualizzare DB Editor e Scraper.",
+    "tip2": "Avviare una combinazione di filtri in Ricerca per renderla una visualizzazione salvata con un solo clic.",
     "toast": {
       "error": "Errore: {{error}}",
       "newRelease": "Nuova release disponibile: {{filename}}",

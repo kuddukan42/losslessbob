@@ -282,6 +282,64 @@ def find_quiet_segments(
     return segments
 
 
+def lowband_envelope_corr(
+    mono_a: np.ndarray,
+    mono_b: np.ndarray,
+    sr: int,
+    band_hz: tuple[float, float] = (250, 2000),
+    max_lag_sec: float = 90.0,
+) -> dict:
+    """Low-band (250–2000 Hz) energy-envelope cross-correlation.
+
+    For HF-dead or noise-floor-dominated sources where `residual_corr` collapses to
+    near-zero (the HF fine-structure is missing), the energy dynamics in the 250–2000 Hz
+    band (audience crescendos, song starts/ends, applause patterns) may still be
+    correlated between two same-source recordings. Bandpass-filters both signals (zero-
+    phase, **no waveform resampling** — WORKFLOW.md prohibition), computes a low-rate
+    log-RMS envelope via `_envelope`, then cross-correlates the two envelopes via a lag
+    search in the envelope domain (equivalent to time-warp via search-offset shifting).
+
+    Args:
+        mono_a: first mono audio array (float32, already at analysis_sr).
+        mono_b: second mono audio array.
+        sr: sample rate (Hz).
+        band_hz: (lo_hz, hi_hz) bandpass limits in Hz.
+        max_lag_sec: maximum search lag in seconds.
+
+    Returns:
+        Dict with:
+          'corr': peak normalized envelope cross-correlation in [-1, 1]
+          'lag_sec': lag at which peak was found (positive = b leads a)
+          'n_env_samples': envelope length used (quality indicator)
+    """
+    _min_samp = int(sr * 0.5)  # sosfiltfilt needs > 3*ntaps padding; 0.5s is safe
+    if min(len(mono_a), len(mono_b)) < _min_samp:
+        return {"corr": 0.0, "lag_sec": 0.0, "n_env_samples": 0}
+    from scipy.signal import butter, sosfiltfilt
+    lo_hz, hi_hz = float(band_hz[0]), float(band_hz[1])
+    nyq = sr / 2.0
+    sos = butter(6, [lo_hz / nyq, min(hi_hz, nyq * 0.99) / nyq],
+                 btype="band", output="sos")
+    fa = sosfiltfilt(sos, np.asarray(mono_a, dtype=np.float32))
+    fb = sosfiltfilt(sos, np.asarray(mono_b, dtype=np.float32))
+    env_a, env_rate = _envelope(fa, sr)
+    env_b, _ = _envelope(fb, sr)
+    n = min(len(env_a), len(env_b))
+    if n < 2:
+        return {"corr": 0.0, "lag_sec": 0.0, "n_env_samples": 0}
+    ea, eb = env_a[:n], env_b[:n]
+    from scipy.signal import correlate as _correlate
+    xc = _correlate(eb, ea, mode="full")
+    lags = np.arange(-(n - 1), n)
+    maxl = int(max_lag_sec * env_rate)
+    keep = np.abs(lags) <= maxl
+    xc_k, lags_k = xc[keep], lags[keep]
+    k = int(np.argmax(np.abs(xc_k)))
+    corr = float(xc_k[k]) / n
+    lag_sec = float(lags_k[k]) / env_rate
+    return {"corr": corr, "lag_sec": lag_sec, "n_env_samples": int(n)}
+
+
 def secondary_corr_pair(
     ref: np.ndarray,
     other: np.ndarray,
@@ -423,28 +481,18 @@ def _find_peaks_2d(
     return t_idx[order].astype(np.int32), f_idx[order].astype(np.int32)
 
 
-def fingerprint_window(mono: np.ndarray, sr: int, cfg: dict) -> set:
-    """Build a spectral-peak landmark fingerprint from a fixed reference window.
+def _fingerprint_hashes(window: np.ndarray, sr: int, cfg: dict) -> set:
+    """Spectral-peak landmark hashes for one already-sliced window.
 
     Shazam-style: extract STFT local maxima, then for each peak form
     (f_anchor, f_target, Δt) hash pairs with the next `fanout` peaks within
     `dt_bins` time steps.  Hashes are packed into single ints for fast set ops.
 
-    The window skips the first few minutes (intro/tuning noise) and lands on the
-    first full songs — densest unique content, unaffected by end-of-show drop-outs.
-
-    Offset-invariant by construction: Δt is relative within each recording, so
+    Offset-invariant by construction: Δt is relative within the window, so
     absolute timing differences (trim offsets, edits) do not affect matching.
     """
     fp = cfg["fingerprint"]
-    start = int(float(fp["window_start_sec"]) * sr)
-    dur   = int(float(fp["window_dur_sec"]) * sr)
-    if start >= len(mono):
-        start = 0
-    window = np.array(mono[start:min(start + dur, len(mono))], dtype=np.float32)
-
     mag = _stft_mag(window, sr, int(fp["nperseg"]), int(fp["hop"]))
-    del window
 
     # Restrict peak-finding to the HF band (e.g. 6–8 kHz) when configured.
     # Musical note energy dominates below ~5 kHz and is shared by all recordings
@@ -452,14 +500,12 @@ def fingerprint_window(mono: np.ndarray, sr: int, cfg: dict) -> set:
     # The 6–8 kHz band is dominated by tape hiss and room reflections that are
     # specific to the recording chain, reducing different-source same-show scores
     # to <0.10 and enabling a lower cluster_threshold (~0.30–0.35).
-    f_offset = 0
     if "hf_band_hz" in fp:
         lo_hz, hi_hz = fp["hf_band_hz"]
         nperseg = int(fp["nperseg"])
         lo_bin = int(lo_hz * nperseg / sr)
         hi_bin = min(int(hi_hz * nperseg / sr), mag.shape[0] - 1)
         mag = mag[lo_bin:hi_bin + 1, :]
-        f_offset = lo_bin  # unused in hashing but kept for clarity
 
     t_idx, f_idx = _find_peaks_2d(mag, int(fp["peak_neighborhood_t"]),
                                    int(fp["peak_neighborhood_f"]))
@@ -482,6 +528,76 @@ def fingerprint_window(mono: np.ndarray, sr: int, cfg: dict) -> set:
             if count >= fanout:
                 break
     return hashes
+
+
+def fingerprint_window(mono: np.ndarray, sr: int, cfg: dict) -> set:
+    """Build a spectral-peak landmark fingerprint from a fixed reference window.
+
+    The window skips the first few minutes (intro/tuning noise) and lands on the
+    first full songs — densest unique content, unaffected by end-of-show drop-outs.
+    """
+    fp = cfg["fingerprint"]
+    start = int(float(fp["window_start_sec"]) * sr)
+    dur   = int(float(fp["window_dur_sec"]) * sr)
+    if start >= len(mono):
+        start = 0
+    window = np.array(mono[start:min(start + dur, len(mono))], dtype=np.float32)
+    return _fingerprint_hashes(window, sr, cfg)
+
+
+def windowed_fingerprints(mono: np.ndarray, sr: int, cfg: dict,
+                          win_sec: float, hop_sec: float) -> list[set]:
+    """Landmark hash sets for a grid of windows spanning the whole recording.
+
+    TODO-185: a curator-claimed shared transient (e.g. a few seconds of shared
+    crowd/clapping at a track boundary) can be far shorter than the 60s grid
+    `secondary_corr_pair` uses, so its true residual_corr signal is diluted to
+    near-zero by the surrounding non-matching material within any one window —
+    confirmed on the 1991-11-05 Madison network (calibrate_contig_run.py): all
+    5 curator-claimed pairs scored statistically identical to a known-distinct
+    control pair at both the production ±10s and a wide ±120s local-lag search.
+    Landmark hashing is a different signal (sparse spectral peaks + relative
+    timing, not sample-level waveform correlation) and natively offset-invariant,
+    so it does not need an absolute-time correspondence between two recordings'
+    differing track splits — see `best_window_fingerprint_match`.
+    """
+    win_samp = int(win_sec * sr)
+    hop_samp = int(hop_sec * sr)
+    out: list[set] = []
+    n = len(mono)
+    if n < win_samp:
+        return out
+    for s0 in range(0, n - win_samp + 1, hop_samp):
+        window = np.array(mono[s0:s0 + win_samp], dtype=np.float32)
+        out.append(_fingerprint_hashes(window, sr, cfg))
+    return out
+
+
+def best_window_fingerprint_match(hashes_a: list[set], hashes_b: list[set],
+                                  win_sec: float, hop_sec: float) -> dict:
+    """Best Dice score over all (window_a, window_b) pairs from `windowed_fingerprints`.
+
+    Searches every window-pair rather than only matching positions, because a
+    composite/patchwork recording's track splits (and any missing/reordered
+    material) mean the same calendar moment in the show can land at different
+    absolute offsets in each recording's own trimmed timeline. This localizes
+    a real match wherever it falls — report as evidence for manual ratify
+    (like lineage), not an automatic same-family merge.
+
+    Returns:
+        dict with "dice" (0.0 if no windows), and when a match is found,
+        "center_a_sec"/"center_b_sec" (window center times) for locating it.
+    """
+    best = {"dice": 0.0, "i": -1, "j": -1}
+    for i, ha in enumerate(hashes_a):
+        for j, hb in enumerate(hashes_b):
+            d = fingerprint_score(ha, hb)
+            if d > best["dice"]:
+                best = {"dice": d, "i": i, "j": j}
+    if best["i"] >= 0:
+        best["center_a_sec"] = best["i"] * hop_sec + win_sec / 2
+        best["center_b_sec"] = best["j"] * hop_sec + win_sec / 2
+    return best
 
 
 def fingerprint_score(ha: set, hb: set) -> float:

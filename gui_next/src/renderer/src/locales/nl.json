@@ -123,9 +123,8 @@
     "colResult": "Resultaat",
     "noActivity": "Nog geen activiteit",
     "tips": "Tips",
-    "tip1": "Druk op [⌘K] op een willekeurig scherm om direct naar een LB# of map te gaan.",
-    "tip2": "Stamgegevens onderhouden? Schakel de Curator-modus in bij Instellingen om de DB Editor en Scraper weer te geven.",
-    "tip3": "Geef een filtercombo een ster in Zoeken om er een met één klik opgeslagen weergave van te maken.",
+    "tip1": "Stamgegevens onderhouden? Schakel de Curator-modus in bij Instellingen om de DB Editor en Scraper weer te geven.",
+    "tip2": "Geef een filtercombo een ster in Zoeken om er een met één klik opgeslagen weergave van te maken.",
     "toast": {
       "error": "Fout: {{error}}",
       "newRelease": "Nieuwe release beschikbaar: {{filename}}",

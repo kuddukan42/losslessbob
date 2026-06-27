@@ -5,7 +5,7 @@ import { applyTheme, loadTheme, saveTheme, getSystemMode } from './lib/tokens'
 import type { ThemeOptions, Mode, Accent, Density } from './lib/tokens'
 import { AppShell, SplashOverlay, AboutDialog } from './components'
 import {
-  Pill, Chip, Button, IconButton, Input, Kbd,
+  Pill, Chip, Button, IconButton, Input,
   Card, Toolbar, Banner, Stat, SectionHead,
   TableShell, TH, TR, TD, GroupRow,
 } from './components'
@@ -165,8 +165,6 @@ function PrimitivesScreen() {
               onChange={e => setQuery(e.target.value)} width={240} />
             <Input placeholder="No icon" size="sm" width={140} />
             <Input placeholder="Large" size="lg" width={160} />
-            <span style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)' }}>Global search</span>
-            <Kbd>⌘</Kbd><Kbd>K</Kbd>
           </div>
         </Card>
 

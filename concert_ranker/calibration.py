@@ -60,6 +60,7 @@ def stratified_sample(conn: sqlite3.Connection, per_cell: int = 5) -> list[dict]
             cells[cell].append({
                 "lb": int(r["lb"]), "disk_path": r["disk_path"],
                 "rating": r["rating"], "source_class": cls,
+                "description": r["description"] or "",
             })
     return [item for items in cells.values() for item in items]
 
@@ -139,6 +140,7 @@ def decade_stratified_sample(conn: sqlite3.Connection, per_cell: int = 18,
             cells[cell].append({
                 "lb": int(r["lb"]), "disk_path": r["disk_path"],
                 "rating": r["rating"], "source_class": cls, "year": year,
+                "description": r["description"] or "",
             })
     return [item for items in cells.values() for item in items]
 
@@ -146,18 +148,41 @@ def decade_stratified_sample(conn: sqlite3.Connection, per_cell: int = 18,
 def build_samples(conn: sqlite3.Connection, scan_id: int,
                   sample: list[dict]) -> list[dict]:
     """Join stored scan metrics with rating/source_class/commentary per LB."""
+    import math
+
+    from .features import extract_text
     lbs = [s["lb"] for s in sample]
     stored = repo.load_metrics(conn, scan_id, lbs)
     text = commentary.commentary_for(conn, lbs)
     meta = {s["lb"]: s for s in sample}
+
+    # Inject dff_vert_occ = log1p(vert_occ) from dff_reports where available.
+    try:
+        placeholders = ",".join("?" * len(lbs))
+        dff_rows = conn.execute(
+            f"SELECT lb_number, vert_occ FROM dff_reports WHERE lb_number IN ({placeholders})",
+            lbs,
+        ).fetchall()
+        dff_map = {row[0]: row[1] for row in dff_rows}
+    except Exception:
+        dff_map = {}
+
     out = []
     for lb, data in stored.items():
         m = meta.get(lb, {})
+        metrics = data["metrics"]
+        if lb in dff_map and dff_map[lb] is not None:
+            metrics["dff_vert_occ"] = math.log1p(float(dff_map[lb]))
+        # Inject text features from the curator description (DB-side; no rescan)
+        description = m.get("description", "")
+        if description is None:
+            description = ""
+        metrics.update(extract_text(description))
         out.append({
             "lb": lb,
             "rating": m.get("rating"),
             "source_class": data.get("source_class") or m.get("source_class") or "UNKNOWN",
-            "metrics": data["metrics"],
+            "metrics": metrics,
             "commentary": text.get(lb, ""),
         })
     return out

@@ -107,6 +107,58 @@ def cmd_scan(args) -> int:
     return 0
 
 
+def _inject_dff(conn, metrics: dict) -> None:
+    """Augment metrics dicts in-place with dff_vert_occ = log1p(vert_occ).
+
+    Looks up dff_reports for each LB; skips silently if the table doesn't exist
+    yet or the LB has no DFF report (the model falls back to its training median).
+    """
+    import math
+    lbs = list(metrics.keys())
+    if not lbs:
+        return
+    try:
+        placeholders = ",".join("?" * len(lbs))
+        rows = conn.execute(
+            f"SELECT lb_number, vert_occ FROM dff_reports WHERE lb_number IN ({placeholders})",
+            lbs,
+        ).fetchall()
+    except Exception:
+        return
+    for row in rows:
+        lb = row[0]
+        vert = row[1]
+        if lb in metrics and vert is not None:
+            metrics[lb]["metrics"]["dff_vert_occ"] = math.log1p(float(vert))
+
+
+def _inject_text(conn, metrics: dict) -> None:
+    """Augment metrics dicts in-place with text features from entries.description.
+
+    Text features are DB-derived (no audio rescan needed). Looks up the
+    description for each LB in the entries table and merges the result of
+    extract_text_features() into the metrics dict. Safe to call even when the
+    entries table doesn't have a description column.
+    """
+    from concert_ranker.features import extract_text
+    lbs = list(metrics.keys())
+    if not lbs:
+        return
+    try:
+        placeholders = ",".join("?" * len(lbs))
+        rows = conn.execute(
+            f"SELECT lb_number, description FROM entries "
+            f"WHERE lb_number IN ({placeholders})",
+            lbs,
+        ).fetchall()
+    except Exception:
+        return
+    for row in rows:
+        lb, description = row[0], row[1]
+        if lb in metrics:
+            metrics[lb]["metrics"].update(extract_text(description))
+
+
 def _rerank(conn, scan_id: int) -> int:
     """Re-band/rank from stored metrics only (no audio). Returns row count."""
     from concert_ranker import families
@@ -114,6 +166,8 @@ def _rerank(conn, scan_id: int) -> int:
     metrics = repo.load_metrics(conn, scan_id)
     if not metrics:
         return 0
+    _inject_dff(conn, metrics)
+    _inject_text(conn, metrics)
     family_map = families.load_family_map(conn, list(metrics.keys()))
     decades = families.load_decade_map(conn, list(metrics.keys()))
     rows = families.rank_scan(metrics, family_map, decades)

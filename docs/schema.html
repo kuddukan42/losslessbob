@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LosslessBob — Database Schema</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;background:#0d0f18;color:#c8d3f5;min-height:100vh}
+a{color:inherit;text-decoration:none}
+
+/* ── Header ── */
+.site-header{background:#161928;border-bottom:1px solid #1e2140;padding:16px 24px;position:sticky;top:0;z-index:100}
+.site-header h1{font-size:18px;font-weight:700;color:#f0f4ff;margin-bottom:3px}
+.site-header p{font-size:11px;color:#4a5173}
+
+/* ── DB Tabs ── */
+.db-tabs{display:flex;gap:2px;padding:0 24px;background:#161928;border-bottom:1px solid #1e2140}
+.db-tab{padding:10px 18px;border-radius:6px 6px 0 0;cursor:pointer;font-size:12px;font-weight:600;color:#636d8e;border:1px solid transparent;border-bottom:none;transition:all .15s;user-select:none}
+.db-tab:hover{color:#c8d3f5;background:#1e2140}
+.db-tab.active{background:#0d0f18;color:#f0f4ff;border-color:#1e2140;margin-bottom:-1px}
+.db-tab .chip{display:inline-block;margin-left:6px;font-size:9px;padding:1px 5px;border-radius:10px;font-weight:700;vertical-align:middle}
+.chip-main{background:#1e2a4a;color:#82aaff}
+.chip-obs{background:#1e2d26;color:#c3e88d}
+.chip-fp{background:#2a1e36;color:#c792ea}
+
+/* ── Main ── */
+.main{padding:20px 24px 40px}
+.db-panel{display:none}
+.db-panel.active{display:block}
+
+/* ── Legend ── */
+.legend{display:flex;flex-wrap:wrap;gap:14px;padding:0 0 16px;border-bottom:1px solid #1e2140;margin-bottom:20px}
+.legend-item{display:flex;align-items:center;gap:5px;font-size:11px;color:#636d8e}
+.li-pk{color:#ffd173}
+.li-fk{color:#82aaff}
+.li-idx{color:#c3e88d}
+
+/* ── Stats bar ── */
+.stats-bar{display:flex;gap:28px;padding:0 0 20px}
+.stat-value{font-size:22px;font-weight:700;color:#f0f4ff}
+.stat-label{font-size:9px;color:#4a5173;text-transform:uppercase;letter-spacing:.08em}
+
+/* ── Group ── */
+.group{margin-bottom:28px}
+.group-header{display:flex;align-items:center;gap:10px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #1e2140}
+.group-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.group-title{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#636d8e}
+.group-count{font-size:10px;color:#4a5173;margin-left:auto}
+
+/* ── Grid ── */
+.table-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:10px}
+
+/* ── Card ── */
+.table-card{background:#161928;border:1px solid #1e2140;border-radius:8px;overflow:hidden;transition:border-color .15s}
+.table-card:hover{border-color:#3a4170}
+.card-header{display:flex;align-items:center;gap:8px;padding:9px 12px;border-bottom:1px solid #1a1d30}
+.card-accent{width:3px;border-radius:2px;height:16px;flex-shrink:0}
+.card-name{font-family:'SFMono-Regular','Consolas',monospace;font-size:12px;font-weight:700;color:#e4edff;flex:1}
+.badge{font-size:9px;font-weight:700;letter-spacing:.04em;padding:2px 5px;border-radius:3px;text-transform:uppercase;flex-shrink:0}
+.badge-master{background:#1a2e4a;color:#60a5fa}
+.badge-user{background:#182d22;color:#4ade80}
+.badge-virtual{background:#271c3a;color:#a78bfa}
+.badge-view{background:#2a2010;color:#fbbf24}
+
+/* ── Column rows ── */
+.col-list{padding:4px 0}
+.col-row{display:flex;align-items:baseline;gap:6px;padding:3px 12px;border-bottom:1px solid #0d0f18}
+.col-row:last-child{border-bottom:none}
+.col-row:hover{background:#1a1d30}
+.col-icon{font-size:10px;width:12px;text-align:center;flex-shrink:0;line-height:1.4}
+.col-name{font-family:'SFMono-Regular','Consolas',monospace;font-size:11px;color:#b4bde8;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.col-name.is-pk{color:#ffd173;font-weight:600}
+.col-type{font-family:'SFMono-Regular','Consolas',monospace;font-size:10px;color:#4a5173;flex-shrink:0}
+.col-note{font-size:10px;color:#3a4260;flex-shrink:0;max-width:130px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <h1>LosslessBob — Database Schema</h1>
+  <p>3 databases · 50 tables · 1 virtual FTS5 · 1 view · Generated 2026-06-26</p>
+</header>
+
+<div class="db-tabs">
+  <div class="db-tab active" onclick="switchTab('main')">losslessbob.db <span class="chip chip-main">45</span></div>
+  <div class="db-tab" onclick="switchTab('obs')">observations.db <span class="chip chip-obs">3+view</span></div>
+  <div class="db-tab" onclick="switchTab('fp')">fingerprints.db <span class="chip chip-fp">2</span></div>
+</div>
+
+<div class="main">
+
+<!-- ══════════════════════════════════════════════════════════════
+     losslessbob.db
+══════════════════════════════════════════════════════════════ -->
+<div class="db-panel active" id="panel-main">
+
+  <div class="legend">
+    <span class="legend-item"><span class="li-pk">🔑</span> Primary Key</span>
+    <span class="legend-item"><span class="li-fk">→</span> Foreign Key</span>
+    <span class="legend-item"><span class="li-idx">◈</span> Indexed</span>
+    <span class="legend-item"><span class="badge badge-master">MASTER</span> exported in master snapshot</span>
+    <span class="legend-item"><span class="badge badge-user">USER</span> local only, never exported</span>
+    <span class="legend-item"><span class="badge badge-virtual">VIRTUAL</span> FTS5 virtual table</span>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat"><div class="stat-value">45</div><div class="stat-label">Tables</div></div>
+    <div class="stat"><div class="stat-value">1</div><div class="stat-label">Virtual FTS5</div></div>
+    <div class="stat"><div class="stat-value">14</div><div class="stat-label">Groups</div></div>
+  </div>
+
+  <!-- ── Core ── -->
+  <div class="group">
+    <div class="group-header">
+      <div class="group-dot" style="background:#82aaff"></div>
+      <span class="group-title">Core</span>
+      <span class="group-count">5 tables</span>
+    </div>
+    <div class="table-grid">
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#82aaff"></div><span class="card-name">checksums</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">id</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon li-idx">◈</span><span class="col-name">checksum</span><span class="col-type">TEXT</span><span class="col-note">NOT NULL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">filename</span><span class="col-type">TEXT</span><span class="col-note">NOT NULL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">chk_type</span><span class="col-type">TEXT</span><span class="col-note">f/s/m</span></div>
+          <div class="col-row"><span class="col-icon li-idx">◈</span><span class="col-name">lb_number</span><span class="col-type">INTEGER</span><span class="col-note">NOT NULL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">xref</span><span class="col-type">INTEGER</span><span class="col-note">1=cross-ref</span></div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#82aaff"></div><span class="card-name">entries</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">lb_number</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">date_str</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">location</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">cdr</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">rating</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">timing</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">description</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">setlist</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">status</span><span class="col-type">TEXT</span><span class="col-note">ok/missing</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">scraped_at</span><span class="col-type">TIMESTAMP</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">taper_name</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">source_chain</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">lb_category</span><span class="col-type">TEXT</span><span class="col-note">concert/interview/…</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">source_type</span><span class="col-type">TEXT</span><span class="col-note">SBD/AUD/FM/…</span></div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#82aaff"></div><span class="card-name">entry_files</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">lb_number</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">filename</span><span class="col-type">TEXT</span><span class="col-note">composite PK</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">clean_name</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">file_url</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">downloaded</span><span class="col-type">INTEGER</span><span class="col-note">1=cached</span></div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#82aaff"></div><span class="card-name">entries_fts</span><span class="badge badge-virtual">VIRTUAL</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-fk">→</span><span class="col-name">content</span><span class="col-type">FTS5</span><span class="col-note">→ entries</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">description</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">setlist</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">location</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">date_str</span><span class="col-type">TEXT</span></div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#82aaff"></div><span class="card-name">meta</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">key</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">value</span><span class="col-type">TEXT</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /Core -->
+
+  <!-- ── LB Status ── -->
+  <div class="group">
+    <div class="group-header">
+      <div class="group-dot" style="background:#c792ea"></div>
+      <span class="group-title">LB Status &amp; Integrity</span>
+      <span class="group-count">5 tables</span>
+    </div>
+    <div class="table-grid">
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#c792ea"></div><span class="card-name">lb_master</span><span class="badge badge-master">MASTER</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">lb_number</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon li-idx">◈</span><span class="col-name">lb_status</span><span class="col-type">TEXT</span><span class="col-note">public/private/missing/nonexistent</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">has_webpage</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">has_checksums</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">has_attachments</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">first_seen_at</span><span class="col-type">TIMESTAMP</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">last_status_at</span><span class="col-type">TIMESTAMP</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">previous_status</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon li-idx">◈</span><span class="col-name">manual_override</span><span class="col-type">INTEGER</span><span class="col-note">partial idx WHERE=1</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">manual_status</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">manual_notes</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">manual_set_by</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">manual_set_at</span><span class="col-type">TIMESTAMP</span></div>
+          <div class="col-row"><span class="col-icon li-idx">◈</span><span class="col-name">needs_review</span><span class="col-type">INTEGER</span><span class="col-note">partial idx WHERE=1</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">public_no_checksums</span><span class="col-type">INTEGER</span></div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#c792ea"></div><span class="card-name">lb_status_history</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">id</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon li-idx">◈</span><span class="col-name">lb_number</span><span class="col-type">INTEGER</span><span class="col-note">NOT NULL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">old_status</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">new_status</span><span class="col-type">TEXT</span><span class="col-note">NOT NULL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">changed_at</span><span class="col-type">TIMESTAMP</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">trigger_event</span><span class="col-type">TEXT</span></div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#c792ea"></div><span class="card-name">lb_missing</span><span class="badge badge-master">MASTER</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">lb_number</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">confirmed_date</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">notes</span><span class="col-type">TEXT</span></div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#c792ea"></div><span class="card-name">lb_alias</span><span class="badge badge-master">MASTER</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">alias_lb</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon li-idx">◈</span><span class="col-name">canonical_lb</span><span class="col-type">INTEGER</span><span class="col-note">NOT NULL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">relationship</span><span class="col-type">TEXT</span><span class="col-note">duplicate/supersedes/see_also</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">note</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">created_at</span><span class="col-type">TIMESTAMP</span></div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#c792ea"></div><span class="card-name">lb_problems</span><span class="badge badge-master">MASTER</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">id</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon li-fk li-idx">→◈</span><span class="col-name">lb_number</span><span class="col-type">INTEGER</span><span class="col-note">→ lb_master</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">notes</span><span class="col-type">TEXT</span><span class="col-note">NOT NULL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">added</span><span class="col-type">TEXT</span><span class="col-note">ISO date</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /LB Status -->
+
+  <!-- ── User Collection ── -->
+  <div class="group">
+    <div class="group-header">
+      <div class="group-dot" style="background:#c3e88d"></div>
+      <span class="group-title">User Collection</span>
+      <span class="group-count">4 tables</span>
+    </div>
+    <div class="table-grid">
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#c3e88d"></div><span class="card-name">my_collection</span><span class="badge badge-user">USER</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">id</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon li-fk">→</span><span class="col-name">lb_number</span><span class="col-type">INTEGER</span><span class="col-note">UNIQUE → entries</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">folder_name</span><span class="col-type">TEXT</span><span class="col-note">NOT NULL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">disk_path</span><span class="col-type">TEXT</span><span class="col-note">NOT NULL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">confirmed_at</span><span class="col-type">TIMESTAMP</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">notes</span><span class="col-type">TEXT</span></div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#c3e88d"></div><span class="card-name">collection_meta</span><span class="badge badge-user">USER</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk li-fk">🔑→</span><span class="col-name is-pk">lb_number</span><span class="col-type">INTEGER</span><span class="col-note">→ my_collection CASCADE</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">personal_rating</span><span class="col-type">INTEGER</span><span class="col-note">1–5</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">listen_count</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">last_listened</span><span class="col-type">TIMESTAMP</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">tags</span><span class="col-type">TEXT</span></div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#c3e88d"></div><span class="card-name">my_wishlist</span><span class="badge badge-user">USER</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">id</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon li-fk li-idx">→◈</span><span class="col-name">lb_number</span><span class="col-type">INTEGER</span><span class="col-note">UNIQUE → entries</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">added_at</span><span class="col-type">TIMESTAMP</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">priority</span><span class="col-type">INTEGER</span><span class="col-note">1–5</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">notes</span><span class="col-type">TEXT</span></div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#c3e88d"></div><span class="card-name">folder_lb_link</span><span class="badge badge-user">USER</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">folder_path</span><span class="col-type">TEXT</span><span class="col-note">composite PK</span></div>
+          <div class="col-row"><span class="col-icon li-pk li-idx">🔑◈</span><span class="col-name is-pk">lb_number</span><span class="col-type">INTEGER</span><span class="col-note">composite PK</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">linked_at</span><span class="col-type">TIMESTAMP</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">note</span><span class="col-type">TEXT</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /User Collection -->
+
+  <!-- ── Scraping & Crawling ── -->
+  <div class="group">
+    <div class="group-header">
+      <div class="group-dot" style="background:#ff966c"></div>
+      <span class="group-title">Scraping &amp; Crawling</span>
+      <span class="group-count">5 tables</span>
+    </div>
+    <div class="table-grid">
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#ff966c"></div><span class="card-name">entry_changes</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">id</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon li-idx">◈</span><span class="col-name">lb_number</span><span class="col-type">INTEGER</span><span class="col-note">NOT NULL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">field</span><span class="col-type">TEXT</span><span class="col-note">NOT NULL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">old_value</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">new_value</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">changed_at</span><span class="col-type">TIMESTAMP</span></div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#ff966c"></div><span class="card-name">scrape_sessions</span><span class="badge badge-master">MASTER</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">id</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">started_at</span><span class="col-type">TIMESTAMP</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">finished_at</span><span class="col-type">TIMESTAMP</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">scope</span><span class="col-type">TEXT</span><span class="col-note">full/incremental/range/…</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">start_url</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">pages_fetched</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">pages_304</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">pages_skipped</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">pages_failed</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">files_fetched</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">status</span><span class="col-type">TEXT</span><span class="col-note">running/done/stopped/failed</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">notes</span><span class="col-type">TEXT</span></div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#ff966c"></div><span class="card-name">site_inventory</span><span class="badge badge-master">MASTER</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">url</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">relative_path</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">content_type</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">discovered_at</span><span class="col-type">TIMESTAMP</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">discovered_by</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon li-idx">◈</span><span class="col-name">status</span><span class="col-type">TEXT</span><span class="col-note">pending/downloaded/not_found/…</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">last_fetched_at</span><span class="col-type">TIMESTAMP</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">last_checked_at</span><span class="col-type">TIMESTAMP</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">last_modified</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">body_sha256</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">size_bytes</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">http_status</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon li-fk li-idx">→◈</span><span class="col-name">session_id</span><span class="col-type">INTEGER</span><span class="col-note">→ scrape_sessions</span></div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#ff966c"></div><span class="card-name">bootleg_titles</span><span class="badge badge-master">MASTER</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">id</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon li-idx">◈</span><span class="col-name">lb_number</span><span class="col-type">INTEGER</span><span class="col-note">NOT NULL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">title</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">date_str</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">date_iso</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon li-idx">◈</span><span class="col-name">year</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">location</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">cd_count</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon li-idx">◈</span><span class="col-name">lbbcd_id</span><span class="col-type">INTEGER</span><span class="col-note">partial idx NOT NULL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">lbbcd_url</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">scraped_at</span><span class="col-type">TIMESTAMP</span></div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#ff966c"></div><span class="card-name">bootleg_scrapes</span><span class="badge badge-master">MASTER</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">id</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">source_url</span><span class="col-type">TEXT</span><span class="col-note">NOT NULL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">scraped_at</span><span class="col-type">TIMESTAMP</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">http_etag</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">http_last_modified</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">body_sha256</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">rows_total</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">rows_added</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">rows_changed</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">rows_removed</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">status</span><span class="col-type">TEXT</span><span class="col-note">success/no_change/failed</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /Scraping -->
+
+  <!-- ── Shows & Setlists ── -->
+  <div class="group">
+    <div class="group-header">
+      <div class="group-dot" style="background:#4fd6be"></div>
+      <span class="group-title">Shows &amp; Setlists</span>
+      <span class="group-count">4 tables</span>
+    </div>
+    <div class="table-grid">
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#4fd6be"></div><span class="card-name">bobdylan_shows</span><span class="badge badge-master">MASTER</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">bobdylan_url</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon li-idx">◈</span><span class="col-name">date_str</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">venue</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">location</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">notes</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">scraped_at</span><span class="col-type">TEXT</span></div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#4fd6be"></div><span class="card-name">bobdylan_setlist</span><span class="badge badge-master">MASTER</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk li-fk">🔑→</span><span class="col-name is-pk">bobdylan_url</span><span class="col-type">TEXT</span><span class="col-note">→ bobdylan_shows CASCADE</span></div>
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">position</span><span class="col-type">INTEGER</span><span class="col-note">composite PK</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">track_name</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">song_url</span><span class="col-type">TEXT</span></div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#4fd6be"></div><span class="card-name">setlistfm_shows</span><span class="badge badge-master">MASTER</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">setlistfm_id</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon li-idx">◈</span><span class="col-name">date_str</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon li-idx">◈</span><span class="col-name">tour_name</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">venue_name</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">city</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">country</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">info</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">setlistfm_url</span><span class="col-type">TEXT</span></div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#4fd6be"></div><span class="card-name">setlistfm_setlist</span><span class="badge badge-master">MASTER</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk li-fk">🔑→</span><span class="col-name is-pk">setlistfm_id</span><span class="col-type">TEXT</span><span class="col-note">→ setlistfm_shows CASCADE</span></div>
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">position</span><span class="col-type">INTEGER</span><span class="col-note">composite PK</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">set_index</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">set_name</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">is_encore</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">set_position</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon li-idx">◈</span><span class="col-name">track_name</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">info</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">is_cover</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">cover_artist</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">is_tape</span><span class="col-type">INTEGER</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /Shows -->
+
+  <!-- ── Geocoding & Performances ── -->
+  <div class="group">
+    <div class="group-header">
+      <div class="group-dot" style="background:#86e1fc"></div>
+      <span class="group-title">Geocoding &amp; Performances</span>
+      <span class="group-count">2 tables</span>
+    </div>
+    <div class="table-grid">
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#86e1fc"></div><span class="card-name">location_geocoded</span><span class="badge badge-master">MASTER</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">location_text</span><span class="col-type">TEXT</span><span class="col-note">matches entries.location</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">lat</span><span class="col-type">REAL</span><span class="col-note">WGS-84</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">lon</span><span class="col-type">REAL</span><span class="col-note">WGS-84</span></div>
+          <div class="col-row"><span class="col-icon li-idx">◈</span><span class="col-name">source</span><span class="col-type">TEXT</span><span class="col-note">nominatim/manual/failed</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">confidence</span><span class="col-type">TEXT</span><span class="col-note">high/medium/low</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">display_name</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">manual_override</span><span class="col-type">INTEGER</span><span class="col-note">1=never overwrite</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">note</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">lb_number</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">geocoded_at</span><span class="col-type">TIMESTAMP</span></div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#86e1fc"></div><span class="card-name">dylan_performances</span><span class="badge badge-master">MASTER</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">event_id</span><span class="col-type">TEXT</span><span class="col-note">YYYYMMDDNN</span></div>
+          <div class="col-row"><span class="col-icon li-idx">◈</span><span class="col-name">date_str</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon li-idx">◈</span><span class="col-name">category</span><span class="col-type">TEXT</span><span class="col-note">HOME/NET/MCONCERT/GUEST/…</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">city</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">state</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon li-idx">◈</span><span class="col-name">country</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">venue</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">imported_at</span><span class="col-type">TIMESTAMP</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /Geocoding -->
+
+  <!-- ── TapeMatch ── -->
+  <div class="group">
+    <div class="group-header">
+      <div class="group-dot" style="background:#ff757f"></div>
+      <span class="group-title">TapeMatch Family Clustering</span>
+      <span class="group-count">2 tables</span>
+    </div>
+    <div class="table-grid">
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#ff757f"></div><span class="card-name">recording_families</span><span class="badge badge-master">MASTER</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">lb_number</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon li-idx">◈</span><span class="col-name">fam_id</span><span class="col-type">TEXT</span><span class="col-note">NOT NULL; deterministic</span></div>
+          <div class="col-row"><span class="col-icon li-idx">◈</span><span class="col-name">concert_date</span><span class="col-type">TEXT</span><span class="col-note">NOT NULL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">run_id</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">imported_at</span><span class="col-type">TIMESTAMP</span></div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#ff757f"></div><span class="card-name">tapematch_family_meta</span><span class="badge badge-master">MASTER</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">fam_id</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">concert_date</span><span class="col-type">TEXT</span><span class="col-note">NOT NULL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">label</span><span class="col-type">TEXT</span><span class="col-note">Family A / Family B …</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">label_override</span><span class="col-type">TEXT</span><span class="col-note">reserved curator field</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">by</span><span class="col-type">TEXT</span><span class="col-note">ai / ai+lb</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">conf</span><span class="col-type">REAL</span><span class="col-note">mean pairwise corr</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">note</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">member_count</span><span class="col-type">INTEGER</span><span class="col-note">NOT NULL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">run_id</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">review_flag</span><span class="col-type">INTEGER</span><span class="col-note">DEFAULT 0</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">review_reason</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">imported_at</span><span class="col-type">TIMESTAMP</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /TapeMatch -->
+
+  <!-- ── Concert Ranker ── -->
+  <div class="group">
+    <div class="group-header">
+      <div class="group-dot" style="background:#ff98a4"></div>
+      <span class="group-title">Concert Ranker / Audio Quality</span>
+      <span class="group-count">3 tables</span>
+    </div>
+    <div class="table-grid">
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#ff98a4"></div><span class="card-name">quality_scans</span><span class="badge badge-user">USER</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">scan_id</span><span class="col-type">INTEGER</span><span class="col-note">one row per scan run</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">started_at</span><span class="col-type">TIMESTAMP</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">config_json</span><span class="col-type">TEXT</span><span class="col-note">thresholds/weights snapshot</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">notes</span><span class="col-type">TEXT</span></div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#ff98a4"></div><span class="card-name">quality_recording_metrics</span><span class="badge badge-user">USER</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk li-fk">🔑→</span><span class="col-name is-pk">lb_number</span><span class="col-type">INTEGER</span><span class="col-note">→ entries</span></div>
+          <div class="col-row"><span class="col-icon li-pk li-idx">🔑◈</span><span class="col-name is-pk">scan_id</span><span class="col-type">INTEGER</span><span class="col-note">→ quality_scans</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">source_class</span><span class="col-type">TEXT</span><span class="col-note">SBD/AUD/FM/UNKNOWN</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">metric_json</span><span class="col-type">TEXT</span><span class="col-note">NOT NULL; RAW aggregated metrics</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">completeness</span><span class="col-type">REAL</span><span class="col-note">NULL at scan time</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">duration_sec</span><span class="col-type">REAL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">scored_at</span><span class="col-type">TIMESTAMP</span></div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#ff98a4"></div><span class="card-name">quality_recording_scores</span><span class="badge badge-user">USER</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk li-fk">🔑→</span><span class="col-name is-pk">lb_number</span><span class="col-type">INTEGER</span><span class="col-note">→ entries</span></div>
+          <div class="col-row"><span class="col-icon li-pk li-idx">🔑◈</span><span class="col-name is-pk">scan_id</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon li-idx">◈</span><span class="col-name">family_id</span><span class="col-type">INTEGER</span><span class="col-note">dense per-scan id</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">final_score</span><span class="col-type">REAL</span><span class="col-note">NULL if vetoed</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">rank_in_family</span><span class="col-type">INTEGER</span><span class="col-note">1=best transfer</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">vetoed</span><span class="col-type">INTEGER</span><span class="col-note">1=hard-disqualified</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">verdict_text</span><span class="col-type">TEXT</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /Concert Ranker -->
+
+  <!-- ── Curated Lists ── -->
+  <div class="group">
+    <div class="group-header">
+      <div class="group-dot" style="background:#ffc777"></div>
+      <span class="group-title">Curated Lists</span>
+      <span class="group-count">2 tables</span>
+    </div>
+    <div class="table-grid">
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#ffc777"></div><span class="card-name">curated_lists</span><span class="badge badge-master">MASTER</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">id</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">name</span><span class="col-type">TEXT</span><span class="col-note">UNIQUE slug</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">label</span><span class="col-type">TEXT</span><span class="col-note">display name</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">source</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">created_at</span><span class="col-type">TIMESTAMP</span></div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#ffc777"></div><span class="card-name">curated_list_entries</span><span class="badge badge-master">MASTER</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">id</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon li-fk li-idx">→◈</span><span class="col-name">list_id</span><span class="col-type">INTEGER</span><span class="col-note">→ curated_lists</span></div>
+          <div class="col-row"><span class="col-icon li-idx">◈</span><span class="col-name">lb_number</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">note</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">added_at</span><span class="col-type">TIMESTAMP</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /Curated Lists -->
+
+  <!-- ── Flat File Pipeline ── -->
+  <div class="group">
+    <div class="group-header">
+      <div class="group-dot" style="background:#e4c07c"></div>
+      <span class="group-title">Flat File Pipeline</span>
+      <span class="group-count">2 tables</span>
+    </div>
+    <div class="table-grid">
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#e4c07c"></div><span class="card-name">flat_file_releases</span><span class="badge badge-master">MASTER</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">id</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">detected_at</span><span class="col-type">TIMESTAMP</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">downloaded_at</span><span class="col-type">TIMESTAMP</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">applied_at</span><span class="col-type">TIMESTAMP</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">deferred_until</span><span class="col-type">TIMESTAMP</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">source_page_url</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">zip_url</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">zip_filename</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">last_lb_in_name</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">page_timestamp</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">http_last_modified</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">zip_size_bytes</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">zip_sha256</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">rows_added</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">rows_changed</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">rows_removed</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">new_lb_min</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">new_lb_max</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon li-idx">◈</span><span class="col-name">status</span><span class="col-type">TEXT</span><span class="col-note">detected/downloaded/applied/…</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">failure_reason</span><span class="col-type">TEXT</span></div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#e4c07c"></div><span class="card-name">flat_file_changelog</span><span class="badge badge-master">MASTER</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">id</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon li-fk li-idx">→◈</span><span class="col-name">release_id</span><span class="col-type">INTEGER</span><span class="col-note">→ flat_file_releases</span></div>
+          <div class="col-row"><span class="col-icon li-idx">◈</span><span class="col-name">lb_number</span><span class="col-type">INTEGER</span><span class="col-note">NOT NULL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">op</span><span class="col-type">TEXT</span><span class="col-note">add/change/remove</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">checksum</span><span class="col-type">TEXT</span><span class="col-note">NOT NULL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">filename</span><span class="col-type">TEXT</span><span class="col-note">NOT NULL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">chk_type</span><span class="col-type">TEXT</span><span class="col-note">f/s/m</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">xref</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">old_filename</span><span class="col-type">TEXT</span><span class="col-note">op=change only</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">old_xref</span><span class="col-type">INTEGER</span><span class="col-note">op=change only</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /Flat File -->
+
+  <!-- ── Torrents & Activity Logs ── -->
+  <div class="group">
+    <div class="group-header">
+      <div class="group-dot" style="background:#7a88cf"></div>
+      <span class="group-title">Torrents &amp; Activity Logs</span>
+      <span class="group-count">3 tables</span>
+    </div>
+    <div class="table-grid">
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#7a88cf"></div><span class="card-name">torrents</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">id</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon li-idx">◈</span><span class="col-name">lb_number</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">torrent_path</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">source_folder</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">created_at</span><span class="col-type">TIMESTAMP</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">infohash</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">added_to_qbt</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">added_to_qbt_at</span><span class="col-type">TIMESTAMP</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">qbt_infohash_confirmed</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">last_seen_at</span><span class="col-type">TIMESTAMP</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">excluded_files</span><span class="col-type">TEXT</span><span class="col-note">JSON list</span></div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#7a88cf"></div><span class="card-name">rename_history</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">id</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon li-idx">◈</span><span class="col-name">lb_number</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">old_path</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">new_path</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">renamed_at</span><span class="col-type">TIMESTAMP</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">source</span><span class="col-type">TEXT</span><span class="col-note">rename_tab/collection_tab/auto</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">notes</span><span class="col-type">TEXT</span></div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#7a88cf"></div><span class="card-name">forum_posts</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">id</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon li-fk li-idx">→◈</span><span class="col-name">lb_number</span><span class="col-type">INTEGER</span><span class="col-note">NOT NULL → entries</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">subject</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">topic_url</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">board_id</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">posted_at</span><span class="col-type">TEXT</span><span class="col-note">NOT NULL</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /Torrents -->
+
+  <!-- ── Integrity Events ── -->
+  <div class="group">
+    <div class="group-header">
+      <div class="group-dot" style="background:#f77f7f"></div>
+      <span class="group-title">Integrity Events</span>
+      <span class="group-count">1 table</span>
+    </div>
+    <div class="table-grid">
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#f77f7f"></div><span class="card-name">integrity_events</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">id</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">lb_number</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">disk_path</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">event_type</span><span class="col-type">TEXT</span><span class="col-note">missing/content_changed/…</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">detail</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">occurred_at</span><span class="col-type">TIMESTAMP</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">acknowledged</span><span class="col-type">INTEGER</span><span class="col-note">0=unread 1=dismissed</span></div>
+          <div class="col-row"><span class="col-icon li-fk">→</span><span class="col-name">mount_id</span><span class="col-type">INTEGER</span><span class="col-note">→ collection_mounts</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /Integrity Events -->
+
+  <!-- ── Social / Friends ── -->
+  <div class="group">
+    <div class="group-header">
+      <div class="group-dot" style="background:#89ddff"></div>
+      <span class="group-title">Social / Friend Collections</span>
+      <span class="group-count">2 tables</span>
+    </div>
+    <div class="table-grid">
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#89ddff"></div><span class="card-name">friend_collections</span><span class="badge badge-user">USER</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">id</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">friend_name</span><span class="col-type">TEXT</span><span class="col-note">UNIQUE</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">imported_at</span><span class="col-type">TIMESTAMP</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">updated_at</span><span class="col-type">TIMESTAMP</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">lb_count</span><span class="col-type">INTEGER</span></div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#89ddff"></div><span class="card-name">friend_collection_entries</span><span class="badge badge-user">USER</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">id</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon li-fk">→</span><span class="col-name">friend_id</span><span class="col-type">INTEGER</span><span class="col-note">→ friend_collections CASCADE</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">lb_number</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">date_str</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">location</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">lb_status</span><span class="col-type">TEXT</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /Social -->
+
+  <!-- ── Archive.org ── -->
+  <div class="group">
+    <div class="group-header">
+      <div class="group-dot" style="background:#6be5b9"></div>
+      <span class="group-title">Archive.org Uploads</span>
+      <span class="group-count">1 table</span>
+    </div>
+    <div class="table-grid">
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#6be5b9"></div><span class="card-name">archive_org_uploads</span><span class="badge badge-user">USER</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">id</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon li-idx">◈</span><span class="col-name">lb_number</span><span class="col-type">INTEGER</span><span class="col-note">NOT NULL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">identifier</span><span class="col-type">TEXT</span><span class="col-note">IA item identifier</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">folder_path</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">files_total</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">files_uploaded</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon li-idx">◈</span><span class="col-name">status</span><span class="col-type">TEXT</span><span class="col-note">pending/running/done/failed/stopped</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">started_at</span><span class="col-type">TIMESTAMP</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">finished_at</span><span class="col-type">TIMESTAMP</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">error</span><span class="col-type">TEXT</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /Archive.org -->
+
+  <!-- ── Collection Management ── -->
+  <div class="group">
+    <div class="group-header">
+      <div class="group-dot" style="background:#b4d3ff"></div>
+      <span class="group-title">Collection Management</span>
+      <span class="group-count">4 tables</span>
+    </div>
+    <div class="table-grid">
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#b4d3ff"></div><span class="card-name">collection_mounts</span><span class="badge badge-user">USER</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">id</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">label</span><span class="col-type">TEXT</span><span class="col-note">NOT NULL UNIQUE</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">root_path</span><span class="col-type">TEXT</span><span class="col-note">NOT NULL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">notes</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">created_at</span><span class="col-type">TIMESTAMP</span></div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#b4d3ff"></div><span class="card-name">collection_routes</span><span class="badge badge-user">USER</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">year</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon li-fk li-idx">→◈</span><span class="col-name">mount_id</span><span class="col-type">INTEGER</span><span class="col-note">→ collection_mounts ON DELETE RESTRICT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">sub_path</span><span class="col-type">TEXT</span><span class="col-note">sub-dir under mount root</span></div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#b4d3ff"></div><span class="card-name">collection_integrity_status</span><span class="badge badge-user">USER</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">lb_number</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon li-fk li-idx">→◈</span><span class="col-name">mount_id</span><span class="col-type">INTEGER</span><span class="col-note">→ collection_mounts ON DELETE SET NULL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">disk_path</span><span class="col-type">TEXT</span><span class="col-note">NOT NULL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">status</span><span class="col-type">TEXT</span><span class="col-note">pass/content_issue/tag_issue/…</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">content_issues</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">tag_issues</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">missing_count</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">total_files</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">checked_at</span><span class="col-type">TIMESTAMP</span></div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#b4d3ff"></div><span class="card-name">collection_integrity_scans</span><span class="badge badge-user">USER</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">id</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon li-fk li-idx">→◈</span><span class="col-name">mount_id</span><span class="col-type">INTEGER</span><span class="col-note">→ collection_mounts CASCADE; NULL=whole</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">status</span><span class="col-type">TEXT</span><span class="col-note">running/done/error/cancelled</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">started_at</span><span class="col-type">TIMESTAMP</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">finished_at</span><span class="col-type">TIMESTAMP</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">folders_checked</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">folders_pass</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">folders_content_issue</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">folders_tag_issue</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">folders_missing</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">folders_no_lbdir</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">error</span><span class="col-type">TEXT</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /Collection Management -->
+
+</div><!-- /panel-main -->
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     observations.db  (tools/tapematch/observations.db)
+══════════════════════════════════════════════════════════════ -->
+<div class="db-panel" id="panel-obs">
+
+  <div class="legend">
+    <span class="legend-item"><span class="li-pk">🔑</span> Primary Key</span>
+    <span class="legend-item"><span class="li-fk">→</span> Foreign Key</span>
+    <span class="legend-item"><span class="li-idx">◈</span> Indexed</span>
+    <span class="legend-item"><span class="badge badge-view">VIEW</span> SQL view</span>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat"><div class="stat-value">3</div><div class="stat-label">Tables</div></div>
+    <div class="stat"><div class="stat-value">1</div><div class="stat-label">View</div></div>
+    <div class="stat"><div class="stat-value">1</div><div class="stat-label">Index</div></div>
+  </div>
+
+  <div class="group">
+    <div class="group-header">
+      <div class="group-dot" style="background:#c3e88d"></div>
+      <span class="group-title">TapeMatch Run Data</span>
+      <span class="group-count">path: tools/tapematch/observations.db</span>
+    </div>
+    <div class="table-grid">
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#c3e88d"></div><span class="card-name">runs</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">run_id</span><span class="col-type">TEXT</span><span class="col-note">YYYYMMDD_HHMMSS</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">concert_date</span><span class="col-type">TEXT</span><span class="col-note">NOT NULL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">location</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">n_sources_db</span><span class="col-type">INTEGER</span><span class="col-note">entries in losslessbob.db</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">n_sources_found</span><span class="col-type">INTEGER</span><span class="col-note">folders found on disk</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">n_sources_ran</span><span class="col-type">INTEGER</span><span class="col-note">included in run</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">n_families</span><span class="col-type">INTEGER</span><span class="col-note">distinct families detected</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">config_json</span><span class="col-type">TEXT</span><span class="col-note">full config.yaml as JSON</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">archive_dir</span><span class="col-type">TEXT</span><span class="col-note">path to runs/RUN_ID/</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">run_at</span><span class="col-type">TEXT</span><span class="col-note">ISO timestamp</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">duration_sec</span><span class="col-type">REAL</span></div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#c3e88d"></div><span class="card-name">sources</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">id</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon li-fk">→</span><span class="col-name">run_id</span><span class="col-type">TEXT</span><span class="col-note">→ runs</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">concert_date</span><span class="col-type">TEXT</span><span class="col-note">NOT NULL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">lb_number</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">folder_name</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">family_id</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">track_count</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">total_dur_sec</span><span class="col-type">REAL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">perf_dur_sec</span><span class="col-type">REAL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">trim_head_sec</span><span class="col-type">REAL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">trim_tail_sec</span><span class="col-type">REAL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">hf_ceiling_hz</span><span class="col-type">REAL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">noise_floor_db</span><span class="col-type">REAL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">dc_asymmetry</span><span class="col-type">REAL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">nyquist_capped</span><span class="col-type">INTEGER</span><span class="col-note">0/1</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">speed_ppm</span><span class="col-type">REAL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">speed_kind</span><span class="col-type">TEXT</span><span class="col-note">aligned/staircase/splice/…</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">dominant_ext</span><span class="col-type">TEXT</span><span class="col-note">.flac/.shn/.wav/…</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">lb_rating</span><span class="col-type">TEXT</span><span class="col-note">from LB page</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">lb_timing</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">lb_source_text</span><span class="col-type">TEXT</span><span class="col-note">full SOURCE/NOTE block</span></div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#c3e88d"></div><span class="card-name">pairs</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">id</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon li-fk">→</span><span class="col-name">run_id</span><span class="col-type">TEXT</span><span class="col-note">→ runs</span></div>
+          <div class="col-row"><span class="col-icon li-idx">◈</span><span class="col-name">concert_date</span><span class="col-type">TEXT</span><span class="col-note">NOT NULL</span></div>
+          <div class="col-row"><span class="col-icon li-idx">◈</span><span class="col-name">lb_a</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon li-idx">◈</span><span class="col-name">lb_b</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">folder_a</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">folder_b</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">corr</span><span class="col-type">REAL</span><span class="col-note">residual cross-corr 0–1</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">tapematch_verdict</span><span class="col-type">TEXT</span><span class="col-note">same_family/different_family</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">family_id_a</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">family_id_b</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">speed_ppm_a / _b</span><span class="col-type">REAL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">speed_kind_a / _b</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">hf_ceiling_hz_a / _b</span><span class="col-type">REAL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">noise_floor_db_a / _b</span><span class="col-type">REAL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">dc_asymmetry_a / _b</span><span class="col-type">REAL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">perf_dur_sec_a / _b</span><span class="col-type">REAL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">track_count_a / _b</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">dominant_ext_a / _b</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">lb_says_same</span><span class="col-type">INTEGER</span><span class="col-note">1/0/NULL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">lb_relation_text</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">human_judgment</span><span class="col-type">TEXT</span><span class="col-note">confirmed_same/different/uncertain/lb_wrong</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">human_notes</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon li-idx">◈</span><span class="col-name">run_at</span><span class="col-type">TEXT</span><span class="col-note">compound idx with date/lb_a/lb_b</span></div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#c3e88d"></div><span class="card-name">latest_pairs</span><span class="badge badge-view">VIEW</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">— all columns from pairs —</span><span class="col-type"></span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">Deduplicates on</span><span class="col-type"></span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">(concert_date, lb_a, lb_b)</span><span class="col-type"></span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">keeping the most recent</span><span class="col-type"></span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">row by run_at DESC, id DESC</span><span class="col-type"></span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /panel-obs -->
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     fingerprints.db  (data/fingerprints.db)
+══════════════════════════════════════════════════════════════ -->
+<div class="db-panel" id="panel-fp">
+
+  <div class="legend">
+    <span class="legend-item"><span class="li-pk">🔑</span> Primary Key</span>
+    <span class="legend-item"><span class="li-fk">→</span> Foreign Key</span>
+    <span class="legend-item"><span class="li-idx">◈</span> Indexed</span>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat"><div class="stat-value">2</div><div class="stat-label">Tables</div></div>
+    <div class="stat"><div class="stat-value">1</div><div class="stat-label">Index</div></div>
+  </div>
+
+  <div class="group">
+    <div class="group-header">
+      <div class="group-dot" style="background:#c792ea"></div>
+      <span class="group-title">Acoustic Fingerprints</span>
+      <span class="group-count">path: data/fingerprints.db</span>
+    </div>
+    <div class="table-grid">
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#c792ea"></div><span class="card-name">audio_tracks</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-pk">🔑</span><span class="col-name is-pk">id</span><span class="col-type">INTEGER</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">lb_number</span><span class="col-type">INTEGER</span><span class="col-note">NOT NULL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">file_path</span><span class="col-type">TEXT</span><span class="col-note">NOT NULL UNIQUE</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">file_hash</span><span class="col-type">TEXT</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">duration_secs</span><span class="col-type">REAL</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">fingerprinted_at</span><span class="col-type">TIMESTAMP</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">n_hashes</span><span class="col-type">INTEGER</span></div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="card-header"><div class="card-accent" style="background:#c792ea"></div><span class="card-name">fingerprints</span></div>
+        <div class="col-list">
+          <div class="col-row"><span class="col-icon li-idx">◈</span><span class="col-name">hash</span><span class="col-type">INTEGER</span><span class="col-note">NOT NULL; Wang/Shazam landmark</span></div>
+          <div class="col-row"><span class="col-icon li-fk">→</span><span class="col-name">track_id</span><span class="col-type">INTEGER</span><span class="col-note">NOT NULL → audio_tracks</span></div>
+          <div class="col-row"><span class="col-icon"></span><span class="col-name">time_offset</span><span class="col-type">REAL</span><span class="col-note">NOT NULL; seconds</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /panel-fp -->
+
+</div><!-- /main -->
+
+<script>
+function switchTab(id) {
+  document.querySelectorAll('.db-tab').forEach(function(t, i) {
+    t.classList.toggle('active', ['main','obs','fp'][i] === id);
+  });
+  document.querySelectorAll('.db-panel').forEach(function(p) {
+    p.classList.toggle('active', p.id === 'panel-' + id);
+  });
+}
+</script>
+</body>
+</html>

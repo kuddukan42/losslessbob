@@ -168,6 +168,36 @@ def interpret_curve(rows, cfg):
             "max_step_sec": float(steps.max() if len(steps) else 0.0)}
 
 
+def locate_splice_points(rows: list[dict], step_flag_sec: float) -> list[float]:
+    """Return estimated splice-point times (seconds) from a lag-curve row list.
+
+    A "step" is a large jump between consecutive anchor lags — the same signal
+    `interpret_curve` uses to classify a source as "staircase/splice", but here
+    we keep the per-step positions instead of discarding them.  Each detected
+    step is placed at the midpoint between the two flanking valid-anchor times.
+
+    Args:
+        rows: output of `lag_curve` — list of {center_sec, lag_sec, peak} dicts.
+        step_flag_sec: minimum absolute lag jump to count as a splice (usually
+            `cfg["align"]["step_flag_sec"]`).
+
+    Returns:
+        Sorted list of splice-point center times (seconds).  Empty list if fewer
+        than 2 valid (non-None) anchors, or no jumps exceed the threshold.
+    """
+    valid = [r for r in rows if r["lag_sec"] is not None]
+    if len(valid) < 2:
+        return []
+    y = np.array([r["lag_sec"] for r in valid])
+    steps = np.abs(np.diff(y))
+    splices: list[float] = []
+    for i, s in enumerate(steps):
+        if s > step_flag_sec:
+            mid = (valid[i]["center_sec"] + valid[i + 1]["center_sec"]) / 2.0
+            splices.append(float(mid))
+    return splices
+
+
 def union_staircase_sources(*speed_infos: dict[str, dict]) -> set[str]:
     """Sources classified "staircase/splice" in ANY of the given speed_info dicts.
 
