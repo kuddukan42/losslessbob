@@ -29,6 +29,9 @@ _NON_CONCERT_CATEGORIES = frozenset({
     "studio", "interview", "tv", "compilation", "rehearsal", "radio", "soundcheck",
 })
 
+# Recordings shorter than this are almost certainly fragments, not full concerts.
+_MIN_CONCERT_DURATION_SEC: int = 30 * 60  # 1800 s
+
 def _setup_logging(verbose: bool) -> None:
     logging.basicConfig(
         level=logging.INFO if verbose else logging.WARNING,
@@ -195,6 +198,17 @@ def _filter_non_concerts(conn, metrics: dict) -> int:
     return removed
 
 
+def _filter_short_recordings(metrics: dict) -> int:
+    """Remove recordings shorter than _MIN_CONCERT_DURATION_SEC from metrics in-place."""
+    to_remove = [
+        lb for lb, data in metrics.items()
+        if (data.get("duration_sec") or 0.0) < _MIN_CONCERT_DURATION_SEC
+    ]
+    for lb in to_remove:
+        del metrics[lb]
+    return len(to_remove)
+
+
 def _filter_non_public(conn, metrics: dict) -> int:
     """Remove private/missing/nonexistent LBs from metrics in-place. Returns count removed."""
     lbs = list(metrics.keys())
@@ -224,9 +238,10 @@ def _rerank(conn, scan_id: int) -> int:
     log = logging.getLogger(__name__)
     skipped_cat = _filter_non_concerts(conn, metrics)
     skipped_priv = _filter_non_public(conn, metrics)
-    if skipped_cat or skipped_priv:
-        log.info("rerank: skipped %d non-concert, %d non-public recording(s)",
-                 skipped_cat, skipped_priv)
+    skipped_dur = _filter_short_recordings(metrics)
+    if skipped_cat or skipped_priv or skipped_dur:
+        log.info("rerank: skipped %d non-concert, %d non-public, %d short (<30 min)",
+                 skipped_cat, skipped_priv, skipped_dur)
     _inject_dff(conn, metrics)
     _inject_text(conn, metrics)
     family_map = families.load_family_map(conn, list(metrics.keys()))
