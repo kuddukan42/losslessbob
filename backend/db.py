@@ -2798,25 +2798,30 @@ def classify_entry_categories(db_path=None, conn=None) -> dict[str, int]:
     updates: list[tuple[str, int]] = []
 
     for row in entries:
-        lb   = row[0]
-        iso  = _entry_date_to_iso_local(row[1] or "")
-        desc = (row[2] or "").lower()
-        loc  = (row[3] or "").lower()
-        text = desc + " " + loc
+        lb       = row[0]
+        date_raw = (row[1] or "")
+        desc     = (row[2] or "").lower()
+        loc      = (row[3] or "").lower()
+        text     = desc + " " + loc
 
-        # Tier 1: bobdylan.com concert date
-        if iso and iso in bd_dates:
-            category = "concert"
-        # Tier 2: dylan_performances mapping
-        elif iso and iso in perf_map:
-            category = perf_map[iso]
-        # Tier 3: keyword heuristics (non-concert only)
+        # Tier 0: xx in date_str → multi-date compilation (day/month unknown)
+        if "xx" in date_raw.lower():
+            category = "compilation"
         else:
-            category = "unknown"
-            for cat, keywords in _KEYWORD_RULES:
-                if any(kw in text for kw in keywords):
-                    category = cat
-                    break
+            iso = _entry_date_to_iso_local(date_raw)
+            # Tier 1: bobdylan.com concert date
+            if iso and iso in bd_dates:
+                category = "concert"
+            # Tier 2: dylan_performances mapping
+            elif iso and iso in perf_map:
+                category = perf_map[iso]
+            # Tier 3: keyword heuristics (non-concert only)
+            else:
+                category = "unknown"
+                for cat, keywords in _KEYWORD_RULES:
+                    if any(kw in text for kw in keywords):
+                        category = cat
+                        break
 
         updates.append((category, lb))
         counts["classified"] = counts.get("classified", 0) + 1
@@ -2849,8 +2854,13 @@ def classify_one_entry(date_str: str, description: str, location: str, conn) -> 
     Returns:
         Category string.
     """
-    iso = _entry_date_to_iso_local(date_str or "")
+    date_raw = date_str or ""
 
+    # Tier 0: xx in date_str → multi-date compilation (day/month unknown)
+    if "xx" in date_raw.lower():
+        return "compilation"
+
+    iso = _entry_date_to_iso_local(date_raw)
     if iso:
         if conn.execute("SELECT 1 FROM bobdylan_shows WHERE date_str=? LIMIT 1", (iso,)).fetchone():
             return "concert"
