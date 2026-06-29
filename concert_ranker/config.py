@@ -371,16 +371,23 @@ def resolve_band_set(decade: int | None = None,
 # directness/bass/crowd_snr/hiss). dropout_count excluded — confounded (TODO-183).
 # dff_vert_occ = log1p(dff_reports.vert_occ) added 2026-06-25 (+0.005 CV rho);
 # injected at rerank time from dff_reports table (no re-scan needed). 89% coverage.
+#
+# REFIT 2026-06-29: hf_ceiling_hz restored as forced predictor (w=+0.42). Forward
+# selection had dropped it as collinear, but scan-18 audit showed it is essential
+# for the low-quality tail: D/D-/F recordings have 26–43% incidence of hf_ceiling
+# < 5 kHz vs 0.17% for A-tier. CV impact: Spearman 0.6573 / within-1 76.0%
+# (essentially unchanged from 0.6588 / 75.8%). Correctly moves "very muffled"
+# recordings (e.g. LB-7351, hf_ceil=3 kHz, F) from C- toward D-tier.
 # ─────────────────────────────────────────────────────────────────────────────
 QUALITY_MODEL = {
     "predictors": ["hiss_floor_db", "bass_ratio_db", "mud_ratio_db", "onset_clarity",
                    "directness", "crowd_snr_db", "dff_vert_occ",
-                   "harsh_ratio_db", "presence_ratio_db"],
-    "median": [-7.2012, 17.2119, 13.2268, 2.4367, 0.1463, 6.4412, 1.0986, 0.0167, -5.4416],
-    "mean":   [-6.9222, 16.9675, 13.3818, 2.5187, 0.1488, 6.6034, 1.499, 0.253, -5.5205],
-    "std":    [3.6268, 5.753, 5.0761, 0.6596, 0.022, 2.9169, 1.569, 3.3036, 2.6386],
+                   "harsh_ratio_db", "presence_ratio_db", "hf_ceiling_hz"],
+    "median": [-7.2012, 17.2119, 13.2268, 2.4367, 0.1463, 6.4412, 1.0986, 0.0167, -5.4416, 13000.0000],
+    "mean":   [-6.9222, 16.9675, 13.3818, 2.5187, 0.1488, 6.6034, 1.0986, 0.2530, -5.5205, 12051.4653],
+    "std":    [3.6268, 5.7530, 5.0761, 0.6596, 0.0220, 2.9169, 1.0000, 3.3036, 2.6386, 2901.9040],
     "intercept": 9.80772,
-    "weights":   [-0.5916, 0.3482, -0.7161, -0.6886, -0.3097, 0.4154, -0.1274, -0.5952, 0.5796],
+    "weights":   [-0.4742, 0.4127, -0.6599, -0.6181, -0.2226, 0.4510, 0.0000, -0.4009, 0.4341, 0.4196],
 }
 
 # ─────────────────────────────────────────────────────────────────────────────

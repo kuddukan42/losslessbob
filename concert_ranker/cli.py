@@ -22,6 +22,12 @@ import sys
 from concert_ranker.config import default_config
 from concert_ranker.lb import repo, source_type
 
+# lb_category values that are definitively not concerts.
+# 'unknown' and 'concert' are both kept — unknown is typically an uncategorised
+# concert from older LB pages, not a genuinely non-concert recording.
+_NON_CONCERT_CATEGORIES = frozenset({
+    "studio", "interview", "tv", "compilation", "rehearsal", "radio", "soundcheck",
+})
 
 def _setup_logging(verbose: bool) -> None:
     logging.basicConfig(
@@ -34,14 +40,24 @@ def _setup_logging(verbose: bool) -> None:
 # Worklist construction
 # ─────────────────────────────────────────────────────────────────────────────
 def _collection_worklist(conn, lb_filter=None) -> list[tuple]:
-    """Build ``(lb, disk_path, source_class)`` from my_collection."""
+    """Build ``(lb, disk_path, source_class)`` from my_collection.
+
+    Non-concert entries (studio, interview, tv, compilation, rehearsal, radio,
+    soundcheck) and non-public entries (private/missing/nonexistent in lb_master)
+    are silently excluded — the ranker is designed for public concerts only.
+    """
+    cats_ph = ",".join("?" * len(_NON_CONCERT_CATEGORIES))
     sql = ("SELECT c.lb_number AS lb, c.disk_path AS disk_path,"
            "       e.description AS description, e.source_chain AS source_chain,"
            "       e.source_type AS source_type "
-           "FROM my_collection c LEFT JOIN entries e ON c.lb_number = e.lb_number")
-    params: list = []
+           "FROM my_collection c "
+           "LEFT JOIN entries e ON c.lb_number = e.lb_number "
+           "LEFT JOIN lb_master lm ON c.lb_number = lm.lb_number"
+           f" WHERE (e.lb_category IS NULL OR e.lb_category NOT IN ({cats_ph}))"
+           " AND (lm.lb_status IS NULL OR lm.lb_status = 'public')")
+    params: list = list(_NON_CONCERT_CATEGORIES)
     if lb_filter:
-        sql += " WHERE c.lb_number IN ({})".format(",".join("?" * len(lb_filter)))
+        sql += " AND c.lb_number IN ({})".format(",".join("?" * len(lb_filter)))
         params.extend(lb_filter)
     out = []
     for r in conn.execute(sql, params):
@@ -159,6 +175,45 @@ def _inject_text(conn, metrics: dict) -> None:
             metrics[lb]["metrics"].update(extract_text(description))
 
 
+def _filter_non_concerts(conn, metrics: dict) -> int:
+    """Remove non-concert LBs from metrics in-place. Returns count removed."""
+    lbs = list(metrics.keys())
+    if not lbs:
+        return 0
+    cats_ph = ",".join("?" * len(_NON_CONCERT_CATEGORIES))
+    ph = ",".join("?" * len(lbs))
+    rows = conn.execute(
+        f"SELECT lb_number FROM entries"
+        f" WHERE lb_number IN ({ph}) AND lb_category IN ({cats_ph})",
+        lbs + list(_NON_CONCERT_CATEGORIES),
+    ).fetchall()
+    removed = 0
+    for (lb,) in rows:
+        if lb in metrics:
+            del metrics[lb]
+            removed += 1
+    return removed
+
+
+def _filter_non_public(conn, metrics: dict) -> int:
+    """Remove private/missing/nonexistent LBs from metrics in-place. Returns count removed."""
+    lbs = list(metrics.keys())
+    if not lbs:
+        return 0
+    ph = ",".join("?" * len(lbs))
+    rows = conn.execute(
+        f"SELECT lb_number FROM lb_master"
+        f" WHERE lb_number IN ({ph}) AND lb_status != 'public'",
+        lbs,
+    ).fetchall()
+    removed = 0
+    for (lb,) in rows:
+        if lb in metrics:
+            del metrics[lb]
+            removed += 1
+    return removed
+
+
 def _rerank(conn, scan_id: int) -> int:
     """Re-band/rank from stored metrics only (no audio). Returns row count."""
     from concert_ranker import families
@@ -166,6 +221,12 @@ def _rerank(conn, scan_id: int) -> int:
     metrics = repo.load_metrics(conn, scan_id)
     if not metrics:
         return 0
+    log = logging.getLogger(__name__)
+    skipped_cat = _filter_non_concerts(conn, metrics)
+    skipped_priv = _filter_non_public(conn, metrics)
+    if skipped_cat or skipped_priv:
+        log.info("rerank: skipped %d non-concert, %d non-public recording(s)",
+                 skipped_cat, skipped_priv)
     _inject_dff(conn, metrics)
     _inject_text(conn, metrics)
     family_map = families.load_family_map(conn, list(metrics.keys()))
