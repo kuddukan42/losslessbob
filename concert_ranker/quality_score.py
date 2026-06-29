@@ -17,6 +17,26 @@ from concert_ranker.config import QUALITY_MODEL, QUALITY_MODEL_SBD
 _RANK_TO_LETTER = {v: k for k, v in RATING_RANK.items()}
 _MIN_RANK, _MAX_RANK = min(RATING_RANK.values()), max(RATING_RANK.values())
 
+# Hard floor rules: if hf_ceiling_hz is below the threshold the predicted rank
+# is capped at max_rank, regardless of what the regression model predicts.
+# Applied after model prediction; does not affect the model weights.
+# (threshold_hz, max_rank): ordered most-restrictive first.
+_HF_FLOOR_RULES: tuple[tuple[int, int], ...] = (
+    (4000, 2),   # < 4 kHz  → ceiling D- (rank 2): very muffled / no highs at all
+    (6000, 3),   # < 6 kHz  → ceiling D  (rank 3): noticeably bandwidth-limited
+)
+
+
+def _apply_hard_floors(metrics: dict) -> float | None:
+    """Return a rank ceiling imposed by hard floor rules, or None if no rule fires."""
+    hf = metrics.get("hf_ceiling_hz")
+    if hf is None:
+        return None
+    for threshold, max_rank in _HF_FLOOR_RULES:
+        if hf < threshold:
+            return float(max_rank)
+    return None
+
 
 def _model_for(source_class: str | None) -> dict:
     return QUALITY_MODEL_SBD if source_class in ("SBD", "FM") else QUALITY_MODEL
@@ -44,8 +64,14 @@ def grade(metrics: dict, source_class: str | None = None) -> tuple[float, str, f
 
     ``score`` is the predicted rank mapped linearly to 0-100; ``letter`` is the
     nearest A+..F sub-grade. ``source_class`` selects the AUD or SBD/FM model.
+    Hard floor rules (``_HF_FLOOR_RULES``) can cap the rank downward after the
+    model prediction — e.g. recordings with hf_ceiling_hz < 4 kHz are capped at D-.
     """
     rank = predict_rank(metrics, source_class)
+    ceiling = _apply_hard_floors(metrics)
+    if ceiling is not None:
+        rank = min(rank, ceiling)
+    rank = max(_MIN_RANK, min(_MAX_RANK, rank))
     score = (rank - _MIN_RANK) / (_MAX_RANK - _MIN_RANK) * 100.0
     letter = _RANK_TO_LETTER[round(rank)]
     return score, letter, rank
