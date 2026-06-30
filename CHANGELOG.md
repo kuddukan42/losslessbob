@@ -1,3 +1,39 @@
+[2026-06-30] — fix(scraper): WTRF search delay raised to clear forum flood-control
+Fixed: backend/wtrf_scraper.py: search_delay was computed as delay * 1.5 (3.0s at the CLI's
+  default --delay 2.0), below the WTRF forum's ~5s search flood-control window. Raised
+  _SEARCH_DELAY constant to 10.0 and changed find_torrent_for_lb() to
+  max(delay * 1.5, _SEARCH_DELAY) so search2 queries never go below the floor. Likely
+  explains some of the 'not_found' results in live batch testing — searches may have been
+  silently throttled rather than genuinely returning zero candidates. See BUG-226.
+
+[2026-06-30] — fix(scraper): WTRF candidate disqualified when post tagged for a different LB entry
+Fixed: backend/wtrf_scraper.py: _score_candidate() now extracts "LB-NNNNN" tag(s) embedded
+  in candidate post bodies (forum_poster.py's own posting convention) before scoring. A tag
+  matching the target entry's own lb_number is now a strong positive signal (+200,
+  classified 'high' in _classify_confidence). A tag for a DIFFERENT lb_number hard-disqualifies
+  the candidate — find_torrent_for_lb() now skips it in the scoring loop instead of letting it
+  tie/compete on the weak date-match + has_torrent floor (score=5). See BUG-225.
+
+[2026-06-30] — feat(scraper): WTRF fetch CLI accepts LB lists/ranges + prints review URLs
+Added: tools/wtrf_fetch_missing.py: --lbs flag (mutually exclusive with --lb) accepting
+  comma/space-separated LB numbers and/or inclusive ranges, e.g. '16640-16650,16700'.
+  New _parse_lb_spec() helper dedupes and preserves first-seen order; --limit still
+  truncates the resulting queue.
+Changed: tools/wtrf_fetch_missing.py: _print_row() now prints the matched topic_url
+  for 'skipped' rows (needs_review/ambiguous/not_found) so the user can manually open
+  and review the candidate post(s) directly from CLI output, without querying
+  wtrf_downloads. Ties print both tied URLs.
+Changed: backend/wtrf_scraper.py: find_torrent_for_lb() returns topic_url_2 (the
+  runner-up topic) on confidence='ambiguous', for the CLI's tie display. Not persisted
+  to wtrf_downloads — display-only.
+
+[2026-06-29d] — feat(scraper): WTRF forum torrent fetcher for missing LB items
+Added: backend/wtrf_scraper.py: search WTRF board by date variants, multi-round scoring (FFP hashes > filenames > equipment tokens > taper name), confidence classification, torrent download with per-request throttle
+Added: backend/qbittorrent.py: add_torrent_for_download() — adds torrent for downloading (no source-folder assumption)
+Added: backend/db.py: wtrf_downloads table + add/update/get/get_pending helpers
+Added: backend/app.py: POST /api/wtrf/fetch_torrent, POST /api/wtrf/crawl_missing (SSE), GET /api/wtrf/downloads
+Added: tools/wtrf_fetch_missing.py: headless CLI for batch missing-item crawl (--limit, --lb, --delay, --add-to-qbt, --dry-run)
+
 [2026-06-29c] — feat(concert-ranker): hard hf_ceiling floors + 30-min duration gate
 Changed: concert_ranker/quality_score.py: _HF_FLOOR_RULES constant + _apply_hard_floors() — caps predicted rank after model: hf_ceiling_hz < 4000 → D- ceiling (rank 2); hf_ceiling_hz < 6000 → D ceiling (rank 3). Applied inside grade() after predict_rank(). D- now produced (26 recordings); D increased 1→150. Pearson r 0.66→0.64 (boundary trade-off: some LB C- with restricted HF pushed to D).
 Changed: concert_ranker/cli.py: _MIN_CONCERT_DURATION_SEC = 1800 s constant; _filter_short_recordings() removes recordings under 30 min from metrics in-place; called from _rerank alongside other filters. 162 sub-30-min recordings excluded from scan 18; final scored set: 13752 rows.

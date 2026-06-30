@@ -401,12 +401,11 @@ def extract_lb_header(lb_num: int) -> dict[str, str]:
     return result
 
 
-_SAME_RE = re.compile(
-    r"same recording|same as|fingerprints.{0,40}match|"
-    r"eac match|close match|\bidentical\b",
-    re.IGNORECASE,
-)
-_DIFF_RE = re.compile(r"different recording|different from", re.IGNORECASE)
+# _SAME_RE / _DIFF_RE canonical definitions live in backend.db; import them so
+# both modules stay in sync without duplicating the patterns.
+if str(Path(__file__).resolve().parent.parent.parent) not in sys.path:
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
+from backend.db import _SAME_RE, _DIFF_RE  # noqa: E402
 
 
 def extract_lb_relationship(lb_a: int, lb_b: int) -> tuple[int | None, str]:

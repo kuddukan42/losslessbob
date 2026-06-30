@@ -722,6 +722,24 @@ CREATE TABLE IF NOT EXISTS entry_lineage (
 CREATE INDEX IF NOT EXISTS idx_lineage_taper_norm
     ON entry_lineage(taper_normalised)
     WHERE taper_normalised IS NOT NULL;
+
+-- ── WTRF Torrent Downloads (USER — fetch attempts for missing items) ──────────
+CREATE TABLE IF NOT EXISTS wtrf_downloads (
+    id           INTEGER PRIMARY KEY AUTOINCREMENT,
+    lb_number    INTEGER NOT NULL,
+    topic_url    TEXT,
+    torrent_path TEXT,
+    confidence   TEXT,    -- 'definitive'/'high'/'medium'/'needs_review'/'ambiguous'/'not_found'
+    signals_json TEXT,    -- JSON scoring details
+    status       TEXT NOT NULL DEFAULT 'pending',  -- 'pending'/'downloaded'/'qbt_added'/'failed'/'skipped'
+    error        TEXT,
+    attempted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    qbt_added_at TIMESTAMP
+);
+CREATE INDEX IF NOT EXISTS idx_wtrf_downloads_lb
+    ON wtrf_downloads(lb_number, attempted_at DESC);
+CREATE INDEX IF NOT EXISTS idx_wtrf_downloads_status
+    ON wtrf_downloads(status, attempted_at DESC);
 """
 
 _MD5_RE = re.compile(r'^([0-9a-fA-F]{32})\s+\*?(.+)$')
@@ -3541,6 +3559,118 @@ def delete_forum_post(post_id: int, db_path=None) -> None:
     get_write_queue().execute(
         lambda c: c.execute("DELETE FROM forum_posts WHERE id=?", (_id,))
     )
+
+
+def add_wtrf_download(
+    lb_number: int,
+    topic_url: str | None,
+    torrent_path: str | None,
+    confidence: str,
+    signals_json: str,
+    status: str,
+    error: str | None = None,
+    db_path=None,
+) -> int:
+    """Insert a wtrf_downloads row and return its new id.
+
+    Args:
+        lb_number: LB entry being fetched.
+        topic_url: Matched WTRF topic URL (None if not found).
+        torrent_path: Local path of downloaded .torrent (None until downloaded).
+        confidence: One of definitive/high/medium/needs_review/ambiguous/not_found.
+        signals_json: JSON string of scoring detail dict.
+        status: One of pending/downloaded/qbt_added/failed/skipped.
+        error: Error message string if status=failed.
+        db_path: Optional DB path override.
+
+    Returns:
+        New row id.
+    """
+    _lb, _tu, _tp, _conf, _sj, _st, _err = (
+        lb_number, topic_url, torrent_path, confidence, signals_json, status, error
+    )
+
+    def _run(c):
+        cur = c.execute(
+            "INSERT INTO wtrf_downloads"
+            "(lb_number, topic_url, torrent_path, confidence, signals_json, status, error)"
+            " VALUES (?, ?, ?, ?, ?, ?, ?)",
+            (_lb, _tu, _tp, _conf, _sj, _st, _err),
+        )
+        return cur.lastrowid
+
+    return get_write_queue().execute(_run)
+
+
+def update_wtrf_download(download_id: int, fields: dict, db_path=None) -> None:
+    """Update one or more columns on a wtrf_downloads row.
+
+    Args:
+        download_id: Primary key of the row to update.
+        fields: Dict of column→value pairs to set.
+        db_path: Optional DB path override.
+    """
+    if not fields:
+        return
+    set_clause = ", ".join(f"{k}=?" for k in fields)
+    values = list(fields.values()) + [download_id]
+    get_write_queue().execute(
+        lambda c: c.execute(
+            f"UPDATE wtrf_downloads SET {set_clause} WHERE id=?", values
+        )
+    )
+
+
+def get_wtrf_downloads(lb_number: int | None = None, db_path=None) -> list[dict]:
+    """Return wtrf_downloads rows, optionally filtered by lb_number.
+
+    Args:
+        lb_number: If given, return only rows for this LB.
+        db_path: Optional DB path override.
+
+    Returns:
+        List of row dicts, newest first.
+    """
+    with get_connection(db_path) as conn:
+        if lb_number is not None:
+            rows = conn.execute(
+                "SELECT * FROM wtrf_downloads WHERE lb_number=? ORDER BY attempted_at DESC",
+                (lb_number,),
+            ).fetchall()
+        else:
+            rows = conn.execute(
+                "SELECT * FROM wtrf_downloads ORDER BY attempted_at DESC"
+            ).fetchall()
+    return [dict(r) for r in rows]
+
+
+def get_wtrf_pending_lb_numbers(db_path=None) -> list[int]:
+    """Return lb_numbers that are public, not in my_collection, and not yet
+    successfully fetched (no downloaded/qbt_added row), ordered desc.
+
+    Used by the batch crawl to build the work queue.
+
+    Args:
+        db_path: Optional DB path override.
+
+    Returns:
+        List of lb_numbers descending.
+    """
+    with get_connection(db_path) as conn:
+        rows = conn.execute(
+            """
+            SELECT lm.lb_number
+              FROM lb_master lm
+             WHERE lm.lb_status = 'public'
+               AND lm.lb_number NOT IN (SELECT lb_number FROM my_collection)
+               AND lm.lb_number NOT IN (
+                   SELECT lb_number FROM wtrf_downloads
+                    WHERE status IN ('downloaded', 'qbt_added')
+               )
+             ORDER BY lm.lb_number DESC
+            """
+        ).fetchall()
+    return [r[0] for r in rows]
 
 
 def get_all_forum_posts(db_path=None) -> list:

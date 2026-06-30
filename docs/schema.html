@@ -12,7 +12,7 @@ a{color:inherit;text-decoration:none}
 /* ── Header ── */
 .site-header{background:#161928;border-bottom:1px solid #1e2140;padding:16px 24px;position:sticky;top:0;z-index:100}
 .site-header h1{font-size:18px;font-weight:700;color:#f0f4ff;margin-bottom:3px}
-.site-header p{font-size:11px;color:#4a5173}
+.site-header p{font-size:11px;color:#a8b4c4}
 
 /* ── DB Tabs ── */
 .db-tabs{display:flex;gap:2px;padding:0 24px;background:#161928;border-bottom:1px solid #1e2140}
@@ -31,7 +31,7 @@ a{color:inherit;text-decoration:none}
 
 /* ── Legend ── */
 .legend{display:flex;flex-wrap:wrap;gap:14px;padding:0 0 16px;border-bottom:1px solid #1e2140;margin-bottom:20px}
-.legend-item{display:flex;align-items:center;gap:5px;font-size:11px;color:#636d8e}
+.legend-item{display:flex;align-items:center;gap:5px;font-size:11px;color:#b0bcc8}
 .li-pk{color:#ffd173}
 .li-fk{color:#82aaff}
 .li-idx{color:#c3e88d}
@@ -39,14 +39,14 @@ a{color:inherit;text-decoration:none}
 /* ── Stats bar ── */
 .stats-bar{display:flex;gap:28px;padding:0 0 20px}
 .stat-value{font-size:22px;font-weight:700;color:#f0f4ff}
-.stat-label{font-size:9px;color:#4a5173;text-transform:uppercase;letter-spacing:.08em}
+.stat-label{font-size:9px;color:#a8b4c4;text-transform:uppercase;letter-spacing:.08em}
 
 /* ── Group ── */
 .group{margin-bottom:28px}
 .group-header{display:flex;align-items:center;gap:10px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #1e2140}
 .group-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
-.group-title{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#636d8e}
-.group-count{font-size:10px;color:#4a5173;margin-left:auto}
+.group-title{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#b0bcc8}
+.group-count{font-size:10px;color:#a8b4c4;margin-left:auto}
 
 /* ── Grid ── */
 .table-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:10px}
@@ -71,15 +71,78 @@ a{color:inherit;text-decoration:none}
 .col-icon{font-size:10px;width:12px;text-align:center;flex-shrink:0;line-height:1.4}
 .col-name{font-family:'SFMono-Regular','Consolas',monospace;font-size:11px;color:#b4bde8;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .col-name.is-pk{color:#ffd173;font-weight:600}
-.col-type{font-family:'SFMono-Regular','Consolas',monospace;font-size:10px;color:#4a5173;flex-shrink:0}
-.col-note{font-size:10px;color:#3a4260;flex-shrink:0;max-width:130px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.col-type{font-family:'SFMono-Regular','Consolas',monospace;font-size:10px;color:#c0ccd8;flex-shrink:0}
+.col-note{font-size:10px;color:#b0bfcc;flex-shrink:0;white-space:nowrap}
+.col-name[data-tip]{text-decoration:underline dotted #4a5173;cursor:help}
+
+/* ── Search ── */
+.site-header{display:flex;align-items:center;gap:16px}
+.header-text{flex:1}
+.search-input{background:#1e2140;border:1px solid #2a2f55;border-radius:6px;padding:5px 10px;font-size:11px;color:#c8d3f5;outline:none;width:190px;transition:border-color .15s}
+.search-input::placeholder{color:#4a5173}
+.search-input:focus{border-color:#5470b0}
+
+/* ── Group collapse ── */
+.group-header{cursor:pointer;user-select:none}
+.group-chevron{font-size:9px;color:#a8b4c4;transition:transform .15s;display:inline-block;margin-left:6px}
+.group.collapsed .group-chevron{transform:rotate(-90deg)}
+.group.collapsed .table-grid,.group.collapsed .group-desc,.group.collapsed .crossdb-callout{display:none}
+.group-desc{font-size:10px;color:#9aacc0;margin:-4px 0 10px 19px;font-style:italic;line-height:1.5}
+
+/* ── Card desc ── */
+.table-card{cursor:pointer}
+.card-desc{font-size:10px;color:#b8c8d8;line-height:1.45;padding:5px 12px 6px;border-bottom:1px solid #1a1d30;font-style:italic}
+
+/* ── FK highlight ── */
+.table-card.fk-focused{border-color:#ffd173!important;box-shadow:0 0 0 2px #ffd17330}
+.table-card.fk-related{border-color:#82aaff!important;box-shadow:0 0 0 1px #82aaff30}
+.table-card.fk-dimmed{opacity:.25;transition:opacity .2s}
+
+/* ── FK chip ── */
+.fk-chip{display:inline-block;font-size:9px;padding:1px 5px;background:#12213a;border:1px solid #2a4070;border-radius:3px;color:#82aaff;cursor:pointer;margin-left:4px;vertical-align:middle;transition:background .1s;white-space:nowrap}
+.fk-chip:hover{background:#1e3460}
+
+/* ── Tooltip ── */
+#tooltip{position:fixed;z-index:9999;background:#1e2140;border:1px solid #3a4170;border-radius:5px;padding:6px 10px;font-size:10px;color:#c8d3f5;max-width:270px;line-height:1.4;pointer-events:none;display:none;box-shadow:0 4px 16px #0009}
+
+/* ── Cross-DB callout ── */
+.crossdb-callout{background:#12213a;border:1px solid #2a4070;border-radius:6px;padding:8px 12px;font-size:10px;color:#82aaff;margin-bottom:14px;line-height:1.6}
+.crossdb-callout strong{color:#c8d3f5}
+
+/* ── Legend hint ── */
+.legend-hint{margin-left:auto;font-size:10px;color:#8aa0b8;font-style:italic}
+
+/* ── Header controls (zoom + collapse/expand) ── */
+.header-right{display:flex;flex-direction:column;gap:5px;align-items:flex-end;flex-shrink:0}
+.header-btns{display:flex;gap:5px}
+.ctrl-btn{background:#1e2140;border:1px solid #2a2f55;border-radius:5px;padding:3px 10px;font-size:11px;color:#c8d3f5;cursor:pointer;transition:background .15s;font-family:inherit}
+.ctrl-btn:hover{background:#2a3060;border-color:#4a5590;color:#f0f4ff}
+.zoom-wrap{display:flex;align-items:center;gap:6px;font-size:11px}
+.zoom-lbl{color:#a8b4c4}
+#zoom-val{color:#c8d3f5;min-width:36px;text-align:right}
+#zoom-slider{width:88px;cursor:pointer;accent-color:#82aaff;vertical-align:middle}
 </style>
 </head>
 <body>
 
+<div id="tooltip"></div>
 <header class="site-header">
-  <h1>LosslessBob — Database Schema</h1>
-  <p>3 databases · 50 tables · 1 virtual FTS5 · 1 view · Generated 2026-06-26</p>
+  <div class="header-text">
+    <h1>LosslessBob — Database Schema</h1>
+    <p>3 databases · 50 tables · 1 virtual FTS5 · 1 view · Generated 2026-06-26</p>
+  </div>
+  <div class="header-right">
+    <input class="search-input" type="search" id="search-box" placeholder="Filter tables…">
+    <div class="header-btns">
+      <button class="ctrl-btn" onclick="expandAllGroups()">Expand All</button>
+      <button class="ctrl-btn" onclick="collapseAllGroups()">Collapse All</button>
+      <div class="zoom-wrap">
+        <span class="zoom-lbl">Zoom</span>
+        <input type="range" id="zoom-slider" min="60" max="150" value="100" step="5">
+        <span id="zoom-val">100%</span>
+      </div>
+    </div>
+  </div>
 </header>
 
 <div class="db-tabs">
@@ -1076,14 +1139,289 @@ a{color:inherit;text-decoration:none}
 </div><!-- /main -->
 
 <script>
+// ── Table descriptions + column tooltips ──
+const TABLE_INFO = {
+  checksums:{
+    desc:'Hash strings from FFP/MD5/SHA1 checksum files. Primary lookup table — hashes are matched against user-pasted input to identify which archive entry a recording belongs to.',
+    cols:{checksum:'The actual hash string matched against user input',chk_type:"'f'=FFP fingerprint  's'=SHA1/SHN  'm'=MD5",xref:'1 = hash also valid for another LB number (known duplicate/alias)',lb_number:'Which archive entry this checksum belongs to'}
+  },
+  entries:{
+    desc:'One row per LosslessBob archive entry. Core metadata scraped from the LB website: concert date, location, setlist, source chain, and taper info.',
+    cols:{lb_number:'The LosslessBob archive number — universal identifier throughout the system',date_str:"Concert date as scraped — may be partial: 'July 1966' or just '1966'",cdr:'CDR quality indicator from the archive page',status:"'ok'=all files accessible  'missing'=one or more files unavailable",source_chain:"Recording provenance, e.g. 'SBD→DAT→CDR→FLAC'",lb_category:"'concert'  'interview'  'rehearsal'  'broadcast'  etc.",source_type:'Recording source: SBD=soundboard  AUD=audience  FM=broadcast',taper_name:'Name of the person who made the recording'}
+  },
+  entry_files:{
+    desc:'Checksum and attachment files listed on the LB page for each entry. Tracks download URLs and local cache status.',
+    cols:{clean_name:'Normalized filename without path separators',downloaded:'1 = file has been fetched and cached locally'}
+  },
+  entries_fts:{desc:'FTS5 full-text virtual table shadowing entries. Powers substring search across description, setlist, location, and date. Not a real table — managed by SQLite automatically.',cols:{content:'Points to the entries table — SQLite FTS5 content= config'}},
+  meta:{desc:'Key-value store for application metadata: last scrape timestamp, DB schema version, config flags.',cols:{key:'Metadata key name (e.g. "schema_version" "last_scrape_at")',value:'Serialized value — always stored as text'}},
+  lb_master:{
+    desc:'One row per known LB number, including gaps and private entries. Source of truth for archive health — tracks whether a page is public, private, missing, or nonexistent.',
+    cols:{lb_status:"'public'=page accessible  'private'=behind login  'missing'=was public now 404  'nonexistent'=never had a page",has_webpage:'1 if the entry page returned HTTP 200',has_checksums:'1 if at least one checksum file is available',has_attachments:'1 if non-checksum attachments are present',previous_status:'Status before the most recent transition',manual_override:'1 = status was set manually, not by the scraper',manual_status:'The manually assigned status value',manual_set_by:'Username or process that set the manual status',needs_review:'1 = flagged for curator attention',public_no_checksums:'1 = page is public but no checksums found (unusual)'}
+  },
+  lb_status_history:{desc:'Append-only audit log of every status transition in lb_master. Useful for detecting entries that went offline then reappeared.',cols:{trigger_event:"What caused the status change: 'flat_file_apply'  'scrape'  'manual'"}},
+  lb_missing:{desc:'Manually confirmed entries taken offline. Included in the master export so other users can flag the same LB numbers.',cols:{}},
+  lb_alias:{desc:'Maps alias LB numbers to their canonical entry. Handles duplicates, re-releases, and see-also relationships.',cols:{alias_lb:'The secondary LB number (redirect this to canonical)',canonical_lb:'The authoritative LB number',relationship:"'duplicate'=same recording  'supersedes'=newer version  'see_also'=related but distinct"}},
+  lb_problems:{desc:'Curator notes about known issues with specific entries (bad checksums, corrupt files, mislabeled sources, etc.).',cols:{}},
+  my_collection:{desc:"The user's local recording collection. One row per LB entry owned on disk, with folder path and confirmation timestamp.",cols:{folder_name:'Display name of the recording folder',disk_path:'Absolute path to the folder on disk',confirmed_at:'When the folder was last verified to exist on disk'}},
+  collection_meta:{desc:'Optional user annotations extending my_collection: personal rating, listen count, last-played timestamp, and custom tags.',cols:{personal_rating:'User rating 1–5 stars',tags:'Comma-separated or JSON tag list'}},
+  my_wishlist:{desc:"Recordings the user wants to acquire. Separate from my_collection so wishlist items don't pollute owned-recording queries.",cols:{priority:'1=must-have  5=nice-to-have'}},
+  folder_lb_link:{desc:'Many-to-many mapping of disk folders to LB numbers. Handles cases where one folder contains multiple shows or vice versa.',cols:{}},
+  entry_changes:{desc:'Field-level audit log of changes detected during scraping. Shows exactly what changed between scrape runs.',cols:{field:"The entries column that changed, e.g. 'status'  'description'  'location'"}},
+  scrape_sessions:{
+    desc:'One row per scrape run. Tracks scope (full/incremental/range), start/end times, and HTTP statistics.',
+    cols:{scope:"'full'=all entries  'incremental'=only new/changed  'range'=specific LB number range",pages_304:'HTTP 304 Not Modified — pages unchanged since last fetch',pages_skipped:'Pages intentionally skipped (already current, rate-limited, etc.)'}
+  },
+  site_inventory:{desc:'Every URL the scraper has encountered — entry pages, checksum files, attachments. Tracks HTTP status, caching headers, and download state.',cols:{body_sha256:'SHA-256 of the page body — used to detect content changes between fetches',status:"'pending'  'downloaded'  'not_found'  'error'  'skipped'"}},
+  bootleg_titles:{desc:'Title and date records scraped from the LBBCD bootleg catalog (an independent discography). Cross-referenced with LB numbers.',cols:{lbbcd_id:'LBBCD catalog identifier for this entry'}},
+  bootleg_scrapes:{desc:'Audit log of each LBBCD catalog scrape: source URL, diff stats (rows added/changed/removed), and HTTP cache headers.',cols:{}},
+  bobdylan_shows:{desc:'Show records scraped from the official bobdylan.com concert database — venue, date, location.',cols:{bobdylan_url:'Full URL of the show page on bobdylan.com — also the primary key'}},
+  bobdylan_setlist:{desc:'Per-song setlist entries from bobdylan.com, ordered by position within each show.',cols:{position:'Song order within the show (1-based)',song_url:'URL to the song page on bobdylan.com (if available)'}},
+  setlistfm_shows:{desc:'Show records from setlist.fm — venue, city, country, and tour name.',cols:{setlistfm_id:'setlist.fm unique identifier for this show',tour_name:'Tour or tour leg name as listed on setlist.fm'}},
+  setlistfm_setlist:{desc:'Per-song setlist data from setlist.fm including set index, encore flag, cover artist, and tape marker.',cols:{set_index:'Which set within the show (0=main set  1=encore  etc.)',is_encore:'1 if this song was played during an encore',is_cover:'1 if this song was written by another artist',cover_artist:'Original artist if is_cover=1',is_tape:'1 if played from tape/pre-recorded rather than live'}},
+  location_geocoded:{desc:'Geocoded lat/lon for every unique location string in entries.location. Nominatim-sourced with manual override support.',cols:{location_text:'Matches entries.location exactly — used as the join key',source:"'nominatim'=OpenStreetMap API  'manual'=hand-entered  'failed'=geocoding failed",confidence:"'high'=city/venue-level  'medium'  'low'=country-only match",manual_override:'1 = never overwrite this row with automated geocoding'}},
+  dylan_performances:{desc:'Comprehensive event list covering all known Bob Dylan appearances: concerts, TV, studio sessions, guest slots.',cols:{event_id:'YYYYMMDDNN — date + sequential number for multiple events on the same day',category:'HOME=private/unreleased  NET=TV/radio  MCONCERT=main concert  GUEST=guest appearance'}},
+  recording_families:{desc:'Maps each LB recording to its tape-source family cluster. Populated by TapeMatch acoustic analysis.',cols:{fam_id:'Deterministic hash of the family members — stable across re-runs if composition unchanged',concert_date:'ISO date of the concert this recording is from',run_id:'Which TapeMatch run produced this family assignment'}},
+  tapematch_family_meta:{
+    desc:'Per-family metadata: human-readable label, mean pairwise-correlation confidence, member count, and review flags.',
+    cols:{label:"Auto-assigned label within a concert date (e.g. 'Family A'  'Family B')",label_override:'Curator-supplied label overriding the auto-assigned one',by:"'ai'=TapeMatch only  'ai+lb'=TapeMatch + LB alias data",conf:'Mean pairwise cross-correlation — higher = more certain these share the same source tape',review_flag:'1 = family needs human review',review_reason:'Why this family was flagged for review'}
+  },
+  quality_scans:{desc:'Log of each concert-ranker scoring run. Stores the config/weights snapshot so scores can be reproduced or compared across runs.',cols:{config_json:'JSON snapshot of all scoring thresholds and weights — lets you reproduce or compare results'}},
+  quality_recording_metrics:{desc:'Raw per-recording audio metrics from a scan run: noise floor, HF ceiling, duration, completeness, detected source class.',cols:{source_class:'Detected source: SBD=soundboard  AUD=audience  FM=broadcast  UNKNOWN',metric_json:'Full set of raw aggregated per-track metrics before scoring thresholds are applied',completeness:'Fraction of expected concert duration covered (0.0–1.0); NULL until post-processing'}},
+  quality_recording_scores:{desc:'Scored and ranked output per scan: composite final score, rank within family, veto status, and verdict text.',cols:{family_id:'Dense integer family ID within this scan (differs from recording_families.fam_id)',final_score:'Composite quality score; NULL if the recording was vetoed',rank_in_family:'1 = best transfer in this family; higher = worse',vetoed:'1 = hard-disqualified (e.g. corrupt files, wrong concert date)',verdict_text:'Human-readable explanation of the score or veto reason'}},
+  curated_lists:{desc:"Named ordered lists of LB entries (e.g. 'Top 50 SBDs', '1975 Tour'). Identified by a unique slug.",cols:{name:"Unique slug used in code/URLs (e.g. 'top50_sbd')",label:'Human-readable display name',source:"Where this list came from (e.g. 'hand-curated'  'from_concert_ranker')"}},
+  curated_list_entries:{desc:'The individual LB numbers belonging to each curated list, with optional per-entry notes.',cols:{}},
+  flat_file_releases:{desc:'Tracks each release of the LosslessBob flat-file checksum ZIP. One row per detected ZIP with full lifecycle timestamps.',cols:{last_lb_in_name:'Highest LB number in the ZIP filename — used to detect new entries',status:"'detected' → 'downloaded' → 'applied' (or 'failed' / 'deferred')",deferred_until:'If set, the import was scheduled for a later time'}},
+  flat_file_changelog:{desc:'Row-level diff for each flat-file release — every checksum entry that was added, changed, or removed.',cols:{op:"'add'=new checksum  'change'=filename or xref changed  'remove'=deleted from archive",old_filename:'Previous filename (op=change only)',old_xref:'Previous xref value (op=change only)'}},
+  torrents:{desc:'Torrent files created from local collection entries. Tracks qBittorrent seeding status and infohash confirmation.',cols:{infohash:'BitTorrent infohash — used to verify torrent was accepted by qBittorrent',added_to_qbt:'1 = torrent has been added to qBittorrent for seeding',qbt_infohash_confirmed:'1 = qBittorrent confirmed the infohash matches',excluded_files:'JSON list of files excluded from the torrent'}},
+  rename_history:{desc:'Log of folder renames performed by the rename tool. Useful for auditing or undoing batch renames.',cols:{source:"'rename_tab'=manual  'collection_tab'=importer  'auto'=scheduled"}},
+  forum_posts:{desc:'LB forum threads related to specific entries. Used by the lb_master integrity system to guard against auto-marking entries as nonexistent when a forum thread exists.',cols:{board_id:'LB forum board identifier where this thread lives'}},
+  integrity_events:{desc:'Events detected during collection integrity scans: missing folders, file content changes, tag errors. Supports an acknowledge/dismiss workflow.',cols:{event_type:"'missing'=folder not on disk  'content_changed'=checksum mismatch  'tag_error'=FLAC tag issue",acknowledged:'0 = new/unread event  1 = user has dismissed it'}},
+  friend_collections:{desc:'Named friend collections imported from LB share files. One row per friend; their holdings are in friend_collection_entries.',cols:{lb_count:"Number of LB entries in this friend's collection at last import"}},
+  friend_collection_entries:{desc:"Individual LB holdings for each friend. Used for 'what does my friend have that I don't' comparison queries.",cols:{}},
+  archive_org_uploads:{desc:'Tracks upload jobs to the Internet Archive. One row per recording upload with file progress and lifecycle status.',cols:{identifier:'Internet Archive item identifier (the IA URL slug)',status:"'pending' → 'running' → 'done' (or 'failed' / 'stopped')"}},
+  collection_mounts:{desc:"Named disk mount points (e.g. 'External-A') with root paths. Other tables reference mount IDs rather than hard-coded paths.",cols:{root_path:"Absolute path to the drive root, e.g. '/media/MyDrive'"}},
+  collection_routes:{desc:"Maps concert years to which mount they're stored on and the sub-directory within that mount.",cols:{sub_path:"Sub-directory within the mount root, e.g. '1966' or 'bootlegs/1960s'"}},
+  collection_integrity_status:{desc:'Latest integrity scan result per recording: pass/fail status, issue counts, and checked timestamp.',cols:{status:"'pass'  'content_issue'=checksum mismatch  'tag_issue'=FLAC tag error  'missing'=folder gone  'no_lbdir'=unrecognized folder",content_issues:'Number of files with checksum mismatches',tag_issues:'Number of files with FLAC tag metadata errors',missing_count:'Number of expected files not found on disk'}},
+  collection_integrity_scans:{desc:'Log of each integrity scan run with per-mount scope and summary statistics.',cols:{folders_no_lbdir:'Folders found on disk that could not be matched to any LB entry'}},
+  // observations.db
+  runs:{desc:'One row per TapeMatch analysis run. Captures scope (concert date), config snapshot, source counts, and output directory path.',cols:{run_id:'YYYYMMDD_HHMMSS — also the name of the runs/ output subdirectory',n_sources_db:'Recordings in losslessbob.db for this concert date',n_sources_found:'How many of those were actually found on disk',n_sources_ran:'How many were included in this run (may be fewer if some skipped)',archive_dir:'Absolute path to the run output directory'}},
+  sources:{
+    desc:'One row per recording analyzed in a TapeMatch run. Stores all extracted audio features.',
+    cols:{hf_ceiling_hz:'Highest frequency with meaningful spectral content — proxy for recording bandwidth',noise_floor_db:'RMS noise level measured in silent passages',dc_asymmetry:'DC offset difference between stereo channels — may indicate tape alignment issues',nyquist_capped:'1 if content was cut at the sample-rate ceiling (resampled recording)',speed_ppm:'Playback speed deviation in parts-per-million (0 = perfect pitch)',speed_kind:"'aligned'=consistent  'staircase'=pitch-shifted in discrete steps  'splice'=abrupt cut",perf_dur_sec:'Performance duration after trimming head/tail silence',dominant_ext:'Most common audio format in this folder (.flac / .shn / .wav)',lb_rating:'LB page rating field as scraped',lb_source_text:'Full SOURCE/NOTE block scraped from the LB page'}
+  },
+  pairs:{desc:'One row per recording pair compared in a TapeMatch run. Core verdict, cross-correlation score, and all paired feature values.',cols:{corr:'Cross-correlation score 0.0–1.0; above ~0.6 typically means same source tape',tapematch_verdict:"'same_family' or 'different_family' — the algorithm's classification",lb_says_same:'1=LB data agrees same source  0=LB says different  NULL=no LB info',human_judgment:"'confirmed_same'  'different'  'uncertain'  'lb_wrong' (human override)"}},
+  latest_pairs:{desc:'SQL view over pairs. Deduplicates on (concert_date, lb_a, lb_b) keeping only the most recent run result. Use this for current-state queries.',cols:{}},
+  // fingerprints.db
+  audio_tracks:{desc:'One row per audio file that has been acoustically fingerprinted. Linked to a LB recording via lb_number.',cols:{file_hash:'Content hash of the audio file — used to detect if file changed since fingerprinting',n_hashes:'Number of acoustic landmark hashes generated for this track'}},
+  fingerprints:{desc:'Acoustic landmark hashes (Wang/Shazam algorithm) for all fingerprinted tracks. Many rows per track, indexed by hash for fast lookup.',cols:{hash:'Wang/Shazam landmark hash — encodes a frequency-peak pair and their time separation',time_offset:'Time in seconds where this landmark occurs in the track'}}
+};
+
+// FKs not expressed in col-notes — col→target
+const FK_SUPPLEMENT = {
+  checksums:{lb_number:'entries'},
+  entry_files:{lb_number:'entries'},
+  recording_families:{lb_number:'entries'},
+  lb_status_history:{lb_number:'lb_master'},
+  bootleg_titles:{lb_number:'entries'},
+  torrents:{lb_number:'entries'},
+  rename_history:{lb_number:'entries'},
+  archive_org_uploads:{lb_number:'entries'},
+  curated_list_entries:{lb_number:'entries'},
+  friend_collection_entries:{lb_number:'entries'},
+  quality_recording_scores:{scan_id:'quality_scans'},
+  integrity_events:{lb_number:'entries'}
+};
+
+let fkMap = {}, activeCard = null;
+
 function switchTab(id) {
-  document.querySelectorAll('.db-tab').forEach(function(t, i) {
-    t.classList.toggle('active', ['main','obs','fp'][i] === id);
+  clearFocus();
+  document.querySelectorAll('.db-tab').forEach(function(t,i){
+    t.classList.toggle('active',['main','obs','fp'][i]===id);
   });
-  document.querySelectorAll('.db-panel').forEach(function(p) {
-    p.classList.toggle('active', p.id === 'panel-' + id);
+  document.querySelectorAll('.db-panel').forEach(function(p){
+    p.classList.toggle('active',p.id==='panel-'+id);
   });
 }
+
+function buildFKMap() {
+  const map = {};
+  function link(a,b){
+    if(!map[a])map[a]=new Set(); if(!map[b])map[b]=new Set();
+    map[a].add(b); map[b].add(a);
+  }
+  document.querySelectorAll('.table-card').forEach(card=>{
+    const tbl=card.dataset.table;
+    card.querySelectorAll('.col-note').forEach(n=>{
+      const m=n.textContent.match(/→\s*(\w+)/);
+      if(m) link(tbl,m[1]);
+    });
+    const s=FK_SUPPLEMENT[tbl];
+    if(s) Object.values(s).forEach(t=>link(tbl,t));
+  });
+  return map;
+}
+
+function jumpToTable(name) {
+  const card=document.querySelector('.table-card[data-table="'+name+'"]');
+  if(!card) return;
+  const panel=card.closest('.db-panel');
+  if(panel&&!panel.classList.contains('active'))
+    switchTab(panel.id.replace('panel-',''));
+  const grp=card.closest('.group');
+  if(grp&&grp.classList.contains('collapsed')) grp.classList.remove('collapsed');
+  focusTable(card);
+  card.scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+function focusTable(cardEl) {
+  clearFocus();
+  activeCard=cardEl;
+  const panel=cardEl.closest('.db-panel');
+  const tbl=cardEl.dataset.table;
+  const rel=fkMap[tbl]||new Set();
+  panel.querySelectorAll('.table-card').forEach(c=>{
+    if(c===cardEl) c.classList.add('fk-focused');
+    else if(rel.has(c.dataset.table)) c.classList.add('fk-related');
+    else c.classList.add('fk-dimmed');
+  });
+}
+
+function clearFocus() {
+  activeCard=null;
+  document.querySelectorAll('.table-card').forEach(c=>
+    c.classList.remove('fk-focused','fk-related','fk-dimmed'));
+}
+
+function addChip(noteEl,target) {
+  const chip=document.createElement('span');
+  chip.className='fk-chip';
+  chip.textContent='↗ '+target;
+  chip.addEventListener('click',e=>{e.stopPropagation();jumpToTable(target);});
+  noteEl.appendChild(chip);
+}
+
+function buildFKChips() {
+  document.querySelectorAll('.table-card').forEach(card=>{
+    const tbl=card.dataset.table;
+    card.querySelectorAll('.col-note').forEach(noteEl=>{
+      const m=noteEl.textContent.match(/→\s*(\w+)/);
+      if(m) addChip(noteEl,m[1]);
+    });
+    const supp=FK_SUPPLEMENT[tbl];
+    if(supp){
+      Object.entries(supp).forEach(([col,target])=>{
+        card.querySelectorAll('.col-row').forEach(row=>{
+          const nm=row.querySelector('.col-name');
+          if(nm&&nm.textContent.trim()===col){
+            let noteEl=row.querySelector('.col-note');
+            if(!noteEl){noteEl=document.createElement('span');noteEl.className='col-note';row.appendChild(noteEl);}
+            if(!noteEl.querySelector('.fk-chip')) addChip(noteEl,target);
+          }
+        });
+      });
+    }
+  });
+}
+
+function injectDescriptions() {
+  document.querySelectorAll('.table-card').forEach(card=>{
+    const tbl=card.dataset.table;
+    const info=TABLE_INFO[tbl];
+    if(!info||!info.desc) return;
+    const el=document.createElement('div');
+    el.className='card-desc';
+    el.textContent=info.desc;
+    card.querySelector('.card-header').insertAdjacentElement('afterend',el);
+    if(info.cols){
+      card.querySelectorAll('.col-name').forEach(nm=>{
+        const tip=info.cols[nm.textContent.trim()];
+        if(tip) nm.dataset.tip=tip;
+      });
+    }
+  });
+}
+
+function initGroupCollapse() {
+  document.querySelectorAll('.group-header').forEach(hdr=>{
+    const chev=document.createElement('span');
+    chev.className='group-chevron'; chev.textContent='▾';
+    hdr.appendChild(chev);
+    hdr.addEventListener('click',()=>hdr.closest('.group').classList.toggle('collapsed'));
+  });
+}
+
+function collapseAllGroups() {
+  document.querySelectorAll('.db-panel.active .group').forEach(g=>g.classList.add('collapsed'));
+}
+
+function expandAllGroups() {
+  document.querySelectorAll('.db-panel.active .group').forEach(g=>g.classList.remove('collapsed'));
+}
+
+function initZoom() {
+  const slider=document.getElementById('zoom-slider');
+  const label=document.getElementById('zoom-val');
+  slider.addEventListener('input',function(){
+    document.querySelector('.main').style.zoom=this.value/100;
+    label.textContent=this.value+'%';
+  });
+}
+
+function initCardClick() {
+  document.querySelectorAll('.table-card').forEach(card=>{
+    card.addEventListener('click',e=>{
+      if(e.target.closest('.fk-chip')) return;
+      activeCard===card ? clearFocus() : focusTable(card);
+    });
+  });
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') clearFocus(); });
+}
+
+function initSearch() {
+  document.getElementById('search-box').addEventListener('input',function(){
+    const q=this.value.toLowerCase().trim();
+    document.querySelectorAll('.group').forEach(grp=>{
+      let vis=0;
+      grp.querySelectorAll('.table-card').forEach(card=>{
+        const match=!q||(card.dataset.table||'').includes(q);
+        card.style.display=match?'':'none';
+        if(match) vis++;
+      });
+      grp.style.display=(!q||vis>0)?'':'none';
+    });
+  });
+}
+
+function initTooltip() {
+  const tip=document.getElementById('tooltip');
+  document.addEventListener('mousemove',e=>{
+    const el=e.target.closest('[data-tip]');
+    if(el){
+      tip.textContent=el.dataset.tip;
+      tip.style.display='block';
+      tip.style.left=Math.min(e.clientX+12,window.innerWidth-290)+'px';
+      tip.style.top=(e.clientY+16)+'px';
+    } else tip.style.display='none';
+  });
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+  // Auto-assign data-table from card-name text
+  document.querySelectorAll('.table-card').forEach(card=>{
+    const nm=card.querySelector('.card-name');
+    if(nm) card.dataset.table=nm.textContent.trim();
+  });
+  injectDescriptions();
+  fkMap=buildFKMap();
+  buildFKChips();
+  initGroupCollapse();
+  initCardClick();
+  initSearch();
+  initTooltip();
+  initZoom();
+});
 </script>
 </body>
 </html>

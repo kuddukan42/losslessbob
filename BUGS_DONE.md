@@ -1,6 +1,52 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-226: WTRF search queries spaced below the forum's flood-control window
+Status: Fixed
+File(s): backend/wtrf_scraper.py:_SEARCH_DELAY, find_torrent_for_lb
+Reported: 2026-06-30
+Fixed: 2026-06-30
+Root cause: find_torrent_for_lb() computed search_delay = delay * 1.5, which at the CLI's
+  default --delay 2.0 produces 3.0s between action=search2 requests. The module also defined
+  an unused _SEARCH_DELAY = 3.0 constant suggesting this was an intentional but wrong value.
+  The user confirmed WTRF has a search flood-control timer that rejects/blocks searches issued
+  less than 5s apart. Live batch runs (25 highest missing LB numbers) showed a high proportion
+  of 'not_found' results with zero candidates returned even for dates that plausibly have a
+  post — consistent with searches silently failing flood-control rather than the post not
+  existing, since the symptom is indistinguishable from a true empty result in the current
+  logging.
+Fix: _SEARCH_DELAY raised to 10.0 (user requested a comfortable margin above the 5s minimum).
+  find_torrent_for_lb now computes search_delay = max(delay * 1.5, _SEARCH_DELAY), so search
+  queries never go below the 10s floor regardless of the --delay argument passed in. Per-page
+  fetch delay (_DEFAULT_DELAY = 2.0) is unaffected — only action=search2 calls were implicated.
+  Validated with a fresh 25-item batch run combined with the BUG-225 fix: downloaded jumped
+  from 5/25 to 8/25, including LB-16627 (previously 'not_found' with zero candidates at the
+  3s delay, now matches 'definitive' with ffp_matches=13 at the 10s delay) — direct evidence
+  that under-throttled searches were silently swallowing real matches. Prior 'not_found'
+  results in wtrf_downloads from before this fix should still be treated as unreliable.
+
+BUG-225: WTRF scraper matches posts tagged for a different LB entry
+Status: Fixed
+File(s): backend/wtrf_scraper.py:_score_candidate, _classify_confidence, find_torrent_for_lb
+Reported: 2026-06-30
+Fixed: 2026-06-30
+Root cause: _score_candidate only ever added points for positive signals (FFP checksum,
+  filename, equipment token, taper name) and never checked whether a candidate post's body
+  explicitly identifies a DIFFERENT LB entry. Posts created by this app's own forum_poster.py
+  embed an "LB-{lb_number:05d}" link in the metadata header (_build_body), so when search2
+  returned a candidate carrying another entry's tag, it competed on the same weak
+  date-match/has_torrent floor (score=5) as legitimate candidates, producing false
+  'ambiguous'/'needs_review' matches. Live run against the 25 highest missing LB numbers
+  found LB-16632 and LB-16633 (both "Del Mar, CA 7/1/00", duplicate source entries) tied
+  between two WTRF posts, neither of which was correct — one (topic=48280) was explicitly
+  tagged "LB-8834" in its own metadata header.
+Fix: _score_candidate now extracts any "lb-NNNNN" tag(s) from the post body first. If the
+  entry's own lb_number is tagged, treat as a strong positive signal (score +200,
+  classified 'high'). If only OTHER lb_number tag(s) are present, hard-disqualify the
+  candidate (skip it entirely in find_torrent_for_lb's scoring loop) rather than letting it
+  compete on weak signals. Untagged posts (e.g. legacy pre-app posts) are unaffected and
+  still fall through to the existing FFP/filename/equipment/taper rounds.
+
 BUG-211: Diacritic issue — 45 LB entries across 9 cities with dropped diacritics (ü/ö/é) in location
 Status: Fixed
 File(s): data/site/detail/LB-*.html (45 files), data/losslessbob.db (entries table)
