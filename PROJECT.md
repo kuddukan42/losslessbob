@@ -435,6 +435,29 @@ PK `(lb_number, scan_id)`; index `idx_quality_metrics_scan`.
 PK `(lb_number, scan_id)`; indexes `idx_quality_scores_scan`, `idx_quality_scores_family`. Rewritten
 wholesale on every rerank (derived data — recomputable from `quality_recording_metrics`).
 
+### `entry_lineage` — Per-LB parsed lineage signals (USER table)
+Structured lineage metadata extracted from `entries.description` for use by the recording-family
+clustering / learning phase. Never exported in master data. Populated by `tools/parse_lineage.py`.
+Exposed via `GET /api/lineage/<lb>`.
+| Column | Type | Notes |
+|--------|------|-------|
+| lb_number | INTEGER PK | LosslessBob entry number |
+| taper_name | TEXT | From `extract_taper_and_source()` |
+| source_chain | TEXT | From `extract_taper_and_source()` |
+| taper_normalised | TEXT | Lowercase, punctuation-stripped taper_name (e.g. "j smith") |
+| mentions_lb | TEXT | JSON: `[[lb_number, snippet], ...]` — all LB refs found in description |
+| same_as_lb | TEXT | JSON: `[lb_number, ...]` — LB numbers claimed as same source |
+| derived_from_lb | TEXT | JSON: `[lb_number, ...]` — LB numbers this was derived from |
+| better_than_lb | TEXT | JSON: `[lb_number, ...]` — LB numbers this supersedes |
+| parse_confidence | TEXT | `'high'` / `'medium'` / `'low'` / `'none'` |
+| parsed_at | TIMESTAMP | DEFAULT CURRENT_TIMESTAMP |
+| source_text_hash | TEXT | SHA256 of `entries.description` at parse time (skip-guard) |
+
+Index: `idx_lineage_taper_norm ON entry_lineage(taper_normalised) WHERE taper_normalised IS NOT NULL`.
+
+`parse_confidence` rules: `high` = explicit `Taper:` label + source_chain both found;
+`medium` = one of the two found; `low` = only heuristic-path taper match, no chain; `none` = both NULL.
+
 ### `lb_problems` — Known problems with specific LB entries (MASTER table)
 Curator-authored table for flagging LB entries with known issues (bad checksums,
 incomplete torrent, corrupt files, mislabelled metadata, etc.). Included in master-data export.
@@ -1579,6 +1602,7 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 
 | Date | Change |
 |------|--------|
+| 2026-06-27 | CC_LINEAGE_PARSE: New USER table `entry_lineage` in `backend/db.py` (schema DDL + USER_TABLES). Lineage regexes (`_SAME_RE`/`_DIFF_RE`/`_DERIVED_RE`/`_BETTER_RE`) now canonical in `backend/db.py` and imported by `tapematch_session.py`. New functions: `extract_lb_references()`, `_normalise_taper()`, `_compute_parse_confidence()`, `upsert_entry_lineage()`, `get_lineage()`. New `tools/parse_lineage.py` batch script. `GET /api/lineage/<lb>` route. `tests/test_lineage.py` (8 tests). |
 | 2026-06-24 | TODO-181: New MASTER tables `curated_lists` / `curated_list_entries` (schema v9->v10) for curator "best of" picks. `tools/import_curated_lists.py` (stdlib-only) imports carbonbit's `data/lists/FLglist.xlsx` (4503 entries) and 10haaf's `data/lists/dylan_boots.zip`+`years.zip` (7572 entries, unioned across both archives). DB + import only — no API routes or Library-screen filter yet. |
 | 2026-06-24 | TODO-183: Concert Ranker calibrated against real audio (4 rounds + overnight 697-show decade scan). `concert_ranker/features.py` de-confounded harsh/hiss (level-independent) and reworked hum (harmonic comb) + dropout (isolated-discontinuity, worst-track aggregation); `config.py` bands fitted from the corpus and made **per-decade** (`DECADE_BANDS` 1960s-2010s — each recording banded against its own era; `scoring`/`families` thread the decade; `cli --by-decade` sampler). Calibration scans stored as `quality_scans` (scan_id 6 = current basis). hiss is now the strongest AUD quality predictor (rho -0.64). |
 | 2026-06-23 | TODO-183: Concert Ranker v1. New repo-root `concert_ranker/` package (audio quality scoring) — the pre-built scoring brain (`config`/`scoring`/`features`/`calibrate`/`audio/cache`) wired to the real machine: `lb/repo.py` (USER-table persistence, scan-once raw metrics + derived scores), `lb/source_type.py` (SBD/AUD/FM/UNKNOWN), `lb/commentary.py` (commentary mining), `audio/io.py` (ffmpeg decode), `scan.py`/`runner.py` (per-folder scan + staging loop, crash=scrap), `families.py` (rank within `recording_families`, standalone fallback), `calibration.py` (rating×source_class fit harness), `cli.py` (`scan`/`calibrate`/`rerank`/`report`). New USER tables `quality_scans` / `quality_recording_metrics` / `quality_recording_scores` in `backend/db.py`. No new deps. `tests/test_concert_ranker.py`. |

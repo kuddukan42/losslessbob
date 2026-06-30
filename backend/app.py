@@ -3560,6 +3560,207 @@ def create_app() -> Flask:
         except Exception as exc:
             return jsonify({"error": str(exc)}), 500
 
+    # ── WTRF torrent fetcher ──────────────────────────────────────────────────
+
+    _wtrf_crawl_running = False
+
+    @app.route("/api/wtrf/fetch_torrent", methods=["POST"])
+    def wtrf_fetch_torrent() -> Response:
+        """Search WTRF for a torrent matching a single LB entry and download it.
+
+        Body JSON:
+          lb_number (int, required)
+          save_path (str, required) — directory for the downloaded .torrent
+          add_to_qbt (bool, optional, default false)
+          delay (float, optional, default 2.0) — seconds between HTTP requests
+
+        Returns JSON with ok, torrent_path, topic_url, confidence, signals, error.
+        Also records the attempt in wtrf_downloads.
+        """
+        import json as _json
+
+        from backend.wtrf_scraper import find_torrent_for_lb
+        try:
+            data        = request.get_json(force=True) or {}
+            lb_number   = int(data["lb_number"])
+            save_path   = data.get("save_path") or str(DATA_DIR / "downloads" / "wtrf")
+            add_to_qbt  = bool(data.get("add_to_qbt", False))
+            delay       = float(data.get("delay", 2.0))
+
+            result = find_torrent_for_lb(
+                lb_number=lb_number,
+                board_id=int(database.get_meta("wtrf_board_id") or 16),
+                dest_dir=save_path,
+                delay=delay,
+            )
+
+            status = "downloaded" if result["ok"] else "failed"
+            dl_id = database.add_wtrf_download(
+                lb_number=lb_number,
+                topic_url=result.get("topic_url"),
+                torrent_path=result.get("torrent_path"),
+                confidence=result.get("confidence", "not_found"),
+                signals_json=_json.dumps(result.get("signals", {})),
+                status=status,
+                error=result.get("error"),
+            )
+
+            if result["ok"] and add_to_qbt:
+                from backend.credentials import SERVICE_QBT, SERVICE_QBT_KEY, get_credentials
+                from backend.qbittorrent import add_torrent_for_download
+                host     = database.get_meta("qbt_host") or "localhost"
+                port     = int(database.get_meta("qbt_port") or 8080)
+                category = database.get_meta("qbt_category") or ""
+                tags     = database.get_meta("qbt_tags") or ""
+                qbt_user, qbt_pass = get_credentials(SERVICE_QBT)
+                _, qbt_key         = get_credentials(SERVICE_QBT_KEY)
+                qbt_result = add_torrent_for_download(
+                    torrent_path=result["torrent_path"],
+                    save_path=save_path,
+                    host=host, port=port,
+                    username=qbt_user, password=qbt_pass,
+                    category=category, tags=tags, api_key=qbt_key,
+                )
+                if qbt_result.get("ok"):
+                    from datetime import UTC, datetime
+                    database.update_wtrf_download(
+                        dl_id, {"status": "qbt_added",
+                                "qbt_added_at": datetime.now(UTC).isoformat()}
+                    )
+                    result["qbt_added"] = True
+                else:
+                    result["qbt_error"] = qbt_result.get("error")
+
+            result["download_id"] = dl_id
+            return jsonify(result)
+        except KeyError as exc:
+            return jsonify({"ok": False, "error": f"Missing field: {exc}"}), 400
+        except Exception as exc:
+            return jsonify({"ok": False, "error": str(exc)}), 500
+
+    @app.route("/api/wtrf/downloads", methods=["GET"])
+    def wtrf_downloads_list() -> Response:
+        """List wtrf_downloads records, optionally filtered by lb_number.
+
+        Query params: lb (int, optional).
+        """
+        try:
+            lb = request.args.get("lb")
+            rows = database.get_wtrf_downloads(int(lb) if lb else None)
+            return jsonify(rows)
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/wtrf/crawl_missing", methods=["POST"])
+    def wtrf_crawl_missing() -> Response:
+        """Start a background batch crawl of missing items (SSE stream).
+
+        Queries lb_master for public entries not in my_collection, ordered by
+        lb_number DESC (highest first), skipping any already downloaded.
+        Emits Server-Sent Events: progress, done, error.
+
+        Body JSON (all optional):
+          limit (int) — max entries to attempt this run
+          delay (float) — seconds between HTTP requests (default 2.0)
+          save_path (str) — directory for .torrent files
+          add_to_qbt (bool) — also add each matched torrent to qBittorrent
+        """
+        import json as _json
+
+        from backend.wtrf_scraper import find_torrent_for_lb
+
+        nonlocal _wtrf_crawl_running
+        if _wtrf_crawl_running:
+            return jsonify({"error": "Crawl already running"}), 409
+
+        data       = request.get_json(force=True) or {}
+        limit      = int(data.get("limit") or 0) or None
+        delay      = float(data.get("delay", 2.0))
+        save_path  = data.get("save_path") or str(DATA_DIR / "downloads" / "wtrf")
+        add_to_qbt = bool(data.get("add_to_qbt", False))
+        board_id   = int(database.get_meta("wtrf_board_id") or 16)
+
+        pending = database.get_wtrf_pending_lb_numbers()
+        if limit:
+            pending = pending[:limit]
+
+        def _stream():
+            nonlocal _wtrf_crawl_running
+            _wtrf_crawl_running = True
+            counts = {"attempted": 0, "downloaded": 0, "qbt_added": 0,
+                      "skipped": 0, "failed": 0}
+            try:
+                for lb_number in pending:
+                    counts["attempted"] += 1
+                    _prog = _json.dumps({
+                        "event": "progress", "lb_number": lb_number,
+                        "attempted": counts["attempted"], "total": len(pending),
+                    })
+                    yield f"data: {_prog}\n\n"
+
+                    result = find_torrent_for_lb(
+                        lb_number=lb_number,
+                        board_id=board_id,
+                        dest_dir=save_path,
+                        delay=delay,
+                    )
+                    status = "downloaded" if result["ok"] else (
+                        "skipped" if result.get("confidence") in
+                        ("needs_review", "ambiguous", "not_found") else "failed"
+                    )
+                    dl_id = database.add_wtrf_download(
+                        lb_number=lb_number,
+                        topic_url=result.get("topic_url"),
+                        torrent_path=result.get("torrent_path"),
+                        confidence=result.get("confidence", "not_found"),
+                        signals_json=_json.dumps(result.get("signals", {})),
+                        status=status,
+                        error=result.get("error"),
+                    )
+                    counts[status if status in counts else "failed"] += 1
+
+                    if result["ok"] and add_to_qbt:
+                        from datetime import UTC, datetime
+
+                        from backend.credentials import (
+                            SERVICE_QBT,
+                            SERVICE_QBT_KEY,
+                            get_credentials,
+                        )
+                        from backend.qbittorrent import add_torrent_for_download
+                        host     = database.get_meta("qbt_host") or "localhost"
+                        port     = int(database.get_meta("qbt_port") or 8080)
+                        category = database.get_meta("qbt_category") or ""
+                        tags     = database.get_meta("qbt_tags") or ""
+                        qbt_user, qbt_pass = get_credentials(SERVICE_QBT)
+                        _, qbt_key         = get_credentials(SERVICE_QBT_KEY)
+                        qbt_r = add_torrent_for_download(
+                            torrent_path=result["torrent_path"],
+                            save_path=save_path,
+                            host=host, port=port,
+                            username=qbt_user, password=qbt_pass,
+                            category=category, tags=tags, api_key=qbt_key,
+                        )
+                        if qbt_r.get("ok"):
+                            from datetime import UTC, datetime
+                            database.update_wtrf_download(
+                                dl_id, {"status": "qbt_added",
+                                        "qbt_added_at": datetime.now(UTC).isoformat()}
+                            )
+                            counts["qbt_added"] += 1
+
+                yield f"data: {_json.dumps({'event': 'done', **counts})}\n\n"
+            except Exception as exc:
+                yield f"data: {_json.dumps({'event': 'error', 'error': str(exc)})}\n\n"
+            finally:
+                _wtrf_crawl_running = False
+
+        return Response(
+            _stream(),
+            mimetype="text/event-stream",
+            headers={"X-Accel-Buffering": "no", "Cache-Control": "no-cache"},
+        )
+
     @app.route("/api/torrents", methods=["GET"])
     def all_torrents() -> Response:
         """Return all torrent records across every LB entry, newest first."""
@@ -3899,6 +4100,24 @@ def create_app() -> Flask:
                 return jsonify({"error": "curator_required"}), 403
             database.delete_lb_problem(problem_id)
             return jsonify({"ok": True, "id": problem_id})
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    # ── Entry lineage ──────────────────────────────────────────────────────────
+
+    @app.route("/api/lineage/<int:lb>", methods=["GET"])
+    def lineage_get(lb: int) -> Response:
+        """Return the entry_lineage row for one LB number.
+
+        Returns:
+            JSON of the lineage row on success, or ``{"error": "not found"}``
+            with 404 when no row has been parsed yet for this LB number.
+        """
+        try:
+            row = database.get_lineage(lb)
+            if row is None:
+                return jsonify({"error": "not found"}), 404
+            return jsonify(row)
         except Exception as exc:
             return jsonify({"error": str(exc)}), 500
 

@@ -363,3 +363,101 @@
 {"date": "1996-04-30", "status": "ok", "duration": 398.0589499310008, "n_sources": 4, "n_pairs_checked": 6, "rescued": [], "regressed": [], "new_merges": []}
 {"date": "1996-05-04", "status": "ok", "duration": 137.87506722396938, "n_sources": 2, "n_pairs_checked": 1, "rescued": [], "regressed": [], "new_merges": []}
 {"date": "1996-05-05", "status": "ok", "duration": 124.38135856599547, "n_sources": 3, "n_pairs_checked": 3, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1996-05-08", "status": "ok", "duration": 501.2765608250047, "n_sources": 5, "n_pairs_checked": 10, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1996-05-16", "status": "ok", "duration": 1616.6341450529872, "n_sources": 7, "n_pairs_checked": 21, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1996-05-18", "status": "ok", "duration": 973.5334980560001, "n_sources": 4, "n_pairs_checked": 6, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1996-06-17", "status": "run_failed", "rc": -1, "duration": 1800.180430689943, "log_tail": "[TIMEOUT after 1800s]"}
+{"date": "1996-06-19", "status": "run_failed", "rc": -1, "duration": 1800.255097053945, "log_tail": "[TIMEOUT after 1800s]"}
+{"date": "1996-06-22", "status": "run_failed", "rc": -1, "duration": 1800.3499087340315, "log_tail": "[TIMEOUT after 1800s]"}
+{"date": "1996-06-26", "status": "ok", "duration": 1753.89017134998, "n_sources": 5, "n_pairs_checked": 10, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1996-06-27", "status": "run_failed", "rc": -1, "duration": 1800.3303336499957, "log_tail": "[TIMEOUT after 1800s]"}
+{"date": "1996-06-29", "status": "ok", "duration": 555.4421444180189, "n_sources": 6, "n_pairs_checked": 15, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1996-07-03", "status": "ok", "duration": 950.159525813011, "n_sources": 7, "n_pairs_checked": 21, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1996-07-05", "status": "ok", "duration": 505.5411156460177, "n_sources": 5, "n_pairs_checked": 10, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1996-07-08", "status": "ok", "duration": 891.4570069609908, "n_sources": 6, "n_pairs_checked": 15, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1996-07-09", "status": "ok", "duration": 809.3663426029962, "n_sources": 6, "n_pairs_checked": 15, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1996-07-10", "status": "ok", "duration": 987.1843436729978, "n_sources": 7, "n_pairs_checked": 21, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1996-07-12", "status": "ok", "duration": 388.0391999190324, "n_sources": 4, "n_pairs_checked": 6, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1996-07-13", "status": "ok", "duration": 345.64722512301523, "n_sources": 5, "n_pairs_checked": 10, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1996-07-19", "status": "ok", "duration": 365.06352036399767, "n_sources": 4, "n_pairs_checked": 6, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1996-07-21", "status": "ok", "duration": 497.16592229902744, "n_sources": 5, "n_pairs_checked": 10, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1996-07-23", "status": "ok", "duration": 770.905727342004, "n_sources": 6, "n_pairs_checked": 15, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1996-07-24", "status": "ok", "duration": 606.1842063739896, "n_sources": 5, "n_pairs_checked": 10, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1996-07-25", "status": "ok", "duration": 363.18851993599674, "n_sources": 5, "n_pairs_checked": 10, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1996-07-27", "status": "ok", "duration": 156.02173406200018, "n_sources": 2, "n_pairs_checked": 1, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1996-08-04", "status": "ok", "duration": 192.75436072802404, "n_sources": 4, "n_pairs_checked": 6, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1996-10-17", "status": "ok", "duration": 425.95566668600077, "n_sources": 4, "n_pairs_checked": 6, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1996-10-19", "status": "ok", "duration": 314.5604511030251, "n_sources": 4, "n_pairs_checked": 6, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1996-10-23", "status": "ok", "duration": 98.02277117897756, "n_sources": 2, "n_pairs_checked": 1, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1996-10-26", "status": "ok", "duration": 1111.1528235920123, "n_sources": 7, "n_pairs_checked": 21, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1996-11-04", "status": "ok", "duration": 990.7996227769763, "n_sources": 7, "n_pairs_checked": 21, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1996-11-09", "status": "ok", "duration": 264.08467826998094, "n_sources": 3, "n_pairs_checked": 3, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1996-11-10", "status": "ok", "duration": 281.6816611989634, "n_sources": 4, "n_pairs_checked": 6, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1996-11-12", "status": "ok", "duration": 138.47107879898977, "n_sources": 2, "n_pairs_checked": 1, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1996-11-16", "status": "ok", "duration": 671.9002617499791, "n_sources": 5, "n_pairs_checked": 10, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1996-11-17", "status": "ok", "duration": 327.20690374303376, "n_sources": 4, "n_pairs_checked": 6, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1996-11-19", "status": "ok", "duration": 275.54337000404485, "n_sources": 4, "n_pairs_checked": 6, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1996-11-20", "status": "ok", "duration": 515.2921345829964, "n_sources": 4, "n_pairs_checked": 6, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1996-11-23", "status": "ok", "duration": 920.0693246729788, "n_sources": 7, "n_pairs_checked": 21, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1997-02-10", "status": "ok", "duration": 429.883464234008, "n_sources": 5, "n_pairs_checked": 10, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1997-02-11", "status": "ok", "duration": 193.25357556296512, "n_sources": 3, "n_pairs_checked": 3, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1997-02-14", "status": "ok", "duration": 253.25963022198994, "n_sources": 3, "n_pairs_checked": 3, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1997-03-31", "status": "ok", "duration": 750.3502357469988, "n_sources": 6, "n_pairs_checked": 15, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1997-04-06", "status": "ok", "duration": 301.22476246597944, "n_sources": 4, "n_pairs_checked": 6, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1998-01-14", "status": "ok", "duration": 439.892655920994, "n_sources": 4, "n_pairs_checked": 6, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1998-01-16", "status": "ok", "duration": 722.9115450220415, "n_sources": 6, "n_pairs_checked": 15, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1998-01-18", "status": "ok", "duration": 961.363303718972, "n_sources": 7, "n_pairs_checked": 21, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1998-01-20", "status": "ok", "duration": 518.6577627549996, "n_sources": 5, "n_pairs_checked": 10, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1998-01-30", "status": "ok", "duration": 308.24636178300716, "n_sources": 4, "n_pairs_checked": 6, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1998-02-02", "status": "ok", "duration": 251.45744489395292, "n_sources": 4, "n_pairs_checked": 6, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1998-02-14", "status": "ok", "duration": 288.3810642879689, "n_sources": 4, "n_pairs_checked": 6, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1998-02-17", "status": "ok", "duration": 196.04782023502048, "n_sources": 3, "n_pairs_checked": 3, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1998-02-22", "status": "ok", "duration": 171.64373565401183, "n_sources": 3, "n_pairs_checked": 3, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1998-03-30", "status": "ok", "duration": 604.7206389820203, "n_sources": 6, "n_pairs_checked": 15, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1998-05-14", "status": "ok", "duration": 140.22739488701336, "n_sources": 3, "n_pairs_checked": 3, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1998-05-30", "status": "ok", "duration": 265.89961578999646, "n_sources": 4, "n_pairs_checked": 6, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1998-05-31", "status": "ok", "duration": 103.79603420302738, "n_sources": 3, "n_pairs_checked": 3, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1998-06-04", "status": "ok", "duration": 539.8769077989855, "n_sources": 6, "n_pairs_checked": 15, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1998-06-07", "status": "ok", "duration": 568.9865200609784, "n_sources": 5, "n_pairs_checked": 10, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1998-06-10", "status": "ok", "duration": 217.84824277699227, "n_sources": 3, "n_pairs_checked": 3, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1998-06-11", "status": "ok", "duration": 390.192832996021, "n_sources": 4, "n_pairs_checked": 6, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1998-06-12", "status": "ok", "duration": 1160.7940892530023, "n_sources": 7, "n_pairs_checked": 21, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1998-06-14", "status": "ok", "duration": 1181.4783884659992, "n_sources": 8, "n_pairs_checked": 28, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1998-06-15", "status": "ok", "duration": 320.4479424870224, "n_sources": 4, "n_pairs_checked": 6, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1998-06-16", "status": "ok", "duration": 1541.0566601059982, "n_sources": 5, "n_pairs_checked": 10, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1998-06-20", "status": "ok", "duration": 1226.7694658690016, "n_sources": 5, "n_pairs_checked": 10, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1998-06-23", "status": "ok", "duration": 765.1239713309915, "n_sources": 4, "n_pairs_checked": 6, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1998-06-24", "status": "ok", "duration": 506.7526168320328, "n_sources": 3, "n_pairs_checked": 3, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1998-06-26", "status": "ok", "duration": 239.33336306002457, "n_sources": 2, "n_pairs_checked": 1, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1998-10-28", "status": "ok", "duration": 1327.610919197963, "n_sources": 5, "n_pairs_checked": 10, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1999-02-25", "status": "ok", "duration": 856.552737569029, "n_sources": 4, "n_pairs_checked": 9, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "1999-04-29", "status": "ok", "duration": 364.7872715870035, "n_sources": 4, "n_pairs_checked": 6, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "2001-02-27", "status": "ok", "duration": 236.8828585119918, "n_sources": 4, "n_pairs_checked": 6, "rescued": [{"lb_a": 3904, "lb_b": 7461, "lb_says_same": 1, "old_corr": 0.003699644235894084, "new_corr": 0.003938762820325792, "old_verdict": "different_family", "new_verdict": "same_family", "polarity_rescue_fired": false}], "regressed": [], "new_merges": []}
+{"date": "2001-03-13", "status": "ok", "duration": 317.97498549701413, "n_sources": 4, "n_pairs_checked": 6, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "2001-03-23", "status": "ok", "duration": 420.3991161810118, "n_sources": 4, "n_pairs_checked": 6, "rescued": [{"lb_a": 357, "lb_b": 15190, "lb_says_same": 1, "old_corr": 0.0477931872010231, "new_corr": 0.0477931872010231, "old_verdict": "different_family", "new_verdict": "same_family", "polarity_rescue_fired": false}], "regressed": [], "new_merges": []}
+{"date": "2001-03-24", "status": "ok", "duration": 395.7632701830007, "n_sources": 4, "n_pairs_checked": 6, "rescued": [{"lb_a": 44, "lb_b": 4421, "lb_says_same": 1, "old_corr": 0.3325408399105072, "new_corr": 0.3325408399105072, "old_verdict": "different_family", "new_verdict": "same_family", "polarity_rescue_fired": false}], "regressed": [], "new_merges": []}
+{"date": "2001-03-25", "status": "ok", "duration": 384.1342092620325, "n_sources": 4, "n_pairs_checked": 6, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "2001-03-30", "status": "ok", "duration": 200.16899558599107, "n_sources": 3, "n_pairs_checked": 3, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "2001-03-31", "status": "ok", "duration": 606.3941877639736, "n_sources": 5, "n_pairs_checked": 10, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "2001-04-24", "status": "ok", "duration": 245.22816700302064, "n_sources": 4, "n_pairs_checked": 6, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "2001-04-25", "status": "ok", "duration": 440.35376639000606, "n_sources": 4, "n_pairs_checked": 6, "rescued": [{"lb_a": 59, "lb_b": 6062, "lb_says_same": 1, "old_corr": 0.016491164453327656, "new_corr": 0.016338986344635487, "old_verdict": "different_family", "new_verdict": "same_family", "polarity_rescue_fired": false}, {"lb_a": 6062, "lb_b": 7596, "lb_says_same": 1, "old_corr": 0.003143629990518093, "new_corr": 0.005741439061239362, "old_verdict": "different_family", "new_verdict": "same_family", "polarity_rescue_fired": false}], "regressed": [], "new_merges": []}
+{"date": "2001-04-27", "status": "ok", "duration": 170.93525278696325, "n_sources": 3, "n_pairs_checked": 3, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "2001-05-01", "status": "ok", "duration": 524.9800126859918, "n_sources": 4, "n_pairs_checked": 6, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "2001-05-02", "status": "ok", "duration": 230.26600316003896, "n_sources": 3, "n_pairs_checked": 3, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "2001-05-04", "status": "ok", "duration": 90.10962645697873, "n_sources": 3, "n_pairs_checked": 3, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "2001-06-28", "status": "ok", "duration": 493.8424920429825, "n_sources": 4, "n_pairs_checked": 6, "rescued": [{"lb_a": 492, "lb_b": 9956, "lb_says_same": 1, "old_corr": 0.0036177292931824923, "new_corr": 0.00470599252730608, "old_verdict": "different_family", "new_verdict": "same_family", "polarity_rescue_fired": false}], "regressed": [], "new_merges": []}
+{"date": "2001-07-01", "status": "ok", "duration": 399.8132388560334, "n_sources": 4, "n_pairs_checked": 6, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "2001-07-03", "status": "ok", "duration": 542.3266827680054, "n_sources": 4, "n_pairs_checked": 6, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "2001-07-08", "status": "ok", "duration": 714.534323600994, "n_sources": 5, "n_pairs_checked": 10, "rescued": [{"lb_a": 60, "lb_b": 10155, "lb_says_same": 1, "old_corr": 0.03338068909943104, "new_corr": 0.03338068909943104, "old_verdict": "different_family", "new_verdict": "same_family", "polarity_rescue_fired": false}], "regressed": [], "new_merges": []}
+{"date": "2001-07-17", "status": "ok", "duration": 784.966973321978, "n_sources": 5, "n_pairs_checked": 10, "rescued": [{"lb_a": 587, "lb_b": 10159, "lb_says_same": 1, "old_corr": 0.10143404081463814, "new_corr": 0.10143404081463814, "old_verdict": "different_family", "new_verdict": "same_family", "polarity_rescue_fired": false}], "regressed": [], "new_merges": []}
+{"date": "2001-07-18", "status": "ok", "duration": 1426.226815898961, "n_sources": 4, "n_pairs_checked": 6, "rescued": [{"lb_a": 588, "lb_b": 3567, "lb_says_same": 1, "old_corr": 0.10814372822642326, "new_corr": 0.10814372822642326, "old_verdict": "different_family", "new_verdict": "same_family", "polarity_rescue_fired": false}, {"lb_a": 588, "lb_b": 5699, "lb_says_same": 1, "old_corr": 0.021603996865451336, "new_corr": 0.021622315980494022, "old_verdict": "different_family", "new_verdict": "same_family", "polarity_rescue_fired": false}, {"lb_a": 3567, "lb_b": 5699, "lb_says_same": 1, "old_corr": 0.06414151005446911, "new_corr": 0.06410061940550804, "old_verdict": "different_family", "new_verdict": "same_family", "polarity_rescue_fired": false}, {"lb_a": 5699, "lb_b": 7708, "lb_says_same": 1, "old_corr": 0.004681729478761554, "new_corr": 0.00469880853779614, "old_verdict": "different_family", "new_verdict": "same_family", "polarity_rescue_fired": false}], "regressed": [], "new_merges": []}
+{"date": "2001-07-20", "status": "ok", "duration": 738.302170304989, "n_sources": 3, "n_pairs_checked": 3, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "2001-07-24", "status": "ok", "duration": 922.2639806239749, "n_sources": 3, "n_pairs_checked": 3, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "2001-07-26", "status": "ok", "duration": 1221.1800845440011, "n_sources": 5, "n_pairs_checked": 10, "rescued": [{"lb_a": 4428, "lb_b": 7275, "lb_says_same": 1, "old_corr": 0.008533393731340766, "new_corr": 0.008521841606125236, "old_verdict": "different_family", "new_verdict": "same_family", "polarity_rescue_fired": false}, {"lb_a": 4428, "lb_b": 7302, "lb_says_same": 1, "old_corr": 0.0076134297996759415, "new_corr": 0.007597980787977576, "old_verdict": "different_family", "new_verdict": "same_family", "polarity_rescue_fired": false}], "regressed": [], "new_merges": []}
+{"date": "2001-07-28", "status": "ok", "duration": 1653.2539161589812, "n_sources": 5, "n_pairs_checked": 10, "rescued": [{"lb_a": 576, "lb_b": 3274, "lb_says_same": 1, "old_corr": 0.0700690783560276, "new_corr": 0.0700690783560276, "old_verdict": "different_family", "new_verdict": "same_family", "polarity_rescue_fired": false}, {"lb_a": 576, "lb_b": 4527, "lb_says_same": 1, "old_corr": 0.10155301913619041, "new_corr": 0.10155301913619041, "old_verdict": "different_family", "new_verdict": "same_family", "polarity_rescue_fired": false}, {"lb_a": 576, "lb_b": 9116, "lb_says_same": 1, "old_corr": 0.004947425099089742, "new_corr": 0.0065855178982019424, "old_verdict": "different_family", "new_verdict": "same_family", "polarity_rescue_fired": false}], "regressed": [], "new_merges": []}
+{"date": "2001-08-10", "status": "ok", "duration": 206.18806450103875, "n_sources": 2, "n_pairs_checked": 1, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "2001-08-12", "status": "ok", "duration": 219.19153867702698, "n_sources": 2, "n_pairs_checked": 1, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "2001-08-19", "status": "ok", "duration": 812.2406370279496, "n_sources": 4, "n_pairs_checked": 6, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "2001-08-21", "status": "ok", "duration": 1693.1902199870092, "n_sources": 5, "n_pairs_checked": 10, "rescued": [], "regressed": [], "new_merges": []}
+{"date": "2001-10-05", "status": "ok", "duration": 1477.1803538930253, "n_sources": 5, "n_pairs_checked": 10, "rescued": [{"lb_a": 2277, "lb_b": 2756, "lb_says_same": 1, "old_corr": 0.005109203513711691, "new_corr": 0.0060491671320050955, "old_verdict": "different_family", "new_verdict": "same_family", "polarity_rescue_fired": false}], "regressed": [], "new_merges": []}
+{"date": "2001-10-13", "status": "run_failed", "rc": -1, "duration": 1800.40706551302, "log_tail": "[TIMEOUT after 1800s]"}

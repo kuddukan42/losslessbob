@@ -29,6 +29,19 @@
     ]
   },
   "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.file_path // \"\"' | { read -r f; echo \"$f\" | grep -q 'docs/schema.html' && cd /home/tjenkins/Documents/losslessbob && npx wrangler pages deploy docs/ --project-name losslessbob-schema --branch main --commit-dirty=true; } 2>/dev/null || true",
+            "async": true,
+            "statusMessage": "Deploying schema to Cloudflare Pages…"
+          }
+        ]
+      }
+    ],
     "PreToolUse": [
       {
         "matcher": "Read|Write|Edit",

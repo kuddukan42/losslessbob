@@ -1,5 +1,97 @@
 
 
+TODO-194: WTRF scraper — improve match quality for remaining needs_review/ambiguous cases
+Priority: Medium
+Status: Open
+Added: 2026-06-30
+Description: After BUG-225 (LB-tag mismatch disqualification) and BUG-226 (10s search-delay
+  floor) fixed the worst false-positive/false-negative classes, a validated 25-item batch run
+  still leaves 9/25 entries genuinely unresolved (not counting clean not_found / date-parse
+  failures). Audit results from that run, for use as concrete test cases when refining scoring:
+
+  Ambiguous — real positive-score ties, not just the score=5 floor:
+  - LB-16596: top two posts (topic=60197, topic=60199) tied at score=733, both with
+    filename_matches=72 equipment_matches=1. This is a hard case — likely two near-identical
+    posts for the same show/taper (e.g. original + re-up, or two encodes), so filename overlap
+    alone can't break the tie. Needs an additional differentiator: post date, attachment file
+    size/count vs checksums table row count, or post age (prefer earliest/most-replied topic).
+  - LB-16644: topic=59943 / topic=59965 tied at score=5 (no real signal either side) — genuine
+    toss-up, no data to disambiguate from.
+
+  needs_review — single surviving candidate, weak signal:
+  - LB-16633, LB-16632: duplicate catalog entries for Del Mar, CA 7/1/00 ("new version" /
+    "new version, revised"), taper_name field is the placeholder string "same source
+    recording" rather than a real taper, so the taper-match round never fires for either.
+    The lone candidate (topic=54221) is an old pre-app SHN-era post with raw "bd00-07-01dtNNN.shn"
+    filenames that don't match either entry's FLAC checksums at all — score=5 is entirely from
+    has_torrent. Probably correctly not_found; the real post (if any) likely doesn't exist on
+    WTRF. Worth special-casing placeholder taper_name values (see _KNOWN_TAPER_ALIASES in
+    db.py) so they don't silently no-op the taper round.
+  - LB-16614: score=33, equipment_matches=1 + taper_match=mkws — single equipment token plus a
+    taper hit still isn't enough to clear the 'medium' bar under _classify_confidence's
+    `(eq>=2 and tap) or (fname>=1 and eq>=2)` rule. Worth checking whether 1 equipment token +
+    taper match should count as medium.
+  - LB-16613, LB-16612: score=21, equipment_matches=2 only (no taper, no filename) — sits right
+    at the medium threshold's eq>=2 condition but fails because that branch also requires
+    `tap` or `fname>=1`. Worth revisiting whether eq>=2 alone, with no contradicting signal,
+    should be enough.
+  - LB-16586, LB-16622: score=5, has_torrent only, no other signal — likely genuine not_found;
+    the search is matching on date alone with no content confirmation.
+
+  Ideas to investigate, roughly in order of expected payoff:
+  1. Tie-breaker for positive-score ambiguous matches (post date / attachment size or count /
+     reply count) — currently any tie at any score, even a strong one like 733, is treated
+     identically to a zero-signal tie.
+  2. Exclude placeholder taper_name values ("same source recording" and similar) from the
+     taper-match round so they don't mask genuinely unmatchable entries as "weak signal"
+     when they're actually "no signal available."
+  3. Revisit _classify_confidence's medium-tier boundary — eq>=2 alone and (fname>=1 OR
+     eq=1)+taper currently don't clear it; check against more real examples before loosening.
+  4. Board-page crawl mode (already listed under TODO-193) as a fallback for entries that are
+     consistently not_found via search2.
+  Relates to: [[TODO-193]] (WTRF torrent fetcher — GUI surface and review flow).
+
+TODO-193: WTRF torrent fetcher — GUI surface and review flow
+Priority: Medium
+Status: Open
+Added: 2026-06-29
+Description: backend/wtrf_scraper.py + tools/wtrf_fetch_missing.py implement the
+  search/download/qbt pipeline for missing items (see CHANGELOG 2026-06-29d).
+  LIVE TESTING (2026-06-30): user ran it against the real WTRF instance — search2
+  + scoring confirmed working in most cases. Two real-world failure modes observed:
+  'ambiguous' (two posts score identically, no way to auto-pick), and cases where
+  the best match wasn't actually the most relevant post. Both already land in
+  wtrf_downloads as status='skipped' with confidence 'ambiguous'/'needs_review' for
+  manual review — the manual-review action below is what's needed to actually act
+  on them; not yet scoped further than that.
+  CLI list/range input added 2026-06-30: --lbs flag accepts comma-separated LB
+  numbers and/or ranges (e.g. '16640-16650,16700'), mutually exclusive with --lb.
+  CLI now also prints the matched topic_url for skipped (needs_review/ambiguous/
+  not_found) rows, including both tied URLs on an ambiguous match, so the user can
+  manually open and check candidates without a DB query — a stopgap ahead of the
+  full GUI review action below.
+  REFINEMENT (2026-06-30): root-caused both observed failure modes from a 25-item
+  dry run. (1) BUG-225: candidate scoring never checked whether a post body's own
+  "LB-NNNNN" tag (embedded by forum_poster.py's metadata header) named a DIFFERENT
+  entry, so posts documenting other shows competed on weak date/has_torrent signals
+  and won 'ambiguous'/'needs_review' ties — fixed by hard-disqualifying tag
+  mismatches in find_torrent_for_lb. (2) BUG-226: search2 queries were spaced only
+  delay*1.5 (3.0s at the default --delay 2.0) apart, below WTRF's ~5s search
+  flood-control window — likely caused some 'not_found' results to be silently
+  throttled empty pages rather than genuine no-match. Fixed by flooring
+  search_delay at 10.0s (_SEARCH_DELAY constant). wtrf_downloads rows written
+  before this fix should be treated as unreliable, especially 'not_found' rows.
+  Remaining work:
+  - GUI screen or panel to drive the crawl (start/stop, progress, results table)
+    that surfaces wtrf_downloads rows with confidence + signals for review.
+  - Manual review action for 'needs_review' / 'ambiguous' rows: show the matched
+    topic URL so the user can open it and manually confirm/reject before adding
+    to qBittorrent.
+  - Board-page crawl mode as an alternative to search2 when SMF search is
+    throttled or returns unexpected results (walk board=16.0, board=16.20, …).
+  Relates to: [[TODO-135]] (scrape WTRF for existing posts), [[TODO-194]] (match quality
+    refinement — audit data from the 2026-06-30 batch runs).
+
 TODO-192: Library UI — taper name badge on library panel entry rows
 Priority: Low
 Status: Open

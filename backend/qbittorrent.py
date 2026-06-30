@@ -182,6 +182,88 @@ def add_torrent_for_seeding(
         return {"ok": False, "error": str(exc)}
 
 
+def add_torrent_for_download(
+    torrent_path: str | Path,
+    save_path: str | Path,
+    host: str,
+    port: int,
+    username: str = "",
+    password: str = "",
+    category: str = "",
+    tags: str = "",
+    api_key: str = "",
+) -> dict:
+    """Add a .torrent file to qBittorrent for downloading new content.
+
+    Unlike add_torrent_for_seeding(), this does not assume the content
+    already exists on disk.  save_path is used directly as the destination
+    directory; qBittorrent will download into it.
+
+    Args:
+        torrent_path: Path to the .torrent file to upload.
+        save_path: Directory where qBittorrent should download the content.
+        host: qBittorrent WebUI host.
+        port: qBittorrent WebUI port.
+        username: WebUI username (ignored when api_key is set).
+        password: WebUI password (ignored when api_key is set).
+        category: Optional category string.
+        tags: Optional comma-separated tags string.
+        api_key: API key (qBittorrent 5+). Takes priority over username/password.
+
+    Returns:
+        Dict with keys: ok (bool), error (str if ok=False).
+    """
+    torrent = Path(torrent_path)
+    if not torrent.exists():
+        return {"ok": False, "error": f"Torrent file not found: {torrent}"}
+
+    base = _base_url(host, port)
+    session = _make_session(base, api_key)
+
+    try:
+        if not api_key:
+            err = _login(session, base, username, password)
+            if err:
+                return err
+
+        form: dict = {
+            "savepath": str(save_path),
+            "autoTMM": "false",
+        }
+        if category:
+            form["category"] = category
+        if tags:
+            form["tags"] = tags
+
+        with torrent.open("rb") as fh:
+            files = {"torrents": (torrent.name, fh, "application/x-bittorrent")}
+            add_r = session.post(
+                base + _ADD_PATH,
+                data=form,
+                files=files,
+                timeout=30,
+            )
+
+        if not api_key:
+            session.post(base + _LOGOUT_PATH, timeout=5)
+
+        body = add_r.text.strip()
+        if body == "Ok.":
+            return {"ok": True}
+        try:
+            j = add_r.json()
+            if j.get("failure_count", 1) == 0 and j.get("success_count", 0) > 0:
+                return {"ok": True}
+        except Exception:
+            pass
+        return {"ok": False, "error": f"qBittorrent response: {body[:200]}"}
+
+    except requests.exceptions.ConnectionError:
+        return {"ok": False, "error": f"Cannot connect to {base}"}
+    except Exception as exc:
+        return {"ok": False, "error": str(exc)}
+
+
 def add_torrent_from_db(
     torrent_db_id: int,
     host: str,
