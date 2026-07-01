@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { Icon } from '../Icon'
 import { Button, Pill, Banner, TableShell, TH, TR, TD } from '../index'
 import { LookupSummaryRow, LookupDetail as LookupDetailRow } from '../../lib/lookupStore'
+import { lbDetailUrl } from '../../lib/lbUrl'
 import { LookupState, STATE_TONE, apiStatusToState } from './lookupState'
 
 export function categoryPill(cat: string | null | undefined): React.JSX.Element | null {
@@ -75,7 +76,7 @@ export function LookupSummaryTable({
               <TD><Pill tone={tone.tone} soft dot={state !== 'matched'}>{tone.label}</Pill></TD>
               <TD align="right" style={{ display: 'flex', gap: 8, justifyContent: 'flex-end' }}>
                 <Button size="sm" variant="ghost" icon="reveal"
-                  onClick={() => window.open(`http://www.losslessbob.wonderingwhattochoose.com/detail/LB-${String(r.lb_number).padStart(5, '0')}.html`)}
+                  onClick={() => window.open(lbDetailUrl(r.lb_number))}
                   title="Open this entry on losslessbob.com">
                   {t('lookup.table.open')}
                 </Button>

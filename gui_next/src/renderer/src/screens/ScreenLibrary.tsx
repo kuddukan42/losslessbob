@@ -17,6 +17,7 @@ import type { RowHistory } from '../components/library/DetailPanel'
 import { useAttachmentsStore } from '../lib/attachmentsStore'
 import { useSpectrogramStore } from '../lib/spectrogramStore'
 import { useFolderQueueStore } from '../lib/folderQueueStore'
+import { lbDetailUrl } from '../lib/lbUrl'
 
 // ── TODO-150 step (4): Recording lens / no-families fallback ──────────────────
 // Flat, LB#-keyed table over the full catalog. Per the design contract
@@ -363,7 +364,7 @@ export function ScreenLibrary(): React.JSX.Element {
 
   const actionHandlers = useMemo<ActionHandlers>(() => ({
     onOpen: (row) => {
-      window.open(`http://www.losslessbob.wonderingwhattochoose.com/detail/${row.lb}.html`, '_blank')
+      window.open(lbDetailUrl(row.lbNumber), '_blank')
     },
     onCopyLb: (row) => { navigator.clipboard.writeText(row.lb) },
     onCopyPath: (row) => { navigator.clipboard.writeText(row.path) },

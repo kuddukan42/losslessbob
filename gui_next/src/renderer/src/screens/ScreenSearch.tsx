@@ -3,6 +3,7 @@ import { useVirtualizer } from '@tanstack/react-virtual'
 import { Icon } from '../components/Icon'
 import { Button, Chip, IconButton, Input, Pill } from '../components'
 import { TableShell, TH, TR, TD, GroupRow } from '../components'
+import { lbDetailUrl } from '../lib/lbUrl'
 
 const BASE = window.api.flaskBase
 
@@ -1535,7 +1536,7 @@ export function ScreenSearch(): React.JSX.Element {
             onClick={() => {
               const lb = rowMenu.lb
               setRowMenu(null)
-              window.open(`http://www.losslessbob.wonderingwhattochoose.com/detail/LB-${String(lb).padStart(5, '0')}.html`)
+              window.open(lbDetailUrl(lb))
             }}
             style={{
               display: 'block', width: '100%', textAlign: 'left',

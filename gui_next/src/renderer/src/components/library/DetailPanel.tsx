@@ -14,6 +14,7 @@ import { Pill, Button, IconButton } from '../primitives'
 import type { ActionRow, ActionHandlers, LibAction } from './actions'
 import { buildRecordingActions, buildPerformanceActions } from './actions'
 import { Icon } from '../Icon'
+import { lbDetailUrl } from '../../lib/lbUrl'
 
 const BASE = window.api.flaskBase
 
@@ -656,9 +657,7 @@ export function RecordingDetailPanel({ row, history, attachCount, actionHandlers
       <PanelHeader
         label={t('library.panel.details')}
         lbPageLabel={t('library.panel.openLbPage')}
-        onOpenLbPage={() => window.open(
-          `http://www.losslessbob.wonderingwhattochoose.com/detail/${row.lb}.html`, '_blank',
-        )}
+        onOpenLbPage={() => window.open(lbDetailUrl(row.lbNumber), '_blank')}
         onToggle={toggle}
       />
 
