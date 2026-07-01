@@ -10,7 +10,7 @@ from PyQt6.QtWidgets import QApplication
 
 import backend.startup_log as _slog
 from backend.app import create_app
-from backend.paths import DATA_DIR, ensure_data_dirs
+from backend.paths import LOGS_DIR, ensure_data_dirs
 
 FLASK_PORT = 5174
 _FLASK_READY = threading.Event()
@@ -89,8 +89,8 @@ def start_flask() -> None:
 
 
 def _configure_logging() -> None:
-    """Write DEBUG+ from our own modules to data/losslessbob.log; keep third-party at WARNING."""
-    log_path = DATA_DIR / "losslessbob.log"
+    """Write DEBUG+ from our own modules to data/logs/losslessbob.log; keep third-party at WARNING."""
+    log_path = LOGS_DIR / "losslessbob.log"
 
     fmt = logging.Formatter("%(asctime)s %(levelname)-8s %(name)s: %(message)s")
 
@@ -120,7 +120,7 @@ def _configure_logging() -> None:
 def main() -> None:
     ensure_data_dirs()
     _configure_logging()
-    _slog.init(DATA_DIR / "startup.log")
+    _slog.init(LOGS_DIR / "startup.log")
     _slog.t("main: start")
 
     ignore_pos = "-ignore_start_positions" in sys.argv

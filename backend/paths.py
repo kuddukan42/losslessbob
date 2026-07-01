@@ -26,7 +26,8 @@ DB_PATH    = DATA_DIR / "losslessbob.db"
 FP_DB_PATH           = DATA_DIR / "fingerprints.db"
 BATCH_VERIFY_DB_PATH = DATA_DIR / "batch_verify.db"
 TORRENTS_DIR = DATA_DIR / "torrents"
-LOG_FILE = DATA_DIR / "scraper.log"
+LOGS_DIR = DATA_DIR / "logs"
+LOG_FILE = LOGS_DIR / "scraper.log"
 TOOLS_DIR = APP_ROOT / "tools"
 WEBENGINE_DIR = DATA_DIR / "webengine_cache"
 TAPEMATCH_RUNS_DIR = DATA_DIR / "tapematch" / "runs"
@@ -96,7 +97,7 @@ def to_long_path(p: Path) -> Path:
 
 def ensure_data_dirs() -> None:
     """Create data subdirectories if they do not exist."""
-    for d in (DATA_DIR, TORRENTS_DIR,
+    for d in (DATA_DIR, LOGS_DIR, TORRENTS_DIR,
               SITE_DIR, SITE_DETAIL_DIR, SITE_FILES_DIR, SITE_LBBCD_DIR, SITE_BN_DIR):
         d.mkdir(parents=True, exist_ok=True)
     if sys.platform == "win32" and len(str(DATA_DIR)) > 200:

@@ -110,8 +110,9 @@ def _daemon_pid_file() -> Path:
 
 
 def _daemon_log_file() -> Path:
-    from backend.paths import DATA_DIR
-    return DATA_DIR / "backend.log"
+    from backend.paths import LOGS_DIR
+    LOGS_DIR.mkdir(parents=True, exist_ok=True)
+    return LOGS_DIR / "backend.log"
 
 
 def _read_daemon_pid() -> int | None:
@@ -1370,7 +1371,7 @@ daemon start|stop|status
 
   start [--port N]
     Fork run_backend.py as a detached process, write data/backend.pid,
-    and redirect output to data/backend.log.  Prints the PID when ready.
+    and redirect output to data/logs/backend.log.  Prints the PID when ready.
 
   stop
     Send SIGTERM to the stored PID and remove data/backend.pid.
