@@ -19,14 +19,16 @@ Description: After BUG-225 (LB-tag mismatch disqualification) and BUG-226 (10s s
     toss-up, no data to disambiguate from.
 
   needs_review — single surviving candidate, weak signal:
-  - LB-16633, LB-16632: duplicate catalog entries for Del Mar, CA 7/1/00 ("new version" /
-    "new version, revised"), taper_name field is the placeholder string "same source
-    recording" rather than a real taper, so the taper-match round never fires for either.
-    The lone candidate (topic=54221) is an old pre-app SHN-era post with raw "bd00-07-01dtNNN.shn"
-    filenames that don't match either entry's FLAC checksums at all — score=5 is entirely from
-    has_torrent. Probably correctly not_found; the real post (if any) likely doesn't exist on
-    WTRF. Worth special-casing placeholder taper_name values (see _KNOWN_TAPER_ALIASES in
-    db.py) so they don't silently no-op the taper round.
+  - LB-16633, LB-16632: RESOLVED by BUG-227, not a needs_review case — the lone candidate
+    (topic=54221) isn't an unmatched pre-app post, it's explicitly labeled "LB-8" in the post
+    body with an attached torrent named "LB-00008.torrent" (user-confirmed by inspecting the
+    page directly). It documents LB-8, an unrelated entry, not either Del Mar 16000-series
+    duplicate. The original score=5/has_torrent-only read was correct about the weak signal but
+    missed the tag because the Round 0 regex required 3-5 digits (missed unpadded "LB-8") and
+    never scanned attachment filenames at all. Both gaps fixed in backend/wtrf_scraper.py; this
+    candidate now hard-disqualifies instead of surfacing as needs_review. The placeholder
+    taper_name ("same source recording") idea below may still be worth doing for other entries,
+    just not load-bearing for this pair anymore.
   - LB-16614: score=33, equipment_matches=1 + taper_match=mkws — single equipment token plus a
     taper hit still isn't enough to clear the 'medium' bar under _classify_confidence's
     `(eq>=2 and tap) or (fname>=1 and eq>=2)` rule. Worth checking whether 1 equipment token +
@@ -38,10 +40,24 @@ Description: After BUG-225 (LB-tag mismatch disqualification) and BUG-226 (10s s
   - LB-16586, LB-16622: score=5, has_torrent only, no other signal — likely genuine not_found;
     the search is matching on date alone with no content confirmation.
 
-  Ideas to investigate, roughly in order of expected payoff:
+  DONE (2026-06-30): Two more disqualification/scoring gaps fixed in backend/wtrf_scraper.py:
+  - Download-date window: entries.description's "bittorrent download MM/YY" note (this
+    curator's own acquisition date) is now parsed and any candidate post made more than 6
+    months before it is hard-disqualified — a post can't be the source of a download that
+    predates it. Live-verified: LB-16627's stale 2024-10-14 candidate now filtered while its
+    genuine FFP match still downloads; LB-16633/16632's lone candidate disqualified on date too
+    (independent of the BUG-227 LB-tag fix above). LB-16586, LB-16622, LB-16613, LB-16612 (the
+    has_torrent-only / weak-equipment cases below) should be re-tested against this — some may
+    now resolve to a clean not_found (correctly) rather than lingering as needs_review.
+  - MD5/SHA1 checksum round added alongside FFP (chk_type 'm'/'s', same 100pt/definitive tier)
+    — older SHN-era posts often list raw hashes instead of FFP fingerprints, which were
+    previously invisible to scoring entirely.
+
+  Ideas still open, roughly in order of expected payoff:
   1. Tie-breaker for positive-score ambiguous matches (post date / attachment size or count /
      reply count) — currently any tie at any score, even a strong one like 733, is treated
-     identically to a zero-signal tie.
+     identically to a zero-signal tie. (Post date is now extracted per-candidate for the
+     download-window check above — reuse it here instead of refetching.)
   2. Exclude placeholder taper_name values ("same source recording" and similar) from the
      taper-match round so they don't mask genuinely unmatchable entries as "weak signal"
      when they're actually "no signal available."
@@ -81,12 +97,20 @@ Description: backend/wtrf_scraper.py + tools/wtrf_fetch_missing.py implement the
   throttled empty pages rather than genuine no-match. Fixed by flooring
   search_delay at 10.0s (_SEARCH_DELAY constant). wtrf_downloads rows written
   before this fix should be treated as unreliable, especially 'not_found' rows.
+  PAUSED-ADD (2026-06-30): `--paused` CLI flag (backend/qbittorrent.py
+  `add_torrent_for_download(paused=...)`) lets `--add-to-qbt` queue matches in
+  qBittorrent without starting the download — used for a full batch run against the
+  220 missing LB entries above LB-16000 (113 paused-added, 22 downloaded-only, 85
+  unmatched; skipped list with candidate links exported to wtrf_skipped_review.md
+  for manual review). This covers the "don't auto-download unreviewed matches"
+  half of the manual-review action below; the GUI surface to actually review/
+  confirm/reject from the app is still open.
   Remaining work:
   - GUI screen or panel to drive the crawl (start/stop, progress, results table)
     that surfaces wtrf_downloads rows with confidence + signals for review.
   - Manual review action for 'needs_review' / 'ambiguous' rows: show the matched
     topic URL so the user can open it and manually confirm/reject before adding
-    to qBittorrent.
+    to qBittorrent (or resuming a paused-added torrent).
   - Board-page crawl mode as an alternative to search2 when SMF search is
     throttled or returns unexpected results (walk board=16.0, board=16.20, …).
   Relates to: [[TODO-135]] (scrape WTRF for existing posts), [[TODO-194]] (match quality
@@ -304,11 +328,24 @@ Description: New `concert_ranker/` package (repo root) that scores the audio qua
   consistent detector values (old rho=0.375 was a scan-version artifact). Excluded. Same 6-predictor
   model, Spearman 0.562, 80.2% within one tier (5-fold CV, alpha=0.5). AUD model on same set:
   Spearman 0.429, 73.5% within one tier. 24 tests pass.
+  FILTERING + FLOORS (done 2026-06-29, scan_id=18 = full-library rescan post hum-fix):
+    - Non-concert recordings (studio/interview/tv/compilation/rehearsal/radio/soundcheck) excluded
+      from scan worklist + rerank metrics (`concert_ranker/cli.py` `_NON_CONCERT_CATEGORIES` /
+      `_filter_non_concerts()`); 469 entries removed (15630 vs 16099 rows).
+    - hf_ceiling_hz forced back into QUALITY_MODEL as 10th predictor (w=+0.42, rho_uni=+0.341;
+      forward selection had dropped it as collinear, but D/D-/F recordings showed 26-43%
+      incidence of hf_ceiling < 5kHz vs 0.17% for A-tier). CV impact neutral.
+    - Private/missing/nonexistent entries excluded (`_collection_worklist` LEFT JOIN lb_master
+      filtered to lb_status='public', `_filter_non_public()`); xx-date (multi-date, day/month
+      unknown) entries reclassified to 'compilation' tier-0 in `classify_entry_categories`
+      (344 reclassified, 183 of them non-concert). 1377 non-public + 808 non-concert removed
+      (13914 rows).
+    - `_HF_FLOOR_RULES` hard ceiling caps added in `concert_ranker/quality_score.py`
+      `_apply_hard_floors()` (post-`predict_rank()`): hf_ceiling_hz < 4000 Hz -> D- ceiling
+      (rank 2); < 6000 Hz -> D ceiling (rank 3). D- now produced (26 recordings); D 1->150.
+    - `_MIN_CONCERT_DURATION_SEC` = 1800s gate in `cli.py` (`_filter_short_recordings()`)
+      excludes sub-30-min recordings from metrics (162 excluded). Final scored set: 13752 rows.
   REMAINING:
-    - RE-SCAN (AUD): re-scan the AUD corpus to get valid hum_excess_db values (scan_id=8 was
-      computed with the broken Δf≈5.4 Hz detector). Then check hum_excess_db rho; if negative,
-      add to QUALITY_MODEL via fit_aud_quality_model.py.
-    - SBD-per-decade bands (deferred — sparse, esp. 2010s n=7); per-decade DISQUALIFIERS (still global).
     - SBD-per-decade bands (deferred — sparse, esp. 2010s n=7); per-decade DISQUALIFIERS (still global).
     - dropout_count RETIRED AS MODEL PREDICTOR 2026-06-25. Reworked 2026-06-25 to detect
       3 defect types modelled on DFF (silence gaps / stuck samples / digipops). However the
@@ -334,12 +371,64 @@ Description: New `concert_ranker/` package (repo root) that scores the audio qua
       Δf≈5.4 Hz) — G1 bass (49 Hz) and 50 Hz mains shared the same bin; 100 Hz and 250 Hz
       harmonic windows were EMPTY (no bin within ±2 Hz), making detection unreliable. Fixed
       with dedicated high-res Welch (nperseg=sr×2, Δf=0.5 Hz) and tight ±0.5 Hz peak window.
-      Synthetic tests pass. NEEDS re-scan to confirm rho improvement — scan_id=8 values were
-      computed with the broken detector. Once re-scanned, evaluate as QUALITY_MODEL candidate
-      (expected negative rho if genuine hum tracks recording chain quality).
+      Synthetic tests pass. RE-SCANNED 2026-06-26/27 (scan_id=18, full-library scan, fixed
+      detector) — confirmed negative rho(hum_excess_db, rating_rank) = -0.213 (n=11723 AUD,
+      p=2.4e-120; no nulls). Direction matches expectation (more hum -> worse rating).
+      EVALUATED 2026-06-30 (`tools/fit_aud_quality_model.py --scan-id 18`, n=11723): full
+      forward selection over the 17-candidate pool does NOT pick hum_excess_db — air_ratio_db/
+      onset_clarity/crest_factor_db/hiss_floor_db/directness/dff_vert_occ/brickwall_score/
+      hf_ceiling_hz already cover its signal. Isolated test (current 10 production predictors
+      +hum_excess_db, no reshuffle) on the same scan: CV rho 0.6674->0.6696 (+0.0022, right at
+      the 0.002 inclusion threshold), within-1 +0.07pp — within noise, not worth the added
+      complexity. NOT added to QUALITY_MODEL. Closed.
+    - SIDE FINDING (2026-06-30) — EVALUATED, DECLINED, CLOSED: the CURRENT production
+      QUALITY_MODEL's 10 predictors score CV rho=0.6674 on scan_id=18 (full-library, post-filter
+      corpus, n=11723) vs the documented 0.659-0.664 fit on scan_id=8 (n=2799) — most of that gap
+      is dataset size/cleanliness, not predictor choice. A full forward-select refit on scan_id=18
+      reaches rho=0.686/within-1=84.9% with a DIFFERENT 8-predictor set (drops bass_ratio_db/
+      mud_ratio_db/crowd_snr_db/harsh_ratio_db/presence_ratio_db; adds air_ratio_db/
+      crest_factor_db/brickwall_score) — isolated from the dataset effect, the predictor swap
+      itself is only +0.019 rho / +0.16pp within-1 over running the CURRENT predictors on the
+      same scan_id=18 data. DECISION: too small a gain for the blast radius (would re-rank all
+      ~13,752 scored recordings and change which signals drive every score) — not applied.
+      config.py unchanged. No further action.
     - lossy_flag never fires — NOT calibratable without labeled known-lossy files; needs a handful of
       known-lossy recordings to tune the 25 dB brick-wall. Parked/inert.
-    - True 5–9 kHz sibilance + dynamic_range_dr from the NativeProbe (not yet produced by the scan).
+    - SIBILANCE DETECTION implemented 2026-06-30, calibration OPEN QUESTION (see below):
+      `concert_ranker/features.py` `_sibilance_native()` produces real `sibilance_ratio_db`
+      (native 5-9 kHz band local excess vs its flanking bands — 2-5 kHz below, 9-14 kHz above)
+      and `sibilance_crest` (loudest-window vs median-window excess in the band, from
+      `NativeProbe.window_psds_db`). Wired into `extract_hf_native()`; the `test_pipeline.py`
+      stand-in (`sibilance_ratio_db = harsh_ratio_db`) removed. `POLARITY`/`SEVERITY_BANDS`/
+      `FAMILY_METRICS["tonal"]`/calibration `_FIT_METRICS` already referenced `sibilance_ratio_db`
+      and needed no changes. 6 new tests in `tests/test_concert_ranker.py` (synthetic NativeProbe
+      PSDs). Neither metric is in `QUALITY_MODEL` yet.
+      CALIBRATION INVESTIGATION (2026-06-30, scan_id=20 then 21, 107 recordings each, ~19 min/scan):
+      First pass used a plain `sib - ref_mid` ratio — found it correlated POSITIVELY with rating
+      in all 4 source classes (rho +0.50 to +0.67), the opposite of its polarity=-1. That's the
+      same overall-brightness confound `harsh_ratio_db` had pre-ROUND-2 (brighter recordings rate
+      higher in this corpus — see `hf_ceiling_hz` rho=+0.80 AUD). Rewrote to the local-excess form
+      above (mirroring the proven `harsh_ratio_db` fix) and re-scanned (scan_id=21): rho dropped
+      but stayed positive (+0.50 SBD/+0.50 AUD/+0.57 UNKNOWN; FM not significant). Root cause
+      found from the scan_id=21 per-recording data WITHOUT a third rescan: when `hf_ceiling_hz`
+      falls inside/near the sibilance band, the band + flanks read noise floor asymmetrically
+      (the lower 2-5 kHz flank straddles the ceiling and still carries real signal; the band and
+      upper flank don't), producing deep spurious-negative values for band-limited (low-rated)
+      recordings — an `hf_ceiling_hz` artifact, not sibilance. Splitting scan_id=21 by ceiling:
+      recordings with `hf_ceiling_hz` < 9000 show rho≈0 (pure floor noise, AUD 0.0/UNKNOWN -0.20);
+      recordings with `hf_ceiling_hz` >= 9000 (real spectral content in-band) still show rho=+0.34
+      (p=0.005, n=66 pooled) — weaker but not fully neutral, possibly an irreducible residual of
+      the same brightness-correlates-with-source-quality pattern `air_ratio_db`/`hf_ceiling_hz`
+      already carry in this corpus. `sibilance_crest` has NO such problem — validated cleanly in
+      BOTH scans with the correct sign (rho -0.34 to -0.65, p<0.05, SBD/AUD/UNKNOWN).
+      DECISION NEEDED (not yet made): (a) gate `sibilance_ratio_db` to NaN below ~9000 Hz ceiling
+      and re-scan once more to see if the residual +0.34 is an acceptable "useful but imperfect"
+      tonal metric, (b) drop its defect framing — set polarity=0 (informational, like
+      `air_ratio_db`) and lean on `sibilance_crest` as the real sibilance signal, or (c) something
+      else. Code currently left as the local-excess form (b above's polarity=-1 unchanged) pending
+      this decision — do not wire `sibilance_ratio_db` into `QUALITY_MODEL` or trust its
+      `SEVERITY_BANDS` labels until resolved.
+    - dynamic_range_dr from the NativeProbe still not produced by the scan.
     - Polish band-label phrasing; GUI surface for quality scores/verdicts (backend + CLI only so far).
 
 TODO-182: Explore "best LB per date" via user voting — unsure how this would work

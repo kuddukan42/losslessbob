@@ -589,3 +589,70 @@ def test_tv_band_steady_not_flagged():
     p = _native_probe_from_psd(freqs, p_db, nyquist=22050.0, window_psds_db=win_db)
     from concert_ranker.features import _tv_band_flag
     assert _tv_band_flag(p) == 0.0   # no variance → not a TV band
+
+
+# ── native sibilance (TODO-183) ───────────────────────────────────────────────
+
+def test_sibilance_ratio_db_elevated_band():
+    """Sibilance band louder than its flanking bands (2-5k, 9-14k) → positive (essy) excess."""
+    freqs = np.linspace(0, 22050.0, 2049)
+    psd_db = np.full_like(freqs, -30.0)   # flanks (2-5k, 9-14k) stay at this baseline
+    psd_db[(freqs >= 5000) & (freqs < 9000)] = -10.0   # sibilance band hot
+    p = _native_probe_from_psd(freqs, psd_db.astype(np.float32), nyquist=22050.0)
+    from concert_ranker.features import _sibilance_native
+    out = _sibilance_native(p)
+    assert out["sibilance_ratio_db"] > 10.0
+
+
+def test_sibilance_ratio_db_quiet_band():
+    """Sibilance band quieter than its flanking bands (2-5k, 9-14k) → negative (not essy) excess."""
+    freqs = np.linspace(0, 22050.0, 2049)
+    psd_db = np.full_like(freqs, -30.0)   # flanks (2-5k, 9-14k) stay at this baseline
+    psd_db[(freqs >= 5000) & (freqs < 9000)] = -40.0   # sibilance band quiet
+    p = _native_probe_from_psd(freqs, psd_db.astype(np.float32), nyquist=22050.0)
+    from concert_ranker.features import _sibilance_native
+    out = _sibilance_native(p)
+    assert out["sibilance_ratio_db"] < 0.0
+
+
+def test_sibilance_crest_bursty_window_detected():
+    """One window with a sharp sibilance spike scores a high crest."""
+    freqs = np.linspace(0, 22050.0, 2049)
+    sib_mask = (freqs >= 5000) & (freqs < 9000)
+    psd_db = np.full_like(freqs, -30.0, dtype=np.float32)
+
+    n_win = 8
+    win_db = np.tile(np.full_like(freqs, -30.0, dtype=np.float32), (n_win, 1))
+    win_db[3, sib_mask] = -5.0  # one window has a loud essy burst
+
+    p = _native_probe_from_psd(freqs, psd_db, nyquist=22050.0, window_psds_db=win_db)
+    from concert_ranker.features import _sibilance_native
+    out = _sibilance_native(p)
+    assert out["sibilance_crest"] > 15.0
+
+
+def test_sibilance_crest_steady_windows_near_zero():
+    """Constant sibilance-band brightness across windows → near-zero crest."""
+    freqs = np.linspace(0, 22050.0, 2049)
+    sib_mask = (freqs >= 5000) & (freqs < 9000)
+    psd_db = np.full_like(freqs, -30.0, dtype=np.float32)
+    psd_db[sib_mask] = -15.0  # evenly bright, not bursty
+
+    n_win = 8
+    win_db = np.tile(psd_db, (n_win, 1))
+
+    p = _native_probe_from_psd(freqs, psd_db, nyquist=22050.0, window_psds_db=win_db)
+    from concert_ranker.features import _sibilance_native
+    out = _sibilance_native(p)
+    assert out["sibilance_crest"] == pytest.approx(0.0, abs=1e-4)
+
+
+def test_sibilance_native_empty_probe_returns_nan():
+    """An empty NativeProbe (no decodable windows) reports NaN, not a false 0."""
+    from concert_ranker.audio.cache import NativeProbe
+    from concert_ranker.features import extract_hf_native
+    p = NativeProbe(sr=44100, psd_db=np.array([]), psd_freqs=np.array([]),
+                     nyquist_hz=22050.0, window_psds_db=None)
+    out = extract_hf_native(p)
+    assert np.isnan(out["sibilance_ratio_db"])
+    assert np.isnan(out["sibilance_crest"])

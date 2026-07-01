@@ -9,7 +9,7 @@ Families:
   tonal     — bass/air/mud/harsh/sibilance balance
   distortion— clipping, crest factor, dropouts, hum, brickwall, single-ch hits
   spatial   — L-R correlation, width, channel balance, azimuth (inter-channel lag)
-  hf_native — hiss, air, HF ceiling, lossy, mini-disc, 32k DAT, cassette, TV band
+  hf_native — hiss, air, HF ceiling, lossy, mini-disc, 32k DAT, cassette, TV band, sibilance
   text      — curator description flaw vocabulary (DB-side, no audio needed)
 """
 from __future__ import annotations
@@ -220,12 +220,13 @@ def extract_spatial(c: TrackCache) -> dict:
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# HF NATIVE  (hiss, air, HF ceiling, lossy) — uses the cheap NativeProbe
+# HF NATIVE  (hiss, air, HF ceiling, lossy, sibilance) — uses the cheap NativeProbe
 # ─────────────────────────────────────────────────────────────────────────────
 def extract_hf_native(p: NativeProbe) -> dict:
     if p.psd_db.size == 0:
         return {k: float("nan") for k in
-                ("air_ratio_db", "hf_ceiling_hz")} | {"lossy_flag": 0.0}
+                ("air_ratio_db", "hf_ceiling_hz", "sibilance_ratio_db",
+                 "sibilance_crest")} | {"lossy_flag": 0.0}
 
     air = p.band_db(8000, 16000)
     mid = p.band_db(800, 3500)
@@ -249,6 +250,9 @@ def extract_hf_native(p: NativeProbe) -> dict:
     cassette = _cassette_rolloff_flag(p)
     tv_band = _tv_band_flag(p)
 
+    # True 5-9 kHz sibilance (TODO-183) — native-rate, not the bulk approximation
+    sibilance = _sibilance_native(p)
+
     return {
         "air_ratio_db": air_ratio,
         "hf_ceiling_hz": ceiling,
@@ -257,6 +261,7 @@ def extract_hf_native(p: NativeProbe) -> dict:
         "dat32k_flag": dat32k,
         "cassette_flag": cassette,
         "tv_band_flag": tv_band,
+        **sibilance,
     }
 
 
@@ -793,6 +798,57 @@ def _tv_band_flag(p: NativeProbe) -> float:
             return 0.0
 
     return 1.0
+
+
+def _sibilance_native(p: NativeProbe) -> dict:
+    """True 5-9 kHz sibilance from native-rate evidence (TODO-183).
+
+    ``extract_tonal`` already touches the 5-9 kHz band at bulk rate (22.05k),
+    but only as a flank reference for ``harsh_ratio_db`` — it is one Welch PSD
+    averaged over the WHOLE track, which smears brief "essy" S/T-consonant
+    bursts into the mean and can't tell them apart from a recording that is
+    just evenly bright throughout (cymbals, room ambience, tape brightness).
+    The NativeProbe's per-window PSDs (``window_psds_db``) give independent
+    snapshots across the performance at full native resolution, so the band's
+    SPREAD across windows — not just its average — separates bursty sibilance
+    from steady HF brightness.
+
+    ``sibilance_ratio_db`` is a LOCAL excess (5-9 kHz above the trend between
+    its flanking bands — 2-5 kHz below, 9-14 kHz above) rather than a ratio
+    against a distant low/mid reference. A first calibration pass (scan_id=20,
+    2026-06-30) measured a plain ``sib - ref_mid`` tilt and found it correlated
+    POSITIVELY with rating in all 4 source classes (rho +0.50 to +0.67) — the
+    opposite of its declared polarity. That tilt is just overall brightness
+    (brighter recordings rate higher in this corpus, same as air_ratio_db),
+    not genuine sibilance — the exact confound this codebase already diagnosed
+    and fixed for ``harsh_ratio_db`` (see ROUND 2 in TODO-183). The local-excess
+    form here applies the same fix: cancel the broadband tilt, keep only the
+    forward bump specific to the sibilance band.
+
+    Returns:
+        ``sibilance_ratio_db``: sibilance band level minus the midpoint of its
+        flanking bands — a genuine local 5-9 kHz forward bump, not brightness.
+        ``sibilance_crest``: loudest-window vs typical-window excess in the
+        sibilance band — the burstiness. 0.0 (too few windows) means nothing
+        to report, not "not sibilant".
+    """
+    sib = p.band_db(5000, 9000)
+    lo_flank = p.band_db(2000, 5000)    # harsh band, ends exactly where sibilance starts
+    hi_flank = p.band_db(9000, 14000)   # starts exactly where sibilance ends
+    if np.isnan(sib) or np.isnan(lo_flank) or np.isnan(hi_flank):
+        return {"sibilance_ratio_db": float("nan"), "sibilance_crest": float("nan")}
+
+    sibilance_excess = sib - 0.5 * (lo_flank + hi_flank)
+
+    sibilance_crest = 0.0
+    if p.window_psds_db is not None and p.window_psds_db.shape[0] >= 3:
+        lo, hi = BANDS["sibilance"]
+        mask = (p.psd_freqs >= lo) & (p.psd_freqs < hi)
+        if mask.any():
+            win_sib_db = p.window_psds_db[:, mask].mean(axis=1)
+            sibilance_crest = float(win_sib_db.max() - np.median(win_sib_db))
+
+    return {"sibilance_ratio_db": sibilance_excess, "sibilance_crest": sibilance_crest}
 
 
 # ─────────────────────────────────────────────────────────────────────────────

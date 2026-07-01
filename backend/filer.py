@@ -382,6 +382,49 @@ def _sync_qbt_location(lb_number: int, old_folder: Path, new_folder: Path, db_pa
         return False, str(exc)
 
 
+def _sync_qbt_file_renames(
+    lb_number: int, folder: Path, renames: list[tuple[str, str]], db_path=None
+) -> tuple[bool, str | None]:
+    """Best-effort qBittorrent file-path sync after files moved within a folder.
+
+    Companion to _sync_qbt_location() for changes that leave a torrent's
+    root folder in place but rename/move files under it — LBDIR reconcile's
+    "rename to match lbdir" and "move extras/" actions. No-ops unless folder
+    is currently tracked in qBittorrent. Never raises.
+
+    Returns:
+        Tuple of (synced, error) — see qbittorrent.sync_file_renames().
+    """
+    try:
+        from backend.credentials import SERVICE_QBT, SERVICE_QBT_KEY, get_credentials
+        from backend.qbittorrent import sync_file_renames
+
+        host = database.get_meta("qbt_host", db_path=db_path) or "localhost"
+        port = int(database.get_meta("qbt_port", db_path=db_path) or 8080)
+        _, api_key = get_credentials(SERVICE_QBT_KEY)
+        username, password = ("", "")
+        if not api_key:
+            username, password = get_credentials(SERVICE_QBT)
+
+        result = sync_file_renames(
+            lb_number, folder, renames,
+            host=host, port=port, username=username, password=password, api_key=api_key,
+            db_path=db_path,
+        )
+        if not result["ok"]:
+            logger.warning(
+                "LB-%05d: file rename(s) applied in %s but qBittorrent file sync failed: %s",
+                lb_number, folder, result["error"],
+            )
+            return False, result["error"]
+        if result["synced"]:
+            logger.info("LB-%05d: qBittorrent file path(s) synced for %s", lb_number, folder)
+        return result["synced"], None
+    except Exception as exc:
+        logger.warning("LB-%05d: qBittorrent file sync raised: %s", lb_number, exc)
+        return False, str(exc)
+
+
 def start_file_job(
     lb_number: int,
     folder_path: str,

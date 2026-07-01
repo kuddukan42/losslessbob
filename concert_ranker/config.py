@@ -199,7 +199,10 @@ SIGNED_BANDS = {
 # One-directional severity bands: (cutoff, label) ascending; higher = worse.
 # Cuts = AUD p70 / p90 / p98 (mud, harsh); crowd_snr reversed (low = worse) at
 # p10 / p30 / p60 (widened to restore "crowd-heavy" recall); hiss at p15/p70/p90/p98.
-# sibilance unchanged (no data — not produced by the scan).
+# sibilance_ratio_db cuts are still first-principles (TODO-183: the scan now
+# produces real native-rate sibilance_ratio_db/sibilance_crest values as of
+# 2026-06-30, but these cutoffs haven't been refit against them yet — run
+# `concert_ranker calibrate` against real data before trusting the labels).
 SEVERITY_BANDS = {
     "mud_ratio_db":       [(16.6, None), (23.0, "slightly muddy"), (33.5, "muddy")],
     "harsh_ratio_db":     [(2.3, None), (5.5, "a little forward"), (8.8, "harsh")],
@@ -227,7 +230,9 @@ QUALITY_BANDS = {
 # (AUD percentiles per decade from scan_id 6) let the scorer band a recording
 # against the norms of its OWN era; the scorer falls back to the global bands
 # above when a recording's decade is unknown or not represented here.
-# sibilance_ratio_db / dynamic_range_dr stay global (not produced by the scan).
+# sibilance_ratio_db stays global pending a per-decade refit (real values are
+# now produced by the scan — TODO-183 — but no decade-stratified fit exists
+# yet); dynamic_range_dr stays global (not produced by the scan at all).
 # Re-derive with: concert_ranker calibrate --by-decade  then refit per decade.
 # ─────────────────────────────────────────────────────────────────────────────
 _DECADE_CUTS = {

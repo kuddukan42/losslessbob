@@ -228,6 +228,7 @@ def _join(items):
 _PRETTY = {
     "crowd_snr_db": "crowd separation", "presence_ratio_db": "vocal presence",
     "mud_ratio_db": "low-mid clarity", "harsh_ratio_db": "smoothness",
+    "sibilance_ratio_db": "sibilance",
     "hiss_floor_db": "noise floor", "hum_excess_db": "freedom from hum",
     "crest_factor_db": "dynamics", "channel_balance_db": "channel balance",
     "azimuth_lag_us": "channel alignment",
