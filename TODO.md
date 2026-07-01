@@ -1,5 +1,33 @@
 
 
+TODO-196: Add custom app icon (packaged + window/taskbar), replace generic Electron gear icon
+Priority: Low
+Status: Open
+Added: 2026-07-01
+Description: App currently has no icon configured anywhere, so it falls back to Electron's
+  default gear icon. Needs (1) a source icon file (PNG, ideally 512x512+) placed in
+  gui_next/resources/ so electron-builder picks it up by convention for the packaged
+  app/installer (buildResources dir set in gui_next/package.json), and (2) an explicit `icon`
+  path passed to `new BrowserWindow({...})` in gui_next/src/main/index.ts:110 so the
+  running/dev window and Linux taskbar also show it (packaged-icon convention alone doesn't
+  cover this on Linux). Blocked on user supplying the icon asset.
+
+TODO-195: Backend pipeline step.label strings need i18n key+params, not rendered English
+Priority: Low
+Status: Open
+Added: 2026-07-01
+Description: BUG-201's frontend-generated Pipeline UI vocabulary (stage names, step states,
+  bucket labels) is now fully translated, but backend/app.py's pipeline step results
+  (verify/lookup/lbdir/rename/file `label` and `error`/`error_code` payload fields) still return
+  pre-rendered English strings — e.g. "Pass", "Missing 3", "Incomplete match", "Filed to
+  Vault_A" — which the frontend displays as-is (see ScreenPipeline.tsx step.label usages and the
+  no_checksums/shntool_missing/mismatch paths). Some are static enough for a frontend lookup map
+  (done for STATE_LABEL/ERROR_MSG, keyed by stable status/error_code enums), but others embed
+  dynamic data (counts, filenames, mount names) baked into the string server-side, which can't be
+  cleanly localized without the backend returning a translation key + params instead of a
+  finished sentence. Requires backend route changes (pipeline check/lookup/rename/file handlers
+  in app.py) plus a frontend mapping layer — deferred out of BUG-201's scope by user decision.
+
 TODO-194: WTRF scraper — improve match quality for remaining needs_review/ambiguous cases
 Priority: Medium
 Status: Open

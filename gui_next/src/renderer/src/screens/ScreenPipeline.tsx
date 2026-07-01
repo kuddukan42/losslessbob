@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useQueryClient } from '@tanstack/react-query'
 import { useVirtualizer } from '@tanstack/react-virtual'
 import { useTranslation } from 'react-i18next'
+import type { TFunction } from 'i18next'
 import { Icon } from '../components/Icon'
 import { Button, IconButton, Input, Pill, Banner, Chip } from '../components'
 import { TableShell, TH, TR, TD, GroupRow } from '../components'
@@ -269,28 +270,28 @@ function firstActiveStage(r: PipelineRow): string {
 
 type StatusInfo = { state: StepData['state']; label: string; reason: string }
 
-function deriveFolderStatus(r: PipelineRow): StatusInfo {
-  if (r.running) return { state: 'running', label: 'Running', reason: 'In progress' }
-  if (r.shelved) return { state: 'mute', label: 'Shelved', reason: 'Deferred — unshelve to continue' }
+function deriveFolderStatus(r: PipelineRow, t: TFunction): StatusInfo {
+  if (r.running) return { state: 'running', label: t('pipeline.stepStates.running'), reason: t('pipeline.status.inProgress') }
+  if (r.shelved) return { state: 'mute', label: t('pipeline.status.shelved'), reason: t('pipeline.status.deferredReason') }
   if (r.bucket === 'done') return {
-    state: 'pass', label: 'In collection',
-    reason: r.steps.file.mount_label ? `Filed to ${r.steps.file.mount_label}` : 'Filed & tagged',
+    state: 'pass', label: t('pipeline.status.inCollection'),
+    reason: r.steps.file.mount_label ? t('pipeline.status.filedTo', { mount: r.steps.file.mount_label }) : t('pipeline.status.filedTagged'),
   }
   if (r.bucket === 'shelf') return {
-    state: 'action', label: 'Ready to file',
-    reason: 'Archive-clean — file into the collection',
+    state: 'action', label: t('pipeline.status.readyToFile'),
+    reason: t('pipeline.status.archiveCleanReason'),
   }
   if (r.bucket === 'ready') return {
-    state: 'action', label: 'Ready to apply',
-    reason: 'Confident match — just apply the rename',
+    state: 'action', label: t('pipeline.status.readyToApply'),
+    reason: t('pipeline.status.confidentReason'),
   }
   for (const key of ['verify', 'lookup', 'lbdir', 'rename', 'file'] as const) {
     const s = r.steps[key]
-    if (s.status === 'bad')  return { state: 'blocked', label: 'Blocked',    reason: s.label }
-    if (s.status === 'warn') return { state: 'action',  label: 'Needs you',  reason: s.label }
-    if (s.status === 'mute') return { state: 'mute',    label: '—',          reason: '' }
+    if (s.status === 'bad')  return { state: 'blocked', label: t('pipeline.stepStates.blocked'), reason: s.label }
+    if (s.status === 'warn') return { state: 'action',  label: t('pipeline.buckets.needs'),      reason: s.label }
+    if (s.status === 'mute') return { state: 'mute',    label: t('pipeline.stepStates.mute'),    reason: '' }
   }
-  return { state: 'mute', label: '—', reason: '' }
+  return { state: 'mute', label: t('pipeline.stepStates.mute'), reason: '' }
 }
 
 // ── Virtualizer item type ─────────────────────────────────────────────────────
@@ -301,14 +302,14 @@ type VItem =
 
 // ── LBDIR state labels ────────────────────────────────────────────────────────
 
-const STATE_LABEL: Record<string, { tone: 'ok'|'bad'|'warn'|'mute'|'info'; label: string }> = {
-  pass:            { tone: 'ok',   label: 'Pass' },
-  fail:            { tone: 'bad',  label: 'Fail' },
-  missing_files:   { tone: 'warn', label: 'Missing files' },
-  extra_files:     { tone: 'warn', label: 'Extra files' },
-  no_lbdir:        { tone: 'warn', label: 'No lbdir' },
-  no_lb:           { tone: 'mute', label: 'No LB#' },
-  shntool_missing: { tone: 'warn', label: 'No shntool' },
+const STATE_LABEL: Record<string, { tone: 'ok'|'bad'|'warn'|'mute'|'info'; labelKey: string; fallback?: string }> = {
+  pass:            { tone: 'ok',   labelKey: 'pipeline.lbdir.status.pass' },
+  fail:            { tone: 'bad',  labelKey: 'pipeline.lbdir.status.fail' },
+  missing_files:   { tone: 'warn', labelKey: 'pipeline.lbdir.status.missingFiles' },
+  extra_files:     { tone: 'warn', labelKey: 'pipeline.lbdir.status.extraFiles' },
+  no_lbdir:        { tone: 'warn', labelKey: 'pipeline.lbdir.status.noLbdir' },
+  no_lb:           { tone: 'mute', labelKey: 'pipeline.lbdir.status.noLb' },
+  shntool_missing: { tone: 'warn', labelKey: 'pipeline.lbdir.status.noShntool' },
 }
 
 // ── LbdirStageContent ─────────────────────────────────────────────────────────
@@ -317,6 +318,7 @@ function LbdirStageContent({ row, onRowRefresh }: {
   row: PipelineRow
   onRowRefresh: (id: string) => void
 }): React.JSX.Element {
+  const { t } = useTranslation()
   const navigate = useNavigate()
   const [checkResult, setCheckResult]   = useState<CheckResult | null>(null)
   const [reconResult, setReconResult]   = useState<ReconcileResult | null>(null)
@@ -372,9 +374,9 @@ function LbdirStageContent({ row, onRowRefresh }: {
         setReconSel(new Set(d.results[0].proposals.map((p: ReconcileProposal) => p.disk_rel)))
         setSiteSel(new Set((d.results[0].site_proposals ?? []).map((p: SiteProposal) => p.site_path)))
       }
-    } catch { showToast('Reconcile scan failed', false) }
+    } catch { showToast(t('pipeline.lbdir.toast.reconcileFailed'), false) }
     finally { setBusy(false) }
-  }, [checkResult, row.folderPath, row.steps.lookup.lb_number, post])
+  }, [checkResult, row.folderPath, row.steps.lookup.lb_number, post, t])
 
   const handleApply = useCallback(async () => {
     if (!reconResult) return
@@ -391,14 +393,14 @@ function LbdirStageContent({ row, onRowRefresh }: {
         await post('/api/lbdir/apply_reconcile', { folder: row.folderPath, renames, site_copies: siteCopies })
       if (extras.length)
         await post('/api/lbdir/move_extras', { folder: row.folderPath, files: extras })
-      showToast('Applied', true)
+      showToast(t('pipeline.lbdir.toast.applied'), true)
       setReconResult(null)
       const d2 = await post('/api/lbdir/check', { folders: [row.folderPath] }) as { results: CheckResult[] }
       if (d2.results?.[0]) setCheckResult(d2.results[0])
       onRowRefresh(row.id)
-    } catch { showToast('Apply failed', false) }
+    } catch { showToast(t('pipeline.lbdir.toast.applyFailed'), false) }
     finally { setBusy(false) }
-  }, [reconResult, reconSel, siteSel, row.folderPath, row.id, post, onRowRefresh])
+  }, [reconResult, reconSel, siteSel, row.folderPath, row.id, post, onRowRefresh, t])
 
   const handleRetrieve = useCallback(async () => {
     setBusy(true)
@@ -409,33 +411,32 @@ function LbdirStageContent({ row, onRowRefresh }: {
         ...(lbHint !== null ? { lb_number_hint: lbHint } : {}),
       })
       onRowRefresh(row.id)
-    } catch { showToast('Retrieve failed', false) }
+    } catch { showToast(t('pipeline.lbdir.toast.retrieveFailed'), false) }
     finally { setBusy(false) }
-  }, [row.folderPath, row.id, row.steps.lookup.lb_number, post, onRowRefresh])
+  }, [row.folderPath, row.id, row.steps.lookup.lb_number, post, onRowRefresh, t])
 
   if (row.steps.lbdir.status === 'mute') {
     return (
-      <Banner tone="info" icon="info" title="Runs after lookup"
+      <Banner tone="info" icon="info" title={t('pipeline.lbdir.runsAfterTitle')}
         action={
           <Button size="sm" variant="secondary" icon="download" disabled={busy} onClick={handleRetrieve}>
-            Retrieve sidecar now
+            {t('pipeline.lbdir.retrieveNow')}
           </Button>
         }>
-        Once lookup resolves an LB#, we retrieve <span style={{ fontFamily: 'var(--lbb-mono)' }}>lbdir*.txt</span> from
-        the archive cache and reconcile it against the files on disk. You can pull it early if you like.
+        {t('pipeline.lbdir.runsAfterBody')}
       </Banner>
     )
   }
 
   const cr = checkResult
-  const sl = cr ? (STATE_LABEL[cr.status] ?? { tone: 'mute' as const, label: cr.status }) : null
+  const sl = cr ? (STATE_LABEL[cr.status] ?? { tone: 'mute' as const, labelKey: '', fallback: cr.status }) : null
   const canReconcile = cr !== null && cr.lbdir_found && cr.status !== 'pass' && cr.status !== 'no_lb'
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 14, position: 'relative' }}>
       {busy && !cr && (
         <div style={{ color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-12)', textAlign: 'center', padding: 24 }}>
-          Loading…
+          {t('pipeline.lbdir.loading')}
         </div>
       )}
 
@@ -447,7 +448,7 @@ function LbdirStageContent({ row, onRowRefresh }: {
                 LB-{String(cr.lb_number).padStart(5, '0')}
               </Pill>
             )}
-            {sl && <Pill tone={sl.tone} soft dot={cr.status !== 'pass'}>{sl.label}</Pill>}
+            {sl && <Pill tone={sl.tone} soft dot={cr.status !== 'pass'}>{sl.labelKey ? t(sl.labelKey as any) : sl.fallback}</Pill>}
             {cr.lbdir_path && (
               <Pill tone="mute" soft style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-10)' }}>
                 {cr.lbdir_path.split('/').pop()}
@@ -456,20 +457,20 @@ function LbdirStageContent({ row, onRowRefresh }: {
             {cr.lbdir_path && (
               <Button variant="ghost" size="sm" icon="reveal"
                 onClick={() => window.api.openPath(cr.lbdir_path!)}>
-                Open lbdir.txt
+                {t('pipeline.lbdir.openFile')}
               </Button>
             )}
             <Button variant="ghost" size="sm" onClick={() => navigate('/lbdir')}>
-              Full LBDIR screen →
+              {t('pipeline.lbdir.fullScreen')}
             </Button>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 6 }}>
             {[
-              { l: 'Total',    v: cr.total,    c: undefined },
-              { l: 'Pass',     v: cr.pass,     c: cr.pass     > 0 ? 'var(--lbb-ok-fg)'  : 'var(--lbb-fg3)' },
-              { l: 'Missing',  v: cr.missing,  c: cr.missing  > 0 ? 'var(--lbb-bad-fg)' : 'var(--lbb-fg3)' },
-              { l: 'Mismatch', v: cr.mismatch, c: cr.mismatch > 0 ? 'var(--lbb-bad-fg)' : 'var(--lbb-fg3)' },
+              { l: t('pipeline.lbdir.stats.total'),    v: cr.total,    c: undefined },
+              { l: t('pipeline.lbdir.stats.pass'),     v: cr.pass,     c: cr.pass     > 0 ? 'var(--lbb-ok-fg)'  : 'var(--lbb-fg3)' },
+              { l: t('pipeline.lbdir.stats.missing'),  v: cr.missing,  c: cr.missing  > 0 ? 'var(--lbb-bad-fg)' : 'var(--lbb-fg3)' },
+              { l: t('pipeline.lbdir.stats.mismatch'), v: cr.mismatch, c: cr.mismatch > 0 ? 'var(--lbb-bad-fg)' : 'var(--lbb-fg3)' },
             ].map((st, i) => (
               <div key={i} style={{ padding: '6px 8px', borderRadius: 6, background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)', textAlign: 'center' }}>
                 <div style={{ fontSize: 'var(--lbb-fs-9-5)', fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase' }}>{st.l}</div>
@@ -480,7 +481,7 @@ function LbdirStageContent({ row, onRowRefresh }: {
 
           {cr.status === 'no_lbdir' && (
             <div style={{ padding: '8px 12px', borderRadius: 6, background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)', fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)' }}>
-              No <span style={{ fontFamily: 'var(--lbb-mono)' }}>lbdir*.txt</span> found. Try scraping the entry from the LBDIR screen.
+              {t('pipeline.lbdir.noLbdirFound')}
             </div>
           )}
 
@@ -499,8 +500,8 @@ function LbdirStageContent({ row, onRowRefresh }: {
           />
 
           {cr.status === 'pass' && (
-            <Banner tone="ok" icon="check" title="Archive-clean">
-              Every file referenced in the official sidecar is present and matches. This folder is fully reconciled.
+            <Banner tone="ok" icon="check" title={t('pipeline.lbdir.archiveCleanTitle')}>
+              {t('pipeline.lbdir.archiveCleanBody')}
             </Banner>
           )}
         </>
@@ -527,6 +528,7 @@ function VerifyStageContent({ step, row, onRun }: {
   row: PipelineRow
   onRun: (steps: string[]) => void
 }): React.JSX.Element {
+  const { t } = useTranslation()
   const [generating, setGenerating] = useState(false)
   const [showAll, setShowAll] = useState(false)
 
@@ -554,9 +556,9 @@ function VerifyStageContent({ step, row, onRun }: {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
         <Banner tone="info" icon="info">
-          <strong>Hashing files…</strong>
+          <strong>{t('pipeline.verify.hashingFiles')}</strong>
           <div style={{ marginTop: 4, fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)' }}>
-            This folder will advance to Lookup automatically.
+            {t('pipeline.verify.advanceAuto')}
           </div>
         </Banner>
       </div>
@@ -567,9 +569,9 @@ function VerifyStageContent({ step, row, onRun }: {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
         <div style={{ color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-12)', fontStyle: 'italic' }}>
-          Verify hasn't run yet.
+          {t('pipeline.verify.notRun')}
         </div>
-        <Button variant="secondary" size="sm" icon="play" onClick={() => onRun(['verify'])}>Run verify</Button>
+        <Button variant="secondary" size="sm" icon="play" onClick={() => onRun(['verify'])}>{t('pipeline.verify.run')}</Button>
       </div>
     )
   }
@@ -577,12 +579,11 @@ function VerifyStageContent({ step, row, onRun }: {
   if (step.shntool_missing) {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-        <Banner tone="warn" icon="alert" title="Can't decode .shn without shntool">
-          This folder uses SHN files, but shntool is not installed. Install shntool so checksums
-          can be decoded and verified.
+        <Banner tone="warn" icon="alert" title={t('pipeline.verify.shnToolMissingTitle')}>
+          {t('pipeline.verify.shnToolMissingBody')}
         </Banner>
-        <Button variant="ghost" size="sm" icon="refresh" title="Re-run this stage"
-          onClick={() => onRun(['verify'])}>Re-verify</Button>
+        <Button variant="ghost" size="sm" icon="refresh" title={t('pipeline.rerunStage')}
+          onClick={() => onRun(['verify'])}>{t('pipeline.verify.rerun')}</Button>
       </div>
     )
   }
@@ -595,18 +596,18 @@ function VerifyStageContent({ step, row, onRun }: {
             <Icon name="shield" size={20} />
           </div>
           <div style={{ flex: 1 }}>
-            <div style={{ fontSize: 'var(--lbb-fs-13-5)', fontWeight: 700, marginBottom: 4 }}>No checksums in this folder yet</div>
+            <div style={{ fontSize: 'var(--lbb-fs-13-5)', fontWeight: 700, marginBottom: 4 }}>{t('pipeline.verify.noChecksumsTitle')}</div>
             <div style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)', lineHeight: 1.5, marginBottom: 10 }}>
-              There's no <span style={{ fontFamily: 'var(--lbb-mono)' }}>.ffp</span> or <span style={{ fontFamily: 'var(--lbb-mono)' }}>.md5</span> sidecar here, so there's nothing to verify against. Generate them from the audio on disk — then this folder verifies and looks up automatically.
+              {t('pipeline.verify.noChecksumsBody')}
             </div>
             <Button variant="primary" size="sm" icon="shield" disabled={generating}
               onClick={handleGenerate}>
-              {generating ? 'Generating…' : 'Generate FFP + MD5'}
+              {generating ? t('pipeline.verify.generating') : t('pipeline.verify.generate')}
             </Button>
           </div>
         </div>
         <div style={{ padding: '8px 10px', borderRadius: 6, background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)', fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
-          Writes <span style={{ fontFamily: 'var(--lbb-mono)' }}>_mychecksums.ffp</span> and <span style={{ fontFamily: 'var(--lbb-mono)' }}>.md5</span> into the folder. Non-destructive — your audio files aren't touched.
+          {t('pipeline.verify.generateInfo')}
         </div>
       </div>
     )
@@ -623,18 +624,18 @@ function VerifyStageContent({ step, row, onRun }: {
       <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
         <StatusTag state={STATUS_TO_STATE[step.status]}>{step.label}</StatusTag>
         <div style={{ flex: 1 }} />
-        <Button variant="ghost" size="sm" icon="refresh" title="Re-run this stage"
-          onClick={() => onRun(['verify'])}>Re-verify</Button>
+        <Button variant="ghost" size="sm" icon="refresh" title={t('pipeline.rerunStage')}
+          onClick={() => onRun(['verify'])}>{t('pipeline.verify.rerun')}</Button>
       </div>
 
       {total > 0 && (
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 6 }}>
           {([
-            { l: 'Total',    v: total,    c: undefined },
-            { l: 'Pass',     v: pass,     c: pass === total && total > 0 ? 'var(--lbb-ok-fg)' : undefined },
-            { l: 'Missing',  v: missing,  c: missing  > 0 ? 'var(--lbb-bad-fg)' : 'var(--lbb-fg3)' },
-            { l: 'Mismatch', v: mismatch, c: mismatch > 0 ? 'var(--lbb-bad-fg)' : 'var(--lbb-fg3)' },
-            { l: 'Extra',    v: extra,    c: extra    > 0 ? 'var(--lbb-info-fg)' : 'var(--lbb-fg3)' },
+            { l: t('pipeline.verify.stats.total'),    v: total,    c: undefined },
+            { l: t('pipeline.verify.stats.pass'),     v: pass,     c: pass === total && total > 0 ? 'var(--lbb-ok-fg)' : undefined },
+            { l: t('pipeline.verify.stats.missing'),  v: missing,  c: missing  > 0 ? 'var(--lbb-bad-fg)' : 'var(--lbb-fg3)' },
+            { l: t('pipeline.verify.stats.mismatch'), v: mismatch, c: mismatch > 0 ? 'var(--lbb-bad-fg)' : 'var(--lbb-fg3)' },
+            { l: t('pipeline.verify.stats.extra'),    v: extra,    c: extra    > 0 ? 'var(--lbb-info-fg)' : 'var(--lbb-fg3)' },
           ] as { l: string; v: number; c: string | undefined }[]).map(({ l, v, c }) => (
             <div key={l} style={{ padding: '6px 8px', borderRadius: 6, background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)', textAlign: 'center' }}>
               <div style={{ fontSize: 'var(--lbb-fs-9-5)', fontWeight: 700, color: 'var(--lbb-fg3)', letterSpacing: 0.08, textTransform: 'uppercase' }}>{l}</div>
@@ -659,13 +660,13 @@ function VerifyStageContent({ step, row, onRun }: {
 
       {step.status === 'bad' && missing > 0 && (
         <div style={{ padding: '10px 12px', borderRadius: 6, background: 'var(--lbb-bad-bg)', border: '1px solid var(--lbb-bad-bar)', fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-bad-fg)' }}>
-          {missing} file{missing !== 1 ? 's' : ''} in the checksum list are not on disk. Restore the missing files, then re-verify.
+          {t('pipeline.verify.missingFiles', { count: missing })}
         </div>
       )}
 
       {step.status === 'bad' && mismatch > 0 && (
         <div style={{ padding: '10px 12px', borderRadius: 6, background: 'var(--lbb-bad-bg)', border: '1px solid var(--lbb-bad-bar)', fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-bad-fg)' }}>
-          {mismatch} file{mismatch !== 1 ? 's' : ''} have mismatched checksums — the audio may be corrupted or modified.
+          {t('pipeline.verify.mismatchedFiles', { count: mismatch })}
         </div>
       )}
     </div>
@@ -677,6 +678,7 @@ function LookupStageContent({ step, row, onRun }: {
   row: PipelineRow
   onRun: (steps: string[]) => void
 }): React.JSX.Element {
+  const { t } = useTranslation()
   const [pinBusyLb, setPinBusyLb] = useState<number | null>(null)
 
   const handlePin = useCallback(async (lb: number) => {
@@ -700,9 +702,9 @@ function LookupStageContent({ step, row, onRun }: {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
         <div style={{ color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-12)', fontStyle: 'italic' }}>
-          Lookup runs automatically after verify passes.
+          {t('pipeline.lookup.runsAuto')}
         </div>
-        <Button variant="secondary" size="sm" icon="play" onClick={() => onRun(['lookup'])}>Run lookup</Button>
+        <Button variant="secondary" size="sm" icon="play" onClick={() => onRun(['lookup'])}>{t('pipeline.lookup.run')}</Button>
       </div>
     )
   }
@@ -731,29 +733,27 @@ function LookupStageContent({ step, row, onRun }: {
               {!isMultiLb && summRow && categoryPill(summRow.lb_category)}
               {!isMultiLb && step.summary && (
                 <span style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)' }}>
-                  {step.summary.matched}/{step.summary.given} matched
+                  {t('pipeline.lookup.matchedCount', { matched: step.summary.matched, given: step.summary.given })}
                 </span>
               )}
               {isMultiLb && (
                 <span style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
-                  same recording, both entries
+                  {t('pipeline.lookup.multiLbInfo')}
                 </span>
               )}
             </div>
             {step.alias_resolved_from && step.alias_resolved_from.length > 0 && (
               <div style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', marginTop: 2 }}>
-                ↩ resolved from {step.alias_resolved_from.map(n => `LB-${String(n).padStart(5, '0')}`).join(', ')}
+                {t('pipeline.lookup.resolvedFrom', { list: step.alias_resolved_from.map(n => `LB-${String(n).padStart(5, '0')}`).join(', ') })}
               </div>
             )}
           </div>
-          <StatusTag state="pass">{isMultiLb ? 'Multi-LB' : 'Matched'}</StatusTag>
+          <StatusTag state="pass">{isMultiLb ? t('pipeline.lookup.multiLb') : t('pipeline.lookup.matched')}</StatusTag>
         </div>
         <div style={{ padding: '8px 10px', borderRadius: 6, background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)', fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
-          {isMultiLb
-            ? <>Both entries are auto-linked. The folder will be renamed with both LB numbers.</>
-            : <>The match flows into <strong>LBDIR</strong> automatically — no extra step needed.</>}
+          {isMultiLb ? t('pipeline.lookup.multiLbMsg') : t('pipeline.lookup.flowsAuto')}
         </div>
-        <Button variant="ghost" size="sm" icon="refresh" title="Re-run this stage" onClick={() => onRun(['lookup'])}>Re-run lookup</Button>
+        <Button variant="ghost" size="sm" icon="refresh" title={t('pipeline.rerunStage')} onClick={() => onRun(['lookup'])}>{t('pipeline.lookup.rerun')}</Button>
       </div>
     )
   }
@@ -765,13 +765,13 @@ function LookupStageContent({ step, row, onRun }: {
       <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <StatusTag state="action">{step.label}</StatusTag>
-          <span style={{ fontSize: 'var(--lbb-fs-13)', fontWeight: 700 }}>Which show is this?</span>
+          <span style={{ fontSize: 'var(--lbb-fs-13)', fontWeight: 700 }}>{t('pipeline.lookup.whichShow')}</span>
           <div style={{ flex: 1 }} />
-          <Button variant="ghost" size="sm" icon="refresh" title="Re-run this stage" onClick={() => onRun(['lookup'])}>Re-run lookup</Button>
+          <Button variant="ghost" size="sm" icon="refresh" title={t('pipeline.rerunStage')} onClick={() => onRun(['lookup'])}>{t('pipeline.lookup.rerun')}</Button>
         </div>
         <LookupDetail summaryRows={summaryRows} detailRows={detailRows} onPin={handlePin} pinBusyLb={pinBusyLb} />
         <div style={{ padding: '8px 10px', borderRadius: 6, background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)', fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
-          Pinning writes a folder→LB link, so it never asks again.
+          {t('pipeline.lookup.pinInfo')}
         </div>
       </div>
     )
@@ -788,21 +788,18 @@ function LookupStageContent({ step, row, onRun }: {
           <span style={{ fontSize: 'var(--lbb-fs-13)', fontWeight: 700 }}>{lbStr}</span>
           {step.summary && (
             <span style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)' }}>
-              {step.summary.matched}/{step.summary.given} matched
+              {t('pipeline.lookup.matchedCount', { matched: step.summary.matched, given: step.summary.given })}
             </span>
           )}
           <div style={{ flex: 1 }} />
-          <Button variant="ghost" size="sm" icon="refresh" title="Re-run this stage" onClick={() => onRun(['lookup'])}>Re-run lookup</Button>
+          <Button variant="ghost" size="sm" icon="refresh" title={t('pipeline.rerunStage')} onClick={() => onRun(['lookup'])}>{t('pipeline.lookup.rerun')}</Button>
         </div>
         <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)' }}>
-          {lbStr} was identified, but not every checksum in this folder matches the archive
-          record — some files on disk may differ from the official copy.{' '}
-          <strong>LBDIR, rename, and file are blocked</strong> until you confirm this is the right
-          show. If you're sure, pin it to proceed.
+          {t('pipeline.lookup.partialMatchInfo', { lb: lbStr })}
         </div>
         <LookupDetail summaryRows={summaryRows} detailRows={detailRows} onPin={handlePin} pinBusyLb={pinBusyLb} />
         <div style={{ padding: '8px 10px', borderRadius: 6, background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)', fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
-          Pinning confirms this folder belongs to {lbStr} and unlocks all downstream steps.
+          {t('pipeline.lookup.pinConfirms', { lb: lbStr })}
         </div>
       </div>
     )
@@ -814,12 +811,12 @@ function LookupStageContent({ step, row, onRun }: {
     <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
         <StatusTag state={STATUS_TO_STATE[step.status]}>{step.label}</StatusTag>
-        <span style={{ fontSize: 'var(--lbb-fs-13)', fontWeight: 700 }}>No matches found</span>
+        <span style={{ fontSize: 'var(--lbb-fs-13)', fontWeight: 700 }}>{t('pipeline.lookup.noMatches')}</span>
         <div style={{ flex: 1 }} />
-        <Button variant="ghost" size="sm" icon="refresh" title="Re-run this stage" onClick={() => onRun(['lookup'])}>Re-run lookup</Button>
+        <Button variant="ghost" size="sm" icon="refresh" title={t('pipeline.rerunStage')} onClick={() => onRun(['lookup'])}>{t('pipeline.lookup.rerun')}</Button>
       </div>
       <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)' }}>
-        None of these checksums match any archive entry. This may be a new or unknown source.
+        {t('pipeline.lookup.noMatchesInfo')}
       </div>
       <LookupDetail summaryRows={summaryRows} detailRows={detailRows} />
     </div>
@@ -847,6 +844,7 @@ function RenameStageContent({ step, row, onRun, onRename }: {
   onRun: (steps: string[]) => void
   onRename: (customName?: string) => void
 }): React.JSX.Element {
+  const { t } = useTranslation()
   const [editing, setEditing] = useState(false)
   const [editValue, setEditValue] = useState('')
 
@@ -860,9 +858,9 @@ function RenameStageContent({ step, row, onRun, onRename }: {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
         <div style={{ color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-12)', fontStyle: 'italic' }}>
-          Rename unlocks after lookup resolves an LB#.
+          {t('pipeline.rename.unlocksAfter')}
         </div>
-        <Button variant="secondary" size="sm" icon="play" onClick={() => onRun(['lookup', 'rename'])}>Check rename</Button>
+        <Button variant="secondary" size="sm" icon="play" onClick={() => onRun(['lookup', 'rename'])}>{t('pipeline.rename.checkRename')}</Button>
       </div>
     )
   }
@@ -874,9 +872,9 @@ function RenameStageContent({ step, row, onRun, onRename }: {
           background: 'var(--lbb-ok-bg)', border: '1px solid var(--lbb-ok-bar)', borderRadius: 8 }}>
           <Icon name="check" size={16} style={{ color: 'var(--lbb-ok-fg)', flexShrink: 0 }} />
           <div>
-            <div style={{ fontWeight: 700, fontSize: 'var(--lbb-fs-13)', color: 'var(--lbb-ok-fg)' }}>Renamed</div>
+            <div style={{ fontWeight: 700, fontSize: 'var(--lbb-fs-13)', color: 'var(--lbb-ok-fg)' }}>{t('pipeline.rename.renamed')}</div>
             <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)', marginTop: 2 }}>
-              Logged to <span style={{ fontFamily: 'var(--lbb-mono)' }}>rename_history</span>. Ready to collect next.
+              {t('pipeline.rename.loggedReady')}
             </div>
           </div>
         </div>
@@ -895,19 +893,19 @@ function RenameStageContent({ step, row, onRun, onRename }: {
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: 'var(--lbb-ok-fg)',
           fontSize: 'var(--lbb-fs-12)', fontWeight: 600 }}>
           <Icon name="check" size={14} />
-          Folder name is already correct
+          {t('pipeline.rename.alreadyCorrect')}
         </div>
         <div style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)',
           padding: '8px 10px', background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)',
           borderRadius: 6, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
           {row.folderName}
         </div>
-        <Button variant="ghost" size="sm" icon="refresh" title="Re-run this stage" onClick={() => onRun(['lookup', 'rename'])}>Re-check</Button>
+        <Button variant="ghost" size="sm" icon="refresh" title={t('pipeline.rerunStage')} onClick={() => onRun(['lookup', 'rename'])}>{t('pipeline.rename.recheck')}</Button>
       </div>
     )
   }
 
-  const title = hasWrongLb ? 'Fix the wrong LB# and apply' : 'Review the proposed rename'
+  const title = hasWrongLb ? t('pipeline.rename.fixWrongLb') : t('pipeline.rename.reviewProposed')
 
   const copyDiff = () => {
     const target = editing ? editValue : step.proposed!
@@ -922,23 +920,22 @@ function RenameStageContent({ step, row, onRun, onRename }: {
         <span style={{ fontWeight: 700, fontSize: 'var(--lbb-fs-13)', flex: 1, minWidth: 0 }}>{title}</span>
         {lbTag && <Pill tone="ok" soft dot style={{ flexShrink: 0, fontFamily: 'var(--lbb-mono)' }}>{lbTag}</Pill>}
         {editing ? (
-          <Button variant="ghost" size="sm" onClick={() => setEditing(false)} style={{ flexShrink: 0 }}>Cancel</Button>
+          <Button variant="ghost" size="sm" onClick={() => setEditing(false)} style={{ flexShrink: 0 }}>{t('pipeline.rename.cancel')}</Button>
         ) : (
-          <Button variant="ghost" size="sm" icon="rename" onClick={() => { setEditValue(step.proposed!); setEditing(true) }} style={{ flexShrink: 0 }}>Edit name…</Button>
+          <Button variant="ghost" size="sm" icon="rename" onClick={() => { setEditValue(step.proposed!); setEditing(true) }} style={{ flexShrink: 0 }}>{t('pipeline.rename.editName')}</Button>
         )}
       </div>
 
       {/* 2. Wrong-LB banner */}
       {hasWrongLb && (
-        <Banner tone="warn" icon="alert" title={`This folder is mislabeled ${folderLb}`}>
-          The existing tag doesn't match the archive. Applying will <strong>remove {folderLb}</strong> and
-          append the correct <span style={{ fontFamily: 'var(--lbb-mono)' }}>{lbTag}</span> in one step.
+        <Banner tone="warn" icon="alert" title={t('pipeline.rename.mislabeledTitle', { lb: folderLb })}>
+          {t('pipeline.rename.mislabeledBody', { lb: folderLb, newLb: lbTag })}
         </Banner>
       )}
 
       {/* 2b. Rename failure banner (e.g. duplicate folder at destination) */}
       {step.error && (
-        <Banner tone="bad" icon="alert" title="Rename failed">
+        <Banner tone="bad" icon="alert" title={t('pipeline.rename.failedTitle')}>
           {step.error}
         </Banner>
       )}
@@ -952,7 +949,7 @@ function RenameStageContent({ step, row, onRun, onRename }: {
             {hasWrongLb && folderLb ? highlightLb(row.folderName, folderLb, true) : row.folderName}
           </span>
           <span style={{ fontSize: 'var(--lbb-fs-10)', fontWeight: 700, color: 'var(--lbb-bad-fg)',
-            textTransform: 'uppercase', letterSpacing: 0.06, flexShrink: 0 }}>current</span>
+            textTransform: 'uppercase', letterSpacing: 0.06, flexShrink: 0 }}>{t('pipeline.rename.current')}</span>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 12px',
           background: 'var(--lbb-ok-bg)', borderTop: '1px solid var(--lbb-border)' }}>
@@ -974,7 +971,7 @@ function RenameStageContent({ step, row, onRun, onRename }: {
           )}
           <span style={{ fontSize: 'var(--lbb-fs-10)', fontWeight: 700, color: 'var(--lbb-ok-fg)',
             textTransform: 'uppercase', letterSpacing: 0.06, flexShrink: 0 }}>
-            {editing ? 'editing' : 'proposed'}
+            {editing ? t('pipeline.rename.editing') : t('pipeline.rename.proposed')}
           </span>
         </div>
       </div>
@@ -984,19 +981,19 @@ function RenameStageContent({ step, row, onRun, onRename }: {
         background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)',
         fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
         <Icon name="info" size={12} style={{ flexShrink: 0 }} />
-        <span style={{ flex: 1 }}>Dry-run — nothing changes until you apply.</span>
-        <Button variant="ghost" size="sm" icon="copy" onClick={copyDiff} title="Copy to clipboard" style={{ flexShrink: 0 }}>Copy diff</Button>
+        <span style={{ flex: 1 }}>{t('pipeline.rename.dryRun')}</span>
+        <Button variant="ghost" size="sm" icon="copy" onClick={copyDiff} title={t('pipeline.rename.copyToClipboard')} style={{ flexShrink: 0 }}>{t('pipeline.rename.copyDiff')}</Button>
       </div>
       <div style={{ padding: '8px 10px', borderRadius: 6, background: 'var(--lbb-surface)',
         border: '1px solid var(--lbb-border)', fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
-        Logged to <span style={{ fontFamily: 'var(--lbb-mono)' }}>rename_history</span>.
+        {t('pipeline.rename.loggedOnly')}
       </div>
 
       {/* Action buttons */}
       <div style={{ display: 'flex', gap: 8 }}>
         <Button variant="primary" size="sm" icon="check"
-          onClick={() => onRename(editing ? editValue : undefined)}>Apply rename</Button>
-        <Button variant="ghost" size="sm" icon="refresh" title="Re-run this stage" onClick={() => onRun(['lookup', 'rename'])}>Re-check</Button>
+          onClick={() => onRename(editing ? editValue : undefined)}>{t('pipeline.rename.apply')}</Button>
+        <Button variant="ghost" size="sm" icon="refresh" title={t('pipeline.rerunStage')} onClick={() => onRun(['lookup', 'rename'])}>{t('pipeline.rename.recheck')}</Button>
       </div>
     </div>
   )
@@ -1054,7 +1051,7 @@ function CollectReadyDetail({ step, row, onRun, onFile }: {
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 12px', background: 'var(--lbb-surface)' }}>
           <Icon name="folder" size={13} style={{ color: 'var(--lbb-fg3)', flexShrink: 0 }} />
           <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)', flex: 1, minWidth: 0, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{row.folderPath}</span>
-          <span style={{ fontSize: 'var(--lbb-fs-10)', fontWeight: 700, color: 'var(--lbb-fg3)', textTransform: 'uppercase', letterSpacing: 0.06, flexShrink: 0 }}>staging</span>
+          <span style={{ fontSize: 'var(--lbb-fs-10)', fontWeight: 700, color: 'var(--lbb-fg3)', textTransform: 'uppercase', letterSpacing: 0.06, flexShrink: 0 }}>{t('pipeline.collect.staging')}</span>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '3px 0', background: 'var(--lbb-surface)' }}>
           <Icon name="drop" size={13} style={{ color: 'var(--lbb-accent-mid)' }} />
@@ -1067,7 +1064,7 @@ function CollectReadyDetail({ step, row, onRun, onFile }: {
             )}
             {dest ?? '—'}
           </span>
-          <span style={{ fontSize: 'var(--lbb-fs-10)', fontWeight: 700, color: 'var(--lbb-accent-mid)', textTransform: 'uppercase', letterSpacing: 0.06, flexShrink: 0 }}>final storage</span>
+          <span style={{ fontSize: 'var(--lbb-fs-10)', fontWeight: 700, color: 'var(--lbb-accent-mid)', textTransform: 'uppercase', letterSpacing: 0.06, flexShrink: 0 }}>{t('pipeline.collect.finalStorage')}</span>
         </div>
       </div>
       {step.mounts && step.mounts.length > 0 && (
@@ -1094,28 +1091,26 @@ function CollectReadyDetail({ step, row, onRun, onFile }: {
           {t('pipeline.collect.alreadyInCollectionBody', { path: step.existing_disk_path })}
         </Banner>
       )}
-      <Banner tone="info" icon="info" title="What filing does"
+      <Banner tone="info" icon="info" title={t('pipeline.collect.whatFilingTitle')}
         action={
           row.running && row.fileProgress ? (
             <FileProgressBar progress={row.fileProgress} />
           ) : (
             <Button variant="primary" size="sm" icon="folder" disabled={previewPending || renamePending}
               onClick={() => onFile?.(selectedMount, dest, mountLabel)}>
-              File into collection
+              {t('pipeline.collect.fileAction')}
             </Button>
           )
         }>
-        Moves the folder to <span style={{ fontFamily: 'var(--lbb-mono)' }}>{dest ?? '—'}</span>, writes the
-        collection row, and tags it <strong>owned · public</strong>. Logged to <span style={{ fontFamily: 'var(--lbb-mono)' }}>rename_history</span>.
+        {t('pipeline.collect.filingBody', { dest: dest ?? '—' })}
         {previewPending && (
           <div style={{ marginTop: 6, fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)' }}>
-            Resolving the destination for the selected mount — if this doesn't clear, try
-            "Reset to suggested".
+            {t('pipeline.collect.resolvingDest', { reset: t('pipeline.collect.resetToSuggested') })}
           </div>
         )}
       </Banner>
-      <Button variant="ghost" size="sm" icon="refresh" title="Re-run this stage"
-      onClick={() => onRun(['lookup', 'file'])} style={{ alignSelf: 'flex-start' }}>Re-check route</Button>
+      <Button variant="ghost" size="sm" icon="refresh" title={t('pipeline.rerunStage')}
+      onClick={() => onRun(['lookup', 'file'])} style={{ alignSelf: 'flex-start' }}>{t('pipeline.collect.recheckRoute')}</Button>
     </div>
   )
 }
@@ -1126,12 +1121,13 @@ function CollectStageContent({ step, row, onRun, onFile }: {
   onRun: (steps: string[]) => void
   onFile?: (mountId?: number | null, dest?: string | null, mountLabel?: string | null) => void
 }): React.JSX.Element {
+  const { t } = useTranslation()
   const ERROR_MSG: Record<string, string> = {
-    no_date:       "This entry has no concert date — can't determine the year for routing.",
-    no_route:      'No collection route is configured for this year. Add one in Setup → Collection Routing.',
-    mount_offline: 'The storage mount is offline or unreachable.',
-    dest_exists:   'A folder with this name already exists at the destination.',
-    db_error:      'A database error occurred while resolving the route.',
+    no_date:       t('pipeline.collect.errors.noDate'),
+    no_route:      t('pipeline.collect.errors.noRoute'),
+    mount_offline: t('pipeline.collect.errors.mountOffline'),
+    dest_exists:   t('pipeline.collect.errors.destExists'),
+    db_error:      t('pipeline.collect.errors.dbError'),
   }
 
   if (step.status === 'ok') {
@@ -1142,7 +1138,7 @@ function CollectStageContent({ step, row, onRun, onFile }: {
             <Icon name="check" size={22} />
           </div>
           <div style={{ flex: 1, minWidth: 0 }}>
-            <div style={{ fontSize: 'var(--lbb-fs-14)', fontWeight: 700 }}>Added to collection</div>
+            <div style={{ fontSize: 'var(--lbb-fs-14)', fontWeight: 700 }}>{t('pipeline.collect.addedTitle')}</div>
             {step.dest && (
               <div style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)', marginTop: 3, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{step.dest}</div>
             )}
@@ -1155,7 +1151,7 @@ function CollectStageContent({ step, row, onRun, onFile }: {
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '9px 14px',
                 background: 'var(--lbb-surface)', borderBottom: step.mount_label ? '1px solid var(--lbb-border)' : 'none' }}>
                 <span style={{ fontSize: 'var(--lbb-fs-11)', fontWeight: 700, color: 'var(--lbb-fg3)',
-                  textTransform: 'uppercase', letterSpacing: 0.04, width: 80, flexShrink: 0 }}>LB#</span>
+                  textTransform: 'uppercase', letterSpacing: 0.04, width: 80, flexShrink: 0 }}>{t('pipeline.collect.lbLabel')}</span>
                 <span style={{ fontFamily: 'var(--lbb-mono)', fontWeight: 700, color: 'var(--lbb-accent-mid)' }}>
                   {`LB-${String(step.lb_number).padStart(5, '0')}`}
                 </span>
@@ -1165,14 +1161,14 @@ function CollectStageContent({ step, row, onRun, onFile }: {
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '9px 14px',
                 background: 'var(--lbb-surface2)' }}>
                 <span style={{ fontSize: 'var(--lbb-fs-11)', fontWeight: 700, color: 'var(--lbb-fg3)',
-                  textTransform: 'uppercase', letterSpacing: 0.04, width: 80, flexShrink: 0 }}>Mount</span>
+                  textTransform: 'uppercase', letterSpacing: 0.04, width: 80, flexShrink: 0 }}>{t('pipeline.collect.mountLabelText')}</span>
                 <span style={{ fontSize: 'var(--lbb-fs-12-5)', color: 'var(--lbb-fg)' }}>{step.mount_label}</span>
               </div>
             )}
           </div>
         )}
         <div style={{ padding: '8px 10px', borderRadius: 6, background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)', fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
-          Logged to <span style={{ fontFamily: 'var(--lbb-mono)' }}>rename_history</span>.
+          {t('pipeline.rename.loggedOnly')}
         </div>
       </div>
     )
@@ -1185,14 +1181,14 @@ function CollectStageContent({ step, row, onRun, onFile }: {
         <div style={{ padding: '12px 14px', borderRadius: 8, background: 'var(--lbb-bad-bg)', border: '1px solid var(--lbb-bad-bar)' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
             <Icon name="alert" size={14} style={{ color: 'var(--lbb-bad-fg)', flexShrink: 0 }} />
-            <span style={{ fontWeight: 700, fontSize: 'var(--lbb-fs-13)', color: 'var(--lbb-bad-fg)' }}>Can't file</span>
+            <span style={{ fontWeight: 700, fontSize: 'var(--lbb-fs-13)', color: 'var(--lbb-bad-fg)' }}>{t('pipeline.collect.cantFile')}</span>
             {step.error_code && (
               <Pill tone="bad" soft style={{ fontFamily: 'var(--lbb-mono)', marginLeft: 'auto' }}>{step.error_code}</Pill>
             )}
           </div>
-          <div style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)' }}>{msg ?? 'Unknown error'}</div>
+          <div style={{ fontSize: 'var(--lbb-fs-12)', color: 'var(--lbb-fg2)' }}>{msg ?? t('pipeline.collect.unknownError')}</div>
         </div>
-        <Button variant="ghost" size="sm" icon="refresh" title="Re-run this stage" onClick={() => onRun(['lookup', 'file'])}>Re-check route</Button>
+        <Button variant="ghost" size="sm" icon="refresh" title={t('pipeline.rerunStage')} onClick={() => onRun(['lookup', 'file'])}>{t('pipeline.collect.recheckRoute')}</Button>
       </div>
     )
   }
@@ -1204,13 +1200,10 @@ function CollectStageContent({ step, row, onRun, onFile }: {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
       <Banner tone="info" icon="info">
-        This is the last step — the bridge into <strong>My Collection</strong>. Once the sidecar reconciles
-        in <strong>LBDIR</strong>, the folder is routed to the right storage mount, moved there, and tagged as
-        owned. Finish the earlier stages first — or use <strong>Mark complete</strong> on any stage to bypass
-        the locks and file from here.
+        {t('pipeline.collect.lastStepInfo')}
       </Banner>
-      <Button variant="ghost" size="sm" icon="refresh" title="Re-run this stage"
-          onClick={() => onRun(['lookup', 'file'])} style={{ alignSelf: 'flex-start' }}>Check route now</Button>
+      <Button variant="ghost" size="sm" icon="refresh" title={t('pipeline.rerunStage')}
+          onClick={() => onRun(['lookup', 'file'])} style={{ alignSelf: 'flex-start' }}>{t('pipeline.collect.checkRouteNow')}</Button>
     </div>
   )
 }
@@ -1223,6 +1216,7 @@ function StageContent({ step, stageKey, row, onRun, onRename, onFile }: {
   onRename: (customName?: string) => void
   onFile?: (mountId?: number | null, dest?: string | null, mountLabel?: string | null) => void
 }): React.JSX.Element {
+  const { t } = useTranslation()
   if (stageKey === 'verify')  return <VerifyStageContent  step={step} row={row} onRun={onRun} />
   if (stageKey === 'lookup')  return <LookupStageContent  step={step} row={row} onRun={onRun} />
   if (stageKey === 'rename')  return <RenameStageContent  step={step} row={row} onRun={onRun} onRename={onRename} />
@@ -1230,7 +1224,7 @@ function StageContent({ step, stageKey, row, onRun, onRename, onFile }: {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
       <StatusTag state={STATUS_TO_STATE[step.status]}>{step.label}</StatusTag>
-      <Button variant="ghost" size="sm" icon="refresh" title="Re-run this stage" onClick={() => onRun(['lookup', stageKey])}>Re-run</Button>
+      <Button variant="ghost" size="sm" icon="refresh" title={t('pipeline.rerunStage')} onClick={() => onRun(['lookup', stageKey])}>{t('pipeline.rerunGeneric')}</Button>
     </div>
   )
 }
@@ -1246,6 +1240,7 @@ function DetailPanel({ row, initialStage, onClose, onRowRefresh, onRun, onRename
   onRename: (customName?: string) => void
   onFile?: (mountId?: number | null, dest?: string | null, mountLabel?: string | null) => void
 }): React.JSX.Element {
+  const { t } = useTranslation()
   const [activeStage, setActiveStage] = useState(initialStage)
   const folderRow = toFolderRow(row)
 
@@ -1268,7 +1263,7 @@ function DetailPanel({ row, initialStage, onClose, onRowRefresh, onRun, onRename
             fontFamily: 'inherit', fontSize: 'var(--lbb-fs-12)', cursor: 'pointer',
           }}
         >
-          <Icon name="chevLeft" size={13} /> Batch
+          <Icon name="chevLeft" size={13} /> {t('pipeline.detail.batch')}
         </button>
         <Icon name="folder" size={13} style={{ color: 'var(--lbb-fg3)' }} />
         <span style={{
@@ -1278,9 +1273,9 @@ function DetailPanel({ row, initialStage, onClose, onRowRefresh, onRun, onRename
         }}>
           {row.folderName}
         </span>
-        <Button variant="ghost" size="sm" icon="reveal" title="Reveal folder in Finder"
+        <Button variant="ghost" size="sm" icon="reveal" title={t('pipeline.detail.revealTitle')}
           onClick={() => window.api.openPath(row.folderPath)}>
-          Open
+          {t('pipeline.detail.open')}
         </Button>
       </div>
 
@@ -2163,8 +2158,8 @@ export function ScreenPipeline(): React.JSX.Element {
               }}
             >
               <Icon name="lookup" size={14} />
-              <span style={{ flex: 1 }}>Quick lookup</span>
-              <span style={{ fontSize: 'var(--lbb-fs-10)', color: 'var(--lbb-fg3)', fontWeight: 500 }}>no folder</span>
+              <span style={{ flex: 1 }}>{t('pipeline.queue.quickLookup')}</span>
+              <span style={{ fontSize: 'var(--lbb-fs-10)', color: 'var(--lbb-fg3)', fontWeight: 500 }}>{t('pipeline.queue.noFolder')}</span>
             </button>
             <div style={{
               padding: '9px 11px', background: 'var(--lbb-surface2)', borderRadius: 7,
@@ -2172,7 +2167,7 @@ export function ScreenPipeline(): React.JSX.Element {
               color: 'var(--lbb-fg3)', lineHeight: 1.45, display: 'flex', gap: 8, alignItems: 'flex-start',
             }}>
               <Icon name="drop" size={13} style={{ marginTop: 1, flex: '0 0 auto' }} />
-              <span>Drag folders anywhere to queue them. They'll verify + look up automatically.</span>
+              <span>{t('pipeline.queue.dragInfo')}</span>
             </div>
           </div>
         </aside>
@@ -2210,7 +2205,7 @@ export function ScreenPipeline(): React.JSX.Element {
               onChange={e => setTableSearch(e.target.value)}
               style={{ width: 240 }}
             />
-            <IconButton icon="reveal" title="Open queue location"
+            <IconButton icon="reveal" title={t('pipeline.queue.openLocation')}
               disabled={!rows.length}
               onClick={() => {
                 const first = rows[0]?.folderPath
@@ -2303,8 +2298,8 @@ export function ScreenPipeline(): React.JSX.Element {
                       />
                     </TH>
                     <TH>{t('pipeline.table.folder')}</TH>
-                    <TH align="center">Stages</TH>
-                    <TH align="center">Status</TH>
+                    <TH align="center">{t('pipeline.table.stages')}</TH>
+                    <TH align="center">{t('pipeline.table.status')}</TH>
                     <TH align="center">{t('pipeline.table.lb')}</TH>
                     <TH align="right"> </TH>
                   </tr>
@@ -2382,7 +2377,7 @@ export function ScreenPipeline(): React.JSX.Element {
                         </TD>
                         <TD style={{ whiteSpace: 'normal' }}>
                           {(() => {
-                            const st = deriveFolderStatus(r)
+                            const st = deriveFolderStatus(r, t)
                             return (
                               <div style={{ display: 'flex', flexDirection: 'column', gap: 3, alignItems: 'center' }}>
                                 <StatusTag state={st.state} style={{ width: '50%', justifyContent: 'center' }}>{st.label}</StatusTag>
@@ -2402,15 +2397,15 @@ export function ScreenPipeline(): React.JSX.Element {
                           {lbLabel}
                           {aliasFrom && aliasFrom.length > 0 && (
                             <span style={{ fontSize: 'var(--lbb-fs-9)', color: 'var(--lbb-fg3)', marginLeft: 4 }}
-                              title={`Resolved from alias: ${aliasFrom.map(n => `LB-${String(n).padStart(5, '0')}`).join(', ')}`}>
-                              ↩ alias
+                              title={t('pipeline.table.resolvedFromAlias', { list: aliasFrom.map(n => `LB-${String(n).padStart(5, '0')}`).join(', ') })}>
+                              {t('pipeline.table.aliasBadge')}
                             </span>
                           )}
                         </TD>
                         <TD align="right" onClick={e => e.stopPropagation()}>
                           <div style={{ display: 'flex', gap: 4, justifyContent: 'flex-end', alignItems: 'center' }}>
                             {r.bucket === 'ready' && (
-                              <Button size="sm" variant="primary" icon="check" onClick={() => applyRename(r)}>Apply</Button>
+                              <Button size="sm" variant="primary" icon="check" onClick={() => applyRename(r)}>{t('pipeline.table.apply')}</Button>
                             )}
                             {r.steps.file.status === 'warn' && !!r.steps.file.dest && !r.shelved &&
                              !(['verify', 'lookup', 'lbdir', 'rename'] as const).some(k => r.steps[k].status === 'bad') && (
@@ -2423,7 +2418,7 @@ export function ScreenPipeline(): React.JSX.Element {
                               )
                             )}
                             {r.bucket === 'done' && r.steps.file.status === 'ok' && (
-                              <Pill tone="ok" soft>Done</Pill>
+                              <Pill tone="ok" soft>{t('pipeline.table.done')}</Pill>
                             )}
                           </div>
                         </TD>
@@ -2483,7 +2478,7 @@ export function ScreenPipeline(): React.JSX.Element {
               border: 'none', background: 'transparent',
               color: 'var(--lbb-fg)', borderRadius: 5, fontFamily: 'inherit',
             }}
-          >Shelve (skip for now)</button>
+          >{t('pipeline.contextMenu.shelve')}</button>
           {rows.find(r => r.id === ctxMenu.id)?.shelved && (
             <button
               onClick={() => {
@@ -2502,7 +2497,7 @@ export function ScreenPipeline(): React.JSX.Element {
                 border: 'none', background: 'transparent',
                 color: 'var(--lbb-fg)', borderRadius: 5, fontFamily: 'inherit',
               }}
-            >Unshelve</button>
+            >{t('pipeline.contextMenu.unshelve')}</button>
           )}
           <div style={{ height: 1, background: 'var(--lbb-border)', margin: '4px 0' }} />
           <button

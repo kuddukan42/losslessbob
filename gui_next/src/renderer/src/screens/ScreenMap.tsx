@@ -60,7 +60,7 @@ const SECTION_LABEL: React.CSSProperties = {
   letterSpacing: 0.08, textTransform: 'uppercase',
 }
 
-const MAP_URL = 'http://localhost:5174/map'
+const MAP_URL = `${window.api.flaskBase}/map`
 
 export function ScreenMap(): React.JSX.Element {
   const { t } = useTranslation()

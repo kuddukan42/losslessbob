@@ -1,11 +1,11 @@
 export type LookupState = 'matched' | 'incomplete' | 'notfound' | 'duplicate' | 'xref'
 
-export const STATE_TONE: Record<LookupState, { tone: 'ok' | 'warn' | 'bad' | 'info' | 'mute'; label: string; color: string }> = {
-  matched:    { tone: 'ok',   label: 'Matched',    color: 'var(--lbb-ok-fg)'   },
-  incomplete: { tone: 'warn', label: 'Incomplete', color: 'var(--lbb-warn-fg)' },
-  notfound:   { tone: 'bad',  label: 'Not found',  color: 'var(--lbb-bad-fg)'  },
-  duplicate:  { tone: 'warn', label: 'Duplicate',  color: '#a08200'             },
-  xref:       { tone: 'info', label: 'XRef',       color: 'var(--lbb-info-fg)' },
+export const STATE_TONE: Record<LookupState, { tone: 'ok' | 'warn' | 'bad' | 'info' | 'mute'; labelKey: string; color: string }> = {
+  matched:    { tone: 'ok',   labelKey: 'lookup.states.matched',    color: 'var(--lbb-ok-fg)'   },
+  incomplete: { tone: 'warn', labelKey: 'lookup.states.incomplete', color: 'var(--lbb-warn-fg)' },
+  notfound:   { tone: 'bad',  labelKey: 'lookup.states.notfound',  color: 'var(--lbb-bad-fg)'  },
+  duplicate:  { tone: 'warn', labelKey: 'lookup.states.duplicate',  color: '#a08200'             },
+  xref:       { tone: 'info', labelKey: 'lookup.states.xref',       color: 'var(--lbb-info-fg)' },
 }
 
 export function apiStatusToState(status: string): LookupState {

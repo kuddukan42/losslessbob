@@ -179,7 +179,9 @@
       "type": "Typ",
       "xref": "Xref",
       "open": "Auf LB Website öffnen",
-      "addWishlist": "+WL"
+      "addWishlist": "+WL",
+      "openTitle": "Diesen Eintrag auf losslessbob.com öffnen",
+      "pinAndContinue": "{{lb}} anheften & fortfahren"
     },
     "states": {
       "matched": "Abgestimmt",
@@ -399,7 +401,11 @@
       "lookup": "Nachschlagen",
       "rename": "Umbenennen",
       "lbdir": "LBDIR",
-      "collect": "Sammeln"
+      "collect": "Sammeln",
+      "quickLookup": "Schnellsuche",
+      "noFolder": "kein Ordner",
+      "dragInfo": "Ziehen Sie Ordner an eine beliebige Stelle, um sie in die Warteschlange zu stellen. Sie werden automatisch überprüft und nachgeschlagen.",
+      "openLocation": "Speicherort der offenen Warteschlange"
     },
     "filter": {
       "all": "Alle",
@@ -436,7 +442,13 @@
       "rename": "Umbenennen",
       "lbdir": "LBDIR",
       "collect": "Sammeln",
-      "lb": "LB#"
+      "lb": "LB#",
+      "stages": "Phasen",
+      "status": "Status",
+      "apply": "Anwenden",
+      "done": "Erledigt",
+      "aliasBadge": "↩ Alias",
+      "resolvedFromAlias": "Aufgelöst aus dem Alias: {{list}}"
     },
     "file": {
       "action": "Ablegen",
@@ -482,7 +494,28 @@
       "alreadyInCollectionTitle": "Bereits in der Sammlung",
       "alreadyInCollectionBody": "Diese Aufnahme ist bereits unter {{path}} in Ihrer Sammlung registriert. Die Ablage verschiebt den Ordner an den neuen Speicherort und aktualisiert den Sammlungseintrag.",
       "renamePendingTitle": "Umbenennung vor der Ablage erforderlich",
-      "renamePendingBody": "Dieser Ordner hat eine nicht angewendete Umbenennung. Wechseln Sie zum Schritt „Umbenennen” und wenden Sie sie vor der Ablage an."
+      "renamePendingBody": "Dieser Ordner hat eine nicht angewendete Umbenennung. Wechseln Sie zum Schritt „Umbenennen” und wenden Sie sie vor der Ablage an.",
+      "staging": "Staging",
+      "finalStorage": "Endgültige Speicherung",
+      "whatFilingTitle": "Was bedeutet „Ablage“?",
+      "fileAction": "In Sammlung ablegen",
+      "filingBody": "Verschiebt den Ordner nach „{{dest}}“, schreibt die Sammlungszeile und kennzeichnet sie als „im Besitz · öffentlich“. Wird im „rename_history“ protokolliert.",
+      "resolvingDest": "Ermittlung des Ziels für die ausgewählte Einbindung – falls dies nicht funktioniert, versuchen Sie es mit „{{reset}}“.",
+      "recheckRoute": "Route erneut prüfen",
+      "addedTitle": "Zur Sammlung hinzugefügt",
+      "lbLabel": "LB#",
+      "mountLabelText": "Einbinden",
+      "cantFile": "Kann nicht ablegen",
+      "unknownError": "Unbekannter Fehler",
+      "lastStepInfo": "Dies ist der letzte Schritt – die Brücke zu „Meine Sammlung“. Sobald die Sidecar-Datei in LBDIR abgeglichen ist, wird der Ordner an den richtigen Speicher-Mount weitergeleitet, dorthin verschoben und als „im Besitz“ markiert. Schließen Sie zunächst die vorherigen Schritte ab – oder verwenden Sie in einem beliebigen Schritt die Option „Als abgeschlossen markieren“, um die Sperren zu umgehen und von hier aus fortzufahren.",
+      "checkRouteNow": "Route jetzt prüfen",
+      "errors": {
+        "noDate": "Dieser Eintrag enthält kein Konzertdatum – das Jahr lässt sich für die Zuordnung nicht ermitteln.",
+        "noRoute": "Für dieses Jahr ist kein Erfassungsweg konfiguriert. Fügen Sie einen unter „Einstellungen“ → „Erfassungswege“ hinzu.",
+        "mountOffline": "Das Speichermedium ist offline oder nicht erreichbar.",
+        "destExists": "Ein Ordner mit diesem Namen existiert bereits am Zielort.",
+        "dbError": "Beim Auflösen der Route ist ein Datenbankfehler aufgetreten."
+      }
     },
     "titleFolders": "Pipeline · {{count}}-Ordner",
     "applyAllReady": "Alle {{count}}-kompatiblen Elemente anwenden",
@@ -490,7 +523,147 @@
     "autoRun": "Automatischer Start beim Ablegen",
     "autoRunHint": "Wenn diese Option aktiviert ist, werden abgelegte Ordner automatisch überprüft und nachgeschlagen.",
     "autoRename": "Automatische Umbenennung",
-    "autoRenameHint": "Wenn diese Option aktiviert ist, wird automatisch eine zuverlässige Umbenennung bei Übereinstimmung mit einem Eintrag vorgenommen und der Ordner wechselt zum Schritt „Sammeln“"
+    "autoRenameHint": "Wenn diese Option aktiviert ist, wird automatisch eine zuverlässige Umbenennung bei Übereinstimmung mit einem Eintrag vorgenommen und der Ordner wechselt zum Schritt „Sammeln“",
+    "rerunStage": "Diese Phase erneut ausführen",
+    "rerunGeneric": "Erneut ausführen",
+    "verify": {
+      "hashingFiles": "Dateien werden gehasht…",
+      "advanceAuto": "Dieser Ordner wird automatisch zu „Lookup“ weitergeleitet.",
+      "notRun": "Es wurde noch nicht überprüft.",
+      "run": "Überprüfung ausführen",
+      "shnToolMissingTitle": ".shn-Dateien lassen sich ohne shntool nicht dekodieren",
+      "shnToolMissingBody": "Dieser Ordner enthält SHN-Dateien, jedoch ist shntool nicht installiert. Installieren Sie shntool, damit Prüfsummen dekodiert und überprüft werden können.",
+      "rerun": "Erneut überprüfen",
+      "noChecksumsTitle": "In diesem Ordner befinden sich noch keine Prüfsummen",
+      "noChecksumsBody": "Da hier keine .ffp- oder .md5-Sidecar-Dateien vorhanden sind, gibt es nichts, womit ein Abgleich erfolgen könnte. Erstellen Sie diese aus den Audiodateien auf der Festplatte – dann wird dieser Ordner automatisch überprüft und nachgeschlagen.",
+      "generating": "Wird generiert…",
+      "generate": "FFP + MD5 generieren",
+      "generateInfo": "Schreibt die Dateien „_mychecksums.ffp“ und „.md5“ in den Ordner. Nicht-destruktiv – Ihre Audiodateien bleiben unverändert.",
+      "stats": {
+        "total": "Gesamt",
+        "pass": "Pass",
+        "missing": "Fehlt",
+        "mismatch": "Nichtübereinstimmung",
+        "extra": "Zusätzlich"
+      },
+      "missingFiles_one": "Die Datei „{{count}}“ aus der Prüfsummenliste ist nicht auf der Festplatte vorhanden. Stellen Sie die fehlenden Dateien wieder her und führen Sie anschließend eine erneute Überprüfung durch.",
+      "missingFiles_other": "Die {{count}}-Dateien in der Prüfsummenliste befinden sich nicht auf der Festplatte. Stellen Sie die fehlenden Dateien wieder her und führen Sie anschließend eine erneute Überprüfung durch.",
+      "mismatchedFiles_one": "Die Datei „{{count}}“ weist eine nicht übereinstimmende Prüfsumme auf – die Audiodatei ist möglicherweise beschädigt oder wurde verändert.",
+      "mismatchedFiles_other": "{{count}}-Dateien weisen nicht übereinstimmende Prüfsummen auf – die Audiodaten sind möglicherweise beschädigt oder verändert."
+    },
+    "lookup": {
+      "runsAuto": "Die Suche wird automatisch ausgeführt, nachdem die Überprüfung erfolgreich abgeschlossen wurde.",
+      "run": "Suche starten",
+      "matchedCount": "{{matched}}/{{given}} übereinstimmend",
+      "multiLbInfo": "gleiche Aufnahme, beide Einträge",
+      "resolvedFrom": "↩ aus {{list}} gelöst",
+      "multiLb": "Multi-LB",
+      "matched": "Abgestimmt",
+      "multiLbMsg": "Beide Einträge sind automatisch verknüpft. Der Ordner wird mit beiden LB-Nummern umbenannt.",
+      "flowsAuto": "Die Übereinstimmung wird automatisch in LBDIR übernommen – es ist kein zusätzlicher Schritt erforderlich.",
+      "rerun": "Suche erneut ausführen",
+      "whichShow": "Um welche Serie handelt es sich hier?",
+      "pinInfo": "Beim Fixieren wird eine Verknüpfung von Ordner zu LB erstellt, sodass die Abfrage nicht erneut erscheint.",
+      "partialMatchInfo": "{{lb}} wurde identifiziert, aber nicht jede Prüfsumme in diesem Ordner stimmt mit dem Archivdatensatz überein – einige Dateien auf der Festplatte weichen möglicherweise von der offiziellen Kopie ab. LBDIR, Umbenennen und Datei sind gesperrt, bis Sie bestätigen, dass es sich um die richtige Sendung handelt. Wenn Sie sicher sind, heften Sie sie an, um fortzufahren.",
+      "pinConfirms": "Durch das Anheften wird bestätigt, dass dieser Ordner zu {{lb}} gehört, und alle nachfolgenden Schritte werden freigegeben.",
+      "noMatches": "Keine Treffer gefunden",
+      "noMatchesInfo": "Keine dieser Prüfsummen stimmt mit einem Eintrag im Archiv überein. Es könnte sich um eine neue oder unbekannte Quelle handeln."
+    },
+    "rename": {
+      "unlocksAfter": "Die Umbenennung wird freigeschaltet, nachdem die Suche eine LB-Nummer aufgelöst hat.",
+      "checkRename": "Umbenennung prüfen",
+      "renamed": "Umbenannt",
+      "loggedReady": "In „rename_history“ protokolliert. Bereit für die nächste Erfassung.",
+      "alreadyCorrect": "Der Ordnername ist bereits korrekt",
+      "recheck": "Nochmals prüfen",
+      "fixWrongLb": "Fehlerhafte LB-Nummer korrigieren und anwenden",
+      "reviewProposed": "Überprüfen Sie die vorgeschlagene Umbenennung",
+      "cancel": "Abbrechen",
+      "editName": "Name bearbeiten…",
+      "mislabeledTitle": "Dieser Ordner ist fälschlicherweise mit „{{lb}}“ beschriftet.",
+      "mislabeledBody": "Das vorhandene Tag passt nicht zum Archiv. Durch die Anwendung wird „{{lb}}“ entfernt und das korrekte „{{newLb}}“ in einem Schritt angehängt.",
+      "failedTitle": "Umbenennung fehlgeschlagen",
+      "current": "aktuell",
+      "editing": "Bearbeiten",
+      "proposed": "Vorschlag",
+      "dryRun": "Testdurchlauf – es werden keine Änderungen vorgenommen, bis Sie diese übernehmen.",
+      "copyToClipboard": "In die Zwischenablage kopieren",
+      "copyDiff": "Änderungen vergleichen",
+      "loggedOnly": "In „rename_history“ protokolliert.",
+      "apply": "Umbenennen anwenden"
+    },
+    "stepStates": {
+      "pass": "Pass",
+      "blocked": "Gesperrt",
+      "action": "Aktion",
+      "running": "Wird ausgeführt",
+      "pending": "Ausstehend",
+      "mute": "—"
+    },
+    "buckets": {
+      "needs": "Wir brauchen dich",
+      "ready": "Fertig",
+      "running": "Wird ausgeführt",
+      "shelf": "Ablage",
+      "done": "Erledigt",
+      "all": "Alle"
+    },
+    "queueRow": {
+      "verifyingProgress": "Überprüfung von {{done}}/{{total}}…"
+    },
+    "status": {
+      "inProgress": "In Arbeit",
+      "shelved": "Zurückgestellt",
+      "deferredReason": "Zurückgestellt – aus der Warteschlange entfernen, um fortzufahren",
+      "inCollection": "In der Sammlung",
+      "filedTo": "Abgelegt unter {{mount}}",
+      "filedTagged": "Abgelegt & getaggt",
+      "readyToFile": "Bereit zur Einreichung",
+      "archiveCleanReason": "Archivbereinigung – Datei in die Sammlung einfügen",
+      "readyToApply": "Bereit zur Anwendung",
+      "confidentReason": "Sichere Übereinstimmung – einfach die Umbenennung anwenden"
+    },
+    "detail": {
+      "batch": "Stapelverarbeitung",
+      "open": "Öffnen",
+      "revealTitle": "Ordner im Finder anzeigen"
+    },
+    "contextMenu": {
+      "shelve": "Zurückstellen (vorerst überspringen)",
+      "unshelve": "Aus dem Archiv holen"
+    },
+    "lbdir": {
+      "runsAfterTitle": "Wird nach der Suche ausgeführt",
+      "retrieveNow": "Sidecar jetzt abrufen",
+      "runsAfterBody": "Sobald die Suche eine LB-Nummer ermittelt hat, rufen wir die Datei „lbdir*.txt“ aus dem Archiv-Cache ab und gleichen sie mit den Dateien auf der Festplatte ab. Sie können sie gerne schon früher abrufen, wenn Sie möchten.",
+      "loading": "Wird geladen…",
+      "openFile": "Öffnen Sie „lbdir.txt“",
+      "fullScreen": "Vollbildansicht von LBDIR →",
+      "stats": {
+        "total": "Gesamt",
+        "pass": "Pass",
+        "missing": "Fehlt",
+        "mismatch": "Nichtübereinstimmung"
+      },
+      "noLbdirFound": "Es wurde keine Datei „lbdir*.txt“ gefunden. Versuchen Sie, den Eintrag vom LBDIR-Bildschirm zu kopieren.",
+      "archiveCleanTitle": "Archiv-clean",
+      "archiveCleanBody": "Jede Datei, auf die im offiziellen Sidecar-Ordner verwiesen wird, ist vorhanden und stimmt überein. Dieser Ordner ist vollständig abgeglichen.",
+      "status": {
+        "pass": "Pass",
+        "fail": "Fehlgeschlagen",
+        "missingFiles": "Fehlende Dateien",
+        "extraFiles": "Zusätzliche Dateien",
+        "noLbdir": "Kein lbdir",
+        "noLb": "Keine LB-Nr.",
+        "noShntool": "Kein shntool"
+      },
+      "toast": {
+        "reconcileFailed": "Abgleich fehlgeschlagen",
+        "applied": "Angewendet",
+        "applyFailed": "Anwendung fehlgeschlagen",
+        "retrieveFailed": "Abruf fehlgeschlagen"
+      }
+    }
   },
   "collection": {
     "confirmDialog": {
@@ -653,7 +826,7 @@
     "title": "Konzertkarte",
     "geocoded": "{{count}} geokodiert",
     "awaitingGeocode": "{{count}} wartet auf Geokodierung",
-    "desc": "Filtern Sie die Veranstaltungsorte nach Jahr, Eigentümer oder Status. Die Live-Karte wird in Ihrem Browser unter localhost:5174/map geöffnet.",
+    "desc": "Filtern Sie die Veranstaltungsorte nach Jahr, Eigentümer oder Status. Die Live-Karte wird in Ihrem Browser unter 127.0.0.1:5174/map geöffnet.",
     "copyShareUrl": "Kopieren Sie die Freigabe-URL",
     "openLiveMap": "Live-Karte öffnen",
     "yearRange": "Jahresspanne",
