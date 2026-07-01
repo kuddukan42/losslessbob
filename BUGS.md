@@ -37,27 +37,6 @@ Fix: Before queuing, temporarily remove SEED_URLS + start_url from `visited` so 
   to backend/db.py to support the targeted last_modified lookup.
 
 
-BUG-221: "Open LB page" link doesn't work in some locations — inconsistent URL construction
-Status: Open
-File(s): gui_next/src/renderer/src/components/library/DetailPanel.tsx:659-661,
-         gui_next/src/renderer/src/screens/ScreenLibrary.tsx:366,
-         gui_next/src/renderer/src/components/pipeline/LookupDetail.tsx:78,
-         gui_next/src/renderer/src/screens/ScreenSearch.tsx:1538,
-         gui_next/src/renderer/src/screens/ScreenCollection.tsx:2479
-Reported: 2026-06-22
-Root cause: 5 separate call sites build the same losslessbob.wonderingwhattochoose.com
-  detail-page URL with two different, inconsistent formats:
-    - LookupDetail.tsx:78, ScreenSearch.tsx:1538, ScreenCollection.tsx:2479 build
-      `/detail/LB-${padStart(5,'0')}.html` (zero-padded with "LB-" prefix).
-    - DetailPanel.tsx:660, ScreenLibrary.tsx:366 build `/detail/${row.lb}.html` directly
-      from row.lb with no "LB-" prefix and no zero-padding.
-  If row.lb is a bare number (or unpadded), the DetailPanel/Library variant produces a URL
-  that doesn't match the site's actual `/detail/LB-NNNNN.html` path and 404s — which matches
-  "works in some locations [call sites], not others."
-Fix: TBD — consolidate into one shared helper (e.g. lbDetailUrl(lb): string) that always
-  zero-pads and prefixes "LB-", and use it at all 5 call sites instead of duplicating the
-  URL string inline.
-
 BUG-220: LB metadata scraper-by-range excludes start/end LB numbers that have no checksum entry yet
 Status: Open
 File(s): backend/app.py:1762-1809 (scrape_start)

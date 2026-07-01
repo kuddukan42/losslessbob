@@ -9,6 +9,7 @@ import { TableShell, TH, TR, TD, GroupRow } from '../components'
 import { useLookupStore } from '../lib/lookupStore'
 import { useSpectrogramStore } from '../lib/spectrogramStore'
 import { useFolderQueueStore } from '../lib/folderQueueStore'
+import { lbDetailUrl } from '../lib/lbUrl'
 
 const BASE = window.api.flaskBase
 
@@ -2476,7 +2477,7 @@ export function ScreenCollection(): React.JSX.Element {
   }, [])
 
   const handleCtxViewLookup = useCallback((row: CollectionRow) => {
-    window.open(`http://www.losslessbob.wonderingwhattochoose.com/detail/LB-${String(row.lbNumberInt).padStart(5, '0')}.html`, '_blank')
+    window.open(lbDetailUrl(row.lbNumberInt), '_blank')
   }, [])
 
   const handleCtxScrape = useCallback(async (row: CollectionRow) => {

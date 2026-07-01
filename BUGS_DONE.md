@@ -1,6 +1,27 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-221: "Open LB page" link doesn't work in some locations — inconsistent URL construction
+Status: Fixed
+File(s): gui_next/src/renderer/src/lib/lbUrl.ts (new),
+         gui_next/src/renderer/src/components/library/DetailPanel.tsx:660,
+         gui_next/src/renderer/src/screens/ScreenLibrary.tsx:366,
+         gui_next/src/renderer/src/components/pipeline/LookupDetail.tsx:78,
+         gui_next/src/renderer/src/screens/ScreenSearch.tsx:1538,
+         gui_next/src/renderer/src/screens/ScreenCollection.tsx:2479
+Reported: 2026-06-22
+Fixed: 2026-07-01
+Root cause: 5 separate call sites built the same losslessbob.wonderingwhattochoose.com
+  detail-page URL inline with two different, inconsistent formats — 3 sites zero-padded
+  and prefixed "LB-" themselves; DetailPanel.tsx/ScreenLibrary.tsx instead interpolated
+  `row.lb` directly, which 404s wherever `row.lb` isn't already a zero-padded "LB-NNNNN"
+  string.
+Fix: Added `lbDetailUrl(lb: number | string): string` (gui_next/src/renderer/src/lib/lbUrl.ts) —
+  strips any existing "LB-" prefix, zero-pads to 5 digits, and rebuilds the full detail URL.
+  All 5 call sites now use it instead of duplicating the URL string inline; DetailPanel.tsx
+  and ScreenLibrary.tsx switched from `row.lb` to `row.lbNumber` (the raw number already on
+  `ActionRow`) so the helper always receives a consistent input regardless of caller.
+
 BUG-226: WTRF search queries spaced below the forum's flood-control window
 Status: Fixed
 File(s): backend/wtrf_scraper.py:_SEARCH_DELAY, find_torrent_for_lb

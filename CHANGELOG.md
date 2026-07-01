@@ -1,3 +1,16 @@
+[2026-07-01] — fix(gui): consolidate LB detail-page URL construction (BUG-221)
+Added: gui_next/src/renderer/src/lib/lbUrl.ts: `lbDetailUrl(lb)` — one helper that always
+  zero-pads and "LB-"-prefixes an LB number before building the losslessbob.wonderingwhattochoose.com
+  detail-page URL.
+Fixed: gui_next/src/renderer/src/components/library/DetailPanel.tsx,
+  gui_next/src/renderer/src/screens/ScreenLibrary.tsx,
+  gui_next/src/renderer/src/components/pipeline/LookupDetail.tsx,
+  gui_next/src/renderer/src/screens/ScreenSearch.tsx,
+  gui_next/src/renderer/src/screens/ScreenCollection.tsx: 5 call sites each built the
+  detail-page URL inline with inconsistent formats — 2 sites interpolated `row.lb` raw
+  (404 whenever it wasn't already zero-padded/prefixed). All 5 now call `lbDetailUrl()`;
+  DetailPanel/ScreenLibrary pass `row.lbNumber` instead of `row.lb`.
+
 [2026-06-30] — fix(scraper): WTRF search delay raised to clear forum flood-control
 Fixed: backend/wtrf_scraper.py: search_delay was computed as delay * 1.5 (3.0s at the CLI's
   default --delay 2.0), below the WTRF forum's ~5s search flood-control window. Raised
