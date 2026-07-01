@@ -179,7 +179,9 @@
       "type": "Type",
       "xref": "Xref",
       "open": "Openen op LB Website",
-      "addWishlist": "+WL"
+      "addWishlist": "+WL",
+      "openTitle": "Open dit bericht op losslessbob.com",
+      "pinAndContinue": "{{lb}} vastzetten en doorgaan"
     },
     "states": {
       "matched": "Bijpassend",
@@ -399,7 +401,11 @@
       "lookup": "Opzoeken",
       "rename": "Hernoem",
       "lbdir": "LBDIR",
-      "collect": "Verzamelen"
+      "collect": "Verzamelen",
+      "quickLookup": "Snel opzoeken",
+      "noFolder": "geen map",
+      "dragInfo": "Sleep mappen naar een willekeurige plek om ze in de wachtrij te plaatsen. Ze worden automatisch gecontroleerd en opgezocht.",
+      "openLocation": "Locatie van de openstaande wachtrij"
     },
     "filter": {
       "all": "Alle",
@@ -436,7 +442,13 @@
       "rename": "Hernoem",
       "lbdir": "LBDIR",
       "collect": "Verzamelen",
-      "lb": "LB#"
+      "lb": "LB#",
+      "stages": "Fasen",
+      "status": "Status",
+      "apply": "Toepassen",
+      "done": "Klaar",
+      "aliasBadge": "↩ alias",
+      "resolvedFromAlias": "Opgelost vanuit alias: {{list}}"
     },
     "file": {
       "action": "Archiveren",
@@ -482,7 +494,28 @@
       "alreadyInCollectionTitle": "Al in de collectie",
       "alreadyInCollectionBody": "Deze opname is al geregistreerd in uw collectie op {{path}}. Bij het archiveren wordt de map naar de nieuwe locatie verplaatst en de collectierecord bijgewerkt.",
       "renamePendingTitle": "Hernoeming vereist vóór archivering",
-      "renamePendingBody": "Deze map heeft een niet-toegepaste hernoeming. Ga naar de stap Hernoemen en pas deze toe vóór het archiveren."
+      "renamePendingBody": "Deze map heeft een niet-toegepaste hernoeming. Ga naar de stap Hernoemen en pas deze toe vóór het archiveren.",
+      "staging": "staging",
+      "finalStorage": "definitieve opslag",
+      "whatFilingTitle": "Wat 'Filing' doet",
+      "fileAction": "Toevoegen aan verzameling",
+      "filingBody": "Verplaatst de map naar {{dest}}, schrijft de collectierij en voorziet deze van de tags ‘owned’ en ‘public’. Geregistreerd in rename_history.",
+      "resolvingDest": "De bestemming voor de geselecteerde mount vaststellen — als dit niet lukt, probeer dan \"{{reset}}\".",
+      "recheckRoute": "Route opnieuw controleren",
+      "addedTitle": "Toegevoegd aan verzameling",
+      "lbLabel": "LB#",
+      "mountLabelText": "Koppelen",
+      "cantFile": "Kan niet opslaan",
+      "unknownError": "Onbekende fout",
+      "lastStepInfo": "Dit is de laatste stap — de overgang naar Mijn collectie. Zodra de sidecar in LBDIR is gesynchroniseerd, wordt de map naar de juiste opslaglocatie doorgestuurd, daarheen verplaatst en gemarkeerd als ‘in bezit’. Voltooi eerst de eerdere fasen — of gebruik ‘Markeren als voltooid’ in een willekeurige fase om de vergrendelingen te omzeilen en vanaf hier verder te gaan.",
+      "checkRouteNow": "Bekijk nu de route",
+      "errors": {
+        "noDate": "Dit item heeft geen concertdatum — het jaar kan niet worden bepaald voor de routebepaling.",
+        "noRoute": "Er is voor dit jaar geen verzamelroute geconfigureerd. Voeg er een toe in Instellingen → Verzamelroutes.",
+        "mountOffline": "De opslag is offline of niet bereikbaar.",
+        "destExists": "Er bestaat al een map met deze naam op de bestemmingslocatie.",
+        "dbError": "Er is een databasefout opgetreden tijdens het bepalen van de route."
+      }
     },
     "titleFolders": "Pipeline · {{count}}-mappen",
     "applyAllReady": "Pas alle {{count}}-ready toe",
@@ -490,7 +523,147 @@
     "autoRun": "Automatisch starten bij het neerzetten",
     "autoRunHint": "Wanneer deze functie is ingeschakeld, worden gesleepte mappen automatisch geverifieerd en opgezocht",
     "autoRename": "Automatisch hernoemen",
-    "autoRenameHint": "Wanneer deze optie is ingeschakeld, wordt automatisch een definitieve naamswijziging op basis van één overeenkomst toegepast en gaat de map door naar ‘Verzamelen’"
+    "autoRenameHint": "Wanneer deze optie is ingeschakeld, wordt automatisch een definitieve naamswijziging op basis van één overeenkomst toegepast en gaat de map door naar ‘Verzamelen’",
+    "rerunStage": "Voer deze fase opnieuw uit",
+    "rerunGeneric": "Opnieuw uitvoeren",
+    "verify": {
+      "hashingFiles": "Bestanden worden gehasht…",
+      "advanceAuto": "Deze map wordt automatisch verplaatst naar Lookup.",
+      "notRun": "Controleer of het programma nog niet is uitgevoerd.",
+      "run": "Controle uitvoeren",
+      "shnToolMissingTitle": ".shn-bestanden kunnen niet worden gedecodeerd zonder shntool",
+      "shnToolMissingBody": "Deze map bevat SHN-bestanden, maar shntool is niet geïnstalleerd. Installeer shntool zodat checksums kunnen worden gedecodeerd en geverifieerd.",
+      "rerun": "Opnieuw controleren",
+      "noChecksumsTitle": "Er zijn nog geen checksums in deze map",
+      "noChecksumsBody": "Er zijn hier geen .ffp- of .md5-sidecar-bestanden, dus er is niets om mee te verifiëren. Genereer ze op basis van de audio op de schijf — dan wordt deze map automatisch geverifieerd en opgezocht.",
+      "generating": "Bezig met genereren…",
+      "generate": "FFP + MD5 genereren",
+      "generateInfo": "Schrijft _mychecksums.ffp en .md5 naar de map. Niet-destructief — er wordt niets aan uw audiobestanden veranderd.",
+      "stats": {
+        "total": "Totaal",
+        "pass": "Pass",
+        "missing": "Ontbreekt",
+        "mismatch": "Mismatch",
+        "extra": "Extra"
+      },
+      "missingFiles_one": "Het bestand {{count}} in de checksumlijst staat niet op de schijf. Herstel de ontbrekende bestanden en controleer vervolgens opnieuw.",
+      "missingFiles_other": "De {{count}}-bestanden in de checksumlijst staan niet op de schijf. Herstel de ontbrekende bestanden en controleer vervolgens opnieuw.",
+      "mismatchedFiles_one": "Het bestand {{count}} heeft een afwijkende checksum — de audio is mogelijk beschadigd of gewijzigd.",
+      "mismatchedFiles_other": "{{count}}-bestanden hebben niet-overeenkomende checksums — de audio kan beschadigd of gewijzigd zijn."
+    },
+    "lookup": {
+      "runsAuto": "De zoekopdracht wordt automatisch uitgevoerd nadat de verificatie is geslaagd.",
+      "run": "Zoeken uitvoeren",
+      "matchedCount": "{{matched}}/{{given}} overeenkomend",
+      "multiLbInfo": "dezelfde opname, beide vermeldingen",
+      "resolvedFrom": "↩ opgelost vanuit {{list}}",
+      "multiLb": "Multi-LB",
+      "matched": "Aangepast",
+      "multiLbMsg": "Beide vermeldingen zijn automatisch gekoppeld. De map wordt hernoemd met beide LB-nummers.",
+      "flowsAuto": "De match wordt automatisch naar LBDIR doorgestuurd — er is geen extra stap nodig.",
+      "rerun": "Zoekopdracht opnieuw uitvoeren",
+      "whichShow": "Welke serie is dit?",
+      "pinInfo": "Bij het vastzetten wordt een koppeling van map naar LB aangemaakt, zodat de vraag nooit meer wordt gesteld.",
+      "partialMatchInfo": "{{lb}} is geïdentificeerd, maar niet elke checksum in deze map komt overeen met het archiefrecord — sommige bestanden op de schijf kunnen afwijken van de officiële kopie. LBDIR, hernoemen en bestand zijn geblokkeerd totdat u bevestigt dat dit de juiste show is. Als u zeker bent, klik dan op ‘Vastzetten’ om door te gaan.",
+      "pinConfirms": "Door deze map vast te zetten, wordt bevestigd dat deze bij {{lb}} hoort en worden alle volgende stappen ontgrendeld.",
+      "noMatches": "Geen resultaten gevonden",
+      "noMatchesInfo": "Geen van deze checksums komt overeen met een archiefitem. Dit kan een nieuwe of onbekende bron zijn."
+    },
+    "rename": {
+      "unlocksAfter": "Hernoemen wordt ontgrendeld nadat het opzoeken een LB# heeft opgelost.",
+      "checkRename": "Naam wijzigen controleren",
+      "renamed": "Hernoemd",
+      "loggedReady": "Geregistreerd in rename_history. Klaar om de volgende te verzamelen.",
+      "alreadyCorrect": "De mapnaam is al correct",
+      "recheck": "Nogmaals controleren",
+      "fixWrongLb": "Corrigeer het verkeerde LB-nummer en pas het toe",
+      "reviewProposed": "Bekijk de voorgestelde naamswijziging",
+      "cancel": "Annuleren",
+      "editName": "Naam bewerken…",
+      "mislabeledTitle": "Deze map is verkeerd gelabeld als {{lb}}",
+      "mislabeledBody": "De bestaande tag komt niet overeen met het archief. Door de tag toe te passen, wordt {{lb}} verwijderd en wordt in één stap de juiste {{newLb}} toegevoegd.",
+      "failedTitle": "Hernoemen mislukt",
+      "current": "huidig",
+      "editing": "bewerken",
+      "proposed": "voorgesteld",
+      "dryRun": "Proefmodus — er verandert niets totdat u de wijzigingen toepast.",
+      "copyToClipboard": "Kopiëren naar klembord",
+      "copyDiff": "Verschillen vergelijken",
+      "loggedOnly": "Geregistreerd in rename_history.",
+      "apply": "Naam wijzigen"
+    },
+    "stepStates": {
+      "pass": "Pass",
+      "blocked": "Geblokkeerd",
+      "action": "Actie",
+      "running": "Actief",
+      "pending": "In behandeling",
+      "mute": "—"
+    },
+    "buckets": {
+      "needs": "We hebben jou nodig",
+      "ready": "Klaar",
+      "running": "Actief",
+      "shelf": "Archief",
+      "done": "Klaar",
+      "all": "Alles"
+    },
+    "queueRow": {
+      "verifyingProgress": "Controle van {{done}}/{{total}}…"
+    },
+    "status": {
+      "inProgress": "In uitvoering",
+      "shelved": "Opgeschort",
+      "deferredReason": "Uitgesteld — uit de wachtlijst halen om door te gaan",
+      "inCollection": "In collectie",
+      "filedTo": "Gearchiveerd onder {{mount}}",
+      "filedTagged": "Gearchiveerd en getagd",
+      "readyToFile": "Klaar om in te dienen",
+      "archiveCleanReason": "Archief opschonen — bestand toevoegen aan de collectie",
+      "readyToApply": "Klaar om te solliciteren",
+      "confidentReason": "Zekerheid van overeenkomst — pas gewoon de naamswijziging toe"
+    },
+    "detail": {
+      "batch": "Batch",
+      "open": "Openen",
+      "revealTitle": "Map weergeven in Finder"
+    },
+    "contextMenu": {
+      "shelve": "Terzijde leggen (voorlopig overslaan)",
+      "unshelve": "Uit de kast halen"
+    },
+    "lbdir": {
+      "runsAfterTitle": "Wordt uitgevoerd na het opzoeken",
+      "retrieveNow": "Haal sidecar nu op",
+      "runsAfterBody": "Zodra de zoekopdracht een LB# heeft opgelost, halen we lbdir*.txt op uit de archiefcache en vergelijken we dit met de bestanden op de schijf. Je kunt het desgewenst al eerder ophalen.",
+      "loading": "Bezig met laden…",
+      "openFile": "Open lbdir.txt",
+      "fullScreen": "Volledig LBDIR-scherm →",
+      "stats": {
+        "total": "Totaal",
+        "pass": "Pass",
+        "missing": "Ontbreekt",
+        "mismatch": "Mismatch"
+      },
+      "noLbdirFound": "Geen lbdir*.txt gevonden. Probeer de invoer uit het LBDIR-scherm te kopiëren.",
+      "archiveCleanTitle": "Archiefschoon",
+      "archiveCleanBody": "Elk bestand waarnaar in de officiële sidecar wordt verwezen, is aanwezig en komt overeen. Deze map is volledig gesynchroniseerd.",
+      "status": {
+        "pass": "Pass",
+        "fail": "Mislukt",
+        "missingFiles": "Ontbrekende bestanden",
+        "extraFiles": "Extra bestanden",
+        "noLbdir": "Geen lbdir",
+        "noLb": "Geen LB#",
+        "noShntool": "Geen shntool"
+      },
+      "toast": {
+        "reconcileFailed": "Scan afstemmen mislukt",
+        "applied": "Toegepast",
+        "applyFailed": "Toepassen mislukt",
+        "retrieveFailed": "Ophalen mislukt"
+      }
+    }
   },
   "collection": {
     "confirmDialog": {
@@ -653,7 +826,7 @@
     "title": "Concert kaart",
     "geocoded": "{{count}} gecodeerd",
     "awaitingGeocode": "{{count}} in afwachting van geocodering",
-    "desc": "Filter locaties op jaar, eigenaar of status. Live kaart wordt geopend in je browser op localhost:5174/map.",
+    "desc": "Filter locaties op jaar, eigenaar of status. Live kaart wordt geopend in je browser op 127.0.0.1:5174/map.",
     "copyShareUrl": "URL voor delen kopiëren",
     "openLiveMap": "Open live kaart",
     "yearRange": "Jaar",

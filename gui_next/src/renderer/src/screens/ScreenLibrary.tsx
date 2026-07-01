@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { create } from 'zustand'
 import { useTranslation } from 'react-i18next'
 import type { TFunction } from 'i18next'
 import { useQuery, useQueryClient } from '@tanstack/react-query'
@@ -314,6 +315,82 @@ function ActiveFilter({ label, onRemove }: { label: string; onRemove: () => void
   )
 }
 
+// ── BUG-219: search/filter state, kept alive across navigation ───────────────
+// react-router unmounts ScreenLibrary on route change, so plain useState for
+// the recording-lens (this screen) and performance-lens (PerformanceLensView)
+// filters reset to defaults every time the user navigates away and back. A
+// module-scope zustand store (no persist middleware — survives route changes
+// within a session, not app restarts, matching the other ephemeral UI stores
+// in lib/*Store.ts) keeps it alive. Setters mirror React's SetStateAction
+// signature so existing toggleSet()/setX(new Set()) call sites need no change.
+function withUpdater<T>(current: T, updater: React.SetStateAction<T>): T {
+  return typeof updater === 'function' ? (updater as (prev: T) => T)(current) : updater
+}
+
+interface LibraryFilterStore {
+  recScope: Scope
+  setRecScope: React.Dispatch<React.SetStateAction<Scope>>
+  recQuery: string
+  setRecQuery: React.Dispatch<React.SetStateAction<string>>
+  recActiveDecade: Set<string>
+  setRecActiveDecade: React.Dispatch<React.SetStateAction<Set<string>>>
+  recActiveStatus: Set<LibStatus>
+  setRecActiveStatus: React.Dispatch<React.SetStateAction<Set<LibStatus>>>
+  recActiveRating: Set<RatingGrade>
+  setRecActiveRating: React.Dispatch<React.SetStateAction<Set<RatingGrade>>>
+  recActiveSource: Set<string>
+  setRecActiveSource: React.Dispatch<React.SetStateAction<Set<string>>>
+  recActiveHealth: Set<HealthFlag>
+  setRecActiveHealth: React.Dispatch<React.SetStateAction<Set<HealthFlag>>>
+
+  perfQuery: string
+  setPerfQuery: React.Dispatch<React.SetStateAction<string>>
+  perfActiveDecade: Set<string>
+  setPerfActiveDecade: React.Dispatch<React.SetStateAction<Set<string>>>
+  perfActiveYear: Set<number>
+  setPerfActiveYear: React.Dispatch<React.SetStateAction<Set<number>>>
+  perfActiveCoverage: Set<Coverage>
+  setPerfActiveCoverage: React.Dispatch<React.SetStateAction<Set<Coverage>>>
+  perfActiveSource: Set<string>
+  setPerfActiveSource: React.Dispatch<React.SetStateAction<Set<string>>>
+  perfActiveRating: Set<RatingGrade>
+  setPerfActiveRating: React.Dispatch<React.SetStateAction<Set<RatingGrade>>>
+  perfView: 'all' | 'owned' | 'gaps' | 'wishlist' | 'duplicates'
+  setPerfView: React.Dispatch<React.SetStateAction<'all' | 'owned' | 'gaps' | 'wishlist' | 'duplicates'>>
+}
+
+const useLibraryFilterStore = create<LibraryFilterStore>((set, get) => ({
+  recScope: 'all',
+  setRecScope: (u) => set({ recScope: withUpdater(get().recScope, u) }),
+  recQuery: '',
+  setRecQuery: (u) => set({ recQuery: withUpdater(get().recQuery, u) }),
+  recActiveDecade: new Set(),
+  setRecActiveDecade: (u) => set({ recActiveDecade: withUpdater(get().recActiveDecade, u) }),
+  recActiveStatus: new Set(),
+  setRecActiveStatus: (u) => set({ recActiveStatus: withUpdater(get().recActiveStatus, u) }),
+  recActiveRating: new Set(),
+  setRecActiveRating: (u) => set({ recActiveRating: withUpdater(get().recActiveRating, u) }),
+  recActiveSource: new Set(),
+  setRecActiveSource: (u) => set({ recActiveSource: withUpdater(get().recActiveSource, u) }),
+  recActiveHealth: new Set(),
+  setRecActiveHealth: (u) => set({ recActiveHealth: withUpdater(get().recActiveHealth, u) }),
+
+  perfQuery: '',
+  setPerfQuery: (u) => set({ perfQuery: withUpdater(get().perfQuery, u) }),
+  perfActiveDecade: new Set(),
+  setPerfActiveDecade: (u) => set({ perfActiveDecade: withUpdater(get().perfActiveDecade, u) }),
+  perfActiveYear: new Set(),
+  setPerfActiveYear: (u) => set({ perfActiveYear: withUpdater(get().perfActiveYear, u) }),
+  perfActiveCoverage: new Set(),
+  setPerfActiveCoverage: (u) => set({ perfActiveCoverage: withUpdater(get().perfActiveCoverage, u) }),
+  perfActiveSource: new Set(),
+  setPerfActiveSource: (u) => set({ perfActiveSource: withUpdater(get().perfActiveSource, u) }),
+  perfActiveRating: new Set(),
+  setPerfActiveRating: (u) => set({ perfActiveRating: withUpdater(get().perfActiveRating, u) }),
+  perfView: 'all',
+  setPerfView: (u) => set({ perfView: withUpdater(get().perfView, u) }),
+}))
+
 // ── Screen ───────────────────────────────────────────────────────────────────
 
 export function ScreenLibrary(): React.JSX.Element {
@@ -323,8 +400,13 @@ export function ScreenLibrary(): React.JSX.Element {
   const { t } = useTranslation()
   const [lens, setLens] = useState<'performance' | 'recording'>('performance')
 
-  const [scope,    setScope]    = useState<Scope>('all')
-  const [query,    setQuery]    = useState('')
+  // BUG-219: query/scope/active* filters below live in useLibraryFilterStore
+  // (module scope) instead of useState, so they survive this screen unmounting
+  // on navigation and remounting when the user comes back.
+  const scope    = useLibraryFilterStore(s => s.recScope)
+  const setScope = useLibraryFilterStore(s => s.setRecScope)
+  const query    = useLibraryFilterStore(s => s.recQuery)
+  const setQuery = useLibraryFilterStore(s => s.setRecQuery)
   const [groupByYear, setGroupByYear] = useState(true)
   const [collapsedYears, setCollapsedYears] = useState<Set<string>>(new Set())
   const [selectedLb, setSelectedLb] = useState<number | null>(null)
@@ -334,11 +416,16 @@ export function ScreenLibrary(): React.JSX.Element {
   // TODO-150 step 7: checkbox multi-select for the recording lens's bulk bar.
   const [checkedIds, setCheckedIds] = useState<Set<number>>(new Set())
 
-  const [activeDecade, setActiveDecade] = useState<Set<string>>(new Set())
-  const [activeStatus, setActiveStatus] = useState<Set<LibStatus>>(new Set())
-  const [activeRating, setActiveRating] = useState<Set<RatingGrade>>(new Set())
-  const [activeSource, setActiveSource] = useState<Set<string>>(new Set())
-  const [activeHealth, setActiveHealth] = useState<Set<HealthFlag>>(new Set())
+  const activeDecade    = useLibraryFilterStore(s => s.recActiveDecade)
+  const setActiveDecade = useLibraryFilterStore(s => s.setRecActiveDecade)
+  const activeStatus    = useLibraryFilterStore(s => s.recActiveStatus)
+  const setActiveStatus = useLibraryFilterStore(s => s.setRecActiveStatus)
+  const activeRating    = useLibraryFilterStore(s => s.recActiveRating)
+  const setActiveRating = useLibraryFilterStore(s => s.setRecActiveRating)
+  const activeSource    = useLibraryFilterStore(s => s.recActiveSource)
+  const setActiveSource = useLibraryFilterStore(s => s.setRecActiveSource)
+  const activeHealth    = useLibraryFilterStore(s => s.recActiveHealth)
+  const setActiveHealth = useLibraryFilterStore(s => s.setRecActiveHealth)
 
   const tableParentRef = useRef<HTMLDivElement>(null)
 
@@ -1337,7 +1424,11 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
   attachCountMap: Map<number, number>
 }) {
   const { t } = useTranslation()
-  const [query, setQuery] = useState('')
+  // BUG-219: query/active*/perfView filters below live in useLibraryFilterStore
+  // (module scope) instead of useState, so they survive this screen unmounting
+  // on navigation and remounting when the user comes back.
+  const query    = useLibraryFilterStore(s => s.perfQuery)
+  const setQuery = useLibraryFilterStore(s => s.setPerfQuery)
   const [groupByYear, setGroupByYear] = useState(true)
   const [collapsedYears, setCollapsedYears] = useState<Set<string>>(new Set())
   const [expandedShows, setExpandedShows] = useState<Set<string>>(new Set())
@@ -1347,12 +1438,18 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
   const [detailPanelOpen, setDetailPanelOpen] = useState(true)
   const autoExpandedRef = useRef(false)
 
-  const [activeDecade,   setActiveDecade]   = useState<Set<string>>(new Set())
-  const [activeYear,     setActiveYear]     = useState<Set<number>>(new Set())
-  const [activeCoverage, setActiveCoverage] = useState<Set<Coverage>>(new Set())
-  const [activeSource,   setActiveSource]   = useState<Set<string>>(new Set())
-  const [activeRating,   setActiveRating]   = useState<Set<RatingGrade>>(new Set())
-  const [perfView, setPerfView] = useState<'all'|'owned'|'gaps'|'wishlist'|'duplicates'>('all')
+  const activeDecade      = useLibraryFilterStore(s => s.perfActiveDecade)
+  const setActiveDecade   = useLibraryFilterStore(s => s.setPerfActiveDecade)
+  const activeYear        = useLibraryFilterStore(s => s.perfActiveYear)
+  const setActiveYear     = useLibraryFilterStore(s => s.setPerfActiveYear)
+  const activeCoverage    = useLibraryFilterStore(s => s.perfActiveCoverage)
+  const setActiveCoverage = useLibraryFilterStore(s => s.setPerfActiveCoverage)
+  const activeSource      = useLibraryFilterStore(s => s.perfActiveSource)
+  const setActiveSource   = useLibraryFilterStore(s => s.setPerfActiveSource)
+  const activeRating      = useLibraryFilterStore(s => s.perfActiveRating)
+  const setActiveRating   = useLibraryFilterStore(s => s.setPerfActiveRating)
+  const perfView    = useLibraryFilterStore(s => s.perfView)
+  const setPerfView = useLibraryFilterStore(s => s.setPerfView)
 
   const tableParentRef = useRef<HTMLDivElement>(null)
 

@@ -37,50 +37,6 @@ Fix: Before queuing, temporarily remove SEED_URLS + start_url from `visited` so 
   to backend/db.py to support the targeted last_modified lookup.
 
 
-BUG-220: LB metadata scraper-by-range excludes start/end LB numbers that have no checksum entry yet
-Status: Open
-File(s): backend/app.py:1762-1809 (scrape_start)
-Reported: 2026-06-22
-Root cause: scrape_start builds the scrape list lb_numbers from
-  "SELECT DISTINCT c.lb_number FROM checksums c ... WHERE c.lb_number >= start_lb AND <= end_lb"
-  — only LB numbers that already have a checksums row are included. Gaps within
-  [start_lb, effective_end] are detected afterward and given an insert_missing_entry()
-  placeholder row, but those gap LB numbers (which may include the start_lb/end_lb the user
-  typed in) are never added to lb_numbers, so _start_scrape_thread never actually scrapes them
-  — they just sit as "missing" stubs. User-specified start/end LB boundaries can silently be
-  skipped if no checksum exists for them yet.
-Fix: TBD — likely needs the gap-filled LB numbers also queued into lb_numbers for the
-  scrape thread (or at minimum guarantee start_lb/end_lb themselves are scraped), not just
-  inserted as missing placeholders.
-
-BUG-219: Search/filter state lost when navigating away from a screen and back
-Status: Open
-File(s): gui_next/src/renderer/src/screens/ScreenLibrary.tsx:326-340 (query, activeDecade,
-  activeStatus, activeRating, activeSource, activeHealth), gui_next/src/renderer/src/App.tsx:265-285
-Reported: 2026-06-22
-Root cause: App.tsx renders each screen behind a react-router <Route>, which unmounts the
-  component when navigating to a different route. Search/filter values (e.g. `query` and the
-  `active*` filter Sets in ScreenLibrary.tsx) are plain local useState, so they reset to
-  default the moment the screen unmounts — navigating away and back loses whatever filter/search
-  was applied. Likely affects other screens with local-state search/filter, not just Library.
-Fix: TBD — needs filter/search state lifted to a persistent store (e.g. the zustand store in
-  store.ts) or kept alive via route state/URL query params instead of component-local useState.
-
-BUG-218: Performance screen — column widths wrong/misaligned
-Status: Open
-File(s): gui_next/src/renderer/src/screens/ScreenLibrary.tsx:1541,1768-1777 (performance-view table)
-Reported: 2026-06-22
-Root cause: TBD — column widths on the performance (date-row) table need fixing; exact
-  symptom (too narrow/too wide/misaligned which column) not yet specified.
-Fix: TBD
-
-BUG-215: Map screen renders white/blank — no map shown in app
-Status: Open
-File(s): gui_next/src/renderer/src/screens/ScreenMap.tsx
-Reported: 2026-06-22
-Root cause: TBD — Map screen shows a blank white screen instead of the map when opened in the app.
-Fix: TBD
-
 BUG-214: Library — family label slot conflates source type with TapeMatch match group
 Status: Fixed
 File(s): gui_next/src/renderer/src/screens/ScreenLibrary.tsx:1251-1263, 1880-1889
@@ -203,35 +159,6 @@ Root cause: QueueRow in PipelineParts always used BUCKET[folder.bucket].label; s
   that upstream steps are not blocked.
 Fix: QueueRow now checks if any step has state 'blocked' and overrides tone+label to bad/Blocked.
   File button condition extended to exclude rows where any of verify/lookup/lbdir/rename is bad.
-
-BUG-201: Pipeline screen — extensive untranslated English when non-English locale is active
-Status: Open
-File(s): gui_next/src/renderer/src/components/pipeline/PipelineParts.tsx:43-47
-         gui_next/src/renderer/src/components/pipeline/LookupDetail.tsx:10-13,104
-         gui_next/src/renderer/src/screens/ScreenPipeline.tsx (throughout)
-Reported: 2026-06-17
-Root cause: Three distinct gaps:
-  1. DEFAULT_STAGES (PipelineParts.tsx:43-47) hard-codes English step labels "Verify",
-     "Lookup", "LBDIR", "Rename", "Collect" for the progress-bar header. The locale already
-     has keys pipeline.stepVerify / stepLookup / stepLbdir / stepRename but they are never
-     used here.
-  2. STATE_TONE (LookupDetail.tsx:10-13) hard-codes English pill/badge labels "Matched",
-     "Incomplete", "Not found", "Duplicate", "Xref" used throughout the Lookup stage UI and
-     the per-row status column.
-  3. ScreenPipeline.tsx contains dozens of hard-coded English inline strings with no i18n
-     key: button labels (Re-run lookup, Re-verify, Run lookup, Run verify, Re-check,
-     Apply rename, Check rename, Check route now, Re-check route), status tags ("Matched"),
-     inline guidance text ("Lookup runs automatically after verify passes.",
-     "LBDIR, rename, and file are blocked until you confirm…", "This folder will advance to
-     Lookup automatically.", etc.), and the "Pin LB-XXXXX & continue" button
-     (LookupDetail.tsx:104).
-  Additionally, backend-returned step.label values ("Action", "Incomplete match", "Renamed",
-  "Filed", "Filed to X") are backend English strings rendered directly — these need either
-  a frontend translation map or backend i18n plumbing.
-Fix: TBD — requires (a) wiring DEFAULT_STAGES labels through t(), (b) moving STATE_TONE
-     labels to locale keys, (c) systematic pass through ScreenPipeline.tsx and
-     LookupDetail.tsx to replace all hard-coded English with t() calls + new locale keys in
-     all 6 language files, (d) decide on backend label strategy.
 
 BUG-200: tapematch — report.md for 1999-02-25 Portland, Maine contains another session's tapematch output verbatim
 Status: Open

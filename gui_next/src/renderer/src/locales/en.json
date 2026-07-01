@@ -179,6 +179,8 @@
       "type": "Type",
       "xref": "Xref",
       "open": "Open on LB Website",
+      "openTitle": "Open this entry on losslessbob.com",
+      "pinAndContinue": "Pin {{lb}} & continue",
       "addWishlist": "+WL"
     },
     "states": {
@@ -367,6 +369,110 @@
   },
   "pipeline": {
     "title": "Pipeline",
+    "rerunStage": "Re-run this stage",
+    "rerunGeneric": "Re-run",
+    "verify": {
+      "hashingFiles": "Hashing files…",
+      "advanceAuto": "This folder will advance to Lookup automatically.",
+      "notRun": "Verify hasn't run yet.",
+      "run": "Run verify",
+      "shnToolMissingTitle": "Can't decode .shn without shntool",
+      "shnToolMissingBody": "This folder uses SHN files, but shntool is not installed. Install shntool so checksums can be decoded and verified.",
+      "rerun": "Re-verify",
+      "noChecksumsTitle": "No checksums in this folder yet",
+      "noChecksumsBody": "There's no .ffp or .md5 sidecar here, so there's nothing to verify against. Generate them from the audio on disk — then this folder verifies and looks up automatically.",
+      "generating": "Generating…",
+      "generate": "Generate FFP + MD5",
+      "generateInfo": "Writes _mychecksums.ffp and .md5 into the folder. Non-destructive — your audio files aren't touched.",
+      "stats": {
+        "total": "Total",
+        "pass": "Pass",
+        "missing": "Missing",
+        "mismatch": "Mismatch",
+        "extra": "Extra"
+      },
+      "missingFiles_one": "{{count}} file in the checksum list is not on disk. Restore the missing files, then re-verify.",
+      "missingFiles_other": "{{count}} files in the checksum list are not on disk. Restore the missing files, then re-verify.",
+      "mismatchedFiles_one": "{{count}} file has a mismatched checksum — the audio may be corrupted or modified.",
+      "mismatchedFiles_other": "{{count}} files have mismatched checksums — the audio may be corrupted or modified."
+    },
+    "lookup": {
+      "runsAuto": "Lookup runs automatically after verify passes.",
+      "run": "Run lookup",
+      "matchedCount": "{{matched}}/{{given}} matched",
+      "multiLbInfo": "same recording, both entries",
+      "resolvedFrom": "↩ resolved from {{list}}",
+      "multiLb": "Multi-LB",
+      "matched": "Matched",
+      "multiLbMsg": "Both entries are auto-linked. The folder will be renamed with both LB numbers.",
+      "flowsAuto": "The match flows into LBDIR automatically — no extra step needed.",
+      "rerun": "Re-run lookup",
+      "whichShow": "Which show is this?",
+      "pinInfo": "Pinning writes a folder→LB link, so it never asks again.",
+      "partialMatchInfo": "{{lb}} was identified, but not every checksum in this folder matches the archive record — some files on disk may differ from the official copy. LBDIR, rename, and file are blocked until you confirm this is the right show. If you're sure, pin it to proceed.",
+      "pinConfirms": "Pinning confirms this folder belongs to {{lb}} and unlocks all downstream steps.",
+      "noMatches": "No matches found",
+      "noMatchesInfo": "None of these checksums match any archive entry. This may be a new or unknown source."
+    },
+    "rename": {
+      "unlocksAfter": "Rename unlocks after lookup resolves an LB#.",
+      "checkRename": "Check rename",
+      "renamed": "Renamed",
+      "loggedReady": "Logged to rename_history. Ready to collect next.",
+      "alreadyCorrect": "Folder name is already correct",
+      "recheck": "Re-check",
+      "fixWrongLb": "Fix the wrong LB# and apply",
+      "reviewProposed": "Review the proposed rename",
+      "cancel": "Cancel",
+      "editName": "Edit name…",
+      "mislabeledTitle": "This folder is mislabeled {{lb}}",
+      "mislabeledBody": "The existing tag doesn't match the archive. Applying will remove {{lb}} and append the correct {{newLb}} in one step.",
+      "failedTitle": "Rename failed",
+      "current": "current",
+      "editing": "editing",
+      "proposed": "proposed",
+      "dryRun": "Dry-run — nothing changes until you apply.",
+      "copyToClipboard": "Copy to clipboard",
+      "copyDiff": "Copy diff",
+      "loggedOnly": "Logged to rename_history.",
+      "apply": "Apply rename"
+    },
+    "stepStates": {
+      "pass": "Pass",
+      "blocked": "Blocked",
+      "action": "Action",
+      "running": "Running",
+      "pending": "Pending",
+      "mute": "—"
+    },
+    "buckets": {
+      "needs": "Needs you",
+      "ready": "Ready",
+      "running": "Running",
+      "shelf": "Shelf",
+      "done": "Done",
+      "all": "All"
+    },
+    "queueRow": {
+      "verifyingProgress": "Verifying {{done}}/{{total}}…"
+    },
+    "status": {
+      "inProgress": "In progress",
+      "shelved": "Shelved",
+      "deferredReason": "Deferred — unshelve to continue",
+      "inCollection": "In collection",
+      "filedTo": "Filed to {{mount}}",
+      "filedTagged": "Filed & tagged",
+      "readyToFile": "Ready to file",
+      "archiveCleanReason": "Archive-clean — file into the collection",
+      "readyToApply": "Ready to apply",
+      "confidentReason": "Confident match — just apply the rename"
+    },
+    "detail": {
+      "batch": "Batch",
+      "open": "Open",
+      "revealTitle": "Reveal folder in Finder"
+    },
     "titleFolders": "Pipeline · {{count}} folders",
     "folderQueued_one": "· {{count}} folder queued",
     "folderQueued_other": "· {{count}} folders queued",
@@ -406,7 +512,11 @@
       "lookup": "Lookup",
       "rename": "Rename",
       "lbdir": "LBDIR",
-      "collect": "Collect"
+      "collect": "Collect",
+      "quickLookup": "Quick lookup",
+      "noFolder": "no folder",
+      "dragInfo": "Drag folders anywhere to queue them. They'll verify + look up automatically.",
+      "openLocation": "Open queue location"
     },
     "filter": {
       "all": "All",
@@ -443,7 +553,49 @@
       "rename": "Rename",
       "lbdir": "LBDIR",
       "collect": "Collect",
-      "lb": "LB#"
+      "lb": "LB#",
+      "stages": "Stages",
+      "status": "Status",
+      "apply": "Apply",
+      "done": "Done",
+      "aliasBadge": "↩ alias",
+      "resolvedFromAlias": "Resolved from alias: {{list}}"
+    },
+    "contextMenu": {
+      "shelve": "Shelve (skip for now)",
+      "unshelve": "Unshelve"
+    },
+    "lbdir": {
+      "runsAfterTitle": "Runs after lookup",
+      "retrieveNow": "Retrieve sidecar now",
+      "runsAfterBody": "Once lookup resolves an LB#, we retrieve lbdir*.txt from the archive cache and reconcile it against the files on disk. You can pull it early if you like.",
+      "loading": "Loading…",
+      "openFile": "Open lbdir.txt",
+      "fullScreen": "Full LBDIR screen →",
+      "stats": {
+        "total": "Total",
+        "pass": "Pass",
+        "missing": "Missing",
+        "mismatch": "Mismatch"
+      },
+      "noLbdirFound": "No lbdir*.txt found. Try scraping the entry from the LBDIR screen.",
+      "archiveCleanTitle": "Archive-clean",
+      "archiveCleanBody": "Every file referenced in the official sidecar is present and matches. This folder is fully reconciled.",
+      "status": {
+        "pass": "Pass",
+        "fail": "Fail",
+        "missingFiles": "Missing files",
+        "extraFiles": "Extra files",
+        "noLbdir": "No lbdir",
+        "noLb": "No LB#",
+        "noShntool": "No shntool"
+      },
+      "toast": {
+        "reconcileFailed": "Reconcile scan failed",
+        "applied": "Applied",
+        "applyFailed": "Apply failed",
+        "retrieveFailed": "Retrieve failed"
+      }
     },
     "file": {
       "action": "File",
@@ -489,7 +641,28 @@
       "alreadyInCollectionTitle": "Already in collection",
       "alreadyInCollectionBody": "This recording is already registered in your collection at {{path}}. Filing will move the folder to the new location and update the collection record.",
       "renamePendingTitle": "Rename required before filing",
-      "renamePendingBody": "This folder has an unapplied rename. Switch to the Rename step and apply it before filing."
+      "renamePendingBody": "This folder has an unapplied rename. Switch to the Rename step and apply it before filing.",
+      "staging": "staging",
+      "finalStorage": "final storage",
+      "whatFilingTitle": "What filing does",
+      "fileAction": "File into collection",
+      "filingBody": "Moves the folder to {{dest}}, writes the collection row, and tags it owned · public. Logged to rename_history.",
+      "resolvingDest": "Resolving the destination for the selected mount — if this doesn't clear, try \"{{reset}}\".",
+      "recheckRoute": "Re-check route",
+      "addedTitle": "Added to collection",
+      "lbLabel": "LB#",
+      "mountLabelText": "Mount",
+      "cantFile": "Can't file",
+      "unknownError": "Unknown error",
+      "lastStepInfo": "This is the last step — the bridge into My Collection. Once the sidecar reconciles in LBDIR, the folder is routed to the right storage mount, moved there, and tagged as owned. Finish the earlier stages first — or use Mark complete on any stage to bypass the locks and file from here.",
+      "checkRouteNow": "Check route now",
+      "errors": {
+        "noDate": "This entry has no concert date — can't determine the year for routing.",
+        "noRoute": "No collection route is configured for this year. Add one in Setup → Collection Routing.",
+        "mountOffline": "The storage mount is offline or unreachable.",
+        "destExists": "A folder with this name already exists at the destination.",
+        "dbError": "A database error occurred while resolving the route."
+      }
     }
   },
   "collection": {
@@ -653,7 +826,7 @@
     "title": "Concert map",
     "geocoded": "{{count}} geocoded",
     "awaitingGeocode": "{{count}} awaiting geocoding",
-    "desc": "Filter venues by year, ownership, or status. Live map opens in your browser at localhost:5174/map.",
+    "desc": "Filter venues by year, ownership, or status. Live map opens in your browser at 127.0.0.1:5174/map.",
     "copyShareUrl": "Copy share URL",
     "openLiveMap": "Open live map ↗",
     "yearRange": "Year range",

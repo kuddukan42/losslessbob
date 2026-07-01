@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { Icon } from '../Icon'
 import { Pill } from '../primitives'
 import type { IconName } from '../Icon'
@@ -11,42 +12,42 @@ export type StepState = 'pass' | 'blocked' | 'action' | 'running' | 'pending' | 
 export type Tone = 'ok' | 'bad' | 'warn' | 'info' | 'mute'
 export type Bucket = 'needs' | 'ready' | 'running' | 'shelf' | 'done' | 'all'
 
-interface StateDef { tone: Tone; label: string }
+interface StateDef { tone: Tone; labelKey: string }
 
 const STATE: Record<StepState, StateDef> = {
-  pass:    { tone: 'ok',   label: 'Pass'    },
-  blocked: { tone: 'bad',  label: 'Blocked' },
-  action:  { tone: 'warn', label: 'Action'  },
-  running: { tone: 'info', label: 'Running' },
-  pending: { tone: 'mute', label: 'Pending' },
-  mute:    { tone: 'mute', label: '—'       },
+  pass:    { tone: 'ok',   labelKey: 'pipeline.stepStates.pass'    },
+  blocked: { tone: 'bad',  labelKey: 'pipeline.stepStates.blocked' },
+  action:  { tone: 'warn', labelKey: 'pipeline.stepStates.action'  },
+  running: { tone: 'info', labelKey: 'pipeline.stepStates.running' },
+  pending: { tone: 'mute', labelKey: 'pipeline.stepStates.pending' },
+  mute:    { tone: 'mute', labelKey: 'pipeline.stepStates.mute'    },
 }
 
-interface BucketDef { tone: Tone; label: string }
+interface BucketDef { tone: Tone; labelKey: string }
 
 const BUCKET: Record<Bucket, BucketDef> = {
-  needs:   { tone: 'warn', label: 'Needs you' },
-  ready:   { tone: 'ok',   label: 'Ready'     },
-  running: { tone: 'info', label: 'Running'   },
-  shelf:   { tone: 'mute', label: 'Shelf'     },
-  done:    { tone: 'ok',   label: 'Done'      },
-  all:     { tone: 'mute', label: 'All'       },
+  needs:   { tone: 'warn', labelKey: 'pipeline.buckets.needs'   },
+  ready:   { tone: 'ok',   labelKey: 'pipeline.buckets.ready'   },
+  running: { tone: 'info', labelKey: 'pipeline.buckets.running' },
+  shelf:   { tone: 'mute', labelKey: 'pipeline.buckets.shelf'   },
+  done:    { tone: 'ok',   labelKey: 'pipeline.buckets.done'    },
+  all:     { tone: 'mute', labelKey: 'pipeline.buckets.all'     },
 }
 
 // ── Stage descriptor ───────────────────────────────────────────────────────────
 
 export interface StageDesc {
   key: string
-  label: string
+  labelKey: string
   n: number
 }
 
 export const DEFAULT_STAGES: StageDesc[] = [
-  { key: 'verify', label: 'Verify',  n: 1 },
-  { key: 'lookup', label: 'Lookup',  n: 2 },
-  { key: 'lbdir',  label: 'LBDIR',   n: 3 },
-  { key: 'rename', label: 'Rename',  n: 4 },
-  { key: 'file',   label: 'Collect', n: 5 },
+  { key: 'verify', labelKey: 'pipeline.queue.verify',  n: 1 },
+  { key: 'lookup', labelKey: 'pipeline.queue.lookup',  n: 2 },
+  { key: 'lbdir',  labelKey: 'pipeline.queue.lbdir',   n: 3 },
+  { key: 'rename', labelKey: 'pipeline.queue.rename',  n: 4 },
+  { key: 'file',   labelKey: 'pipeline.queue.collect', n: 5 },
 ]
 
 // ── Step data shape used by tracker components ─────────────────────────────────
@@ -101,13 +102,14 @@ interface StatusTagProps {
 }
 
 export function StatusTag({ state, children, soft = true, style }: StatusTagProps) {
+  const { t } = useTranslation()
   const s = STATE[state]
   return (
     <Pill tone={s.tone} soft={soft} style={{ gap: 5, ...style }}>
       <span style={{ display: 'inline-flex', width: 12, justifyContent: 'center' }}>
         <StateGlyph state={state} size={11} />
       </span>
-      {children ?? s.label}
+      {children ?? t(s.labelKey as any)}
     </Pill>
   )
 }
@@ -136,11 +138,12 @@ interface StageNodeProps {
 }
 
 export function StageNode({ stage, state, current, size = 24 }: StageNodeProps) {
+  const { t } = useTranslation()
   const tileStage = STAGE_TO_TILE[stage.key] ?? 'verify'
   const tileStatus = STATE_TO_TILE[state]
   return (
     <span
-      title={`${stage.label}: ${STATE[state].label}`}
+      title={`${t(stage.labelKey as any)}: ${t(STATE[state].labelKey as any)}`}
       style={{
         position: 'relative', display: 'inline-flex', flex: `0 0 ${size}px`,
         borderRadius: size * 0.30, zIndex: 1,
@@ -216,6 +219,7 @@ interface StageStepperProps {
 export function StageStepper({
   folder, stages = DEFAULT_STAGES, activeKey, onPick,
 }: StageStepperProps) {
+  const { t } = useTranslation()
   return (
     <div style={{ display: 'flex', alignItems: 'stretch', width: '100%' }}>
       {stages.map((st, i) => {
@@ -237,9 +241,9 @@ export function StageStepper({
               <span style={{ display: 'flex', flexDirection: 'column', minWidth: 0 }}>
                 <span style={{ fontSize: 13, fontWeight: 700,
                   color: active ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg)',
-                  letterSpacing: -0.01 }}>{st.label}</span>
+                  letterSpacing: -0.01 }}>{t(st.labelKey as any)}</span>
                 <span style={{ fontSize: 10.5, fontWeight: 600,
-                  color: `var(--lbb-${s.tone}-fg)`, letterSpacing: 0.02 }}>{s.label}</span>
+                  color: `var(--lbb-${s.tone}-fg)`, letterSpacing: 0.02 }}>{t(s.labelKey as any)}</span>
               </span>
             </button>
             {next && (
@@ -263,12 +267,13 @@ interface QueueRowProps {
 }
 
 export function QueueRow({ folder, active, onClick }: QueueRowProps) {
+  const { t } = useTranslation()
   const bucket = folder.bucket ?? 'needs'
   const b = BUCKET[bucket]
   const name = folder.folderName ?? folder.folder.split('/').pop() ?? folder.folder
   const hasBlocked = Object.values(folder.steps).some(s => s.state === 'blocked')
   const tone = hasBlocked ? 'bad' : b.tone
-  const statusLabel = hasBlocked ? 'Blocked' : b.label
+  const statusLabel = hasBlocked ? t(STATE.blocked.labelKey as any) : t(b.labelKey as any)
   return (
     <button
       onClick={onClick}
@@ -292,7 +297,7 @@ export function QueueRow({ folder, active, onClick }: QueueRowProps) {
         <span style={{ fontSize: 10, color: `var(--lbb-${tone}-fg)`,
           fontWeight: 600, letterSpacing: 0.02 }}>
           {bucket === 'running' && folder.progress
-            ? `Verifying ${folder.progress.done}/${folder.progress.total}…`
+            ? t('pipeline.queueRow.verifyingProgress', { done: folder.progress.done, total: folder.progress.total })
             : folder.lb ? `${statusLabel} · ${folder.lb}` : statusLabel}
         </span>
       </span>

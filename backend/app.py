@@ -1816,12 +1816,30 @@ def create_app() -> Flask:
             # Always fill every sequential gap so no LB number is left out of
             # the database. Derive the upper bound from the highest checksum entry
             # when no explicit end_lb was given ("Scrape All Missing" path).
+            # Gap numbers are also queued for scraping (not just stubbed), so a
+            # user-specified start_lb/end_lb with no existing checksum row still
+            # gets fetched instead of silently sitting as a "missing" placeholder.
             effective_end = end_lb or (lb_numbers[-1] if lb_numbers else None)
             if effective_end:
                 known = set(lb_numbers)
-                for n in range(start_lb, effective_end + 1):
-                    if n not in known:
-                        database.insert_missing_entry(n)
+                gap_range = [n for n in range(start_lb, effective_end + 1) if n not in known]
+                private_gaps: set = set()
+                if gap_range:
+                    with database.get_connection() as conn:
+                        ph = ",".join("?" * len(gap_range))
+                        private_gaps = {
+                            r[0] for r in conn.execute(
+                                f"SELECT lb_number FROM lb_master WHERE lb_number IN ({ph}) "
+                                "AND lb_status='private'",
+                                gap_range,
+                            ).fetchall()
+                        }
+                for n in gap_range:
+                    if n in private_gaps:
+                        continue
+                    database.insert_missing_entry(n)
+                    lb_numbers.append(n)
+                lb_numbers.sort()
 
             _start_scrape_thread(lb_numbers, force=force, delay_ms=delay, download=download, use_local_pages=use_local_pages)
             return jsonify({"ok": True, "total": len(lb_numbers)})

@@ -43,7 +43,7 @@ export function LookupSummaryTable({
         <tr>
           <TH> </TH>
           <TH>{t('lookup.table.lb')}</TH>
-          <TH>Type</TH>
+          <TH>{t('lookup.table.type')}</TH>
           <TH align="right">{t('lookup.table.given')}</TH><TH align="right">{t('lookup.table.matched')}</TH><TH align="right">{t('lookup.table.notFound')}</TH>
           <TH align="right">{t('lookup.table.missing')}</TH><TH align="right">{t('lookup.table.dups')}</TH><TH align="right">{t('lookup.table.xrefs')}</TH>
           <TH>{t('lookup.table.status')}</TH><TH align="right"> </TH>
@@ -73,17 +73,17 @@ export function LookupSummaryTable({
               <TD align="right" mono style={{ color: r.missing_from_set > 0 ? 'var(--lbb-warn-fg)' : 'var(--lbb-fg3)' }}>{r.missing_from_set || '—'}</TD>
               <TD align="right" mono style={{ color: r.duplicates   > 0 ? '#a08200'            : 'var(--lbb-fg3)' }}>{r.duplicates   || '—'}</TD>
               <TD align="right" mono style={{ color: r.xrefs        > 0 ? 'var(--lbb-info-fg)' : 'var(--lbb-fg3)' }}>{r.xrefs        || '—'}</TD>
-              <TD><Pill tone={tone.tone} soft dot={state !== 'matched'}>{tone.label}</Pill></TD>
+              <TD><Pill tone={tone.tone} soft dot={state !== 'matched'}>{t(tone.labelKey as any)}</Pill></TD>
               <TD align="right" style={{ display: 'flex', gap: 8, justifyContent: 'flex-end' }}>
                 <Button size="sm" variant="ghost" icon="reveal"
                   onClick={() => window.open(lbDetailUrl(r.lb_number))}
-                  title="Open this entry on losslessbob.com">
+                  title={t('lookup.table.openTitle')}>
                   {t('lookup.table.open')}
                 </Button>
                 {onPin ? (
                   <Button size="sm" variant="primary" disabled={pinBusyLb != null}
                     onClick={() => onPin(r.lb_number)}>
-                    {pinBusyLb === r.lb_number ? '…' : `Pin ${lbStr} & continue`}
+                    {pinBusyLb === r.lb_number ? '…' : t('lookup.table.pinAndContinue', { lb: lbStr })}
                   </Button>
                 ) : r.owned ? (
                   <Pill tone={r.lbdir_verified ? 'ok' : 'warn'} soft>
@@ -158,9 +158,9 @@ export function LookupChecksumTable({ summaryRows, detailRows }: LookupChecksumT
                           {groupLbStr}
                         </span>
                         {summRow && categoryPill(summRow.lb_category)}
-                        <Pill tone={groupTone.tone} soft dot={groupState !== 'matched'}>{groupTone.label}</Pill>
+                        <Pill tone={groupTone.tone} soft dot={groupState !== 'matched'}>{t(groupTone.labelKey as any)}</Pill>
                         <span style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)' }}>
-                          {group.rows.length} {group.rows.length === 1 ? 'row' : 'rows'}
+                          {t('lookup.status.rows', { count: group.rows.length })}
                         </span>
                       </div>
                     </td>
@@ -183,7 +183,7 @@ export function LookupChecksumTable({ summaryRows, detailRows }: LookupChecksumT
                           ? <Icon name="check" size={11} style={{ color: 'var(--lbb-info-fg)' }} />
                           : <span style={{ color: 'var(--lbb-fg3)' }}>—</span>}
                       </TD>
-                      <TD><Pill tone={rowTone.tone} soft>{rowTone.label}</Pill></TD>
+                      <TD><Pill tone={rowTone.tone} soft>{t(rowTone.labelKey as any)}</Pill></TD>
                     </TR>
                   )
                 })}

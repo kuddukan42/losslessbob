@@ -179,7 +179,9 @@
       "type": "Tipo",
       "xref": "Referencia cruzada",
       "open": "Abrir en LB Website",
-      "addWishlist": "+WL"
+      "addWishlist": "+WL",
+      "openTitle": "Abre esta entrada en losslessbob.com",
+      "pinAndContinue": "Fijar {{lb}} y continuar"
     },
     "states": {
       "matched": "Emparejado",
@@ -399,7 +401,11 @@
       "lookup": "Búsqueda",
       "rename": "Cambie el nombre de",
       "lbdir": "LBDIR",
-      "collect": "Recopilar"
+      "collect": "Recopilar",
+      "quickLookup": "Búsqueda rápida",
+      "noFolder": "sin carpeta",
+      "dragInfo": "Arrastra las carpetas a cualquier lugar para añadirlas a la cola. Se verificarán y buscarán automáticamente.",
+      "openLocation": "Ubicación de la cola abierta"
     },
     "filter": {
       "all": "Todos",
@@ -436,7 +442,13 @@
       "rename": "Cambie el nombre de",
       "lbdir": "LBDIR",
       "collect": "Recopilar",
-      "lb": "LB#"
+      "lb": "LB#",
+      "stages": "Fases",
+      "status": "Estado",
+      "apply": "Aplicar",
+      "done": "Hecho",
+      "aliasBadge": "↩ alias",
+      "resolvedFromAlias": "Resuelto a partir del alias: {{list}}"
     },
     "file": {
       "action": "Archivar",
@@ -482,7 +494,28 @@
       "alreadyInCollectionTitle": "Ya en la colección",
       "alreadyInCollectionBody": "Esta grabación ya está registrada en su colección en {{path}}. Al archivar, la carpeta se moverá a la nueva ubicación y se actualizará el registro de la colección.",
       "renamePendingTitle": "Cambio de nombre requerido antes de archivar",
-      "renamePendingBody": "Esta carpeta tiene un cambio de nombre sin aplicar. Cambie al paso Renombrar y aplíquelo antes de archivar."
+      "renamePendingBody": "Esta carpeta tiene un cambio de nombre sin aplicar. Cambie al paso Renombrar y aplíquelo antes de archivar.",
+      "staging": "en fase de preparación",
+      "finalStorage": "almacenamiento definitivo",
+      "whatFilingTitle": "¿Qué es el archivo?",
+      "fileAction": "Añadir a la colección",
+      "filingBody": "Mueve la carpeta a {{dest}}, escribe la fila de la colección y la etiqueta como «propia · pública». Registrado en «rename_history».",
+      "resolvingDest": "Resolución del destino del montaje seleccionado: si no se aclara, prueba con «{{reset}}».",
+      "recheckRoute": "Volver a comprobar la ruta",
+      "addedTitle": "Añadido a la colección",
+      "lbLabel": "LB#",
+      "mountLabelText": "Montar",
+      "cantFile": "No se puede archivar",
+      "unknownError": "Error desconocido",
+      "lastStepInfo": "Este es el último paso: el enlace con «Mi colección». Una vez que el sidecar se sincroniza en LBDIR, la carpeta se redirige al punto de montaje de almacenamiento adecuado, se traslada allí y se marca como «propiedad del usuario». Completa primero las etapas anteriores, o utiliza «Marcar como completado» en cualquier etapa para saltarte los bloqueos y continuar desde aquí.",
+      "checkRouteNow": "Comprueba la ruta ahora",
+      "errors": {
+        "noDate": "Esta entrada no tiene fecha de concierto; no se puede determinar el año para el enrutamiento.",
+        "noRoute": "No hay ninguna ruta de recopilación configurada para este año. Añade una en Configuración → Rutas de recopilación.",
+        "mountOffline": "El dispositivo de almacenamiento está desconectado o no se puede acceder a él.",
+        "destExists": "Ya existe una carpeta con este nombre en el destino.",
+        "dbError": "Se ha producido un error de base de datos al resolver la ruta."
+      }
     },
     "titleFolders": "Pipeline · Carpetas {{count}}",
     "applyAllReady": "Aplicar todo lo preparado para {{count}}",
@@ -490,7 +523,147 @@
     "autoRun": "Ejecución automática al soltar",
     "autoRunHint": "Cuando está activada, las carpetas arrastradas se verifican y se buscan automáticamente",
     "autoRename": "Renombrado automático",
-    "autoRenameHint": "Cuando está activada, se aplica automáticamente un cambio de nombre con una única coincidencia y la carpeta pasa a «Recopilar»."
+    "autoRenameHint": "Cuando está activada, se aplica automáticamente un cambio de nombre con una única coincidencia y la carpeta pasa a «Recopilar».",
+    "rerunStage": "Volver a ejecutar esta fase",
+    "rerunGeneric": "Volver a ejecutar",
+    "verify": {
+      "hashingFiles": "Calculando el hash de los archivos…",
+      "advanceAuto": "Esta carpeta pasará automáticamente a «Lookup».",
+      "notRun": "Aún no se ha comprobado si se ha ejecutado.",
+      "run": "Ejecutar verificación",
+      "shnToolMissingTitle": "No se puede descodificar el formato .shn sin shntool",
+      "shnToolMissingBody": "Esta carpeta utiliza archivos SHN, pero shntool no está instalado. Instala shntool para que se puedan descodificar y verificar las sumas de comprobación.",
+      "rerun": "Volver a verificar",
+      "noChecksumsTitle": "Aún no hay sumas de comprobación en esta carpeta",
+      "noChecksumsBody": "Aquí no hay archivos complementarios .ffp ni .md5, por lo que no hay nada con lo que realizar la verificación. Généralos a partir del audio del disco; así, esta carpeta se verificará y buscará automáticamente.",
+      "generating": "Generando…",
+      "generate": "Generar FFP + MD5",
+      "generateInfo": "Guarda los archivos _mychecksums.ffp y .md5 en la carpeta. No es un proceso destructivo: no se modifican tus archivos de audio.",
+      "stats": {
+        "total": "Total",
+        "pass": "Aceptar",
+        "missing": "Falta",
+        "mismatch": "Incoherencia",
+        "extra": "Extra"
+      },
+      "missingFiles_one": "El archivo {{count}} de la lista de sumas de comprobación no se encuentra en el disco. Recupera los archivos que faltan y vuelve a verificar.",
+      "missingFiles_other": "Los archivos {{count}} de la lista de sumas de comprobación no se encuentran en el disco. Restaura los archivos que faltan y, a continuación, vuelve a verificar.",
+      "mismatchedFiles_one": "El archivo {{count}} tiene una suma de comprobación que no coincide: es posible que el audio esté dañado o haya sido modificado.",
+      "mismatchedFiles_other": "Los archivos {{count}} tienen sumas de comprobación que no coinciden: es posible que el audio esté dañado o haya sido modificado."
+    },
+    "lookup": {
+      "runsAuto": "La búsqueda se ejecuta automáticamente una vez superada la verificación.",
+      "run": "Realizar búsqueda",
+      "matchedCount": "{{matched}}/{{given}} coincidentes",
+      "multiLbInfo": "misma grabación, ambas entradas",
+      "resolvedFrom": "↩ Resuelto a partir de {{list}}",
+      "multiLb": "Multi-LB",
+      "matched": "Coincide",
+      "multiLbMsg": "Ambas entradas están vinculadas automáticamente. La carpeta se renombrará con ambos números de LB.",
+      "flowsAuto": "La coincidencia se transfiere automáticamente a LBDIR, sin necesidad de ningún paso adicional.",
+      "rerun": "Volver a ejecutar la búsqueda",
+      "whichShow": "¿De qué serie se trata?",
+      "pinInfo": "Al anclar una carpeta, se crea un enlace de la carpeta a la barra de estado, por lo que no vuelve a preguntarse nunca más.",
+      "partialMatchInfo": "Se ha identificado {{lb}}, pero no todas las sumas de comprobación de esta carpeta coinciden con el registro del archivo; algunos archivos del disco pueden diferir de la copia oficial. LBDIR, «renombrar» y «archivo» están bloqueados hasta que confirmes que se trata del programa correcto. Si estás seguro, fíjalo para continuar.",
+      "pinConfirms": "Al fijarla, se confirma que esta carpeta pertenece a {{lb}} y se desbloquean todos los pasos posteriores.",
+      "noMatches": "No se han encontrado resultados",
+      "noMatchesInfo": "Ninguna de estas sumas de comprobación coincide con ninguna entrada del archivo. Puede tratarse de una fuente nueva o desconocida."
+    },
+    "rename": {
+      "unlocksAfter": "El cambio de nombre se desbloquea una vez que la búsqueda resuelve un número de LB.",
+      "checkRename": "Comprobar cambio de nombre",
+      "renamed": "Renombrado",
+      "loggedReady": "Registrado en «rename_history». Listo para la siguiente recopilación.",
+      "alreadyCorrect": "El nombre de la carpeta ya es correcto",
+      "recheck": "Vuelve a comprobarlo",
+      "fixWrongLb": "Corregir el número de línea (LB#) erróneo y aplicar",
+      "reviewProposed": "Revisar el cambio de nombre propuesto",
+      "cancel": "Cancelar",
+      "editName": "Editar nombre…",
+      "mislabeledTitle": "Esta carpeta está mal etiquetada como {{lb}}",
+      "mislabeledBody": "La etiqueta actual no coincide con el archivo. Al aplicar esta acción, se eliminará «{{lb}}» y se añadirá «{{newLb}}» correctamente en un solo paso.",
+      "failedTitle": "Error al cambiar el nombre",
+      "current": "actual",
+      "editing": "edición",
+      "proposed": "propuesta",
+      "dryRun": "Simulación: no se produce ningún cambio hasta que se aplique.",
+      "copyToClipboard": "Copiar al portapapeles",
+      "copyDiff": "Comparar diferencias",
+      "loggedOnly": "Registrado en «rename_history».",
+      "apply": "Aplicar cambio de nombre"
+    },
+    "stepStates": {
+      "pass": "Aceptar",
+      "blocked": "Bloqueado",
+      "action": "Acción",
+      "running": "En ejecución",
+      "pending": "Pendiente",
+      "mute": "—"
+    },
+    "buckets": {
+      "needs": "Te necesitamos",
+      "ready": "Listo",
+      "running": "En ejecución",
+      "shelf": "Estantería",
+      "done": "Hecho",
+      "all": "Todo"
+    },
+    "queueRow": {
+      "verifyingProgress": "Verificación de {{done}}/{{total}}…"
+    },
+    "status": {
+      "inProgress": "En curso",
+      "shelved": "Aparcado",
+      "deferredReason": "Aplazado — reactivar para continuar",
+      "inCollection": "En la colección",
+      "filedTo": "Archivado en {{mount}}",
+      "filedTagged": "Archivado y etiquetado",
+      "readyToFile": "Listo para archivar",
+      "archiveCleanReason": "Limpieza del archivo: añadir el archivo a la colección",
+      "readyToApply": "Listo para su aplicación",
+      "confidentReason": "Coincidencia segura: solo tienes que aplicar el cambio de nombre"
+    },
+    "detail": {
+      "batch": "Por lotes",
+      "open": "Abrir",
+      "revealTitle": "Mostrar carpeta en el Finder"
+    },
+    "contextMenu": {
+      "shelve": "Aparcar (omitir por ahora)",
+      "unshelve": "Recuperar"
+    },
+    "lbdir": {
+      "runsAfterTitle": "Se ejecuta tras la búsqueda",
+      "retrieveNow": "Recuperar Sidecar ahora",
+      "runsAfterBody": "Una vez que la búsqueda resuelve un número LB#, recuperamos el archivo lbdir*.txt de la caché del archivo y lo comparamos con los archivos del disco. Puedes descargarlo antes si lo deseas.",
+      "loading": "Cargando…",
+      "openFile": "Abrir lbdir.txt",
+      "fullScreen": "Pantalla completa de LBDIR →",
+      "stats": {
+        "total": "Total",
+        "pass": "Aceptar",
+        "missing": "Falta",
+        "mismatch": "Incoherencia"
+      },
+      "noLbdirFound": "No se ha encontrado ningún archivo lbdir*.txt. Intenta extraer la entrada de la pantalla LBDIR.",
+      "archiveCleanTitle": "Archivo limpio",
+      "archiveCleanBody": "Todos los archivos a los que se hace referencia en el sidecar oficial están presentes y coinciden. Esta carpeta está totalmente sincronizada.",
+      "status": {
+        "pass": "Aceptar",
+        "fail": "Fallo",
+        "missingFiles": "Archivos que faltan",
+        "extraFiles": "Archivos adicionales",
+        "noLbdir": "Sin lbdir",
+        "noLb": "Sin n.º de línea",
+        "noShntool": "Sin shntool"
+      },
+      "toast": {
+        "reconcileFailed": "Error al conciliar el escaneo",
+        "applied": "Aplicado",
+        "applyFailed": "Aplicación fallida",
+        "retrieveFailed": "Recuperar lo que ha fallado"
+      }
+    }
   },
   "collection": {
     "confirmDialog": {
@@ -653,7 +826,7 @@
     "title": "Mapa del concierto",
     "geocoded": "{{count}} geocodificado",
     "awaitingGeocode": "{{count}} pendiente de geocodificación",
-    "desc": "Filtre las sedes por año, propiedad o estado. El mapa en vivo se abre en su navegador en localhost:5174/map.",
+    "desc": "Filtre las sedes por año, propiedad o estado. El mapa en vivo se abre en su navegador en 127.0.0.1:5174/map.",
     "copyShareUrl": "Copiar URL compartida",
     "openLiveMap": "Abrir mapa en directo",
     "yearRange": "Años",

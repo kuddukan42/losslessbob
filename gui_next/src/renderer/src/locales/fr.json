@@ -179,7 +179,9 @@
       "type": "Type d'application",
       "xref": "Référence croisée",
       "open": "Ouvrir sur LB Website",
-      "addWishlist": "+WL"
+      "addWishlist": "+WL",
+      "openTitle": "Ouvrir cette entrée sur losslessbob.com",
+      "pinAndContinue": "Épingler {{lb}} et continuer"
     },
     "states": {
       "matched": "Apparié",
@@ -399,7 +401,11 @@
       "lookup": "Recherche",
       "rename": "Renommer",
       "lbdir": "LBDIR",
-      "collect": "Collecter"
+      "collect": "Collecter",
+      "quickLookup": "Recherche rapide",
+      "noFolder": "pas de dossier",
+      "dragInfo": "Faites glisser les dossiers n'importe où pour les ajouter à la file d'attente. Ils seront automatiquement vérifiés et recherchés.",
+      "openLocation": "Emplacement de la file d'attente ouverte"
     },
     "filter": {
       "all": "Tous",
@@ -436,7 +442,13 @@
       "rename": "Renommer",
       "lbdir": "LBDIR",
       "collect": "Collecter",
-      "lb": "LB#"
+      "lb": "LB#",
+      "stages": "Étapes",
+      "status": "État",
+      "apply": "Appliquer",
+      "done": "Terminé",
+      "aliasBadge": "↩ alias",
+      "resolvedFromAlias": "Résolu à partir de l'alias : {{list}}"
     },
     "file": {
       "action": "Classer",
@@ -482,7 +494,28 @@
       "alreadyInCollectionTitle": "Déjà dans la collection",
       "alreadyInCollectionBody": "Cet enregistrement est déjà répertorié dans votre collection sous {{path}}. L'archivage déplacera le dossier vers le nouvel emplacement et mettra à jour la fiche de la collection.",
       "renamePendingTitle": "Renommage requis avant le classement",
-      "renamePendingBody": "Ce dossier a un renommage non appliqué. Passez à l'étape Renommer et appliquez-le avant de classer."
+      "renamePendingBody": "Ce dossier a un renommage non appliqué. Passez à l'étape Renommer et appliquez-le avant de classer.",
+      "staging": "staging",
+      "finalStorage": "stockage final",
+      "whatFilingTitle": "À quoi sert le classement ?",
+      "fileAction": "Ajouter au catalogue",
+      "filingBody": "Déplace le dossier vers {{dest}}, crée la ligne de collection et lui attribue les balises « owned » et « public ». Enregistré dans rename_history.",
+      "resolvingDest": "Détermination de la destination du montage sélectionné — si cela ne fonctionne pas, essayez « {{reset}} ».",
+      "recheckRoute": "Vérifier à nouveau l'itinéraire",
+      "addedTitle": "Ajouté à la collection",
+      "lbLabel": "LB#",
+      "mountLabelText": "Monter",
+      "cantFile": "Impossible de classer",
+      "unknownError": "Erreur inconnue",
+      "lastStepInfo": "Il s'agit de la dernière étape — le passage vers « Ma collection ». Une fois que le fichier sidecar est synchronisé dans LBDIR, le dossier est acheminé vers le point de montage de stockage approprié, y est déplacé, puis marqué comme « appartenant à l'utilisateur ». Terminez d'abord les étapes précédentes — ou utilisez « Marquer comme terminé » à n'importe quelle étape pour contourner les verrous et continuer à partir d'ici.",
+      "checkRouteNow": "Vérifier l'itinéraire maintenant",
+      "errors": {
+        "noDate": "Cette entrée ne comporte pas de date de concert — impossible de déterminer l'année pour le routage.",
+        "noRoute": "Aucun itinéraire de collecte n'est configuré pour cette année. Ajoutez-en un dans Configuration → Itinéraires de collecte.",
+        "mountOffline": "Le périphérique de stockage est hors ligne ou inaccessible.",
+        "destExists": "Un dossier portant ce nom existe déjà à l'emplacement de destination.",
+        "dbError": "Une erreur de base de données s'est produite lors de la résolution de l'itinéraire."
+      }
     },
     "titleFolders": "Pipeline · Dossiers {{count}}",
     "applyAllReady": "Appliquer toutes les modifications {{count}}",
@@ -490,7 +523,147 @@
     "autoRun": "Exécution automatique au glisser-déposer",
     "autoRunHint": "Lorsqu'elles sont activées, les fonctions de vérification et de recherche des dossiers déposés s'exécutent automatiquement.",
     "autoRename": "Renommage automatique",
-    "autoRenameHint": "Lorsque cette option est activée, un renommage en une seule correspondance est appliqué automatiquement et le dossier passe à l'étape « Collect »."
+    "autoRenameHint": "Lorsque cette option est activée, un renommage en une seule correspondance est appliqué automatiquement et le dossier passe à l'étape « Collect ».",
+    "rerunStage": "Relancer cette étape",
+    "rerunGeneric": "Relancer",
+    "verify": {
+      "hashingFiles": "Calcul du hachage des fichiers…",
+      "advanceAuto": "Ce dossier passera automatiquement à l'étape « Recherche ».",
+      "notRun": "Vérifier que l'application n'a pas encore été lancée.",
+      "run": "Lancer la vérification",
+      "shnToolMissingTitle": "Impossible de décoder les fichiers .shn sans shntool",
+      "shnToolMissingBody": "Ce dossier contient des fichiers SHN, mais shntool n'est pas installé. Installez shntool afin de pouvoir décoder et vérifier les sommes de contrôle.",
+      "rerun": "Vérifier à nouveau",
+      "noChecksumsTitle": "Ce dossier ne contient pas encore de sommes de contrôle.",
+      "noChecksumsBody": "Il n'y a pas de fichiers .ffp ou .md5 associés ici, il n'y a donc rien à vérifier. Générez-les à partir des fichiers audio présents sur le disque ; ce dossier se vérifie et s'actualise alors automatiquement.",
+      "generating": "Génération en cours…",
+      "generate": "Générer FFP + MD5",
+      "generateInfo": "Enregistre les fichiers _mychecksums.ffp et .md5 dans le dossier. Non destructif : vos fichiers audio ne sont pas modifiés.",
+      "stats": {
+        "total": "Total",
+        "pass": "Pass",
+        "missing": "Manquant",
+        "mismatch": "Incohérence",
+        "extra": "Supplément"
+      },
+      "missingFiles_one": "Le fichier {{count}} figurant dans la liste des sommes de contrôle n'est pas présent sur le disque. Restaurez les fichiers manquants, puis vérifiez à nouveau.",
+      "missingFiles_other": "Les fichiers {{count}} figurant dans la liste des sommes de contrôle ne se trouvent pas sur le disque. Restaurez les fichiers manquants, puis vérifiez à nouveau.",
+      "mismatchedFiles_one": "Le fichier {{count}} présente une somme de contrôle incorrecte — le fichier audio est peut-être corrompu ou a été modifié.",
+      "mismatchedFiles_other": "Les fichiers {{count}} présentent des sommes de contrôle non concordantes — les fichiers audio sont peut-être corrompus ou ont été modifiés."
+    },
+    "lookup": {
+      "runsAuto": "La recherche s'exécute automatiquement une fois la vérification réussie.",
+      "run": "Lancer la recherche",
+      "matchedCount": "{{matched}}/{{given}} correspondants",
+      "multiLbInfo": "même enregistrement, les deux entrées",
+      "resolvedFrom": "↩ résolu à partir de {{list}}",
+      "multiLb": "Multi-LB",
+      "matched": "Correspondance",
+      "multiLbMsg": "Les deux entrées sont automatiquement liées. Le dossier sera renommé en incluant les deux numéros de liste de liens.",
+      "flowsAuto": "La correspondance est automatiquement transférée vers LBDIR — aucune étape supplémentaire n'est nécessaire.",
+      "rerun": "Relancer la recherche",
+      "whichShow": "De quelle série s'agit-il ?",
+      "pinInfo": "L'épinglage crée un lien dossier→LB, de sorte que la question ne se pose plus jamais.",
+      "partialMatchInfo": "{{lb}} a été identifié, mais toutes les sommes de contrôle de ce dossier ne correspondent pas à l'enregistrement de l'archive — certains fichiers sur le disque peuvent différer de la copie officielle. LBDIR, renommer et fichier sont bloqués jusqu'à ce que vous confirmiez qu'il s'agit bien de la bonne émission. Si vous en êtes sûr, épinglez-la pour continuer.",
+      "pinConfirms": "L'épinglage confirme que ce dossier appartient à {{lb}} et débloque toutes les étapes suivantes.",
+      "noMatches": "Aucun résultat trouvé",
+      "noMatchesInfo": "Aucune de ces sommes de contrôle ne correspond à une entrée de l'archive. Il s'agit peut-être d'une source nouvelle ou inconnue."
+    },
+    "rename": {
+      "unlocksAfter": "Le renommage est débloqué une fois que la recherche a résolu un numéro de bibliothèque (LB#).",
+      "checkRename": "Vérifier le changement de nom",
+      "renamed": "Renommé",
+      "loggedReady": "Enregistré dans l'historique des renommages. Prêt pour la prochaine collecte.",
+      "alreadyCorrect": "Le nom du dossier est déjà correct",
+      "recheck": "Vérifier à nouveau",
+      "fixWrongLb": "Corrigez le numéro de ligne erroné et appliquez les modifications",
+      "reviewProposed": "Examiner la proposition de changement de nom",
+      "cancel": "Annuler",
+      "editName": "Modifier le nom…",
+      "mislabeledTitle": "Ce dossier porte le nom erroné « {{lb}} ».",
+      "mislabeledBody": "La balise existante ne correspond pas à l'archive. L'application de cette balise supprimera {{lb}} et ajoutera la balise correcte {{newLb}} en une seule étape.",
+      "failedTitle": "Échec du changement de nom",
+      "current": "actuel",
+      "editing": "édition",
+      "proposed": "proposé",
+      "dryRun": "Simulation — rien ne change tant que vous n'avez pas validé.",
+      "copyToClipboard": "Copier dans le presse-papiers",
+      "copyDiff": "Différence entre les versions",
+      "loggedOnly": "Enregistré dans l'historique des renommages.",
+      "apply": "Appliquer le changement de nom"
+    },
+    "stepStates": {
+      "pass": "Pass",
+      "blocked": "Bloqué",
+      "action": "Action",
+      "running": "En cours d'exécution",
+      "pending": "En attente",
+      "mute": "—"
+    },
+    "buckets": {
+      "needs": "On a besoin de toi",
+      "ready": "Prêt",
+      "running": "En cours d'exécution",
+      "shelf": "Classement",
+      "done": "Terminé",
+      "all": "Tout"
+    },
+    "queueRow": {
+      "verifyingProgress": "Vérification de {{done}}/{{total}}…"
+    },
+    "status": {
+      "inProgress": "En cours",
+      "shelved": "Mis de côté",
+      "deferredReason": "Reporté — réactiver pour continuer",
+      "inCollection": "Dans la collection",
+      "filedTo": "Classé sous {{mount}}",
+      "filedTagged": "Classé et tagué",
+      "readyToFile": "Prêt à l'emploi",
+      "archiveCleanReason": "Archive-clean — ajouter le fichier à la collection",
+      "readyToApply": "Prêt à postuler",
+      "confidentReason": "Correspondance certaine — il suffit d'appliquer le changement de nom"
+    },
+    "detail": {
+      "batch": "Traitement par lots",
+      "open": "Ouvrir",
+      "revealTitle": "Afficher le dossier dans le Finder"
+    },
+    "contextMenu": {
+      "shelve": "Mettre de côté (à ignorer pour l’instant)",
+      "unshelve": "Réactiver"
+    },
+    "lbdir": {
+      "runsAfterTitle": "S'exécute après la recherche",
+      "retrieveNow": "Récupérer le fichier sidecar maintenant",
+      "runsAfterBody": "Une fois qu'une recherche a permis d'identifier un numéro LB#, nous récupérons le fichier lbdir*.txt dans le cache d'archivage et le comparons aux fichiers présents sur le disque. Vous pouvez le récupérer plus tôt si vous le souhaitez.",
+      "loading": "Chargement en cours…",
+      "openFile": "Ouvrir lbdir.txt",
+      "fullScreen": "Écran complet de LBDIR →",
+      "stats": {
+        "total": "Total",
+        "pass": "Pass",
+        "missing": "Manquant",
+        "mismatch": "Incohérence"
+      },
+      "noLbdirFound": "Aucun fichier lbdir*.txt n'a été trouvé. Essayez de récupérer l'entrée depuis l'écran LBDIR.",
+      "archiveCleanTitle": "Archive-clean",
+      "archiveCleanBody": "Tous les fichiers référencés dans le fichier sidecar officiel sont présents et correspondent. Ce dossier est entièrement synchronisé.",
+      "status": {
+        "pass": "Pass",
+        "fail": "Échec",
+        "missingFiles": "Fichiers manquants",
+        "extraFiles": "Fichiers supplémentaires",
+        "noLbdir": "Pas de lbdir",
+        "noLb": "Pas de n° LB",
+        "noShntool": "Pas de shntool"
+      },
+      "toast": {
+        "reconcileFailed": "Échec de la réconciliation de l'analyse",
+        "applied": "Appliqué",
+        "applyFailed": "Échec de l'application",
+        "retrieveFailed": "Récupération échouée"
+      }
+    }
   },
   "collection": {
     "confirmDialog": {
@@ -653,7 +826,7 @@
     "title": "Carte des concerts",
     "geocoded": "{{count}} géocodé",
     "awaitingGeocode": "{{count}} en attente de géocodage",
-    "desc": "Filtrez les sites par année, par propriétaire ou par statut. La carte en direct s'ouvre dans votre navigateur à l'adresse suivante : localhost:5174/map.",
+    "desc": "Filtrez les sites par année, par propriétaire ou par statut. La carte en direct s'ouvre dans votre navigateur à l'adresse suivante : 127.0.0.1:5174/map.",
     "copyShareUrl": "Copier l'URL de partage",
     "openLiveMap": "Ouvrir la carte en direct",
     "yearRange": "Fourchette d'années",

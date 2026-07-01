@@ -1,6 +1,120 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-218: Performance screen — column widths wrong/misaligned
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenLibrary.tsx:1849-2126 (performance-view table)
+Reported: 2026-06-22
+Fixed: 2026-07-01
+Root cause: Original report never specified the exact symptom (which column, too narrow/wide/
+  misaligned) and cited line numbers (1541, 1768-1777) that no longer match the file. On review,
+  the performance (date-row) table's column model at its current location is internally
+  consistent: colgroup defines 10 `<col>`s (edge/expand/date/show/tour/families/recs/★/coverage/
+  flex-spacer), and the header row, "show" rows, "fam" rows, and "member" rows each sum to exactly
+  10 cells once TR's auto-injected 3px edge `<td>` and the colSpans used in fam/member rows are
+  accounted for. The table appears to have already been reworked under a "Column model (spec §5)"
+  comment at line 1849 sometime after this bug was filed.
+Fix: Confirmed fixed by user; no further code change required. Closed as already resolved by a
+  prior unrelated pass.
+
+BUG-201: Pipeline screen — extensive untranslated English when non-English locale is active
+Status: Fixed
+File(s): gui_next/src/renderer/src/components/pipeline/PipelineParts.tsx
+         gui_next/src/renderer/src/components/pipeline/lookupState.ts
+         gui_next/src/renderer/src/components/pipeline/LookupDetail.tsx
+         gui_next/src/renderer/src/screens/ScreenPipeline.tsx (throughout)
+         gui_next/src/renderer/src/locales/{en,de,fr,es,it,nl}.json
+Reported: 2026-06-17
+Fixed: 2026-07-01
+Root cause: Three distinct gaps: (1) DEFAULT_STAGES (PipelineParts.tsx) hard-coded English stage
+  labels used by the pipeline stepper/tracker, never wired to i18n despite matching
+  `pipeline.queue.*` locale keys already existing unused. (2) STATE_TONE (lookupState.ts)
+  hard-coded lookup-state pill labels (Matched/Incomplete/Not found/Duplicate/XRef). (3)
+  ScreenPipeline.tsx had ~110 hard-coded English inline strings (button labels, banner
+  titles/bodies, guidance text, table headers/row actions, context menu) with no i18n key,
+  including two frontend-owned lookup maps (STATE_LABEL for LBDIR status pills, ERROR_MSG for
+  file-stage errors) keyed by stable backend enum codes but with hardcoded English values.
+Fix: Converted STATE/BUCKET (PipelineParts.tsx), STATE_TONE (lookupState.ts), STATE_LABEL and
+  ERROR_MSG (ScreenPipeline.tsx) to store `labelKey` locale-key references resolved via `t()` at
+  each render site (all consuming components already are, or were made, function components with
+  hook access; `deriveFolderStatus()` now takes a `TFunction` param since it's a plain function).
+  DEFAULT_STAGES reuses the pre-existing `pipeline.queue.{verify,lookup,lbdir,rename,collect}`
+  keys. Systematic pass through ScreenPipeline.tsx replaced every remaining hard-coded string with
+  `t()` + ~120 new keys added under `pipeline.*` in en.json, then translated to all 5 other
+  locales via `deepl_translate_gui_next.py` (with a handful of ambiguous single words —
+  pipeline.buckets.shelf, pipeline.contextMenu.shelve/unshelve — hand-corrected where DeepL left
+  them as English in most languages). `tsc -b tsconfig.web.json --noEmit` and `electron-vite
+  build` both clean; the 3 residual tsc errors touching files this fix modified (Pill `title`
+  prop, IconButton `disabled` prop, `shiftKey` on ChangeEvent) all predate this change. Backend-
+  returned free-text `step.label`/`step.error` values (genuinely dynamic, embed counts/filenames/
+  mount names server-side) intentionally left in English per user decision — tracked as TODO-195
+  for a future backend i18n-plumbing pass.
+
+BUG-215: Map screen renders white/blank — no map shown in app
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenMap.tsx:63, gui_next/src/renderer/src/locales/*.json
+Reported: 2026-06-22
+Fixed: 2026-07-01
+Root cause: MAP_URL hardcoded `http://localhost:5174/map` for the live-map iframe's src, but
+  index.html's CSP frame-src/connect-src/img-src directives only allowlist
+  `http://127.0.0.1:5174` (the convention window.api.flaskBase and every other screen uses).
+  CSP treats localhost and 127.0.0.1 as distinct origins, so the browser silently blocked the
+  iframe navigation entirely, leaving the Map screen blank/white with no console-visible error
+  in the app itself (only a CSP violation report).
+Fix: Changed MAP_URL to `${window.api.flaskBase}/map` so the iframe origin matches the CSP
+  allowlist. Updated the map.desc locale string in all 6 locale files (en/de/fr/es/nl/it) from
+  "localhost:5174/map" to "127.0.0.1:5174/map" to match.
+
+BUG-219: Search/filter state lost when navigating away from a screen and back
+Status: Fixed
+File(s): gui_next/src/renderer/src/screens/ScreenLibrary.tsx (new useLibraryFilterStore +
+  ScreenLibrary/PerformanceLensView filter state), gui_next/src/renderer/src/App.tsx:265-285
+Reported: 2026-06-22
+Fixed: 2026-07-01
+Root cause: App.tsx renders each screen behind a react-router <Route>, which unmounts the
+  component when navigating to a different route. Search/filter values (`query` and the
+  `active*` filter Sets in ScreenLibrary.tsx, plus the same pattern duplicated in its
+  PerformanceLensView child component for the performance lens) were plain local useState, so
+  they reset to default the moment the screen unmounts — navigating away and back lost whatever
+  filter/search was applied.
+Fix: Added a module-scope `useLibraryFilterStore` (zustand, no persist middleware — survives
+  route changes within a session, matching the other ephemeral UI stores in lib/*Store.ts, e.g.
+  useFolderQueueStore) and swapped both lenses' filter useState calls for it: recording lens
+  (scope/query/activeDecade/activeStatus/activeRating/activeSource/activeHealth) and performance
+  lens (query/activeDecade/activeYear/activeCoverage/activeSource/activeRating/perfView). Store
+  setters mirror React's `Dispatch<SetStateAction<T>>` signature so existing toggleSet()/
+  setX(new Set()) call sites needed no changes. View/selection-only state (groupByYear,
+  sortKey/sortDir, selectedLb, detailPanelOpen, checkedIds, expandedShows, collapsedFams, etc.)
+  intentionally left as local useState — out of scope for a search/filter bug. Considered
+  reusing the existing `KeepAlivePipeline` always-mounted (CSS display:none) pattern from
+  App.tsx instead, but that would keep Library's heavy virtualized table + queries running even
+  when off-screen; the store-only fix is more proportionate to the actual symptom. `tsc --noEmit`
+  clean for the changed file (pre-existing unrelated errors remain in other files, unchanged by
+  this fix). Root cause note that this pattern "likely affects other screens" too was not
+  chased further — out of scope, no other screen was named in the bug report.
+
+BUG-220: LB metadata scraper-by-range excludes start/end LB numbers that have no checksum entry yet
+Status: Fixed
+File(s): backend/app.py:1782-1849 (scrape_start)
+Reported: 2026-06-22
+Fixed: 2026-07-01
+Root cause: scrape_start builds the scrape list lb_numbers from
+  "SELECT DISTINCT c.lb_number FROM checksums c ... WHERE c.lb_number >= start_lb AND <= end_lb"
+  — only LB numbers that already have a checksums row are included. Gaps within
+  [start_lb, effective_end] are detected afterward and given an insert_missing_entry()
+  placeholder row, but those gap LB numbers (which may include the start_lb/end_lb the user
+  typed in) were never added to lb_numbers, so _start_scrape_thread never actually scraped them
+  — they just sat as "missing" stubs. User-specified start/end LB boundaries could silently be
+  skipped if no checksum existed for them yet.
+Fix: Gap numbers are now appended to lb_numbers (list re-sorted) right after the
+  insert_missing_entry() stub, so they're queued into the scrape thread like any other LB.
+  Gap numbers whose lb_master.lb_status is 'private' are excluded from queuing (checked via a
+  single batched query), preserving the route's documented "excludes private LBs" contract —
+  scrape_entry's existing handling of entries.status='missing' (always re-checks on live
+  scrapes) already does the right thing once these numbers reach it, so no scraper.py change
+  was needed. Verified via an isolated temp-DB simulation (gaps queued + stubbed, private gap
+  excluded, existing checksum'd numbers untouched); no pre-existing test coverage for this route.
+
 BUG-221: "Open LB page" link doesn't work in some locations — inconsistent URL construction
 Status: Fixed
 File(s): gui_next/src/renderer/src/lib/lbUrl.ts (new),
