@@ -93,7 +93,6 @@ for lb, d in siblings.items():
     raw.update(F.extract_hf_native(p))
     # completeness: this sibling's duration vs family max (filled after loop)
     raw["_dur"] = d["dur"]
-    raw["sibilance_ratio_db"] = raw.get("harsh_ratio_db", 0)  # stand-in (bulk SR caps sibilance)
     raw_all[lb] = raw
 
 # completeness pass

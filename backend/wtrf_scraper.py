@@ -2,10 +2,18 @@
 matching LosslessBob entries, then download the .torrent file.
 
 Matching strategy (strongest to weakest signal):
-  1. FFP checksum match in post body  — definitive (unique per recording)
+  1. FFP or MD5/SHA1 checksum match in post body — definitive (unique per recording)
   2. Audio filename match in post body — near-definitive
   3. Equipment/source-chain token match from entries.source_chain/description
   4. Taper name match from entries.taper_name
+
+Candidates are also hard-disqualified (never scored) when:
+  - The post body or attachment filenames carry an explicit "LB-NNNNN" tag for
+    a DIFFERENT entry (see BUG-225, BUG-227).
+  - The post predates the entry's own acquisition window: entries.description
+    ends with a "bittorrent download MM/YY" note recording when the LosslessBob
+    curator downloaded that recording; a forum post can't be the source of a
+    download that happened more than _DOWNLOAD_WINDOW_MONTHS before it.
 
 Multiple posts can exist for the same date and city (different tapers / sources).
 Signal scoring disambiguates them; the torrent is only downloaded when confidence
@@ -21,6 +29,7 @@ import logging
 import re
 import time
 from calendar import month_abbr, month_name
+from datetime import date, datetime
 from pathlib import Path
 
 import requests
@@ -34,6 +43,13 @@ logger = logging.getLogger(__name__)
 _DEFAULT_DELAY = 2.0   # seconds between page fetches
 _SEARCH_DELAY  = 10.0  # floor for seconds between search2 queries — the WTRF
                         # forum's flood-control rejects searches < 5s apart
+
+# How far before an entry's own "bittorrent download MM/YY" date a candidate
+# post is still allowed to have been made. A post can't be the source of a
+# download that predates it, but tapers/uploaders sometimes leave a post up
+# for a while before the curator gets to it, hence a window rather than an
+# exact-month match.
+_DOWNLOAD_WINDOW_MONTHS = 6
 
 # Confidence levels ordered weakest → strongest for comparison
 _CONF_ORDER = ("not_found", "needs_review", "ambiguous", "medium", "high", "definitive")
@@ -99,6 +115,74 @@ def _date_variants(date_str: str) -> list[str]:
     ]
 
 
+# ── Download-window helpers ─────────────────────────────────────────────────────
+
+_DOWNLOAD_DATE_RE = re.compile(r"download\s+(\d{1,2})/(\d{2,4})", re.IGNORECASE)
+
+
+def _entry_download_date(entry: dict) -> date | None:
+    """Parse the curator's own acquisition date from an entry's description.
+
+    LosslessBob descriptions typically end with a note like
+    "bittorrent download 05/26; did not review this" recording when *this*
+    entry's recording was acquired. Earlier "download MM/YY" mentions in the
+    text are usually notes about OTHER, related LB entries' history (e.g.
+    cross-references to a sibling version), so the LAST match is taken as
+    this entry's own date.
+
+    Args:
+        entry: Row dict from the entries table.
+
+    Returns:
+        The 1st of that month/year as a date, or None if no match/unparseable.
+    """
+    matches = _DOWNLOAD_DATE_RE.findall(entry.get("description") or "")
+    if not matches:
+        return None
+    month_s, year_s = matches[-1]
+    month = int(month_s)
+    if not 1 <= month <= 12:
+        return None
+    year = int(year_s)
+    if year < 100:
+        year += 2000   # LosslessBob's bittorrent-era downloads are all 2000s+
+    try:
+        return date(year, month, 1)
+    except ValueError:
+        return None
+
+
+def _months_before(d: date, months: int) -> date:
+    """Return the 1st of the month that is ``months`` months before ``d``."""
+    month_index = d.year * 12 + (d.month - 1) - months
+    return date(month_index // 12, month_index % 12 + 1, 1)
+
+
+_POST_DATE_RE = re.compile(r"on:\s*([A-Za-z]+\s+\d{1,2},\s*\d{4})")
+
+
+def _parse_post_date(keyinfo_text: str) -> date | None:
+    """Extract a post's creation date from its ``div.keyinfo`` text.
+
+    SMF renders each message's timestamp as "« on: August 06, 2025, ... »"
+    for the first post, or "« Reply #N on: ... »" for replies — both end in
+    "on: <Month DD, YYYY>", so the same pattern covers both.
+
+    Args:
+        keyinfo_text: Text content of the message's keyinfo div.
+
+    Returns:
+        The post's date, or None if no timestamp was found/parseable.
+    """
+    m = _POST_DATE_RE.search(keyinfo_text)
+    if not m:
+        return None
+    try:
+        return datetime.strptime(m.group(1), "%B %d, %Y").date()
+    except ValueError:
+        return None
+
+
 # ── Signal extraction ──────────────────────────────────────────────────────────
 
 def _equipment_tokens(source_chain: str, description: str) -> list[str]:
@@ -147,11 +231,14 @@ def _score_candidate(
 
     # Round 0 — explicit "LB-NNNNN" tag in the post body. Posts created by this
     # app's forum_poster embed one in the metadata header (see
-    # backend/forum_poster.py:_build_body). A tag for a DIFFERENT LB number
-    # means the post documents that other show, not this entry — hard
-    # disqualify rather than let it compete on weak date/torrent-only signals.
+    # backend/forum_poster.py:_build_body), always zero-padded to 5 digits, but
+    # legacy/non-app posts often write it unpadded (e.g. "LB-8"). A tag for a
+    # DIFFERENT LB number means the post documents that other show, not this
+    # entry — hard disqualify rather than let it compete on weak
+    # date/torrent-only signals. Minimum digit count is 1 (not 3) so short,
+    # unpadded numbers aren't missed.
     own_lb = entry.get("lb_number")
-    tagged = {int(n) for n in re.findall(r"lb-0*(\d{3,5})\b", body_lower)}
+    tagged = {int(n) for n in re.findall(r"lb-0*(\d{1,5})\b", body_lower)}
     if own_lb is not None and own_lb in tagged:
         score += 200
         signals["lb_tag_match"] = True
@@ -167,6 +254,18 @@ def _score_candidate(
     if ffp_hits:
         score += ffp_hits * 100
         signals["ffp_matches"] = ffp_hits
+
+    # Round 1b — MD5/SHA1 checksums (100 pts each, definitive). Older/SHN-era
+    # posts often list raw MD5 or SHA1 sums ("checksum *filename") instead of
+    # FFP-format fingerprints — chk_type 'm' (generic) and 's' (.shn) cover
+    # those rows. An exact hash match is just as definitive as an FFP match.
+    md5_hits = sum(
+        1 for c in checksums
+        if c.get("chk_type") in ("m", "s") and c.get("checksum") and c["checksum"] in post_body
+    )
+    if md5_hits:
+        score += md5_hits * 100
+        signals["md5_matches"] = md5_hits
 
     # Round 2 — Audio filenames (10 pts each)
     fname_hits = sum(
@@ -206,7 +305,7 @@ def _classify_confidence(score: int, signals: dict) -> str:
     Returns:
         One of: 'definitive', 'high', 'medium', 'needs_review', 'not_found'.
     """
-    if signals.get("ffp_matches", 0) >= 1:
+    if signals.get("ffp_matches", 0) >= 1 or signals.get("md5_matches", 0) >= 1:
         return "definitive"
     if signals.get("lb_tag_match"):
         return "high"
@@ -297,10 +396,17 @@ def _fetch_topic(
         delay: Seconds to sleep before the request.
 
     Returns:
-        Dict with keys: body_text (str), torrent_url (str|None), topic_title (str).
+        Dict with keys: body_text (str), torrent_url (str|None), topic_title (str),
+        attachment_text (str) — visible link text of every attachment in the
+        first post (e.g. attachment filenames), which can carry its own
+        "LB-NNNNN" tag distinct from the body text — and post_date (date|None),
+        the first post's creation date parsed from its keyinfo timestamp.
     """
     time.sleep(delay)
-    result: dict = {"body_text": "", "torrent_url": None, "topic_title": ""}
+    result: dict = {
+        "body_text": "", "torrent_url": None, "topic_title": "",
+        "attachment_text": "", "post_date": None,
+    }
     try:
         resp = session.get(topic_url, timeout=20, headers={"Referer": FORUM_BASE})
     except Exception as exc:
@@ -322,19 +428,35 @@ def _fetch_topic(
     if first_msg:
         result["body_text"] = first_msg.get_text(separator="\n")
 
+        # Post date: the "« on: <Month DD, YYYY>, HH:MM:SS »" timestamp lives
+        # in a sibling div.keyinfo within the same div.postarea, not inside
+        # the message body div itself.
+        postarea = first_msg.find_parent("div", class_="postarea")
+        if postarea:
+            keyinfo = postarea.find("div", class_="keyinfo")
+            if keyinfo:
+                result["post_date"] = _parse_post_date(keyinfo.get_text())
+
     # Torrent attachment: look only in the FIRST div.attachments on the page
     # (subsequent ones belong to reply posts).  The attachment link has
     # action=dlattach in its href and ".torrent" in its visible text.
+    # Attachment filenames live in this div, a sibling of the post body div,
+    # so they're never seen by body_text — collect their text separately so
+    # an "LB-NNNNN" tag on the attachment itself (e.g. "LB-00008.torrent")
+    # still feeds the Round 0 disqualification check in _score_candidate.
+    attach_texts: list[str] = []
     for attach_div in soup.find_all("div", class_="attachments"):
         for a in attach_div.find_all(
             "a", href=lambda h: h and "dlattach" in (h or "")
         ):
-            if ".torrent" in a.get_text(strip=True).lower():
+            text = a.get_text(strip=True)
+            attach_texts.append(text)
+            if ".torrent" in text.lower() and not result["torrent_url"]:
                 result["torrent_url"] = _resolve_url(a["href"])
-                break
-        if result["torrent_url"]:
+        if attach_texts:
             break   # stop after first post's attachment section
 
+    result["attachment_text"] = " ".join(attach_texts)
     return result
 
 
@@ -452,6 +574,15 @@ def find_torrent_for_lb(
     date_str  = entry.get("date_str") or ""
     variants  = _date_variants(date_str)
 
+    # A forum post can't be the source of a download that predates it, so
+    # anything posted more than _DOWNLOAD_WINDOW_MONTHS before the entry's own
+    # "bittorrent download MM/YY" note is out of consideration. None when the
+    # description has no such note (older entries / non-bittorrent sources).
+    download_date   = _entry_download_date(entry)
+    download_cutoff = (
+        _months_before(download_date, _DOWNLOAD_WINDOW_MONTHS) if download_date else None
+    )
+
     if not variants:
         return _fail(
             "not_found",
@@ -512,15 +643,31 @@ def find_torrent_for_lb(
     # ── Score each candidate ───────────────────────────────────────────────────
     # Elements: (score, signals, topic_url, torrent_url)
     scored: list[tuple[int, dict, str, str | None]] = []
-    disqualified = 0
+    disqualified_tag = 0
+    disqualified_old = 0
 
     for topic_url, _title in candidates:
         post = _fetch_topic(session, topic_url, delay)
         if not post["body_text"] and not post["torrent_url"]:
             continue
-        sc, sigs = _score_candidate(post["body_text"], checksums, entry)
+        if download_cutoff and post["post_date"] and post["post_date"] < download_cutoff:
+            disqualified_old += 1
+            logger.info(
+                "wtrf_scraper: LB-%05d disqualifying %s — posted %s, before the "
+                "%d-month window preceding the %s download date (cutoff %s)",
+                lb_number, topic_url, post["post_date"],
+                _DOWNLOAD_WINDOW_MONTHS, download_date, download_cutoff,
+            )
+            continue
+        # Scan body + attachment filenames together so an "LB-NNNNN" tag on
+        # either one (e.g. the attachment is literally named "LB-00008.torrent")
+        # triggers the Round 0 disqualification check.
+        scan_text = post["body_text"]
+        if post["attachment_text"]:
+            scan_text = f"{scan_text}\n{post['attachment_text']}"
+        sc, sigs = _score_candidate(scan_text, checksums, entry)
         if sigs.get("lb_tag_mismatch"):
-            disqualified += 1
+            disqualified_tag += 1
             logger.info(
                 "wtrf_scraper: LB-%05d disqualifying %s — post tagged for %s",
                 lb_number, topic_url, sigs["lb_tag_mismatch"],
@@ -536,10 +683,19 @@ def find_torrent_for_lb(
         )
 
     if not scored:
-        if disqualified:
+        if disqualified_tag or disqualified_old:
+            reasons = []
+            if disqualified_tag:
+                reasons.append(f"{disqualified_tag} explicitly tagged for a different LB entry")
+            if disqualified_old:
+                reasons.append(
+                    f"{disqualified_old} posted before the {_DOWNLOAD_WINDOW_MONTHS}-month "
+                    "download window"
+                )
             return _fail(
                 "not_found",
-                f"All {disqualified} candidate post(s) explicitly tagged for a different LB entry",
+                f"All {disqualified_tag + disqualified_old} candidate post(s) disqualified: "
+                + "; ".join(reasons),
             )
         return _fail("not_found", "Candidates found but none had accessible content")
 

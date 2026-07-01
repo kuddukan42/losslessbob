@@ -192,6 +192,7 @@ def add_torrent_for_download(
     category: str = "",
     tags: str = "",
     api_key: str = "",
+    paused: bool = False,
 ) -> dict:
     """Add a .torrent file to qBittorrent for downloading new content.
 
@@ -209,6 +210,10 @@ def add_torrent_for_download(
         category: Optional category string.
         tags: Optional comma-separated tags string.
         api_key: API key (qBittorrent 5+). Takes priority over username/password.
+        paused: If True, add the torrent stopped/paused instead of starting
+            the download immediately. Sends both "paused" and "stopped"
+            form keys since the accepted key name changed across
+            qBittorrent WebUI API versions.
 
     Returns:
         Dict with keys: ok (bool), error (str if ok=False).
@@ -234,6 +239,9 @@ def add_torrent_for_download(
             form["category"] = category
         if tags:
             form["tags"] = tags
+        if paused:
+            form["paused"] = "true"
+            form["stopped"] = "true"
 
         with torrent.open("rb") as fh:
             files = {"torrents": (torrent.name, fh, "application/x-bittorrent")}
@@ -608,6 +616,72 @@ def rename_torrent_root(
         return {"ok": False, "error": str(exc)}
 
 
+def rename_file(
+    infohash: str,
+    old_path: str,
+    new_path: str,
+    host: str,
+    port: int,
+    username: str = "",
+    password: str = "",
+    api_key: str = "",
+) -> dict:
+    """Update qBittorrent's record of a single file's path within a torrent.
+
+    Calls POST /api/v2/torrents/renameFile. Unlike rename_torrent_root()
+    (which remaps every file under a root folder name), this remaps one
+    file — used when a file inside an already-tracked torrent's content is
+    renamed in place or moved into a subfolder (e.g. the LBDIR reconcile
+    "rename to match lbdir" and "move extras/" actions), without the
+    torrent's root folder itself moving or being renamed.
+
+    Args:
+        infohash: Hex infohash of the torrent to update.
+        old_path: File's current path as qBittorrent has it recorded,
+            relative to the torrent's save_path (i.e. including the root
+            folder name as the first path component, e.g.
+            "MyShow/d1t01.flac").
+        new_path: File's new path in the same root-relative form, e.g.
+            "MyShow/extras/d1t01.flac".
+        host: qBittorrent WebUI host.
+        port: Port.
+        username: WebUI username (ignored when api_key is set).
+        password: WebUI password (ignored when api_key is set).
+        api_key: API key (qBittorrent 5+). Takes priority over username/password.
+
+    Returns:
+        Dict with keys: ok (bool), error (str if ok=False).
+    """
+    base = _base_url(host, port)
+    session = _make_session(base, api_key)
+
+    try:
+        if not api_key:
+            err = _login(session, base, username, password)
+            if err:
+                return err
+
+        r = session.post(
+            base + "/api/v2/torrents/renameFile",
+            data={"hash": infohash.lower(), "oldPath": old_path, "newPath": new_path},
+            timeout=15,
+        )
+
+        if not api_key:
+            session.post(base + _LOGOUT_PATH, timeout=5)
+
+        if r.status_code in (200, 204):
+            return {"ok": True}
+        if r.status_code in (401, 403):
+            return {"ok": False, "error": f"Unauthorized (HTTP {r.status_code})"}
+        return {"ok": False, "error": f"qBittorrent responded HTTP {r.status_code}: {r.text[:200]}"}
+
+    except requests.exceptions.ConnectionError:
+        return {"ok": False, "error": f"Cannot connect to {base}"}
+    except Exception as exc:
+        return {"ok": False, "error": str(exc)}
+
+
 def recheck_torrent(
     infohash: str,
     host: str,
@@ -713,9 +787,13 @@ def relocate_tracked_torrent(
     Looks up torrents rows for lb_number whose source_folder matches
     old_folder and are currently marked added_to_qbt=1 with a known
     infohash. For each match, calls set_location() with the new folder's
-    parent directory so qBittorrent finds the moved content and resumes
-    seeding (after a hash recheck) instead of re-downloading. On success,
-    updates the row's source_folder to new_folder.
+    parent directory so qBittorrent finds the moved content. If
+    old_folder.name and new_folder.name differ (a rename, with or without
+    a move), rename_torrent_root() is also called so qBittorrent's root
+    folder name matches the new on-disk name. Either way, a recheck is
+    triggered afterward so seeding resumes from the new location/name
+    instead of re-downloading. On success, updates the row's source_folder
+    to new_folder.
 
     If no DB-tracked torrent matches, falls back to searching qBittorrent
     directly for a torrent whose content is old_folder (via
@@ -782,16 +860,122 @@ def relocate_tracked_torrent(
 
     errors = []
     synced_any = False
+    old_name = Path(old_folder).name
+    new_name = Path(new_folder).name
     for row in rows:
         result = set_location(
             infohash=row["infohash"], location=new_location,
             host=host, port=port, username=username, password=password, api_key=api_key,
         )
+        if not result["ok"]:
+            errors.append(result.get("error", "unknown error"))
+            continue
+
+        if old_name != new_name:
+            rename_result = rename_torrent_root(
+                row["infohash"], old_name, new_name,
+                host=host, port=port, username=username, password=password, api_key=api_key,
+            )
+            if not rename_result["ok"]:
+                errors.append(rename_result.get("error", "unknown error"))
+                continue
+
+        recheck_torrent(row["infohash"], host=host, port=port,
+                         username=username, password=password, api_key=api_key)
+
+        db.update_torrent_record(row["id"], {"source_folder": str(new_folder)}, db_path=db_path)
+        synced_any = True
+
+    if errors:
+        return {"ok": False, "synced": synced_any, "error": "; ".join(errors)}
+    return {"ok": True, "synced": synced_any, "error": None}
+
+
+def sync_file_renames(
+    lb_number: int,
+    folder: str | Path,
+    renames: list[tuple[str, str]],
+    host: str,
+    port: int,
+    username: str = "",
+    password: str = "",
+    api_key: str = "",
+    db_path=None,
+) -> dict:
+    """Point qBittorrent at new paths for files renamed/moved within a folder.
+
+    Used for changes that keep a torrent's root folder in place but alter
+    file paths under it — e.g. LBDIR reconcile renaming a file to match the
+    lbdir manifest, or moving stray files into a "extras/" subfolder. Each
+    entry in renames is (old_rel, new_rel), relative to folder using "/"
+    separators (as produced by Path.as_posix()).
+
+    Resolves the torrent the same way relocate_tracked_torrent() does:
+    first a DB-tracked torrents row for lb_number/folder, else a live
+    find_torrent_by_path() search (covering torrents added outside this
+    app's workflow, or a still-unsynced earlier root rename). Each rename
+    is applied via rename_file(); a single hash recheck follows if any
+    succeeded.
+
+    Args:
+        lb_number: LB number the folder belongs to.
+        folder: Absolute path of the folder (unchanged by this operation —
+            only files under it moved).
+        renames: List of (old_rel, new_rel) tuples, relative to folder.
+        host: qBittorrent WebUI host.
+        port: Port.
+        username: WebUI username (ignored when api_key is set).
+        password: WebUI password (ignored when api_key is set).
+        api_key: API key (qBittorrent 5+). Takes priority over username/password.
+        db_path: Optional SQLite path override.
+
+    Returns:
+        Dict with keys: ok (bool), synced (bool), error (str|None).
+        synced=False with ok=True means no torrent matched this folder, or
+        renames was empty, so there was nothing to do.
+    """
+    if not renames:
+        return {"ok": True, "synced": False, "error": None}
+
+    conn = db.get_connection(db_path)
+    row = conn.execute(
+        "SELECT infohash FROM torrents WHERE lb_number=? AND source_folder=? "
+        "AND added_to_qbt=1 AND infohash IS NOT NULL AND infohash != ''",
+        (lb_number, str(folder)),
+    ).fetchone()
+
+    if row:
+        infohash = row["infohash"]
+        root_name = Path(folder).name
+    else:
+        found = find_torrent_by_path(
+            folder, host=host, port=port,
+            username=username, password=password, api_key=api_key, db_path=db_path,
+        )
+        if not found["ok"]:
+            return {"ok": False, "synced": False, "error": found["error"]}
+        if not found["infohash"]:
+            return {"ok": True, "synced": False, "error": None}
+        infohash = found["infohash"]
+        root_name = found["root_name"] or Path(folder).name
+
+    errors = []
+    synced_any = False
+    for old_rel, new_rel in renames:
+        old_full = f"{root_name}/{old_rel}"
+        new_full = f"{root_name}/{new_rel}"
+        result = rename_file(
+            infohash, old_full, new_full,
+            host=host, port=port, username=username, password=password, api_key=api_key,
+        )
         if result["ok"]:
-            db.update_torrent_record(row["id"], {"source_folder": str(new_folder)}, db_path=db_path)
             synced_any = True
         else:
-            errors.append(result.get("error", "unknown error"))
+            errors.append(f"{old_rel} -> {new_rel}: {result.get('error', 'unknown error')}")
+
+    if synced_any:
+        recheck_torrent(infohash, host=host, port=port,
+                         username=username, password=password, api_key=api_key)
 
     if errors:
         return {"ok": False, "synced": synced_any, "error": "; ".join(errors)}

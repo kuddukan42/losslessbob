@@ -11,6 +11,113 @@ Fixed: gui_next/src/renderer/src/components/library/DetailPanel.tsx,
   (404 whenever it wasn't already zero-padded/prefixed). All 5 now call `lbDetailUrl()`;
   DetailPanel/ScreenLibrary pass `row.lbNumber` instead of `row.lb`.
 
+[2026-06-30] — fix(backend): LBDIR reconcile/move-extras now sync qBittorrent per-file paths (BUG-229)
+Fixed: backend/qbittorrent.py: `/api/lbdir/apply_reconcile` (renames a file in place to match the
+  lbdir manifest) and `/api/lbdir/move_extras` (moves stray files into `<folder>/extras/`) both
+  change file paths *inside* an unchanged root folder. Neither BUG-228's fix nor the prior
+  `relocate_tracked_torrent()`/`rename_torrent_root()` machinery covers this — those only handle
+  the whole root folder moving or being renamed, via qBittorrent's `renameFolder`/`setLocation`.
+  qBittorrent tracks each file's path within a torrent independently, so a same-folder file
+  rename/move it wasn't told about shows that file as missing and stalls seeding for it, even
+  though the root folder itself never moved. New `rename_file()` (`POST
+  /api/v2/torrents/renameFile`, the per-file counterpart to `rename_torrent_root`'s
+  `renameFolder`) and `sync_file_renames()` (resolves the tracked torrent for a folder the same
+  way `relocate_tracked_torrent()` does, applies each `rename_file()` call, then one recheck).
+Added: backend/filer.py: `_sync_qbt_file_renames()`, the credential-loading best-effort wrapper
+  around `qbittorrent.sync_file_renames()`, mirroring `_sync_qbt_location()`.
+Added: backend/app.py: `_resolve_lb_number_for_folder()` (my_collection row, else `LB-NNNNN` in
+  the folder name, else a "Pin & continue" `folder_lb_link`) shared by both endpoints below to
+  find which lb_number's qBittorrent tracking needs updating.
+Changed: backend/app.py: `lbdir_apply_reconcile` and `lbdir_move_extras` now call
+  `_sync_qbt_file_renames()` after successfully applying file moves/renames on disk.
+
+[2026-06-30] — fix(backend): rename endpoints now sync qBittorrent save path/root folder name (BUG-228)
+Fixed: backend/app.py: `/api/rename/apply` and `/api/folder/rename` performed the filesystem
+  rename and logged rename_history, but never told qBittorrent — a torrent already tracked in
+  qBittorrent (added_to_qbt=1) for that lb_number would keep expecting the old folder name/path
+  forever unless a later "file" pipeline step happened to trigger a resync, breaking seeding
+  in between. Both endpoints now call `backend.filer._sync_qbt_location()` (best-effort, never
+  raises) after a successful rename when lb_number is known — `rename_apply` uses the lb_number
+  already sent per-item by ScreenRename.tsx; `folder_rename` resolves it from the my_collection
+  row (if already filed) or, failing that, a "Pin & continue" folder_lb_link (BUG-212).
+Fixed: backend/qbittorrent.py: `relocate_tracked_torrent()`'s DB-tracked branch (an existing
+  `torrents` row already matches lb_number+source_folder) called `set_location()` but never
+  `rename_torrent_root()` or `recheck_torrent()`, so a rename (with or without a move) on an
+  already-synced torrent left qBittorrent's root folder name stale — only the fallback branch
+  (used for untracked/first-time syncs) did the full rename+recheck sequence. The DB-tracked
+  branch now also calls `rename_torrent_root()` when the folder name changed and always
+  triggers `recheck_torrent()` afterward, matching the fallback branch's behavior.
+
+[2026-06-30] — feat(scraper): WTRF candidates gain a download-date window filter + MD5/SHA1 scoring (TODO-194)
+Added: backend/wtrf_scraper.py: `_entry_download_date()` parses the curator's own acquisition
+  date from the LAST "bittorrent download MM/YY" note in `entries.description`; `_months_before()`
+  computes a cutoff `_DOWNLOAD_WINDOW_MONTHS` (6) before it; `_parse_post_date()` reads each
+  candidate's "« on: <Month DD, YYYY> »" timestamp from its `div.keyinfo` (a sibling of the post
+  body div, so a new `post_date` field was added to `_fetch_topic()`'s return dict). A post can't
+  be the source of a download that happened more than 6 months before it was made, so
+  `find_torrent_for_lb()` now hard-disqualifies any candidate posted before that cutoff —
+  verified live: LB-16627's stale 2024-10-14 candidate is now filtered out while its genuine
+  match still downloads `definitive`; LB-16633/16632's only candidate (already disqualified by
+  BUG-227's LB-tag check) is independently also disqualified on date (posted 2025-08-06, cutoff
+  2025-11-01).
+Added: backend/wtrf_scraper.py: `_score_candidate()` Round 1b matches `chk_type in ('m', 's')`
+  (MD5/SHA1 checksums, e.g. older SHN-era "checksum *filename" lines) in addition to the existing
+  FFP ('f') round — some posts list only MD5/SHA1 sums, not FFP fingerprints. A hit now scores
+  `md5_matches` at the same 100 pts/definitive tier as `ffp_matches` in `_classify_confidence()`.
+
+[2026-06-30] — fix(concert-ranker): de-confound sibilance_ratio_db + calibration scan investigation (TODO-183)
+Fixed: concert_ranker/features.py: `_sibilance_native()`'s `sibilance_ratio_db` was a plain
+  `sib - ref_mid` ratio. A calibration scan (scan_id=20, 107 recordings) showed it correlated
+  POSITIVELY with rating in all 4 source classes (rho +0.50 to +0.67) — backwards from its
+  polarity=-1, the same overall-brightness confound `harsh_ratio_db` had before its ROUND-2 fix.
+  Rewrote as a local excess vs flanking bands (2-5 kHz below, 9-14 kHz above), mirroring the
+  proven harsh_ratio_db fix.
+Added: A re-scan (scan_id=21, 107 recordings) confirmed the fix only partially worked: rho
+  dropped to +0.50/+0.50/+0.57 (SBD/AUD/UNKNOWN), still positive. Diagnosed from the scan_id=21
+  per-recording data (no third rescan needed): when hf_ceiling_hz falls inside/near the
+  sibilance band, the band + its flanks read noise floor asymmetrically, producing spurious
+  deep-negative values for band-limited (low-rated) recordings — an hf_ceiling_hz artifact, not
+  sibilance. Splitting by ceiling: <9000 Hz shows rho≈0 (pure floor noise); >=9000 Hz still shows
+  rho=+0.34 (p=0.005, n=66) — weaker but not fully neutral. sibilance_crest has no such issue —
+  validated cleanly in both scans (rho -0.34 to -0.65, correct sign). DECISION NOT YET MADE on
+  whether to gate sibilance_ratio_db by hf_ceiling_hz, drop its defect framing (polarity=0,
+  informational like air_ratio_db), or something else — see TODO-183 REMAINING for full writeup.
+  sibilance_ratio_db/sibilance_crest remain un-fused (not in QUALITY_MODEL); no scoring behavior
+  changed for any existing recording.
+
+[2026-06-30] — fix(scraper): WTRF LB-tag disqualification missed unpadded/attachment-only tags (BUG-227)
+Fixed: backend/wtrf_scraper.py: the BUG-225 Round 0 disqualification regex required 3-5 digits,
+  missing legacy posts that write the tag unpadded (e.g. "LB-8"); widened to `lb-0*(\d{1,5})\b`.
+  `_fetch_topic` now also collects attachment filename text (a sibling div the post body never
+  included) into a new `attachment_text` field, concatenated into the scan text in
+  `find_torrent_for_lb` — so a tag on either the body or an attachment name (e.g.
+  "LB-00008.torrent") triggers disqualification. Confirmed against WTRF topic=54221.msg77946,
+  previously a "low-confidence" candidate for both LB-16632 and LB-16633 despite plainly
+  documenting LB-8 in both the post text and its attached torrent's filename.
+
+[2026-06-30] — feat(scraper): qBittorrent paused-add option for WTRF batch fetches (TODO-193)
+Added: backend/qbittorrent.py: `add_torrent_for_download()` gains a `paused` parameter that
+  sends both `paused`/`stopped` form keys on `POST /api/v2/torrents/add` (the accepted key name
+  changed across qBittorrent WebUI API versions, so both are sent for compatibility) — lets a
+  torrent be queued without starting the download immediately.
+Added: tools/wtrf_fetch_missing.py: `--paused` CLI flag, used with `--add-to-qbt`, threaded
+  through `_qbt_add()` to the new qBittorrent parameter.
+Changed: Ran a full batch against the 220 LB entries above LB-16000 missing from
+  `my_collection` (public + not yet held). 113 matched confidently and were added to
+  qBittorrent paused for manual review before downloading; 22 downloaded but weren't pushed to
+  qBittorrent; 85 had no confident WTRF match (see wtrf_skipped_review.md for the link list).
+
+[2026-06-30] — feat(concert-ranker): true 5-9 kHz sibilance detection from NativeProbe (TODO-183)
+Added: concert_ranker/features.py: `_sibilance_native()` computes `sibilance_ratio_db` (native
+  sibilance band vs the ref_mid anchor) and `sibilance_crest` (loudest-window vs median-window
+  excess across NativeProbe.window_psds_db) — separates bursty essy S/T-consonant sibilance from
+  steady HF brightness, which the bulk-rate single-Welch-PSD approximation couldn't distinguish.
+  Wired into extract_hf_native(); 6 new tests in tests/test_concert_ranker.py.
+Fixed: concert_ranker/test_pipeline.py: removed the `sibilance_ratio_db = harsh_ratio_db`
+  stand-in, which was silently overwriting the now-real value from extract_hf_native().
+Changed: concert_ranker/scoring.py: added a "sibilance" pretty-name for sibilance_ratio_db in
+  verdict text (was falling back to the raw key name).
+
 [2026-06-30] — fix(scraper): WTRF search delay raised to clear forum flood-control
 Fixed: backend/wtrf_scraper.py: search_delay was computed as delay * 1.5 (3.0s at the CLI's
   default --delay 2.0), below the WTRF forum's ~5s search flood-control window. Raised

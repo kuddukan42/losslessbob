@@ -22,6 +22,85 @@ Fix: Added `lbDetailUrl(lb: number | string): string` (gui_next/src/renderer/src
   and ScreenLibrary.tsx switched from `row.lb` to `row.lbNumber` (the raw number already on
   `ActionRow`) so the helper always receives a consistent input regardless of caller.
 
+BUG-229: LBDIR reconcile/move-extras file moves never resynced qBittorrent, breaking seeding
+Status: Fixed
+File(s): backend/qbittorrent.py:rename_file, backend/qbittorrent.py:sync_file_renames,
+  backend/filer.py:_sync_qbt_file_renames, backend/app.py:lbdir_apply_reconcile,
+  backend/app.py:lbdir_move_extras, backend/app.py:_resolve_lb_number_for_folder
+Reported: 2026-06-30
+Fixed: 2026-06-30
+Root cause: This is the actual gap the user meant by "the reconcile function on the lbdir
+  screen that can rename files and move them to a subfolder" — distinct from BUG-228 (which
+  covered the whole root folder being renamed/moved). The LBDIR screen's "Reconcile Files"
+  action (`/api/lbdir/apply_reconcile`) renames individual files in place to match the lbdir
+  manifest, and "move extras" (`/api/lbdir/move_extras`) relocates stray files into
+  `<folder>/extras/` — both change file paths *inside* a folder whose root path never moves.
+  qBittorrent tracks each file's path within a torrent independently of the root folder, so a
+  same-folder file rename/move it wasn't told about leaves that file "missing" and stalls
+  seeding for it — BUG-228's `relocate_tracked_torrent()`/`rename_torrent_root()` machinery
+  never fires here since it only exists to handle the root folder itself moving or being
+  renamed (`setLocation`/`renameFolder`); nothing analogous existed for individual files.
+Fix: New `rename_file()` in backend/qbittorrent.py (`POST /api/v2/torrents/renameFile`, the
+  per-file counterpart to `rename_torrent_root()`'s `renameFolder`) and `sync_file_renames()`
+  (resolves the tracked torrent for an unchanged folder path the same way
+  `relocate_tracked_torrent()` does — DB-tracked row first, `find_torrent_by_path()` fallback —
+  applies each rename via `rename_file()`, then a single recheck). New
+  `_sync_qbt_file_renames()` credential-loading wrapper in backend/filer.py, mirroring
+  `_sync_qbt_location()`. `lbdir_apply_reconcile` and `lbdir_move_extras` call it after
+  successfully applying file changes on disk, using a new shared `_resolve_lb_number_for_folder()`
+  helper (my_collection row, else `LB-NNNNN` in the folder name, else a folder_lb_link pin) to
+  find the relevant lb_number.
+
+BUG-228: Renaming a folder never resynced qBittorrent, breaking seeding
+Status: Fixed
+File(s): backend/app.py:rename_apply, backend/app.py:folder_rename, backend/qbittorrent.py:relocate_tracked_torrent
+Reported: 2026-06-30
+Fixed: 2026-06-30
+Root cause: The "file" pipeline step (backend/filer.py:start_file_job) already synced
+  qBittorrent's save path/root folder name after a move via _sync_qbt_location() ->
+  relocate_tracked_torrent(), including recovering from an earlier untracked rename via the
+  rename_history table. But the two rename-only endpoints — /api/rename/apply and
+  /api/folder/rename — did the filesystem rename and logged rename_history without ever
+  calling into qBittorrent at all. A torrent already tracked in qBittorrent
+  (torrents.added_to_qbt=1) for an already-filed item would keep expecting the pre-rename
+  folder name/location indefinitely, showing missing files and dropping out of seeding, unless
+  a later "file" step happened to run and its fallback recovery path stumbled onto the fix.
+  Separately, relocate_tracked_torrent()'s DB-tracked branch (an existing torrents row already
+  matching lb_number+source_folder) only called set_location() and never rename_torrent_root()
+  or recheck_torrent() — only the fallback (untracked) branch did the full sequence — so even a
+  rename it was told about would leave qBittorrent's root folder name stale.
+Fix: Both rename endpoints now call backend.filer._sync_qbt_location() (best-effort, non-raising)
+  after a successful on-disk rename whenever lb_number is known — rename_apply uses the
+  lb_number already sent per-item by ScreenRename.tsx; folder_rename resolves it from the
+  my_collection row synced for BUG-206, falling back to a "Pin & continue" folder_lb_link
+  (BUG-212) if the folder hasn't been filed yet. relocate_tracked_torrent()'s DB-tracked branch
+  now also calls rename_torrent_root() when the folder name changed and always calls
+  recheck_torrent() afterward, matching the fallback branch.
+
+BUG-227: WTRF LB-tag disqualification (BUG-225) missed unpadded/attachment-only tags
+Status: Fixed
+File(s): backend/wtrf_scraper.py:_score_candidate, _fetch_topic, find_torrent_for_lb
+Reported: 2026-06-30
+Fixed: 2026-06-30
+Root cause: BUG-225 added a Round 0 check that hard-disqualifies a candidate post explicitly
+  tagged "LB-NNNNN" for a different entry, but two gaps let a wrong candidate slip through as
+  a "low-confidence" match instead of being blocked outright. (1) The tag regex required 3-5
+  digits (`lb-0*(\d{3,5})\b`), written to match this app's own zero-padded 5-digit tags —
+  but legacy/non-app posts often write the tag unpadded, e.g. "LB-8", which has only 1 digit
+  and never matched. (2) The regex only scanned the post body div text; attachment filenames
+  (e.g. a torrent literally named "LB-00008.torrent") live in a sibling `div.attachments`
+  that `_fetch_topic` never fed into scoring at all. User-confirmed example: WTRF topic
+  topic=54221.msg77946 was returned as the sole "low-confidence" candidate for both LB-16632
+  and LB-16633 ("Del Mar, CA 7/1/00" duplicates), but the post body plainly reads "LB-8" and
+  its attached torrent is named "LB-00008.torrent" — i.e. it documents LB-8, not either
+  16000-series entry.
+Fix: Widened the tag regex to `lb-0*(\d{1,5})\b` (minimum 1 digit instead of 3) so unpadded
+  short numbers are caught. `_fetch_topic` now also collects the visible link text of every
+  attachment in the first post into a new `attachment_text` field; `find_torrent_for_lb`
+  concatenates it with `body_text` before calling `_score_candidate`, so an LB tag on either
+  the body or the attachment filename triggers disqualification. See BUG-225 for the original
+  mechanism this extends.
+
 BUG-226: WTRF search queries spaced below the forum's flood-control window
 Status: Fixed
 File(s): backend/wtrf_scraper.py:_SEARCH_DELAY, find_torrent_for_lb

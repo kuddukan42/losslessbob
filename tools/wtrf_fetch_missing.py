@@ -23,6 +23,9 @@ Usage examples::
     # Batch crawl newest 50 missing items, 3-second throttle, add to qBittorrent
     python tools/wtrf_fetch_missing.py --limit 50 --delay 3.0 --add-to-qbt
 
+    # Add to qBittorrent paused/stopped instead of downloading immediately
+    python tools/wtrf_fetch_missing.py --lbs 16640-16650 --add-to-qbt --paused
+
 Must be run from the project root directory (the folder containing ``backend/``
 and ``tools/``).
 """
@@ -118,6 +121,12 @@ def _build_parser() -> argparse.ArgumentParser:
         help="Also add each downloaded torrent to qBittorrent via its WebUI API.",
     )
     p.add_argument(
+        "--paused",
+        action="store_true",
+        help="When used with --add-to-qbt, add torrents in a paused/stopped "
+             "state instead of starting the download immediately.",
+    )
+    p.add_argument(
         "--dry-run",
         action="store_true",
         help="Print the work queue without making any network requests.",
@@ -166,12 +175,14 @@ def _parse_lb_spec(spec: str) -> list[int]:
     return numbers
 
 
-def _qbt_add(torrent_path: str, save_path: str) -> bool:
+def _qbt_add(torrent_path: str, save_path: str, paused: bool = False) -> bool:
     """Add a torrent to qBittorrent using stored credentials and meta settings.
 
     Args:
         torrent_path: Path to the .torrent file.
         save_path: Destination directory for downloaded content.
+        paused: If True, add the torrent in a paused/stopped state instead
+            of starting the download immediately.
 
     Returns:
         True on success.
@@ -193,6 +204,7 @@ def _qbt_add(torrent_path: str, save_path: str) -> bool:
         username=qbt_user, password=qbt_pass,
         category=category, tags=tags,
         api_key=qbt_key,
+        paused=paused,
     )
     if not result.get("ok"):
         logger.warning("qBittorrent add failed: %s", result.get("error"))
@@ -302,7 +314,7 @@ def main() -> int:
         )
 
         if result["ok"] and args.add_to_qbt:
-            ok_qbt = _qbt_add(result["torrent_path"], save_path)
+            ok_qbt = _qbt_add(result["torrent_path"], save_path, paused=args.paused)
             if ok_qbt:
                 from datetime import UTC, datetime
                 database.update_wtrf_download(

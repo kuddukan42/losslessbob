@@ -144,6 +144,26 @@ def _find_lbdir_in_folder(folder: Path) -> "Path | None":
     return None
 
 
+def _resolve_lb_number_for_folder(folder: Path) -> int | None:
+    """Best-effort LB# for a folder: my_collection row, else name regex, else pin.
+
+    Used by the LBDIR reconcile/extras endpoints to know which lb_number's
+    qBittorrent tracking (if any) needs a file-path sync after files move
+    within folder.
+    """
+    with database.get_connection() as conn:
+        row = conn.execute(
+            "SELECT lb_number FROM my_collection WHERE disk_path=?", (str(folder),)
+        ).fetchone()
+    if row:
+        return row["lb_number"]
+    m = re.search(r'LB-(\d+)', folder.name, re.IGNORECASE)
+    if m:
+        return int(m.group(1))
+    link = database.get_folder_link(str(folder))
+    return link["lb_number"] if link else None
+
+
 def create_app() -> Flask:
     """Create and configure the Flask application."""
     import backend.startup_log as _slog
@@ -2390,8 +2410,14 @@ def create_app() -> Flask:
 
     @app.route("/api/lbdir/apply_reconcile", methods=["POST"])
     def lbdir_apply_reconcile() -> Response:
-        """Apply verified rename/move/copy proposals inside a single folder. Never deletes files."""
+        """Apply verified rename/move/copy proposals inside a single folder. Never deletes files.
+
+        If folder is qBittorrent-tracked, best-effort syncs the new file paths
+        (see backend.filer._sync_qbt_file_renames) so applied renames don't
+        break seeding for that torrent (BUG-228).
+        """
         try:
+            from backend.filer import _sync_qbt_file_renames
             data = request.get_json() or {}
             folder = Path(data.get("folder", ""))
             renames = data.get("renames", [])      # [{"from": rel, "to": rel}, ...]
@@ -2407,6 +2433,13 @@ def create_app() -> Flask:
                     applied.append(r)
                 except Exception as e:
                     errors.append({"rename": r, "error": str(e)})
+
+            if applied:
+                lb_number = _resolve_lb_number_for_folder(folder)
+                if lb_number is not None:
+                    _sync_qbt_file_renames(
+                        lb_number, folder, [(r["from"], r["to"]) for r in applied]
+                    )
 
             site_copied = []
             for sc in site_copies:
@@ -2507,8 +2540,14 @@ def create_app() -> Flask:
 
     @app.route("/api/lbdir/move_extras", methods=["POST"])
     def lbdir_move_extras() -> Response:
-        """Move extra files (not in lbdir) to <folder>/extras/, preserving relative path structure."""
+        """Move extra files (not in lbdir) to <folder>/extras/, preserving relative path structure.
+
+        If folder is qBittorrent-tracked, best-effort syncs the new file paths
+        (see backend.filer._sync_qbt_file_renames) so the move doesn't break
+        seeding for that torrent (BUG-228).
+        """
         try:
+            from backend.filer import _sync_qbt_file_renames
             data = request.get_json() or {}
             folder = Path(data.get("folder", ""))
             files = data.get("files", [])  # list of relative paths
@@ -2524,6 +2563,13 @@ def create_app() -> Flask:
                     moved.append(rel)
                 except Exception as e:
                     errors.append({"file": rel, "error": str(e)})
+
+            if moved:
+                lb_number = _resolve_lb_number_for_folder(folder)
+                if lb_number is not None:
+                    _sync_qbt_file_renames(
+                        lb_number, folder, [(rel, f"extras/{rel}") for rel in moved]
+                    )
             # Prune empty subdirectories (never touch folder root or extras_dir)
             for dirpath, _dirs, _files in os.walk(str(folder), topdown=False):
                 d = Path(dirpath)
@@ -2696,12 +2742,17 @@ def create_app() -> Flask:
     def rename_apply() -> Response:
         """Apply a list of folder/file renames on disk and log each to rename_history.
 
+        When an item carries lb_number, also best-effort syncs qBittorrent's
+        save path/root folder name (see backend.filer._sync_qbt_location) so a
+        torrent already tracked in qBittorrent keeps seeding under the new name.
+
         Body: {renames: [{old_path, new_path, lb_number?}]}
         Returns:
             JSON {applied: N, errors: [...string]}
         """
         import shutil
 
+        from backend.filer import _sync_qbt_location
         from backend.rename import write_rename_log
         data = request.get_json() or {}
         renames = data.get("renames", [])
@@ -2732,6 +2783,8 @@ def create_app() -> Flask:
                     source="rename_tab",
                     lb_number=lb_number,
                 )
+                if lb_number:
+                    _sync_qbt_location(int(lb_number), src, dst)
                 applied += 1
             except Exception as exc:
                 errors.append(f"{old_path}: {exc}")
@@ -6113,11 +6166,17 @@ def create_app() -> Flask:
     def folder_rename() -> Response:
         """Rename a folder on disk to a new name within the same parent directory.
 
+        Also best-effort syncs qBittorrent (see backend.filer._sync_qbt_location)
+        if the folder is already tracked in qBittorrent for a known lb_number,
+        resolved from my_collection or, failing that, a "Pin & continue" folder
+        link — so an already-added torrent keeps seeding under the new name.
+
         Body: {folder: "/abs/path/to/folder", new_name: "new folder name"}
         Returns:
             JSON {ok: true, new_path: "/abs/path/to/new folder name"}
         """
         try:
+            from backend.filer import _sync_qbt_location
             from backend.rename import write_rename_log
             data = request.get_json() or {}
             folder = Path(data.get("folder", ""))
@@ -6157,6 +6216,17 @@ def create_app() -> Flask:
             # path — move it forward so the pinned LB# survives the rename
             # instead of being silently lost on the next pipeline run.
             database.rekey_folder_link(old_disk_path, str(new_path))
+            # Best-effort qBittorrent sync so a torrent already tracked under
+            # the old name keeps seeding instead of erroring on missing files.
+            # lb_number: prefer the my_collection row just synced above, else
+            # fall back to a "Pin & continue" folder link if this folder
+            # hasn't been filed into the collection yet.
+            lb_number = row["lb_number"] if row else None
+            if lb_number is None:
+                link = database.get_folder_link(old_disk_path)
+                lb_number = link["lb_number"] if link else None
+            if lb_number is not None:
+                _sync_qbt_location(int(lb_number), folder, new_path)
             return jsonify({"ok": True, "new_path": str(new_path)})
         except Exception as e:
             return jsonify({"error": str(e)}), 500
