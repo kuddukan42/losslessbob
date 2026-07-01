@@ -1,4 +1,4 @@
-"""Startup timing logger — writes timestamped events to data/startup.log.
+"""Startup timing logger — writes timestamped events to data/logs/startup.log.
 
 Usage:
     import backend.startup_log as startup_log

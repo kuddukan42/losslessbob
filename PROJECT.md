@@ -61,7 +61,7 @@ losslessbob/
 │   ├── integrity_monitor.py  # TODO-111: lbdir-based collection integrity scan engine
 │   ├── fingerprint.py        # Acoustic fingerprinting engine (Wang/Shazam landmark algorithm)
 │   ├── sox_utils.py          # SoX/ffmpeg tool detection + spectrogram generation
-│   ├── startup_log.py        # Startup timing logger → data/startup.log
+│   ├── startup_log.py        # Startup timing logger → data/logs/startup.log
 │   ├── torrent_maker.py      # torf-based .torrent generation; tracker CDN fetch
 │   ├── qbittorrent.py        # qBittorrent WebUI API v2 integration
 │   ├── forum_poster.py       # SMF 2.x WTRF forum topic posting

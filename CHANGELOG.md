@@ -1,3 +1,11 @@
+[2026-07-01] — chore(backend): consolidate all log files under data/logs/
+Added: backend/paths.py: `LOGS_DIR = DATA_DIR / "logs"`, created by `ensure_data_dirs()`.
+Changed: main.py (`losslessbob.log`, `startup.log`), cli.py (`_daemon_log_file()` ->
+  `backend.log`), backend/paths.py (`LOG_FILE` -> `scraper.log`) now all write under
+  `data/logs/` instead of loose at `data/` root. Existing loose log files at `data/` root
+  and stray scratch logs at the repo root / `tools/tapematch/` moved into `data/logs/`
+  (filesystem move only — `data/` is already gitignored wholesale, no tracked-file changes).
+
 [2026-07-01] — fix(gui): consolidate LB detail-page URL construction (BUG-221)
 Added: gui_next/src/renderer/src/lib/lbUrl.ts: `lbDetailUrl(lb)` — one helper that always
   zero-pads and "LB-"-prefixes an LB number before building the losslessbob.wonderingwhattochoose.com
