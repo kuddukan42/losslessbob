@@ -663,7 +663,9 @@
         "applyFailed": "Anwendung fehlgeschlagen",
         "retrieveFailed": "Abruf fehlgeschlagen"
       }
-    }
+    },
+    "autoCollect": "Automatisches Sammeln",
+    "autoCollectHint": "Wenn diese Option aktiviert ist, werden Ordner, die vollständig grün markiert sind (Überprüfung, Suche, LB-Verzeichnis und Umbenennung erfolgreich), automatisch in die Sammlung aufgenommen – ein Klick auf „Datei“ ist nicht erforderlich."
   },
   "collection": {
     "confirmDialog": {

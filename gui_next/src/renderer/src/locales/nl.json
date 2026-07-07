@@ -663,7 +663,9 @@
         "applyFailed": "Toepassen mislukt",
         "retrieveFailed": "Ophalen mislukt"
       }
-    }
+    },
+    "autoCollect": "Automatisch verzamelen",
+    "autoCollectHint": "Wanneer deze functie is ingeschakeld, worden mappen die volledig groen zijn (verificatie, opzoeken, LB-map en hernoemen zijn allemaal geslaagd) automatisch in de collectie opgeslagen — je hoeft niet op ‘Bestand’ te klikken"
   },
   "collection": {
     "confirmDialog": {

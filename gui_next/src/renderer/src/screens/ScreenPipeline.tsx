@@ -1320,6 +1320,7 @@ export function ScreenPipeline(): React.JSX.Element {
   const [filter, setFilter]                 = useState<Bucket>('all')
   const [autorun, setAutorun]               = useState(true)
   const [autoRename, setAutoRename]         = useState(false)
+  const [autoCollect, setAutoCollect]       = useState(false)
   const [tableSearch, setTableSearch]       = useState('')
   const [queueSearch, setQueueSearch]       = useState('')
   const [activeQueue, setActiveQueue]       = useState<string | null>(null)
@@ -1374,6 +1375,7 @@ export function ScreenPipeline(): React.JSX.Element {
   const autorunPendingRef    = useRef<string[]>([])
   const autocompleteStarted  = useRef<Set<string>>(new Set())
   const autoRenamedRef       = useRef<Set<string>>(new Set())
+  const autoCollectedRef     = useRef<Set<string>>(new Set())
   const filingRef            = useRef(false)
 
   // ── Derived counts ───────────────────────────────────────────────────────────
@@ -1817,6 +1819,35 @@ export function ScreenPipeline(): React.JSX.Element {
     for (const row of selectedFileable) await applyFile(row, undefined, undefined, undefined, true)
   }, [selectedFileable, applyFile])
 
+  // ── Auto-collect: when verify/lookup/lbdir/rename all pass and the folder is
+  // ready to file (same guard as fileableRows), file it into the collection
+  // automatically — no "File" click needed. Serialized one at a time via the
+  // shared filing lock (filingRef): the effect bails while a file job is in
+  // flight and re-fires once rows change on completion, mirroring "File all
+  // ready". autoCollectedRef guards against re-filing an already-attempted row.
+  useEffect(() => {
+    if (!autoCollect) return
+    if (filingRef.current) return
+    const candidates = rows.filter(r =>
+      !r.running &&
+      r.steps.verify.status === 'ok' &&
+      r.steps.lookup.status === 'ok' &&
+      r.steps.lbdir.status === 'ok' &&
+      r.steps.rename.status === 'ok' &&
+      r.steps.file.status === 'warn' &&
+      !!r.steps.file.dest &&
+      !r.shelved &&
+      !autoCollectedRef.current.has(r.id)
+    )
+    if (!candidates.length) return
+    ;(async () => {
+      for (const r of candidates) {
+        autoCollectedRef.current.add(r.id)
+        await applyFile(r, undefined, undefined, undefined, true)
+      }
+    })()
+  }, [rows, autoCollect, applyFile])
+
   // ── Folder picking ───────────────────────────────────────────────────────────
   const handlePickFolders = useCallback(async () => {
     const paths = await window.api.pickFolders()
@@ -2046,6 +2077,35 @@ export function ScreenPipeline(): React.JSX.Element {
             }} />
           </span>
           {t('pipeline.autoRename')}
+        </button>
+
+        {/* Auto-collect toggle */}
+        <button
+          onClick={() => setAutoCollect(a => !a)}
+          title={t('pipeline.autoCollectHint')}
+          style={{
+            display: 'inline-flex', alignItems: 'center', gap: 8,
+            padding: '5px 10px', borderRadius: 8,
+            cursor: 'pointer', fontFamily: 'inherit', whiteSpace: 'nowrap',
+            background: autoCollect ? 'var(--lbb-accent-soft)' : 'var(--lbb-surface)',
+            border: `1px solid ${autoCollect ? 'var(--lbb-accent-mid)' : 'var(--lbb-border2)'}`,
+            color: autoCollect ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg2)',
+            fontSize: 12, fontWeight: 600,
+          }}
+        >
+          <span style={{
+            width: 26, height: 15, borderRadius: 999,
+            background: autoCollect ? 'var(--lbb-accent-mid)' : 'var(--lbb-border2)',
+            position: 'relative', transition: 'background 120ms',
+          }}>
+            <span style={{
+              position: 'absolute', top: 2,
+              left: autoCollect ? 13 : 2,
+              width: 11, height: 11, borderRadius: '50%',
+              background: '#fff', transition: 'left 120ms',
+            }} />
+          </span>
+          {t('pipeline.autoCollect')}
         </button>
 
         {/* Apply all N ready — always visible, disabled when 0 */}

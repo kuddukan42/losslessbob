@@ -663,7 +663,9 @@
         "applyFailed": "Échec de l'application",
         "retrieveFailed": "Récupération échouée"
       }
-    }
+    },
+    "autoCollect": "Collecte automatique",
+    "autoCollectHint": "Lorsqu’elle est activée, les dossiers entièrement verts (vérification, recherche, répertoire LB et renommage réussis) sont automatiquement classés dans la collection — aucun clic sur « Fichier » n’est nécessaire."
   },
   "collection": {
     "confirmDialog": {
@@ -765,7 +767,7 @@
     },
     "globalTorrent": {
       "count_one": "{{count}} torrent",
-      "count_other": "{{count}} torrents",
+      "count_other": "Torrents {{count}}",
       "filter": "Filtre...",
       "colCreated": "Créée",
       "colStatus": "Statut",
@@ -1148,7 +1150,7 @@
       "yourFile": "Votre dossier",
       "bestMatch": "Meilleure correspondance LB",
       "location": "Localisation",
-      "score": "Score",
+      "score": "Partition",
       "confident": "Confiant",
       "noMatch": "Pas de correspondance",
       "yes": "Oui",
@@ -1644,7 +1646,7 @@
         "clipping": "Extrait",
         "crowdSeparation": "Séparation de la foule",
         "tonalBalance": "Équilibre tonal",
-        "bass": "Bass",
+        "bass": "Basse",
         "mud": "Empâtement",
         "harsh": "Rugosité",
         "balanced": "équilibré",
