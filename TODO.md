@@ -1,4 +1,10 @@
 
+TODO-208: SessionEnd hook: flag unrecorded changes on /clear, surface in next session brief
+Priority: Low
+Status: Open
+Added: 2026-07-07
+Description: SessionEnd hook (fires on /clear and exit) runs the same staleness check as .claude/hooks/changelog_check.sh; if source files changed but CHANGELOG.md head is not today, write a flag file that .claude/hooks/session_brief.sh surfaces at next SessionStart ('previous session ended with unrecorded changes — run /session-close first'), then clear the flag. Closes the bookkeeping gap across the /clear boundary; Stop hook alone only warns per-turn.
+
 TODO-207: gui_next locale key-parity check script (spec D6 remnant)
 Priority: Low
 Status: Open
