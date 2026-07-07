@@ -1,4 +1,55 @@
 
+BUG-236: gui_next renderer has 14 pre-existing TypeScript errors in ScreenScraper.tsx
+Status: Open
+File(s): gui_next/src/renderer/src/screens/ScreenScraper.tsx (e.g. lines 831–832)
+Reported: 2026-07-04
+Root cause: `number | null` values passed to props typed `string | number` (TS2322), found while
+  validating the /gui-check typecheck commands (`tsc --noEmit -p tsconfig.web.json`). These predate
+  today's session; `electron-vite build` does not typecheck, so they never blocked builds.
+Fix: TBD. Null-guard or widen the prop types; /gui-check treats these 14 as the known baseline
+  until fixed, so new errors remain distinguishable.
+
+BUG-233: WTRF torrent saved with junk filename "UTF-8.torrent" from RFC 5987 Content-Disposition
+Status: Open
+File(s): backend/wtrf_scraper.py:555 (_download_torrent Content-Disposition parse)
+Reported: 2026-07-01
+Root cause: The filename regex `filename[^;=\n]*=\s*["\']?([^"\'\n;]+)` matches the RFC 5987
+  extended form `filename*=UTF-8''realname.torrent`: `[^;=\n]*` consumes the `*`, then the capture
+  `[^"\'\n;]+` stops at the first `'`, yielding `UTF-8` instead of the real name. When SMF sends
+  only (or first) the `filename*=` parameter, every downloaded torrent is saved as `UTF-8.torrent`.
+  Observed while verifying BUG-232 (LB-16644 → topic 60289 saved as UTF-8.torrent).
+  Confirmed 2026-07-01 (TODO-197 re-run): because every download in a batch run shares this
+  identical filename, each one overwrites the last — of 30 matches in an 85-entry batch run, only
+  1 file survived on disk afterward (the final entry processed). The 16 entries added to
+  qBittorrent in the same loop iteration were unaffected (read before the next overwrite), but the
+  other 14 downloaded-only entries have no retrievable file and need a per-LB re-fetch once fixed.
+  This is now a data-loss bug in batch mode, not just a cosmetic naming issue.
+Fix: TBD. Prefer the plain `filename="..."` parameter, and when only `filename*=` is present strip
+  the `charset''` prefix and URL-decode the remainder (RFC 5987). Fall back to the existing
+  attach-id / LB-based name when neither yields a usable value.
+
+BUG-230: GNOME Wayland dev window still shows generic gear icon in the dock/taskbar
+Status: Open
+File(s): gui_next/src/main/index.ts, gui_next/resources/losslessbob-next.desktop
+Reported: 2026-07-01
+Root cause: UNCONFIRMED. Under `npm run dev` on GNOME + native Wayland (Debian), the taskbar/dock
+  icon remains Electron's default gear despite: (1) BrowserWindow `icon` set to resources/icon.png
+  — ignored on native Wayland; (2) a dev-helper .desktop (losslessbob-next.desktop) installed to
+  ~/.local/share/applications/ named to match the window's reported Wayland app_id. GNOME reports
+  wmclass=losslessbob-next (confirmed by user); on native Wayland the dock icon is resolved by
+  matching the window's app_id to a .desktop whose basename equals the app_id, but installing that
+  .desktop + restarting dev did not resolve it. Candidate causes not yet ruled out: app_id vs
+  desktop-file-id normalization/casing mismatch in GNOME's matcher; the .desktop not being picked
+  up (needs `update-desktop-database`, GNOME Shell restart, or logout — impossible to hot-reload
+  the shell on Wayland); Icon= not resolvable (absolute path vs hicolor theme name + icon cache);
+  or Electron/Ozone not emitting the app_id we assume. NOTE: the packaged AppImage is expected to
+  be unaffected (electron-builder generates its own matching .desktop) — this is a dev-only cosmetic
+  issue and has NOT been verified against a packaged build.
+Fix: TBD. Next steps to try: confirm the installed .desktop is actually being matched (GNOME
+  Looking Glass → Windows tab shows the matched app + icon path); verify Icon= resolves (absolute
+  PNG path); force a known app_id and match the .desktop basename to it exactly; test a packaged
+  AppImage to confirm the shipped app is correct and scope this to dev-only.
+
 BUG-223: tapematch analysis.md attribution line is hardcoded, not the real model
 Status: Fixed
 File(s): .claude/commands/tapematch-batch.md:4, data/tapematch/runs/*/analysis.md

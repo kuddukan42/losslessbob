@@ -1,6 +1,122 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-202: TapeMatch densification probe (12×60s excerpts) for Rule D recovery
+Priority: Low
+Status: Done
+Added: 2026-07-04
+Closed: 2026-07-05
+Description: Tier B attributed the nmfp TP low tail to a sparse-excerpt artifact (5×60s
+excerpts of differently-trimmed transfers sample different songs); re-embedding at 12×60s
+could lift the zero-FP recovery above the shipped +25 flips. OUTCOME: full-population 12×
+embed (~8.5h, 1942 extracted + 523 pilot-cached, 2 sources absent) + v1/v2 sweeps ran; the
+pre-registered gate (flips > 25 at abs fp ≤9 v1 AND ≤6 v2) is met only at the both_tol
+0.725 plateau edge — 26 flips, net +1 TP with churn (−3 shipped recoveries, +4 gains, one
+gain 0.015 above bar), one step from the 0.700 FP cliff the 5× calibration explicitly
+refused (config.yaml "one-step margin" comment). At margin-respecting thresholds ≥0.750,
+12× = exactly 25 flips = no improvement; sparse-excerpt hypothesis falsified as a broad
+effect. DECISION: 12× REJECTED, kept 5×/t_emb 0.75. Artifacts retained for TODO-204
+(embed_cache_12x/, fullset_pairs_12x_scores.json). Side product: BUG-237 found+fixed
+(emb_fullset_eval.py acceptance check stale post-Rule-D ship). Full analysis:
+tools/tapematch/TIER_B_FULLSET_REPORT.md "Densification probe" section.
+
+TODO-200: TapeMatch live-session embedding integration (Rule D production path)
+Priority: Medium
+Status: Done
+Added: 2026-07-04
+Closed: 2026-07-04
+Description: Live sessions now populate pairs.emb_score/emb_score_global via
+tools/tapematch/emb_live.py, hooked after insert_pairs in tapematch_session.py (same
+transaction). Cache misses subprocess into .venv-nmfp (nmfp_embed.py --eval-set, temp
+worklist under tools/tapematch/tmp/); scoring shared with emb_score_pairs.score_pair; any
+failure (missing venv, crash, timeout) leaves NULL → Rule D abstains safely. Gated by
+config.yaml rule_d.live_embed. Never overwrites non-NULL with NULL; self-pairs skipped.
+Verified: 4 new unit tests + 177 equivalence tests pass; score --cached byte-identical
+(tp=684 fn=891 fp=9 tn=1381); live run 20260704_171831 (1998-10-28) wrote real emb scores
+on all 10 fresh pairs rows (cache-hit path) with zero frozen-verdict changes — the one
+same_family pair scored emb_global 0.967, independently corroborating its low-confidence
+0.520-corr merge.
+
+TODO-199: TapeMatch add-on approaches (CC_TAPEMATCH_ADDON) — lineage forensics + learned similarity
+Priority: Medium
+Status: Done
+Added: 2026-07-02
+Closed: 2026-07-03
+Progress: All three tiers concluded. Tier 0 (Task 1) DONE — re-based recall ceiling to ~80% (36.7%
+  curator label noise in the corr<0.05 FN sample). Tier A (Tasks 2-5) DONE — flaw signal
+  precision-safe but marginal (+0.1 recall pt), left dormant; stationarity/env rejected. Tier B
+  (Task 6) REJECTED 2026-07-03: nmfp (neural-music-fp ckpt-100) embedded all 184 eval sources;
+  gap p10(TP)-p90(TN) = -0.034 aligned / +0.007 global, below the >=0.10 bar, despite strong
+  central separation (TP median 0.912 vs same-show-TN 0.150). Killer TN tail was LABEL NOISE (3
+  frozen negatives waveform-contradicted corr 0.92-0.95, flagged label_suspect=1). Full report
+  tools/tapematch/TIER_B_EMBED_REPORT.md. Tier C (Task 7) REJECTED 2026-07-03: from-scratch
+  contrastive encoder (ConvEncoder 587,712 params, augment.py's 7-op AugmentChain, same-show hard
+  negatives mined from observations.db) trained 30 epochs/7170 steps (69.8 min, final loss
+  ~0.029). Gate 7.3.1 (aug-sanity) PASS (mean=0.964, bar >=0.80). Gate 7.3.2 (decisive,
+  embed_eval.py on all 184 eval sources): tol=0 gap -0.017, tol=2 gap -0.074 — both below the
+  >=0.10 bar and both WORSE than Tier B's pretrained-model baseline (TP/TN medians barely
+  separate: 0.520/0.441 vs nmfp's 0.912/0.150). Confirmed with user: REJECT per the pre-agreed
+  protocol, no threshold-shopping — no Rule-C wiring, no pairs.emb_score, no verdict/regression.py
+  changes. FINAL STATE (unchanged from CC_TAPEMATCH_FIXES): recall 41.6%, precision 98.6%, fp=9.
+  Follow-on: built tools/tapematch/dump_calibration_audit.py + build_calibration_audit_html.py +
+  calibration_audit.json/.html — an interactive audit table of all 2965 frozen pairs' truth labels
+  vs current verdicts vs the LB catalog relation-text, for manually spot-checking label quality
+  (motivated by the label-noise findings above). Full narrative in
+  tools/tapematch/CALIBRATION_PROGRESS.md.
+Description: Spec written (instructions/CC_TAPEMATCH_ADDON.md) for breaking past the ~42% recall
+  ceiling documented in tools/tapematch/RECALL_RECOVERY_REPORT.md (93% of FN are non-correlating;
+  hand-engineered waveform/speed levers exhausted at 41.6% R / 98.6% P, fp=9). Three tiers:
+  Tier 0 (Task 1) FN forensic audit + curator label-noise quantification → re-based recall ceiling;
+  Tier A (Tasks 2-5) content-blind lineage-forensic signals — shared-flaw (dropout/click/cut) event
+  fingerprint, spectral-ratio stationarity, band-limited envelope corr (conjunctive-only), verdict
+  addon_links rules + coverage instrumentation; Tier B (Task 6) pretrained neural-fingerprint
+  embedding eval (inference only, gap-gated); Tier C (Task 7) contrastive embedding trained with
+  same-show different-source hard negatives (the triplet failure mode weaponized), curator labels
+  eval-only. Every signal gated by the generalized calibration protocol: same-date different-source
+  TN population mandatory, TP/TN gap >= 0.10 or structural reject, absolute fp <= 9 on the frozen set.
+
+TODO-197: Re-run the WTRF skipped-review entries to assess BUG-231/232 checksum-search gains
+Priority: Medium
+Status: Done
+Added: 2026-07-01
+Closed: 2026-07-01
+Description: The checksum body-search + cross-recording guard (BUG-231/232, backend/wtrf_scraper.py)
+  landed after the batch-85 pass that produced wtrf_skipped_review.md (85 LB>16000 entries with no
+  confident match). Re-ran all 85 with `tools/wtrf_fetch_missing.py --lbs <list> --delay 2.0
+  --add-to-qbt --paused` (2h44m — much slower than the ~30 min estimate; many entries had 20–37
+  candidate posts, each needing a checksum-body fetch). Result: 30/85 (35%) now resolve
+  automatically (28 definitive, 1 high, 1 medium; 14 qbt_added, 16 downloaded-only), 13
+  needs_review, 11 ambiguous, 31 not_found (mostly genuinely absent — disqualified as tagged for a
+  different LB or outside the 6-month window). Full breakdown in wtrf_skipped_review_rerun.md.
+  Found two follow-up issues: BUG-233 (junk "UTF-8.torrent" filename) silently overwrites every
+  downloaded torrent in a batch run except the last one and any added to qBittorrent immediately —
+  14 of this run's 30 matches have no retrievable file on disk. Filed BUG-234: LB-16404/16405/16406
+  (three different dates/venues) all matched the same WTRF topic 55005 — a confirmed false match
+  from the checksum search, needs investigation.
+
+TODO-198: Add "Quality" page to library detail panel — LB Rating + AI Quality Index
+Priority: Medium
+Status: Done
+Added: 2026-07-01
+Closed: 2026-07-01
+Description: New `GET /api/quality/<lb>` route (`backend/app.py`) reads the latest Concert
+  Ranker scan row (`quality_recording_scores.abs_grade`/`abs_score`/`final_score`/`verdict_text`).
+  `RecordingDetailPanel` in `gui_next/.../DetailPanel.tsx` gains a fourth tab, "Quality" (owned
+  rows only, alongside Overview/Assets/Seed & Share), rendering the catalog LB Rating and the AI
+  Quality Index (Concert Ranker's letter grade + score/100) as bold side-by-side `Fact` cards,
+  plus the verdict text below. New i18n keys `library.panel.tabQuality` / `library.quality.*` in
+  all 6 locales (DeepL). No schema changes — reuses the existing Concert Ranker tables.
+
+TODO-196: Add custom app icon (packaged + window/taskbar), replace generic Electron gear icon
+Priority: Low
+Status: Done
+Added: 2026-07-01
+Closed: 2026-07-01
+Description: Implemented custom LB icon in gui_next/resources/icon.png (512x512 PNG) for both
+  packaged app/installer (electron-builder) and running/dev window + Linux taskbar (BrowserWindow
+  icon option in gui_next/src/main/index.ts). Icon is picked up by buildResources convention for
+  macOS/Windows installers, and explicit icon path for window decoration + taskbar on all platforms.
+
 TODO-191: Concert ranker — validate and integrate speech_band_snr_db + new waveform detectors
 Priority: Medium
 Status: Done
