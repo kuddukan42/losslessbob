@@ -23,8 +23,9 @@ Changed: .claude/commands/session-close.md: rewired to route all BUGS/TODO moves
 Changed: .claude/CLAUDE.md: Bookkeeping + Verification bullets trimmed to match the ledger.py
   workflow and the frozen Change Log table.
 Note: structural pipeline items P1/P2/P3/P7/P8 from
-  instructions/FABLE_PIPELINE_DEVLOOP_IDEATION.md deliberately deferred pending a combined
-  design doc (see TODO-205); the ideation doc stays in instructions/ (not moved to complete/).
+  instructions/complete/FABLE_PIPELINE_DEVLOOP_IDEATION.md deliberately deferred pending a
+  combined design doc (see TODO-205); the ideation doc was later moved to instructions/complete/
+  once its remaining open item (D6) was captured as TODO-207.
 Added: instructions/PIPELINE_STRUCTURAL_TIER_DESIGN.md (TODO-205, design only — no code
   changes): combined design for the structural pipeline tier — P7 (persist pipeline row
   state, resume across restart) + P1 (shared per-file hash cache) + P2 (async multi-folder
@@ -57,6 +58,11 @@ Investigated: backend/checksum_utils.py `verify_folder` — confirmed `.st5` che
   (checksum_utils.py:568-575) and compared against a freshly computed shntool hash for `.shn`
   audio files (:640-643); `st5_status` stays hardcoded `'na'` only because the pass/fail
   surfaces under `shntool_status` instead.
+Changed: instructions/FABLE_PIPELINE_DEVLOOP_IDEATION.md retired to instructions/complete/
+  (its last open item, D6, captured as TODO-207); added instructions/README.md as an
+  active/complete spec index; added a session-close rule to auto-move finished specs into
+  instructions/complete/ and update the index; opened TODO-207 (gui_next locale key-parity
+  check script, spec D6 remnant).
 
 [2026-07-05] — docs: CLAUDE.md optimization — targeted context reads, skill delegation
 Changed: .claude/CLAUDE.md: rewrote for token efficiency — replaced mandatory full reads of
