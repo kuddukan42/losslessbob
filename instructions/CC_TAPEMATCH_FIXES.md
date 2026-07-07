@@ -1,331 +1,559 @@
-# CC_TAPEMATCH_FIXES.md — tapematch reliability fixes for recording_families
+# CC_TAPEMATCH_FIXES — Recall recovery: mechanical fixes + speed-invariant fingerprint
 
-*Supersedes the priority ordering in `instructions/TAPEMATCH_PLAN.md`. The diagnosis
-in that file stands; the implementation sequence and two fix designs are revised here.*
+Read `PROJECT.md`, `tools/tapematch/tapematch/match.py`, `tools/tapematch/tapematch/align.py`,
+`tools/tapematch/tapematch/audio.py`, `tools/tapematch/tapematch/cli.py`,
+`tools/tapematch/tapematch_session.py`, `tools/tapematch/WORKFLOW.md`, and
+`tools/tapematch/session/config.yaml` before starting.
 
 ---
 
-## Context for Claude Code
+## Context
 
-Read first:
+Tapematch audit against 2,163 curator-labeled pairs: **precision 98.2%, recall 38.3%**.
+FN characterization of 957 unique missed pairs:
+
+| Cat | n | % | Cause |
+|-----|-----|------|-------|
+| 1 | 527 | 55.1% | Speed delta outside/beyond `estimate_ratio` grid (deltas to 56,500 ppm; grid ±20,000 ppm, 500 ppm steps) |
+| 2 | 257 | 26.9% | Staircase on ONE side — short-window fallback requires staircase on BOTH sides |
+| 3 | 6 | 0.6% | Sources speed-aligned to wrong reference in stale runs — need focused re-run |
+| 4 | 156 | 16.3% | All four signals below threshold; ~30 fp near-misses (0.40–0.499); hiss_median guard over-blocking lo-fi pairs |
+
+Plus 11 anomalies caused by stale cross-run data joins.
+
+**Governing constraint: precision is the asset.** False merges poison union-find
+clusters transitively. Every task below is gated by the regression harness in
+Task 1. A change that raises recall but adds false positives on the frozen
+negative set is REJECTED.
+
+Ordering is strict — Task 1 must exist before any algorithm change lands, and
+each subsequent task re-runs the harness before merging. Fix the measurement
+instrument before touching the algorithm.
+
+---
+
+## Task 1 — Regression harness (`tools/tapematch/regression.py`)
+
+New script. Freezes the current labeled pair population as a regression set and
+scores any candidate configuration/code state against it.
+
+### 1.1 Frozen set extraction
+
 ```
-tools/tapematch/WORKFLOW.md
-tools/tapematch/config.yaml
-instructions/TAPEMATCH_PLAN.md     # background diagnosis — sequence below overrides it
+python tools/tapematch/regression.py freeze
 ```
 
-**Purpose shift:** tapematch output is the acoustic-evidence feed for a future
-`recording_families` table (same recording, different transfer/remaster/tracking —
-distinct from `xref`, which is same files modified/retracked). This changes the
-optimization target:
+- Reads `observations.db` `pairs` table, latest run per (lb_a, lb_b) pair only
+  (dedupe on `MAX(run_at)` per unordered pair — this is the fix for the 11
+  stale-data anomalies; see 1.4).
+- Selects all rows with `lb_says_same IN (0, 1)` OR `human_judgment IN
+  ('confirmed_same', 'confirmed_different')`. Human judgment outranks
+  `lb_says_same` where both present.
+- Writes `tools/tapematch/session/regression_set.json`:
 
-> **False merges are catastrophic; misses are cheap.**
-> A false merge propagates transitively through union-find clustering and fuses two
-> genuinely distinct recording families. A miss is backfilled later by text mining
-> or a re-run. Never trade false-merge risk for recall.
+```json
+{
+  "frozen_at": "ISO timestamp",
+  "positives": [[lb_a, lb_b, "date_iso"], ...],
+  "negatives": [[lb_a, lb_b, "date_iso"], ...],
+  "baseline": {"tp": 663, "fn": 1066, "fp": 12, "tn": 1422,
+               "precision": 0.982, "recall": 0.383}
+}
+```
 
-Standing rules (from `.claude/CLAUDE.md`, restated):
-- Strictly additive. No destructive operations on `observations.db` or any run dir.
-- Dry-run mode on anything that writes.
-- All schema changes guarded by version checks.
-- Validate every fix against the named regression dates AND the control dates before
-  moving to the next task.
+The frozen file is committed to git. It is never regenerated except by an
+explicit `freeze --force`.
 
----
+### 1.2 Scoring a run
 
-## Task sequence (do in this order)
+```
+python tools/tapematch/regression.py score --dates 1996-07-21,1998-10-28,...
+python tools/tapematch/regression.py score --all-frozen-dates
+```
 
-| # | Task | Why this order |
-|---|------|----------------|
-| 1 | gen_analysis.py parser fix + re-baseline | Fixes the measurement instrument before algorithm work |
-| 2 | observations.db run versioning + latest-verdict view | Blocks everything downstream; cheap |
-| 3 | OOM: dtype/rate audit → downsample-at-ingest | Likely a 5-minute root cause; unblocks N≥5 dates |
-| 4 | Speed-offset secondary via **predicted lag** | ~300+ missed pairs (1987–1990 era) |
-| 5 | Staircase short-window with **recalibrated thresholds** | ~100+ missed pairs (2001 tour) |
-| 6 | Re-run queue generator | Targeted re-runs, not blind 429-date sweep |
-| 7 | Error/no-verdict triage | Cleanup |
+- For each date, runs the tapematch session (reuse `tapematch_session.py`
+  machinery) and collects family verdicts for every frozen pair on that date.
+- Emits per-category and aggregate confusion matrix vs. baseline:
 
----
+```
+           baseline   candidate   delta
+recall       38.3%       xx.x%    +x.x
+precision    98.2%       xx.x%    ±x.x
+new FP: [LB-x/LB-y, ...]          <- listed individually, always
+```
 
-## Task 1 — gen_analysis.py parser fix + re-baseline
+- Exit code 1 if any NEW false positive appears that was a TN in baseline.
+  New FPs must be individually reviewed and either (a) reclassified by human
+  judgment or (b) the change rejected.
 
-**File:** `tools/tapematch/gen_analysis.py`
+### 1.3 Fast mode
 
-### Problem
-`_same_signal` fires on snippets where "same recording" refers to a *different* group
-of LBs, not the subject LB. Example false positive:
+`score --cached` re-scores from existing `pairs` rows without re-running audio,
+for threshold-only changes (Tasks 3, 4). Threshold logic must therefore be
+reproducible from stored per-pair metrics (corr, windowed_frac, hiss_frac,
+hiss_median, fp_score, speed_kind_a/b, hf_ceiling_a/b) — implement the verdict
+function as a pure function `verdict(pair_row, cfg, lineage) -> str` in a new
+module `tools/tapematch/tapematch/verdict.py` so it can run against DB rows or
+live results identically. Refactor `cli.py` clustering to call it.
 
-> "Alternative recording to LB-0491/LB-0569 which all appear to be same recording"
+### 1.4 Stale-data guard
 
-This inflates MISS counts and corrupts the baseline used to validate Tasks 4–5.
+Add `latest_pairs` view to the observations DB schema in
+`tapematch_session.py`:
 
-### Implementation
-1. In `_build_observations`, after obtaining `snip`:
-   - If `_diff_signal(snip)` also matches, do **not** call `_same_signal(snip)`.
-   - Emit the neutral `→` (ambiguous) observation branch instead.
-2. Add a unit test in `tools/tapematch/tests/` with the exact snippet above plus
-   2–3 clean positive and negative snippets pulled from real analysis.md files.
-
-### Re-baseline (required before Task 4)
-3. Regenerate all analysis.md: `gen_analysis.py --overwrite` across all run dirs.
-4. Recompute and record the corrected miss numbers in a new file
-   `tools/tapematch/BASELINE.md`:
-   - total LB-confirmed same-source pairs
-   - missed (different_family)
-   - false merges (same_family where lb_says_same=0... see Task 2 note on this field)
-   - corr-bucket distribution of misses (reproduce the table from TAPEMATCH_PLAN.md
-     with corrected numbers)
-   - per-date worst-miss table
-
-   All later validation compares against BASELINE.md, not TAPEMATCH_PLAN.md.
-
-### Known measurement caveat (document in BASELINE.md, do not "fix")
-`lb_says_same` only exists where commentary explicitly names the other LB. True
-recall is unknowable from this metric; it is a biased subsample. tapematch links
-on pairs with NO commentary cross-reference are potential discoveries, not errors.
-
----
-
-## Task 2 — observations.db run versioning + latest-verdict view
-
-**File:** new `tools/tapematch/migrate_observations.py` (one-shot, idempotent)
-
-### Problem
-After Tasks 4–5, most dates get re-run. `observations.db` will then hold conflicting
-verdicts per pair across runs. The future family builder must consume only the
-latest verdict per pair.
-
-### Implementation
-1. Inspect the current `pairs` schema first (`PRAGMA table_info(pairs)`).
-2. If `run_id` / `run_timestamp` columns are absent, add them
-   (`ALTER TABLE ... ADD COLUMN`, nullable, no rewrite).
-   Backfill from run-dir names where derivable (`YYYYMMDD_HHMMSS_DATE` pattern in
-   `tools/tapematch/runs/`); leave NULL where not derivable.
-3. Modify the session script's pair-logging code so every new row carries
-   `run_id` (the run dir name) and `run_timestamp` (ISO 8601).
-4. Create view:
 ```sql
 CREATE VIEW IF NOT EXISTS latest_pairs AS
-SELECT p.*
-FROM pairs p
+SELECT p.* FROM pairs p
 JOIN (
-    SELECT lb_a, lb_b, MAX(COALESCE(run_timestamp, '')) AS max_ts
-    FROM pairs
-    GROUP BY lb_a, lb_b
-) m ON m.lb_a = p.lb_a AND m.lb_b = p.lb_b
-   AND COALESCE(p.run_timestamp, '') = m.max_ts;
+    SELECT MIN(lb_a, lb_b) la, MAX(lb_a, lb_b) lbb, MAX(run_at) mr
+    FROM pairs GROUP BY MIN(lb_a, lb_b), MAX(lb_a, lb_b)
+) t ON MIN(p.lb_a, p.lb_b)=t.la AND MAX(p.lb_a, p.lb_b)=t.lbb
+   AND p.run_at = t.mr;
 ```
-   Note: pairs with NULL timestamps from un-backfillable legacy rows sort lowest —
-   any re-run supersedes them, which is the desired behavior.
-5. Normalize pair key ordering: assert/enforce `lb_a < lb_b` on insert so
-   (A,B) and (B,A) never coexist. If legacy rows violate this, normalize them in
-   the migration (swap columns, keep all other fields).
-6. Dry-run mode: print intended changes without writing. Back up `observations.db`
-   (file copy with timestamp suffix) before the real migration.
+
+All analysis/audit queries in `gen_analysis.py` and `regression.py` use
+`latest_pairs`, never `pairs` directly.
+
+**Deliverable:** harness runs, baseline numbers reproduce the audit (663/1066/12/1422
+within ±5 rows — small drift from dedupe is acceptable and must be logged).
 
 ---
 
-## Task 3 — OOM root cause: dtype/rate audit before any refactor
+## Task 2 — Cat 3 focused re-run (6 pairs)
 
-**Files:** `tools/tapematch/tapematch/ingest.py`, `match.py`, possibly `align.py`
+No code change. Create `tools/tapematch/rerun_cat3.py`:
 
-### Hypothesis to verify FIRST (5-minute audit)
-2 hr stereo @ 96 kHz in float64 ≈ 11 GB per source. Three resident sources ≈ 33 GB
-≈ available RAM. Also: `scipy.signal.correlate(method='fft')` promotes inputs to
-float64 and allocates several full-length scratch copies.
+- Hardcode the 6 pair list (extract from the FN characterization query:
+  `latest_pairs WHERE speed_kind_a='aligned' OR speed_kind_b='aligned'` with
+  `lb_says_same=1` and verdict `different_family`).
+- For each pair: stage BOTH folders into the session examples dir together,
+  run tapematch on just those two, write results to observations DB with a
+  fresh run_id.
+- Print before/after verdict per pair.
 
-### Audit steps
-1. Trace what `ingest.py` returns per source: sample rate, channels, dtype.
-2. Trace where (or whether) downsampling to the comparison representation happens,
-   and whether the native-rate array is freed afterward (look for retained
-   references — module-level lists, dataclass fields, closure captures).
-3. Check dtype at every correlation call site. Log findings in the commit message.
-
-### Fix (expected form — adjust to what the audit finds)
-4. Downsample + mono + `float32` **at ingest**; `del` the native-rate array
-   immediately and ensure nothing retains a reference.
-5. If HF residual comparison genuinely needs higher-rate data, keep only the HF
-   band representation, also float32, and only for the two sources in the current
-   pair.
-6. Add a pre-run estimate log line: `N sources, est. peak RAM ~X GB` computed from
-   the actual representation sizes.
-
-### Only if the above is insufficient
-7. LRU-2 lazy loading per pair (`max_sources_in_ram = 2` config knob). Do NOT build
-   this preemptively.
-
-### Validation
-- **1994-02-20** (OOM case study, no run dir exists): run must complete and produce
-  a verdict.
-- One previously-successful 3-source date must produce identical family assignments
-  (float32 must not change verdicts — if it does, stop and report).
+Expected outcome: most flip to same_family once aligned against each other.
+Any that don't flip get reassigned to Cat 1/2/4 and noted in the report.
 
 ---
 
-## Task 4 — Speed-offset secondary: predicted lag, NOT widened search
+## Task 3 — Staircase: either-side fallback + conditional fp threshold
 
-**Files:** `tools/tapematch/tapematch/match.py` (`secondary_corr_pair`),
-`tools/tapematch/tapematch/align.py`, `config.yaml`
+### 3.1 Short-window fallback trigger
 
-### Design decision (overrides TAPEMATCH_PLAN.md option list)
-Do NOT widen `local_lag_sec` to 90+. A ±90s search per window is expensive and
-raises false-lock risk — a window can find spurious correlation at a wrong lag in
-a 180s range, and false locks feed false merges (see context note).
+In the secondary-match path (`cli.py` / `match.py` — locate the guard that
+selects `short_window_sec`): change the condition from *both* sides
+staircase-flagged to *either* side:
 
-Instead: drift under a constant speed offset is **deterministic**:
-
-```
-expected_lag(t) = lag_0 + ppm_ratio * t
+```python
+stair = ("staircase" in speed_info[na]["kind"]) or \
+        ("staircase" in speed_info[nb]["kind"])
 ```
 
-`estimate_ratio` already produces the ppm. Apply the predicted lag as the per-window
-search **center**, keep the residual search window at the existing ±10s (it now only
-absorbs ppm-estimate error, not accumulated drift).
+Verify the current behavior first — WORKFLOW.md documents both-sides; if the
+code already checks either-side, instrument it (debug-log which branch fires
+for a known Cat 2 pair, e.g. from 1996-07-21) and find why windowed_frac stays
+at ~0. Do not proceed on assumption.
 
-### Pre-check (do before implementing)
-1. Verify the `estimate_ratio` search grid extends to at least ±19,000 ppm. The
-   worst 1989–1990 pairs sit at ±15–19k ppm; if the grid caps lower, those pairs
-   get no usable ppm and predicted-lag silently degrades. Widen the grid if needed
-   (config knob `align.ratio_grid_max_ppm`, suggested 20000).
+### 3.2 Staircase-conditional fingerprint threshold
 
-### Implementation
-2. New config knob: `secondary_match.high_ppm_threshold: 5000` (ppm above which
-   predicted-lag mode activates; below it, existing behavior is unchanged).
-3. In `secondary_corr_pair`, when `abs(pair_ppm) >= high_ppm_threshold`:
-   - Compute `expected_lag(t)` for each window center from `lag_0` (the lag at the
-     first aligned anchor) and the ppm ratio.
-   - Center each window's local lag search on `expected_lag(t)`; keep search
-     half-width at `local_lag_sec` (10s).
-4. Critical constraint preserved: **no waveform resampling before
-   `secondary_corr_pair`** (WORKFLOW.md prohibition — resampling smears HF
-   fine-structure). Predicted-lag centering touches only search offsets, not audio.
-5. Fallback (only if predicted-lag underperforms on regression dates): low-band
-   (250–2000 Hz) envelope comparison with time-warped *features* — never resample
-   waveforms. Treat as a follow-up, not part of this task.
+`config.yaml`:
 
-### Validation
-| Date | Baseline misses (verify against BASELINE.md) | Target |
-|------|----------------------------------------------|--------|
-| 1989-06-04 | 8 | ≤2 |
-| 1990-01-12 | 9 | ≤3 |
+```yaml
+fingerprint:
+  cluster_threshold: 0.50
+  cluster_threshold_staircase: 0.40   # NEW — either side staircase-flagged
+```
 
-Plus control dates (Task 4 and 5 shared): pick 3 dates from BASELINE.md with
-0 misses and 0 false merges. After the fix, their family assignments must be
-**unchanged**. Any new same_family link on a control date is a probable false
-merge — stop and report before proceeding.
+In `verdict.py` (from Task 1.3):
+
+```python
+def fp_threshold(pair, cfg) -> float:
+    fp_cfg = cfg["fingerprint"]
+    stair = ("staircase" in (pair["speed_kind_a"] or "")) or \
+            ("staircase" in (pair["speed_kind_b"] or ""))
+    if stair:
+        return fp_cfg.get("cluster_threshold_staircase",
+                          fp_cfg["cluster_threshold"])
+    return fp_cfg["cluster_threshold"]
+```
+
+**Gate:** `regression.py score --cached` — Cat 2 recall must rise; zero new FP
+on frozen negatives. If new FPs appear, raise the staircase threshold in 0.02
+steps until clean, and report the final value.
 
 ---
 
-## Task 5 — Staircase/staircase: recalibrate thresholds for short windows
+## Task 4 — Conditional thresholds: curator-relaxed fp + lo-fi hiss guard
 
-**Files:** `tools/tapematch/tapematch/match.py`, `config.yaml`
+### 4.1 Curator-conditional fingerprint threshold
 
-### Statistical caveat (overrides the plan's bare "use 5s windows")
-Correlation variance grows as window length shrinks. `window_corr_threshold: 0.30`
-was calibrated for 60s windows and is NOT valid at 5s — applying it unchanged
-trades staircase misses for noise-driven false windows (→ false merges).
+Requires `entry_lineage` (already built — CC_LINEAGE_PARSE). Add a lineage
+loader to `verdict.py`:
 
-### Implementation
-1. New config knobs:
+```python
+def load_lineage_pairs(db_path) -> set[tuple[int, int]]:
+    """Return unordered (lb_lo, lb_hi) pairs where either side's same_as_lb
+    lists the other."""
+    import json, sqlite3
+    conn = sqlite3.connect(str(db_path))
+    out = set()
+    for lb, same in conn.execute(
+            "SELECT lb_number, same_as_lb FROM entry_lineage "
+            "WHERE same_as_lb != '[]'"):
+        for other in json.loads(same):
+            out.add((min(lb, other), max(lb, other)))
+    conn.close()
+    return out
+```
+
+`config.yaml`:
+
+```yaml
+fingerprint:
+  cluster_threshold_curator: 0.43   # NEW — curator text claims same-source
+```
+
+In `fp_threshold()`: if `(min(lb_a,lb_b), max(lb_a,lb_b))` in the lineage set,
+use `min(current_applicable, cluster_threshold_curator)`.
+
+Principle: text is a prior, not a label. Audio must still cross 0.43 — a text
+claim with fp_score 0.10 stays `different_family` (this is how the system
+learns to distrust wrong text).
+
+### 4.2 HF-conditional hiss_merge_median
+
+`config.yaml`:
+
 ```yaml
 secondary_match:
-  staircase_window_sec: 5.0
-  staircase_hop_sec: 2.0
-  staircase_window_corr_threshold: null   # set after calibration step below
-  staircase_coverage_threshold: null      # set after calibration step below
+  hiss_merge_median: 0.65
+  hiss_merge_median_lofi: 0.40      # NEW — both hf_ceiling_hz < 12000
+  hiss_lofi_ceiling_hz: 12000
 ```
-2. Activate only when BOTH sides of a pair carry the staircase flag.
-3. **Calibration step (required before setting thresholds):** on 2001-10-30, run
-   the 5s-window pass on (a) the known same-source pairs and (b) known
-   different-source same-show pairs. Record both per-window corr distributions.
-   Set `staircase_window_corr_threshold` and `staircase_coverage_threshold` to
-   sit in the gap, biased toward the false-positive-safe side (higher). Document
-   the observed distributions as a table in a comment block in config.yaml,
-   mirroring the existing fingerprint calibration notes in WORKFLOW.md.
-4. Alternative if calibration shows no usable gap at 5s: piecewise alignment.
-   The staircase lag curve already locates the step edges — align segment-by-
-   segment between detected steps with piecewise-constant lag, using the existing
-   60s window machinery within each segment. Implement only if 3 fails.
 
-### Validation
-| Date | Baseline misses | Target |
-|------|-----------------|--------|
-| 2001-10-30 | 13 (partially parser noise — use post-Task-1 number) | ≤3 |
-| 2001-10-07 | 5 | ≤1 |
-| 1996-07-21 | 6 (mixed mode, exercises Task 4 + 5 together) | ≤2 |
+In `verdict.py`: apply the lo-fi value only when BOTH sides have
+`hf_ceiling_hz < hiss_lofi_ceiling_hz` AND neither is `nyquist_capped`
+(a capped reading is not a real ceiling measurement — treat as unknown, keep
+0.65). Rationale: cassette-generation deck noise is chain identity; the 0.65
+guard was calibrated against room-ambience false positives on cleaner sources.
 
-Same 3 control dates as Task 4: family assignments unchanged.
+**Gate:** `score --cached`. 4.1 and 4.2 evaluated separately (two harness runs)
+so their individual FP impact is attributable.
 
 ---
 
-## Task 6 — Re-run queue generator
+## Task 5 — `estimate_ratio` overhaul (Cat 1 primary fix)
 
-**File:** new `tools/tapematch/build_rerun_queue.py`
+File: `tools/tapematch/tapematch/match.py`. Replace `estimate_ratio` with a
+prior-centered, confidence-reporting estimator.
 
-After Tasks 4–5 validate, generate a targeted re-run list instead of blindly
-re-running all 429 dates.
+### 5.1 Duration-ratio prior
 
-1. Query `latest_pairs` (Task 2 view) for dates with ≥1
-   `lb_says_same=1 AND verdict='different_family'` pair, ordered by miss count desc.
-2. Exclude dates already re-run after the fix commit timestamp.
-3. Output `tools/tapematch/rerun_queue.txt`, one date per line, with miss count as
-   a trailing comment.
-4. Add `--batch FILE` mode to `tapematch_session.py`: consume the queue file,
-   run sequentially, skip lines starting with `#`, append `# done <timestamp>` to
-   completed lines so the queue is resumable after interruption.
-5. Dates with 0 misses and no errors are NOT re-run.
+```python
+def duration_ratio_prior(dur_ref: float, dur_other: float,
+                         diagnostics: set[str]) -> float | None:
+    """Speed-ratio prior from performance durations (post-trim).
+    A 5% speed offset is a 5% duration difference — trivially visible.
+    Returns None when trim/timing diagnostics make durations incomparable."""
+    if {"TIMING_MISMATCH", "INCOMPLETE"} & diagnostics:
+        return None
+    if dur_other <= 0:
+        return None
+    r = dur_ref / dur_other
+    if abs(r - 1.0) > 0.08:          # >80,000 ppm — durations not comparable
+        return None
+    return r
+```
+
+Callers pass trimmed `perf_dur` values (already computed in `trim_bounds`).
+
+### 5.2 New estimator
+
+```python
+def estimate_ratio_v2(ref, other, sr, cfg,
+                      prior: float | None = None) -> tuple[float, float]:
+    """Return (ratio, confidence). Confidence = peak prominence of the
+    envelope-correlation surface: (best - median) / (mad + eps).
+
+    Search strategy:
+      prior given  -> fine grid: prior ± 3000 ppm, 100 ppm steps (61 pts)
+      no prior     -> coarse grid: ±60000 ppm, 1000 ppm steps (121 pts),
+                      then fine grid ±1500 ppm / 100 ppm around coarse best.
+    Envelope warping uses linear interpolation of the log-envelope
+    (np.interp), NOT scipy.signal.resample — FFT resampling of a
+    non-periodic envelope adds edge artifacts and biases peak comparison
+    across ratios."""
+    er, rate = _envelope(ref, sr)
+    eo, _    = _envelope(other, sr)
+
+    def warp(env: np.ndarray, ratio: float) -> np.ndarray:
+        m = max(8, int(len(env) * ratio))
+        xi = np.linspace(0, len(env) - 1, m)
+        w = np.interp(xi, np.arange(len(env)), env)
+        return (w - w.mean()) / (w.std() + 1e-9)
+
+    def peak_at(ratio: float) -> float:
+        eo_r = warp(eo, ratio)
+        n = min(len(er), len(eo_r))
+        xc = correlate(er[:n], eo_r[:n], mode="full")
+        return float(np.max(np.abs(xc)) / n)
+
+    if prior is not None:
+        grid = prior + np.arange(-3000, 3001, 100) * 1e-6
+    else:
+        grid = 1.0 + np.arange(-60000, 60001, 1000) * 1e-6
+
+    peaks = np.array([peak_at(r) for r in grid])
+    best = grid[int(np.argmax(peaks))]
+
+    if prior is None:  # refine around coarse best
+        fine = best + np.arange(-1500, 1501, 100) * 1e-6
+        fpk = np.array([peak_at(r) for r in fine])
+        best = fine[int(np.argmax(fpk))]
+        peaks = np.concatenate([peaks, fpk])
+
+    med = float(np.median(peaks))
+    mad = float(np.median(np.abs(peaks - med))) + 1e-9
+    confidence = (float(np.max(peaks)) - med) / mad
+    return float(best), confidence
+```
+
+### 5.3 Confidence gating
+
+`config.yaml`:
+
+```yaml
+align:
+  ratio_flag_ppm: 200
+  ratio_confidence_min: 6.0     # NEW — below this, ratio is UNKNOWN
+```
+
+When `confidence < ratio_confidence_min`:
+- Do NOT resample with the returned ratio.
+- Set `speed_kind = "speed-unknown"` for the pair, log it, and route the pair
+  to the fingerprint path only (Task 7 makes that path speed-invariant).
+This converts silent Cat 1 failures into a diagnosable population.
+
+### 5.4 Keep `estimate_ratio` name stable
+
+Rename old function `estimate_ratio_v1_deprecated`, wire `estimate_ratio_v2`
+behind the original call sites (`pairwise_matrix`, `cli.py` lag-curve section)
+with prior plumbed from trim durations. Keep v1 callable for A/B in the
+harness.
+
+**Gate:** full `regression.py score` on all frozen dates containing Cat 1
+pairs. Expect the largest single recall jump of the spec. Zero new FP
+tolerance stands. Also run 2–3 known-good control dates (e.g. 1998-10-28,
+1996-07-21) and confirm identical family output vs. baseline.
 
 ---
 
-## Task 7 — Error and no-verdict triage
+## Task 6 — Lag-curve slope refinement + pyin fallback
 
-### Error runs (6 dates)
-For each of: 1987-10-05, 1989-08-26, 1989-09-01, 1989-09-03, 1993-04-23, 2001-07-07
-1. Read `report.md` traceback in the run dir.
-2. `flac -t` on every file in the flagged source folder.
-3. If FLAC corruption: report the file paths to the user — do NOT attempt repair
-   or replacement (collection files are never modified).
-4. If the crash is the Task-3 OOM signature, re-run after Task 3 lands.
+### 6.1 Closed-form residual correction (kills the ±grid-step quantization)
 
-### No-verdict runs (7 dates)
-1978-11-29, 1991-02-13, 1992-11-12, 1994-10-01, 2003-11-25, 2018-08-26, 2026-06-05
-1. Read `report.md` + `tapematch.log` per run dir.
-2. Expected cause: ≥2 DB entries but only 1 locally analyzable source (private LBs
-   excluded by the session script).
-3. Fix the session script to emit an explicit `insufficient_sources` status into
-   the run report instead of an empty clusters section, so these stop surfacing
-   as anomalies.
-4. 2026-06-05 is likely a test/calibration artifact — confirm and mark the run dir
-   with a `SKIP_REASON` file rather than deleting it.
+The residual speed error after coarse resampling appears as the slope of the
+lag-vs-position curve, which `align.lag_curve` already computes. Add to
+`align.py`:
+
+```python
+def residual_ppm_from_lag_curve(rows) -> tuple[float, float]:
+    """rows: [(anchor_sec, lag_sec_or_None), ...] measured AFTER coarse
+    resample. lag(t) = ppm*1e-6*t + c  =>  slope*1e6 = residual ppm.
+    Returns (ppm, r_squared). Robust: refuses estimate on <4 valid anchors
+    or poor linear fit (staircase curves must not be 'corrected')."""
+    pts = [(a, l) for a, l in rows if l is not None]
+    if len(pts) < 4:
+        return 0.0, 0.0
+    t = np.array([p[0] for p in pts]); lag = np.array([p[1] for p in pts])
+    slope, intercept = np.polyfit(t, lag, 1)
+    pred = slope * t + intercept
+    ss_res = float(((lag - pred) ** 2).sum())
+    ss_tot = float(((lag - lag.mean()) ** 2).sum()) + 1e-12
+    return float(slope * 1e6), 1.0 - ss_res / ss_tot
+```
+
+Integration in `pairwise_matrix` / `cli.py`:
+
+```
+ratio, conf = estimate_ratio_v2(...)
+resample if needed
+rows = lag_curve(ref, other_corrected, ...)
+ppm_res, r2 = residual_ppm_from_lag_curve(rows)
+if r2 > 0.85 and abs(ppm_res) > 50:
+    apply corrective resample: ratio *= (1 + ppm_res * 1e-6); recompute lag curve
+    (max 2 correction iterations)
+```
+
+The r² guard is mandatory — a staircase lag curve fits a line badly and must
+fall through to the staircase path untouched.
+
+MEMORY-CRITICAL: corrective resample creates a second full-length float32
+array. Follow the existing memmap discipline in `cli.py` — resample into a new
+memmap under the run tmp dir, delete the intermediate, never hold two
+resampled copies in heap.
+
+### 6.2 pyin absolute-pitch fallback
+
+Only for pairs where `estimate_ratio_v2` returned `speed-unknown` AND duration
+prior was unavailable. New function in `match.py`:
+
+```python
+def pitch_ratio_pyin(ref, other, sr, cfg) -> tuple[float, float]:
+    """Absolute-pitch speed ratio via librosa.pyin median f0.
+
+    Windows: pick 3 non-quiet 60 s windows per source (reuse
+    find_quiet_segments logic inverted — highest-energy stable segments,
+    spread early/mid/late). For each window compute voiced f0 track:
+
+        f0, vflag, _ = librosa.pyin(y_win, fmin=65.0, fmax=1000.0,
+                                    sr=sr, frame_length=4096)
+        med = np.nanmedian(f0[vflag])
+
+    Per-window ratio = med_ref / med_other. Take the median of the 3 window
+    ratios; confidence = 1 - (max-min spread of window ratios / median).
+    Returns (ratio, confidence in [0,1]).
+
+    CAVEAT — octave errors: pyin can jump octaves between sources. After
+    computing per-window ratios, fold any ratio in [1.9, 2.1] or
+    [0.48, 0.52] * another window's ratio by the appropriate power of 2
+    before taking the median. If windows disagree by >2000 ppm after
+    folding, return confidence 0."""
+```
+
+Gate its use behind `align.pyin_fallback: true` config flag (default true).
+Runs at the 16 kHz analysis rate — fmax 1000 Hz is far below Nyquist. numba
+JIT: `NUMBA_CACHE_DIR` must already be set per existing project convention;
+verify it is set in the tapematch entry path before first librosa call.
+
+**Gate:** full harness run. Also add a synthetic unit test: take one real
+track, resample by known ppm (e.g. +17,000), assert `pitch_ratio_pyin`
+recovers within ±300 ppm and `residual_ppm_from_lag_curve` closes a deliberate
++400 ppm coarse error to <100 ppm.
 
 ---
 
-## Forward-looking constraint (informational — no implementation in this spec)
+## Task 7 — Ratio-invariant triplet fingerprint (Panako-style)
 
-A `recording_families` build will later consume `latest_pairs`. Its edge-acceptance
-rules will be:
-- union-find edges require primary corr ≥ cluster threshold OR multi-signal
-  secondary agreement (windowed AND hiss)
-- fingerprint-only links and single-signal secondary links go to a quarantine
-  table for human ratification, never directly into clustering
+File: extend `tools/tapematch/tapematch/fingerprint.py` (or wherever the
+constellation hashing lives — locate the Shazam-style hash builder first and
+mirror its structure).
 
-Nothing in Tasks 1–7 should make single-signal links easier to mistake for
-multi-signal ones. Where the report/observations rows record which layer produced
-a link, keep that attribution intact and machine-readable — it is the input to
-the quarantine logic.
+### 7.1 Why
+
+Current hashes encode (f1, f2, Δt) with absolute quantization — a 1.5% speed
+change shifts both frequency and Δt, breaking every hash. Cat 1 pairs
+therefore fail the fingerprint fallback too. Triplet-ratio hashes are
+invariant to time-scaling and pitch shift because they encode only ratios.
+
+### 7.2 Algorithm
+
+Keep the existing peak-picking front end (same STFT, same `hf_band_hz`
+[6000, 8000] restriction — this preserves the same-show rejection property).
+Replace the pairing stage:
+
+```python
+def triplet_hashes(peaks: list[tuple[float, float]], cfg: dict) -> set[int]:
+    """peaks: [(t_sec, f_hz), ...] sorted by t, from the existing peak picker.
+
+    For each anchor peak p0, take up to `fanout` peaks p1 in
+    (t0 + tmin, t0 + tmax], and for each p1 up to `fanout` peaks p2 in
+    (t1, t1 + tmax]. Hash the RATIOS only:
+
+        r_t = (t2 - t1) / (t1 - t0)          # time-scale invariant
+        r_f1 = f1 / f0                       # pitch-shift invariant
+        r_f2 = f2 / f0
+
+    Quantize: r_t to 6-bit log scale over [0.25, 4.0];
+              r_f1, r_f2 to 7-bit log scale over [0.5, 2.0].
+    hash = (q_rt << 14) | (q_rf1 << 7) | q_rf2   -> 20-bit int.
+
+    Speed change scales all t deltas by the same factor and all f by the
+    same factor -> every ratio is unchanged -> hash set is unchanged."""
+```
+
+Config:
+
+```yaml
+fingerprint:
+  triplet:
+    enabled: true
+    tmin_sec: 0.5
+    tmax_sec: 8.0
+    fanout: 4
+    cluster_threshold: 0.45     # Dice on triplet hash sets — CALIBRATE, see 7.4
+```
+
+### 7.3 Scoring and integration
+
+Dice coefficient over triplet-hash sets, exactly parallel to the existing
+fp_score. Store as new column `fp_triplet_score` in the observations `pairs`
+table (schema migration in `tapematch_session.py` — `ALTER TABLE ADD COLUMN`,
+nullable). Verdict logic in `verdict.py`: triplet score is an OR-path with its
+own threshold, applied to ALL pairs but especially the sole surviving signal
+for `speed-unknown` pairs from Task 5.3.
+
+Note: quantized ratios have far fewer distinct values than Shazam hashes —
+expect a higher random-collision baseline. That is why calibration (7.4) is
+mandatory before the threshold goes live.
+
+### 7.4 Calibration protocol (do this BEFORE enabling in verdicts)
+
+1. Compute triplet Dice on 30 frozen TP pairs and 30 frozen TN pairs
+   (same-date TNs only — the hard negatives), plus the 527 Cat 1 pairs.
+2. Plot/print the two distributions. Set `cluster_threshold` at the midpoint
+   of the gap, require gap width ≥ 0.10; if the gap is narrower, raise
+   quantization bits (7→8 for freq ratios) and repeat.
+3. Synthetic invariance test: one recording vs. itself resampled +30,000 ppm
+   must score Dice > 0.8; vs. a different-family same-date recording must
+   stay below threshold.
+
+**Gate:** full harness. This task has the highest FP risk in the spec —
+if any new FP appears on frozen same-date negatives, do not lower quality
+bars to keep recall; tighten quantization or raise the threshold.
 
 ---
 
-## Definition of done
+## Constraints (all tasks)
 
-- [ ] Parser unit test passes; all analysis.md regenerated; BASELINE.md written
-- [ ] observations.db migrated (backed up first); `latest_pairs` view returns one
-      row per normalized pair; session script writes run_id/run_timestamp
-- [ ] 1994-02-20 completes; one prior 3-source date reproduces identical verdicts
-- [ ] 1989-06-04 ≤2 misses; 1990-01-12 ≤3 misses; control dates unchanged
-- [ ] 2001-10-30 ≤3; 2001-10-07 ≤1; 1996-07-21 ≤2; control dates unchanged;
-      staircase calibration table documented in config.yaml
-- [ ] rerun_queue.txt generated; `--batch` mode works and is resumable
-- [ ] 6 error dates triaged (corrupt FLACs reported, not touched); session script
-      emits `insufficient_sources`; no-verdict dates resolved or marked
-- [ ] CHANGELOG.md entries added per task (FEAT/BUG IDs per existing convention)
+- Strictly additive to observations DB: new columns nullable, no row deletion,
+  no destructive migrations.
+- `verdict.py` is the single source of truth for clustering decisions after
+  Task 1 — no threshold logic duplicated in `cli.py` or `gen_analysis.py`.
+- All new thresholds live in `config.yaml`, none hardcoded.
+- Memory discipline: any new full-length array goes through the memmap tmp-dir
+  pattern; assume 2-hour sources.
+- Do NOT resample before `secondary_corr_pair` (existing critical note in
+  WORKFLOW.md stands — resampling smears the HF fine-structure that
+  residual_corr needs). Task 6.1's corrective resample applies only to the
+  PRIMARY path.
+- After each task: run the harness, prepend CHANGELOG.md, update WORKFLOW.md
+  knob tables and the failure-mode table.
+- No screenshot/visual verification steps in any task — human sign-off happens
+  outside this spec.
+
+## Explicitly out of scope
+
+- Contrastive embedding model (separate spec, separate conversation).
+- Dropout event fingerprint, stereo M/S geometry, crowd-event matching,
+  spectral-ratio stationarity (Phase-1 feature extraction spec).
+- htdemucs stem analysis.
+- Any change to the primary residual_corr math or anchor selection.
+
+## Completion checklist
+
+- [ ] `regression.py` freeze/score/score --cached working; baseline reproduced
+- [ ] `latest_pairs` view; `gen_analysis.py` migrated to it
+- [ ] `verdict.py` extracted; cli.py clustering calls it; identical output on 2 control dates
+- [ ] Cat 3: 6 pairs re-run, results logged, report written
+- [ ] Either-side staircase fallback verified/fixed with instrumented evidence
+- [ ] `cluster_threshold_staircase` live, harness-clean
+- [ ] Curator-conditional fp threshold live, harness-clean
+- [ ] Lo-fi hiss_merge_median live, harness-clean
+- [ ] `estimate_ratio_v2` with duration prior + confidence gating; v1 kept for A/B
+- [ ] `speed-unknown` routing implemented and counted
+- [ ] `residual_ppm_from_lag_curve` with r² guard + synthetic unit test
+- [ ] `pitch_ratio_pyin` with octave folding + synthetic unit test
+- [ ] Triplet fingerprint implemented, calibrated per 7.4, `fp_triplet_score` column added
+- [ ] Final harness run: report recall/precision vs. 38.3%/98.2% baseline, per-category recovery table
+- [ ] CHANGELOG.md, WORKFLOW.md, PROJECT.md updated
