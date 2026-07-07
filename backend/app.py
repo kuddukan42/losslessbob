@@ -1,4 +1,5 @@
 import base64
+import json
 import logging
 import os
 import re
@@ -42,6 +43,8 @@ from backend.paths import (
     attachment_path,
     find_lbdir_attachment,
 )
+from concert_ranker.config import resolve_band_set
+from concert_ranker.scoring import band_metric
 
 _log = logging.getLogger(__name__)
 
@@ -162,6 +165,66 @@ def _resolve_lb_number_for_folder(folder: Path) -> int | None:
         return int(m.group(1))
     link = database.get_folder_link(str(folder))
     return link["lb_number"] if link else None
+
+
+# Metrics surfaced on the Quality tab, banded to human labels via the same
+# thresholds concert_ranker's scoring brain uses for verdict_text (see
+# concert_ranker/config.py SIGNED_BANDS/SEVERITY_BANDS). Source-type flags use
+# the 0.5 threshold concert_ranker's lossy_flag disqualifier uses (config.py).
+_SOURCE_FLAG_LABELS = {
+    "lossy_flag": "lossy source suspected",
+    "minidisc_score": "minidisc (ATRAC) signature",
+    "dat32k_flag": "32kHz DAT (16k bandwidth cap)",
+    "cassette_flag": "cassette tape rolloff",
+    "tv_band_flag": "TV-band artifact",
+}
+
+
+def _quality_metrics_for(conn: sqlite3.Connection, scan_id: int, lb_number: int) -> dict | None:
+    """Pull raw Concert Ranker metrics for one scored recording and band them.
+
+    Args:
+        conn: Open DB connection.
+        scan_id: The scan whose metrics to read.
+        lb_number: The LB number to look up.
+
+    Returns:
+        Dict of banded stereo/clipping/crowd/tonal/source-flag fields for the
+        Quality tab, or None if the recording has no stored raw metrics.
+    """
+    row = conn.execute(
+        "SELECT metric_json, source_class FROM quality_recording_metrics"
+        " WHERE scan_id=? AND lb_number=?",
+        (scan_id, lb_number),
+    ).fetchone()
+    if not row or not row["metric_json"]:
+        return None
+    raw = json.loads(row["metric_json"]).get("metrics", {})
+    bset = resolve_band_set(source_class=row["source_class"])
+    signed, severity, quality = bset["SIGNED"], bset["SEVERITY"], bset["QUALITY"]
+
+    def band(metric: str) -> str | None:
+        return band_metric(metric, raw.get(metric), signed, severity, quality)
+
+    source_flags = [
+        label for metric, label in _SOURCE_FLAG_LABELS.items()
+        if (raw.get(metric) or 0) >= 0.5
+    ]
+    return {
+        "mono": raw.get("lr_corr") is None,
+        "stereo_width": raw.get("stereo_width"),
+        "stereo_width_label": band("stereo_width"),
+        "clip_fraction": raw.get("clip_fraction"),
+        "crowd_snr_db": raw.get("crowd_snr_db"),
+        "crowd_snr_label": band("crowd_snr_db"),
+        "bass_ratio_db": raw.get("bass_ratio_db"),
+        "bass_label": band("bass_ratio_db"),
+        "mud_ratio_db": raw.get("mud_ratio_db"),
+        "mud_label": band("mud_ratio_db"),
+        "harsh_ratio_db": raw.get("harsh_ratio_db"),
+        "harsh_label": band("harsh_ratio_db"),
+        "source_flags": source_flags,
+    }
 
 
 def create_app() -> Flask:
@@ -708,6 +771,46 @@ def create_app() -> Flask:
                     "SELECT * FROM entry_files WHERE lb_number=?", (lb_number,)
                 ).fetchall()
             return jsonify([dict(f) for f in files])
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/quality/<int:lb_number>", methods=["GET"])
+    def get_quality(lb_number: int) -> Response:
+        """Return the latest Concert Ranker quality score for one recording.
+
+        Args:
+            lb_number: The LB number to look up.
+
+        Returns:
+            JSON dict with final_score/rank_in_family/vetoed/verdict_text/
+            abs_score/abs_grade from the most recent scan that actually wrote
+            scores, plus a ``metrics`` sub-dict of banded raw signals (stereo
+            width, clipping, crowd separation, tonal balance, source-type
+            flags) for the Quality tab visualizations, or 204 if the
+            recording has never been scanned.
+        """
+        try:
+            with database.get_connection() as conn:
+                # quality_scans includes small calibration-sample runs that never
+                # write quality_recording_scores; MAX(scan_id) alone can point at
+                # one of those, so pick the newest scan that has scored rows.
+                scan_row = conn.execute(
+                    "SELECT MAX(scan_id) AS m FROM quality_recording_scores"
+                ).fetchone()
+                scan_id = scan_row["m"] if scan_row else None
+                if scan_id is None:
+                    return "", 204
+                row = conn.execute(
+                    "SELECT final_score, rank_in_family, vetoed, verdict_text,"
+                    " abs_score, abs_grade FROM quality_recording_scores"
+                    " WHERE scan_id=? AND lb_number=?",
+                    (scan_id, lb_number),
+                ).fetchone()
+                if not row:
+                    return "", 204
+                result = dict(row)
+                result["metrics"] = _quality_metrics_for(conn, scan_id, lb_number)
+                return jsonify(result)
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
