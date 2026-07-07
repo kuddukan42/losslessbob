@@ -1130,7 +1130,6 @@ _KNOWN_TAPER_ALIASES: dict[str, str] = {
     "improved air remaster": "iar",
     "mjs": "mjs",
     "bw": "bw",
-    "dolphinsmile": "dolphinsmile",
     "jtt": "jtt",
     "pl": "pl",
     "cedar": "cedar",
@@ -1289,6 +1288,9 @@ _KNOWN_TAPER_ALIASES: dict[str, str] = {
 
 # Labels that must never be stored as taper_name (mis-parses / source-type labels).
 _NOT_TAPER: frozenset[str] = frozenset({
+    # dolphinsmile curates/transfers others' tapes — not a taper (curator, 2026-07-04);
+    # common misspellings in entry text included
+    'dolphinsmile', 'dolphinmile', 'dolphindmile', 'dolphinsme', 'dolphin',
     'sbd', 'aud', 'master', 'series', 'incomplete',
     'aud master', 'master aud', 'excellent sound', 'net tapers',
     'km140s', 'km140',
@@ -2897,6 +2899,42 @@ def classify_one_entry(date_str: str, description: str, location: str, conn) -> 
             return cat
 
     return "unknown"
+
+
+def lookup_checksum_owners(checksums, db_path=None):
+    """Map each checksum to the LB entries that own it in the checksums table.
+
+    Used to detect when a candidate forum post documents a *different*
+    recording than the one being matched: a raw hash lifted from the post body
+    that resolves to another lb_number means the post belongs to that entry
+    (e.g. a different taper of the same show), not the one under consideration.
+
+    Args:
+        checksums: Iterable of checksum hash strings (md5/sha1/ffp) to resolve.
+        db_path: Optional database path override.
+
+    Returns:
+        Dict mapping each matched checksum string to the sorted list of
+        lb_numbers that own it. Checksums with no owner are omitted.
+    """
+    hashes = {h for h in checksums if h}
+    if not hashes:
+        return {}
+    owners: dict[str, set] = {}
+    with get_connection(db_path) as conn:
+        # Chunk to stay under SQLite's parameter limit on large posts.
+        hash_list = list(hashes)
+        for start in range(0, len(hash_list), 400):
+            chunk = hash_list[start:start + 400]
+            placeholders = ",".join("?" * len(chunk))
+            rows = conn.execute(
+                f"SELECT checksum, lb_number FROM checksums "
+                f"WHERE checksum IN ({placeholders})",
+                chunk,
+            ).fetchall()
+            for row in rows:
+                owners.setdefault(row["checksum"], set()).add(row["lb_number"])
+    return {h: sorted(lbs) for h, lbs in owners.items()}
 
 
 def get_entry(lb_number, db_path=None):

@@ -10,6 +10,11 @@ Matching strategy (strongest to weakest signal):
 Candidates are also hard-disqualified (never scored) when:
   - The post body or attachment filenames carry an explicit "LB-NNNNN" tag for
     a DIFFERENT entry (see BUG-225, BUG-227).
+  - The post body's MD5/SHA1 checksums resolve to a DIFFERENT lb_number in the
+    checksums table — the post documents another recording (usually a different
+    taper of the same show), not this entry (see BUG-231). This prevents a false
+    "ambiguous" tie between two other tapers' posts when the entry under review
+    simply has no post of its own.
   - The post predates the entry's own acquisition window: entries.description
     ends with a "bittorrent download MM/YY" note recording when the LosslessBob
     curator downloaded that recording; a forum post can't be the source of a
@@ -31,6 +36,7 @@ import time
 from calendar import month_abbr, month_name
 from datetime import date, datetime
 from pathlib import Path
+from urllib.parse import unquote
 
 import requests
 from bs4 import BeautifulSoup
@@ -53,6 +59,53 @@ _DOWNLOAD_WINDOW_MONTHS = 6
 
 # Confidence levels ordered weakest → strongest for comparison
 _CONF_ORDER = ("not_found", "needs_review", "ambiguous", "medium", "high", "definitive")
+
+# Raw MD5 (32) / SHA1 (40) hex fingerprints as they appear in post bodies, used
+# to detect a candidate that documents a DIFFERENT recording (its hashes resolve
+# to another lb_number in the checksums table). See BUG-231.
+_HASH_RE = re.compile(r"(?<![0-9a-fA-F])[0-9a-fA-F]{32}(?![0-9a-fA-F])"
+                      r"|(?<![0-9a-fA-F])[0-9a-fA-F]{40}(?![0-9a-fA-F])")
+
+
+def _extract_hashes(text: str) -> set[str]:
+    """Extract lowercase MD5/SHA1 hex fingerprints from a post body.
+
+    Args:
+        text: Plain-text post body (and attachment text) to scan.
+
+    Returns:
+        Set of lowercase 32- or 40-char hex strings found in ``text``.
+    """
+    return {m.group(0).lower() for m in _HASH_RE.finditer(text or "")}
+
+
+def _checksum_search_terms(checksums: list[dict], limit: int = 3) -> list[str]:
+    """Pick distinct checksum hashes to use as full-text WTRF search queries.
+
+    A single track's FFP/MD5/SHA1 hash is unique to one recording, so searching
+    the forum body for it resolves straight to the post that lists it — the
+    deterministic primary lookup. A handful are returned (not just one) so a
+    post that happens to omit the first track still gets hit.
+
+    Args:
+        checksums: Rows from the checksums table for the entry.
+        limit: Maximum number of hashes to return.
+
+    Returns:
+        Up to ``limit`` distinct hash strings, FFP/MD5/SHA1 types only.
+    """
+    terms: list[str] = []
+    seen: set[str] = set()
+    for c in checksums:
+        if c.get("chk_type") not in ("f", "m", "s"):
+            continue
+        h = (c.get("checksum") or "").strip()
+        if h and h not in seen:
+            seen.add(h)
+            terms.append(h)
+        if len(terms) >= limit:
+            break
+    return terms
 
 
 # ── URL helpers ────────────────────────────────────────────────────────────────
@@ -328,17 +381,23 @@ def _search_board(
     board_id: int,
     query: str,
     delay: float,
+    subject_only: bool = True,
 ) -> list[tuple[str, str]]:
     """POST to SMF search2 and return (topic_url, topic_title) pairs.
 
-    Searches subject lines only, restricted to ``board_id``.
+    Restricted to ``board_id``.  With ``subject_only`` (default) only topic
+    titles are searched — used for date-string queries.  With
+    ``subject_only=False`` the full message body is searched too, which is what
+    lets a checksum query resolve to the exact post that lists it.
     Sleeps ``delay`` seconds before issuing the request.
 
     Args:
         session: Authenticated requests.Session.
         board_id: SMF board number to restrict the search to.
-        query: Search term (typically a date string variant).
+        query: Search term (a date variant, or a checksum hash).
         delay: Seconds to sleep before the request.
+        subject_only: Restrict to subject lines when True; search bodies too
+            when False.
 
     Returns:
         Deduplicated list of (normalised_topic_url, title) tuples.
@@ -348,7 +407,7 @@ def _search_board(
         ("search",              query),
         ("advanced",            "1"),
         ("searchtype",          "1"),   # all words
-        ("subject_only",        "1"),
+        ("subject_only",        "1" if subject_only else "0"),
         ("sort",                "relevance|asc"),
         (f"brd[{board_id}]",   str(board_id)),
     ]
@@ -491,13 +550,37 @@ def _download_torrent(
         )
         resp.raise_for_status()
 
-        # Filename from Content-Disposition, falling back to attach-id or lb_number
+        # Filename from Content-Disposition, falling back to attach-id or lb_number.
+        # Prefer the plain filename="..." parameter; RFC 5987's filename*=charset''value
+        # form (e.g. filename*=UTF-8''real+name.torrent) is only used when no plain
+        # filename is present, and must have its charset prefix stripped and the
+        # remainder URL-decoded rather than being matched raw (BUG-233).
         fname: str | None = None
         cd = resp.headers.get("Content-Disposition", "")
-        m = re.search(r'filename[^;=\n]*=\s*["\']?([^"\'\n;]+)', cd, re.IGNORECASE)
+        m = re.search(r'filename(?!\*)\s*=\s*["\']?([^"\'\n;]+)', cd, re.IGNORECASE)
         if m:
             fname = m.group(1).strip().strip("\"'")
         if not fname:
+            m_ext = re.search(r"filename\*\s*=\s*([^;\n]+)", cd, re.IGNORECASE)
+            if m_ext:
+                value = m_ext.group(1).strip().strip("\"'")
+                charset, sep, encoded = value.partition("''")
+                if sep and encoded:
+                    try:
+                        fname = unquote(encoded, encoding=charset or "utf-8")
+                    except (LookupError, UnicodeDecodeError):
+                        fname = unquote(encoded)
+                elif value:
+                    fname = unquote(value)
+        if fname:
+            # A Content-Disposition filename identifies the physical torrent, not the
+            # LB catalog entry — a single WTRF post (and its one .torrent) can
+            # legitimately be the correct match for multiple LB entries (e.g. a
+            # multi-show boxset where each entry owns one CD, see BUG-234). Without
+            # the LB prefix, downloading it per-entry would overwrite the same path
+            # each time.
+            fname = f"LB-{lb_number:05d}-{fname}"
+        else:
             m2 = re.search(r"attach=(\d+)", torrent_url)
             if m2:
                 fname = f"LB-{lb_number:05d}-attach{m2.group(1)}.torrent"
@@ -573,6 +656,7 @@ def find_torrent_for_lb(
     checksums = entry_data["checksums"]
     date_str  = entry.get("date_str") or ""
     variants  = _date_variants(date_str)
+    hash_terms = _checksum_search_terms(checksums)
 
     # A forum post can't be the source of a download that predates it, so
     # anything posted more than _DOWNLOAD_WINDOW_MONTHS before the entry's own
@@ -583,10 +667,14 @@ def find_torrent_for_lb(
         _months_before(download_date, _DOWNLOAD_WINDOW_MONTHS) if download_date else None
     )
 
-    if not variants:
+    # A checksum body-search can still find the post even when the date is a
+    # placeholder (e.g. "xx/xx/85"), so only bail here if BOTH lookups are
+    # unavailable.
+    if not variants and not hash_terms:
         return _fail(
             "not_found",
-            f"Cannot derive date variants from date_str={date_str!r}",
+            f"Cannot derive date variants from date_str={date_str!r} "
+            "and no checksums available for a body search",
         )
 
     # ── Login ──────────────────────────────────────────────────────────────────
@@ -604,14 +692,34 @@ def find_torrent_for_lb(
     seen_urls: set[str] = set()
     candidates: list[tuple[str, str]] = []   # (url, title)
 
-    for variant in variants:
-        results = _search_board(session, board_id, variant, search_delay)
-        for url, title in results:
+    # Phase 1 — checksum body-search (deterministic). A track hash is unique to
+    # one recording, so a full-text hit lands directly on the correct taper's
+    # post regardless of how the topic title is formatted (BUG-232). Stop as
+    # soon as any hash yields a result.
+    for term in hash_terms:
+        for url, title in _search_board(
+            session, board_id, term, search_delay, subject_only=False
+        ):
             if url not in seen_urls:
                 seen_urls.add(url)
                 candidates.append((url, title))
         if candidates:
-            break   # stop at first date variant that yields results
+            logger.info(
+                "wtrf_scraper: LB-%05d — checksum body-search matched %d topic(s)",
+                lb_number, len(candidates),
+            )
+            break
+
+    # Phase 2 — date-variant subject search (fallback). Accumulate across ALL
+    # variants rather than stopping at the first hit: different tapers title the
+    # same show differently (ISO "2026-05-01" vs "May 1, 2026"), so an early
+    # break can miss the very post we want (BUG-232).
+    if not candidates:
+        for variant in variants:
+            for url, title in _search_board(session, board_id, variant, search_delay):
+                if url not in seen_urls:
+                    seen_urls.add(url)
+                    candidates.append((url, title))
 
     # Broad fallback: year-month only (catches non-standard title formats)
     if not candidates:
@@ -645,6 +753,7 @@ def find_torrent_for_lb(
     scored: list[tuple[int, dict, str, str | None]] = []
     disqualified_tag = 0
     disqualified_old = 0
+    disqualified_foreign = 0
 
     for topic_url, _title in candidates:
         post = _fetch_topic(session, topic_url, delay)
@@ -673,6 +782,28 @@ def find_torrent_for_lb(
                 lb_number, topic_url, sigs["lb_tag_mismatch"],
             )
             continue
+        # Cross-recording guard: a post whose checksums resolve to a DIFFERENT
+        # lb_number documents that other recording (typically a different taper
+        # of the same show), not this entry. Only applies when none of this
+        # entry's own checksums matched — an FFP/MD5 hit for THIS entry already
+        # proves ownership and short-circuits above via a positive score.
+        if not (sigs.get("ffp_matches") or sigs.get("md5_matches")):
+            body_hashes = _extract_hashes(scan_text)
+            if body_hashes:
+                owners = database.lookup_checksum_owners(body_hashes, db_path=db_path)
+                foreign = sorted({
+                    lb for lbs in owners.values() for lb in lbs if lb != lb_number
+                })
+                if foreign and lb_number not in {
+                    lb for lbs in owners.values() for lb in lbs
+                }:
+                    disqualified_foreign += 1
+                    logger.info(
+                        "wtrf_scraper: LB-%05d disqualifying %s — checksums belong "
+                        "to LB entry %s",
+                        lb_number, topic_url, foreign,
+                    )
+                    continue
         if post["torrent_url"]:
             sc += 5
             sigs["has_torrent"] = True
@@ -683,19 +814,23 @@ def find_torrent_for_lb(
         )
 
     if not scored:
-        if disqualified_tag or disqualified_old:
+        if disqualified_tag or disqualified_old or disqualified_foreign:
             reasons = []
             if disqualified_tag:
                 reasons.append(f"{disqualified_tag} explicitly tagged for a different LB entry")
+            if disqualified_foreign:
+                reasons.append(
+                    f"{disqualified_foreign} carry checksums belonging to a different LB entry"
+                )
             if disqualified_old:
                 reasons.append(
                     f"{disqualified_old} posted before the {_DOWNLOAD_WINDOW_MONTHS}-month "
                     "download window"
                 )
+            total = disqualified_tag + disqualified_old + disqualified_foreign
             return _fail(
                 "not_found",
-                f"All {disqualified_tag + disqualified_old} candidate post(s) disqualified: "
-                + "; ".join(reasons),
+                f"All {total} candidate post(s) disqualified: " + "; ".join(reasons),
             )
         return _fail("not_found", "Candidates found but none had accessible content")
 

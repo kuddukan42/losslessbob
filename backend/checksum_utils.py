@@ -102,6 +102,19 @@ def _is_reconciled_extra(rel_path: str) -> bool:
     """
     return rel_path == RENAME_LOG_NAME or rel_path.startswith(EXTRAS_DIRNAME + '/')
 
+
+# lbdir manifests self-reference their own name in their file listing. Since the
+# manifest's own MD5/shntool line is written before the hash of the finished file
+# can exist, the on-disk copy's checksum never matches the recorded one — the file
+# is effectively unreconcilable. Treat a missing self-referenced manifest as a pass.
+_LBDIR_MANIFEST_RE = re.compile(r'lbdir.*\.txt$', re.IGNORECASE)
+
+
+def _is_lbdir_manifest_name(fname: str) -> bool:
+    """Whether ``fname`` is a self-referencing ``lbdir-*.txt`` manifest entry."""
+    basename = re.split(r'[/\\]', fname)[-1]
+    return bool(_LBDIR_MANIFEST_RE.match(basename))
+
 # Typographic apostrophes that differ between checksum files (e.g. EAC) and disk filenames.
 _APOSTROPHE_TRANS = str.maketrans({
     '\u2018': "'",  # LEFT SINGLE QUOTATION MARK
@@ -782,7 +795,12 @@ def verify_folder_lbdir(folder_path, lbdir_path):
         ffp_st = _cmp(ffp_exp, ffp_actual, on_disk)
         shn_st = _cmp(shn_exp, shn_actual, on_disk)
 
-        if not on_disk:
+        if not on_disk and _is_lbdir_manifest_name(fname):
+            # Self-referencing manifest: its recorded checksum can never match the
+            # finished file, so it can't be reconciled. Treat as pass, not missing.
+            overall = 'pass'
+            n_pass += 1
+        elif not on_disk:
             overall = 'missing'
             n_missing += 1
         else:
