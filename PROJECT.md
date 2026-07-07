@@ -149,6 +149,7 @@ losslessbob/
 │   ├── wtrf_username.txt     # WTRF forum username
 │   └── wtrf_password.txt     # WTRF forum password
 ├── tools/
+│   ├── ledger.py              # CLI: BUG/TODO ledger ops (next-id, bug-open/close, todo-open/close, --dry-run); used by /session-close
 │   ├── geocode_locations.py  # CLI: batch-geocode entries.location via Nominatim (--limit, --retry-failed, --dry-run)
 │   ├── import_curated_lists.py # CLI: import curator "best of" picks (TODO-181) — carbonbit's FLglist.xlsx + 10haaf's dylan_boots.zip/years.zip → curated_lists/curated_list_entries
 │   ├── losslessbob.iss       # Inno Setup 6 script — builds LosslessBob_Setup_<ver>.exe from dist/LosslessBob/
@@ -1615,6 +1616,10 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 ---
 
 ## Change Log
+
+**Frozen as of 2026-07-07.** This table is historical only — no new rows are added. The
+sole narrative change log is now `CHANGELOG.md` (rolling ~2-month window) plus
+`CHANGELOG_ARCHIVE.md` (older entries).
 
 | Date | Change |
 |------|--------|

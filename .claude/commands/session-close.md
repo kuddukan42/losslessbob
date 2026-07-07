@@ -1,5 +1,5 @@
 ---
-description: End-of-session bookkeeping — CHANGELOG entry, BUGS/TODO moves with correct numbering, PROJECT.md change-log row, consistency check
+description: End-of-session bookkeeping — CHANGELOG entry, BUGS/TODO moves via tools/ledger.py, PROJECT.md reference-section updates, consistency check
 ---
 
 # session-close — Mandatory bookkeeping, done consistently
@@ -29,48 +29,49 @@ Added: <file>: <new capability>   (if applicable)
 
 ## Step 3 — BUGS.md / BUGS_DONE.md
 
-- **Next free number** = max `BUG-<NNN>` across **both** files + 1. Verify with:
+All bug ledger moves go through `tools/ledger.py` — it handles numbering,
+formatting, and moving entries between the open/done files. Do not hand-edit
+BUGS.md / BUGS_DONE.md or hand-compute the next number.
+
+- New bug discovered:
   ```bash
-  grep -ho "BUG-[0-9]*" BUGS.md BUGS_DONE.md | sort -t- -k2 -n | tail -1
+  .venv/bin/python3 tools/ledger.py bug-open "title" [--files file:line,...] [--desc "..."]
   ```
-- Entry format:
+- Bug fixed this session:
+  ```bash
+  .venv/bin/python3 tools/ledger.py bug-close NNN --root-cause "..." --fix "..."
   ```
-  BUG-<NNN>: <title>
-  Status: Open | Fixed | Wontfix
-  File(s): <file:line>
-  Reported: YYYY-MM-DD
-  Fixed: YYYY-MM-DD
-  Root cause: ...
-  Fix: ...
-  ```
-- New bug discovered → add as `Status: Open` to BUGS.md.
-- Bug fixed this session → fill `Fixed:` date, `Root cause:`, `Fix:`, and
-  **move the whole entry to the top of BUGS_DONE.md** (remove from BUGS.md).
+- Check the next free id without writing anything: `next-id bug`.
+- Every subcommand accepts `--dry-run` to preview without touching files.
+
+Background (formatting the CLI already enforces): entries carry
+`Status: Open | Fixed | Wontfix`, `File(s)`, `Reported`/`Fixed` dates, and
+`Root cause`/`Fix` text; numbering is `BUG-<NNN>` unique across both files.
 
 ## Step 4 — TODO.md / TODO_DONE.md
 
-- Same numbering rule across TODO.md + TODO_DONE.md (`TODO-<NNN>`).
-- Entry format:
+Same rule: use `tools/ledger.py`, not manual edits.
+
+- New task:
+  ```bash
+  .venv/bin/python3 tools/ledger.py todo-open "title" [--priority High|Medium|Low] [--desc "..."]
   ```
-  TODO-<NNN>: <title>
-  Priority: High | Medium | Low
-  Status: Open | In Progress | Done | Cancelled
-  Added: YYYY-MM-DD
-  Closed: YYYY-MM-DD
-  Description: ...
+- Done or cancelled:
+  ```bash
+  .venv/bin/python3 tools/ledger.py todo-close NNN [--resolution "..."]
   ```
-- New task → TODO.md with Priority/Status/Added/Description.
-- Done or cancelled → set `Closed:` date and move to top of TODO_DONE.md.
+- Check the next free id: `next-id todo`. All subcommands accept `--dry-run`.
+
+Background: entries carry `Priority`, `Status: Open | In Progress | Done |
+Cancelled`, `Added`/`Closed` dates, `Description`; numbering is `TODO-<NNN>`
+unique across both files.
 
 ## Step 5 — PROJECT.md (only if applicable)
 
 Update the relevant section if any of these changed: file structure, DB
-schema, Flask routes, GUI screens/tabs, dependencies. Then add a row to the
-`## Change Log` table (newest first):
-
-```
-| YYYY-MM-DD | <one-row summary, dense prose, backtick file/route/table names> |
-```
+schema, Flask routes, GUI screens/tabs, dependencies. The `## Change Log`
+table is **frozen** (see its header note) — do not add rows there.
+CHANGELOG.md is the only narrative change log.
 
 ## Step 6 — Cross-cutting reminders
 
