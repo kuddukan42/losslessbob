@@ -1,0 +1,11 @@
+
+=== regression score (cached; recomputed) — 827 date(s), 2965 frozen pairs ===
+
+             baseline   candidate    delta
+recall          41.1%       42.9%    +1.8
+precision       97.9%       98.0%    +0.1
+
+confusion  baseline: tp=647 fn=928 fp=14 tn=1376
+           candidate: tp=675 fn=900 fp=14 tn=1376
+
+new FP: none  (precision preserved on frozen negatives)

@@ -1,0 +1,116 @@
+=== tapematch session: 1991-06-06  [20260702_124318] ===
+
+[1] Querying DB …
+  6 entries — Roma Palaeur, Rome, Italy
+    LB-02811
+    LB-03583
+    LB-04089
+    LB-10286
+    LB-12326
+    LB-15633
+
+[2] Resolving paths from my_collection …
+  Found 6/6
+    LB-02811: /mnt/DYLAN1/Concerts/1991/1991-06-06 Roma Palaeur, Rome, Italy (LB-02811)
+    LB-03583: /mnt/DYLAN1/Concerts/1991/1991-06-06 Roma, Palaeur (LB-03583)
+    LB-04089: /mnt/DYLAN1/Concerts/1991/1991-06-06 Rome, Italy, Paleur (LB-04089)
+    LB-10286: /mnt/DYLAN1/Concerts/1991/1991-06-06 Rome, Italy (LB-10286)
+    LB-12326: /mnt/DYLAN1/Concerts/1991/1991-06-06 Rome, Italy (Palaeur) (LB-12326)
+    LB-15633: /mnt/DYLAN1/LB HOPPER/bd1991-06-06 Roma (LTJ)-LB-15633
+
+[3] Cleaning /mnt/DATA0/examples/tapematch …
+
+[4] Copying 6 folders to /mnt/DATA0/examples/tapematch …
+  Copying LB-02811: 1991-06-06 Roma Palaeur, Rome, Italy (LB-02811) …
+  Copying LB-03583: 1991-06-06 Roma, Palaeur (LB-03583) …
+  Copying LB-04089: 1991-06-06 Rome, Italy, Paleur (LB-04089) …
+  Copying LB-10286: 1991-06-06 Rome, Italy (LB-10286) …
+  Copying LB-12326: 1991-06-06 Rome, Italy (Palaeur) (LB-12326) …
+  Copying LB-15633: bd1991-06-06 Roma (LTJ)-LB-15633 …
+
+[5] Running tapematch …
+  curator lineage pairs loaded: 677 (from /home/tjenkins/Documents/losslessbob/data/losslessbob.db)
+  est. peak RAM ~2.1 GB (6 sources, largest 3:55:58)
+=== INGEST / TRIM ===
+  1991-06-06 Roma Palaeur, Rome, Italy (LB-02811): 18 tracks, 1:19:57
+  1991-06-06 Roma, Palaeur (LB-03583): 18 tracks, 1:19:58
+  1991-06-06 Rome, Italy (LB-10286): 51 tracks, 3:55:58
+  1991-06-06 Rome, Italy (Palaeur) (LB-12326): 19 tracks, 1:19:36
+  1991-06-06 Rome, Italy, Paleur (LB-04089): 19 tracks, 1:19:09
+  bd1991-06-06 Roma (LTJ)-LB-15633: 18 tracks, 1:19:38
+
+=== TRIM (performance envelope) ===
+  1991-06-06 Roma Palaeur, Rome, Italy (LB-02811): trimmed 0:00:56 head, 0:00:02 tail -> performance 1:18:59
+  1991-06-06 Roma, Palaeur (LB-03583): trimmed 0:02:08 head, 0:00:20 tail -> performance 1:17:29
+  1991-06-06 Rome, Italy (LB-10286): trimmed 0:01:28 head, 0:09:18 tail -> performance 3:45:12
+  1991-06-06 Rome, Italy (Palaeur) (LB-12326): trimmed 0:02:50 head, 0:00:03 tail -> performance 1:16:44
+  1991-06-06 Rome, Italy, Paleur (LB-04089): trimmed 0:02:52 head, 0:00:17 tail -> performance 1:16:00
+  bd1991-06-06 Roma (LTJ)-LB-15633: trimmed 0:02:44 head, 0:00:03 tail -> performance 1:16:50
+
+  [INFLATED?] — duration well above group median (1:17:10):
+    1991-06-06 Rome, Italy (LB-10286): 3:45:12 (191.9% longer) — possible duplicate tracks in subfolders
+
+=== ANCHORS (ref=1991-06-06 Roma Palaeur, Rome, Italy (LB-02811)) ===
+  0:01:58, 0:08:19, 0:14:26, 0:20:35, 0:27:29, 0:39:19, 0:39:47, 0:48:47, 0:56:40, 1:03:56, 1:07:10, 1:15:00
+
+=== LAG CURVES / SPEED (vs ref) ===
+  1991-06-06 Roma Palaeur, Rome, Italy (LB-02811)->1991-06-06 Roma, Palaeur (LB-03583): constant-speed-offset  speed ratio=1.020000 (+20000 ppm)
+  1991-06-06 Roma Palaeur, Rome, Italy (LB-02811)->1991-06-06 Rome, Italy (LB-10286): constant-speed-offset  speed ratio=1.028500 (+28500 ppm)
+  1991-06-06 Roma Palaeur, Rome, Italy (LB-02811)->1991-06-06 Rome, Italy (Palaeur) (LB-12326): constant-speed-offset  speed ratio=1.020000 (+20000 ppm)
+  1991-06-06 Roma Palaeur, Rome, Italy (LB-02811)->1991-06-06 Rome, Italy, Paleur (LB-04089): constant-speed-offset  speed ratio=1.029000 (+29000 ppm)
+  1991-06-06 Roma Palaeur, Rome, Italy (LB-02811)->bd1991-06-06 Roma (LTJ)-LB-15633: constant-speed-offset  speed ratio=1.020000 (+20000 ppm)
+
+=== RESIDUAL CORRELATION MATRIX ===
+          LB-02811  LB-03583  LB-10286  LB-12326  LB-04089  LB-15633
+  LB-02811     1.000     0.003     0.004     0.004     0.004     0.004
+  LB-03583     0.003     1.000     0.004     0.005     0.003     0.019
+  LB-10286     0.004     0.004     1.000     0.004     0.003     0.004
+  LB-12326     0.004     0.005     0.004     1.000     0.010     0.063
+  LB-04089     0.004     0.003     0.003     0.010     1.000     0.023
+  LB-15633     0.004     0.019     0.004     0.063     0.023     1.000
+
+=== SECONDARY MATCH (windowed coverage + quiet-segment hiss + fingerprint) ===
+  15 cross-family pair(s) — computing secondary evidence ...
+  LB-03583 / LB-15633: fingerprint Dice 0.523 (41844 / 40568 hashes)  [primary corr 0.019] → SECONDARY LINK
+
+=== LAG CURVES / SPEED (re-run vs central ref=bd1991-06-06 Roma (LTJ)-LB-15633) ===
+  anchors: 0:01:54, 0:12:05, 0:19:03, 0:21:37, 0:31:24, 0:36:50, 0:44:22, 0:45:37, 0:54:23, 1:03:47, 1:07:06, 1:15:29
+  bd1991-06-06 Roma (LTJ)-LB-15633->1991-06-06 Roma Palaeur, Rome, Italy (LB-02811): constant-speed-offset  speed ratio=0.980500 (-19500 ppm)
+  bd1991-06-06 Roma (LTJ)-LB-15633->1991-06-06 Roma, Palaeur (LB-03583): staircase/splice  speed ratio=1.000000 (+0 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  bd1991-06-06 Roma (LTJ)-LB-15633->1991-06-06 Rome, Italy (LB-10286): constant-speed-offset  speed ratio=1.012000 (+12000 ppm)
+  bd1991-06-06 Roma (LTJ)-LB-15633->1991-06-06 Rome, Italy (Palaeur) (LB-12326): aligned  speed ratio=1.000000 (+0 ppm)
+  bd1991-06-06 Roma (LTJ)-LB-15633->1991-06-06 Rome, Italy, Paleur (LB-04089): constant-speed-offset  speed ratio=1.010500 (+10500 ppm)
+
+=== CLUSTERS ===
+  Family 1: 1991-06-06 Roma Palaeur, Rome, Italy (LB-02811)  (mean intra-corr 1.000)
+  Family 2: 1991-06-06 Roma, Palaeur (LB-03583), 1991-06-06 Rome, Italy (Palaeur) (LB-12326), bd1991-06-06 Roma (LTJ)-LB-15633  (mean intra-corr 0.029 [low confidence])  [secondary: LB-03583/LB-15633 via fp 0.523]  [chain-unverified: LB-03583/LB-12326; LB-12326/LB-15633 not directly confirmed]
+  Family 3: 1991-06-06 Rome, Italy (LB-10286)  (mean intra-corr 1.000)
+  Family 4: 1991-06-06 Rome, Italy, Paleur (LB-04089)  (mean intra-corr 1.000)
+  Distinct source families: 4
+
+=== LINEAGE EVIDENCE (interpret manually) ===
+    source   HF ceiling  noise floor  DC asymmetry
+  1991-06-06 Roma Palaeur, Rome, Italy (LB-02811)       1.0kHz      -74.9dB      -0.00001
+  1991-06-06 Roma, Palaeur (LB-03583)       0.0kHz      -77.4dB      -0.00000
+  1991-06-06 Rome, Italy (LB-10286)       3.0kHz      -76.7dB      +0.00100
+  1991-06-06 Rome, Italy (Palaeur) (LB-12326)       3.0kHz      -82.6dB      +0.00268
+  1991-06-06 Rome, Italy, Paleur (LB-04089)       4.0kHz      -89.5dB      -0.00002
+  bd1991-06-06 Roma (LTJ)-LB-15633       3.0kHz      -87.1dB      +0.00000
+  (HF ceiling capped by 8000 Hz Nyquist at analysis_sr=16000; run lineage at native rate for real format discrimination)
+  (DC asymmetry is a taper/equipment signature — not a reliable source-identity marker)
+
+=== DIAGNOSTICS ===
+  [INFLATED] 1991-06-06 Rome, Italy (LB-10286): 3:45:12 vs median 1:17:10 (191.9% longer) — check for duplicate tracks in subfolders; correlation results for this source are unreliable
+  [DISTINCT SOURCE] 1991-06-06 Roma Palaeur, Rome, Italy (LB-02811) (-19500 ppm speed offset, best cross-family corr 0.004): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1991-06-06 Rome, Italy (LB-10286) (+12000 ppm speed offset, best cross-family corr 0.004): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1991-06-06 Rome, Italy, Paleur (LB-04089) (+10500 ppm speed offset, best cross-family corr 0.023): near-zero correlation to all other sources — entirely different recording
+  [SECONDARY SAME-SOURCE] 1991-06-06 Roma, Palaeur (LB-03583) / bd1991-06-06 Roma (LTJ)-LB-15633: fingerprint Dice 0.523 — primary corr 0.019 (below threshold); likely remaster or heavily edited copy of same tape
+
+[6] Archiving run …
+  Archive → /home/tjenkins/Documents/losslessbob/data/tapematch/runs/20260702_124318_1991-06-06
+
+[7] Logging to observations.db …
+  Logged: 1 run, 6 sources, 15 pairs
+
+Report → /home/tjenkins/Documents/losslessbob/tools/tapematch/last_run_report.md

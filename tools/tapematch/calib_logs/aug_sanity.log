@@ -1,0 +1,9 @@
+loaded checkpoint /home/tjenkins/Documents/losslessbob/tools/tapematch/embedding/ckpt/tierc.pt (7170 steps)
+/home/tjenkins/Documents/losslessbob/tools/tapematch/embedding/aug_sanity.py:72: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:203.)
+  t = torch.from_numpy(np.asarray(wav, dtype=np.float32)).unsqueeze(0).to(device)
+  50/200 windows processed
+  100/200 windows processed
+  150/200 windows processed
+  200/200 windows processed
+aug-sanity (n=200): mean=0.9638 median=0.9767 min=0.7921 p10=0.9147
+GATE 7.3.1 (self-vs-aug >= 0.80 mean/median): PASS

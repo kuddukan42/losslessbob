@@ -1,0 +1,81 @@
+=== tapematch session: 1990-06-01  [20260702_102452] ===
+
+[1] Querying DB …
+  3 entries — Ottawa, Ontario, Ottawa National Arts Center Opera
+    LB-04200
+    LB-12552
+    LB-12884
+
+[2] Resolving paths from my_collection …
+  Found 3/3
+    LB-04200: /mnt/DYLAN1/Concerts/1990/1990-06-01 Ottawa, Ontario, Ottawa National Arts Center Opera (LB-04200)
+    LB-12552: /mnt/DYLAN1/Concerts/1990/1990-06-01 Ottawa, Canada (National Arts Center) (LB-12552)
+    LB-12884: /mnt/DYLAN1/Concerts/1990/1990-06-01 OTTAWA (LB-12884)
+
+[3] Cleaning /mnt/DATA0/examples/tapematch …
+
+[4] Copying 3 folders to /mnt/DATA0/examples/tapematch …
+  Copying LB-04200: 1990-06-01 Ottawa, Ontario, Ottawa National Arts Center Opera (LB-04200) …
+  Copying LB-12552: 1990-06-01 Ottawa, Canada (National Arts Center) (LB-12552) …
+  Copying LB-12884: 1990-06-01 OTTAWA (LB-12884) …
+
+[5] Running tapematch …
+  [cleanup] removed stale tmp dir: tapematch_exich8dr
+  [cleanup] removed stale tmp dir: tapematch_45bq_2sp
+  est. peak RAM ~0.9 GB (3 sources, largest 1:23:29)
+=== INGEST / TRIM ===
+  1990-06-01 OTTAWA (LB-12884): 16 tracks, 1:17:02
+  1990-06-01 Ottawa, Canada (National Arts Center) (LB-12552): 16 tracks, 1:23:29
+  1990-06-01 Ottawa, Ontario, Ottawa National Arts Center Opera (LB-04200): 16 tracks, 1:16:36
+
+=== TRIM (performance envelope) ===
+  1990-06-01 OTTAWA (LB-12884): trimmed 0:00:40 head, 0:00:22 tail -> performance 1:16:00
+  1990-06-01 Ottawa, Canada (National Arts Center) (LB-12552): trimmed 0:00:06 head, 0:00:04 tail -> performance 1:23:20
+  1990-06-01 Ottawa, Ontario, Ottawa National Arts Center Opera (LB-04200): trimmed 0:00:22 head, 0:00:00 tail -> performance 1:16:13
+
+=== ANCHORS (ref=1990-06-01 OTTAWA (LB-12884)) ===
+  0:04:12, 0:12:07, 0:13:14, 0:24:46, 0:25:42, 0:31:42, 0:40:26, 0:44:43, 0:55:43, 0:58:30, 1:04:28, 1:15:13
+
+=== LAG CURVES / SPEED (vs ref) ===
+  1990-06-01 OTTAWA (LB-12884)->1990-06-01 Ottawa, Canada (National Arts Center) (LB-12552): constant-speed-offset  speed ratio=0.970000 (-30000 ppm)
+  1990-06-01 OTTAWA (LB-12884)->1990-06-01 Ottawa, Ontario, Ottawa National Arts Center Opera (LB-04200): constant-speed-offset  speed ratio=0.999000 (-1000 ppm)
+
+=== RESIDUAL CORRELATION MATRIX ===
+          LB-12884  LB-12552  LB-04200
+  LB-12884     1.000     0.002     0.003
+  LB-12552     0.002     1.000     0.002
+  LB-04200     0.003     0.002     1.000
+
+=== SECONDARY MATCH (windowed coverage + quiet-segment hiss + fingerprint) ===
+  3 cross-family pair(s) — computing secondary evidence ...
+  LB-12884 / LB-04200: fingerprint Dice 0.516 (47198 / 52861 hashes)  [primary corr 0.003] → SECONDARY LINK
+  LB-12552 / LB-04200: fingerprint Dice 0.529 (53314 / 52861 hashes)  [primary corr 0.002] → SECONDARY LINK
+
+=== LAG CURVES / SPEED (re-run vs central ref=1990-06-01 Ottawa, Ontario, Ottawa National Arts Center Opera (LB-04200)) ===
+  anchors: 0:00:23, 0:12:02, 0:15:20, 0:21:07, 0:31:09, 0:36:31, 0:38:38, 0:49:37, 0:52:28, 0:57:29, 1:04:50, 1:14:01
+  1990-06-01 Ottawa, Ontario, Ottawa National Arts Center Opera (LB-04200)->1990-06-01 OTTAWA (LB-12884): constant-speed-offset  speed ratio=1.001000 (+1000 ppm)
+  1990-06-01 Ottawa, Ontario, Ottawa National Arts Center Opera (LB-04200)->1990-06-01 Ottawa, Canada (National Arts Center) (LB-12552): constant-speed-offset  speed ratio=0.970000 (-30000 ppm)
+
+=== CLUSTERS ===
+  Family 1: 1990-06-01 OTTAWA (LB-12884), 1990-06-01 Ottawa, Canada (National Arts Center) (LB-12552), 1990-06-01 Ottawa, Ontario, Ottawa National Arts Center Opera (LB-04200)  (mean intra-corr 0.003 [low confidence])  [secondary: LB-12884/LB-04200 via fp 0.516; LB-12552/LB-04200 via fp 0.529]  [chain-unverified: LB-12884/LB-12552 not directly confirmed]
+  Distinct source families: 1
+
+=== LINEAGE EVIDENCE (interpret manually) ===
+    source   HF ceiling  noise floor  DC asymmetry
+  1990-06-01 OTTAWA (LB-12884)       1.0kHz      -75.6dB      +0.00001
+  1990-06-01 Ottawa, Canada (National Arts Center) (LB-12552)       3.0kHz      -76.6dB      -0.00000
+  1990-06-01 Ottawa, Ontario, Ottawa National Arts Center Opera (LB-04200)       4.0kHz     -102.0dB      -0.00105
+  (HF ceiling capped by 8000 Hz Nyquist at analysis_sr=16000; run lineage at native rate for real format discrimination)
+  (DC asymmetry is a taper/equipment signature — not a reliable source-identity marker)
+
+=== DIAGNOSTICS ===
+  [SECONDARY SAME-SOURCE] 1990-06-01 OTTAWA (LB-12884) / 1990-06-01 Ottawa, Ontario, Ottawa National Arts Center Opera (LB-04200): fingerprint Dice 0.516 — primary corr 0.003 (below threshold); likely remaster or heavily edited copy of same tape
+  [SECONDARY SAME-SOURCE] 1990-06-01 Ottawa, Canada (National Arts Center) (LB-12552) / 1990-06-01 Ottawa, Ontario, Ottawa National Arts Center Opera (LB-04200): fingerprint Dice 0.529 — primary corr 0.002 (below threshold); likely remaster or heavily edited copy of same tape
+
+[6] Archiving run …
+  Archive → /home/tjenkins/Documents/losslessbob/data/tapematch/runs/20260702_102452_1990-06-01
+
+[7] Logging to observations.db …
+  Logged: 1 run, 3 sources, 3 pairs
+
+Report → /home/tjenkins/Documents/losslessbob/tools/tapematch/last_run_report.md

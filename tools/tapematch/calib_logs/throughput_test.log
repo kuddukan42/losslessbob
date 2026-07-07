@@ -1,0 +1,4 @@
+dataset: 61253 windows, 9600 groups, 239 batches/epoch
+ep0 step50 loss=4.8102 lr=2.94e-05 (41.0s)
+ep0 step100 loss=1.4618 lr=5.94e-05 (70.8s)
+saved /home/tjenkins/Documents/losslessbob/tools/tapematch/embedding/ckpt/tierc.pt (100 steps, 1.2 min)

@@ -1,0 +1,51 @@
+=== analysis at 2026-07-02T11:46:33-05:00 ===
+--- harness A/B (candidate = staircase0.40+curator0.43+lofi0.40) ---
+
+=== regression score (cached; recomputed) — 827 date(s), 2965 frozen pairs ===
+
+             baseline   candidate    delta
+recall          39.2%       39.6%    +0.3
+precision       98.6%       98.6%    +0.0
+
+confusion  baseline: tp=618 fn=957 fp=9 tn=1381
+           candidate: tp=623 fn=952 fp=9 tn=1381
+
+new FP: none  (precision preserved on frozen negatives)
+
+--- staircase dates: FN (says_same=1,different) vs NEG (says_same=0) fp/hiss bands ---
+### 1993-06-27
+  [ ] LB-4934/10590 ss=1 FN  corr=0.003 wf=0.00 hmed=0.005 fp=0.368
+  [ ] LB-4963/10590 ss=1 FN  corr=0.003 wf=0.00 hmed=0.007 fp=0.359
+  [S] LB-912/4934 ss=1 FN  corr=0.003 wf=0.00 hmed=0.006 fp=0.359
+  [S] LB-912/10590 ss=1 FN  corr=0.003 wf=0.00 hmed=0.007 fp=0.341
+  [S] LB-4883/4934 ss=1 FN  corr=0.002 wf=0.00 hmed=0.006 fp=0.289
+  [S] LB-4883/10590 ss=1 FN  corr=0.002 wf=0.00 hmed=0.006 fp=0.278
+  [S] LB-912/4883 ss=1 FN  corr=0.002 wf=0.00 hmed=0.007 fp=0.273
+  [ ] LB-4963/13996 ss=0 TN  corr=0.005 wf=0.00 hmed=0.010 fp=0.387
+  [ ] LB-4934/4963 ss=0 TN  corr=0.003 wf=0.00 hmed=0.007 fp=0.378
+  [S] LB-912/4963 ss=0 TN  corr=0.003 wf=0.00 hmed=0.007 fp=0.374
+  [ ] LB-10590/15460 ss=0 TN  corr=0.002 wf=0.00 hmed=0.006 fp=0.353
+  [ ] LB-4963/15460 ss=0 TN  corr=0.002 wf=0.00 hmed=0.006 fp=0.352
+  [ ] LB-10590/13996 ss=0 TN  corr=0.004 wf=0.00 hmed=0.010 fp=0.342
+  [S] LB-4883/4963 ss=0 TN  corr=0.002 wf=0.00 hmed=0.006 fp=0.275
+  [S] LB-4883/13996 ss=0 TN  corr=0.002 wf=0.00 hmed=0.009 fp=0.274
+  [S] LB-4883/15460 ss=0 TN  corr=0.002 wf=0.00 hmed=0.005 fp=0.265
+### 1996-11-04
+  [ ] LB-1593/5173 ss=1 TP  corr=0.020 wf=0.00 hmed=0.011 fp=0.575
+  [ ] LB-4023/5173 ss=1 TP  corr=0.019 wf=0.00 hmed=0.011 fp=0.563
+  [S] LB-1593/14002 ss=1 TP  corr=0.019 wf=0.06 hmed=0.011 fp=0.447
+  [S] LB-4023/14002 ss=1 TP  corr=0.021 wf=0.06 hmed=0.011 fp=0.443
+  [S] LB-12343/14002 ss=1 TP  corr=0.037 wf=0.01 hmed=0.076 fp=0.441
+  [S] LB-4023/12343 ss=1 TP  corr=0.014 wf=0.00 hmed=0.012 fp=0.436
+  [S] LB-1593/12343 ss=1 TP  corr=0.013 wf=0.00 hmed=0.011 fp=0.435
+  [S] LB-5173/12343 ss=1 TP  corr=0.024 wf=0.00 hmed=0.044 fp=0.435
+  [S] LB-9108/12343 ss=1 TP  corr=0.021 wf=0.00 hmed=0.047 fp=0.433
+  [ ] LB-1062/5173 ss=1 FN  corr=0.002 wf=0.00 hmed=0.009 fp=0.400
+  [S] LB-1062/14002 ss=1 FN  corr=0.002 wf=0.00 hmed=0.009 fp=0.398
+  [ ] LB-1062/1593 ss=1 FN  corr=0.003 wf=0.00 hmed=0.007 fp=0.397
+  [S] LB-1062/12343 ss=1 FN  corr=0.003 wf=0.00 hmed=0.007 fp=0.397
+  [ ] LB-1593/4023 ss=1 TP  corr=0.970 wf=NA hmed=NA fp=NA
+  [S] LB-5173/9108 ss=1 TP  corr=0.944 wf=NA hmed=NA fp=NA
+  [S] LB-5173/14002 ss=1 TP  corr=0.944 wf=NA hmed=NA fp=NA
+  [S] LB-9108/14002 ss=1 TP  corr=0.883 wf=NA hmed=NA fp=NA
+ANALYSIS_DONE

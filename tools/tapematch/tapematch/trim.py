@@ -56,6 +56,16 @@ def performance_envelope(stream, sr, cfg):
     del mono
 
     e_floor = np.percentile(energy, 10)
+    e_p90 = np.percentile(energy, 90)
+    if e_p90 - e_floor < c["min_dynamic_range_db"]:
+        # Crowd-padding vs. performance energy contrast this narrow means the
+        # source has been heavily normalised/compressed (dead air and music
+        # sit within a few dB of each other) -> the energy gate below would
+        # chatter in/out every frame instead of forming sustained blocks,
+        # producing spurious multi-minute head/tail cuts. Keep the full
+        # recording rather than trust a coin-flip trim.
+        return 0.0, len(stream) / sr
+
     is_music = (flat < c["flatness_music_max"]) & (energy > e_floor + 6)
 
     need = int(c["min_sustain_sec"] / c["hop_sec"])

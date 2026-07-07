@@ -1,0 +1,135 @@
+=== tapematch session: 1990-11-10  [20260702_144047] ===
+
+[1] Querying DB …
+  8 entries — Milwaukee
+    LB-00419
+    LB-01201
+    LB-01215
+    LB-07138
+    LB-07473
+    LB-08282
+    LB-10381
+    LB-16074
+
+[2] Resolving paths from my_collection …
+  Found 8/8
+    LB-00419: /mnt/DYLAN1/Concerts/1990/1990-11-10 Milwaukee (LB-00419)
+    LB-01201: /mnt/DYLAN1/Concerts/1990/1990-11-10 Milwaukee (LB-01201)
+    LB-01215: /mnt/DYLAN1/Concerts/1990/1990-11-10 Milwaukee (LB-01215)
+    LB-07138: /mnt/DYLAN1/Concerts/1990/1990-11-10 Milwaukee, Wisconsin (LB-07138)
+    LB-07473: /mnt/DYLAN1/Concerts/1990/1990-11-10 Milwaukee, Wisconsin (LB-07473)
+    LB-08282: /mnt/DYLAN1/Concerts/1990/1990-11-10 Milwaukee, Wisconsin (LB-08282)
+    LB-10381: /mnt/DYLAN1/Concerts/1990/1990-11-10 Riverside Theater, Milwaukee, WI (LB-10381)
+    LB-16074: /mnt/DYLAN1/LB HOPPER/Bob Dylan Riverside Theater Milwaukee 1990-11-10 Dolphinsmile Archive-LB-16074
+
+[3] Cleaning /mnt/DATA0/examples/tapematch …
+
+[4] Copying 8 folders to /mnt/DATA0/examples/tapematch …
+  Copying LB-00419: 1990-11-10 Milwaukee (LB-00419) …
+  Copying LB-01201: 1990-11-10 Milwaukee (LB-01201) …
+  Copying LB-01215: 1990-11-10 Milwaukee (LB-01215) …
+  Copying LB-07138: 1990-11-10 Milwaukee, Wisconsin (LB-07138) …
+  Copying LB-07473: 1990-11-10 Milwaukee, Wisconsin (LB-07473) …
+  Copying LB-08282: 1990-11-10 Milwaukee, Wisconsin (LB-08282) …
+  Copying LB-10381: 1990-11-10 Riverside Theater, Milwaukee, WI (LB-10381) …
+  Copying LB-16074: Bob Dylan Riverside Theater Milwaukee 1990-11-10 Dolphinsmile Archive-LB-16074 …
+
+[5] Running tapematch …
+  curator lineage pairs loaded: 677 (from /home/tjenkins/Documents/losslessbob/data/losslessbob.db)
+  est. peak RAM ~1.0 GB (8 sources, largest 1:35:05)
+=== INGEST / TRIM ===
+  1990-11-10 Milwaukee (LB-00419): 20 tracks, 1:32:44
+  1990-11-10 Milwaukee (LB-01201): 21 tracks, 1:35:05
+  1990-11-10 Milwaukee (LB-01215): 20 tracks, 1:33:20
+  1990-11-10 Milwaukee, Wisconsin (LB-07138): 20 tracks, 1:33:03
+  1990-11-10 Milwaukee, Wisconsin (LB-07473): 20 tracks, 1:32:03
+  1990-11-10 Milwaukee, Wisconsin (LB-08282): 21 tracks, 1:33:14
+  1990-11-10 Riverside Theater, Milwaukee, WI (LB-10381): 22 tracks, 1:34:01
+  Bob Dylan Riverside Theater Milwaukee 1990-11-10 Dolphinsmile Archive-LB-16074: 20 tracks, 1:32:03
+
+=== TRIM (performance envelope) ===
+  1990-11-10 Milwaukee (LB-00419): trimmed 0:00:15 head, 0:00:15 tail -> performance 1:32:14
+  1990-11-10 Milwaukee (LB-01201): trimmed 0:01:00 head, 0:00:29 tail -> performance 1:33:36
+  1990-11-10 Milwaukee (LB-01215): trimmed 0:01:40 head, 0:00:29 tail -> performance 1:31:10
+  1990-11-10 Milwaukee, Wisconsin (LB-07138): trimmed 0:00:40 head, 0:00:20 tail -> performance 1:32:03
+  1990-11-10 Milwaukee, Wisconsin (LB-07473): trimmed 0:00:10 head, 0:00:04 tail -> performance 1:31:48
+  1990-11-10 Milwaukee, Wisconsin (LB-08282): trimmed 0:01:40 head, 0:00:24 tail -> performance 1:31:10
+  1990-11-10 Riverside Theater, Milwaukee, WI (LB-10381): trimmed 0:01:02 head, 0:00:20 tail -> performance 1:32:39
+  Bob Dylan Riverside Theater Milwaukee 1990-11-10 Dolphinsmile Archive-LB-16074: trimmed 0:00:10 head, 0:00:04 tail -> performance 1:31:48
+
+=== ANCHORS (ref=1990-11-10 Milwaukee (LB-00419)) ===
+  0:05:55, 0:13:57, 0:17:35, 0:24:18, 0:32:16, 0:38:29, 0:51:16, 0:55:25, 1:08:55, 1:12:05, 1:17:28, 1:31:30
+
+=== LAG CURVES / SPEED (vs ref) ===
+  1990-11-10 Milwaukee (LB-00419)->1990-11-10 Milwaukee (LB-01201): speed-unknown  speed ratio=0.988488 (-11512 ppm)  [conf=1.7]
+  1990-11-10 Milwaukee (LB-00419)->1990-11-10 Milwaukee (LB-01215): speed-unknown  speed ratio=1.010092 (+10092 ppm)  [conf=2.5]
+  1990-11-10 Milwaukee (LB-00419)->1990-11-10 Milwaukee, Wisconsin (LB-07138): speed-unknown  speed ratio=0.999282 (-718 ppm)  [conf=2.0]
+  1990-11-10 Milwaukee (LB-00419)->1990-11-10 Milwaukee, Wisconsin (LB-07473): speed-unknown  speed ratio=1.003511 (+3511 ppm)  [conf=2.0]
+  1990-11-10 Milwaukee (LB-00419)->1990-11-10 Milwaukee, Wisconsin (LB-08282): speed-unknown  speed ratio=1.009992 (+9992 ppm)  [conf=2.0]
+  1990-11-10 Milwaukee (LB-00419)->1990-11-10 Riverside Theater, Milwaukee, WI (LB-10381): speed-unknown  speed ratio=0.998193 (-1807 ppm)  [conf=2.6]
+  1990-11-10 Milwaukee (LB-00419)->Bob Dylan Riverside Theater Milwaukee 1990-11-10 Dolphinsmile Archive-LB-16074: speed-unknown  speed ratio=1.003520 (+3520 ppm)  [conf=2.1]
+
+=== RESIDUAL CORRELATION MATRIX ===
+  32 pair(s)/source(s) speed-unknown (v2 confidence < 6.0) — routed to fingerprint path only
+          LB-00419  LB-01201  LB-01215  LB-07138  LB-07473  LB-08282  LB-10381  LB-16074
+  LB-00419     1.000     0.002     0.002     0.003     0.003     0.002     0.002     0.003
+  LB-01201     0.002     1.000     0.002     0.002     0.002     0.003     0.002     0.002
+  LB-01215     0.002     0.002     1.000     0.002     0.004     0.069     0.002     0.007
+  LB-07138     0.003     0.002     0.002     1.000     0.002     0.002     0.003     0.003
+  LB-07473     0.003     0.002     0.004     0.002     1.000     0.008     0.003     0.866
+  LB-08282     0.002     0.003     0.069     0.002     0.008     1.000     0.002     0.005
+  LB-10381     0.002     0.002     0.002     0.003     0.003     0.002     1.000     0.002
+  LB-16074     0.003     0.002     0.007     0.003     0.866     0.005     0.002     1.000
+
+=== SECONDARY MATCH (windowed coverage + quiet-segment hiss + fingerprint) ===
+  27 cross-family pair(s) — computing secondary evidence ...
+  LB-01201 / LB-01215: fingerprint Dice 0.546 (50368 / 46644 hashes)  [primary corr 0.002] → SECONDARY LINK
+  LB-01215 / LB-08282: hiss 0.88 (98 segs, med 0.539)  [primary corr 0.069] → hiss evidence (below merge threshold)
+
+=== LAG CURVES / SPEED (re-run vs central ref=Bob Dylan Riverside Theater Milwaukee 1990-11-10 Dolphinsmile Archive-LB-16074) ===
+  anchors: 0:00:10, 0:10:42, 0:20:29, 0:24:23, 0:37:11, 0:42:30, 0:50:16, 0:56:23, 1:08:46, 1:11:05, 1:20:28, 1:26:37
+  Bob Dylan Riverside Theater Milwaukee 1990-11-10 Dolphinsmile Archive-LB-16074->1990-11-10 Milwaukee (LB-00419): speed-unknown  speed ratio=0.996502 (-3498 ppm)
+  Bob Dylan Riverside Theater Milwaukee 1990-11-10 Dolphinsmile Archive-LB-16074->1990-11-10 Milwaukee (LB-01201): speed-unknown  speed ratio=0.983858 (-16142 ppm)
+  Bob Dylan Riverside Theater Milwaukee 1990-11-10 Dolphinsmile Archive-LB-16074->1990-11-10 Milwaukee (LB-01215): speed-unknown  speed ratio=1.004138 (+4138 ppm)
+  Bob Dylan Riverside Theater Milwaukee 1990-11-10 Dolphinsmile Archive-LB-16074->1990-11-10 Milwaukee, Wisconsin (LB-07138): speed-unknown  speed ratio=0.994675 (-5325 ppm)
+  Bob Dylan Riverside Theater Milwaukee 1990-11-10 Dolphinsmile Archive-LB-16074->1990-11-10 Milwaukee, Wisconsin (LB-07473): aligned  speed ratio=0.999991 (-9 ppm)
+  Bob Dylan Riverside Theater Milwaukee 1990-11-10 Dolphinsmile Archive-LB-16074->1990-11-10 Milwaukee, Wisconsin (LB-08282): speed-unknown  speed ratio=1.004138 (+4138 ppm)
+  Bob Dylan Riverside Theater Milwaukee 1990-11-10 Dolphinsmile Archive-LB-16074->1990-11-10 Riverside Theater, Milwaukee, WI (LB-10381): speed-unknown  speed ratio=0.987916 (-12084 ppm)
+
+=== CLUSTERS ===
+  Family 1: 1990-11-10 Milwaukee (LB-00419)  (mean intra-corr 1.000)
+  Family 2: 1990-11-10 Milwaukee (LB-01201), 1990-11-10 Milwaukee (LB-01215)  (mean intra-corr 0.002 [fp-linked])  [secondary: LB-01201/LB-01215 via fp 0.546]
+  Family 3: 1990-11-10 Milwaukee, Wisconsin (LB-07138)  (mean intra-corr 1.000)
+  Family 4: 1990-11-10 Milwaukee, Wisconsin (LB-07473), Bob Dylan Riverside Theater Milwaukee 1990-11-10 Dolphinsmile Archive-LB-16074  (mean intra-corr 0.866 [medium confidence])
+  Family 5: 1990-11-10 Milwaukee, Wisconsin (LB-08282)  (mean intra-corr 1.000)
+  Family 6: 1990-11-10 Riverside Theater, Milwaukee, WI (LB-10381)  (mean intra-corr 1.000)
+  Distinct source families: 6
+
+=== LINEAGE EVIDENCE (interpret manually) ===
+    source   HF ceiling  noise floor  DC asymmetry
+  1990-11-10 Milwaukee (LB-00419)       2.0kHz      -76.9dB      -0.00007
+  1990-11-10 Milwaukee (LB-01201)       3.0kHz      -83.5dB      +0.00018
+  1990-11-10 Milwaukee (LB-01215)       3.0kHz      -80.1dB      +0.00026
+  1990-11-10 Milwaukee, Wisconsin (LB-07138)       2.0kHz      -75.8dB      -0.00002
+  1990-11-10 Milwaukee, Wisconsin (LB-07473)       3.0kHz      -84.5dB      -0.00015
+  1990-11-10 Milwaukee, Wisconsin (LB-08282)       3.0kHz      -83.4dB      +0.00020
+  1990-11-10 Riverside Theater, Milwaukee, WI (LB-10381)       2.0kHz      -80.7dB      -0.00002
+  Bob Dylan Riverside Theater Milwaukee 1990-11-10 Dolphinsmile Archive-LB-16074       3.0kHz      -84.5dB      -0.00015
+  (HF ceiling capped by 8000 Hz Nyquist at analysis_sr=16000; run lineage at native rate for real format discrimination)
+  (DC asymmetry is a taper/equipment signature — not a reliable source-identity marker)
+
+=== DIAGNOSTICS ===
+  [DISTINCT SOURCE] 1990-11-10 Milwaukee (LB-00419) (-3498 ppm speed offset, best cross-family corr 0.003): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1990-11-10 Milwaukee, Wisconsin (LB-07138) (-5325 ppm speed offset, best cross-family corr 0.003): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1990-11-10 Milwaukee, Wisconsin (LB-08282) (+4138 ppm speed offset, best cross-family corr 0.069): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1990-11-10 Riverside Theater, Milwaukee, WI (LB-10381) (-12084 ppm speed offset, best cross-family corr 0.003): near-zero correlation to all other sources — entirely different recording
+  [SECONDARY SAME-SOURCE] 1990-11-10 Milwaukee (LB-01201) / 1990-11-10 Milwaukee (LB-01215): fingerprint Dice 0.546 — primary corr 0.002 (below threshold); likely remaster or heavily edited copy of same tape
+  [MEDIUM CONFIDENCE] Family 4 (1990-11-10 Milwaukee, Wisconsin (LB-07473) / Bob Dylan Riverside Theater Milwaukee 1990-11-10 Dolphinsmile Archive-LB-16074): corr 0.866 — same source likely but significant processing (resampling, level boost, EQ) may explain reduced correlation
+
+[6] Archiving run …
+  Archive → /home/tjenkins/Documents/losslessbob/data/tapematch/runs/20260702_144047_1990-11-10
+
+[7] Logging to observations.db …
+  Logged: 1 run, 8 sources, 28 pairs
+
+Report → /home/tjenkins/Documents/losslessbob/tools/tapematch/last_run_report.md

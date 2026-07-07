@@ -1,0 +1,444 @@
+[live] re-running tapematch for 4 date(s) — this decodes audio and may take a long time.
+
+[live 1/4] 1991-02-10
+=== tapematch session: 1991-02-10  [20260704_120642] ===
+
+[1] Querying DB …
+  8 entries — Hammersmith Odeon London, England
+    LB-01930
+    LB-04209
+    LB-07026
+    LB-07029
+    LB-08219
+    LB-09158
+    LB-10607
+    LB-10609
+
+[2] Resolving paths from my_collection …
+  Found 8/8
+    LB-01930: /mnt/DYLAN1/Concerts/1991/1991-02-10 Hammersmith Odeon London, England (LB-01930)
+    LB-04209: /mnt/DYLAN1/Concerts/1991/1991-02-10 London, England, Hammersmith Odeon (LB-04209)
+    LB-07026: /mnt/DYLAN1/Concerts/1991/1991-02-10 London, England (LB-07026)
+    LB-07029: /mnt/DYLAN1/Concerts/1991/1991-02-10 London, England (LB-07029)
+    LB-08219: /mnt/DYLAN1/Concerts/1991/1991-02-10 London, state- U.K. (LB-08219)
+    LB-09158: /mnt/DYLAN1/Concerts/1991/1991-02-10 London, England (LB-09158)
+    LB-10607: /mnt/DYLAN1/Concerts/1991/1991-02-10 London, England (LB-10607)
+    LB-10609: /mnt/DYLAN1/Concerts/1991/1991-02-10 London, England (LB-10609)
+
+[3] Cleaning /mnt/DATA0/examples/tapematch …
+
+[4] Copying 8 folders to /mnt/DATA0/examples/tapematch …
+  Copying LB-01930: 1991-02-10 Hammersmith Odeon London, England (LB-01930) …
+  Copying LB-04209: 1991-02-10 London, England, Hammersmith Odeon (LB-04209) …
+  Copying LB-07026: 1991-02-10 London, England (LB-07026) …
+  Copying LB-07029: 1991-02-10 London, England (LB-07029) …
+  Copying LB-08219: 1991-02-10 London, state- U.K. (LB-08219) …
+  Copying LB-09158: 1991-02-10 London, England (LB-09158) …
+  Copying LB-10607: 1991-02-10 London, England (LB-10607) …
+  Copying LB-10609: 1991-02-10 London, England (LB-10609) …
+
+[5] Running tapematch …
+  curator lineage pairs loaded: 677 (from /home/tjenkins/Documents/losslessbob/data/losslessbob.db)
+  est. peak RAM ~0.9 GB (8 sources, largest 1:23:12)
+=== INGEST / TRIM ===
+  1991-02-10 Hammersmith Odeon London, England (LB-01930): 18 tracks, 1:22:17
+  1991-02-10 London, England (LB-07026): 19 tracks, 1:22:07
+  1991-02-10 London, England (LB-07029): 18 tracks, 1:22:51
+  1991-02-10 London, England (LB-09158): 18 tracks, 1:23:12
+  1991-02-10 London, England (LB-10607): 18 tracks, 1:19:45
+  1991-02-10 London, England (LB-10609): 18 tracks, 1:21:36
+  1991-02-10 London, England, Hammersmith Odeon (LB-04209): 18 tracks, 1:22:37
+  1991-02-10 London, state- U.K. (LB-08219): 18 tracks, 1:20:40
+
+=== TRIM (performance envelope) ===
+  1991-02-10 Hammersmith Odeon London, England (LB-01930): trimmed 0:00:16 head, 0:00:10 tail -> performance 1:21:50
+  1991-02-10 London, England (LB-07026): trimmed 0:00:00 head, 0:00:00 tail -> performance 1:22:07
+  1991-02-10 London, England (LB-07029): trimmed 0:00:22 head, 0:00:46 tail -> performance 1:21:43
+  1991-02-10 London, England (LB-09158): trimmed 0:00:46 head, 0:00:14 tail -> performance 1:22:12
+  1991-02-10 London, England (LB-10607): trimmed 0:00:00 head, 0:00:05 tail -> performance 1:19:40
+  1991-02-10 London, England (LB-10609): trimmed 0:00:25 head, 0:00:02 tail -> performance 1:21:09
+  1991-02-10 London, England, Hammersmith Odeon (LB-04209): trimmed 0:00:16 head, 0:00:06 tail -> performance 1:22:16
+  1991-02-10 London, state- U.K. (LB-08219): trimmed 0:00:01 head, 0:00:00 tail -> performance 1:20:39
+
+=== ANCHORS (ref=1991-02-10 Hammersmith Odeon London, England (LB-01930)) ===
+  0:03:41, 0:11:16, 0:19:30, 0:23:21, 0:32:28, 0:36:01, 0:45:09, 0:52:30, 0:57:37, 1:06:06, 1:10:07, 1:21:31
+
+=== LAG CURVES / SPEED (vs ref) ===
+  1991-02-10 Hammersmith Odeon London, England (LB-01930)->1991-02-10 London, England (LB-07026): speed-unknown  speed ratio=0.999673 (-327 ppm)  [conf=3.9]
+  1991-02-10 Hammersmith Odeon London, England (LB-01930)->1991-02-10 London, England (LB-07029): staircase/splice  speed ratio=1.000030 (+30 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  1991-02-10 Hammersmith Odeon London, England (LB-01930)->1991-02-10 London, England (LB-09158): speed-unknown  speed ratio=0.994842 (-5158 ppm)  [conf=2.1]
+  1991-02-10 Hammersmith Odeon London, England (LB-01930)->1991-02-10 London, England (LB-10607): speed-unknown  speed ratio=1.030301 (+30301 ppm)  [conf=2.5]
+  1991-02-10 Hammersmith Odeon London, England (LB-01930)->1991-02-10 London, England (LB-10609): speed-unknown  speed ratio=1.007423 (+7423 ppm)  [conf=1.8]
+  1991-02-10 Hammersmith Odeon London, England (LB-01930)->1991-02-10 London, England, Hammersmith Odeon (LB-04209): speed-unknown  speed ratio=0.997935 (-2065 ppm)  [conf=2.4]
+  1991-02-10 Hammersmith Odeon London, England (LB-01930)->1991-02-10 London, state- U.K. (LB-08219): speed-unknown  speed ratio=1.011792 (+11792 ppm)  [conf=4.9]
+
+=== RESIDUAL CORRELATION MATRIX ===
+  32 pair(s)/source(s) speed-unknown (v2 confidence < 6.0) — routed to fingerprint path only
+          LB-01930  LB-07026  LB-07029  LB-09158  LB-10607  LB-10609  LB-04209  LB-08219
+  LB-01930     1.000     0.002     0.123     0.002     0.002     0.002     0.003     0.002
+  LB-07026     0.002     1.000     0.002     0.002     0.003     0.003     0.004     0.002
+  LB-07029     0.123     0.002     1.000     0.001     0.002     0.002     0.003     0.005
+  LB-09158     0.002     0.002     0.001     1.000     0.003     0.002     0.003     0.003
+  LB-10607     0.002     0.003     0.002     0.003     1.000     0.002     0.004     0.003
+  LB-10609     0.002     0.003     0.002     0.002     0.002     1.000     0.003     0.006
+  LB-04209     0.003     0.004     0.003     0.003     0.004     0.003     1.000     0.004
+  LB-08219     0.002     0.002     0.005     0.003     0.003     0.006     0.004     1.000
+
+=== SECONDARY MATCH (windowed coverage + quiet-segment hiss + fingerprint) ===
+  28 cross-family pair(s) — computing secondary evidence ...
+  LB-01930 / LB-07029: windowed 0.81 (980 win, med 0.493); hiss 0.66 (88 segs, med 0.495); fingerprint Dice 0.726 (47862 / 47924 hashes)  [primary corr 0.123] → SECONDARY LINK
+
+=== LAG CURVES / SPEED (re-run vs central ref=1991-02-10 London, England (LB-07029)) ===
+  anchors: 0:05:40, 0:11:23, 0:19:55, 0:22:56, 0:29:21, 0:36:01, 0:45:02, 0:49:56, 0:57:29, 1:05:59, 1:10:00, 1:21:25
+  1991-02-10 London, England (LB-07029)->1991-02-10 Hammersmith Odeon London, England (LB-01930): staircase/splice  speed ratio=0.999973 (-27 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  1991-02-10 London, England (LB-07029)->1991-02-10 London, England (LB-07026): speed-unknown  speed ratio=0.998150 (-1850 ppm)
+  1991-02-10 London, England (LB-07029)->1991-02-10 London, England (LB-09158): speed-unknown  speed ratio=0.992321 (-7679 ppm)
+  1991-02-10 London, England (LB-07029)->1991-02-10 London, England (LB-10607): speed-unknown  speed ratio=1.028732 (+28732 ppm)
+  1991-02-10 London, England (LB-07029)->1991-02-10 London, England (LB-10609): speed-unknown  speed ratio=1.006883 (+6883 ppm)
+  1991-02-10 London, England (LB-07029)->1991-02-10 London, England, Hammersmith Odeon (LB-04209): speed-unknown  speed ratio=0.996415 (-3585 ppm)
+  1991-02-10 London, England (LB-07029)->1991-02-10 London, state- U.K. (LB-08219): constant-speed-offset  speed ratio=1.010243 (+10243 ppm)
+
+=== CLUSTERS ===
+  Family 1: 1991-02-10 Hammersmith Odeon London, England (LB-01930), 1991-02-10 London, England (LB-07029)  (mean intra-corr 0.123 [fp-linked])  [secondary: LB-01930/LB-07029 via windowed 0.81+hiss 0.66+fp 0.726]
+  Family 2: 1991-02-10 London, England (LB-07026)  (mean intra-corr 1.000)
+  Family 3: 1991-02-10 London, England (LB-09158)  (mean intra-corr 1.000)
+  Family 4: 1991-02-10 London, England (LB-10607)  (mean intra-corr 1.000)
+  Family 5: 1991-02-10 London, England (LB-10609)  (mean intra-corr 1.000)
+  Family 6: 1991-02-10 London, England, Hammersmith Odeon (LB-04209)  (mean intra-corr 1.000)
+  Family 7: 1991-02-10 London, state- U.K. (LB-08219)  (mean intra-corr 1.000)
+  Distinct source families: 7
+
+=== LINEAGE EVIDENCE (interpret manually) ===
+    source   HF ceiling  noise floor  DC asymmetry
+  1991-02-10 Hammersmith Odeon London, England (LB-01930)       0.0kHz      -80.5dB      +0.00080
+  1991-02-10 London, England (LB-07026)       2.0kHz      -78.2dB      +0.00034
+  1991-02-10 London, England (LB-07029)       0.0kHz      -76.5dB      +0.00130
+  1991-02-10 London, England (LB-09158)       2.0kHz      -84.6dB      -0.00003
+  1991-02-10 London, England (LB-10607)       3.0kHz      -90.5dB      -0.00004
+  1991-02-10 London, England (LB-10609)       2.0kHz      -83.9dB      +0.00049
+  1991-02-10 London, England, Hammersmith Odeon (LB-04209)       2.0kHz      -80.9dB      +0.00117
+  1991-02-10 London, state- U.K. (LB-08219)       0.0kHz      -71.1dB      -0.00000
+  (HF ceiling capped by 8000 Hz Nyquist at analysis_sr=16000; run lineage at native rate for real format discrimination)
+  (DC asymmetry is a taper/equipment signature — not a reliable source-identity marker)
+
+=== DIAGNOSTICS ===
+  [DISTINCT SOURCE] 1991-02-10 London, England (LB-07026) (-1850 ppm speed offset, best cross-family corr 0.004): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1991-02-10 London, England (LB-09158) (-7679 ppm speed offset, best cross-family corr 0.003): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1991-02-10 London, England (LB-10607) (+28732 ppm speed offset, best cross-family corr 0.004): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1991-02-10 London, England (LB-10609) (+6883 ppm speed offset, best cross-family corr 0.006): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1991-02-10 London, England, Hammersmith Odeon (LB-04209) (-3585 ppm speed offset, best cross-family corr 0.004): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1991-02-10 London, state- U.K. (LB-08219) (+10243 ppm speed offset, best cross-family corr 0.006): near-zero correlation to all other sources — entirely different recording
+  [SECONDARY SAME-SOURCE] 1991-02-10 Hammersmith Odeon London, England (LB-01930) / 1991-02-10 London, England (LB-07029): windowed coverage 0.81 (980 win); hiss frac 0.66 (88 segs); fingerprint Dice 0.726 — primary corr 0.123 (below threshold); likely remaster or heavily edited copy of same tape
+
+[6] Archiving run …
+  Archive → /home/tjenkins/Documents/losslessbob/data/tapematch/runs/20260704_120642_1991-02-10
+
+[7] Logging to observations.db …
+  Logged: 1 run, 8 sources, 28 pairs
+
+Report → /home/tjenkins/Documents/losslessbob/tools/tapematch/last_run_report.md
+[live 2/4] 1990-06-01
+=== tapematch session: 1990-06-01  [20260704_121628] ===
+
+[1] Querying DB …
+  3 entries — Ottawa, Ontario, Ottawa National Arts Center Opera
+    LB-04200
+    LB-12552
+    LB-12884
+
+[2] Resolving paths from my_collection …
+  Found 3/3
+    LB-04200: /mnt/DYLAN1/Concerts/1990/1990-06-01 Ottawa, Ontario, Ottawa National Arts Center Opera (LB-04200)
+    LB-12552: /mnt/DYLAN1/Concerts/1990/1990-06-01 Ottawa, Canada (National Arts Center) (LB-12552)
+    LB-12884: /mnt/DYLAN1/Concerts/1990/1990-06-01 OTTAWA (LB-12884)
+
+[3] Cleaning /mnt/DATA0/examples/tapematch …
+
+[4] Copying 3 folders to /mnt/DATA0/examples/tapematch …
+  Copying LB-04200: 1990-06-01 Ottawa, Ontario, Ottawa National Arts Center Opera (LB-04200) …
+  Copying LB-12552: 1990-06-01 Ottawa, Canada (National Arts Center) (LB-12552) …
+  Copying LB-12884: 1990-06-01 OTTAWA (LB-12884) …
+
+[5] Running tapematch …
+  curator lineage pairs loaded: 677 (from /home/tjenkins/Documents/losslessbob/data/losslessbob.db)
+  est. peak RAM ~0.9 GB (3 sources, largest 1:23:29)
+=== INGEST / TRIM ===
+  1990-06-01 OTTAWA (LB-12884): 16 tracks, 1:17:02
+  1990-06-01 Ottawa, Canada (National Arts Center) (LB-12552): 16 tracks, 1:23:29
+  1990-06-01 Ottawa, Ontario, Ottawa National Arts Center Opera (LB-04200): 16 tracks, 1:16:36
+
+=== TRIM (performance envelope) ===
+  1990-06-01 OTTAWA (LB-12884): trimmed 0:00:40 head, 0:00:22 tail -> performance 1:16:00
+  1990-06-01 Ottawa, Canada (National Arts Center) (LB-12552): trimmed 0:00:06 head, 0:00:04 tail -> performance 1:23:20
+  1990-06-01 Ottawa, Ontario, Ottawa National Arts Center Opera (LB-04200): trimmed 0:00:22 head, 0:00:00 tail -> performance 1:16:13
+
+=== ANCHORS (ref=1990-06-01 OTTAWA (LB-12884)) ===
+  0:04:12, 0:12:07, 0:13:14, 0:24:46, 0:25:42, 0:31:42, 0:40:26, 0:44:43, 0:55:43, 0:58:30, 1:04:28, 1:15:13
+
+=== LAG CURVES / SPEED (vs ref) ===
+  1990-06-01 OTTAWA (LB-12884)->1990-06-01 Ottawa, Canada (National Arts Center) (LB-12552): speed-unknown  speed ratio=0.938500 (-61500 ppm)  [conf=1.3]
+  1990-06-01 OTTAWA (LB-12884)->1990-06-01 Ottawa, Ontario, Ottawa National Arts Center Opera (LB-04200): speed-unknown  speed ratio=0.999254 (-746 ppm)  [conf=1.1]
+
+=== RESIDUAL CORRELATION MATRIX ===
+  5 pair(s)/source(s) speed-unknown (v2 confidence < 6.0) — routed to fingerprint path only
+          LB-12884  LB-12552  LB-04200
+  LB-12884     1.000     0.002     0.003
+  LB-12552     0.002     1.000     0.002
+  LB-04200     0.003     0.002     1.000
+
+=== SECONDARY MATCH (windowed coverage + quiet-segment hiss + fingerprint) ===
+  3 cross-family pair(s) — computing secondary evidence ...
+  LB-12884 / LB-04200: fingerprint Dice 0.516 (47198 / 52861 hashes)  [primary corr 0.003] → SECONDARY LINK
+  LB-12552 / LB-04200: fingerprint Dice 0.529 (53314 / 52861 hashes)  [primary corr 0.002] → SECONDARY LINK
+
+=== LAG CURVES / SPEED (re-run vs central ref=1990-06-01 Ottawa, Ontario, Ottawa National Arts Center Opera (LB-04200)) ===
+  anchors: 0:00:23, 0:12:02, 0:15:20, 0:21:07, 0:31:09, 0:36:31, 0:38:38, 0:49:37, 0:52:28, 0:57:29, 1:04:50, 1:14:01
+  1990-06-01 Ottawa, Ontario, Ottawa National Arts Center Opera (LB-04200)->1990-06-01 OTTAWA (LB-12884): speed-unknown  speed ratio=1.000755 (+755 ppm)
+  1990-06-01 Ottawa, Ontario, Ottawa National Arts Center Opera (LB-04200)->1990-06-01 Ottawa, Canada (National Arts Center) (LB-12552): speed-unknown  speed ratio=0.940700 (-59300 ppm)
+
+=== CLUSTERS ===
+  Family 1: 1990-06-01 OTTAWA (LB-12884), 1990-06-01 Ottawa, Canada (National Arts Center) (LB-12552), 1990-06-01 Ottawa, Ontario, Ottawa National Arts Center Opera (LB-04200)  (mean intra-corr 0.002 [low confidence])  [secondary: LB-12884/LB-04200 via fp 0.516; LB-12552/LB-04200 via fp 0.529]  [chain-unverified: LB-12884/LB-12552 not directly confirmed]
+  Distinct source families: 1
+
+=== LINEAGE EVIDENCE (interpret manually) ===
+    source   HF ceiling  noise floor  DC asymmetry
+  1990-06-01 OTTAWA (LB-12884)       1.0kHz      -75.6dB      +0.00001
+  1990-06-01 Ottawa, Canada (National Arts Center) (LB-12552)       3.0kHz      -76.6dB      -0.00000
+  1990-06-01 Ottawa, Ontario, Ottawa National Arts Center Opera (LB-04200)       4.0kHz     -102.0dB      -0.00105
+  (HF ceiling capped by 8000 Hz Nyquist at analysis_sr=16000; run lineage at native rate for real format discrimination)
+  (DC asymmetry is a taper/equipment signature — not a reliable source-identity marker)
+
+=== DIAGNOSTICS ===
+  [SECONDARY SAME-SOURCE] 1990-06-01 OTTAWA (LB-12884) / 1990-06-01 Ottawa, Ontario, Ottawa National Arts Center Opera (LB-04200): fingerprint Dice 0.516 — primary corr 0.003 (below threshold); likely remaster or heavily edited copy of same tape
+  [SECONDARY SAME-SOURCE] 1990-06-01 Ottawa, Canada (National Arts Center) (LB-12552) / 1990-06-01 Ottawa, Ontario, Ottawa National Arts Center Opera (LB-04200): fingerprint Dice 0.529 — primary corr 0.002 (below threshold); likely remaster or heavily edited copy of same tape
+
+[6] Archiving run …
+  Archive → /home/tjenkins/Documents/losslessbob/data/tapematch/runs/20260704_121628_1990-06-01
+
+[7] Logging to observations.db …
+  Logged: 1 run, 3 sources, 3 pairs
+
+Report → /home/tjenkins/Documents/losslessbob/tools/tapematch/last_run_report.md
+[live 3/4] 1996-07-21
+=== tapematch session: 1996-07-21  [20260704_121818] ===
+
+[1] Querying DB …
+  5 entries — Pori Jazz Fest, Kirjurinluoto, Pori, Finland
+    LB-00513
+    LB-04861
+    LB-06984
+    LB-06985
+    LB-06986
+
+[2] Resolving paths from my_collection …
+  Found 5/5
+    LB-00513: /mnt/DYLAN1/Concerts/1996/1996-07-21 Pori Jazz Fest, Kirjurinluoto, Pori, Finland (LB-00513)
+    LB-04861: /mnt/DYLAN1/Concerts/1996/1996-07-21 Pori, Finland, Kirjurinluoto, 31st International Pori Jazz Festival (LB-04861)
+    LB-06984: /mnt/DYLAN1/Concerts/1996/1996-07-21 Kirjurinluoto, Pori (LB-06984)
+    LB-06985: /mnt/DYLAN1/Concerts/1996/1996-07-21 Kirjurinluoto, Pori (LB-06985)
+    LB-06986: /mnt/DYLAN1/Concerts/1996/1996-07-21 Kirjurinluoto, Pori (LB-06986)
+
+[3] Cleaning /mnt/DATA0/examples/tapematch …
+
+[4] Copying 5 folders to /mnt/DATA0/examples/tapematch …
+  Copying LB-00513: 1996-07-21 Pori Jazz Fest, Kirjurinluoto, Pori, Finland (LB-00513) …
+  Copying LB-04861: 1996-07-21 Pori, Finland, Kirjurinluoto, 31st International Pori Jazz Festival (LB-04861) …
+  Copying LB-06984: 1996-07-21 Kirjurinluoto, Pori (LB-06984) …
+  Copying LB-06985: 1996-07-21 Kirjurinluoto, Pori (LB-06985) …
+  Copying LB-06986: 1996-07-21 Kirjurinluoto, Pori (LB-06986) …
+
+[5] Running tapematch …
+  curator lineage pairs loaded: 677 (from /home/tjenkins/Documents/losslessbob/data/losslessbob.db)
+  est. peak RAM ~1.0 GB (5 sources, largest 1:31:27)
+=== INGEST / TRIM ===
+  1996-07-21 Kirjurinluoto, Pori (LB-06984): 11 tracks, 1:09:44
+  1996-07-21 Kirjurinluoto, Pori (LB-06985): 14 tracks, 1:31:27
+  1996-07-21 Kirjurinluoto, Pori (LB-06986): 14 tracks, 1:29:52
+  1996-07-21 Pori Jazz Fest, Kirjurinluoto, Pori, Finland (LB-00513): 12 tracks, 1:30:00
+  1996-07-21 Pori, Finland, Kirjurinluoto, 31st International Pori Jazz Festival (LB-04861): 12 tracks, 1:28:22
+
+=== TRIM (performance envelope) ===
+  1996-07-21 Kirjurinluoto, Pori (LB-06984): trimmed 0:00:00 head, 0:00:00 tail -> performance 1:09:44
+  1996-07-21 Kirjurinluoto, Pori (LB-06985): trimmed 0:01:08 head, 0:00:42 tail -> performance 1:29:38
+  1996-07-21 Kirjurinluoto, Pori (LB-06986): trimmed 0:00:20 head, 0:00:38 tail -> performance 1:28:53
+  1996-07-21 Pori Jazz Fest, Kirjurinluoto, Pori, Finland (LB-00513): trimmed 0:00:20 head, 0:00:32 tail -> performance 1:29:07
+  1996-07-21 Pori, Finland, Kirjurinluoto, 31st International Pori Jazz Festival (LB-04861): trimmed 0:01:26 head, 0:00:16 tail -> performance 1:26:40
+
+  [INCOMPLETE?] — duration well below group median (1:28:53):
+    1996-07-21 Kirjurinluoto, Pori (LB-06984): 1:09:44 (21.6% shorter)
+
+=== ANCHORS (ref=1996-07-21 Kirjurinluoto, Pori (LB-06984)) ===
+  0:00:30, 0:11:37, 0:12:02, 0:22:30, 0:23:59, 0:29:50, 0:36:32, 0:44:49, 0:48:02, 0:56:06, 1:00:30, 1:08:44
+
+=== LAG CURVES / SPEED (vs ref) ===
+  1996-07-21 Kirjurinluoto, Pori (LB-06984)->1996-07-21 Kirjurinluoto, Pori (LB-06985): staircase/splice  speed ratio=1.000000 (+0 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  1996-07-21 Kirjurinluoto, Pori (LB-06984)->1996-07-21 Kirjurinluoto, Pori (LB-06986): speed-unknown  speed ratio=1.006200 (+6200 ppm)  [conf=2.7]
+  1996-07-21 Kirjurinluoto, Pori (LB-06984)->1996-07-21 Pori Jazz Fest, Kirjurinluoto, Pori, Finland (LB-00513): speed-unknown  speed ratio=1.006500 (+6500 ppm)  [conf=3.1]
+  1996-07-21 Kirjurinluoto, Pori (LB-06984)->1996-07-21 Pori, Finland, Kirjurinluoto, 31st International Pori Jazz Festival (LB-04861): staircase/splice  speed ratio=0.999900 (-100 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+
+=== RESIDUAL CORRELATION MATRIX ===
+  11 pair(s)/source(s) speed-unknown (v2 confidence < 6.0) — routed to fingerprint path only
+          LB-06984  LB-06985  LB-06986  LB-00513  LB-04861
+  LB-06984     1.000     0.003     0.003     0.004     0.003
+  LB-06985     0.003     1.000     0.003     0.002     0.019
+  LB-06986     0.003     0.003     1.000     0.929     0.003
+  LB-00513     0.004     0.002     0.929     1.000     0.002
+  LB-04861     0.003     0.019     0.003     0.002     1.000
+
+=== SECONDARY MATCH (windowed coverage + quiet-segment hiss + fingerprint) ===
+  9 cross-family pair(s) — computing secondary evidence ...
+  No secondary same-source evidence found.
+
+=== LAG CURVES / SPEED (re-run vs central ref=1996-07-21 Kirjurinluoto, Pori (LB-06986)) ===
+  anchors: 0:04:08, 0:10:18, 0:19:43, 0:22:48, 0:36:08, 0:44:19, 0:46:05, 0:53:54, 1:01:02, 1:09:18, 1:18:57, 1:28:35
+  1996-07-21 Kirjurinluoto, Pori (LB-06986)->1996-07-21 Kirjurinluoto, Pori (LB-06984): speed-unknown  speed ratio=0.993800 (-6200 ppm)
+  1996-07-21 Kirjurinluoto, Pori (LB-06986)->1996-07-21 Kirjurinluoto, Pori (LB-06985): constant-speed-offset  speed ratio=0.993225 (-6775 ppm)
+  1996-07-21 Kirjurinluoto, Pori (LB-06986)->1996-07-21 Pori Jazz Fest, Kirjurinluoto, Pori, Finland (LB-00513): speed-unknown  speed ratio=0.999482 (-518 ppm)
+  1996-07-21 Kirjurinluoto, Pori (LB-06986)->1996-07-21 Pori, Finland, Kirjurinluoto, 31st International Pori Jazz Festival (LB-04861): speed-unknown  speed ratio=1.024178 (+24178 ppm)
+
+=== CLUSTERS ===
+  Family 1: 1996-07-21 Kirjurinluoto, Pori (LB-06984)  (mean intra-corr 1.000)
+  Family 2: 1996-07-21 Kirjurinluoto, Pori (LB-06985), 1996-07-21 Pori, Finland, Kirjurinluoto, 31st International Pori Jazz Festival (LB-04861)  (mean intra-corr 0.019 [low confidence])
+  Family 3: 1996-07-21 Kirjurinluoto, Pori (LB-06986), 1996-07-21 Pori Jazz Fest, Kirjurinluoto, Pori, Finland (LB-00513)  (mean intra-corr 0.929 [high confidence])
+  Distinct source families: 3
+
+=== LINEAGE EVIDENCE (interpret manually) ===
+    source   HF ceiling  noise floor  DC asymmetry
+  1996-07-21 Kirjurinluoto, Pori (LB-06984)       3.0kHz      -74.6dB      -0.00001
+  1996-07-21 Kirjurinluoto, Pori (LB-06985)       4.0kHz      -83.0dB      -0.00002
+  1996-07-21 Kirjurinluoto, Pori (LB-06986)       3.0kHz      -80.3dB      -0.00003
+  1996-07-21 Pori Jazz Fest, Kirjurinluoto, Pori, Finland (LB-00513)       3.0kHz      -80.1dB      -0.00002
+  1996-07-21 Pori, Finland, Kirjurinluoto, 31st International Pori Jazz Festival (LB-04861)       4.0kHz      -82.9dB      -0.01047
+  (HF ceiling capped by 8000 Hz Nyquist at analysis_sr=16000; run lineage at native rate for real format discrimination)
+  (DC asymmetry is a taper/equipment signature — not a reliable source-identity marker)
+
+=== DIAGNOSTICS ===
+  [INCOMPLETE] 1996-07-21 Kirjurinluoto, Pori (LB-06984): 1:09:44 vs median 1:28:53 (21.6% shorter) — likely missing material
+  [DISTINCT SOURCE] 1996-07-21 Kirjurinluoto, Pori (LB-06984) (-6200 ppm speed offset, best cross-family corr 0.004): near-zero correlation to all other sources — entirely different recording
+
+[6] Archiving run …
+  Archive → /home/tjenkins/Documents/losslessbob/data/tapematch/runs/20260704_121818_1996-07-21
+
+[7] Logging to observations.db …
+  Logged: 1 run, 5 sources, 10 pairs
+
+Report → /home/tjenkins/Documents/losslessbob/tools/tapematch/last_run_report.md
+[live 4/4] 1998-10-28
+=== tapematch session: 1998-10-28  [20260704_122411] ===
+
+[1] Querying DB …
+  5 entries — Auburn Hills, Michigan (near Detroit), Palace of Auburn Hills
+    LB-03725
+    LB-06168
+    LB-06564
+    LB-07097
+    LB-12485
+
+[2] Resolving paths from my_collection …
+  Found 5/5
+    LB-03725: /mnt/DYLAN1/Concerts/1998/1998-10-28 Auburn Hills, Michigan (near Detroit), Palace of Auburn Hills (LB-03725)
+    LB-06168: /mnt/DYLAN1/Concerts/1998/1998-10-28 Auburn Hills, Michigan (LB-06168)
+    LB-06564: /mnt/DYLAN1/Concerts/1998/1998-10-28 AUBURN HILLS, MI (LB-06564)
+    LB-07097: /mnt/DYLAN1/Concerts/1998/1998-10-28 Auburn Hills, Michigan (LB-07097)
+    LB-12485: /mnt/DYLAN1/Concerts/1998/1998-10-28 Auburn Hills (LB-12485)
+
+[3] Cleaning /mnt/DATA0/examples/tapematch …
+
+[4] Copying 5 folders to /mnt/DATA0/examples/tapematch …
+  Copying LB-03725: 1998-10-28 Auburn Hills, Michigan (near Detroit), Palace of Auburn Hills (LB-03725) …
+  Copying LB-06168: 1998-10-28 Auburn Hills, Michigan (LB-06168) …
+  Copying LB-06564: 1998-10-28 AUBURN HILLS, MI (LB-06564) …
+  Copying LB-07097: 1998-10-28 Auburn Hills, Michigan (LB-07097) …
+  Copying LB-12485: 1998-10-28 Auburn Hills (LB-12485) …
+
+[5] Running tapematch …
+  curator lineage pairs loaded: 677 (from /home/tjenkins/Documents/losslessbob/data/losslessbob.db)
+  est. peak RAM ~1.0 GB (5 sources, largest 1:40:51)
+=== INGEST / TRIM ===
+  1998-10-28 AUBURN HILLS, MI (LB-06564): 17 tracks, 1:35:22
+  1998-10-28 Auburn Hills (LB-12485): 16 tracks, 1:35:28
+  1998-10-28 Auburn Hills, Michigan (LB-06168): 16 tracks, 1:40:51
+  1998-10-28 Auburn Hills, Michigan (LB-07097): 16 tracks, 1:38:17
+  1998-10-28 Auburn Hills, Michigan (near Detroit), Palace of Auburn Hills (LB-03725): 16 tracks, 1:37:41
+
+=== TRIM (performance envelope) ===
+  1998-10-28 AUBURN HILLS, MI (LB-06564): trimmed 0:00:02 head, 0:00:05 tail -> performance 1:35:15
+  1998-10-28 Auburn Hills (LB-12485): trimmed 0:00:01 head, 0:00:19 tail -> performance 1:35:08
+  1998-10-28 Auburn Hills, Michigan (LB-06168): trimmed 0:00:26 head, 0:00:55 tail -> performance 1:39:30
+  1998-10-28 Auburn Hills, Michigan (LB-07097): trimmed 0:00:05 head, 0:00:04 tail -> performance 1:38:08
+  1998-10-28 Auburn Hills, Michigan (near Detroit), Palace of Auburn Hills (LB-03725): trimmed 0:00:31 head, 0:00:55 tail -> performance 1:36:14
+
+=== ANCHORS (ref=1998-10-28 AUBURN HILLS, MI (LB-06564)) ===
+  0:03:48, 0:15:52, 0:20:22, 0:26:27, 0:37:58, 0:42:32, 0:51:51, 0:57:12, 1:03:34, 1:14:33, 1:20:11, 1:35:02
+
+=== LAG CURVES / SPEED (vs ref) ===
+  1998-10-28 AUBURN HILLS, MI (LB-06564)->1998-10-28 Auburn Hills (LB-12485): speed-unknown  speed ratio=1.000614 (+614 ppm)  [conf=2.5]
+  1998-10-28 AUBURN HILLS, MI (LB-06564)->1998-10-28 Auburn Hills, Michigan (LB-06168): constant-speed-offset  speed ratio=0.954286 (-45714 ppm)
+  1998-10-28 AUBURN HILLS, MI (LB-06564)->1998-10-28 Auburn Hills, Michigan (LB-07097): constant-speed-offset  speed ratio=0.967618 (-32382 ppm)
+  1998-10-28 AUBURN HILLS, MI (LB-06564)->1998-10-28 Auburn Hills, Michigan (near Detroit), Palace of Auburn Hills (LB-03725): speed-unknown  speed ratio=0.989596 (-10404 ppm)  [conf=2.3]
+
+=== RESIDUAL CORRELATION MATRIX ===
+  8 pair(s)/source(s) speed-unknown (v2 confidence < 6.0) — routed to fingerprint path only
+          LB-06564  LB-12485  LB-06168  LB-07097  LB-03725
+  LB-06564     1.000     0.520     0.003     0.003     0.002
+  LB-12485     0.520     1.000     0.002     0.003     0.002
+  LB-06168     0.003     0.002     1.000     0.002     0.003
+  LB-07097     0.003     0.003     0.002     1.000     0.004
+  LB-03725     0.002     0.002     0.003     0.004     1.000
+
+=== SECONDARY MATCH (windowed coverage + quiet-segment hiss + fingerprint) ===
+  9 cross-family pair(s) — computing secondary evidence ...
+  No secondary same-source evidence found.
+
+=== LAG CURVES / SPEED (re-run vs central ref=1998-10-28 Auburn Hills (LB-12485)) ===
+  anchors: 0:03:47, 0:15:51, 0:20:20, 0:26:19, 0:37:51, 0:42:26, 0:51:55, 0:57:22, 1:08:54, 1:14:25, 1:20:02, 1:34:55
+  1998-10-28 Auburn Hills (LB-12485)->1998-10-28 AUBURN HILLS, MI (LB-06564): speed-unknown  speed ratio=0.999388 (-612 ppm)
+  1998-10-28 Auburn Hills (LB-12485)->1998-10-28 Auburn Hills, Michigan (LB-06168): constant-speed-offset  speed ratio=0.953030 (-46970 ppm)
+  1998-10-28 Auburn Hills (LB-12485)->1998-10-28 Auburn Hills, Michigan (LB-07097): constant-speed-offset  speed ratio=0.966344 (-33656 ppm)
+  1998-10-28 Auburn Hills (LB-12485)->1998-10-28 Auburn Hills, Michigan (near Detroit), Palace of Auburn Hills (LB-03725): speed-unknown  speed ratio=0.989497 (-10503 ppm)
+
+=== CLUSTERS ===
+  Family 1: 1998-10-28 AUBURN HILLS, MI (LB-06564), 1998-10-28 Auburn Hills (LB-12485)  (mean intra-corr 0.520 [low confidence])
+  Family 2: 1998-10-28 Auburn Hills, Michigan (LB-06168)  (mean intra-corr 1.000)
+  Family 3: 1998-10-28 Auburn Hills, Michigan (LB-07097)  (mean intra-corr 1.000)
+  Family 4: 1998-10-28 Auburn Hills, Michigan (near Detroit), Palace of Auburn Hills (LB-03725)  (mean intra-corr 1.000)
+  Distinct source families: 4
+
+=== LINEAGE EVIDENCE (interpret manually) ===
+    source   HF ceiling  noise floor  DC asymmetry
+  1998-10-28 AUBURN HILLS, MI (LB-06564)       4.0kHz      -80.1dB      -0.00001
+  1998-10-28 Auburn Hills (LB-12485)       4.0kHz      -82.7dB      +0.00000
+  1998-10-28 Auburn Hills, Michigan (LB-06168)       3.0kHz      -82.0dB      +0.02857
+  1998-10-28 Auburn Hills, Michigan (LB-07097)       3.0kHz      -90.3dB      +0.00110
+  1998-10-28 Auburn Hills, Michigan (near Detroit), Palace of Auburn Hills (LB-03725)       3.0kHz      -80.8dB      -0.00006
+  (HF ceiling capped by 8000 Hz Nyquist at analysis_sr=16000; run lineage at native rate for real format discrimination)
+  (DC asymmetry is a taper/equipment signature — not a reliable source-identity marker)
+
+=== DIAGNOSTICS ===
+  [DISTINCT SOURCE] 1998-10-28 Auburn Hills, Michigan (LB-06168) (-46970 ppm speed offset, best cross-family corr 0.003): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1998-10-28 Auburn Hills, Michigan (LB-07097) (-33656 ppm speed offset, best cross-family corr 0.004): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1998-10-28 Auburn Hills, Michigan (near Detroit), Palace of Auburn Hills (LB-03725) (-10503 ppm speed offset, best cross-family corr 0.004): near-zero correlation to all other sources — entirely different recording
+  [LOW CONFIDENCE] Family 1 (1998-10-28 AUBURN HILLS, MI (LB-06564) / 1998-10-28 Auburn Hills (LB-12485)): corr 0.520 — same source likely but significant processing (resampling, level boost, EQ) may explain reduced correlation
+
+[6] Archiving run …
+  Archive → /home/tjenkins/Documents/losslessbob/data/tapematch/runs/20260704_122411_1998-10-28
+
+[7] Logging to observations.db …
+  Logged: 1 run, 5 sources, 10 pairs
+
+Report → /home/tjenkins/Documents/losslessbob/tools/tapematch/last_run_report.md
+
+=== regression score (live; recomputed) — 4 date(s), 31 frozen pairs ===
+
+             baseline   candidate    delta
+recall          60.0%       60.0%    +0.0
+precision       50.0%       50.0%    +0.0
+
+confusion  baseline: tp=3 fn=2 fp=3 tn=23
+           candidate: tp=3 fn=2 fp=3 tn=23
+
+new FP: none  (precision preserved on frozen negatives)

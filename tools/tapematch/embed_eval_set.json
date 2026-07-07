@@ -1,0 +1,3649 @@
+{
+  "spec": "CC_TAPEMATCH_ADDON Task 6.1.4",
+  "params": {
+    "quota": 60,
+    "tp_corr": 0.05,
+    "fn_corr": 0.05
+  },
+  "dates": [
+    "1987-09-12",
+    "1987-09-15",
+    "1987-09-19",
+    "1987-09-20",
+    "1987-09-23",
+    "1987-09-25",
+    "1987-10-17",
+    "1988-07-01",
+    "1988-07-08",
+    "1988-07-17",
+    "1988-08-07",
+    "1988-08-26",
+    "1989-05-27",
+    "1989-06-04",
+    "1989-06-06",
+    "1989-06-07",
+    "1989-06-08",
+    "1989-06-10",
+    "1989-06-13",
+    "1989-06-19",
+    "1989-07-09",
+    "1989-07-19",
+    "1989-08-22",
+    "1989-09-03",
+    "1989-10-31",
+    "1990-01-12",
+    "1990-01-14",
+    "1990-01-31",
+    "1990-02-01",
+    "1990-02-06",
+    "1990-02-07",
+    "1990-06-07",
+    "1990-06-27",
+    "1990-08-12",
+    "1990-10-13",
+    "1990-10-23",
+    "1990-10-26",
+    "1990-11-06",
+    "1990-11-08",
+    "1990-11-12",
+    "1991-05-11",
+    "1991-06-06",
+    "1991-06-11",
+    "1991-11-05",
+    "1992-04-01",
+    "1992-04-15",
+    "1992-06-30",
+    "1992-11-09",
+    "1992-11-13",
+    "1993-04-19",
+    "1993-06-27",
+    "1993-07-13",
+    "1993-10-02",
+    "1994-02-20",
+    "1994-04-28",
+    "1994-07-04",
+    "1994-07-19",
+    "1994-11-08",
+    "1995-03-15",
+    "1995-04-03",
+    "1996-06-17",
+    "1996-10-26",
+    "1996-11-04",
+    "1996-11-17",
+    "1996-11-23",
+    "1997-04-06",
+    "2001-10-30"
+  ],
+  "n_sources": 184,
+  "counts": {
+    "tp": 60,
+    "tn": 60,
+    "fn": 60
+  },
+  "sources": {
+    "1987-09-12": [
+      {
+        "lb": 5445,
+        "folder": "1987-09-12 Modena, Italy, Area Ex Autodromo (LB-05445)",
+        "run_id": "20260702_135007",
+        "trim_head_sec": 149.0,
+        "trim_tail_sec": 34.20031250000011,
+        "perf_dur_sec": 4611.0,
+        "total_dur_sec": 4794.2003125,
+        "speed_ppm": 0.0,
+        "speed_kind": "staircase/splice"
+      },
+      {
+        "lb": 4716,
+        "folder": "1987-09-12 Modena, Italy, Area Ex Autodromo (LB-04716)",
+        "run_id": "20260702_135007",
+        "trim_head_sec": 764.5,
+        "trim_tail_sec": 1103.6605625000002,
+        "perf_dur_sec": 5437.0,
+        "total_dur_sec": 7305.1605625,
+        "speed_ppm": 9500.000000000064,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 14995,
+        "folder": "1987-09-12 Modena, Italy (LB-14995)",
+        "run_id": "20260702_135007",
+        "trim_head_sec": 69.5,
+        "trim_tail_sec": 253.68881249999959,
+        "perf_dur_sec": 4710.0,
+        "total_dur_sec": 5033.1888125,
+        "speed_ppm": 0.0,
+        "speed_kind": "reference"
+      },
+      {
+        "lb": 9978,
+        "folder": "1987-09-12 Modena, Italy (LB-09978)",
+        "run_id": "20260702_135007",
+        "trim_head_sec": 0.0,
+        "trim_tail_sec": 0.0,
+        "perf_dur_sec": 4658.6545,
+        "total_dur_sec": 4658.6545,
+        "speed_ppm": 0.0,
+        "speed_kind": "staircase/splice"
+      },
+      {
+        "lb": 15009,
+        "folder": "1987-09-12 Modena (LB-15009)",
+        "run_id": "20260702_135007",
+        "trim_head_sec": 0.0,
+        "trim_tail_sec": 0.0,
+        "perf_dur_sec": 4716.20025,
+        "total_dur_sec": 4716.20025,
+        "speed_ppm": -3000.0000000000027,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 2286,
+        "folder": "1987-09-12 Area Ex Autodromo - Modena, Italy (LB-02286)",
+        "run_id": "20260702_135007",
+        "trim_head_sec": 192.0,
+        "trim_tail_sec": 86.6869999999999,
+        "perf_dur_sec": 4404.5,
+        "total_dur_sec": 4683.187,
+        "speed_ppm": 0.0,
+        "speed_kind": "staircase/splice"
+      },
+      {
+        "lb": 543,
+        "folder": "1987-09-12 Area Ex Autodromo - Modena, Italy (LB-00543)",
+        "run_id": "20260702_135007",
+        "trim_head_sec": 192.0,
+        "trim_tail_sec": 87.68693749999966,
+        "perf_dur_sec": 4410.5,
+        "total_dur_sec": 4690.1869375,
+        "speed_ppm": 0.0,
+        "speed_kind": "staircase/splice"
+      }
+    ],
+    "1987-09-15": [
+      {
+        "lb": 15765,
+        "folder": "Bob Dylan 1987-09-15. aau-0. Dortmund, WG (24-96)-LB-15765",
+        "run_id": "20260604_115922",
+        "trim_head_sec": 27.5,
+        "trim_tail_sec": 13.738812499999767,
+        "perf_dur_sec": 7685.5,
+        "total_dur_sec": 7726.7388125,
+        "speed_ppm": 20000.00000000002,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 5450,
+        "folder": "1987-09-15 Dortmund, West Germany, Westfalenhalle 1 (LB-05450)",
+        "run_id": "20260604_115922",
+        "trim_head_sec": 68.5,
+        "trim_tail_sec": 59.100312499999745,
+        "perf_dur_sec": 4196.0,
+        "total_dur_sec": 4323.6003125,
+        "speed_ppm": -18499.99999999996,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 11064,
+        "folder": "1987-09-15 Dortmund, West Germany (LB-11064)",
+        "run_id": "20260604_115922",
+        "trim_head_sec": 198.5,
+        "trim_tail_sec": 9.833687500000451,
+        "perf_dur_sec": 3916.0,
+        "total_dur_sec": 4124.3336875,
+        "speed_ppm": 0.0,
+        "speed_kind": "reference"
+      },
+      {
+        "lb": 9304,
+        "folder": "1987-09-15 Dortmund, West Germany (LB-09304)",
+        "run_id": "20260604_115922",
+        "trim_head_sec": 85.5,
+        "trim_tail_sec": 12.897437499999796,
+        "perf_dur_sec": 4063.0,
+        "total_dur_sec": 4161.3974375,
+        "speed_ppm": -18000.000000000015,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 134,
+        "folder": "1987-09-15 Dortmund, West Germany (LB-00134)",
+        "run_id": "20260604_115922",
+        "trim_head_sec": 198.5,
+        "trim_tail_sec": 8.707000000000335,
+        "perf_dur_sec": 3917.5,
+        "total_dur_sec": 4124.707,
+        "speed_ppm": 0.0,
+        "speed_kind": "aligned"
+      },
+      {
+        "lb": 6029,
+        "folder": "1987-09-15 Dortmund, Germany Westfalenhalle 1 (LB-06029)",
+        "run_id": "20260604_115922",
+        "trim_head_sec": 80.0,
+        "trim_tail_sec": 63.3402500000002,
+        "perf_dur_sec": 4156.5,
+        "total_dur_sec": 4299.84025,
+        "speed_ppm": -18000.000000000015,
+        "speed_kind": "constant-speed-offset"
+      }
+    ],
+    "1987-09-19": [
+      {
+        "lb": 131,
+        "folder": "1987-09-19 Sportpaleis Ahoy, Rotterdam, The Netherlands (LB-00131)",
+        "run_id": "20260604_122348",
+        "trim_head_sec": 64.0,
+        "trim_tail_sec": 0.03368749999981446,
+        "perf_dur_sec": 3514.5,
+        "total_dur_sec": 3578.5336875,
+        "speed_ppm": -4499.999999999948,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 6099,
+        "folder": "1987-09-19 Rotterdam, The Netherlands, Sportpaleis Ahoy (LB-06099)",
+        "run_id": "20260604_122348",
+        "trim_head_sec": 61.5,
+        "trim_tail_sec": 32.70724999999993,
+        "perf_dur_sec": 3482.0,
+        "total_dur_sec": 3576.20725,
+        "speed_ppm": -3500.0000000000587,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 6096,
+        "folder": "1987-09-19 Rotterdam, The Netherlands, Sportpaleis Ahoy (LB-06096)",
+        "run_id": "20260604_122348",
+        "trim_head_sec": 36.0,
+        "trim_tail_sec": 178.4468750000001,
+        "perf_dur_sec": 3207.0,
+        "total_dur_sec": 3421.446875,
+        "speed_ppm": 20000.00000000002,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 5463,
+        "folder": "1987-09-19 Rotterdam, The Netherlands, Sportpaleis Ahoy (LB-05463)",
+        "run_id": "20260604_122348",
+        "trim_head_sec": 109.5,
+        "trim_tail_sec": 108.64699999999993,
+        "perf_dur_sec": 3522.0,
+        "total_dur_sec": 3740.147,
+        "speed_ppm": -5000.000000000005,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 5156,
+        "folder": "1987-09-19 Rotterdam, The Netherlands, Sportpaleis Ahoy (LB-05156)",
+        "run_id": "20260604_122348",
+        "trim_head_sec": 11.5,
+        "trim_tail_sec": 7.766999999999825,
+        "perf_dur_sec": 3373.0,
+        "total_dur_sec": 3392.267,
+        "speed_ppm": 0.0,
+        "speed_kind": "aligned"
+      },
+      {
+        "lb": 4281,
+        "folder": "1987-09-19 Rotterdam, The Netherlands, Sportpaleis Ahoy (LB-04281)",
+        "run_id": "20260604_122348",
+        "trim_head_sec": 59.0,
+        "trim_tail_sec": 0.12687499999992724,
+        "perf_dur_sec": 3514.5,
+        "total_dur_sec": 3573.626875,
+        "speed_ppm": -4499.999999999948,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 6035,
+        "folder": "1987-09-19 Rotterdam, The Netherlands Sportpaleis Ahoy (LB-06035)",
+        "run_id": "20260604_122348",
+        "trim_head_sec": 64.5,
+        "trim_tail_sec": 34.59356250000019,
+        "perf_dur_sec": 3481.0,
+        "total_dur_sec": 3580.0935625,
+        "speed_ppm": -4000.0000000000036,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 7349,
+        "folder": "1987-09-19 Rotterdam, Holland (LB-07349)",
+        "run_id": "20260604_122348",
+        "trim_head_sec": 41.0,
+        "trim_tail_sec": 78.84681249999994,
+        "perf_dur_sec": 3364.5,
+        "total_dur_sec": 3484.3468125,
+        "speed_ppm": -6000.0000000000055,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 8000,
+        "folder": "1987-09-19 Rotterdam (LB-08000)",
+        "run_id": "20260604_122348",
+        "trim_head_sec": 823.5,
+        "trim_tail_sec": 4.160499999999956,
+        "perf_dur_sec": 5902.0,
+        "total_dur_sec": 6729.6605,
+        "speed_ppm": -19500.000000000073,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 6782,
+        "folder": "1987-09-19 Ahoy, Rotterdam , Holland (LB-06782)",
+        "run_id": "20260604_122348",
+        "trim_head_sec": 11.5,
+        "trim_tail_sec": 0.10043750000022555,
+        "perf_dur_sec": 4365.0,
+        "total_dur_sec": 4376.6004375,
+        "speed_ppm": 0.0,
+        "speed_kind": "reference"
+      }
+    ],
+    "1987-09-20": [
+      {
+        "lb": 5246,
+        "folder": "1987-09-20 Hanover, West Germany, Messehalle 20 (LB-05246)",
+        "run_id": "20260604_123636",
+        "trim_head_sec": 57.0,
+        "trim_tail_sec": 0.0,
+        "perf_dur_sec": 3558.4803125,
+        "total_dur_sec": 3615.4803125,
+        "speed_ppm": -4000.0000000000036,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 5165,
+        "folder": "1987-09-20 Hanover, Germany, Messehalle 20 (LB-05165)",
+        "run_id": "20260604_123636",
+        "trim_head_sec": 44.5,
+        "trim_tail_sec": 77.5536874999998,
+        "perf_dur_sec": 3811.0,
+        "total_dur_sec": 3933.0536875,
+        "speed_ppm": 0.0,
+        "speed_kind": "reference"
+      },
+      {
+        "lb": 5477,
+        "folder": "1987-09-20 Hannover, West Germany, Messehalle 20 (LB-05477)",
+        "run_id": "20260604_123636",
+        "trim_head_sec": 42.0,
+        "trim_tail_sec": 80.1602499999999,
+        "perf_dur_sec": 3843.0,
+        "total_dur_sec": 3965.16025,
+        "speed_ppm": -6000.0000000000055,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 6040,
+        "folder": "1987-09-20 Hannover, Germany Messehalle 20 (LB-06040)",
+        "run_id": "20260604_123636",
+        "trim_head_sec": 135.5,
+        "trim_tail_sec": 33.973625000000084,
+        "perf_dur_sec": 3548.5,
+        "total_dur_sec": 3717.973625,
+        "speed_ppm": -2499.999999999947,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 152,
+        "folder": "1987-09-20 Hannover (LB-00152)",
+        "run_id": "20260604_123636",
+        "trim_head_sec": 87.0,
+        "trim_tail_sec": 20.067000000000007,
+        "perf_dur_sec": 3514.0,
+        "total_dur_sec": 3621.067,
+        "speed_ppm": 8000.000000000007,
+        "speed_kind": "constant-speed-offset"
+      }
+    ],
+    "1987-09-23": [
+      {
+        "lb": 4318,
+        "folder": "1987-09-23 Helsinki, Finland, Jaahalli (LB-04318)",
+        "run_id": "20260702_140403",
+        "trim_head_sec": 39.5,
+        "trim_tail_sec": 16.013624999999593,
+        "perf_dur_sec": 4089.5,
+        "total_dur_sec": 4145.013625,
+        "speed_ppm": 37714.023719281235,
+        "speed_kind": "speed-unknown"
+      },
+      {
+        "lb": 5487,
+        "folder": "1987-09-23 Helsinki, Finland, J, halli (LB-05487)",
+        "run_id": "20260702_140403",
+        "trim_head_sec": 104.5,
+        "trim_tail_sec": 110.80025000000023,
+        "perf_dur_sec": 4247.5,
+        "total_dur_sec": 4462.80025,
+        "speed_ppm": -298.8228369629198,
+        "speed_kind": "speed-unknown"
+      },
+      {
+        "lb": 9306,
+        "folder": "1987-09-23 Helsinki, Finland (LB-09306)",
+        "run_id": "20260702_140403",
+        "trim_head_sec": 65.0,
+        "trim_tail_sec": 17.633749999999964,
+        "perf_dur_sec": 3951.5,
+        "total_dur_sec": 4034.13375,
+        "speed_ppm": 74059.34455270157,
+        "speed_kind": "speed-unknown"
+      },
+      {
+        "lb": 2307,
+        "folder": "1987-09-23 Helsinki, Finland (LB-02307)",
+        "run_id": "20260702_140403",
+        "trim_head_sec": 57.5,
+        "trim_tail_sec": 48.220312499999636,
+        "perf_dur_sec": 4256.0,
+        "total_dur_sec": 4361.7203125,
+        "speed_ppm": 0.0,
+        "speed_kind": "reference"
+      },
+      {
+        "lb": 777,
+        "folder": "1987-09-23 Helsinki, Finland (LB-00777)",
+        "run_id": "20260702_140403",
+        "trim_head_sec": 50.0,
+        "trim_tail_sec": 0.0,
+        "perf_dur_sec": 4070.373625,
+        "total_dur_sec": 4120.373625,
+        "speed_ppm": 42604.25948613023,
+        "speed_kind": "speed-unknown"
+      }
+    ],
+    "1987-09-25": [
+      {
+        "lb": 353,
+        "folder": "1987-09-25 Scandinavium, Goethenburg, Sweden (LB-00353)",
+        "run_id": "20260604_125254",
+        "trim_head_sec": 14.5,
+        "trim_tail_sec": 18.26025000000027,
+        "perf_dur_sec": 4215.0,
+        "total_dur_sec": 4247.76025,
+        "speed_ppm": 0.0,
+        "speed_kind": "aligned"
+      },
+      {
+        "lb": 5491,
+        "folder": "1987-09-25 Gothenburg, Sweden, Scandinavium (LB-05491)",
+        "run_id": "20260604_125254",
+        "trim_head_sec": 78.5,
+        "trim_tail_sec": 63.267187499999636,
+        "perf_dur_sec": 4215.5,
+        "total_dur_sec": 4357.2671875,
+        "speed_ppm": 0.0,
+        "speed_kind": "aligned"
+      },
+      {
+        "lb": 5174,
+        "folder": "1987-09-25 Gothenburg, Sweden, Scandinavium (LB-05174)",
+        "run_id": "20260604_125254",
+        "trim_head_sec": 14.0,
+        "trim_tail_sec": 17.993625000000065,
+        "perf_dur_sec": 4219.5,
+        "total_dur_sec": 4251.493625,
+        "speed_ppm": -1000.0000000000009,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 10909,
+        "folder": "1987-09-25 Gothenburg, Sweden (LB-10909)",
+        "run_id": "20260604_125254",
+        "trim_head_sec": 14.5,
+        "trim_tail_sec": 18.113562499999716,
+        "perf_dur_sec": 4215.0,
+        "total_dur_sec": 4247.6135625,
+        "speed_ppm": 0.0,
+        "speed_kind": "reference"
+      },
+      {
+        "lb": 9044,
+        "folder": "1987-09-25 Goteborg, Sweden (LB-09044)",
+        "run_id": "20260604_125254",
+        "trim_head_sec": 46.0,
+        "trim_tail_sec": 465.40037500000017,
+        "perf_dur_sec": 3532.0,
+        "total_dur_sec": 4043.400375,
+        "speed_ppm": -4000.0000000000036,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 12836,
+        "folder": "1987-09-25 Goethenburg, Sweden (LB-12836)",
+        "run_id": "20260604_125254",
+        "trim_head_sec": 29.5,
+        "trim_tail_sec": 60.256437500000175,
+        "perf_dur_sec": 4260.5,
+        "total_dur_sec": 4350.2564375,
+        "speed_ppm": -11500.000000000065,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 12363,
+        "folder": "1987-09-25 Goethenburg, Sweden (LB-12363)",
+        "run_id": "20260604_125254",
+        "trim_head_sec": 27.0,
+        "trim_tail_sec": 57.613562499999716,
+        "perf_dur_sec": 4267.0,
+        "total_dur_sec": 4351.6135625,
+        "speed_ppm": -12000.000000000011,
+        "speed_kind": "constant-speed-offset"
+      }
+    ],
+    "1987-10-17": [
+      {
+        "lb": 119,
+        "folder": "1987-10-17 Wembly Arena, London (LB-00119)",
+        "run_id": "20260604_143709",
+        "trim_head_sec": 44.5,
+        "trim_tail_sec": 4.873062500000742,
+        "perf_dur_sec": 9000.0,
+        "total_dur_sec": 9049.3730625,
+        "speed_ppm": -1000.0000000000009,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 2305,
+        "folder": "1987-10-17 Wembley Arena, London (LB-02305)",
+        "run_id": "20260604_143709",
+        "trim_head_sec": 16.0,
+        "trim_tail_sec": 9.94543749999957,
+        "perf_dur_sec": 5564.0,
+        "total_dur_sec": 5589.9454375,
+        "speed_ppm": 0.0,
+        "speed_kind": "reference"
+      },
+      {
+        "lb": 608,
+        "folder": "1987-10-17 Wembley Arena, London (LB-00608)",
+        "run_id": "20260604_143709",
+        "trim_head_sec": 18.5,
+        "trim_tail_sec": 9.947124999999687,
+        "perf_dur_sec": 5567.5,
+        "total_dur_sec": 5595.947125,
+        "speed_ppm": 0.0,
+        "speed_kind": "staircase/splice"
+      },
+      {
+        "lb": 5688,
+        "folder": "1987-10-17 London, Wembley Arena (LB-05688)",
+        "run_id": "20260604_143709",
+        "trim_head_sec": 97.0,
+        "trim_tail_sec": 11.273687500000051,
+        "perf_dur_sec": 5094.5,
+        "total_dur_sec": 5202.7736875,
+        "speed_ppm": 12000.000000000011,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 5616,
+        "folder": "1987-10-17 London, England, Wembley Arena (LB-05616)",
+        "run_id": "20260604_143709",
+        "trim_head_sec": 4534.5,
+        "trim_tail_sec": 197.7870624999996,
+        "perf_dur_sec": 659.5,
+        "total_dur_sec": 5391.7870625,
+        "speed_ppm": -14000.000000000013,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 5608,
+        "folder": "1987-10-17 London, England, Wembley Arena (LB-05608)",
+        "run_id": "20260604_143709",
+        "trim_head_sec": 38.5,
+        "trim_tail_sec": 89.69387499999993,
+        "perf_dur_sec": 5654.5,
+        "total_dur_sec": 5782.693875,
+        "speed_ppm": -499.9999999999449,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 9271,
+        "folder": "1987-10-17 London (LB-09271)",
+        "run_id": "20260604_143709",
+        "trim_head_sec": 40.0,
+        "trim_tail_sec": 2.1603125000001455,
+        "perf_dur_sec": 4320.0,
+        "total_dur_sec": 4362.1603125,
+        "speed_ppm": 6499.99999999995,
+        "speed_kind": "constant-speed-offset"
+      }
+    ],
+    "1988-07-01": [
+      {
+        "lb": 2189,
+        "folder": "1988-07-01 Wantagh, New York (LB-02189)",
+        "run_id": "20260604_000024",
+        "trim_head_sec": 41.5,
+        "trim_tail_sec": 4.513687499999833,
+        "perf_dur_sec": 5007.0,
+        "total_dur_sec": 5053.0136875,
+        "speed_ppm": -20000.00000000002,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 12563,
+        "folder": "1988-07-01 Wantagh, NY (LB-12563)",
+        "run_id": "20260604_000024",
+        "trim_head_sec": 49.0,
+        "trim_tail_sec": 15.087000000000444,
+        "perf_dur_sec": 4876.5,
+        "total_dur_sec": 4940.587,
+        "speed_ppm": -14000.000000000013,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 204,
+        "folder": "1988-07-01 Long Island (LB-00204)",
+        "run_id": "20260604_000024",
+        "trim_head_sec": 24.5,
+        "trim_tail_sec": 0.0,
+        "perf_dur_sec": 4773.2470625,
+        "total_dur_sec": 4797.7470625,
+        "speed_ppm": -20000.00000000002,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 2231,
+        "folder": "1988-07-01 Jones Beach Theater, Jones Beach State Park, Wantagh, New York (LB-02231)",
+        "run_id": "20260604_000024",
+        "trim_head_sec": 11.0,
+        "trim_tail_sec": 45.220312499999636,
+        "perf_dur_sec": 4717.5,
+        "total_dur_sec": 4773.7203125,
+        "speed_ppm": -15500.00000000007,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 2404,
+        "folder": "1988-07-01 Jones Beach Music Theater, Wantagh, New York (LB-02404)",
+        "run_id": "20260604_000024",
+        "trim_head_sec": 5.5,
+        "trim_tail_sec": 9.473687499999869,
+        "perf_dur_sec": 4786.0,
+        "total_dur_sec": 4800.9736875,
+        "speed_ppm": -20000.00000000002,
+        "speed_kind": "constant-speed-offset"
+      }
+    ],
+    "1988-07-08": [
+      {
+        "lb": 14669,
+        "folder": "1988-07-08 Montreal (LB-14669)",
+        "run_id": "20260702_165631",
+        "trim_head_sec": 87.0,
+        "trim_tail_sec": 36.035437499999716,
+        "perf_dur_sec": 4582.0,
+        "total_dur_sec": 4705.0354375,
+        "speed_ppm": 23298.55958096916,
+        "speed_kind": "speed-unknown"
+      },
+      {
+        "lb": 8434,
+        "folder": "1988-07-08 Montreal (LB-08434)",
+        "run_id": "20260702_165631",
+        "trim_head_sec": 44.0,
+        "trim_tail_sec": 47.40687499999967,
+        "perf_dur_sec": 4702.5,
+        "total_dur_sec": 4793.906875,
+        "speed_ppm": 0.0,
+        "speed_kind": "reference"
+      },
+      {
+        "lb": 3140,
+        "folder": "1988-07-08 Montreal (LB-03140)",
+        "run_id": "20260702_165631",
+        "trim_head_sec": 7.0,
+        "trim_tail_sec": 8.407000000000153,
+        "perf_dur_sec": 4617.5,
+        "total_dur_sec": 4632.907,
+        "speed_ppm": 21408.22956145083,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 2767,
+        "folder": "1988-07-08 Montreal (LB-02767)",
+        "run_id": "20260702_165631",
+        "trim_head_sec": 15.0,
+        "trim_tail_sec": 91.66700000000037,
+        "perf_dur_sec": 4678.0,
+        "total_dur_sec": 4784.667,
+        "speed_ppm": 4037.2808892688017,
+        "speed_kind": "speed-unknown"
+      },
+      {
+        "lb": 2088,
+        "folder": "1988-07-08 Forum de Montreal, Montreal, Quebec, Canada (LB-02088)",
+        "run_id": "20260702_165631",
+        "trim_head_sec": 3.5,
+        "trim_tail_sec": 42.313624999999774,
+        "perf_dur_sec": 4612.0,
+        "total_dur_sec": 4657.813625,
+        "speed_ppm": 22622.723330442128,
+        "speed_kind": "speed-unknown"
+      }
+    ],
+    "1988-07-17": [
+      {
+        "lb": 7554,
+        "folder": "1988-07-17 Rochester, Michigan (LB-07554)",
+        "run_id": "20260604_012601",
+        "trim_head_sec": 29.0,
+        "trim_tail_sec": 3.21356250000008,
+        "perf_dur_sec": 4727.0,
+        "total_dur_sec": 4759.2135625,
+        "speed_ppm": 0.0,
+        "speed_kind": "staircase/splice"
+      },
+      {
+        "lb": 7541,
+        "folder": "1988-07-17 Rochester, Michigan (LB-07541)",
+        "run_id": "20260604_012601",
+        "trim_head_sec": 29.0,
+        "trim_tail_sec": 39.946874999999636,
+        "perf_dur_sec": 4729.0,
+        "total_dur_sec": 4797.946875,
+        "speed_ppm": 0.0,
+        "speed_kind": "reference"
+      },
+      {
+        "lb": 10937,
+        "folder": "1988-07-17 Rochester Hills, Michigan (LB-10937)",
+        "run_id": "20260604_012601",
+        "trim_head_sec": 36.5,
+        "trim_tail_sec": 0.6869999999998981,
+        "perf_dur_sec": 4728.0,
+        "total_dur_sec": 4765.187,
+        "speed_ppm": -17000.000000000015,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 10935,
+        "folder": "1988-07-17 Rochester Hills, Michigan (LB-10935)",
+        "run_id": "20260604_012601",
+        "trim_head_sec": 31.0,
+        "trim_tail_sec": 16.907000000000153,
+        "perf_dur_sec": 4715.0,
+        "total_dur_sec": 4762.907,
+        "speed_ppm": 0.0,
+        "speed_kind": "staircase/splice"
+      },
+      {
+        "lb": 10754,
+        "folder": "1988-07-17 Rochester Hills, Michigan (LB-10754)",
+        "run_id": "20260604_012601",
+        "trim_head_sec": 30.5,
+        "trim_tail_sec": 30.053750000000036,
+        "perf_dur_sec": 4718.5,
+        "total_dur_sec": 4779.05375,
+        "speed_ppm": 0.0,
+        "speed_kind": "staircase/splice"
+      },
+      {
+        "lb": 14671,
+        "folder": "1988-07-17 Rochester (LB-14671)",
+        "run_id": "20260604_012601",
+        "trim_head_sec": 50.5,
+        "trim_tail_sec": 13.52331250000043,
+        "perf_dur_sec": 4849.5,
+        "total_dur_sec": 4913.5233125,
+        "speed_ppm": 18499.99999999996,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 7126,
+        "folder": "1988-07-17 Meadow Brook (LB-07126)",
+        "run_id": "20260604_012601",
+        "trim_head_sec": 17.0,
+        "trim_tail_sec": 1.0270000000000437,
+        "perf_dur_sec": 4718.0,
+        "total_dur_sec": 4736.027,
+        "speed_ppm": -18499.99999999996,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 1297,
+        "folder": "1988-07-17 Meadow Brook (LB-01297)",
+        "run_id": "20260604_012601",
+        "trim_head_sec": 43.0,
+        "trim_tail_sec": 2.4936875000003056,
+        "perf_dur_sec": 4637.0,
+        "total_dur_sec": 4682.4936875,
+        "speed_ppm": 499.9999999999449,
+        "speed_kind": "constant-speed-offset"
+      }
+    ],
+    "1988-08-07": [
+      {
+        "lb": 10743,
+        "folder": "1988-08-07 Santa Barbara, California (LB-10743)",
+        "run_id": "20260604_023403",
+        "trim_head_sec": 0.0,
+        "trim_tail_sec": 0.0,
+        "perf_dur_sec": 5044.8805,
+        "total_dur_sec": 5044.8805,
+        "speed_ppm": 0.0,
+        "speed_kind": "reference"
+      },
+      {
+        "lb": 8028,
+        "folder": "1988-08-07 Santa Barbara, California (LB-08028)",
+        "run_id": "20260604_023403",
+        "trim_head_sec": 0.0,
+        "trim_tail_sec": 0.0,
+        "perf_dur_sec": 4908.7603125,
+        "total_dur_sec": 4908.7603125,
+        "speed_ppm": 15000.000000000124,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 15088,
+        "folder": "1988-08-07 Santa Barbara, CA (LB-15088)",
+        "run_id": "20260604_023403",
+        "trim_head_sec": 0.0,
+        "trim_tail_sec": 0.0,
+        "perf_dur_sec": 5021.7878125,
+        "total_dur_sec": 5021.7878125,
+        "speed_ppm": 0.0,
+        "speed_kind": "staircase/splice"
+      },
+      {
+        "lb": 15010,
+        "folder": "1988-08-07 Santa Barbara (LB-15010)",
+        "run_id": "20260604_023403",
+        "trim_head_sec": 1.5,
+        "trim_tail_sec": 0.0,
+        "perf_dur_sec": 4924.2413125,
+        "total_dur_sec": 4925.7413125,
+        "speed_ppm": 19000.000000000127,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 3157,
+        "folder": "1988-08-07 Santa Barbara (LB-03157)",
+        "run_id": "20260604_023403",
+        "trim_head_sec": 4996.0,
+        "trim_tail_sec": 20.64043750000019,
+        "perf_dur_sec": 217.0,
+        "total_dur_sec": 5233.6404375,
+        "speed_ppm": -18499.99999999996,
+        "speed_kind": "constant-speed-offset"
+      }
+    ],
+    "1988-08-26": [
+      {
+        "lb": 4642,
+        "folder": "1988-08-26 Winnipeg, Winnipeg, MB, Canada, Winnipeg Arena (LB-04642)",
+        "run_id": "20260604_030919",
+        "trim_head_sec": 3.5,
+        "trim_tail_sec": 65.52031249999982,
+        "perf_dur_sec": 4413.5,
+        "total_dur_sec": 4482.5203125,
+        "speed_ppm": 0.0,
+        "speed_kind": "reference"
+      },
+      {
+        "lb": 9900,
+        "folder": "1988-08-26 Winnipeg, Manitoba, Canada (LB-09900)",
+        "run_id": "20260604_030919",
+        "trim_head_sec": 3.5,
+        "trim_tail_sec": 70.52706250000028,
+        "perf_dur_sec": 4408.0,
+        "total_dur_sec": 4482.0270625,
+        "speed_ppm": 0.0,
+        "speed_kind": "aligned"
+      },
+      {
+        "lb": 12355,
+        "folder": "1988-08-26 Winnipeg, Canada (Winnipeg Arena) (LB-12355)",
+        "run_id": "20260604_030919",
+        "trim_head_sec": 14.0,
+        "trim_tail_sec": 24.386187500000233,
+        "perf_dur_sec": 4581.5,
+        "total_dur_sec": 4619.8861875,
+        "speed_ppm": -20000.00000000002,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 14677,
+        "folder": "1988-08-26 Winnipeg (LB-14677)",
+        "run_id": "20260604_030919",
+        "trim_head_sec": 3.0,
+        "trim_tail_sec": 32.501624999999876,
+        "perf_dur_sec": 4568.5,
+        "total_dur_sec": 4604.001625,
+        "speed_ppm": -5000.000000000005,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 3160,
+        "folder": "1988-08-26 Winnipeg (LB-03160)",
+        "run_id": "20260604_030919",
+        "trim_head_sec": 36.5,
+        "trim_tail_sec": 56.52681250000023,
+        "perf_dur_sec": 4604.0,
+        "total_dur_sec": 4697.0268125,
+        "speed_ppm": -8000.000000000007,
+        "speed_kind": "constant-speed-offset"
+      }
+    ],
+    "1989-05-27": [
+      {
+        "lb": 12372,
+        "folder": "1989-05-27 Christinehofs Slott, Skne, Sweden (LB-12372)",
+        "run_id": "20260702_164920",
+        "trim_head_sec": 8.5,
+        "trim_tail_sec": 15.753624999999829,
+        "perf_dur_sec": 4053.0,
+        "total_dur_sec": 4077.253625,
+        "speed_ppm": 58535.973353071924,
+        "speed_kind": "speed-unknown"
+      },
+      {
+        "lb": 13418,
+        "folder": "1989-05-27 Christinehof (LB-13418)",
+        "run_id": "20260702_164920",
+        "trim_head_sec": 62.5,
+        "trim_tail_sec": 59.865749999999935,
+        "perf_dur_sec": 4302.0,
+        "total_dur_sec": 4424.36575,
+        "speed_ppm": 0.0,
+        "speed_kind": "reference"
+      },
+      {
+        "lb": 8464,
+        "folder": "1989-05-27 Christinehof (LB-08464)",
+        "run_id": "20260702_164920",
+        "trim_head_sec": 64.0,
+        "trim_tail_sec": 143.75362499999983,
+        "perf_dur_sec": 3869.5,
+        "total_dur_sec": 4077.253625,
+        "speed_ppm": 41699.99999999985,
+        "speed_kind": "speed-unknown"
+      },
+      {
+        "lb": 2468,
+        "folder": "1989-05-27 Christinehof (LB-02468)",
+        "run_id": "20260702_164920",
+        "trim_head_sec": 65.5,
+        "trim_tail_sec": 21.860375000000204,
+        "perf_dur_sec": 4124.0,
+        "total_dur_sec": 4211.360375,
+        "speed_ppm": 40161.97866149373,
+        "speed_kind": "speed-unknown"
+      },
+      {
+        "lb": 7209,
+        "folder": "1989-05-27 Andrarum, Sweden Christinehofs Slottspark (LB-07209)",
+        "run_id": "20260702_164920",
+        "trim_head_sec": 23.5,
+        "trim_tail_sec": 153.18006249999962,
+        "perf_dur_sec": 4319.5,
+        "total_dur_sec": 4496.1800625,
+        "speed_ppm": -1051.3948373653825,
+        "speed_kind": "speed-unknown"
+      }
+    ],
+    "1989-06-04": [
+      {
+        "lb": 2478,
+        "folder": "1989-06-04 Dublin, Ireland, Simmonscourt, R.D.S. (LB-02478)",
+        "run_id": "20260703_001434",
+        "trim_head_sec": 23.0,
+        "trim_tail_sec": 5.1603125000001455,
+        "perf_dur_sec": 4731.0,
+        "total_dur_sec": 4759.1603125,
+        "speed_ppm": 33667.321919256035,
+        "speed_kind": "speed-unknown"
+      },
+      {
+        "lb": 7214,
+        "folder": "1989-06-04 Dublin, Ireland Simmonscourt, R.D.S. (LB-07214)",
+        "run_id": "20260703_001434",
+        "trim_head_sec": 119.5,
+        "trim_tail_sec": 42.49306249999972,
+        "perf_dur_sec": 4904.0,
+        "total_dur_sec": 5065.9930625,
+        "speed_ppm": 0.0,
+        "speed_kind": "aligned"
+      },
+      {
+        "lb": 14054,
+        "folder": "1989-06-04 Dublin, Ireland (LB-14054)",
+        "run_id": "20260703_001434",
+        "trim_head_sec": 44.5,
+        "trim_tail_sec": 48.33368750000045,
+        "perf_dur_sec": 4652.5,
+        "total_dur_sec": 4745.3336875,
+        "speed_ppm": 51056.95862439563,
+        "speed_kind": "speed-unknown"
+      },
+      {
+        "lb": 10916,
+        "folder": "1989-06-04 Dublin, Ireland (LB-10916)",
+        "run_id": "20260703_001434",
+        "trim_head_sec": 119.5,
+        "trim_tail_sec": 42.40687499999967,
+        "perf_dur_sec": 4904.0,
+        "total_dur_sec": 5065.906875,
+        "speed_ppm": 0.0,
+        "speed_kind": "reference"
+      },
+      {
+        "lb": 6445,
+        "folder": "1989-06-04 Dublin, Ireland (LB-06445)",
+        "run_id": "20260703_001434",
+        "trim_head_sec": 5.5,
+        "trim_tail_sec": 9.280312500000036,
+        "perf_dur_sec": 5066.5,
+        "total_dur_sec": 5081.2803125,
+        "speed_ppm": -29073.423467877223,
+        "speed_kind": "speed-unknown"
+      },
+      {
+        "lb": 2470,
+        "folder": "1989-06-04 Dublin (LB-02470)",
+        "run_id": "20260703_001434",
+        "trim_head_sec": 0.0,
+        "trim_tail_sec": 0.1336874999997235,
+        "perf_dur_sec": 4658.0,
+        "total_dur_sec": 4658.1336875,
+        "speed_ppm": 55312.36582224119,
+        "speed_kind": "speed-unknown"
+      }
+    ],
+    "1989-06-06": [
+      {
+        "lb": 1256,
+        "folder": "1989-06-06 SCOTTISH EXHIBITION & CONFERENCE CENTRE, GLASGOW, SCOTLAND (LB-01256)",
+        "run_id": "20260603_122125",
+        "trim_head_sec": 5.0,
+        "trim_tail_sec": 9.174250000000029,
+        "perf_dur_sec": 4486.5,
+        "total_dur_sec": 4500.67425,
+        "speed_ppm": -15000.000000000013,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 7236,
+        "folder": "1989-06-06 Glasgow, Scotland, UK, Hall 4, Scottish Exhibition And Conference Centre (LB-07236)",
+        "run_id": "20260603_122125",
+        "trim_head_sec": 59.5,
+        "trim_tail_sec": 80.19112500000028,
+        "perf_dur_sec": 4563.0,
+        "total_dur_sec": 4702.691125,
+        "speed_ppm": -15000.000000000013,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 14182,
+        "folder": "1989-06-06 Glasgow, Scotland (LB-14182)",
+        "run_id": "20260603_122125",
+        "trim_head_sec": 7.5,
+        "trim_tail_sec": 15.587062499999774,
+        "perf_dur_sec": 4599.5,
+        "total_dur_sec": 4622.5870625,
+        "speed_ppm": -15000.000000000013,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 4630,
+        "folder": "1989-06-06 Glasgow, Scotland (LB-04630)",
+        "run_id": "20260603_122125",
+        "trim_head_sec": 0.0,
+        "trim_tail_sec": 0.0,
+        "perf_dur_sec": 4377.2403125,
+        "total_dur_sec": 4377.2403125,
+        "speed_ppm": 0.0,
+        "speed_kind": "staircase/splice"
+      },
+      {
+        "lb": 4623,
+        "folder": "1989-06-06 Glasgow (LB-04623)",
+        "run_id": "20260603_122125",
+        "trim_head_sec": 0.5,
+        "trim_tail_sec": 0.0,
+        "perf_dur_sec": 4373.86025,
+        "total_dur_sec": 4374.36025,
+        "speed_ppm": 0.0,
+        "speed_kind": "reference"
+      }
+    ],
+    "1989-06-08": [
+      {
+        "lb": 3196,
+        "folder": "1989-06-08 London, England, Wembley Arena (LB-03196)",
+        "run_id": "20260603_123259",
+        "trim_head_sec": 18.5,
+        "trim_tail_sec": 1.1537500000004002,
+        "perf_dur_sec": 7191.0,
+        "total_dur_sec": 7210.65375,
+        "speed_ppm": 6999.999999999895,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 7221,
+        "folder": "1989-06-08 London, England, UK Wembley Arena (LB-07221)",
+        "run_id": "20260603_123259",
+        "trim_head_sec": 76.0,
+        "trim_tail_sec": 0.4741249999997308,
+        "perf_dur_sec": 5095.5,
+        "total_dur_sec": 5171.974125,
+        "speed_ppm": -15000.000000000013,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 1234,
+        "folder": "1989-06-08 London (LB-01234)",
+        "run_id": "20260603_123259",
+        "trim_head_sec": 0.0,
+        "trim_tail_sec": 2.2336875000000873,
+        "perf_dur_sec": 5083.5,
+        "total_dur_sec": 5085.7336875,
+        "speed_ppm": -14500.00000000007,
+        "speed_kind": "constant-speed-offset"
+      }
+    ],
+    "1989-06-10": [
+      {
+        "lb": 5676,
+        "folder": "1989-06-10 The Hague, The Netherlands, Statenhal (LB-05676)",
+        "run_id": "20260603_123906",
+        "trim_head_sec": 4348.0,
+        "trim_tail_sec": 74.29368749999958,
+        "perf_dur_sec": 67.0,
+        "total_dur_sec": 4489.2936875,
+        "speed_ppm": -11500.000000000065,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 1311,
+        "folder": "1989-06-10 Statenhal, The Hague, The Netherlands (LB-01311)",
+        "run_id": "20260603_123906",
+        "trim_head_sec": 48.5,
+        "trim_tail_sec": 10.36700000000019,
+        "perf_dur_sec": 4382.0,
+        "total_dur_sec": 4440.867,
+        "speed_ppm": 14999.999999999902,
+        "speed_kind": "constant-speed-offset"
+      }
+    ],
+    "1989-06-13": [
+      {
+        "lb": 7146,
+        "folder": "1989-06-13 Frejus, France (LB-07146)",
+        "run_id": "20260603_124950",
+        "trim_head_sec": 67.0,
+        "trim_tail_sec": 27.04699999999957,
+        "perf_dur_sec": 5108.5,
+        "total_dur_sec": 5202.547,
+        "speed_ppm": 4999.999999999894,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 6551,
+        "folder": "1989-06-13 Frejus, France (LB-06551)",
+        "run_id": "20260603_124950",
+        "trim_head_sec": 50.0,
+        "trim_tail_sec": 1.287000000000262,
+        "perf_dur_sec": 5092.5,
+        "total_dur_sec": 5143.787,
+        "speed_ppm": 499.9999999999449,
+        "speed_kind": "constant-speed-offset"
+      }
+    ],
+    "1989-06-19": [
+      {
+        "lb": 4893,
+        "folder": "1989-06-19 Milano, Italy, Palatrussardi (LB-04893)",
+        "run_id": "20260603_131942",
+        "trim_head_sec": 57.5,
+        "trim_tail_sec": 25.113750000000437,
+        "perf_dur_sec": 4986.0,
+        "total_dur_sec": 5068.61375,
+        "speed_ppm": -11500.000000000065,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 5670,
+        "folder": "1989-06-19 Milano, Italy, Palatrussadi di Milano (LB-05670)",
+        "run_id": "20260603_131942",
+        "trim_head_sec": 938.0,
+        "trim_tail_sec": 58.21362500000032,
+        "perf_dur_sec": 4030.0,
+        "total_dur_sec": 5026.213625,
+        "speed_ppm": -3000.0000000000027,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 6603,
+        "folder": "1989-06-19 Milano, Italy (LB-06603)",
+        "run_id": "20260603_131942",
+        "trim_head_sec": 49.5,
+        "trim_tail_sec": 16.08037499999955,
+        "perf_dur_sec": 5090.5,
+        "total_dur_sec": 5156.080375,
+        "speed_ppm": -15000.000000000013,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 2130,
+        "folder": "1989-06-19 Milano (LB-02130)",
+        "run_id": "20260603_131942",
+        "trim_head_sec": 71.0,
+        "trim_tail_sec": 6.860375000000204,
+        "perf_dur_sec": 4989.5,
+        "total_dur_sec": 5067.360375,
+        "speed_ppm": 0.0,
+        "speed_kind": "reference"
+      },
+      {
+        "lb": 1590,
+        "folder": "1989-06-19 Milano (LB-01590)",
+        "run_id": "20260603_131942",
+        "trim_head_sec": 66.5,
+        "trim_tail_sec": 7.859999999999673,
+        "perf_dur_sec": 4984.0,
+        "total_dur_sec": 5058.36,
+        "speed_ppm": 499.9999999999449,
+        "speed_kind": "constant-speed-offset"
+      }
+    ],
+    "1989-07-19": [
+      {
+        "lb": 2448,
+        "folder": "1989-07-19 Columbia, Maryland, Marjorie Merriweather Post Pavilion (LB-02448)",
+        "run_id": "20260603_144646",
+        "trim_head_sec": 31.0,
+        "trim_tail_sec": 16.753687499999614,
+        "perf_dur_sec": 5027.5,
+        "total_dur_sec": 5075.2536875,
+        "speed_ppm": 14499.999999999958,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 15202,
+        "folder": "1989-07-19 Columbia, Maryland (LB-15202)",
+        "run_id": "20260603_144646",
+        "trim_head_sec": 34.0,
+        "trim_tail_sec": 16.26025000000027,
+        "perf_dur_sec": 5107.5,
+        "total_dur_sec": 5157.76025,
+        "speed_ppm": 0.0,
+        "speed_kind": "aligned"
+      },
+      {
+        "lb": 11538,
+        "folder": "1989-07-19 Columbia, Maryland (LB-11538)",
+        "run_id": "20260603_144646",
+        "trim_head_sec": 34.0,
+        "trim_tail_sec": 16.313624999999774,
+        "perf_dur_sec": 5107.5,
+        "total_dur_sec": 5157.813625,
+        "speed_ppm": 0.0,
+        "speed_kind": "reference"
+      },
+      {
+        "lb": 7258,
+        "folder": "1989-07-19 Columbia, MD USA (LB-07258)",
+        "run_id": "20260603_144646",
+        "trim_head_sec": 0.0,
+        "trim_tail_sec": 0.0,
+        "perf_dur_sec": 5117.4135625,
+        "total_dur_sec": 5117.4135625,
+        "speed_ppm": 14499.999999999958,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 2216,
+        "folder": "1989-07-19 Columbia (LB-02216)",
+        "run_id": "20260603_144646",
+        "trim_head_sec": 34.0,
+        "trim_tail_sec": 17.613750000000437,
+        "perf_dur_sec": 5041.0,
+        "total_dur_sec": 5092.61375,
+        "speed_ppm": 12000.000000000011,
+        "speed_kind": "constant-speed-offset"
+      }
+    ],
+    "1989-08-22": [
+      {
+        "lb": 9954,
+        "folder": "1989-08-22 Bonner Springs, Kansas (LB-09954)",
+        "run_id": "20260603_160334",
+        "trim_head_sec": 64.0,
+        "trim_tail_sec": 0.0,
+        "perf_dur_sec": 6062.640375,
+        "total_dur_sec": 6126.640375,
+        "speed_ppm": 0.0,
+        "speed_kind": "reference"
+      },
+      {
+        "lb": 5082,
+        "folder": "1989-08-22 Bonner Springs, KS, Sandstone Ampitheatre (LB-05082)",
+        "run_id": "20260603_160334",
+        "trim_head_sec": 0.0,
+        "trim_tail_sec": 0.0,
+        "perf_dur_sec": 6003.933625,
+        "total_dur_sec": 6003.933625,
+        "speed_ppm": 12999.9999999999,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 313,
+        "folder": "1989-08-22 Bonner Springs (LB-00313)",
+        "run_id": "20260603_160334",
+        "trim_head_sec": 64.5,
+        "trim_tail_sec": 0.0,
+        "perf_dur_sec": 6067.31375,
+        "total_dur_sec": 6131.81375,
+        "speed_ppm": 0.0,
+        "speed_kind": "aligned"
+      }
+    ],
+    "1989-09-03": [
+      {
+        "lb": 2566,
+        "folder": "1989-09-03 Greek Theatre, UC-Berkeley, Berkeley, CA (LB-02566)",
+        "run_id": "20260613_214035",
+        "trim_head_sec": 24.5,
+        "trim_tail_sec": 3.393750000000182,
+        "perf_dur_sec": 6098.0,
+        "total_dur_sec": 6125.89375,
+        "speed_ppm": 16499.99999999996,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 868,
+        "folder": "1989-09-03 Greek Theatre, Berkeley, California (LB-00868)",
+        "run_id": "20260613_214035",
+        "trim_head_sec": 0.5,
+        "trim_tail_sec": 0.0,
+        "perf_dur_sec": 5751.2604375,
+        "total_dur_sec": 5751.7604375,
+        "speed_ppm": 20000.00000000002,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 9893,
+        "folder": "1989-09-03 Berkeley, California (LB-09893)",
+        "run_id": "20260613_214035",
+        "trim_head_sec": 30.5,
+        "trim_tail_sec": 7.167062499999702,
+        "perf_dur_sec": 5987.0,
+        "total_dur_sec": 6024.6670625,
+        "speed_ppm": 20000.00000000002,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 12538,
+        "folder": "1989-09-03 Berkeley, CA (LB-12538)",
+        "run_id": "20260613_214035",
+        "trim_head_sec": 7.5,
+        "trim_tail_sec": 0.0,
+        "perf_dur_sec": 6156.950625,
+        "total_dur_sec": 6164.450625,
+        "speed_ppm": 14000.000000000013,
+        "speed_kind": "constant-speed-offset"
+      }
+    ],
+    "1990-01-12": [
+      {
+        "lb": 12525,
+        "folder": "1990-01-12 Toads Place (LB-12525)",
+        "run_id": "20260612_225713",
+        "trim_head_sec": 3.0,
+        "trim_tail_sec": 0.0,
+        "perf_dur_sec": 14547.737875,
+        "total_dur_sec": 14550.737875,
+        "speed_ppm": 16000.000000000015,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 8297,
+        "folder": "1990-01-12 Toad, s Place (LB-08297)",
+        "run_id": "20260612_225713",
+        "trim_head_sec": 79.5,
+        "trim_tail_sec": 9.666937500000131,
+        "perf_dur_sec": 4182.5,
+        "total_dur_sec": 4271.6669375,
+        "speed_ppm": 20000.00000000002,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 6613,
+        "folder": "1990-01-12 Toad's Place, New Haven, Connecticut (LB-06613)",
+        "run_id": "20260612_225713",
+        "trim_head_sec": 33.5,
+        "trim_tail_sec": 29.707749999999578,
+        "perf_dur_sec": 14332.5,
+        "total_dur_sec": 14395.70775,
+        "speed_ppm": 9500.000000000064,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 2614,
+        "folder": "1990-01-12 Toad's Place, New Haven, Connecticut (LB-02614)",
+        "run_id": "20260612_225713",
+        "trim_head_sec": 17.0,
+        "trim_tail_sec": 34.214687499999854,
+        "perf_dur_sec": 18002.0,
+        "total_dur_sec": 18053.2146875,
+        "speed_ppm": 0.0,
+        "speed_kind": "reference"
+      },
+      {
+        "lb": 1776,
+        "folder": "1990-01-12 Toad's Place (New Haven, CT) (LB-01776)",
+        "run_id": "20260612_225713",
+        "trim_head_sec": 15.0,
+        "trim_tail_sec": 17.733562500000062,
+        "perf_dur_sec": 3968.0,
+        "total_dur_sec": 4000.7335625,
+        "speed_ppm": 15500.00000000007,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 12534,
+        "folder": "1990-01-12 Toad'S Place, New Haven, Connecticut, USA (LB-12534)",
+        "run_id": "20260612_225713",
+        "trim_head_sec": 13.5,
+        "trim_tail_sec": 0.0,
+        "perf_dur_sec": 14667.909125,
+        "total_dur_sec": 14681.409125,
+        "speed_ppm": 0.0,
+        "speed_kind": "staircase/splice"
+      },
+      {
+        "lb": 5863,
+        "folder": "1990-01-12 New Haven, Toad's Place (LB-05863)",
+        "run_id": "20260612_225713",
+        "trim_head_sec": 30.5,
+        "trim_tail_sec": 9.740937500000655,
+        "perf_dur_sec": 14498.0,
+        "total_dur_sec": 14538.2409375,
+        "speed_ppm": 20000.00000000002,
+        "speed_kind": "constant-speed-offset"
+      }
+    ],
+    "1990-01-31": [
+      {
+        "lb": 11885,
+        "folder": "1990-01-31 Paris, France (LB-11885)",
+        "run_id": "20260604_195832",
+        "trim_head_sec": 35.5,
+        "trim_tail_sec": 0.721625000000131,
+        "perf_dur_sec": 12245.5,
+        "total_dur_sec": 12281.721625,
+        "speed_ppm": 0.0,
+        "speed_kind": "staircase/splice"
+      },
+      {
+        "lb": 8695,
+        "folder": "1990-01-31 Paris (LB-08695)",
+        "run_id": "20260604_195832",
+        "trim_head_sec": 10.5,
+        "trim_tail_sec": 11.500437499999862,
+        "perf_dur_sec": 5878.0,
+        "total_dur_sec": 5900.0004375,
+        "speed_ppm": 0.0,
+        "speed_kind": "reference"
+      }
+    ],
+    "1990-02-01": [
+      {
+        "lb": 6811,
+        "folder": "1990-02-01 Rex Theater. Paris (LB-06811)",
+        "run_id": "20260604_201422",
+        "trim_head_sec": 5.5,
+        "trim_tail_sec": 136.49374999999964,
+        "perf_dur_sec": 5923.5,
+        "total_dur_sec": 6065.49375,
+        "speed_ppm": 0.0,
+        "speed_kind": "reference"
+      },
+      {
+        "lb": 8523,
+        "folder": "1990-02-01 Paris (LB-08523)",
+        "run_id": "20260604_201422",
+        "trim_head_sec": 6.0,
+        "trim_tail_sec": 0.0,
+        "perf_dur_sec": 5923.0536875,
+        "total_dur_sec": 5929.0536875,
+        "speed_ppm": 0.0,
+        "speed_kind": "aligned"
+      }
+    ],
+    "1990-11-08": [
+      {
+        "lb": 8251,
+        "folder": "1990-11-08 Iowa City, Iowa (LB-08251)",
+        "run_id": "20260702_230709",
+        "trim_head_sec": 99.0,
+        "trim_tail_sec": 25.220312499999636,
+        "perf_dur_sec": 5603.5,
+        "total_dur_sec": 5727.7203125,
+        "speed_ppm": 16.909074685322878,
+        "speed_kind": "staircase/splice"
+      },
+      {
+        "lb": 1219,
+        "folder": "1990-11-08 Iowa City (LB-01219)",
+        "run_id": "20260702_230709",
+        "trim_head_sec": 160.5,
+        "trim_tail_sec": 41.980249999999614,
+        "perf_dur_sec": 5612.0,
+        "total_dur_sec": 5814.48025,
+        "speed_ppm": 0.0,
+        "speed_kind": "reference"
+      }
+    ],
+    "1991-05-11": [
+      {
+        "lb": 5228,
+        "folder": "1991-05-11 Danbury, Connecticut, he Charles Ives Center, Western Connecticut State College (LB-05228)",
+        "run_id": "20260617_024932",
+        "trim_head_sec": 51.0,
+        "trim_tail_sec": 21.346750000000156,
+        "perf_dur_sec": 3983.0,
+        "total_dur_sec": 4055.34675,
+        "speed_ppm": 0.0,
+        "speed_kind": "staircase/splice"
+      },
+      {
+        "lb": 8833,
+        "folder": "1991-05-11 Danbury, Connecticut (LB-08833)",
+        "run_id": "20260617_024932",
+        "trim_head_sec": 51.0,
+        "trim_tail_sec": 21.323812499999804,
+        "perf_dur_sec": 3983.0,
+        "total_dur_sec": 4055.3238125,
+        "speed_ppm": 0.0,
+        "speed_kind": "staircase/splice"
+      },
+      {
+        "lb": 4048,
+        "folder": "1991-05-11 Danbury (LB-04048)",
+        "run_id": "20260617_024932",
+        "trim_head_sec": 35.5,
+        "trim_tail_sec": 21.420437499999935,
+        "perf_dur_sec": 4005.0,
+        "total_dur_sec": 4061.9204375,
+        "speed_ppm": 0.0,
+        "speed_kind": "reference"
+      }
+    ],
+    "1991-06-06": [
+      {
+        "lb": 15633,
+        "folder": "bd1991-06-06 Roma (LTJ)-LB-15633",
+        "run_id": "20260702_124318",
+        "trim_head_sec": 164.5,
+        "trim_tail_sec": 3.2846874999995634,
+        "perf_dur_sec": 4610.5,
+        "total_dur_sec": 4778.2846875,
+        "speed_ppm": 0.0,
+        "speed_kind": "reference"
+      },
+      {
+        "lb": 12326,
+        "folder": "1991-06-06 Rome, Italy (Palaeur) (LB-12326)",
+        "run_id": "20260702_124318",
+        "trim_head_sec": 169.5,
+        "trim_tail_sec": 2.5733124999997017,
+        "perf_dur_sec": 4603.5,
+        "total_dur_sec": 4775.5733125,
+        "speed_ppm": 0.0,
+        "speed_kind": "aligned"
+      }
+    ],
+    "1992-04-01": [
+      {
+        "lb": 14181,
+        "folder": "1992-04-01 Melbourne, VIC (LB-14181)",
+        "run_id": "20260617_054554",
+        "trim_head_sec": 0.0,
+        "trim_tail_sec": 29.196249999999964,
+        "perf_dur_sec": 5673.0,
+        "total_dur_sec": 5702.19625,
+        "speed_ppm": 0.0,
+        "speed_kind": "reference"
+      },
+      {
+        "lb": 12958,
+        "folder": "1992-04-01 Melbourne, VIC (LB-12958)",
+        "run_id": "20260617_054554",
+        "trim_head_sec": 0.0,
+        "trim_tail_sec": 28.828812499999913,
+        "perf_dur_sec": 5672.5,
+        "total_dur_sec": 5701.3288125,
+        "speed_ppm": 0.0,
+        "speed_kind": "aligned"
+      },
+      {
+        "lb": 9723,
+        "folder": "1992-04-01 Melbourne, Australia (LB-09723)",
+        "run_id": "20260617_054554",
+        "trim_head_sec": 0.0,
+        "trim_tail_sec": 45.51375000000007,
+        "perf_dur_sec": 5614.5,
+        "total_dur_sec": 5660.01375,
+        "speed_ppm": 5500.00000000006,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 727,
+        "folder": "1992-04-01 Melbourne (LB-00727)",
+        "run_id": "20260617_054554",
+        "trim_head_sec": 0.0,
+        "trim_tail_sec": 45.70043749999968,
+        "perf_dur_sec": 5614.5,
+        "total_dur_sec": 5660.2004375,
+        "speed_ppm": 5500.00000000006,
+        "speed_kind": "constant-speed-offset"
+      }
+    ],
+    "1992-04-15": [
+      {
+        "lb": 7096,
+        "folder": "1992-04-15 Sydney, Australia (LB-07096)",
+        "run_id": "20260617_063322",
+        "trim_head_sec": 12.5,
+        "trim_tail_sec": 275.0403749999996,
+        "perf_dur_sec": 5637.5,
+        "total_dur_sec": 5925.040375,
+        "speed_ppm": 0.0,
+        "speed_kind": "aligned"
+      },
+      {
+        "lb": 827,
+        "folder": "1992-04-15 Sydney (LB-00827)",
+        "run_id": "20260617_063322",
+        "trim_head_sec": 13.5,
+        "trim_tail_sec": 279.4270624999999,
+        "perf_dur_sec": 5635.5,
+        "total_dur_sec": 5928.4270625,
+        "speed_ppm": 0.0,
+        "speed_kind": "reference"
+      }
+    ],
+    "1992-06-30": [
+      {
+        "lb": 763,
+        "folder": "1992-06-30 Dunkerque, Kursaal (LB-00763)",
+        "run_id": "20260702_133242",
+        "trim_head_sec": 32.0,
+        "trim_tail_sec": 292.79362500000025,
+        "perf_dur_sec": 6374.5,
+        "total_dur_sec": 6699.293625,
+        "speed_ppm": 0.0,
+        "speed_kind": "staircase/splice"
+      },
+      {
+        "lb": 14493,
+        "folder": "1992-06-30 Dunkerque (LB-14493)",
+        "run_id": "20260702_133242",
+        "trim_head_sec": 29.5,
+        "trim_tail_sec": 541.5282500000003,
+        "perf_dur_sec": 6421.0,
+        "total_dur_sec": 6992.02825,
+        "speed_ppm": 0.0,
+        "speed_kind": "reference"
+      }
+    ],
+    "1992-11-09": [
+      {
+        "lb": 1509,
+        "folder": "1992-11-09 Van Wezel Performing Arts Center (Sarasota, Florida) (LB-01509)",
+        "run_id": "20260617_101521",
+        "trim_head_sec": 1.0,
+        "trim_tail_sec": 8.400312499999927,
+        "perf_dur_sec": 6676.0,
+        "total_dur_sec": 6685.4003125,
+        "speed_ppm": 0.0,
+        "speed_kind": "staircase/splice"
+      },
+      {
+        "lb": 7585,
+        "folder": "1992-11-09 Sarasota, Florida (LB-07585)",
+        "run_id": "20260617_101521",
+        "trim_head_sec": 1.0,
+        "trim_tail_sec": 8.26043750000008,
+        "perf_dur_sec": 6680.5,
+        "total_dur_sec": 6689.7604375,
+        "speed_ppm": 0.0,
+        "speed_kind": "staircase/splice"
+      }
+    ],
+    "1992-11-13": [
+      {
+        "lb": 2949,
+        "folder": "1992-11-13 Sunrise (LB-02949)",
+        "run_id": "20260617_102448",
+        "trim_head_sec": 3.5,
+        "trim_tail_sec": 387.6404375000002,
+        "perf_dur_sec": 6658.5,
+        "total_dur_sec": 7049.6404375,
+        "speed_ppm": 0.0,
+        "speed_kind": "staircase/splice"
+      },
+      {
+        "lb": 12847,
+        "folder": "1992-11-13 Fort Lauderdale (LB-12847)",
+        "run_id": "20260617_102448",
+        "trim_head_sec": 0.0,
+        "trim_tail_sec": 390.34037499999977,
+        "perf_dur_sec": 6664.0,
+        "total_dur_sec": 7054.340375,
+        "speed_ppm": 0.0,
+        "speed_kind": "reference"
+      }
+    ],
+    "1993-04-19": [
+      {
+        "lb": 8741,
+        "folder": "1993-04-19 Huntsville, Alabama (LB-08741)",
+        "run_id": "20260702_153402",
+        "trim_head_sec": 0.0,
+        "trim_tail_sec": 114.7202500000003,
+        "perf_dur_sec": 7195.0,
+        "total_dur_sec": 7309.72025,
+        "speed_ppm": 133.91243919391727,
+        "speed_kind": "staircase/splice"
+      },
+      {
+        "lb": 2329,
+        "folder": "1993-04-19 Huntsville (LB-02329)",
+        "run_id": "20260702_153402",
+        "trim_head_sec": 0.0,
+        "trim_tail_sec": 114.50706249999985,
+        "perf_dur_sec": 7201.0,
+        "total_dur_sec": 7315.5070625,
+        "speed_ppm": 0.0,
+        "speed_kind": "reference"
+      }
+    ],
+    "1994-04-28": [
+      {
+        "lb": 14207,
+        "folder": "1994-04-28 Topeka, KS (LB-14207)",
+        "run_id": "20260702_233131",
+        "trim_head_sec": 15.0,
+        "trim_tail_sec": 154.69043750000037,
+        "perf_dur_sec": 6418.5,
+        "total_dur_sec": 6588.1904375,
+        "speed_ppm": 0.0,
+        "speed_kind": "reference"
+      },
+      {
+        "lb": 13213,
+        "folder": "1994-04-28 Topeka, KS (LB-13213)",
+        "run_id": "20260702_233131",
+        "trim_head_sec": 15.0,
+        "trim_tail_sec": 151.88743749999958,
+        "perf_dur_sec": 6421.5,
+        "total_dur_sec": 6588.3874375,
+        "speed_ppm": 332.8194347114177,
+        "speed_kind": "speed-unknown"
+      },
+      {
+        "lb": 12340,
+        "folder": "1994-04-28 Topeka, KS (LB-12340)",
+        "run_id": "20260702_233131",
+        "trim_head_sec": 15.0,
+        "trim_tail_sec": 151.61362499999996,
+        "perf_dur_sec": 6424.0,
+        "total_dur_sec": 6590.613625,
+        "speed_ppm": -256.16438356157454,
+        "speed_kind": "constant-speed-offset"
+      }
+    ],
+    "1994-07-04": [
+      {
+        "lb": 4033,
+        "folder": "1994-07-04 Besancon, France, Palais Des Sports (LB-04033)",
+        "run_id": "20260702_221628",
+        "trim_head_sec": 40.0,
+        "trim_tail_sec": 17.933562500000335,
+        "perf_dur_sec": 5445.0,
+        "total_dur_sec": 5502.9335625,
+        "speed_ppm": -37000.00000000004,
+        "speed_kind": "speed-unknown"
+      },
+      {
+        "lb": 7615,
+        "folder": "1994-07-04 Besancon, France (LB-07615)",
+        "run_id": "20260702_221628",
+        "trim_head_sec": 9.5,
+        "trim_tail_sec": 227.3069999999998,
+        "perf_dur_sec": 5263.5,
+        "total_dur_sec": 5500.307,
+        "speed_ppm": 15199.99999999988,
+        "speed_kind": "speed-unknown"
+      }
+    ],
+    "1994-07-19": [
+      {
+        "lb": 4761,
+        "folder": "1994-07-19 Warszawa, Poland, Sala Kongresowa, Palac Kultury i Nauki (LB-04761)",
+        "run_id": "20260617_123654",
+        "trim_head_sec": 3.0,
+        "trim_tail_sec": 73.50031250000029,
+        "perf_dur_sec": 6246.5,
+        "total_dur_sec": 6323.0003125,
+        "speed_ppm": 0.0,
+        "speed_kind": "reference"
+      },
+      {
+        "lb": 3112,
+        "folder": "1994-07-19 Warsaw, Poland, Kongresshalle (LB-03112)",
+        "run_id": "20260617_123654",
+        "trim_head_sec": 10.0,
+        "trim_tail_sec": 57.540250000000015,
+        "perf_dur_sec": 6235.0,
+        "total_dur_sec": 6302.54025,
+        "speed_ppm": 0.0,
+        "speed_kind": "staircase/splice"
+      },
+      {
+        "lb": 789,
+        "folder": "1994-07-19 Warsaw, Poland, Kongresshalle (LB-00789)",
+        "run_id": "20260617_123654",
+        "trim_head_sec": 3.0,
+        "trim_tail_sec": 2.220312499999636,
+        "perf_dur_sec": 9243.5,
+        "total_dur_sec": 9248.7203125,
+        "speed_ppm": 0.0,
+        "speed_kind": "staircase/splice"
+      },
+      {
+        "lb": 8743,
+        "folder": "1994-07-19 Warsaw, Poland (LB-08743)",
+        "run_id": "20260617_123654",
+        "trim_head_sec": 3.0,
+        "trim_tail_sec": 1.8003749999998035,
+        "perf_dur_sec": 6148.0,
+        "total_dur_sec": 6152.800375,
+        "speed_ppm": 499.9999999999449,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 989,
+        "folder": "1994-07-19 Warsaw (LB-00989)",
+        "run_id": "20260617_123654",
+        "trim_head_sec": 35.0,
+        "trim_tail_sec": 10.387062499999956,
+        "perf_dur_sec": 9212.0,
+        "total_dur_sec": 9257.3870625,
+        "speed_ppm": 0.0,
+        "speed_kind": "staircase/splice"
+      },
+      {
+        "lb": 2898,
+        "folder": "1994-07-19 WARSAW, POLAND, CONGRESS HALL (LB-02898)",
+        "run_id": "20260617_123654",
+        "trim_head_sec": 9.0,
+        "trim_tail_sec": 1.1602499999999054,
+        "perf_dur_sec": 6140.0,
+        "total_dur_sec": 6150.16025,
+        "speed_ppm": 499.9999999999449,
+        "speed_kind": "constant-speed-offset"
+      }
+    ],
+    "1994-11-08": [
+      {
+        "lb": 4293,
+        "folder": "1994-11-08 Nashville, Tennessee, Ryman Auditorium (LB-04293)",
+        "run_id": "20260617_153715",
+        "trim_head_sec": 35.5,
+        "trim_tail_sec": 218.20718750000015,
+        "perf_dur_sec": 6174.0,
+        "total_dur_sec": 6427.7071875,
+        "speed_ppm": 0.0,
+        "speed_kind": "reference"
+      },
+      {
+        "lb": 960,
+        "folder": "1994-11-08 Nashville (LB-00960)",
+        "run_id": "20260617_153715",
+        "trim_head_sec": 35.5,
+        "trim_tail_sec": 218.20718750000015,
+        "perf_dur_sec": 6174.0,
+        "total_dur_sec": 6427.7071875,
+        "speed_ppm": 0.0,
+        "speed_kind": "aligned"
+      }
+    ],
+    "1995-03-15": [
+      {
+        "lb": 5873,
+        "folder": "1995-03-15 Aschaffenburg, Germany, Otto Franke Halle (LB-05873)",
+        "run_id": "20260617_163603",
+        "trim_head_sec": 30.0,
+        "trim_tail_sec": 23.340374999999767,
+        "perf_dur_sec": 5389.5,
+        "total_dur_sec": 5442.840375,
+        "speed_ppm": 0.0,
+        "speed_kind": "aligned"
+      },
+      {
+        "lb": 5830,
+        "folder": "1995-03-15 Aschaffenburg, Germany, Otto Franke Halle (LB-05830)",
+        "run_id": "20260617_163603",
+        "trim_head_sec": 40.0,
+        "trim_tail_sec": 29.27368750000005,
+        "perf_dur_sec": 5383.5,
+        "total_dur_sec": 5452.7736875,
+        "speed_ppm": 0.0,
+        "speed_kind": "aligned"
+      },
+      {
+        "lb": 2939,
+        "folder": "1995-03-15 Aschaffenburg, Germany, Otto Franke Halle (LB-02939)",
+        "run_id": "20260617_163603",
+        "trim_head_sec": 10.0,
+        "trim_tail_sec": 5.973562500000298,
+        "perf_dur_sec": 5382.0,
+        "total_dur_sec": 5397.9735625,
+        "speed_ppm": 0.0,
+        "speed_kind": "aligned"
+      },
+      {
+        "lb": 1432,
+        "folder": "1995-03-15 Aschaffenburg, Germany (LB-01432)",
+        "run_id": "20260617_163603",
+        "trim_head_sec": 36.5,
+        "trim_tail_sec": 25.413562499999898,
+        "perf_dur_sec": 5398.5,
+        "total_dur_sec": 5460.4135625,
+        "speed_ppm": 0.0,
+        "speed_kind": "staircase/splice"
+      }
+    ],
+    "1995-04-03": [
+      {
+        "lb": 15779,
+        "folder": "Bob Dylan_1995-04-03_Manchester Apollo-LB-15779",
+        "run_id": "20260618_152037",
+        "trim_head_sec": 0.0,
+        "trim_tail_sec": 147.24031250000007,
+        "perf_dur_sec": 6063.0,
+        "total_dur_sec": 6210.2403125,
+        "speed_ppm": 0.0,
+        "speed_kind": "reference"
+      },
+      {
+        "lb": 12069,
+        "folder": "1995-04-03 Manchester, UK (LB-12069)",
+        "run_id": "20260618_152037",
+        "trim_head_sec": 0.0,
+        "trim_tail_sec": 25.947000000000116,
+        "perf_dur_sec": 6199.0,
+        "total_dur_sec": 6224.947,
+        "speed_ppm": 0.0,
+        "speed_kind": "staircase/splice"
+      },
+      {
+        "lb": 7196,
+        "folder": "1995-04-03 Manchester, England (LB-07196)",
+        "run_id": "20260618_152037",
+        "trim_head_sec": 0.0,
+        "trim_tail_sec": 0.8670000000001892,
+        "perf_dur_sec": 5875.0,
+        "total_dur_sec": 5875.867,
+        "speed_ppm": 0.0,
+        "speed_kind": "staircase/splice"
+      },
+      {
+        "lb": 1912,
+        "folder": "1995-04-03 Labatts Apollo, Manchester, England (LB-01912)",
+        "run_id": "20260618_152037",
+        "trim_head_sec": 0.0,
+        "trim_tail_sec": 0.8602499999997235,
+        "perf_dur_sec": 5875.5,
+        "total_dur_sec": 5876.36025,
+        "speed_ppm": 0.0,
+        "speed_kind": "staircase/splice"
+      }
+    ],
+    "1996-06-17": [
+      {
+        "lb": 9529,
+        "folder": "1996-06-17 Berlin, Germany (LB-09529)",
+        "run_id": "20260616_083644",
+        "trim_head_sec": 27.0,
+        "trim_tail_sec": 2.673812499999258,
+        "perf_dur_sec": 8507.5,
+        "total_dur_sec": 8537.1738125,
+        "speed_ppm": 0.0,
+        "speed_kind": "staircase/splice"
+      },
+      {
+        "lb": 4535,
+        "folder": "1996-06-17 Berlin (LB-04535)",
+        "run_id": "20260616_083644",
+        "trim_head_sec": 27.0,
+        "trim_tail_sec": 17.040374999999585,
+        "perf_dur_sec": 6871.0,
+        "total_dur_sec": 6915.040375,
+        "speed_ppm": 0.0,
+        "speed_kind": "staircase/splice"
+      }
+    ],
+    "1996-10-26": [
+      {
+        "lb": 7931,
+        "folder": "1996-10-26 Austin, Texas, Austin Music Hall (LB-07931)",
+        "run_id": "20260616_125142",
+        "trim_head_sec": 39.0,
+        "trim_tail_sec": 51.27368750000005,
+        "perf_dur_sec": 7146.5,
+        "total_dur_sec": 7236.7736875,
+        "speed_ppm": 0.0,
+        "speed_kind": "staircase/splice"
+      },
+      {
+        "lb": 13780,
+        "folder": "1996-10-26 Austin, TX (LB-13780)",
+        "run_id": "20260616_125142",
+        "trim_head_sec": 1.5,
+        "trim_tail_sec": 13.152187499999854,
+        "perf_dur_sec": 9783.5,
+        "total_dur_sec": 9798.1521875,
+        "speed_ppm": 0.0,
+        "speed_kind": "aligned"
+      }
+    ],
+    "1996-11-04": [
+      {
+        "lb": 5173,
+        "folder": "1996-11-04 Spartanburg, South Carolina, Memorial Auditorium Theater (LB-05173)",
+        "run_id": "20260702_224438",
+        "trim_head_sec": 0.0,
+        "trim_tail_sec": 0.0,
+        "perf_dur_sec": 7301.8269375,
+        "total_dur_sec": 7301.8269375,
+        "speed_ppm": 49.21120810941204,
+        "speed_kind": "staircase/splice"
+      },
+      {
+        "lb": 4023,
+        "folder": "1996-11-04 Spartanburg, South Carolina, Memorial Auditorium Theater (LB-04023)",
+        "run_id": "20260702_224438",
+        "trim_head_sec": 0.0,
+        "trim_tail_sec": 0.0,
+        "perf_dur_sec": 7471.1470625,
+        "total_dur_sec": 7471.1470625,
+        "speed_ppm": -20124.17268874367,
+        "speed_kind": "speed-unknown"
+      },
+      {
+        "lb": 9108,
+        "folder": "1996-11-04 Spartanburg, South Carolina (LB-09108)",
+        "run_id": "20260702_224438",
+        "trim_head_sec": 0.0,
+        "trim_tail_sec": 0.0,
+        "perf_dur_sec": 7305.107,
+        "total_dur_sec": 7305.107,
+        "speed_ppm": 0.0,
+        "speed_kind": "reference"
+      },
+      {
+        "lb": 14002,
+        "folder": "1996-11-04 Spartanburg, SC (LB-14002)",
+        "run_id": "20260702_224438",
+        "trim_head_sec": 0.0,
+        "trim_tail_sec": 0.0,
+        "perf_dur_sec": 7312.20025,
+        "total_dur_sec": 7312.20025,
+        "speed_ppm": 29.943141942823104,
+        "speed_kind": "staircase/splice"
+      },
+      {
+        "lb": 12343,
+        "folder": "1996-11-04 Spartanburg, SC (LB-12343)",
+        "run_id": "20260702_224438",
+        "trim_head_sec": 0.0,
+        "trim_tail_sec": 0.0,
+        "perf_dur_sec": 7314.8536875,
+        "total_dur_sec": 7314.8536875,
+        "speed_ppm": -232.45146333628065,
+        "speed_kind": "constant-speed-offset"
+      },
+      {
+        "lb": 1593,
+        "folder": "1996-11-04 Spartanburg (LB-01593)",
+        "run_id": "20260702_224438",
+        "trim_head_sec": 0.0,
+        "trim_tail_sec": 0.0,
+        "perf_dur_sec": 7470.959875,
+        "total_dur_sec": 7470.959875,
+        "speed_ppm": -20199.674175067074,
+        "speed_kind": "speed-unknown"
+      }
+    ],
+    "1996-11-23": [
+      {
+        "lb": 7144,
+        "folder": "1996-11-23 Akron, OH (LB-07144)",
+        "run_id": "20260616_144345",
+        "trim_head_sec": 0.5,
+        "trim_tail_sec": 16.090687500000058,
+        "perf_dur_sec": 6241.5,
+        "total_dur_sec": 6258.0906875,
+        "speed_ppm": 0.0,
+        "speed_kind": "aligned"
+      },
+      {
+        "lb": 7140,
+        "folder": "1996-11-23 Akron, OH (LB-07140)",
+        "run_id": "20260616_144345",
+        "trim_head_sec": 0.5,
+        "trim_tail_sec": 15.560312499999782,
+        "perf_dur_sec": 6241.5,
+        "total_dur_sec": 6257.5603125,
+        "speed_ppm": 0.0,
+        "speed_kind": "reference"
+      }
+    ],
+    "1997-04-06": [
+      {
+        "lb": 9381,
+        "folder": "1997-04-06 Halifax, Nova Scotia, Canada (LB-09381)",
+        "run_id": "20260616_185546",
+        "trim_head_sec": 33.5,
+        "trim_tail_sec": 41.24687499999982,
+        "perf_dur_sec": 6963.0,
+        "total_dur_sec": 7037.746875,
+        "speed_ppm": 0.0,
+        "speed_kind": "reference"
+      },
+      {
+        "lb": 15218,
+        "folder": "1997-04-06 Halifax, NS (LB-15218)",
+        "run_id": "20260616_185546",
+        "trim_head_sec": 33.5,
+        "trim_tail_sec": 37.378999999999905,
+        "perf_dur_sec": 6963.0,
+        "total_dur_sec": 7033.879,
+        "speed_ppm": 0.0,
+        "speed_kind": "aligned"
+      }
+    ],
+    "2001-10-30": [
+      {
+        "lb": 569,
+        "folder": "2001-10-30 Green Bay, Wisconsin, Brown County Veterans Memorial Arena (LB-00569)",
+        "run_id": "20260702_234424",
+        "trim_head_sec": 122.5,
+        "trim_tail_sec": 39.47375000000011,
+        "perf_dur_sec": 7635.0,
+        "total_dur_sec": 7796.97375,
+        "speed_ppm": 0.0,
+        "speed_kind": "aligned"
+      },
+      {
+        "lb": 7888,
+        "folder": "2001-10-30 Green Bay, WI (LB-07888)",
+        "run_id": "20260702_234424",
+        "trim_head_sec": 122.5,
+        "trim_tail_sec": 39.527062500000284,
+        "perf_dur_sec": 7635.0,
+        "total_dur_sec": 7797.0270625,
+        "speed_ppm": 0.0,
+        "speed_kind": "reference"
+      }
+    ]
+  },
+  "pairs": {
+    "tp": [
+      {
+        "date": "1987-09-19",
+        "lb_a": 131,
+        "lb_b": 4281,
+        "corr": 0.9222750067710876,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1987-09-19",
+        "lb_a": 5156,
+        "lb_b": 6782,
+        "corr": 0.9841336607933044,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1987-09-19",
+        "lb_a": 6035,
+        "lb_b": 6099,
+        "corr": 0.08131806552410126,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1987-09-23",
+        "lb_a": 2307,
+        "lb_b": 4318,
+        "corr": 0.41832849383354187,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1987-09-25",
+        "lb_a": 353,
+        "lb_b": 5491,
+        "corr": 0.21200820803642273,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1987-09-25",
+        "lb_a": 353,
+        "lb_b": 10909,
+        "corr": 0.7546137869358063,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1987-10-17",
+        "lb_a": 608,
+        "lb_b": 2305,
+        "corr": 0.9992960095405579,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1988-07-17",
+        "lb_a": 7126,
+        "lb_b": 10937,
+        "corr": 0.162798672914505,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1988-07-17",
+        "lb_a": 7541,
+        "lb_b": 7554,
+        "corr": 0.9999092221260071,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1988-07-17",
+        "lb_a": 7541,
+        "lb_b": 10754,
+        "corr": 0.6421459317207336,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1988-07-17",
+        "lb_a": 7541,
+        "lb_b": 10935,
+        "corr": 0.8859266638755798,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1989-06-04",
+        "lb_a": 7214,
+        "lb_b": 10916,
+        "corr": 0.9474444091320038,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1989-06-06",
+        "lb_a": 4623,
+        "lb_b": 4630,
+        "corr": 0.9088784456253052,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1989-07-19",
+        "lb_a": 11538,
+        "lb_b": 15202,
+        "corr": 0.975705087184906,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1989-08-22",
+        "lb_a": 313,
+        "lb_b": 9954,
+        "corr": 0.9445326924324036,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1990-01-12",
+        "lb_a": 2614,
+        "lb_b": 12534,
+        "corr": 0.8811281621456146,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1990-01-31",
+        "lb_a": 8695,
+        "lb_b": 11885,
+        "corr": 0.8086070120334625,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1990-02-01",
+        "lb_a": 6811,
+        "lb_b": 8523,
+        "corr": 0.951528400182724,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1990-11-08",
+        "lb_a": 1219,
+        "lb_b": 8251,
+        "corr": 0.07602480053901672,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1991-05-11",
+        "lb_a": 4048,
+        "lb_b": 5228,
+        "corr": 0.9374947249889374,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1991-05-11",
+        "lb_a": 5228,
+        "lb_b": 8833,
+        "corr": 0.800300270318985,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1991-06-06",
+        "lb_a": 12326,
+        "lb_b": 15633,
+        "corr": 0.06302425265312195,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1992-04-01",
+        "lb_a": 727,
+        "lb_b": 9723,
+        "corr": 0.8092674911022186,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1992-04-01",
+        "lb_a": 12958,
+        "lb_b": 14181,
+        "corr": 0.828806072473526,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1992-04-15",
+        "lb_a": 827,
+        "lb_b": 7096,
+        "corr": 0.9418581426143646,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1992-06-30",
+        "lb_a": 763,
+        "lb_b": 14493,
+        "corr": 0.3498215973377228,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1992-11-09",
+        "lb_a": 1509,
+        "lb_b": 7585,
+        "corr": 0.9200676679611206,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1992-11-13",
+        "lb_a": 2949,
+        "lb_b": 12847,
+        "corr": 0.3042054921388626,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1993-04-19",
+        "lb_a": 2329,
+        "lb_b": 8741,
+        "corr": 0.932037740945816,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1994-04-28",
+        "lb_a": 12340,
+        "lb_b": 13213,
+        "corr": 0.06201908178627491,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1994-04-28",
+        "lb_a": 12340,
+        "lb_b": 14207,
+        "corr": 0.08533955365419388,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1994-04-28",
+        "lb_a": 13213,
+        "lb_b": 14207,
+        "corr": 0.8815533518791199,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1994-07-04",
+        "lb_a": 4033,
+        "lb_b": 7615,
+        "corr": 0.935782790184021,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1994-07-19",
+        "lb_a": 789,
+        "lb_b": 989,
+        "corr": 0.8853080570697784,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1994-07-19",
+        "lb_a": 789,
+        "lb_b": 3112,
+        "corr": 0.8087264597415924,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1994-07-19",
+        "lb_a": 789,
+        "lb_b": 4761,
+        "corr": 0.8835645020008087,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1994-07-19",
+        "lb_a": 989,
+        "lb_b": 4761,
+        "corr": 0.847137838602066,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1994-07-19",
+        "lb_a": 2898,
+        "lb_b": 8743,
+        "corr": 0.8854686319828033,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1994-07-19",
+        "lb_a": 3112,
+        "lb_b": 4761,
+        "corr": 0.8409626483917236,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1994-11-08",
+        "lb_a": 960,
+        "lb_b": 4293,
+        "corr": 0.83489990234375,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1995-03-15",
+        "lb_a": 1432,
+        "lb_b": 5873,
+        "corr": 0.14687016606330872,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1995-03-15",
+        "lb_a": 2939,
+        "lb_b": 5830,
+        "corr": 0.2049494907259941,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1995-04-03",
+        "lb_a": 1912,
+        "lb_b": 7196,
+        "corr": 0.20609966665506363,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1995-04-03",
+        "lb_a": 12069,
+        "lb_b": 15779,
+        "corr": 0.7869891226291656,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1996-06-17",
+        "lb_a": 4535,
+        "lb_b": 9529,
+        "corr": 0.9469863176345825,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1996-10-26",
+        "lb_a": 7931,
+        "lb_b": 13780,
+        "corr": 0.07994726300239563,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1996-11-04",
+        "lb_a": 1593,
+        "lb_b": 4023,
+        "corr": 0.9698411822319031,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1996-11-04",
+        "lb_a": 1593,
+        "lb_b": 5173,
+        "corr": 0.06677382439374924,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1996-11-04",
+        "lb_a": 1593,
+        "lb_b": 14002,
+        "corr": 0.08411947265267372,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1996-11-04",
+        "lb_a": 4023,
+        "lb_b": 5173,
+        "corr": 0.06455964595079422,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1996-11-04",
+        "lb_a": 4023,
+        "lb_b": 14002,
+        "corr": 0.0726572759449482,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1996-11-04",
+        "lb_a": 5173,
+        "lb_b": 9108,
+        "corr": 0.9444367587566376,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1996-11-04",
+        "lb_a": 5173,
+        "lb_b": 12343,
+        "corr": 0.12305374071002007,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1996-11-04",
+        "lb_a": 5173,
+        "lb_b": 14002,
+        "corr": 0.9444457590579987,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1996-11-04",
+        "lb_a": 9108,
+        "lb_b": 12343,
+        "corr": 0.2118380069732666,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1996-11-04",
+        "lb_a": 9108,
+        "lb_b": 14002,
+        "corr": 0.8832212388515472,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1996-11-04",
+        "lb_a": 12343,
+        "lb_b": 14002,
+        "corr": 0.18524625152349472,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1996-11-23",
+        "lb_a": 7140,
+        "lb_b": 7144,
+        "corr": 0.9999972581863403,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1997-04-06",
+        "lb_a": 9381,
+        "lb_b": 15218,
+        "corr": 0.08677888661623001,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "2001-10-30",
+        "lb_a": 569,
+        "lb_b": 7888,
+        "corr": 0.9448952376842499,
+        "truth": 1,
+        "lb_says_same": 1
+      }
+    ],
+    "tn": [
+      {
+        "date": "1987-09-12",
+        "lb_a": 543,
+        "lb_b": 4716,
+        "corr": 0.002332047442905605,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1987-09-12",
+        "lb_a": 4716,
+        "lb_b": 15009,
+        "corr": 0.003082937910221517,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1987-09-12",
+        "lb_a": 5445,
+        "lb_b": 15009,
+        "corr": 0.0034433389082551003,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1987-09-15",
+        "lb_a": 134,
+        "lb_b": 5450,
+        "corr": 0.001951082842424512,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1987-09-15",
+        "lb_a": 5450,
+        "lb_b": 15765,
+        "corr": 0.0018016831018030643,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1987-09-15",
+        "lb_a": 6029,
+        "lb_b": 15765,
+        "corr": 0.0013289177441038191,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1987-09-19",
+        "lb_a": 131,
+        "lb_b": 7349,
+        "corr": 0.006174446549266577,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1987-09-19",
+        "lb_a": 5156,
+        "lb_b": 6035,
+        "corr": 0.007151154801249504,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1987-09-19",
+        "lb_a": 5156,
+        "lb_b": 6096,
+        "corr": 0.0021587021183222532,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1987-09-19",
+        "lb_a": 5463,
+        "lb_b": 6035,
+        "corr": 0.009267766959965229,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1987-09-19",
+        "lb_a": 5463,
+        "lb_b": 6096,
+        "corr": 0.0018702774541452527,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1987-09-19",
+        "lb_a": 6035,
+        "lb_b": 6096,
+        "corr": 0.0014565192395821214,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1987-09-19",
+        "lb_a": 6035,
+        "lb_b": 7349,
+        "corr": 0.00457995617762208,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1987-09-19",
+        "lb_a": 6096,
+        "lb_b": 7349,
+        "corr": 0.0024214067962020636,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1987-09-19",
+        "lb_a": 6782,
+        "lb_b": 7349,
+        "corr": 0.00730517553165555,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1987-09-20",
+        "lb_a": 152,
+        "lb_b": 5165,
+        "corr": 0.003920804592780769,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1987-09-20",
+        "lb_a": 152,
+        "lb_b": 6040,
+        "corr": 0.003974369494244456,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1987-09-20",
+        "lb_a": 5477,
+        "lb_b": 6040,
+        "corr": 0.003689834149554372,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1987-09-23",
+        "lb_a": 777,
+        "lb_b": 2307,
+        "corr": 0.005889022024348378,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1987-09-25",
+        "lb_a": 353,
+        "lb_b": 12363,
+        "corr": 0.008315083803609014,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1987-09-25",
+        "lb_a": 5491,
+        "lb_b": 9044,
+        "corr": 0.002368367277085781,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1987-09-25",
+        "lb_a": 5491,
+        "lb_b": 12363,
+        "corr": 0.010837521404027939,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1987-09-25",
+        "lb_a": 9044,
+        "lb_b": 12363,
+        "corr": 0.002179510658606887,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1987-10-17",
+        "lb_a": 608,
+        "lb_b": 5616,
+        "corr": 0.007441444089636207,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1987-10-17",
+        "lb_a": 5608,
+        "lb_b": 5688,
+        "corr": 0.003298339666798711,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1987-10-17",
+        "lb_a": 5616,
+        "lb_b": 5688,
+        "corr": 0.0050209189066663384,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1988-07-01",
+        "lb_a": 204,
+        "lb_b": 2404,
+        "corr": 0.0034087783424183726,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1988-07-08",
+        "lb_a": 2088,
+        "lb_b": 3140,
+        "corr": 0.004407357890158892,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1988-07-08",
+        "lb_a": 2767,
+        "lb_b": 8434,
+        "corr": 0.006590388948097825,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1988-07-08",
+        "lb_a": 3140,
+        "lb_b": 8434,
+        "corr": 0.011530345305800438,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1988-07-17",
+        "lb_a": 7126,
+        "lb_b": 7541,
+        "corr": 0.011221227701753378,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1988-08-07",
+        "lb_a": 3157,
+        "lb_b": 8028,
+        "corr": 0.002175239031203091,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1988-08-26",
+        "lb_a": 3160,
+        "lb_b": 4642,
+        "corr": 0.003783979220315814,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1988-08-26",
+        "lb_a": 3160,
+        "lb_b": 9900,
+        "corr": 0.0029147802852094173,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1988-08-26",
+        "lb_a": 3160,
+        "lb_b": 12355,
+        "corr": 0.003573011956177652,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1988-08-26",
+        "lb_a": 4642,
+        "lb_b": 9900,
+        "corr": 0.9496510624885559,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1988-08-26",
+        "lb_a": 9900,
+        "lb_b": 12355,
+        "corr": 0.0035748640075325966,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1989-05-27",
+        "lb_a": 7209,
+        "lb_b": 8464,
+        "corr": 0.0029954423662275076,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1989-06-06",
+        "lb_a": 1256,
+        "lb_b": 14182,
+        "corr": 0.0056194469798356295,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1989-06-06",
+        "lb_a": 7236,
+        "lb_b": 14182,
+        "corr": 0.005784649634733796,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1989-06-08",
+        "lb_a": 1234,
+        "lb_b": 3196,
+        "corr": 0.0032164661679416895,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1989-06-08",
+        "lb_a": 1234,
+        "lb_b": 7221,
+        "corr": 0.007715620566159487,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1989-06-10",
+        "lb_a": 1311,
+        "lb_b": 5676,
+        "corr": 0.0,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1989-06-13",
+        "lb_a": 6551,
+        "lb_b": 7146,
+        "corr": 0.0017640932346694171,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1989-06-19",
+        "lb_a": 1590,
+        "lb_b": 5670,
+        "corr": 0.003800560487434268,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1989-06-19",
+        "lb_a": 1590,
+        "lb_b": 6603,
+        "corr": 0.0032075843773782253,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1989-06-19",
+        "lb_a": 2130,
+        "lb_b": 4893,
+        "corr": 0.004834476858377457,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1989-06-19",
+        "lb_a": 4893,
+        "lb_b": 5670,
+        "corr": 0.006521291099488735,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1989-07-19",
+        "lb_a": 2216,
+        "lb_b": 7258,
+        "corr": 0.005340700736269355,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1989-07-19",
+        "lb_a": 2448,
+        "lb_b": 7258,
+        "corr": 0.0033973389072343707,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1989-08-22",
+        "lb_a": 313,
+        "lb_b": 5082,
+        "corr": 0.002518288209103048,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1989-09-03",
+        "lb_a": 868,
+        "lb_b": 9893,
+        "corr": 0.0036217402666807175,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1989-09-03",
+        "lb_a": 868,
+        "lb_b": 12538,
+        "corr": 0.004422490019351244,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1989-09-03",
+        "lb_a": 2566,
+        "lb_b": 9893,
+        "corr": 0.004379664082080126,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1989-09-03",
+        "lb_a": 2566,
+        "lb_b": 12538,
+        "corr": 0.006980347214266658,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1989-09-03",
+        "lb_a": 9893,
+        "lb_b": 12538,
+        "corr": 0.003992700483649969,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1990-01-12",
+        "lb_a": 1776,
+        "lb_b": 5863,
+        "corr": 0.001752119162119925,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1990-01-12",
+        "lb_a": 2614,
+        "lb_b": 12525,
+        "corr": 0.0025604545371606946,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1990-01-12",
+        "lb_a": 5863,
+        "lb_b": 6613,
+        "corr": 0.0023474828340113163,
+        "truth": 0,
+        "lb_says_same": 0
+      },
+      {
+        "date": "1990-01-12",
+        "lb_a": 5863,
+        "lb_b": 8297,
+        "corr": 0.003109705401584506,
+        "truth": 0,
+        "lb_says_same": 0
+      }
+    ],
+    "fn": [
+      {
+        "date": "1987-09-12",
+        "lb_a": 543,
+        "lb_b": 5445,
+        "corr": 0.0041109316516667604,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1987-09-12",
+        "lb_a": 2286,
+        "lb_b": 5445,
+        "corr": 0.0033105459297075868,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1987-09-12",
+        "lb_a": 5445,
+        "lb_b": 9978,
+        "corr": 0.0032736329594627023,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1987-09-12",
+        "lb_a": 5445,
+        "lb_b": 14995,
+        "corr": 0.005550899542868137,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1987-09-15",
+        "lb_a": 134,
+        "lb_b": 6029,
+        "corr": 0.0013950688298791647,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1987-09-15",
+        "lb_a": 5450,
+        "lb_b": 11064,
+        "corr": 0.0018585885409265757,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1987-09-15",
+        "lb_a": 6029,
+        "lb_b": 9304,
+        "corr": 0.006197003647685051,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1987-09-15",
+        "lb_a": 6029,
+        "lb_b": 11064,
+        "corr": 0.0027447405736893415,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1987-09-19",
+        "lb_a": 131,
+        "lb_b": 5156,
+        "corr": 0.0054094684310257435,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1987-09-19",
+        "lb_a": 4281,
+        "lb_b": 5156,
+        "corr": 0.02069420926272869,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1987-09-19",
+        "lb_a": 4281,
+        "lb_b": 5463,
+        "corr": 0.03938683867454529,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1987-09-19",
+        "lb_a": 6096,
+        "lb_b": 8000,
+        "corr": 0.0016676901141181588,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1987-09-20",
+        "lb_a": 152,
+        "lb_b": 5246,
+        "corr": 0.006781140575185418,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1987-09-20",
+        "lb_a": 152,
+        "lb_b": 5477,
+        "corr": 0.003087067394517362,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1987-09-20",
+        "lb_a": 5165,
+        "lb_b": 5246,
+        "corr": 0.004941473947837949,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1987-09-20",
+        "lb_a": 5165,
+        "lb_b": 5477,
+        "corr": 0.014190628658980131,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1987-09-20",
+        "lb_a": 5246,
+        "lb_b": 5477,
+        "corr": 0.003609447623603046,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1987-09-23",
+        "lb_a": 777,
+        "lb_b": 4318,
+        "corr": 0.0039127240888774395,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1987-09-23",
+        "lb_a": 777,
+        "lb_b": 5487,
+        "corr": 0.006409943103790283,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1987-09-23",
+        "lb_a": 777,
+        "lb_b": 9306,
+        "corr": 0.00334908626973629,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1987-09-23",
+        "lb_a": 2307,
+        "lb_b": 5487,
+        "corr": 0.0070325450506061316,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1987-09-23",
+        "lb_a": 5487,
+        "lb_b": 9306,
+        "corr": 0.002085997664835304,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1987-09-25",
+        "lb_a": 353,
+        "lb_b": 5174,
+        "corr": 0.011746325995773077,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1987-09-25",
+        "lb_a": 5174,
+        "lb_b": 5491,
+        "corr": 0.008935175137594342,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1987-09-25",
+        "lb_a": 12363,
+        "lb_b": 12836,
+        "corr": 0.021046369336545467,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1987-10-17",
+        "lb_a": 119,
+        "lb_b": 2305,
+        "corr": 0.0162570271641016,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1987-10-17",
+        "lb_a": 119,
+        "lb_b": 9271,
+        "corr": 0.002506332006305456,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1987-10-17",
+        "lb_a": 2305,
+        "lb_b": 5608,
+        "corr": 0.031715573742985725,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1988-07-01",
+        "lb_a": 204,
+        "lb_b": 2189,
+        "corr": 0.005345183424651623,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1988-07-01",
+        "lb_a": 204,
+        "lb_b": 12563,
+        "corr": 0.0030417735688388348,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1988-07-01",
+        "lb_a": 2189,
+        "lb_b": 12563,
+        "corr": 0.003475377568975091,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1988-07-01",
+        "lb_a": 2231,
+        "lb_b": 12563,
+        "corr": 0.006594659527763724,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1988-07-08",
+        "lb_a": 2088,
+        "lb_b": 2767,
+        "corr": 0.0034991831053048372,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1988-07-08",
+        "lb_a": 2088,
+        "lb_b": 14669,
+        "corr": 0.004598629893735051,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1988-07-08",
+        "lb_a": 2767,
+        "lb_b": 14669,
+        "corr": 0.00403925497084856,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1988-07-08",
+        "lb_a": 3140,
+        "lb_b": 14669,
+        "corr": 0.0045029111206531525,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1988-07-08",
+        "lb_a": 8434,
+        "lb_b": 14669,
+        "corr": 0.005136460764333606,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1988-07-17",
+        "lb_a": 1297,
+        "lb_b": 7126,
+        "corr": 0.015528756193816662,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1988-07-17",
+        "lb_a": 1297,
+        "lb_b": 14671,
+        "corr": 0.0033280880888924003,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1988-07-17",
+        "lb_a": 7541,
+        "lb_b": 14671,
+        "corr": 0.0039403378032147884,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1988-08-07",
+        "lb_a": 8028,
+        "lb_b": 10743,
+        "corr": 0.0023283124901354313,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1988-08-07",
+        "lb_a": 8028,
+        "lb_b": 15010,
+        "corr": 0.0023543944116681814,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1988-08-07",
+        "lb_a": 10743,
+        "lb_b": 15010,
+        "corr": 0.007599035045132041,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1988-08-07",
+        "lb_a": 10743,
+        "lb_b": 15088,
+        "corr": 0.0032217585248872638,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1988-08-26",
+        "lb_a": 3160,
+        "lb_b": 14677,
+        "corr": 0.01149420253932476,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1988-08-26",
+        "lb_a": 4642,
+        "lb_b": 14677,
+        "corr": 0.005524191539734602,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1988-08-26",
+        "lb_a": 12355,
+        "lb_b": 14677,
+        "corr": 0.007133076898753643,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1989-05-27",
+        "lb_a": 2468,
+        "lb_b": 7209,
+        "corr": 0.0025238723028451204,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1989-05-27",
+        "lb_a": 2468,
+        "lb_b": 13418,
+        "corr": 0.002791529055684805,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1989-05-27",
+        "lb_a": 7209,
+        "lb_b": 12372,
+        "corr": 0.0018908773781731725,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1989-05-27",
+        "lb_a": 7209,
+        "lb_b": 13418,
+        "corr": 0.00462644943036139,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1989-05-27",
+        "lb_a": 8464,
+        "lb_b": 12372,
+        "corr": 0.004847387783229351,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1989-06-04",
+        "lb_a": 2470,
+        "lb_b": 6445,
+        "corr": 0.0022243174025788903,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1989-06-04",
+        "lb_a": 2470,
+        "lb_b": 14054,
+        "corr": 0.0027605327777564526,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1989-06-04",
+        "lb_a": 2478,
+        "lb_b": 6445,
+        "corr": 0.00467712408863008,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1989-06-04",
+        "lb_a": 2478,
+        "lb_b": 7214,
+        "corr": 0.004160849843174219,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1989-06-04",
+        "lb_a": 2478,
+        "lb_b": 14054,
+        "corr": 0.002679422148503363,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1989-06-04",
+        "lb_a": 6445,
+        "lb_b": 14054,
+        "corr": 0.0034329986665397882,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1989-06-04",
+        "lb_a": 7214,
+        "lb_b": 14054,
+        "corr": 0.0018616309971548617,
+        "truth": 1,
+        "lb_says_same": 1
+      },
+      {
+        "date": "1989-06-04",
+        "lb_a": 10916,
+        "lb_b": 14054,
+        "corr": 0.002421674085780978,
+        "truth": 1,
+        "lb_says_same": 1
+      }
+    ]
+  }
+}

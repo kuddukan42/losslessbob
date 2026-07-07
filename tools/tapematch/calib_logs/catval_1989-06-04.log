@@ -1,0 +1,110 @@
+=== tapematch session: 1989-06-04  [20260702_161027] ===
+
+[1] Querying DB …
+  6 entries — Dublin
+    LB-02470
+    LB-02478
+    LB-06445
+    LB-07214
+    LB-10916
+    LB-14054
+
+[2] Resolving paths from my_collection …
+  Found 6/6
+    LB-02470: /mnt/DYLAN1/Concerts/1989/1989-06-04 Dublin (LB-02470)
+    LB-02478: /mnt/DYLAN1/Concerts/1989/1989-06-04 Dublin, Ireland, Simmonscourt, R.D.S. (LB-02478)
+    LB-06445: /mnt/DYLAN1/Concerts/1989/1989-06-04 Dublin, Ireland (LB-06445)
+    LB-07214: /mnt/DYLAN1/Concerts/1989/1989-06-04 Dublin, Ireland Simmonscourt, R.D.S. (LB-07214)
+    LB-10916: /mnt/DYLAN1/Concerts/1989/1989-06-04 Dublin, Ireland (LB-10916)
+    LB-14054: /mnt/DYLAN1/Concerts/1989/1989-06-04 Dublin, Ireland (LB-14054)
+
+[3] Cleaning /mnt/DATA0/examples/tapematch …
+
+[4] Copying 6 folders to /mnt/DATA0/examples/tapematch …
+  Copying LB-02470: 1989-06-04 Dublin (LB-02470) …
+  Copying LB-02478: 1989-06-04 Dublin, Ireland, Simmonscourt, R.D.S. (LB-02478) …
+  Copying LB-06445: 1989-06-04 Dublin, Ireland (LB-06445) …
+  Copying LB-07214: 1989-06-04 Dublin, Ireland Simmonscourt, R.D.S. (LB-07214) …
+  Copying LB-10916: 1989-06-04 Dublin, Ireland (LB-10916) …
+  Copying LB-14054: 1989-06-04 Dublin, Ireland (LB-14054) …
+
+[5] Running tapematch …
+  curator lineage pairs loaded: 677 (from /home/tjenkins/Documents/losslessbob/data/losslessbob.db)
+  est. peak RAM ~0.9 GB (6 sources, largest 1:24:41)
+=== INGEST / TRIM ===
+  1989-06-04 Dublin (LB-02470): 15 tracks, 1:17:38
+  1989-06-04 Dublin, Ireland (LB-06445): 15 tracks, 1:24:41
+  1989-06-04 Dublin, Ireland (LB-10916): 15 tracks, 1:24:26
+  1989-06-04 Dublin, Ireland (LB-14054): 15 tracks, 1:19:05
+  1989-06-04 Dublin, Ireland Simmonscourt, R.D.S. (LB-07214): 15 tracks, 1:24:26
+  1989-06-04 Dublin, Ireland, Simmonscourt, R.D.S. (LB-02478): 15 tracks, 1:19:19
+
+=== TRIM (performance envelope) ===
+  1989-06-04 Dublin (LB-02470): trimmed 0:00:00 head, 0:00:00 tail -> performance 1:17:38
+  1989-06-04 Dublin, Ireland (LB-06445): trimmed 0:00:06 head, 0:00:09 tail -> performance 1:24:26
+  1989-06-04 Dublin, Ireland (LB-10916): trimmed 0:02:00 head, 0:00:42 tail -> performance 1:21:44
+  1989-06-04 Dublin, Ireland (LB-14054): trimmed 0:00:44 head, 0:00:48 tail -> performance 1:17:32
+  1989-06-04 Dublin, Ireland Simmonscourt, R.D.S. (LB-07214): trimmed 0:02:00 head, 0:00:42 tail -> performance 1:21:44
+  1989-06-04 Dublin, Ireland, Simmonscourt, R.D.S. (LB-02478): trimmed 0:00:23 head, 0:00:05 tail -> performance 1:18:51
+
+=== ANCHORS (ref=1989-06-04 Dublin (LB-02470)) ===
+  0:00:05, 0:12:32, 0:18:03, 0:22:20, 0:28:13, 0:37:52, 0:44:25, 0:49:19, 0:53:10, 1:00:13, 1:09:19, 1:15:03
+
+=== LAG CURVES / SPEED (vs ref) ===
+  1989-06-04 Dublin (LB-02470)->1989-06-04 Dublin, Ireland (LB-06445): speed-unknown  speed ratio=0.942000 (-58000 ppm)  [conf=1.6]
+  1989-06-04 Dublin (LB-02470)->1989-06-04 Dublin, Ireland (LB-10916): speed-unknown  speed ratio=0.947537 (-52463 ppm)  [conf=3.1]
+  1989-06-04 Dublin (LB-02470)->1989-06-04 Dublin, Ireland (LB-14054): speed-unknown  speed ratio=0.998582 (-1418 ppm)  [conf=3.1]
+  1989-06-04 Dublin (LB-02470)->1989-06-04 Dublin, Ireland Simmonscourt, R.D.S. (LB-07214): speed-unknown  speed ratio=0.947637 (-52363 ppm)  [conf=2.4]
+  1989-06-04 Dublin (LB-02470)->1989-06-04 Dublin, Ireland, Simmonscourt, R.D.S. (LB-02478): speed-unknown  speed ratio=0.981570 (-18430 ppm)  [conf=3.9]
+
+=== RESIDUAL CORRELATION MATRIX ===
+  18 pair(s)/source(s) speed-unknown (v2 confidence < 6.0) — routed to fingerprint path only
+          LB-02470  LB-06445  LB-10916  LB-14054  LB-07214  LB-02478
+  LB-02470     1.000     0.002     0.004     0.003     0.005     0.003
+  LB-06445     0.002     1.000     0.004     0.003     0.004     0.005
+  LB-10916     0.004     0.004     1.000     0.002     0.947     0.004
+  LB-14054     0.003     0.003     0.002     1.000     0.002     0.003
+  LB-07214     0.005     0.004     0.947     0.002     1.000     0.004
+  LB-02478     0.003     0.005     0.004     0.003     0.004     1.000
+
+=== SECONDARY MATCH (windowed coverage + quiet-segment hiss + fingerprint) ===
+  14 cross-family pair(s) — computing secondary evidence ...
+  No secondary same-source evidence found.
+
+=== LAG CURVES / SPEED (re-run vs central ref=1989-06-04 Dublin, Ireland (LB-10916)) ===
+  anchors: 0:02:49, 0:10:49, 0:18:12, 0:26:14, 0:28:35, 0:40:13, 0:41:08, 0:54:11, 0:58:42, 1:01:24, 1:11:05, 1:17:06
+  1989-06-04 Dublin, Ireland (LB-10916)->1989-06-04 Dublin (LB-02470): speed-unknown  speed ratio=1.055312 (+55312 ppm)
+  1989-06-04 Dublin, Ireland (LB-10916)->1989-06-04 Dublin, Ireland (LB-06445): speed-unknown  speed ratio=0.970927 (-29073 ppm)
+  1989-06-04 Dublin, Ireland (LB-10916)->1989-06-04 Dublin, Ireland (LB-14054): speed-unknown  speed ratio=1.051057 (+51057 ppm)
+  1989-06-04 Dublin, Ireland (LB-10916)->1989-06-04 Dublin, Ireland Simmonscourt, R.D.S. (LB-07214): aligned  speed ratio=1.000000 (+0 ppm)
+  1989-06-04 Dublin, Ireland (LB-10916)->1989-06-04 Dublin, Ireland, Simmonscourt, R.D.S. (LB-02478): speed-unknown  speed ratio=1.033667 (+33667 ppm)
+
+=== CLUSTERS ===
+  Family 1: 1989-06-04 Dublin (LB-02470), 1989-06-04 Dublin, Ireland (LB-14054)  (mean intra-corr 0.003 [low confidence])
+  Family 2: 1989-06-04 Dublin, Ireland (LB-06445)  (mean intra-corr 1.000)
+  Family 3: 1989-06-04 Dublin, Ireland (LB-10916), 1989-06-04 Dublin, Ireland Simmonscourt, R.D.S. (LB-07214)  (mean intra-corr 0.947 [high confidence])
+  Family 4: 1989-06-04 Dublin, Ireland, Simmonscourt, R.D.S. (LB-02478)  (mean intra-corr 1.000)
+  Distinct source families: 4
+
+=== LINEAGE EVIDENCE (interpret manually) ===
+    source   HF ceiling  noise floor  DC asymmetry
+  1989-06-04 Dublin (LB-02470)       3.0kHz      -94.4dB      -0.00000
+  1989-06-04 Dublin, Ireland (LB-06445)       3.0kHz      -92.6dB      -0.00005
+  1989-06-04 Dublin, Ireland (LB-10916)       3.0kHz      -89.6dB      -0.00040
+  1989-06-04 Dublin, Ireland (LB-14054)       4.0kHz      -82.8dB      -0.00001
+  1989-06-04 Dublin, Ireland Simmonscourt, R.D.S. (LB-07214)       3.0kHz      -89.6dB      -0.00040
+  1989-06-04 Dublin, Ireland, Simmonscourt, R.D.S. (LB-02478)       3.0kHz      -89.1dB      -0.00004
+  (HF ceiling capped by 8000 Hz Nyquist at analysis_sr=16000; run lineage at native rate for real format discrimination)
+  (DC asymmetry is a taper/equipment signature — not a reliable source-identity marker)
+
+=== DIAGNOSTICS ===
+  [DISTINCT SOURCE] 1989-06-04 Dublin, Ireland (LB-06445) (-29073 ppm speed offset, best cross-family corr 0.005): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1989-06-04 Dublin, Ireland, Simmonscourt, R.D.S. (LB-02478) (+33667 ppm speed offset, best cross-family corr 0.005): near-zero correlation to all other sources — entirely different recording
+
+[6] Archiving run …
+  Archive → /home/tjenkins/Documents/losslessbob/data/tapematch/runs/20260702_161027_1989-06-04
+
+[7] Logging to observations.db …
+  Logged: 1 run, 6 sources, 15 pairs
+
+Report → /home/tjenkins/Documents/losslessbob/tools/tapematch/last_run_report.md

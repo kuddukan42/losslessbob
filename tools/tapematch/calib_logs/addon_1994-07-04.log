@@ -1,0 +1,142 @@
+=== tapematch session: 1994-07-04  [20260702_221628] ===
+
+[1] Querying DB …
+  9 entries — Besancon, France
+    LB-01059
+    LB-04033
+    LB-04034
+    LB-04361
+    LB-07615
+    LB-09926
+    LB-10877
+    LB-12683
+    LB-15217
+
+[2] Resolving paths from my_collection …
+  Excluded (private/no-torrent): LB-12683
+  Found 8/9
+    LB-01059: /mnt/DYLAN1/Concerts/1994/1994-07-04 Besancon, France (LB-01059)
+    LB-04033: /mnt/DYLAN1/Concerts/1994/1994-07-04 Besancon, France, Palais Des Sports (LB-04033)
+    LB-04034: /mnt/DYLAN1/Concerts/1994/1994-07-04 Besancon, France, Palais Des Sports (LB-04034)
+    LB-04361: /mnt/DYLAN1/Concerts/1994/1994-07-04 Palais Des Sports (LB-04361)
+    LB-07615: /mnt/DYLAN1/Concerts/1994/1994-07-04 Besancon, France (LB-07615)
+    LB-09926: /mnt/DYLAN1/Concerts/1994/1994-07-04 Besancon, France (LB-09926)
+    LB-10877: /mnt/DYLAN1/Concerts/1994/1994-07-04 Besanon, France (LB-10877)
+    LB-15217: /mnt/DYLAN1/Concerts/1994/1994-07-04 Besanon (LB-15217)
+
+[3] Cleaning /mnt/DATA0/examples/tapematch …
+
+[4] Copying 8 folders to /mnt/DATA0/examples/tapematch …
+  Copying LB-01059: 1994-07-04 Besancon, France (LB-01059) …
+  Copying LB-04033: 1994-07-04 Besancon, France, Palais Des Sports (LB-04033) …
+  Copying LB-04034: 1994-07-04 Besancon, France, Palais Des Sports (LB-04034) …
+  Copying LB-04361: 1994-07-04 Palais Des Sports (LB-04361) …
+  Copying LB-07615: 1994-07-04 Besancon, France (LB-07615) …
+  Copying LB-09926: 1994-07-04 Besancon, France (LB-09926) …
+  Copying LB-10877: 1994-07-04 Besanon, France (LB-10877) …
+  Copying LB-15217: 1994-07-04 Besanon (LB-15217) …
+
+[5] Running tapematch …
+  curator lineage pairs loaded: 677 (from /home/tjenkins/Documents/losslessbob/data/losslessbob.db)
+  est. peak RAM ~1.0 GB (8 sources, largest 1:40:06)
+=== INGEST / TRIM ===
+  1994-07-04 Besancon, France (LB-01059): 15 tracks, 1:39:21
+  1994-07-04 Besancon, France (LB-07615): 15 tracks, 1:31:40
+  1994-07-04 Besancon, France (LB-09926): 15 tracks, 1:40:06
+  1994-07-04 Besancon, France, Palais Des Sports (LB-04033): 15 tracks, 1:31:43
+  1994-07-04 Besancon, France, Palais Des Sports (LB-04034): 15 tracks, 1:39:43
+  1994-07-04 Besanon (LB-15217): 15 tracks, 1:39:38
+  1994-07-04 Besanon, France (LB-10877): 16 tracks, 1:39:01
+  1994-07-04 Palais Des Sports (LB-04361): 9 tracks, 0:58:23
+
+=== TRIM (performance envelope) ===
+  1994-07-04 Besancon, France (LB-01059): trimmed 0:00:00 head, 0:00:00 tail -> performance 1:39:21
+  1994-07-04 Besancon, France (LB-07615): trimmed 0:00:10 head, 0:03:47 tail -> performance 1:27:44
+  1994-07-04 Besancon, France (LB-09926): trimmed 0:00:00 head, 0:00:03 tail -> performance 1:40:03
+  1994-07-04 Besancon, France, Palais Des Sports (LB-04033): trimmed 0:00:40 head, 0:00:18 tail -> performance 1:30:45
+  1994-07-04 Besancon, France, Palais Des Sports (LB-04034): trimmed 0:00:04 head, 0:00:00 tail -> performance 1:39:39
+  1994-07-04 Besanon (LB-15217): trimmed 0:00:04 head, 0:00:00 tail -> performance 1:39:33
+  1994-07-04 Besanon, France (LB-10877): trimmed 0:00:00 head, 0:00:00 tail -> performance 1:39:01
+  1994-07-04 Palais Des Sports (LB-04361): trimmed 0:08:08 head, 0:00:32 tail -> performance 0:49:43
+
+  [INCOMPLETE?] — duration well below group median (1:39:11):
+    1994-07-04 Besancon, France (LB-07615): 1:27:44 (11.6% shorter)
+    1994-07-04 Besancon, France, Palais Des Sports (LB-04033): 1:30:45 (8.5% shorter)
+    1994-07-04 Palais Des Sports (LB-04361): 0:49:43 (49.9% shorter)
+
+=== ANCHORS (ref=1994-07-04 Besancon, France (LB-01059)) ===
+  0:06:30, 0:14:14, 0:22:07, 0:26:03, 0:40:16, 0:45:26, 0:49:46, 1:01:25, 1:13:14, 1:22:11, 1:22:55, 1:38:54
+
+=== LAG CURVES / SPEED (vs ref) ===
+  1994-07-04 Besancon, France (LB-01059)->1994-07-04 Besancon, France (LB-07615): speed-unknown  speed ratio=0.944700 (-55300 ppm)  [conf=2.7]
+  1994-07-04 Besancon, France (LB-01059)->1994-07-04 Besancon, France (LB-09926): speed-unknown  speed ratio=0.995735 (-4265 ppm)  [conf=4.5]
+  1994-07-04 Besancon, France (LB-01059)->1994-07-04 Besancon, France, Palais Des Sports (LB-04033): speed-unknown  speed ratio=0.945800 (-54200 ppm)  [conf=1.1]
+  1994-07-04 Besancon, France (LB-01059)->1994-07-04 Besancon, France, Palais Des Sports (LB-04034): speed-unknown  speed ratio=0.999453 (-547 ppm)  [conf=4.0]
+  1994-07-04 Besancon, France (LB-01059)->1994-07-04 Besanon (LB-15217): staircase/splice  speed ratio=0.999886 (-114 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  1994-07-04 Besancon, France (LB-01059)->1994-07-04 Besanon, France (LB-10877): speed-unknown  speed ratio=1.002566 (+2566 ppm)  [conf=2.6]
+  1994-07-04 Besancon, France (LB-01059)->1994-07-04 Palais Des Sports (LB-04361): speed-unknown  speed ratio=1.006600 (+6600 ppm)  [conf=1.1]
+
+=== RESIDUAL CORRELATION MATRIX ===
+  33 pair(s)/source(s) speed-unknown (v2 confidence < 6.0) — routed to fingerprint path only
+          LB-01059  LB-07615  LB-09926  LB-04033  LB-04034  LB-15217  LB-10877  LB-04361
+  LB-01059     1.000     0.003     0.007     0.003     0.029     0.053     0.006     0.002
+  LB-07615     0.003     1.000     0.003     0.936     0.003     0.003     0.003     0.002
+  LB-09926     0.007     0.003     1.000     0.004     0.008     0.005     0.006     0.003
+  LB-04033     0.003     0.936     0.004     1.000     0.003     0.003     0.004     0.004
+  LB-04034     0.029     0.003     0.008     0.003     1.000     0.035     0.008     0.004
+  LB-15217     0.053     0.003     0.005     0.003     0.035     1.000     0.007     0.003
+  LB-10877     0.006     0.003     0.006     0.004     0.008     0.007     1.000     0.005
+  LB-04361     0.002     0.002     0.003     0.004     0.004     0.003     0.005     1.000
+
+=== SECONDARY MATCH (windowed coverage + quiet-segment hiss + fingerprint) ===
+  27 cross-family pair(s) — computing secondary evidence ...
+  No secondary same-source evidence found.
+
+=== LAG CURVES / SPEED (re-run vs central ref=1994-07-04 Besanon (LB-15217)) ===
+  anchors: 0:00:20, 0:12:11, 0:22:09, 0:25:53, 0:39:47, 0:42:17, 0:50:03, 0:59:28, 1:13:11, 1:22:19, 1:29:58, 1:38:56
+  1994-07-04 Besanon (LB-15217)->1994-07-04 Besancon, France (LB-01059): staircase/splice  speed ratio=1.000118 (+118 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  1994-07-04 Besanon (LB-15217)->1994-07-04 Besancon, France (LB-07615): speed-unknown  speed ratio=1.015200 (+15200 ppm)
+  1994-07-04 Besanon (LB-15217)->1994-07-04 Besancon, France (LB-09926): speed-unknown  speed ratio=0.994438 (-5562 ppm)
+  1994-07-04 Besanon (LB-15217)->1994-07-04 Besancon, France, Palais Des Sports (LB-04033): speed-unknown  speed ratio=0.963000 (-37000 ppm)
+  1994-07-04 Besanon (LB-15217)->1994-07-04 Besancon, France, Palais Des Sports (LB-04034): speed-unknown  speed ratio=0.999665 (-335 ppm)
+  1994-07-04 Besanon (LB-15217)->1994-07-04 Besanon, France (LB-10877): speed-unknown  speed ratio=1.002791 (+2791 ppm)
+  1994-07-04 Besanon (LB-15217)->1994-07-04 Palais Des Sports (LB-04361): speed-unknown  speed ratio=1.013200 (+13200 ppm)
+
+=== CLUSTERS ===
+  Family 1: 1994-07-04 Besancon, France (LB-01059), 1994-07-04 Besancon, France, Palais Des Sports (LB-04034), 1994-07-04 Besanon (LB-15217)  (mean intra-corr 0.039 [low confidence])  [chain-unverified: LB-01059/LB-04034; LB-01059/LB-15217; LB-04034/LB-15217 not directly confirmed]
+  Family 2: 1994-07-04 Besancon, France (LB-07615), 1994-07-04 Besancon, France, Palais Des Sports (LB-04033)  (mean intra-corr 0.936 [high confidence])
+  Family 3: 1994-07-04 Besancon, France (LB-09926)  (mean intra-corr 1.000)
+  Family 4: 1994-07-04 Besanon, France (LB-10877)  (mean intra-corr 1.000)
+  Family 5: 1994-07-04 Palais Des Sports (LB-04361)  (mean intra-corr 1.000)
+  Distinct source families: 5
+
+=== LINEAGE EVIDENCE (interpret manually) ===
+    source   HF ceiling  noise floor  DC asymmetry
+  1994-07-04 Besancon, France (LB-01059)       3.0kHz      -77.0dB      -0.00000
+  1994-07-04 Besancon, France (LB-07615)       3.0kHz      -85.1dB      -0.00001
+  1994-07-04 Besancon, France (LB-09926)       3.0kHz      -79.7dB      +0.00015
+  1994-07-04 Besancon, France, Palais Des Sports (LB-04033)       2.0kHz      -83.3dB      -0.00003
+  1994-07-04 Besancon, France, Palais Des Sports (LB-04034)       3.0kHz      -70.7dB      -0.00074
+  1994-07-04 Besanon (LB-15217)       3.0kHz      -75.3dB      -0.00001
+  1994-07-04 Besanon, France (LB-10877)       2.0kHz      -73.7dB      +0.00000
+  1994-07-04 Palais Des Sports (LB-04361)       3.0kHz      -85.3dB      +0.00126
+  (HF ceiling capped by 8000 Hz Nyquist at analysis_sr=16000; run lineage at native rate for real format discrimination)
+  (DC asymmetry is a taper/equipment signature — not a reliable source-identity marker)
+
+=== DIAGNOSTICS ===
+  [INCOMPLETE] 1994-07-04 Besancon, France (LB-07615): 1:27:44 vs median 1:39:11 (11.6% shorter) — likely missing material
+  [INCOMPLETE] 1994-07-04 Besancon, France, Palais Des Sports (LB-04033): 1:30:45 vs median 1:39:11 (8.5% shorter) — likely missing material
+  [INCOMPLETE] 1994-07-04 Palais Des Sports (LB-04361): 0:49:43 vs median 1:39:11 (49.9% shorter) — likely missing material
+  [DISTINCT SOURCE] 1994-07-04 Besancon, France (LB-09926) (-5562 ppm speed offset, best cross-family corr 0.008): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1994-07-04 Besanon, France (LB-10877) (+2791 ppm speed offset, best cross-family corr 0.008): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1994-07-04 Palais Des Sports (LB-04361) (+13200 ppm speed offset, best cross-family corr 0.005): near-zero correlation to all other sources — entirely different recording
+
+[6] Archiving run …
+  Archive → /home/tjenkins/Documents/losslessbob/data/tapematch/runs/20260702_221628_1994-07-04
+
+[7] Logging to observations.db …
+  Logged: 1 run, 8 sources, 28 pairs
+
+Report → /home/tjenkins/Documents/losslessbob/tools/tapematch/last_run_report.md

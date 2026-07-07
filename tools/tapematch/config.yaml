@@ -23,6 +23,13 @@ trim:
   # so a lone clap in the padding doesn't trip it.
   min_sustain_sec: 8.0
   pad_keep_sec: 5.0        # keep this much padding either side as a safety margin
+  # Below this p90-p10 energy spread (dB), crowd/music contrast is too
+  # compressed (heavily normalised/limited source) to trust the energy gate
+  # -> skip trim, keep the full recording. Calibrated 2026-07-03: known-good
+  # controls (1996-07-21, 1990-06-01) measured 11.9-15.4dB; sources that
+  # produced spurious multi-minute mistrims (2025-11-16/17 Glasgow) measured
+  # 6.4-8.5dB — clean gap at 10.
+  min_dynamic_range_db: 10.0
 
 anchors:
   # Crowd-transient anchors for alignment + fingerprinting.
@@ -37,6 +44,15 @@ align:
   # 90s covers recordings with up to ~8 min of extra/missing content (accumulated drift)
   # Speed-ratio detection from first vs last anchor lag.
   ratio_flag_ppm: 200      # |ratio-1| above this (parts-per-million) -> resample
+  ratio_confidence_min: 6.0  # NEW (CC_TAPEMATCH_FIXES Task 5.3) — estimate_ratio_v2
+  #   peak-prominence confidence below this => speed-unknown (no resample).
+  #   SWEEP RESULT 2026-07-02: lowering to 4.5 (to un-strand conf 4.5-6.0 pairs like a real
+  #   -45800 ppm/conf-5.0 pair) recovered NOTHING — those pairs DID resample but corr stayed
+  #   0.002-0.010 (waveforms don't correlate even when correctly speed-aligned). Reverted to 6.0.
+  #   peak-prominence confidence below this => ratio is UNKNOWN: do NOT resample,
+  #   set speed_kind="speed-unknown", route the pair to the fingerprint path only.
+  pyin_fallback: true      # NEW (Task 6.2) — pitch_ratio_pyin absolute-pitch ratio for
+  #   speed-unknown pairs whose duration prior was also unavailable.
   # Lag-vs-position curve interpretation
   step_flag_sec: 0.5       # a jump > this between adjacent anchors = gap edit / splice
 
@@ -125,6 +141,30 @@ fingerprint:
   #   different source, different show:    0.00–0.05
   # cluster_threshold drives actual clustering; match_threshold controls display.
   cluster_threshold: 0.50   # Dice score above this → fingerprint drives clustering
+  # Conditional fingerprint thresholds (CC_TAPEMATCH_FIXES.md Tasks 3.2 / 4.1).
+  # Applied per-pair by tapematch/verdict.py:fp_threshold(); default to
+  # cluster_threshold when absent, so removing them restores the single scalar.
+  cluster_threshold_staircase: 0.40  # either side speed_kind == staircase/splice
+  cluster_threshold_curator: 0.43    # curator lineage text claims same source
+  #   (a text claim is a PRIOR, not a label: audio must still cross 0.43, so a
+  #    claimed pair with fp_score 0.10 stays different_family)
+  # Ratio-invariant triplet fingerprint (CC_TAPEMATCH_FIXES Task 7). Panako-style
+  # hashes encode only RATIOS (Δt2/Δt1, f1/f0, f2/f0) so they survive speed change —
+  # the sole surviving signal for Task 5.3 speed-unknown Cat-1 pairs. CALIBRATE the
+  # threshold per Task 7.4 (>=0.10 gap between frozen TP/TN Dice) BEFORE going live.
+  triplet:
+    enabled: false    # DISABLED 2026-07-02 after live calibration (Task 7.4): real
+    #   same-date different-source pairs score triplet Dice 0.63-0.65, OVERLAPPING
+    #   true same-source (median 0.656) — negative gap (-0.012). Ratio hashes collide
+    #   because same-concert recordings share real temporal/spectral structure. At
+    #   0.45 this manufactured 5 false merges on frozen negatives (1990-08-18,
+    #   1990-11-10 x3, 1993-02-16). The synthetic invariance test used independent
+    #   layouts and vastly underestimated same-show collision. Keep OFF until/unless
+    #   8-bit freq quant is shown to open a >=0.10 gap (unlikely — collision is structural).
+    tmin_sec: 0.5
+    tmax_sec: 8.0
+    fanout: 4
+    cluster_threshold: 0.45     # provisional only; NOT viable at 6/7-bit quant (see above)
   # Empirical calibration across 3 dates (2001-10-07, 1996-07-21, 2001-10-30):
   #   confirmed different-source same-show (HF band): 0.35–0.47
   #   confirmed same-source (HF band):                0.51–0.60+
@@ -132,6 +172,186 @@ fingerprint:
   # Note: 6-8 kHz band still shares room/PA acoustics within a venue, so scores do
   # NOT drop to ~0.10 as the full-band theory predicted — but the bimodal gap is stable.
   # Safety: set cluster_threshold only when hf_band_hz is also configured.
+
+flaw_fingerprint:
+  # Shared-flaw event fingerprint (CC_TAPEMATCH_ADDON.md Task 2, Tier A). Tape
+  # dropouts/clicks/splice-cuts are INHERITED by every descendant of a transfer
+  # at the same musical position; two independent audience recordings of the
+  # same show share zero flaws (mic-side noise is per-recording). Content-blind
+  # by construction — unlike the rejected triplet fingerprint (see
+  # fingerprint.triplet above), so it survives band-limiting/lossy lineage
+  # where residual_corr and the HF-band fingerprint both die.
+  # DISABLED until calibrated per the Calibration protocol
+  # (CC_TAPEMATCH_ADDON.md: >=100 pairs incl. mandatory same-date
+  # different-source TN, gap >= 0.10 required before enabling).
+  enabled: false  # dormant post-calibration (2026-07-03): re-enable to recompute the metric —
+  #   addon_links.rule_a stays enabled:false, so no merge is armed by this flag.
+
+  # --- extract_flaw_events (2.1): quiet/between-song mask ---
+  # Own knobs (not shared with secondary_match) so this feature has no
+  # dependency on the secondary_match section being configured.
+  quiet_energy_percentile: 25
+  min_quiet_sec: 3.0
+
+  # --- dropout: short-time RMS collapse ---
+  dropout_frame_sec: 0.02        # 20ms RMS hop
+  dropout_local_window_sec: 2.0  # local median window for the "2s local median" gate
+  dropout_depth_db: 20.0         # must fall this far below the local median
+  dropout_min_sec: 0.04          # 40ms
+  dropout_max_sec: 0.8           # 800ms
+
+  # --- click: sample-domain residual spike ---
+  click_local_window_ms: 50.0    # local MAD window
+  click_sigma: 6.0                # spike threshold, x local MAD-sigma
+  click_max_dur_ms: 5.0           # isolated run must be shorter than this
+  click_cap: 200                  # keep only the N strongest per source
+
+  # --- cut: joint spectral-centroid + RMS discontinuity (splice/seam) ---
+  cut_frame_sec: 0.1              # 100ms frame
+  cut_sigma: 4.0                  # joint jump threshold, x global robust sigma
+
+  # --- flaw_match_score (2.2) ---
+  flaw_min_events: 5              # min(|A|,|B|) below this -> score is None, not 0.0
+  tol_sec: 0.5                    # matched-event time tolerance after speed-mapping
+  #   (generous — residual ppm error over 2h is ~0.3s at 40 ppm residual)
+
+  # --- verdict wiring (2.3) ---
+  # SUPERSEDED by addon_links.rule_a (CC_TAPEMATCH_ADDON.md Task 5.1): the
+  # standalone flaw OR-path that used to live directly in verdict.py:pair_links
+  # was folded into Rule A so there is exactly one flaw merge path, not two
+  # competing ones. `enabled` above still independently gates whether the
+  # metric is COMPUTED (cli.py); verdict-merge thresholds now live under
+  # addon_links.rule_a (t_flaw / min_events) below.
+
+spectral_stationarity:
+  # Spectral-ratio stationarity (CC_TAPEMATCH_ADDON.md Task 3, Tier A). If A and B
+  # descend from the same recording, B(t) ~= H(A(t)) for a FIXED transfer function H
+  # (the copy chain's EQ/band-limit) -- the frame-wise log-spectral ratio between
+  # time-aligned A and B is constant over time. Two different recordings of the same
+  # show have time-varying ratios (mic/room response differs as the source moves).
+  # Phase-blind, magnitude-only -- works exactly where residual_corr dies (corr
+  # ~0.005). CONJUNCTIVE-ONLY: never a lone-merge OR-path (banned until calibration
+  # proves a gap); combination rules are Task 5. DISABLED until calibrated per the
+  # Calibration protocol (CC_TAPEMATCH_ADDON.md).
+  enabled: false  # dormant post-calibration (2026-07-03): re-enable to recompute the metric —
+  #   addon_links.rule_b stays enabled:false, so no merge is armed by this flag.
+
+  # --- windowed grid (3.1): same shape as secondary_match's grid, own knobs so
+  # this feature has no dependency on secondary_match being configured ---
+  window_sec: 60.0
+  hop_sec: 30.0
+  local_lag_sec: 10.0             # +-lag search per window (predicted-lag-aware,
+                                   #   same convention as secondary_corr_pair)
+
+  # --- log-mel front end ---
+  n_mels: 32                      # log-mel band count, capped at
+                                   #   min(hf_ceiling_a, hf_ceiling_b, 0.45*sr)
+  stft_nperseg: 1024               # STFT window (samples, at analysis_sr)
+  stft_hop: 256                    # STFT hop (samples)
+  min_frames_per_window: 20        # below this many usable (non-quiet) STFT
+                                   #   frames, the window is skipped (not scored 0)
+
+  # --- quiet-frame gate ---
+  noise_floor_margin_db: 6.0       # frame kept only if its own-side level is this
+                                   #   far above that source's lineage noise_floor_db
+
+  # --- stationarity (3.1 step 3) ---
+  stationarity_norm_db: 6.0        # a 6dB per-band wobble across the show -> 0
+  stationarity_min_windows: 6      # fewer usable windows -> None, not 0.0
+
+envelope_corr:
+  # Band-limited envelope correlation (CC_TAPEMATCH_ADDON.md Task 4, Tier A).
+  # corr<0.05 FN reflect destroyed HF fine-structure; the coarse RMS energy
+  # envelope in the surviving low/mid band can still survive lossy/band-
+  # limited lineage. HIGH SAME-SHOW COLLISION RISK -- envelope is music-
+  # dominated (the triplet failure mode): two independent audience
+  # recordings of the same show WILL correlate substantially here too. The
+  # signal is included on the hypothesis that same-source pairs saturate
+  # near 1.0 while different-source pairs saturate lower, but that gap is
+  # UNPROVEN until calibration. CONJUNCTIVE-ONLY, and unlike
+  # spectral_stationarity, NEVER a lone-merge OR-path even if calibration
+  # passes (hard spec rule, 4.2) -- combination rules are Task 5.
+  # DISABLED until calibrated per the Calibration protocol
+  # (CC_TAPEMATCH_ADDON.md: >=100 pairs incl. mandatory same-date
+  # different-source TN, gap >= 0.10 required, and per 4.2 it may only ever
+  # be wired as one AND'd leg of a two-signal rule, never alone).
+  enabled: false  # dormant post-calibration (2026-07-03): re-enable to recompute the metric —
+  #   addon_links.rule_b stays enabled:false, so no merge is armed by this flag.
+
+  # --- band-limit (4.1): [band_lo_hz, min(hf_ceiling_a, hf_ceiling_b,
+  # band_hi_cap_hz)] -- never above the narrower side's HF ceiling ---
+  band_lo_hz: 200.0
+  band_hi_cap_hz: 2000.0
+  filter_order: 6                  # zero-phase Butterworth bandpass order
+
+  # --- RMS envelope + overlap gate ---
+  frame_rate_hz: 20.0               # envelope frame rate
+  min_overlap_min: 10.0             # mapped overlap below this -> None, not 0.0
+
+addon_links:
+  # Task 5 evidence-combination rules (CC_TAPEMATCH_ADDON.md Task 5.1),
+  # evaluated in verdict.py:pair_links alongside every other OR-path. Every
+  # rule is independently gated on its own `enabled` flag and NULL on ANY
+  # leg means that rule ABSTAINS (never coerced to 0.0/False-as-0). No rule
+  # reads lb_says_same or entry_lineage (keeps the frozen regression set a
+  # valid negative control). All three `enabled: false` until each signal
+  # clears the Calibration protocol (CALIBRATION_PROGRESS.md) — DO NOT flip
+  # to true without a fresh gap check on frozen TP/same-show-TN/FN.
+  rule_a:
+    # Lone lineage: shared-flaw fingerprint alone. This is the SOLE flaw
+    # merge path (see verdict.py module docstring) -- it supersedes and
+    # replaces the Task 2.3 standalone flaw_fingerprint-gated OR-path that
+    # used to live directly in pair_links. Thresholds carried over unchanged
+    # from that prior wiring (merge_threshold -> t_flaw, min_events_merge ->
+    # min_events); flaw_fingerprint.enabled above still separately gates
+    # whether the metric is computed at all.
+    enabled: false   # CALIBRATED 2026-07-03 (calibrate_addon.py, 11 dates / 178 pairs):
+    #   flaw is the one precision-SAFE Tier A signal (TN max 0.133 vs TP->0.900, no triplet-
+    #   style collision), but coverage is only ~6% of frozen FN, so a precision-safe bar nets
+    #   just +1..+2 TP (t_flaw 0.45 -> +1, 0.20 -> +2; both abs fp=9). The aggressive zero-FP
+    #   bar 0.143 recovered +7 TP but produced abs fp=10 via TRANSITIVE clustering (per-run
+    #   guard said "new FP: none" — the guard-masking trap; absolute fp is the real gate).
+    #   Left DORMANT: +1..+2 TP (+0.1 recall pt) is not worth a production merge path on a
+    #   43-pair TN sample. Re-enable at t_flaw>=0.45 for the marginal precision-safe gain.
+    t_flaw: 0.45              # precision-safe bar (abs fp=9); NOT 0.143 (that -> abs fp=10)
+    min_events: 8               # both-side flaw_n_events floor to merge
+  rule_b:
+    # Two-leg: spec_stationarity AND env_corr, both required. Conjunctive by
+    # construction -- this is the only route either signal has into a
+    # verdict (spec 3.2 / 4.2 both ban a lone-merge path for these).
+    enabled: false   # uncalibrated -- set by Calibration protocol
+    t_stat: 0.7                 # uncalibrated -- spec 3.2 expects TP band >=0.7
+    t_env: 0.90                 # uncalibrated -- spec 4.1 expects a gap near 0.97 vs 0.90
+  rule_c:
+    # Belt-and-braces (Tier B/C, Task 6's emb_score): emb_score AND
+    # (flaw_match_score weak OR spec_stationarity). `emb_score` has no
+    # persisted column yet -- verdict.py reads it defensively via dict.get
+    # and this rule abstains (never crashes) while the column is absent.
+    enabled: false   # uncalibrated -- set by Calibration protocol; also gated on
+    #   Task 6's embedding gap check (TP p10 - same-show-TN p90 >= 0.10) passing.
+    t_emb: 0.70                 # uncalibrated -- placeholder pending Task 6 harness
+    t_flaw_weak: 0.4             # uncalibrated -- weaker than rule_a.t_flaw by design
+    t_stat: 0.7                  # uncalibrated -- mirrors rule_b.t_stat
+  rule_d:
+    # Embedding both-convention (Tier B, Task 6 follow-on): emb_score AND
+    # emb_score_global both required, cross-source pairs only. Unlike rule_c
+    # this is a LONE embedding-only merge path (no flaw/stationarity leg) —
+    # justified by requiring both scoring conventions to agree rather than a
+    # second independent signal.
+    # CALIBRATED 2026-07-04 full-frozen-set sweep (emb_fullset_eval.py, 2245
+    # pairs / 2465 nmfp-embedded sources): both-convention bar 0.75 = zero new
+    # FP on both regression_set.json (abs fp=9) and regression_set_v2.json
+    # (abs fp=6), +25 FN->TP; lone/aligned-only variant REJECTED (transitive
+    # FP LB-789/LB-2898 via guard-masking-style chain at any T; abs fp>=10).
+    # Plateau 0.725-0.850 identical; 0.75 chosen for one-step margin from the
+    # 0.700 cliff (abs fp=11).
+    enabled: true    # ENABLED 2026-07-04 after full regression proof (see report)
+    t_emb: 0.75
+    # TODO-200: compute emb_score/emb_score_global live (emb_live.py, nmfp under
+    # .venv-nmfp) so Rule D fires during a session instead of abstaining on NULL
+    # until the offline batch re-runs. No-op if enabled:false OR live_embed:false;
+    # any extraction failure leaves emb NULL (Rule D abstains -- safe).
+    live_embed: true
 
 secondary_match:
   # Dense-grid windowed coverage: fraction of 60s windows where two sources agree
@@ -171,6 +391,13 @@ secondary_match:
   # at Graz 1999).
   hiss_merge_frac: 0.60     # minimum hiss fraction to drive a merge
   hiss_merge_median: 0.65   # minimum hiss median to drive a merge
+  # HF-conditional relaxation (CC_TAPEMATCH_FIXES.md Task 4.2): cassette-generation
+  # deck noise is chain identity, so lo-fi pairs get a lower median bar. Applied by
+  # verdict.py:pair_links() only when BOTH sides have hf_ceiling_hz below
+  # hiss_lofi_ceiling_hz AND neither reading is nyquist-capped (a capped ceiling is
+  # not a real measurement — treat as unknown and keep the 0.65 guard).
+  hiss_merge_median_lofi: 0.40   # both hf_ceiling_hz < hiss_lofi_ceiling_hz
+  hiss_lofi_ceiling_hz: 12000
 
   # Short-window fallback for staircase/staircase pairs.
   # When both recordings have CDR re-tracking edits and windowed_frac < 0.10,

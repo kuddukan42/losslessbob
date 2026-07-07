@@ -1,0 +1,103 @@
+=== tapematch session: 1998-10-28  [20260702_212335] ===
+
+[1] Querying DB …
+  5 entries — Auburn Hills, Michigan (near Detroit), Palace of Auburn Hills
+    LB-03725
+    LB-06168
+    LB-06564
+    LB-07097
+    LB-12485
+
+[2] Resolving paths from my_collection …
+  Found 5/5
+    LB-03725: /mnt/DYLAN1/Concerts/1998/1998-10-28 Auburn Hills, Michigan (near Detroit), Palace of Auburn Hills (LB-03725)
+    LB-06168: /mnt/DYLAN1/Concerts/1998/1998-10-28 Auburn Hills, Michigan (LB-06168)
+    LB-06564: /mnt/DYLAN1/Concerts/1998/1998-10-28 AUBURN HILLS, MI (LB-06564)
+    LB-07097: /mnt/DYLAN1/Concerts/1998/1998-10-28 Auburn Hills, Michigan (LB-07097)
+    LB-12485: /mnt/DYLAN1/Concerts/1998/1998-10-28 Auburn Hills (LB-12485)
+
+[3] Cleaning /mnt/DATA0/examples/tapematch …
+
+[4] Copying 5 folders to /mnt/DATA0/examples/tapematch …
+  Copying LB-03725: 1998-10-28 Auburn Hills, Michigan (near Detroit), Palace of Auburn Hills (LB-03725) …
+  Copying LB-06168: 1998-10-28 Auburn Hills, Michigan (LB-06168) …
+  Copying LB-06564: 1998-10-28 AUBURN HILLS, MI (LB-06564) …
+  Copying LB-07097: 1998-10-28 Auburn Hills, Michigan (LB-07097) …
+  Copying LB-12485: 1998-10-28 Auburn Hills (LB-12485) …
+
+[5] Running tapematch …
+  curator lineage pairs loaded: 677 (from /home/tjenkins/Documents/losslessbob/data/losslessbob.db)
+  est. peak RAM ~1.0 GB (5 sources, largest 1:40:51)
+=== INGEST / TRIM ===
+  1998-10-28 AUBURN HILLS, MI (LB-06564): 17 tracks, 1:35:22
+  1998-10-28 Auburn Hills (LB-12485): 16 tracks, 1:35:28
+  1998-10-28 Auburn Hills, Michigan (LB-06168): 16 tracks, 1:40:51
+  1998-10-28 Auburn Hills, Michigan (LB-07097): 16 tracks, 1:38:17
+  1998-10-28 Auburn Hills, Michigan (near Detroit), Palace of Auburn Hills (LB-03725): 16 tracks, 1:37:41
+
+=== TRIM (performance envelope) ===
+  1998-10-28 AUBURN HILLS, MI (LB-06564): trimmed 0:00:02 head, 0:00:05 tail -> performance 1:35:15
+  1998-10-28 Auburn Hills (LB-12485): trimmed 0:00:01 head, 0:00:19 tail -> performance 1:35:08
+  1998-10-28 Auburn Hills, Michigan (LB-06168): trimmed 0:00:26 head, 0:00:55 tail -> performance 1:39:30
+  1998-10-28 Auburn Hills, Michigan (LB-07097): trimmed 0:00:05 head, 0:00:04 tail -> performance 1:38:08
+  1998-10-28 Auburn Hills, Michigan (near Detroit), Palace of Auburn Hills (LB-03725): trimmed 0:00:31 head, 0:00:55 tail -> performance 1:36:14
+
+=== ANCHORS (ref=1998-10-28 AUBURN HILLS, MI (LB-06564)) ===
+  0:03:48, 0:15:52, 0:20:22, 0:26:27, 0:37:58, 0:42:32, 0:51:51, 0:57:12, 1:03:34, 1:14:33, 1:20:11, 1:35:02
+
+=== LAG CURVES / SPEED (vs ref) ===
+  1998-10-28 AUBURN HILLS, MI (LB-06564)->1998-10-28 Auburn Hills (LB-12485): speed-unknown  speed ratio=1.000614 (+614 ppm)  [conf=2.5]
+  1998-10-28 AUBURN HILLS, MI (LB-06564)->1998-10-28 Auburn Hills, Michigan (LB-06168): constant-speed-offset  speed ratio=0.954286 (-45714 ppm)
+  1998-10-28 AUBURN HILLS, MI (LB-06564)->1998-10-28 Auburn Hills, Michigan (LB-07097): constant-speed-offset  speed ratio=0.967618 (-32382 ppm)
+  1998-10-28 AUBURN HILLS, MI (LB-06564)->1998-10-28 Auburn Hills, Michigan (near Detroit), Palace of Auburn Hills (LB-03725): speed-unknown  speed ratio=0.989596 (-10404 ppm)  [conf=2.3]
+
+=== RESIDUAL CORRELATION MATRIX ===
+  8 pair(s)/source(s) speed-unknown (v2 confidence < 6.0) — routed to fingerprint path only
+          LB-06564  LB-12485  LB-06168  LB-07097  LB-03725
+  LB-06564     1.000     0.520     0.003     0.003     0.002
+  LB-12485     0.520     1.000     0.002     0.003     0.002
+  LB-06168     0.003     0.002     1.000     0.002     0.003
+  LB-07097     0.003     0.003     0.002     1.000     0.004
+  LB-03725     0.002     0.002     0.003     0.004     1.000
+
+=== SECONDARY MATCH (windowed coverage + quiet-segment hiss + fingerprint) ===
+  9 cross-family pair(s) — computing secondary evidence ...
+  No secondary same-source evidence found.
+
+=== LAG CURVES / SPEED (re-run vs central ref=1998-10-28 Auburn Hills (LB-12485)) ===
+  anchors: 0:03:47, 0:15:51, 0:20:20, 0:26:19, 0:37:51, 0:42:26, 0:51:55, 0:57:22, 1:08:54, 1:14:25, 1:20:02, 1:34:55
+  1998-10-28 Auburn Hills (LB-12485)->1998-10-28 AUBURN HILLS, MI (LB-06564): speed-unknown  speed ratio=0.999388 (-612 ppm)
+  1998-10-28 Auburn Hills (LB-12485)->1998-10-28 Auburn Hills, Michigan (LB-06168): constant-speed-offset  speed ratio=0.953030 (-46970 ppm)
+  1998-10-28 Auburn Hills (LB-12485)->1998-10-28 Auburn Hills, Michigan (LB-07097): constant-speed-offset  speed ratio=0.966344 (-33656 ppm)
+  1998-10-28 Auburn Hills (LB-12485)->1998-10-28 Auburn Hills, Michigan (near Detroit), Palace of Auburn Hills (LB-03725): speed-unknown  speed ratio=0.989497 (-10503 ppm)
+
+=== CLUSTERS ===
+  Family 1: 1998-10-28 AUBURN HILLS, MI (LB-06564), 1998-10-28 Auburn Hills (LB-12485)  (mean intra-corr 0.520 [low confidence])
+  Family 2: 1998-10-28 Auburn Hills, Michigan (LB-06168)  (mean intra-corr 1.000)
+  Family 3: 1998-10-28 Auburn Hills, Michigan (LB-07097)  (mean intra-corr 1.000)
+  Family 4: 1998-10-28 Auburn Hills, Michigan (near Detroit), Palace of Auburn Hills (LB-03725)  (mean intra-corr 1.000)
+  Distinct source families: 4
+
+=== LINEAGE EVIDENCE (interpret manually) ===
+    source   HF ceiling  noise floor  DC asymmetry
+  1998-10-28 AUBURN HILLS, MI (LB-06564)       4.0kHz      -80.1dB      -0.00001
+  1998-10-28 Auburn Hills (LB-12485)       4.0kHz      -82.7dB      +0.00000
+  1998-10-28 Auburn Hills, Michigan (LB-06168)       3.0kHz      -82.0dB      +0.02857
+  1998-10-28 Auburn Hills, Michigan (LB-07097)       3.0kHz      -90.3dB      +0.00110
+  1998-10-28 Auburn Hills, Michigan (near Detroit), Palace of Auburn Hills (LB-03725)       3.0kHz      -80.8dB      -0.00006
+  (HF ceiling capped by 8000 Hz Nyquist at analysis_sr=16000; run lineage at native rate for real format discrimination)
+  (DC asymmetry is a taper/equipment signature — not a reliable source-identity marker)
+
+=== DIAGNOSTICS ===
+  [DISTINCT SOURCE] 1998-10-28 Auburn Hills, Michigan (LB-06168) (-46970 ppm speed offset, best cross-family corr 0.003): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1998-10-28 Auburn Hills, Michigan (LB-07097) (-33656 ppm speed offset, best cross-family corr 0.004): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1998-10-28 Auburn Hills, Michigan (near Detroit), Palace of Auburn Hills (LB-03725) (-10503 ppm speed offset, best cross-family corr 0.004): near-zero correlation to all other sources — entirely different recording
+  [LOW CONFIDENCE] Family 1 (1998-10-28 AUBURN HILLS, MI (LB-06564) / 1998-10-28 Auburn Hills (LB-12485)): corr 0.520 — same source likely but significant processing (resampling, level boost, EQ) may explain reduced correlation
+
+[6] Archiving run …
+  Archive → /home/tjenkins/Documents/losslessbob/data/tapematch/runs/20260702_212335_1998-10-28
+
+[7] Logging to observations.db …
+  Logged: 1 run, 5 sources, 10 pairs
+
+Report → /home/tjenkins/Documents/losslessbob/tools/tapematch/last_run_report.md

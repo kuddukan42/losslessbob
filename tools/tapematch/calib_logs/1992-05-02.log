@@ -1,0 +1,94 @@
+=== tapematch session: 1992-05-02  [20260702_145900] ===
+
+[1] Querying DB …
+  4 entries — Sonoma County Fairgrounds (Santa Rosa, California)
+    LB-01578
+    LB-04030
+    LB-05944
+    LB-08503
+
+[2] Resolving paths from my_collection …
+  Found 4/4
+    LB-01578: /mnt/DYLAN1/Concerts/1992/1992-05-02 Sonoma County Fairgrounds (Santa Rosa, California) (LB-01578)
+    LB-04030: /mnt/DYLAN1/Concerts/1992/1992-05-02 Santa Rosa, California, J.T. Grace pavilion, Sonoma County Fair Grandstand (LB-04030)
+    LB-05944: /mnt/DYLAN1/Concerts/1992/1992-05-02 Santa Rosa, California, (LB-05944)
+    LB-08503: /mnt/DYLAN1/Concerts/1992/1992-05-02 Santa Rosa, California (LB-08503)
+
+[3] Cleaning /mnt/DATA0/examples/tapematch …
+
+[4] Copying 4 folders to /mnt/DATA0/examples/tapematch …
+  Copying LB-01578: 1992-05-02 Sonoma County Fairgrounds (Santa Rosa, California) (LB-01578) …
+  Copying LB-04030: 1992-05-02 Santa Rosa, California, J.T. Grace pavilion, Sonoma County Fair Grandstand (LB-04030) …
+  Copying LB-05944: 1992-05-02 Santa Rosa, California, (LB-05944) …
+  Copying LB-08503: 1992-05-02 Santa Rosa, California (LB-08503) …
+
+[5] Running tapematch …
+  curator lineage pairs loaded: 677 (from /home/tjenkins/Documents/losslessbob/data/losslessbob.db)
+  est. peak RAM ~1.0 GB (4 sources, largest 1:39:45)
+=== INGEST / TRIM ===
+  1992-05-02 Santa Rosa, California (LB-08503): 18 tracks, 1:39:35
+  1992-05-02 Santa Rosa, California, (LB-05944): 19 tracks, 1:38:45
+  1992-05-02 Santa Rosa, California, J.T. Grace pavilion, Sonoma County Fair Grandstand (LB-04030): 18 tracks, 1:39:45
+  1992-05-02 Sonoma County Fairgrounds (Santa Rosa, California) (LB-01578): 18 tracks, 1:38:53
+
+=== TRIM (performance envelope) ===
+  1992-05-02 Santa Rosa, California (LB-08503): trimmed 0:00:27 head, 0:05:59 tail -> performance 1:33:08
+  1992-05-02 Santa Rosa, California, (LB-05944): trimmed 0:00:27 head, 0:05:27 tail -> performance 1:32:52
+  1992-05-02 Santa Rosa, California, J.T. Grace pavilion, Sonoma County Fair Grandstand (LB-04030): trimmed 0:00:28 head, 0:00:20 tail -> performance 1:38:58
+  1992-05-02 Sonoma County Fairgrounds (Santa Rosa, California) (LB-01578): trimmed 0:00:27 head, 0:05:31 tail -> performance 1:32:54
+
+=== ANCHORS (ref=1992-05-02 Santa Rosa, California (LB-08503)) ===
+  0:03:14, 0:15:22, 0:23:01, 0:30:23, 0:37:33, 0:39:16, 0:52:09, 0:59:09, 1:03:34, 1:16:43, 1:25:22, 1:32:26
+
+=== LAG CURVES / SPEED (vs ref) ===
+  1992-05-02 Santa Rosa, California (LB-08503)->1992-05-02 Santa Rosa, California, (LB-05944): staircase/splice  speed ratio=1.000051 (+51 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  1992-05-02 Santa Rosa, California (LB-08503)->1992-05-02 Santa Rosa, California, J.T. Grace pavilion, Sonoma County Fair Grandstand (LB-04030): speed-unknown  speed ratio=0.940621 (-59379 ppm)  [conf=2.7]
+  1992-05-02 Santa Rosa, California (LB-08503)->1992-05-02 Sonoma County Fairgrounds (Santa Rosa, California) (LB-01578): staircase/splice  speed ratio=1.000011 (+11 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+
+=== RESIDUAL CORRELATION MATRIX ===
+  4 pair(s)/source(s) speed-unknown (v2 confidence < 6.0) — routed to fingerprint path only
+          LB-08503  LB-05944  LB-04030  LB-01578
+  LB-08503     1.000     0.958     0.003     0.878
+  LB-05944     0.958     1.000     0.003     0.934
+  LB-04030     0.003     0.003     1.000     0.002
+  LB-01578     0.878     0.934     0.002     1.000
+
+=== SECONDARY MATCH (windowed coverage + quiet-segment hiss + fingerprint) ===
+  3 cross-family pair(s) — computing secondary evidence ...
+  No secondary same-source evidence found.
+
+=== LAG CURVES / SPEED (re-run vs central ref=1992-05-02 Santa Rosa, California, (LB-05944)) ===
+  anchors: 0:03:50, 0:13:22, 0:22:52, 0:27:40, 0:37:26, 0:38:53, 0:50:46, 1:00:13, 1:06:26, 1:16:26, 1:23:18, 1:25:18
+  1992-05-02 Santa Rosa, California, (LB-05944)->1992-05-02 Santa Rosa, California (LB-08503): staircase/splice  speed ratio=0.999958 (-42 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  1992-05-02 Santa Rosa, California, (LB-05944)->1992-05-02 Santa Rosa, California, J.T. Grace pavilion, Sonoma County Fair Grandstand (LB-04030): speed-unknown  speed ratio=0.935858 (-64142 ppm)
+  1992-05-02 Santa Rosa, California, (LB-05944)->1992-05-02 Sonoma County Fairgrounds (Santa Rosa, California) (LB-01578): staircase/splice  speed ratio=1.000062 (+62 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+
+=== CLUSTERS ===
+  Family 1: 1992-05-02 Santa Rosa, California (LB-08503), 1992-05-02 Santa Rosa, California, (LB-05944), 1992-05-02 Sonoma County Fairgrounds (Santa Rosa, California) (LB-01578)  (mean intra-corr 0.923 [high confidence])
+  Family 2: 1992-05-02 Santa Rosa, California, J.T. Grace pavilion, Sonoma County Fair Grandstand (LB-04030)  (mean intra-corr 1.000)
+  Distinct source families: 2
+
+=== LINEAGE EVIDENCE (interpret manually) ===
+    source   HF ceiling  noise floor  DC asymmetry
+  1992-05-02 Santa Rosa, California (LB-08503)       3.0kHz      -92.5dB      +0.00098
+  1992-05-02 Santa Rosa, California, (LB-05944)       3.0kHz      -83.8dB      +0.00275
+  1992-05-02 Santa Rosa, California, J.T. Grace pavilion, Sonoma County Fair Grandstand (LB-04030)       3.0kHz      -92.7dB      +0.00098
+  1992-05-02 Sonoma County Fairgrounds (Santa Rosa, California) (LB-01578)       3.0kHz      -77.5dB      +0.00548
+  (HF ceiling capped by 8000 Hz Nyquist at analysis_sr=16000; run lineage at native rate for real format discrimination)
+  (DC asymmetry is a taper/equipment signature — not a reliable source-identity marker)
+
+=== DIAGNOSTICS ===
+  [DISTINCT SOURCE] 1992-05-02 Santa Rosa, California, J.T. Grace pavilion, Sonoma County Fair Grandstand (LB-04030) (-64142 ppm speed offset, best cross-family corr 0.003): near-zero correlation to all other sources — entirely different recording
+  [MEDIUM CONFIDENCE] Family 1 (1992-05-02 Santa Rosa, California (LB-08503) / 1992-05-02 Sonoma County Fairgrounds (Santa Rosa, California) (LB-01578)): corr 0.878 — same source likely but significant processing (resampling, level boost, EQ) may explain reduced correlation
+
+[6] Archiving run …
+  Archive → /home/tjenkins/Documents/losslessbob/data/tapematch/runs/20260702_145900_1992-05-02
+
+[7] Logging to observations.db …
+  Logged: 1 run, 4 sources, 6 pairs
+
+Report → /home/tjenkins/Documents/losslessbob/tools/tapematch/last_run_report.md

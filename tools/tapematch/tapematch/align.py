@@ -146,6 +146,35 @@ def lag_curve(ref_mono, other_mono, sr, anchors, cfg):
     return rows
 
 
+def residual_ppm_from_lag_curve(rows) -> tuple[float, float]:
+    """Closed-form residual speed error from a post-resample lag curve.
+
+    CC_TAPEMATCH_FIXES.md Task 6.1. `rows`: [(anchor_sec, lag_sec_or_None), ...]
+    measured AFTER a coarse resample. lag(t) = ppm*1e-6*t + c, so
+    slope*1e6 == residual ppm.
+
+    Robust by construction: refuses an estimate on fewer than 4 valid anchors
+    or a poor linear fit — staircase lag curves (gap edits/splices) must fall
+    through to the staircase path untouched rather than being "corrected".
+
+    Args:
+        rows: list of (anchor_sec, lag_sec_or_None) tuples.
+
+    Returns:
+        (ppm, r_squared). (0.0, 0.0) when there are fewer than 4 valid
+        (non-None-lag) anchors.
+    """
+    pts = [(a, l) for a, l in rows if l is not None]
+    if len(pts) < 4:
+        return 0.0, 0.0
+    t = np.array([p[0] for p in pts]); lag = np.array([p[1] for p in pts])
+    slope, intercept = np.polyfit(t, lag, 1)
+    pred = slope * t + intercept
+    ss_res = float(((lag - pred) ** 2).sum())
+    ss_tot = float(((lag - lag.mean()) ** 2).sum()) + 1e-12
+    return float(slope * 1e6), 1.0 - ss_res / ss_tot
+
+
 def interpret_curve(rows, cfg):
     """Classify the lag-vs-position curve and estimate speed ratio."""
     a = cfg["align"]

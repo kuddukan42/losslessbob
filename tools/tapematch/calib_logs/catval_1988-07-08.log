@@ -1,0 +1,104 @@
+=== tapematch session: 1988-07-08  [20260702_165631] ===
+
+[1] Querying DB …
+  5 entries — Forum de Montreal, Montreal, Quebec, Canada
+    LB-02088
+    LB-02767
+    LB-03140
+    LB-08434
+    LB-14669
+
+[2] Resolving paths from my_collection …
+  Found 5/5
+    LB-02088: /mnt/DYLAN1/Concerts/1988/1988-07-08 Forum de Montreal, Montreal, Quebec, Canada (LB-02088)
+    LB-02767: /mnt/DYLAN1/Concerts/1988/1988-07-08 Montreal (LB-02767)
+    LB-03140: /mnt/DYLAN1/Concerts/1988/1988-07-08 Montreal (LB-03140)
+    LB-08434: /mnt/DYLAN1/Concerts/1988/1988-07-08 Montreal (LB-08434)
+    LB-14669: /mnt/DYLAN1/Concerts/1988/1988-07-08 Montreal (LB-14669)
+
+[3] Cleaning /mnt/DATA0/examples/tapematch …
+
+[4] Copying 5 folders to /mnt/DATA0/examples/tapematch …
+  Copying LB-02088: 1988-07-08 Forum de Montreal, Montreal, Quebec, Canada (LB-02088) …
+  Copying LB-02767: 1988-07-08 Montreal (LB-02767) …
+  Copying LB-03140: 1988-07-08 Montreal (LB-03140) …
+  Copying LB-08434: 1988-07-08 Montreal (LB-08434) …
+  Copying LB-14669: 1988-07-08 Montreal (LB-14669) …
+
+[5] Running tapematch …
+  curator lineage pairs loaded: 677 (from /home/tjenkins/Documents/losslessbob/data/losslessbob.db)
+  est. peak RAM ~0.9 GB (5 sources, largest 1:19:54)
+=== INGEST / TRIM ===
+  1988-07-08 Forum de Montreal, Montreal, Quebec, Canada (LB-02088): 14 tracks, 1:17:38
+  1988-07-08 Montreal (LB-02767): 14 tracks, 1:19:45
+  1988-07-08 Montreal (LB-03140): 14 tracks, 1:17:13
+  1988-07-08 Montreal (LB-08434): 14 tracks, 1:19:54
+  1988-07-08 Montreal (LB-14669): 14 tracks, 1:18:25
+
+=== TRIM (performance envelope) ===
+  1988-07-08 Forum de Montreal, Montreal, Quebec, Canada (LB-02088): trimmed 0:00:04 head, 0:00:42 tail -> performance 1:16:52
+  1988-07-08 Montreal (LB-02767): trimmed 0:00:15 head, 0:01:32 tail -> performance 1:17:58
+  1988-07-08 Montreal (LB-03140): trimmed 0:00:07 head, 0:00:08 tail -> performance 1:16:58
+  1988-07-08 Montreal (LB-08434): trimmed 0:00:44 head, 0:00:47 tail -> performance 1:18:22
+  1988-07-08 Montreal (LB-14669): trimmed 0:01:27 head, 0:00:36 tail -> performance 1:16:22
+
+=== ANCHORS (ref=1988-07-08 Forum de Montreal, Montreal, Quebec, Canada (LB-02088)) ===
+  0:01:29, 0:07:43, 0:17:33, 0:23:20, 0:30:16, 0:36:47, 0:44:28, 0:49:12, 0:55:41, 1:02:03, 1:04:35, 1:15:05
+
+=== LAG CURVES / SPEED (vs ref) ===
+  1988-07-08 Forum de Montreal, Montreal, Quebec, Canada (LB-02088)->1988-07-08 Montreal (LB-02767): speed-unknown  speed ratio=0.982891 (-17109 ppm)  [conf=2.8]
+  1988-07-08 Forum de Montreal, Montreal, Quebec, Canada (LB-02088)->1988-07-08 Montreal (LB-03140): speed-unknown  speed ratio=1.001609 (+1609 ppm)  [conf=2.1]
+  1988-07-08 Forum de Montreal, Montreal, Quebec, Canada (LB-02088)->1988-07-08 Montreal (LB-08434): speed-unknown  speed ratio=0.977855 (-22145 ppm)  [conf=2.6]
+  1988-07-08 Forum de Montreal, Montreal, Quebec, Canada (LB-02088)->1988-07-08 Montreal (LB-14669): constant-speed-offset  speed ratio=1.003547 (+3547 ppm)
+
+=== RESIDUAL CORRELATION MATRIX ===
+  11 pair(s)/source(s) speed-unknown (v2 confidence < 6.0) — routed to fingerprint path only
+          LB-02088  LB-02767  LB-03140  LB-08434  LB-14669
+  LB-02088     1.000     0.003     0.004     0.006     0.005
+  LB-02767     0.003     1.000     0.004     0.007     0.004
+  LB-03140     0.004     0.004     1.000     0.012     0.005
+  LB-08434     0.006     0.007     0.012     1.000     0.005
+  LB-14669     0.005     0.004     0.005     0.005     1.000
+
+=== SECONDARY MATCH (windowed coverage + quiet-segment hiss + fingerprint) ===
+  10 cross-family pair(s) — computing secondary evidence ...
+  No secondary same-source evidence found.
+
+=== LAG CURVES / SPEED (re-run vs central ref=1988-07-08 Montreal (LB-08434)) ===
+  anchors: 0:02:50, 0:07:18, 0:18:28, 0:22:14, 0:27:54, 0:38:07, 0:40:37, 0:50:46, 0:53:35, 1:02:58, 1:06:46, 1:15:24
+  1988-07-08 Montreal (LB-08434)->1988-07-08 Forum de Montreal, Montreal, Quebec, Canada (LB-02088): speed-unknown  speed ratio=1.022623 (+22623 ppm)
+  1988-07-08 Montreal (LB-08434)->1988-07-08 Montreal (LB-02767): speed-unknown  speed ratio=1.004037 (+4037 ppm)
+  1988-07-08 Montreal (LB-08434)->1988-07-08 Montreal (LB-03140): constant-speed-offset  speed ratio=1.021408 (+21408 ppm)
+  1988-07-08 Montreal (LB-08434)->1988-07-08 Montreal (LB-14669): speed-unknown  speed ratio=1.023299 (+23299 ppm)
+
+=== CLUSTERS ===
+  Family 1: 1988-07-08 Forum de Montreal, Montreal, Quebec, Canada (LB-02088)  (mean intra-corr 1.000)
+  Family 2: 1988-07-08 Montreal (LB-02767)  (mean intra-corr 1.000)
+  Family 3: 1988-07-08 Montreal (LB-03140)  (mean intra-corr 1.000)
+  Family 4: 1988-07-08 Montreal (LB-08434)  (mean intra-corr 1.000)
+  Family 5: 1988-07-08 Montreal (LB-14669)  (mean intra-corr 1.000)
+  Distinct source families: 5
+
+=== LINEAGE EVIDENCE (interpret manually) ===
+    source   HF ceiling  noise floor  DC asymmetry
+  1988-07-08 Forum de Montreal, Montreal, Quebec, Canada (LB-02088)       3.0kHz      -77.8dB      -0.00008
+  1988-07-08 Montreal (LB-02767)       4.0kHz      -81.0dB      +0.00473
+  1988-07-08 Montreal (LB-03140)       2.0kHz      -73.9dB      +0.00076
+  1988-07-08 Montreal (LB-08434)       4.0kHz      -84.0dB      -0.00004
+  1988-07-08 Montreal (LB-14669)       4.0kHz      -83.4dB      +0.00000
+  (HF ceiling capped by 8000 Hz Nyquist at analysis_sr=16000; run lineage at native rate for real format discrimination)
+  (DC asymmetry is a taper/equipment signature — not a reliable source-identity marker)
+
+=== DIAGNOSTICS ===
+  [DISTINCT SOURCE] 1988-07-08 Forum de Montreal, Montreal, Quebec, Canada (LB-02088) (+22623 ppm speed offset, best cross-family corr 0.006): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1988-07-08 Montreal (LB-02767) (+4037 ppm speed offset, best cross-family corr 0.007): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1988-07-08 Montreal (LB-03140) (+21408 ppm speed offset, best cross-family corr 0.012): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1988-07-08 Montreal (LB-14669) (+23299 ppm speed offset, best cross-family corr 0.005): near-zero correlation to all other sources — entirely different recording
+
+[6] Archiving run …
+  Archive → /home/tjenkins/Documents/losslessbob/data/tapematch/runs/20260702_165631_1988-07-08
+
+[7] Logging to observations.db …
+  Logged: 1 run, 5 sources, 10 pairs
+
+Report → /home/tjenkins/Documents/losslessbob/tools/tapematch/last_run_report.md

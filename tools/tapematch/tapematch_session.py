@@ -34,6 +34,8 @@ from datetime import datetime
 from itertools import combinations
 from pathlib import Path
 
+import emb_live  # TODO-200: live emb_score/emb_score_global for addon_links.rule_d
+
 try:
     from bs4 import BeautifulSoup
     _BS4 = True
@@ -128,6 +130,38 @@ CREATE TABLE IF NOT EXISTS pairs (
     track_count_b       INTEGER,
     dominant_ext_a      TEXT,
     dominant_ext_b      TEXT,
+    -- Secondary-match per-pair metrics (CC_TAPEMATCH_FIXES.md Tasks 3/4). Nullable;
+    -- NULL on rows written before this column existed. Let verdict.py re-score
+    -- threshold changes from stored data without re-running audio (score --cached).
+    windowed_frac       REAL,
+    hiss_frac           REAL,
+    hiss_median         REAL,
+    fp_score            REAL,
+    fp_triplet_score    REAL,           -- ratio-invariant triplet-fingerprint Dice (Task 7)
+    -- Tier B pretrained-embedding cosine scores (CC_TAPEMATCH_ADDON.md Task 6,
+    -- addon_links rule_d). Nullable; NULL means "not scored yet" (Rule D
+    -- abstains). Populated offline by persist_emb_scores.py from
+    -- fullset_pairs_scores.json AND, when addon_links.rule_d.live_embed is on,
+    -- live during a session by emb_live.py (TODO-200). emb_score = aligned
+    -- +/-2s-window cosine; emb_score_global = whole-recording global cosine-max.
+    emb_score           REAL,
+    emb_score_global    REAL,
+    -- Shared-flaw event fingerprint (CC_TAPEMATCH_ADDON.md Task 2). Nullable;
+    -- NULL means "not measured" (enabled: false by default), never 0.0/0.
+    flaw_match_score    REAL,           -- matched/min(|A|,|B|) dropout+click+cut events
+    flaw_n_events_a     INTEGER,        -- event count on side A (verdict min_events gate)
+    flaw_n_events_b     INTEGER,        -- event count on side B (verdict min_events gate)
+    -- Spectral-ratio stationarity (CC_TAPEMATCH_ADDON.md Task 3). Nullable; NULL
+    -- means "not measured" (enabled: false by default), never 0.0. Conjunctive-only
+    -- signal -- no verdict OR-path; combination rules are Task 5.
+    spec_stationarity   REAL,
+    -- Band-limited envelope correlation (CC_TAPEMATCH_ADDON.md Task 4). Nullable;
+    -- NULL means "not measured" (enabled: false by default), never 0.0. Conjunctive-only
+    -- signal, high same-show collision risk -- no verdict OR-path even if calibrated
+    -- (hard spec rule); combination rules are Task 5.
+    env_corr             REAL,
+    nyquist_capped_a    INTEGER,        -- 1=hf_ceiling reading is nyquist-capped (unknown)
+    nyquist_capped_b    INTEGER,
     lb_says_same        INTEGER,        -- 1=yes 0=no NULL=silent/unknown
     lb_relation_text    TEXT,           -- snippet from LB page mentioning the other LB
     human_judgment      TEXT,           -- confirmed_same/confirmed_different/uncertain/lb_wrong (fill later)
@@ -157,6 +191,35 @@ WHERE p.id = (
 def open_obs_db() -> sqlite3.Connection:
     conn = sqlite3.connect(str(OBS_DB_PATH))
     conn.executescript(OBS_SCHEMA)
+    # Idempotent migration for DBs created before the secondary-match metric
+    # columns existed (CC_TAPEMATCH_FIXES.md Tasks 3/4). ALTER TABLE ADD COLUMN
+    # is a no-op-by-exception when the column is already present.
+    for col, decl in (
+        ("windowed_frac", "REAL"), ("hiss_frac", "REAL"),
+        ("hiss_median", "REAL"), ("fp_score", "REAL"),
+        ("fp_triplet_score", "REAL"),
+        # CC_TAPEMATCH_ADDON.md Task 6 (Tier B, pretrained-embedding cosine
+        # scores; addon_links rule_d). Populated offline by persist_emb_scores.py
+        # and, when rule_d.live_embed is on, live by emb_live.py (TODO-200).
+        ("emb_score", "REAL"), ("emb_score_global", "REAL"),
+        # CC_TAPEMATCH_ADDON.md Task 2 (Tier A, shared-flaw event fingerprint).
+        ("flaw_match_score", "REAL"),
+        ("flaw_n_events_a", "INTEGER"), ("flaw_n_events_b", "INTEGER"),
+        # CC_TAPEMATCH_ADDON.md Task 3 (Tier A, spectral-ratio stationarity).
+        ("spec_stationarity", "REAL"),
+        # CC_TAPEMATCH_ADDON.md Task 4 (Tier A, band-limited envelope correlation).
+        ("env_corr", "REAL"),
+        ("nyquist_capped_a", "INTEGER"), ("nyquist_capped_b", "INTEGER"),
+        # CC_TAPEMATCH_ADDON.md Task 1 (Tier 0, FN forensic audit): 1=curator
+        # label flagged as likely-wrong by audit_fn.py. NULL = not assessed
+        # (never 0 for "assessed clean" — see audit_fn.py docstring). Tier C
+        # training/eval excludes label_suspect=1 rows.
+        ("label_suspect", "INTEGER"),
+    ):
+        try:
+            conn.execute(f"ALTER TABLE pairs ADD COLUMN {col} {decl}")
+        except sqlite3.OperationalError:
+            pass  # column already exists
     conn.commit()
     return conn
 
@@ -632,6 +695,23 @@ def insert_pairs(conn: sqlite3.Connection, run_id: str, date_iso: str,
         corr = matrix[i][j]
         same_family = sa["family_id"] == sb["family_id"]
 
+        # Secondary-match per-pair metrics (Tasks 3/4). Keyed by original folder
+        # names in either order; absent for pairs the secondary pass skipped.
+        sec_pairs = results.get("secondary_pairs", {}) or {}
+        sec = sec_pairs.get(f"{na}|{nb}") or sec_pairs.get(f"{nb}|{na}") or {}
+        windowed_frac = sec.get("windowed_frac")
+        hiss_frac_v = sec.get("hiss_frac")
+        hiss_median_v = sec.get("hiss_median")
+        fp_score_v = sec.get("fp_score")
+        fp_triplet_v = sec.get("fp_triplet_score")
+        flaw_score_v = sec.get("flaw_match_score")
+        flaw_n_a = sec.get("flaw_n_events_a")
+        flaw_n_b = sec.get("flaw_n_events_b")
+        spec_stationarity_v = sec.get("spec_stationarity")
+        env_corr_v = sec.get("env_corr")
+        nq_a = int(bool(sa["nyquist_capped"])) if sa.get("nyquist_capped") is not None else None
+        nq_b = int(bool(sb["nyquist_capped"])) if sb.get("nyquist_capped") is not None else None
+
         # Check both directions; prefer a definitive answer
         says_same_ab, rel_ab = extract_lb_relationship(lb_a, lb_b) if lb_a and lb_b else (None, "")
         says_same_ba, rel_ba = extract_lb_relationship(lb_b, lb_a) if lb_a and lb_b else (None, "")
@@ -650,8 +730,12 @@ def insert_pairs(conn: sqlite3.Connection, run_id: str, date_iso: str,
                 hf_ceiling_hz_a, hf_ceiling_hz_b, noise_floor_db_a, noise_floor_db_b,
                 dc_asymmetry_a, dc_asymmetry_b, perf_dur_sec_a, perf_dur_sec_b,
                 track_count_a, track_count_b, dominant_ext_a, dominant_ext_b,
+                windowed_frac, hiss_frac, hiss_median, fp_score, fp_triplet_score,
+                flaw_match_score, flaw_n_events_a, flaw_n_events_b, spec_stationarity,
+                env_corr,
+                nyquist_capped_a, nyquist_capped_b,
                 lb_says_same, lb_relation_text, human_judgment, human_notes, run_at)
-               VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+               VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
             (run_id, date_iso, lb_a, lb_b, na, nb,
              corr, "same_family" if same_family else "different_family",
              sa["family_id"], sb["family_id"],
@@ -662,6 +746,10 @@ def insert_pairs(conn: sqlite3.Connection, run_id: str, date_iso: str,
              sa["perf_dur_sec"], sb["perf_dur_sec"],
              sa["track_count"], sb["track_count"],
              _dominant_ext(root_dir / na), _dominant_ext(root_dir / nb),
+             windowed_frac, hiss_frac_v, hiss_median_v, fp_score_v, fp_triplet_v,
+             flaw_score_v, flaw_n_a, flaw_n_b, spec_stationarity_v,
+             env_corr_v,
+             nq_a, nq_b,
              lb_says_same, lb_rel, None, None, run_at),
         )
 
@@ -1503,6 +1591,12 @@ def _log_to_obs_db(run_id: str, run_at: str, date_iso: str, location: str,
         )
         insert_sources(conn, run_id, date_iso, results, found_folders, run_at, root_dir=root_dir)
         insert_pairs(conn, run_id, date_iso, results, found_folders, run_at, root_dir=root_dir)
+        # TODO-200: populate emb_score/emb_score_global so addon_links.rule_d fires
+        # live. No-op unless rule_d.enabled AND rule_d.live_embed; any failure leaves
+        # emb NULL (Rule D abstains). Runs before commit, same transaction.
+        emb_live.populate_live_emb_scores(
+            conn, run_id, date_iso,
+            emb_live.sources_from_results(results, found_folders))
         conn.commit()
         n_pairs = len(results["correlation_matrix"]["names"])
         n_pairs = n_pairs * (n_pairs - 1) // 2

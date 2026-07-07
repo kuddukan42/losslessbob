@@ -1,0 +1,104 @@
+=== tapematch session: 1996-07-21  [20260702_102657] ===
+
+[1] Querying DB …
+  5 entries — Pori Jazz Fest, Kirjurinluoto, Pori, Finland
+    LB-00513
+    LB-04861
+    LB-06984
+    LB-06985
+    LB-06986
+
+[2] Resolving paths from my_collection …
+  Found 5/5
+    LB-00513: /mnt/DYLAN1/Concerts/1996/1996-07-21 Pori Jazz Fest, Kirjurinluoto, Pori, Finland (LB-00513)
+    LB-04861: /mnt/DYLAN1/Concerts/1996/1996-07-21 Pori, Finland, Kirjurinluoto, 31st International Pori Jazz Festival (LB-04861)
+    LB-06984: /mnt/DYLAN1/Concerts/1996/1996-07-21 Kirjurinluoto, Pori (LB-06984)
+    LB-06985: /mnt/DYLAN1/Concerts/1996/1996-07-21 Kirjurinluoto, Pori (LB-06985)
+    LB-06986: /mnt/DYLAN1/Concerts/1996/1996-07-21 Kirjurinluoto, Pori (LB-06986)
+
+[3] Cleaning /mnt/DATA0/examples/tapematch …
+
+[4] Copying 5 folders to /mnt/DATA0/examples/tapematch …
+  Copying LB-00513: 1996-07-21 Pori Jazz Fest, Kirjurinluoto, Pori, Finland (LB-00513) …
+  Copying LB-04861: 1996-07-21 Pori, Finland, Kirjurinluoto, 31st International Pori Jazz Festival (LB-04861) …
+  Copying LB-06984: 1996-07-21 Kirjurinluoto, Pori (LB-06984) …
+  Copying LB-06985: 1996-07-21 Kirjurinluoto, Pori (LB-06985) …
+  Copying LB-06986: 1996-07-21 Kirjurinluoto, Pori (LB-06986) …
+
+[5] Running tapematch …
+  est. peak RAM ~1.0 GB (5 sources, largest 1:31:27)
+=== INGEST / TRIM ===
+  1996-07-21 Kirjurinluoto, Pori (LB-06984): 11 tracks, 1:09:44
+  1996-07-21 Kirjurinluoto, Pori (LB-06985): 14 tracks, 1:31:27
+  1996-07-21 Kirjurinluoto, Pori (LB-06986): 14 tracks, 1:29:52
+  1996-07-21 Pori Jazz Fest, Kirjurinluoto, Pori, Finland (LB-00513): 12 tracks, 1:30:00
+  1996-07-21 Pori, Finland, Kirjurinluoto, 31st International Pori Jazz Festival (LB-04861): 12 tracks, 1:28:22
+
+=== TRIM (performance envelope) ===
+  1996-07-21 Kirjurinluoto, Pori (LB-06984): trimmed 0:00:00 head, 0:00:00 tail -> performance 1:09:44
+  1996-07-21 Kirjurinluoto, Pori (LB-06985): trimmed 0:01:08 head, 0:00:42 tail -> performance 1:29:38
+  1996-07-21 Kirjurinluoto, Pori (LB-06986): trimmed 0:00:20 head, 0:00:38 tail -> performance 1:28:53
+  1996-07-21 Pori Jazz Fest, Kirjurinluoto, Pori, Finland (LB-00513): trimmed 0:00:20 head, 0:00:32 tail -> performance 1:29:07
+  1996-07-21 Pori, Finland, Kirjurinluoto, 31st International Pori Jazz Festival (LB-04861): trimmed 0:01:26 head, 0:00:16 tail -> performance 1:26:40
+
+  [INCOMPLETE?] — duration well below group median (1:28:53):
+    1996-07-21 Kirjurinluoto, Pori (LB-06984): 1:09:44 (21.6% shorter)
+
+=== ANCHORS (ref=1996-07-21 Kirjurinluoto, Pori (LB-06984)) ===
+  0:00:30, 0:11:37, 0:12:02, 0:22:30, 0:23:59, 0:29:50, 0:36:32, 0:44:49, 0:48:02, 0:56:06, 1:00:30, 1:08:44
+
+=== LAG CURVES / SPEED (vs ref) ===
+  1996-07-21 Kirjurinluoto, Pori (LB-06984)->1996-07-21 Kirjurinluoto, Pori (LB-06985): staircase/splice  speed ratio=1.000000 (+0 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  1996-07-21 Kirjurinluoto, Pori (LB-06984)->1996-07-21 Kirjurinluoto, Pori (LB-06986): constant-speed-offset  speed ratio=1.005500 (+5500 ppm)
+  1996-07-21 Kirjurinluoto, Pori (LB-06984)->1996-07-21 Pori Jazz Fest, Kirjurinluoto, Pori, Finland (LB-00513): constant-speed-offset  speed ratio=1.006500 (+6500 ppm)
+  1996-07-21 Kirjurinluoto, Pori (LB-06984)->1996-07-21 Pori, Finland, Kirjurinluoto, 31st International Pori Jazz Festival (LB-04861): staircase/splice  speed ratio=1.000000 (+0 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+
+=== RESIDUAL CORRELATION MATRIX ===
+          LB-06984  LB-06985  LB-06986  LB-00513  LB-04861
+  LB-06984     1.000     0.003     0.005     0.006     0.003
+  LB-06985     0.003     1.000     0.003     0.003     0.019
+  LB-06986     0.005     0.003     1.000     0.020     0.003
+  LB-00513     0.006     0.003     0.020     1.000     0.002
+  LB-04861     0.003     0.019     0.003     0.002     1.000
+
+=== SECONDARY MATCH (windowed coverage + quiet-segment hiss + fingerprint) ===
+  10 cross-family pair(s) — computing secondary evidence ...
+  LB-06986 / LB-00513: windowed 0.99 (176 win, med 0.897); hiss 0.59 (116 segs, med 0.737); fingerprint Dice 0.600 (43833 / 43744 hashes)  [primary corr 0.020] → SECONDARY LINK
+
+=== LAG CURVES / SPEED (re-run vs central ref=1996-07-21 Pori Jazz Fest, Kirjurinluoto, Pori, Finland (LB-00513)) ===
+  anchors: 0:04:21, 0:10:16, 0:18:58, 0:22:50, 0:31:14, 0:42:38, 0:46:07, 0:53:54, 1:02:22, 1:09:26, 1:19:03, 1:28:49
+  1996-07-21 Pori Jazz Fest, Kirjurinluoto, Pori, Finland (LB-00513)->1996-07-21 Kirjurinluoto, Pori (LB-06984): constant-speed-offset  speed ratio=0.994000 (-6000 ppm)
+  1996-07-21 Pori Jazz Fest, Kirjurinluoto, Pori, Finland (LB-00513)->1996-07-21 Kirjurinluoto, Pori (LB-06985): constant-speed-offset  speed ratio=0.993500 (-6500 ppm)
+  1996-07-21 Pori Jazz Fest, Kirjurinluoto, Pori, Finland (LB-00513)->1996-07-21 Kirjurinluoto, Pori (LB-06986): constant-speed-offset  speed ratio=1.000500 (+500 ppm)
+  1996-07-21 Pori Jazz Fest, Kirjurinluoto, Pori, Finland (LB-00513)->1996-07-21 Pori, Finland, Kirjurinluoto, 31st International Pori Jazz Festival (LB-04861): constant-speed-offset  speed ratio=0.996500 (-3500 ppm)
+
+=== CLUSTERS ===
+  Family 1: 1996-07-21 Kirjurinluoto, Pori (LB-06984)  (mean intra-corr 1.000)
+  Family 2: 1996-07-21 Kirjurinluoto, Pori (LB-06985), 1996-07-21 Pori, Finland, Kirjurinluoto, 31st International Pori Jazz Festival (LB-04861)  (mean intra-corr 0.019 [low confidence])
+  Family 3: 1996-07-21 Kirjurinluoto, Pori (LB-06986), 1996-07-21 Pori Jazz Fest, Kirjurinluoto, Pori, Finland (LB-00513)  (mean intra-corr 0.020 [fp-linked])  [secondary: LB-06986/LB-00513 via windowed 0.99+hiss 0.59+fp 0.600]
+  Distinct source families: 3
+
+=== LINEAGE EVIDENCE (interpret manually) ===
+    source   HF ceiling  noise floor  DC asymmetry
+  1996-07-21 Kirjurinluoto, Pori (LB-06984)       3.0kHz      -74.6dB      -0.00001
+  1996-07-21 Kirjurinluoto, Pori (LB-06985)       4.0kHz      -83.0dB      -0.00002
+  1996-07-21 Kirjurinluoto, Pori (LB-06986)       3.0kHz      -80.3dB      -0.00003
+  1996-07-21 Pori Jazz Fest, Kirjurinluoto, Pori, Finland (LB-00513)       3.0kHz      -80.1dB      -0.00002
+  1996-07-21 Pori, Finland, Kirjurinluoto, 31st International Pori Jazz Festival (LB-04861)       4.0kHz      -82.9dB      -0.01047
+  (HF ceiling capped by 8000 Hz Nyquist at analysis_sr=16000; run lineage at native rate for real format discrimination)
+  (DC asymmetry is a taper/equipment signature — not a reliable source-identity marker)
+
+=== DIAGNOSTICS ===
+  [INCOMPLETE] 1996-07-21 Kirjurinluoto, Pori (LB-06984): 1:09:44 vs median 1:28:53 (21.6% shorter) — likely missing material
+  [DISTINCT SOURCE] 1996-07-21 Kirjurinluoto, Pori (LB-06984) (-6000 ppm speed offset, best cross-family corr 0.006): near-zero correlation to all other sources — entirely different recording
+  [SECONDARY SAME-SOURCE] 1996-07-21 Kirjurinluoto, Pori (LB-06986) / 1996-07-21 Pori Jazz Fest, Kirjurinluoto, Pori, Finland (LB-00513): windowed coverage 0.99 (176 win); hiss frac 0.59 (116 segs); fingerprint Dice 0.600 — primary corr 0.020 (below threshold); likely remaster or heavily edited copy of same tape
+
+[6] Archiving run …
+  Archive → /home/tjenkins/Documents/losslessbob/data/tapematch/runs/20260702_102657_1996-07-21
+
+[7] Logging to observations.db …
+  Logged: 1 run, 5 sources, 10 pairs
+
+Report → /home/tjenkins/Documents/losslessbob/tools/tapematch/last_run_report.md

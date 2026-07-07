@@ -1,0 +1,27 @@
+cache build: 200 dates, 1251 source-jobs to do (resumable), 48 slots
+  decoded 50/1251 source-jobs
+  decoded 100/1251 source-jobs
+  decoded 150/1251 source-jobs
+  decoded 200/1251 source-jobs
+  decoded 250/1251 source-jobs
+  decoded 300/1251 source-jobs
+  decoded 350/1251 source-jobs
+  decoded 400/1251 source-jobs
+  decoded 450/1251 source-jobs
+  decoded 500/1251 source-jobs
+  decoded 550/1251 source-jobs
+  decoded 600/1251 source-jobs
+  decoded 650/1251 source-jobs
+  decoded 700/1251 source-jobs
+  decoded 750/1251 source-jobs
+  decoded 800/1251 source-jobs
+  decoded 850/1251 source-jobs
+  decoded 900/1251 source-jobs
+  decoded 950/1251 source-jobs
+  decoded 1000/1251 source-jobs
+  decoded 1050/1251 source-jobs
+  decoded 1100/1251 source-jobs
+  decoded 1150/1251 source-jobs
+  decoded 1200/1251 source-jobs
+  decoded 1250/1251 source-jobs
+cache assembled: 61253 windows from 1278 shards -> /home/tjenkins/Documents/losslessbob/tools/tapematch/embedding/audio_cache/windows.npy

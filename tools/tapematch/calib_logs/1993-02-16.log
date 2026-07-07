@@ -1,0 +1,159 @@
+=== tapematch session: 1993-02-16  [20260702_150239] ===
+
+[1] Querying DB …
+  9 entries — Utrecht
+    LB-02338
+    LB-06011
+    LB-06019
+    LB-06844
+    LB-08668
+    LB-08739
+    LB-09249
+    LB-15262
+    LB-15264
+
+[2] Resolving paths from my_collection …
+  Found 9/9
+    LB-02338: /mnt/DYLAN1/Concerts/1993/1993-02-16 Utrecht (LB-02338)
+    LB-06011: /mnt/DYLAN1/Concerts/1993/1993-02-16 Utrecht (Holland) (LB-06011)
+    LB-06019: /mnt/DYLAN1/Concerts/1993/1993-02-16 Utrecht, The Netherlands (LB-06019)
+    LB-06844: /mnt/DYLAN1/Concerts/1993/1993-02-16 Utrecht, Holland (LB-06844)
+    LB-08668: /mnt/DYLAN1/Concerts/1993/1993-02-16 Utrecht, Holland (LB-08668)
+    LB-08739: /mnt/DYLAN1/Concerts/1993/1993-02-16 Vredenburg, Utrecht (LB-08739)
+    LB-09249: /mnt/DYLAN1/Concerts/1993/1993-02-16 utrecht holland (LB-09249)
+    LB-15262: /mnt/DYLAN1/Concerts/1993/1993-02-16 Utrecht (LB-15262)
+    LB-15264: /mnt/DYLAN1/LB HOPPER/bd1993-02-16 Utrecht (sbd)-LB-15264
+
+[3] Cleaning /mnt/DATA0/examples/tapematch …
+
+[4] Copying 9 folders to /mnt/DATA0/examples/tapematch …
+  Copying LB-02338: 1993-02-16 Utrecht (LB-02338) …
+  Copying LB-06011: 1993-02-16 Utrecht (Holland) (LB-06011) …
+  Copying LB-06019: 1993-02-16 Utrecht, The Netherlands (LB-06019) …
+  Copying LB-06844: 1993-02-16 Utrecht, Holland (LB-06844) …
+  Copying LB-08668: 1993-02-16 Utrecht, Holland (LB-08668) …
+  Copying LB-08739: 1993-02-16 Vredenburg, Utrecht (LB-08739) …
+  Copying LB-09249: 1993-02-16 utrecht holland (LB-09249) …
+  Copying LB-15262: 1993-02-16 Utrecht (LB-15262) …
+  Copying LB-15264: bd1993-02-16 Utrecht (sbd)-LB-15264 …
+
+[5] Running tapematch …
+  curator lineage pairs loaded: 677 (from /home/tjenkins/Documents/losslessbob/data/losslessbob.db)
+  est. peak RAM ~1.4 GB (9 sources, largest 2:25:12)
+=== INGEST / TRIM ===
+  1993-02-16 Utrecht (Holland) (LB-06011): 15 tracks, 1:51:19
+  1993-02-16 Utrecht (LB-02338): 18 tracks, 2:07:11
+  1993-02-16 Utrecht (LB-15262): 18 tracks, 2:03:42
+  1993-02-16 Utrecht, Holland (LB-06844): 22 tracks, 2:25:12
+  1993-02-16 Utrecht, Holland (LB-08668): 18 tracks, 2:08:00
+  1993-02-16 Utrecht, The Netherlands (LB-06019): 18 tracks, 2:08:43
+  1993-02-16 Vredenburg, Utrecht (LB-08739): 18 tracks, 2:05:33
+  1993-02-16 utrecht holland (LB-09249): 18 tracks, 2:08:23
+  bd1993-02-16 Utrecht (sbd)-LB-15264: 18 tracks, 2:06:37
+
+=== TRIM (performance envelope) ===
+  1993-02-16 Utrecht (Holland) (LB-06011): trimmed 0:00:22 head, 0:00:00 tail -> performance 1:50:58
+  1993-02-16 Utrecht (LB-02338): trimmed 0:00:00 head, 0:01:39 tail -> performance 2:05:32
+  1993-02-16 Utrecht (LB-15262): trimmed 0:00:08 head, 0:00:09 tail -> performance 2:03:24
+  1993-02-16 Utrecht, Holland (LB-06844): trimmed 0:00:26 head, 0:00:00 tail -> performance 2:24:46
+  1993-02-16 Utrecht, Holland (LB-08668): trimmed 0:00:10 head, 0:00:38 tail -> performance 2:07:12
+  1993-02-16 Utrecht, The Netherlands (LB-06019): trimmed 0:00:28 head, 0:00:20 tail -> performance 2:07:55
+  1993-02-16 Vredenburg, Utrecht (LB-08739): trimmed 0:00:00 head, 0:00:09 tail -> performance 2:05:24
+  1993-02-16 utrecht holland (LB-09249): trimmed 0:00:51 head, 0:00:37 tail -> performance 2:06:56
+  bd1993-02-16 Utrecht (sbd)-LB-15264: trimmed 0:00:02 head, 0:01:02 tail -> performance 2:05:34
+
+  [INCOMPLETE?] — duration well below group median (2:05:34):
+    1993-02-16 Utrecht (Holland) (LB-06011): 1:50:58 (11.6% shorter)
+
+=== ANCHORS (ref=1993-02-16 Utrecht (Holland) (LB-06011)) ===
+  0:09:09, 0:15:27, 0:24:05, 0:36:50, 0:39:21, 0:50:59, 0:59:27, 1:06:18, 1:22:51, 1:29:32, 1:41:24, 1:50:52
+
+=== LAG CURVES / SPEED (vs ref) ===
+  1993-02-16 Utrecht (Holland) (LB-06011)->1993-02-16 Utrecht (LB-02338): staircase/splice  speed ratio=1.000000 (+0 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  1993-02-16 Utrecht (Holland) (LB-06011)->1993-02-16 Utrecht (LB-15262): speed-unknown  speed ratio=1.017400 (+17400 ppm)  [conf=2.0]
+  1993-02-16 Utrecht (Holland) (LB-06011)->1993-02-16 Utrecht, Holland (LB-06844): speed-unknown  speed ratio=1.017100 (+17100 ppm)  [conf=2.6]
+  1993-02-16 Utrecht (Holland) (LB-06011)->1993-02-16 Utrecht, Holland (LB-08668): staircase/splice  speed ratio=0.999900 (-100 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  1993-02-16 Utrecht (Holland) (LB-06011)->1993-02-16 Utrecht, The Netherlands (LB-06019): staircase/splice  speed ratio=1.000100 (+100 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  1993-02-16 Utrecht (Holland) (LB-06011)->1993-02-16 Vredenburg, Utrecht (LB-08739): staircase/splice  speed ratio=1.000100 (+100 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  1993-02-16 Utrecht (Holland) (LB-06011)->1993-02-16 utrecht holland (LB-09249): staircase/splice  speed ratio=1.000000 (+0 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  1993-02-16 Utrecht (Holland) (LB-06011)->bd1993-02-16 Utrecht (sbd)-LB-15264: staircase/splice  speed ratio=1.000100 (+100 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+
+=== RESIDUAL CORRELATION MATRIX ===
+  34 pair(s)/source(s) speed-unknown (v2 confidence < 6.0) — routed to fingerprint path only
+          LB-06011  LB-02338  LB-15262  LB-06844  LB-08668  LB-06019  LB-08739  LB-09249  LB-15264
+  LB-06011     1.000     0.002     0.002     0.003     0.003     0.001     0.002     0.002     0.002
+  LB-02338     0.002     1.000     0.002     0.001     0.005     0.008     0.901     0.008     0.828
+  LB-15262     0.002     0.002     1.000     0.143     0.002     0.002     0.002     0.001     0.002
+  LB-06844     0.003     0.001     0.143     1.000     0.003     0.002     0.001     0.002     0.002
+  LB-08668     0.003     0.005     0.002     0.003     1.000     0.019     0.008     0.002     0.013
+  LB-06019     0.001     0.008     0.002     0.002     0.019     1.000     0.013     0.003     0.008
+  LB-08739     0.002     0.901     0.002     0.001     0.008     0.013     1.000     0.010     0.877
+  LB-09249     0.002     0.008     0.001     0.002     0.002     0.003     0.010     1.000     0.008
+  LB-15264     0.002     0.828     0.002     0.002     0.013     0.008     0.877     0.008     1.000
+
+=== SECONDARY MATCH (windowed coverage + quiet-segment hiss + fingerprint) ===
+  33 cross-family pair(s) — computing secondary evidence ...
+  No secondary same-source evidence found.
+
+=== LAG CURVES / SPEED (re-run vs central ref=1993-02-16 Vredenburg, Utrecht (LB-08739)) ===
+  anchors: 0:06:12, 0:19:04, 0:26:00, 0:37:31, 0:45:16, 0:57:38, 1:08:34, 1:23:10, 1:24:09, 1:43:27, 1:51:19, 1:55:00
+  1993-02-16 Vredenburg, Utrecht (LB-08739)->1993-02-16 Utrecht (Holland) (LB-06011): staircase/splice  speed ratio=0.999900 (-100 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  1993-02-16 Vredenburg, Utrecht (LB-08739)->1993-02-16 Utrecht (LB-02338): staircase/splice  speed ratio=0.999904 (-96 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  1993-02-16 Vredenburg, Utrecht (LB-08739)->1993-02-16 Utrecht (LB-15262): speed-unknown  speed ratio=1.019206 (+19206 ppm)
+  1993-02-16 Vredenburg, Utrecht (LB-08739)->1993-02-16 Utrecht, Holland (LB-06844): speed-unknown  speed ratio=1.018000 (+18000 ppm)
+  1993-02-16 Vredenburg, Utrecht (LB-08739)->1993-02-16 Utrecht, Holland (LB-08668): speed-unknown  speed ratio=0.988915 (-11085 ppm)
+  1993-02-16 Vredenburg, Utrecht (LB-08739)->1993-02-16 Utrecht, The Netherlands (LB-06019): speed-unknown  speed ratio=0.982191 (-17809 ppm)
+  1993-02-16 Vredenburg, Utrecht (LB-08739)->1993-02-16 utrecht holland (LB-09249): speed-unknown  speed ratio=0.991051 (-8949 ppm)
+  1993-02-16 Vredenburg, Utrecht (LB-08739)->bd1993-02-16 Utrecht (sbd)-LB-15264: staircase/splice  speed ratio=0.999905 (-95 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+
+=== CLUSTERS ===
+  Family 1: 1993-02-16 Utrecht (Holland) (LB-06011)  (mean intra-corr 1.000)
+  Family 2: 1993-02-16 Utrecht (LB-02338), 1993-02-16 Vredenburg, Utrecht (LB-08739), bd1993-02-16 Utrecht (sbd)-LB-15264  (mean intra-corr 0.869 [medium confidence])
+  Family 3: 1993-02-16 Utrecht (LB-15262)  (mean intra-corr 1.000)
+  Family 4: 1993-02-16 Utrecht, Holland (LB-06844)  (mean intra-corr 1.000)
+  Family 5: 1993-02-16 Utrecht, Holland (LB-08668), 1993-02-16 Utrecht, The Netherlands (LB-06019), 1993-02-16 utrecht holland (LB-09249)  (mean intra-corr 0.008 [low confidence])  [chain-unverified: LB-08668/LB-06019; LB-08668/LB-09249; LB-06019/LB-09249 not directly confirmed]
+  Distinct source families: 5
+
+=== LINEAGE EVIDENCE (interpret manually) ===
+    source   HF ceiling  noise floor  DC asymmetry
+  1993-02-16 Utrecht (Holland) (LB-06011)       0.0kHz      -69.5dB      +0.00277
+  1993-02-16 Utrecht (LB-02338)       1.0kHz      -78.2dB      +0.00084
+  1993-02-16 Utrecht (LB-15262)       4.0kHz      -78.0dB      -0.00001
+  1993-02-16 Utrecht, Holland (LB-06844)       3.0kHz      -78.4dB      -0.00014
+  1993-02-16 Utrecht, Holland (LB-08668)       2.0kHz      -73.6dB      +0.00321
+  1993-02-16 Utrecht, The Netherlands (LB-06019)       3.0kHz      -80.5dB      -0.00013
+  1993-02-16 Vredenburg, Utrecht (LB-08739)       1.0kHz      -78.3dB      +0.00084
+  1993-02-16 utrecht holland (LB-09249)       0.0kHz      -78.4dB      +0.00039
+  bd1993-02-16 Utrecht (sbd)-LB-15264       1.0kHz      -81.7dB      -0.00002
+  (HF ceiling capped by 8000 Hz Nyquist at analysis_sr=16000; run lineage at native rate for real format discrimination)
+  (DC asymmetry is a taper/equipment signature — not a reliable source-identity marker)
+
+=== DIAGNOSTICS ===
+  [INCOMPLETE] 1993-02-16 Utrecht (Holland) (LB-06011): 1:50:58 vs median 2:05:34 (11.6% shorter) — likely missing material
+  [TIMING MISMATCH] 1993-02-16 Utrecht (LB-02338) / 1993-02-16 Utrecht, Holland (LB-06844): performance 2:05:32 vs 2:24:46 (19.2 min difference) — timing drift may exceed alignment window; correlation unreliable if same-source
+  [TIMING MISMATCH] 1993-02-16 Vredenburg, Utrecht (LB-08739) / 1993-02-16 Utrecht, Holland (LB-06844): performance 2:05:24 vs 2:24:46 (19.4 min difference) — timing drift may exceed alignment window; correlation unreliable if same-source
+  [TIMING MISMATCH] bd1993-02-16 Utrecht (sbd)-LB-15264 / 1993-02-16 Utrecht, Holland (LB-06844): performance 2:05:34 vs 2:24:46 (19.2 min difference) — timing drift may exceed alignment window; correlation unreliable if same-source
+  [TIMING MISMATCH] 1993-02-16 Utrecht, Holland (LB-06844) / 1993-02-16 Utrecht, Holland (LB-08668): performance 2:24:46 vs 2:07:12 (17.6 min difference) — timing drift may exceed alignment window; correlation unreliable if same-source
+  [TIMING MISMATCH] 1993-02-16 Utrecht, Holland (LB-06844) / 1993-02-16 Utrecht, The Netherlands (LB-06019): performance 2:24:46 vs 2:07:55 (16.9 min difference) — timing drift may exceed alignment window; correlation unreliable if same-source
+  [TIMING MISMATCH] 1993-02-16 Utrecht, Holland (LB-06844) / 1993-02-16 utrecht holland (LB-09249): performance 2:24:46 vs 2:06:56 (17.8 min difference) — timing drift may exceed alignment window; correlation unreliable if same-source
+  [DISTINCT SOURCE] 1993-02-16 Utrecht (LB-15262) (+19206 ppm speed offset, best cross-family corr 0.143): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1993-02-16 Utrecht, Holland (LB-06844) (+18000 ppm speed offset, best cross-family corr 0.143): near-zero correlation to all other sources — entirely different recording
+  [MEDIUM CONFIDENCE] Family 2 (1993-02-16 Utrecht (LB-02338) / bd1993-02-16 Utrecht (sbd)-LB-15264): corr 0.828 — same source likely but significant processing (resampling, level boost, EQ) may explain reduced correlation
+  [MEDIUM CONFIDENCE] Family 2 (1993-02-16 Vredenburg, Utrecht (LB-08739) / bd1993-02-16 Utrecht (sbd)-LB-15264): corr 0.877 — same source likely but significant processing (resampling, level boost, EQ) may explain reduced correlation
+
+[6] Archiving run …
+  Archive → /home/tjenkins/Documents/losslessbob/data/tapematch/runs/20260702_150239_1993-02-16
+
+[7] Logging to observations.db …
+  Logged: 1 run, 9 sources, 36 pairs
+
+Report → /home/tjenkins/Documents/losslessbob/tools/tapematch/last_run_report.md

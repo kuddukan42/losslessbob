@@ -1,0 +1,125 @@
+=== tapematch session: 1989-06-20  [20260702_140757] ===
+
+[1] Querying DB …
+  7 entries — Palazzo Della Civilta E Del Lavoro, Rome, Italy
+    LB-01314
+    LB-02136
+    LB-05235
+    LB-07203
+    LB-10958
+    LB-13226
+    LB-16168
+
+[2] Resolving paths from my_collection …
+  Excluded (private/no-torrent): LB-13226
+  Found 6/7
+    LB-01314: /mnt/DYLAN1/Concerts/1989/1989-06-20 Palazzo Della Civilta E Del Lavoro, Rome, Italy (LB-01314)
+    LB-02136: /mnt/DYLAN1/Concerts/1989/1989-06-20 Palazzo Della Civilta E Del Lavoro, Rome, Italy (LB-02136)
+    LB-05235: /mnt/DYLAN1/Concerts/1989/1989-06-20 Roma, Italy, Gradinate (LB-05235)
+    LB-07203: /mnt/DYLAN1/Concerts/1989/1989-06-20 Rome, Italy Palazzo Della Civilta E Del Lavoro (LB-07203)
+    LB-10958: /mnt/DYLAN1/Concerts/1989/1989-06-20 Rome, Italy (LB-10958)
+    LB-16168: /mnt/DYLAN1/Concerts/1989/1989-06-20 Rome, Italy (LB-16168)
+
+[3] Cleaning /mnt/DATA0/examples/tapematch …
+
+[4] Copying 6 folders to /mnt/DATA0/examples/tapematch …
+  Copying LB-01314: 1989-06-20 Palazzo Della Civilta E Del Lavoro, Rome, Italy (LB-01314) …
+  Copying LB-02136: 1989-06-20 Palazzo Della Civilta E Del Lavoro, Rome, Italy (LB-02136) …
+  Copying LB-05235: 1989-06-20 Roma, Italy, Gradinate (LB-05235) …
+  Copying LB-07203: 1989-06-20 Rome, Italy Palazzo Della Civilta E Del Lavoro (LB-07203) …
+  Copying LB-10958: 1989-06-20 Rome, Italy (LB-10958) …
+  Copying LB-16168: 1989-06-20 Rome, Italy (LB-16168) …
+
+[5] Running tapematch …
+  curator lineage pairs loaded: 677 (from /home/tjenkins/Documents/losslessbob/data/losslessbob.db)
+  est. peak RAM ~1.3 GB (6 sources, largest 2:07:49)
+=== INGEST / TRIM ===
+  1989-06-20 Palazzo Della Civilta E Del Lavoro, Rome, Italy (LB-01314): 16 tracks, 1:26:12
+  1989-06-20 Palazzo Della Civilta E Del Lavoro, Rome, Italy (LB-02136): 16 tracks, 1:23:31
+  1989-06-20 Roma, Italy, Gradinate (LB-05235): 16 tracks, 1:22:01
+  1989-06-20 Rome, Italy (LB-10958): 25 tracks, 2:07:49
+  1989-06-20 Rome, Italy (LB-16168): 16 tracks, 1:24:06
+  1989-06-20 Rome, Italy Palazzo Della Civilta E Del Lavoro (LB-07203): 16 tracks, 1:27:10
+
+=== TRIM (performance envelope) ===
+  1989-06-20 Palazzo Della Civilta E Del Lavoro, Rome, Italy (LB-01314): trimmed 0:00:30 head, 0:00:08 tail -> performance 1:25:34
+  1989-06-20 Palazzo Della Civilta E Del Lavoro, Rome, Italy (LB-02136): trimmed 0:01:18 head, 0:00:04 tail -> performance 1:22:08
+  1989-06-20 Roma, Italy, Gradinate (LB-05235): trimmed 1:20:36 head, 0:01:07 tail -> performance 0:00:18
+  1989-06-20 Rome, Italy (LB-10958): trimmed 0:01:22 head, 0:00:42 tail -> performance 2:05:45
+  1989-06-20 Rome, Italy (LB-16168): trimmed 0:01:30 head, 0:00:04 tail -> performance 1:22:32
+  1989-06-20 Rome, Italy Palazzo Della Civilta E Del Lavoro (LB-07203): trimmed 0:01:06 head, 0:00:00 tail -> performance 1:26:04
+
+  [INCOMPLETE?] — duration well below group median (1:24:03):
+    1989-06-20 Roma, Italy, Gradinate (LB-05235): 0:00:18 (99.6% shorter)
+
+  [INFLATED?] — duration well above group median (1:24:03):
+    1989-06-20 Rome, Italy (LB-10958): 2:05:45 (49.6% longer) — possible duplicate tracks in subfolders
+
+=== ANCHORS (ref=1989-06-20 Palazzo Della Civilta E Del Lavoro, Rome, Italy (LB-01314)) ===
+  0:05:54, 0:07:57, 0:18:59, 0:26:53, 0:29:00, 0:36:37, 0:47:16, 0:52:08, 1:01:15, 1:06:10, 1:17:51, 1:18:53
+
+=== LAG CURVES / SPEED (vs ref) ===
+  1989-06-20 Palazzo Della Civilta E Del Lavoro, Rome, Italy (LB-01314)->1989-06-20 Palazzo Della Civilta E Del Lavoro, Rome, Italy (LB-02136): speed-unknown  speed ratio=1.042998 (+42998 ppm)  [conf=3.8]
+  1989-06-20 Palazzo Della Civilta E Del Lavoro, Rome, Italy (LB-01314)->1989-06-20 Roma, Italy, Gradinate (LB-05235): speed-unknown  speed ratio=0.970600 (-29400 ppm)  [conf=2.6]
+  1989-06-20 Palazzo Della Civilta E Del Lavoro, Rome, Italy (LB-01314)->1989-06-20 Rome, Italy (LB-10958): speed-unknown  speed ratio=1.012000 (+12000 ppm)  [conf=2.1]
+  1989-06-20 Palazzo Della Civilta E Del Lavoro, Rome, Italy (LB-01314)->1989-06-20 Rome, Italy (LB-16168): speed-unknown  speed ratio=1.037754 (+37754 ppm)  [conf=2.3]
+  1989-06-20 Palazzo Della Civilta E Del Lavoro, Rome, Italy (LB-01314)->1989-06-20 Rome, Italy Palazzo Della Civilta E Del Lavoro (LB-07203): speed-unknown  speed ratio=0.997255 (-2745 ppm)  [conf=2.1]
+
+=== RESIDUAL CORRELATION MATRIX ===
+  20 pair(s)/source(s) speed-unknown (v2 confidence < 6.0) — routed to fingerprint path only
+          LB-01314  LB-02136  LB-05235  LB-10958  LB-16168  LB-07203
+  LB-01314     1.000     0.002     0.000     0.002     0.002     0.002
+  LB-02136     0.002     1.000     0.000     0.002     0.008     0.002
+  LB-05235     0.000     0.000     1.000     0.000     0.000     0.000
+  LB-10958     0.002     0.002     0.000     1.000     0.002     0.003
+  LB-16168     0.002     0.008     0.000     0.002     1.000     0.003
+  LB-07203     0.002     0.002     0.000     0.003     0.003     1.000
+
+=== SECONDARY MATCH (windowed coverage + quiet-segment hiss + fingerprint) ===
+  15 cross-family pair(s) — computing secondary evidence ...
+  No secondary same-source evidence found.
+
+=== LAG CURVES / SPEED (re-run vs central ref=1989-06-20 Rome, Italy (LB-16168)) ===
+  anchors: 0:06:15, 0:09:26, 0:15:51, 0:26:27, 0:28:55, 0:35:29, 0:45:44, 0:50:51, 0:57:52, 1:02:50, 1:14:20, 1:20:14
+  1989-06-20 Rome, Italy (LB-16168)->1989-06-20 Palazzo Della Civilta E Del Lavoro, Rome, Italy (LB-01314): speed-unknown  speed ratio=0.963656 (-36344 ppm)
+  1989-06-20 Rome, Italy (LB-16168)->1989-06-20 Palazzo Della Civilta E Del Lavoro, Rome, Italy (LB-02136): speed-unknown  speed ratio=1.004768 (+4768 ppm)
+  1989-06-20 Rome, Italy (LB-16168)->1989-06-20 Roma, Italy, Gradinate (LB-05235): speed-unknown  speed ratio=0.938900 (-61100 ppm)
+  1989-06-20 Rome, Italy (LB-16168)->1989-06-20 Rome, Italy (LB-10958): speed-unknown  speed ratio=0.978900 (-21100 ppm)
+  1989-06-20 Rome, Italy (LB-16168)->1989-06-20 Rome, Italy Palazzo Della Civilta E Del Lavoro (LB-07203): speed-unknown  speed ratio=0.959815 (-40185 ppm)
+
+=== CLUSTERS ===
+  Family 1: 1989-06-20 Palazzo Della Civilta E Del Lavoro, Rome, Italy (LB-01314)  (mean intra-corr 1.000)
+  Family 2: 1989-06-20 Palazzo Della Civilta E Del Lavoro, Rome, Italy (LB-02136)  (mean intra-corr 1.000)
+  Family 3: 1989-06-20 Roma, Italy, Gradinate (LB-05235)  (mean intra-corr 1.000)
+  Family 4: 1989-06-20 Rome, Italy (LB-10958)  (mean intra-corr 1.000)
+  Family 5: 1989-06-20 Rome, Italy (LB-16168)  (mean intra-corr 1.000)
+  Family 6: 1989-06-20 Rome, Italy Palazzo Della Civilta E Del Lavoro (LB-07203)  (mean intra-corr 1.000)
+  Distinct source families: 6
+
+=== LINEAGE EVIDENCE (interpret manually) ===
+    source   HF ceiling  noise floor  DC asymmetry
+  1989-06-20 Palazzo Della Civilta E Del Lavoro, Rome, Italy (LB-01314)       3.0kHz      -82.1dB      +0.00002
+  1989-06-20 Palazzo Della Civilta E Del Lavoro, Rome, Italy (LB-02136)       3.0kHz      -79.3dB      -0.00016
+  1989-06-20 Roma, Italy, Gradinate (LB-05235)       5.0kHz      -85.3dB      -0.00003
+  1989-06-20 Rome, Italy (LB-10958)       2.0kHz      -76.9dB      -0.00001
+  1989-06-20 Rome, Italy (LB-16168)       3.0kHz      -86.8dB      -0.00016
+  1989-06-20 Rome, Italy Palazzo Della Civilta E Del Lavoro (LB-07203)       3.0kHz      -82.1dB      +0.00016
+  (HF ceiling capped by 8000 Hz Nyquist at analysis_sr=16000; run lineage at native rate for real format discrimination)
+  (DC asymmetry is a taper/equipment signature — not a reliable source-identity marker)
+
+=== DIAGNOSTICS ===
+  [INCOMPLETE] 1989-06-20 Roma, Italy, Gradinate (LB-05235): 0:00:18 vs median 1:24:03 (99.6% shorter) — likely missing material
+  [INFLATED] 1989-06-20 Rome, Italy (LB-10958): 2:05:45 vs median 1:24:03 (49.6% longer) — check for duplicate tracks in subfolders; correlation results for this source are unreliable
+  [DISTINCT SOURCE] 1989-06-20 Palazzo Della Civilta E Del Lavoro, Rome, Italy (LB-01314) (-36344 ppm speed offset, best cross-family corr 0.002): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1989-06-20 Palazzo Della Civilta E Del Lavoro, Rome, Italy (LB-02136) (+4768 ppm speed offset, best cross-family corr 0.008): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1989-06-20 Roma, Italy, Gradinate (LB-05235) (-61100 ppm speed offset, best cross-family corr 0.000): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1989-06-20 Rome, Italy (LB-10958) (-21100 ppm speed offset, best cross-family corr 0.003): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1989-06-20 Rome, Italy Palazzo Della Civilta E Del Lavoro (LB-07203) (-40185 ppm speed offset, best cross-family corr 0.003): near-zero correlation to all other sources — entirely different recording
+
+[6] Archiving run …
+  Archive → /home/tjenkins/Documents/losslessbob/data/tapematch/runs/20260702_140757_1989-06-20
+
+[7] Logging to observations.db …
+  Logged: 1 run, 6 sources, 15 pairs
+
+Report → /home/tjenkins/Documents/losslessbob/tools/tapematch/last_run_report.md
