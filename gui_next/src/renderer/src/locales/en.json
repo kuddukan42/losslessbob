@@ -488,6 +488,8 @@
     "autoRunHint": "When on, dropped folders verify + look up automatically",
     "autoRename": "Auto-rename",
     "autoRenameHint": "When on, a confident single-match rename is applied automatically and the folder advances to Collect",
+    "autoCollect": "Auto-collect",
+    "autoCollectHint": "When on, folders that are fully green (verify, lookup, LB dir and rename all pass) are filed into the collection automatically — no File click needed",
     "applyAllReady": "Apply all {{count}} ready",
     "fileAllCollection": "File all {{count}} into collection",
     "stop": "Stop",

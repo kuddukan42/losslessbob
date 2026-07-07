@@ -544,7 +544,7 @@
         "pass": "Aceptar",
         "missing": "Falta",
         "mismatch": "Incoherencia",
-        "extra": "Extra"
+        "extra": "Extras"
       },
       "missingFiles_one": "El archivo {{count}} de la lista de sumas de comprobación no se encuentra en el disco. Recupera los archivos que faltan y vuelve a verificar.",
       "missingFiles_other": "Los archivos {{count}} de la lista de sumas de comprobación no se encuentran en el disco. Restaura los archivos que faltan y, a continuación, vuelve a verificar.",
@@ -663,7 +663,9 @@
         "applyFailed": "Aplicación fallida",
         "retrieveFailed": "Recuperar lo que ha fallado"
       }
-    }
+    },
+    "autoCollect": "Recopilación automática",
+    "autoCollectHint": "Cuando está activada, las carpetas que aparecen completamente en verde (verificación, búsqueda, directorio LB y cambio de nombre superados) se archivan automáticamente en la colección, sin necesidad de hacer clic en «Archivo»."
   },
   "collection": {
     "confirmDialog": {

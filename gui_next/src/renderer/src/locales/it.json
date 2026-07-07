@@ -663,7 +663,9 @@
         "applyFailed": "Applicazione non riuscita",
         "retrieveFailed": "Recupero non riuscito"
       }
-    }
+    },
+    "autoCollect": "Raccolta automatica",
+    "autoCollectHint": "Quando questa opzione è attiva, le cartelle che risultano completamente verdi (verifica, ricerca, directory LB e rinomina superate) vengono archiviate automaticamente nella raccolta — non è necessario fare clic su “File”."
   },
   "collection": {
     "confirmDialog": {
