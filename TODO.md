@@ -1,4 +1,10 @@
 
+TODO-205: Pipeline structural tier: combined design doc for P7+P1+P2 (+P3/P8) — shared hash/state cache, async job model
+Priority: Medium
+Status: Open
+Added: 2026-07-07
+Description: Structural pipeline items from instructions/FABLE_PIPELINE_DEVLOOP_IDEATION.md deferred pending a combined design doc — see Part 4 sequencing for P7 (shared hash/state cache), P1/P2 (async job model), and P3/P8. Quick-win tier (D1/D2/D3/P5) shipped 2026-07-07.
+
 TODO-204: emb-gated MrMsDTW confirmation probe (near-miss band rescue)
 Priority: Low
 Status: Open

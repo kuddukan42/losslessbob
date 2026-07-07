@@ -31,7 +31,8 @@ Follow every session. No asking.
   cause false "fix didn't work" confusion.
 - gui_next changes: `/gui-check` (typecheck + production build). **No screenshots
   or browser/UI automation** — the user verifies visuals themselves.
-- Python syntax check before done: `.venv/bin/python3 -m py_compile <file>`
+- A PostToolUse hook (`.claude/hooks/py_compile_check.sh`) auto-runs
+  `py_compile` on every `.py` edit — no manual syntax-check step needed.
 
 ---
 
@@ -48,8 +49,8 @@ Follow every session. No asking.
 ## Bookkeeping
 
 Every session that changes code ends with the repo's bookkeeping: CHANGELOG.md
-entry, BUGS/BUGS_DONE and TODO/TODO_DONE moves, PROJECT.md change-log row.
-Run `/session-close` — entry formats and numbering rules live in that skill.
+entry, BUGS/BUGS_DONE and TODO/TODO_DONE moves. Run `/session-close` — entry
+formats and numbering rules live in that skill.
 
 User-facing feature changes also require locale updates: `/gui-next-i18n`
 (gui_next) or `/i18n-update` (legacy gui/).

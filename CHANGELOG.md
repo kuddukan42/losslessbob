@@ -1,3 +1,52 @@
+[2026-07-07] — feat/chore: pipeline dev-loop quick wins (spec D1/D2/D3/P5) — auto-collect toggle, ledger CLI, advisory hooks, change-log dedup
+Added: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: "Auto-collect" toggle (spec P5) —
+  third header toggle, default off, session-only; auto-files rows meeting the fileableRows guard
+  (verify/lookup/lbdir/rename all ok), serialized via the existing filing lock, skipConfirm path.
+  State ~line 1323, ref ~1378, effect ~1820, toggle UI ~2080.
+Added: gui_next/src/renderer/src/locales/{en,de,fr,es,it,nl}.json: pipeline.autoCollect +
+  pipeline.autoCollectHint strings (DeepL-synced for the new toggle).
+Added: tools/ledger.py (spec D2): stdlib CLI for BUG/TODO ledger operations (next-id,
+  bug-open/close, todo-open/close, --dry-run) — atomic raw-text surgery preserving irregular
+  separators byte-exactly; replaces hand-edits of BUGS.md/TODO.md across all four ledger files.
+Added: .claude/hooks/py_compile_check.sh (spec D3): PostToolUse hook on Edit|Write of .py files —
+  runs py_compile, exit-2 feedback on syntax error.
+Added: .claude/hooks/i18n_reminder.sh (spec D3): PostToolUse hook on gui_next en.json edits —
+  reminds to sync locale files.
+Added: .claude/hooks/changelog_check.sh (spec D3): Stop hook — warns (never blocks) if source
+  changed this session but CHANGELOG.md's head entry isn't dated today.
+Changed: .claude/settings.json: registered the three new hooks alongside the existing
+  schema-deploy/session-brief/access-guard hooks.
+Changed: PROJECT.md (spec D1): `## Change Log` table frozen as of 2026-07-07 (historical rows
+  kept, notice added at ~line 1619) — CHANGELOG.md is now the sole narrative change log.
+Changed: .claude/commands/session-close.md: rewired to route all BUGS/TODO moves through
+  tools/ledger.py; PROJECT.md step no longer adds Change Log rows.
+Changed: .claude/CLAUDE.md: Bookkeeping + Verification bullets trimmed to match the ledger.py
+  workflow and the frozen Change Log table.
+Note: structural pipeline items P1/P2/P3/P7/P8 from
+  instructions/FABLE_PIPELINE_DEVLOOP_IDEATION.md deliberately deferred pending a combined
+  design doc (see TODO-205); the ideation doc stays in instructions/ (not moved to complete/).
+Added: instructions/PIPELINE_STRUCTURAL_TIER_DESIGN.md (TODO-205, design only — no code
+  changes): combined design for the structural pipeline tier — P7 (persist pipeline row
+  state, resume across restart) + P1 (shared per-file hash cache) + P2 (async multi-folder
+  job model), with P3 (LBDIR prefetch) and P8 (blocked-as-live-view bucketing) layered on
+  the same cache/state tables; phased 7-step implementation plan. TODO-205 remains OPEN
+  (design done, implementation not started). Reviewed and corrected against sources: (1)
+  spec correction carried forward — `useFolderQueueStore` (gui_next/src/renderer/src/lib/
+  folderQueueStore.ts) has no zustand `persist` middleware, so the folder queue does NOT
+  survive a GUI restart today (the ideation doc's §65 assumption was wrong; this design's
+  P7 GUI migration adds `persist`, mirroring `useSettingsStore`'s `'lbb-settings'` key); (2)
+  documented the exact reproduction requirements for deriving `filer.hash_tree`'s digest
+  from the new cache — `rel_path.encode("utf-8", "surrogatepass")` (surrogatepass is
+  load-bearing for lone-surrogate filenames), raw 32-byte `file.digest()` output (not hex)
+  fed into the tree hash, and `root.rglob("*")` scope covering every file under root (not
+  just audio) — verified byte-for-byte against filer.py:322-340; (3) fixed an incorrect
+  citation pointing the P3 "auto-complete" GUI-effect predicate at the wrong `useEffect`
+  (was citing the unrelated auto-rename effect at ScreenPipeline.tsx:1661-1682; corrected
+  to the actual resume effect at ScreenPipeline.tsx:1549-1560, predicate
+  `lookup.status === 'ok' && lbdir.status === 'mute'`); (4) corrected a db.py line
+  citation for the `location_geocoded` ALTER-TABLE additive-column precedent (was pointing
+  at the table's `CREATE TABLE` line 280; the actual precedent is db.py:1629-1632).
+
 [2026-07-05] — docs: CLAUDE.md optimization — targeted context reads, skill delegation
 Changed: .claude/CLAUDE.md: rewrote for token efficiency — replaced mandatory full reads of
   PROJECT.md/BUGS.md/TODO.md (~3,300 lines/session) with grep-first targeted reads; moved
