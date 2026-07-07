@@ -41,7 +41,8 @@ Follow every session. No asking.
 - Python 3.11+, PEP 8, 4-space indent, max 100 chars/line.
 - Type hints + Google-style docstrings on all new public functions/classes.
 - No `print()` — use `logging`. No hardcoded paths outside module constants.
-- SQLite changes: `ALTER TABLE` + `try/except` for idempotency. Never assume clean DB.
+- SQLite changes: `CREATE TABLE IF NOT EXISTS` + `PRAGMA table_info` column-existence
+  checks before `ALTER TABLE`, for idempotency. Never assume clean DB.
 - `requirements.txt` pinned exact versions. Update it + PROJECT.md on any dep change.
 
 ---
