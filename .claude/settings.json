@@ -42,6 +42,19 @@
             "statusMessage": "Deploying schema to Cloudflare Pages…"
           }
         ]
+      },
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash /home/tjenkins/Documents/losslessbob/.claude/hooks/py_compile_check.sh"
+          },
+          {
+            "type": "command",
+            "command": "bash /home/tjenkins/Documents/losslessbob/.claude/hooks/i18n_reminder.sh"
+          }
+        ]
       }
     ],
     "SessionStart": [
@@ -62,6 +75,16 @@
           {
             "type": "command",
             "command": "python3 -c \"import sys,json,os; d=json.load(sys.stdin); fp=d.get('tool_input',{}).get('file_path',''); proj=os.path.realpath('/home/tjenkins/Documents/losslessbob'); mem=os.path.realpath(os.path.expanduser('~/.claude')); block=bool(fp) and not os.path.realpath(fp).startswith(proj+os.sep) and not os.path.realpath(fp).startswith(mem+os.sep) and os.path.realpath(fp)!=proj; print(json.dumps({'continue':False,'stopReason':'Access denied: outside project directory'}) if block else '{}')\" 2>/dev/null || true"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash /home/tjenkins/Documents/losslessbob/.claude/hooks/changelog_check.sh"
           }
         ]
       }
