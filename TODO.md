@@ -1,4 +1,10 @@
 
+TODO-206: gui_next: fix 14 baseline renderer typecheck errors, then add typecheck to pre-commit
+Priority: Low
+Status: Open
+Added: 2026-07-07
+Description: pre-commit currently gates Python only (ruff); the dirty renderer typecheck baseline makes /gui-check's 'no new errors' comparison fuzzy. Known errors include IconButton disabled prop and shiftKey-on-ChangeEvent in ScreenPipeline.tsx. Fix the 14 baseline errors, then wire typecheck into pre-commit alongside ruff.
+
 TODO-205: Pipeline structural tier: combined design doc for P7+P1+P2 (+P3/P8) — shared hash/state cache, async job model
 Priority: Medium
 Status: Open

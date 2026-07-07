@@ -46,6 +46,17 @@ Added: instructions/PIPELINE_STRUCTURAL_TIER_DESIGN.md (TODO-205, design only �
   `lookup.status === 'ok' && lbdir.status === 'mute'`); (4) corrected a db.py line
   citation for the `location_geocoded` ALTER-TABLE additive-column precedent (was pointing
   at the table's `CREATE TABLE` line 280; the actual precedent is db.py:1629-1632).
+Fixed: .claude/CLAUDE.md: Code Rules SQLite bullet corrected — the repo's actual idempotency
+  convention is `CREATE TABLE IF NOT EXISTS` + `PRAGMA table_info` column-existence checks
+  before `ALTER TABLE` (db.py:1572-1636), not the previously-stated `ALTER TABLE` + `try/except`.
+Added: TODO-206 — gui_next: fix 14 baseline renderer typecheck errors (IconButton `disabled`
+  prop, `shiftKey`-on-ChangeEvent in ScreenPipeline.tsx), then wire typecheck into pre-commit
+  alongside the existing ruff-only Python gate.
+Investigated: backend/checksum_utils.py `verify_folder` — confirmed `.st5` checksums ARE
+  effectively verified (not a bug): they're merged into the `shntool` expected slot
+  (checksum_utils.py:568-575) and compared against a freshly computed shntool hash for `.shn`
+  audio files (:640-643); `st5_status` stays hardcoded `'na'` only because the pass/fail
+  surfaces under `shntool_status` instead.
 
 [2026-07-05] — docs: CLAUDE.md optimization — targeted context reads, skill delegation
 Changed: .claude/CLAUDE.md: rewrote for token efficiency — replaced mandatory full reads of
