@@ -1,6 +1,122 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-237: emb_fullset_eval.py acceptance check stale after Rule D ship (false MISMATCH,
+  sweep self-declared untrustworthy)
+Status: Fixed
+File(s): tools/tapematch/emb_fullset_eval.py:356 (_acceptance_check)
+Reported: 2026-07-05
+Fixed: 2026-07-05
+Root cause: The sweep's no-injection baseline is deliberately the pre-Rule-D system
+  (candidate rules REPLACE Rule D so flip counts stay comparable with the shipped +25),
+  but the startup acceptance check reproduced the reference via
+  regression._candidate_verdicts_for_date with the committed config — which, since the
+  2026-07-04 Rule D ship, unions passthrough verdicts with rule_d fires
+  (_passthrough_with_rule_d). Guaranteed 25-TP mismatch on every post-ship run, flagging
+  all numbers untrustworthy (first hit: TODO-202 12x densification sweep).
+Fix: Acceptance reference now runs with a rule_d-disabled deep copy of the committed
+  config; identity re-proven exactly (tp=659 fn=916 fp=9 tn=1381 v1 / tp=662 fp=6 v2,
+  independently confirmed via regression.py score --cached --config <rule_d off>). The
+  shipped rule_d-on confusion is printed alongside with the derived ship bar. Module +
+  function docstrings document the replacement framing.
+
+BUG-235: tapematch performance_envelope trim spuriously cuts 30-70% of a recording on
+  heavily-compressed/normalised sources
+Status: Fixed
+File(s): tools/tapematch/tapematch/trim.py:51 (performance_envelope), config.yaml (trim block)
+Reported: 2026-07-03
+Fixed: 2026-07-03
+Root cause: performance_envelope's is_music mask is (flatness < 0.45) AND (energy > p10+6dB).
+  Live diagnosis (2025-11-16/17 Glasgow entries) showed flatness NEVER exceeds ~0.15 on any
+  real recording tested (including known-good control dates) -- the flatness term is dead
+  weight in practice, so the whole music/crowd decision rides on the fixed p10+6dB energy
+  gate alone. Known-good controls (1996-07-21, 1990-06-01) have a clean ~12-15dB energy
+  contrast (p90-p10) between crowd padding and performance, giving long sustained is_music
+  runs. Several 2025-11-16/17 Glasgow sources (LB-16526, LB-16545, LB-16525) had that
+  contrast compressed to 6.4-8.5dB (heavy loudness normalisation/limiting on the release),
+  so the energy signal chattered in/out of the gate roughly every 1-3 seconds instead of
+  forming 8+ second sustained blocks. _first_sustained then locked onto whichever tiny
+  lucky run happened to appear first/last, producing head/tail cuts of 28-75 minutes on
+  ~1:44 recordings -- LB-16526/LB-16545 on 2025-11-17 were both cut to a 20-second
+  "performance" window. Every downstream signal (anchors, primary correlation, secondary
+  match) then ran on that near-empty window, corrupting the session's clustering verdict.
+Fix: Added a dynamic-range guard: if the whole-recording energy spread (p90-p10) is below
+  a new `trim.min_dynamic_range_db` (10.0, calibrated against 5 known-good control sources
+  at 11.9-15.4dB vs. 4 broken sources at 6.4-8.5dB), performance_envelope skips trimming
+  and returns the full recording -- reusing the function's existing safe-fallback path
+  (previously only reached when no sustained region was found at all) rather than trusting
+  a coin-flip trim. Unit tests added: tools/tapematch/tests/test_trim.py (wide-range trims
+  normally, narrow-range skips trim, boundary case just above threshold still trims).
+  Verified live: re-running 2025-11-17 and 2025-11-16 post-fix, all 6 sources now keep their
+  full ~1:44 length (0:00 head/tail trim on the previously-broken ones); 2025-11-16's known
+  same-source pair (LB-16525/LB-16544) went from a fragile fingerprint-only merge (Dice
+  0.455, mean intra-corr 0.005, low confidence) to a strong primary-correlation merge
+  (0.924, high confidence) -- same correct verdict, now on solid evidence instead of a
+  score sitting in the ambiguous same-show band.
+
+BUG-234: Checksum body-search false-matched 3 different shows to the same WTRF topic
+Status: Wontfix (not a bug — verified correct match)
+File(s): backend/wtrf_scraper.py (checksum body-search / candidate scoring)
+Reported: 2026-07-01
+Fixed: 2026-07-02
+Root cause: Not a defect. Logged into WTRF and fetched topic=55005 directly: it is
+  "Garden Party" Outlaw Tour 2025, Crystal Cat 1174-1176 — a single torrent/post that
+  legitimately bundles THREE shows as CD1/CD2/CD3 (Phoenix AZ 5/13/25, Chula Vista CA
+  5/15/25, George WA 5/25/25), each with its own per-track FFP/MD5 checksums in the
+  post body. LB-16404/16405/16406 each carry the checksums for exactly one CD of that
+  boxset, so each entry's own md5/filename hits against the shared post body are
+  genuine, not a collision — this is the same "multiple LB entries, one WTRF post"
+  situation already known-good for LB-16308/LB-16340 (BUGS.md originally), just
+  generalized from a duplicate-catalog-entry case to a multi-show box-set release.
+Fix: No matching-logic change needed. find_torrent_for_lb() already handles this
+  correctly by scoring each LB entry's own checksums independently per call — no
+  cross-entry state prevents two (or three) entries from resolving to the same topic
+  when that's actually correct. Closed as Wontfix; original report's "at most one
+  match is correct" assumption was wrong for box-set releases. However, this case did
+  expose a real download-naming gap: since all three entries share one physical
+  .torrent, _download_torrent's Content-Disposition filename (post-BUG-233 fix) was
+  identical across entries and would still overwrite on disk. Fixed alongside BUG-233
+  by prefixing every downloaded filename with `LB-{lb_number:05d}-`, so each entry's
+  copy persists independently even when multiple entries share one torrent.
+
+BUG-232: WTRF matcher never finds the correct post when a different taper titles the show differently
+Status: Fixed
+File(s): backend/wtrf_scraper.py (_search_board, _checksum_search_terms, find_torrent_for_lb)
+Reported: 2026-07-01
+Fixed: 2026-07-01
+Root cause: The WTRF forum search was (1) subject-only, so a post was only found when its topic
+  TITLE contained a recognised date-string variant, and (2) the date-variant loop broke at the
+  first variant that returned any results. When a show has multiple tapers whose topics use
+  different title formats (e.g. "bd2026-05-01 Abilene…" vs "Up To Me / Abilene - May 1, 2026"),
+  the ISO variant matched the other tapers' posts first and the loop stopped, so the entry's own
+  post — titled with a long-month date — was never fetched. Example: LB-16644 (nightly moth,
+  Abilene 2026-05-01) was reported "ambiguous" between LB-16616 (BenM) and LB-16617 (soomlos)
+  posts while its real post (topic 60289, blindwilly/nightlymoth) went unseen.
+Fix: Added a deterministic Phase-1 checksum body-search: WTRF full-text search indexes the raw
+  MD5/SHA1 hash in the post body, and a track hash is unique to one recording, so searching for
+  the entry's own checksum lands directly on the correct taper's post regardless of title format
+  (`_search_board` gained a `subject_only` flag; `_checksum_search_terms` picks up to 3 hashes).
+  Date-variant subject search is now the fallback and unions candidates across ALL variants
+  instead of breaking early. LB-16644 now resolves definitively to topic 60289.
+
+BUG-231: WTRF matcher reports false "ambiguous" tie between other tapers' posts
+Status: Fixed
+File(s): backend/wtrf_scraper.py (_score loop in find_torrent_for_lb), backend/db.py
+  (lookup_checksum_owners)
+Reported: 2026-07-01
+Fixed: 2026-07-01
+Root cause: When an entry had no forum post of its own, the scorer would tie two OTHER tapers'
+  posts of the same show at score=5 (torrent present + matching date, no distinguishing signal)
+  and return "ambiguous — manual review required". Those posts' checksums provably belong to
+  different LB entries, but the matcher only hard-disqualified a candidate carrying an explicit
+  "LB-NNNNN" tag, which legacy posts lack. Example: LB-16644's two "tied" candidates were the
+  BenM (LB-16616) and soomlos (LB-16617) tapings — neither is LB-16644.
+Fix: Added a cross-recording guard: any candidate whose body MD5/SHA1 checksums resolve to a
+  different lb_number (via new db.lookup_checksum_owners) is disqualified — it documents that
+  other recording. Only applies when none of THIS entry's checksums matched (a positive match
+  already proves ownership). Turns the false "ambiguous" into a correct "not_found" for the
+  fallback path and prevents downloading the wrong taper's torrent.
+
 BUG-218: Performance screen — column widths wrong/misaligned
 Status: Fixed
 File(s): gui_next/src/renderer/src/screens/ScreenLibrary.tsx:1849-2126 (performance-view table)

@@ -58,6 +58,17 @@ tools/tapematch/observations.db
 tools/tapematch/observations.db.bak-*
 tools/tapematch/rerun_queue.txt
 
+# tapematch Tier B embedding artifacts (derived; regenerate via build_embed_eval_set/nmfp_embed)
+tools/tapematch/embed_cache/
+tools/tapematch/embed_cache_tierc/
+tools/tapematch/.venv-nmfp/
+tools/tapematch/.venv-emb/
+tools/tapematch/vendor/
+tools/tapematch/calib_logs/nmfp_extract.log
+tools/tapematch/embedding/ckpt/
+tools/tapematch/embedding/audio_cache/
+tools/tapematch/embedding/**/__pycache__/
+
 # Generated output files
 losslessbob.db
 backend/losslessbob.db

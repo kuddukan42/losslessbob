@@ -1,16 +1,91 @@
 
-
-TODO-196: Add custom app icon (packaged + window/taskbar), replace generic Electron gear icon
+TODO-204: emb-gated MrMsDTW confirmation probe (near-miss band rescue)
 Priority: Low
 Status: Open
-Added: 2026-07-01
-Description: App currently has no icon configured anywhere, so it falls back to Electron's
-  default gear icon. Needs (1) a source icon file (PNG, ideally 512x512+) placed in
-  gui_next/resources/ so electron-builder picks it up by convention for the packaged
-  app/installer (buildResources dir set in gui_next/package.json), and (2) an explicit `icon`
-  path passed to `new BrowserWindow({...})` in gui_next/src/main/index.ts:110 so the
-  running/dev window and Linux taskbar also show it (packaged-icon convention alone doesn't
-  cover this on Linux). Blocked on user supplying the icon asset.
+Added: 2026-07-04
+Description: The emb near-miss band (both-conventions in [0.55, 0.75)) holds 34 low-corr FN
++ 39 frozen negatives (~73 pairs total) — too mixed to threshold, small enough for expensive
+per-pair alignment. Probe: synctoolbox MrMsDTW alignment on band pairs only, then confirm
+via residual corr (the trusted zero-FP-risk signal); true same-tape pairs flip, negatives
+fail to confirm. Ceiling ≈ +34 TP (+1.6 recall pts). Also targets staircase/heavy-drift
+pairs where the anchor/lag aligner fails. Rejected alternatives from the same review
+(measured grounds): spectral-ratio stationarity = shipped spec_stationarity, rejected, 4.6%
+FN coverage (alignment-gated); Panako-style speed-invariant hashing = wrong failure mode
+(fp_triplet fails on same-show COLLISION Δ≈0, not speed; many sources cap at 3-4kHz HF);
+htdemucs stem geometry = EQ shifts stems differentially (invariance claim fails) + massive
+compute. UNBLOCKED 2026-07-05: TODO-202 densification done (12× REJECTED, 5×/0.75 kept —
+net +1 flip only at the plateau edge; see TIER_B_FULLSET_REPORT.md); the near-miss band
+stands, and embed_cache_12x/ + fullset_pairs_12x_scores.json are retained as a second
+measurement the probe can cross-check band pairs against.
+
+TODO-203: Tier C retrain with family-aware hard negatives (label-noise fix)
+Priority: Low
+Status: Open
+Added: 2026-07-04
+Description: Tier C's HardNegBatchSampler groups hard negatives by (date, slot) only —
+embedding/data.py fetches family_id in select_sources() but never uses it. 16.2% of
+same-date cross-source pairs in latest_pairs are pipeline-verified same_family, so with
+hard_frac>=25% per batch and source-dense dates preferred, a material slice of the
+contrastive "push apart" gradient separated same-tape transfers — training the encoder to
+destroy the exact invariance TapeMatch needs. The 2026-07-03 clean-truth probe
+(TIER_C_CALIBRATION_PROBE_REPORT.md) condemns the checkpoint, not the approach: it never
+tested a cleanly-trained model. Re-run proposal: (1) group negatives by (date, family_id),
+never same-family; (2) add pipeline-verified same-family cross-source windows as REAL
+positives (corr-verified, no curator text); (3) exclude fn_label_census.py-flagged pairs
+from the negative pool; (4) taper-attribution negatives (user 2026-07-04): pairs whose
+entries resolve to two DIFFERENT curated tapers (_KNOWN_TAPER_ALIASES, backend/db.py) are
+provenance-certified hard negatives — measured 138 such pairs agree with pipeline
+different_family vs only 9 conflicts (6 of 9 involve "dolphinsmile", likely a
+transferer/seeder miscaptured as taper — curator to confirm; raw taper_name strings are
+NOT truth-grade: 381/2366 diff-raw-taper pairs are waveform-verified same_family because
+the field mixes tapers, transferers, and generic descriptors). Dividend: same-curated-
+taper + different_family pairs (21 curated / 142 raw) are a provenance-backed FN mining
+list for TODO-201. Expanding the curated alias list directly grows all of these sets.
+Gate: same absolute-FP protocol as Rule D; must beat nmfp's zero-FP recovery to earn a
+production slot. Sequenced after TODO-202 densification results.
+
+TODO-201: Curator review of census-flagged frozen-set labels (265 pairs)
+Priority: Medium
+Status: Open
+Added: 2026-07-04
+Description: fn_label_census.py flags 265/855 (31.0%) of the remaining corr<0.05 frozen FN
+with objective label-noise markers (128 explicit "different recording" curator text, 162
+speed-corrected duration ratio >15% off unity). These require curator domain judgment (only
+the 3 machine-provable negative flips went into regression_set_v2.json). Reviewing them
+would re-base the honest recall denominator (~52% at current tp if all confirmed). Use
+calibration_audit.html for browsing; census output lists the pairs + evidence snippets.
+
+TODO-198: TapeMatch recall recovery (CC_TAPEMATCH_FIXES) — remaining Tasks 2-7
+Priority: Medium
+Status: In Progress
+Added: 2026-07-02
+Description: Task 1 landed 2026-07-02 (regression.py harness + tapematch/verdict.py single-source-of-
+  truth clustering; observations.db recovered from Trash; baseline reproduced via `freeze` +
+  `score --cached`, exit 0). No-audio scaffolding for Tasks 2-4 also landed: config keys
+  (fingerprint.cluster_threshold_staircase/_curator, secondary_match.hiss_merge_median_lofi/
+  hiss_lofi_ceiling_hz), verdict.py conditional thresholds + lo-fi hiss relaxation, and the pairs
+  schema gained windowed_frac/hiss_frac/hiss_median/fp_score/nyquist_capped_a/_b (populated by
+  insert_pairs going forward). Scope was capped at Tasks 1-4 (pause before the expensive 5-7 audio
+  work) per user decision 2026-07-02.
+  REMAINING (all need AUDIO re-runs — the budget-gated part):
+  - Task 2: run `tools/tapematch/rerun_cat3.py` (Cat-3 focused re-run). NOTE: the documented FN
+    query matches 137 pairs, not the spec's stale "6"; bound with --limit/--dates. Records
+    before/after verdict; unchanged pairs reassign to Cat 1/2/4.
+  - Tasks 3/4 gates: `score --cached` for the staircase/curator/lo-fi threshold changes only becomes
+    valid after re-running the affected dates so the new secondary-metric columns are populated
+    (historical rows have them NULL). Also: curator-lineage (Task 4.1) and hf_ceiling/nyquist_capped
+    (Task 4.2) are NOT yet wired into the LIVE cli.py clustering metrics builder (lb numbers +
+    per-source HF evidence aren't threaded to the cluster call) — they work in the harness/verdict
+    path but not in a live session. Wire those before running the Task 3/4 audio gates.
+  - Task 3.1: already implemented in cli.py (either-side staircase, line ~497) — spec premise was
+    stale. Remaining work is the diagnostic (instrument why one-sided-staircase Cat-2 pairs still
+    read windowed_frac~0), which needs a live run on a known Cat-2 date.
+  - Tasks 5-7 (estimate_ratio_v2 + duration prior + confidence gating; residual_ppm_from_lag_curve;
+    pitch_ratio_pyin; ratio-invariant triplet fingerprint) — DEFERRED, out of the current scope cap.
+  Pre-existing (not caused by this work): the test_batch_queue-family tapematch tests hang when run
+  against the real mounted /mnt collection (run_batch/find_lb_folders scan the live collection). The
+  208 tests exercising the changed code all pass. Consider isolating those tests behind a fixture.
+  Relates to: [[TODO-184]] (tapematch same-source FN rescue), [[TODO-170]] (TapeMatch GUI).
 
 TODO-195: Backend pipeline step.label strings need i18n key+params, not rendered English
 Priority: Low
@@ -458,6 +533,11 @@ Description: New `concert_ranker/` package (repo root) that scores the audio qua
       `SEVERITY_BANDS` labels until resolved.
     - dynamic_range_dr from the NativeProbe still not produced by the scan.
     - Polish band-label phrasing; GUI surface for quality scores/verdicts (backend + CLI only so far).
+  GUI QUALITY TAB (2026-07-01): `/api/quality/<lb>` now also returns a banded `metrics` sub-dict
+  (stereo/mono + width, clip_fraction, crowd_snr_db, bass/mud/harsh tonal ratios, source-type flags)
+  read from `quality_recording_metrics.metric_json` and banded via `concert_ranker.scoring.band_metric()`
+  (`backend/app.py:_quality_metrics_for()`); `DetailPanel.tsx` Quality tab renders these as tone-colored
+  meters (`QualityMetricsPanel`/`MetricBar`/`FlagChip`) below the LB Rating/AI Quality Index tiles.
 
 TODO-182: Explore "best LB per date" via user voting — unsure how this would work
 Priority: Low
