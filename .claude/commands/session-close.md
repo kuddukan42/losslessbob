@@ -79,6 +79,9 @@ CHANGELOG.md is the only narrative change log.
   (`/gui-next-i18n` for gui_next, `/i18n-update` for legacy gui/). Flag it if
   not yet done.
 - Dependency changed → `requirements.txt` (pinned exact version) + PROJECT.md.
+- If this session finished a spec/plan in `instructions/` (or its remainder
+  moved to a TODO), `git mv` it to `instructions/complete/` and update
+  `instructions/README.md`.
 
 ## Step 7 — Consistency check + report
 

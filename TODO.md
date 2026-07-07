@@ -1,4 +1,10 @@
 
+TODO-207: gui_next locale key-parity check script (spec D6 remnant)
+Priority: Low
+Status: Open
+Added: 2026-07-07
+Description: A small key-diff script (keys in en.json missing from de/fr/es/it/nl) runnable standalone and from the Stop hook or /gui-check; the DeepL gui-next-i18n skill only reports parity when run manually. Source: instructions/complete/FABLE_PIPELINE_DEVLOOP_IDEATION.md idea D6.
+
 TODO-206: gui_next: fix 14 baseline renderer typecheck errors, then add typecheck to pre-commit
 Priority: Low
 Status: Open
@@ -9,7 +15,7 @@ TODO-205: Pipeline structural tier: combined design doc for P7+P1+P2 (+P3/P8) �
 Priority: Medium
 Status: Open
 Added: 2026-07-07
-Description: Structural pipeline items from instructions/FABLE_PIPELINE_DEVLOOP_IDEATION.md deferred pending a combined design doc — see Part 4 sequencing for P7 (shared hash/state cache), P1/P2 (async job model), and P3/P8. Quick-win tier (D1/D2/D3/P5) shipped 2026-07-07.
+Description: Structural pipeline items from instructions/complete/FABLE_PIPELINE_DEVLOOP_IDEATION.md deferred pending a combined design doc — see Part 4 sequencing for P7 (shared hash/state cache), P1/P2 (async job model), and P3/P8. Quick-win tier (D1/D2/D3/P5) shipped 2026-07-07.
 
 TODO-204: emb-gated MrMsDTW confirmation probe (near-miss band rescue)
 Priority: Low
