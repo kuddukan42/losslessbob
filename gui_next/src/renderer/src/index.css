@@ -209,7 +209,7 @@ table tbody tr:hover td {
   justify-content: center;
   width: var(--pipe-size, 48px);
   height: var(--pipe-size, 48px);
-  border-radius: calc(var(--pipe-size, 48px) * 0.30);
+  border-radius: var(--pipe-radius, 14px);
   color: #fff;
   background: radial-gradient(118% 118% at 50% 16%,
               var(--pipe-hi) 0%, var(--pipe-mid) 54%, var(--pipe-lo) 100%);

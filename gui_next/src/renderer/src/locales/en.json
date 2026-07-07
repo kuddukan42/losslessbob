@@ -1543,6 +1543,7 @@
       "tabSetlist": "Setlist",
       "tabAssets": "Assets",
       "tabShare": "Seed & Share",
+      "tabQuality": "Quality",
       "showDetails": "Show details",
       "collapseDetails": "Collapse details",
       "lbPage": "LB page",
@@ -1629,6 +1630,27 @@
       "attachments": "Attachments {{count}}",
       "noAttachments": "No attachments",
       "showOnMap": "Show on map"
+    },
+    "quality": {
+      "label": "Quality",
+      "lbRating": "LB Rating",
+      "aiIndex": "AI Quality Index",
+      "notScannedNote": "Not yet scanned by Concert Ranker.",
+      "metrics": {
+        "label": "Audio Metrics",
+        "channels": "Channels",
+        "mono": "Mono",
+        "stereo": "Stereo",
+        "clipping": "Clipping",
+        "crowdSeparation": "Crowd Separation",
+        "tonalBalance": "Tonal Balance",
+        "bass": "Bass",
+        "mud": "Mud",
+        "harsh": "Harshness",
+        "balanced": "balanced",
+        "sourceFlags": "Source Flags",
+        "noFlags": "No source-type flags detected"
+      }
     },
     "scope": {
       "everything": "Everything",
