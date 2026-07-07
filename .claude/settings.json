@@ -3,7 +3,9 @@
     "allow": [
       "Bash(node tools/browser_driver.mjs*)",
       "Bash(npm run build --prefix gui_next*)",
-      "Read(/home/tjenkins/Documents/losslessbob/.debug/**)"
+      "Read(/home/tjenkins/Documents/losslessbob/.debug/**)",
+      "Bash(npx tsc *)",
+      "Bash(.venv/bin/python3 -m py_compile *)"
     ],
     "deny": [
       "Read(/home/tjenkins/.ssh/**)",
@@ -38,6 +40,17 @@
             "command": "jq -r '.tool_input.file_path // \"\"' | { read -r f; echo \"$f\" | grep -q 'docs/schema.html' && cd /home/tjenkins/Documents/losslessbob && npx wrangler pages deploy docs/ --project-name losslessbob-schema --branch main --commit-dirty=true; } 2>/dev/null || true",
             "async": true,
             "statusMessage": "Deploying schema to Cloudflare Pages…"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash /home/tjenkins/Documents/losslessbob/.claude/hooks/session_brief.sh"
           }
         ]
       }

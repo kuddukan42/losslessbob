@@ -1,4 +1,11 @@
+---
+description: Translate and compile Qt .ts/.qm localisation files for the legacy PyQt6 GUI (gui/) — extraction, DeepL, compile
+---
+
 # i18n-update — Translate and compile Qt localisation files
+
+Applies to the **legacy PyQt6 GUI** (`gui/`). For the React/Electron GUI
+(`gui_next/`), use `/gui-next-i18n` instead.
 
 Run this skill after adding or changing any `self.tr()` strings in GUI files.
 It covers the full pipeline: string extraction → DeepL translation → .qm compilation.
@@ -35,11 +42,12 @@ Report the counts to the user. If all are zero, skip to Step 4.
 
 ## Step 3 — Translate new strings via DeepL
 
-If there are untranslated strings, ask the user for their DeepL API key (or check
-whether it is already set in the environment as `DEEPL_API_KEY`). Then run:
+If there are untranslated strings, use the `DEEPL_API_KEY` from the environment
+(it is stored in `.claude/settings.local.json` and should be available
+automatically; only ask the user if it is genuinely missing). Then run:
 
 ```bash
-.venv/bin/python scripts/translate_ts.py <api_key>
+.venv/bin/python3 scripts/translate_ts.py "$DEEPL_API_KEY"
 ```
 
 After it completes, recount untranslated strings (Step 2). If any remain, report
@@ -60,8 +68,9 @@ ls -lh gui/locales/*.qm
 ## Step 5 — Syntax check
 
 ```bash
-python -m py_compile gui/i18n.py
+.venv/bin/python3 -m py_compile gui/i18n.py
 ```
+(Bare `python`/`python3` is not on PATH in this environment — always use the venv.)
 
 ## Step 6 — Report
 

@@ -1,3 +1,7 @@
+---
+description: Translate gui_next React locale JSON files (de/fr/es/it/nl) from en.json via DeepL, verify coverage
+---
+
 # gui-next-i18n — Translate React GUI locale JSON files
 
 Run this skill after:
