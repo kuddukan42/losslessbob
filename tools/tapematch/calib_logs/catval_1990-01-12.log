@@ -1,0 +1,39 @@
+=== tapematch session: 1990-01-12  [20260702_160205] ===
+
+[1] Querying DB …
+  17 entries — Toad's Place (New Haven, CT)
+    LB-01776
+    LB-01976
+    LB-01977
+    LB-02068
+    LB-02614
+    LB-05863
+    LB-06611
+    LB-06613
+    LB-08297
+    LB-08421
+    LB-08587
+    LB-08740
+    LB-12525
+    LB-12534
+    LB-13114
+    LB-13353
+    LB-16456
+
+[2] Resolving paths from my_collection …
+  Excluded (private/no-torrent): LB-08587, LB-13353
+  Found 12/17
+    LB-01776: /mnt/DYLAN1/Concerts/1990/1990-01-12 Toad's Place (New Haven, CT) (LB-01776)
+    LB-01976: /mnt/DYLAN1/Concerts/1990/1990-01-12 Toad's Place (New Haven, CT) (LB-01976)
+    LB-02614: /mnt/DYLAN1/Concerts/1990/1990-01-12 Toad's Place, New Haven, Connecticut (LB-02614)
+    LB-05863: /mnt/DYLAN1/Concerts/1990/1990-01-12 New Haven, Toad's Place (LB-05863)
+    LB-06611: /mnt/DYLAN1/Concerts/1990/1990-01-12 Toad's Place (New Haven, CT) (LB-06611)
+    LB-06613: /mnt/DYLAN1/Concerts/1990/1990-01-12 Toad's Place, New Haven, Connecticut (LB-06613)
+    LB-08297: /mnt/DYLAN1/Concerts/1990/1990-01-12 Toad, s Place (LB-08297)
+    LB-08421: /mnt/DYLAN1/Concerts/1990/1990-01-12 Toad's Place, New Haven, Ct. (LB-08421)
+    LB-08740: /mnt/DYLAN1/Concerts/1990/1990-01-12 New Haven, CT (LB-08740)
+    LB-12525: /mnt/DYLAN1/Concerts/1990/1990-01-12 Toads Place (LB-12525)
+    LB-12534: /mnt/DYLAN1/Concerts/1990/1990-01-12 Toad'S Place, New Haven, Connecticut, USA (LB-12534)
+    LB-13114: /mnt/DYLAN1/Concerts/1990/1990-01-12 Toad's Place, New Haven, Connecticut (LB-13114)
+  Not found on disk: LB-01977, LB-02068, LB-16456
+  [SKIP] 3 source(s) missing from disk — use --allow-missing to run anyway.

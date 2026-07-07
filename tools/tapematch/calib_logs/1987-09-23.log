@@ -1,0 +1,106 @@
+=== tapematch session: 1987-09-23  [20260702_140403] ===
+
+[1] Querying DB …
+  7 entries — Helsinki, Finland
+    LB-00777
+    LB-02307
+    LB-04318
+    LB-05487
+    LB-09306
+    LB-13050
+    LB-13051
+
+[2] Resolving paths from my_collection …
+  Excluded (private/no-torrent): LB-13050, LB-13051
+  Found 5/7
+    LB-00777: /mnt/DYLAN1/Concerts/1987/1987-09-23 Helsinki, Finland (LB-00777)
+    LB-02307: /mnt/DYLAN1/Concerts/1987/1987-09-23 Helsinki, Finland (LB-02307)
+    LB-04318: /mnt/DYLAN1/Concerts/1987/1987-09-23 Helsinki, Finland, Jaahalli (LB-04318)
+    LB-05487: /mnt/DYLAN1/Concerts/1987/1987-09-23 Helsinki, Finland, J, halli (LB-05487)
+    LB-09306: /mnt/DYLAN1/Concerts/1987/1987-09-23 Helsinki, Finland (LB-09306)
+
+[3] Cleaning /mnt/DATA0/examples/tapematch …
+
+[4] Copying 5 folders to /mnt/DATA0/examples/tapematch …
+  Copying LB-00777: 1987-09-23 Helsinki, Finland (LB-00777) …
+  Copying LB-02307: 1987-09-23 Helsinki, Finland (LB-02307) …
+  Copying LB-04318: 1987-09-23 Helsinki, Finland, Jaahalli (LB-04318) …
+  Copying LB-05487: 1987-09-23 Helsinki, Finland, J, halli (LB-05487) …
+  Copying LB-09306: 1987-09-23 Helsinki, Finland (LB-09306) …
+
+[5] Running tapematch …
+  curator lineage pairs loaded: 677 (from /home/tjenkins/Documents/losslessbob/data/losslessbob.db)
+  est. peak RAM ~0.9 GB (5 sources, largest 1:14:23)
+=== INGEST / TRIM ===
+  1987-09-23 Helsinki, Finland (LB-00777): 14 tracks, 1:08:40
+  1987-09-23 Helsinki, Finland (LB-02307): 15 tracks, 1:12:42
+  1987-09-23 Helsinki, Finland (LB-09306): 14 tracks, 1:07:14
+  1987-09-23 Helsinki, Finland, J, halli (LB-05487): 14 tracks, 1:14:23
+  1987-09-23 Helsinki, Finland, Jaahalli (LB-04318): 14 tracks, 1:09:05
+
+=== TRIM (performance envelope) ===
+  1987-09-23 Helsinki, Finland (LB-00777): trimmed 0:00:50 head, 0:00:00 tail -> performance 1:07:50
+  1987-09-23 Helsinki, Finland (LB-02307): trimmed 0:00:58 head, 0:00:48 tail -> performance 1:10:56
+  1987-09-23 Helsinki, Finland (LB-09306): trimmed 0:01:05 head, 0:00:18 tail -> performance 1:05:52
+  1987-09-23 Helsinki, Finland, J, halli (LB-05487): trimmed 0:01:44 head, 0:01:51 tail -> performance 1:10:48
+  1987-09-23 Helsinki, Finland, Jaahalli (LB-04318): trimmed 0:00:40 head, 0:00:16 tail -> performance 1:08:10
+
+=== ANCHORS (ref=1987-09-23 Helsinki, Finland (LB-00777)) ===
+  0:02:05, 0:05:48, 0:11:50, 0:19:51, 0:22:40, 0:28:44, 0:36:23, 0:41:24, 0:48:06, 0:54:32, 1:01:26, 1:02:53
+
+=== LAG CURVES / SPEED (vs ref) ===
+  1987-09-23 Helsinki, Finland (LB-00777)->1987-09-23 Helsinki, Finland (LB-02307): speed-unknown  speed ratio=0.959185 (-40815 ppm)  [conf=1.7]
+  1987-09-23 Helsinki, Finland (LB-00777)->1987-09-23 Helsinki, Finland (LB-09306): speed-unknown  speed ratio=1.027483 (+27483 ppm)  [conf=1.9]
+  1987-09-23 Helsinki, Finland (LB-00777)->1987-09-23 Helsinki, Finland, J, halli (LB-05487): speed-unknown  speed ratio=0.961299 (-38701 ppm)  [conf=2.6]
+  1987-09-23 Helsinki, Finland (LB-00777)->1987-09-23 Helsinki, Finland, Jaahalli (LB-04318): speed-unknown  speed ratio=0.992323 (-7677 ppm)  [conf=5.3]
+
+=== RESIDUAL CORRELATION MATRIX ===
+  14 pair(s)/source(s) speed-unknown (v2 confidence < 6.0) — routed to fingerprint path only
+          LB-00777  LB-02307  LB-09306  LB-05487  LB-04318
+  LB-00777     1.000     0.006     0.003     0.006     0.004
+  LB-02307     0.006     1.000     0.001     0.007     0.418
+  LB-09306     0.003     0.001     1.000     0.002     0.002
+  LB-05487     0.006     0.007     0.002     1.000     0.004
+  LB-04318     0.004     0.418     0.002     0.004     1.000
+
+=== SECONDARY MATCH (windowed coverage + quiet-segment hiss + fingerprint) ===
+  10 cross-family pair(s) — computing secondary evidence ...
+  LB-02307 / LB-04318: windowed 0.52 (137 win, med 0.326)  [primary corr 0.418] → SECONDARY LINK
+
+=== LAG CURVES / SPEED (re-run vs central ref=1987-09-23 Helsinki, Finland (LB-02307)) ===
+  anchors: 0:05:50, 0:06:34, 0:11:56, 0:22:42, 0:28:24, 0:33:32, 0:35:28, 0:44:44, 0:53:11, 0:53:33, 1:01:59, 1:08:52
+  1987-09-23 Helsinki, Finland (LB-02307)->1987-09-23 Helsinki, Finland (LB-00777): speed-unknown  speed ratio=1.042604 (+42604 ppm)
+  1987-09-23 Helsinki, Finland (LB-02307)->1987-09-23 Helsinki, Finland (LB-09306): speed-unknown  speed ratio=1.074059 (+74059 ppm)
+  1987-09-23 Helsinki, Finland (LB-02307)->1987-09-23 Helsinki, Finland, J, halli (LB-05487): speed-unknown  speed ratio=0.999701 (-299 ppm)
+  1987-09-23 Helsinki, Finland (LB-02307)->1987-09-23 Helsinki, Finland, Jaahalli (LB-04318): speed-unknown  speed ratio=1.037714 (+37714 ppm)
+
+=== CLUSTERS ===
+  Family 1: 1987-09-23 Helsinki, Finland (LB-00777)  (mean intra-corr 1.000)
+  Family 2: 1987-09-23 Helsinki, Finland (LB-02307), 1987-09-23 Helsinki, Finland, Jaahalli (LB-04318)  (mean intra-corr 0.418 [low confidence])  [secondary: LB-02307/LB-04318 via windowed 0.52]
+  Family 3: 1987-09-23 Helsinki, Finland (LB-09306)  (mean intra-corr 1.000)
+  Family 4: 1987-09-23 Helsinki, Finland, J, halli (LB-05487)  (mean intra-corr 1.000)
+  Distinct source families: 4
+
+=== LINEAGE EVIDENCE (interpret manually) ===
+    source   HF ceiling  noise floor  DC asymmetry
+  1987-09-23 Helsinki, Finland (LB-00777)       4.0kHz      -88.0dB      +0.00102
+  1987-09-23 Helsinki, Finland (LB-02307)       4.0kHz      -90.6dB      -0.00002
+  1987-09-23 Helsinki, Finland (LB-09306)       4.0kHz      -82.4dB      -0.00003
+  1987-09-23 Helsinki, Finland, J, halli (LB-05487)       3.0kHz      -82.4dB      -0.00002
+  1987-09-23 Helsinki, Finland, Jaahalli (LB-04318)       4.0kHz      -83.6dB      -0.00003
+  (HF ceiling capped by 8000 Hz Nyquist at analysis_sr=16000; run lineage at native rate for real format discrimination)
+  (DC asymmetry is a taper/equipment signature — not a reliable source-identity marker)
+
+=== DIAGNOSTICS ===
+  [DISTINCT SOURCE] 1987-09-23 Helsinki, Finland (LB-00777) (+42604 ppm speed offset, best cross-family corr 0.006): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1987-09-23 Helsinki, Finland (LB-09306) (+74059 ppm speed offset, best cross-family corr 0.003): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1987-09-23 Helsinki, Finland, J, halli (LB-05487) (-299 ppm speed offset, best cross-family corr 0.007): near-zero correlation to all other sources — entirely different recording
+  [SECONDARY SAME-SOURCE] 1987-09-23 Helsinki, Finland (LB-02307) / 1987-09-23 Helsinki, Finland, Jaahalli (LB-04318): windowed coverage 0.52 (137 win) — primary corr 0.418 (below threshold); likely remaster or heavily edited copy of same tape
+
+[6] Archiving run …
+  Archive → /home/tjenkins/Documents/losslessbob/data/tapematch/runs/20260702_140403_1987-09-23
+
+[7] Logging to observations.db …
+  Logged: 1 run, 5 sources, 10 pairs
+
+Report → /home/tjenkins/Documents/losslessbob/tools/tapematch/last_run_report.md

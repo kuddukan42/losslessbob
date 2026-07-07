@@ -1,0 +1,92 @@
+TapeMatch ADDON Tier A — Phase 2 live calibration (flaw_match_score / spec_stationarity / env_corr)
+Started 2026-07-02. Sole live-audio runner this session. Serialize strictly (shared staging dir).
+
+## Date selection (data-driven, queried observations.db x regression_set.json)
+Query: for every date, count frozen-TP pairs present, frozen-TN (same-date diff-source)
+pairs present, and target-FN pairs (frozen positive, verdict=different_family, corr<0.05,
+label_suspect != 1). Ranked by total (tp+tn+fn), controls always included.
+
+Selected 11 dates (cap ~12), 66 distinct sources total, ~177 combinatorial pairs:
+
+Controls (mandatory every iteration):
+- 1990-06-01 (3 src) — precision sentinel, tn=3
+- 1996-07-21 (5 src) — control, tp=2 tn=1
+- 1998-10-28 (5 src) — control, tp=2 tn=3 fn=1
+- 1991-02-10 (8 src) — precision sentinel, tp=1 tn=19 (heaviest TN date in the set)
+
+Data-driven additions (ranked by total labeled pairs, TN mandatory coverage confirmed):
+- 1993-06-27 (7 src) — tp=7 tn=9 fn=7 (dual-purpose, known-good from staircase calib)
+- 1994-07-04 (8 src) — tp=10 tn=4 fn=7
+- 1996-11-04 (7 src) — tp=17 tn=0 fn=4 (richest TP; TN covered elsewhere)
+- 1990-11-08 (5 src) — tp=10 tn=1 fn=7
+- 1994-04-28 (5 src) — tp=10 tn=0 fn=7
+- 2001-10-30 (7 src) — tp=8 tn=3 fn=6 (spec-named calibration date)
+- 1989-06-04 (6 src) — tp=9 tn=0 fn=7
+
+Aggregate across all 11 dates: TP=76, TN=43 (mandatory pop, well-covered), target-FN=46,
+total=165 pairs >= 100 required. Cost estimate ~50s/pair (observed) x ~177 pairs ~= 2.5h.
+
+## Config change
+config.yaml: flaw_fingerprint.enabled, spectral_stationarity.enabled, envelope_corr.enabled
+-> true. addon_links.rule_a/b/c.enabled left false. fingerprint.triplet.enabled left false.
+No merge rule armed; population is precision-safe by construction (Task 5 moved flaw merge
+into rule_a, which stays off).
+
+## Run log (one line per date, appended live)
+[2026-07-02T23:39:00-05:00] === run_addon_measure.sh START (pid 1282920) — waiting for population batch to finish ===
+[2026-07-03T00:27:34-05:00] population batch finished; verifying all 11 dates populated
+[2026-07-03T00:27:34-05:00] running measurement (calibrate_addon.py + score --cached)
+
+## RESULTS (2026-07-03T00:27:34-05:00)
+### calibrate_addon.py  (gap>=0.10 gate + zero-FP bar + Rule B conjunction)
+Tier A ADDON signal calibration (frozen set ∩ populated rows)
+  labeled pairs: 2965   rows in latest_pairs: 7525
+  populated per signal: flaw_match_score=178  spec_stationarity=160  env_corr=160
+
+=== flaw_match_score ===
+    TP       n=66   min=0.000 p10=0.000 median=0.019 p90=0.506 max=0.900
+    TN       n=43   min=0.000 p10=0.000 median=0.005 p90=0.044 max=0.133
+    target-FN coverage (corr<0.05, not suspect): 55/979 (6%)
+    gap = p10(TP)=0.000 - p90(TN)=0.044 = -0.044  [REJECT vs min_gap 0.1]
+    zero-FP bar > max(TN)=0.133: recovers 21/66 TP (strict cluster_threshold >= 0.143)
+    -> p10/p90 gap fails, BUT a strict zero-FP bar 0.143 recovers 21 TP with no frozen FP — precision-safe if lone-merge is allowed (Rule A / flaw only; stationarity+env are conjunctive-only, never lone).
+
+=== spec_stationarity ===
+    TP       n=65   min=0.000 p10=0.000 median=0.152 p90=0.865 max=0.997
+    TN       n=32   min=0.000 p10=0.000 median=0.191 p90=0.464 max=0.675
+    target-FN coverage (corr<0.05, not suspect): 55/979 (6%)
+    gap = p10(TP)=0.000 - p90(TN)=0.464 = -0.464  [REJECT vs min_gap 0.1]
+    zero-FP bar > max(TN)=0.675: recovers 10/65 TP (strict cluster_threshold >= 0.685)
+    -> p10/p90 gap fails, BUT a strict zero-FP bar 0.685 recovers 10 TP with no frozen FP — precision-safe if lone-merge is allowed (Rule A / flaw only; stationarity+env are conjunctive-only, never lone).
+
+=== env_corr ===
+    TP       n=65   min=-0.079 p10=-0.020 median=0.139 p90=0.453 max=0.609
+    TN       n=32   min=-0.117 p10=-0.025 median=0.102 p90=0.357 max=0.661
+    target-FN coverage (corr<0.05, not suspect): 55/979 (6%)
+    gap = p10(TP)=-0.020 - p90(TN)=0.357 = -0.377  [REJECT vs min_gap 0.1]
+    zero-FP bar > max(TN)=0.661: recovers 0/65 TP (strict cluster_threshold >= 0.671)
+    -> structural reject: do NOT ship / do NOT threshold-shop (triplet precedent).
+
+=== Rule B conjunction (spec_stationarity>=0.7 AND env_corr>=0.9) ===
+    both-populated pairs: TP=65 TN=32
+    pass the AND-gate:    TP=0 TN=0
+    -> no TP recovered at these thresholds (no recall benefit).
+
+### regression.py score --cached  (ALL merge rules OFF -> baseline; absolute fp MUST be 9)
+
+=== regression score (cached; recomputed) — 827 date(s), 2965 frozen pairs ===
+
+             baseline   candidate    delta
+recall          39.2%       41.6%    +2.3
+precision       98.6%       98.6%    +0.1
+
+confusion  baseline: tp=618 fn=957 fp=9 tn=1381
+           candidate: tp=655 fn=920 fp=9 tn=1381
+
+new FP: none  (precision preserved on frozen negatives)
+
+addon-links signal coverage (frozen FN, n=920) — bounds each signal's max recall contribution:
+  flaw_match_score    :    47 / 920    (  5.1%)
+  spec_stationarity   :    47 / 920    (  5.1%)
+  env_corr            :    47 / 920    (  5.1%)
+[2026-07-03T00:27:35-05:00] ADDON_CALIB_DONE

@@ -1,0 +1,110 @@
+=== tapematch session: 1991-11-05  [20260702_164350] ===
+
+[1] Querying DB …
+  5 entries — Madison, Wisconsin
+    LB-00873
+    LB-06828
+    LB-09174
+    LB-10660
+    LB-12544
+
+[2] Resolving paths from my_collection …
+  Found 5/5
+    LB-00873: /mnt/DYLAN1/Concerts/1991/1991-11-05 Madison, Wisconsin (LB-00873)
+    LB-06828: /mnt/DYLAN1/Concerts/1991/1991-11-05 Madison, Wisconsin (LB-06828)
+    LB-09174: /mnt/DYLAN1/Concerts/1991/1991-11-05 Madison, Wisconsin (LB-09174)
+    LB-10660: /mnt/DYLAN1/Concerts/1991/1991-11-05 Madison, Wisconsin (LB-10660)
+    LB-12544: /mnt/DYLAN1/Concerts/1991/1991-11-05 Madison, WI (LB-12544)
+
+[3] Cleaning /mnt/DATA0/examples/tapematch …
+
+[4] Copying 5 folders to /mnt/DATA0/examples/tapematch …
+  Copying LB-00873: 1991-11-05 Madison, Wisconsin (LB-00873) …
+  Copying LB-06828: 1991-11-05 Madison, Wisconsin (LB-06828) …
+  Copying LB-09174: 1991-11-05 Madison, Wisconsin (LB-09174) …
+  Copying LB-10660: 1991-11-05 Madison, Wisconsin (LB-10660) …
+  Copying LB-12544: 1991-11-05 Madison, WI (LB-12544) …
+
+[5] Running tapematch …
+  curator lineage pairs loaded: 677 (from /home/tjenkins/Documents/losslessbob/data/losslessbob.db)
+  est. peak RAM ~1.1 GB (5 sources, largest 1:44:24)
+=== INGEST / TRIM ===
+  1991-11-05 Madison, WI (LB-12544): 18 tracks, 1:42:37
+  1991-11-05 Madison, Wisconsin (LB-00873): 18 tracks, 1:43:08
+  1991-11-05 Madison, Wisconsin (LB-06828): 12 tracks, 1:13:40
+  1991-11-05 Madison, Wisconsin (LB-09174): 18 tracks, 1:40:46
+  1991-11-05 Madison, Wisconsin (LB-10660): 18 tracks, 1:44:24
+
+=== TRIM (performance envelope) ===
+  1991-11-05 Madison, WI (LB-12544): trimmed 0:00:48 head, 0:00:08 tail -> performance 1:41:42
+  1991-11-05 Madison, Wisconsin (LB-00873): trimmed 0:01:32 head, 0:00:06 tail -> performance 1:41:30
+  1991-11-05 Madison, Wisconsin (LB-06828): trimmed 0:03:06 head, 0:00:19 tail -> performance 1:10:16
+  1991-11-05 Madison, Wisconsin (LB-09174): trimmed 0:18:27 head, 0:00:05 tail -> performance 1:22:14
+  1991-11-05 Madison, Wisconsin (LB-10660): trimmed 0:01:13 head, 0:00:08 tail -> performance 1:43:04
+
+  [INCOMPLETE?] — duration well below group median (1:41:30):
+    1991-11-05 Madison, Wisconsin (LB-06828): 1:10:16 (30.8% shorter)
+    1991-11-05 Madison, Wisconsin (LB-09174): 1:22:14 (19.0% shorter)
+
+=== ANCHORS (ref=1991-11-05 Madison, WI (LB-12544)) ===
+  0:07:20, 0:14:54, 0:19:28, 0:26:03, 0:36:57, 0:46:27, 0:53:22, 1:06:14, 1:15:23, 1:19:27, 1:25:06, 1:34:00
+
+=== LAG CURVES / SPEED (vs ref) ===
+  1991-11-05 Madison, WI (LB-12544)->1991-11-05 Madison, Wisconsin (LB-00873): speed-unknown  speed ratio=0.999406 (-594 ppm)  [conf=1.3]
+  1991-11-05 Madison, WI (LB-12544)->1991-11-05 Madison, Wisconsin (LB-06828): speed-unknown  speed ratio=0.974800 (-25200 ppm)  [conf=1.8]
+  1991-11-05 Madison, WI (LB-12544)->1991-11-05 Madison, Wisconsin (LB-09174): speed-unknown  speed ratio=0.979000 (-21000 ppm)  [conf=1.9]
+  1991-11-05 Madison, WI (LB-12544)->1991-11-05 Madison, Wisconsin (LB-10660): speed-unknown  speed ratio=0.987539 (-12461 ppm)  [conf=1.9]
+
+=== RESIDUAL CORRELATION MATRIX ===
+  14 pair(s)/source(s) speed-unknown (v2 confidence < 6.0) — routed to fingerprint path only
+          LB-12544  LB-00873  LB-06828  LB-09174  LB-10660
+  LB-12544     1.000     0.002     0.002     0.002     0.004
+  LB-00873     0.002     1.000     0.001     0.002     0.004
+  LB-06828     0.002     0.001     1.000     0.003     0.003
+  LB-09174     0.002     0.002     0.003     1.000     0.003
+  LB-10660     0.004     0.004     0.003     0.003     1.000
+
+=== SECONDARY MATCH (windowed coverage + quiet-segment hiss + fingerprint) ===
+  10 cross-family pair(s) — computing secondary evidence ...
+  No secondary same-source evidence found.
+
+=== LAG CURVES / SPEED (re-run vs central ref=1991-11-05 Madison, Wisconsin (LB-10660)) ===
+  anchors: 0:07:08, 0:16:52, 0:23:44, 0:27:45, 0:39:44, 0:46:48, 0:54:38, 1:08:24, 1:13:30, 1:20:09, 1:33:59, 1:35:17
+  1991-11-05 Madison, Wisconsin (LB-10660)->1991-11-05 Madison, WI (LB-12544): speed-unknown  speed ratio=1.012639 (+12639 ppm)
+  1991-11-05 Madison, Wisconsin (LB-10660)->1991-11-05 Madison, Wisconsin (LB-00873): speed-unknown  speed ratio=1.013170 (+13170 ppm)
+  1991-11-05 Madison, Wisconsin (LB-10660)->1991-11-05 Madison, Wisconsin (LB-06828): speed-unknown  speed ratio=0.988000 (-12000 ppm)
+  1991-11-05 Madison, Wisconsin (LB-10660)->1991-11-05 Madison, Wisconsin (LB-09174): speed-unknown  speed ratio=0.988100 (-11900 ppm)
+
+=== CLUSTERS ===
+  Family 1: 1991-11-05 Madison, WI (LB-12544)  (mean intra-corr 1.000)
+  Family 2: 1991-11-05 Madison, Wisconsin (LB-00873)  (mean intra-corr 1.000)
+  Family 3: 1991-11-05 Madison, Wisconsin (LB-06828)  (mean intra-corr 1.000)
+  Family 4: 1991-11-05 Madison, Wisconsin (LB-09174)  (mean intra-corr 1.000)
+  Family 5: 1991-11-05 Madison, Wisconsin (LB-10660)  (mean intra-corr 1.000)
+  Distinct source families: 5
+
+=== LINEAGE EVIDENCE (interpret manually) ===
+    source   HF ceiling  noise floor  DC asymmetry
+  1991-11-05 Madison, WI (LB-12544)       2.0kHz      -78.1dB      +0.00005
+  1991-11-05 Madison, Wisconsin (LB-00873)       3.0kHz      -79.8dB      +0.00005
+  1991-11-05 Madison, Wisconsin (LB-06828)       3.0kHz      -79.3dB      -0.00506
+  1991-11-05 Madison, Wisconsin (LB-09174)       3.0kHz      -80.0dB      -0.00427
+  1991-11-05 Madison, Wisconsin (LB-10660)       3.0kHz      -88.7dB      -0.00002
+  (HF ceiling capped by 8000 Hz Nyquist at analysis_sr=16000; run lineage at native rate for real format discrimination)
+  (DC asymmetry is a taper/equipment signature — not a reliable source-identity marker)
+
+=== DIAGNOSTICS ===
+  [INCOMPLETE] 1991-11-05 Madison, Wisconsin (LB-06828): 1:10:16 vs median 1:41:30 (30.8% shorter) — likely missing material
+  [INCOMPLETE] 1991-11-05 Madison, Wisconsin (LB-09174): 1:22:14 vs median 1:41:30 (19.0% shorter) — likely missing material
+  [DISTINCT SOURCE] 1991-11-05 Madison, WI (LB-12544) (+12639 ppm speed offset, best cross-family corr 0.004): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1991-11-05 Madison, Wisconsin (LB-00873) (+13170 ppm speed offset, best cross-family corr 0.004): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1991-11-05 Madison, Wisconsin (LB-06828) (-12000 ppm speed offset, best cross-family corr 0.003): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1991-11-05 Madison, Wisconsin (LB-09174) (-11900 ppm speed offset, best cross-family corr 0.003): near-zero correlation to all other sources — entirely different recording
+
+[6] Archiving run …
+  Archive → /home/tjenkins/Documents/losslessbob/data/tapematch/runs/20260702_164350_1991-11-05
+
+[7] Logging to observations.db …
+  Logged: 1 run, 5 sources, 10 pairs
+
+Report → /home/tjenkins/Documents/losslessbob/tools/tapematch/last_run_report.md

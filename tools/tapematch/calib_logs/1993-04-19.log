@@ -1,0 +1,110 @@
+=== tapematch session: 1993-04-19  [20260702_153402] ===
+
+[1] Querying DB …
+  7 entries — Huntsville
+    LB-02329
+    LB-06847
+    LB-06992
+    LB-08741
+    LB-10352
+    LB-12440
+    LB-15246
+
+[2] Resolving paths from my_collection …
+  Excluded (private/no-torrent): LB-10352
+  Found 6/7
+    LB-02329: /mnt/DYLAN1/Concerts/1993/1993-04-19 Huntsville (LB-02329)
+    LB-06847: /mnt/DYLAN1/Concerts/1993/1993-04-19 Huntsville, AL (LB-06847)
+    LB-06992: /mnt/DYLAN1/Concerts/1993/1993-04-19 Huntsville, Alabama (LB-06992)
+    LB-08741: /mnt/DYLAN1/Concerts/1993/1993-04-19 Huntsville, Alabama (LB-08741)
+    LB-12440: /mnt/DYLAN1/Concerts/1993/1993-04-19 Huntsville, Alabama (LB-12440)
+    LB-15246: /mnt/DYLAN1/Concerts/1993/1993-04-19 Huntsville, AL (LB-15246)
+
+[3] Cleaning /mnt/DATA0/examples/tapematch …
+
+[4] Copying 6 folders to /mnt/DATA0/examples/tapematch …
+  Copying LB-02329: 1993-04-19 Huntsville (LB-02329) …
+  Copying LB-06847: 1993-04-19 Huntsville, AL (LB-06847) …
+  Copying LB-06992: 1993-04-19 Huntsville, Alabama (LB-06992) …
+  Copying LB-08741: 1993-04-19 Huntsville, Alabama (LB-08741) …
+  Copying LB-12440: 1993-04-19 Huntsville, Alabama (LB-12440) …
+  Copying LB-15246: 1993-04-19 Huntsville, AL (LB-15246) …
+
+[5] Running tapematch …
+  curator lineage pairs loaded: 677 (from /home/tjenkins/Documents/losslessbob/data/losslessbob.db)
+  est. peak RAM ~1.4 GB (6 sources, largest 2:29:07)
+=== INGEST / TRIM ===
+  1993-04-19 Huntsville (LB-02329): 18 tracks, 2:01:55
+  1993-04-19 Huntsville, AL (LB-06847): 23 tracks, 2:29:07
+  1993-04-19 Huntsville, AL (LB-15246): 18 tracks, 2:02:25
+  1993-04-19 Huntsville, Alabama (LB-06992): 18 tracks, 2:02:32
+  1993-04-19 Huntsville, Alabama (LB-08741): 18 tracks, 2:01:50
+  1993-04-19 Huntsville, Alabama (LB-12440): 18 tracks, 2:01:39
+
+=== TRIM (performance envelope) ===
+  1993-04-19 Huntsville (LB-02329): trimmed 0:00:00 head, 0:01:55 tail -> performance 2:00:01
+  1993-04-19 Huntsville, AL (LB-06847): trimmed 0:05:28 head, 0:00:08 tail -> performance 2:23:32
+  1993-04-19 Huntsville, AL (LB-15246): trimmed 0:03:58 head, 0:00:00 tail -> performance 1:58:27
+  1993-04-19 Huntsville, Alabama (LB-06992): trimmed 0:04:04 head, 0:00:01 tail -> performance 1:58:27
+  1993-04-19 Huntsville, Alabama (LB-08741): trimmed 0:00:00 head, 0:01:55 tail -> performance 1:59:55
+  1993-04-19 Huntsville, Alabama (LB-12440): trimmed 0:00:00 head, 0:01:45 tail -> performance 1:59:54
+
+=== ANCHORS (ref=1993-04-19 Huntsville (LB-02329)) ===
+  0:09:40, 0:11:07, 0:29:51, 0:32:25, 0:42:14, 0:57:09, 1:03:37, 1:17:21, 1:21:17, 1:35:19, 1:40:22, 1:55:01
+
+=== LAG CURVES / SPEED (vs ref) ===
+  1993-04-19 Huntsville (LB-02329)->1993-04-19 Huntsville, AL (LB-06847): staircase/splice  speed ratio=0.999900 (-100 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  1993-04-19 Huntsville (LB-02329)->1993-04-19 Huntsville, AL (LB-15246): speed-unknown  speed ratio=1.010477 (+10477 ppm)  [conf=2.9]
+  1993-04-19 Huntsville (LB-02329)->1993-04-19 Huntsville, Alabama (LB-06992): speed-unknown  speed ratio=1.010226 (+10226 ppm)  [conf=2.3]
+  1993-04-19 Huntsville (LB-02329)->1993-04-19 Huntsville, Alabama (LB-08741): staircase/splice  speed ratio=1.000134 (+134 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  1993-04-19 Huntsville (LB-02329)->1993-04-19 Huntsville, Alabama (LB-12440): staircase/splice  speed ratio=1.000103 (+103 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+
+=== RESIDUAL CORRELATION MATRIX ===
+  16 pair(s)/source(s) speed-unknown (v2 confidence < 6.0) — routed to fingerprint path only
+          LB-02329  LB-06847  LB-15246  LB-06992  LB-08741  LB-12440
+  LB-02329     1.000     0.003     0.003     0.003     0.932     0.936
+  LB-06847     0.003     1.000     0.004     0.002     0.003     0.004
+  LB-15246     0.003     0.004     1.000     0.192     0.004     0.004
+  LB-06992     0.003     0.002     0.192     1.000     0.004     0.004
+  LB-08741     0.932     0.003     0.004     0.004     1.000     0.889
+  LB-12440     0.936     0.004     0.004     0.004     0.889     1.000
+
+=== SECONDARY MATCH (windowed coverage + quiet-segment hiss + fingerprint) ===
+  12 cross-family pair(s) — computing secondary evidence ...
+  LB-06847 / LB-06992: fingerprint Dice 0.641 (43934 / 44881 hashes)  [primary corr 0.002] → SECONDARY LINK
+  LB-15246 / LB-06992: hiss 0.78 (155 segs, med 0.330)  [primary corr 0.192] → hiss evidence (below merge threshold)
+
+=== CLUSTERS ===
+  Family 1: 1993-04-19 Huntsville (LB-02329), 1993-04-19 Huntsville, Alabama (LB-08741), 1993-04-19 Huntsville, Alabama (LB-12440)  (mean intra-corr 0.919 [high confidence])
+  Family 2: 1993-04-19 Huntsville, AL (LB-06847), 1993-04-19 Huntsville, AL (LB-15246), 1993-04-19 Huntsville, Alabama (LB-06992)  (mean intra-corr 0.066 [low confidence])  [secondary: LB-06847/LB-06992 via fp 0.641; LB-15246/LB-06992 via hiss 0.78]  [chain-unverified: LB-06847/LB-15246; LB-15246/LB-06992 not directly confirmed]
+  Distinct source families: 2
+
+=== LINEAGE EVIDENCE (interpret manually) ===
+    source   HF ceiling  noise floor  DC asymmetry
+  1993-04-19 Huntsville (LB-02329)       3.0kHz      -78.5dB      +0.00110
+  1993-04-19 Huntsville, AL (LB-06847)       2.0kHz      -79.2dB      +0.00123
+  1993-04-19 Huntsville, AL (LB-15246)       2.0kHz      -78.5dB      +0.00001
+  1993-04-19 Huntsville, Alabama (LB-06992)       1.0kHz      -81.8dB      +0.00118
+  1993-04-19 Huntsville, Alabama (LB-08741)       2.0kHz      -78.5dB      +0.00110
+  1993-04-19 Huntsville, Alabama (LB-12440)       3.0kHz      -78.6dB      +0.00108
+  (HF ceiling capped by 8000 Hz Nyquist at analysis_sr=16000; run lineage at native rate for real format discrimination)
+  (DC asymmetry is a taper/equipment signature — not a reliable source-identity marker)
+
+=== DIAGNOSTICS ===
+  [TIMING MISMATCH] 1993-04-19 Huntsville (LB-02329) / 1993-04-19 Huntsville, AL (LB-06847): performance 2:00:01 vs 2:23:32 (23.5 min difference) — timing drift may exceed alignment window; correlation unreliable if same-source
+  [TIMING MISMATCH] 1993-04-19 Huntsville, Alabama (LB-08741) / 1993-04-19 Huntsville, AL (LB-06847): performance 1:59:55 vs 2:23:32 (23.6 min difference) — timing drift may exceed alignment window; correlation unreliable if same-source
+  [TIMING MISMATCH] 1993-04-19 Huntsville, Alabama (LB-12440) / 1993-04-19 Huntsville, AL (LB-06847): performance 1:59:54 vs 2:23:32 (23.6 min difference) — timing drift may exceed alignment window; correlation unreliable if same-source
+  [SECONDARY SAME-SOURCE] 1993-04-19 Huntsville, AL (LB-06847) / 1993-04-19 Huntsville, Alabama (LB-06992): fingerprint Dice 0.641 — primary corr 0.002 (below threshold); likely remaster or heavily edited copy of same tape
+  [SECONDARY SAME-SOURCE] 1993-04-19 Huntsville, AL (LB-15246) / 1993-04-19 Huntsville, Alabama (LB-06992): hiss frac 0.78 (155 segs) — primary corr 0.192 (below threshold); likely remaster or heavily edited copy of same tape
+  [MEDIUM CONFIDENCE] Family 1 (1993-04-19 Huntsville, Alabama (LB-08741) / 1993-04-19 Huntsville, Alabama (LB-12440)): corr 0.889 — same source likely but significant processing (resampling, level boost, EQ) may explain reduced correlation
+
+[6] Archiving run …
+  Archive → /home/tjenkins/Documents/losslessbob/data/tapematch/runs/20260702_153402_1993-04-19
+
+[7] Logging to observations.db …
+  Logged: 1 run, 6 sources, 15 pairs
+
+Report → /home/tjenkins/Documents/losslessbob/tools/tapematch/last_run_report.md

@@ -1,0 +1,133 @@
+=== tapematch session: 1991-06-11  [20260702_163635] ===
+
+[1] Querying DB …
+  9 entries — Stadion FK Zemun, near Belgrade
+    LB-03676
+    LB-03686
+    LB-04403
+    LB-06821
+    LB-09186
+    LB-09903
+    LB-09905
+    LB-12342
+    LB-12968
+
+[2] Resolving paths from my_collection …
+  Excluded (private/no-torrent): LB-09903, LB-09905
+  Found 7/9
+    LB-03676: /mnt/DYLAN1/Concerts/1991/1991-06-11 Stadion FK Zemun, near Belgrade (LB-03676)
+    LB-03686: /mnt/DYLAN1/Concerts/1991/1991-06-11 Stadion FK Zemun, near Belgrade (LB-03686)
+    LB-04403: /mnt/DYLAN1/Concerts/1991/1991-06-11 Belgrade, Yugoslavia, Zadjan Stadium (LB-04403)
+    LB-06821: /mnt/DYLAN1/Concerts/1991/1991-06-11 Belgrad, Yugoslavia (LB-06821)
+    LB-09186: /mnt/DYLAN1/Concerts/1991/1991-06-11 Belgrade, Yugoslavia (LB-09186)
+    LB-12342: /mnt/DYLAN1/Concerts/1991/1991-06-11 Belgrade, Yugoslavia (LB-12342)
+    LB-12968: /mnt/DYLAN1/Concerts/1991/1991-06-11 Belgrade, Yugoslavia (LB-12968)
+
+[3] Cleaning /mnt/DATA0/examples/tapematch …
+
+[4] Copying 7 folders to /mnt/DATA0/examples/tapematch …
+  Copying LB-03676: 1991-06-11 Stadion FK Zemun, near Belgrade (LB-03676) …
+  Copying LB-03686: 1991-06-11 Stadion FK Zemun, near Belgrade (LB-03686) …
+  Copying LB-04403: 1991-06-11 Belgrade, Yugoslavia, Zadjan Stadium (LB-04403) …
+  Copying LB-06821: 1991-06-11 Belgrad, Yugoslavia (LB-06821) …
+  Copying LB-09186: 1991-06-11 Belgrade, Yugoslavia (LB-09186) …
+  Copying LB-12342: 1991-06-11 Belgrade, Yugoslavia (LB-12342) …
+  Copying LB-12968: 1991-06-11 Belgrade, Yugoslavia (LB-12968) …
+
+[5] Running tapematch …
+  curator lineage pairs loaded: 677 (from /home/tjenkins/Documents/losslessbob/data/losslessbob.db)
+  est. peak RAM ~1.0 GB (7 sources, largest 1:31:02)
+=== INGEST / TRIM ===
+  1991-06-11 Belgrad, Yugoslavia (LB-06821): 15 tracks, 1:12:34
+  1991-06-11 Belgrade, Yugoslavia (LB-09186): 19 tracks, 1:31:02
+  1991-06-11 Belgrade, Yugoslavia (LB-12342): 20 tracks, 1:27:35
+  1991-06-11 Belgrade, Yugoslavia (LB-12968): 19 tracks, 1:28:52
+  1991-06-11 Belgrade, Yugoslavia, Zadjan Stadium (LB-04403): 19 tracks, 1:28:43
+  1991-06-11 Stadion FK Zemun, near Belgrade (LB-03676): 19 tracks, 1:29:12
+  1991-06-11 Stadion FK Zemun, near Belgrade (LB-03686): 19 tracks, 1:28:52
+
+=== TRIM (performance envelope) ===
+  1991-06-11 Belgrad, Yugoslavia (LB-06821): trimmed 0:00:14 head, 0:00:05 tail -> performance 1:12:15
+  1991-06-11 Belgrade, Yugoslavia (LB-09186): trimmed 0:00:18 head, 0:00:21 tail -> performance 1:30:23
+  1991-06-11 Belgrade, Yugoslavia (LB-12342): trimmed 0:01:03 head, 0:00:04 tail -> performance 1:26:28
+  1991-06-11 Belgrade, Yugoslavia (LB-12968): trimmed 0:00:47 head, 0:00:12 tail -> performance 1:27:54
+  1991-06-11 Belgrade, Yugoslavia, Zadjan Stadium (LB-04403): trimmed 0:00:19 head, 0:00:07 tail -> performance 1:28:17
+  1991-06-11 Stadion FK Zemun, near Belgrade (LB-03676): trimmed 0:02:14 head, 0:00:02 tail -> performance 1:26:56
+  1991-06-11 Stadion FK Zemun, near Belgrade (LB-03686): trimmed 0:00:00 head, 0:00:00 tail -> performance 1:28:52
+
+  [INCOMPLETE?] — duration well below group median (1:27:54):
+    1991-06-11 Belgrad, Yugoslavia (LB-06821): 1:12:15 (17.8% shorter)
+
+=== ANCHORS (ref=1991-06-11 Belgrad, Yugoslavia (LB-06821)) ===
+  0:04:34, 0:08:10, 0:17:10, 0:19:18, 0:29:40, 0:34:55, 0:37:56, 0:46:47, 0:53:30, 0:56:21, 1:00:41, 1:06:15
+
+=== LAG CURVES / SPEED (vs ref) ===
+  1991-06-11 Belgrad, Yugoslavia (LB-06821)->1991-06-11 Belgrade, Yugoslavia (LB-09186): speed-unknown  speed ratio=0.968900 (-31100 ppm)  [conf=3.7]
+  1991-06-11 Belgrad, Yugoslavia (LB-06821)->1991-06-11 Belgrade, Yugoslavia (LB-12342): speed-unknown  speed ratio=1.015700 (+15700 ppm)  [conf=1.5]
+  1991-06-11 Belgrad, Yugoslavia (LB-06821)->1991-06-11 Belgrade, Yugoslavia (LB-12968): speed-unknown  speed ratio=1.004700 (+4700 ppm)  [conf=2.8]
+  1991-06-11 Belgrad, Yugoslavia (LB-06821)->1991-06-11 Belgrade, Yugoslavia, Zadjan Stadium (LB-04403): speed-unknown  speed ratio=1.004500 (+4500 ppm)  [conf=2.5]
+  1991-06-11 Belgrad, Yugoslavia (LB-06821)->1991-06-11 Stadion FK Zemun, near Belgrade (LB-03676): speed-unknown  speed ratio=0.982600 (-17400 ppm)  [conf=1.4]
+  1991-06-11 Belgrad, Yugoslavia (LB-06821)->1991-06-11 Stadion FK Zemun, near Belgrade (LB-03686): speed-unknown  speed ratio=1.002200 (+2200 ppm)  [conf=1.6]
+
+=== RESIDUAL CORRELATION MATRIX ===
+  27 pair(s)/source(s) speed-unknown (v2 confidence < 6.0) — routed to fingerprint path only
+          LB-06821  LB-09186  LB-12342  LB-12968  LB-04403  LB-03676  LB-03686
+  LB-06821     1.000     0.003     0.002     0.003     0.003     0.002     0.002
+  LB-09186     0.003     1.000     0.002     0.002     0.003     0.003     0.003
+  LB-12342     0.002     0.002     1.000     0.003     0.003     0.003     0.002
+  LB-12968     0.003     0.002     0.003     1.000     0.007     0.002     0.002
+  LB-04403     0.003     0.003     0.003     0.007     1.000     0.003     0.002
+  LB-03676     0.002     0.003     0.003     0.002     0.003     1.000     0.004
+  LB-03686     0.002     0.003     0.002     0.002     0.002     0.004     1.000
+
+=== SECONDARY MATCH (windowed coverage + quiet-segment hiss + fingerprint) ===
+  21 cross-family pair(s) — computing secondary evidence ...
+  No secondary same-source evidence found.
+
+=== LAG CURVES / SPEED (re-run vs central ref=1991-06-11 Belgrade, Yugoslavia, Zadjan Stadium (LB-04403)) ===
+  anchors: 0:05:42, 0:10:31, 0:19:24, 0:24:58, 0:32:41, 0:40:15, 0:45:59, 0:52:19, 1:03:11, 1:08:40, 1:18:32, 1:27:36
+  1991-06-11 Belgrade, Yugoslavia, Zadjan Stadium (LB-04403)->1991-06-11 Belgrad, Yugoslavia (LB-06821): speed-unknown  speed ratio=0.995500 (-4500 ppm)
+  1991-06-11 Belgrade, Yugoslavia, Zadjan Stadium (LB-04403)->1991-06-11 Belgrade, Yugoslavia (LB-09186): speed-unknown  speed ratio=0.973766 (-26234 ppm)
+  1991-06-11 Belgrade, Yugoslavia, Zadjan Stadium (LB-04403)->1991-06-11 Belgrade, Yugoslavia (LB-12342): speed-unknown  speed ratio=1.018010 (+18010 ppm)
+  1991-06-11 Belgrade, Yugoslavia, Zadjan Stadium (LB-04403)->1991-06-11 Belgrade, Yugoslavia (LB-12968): speed-unknown  speed ratio=1.001756 (+1756 ppm)
+  1991-06-11 Belgrade, Yugoslavia, Zadjan Stadium (LB-04403)->1991-06-11 Stadion FK Zemun, near Belgrade (LB-03676): speed-unknown  speed ratio=1.013332 (+13332 ppm)
+  1991-06-11 Belgrade, Yugoslavia, Zadjan Stadium (LB-04403)->1991-06-11 Stadion FK Zemun, near Belgrade (LB-03686): speed-unknown  speed ratio=0.994829 (-5171 ppm)
+
+=== CLUSTERS ===
+  Family 1: 1991-06-11 Belgrad, Yugoslavia (LB-06821)  (mean intra-corr 1.000)
+  Family 2: 1991-06-11 Belgrade, Yugoslavia (LB-09186)  (mean intra-corr 1.000)
+  Family 3: 1991-06-11 Belgrade, Yugoslavia (LB-12342)  (mean intra-corr 1.000)
+  Family 4: 1991-06-11 Belgrade, Yugoslavia (LB-12968)  (mean intra-corr 1.000)
+  Family 5: 1991-06-11 Belgrade, Yugoslavia, Zadjan Stadium (LB-04403)  (mean intra-corr 1.000)
+  Family 6: 1991-06-11 Stadion FK Zemun, near Belgrade (LB-03676)  (mean intra-corr 1.000)
+  Family 7: 1991-06-11 Stadion FK Zemun, near Belgrade (LB-03686)  (mean intra-corr 1.000)
+  Distinct source families: 7
+
+=== LINEAGE EVIDENCE (interpret manually) ===
+    source   HF ceiling  noise floor  DC asymmetry
+  1991-06-11 Belgrad, Yugoslavia (LB-06821)       3.0kHz      -72.2dB      -0.00324
+  1991-06-11 Belgrade, Yugoslavia (LB-09186)       3.0kHz      -80.3dB      +0.00024
+  1991-06-11 Belgrade, Yugoslavia (LB-12342)       4.0kHz      -83.9dB      +0.00000
+  1991-06-11 Belgrade, Yugoslavia (LB-12968)       4.0kHz      -93.2dB      +0.00002
+  1991-06-11 Belgrade, Yugoslavia, Zadjan Stadium (LB-04403)       4.0kHz      -88.1dB      +0.00106
+  1991-06-11 Stadion FK Zemun, near Belgrade (LB-03676)       4.0kHz      -77.2dB      -0.00000
+  1991-06-11 Stadion FK Zemun, near Belgrade (LB-03686)       4.0kHz      -71.4dB      +0.00049
+  (HF ceiling capped by 8000 Hz Nyquist at analysis_sr=16000; run lineage at native rate for real format discrimination)
+  (DC asymmetry is a taper/equipment signature — not a reliable source-identity marker)
+
+=== DIAGNOSTICS ===
+  [INCOMPLETE] 1991-06-11 Belgrad, Yugoslavia (LB-06821): 1:12:15 vs median 1:27:54 (17.8% shorter) — likely missing material
+  [DISTINCT SOURCE] 1991-06-11 Belgrad, Yugoslavia (LB-06821) (-4500 ppm speed offset, best cross-family corr 0.003): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1991-06-11 Belgrade, Yugoslavia (LB-09186) (-26234 ppm speed offset, best cross-family corr 0.003): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1991-06-11 Belgrade, Yugoslavia (LB-12342) (+18010 ppm speed offset, best cross-family corr 0.003): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1991-06-11 Belgrade, Yugoslavia (LB-12968) (+1756 ppm speed offset, best cross-family corr 0.007): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1991-06-11 Stadion FK Zemun, near Belgrade (LB-03676) (+13332 ppm speed offset, best cross-family corr 0.004): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1991-06-11 Stadion FK Zemun, near Belgrade (LB-03686) (-5171 ppm speed offset, best cross-family corr 0.004): near-zero correlation to all other sources — entirely different recording
+
+[6] Archiving run …
+  Archive → /home/tjenkins/Documents/losslessbob/data/tapematch/runs/20260702_163635_1991-06-11
+
+[7] Logging to observations.db …
+  Logged: 1 run, 7 sources, 21 pairs
+
+Report → /home/tjenkins/Documents/losslessbob/tools/tapematch/last_run_report.md

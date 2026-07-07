@@ -1,0 +1,28 @@
+=== tapematch session: 1996-10-26  [20260702_142611] ===
+
+[1] Querying DB …
+  11 entries — AUSTIN, TEXAS
+    LB-03967
+    LB-07931
+    LB-10154
+    LB-10158
+    LB-10160
+    LB-10678
+    LB-13159
+    LB-13780
+    LB-14799
+    LB-14922
+    LB-16459
+
+[2] Resolving paths from my_collection …
+  Excluded (private/no-torrent): LB-10154, LB-10158, LB-10160
+  Found 7/11
+    LB-03967: /mnt/DYLAN1/Concerts/1996/1996-10-26 AUSTIN, TEXAS (LB-03967)
+    LB-07931: /mnt/DYLAN1/Concerts/1996/1996-10-26 Austin, Texas, Austin Music Hall (LB-07931)
+    LB-10678: /mnt/DYLAN1/Concerts/1996/1996-10-26 Austin, Texas (LB-10678)
+    LB-13159: /mnt/DYLAN1/Concerts/1996/1996-10-26 Austin, TX (LB-13159)
+    LB-13780: /mnt/DYLAN1/Concerts/1996/1996-10-26 Austin, TX (LB-13780)
+    LB-14799: /mnt/DYLAN1/Concerts/1996/1996-10-26 Austin, TX (LB-14799)
+    LB-14922: /mnt/DYLAN1/Concerts/1996/1996-10-26 Austin, TX (LB-14922)
+  Not found on disk: LB-16459
+  [SKIP] 1 source(s) missing from disk — use --allow-missing to run anyway.

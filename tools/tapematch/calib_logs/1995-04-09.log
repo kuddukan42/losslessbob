@@ -1,0 +1,105 @@
+=== tapematch session: 1995-04-09  [20260702_154342] ===
+
+[1] Querying DB …
+  5 entries — Glasgow
+    LB-00696
+    LB-01945
+    LB-04396
+    LB-04401
+    LB-11789
+
+[2] Resolving paths from my_collection …
+  Found 5/5
+    LB-00696: /mnt/DYLAN1/Concerts/1995/1995-04-09 Glasgow (LB-00696)
+    LB-01945: /mnt/DYLAN1/Concerts/1995/1995-04-09 SECC Hall 3, Glasgow, Scotland (LB-01945)
+    LB-04396: /mnt/DYLAN1/Concerts/1995/1995-04-09 Glasgow SECC (LB-04396)
+    LB-04401: /mnt/DYLAN1/Concerts/1995/1995-04-09 Glasgow, SECC, Hall 3 (LB-04401)
+    LB-11789: /mnt/DYLAN1/Concerts/1995/1995-04-09 Glasgow (LB-11789)
+
+[3] Cleaning /mnt/DATA0/examples/tapematch …
+
+[4] Copying 5 folders to /mnt/DATA0/examples/tapematch …
+  Copying LB-00696: 1995-04-09 Glasgow (LB-00696) …
+  Copying LB-01945: 1995-04-09 SECC Hall 3, Glasgow, Scotland (LB-01945) …
+  Copying LB-04396: 1995-04-09 Glasgow SECC (LB-04396) …
+  Copying LB-04401: 1995-04-09 Glasgow, SECC, Hall 3 (LB-04401) …
+  Copying LB-11789: 1995-04-09 Glasgow (LB-11789) …
+
+[5] Running tapematch …
+  curator lineage pairs loaded: 677 (from /home/tjenkins/Documents/losslessbob/data/losslessbob.db)
+  est. peak RAM ~1.9 GB (5 sources, largest 3:40:40)
+=== INGEST / TRIM ===
+  1995-04-09 Glasgow (LB-00696): 15 tracks, 1:46:49
+  1995-04-09 Glasgow (LB-11789): 30 tracks, 3:40:40
+  1995-04-09 Glasgow SECC (LB-04396): 15 tracks, 1:51:08
+  1995-04-09 Glasgow, SECC, Hall 3 (LB-04401): 15 tracks, 1:51:16
+  1995-04-09 SECC Hall 3, Glasgow, Scotland (LB-01945): 15 tracks, 1:50:20
+
+=== TRIM (performance envelope) ===
+  1995-04-09 Glasgow (LB-00696): trimmed 0:00:00 head, 0:00:01 tail -> performance 1:46:48
+  1995-04-09 Glasgow (LB-11789): trimmed 0:04:30 head, 0:00:06 tail -> performance 3:36:04
+  1995-04-09 Glasgow SECC (LB-04396): trimmed 0:00:11 head, 0:00:38 tail -> performance 1:50:19
+  1995-04-09 Glasgow, SECC, Hall 3 (LB-04401): trimmed 0:00:02 head, 0:01:01 tail -> performance 1:50:12
+  1995-04-09 SECC Hall 3, Glasgow, Scotland (LB-01945): trimmed 0:00:02 head, 0:00:06 tail -> performance 1:50:12
+
+  [INFLATED?] — duration well above group median (1:50:12):
+    1995-04-09 Glasgow (LB-11789): 3:36:04 (96.1% longer) — possible duplicate tracks in subfolders
+
+=== ANCHORS (ref=1995-04-09 Glasgow (LB-00696)) ===
+  0:00:21, 0:16:01, 0:23:19, 0:30:51, 0:37:17, 0:45:45, 0:53:38, 1:05:57, 1:16:41, 1:26:49, 1:30:50, 1:42:33
+
+=== LAG CURVES / SPEED (vs ref) ===
+  1995-04-09 Glasgow (LB-00696)->1995-04-09 Glasgow (LB-11789): staircase/splice  speed ratio=1.000000 (+0 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  1995-04-09 Glasgow (LB-00696)->1995-04-09 Glasgow SECC (LB-04396): speed-unknown  speed ratio=0.971122 (-28878 ppm)  [conf=2.8]
+  1995-04-09 Glasgow (LB-00696)->1995-04-09 Glasgow, SECC, Hall 3 (LB-04401): speed-unknown  speed ratio=0.972147 (-27853 ppm)  [conf=2.3]
+  1995-04-09 Glasgow (LB-00696)->1995-04-09 SECC Hall 3, Glasgow, Scotland (LB-01945): speed-unknown  speed ratio=0.972047 (-27953 ppm)  [conf=2.8]
+
+=== RESIDUAL CORRELATION MATRIX ===
+  10 pair(s)/source(s) speed-unknown (v2 confidence < 6.0) — routed to fingerprint path only
+          LB-00696  LB-11789  LB-04396  LB-04401  LB-01945
+  LB-00696     1.000     0.002     0.034     0.035     0.020
+  LB-11789     0.002     1.000     0.003     0.004     0.003
+  LB-04396     0.034     0.003     1.000     0.086     0.135
+  LB-04401     0.035     0.004     0.086     1.000     0.099
+  LB-01945     0.020     0.003     0.135     0.099     1.000
+
+=== SECONDARY MATCH (windowed coverage + quiet-segment hiss + fingerprint) ===
+  10 cross-family pair(s) — computing secondary evidence ...
+  LB-04401 / LB-01945: hiss 0.97 (129 segs, med 0.670)  [primary corr 0.099] → SECONDARY LINK
+
+=== LAG CURVES / SPEED (re-run vs central ref=1995-04-09 Glasgow SECC (LB-04396)) ===
+  anchors: 0:01:21, 0:15:14, 0:23:19, 0:28:27, 0:36:57, 0:53:39, 1:02:12, 1:12:49, 1:18:11, 1:23:51, 1:32:36, 1:46:04
+  1995-04-09 Glasgow SECC (LB-04396)->1995-04-09 Glasgow (LB-00696): speed-unknown  speed ratio=1.029928 (+29928 ppm)
+  1995-04-09 Glasgow SECC (LB-04396)->1995-04-09 Glasgow (LB-11789): staircase/splice  speed ratio=1.000000 (+0 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  1995-04-09 Glasgow SECC (LB-04396)->1995-04-09 Glasgow, SECC, Hall 3 (LB-04401): speed-unknown  speed ratio=0.999959 (-41 ppm)
+  1995-04-09 Glasgow SECC (LB-04396)->1995-04-09 SECC Hall 3, Glasgow, Scotland (LB-01945): speed-unknown  speed ratio=0.999959 (-41 ppm)
+
+=== CLUSTERS ===
+  Family 1: 1995-04-09 Glasgow (LB-00696), 1995-04-09 Glasgow SECC (LB-04396)  (mean intra-corr 0.034 [low confidence])
+  Family 2: 1995-04-09 Glasgow (LB-11789)  (mean intra-corr 1.000)
+  Family 3: 1995-04-09 Glasgow, SECC, Hall 3 (LB-04401), 1995-04-09 SECC Hall 3, Glasgow, Scotland (LB-01945)  (mean intra-corr 0.099 [low confidence])  [secondary: LB-04401/LB-01945 via hiss 0.97]
+  Distinct source families: 3
+
+=== LINEAGE EVIDENCE (interpret manually) ===
+    source   HF ceiling  noise floor  DC asymmetry
+  1995-04-09 Glasgow (LB-00696)       2.0kHz      -87.5dB      +0.00089
+  1995-04-09 Glasgow (LB-11789)       3.0kHz      -95.1dB      -0.00023
+  1995-04-09 Glasgow SECC (LB-04396)       2.0kHz      -94.8dB      +0.00088
+  1995-04-09 Glasgow, SECC, Hall 3 (LB-04401)       3.0kHz      -85.0dB      -0.00082
+  1995-04-09 SECC Hall 3, Glasgow, Scotland (LB-01945)       3.0kHz      -95.2dB      -0.00023
+  (HF ceiling capped by 8000 Hz Nyquist at analysis_sr=16000; run lineage at native rate for real format discrimination)
+  (DC asymmetry is a taper/equipment signature — not a reliable source-identity marker)
+
+=== DIAGNOSTICS ===
+  [INFLATED] 1995-04-09 Glasgow (LB-11789): 3:36:04 vs median 1:50:12 (96.1% longer) — check for duplicate tracks in subfolders; correlation results for this source are unreliable
+  [SECONDARY SAME-SOURCE] 1995-04-09 Glasgow, SECC, Hall 3 (LB-04401) / 1995-04-09 SECC Hall 3, Glasgow, Scotland (LB-01945): hiss frac 0.97 (129 segs) — primary corr 0.099 (below threshold); likely remaster or heavily edited copy of same tape
+
+[6] Archiving run …
+  Archive → /home/tjenkins/Documents/losslessbob/data/tapematch/runs/20260702_154342_1995-04-09
+
+[7] Logging to observations.db …
+  Logged: 1 run, 5 sources, 10 pairs
+
+Report → /home/tjenkins/Documents/losslessbob/tools/tapematch/last_run_report.md

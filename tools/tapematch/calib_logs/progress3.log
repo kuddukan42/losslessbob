@@ -1,0 +1,47 @@
+BATCH3 START 2026-07-02T13:32:42-05:00
+[13:50:06] DONE 1992-06-30 rc=0 dur=1044s
+[1992-06-30] recall          39.2%       40.6%    +1.4
+[1992-06-30] new FP: none  (precision preserved on frozen negatives)
+[14:04:03] DONE 1987-09-12 rc=0 dur=837s
+[1987-09-12] recall          39.2%       40.9%    +1.7
+[1987-09-12] new FP: none  (precision preserved on frozen negatives)
+[14:07:56] DONE 1987-09-23 rc=0 dur=233s
+[1987-09-23] recall          39.2%       40.9%    +1.7
+[1987-09-23] new FP: none  (precision preserved on frozen negatives)
+[14:14:33] DONE 1989-06-20 rc=0 dur=396s
+[1989-06-20] recall          39.2%       40.9%    +1.7
+[1989-06-20] new FP: none  (precision preserved on frozen negatives)
+[14:26:10] DONE 1995-03-12 rc=0 dur=696s
+[1995-03-12] recall          39.2%       41.0%    +1.8
+[1995-03-12] new FP: none  (precision preserved on frozen negatives)
+[14:36:56] DONE 1996-10-26 rc=3 dur=646s
+[1996-10-26] recall          39.2%       41.0%    +1.8
+[1996-10-26] new FP: none  (precision preserved on frozen negatives)
+[14:40:46] DONE 1990-08-18 rc=0 dur=230s
+[1990-08-18] recall          39.4%       41.2%    +1.8
+[1990-08-18] new FP: none  (precision preserved on frozen negatives)
+[14:51:11] DONE 1990-11-10 rc=0 dur=624s
+[1990-11-10] recall          39.6%       41.4%    +1.8
+[1990-11-10] new FP: none  (precision preserved on frozen negatives)
+[14:59:00] DONE 1990-11-13 rc=0 dur=469s
+[1990-11-13] recall          39.9%       41.7%    +1.8
+[1990-11-13] new FP: none  (precision preserved on frozen negatives)
+[15:02:39] DONE 1992-05-02 rc=0 dur=219s
+[1992-05-02] recall          40.1%       41.8%    +1.8
+[1992-05-02] new FP: none  (precision preserved on frozen negatives)
+[15:28:22] DONE 1993-02-16 rc=0 dur=1543s
+[1993-02-16] recall          40.3%       42.0%    +1.8
+[1993-02-16] new FP: none  (precision preserved on frozen negatives)
+[15:34:02] DONE 1993-04-12 rc=0 dur=340s
+[1993-04-12] recall          40.4%       42.2%    +1.8
+[1993-04-12] new FP: none  (precision preserved on frozen negatives)
+[15:43:42] DONE 1993-04-19 rc=0 dur=580s
+[1993-04-19] recall          40.6%       42.4%    +1.8
+[1993-04-19] new FP: none  (precision preserved on frozen negatives)
+[15:51:10] DONE 1995-04-09 rc=0 dur=448s
+[1995-04-09] recall          40.8%       42.6%    +1.8
+[1995-04-09] new FP: none  (precision preserved on frozen negatives)
+[15:56:08] DONE 2001-07-18 rc=0 dur=298s
+[2001-07-18] recall          41.1%       42.9%    +1.8
+[2001-07-18] new FP: none  (precision preserved on frozen negatives)
+BATCH3 END

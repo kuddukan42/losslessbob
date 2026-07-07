@@ -1,0 +1,87 @@
+=== tapematch session: 2001-07-18  [20260702_155110] ===
+
+[1] Querying DB …
+  4 entries — Bad Reichenhall
+    LB-00588
+    LB-03567
+    LB-05699
+    LB-07708
+
+[2] Resolving paths from my_collection …
+  Found 4/4
+    LB-00588: /mnt/DYLAN1/Concerts/2001/2001-07-18 Bad Reichenhall (LB-00588)
+    LB-03567: /mnt/DYLAN1/Concerts/2001/2001-07-18 Bad Reichenhall, Germany, Alte Saline (LB-03567)
+    LB-05699: /mnt/DYLAN1/Concerts/2001/2001-07-18 Bad Reichenhall, Germany Alte Saline (LB-05699)
+    LB-07708: /mnt/DYLAN1/Concerts/2001/2001-07-18 Bad Reichenhall, Germany (LB-07708)
+
+[3] Cleaning /mnt/DATA0/examples/tapematch …
+
+[4] Copying 4 folders to /mnt/DATA0/examples/tapematch …
+  Copying LB-00588: 2001-07-18 Bad Reichenhall (LB-00588) …
+  Copying LB-03567: 2001-07-18 Bad Reichenhall, Germany, Alte Saline (LB-03567) …
+  Copying LB-05699: 2001-07-18 Bad Reichenhall, Germany Alte Saline (LB-05699) …
+  Copying LB-07708: 2001-07-18 Bad Reichenhall, Germany (LB-07708) …
+
+[5] Running tapematch …
+  curator lineage pairs loaded: 677 (from /home/tjenkins/Documents/losslessbob/data/losslessbob.db)
+  est. peak RAM ~1.3 GB (4 sources, largest 2:09:23)
+=== INGEST / TRIM ===
+  2001-07-18 Bad Reichenhall (LB-00588): 20 tracks, 2:09:22
+  2001-07-18 Bad Reichenhall, Germany (LB-07708): 21 tracks, 2:08:35
+  2001-07-18 Bad Reichenhall, Germany Alte Saline (LB-05699): 21 tracks, 2:09:23
+  2001-07-18 Bad Reichenhall, Germany, Alte Saline (LB-03567): 20 tracks, 2:08:26
+
+=== TRIM (performance envelope) ===
+  2001-07-18 Bad Reichenhall (LB-00588): trimmed 0:01:42 head, 0:00:14 tail -> performance 2:07:26
+  2001-07-18 Bad Reichenhall, Germany (LB-07708): trimmed 0:02:14 head, 0:00:17 tail -> performance 2:06:04
+  2001-07-18 Bad Reichenhall, Germany Alte Saline (LB-05699): trimmed 0:01:52 head, 0:00:19 tail -> performance 2:07:13
+  2001-07-18 Bad Reichenhall, Germany, Alte Saline (LB-03567): trimmed 0:00:51 head, 0:00:25 tail -> performance 2:07:10
+
+=== ANCHORS (ref=2001-07-18 Bad Reichenhall (LB-00588)) ===
+  0:07:04, 0:11:39, 0:22:29, 0:33:48, 0:47:42, 1:02:58, 1:12:26, 1:20:13, 1:35:23, 1:36:24, 1:48:49, 2:00:37
+
+=== LAG CURVES / SPEED (vs ref) ===
+  2001-07-18 Bad Reichenhall (LB-00588)->2001-07-18 Bad Reichenhall, Germany (LB-07708): speed-unknown  speed ratio=1.007841 (+7841 ppm)  [conf=2.5]
+  2001-07-18 Bad Reichenhall (LB-00588)->2001-07-18 Bad Reichenhall, Germany Alte Saline (LB-05699): speed-unknown  speed ratio=0.999703 (-297 ppm)  [conf=5.9]
+  2001-07-18 Bad Reichenhall (LB-00588)->2001-07-18 Bad Reichenhall, Germany, Alte Saline (LB-03567): staircase/splice  speed ratio=1.000031 (+31 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+
+=== RESIDUAL CORRELATION MATRIX ===
+  8 pair(s)/source(s) speed-unknown (v2 confidence < 6.0) — routed to fingerprint path only
+          LB-00588  LB-07708  LB-05699  LB-03567
+  LB-00588     1.000     0.004     0.056     0.108
+  LB-07708     0.004     1.000     0.004     0.004
+  LB-05699     0.056     0.004     1.000     0.042
+  LB-03567     0.108     0.004     0.042     1.000
+
+=== SECONDARY MATCH (windowed coverage + quiet-segment hiss + fingerprint) ===
+  6 cross-family pair(s) — computing secondary evidence ...
+  LB-00588 / LB-07708: fingerprint Dice 0.521 (51135 / 51767 hashes)  [primary corr 0.004] → SECONDARY LINK
+  LB-00588 / LB-05699: fingerprint Dice 0.505 (51135 / 51086 hashes)  [primary corr 0.056] → SECONDARY LINK
+  LB-00588 / LB-03567: windowed 0.67 (1526 win, med 0.380); hiss 0.58 (151 segs, med 0.566); fingerprint Dice 0.551 (51135 / 51231 hashes)  [primary corr 0.108] → SECONDARY LINK
+
+=== CLUSTERS ===
+  Family 1: 2001-07-18 Bad Reichenhall (LB-00588), 2001-07-18 Bad Reichenhall, Germany (LB-07708), 2001-07-18 Bad Reichenhall, Germany Alte Saline (LB-05699), 2001-07-18 Bad Reichenhall, Germany, Alte Saline (LB-03567)  (mean intra-corr 0.036 [low confidence])  [secondary: LB-00588/LB-07708 via fp 0.521; LB-00588/LB-05699 via fp 0.505; LB-00588/LB-03567 via windowed 0.67+hiss 0.58+fp 0.551]  [chain-unverified: LB-07708/LB-05699; LB-07708/LB-03567; LB-05699/LB-03567 not directly confirmed]
+  Distinct source families: 1
+
+=== LINEAGE EVIDENCE (interpret manually) ===
+    source   HF ceiling  noise floor  DC asymmetry
+  2001-07-18 Bad Reichenhall (LB-00588)       2.0kHz      -93.4dB      -0.00004
+  2001-07-18 Bad Reichenhall, Germany (LB-07708)       2.0kHz      -78.1dB      -0.00002
+  2001-07-18 Bad Reichenhall, Germany Alte Saline (LB-05699)       2.0kHz      -93.3dB      -0.00002
+  2001-07-18 Bad Reichenhall, Germany, Alte Saline (LB-03567)       2.0kHz      -93.4dB      -0.00002
+  (HF ceiling capped by 8000 Hz Nyquist at analysis_sr=16000; run lineage at native rate for real format discrimination)
+  (DC asymmetry is a taper/equipment signature — not a reliable source-identity marker)
+
+=== DIAGNOSTICS ===
+  [SECONDARY SAME-SOURCE] 2001-07-18 Bad Reichenhall (LB-00588) / 2001-07-18 Bad Reichenhall, Germany (LB-07708): fingerprint Dice 0.521 — primary corr 0.004 (below threshold); likely remaster or heavily edited copy of same tape
+  [SECONDARY SAME-SOURCE] 2001-07-18 Bad Reichenhall (LB-00588) / 2001-07-18 Bad Reichenhall, Germany Alte Saline (LB-05699): fingerprint Dice 0.505 — primary corr 0.056 (below threshold); likely remaster or heavily edited copy of same tape
+  [SECONDARY SAME-SOURCE] 2001-07-18 Bad Reichenhall (LB-00588) / 2001-07-18 Bad Reichenhall, Germany, Alte Saline (LB-03567): windowed coverage 0.67 (1526 win); hiss frac 0.58 (151 segs); fingerprint Dice 0.551 — primary corr 0.108 (below threshold); likely remaster or heavily edited copy of same tape
+
+[6] Archiving run …
+  Archive → /home/tjenkins/Documents/losslessbob/data/tapematch/runs/20260702_155110_2001-07-18
+
+[7] Logging to observations.db …
+  Logged: 1 run, 4 sources, 6 pairs
+
+Report → /home/tjenkins/Documents/losslessbob/tools/tapematch/last_run_report.md

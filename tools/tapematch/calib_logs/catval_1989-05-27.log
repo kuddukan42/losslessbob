@@ -1,0 +1,110 @@
+=== tapematch session: 1989-05-27  [20260702_164920] ===
+
+[1] Querying DB …
+  6 entries — Christinehof
+    LB-02468
+    LB-07209
+    LB-08464
+    LB-12372
+    LB-13221
+    LB-13418
+
+[2] Resolving paths from my_collection …
+  Excluded (private/no-torrent): LB-13221
+  Found 5/6
+    LB-02468: /mnt/DYLAN1/Concerts/1989/1989-05-27 Christinehof (LB-02468)
+    LB-07209: /mnt/DYLAN1/Concerts/1989/1989-05-27 Andrarum, Sweden Christinehofs Slottspark (LB-07209)
+    LB-08464: /mnt/DYLAN1/Concerts/1989/1989-05-27 Christinehof (LB-08464)
+    LB-12372: /mnt/DYLAN1/Concerts/1989/1989-05-27 Christinehofs Slott, Skne, Sweden (LB-12372)
+    LB-13418: /mnt/DYLAN1/Concerts/1989/1989-05-27 Christinehof (LB-13418)
+
+[3] Cleaning /mnt/DATA0/examples/tapematch …
+
+[4] Copying 5 folders to /mnt/DATA0/examples/tapematch …
+  Copying LB-02468: 1989-05-27 Christinehof (LB-02468) …
+  Copying LB-07209: 1989-05-27 Andrarum, Sweden Christinehofs Slottspark (LB-07209) …
+  Copying LB-08464: 1989-05-27 Christinehof (LB-08464) …
+  Copying LB-12372: 1989-05-27 Christinehofs Slott, Skne, Sweden (LB-12372) …
+  Copying LB-13418: 1989-05-27 Christinehof (LB-13418) …
+
+[5] Running tapematch …
+  curator lineage pairs loaded: 677 (from /home/tjenkins/Documents/losslessbob/data/losslessbob.db)
+  est. peak RAM ~0.9 GB (5 sources, largest 1:14:56)
+=== INGEST / TRIM ===
+  1989-05-27 Andrarum, Sweden Christinehofs Slottspark (LB-07209): 15 tracks, 1:14:56
+  1989-05-27 Christinehof (LB-02468): 15 tracks, 1:10:11
+  1989-05-27 Christinehof (LB-08464): 15 tracks, 1:07:57
+  1989-05-27 Christinehof (LB-13418): 15 tracks, 1:13:44
+  1989-05-27 Christinehofs Slott, Skne, Sweden (LB-12372): 15 tracks, 1:07:57
+
+=== TRIM (performance envelope) ===
+  1989-05-27 Andrarum, Sweden Christinehofs Slottspark (LB-07209): trimmed 0:00:24 head, 0:02:33 tail -> performance 1:12:00
+  1989-05-27 Christinehof (LB-02468): trimmed 0:01:06 head, 0:00:22 tail -> performance 1:08:44
+  1989-05-27 Christinehof (LB-08464): trimmed 0:01:04 head, 0:02:24 tail -> performance 1:04:30
+  1989-05-27 Christinehof (LB-13418): trimmed 0:01:02 head, 0:01:00 tail -> performance 1:11:42
+  1989-05-27 Christinehofs Slott, Skne, Sweden (LB-12372): trimmed 0:00:08 head, 0:00:16 tail -> performance 1:07:33
+
+  [INCOMPLETE?] — duration well below group median (1:08:44):
+    1989-05-27 Christinehof (LB-08464): 1:04:30 (6.2% shorter)
+
+=== ANCHORS (ref=1989-05-27 Andrarum, Sweden Christinehofs Slottspark (LB-07209)) ===
+  0:00:20, 0:06:42, 0:17:49, 0:21:21, 0:26:27, 0:31:35, 0:39:23, 0:47:27, 0:51:06, 0:57:16, 1:03:28, 1:09:28
+
+=== LAG CURVES / SPEED (vs ref) ===
+  1989-05-27 Andrarum, Sweden Christinehofs Slottspark (LB-07209)->1989-05-27 Christinehof (LB-02468): speed-unknown  speed ratio=1.044705 (+44705 ppm)  [conf=1.7]
+  1989-05-27 Andrarum, Sweden Christinehofs Slottspark (LB-07209)->1989-05-27 Christinehof (LB-08464): speed-unknown  speed ratio=1.033700 (+33700 ppm)  [conf=2.4]
+  1989-05-27 Andrarum, Sweden Christinehofs Slottspark (LB-07209)->1989-05-27 Christinehof (LB-13418): speed-unknown  speed ratio=1.001068 (+1068 ppm)  [conf=3.5]
+  1989-05-27 Andrarum, Sweden Christinehofs Slottspark (LB-07209)->1989-05-27 Christinehofs Slott, Skne, Sweden (LB-12372): speed-unknown  speed ratio=1.062954 (+62954 ppm)  [conf=3.1]
+
+=== RESIDUAL CORRELATION MATRIX ===
+  14 pair(s)/source(s) speed-unknown (v2 confidence < 6.0) — routed to fingerprint path only
+          LB-07209  LB-02468  LB-08464  LB-13418  LB-12372
+  LB-07209     1.000     0.003     0.003     0.005     0.002
+  LB-02468     0.003     1.000     0.002     0.003     0.002
+  LB-08464     0.003     0.002     1.000     0.003     0.005
+  LB-13418     0.005     0.003     0.003     1.000     0.003
+  LB-12372     0.002     0.002     0.005     0.003     1.000
+
+=== SECONDARY MATCH (windowed coverage + quiet-segment hiss + fingerprint) ===
+  10 cross-family pair(s) — computing secondary evidence ...
+  No secondary same-source evidence found.
+
+=== LAG CURVES / SPEED (re-run vs central ref=1989-05-27 Christinehof (LB-13418)) ===
+  anchors: 0:00:09, 0:07:23, 0:16:16, 0:21:41, 0:24:17, 0:32:36, 0:40:05, 0:45:46, 0:52:22, 0:53:58, 1:05:11, 1:11:03
+  1989-05-27 Christinehof (LB-13418)->1989-05-27 Andrarum, Sweden Christinehofs Slottspark (LB-07209): speed-unknown  speed ratio=0.998949 (-1051 ppm)
+  1989-05-27 Christinehof (LB-13418)->1989-05-27 Christinehof (LB-02468): speed-unknown  speed ratio=1.040162 (+40162 ppm)
+  1989-05-27 Christinehof (LB-13418)->1989-05-27 Christinehof (LB-08464): speed-unknown  speed ratio=1.041700 (+41700 ppm)
+  1989-05-27 Christinehof (LB-13418)->1989-05-27 Christinehofs Slott, Skne, Sweden (LB-12372): speed-unknown  speed ratio=1.058536 (+58536 ppm)
+
+=== CLUSTERS ===
+  Family 1: 1989-05-27 Andrarum, Sweden Christinehofs Slottspark (LB-07209)  (mean intra-corr 1.000)
+  Family 2: 1989-05-27 Christinehof (LB-02468)  (mean intra-corr 1.000)
+  Family 3: 1989-05-27 Christinehof (LB-08464)  (mean intra-corr 1.000)
+  Family 4: 1989-05-27 Christinehof (LB-13418)  (mean intra-corr 1.000)
+  Family 5: 1989-05-27 Christinehofs Slott, Skne, Sweden (LB-12372)  (mean intra-corr 1.000)
+  Distinct source families: 5
+
+=== LINEAGE EVIDENCE (interpret manually) ===
+    source   HF ceiling  noise floor  DC asymmetry
+  1989-05-27 Andrarum, Sweden Christinehofs Slottspark (LB-07209)       3.0kHz      -83.4dB      -0.00054
+  1989-05-27 Christinehof (LB-02468)       2.0kHz      -74.9dB      -0.00002
+  1989-05-27 Christinehof (LB-08464)       4.0kHz     -106.6dB      +0.00082
+  1989-05-27 Christinehof (LB-13418)       2.0kHz      -76.0dB      +0.00004
+  1989-05-27 Christinehofs Slott, Skne, Sweden (LB-12372)       4.0kHz      -99.4dB      +0.00060
+  (HF ceiling capped by 8000 Hz Nyquist at analysis_sr=16000; run lineage at native rate for real format discrimination)
+  (DC asymmetry is a taper/equipment signature — not a reliable source-identity marker)
+
+=== DIAGNOSTICS ===
+  [INCOMPLETE] 1989-05-27 Christinehof (LB-08464): 1:04:30 vs median 1:08:44 (6.2% shorter) — likely missing material
+  [DISTINCT SOURCE] 1989-05-27 Andrarum, Sweden Christinehofs Slottspark (LB-07209) (-1051 ppm speed offset, best cross-family corr 0.005): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1989-05-27 Christinehof (LB-02468) (+40162 ppm speed offset, best cross-family corr 0.003): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1989-05-27 Christinehof (LB-08464) (+41700 ppm speed offset, best cross-family corr 0.005): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1989-05-27 Christinehofs Slott, Skne, Sweden (LB-12372) (+58536 ppm speed offset, best cross-family corr 0.005): near-zero correlation to all other sources — entirely different recording
+
+[6] Archiving run …
+  Archive → /home/tjenkins/Documents/losslessbob/data/tapematch/runs/20260702_164920_1989-05-27
+
+[7] Logging to observations.db …
+  Logged: 1 run, 5 sources, 10 pairs
+
+Report → /home/tjenkins/Documents/losslessbob/tools/tapematch/last_run_report.md

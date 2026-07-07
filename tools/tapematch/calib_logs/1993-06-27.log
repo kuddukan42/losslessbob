@@ -1,0 +1,132 @@
+=== tapematch session: 1993-06-27  [20260702_104202] ===
+
+[1] Querying DB …
+  7 entries — Milano
+    LB-00912
+    LB-04883
+    LB-04934
+    LB-04963
+    LB-10590
+    LB-13996
+    LB-15460
+
+[2] Resolving paths from my_collection …
+  Found 7/7
+    LB-00912: /mnt/DYLAN1/Concerts/1993/1993-06-27 Milano (LB-00912)
+    LB-04883: /mnt/DYLAN1/Concerts/1993/1993-06-27 Milan, Italy, Palatrussardi di Milano (LB-04883)
+    LB-04934: /mnt/DYLAN1/Concerts/1993/1993-06-27 Milan, Italy, Palatrussardi di Milano (LB-04934)
+    LB-04963: /mnt/DYLAN1/Concerts/1993/1993-06-27 Milan, Italy, Palatrussardi di Milano (LB-04963)
+    LB-10590: /mnt/DYLAN1/Concerts/1993/1993-06-27 Milan, Italy (LB-10590)
+    LB-13996: /mnt/DYLAN1/Concerts/1993/1993-06-27 Milano, Italy (LB-13996)
+    LB-15460: /mnt/DYLAN1/LB HOPPER/1993 06 27 Bob Dylan - Milan, Italy (zuma66)-LB-15460
+
+[3] Cleaning /mnt/DATA0/examples/tapematch …
+
+[4] Copying 7 folders to /mnt/DATA0/examples/tapematch …
+  Copying LB-00912: 1993-06-27 Milano (LB-00912) …
+  Copying LB-04883: 1993-06-27 Milan, Italy, Palatrussardi di Milano (LB-04883) …
+  Copying LB-04934: 1993-06-27 Milan, Italy, Palatrussardi di Milano (LB-04934) …
+  Copying LB-04963: 1993-06-27 Milan, Italy, Palatrussardi di Milano (LB-04963) …
+  Copying LB-10590: 1993-06-27 Milan, Italy (LB-10590) …
+  Copying LB-13996: 1993-06-27 Milano, Italy (LB-13996) …
+  Copying LB-15460: 1993 06 27 Bob Dylan - Milan, Italy (zuma66)-LB-15460 …
+
+[5] Running tapematch …
+  est. peak RAM ~1.4 GB (7 sources, largest 2:21:49)
+=== INGEST / TRIM ===
+  1993 06 27 Bob Dylan - Milan, Italy (zuma66)-LB-15460: 17 tracks, 2:19:15
+  1993-06-27 Milan, Italy (LB-10590): 17 tracks, 2:17:30
+  1993-06-27 Milan, Italy, Palatrussardi di Milano (LB-04883): 17 tracks, 2:17:34
+  1993-06-27 Milan, Italy, Palatrussardi di Milano (LB-04934): 17 tracks, 2:13:33
+  1993-06-27 Milan, Italy, Palatrussardi di Milano (LB-04963): 17 tracks, 2:16:39
+  1993-06-27 Milano (LB-00912): 17 tracks, 2:21:49
+  1993-06-27 Milano, Italy (LB-13996): 17 tracks, 2:18:51
+
+=== TRIM (performance envelope) ===
+  1993 06 27 Bob Dylan - Milan, Italy (zuma66)-LB-15460: trimmed 0:15:21 head, 1:24:54 tail -> performance 0:39:00
+  1993-06-27 Milan, Italy (LB-10590): trimmed 0:01:55 head, 0:00:01 tail -> performance 2:15:34
+  1993-06-27 Milan, Italy, Palatrussardi di Milano (LB-04883): trimmed 0:02:06 head, 0:11:19 tail -> performance 2:04:08
+  1993-06-27 Milan, Italy, Palatrussardi di Milano (LB-04934): trimmed 0:05:44 head, 0:00:20 tail -> performance 2:07:29
+  1993-06-27 Milan, Italy, Palatrussardi di Milano (LB-04963): trimmed 0:03:48 head, 0:00:34 tail -> performance 2:12:18
+  1993-06-27 Milano (LB-00912): trimmed 0:01:04 head, 0:04:05 tail -> performance 2:16:40
+  1993-06-27 Milano, Italy (LB-13996): trimmed 0:02:00 head, 0:01:54 tail -> performance 2:14:56
+
+  [INCOMPLETE?] — duration well below group median (2:12:18):
+    1993 06 27 Bob Dylan - Milan, Italy (zuma66)-LB-15460: 0:39:00 (70.5% shorter)
+    1993-06-27 Milan, Italy, Palatrussardi di Milano (LB-04883): 2:04:08 (6.2% shorter)
+
+=== ANCHORS (ref=1993 06 27 Bob Dylan - Milan, Italy (zuma66)-LB-15460) ===
+  0:00:30, 0:04:18, 0:06:55, 0:12:15, 0:14:23, 0:18:33, 0:20:44, 0:25:52, 0:27:29, 0:30:00, 0:34:05, 0:36:49
+
+=== LAG CURVES / SPEED (vs ref) ===
+  1993 06 27 Bob Dylan - Milan, Italy (zuma66)-LB-15460->1993-06-27 Milan, Italy (LB-10590): constant-speed-offset  speed ratio=1.030000 (+30000 ppm)
+  1993 06 27 Bob Dylan - Milan, Italy (zuma66)-LB-15460->1993-06-27 Milan, Italy, Palatrussardi di Milano (LB-04883): constant-speed-offset  speed ratio=0.999500 (-500 ppm)
+  1993 06 27 Bob Dylan - Milan, Italy (zuma66)-LB-15460->1993-06-27 Milan, Italy, Palatrussardi di Milano (LB-04934): constant-speed-offset  speed ratio=1.030000 (+30000 ppm)
+  1993 06 27 Bob Dylan - Milan, Italy (zuma66)-LB-15460->1993-06-27 Milan, Italy, Palatrussardi di Milano (LB-04963): constant-speed-offset  speed ratio=1.030000 (+30000 ppm)
+  1993 06 27 Bob Dylan - Milan, Italy (zuma66)-LB-15460->1993-06-27 Milano (LB-00912): constant-speed-offset  speed ratio=1.030000 (+30000 ppm)
+  1993 06 27 Bob Dylan - Milan, Italy (zuma66)-LB-15460->1993-06-27 Milano, Italy (LB-13996): constant-speed-offset  speed ratio=1.030000 (+30000 ppm)
+
+=== RESIDUAL CORRELATION MATRIX ===
+          LB-15460  LB-10590  LB-04883  LB-04934  LB-04963  LB-00912  LB-13996
+  LB-15460     1.000     0.002     0.002     0.002     0.002     0.003     0.003
+  LB-10590     0.002     1.000     0.002     0.003     0.003     0.003     0.004
+  LB-04883     0.002     0.002     1.000     0.002     0.002     0.002     0.002
+  LB-04934     0.002     0.003     0.002     1.000     0.003     0.003     0.003
+  LB-04963     0.002     0.003     0.002     0.003     1.000     0.003     0.005
+  LB-00912     0.003     0.003     0.002     0.003     0.003     1.000     0.002
+  LB-13996     0.003     0.004     0.002     0.003     0.005     0.002     1.000
+
+=== SECONDARY MATCH (windowed coverage + quiet-segment hiss + fingerprint) ===
+  21 cross-family pair(s) — computing secondary evidence ...
+  No secondary same-source evidence found.
+
+=== LAG CURVES / SPEED (re-run vs central ref=1993-06-27 Milano, Italy (LB-13996)) ===
+  anchors: 0:03:26, 0:12:16, 0:25:09, 0:37:26, 0:53:49, 1:04:51, 1:18:27, 1:24:03, 1:31:23, 1:52:25, 1:53:33, 2:09:06
+  1993-06-27 Milano, Italy (LB-13996)->1993 06 27 Bob Dylan - Milan, Italy (zuma66)-LB-15460: constant-speed-offset  speed ratio=0.970000 (-30000 ppm)
+  1993-06-27 Milano, Italy (LB-13996)->1993-06-27 Milan, Italy (LB-10590): constant-speed-offset  speed ratio=0.996500 (-3500 ppm)
+  1993-06-27 Milano, Italy (LB-13996)->1993-06-27 Milan, Italy, Palatrussardi di Milano (LB-04883): staircase/splice  speed ratio=1.000000 (+0 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  1993-06-27 Milano, Italy (LB-13996)->1993-06-27 Milan, Italy, Palatrussardi di Milano (LB-04934): constant-speed-offset  speed ratio=1.025000 (+25000 ppm)
+  1993-06-27 Milano, Italy (LB-13996)->1993-06-27 Milan, Italy, Palatrussardi di Milano (LB-04963): constant-speed-offset  speed ratio=1.002000 (+2000 ppm)
+  1993-06-27 Milano, Italy (LB-13996)->1993-06-27 Milano (LB-00912): staircase/splice  speed ratio=1.000000 (+0 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+
+=== CLUSTERS ===
+  Family 1: 1993 06 27 Bob Dylan - Milan, Italy (zuma66)-LB-15460  (mean intra-corr 1.000)
+  Family 2: 1993-06-27 Milan, Italy (LB-10590)  (mean intra-corr 1.000)
+  Family 3: 1993-06-27 Milan, Italy, Palatrussardi di Milano (LB-04883)  (mean intra-corr 1.000)
+  Family 4: 1993-06-27 Milan, Italy, Palatrussardi di Milano (LB-04934)  (mean intra-corr 1.000)
+  Family 5: 1993-06-27 Milan, Italy, Palatrussardi di Milano (LB-04963)  (mean intra-corr 1.000)
+  Family 6: 1993-06-27 Milano (LB-00912)  (mean intra-corr 1.000)
+  Family 7: 1993-06-27 Milano, Italy (LB-13996)  (mean intra-corr 1.000)
+  Distinct source families: 7
+
+=== LINEAGE EVIDENCE (interpret manually) ===
+    source   HF ceiling  noise floor  DC asymmetry
+  1993 06 27 Bob Dylan - Milan, Italy (zuma66)-LB-15460       2.0kHz      -77.7dB      -0.00010
+  1993-06-27 Milan, Italy (LB-10590)       2.0kHz      -77.1dB      -0.00001
+  1993-06-27 Milan, Italy, Palatrussardi di Milano (LB-04883)       4.0kHz      -86.8dB      +0.00093
+  1993-06-27 Milan, Italy, Palatrussardi di Milano (LB-04934)       4.0kHz      -78.6dB      -0.00001
+  1993-06-27 Milan, Italy, Palatrussardi di Milano (LB-04963)       3.0kHz      -75.7dB      +0.00053
+  1993-06-27 Milano (LB-00912)       4.0kHz      -86.9dB      -0.00002
+  1993-06-27 Milano, Italy (LB-13996)       3.0kHz      -93.2dB      +0.00093
+  (HF ceiling capped by 8000 Hz Nyquist at analysis_sr=16000; run lineage at native rate for real format discrimination)
+  (DC asymmetry is a taper/equipment signature — not a reliable source-identity marker)
+
+=== DIAGNOSTICS ===
+  [INCOMPLETE] 1993 06 27 Bob Dylan - Milan, Italy (zuma66)-LB-15460: 0:39:00 vs median 2:12:18 (70.5% shorter) — likely missing material
+  [INCOMPLETE] 1993-06-27 Milan, Italy, Palatrussardi di Milano (LB-04883): 2:04:08 vs median 2:12:18 (6.2% shorter) — likely missing material
+  [TIMING MISMATCH] 1993-06-27 Milan, Italy (LB-10590) / 1993-06-27 Milan, Italy, Palatrussardi di Milano (LB-04934): performance 2:15:34 vs 2:07:29 (8.1 min difference) — timing drift may exceed alignment window; correlation unreliable if same-source
+  [TIMING MISMATCH] 1993-06-27 Milan, Italy, Palatrussardi di Milano (LB-04934) / 1993-06-27 Milano (LB-00912): performance 2:07:29 vs 2:16:40 (9.2 min difference) — timing drift may exceed alignment window; correlation unreliable if same-source
+  [DISTINCT SOURCE] 1993 06 27 Bob Dylan - Milan, Italy (zuma66)-LB-15460 (-30000 ppm speed offset, best cross-family corr 0.003): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1993-06-27 Milan, Italy (LB-10590) (-3500 ppm speed offset, best cross-family corr 0.004): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1993-06-27 Milan, Italy, Palatrussardi di Milano (LB-04934) (+25000 ppm speed offset, best cross-family corr 0.003): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1993-06-27 Milan, Italy, Palatrussardi di Milano (LB-04963) (+2000 ppm speed offset, best cross-family corr 0.005): near-zero correlation to all other sources — entirely different recording
+
+[6] Archiving run …
+  Archive → /home/tjenkins/Documents/losslessbob/data/tapematch/runs/20260702_104202_1993-06-27
+
+[7] Logging to observations.db …
+  Logged: 1 run, 7 sources, 21 pairs
+
+Report → /home/tjenkins/Documents/losslessbob/tools/tapematch/last_run_report.md

@@ -1,0 +1,106 @@
+=== tapematch session: 1989-06-07  [20260702_170020] ===
+
+[1] Querying DB …
+  6 entries — Birmingham, UK
+    LB-00654
+    LB-01301
+    LB-06803
+    LB-07250
+    LB-07917
+    LB-13223
+
+[2] Resolving paths from my_collection …
+  Excluded (private/no-torrent): LB-13223
+  Found 5/6
+    LB-00654: /mnt/DYLAN1/Concerts/1989/1989-06-07 Birmingham, UK (LB-00654)
+    LB-01301: /mnt/DYLAN1/Concerts/1989/1989-06-07 Birmingham, England, International Arena, National Exhibition Center (LB-01301)
+    LB-06803: /mnt/DYLAN1/Concerts/1989/1989-06-07 Birmingham, UK (LB-06803)
+    LB-07250: /mnt/DYLAN1/Concerts/1989/1989-06-07 Birmingham, England, UK International Arena, National Exhibition Center (LB-07250)
+    LB-07917: /mnt/DYLAN1/Concerts/1989/1989-06-07 Birmingham, England (LB-07917)
+
+[3] Cleaning /mnt/DATA0/examples/tapematch …
+
+[4] Copying 5 folders to /mnt/DATA0/examples/tapematch …
+  Copying LB-00654: 1989-06-07 Birmingham, UK (LB-00654) …
+  Copying LB-01301: 1989-06-07 Birmingham, England, International Arena, National Exhibition Center (LB-01301) …
+  Copying LB-06803: 1989-06-07 Birmingham, UK (LB-06803) …
+  Copying LB-07250: 1989-06-07 Birmingham, England, UK International Arena, National Exhibition Center (LB-07250) …
+  Copying LB-07917: 1989-06-07 Birmingham, England (LB-07917) …
+
+[5] Running tapematch …
+  curator lineage pairs loaded: 677 (from /home/tjenkins/Documents/losslessbob/data/losslessbob.db)
+  est. peak RAM ~0.9 GB (5 sources, largest 1:23:08)
+=== INGEST / TRIM ===
+  1989-06-07 Birmingham, England (LB-07917): 18 tracks, 1:23:06
+  1989-06-07 Birmingham, England, International Arena, National Exhibition Center (LB-01301): 18 tracks, 1:19:26
+  1989-06-07 Birmingham, England, UK International Arena, National Exhibition Center (LB-07250): 17 tracks, 1:23:08
+  1989-06-07 Birmingham, UK (LB-00654): 17 tracks, 1:18:47
+  1989-06-07 Birmingham, UK (LB-06803): 17 tracks, 1:17:47
+
+=== TRIM (performance envelope) ===
+  1989-06-07 Birmingham, England (LB-07917): trimmed 0:00:24 head, 0:00:10 tail -> performance 1:22:32
+  1989-06-07 Birmingham, England, International Arena, National Exhibition Center (LB-01301): trimmed 0:00:42 head, 0:00:00 tail -> performance 1:18:44
+  1989-06-07 Birmingham, England, UK International Arena, National Exhibition Center (LB-07250): trimmed 0:00:38 head, 0:00:51 tail -> performance 1:21:40
+  1989-06-07 Birmingham, UK (LB-00654): trimmed 0:00:32 head, 0:00:03 tail -> performance 1:18:12
+  1989-06-07 Birmingham, UK (LB-06803): trimmed 0:00:00 head, 0:00:09 tail -> performance 1:17:38
+
+=== ANCHORS (ref=1989-06-07 Birmingham, England (LB-07917)) ===
+  0:00:46, 0:11:58, 0:17:42, 0:24:48, 0:28:41, 0:38:15, 0:47:38, 0:53:26, 0:55:11, 1:03:59, 1:10:45, 1:16:41
+
+=== LAG CURVES / SPEED (vs ref) ===
+  1989-06-07 Birmingham, England (LB-07917)->1989-06-07 Birmingham, England, International Arena, National Exhibition Center (LB-01301): speed-unknown  speed ratio=1.045158 (+45158 ppm)  [conf=1.4]
+  1989-06-07 Birmingham, England (LB-07917)->1989-06-07 Birmingham, England, UK International Arena, National Exhibition Center (LB-07250): speed-unknown  speed ratio=1.013213 (+13213 ppm)  [conf=3.0]
+  1989-06-07 Birmingham, England (LB-07917)->1989-06-07 Birmingham, UK (LB-00654): speed-unknown  speed ratio=1.052519 (+52519 ppm)  [conf=5.2]
+  1989-06-07 Birmingham, England (LB-07917)->1989-06-07 Birmingham, UK (LB-06803): speed-unknown  speed ratio=1.061310 (+61310 ppm)  [conf=1.5]
+
+=== RESIDUAL CORRELATION MATRIX ===
+  14 pair(s)/source(s) speed-unknown (v2 confidence < 6.0) — routed to fingerprint path only
+          LB-07917  LB-01301  LB-07250  LB-00654  LB-06803
+  LB-07917     1.000     0.003     0.003     0.003     0.003
+  LB-01301     0.003     1.000     0.003     0.030     0.002
+  LB-07250     0.003     0.003     1.000     0.003     0.003
+  LB-00654     0.003     0.030     0.003     1.000     0.003
+  LB-06803     0.003     0.002     0.003     0.003     1.000
+
+=== SECONDARY MATCH (windowed coverage + quiet-segment hiss + fingerprint) ===
+  10 cross-family pair(s) — computing secondary evidence ...
+  No secondary same-source evidence found.
+
+=== LAG CURVES / SPEED (re-run vs central ref=1989-06-07 Birmingham, UK (LB-00654)) ===
+  anchors: 0:01:52, 0:12:02, 0:17:09, 0:23:02, 0:30:11, 0:36:50, 0:42:25, 0:51:23, 0:53:03, 1:00:23, 1:06:54, 1:11:58
+  1989-06-07 Birmingham, UK (LB-00654)->1989-06-07 Birmingham, England (LB-07917): speed-unknown  speed ratio=0.950291 (-49709 ppm)
+  1989-06-07 Birmingham, UK (LB-00654)->1989-06-07 Birmingham, England, International Arena, National Exhibition Center (LB-01301): speed-unknown  speed ratio=0.996120 (-3880 ppm)
+  1989-06-07 Birmingham, UK (LB-00654)->1989-06-07 Birmingham, England, UK International Arena, National Exhibition Center (LB-07250): speed-unknown  speed ratio=0.955647 (-44353 ppm)
+  1989-06-07 Birmingham, UK (LB-00654)->1989-06-07 Birmingham, UK (LB-06803): speed-unknown  speed ratio=1.004192 (+4192 ppm)
+
+=== CLUSTERS ===
+  Family 1: 1989-06-07 Birmingham, England (LB-07917)  (mean intra-corr 1.000)
+  Family 2: 1989-06-07 Birmingham, England, International Arena, National Exhibition Center (LB-01301)  (mean intra-corr 1.000)
+  Family 3: 1989-06-07 Birmingham, England, UK International Arena, National Exhibition Center (LB-07250)  (mean intra-corr 1.000)
+  Family 4: 1989-06-07 Birmingham, UK (LB-00654)  (mean intra-corr 1.000)
+  Family 5: 1989-06-07 Birmingham, UK (LB-06803)  (mean intra-corr 1.000)
+  Distinct source families: 5
+
+=== LINEAGE EVIDENCE (interpret manually) ===
+    source   HF ceiling  noise floor  DC asymmetry
+  1989-06-07 Birmingham, England (LB-07917)       3.0kHz      -85.6dB      -0.00020
+  1989-06-07 Birmingham, England, International Arena, National Exhibition Center (LB-01301)       3.0kHz      -77.3dB      -0.00070
+  1989-06-07 Birmingham, England, UK International Arena, National Exhibition Center (LB-07250)       3.0kHz      -90.4dB      +0.00047
+  1989-06-07 Birmingham, UK (LB-00654)       3.0kHz      -83.4dB      -0.00004
+  1989-06-07 Birmingham, UK (LB-06803)       3.0kHz      -81.7dB      +0.00075
+  (HF ceiling capped by 8000 Hz Nyquist at analysis_sr=16000; run lineage at native rate for real format discrimination)
+  (DC asymmetry is a taper/equipment signature — not a reliable source-identity marker)
+
+=== DIAGNOSTICS ===
+  [DISTINCT SOURCE] 1989-06-07 Birmingham, England (LB-07917) (-49709 ppm speed offset, best cross-family corr 0.003): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1989-06-07 Birmingham, England, International Arena, National Exhibition Center (LB-01301) (-3880 ppm speed offset, best cross-family corr 0.030): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1989-06-07 Birmingham, England, UK International Arena, National Exhibition Center (LB-07250) (-44353 ppm speed offset, best cross-family corr 0.003): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1989-06-07 Birmingham, UK (LB-06803) (+4192 ppm speed offset, best cross-family corr 0.003): near-zero correlation to all other sources — entirely different recording
+
+[6] Archiving run …
+  Archive → /home/tjenkins/Documents/losslessbob/data/tapematch/runs/20260702_170020_1989-06-07
+
+[7] Logging to observations.db …
+  Logged: 1 run, 5 sources, 10 pairs
+
+Report → /home/tjenkins/Documents/losslessbob/tools/tapematch/last_run_report.md

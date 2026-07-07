@@ -1,0 +1,123 @@
+=== tapematch session: 1990-10-26  [20260702_162857] ===
+
+[1] Querying DB …
+  7 entries — Tuscaloosa
+    LB-00103
+    LB-00904
+    LB-06348
+    LB-10077
+    LB-12073
+    LB-13426
+    LB-13534
+
+[2] Resolving paths from my_collection …
+  Excluded (private/no-torrent): LB-13534
+  Found 6/7
+    LB-00103: /mnt/DYLAN1/Concerts/1990/1990-10-26 Tuscaloosa (LB-00103)
+    LB-00904: /mnt/DYLAN1/Concerts/1990/1990-10-26 Tuscaloosa (LB-00904)
+    LB-06348: /mnt/DYLAN1/Concerts/1990/1990-10-26 Tuscaloosa, AL, USA, Coleman Coliseum (LB-06348)
+    LB-10077: /mnt/DYLAN1/Concerts/1990/1990-10-26 Tuscaloosa, Alabama (LB-10077)
+    LB-12073: /mnt/DYLAN1/Concerts/1990/1990-10-26 Tuscaloosa, Alabama (LB-12073)
+    LB-13426: /mnt/DYLAN1/Concerts/1990/1990-10-26 Tuscaloosa, AL (LB-13426)
+
+[3] Cleaning /mnt/DATA0/examples/tapematch …
+
+[4] Copying 6 folders to /mnt/DATA0/examples/tapematch …
+  Copying LB-00103: 1990-10-26 Tuscaloosa (LB-00103) …
+  Copying LB-00904: 1990-10-26 Tuscaloosa (LB-00904) …
+  Copying LB-06348: 1990-10-26 Tuscaloosa, AL, USA, Coleman Coliseum (LB-06348) …
+  Copying LB-10077: 1990-10-26 Tuscaloosa, Alabama (LB-10077) …
+  Copying LB-12073: 1990-10-26 Tuscaloosa, Alabama (LB-12073) …
+  Copying LB-13426: 1990-10-26 Tuscaloosa, AL (LB-13426) …
+
+[5] Running tapematch …
+  curator lineage pairs loaded: 677 (from /home/tjenkins/Documents/losslessbob/data/losslessbob.db)
+  est. peak RAM ~1.0 GB (6 sources, largest 1:36:37)
+=== INGEST / TRIM ===
+  1990-10-26 Tuscaloosa (LB-00103): 19 tracks, 1:34:53
+  1990-10-26 Tuscaloosa (LB-00904): 20 tracks, 1:29:05
+  1990-10-26 Tuscaloosa, AL (LB-13426): 20 tracks, 1:32:59
+  1990-10-26 Tuscaloosa, AL, USA, Coleman Coliseum (LB-06348): 18 tracks, 1:21:52
+  1990-10-26 Tuscaloosa, Alabama (LB-10077): 20 tracks, 1:36:06
+  1990-10-26 Tuscaloosa, Alabama (LB-12073): 21 tracks, 1:36:37
+
+=== TRIM (performance envelope) ===
+  1990-10-26 Tuscaloosa (LB-00103): trimmed 0:11:16 head, 0:10:20 tail -> performance 1:13:18
+  1990-10-26 Tuscaloosa (LB-00904): trimmed 0:00:18 head, 0:00:19 tail -> performance 1:28:28
+  1990-10-26 Tuscaloosa, AL (LB-13426): trimmed 0:03:00 head, 0:00:18 tail -> performance 1:29:40
+  1990-10-26 Tuscaloosa, AL, USA, Coleman Coliseum (LB-06348): trimmed 0:00:24 head, 0:00:07 tail -> performance 1:21:22
+  1990-10-26 Tuscaloosa, Alabama (LB-10077): trimmed 0:00:56 head, 0:00:02 tail -> performance 1:35:08
+  1990-10-26 Tuscaloosa, Alabama (LB-12073): trimmed 0:00:42 head, 0:02:17 tail -> performance 1:33:38
+
+  [INCOMPLETE?] — duration well below group median (1:29:04):
+    1990-10-26 Tuscaloosa (LB-00103): 1:13:18 (17.7% shorter)
+    1990-10-26 Tuscaloosa, AL, USA, Coleman Coliseum (LB-06348): 1:21:22 (8.7% shorter)
+
+=== ANCHORS (ref=1990-10-26 Tuscaloosa (LB-00103)) ===
+  0:00:25, 0:08:38, 0:13:24, 0:21:43, 0:30:05, 0:36:34, 0:41:18, 0:45:00, 0:53:57, 0:58:14, 1:06:04, 1:07:17
+
+=== LAG CURVES / SPEED (vs ref) ===
+  1990-10-26 Tuscaloosa (LB-00103)->1990-10-26 Tuscaloosa (LB-00904): speed-unknown  speed ratio=0.966500 (-33500 ppm)  [conf=1.1]
+  1990-10-26 Tuscaloosa (LB-00103)->1990-10-26 Tuscaloosa, AL (LB-13426): speed-unknown  speed ratio=1.026600 (+26600 ppm)  [conf=2.8]
+  1990-10-26 Tuscaloosa (LB-00103)->1990-10-26 Tuscaloosa, AL, USA, Coleman Coliseum (LB-06348): speed-unknown  speed ratio=0.980400 (-19600 ppm)  [conf=2.2]
+  1990-10-26 Tuscaloosa (LB-00103)->1990-10-26 Tuscaloosa, Alabama (LB-10077): speed-unknown  speed ratio=0.996800 (-3200 ppm)  [conf=2.0]
+  1990-10-26 Tuscaloosa (LB-00103)->1990-10-26 Tuscaloosa, Alabama (LB-12073): speed-unknown  speed ratio=1.023000 (+23000 ppm)  [conf=1.7]
+
+=== RESIDUAL CORRELATION MATRIX ===
+  19 pair(s)/source(s) speed-unknown (v2 confidence < 6.0) — routed to fingerprint path only
+          LB-00103  LB-00904  LB-13426  LB-06348  LB-10077  LB-12073
+  LB-00103     1.000     0.002     0.002     0.002     0.002     0.002
+  LB-00904     0.002     1.000     0.002     0.002     0.002     0.002
+  LB-13426     0.002     0.002     1.000     0.002     0.002     0.002
+  LB-06348     0.002     0.002     0.002     1.000     0.002     0.002
+  LB-10077     0.002     0.002     0.002     0.002     1.000     0.004
+  LB-12073     0.002     0.002     0.002     0.002     0.004     1.000
+
+=== SECONDARY MATCH (windowed coverage + quiet-segment hiss + fingerprint) ===
+  15 cross-family pair(s) — computing secondary evidence ...
+  No secondary same-source evidence found.
+
+=== LAG CURVES / SPEED (re-run vs central ref=1990-10-26 Tuscaloosa, Alabama (LB-10077)) ===
+  anchors: 0:01:45, 0:09:54, 0:22:24, 0:31:02, 0:36:00, 0:44:10, 0:53:48, 0:57:01, 1:04:29, 1:12:18, 1:23:56, 1:30:54
+  1990-10-26 Tuscaloosa, Alabama (LB-10077)->1990-10-26 Tuscaloosa (LB-00103): speed-unknown  speed ratio=1.003200 (+3200 ppm)
+  1990-10-26 Tuscaloosa, Alabama (LB-10077)->1990-10-26 Tuscaloosa (LB-00904): speed-unknown  speed ratio=1.077551 (+77551 ppm)
+  1990-10-26 Tuscaloosa, Alabama (LB-10077)->1990-10-26 Tuscaloosa, AL (LB-13426): speed-unknown  speed ratio=1.058061 (+58061 ppm)
+  1990-10-26 Tuscaloosa, Alabama (LB-10077)->1990-10-26 Tuscaloosa, AL, USA, Coleman Coliseum (LB-06348): speed-unknown  speed ratio=1.024300 (+24300 ppm)
+  1990-10-26 Tuscaloosa, Alabama (LB-10077)->1990-10-26 Tuscaloosa, Alabama (LB-12073): speed-unknown  speed ratio=1.019109 (+19109 ppm)
+
+=== CLUSTERS ===
+  Family 1: 1990-10-26 Tuscaloosa (LB-00103)  (mean intra-corr 1.000)
+  Family 2: 1990-10-26 Tuscaloosa (LB-00904)  (mean intra-corr 1.000)
+  Family 3: 1990-10-26 Tuscaloosa, AL (LB-13426)  (mean intra-corr 1.000)
+  Family 4: 1990-10-26 Tuscaloosa, AL, USA, Coleman Coliseum (LB-06348)  (mean intra-corr 1.000)
+  Family 5: 1990-10-26 Tuscaloosa, Alabama (LB-10077)  (mean intra-corr 1.000)
+  Family 6: 1990-10-26 Tuscaloosa, Alabama (LB-12073)  (mean intra-corr 1.000)
+  Distinct source families: 6
+
+=== LINEAGE EVIDENCE (interpret manually) ===
+    source   HF ceiling  noise floor  DC asymmetry
+  1990-10-26 Tuscaloosa (LB-00103)       1.0kHz      -82.5dB      -0.00005
+  1990-10-26 Tuscaloosa (LB-00904)       2.0kHz      -82.7dB      +0.00089
+  1990-10-26 Tuscaloosa, AL (LB-13426)       2.0kHz      -82.1dB      +0.00005
+  1990-10-26 Tuscaloosa, AL, USA, Coleman Coliseum (LB-06348)       0.0kHz      -79.0dB      -0.00001
+  1990-10-26 Tuscaloosa, Alabama (LB-10077)       5.0kHz      -88.7dB      +0.00030
+  1990-10-26 Tuscaloosa, Alabama (LB-12073)       2.0kHz      -78.9dB      -0.00001
+  (HF ceiling capped by 8000 Hz Nyquist at analysis_sr=16000; run lineage at native rate for real format discrimination)
+  (DC asymmetry is a taper/equipment signature — not a reliable source-identity marker)
+
+=== DIAGNOSTICS ===
+  [INCOMPLETE] 1990-10-26 Tuscaloosa (LB-00103): 1:13:18 vs median 1:29:04 (17.7% shorter) — likely missing material
+  [INCOMPLETE] 1990-10-26 Tuscaloosa, AL, USA, Coleman Coliseum (LB-06348): 1:21:22 vs median 1:29:04 (8.7% shorter) — likely missing material
+  [DISTINCT SOURCE] 1990-10-26 Tuscaloosa (LB-00103) (+3200 ppm speed offset, best cross-family corr 0.002): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1990-10-26 Tuscaloosa (LB-00904) (+77551 ppm speed offset, best cross-family corr 0.002): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1990-10-26 Tuscaloosa, AL (LB-13426) (+58061 ppm speed offset, best cross-family corr 0.002): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1990-10-26 Tuscaloosa, AL, USA, Coleman Coliseum (LB-06348) (+24300 ppm speed offset, best cross-family corr 0.002): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1990-10-26 Tuscaloosa, Alabama (LB-12073) (+19109 ppm speed offset, best cross-family corr 0.004): near-zero correlation to all other sources — entirely different recording
+
+[6] Archiving run …
+  Archive → /home/tjenkins/Documents/losslessbob/data/tapematch/runs/20260702_162857_1990-10-26
+
+[7] Logging to observations.db …
+  Logged: 1 run, 6 sources, 15 pairs
+
+Report → /home/tjenkins/Documents/losslessbob/tools/tapematch/last_run_report.md

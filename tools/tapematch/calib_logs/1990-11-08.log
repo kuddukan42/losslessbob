@@ -1,0 +1,129 @@
+=== tapematch session: 1990-11-08  [20260702_125348] ===
+
+[1] Querying DB …
+  7 entries — Iowa City
+    LB-00422
+    LB-01219
+    LB-03730
+    LB-07094
+    LB-08251
+    LB-09060
+    LB-13427
+
+[2] Resolving paths from my_collection …
+  Found 7/7
+    LB-00422: /mnt/DYLAN1/Concerts/1990/1990-11-08 Iowa City (LB-00422)
+    LB-01219: /mnt/DYLAN1/Concerts/1990/1990-11-08 Iowa City (LB-01219)
+    LB-03730: /mnt/DYLAN1/Concerts/1990/1990-11-08 Iowa City, Iowa, Carver-Hawkeye Arena (LB-03730)
+    LB-07094: /mnt/DYLAN1/Concerts/1990/1990-11-08 Iowa City, Iowa (LB-07094)
+    LB-08251: /mnt/DYLAN1/Concerts/1990/1990-11-08 Iowa City, Iowa (LB-08251)
+    LB-09060: /mnt/DYLAN1/Concerts/1990/1990-11-08 Iowa City, Iowa (LB-09060)
+    LB-13427: /mnt/DYLAN1/Concerts/1990/1990-11-08 Iowa City, IA (LB-13427)
+
+[3] Cleaning /mnt/DATA0/examples/tapematch …
+
+[4] Copying 7 folders to /mnt/DATA0/examples/tapematch …
+  Copying LB-00422: 1990-11-08 Iowa City (LB-00422) …
+  Copying LB-01219: 1990-11-08 Iowa City (LB-01219) …
+  Copying LB-03730: 1990-11-08 Iowa City, Iowa, Carver-Hawkeye Arena (LB-03730) …
+  Copying LB-07094: 1990-11-08 Iowa City, Iowa (LB-07094) …
+  Copying LB-08251: 1990-11-08 Iowa City, Iowa (LB-08251) …
+  Copying LB-09060: 1990-11-08 Iowa City, Iowa (LB-09060) …
+  Copying LB-13427: 1990-11-08 Iowa City, IA (LB-13427) …
+
+[5] Running tapematch …
+  curator lineage pairs loaded: 677 (from /home/tjenkins/Documents/losslessbob/data/losslessbob.db)
+  est. peak RAM ~1.5 GB (7 sources, largest 2:39:15)
+=== INGEST / TRIM ===
+  1990-11-08 Iowa City (LB-00422): 21 tracks, 1:38:05
+  1990-11-08 Iowa City (LB-01219): 21 tracks, 1:36:54
+  1990-11-08 Iowa City, IA (LB-13427): 21 tracks, 1:33:13
+  1990-11-08 Iowa City, Iowa (LB-07094): 37 tracks, 2:39:15
+  1990-11-08 Iowa City, Iowa (LB-08251): 21 tracks, 1:35:28
+  1990-11-08 Iowa City, Iowa (LB-09060): 32 tracks, 2:12:47
+  1990-11-08 Iowa City, Iowa, Carver-Hawkeye Arena (LB-03730): 21 tracks, 1:37:07
+
+=== TRIM (performance envelope) ===
+  1990-11-08 Iowa City (LB-00422): trimmed 0:04:37 head, 0:00:03 tail -> performance 1:33:26
+  1990-11-08 Iowa City (LB-01219): trimmed 0:02:40 head, 0:00:42 tail -> performance 1:33:32
+  1990-11-08 Iowa City, IA (LB-13427): trimmed 0:00:20 head, 0:00:09 tail -> performance 1:32:44
+  1990-11-08 Iowa City, Iowa (LB-07094): trimmed 0:01:38 head, 0:04:02 tail -> performance 2:33:35
+  1990-11-08 Iowa City, Iowa (LB-08251): trimmed 0:01:39 head, 0:00:25 tail -> performance 1:33:24
+  1990-11-08 Iowa City, Iowa (LB-09060): trimmed 0:00:28 head, 0:00:16 tail -> performance 2:12:03
+  1990-11-08 Iowa City, Iowa, Carver-Hawkeye Arena (LB-03730): trimmed 0:02:40 head, 0:01:04 tail -> performance 1:33:22
+
+  [INFLATED?] — duration well above group median (1:33:26):
+    1990-11-08 Iowa City, Iowa (LB-07094): 2:33:35 (64.4% longer) — possible duplicate tracks in subfolders
+    1990-11-08 Iowa City, Iowa (LB-09060): 2:12:03 (41.3% longer) — possible duplicate tracks in subfolders
+
+=== ANCHORS (ref=1990-11-08 Iowa City (LB-00422)) ===
+  0:00:51, 0:09:53, 0:17:58, 0:31:05, 0:31:10, 0:39:58, 0:54:18, 0:54:38, 1:07:48, 1:14:28, 1:22:23, 1:28:55
+
+=== LAG CURVES / SPEED (vs ref) ===
+  1990-11-08 Iowa City (LB-00422)->1990-11-08 Iowa City (LB-01219): constant-speed-offset  speed ratio=1.026000 (+26000 ppm)
+  1990-11-08 Iowa City (LB-00422)->1990-11-08 Iowa City, IA (LB-13427): constant-speed-offset  speed ratio=1.030000 (+30000 ppm)
+  1990-11-08 Iowa City (LB-00422)->1990-11-08 Iowa City, Iowa (LB-07094): constant-speed-offset  speed ratio=1.019500 (+19500 ppm)
+  1990-11-08 Iowa City (LB-00422)->1990-11-08 Iowa City, Iowa (LB-08251): constant-speed-offset  speed ratio=1.026000 (+26000 ppm)
+  1990-11-08 Iowa City (LB-00422)->1990-11-08 Iowa City, Iowa (LB-09060): constant-speed-offset  speed ratio=0.982500 (-17500 ppm)
+  1990-11-08 Iowa City (LB-00422)->1990-11-08 Iowa City, Iowa, Carver-Hawkeye Arena (LB-03730): constant-speed-offset  speed ratio=1.026000 (+26000 ppm)
+
+=== RESIDUAL CORRELATION MATRIX ===
+          LB-00422  LB-01219  LB-13427  LB-07094  LB-08251  LB-09060  LB-03730
+  LB-00422     1.000     0.003     0.002     0.002     0.002     0.002     0.003
+  LB-01219     0.003     1.000     0.003     0.017     0.076     0.002     0.031
+  LB-13427     0.002     0.003     1.000     0.003     0.002     0.002     0.003
+  LB-07094     0.002     0.017     0.003     1.000     0.014     0.003     0.013
+  LB-08251     0.002     0.076     0.002     0.014     1.000     0.002     0.030
+  LB-09060     0.002     0.002     0.002     0.003     0.002     1.000     0.002
+  LB-03730     0.003     0.031     0.003     0.013     0.030     0.002     1.000
+
+=== SECONDARY MATCH (windowed coverage + quiet-segment hiss + fingerprint) ===
+  21 cross-family pair(s) — computing secondary evidence ...
+  LB-01219 / LB-08251: hiss 0.74 (123 segs, med 0.437)  [primary corr 0.076] → hiss evidence (below merge threshold)
+
+=== LAG CURVES / SPEED (re-run vs central ref=1990-11-08 Iowa City (LB-01219)) ===
+  anchors: 0:05:24, 0:12:40, 0:23:00, 0:24:00, 0:37:56, 0:41:19, 0:54:30, 1:00:02, 1:08:28, 1:16:07, 1:22:46, 1:29:05
+  1990-11-08 Iowa City (LB-01219)->1990-11-08 Iowa City (LB-00422): constant-speed-offset  speed ratio=0.975000 (-25000 ppm)
+  1990-11-08 Iowa City (LB-01219)->1990-11-08 Iowa City, IA (LB-13427): constant-speed-offset  speed ratio=1.014500 (+14500 ppm)
+  1990-11-08 Iowa City (LB-01219)->1990-11-08 Iowa City, Iowa (LB-07094): constant-speed-offset  speed ratio=0.993000 (-7000 ppm)
+  1990-11-08 Iowa City (LB-01219)->1990-11-08 Iowa City, Iowa (LB-08251): staircase/splice  speed ratio=1.000000 (+0 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  1990-11-08 Iowa City (LB-01219)->1990-11-08 Iowa City, Iowa (LB-09060): constant-speed-offset  speed ratio=0.974500 (-25500 ppm)
+  1990-11-08 Iowa City (LB-01219)->1990-11-08 Iowa City, Iowa, Carver-Hawkeye Arena (LB-03730): constant-speed-offset  speed ratio=1.000500 (+500 ppm)
+
+=== CLUSTERS ===
+  Family 1: 1990-11-08 Iowa City (LB-00422)  (mean intra-corr 1.000)
+  Family 2: 1990-11-08 Iowa City (LB-01219), 1990-11-08 Iowa City, Iowa (LB-08251), 1990-11-08 Iowa City, Iowa, Carver-Hawkeye Arena (LB-03730)  (mean intra-corr 0.046 [low confidence])  [secondary: LB-01219/LB-08251 via hiss 0.74]  [chain-unverified: LB-01219/LB-08251; LB-01219/LB-03730; LB-08251/LB-03730 not directly confirmed]
+  Family 3: 1990-11-08 Iowa City, IA (LB-13427)  (mean intra-corr 1.000)
+  Family 4: 1990-11-08 Iowa City, Iowa (LB-07094)  (mean intra-corr 1.000)
+  Family 5: 1990-11-08 Iowa City, Iowa (LB-09060)  (mean intra-corr 1.000)
+  Distinct source families: 5
+
+=== LINEAGE EVIDENCE (interpret manually) ===
+    source   HF ceiling  noise floor  DC asymmetry
+  1990-11-08 Iowa City (LB-00422)       2.0kHz      -73.0dB      -0.00015
+  1990-11-08 Iowa City (LB-01219)       2.0kHz      -75.4dB      -0.00025
+  1990-11-08 Iowa City, IA (LB-13427)       3.0kHz      -80.5dB      +0.00003
+  1990-11-08 Iowa City, Iowa (LB-07094)       2.0kHz      -76.1dB      -0.00007
+  1990-11-08 Iowa City, Iowa (LB-08251)       2.0kHz      -77.4dB      -0.00015
+  1990-11-08 Iowa City, Iowa (LB-09060)       3.0kHz      -74.5dB      +0.00004
+  1990-11-08 Iowa City, Iowa, Carver-Hawkeye Arena (LB-03730)       2.0kHz      -79.4dB      -0.00014
+  (HF ceiling capped by 8000 Hz Nyquist at analysis_sr=16000; run lineage at native rate for real format discrimination)
+  (DC asymmetry is a taper/equipment signature — not a reliable source-identity marker)
+
+=== DIAGNOSTICS ===
+  [INFLATED] 1990-11-08 Iowa City, Iowa (LB-07094): 2:33:35 vs median 1:33:26 (64.4% longer) — check for duplicate tracks in subfolders; correlation results for this source are unreliable
+  [INFLATED] 1990-11-08 Iowa City, Iowa (LB-09060): 2:12:03 vs median 1:33:26 (41.3% longer) — check for duplicate tracks in subfolders; correlation results for this source are unreliable
+  [DISTINCT SOURCE] 1990-11-08 Iowa City (LB-00422) (-25000 ppm speed offset, best cross-family corr 0.003): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1990-11-08 Iowa City, IA (LB-13427) (+14500 ppm speed offset, best cross-family corr 0.003): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1990-11-08 Iowa City, Iowa (LB-07094) (-7000 ppm speed offset, best cross-family corr 0.017): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1990-11-08 Iowa City, Iowa (LB-09060) (-25500 ppm speed offset, best cross-family corr 0.003): near-zero correlation to all other sources — entirely different recording
+  [SECONDARY SAME-SOURCE] 1990-11-08 Iowa City (LB-01219) / 1990-11-08 Iowa City, Iowa (LB-08251): hiss frac 0.74 (123 segs) — primary corr 0.076 (below threshold); likely remaster or heavily edited copy of same tape
+
+[6] Archiving run …
+  Archive → /home/tjenkins/Documents/losslessbob/data/tapematch/runs/20260702_125348_1990-11-08
+
+[7] Logging to observations.db …
+  Logged: 1 run, 7 sources, 21 pairs
+
+Report → /home/tjenkins/Documents/losslessbob/tools/tapematch/last_run_report.md

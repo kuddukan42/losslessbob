@@ -1,0 +1,95 @@
+=== tapematch session: 1989-10-31  [20260702_165316] ===
+
+[1] Querying DB …
+  5 entries — Chicago
+    LB-02341
+    LB-04682
+    LB-05461
+    LB-09069
+    LB-13326
+
+[2] Resolving paths from my_collection …
+  Excluded (private/no-torrent): LB-13326
+  Found 4/5
+    LB-02341: /mnt/DYLAN1/Concerts/1989/1989-10-31 Chicago (LB-02341)
+    LB-04682: /mnt/DYLAN1/Concerts/1989/1989-10-31 Chicago (LB-04682)
+    LB-05461: /mnt/DYLAN1/Concerts/1989/1989-10-31 Chicago, Illinois, Arie Crown Theater (LB-05461)
+    LB-09069: /mnt/DYLAN1/Concerts/1989/1989-10-31 Chicago, Illinois (LB-09069)
+
+[3] Cleaning /mnt/DATA0/examples/tapematch …
+
+[4] Copying 4 folders to /mnt/DATA0/examples/tapematch …
+  Copying LB-02341: 1989-10-31 Chicago (LB-02341) …
+  Copying LB-04682: 1989-10-31 Chicago (LB-04682) …
+  Copying LB-05461: 1989-10-31 Chicago, Illinois, Arie Crown Theater (LB-05461) …
+  Copying LB-09069: 1989-10-31 Chicago, Illinois (LB-09069) …
+
+[5] Running tapematch …
+  curator lineage pairs loaded: 677 (from /home/tjenkins/Documents/losslessbob/data/losslessbob.db)
+  est. peak RAM ~1.0 GB (4 sources, largest 1:35:06)
+=== INGEST / TRIM ===
+  1989-10-31 Chicago (LB-02341): 17 tracks, 1:30:14
+  1989-10-31 Chicago (LB-04682): 17 tracks, 1:35:06
+  1989-10-31 Chicago, Illinois (LB-09069): 17 tracks, 1:31:07
+  1989-10-31 Chicago, Illinois, Arie Crown Theater (LB-05461): 17 tracks, 1:30:34
+
+=== TRIM (performance envelope) ===
+  1989-10-31 Chicago (LB-02341): trimmed 0:00:11 head, 0:00:00 tail -> performance 1:30:02
+  1989-10-31 Chicago (LB-04682): trimmed 0:00:16 head, 0:00:03 tail -> performance 1:34:46
+  1989-10-31 Chicago, Illinois (LB-09069): trimmed 0:00:36 head, 0:00:39 tail -> performance 1:29:52
+  1989-10-31 Chicago, Illinois, Arie Crown Theater (LB-05461): trimmed 0:00:21 head, 0:00:13 tail -> performance 1:30:00
+
+=== ANCHORS (ref=1989-10-31 Chicago (LB-02341)) ===
+  0:02:47, 0:10:04, 0:16:32, 0:23:10, 0:33:30, 0:44:53, 0:50:25, 0:56:08, 1:00:32, 1:13:06, 1:17:49, 1:24:27
+
+=== LAG CURVES / SPEED (vs ref) ===
+  1989-10-31 Chicago (LB-02341)->1989-10-31 Chicago (LB-04682): speed-unknown  speed ratio=0.947057 (-52943 ppm)  [conf=1.7]
+  1989-10-31 Chicago (LB-02341)->1989-10-31 Chicago, Illinois (LB-09069): speed-unknown  speed ratio=1.004454 (+4454 ppm)  [conf=2.6]
+  1989-10-31 Chicago (LB-02341)->1989-10-31 Chicago, Illinois, Arie Crown Theater (LB-05461): speed-unknown  speed ratio=0.997463 (-2537 ppm)  [conf=2.0]
+
+=== RESIDUAL CORRELATION MATRIX ===
+  9 pair(s)/source(s) speed-unknown (v2 confidence < 6.0) — routed to fingerprint path only
+          LB-02341  LB-04682  LB-09069  LB-05461
+  LB-02341     1.000     0.006     0.012     0.008
+  LB-04682     0.006     1.000     0.006     0.005
+  LB-09069     0.012     0.006     1.000     0.008
+  LB-05461     0.008     0.005     0.008     1.000
+
+=== SECONDARY MATCH (windowed coverage + quiet-segment hiss + fingerprint) ===
+  6 cross-family pair(s) — computing secondary evidence ...
+  No secondary same-source evidence found.
+
+=== LAG CURVES / SPEED (re-run vs central ref=1989-10-31 Chicago, Illinois (LB-09069)) ===
+  anchors: 0:02:50, 0:11:39, 0:17:01, 0:23:05, 0:33:15, 0:41:47, 0:52:07, 0:56:20, 1:07:22, 1:13:00, 1:17:29, 1:24:41
+  1989-10-31 Chicago, Illinois (LB-09069)->1989-10-31 Chicago (LB-02341): speed-unknown  speed ratio=0.995549 (-4451 ppm)
+  1989-10-31 Chicago, Illinois (LB-09069)->1989-10-31 Chicago (LB-04682): speed-unknown  speed ratio=0.945399 (-54601 ppm)
+  1989-10-31 Chicago, Illinois (LB-09069)->1989-10-31 Chicago, Illinois, Arie Crown Theater (LB-05461): speed-unknown  speed ratio=0.995611 (-4389 ppm)
+
+=== CLUSTERS ===
+  Family 1: 1989-10-31 Chicago (LB-02341)  (mean intra-corr 1.000)
+  Family 2: 1989-10-31 Chicago (LB-04682)  (mean intra-corr 1.000)
+  Family 3: 1989-10-31 Chicago, Illinois (LB-09069)  (mean intra-corr 1.000)
+  Family 4: 1989-10-31 Chicago, Illinois, Arie Crown Theater (LB-05461)  (mean intra-corr 1.000)
+  Distinct source families: 4
+
+=== LINEAGE EVIDENCE (interpret manually) ===
+    source   HF ceiling  noise floor  DC asymmetry
+  1989-10-31 Chicago (LB-02341)       3.0kHz      -79.2dB      -0.00004
+  1989-10-31 Chicago (LB-04682)       3.0kHz      -80.5dB      -0.00002
+  1989-10-31 Chicago, Illinois (LB-09069)       2.0kHz      -78.5dB      -0.00000
+  1989-10-31 Chicago, Illinois, Arie Crown Theater (LB-05461)       2.0kHz      -83.9dB      -0.00003
+  (HF ceiling capped by 8000 Hz Nyquist at analysis_sr=16000; run lineage at native rate for real format discrimination)
+  (DC asymmetry is a taper/equipment signature — not a reliable source-identity marker)
+
+=== DIAGNOSTICS ===
+  [DISTINCT SOURCE] 1989-10-31 Chicago (LB-02341) (-4451 ppm speed offset, best cross-family corr 0.012): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1989-10-31 Chicago (LB-04682) (-54601 ppm speed offset, best cross-family corr 0.006): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1989-10-31 Chicago, Illinois, Arie Crown Theater (LB-05461) (-4389 ppm speed offset, best cross-family corr 0.008): near-zero correlation to all other sources — entirely different recording
+
+[6] Archiving run …
+  Archive → /home/tjenkins/Documents/losslessbob/data/tapematch/runs/20260702_165316_1989-10-31
+
+[7] Logging to observations.db …
+  Logged: 1 run, 4 sources, 6 pairs
+
+Report → /home/tjenkins/Documents/losslessbob/tools/tapematch/last_run_report.md

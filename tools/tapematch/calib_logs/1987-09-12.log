@@ -1,0 +1,138 @@
+=== tapematch session: 1987-09-12  [20260702_135007] ===
+
+[1] Querying DB …
+  9 entries — Area Ex Autodromo - Modena, Italy
+    LB-00543
+    LB-02286
+    LB-04716
+    LB-05445
+    LB-09978
+    LB-13027
+    LB-13028
+    LB-14995
+    LB-15009
+
+[2] Resolving paths from my_collection …
+  Excluded (private/no-torrent): LB-13027, LB-13028
+  Found 7/9
+    LB-00543: /mnt/DYLAN1/Concerts/1987/1987-09-12 Area Ex Autodromo - Modena, Italy (LB-00543)
+    LB-02286: /mnt/DYLAN1/Concerts/1987/1987-09-12 Area Ex Autodromo - Modena, Italy (LB-02286)
+    LB-04716: /mnt/DYLAN1/Concerts/1987/1987-09-12 Modena, Italy, Area Ex Autodromo (LB-04716)
+    LB-05445: /mnt/DYLAN1/Concerts/1987/1987-09-12 Modena, Italy, Area Ex Autodromo (LB-05445)
+    LB-09978: /mnt/DYLAN1/Concerts/1987/1987-09-12 Modena, Italy (LB-09978)
+    LB-14995: /mnt/DYLAN1/Concerts/1987/1987-09-12 Modena, Italy (LB-14995)
+    LB-15009: /mnt/DYLAN1/Concerts/1987/1987-09-12 Modena (LB-15009)
+
+[3] Cleaning /mnt/DATA0/examples/tapematch …
+
+[4] Copying 7 folders to /mnt/DATA0/examples/tapematch …
+  Copying LB-00543: 1987-09-12 Area Ex Autodromo - Modena, Italy (LB-00543) …
+  Copying LB-02286: 1987-09-12 Area Ex Autodromo - Modena, Italy (LB-02286) …
+  Copying LB-04716: 1987-09-12 Modena, Italy, Area Ex Autodromo (LB-04716) …
+  Copying LB-05445: 1987-09-12 Modena, Italy, Area Ex Autodromo (LB-05445) …
+  Copying LB-09978: 1987-09-12 Modena, Italy (LB-09978) …
+  Copying LB-14995: 1987-09-12 Modena, Italy (LB-14995) …
+  Copying LB-15009: 1987-09-12 Modena (LB-15009) …
+
+[5] Running tapematch …
+  curator lineage pairs loaded: 677 (from /home/tjenkins/Documents/losslessbob/data/losslessbob.db)
+  est. peak RAM ~1.2 GB (7 sources, largest 2:01:45)
+=== INGEST / TRIM ===
+  1987-09-12 Area Ex Autodromo - Modena, Italy (LB-00543): 15 tracks, 1:18:10
+  1987-09-12 Area Ex Autodromo - Modena, Italy (LB-02286): 15 tracks, 1:18:03
+  1987-09-12 Modena (LB-15009): 15 tracks, 1:18:36
+  1987-09-12 Modena, Italy (LB-09978): 15 tracks, 1:17:39
+  1987-09-12 Modena, Italy (LB-14995): 15 tracks, 1:23:53
+  1987-09-12 Modena, Italy, Area Ex Autodromo (LB-04716): 24 tracks, 2:01:45
+  1987-09-12 Modena, Italy, Area Ex Autodromo (LB-05445): 15 tracks, 1:19:54
+
+=== TRIM (performance envelope) ===
+  1987-09-12 Area Ex Autodromo - Modena, Italy (LB-00543): trimmed 0:03:12 head, 0:01:28 tail -> performance 1:13:30
+  1987-09-12 Area Ex Autodromo - Modena, Italy (LB-02286): trimmed 0:03:12 head, 0:01:27 tail -> performance 1:13:24
+  1987-09-12 Modena (LB-15009): trimmed 0:00:00 head, 0:00:00 tail -> performance 1:18:36
+  1987-09-12 Modena, Italy (LB-09978): trimmed 0:00:00 head, 0:00:00 tail -> performance 1:17:39
+  1987-09-12 Modena, Italy (LB-14995): trimmed 0:01:10 head, 0:04:14 tail -> performance 1:18:30
+  1987-09-12 Modena, Italy, Area Ex Autodromo (LB-04716): trimmed 0:12:44 head, 0:18:24 tail -> performance 1:30:37
+  1987-09-12 Modena, Italy, Area Ex Autodromo (LB-05445): trimmed 0:02:29 head, 0:00:34 tail -> performance 1:16:51
+
+  [INCOMPLETE?] — duration well below group median (1:17:39):
+    1987-09-12 Area Ex Autodromo - Modena, Italy (LB-00543): 1:13:30 (5.3% shorter)
+    1987-09-12 Area Ex Autodromo - Modena, Italy (LB-02286): 1:13:24 (5.5% shorter)
+
+=== ANCHORS (ref=1987-09-12 Area Ex Autodromo - Modena, Italy (LB-00543)) ===
+  0:04:42, 0:08:04, 0:13:47, 0:19:18, 0:30:28, 0:34:02, 0:36:55, 0:46:09, 0:49:14, 0:59:31, 1:06:30, 1:09:05
+
+=== LAG CURVES / SPEED (vs ref) ===
+  1987-09-12 Area Ex Autodromo - Modena, Italy (LB-00543)->1987-09-12 Area Ex Autodromo - Modena, Italy (LB-02286): staircase/splice  speed ratio=1.000000 (+0 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  1987-09-12 Area Ex Autodromo - Modena, Italy (LB-00543)->1987-09-12 Modena (LB-15009): constant-speed-offset  speed ratio=0.998000 (-2000 ppm)
+  1987-09-12 Area Ex Autodromo - Modena, Italy (LB-00543)->1987-09-12 Modena, Italy (LB-09978): constant-speed-offset  speed ratio=1.001500 (+1500 ppm)
+  1987-09-12 Area Ex Autodromo - Modena, Italy (LB-00543)->1987-09-12 Modena, Italy (LB-14995): staircase/splice  speed ratio=1.000000 (+0 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  1987-09-12 Area Ex Autodromo - Modena, Italy (LB-00543)->1987-09-12 Modena, Italy, Area Ex Autodromo (LB-04716): constant-speed-offset  speed ratio=1.009000 (+9000 ppm)
+  1987-09-12 Area Ex Autodromo - Modena, Italy (LB-00543)->1987-09-12 Modena, Italy, Area Ex Autodromo (LB-05445): staircase/splice  speed ratio=1.000000 (+0 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+
+=== RESIDUAL CORRELATION MATRIX ===
+          LB-00543  LB-02286  LB-15009  LB-09978  LB-14995  LB-04716  LB-05445
+  LB-00543     1.000     0.634     0.003     0.002     0.006     0.002     0.004
+  LB-02286     0.634     1.000     0.003     0.003     0.004     0.002     0.003
+  LB-15009     0.003     0.003     1.000     0.003     0.003     0.003     0.003
+  LB-09978     0.002     0.003     0.003     1.000     0.045     0.002     0.003
+  LB-14995     0.006     0.004     0.003     0.045     1.000     0.003     0.006
+  LB-04716     0.002     0.002     0.003     0.002     0.003     1.000     0.003
+  LB-05445     0.004     0.003     0.003     0.003     0.006     0.003     1.000
+
+=== SECONDARY MATCH (windowed coverage + quiet-segment hiss + fingerprint) ===
+  20 cross-family pair(s) — computing secondary evidence ...
+  No secondary same-source evidence found.
+
+=== LAG CURVES / SPEED (re-run vs central ref=1987-09-12 Modena, Italy (LB-14995)) ===
+  anchors: 0:02:23, 0:10:35, 0:13:44, 0:21:52, 0:30:11, 0:35:28, 0:40:41, 0:47:38, 0:52:45, 1:01:59, 1:11:49, 1:12:08
+  1987-09-12 Modena, Italy (LB-14995)->1987-09-12 Area Ex Autodromo - Modena, Italy (LB-00543): staircase/splice  speed ratio=1.000000 (+0 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  1987-09-12 Modena, Italy (LB-14995)->1987-09-12 Area Ex Autodromo - Modena, Italy (LB-02286): staircase/splice  speed ratio=1.000000 (+0 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  1987-09-12 Modena, Italy (LB-14995)->1987-09-12 Modena (LB-15009): constant-speed-offset  speed ratio=0.997000 (-3000 ppm)
+  1987-09-12 Modena, Italy (LB-14995)->1987-09-12 Modena, Italy (LB-09978): staircase/splice  speed ratio=1.000000 (+0 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  1987-09-12 Modena, Italy (LB-14995)->1987-09-12 Modena, Italy, Area Ex Autodromo (LB-04716): constant-speed-offset  speed ratio=1.009500 (+9500 ppm)
+  1987-09-12 Modena, Italy (LB-14995)->1987-09-12 Modena, Italy, Area Ex Autodromo (LB-05445): staircase/splice  speed ratio=1.000000 (+0 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+
+=== CLUSTERS ===
+  Family 1: 1987-09-12 Area Ex Autodromo - Modena, Italy (LB-00543), 1987-09-12 Area Ex Autodromo - Modena, Italy (LB-02286), 1987-09-12 Modena, Italy (LB-09978), 1987-09-12 Modena, Italy (LB-14995), 1987-09-12 Modena, Italy, Area Ex Autodromo (LB-05445)  (mean intra-corr 0.071 [low confidence])  [chain-unverified: LB-00543/LB-09978; LB-00543/LB-14995; LB-00543/LB-05445; LB-02286/LB-09978; LB-02286/LB-14995; LB-02286/LB-05445; LB-09978/LB-14995; LB-09978/LB-05445; LB-14995/LB-05445 not directly confirmed]
+  Family 2: 1987-09-12 Modena (LB-15009)  (mean intra-corr 1.000)
+  Family 3: 1987-09-12 Modena, Italy, Area Ex Autodromo (LB-04716)  (mean intra-corr 1.000)
+  Distinct source families: 3
+
+=== LINEAGE EVIDENCE (interpret manually) ===
+    source   HF ceiling  noise floor  DC asymmetry
+  1987-09-12 Area Ex Autodromo - Modena, Italy (LB-00543)       1.0kHz      -74.2dB      +0.00022
+  1987-09-12 Area Ex Autodromo - Modena, Italy (LB-02286)       1.0kHz      -74.2dB      +0.00022
+  1987-09-12 Modena (LB-15009)       4.0kHz      -91.5dB      -0.00002
+  1987-09-12 Modena, Italy (LB-09978)       0.0kHz      -68.2dB      -0.00008
+  1987-09-12 Modena, Italy (LB-14995)       1.0kHz      -74.1dB      +0.00024
+  1987-09-12 Modena, Italy, Area Ex Autodromo (LB-04716)       4.0kHz      -71.5dB      -0.00002
+  1987-09-12 Modena, Italy, Area Ex Autodromo (LB-05445)       1.0kHz      -74.2dB      +0.00022
+  (HF ceiling capped by 8000 Hz Nyquist at analysis_sr=16000; run lineage at native rate for real format discrimination)
+  (DC asymmetry is a taper/equipment signature — not a reliable source-identity marker)
+
+=== DIAGNOSTICS ===
+  [INCOMPLETE] 1987-09-12 Area Ex Autodromo - Modena, Italy (LB-00543): 1:13:30 vs median 1:17:39 (5.3% shorter) — likely missing material
+  [INCOMPLETE] 1987-09-12 Area Ex Autodromo - Modena, Italy (LB-02286): 1:13:24 vs median 1:17:39 (5.5% shorter) — likely missing material
+  [TIMING MISMATCH] 1987-09-12 Modena, Italy (LB-09978) / 1987-09-12 Modena, Italy, Area Ex Autodromo (LB-04716): performance 1:17:39 vs 1:30:37 (13.0 min difference) — timing drift may exceed alignment window; correlation unreliable if same-source
+  [TIMING MISMATCH] 1987-09-12 Modena, Italy (LB-14995) / 1987-09-12 Modena, Italy, Area Ex Autodromo (LB-04716): performance 1:18:30 vs 1:30:37 (12.1 min difference) — timing drift may exceed alignment window; correlation unreliable if same-source
+  [TIMING MISMATCH] 1987-09-12 Modena, Italy, Area Ex Autodromo (LB-05445) / 1987-09-12 Modena, Italy, Area Ex Autodromo (LB-04716): performance 1:16:51 vs 1:30:37 (13.8 min difference) — timing drift may exceed alignment window; correlation unreliable if same-source
+  [TIMING MISMATCH] 1987-09-12 Modena (LB-15009) / 1987-09-12 Modena, Italy, Area Ex Autodromo (LB-04716): performance 1:18:36 vs 1:30:37 (12.0 min difference) — timing drift may exceed alignment window; correlation unreliable if same-source
+  [DISTINCT SOURCE] 1987-09-12 Modena (LB-15009) (-3000 ppm speed offset, best cross-family corr 0.003): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1987-09-12 Modena, Italy, Area Ex Autodromo (LB-04716) (+9500 ppm speed offset, best cross-family corr 0.003): near-zero correlation to all other sources — entirely different recording
+  [LOW CONFIDENCE] Family 1 (1987-09-12 Area Ex Autodromo - Modena, Italy (LB-00543) / 1987-09-12 Area Ex Autodromo - Modena, Italy (LB-02286)): corr 0.634 — same source likely but significant processing (resampling, level boost, EQ) may explain reduced correlation
+
+[6] Archiving run …
+  Archive → /home/tjenkins/Documents/losslessbob/data/tapematch/runs/20260702_135007_1987-09-12
+
+[7] Logging to observations.db …
+  Logged: 1 run, 7 sources, 21 pairs
+
+Report → /home/tjenkins/Documents/losslessbob/tools/tapematch/last_run_report.md

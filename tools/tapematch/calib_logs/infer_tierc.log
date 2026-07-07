@@ -1,0 +1,2 @@
+loaded /home/tjenkins/Documents/losslessbob/tools/tapematch/embedding/ckpt/tierc.pt
+tierc infer: extracted=184 skip=0 fail=0 -> /home/tjenkins/Documents/losslessbob/tools/tapematch/embed_cache_tierc/

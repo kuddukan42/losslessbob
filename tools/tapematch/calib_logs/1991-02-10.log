@@ -1,0 +1,137 @@
+=== tapematch session: 1991-02-10  [20260702_110037] ===
+
+[1] Querying DB …
+  8 entries — Hammersmith Odeon London, England
+    LB-01930
+    LB-04209
+    LB-07026
+    LB-07029
+    LB-08219
+    LB-09158
+    LB-10607
+    LB-10609
+
+[2] Resolving paths from my_collection …
+  Found 8/8
+    LB-01930: /mnt/DYLAN1/Concerts/1991/1991-02-10 Hammersmith Odeon London, England (LB-01930)
+    LB-04209: /mnt/DYLAN1/Concerts/1991/1991-02-10 London, England, Hammersmith Odeon (LB-04209)
+    LB-07026: /mnt/DYLAN1/Concerts/1991/1991-02-10 London, England (LB-07026)
+    LB-07029: /mnt/DYLAN1/Concerts/1991/1991-02-10 London, England (LB-07029)
+    LB-08219: /mnt/DYLAN1/Concerts/1991/1991-02-10 London, state- U.K. (LB-08219)
+    LB-09158: /mnt/DYLAN1/Concerts/1991/1991-02-10 London, England (LB-09158)
+    LB-10607: /mnt/DYLAN1/Concerts/1991/1991-02-10 London, England (LB-10607)
+    LB-10609: /mnt/DYLAN1/Concerts/1991/1991-02-10 London, England (LB-10609)
+
+[3] Cleaning /mnt/DATA0/examples/tapematch …
+
+[4] Copying 8 folders to /mnt/DATA0/examples/tapematch …
+  Copying LB-01930: 1991-02-10 Hammersmith Odeon London, England (LB-01930) …
+  Copying LB-04209: 1991-02-10 London, England, Hammersmith Odeon (LB-04209) …
+  Copying LB-07026: 1991-02-10 London, England (LB-07026) …
+  Copying LB-07029: 1991-02-10 London, England (LB-07029) …
+  Copying LB-08219: 1991-02-10 London, state- U.K. (LB-08219) …
+  Copying LB-09158: 1991-02-10 London, England (LB-09158) …
+  Copying LB-10607: 1991-02-10 London, England (LB-10607) …
+  Copying LB-10609: 1991-02-10 London, England (LB-10609) …
+
+[5] Running tapematch …
+  curator lineage pairs loaded: 677 (from /home/tjenkins/Documents/losslessbob/data/losslessbob.db)
+  est. peak RAM ~0.9 GB (8 sources, largest 1:23:12)
+=== INGEST / TRIM ===
+  1991-02-10 Hammersmith Odeon London, England (LB-01930): 18 tracks, 1:22:17
+  1991-02-10 London, England (LB-07026): 19 tracks, 1:22:07
+  1991-02-10 London, England (LB-07029): 18 tracks, 1:22:51
+  1991-02-10 London, England (LB-09158): 18 tracks, 1:23:12
+  1991-02-10 London, England (LB-10607): 18 tracks, 1:19:45
+  1991-02-10 London, England (LB-10609): 18 tracks, 1:21:36
+  1991-02-10 London, England, Hammersmith Odeon (LB-04209): 18 tracks, 1:22:37
+  1991-02-10 London, state- U.K. (LB-08219): 18 tracks, 1:20:40
+
+=== TRIM (performance envelope) ===
+  1991-02-10 Hammersmith Odeon London, England (LB-01930): trimmed 0:00:16 head, 0:00:10 tail -> performance 1:21:50
+  1991-02-10 London, England (LB-07026): trimmed 0:01:34 head, 0:00:29 tail -> performance 1:20:03
+  1991-02-10 London, England (LB-07029): trimmed 0:00:22 head, 0:00:46 tail -> performance 1:21:43
+  1991-02-10 London, England (LB-09158): trimmed 0:00:46 head, 0:00:14 tail -> performance 1:22:12
+  1991-02-10 London, England (LB-10607): trimmed 0:00:00 head, 0:00:05 tail -> performance 1:19:40
+  1991-02-10 London, England (LB-10609): trimmed 0:00:25 head, 0:00:02 tail -> performance 1:21:09
+  1991-02-10 London, England, Hammersmith Odeon (LB-04209): trimmed 0:00:16 head, 0:00:06 tail -> performance 1:22:16
+  1991-02-10 London, state- U.K. (LB-08219): trimmed 0:00:01 head, 0:00:00 tail -> performance 1:20:39
+
+=== ANCHORS (ref=1991-02-10 Hammersmith Odeon London, England (LB-01930)) ===
+  0:03:41, 0:11:16, 0:19:30, 0:23:21, 0:32:28, 0:36:01, 0:45:09, 0:52:30, 0:57:37, 1:06:06, 1:10:07, 1:21:31
+
+=== LAG CURVES / SPEED (vs ref) ===
+  1991-02-10 Hammersmith Odeon London, England (LB-01930)->1991-02-10 London, England (LB-07026): constant-speed-offset  speed ratio=1.007000 (+7000 ppm)
+  1991-02-10 Hammersmith Odeon London, England (LB-01930)->1991-02-10 London, England (LB-07029): staircase/splice  speed ratio=1.000000 (+0 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  1991-02-10 Hammersmith Odeon London, England (LB-01930)->1991-02-10 London, England (LB-09158): constant-speed-offset  speed ratio=0.980000 (-20000 ppm)
+  1991-02-10 Hammersmith Odeon London, England (LB-01930)->1991-02-10 London, England (LB-10607): constant-speed-offset  speed ratio=1.029500 (+29500 ppm)
+  1991-02-10 Hammersmith Odeon London, England (LB-01930)->1991-02-10 London, England (LB-10609): constant-speed-offset  speed ratio=1.007000 (+7000 ppm)
+  1991-02-10 Hammersmith Odeon London, England (LB-01930)->1991-02-10 London, England, Hammersmith Odeon (LB-04209): constant-speed-offset  speed ratio=1.003500 (+3500 ppm)
+  1991-02-10 Hammersmith Odeon London, England (LB-01930)->1991-02-10 London, state- U.K. (LB-08219): constant-speed-offset  speed ratio=1.010000 (+10000 ppm)
+
+=== RESIDUAL CORRELATION MATRIX ===
+          LB-01930  LB-07026  LB-07029  LB-09158  LB-10607  LB-10609  LB-04209  LB-08219
+  LB-01930     1.000     0.002     0.123     0.003     0.002     0.006     0.005     0.008
+  LB-07026     0.002     1.000     0.002     0.002     0.002     0.002     0.003     0.003
+  LB-07029     0.123     0.002     1.000     0.002     0.002     0.007     0.008     0.006
+  LB-09158     0.003     0.002     0.002     1.000     0.003     0.002     0.003     0.002
+  LB-10607     0.002     0.002     0.002     0.003     1.000     0.002     0.003     0.003
+  LB-10609     0.006     0.002     0.007     0.002     0.002     1.000     0.008     0.007
+  LB-04209     0.005     0.003     0.008     0.003     0.003     0.008     1.000     0.010
+  LB-08219     0.008     0.003     0.006     0.002     0.003     0.007     0.010     1.000
+
+=== SECONDARY MATCH (windowed coverage + quiet-segment hiss + fingerprint) ===
+  28 cross-family pair(s) — computing secondary evidence ...
+  LB-01930 / LB-07029: windowed 0.81 (980 win, med 0.493); hiss 0.66 (88 segs, med 0.495); fingerprint Dice 0.726 (47862 / 47924 hashes)  [primary corr 0.123] → SECONDARY LINK
+
+=== LAG CURVES / SPEED (re-run vs central ref=1991-02-10 London, England (LB-07029)) ===
+  anchors: 0:05:40, 0:11:23, 0:19:55, 0:22:56, 0:29:21, 0:36:01, 0:45:02, 0:49:56, 0:57:29, 1:05:59, 1:10:00, 1:21:25
+  1991-02-10 London, England (LB-07029)->1991-02-10 Hammersmith Odeon London, England (LB-01930): staircase/splice  speed ratio=1.000000 (+0 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  1991-02-10 London, England (LB-07029)->1991-02-10 London, England (LB-07026): constant-speed-offset  speed ratio=1.005500 (+5500 ppm)
+  1991-02-10 London, England (LB-07029)->1991-02-10 London, England (LB-09158): constant-speed-offset  speed ratio=0.980000 (-20000 ppm)
+  1991-02-10 London, England (LB-07029)->1991-02-10 London, England (LB-10607): constant-speed-offset  speed ratio=1.030000 (+30000 ppm)
+  1991-02-10 London, England (LB-07029)->1991-02-10 London, England (LB-10609): constant-speed-offset  speed ratio=1.007000 (+7000 ppm)
+  1991-02-10 London, England (LB-07029)->1991-02-10 London, England, Hammersmith Odeon (LB-04209): constant-speed-offset  speed ratio=1.003000 (+3000 ppm)
+  1991-02-10 London, England (LB-07029)->1991-02-10 London, state- U.K. (LB-08219): constant-speed-offset  speed ratio=1.010000 (+10000 ppm)
+
+=== CLUSTERS ===
+  Family 1: 1991-02-10 Hammersmith Odeon London, England (LB-01930), 1991-02-10 London, England (LB-07029)  (mean intra-corr 0.123 [fp-linked])  [secondary: LB-01930/LB-07029 via windowed 0.81+hiss 0.66+fp 0.726]
+  Family 2: 1991-02-10 London, England (LB-07026)  (mean intra-corr 1.000)
+  Family 3: 1991-02-10 London, England (LB-09158)  (mean intra-corr 1.000)
+  Family 4: 1991-02-10 London, England (LB-10607)  (mean intra-corr 1.000)
+  Family 5: 1991-02-10 London, England (LB-10609)  (mean intra-corr 1.000)
+  Family 6: 1991-02-10 London, England, Hammersmith Odeon (LB-04209)  (mean intra-corr 1.000)
+  Family 7: 1991-02-10 London, state- U.K. (LB-08219)  (mean intra-corr 1.000)
+  Distinct source families: 7
+
+=== LINEAGE EVIDENCE (interpret manually) ===
+    source   HF ceiling  noise floor  DC asymmetry
+  1991-02-10 Hammersmith Odeon London, England (LB-01930)       0.0kHz      -80.5dB      +0.00080
+  1991-02-10 London, England (LB-07026)       2.0kHz      -78.1dB      +0.00034
+  1991-02-10 London, England (LB-07029)       0.0kHz      -76.5dB      +0.00130
+  1991-02-10 London, England (LB-09158)       2.0kHz      -84.6dB      -0.00003
+  1991-02-10 London, England (LB-10607)       3.0kHz      -90.5dB      -0.00004
+  1991-02-10 London, England (LB-10609)       2.0kHz      -83.9dB      +0.00049
+  1991-02-10 London, England, Hammersmith Odeon (LB-04209)       2.0kHz      -80.9dB      +0.00117
+  1991-02-10 London, state- U.K. (LB-08219)       0.0kHz      -71.1dB      -0.00000
+  (HF ceiling capped by 8000 Hz Nyquist at analysis_sr=16000; run lineage at native rate for real format discrimination)
+  (DC asymmetry is a taper/equipment signature — not a reliable source-identity marker)
+
+=== DIAGNOSTICS ===
+  [DISTINCT SOURCE] 1991-02-10 London, England (LB-07026) (+5500 ppm speed offset, best cross-family corr 0.003): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1991-02-10 London, England (LB-09158) (-20000 ppm speed offset, best cross-family corr 0.003): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1991-02-10 London, England (LB-10607) (+30000 ppm speed offset, best cross-family corr 0.003): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1991-02-10 London, England (LB-10609) (+7000 ppm speed offset, best cross-family corr 0.008): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1991-02-10 London, England, Hammersmith Odeon (LB-04209) (+3000 ppm speed offset, best cross-family corr 0.010): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] 1991-02-10 London, state- U.K. (LB-08219) (+10000 ppm speed offset, best cross-family corr 0.010): near-zero correlation to all other sources — entirely different recording
+  [SECONDARY SAME-SOURCE] 1991-02-10 Hammersmith Odeon London, England (LB-01930) / 1991-02-10 London, England (LB-07029): windowed coverage 0.81 (980 win); hiss frac 0.66 (88 segs); fingerprint Dice 0.726 — primary corr 0.123 (below threshold); likely remaster or heavily edited copy of same tape
+
+[6] Archiving run …
+  Archive → /home/tjenkins/Documents/losslessbob/data/tapematch/runs/20260702_110037_1991-02-10
+
+[7] Logging to observations.db …
+  Logged: 1 run, 8 sources, 28 pairs
+
+Report → /home/tjenkins/Documents/losslessbob/tools/tapematch/last_run_report.md

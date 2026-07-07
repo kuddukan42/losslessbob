@@ -1,0 +1,10 @@
+emb_score_pairs: 2245 pairs scored -> fullset_pairs_12x_scores.json
+  sources referenced: 2467   cached: 2465   pairs fully unscorable (both tols null): 5
+
+emb_tol2 (±2s aligned):
+  fn_lowcorr   n=850   missing=5     min=0.026 median=0.204 p90=0.507 max=0.993
+  neg          n=1390  missing=0     min=0.017 median=0.186 p90=0.406 max=1.000
+
+emb_tol0 (global):
+  fn_lowcorr   n=850   missing=5     min=0.215 median=0.416 p90=0.804 max=0.984
+  neg          n=1390  missing=0     min=0.161 median=0.392 p90=0.583 max=1.000

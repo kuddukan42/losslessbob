@@ -1,0 +1,131 @@
+=== tapematch session: 1996-11-04  [20260702_113102] ===
+
+[1] Querying DB …
+  7 entries — Spartanburg, South Carolina
+    LB-01062
+    LB-01593
+    LB-04023
+    LB-05173
+    LB-09108
+    LB-12343
+    LB-14002
+
+[2] Resolving paths from my_collection …
+  Found 7/7
+    LB-01062: /mnt/DYLAN1/Concerts/1996/1996-11-04 Spartanburg, South Carolina (LB-01062)
+    LB-01593: /mnt/DYLAN1/Concerts/1996/1996-11-04 Spartanburg (LB-01593)
+    LB-04023: /mnt/DYLAN1/Concerts/1996/1996-11-04 Spartanburg, South Carolina, Memorial Auditorium Theater (LB-04023)
+    LB-05173: /mnt/DYLAN1/Concerts/1996/1996-11-04 Spartanburg, South Carolina, Memorial Auditorium Theater (LB-05173)
+    LB-09108: /mnt/DYLAN1/Concerts/1996/1996-11-04 Spartanburg, South Carolina (LB-09108)
+    LB-12343: /mnt/DYLAN1/Concerts/1996/1996-11-04 Spartanburg, SC (LB-12343)
+    LB-14002: /mnt/DYLAN1/Concerts/1996/1996-11-04 Spartanburg, SC (LB-14002)
+
+[3] Cleaning /mnt/DATA0/examples/tapematch …
+
+[4] Copying 7 folders to /mnt/DATA0/examples/tapematch …
+  Copying LB-01062: 1996-11-04 Spartanburg, South Carolina (LB-01062) …
+  Copying LB-01593: 1996-11-04 Spartanburg (LB-01593) …
+  Copying LB-04023: 1996-11-04 Spartanburg, South Carolina, Memorial Auditorium Theater (LB-04023) …
+  Copying LB-05173: 1996-11-04 Spartanburg, South Carolina, Memorial Auditorium Theater (LB-05173) …
+  Copying LB-09108: 1996-11-04 Spartanburg, South Carolina (LB-09108) …
+  Copying LB-12343: 1996-11-04 Spartanburg, SC (LB-12343) …
+  Copying LB-14002: 1996-11-04 Spartanburg, SC (LB-14002) …
+
+[5] Running tapematch …
+  [cleanup] removed stale tmp dir: tapematch_y2akaee4
+  curator lineage pairs loaded: 677 (from /home/tjenkins/Documents/losslessbob/data/losslessbob.db)
+  est. peak RAM ~1.2 GB (7 sources, largest 2:04:31)
+=== INGEST / TRIM ===
+  1996-11-04 Spartanburg (LB-01593): 15 tracks, 2:04:31
+  1996-11-04 Spartanburg, SC (LB-12343): 15 tracks, 2:01:55
+  1996-11-04 Spartanburg, SC (LB-14002): 15 tracks, 2:01:52
+  1996-11-04 Spartanburg, South Carolina (LB-01062): 14 tracks, 2:03:48
+  1996-11-04 Spartanburg, South Carolina (LB-09108): 15 tracks, 2:01:45
+  1996-11-04 Spartanburg, South Carolina, Memorial Auditorium Theater (LB-04023): 15 tracks, 2:04:31
+  1996-11-04 Spartanburg, South Carolina, Memorial Auditorium Theater (LB-05173): 15 tracks, 2:01:42
+
+=== TRIM (performance envelope) ===
+  1996-11-04 Spartanburg (LB-01593): trimmed 0:00:00 head, 0:00:00 tail -> performance 2:04:31
+  1996-11-04 Spartanburg, SC (LB-12343): trimmed 0:00:00 head, 0:00:00 tail -> performance 2:01:55
+  1996-11-04 Spartanburg, SC (LB-14002): trimmed 0:00:00 head, 0:00:00 tail -> performance 2:01:52
+  1996-11-04 Spartanburg, South Carolina (LB-01062): trimmed 1:01:15 head, 0:01:47 tail -> performance 1:00:46
+  1996-11-04 Spartanburg, South Carolina (LB-09108): trimmed 0:00:00 head, 0:00:00 tail -> performance 2:01:45
+  1996-11-04 Spartanburg, South Carolina, Memorial Auditorium Theater (LB-04023): trimmed 0:00:00 head, 0:00:00 tail -> performance 2:04:31
+  1996-11-04 Spartanburg, South Carolina, Memorial Auditorium Theater (LB-05173): trimmed 0:00:00 head, 0:00:00 tail -> performance 2:01:42
+
+  [INCOMPLETE?] — duration well below group median (2:01:52):
+    1996-11-04 Spartanburg, South Carolina (LB-01062): 1:00:46 (50.1% shorter)
+
+=== ANCHORS (ref=1996-11-04 Spartanburg (LB-01593)) ===
+  0:09:44, 0:12:44, 0:29:00, 0:37:06, 0:45:44, 0:54:14, 1:08:24, 1:18:06, 1:33:15, 1:34:43, 1:43:55, 1:56:28
+
+=== LAG CURVES / SPEED (vs ref) ===
+  1996-11-04 Spartanburg (LB-01593)->1996-11-04 Spartanburg, SC (LB-12343): constant-speed-offset  speed ratio=0.999000 (-1000 ppm)
+  1996-11-04 Spartanburg (LB-01593)->1996-11-04 Spartanburg, SC (LB-14002): constant-speed-offset  speed ratio=0.999500 (-500 ppm)
+  1996-11-04 Spartanburg (LB-01593)->1996-11-04 Spartanburg, South Carolina (LB-01062): constant-speed-offset  speed ratio=1.000500 (+500 ppm)
+  1996-11-04 Spartanburg (LB-01593)->1996-11-04 Spartanburg, South Carolina (LB-09108): constant-speed-offset  speed ratio=0.999500 (-500 ppm)
+  1996-11-04 Spartanburg (LB-01593)->1996-11-04 Spartanburg, South Carolina, Memorial Auditorium Theater (LB-04023): aligned  speed ratio=1.000000 (+0 ppm)
+  1996-11-04 Spartanburg (LB-01593)->1996-11-04 Spartanburg, South Carolina, Memorial Auditorium Theater (LB-05173): constant-speed-offset  speed ratio=0.999500 (-500 ppm)
+
+=== RESIDUAL CORRELATION MATRIX ===
+          LB-01593  LB-12343  LB-14002  LB-01062  LB-09108  LB-04023  LB-05173
+  LB-01593     1.000     0.013     0.019     0.003     0.017     0.970     0.020
+  LB-12343     0.013     1.000     0.037     0.003     0.021     0.014     0.024
+  LB-14002     0.019     0.037     1.000     0.002     0.883     0.021     0.944
+  LB-01062     0.003     0.003     0.002     1.000     0.003     0.002     0.002
+  LB-09108     0.017     0.021     0.883     0.003     1.000     0.016     0.944
+  LB-04023     0.970     0.014     0.021     0.002     0.016     1.000     0.019
+  LB-05173     0.020     0.024     0.944     0.002     0.944     0.019     1.000
+
+=== SECONDARY MATCH (windowed coverage + quiet-segment hiss + fingerprint) ===
+  17 cross-family pair(s) — computing secondary evidence ...
+  LB-01593 / LB-09108: fingerprint Dice 0.575 (44532 / 44911 hashes)  [primary corr 0.017] → SECONDARY LINK
+  LB-01593 / LB-05173: fingerprint Dice 0.575 (44532 / 44875 hashes)  [primary corr 0.020] → SECONDARY LINK
+  LB-09108 / LB-04023: fingerprint Dice 0.548 (44911 / 44703 hashes)  [primary corr 0.016] → SECONDARY LINK
+  LB-04023 / LB-05173: fingerprint Dice 0.563 (44703 / 44875 hashes)  [primary corr 0.019] → SECONDARY LINK
+
+=== LAG CURVES / SPEED (re-run vs central ref=1996-11-04 Spartanburg, South Carolina, Memorial Auditorium Theater (LB-05173)) ===
+  anchors: 0:07:58, 0:12:47, 0:29:20, 0:39:13, 0:45:48, 0:53:26, 1:08:31, 1:18:30, 1:21:25, 1:33:40, 1:46:44, 1:53:55
+  1996-11-04 Spartanburg, South Carolina, Memorial Auditorium Theater (LB-05173)->1996-11-04 Spartanburg (LB-01593): constant-speed-offset  speed ratio=1.000500 (+500 ppm)
+  1996-11-04 Spartanburg, South Carolina, Memorial Auditorium Theater (LB-05173)->1996-11-04 Spartanburg, SC (LB-12343): staircase/splice  speed ratio=1.000000 (+0 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  1996-11-04 Spartanburg, South Carolina, Memorial Auditorium Theater (LB-05173)->1996-11-04 Spartanburg, SC (LB-14002): staircase/splice  speed ratio=1.000000 (+0 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  1996-11-04 Spartanburg, South Carolina, Memorial Auditorium Theater (LB-05173)->1996-11-04 Spartanburg, South Carolina (LB-01062): constant-speed-offset  speed ratio=0.970000 (-30000 ppm)
+  1996-11-04 Spartanburg, South Carolina, Memorial Auditorium Theater (LB-05173)->1996-11-04 Spartanburg, South Carolina (LB-09108): staircase/splice  speed ratio=1.000000 (+0 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  1996-11-04 Spartanburg, South Carolina, Memorial Auditorium Theater (LB-05173)->1996-11-04 Spartanburg, South Carolina, Memorial Auditorium Theater (LB-04023): constant-speed-offset  speed ratio=1.000500 (+500 ppm)
+
+=== CLUSTERS ===
+  Family 1: 1996-11-04 Spartanburg (LB-01593), 1996-11-04 Spartanburg, SC (LB-12343), 1996-11-04 Spartanburg, SC (LB-14002), 1996-11-04 Spartanburg, South Carolina (LB-09108), 1996-11-04 Spartanburg, South Carolina, Memorial Auditorium Theater (LB-04023), 1996-11-04 Spartanburg, South Carolina, Memorial Auditorium Theater (LB-05173)  (mean intra-corr 0.264 [low confidence])  [secondary: LB-01593/LB-09108 via fp 0.575; LB-01593/LB-05173 via fp 0.575; LB-09108/LB-04023 via fp 0.548; LB-04023/LB-05173 via fp 0.563]  [chain-unverified: LB-01593/LB-12343; LB-01593/LB-14002; LB-12343/LB-14002; LB-12343/LB-09108; LB-12343/LB-04023; LB-12343/LB-05173; LB-14002/LB-04023 not directly confirmed]
+  Family 2: 1996-11-04 Spartanburg, South Carolina (LB-01062)  (mean intra-corr 1.000)
+  Distinct source families: 2
+
+=== LINEAGE EVIDENCE (interpret manually) ===
+    source   HF ceiling  noise floor  DC asymmetry
+  1996-11-04 Spartanburg (LB-01593)       3.0kHz      -78.5dB      +0.07698
+  1996-11-04 Spartanburg, SC (LB-12343)       1.0kHz      -87.7dB      -0.00000
+  1996-11-04 Spartanburg, SC (LB-14002)       1.0kHz      -84.9dB      +0.00020
+  1996-11-04 Spartanburg, South Carolina (LB-01062)       2.0kHz      -82.3dB      -0.00001
+  1996-11-04 Spartanburg, South Carolina (LB-09108)       1.0kHz      -86.7dB      +0.00017
+  1996-11-04 Spartanburg, South Carolina, Memorial Auditorium Theater (LB-04023)       3.0kHz      -82.0dB      +0.05098
+  1996-11-04 Spartanburg, South Carolina, Memorial Auditorium Theater (LB-05173)       1.0kHz      -86.7dB      +0.00017
+  (HF ceiling capped by 8000 Hz Nyquist at analysis_sr=16000; run lineage at native rate for real format discrimination)
+  (DC asymmetry is a taper/equipment signature — not a reliable source-identity marker)
+
+=== DIAGNOSTICS ===
+  [INCOMPLETE] 1996-11-04 Spartanburg, South Carolina (LB-01062): 1:00:46 vs median 2:01:52 (50.1% shorter) — likely missing material
+  [DISTINCT SOURCE] 1996-11-04 Spartanburg, South Carolina (LB-01062) (-30000 ppm speed offset, best cross-family corr 0.003): near-zero correlation to all other sources — entirely different recording
+  [SECONDARY SAME-SOURCE] 1996-11-04 Spartanburg (LB-01593) / 1996-11-04 Spartanburg, South Carolina (LB-09108): fingerprint Dice 0.575 — primary corr 0.017 (below threshold); likely remaster or heavily edited copy of same tape
+  [SECONDARY SAME-SOURCE] 1996-11-04 Spartanburg (LB-01593) / 1996-11-04 Spartanburg, South Carolina, Memorial Auditorium Theater (LB-05173): fingerprint Dice 0.575 — primary corr 0.020 (below threshold); likely remaster or heavily edited copy of same tape
+  [SECONDARY SAME-SOURCE] 1996-11-04 Spartanburg, South Carolina (LB-09108) / 1996-11-04 Spartanburg, South Carolina, Memorial Auditorium Theater (LB-04023): fingerprint Dice 0.548 — primary corr 0.016 (below threshold); likely remaster or heavily edited copy of same tape
+  [SECONDARY SAME-SOURCE] 1996-11-04 Spartanburg, South Carolina, Memorial Auditorium Theater (LB-04023) / 1996-11-04 Spartanburg, South Carolina, Memorial Auditorium Theater (LB-05173): fingerprint Dice 0.563 — primary corr 0.019 (below threshold); likely remaster or heavily edited copy of same tape
+  [MEDIUM CONFIDENCE] Family 1 (1996-11-04 Spartanburg, SC (LB-14002) / 1996-11-04 Spartanburg, South Carolina (LB-09108)): corr 0.883 — same source likely but significant processing (resampling, level boost, EQ) may explain reduced correlation
+
+[6] Archiving run …
+  Archive → /home/tjenkins/Documents/losslessbob/data/tapematch/runs/20260702_113102_1996-11-04
+
+[7] Logging to observations.db …
+  Logged: 1 run, 7 sources, 21 pairs
+
+Report → /home/tjenkins/Documents/losslessbob/tools/tapematch/last_run_report.md

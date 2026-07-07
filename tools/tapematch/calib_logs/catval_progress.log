@@ -1,0 +1,12 @@
+CATVAL BATCH START 2026-07-02T16:04:03-05:00
+[16:10:26] 1994-04-28 rc=0 dur=383s  cand_recall=41.6%  cand_fp=9
+[16:15:37] 1989-06-04 rc=0 dur=311s  cand_recall=41.7%  cand_fp=9
+[16:28:57] 1994-07-04 rc=0 dur=800s  cand_recall=41.7%  cand_fp=9
+[16:36:35] 1990-10-26 rc=0 dur=458s  cand_recall=41.7%  cand_fp=9
+[16:43:50] 1991-06-11 rc=0 dur=435s  cand_recall=41.7%  cand_fp=9
+[16:49:20] 1991-11-05 rc=0 dur=330s  cand_recall=41.7%  cand_fp=9
+[16:53:16] 1989-05-27 rc=0 dur=236s  cand_recall=41.7%  cand_fp=9
+[16:56:31] 1989-10-31 rc=0 dur=195s  cand_recall=41.7%  cand_fp=9
+[17:00:20] 1988-07-08 rc=0 dur=229s  cand_recall=41.7%  cand_fp=9
+[17:04:48] 1989-06-07 rc=0 dur=268s  cand_recall=41.7%  cand_fp=9
+CATVAL BATCH END 2026-07-02T17:04:48-05:00

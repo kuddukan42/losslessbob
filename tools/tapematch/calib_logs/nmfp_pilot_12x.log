@@ -1,0 +1,33 @@
+[   INFO   ] MusicExtractorSVM: no classifier models were configured by default
+model OK — probe emb shape (4, 128), norms [1.0, 1.0, 1.0, 1.0]
+  20 extracted (last 1994-07-15 LB2988: 1428 windows)
+  40 extracted (last 1992-05-05 LB9885: 1428 windows)
+  60 extracted (last 1992-07-07 LB12258: 1428 windows)
+  80 extracted (last 1998-01-18 LB15091: 1428 windows)
+  100 extracted (last 2001-03-07 LB5042: 1428 windows)
+  120 extracted (last 1995-03-14 LB1029: 1428 windows)
+  140 extracted (last 1993-02-08 LB1550: 1428 windows)
+  160 extracted (last 2001-11-10 LB5660: 1428 windows)
+  180 extracted (last 1998-05-21 LB14078: 1428 windows)
+  200 extracted (last 1994-08-19 LB10700: 1428 windows)
+  220 extracted (last 1994-02-18 LB9495: 1428 windows)
+  240 extracted (last 1987-10-15 LB5614: 1428 windows)
+  260 extracted (last 1996-11-03 LB3495: 119 windows)
+  280 extracted (last 1995-04-11 LB1918: 1428 windows)
+  300 extracted (last 1992-05-07 LB4008: 1428 windows)
+  320 extracted (last 1996-06-17 LB5649: 1428 windows)
+  340 extracted (last 1994-02-11 LB3260: 1428 windows)
+  360 extracted (last 1994-10-31 LB13145: 1428 windows)
+  380 extracted (last 2001-06-30 LB7667: 1428 windows)
+  400 extracted (last 1996-07-09 LB10659: 1428 windows)
+  420 extracted (last 1992-05-08 LB3987: 1428 windows)
+  440 extracted (last 1991-04-21 LB5187: 1428 windows)
+  460 extracted (last 1989-11-06 LB207: 1428 windows)
+  480 extracted (last 1988-07-08 LB8434: 1428 windows)
+  500 extracted (last 2001-03-21 LB4503: 1428 windows)
+  520 extracted (last 2001-02-27 LB7461: 1428 windows)
+Configuration from /home/tjenkins/Documents/losslessbob/tools/tapematch/vendor/neural-music-fp/config/nmfp-triplet.yaml
+Argument 'checkpoint_index' was not specified.
+Searching for the latest checkpoint...
+=== Restored from /home/tjenkins/Documents/losslessbob/tools/tapematch/vendor/neural-music-fp/logs/nmfp/fma-nmfp_deg/checkpoint/nmfp-triplet/ckpt-100 ===
+nmfp extraction: extracted=523 cached-skip=0 failed=0 → tools/tapematch/embed_cache_12x/

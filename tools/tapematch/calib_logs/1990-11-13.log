@@ -1,0 +1,107 @@
+=== tapematch session: 1990-11-13  [20260702_145111] ===
+
+[1] Querying DB …
+  5 entries — Dayton
+    LB-00562
+    LB-01221
+    LB-07107
+    LB-08288
+    LB-15712
+
+[2] Resolving paths from my_collection …
+  Found 5/5
+    LB-00562: /mnt/DYLAN1/Concerts/1990/1990-11-13 Dayton (LB-00562)
+    LB-01221: /mnt/DYLAN1/Concerts/1990/1990-11-13 Dayton (LB-01221)
+    LB-07107: /mnt/DYLAN1/Concerts/1990/1990-11-13 Dayton, Ohio (LB-07107)
+    LB-08288: /mnt/DYLAN1/Concerts/1990/1990-11-13 Dayton, Ohio (LB-08288)
+    LB-15712: /mnt/DYLAN1/LB HOPPER/Bob Dylan University Of Dayton Arena OH 1990-11-13  DS Archive-LB-15712-xref2141
+
+[3] Cleaning /mnt/DATA0/examples/tapematch …
+
+[4] Copying 5 folders to /mnt/DATA0/examples/tapematch …
+  Copying LB-00562: 1990-11-13 Dayton (LB-00562) …
+  Copying LB-01221: 1990-11-13 Dayton (LB-01221) …
+  Copying LB-07107: 1990-11-13 Dayton, Ohio (LB-07107) …
+  Copying LB-08288: 1990-11-13 Dayton, Ohio (LB-08288) …
+  Copying LB-15712: Bob Dylan University Of Dayton Arena OH 1990-11-13  DS Archive-LB-15712-xref2141 …
+
+[5] Running tapematch …
+  curator lineage pairs loaded: 677 (from /home/tjenkins/Documents/losslessbob/data/losslessbob.db)
+  est. peak RAM ~1.2 GB (5 sources, largest 1:58:06)
+=== INGEST / TRIM ===
+  1990-11-13 Dayton (LB-00562): 20 tracks, 1:37:32
+  1990-11-13 Dayton (LB-01221): 20 tracks, 1:38:10
+  1990-11-13 Dayton, Ohio (LB-07107): 24 tracks, 1:58:06
+  1990-11-13 Dayton, Ohio (LB-08288): 21 tracks, 1:38:24
+  Bob Dylan University Of Dayton Arena OH 1990-11-13  DS Archive-LB-15712-xref2141: 20 tracks, 1:37:54
+
+=== TRIM (performance envelope) ===
+  1990-11-13 Dayton (LB-00562): trimmed 0:00:20 head, 0:00:05 tail -> performance 1:37:07
+  1990-11-13 Dayton (LB-01221): trimmed 0:00:36 head, 0:00:06 tail -> performance 1:37:28
+  1990-11-13 Dayton, Ohio (LB-07107): trimmed 0:00:12 head, 0:00:11 tail -> performance 1:57:43
+  1990-11-13 Dayton, Ohio (LB-08288): trimmed 0:00:37 head, 0:00:25 tail -> performance 1:37:22
+  Bob Dylan University Of Dayton Arena OH 1990-11-13  DS Archive-LB-15712-xref2141: trimmed 0:00:03 head, 0:00:27 tail -> performance 1:37:24
+
+=== ANCHORS (ref=1990-11-13 Dayton (LB-00562)) ===
+  0:00:06, 0:15:36, 0:18:33, 0:27:02, 0:35:40, 0:42:52, 0:53:08, 1:03:41, 1:05:56, 1:19:08, 1:21:07, 1:37:01
+
+=== LAG CURVES / SPEED (vs ref) ===
+  1990-11-13 Dayton (LB-00562)->1990-11-13 Dayton (LB-01221): speed-unknown  speed ratio=0.999494 (-506 ppm)  [conf=4.0]
+  1990-11-13 Dayton (LB-00562)->1990-11-13 Dayton, Ohio (LB-07107): speed-unknown  speed ratio=0.990000 (-10000 ppm)  [conf=2.8]
+  1990-11-13 Dayton (LB-00562)->1990-11-13 Dayton, Ohio (LB-08288): speed-unknown  speed ratio=1.000232 (+232 ppm)  [conf=3.6]
+  1990-11-13 Dayton (LB-00562)->Bob Dylan University Of Dayton Arena OH 1990-11-13  DS Archive-LB-15712-xref2141: staircase/splice  speed ratio=1.000176 (+176 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+
+=== RESIDUAL CORRELATION MATRIX ===
+  13 pair(s)/source(s) speed-unknown (v2 confidence < 6.0) — routed to fingerprint path only
+          LB-00562  LB-01221  LB-07107  LB-08288  LB-15712
+  LB-00562     1.000     0.017     0.002     0.014     0.002
+  LB-01221     0.017     1.000     0.003     0.067     0.002
+  LB-07107     0.002     0.003     1.000     0.002     0.002
+  LB-08288     0.014     0.067     0.002     1.000     0.003
+  LB-15712     0.002     0.002     0.002     0.003     1.000
+
+=== SECONDARY MATCH (windowed coverage + quiet-segment hiss + fingerprint) ===
+  10 cross-family pair(s) — computing secondary evidence ...
+  LB-01221 / LB-08288: hiss 0.69 (124 segs, med 0.379)  [primary corr 0.067] → hiss evidence (below merge threshold)
+
+=== LAG CURVES / SPEED (re-run vs central ref=1990-11-13 Dayton (LB-01221)) ===
+  anchors: 0:00:07, 0:11:28, 0:23:31, 0:26:58, 0:35:40, 0:42:48, 0:55:03, 0:57:29, 1:05:53, 1:21:08, 1:23:52, 1:37:21
+  1990-11-13 Dayton (LB-01221)->1990-11-13 Dayton (LB-00562): speed-unknown  speed ratio=1.000518 (+518 ppm)
+  1990-11-13 Dayton (LB-01221)->1990-11-13 Dayton, Ohio (LB-07107): speed-unknown  speed ratio=0.987500 (-12500 ppm)
+  1990-11-13 Dayton (LB-01221)->1990-11-13 Dayton, Ohio (LB-08288): staircase/splice  speed ratio=1.000041 (+41 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  1990-11-13 Dayton (LB-01221)->Bob Dylan University Of Dayton Arena OH 1990-11-13  DS Archive-LB-15712-xref2141: speed-unknown  speed ratio=1.003685 (+3685 ppm)
+
+=== CLUSTERS ===
+  Family 1: 1990-11-13 Dayton (LB-00562), 1990-11-13 Dayton (LB-01221), 1990-11-13 Dayton, Ohio (LB-08288)  (mean intra-corr 0.033 [low confidence])  [secondary: LB-01221/LB-08288 via hiss 0.69]  [chain-unverified: LB-00562/LB-01221; LB-00562/LB-08288; LB-01221/LB-08288 not directly confirmed]
+  Family 2: 1990-11-13 Dayton, Ohio (LB-07107)  (mean intra-corr 1.000)
+  Family 3: Bob Dylan University Of Dayton Arena OH 1990-11-13  DS Archive-LB-15712-xref2141  (mean intra-corr 1.000)
+  Distinct source families: 3
+
+=== LINEAGE EVIDENCE (interpret manually) ===
+    source   HF ceiling  noise floor  DC asymmetry
+  1990-11-13 Dayton (LB-00562)       2.0kHz      -74.9dB      -0.00021
+  1990-11-13 Dayton (LB-01221)       2.0kHz      -74.9dB      +0.00061
+  1990-11-13 Dayton, Ohio (LB-07107)       2.0kHz      -73.6dB      -0.00007
+  1990-11-13 Dayton, Ohio (LB-08288)       2.0kHz      -77.5dB      +0.00050
+  Bob Dylan University Of Dayton Arena OH 1990-11-13  DS Archive-LB-15712-xref2141       4.0kHz      -80.1dB      -0.00014
+  (HF ceiling capped by 8000 Hz Nyquist at analysis_sr=16000; run lineage at native rate for real format discrimination)
+  (DC asymmetry is a taper/equipment signature — not a reliable source-identity marker)
+
+=== DIAGNOSTICS ===
+  [TIMING MISMATCH] 1990-11-13 Dayton (LB-00562) / 1990-11-13 Dayton, Ohio (LB-07107): performance 1:37:07 vs 1:57:43 (20.6 min difference) — timing drift may exceed alignment window; correlation unreliable if same-source
+  [TIMING MISMATCH] 1990-11-13 Dayton (LB-01221) / 1990-11-13 Dayton, Ohio (LB-07107): performance 1:37:28 vs 1:57:43 (20.3 min difference) — timing drift may exceed alignment window; correlation unreliable if same-source
+  [TIMING MISMATCH] 1990-11-13 Dayton, Ohio (LB-08288) / 1990-11-13 Dayton, Ohio (LB-07107): performance 1:37:22 vs 1:57:43 (20.4 min difference) — timing drift may exceed alignment window; correlation unreliable if same-source
+  [TIMING MISMATCH] 1990-11-13 Dayton, Ohio (LB-07107) / Bob Dylan University Of Dayton Arena OH 1990-11-13  DS Archive-LB-15712-xref2141: performance 1:57:43 vs 1:37:24 (20.3 min difference) — timing drift may exceed alignment window; correlation unreliable if same-source
+  [DISTINCT SOURCE] 1990-11-13 Dayton, Ohio (LB-07107) (-12500 ppm speed offset, best cross-family corr 0.003): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] Bob Dylan University Of Dayton Arena OH 1990-11-13  DS Archive-LB-15712-xref2141 (+3685 ppm speed offset, best cross-family corr 0.003): near-zero correlation to all other sources — entirely different recording
+  [SECONDARY SAME-SOURCE] 1990-11-13 Dayton (LB-01221) / 1990-11-13 Dayton, Ohio (LB-08288): hiss frac 0.69 (124 segs) — primary corr 0.067 (below threshold); likely remaster or heavily edited copy of same tape
+
+[6] Archiving run …
+  Archive → /home/tjenkins/Documents/losslessbob/data/tapematch/runs/20260702_145111_1990-11-13
+
+[7] Logging to observations.db …
+  Logged: 1 run, 5 sources, 10 pairs
+
+Report → /home/tjenkins/Documents/losslessbob/tools/tapematch/last_run_report.md

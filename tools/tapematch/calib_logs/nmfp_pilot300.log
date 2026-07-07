@@ -1,0 +1,31 @@
+[   INFO   ] MusicExtractorSVM: no classifier models were configured by default
+model OK — probe emb shape (4, 128), norms [1.0, 1.0, 1.0, 1.0]
+  20 extracted (last 1994-07-15 LB6543: 595 windows)
+  40 extracted (last 1992-05-05 LB5931: 595 windows)
+  60 extracted (last 1988-06-26 LB1186: 595 windows)
+  80 extracted (last 1991-07-06 LB3199: 595 windows)
+  100 extracted (last 2001-07-01 LB11328: 595 windows)
+  120 extracted (last 2001-10-12 LB443: 595 windows)
+  140 extracted (last 1996-07-10 LB6283: 595 windows)
+  160 extracted (last 1996-04-28 LB8091: 595 windows)
+  180 extracted (last 1989-07-26 LB8588: 595 windows)
+  200 extracted (last 1988-09-17 LB10847: 595 windows)
+  220 extracted (last 1990-06-29 LB7169: 595 windows)
+  240 extracted (last 2001-08-18 LB6595: 595 windows)
+  260 extracted (last 1992-07-02 LB14399: 595 windows)
+  280 extracted (last 1998-01-20 LB15092: 595 windows)
+  300 extracted (last 1993-02-17 LB7034: 595 windows)
+  320 extracted (last 1993-08-25 LB7371: 595 windows)
+  340 extracted (last 1994-10-31 LB5904: 595 windows)
+  360 extracted (last 1992-10-11 LB107: 595 windows)
+  380 extracted (last 2001-07-03 LB10150: 595 windows)
+  400 extracted (last 1988-06-21 LB3139: 595 windows)
+  420 extracted (last 1995-03-31 LB10825: 595 windows)
+  440 extracted (last 1990-06-01 LB4200: 595 windows)
+  460 extracted (last 2001-11-19 LB11312: 595 windows)
+  480 extracted (last 2001-07-15 LB3541: 595 windows)
+Configuration from /home/tjenkins/Documents/losslessbob/tools/tapematch/vendor/neural-music-fp/config/nmfp-triplet.yaml
+Argument 'checkpoint_index' was not specified.
+Searching for the latest checkpoint...
+=== Restored from /home/tjenkins/Documents/losslessbob/tools/tapematch/vendor/neural-music-fp/logs/nmfp/fma-nmfp_deg/checkpoint/nmfp-triplet/ckpt-100 ===
+nmfp extraction: extracted=493 cached-skip=30 failed=0 → /home/tjenkins/Documents/losslessbob/tools/tapematch/embed_cache/

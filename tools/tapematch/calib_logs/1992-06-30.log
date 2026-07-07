@@ -1,0 +1,122 @@
+=== tapematch session: 1992-06-30  [20260702_133242] ===
+
+[1] Querying DB …
+  8 entries — Dunkerque, Kursaal
+    LB-00763
+    LB-00764
+    LB-01597
+    LB-04526
+    LB-07553
+    LB-08947
+    LB-14493
+    LB-15276
+
+[2] Resolving paths from my_collection …
+  Excluded (private/no-torrent): LB-07553
+  Found 7/8
+    LB-00763: /mnt/DYLAN1/Concerts/1992/1992-06-30 Dunkerque, Kursaal (LB-00763)
+    LB-00764: /mnt/DYLAN1/Concerts/1992/1992-06-30 Dunkerque, France (LB-00764)
+    LB-01597: /mnt/DYLAN1/Concerts/1992/1992-06-30 Dunkerque, France (LB-01597)
+    LB-04526: /mnt/DYLAN1/Concerts/1992/1992-06-30 Dunkerque, France, Cote d'Opale, Kursaal (LB-04526)
+    LB-08947: /mnt/DYLAN1/Concerts/1992/1992-06-30 Dunkerque (LB-08947)
+    LB-14493: /mnt/DYLAN1/Concerts/1992/1992-06-30 Dunkerque (LB-14493)
+    LB-15276: /mnt/DYLAN1/LB HOPPER/Bob Dylan Cote d'Opale, Kursaal, Dunkerque, France 1992-06-30 DS Archive-LB-15276
+
+[3] Cleaning /mnt/DATA0/examples/tapematch …
+
+[4] Copying 7 folders to /mnt/DATA0/examples/tapematch …
+  Copying LB-00763: 1992-06-30 Dunkerque, Kursaal (LB-00763) …
+  Copying LB-00764: 1992-06-30 Dunkerque, France (LB-00764) …
+  Copying LB-01597: 1992-06-30 Dunkerque, France (LB-01597) …
+  Copying LB-04526: 1992-06-30 Dunkerque, France, Cote d'Opale, Kursaal (LB-04526) …
+  Copying LB-08947: 1992-06-30 Dunkerque (LB-08947) …
+  Copying LB-14493: 1992-06-30 Dunkerque (LB-14493) …
+  Copying LB-15276: Bob Dylan Cote d'Opale, Kursaal, Dunkerque, France 1992-06-30 DS Archive-LB-15276 …
+
+[5] Running tapematch …
+  curator lineage pairs loaded: 677 (from /home/tjenkins/Documents/losslessbob/data/losslessbob.db)
+  est. peak RAM ~1.2 GB (7 sources, largest 1:56:32)
+=== INGEST / TRIM ===
+  1992-06-30 Dunkerque (LB-08947): 20 tracks, 1:51:42
+  1992-06-30 Dunkerque (LB-14493): 18 tracks, 1:56:32
+  1992-06-30 Dunkerque, France (LB-00764): 18 tracks, 1:52:13
+  1992-06-30 Dunkerque, France (LB-01597): 19 tracks, 1:52:19
+  1992-06-30 Dunkerque, France, Cote d'Opale, Kursaal (LB-04526): 18 tracks, 1:52:35
+  1992-06-30 Dunkerque, Kursaal (LB-00763): 18 tracks, 1:51:39
+  Bob Dylan Cote d'Opale, Kursaal, Dunkerque, France 1992-06-30 DS Archive-LB-15276: 18 tracks, 1:54:24
+
+=== TRIM (performance envelope) ===
+  1992-06-30 Dunkerque (LB-08947): trimmed 0:01:20 head, 0:00:00 tail -> performance 1:50:22
+  1992-06-30 Dunkerque (LB-14493): trimmed 0:00:30 head, 0:09:02 tail -> performance 1:47:01
+  1992-06-30 Dunkerque, France (LB-00764): trimmed 0:00:21 head, 0:04:50 tail -> performance 1:47:02
+  1992-06-30 Dunkerque, France (LB-01597): trimmed 0:00:36 head, 0:04:42 tail -> performance 1:47:00
+  1992-06-30 Dunkerque, France, Cote d'Opale, Kursaal (LB-04526): trimmed 0:00:36 head, 0:04:49 tail -> performance 1:47:10
+  1992-06-30 Dunkerque, Kursaal (LB-00763): trimmed 0:00:32 head, 0:04:53 tail -> performance 1:46:14
+  Bob Dylan Cote d'Opale, Kursaal, Dunkerque, France 1992-06-30 DS Archive-LB-15276: trimmed 0:00:51 head, 0:06:30 tail -> performance 1:47:03
+
+=== ANCHORS (ref=1992-06-30 Dunkerque (LB-08947)) ===
+  0:08:49, 0:14:14, 0:19:14, 0:34:09, 0:37:50, 0:47:20, 0:56:10, 1:07:20, 1:22:30, 1:26:07, 1:40:27, 1:45:34
+
+=== LAG CURVES / SPEED (vs ref) ===
+  1992-06-30 Dunkerque (LB-08947)->1992-06-30 Dunkerque (LB-14493): constant-speed-offset  speed ratio=0.996000 (-4000 ppm)
+  1992-06-30 Dunkerque (LB-08947)->1992-06-30 Dunkerque, France (LB-00764): constant-speed-offset  speed ratio=0.996000 (-4000 ppm)
+  1992-06-30 Dunkerque (LB-08947)->1992-06-30 Dunkerque, France (LB-01597): constant-speed-offset  speed ratio=0.995500 (-4500 ppm)
+  1992-06-30 Dunkerque (LB-08947)->1992-06-30 Dunkerque, France, Cote d'Opale, Kursaal (LB-04526): constant-speed-offset  speed ratio=0.992000 (-8000 ppm)
+  1992-06-30 Dunkerque (LB-08947)->1992-06-30 Dunkerque, Kursaal (LB-00763): constant-speed-offset  speed ratio=0.995500 (-4500 ppm)
+  1992-06-30 Dunkerque (LB-08947)->Bob Dylan Cote d'Opale, Kursaal, Dunkerque, France 1992-06-30 DS Archive-LB-15276: constant-speed-offset  speed ratio=0.995500 (-4500 ppm)
+
+=== RESIDUAL CORRELATION MATRIX ===
+          LB-08947  LB-14493  LB-00764  LB-01597  LB-04526  LB-00763  LB-15276
+  LB-08947     1.000     0.002     0.002     0.003     0.002     0.003     0.003
+  LB-14493     0.002     1.000     0.021     0.030     0.028     0.350     0.012
+  LB-00764     0.002     0.021     1.000     0.013     0.022     0.015     0.023
+  LB-01597     0.003     0.030     0.013     1.000     0.009     0.012     0.021
+  LB-04526     0.002     0.028     0.022     0.009     1.000     0.025     0.023
+  LB-00763     0.003     0.350     0.015     0.012     0.025     1.000     0.013
+  LB-15276     0.003     0.012     0.023     0.021     0.023     0.013     1.000
+
+=== SECONDARY MATCH (windowed coverage + quiet-segment hiss + fingerprint) ===
+  21 cross-family pair(s) — computing secondary evidence ...
+  LB-14493 / LB-00763: windowed 0.41 (213 win, med 0.279); hiss 0.81 (129 segs, med 0.449); fingerprint Dice 0.631 (48171 / 48865 hashes)  [primary corr 0.350] → SECONDARY LINK
+
+=== LAG CURVES / SPEED (re-run vs central ref=1992-06-30 Dunkerque (LB-14493)) ===
+  anchors: 0:04:38, 0:11:50, 0:26:42, 0:34:29, 0:41:32, 0:52:43, 0:56:57, 1:03:50, 1:12:51, 1:25:23, 1:33:27, 1:46:29
+  1992-06-30 Dunkerque (LB-14493)->1992-06-30 Dunkerque (LB-08947): constant-speed-offset  speed ratio=1.004000 (+4000 ppm)
+  1992-06-30 Dunkerque (LB-14493)->1992-06-30 Dunkerque, France (LB-00764): aligned  speed ratio=1.000000 (+0 ppm)
+  1992-06-30 Dunkerque (LB-14493)->1992-06-30 Dunkerque, France (LB-01597): staircase/splice  speed ratio=1.000000 (+0 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  1992-06-30 Dunkerque (LB-14493)->1992-06-30 Dunkerque, France, Cote d'Opale, Kursaal (LB-04526): staircase/splice  speed ratio=1.000000 (+0 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  1992-06-30 Dunkerque (LB-14493)->1992-06-30 Dunkerque, Kursaal (LB-00763): staircase/splice  speed ratio=1.000000 (+0 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  1992-06-30 Dunkerque (LB-14493)->Bob Dylan Cote d'Opale, Kursaal, Dunkerque, France 1992-06-30 DS Archive-LB-15276: constant-speed-offset  speed ratio=0.999500 (-500 ppm)
+
+=== CLUSTERS ===
+  Family 1: 1992-06-30 Dunkerque (LB-08947)  (mean intra-corr 1.000)
+  Family 2: 1992-06-30 Dunkerque (LB-14493), 1992-06-30 Dunkerque, Kursaal (LB-00763)  (mean intra-corr 0.350 [fp-linked])  [secondary: LB-14493/LB-00763 via windowed 0.41+hiss 0.81+fp 0.631]
+  Family 3: 1992-06-30 Dunkerque, France (LB-00764), 1992-06-30 Dunkerque, France (LB-01597), 1992-06-30 Dunkerque, France, Cote d'Opale, Kursaal (LB-04526), Bob Dylan Cote d'Opale, Kursaal, Dunkerque, France 1992-06-30 DS Archive-LB-15276  (mean intra-corr 0.018 [low confidence])  [chain-unverified: LB-00764/LB-01597; LB-00764/LB-04526; LB-00764/LB-15276; LB-01597/LB-04526; LB-01597/LB-15276; LB-04526/LB-15276 not directly confirmed]
+  Distinct source families: 3
+
+=== LINEAGE EVIDENCE (interpret manually) ===
+    source   HF ceiling  noise floor  DC asymmetry
+  1992-06-30 Dunkerque (LB-08947)       5.0kHz      -80.6dB      -0.00033
+  1992-06-30 Dunkerque (LB-14493)       4.0kHz      -91.6dB      +0.00000
+  1992-06-30 Dunkerque, France (LB-00764)       3.0kHz      -84.1dB      +0.00003
+  1992-06-30 Dunkerque, France (LB-01597)       3.0kHz      -78.7dB      +0.00001
+  1992-06-30 Dunkerque, France, Cote d'Opale, Kursaal (LB-04526)       3.0kHz      -82.3dB      -0.00004
+  1992-06-30 Dunkerque, Kursaal (LB-00763)       4.0kHz      -88.7dB      -0.00000
+  Bob Dylan Cote d'Opale, Kursaal, Dunkerque, France 1992-06-30 DS Archive-LB-15276       3.0kHz      -89.6dB      +0.00146
+  (HF ceiling capped by 8000 Hz Nyquist at analysis_sr=16000; run lineage at native rate for real format discrimination)
+  (DC asymmetry is a taper/equipment signature — not a reliable source-identity marker)
+
+=== DIAGNOSTICS ===
+  [DISTINCT SOURCE] 1992-06-30 Dunkerque (LB-08947) (+4000 ppm speed offset, best cross-family corr 0.003): near-zero correlation to all other sources — entirely different recording
+  [SECONDARY SAME-SOURCE] 1992-06-30 Dunkerque (LB-14493) / 1992-06-30 Dunkerque, Kursaal (LB-00763): windowed coverage 0.41 (213 win); hiss frac 0.81 (129 segs); fingerprint Dice 0.631 — primary corr 0.350 (below threshold); likely remaster or heavily edited copy of same tape
+
+[6] Archiving run …
+  Archive → /home/tjenkins/Documents/losslessbob/data/tapematch/runs/20260702_133242_1992-06-30
+
+[7] Logging to observations.db …
+  Logged: 1 run, 7 sources, 21 pairs
+
+Report → /home/tjenkins/Documents/losslessbob/tools/tapematch/last_run_report.md

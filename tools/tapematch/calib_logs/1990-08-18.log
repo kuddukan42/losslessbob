@@ -1,0 +1,101 @@
+=== tapematch session: 1990-08-18  [20260702_143656] ===
+
+[1] Querying DB …
+  6 entries — George, Washington, Champs de Brionne Music Theater
+    LB-04930
+    LB-07375
+    LB-08561
+    LB-09587
+    LB-13492
+    LB-15590
+
+[2] Resolving paths from my_collection …
+  Excluded (private/no-torrent): LB-13492
+  Found 5/6
+    LB-04930: /mnt/DYLAN1/Concerts/1990/1990-08-18 George, Washington, Champs de Brionne Music Theater (LB-04930)
+    LB-07375: /mnt/DYLAN1/Concerts/1990/1990-08-18 George, Washington (LB-07375)
+    LB-08561: /mnt/DYLAN1/Concerts/1990/1990-08-18 George, Wa., The Gorge Ampitheater (LB-08561)
+    LB-09587: /mnt/DYLAN1/Concerts/1990/1990-08-18 George, WA, Venue- Champs de Brionne Winery (LB-09587)
+    LB-15590: /mnt/DYLAN1/LB HOPPER/Bob Dylan Champs De Brionne Music Theater George 1990-08-18 DS Archive-LB-15590
+
+[3] Cleaning /mnt/DATA0/examples/tapematch …
+
+[4] Copying 5 folders to /mnt/DATA0/examples/tapematch …
+  Copying LB-04930: 1990-08-18 George, Washington, Champs de Brionne Music Theater (LB-04930) …
+  Copying LB-07375: 1990-08-18 George, Washington (LB-07375) …
+  Copying LB-08561: 1990-08-18 George, Wa., The Gorge Ampitheater (LB-08561) …
+  Copying LB-09587: 1990-08-18 George, WA, Venue- Champs de Brionne Winery (LB-09587) …
+  Copying LB-15590: Bob Dylan Champs De Brionne Music Theater George 1990-08-18 DS Archive-LB-15590 …
+
+[5] Running tapematch …
+  curator lineage pairs loaded: 677 (from /home/tjenkins/Documents/losslessbob/data/losslessbob.db)
+  est. peak RAM ~0.9 GB (5 sources, largest 1:22:09)
+=== INGEST / TRIM ===
+  1990-08-18 George, WA, Venue- Champs de Brionne Winery (LB-09587): 18 tracks, 1:22:09
+  1990-08-18 George, Wa., The Gorge Ampitheater (LB-08561): 17 tracks, 1:19:17
+  1990-08-18 George, Washington (LB-07375): 18 tracks, 1:19:45
+  1990-08-18 George, Washington, Champs de Brionne Music Theater (LB-04930): 18 tracks, 1:18:27
+  Bob Dylan Champs De Brionne Music Theater George 1990-08-18 DS Archive-LB-15590: 18 tracks, 1:20:59
+
+=== TRIM (performance envelope) ===
+  1990-08-18 George, WA, Venue- Champs de Brionne Winery (LB-09587): trimmed 0:00:29 head, 0:00:30 tail -> performance 1:21:10
+  1990-08-18 George, Wa., The Gorge Ampitheater (LB-08561): trimmed 0:00:40 head, 0:00:00 tail -> performance 1:18:37
+  1990-08-18 George, Washington (LB-07375): trimmed 0:00:00 head, 0:00:34 tail -> performance 1:19:10
+  1990-08-18 George, Washington, Champs de Brionne Music Theater (LB-04930): trimmed 0:03:39 head, 0:00:00 tail -> performance 1:14:48
+  Bob Dylan Champs De Brionne Music Theater George 1990-08-18 DS Archive-LB-15590: trimmed 0:00:00 head, 0:00:04 tail -> performance 1:20:54
+
+  [INCOMPLETE?] — duration well below group median (1:19:10):
+    1990-08-18 George, Washington, Champs de Brionne Music Theater (LB-04930): 1:14:48 (5.5% shorter)
+
+=== ANCHORS (ref=1990-08-18 George, WA, Venue- Champs de Brionne Winery (LB-09587)) ===
+  0:00:00, 0:10:53, 0:18:31, 0:22:50, 0:30:00, 0:38:59, 0:46:19, 0:53:21, 0:56:11, 1:04:13, 1:09:42, 1:16:32
+
+=== LAG CURVES / SPEED (vs ref) ===
+  1990-08-18 George, WA, Venue- Champs de Brionne Winery (LB-09587)->1990-08-18 George, Wa., The Gorge Ampitheater (LB-08561): speed-unknown  speed ratio=1.029498 (+29498 ppm)  [conf=2.9]
+  1990-08-18 George, WA, Venue- Champs de Brionne Winery (LB-09587)->1990-08-18 George, Washington (LB-07375): speed-unknown  speed ratio=1.022360 (+22360 ppm)  [conf=3.4]
+  1990-08-18 George, WA, Venue- Champs de Brionne Winery (LB-09587)->1990-08-18 George, Washington, Champs de Brionne Music Theater (LB-04930): speed-unknown  speed ratio=1.041300 (+41300 ppm)  [conf=2.4]
+  1990-08-18 George, WA, Venue- Champs de Brionne Winery (LB-09587)->Bob Dylan Champs De Brionne Music Theater George 1990-08-18 DS Archive-LB-15590: constant-speed-offset  speed ratio=1.000296 (+296 ppm)
+
+=== RESIDUAL CORRELATION MATRIX ===
+  12 pair(s)/source(s) speed-unknown (v2 confidence < 6.0) — routed to fingerprint path only
+          LB-09587  LB-08561  LB-07375  LB-04930  LB-15590
+  LB-09587     1.000     0.002     0.002     0.003     0.012
+  LB-08561     0.002     1.000     0.002     0.002     0.002
+  LB-07375     0.002     0.002     1.000     0.002     0.003
+  LB-04930     0.003     0.002     0.002     1.000     0.002
+  LB-15590     0.012     0.002     0.003     0.002     1.000
+
+=== SECONDARY MATCH (windowed coverage + quiet-segment hiss + fingerprint) ===
+  10 cross-family pair(s) — computing secondary evidence ...
+  LB-08561 / LB-04930: fingerprint Dice 0.504 (48556 / 61853 hashes)  [primary corr 0.002] → SECONDARY LINK
+
+=== CLUSTERS ===
+  Family 1: 1990-08-18 George, WA, Venue- Champs de Brionne Winery (LB-09587)  (mean intra-corr 1.000)
+  Family 2: 1990-08-18 George, Wa., The Gorge Ampitheater (LB-08561), 1990-08-18 George, Washington, Champs de Brionne Music Theater (LB-04930)  (mean intra-corr 0.002 [fp-linked])  [secondary: LB-08561/LB-04930 via fp 0.504]
+  Family 3: 1990-08-18 George, Washington (LB-07375)  (mean intra-corr 1.000)
+  Family 4: Bob Dylan Champs De Brionne Music Theater George 1990-08-18 DS Archive-LB-15590  (mean intra-corr 1.000)
+  Distinct source families: 4
+
+=== LINEAGE EVIDENCE (interpret manually) ===
+    source   HF ceiling  noise floor  DC asymmetry
+  1990-08-18 George, WA, Venue- Champs de Brionne Winery (LB-09587)       0.0kHz      -78.4dB      -0.00036
+  1990-08-18 George, Wa., The Gorge Ampitheater (LB-08561)       0.0kHz      -80.5dB      +0.00000
+  1990-08-18 George, Washington (LB-07375)       3.0kHz      -80.1dB      -0.00009
+  1990-08-18 George, Washington, Champs de Brionne Music Theater (LB-04930)       4.0kHz     -103.6dB      -0.00002
+  Bob Dylan Champs De Brionne Music Theater George 1990-08-18 DS Archive-LB-15590       0.0kHz      -81.5dB      +0.00009
+  (HF ceiling capped by 8000 Hz Nyquist at analysis_sr=16000; run lineage at native rate for real format discrimination)
+  (DC asymmetry is a taper/equipment signature — not a reliable source-identity marker)
+
+=== DIAGNOSTICS ===
+  [INCOMPLETE] 1990-08-18 George, Washington, Champs de Brionne Music Theater (LB-04930): 1:14:48 vs median 1:19:10 (5.5% shorter) — likely missing material
+  [DISTINCT SOURCE] 1990-08-18 George, Washington (LB-07375) (+22360 ppm speed offset, best cross-family corr 0.003): near-zero correlation to all other sources — entirely different recording
+  [DISTINCT SOURCE] Bob Dylan Champs De Brionne Music Theater George 1990-08-18 DS Archive-LB-15590 (+296 ppm speed offset, best cross-family corr 0.012): near-zero correlation to all other sources — entirely different recording
+  [SECONDARY SAME-SOURCE] 1990-08-18 George, Wa., The Gorge Ampitheater (LB-08561) / 1990-08-18 George, Washington, Champs de Brionne Music Theater (LB-04930): fingerprint Dice 0.504 — primary corr 0.002 (below threshold); likely remaster or heavily edited copy of same tape
+
+[6] Archiving run …
+  Archive → /home/tjenkins/Documents/losslessbob/data/tapematch/runs/20260702_143656_1990-08-18
+
+[7] Logging to observations.db …
+  Logged: 1 run, 5 sources, 10 pairs
+
+Report → /home/tjenkins/Documents/losslessbob/tools/tapematch/last_run_report.md

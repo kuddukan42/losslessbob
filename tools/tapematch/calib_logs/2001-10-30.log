@@ -1,0 +1,134 @@
+=== tapematch session: 2001-10-30  [20260702_121545] ===
+
+[1] Querying DB …
+  9 entries — Green Bay, Wisconsin, Brown County Veterans Memorial Arena
+    LB-00491
+    LB-00569
+    LB-04885
+    LB-07888
+    LB-08413
+    LB-10594
+    LB-13258
+    LB-14888
+    LB-14889
+
+[2] Resolving paths from my_collection …
+  Excluded (private/no-torrent): LB-14888, LB-14889
+  Found 7/9
+    LB-00491: /mnt/DYLAN1/Concerts/2001/2001-10-30 Green Bay, Wisconsin, Brown County Veterans Memorial Arena (LB-00491)
+    LB-00569: /mnt/DYLAN1/Concerts/2001/2001-10-30 Green Bay, Wisconsin, Brown County Veterans Memorial Arena (LB-00569)
+    LB-04885: /mnt/DYLAN1/Concerts/2001/2001-10-30 Green Bay, Wisconsin, Brown County Veterans Memorial Arena (LB-04885)
+    LB-07888: /mnt/DYLAN1/Concerts/2001/2001-10-30 Green Bay, WI (LB-07888)
+    LB-08413: /mnt/DYLAN1/Concerts/2001/2001-10-30 Green Bay, (LB-08413)
+    LB-10594: /mnt/DYLAN1/Concerts/2001/2001-10-30 Green Bay, WI (LB-10594)
+    LB-13258: /mnt/DYLAN1/Concerts/2001/2001-10-30 Memorial Arena, Green Bay, WI (LB-13258)
+
+[3] Cleaning /mnt/DATA0/examples/tapematch …
+
+[4] Copying 7 folders to /mnt/DATA0/examples/tapematch …
+  Copying LB-00491: 2001-10-30 Green Bay, Wisconsin, Brown County Veterans Memorial Arena (LB-00491) …
+  Copying LB-00569: 2001-10-30 Green Bay, Wisconsin, Brown County Veterans Memorial Arena (LB-00569) …
+  Copying LB-04885: 2001-10-30 Green Bay, Wisconsin, Brown County Veterans Memorial Arena (LB-04885) …
+  Copying LB-07888: 2001-10-30 Green Bay, WI (LB-07888) …
+  Copying LB-08413: 2001-10-30 Green Bay, (LB-08413) …
+  Copying LB-10594: 2001-10-30 Green Bay, WI (LB-10594) …
+  Copying LB-13258: 2001-10-30 Memorial Arena, Green Bay, WI (LB-13258) …
+
+[5] Running tapematch …
+  curator lineage pairs loaded: 677 (from /home/tjenkins/Documents/losslessbob/data/losslessbob.db)
+  est. peak RAM ~1.3 GB (7 sources, largest 2:13:56)
+=== INGEST / TRIM ===
+  2001-10-30 Green Bay, (LB-08413): 21 tracks, 2:12:23
+  2001-10-30 Green Bay, WI (LB-07888): 21 tracks, 2:09:57
+  2001-10-30 Green Bay, WI (LB-10594): 22 tracks, 2:13:05
+  2001-10-30 Green Bay, Wisconsin, Brown County Veterans Memorial Arena (LB-00491): 20 tracks, 2:05:58
+  2001-10-30 Green Bay, Wisconsin, Brown County Veterans Memorial Arena (LB-00569): 21 tracks, 2:09:57
+  2001-10-30 Green Bay, Wisconsin, Brown County Veterans Memorial Arena (LB-04885): 22 tracks, 2:09:44
+  2001-10-30 Memorial Arena, Green Bay, WI (LB-13258): 22 tracks, 2:13:56
+
+=== TRIM (performance envelope) ===
+  2001-10-30 Green Bay, (LB-08413): trimmed 0:00:14 head, 0:00:09 tail -> performance 2:12:00
+  2001-10-30 Green Bay, WI (LB-07888): trimmed 0:02:02 head, 0:00:40 tail -> performance 2:07:15
+  2001-10-30 Green Bay, WI (LB-10594): trimmed 0:00:14 head, 0:00:12 tail -> performance 2:12:40
+  2001-10-30 Green Bay, Wisconsin, Brown County Veterans Memorial Arena (LB-00491): trimmed 0:10:14 head, 0:00:39 tail -> performance 1:55:04
+  2001-10-30 Green Bay, Wisconsin, Brown County Veterans Memorial Arena (LB-00569): trimmed 0:02:02 head, 0:00:39 tail -> performance 2:07:15
+  2001-10-30 Green Bay, Wisconsin, Brown County Veterans Memorial Arena (LB-04885): trimmed 0:01:16 head, 0:00:33 tail -> performance 2:07:56
+  2001-10-30 Memorial Arena, Green Bay, WI (LB-13258): trimmed 0:00:26 head, 0:00:00 tail -> performance 2:13:30
+
+  [INCOMPLETE?] — duration well below group median (2:07:56):
+    2001-10-30 Green Bay, Wisconsin, Brown County Veterans Memorial Arena (LB-00491): 1:55:04 (10.0% shorter)
+
+=== ANCHORS (ref=2001-10-30 Green Bay, (LB-08413)) ===
+  0:07:28, 0:15:18, 0:32:30, 0:33:09, 0:50:26, 0:56:25, 1:16:41, 1:17:13, 1:37:03, 1:40:21, 1:52:05, 2:07:25
+
+=== LAG CURVES / SPEED (vs ref) ===
+  2001-10-30 Green Bay, (LB-08413)->2001-10-30 Green Bay, WI (LB-07888): staircase/splice  speed ratio=1.000000 (+0 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  2001-10-30 Green Bay, (LB-08413)->2001-10-30 Green Bay, WI (LB-10594): constant-speed-offset  speed ratio=0.999500 (-500 ppm)
+  2001-10-30 Green Bay, (LB-08413)->2001-10-30 Green Bay, Wisconsin, Brown County Veterans Memorial Arena (LB-00491): staircase/splice  speed ratio=1.000000 (+0 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  2001-10-30 Green Bay, (LB-08413)->2001-10-30 Green Bay, Wisconsin, Brown County Veterans Memorial Arena (LB-00569): staircase/splice  speed ratio=1.000000 (+0 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  2001-10-30 Green Bay, (LB-08413)->2001-10-30 Green Bay, Wisconsin, Brown County Veterans Memorial Arena (LB-04885): staircase/splice  speed ratio=1.000000 (+0 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  2001-10-30 Green Bay, (LB-08413)->2001-10-30 Memorial Arena, Green Bay, WI (LB-13258): staircase/splice  speed ratio=1.000000 (+0 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+
+=== RESIDUAL CORRELATION MATRIX ===
+          LB-08413  LB-07888  LB-10594  LB-00491  LB-00569  LB-04885  LB-13258
+  LB-08413     1.000     0.005     0.034     0.005     0.004     0.004     0.041
+  LB-07888     0.005     1.000     0.003     0.005     0.945     0.003     0.005
+  LB-10594     0.034     0.003     1.000     0.002     0.003     0.004     0.017
+  LB-00491     0.005     0.005     0.002     1.000     0.004     0.005     0.004
+  LB-00569     0.004     0.945     0.003     0.004     1.000     0.004     0.005
+  LB-04885     0.004     0.003     0.004     0.005     0.004     1.000     0.005
+  LB-13258     0.041     0.005     0.017     0.004     0.005     0.005     1.000
+
+=== SECONDARY MATCH (windowed coverage + quiet-segment hiss + fingerprint) ===
+  20 cross-family pair(s) — computing secondary evidence ...
+  LB-00569 / LB-04885: fingerprint Dice 0.522 (44309 / 44147 hashes)  [primary corr 0.004] → SECONDARY LINK
+
+=== LAG CURVES / SPEED (re-run vs central ref=2001-10-30 Green Bay, Wisconsin, Brown County Veterans Memorial Arena (LB-00569)) ===
+  anchors: 0:05:31, 0:20:05, 0:31:19, 0:32:32, 0:48:05, 0:59:29, 1:14:07, 1:22:39, 1:34:36, 1:36:43, 1:48:27, 2:02:35
+  2001-10-30 Green Bay, Wisconsin, Brown County Veterans Memorial Arena (LB-00569)->2001-10-30 Green Bay, (LB-08413): staircase/splice  speed ratio=1.000000 (+0 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  2001-10-30 Green Bay, Wisconsin, Brown County Veterans Memorial Arena (LB-00569)->2001-10-30 Green Bay, WI (LB-07888): aligned  speed ratio=1.000000 (+0 ppm)
+  2001-10-30 Green Bay, Wisconsin, Brown County Veterans Memorial Arena (LB-00569)->2001-10-30 Green Bay, WI (LB-10594): constant-speed-offset  speed ratio=0.999500 (-500 ppm)
+  2001-10-30 Green Bay, Wisconsin, Brown County Veterans Memorial Arena (LB-00569)->2001-10-30 Green Bay, Wisconsin, Brown County Veterans Memorial Arena (LB-00491): staircase/splice  speed ratio=1.000000 (+0 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+  2001-10-30 Green Bay, Wisconsin, Brown County Veterans Memorial Arena (LB-00569)->2001-10-30 Green Bay, Wisconsin, Brown County Veterans Memorial Arena (LB-04885): constant-speed-offset  speed ratio=1.001000 (+1000 ppm)
+  2001-10-30 Green Bay, Wisconsin, Brown County Veterans Memorial Arena (LB-00569)->2001-10-30 Memorial Arena, Green Bay, WI (LB-13258): staircase/splice  speed ratio=1.000000 (+0 ppm)
+    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)
+
+=== CLUSTERS ===
+  Family 1: 2001-10-30 Green Bay, (LB-08413)  (mean intra-corr 1.000)
+  Family 2: 2001-10-30 Green Bay, WI (LB-07888), 2001-10-30 Green Bay, Wisconsin, Brown County Veterans Memorial Arena (LB-00569), 2001-10-30 Green Bay, Wisconsin, Brown County Veterans Memorial Arena (LB-04885)  (mean intra-corr 0.317 [low confidence])  [secondary: LB-00569/LB-04885 via fp 0.522]  [chain-unverified: LB-07888/LB-04885 not directly confirmed]
+  Family 3: 2001-10-30 Green Bay, WI (LB-10594)  (mean intra-corr 1.000)
+  Family 4: 2001-10-30 Green Bay, Wisconsin, Brown County Veterans Memorial Arena (LB-00491)  (mean intra-corr 1.000)
+  Family 5: 2001-10-30 Memorial Arena, Green Bay, WI (LB-13258)  (mean intra-corr 1.000)
+  Distinct source families: 5
+
+=== LINEAGE EVIDENCE (interpret manually) ===
+    source   HF ceiling  noise floor  DC asymmetry
+  2001-10-30 Green Bay, (LB-08413)       3.0kHz      -83.3dB      +0.00218
+  2001-10-30 Green Bay, WI (LB-07888)       2.0kHz      -82.3dB      -0.00220
+  2001-10-30 Green Bay, WI (LB-10594)       3.0kHz      -88.7dB      -0.00065
+  2001-10-30 Green Bay, Wisconsin, Brown County Veterans Memorial Arena (LB-00491)       2.0kHz      -81.9dB      -0.00242
+  2001-10-30 Green Bay, Wisconsin, Brown County Veterans Memorial Arena (LB-00569)       2.0kHz      -82.3dB      -0.00220
+  2001-10-30 Green Bay, Wisconsin, Brown County Veterans Memorial Arena (LB-04885)       2.0kHz      -77.8dB      -0.00367
+  2001-10-30 Memorial Arena, Green Bay, WI (LB-13258)       2.0kHz      -78.4dB      -0.00001
+  (HF ceiling capped by 8000 Hz Nyquist at analysis_sr=16000; run lineage at native rate for real format discrimination)
+  (DC asymmetry is a taper/equipment signature — not a reliable source-identity marker)
+
+=== DIAGNOSTICS ===
+  [INCOMPLETE] 2001-10-30 Green Bay, Wisconsin, Brown County Veterans Memorial Arena (LB-00491): 1:55:04 vs median 2:07:56 (10.0% shorter) — likely missing material
+  [DISTINCT SOURCE] 2001-10-30 Green Bay, WI (LB-10594) (-500 ppm speed offset, best cross-family corr 0.034): near-zero correlation to all other sources — entirely different recording
+  [SECONDARY SAME-SOURCE] 2001-10-30 Green Bay, Wisconsin, Brown County Veterans Memorial Arena (LB-00569) / 2001-10-30 Green Bay, Wisconsin, Brown County Veterans Memorial Arena (LB-04885): fingerprint Dice 0.522 — primary corr 0.004 (below threshold); likely remaster or heavily edited copy of same tape
+
+[6] Archiving run …
+  Archive → /home/tjenkins/Documents/losslessbob/data/tapematch/runs/20260702_121545_2001-10-30
+
+[7] Logging to observations.db …
+  Logged: 1 run, 7 sources, 21 pairs
+
+Report → /home/tjenkins/Documents/losslessbob/tools/tapematch/last_run_report.md

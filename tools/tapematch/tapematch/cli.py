@@ -7,13 +7,21 @@ trim report, lag-curve diagnosis per pair, residual-corr matrix, clusters,
 and lineage evidence.
 """
 from __future__ import annotations
-import argparse, atexit, json, shutil, sys, tempfile, time
+import argparse, atexit, json, os, shutil, sys, tempfile, time
 from pathlib import Path
 import numpy as np
 import yaml
-from . import ingest, trim, align, match
+from . import ingest, trim, align, match, verdict
 from .audio import to_mono, resample_ratio
 from .ingest import fmt_hms
+
+# NUMBA_CACHE_DIR must be set before the first librosa call (match.pitch_ratio_pyin
+# JIT-compiles via numba) -- default numba cache location can be a read-only
+# site-packages path. Set once, here, on the tapematch entry path, before any
+# pair processing (and therefore before any possible pitch_ratio_pyin call) --
+# CC_TAPEMATCH_FIXES.md Task 6.2. setdefault() respects an operator-supplied env var.
+os.environ.setdefault("NUMBA_CACHE_DIR", "/mnt/DATA0/tmp/numba_cache")
+Path(os.environ["NUMBA_CACHE_DIR"]).mkdir(parents=True, exist_ok=True)
 
 
 def _rss_mb() -> float:
@@ -63,6 +71,12 @@ def main(argv=None):
                          "target set starts mid-recording)")
     ap.add_argument("--debug-log", default=None, metavar="PATH",
                     help="write per-pass timing and RSS to this file")
+    ap.add_argument("--lineage-db", default=None, metavar="PATH",
+                    help="path to the LosslessBob main DB (entry_lineage table) used for "
+                         "the curator-conditional fingerprint threshold (CC_TAPEMATCH_FIXES "
+                         "Task 4.1); default auto-detects data/losslessbob.db relative to "
+                         "the repo root. Absent/unreadable -> curator conditional stays "
+                         "inert (empty lineage set), all other clustering unaffected")
     args = ap.parse_args(argv)
 
     def _parse_offset(s: str) -> float:
@@ -75,6 +89,24 @@ def main(argv=None):
     cfg = yaml.safe_load(open(args.config))
     sr = cfg["audio"]["analysis_sr"]
     exts = cfg["ingest"]["audio_exts"]
+
+    # Curator lineage (Task 4.1): load once, read-only, from the LosslessBob main
+    # DB's entry_lineage table via verdict.load_lineage_pairs — the same helper
+    # regression.py's cached harness uses, so a live run and a harness re-score of
+    # the same date apply the identical curator-relaxed fingerprint bar. Absent or
+    # unreadable DB -> empty set -> fp_threshold() falls through to the staircase/
+    # base threshold for every pair (inert, never crashes the run).
+    lineage_db_path = (Path(args.lineage_db) if args.lineage_db
+                       else Path(__file__).parent.parent.parent.parent / "data" / "losslessbob.db")
+    lineage_pairs: set[tuple[int, int]] = set()
+    if lineage_db_path.exists():
+        try:
+            lineage_pairs = verdict.load_lineage_pairs(lineage_db_path)
+        except Exception as exc:  # noqa: BLE001 - any DB hiccup must not abort the run
+            print(f"  [lineage] could not read {lineage_db_path}: {exc} "
+                  f"-- curator conditional threshold inert this run", file=sys.stderr)
+    print(f"  curator lineage pairs loaded: {len(lineage_pairs)} "
+          f"({'from ' + str(lineage_db_path) if lineage_pairs else 'none -- inert'})")
 
     root = Path(args.root)
     sources = ingest.discover_sources(root)
@@ -242,6 +274,29 @@ def main(argv=None):
         spath, n = side_paths[name]
         return np.memmap(str(spath), dtype="float32", mode="r", shape=(n,))
 
+    # CC_TAPEMATCH_FIXES.md Task 5: estimate_ratio_v2 confidence gate + pyin
+    # fallback gate, both read from config (orchestrator-added keys; do not
+    # hardcode, do not edit config.yaml here).
+    ratio_conf_min = float(cfg["align"].get("ratio_confidence_min", 6.0))
+    pyin_fallback_on = bool(cfg["align"].get("pyin_fallback", True))
+    speed_unknown_count = 0
+
+    def _dur_prior(name_a: str, name_b: str) -> float | None:
+        """Duration-ratio prior for estimate_ratio_v2 (Task 5.1).
+
+        Gated off (returns None) when either source's trimmed duration is
+        already flagged as an outlier (short_flag = likely missing material,
+        long_flag = likely duplicate tracks inflating the stream) -- both
+        break the "duration ratio == speed ratio" assumption the same way
+        TIMING_MISMATCH/INCOMPLETE do in duration_ratio_prior's own guard.
+        """
+        diagnostics: set[str] = set()
+        if name_a in short_flag or name_b in short_flag:
+            diagnostics.add("INCOMPLETE")
+        if name_a in long_flag or name_b in long_flag:
+            diagnostics.add("INCOMPLETE")
+        return match.duration_ratio_prior(perf_durs[name_a], perf_durs[name_b], diagnostics)
+
     # Reference starts as first source; re-selected after matrix is computed.
     ref_name = next(iter(trim_bounds))
 
@@ -261,7 +316,8 @@ def main(argv=None):
         if name == ref_name:
             continue
         other_mono = _mmap(name)
-        ratio = match.estimate_ratio(ref_mono, other_mono, sr, anchors, cfg)
+        prior = _dur_prior(ref_name, name)
+        ratio, ratio_conf = match.estimate_ratio_v2(ref_mono, other_mono, sr, cfg, prior=prior)
         ppm = (ratio - 1.0) * 1e6
         rows = align.lag_curve(ref_mono, other_mono, sr, anchors, cfg)
         d = align.interpret_curve(rows, cfg)
@@ -270,8 +326,20 @@ def main(argv=None):
             kind = "constant-speed-offset"
         elif kind == "constant-speed-offset":
             kind = "aligned"
-        speed_info[name] = {"kind": kind, "ppm": ppm, "ratio": ratio}
-        print(f"  {ref_name}->{name}: {kind}  speed ratio={ratio:.6f} ({ppm:+.0f} ppm)")
+        # Task 5.3 confidence gate. Staircase classification (from the lag-curve
+        # shape, not the ratio search) takes precedence: a staircase pair
+        # legitimately has no single global speed ratio, so low v2 confidence
+        # there is expected and must not erase the (independently derived,
+        # already-validated) staircase diagnosis that drives the short-window
+        # secondary fallback.
+        if kind != "staircase/splice" and ratio_conf < ratio_conf_min:
+            kind = "speed-unknown"
+            speed_unknown_count += 1
+            dbg.log(f"SPEED_UNKNOWN  {ref_name}/{name}  v2_conf={ratio_conf:.2f} "
+                    f"(<{ratio_conf_min})  prior={prior}")
+        speed_info[name] = {"kind": kind, "ppm": ppm, "ratio": ratio, "ratio_confidence": ratio_conf}
+        conf_note = f"  [conf={ratio_conf:.1f}]" if kind == "speed-unknown" else ""
+        print(f"  {ref_name}->{name}: {kind}  speed ratio={ratio:.6f} ({ppm:+.0f} ppm){conf_note}")
         if kind == "staircase/splice":
             print(f"    ^ discontinuous lag curve — staircase pattern (CDR re-tracking or tape edits)")
         del other_mono
@@ -296,16 +364,72 @@ def main(argv=None):
 
     polarity_ceiling = float(polarity_cfg.get("rescue_corr_ceiling", 0.60))
 
+    # CC_TAPEMATCH_FIXES.md Task 6.1: closed-form residual correction guards.
+    # These are spec-mandated constants (the r² guard is mandatory so staircase
+    # lag curves are never "corrected"), not tunable knobs -- config.yaml was
+    # not extended with new keys for this task.
+    RESIDUAL_R2_MIN = 0.85
+    RESIDUAL_PPM_MIN = 50.0
+    RESIDUAL_MAX_ITER = 2
+
     for i in range(n_src - 1):
         ri = ref_mono if i == ref_idx else _mmap(names[i])
         for j in range(i + 1, n_src):
             rj = ref_mono if j == ref_idx else _mmap(names[j])
-            ratio = match.estimate_ratio(ri, rj, sr, anchors, cfg)
+
+            # Task 5: prior-centered v2 ratio estimate + confidence gate. Below
+            # ratio_confidence_min the ratio is untrusted -- do NOT resample with
+            # it; mark the pair speed-unknown (routes to fingerprint via the
+            # normal cross_pairs/secondary-match path below, since M[i,j] will
+            # stay low) and, only when no duration prior was available either,
+            # try the pyin absolute-pitch fallback (Task 6.2).
+            prior = _dur_prior(names[i], names[j])
+            ratio, ratio_conf = match.estimate_ratio_v2(ri, rj, sr, cfg, prior=prior)
+            speed_unknown = ratio_conf < ratio_conf_min
+
+            if speed_unknown:
+                speed_unknown_count += 1
+                dbg.log(f"SPEED_UNKNOWN  {names[i]}/{names[j]}  v2_conf={ratio_conf:.2f} "
+                        f"(<{ratio_conf_min})  prior={prior}")
+                ratio = 1.0  # do not resample with the untrusted v2 ratio
+                if prior is None and pyin_fallback_on:
+                    ratio_pyin, conf_pyin = match.pitch_ratio_pyin(ri, rj, sr, cfg)
+                    if conf_pyin > 0.0:
+                        dbg.log(f"PYIN_FALLBACK  {names[i]}/{names[j]}  "
+                                f"ratio={ratio_pyin:.6f}  conf={conf_pyin:.2f}")
+                        ratio = ratio_pyin
+
             pair_ratios[(i, j)] = ratio
             ppm_val = (ratio - 1.0) * 1e6
             if abs(ppm_val) > ppm_thr:
                 dbg.log(f"RESAMPLE  {names[i]}/{names[j]}  ratio={ratio:.6f}  ppm={ppm_val:+.0f}")
-            rj_c = resample_ratio(rj, ratio, sr) if abs(ratio - 1.0) * 1e6 > ppm_thr else rj
+            rj_c = resample_ratio(rj, ratio, sr) if abs(ppm_val) > ppm_thr else rj
+
+            # Task 6.1 closed-form residual correction -- PRIMARY path only
+            # (never applied before secondary_corr_pair, per WORKFLOW.md), and
+            # never for speed-unknown pairs (ratio above is identity/untrusted,
+            # so a lag-curve fit against it is meaningless). Memory discipline:
+            # only one resampled copy of `rj` is ever heap-resident -- the
+            # previous rj_c is deleted before the next corrective resample is
+            # created, mirroring the existing single-rj_c-at-a-time pattern.
+            if not speed_unknown:
+                for _ in range(RESIDUAL_MAX_ITER):
+                    rows6 = align.lag_curve(ri, rj_c, sr, anchors, cfg)
+                    ppm_res, r2 = align.residual_ppm_from_lag_curve(
+                        [(r["center_sec"], r["lag_sec"]) for r in rows6])
+                    if not (r2 > RESIDUAL_R2_MIN and abs(ppm_res) > RESIDUAL_PPM_MIN):
+                        break
+                    new_ratio = ratio * (1.0 + ppm_res * 1e-6)
+                    new_rj_c = resample_ratio(rj, new_ratio, sr)
+                    if rj_c is not rj:
+                        del rj_c
+                    rj_c = new_rj_c
+                    ratio = new_ratio
+                    dbg.log(f"RESIDUAL_CORRECT  {names[i]}/{names[j]}  "
+                            f"ppm_res={ppm_res:+.1f}  r2={r2:.3f}  ratio={ratio:.6f}")
+                pair_ratios[(i, j)] = ratio
+                ppm_val = (ratio - 1.0) * 1e6
+
             corrs = []
             for ctr in anchors:
                 lag, _ = align.local_lag(ri, rj_c, sr, ctr, win, a_cfg["max_lag_sec"])
@@ -317,12 +441,12 @@ def main(argv=None):
             if rj_c is not rj:
                 del rj_c
 
-            # Lag-slope speed refinement: the coarse envelope grid leaves up to
-            # ~250 ppm error, but a 45s residual_corr window tolerates only ~20 ppm.
-            # For an ambiguous high-ppm pair (not already clearly clustered), refine
-            # the ratio from the per-anchor lag slope and keep it only if median
-            # residual_corr improves — so this can rescue a false-distinct pair but
-            # never regresses one.
+            # Lag-slope speed refinement (pre-existing mechanism, untouched):
+            # a further safety net on top of Task 6.1 for cases its r² guard
+            # rejected (e.g. genuinely staircase pairs) where the raw ppm
+            # offset is still large. Self-limiting: only kept if it improves
+            # median residual_corr, so it cannot manufacture a false merge and
+            # never regresses a pair that Task 6.1 already fixed.
             if (refine_on and abs(ppm_val) >= refine_min_ppm
                     and med < refine_corr_ceiling and len(corrs) >= 3):
                 refined_ratio, refined_corrs = match.refine_speed_ratio(
@@ -370,7 +494,10 @@ def main(argv=None):
         if i != ref_idx:
             del ri
 
-    dbg.log("MATRIX_DONE")
+    if speed_unknown_count:
+        print(f"  {speed_unknown_count} pair(s)/source(s) speed-unknown "
+              f"(v2 confidence < {ratio_conf_min}) — routed to fingerprint path only")
+    dbg.log(f"MATRIX_DONE  speed_unknown_count={speed_unknown_count}")
 
     def _label(name: str) -> str:
         """Extract 'LB-NNNNN' from folder name, or fall back to first 8 chars."""
@@ -378,6 +505,23 @@ def main(argv=None):
         m = _re.search(r"LB-\d+", name)
         return m.group(0) if m else name[:8]
 
+    def _lb_num(name: str) -> int | None:
+        """Extract the integer LB number from a staged folder name, or None.
+
+        cli.py sees only the folder name staged on disk -- it has no access to
+        tapematch_session.py's DB-resolved name->LB mapping (which additionally
+        disambiguates folder names that embed a *different* cross-referenced LB
+        number, e.g. "... [fixed LB-2204]-LB-10437-v"). This is the same regex
+        fallback tapematch_session.py's own `_lb_num_from_folder` uses when its
+        DB lookup misses, so it agrees with the harness in the common case; a
+        folder whose own number is shadowed by an earlier cross-reference is a
+        known, rare gap (curator conditional simply won't key on it live).
+        """
+        import re as _re
+        m = _re.search(r"LB-(\d+)", name)
+        return int(m.group(1)) if m else None
+
+    lb_numbers: dict[str, int | None] = {n: _lb_num(n) for n in names}
     labels = [_label(n) for n in names]
     hdr = "          " + "  ".join(f"{lb:>8}" for lb in labels)
     print(hdr)
@@ -409,7 +553,8 @@ def main(argv=None):
             if name == central_name:
                 continue
             other_mono = _mmap(name)
-            ratio = match.estimate_ratio(central_mono, other_mono, sr, anchors_central, cfg)
+            prior = _dur_prior(central_name, name)
+            ratio, ratio_conf = match.estimate_ratio_v2(central_mono, other_mono, sr, cfg, prior=prior)
             ppm = (ratio - 1.0) * 1e6
             rows = align.lag_curve(central_mono, other_mono, sr, anchors_central, cfg)
             d = align.interpret_curve(rows, cfg)
@@ -418,7 +563,15 @@ def main(argv=None):
                 kind = "constant-speed-offset"
             elif kind == "constant-speed-offset":
                 kind = "aligned"
-            speed_info_central[name] = {"kind": kind, "ppm": ppm, "ratio": ratio}
+            # Task 5.3 confidence gate (see the initial-ref pass above for why
+            # staircase classification takes precedence over "speed-unknown").
+            if kind != "staircase/splice" and ratio_conf < ratio_conf_min:
+                kind = "speed-unknown"
+                speed_unknown_count += 1
+                dbg.log(f"SPEED_UNKNOWN  {central_name}/{name}  v2_conf={ratio_conf:.2f} "
+                        f"(<{ratio_conf_min})  prior={prior}")
+            speed_info_central[name] = {"kind": kind, "ppm": ppm, "ratio": ratio,
+                                        "ratio_confidence": ratio_conf}
             del other_mono
 
     # Both-staircase union flags (CC_TAPEMATCH_FIXES.md Task 5): a source counts
@@ -442,12 +595,59 @@ def main(argv=None):
 
     # === Fingerprint: compute for all sources upfront (10-min window each, cheap) ===
     fp_hashes: dict[str, set] = {}
+    # Ratio-invariant triplet fingerprint (Task 7) — same window, computed only
+    # when enabled. Populated alongside fp_hashes so each source is mmap'd once.
+    tri_hashes: dict[str, set] = {}
+    tri_enabled = bool(cfg.get("fingerprint", {}).get("triplet", {}).get("enabled"))
     if "fingerprint" in cfg:
         dbg.log("FINGERPRINT_START")
         for name in names:
             fp_mono = _mmap(name)
             fp_hashes[name] = match.fingerprint_window(fp_mono, sr, cfg)
+            if tri_enabled:
+                tri_hashes[name] = match.triplet_window(fp_mono, sr, cfg)
             del fp_mono
+
+    # === Lineage pre-pass (moved ahead of clustering AND the secondary-match
+    # cross_pairs loop below) ===
+    # HF-ceiling / noise-floor / nyquist-capped readings historically weren't
+    # computed until the "LINEAGE EVIDENCE" section, well after clustering ran --
+    # too late for the lo-fi hiss conditional (Task 4.2) and for spectral-ratio
+    # stationarity (CC_TAPEMATCH_ADDON.md Task 3), both of which need per-pair
+    # hf_ceiling_hz/noise_floor_db before the cross_pairs loop. Compute once here
+    # (same match.lineage_evidence call, same cost, unconditional either way) and
+    # have every later section reuse this dict instead of recomputing. Purely a
+    # reordering -- no gating change, so behaviour is unaffected.
+    dbg.log("LINEAGE_PREPASS_START")
+    lineage_results: dict[str, dict] = {}
+    for name in trim_bounds:
+        mono = _mmap(name)
+        lineage_results[name] = match.lineage_evidence(mono, sr, cfg)
+        del mono
+    dbg.log("LINEAGE_PREPASS_DONE")
+
+    # === Shared-flaw event fingerprint (CC_TAPEMATCH_ADDON.md Task 2) — computed
+    # for all sources upfront, full-length (flaws can occur anywhere in a 2h
+    # show, unlike the fixed-window landmark fingerprint above). Gated on
+    # flaw_fingerprint.enabled so it costs nothing while dormant (config default).
+    flaw_events: dict[str, list[tuple[float, str, float]]] = {}
+    ff_enabled = bool(cfg.get("flaw_fingerprint", {}).get("enabled"))
+    # Spectral-ratio stationarity (CC_TAPEMATCH_ADDON.md Task 3) master switch --
+    # checked once here, used inside the cross_pairs loop below. Costs nothing
+    # while dormant: the metric call is skipped entirely (None, NULL column).
+    stat_enabled = bool(cfg.get("spectral_stationarity", {}).get("enabled"))
+    # Band-limited envelope correlation (CC_TAPEMATCH_ADDON.md Task 4) master
+    # switch -- same dormant-while-disabled pattern as stat_enabled above.
+    env_enabled = bool(cfg.get("envelope_corr", {}).get("enabled"))
+    if ff_enabled:
+        dbg.log("FLAW_FINGERPRINT_START")
+        for name in names:
+            fl_mono = _mmap(name)
+            th, tt, _tot = trim_bounds[name]
+            flaw_events[name] = match.extract_flaw_events(
+                fl_mono, sr, cfg, trim_head_sec=th, trim_tail_sec=tt)
+            del fl_mono
+        dbg.log("FLAW_FINGERPRINT_DONE")
 
     if "secondary_match" in cfg:
         m_thr = cfg["match"]["cluster_threshold"]
@@ -513,6 +713,74 @@ def main(argv=None):
                 fp_score = (match.fingerprint_score(fp_hashes[names[i]], fp_hashes[names[j]])
                             if fp_hashes else 0.0)
                 sec["fp_score"] = fp_score
+                # Ratio-invariant triplet Dice (Task 7): None when disabled so the
+                # DB column stays NULL and the verdict OR-path is inert.
+                sec["fp_triplet_score"] = (
+                    match.fingerprint_score(tri_hashes[names[i]], tri_hashes[names[j]])
+                    if tri_enabled and tri_hashes else None)
+
+                # Shared-flaw event fingerprint (Task 2.2/2.3): None when disabled
+                # so the DB column stays NULL and the verdict OR-path is inert
+                # (same dormant pattern as fp_triplet_score above). Coarse offset
+                # reuses the predicted-lag anchor-0 lag when already computed
+                # (Task 4 high-ppm path); otherwise a single fresh local_lag call
+                # -- flaw event sets are sparse, so this is cheap.
+                flaw_score_val = flaw_na = flaw_nb = None
+                if ff_enabled:
+                    ev_i = flaw_events.get(names[i], [])
+                    ev_j = flaw_events.get(names[j], [])
+                    flaw_na, flaw_nb = len(ev_i), len(ev_j)
+                    if predicted_lag is not None:
+                        flaw_offset = predicted_lag["lag_0"]
+                    else:
+                        flaw_lag0, _ = align.local_lag(ri, rj, sr, anchors[0], win,
+                                                       a_cfg["max_lag_sec"])
+                        flaw_offset = flaw_lag0 if flaw_lag0 is not None else 0.0
+                    flaw_score_val = match.flaw_match_score(
+                        ev_i, ev_j, pair_ratios[(i, j)], flaw_offset, cfg)
+                sec["flaw_match_score"] = flaw_score_val
+                sec["flaw_n_events_a"] = flaw_na
+                sec["flaw_n_events_b"] = flaw_nb
+
+                # Spectral-ratio stationarity (CC_TAPEMATCH_ADDON.md Task 3): None
+                # when disabled so the DB column stays NULL (same dormant pattern
+                # as flaw_match_score above). Conjunctive-only signal -- no
+                # verdict OR-path; this just persists the metric for Task 5.
+                stat_val = None
+                if stat_enabled:
+                    stat_val = match.spectral_ratio_stationarity(
+                        ri, rj, sr, cfg,
+                        lineage_results[names[i]]["hf_ceiling_hz"],
+                        lineage_results[names[j]]["hf_ceiling_hz"],
+                        lineage_results[names[i]]["noise_floor_db"],
+                        lineage_results[names[j]]["noise_floor_db"],
+                        predicted_lag=predicted_lag)
+                sec["spec_stationarity"] = stat_val
+
+                # Band-limited envelope correlation (CC_TAPEMATCH_ADDON.md Task 4):
+                # None when disabled so the DB column stays NULL (same dormant
+                # pattern as flaw_match_score/spec_stationarity above). Coarse
+                # offset reuses the predicted-lag anchor-0 lag when already
+                # computed (Task 4 high-ppm path); otherwise a single fresh
+                # local_lag call, same cost discipline as the flaw block.
+                # Conjunctive-only signal per spec 4.2 -- never a lone-merge
+                # OR-path even after calibration; this just persists the metric
+                # for Task 5's addon_links.
+                env_val = None
+                if env_enabled:
+                    if predicted_lag is not None:
+                        env_offset = predicted_lag["lag_0"]
+                    else:
+                        env_lag0, _ = align.local_lag(ri, rj, sr, anchors[0], win,
+                                                       a_cfg["max_lag_sec"])
+                        env_offset = env_lag0 if env_lag0 is not None else 0.0
+                    env_val = match.envelope_corr(
+                        ri, rj, sr, cfg,
+                        lineage_results[names[i]]["hf_ceiling_hz"],
+                        lineage_results[names[j]]["hf_ceiling_hz"],
+                        pair_ratios[(i, j)], env_offset)
+                sec["env_corr"] = env_val
+
                 sec_results[(i, j)] = sec
                 W[i, j] = W[j, i] = sec["windowed_frac"]
                 H[i, j] = H[j, i] = sec["hiss_frac"]
@@ -597,12 +865,39 @@ def main(argv=None):
     # display threshold but above any clustering threshold that would be useful.
     fp_thr = cfg.get("fingerprint", {}).get("match_threshold", 0.0) if fp_hashes else 0.0
     fp_cluster_thr = cfg.get("fingerprint", {}).get("cluster_threshold", 0.0) if fp_hashes else 0.0
+    # Route the link decision through verdict.pair_links so the clustering logic
+    # lives in exactly one place (Task 1.3). A None signal (no secondary pass, or
+    # fingerprint disabled) is skipped by the predicate, reproducing the built-in
+    # threshold checks.
+    #   - speed_kind_a/b: staircase flag (Task 3.2), from staircase_sources.
+    #   - hf_ceiling_hz_a/b, nyquist_capped_a/b: lo-fi hiss conditional (Task 4.2),
+    #     from the lineage pre-pass above -- same match.lineage_evidence values
+    #     tapematch_session.py persists to pairs.hf_ceiling_hz_a/b and the harness
+    #     (verdict.cluster_verdicts) reads back from the DB.
+    #   - lb_a/lb_b: curator conditional key (Task 4.1), regex-extracted from the
+    #     staged folder name (_lb_num); paired with lineage_pairs loaded above via
+    #     verdict.load_lineage_pairs, the same helper the harness uses.
+    def _pair_metrics(i, j):
+        na, nb = names[i], names[j]
+        return {
+            "corr": float(M[i, j]),
+            "windowed_frac": float(W[i, j]) if sec_results else None,
+            "hiss_frac": float(H[i, j]) if sec_results else None,
+            "hiss_median": float(H_med[i, j]) if sec_results else None,
+            "fp_score": float(FP[i, j]) if fp_cluster_thr > 0.0 else None,
+            "speed_kind_a": "staircase/splice" if na in staircase_sources else None,
+            "speed_kind_b": "staircase/splice" if nb in staircase_sources else None,
+            "hf_ceiling_hz_a": lineage_results[na]["hf_ceiling_hz"],
+            "hf_ceiling_hz_b": lineage_results[nb]["hf_ceiling_hz"],
+            "nyquist_capped_a": lineage_results[na]["nyquist_capped"],
+            "nyquist_capped_b": lineage_results[nb]["nyquist_capped"],
+            "lb_a": lb_numbers.get(na),
+            "lb_b": lb_numbers.get(nb),
+        }
+
     groups = match.cluster(names, M, m_thr,
-                           W=W if sec_results else None, w_threshold=wc_thr,
-                           H=H if sec_results else None, h_threshold=hm_thr,
-                           H_med=H_med if sec_results else None, h_med_threshold=hm_med_thr,
-                           F=FP if fp_cluster_thr > 0.0 else None,
-                           f_threshold=fp_cluster_thr)
+                           link_fn=lambda i, j: verdict.pair_links(
+                               _pair_metrics(i, j), cfg, lineage=lineage_pairs))
     for gi, g in enumerate(groups, 1):
         intra_pairs = [(a, b) for a in g for b in g if a < b]
         intra_corrs = [M[names.index(a), names.index(b)] for a, b in intra_pairs]
@@ -664,21 +959,18 @@ def main(argv=None):
         print(f"  Family {gi}: {', '.join(g)}  (mean intra-corr {mc:.3f}{conf}){sec_note}{chain_note}")
     print(f"  Distinct source families: {len(groups)}")
 
-    # === Lineage: mono memmap per source; welch PSD uses only a few MB ===
+    # === Lineage: values computed in the pre-pass above (before clustering, so
+    # the lo-fi hiss conditional had them); this section just reports them ===
     print("\n=== LINEAGE EVIDENCE (interpret manually) ===")
     dbg.log(f"LINEAGE_START  n_families={len(groups)}")
     print(f"  {'source':>8}  {'HF ceiling':>11}  {'noise floor':>11}  {'DC asymmetry':>12}")
     capped = False
-    lineage_results: dict[str, dict] = {}
     for name in trim_bounds:
-        mono = _mmap(name)
-        ev = match.lineage_evidence(mono, sr, cfg)
-        lineage_results[name] = ev
+        ev = lineage_results[name]
         capped = capped or ev["nyquist_capped"]
         print(f"  {name:>8}  {ev['hf_ceiling_hz']/1000:8.1f}kHz  "
               f"{ev['noise_floor_db']:9.1f}dB  "
               f"{ev['asymmetry_dc']:+12.5f}")
-        del mono
 
     if capped:
         print(f"  (HF ceiling capped by {sr//2} Hz Nyquist at analysis_sr={sr}; "
@@ -888,7 +1180,14 @@ def main(argv=None):
                     "nyquist_capped": lineage_results[nm]["nyquist_capped"],
                     "speed_ppm": speed_info[nm]["ppm"],
                     "speed_kind": speed_info[nm]["kind"],
+                    "speed_confidence": speed_info[nm].get("ratio_confidence"),
                     "family_id": source_family[nm],
+                    # Shared-flaw event fingerprint (Task 2.1): per-source count +
+                    # serialized timeline. Variable-length -> run JSON only, not
+                    # the DB (pairs.flaw_n_events_a/b carries the scalar counts).
+                    # Empty/absent when flaw_fingerprint.enabled is false.
+                    "flaw_event_count": len(flaw_events.get(nm, [])),
+                    "flaw_events": [[t, kind, s] for t, kind, s in flaw_events.get(nm, [])],
                 }
                 for nm in names
             },

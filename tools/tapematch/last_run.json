@@ -1,0 +1,229 @@
+{
+  "sources": {
+    "1987-09-19 Rotterdam, The Netherlands, Sportpaleis Ahoy (LB-05156)": {
+      "track_count": 14,
+      "total_dur_sec": 3392.267,
+      "perf_dur_sec": 3373.0,
+      "trim_head_sec": 11.5,
+      "trim_tail_sec": 7.766999999999825,
+      "hf_ceiling_hz": 3000.0,
+      "noise_floor_db": -87.38105773925781,
+      "dc_asymmetry": -2.5414925403310917e-05,
+      "nyquist_capped": true,
+      "speed_ppm": 0.0,
+      "speed_kind": "reference",
+      "speed_confidence": null,
+      "family_id": 1
+    },
+    "1987-09-19 Sportpaleis Ahoy, Rotterdam, The Netherlands (LB-00131)": {
+      "track_count": 14,
+      "total_dur_sec": 3578.5336875,
+      "perf_dur_sec": 3514.5,
+      "trim_head_sec": 64.0,
+      "trim_tail_sec": 0.03368749999981446,
+      "hf_ceiling_hz": 2000.0,
+      "noise_floor_db": -76.50828552246094,
+      "dc_asymmetry": 0.0002261465269839391,
+      "nyquist_capped": true,
+      "speed_ppm": -37361.772656138826,
+      "speed_kind": "speed-unknown",
+      "speed_confidence": 2.296626134056791,
+      "family_id": 2
+    }
+  },
+  "correlation_matrix": {
+    "names": [
+      "1987-09-19 Rotterdam, The Netherlands, Sportpaleis Ahoy (LB-05156)",
+      "1987-09-19 Sportpaleis Ahoy, Rotterdam, The Netherlands (LB-00131)"
+    ],
+    "values": [
+      [
+        1.0,
+        0.0054094684310257435
+      ],
+      [
+        0.0054094684310257435,
+        1.0
+      ]
+    ]
+  },
+  "anchors_sec": [
+    104.5,
+    552.58,
+    822.54,
+    851.14,
+    1222.46,
+    1410.82,
+    1753.08,
+    2087.62,
+    2418.9,
+    2723.92,
+    2856.72,
+    3143.24
+  ],
+  "n_families": 2,
+  "secondary_matrix": {
+    "names": [
+      "1987-09-19 Rotterdam, The Netherlands, Sportpaleis Ahoy (LB-05156)",
+      "1987-09-19 Sportpaleis Ahoy, Rotterdam, The Netherlands (LB-00131)"
+    ],
+    "windowed_frac": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ],
+    "hiss_frac": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ],
+    "fingerprint_dice": [
+      [
+        0.0,
+        0.40555607520344217
+      ],
+      [
+        0.40555607520344217,
+        0.0
+      ]
+    ]
+  },
+  "fingerprint_hash_counts": {
+    "1987-09-19 Rotterdam, The Netherlands, Sportpaleis Ahoy (LB-05156)": 50587,
+    "1987-09-19 Sportpaleis Ahoy, Rotterdam, The Netherlands (LB-00131)": 56323
+  },
+  "secondary_pairs": {
+    "1987-09-19 Rotterdam, The Netherlands, Sportpaleis Ahoy (LB-05156)|1987-09-19 Sportpaleis Ahoy, Rotterdam, The Netherlands (LB-00131)": {
+      "windowed_frac": 0.0,
+      "windowed_median": 0.003336201189085841,
+      "n_windows": 111,
+      "hiss_frac": 0.0,
+      "hiss_median": 0.009756685700267553,
+      "n_hiss_segs": 62,
+      "fp_score": 0.40555607520344217,
+      "fp_triplet_score": null
+    }
+  },
+  "config": {
+    "audio": {
+      "analysis_sr": 16000,
+      "mono_mix": false
+    },
+    "ingest": {
+      "audio_exts": [
+        ".flac",
+        ".wav",
+        ".aiff",
+        ".aif",
+        ".shn",
+        ".m4a",
+        ".mp3",
+        ".ape"
+      ]
+    },
+    "trim": {
+      "frame_sec": 1.0,
+      "hop_sec": 0.5,
+      "flatness_music_max": 0.45,
+      "min_sustain_sec": 8.0,
+      "pad_keep_sec": 5.0
+    },
+    "anchors": {
+      "n_anchors": 12,
+      "window_sec": 45.0,
+      "onset_percentile": 99.0,
+      "prefer_quiet": true
+    },
+    "align": {
+      "max_lag_sec": 90.0,
+      "ratio_flag_ppm": 200,
+      "ratio_confidence_min": 6.0,
+      "pyin_fallback": true,
+      "step_flag_sec": 0.5
+    },
+    "match": {
+      "ratio_search_min": 0.97,
+      "ratio_search_max": 1.03,
+      "ratio_search_steps": 121,
+      "cluster_threshold": 0.45
+    },
+    "refine": {
+      "enabled": true,
+      "max_iter": 2,
+      "stop_ppm": 5.0,
+      "trigger_min_ppm": 2000,
+      "trigger_corr_ceiling": 0.6
+    },
+    "polarity": {
+      "enabled": false,
+      "rescue_corr_ceiling": 0.6
+    },
+    "lineage": {
+      "hf_ceiling_probe_hz": [
+        14000,
+        16000,
+        19000,
+        20000
+      ],
+      "dropout_z": 6.0
+    },
+    "fingerprint": {
+      "window_start_sec": 180.0,
+      "window_dur_sec": 600.0,
+      "nperseg": 1024,
+      "hop": 512,
+      "peak_neighborhood_t": 5,
+      "peak_neighborhood_f": 3,
+      "fanout": 5,
+      "dt_bins": 100,
+      "hf_band_hz": [
+        6000,
+        8000
+      ],
+      "match_threshold": 0.6,
+      "cluster_threshold": 0.5,
+      "cluster_threshold_staircase": 0.4,
+      "cluster_threshold_curator": 0.43,
+      "triplet": {
+        "enabled": false,
+        "tmin_sec": 0.5,
+        "tmax_sec": 8.0,
+        "fanout": 4,
+        "cluster_threshold": 0.45
+      }
+    },
+    "secondary_match": {
+      "window_sec": 60.0,
+      "hop_sec": 30.0,
+      "local_lag_sec": 10.0,
+      "window_corr_threshold": 0.3,
+      "coverage_threshold": 0.35,
+      "high_ppm_threshold": 5000,
+      "quiet_energy_percentile": 25,
+      "min_quiet_sec": 3.0,
+      "hiss_lag_sec": 3.0,
+      "hiss_corr_threshold": 0.2,
+      "hiss_frac_threshold": 0.4,
+      "hiss_merge_frac": 0.6,
+      "hiss_merge_median": 0.65,
+      "hiss_merge_median_lofi": 0.4,
+      "hiss_lofi_ceiling_hz": 12000,
+      "short_window_sec": 15.0,
+      "short_hop_sec": 5.0,
+      "staircase_window_sec": 5.0,
+      "staircase_hop_sec": 2.0,
+      "staircase_window_corr_threshold": null,
+      "staircase_coverage_threshold": null
+    }
+  }
+}
