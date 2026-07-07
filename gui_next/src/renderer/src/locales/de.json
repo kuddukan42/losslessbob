@@ -1543,6 +1543,7 @@
       "tabSetlist": "Setlist",
       "tabAssets": "Dateien",
       "tabShare": "Seed & Teilen",
+      "tabQuality": "Qualität",
       "showDetails": "Details anzeigen",
       "collapseDetails": "Details ausblenden",
       "lbPage": "LB-Seite",
@@ -1629,6 +1630,27 @@
       "attachments": "Anhänge {{count}}",
       "noAttachments": "Keine Anhänge",
       "showOnMap": "Auf der Karte anzeigen"
+    },
+    "quality": {
+      "label": "Qualität",
+      "lbRating": "LB-Bewertung",
+      "aiIndex": "KI-Qualitätsindex",
+      "notScannedNote": "Noch nicht von Concert Ranker gescannt.",
+      "metrics": {
+        "label": "Audio-Metriken",
+        "channels": "Kanäle",
+        "mono": "Mono",
+        "stereo": "Stereo",
+        "clipping": "Clipping",
+        "crowdSeparation": "Mengenunterscheidung",
+        "tonalBalance": "Tonbalance",
+        "bass": "Bass",
+        "mud": "Mulm",
+        "harsh": "Schärfe",
+        "balanced": "ausgewogen",
+        "sourceFlags": "Quell-Flags",
+        "noFlags": "Es wurden keine Flags vom Typ „source“ erkannt"
+      }
     },
     "scope": {
       "everything": "Alles",

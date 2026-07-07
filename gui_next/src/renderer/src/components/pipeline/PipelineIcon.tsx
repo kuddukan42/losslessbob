@@ -102,12 +102,19 @@ export interface PipelineIconProps {
  * see a static running tile (handled in CSS).
  */
 export function PipelineIcon({ stage, status = 'pending', size = 48 }: PipelineIconProps) {
-  const glyphSize = Math.round(size * 0.56)
+  // Round to even px so the glyph and tile radius land on whole-pixel
+  // boundaries instead of a half-pixel offset, which the browser would
+  // otherwise anti-alias into a soft/fuzzy edge.
+  const glyphSize = Math.round((size * 0.56) / 2) * 2
+  const radius = Math.round((size * 0.30) / 2) * 2
   const isRunning = status === 'running'
   return (
     <span
       className={`pipe-tile pipe-tile--${status}`}
-      style={{ ['--pipe-size' as string]: `${size}px` }}
+      style={{
+        ['--pipe-size' as string]: `${size}px`,
+        ['--pipe-radius' as string]: `${radius}px`,
+      }}
     >
       {isRunning && (
         <>

@@ -1543,6 +1543,7 @@
       "tabSetlist": "Setlist",
       "tabAssets": "Bestanden",
       "tabShare": "Seeden & delen",
+      "tabQuality": "Kwaliteit",
       "showDetails": "Details weergeven",
       "collapseDetails": "Details verbergen",
       "lbPage": "LB-pagina",
@@ -1629,6 +1630,27 @@
       "attachments": "Bijlagen {{count}}",
       "noAttachments": "Geen bijlagen",
       "showOnMap": "Op kaart weergeven"
+    },
+    "quality": {
+      "label": "Kwaliteit",
+      "lbRating": "LB-beoordeling",
+      "aiIndex": "AI-kwaliteitsindex",
+      "notScannedNote": "Nog niet gescand door Concert Ranker.",
+      "metrics": {
+        "label": "Audiometriek",
+        "channels": "Kanalen",
+        "mono": "Mono",
+        "stereo": "Stereo",
+        "clipping": "Knippen",
+        "crowdSeparation": "Mensen uit elkaar houden",
+        "tonalBalance": "Toonbalans",
+        "bass": "Bas",
+        "mud": "Modder",
+        "harsh": "Ruwheid",
+        "balanced": "gebalanceerd",
+        "sourceFlags": "Bronvlaggen",
+        "noFlags": "Er zijn geen vlaggen van het type ‘source’ gedetecteerd"
+      }
     },
     "scope": {
       "everything": "Alles",

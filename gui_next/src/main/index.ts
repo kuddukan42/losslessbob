@@ -9,6 +9,13 @@ const FLASK_PORT = 5174
 const PID_FILE = join(tmpdir(), 'losslessbob_backend.pid')
 let backendProc: ChildProcess | null = null
 
+// On native Wayland (GNOME) the taskbar/dock icon is resolved ONLY by matching the
+// window's Wayland app_id to an installed .desktop file whose basename equals that
+// app_id — the BrowserWindow `icon` option and .desktop StartupWMClass are ignored
+// there. In dev the app_id is "losslessbob-next" (Electron derives it from the
+// package.json "name"), so the dev-helper resources/losslessbob-next.desktop is named
+// to match. The packaged app uses its electron-builder-generated .desktop instead.
+
 function portOpen(port: number): Promise<boolean> {
   return new Promise(resolve => {
     const s = createConnection({ host: '127.0.0.1', port }, () => { s.destroy(); resolve(true) })
@@ -107,6 +114,10 @@ async function ensureBackend(): Promise<void> {
 }
 
 function createWindow(): void {
+  const iconPath = app.isPackaged
+    ? join(process.resourcesPath, 'icon.png')
+    : join(app.getAppPath(), 'resources/icon.png')
+
   const win = new BrowserWindow({
     width: 1440,
     height: 900,
@@ -115,6 +126,7 @@ function createWindow(): void {
     show: false,
     title: 'LosslessBob',
     backgroundColor: '#faf8f3',
+    icon: iconPath,
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
       sandbox: false,

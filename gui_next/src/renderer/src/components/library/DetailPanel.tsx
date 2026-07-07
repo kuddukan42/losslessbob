@@ -558,6 +558,207 @@ function AssetStripZone({ row, attachCount, onAttach, onSpectro, onMap, hideLabe
   )
 }
 
+// ── QualityZone — LB Rating (catalog) side by side with the AI Quality Index
+// (Concert Ranker's abs_grade/abs_score, latest scan), lazy-fetched per row
+// via /api/quality/<lb>. ────────────────────────────────────────────────────
+
+interface QualityMetrics {
+  mono: boolean
+  stereo_width: number | null
+  stereo_width_label: string | null
+  clip_fraction: number | null
+  crowd_snr_db: number | null
+  crowd_snr_label: string | null
+  bass_ratio_db: number | null
+  bass_label: string | null
+  mud_ratio_db: number | null
+  mud_label: string | null
+  harsh_ratio_db: number | null
+  harsh_label: string | null
+  source_flags: string[]
+}
+
+interface QualityScore {
+  abs_grade: string | null
+  abs_score: number | null
+  final_score: number | null
+  rank_in_family: number | null
+  vetoed: number
+  verdict_text: string | null
+  metrics: QualityMetrics | null
+}
+
+// ── Metric magnitude bar — thin track + rounded fill, tone-colored, for the
+// Quality tab's stereo width / clipping / tonal-balance visualizations.
+// `pct` is 0-100, pre-clamped by the caller (each metric has its own domain).
+function MetricBar({ label, valueLabel, pct, tone, note }: {
+  label: string; valueLabel: string; pct: number; tone: 'ok' | 'warn' | 'bad' | 'info' | 'mute'; note?: string
+}) {
+  return (
+    <div style={{ marginBottom: 10 }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 4 }}>
+        <span style={{ fontSize: 'var(--t-meta)', color: 'var(--lbb-fg2)' }}>{label}</span>
+        <span style={{ fontSize: 'var(--t-meta)', fontWeight: 'var(--w-semi)', color: `var(--lbb-${tone}-fg)`, fontVariantNumeric: 'tabular-nums' }}>
+          {valueLabel}{note && <span style={{ color: 'var(--lbb-fg3)', fontWeight: 'var(--w-med)' }}> · {note}</span>}
+        </span>
+      </div>
+      <div style={{ height: 6, borderRadius: 3, background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)', overflow: 'hidden' }}>
+        <div style={{
+          width: `${Math.max(2, Math.min(100, pct))}%`, height: '100%', borderRadius: 3,
+          background: `var(--lbb-${tone}-bar)`,
+        }} />
+      </div>
+    </div>
+  )
+}
+
+// ── Small tone-colored chip for source-type flags ──────────────────────────
+function FlagChip({ text, tone }: { text: string; tone: 'warn' | 'bad' }) {
+  return (
+    <span style={{
+      display: 'inline-flex', alignItems: 'center', gap: 4,
+      padding: '2px 8px', borderRadius: 999, whiteSpace: 'nowrap',
+      background: `var(--lbb-${tone}-bg)`, color: `var(--lbb-${tone}-fg)`,
+      border: `1px solid color-mix(in srgb, var(--lbb-${tone}-bar) 50%, transparent)`,
+      fontSize: 'var(--t-micro)', fontWeight: 'var(--w-semi)',
+    }}>
+      <Icon name="alert" size={10} />
+      {text}
+    </span>
+  )
+}
+
+const _CROWD_TONE: Record<string, 'bad' | 'warn' | 'mute' | 'ok'> = {
+  'buried in crowd': 'bad', 'crowd-heavy': 'warn', 'some crowd': 'mute', clean: 'ok',
+}
+const _SEVERITY_TONE: Record<string, 'bad' | 'warn'> = {
+  muddy: 'bad', 'slightly muddy': 'warn', harsh: 'bad', 'a little forward': 'warn',
+}
+
+// ── QualityMetricsPanel — Concert Ranker raw-signal visualizations (stereo
+// width, clipping, crowd separation, tonal balance, source-type flags) below
+// the LB Rating / AI Quality Index tiles. ───────────────────────────────────
+function QualityMetricsPanel({ metrics }: { metrics: QualityMetrics }) {
+  const { t } = useTranslation()
+
+  const widthPct = metrics.mono ? 0 : Math.min(100, ((metrics.stereo_width ?? 0) / 1.0) * 100)
+  const widthTone: 'info' | 'warn' | 'mute' = metrics.mono ? 'mute'
+    : metrics.stereo_width_label === 'effectively mono' ? 'warn'
+    : metrics.stereo_width_label === 'very wide' ? 'info' : 'mute'
+
+  const clipPct = Math.min(100, ((metrics.clip_fraction ?? 0) / 0.05) * 100)
+  const clipTone: 'ok' | 'warn' | 'bad' = (metrics.clip_fraction ?? 0) > 0.02 ? 'bad'
+    : (metrics.clip_fraction ?? 0) > 0 ? 'warn' : 'ok'
+
+  const crowdTone = (metrics.crowd_snr_label && _CROWD_TONE[metrics.crowd_snr_label]) || 'mute'
+  const crowdPct = metrics.crowd_snr_db == null ? 0 : Math.max(0, Math.min(100, (metrics.crowd_snr_db / 24) * 100))
+
+  const bassPct = metrics.bass_ratio_db == null ? 0 : Math.max(0, Math.min(100, (metrics.bass_ratio_db / 33) * 100))
+  const bassTone: 'info' | 'mute' = metrics.bass_label ? 'info' : 'mute'
+  const mudPct = metrics.mud_ratio_db == null ? 0 : Math.max(0, Math.min(100, (metrics.mud_ratio_db / 40) * 100))
+  const mudTone = (metrics.mud_label && _SEVERITY_TONE[metrics.mud_label]) || 'ok'
+  const harshPct = metrics.harsh_ratio_db == null ? 0 : Math.max(0, Math.min(100, ((metrics.harsh_ratio_db + 3) / 15) * 100))
+  const harshTone = (metrics.harsh_label && _SEVERITY_TONE[metrics.harsh_label]) || 'ok'
+
+  return (
+    <div style={{ marginTop: 4 }}>
+      <ZoneLabel>{t('library.quality.metrics.label')}</ZoneLabel>
+
+      <MetricBar
+        label={t('library.quality.metrics.channels')}
+        valueLabel={metrics.mono ? t('library.quality.metrics.mono') : t('library.quality.metrics.stereo')}
+        note={!metrics.mono ? (metrics.stereo_width_label ?? undefined) : undefined}
+        pct={widthPct} tone={widthTone}
+      />
+      <MetricBar
+        label={t('library.quality.metrics.clipping')}
+        valueLabel={`${((metrics.clip_fraction ?? 0) * 100).toFixed(2)}%`}
+        pct={clipPct} tone={clipTone}
+      />
+      <MetricBar
+        label={t('library.quality.metrics.crowdSeparation')}
+        valueLabel={metrics.crowd_snr_db != null ? `${metrics.crowd_snr_db.toFixed(1)} dB` : '—'}
+        note={metrics.crowd_snr_label ?? undefined}
+        pct={crowdPct} tone={crowdTone}
+      />
+
+      <div style={{ fontSize: 'var(--t-micro)', fontWeight: 'var(--w-semi)', letterSpacing: '0.04em', textTransform: 'uppercase', color: 'var(--lbb-fg3)', margin: '12px 0 8px' }}>
+        {t('library.quality.metrics.tonalBalance')}
+      </div>
+      <MetricBar
+        label={t('library.quality.metrics.bass')}
+        valueLabel={metrics.bass_ratio_db != null ? `${metrics.bass_ratio_db.toFixed(1)} dB` : '—'}
+        note={metrics.bass_label ?? t('library.quality.metrics.balanced')}
+        pct={bassPct} tone={bassTone}
+      />
+      <MetricBar
+        label={t('library.quality.metrics.mud')}
+        valueLabel={metrics.mud_ratio_db != null ? `${metrics.mud_ratio_db.toFixed(1)} dB` : '—'}
+        note={metrics.mud_label ?? t('library.quality.metrics.balanced')}
+        pct={mudPct} tone={mudTone}
+      />
+      <MetricBar
+        label={t('library.quality.metrics.harsh')}
+        valueLabel={metrics.harsh_ratio_db != null ? `${metrics.harsh_ratio_db.toFixed(1)} dB` : '—'}
+        note={metrics.harsh_label ?? t('library.quality.metrics.balanced')}
+        pct={harshPct} tone={harshTone}
+      />
+
+      <div style={{ fontSize: 'var(--t-micro)', fontWeight: 'var(--w-semi)', letterSpacing: '0.04em', textTransform: 'uppercase', color: 'var(--lbb-fg3)', margin: '12px 0 8px' }}>
+        {t('library.quality.metrics.sourceFlags')}
+      </div>
+      {metrics.source_flags.length > 0 ? (
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+          {metrics.source_flags.map(f => (
+            <FlagChip key={f} text={f} tone={f.includes('lossy') ? 'bad' : 'warn'} />
+          ))}
+        </div>
+      ) : (
+        <div style={{ fontSize: 'var(--t-meta)', color: 'var(--lbb-fg3)' }}>{t('library.quality.metrics.noFlags')}</div>
+      )}
+    </div>
+  )
+}
+
+function QualityZone({ row, hideLabel }: { row: DetailRow; hideLabel?: boolean }) {
+  const { t } = useTranslation()
+  const { data, isLoading } = useQuery<QualityScore | null>({
+    queryKey: ['library-quality', row.lbNumber],
+    queryFn: () => fetch(`${BASE}/api/quality/${row.lbNumber}`).then(r => (r.status === 204 ? null : r.json())),
+    enabled: row.owned,
+    staleTime: 60_000,
+  })
+
+  return (
+    <div style={{ flexShrink: 0 }}>
+      {!hideLabel && <ZoneLabel>{t('library.quality.label')}</ZoneLabel>}
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 14 }}>
+        <Fact
+          label={t('library.quality.lbRating')}
+          value={row.rating && row.rating !== '—' ? row.rating : '—'}
+        />
+        <Fact
+          label={t('library.quality.aiIndex')}
+          value={isLoading ? '…' : data?.abs_grade ? data.abs_grade : '—'}
+          sub={data?.abs_score != null ? `${Math.round(data.abs_score)}/100` : undefined}
+        />
+      </div>
+      {data?.verdict_text && (
+        <div style={{ fontSize: 'var(--t-meta)', color: 'var(--lbb-fg2)', lineHeight: 1.5 }}>{data.verdict_text}</div>
+      )}
+      {data?.metrics && <QualityMetricsPanel metrics={data.metrics} />}
+      {!isLoading && !data && (
+        <div style={{
+          padding: '14px 12px', borderRadius: 6, textAlign: 'center',
+          border: '1px dashed var(--lbb-border2)', color: 'var(--lbb-fg3)', fontSize: 'var(--t-meta)',
+        }}>
+          {t('library.quality.notScannedNote')}
+        </div>
+      )}
+    </div>
+  )
+}
+
 // ── Tab strip (spec §8) — pinned below the identity block; routes the pane
 // body. Idle tabs are --t-body/500 fg3; the active tab is accent-mid with a
 // 2px inset underline. Count pills sit inline. ──────────────────────────────
@@ -649,6 +850,7 @@ export function RecordingDetailPanel({ row, history, attachCount, actionHandlers
   if (row.owned) {
     tabs.push({ id: 'assets', label: t('library.panel.tabAssets') })
     tabs.push({ id: 'share', label: t('library.panel.tabShare') })
+    tabs.push({ id: 'quality', label: t('library.panel.tabQuality') })
   }
   const activeTab = tabs.some(x => x.id === tab) ? tab : 'overview'
 
@@ -751,6 +953,10 @@ export function RecordingDetailPanel({ row, history, attachCount, actionHandlers
             onTorrent={() => actionHandlers.onTorrent([row])}
             onForum={() => actionHandlers.onForum([row])}
           />
+        )}
+
+        {activeTab === 'quality' && row.owned && (
+          <QualityZone row={row} hideLabel />
         )}
       </div>
     </aside>

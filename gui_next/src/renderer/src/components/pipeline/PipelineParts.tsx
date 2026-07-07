@@ -237,7 +237,7 @@ export function StageStepper({
               border: `1px solid ${active ? 'var(--lbb-accent-mid)' : 'transparent'}`,
               fontFamily: 'inherit', textAlign: 'left',
             }}>
-              <StageNode stage={st} state={state} current={active} n={st.n} />
+              <StageNode stage={st} state={state} current={active} n={st.n} size={48} />
               <span style={{ display: 'flex', flexDirection: 'column', minWidth: 0 }}>
                 <span style={{ fontSize: 13, fontWeight: 700,
                   color: active ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg)',

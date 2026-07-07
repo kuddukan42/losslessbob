@@ -1543,6 +1543,7 @@
       "tabSetlist": "Scaletta",
       "tabAssets": "Risorse",
       "tabShare": "Seed e condivisione",
+      "tabQuality": "Qualità",
       "showDetails": "Mostra dettagli",
       "collapseDetails": "Nascondi i dettagli",
       "lbPage": "Pagina LB",
@@ -1629,6 +1630,27 @@
       "attachments": "Allegati {{count}}",
       "noAttachments": "Nessun allegato",
       "showOnMap": "Mostra sulla mappa"
+    },
+    "quality": {
+      "label": "Qualità",
+      "lbRating": "Valutazione LB",
+      "aiIndex": "Indice di qualità AI",
+      "notScannedNote": "Non ancora analizzate da Concert Ranker.",
+      "metrics": {
+        "label": "Metriche audio",
+        "channels": "Canali",
+        "mono": "Mono",
+        "stereo": "Stereo",
+        "clipping": "Ritaglio",
+        "crowdSeparation": "Separazione della folla",
+        "tonalBalance": "Bilanciamento tonale",
+        "bass": "Bassi",
+        "mud": "Impasto",
+        "harsh": "Asprezza",
+        "balanced": "equilibrato",
+        "sourceFlags": "Bandierine di origine",
+        "noFlags": "Nessun flag di tipo sorgente rilevato"
+      }
     },
     "scope": {
       "everything": "Tutto",

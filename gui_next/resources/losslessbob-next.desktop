@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Application
+Name=LosslessBob
+Comment=LosslessBob checksum lookup
+Exec=losslessbob
+Icon=losslessbob
+Terminal=false
+Categories=Utility;Audio;
+# Dev-only helper. On GNOME the taskbar/dock icon is resolved by matching the running
+# window's Wayland app_id to a .desktop whose BASENAME equals that app_id. In `npm run
+# dev` the app_id is "losslessbob-next" (from package.json "name"), so this file must be
+# installed as ~/.local/share/applications/losslessbob-next.desktop. Replace Icon= with an
+# absolute path to resources/icon.png to skip the hicolor icon-cache step.
+# (StartupWMClass only applies under X11/XWayland; it is ignored on native Wayland.)
+StartupWMClass=losslessbob-next
