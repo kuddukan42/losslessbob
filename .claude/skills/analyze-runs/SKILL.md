@@ -1,22 +1,38 @@
-# Analyze Runs (Parallel)
+---
+name: analyze-runs
+description: Roll up existing tapematch analysis.md verdicts across data/tapematch/runs/ into a summary table. Read-only — to WRITE missing analyses, use /tapematch-batch instead.
+---
 
-Spawn one Claude subagent per run directory under `tools/tapematch/runs/`, each writing an `analysis.md` into its run folder summarizing matches, false positives, and threshold issues.
+# Analyze Runs (Roll-up)
+
+Aggregate the per-run `analysis.md` files under `data/tapematch/runs/` into one
+summary so cross-run patterns (repeat false positives, threshold drift, runs
+flagged for review) become visible.
+
+> Superseded note: this skill previously spawned one `claude -p` subagent per
+> run to *write* analyses. That approach was abandoned — subagents hit a hard
+> `Write`-tool block on `.md` files. Writing analyses now happens in-session
+> via `/tapematch-batch`. This skill only reads and summarizes.
 
 ## Steps
 
-1. List all subdirectories under `tools/tapematch/runs/` (each is a dated run).
-2. For each run directory, launch a background Claude subagent:
+1. Collect all existing analyses:
    ```bash
-   for date in $(ls tools/tapematch/runs/); do
-     claude -p "Analyze tools/tapematch/runs/$date logs and write tools/tapematch/runs/$date/analysis.md summarizing: total matches, false positives (flag criteria), threshold issues, and any anomalies. Be concise." \
-       --allowedTools "Read,Write,Bash" &
-   done
-   wait
+   find data/tapematch/runs -maxdepth 2 -name "analysis.md" | sort
    ```
-3. After all agents finish, read each `analysis.md` and produce a roll-up summary in the chat: a markdown table with columns `Run | Matches | False Positives | Threshold Issues | Notes`.
-4. If any run directory is missing logs or produced an error, flag it explicitly.
+2. Read each `analysis.md` (they are short; batch the reads) and extract:
+   verdict outcome, whether it was flagged "needs review", and any anomaly
+   callouts (data splicing, ingest crashes, date-mis-tagged LBs).
+3. Produce a roll-up in chat: a markdown table
+   `Run | Verdict | Flagged? | Notes`, followed by a short prose paragraph on
+   cross-run patterns worth acting on.
+4. Report coverage: how many run dirs have `report.md` but no `analysis.md`
+   yet (these are `/tapematch-batch`'s backlog), and how many were skipped as
+   incomplete sets.
 
 ## Notes
-- Run from repo root so paths resolve correctly.
-- Each agent writes only its own `analysis.md` — no cross-run writes.
-- Do not overwrite an existing `analysis.md` unless the user passes `--force`.
+
+- Run from repo root so paths resolve.
+- Read-only: never create, edit, or delete anything in the run dirs.
+- If a specific date or date range is passed as an argument, restrict the
+  roll-up to matching run dirs (dir names are `YYYYMMDD_HHMMSS_<concert-date>`).

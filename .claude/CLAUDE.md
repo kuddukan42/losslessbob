@@ -4,58 +4,34 @@ Follow every session. No asking.
 
 ---
 
-## Tool Usage
+## Context Discipline
 
-- When reading large files, ALWAYS use the Read tool with `offset`/`limit` parameters instead of `sed`, `head`, or `tail` via Bash. Avoid Bash for file inspection when Read can do it — it triggers unnecessary approval prompts.
+- A session briefing (branch, uncommitted count, last CHANGELOG entry, top TODOs,
+  calibration tail) is auto-injected at session start by a SessionStart hook — trust
+  it instead of re-deriving that state; `/session-open` re-runs it mid-session.
 
-## GUI Verification
-
-Do **not** take screenshots or run browser/UI automation to verify GUI changes.
-Implement the code change, run applicable code checks (type checking, lint,
-`py_compile`, build), and stop there — the user verifies visuals themselves.
-
----
-
-## Before Any Task
-1. Read `PROJECT.md`, `BUGS.md`, `TODO.md`.
-2. State files you plan to change before changing them.
+- Do **not** read PROJECT.md, BUGS.md, or TODO.md in full (3,000+ lines combined).
+  `grep -n` for the relevant section/ID first, then Read with `offset`/`limit`:
+  - File structure, DB schema, Flask routes, GUI screens → matching PROJECT.md section.
+  - Bug/task context → `BUG-<NNN>` / `TODO-<NNN>` or keywords in BUGS.md / TODO.md.
+- Same for any large file: grep first, targeted Read after. Full reads only for
+  files under ~150 lines. Never `sed`/`head`/`tail` via Bash for file inspection.
+- State the files you plan to change before changing them.
 
 ---
 
-## After Every Code Change — Update These Files
+## Environment
 
-**CHANGELOG.md** — prepend one entry per session:
-```
-[YYYY-MM-DD] — <summary>
-Changed: <file>: <what/why>
-Fixed: <file>: <bug + fix>        (if applicable)
-Added: <file>: <new capability>   (if applicable)
-```
+- Python is `.venv/bin/python3` — bare `python`/`python3` is not on PATH.
+- Backend Flask port **5174**, hardcoded everywhere — change atomically + log in CHANGELOG.
 
-**PROJECT.md** — update if any of these changed: file structure, DB schema, Flask routes, GUI tabs, dependencies. Add row to Change Log table.
+## Verification
 
-**BUGS.md / BUGS_DONE.md**
-```
-BUG-<NNN>: <title>
-Status: Open | Fixed | Wontfix
-File(s): <file:line>
-Reported: YYYY-MM-DD
-Fixed: YYYY-MM-DD
-Root cause: ...
-Fix: ...
-```
-New bug → add Open to BUGS.md. Fixed → move to top of BUGS_DONE.md.
-
-**TODO.md / TODO_DONE.md**
-```
-TODO-<NNN>: <title>
-Priority: High | Medium | Low
-Status: Open | In Progress | Done | Cancelled
-Added: YYYY-MM-DD
-Closed: YYYY-MM-DD
-Description: ...
-```
-New task → TODO.md. Done/cancelled → move to top of TODO_DONE.md.
+- Backend changes: restart before verifying (`/backend-restart`) — stale processes
+  cause false "fix didn't work" confusion.
+- gui_next changes: `/gui-check` (typecheck + production build). **No screenshots
+  or browser/UI automation** — the user verifies visuals themselves.
+- Python syntax check before done: `.venv/bin/python3 -m py_compile <file>`
 
 ---
 
@@ -63,44 +39,44 @@ New task → TODO.md. Done/cancelled → move to top of TODO_DONE.md.
 
 - Python 3.11+, PEP 8, 4-space indent, max 100 chars/line.
 - Type hints + Google-style docstrings on all new public functions/classes.
-- No `print()` — use `logging`.
-- No hardcoded paths outside module constants.
-- GUI↔backend calls: QThread workers only, never main thread.
+- No `print()` — use `logging`. No hardcoded paths outside module constants.
 - SQLite changes: `ALTER TABLE` + `try/except` for idempotency. Never assume clean DB.
-- Port **5174** hardcoded everywhere — change atomically + log in CHANGELOG.
 - `requirements.txt` pinned exact versions. Update it + PROJECT.md on any dep change.
-- Syntax check before done: `.venv/bin/python3 -m py_compile <file>`
 
 ---
 
-## Backend Development
+## Bookkeeping
 
-- After making backend code changes, ALWAYS restart the backend before verifying behavior. Stale running processes are a common source of false "fix didn't work" confusion.
+Every session that changes code ends with the repo's bookkeeping: CHANGELOG.md
+entry, BUGS/BUGS_DONE and TODO/TODO_DONE moves, PROJECT.md change-log row.
+Run `/session-close` — entry formats and numbering rules live in that skill.
 
----
+User-facing feature changes also require locale updates: `/gui-next-i18n`
+(gui_next) or `/i18n-update` (legacy gui/).
 
-## Workflow Conventions
+CHANGELOG.md holds a rolling ~2-month window; when a month rotates out, move its
+entries to the top of CHANGELOG_ARCHIVE.md (keep newest-first order).
 
-When updating user-facing features, also update: (1) CHANGELOG.md, (2) locale/i18n files, and (3) any relevant TODO entries. These are part of every feature change in this repo.
-
----
-
-## Known Pitfalls
-
-- For encoding/filename bugs, check BOTH Unicode normalization (curly vs straight apostrophes) AND Windows-1252 byte encoding (`\x92` etc). The repo handles legacy md5/checksum files that may be cp1252.
+Subdirectory rules live in `gui/CLAUDE.md` and `tools/tapematch/CLAUDE.md` —
+they load automatically when working there; don't duplicate them here.
 
 ---
 
 ## Debugging
 
-- Before diagnosing a bug, ask: "is the running process the latest code?" Verify with a version check or restart before deep investigation.
+- First question: "is the running process the latest code?" Restart or
+  version-check before deep investigation.
 - Find root cause before fixing. State hypothesis, verify with logs/tests.
 - Multi-symptom bug? Look for one shared root cause.
 - "Still didn't work" → don't retry same fix. Re-read error, find different cause.
+- Encoding/filename bugs: check BOTH Unicode normalization (curly vs straight
+  apostrophes) AND Windows-1252 bytes (`\x92` etc). Legacy md5/checksum files
+  may be cp1252.
 
 ---
 
 ## Commits
+
 ```
 <type>(<scope>): <description>
 types: feat | fix | refactor | docs | chore | test
