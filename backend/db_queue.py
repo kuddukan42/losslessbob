@@ -80,6 +80,10 @@ class DatabaseWriteQueue:
                 except Exception:
                     pass
                 result_box[1] = exc
+                if result_event is None:
+                    # Fire-and-forget submission: no caller will ever see this
+                    # exception, so the log line is the only record of the failure.
+                    _log.warning("db-writer: async write failed: %s", exc, exc_info=True)
             finally:
                 self._queue.task_done()
                 if result_event is not None:
@@ -115,7 +119,8 @@ class DatabaseWriteQueue:
 
         Args:
             fn: Callable that receives the writer connection.  Exceptions are
-                silently discarded (logged at DEBUG level inside the thread).
+                not re-raised to any caller; the writer thread logs them at
+                WARNING level.
         """
         self._queue.put((fn, None, [None, None]))
 

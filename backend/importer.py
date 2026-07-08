@@ -1,4 +1,5 @@
 import hashlib
+import logging
 import sqlite3
 import threading
 from datetime import UTC, datetime
@@ -17,6 +18,8 @@ from backend.db import (
 )
 from backend.db_queue import get_write_queue
 from backend.paths import DATA_DIR
+
+_log = logging.getLogger(__name__)
 
 # --- Shared import progress state (mirrors _scrape_state pattern) ---
 _import_state: dict = {
@@ -65,13 +68,15 @@ def _import_flat_file(flat_path, temp_db_path):
         "(checksum TEXT, filename TEXT, chk_type TEXT, lb_number INTEGER, xref INTEGER)"
     )
     inserted = 0
+    skipped = 0
     with open(flat_path, encoding="utf-8", errors="replace") as f:
-        for line in f:
+        for lineno, line in enumerate(f, start=1):
             line = line.strip()
             if not line or line.startswith('#'):
                 continue
             parts = line.split('\t')
             if len(parts) < 4:
+                skipped += 1
                 continue
             try:
                 conn.execute(
@@ -81,10 +86,15 @@ def _import_flat_file(flat_path, temp_db_path):
                 inserted += 1
                 if inserted % 10_000 == 0:
                     _set_state(rows_parsed=inserted, message=f"Parsing flat file — {inserted:,} rows read")
-            except Exception:
-                pass
+            except (ValueError, sqlite3.Error):
+                skipped += 1
+                if skipped <= 5:
+                    _log.warning("flat file line %d unparseable, skipped: %.120s", lineno, line)
     conn.commit()
     conn.close()
+    if skipped:
+        _log.warning("flat file import: %d malformed line(s) skipped (%d inserted)",
+                     skipped, inserted)
     _set_state(rows_parsed=inserted, rows_total=inserted,
                message=f"Parsed {inserted:,} rows")
     return inserted

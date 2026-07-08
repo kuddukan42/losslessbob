@@ -5045,6 +5045,32 @@ def set_folder_link(folder_path: str, lb_number: int, note: str = "", db_path=No
     )
 
 
+def replace_folder_link(folder_path: str, lb_number: int, note: str = "", db_path=None) -> None:
+    """Replace all links for a folder with a single folder→LB link.
+
+    Used by the user "Pin & continue" flow: a re-pin must supersede any
+    previous pin (or auto-written multi-LB links) for the folder, unlike
+    :func:`set_folder_link`, which is additive.
+
+    Args:
+        folder_path: Absolute path of the folder.
+        lb_number: LB number the folder should be pinned to.
+        note: Optional user note.
+        db_path: Optional path to the SQLite database file.
+    """
+    _fp, _lb, _note = folder_path, lb_number, note
+
+    def _run(c):
+        c.execute("DELETE FROM folder_lb_link WHERE folder_path=?", (_fp,))
+        c.execute(
+            "INSERT INTO folder_lb_link (folder_path, lb_number, note, linked_at) "
+            "VALUES (?,?,?,CURRENT_TIMESTAMP)",
+            (_fp, _lb, _note),
+        )
+
+    get_write_queue().execute(_run)
+
+
 def delete_folder_link(folder_path: str, db_path=None) -> None:
     """Remove a folder→LB link.
 
