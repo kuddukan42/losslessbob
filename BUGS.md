@@ -1,33 +1,4 @@
 
-BUG-236: gui_next renderer has 14 pre-existing TypeScript errors in ScreenScraper.tsx
-Status: Open
-File(s): gui_next/src/renderer/src/screens/ScreenScraper.tsx (e.g. lines 831–832)
-Reported: 2026-07-04
-Root cause: `number | null` values passed to props typed `string | number` (TS2322), found while
-  validating the /gui-check typecheck commands (`tsc --noEmit -p tsconfig.web.json`). These predate
-  today's session; `electron-vite build` does not typecheck, so they never blocked builds.
-Fix: TBD. Null-guard or widen the prop types; /gui-check treats these 14 as the known baseline
-  until fixed, so new errors remain distinguishable.
-
-BUG-233: WTRF torrent saved with junk filename "UTF-8.torrent" from RFC 5987 Content-Disposition
-Status: Open
-File(s): backend/wtrf_scraper.py:555 (_download_torrent Content-Disposition parse)
-Reported: 2026-07-01
-Root cause: The filename regex `filename[^;=\n]*=\s*["\']?([^"\'\n;]+)` matches the RFC 5987
-  extended form `filename*=UTF-8''realname.torrent`: `[^;=\n]*` consumes the `*`, then the capture
-  `[^"\'\n;]+` stops at the first `'`, yielding `UTF-8` instead of the real name. When SMF sends
-  only (or first) the `filename*=` parameter, every downloaded torrent is saved as `UTF-8.torrent`.
-  Observed while verifying BUG-232 (LB-16644 → topic 60289 saved as UTF-8.torrent).
-  Confirmed 2026-07-01 (TODO-197 re-run): because every download in a batch run shares this
-  identical filename, each one overwrites the last — of 30 matches in an 85-entry batch run, only
-  1 file survived on disk afterward (the final entry processed). The 16 entries added to
-  qBittorrent in the same loop iteration were unaffected (read before the next overwrite), but the
-  other 14 downloaded-only entries have no retrievable file and need a per-LB re-fetch once fixed.
-  This is now a data-loss bug in batch mode, not just a cosmetic naming issue.
-Fix: TBD. Prefer the plain `filename="..."` parameter, and when only `filename*=` is present strip
-  the `charset''` prefix and URL-decode the remainder (RFC 5987). Fall back to the existing
-  attach-id / LB-based name when neither yields a usable value.
-
 BUG-230: GNOME Wayland dev window still shows generic gear icon in the dock/taskbar
 Status: Open
 File(s): gui_next/src/main/index.ts, gui_next/resources/losslessbob-next.desktop
@@ -50,81 +21,6 @@ Fix: TBD. Next steps to try: confirm the installed .desktop is actually being ma
   PNG path); force a known app_id and match the .desktop basename to it exactly; test a packaged
   AppImage to confirm the shipped app is correct and scope this to dev-only.
 
-BUG-223: tapematch analysis.md attribution line is hardcoded, not the real model
-Status: Fixed
-File(s): .claude/commands/tapematch-batch.md:4, data/tapematch/runs/*/analysis.md
-Reported: 2026-06-24
-Fixed: 2026-06-24
-Root cause: The tapematch-batch skill (step 4) instructed every session to write the literal
-  string `*Claude claude-sonnet-4-6 — …*` regardless of which model actually ran. gen_analysis.py
-  also hardcodes MODEL = "claude-sonnet-4-6". As a result the attribution in all analysis.md files
-  reflects nothing about the writing model. Session-transcript cross-reference proved 10 analyses
-  (1989-08-29, 1989-08-31, 1989-11-02, 1990-06-29, 1990-06-30, 1990-07-07, 1990-07-08, 1990-08-12,
-  1990-08-20, 1990-09-05) were actually written by claude-haiku-4-5 but stamped sonnet. (10 other
-  files were correctly self-stamped claude-opus-4-8 from a real opus session.)
-Fix: Skill step 4 now requires the actual running session model id (no fixed string). The 10
-  mislabeled haiku files corrected to `*Claude claude-haiku-4-5 — …*`. The remaining ~690 analyses
-  were confirmed by the user to have been written by sonnet, so their existing label is correct.
-  Final on-disk attribution: 690 sonnet, 10 haiku, 10 opus. gen_analysis.py still hardcodes MODEL
-  — left for a follow-up if that path is reused.
-
-BUG-217: Incremental crawler does not pick up new LB website pages when posted
-Status: Fixed
-File(s): backend/site_crawler.py, backend/db.py
-Reported: 2026-06-22
-Fixed: 2026-06-26
-Root cause: crawl() pre-populated `visited` from get_downloaded_urls() — all URLs with
-  status 'downloaded'/'not_found'/'skipped'. _seed() skips URLs already in `visited`,
-  so SEED_URLS (including /bynumber/LBMbynumber.html, the master LB index) were never
-  re-queued after their initial download. The If-Modified-Since logic was present but
-  dead for already-downloaded pages; the queue only ever contained status='pending'/'failed'
-  URLs, which are empty after a successful full crawl. Result: no index page was ever
-  re-fetched incrementally, so newly posted LB detail pages linked from the index were
-  never discovered.
-Fix: Before queuing, temporarily remove SEED_URLS + start_url from `visited` so _seed()
-  re-queues them every run. Load their stored last_modified from site_inventory into
-  lm_map so If-Modified-Since is sent — a 304 means nothing changed (cheap), a 200 means
-  the index changed and new links are extracted and queued. Added get_inventory_last_modified()
-  to backend/db.py to support the targeted last_modified lookup.
-
-
-BUG-214: Library — family label slot conflates source type with TapeMatch match group
-Status: Fixed
-File(s): gui_next/src/renderer/src/screens/ScreenLibrary.tsx:1251-1263, 1880-1889
-Reported: 2026-06-19
-Fixed: 2026-06-19
-Root cause: familiesOf() rendered a single bold label per family row using
-  `famLabel || sourceType` — famLabel is TapeMatch's match-group name ("Solo",
-  "Family A", "Family B"...), only present once TapeMatch has processed that
-  date; sourceType is the tape's source ("Audience", "Soundboard"...). Two
-  unrelated dimensions sharing one text slot meant sibling rows for the same
-  AUD-source date could read "Solo" or "Audience" with no visual cue that
-  these aren't parallel categories — confusing in the UI (reported via
-  screenshot of McCarter Theater 1990-01-15 rows).
-Fix: label now always shows source type (consistent across every row).
-  TapeMatch's match-group name moved to its own `tmLabel` field, rendered as
-  a separate info-toned Pill badge next to the source pill, with a tooltip
-  clarifying it's a TapeMatch acoustic match group.
-Follow-up (2026-06-19): the spelled-out source label (e.g. "Audience") was
-  itself 100% redundant with the existing AUD/SBD/etc. source pill once the
-  fix above made it always derive from the same `fam.src` value (reported via
-  a second screenshot showing "AUD" + "Audience" side by side on every row).
-  Removed the FamilyGroup.label field and its rendered span entirely — the
-  source pill alone now carries that information; tmLabel badge unaffected.
-
-BUG-213: Library — TapeMatch singletons appear as orphan "Recording LB-XXXXX" rows
-Status: Fixed
-File(s): backend/tapematch_sync.py:136
-Reported: 2026-06-19
-Fixed: 2026-06-19
-Root cause: _sync_one_date filtered out any TapeMatch family with only 1 member (len >= 2 guard).
-  Recordings TapeMatch analyzed and found acoustically distinct from all siblings on the same date
-  were silently excluded from recording_families, so the frontend had no fam assignment for them
-  and fell through to the "Recording" label fallback in familiesOf().
-Fix: Extract singletons after the >= 2 filter; sync them into recording_families and
-  tapematch_family_meta with label='Solo', by='ai'. Frontend already handles single-member
-  families correctly — they now render as "└ Solo LB-XXXXX" at family level.
-
 BUG-210: backend/lossless_bob.db keeps reappearing in repo root (untracked, empty)
 Status: Open
 File(s): backend/lossless_bob.db (unknown origin)
@@ -141,75 +37,6 @@ Root cause: Unconfirmed. The real DB path is APP_ROOT/data/losslessbob.db (no un
 Fix: TBD — pending repro. Stray file deleted from working tree each time it's noticed; it has
   never been committed (untracked since it doesn't match any .gitignore rule, but also isn't
   staged/added).
-
-BUG-208: Pipeline — "File all" and explicit filing bypass a pending rename
-Status: Fixed
-File(s): gui_next/src/renderer/src/screens/ScreenPipeline.tsx:1376-1377 (fileableRows/selectedFileable), 1679 (applyFile), 993 (CollectReadyDetail)
-Reported: 2026-06-17
-Fixed: 2026-06-17
-Root cause: fileableRows and selectedFileable only checked file.status==='warn' and dest; a folder
-  with a pending rename (rename.status==='warn' && proposed set) could be included and silently
-  filed under its old name. applyFile had no guard either. CollectReadyDetail also lacked a
-  useTranslation() call, causing t() to be undefined when step.owned && existing_disk_path
-  (latent crash from BUG-204 fix).
-Fix: Exclude rename-pending rows from fileableRows and selectedFileable. Add early-return guard in
-  applyFile with toast. Add useTranslation() + renamePending banner + disabled File button in
-  CollectReadyDetail. Added 3 i18n keys (pipeline.file.renamePending,
-  pipeline.collect.renamePendingTitle/Body) to all 6 locales.
-
-BUG-205: Pipeline — filing creates duplicate visible rows; row stays in running section after completion
-Status: Fixed
-File(s): gui_next/src/renderer/src/screens/ScreenPipeline.tsx:1369,1393,1376-1377,1760
-Reported: 2026-06-17
-Fixed: 2026-06-17
-Root cause: shelfVis filter did not exclude running rows, so a row being filed (bucket='shelf', running=true)
-  appeared in both the Running section AND the Shelf section simultaneously. Also: counts.shelf and
-  fileableRows included running rows, inflating counts during filing. _pipelineCache not updated on
-  successful filing meant a component remount would restore the row as "ready to file."
-Fix: Added !r.running to shelfVis, counts.shelf, fileableRows, selectedFileable. Updated _pipelineCache
-  inside the success setRows callback after filing completes.
-
-BUG-204: Pipeline — filing a folder already in collection at a different path silently loses the new path
-Status: Fixed
-File(s): backend/filer.py:534-550, backend/app.py:5684-5687, gui_next/src/renderer/src/screens/ScreenPipeline.tsx
-Reported: 2026-06-17
-Fixed: 2026-06-18
-Root cause: add_to_collection uses INSERT OR IGNORE; lb_number has a UNIQUE constraint in
-  my_collection, so if the lb was already registered at any path, the INSERT silently did
-  nothing. The folder was physically moved to the new location but the collection record
-  still pointed to the old (now missing) path. No warning was shown before filing.
-Fix: filer.py _run(): after filesystem op succeeds, check for an existing my_collection row
-  by lb_number; if found, call update_collection(folder_name, disk_path) to update the
-  path instead of relying on INSERT OR IGNORE. app.py file-step: query disk_path alongside
-  lbdir_verified_at and include existing_disk_path in the step result. Frontend: when
-  owned=true and existing_disk_path is set, show a warn banner before the File button
-  explaining that the collection record will be updated. All 6 locale files updated.
-
-BUG-203: Pipeline — shelving a folder leaves the File button visible and item counts in "File all"
-Status: Fixed
-File(s): gui_next/src/renderer/src/screens/ScreenPipeline.tsx
-Reported: 2026-06-17
-Fixed: 2026-06-17
-Root cause: Shelving only changed `bucket` to 'shelf', but 'shelf' is also the natural "ready to file"
-  state. So a shelved folder still satisfied the File button condition (file.status==='warn' && dest set)
-  and was still included in fileableRows / counts.shelf used by "File all N".
-Fix: Added `shelved: boolean` flag to PipelineRow. Shelve sets it; unshelve clears it and restores the
-  correct bucket (shelf if steps are all done, needs otherwise). File button, fileableRows,
-  selectedFileable, and counts.shelf all exclude shelved rows. deriveFolderStatus returns "Shelved /
-  Deferred" when shelved flag is set.
-
-BUG-202: Pipeline — blocked folders show "Needs you" in sidebar panel; File button visible on blocked rows
-Status: Fixed
-File(s): gui_next/src/renderer/src/components/pipeline/PipelineParts.tsx:256-289
-         gui_next/src/renderer/src/screens/ScreenPipeline.tsx:2378
-Reported: 2026-06-17
-Fixed: 2026-06-17
-Root cause: QueueRow in PipelineParts always used BUCKET[folder.bucket].label; since all "bad"
-  severity folders land in bucket "needs", they showed "Needs you" not "Blocked". Separately,
-  the File button in the main table row checked only file.status === 'warn' without verifying
-  that upstream steps are not blocked.
-Fix: QueueRow now checks if any step has state 'blocked' and overrides tone+label to bad/Blocked.
-  File button condition extended to exclude rows where any of verify/lookup/lbdir/rename is bad.
 
 BUG-200: tapematch — report.md for 1999-02-25 Portland, Maine contains another session's tapematch output verbatim
 Status: Open
@@ -229,39 +56,6 @@ Fix: TBD — re-run tapematch for the 1999-02-25 Portland, Maine session to rege
   LB-09627/LB-12715. Also worth checking the run/report-generation pipeline for how a
   different session's stdout could get attached, in case other run dirs are silently
   affected without an obvious Coverage-table/tapematch-output mismatch to notice it by.
-
-
-BUG-195: Pipeline — incomplete-match folders (FFP-only) show yellow LBDIR/rename/file and allow action
-Status: Fixed
-File(s): backend/app.py:5535-5556, gui_next/src/renderer/src/screens/ScreenPipeline.tsx:688,761-785
-Reported: 2026-06-17
-Fixed: 2026-06-17
-Root cause: When lookup resolved an LB# from a partial checksum match (e.g. FFP matched but
-  MD5 did not), the local lb_number variable stayed set. Downstream steps (lbdir, rename, file)
-  all gate on lb_number being non-null, so they ran and showed actionable UI even though the
-  files on disk hadn't been confirmed against the archive. The frontend warn+lb_number branch
-  also showed no pin option, so there was no recovery path.
-Fix: Backend clears lb_number for downstream steps after an incomplete-match lookup unless
-  pinned_lb is set (user explicitly confirmed the folder via "Pin & continue"). Frontend:
-  warn+lb_number branch now passes onPin/pinBusyLb to LookupDetail and explains the block.
-  handlePin now runs all downstream steps (lookup/lbdir/rename/file) after pinning, not
-  just re-lookup.
-
-
-BUG-193: Scraper — new shows not discovered; hardcoded sitemap list misses dynamic sitemaps
-Status: Fixed
-File(s): backend/bobdylan_scraper.py:32-36, 123-149
-Reported: 2026-06-15
-Fixed: 2026-06-15
-Root cause: _SITEMAP_URLS was hardcoded to 3 URLs. WordPress generates date sitemaps
-  dynamically; as the site grows past 2000 entries a new numbered file appears. Sitemaps 2
-  and 3 returned 404 (silent in _fetch), so only sitemap 1 was used. New shows landing in
-  sitemap 2+ were never discovered and therefore never scraped.
-Fix: Added _get_date_sitemap_urls() which fetches wp-sitemap.xml (the WP sitemap index)
-  and extracts all posts-date sitemaps dynamically. Falls back to _SITEMAP_URLS_FALLBACK
-  if the index is unavailable. Also added WARNING log for 404 responses in _fetch so
-  future silent failures are visible.
-
 
 BUG-175: LBDIR reconcile leaves self-referencing/regenerated entries permanently "MD5 mismatch" — BUG-174 fix may not be the final answer
 Status: Open
@@ -307,7 +101,6 @@ Fix: TBD — discussed but not yet implemented: extend find_reconcilable_files w
   counts/integrity status entirely, since they can never pass by MD5 regardless of
   source. Revisit after more thought — user is not yet convinced BUG-174 is the final
   word here.
-
 
 BUG-120: Pipeline verify mismatch — 2 folders where audio no longer matches stored checksums
 Status: Open
