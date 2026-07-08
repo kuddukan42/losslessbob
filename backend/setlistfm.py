@@ -206,16 +206,21 @@ def run_update(
     api_key: str | None = None,
     force: bool = False,
 ) -> int:
-    """Fetch all Bob Dylan setlists from setlist.fm and upsert into the DB.
+    """Fetch Bob Dylan setlists from setlist.fm and upsert into the DB.
 
-    Paginates through /artist/{mbid}/setlists (20 per page).  With force=False
-    uses INSERT OR IGNORE so existing rows are not overwritten.  With
-    force=True replaces all rows.
+    Paginates through /artist/{mbid}/setlists (20 per page). The API returns
+    shows newest-first. With force=False uses INSERT OR IGNORE so existing
+    rows are not overwritten, and pagination early-exits as soon as a full
+    page comes back with zero newly-inserted rows (i.e. every show on that
+    page was already known) — this makes routine incremental updates cheap
+    instead of always walking all ~200 pages. With force=True replaces all
+    rows and always walks every page.
 
     Args:
         db_path: Optional DB path override.
         api_key: API key; if None, loaded from meta table.
-        force: If True, replace existing show/track data.
+        force: If True, replace existing show/track data and disable the
+            early-exit optimization (walk every page unconditionally).
 
     Returns:
         Number of shows stored.
@@ -248,9 +253,29 @@ def run_update(
 
         shows_stored = 0
         tracks_stored = 0
+        pages_fetched = 0
+        stop_reason = "completed"
 
-        def _write_page(conn, show_rows, track_rows, _force):
+        def _write_page(conn, show_rows, track_rows, _force) -> int:
+            """Upsert one page's rows; return the count of newly-inserted shows.
+
+            With force=True every row is REPLACEd (treated as new). With
+            force=False, INSERT OR IGNORE's cursor.rowcount is 1 for a row
+            that was actually inserted and 0 for one ignored as a duplicate —
+            summing that tells the caller whether this page held any show
+            not already present in the DB.
+
+            Args:
+                conn: Writer-thread SQLite connection (from db_queue).
+                show_rows: Parsed setlistfm_shows rows for this page.
+                track_rows: Parsed setlistfm_setlist rows for this page.
+                _force: If True, replace existing rows unconditionally.
+
+            Returns:
+                Number of show rows newly inserted (not already present).
+            """
             nonlocal shows_stored, tracks_stored
+            new_count = 0
             if _force:
                 for sr in show_rows:
                     conn.execute(
@@ -265,9 +290,10 @@ def run_update(
                         "DELETE FROM setlistfm_setlist WHERE setlistfm_id=?",
                         (sr["setlistfm_id"],),
                     )
+                new_count = len(show_rows)
             else:
                 for sr in show_rows:
-                    conn.execute(
+                    cur = conn.execute(
                         """INSERT OR IGNORE INTO setlistfm_shows
                            (setlistfm_id, date_str, tour_name, venue_name,
                             city, country, info, setlistfm_url)
@@ -275,6 +301,8 @@ def run_update(
                                    :city,:country,:info,:setlistfm_url)""",
                         sr,
                     )
+                    if cur.rowcount:
+                        new_count += 1
             conn.executemany(
                 """INSERT OR IGNORE INTO setlistfm_setlist
                    (setlistfm_id, set_index, set_name, is_encore,
@@ -287,52 +315,88 @@ def run_update(
             )
             shows_stored += len(show_rows)
             tracks_stored += len(track_rows)
+            return new_count
 
-        # Process page 1 results
-        page_setlists = data.get("setlist") or []
-        show_rows, track_rows_flat = [], []
-        for sl in page_setlists:
-            sr, tr = _parse_setlist(sl)
-            if sr["setlistfm_id"]:
-                show_rows.append(sr)
-                track_rows_flat.extend(tr)
-        if show_rows:
-            wq.execute(lambda c, _s=show_rows, _t=track_rows_flat, _f=force:
-                       _write_page(c, _s, _t, _f))
-        _set(page=1, shows_stored=shows_stored, tracks_stored=tracks_stored)
+        def _process_page(page_num: int, page_data: dict) -> tuple[int, int]:
+            """Parse and store one fetched page's setlists.
 
-        # Fetch remaining pages
-        for page in range(2, total_pages + 1):
-            if _is_stop_requested():
-                _log.info("setlistfm: stop requested at page %d", page)
-                break
-            _set(page=page, message=f"Page {page}/{total_pages}")
-            time.sleep(_PAGE_DELAY)
+            Args:
+                page_num: 1-based page number, used for status/log messages.
+                page_data: Raw JSON dict returned by :func:`_fetch_page`.
 
-            data = _fetch_page(page, resolved_key)
-            if not data:
-                _log.error("setlistfm: failed page %d", page)
-                with _state_lock:
-                    _state["errors"] += 1
-                continue
-
-            page_setlists = data.get("setlist") or []
+            Returns:
+                (item_count, new_count) — total shows on the page, and how
+                many of those were newly inserted (0 if force=True never
+                applies here since it always counts as "new").
+            """
+            page_setlists = page_data.get("setlist") or []
             show_rows, track_rows_flat = [], []
             for sl in page_setlists:
                 sr, tr = _parse_setlist(sl)
                 if sr["setlistfm_id"]:
                     show_rows.append(sr)
                     track_rows_flat.extend(tr)
+            new_count = 0
             if show_rows:
-                wq.execute(lambda c, _s=show_rows, _t=track_rows_flat, _f=force:
-                           _write_page(c, _s, _t, _f))
-            _set(shows_stored=shows_stored, tracks_stored=tracks_stored)
+                new_count = wq.execute(
+                    lambda c, _s=show_rows, _t=track_rows_flat, _f=force:
+                    _write_page(c, _s, _t, _f)
+                )
+            _set(page=page_num, shows_stored=shows_stored, tracks_stored=tracks_stored)
+            return len(page_setlists), new_count
+
+        # Process page 1 results
+        pages_fetched = 1
+        item_count, new_count = _process_page(1, data)
+
+        early_exit = (
+            not force and item_count > 0
+            and item_count >= items_per_page and new_count == 0
+        )
+        if early_exit:
+            stop_reason = "early-exit: page 1 fully known"
+            _log.info(
+                "setlistfm: early exit after page 1/%d — full page (%d shows) all "
+                "already known, skipping remaining pages", total_pages, item_count,
+            )
+        else:
+            # Fetch remaining pages
+            for page in range(2, total_pages + 1):
+                if _is_stop_requested():
+                    stop_reason = f"stop requested at page {page}"
+                    _log.info("setlistfm: stop requested at page %d", page)
+                    break
+                _set(page=page, message=f"Page {page}/{total_pages}")
+                time.sleep(_PAGE_DELAY)
+
+                data = _fetch_page(page, resolved_key)
+                if not data:
+                    _log.error("setlistfm: failed page %d", page)
+                    with _state_lock:
+                        _state["errors"] += 1
+                    continue
+                pages_fetched += 1
+
+                item_count, new_count = _process_page(page, data)
+
+                if (not force and item_count > 0
+                        and item_count >= items_per_page and new_count == 0):
+                    stop_reason = f"early-exit: page {page} fully known"
+                    _log.info(
+                        "setlistfm: early exit at page %d/%d — full page (%d shows) "
+                        "all already known, stopping incremental update",
+                        page, total_pages, item_count,
+                    )
+                    break
 
         _set(
             status="done",
             message=f"Stored {shows_stored} shows, {tracks_stored} tracks",
         )
-        _log.info("setlistfm: done — %d shows, %d tracks", shows_stored, tracks_stored)
+        _log.info(
+            "setlistfm: done — %d shows, %d tracks across %d page(s) fetched (%s)",
+            shows_stored, tracks_stored, pages_fetched, stop_reason,
+        )
         return shows_stored
 
     except Exception as exc:
