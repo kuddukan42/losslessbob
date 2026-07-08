@@ -340,6 +340,31 @@ def hash_tree(root: Path) -> str:
     return tree_digest.hexdigest()
 
 
+def _source_tree_digest(folder: Path) -> str:
+    """Source-side tree digest for filing verification, served from the P1 cache.
+
+    Source-only + fallback: derives the digest from cached per-file sha256s
+    (byte-for-byte identical to hash_tree — design §2c) and falls back to a
+    fresh hash_tree on ANY cache-layer error. The destination side must never
+    use this — it is always freshly hash_tree'd on real bytes after the copy
+    (hash-verify-before-remove invariant, design §2c).
+
+    Args:
+        folder: Absolute source folder path.
+
+    Returns:
+        Hex digest equal to hash_tree(folder).
+    """
+    try:
+        return database.derive_tree_digest(str(folder))
+    except Exception as exc:  # noqa: BLE001 — never let the cache break filing
+        logger.warning(
+            "_source_tree_digest: cache derive failed for %s, hashing fresh: %s",
+            folder, exc,
+        )
+        return hash_tree(folder)
+
+
 def _sync_qbt_location(lb_number: int, old_folder: Path, new_folder: Path, db_path=None) -> tuple[bool, str | None]:
     """Best-effort qBittorrent save-path sync after a successful filing move.
 
@@ -465,6 +490,28 @@ def start_file_job(
             "error_code": "src_missing",
         }
 
+    # Stale-verify guard (design §3a auto-collect hard rule, enforced server-side
+    # for ALL filing). This closes the window where an auto-collect (or File-all)
+    # fires on a row whose verify verdict predates an on-disk change: recomputing
+    # the fingerprint here IS the design's R3 sweep, run in the same request that
+    # arms the collect. A folder that never went through the pipeline has no
+    # state — proceed with no opinion. Cache-layer failure logs and proceeds:
+    # it must never block filing.
+    try:
+        state = database.get_folder_state(folder_path)
+        if state is not None and database.folder_fingerprint(folder_path) != state["fingerprint"]:
+            return {
+                "ok": False,
+                "error": ("Folder contents changed since the last pipeline check — "
+                          "re-run the pipeline for this folder"),
+                "error_code": "stale_verify",
+            }
+    except Exception as exc:  # noqa: BLE001 — never block filing on a cache error
+        logger.warning(
+            "start_file_job: stale-verify guard failed for %s, proceeding: %s",
+            folder_path, exc,
+        )
+
     resolution = resolve_destination_for_lb(lb_number, folder_path, mount_id_override, db_path)
     if not resolution["ok"]:
         return {"ok": False, "error": resolution["error"], "error_code": resolution["error_code"]}
@@ -518,7 +565,7 @@ def start_file_job(
                 shutil.copytree(str(folder), str(dest), copy_function=_progress_copy_file)
                 with _FILE_JOB_LOCK:
                     _FILE_JOB["stage"] = "verifying"
-                if hash_tree(dest) != hash_tree(folder):
+                if hash_tree(dest) != _source_tree_digest(folder):
                     raise _HashVerificationError(dest)
             else:
                 try:
@@ -532,7 +579,7 @@ def start_file_job(
                     shutil.copytree(str(folder), str(dest), copy_function=_progress_copy_file)
                     with _FILE_JOB_LOCK:
                         _FILE_JOB["stage"] = "verifying"
-                    if hash_tree(dest) != hash_tree(folder):
+                    if hash_tree(dest) != _source_tree_digest(folder):
                         raise _HashVerificationError(dest) from None
                     with _FILE_JOB_LOCK:
                         _FILE_JOB["stage"] = "removing"

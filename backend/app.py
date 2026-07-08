@@ -7,6 +7,7 @@ import shutil
 import sqlite3
 import threading
 import time
+from concurrent.futures import ThreadPoolExecutor
 from datetime import UTC
 from pathlib import Path
 
@@ -75,6 +76,89 @@ _data_dl_state = {
     "files_skipped": [],
 }
 _data_dl_lock = threading.Lock()
+
+# ── Async pipeline job (TODO-205 Phase 2 / P2) ─────────────────────────────────
+_PIPELINE_JOB_LOCK = threading.Lock()
+_PIPELINE_JOB: dict = {
+    "running": False,
+    "folders_total": 0,
+    "folders_done": 0,
+    "in_progress": [],   # list of folder paths currently processing
+    "results": {},       # {folder_path: PipelineRow}
+    "errors": [],        # [{folder, message}]
+    "steps": [],         # requested steps for this run
+    "started_at": None,
+    "cancelled": False,
+}
+_PIPELINE_CANCEL_EVENT = threading.Event()
+
+# ── P3 background LBDIR prefetch (TODO-205 Phase 5) ───────────────────────────
+_LBDIR_PREFETCH_LOCK = threading.Lock()
+_LBDIR_PREFETCH_INFLIGHT: set[int] = set()      # LB numbers currently being fetched
+_LBDIR_PREFETCH_POOL: "ThreadPoolExecutor | None" = None   # lazy, max_workers=2
+
+
+def _lbdir_prefetch_worker(lb_number: int) -> None:
+    """Fetch an LB's lbdir attachment in the background (best-effort).
+
+    Mirrors the inline lbdir retrieval in ``_pipeline_process_folder``: scrape the
+    LB and, if its lbdir attachment is still missing afterwards, resolve the
+    canonical alias and scrape that too. All failures are swallowed — prefetch is
+    advisory; the lbdir step's synchronous fallback still covers a missed fetch.
+
+    Args:
+        lb_number: The LB number to prefetch the lbdir attachment for.
+    """
+    try:
+        scraper.scrape_entry(lb_number, force=False, download_files=True)
+        if find_lbdir_attachment(lb_number) is None:
+            canonicals = database.resolve_aliases([lb_number])
+            canonical = (
+                canonicals[0]
+                if canonicals and canonicals[0] != lb_number else None
+            )
+            if canonical:
+                scraper.scrape_entry(canonical, force=False, download_files=True)
+    except Exception as exc:
+        _log.warning("lbdir prefetch for LB-%05d failed: %s", lb_number, exc)
+    finally:
+        with _LBDIR_PREFETCH_LOCK:
+            _LBDIR_PREFETCH_INFLIGHT.discard(lb_number)
+
+
+def _submit_lbdir_prefetch(lb_number: int) -> bool:
+    """Kick off a best-effort background fetch of an LB's lbdir attachment.
+
+    The lbdir stage is the slowest, least-reliable link (a live
+    ``scraper.scrape_entry``). Prefetching it the moment Lookup resolves an LB
+    keeps that scrape off the folder's stage chain. Dedup is by LB number, not
+    folder: many folders can resolve to the same LB and only one fetch should
+    run. ``max_workers=2`` bounds site concurrency; ``scrape_entry``'s own
+    politeness (retry backoff, 429 sleep) is reused, so no new rate-limit logic.
+
+    Args:
+        lb_number: The canonical or alias LB number to prefetch.
+
+    Returns:
+        True if the LB is now (or already was) being fetched; False if the
+        submission failed.
+    """
+    global _LBDIR_PREFETCH_POOL
+    with _LBDIR_PREFETCH_LOCK:
+        if lb_number in _LBDIR_PREFETCH_INFLIGHT:
+            return True  # already inflight — dedupe concurrent folders on one LB
+        _LBDIR_PREFETCH_INFLIGHT.add(lb_number)
+        try:
+            if _LBDIR_PREFETCH_POOL is None:
+                _LBDIR_PREFETCH_POOL = ThreadPoolExecutor(
+                    max_workers=2, thread_name_prefix="lbdir-fetch"
+                )
+            _LBDIR_PREFETCH_POOL.submit(_lbdir_prefetch_worker, lb_number)
+        except Exception:
+            _LBDIR_PREFETCH_INFLIGHT.discard(lb_number)
+            return False
+    return True
+
 
 # ── Restart callback (set by main.py so only the Flask server restarts) ───────
 _restart_callback = None
@@ -5897,8 +5981,13 @@ def create_app() -> Flask:
             "db_error":      "DB error",
         }.get(error_code or "", "Blocked")
 
-    def _pipeline_process_folder(folder_path: str, steps: set) -> dict:
-        """Run one or more pipeline steps on a single folder and return a PipelineRow dict."""
+    def _pipeline_process_folder(folder_path: str, steps: set, force: bool = False) -> dict:
+        """Run one or more pipeline steps on a single folder and return a PipelineRow dict.
+
+        When ``force`` is False the two expensive hash steps (verify, lbdir) may be
+        served from the P7 folder-state cache if the folder fingerprint is unchanged;
+        ``force=True`` bypasses the cache and recomputes every requested step.
+        """
         from backend.folder_naming import (
             apply_nft_suffix,
             strip_nft_suffix,
@@ -5936,11 +6025,28 @@ def create_app() -> Flask:
             row["verify"] = {"status": "bad", "label": "Missing"}
             return row
 
+        # ── P7 folder-state cache read (design §2b, §3) ──────────────────────
+        # The fingerprint comparison below IS the design's R3 revalidation sweep:
+        # a per-file os.stat aggregate that changes on any add/remove/rename/
+        # in-place edit. Only the two expensive hash steps (verify, lbdir) are
+        # ever served from cache; the cheap DB-dependent steps (lookup, rename,
+        # file) always run fresh.
+        fp_now = database.folder_fingerprint(folder_path)
+        state = database.get_folder_state(folder_path)
+        cache_valid = (
+            (not force)
+            and state is not None
+            and fp_now is not None
+            and state["fingerprint"] == fp_now
+        )
+
         lb_number: int | None = None
         lb_numbers: list[int] = []
 
         # ── Step 1: Verify ────────────────────────────────────────────────────
-        if "verify" in steps:
+        if "verify" in steps and cache_valid and "verify" in state["steps"]:
+            row["verify"] = {**state["steps"]["verify"], "cached": True}
+        elif "verify" in steps:
             vr = checksum_utils.verify_folder(folder_path)
             _vcounts = {
                 "total":        vr.get("total", 0),
@@ -6099,33 +6205,78 @@ def create_app() -> Flask:
                                          "alias_resolved_from": None,
                                          "summary": summary, "detail": detail}
 
+        # ── P3 prefetch trigger (TODO-205 Phase 5) ───────────────────────────
+        # Once Lookup has settled on an LB, warm its lbdir attachment off the
+        # stage chain — but only if the folder has no lbdir file and none is
+        # cached (both cheap fs/cache checks). Best-effort: a prefetch failure
+        # must never break the lookup step.
+        if lb_number and "lbdir" in steps:
+            try:
+                if (_find_lbdir_in_folder(folder) is None
+                        and find_lbdir_attachment(lb_number) is None):
+                    _submit_lbdir_prefetch(lb_number)
+            except Exception as exc:
+                _log.warning("lbdir prefetch trigger failed for LB-%05d: %s",
+                             lb_number, exc)
+
         # ── Step 3: LBDIR retrieve + verify ──────────────────────────────────
-        if "lbdir" in steps:
+        if ("lbdir" in steps and cache_valid and "lbdir" in state["steps"]
+                and state["steps"]["lbdir"].get("lb_number") == lb_number
+                and not state["steps"]["lbdir"].get("pending_fetch")):
+            # Serve the cached manifest verdict only when it was verified against
+            # the same LB the lookup just resolved (lookup always runs fresh). A
+            # re-pin to a different LB changes lb_number and forces a fresh check.
+            # No set_lbdir_verified() here: nothing was re-verified this run, so
+            # the collection's "Confirmed" date must not be re-stamped.
+            row["lbdir"] = {**state["steps"]["lbdir"], "cached": True}
+        elif "lbdir" in steps:
             if lb_number:
                 lbdir_file = _find_lbdir_in_folder(folder)
+                pending_fetch = False
                 if not lbdir_file:
-                    # Try to pull from attachments cache; scrape if not yet cached.
+                    # Try the attachments cache; if uncached, either park on an
+                    # inflight P3 prefetch or (fallback) scrape synchronously.
                     try:
                         lbdir_src = find_lbdir_attachment(lb_number)
                         if not lbdir_src:
-                            scraper.scrape_entry(lb_number, force=False, download_files=True)
-                            lbdir_src = find_lbdir_attachment(lb_number)
-                        if not lbdir_src:
-                            # Might be an alias — try canonical
+                            # Resolve canonical alias once — needed both for the
+                            # inflight check and the synchronous fallback.
                             canonicals = database.resolve_aliases([lb_number])
                             canonical = canonicals[0] if canonicals and canonicals[0] != lb_number else None
-                            if canonical:
-                                lbdir_src = find_lbdir_attachment(canonical)
-                                if not lbdir_src:
-                                    scraper.scrape_entry(canonical, force=False, download_files=True)
+                            with _LBDIR_PREFETCH_LOCK:
+                                inflight = (
+                                    lb_number in _LBDIR_PREFETCH_INFLIGHT
+                                    or (canonical is not None
+                                        and canonical in _LBDIR_PREFETCH_INFLIGHT)
+                                )
+                            if inflight:
+                                # A P3 prefetch is running for this LB — don't block
+                                # on a live scrape. Park the row instead.
+                                pending_fetch = True
+                            else:
+                                # Safety-net: no prefetch inflight (submission
+                                # failed or never fired) — original synchronous
+                                # scrape path, unchanged.
+                                scraper.scrape_entry(lb_number, force=False, download_files=True)
+                                lbdir_src = find_lbdir_attachment(lb_number)
+                                if not lbdir_src and canonical:
                                     lbdir_src = find_lbdir_attachment(canonical)
+                                    if not lbdir_src:
+                                        scraper.scrape_entry(canonical, force=False, download_files=True)
+                                        lbdir_src = find_lbdir_attachment(canonical)
                         if lbdir_src:
                             shutil.copy2(str(lbdir_src), str(folder / lbdir_src.name))
                             lbdir_file = folder / lbdir_src.name
                     except Exception:
                         pass
 
-                if lbdir_file:
+                if pending_fetch:
+                    # Wire status stays "mute" because the GUI StepStatus type is a
+                    # closed union; the pending_fetch marker carries the "fetching,
+                    # don't escalate" semantics for severity + auto-complete.
+                    row["lbdir"] = {"status": "mute", "label": "Fetching LBDIR…",
+                                    "pending_fetch": True, "check": None}
+                elif lbdir_file:
                     check = checksum_utils.verify_folder_lbdir(str(folder), lbdir_file)
                     chk_status = check.get("status", "fail")
                     n_total = check.get("total", 0)
@@ -6283,13 +6434,47 @@ def create_app() -> Flask:
             row["severity"] = "attn"
         elif row["rename"].get("label") == "Proposed":
             row["severity"] = "ready"
-        elif lb_number and (row["rename"]["status"] == "mute" or row["lbdir"]["status"] == "mute"):
-            # Lookup resolved but downstream steps weren't run yet — not done
+        elif lb_number and (
+            row["rename"]["status"] == "mute"
+            or (row["lbdir"]["status"] == "mute"
+                and not row["lbdir"].get("pending_fetch"))
+        ):
+            # Lookup resolved but downstream steps weren't run yet — not done.
+            # A pending_fetch lbdir is exempt: it's parked on a background prefetch,
+            # not un-run, so it must fall through to the all-ok/mute → done rule.
             row["severity"] = "attn"
         elif all(s in ("ok", "mute") for s in statuses) and "ok" in statuses:
             row["severity"] = "done"
         else:
             row["severity"] = "attn"
+
+        # ── P7 folder-state cache write (design §4d) ─────────────────────────
+        # Recompute the fingerprint here instead of reusing fp_now: the lbdir step
+        # may have copied a manifest file into the folder mid-run, which changes
+        # the per-file stat aggregate — persisting under the stale entry
+        # fingerprint would make the row look invalid on the very next request.
+        try:
+            fp_post = database.folder_fingerprint(folder_path)
+            if fp_post is not None:
+                step_results: dict = {}
+                for name in steps:
+                    if name == "lbdir" and row["lbdir"].get("pending_fetch"):
+                        # Never persist a pending verdict: the folder fingerprint
+                        # doesn't change until the lbdir file is copied in, so a
+                        # stored pending verdict would be served cached:true forever
+                        # even after the prefetch completes.
+                        continue
+                    verdict = dict(row[name])
+                    verdict.pop("cached", None)  # transport annotation, never stored
+                    if name == "lbdir":
+                        # Record the LB this manifest check ran against so the
+                        # rule-3 guard can reject the verdict after a re-pin.
+                        verdict["lb_number"] = lb_number
+                    step_results[name] = verdict
+                database.put_folder_state(folder_path, fp_post, step_results)
+        except Exception as exc:
+            _log.warning("pipeline: folder-state cache write failed for %s: %s",
+                         folder_path, exc)
 
         return row
 
@@ -6297,7 +6482,9 @@ def create_app() -> Flask:
     def pipeline_run() -> Response:
         """Run pipeline steps on a list of folders.
 
-        Body: {folders: [path, ...], steps: ["verify","lookup","lbdir","rename","file"]}
+        Body: {folders: [path, ...], steps: ["verify","lookup","lbdir","rename","file"],
+        force?: bool}. ``force=true`` bypasses the P7 folder-state cache and
+        recomputes every requested step.
         Returns:
             JSON {results: [PipelineRow, ...]}
         """
@@ -6305,12 +6492,182 @@ def create_app() -> Flask:
             data = request.get_json() or {}
             folders: list[str] = data.get("folders", [])
             steps: set[str] = set(data.get("steps", ["verify", "lookup", "lbdir", "rename", "file"]))
+            force: bool = bool(data.get("force", False))
             if not folders:
                 return jsonify({"error": "folders list required"}), 400
-            results = [_pipeline_process_folder(f, steps) for f in folders]
+            results = [_pipeline_process_folder(f, steps, force) for f in folders]
             return jsonify({"results": results})
         except Exception as e:
             return jsonify({"error": str(e)}), 500
+
+    def _pipeline_run_async_coordinator(folders: list[str], steps: list[str], workers: int,
+                                        force: bool = False) -> None:
+        """Drain ``folders`` through ``_pipeline_process_folder`` across worker threads.
+
+        Folders are grouped by source device (``os.stat().st_dev``); a folder whose
+        stat fails is still processed, in a ``None`` group of its own (it yields the
+        "Folder not found" row from ``_pipeline_process_folder``). One daemon thread
+        drains each device group serially (FIFO within the group), while a global
+        ``threading.Semaphore(workers)`` caps how many folders are in flight across
+        *different* groups at once — at most one worker per device, at most
+        ``workers`` folders total, per design doc §4c (parallel hashing on one
+        spindle seek-thrashes).
+
+        Cancellation (`_PIPELINE_CANCEL_EVENT`) is cooperative and checked only
+        between folders (once before a group's next folder, once more right after
+        the semaphore is acquired) — never mid-folder.
+
+        Args:
+            folders: Absolute folder paths to process, in caller-supplied order.
+            steps: Pipeline step names to run per folder (pre-validated by the
+                caller route).
+            workers: Global concurrency cap, already clamped to 1-4.
+            force: When True, bypass the P7 folder-state cache and recompute
+                every requested step for every folder.
+        """
+        groups: dict[object, list[str]] = {}
+        for folder in folders:
+            try:
+                dev = os.stat(folder).st_dev
+            except OSError:
+                dev = None
+            groups.setdefault(dev, []).append(folder)
+
+        semaphore = threading.Semaphore(workers)
+        step_set = set(steps)
+
+        def _process_one(folder: str) -> None:
+            with _PIPELINE_JOB_LOCK:
+                _PIPELINE_JOB["in_progress"].append(folder)
+            try:
+                row = _pipeline_process_folder(folder, step_set, force)
+            except Exception as exc:
+                _log.exception("pipeline async: folder failed: %s", folder)
+                with _PIPELINE_JOB_LOCK:
+                    _PIPELINE_JOB["errors"].append({"folder": folder, "message": str(exc)})
+            else:
+                with _PIPELINE_JOB_LOCK:
+                    _PIPELINE_JOB["results"][folder] = row
+            finally:
+                with _PIPELINE_JOB_LOCK:
+                    if folder in _PIPELINE_JOB["in_progress"]:
+                        _PIPELINE_JOB["in_progress"].remove(folder)
+                    _PIPELINE_JOB["folders_done"] += 1
+
+        def _drain(group_folders: list[str]) -> None:
+            for folder in group_folders:
+                if _PIPELINE_CANCEL_EVENT.is_set():
+                    return
+                semaphore.acquire()
+                try:
+                    if _PIPELINE_CANCEL_EVENT.is_set():
+                        return
+                    _process_one(folder)
+                finally:
+                    semaphore.release()
+
+        drain_threads = [
+            threading.Thread(target=_drain, args=(group_folders,), daemon=True,
+                              name=f"pipeline-drain-{dev}")
+            for dev, group_folders in groups.items()
+        ]
+        for t in drain_threads:
+            t.start()
+        for t in drain_threads:
+            t.join()
+
+        with _PIPELINE_JOB_LOCK:
+            _PIPELINE_JOB["running"] = False
+            _PIPELINE_JOB["cancelled"] = _PIPELINE_CANCEL_EVENT.is_set()
+
+    @app.route("/api/pipeline/run/start", methods=["POST"])
+    def pipeline_run_start() -> Response:
+        """Start an async pipeline run across multiple folders (TODO-205 Phase 2).
+
+        Body: {folders: [path, ...], steps?: ["verify","lookup","lbdir","rename","file"],
+        workers?: int, force?: bool}. ``force=true`` bypasses the P7 folder-state
+        cache and recomputes every requested step. Returns immediately with
+        {ok: true, started: N} or {ok: false, error, error_code}. Poll
+        /api/pipeline/run/status for progress
+        and cancel via /api/pipeline/run/cancel. The synchronous /api/pipeline/run
+        route is unaffected and keeps working standalone.
+        """
+        try:
+            data = request.get_json() or {}
+            folders: list[str] = data.get("folders", [])
+            if not folders:
+                return jsonify({
+                    "ok": False,
+                    "error": "folders list required",
+                    "error_code": "bad_input",
+                }), 400
+
+            allowed_steps = {"verify", "lookup", "lbdir", "rename", "file"}
+            steps = data.get("steps", ["verify", "lookup", "lbdir", "rename", "file"])
+            if not isinstance(steps, list) or not set(steps).issubset(allowed_steps):
+                return jsonify({
+                    "ok": False,
+                    "error": "steps must be a subset of verify, lookup, lbdir, rename, file",
+                    "error_code": "bad_input",
+                }), 400
+
+            try:
+                workers = int(data.get("workers", 2))
+            except (TypeError, ValueError):
+                workers = 2
+            workers = max(1, min(4, workers))
+            force: bool = bool(data.get("force", False))
+
+            with _PIPELINE_JOB_LOCK:
+                if _PIPELINE_JOB["running"]:
+                    return jsonify({
+                        "ok": False,
+                        "error": "A pipeline job is already in progress",
+                        "error_code": "busy",
+                    })
+                _PIPELINE_CANCEL_EVENT.clear()
+                _PIPELINE_JOB["running"] = True
+                _PIPELINE_JOB["folders_total"] = len(folders)
+                _PIPELINE_JOB["folders_done"] = 0
+                _PIPELINE_JOB["in_progress"] = []
+                _PIPELINE_JOB["results"] = {}
+                _PIPELINE_JOB["errors"] = []
+                _PIPELINE_JOB["steps"] = list(steps)
+                _PIPELINE_JOB["started_at"] = time.time()
+                _PIPELINE_JOB["cancelled"] = False
+
+            thread = threading.Thread(
+                target=_pipeline_run_async_coordinator,
+                args=(folders, list(steps), workers, force),
+                daemon=True,
+                name="pipeline-run-coordinator",
+            )
+            thread.start()
+            return jsonify({"ok": True, "started": len(folders)})
+        except Exception as e:
+            return jsonify({"ok": False, "error": str(e)}), 500
+
+    @app.route("/api/pipeline/run/status", methods=["GET"])
+    def pipeline_run_status() -> Response:
+        """Poll progress of the async pipeline job started via /api/pipeline/run/start."""
+        with _PIPELINE_JOB_LOCK:
+            snapshot = dict(_PIPELINE_JOB)
+            snapshot["results"] = dict(_PIPELINE_JOB["results"])
+            snapshot["in_progress"] = list(_PIPELINE_JOB["in_progress"])
+            snapshot["errors"] = list(_PIPELINE_JOB["errors"])
+        return jsonify(snapshot)
+
+    @app.route("/api/pipeline/run/cancel", methods=["POST"])
+    def pipeline_run_cancel() -> Response:
+        """Request cancellation of the running async pipeline job, if any.
+
+        Cancellation is cooperative (see `_pipeline_run_async_coordinator`):
+        in-flight folders finish, no new folder starts.
+        """
+        with _PIPELINE_JOB_LOCK:
+            was_running = _PIPELINE_JOB["running"]
+        _PIPELINE_CANCEL_EVENT.set()
+        return jsonify({"ok": True, "was_running": was_running})
 
     @app.route("/api/folder/rename", methods=["POST"])
     def folder_rename() -> Response:

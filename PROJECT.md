@@ -322,6 +322,35 @@ Index: `idx_lb_alias_canonical ON lb_alias(canonical_lb)`.
 
 Index: `idx_folder_link_lb ON folder_lb_link(lb_number)`.
 
+### `pipeline_file_hash` — Pipeline per-file hash cache (USER table, TODO-205 P1)
+| Column | Type | Notes |
+|--------|------|-------|
+| folder_path | TEXT PK part | Absolute folder path, forward-slash normalised |
+| rel_path | TEXT PK part | Posix-style path relative to folder_path |
+| size | INTEGER NOT NULL | os.stat st_size — validation column, not key |
+| mtime | REAL NOT NULL | os.stat st_mtime — validation column, not key |
+| md5 | TEXT | Full-file md5 hex (audio subset only; NULL otherwise) |
+| ffp | TEXT | FLAC fingerprint hex (FLAC only; NULL otherwise) |
+| sha256 | TEXT | Full-file sha256 hex — feeds filing's tree digest (every file) |
+| hashed_at | TIMESTAMP | Defaults to CURRENT_TIMESTAMP |
+
+A read is a hit only when stored `(size, mtime)` match a fresh `os.stat` (rule R1).
+Paths containing lone surrogates are never cached (SQLite TEXT can't bind them) and
+are always hashed fresh. Design: `instructions/PIPELINE_STRUCTURAL_TIER_DESIGN.md` §2a.
+Inert until structural-tier Phases 3/4 consult it.
+
+### `pipeline_folder_state` — Pipeline per-folder step state (USER table, TODO-205 P7)
+| Column | Type | Notes |
+|--------|------|-------|
+| folder_path | TEXT PK | Absolute folder path, forward-slash normalised |
+| fingerprint | TEXT NOT NULL | Per-file stat-sweep aggregate (never the dir's own mtime) |
+| verify_json / lookup_json / lbdir_json / rename_json / file_json | TEXT | Cached step verdict dicts as JSON; `file_json` is warm-start display only (P8: File is a live view) |
+| steps_json | TEXT | JSON list of step names that have run |
+| updated_at | TIMESTAMP | Defaults to CURRENT_TIMESTAMP |
+
+Index: `idx_pipeline_state_fp ON pipeline_folder_state(fingerprint)`. Cached verdicts
+are valid only while the recomputed fingerprint matches (rules R2/R3, design §3).
+
 ### `bootleg_titles` — LBBCD catalog index (MASTER table)
 | Column | Type | Notes |
 |--------|------|-------|
@@ -871,9 +900,12 @@ scheduled scan interval, checked hourly by `scheduler._integrity_scan_worker`.
 | POST | `/api/collection/routes/bulk` | Upsert routes for a year range. Body: `{year_from, year_to, mount_id, sub_path}`. Returns `{ok, rows_written}`. |
 | DELETE | `/api/collection/routes/<year>` | Remove route for one year. Returns `{ok}`. |
 | GET | `/api/collection/routes/preview/<year>` | Dry-run resolve for a year: returns `{ok, year, mount_label, mount_root, sub_path, dest_parent, mount_online, error, error_code}`. |
-| POST | `/api/pipeline/file/start` | Start filing one folder into the collection (async, background thread). Body: `{folders:[{path, lb_number, mount_id?}]}` — only the first entry is used. `mount_id`, if given and different from the year-routed mount, overrides the destination mount (same routed sub_path). Returns `{ok, error?, error_code?}` immediately; error codes include `busy`, `src_missing`, `no_date`, `no_route`, `mount_offline`, `dest_exists`, `db_error`. Poll `/api/pipeline/file/status` for progress and the final result. |
+| POST | `/api/pipeline/file/start` | Start filing one folder into the collection (async, background thread). Body: `{folders:[{path, lb_number, mount_id?}]}` — only the first entry is used. `mount_id`, if given and different from the year-routed mount, overrides the destination mount (same routed sub_path). Returns `{ok, error?, error_code?}` immediately; error codes include `busy`, `src_missing`, `stale_verify` (folder contents changed since its last pipeline check — re-run the pipeline; TODO-205 §3a guard), `no_date`, `no_route`, `mount_offline`, `dest_exists`, `db_error`. Poll `/api/pipeline/file/status` for progress and the final result. |
 | GET | `/api/pipeline/file/status` | Poll the running/last filing job started via `/api/pipeline/file/start`. Returns `{running, stage, path, dest, file_mode, lb_number, files_done, files_total, bytes_done, bytes_total, current_file, result}` where `stage` is `idle\|scanning\|copying\|moving\|verifying\|removing\|done\|failed` and `result` (once `running` is false) is `{ok, filed_to, dest, file_mode, error, error_code}`. Whenever data is actually copied (`file_mode=copy`, or a cross-device move that falls back to copy+delete), the copy is SHA-256 hash-verified against the source (`filer.hash_tree`) before the original is removed or the job is reported done; a hash mismatch deletes the bad copy, leaves the source untouched, and returns `error_code: "hash_mismatch"`. |
 | POST | `/api/pipeline/file/preview` | Pre-flight resolve without moving files. Same body as `/api/pipeline/file/start` (incl. optional `mount_id`). Returns per-folder `{ok, dest, mount_label, error, error_code}`. |
+| POST | `/api/pipeline/run/start` | Start an async multi-folder pipeline job (TODO-205 P2; stages 1–4 + file *resolution* only — the file *move* stays on `/api/pipeline/file/start`). Body: `{folders:[path,...], steps?:[verify\|lookup\|lbdir\|rename\|file], workers?:1–4 (default 2), force?:bool}` (`force` bypasses the P7 folder-state cache; without it, unchanged folders get verify/lbdir served `cached:true` — TODO-205 P7). Folders are grouped by source device (`st_dev`), max one in-flight folder per device, `workers` in flight globally. Returns `{ok, started}` immediately, or `{ok:false, error_code:"busy"}` if a job is running. The synchronous `/api/pipeline/run` keeps working unchanged. |
+| GET | `/api/pipeline/run/status` | Poll the async pipeline job. Returns `{running, folders_total, folders_done, in_progress:[path], results:{path: PipelineRow}, errors:[{folder,message}], steps, started_at, cancelled}`. Rows land in `results` as each folder completes. |
+| POST | `/api/pipeline/run/cancel` | Cooperatively cancel the async pipeline job: in-flight folders finish, no new folder starts. Returns `{ok, was_running}`. |
 
 ### Collection Integrity Monitor (TODO-111)
 | Method | Route | Description |
