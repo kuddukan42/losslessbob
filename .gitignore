@@ -48,6 +48,7 @@ Thumbs.db
 secrets/*.txt
  
 .claude/settings.local.json
+.claude/state/
 
 # tapematch run artifacts (runs/ lives in data/tapematch/runs/ — covered by /data above)
 tools/tapematch/last_run.log
