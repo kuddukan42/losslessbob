@@ -329,6 +329,112 @@ class TestRunUpdate:
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
+# 5b. run_update() — early-exit incremental pagination (TODO-149)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+def _show_with_id(show_id: str) -> dict:
+    """Return a deep copy of SETLIST_OBJ with a different setlistfm id."""
+    obj = copy.deepcopy(SETLIST_OBJ)
+    obj["id"] = show_id
+    return obj
+
+
+class TestRunUpdateEarlyExit:
+    def test_stops_after_first_all_known_page(self):
+        """A full page of already-known shows halts pagination before page 2."""
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            from backend import setlistfm
+
+            # Seed the DB with id1/id2 via a single-page run.
+            seed = {"itemsPerPage": 2, "total": 2,
+                    "setlist": [_show_with_id("id1"), _show_with_id("id2")]}
+            with patch.object(setlistfm, "_fetch_page", return_value=seed), \
+                 patch.object(setlistfm.time, "sleep"):
+                setlistfm.run_update(db_path=db_path, api_key="test-key")
+
+            # Page 1 repeats the now-known id1/id2; page 2 would introduce
+            # id3/id4, but should never be fetched.
+            page1 = {"itemsPerPage": 2, "total": 4,
+                     "setlist": [_show_with_id("id1"), _show_with_id("id2")]}
+            page2 = {"itemsPerPage": 2, "total": 4,
+                     "setlist": [_show_with_id("id3"), _show_with_id("id4")]}
+            fetched_pages: list[int] = []
+
+            def _fetch_side_effect(page, key):
+                fetched_pages.append(page)
+                return {1: page1, 2: page2}[page]
+
+            with patch.object(setlistfm, "_fetch_page", side_effect=_fetch_side_effect), \
+                 patch.object(setlistfm.time, "sleep"):
+                setlistfm.run_update(db_path=db_path, api_key="test-key", force=False)
+
+            assert fetched_pages == [1]  # page 2 never fetched
+            row = conn.execute(
+                "SELECT * FROM setlistfm_shows WHERE setlistfm_id='id3'"
+            ).fetchone()
+            assert row is None
+            assert setlistfm.get_status()["status"] == "done"
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_force_walks_all_pages_even_if_first_page_all_known(self):
+        """force=True must keep walking every page regardless of new-row count."""
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            from backend import setlistfm
+
+            seed = {"itemsPerPage": 2, "total": 2,
+                    "setlist": [_show_with_id("id1"), _show_with_id("id2")]}
+            with patch.object(setlistfm, "_fetch_page", return_value=seed), \
+                 patch.object(setlistfm.time, "sleep"):
+                setlistfm.run_update(db_path=db_path, api_key="test-key")
+
+            page1 = {"itemsPerPage": 2, "total": 4,
+                     "setlist": [_show_with_id("id1"), _show_with_id("id2")]}
+            page2 = {"itemsPerPage": 2, "total": 4,
+                     "setlist": [_show_with_id("id3"), _show_with_id("id4")]}
+            fetched_pages: list[int] = []
+
+            def _fetch_side_effect(page, key):
+                fetched_pages.append(page)
+                return {1: page1, 2: page2}[page]
+
+            with patch.object(setlistfm, "_fetch_page", side_effect=_fetch_side_effect), \
+                 patch.object(setlistfm.time, "sleep"):
+                setlistfm.run_update(db_path=db_path, api_key="test-key", force=True)
+
+            assert fetched_pages == [1, 2]  # force disables the early exit
+            row = conn.execute(
+                "SELECT * FROM setlistfm_shows WHERE setlistfm_id='id3'"
+            ).fetchone()
+            assert row is not None
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_new_shows_on_first_page_are_inserted(self):
+        """Fresh shows on page 1 of a from-scratch run are always stored."""
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            from backend import setlistfm
+
+            page1 = {"itemsPerPage": 2, "total": 2,
+                     "setlist": [_show_with_id("id1"), _show_with_id("id2")]}
+            with patch.object(setlistfm, "_fetch_page", return_value=page1), \
+                 patch.object(setlistfm.time, "sleep"):
+                shows = setlistfm.run_update(db_path=db_path, api_key="test-key")
+
+            assert shows == 2
+            for sid in ("id1", "id2"):
+                row = conn.execute(
+                    "SELECT * FROM setlistfm_shows WHERE setlistfm_id=?", (sid,)
+                ).fetchone()
+                assert row is not None
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
 # 6. Status helpers
 # ═══════════════════════════════════════════════════════════════════════════════
 
