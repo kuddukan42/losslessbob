@@ -88,6 +88,16 @@
           }
         ]
       }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash /home/tjenkins/Documents/losslessbob/.claude/hooks/session_end_check.sh"
+          }
+        ]
+      }
     ]
   }
 }

@@ -4,6 +4,13 @@
 cd /home/tjenkins/Documents/losslessbob || exit 0
 
 echo "=== SESSION BRIEFING (auto-generated at session start — trust this, don't re-derive) ==="
+
+FLAG_FILE="$PWD/.claude/state/session_end_stale.flag"
+if [ -f "$FLAG_FILE" ]; then
+    echo "[!] previous session ended with unrecorded changes — run /session-close first"
+    rm -f "$FLAG_FILE" 2>/dev/null
+fi
+
 echo "[git] branch: $(git rev-parse --abbrev-ref HEAD 2>/dev/null) | uncommitted files: $(git status --porcelain 2>/dev/null | wc -l)"
 echo "[git] last commit: $(git log -1 --oneline 2>/dev/null)"
 
