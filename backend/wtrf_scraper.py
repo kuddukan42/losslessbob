@@ -519,6 +519,43 @@ def _fetch_topic(
     return result
 
 
+def _filename_from_content_disposition(content_disposition: str) -> str | None:
+    """Extract a filename from a ``Content-Disposition`` header value.
+
+    Prefers the plain ``filename="..."`` parameter. If only the RFC 5987
+    extended form ``filename*=charset''value`` is present (e.g.
+    ``filename*=UTF-8''real+name.torrent``), the ``charset''`` prefix is
+    stripped and the remainder is percent-decoded per RFC 5987 (see BUG-233 —
+    a prior regex matched the extended form's ``charset`` token itself,
+    yielding a junk ``"UTF-8.torrent"`` filename that collided across every
+    download in a batch run).
+
+    Args:
+        content_disposition: Raw ``Content-Disposition`` header value.
+
+    Returns:
+        The decoded filename, or ``None`` if neither parameter yields one.
+    """
+    m = re.search(
+        r'filename(?!\*)\s*=\s*["\']?([^"\'\n;]+)', content_disposition, re.IGNORECASE
+    )
+    if m:
+        return m.group(1).strip().strip("\"'")
+
+    m_ext = re.search(r"filename\*\s*=\s*([^;\n]+)", content_disposition, re.IGNORECASE)
+    if m_ext:
+        value = m_ext.group(1).strip().strip("\"'")
+        charset, sep, encoded = value.partition("''")
+        if sep and encoded:
+            try:
+                return unquote(encoded, encoding=charset or "utf-8")
+            except (LookupError, UnicodeDecodeError):
+                return unquote(encoded)
+        if value:
+            return unquote(value)
+    return None
+
+
 def _download_torrent(
     session: requests.Session,
     torrent_url: str,
@@ -551,27 +588,8 @@ def _download_torrent(
         resp.raise_for_status()
 
         # Filename from Content-Disposition, falling back to attach-id or lb_number.
-        # Prefer the plain filename="..." parameter; RFC 5987's filename*=charset''value
-        # form (e.g. filename*=UTF-8''real+name.torrent) is only used when no plain
-        # filename is present, and must have its charset prefix stripped and the
-        # remainder URL-decoded rather than being matched raw (BUG-233).
-        fname: str | None = None
         cd = resp.headers.get("Content-Disposition", "")
-        m = re.search(r'filename(?!\*)\s*=\s*["\']?([^"\'\n;]+)', cd, re.IGNORECASE)
-        if m:
-            fname = m.group(1).strip().strip("\"'")
-        if not fname:
-            m_ext = re.search(r"filename\*\s*=\s*([^;\n]+)", cd, re.IGNORECASE)
-            if m_ext:
-                value = m_ext.group(1).strip().strip("\"'")
-                charset, sep, encoded = value.partition("''")
-                if sep and encoded:
-                    try:
-                        fname = unquote(encoded, encoding=charset or "utf-8")
-                    except (LookupError, UnicodeDecodeError):
-                        fname = unquote(encoded)
-                elif value:
-                    fname = unquote(value)
+        fname = _filename_from_content_disposition(cd)
         if fname:
             # A Content-Disposition filename identifies the physical torrent, not the
             # LB catalog entry — a single WTRF post (and its one .torrent) can
