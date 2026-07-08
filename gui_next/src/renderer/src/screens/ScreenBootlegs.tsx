@@ -254,24 +254,36 @@ export function ScreenBootlegs(): React.JSX.Element {
                 position: 'absolute', top: 'calc(100% + 4px)', left: 0, zIndex: 100,
                 background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)',
                 borderRadius: 8, padding: 4,
-                minWidth: 110, maxHeight: 280, overflowY: 'auto',
+                minWidth: 240, maxHeight: 320, overflowY: 'auto',
                 boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
               }}>
-                {[null, ...yearList].map(y => (
-                  <button
-                    key={y ?? 'all'}
-                    onClick={() => { setYearFilter(y !== null ? String(y) : null); setYearsOpen(false) }}
-                    style={{
-                      display: 'block', width: '100%', textAlign: 'left',
-                      padding: '5px 10px', fontSize: 'var(--lbb-fs-12)', cursor: 'pointer', border: 'none',
-                      background: (y !== null ? String(y) : null) === yearFilter
-                        ? 'var(--lbb-accent-bg)' : 'transparent',
-                      color: 'var(--lbb-fg)', borderRadius: 5,
-                    }}
-                  >
-                    {y ?? 'All years'}
-                  </button>
-                ))}
+                <button
+                  onClick={() => { setYearFilter(null); setYearsOpen(false) }}
+                  style={{
+                    display: 'block', width: '100%', textAlign: 'left',
+                    padding: '5px 10px', fontSize: 'var(--lbb-fs-12)', cursor: 'pointer', border: 'none',
+                    background: yearFilter === null ? 'var(--lbb-accent-bg)' : 'transparent',
+                    color: 'var(--lbb-fg)', borderRadius: 5, marginBottom: 4,
+                  }}
+                >
+                  All years
+                </button>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 2 }}>
+                  {yearList.map(y => (
+                    <button
+                      key={y}
+                      onClick={() => { setYearFilter(String(y)); setYearsOpen(false) }}
+                      style={{
+                        textAlign: 'center',
+                        padding: '5px 4px', fontSize: 'var(--lbb-fs-12)', cursor: 'pointer', border: 'none',
+                        background: String(y) === yearFilter ? 'var(--lbb-accent-bg)' : 'transparent',
+                        color: 'var(--lbb-fg)', borderRadius: 5,
+                      }}
+                    >
+                      {y}
+                    </button>
+                  ))}
+                </div>
               </div>
             )}
           </div>
