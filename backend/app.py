@@ -106,6 +106,32 @@ def _dbedit_db_path() -> str:
 def _dbedit_is_batchverify() -> bool:
     return request.args.get("db", "").lower() == "batchverify"
 
+
+def _parse_lb_filter(lb_filter: str) -> list[int] | None:
+    """Parse a comma/space-separated LB-number filter into a list of ints.
+
+    Accepts one or more integers separated by any mix of commas and/or
+    whitespace (e.g. "4929", "4929,5683", "4929 5683", "4929, 5683 9627").
+
+    Args:
+        lb_filter: Raw filter string from the ``lb_number`` query param.
+
+    Returns:
+        A list of parsed integers, or None if any token is not a valid
+        integer (matching the prior single-value rejection behavior, which
+        silently skips the filter rather than erroring).
+    """
+    tokens = [t for t in re.split(r"[,\s]+", lb_filter.strip()) if t]
+    if not tokens:
+        return None
+    values = []
+    for token in tokens:
+        if not token.lstrip("-").isdigit():
+            return None
+        values.append(int(token))
+    return values
+
+
 _spectro_state = {
     "status":    "idle",
     "current":   "",
@@ -3002,14 +3028,17 @@ def create_app() -> Flask:
                     clauses = [f"CAST([{c}] AS TEXT) LIKE ?" for c in text_cols]
                     where   = "WHERE " + " OR ".join(clauses)
                     params  = [f"%{search}%"] * len(text_cols)
-            if lb_filter and lb_filter.lstrip("-").isdigit():
-                col_names = [c["name"] for c in
-                             conn.execute(f"PRAGMA table_info([{name}])").fetchall()]
-                if "lb_number" in col_names:
-                    lb_clause = "lb_number = ?"
-                    where = (f"WHERE {lb_clause}" if not where
-                             else where + f" AND {lb_clause}")
-                    params.append(int(lb_filter))
+            if lb_filter:
+                lb_values = _parse_lb_filter(lb_filter)
+                if lb_values:
+                    col_names = [c["name"] for c in
+                                 conn.execute(f"PRAGMA table_info([{name}])").fetchall()]
+                    if "lb_number" in col_names:
+                        placeholders = ", ".join("?" * len(lb_values))
+                        lb_clause = f"lb_number IN ({placeholders})"
+                        where = (f"WHERE {lb_clause}" if not where
+                                 else where + f" AND {lb_clause}")
+                        params.extend(lb_values)
 
             order = f"ORDER BY [{sort_col}] {sort_dir}" if sort_col else ""
             total = conn.execute(
