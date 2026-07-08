@@ -375,6 +375,41 @@ def crawl(
 
         stored_lm = lm_map.get(url) if not force else None
 
+        # Attachment URLs may already be on disk if scraper.scrape_entry() downloaded
+        # them first — it shares the same file layout (see attachment_path() /
+        # _url_to_local()) but writes to entry_files, not this crawler's inventory
+        # table, so the URL may still look "pending" here. Avoid a redundant network
+        # fetch, but still perform the usual bookkeeping so state stays consistent.
+        url_path = urlparse(url).path
+        if not force and url_path.startswith("/files/"):
+            local_path = _url_to_local(url)
+            if local_path.exists():
+                logger.debug("Crawler: %s already on disk, skipping fetch", url)
+                visited.add(url)
+                counts["skipped"] += 1
+                upsert_inventory(
+                    url, db_path,
+                    status="downloaded",
+                    relative_path=str(local_path.relative_to(SITE_DIR)),
+                    last_checked_at="CURRENT_TIMESTAMP",
+                    session_id=session_id,
+                )
+                filename = url_path[len("/files/"):]
+                if filename:
+                    try:
+                        get_write_queue().execute(
+                            lambda c, _fn=filename: c.execute(
+                                "UPDATE entry_files SET downloaded=1 WHERE filename=?",
+                                (_fn,),
+                            )
+                        )
+                    except Exception:
+                        logger.exception(
+                            "Failed to update entry_files.downloaded for %s", filename
+                        )
+                _set(skipped=counts["skipped"])
+                continue
+
         _set(current_url=url, queue_size=len(queue),
              **{k: counts[k] for k in counts},
              message=f"{'↺' if stored_lm else '↓'} {url}")

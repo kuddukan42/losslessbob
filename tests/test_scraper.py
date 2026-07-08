@@ -297,6 +297,38 @@ class TestScrapeEntryLocalPages:
         finally:
             shutil.rmtree(tmp_dir, ignore_errors=True)
 
+    def test_already_on_disk_file_gets_downloaded_flag(self, monkeypatch):
+        """A file already on disk (e.g. fetched first by site_crawler) must still get
+        entry_files.downloaded=1 set — regression test for TODO-174 (the flag update
+        set previously only included freshly-network-fetched files, so pre-existing
+        files stayed downloaded=0 forever).
+        """
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            detail_dir, files_dir = _patch_site_dirs(monkeypatch, tmp_dir)
+            (detail_dir / "LB-00100.html").write_text(DETAIL_PAGE_HTML, encoding="utf-8")
+            # Both attachments referenced by DETAIL_PAGE_HTML already exist on disk,
+            # so the loop's "already downloaded" branch triggers for each without any
+            # network fetch.
+            (files_dir / "LBF-00042-lbdir.txt").write_text("dummy", encoding="utf-8")
+            (files_dir / "LBF-00042-show.ffp").write_text("dummy", encoding="utf-8")
+
+            from backend.scraper import scrape_entry
+            result = scrape_entry(100, force=False, download_files=True,
+                                   use_local_pages=True, db_path=db_path)
+            assert result["ok"] is True
+            # Not newly fetched over the network this call, so not reported as such.
+            assert result["files_downloaded"] == []
+
+            rows = conn.execute(
+                "SELECT filename, downloaded FROM entry_files WHERE lb_number=100 "
+                "ORDER BY filename"
+            ).fetchall()
+            assert len(rows) == 2
+            assert all(r["downloaded"] == 1 for r in rows)
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # 4. scrape_range() — local-pages batch run
