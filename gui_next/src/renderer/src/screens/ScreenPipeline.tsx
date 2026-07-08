@@ -2415,7 +2415,8 @@ export function ScreenPipeline(): React.JSX.Element {
                           <input
                             type="checkbox"
                             checked={r.selected}
-                            onChange={e => toggleSelect(r.id, e.shiftKey)}
+                            onChange={() => {}}
+                            onClick={e => { e.preventDefault(); toggleSelect(r.id, e.shiftKey) }}
                           />
                         </TD>
                         <TD mono style={{

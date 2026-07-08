@@ -1216,7 +1216,7 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
       fetchPersonalMeta()
       onToast(t('collection.toast.listenLogged', { lb: row.lbNumber }), 'ok')
     } catch {
-      onToast(t('collection.toast.failedLogListen'), 'warn')
+      onToast(t('collection.toast.failedLogListen'), 'bad')
     } finally {
       setLogListenBusy(false)
     }
@@ -2694,7 +2694,7 @@ export function ScreenCollection(): React.JSX.Element {
   const handleMissingRowDblClick = useCallback((row: MissingLbRow) => {
     const lb = `LB-${String(row.lb_number).padStart(5, '0')}`
     clearSources()
-    addSource({ label: lb, lbNumber: row.lb_number })
+    addSource({ kind: 'clipboard', name: lb, content: lb, active: true })
     navigate('/lookup')
   }, [clearSources, addSource, navigate])
 
@@ -3203,7 +3203,7 @@ export function ScreenCollection(): React.JSX.Element {
                             <TD>
                               <div style={{ display: 'flex', gap: 4 }}>
                                 <Button variant="ghost" size="sm" onClick={() => {
-                                  clearSources(); addSource({ label: lbStr, lbNumber: o.lb_number }); navigate('/lookup')
+                                  clearSources(); addSource({ kind: 'clipboard', name: lbStr, content: lbStr, active: true }); navigate('/lookup')
                                 }}>
                                   LosslessBob
                                 </Button>

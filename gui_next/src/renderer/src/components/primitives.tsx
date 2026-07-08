@@ -15,14 +15,15 @@ export interface PillProps {
   tone?: StatusTone
   soft?: boolean
   dot?: boolean
+  title?: string
   children?: React.ReactNode
   style?: React.CSSProperties
 }
 
-export function Pill({ tone = 'mute', soft = false, dot = false, children, style }: PillProps) {
+export function Pill({ tone = 'mute', soft = false, dot = false, title, children, style }: PillProps) {
   const fg = `var(--lbb-${tone}-fg)`
   return (
-    <span style={{
+    <span title={title} style={{
       display: 'inline-flex', alignItems: 'center', gap: 5,
       padding: '1px 7px', borderRadius: 999,
       // Spec §7: pill text is --t-micro at --w-semi (replaces the old 650 weight).
@@ -142,27 +143,30 @@ export interface IconButtonProps {
   onClick?: React.MouseEventHandler<HTMLButtonElement>
   title?: string
   active?: boolean
+  disabled?: boolean
   style?: React.CSSProperties
 }
 
-export function IconButton({ icon, size = 28, onClick, title, active, style }: IconButtonProps) {
+export function IconButton({ icon, size = 28, onClick, title, active, disabled, style }: IconButtonProps) {
   return (
     <button
       type="button"
       onClick={onClick}
       title={title}
+      disabled={disabled}
       style={{
         width: size, height: size, padding: 0,
         display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-        borderRadius: 6, cursor: 'pointer', fontFamily: 'inherit',
+        borderRadius: 6, cursor: disabled ? 'not-allowed' : 'pointer', fontFamily: 'inherit',
         background: active ? 'var(--lbb-surface2)' : 'transparent',
         color: active ? 'var(--lbb-fg)' : 'var(--lbb-fg2)',
         border: '1px solid transparent',
+        opacity: disabled ? 0.4 : 1,
         transition: 'background 120ms ease',
         ...style,
       }}
-      onMouseEnter={e => { e.currentTarget.style.background = 'var(--lbb-surface2)' }}
-      onMouseLeave={e => { e.currentTarget.style.background = active ? 'var(--lbb-surface2)' : 'transparent' }}
+      onMouseEnter={e => { if (!disabled) e.currentTarget.style.background = 'var(--lbb-surface2)' }}
+      onMouseLeave={e => { if (!disabled) e.currentTarget.style.background = active ? 'var(--lbb-surface2)' : 'transparent' }}
     >
       <Icon name={icon} size={Math.round(size * 0.55)} />
     </button>
@@ -173,6 +177,7 @@ export function IconButton({ icon, size = 28, onClick, title, active, style }: I
 
 export interface InputProps {
   icon?: IconName | string
+  type?: 'text' | 'password' | 'search'
   placeholder?: string
   value?: string
   onChange?: React.ChangeEventHandler<HTMLInputElement>
@@ -184,7 +189,7 @@ export interface InputProps {
 const INPUT_HEIGHTS: Record<ComponentSize, number> = { sm: 24, md: 30, lg: 36 }
 const INPUT_FONTS:  Record<ComponentSize, number> = { sm: 11.5, md: 12.5, lg: 13.5 }
 
-export function Input({ icon, placeholder, value, onChange, size = 'md', width, style }: InputProps) {
+export function Input({ icon, type = 'text', placeholder, value, onChange, size = 'md', width, style }: InputProps) {
   return (
     <div style={{
       display: 'inline-flex', alignItems: 'center', gap: 6,
@@ -196,7 +201,7 @@ export function Input({ icon, placeholder, value, onChange, size = 'md', width, 
     }}>
       {icon && <Icon name={icon} size={13} style={{ color: 'var(--lbb-fg3)' }} />}
       <input
-        type="text"
+        type={type}
         placeholder={placeholder}
         value={value}
         onChange={onChange}

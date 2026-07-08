@@ -867,7 +867,7 @@ function StatusBar({ extra }: { extra?: React.ReactNode }) {
           />
         )}
         {activity?.busy && activity.activity
-          ? t(`appShell.statusBar.activity.${activity.activity}`)
+          ? t(`appShell.statusBar.activity.${activity.activity}` as any)
           : t('appShell.statusBar.idle')}
       </span>
     </footer>

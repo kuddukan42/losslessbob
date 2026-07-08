@@ -46,7 +46,7 @@ function lbStr(n: number): string {
   return `LB-${String(n).padStart(5, '0')}`
 }
 
-function applyNftSuffix(name: string, lbStatus: string | undefined): string {
+function applyNftSuffix(name: string, lbStatus: string | null | undefined): string {
   if (lbStatus !== 'private') return name
   if (name.toUpperCase().endsWith('-NFT')) return name.slice(0, -4) + '-NFT'
   return name + '-NFT'

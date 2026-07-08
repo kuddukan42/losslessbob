@@ -8,3 +8,9 @@ repos:
         additional_dependencies: ["ruff==0.15.16"]
         types: [python]
         pass_filenames: true
+      - id: gui-next-typecheck
+        name: gui_next typecheck (tsc)
+        entry: npm --prefix gui_next run typecheck
+        language: system
+        files: ^gui_next/.*\.(ts|tsx)$
+        pass_filenames: false
