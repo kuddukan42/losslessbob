@@ -1,3 +1,97 @@
+[2026-07-08] — feat/fix: orchestrated parallel-agent session — 8 items closed (BUG-233/236, TODO-149/174/175/176/207/208) + ledger cleanup
+Fixed: backend/wtrf_scraper.py: BUG-233 — Content-Disposition parsing extracted into
+  _filename_from_content_disposition(): plain filename= preferred; RFC 5987 filename*= decoded
+  (strip charset''lang'', percent-decode); attach-id/LB fallback kept. 11 new tests in
+  tests/test_wtrf_scraper.py. Note: the core regex fix was already committed (c3257c02) but the
+  ledger was never updated — this session added the testable seam + tests and closed the entry.
+Fixed: gui_next renderer: BUG-236 / TODO-206 — all 14 baseline TS errors fixed (two were real
+  functional bugs: ScreenCollection addSource sent a wrong payload shape, ScreenPipeline
+  shift-click range-select read shiftKey off ChangeEvent — moved to onClick). Pill title /
+  IconButton disabled / Input type props added properly. typecheck script added to
+  gui_next/package.json; gui-next-typecheck hook wired into .pre-commit-config.yaml alongside
+  ruff. tsc -b + production build clean (zero-error baseline).
+Changed: backend/setlistfm.py: TODO-149 — run_update() true incremental update: stops paginating
+  when force=False and a full page yields zero newly-inserted rows (INSERT OR IGNORE rowcount);
+  force=True keeps the full walk; stop_reason/pages_fetched logged. 3 stubbed-API tests.
+Changed: backend/app.py: TODO-175 — /api/dbedit rows lb_filter accepts multiple comma/space-
+  separated LB numbers via parameterized lb_number IN (...); invalid tokens fall back to
+  unfiltered (prior semantics); GUI passes the raw string through so it works end-to-end.
+  7 new tests (tests/test_dbedit_lb_filter.py).
+Changed: gui_next ScreenBootlegs.tsx: TODO-176 — Year filter popover switched to a 5-column CSS
+  grid ('All years' full-width top row); no new i18n keys.
+Fixed: backend/scraper.py + backend/site_crawler.py: TODO-174 guardrails — (a) scrape_entry now
+  marks already-on-disk files downloaded=1 (fixes permanent flag desync when site_crawler
+  fetched the file first); (b) site_crawler skips network fetch for /files/ URLs already on
+  disk while keeping inventory + entry_files bookkeeping. Investigation verdict: keep both
+  mechanisms (different triggers/granularity), consolidation rejected. 2 new tests.
+Added: tools/gui_next_locale_parity.py: TODO-207 — dotted-path key diff of en.json vs
+  de/fr/es/it/nl (exit 0/1/2). Current status: full parity, 1381 keys in all 6 locales.
+Added: .claude/hooks/session_end_check.sh: TODO-208 — SessionEnd hook (registered in
+  .claude/settings.json) flags unrecorded changes to .claude/state/session_end_stale.flag;
+  session_brief.sh surfaces the warning at next SessionStart and clears it. .claude/state/
+  gitignored. Flag round-trip verified.
+Added: tools/ledger_dedup.py: TODO-209 progress — duplicate-header-ID audit (report-only
+  default; --apply experimental/unused). Finds 21 duplicated BUG ids + the TODO set, proposes
+  keep/renumber per entry, lists all cross-references needing manual attribution. TODO-209
+  stays open for the renumbering pass.
+Changed: BUGS.md housekeeping — 11 entries that were marked Fixed but never archived moved to
+  BUGS_DONE.md verbatim (BUG-193, 195, 202, 203, 204, 205, 208, 213, 214, 217, 223); BUGS.md
+  is down to 9 genuinely open bugs. BUG-193's duplicate id (an unrelated importer BUG-193
+  already in the archive) noted inline pending the TODO-209 dedup pass.
+Tests: full suite 458 passed / 5 skipped; gui_next typecheck + production build clean.
+
+[2026-07-08] — docs: close stale TODO-198 (TapeMatch recall recovery) — work completed 2026-07-02, ledger never updated
+Changed: TODO.md/TODO_DONE.md: TODO-198 (CC_TAPEMATCH_FIXES Tasks 2-7) closed via
+  `tools/ledger.py todo-close` — text was frozen at a mid-day 2026-07-02 snapshot ("Tasks 2-7
+  remaining, curator-lineage/hf_ceiling NOT wired into live cli.py") but later 2026-07-02
+  CHANGELOG entries show all of it landed same-day: Task 2 rerun_cat3.py executed (0/6 Cat-3
+  flipped), Tasks 3.2/4.1/4.2 wired into live cli.py + validated, Tasks 5-7 implemented and
+  calibrated (triplet fingerprint rejected/disabled after live calibration showed false merges).
+  Final: recall 41.6%/precision 98.6%/fp=9 vs 38.3%/98.2% baseline; further gains scoped to
+  CC_TAPEMATCH_ADDON.md (TODO-199).
+Note: found a pre-existing ledger integrity issue while closing this — TODO_DONE.md now has two
+  entries both numbered TODO-198 (this one and an unrelated "Quality page" TODO closed
+  2026-07-01). Root cause: the TapeMatch entry's number was hand-set rather than assigned via
+  `ledger.py next-id todo`, reusing an already-closed id (`_collect_ids` scans both files
+  correctly, so this couldn't happen through the tool itself). No other file references
+  TODO-198, so a renumber is low-risk whenever addressed. Flagging only, not fixed this session.
+Added: TODO-209 — full header-ID audit found 17 duplicated TODO ids and 22 duplicated BUG ids
+  across the open/done file pairs (mostly legacy debt predating ledger.py, added 2026-07-07 per
+  TODO-205). Scoped as a batch renumbering job, not manual edits.
+
+[2026-07-07] — fix: full-codebase bug hunt — 7 bugs found, confirmed via repro, fixed (BUG-238..244)
+Fixed: backend/sharing.py: BUG-238 — _reaper_loop had no exception guard; one corrupt
+  expires_at or persist OSError permanently killed share expiry (expired shares kept serving
+  over the public tunnel). Loop body now guarded + logs; invalid-expiry shares reaped;
+  _persist()'s mkdir moved inside its best-effort try.
+Fixed: backend/sharing.py: BUG-239 — list_shares() popped expired shares without
+  revoke_share(), skipping _persist() and the stop-tunnel-on-last-share logic (cloudflared
+  ran forever with zero shares). Now revokes properly outside the lock.
+Fixed: backend/scheduler.py: BUG-240 — scheduled integrity scans compared SQLite
+  CURRENT_TIMESTAMP (UTC) against local datetime.now(); on CDT every scan fired 5 h late.
+  Now parsed as UTC-aware and compared in UTC.
+Fixed: gui_next/src/main/index.ts: BUG-241 — killProcessTree() only tree-killed on Windows;
+  Linux/macOS app quit orphaned the backend's ffmpeg/sox/shntool children. Backend now
+  spawned detached on POSIX and killed via process-group kill(-pid) with fallback;
+  killPortProcess routes through killProcessTree.
+Fixed: backend/importer.py: BUG-242 — flat-file import silently dropped malformed rows
+  (except: pass). Now counts skips, logs first 5 with line numbers + a summary WARNING;
+  except narrowed to (ValueError, sqlite3.Error).
+Fixed: backend/db_queue.py: BUG-243 — async write failures left no trace despite the
+  docstring's claim of DEBUG logging. Writer thread now logs them at WARNING with traceback.
+Fixed: backend/db.py + backend/app.py: BUG-244 — re-pinning a folder to a different LB
+  accumulated links (set_folder_link went additive in the composite-PK migration) and the
+  old pin won lookups via pinned_lbs[0]. New replace_folder_link() (atomic DELETE+INSERT in
+  one write-queue transaction) now backs PUT /api/folder_link.
+Changed: tests/test_db_writes.py: stale test_replace_existing (failed on main) split into
+  test_set_is_additive (auto-link semantics) + test_replace_existing (re-pin semantics).
+Note: repros kept in .debug/ (repro_s1_reaper.py, repro_s2_scan_tz.py + _fixed,
+  repro_s3_killtree.mjs, repro_s4_list_shares.py, repro_s5_s6.py). Full pytest suite
+  435 passed / 0 failed; gui-check node types + build PASS (renderer baseline still 14
+  errors, but now spread over 6 files, not just ScreenScraper.tsx — BUGS.md BUG-236 note
+  is stale). Informational, not fixed: /api/spectrogram/png serves any absolute *.png path
+  (single-user app, basic-auth web GUI) — flagged only.
+
 [2026-07-07] — feat/chore: pipeline dev-loop quick wins (spec D1/D2/D3/P5) — auto-collect toggle, ledger CLI, advisory hooks, change-log dedup
 Added: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: "Auto-collect" toggle (spec P5) —
   third header toggle, default off, session-only; auto-files rows meeting the fileableRows guard

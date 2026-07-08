@@ -1,3 +1,13 @@
+> **COMPLETE — executed 2026-07-04, do not re-run against this text.** The session it
+> drove re-opened the Tier B rejection (gap gate tested the wrong operating mode; the
+> decisive absolute-FP-through-clustering measurement had been deferred) and shipped
+> **Rule D**: recall 41.8% → 43.4% at zero new FP, plus `regression_set_v2.json` (3 label
+> errors in the frozen fp=9 corrected; fp=6 on v2). Full narrative:
+> `tools/tapematch/TIER_B_FULLSET_REPORT.md`; state: CALIBRATION_PROGRESS.md. The numbers
+> below (41.6%, fp=9, "Tier B rejected") are the pre-Rule-D snapshot this prompt was
+> written against — stale. A future fresh-eyes pass needs a rewritten prompt reflecting
+> post-Rule-D state and open threads TODO-200/201/204.
+
 You are being brought in as a fresh pair of eyes on a stuck research problem. This is not
 a "read the docs and summarize" task — it's a "find the breakthrough we're missing" task.
 Multiple prior sessions (by other Claude instances) have attacked this and plateaued. Your

@@ -1,21 +1,14 @@
 
-TODO-208: SessionEnd hook: flag unrecorded changes on /clear, surface in next session brief
+TODO-209: Ledger duplicate-ID audit — 17 TODO + 22 BUG header IDs reused across open/done files
 Priority: Low
 Status: Open
-Added: 2026-07-07
-Description: SessionEnd hook (fires on /clear and exit) runs the same staleness check as .claude/hooks/changelog_check.sh; if source files changed but CHANGELOG.md head is not today, write a flag file that .claude/hooks/session_brief.sh surfaces at next SessionStart ('previous session ended with unrecorded changes — run /session-close first'), then clear the flag. Closes the bookkeeping gap across the /clear boundary; Stop hook alone only warns per-turn.
-
-TODO-207: gui_next locale key-parity check script (spec D6 remnant)
-Priority: Low
-Status: Open
-Added: 2026-07-07
-Description: A small key-diff script (keys in en.json missing from de/fr/es/it/nl) runnable standalone and from the Stop hook or /gui-check; the DeepL gui-next-i18n skill only reports parity when run manually. Source: instructions/complete/FABLE_PIPELINE_DEVLOOP_IDEATION.md idea D6.
-
-TODO-206: gui_next: fix 14 baseline renderer typecheck errors, then add typecheck to pre-commit
-Priority: Low
-Status: Open
-Added: 2026-07-07
-Description: pre-commit currently gates Python only (ruff); the dirty renderer typecheck baseline makes /gui-check's 'no new errors' comparison fuzzy. Known errors include IconButton disabled prop and shiftKey-on-ChangeEvent in ScreenPipeline.tsx. Fix the 14 baseline errors, then wire typecheck into pre-commit alongside ruff.
+Added: 2026-07-08
+Progress (2026-07-08): audit script shipped — tools/ledger_dedup.py (report-only default;
+  --apply exists but is experimental and unused). Report finds 21 duplicated BUG ids and the
+  TODO set, proposes keep/renumber per entry, and lists every cross-reference (CHANGELOG,
+  archive, other ledger files) that needs manual attribution before renumbering. Remaining
+  work: review the plan, attribute shared cross-refs, then renumber via next-id.
+Description: Found while closing TODO-198 (2026-07-08): header-line grep (^TODO-N / ^BUG-N across the open+done pairs) turns up 17 duplicated TODO ids (024, 086, 102, 106-113, 140, 151, 153-155, 198) and 22 duplicated BUG ids (107-118ish, 167, 168, 175, 176, 193, 195, 200, 214-218). Almost all are low-numbered and predate tools/ledger.py (added 2026-07-07, TODO-205) — legacy manual-numbering debt from before next-id existed. TODO-198 was the one recent exception: its number was hand-set rather than assigned via next-id, bypassing the tool's own duplicate protection (_collect_ids scans both open+done files correctly, so the tool itself cannot produce a collision). Fix requires, per id: confirm which of the N entries is authoritative (check dates/content), grep every cross-reference (CHANGELOG.md mentions, [[TODO-NNN]]/[[BUG-NNN]] links in other entries, instructions/ docs) before renumbering the duplicate(s) via next-id, then verify no reference breaks. Do this as a batch script, not by hand — 39 ids is too many for manual edits to stay safe. Low priority: cosmetic/traceability issue, not a functional bug.
 
 TODO-205: Pipeline structural tier: combined design doc for P7+P1+P2 (+P3/P8) — shared hash/state cache, async job model
 Priority: Medium
@@ -78,38 +71,6 @@ speed-corrected duration ratio >15% off unity). These require curator domain jud
 the 3 machine-provable negative flips went into regression_set_v2.json). Reviewing them
 would re-base the honest recall denominator (~52% at current tp if all confirmed). Use
 calibration_audit.html for browsing; census output lists the pairs + evidence snippets.
-
-TODO-198: TapeMatch recall recovery (CC_TAPEMATCH_FIXES) — remaining Tasks 2-7
-Priority: Medium
-Status: In Progress
-Added: 2026-07-02
-Description: Task 1 landed 2026-07-02 (regression.py harness + tapematch/verdict.py single-source-of-
-  truth clustering; observations.db recovered from Trash; baseline reproduced via `freeze` +
-  `score --cached`, exit 0). No-audio scaffolding for Tasks 2-4 also landed: config keys
-  (fingerprint.cluster_threshold_staircase/_curator, secondary_match.hiss_merge_median_lofi/
-  hiss_lofi_ceiling_hz), verdict.py conditional thresholds + lo-fi hiss relaxation, and the pairs
-  schema gained windowed_frac/hiss_frac/hiss_median/fp_score/nyquist_capped_a/_b (populated by
-  insert_pairs going forward). Scope was capped at Tasks 1-4 (pause before the expensive 5-7 audio
-  work) per user decision 2026-07-02.
-  REMAINING (all need AUDIO re-runs — the budget-gated part):
-  - Task 2: run `tools/tapematch/rerun_cat3.py` (Cat-3 focused re-run). NOTE: the documented FN
-    query matches 137 pairs, not the spec's stale "6"; bound with --limit/--dates. Records
-    before/after verdict; unchanged pairs reassign to Cat 1/2/4.
-  - Tasks 3/4 gates: `score --cached` for the staircase/curator/lo-fi threshold changes only becomes
-    valid after re-running the affected dates so the new secondary-metric columns are populated
-    (historical rows have them NULL). Also: curator-lineage (Task 4.1) and hf_ceiling/nyquist_capped
-    (Task 4.2) are NOT yet wired into the LIVE cli.py clustering metrics builder (lb numbers +
-    per-source HF evidence aren't threaded to the cluster call) — they work in the harness/verdict
-    path but not in a live session. Wire those before running the Task 3/4 audio gates.
-  - Task 3.1: already implemented in cli.py (either-side staircase, line ~497) — spec premise was
-    stale. Remaining work is the diagnostic (instrument why one-sided-staircase Cat-2 pairs still
-    read windowed_frac~0), which needs a live run on a known Cat-2 date.
-  - Tasks 5-7 (estimate_ratio_v2 + duration prior + confidence gating; residual_ppm_from_lag_curve;
-    pitch_ratio_pyin; ratio-invariant triplet fingerprint) — DEFERRED, out of the current scope cap.
-  Pre-existing (not caused by this work): the test_batch_queue-family tapematch tests hang when run
-  against the real mounted /mnt collection (run_batch/find_lb_folders scan the live collection). The
-  208 tests exercising the changed code all pass. Consider isolating those tests behind a fixture.
-  Relates to: [[TODO-184]] (tapematch same-source FN rescue), [[TODO-170]] (TapeMatch GUI).
 
 TODO-195: Backend pipeline step.label strings need i18n key+params, not rendered English
 Priority: Low
@@ -638,41 +599,6 @@ Description: Replace the app icon with a new design. No icon asset exists yet in
   asset has been provided yet — needs the actual icon file before implementation, then wire
   it into the Electron build config (gui_next build resources) and installer.
 
-TODO-176: Performance page year dropdown — switch to a tabulated (grid) layout for readability
-Priority: Low
-Status: Open
-Added: 2026-06-22
-Description: The Year filter dropdown on gui_next/src/renderer/src/screens/ScreenBootlegs.tsx:
-  243-277 (yearsOpen/yearsDropRef) renders years as a single-column scrollable list
-  (maxHeight: 280, overflowY: 'auto') — across ~60+ years of touring this is a long, hard-to-
-  scan list. Change it to a tabulated/grid layout (e.g. multiple columns of years, decade-
-  grouped) so it's easier to read and pick a year at a glance.
-
-TODO-175: DB Editor LB filter box — support multiple comma/space-separated LB numbers
-Priority: Low
-Status: Open
-Added: 2026-06-22
-Description: The LB# filter box on gui_next/src/renderer/src/screens/ScreenDbEditor.tsx:1428-1432
-  (lbFilter state, dbeditor.lbFilter label) only matches a single LB number — backend
-  /api/dbedit/table/<name>/rows (backend/app.py:2800-2864) requires lb_filter to be a single
-  integer (`lb_filter.lstrip("-").isdigit()` → `lb_number = ?`). If the user types multiple
-  numbers (e.g. "4929, 5683, 9627") it should pull up rows for all of those LB numbers
-  (lb_number IN (...)) instead of only matching/accepting one.
-
-TODO-174: Investigate consolidating attachment downloading — metadata scraper vs site crawler overlap
-Priority: Low
-Status: Open
-Added: 2026-06-22
-Description: Two separate mechanisms both download attachment files: the metadata scraper's
-  download_files option (backend/scraper.py:195-247,423,453-501, wired through every scrape
-  path in app.py via the scrape_attachments meta flag) downloads attachments while scraping
-  an individual LB detail page; site_crawler.py (the incremental site crawler) independently
-  discovers and downloads /files/ URLs site-wide and keeps entry_files.downloaded in sync
-  (site_crawler.py:412-426). Neither is deprecated — both are still actively used — but the
-  overlap may be worth consolidating into one path. Flagged as possibly complicated to
-  untangle (the two paths have different triggers/granularity: per-LB vs site-wide), so this
-  needs careful investigation before touching either, not a quick fix.
-
 TODO-173: Confirmed taper tag on LB entries (soomlos, spot, hide, lta, etc.) — only show when confirmed
 Priority: Medium
 Status: Open
@@ -951,17 +877,6 @@ Description: After a folder is renamed or collected (moved), the "Open" button i
   pipeline detail panel still resolves the old folder name/location. The button should
   use the updated path (post-rename / post-collect destination) rather than the path
   that was current at pipeline run time.
-
-TODO-149: setlist.fm scraper — true incremental update (early-exit pagination)
-Priority: Low
-Status: Open
-Added: 2026-06-17
-Description: run_update() in setlistfm.py always walks every API page even when
-  force=False. The API returns shows newest-first, so pagination can stop as soon
-  as a setlistfm_id is found that already exists in setlistfm_shows. Implement
-  early-exit: after INSERT OR IGNORE, check if the row was already present; if a
-  full page of shows is all-known, stop paginating. Reduces API calls from ~200
-  pages to however many new shows there are since the last sync.
 
 TODO-148: Scraper — persist live log across tab navigation
 Priority: Low

@@ -19,7 +19,6 @@ its contents; they are not listed individually here.
 | FABLE_IDEAS.md | Raw idea dump from a Fable 5 brainstorm (2026-07-06) — not a spec, ideas need expansion before execution | not triaged |
 | FABLE_LISTENING_INSIGHT_IDEAS.md | Listening & Insight features idea spec pack | active — see SPEC_INTEGRATION_NOTES.md §2 for order, not yet implemented |
 | FABLE_ONBOARDING_SYNC.md | New-user onboarding & data sync design spec | active — see SPEC_INTEGRATION_NOTES.md §2 for order, not yet implemented |
-| FABLE_TAPEMATCH_BREAKTHROUGH_PROMPT.md | Fresh-eyes breakthrough prompt for a stuck TapeMatch research problem | not triaged |
 | FABLE_TAPEMATCH_LISTENING_SIGNALS.md | TapeMatch "simulated listening" signals idea spec pack | active — see SPEC_INTEGRATION_NOTES.md §2 for order, not yet implemented |
 | FABLE_TAPER_ATTRIBUTION.md | Taper Attribution Engine design spec | active — see SPEC_INTEGRATION_NOTES.md §2 for order, not yet implemented |
 | FABLE_UNIFIED_RANKING.md | Unified "Best of Show" ranking design spec | active — see SPEC_INTEGRATION_NOTES.md §2 for order, not yet implemented |
