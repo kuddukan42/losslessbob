@@ -548,6 +548,64 @@ class TestCrawlerUrlUtils:
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
+# 4b. crawl() — skips /files/ URLs already on disk (TODO-174 guardrail)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+class TestCrawlSkipsFilesOnDisk:
+    def test_files_url_on_disk_skips_fetch_but_updates_state(self, monkeypatch):
+        """An attachment already saved by scraper.scrape_entry() (same layout as
+        attachment_path()/_url_to_local()) must not be re-fetched by crawl(), but
+        the crawler's own bookkeeping (site_inventory + entry_files.downloaded)
+        still has to run so both subsystems agree on state.
+        """
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            import backend.site_crawler as _crawler
+
+            site_dir = Path(tmp_dir) / "site"
+            files_dir = site_dir / "files"
+            files_dir.mkdir(parents=True, exist_ok=True)
+            monkeypatch.setattr(_crawler, "SITE_DIR", site_dir)
+
+            filename = "LBF-00042-lbdir.txt"
+            (files_dir / filename).write_text("dummy contents", encoding="utf-8")
+
+            conn.execute(
+                """INSERT INTO entries(lb_number, date_str, location, cdr, rating, timing,
+                       description, setlist, status)
+                   VALUES (42, '1/1/01', 'Somewhere', '', '', '', '', '', 'ok')"""
+            )
+            files_url = _crawler.BASE_URL + "/files/" + filename
+            conn.execute(
+                "INSERT INTO entry_files(lb_number, filename, clean_name, file_url, downloaded) "
+                "VALUES (42, ?, 'lbdir.txt', ?, 0)",
+                (filename, files_url),
+            )
+            conn.commit()
+
+            with patch.object(_crawler, "_load_robots"), \
+                 patch.object(_crawler, "_fetch_page", return_value=(304, None, None)) as mock_fetch:
+                _crawler.crawl(start_url=files_url, db_path=db_path, delay_ms=0)
+
+            # The on-disk /files/ URL must never reach the network fetch call.
+            fetched_urls = [call.args[1] for call in mock_fetch.call_args_list]
+            assert files_url not in fetched_urls
+
+            row = conn.execute(
+                "SELECT downloaded FROM entry_files WHERE lb_number=42 AND filename=?",
+                (filename,),
+            ).fetchone()
+            assert row["downloaded"] == 1
+
+            inv = conn.execute(
+                "SELECT status FROM site_inventory WHERE url=?", (files_url,)
+            ).fetchone()
+            assert inv is not None and inv["status"] == "downloaded"
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
 # 5. Flask /api/crawler/* route smoke tests
 # ═══════════════════════════════════════════════════════════════════════════════
 

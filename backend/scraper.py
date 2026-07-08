@@ -426,6 +426,10 @@ def scrape_entry(
         for filename, clean, file_url in file_links:
             local_path = attachment_path(filename)   # data/site/files/LBF-XXXXX-name.ext
             if local_path.exists() and (not force or use_local_pages):
+                # Already on disk (e.g. fetched first by site_crawler) — no need to
+                # re-download, but entry_files.downloaded must still get flagged for
+                # this lb_number or it stays 0 forever.
+                newly_downloaded.append(filename)
                 continue
             file_resp, fstatus = _fetch(file_url)
             if file_resp and fstatus == 200:
