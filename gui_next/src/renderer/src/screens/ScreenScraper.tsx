@@ -827,9 +827,9 @@ function GeocoderTab({ status, geoStats, logs, onClearLog }: {
             <CtrlLabel>Cache Stats</CtrlLabel>
             <StatGrid rows={[
               ['Cached', geoStats.total_cached],
-              ['Geocoded', geoStats.geocoded],
-              ['Failed', geoStats.failed],
-              ['Manual pins', geoStats.manual],
+              ['Geocoded', geoStats.geocoded ?? 0],
+              ['Failed', geoStats.failed ?? 0],
+              ['Manual pins', geoStats.manual ?? 0],
             ]} />
             <CtrlLabel>Coverage</CtrlLabel>
             <StatGrid rows={[
