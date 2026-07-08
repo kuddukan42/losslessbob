@@ -32,7 +32,6 @@ _tunnel_url: str | None = None
 
 def _persist() -> None:
     """Write current share + tunnel state to disk (must be called under _shares_lock)."""
-    SHARE_STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
     payload: dict = {
         "tunnel_pid": _tunnel_pid,
         "tunnel_url": _tunnel_url,
@@ -46,6 +45,7 @@ def _persist() -> None:
             "lb_number": share.get("lb_number"),
         }
     try:
+        SHARE_STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
         SHARE_STATE_FILE.write_text(json.dumps(payload, indent=2))
     except OSError as exc:
         log.warning("sharing: failed to persist state: %s", exc)
@@ -157,6 +157,7 @@ def list_shares() -> list[dict]:
     """Return all active (non-expired) shares for GUI status display."""
     now = datetime.now(UTC)
     result = []
+    expired = []
     with _shares_lock:
         for token, share in list(_active_shares.items()):
             exp = datetime.fromisoformat(share["expires_at"])
@@ -165,7 +166,11 @@ def list_shares() -> list[dict]:
             if exp > now:
                 result.append({"token": token, **share})
             else:
-                _active_shares.pop(token, None)
+                expired.append(token)
+    # Revoke outside the lock — revoke_share persists state and stops the
+    # tunnel when the last share is gone, which a bare pop() would skip.
+    for token in expired:
+        revoke_share(token)
     return result
 
 
@@ -336,19 +341,31 @@ def stop_cloudflare_tunnel() -> None:
 def _reaper_loop() -> None:
     while True:
         time.sleep(_REAPER_INTERVAL)
-        now = datetime.now(UTC)
-        expired = []
-        with _shares_lock:
-            for token, share in list(_active_shares.items()):
-                exp = datetime.fromisoformat(share["expires_at"])
-                if exp.tzinfo is None:
-                    exp = exp.replace(tzinfo=UTC)
-                if exp <= now:
-                    expired.append(token)
-        for token in expired:
-            revoke_share(token)
-        if expired:
-            log.info("sharing: reaped %d expired share(s)", len(expired))
+        # The loop body must never raise: this thread is started once at import
+        # and has no restart path, so an uncaught exception (e.g. a corrupt
+        # expires_at) would silently disable share expiry for the whole session.
+        try:
+            now = datetime.now(UTC)
+            expired = []
+            with _shares_lock:
+                for token, share in list(_active_shares.items()):
+                    try:
+                        exp = datetime.fromisoformat(share["expires_at"])
+                    except (KeyError, TypeError, ValueError):
+                        log.warning("sharing: share %s has invalid expires_at; reaping it",
+                                    token[:8])
+                        expired.append(token)
+                        continue
+                    if exp.tzinfo is None:
+                        exp = exp.replace(tzinfo=UTC)
+                    if exp <= now:
+                        expired.append(token)
+            for token in expired:
+                revoke_share(token)
+            if expired:
+                log.info("sharing: reaped %d expired share(s)", len(expired))
+        except Exception:
+            log.exception("sharing: reaper iteration failed; retrying next interval")
 
 
 threading.Thread(target=_reaper_loop, name="share-reaper", daemon=True).start()

@@ -1,7 +1,7 @@
 import logging
 import threading
 import time
-from datetime import datetime, timedelta
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
 from watchdog.events import FileSystemEventHandler
@@ -194,7 +194,10 @@ def _integrity_scan_worker(stop_event: threading.Event, db_path=None) -> None:
             history = get_integrity_scan_history(mount_id=None, limit=1, db_path=db_path)
             if history:
                 started_at = datetime.fromisoformat(history[0]["started_at"])
-                if datetime.now() - started_at < timedelta(hours=interval_hours):
+                if started_at.tzinfo is None:
+                    # SQLite CURRENT_TIMESTAMP is UTC wall time with no offset marker.
+                    started_at = started_at.replace(tzinfo=UTC)
+                if datetime.now(UTC) - started_at < timedelta(hours=interval_hours):
                     continue
             integrity_monitor.start_scan_async()
         except Exception:

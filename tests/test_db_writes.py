@@ -1344,12 +1344,28 @@ class TestFolderLink:
         finally:
             shutil.rmtree(tmp, ignore_errors=True)
 
-    def test_replace_existing(self):
+    def test_set_is_additive(self):
+        # set_folder_link is additive (multi-LB auto-link flow); both rows remain.
         import backend.db as db
         db_path, conn, tmp = _make_db()
         try:
             db.set_folder_link("/music/folder2", 601, db_path=db_path)
             db.set_folder_link("/music/folder2", 602, db_path=db_path)
+            links = db.get_folder_links("/music/folder2", db_path=db_path)
+            assert [r["lb_number"] for r in links] == [601, 602]
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_replace_existing(self):
+        # replace_folder_link (user re-pin) supersedes all previous links.
+        import backend.db as db
+        db_path, conn, tmp = _make_db()
+        try:
+            db.set_folder_link("/music/folder2", 601, db_path=db_path)
+            db.set_folder_link("/music/folder2", 603, db_path=db_path)
+            db.replace_folder_link("/music/folder2", 602, db_path=db_path)
+            links = db.get_folder_links("/music/folder2", db_path=db_path)
+            assert [r["lb_number"] for r in links] == [602]
             result = db.get_folder_link("/music/folder2", db_path=db_path)
             assert result["lb_number"] == 602
         finally:

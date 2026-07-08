@@ -40,7 +40,14 @@ function killProcessTree(pid: number): void {
     if (process.platform === 'win32') {
       execSync(`taskkill /F /T /PID ${pid}`, { stdio: 'ignore' })
     } else {
-      process.kill(pid, 'SIGTERM')
+      // The backend is spawned detached (its own process group, pgid === pid),
+      // so a negative-pid kill signals the whole group. Fall back to a plain
+      // kill for PIDs that aren't group leaders (e.g. a manually started backend).
+      try {
+        process.kill(-pid, 'SIGTERM')
+      } catch {
+        process.kill(pid, 'SIGTERM')
+      }
     }
   } catch { /* already dead */ }
 }
@@ -70,7 +77,7 @@ async function killPortProcess(port: number): Promise<void> {
       if (out) {
         out.split('\n').forEach(pid => {
           const n = parseInt(pid.trim(), 10)
-          if (n) { try { process.kill(n, 'SIGTERM') } catch {} }
+          if (n) killProcessTree(n)
         })
         await new Promise(r => setTimeout(r, 400))
       }
@@ -104,7 +111,9 @@ async function ensureBackend(): Promise<void> {
     cwd = root
   }
 
-  backendProc = spawn(cmd, args, { cwd, stdio: 'pipe' })
+  // detached on POSIX puts the backend in its own process group so
+  // killProcessTree can reap its ffmpeg/sox/shntool children via group kill.
+  backendProc = spawn(cmd, args, { cwd, stdio: 'pipe', detached: process.platform !== 'win32' })
   backendProc.stdout?.on('data', (d: Buffer) => process.stdout.write(`[flask] ${d}`))
   backendProc.stderr?.on('data', (d: Buffer) => process.stderr.write(`[flask] ${d}`))
 

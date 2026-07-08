@@ -4978,7 +4978,7 @@ def create_app() -> Flask:
         if not path or lb is None:
             return jsonify({"error": "folder_path and lb_number required"}), 400
         try:
-            database.set_folder_link(path, int(lb), body.get("note", ""))
+            database.replace_folder_link(path, int(lb), body.get("note", ""))
             return jsonify({"ok": True})
         except Exception as exc:
             return jsonify({"error": str(exc)}), 500
