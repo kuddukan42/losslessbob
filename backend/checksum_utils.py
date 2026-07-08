@@ -348,6 +348,82 @@ def compute_md5(filepath):
         return None
 
 
+def _cached_file_hashes(
+    folder_path: str,
+    fpath: str,
+    rel_path: str,
+    cache_map: "dict[str, dict]",
+    need_md5: bool,
+    need_ffp: bool,
+) -> "tuple[str | None, str | None]":
+    """Return (md5, ffp) for one file, consulting the pipeline hash cache (P1).
+
+    A cached hash is trusted only when its row's stored ``(size, mtime)`` match a
+    fresh ``os.stat`` of the file and the column is non-NULL (design rule R1 —
+    validate at consumption). On any needed-hash MISS the file is read once and
+    md5 + sha256 are computed together in that single pass (the design's "single
+    hash pass": sha256 rides along free and later feeds filing's tree digest via
+    ``derive_tree_digest``); ffp is read header-only via ``compute_ffp`` for FLAC.
+    Everything computed is written back through ``upsert_file_hash`` (its merge
+    keeps columns passed as None when the stats are unchanged).
+
+    ANY failure in the cache layer — an uninitialised write queue in standalone
+    tools that never called ``init_db``, stat errors, DB errors — degrades
+    silently to plain ``compute_md5`` / ``compute_ffp`` with no caching. A
+    verification verdict must never fail or change because the cache is
+    unavailable. shntool hashes are never cached and are handled by callers.
+
+    Args:
+        folder_path: Absolute folder path — the cache scope key.
+        fpath: Filesystem path of the file to hash.
+        rel_path: Posix path of the file relative to ``folder_path`` (row key).
+        cache_map: Preloaded ``database.get_folder_hashes(folder_path)`` result.
+        need_md5: Whether the caller needs the md5 hash.
+        need_ffp: Whether the caller needs the ffp fingerprint (FLAC only).
+
+    Returns:
+        ``(md5_hex or None, ffp_hex or None)`` — None for any hash not requested.
+    """
+    if not need_md5 and not need_ffp:
+        return None, None
+    try:
+        from backend import db as database  # lazy: keep this module standalone-importable
+
+        st = os.stat(to_long_path(Path(fpath)))
+        row = cache_map.get(rel_path)
+        valid = (row is not None and row.get("size") == st.st_size
+                 and row.get("mtime") == st.st_mtime)
+        md5_val = (row["md5"] if (valid and row.get("md5")) else None) if need_md5 else None
+        ffp_val = (row["ffp"] if (valid and row.get("ffp")) else None) if need_ffp else None
+
+        computed_md5 = computed_sha = computed_ffp = None
+        if need_md5 and md5_val is None:
+            md5_h = hashlib.md5()
+            sha_h = hashlib.sha256()
+            with open(to_long_path(Path(fpath)), 'rb') as f:
+                for chunk in iter(lambda: f.read(65536), b''):
+                    md5_h.update(chunk)
+                    sha_h.update(chunk)
+            computed_md5 = md5_h.hexdigest()
+            computed_sha = sha_h.hexdigest()
+            md5_val = computed_md5
+        if need_ffp and ffp_val is None:
+            computed_ffp = compute_ffp(str(fpath))
+            ffp_val = computed_ffp
+
+        if computed_md5 is not None or computed_sha is not None or computed_ffp is not None:
+            database.upsert_file_hash(
+                folder_path, rel_path, st.st_size, st.st_mtime,
+                md5=computed_md5, ffp=computed_ffp, sha256=computed_sha,
+            )
+        return md5_val, ffp_val
+    except Exception:
+        # Cache layer unavailable → plain compute, no caching; never fail verify.
+        md5_out = compute_md5(str(fpath)) if need_md5 else None
+        ffp_out = compute_ffp(str(fpath)) if need_ffp else None
+        return md5_out, ffp_out
+
+
 def _compute_shntool_via_ffmpeg(invoke_path: str, cmd: list[str]) -> str | None:
     """
     Decode audio to a temp WAV via ffmpeg, then run shntool hash on the WAV.
@@ -600,6 +676,14 @@ def verify_folder(folder_path):
     files = []
     n_pass = n_mismatch = n_missing = 0
 
+    # Preload the P1 hash cache for this folder once (rule R1 validation happens
+    # per-file inside _cached_file_hashes). Any failure degrades to no cache.
+    try:
+        from backend import db as database
+        cache_map = database.get_folder_hashes(folder_path)
+    except Exception:
+        cache_map = {}
+
     for fname in sorted(audio_in_chk):
         fpath = disk_audio_map.get(fname, folder / fname)
         on_disk = fpath.exists()
@@ -613,8 +697,17 @@ def verify_folder(folder_path):
         shn_exp = exp.get('shntool')
         st5_exp = exp.get('st5')
 
-        md5_actual = compute_md5(str(fpath)) if on_disk and md5_exp is not None else None
-        ffp_actual = compute_ffp(str(fpath)) if on_disk and is_flac and ffp_exp is not None else None
+        need_md5 = on_disk and md5_exp is not None
+        need_ffp = on_disk and is_flac and ffp_exp is not None
+        if need_md5 or need_ffp:
+            # Cache key is the RAW posix rel-path of the on-disk file (the form
+            # used by derive_tree_digest/upsert), not the apostrophe-normalised
+            # fname used for checksum matching.
+            rel_key = fpath.relative_to(folder).as_posix()
+            md5_actual, ffp_actual = _cached_file_hashes(
+                folder_path, str(fpath), rel_key, cache_map, need_md5, need_ffp)
+        else:
+            md5_actual = ffp_actual = None
         shn_actual = None
         if on_disk and is_shn and shn_exp is not None and shntool_ok:
             try:
@@ -763,6 +856,14 @@ def verify_folder_lbdir(folder_path, lbdir_path):
         _norm_fname(_p.name).lower(): _p for _p in _disk_audio_map.values()
     }
 
+    # Preload the P1 hash cache for this folder once (rule R1 validation happens
+    # per-file inside _cached_file_hashes). Any failure degrades to no cache.
+    try:
+        from backend import db as database
+        cache_map = database.get_folder_hashes(folder_path)
+    except Exception:
+        cache_map = {}
+
     for fname in sorted(all_files):
         fpath = _disk_audio_map.get(fname)
         if fpath is None and Path(fname).suffix.lower() in AUDIO_EXTS:
@@ -781,8 +882,16 @@ def verify_folder_lbdir(folder_path, lbdir_path):
         ffp_exp = ffp_map.get(fname)
         shn_exp = shn_map.get(fname)
 
-        md5_actual = compute_md5(str(fpath)) if on_disk and md5_exp is not None else None
-        ffp_actual = compute_ffp(str(fpath)) if on_disk and is_flac and ffp_exp is not None else None
+        need_md5 = on_disk and md5_exp is not None
+        need_ffp = on_disk and is_flac and ffp_exp is not None
+        if need_md5 or need_ffp:
+            # Cache key is the RAW posix rel-path of the on-disk file (the form
+            # used by derive_tree_digest/upsert), not the matching name fname.
+            rel_key = fpath.relative_to(folder).as_posix()
+            md5_actual, ffp_actual = _cached_file_hashes(
+                folder_path, str(fpath), rel_key, cache_map, need_md5, need_ffp)
+        else:
+            md5_actual = ffp_actual = None
         is_wav = ext == '.wav'
         shn_actual = None
         if on_disk and shn_exp is not None and shntool_ok and (is_shn or is_wav):

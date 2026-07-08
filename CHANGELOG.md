@@ -1,3 +1,87 @@
+[2026-07-08] — feat(backend): TODO-205 Phases 1–5(backend) — pipeline cache schema, async job model, state persistence, hash consultation, lbdir prefetch (structural tier)
+Added: backend/app.py: TODO-205 Phase 5 backend half (design §5/P3) — background LBDIR
+  prefetch: module-level _LBDIR_PREFETCH_INFLIGHT set + lock (dedupe by LB number, many
+  folders can resolve to one LB) + lazy ThreadPoolExecutor(max_workers=2); submitted the
+  moment lookup resolves an LB whose lbdir attachment is uncached; worker mirrors the
+  inline retrieval incl. canonical-alias fallback, failures swallowed (prefetch is
+  advisory). While the LB is inflight the lbdir step returns status "mute" + label
+  "Fetching LBDIR…" + pending_fetch:true instead of scraping synchronously; when NOT
+  inflight the original synchronous scrape fallback runs unchanged. pending_fetch rides a
+  marker field (GUI STATUS_TO_STATE union is closed); pending verdicts are never persisted
+  to pipeline_folder_state and never served cached; severity exempts a pending_fetch lbdir
+  mute from the "downstream not run" attn escalation. GUI half (pending_fetch retry effect
+  in ScreenPipeline.tsx) deliberately deferred — see design §9 Phase 5 row for the handoff.
+  Implemented by opus agent; verified: full suite 477 passed, /backend-restart, cold 1.1s →
+  warm 95ms cached serve, no spurious pending_fetch on cached-attachment flows.
+Added: backend/checksum_utils.py: TODO-205 Phase 4 (design §2a/§3) — _cached_file_hashes():
+  verify_folder and verify_folder_lbdir consult pipeline_file_hash per file ((size,mtime)
+  R1 validation at consumption); on a miss md5+sha256 are computed in ONE read (sha256 rides
+  along to feed filing's tree digest); ffp cached incidentally (header-only read anyway);
+  shntool never cached. Cache key is the raw posix rel-path (not the apostrophe-normalised
+  matching name) so verify and filing share one keyspace. ANY cache-layer failure degrades
+  silently to plain compute — verdicts can never change because the cache is unavailable.
+Changed: backend/filer.py: filing's SOURCE-side tree digest now derives from cached sha256s
+  (_source_tree_digest → db.derive_tree_digest, hash_tree fallback on any error); the
+  DESTINATION is always freshly hashed — a poisoned cache can only cause a false mismatch
+  (abort), never a false match, so hash-verify-before-remove holds unconditionally.
+Added: backend/filer.py: stale_verify guard in start_file_job (design §3a hard rule,
+  enforced for ALL filing, auto + manual): if a pipeline_folder_state row exists and the
+  recomputed folder fingerprint differs, filing is refused with error_code "stale_verify"
+  ("re-run the pipeline"); folders with no pipeline state proceed as before.
+Added: tests/test_hash_cache_verify.py: 9 tests — cold/warm verify identical + md5&sha256
+  populated, edited file detected as mismatch (not stale cached Pass), poisoned-stale row
+  ignored, cache-failure degradation, source digest == hash_tree cold/warm + fallback,
+  stale_verify blocks / matching fingerprint proceeds / no state proceeds. Full suite 477
+  passed. Implemented by opus (code) + sonnet (tests) agents; verified live: cold 2×150MB
+  verify 0.454s → touch one file → 0.233s (only the touched file re-hashed); edit-then-file
+  refused with stale_verify.
+Added: backend/app.py: TODO-205 Phase 3 (design §2b/§3/§4d) — _pipeline_process_folder now
+  persists all step verdicts + post-run folder fingerprint to pipeline_folder_state after
+  every run, and serves the two expensive hash steps (verify, lbdir) from cache with
+  cached:true when the recomputed fingerprint matches (the R3 sweep). Three refinements over
+  the design (recorded in its §9 as-built notes): lookup/rename/file ALWAYS run fresh
+  (cheap + DB-dependent — pins/aliases/status invisible to the fs fingerprint; file is a P8
+  live view); cached lbdir verdicts carry the lb_number they verified and are rejected after
+  a re-pin (and never re-stamp set_lbdir_verified); persistence uses the post-run fingerprint
+  since the lbdir step copies the manifest into the folder mid-run. New optional force:bool
+  on sync /api/pipeline/run and async /run/start bypasses the cache. Implemented by an opus
+  agent from the pinned spec; verified live: cached serve 15ms vs 220ms fresh (200MB
+  fixture), force recomputes, touch → fingerprint miss → fresh → re-cached, mixed
+  cached-verify/fresh-lookup row + severity correct, persisted JSON stores no cached flag.
+Added: backend/app.py: TODO-205 Phase 2 (design §4) — async multi-folder pipeline job:
+  POST /api/pipeline/run/start {folders, steps?, workers?:1-4}, GET /api/pipeline/run/status,
+  POST /api/pipeline/run/cancel. Module-level _PIPELINE_JOB state +
+  _pipeline_run_async_coordinator: folders grouped by os.stat st_dev (one drain thread per
+  device, serial within a device — same-spindle seek-thrash guard), global
+  Semaphore(workers) cap, cooperative per-folder cancel, per-folder try/except so one bad
+  folder never kills the job. Busy contract mirrors filer.start_file_job
+  ({ok:false, error_code:"busy"}). Sync /api/pipeline/run unchanged; GUI still uses it
+  (migration is Phase 7). Implemented by a sonnet agent from the design spec; verified live:
+  busy guard mid-run, cancel left in-flight folder to finish (verify "Pass") and skipped the
+  23 queued, 400 bad_input on unknown steps, sync route byte-identical behaviour.
+Changed: PROJECT.md: routes table — documented the three new async pipeline endpoints.
+Added: backend/db.py: `pipeline_file_hash` (per-file md5/ffp/sha256 cache; (size, mtime) are
+  validation columns per design rule R1) and `pipeline_folder_state` (per-folder step verdicts
+  keyed by a per-file stat-sweep fingerprint, rule R2) tables per
+  instructions/PIPELINE_STRUCTURAL_TIER_DESIGN.md §2; both registered in USER_TABLES so master
+  exports drop them (they hold local absolute paths). Helpers: upsert_file_hash / get_file_hash /
+  get_folder_hashes, folder_fingerprint, get/put_folder_state (fingerprint-scoped merge — a new
+  fingerprint discards all prior verdicts), derive_tree_digest (reproduces filer.hash_tree
+  byte-for-byte from cached sha256s with fresh-read write-through on any miss),
+  prune_pipeline_cache (missing-folder sweep + 180-day age cap — design §10 Q1 decided). All
+  writes route through db_queue (§4e). Inert: nothing consults the tables until Phases 3/4.
+Added: tests/test_pipeline_cache.py: 10 tests — fingerprint stability/sensitivity (in-place edit,
+  rename), hash-cache round-trip + replace-on-stat-change, folder-state merge/discard, derived
+  tree digest == hash_tree on a fixture with a lone-surrogate filename (cold, warm, and
+  poisoned-stale cache), USER_TABLES registration, prune. Discovered en route: SQLite TEXT cannot
+  bind lone-surrogate paths — guarded via db._cacheable(); such files are never cached, always
+  hashed fresh (speed cost only, never correctness).
+Changed: instructions/PIPELINE_STRUCTURAL_TIER_DESIGN.md: Phase 1 marked shipped with as-built
+  notes; §10 Q1 (eviction) decided, Q1b surrogate-path constraint recorded.
+Changed: TODO.md: TODO-205 retitled/rescoped to implementation tracking (design shipped
+  2026-07-07; Phase 1 done, Phases 2–7 remaining). Stays Open.
+Changed: PROJECT.md: schema section — documented the two new USER tables.
+
 [2026-07-08] — feat/fix: orchestrated parallel-agent session — 8 items closed (BUG-233/236, TODO-149/174/175/176/207/208) + ledger cleanup
 Fixed: backend/wtrf_scraper.py: BUG-233 — Content-Disposition parsing extracted into
   _filename_from_content_disposition(): plain filename= preferred; RFC 5987 filename*= decoded
