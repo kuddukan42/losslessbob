@@ -28,3 +28,4 @@ its contents; they are not listed individually here.
 | STRUCTURE_REVIEW.md | Structural & consistency review of backend + gui_next (2026-07-04) | not triaged |
 | TAPEMATCH_CALIBRATION_GUIDE.md | Quick guide to TapeMatch calibration rules (never trade precision for recall) | not triaged |
 | TAPEMATCH_PLAN.md | tapematch next-steps plan, generated 2026-06-07 from full run analysis | not triaged |
+| WORK_PACKAGE_2026-07-09.md | Agreed work package for the 7/09–7/12 usage window — timeline, locked decisions, deferred list | active |
