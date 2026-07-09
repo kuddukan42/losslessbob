@@ -1,3 +1,29 @@
+[2026-07-09] — feat(backend): TAPER phase 1 + RANKING phase 2 — taper attribution engine, show picks, chained recompute endpoint
+Added: backend/taper_attribution.py: taper attribution engine (FABLE_TAPER_ATTRIBUTION phase 1) —
+  harvests evidence from entry_lineage / _KNOWN_TAPER_ALIASES / recording_families and writes
+  per-LB designations with confidence tiers (confirmed/propagated/inferred), evidence_json audit
+  trail, and conflict flagging. Live run: 7,817 attributions (2,643 confirmed / 5,174 propagated /
+  168 conflicts flagged for curator review). tools/attribute_tapers.py CLI wrapper (run()/main,
+  --dry-run). tests/test_taper_attribution.py.
+Added: concert_ranker/picks.py: per-date "best of show" pick scoring (FABLE_UNIFIED_RANKING
+  phase 2, §3/§4 model) over entries.rating, curated_lists, entry_lineage,
+  quality_recording_scores, and taper_attributions (F5: attribution runs first so the taper
+  reputation term sees fresh rows). tools/compute_show_picks.py CLI wrapper. Dry run against the
+  real DB: 15,204 picks over 4,031 dates (median score 85.7). tests/test_show_picks.py.
+Added: backend/db.py: new tables — taper_confirmations (MASTER, sticky curator confirm/reject
+  decisions per SPEC_INTEGRATION_NOTES F2; curator API lands in TAPER phase 2),
+  taper_attributions + show_picks (USER, derived, recomputed wholesale, never exported).
+  MASTER_TABLES/USER_TABLES updated accordingly.
+Added: backend/app.py: POST /api/derived/recompute — SSE-streamed chained recompute
+  (parse_lineage → attribute_tapers → compute_show_picks) per SPEC_INTEGRATION_NOTES F1,
+  replacing the ranking spec's standalone /api/picks/recompute; steps skip gracefully when a
+  later phase's module isn't importable. Manual trigger only, not curator-gated (USER-tier
+  output only).
+Changed: tools/tapematch/FN_LABEL_REVIEW.md: TODO-201 batches 1+2 — 128 of 264 census-flagged
+  pairs reviewed (83 FLIP / 37 KEEP / 8 UNSURE). Pending tj sign-off, flips would shrink the
+  corr<0.05 FN population 830 → ~747. Remaining 136 duration-only pairs need a
+  partial/incomplete-set judgment method (future chip); TODO-201 stays open.
+
 [2026-07-09] — feat(tapematch): library crawl launched + analysis auto-triage; backlog consolidation
 Added: tools/tapematch/crawl_start.sh / crawl_stop.sh / crawl_status.sh: detached single-instance
   wrapper set around run_crawl.sh, log at data/tapematch/crawl.log. Full-library crawl launched

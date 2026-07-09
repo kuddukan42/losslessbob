@@ -17,8 +17,8 @@ its contents; they are not listed individually here.
 | FABLE_LISTENING_INSIGHT_IDEAS.md | Listening & Insight features idea spec pack | active — see SPEC_INTEGRATION_NOTES.md §2 for order, not yet implemented |
 | FABLE_ONBOARDING_SYNC.md | New-user onboarding & data sync design spec | active — see SPEC_INTEGRATION_NOTES.md §2 for order, not yet implemented |
 | FABLE_TAPEMATCH_LISTENING_SIGNALS.md | TapeMatch "simulated listening" signals idea spec pack | active — see SPEC_INTEGRATION_NOTES.md §2 for order, not yet implemented |
-| FABLE_TAPER_ATTRIBUTION.md | Taper Attribution Engine design spec | active — see SPEC_INTEGRATION_NOTES.md §2 for order, not yet implemented |
-| FABLE_UNIFIED_RANKING.md | Unified "Best of Show" ranking design spec | active — see SPEC_INTEGRATION_NOTES.md §2 for order, not yet implemented |
+| FABLE_TAPER_ATTRIBUTION.md | Taper Attribution Engine design spec | active — phase 1 shipped 2026-07-09 (engine/schema/recompute, 7,817 attributions); phase 2 (confirm/reject API + GUI) open |
+| FABLE_UNIFIED_RANKING.md | Unified "Best of Show" ranking design spec | active — phase 2 shipped 2026-07-09 (show_picks + chained /api/derived/recompute per F1); phases 3–4 (Library payload, badges/filters, EvidenceList) open |
 | library/ | Standalone HTML pixel specs for the unified Library screen | not triaged |
 | SHARING_FEATURE.md | Plan to share an audio folder with a friend over the internet via Cloudflare Tunnel | not triaged |
 | SPEC_INTEGRATION_NOTES.md | Cross-review / integration notes for the four Fable spec-pack docs | active — see SPEC_INTEGRATION_NOTES.md §2 for order, not yet implemented |
