@@ -1,4 +1,5 @@
 import base64
+import importlib
 import json
 import logging
 import os
@@ -4827,6 +4828,64 @@ def create_app() -> Flask:
         except Exception as exc:
             _log.exception("tapematch_sync failed")
             return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
+    @app.route("/api/derived/recompute", methods=["POST"])
+    def derived_recompute() -> Response:
+        """Chained derived-data recompute: parse_lineage -> attribute_tapers ->
+        compute_show_picks.
+
+        Per instructions/SPEC_INTEGRATION_NOTES.md finding F1, this replaces
+        the ranking spec's standalone ``POST /api/picks/recompute`` — it's the
+        one endpoint the onboarding wizard's "Done" step (and a "Recompute
+        derived data" button, for curators after rating/list changes) calls,
+        so a fresh install regenerates lineage, taper attributions, and show
+        picks from master data alone. SSE, sequential; each step is run in
+        canonical order (attribution before picks, per F5, so the taper
+        reputation scoring term sees fresh attributions) and skipped
+        gracefully (a 'skipped' event) if its module isn't importable, so the
+        chain degrades cleanly when a later phase hasn't shipped yet.
+
+        Manual trigger only (like /api/tapematch/sync) — never run at
+        startup. Not curator-gated: unlike the master-data endpoints above,
+        this recomputes only the user's OWN local USER-tier derived tables
+        (entry_lineage, taper_attributions, show_picks), never exported in
+        master — same rationale as /api/tapematch/sync.
+        """
+        steps = (
+            ("parse_lineage", "tools.parse_lineage", "run"),
+            ("attribute_tapers", "tools.attribute_tapers", "run"),
+            ("compute_show_picks", "tools.compute_show_picks", "run"),
+        )
+
+        def _stream():
+            for name, module_name, func_name in steps:
+                yield f"data: {json.dumps({'event': 'start', 'step': name})}\n\n"
+                try:
+                    module = importlib.import_module(module_name)
+                    func = getattr(module, func_name)
+                except (ImportError, AttributeError):
+                    yield f"data: {json.dumps({'event': 'skipped', 'step': name})}\n\n"
+                    continue
+                try:
+                    result = func()
+                    payload = {"event": "done", "step": name}
+                    if isinstance(result, dict):
+                        payload["stats"] = result
+                    yield f"data: {json.dumps(payload)}\n\n"
+                except Exception as exc:
+                    _log.exception("derived/recompute: step %s failed", name)
+                    yield (
+                        f"data: {json.dumps({'event': 'error', 'step': name, 'message': str(exc)})}"
+                        "\n\n"
+                    )
+                    return
+            yield f"data: {json.dumps({'event': 'chain_done'})}\n\n"
+
+        return Response(
+            stream_with_context(_stream()),
+            mimetype="text/event-stream",
+            headers={"X-Accel-Buffering": "no", "Cache-Control": "no-cache"},
+        )
 
     @app.route("/api/tapematch/families", methods=["GET"])
     def tapematch_families() -> Response:

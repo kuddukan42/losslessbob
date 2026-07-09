@@ -58,6 +58,7 @@ MASTER_TABLES = (
     "tapematch_family_meta",
     "curated_lists",
     "curated_list_entries",
+    "taper_confirmations",
 )
 # Note: `entries_fts` is a virtual FTS5 table whose content is mirrored from
 # `entries` via triggers. It is NOT copied directly during export/import; the
@@ -80,6 +81,8 @@ USER_TABLES = (
     "quality_recording_metrics",
     "quality_recording_scores",
     "entry_lineage",
+    "taper_attributions",
+    "show_picks",
     "pipeline_file_hash",
     "pipeline_folder_state",
 )
@@ -531,6 +534,23 @@ CREATE TABLE IF NOT EXISTS curated_list_entries (
 CREATE INDEX IF NOT EXISTS idx_curated_entries_lb ON curated_list_entries(lb_number);
 CREATE INDEX IF NOT EXISTS idx_curated_entries_list ON curated_list_entries(list_id);
 
+-- taper_confirmations (MASTER — curator decisions on taper attribution, sticky
+-- across recompute). See instructions/FABLE_TAPER_ATTRIBUTION.md + finding F2 in
+-- instructions/SPEC_INTEGRATION_NOTES.md: this table (not a `confirmed_at` flag
+-- on the derived, USER-tier `taper_attributions` table) is the curated-knowledge
+-- surface exported in master data, so an import can never clobber another
+-- install's locally-computed propagation. `tools/attribute_tapers.py` reads this
+-- table first on every run: 'confirm' rows seed a sticky confirmed-tier
+-- attribution; 'reject' rows suppress that (lb_number, taper_normalised) pair
+-- from recompute output. Phase 1 ships schema + recompute support only — the
+-- confirm/reject curator API lands in Phase 2.
+CREATE TABLE IF NOT EXISTS taper_confirmations (
+    lb_number         INTEGER PRIMARY KEY,
+    taper_normalised  TEXT NOT NULL,
+    action            TEXT NOT NULL,      -- 'confirm' / 'reject' (no CHECK; convention only)
+    decided_at        TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 -- bobdylan.com official setlist data
 -- bobdylan_shows: one row per concert page on bobdylan.com/date/
 --   date_str is YYYY-MM-DD; join to entries/dylan_performances on date_str
@@ -724,6 +744,44 @@ CREATE TABLE IF NOT EXISTS entry_lineage (
 CREATE INDEX IF NOT EXISTS idx_lineage_taper_norm
     ON entry_lineage(taper_normalised)
     WHERE taper_normalised IS NOT NULL;
+
+-- ── Taper attributions (USER — derived per-LB taper designations) ────────────
+-- Recomputed wholesale by tools/attribute_tapers.py from entry_lineage /
+-- recording_families / taper_confirmations. Never exported in master data —
+-- per finding F2 (instructions/SPEC_INTEGRATION_NOTES.md), curator decisions
+-- live in the MASTER-tier taper_confirmations table instead, so a master
+-- import can never clobber locally-computed propagation. See
+-- backend/taper_attribution.py for the evidence_json record shape.
+CREATE TABLE IF NOT EXISTS taper_attributions (
+    lb_number         INTEGER PRIMARY KEY,
+    taper_normalised  TEXT NOT NULL,      -- canonical key into _KNOWN_TAPER_ALIASES values
+    confidence        TEXT NOT NULL,      -- 'confirmed' / 'propagated' / 'inferred'
+    evidence_json     TEXT NOT NULL,      -- JSON list of evidence records: {kind, detail, ...}
+    conflict          INTEGER NOT NULL DEFAULT 0,  -- 1 = contradictory evidence, needs review
+    confirmed_at      TIMESTAMP,          -- set only for rows sourced from taper_confirmations
+    computed_at       TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+CREATE INDEX IF NOT EXISTS idx_taper_attr_name ON taper_attributions(taper_normalised);
+CREATE INDEX IF NOT EXISTS idx_taper_attr_conf ON taper_attributions(confidence);
+
+-- ── Show picks (USER — derived per-date "best of" ranking) ───────────────────
+-- Recomputed wholesale by tools/compute_show_picks.py (concert_ranker/picks.py)
+-- from entries.rating, curated_lists, entry_lineage, quality_recording_scores,
+-- and (if present) taper_attributions. Never exported in master data — like
+-- quality_recording_scores, this is the user's own derived analysis, rewritten
+-- wholesale and never hand-edited. See instructions/FABLE_UNIFIED_RANKING.md
+-- §3/§4 for the scoring model and instructions/SPEC_INTEGRATION_NOTES.md
+-- finding F3 for the evidence_json record shape.
+CREATE TABLE IF NOT EXISTS show_picks (
+    concert_date   TEXT NOT NULL,
+    lb_number      INTEGER NOT NULL,
+    pick_score     REAL NOT NULL,        -- comparable within a date only
+    pick_rank      INTEGER NOT NULL,     -- 1 = recommended for the date
+    evidence_json  TEXT NOT NULL,        -- ordered list of {kind, detail, points}
+    computed_at    TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (concert_date, lb_number)
+);
+CREATE INDEX IF NOT EXISTS idx_show_picks_lb ON show_picks(lb_number);
 
 -- ── WTRF Torrent Downloads (USER — fetch attempts for missing items) ──────────
 CREATE TABLE IF NOT EXISTS wtrf_downloads (

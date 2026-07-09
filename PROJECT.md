@@ -73,6 +73,7 @@ losslessbob/
 │   ├── integrity_monitor.py  # TODO-111: lbdir-based collection integrity scan engine
 │   ├── sox_utils.py          # SoX/ffmpeg tool detection + spectrogram generation
 │   ├── startup_log.py        # Startup timing logger → data/logs/startup.log
+│   ├── taper_attribution.py  # Taper attribution engine: evidence harvest → confirmed/propagated/inferred designations
 │   ├── torrent_maker.py      # torf-based .torrent generation; tracker CDN fetch
 │   ├── qbittorrent.py        # qBittorrent WebUI API v2 integration
 │   ├── forum_poster.py       # SMF 2.x WTRF forum topic posting
@@ -85,6 +86,7 @@ losslessbob/
 │   ├── scan.py               # Per-folder decode→extract→aggregate (one decode/STFT per track)
 │   ├── runner.py             # Process-pool driver + producer/consumer staging loop (crash=scrap)
 │   ├── families.py           # Rank within recording_families; standalone fallback (absolute bands)
+│   ├── picks.py              # Per-date "best of show" pick scoring → show_picks (FABLE_UNIFIED_RANKING §3/§4)
 │   ├── calibration.py        # Orchestration: stratified rating×source_class sample → scan → fit
 │   ├── cli.py                # scan / calibrate / rerank / report subcommands
 │   ├── audio/
@@ -149,6 +151,8 @@ losslessbob/
 │   ├── ledger.py              # CLI: BUG/TODO ledger ops (next-id, bug-open/close, todo-open/close, --dry-run); used by /session-close
 │   ├── geocode_locations.py  # CLI: batch-geocode entries.location via Nominatim (--limit, --retry-failed, --dry-run)
 │   ├── import_curated_lists.py # CLI: import curator "best of" picks (TODO-181) — carbonbit's FLglist.xlsx + 10haaf's dylan_boots.zip/years.zip → curated_lists/curated_list_entries
+│   ├── attribute_tapers.py   # CLI wrapper: backend.taper_attribution recompute → taper_attributions (--dry-run)
+│   ├── compute_show_picks.py # CLI wrapper: concert_ranker.picks recompute → show_picks (--dry-run)
 │   ├── losslessbob.iss       # Inno Setup 6 script — builds LosslessBob_Setup_<ver>.exe from dist/LosslessBob/
 │   ├── build_windows.bat     # Local helper: pyinstaller + iscc in sequence (Windows only)
 │   ├── shntool.exe           # Windows shntool binary (GPL-2); bundled into PyInstaller dist via losslessbob.spec
@@ -501,6 +505,40 @@ Index: `idx_lineage_taper_norm ON entry_lineage(taper_normalised) WHERE taper_no
 `parse_confidence` rules: `high` = explicit `Taper:` label + source_chain both found;
 `medium` = one of the two found; `low` = only heuristic-path taper match, no chain; `none` = both NULL.
 
+### `taper_attributions` — Derived per-LB taper designations (USER table)
+Recomputed wholesale by `tools/attribute_tapers.py` (engine in `backend/taper_attribution.py`)
+from `entry_lineage` / `recording_families` / `taper_confirmations`. Never exported in master
+data — curator decisions live in the MASTER-tier `taper_confirmations` table instead (finding F2,
+`instructions/SPEC_INTEGRATION_NOTES.md`), so a master import can never clobber locally-computed
+propagation.
+| Column | Type | Notes |
+|--------|------|-------|
+| lb_number | INTEGER PK | LosslessBob entry number |
+| taper_normalised | TEXT NOT NULL | Canonical key into `_KNOWN_TAPER_ALIASES` values |
+| confidence | TEXT NOT NULL | `'confirmed'` / `'propagated'` / `'inferred'` |
+| evidence_json | TEXT NOT NULL | JSON list of evidence records `{kind, detail, ...}` |
+| conflict | INTEGER DEFAULT 0 | 1 = contradictory evidence, needs curator review |
+| confirmed_at | TIMESTAMP | Set only for rows sourced from `taper_confirmations` |
+| computed_at | TIMESTAMP | DEFAULT CURRENT_TIMESTAMP |
+
+Indexes: `idx_taper_attr_name(taper_normalised)`, `idx_taper_attr_conf(confidence)`.
+
+### `show_picks` — Derived per-date "best of" ranking (USER table)
+Recomputed wholesale by `tools/compute_show_picks.py` (scoring in `concert_ranker/picks.py`)
+from `entries.rating`, `curated_lists`, `entry_lineage`, `quality_recording_scores`, and (if
+present) `taper_attributions`. Never exported in master data. Scoring model:
+`instructions/FABLE_UNIFIED_RANKING.md` §3/§4.
+| Column | Type | Notes |
+|--------|------|-------|
+| concert_date | TEXT NOT NULL | PK part 1 (YYYY-MM-DD) |
+| lb_number | INTEGER NOT NULL | PK part 2 |
+| pick_score | REAL NOT NULL | Comparable within a date only |
+| pick_rank | INTEGER NOT NULL | 1 = recommended for the date |
+| evidence_json | TEXT NOT NULL | Ordered list of `{kind, detail, points}` |
+| computed_at | TIMESTAMP | DEFAULT CURRENT_TIMESTAMP |
+
+Index: `idx_show_picks_lb(lb_number)`.
+
 ### `lb_problems` — Known problems with specific LB entries (MASTER table)
 Curator-authored table for flagging LB entries with known issues (bad checksums,
 incomplete torrent, corrupt files, mislabelled metadata, etc.). Included in master-data export.
@@ -536,6 +574,19 @@ import only so far; the Library-screen filter view remains open on TODO-181.
 
 UNIQUE `(list_id, lb_number)` — a date can have multiple LB picks (multiple rows, same list_id),
 but re-running the import is idempotent. Indexes: `idx_curated_entries_lb`, `idx_curated_entries_list`.
+
+### `taper_confirmations` — Curator taper attribution decisions (MASTER table)
+Sticky curator confirm/reject decisions on taper attribution, exported in master data (finding
+F2, `instructions/SPEC_INTEGRATION_NOTES.md`). `tools/attribute_tapers.py` reads it first on
+every recompute: `'confirm'` rows seed a sticky confirmed-tier attribution; `'reject'` rows
+suppress that pair from output. Phase 1 ships schema + recompute support only — the
+confirm/reject curator API lands in TAPER phase 2.
+| Column | Type | Notes |
+|--------|------|-------|
+| lb_number | INTEGER PK | LosslessBob entry number |
+| taper_normalised | TEXT NOT NULL | Canonical key into `_KNOWN_TAPER_ALIASES` values |
+| action | TEXT NOT NULL | `'confirm'` / `'reject'` (convention only, no CHECK) |
+| decided_at | TIMESTAMP | DEFAULT CURRENT_TIMESTAMP |
 
 ### `scrape_sessions` — Crawler session log (MASTER table)
 One row per site-crawler run started via POST /api/crawler/start.
@@ -794,6 +845,11 @@ scheduled scan interval, checked hourly by `scheduler._integrity_scan_worker`.
 |--------|-------|-------------|
 | POST | `/api/tapematch/sync` | Ingests `tools/tapematch/observations.db` into `recording_families`/`tapematch_family_meta` via `tapematch_sync.sync_tapematch_families()`. Manual trigger only. Returns `{ok, dates_processed, families_written, recordings_linked, errors}`. |
 | GET | `/api/tapematch/families` | Flat list for client-side merge by `lb_number`. Returns `[{lb_number, fam_id, fam_label, fam_conf, fam_by, concert_date}]`. |
+
+### Derived-Data Recompute
+| Method | Route | Description |
+|--------|-------|-------------|
+| POST | `/api/derived/recompute` | SSE-streamed chained recompute: `tools.parse_lineage.run()` → `tools.attribute_tapers.run()` → `tools.compute_show_picks.run()` in canonical order (finding F1/F5, `instructions/SPEC_INTEGRATION_NOTES.md`). Events: `start`/`done` (with per-step `stats`)/`skipped` (module not importable — later phase not shipped)/`error` (aborts chain)/`chain_done`. Manual trigger only (onboarding "Done" step + curator recompute button); not curator-gated — rewrites only USER-tier derived tables (`entry_lineage`, `taper_attributions`, `show_picks`). |
 
 ### Library — Performance/Show Grouping
 | Method | Route | Description |
