@@ -2,11 +2,13 @@
 Tests for the Nominatim geocoder (backend/geocoder.py).
 
 Covers:
-  - _entry_date_to_iso()            — M/D/YY -> YYYY-MM-DD (pure function)
-  - _get_performance_location_string() — dylan_performances lookup
-  - geocode_one()                   — Nominatim lookup (mocked urllib)
-  - place_manual()                  — manual pin upsert
-  - run_batch()                     — batch geocoding worker
+  - _entry_date_to_iso()                    — M/D/YY -> YYYY-MM-DD (pure function)
+  - _get_performance_location_string()      — dylan_performances lookup
+  - _get_bobdylan_shows_location_string()    — bobdylan_shows lookup
+  - _get_setlistfm_location_string()        — setlistfm_shows lookup
+  - geocode_one()                           — Nominatim lookup (mocked urllib)
+  - place_manual()                          — manual pin upsert
+  - run_batch()                             — batch geocoding worker, source priority
   - get_progress()
 """
 from __future__ import annotations
@@ -159,7 +161,117 @@ class TestGetPerformanceLocationString:
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# 3. geocode_one()
+# 3. _get_bobdylan_shows_location_string()
+# ═══════════════════════════════════════════════════════════════════════════════
+
+class TestGetBobdylanShowsLocationString:
+    def test_returns_structured_string_on_match(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            from backend.geocoder import _get_bobdylan_shows_location_string
+            conn.execute(
+                "INSERT INTO entries (lb_number, date_str, location, status) VALUES (1, '7/28/00', 'Raw Loc', 'ok')"
+            )
+            conn.execute(
+                """INSERT INTO bobdylan_shows (bobdylan_url, date_str, venue, location)
+                   VALUES ('u1', '2000-07-28', 'The Purple Onion', 'St. Paul, MN')"""
+            )
+            conn.commit()
+
+            result = _get_bobdylan_shows_location_string("Raw Loc", conn)
+            assert result == "The Purple Onion, St. Paul, MN"
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_drops_blank_parts(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            from backend.geocoder import _get_bobdylan_shows_location_string
+            conn.execute(
+                "INSERT INTO entries (lb_number, date_str, location, status) VALUES (1, '7/28/00', 'Raw Loc', 'ok')"
+            )
+            conn.execute(
+                """INSERT INTO bobdylan_shows (bobdylan_url, date_str, venue, location)
+                   VALUES ('u1', '2000-07-28', 'The Purple Onion', '')"""
+            )
+            conn.commit()
+
+            result = _get_bobdylan_shows_location_string("Raw Loc", conn)
+            assert result == "The Purple Onion"
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_no_matching_show_returns_none(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            from backend.geocoder import _get_bobdylan_shows_location_string
+            conn.execute(
+                "INSERT INTO entries (lb_number, date_str, location, status) VALUES (1, '7/28/00', 'Raw Loc', 'ok')"
+            )
+            conn.commit()
+
+            assert _get_bobdylan_shows_location_string("Raw Loc", conn) is None
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# 4. _get_setlistfm_location_string()
+# ═══════════════════════════════════════════════════════════════════════════════
+
+class TestGetSetlistfmLocationString:
+    def test_returns_structured_string_on_match(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            from backend.geocoder import _get_setlistfm_location_string
+            conn.execute(
+                "INSERT INTO entries (lb_number, date_str, location, status) VALUES (1, '7/28/00', 'Raw Loc', 'ok')"
+            )
+            conn.execute(
+                """INSERT INTO setlistfm_shows (setlistfm_id, date_str, venue_name, city, country)
+                   VALUES ('s1', '2000-07-28', 'Thalia Mara Hall', 'Jackson', 'United States')"""
+            )
+            conn.commit()
+
+            result = _get_setlistfm_location_string("Raw Loc", conn)
+            assert result == "Thalia Mara Hall, Jackson, United States"
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_drops_blank_parts(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            from backend.geocoder import _get_setlistfm_location_string
+            conn.execute(
+                "INSERT INTO entries (lb_number, date_str, location, status) VALUES (1, '7/28/00', 'Raw Loc', 'ok')"
+            )
+            conn.execute(
+                """INSERT INTO setlistfm_shows (setlistfm_id, date_str, venue_name, city, country)
+                   VALUES ('s1', '2000-07-28', 'Thalia Mara Hall', '', '')"""
+            )
+            conn.commit()
+
+            result = _get_setlistfm_location_string("Raw Loc", conn)
+            assert result == "Thalia Mara Hall"
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_no_matching_show_returns_none(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            from backend.geocoder import _get_setlistfm_location_string
+            conn.execute(
+                "INSERT INTO entries (lb_number, date_str, location, status) VALUES (1, '7/28/00', 'Raw Loc', 'ok')"
+            )
+            conn.commit()
+
+            assert _get_setlistfm_location_string("Raw Loc", conn) is None
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# 5. geocode_one()
 # ═══════════════════════════════════════════════════════════════════════════════
 
 class TestGeocodeOne:
@@ -234,7 +346,7 @@ class TestGeocodeOne:
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# 4. place_manual()
+# 6. place_manual()
 # ═══════════════════════════════════════════════════════════════════════════════
 
 class TestPlaceManual:
@@ -276,7 +388,7 @@ class TestPlaceManual:
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# 5. run_batch()
+# 7. run_batch()
 # ═══════════════════════════════════════════════════════════════════════════════
 
 def _fake_geocode(loc):
@@ -444,6 +556,144 @@ class TestRunBatch:
         finally:
             shutil.rmtree(tmp_dir, ignore_errors=True)
 
+    def test_uses_bobdylan_shows_as_primary_source(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            conn.execute(
+                "INSERT INTO entries (lb_number, date_str, location, status) VALUES (1, '7/28/00', 'Raw Location', 'ok')"
+            )
+            conn.execute(
+                """INSERT INTO bobdylan_shows (bobdylan_url, date_str, venue, location)
+                   VALUES ('u1', '2000-07-28', 'The Fillmore', 'San Francisco, CA')"""
+            )
+            conn.commit()
+
+            from backend import geocoder
+            captured = {}
+
+            def _capture_geocode(loc):
+                captured["query"] = loc
+                return {"location_text": loc, "lat": 1.0, "lon": 2.0,
+                        "display_name": loc, "source": "nominatim", "confidence": "high"}
+
+            with patch.object(geocoder, "geocode_one", side_effect=_capture_geocode), \
+                 patch.object(geocoder.time, "sleep"):
+                geocoder.run_batch(db_path=db_path)
+
+            assert captured["query"] == "The Fillmore, San Francisco, CA"
+            row = conn.execute(
+                "SELECT * FROM location_geocoded WHERE location_text=?", ("Raw Location",)
+            ).fetchone()
+            assert row["source"] == "bobdylan_shows"
+            assert row["note"].startswith("bobdylan_shows:")
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_uses_setlistfm_shows_when_no_bobdylan_shows_match(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            conn.execute(
+                "INSERT INTO entries (lb_number, date_str, location, status) VALUES (1, '7/28/00', 'Raw Location', 'ok')"
+            )
+            conn.execute(
+                """INSERT INTO setlistfm_shows (setlistfm_id, date_str, venue_name, city, country)
+                   VALUES ('s1', '2000-07-28', 'Thalia Mara Hall', 'Jackson', 'United States')"""
+            )
+            conn.commit()
+
+            from backend import geocoder
+            captured = {}
+
+            def _capture_geocode(loc):
+                captured["query"] = loc
+                return {"location_text": loc, "lat": 1.0, "lon": 2.0,
+                        "display_name": loc, "source": "nominatim", "confidence": "high"}
+
+            with patch.object(geocoder, "geocode_one", side_effect=_capture_geocode), \
+                 patch.object(geocoder.time, "sleep"):
+                geocoder.run_batch(db_path=db_path)
+
+            assert captured["query"] == "Thalia Mara Hall, Jackson, United States"
+            row = conn.execute(
+                "SELECT * FROM location_geocoded WHERE location_text=?", ("Raw Location",)
+            ).fetchone()
+            assert row["source"] == "setlistfm_shows"
+            assert row["note"].startswith("setlistfm_shows:")
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_bobdylan_shows_takes_priority_over_performances(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            conn.execute(
+                "INSERT INTO entries (lb_number, date_str, location, status) VALUES (1, '7/28/00', 'Raw Location', 'ok')"
+            )
+            conn.execute(
+                """INSERT INTO dylan_performances (event_id, date_str, venue, city, state, country)
+                   VALUES ('evt1', '2000-07-28', 'Madison Square Garden', 'New York', 'NY', 'USA')"""
+            )
+            conn.execute(
+                """INSERT INTO bobdylan_shows (bobdylan_url, date_str, venue, location)
+                   VALUES ('u1', '2000-07-28', 'The Fillmore', 'San Francisco, CA')"""
+            )
+            conn.commit()
+
+            from backend import geocoder
+            captured = {}
+
+            def _capture_geocode(loc):
+                captured["query"] = loc
+                return {"location_text": loc, "lat": 1.0, "lon": 2.0,
+                        "display_name": loc, "source": "nominatim", "confidence": "high"}
+
+            with patch.object(geocoder, "geocode_one", side_effect=_capture_geocode), \
+                 patch.object(geocoder.time, "sleep"):
+                geocoder.run_batch(db_path=db_path)
+
+            assert captured["query"] == "The Fillmore, San Francisco, CA"
+            row = conn.execute(
+                "SELECT source FROM location_geocoded WHERE location_text=?", ("Raw Location",)
+            ).fetchone()
+            assert row["source"] == "bobdylan_shows"
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_setlistfm_shows_takes_priority_over_performances(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            conn.execute(
+                "INSERT INTO entries (lb_number, date_str, location, status) VALUES (1, '7/28/00', 'Raw Location', 'ok')"
+            )
+            conn.execute(
+                """INSERT INTO dylan_performances (event_id, date_str, venue, city, state, country)
+                   VALUES ('evt1', '2000-07-28', 'Madison Square Garden', 'New York', 'NY', 'USA')"""
+            )
+            conn.execute(
+                """INSERT INTO setlistfm_shows (setlistfm_id, date_str, venue_name, city, country)
+                   VALUES ('s1', '2000-07-28', 'Thalia Mara Hall', 'Jackson', 'United States')"""
+            )
+            conn.commit()
+
+            from backend import geocoder
+            captured = {}
+
+            def _capture_geocode(loc):
+                captured["query"] = loc
+                return {"location_text": loc, "lat": 1.0, "lon": 2.0,
+                        "display_name": loc, "source": "nominatim", "confidence": "high"}
+
+            with patch.object(geocoder, "geocode_one", side_effect=_capture_geocode), \
+                 patch.object(geocoder.time, "sleep"):
+                geocoder.run_batch(db_path=db_path)
+
+            assert captured["query"] == "Thalia Mara Hall, Jackson, United States"
+            row = conn.execute(
+                "SELECT source FROM location_geocoded WHERE location_text=?", ("Raw Location",)
+            ).fetchone()
+            assert row["source"] == "setlistfm_shows"
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
     def test_rate_limit_retry_then_success(self):
         db_path, conn, tmp_dir = _make_db()
         try:
@@ -491,7 +741,7 @@ class TestRunBatch:
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# 6. get_progress()
+# 8. get_progress()
 # ═══════════════════════════════════════════════════════════════════════════════
 
 class TestGetProgress:

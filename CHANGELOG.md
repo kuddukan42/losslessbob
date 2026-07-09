@@ -1,3 +1,39 @@
+[2026-07-09] — feat(backend): TODO-167 — geocoder pulls structured location from bobdylan_shows/setlistfm_shows
+Changed: backend/geocoder.py: extracted _entries_iso_dates() shared helper; added
+  _get_bobdylan_shows_location_string() and _get_setlistfm_location_string(), matching the
+  existing dylan_performances lookup pattern. run_batch() now tries three structured sources
+  in priority order via _STRUCTURED_SOURCES — bobdylan_shows (most standardized "City, ST"
+  strings), then setlistfm_shows, then dylan_performances as a last resort — before falling
+  back to the raw entries.location text. location_geocoded.source records whichever table
+  matched ('bobdylan_shows' / 'setlistfm_shows' / 'performances') instead of always
+  'nominatim'. No route or GUI changes needed — /api/geocode/run already calls run_batch()
+  directly.
+Changed: PROJECT.md: documented the new source priority order and source column enum.
+Added: tests/test_geocoder.py: 13 new tests covering both new lookup functions plus run_batch
+  priority ordering (bobdylan_shows > setlistfm_shows > dylan_performances).
+
+[2026-07-09] — chore(backend): TODO-165 — deprecate old acoustic fingerprinting feature
+Changed: backend/app.py: removed all /api/fingerprint/* routes (build/status/stop/queue,
+  lb_numbers, stats, identify, duplicates/scan/stop, collection_by_date, identify_folder/
+  status/stop, purge), the init_fp_db() startup call, background worker state/threads, the
+  "fingerprints" key from GET /api/collection/prefetch, and the fingerprint_cache stat from
+  GET /api/purge/stats.
+Changed: gui_next ScreenCollection.tsx: removed the Fingerprinted column, its filter/sort key,
+  and the "Fingerprint Folder" context-menu action (separate integration from the dedicated
+  screen, found during scoping — confirmed with user before removing).
+Changed: gui_next ScreenSetup.tsx + AboutDialog.tsx: removed the purge-fingerprint-cache option
+  and the librosa dependency row.
+Changed: requirements.txt + PROJECT.md: dropped librosa/numba/soxr — introduced solely for
+  fingerprinting and unused elsewhere (Concert Ranker uses numpy/scipy directly, not these
+  three); numpy/scipy kept.
+Removed: backend/fingerprint.py (Wang/Shazam landmark acoustic fingerprinting engine),
+  gui_next/.../screens/ScreenFingerprint.tsx + its nav entry/icon/route (App.tsx, AppShell.tsx,
+  Icon.tsx), backend/paths.py FP_DB_PATH, and the orphaned fingerprint.* / collection.detail.
+  fingerprinted* / collection.toast.fingerprint* / setup.purges.fingerprintCache* i18n keys
+  across all 6 locales. Legacy gui/ (PyQt6, frozen) and cli.py still reference the deleted
+  routes/module — left intentionally broken per user decision (frozen GUI, low-traffic CLI
+  path) rather than extending changes into frozen code.
+
 [2026-07-09] — feat(gui): TODO-205 Phase 7 (async job model) + TODO-211 (severity extraction) — pipeline structural tier COMPLETE
 Changed: gui_next ScreenPipeline.tsx: TODO-205 Phase 7 GUI migration (design §8) — runSteps no
   longer posts one synchronous /api/pipeline/run per folder. It now enqueues a batch onto a

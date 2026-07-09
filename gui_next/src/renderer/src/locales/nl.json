@@ -48,7 +48,6 @@
       "attachments": "Bijlagen",
       "spectrograms": "Spectrogrammen",
       "map": "Kaart",
-      "fingerprint": "Vingerafdruk",
       "curator": "Curator",
       "curatorBadge": "CURATOR",
       "dbeditor": "DB-editor",
@@ -713,9 +712,6 @@
       "diskPath": "Schijfpad",
       "size": "Maat",
       "confirmed": "Bevestigd",
-      "fingerprinted": "Vingerafdrukken",
-      "fingerprintedYes": "Ja - akoestisch",
-      "fingerprintedNo": "Geen",
       "archRating": "Arch. Beoordeling",
       "myRating": "Mijn waardering",
       "perFive": "/ 5",
@@ -816,9 +812,6 @@
       "queuedScrape": "Schrapen in wachtrij voor {{lb}}",
       "scrapeFailed": "Schrapen mislukt",
       "scrapeRequestFailed": "Scrapeverzoek mislukt",
-      "fingerprinting": "Vingerafdrukken {{lb}}...",
-      "fingerprintFailed": "Vingerafdruk mislukt",
-      "fingerprintRequestFailed": "Verzoek om vingerafdruk mislukt",
       "vlcNotFound": "VLC niet gevonden op dit systeem",
       "vlcRequestFailed": "VLC-verzoek mislukt",
       "spectrogramFailed": "Spectrogram mislukt",
@@ -937,7 +930,6 @@
       "lookupHistory": "Geschiedenis opzoeken",
       "importLog": "Logboek importeren",
       "scraperCache": "Cache van de scraper",
-      "fingerprintCache": "Vingerafdruk cache",
       "allUserData": "Alle gebruikersgegevens",
       "purge": "Zuiveren…",
       "disclaimer": "Alleen gebruikersgegevens. Het controlesomarchief wordt nooit beïnvloed.",
@@ -949,8 +941,6 @@
       "importLogUnit": "regels",
       "scraperCacheDesc": "In de cache opgeslagen HTML van de detailpagina",
       "scraperCacheUnit": "pagina's",
-      "fingerprintCacheDesc": "Audio-vingerafdrukblobs",
-      "fingerprintCacheUnit": "blobs",
       "allUserDataDesc": "Collectie, verlanglijst, beoordelingen, meldingen en logboeken — niet ongedaan te maken.",
       "purgeAll": "Alles verwijderen…",
       "archiveProtected": "Het checksum-archief wordt nooit door een opschoonactie aangeraakt."
@@ -1114,64 +1104,6 @@
       "notValid": "Geen geldig themabestand",
       "imported": "Thema geïmporteerd",
       "parseFailed": "Mislukt bij het parsen van themabestanden"
-    }
-  },
-  "fingerprint": {
-    "configure": {
-      "title": "Configureer",
-      "subtitle": "Verzamelitems voor een datum zoeken en je audio daarmee vergelijken",
-      "date": "Prestatiedatum",
-      "findEntries": "Vermeldingen zoeken",
-      "finding": "Vinden...",
-      "found": "Gevonden {{count}} LB entries voor deze datum - {{withPath}} hebben schijfpaden.",
-      "noEntries": "Geen inzamelitems gevonden voor deze datum.",
-      "userFolder": "Je geheimzinnige map",
-      "noFolderSelected": "Geen map geselecteerd",
-      "browse": "Blader door",
-      "match": "Wedstrijd lopen",
-      "matchHint": "Selecteer een datum met schijfpadvermeldingen en een mystery map om te beginnen"
-    },
-    "entries": {
-      "lb": "LB#",
-      "location": "Locatie",
-      "folder": "Map",
-      "onDisk": "Op schijf",
-      "yes": "Ja",
-      "no": "Geen"
-    },
-    "progress": {
-      "phase1": "Fase 1 - LB-vingerafdrukken bouwen",
-      "phase2": "Fase 2 - Je bestanden identificeren",
-      "files": "{{done}} / {{total}} bestanden",
-      "current": "{{name}}",
-      "stop": "Stop"
-    },
-    "results": {
-      "title": "Resultaten",
-      "filesIdentified": "bestanden",
-      "yourFile": "Uw bestand",
-      "bestMatch": "Beste wedstrijd LB",
-      "location": "Locatie",
-      "score": "Score",
-      "confident": "Zelfverzekerd",
-      "noMatch": "Geen match",
-      "yes": "Ja",
-      "no": "Geen",
-      "errors": "{{count}} bestand(en) kon(den) niet worden geïdentificeerd",
-      "noResults": "Er zijn geen bestanden geïdentificeerd - de mysterie map is mogelijk leeg of bevat geen ondersteunde audio.",
-      "cleanup": "Vingerafdrukgegevens opschonen"
-    },
-    "toast": {
-      "noPath": "Geen collectie-items met schijfpaden gevonden voor deze datum.",
-      "loadFailed": "Verzamelitems zijn niet geladen.",
-      "pickFailed": "Kan de mapkiezer niet openen.",
-      "buildFailed": "Fout bij het maken van vingerafdrukken.",
-      "identifyFailed": "Bestandsidentificatie niet gestart.",
-      "stopped": "Gestopt.",
-      "done": "Wedstrijd compleet.",
-      "cleanupDone": "Vingerafdrukgegevens gewist.",
-      "cleanupFailed": "Opschonen mislukt.",
-      "noEntries": "Geen collectie-items gevonden voor {{date}}."
     }
   },
   "dbeditor": {

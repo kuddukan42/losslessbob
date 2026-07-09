@@ -40,10 +40,8 @@ const STACK: StackGroup[] = [
   ]},
   { group: 'Audio & DSP', rows: [
     { name: 'Numerical',       value: 'numpy',     version: '2.4.6' },
-    { name: 'Fingerprinting',  value: 'librosa',   version: '0.11.0' },
     { name: 'Audio I/O',       value: 'soundfile', version: '0.13.1' },
     { name: 'Signal proc.',    value: 'scipy',     version: '1.17.1' },
-    { name: 'JIT compilation', value: 'numba',     version: '0.65.1' },
     { name: 'Language',        value: 'Python',    version: '3.11+' },
   ]},
 ]

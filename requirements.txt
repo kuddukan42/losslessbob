@@ -17,13 +17,10 @@ watchdog==4.0.1
 
 waitress==3.0.0
 
-# Audio fingerprinting
+# Audio processing (Concert Ranker)
 numpy==2.4.6
-librosa==0.11.0
 soundfile==0.13.1
 scipy==1.17.1
-numba==0.65.1
-soxr==1.1.0
 
 # Packaging (run separately, not imported)
 # pyinstaller==6.8.0

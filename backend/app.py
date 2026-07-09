@@ -285,25 +285,6 @@ _spectro_state = {
 }
 _spectro_lock = __import__("threading").Lock()
 
-_fp_build_state = {
-    "status": "idle", "current": "", "done": 0,
-    "total": 0, "skipped": 0, "errors": [], "stop_requested": False,
-    "queue_preview": [],
-}
-_fp_build_lock = threading.Lock()
-_fp_build_stop = threading.Event()
-
-_fp_dup_state: dict = {"status": "idle", "message": "", "results": [], "stop_requested": False}
-_fp_dup_lock  = threading.Lock()
-_fp_dup_stop  = threading.Event()
-
-_fp_id_state: dict = {
-    "status": "idle", "current": "", "done": 0, "total": 0,
-    "errors": [], "results": [], "stop_requested": False,
-}
-_fp_id_lock = threading.Lock()
-_fp_id_stop = threading.Event()
-
 
 def _find_lbdir_in_folder(folder: Path) -> "Path | None":
     """Return the first lbdir*.txt (or LBF-*-lbdir.txt) found in folder, or None."""
@@ -438,9 +419,6 @@ def create_app() -> Flask:
     _slog.t("Flask: init_db start")
     database.init_db()
     _slog.t("Flask: init_db done")
-    from backend import fingerprint as _fp_mod
-    _fp_mod.init_fp_db()
-    _slog.t("Flask: init_fp_db done")
     _slog.t("Flask: start_file_watcher start")
     scheduler.start_file_watcher()
     scheduler.start_collection_watcher()
@@ -1603,9 +1581,9 @@ def create_app() -> Flask:
     def collection_prefetch() -> Response:
         """Return all data needed by the Collection screen in a single request.
 
-        Bundles collection, missing, fingerprints, wishlist, duplicates,
-        forum_posts, torrents, xref_lb_numbers, and years so the GUI only
-        needs one round-trip to warm its React Query cache.
+        Bundles collection, missing, wishlist, duplicates, forum_posts,
+        torrents, xref_lb_numbers, and years so the GUI only needs one
+        round-trip to warm its React Query cache.
 
         Returns:
             JSON dict with one key per dataset.
@@ -1621,20 +1599,9 @@ def create_app() -> Flask:
                     bool(row.get("torrent_path"))
                     and Path(row["torrent_path"]).exists()
                 )
-            try:
-                from backend import fingerprint as _fp
-                fp_conn = _fp._get_fp_conn()
-                fp_rows = fp_conn.execute(
-                    "SELECT lb_number, SUM(n_hashes) AS n "
-                    "FROM audio_tracks GROUP BY lb_number"
-                ).fetchall()
-                fingerprints: dict = {str(r["lb_number"]): r["n"] for r in fp_rows}
-            except Exception:
-                fingerprints = {}
             return jsonify({
                 "collection":     database.get_collection(),
                 "missing":        database.get_missing_from_collection(),
-                "fingerprints":   fingerprints,
                 "wishlist":       database.get_wishlist(),
                 "duplicates":     database.get_collection_duplicates(),
                 "forum_posts":    database.get_all_forum_posts(),
@@ -1709,19 +1676,6 @@ def create_app() -> Flask:
         except Exception as exc:
             return jsonify({"error": str(exc)}), 500
 
-    @app.route("/api/fingerprint/purge", methods=["POST"])
-    def purge_fingerprint_cache() -> Response:
-        """Delete the fingerprints.db file (fingerprint cache)."""
-        try:
-            import os
-
-            from backend.paths import FP_DB_PATH
-            if FP_DB_PATH.exists():
-                os.remove(FP_DB_PATH)
-            return jsonify({"ok": True})
-        except Exception as exc:
-            return jsonify({"error": str(exc)}), 500
-
     @app.route("/api/purge/stats", methods=["GET"])
     def purge_stats() -> Response:
         """Return row counts for each purgeable data group, plus recoverable disk bytes."""
@@ -1739,27 +1693,17 @@ def create_app() -> Flask:
                 + count("integrity_events") + count("entry_changes")
             )
 
-            fp_count = 0
-            try:
-                from backend import fingerprint as _fp
-                fp_count = _fp.get_fp_stats().get("track_count", 0)
-            except Exception:
-                pass
-
-            # Recoverable disk bytes: scraper HTML cache + fingerprint DB
-            from backend.paths import FP_DB_PATH, SITE_DIR
+            # Recoverable disk bytes: scraper HTML cache
+            from backend.paths import SITE_DIR
             recoverable = 0
             if SITE_DIR.exists():
                 recoverable += sum(f.stat().st_size for f in SITE_DIR.rglob("*") if f.is_file())
-            if FP_DB_PATH.exists():
-                recoverable += FP_DB_PATH.stat().st_size
 
             return jsonify({
                 "lookup_history":    lookup,
                 "import_log":        import_log,
                 "scraper_cache":     scraper,
-                "fingerprint_cache": fp_count,
-                "all_user_data":     lookup + import_log + scraper + fp_count + collection_rows,
+                "all_user_data":     lookup + import_log + scraper + collection_rows,
                 "recoverable_bytes": recoverable,
             })
         except Exception as exc:
@@ -5538,208 +5482,6 @@ def create_app() -> Flask:
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
-    # ── Fingerprint ───────────────────────────────────────────────────────────
-
-    @app.route("/api/fingerprint/build", methods=["POST"])
-    def fp_build() -> Response:
-        """Start background fingerprint DB build over the whole collection.
-
-        Returns {ok, total} or 409 if already running.
-        """
-        with _fp_build_lock:
-            if _fp_build_state["status"] not in ("idle", "done", "error"):
-                return jsonify({"error": "Build already running"}), 409
-            _fp_build_state["status"] = "running"
-        try:
-            data    = request.get_json(silent=True) or {}
-            force   = bool(data.get("force", False))
-            folders = data.get("folders")  # optional [{disk_path, lb_number}, ...]
-            if folders:
-                rows = [{"disk_path": f["disk_path"], "lb_number": int(f["lb_number"])}
-                        for f in folders if f.get("disk_path")]
-            else:
-                rows = database.get_collection()
-            _fp_build_stop.clear()
-            threading.Thread(
-                target=_do_fp_build, args=(rows, force), daemon=True
-            ).start()
-            return jsonify({"ok": True, "total": len(rows)})
-        except Exception as exc:
-            return jsonify({"error": str(exc)}), 500
-
-    @app.route("/api/fingerprint/build/status", methods=["GET"])
-    def fp_build_status() -> Response:
-        """Return current state of the fingerprint build worker."""
-        with _fp_build_lock:
-            return jsonify(dict(_fp_build_state))
-
-    @app.route("/api/fingerprint/build/stop", methods=["POST"])
-    def fp_build_stop() -> Response:
-        """Signal the fingerprint build worker to stop after the current file."""
-        _fp_build_stop.set()
-        with _fp_build_lock:
-            _fp_build_state["stop_requested"] = True
-        return jsonify({"ok": True})
-
-    @app.route("/api/fingerprint/build/queue", methods=["GET"])
-    def fp_build_queue() -> Response:
-        """Return pending count and preview of upcoming files in the build queue.
-
-        Returns {pending: N, preview: [up to 10 filenames]}.
-        """
-        with _fp_build_lock:
-            total   = _fp_build_state["total"]
-            done    = _fp_build_state["done"]
-            preview = list(_fp_build_state.get("queue_preview", []))
-        return jsonify({"pending": max(0, total - done), "preview": preview})
-
-    @app.route("/api/fingerprint/lb_numbers", methods=["GET"])
-    def fp_lb_numbers() -> Response:
-        """Return {lb_number: n_hashes} for every lb_number that has fingerprints.
-
-        Used by the Collection tab to display the Fingerprinted column without
-        a per-row lookup.  Returns an empty dict when fingerprints.db is empty.
-        """
-        try:
-            from backend import fingerprint as _fp
-            conn = _fp._get_fp_conn()
-            rows = conn.execute(
-                "SELECT lb_number, SUM(n_hashes) AS n FROM audio_tracks GROUP BY lb_number"
-            ).fetchall()
-            return jsonify({str(r["lb_number"]): r["n"] for r in rows})
-        except Exception as exc:
-            return jsonify({"error": str(exc)}), 500
-
-    @app.route("/api/fingerprint/stats", methods=["GET"])
-    def fp_stats() -> Response:
-        """Return {track_count, hash_count} from fingerprints.db."""
-        try:
-            from backend import fingerprint as _fp
-            return jsonify(_fp.get_fp_stats())
-        except Exception as exc:
-            return jsonify({"error": str(exc)}), 500
-
-    @app.route("/api/fingerprint/identify", methods=["POST"])
-    def fp_identify() -> Response:
-        """Identify an audio file against the fingerprint DB.
-
-        Body: {file_path: "/abs/path/to/file"}
-        Returns: JSON list of {track_id, lb_number, file_path, score, confident}.
-        """
-        try:
-            from backend import fingerprint as _fp
-            data = request.get_json() or {}
-            file_path = data.get("file_path", "")
-            if not file_path:
-                return jsonify({"error": "file_path required"}), 400
-            p = Path(file_path)
-            if not p.exists():
-                return jsonify({"error": f"File not found: {file_path}"}), 404
-            results = _fp.identify_file(p)
-            return jsonify(results)
-        except Exception as exc:
-            return jsonify({"error": str(exc)}), 500
-
-    @app.route("/api/fingerprint/duplicates/scan", methods=["POST"])
-    def fp_dup_scan() -> Response:
-        """Start background duplicate-recording scan.
-
-        Returns {ok} or 409 if already running.
-        """
-        with _fp_dup_lock:
-            if _fp_dup_state["status"] not in ("idle", "done", "error"):
-                return jsonify({"error": "Scan already running"}), 409
-            _fp_dup_state["status"] = "running"
-        try:
-            _fp_dup_stop.clear()
-            with _fp_dup_lock:
-                _fp_dup_state["stop_requested"] = False
-            threading.Thread(
-                target=_do_fp_dup_scan, daemon=True
-            ).start()
-            return jsonify({"ok": True})
-        except Exception as exc:
-            return jsonify({"error": str(exc)}), 500
-
-    @app.route("/api/fingerprint/duplicates", methods=["GET"])
-    def fp_duplicates() -> Response:
-        """Return current state of the duplicate scan, including results when done."""
-        with _fp_dup_lock:
-            return jsonify(dict(_fp_dup_state))
-
-    @app.route("/api/fingerprint/duplicates/scan/stop", methods=["POST"])
-    def fp_dup_scan_stop() -> Response:
-        """Signal the duplicate scan worker to stop after the current operation."""
-        _fp_dup_stop.set()
-        with _fp_dup_lock:
-            _fp_dup_state["stop_requested"] = True
-        return jsonify({"ok": True})
-
-    @app.route("/api/fingerprint/collection_by_date", methods=["GET"])
-    def fp_collection_by_date() -> Response:
-        """Return My Collection entries whose date_str matches the given date.
-
-        Query param: date=YYYY-MM-DD
-        Returns [{lb_number, folder_name, disk_path, date_str, location}].
-        """
-        date = request.args.get("date", "").strip()
-        if not date:
-            return jsonify({"error": "date required"}), 400
-        try:
-            all_rows = database.get_collection()
-            keep = ("lb_number", "folder_name", "disk_path", "date_str", "location")
-            rows = [
-                {k: r.get(k) for k in keep}
-                for r in all_rows
-                if r.get("date_str") == date
-            ]
-            return jsonify(rows)
-        except Exception as exc:
-            return jsonify({"error": str(exc)}), 500
-
-    @app.route("/api/fingerprint/identify_folder", methods=["POST"])
-    def fp_identify_folder() -> Response:
-        """Start background identification of all audio files in a folder.
-
-        Body: {folder: "/abs/path"}
-        Returns {ok} or 409 if already running.
-        """
-        with _fp_id_lock:
-            if _fp_id_state["status"] not in ("idle", "done", "error"):
-                return jsonify({"error": "Already running"}), 409
-            _fp_id_state["status"] = "running"
-        try:
-            data = request.get_json() or {}
-            folder = data.get("folder", "").strip()
-            if not folder:
-                return jsonify({"error": "folder required"}), 400
-            p = Path(folder)
-            if not p.is_dir():
-                return jsonify({"error": f"Not a directory: {folder}"}), 400
-            _fp_id_stop.clear()
-            with _fp_id_lock:
-                _fp_id_state["stop_requested"] = False
-            threading.Thread(
-                target=_do_fp_identify_folder, args=(folder,), daemon=True
-            ).start()
-            return jsonify({"ok": True})
-        except Exception as exc:
-            return jsonify({"error": str(exc)}), 500
-
-    @app.route("/api/fingerprint/identify_folder/status", methods=["GET"])
-    def fp_identify_folder_status() -> Response:
-        """Return current state of the folder-identify worker."""
-        with _fp_id_lock:
-            return jsonify(dict(_fp_id_state))
-
-    @app.route("/api/fingerprint/identify_folder/stop", methods=["POST"])
-    def fp_identify_folder_stop() -> Response:
-        """Signal the folder-identify worker to stop after the current file."""
-        _fp_id_stop.set()
-        with _fp_id_lock:
-            _fp_id_state["stop_requested"] = True
-        return jsonify({"ok": True})
-
     # ── Collection Mounts & Routes (Pipeline Step 5) ─────────────────────────
 
     @app.route("/api/collection/mounts", methods=["GET"])
@@ -7951,83 +7693,6 @@ def _do_spectro_batch(folders: list[str], opts: dict) -> None:
 
     _set(status="done", current="", done=done,
          errors=len(errors), skipped=skipped)
-
-
-def _do_fp_build(collection_rows: list[dict], force: bool = False) -> None:
-    """Run fingerprint.build_fingerprint_db in a daemon thread."""
-    def _set(kw: dict) -> None:
-        with _fp_build_lock:
-            _fp_build_state.update(kw)
-
-    try:
-        from backend import fingerprint as _fp
-        _fp.build_fingerprint_db(
-            collection_rows,
-            force=force,
-            state_setter=_set,
-            stop_event=_fp_build_stop,
-        )
-    except Exception as exc:
-        _set({"status": "error", "current": str(exc)})
-
-
-def _do_fp_dup_scan() -> None:
-    """Run fingerprint.find_duplicate_recordings in a daemon thread."""
-    def _set(kw: dict) -> None:
-        with _fp_dup_lock:
-            _fp_dup_state.update(kw)
-
-    try:
-        from backend import fingerprint as _fp
-        results = _fp.find_duplicate_recordings(
-            state_setter=_set,
-            stop_event=_fp_dup_stop,
-        )
-        _set({"status": "done", "results": results})
-    except Exception as exc:
-        _set({"status": "error", "message": str(exc)})
-
-
-def _do_fp_identify_folder(folder: str) -> None:
-    """Identify all audio files in folder against fingerprints.db."""
-    def _set(**kw: object) -> None:
-        with _fp_id_lock:
-            _fp_id_state.update(kw)
-
-    try:
-        from backend import fingerprint as _fp
-        folder_path = Path(folder)
-        audio_files = [
-            f for f in sorted(folder_path.rglob("*"))
-            if f.is_file() and f.suffix.lower() in _fp.AUDIO_EXTS
-        ]
-        _set(status="running", done=0, total=len(audio_files),
-             results=[], errors=[], current="", stop_requested=False)
-
-        if not audio_files:
-            _set(status="done", current="")
-            return
-
-        results: list[dict] = []
-        errors: list[str] = []
-        for i, audio_path in enumerate(audio_files):
-            if _fp_id_stop.is_set():
-                break
-            _set(current=audio_path.name, done=i)
-            try:
-                candidates = _fp.identify_file(audio_path)
-                results.append({
-                    "user_file": audio_path.name,
-                    "user_path": str(audio_path),
-                    "candidates": candidates,
-                })
-            except Exception as exc:
-                errors.append(f"{audio_path.name}: {exc}")
-            _set(done=i + 1, results=list(results), errors=list(errors))
-
-        _set(status="done", current="")
-    except Exception as exc:
-        _set(status="error", current=str(exc))
 
 
 # Files/names _do_data_download never overwrites

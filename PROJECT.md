@@ -35,10 +35,8 @@ Notable Implementation Details · Change Log
 | Torrent generation | torf | 4.3.1 |
 | Credential storage | keyring | 25.7.0 |
 | Numerical computing | numpy | 2.4.6 |
-| Audio fingerprinting | librosa | 0.11.0 |
 | Audio I/O | soundfile | 0.13.1 |
 | Signal processing | scipy | 1.17.1 |
-| JIT compilation | numba | 0.65.1 |
 | Language | Python | 3.11+ |
 
 **Architecture pattern:** The GUI and backend are separated by a local Flask REST API (port 5174). The GUI makes HTTP requests to `localhost:5174` for all data operations. `gui_next` (Electron/React) is the active development target; Flask is launched as a child process from the Electron main process. The legacy `gui/` (PyQt6) starts Flask in a daemon thread and is frozen at its current state — no new features will be added there.
@@ -73,7 +71,6 @@ losslessbob/
 │   ├── bootleg_scraper.py    # Bootleg-CD catalog (LBBCD index) scraper
 │   ├── scheduler.py          # Watchdog file watcher, auto-import, scheduled integrity scans
 │   ├── integrity_monitor.py  # TODO-111: lbdir-based collection integrity scan engine
-│   ├── fingerprint.py        # Acoustic fingerprinting engine (Wang/Shazam landmark algorithm)
 │   ├── sox_utils.py          # SoX/ffmpeg tool detection + spectrogram generation
 │   ├── startup_log.py        # Startup timing logger → data/logs/startup.log
 │   ├── torrent_maker.py      # torf-based .torrent generation; tracker CDN fetch
@@ -131,7 +128,7 @@ losslessbob/
 │   ├── test_bootleg_scraper.py # backend/bootleg_scraper.py: date/row parsing, diff/apply, scrape_bootlegs (mocked HTTP)
 │   ├── test_bobdylan_scraper.py # backend/bobdylan_scraper.py: sitemap + show-page parsing, run_discover/run_scrape/run_update (mocked HTTP)
 │   ├── test_setlistfm.py     # backend/setlistfm.py: date/setlist parsing, API key storage, run_update pagination (mocked HTTP)
-│   ├── test_geocoder.py      # backend/geocoder.py: date conversion, performances lookup, geocode_one/run_batch (mocked urllib)
+│   ├── test_geocoder.py      # backend/geocoder.py: date conversion, performances/bobdylan_shows/setlistfm_shows lookup + priority, geocode_one/run_batch (mocked urllib)
 │   ├── test_checksum_utils_site_recovery.py # find_site_recoverable_files: MD5 + filename-fallback matching against data/site/files/
 │   └── test_db_writes.py     # 114-test battery: all DB write functions, constraint violations, rollback, thread safety
 ├── losslessbob_backend.spec  # PyInstaller onefile spec: backend-only (no PyQt6); bundled inside Electron AppImage
@@ -580,7 +577,7 @@ Indexes: `idx_inventory_status`, `idx_inventory_session`.
 | location_text | TEXT PK | Matches `entries.location` verbatim |
 | lat | REAL | WGS-84 latitude (NULL if geocoding failed) |
 | lon | REAL | WGS-84 longitude (NULL if geocoding failed) |
-| source | TEXT NOT NULL | `'nominatim'` / `'manual'` / `'failed'` |
+| source | TEXT NOT NULL | `'nominatim'` / `'performances'` / `'bobdylan_shows'` / `'setlistfm_shows'` / `'manual'` / `'failed'` |
 | confidence | TEXT | `'high'` / `'medium'` / `'low'` / NULL |
 | display_name | TEXT | Full display name returned by Nominatim |
 | manual_override | INTEGER | 1 = curator-placed pin; batch run never overwrites |
@@ -1060,6 +1057,15 @@ Nominatim-based geocoder for concert location strings. Uses stdlib `urllib` only
 | `place_manual(location_text, lat, lon, note)` | UPSERT with manual_override=1; batch run never overwrites manual rows. |
 | `run_batch(limit, retry_failed, dry_run, db_path)` | Batch-geocode all un-geocoded entries.location values. Sleeps 1.1 s between requests (Nominatim ToS). Updates thread-safe _progress dict. |
 | `get_progress()` | Snapshot of {running, done, total, current, errors} for GUI polling. |
+
+**Structured-source priority (TODO-167):** before querying Nominatim with the raw
+`entries.location` text, `run_batch()` checks three tables in order — via each
+entry's ISO date (`entries.date_str` converted by `_entry_date_to_iso()`) — for a
+more accurate structured string: `bobdylan_shows` (`_get_bobdylan_shows_location_string`,
+most standardized), then `setlistfm_shows` (`_get_setlistfm_location_string`), then
+`dylan_performances` (`_get_performance_location_string`) as a last resort. First
+match wins; the result's `source` column is set to the matching table name
+(`'bobdylan_shows'` / `'setlistfm_shows'` / `'performances'`) instead of `'nominatim'`.
 
 **CLI tool:** `tools/geocode_locations.py` — run `python tools/geocode_locations.py --help` from project root.
 
