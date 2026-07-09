@@ -808,6 +808,12 @@
       "spectrogramFailed": "Spektrogramm fehlgeschlagen",
       "spectrogramRequestFailed": "Spektrogramm-Anforderung fehlgeschlagen",
       "torrentRecordDeleted": "Torrent-Datensatz gelöscht"
+    },
+    "columnPicker": {
+      "button": "Spalten…",
+      "title": "Spalten exportieren",
+      "baseNote": "LB-Nr., Status, Datum, Speicherort, Ordner und Notizen sind immer enthalten. Weitere hinzufügen:",
+      "export": "Exportieren"
     }
   },
   "map": {
@@ -1072,7 +1078,8 @@
       "exportTheme": "Thema als JSON exportieren",
       "importTheme": "Thema importieren...",
       "statusColorsNote": "Statusfarben (grün/gelb/rot) werden an die Zeilenstatusleiste und an die Pills angeheftet, so dass sie nie mit Ihrer Akzentauswahl kollidieren.",
-      "rowHighlight": "Farben für die Hervorhebung von Zeilen"
+      "rowHighlight": "Farben für die Hervorhebung von Zeilen",
+      "highContrast": "Kontrastreicher Text (dunkle Designs)"
     },
     "tokens": {
       "background": "Hintergrund",
@@ -1559,7 +1566,8 @@
       "spectrogramsReady": "Spektrogramme {{ready}}/{{total}}",
       "attachments": "Anhänge {{count}}",
       "noAttachments": "Keine Anhänge",
-      "showOnMap": "Auf der Karte anzeigen"
+      "showOnMap": "Auf der Karte anzeigen",
+      "viewAll": "Alle in den Anhängen anzeigen →"
     },
     "quality": {
       "label": "Qualität",

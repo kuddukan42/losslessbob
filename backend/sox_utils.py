@@ -35,6 +35,7 @@ def _no_window() -> dict:
 _UNSET = object()
 _SOX_CMD = _UNSET
 _FFMPEG_CMD = _UNSET
+_FLAC_CMD = _UNSET
 
 
 def _find_sox() -> list | None:
@@ -74,6 +75,44 @@ def _find_ffmpeg() -> list | None:
                 pass
         return None
     return ["ffmpeg"] if shutil.which("ffmpeg") else None
+
+
+def _find_flac() -> list | None:
+    """Return ['flac'] (or bundled/WSL equivalent) or None."""
+    if sys.platform == "win32":
+        # 1. Bundled flac in PyInstaller frozen build (_MEIPASS/tools/flac.exe)
+        if getattr(sys, "frozen", False):
+            bundled = Path(sys._MEIPASS) / "tools" / "flac.exe"  # type: ignore[attr-defined]
+            if bundled.exists():
+                return [str(bundled)]
+        # 2. tools/flac.exe alongside the source tree (dev and non-frozen installs)
+        _local = Path(__file__).resolve().parent.parent / "tools" / "flac.exe"
+        if _local.exists():
+            return [str(_local)]
+        # 3. PATH
+        if shutil.which("flac"):
+            return ["flac"]
+        # 4. WSL flac
+        if shutil.which("wsl"):
+            try:
+                r = subprocess.run(
+                    ["wsl", "which", "flac"],
+                    capture_output=True, text=True, timeout=8,
+                    **_no_window(),
+                )
+                if r.returncode == 0 and r.stdout.strip():
+                    return ["wsl", "flac"]
+            except Exception:
+                pass
+        return None
+    return ["flac"] if shutil.which("flac") else None
+
+
+def get_flac() -> list | None:
+    global _FLAC_CMD
+    if _FLAC_CMD is _UNSET:
+        _FLAC_CMD = _find_flac()
+    return _FLAC_CMD
 
 
 def get_sox() -> list | None:

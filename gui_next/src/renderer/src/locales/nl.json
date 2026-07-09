@@ -808,6 +808,12 @@
       "spectrogramFailed": "Spectrogram mislukt",
       "spectrogramRequestFailed": "Spectrogram verzoek mislukt",
       "torrentRecordDeleted": "Torrent record verwijderd"
+    },
+    "columnPicker": {
+      "button": "Kolommen…",
+      "title": "Kolommen exporteren",
+      "baseNote": "LB #, Status, Datum, Locatie, Map en Notities worden altijd weergegeven. Voeg meer toe:",
+      "export": "Exporteren"
     }
   },
   "map": {
@@ -1072,7 +1078,8 @@
       "exportTheme": "Thema exporteren als JSON",
       "importTheme": "Thema importeren...",
       "statusColorsNote": "Statuskleuren (groen / oranje / rood) worden vastgemaakt aan de rij-statusbalk en pillen zodat ze nooit botsen met je accentkeuze.",
-      "rowHighlight": "Kleuren voor het markeren van rijen"
+      "rowHighlight": "Kleuren voor het markeren van rijen",
+      "highContrast": "Tekst met hoog contrast (donkere thema's)"
     },
     "tokens": {
       "background": "Achtergrond",
@@ -1559,7 +1566,8 @@
       "spectrogramsReady": "Spectrogrammen {{ready}}/{{total}}",
       "attachments": "Bijlagen {{count}}",
       "noAttachments": "Geen bijlagen",
-      "showOnMap": "Op kaart weergeven"
+      "showOnMap": "Op kaart weergeven",
+      "viewAll": "Bekijk alles in Bijlagen →"
     },
     "quality": {
       "label": "Kwaliteit",

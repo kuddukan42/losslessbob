@@ -15,6 +15,8 @@ a = Analysis(
         # data/ dir is NOT bundled — it's user-specific (DB, attachments, flat files)
         # Keep data/ alongside the exe after packaging
         ('tools/shntool.exe', 'tools'),  # bundled shntool for Windows users (MIT/GPL-2)
+        ('tools/flac.exe', 'tools'),     # bundled flac for Windows users (GPL-2)
+        ('tools/libFLAC.dll', 'tools'),  # required by tools/flac.exe (LGPL-2.1)
     ],
     hiddenimports=[
         # Flask / Werkzeug internals PyInstaller misses

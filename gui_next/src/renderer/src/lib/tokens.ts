@@ -23,6 +23,8 @@ export interface ThemeOptions {
   font?: Font;
   fontSize?: FontSize;
   customTokens?: Record<string, string>;
+  /** Bumps --lbb-fg/-fg2/-fg3 to brighter white on dark themes for readability (TODO-164). No-op in light mode. */
+  highContrast?: boolean;
 }
 
 export const ACCENTS: Accent[] = ['indigo', 'plum', 'rust', 'forest', 'teal', 'amber', 'gray', 'crimson'];
@@ -40,9 +42,12 @@ const FONT_STACKS: Record<Font, string> = {
 
 export const DEFAULT_THEME: ThemeOptions = {
   mode: 'light', accent: 'indigo', density: 'default', cardStyle: 'flat',
-  font: 'inter', fontSize: 13, customTokens: {},
+  font: 'inter', fontSize: 13, customTokens: {}, highContrast: false,
 };
 const STORAGE_KEY = 'lbb-theme';
+
+// TODO-164: brighter foreground tones for the dark-theme high-contrast toggle.
+const HIGH_CONTRAST_DARK_FG = { fg: '#ffffff', fg2: '#e2e2e2', fg3: '#c4c4c4' };
 
 interface StatusTone { fg: string; bg: string; bar: string; }
 interface AccentTone { mid: string; hi: string; lo: string; soft: string; onMid: string; }
@@ -175,13 +180,16 @@ const WEIGHT_RAMP: Record<string, number> = {
   'bold': 700,  // display, eyebrows, stat values, badges (was 700·800)
 };
 
-export function applyTheme({ mode, accent, density, font, fontSize, customTokens, palette, cardStyle }: ThemeOptions): void {
+export function applyTheme({ mode, accent, density, font, fontSize, customTokens, palette, cardStyle, highContrast }: ThemeOptions): void {
   const root = document.documentElement;
   // Resolve 'system' to a concrete light/dark before indexing any table below.
   const resolved: ConcreteMode = mode === 'system' ? getSystemMode() : mode;
   const base = MODES[resolved] ?? MODES.light;
   const pal = palette ? PALETTES[resolved]?.[palette] : undefined;
-  const m = pal ? { ...base, ...pal } : base;
+  const m = {
+    ...(pal ? { ...base, ...pal } : base),
+    ...(highContrast && resolved === 'dark' ? HIGH_CONTRAST_DARK_FG : {}),
+  };
   const a = (ACCENT_PALETTES[accent] ?? ACCENT_PALETTES.indigo)[resolved];
   const s = STATUS[resolved] ?? STATUS.light;
   const d = DENSITY[density] ?? DENSITY.default;
@@ -225,6 +233,8 @@ export function applyTheme({ mode, accent, density, font, fontSize, customTokens
   else root.removeAttribute('data-palette');
   if (cardStyle === 'framed') root.setAttribute('data-sep', 'framed');
   else root.removeAttribute('data-sep');
+  if (highContrast && resolved === 'dark') root.setAttribute('data-high-contrast', 'true');
+  else root.removeAttribute('data-high-contrast');
   root.style.colorScheme = resolved;
 }
 
@@ -242,6 +252,7 @@ export function loadTheme(): ThemeOptions {
         font:         (FONT_STACKS[parsed.font as Font]            ? parsed.font    : DEFAULT_THEME.font)   as Font,
         fontSize:     ([12, 13, 14].includes(parsed.fontSize as number) ? parsed.fontSize : DEFAULT_THEME.fontSize) as FontSize,
         customTokens: (parsed.customTokens && typeof parsed.customTokens === 'object' ? parsed.customTokens : {}) as Record<string, string>,
+        highContrast: parsed.highContrast === true,
       };
     }
   } catch {

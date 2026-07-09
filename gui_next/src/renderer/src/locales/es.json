@@ -808,6 +808,12 @@
       "spectrogramFailed": "Espectrograma fallido",
       "spectrogramRequestFailed": "Solicitud de espectrograma fallida",
       "torrentRecordDeleted": "Registro de torrents borrado"
+    },
+    "columnPicker": {
+      "button": "Columnas…",
+      "title": "Columnas de exportación",
+      "baseNote": "Siempre se incluyen el n.º de LB, el estado, la fecha, la ubicación, la carpeta y las notas. Añadir más:",
+      "export": "Exportar"
     }
   },
   "map": {
@@ -1072,7 +1078,8 @@
       "exportTheme": "Exportar tema como JSON",
       "importTheme": "Importar tema...",
       "statusColorsNote": "Los colores de estado (verde / ámbar / rojo) se fijan a la barra de estado de la fila y a las pastillas para que nunca choquen con tu elección de acento.",
-      "rowHighlight": "Colores de resaltado de las filas"
+      "rowHighlight": "Colores de resaltado de las filas",
+      "highContrast": "Texto de alto contraste (temas oscuros)"
     },
     "tokens": {
       "background": "Fondo",
@@ -1559,7 +1566,8 @@
       "spectrogramsReady": "Espectrogramas {{ready}}/{{total}}",
       "attachments": "Archivos adjuntos {{count}}",
       "noAttachments": "Sin archivos adjuntos",
-      "showOnMap": "Mostrar en el mapa"
+      "showOnMap": "Mostrar en el mapa",
+      "viewAll": "Ver todo en «Archivos adjuntos» →"
     },
     "quality": {
       "label": "Calidad",

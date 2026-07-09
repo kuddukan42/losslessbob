@@ -1974,10 +1974,20 @@ export function ScreenPipeline(): React.JSX.Element {
 
       if (result.ok) {
         const filedStep = { status: 'ok' as const, label: 'Filed', dest: result!.dest ?? null, mount_label: result!.filed_to ?? null, error: null, error_code: null }
+        // The folder physically moved to result.dest — update folderPath/id (and
+        // clear selection) so the detail panel's Open button and bulk-select
+        // state don't reference the pre-move location.
+        const newPath = result!.dest ?? row.folderPath
+        if (detailId === row.id) setDetailId(newPath)
         setRows(prev => prev.map(r => {
           if (r.id !== row.id) return r
-          const updated = { ...r, running: false, fileProgress: null, bucket: 'done' as const, steps: { ...r.steps, file: filedStep } }
-          _pipelineCache.set(r.id, { steps: updated.steps, bucket: updated.bucket, errors: updated.errors })
+          const updated = {
+            ...r, running: false, fileProgress: null, bucket: 'done' as const, selected: false,
+            folderPath: newPath, id: newPath, folderName: newPath.split(/[/\\]/).pop() ?? r.folderName,
+            steps: { ...r.steps, file: filedStep },
+          }
+          _pipelineCache.delete(r.id)
+          _pipelineCache.set(newPath, { steps: updated.steps, bucket: updated.bucket, errors: updated.errors })
           return updated
         }))
         queryClient.invalidateQueries({ queryKey: ['collection-prefetch'] })
@@ -2002,7 +2012,7 @@ export function ScreenPipeline(): React.JSX.Element {
       filingRef.current = false
       setFilingActive(false)
     }
-  }, [confirm, t, showToast])
+  }, [confirm, t, showToast, detailId])
 
   const applyAllFileable = useCallback(async () => {
     for (const row of fileableRows) await applyFile(row, undefined, undefined, undefined, true)
@@ -2670,22 +2680,28 @@ export function ScreenPipeline(): React.JSX.Element {
                         </TD>
                         <TD align="right" onClick={e => e.stopPropagation()}>
                           <div style={{ display: 'flex', gap: 4, justifyContent: 'flex-end', alignItems: 'center' }}>
-                            {r.bucket === 'ready' && (
-                              <Button size="sm" variant="primary" icon="check" onClick={() => applyRename(r)}>{t('pipeline.table.apply')}</Button>
-                            )}
-                            {r.steps.file.status === 'warn' && !!r.steps.file.dest && !r.shelved &&
-                             !(['verify', 'lookup', 'lbdir', 'rename'] as const).some(k => r.steps[k].status === 'bad') && (
-                              r.running && r.fileProgress ? (
-                                <FileProgressBar progress={r.fileProgress} compact />
-                              ) : (
-                                <Button size="sm" variant="primary" icon="folder" onClick={() => applyFile(r)}>
-                                  {t('pipeline.file.action')}
-                                </Button>
-                              )
-                            )}
-                            {r.bucket === 'done' && r.steps.file.status === 'ok' && (
-                              <Pill tone="ok" soft>{t('pipeline.table.done')}</Pill>
-                            )}
+                            {(() => {
+                              const fileable = r.steps.file.status === 'warn' && !!r.steps.file.dest && !r.shelved &&
+                                !(['verify', 'lookup', 'lbdir', 'rename'] as const).some(k => r.steps[k].status === 'bad')
+                              if (r.bucket === 'ready') {
+                                return <Button size="sm" variant="primary" icon="check" onClick={() => applyRename(r)}>{t('pipeline.table.apply')}</Button>
+                              }
+                              if (fileable) {
+                                return r.running && r.fileProgress ? (
+                                  <FileProgressBar progress={r.fileProgress} compact />
+                                ) : (
+                                  <Button size="sm" variant="primary" icon="folder" onClick={() => applyFile(r)}>
+                                    {t('pipeline.file.action')}
+                                  </Button>
+                                )
+                              }
+                              if (r.bucket === 'done' && r.steps.file.status === 'ok') {
+                                return <Pill tone="ok" soft>{t('pipeline.table.done')}</Pill>
+                              }
+                              // Not yet actionable — render the same button shape, disabled, so
+                              // the column doesn't pop in/reflow once the row becomes ready.
+                              return <Button size="sm" variant="primary" icon="check" disabled>{t('pipeline.table.apply')}</Button>
+                            })()}
                           </div>
                         </TD>
                       </TR>

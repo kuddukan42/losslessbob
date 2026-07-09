@@ -1,3 +1,54 @@
+[2026-07-09] — feat: TODO-146 + TODO-171 + TODO-083 — flac.exe bundling, TapeMatch DB Editor, export column picker
+Added: tools/flac.exe + tools/libFLAC.dll: bundled Windows FLAC 1.5.0 (Win64) binaries.
+  backend/sox_utils.py: _find_flac()/get_flac() probe bundled tools/flac.exe (PyInstaller
+  frozen + dev tree) before PATH/WSL, mirroring checksum_utils._find_shntool(). Wired into
+  /api/spectrogram/check so flac shows green on fresh Windows installs with zero user setup.
+  losslessbob.spec + losslessbob_backend.spec updated to bundle both files (TODO-146).
+Added: backend/paths.py: TAPEMATCH_DB_PATH → tools/tapematch/observations.db. backend/app.py:
+  _DBEDIT_READONLY_DBS map generalizes _dbedit_db_path()/_dbedit_is_batchverify() (was
+  batchverify-only) to also resolve "tapematch", read-only, reused by dbedit_query()'s ?db=
+  param too. gui_next/src/renderer/src/screens/ScreenDbEditor.tsx: DB picker widened from a
+  2-way to a 3-way losslessbob/batch_verify/tapematch toggle (TODO-171).
+Added: backend/app.py: collection_export_html() now accepts ?cols= (validated against a new
+  _EXPORT_COLUMN_DEFS registry: lb/status/date/location/folder/notes plus disk_path/
+  confirmed_at/source_type/lb_category/rating), always including lb. The exported HTML's
+  thead/row-rendering/CSV-export/search/sort JS was converted from hardcoded 6-column markup
+  to a data-driven COLS array injected via a new __COLS_JSON__ placeholder.
+  gui_next/src/renderer/src/screens/ScreenCollection.tsx: new ColumnPickerModal (checkboxes
+  for the 5 extra fields) + "Columns…" button next to Export HTML (TODO-083).
+Changed: gui_next/src/renderer/src/locales/{de,fr,es,it,nl}.json: synced via DeepL for the
+  new collection.columnPicker.* keys plus a pre-existing backlog of stale strings per locale
+  unrelated to this session (nav labels, table headers) that DeepL picked up on this run.
+
+[2026-07-09] — feat(gui): TODO-151 + TODO-152 + TODO-161 + TODO-148 + TODO-163 + TODO-164 — Pipeline/Scraper/Library polish batch
+Fixed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: applyFile's success branch now
+  updates the row's folderPath/id to the post-move result.dest (previously only rename did this),
+  so the detail panel's Open button no longer resolves the pre-collect path (TODO-151). Same
+  branch now clears the row's selected flag on transition to bucket 'done', so bulk-filing no
+  longer leaves finished rows checked (TODO-152).
+Changed: gui_next/src/renderer/src/screens/ScreenPipeline.tsx: the row action column always
+  renders a fixed-size Button now — enabled Apply/File/Done pill when actionable, a disabled
+  placeholder otherwise — instead of leaving blank space until the row becomes actionable
+  (TODO-161).
+Added: gui_next/src/renderer/src/lib/scraperLogStore.ts: module-level zustand store (not
+  localStorage-persisted) holding the Scraper screen's per-tab live log lines.
+  gui_next/src/renderer/src/screens/ScreenScraper.tsx: switched from local useState to this
+  store so the log buffer survives the screen unmounting when the user navigates to another tab
+  and back (TODO-148).
+Added: gui_next/src/renderer/src/components/library/DetailPanel.tsx: AssetStripZone's
+  attachments pill now opens an inline popover listing each cached attachment's name (clickable,
+  opens via window.api.openPath against data_dir from /api/db/settings), plus a "View all in
+  Attachments" link — reuses ScreenLibrary's existing attachments-cached query key so no extra
+  network request (TODO-163).
+Added: gui_next/src/renderer/src/lib/tokens.ts: ThemeOptions.highContrast — applyTheme()
+  brightens --lbb-fg/-fg2/-fg3 on dark themes when enabled (no-op in light mode).
+  gui_next/src/renderer/src/screens/ScreenThemes.tsx: toggle added to the Advanced card,
+  disabled outside dark mode (TODO-164).
+Changed: gui_next/src/renderer/src/locales/{de,fr,es,it,nl}.json: synced via DeepL for the two
+  new keys (library.assets.viewAll, themes.advanced.highContrast) plus a pre-existing backlog of
+  ~90-124 stale strings per locale unrelated to this session (nav labels, table headers) that
+  DeepL picked up on this run.
+
 [2026-07-09] — feat(gui): TODO-169 + TODO-192 + TODO-168 + TODO-180 — Home/Library/AppShell UI cleanup batch
 Changed: gui_next/src/renderer/src/screens/ScreenHome.tsx: removed the Hero ingest card and the
   now-dead STEP_STRIPS constant; reflowed "At a glance"/"Jump to" into a 2-column grid to fill

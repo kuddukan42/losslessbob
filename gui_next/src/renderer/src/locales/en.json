@@ -671,6 +671,12 @@
       "tagsPlaceholder": "e.g. favourite, soundboard",
       "saving": "Saving…"
     },
+    "columnPicker": {
+      "button": "Columns…",
+      "title": "Export Columns",
+      "baseNote": "LB #, Status, Date, Location, Folder, and Notes are always included. Add more:",
+      "export": "Export"
+    },
     "scanPreview": {
       "title": "Scan Results — {{count}} folder",
       "title_plural": "Scan Results — {{count}} folders found",
@@ -1072,6 +1078,7 @@
       "exportTheme": "Export theme as JSON",
       "importTheme": "Import theme…",
       "rowHighlight": "Row highlight colors",
+      "highContrast": "High-contrast text (dark themes)",
       "statusColorsNote": "Status colors (green / amber / red) are pinned to the row-status bar and pills so they never collide with your accent choice."
     },
     "tokens": {
@@ -1559,7 +1566,8 @@
       "spectrogramsReady": "Spectrograms {{ready}}/{{total}}",
       "attachments": "Attachments {{count}}",
       "noAttachments": "No attachments",
-      "showOnMap": "Show on map"
+      "showOnMap": "Show on map",
+      "viewAll": "View all in Attachments →"
     },
     "quality": {
       "label": "Quality",

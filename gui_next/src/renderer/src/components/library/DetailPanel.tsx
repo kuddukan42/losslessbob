@@ -509,6 +509,8 @@ function ShareSeedZone({ history, busy, onQbt, onTorrent, onForum, note, hideLab
 // is checked lazily (only while this zone is mounted) via the existing
 // /api/spectrogram/list endpoint, scoped to this row's folder. ───────────────
 
+interface AttachmentFile { filename: string; clean_name: string }
+
 function AssetStripZone({ row, attachCount, onAttach, onSpectro, onMap, hideLabel }: {
   row: DetailRow
   attachCount: number | undefined
@@ -536,15 +538,103 @@ function AssetStripZone({ row, attachCount, onAttach, onSpectro, onMap, hideLabe
   else if (entries.length === 0) specLabel = t('library.assets.spectrogramsNone')
   else { specLabel = t('library.assets.spectrogramsReady', { ready, total: entries.length }); specTone = ready === entries.length ? 'ok' : 'warn' }
 
+  // TODO-163: reuses ScreenLibrary's already-fetched attachments-cached query
+  // (same key -> same cache entry, no extra request) to list actual filenames
+  // inline instead of just the count.
+  const { data: attachData } = useQuery({
+    queryKey: ['library-attachments-cached'],
+    queryFn: () => fetch(`${BASE}/api/attachments/cached`).then(r => r.json()),
+    staleTime: 60_000,
+  })
+  const files: AttachmentFile[] = attachData?.entries?.find(
+    (e: { lb_number: number }) => e.lb_number === row.lbNumber
+  )?.files ?? []
+
+  const { data: dbSettings } = useQuery({
+    queryKey: ['db-settings-data-dir'],
+    queryFn: () => fetch(`${BASE}/api/db/settings`).then(r => r.json()),
+    staleTime: Infinity,
+  })
+  const dataDir: string | undefined = dbSettings?.data_dir
+
+  const [filesOpen, setFilesOpen] = useState(false)
+  const filesRef = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    if (!filesOpen) return
+    function onClickOut(e: MouseEvent) {
+      if (filesRef.current && !filesRef.current.contains(e.target as Node)) setFilesOpen(false)
+    }
+    document.addEventListener('mousedown', onClickOut)
+    return () => document.removeEventListener('mousedown', onClickOut)
+  }, [filesOpen])
+
+  const openFile = (f: AttachmentFile) => {
+    if (!dataDir) return
+    window.api.openPath(`${dataDir}/attachments/LB-${String(row.lbNumber).padStart(5, '0')}/${f.filename}`)
+  }
+
   return (
     <div style={{ flexShrink: 0 }}>
       {!hideLabel && <ZoneLabel>{t('library.assets.label')}</ZoneLabel>}
       <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
-        <button type="button" onClick={onAttach} style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}>
-          <Pill tone={attachCount ? 'ok' : 'mute'} soft dot={!!attachCount}>
-            {attachCount ? t('library.assets.attachments', { count: attachCount }) : t('library.assets.noAttachments')}
-          </Pill>
-        </button>
+        <div ref={filesRef} style={{ position: 'relative' }}>
+          <button
+            type="button"
+            onClick={() => setFilesOpen(o => !o)}
+            style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
+          >
+            <Pill tone={attachCount ? 'ok' : 'mute'} soft dot={!!attachCount}>
+              {attachCount ? t('library.assets.attachments', { count: attachCount }) : t('library.assets.noAttachments')}
+            </Pill>
+          </button>
+          {filesOpen && (
+            <div style={{
+              position: 'absolute', top: '100%', left: 0, marginTop: 4, zIndex: 20,
+              minWidth: 220, maxWidth: 320, maxHeight: 220, overflowY: 'auto',
+              background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)',
+              borderRadius: 6, boxShadow: '0 4px 16px rgba(0,0,0,0.2)', padding: 4,
+            }}>
+              {files.length === 0 ? (
+                <div style={{ padding: '6px 8px', fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
+                  {t('library.assets.noAttachments')}
+                </div>
+              ) : files.map(f => (
+                <button
+                  key={f.filename}
+                  type="button"
+                  onClick={() => openFile(f)}
+                  disabled={!dataDir}
+                  title={f.filename}
+                  style={{
+                    display: 'flex', alignItems: 'center', gap: 6, width: '100%',
+                    background: 'none', border: 'none', textAlign: 'left', padding: '5px 8px',
+                    borderRadius: 4, cursor: dataDir ? 'pointer' : 'default',
+                    fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)',
+                  }}
+                  onMouseEnter={e => { if (dataDir) e.currentTarget.style.background = 'var(--lbb-surface2)' }}
+                  onMouseLeave={e => { e.currentTarget.style.background = 'none' }}
+                >
+                  <Icon name="attachments" size={12} style={{ flexShrink: 0, color: 'var(--lbb-fg3)' }} />
+                  <span style={{ flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                    {f.clean_name || f.filename}
+                  </span>
+                </button>
+              ))}
+              <button
+                type="button"
+                onClick={() => { setFilesOpen(false); onAttach() }}
+                style={{
+                  display: 'block', width: '100%', marginTop: 4, padding: '5px 8px',
+                  borderTop: '1px solid var(--lbb-border)', background: 'none', border: 'none',
+                  borderTopWidth: 1, textAlign: 'left', cursor: 'pointer',
+                  fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-accent-mid)',
+                }}
+              >
+                {t('library.assets.viewAll')}
+              </button>
+            </div>
+          )}
+        </div>
         {row.owned && (
           <button type="button" onClick={onSpectro} style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}>
             <Pill tone={specTone} soft>{specLabel}</Pill>

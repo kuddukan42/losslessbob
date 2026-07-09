@@ -808,6 +808,12 @@
       "spectrogramFailed": "Spettrogramma fallito",
       "spectrogramRequestFailed": "Richiesta di spettrogramma fallita",
       "torrentRecordDeleted": "Record Torrent cancellato"
+    },
+    "columnPicker": {
+      "button": "Colonne…",
+      "title": "Esporta colonne",
+      "baseNote": "LB #, Stato, Data, Posizione, Cartella e Note sono sempre inclusi. Aggiungi altro:",
+      "export": "Esporta"
     }
   },
   "map": {
@@ -1072,7 +1078,8 @@
       "exportTheme": "Esportazione del tema come JSON",
       "importTheme": "Importazione del tema...",
       "statusColorsNote": "I colori di stato (verde / ambra / rosso) sono fissati alla barra di stato delle righe e alle pillole in modo da non collidere mai con la scelta dell'accento.",
-      "rowHighlight": "Colori di evidenziazione delle righe"
+      "rowHighlight": "Colori di evidenziazione delle righe",
+      "highContrast": "Testo ad alto contrasto (temi scuri)"
     },
     "tokens": {
       "background": "Sfondo",
@@ -1559,7 +1566,8 @@
       "spectrogramsReady": "Spettrogrammi {{ready}}/{{total}}",
       "attachments": "Allegati {{count}}",
       "noAttachments": "Nessun allegato",
-      "showOnMap": "Mostra sulla mappa"
+      "showOnMap": "Mostra sulla mappa",
+      "viewAll": "Visualizza tutto negli allegati →"
     },
     "quality": {
       "label": "Qualità",

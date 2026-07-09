@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { Button, Chip, Pill, Card, SectionHead, Toolbar, Input } from '../components'
 import { TableShell, TH, TR, TD } from '../components'
 import { Icon } from '../components/Icon'
+import { useScraperLogStore } from '../lib/scraperLogStore'
 
 // ── Error Boundary ─────────────────────────────────────────────────────────────
 
@@ -102,10 +103,6 @@ type TabId = 'crawler' | 'entry' | 'bootlegs' | 'bobdylan' | 'setlistfm' | 'geoc
 interface LogLine { ts: string; text: string; tone?: 'ok' | 'bad' | 'warn' | 'mute' }
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
-
-function now(): string {
-  return new Date().toTimeString().slice(0, 8)
-}
 
 function fmtTs(ts: string | null): string {
   if (!ts) return '—'
@@ -905,10 +902,11 @@ function ScreenScraperInner() {
   const [invStats,       setInvStats]       = useState<{ total: number } | null>(null)
   const [entryDbStats,   setEntryDbStats]   = useState<{ ok: number } | null>(null)
 
-  // Logs per tab (max 500 lines each)
-  const [logs, setLogs] = useState<Record<TabId, LogLine[]>>({
-    crawler: [], entry: [], bootlegs: [], bobdylan: [], setlistfm: [], geocoder: [],
-  })
+  // Logs per tab (max 500 lines each) — held in a module-level store so they
+  // survive this screen unmounting on tab navigation (TODO-148).
+  const logs = useScraperLogStore(s => s.logs)
+  const pushLogToStore = useScraperLogStore(s => s.pushLog)
+  const clearLogInStore = useScraperLogStore(s => s.clearLog)
 
   // Previous status refs for log diffing
   const prevRef = useRef<{
@@ -926,15 +924,12 @@ function ScreenScraperInner() {
   })
 
   const pushLog = useCallback((tab: TabId, text: string, tone?: LogLine['tone']) => {
-    setLogs(prev => {
-      const lines = [...prev[tab], { ts: now(), text, tone }]
-      return { ...prev, [tab]: lines.slice(-500) }
-    })
-  }, [])
+    pushLogToStore(tab, text, tone)
+  }, [pushLogToStore])
 
   const clearLog = useCallback((tab: TabId) => {
-    setLogs(prev => ({ ...prev, [tab]: [] }))
-  }, [])
+    clearLogInStore(tab)
+  }, [clearLogInStore])
 
   // Fetch all statuses
   const pollAll = useCallback(async () => {
