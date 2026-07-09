@@ -36,9 +36,9 @@ they land. Move to `instructions/complete/` when the window closes.
 
 | Slot | Work | Token cost | Closes |
 |---|---|---|---|
-| **Today: unblock** | Commit the 25 pending files; start tapematch runs over the ~2,350 remaining dates as a detached background job | Minimal | — |
-| **Today: consolidate** | Retire concluded specs to `complete/` (CC_TAPEMATCH_ADDON, CC_TAPEMATCH_FIXES, TAPEMATCH_PLAN, likely CC_WEB_GUI_PLAN), TODO-209 ledger audit, close superseded TODOs (TODO-182 per notes §3; TODO-203 per decision 1) | Low | 209, backlog relief |
-| **Today: triage script** | Script that auto-writes `analysis.md` for trivially clean runs (no candidates / all-verdicts-clear), reserving `/tapematch-batch` for ambiguous ones | Low, saves a lot later | shrinks the 393-run analysis sink |
+| **Today: unblock** | ✅ DONE 07-09: committed (39687e37 + 0c2d3e1e); crawl launched detached over 2,232 remaining dates — `tools/tapematch/crawl_start.sh` / `crawl_stop.sh` / `crawl_status.sh`, log at `data/tapematch/crawl.log` | Minimal | — |
+| **Today: consolidate** | ✅ DONE 07-09: retired 4 specs to `complete/` (ADDON, FIXES, TAPEMATCH_PLAN, WEB_GUI_PLAN — all TODO-050..066 shipped), closed TODO-182 + TODO-203, deferred TODO-204. TODO-209 renumber DEFERRED past window — report reviewed, all 39 ids are archived-entry cosmetics needing manual cross-ref attribution | Low | 182, 203, backlog relief |
+| **Today: triage script** | ✅ DONE 07-09: `tools/tapematch/triage_analysis.py` — AUTO/ESCALATE/SKIP classifier; first pass 395 pending → 11 auto-written, 329 escalated (210 are merges needing judgment), 55 incomplete; families synced (2,902, 0 errors). Run before every future `/tapematch-batch` | Low | analysis sink triaged |
 | **Day 2: spec steps 1–3** | Verify LB_KNOWLEDGE.md (TODO-187) → TAPER phase 1 (schema/harvest/CLI) → RANKING phase 2 (picks + chained recompute endpoint). Backend-only, one or two sessions, sonnet-delegation candidates | Medium | 187 |
 | **Day 3: spec step 4** | RANKING phases 3–4: Library payload, badges/filters, EvidenceList. Ends `/gui-next-i18n` + `/gui-check` | Medium-high | 186, 181 |
 | **Day 3–4: spec step 5** | TAPER phase 2: confirm/reject API, taper pill, DetailPanel section | Medium | 173, 192 |

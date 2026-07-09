@@ -1,3 +1,22 @@
+[2026-07-09] — feat(tapematch): library crawl launched + analysis auto-triage; backlog consolidation
+Added: tools/tapematch/crawl_start.sh / crawl_stop.sh / crawl_status.sh: detached single-instance
+  wrapper set around run_crawl.sh, log at data/tapematch/crawl.log. Full-library crawl launched
+  2026-07-09 over the 2,232 remaining eligible dates (954 of 3,306 ≥2-recording dates done at launch).
+Added: tools/tapematch/triage_analysis.py: classifies the missing-analysis.md backlog into
+  AUTO / ESCALATE / SKIP(incomplete); auto-writes gen_analysis-template analyses (honest
+  "auto-triage" attribution line) only for complete all-distinct runs whose diagnostics are limited
+  to [DISTINCT SOURCE]/[INCOMPLETE] and whose commentary raises no in-set pair notes. First pass:
+  395 pending → 11 auto-written, 329 escalated to /tapematch-batch, 55 skipped incomplete.
+  backend.tapematch_sync ran after: 892 dates, 2,902 families, 3,743 recordings linked, 0 errors.
+Changed: instructions/: CC_TAPEMATCH_ADDON, CC_TAPEMATCH_FIXES, TAPEMATCH_PLAN, CC_WEB_GUI_PLAN
+  retired to complete/ (efforts concluded / TODO-050..066 all shipped); README.md index updated.
+  WORK_PACKAGE_2026-07-09.md added — agreed 7/09–7/12 window plan (tapematch calibration FROZEN,
+  spec-pack order per SPEC_INTEGRATION_NOTES §2, TapeMatch screen as stretch goal).
+Changed: ledger: TODO-182 closed (superseded by FABLE_UNIFIED_RANKING §5), TODO-203 closed
+  (Tier C rejected twice; frozen), TODO-204 and TODO-209 annotated as deferred past the window.
+Changed: tools/tapematch/CLAUDE.md: crawl wrapper + triage-before-batch conventions documented.
+  .gitignore: observations.db-shm/-wal + tools/tapematch/tmp/ (live-crawl artifacts).
+
 [2026-07-09] — feat: TODO-146 + TODO-171 + TODO-083 — flac.exe bundling, TapeMatch DB Editor, export column picker
 Added: tools/flac.exe + tools/libFLAC.dll: bundled Windows FLAC 1.5.0 (Win64) binaries.
   backend/sox_utils.py: _find_flac()/get_flac() probe bundled tools/flac.exe (PyInstaller
