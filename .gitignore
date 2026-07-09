@@ -56,8 +56,11 @@ tools/tapematch/last_run_report.md
 tools/tapematch/last_results.json
 tools/tapematch/last_debug.log
 tools/tapematch/observations.db
+tools/tapematch/observations.db-shm
+tools/tapematch/observations.db-wal
 tools/tapematch/observations.db.bak-*
 tools/tapematch/rerun_queue.txt
+tools/tapematch/tmp/
 
 # tapematch Tier B embedding artifacts (derived; regenerate via build_embed_eval_set/nmfp_embed)
 tools/tapematch/embed_cache/
