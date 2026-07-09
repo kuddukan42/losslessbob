@@ -10,10 +10,7 @@ its contents; they are not listed individually here.
 | Name | Purpose | Status |
 |---|---|---|
 | CC_CONCERT_RANKER.md | Handoff spec for Claude Code: audio quality ranking — scoring brain already built, DB integration/mining/staging/calibration work remains | not triaged |
-| CC_TAPEMATCH_ADDON.md | Lineage-forensic signals + learned similarity for TapeMatch (post-42%-ceiling) | not triaged |
-| CC_TAPEMATCH_FIXES.md | TapeMatch recall recovery: mechanical fixes + speed-invariant fingerprint | not triaged |
 | CC_TRADING_PLAN.md | Collection Trading feature — export/import/diff/generate a trading list with friends | not triaged |
-| CC_WEB_GUI_PLAN.md | Web GUI full implementation guide (TODO-050 through TODO-066) | not triaged |
 | concert ranker v1.zip | Source package (`concert_ranker/` code) attached to CC_CONCERT_RANKER.md | not triaged |
 | design_handoff_unified_library/ | Design handoff docs for the unified Library screen (overview + theme additions) | not triaged |
 | FABLE_IDEAS.md | Raw idea dump from a Fable 5 brainstorm (2026-07-06) — not a spec, ideas need expansion before execution | not triaged |
@@ -27,5 +24,4 @@ its contents; they are not listed individually here.
 | SPEC_INTEGRATION_NOTES.md | Cross-review / integration notes for the four Fable spec-pack docs | active — see SPEC_INTEGRATION_NOTES.md §2 for order, not yet implemented |
 | STRUCTURE_REVIEW.md | Structural & consistency review of backend + gui_next (2026-07-04) | not triaged |
 | TAPEMATCH_CALIBRATION_GUIDE.md | Quick guide to TapeMatch calibration rules (never trade precision for recall) | not triaged |
-| TAPEMATCH_PLAN.md | tapematch next-steps plan, generated 2026-06-07 from full run analysis | not triaged |
 | WORK_PACKAGE_2026-07-09.md | Agreed work package for the 7/09–7/12 usage window — timeline, locked decisions, deferred list | active |

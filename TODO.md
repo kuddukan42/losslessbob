@@ -9,6 +9,9 @@ TODO-209: Ledger duplicate-ID audit — 17 TODO + 22 BUG header IDs reused acros
 Priority: Low
 Status: Open
 Added: 2026-07-08
+Deferred (2026-07-09): report re-run and reviewed — all 39 ids sit in closed/archived
+  entries and each renumber needs manual cross-ref attribution (hours, cosmetic only).
+  Out of scope for the 7/09–7/12 window (WORK_PACKAGE_2026-07-09).
 Progress (2026-07-08): audit script shipped — tools/ledger_dedup.py (report-only default;
   --apply exists but is experimental and unused). Report finds 21 duplicated BUG ids and the
   TODO set, proposes keep/renumber per entry, and lists every cross-reference (CHANGELOG,
@@ -20,6 +23,9 @@ TODO-204: emb-gated MrMsDTW confirmation probe (near-miss band rescue)
 Priority: Low
 Status: Open
 Added: 2026-07-04
+Deferred (2026-07-09): calibration frozen for the 7/09–7/12 window
+  (WORK_PACKAGE_2026-07-09 decision 1) — this is the parked breakthrough probe;
+  12× embed-cache artifacts retained for it.
 Description: The emb near-miss band (both-conventions in [0.55, 0.75)) holds 34 low-corr FN
 + 39 frozen negatives (~73 pairs total) — too mixed to threshold, small enough for expensive
 per-pair alignment. Probe: synctoolbox MrMsDTW alignment on band pairs only, then confirm
@@ -34,32 +40,6 @@ compute. UNBLOCKED 2026-07-05: TODO-202 densification done (12× REJECTED, 5×/0
 net +1 flip only at the plateau edge; see TIER_B_FULLSET_REPORT.md); the near-miss band
 stands, and embed_cache_12x/ + fullset_pairs_12x_scores.json are retained as a second
 measurement the probe can cross-check band pairs against.
-
-TODO-203: Tier C retrain with family-aware hard negatives (label-noise fix)
-Priority: Low
-Status: Open
-Added: 2026-07-04
-Description: Tier C's HardNegBatchSampler groups hard negatives by (date, slot) only —
-embedding/data.py fetches family_id in select_sources() but never uses it. 16.2% of
-same-date cross-source pairs in latest_pairs are pipeline-verified same_family, so with
-hard_frac>=25% per batch and source-dense dates preferred, a material slice of the
-contrastive "push apart" gradient separated same-tape transfers — training the encoder to
-destroy the exact invariance TapeMatch needs. The 2026-07-03 clean-truth probe
-(TIER_C_CALIBRATION_PROBE_REPORT.md) condemns the checkpoint, not the approach: it never
-tested a cleanly-trained model. Re-run proposal: (1) group negatives by (date, family_id),
-never same-family; (2) add pipeline-verified same-family cross-source windows as REAL
-positives (corr-verified, no curator text); (3) exclude fn_label_census.py-flagged pairs
-from the negative pool; (4) taper-attribution negatives (user 2026-07-04): pairs whose
-entries resolve to two DIFFERENT curated tapers (_KNOWN_TAPER_ALIASES, backend/db.py) are
-provenance-certified hard negatives — measured 138 such pairs agree with pipeline
-different_family vs only 9 conflicts (6 of 9 involve "dolphinsmile", likely a
-transferer/seeder miscaptured as taper — curator to confirm; raw taper_name strings are
-NOT truth-grade: 381/2366 diff-raw-taper pairs are waveform-verified same_family because
-the field mixes tapers, transferers, and generic descriptors). Dividend: same-curated-
-taper + different_family pairs (21 curated / 142 raw) are a provenance-backed FN mining
-list for TODO-201. Expanding the curated alias list directly grows all of these sets.
-Gate: same absolute-FP protocol as Rule D; must beat nmfp's zero-FP recovery to earn a
-production slot. Sequenced after TODO-202 densification results.
 
 TODO-201: Curator review of census-flagged frozen-set labels (265 pairs)
 Priority: Medium
@@ -514,19 +494,6 @@ Description: New `concert_ranker/` package (repo root) that scores the audio qua
   read from `quality_recording_metrics.metric_json` and banded via `concert_ranker.scoring.band_metric()`
   (`backend/app.py:_quality_metrics_for()`); `DetailPanel.tsx` Quality tab renders these as tone-colored
   meters (`QualityMetricsPanel`/`MetricBar`/`FlagChip`) below the LB Rating/AI Quality Index tiles.
-
-TODO-182: Explore "best LB per date" via user voting — unsure how this would work
-Priority: Low
-Status: Open
-Added: 2026-06-22
-Description: Idea: let users vote on which LB recording is the best source for a given
-  date, surfaced as a "community pick" per date. Not yet scoped/decided how this would work.
-  Key tradeoff: this app is single-user/local (SQLite + local Flask backend, no shared
-  server), so real cross-user voting would need either (a) a new shared backend service to
-  aggregate votes, which is a big architectural lift, or (b) piggybacking on the WTRF forum —
-  e.g. a sticky "best of" thread that gets scraped/parsed similarly to the curated lists in
-  TODO-181 — which fits the existing architecture far better. Needs a decision before any
-  implementation.
 
 TODO-181: Add curated "best of" lists as filter views (carbonbit, 10haaf)
 Priority: Medium

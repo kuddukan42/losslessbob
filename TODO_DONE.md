@@ -1,6 +1,49 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-203: Tier C retrain with family-aware hard negatives (label-noise fix)
+Priority: Low
+Status: Done
+Added: 2026-07-04
+Closed: 2026-07-09
+Description: Tier C's HardNegBatchSampler groups hard negatives by (date, slot) only —
+embedding/data.py fetches family_id in select_sources() but never uses it. 16.2% of
+same-date cross-source pairs in latest_pairs are pipeline-verified same_family, so with
+hard_frac>=25% per batch and source-dense dates preferred, a material slice of the
+contrastive "push apart" gradient separated same-tape transfers — training the encoder to
+destroy the exact invariance TapeMatch needs. The 2026-07-03 clean-truth probe
+(TIER_C_CALIBRATION_PROBE_REPORT.md) condemns the checkpoint, not the approach: it never
+tested a cleanly-trained model. Re-run proposal: (1) group negatives by (date, family_id),
+never same-family; (2) add pipeline-verified same-family cross-source windows as REAL
+positives (corr-verified, no curator text); (3) exclude fn_label_census.py-flagged pairs
+from the negative pool; (4) taper-attribution negatives (user 2026-07-04): pairs whose
+entries resolve to two DIFFERENT curated tapers (_KNOWN_TAPER_ALIASES, backend/db.py) are
+provenance-certified hard negatives — measured 138 such pairs agree with pipeline
+different_family vs only 9 conflicts (6 of 9 involve "dolphinsmile", likely a
+transferer/seeder miscaptured as taper — curator to confirm; raw taper_name strings are
+NOT truth-grade: 381/2366 diff-raw-taper pairs are waveform-verified same_family because
+the field mixes tapers, transferers, and generic descriptors). Dividend: same-curated-
+taper + different_family pairs (21 curated / 142 raw) are a provenance-backed FN mining
+list for TODO-201. Expanding the curated alias list directly grows all of these sets.
+Gate: same absolute-FP protocol as Rule D; must beat nmfp's zero-FP recovery to earn a
+production slot. Sequenced after TODO-202 densification results.
+Closed without implementation: Tier C (contrastive embedding) was rejected on the gap gate twice (2026-07-03 initial, 2026-07-04 re-measurement); calibration frozen 2026-07-09 per WORK_PACKAGE_2026-07-09. Retrain-with-better-negatives premise no longer justifies the compute.
+
+TODO-182: Explore "best LB per date" via user voting — unsure how this would work
+Priority: Low
+Status: Done
+Added: 2026-06-22
+Closed: 2026-07-09
+Description: Idea: let users vote on which LB recording is the best source for a given
+  date, surfaced as a "community pick" per date. Not yet scoped/decided how this would work.
+  Key tradeoff: this app is single-user/local (SQLite + local Flask backend, no shared
+  server), so real cross-user voting would need either (a) a new shared backend service to
+  aggregate votes, which is a big architectural lift, or (b) piggybacking on the WTRF forum —
+  e.g. a sticky "best of" thread that gets scraped/parsed similarly to the curated lists in
+  TODO-181 — which fits the existing architecture far better. Needs a decision before any
+  implementation.
+Superseded by FABLE_UNIFIED_RANKING §5 — WTRF-thread-as-curated-list decision covers the 'best LB per date' voting idea (per SPEC_INTEGRATION_NOTES §3).
+
 TODO-083: Export HTML — add column picker with more My Collection fields
 Priority: Low
 Status: Done
