@@ -1,6 +1,43 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-205: Pipeline structural tier: implement P7+P1+P2 (+P3/P8) per design doc — shared hash/state cache, async job model
+Priority: Medium
+Status: Done
+Added: 2026-07-07
+Closed: 2026-07-09
+Description: Implement instructions/PIPELINE_STRUCTURAL_TIER_DESIGN.md (design done 2026-07-07,
+reviewed against sources). Phased plan in §9: Phase 1 Schema SHIPPED 2026-07-08 (two cache
+tables + db helpers + tests/test_pipeline_cache.py, inert until consumed). Phase 2 async job
+plumbing SHIPPED 2026-07-08 (/api/pipeline/run/start|status|cancel, per-st_dev drain threads
++ global worker semaphore; sync /run untouched). Phase 3 P7 state persistence SHIPPED
+2026-07-08 (verify/lbdir served cached:true on fingerprint match, lbdir LB-guard, force
+param on both routes; see design §9 as-built notes). Phase 4 P1 hash consultation SHIPPED
+2026-07-08 (per-file md5+sha256 cache in verify_folder/_lbdir, filing source digest from
+cache w/ fallback, stale_verify guard on all filing; tests/test_hash_cache_verify.py).
+Phase 5 P3 LBDIR prefetch BACKEND HALF SHIPPED 2026-07-08 (per-LB dedup + 2-worker pool,
+pending_fetch marker on lbdir mute, sync-scrape fallback retained; pending verdicts never
+persisted/served cached; see design §9 Phase 5 as-built notes). Phase 5 GUI HALF SHIPPED
+2026-07-09 (pending_fetch retry effect in ScreenPipeline.tsx: 5s poll, 6-attempt cap, once
+lands it clears the autocomplete guard). Phase 6 P8 blocked-as-live-view SHIPPED 2026-07-09
+(backend severity split — blocked escalates to attn only for no_date/no_route, transient
+codes mount_offline/dest_exists/db_error/unknown fall through to done → GUI re-buckets to
+shelf; auto re-resolve once per detail-panel open; bulk "retry blocked collects" toolbar
+action; tests/test_p8_blocked_severity.py). Not done: design §6 optional auto-retry-on-
+mount-reachability (only the on-open + bulk paths built). Remaining: Phase 7 GUI migration
+(swap runSteps to /run/start + poll /run/status, zustand persist on the folder queue,
+warm-start buckets from pipeline_folder_state, wire /run/cancel). Quick-win tier
+(D1/D2/D3/P5) shipped 2026-07-07.
+Phase 7 GUI migration shipped: runSteps→async /run/start+poll /run/status driver, stopRun→/run/cancel, folderQueueStore zustand persist, warm-start via new /api/pipeline/state route + mount hydration. Structural tier (design §9 Phases 1-7) COMPLETE. Verified: gui-check PASS, backend endpoint smoke-tested, 23 pipeline tests pass.
+
+TODO-211: Extract _pipeline_process_folder severity logic into a pure, unit-testable function
+Priority: Low
+Status: Done
+Added: 2026-07-09
+Closed: 2026-07-09
+Description: tests/test_p8_blocked_severity.py (TODO-205 Ph.6) tests a VERBATIM MIRROR of the severity block, not the real code — _pipeline_process_folder is a closure inside create_app() that boots live file/collection/integrity watchers against the live DB, so it can't be driven from a unit test (test_pipeline_smoke.py set this mirror precedent). Refactor the severity computation (backend/app.py ~6427-6449) into a module-level pure function taking the four step statuses + file_status/error_code + lb_number and returning the severity string; call it from the closure and point the P8 test (and any future severity test) at the real function so mirror/real drift is impossible. Low: current test is correct, just not load-bearing against real-code changes.
+Extracted compute_pipeline_severity() as a module-level pure fn in backend/app.py; closure + new /api/pipeline/state warm-start route both call it; test_p8_blocked_severity.py now drives the real fn (mirror deleted). 23 pipeline tests pass.
+
 TODO-174: Investigate consolidating attachment downloading — metadata scraper vs site crawler overlap
 Priority: Low
 Status: Done

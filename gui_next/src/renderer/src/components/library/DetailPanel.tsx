@@ -880,14 +880,6 @@ export function RecordingDetailPanel({ row, history, attachCount, actionHandlers
         <div style={{ fontSize: 'var(--t-body)', color: 'var(--lbb-fg2)' }}>
           {row.date} · {row.loc}
         </div>
-        {row.desc && row.desc !== '—' && (
-          <div style={{ fontSize: 'var(--t-meta)', color: 'var(--lbb-fg3)', marginTop: 6, lineHeight: 1.5 }}>{row.desc}</div>
-        )}
-        {row.src && (
-          <div style={{ fontSize: 'var(--t-meta)', color: 'var(--lbb-fg3)', marginTop: 3 }}>
-            {SRC_ABBR[row.src] ?? row.src}
-          </div>
-        )}
       </div>
 
       <TabStrip tabs={tabs} active={activeTab} onChange={setTab} />
@@ -895,6 +887,14 @@ export function RecordingDetailPanel({ row, history, attachCount, actionHandlers
       <div ref={paneRef} style={{ flex: 1, overflowY: 'auto', padding: 16 }}>
         {activeTab === 'overview' && (
           <>
+            {row.desc && row.desc !== '—' && (
+              <div style={{ fontSize: 'var(--t-meta)', color: 'var(--lbb-fg3)', lineHeight: 1.5 }}>{row.desc}</div>
+            )}
+            {row.src && (
+              <div style={{ fontSize: 'var(--t-meta)', color: 'var(--lbb-fg3)', marginTop: 3 }}>
+                {SRC_ABBR[row.src] ?? row.src}
+              </div>
+            )}
             <ActionBarZone actions={actions} onMore={e => openMenu(e, row.lb, actions)} />
 
             {/* Owned: file & location card */}

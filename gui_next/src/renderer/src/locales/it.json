@@ -665,7 +665,9 @@
       }
     },
     "autoCollect": "Raccolta automatica",
-    "autoCollectHint": "Quando questa opzione è attiva, le cartelle che risultano completamente verdi (verifica, ricerca, directory LB e rinomina superate) vengono archiviate automaticamente nella raccolta — non è necessario fare clic su “File”."
+    "autoCollectHint": "Quando questa opzione è attiva, le cartelle che risultano completamente verdi (verifica, ricerca, directory LB e rinomina superate) vengono archiviate automaticamente nella raccolta — non è necessario fare clic su “File”.",
+    "retryBlockedCollects_one": "Riprova {{count}} raccolta bloccata",
+    "retryBlockedCollects_other": "Riprova a raccogliere i file bloccati {{count}}"
   },
   "collection": {
     "confirmDialog": {
@@ -1444,7 +1446,9 @@
       "coverageLabel": "Ambito di applicazione",
       "bestRating": "Valutazione migliore",
       "clear": "Cancella {{count}}",
-      "views": "Viste"
+      "views": "Viste",
+      "allYears": "Tutti gli anni",
+      "bestRatingPerShow": "Valutazione migliore (per concerto)"
     },
     "views": {
       "allPerformances": "Tutte le esecuzioni",

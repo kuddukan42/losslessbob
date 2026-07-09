@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useQueryClient } from '@tanstack/react-query'
 import { useVirtualizer } from '@tanstack/react-virtual'
@@ -46,6 +46,7 @@ interface StepResult {
   summary?: LookupSummary | null
   detail?: LookupDetailRow[] | null
   check?: LbdirCheckSummary | null
+  pending_fetch?: boolean | null
   // verify step fields
   total?: number | null
   pass?: number | null
@@ -103,6 +104,15 @@ interface PipelineRow {
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
 const MUTE: StepResult = { status: 'mute', label: '—' }
+
+// P3 LBDIR prefetch (TODO-205 Phase 5): poll cadence + attempt cap for rows
+// parked on a background prefetch (lbdir status "mute" + pending_fetch marker).
+const LBDIR_PENDING_POLL_MS = 5000
+const LBDIR_PENDING_MAX_ATTEMPTS = 6
+
+// TODO-205 Phase 7: cadence for polling the async pipeline job (/run/status)
+// while a client-driven batch drains. Mirrors the 400ms filing-poll pattern.
+const PIPELINE_POLL_MS = 400
 
 function pctOf(done: number, total: number): number {
   if (total <= 0) return 0
@@ -217,6 +227,12 @@ function serverRowToPipeline(sr: Record<string, unknown>): Partial<PipelineRow> 
   // the folder hasn't been filed into the collection yet — reclassify those
   // as "shelf" so the status column doesn't claim "In collection" early.
   if (bucket === 'done' && file.status === 'warn') bucket = 'shelf'
+  // P8 (TODO-205 Ph.6): a "done"-severity row whose file step is a transient
+  // block (mount_offline/dest_exists/db_error/unknown — no_date/no_route are
+  // never "done", the backend escalates those straight to attn/needs) is also
+  // a shelf item: it's fully verified but waiting on a live re-resolve, not
+  // "In collection".
+  if (bucket === 'done' && file.status === 'bad') bucket = 'shelf'
   return {
     bucket,
     steps: {
@@ -266,6 +282,17 @@ function firstActiveStage(r: PipelineRow): string {
     if (r.steps[key].status === 'mute') return key
   }
   return 'verify'
+}
+
+// P8 (TODO-205 Ph.6): a "transient" collect block is a file-step failure that
+// can clear itself on a live re-resolve (mount_offline/dest_exists/db_error/
+// unknown) as opposed to no_date/no_route, which are structural and never
+// self-heal without user action elsewhere in the pipeline.
+const STRUCTURAL_BLOCK_CODES = new Set(['no_date', 'no_route'])
+
+function isTransientBlock(r: PipelineRow): boolean {
+  const f = r.steps.file
+  return f.status === 'bad' && !STRUCTURAL_BLOCK_CODES.has(f.error_code ?? '')
 }
 
 type StatusInfo = { state: StepData['state']; label: string; reason: string }
@@ -1368,15 +1395,61 @@ export function ScreenPipeline(): React.JSX.Element {
     })
   }, [queueFolders, autorun])
 
+  // Warm-start (TODO-205 Phase 7): on mount, hydrate the persisted queue's rows
+  // with their last-known verdicts from pipeline_folder_state (fingerprint-
+  // validated server-side) so buckets paint immediately after an app restart —
+  // before any re-run, and even with autorun off. Server is source of truth; the
+  // file step stays a live view, re-resolved on the next run. Rows already
+  // running (autorun kicked them off) are left untouched so we never clobber a
+  // fresh result with a stale cached one.
+  useEffect(() => {
+    const folders = useFolderQueueStore.getState().folders
+    if (!folders.length) return
+    let cancelled = false
+    void (async () => {
+      try {
+        const resp = await fetch(`${BASE}/api/pipeline/state`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ folders }),
+        })
+        if (!resp.ok) return
+        const data = await resp.json() as { results?: Record<string, Record<string, unknown>> }
+        if (cancelled || !data.results) return
+        const fresh = new Map<string, Partial<PipelineRow>>()
+        for (const [path, sr] of Object.entries(data.results)) {
+          const row = serverRowToPipeline(sr)
+          fresh.set(path, row)
+          _pipelineCache.set(path, { steps: row.steps!, bucket: row.bucket!, errors: row.errors ?? [] })
+        }
+        setRows(prev => prev.map(r => {
+          const row = fresh.get(r.folderPath)
+          if (!row || r.running) return r
+          return { ...r, ...row, steps: row.steps!, running: false }
+        }))
+      } catch { /* best-effort — a failed warm-start just leaves rows to run normally */ }
+    })()
+    return () => { cancelled = true }
+  }, [])
+
   const tableParentRef    = useRef<HTMLDivElement>(null)
   const flatListRef       = useRef<VItem[]>([])
   const stopRef              = useRef(false)
-  const abortRef             = useRef<AbortController | null>(null)
+  // TODO-205 Phase 7: client-side serialisation of the single global backend
+  // job. runSteps enqueues a batch here; drainJobQueue processes one /run/start
+  // at a time and polls /run/status. rowsRef gives the async driver a live view
+  // of rows (ids → folder paths) without stale-closure capture.
+  const jobQueueRef          = useRef<{ ids: string[]; steps: string[] }[]>([])
+  const driverActiveRef      = useRef(false)
+  const rowsRef              = useRef<PipelineRow[]>(rows)
+  rowsRef.current = rows
   const autorunPendingRef    = useRef<string[]>([])
   const autocompleteStarted  = useRef<Set<string>>(new Set())
+  const pendingFetchAttempts = useRef<Map<string, number>>(new Map())
   const autoRenamedRef       = useRef<Set<string>>(new Set())
   const autoCollectedRef     = useRef<Set<string>>(new Set())
   const filingRef            = useRef(false)
+  const autoBlockedRecheckRef = useRef<Set<string>>(new Set())
 
   // ── Derived counts ───────────────────────────────────────────────────────────
   const counts = {
@@ -1393,6 +1466,15 @@ export function ScreenPipeline(): React.JSX.Element {
   const selectedReady   = selectedRows.filter(r => r.bucket === 'ready')
   const fileableRows    = rows.filter(r => !r.running && r.steps.file.status === 'warn' && !!r.steps.file.dest && !r.shelved && !(r.steps.rename.status === 'warn' && !!r.steps.rename.proposed))
   const selectedFileable = selectedRows.filter(r => !r.running && r.steps.file.status === 'warn' && !!r.steps.file.dest && !r.shelved && !(r.steps.rename.status === 'warn' && !!r.steps.rename.proposed))
+
+  // P8 (TODO-205 Ph.6): shelf rows blocked on a transient collect failure
+  // (mount_offline/dest_exists/db_error/unknown) — eligible for the bulk
+  // "retry blocked" sweep. no_date/no_route never land in shelf (see
+  // serverRowToPipeline), so isTransientBlock's exclusion is belt-and-braces.
+  const retryBlockedIds = useMemo(
+    () => rows.filter(r => !r.running && r.bucket === 'shelf' && !r.shelved && isTransientBlock(r)).map(r => r.id),
+    [rows]
+  )
 
   // ── Filtered rows ────────────────────────────────────────────────────────────
   const visibleRows = rows.filter(r => {
@@ -1450,17 +1532,6 @@ export function ScreenPipeline(): React.JSX.Element {
     : rows
 
   // ── Row mutation helpers ─────────────────────────────────────────────────────
-  const updateRow = useCallback((id: string, patch: Partial<PipelineRow>) => {
-    setRows(prev => prev.map(r => {
-      if (r.id !== id) return r
-      const updated = { ...r, ...patch }
-      if (patch.steps !== undefined || patch.bucket !== undefined || patch.errors !== undefined) {
-        _pipelineCache.set(id, { steps: updated.steps, bucket: updated.bucket, errors: updated.errors })
-      }
-      return updated
-    }))
-  }, [])
-
   // Merge a server result into the current row. Requested steps always take the
   // fresh value; unrequested steps keep their current result unless the server
   // ran them anyway (the backend auto-includes lookup with rename/lbdir/file so
@@ -1492,47 +1563,82 @@ export function ScreenPipeline(): React.JSX.Element {
     })
   }, [addToQueue, autorun])
 
-  // ── Backend: run steps ───────────────────────────────────────────────────────
-  const runSteps = useCallback(async (targetIds: string[], steps: string[]) => {
-    const targets = rows.filter(r => targetIds.includes(r.id))
-    if (!targets.length) return
+  // ── Backend: run steps (TODO-205 Phase 7 — async job model) ──────────────────
+  // Drain the client-side batch queue against the single global backend job.
+  // Each batch is one POST /run/start; we then poll GET /run/status, merging
+  // every folder's verdict as it lands (device-grouped, so results arrive out of
+  // enqueue order). Only one drain runs at a time (driverActiveRef); concurrent
+  // runSteps calls stack batches and are drained sequentially, respecting the
+  // backend's single-job busy guard.
+  const drainJobQueue = useCallback(async () => {
+    if (driverActiveRef.current) return
+    driverActiveRef.current = true
+    try {
+      while (jobQueueRef.current.length && !stopRef.current) {
+        const batch = jobQueueRef.current.shift()!
+        // Resolve ids → folder paths live (rows may have been renamed/removed).
+        const pathToId = new Map<string, string>()
+        for (const id of batch.ids) {
+          const row = rowsRef.current.find(r => r.id === id)
+          if (row) pathToId.set(row.folderPath, row.id)
+        }
+        const paths = [...pathToId.keys()]
+        if (!paths.length) continue
 
-    stopRef.current = false
-
-    for (const target of targets) {
-      if (stopRef.current) break
-
-      updateRow(target.id, { running: true })
-      const ctrl = new AbortController()
-      abortRef.current = ctrl
-
-      try {
-        const resp = await fetch(`${BASE}/api/pipeline/run`, {
+        const stepSet = new Set(batch.steps)
+        const start = await fetch(`${BASE}/api/pipeline/run/start`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ folders: [target.folderPath], steps }),
-          signal: ctrl.signal,
-        })
-        if (resp.ok) {
-          const data = await resp.json() as { results: Record<string, unknown>[] }
-          if (data.results[0]) {
-            const fresh = serverRowToPipeline(data.results[0])
-            mergeServerRow(target.id, fresh, new Set(steps))
-          } else updateRow(target.id, { running: false })
-        } else {
-          updateRow(target.id, { running: false })
+          body: JSON.stringify({ folders: paths, steps: batch.steps }),
+        }).then(r => r.json()).catch(() => ({ ok: false }))
+
+        if (!start?.ok) {
+          // busy / error — release this batch's running flags and move on.
+          setRows(prev => prev.map(r => batch.ids.includes(r.id) ? { ...r, running: false } : r))
+          continue
         }
-      } catch (e) {
-        if ((e as Error).name !== 'AbortError') updateRow(target.id, { running: false })
+
+        // Poll until the job finishes, merging each result exactly once.
+        const applied = new Set<string>()
+        for (;;) {
+          await new Promise(res => setTimeout(res, PIPELINE_POLL_MS))
+          if (stopRef.current) break
+          const st = await fetch(`${BASE}/api/pipeline/run/status`)
+            .then(r => r.json()).catch(() => null) as
+              { running?: boolean; results?: Record<string, Record<string, unknown>> } | null
+          if (!st) continue
+          for (const [path, sr] of Object.entries(st.results ?? {})) {
+            if (applied.has(path)) continue
+            const id = pathToId.get(path)
+            if (!id) continue
+            applied.add(path)
+            mergeServerRow(id, serverRowToPipeline(sr), stepSet)
+          }
+          if (!st.running) break
+        }
+        // Release any batch rows that never produced a result (cancel/error).
+        setRows(prev => prev.map(r =>
+          (batch.ids.includes(r.id) && r.running && !applied.has(r.folderPath))
+            ? { ...r, running: false } : r))
       }
+    } finally {
+      driverActiveRef.current = false
     }
-    abortRef.current = null
-  }, [rows, updateRow, mergeServerRow])
+  }, [mergeServerRow])
+
+  const runSteps = useCallback((targetIds: string[], steps: string[]) => {
+    const ids = targetIds.filter(id => rowsRef.current.some(r => r.id === id))
+    if (!ids.length) return
+    stopRef.current = false
+    setRows(prev => prev.map(r => ids.includes(r.id) ? { ...r, running: true } : r))
+    jobQueueRef.current.push({ ids, steps })
+    void drainJobQueue()
+  }, [drainJobQueue])
 
   const stopRun = useCallback(() => {
     stopRef.current = true
-    abortRef.current?.abort()
-    abortRef.current = null
+    jobQueueRef.current = []
+    void fetch(`${BASE}/api/pipeline/run/cancel`, { method: 'POST' }).catch(() => {})
     setRows(prev => prev.map(r => r.running ? { ...r, running: false } : r))
   }, [])
 
@@ -1559,6 +1665,52 @@ export function ScreenPipeline(): React.JSX.Element {
     runSteps(stale.map(r => r.id), ['lookup', 'lbdir', 'rename', 'file'])
   }, [rows, runSteps])
 
+  // ── Retry: poll lbdir for rows parked on a background LBDIR prefetch ─────────
+  // (TODO-205 Phase 5 / P3). The backend reports lbdir status "mute" with a
+  // pending_fetch marker only while the prefetch for that LB is inflight; once
+  // it lands, a re-run of just the lbdir step resolves normally. Bounded by
+  // LBDIR_PENDING_MAX_ATTEMPTS so a permanently-failed prefetch doesn't poll
+  // forever — the row is left as a plain mute lbdir on timeout (no new status).
+  useEffect(() => {
+    const pending = rows.filter(r =>
+      !r.running &&
+      r.steps.lbdir.status === 'mute' &&
+      r.steps.lbdir.pending_fetch &&
+      (pendingFetchAttempts.current.get(r.id) ?? 0) < LBDIR_PENDING_MAX_ATTEMPTS
+    )
+    if (!pending.length) return
+
+    const timer = setInterval(() => {
+      pending.forEach(async row => {
+        const attempts = (pendingFetchAttempts.current.get(row.id) ?? 0) + 1
+        pendingFetchAttempts.current.set(row.id, attempts)
+        try {
+          const resp = await fetch(`${BASE}/api/pipeline/run`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ folders: [row.folderPath], steps: ['lbdir'] }),
+          })
+          if (resp.ok) {
+            const data = await resp.json() as { results: Record<string, unknown>[] }
+            if (data.results[0]) {
+              const fresh = serverRowToPipeline(data.results[0])
+              mergeServerRow(row.id, fresh, new Set(['lbdir']))
+              if (!fresh.steps?.lbdir.pending_fetch) {
+                // Prefetch landed (or the row otherwise stopped being pending) —
+                // drop the attempt count and let a future stale-row scan resume
+                // rename/file if they somehow didn't already resolve alongside lbdir.
+                pendingFetchAttempts.current.delete(row.id)
+                autocompleteStarted.current.delete(row.id)
+              }
+            }
+          }
+        } catch { /* silent — retried on the next tick */ }
+      })
+    }, LBDIR_PENDING_POLL_MS)
+
+    return () => clearInterval(timer)
+  }, [rows, mergeServerRow])
+
   // Refresh one row's lbdir step (called after reconcile apply in detail panel)
   const refreshDetailRow = useCallback(async (id: string) => {
     const target = rows.find(r => r.id === id)
@@ -1578,6 +1730,47 @@ export function ScreenPipeline(): React.JSX.Element {
       }
     } catch { /* silent */ }
   }, [rows, mergeServerRow])
+
+  // P8 (TODO-205 Ph.6): auto re-resolve a transiently-blocked row's file step
+  // once per detail-panel open. Re-running ['lookup', 'file'] picks up fresh
+  // mount online-ness (the mounts array arrives on the file step), so a shelf
+  // row whose mount has come back clears itself without a manual "recheck
+  // route" click. Guarded by autoBlockedRecheckRef so a rows update triggered
+  // by the fetch itself (or any unrelated row change while the panel stays
+  // open) can't refire it — see the paired reset effect below.
+  useEffect(() => {
+    if (!detailId) return
+    const row = rows.find(r => r.id === detailId)
+    if (!row || !isTransientBlock(row)) return
+    if (autoBlockedRecheckRef.current.has(detailId)) return
+    autoBlockedRecheckRef.current.add(detailId)
+    void (async () => {
+      try {
+        const resp = await fetch(`${BASE}/api/pipeline/run`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ folders: [row.folderPath], steps: ['lookup', 'file'] }),
+        })
+        if (resp.ok) {
+          const data = await resp.json() as { results: Record<string, unknown>[] }
+          if (data.results[0]) {
+            const fresh = serverRowToPipeline(data.results[0])
+            mergeServerRow(detailId, fresh, new Set(['lookup', 'file']))
+          }
+        }
+      } catch { /* silent */ }
+    })()
+  }, [detailId, rows, mergeServerRow])
+
+  // Reset the auto-recheck guard when the panel closes or switches to a
+  // different row, so reopening the same blocked row later re-triggers the
+  // effect above. Deliberately depends only on detailId (not rows) — the
+  // fire effect's own guard already makes it idempotent against rows churn.
+  useEffect(() => {
+    return () => {
+      if (detailId) autoBlockedRecheckRef.current.delete(detailId)
+    }
+  }, [detailId])
 
   // ── Apply a single rename ────────────────────────────────────────────────────
   const applyRename = useCallback(async (row: PipelineRow, customName?: string) => {
@@ -2129,6 +2322,18 @@ export function ScreenPipeline(): React.JSX.Element {
             onClick={applyAllFileable}
           >
             {t('pipeline.fileAllCollection', { count: counts.shelf })}
+          </Button>
+        )}
+
+        {/* Retry blocked collects — only when a transient block exists (P8, TODO-205 Ph.6) */}
+        {retryBlockedIds.length > 0 && (
+          <Button
+            variant="secondary"
+            size="md"
+            icon="refresh"
+            onClick={() => runSteps(retryBlockedIds, ['lookup', 'file'])}
+          >
+            {t('pipeline.retryBlockedCollects', { count: retryBlockedIds.length })}
           </Button>
         )}
       </div>

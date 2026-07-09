@@ -1,3 +1,60 @@
+[2026-07-09] — feat(gui): TODO-205 Phase 7 (async job model) + TODO-211 (severity extraction) — pipeline structural tier COMPLETE
+Changed: gui_next ScreenPipeline.tsx: TODO-205 Phase 7 GUI migration (design §8) — runSteps no
+  longer posts one synchronous /api/pipeline/run per folder. It now enqueues a batch onto a
+  client-side queue; a single drainJobQueue driver POSTs /api/pipeline/run/start once, then
+  polls /api/pipeline/run/status every 400ms (PIPELINE_POLL_MS), merging each folder's verdict
+  as it lands (device-grouped, out of enqueue order). Batches serialise client-side to respect
+  the backend's single-job busy guard; concurrent runSteps calls stack and drain sequentially.
+  stopRun now POSTs /api/pipeline/run/cancel, clears the client queue, and stops the poll loop.
+  Removed the now-dead per-folder updateRow/AbortController path; added rowsRef for stale-free
+  id→path resolution in the async driver. The targeted single-step follow-ups (pending-fetch
+  retry, detail refresh, blocked-recheck, rename file-refresh) deliberately stay on sync /run.
+Added: gui_next folderQueueStore.ts: TODO-205 Phase 7 — zustand persist middleware
+  (localStorage 'lbb-pipeline-queue'), so the folder work queue survives an app restart.
+  Verdicts stay server-side (P7 cache); only the path list is persisted client-side.
+Added: gui_next ScreenPipeline.tsx + backend/app.py: TODO-205 Phase 7 warm-start. New route
+  POST /api/pipeline/state returns last-known cached verdicts (fingerprint-validated, design
+  R3) for a set of folders, with severity freshly computed. A mount effect hydrates the
+  persisted queue's rows so buckets paint immediately after restart — before any re-run, and
+  even with autorun off. Rows already running are left untouched; the file step is appearance-
+  only (P8) and re-resolved live on the next run.
+Changed: backend/app.py: TODO-211 — extracted the pipeline severity computation out of the
+  _pipeline_process_folder closure into a module-level pure function compute_pipeline_severity
+  (verify/lookup/lbdir/rename + file_status/error_code + lb_number → severity). The closure and
+  the new warm-start route both call it, and tests/test_p8_blocked_severity.py now drives the
+  REAL function instead of a verbatim mirror — mirror/real drift is now impossible. Behaviour
+  unchanged; verified by the existing 4 P8 cases + full pipeline suite (23 passed).
+
+[2026-07-09] — feat(gui): TODO-205 Phase 5 GUI half + Phase 6 P8 — lbdir prefetch retry effect, blocked-collect as live view (structural tier)
+Added: gui_next ScreenPipeline.tsx: TODO-205 Phase 5 GUI half (design §5/P3) — pending_fetch
+  retry effect. The backend parks a row on a background LBDIR prefetch with lbdir status
+  "mute" + pending_fetch:true; the existing auto-complete effect resumes a stale row only
+  once (ref-guarded), so a row still inflight at that resume used to park until a manual
+  re-run. New effect polls POST /api/pipeline/run {steps:['lbdir']} every 5s (LBDIR_PENDING_
+  POLL_MS), capped at 6 attempts (~30s, LBDIR_PENDING_MAX_ATTEMPTS); once pending_fetch
+  clears it drops the attempt count and the autocompleteStarted guard so rename/file resume;
+  on timeout the row is left a plain mute (no new StepStatus string). pending_fetch added to
+  the StepResult type. Implemented by sonnet agent, orchestrated + verified by opus.
+Changed: backend/app.py: TODO-205 Phase 6 P8 (design §6) — "blocked as a live view" severity
+  split. A blocked file step now escalates to attn ONLY when error_code in {no_date,
+  no_route} (structural, need human config); transient codes (mount_offline, dest_exists,
+  db_error, and any unknown code — whitelist semantics) fall through to the ready/done/attn
+  logic and land in "done", so already-verified work no longer gets forced into "needs" for
+  a pointless full re-run.
+Added: gui_next ScreenPipeline.tsx: TODO-205 Phase 6 P8 GUI — serverRowToPipeline re-buckets
+  a done-severity row with a transient file block (status 'bad') to "shelf" not "In
+  collection"; auto re-resolve (re-run ['lookup','file'], ref-guarded once per detail-panel
+  open) so a shelved row self-clears when its mount returns; bulk "Retry N blocked collects"
+  toolbar button (isTransientBlock predicate) re-running the file step for all transient-
+  block shelf rows. Design §6 optional auto-retry-on-mount-reachability NOT built — see
+  TODO-205 remaining notes.
+Added: tests/test_p8_blocked_severity.py: 4 tests for the P8 severity split (transient →
+  done, no_date/no_route → attn, unknown code → done, bad step elsewhere → attn). NB tests a
+  mirror of the severity block, not the real closure — see TODO-211 for the extraction fix.
+Changed: gui_next locales/*.json: new pipeline.retryBlockedCollects key translated to
+  de/fr/es/it/nl via /gui-next-i18n (the run also filled the pending backlog from concurrent
+  library-screen work; 3,555 DeepL chars).
+
 [2026-07-08] — feat(backend): TODO-205 Phases 1–5(backend) — pipeline cache schema, async job model, state persistence, hash consultation, lbdir prefetch (structural tier)
 Added: backend/app.py: TODO-205 Phase 5 backend half (design §5/P3) — background LBDIR
   prefetch: module-level _LBDIR_PREFETCH_INFLIGHT set + lock (dedupe by LB number, many
