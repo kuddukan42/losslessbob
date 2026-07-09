@@ -41,6 +41,7 @@ from backend.paths import (
     DATA_DIR,
     SITE_DIR,
     SITE_FILES_DIR,
+    TAPEMATCH_DB_PATH,
     attachment_path,
     find_lbdir_attachment,
 )
@@ -238,15 +239,22 @@ _DBEDIT_AUDIT    = frozenset({"entry_changes", "integrity_events"})
 _DBEDIT_WARN     = frozenset({"checksums", "entries", "entry_files"})
 
 
+# Alternate databases browsable in the DB Editor, all read-only (tool-generated data).
+_DBEDIT_READONLY_DBS = {
+    "batchverify": BATCH_VERIFY_DB_PATH,
+    "tapematch":   TAPEMATCH_DB_PATH,
+}
+
+
 def _dbedit_db_path() -> str:
     """Return the SQLite path for the current dbedit request based on ?db= param."""
-    if request.args.get("db", "").lower() == "batchverify":
-        return str(BATCH_VERIFY_DB_PATH)
-    return str(database.DB_PATH)
+    alt = _DBEDIT_READONLY_DBS.get(request.args.get("db", "").lower())
+    return str(alt) if alt is not None else str(database.DB_PATH)
 
 
 def _dbedit_is_batchverify() -> bool:
-    return request.args.get("db", "").lower() == "batchverify"
+    """Return True if the current dbedit request targets a read-only alternate DB."""
+    return request.args.get("db", "").lower() in _DBEDIT_READONLY_DBS
 
 
 def _parse_lb_filter(lb_filter: str) -> list[int] | None:
@@ -1754,12 +1762,23 @@ def create_app() -> Flask:
         100-row pagination (adjustable), CSV download, LB# clipboard copy, dark
         mode, and keyboard shortcuts. Handles 16k+ entries without DOM thrashing.
 
+        Query params:
+            cols: comma-separated column keys to display, in order (see
+                  _EXPORT_COLUMN_DEFS). Unknown keys are dropped; falls back
+                  to _EXPORT_DEFAULT_COLS if empty/all-unknown. "lb" is
+                  always included since it anchors the detail-page link.
+
         Returns:
             HTML file attachment (collection.html), fully self-contained.
         """
         try:
             import json as _json
             from datetime import UTC, datetime
+
+            requested = [c.strip() for c in request.args.get("cols", "").split(",") if c.strip()]
+            cols = [c for c in requested if c in _EXPORT_COLUMN_DEFS] or list(_EXPORT_DEFAULT_COLS)
+            if "lb" not in cols:
+                cols = ["lb"] + cols
 
             rows = database.get_collection()
             entries = []
@@ -1784,14 +1803,24 @@ def create_app() -> Flask:
                     "location": r.get("location", "") or "",
                     "folder": r.get("folder_name", "") or "",
                     "notes": r.get("notes", "") or "",
+                    "disk_path": r.get("disk_path", "") or "",
+                    "confirmed_at": (r.get("confirmed_at") or "")[:10],
+                    "source_type": r.get("source_type", "") or "",
+                    "lb_category": r.get("lb_category", "") or "",
+                    "rating": r.get("rating") if r.get("rating") is not None else "",
                 })
 
             data_json = _json.dumps(entries, ensure_ascii=False)
+            cols_json = _json.dumps(
+                [{"key": c, "label": _EXPORT_COLUMN_DEFS[c]} for c in cols],
+                ensure_ascii=False,
+            )
             generated_at = datetime.now(UTC).strftime("%Y-%m-%d %H:%M UTC")
 
             html = (
                 _COLLECTION_HTML_TEMPLATE
                 .replace("__DATA_JSON__", data_json)
+                .replace("__COLS_JSON__", cols_json)
                 .replace("__GENERATED_AT__", generated_at)
             )
             return Response(
@@ -2845,14 +2874,12 @@ def create_app() -> Flask:
     @app.route("/api/spectrogram/check", methods=["GET"])
     def spectrogram_check() -> Response:
         """Return tool availability for the Setup tab indicator."""
-        import shutil as _shutil
-
         from backend.checksum_utils import check_shntool_version
-        from backend.sox_utils import check_sox_version, get_ffmpeg, get_install_hints
+        from backend.sox_utils import check_sox_version, get_ffmpeg, get_flac, get_install_hints
         sox_ver     = check_sox_version()
         ffmpeg      = get_ffmpeg()
         shntool_ver = check_shntool_version()
-        flac_ver    = _shutil.which("flac")
+        flac_cmd    = get_flac()
         hints       = get_install_hints()
         return jsonify({
             "sox_available":        bool(sox_ver),
@@ -2860,7 +2887,7 @@ def create_app() -> Flask:
             "ffmpeg_available":     ffmpeg is not None,
             "shntool_available":    bool(shntool_ver),
             "shntool_version":      shntool_ver,
-            "flac_available":       flac_ver is not None,
+            "flac_available":       flac_cmd is not None,
             "ffmpeg_install_hint":  hints.get("ffmpeg"),
             "sox_install_hint":     hints.get("sox"),
             "flac_install_hint":    hints.get("flac"),
@@ -3261,8 +3288,9 @@ def create_app() -> Flask:
             return jsonify({"error": "No SQL provided."}), 400
 
         limit = min(int(body.get("limit", 500)), 2000)
-        query_db = str(BATCH_VERIFY_DB_PATH) if (body.get("db") or "").lower() == "batchverify" else str(database.DB_PATH)
-        is_bv_query = query_db == str(BATCH_VERIFY_DB_PATH)
+        alt_db = _DBEDIT_READONLY_DBS.get((body.get("db") or "").lower())
+        query_db = str(alt_db) if alt_db is not None else str(database.DB_PATH)
+        is_bv_query = alt_db is not None
 
         upper = sql.upper()
         for blocked in ("DROP ", "TRUNCATE ", "VACUUM", "ATTACH ", "DETACH "):
@@ -3275,7 +3303,7 @@ def create_app() -> Flask:
         is_read = any(upper.startswith(kw) for kw in
                       ("SELECT", "PRAGMA", "WITH", "EXPLAIN", "VALUES"))
         if is_bv_query and not is_read:
-            return jsonify({"error": "batch_verify.db is read-only."}), 403
+            return jsonify({"error": f"{Path(query_db).name} is read-only."}), 403
         try:
             if is_read:
                 conn = database.get_connection(query_db)
@@ -7905,9 +7933,29 @@ def _start_download_pages_thread(lb_numbers, force=False, delay_ms=1500):
     _scrape_thread.start()
 
 
+# ── Collection HTML export column picker (TODO-083) ─────────────────────────
+# Every key here is always present in each exported entry dict; ?cols= just
+# controls which ones the template renders as <th>/<td> and in what order.
+_EXPORT_COLUMN_DEFS: dict[str, str] = {
+    "lb":           "LB #",
+    "status":       "Status",
+    "date":         "Date",
+    "location":     "Location",
+    "folder":       "Folder",
+    "notes":        "Notes",
+    "disk_path":    "Disk Path",
+    "confirmed_at": "Added",
+    "source_type":  "Source",
+    "lb_category":  "Category",
+    "rating":       "Rating",
+}
+_EXPORT_DEFAULT_COLS = ["lb", "status", "date", "location", "folder", "notes"]
+
+
 # ── Collection HTML export template ─────────────────────────────────────────
 # Placeholders replaced at request time:
-#   __DATA_JSON__     → JSON array of entry dicts
+#   __DATA_JSON__     → JSON array of entry dicts (superset of all export columns)
+#   __COLS_JSON__     → JSON array of {key, label} dicts — display order/subset
 #   __GENERATED_AT__  → UTC timestamp string (no single-quotes, safe in JS string literal)
 _COLLECTION_HTML_TEMPLATE = """\
 <!DOCTYPE html>
@@ -8111,14 +8159,7 @@ mark{background:#fde68a;color:#78350f;border-radius:2px;padding:0 1px;font-style
 
 <div class="card">
   <table>
-    <thead><tr id="thRow">
-      <th data-col="lb"       onclick="srt('lb')">LB # <span class="sa"></span></th>
-      <th data-col="status"   onclick="srt('status')">Status <span class="sa"></span></th>
-      <th data-col="date"     onclick="srt('date')">Date <span class="sa"></span></th>
-      <th data-col="location" onclick="srt('location')">Location <span class="sa"></span></th>
-      <th data-col="folder"   onclick="srt('folder')">Folder <span class="sa"></span></th>
-      <th data-col="notes"    onclick="srt('notes')">Notes <span class="sa"></span></th>
-    </tr></thead>
+    <thead><tr id="thRow"></tr></thead>
     <tbody id="tb"></tbody>
   </table>
   <div class="empty" id="emp" style="display:none">
@@ -8153,18 +8194,35 @@ mark{background:#fde68a;color:#78350f;border-radius:2px;padding:0 1px;font-style
 <script>
 'use strict';
 const DATA=__DATA_JSON__;
+const COLS=__COLS_JSON__;
 const GEN='__GENERATED_AT__';
 
 const SM={public:{l:'Public',c:'#4ade80',r:0},private:{l:'Private',c:'#60a5fa',r:1},
           missing:{l:'Missing',c:'#f87171',r:2},unknown:{l:'Unknown',c:'#94a3b8',r:3}};
 const BC={public:'bp',private:'br',missing:'bm'};
+const CELL={
+  lb:      (r,q)=>`<td class="clb"><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.lb_str)}</a></td>`,
+  status:  (r,q)=>`<td><span class="b ${BC[r.status]??'bu'}">${esc(r.status)}</span></td>`,
+  date:    (r,q)=>`<td class="cdt">${hl(r.date,q)}</td>`,
+  folder:  (r,q)=>`<td class="cfl" title="${esc(r.folder)}">${hl(r.folder,q)}</td>`,
+  notes:   (r,q)=>`<td class="cno">${hl(r.notes,q)}</td>`,
+  disk_path: (r,q)=>`<td class="cfl" title="${esc(r.disk_path)}">${hl(r.disk_path,q)}</td>`,
+  confirmed_at: (r,q)=>`<td class="cdt">${hl(r.confirmed_at,q)}</td>`,
+};
+function cellFor(r,key,q){return (CELL[key]??((r,q)=>`<td>${hl(r[key],q)}</td>`))(r,q);}
 let sc='lb',sd=1,qr='',fSt='',fDec='',fYr='',pg=1,pz=100,fil=[];
 
 (function boot(){
   document.getElementById('genTs').textContent=GEN;
   document.getElementById('ftrTs').textContent=GEN;
-  mkDrops();mkStats();bindEvt();srt('lb');
+  mkHead();mkDrops();mkStats();bindEvt();srt('lb');
 })();
+
+function mkHead(){
+  document.getElementById('thRow').innerHTML=COLS.map(c=>
+    `<th data-col="${c.key}" onclick="srt('${c.key}')">${esc(c.label)} <span class="sa"></span></th>`
+  ).join('');
+}
 
 function mkDrops(){
   const yrs=[...new Set(DATA.map(r=>r.year).filter(Boolean))].sort().reverse();
@@ -8221,7 +8279,7 @@ function apFil(){
     if(fYr&&r.year!==fYr)return false;
     if(fDec&&String(Math.floor(+r.year/10)*10)!==fDec)return false;
     if(q){
-      const h=`${r.lb_str} ${r.date} ${r.location} ${r.folder} ${r.notes}`.toLowerCase();
+      const h=COLS.map(c=>c.key==='lb'?r.lb_str:r[c.key]).join(' ').toLowerCase();
       if(!h.includes(q))return false;
     }
     return true;
@@ -8266,17 +8324,9 @@ function draw(){
   emp.style.display='none';
   const q=qr.trim().toLowerCase();
   const st=(pg-1)*pz;
-  tb.innerHTML=fil.slice(st,st+pz).map(r=>{
-    const bc=BC[r.status]??'bu';
-    return `<tr>
-      <td class="clb"><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.lb_str)}</a></td>
-      <td><span class="b ${bc}">${esc(r.status)}</span></td>
-      <td class="cdt">${hl(r.date,q)}</td>
-      <td>${hl(r.location,q)}</td>
-      <td class="cfl" title="${esc(r.folder)}">${hl(r.folder,q)}</td>
-      <td class="cno">${hl(r.notes,q)}</td>
-    </tr>`;
-  }).join('');
+  tb.innerHTML=fil.slice(st,st+pz).map(r=>
+    `<tr>${COLS.map(c=>cellFor(r,c.key,q)).join('')}</tr>`
+  ).join('');
   const n=fil.length,t=DATA.length;
   document.getElementById('cntLbl').textContent=n===t?`${n.toLocaleString()} recordings`:`${n.toLocaleString()} of ${t.toLocaleString()}`;
   updPg();
@@ -8309,8 +8359,8 @@ function clr(){
 }
 
 function dlCSV(){
-  const rows=[['LB#','Status','Date','Location','Folder','Notes'],
-    ...fil.map(r=>[r.lb_str,r.status,r.date,r.location,r.folder,r.notes])];
+  const rows=[COLS.map(c=>c.label),
+    ...fil.map(r=>COLS.map(c=>c.key==='lb'?r.lb_str:r[c.key]))];
   const csv=rows.map(r=>r.map(c=>`"${String(c??'').replace(/"/g,'""')}"`).join(',')).join('\\n');
   const a=document.createElement('a');
   a.href='data:text/csv;charset=utf-8,\\ufeff'+encodeURIComponent(csv);

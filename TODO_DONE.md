@@ -1,6 +1,132 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-083: Export HTML — add column picker with more My Collection fields
+Priority: Low
+Status: Done
+Added: 2026-05-21
+Closed: 2026-07-09
+Description: The exported HTML has six fixed columns (LB#, Status, Date, Location,
+  Folder, Notes). Add a column-picker UI in the Collection tab's export dialog (or as
+  query-params on /api/collection/export/html) so the user can choose which columns
+  to include and their order.
+  Additional columns available from get_collection() / entries / lb_master to expose:
+    • disk_path (full local path)
+    • confirmed_at (date added to collection)
+    • source / lineage / format / bitrate / sbd (from entries if present)
+    • venue / city / state / country (if entries has them split out)
+    • audio_fingerprint match status (once fingerprinting lands)
+  Implementation sketch:
+    • Add a small "Columns…" button next to "Export HTML" in the Collection tab.
+    • Pass selected column keys as ?cols=lb,status,date,location,folder,notes,... to
+      the /api/collection/export/html route.
+    • In collection_export_html() (app.py:882) read the cols param, fetch the extra
+      fields (may require extending get_collection()), and inject column definitions
+      into the HTML template dynamically rather than hardcoding the <th> block.
+collection_export_html() (backend/app.py) now takes ?cols= (validated against new _EXPORT_COLUMN_DEFS registry, always includes lb); entries dict always carries the full superset of fields (adds disk_path, confirmed_at, source_type, lb_category, rating) and the HTML template's thead/row-render/CSV-export/search/sort JS was converted from hardcoded 6-column markup to a data-driven COLS array (__COLS_JSON__ placeholder). gui_next ScreenCollection.tsx got a new ColumnPickerModal (checkboxes for the 5 extra fields) + Columns… button next to Export HTML. Locale keys added + synced via DeepL.
+
+TODO-171: Add TapeMatch's observations.db as a selectable database in DB Editor
+Priority: Low
+Status: Done
+Added: 2026-06-22
+Closed: 2026-07-09
+Description: DB Editor (gui_next/src/renderer/src/screens/ScreenDbEditor.tsx) currently
+  only supports two databases via activeDb: 'losslessbob' (main DB) and 'batchverify'
+  (BATCH_VERIFY_DB_PATH) — db picker at ScreenDbEditor.tsx:1290-1304, backend resolution in
+  _dbedit_db_path()/_dbedit_is_batchverify() (backend/app.py:96-103), used throughout the
+  /api/dbedit/* routes (app.py:2742-2973). Add a third option for TapeMatch's observations.db
+  (tools/tapematch/, per project memory) so its tables can be browsed/edited the same way,
+  likely read-only given it's tool-generated data.
+Added TAPEMATCH_DB_PATH (backend/paths.py) pointing at tools/tapematch/observations.db. Generalized _dbedit_db_path()/_dbedit_is_batchverify() in backend/app.py to a _DBEDIT_READONLY_DBS map (batchverify + tapematch, both read-only), extended dbedit_query()'s db param the same way. gui_next ScreenDbEditor.tsx picker widened to a 3-way losslessbob/batchverify/tapematch toggle. Verified read + write-block via curl against all 4 tables (latest_pairs/pairs/runs/sources).
+
+TODO-146: Setup — bundle flac.exe in tools/ like shntool.exe
+Priority: Low
+Status: Done
+Added: 2026-06-15
+Closed: 2026-07-09
+Description: flac is detected via shutil.which("flac") only, so it shows yellow on
+every fresh Windows install. flac.exe is a small static binary (~1 MB). Bundle it in
+tools/flac.exe and update _find_flac() logic in app.py's spectrogram_check route to
+probe tools/flac.exe before PATH (same pattern as _find_shntool() in checksum_utils.py
+lines 24-35). This would make flac silently green on all installs with zero user
+friction, matching the shntool experience.
+  Source: https://xiph.org/flac/download.html  (Windows builds — grab flac.exe only)
+  Winget fallback (for TODO-147 hint): winget install xiph.FLAC
+Bundled flac.exe (1.5.0 Win64) + libFLAC.dll in tools/, added _find_flac()/get_flac() to backend/sox_utils.py (bundled-then-PATH-then-WSL probe, mirrors _find_shntool()), wired into spectrogram_check route. Both spec files updated to bundle the two files.
+
+TODO-164: Theme screen — add high-contrast toggle (bright white text on dark themes)
+Priority: Low
+Status: Done
+Added: 2026-06-22
+Closed: 2026-07-09
+Description: gui_next/src/renderer/src/screens/ScreenThemes.tsx manages the theme CSS vars
+  (--lbb-bg, --lbb-surface, --lbb-fg, etc., see vars list starting ~line 83) but has no
+  accessibility/high-contrast option. Add a toggle on the Themes screen that, when enabled,
+  bumps text color (--lbb-fg and related fg vars) to bright white on dark themes for better
+  readability/contrast.
+Added ThemeOptions.highContrast; applyTheme() overrides --lbb-fg/-fg2/-fg3 to brighter whites when enabled and mode resolves to dark (no-op in light mode). Toggle added to the Themes screen's Advanced card, disabled outside dark mode (lib/tokens.ts, ScreenThemes.tsx).
+
+TODO-163: Unified Library context panel — show actual attachments list, not just a count
+Priority: Medium
+Status: Done
+Added: 2026-06-22
+Closed: 2026-07-09
+Description: AssetStrip in gui_next/src/renderer/src/components/library/DetailPanel.tsx:506-544
+  currently only shows an attachment count (t('library.assets.attachments', { count: attachCount })
+  / noAttachments). Add the actual list of attachments (names/links, not just a number) to the
+  Unified Library context/detail panel so users can see and open individual attachments
+  without leaving the panel.
+AssetStripZone's attachments pill now opens an inline popover listing each cached attachment's clean_name, clickable to open via window.api.openPath (using data_dir from /api/db/settings), plus a 'View all in Attachments' link; reuses ScreenLibrary's existing attachments-cached query key so no extra network call (DetailPanel.tsx).
+
+TODO-148: Scraper — persist live log across tab navigation
+Priority: Low
+Status: Done
+Added: 2026-06-17
+Closed: 2026-07-09
+Description: The live log panel on the Scraper screen is cleared/lost whenever the
+user navigates to another tab and returns. Log messages emitted during a run are not
+retained, so the full session log is unrecoverable after leaving the screen. Fix should
+buffer log lines in component or app state (not re-fetched from backend) so the log
+panel re-renders the accumulated history when the screen is revisited. Also consider
+a max-line cap to prevent unbounded memory growth during long scrape runs.
+Live log state moved out of ScreenScraper's local useState into a new module-level zustand store (lib/scraperLogStore.ts, not persisted to localStorage), so the log buffer survives the screen unmounting on tab navigation.
+
+TODO-161: Pipeline — show inactive/disabled action buttons instead of blank space until they appear
+Priority: Low
+Status: Done
+Added: 2026-06-22
+Closed: 2026-07-09
+Description: In gui_next/src/renderer/src/screens/ScreenPipeline.tsx, action buttons (e.g.
+  Verify/Lookup/Rename/File and similar per-row actions) are currently not rendered at all
+  until their step becomes actionable, leaving blank space in the row/detail panel. Render
+  them in an inactive/disabled state from the start instead, so the layout stays visually
+  consistent and buttons simply enable when their step becomes actionable rather than
+  popping in from empty space.
+Row action column now always renders a fixed-size Button — enabled Apply/File/Done pill when actionable, a disabled placeholder Button otherwise — so the column no longer pops in from blank space (ScreenPipeline.tsx).
+
+TODO-152: Pipeline — Auto-unselect row when it transitions to Filed / In Collection
+Priority: Low
+Status: Done
+Added: 2026-06-18
+Closed: 2026-07-09
+Description: When a row's file step completes successfully and its bucket becomes 'done'
+  (Filed / In Collection), automatically clear its checkbox (set selected: false) in the
+  setRows update inside applyFile (ScreenPipeline.tsx ~line 1787). Without this, bulk-filing
+  a batch leaves all processed rows still checked, so the user ends up with a growing set of
+  selected rows they've already finished working with.
+Same applyFile success branch now sets selected: false when a row transitions to bucket 'done', so bulk-filed rows auto-clear their checkbox (ScreenPipeline.tsx).
+
+TODO-151: Pipeline — Open button uses stale path after rename/collect
+Priority: Low
+Status: Done
+Added: 2026-06-18
+Closed: 2026-07-09
+Description: After a folder is renamed or collected (moved), the "Open" button in the
+  pipeline detail panel still resolves the old folder name/location. The button should
+  use the updated path (post-rename / post-collect destination) rather than the path
+  that was current at pipeline run time.
+applyFile's success branch now updates row.folderPath/id (and clears its 'selected' flag) to the post-file result.dest, so the detail panel's Open button no longer resolves the pre-move path (ScreenPipeline.tsx).
+
 TODO-180: Show total collection size in GB somewhere in the UI
 Priority: Medium
 Status: Done

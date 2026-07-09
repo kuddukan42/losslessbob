@@ -227,6 +227,7 @@ export function ScreenThemes() {
         font:         parsed.font         ?? DEFAULT_THEME.font,
         fontSize:     parsed.fontSize     ?? DEFAULT_THEME.fontSize,
         customTokens: parsed.customTokens ?? {},
+        highContrast: parsed.highContrast ?? DEFAULT_THEME.highContrast,
       }
       applyTheme(imported)
       saveTheme(imported)
@@ -567,6 +568,20 @@ export function ScreenThemes() {
                   style={{ accentColor: 'var(--lbb-accent-mid)' }}
                 />
                 <span>{t('themes.advanced.rowHighlight')}</span>
+              </label>
+              <label style={{
+                display: 'flex', alignItems: 'center', gap: 6, marginBottom: 8,
+                cursor: resolvedMode === 'dark' ? 'pointer' : 'not-allowed',
+                opacity: resolvedMode === 'dark' ? 1 : 0.5,
+              }}>
+                <input
+                  type="checkbox"
+                  checked={!!theme.highContrast}
+                  disabled={resolvedMode !== 'dark'}
+                  onChange={(e) => setTweak('highContrast', e.target.checked)}
+                  style={{ accentColor: 'var(--lbb-accent-mid)' }}
+                />
+                <span>{t('themes.advanced.highContrast')}</span>
               </label>
               {t('themes.advanced.statusColorsNote')}
             </div>

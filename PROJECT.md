@@ -151,7 +151,9 @@ losslessbob/
 │   ├── import_curated_lists.py # CLI: import curator "best of" picks (TODO-181) — carbonbit's FLglist.xlsx + 10haaf's dylan_boots.zip/years.zip → curated_lists/curated_list_entries
 │   ├── losslessbob.iss       # Inno Setup 6 script — builds LosslessBob_Setup_<ver>.exe from dist/LosslessBob/
 │   ├── build_windows.bat     # Local helper: pyinstaller + iscc in sequence (Windows only)
-│   └── shntool.exe           # Windows shntool binary (GPL-2); bundled into PyInstaller dist via losslessbob.spec
+│   ├── shntool.exe           # Windows shntool binary (GPL-2); bundled into PyInstaller dist via losslessbob.spec
+│   ├── flac.exe              # Windows flac 1.5.0 Win64 binary (GPL-2); bundled via losslessbob.spec (TODO-146)
+│   └── libFLAC.dll           # Required by tools/flac.exe (LGPL-2.1); bundled alongside it
 ├── docs/
 │   ├── index.html            # GitHub Pages marketing/landing page
 │   ├── CLI.md                # CLI usage reference
@@ -883,7 +885,7 @@ scheduled scan interval, checked hourly by `scheduler._integrity_scan_worker`.
 | POST | `/api/collection/purge` | Purge a data scope. Body: `{scope}`. Scopes: `collection`, `wishlist`, `personal_meta`, `integrity_events`, `entry_changes`. |
 | POST | `/api/collection/delete_bulk` | Remove specific entries from My Collection. Body: `{lb_numbers:[...]}`. Returns `{ok, deleted}`. |
 | GET | `/api/collection/audit` | Cross-check my_collection against checksums table. Returns `{total, missing_checksums, entries:[{lb_number, folder_name, disk_path, date_str, location, lb_status}]}` for entries with no checksum rows. |
-| GET | `/api/collection/export/html` | Download My Collection as a self-contained HTML table. Returns `collection.html` attachment. |
+| GET | `/api/collection/export/html` | Download My Collection as a self-contained HTML table. Optional `?cols=` (comma-separated, ordered) picks which columns to render/export — `lb` always included; see `_EXPORT_COLUMN_DEFS` in `app.py` for the full set (base six plus `disk_path`/`confirmed_at`/`source_type`/`lb_category`/`rating`). Falls back to the base six if omitted/invalid. Returns `collection.html` attachment. |
 | GET | `/api/collection/export/m3u` | Download My Collection (or a subset) as an M3U playlist of audio files. Walks each entry's `disk_path`; skips missing folders. Optional `?lb_numbers=1,2,3` restricts the export (used by the Library performance lens's "Export show as M3U" action, TODO-150 step 9 follow-up) — returns `show.m3u` when filtered, `collection.m3u` for the full export. |
 
 ### Collection Routing & Pipeline Filing (Step 5)
@@ -916,6 +918,10 @@ scheduled scan interval, checked hourly by `scheduler._integrity_scan_worker`.
 | GET | `/api/collection/integrity/status` | Per-LB integrity rows. Query params: `mount_id`, `status` (both optional). Returns `{status:[...]}` rows from `collection_integrity_status`. |
 
 ### DB Editor
+All routes below accept `?db=` (or body `db` on `/api/dbedit/query`): omitted/unknown →
+`losslessbob.db`; `batchverify` → `batch_verify.db`; `tapematch` → `tools/tapematch/observations.db`.
+The latter two are always read-only (`_DBEDIT_READONLY_DBS` in `app.py`) — writes 403.
+
 | Method | Route | Description |
 |--------|-------|-------------|
 | GET | `/api/dbedit/tables` | List all tables with row counts and edit flags (`readonly`, `audit`, `warn`). |
@@ -1550,6 +1556,7 @@ Second-generation GUI (primary, merged into main 2026-05-29) built with **Electr
 | `lbdirStore.ts` | LBDIR job state |
 | `spectrogramStore.ts` | Spectrogram job state |
 | `attachmentsStore.ts` | Attachments viewer state |
+| `scraperLogStore.ts` | Scraper screen per-tab live log lines (module-level, survives tab navigation) |
 | `tokens.ts` | CSS design tokens (colors, spacing, typography) |
 
 ---

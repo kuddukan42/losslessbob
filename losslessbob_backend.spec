@@ -26,9 +26,14 @@ if sys.platform != 'linux':
     _excludes += ['numpy', 'scipy', 'librosa', 'soundfile', 'numba', 'llvmlite']
 
 # shntool.exe bundled on Windows (GPL-2 binary for SHN verification)
+# flac.exe + libFLAC.dll bundled on Windows (GPL-2/LGPL-2.1 binaries for FLAC detection)
 _datas = []
 if sys.platform == 'win32':
-    _datas = [('tools/shntool.exe', 'tools')]
+    _datas = [
+        ('tools/shntool.exe', 'tools'),
+        ('tools/flac.exe', 'tools'),
+        ('tools/libFLAC.dll', 'tools'),
+    ]
 
 block_cipher = None
 

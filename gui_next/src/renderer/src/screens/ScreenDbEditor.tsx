@@ -563,7 +563,7 @@ interface SqlResult {
   error?: string
 }
 
-function SqlQueryPanel({ db }: { db: 'losslessbob' | 'batchverify' }) {
+function SqlQueryPanel({ db }: { db: 'losslessbob' | 'batchverify' | 'tapematch' }) {
   const { t } = useTranslation()
   const [sql, setSql]           = useState('')
   const [running, setRunning]   = useState(false)
@@ -707,7 +707,7 @@ export function ScreenDbEditor() {
   const { t } = useTranslation()
 
   // Database selector
-  const [activeDb, setActiveDb] = useState<'losslessbob' | 'batchverify'>('losslessbob')
+  const [activeDb, setActiveDb] = useState<'losslessbob' | 'batchverify' | 'tapematch'>('losslessbob')
 
   // Table list state
   const [tableMeta, setTableMeta] = useState<Record<string, TableMeta>>({})
@@ -784,7 +784,7 @@ export function ScreenDbEditor() {
       .catch(() => setStatus(t('dbeditor.error.loadTables')))
   }
 
-  function switchDb(db: 'losslessbob' | 'batchverify') {
+  function switchDb(db: 'losslessbob' | 'batchverify' | 'tapematch') {
     setActiveDb(db)
     setCurrentTable('')
     setTableList([])
@@ -1287,7 +1287,7 @@ export function ScreenDbEditor() {
       }}>
         {/* DB selector */}
         <div style={{ display: 'flex', padding: '8px 8px 0', gap: 4 }}>
-          {(['losslessbob', 'batchverify'] as const).map((db) => (
+          {(['losslessbob', 'batchverify', 'tapematch'] as const).map((db) => (
             <button
               key={db}
               type="button"
@@ -1301,7 +1301,7 @@ export function ScreenDbEditor() {
                 fontWeight: activeDb === db ? 700 : 500,
               }}
             >
-              {db === 'losslessbob' ? 'losslessbob' : 'batch_verify'}
+              {db === 'losslessbob' ? 'losslessbob' : db === 'batchverify' ? 'batch_verify' : 'tapematch'}
             </button>
           ))}
         </div>

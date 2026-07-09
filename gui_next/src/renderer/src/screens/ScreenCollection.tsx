@@ -40,6 +40,19 @@ function loadColsFromLS(): Set<ColKey> {
   return new Set(ALL_COLS)
 }
 
+// ── Export HTML column picker (TODO-083) ─────────────────────────────────────
+// Base columns always ship in the export; extras are opt-in via ?cols= on
+// /api/collection/export/html (see backend/app.py _EXPORT_COLUMN_DEFS).
+type ExportExtraCol = 'disk_path' | 'confirmed_at' | 'source_type' | 'lb_category' | 'rating'
+const EXPORT_BASE_COLS = ['lb', 'status', 'date', 'location', 'folder', 'notes']
+const EXPORT_EXTRA_COLS: { key: ExportExtraCol; label: string }[] = [
+  { key: 'disk_path',    label: 'Disk Path' },
+  { key: 'confirmed_at', label: 'Added' },
+  { key: 'source_type',  label: 'Source' },
+  { key: 'lb_category',  label: 'Category' },
+  { key: 'rating',       label: 'Rating' },
+]
+
 interface MissingLbRow {
   lb_number: number
   date_str: string
@@ -508,6 +521,67 @@ function PersonalInfoModal({ lb, lbNumber, onClose, onSaved }: {
           <Button variant="ghost" size="sm" onClick={onClose}>{t('common.cancel')}</Button>
           <Button variant="primary" size="sm" disabled={!loaded || busy} onClick={handleSave}>
             {busy ? t('collection.personalInfo.saving') : t('common.save')}
+          </Button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// ── ColumnPickerModal ──────────────────────────────────────────────────────────
+
+function ColumnPickerModal({ initial, onClose, onExport }: {
+  initial: Set<ExportExtraCol>
+  onClose: () => void
+  onExport: (cols: ExportExtraCol[]) => void
+}) {
+  const { t } = useTranslation()
+  const [selected, setSelected] = useState<Set<ExportExtraCol>>(new Set(initial))
+
+  const toggle = (key: ExportExtraCol) => {
+    setSelected(prev => {
+      const next = new Set(prev)
+      if (next.has(key)) next.delete(key); else next.add(key)
+      return next
+    })
+  }
+
+  return (
+    <div style={{
+      position: 'fixed', inset: 0, zIndex: 1000,
+      background: 'rgba(0,0,0,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center',
+    }}>
+      <div style={{
+        background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)',
+        borderRadius: 10, padding: 24, minWidth: 320, maxWidth: 380,
+        boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
+      }}>
+        <div style={{ fontSize: 'var(--lbb-fs-14)', fontWeight: 700, color: 'var(--lbb-fg)', marginBottom: 4 }}>
+          {t('collection.columnPicker.title')}
+        </div>
+        <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)', marginBottom: 14 }}>
+          {t('collection.columnPicker.baseNote')}
+        </div>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 20 }}>
+          {EXPORT_EXTRA_COLS.map(({ key, label }) => (
+            <label
+              key={key}
+              style={{
+                display: 'flex', alignItems: 'center', gap: 8, cursor: 'pointer',
+                fontSize: 'var(--lbb-fs-13)', color: 'var(--lbb-fg)',
+              }}
+            >
+              <input type="checkbox" checked={selected.has(key)} onChange={() => toggle(key)} />
+              {label}
+            </label>
+          ))}
+        </div>
+
+        <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end' }}>
+          <Button variant="ghost" size="sm" onClick={onClose}>{t('common.cancel')}</Button>
+          <Button variant="primary" size="sm" icon="download" onClick={() => onExport([...selected])}>
+            {t('collection.columnPicker.export')}
           </Button>
         </div>
       </div>
@@ -1842,6 +1916,8 @@ export function ScreenCollection(): React.JSX.Element {
   const [torrentProgress, setTorrentProgress] = useState<{ done: number; total: number; label: string } | null>(null)
   const [ctxMenu, setCtxMenu]               = useState<CtxMenuState | null>(null)
   const [personalModal, setPersonalModal]   = useState<{ lb: string; lbNumber: number } | null>(null)
+  const [columnPickerOpen, setColumnPickerOpen] = useState(false)
+  const [exportExtraCols, setExportExtraCols] = useState<Set<ExportExtraCol>>(new Set())
   const [personalSaveVer, setPersonalSaveVer] = useState(0)
   const [scanPreviewModal, setScanPreviewModal] = useState<{ entries: ScanEntry[]; skipped: number } | null>(null)
   const [missingLbRows, setMissingLbRows]   = useState<MissingLbRow[]>([])
@@ -2187,9 +2263,10 @@ export function ScreenCollection(): React.JSX.Element {
 
   // ── Handlers ───────────────────────────────────────────────────────────────
 
-  const handleExportHtml = async () => {
+  const handleExportHtml = async (extraCols: ExportExtraCol[] = []) => {
     try {
-      const resp = await fetch(`${BASE}/api/collection/export/html`)
+      const cols = [...EXPORT_BASE_COLS, ...extraCols].join(',')
+      const resp = await fetch(`${BASE}/api/collection/export/html?cols=${cols}`)
       const blob = await resp.blob()
       blobDownload(blob, 'collection.html')
     } catch { showToast('HTML export failed', 'bad') }
@@ -2697,7 +2774,8 @@ export function ScreenCollection(): React.JSX.Element {
           <Button variant="ghost" size="sm" icon="download" onClick={handleMissingExportCsv}>Export CSV</Button>
         ) : (
           <>
-            <Button variant="ghost"     size="sm" icon="download" onClick={handleExportHtml}>Export HTML</Button>
+            <Button variant="ghost"     size="sm" icon="download" onClick={() => handleExportHtml([...exportExtraCols])}>Export HTML</Button>
+            <Button variant="ghost"     size="sm" onClick={() => setColumnPickerOpen(true)}>{t('collection.columnPicker.button')}</Button>
             <Button variant="ghost"     size="sm" icon="download" onClick={handleExportM3u}>Export M3U</Button>
             <Button variant="secondary" size="sm" onClick={handleBatchPostForum}>Post to forum</Button>
             <Button variant="secondary" size="sm" onClick={handleBatchCreateTorrent}>Create torrent</Button>
@@ -3473,6 +3551,18 @@ export function ScreenCollection(): React.JSX.Element {
           lbNumber={personalModal.lbNumber}
           onClose={() => setPersonalModal(null)}
           onSaved={msg => { showToast(msg, 'ok'); setPersonalSaveVer(v => v + 1) }}
+        />
+      )}
+
+      {columnPickerOpen && (
+        <ColumnPickerModal
+          initial={exportExtraCols}
+          onClose={() => setColumnPickerOpen(false)}
+          onExport={cols => {
+            setExportExtraCols(new Set(cols))
+            setColumnPickerOpen(false)
+            handleExportHtml(cols)
+          }}
         />
       )}
 

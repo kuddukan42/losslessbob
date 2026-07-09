@@ -619,18 +619,6 @@ Description: Note: column-header click-to-sort already exists (ScreenDbEditor.ts
   in the results grid, query history/favorites, pinned/frozen first column, and per-column
   type-aware cell formatting (dates, booleans, NULL styling) in the rows view.
 
-TODO-171: Add TapeMatch's observations.db as a selectable database in DB Editor
-Priority: Low
-Status: Open
-Added: 2026-06-22
-Description: DB Editor (gui_next/src/renderer/src/screens/ScreenDbEditor.tsx) currently
-  only supports two databases via activeDb: 'losslessbob' (main DB) and 'batchverify'
-  (BATCH_VERIFY_DB_PATH) — db picker at ScreenDbEditor.tsx:1290-1304, backend resolution in
-  _dbedit_db_path()/_dbedit_is_batchverify() (backend/app.py:96-103), used throughout the
-  /api/dbedit/* routes (app.py:2742-2973). Add a third option for TapeMatch's observations.db
-  (tools/tapematch/, per project memory) so its tables can be browsed/edited the same way,
-  likely read-only given it's tool-generated data.
-
 TODO-170: Add a dedicated TapeMatch screen — visualize results, review logs, provide user
   feedback/corrections, and manage running the scripts
 Priority: Medium
@@ -660,26 +648,6 @@ Description: Add a view or filter on gui_next/src/renderer/src/screens/ScreenCol
   should route to, or resolves to no configured mount at all. Lets the user spot folders
   that drifted to a nonstandard location instead of finding them by accident.
 
-TODO-164: Theme screen — add high-contrast toggle (bright white text on dark themes)
-Priority: Low
-Status: Open
-Added: 2026-06-22
-Description: gui_next/src/renderer/src/screens/ScreenThemes.tsx manages the theme CSS vars
-  (--lbb-bg, --lbb-surface, --lbb-fg, etc., see vars list starting ~line 83) but has no
-  accessibility/high-contrast option. Add a toggle on the Themes screen that, when enabled,
-  bumps text color (--lbb-fg and related fg vars) to bright white on dark themes for better
-  readability/contrast.
-
-TODO-163: Unified Library context panel — show actual attachments list, not just a count
-Priority: Medium
-Status: Open
-Added: 2026-06-22
-Description: AssetStrip in gui_next/src/renderer/src/components/library/DetailPanel.tsx:506-544
-  currently only shows an attachment count (t('library.assets.attachments', { count: attachCount })
-  / noAttachments). Add the actual list of attachments (names/links, not just a number) to the
-  Unified Library context/detail panel so users can see and open individual attachments
-  without leaving the panel.
-
 TODO-162: Add Olof's Files database table + scrape show/tour info into it
 Priority: Medium
 Status: Open
@@ -690,17 +658,6 @@ Description: Add a new DB table for Olof's Files (Dylan tour/setlist archive) da
   info from olofsfiles.com into it. This is a candidate secondary source for the tour-name
   gaps tracked in TODO-153 — setlist.fm's tour_name field is empty for a large share of
   dates, and Olof's Files may have better/more complete tour coverage.
-
-TODO-161: Pipeline — show inactive/disabled action buttons instead of blank space until they appear
-Priority: Low
-Status: Open
-Added: 2026-06-22
-Description: In gui_next/src/renderer/src/screens/ScreenPipeline.tsx, action buttons (e.g.
-  Verify/Lookup/Rename/File and similar per-row actions) are currently not rendered at all
-  until their step becomes actionable, leaving blank space in the row/detail panel. Render
-  them in an inactive/disabled state from the start instead, so the layout stays visually
-  consistent and buttons simply enable when their step becomes actionable rather than
-  popping in from empty space.
 
 TODO-160: Revamp curator mode — consolidate options and hide existence from normal users
 Priority: Medium
@@ -794,50 +751,6 @@ Description: The Library screen's tour column (gui_next/src/renderer/src/screens
   pull/derive good tour names across all dates — likely requires either a better/secondary tour
   data source beyond setlist.fm, or a manual/heuristic backfill (e.g. date-range-based tour
   era tagging) for shows setlist.fm doesn't have tour info for.
-
-TODO-152: Pipeline — Auto-unselect row when it transitions to Filed / In Collection
-Priority: Low
-Status: Open
-Added: 2026-06-18
-Description: When a row's file step completes successfully and its bucket becomes 'done'
-  (Filed / In Collection), automatically clear its checkbox (set selected: false) in the
-  setRows update inside applyFile (ScreenPipeline.tsx ~line 1787). Without this, bulk-filing
-  a batch leaves all processed rows still checked, so the user ends up with a growing set of
-  selected rows they've already finished working with.
-
-TODO-151: Pipeline — Open button uses stale path after rename/collect
-Priority: Low
-Status: Open
-Added: 2026-06-18
-Description: After a folder is renamed or collected (moved), the "Open" button in the
-  pipeline detail panel still resolves the old folder name/location. The button should
-  use the updated path (post-rename / post-collect destination) rather than the path
-  that was current at pipeline run time.
-
-TODO-148: Scraper — persist live log across tab navigation
-Priority: Low
-Status: Open
-Added: 2026-06-17
-Description: The live log panel on the Scraper screen is cleared/lost whenever the
-user navigates to another tab and returns. Log messages emitted during a run are not
-retained, so the full session log is unrecoverable after leaving the screen. Fix should
-buffer log lines in component or app state (not re-fetched from backend) so the log
-panel re-renders the accumulated history when the screen is revisited. Also consider
-a max-line cap to prevent unbounded memory growth during long scrape runs.
-
-TODO-146: Setup — bundle flac.exe in tools/ like shntool.exe
-Priority: Low
-Status: Open
-Added: 2026-06-15
-Description: flac is detected via shutil.which("flac") only, so it shows yellow on
-every fresh Windows install. flac.exe is a small static binary (~1 MB). Bundle it in
-tools/flac.exe and update _find_flac() logic in app.py's spectrogram_check route to
-probe tools/flac.exe before PATH (same pattern as _find_shntool() in checksum_utils.py
-lines 24-35). This would make flac silently green on all installs with zero user
-friction, matching the shntool experience.
-  Source: https://xiph.org/flac/download.html  (Windows builds — grab flac.exe only)
-  Winget fallback (for TODO-147 hint): winget install xiph.FLAC
-
 
 TODO-136: Post editor form for existing WTRF posts
 Priority: Low
@@ -947,28 +860,6 @@ Description: Add a new sub-view (or toggle) on the Map tab that renders concert 
       to keep the line readable.
 
 ---
-
-TODO-083: Export HTML — add column picker with more My Collection fields
-Priority: Low
-Status: Open
-Added: 2026-05-21
-Description: The exported HTML has six fixed columns (LB#, Status, Date, Location,
-  Folder, Notes). Add a column-picker UI in the Collection tab's export dialog (or as
-  query-params on /api/collection/export/html) so the user can choose which columns
-  to include and their order.
-  Additional columns available from get_collection() / entries / lb_master to expose:
-    • disk_path (full local path)
-    • confirmed_at (date added to collection)
-    • source / lineage / format / bitrate / sbd (from entries if present)
-    • venue / city / state / country (if entries has them split out)
-    • audio_fingerprint match status (once fingerprinting lands)
-  Implementation sketch:
-    • Add a small "Columns…" button next to "Export HTML" in the Collection tab.
-    • Pass selected column keys as ?cols=lb,status,date,location,folder,notes,... to
-      the /api/collection/export/html route.
-    • In collection_export_html() (app.py:882) read the cols param, fetch the extra
-      fields (may require extending get_collection()), and inject column definitions
-      into the HTML template dynamically rather than hardcoding the <th> block.
 
 ---
 
