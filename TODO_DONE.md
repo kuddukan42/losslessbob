@@ -1,6 +1,55 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-180: Show total collection size in GB somewhere in the UI
+Priority: Medium
+Status: Done
+Added: 2026-06-22
+Closed: 2026-07-09
+Description: No metric currently exists for the actual size of the user's recording
+  collection content. get_disk_usage_stats (backend/filer.py:61-81) only reports per-mount
+  disk free/total/used_pct (filesystem-level, not collection content), surfaced on
+  ScreenMounts.tsx. Need to compute total bytes across all my_collection folders (sum of
+  on-disk folder sizes for owned LBs) and surface it somewhere in the UI — candidates:
+  Collection screen header/stats, Home screen, or the AppShell footer stats bar
+  (AppShell.tsx:814-820, alongside checksum_count/bootleg_count).
+Added backend/filer.py: _compute_collection_size()/start_collection_size_scan_async()/get_collection_size_stats(), caching total bytes across all my_collection folders in the meta table (collection_size_bytes/folders/computed_at), refreshed via a background thread when >24h stale (COLLECTION_SIZE_STALE_HOURS) rather than walking ~16k folders per request. Wired into GET /api/home/stats as collection_size {bytes,human,folders,computed_at,computing}. Surfaced in AppShell.tsx footer stats bar via new appShell.statusBar.collectionSize/computing keys.
+
+TODO-168: Sidebar bottom-left shows hardcoded fake username — replace with real WTRF username
+Priority: Medium
+Status: Done
+Added: 2026-06-22
+Closed: 2026-07-09
+Description: gui_next/src/renderer/src/components/AppShell.tsx:440-464 hardcodes a fake
+  identity in the sidebar's bottom-left: "RW" avatar initials and the name "rolling.thunder"
+  (with "Local · 4 mounts" subtitle). Replace with the actual WTRF forum username — the same
+  value saved via /api/credentials/wtrf and surfaced in ScreenSetup.tsx (wtrf_username,
+  handleWtrfSave/handleWtrfTest) — or render blank/no-name state if no WTRF credential is
+  configured.
+Added GET /api/credentials/wtrf (username only, never the password) in backend/app.py. AppShell.tsx sidebar now fetches it and shows real initials/username, falling back to a new appShell.noWtrfAccount blank-state string when no WTRF credential is configured. Removed the dead appShell.user/userSub locale keys (never referenced elsewhere).
+
+TODO-192: Library UI — taper name badge on library panel entry rows
+Priority: Low
+Status: Done
+Added: 2026-06-27
+Closed: 2026-07-09
+Description: Display the taper_name as a small badge/chip on each concert entry row in the library
+panel, similar to the quality grade badge. Should be omitted when taper_name is null/empty or a
+non-taper source label (e.g. "master", "sbd"). Helps users quickly identify recordings by a
+preferred or known taper without opening the detail view.
+Added taper_name badge inline in the Location column of the library recording-lens table (ScreenLibrary.tsx), gated by a NON_TAPER_LABELS blocklist (master/sbd/bootleg/soundboard/audience/ald/mixed/incomplete/unknown/n-a). No backend change needed — /api/search already returns taper_name.
+
+TODO-169: Home screen — remove ingest box, doesn't serve a purpose and takes up space
+Priority: Low
+Status: Done
+Added: 2026-06-22
+Closed: 2026-07-09
+Description: Remove the "Hero ingest card" on gui_next/src/renderer/src/screens/ScreenHome.tsx
+  (~lines 187-214, home.ingestNew/home.ingestTitle/home.ingestDesc i18n keys). User finds it
+  doesn't serve a purpose and just takes up space on the Home screen. Remove the card and
+  its now-unused locale keys from all 6 locale files.
+Removed Hero ingest card + STEP_STRIPS const from ScreenHome.tsx; removed 10 orphaned home.* locale keys (ingestTitle/ingestDesc/dragHere/orClickBrowse/stepVerify/stepLookup/stepRename/stepLbdir/primaryWorkflow/pipelineTagline) from all 6 locales; reflowed At-a-glance/Jump-to into a 2-col grid.
+
 TODO-167: Geocode locations from setlistfm_shows and bobdylan_shows tables
 Priority: Medium
 Status: Done

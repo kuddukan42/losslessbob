@@ -729,7 +729,7 @@ scheduled scan interval, checked hourly by `scheduler._integrity_scan_worker`.
 | Method | Route | Description |
 |--------|-------|-------------|
 | GET | `/api/db/stats` | Row counts, latest LB number, last import date |
-| GET | `/api/home/stats` | `{collection_count, wishlist_count, missing_count, bootleg_count, checksum_count, latest_lb, last_import}` — single-query counts for the Home dashboard and AppShell footer. |
+| GET | `/api/home/stats` | `{collection_count, wishlist_count, missing_count, bootleg_count, checksum_count, latest_lb, last_import, collection_size}` — single-query counts for the Home dashboard and AppShell footer. `collection_size` is `{bytes, human, folders, computed_at, computing}` — total on-disk bytes across all `my_collection` folders, cached in `meta` (`collection_size_bytes`/`_folders`/`_computed_at`) and refreshed via a background thread (`backend/filer.py: get_collection_size_stats()`) when older than 24h rather than walked per request. |
 | GET | `/api/activity/busy` | `{busy, activity}` — polls import/scrape/bootleg-scrape/integrity-scan/file-job workers plus app-update/data-download state. `activity` is one of `importing`, `scraping`, `scraping_bootlegs`, `scanning`, `filing`, `updating_app`, `downloading_data`, or `null` when idle. Used by the AppShell footer busy indicator. |
 | GET | `/api/system/uptime` | `{uptime_seconds}` since the Flask process started (About screen uptime clock) |
 | GET | `/api/db/missing_lb_numbers` | List of integers in 1..max_lb absent from checksums table |

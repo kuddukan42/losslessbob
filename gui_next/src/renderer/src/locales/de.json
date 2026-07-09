@@ -29,8 +29,6 @@
     "search": "LB#, Ordner, Ort suchen...",
     "curatorHint": "Pflegen Sie die Master-DB?",
     "curatorEnable": "Aktivieren des Kuratormodus →",
-    "user": "Donnergrollen",
-    "userSub": "Lokal - 4 Halterungen",
     "nav": {
       "home": "Startseite",
       "ingest": "Einlesen",
@@ -65,6 +63,8 @@
       "checksums": "Prüfsummen:",
       "lastImport": "Letzte Einfuhr:",
       "bootlegs": "Bootlegs:",
+      "collectionSize": "Umfang der Sammlung:",
+      "computing": "Wird berechnet…",
       "synced": "Synchronisiert",
       "updateAvailable": "Update verfügbar",
       "idle": "Inaktiv",
@@ -81,7 +81,8 @@
         "updating_app": "App wird aktualisiert…",
         "downloading_data": "Daten werden heruntergeladen…"
       }
-    }
+    },
+    "noWtrfAccount": "Kein WTRF-Konto"
   },
   "home": {
     "welcome": "Willkommen zurück, Rolling",
@@ -90,16 +91,6 @@
     "checkUpdate": "Prüfung auf DB-Aktualisierung",
     "checking": "Prüfen…",
     "ingestNew": "Neue Ordner einlesen",
-    "primaryWorkflow": "PRIMÄRER WORKFLOW",
-    "pipelineTagline": "Die Pipeline für Neuakquisitionen",
-    "ingestTitle": "Neue Musik aufnehmen",
-    "ingestDesc": "Legen Sie Ordner hier ab - die Pipeline führt <strong>Überprüfen → Nachschlagen → Umbenennen → LBDIR → Sammeln</strong> für den gesamten Stapel aus. Keine hüpfenden Tabs mehr.",
-    "dragHere": "Ordner hierher ziehen",
-    "orClickBrowse": "oder klicken Sie zum Blättern",
-    "stepVerify": "Prüfsummen verifizieren",
-    "stepLookup": "Nachschlagen LB#",
-    "stepRename": "Ordner umbenennen",
-    "stepLbdir": "LBDIR prüfen",
     "atAGlance": "Auf einen Blick",
     "atAGlanceSub": "Ihre Sammlung jetzt",
     "inMyCollection": "in meiner Sammlung",
@@ -1398,6 +1389,7 @@
       "status": "Status",
       "date": "Datum",
       "location": "Standort",
+      "taper": "Taper",
       "description": "Beschreibung",
       "folder": "Ordner",
       "confirmed": "Bestätigt",

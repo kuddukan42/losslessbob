@@ -8,6 +8,7 @@ import logging
 import os
 import shutil
 import threading
+from datetime import UTC, datetime
 from pathlib import Path
 
 from backend import db as database
@@ -295,6 +296,102 @@ def _scan_tree(root: Path) -> tuple[int, int]:
                 pass
             total_files += 1
     return total_files, total_bytes
+
+
+
+# ── Collection size (total bytes across all my_collection folders) ────────────
+# A full disk walk over every owned folder is too slow to run per-request
+# (thousands of folders, possibly on network mounts) — the result is cached in
+# the meta table and refreshed in the background when stale.
+
+COLLECTION_SIZE_STALE_HOURS = 24
+
+_SIZE_JOB_LOCK = threading.Lock()
+_SIZE_JOB_RUNNING = False
+
+
+def _compute_collection_size() -> tuple[int, int]:
+    """Sum on-disk bytes across every my_collection folder.
+
+    Returns:
+        (folder_count, total_bytes) — folder_count only includes folders that
+        were actually reachable; missing/offline paths are skipped.
+    """
+    with database.get_connection() as conn:
+        paths = [r[0] for r in conn.execute("SELECT disk_path FROM my_collection").fetchall()]
+    folder_count = 0
+    total_bytes = 0
+    for disk_path in paths:
+        if not _path_reachable(disk_path):
+            continue
+        _, size = _scan_tree(Path(disk_path))
+        total_bytes += size
+        folder_count += 1
+    return folder_count, total_bytes
+
+
+def _run_collection_size_job() -> None:
+    global _SIZE_JOB_RUNNING
+    try:
+        folder_count, total_bytes = _compute_collection_size()
+        database.set_meta("collection_size_bytes", str(total_bytes))
+        database.set_meta("collection_size_folders", str(folder_count))
+        database.set_meta("collection_size_computed_at", datetime.now(UTC).isoformat())
+    except Exception:
+        logger.exception("Collection size scan failed")
+    finally:
+        with _SIZE_JOB_LOCK:
+            _SIZE_JOB_RUNNING = False
+
+
+def start_collection_size_scan_async() -> bool:
+    """Kick off a background collection-size scan if one isn't already running.
+
+    Returns:
+        True if a new scan was started, False if one was already in progress.
+    """
+    global _SIZE_JOB_RUNNING
+    with _SIZE_JOB_LOCK:
+        if _SIZE_JOB_RUNNING:
+            return False
+        _SIZE_JOB_RUNNING = True
+    threading.Thread(target=_run_collection_size_job, daemon=True).start()
+    return True
+
+
+def get_collection_size_stats() -> dict:
+    """Return the cached total collection size, refreshing in the background if stale.
+
+    Returns:
+        Dict with bytes (int | None), human (str | None), folders (int | None),
+        computed_at (str | None), and computing (bool) — True while a background
+        scan is in flight (including one just triggered by this call).
+    """
+    bytes_raw = database.get_meta("collection_size_bytes")
+    folders_raw = database.get_meta("collection_size_folders")
+    computed_at = database.get_meta("collection_size_computed_at")
+
+    stale = True
+    if computed_at:
+        try:
+            age = datetime.now(UTC) - datetime.fromisoformat(computed_at)
+            stale = age.total_seconds() / 3600 > COLLECTION_SIZE_STALE_HOURS
+        except ValueError:
+            stale = True
+
+    with _SIZE_JOB_LOCK:
+        running = _SIZE_JOB_RUNNING
+    if stale and not running:
+        running = start_collection_size_scan_async()
+
+    total_bytes = int(bytes_raw) if bytes_raw else None
+    return {
+        "bytes": total_bytes,
+        "human": _human_bytes(total_bytes) if total_bytes else None,
+        "folders": int(folders_raw) if folders_raw else None,
+        "computed_at": computed_at,
+        "computing": running,
+    }
 
 
 def _progress_copy_file(src: str, dst: str, *, follow_symlinks: bool = True) -> str:

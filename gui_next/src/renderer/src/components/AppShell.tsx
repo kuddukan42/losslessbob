@@ -132,6 +132,7 @@ function Sidebar({
   const language = useSettingsStore((s) => s.language)
   const setLanguage = useSettingsStore((s) => s.setLanguage)
   const [collectionCount, setCollectionCount] = useState<number | undefined>(undefined)
+  const [wtrfUsername, setWtrfUsername] = useState<string>('')
   const [langOpen, setLangOpen] = useState(false)
   const [advancedOpen, setAdvancedOpen] = useState(false)
   const langRef = useRef<HTMLDivElement>(null)
@@ -151,6 +152,10 @@ function Sidebar({
       .then((d: { collection_count?: number }) => {
         if (typeof d.collection_count === 'number') setCollectionCount(d.collection_count)
       })
+      .catch(() => {})
+    fetch(`${window.api.flaskBase}/api/credentials/wtrf`)
+      .then(r => r.ok ? r.json() : Promise.reject())
+      .then((d: { username?: string }) => setWtrfUsername(d.username ?? ''))
       .catch(() => {})
   }, [])
 
@@ -451,11 +456,11 @@ function Sidebar({
             color: 'var(--lbb-fg2)',
           }}
         >
-          RW
+          {wtrfUsername ? wtrfUsername.slice(0, 2).toUpperCase() : '—'}
         </div>
         <div style={{ flex: 1, minWidth: 0 }}>
           <div style={{ fontSize: 'var(--lbb-fs-12)', fontWeight: 600, lineHeight: 1.1 }}>
-            rolling.thunder
+            {wtrfUsername || t('appShell.noWtrfAccount')}
           </div>
           <div style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)' }}>
             Local · 4 mounts
@@ -690,6 +695,7 @@ interface FooterStats {
   latest_lb: number
   last_import: string | null
   bootleg_count: number
+  collection_size?: { bytes: number | null; human: string | null; computing: boolean }
 }
 
 function fmtNum(n: number): string {
@@ -816,6 +822,12 @@ function StatusBar({ extra }: { extra?: React.ReactNode }) {
       {item(t('appShell.statusBar.lastImport'), stats ? fmtLastImport(stats.last_import) : '…')}
       {sep}
       {item(t('appShell.statusBar.bootlegs'), stats ? fmtNum(stats.bootleg_count) : '…')}
+      {sep}
+      {item(
+        t('appShell.statusBar.collectionSize'),
+        stats?.collection_size?.human
+          ?? (stats?.collection_size?.computing ? t('appShell.statusBar.computing') : '…')
+      )}
       {extra && (
         <>
           {sep}

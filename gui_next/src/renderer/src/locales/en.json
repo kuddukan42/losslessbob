@@ -29,8 +29,6 @@
     "search": "Find LB#, folder, location…",
     "curatorHint": "Maintaining the master DB?",
     "curatorEnable": "Enable Curator mode →",
-    "user": "rolling.thunder",
-    "userSub": "Local · 4 mounts",
     "nav": {
       "home": "Home",
       "ingest": "Ingest",
@@ -65,6 +63,8 @@
       "checksums": "Checksums:",
       "lastImport": "Last import:",
       "bootlegs": "Bootlegs:",
+      "collectionSize": "Collection size:",
+      "computing": "Computing…",
       "synced": "Synced",
       "updateAvailable": "Update available",
       "idle": "Idle",
@@ -81,7 +81,8 @@
         "updating_app": "Updating app…",
         "downloading_data": "Downloading data…"
       }
-    }
+    },
+    "noWtrfAccount": "No WTRF account"
   },
   "home": {
     "welcome": "Welcome back, Rolling",
@@ -90,16 +91,6 @@
     "checkUpdate": "Check for DB update",
     "checking": "Checking…",
     "ingestNew": "Ingest new folders",
-    "primaryWorkflow": "PRIMARY WORKFLOW",
-    "pipelineTagline": "The new-acquisition pipeline",
-    "ingestTitle": "Ingest new music",
-    "ingestDesc": "Drop folders here — the pipeline runs <strong>verify → lookup → rename → LBDIR → collect</strong> on the whole batch. No more bouncing tabs.",
-    "dragHere": "Drag folders here",
-    "orClickBrowse": "or click to browse",
-    "stepVerify": "Verify checksums",
-    "stepLookup": "Lookup LB#",
-    "stepRename": "Rename folder",
-    "stepLbdir": "Check LBDIR",
     "atAGlance": "At a glance",
     "atAGlanceSub": "your collection right now",
     "inMyCollection": "in My Collection",
@@ -1398,6 +1389,7 @@
       "status": "Status",
       "date": "Date",
       "location": "Location",
+      "taper": "Taper",
       "description": "Description",
       "folder": "Folder",
       "confirmed": "Confirmed",

@@ -63,6 +63,7 @@ interface RecordingRow {
   desc: string
   rating: RatingGrade
   src: string | null
+  taper: string
   status: LibStatus
   owned: boolean
   wish: boolean
@@ -95,6 +96,19 @@ const SRC_ABBR: Record<string, string> = {
 const SOURCE_FULL: Record<string, string> = {
   Soundboard: 'Soundboard', Audience: 'Audience', 'FM/Pre-FM': 'FM / Pre-FM',
   Master: 'Master / Studio', Mixed: 'Matrix / Mixed', ALD: 'Assisted Listening Device',
+}
+
+// Generic source-type words that occasionally end up in taper_name via the
+// free-text parser (backend/db.py) — not real taper handles, so the badge
+// omits them rather than duplicating the Source column.
+const NON_TAPER_LABELS = new Set([
+  'master', 'sbd', 'bootleg', 'soundboard', 'audience', 'ald', 'mixed', 'incomplete', 'unknown', 'n/a',
+])
+
+function taperBadgeLabel(taper: string): string | null {
+  const v = taper.trim()
+  if (!v || NON_TAPER_LABELS.has(v.toLowerCase())) return null
+  return v
 }
 
 const RATING_RANK: Record<string, number> = {
@@ -810,6 +824,7 @@ export function ScreenLibrary(): React.JSX.Element {
         desc:     d.description ?? '',
         rating:   (VALID_RATINGS.has(raw) ? raw : '—') as RatingGrade,
         src:      (d.source_type as string | null) ?? null,
+        taper:    (d.taper_name as string | null) ?? '',
         status:   ({ public: 'Public', private: 'Private', missing: 'Missing' }[d.lb_status as string] ?? 'Missing') as LibStatus,
         owned,
         wish:     wishSet.has(lbNumber),
@@ -1222,7 +1237,14 @@ export function ScreenLibrary(): React.JSX.Element {
                           <TD mono style={{ color: 'var(--lbb-accent-mid)', fontWeight: 'var(--w-semi)' }}>{r.lb}</TD>
                           <TD><Pill tone={statusTone(r.status)} soft>{t(STATUS_LABEL_KEY[r.status])}</Pill></TD>
                           <TD mono>{r.date}</TD>
-                          <TD>{r.loc}</TD>
+                          <TD>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: 6, minWidth: 0 }}>
+                              <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{r.loc}</span>
+                              {taperBadgeLabel(r.taper) && (
+                                <Pill tone="mute" soft title={t('library.columns.taper')}>{taperBadgeLabel(r.taper)}</Pill>
+                              )}
+                            </div>
+                          </TD>
                           <TD align="center">
                             {r.rating !== '—'
                               ? <Pill tone={ratingTone(r.rating)} soft>{r.rating}</Pill>
@@ -1544,7 +1566,7 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
             lb: stub.lb, lbNumber: stub.lbNumber, year: p.year ?? 0, decade: decadeOf(p.year ?? 0),
             date: p.date ?? '', loc: p.city ?? '', desc: '',
             rating: (VALID_RATINGS.has(stub.rating) ? stub.rating : '—') as RatingGrade,
-            src: stub.src ?? null, status: (stub.status ?? 'Missing') as LibStatus,
+            src: stub.src ?? null, taper: '', status: (stub.status ?? 'Missing') as LibStatus,
             owned: false, wish: false, dup: false, xref: false, unconf: false,
             folder: '', path: '', conf: '',
           }

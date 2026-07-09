@@ -29,8 +29,6 @@
     "search": "Trova LB#, cartella, posizione...",
     "curatorHint": "Mantenere il DB principale?",
     "curatorEnable": "Abilita la modalità Curatore →",
-    "user": "rotolamento.tuono",
-    "userSub": "Locale - 4 supporti",
     "nav": {
       "home": "Casa",
       "ingest": "Ingerire",
@@ -65,6 +63,8 @@
       "checksums": "Checksum:",
       "lastImport": "Ultima importazione:",
       "bootlegs": "Bootlegs:",
+      "collectionSize": "Dimensione della raccolta:",
+      "computing": "Elaborazione in corso…",
       "synced": "Sincronizzato",
       "updateAvailable": "Aggiornamento disponibile",
       "idle": "Inattivo",
@@ -81,7 +81,8 @@
         "updating_app": "Aggiornamento dell'app…",
         "downloading_data": "Download dei dati…"
       }
-    }
+    },
+    "noWtrfAccount": "Nessun account WTRF"
   },
   "home": {
     "welcome": "Bentornato, Rolling",
@@ -90,16 +91,6 @@
     "checkUpdate": "Verifica dell'aggiornamento del DB",
     "checking": "Controllo…",
     "ingestNew": "Acquisizione di nuove cartelle",
-    "primaryWorkflow": "FLUSSO DI LAVORO PRIMARIO",
-    "pipelineTagline": "La pipeline delle nuove acquisizioni",
-    "ingestTitle": "Ingerire nuova musica",
-    "ingestDesc": "Lasciate le cartelle qui: la pipeline esegue <strong>verifica → ricerca → rinomina → LBDIR → raccogliere</strong> sull'intero batch. Non ci sono più schede che rimbalzano.",
-    "dragHere": "Trascinare le cartelle qui",
-    "orClickBrowse": "o fare clic per sfogliare",
-    "stepVerify": "Verifica delle checksum",
-    "stepLookup": "Cerca LB#",
-    "stepRename": "Rinominare la cartella",
-    "stepLbdir": "Controllare LBDIR",
     "atAGlance": "In sintesi",
     "atAGlanceSub": "la vostra collezione in questo momento",
     "inMyCollection": "nella mia collezione",
@@ -1398,6 +1389,7 @@
       "status": "Stato",
       "date": "Data",
       "location": "Ubicazione",
+      "taper": "Taper",
       "description": "Descrizione",
       "folder": "Cartella",
       "confirmed": "Confermato",

@@ -532,9 +532,11 @@ def create_app() -> Flask:
 
         Returns:
             JSON with collection_count, wishlist_count, missing_count, bootleg_count,
-            checksum_count, latest_lb, and last_import.
+            checksum_count, latest_lb, last_import, and collection_size (bytes/human/
+            computed_at/computing — cached, refreshed in the background when stale).
         """
         try:
+            from backend.filer import get_collection_size_stats
             with database.get_connection() as conn:
                 collection_count = conn.execute(
                     "SELECT COUNT(*) FROM my_collection"
@@ -563,6 +565,7 @@ def create_app() -> Flask:
                 "checksum_count": checksum_count,
                 "latest_lb": latest_lb,
                 "last_import": last_import,
+                "collection_size": get_collection_size_stats(),
             })
         except Exception as e:
             return jsonify({"error": str(e)}), 500
@@ -3626,6 +3629,20 @@ def create_app() -> Flask:
             return jsonify({"ok": True, "username": username})
         except Exception as exc:
             return jsonify({"ok": False, "error": str(exc)}), 500
+
+    @app.route("/api/credentials/wtrf", methods=["GET"])
+    def credentials_wtrf_get() -> Response:
+        """Return the stored WTRF username only — never the password.
+
+        Returns:
+            JSON {username: str} — empty string if no credentials are stored.
+        """
+        try:
+            from backend.credentials import SERVICE_WTRF, get_credentials
+            username, _ = get_credentials(SERVICE_WTRF)
+            return jsonify({"username": username})
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
 
     @app.route("/api/credentials/wtrf", methods=["POST"])
     def credentials_wtrf_save() -> Response:

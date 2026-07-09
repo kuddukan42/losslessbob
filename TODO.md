@@ -204,15 +204,6 @@ Description: backend/wtrf_scraper.py + tools/wtrf_fetch_missing.py implement the
   Relates to: [[TODO-135]] (scrape WTRF for existing posts), [[TODO-194]] (match quality
     refinement — audit data from the 2026-06-30 batch runs).
 
-TODO-192: Library UI — taper name badge on library panel entry rows
-Priority: Low
-Status: Open
-Added: 2026-06-27
-Description: Display the taper_name as a small badge/chip on each concert entry row in the library
-panel, similar to the quality grade badge. Should be omitted when taper_name is null/empty or a
-non-taper source label (e.g. "master", "sbd"). Helps users quickly identify recordings by a
-preferred or known taper without opening the detail view.
-
 TODO-187: Concert ranker / project — document LB rating philosophy and artifact taxonomy
 Priority: Low
 Status: Open
@@ -557,18 +548,6 @@ Description: No curated-list mechanism currently exists in backend/db.py. Add su
   "carbonbit's picks" / "10haaf's picks" filter into ScreenLibrary.tsx. Explicitly deferred —
   this pass was scoped to DB + import only.
 
-TODO-180: Show total collection size in GB somewhere in the UI
-Priority: Medium
-Status: Open
-Added: 2026-06-22
-Description: No metric currently exists for the actual size of the user's recording
-  collection content. get_disk_usage_stats (backend/filer.py:61-81) only reports per-mount
-  disk free/total/used_pct (filesystem-level, not collection content), surfaced on
-  ScreenMounts.tsx. Need to compute total bytes across all my_collection folders (sum of
-  on-disk folder sizes for owned LBs) and surface it somewhere in the UI — candidates:
-  Collection screen header/stats, Home screen, or the AppShell footer stats bar
-  (AppShell.tsx:814-820, alongside checksum_count/bootleg_count).
-
 TODO-179: Consider removing the top bar to gain vertical space
 Priority: Low
 Status: Open
@@ -669,26 +648,6 @@ Description: There is currently no GUI screen for TapeMatch at all — only back
   corrections on a match (e.g. wrong family grouping) that feeds back into the
   observations.db / tapematch_family_meta data, and (4) lets the user kick off/manage
   running the TapeMatch scripts themselves rather than only via the command line.
-
-TODO-169: Home screen — remove ingest box, doesn't serve a purpose and takes up space
-Priority: Low
-Status: Open
-Added: 2026-06-22
-Description: Remove the "Hero ingest card" on gui_next/src/renderer/src/screens/ScreenHome.tsx
-  (~lines 187-214, home.ingestNew/home.ingestTitle/home.ingestDesc i18n keys). User finds it
-  doesn't serve a purpose and just takes up space on the Home screen. Remove the card and
-  its now-unused locale keys from all 6 locale files.
-
-TODO-168: Sidebar bottom-left shows hardcoded fake username — replace with real WTRF username
-Priority: Medium
-Status: Open
-Added: 2026-06-22
-Description: gui_next/src/renderer/src/components/AppShell.tsx:440-464 hardcodes a fake
-  identity in the sidebar's bottom-left: "RW" avatar initials and the name "rolling.thunder"
-  (with "Local · 4 mounts" subtitle). Replace with the actual WTRF forum username — the same
-  value saved via /api/credentials/wtrf and surfaced in ScreenSetup.tsx (wtrf_username,
-  handleWtrfSave/handleWtrfTest) — or render blank/no-name state if no WTRF credential is
-  configured.
 
 TODO-166: Collection screen — view/filter folders stored in nonstandard locations (not matching mount routing)
 Priority: Medium
