@@ -6,7 +6,7 @@ import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { useVirtualizer } from '@tanstack/react-virtual'
 import { useNavigate } from 'react-router-dom'
 import { Icon } from '../components/Icon'
-import { Button, Chip, IconButton, Input, Pill, Toast, ConfirmDialog } from '../components'
+import { Button, IconButton, Input, Pill, Toast, ConfirmDialog } from '../components'
 import type { ToastTone } from '../components'
 import { TableShell, TH, TR, TD, GroupRow } from '../components'
 import {
@@ -19,6 +19,7 @@ import { useAttachmentsStore } from '../lib/attachmentsStore'
 import { useSpectrogramStore } from '../lib/spectrogramStore'
 import { useFolderQueueStore } from '../lib/folderQueueStore'
 import { lbDetailUrl } from '../lib/lbUrl'
+import { useResizableColumns } from '../lib/useResizableColumns'
 
 // ── TODO-150 step (4): Recording lens / no-families fallback ──────────────────
 // Flat, LB#-keyed table over the full catalog. Per the design contract
@@ -224,6 +225,35 @@ function MenuLabel({ children }: { children: React.ReactNode }) {
   )
 }
 
+// ── FacetOption / FacetList — single-column row filter list (matches Year menu) ─
+
+function FacetOption({ label, count, active, onClick }: {
+  label: React.ReactNode
+  count?: number
+  active: boolean
+  onClick: () => void
+}) {
+  return (
+    <button type="button" onClick={onClick} style={{
+      display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+      width: '100%', textAlign: 'left', fontFamily: 'inherit',
+      padding: '5px 8px', fontSize: 'var(--t-body)', cursor: 'pointer', border: 'none',
+      background: active ? 'var(--lbb-accent-soft)' : 'transparent',
+      color: active ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg)',
+      borderRadius: 6,
+    }}>
+      <span>{label}</span>
+      {count !== undefined && (
+        <span style={{ fontSize: 'var(--t-mono-sm)', color: 'var(--lbb-fg3)', fontWeight: 'var(--w-med)' }}>{count.toLocaleString()}</span>
+      )}
+    </button>
+  )
+}
+
+function FacetList({ children }: { children: React.ReactNode }) {
+  return <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>{children}</div>
+}
+
 // ── ViewToggle — segmented lens switcher ──────────────────────────────────────
 
 function ViewToggle({ value, onChange }: {
@@ -393,6 +423,16 @@ const useLibraryFilterStore = create<LibraryFilterStore>((set, get) => ({
 
 // ── Screen ───────────────────────────────────────────────────────────────────
 
+// ── Resizable column widths (recording lens) ─────────────────────────────────
+// `location` stays flex (no entry here) — it's the trailing spacer that
+// absorbs leftover width, same as ScreenCollection's non-resizable columns.
+type RecColKey = 'lb' | 'status' | 'date' | 'rating' | 'desc' | 'folder' | 'confirmed' | 'source' | 'own' | 'flags'
+const REC_COL_DEFAULTS: Record<RecColKey, number> = {
+  lb: 92, status: 88, date: 88, rating: 48,
+  desc: 250, folder: 180, confirmed: 90,
+  source: 60, own: 52, flags: 52,
+}
+
 export function ScreenLibrary(): React.JSX.Element {
   // ── TODO-150 step 6: lens toggle. "By performance" is the new, richer view
   // (00-overview.md "One catalogue, two lenses"); "By recording" is this
@@ -428,6 +468,8 @@ export function ScreenLibrary(): React.JSX.Element {
   const setActiveHealth = useLibraryFilterStore(s => s.setRecActiveHealth)
 
   const tableParentRef = useRef<HTMLDivElement>(null)
+
+  const { widths: colWidths, startResize: startColResize } = useResizableColumns('lbb_library_rec_col_widths', REC_COL_DEFAULTS)
 
   // ── TODO-150 step 7: shared action system ───────────────────────────────────
   // Toast/confirm UI + the ActionHandlers bag, shared by both lenses. Handlers
@@ -995,46 +1037,46 @@ export function ScreenLibrary(): React.JSX.Element {
       }}>
         <FilterMenu label={t('library.facets.decade')} count={activeDecade.size}>
           <MenuLabel>{t('library.facets.decade')}</MenuLabel>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
+          <FacetList>
             {Object.entries(facetCounts.decadeC).sort(([a], [b]) => a.localeCompare(b)).map(([lbl, cnt]) => (
-              <Chip key={lbl} size="sm" active={activeDecade.has(lbl)} onClick={() => toggleSet(setActiveDecade, lbl)} count={cnt}>{lbl}</Chip>
+              <FacetOption key={lbl} label={lbl} count={cnt} active={activeDecade.has(lbl)} onClick={() => toggleSet(setActiveDecade, lbl)} />
             ))}
-          </div>
+          </FacetList>
         </FilterMenu>
         <FilterMenu label={t('library.facets.status')} count={activeStatus.size}>
           <MenuLabel>{t('library.facets.status')}</MenuLabel>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
+          <FacetList>
             {(['Public', 'Private', 'Missing'] as LibStatus[]).map(s => (
-              <Chip key={s} size="sm" active={activeStatus.has(s)} onClick={() => toggleSet(setActiveStatus, s)} count={facetCounts.statusC[s] ?? 0}>{t(STATUS_LABEL_KEY[s])}</Chip>
+              <FacetOption key={s} label={t(STATUS_LABEL_KEY[s])} count={facetCounts.statusC[s] ?? 0} active={activeStatus.has(s)} onClick={() => toggleSet(setActiveStatus, s)} />
             ))}
-          </div>
+          </FacetList>
         </FilterMenu>
         <FilterMenu label={t('library.facets.rating')} count={activeRating.size}>
           <MenuLabel>{t('library.facets.rating')}</MenuLabel>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
-            {Object.entries(facetCounts.ratingC).map(([lbl, cnt]) => (
-              <Chip key={lbl} size="sm" active={activeRating.has(lbl as RatingGrade)} onClick={() => toggleSet(setActiveRating, lbl as RatingGrade)} count={cnt}>{lbl}</Chip>
+          <FacetList>
+            {Object.entries(facetCounts.ratingC).sort(([a], [b]) => (RATING_RANK[b] ?? 0) - (RATING_RANK[a] ?? 0)).map(([lbl, cnt]) => (
+              <FacetOption key={lbl} label={lbl} count={cnt} active={activeRating.has(lbl as RatingGrade)} onClick={() => toggleSet(setActiveRating, lbl as RatingGrade)} />
             ))}
-          </div>
+          </FacetList>
         </FilterMenu>
         {Object.keys(facetCounts.sourceC).length > 0 && (
           <FilterMenu label={t('library.facets.source')} count={activeSource.size}>
             <MenuLabel>{t('library.facets.source')}</MenuLabel>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
+            <FacetList>
               {Object.entries(facetCounts.sourceC).map(([lbl, cnt]) => (
-                <Chip key={lbl} size="sm" active={activeSource.has(lbl)} onClick={() => toggleSet(setActiveSource, lbl)} count={cnt}>{lbl}</Chip>
+                <FacetOption key={lbl} label={lbl} count={cnt} active={activeSource.has(lbl)} onClick={() => toggleSet(setActiveSource, lbl)} />
               ))}
-            </div>
+            </FacetList>
           </FilterMenu>
         )}
         {scope === 'owned' && (
           <FilterMenu label={t('library.facets.health')} count={activeHealth.size}>
             <MenuLabel>{t('library.facets.collectionHealth')}</MenuLabel>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
+            <FacetList>
               {(Object.keys(HEALTH_CHECK) as HealthFlag[]).map(h => (
-                <Chip key={h} size="sm" active={activeHealth.has(h)} onClick={() => toggleSet(setActiveHealth, h)} count={facetCounts.healthC[h] ?? 0}>{h}</Chip>
+                <FacetOption key={h} label={h} count={facetCounts.healthC[h] ?? 0} active={activeHealth.has(h)} onClick={() => toggleSet(setActiveHealth, h)} />
               ))}
-            </div>
+            </FacetList>
           </FilterMenu>
         )}
         <div style={{ flex: 1 }} />
@@ -1092,40 +1134,40 @@ export function ScreenLibrary(): React.JSX.Element {
             <colgroup>
               <col style={{ width: 3 }} />
               <col style={{ width: 34 }} />
-              <col style={{ width: 92 }} />
-              <col style={{ width: 88 }} />
-              <col style={{ width: 88 }} />
+              <col style={{ width: colWidths.lb }} />
+              <col style={{ width: colWidths.status }} />
+              <col style={{ width: colWidths.date }} />
               <col />
-              <col style={{ width: 48 }} />{/* ★ rating — spec §6 (was 54) */}
+              <col style={{ width: colWidths.rating }} />{/* ★ rating — spec §6 (was 54) */}
               {scope === 'owned' ? <>
-                <col style={{ width: 250 }} />
-                <col style={{ width: 180 }} />
-                <col style={{ width: 90 }} />
+                <col style={{ width: colWidths.desc }} />
+                <col style={{ width: colWidths.folder }} />
+                <col style={{ width: colWidths.confirmed }} />
               </> : <>
                 <col />
-                <col style={{ width: 60 }} />
-                <col style={{ width: 52 }} />
-                <col style={{ width: 52 }} />
+                <col style={{ width: colWidths.source }} />
+                <col style={{ width: colWidths.own }} />
+                <col style={{ width: colWidths.flags }} />
               </>}
             </colgroup>
             <thead>
               <tr>
                 <TH />
                 <TH><input type="checkbox" checked={allChecked} onChange={toggleAllChecked} /></TH>
-                <TH onClick={() => handleSort('lb')} sorted={sortKey === 'lb' ? sortDir : null}>LB#</TH>
-                <TH>{t('library.columns.status')}</TH>
-                <TH onClick={() => handleSort('date')} sorted={sortKey === 'date' ? sortDir : null}>{t('library.columns.date')}</TH>
+                <TH onClick={() => handleSort('lb')} sorted={sortKey === 'lb' ? sortDir : null} onResizeStart={e => startColResize('lb', e.clientX, colWidths.lb)}>LB#</TH>
+                <TH onResizeStart={e => startColResize('status', e.clientX, colWidths.status)}>{t('library.columns.status')}</TH>
+                <TH onClick={() => handleSort('date')} sorted={sortKey === 'date' ? sortDir : null} onResizeStart={e => startColResize('date', e.clientX, colWidths.date)}>{t('library.columns.date')}</TH>
                 <TH>{t('library.columns.location')}</TH>
-                <TH align="center" onClick={() => handleSort('rating')} sorted={sortKey === 'rating' ? sortDir : null}>★</TH>
+                <TH align="center" onClick={() => handleSort('rating')} sorted={sortKey === 'rating' ? sortDir : null} onResizeStart={e => startColResize('rating', e.clientX, colWidths.rating)}>★</TH>
                 {scope === 'owned' ? <>
-                  <TH>{t('library.columns.description')}</TH>
-                  <TH>{t('library.columns.folder')}</TH>
-                  <TH>{t('library.columns.confirmed')}</TH>
+                  <TH onResizeStart={e => startColResize('desc', e.clientX, colWidths.desc)}>{t('library.columns.description')}</TH>
+                  <TH onResizeStart={e => startColResize('folder', e.clientX, colWidths.folder)}>{t('library.columns.folder')}</TH>
+                  <TH onResizeStart={e => startColResize('confirmed', e.clientX, colWidths.confirmed)}>{t('library.columns.confirmed')}</TH>
                 </> : <>
                   <TH>{t('library.columns.description')}</TH>
-                  <TH>{t('library.columns.source')}</TH>
-                  <TH align="center">{t('library.columns.own')}</TH>
-                  <TH align="center">{t('library.columns.flags')}</TH>
+                  <TH onResizeStart={e => startColResize('source', e.clientX, colWidths.source)}>{t('library.columns.source')}</TH>
+                  <TH align="center" onResizeStart={e => startColResize('own', e.clientX, colWidths.own)}>{t('library.columns.own')}</TH>
+                  <TH align="center" onResizeStart={e => startColResize('flags', e.clientX, colWidths.flags)}>{t('library.columns.flags')}</TH>
                 </>}
               </tr>
             </thead>
@@ -1413,6 +1455,14 @@ type PerfFlatItem =
   | { kind: 'fam'; perf: PerformanceRow; fam: FamilyGroup }
   | { kind: 'member'; perf: PerformanceRow; fam: FamilyGroup; rec: RecordingRow; isLast: boolean; isCanonical: boolean }
 
+// ── Resizable column widths (performance lens) ───────────────────────────────
+// The trailing column stays flex (no entry here) — it absorbs leftover width
+// per the spec §5 column model (see colgroup comment below).
+type PerfColKey = 'date' | 'show' | 'tour' | 'families' | 'recs' | 'rating' | 'coverage'
+const PERF_COL_DEFAULTS: Record<PerfColKey, number> = {
+  date: 104, show: 345, tour: 155, families: 116, recs: 52, rating: 46, coverage: 112,
+}
+
 function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandlers, openCtxMenu, historyMap, attachCountMap }: {
   lens: 'performance' | 'recording'
   setLens: (v: 'performance' | 'recording') => void
@@ -1437,6 +1487,8 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
   const [selectedMemberLb, setSelectedMemberLb] = useState<number | null>(null)
   const [detailPanelOpen, setDetailPanelOpen] = useState(true)
   const autoExpandedRef = useRef(false)
+
+  const { widths: colWidths, startResize: startColResize } = useResizableColumns('lbb_library_perf_col_widths', PERF_COL_DEFAULTS)
 
   const activeDecade      = useLibraryFilterStore(s => s.perfActiveDecade)
   const setActiveDecade   = useLibraryFilterStore(s => s.setPerfActiveDecade)
@@ -1599,7 +1651,14 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
     const pushShow = (p: PerformanceRow) => {
       items.push({ kind: 'show', perf: p })
       if (!expandedShows.has(p.id)) return
-      for (const fam of familiesOf(p.recordings)) {
+      // A "Best rating" facet filter passes a show if any of its recordings
+      // match, but the expanded family/member rows should still only surface
+      // the matching recordings — otherwise off-rating siblings (eg. a C or D
+      // alt source) stay visible under a show that only matched on its best.
+      const visibleRecs = activeRating.size > 0
+        ? p.recordings.filter(r => activeRating.has(r.rating))
+        : p.recordings
+      for (const fam of familiesOf(visibleRecs)) {
         items.push({ kind: 'fam', perf: p, fam })
         if (fam.multi && !collapsedFams.has(`${p.id}::${fam.id}`)) {
           fam.members.forEach((rec, i) => {
@@ -1639,18 +1698,18 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
   const colCount = 10 // edge + expand + checkbox + date + show + tour + families + recs + ★ + coverage
   const perfActiveCount = activeDecade.size + activeYear.size + activeCoverage.size + activeSource.size + activeRating.size
 
-  const multiShowIds = useMemo(
-    () => performances.filter(p => p.recordings.length > 1).map(p => p.id),
+  const expandableShowIds = useMemo(
+    () => performances.filter(p => p.recordings.length > 0).map(p => p.id),
     [performances],
   )
-  const allShowsExpanded = multiShowIds.length > 0
-    && multiShowIds.every(id => expandedShows.has(id))
+  const allShowsExpanded = expandableShowIds.length > 0
+    && expandableShowIds.every(id => expandedShows.has(id))
     && collapsedFams.size === 0
   const toggleExpandAll = () => {
     if (allShowsExpanded) {
       setExpandedShows(new Set())
     } else {
-      setExpandedShows(new Set(multiShowIds))
+      setExpandedShows(new Set(expandableShowIds))
       setCollapsedFams(new Set())
     }
   }
@@ -1741,56 +1800,82 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
         <span style={{ width: 1, height: 20, background: 'var(--lbb-border)', flexShrink: 0 }} />
         <FilterMenu label={t('library.facets.decade')} count={activeDecade.size}>
           <MenuLabel>{t('library.facets.decade')}</MenuLabel>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
+          <FacetList>
             {Object.entries(facetCounts.decadeC).sort(([a], [b]) => a.localeCompare(b)).map(([lbl, cnt]) => (
-              <Chip key={lbl} size="sm" active={activeDecade.has(lbl)} onClick={() => toggleSet(setActiveDecade, lbl)} count={cnt}>{lbl}</Chip>
+              <FacetOption key={lbl} label={lbl} count={cnt} active={activeDecade.has(lbl)} onClick={() => toggleSet(setActiveDecade, lbl)} />
             ))}
-          </div>
+          </FacetList>
         </FilterMenu>
         <FilterMenu label={t('library.facets.year')} count={activeYear.size}>
           <MenuLabel>{t('library.facets.year')}</MenuLabel>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
-            {Object.entries(facetCounts.yearC).sort(([a], [b]) => Number(b) - Number(a)).map(([lbl, cnt]) => (
-              <Chip key={lbl} size="sm" active={activeYear.has(Number(lbl))} onClick={() => toggleSet(setActiveYear, Number(lbl))} count={cnt}>{lbl}</Chip>
+          <button
+            type="button"
+            onClick={() => setActiveYear(new Set())}
+            style={{
+              display: 'block', width: '100%', textAlign: 'left', fontFamily: 'inherit',
+              padding: '5px 8px', fontSize: 'var(--t-body)', cursor: 'pointer', border: 'none',
+              background: activeYear.size === 0 ? 'var(--lbb-accent-soft)' : 'transparent',
+              color: activeYear.size === 0 ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg)',
+              borderRadius: 6, marginBottom: 4,
+            }}
+          >
+            {t('library.facets.allYears')}
+          </button>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 2 }}>
+            {Object.keys(facetCounts.yearC).sort((a, b) => Number(b) - Number(a)).map(lbl => (
+              <button
+                key={lbl}
+                type="button"
+                onClick={() => toggleSet(setActiveYear, Number(lbl))}
+                style={{
+                  textAlign: 'center', fontFamily: 'inherit',
+                  padding: '5px 4px', fontSize: 'var(--t-body)', cursor: 'pointer', border: 'none',
+                  background: activeYear.has(Number(lbl)) ? 'var(--lbb-accent-soft)' : 'transparent',
+                  color: activeYear.has(Number(lbl)) ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg)',
+                  borderRadius: 6,
+                }}
+              >
+                {lbl}
+              </button>
             ))}
           </div>
         </FilterMenu>
         <FilterMenu label={t('library.facets.coverageLabel')} count={activeCoverage.size}>
           <MenuLabel>{t('library.facets.coverageLabel')}</MenuLabel>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
+          <FacetList>
             {(['Covered', 'Upgrade', 'Gap', 'Undocumented'] as Coverage[]).map(c => (
-              <Chip key={c} size="sm" active={activeCoverage.has(c)} onClick={() => toggleSet(setActiveCoverage, c)} count={facetCounts.coverageC[c] ?? 0}>{coverageName(c)}</Chip>
+              <FacetOption key={c} label={coverageName(c)} count={facetCounts.coverageC[c] ?? 0} active={activeCoverage.has(c)} onClick={() => toggleSet(setActiveCoverage, c)} />
             ))}
-          </div>
+          </FacetList>
         </FilterMenu>
         {Object.keys(facetCounts.sourceC).length > 0 && (
           <FilterMenu label={t('library.facets.source')} count={activeSource.size}>
             <MenuLabel>{t('library.facets.source')}</MenuLabel>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
+            <FacetList>
               {Object.entries(facetCounts.sourceC).map(([lbl, cnt]) => (
-                <Chip key={lbl} size="sm" active={activeSource.has(lbl)} onClick={() => toggleSet(setActiveSource, lbl)} count={cnt}>{lbl}</Chip>
+                <FacetOption key={lbl} label={lbl} count={cnt} active={activeSource.has(lbl)} onClick={() => toggleSet(setActiveSource, lbl)} />
               ))}
-            </div>
+            </FacetList>
           </FilterMenu>
         )}
-        <FilterMenu label={t('library.facets.rating')} count={activeRating.size}>
+        <FilterMenu label={t('library.facets.bestRatingPerShow')} count={activeRating.size}>
           <MenuLabel>{t('library.facets.bestRating')}</MenuLabel>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
-            {Object.entries(facetCounts.ratingC).map(([lbl, cnt]) => (
-              <Chip key={lbl} size="sm" active={activeRating.has(lbl as RatingGrade)} onClick={() => toggleSet(setActiveRating, lbl as RatingGrade)} count={cnt}>{lbl}</Chip>
+          <FacetList>
+            {Object.entries(facetCounts.ratingC).sort(([a], [b]) => (RATING_RANK[b] ?? 0) - (RATING_RANK[a] ?? 0)).map(([lbl, cnt]) => (
+              <FacetOption key={lbl} label={lbl} count={cnt} active={activeRating.has(lbl as RatingGrade)} onClick={() => toggleSet(setActiveRating, lbl as RatingGrade)} />
             ))}
-          </div>
+          </FacetList>
         </FilterMenu>
         <span style={{ width: 1, height: 20, background: 'var(--lbb-border)', flexShrink: 0 }} />
         <button
-          type="button" onClick={toggleExpandAll} disabled={multiShowIds.length === 0}
+          type="button" onClick={toggleExpandAll} disabled={expandableShowIds.length === 0}
           title={allShowsExpanded ? t('library.toolbar.collapseAllShows') : t('library.toolbar.expandAllShows')}
           style={{
             display: 'inline-flex', alignItems: 'center', gap: 5,
             height: 28, padding: '0 10px', borderRadius: 6, fontFamily: 'inherit',
             fontSize: 'var(--t-body)', fontWeight: 'var(--w-med)', whiteSpace: 'nowrap',
-            cursor: multiShowIds.length === 0 ? 'not-allowed' : 'pointer',
-            opacity: multiShowIds.length === 0 ? 0.5 : 1,
+            cursor: expandableShowIds.length === 0 ? 'not-allowed' : 'pointer',
+            opacity: expandableShowIds.length === 0 ? 0.5 : 1,
             background: 'var(--lbb-surface)', color: 'var(--lbb-fg2)',
             border: '1px solid var(--lbb-border2)',
           }}
@@ -1852,26 +1937,26 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
             <colgroup>
               <col style={{ width: 3 }} />
               <col style={{ width: 30 }} />
-              <col style={{ width: 104 }} />
-              <col style={{ width: 345 }} />
-              <col style={{ width: 155 }} />
-              <col style={{ width: 116 }} />
-              <col style={{ width: 52 }} />
-              <col style={{ width: 46 }} />
-              <col style={{ width: 112 }} />
+              <col style={{ width: colWidths.date }} />
+              <col style={{ width: colWidths.show }} />
+              <col style={{ width: colWidths.tour }} />
+              <col style={{ width: colWidths.families }} />
+              <col style={{ width: colWidths.recs }} />
+              <col style={{ width: colWidths.rating }} />
+              <col style={{ width: colWidths.coverage }} />
               <col />
             </colgroup>
             <thead>
               <tr>
                 <TH />
                 <TH />
-                <TH>{t('library.columns.date')}</TH>
-                <TH>{t('library.columns.show')}</TH>
-                <TH>{t('library.columns.tour')}</TH>
-                <TH>{t('library.columns.families')}</TH>
-                <TH align="center">{t('library.columns.recs')}</TH>
-                <TH align="center">★</TH>
-                <TH>{t('library.columns.coverage')}</TH>
+                <TH onResizeStart={e => startColResize('date', e.clientX, colWidths.date)}>{t('library.columns.date')}</TH>
+                <TH onResizeStart={e => startColResize('show', e.clientX, colWidths.show)}>{t('library.columns.show')}</TH>
+                <TH onResizeStart={e => startColResize('tour', e.clientX, colWidths.tour)}>{t('library.columns.tour')}</TH>
+                <TH onResizeStart={e => startColResize('families', e.clientX, colWidths.families)}>{t('library.columns.families')}</TH>
+                <TH align="center" onResizeStart={e => startColResize('recs', e.clientX, colWidths.recs)}>{t('library.columns.recs')}</TH>
+                <TH align="center" onResizeStart={e => startColResize('rating', e.clientX, colWidths.rating)}>★</TH>
+                <TH onResizeStart={e => startColResize('coverage', e.clientX, colWidths.coverage)}>{t('library.columns.coverage')}</TH>
                 <TH />
               </tr>
             </thead>
@@ -1908,6 +1993,7 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
                         const p = item.perf
                         const ru = rollupOf(p.recordings)
                         const multi = p.recordings.length > 1
+                        const expandable = p.recordings.length > 0
                         const expanded = expandedShows.has(p.id)
                         const canonical = bestOf(p.recordings)
                         return (
@@ -1918,7 +2004,7 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
                             onClick={() => {
                               setSelectedId(p.id)
                               setSelectedMemberLb(null)
-                              if (multi) setExpandedShows(s => {
+                              if (expandable) setExpandedShows(s => {
                                 const n = new Set(s); n.has(p.id) ? n.delete(p.id) : n.add(p.id); return n
                               })
                             }}
@@ -1931,12 +2017,12 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
                             <TD
                               onClick={e => {
                                 e.stopPropagation()
-                                if (!multi) return
+                                if (!expandable) return
                                 setExpandedShows(s => { const n = new Set(s); n.has(p.id) ? n.delete(p.id) : n.add(p.id); return n })
                               }}
-                              style={{ overflow: 'visible', cursor: multi ? 'pointer' : 'default' }}
+                              style={{ overflow: 'visible', cursor: expandable ? 'pointer' : 'default' }}
                             >
-                              {multi && <Icon name={expanded ? 'chevDown' : 'chevRight'} size={13} style={{ color: 'var(--lbb-fg3)' }} />}
+                              {expandable && <Icon name={expanded ? 'chevDown' : 'chevRight'} size={13} style={{ color: 'var(--lbb-fg3)' }} />}
                             </TD>
                             <TD mono style={{ color: 'var(--lbb-fg)', fontWeight: 'var(--w-semi)' }}>
                               <span style={{ display: 'inline-flex', flexDirection: 'column', lineHeight: 1.2 }}>
@@ -2014,6 +2100,9 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
                               if (single && lone) { setSelectedMemberLb(lone.lbNumber); setSelectedId(null) }
                               else { setSelectedId(item.perf.id); setSelectedMemberLb(null) }
                             }}
+                            onContextMenu={single && lone
+                              ? e => openCtxMenu(e, lone.lb, buildRecordingActions(toRecAction(lone), [], actionHandlers, t))
+                              : undefined}
                             style={{
                               height: vItem.size, cursor: 'pointer',
                               background: single && selectedMemberLb === lone?.lbNumber
@@ -2052,8 +2141,13 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
                                   </span>
                                 )}
                                 {single && (
-                                  <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11)', fontWeight: 'var(--w-semi)', color: fam.owned ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg3)', whiteSpace: 'nowrap' }}>
+                                  <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11)', fontWeight: 'var(--w-semi)', color: fam.owned ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg3)', whiteSpace: 'nowrap', flex: '0 0 auto' }}>
                                     {lone?.lb}
+                                  </span>
+                                )}
+                                {single && lone?.desc && (
+                                  <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', color: 'var(--lbb-fg2)', fontSize: 'var(--lbb-fs-11-5)', minWidth: 0 }}>
+                                    {lone.desc}
                                   </span>
                                 )}
                               </span>

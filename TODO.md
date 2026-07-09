@@ -1,4 +1,10 @@
 
+TODO-210: Detect exact-quality-match splits as family-matching signal (LB-1594/LB-5065)
+Priority: Medium
+Status: Open
+Added: 2026-07-08
+Description: User found LB-1594 and LB-5065 have identical quality ratings and are audibly the exact same recording — only difference is track splits a few seconds apart. Investigate using exact/near-identical quality-score equality as an additional signal in family matching (e.g. as a corroborating feature or a targeted check for split-only duplicates), since a quality-rating match this precise is unlikely by chance for unrelated masters.
+
 TODO-209: Ledger duplicate-ID audit — 17 TODO + 22 BUG header IDs reused across open/done files
 Priority: Low
 Status: Open
@@ -9,26 +15,6 @@ Progress (2026-07-08): audit script shipped — tools/ledger_dedup.py (report-on
   archive, other ledger files) that needs manual attribution before renumbering. Remaining
   work: review the plan, attribute shared cross-refs, then renumber via next-id.
 Description: Found while closing TODO-198 (2026-07-08): header-line grep (^TODO-N / ^BUG-N across the open+done pairs) turns up 17 duplicated TODO ids (024, 086, 102, 106-113, 140, 151, 153-155, 198) and 22 duplicated BUG ids (107-118ish, 167, 168, 175, 176, 193, 195, 200, 214-218). Almost all are low-numbered and predate tools/ledger.py (added 2026-07-07, TODO-205) — legacy manual-numbering debt from before next-id existed. TODO-198 was the one recent exception: its number was hand-set rather than assigned via next-id, bypassing the tool's own duplicate protection (_collect_ids scans both open+done files correctly, so the tool itself cannot produce a collision). Fix requires, per id: confirm which of the N entries is authoritative (check dates/content), grep every cross-reference (CHANGELOG.md mentions, [[TODO-NNN]]/[[BUG-NNN]] links in other entries, instructions/ docs) before renumbering the duplicate(s) via next-id, then verify no reference breaks. Do this as a batch script, not by hand — 39 ids is too many for manual edits to stay safe. Low priority: cosmetic/traceability issue, not a functional bug.
-
-TODO-205: Pipeline structural tier: implement P7+P1+P2 (+P3/P8) per design doc — shared hash/state cache, async job model
-Priority: Medium
-Status: Open
-Added: 2026-07-07
-Description: Implement instructions/PIPELINE_STRUCTURAL_TIER_DESIGN.md (design done 2026-07-07,
-reviewed against sources). Phased plan in §9: Phase 1 Schema SHIPPED 2026-07-08 (two cache
-tables + db helpers + tests/test_pipeline_cache.py, inert until consumed). Phase 2 async job
-plumbing SHIPPED 2026-07-08 (/api/pipeline/run/start|status|cancel, per-st_dev drain threads
-+ global worker semaphore; sync /run untouched). Phase 3 P7 state persistence SHIPPED
-2026-07-08 (verify/lbdir served cached:true on fingerprint match, lbdir LB-guard, force
-param on both routes; see design §9 as-built notes). Phase 4 P1 hash consultation SHIPPED
-2026-07-08 (per-file md5+sha256 cache in verify_folder/_lbdir, filing source digest from
-cache w/ fallback, stale_verify guard on all filing; tests/test_hash_cache_verify.py).
-Phase 5 P3 LBDIR prefetch BACKEND HALF SHIPPED 2026-07-08 (per-LB dedup + 2-worker pool,
-pending_fetch marker on lbdir mute, sync-scrape fallback retained; pending verdicts never
-persisted/served cached; see design §9 Phase 5 as-built notes). Remaining: Phase 5 GUI half
-(pending_fetch retry effect in ScreenPipeline.tsx + /gui-check), Phase 6 P8
-blocked-bucketing, Phase 7 GUI migration (start/poll + queue persist + re-check affordance).
-Quick-win tier (D1/D2/D3/P5) shipped 2026-07-07.
 
 TODO-204: emb-gated MrMsDTW confirmation probe (near-miss band rescue)
 Priority: Low

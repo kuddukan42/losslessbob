@@ -92,6 +92,64 @@ _PIPELINE_JOB: dict = {
 }
 _PIPELINE_CANCEL_EVENT = threading.Event()
 
+# Blocked file-step codes that need human configuration (a missing recording
+# date or an unroutable year) — these escalate a folder to "attn". Every other
+# blocked code (mount_offline/dest_exists/db_error/unknown) is transient and
+# self-heals on a live re-resolve, so it falls through to the done/shelf path
+# (P8, TODO-205 Ph.6).
+_TRUE_ATTN_BLOCK_CODES = {"no_date", "no_route"}
+
+
+def compute_pipeline_severity(
+    verify: dict,
+    lookup: dict,
+    lbdir: dict,
+    rename: dict,
+    file_status: str,
+    file_error_code: "str | None",
+    lb_number: "int | None",
+) -> str:
+    """Compute a pipeline row's severity bucket from its per-step verdicts.
+
+    Pure function extracted from ``_pipeline_process_folder`` (TODO-211) so it is
+    directly unit-testable and reusable for warm-start bucket reconstruction
+    (TODO-205 Phase 7 ``/api/pipeline/state``) without re-running the pipeline.
+
+    Args:
+        verify: Verify step verdict dict (reads ``status``).
+        lookup: Lookup step verdict dict (reads ``status``).
+        lbdir: LBDIR step verdict dict (reads ``status`` and optional
+            ``pending_fetch``).
+        rename: Rename step verdict dict (reads ``status`` and optional
+            ``label``).
+        file_status: The file step's status (``ok``/``warn``/``blocked``/
+            ``mute``/…).
+        file_error_code: The file step's ``error_code`` when blocked, else None.
+        lb_number: The resolved LB number, or None.
+
+    Returns:
+        One of ``"attn"``, ``"ready"``, or ``"done"``.
+    """
+    statuses = [verify["status"], lookup["status"], lbdir["status"], rename["status"]]
+    if "bad" in statuses or (
+        file_status == "blocked" and file_error_code in _TRUE_ATTN_BLOCK_CODES
+    ):
+        return "attn"
+    if rename.get("label") == "Proposed":
+        return "ready"
+    if lb_number and (
+        rename["status"] == "mute"
+        or (lbdir["status"] == "mute" and not lbdir.get("pending_fetch"))
+    ):
+        # Lookup resolved but downstream steps weren't run yet — not done.
+        # A pending_fetch lbdir is exempt: it's parked on a background prefetch,
+        # not un-run, so it must fall through to the all-ok/mute → done rule.
+        return "attn"
+    if all(s in ("ok", "mute") for s in statuses) and "ok" in statuses:
+        return "done"
+    return "attn"
+
+
 # ── P3 background LBDIR prefetch (TODO-205 Phase 5) ───────────────────────────
 _LBDIR_PREFETCH_LOCK = threading.Lock()
 _LBDIR_PREFETCH_INFLIGHT: set[int] = set()      # LB numbers currently being fetched
@@ -6424,29 +6482,11 @@ def create_app() -> Flask:
         else:
             row["file"] = {"status": "mute", "label": "—", "error": None, "error_code": None}
 
-        # ── Severity ──────────────────────────────────────────────────────────
-        # file_status "blocked" escalates to attn (route/mount misconfigured);
-        # "ready" does not change severity — the File button in the row handles it.
-        statuses = [row["verify"]["status"], row["lookup"]["status"],
-                    row["lbdir"]["status"], row["rename"]["status"]]
-        file_status = row["file"]["status"]
-        if "bad" in statuses or file_status == "blocked":
-            row["severity"] = "attn"
-        elif row["rename"].get("label") == "Proposed":
-            row["severity"] = "ready"
-        elif lb_number and (
-            row["rename"]["status"] == "mute"
-            or (row["lbdir"]["status"] == "mute"
-                and not row["lbdir"].get("pending_fetch"))
-        ):
-            # Lookup resolved but downstream steps weren't run yet — not done.
-            # A pending_fetch lbdir is exempt: it's parked on a background prefetch,
-            # not un-run, so it must fall through to the all-ok/mute → done rule.
-            row["severity"] = "attn"
-        elif all(s in ("ok", "mute") for s in statuses) and "ok" in statuses:
-            row["severity"] = "done"
-        else:
-            row["severity"] = "attn"
+        # ── Severity (pure fn extracted for testability/warm-start, TODO-211) ──
+        row["severity"] = compute_pipeline_severity(
+            row["verify"], row["lookup"], row["lbdir"], row["rename"],
+            row["file"]["status"], row["file"].get("error_code"), lb_number,
+        )
 
         # ── P7 folder-state cache write (design §4d) ─────────────────────────
         # Recompute the fingerprint here instead of reusing fp_now: the lbdir step
@@ -6668,6 +6708,74 @@ def create_app() -> Flask:
             was_running = _PIPELINE_JOB["running"]
         _PIPELINE_CANCEL_EVENT.set()
         return jsonify({"ok": True, "was_running": was_running})
+
+    @app.route("/api/pipeline/state", methods=["POST"])
+    def pipeline_state() -> Response:
+        """Return last-known cached verdicts for a set of folders (warm-start).
+
+        TODO-205 Phase 7: lets the GUI paint pipeline buckets immediately after an
+        app restart, before any re-run. For each folder whose stored fingerprint
+        still matches the folder on disk (design R3 revalidation), the persisted
+        per-step verdicts are returned with a freshly computed severity. Folders
+        with no cache, an invalidated fingerprint, or an unreadable path are
+        omitted — the GUI leaves those rows empty and runs them normally. The file
+        step is returned for appearance only and is never trusted (P8); the GUI
+        re-resolves it live on the next run.
+
+        Body: {folders: [path, ...]}
+        Returns: {ok: true, results: {path: row}} where each row mirrors a
+        /api/pipeline/run result (verify/lookup/lbdir/rename/file/severity/errors).
+        """
+        try:
+            data = request.get_json() or {}
+            folders = data.get("folders", [])
+            if not isinstance(folders, list):
+                return jsonify({
+                    "ok": False,
+                    "error": "folders must be a list",
+                    "error_code": "bad_input",
+                }), 400
+
+            results: dict[str, dict] = {}
+            for folder_path in folders:
+                try:
+                    state = database.get_folder_state(folder_path)
+                    if state is None:
+                        continue
+                    fp_now = database.folder_fingerprint(folder_path)
+                    if fp_now is None or state["fingerprint"] != fp_now:
+                        continue
+                    steps = state["steps"]
+                    mute = {"status": "mute", "label": "—"}
+                    verify = steps.get("verify", dict(mute))
+                    lookup = steps.get("lookup", dict(mute))
+                    lbdir = steps.get("lbdir", dict(mute))
+                    rename = steps.get("rename", dict(mute))
+                    file_step = steps.get("file", {
+                        "status": "mute", "label": "—",
+                        "error": None, "error_code": None,
+                    })
+                    lb_number = lookup.get("lb_number") or lbdir.get("lb_number")
+                    results[folder_path] = {
+                        "folder": folder_path,
+                        "verify": verify,
+                        "lookup": lookup,
+                        "lbdir": lbdir,
+                        "rename": rename,
+                        "file": file_step,
+                        "errors": [],
+                        "severity": compute_pipeline_severity(
+                            verify, lookup, lbdir, rename,
+                            file_step.get("status", "mute"),
+                            file_step.get("error_code"), lb_number,
+                        ),
+                    }
+                except Exception as exc:
+                    _log.warning("pipeline: warm-start state read failed for %s: %s",
+                                 folder_path, exc)
+            return jsonify({"ok": True, "results": results})
+        except Exception as e:
+            return jsonify({"ok": False, "error": str(e)}), 500
 
     @app.route("/api/folder/rename", methods=["POST"])
     def folder_rename() -> Response:

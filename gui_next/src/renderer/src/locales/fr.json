@@ -665,7 +665,9 @@
       }
     },
     "autoCollect": "Collecte automatique",
-    "autoCollectHint": "Lorsqu’elle est activée, les dossiers entièrement verts (vérification, recherche, répertoire LB et renommage réussis) sont automatiquement classés dans la collection — aucun clic sur « Fichier » n’est nécessaire."
+    "autoCollectHint": "Lorsqu’elle est activée, les dossiers entièrement verts (vérification, recherche, répertoire LB et renommage réussis) sont automatiquement classés dans la collection — aucun clic sur « Fichier » n’est nécessaire.",
+    "retryBlockedCollects_one": "Réessayer la collecte bloquée {{count}}",
+    "retryBlockedCollects_other": "Réessayer les collectes bloquées {{count}}"
   },
   "collection": {
     "confirmDialog": {
@@ -1444,7 +1446,9 @@
       "coverageLabel": "Portée",
       "bestRating": "Meilleure note",
       "clear": "Effacer {{count}}",
-      "views": "Vues"
+      "views": "Vues",
+      "allYears": "Toutes les années",
+      "bestRatingPerShow": "Meilleure note (par concert)"
     },
     "views": {
       "allPerformances": "Toutes les performances",

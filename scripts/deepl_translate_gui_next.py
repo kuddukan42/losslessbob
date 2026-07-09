@@ -80,6 +80,8 @@ SKIP_KEYS: set[str] = {
     "appShell.nav.pipeline",       # "Pipeline" is the correct tech term in all locales
     "appShell.nav.bootlegs",       # "Bootlegs" is the established music term in all locales
     "appShell.statusBar.bootlegs", # same
+    "library.facets.bestRatingPerShow", # DeepL reads "show" as TV/radio broadcast, not concert;
+                                         # manually translated using "concert" instead
 }
 
 

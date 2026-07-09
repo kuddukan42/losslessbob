@@ -665,7 +665,9 @@
       }
     },
     "autoCollect": "Recopilación automática",
-    "autoCollectHint": "Cuando está activada, las carpetas que aparecen completamente en verde (verificación, búsqueda, directorio LB y cambio de nombre superados) se archivan automáticamente en la colección, sin necesidad de hacer clic en «Archivo»."
+    "autoCollectHint": "Cuando está activada, las carpetas que aparecen completamente en verde (verificación, búsqueda, directorio LB y cambio de nombre superados) se archivan automáticamente en la colección, sin necesidad de hacer clic en «Archivo».",
+    "retryBlockedCollects_one": "Reintentar la recopilación bloqueada {{count}}",
+    "retryBlockedCollects_other": "Reintentar la recopilación bloqueada {{count}}"
   },
   "collection": {
     "confirmDialog": {
@@ -1444,7 +1446,9 @@
       "coverageLabel": "Alcance",
       "bestRating": "Mejor valoración",
       "clear": "Borrar {{count}}",
-      "views": "Vistas"
+      "views": "Vistas",
+      "allYears": "Todos los años",
+      "bestRatingPerShow": "Mejor valoración (por concierto)"
     },
     "views": {
       "allPerformances": "Todas las interpretaciones",
