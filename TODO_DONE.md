@@ -1,6 +1,33 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-167: Geocode locations from setlistfm_shows and bobdylan_shows tables
+Priority: Medium
+Status: Done
+Added: 2026-06-22
+Closed: 2026-07-09
+Description: backend/geocoder.py (run_batch, _get_performance_location_string) currently only
+  geocodes location strings sourced from the `performances` table (raw LB metadata,
+  source='performances' in location_geocoded). It does not pull venue/city from
+  setlistfm_shows (db.py:530-541, venue_name/city/country columns) or bobdylan_shows
+  (db.py:508-518). Extend geocoding to cover these two tables as additional sources — likely
+  relevant to fixing the blank Map screen (BUG-215) since more complete location_geocoded
+  coverage means more pins on the map.
+Added _get_bobdylan_shows_location_string() and _get_setlistfm_location_string() to backend/geocoder.py, wired into run_batch() via a priority-ordered _STRUCTURED_SOURCES list (bobdylan_shows -> setlistfm_shows -> dylan_performances -> raw text fallback). location_geocoded.source now records the matching table. 13 new tests in tests/test_geocoder.py; PROJECT.md updated.
+
+TODO-165: Deprecate old fingerprinting — remove code and UI
+Priority: Medium
+Status: Done
+Added: 2026-06-22
+Closed: 2026-07-09
+Description: Remove the old fingerprinting feature: backend/fingerprint.py, its routes in
+  backend/app.py, references in backend/integrity_monitor.py, and the
+  gui_next/src/renderer/src/screens/ScreenFingerprint.tsx screen + its nav entry in App.tsx.
+  Need to confirm integrity_monitor.py doesn't depend on fingerprint.py for anything still
+  in active use before deleting (check usage there first) — being replaced by/superseded by
+  whatever the new approach is (not specified yet).
+Deprecated feature removed: backend/fingerprint.py + all /api/fingerprint/* routes, gui_next ScreenFingerprint.tsx + nav entry + AppShell/Icon wiring, ScreenCollection.tsx Fingerprinted column/filter/sort/context-action, ScreenSetup.tsx purge option, AboutDialog.tsx dep listing, orphaned i18n keys (6 locales), and now-unused librosa/numba/soxr deps (requirements.txt + PROJECT.md). Legacy gui/ (PyQt6, frozen) and cli.py intentionally left calling now-404 endpoints per user decision.
+
 TODO-205: Pipeline structural tier: implement P7+P1+P2 (+P3/P8) per design doc — shared hash/state cache, async job model
 Priority: Medium
 Status: Done

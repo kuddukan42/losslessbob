@@ -48,7 +48,6 @@
       "attachments": "Pièces jointes",
       "spectrograms": "Spectrogrammes",
       "map": "Carte",
-      "fingerprint": "Empreinte digitale",
       "curator": "Conservateur",
       "curatorBadge": "CURATEUR",
       "dbeditor": "Éditeur de DB",
@@ -713,9 +712,6 @@
       "diskPath": "Chemin d'accès au disque",
       "size": "Taille",
       "confirmed": "Confirmé",
-      "fingerprinted": "Prise d'empreintes digitales",
-      "fingerprintedYes": "Oui - acoustid",
-      "fingerprintedNo": "Non",
       "archRating": "Arch. Notation",
       "myRating": "Ma note",
       "perFive": "/ 5",
@@ -816,9 +812,6 @@
       "queuedScrape": "File d'attente pour {{lb}}",
       "scrapeFailed": "Échec du raclage",
       "scrapeRequestFailed": "Échec de la demande de scrape",
-      "fingerprinting": "Prise d'empreintes digitales {{lb}}...",
-      "fingerprintFailed": "Échec de l'empreinte digitale",
-      "fingerprintRequestFailed": "Échec de la demande d'empreinte digitale",
       "vlcNotFound": "VLC introuvable sur ce système",
       "vlcRequestFailed": "Échec de la demande VLC",
       "spectrogramFailed": "Échec du spectrogramme",
@@ -937,7 +930,6 @@
       "lookupHistory": "Historique de la recherche",
       "importLog": "Journal des importations",
       "scraperCache": "Cache du grattoir",
-      "fingerprintCache": "Cache d'empreintes digitales",
       "allUserData": "Toutes les données de l'utilisateur",
       "purge": "Purge...",
       "disclaimer": "Données de l'utilisateur uniquement. L'archive des sommes de contrôle n'est jamais affectée.",
@@ -949,8 +941,6 @@
       "importLogUnit": "lignes",
       "scraperCacheDesc": "Code HTML mis en cache de la page de détails",
       "scraperCacheUnit": "pages",
-      "fingerprintCacheDesc": "Blobs d’empreintes audio",
-      "fingerprintCacheUnit": "blobs",
       "allUserDataDesc": "Collection, liste de souhaits, notes, alertes et journaux — non réversibles.",
       "purgeAll": "Tout supprimer…",
       "archiveProtected": "L'archive de sommes de contrôle n'est jamais affectée par aucune purge."
@@ -1114,64 +1104,6 @@
       "notValid": "Fichier de thème non valide",
       "imported": "Thème importé",
       "parseFailed": "Échec de l'analyse du fichier de thème"
-    }
-  },
-  "fingerprint": {
-    "configure": {
-      "title": "Configurer",
-      "subtitle": "Recherchez les entrées de collection pour une date donnée, puis identifiez votre audio par rapport à ces entrées.",
-      "date": "Date d'exécution",
-      "findEntries": "Trouver des entrées",
-      "finding": "Trouver...",
-      "found": "Les entrées {{count}} LB trouvées pour cette date - {{withPath}} ont des chemins d'accès au disque.",
-      "noEntries": "Aucune entrée de collection n'a été trouvée pour cette date.",
-      "userFolder": "Votre dossier mystère",
-      "noFolderSelected": "Aucun dossier sélectionné",
-      "browse": "Parcourir",
-      "match": "Match des courses",
-      "matchHint": "Sélectionnez une date avec des entrées de chemin d'accès au disque et un dossier mystère pour commencer."
-    },
-    "entries": {
-      "lb": "LB#",
-      "location": "Localisation",
-      "folder": "Dossier",
-      "onDisk": "Sur disque",
-      "yes": "Oui",
-      "no": "Non"
-    },
-    "progress": {
-      "phase1": "Phase 1 - Création des empreintes digitales des LB",
-      "phase2": "Phase 2 - Identification des dossiers",
-      "files": "Fichiers {{done}} / {{total}}",
-      "current": "{{name}}",
-      "stop": "Arrêter"
-    },
-    "results": {
-      "title": "Résultats",
-      "filesIdentified": "dossiers",
-      "yourFile": "Votre dossier",
-      "bestMatch": "Meilleure correspondance LB",
-      "location": "Localisation",
-      "score": "Partition",
-      "confident": "Confiant",
-      "noMatch": "Pas de correspondance",
-      "yes": "Oui",
-      "no": "Non",
-      "errors": "Le(s) fichier(s) {{count}} n'a (n'ont) pas pu être identifié(s)",
-      "noResults": "Aucun fichier n'a été identifié - le dossier mystère peut être vide ou ne pas contenir de fichiers audio pris en charge.",
-      "cleanup": "Nettoyer les données d'empreintes digitales"
-    },
-    "toast": {
-      "noPath": "Aucune entrée de collection avec chemin d'accès au disque n'a été trouvée pour cette date.",
-      "loadFailed": "Échec du chargement des entrées de collection.",
-      "pickFailed": "Impossible d'ouvrir le sélecteur de dossiers.",
-      "buildFailed": "Échec du lancement de la compilation des empreintes digitales.",
-      "identifyFailed": "Échec du démarrage de l'identification du fichier.",
-      "stopped": "Arrêtée.",
-      "done": "Match terminé.",
-      "cleanupDone": "Les données relatives aux empreintes digitales ont été supprimées.",
-      "cleanupFailed": "Le nettoyage a échoué.",
-      "noEntries": "Aucune entrée de collection n'a été trouvée pour {{date}}."
     }
   },
   "dbeditor": {

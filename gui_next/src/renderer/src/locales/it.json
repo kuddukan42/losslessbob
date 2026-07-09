@@ -48,7 +48,6 @@
       "attachments": "Allegati",
       "spectrograms": "Spettrogrammi",
       "map": "Mappa",
-      "fingerprint": "Impronta digitale",
       "curator": "Curatore",
       "curatorBadge": "CURATORE",
       "dbeditor": "Editor DB",
@@ -713,9 +712,6 @@
       "diskPath": "Percorso del disco",
       "size": "Dimensione",
       "confirmed": "Confermato",
-      "fingerprinted": "Impronte digitali",
-      "fingerprintedYes": "Sì - Acustica",
-      "fingerprintedNo": "No",
       "archRating": "Arco. Valutazione",
       "myRating": "La mia valutazione",
       "perFive": "/ 5",
@@ -816,9 +812,6 @@
       "queuedScrape": "Scrape in coda per {{lb}}",
       "scrapeFailed": "Raschiamento fallito",
       "scrapeRequestFailed": "Richiesta di scraping fallita",
-      "fingerprinting": "Impronte digitali {{lb}}...",
-      "fingerprintFailed": "Impronta digitale non riuscita",
-      "fingerprintRequestFailed": "Richiesta di impronte digitali fallita",
       "vlcNotFound": "VLC non trovato su questo sistema",
       "vlcRequestFailed": "Richiesta VLC fallita",
       "spectrogramFailed": "Spettrogramma fallito",
@@ -937,7 +930,6 @@
       "lookupHistory": "Storia della ricerca",
       "importLog": "Registro di importazione",
       "scraperCache": "Cache scraper",
-      "fingerprintCache": "Cache delle impronte digitali",
       "allUserData": "Tutti i dati dell'utente",
       "purge": "Epurazione…",
       "disclaimer": "Solo i dati dell'utente. L'archivio dei checksum non viene mai toccato.",
@@ -949,8 +941,6 @@
       "importLogUnit": "righe",
       "scraperCacheDesc": "Codice HTML della pagina dei dettagli memorizzato nella cache",
       "scraperCacheUnit": "pagine",
-      "fingerprintCacheDesc": "Blob delle impronte digitali audio",
-      "fingerprintCacheUnit": "blob",
       "allUserDataDesc": "Collezioni, lista dei desideri, valutazioni, avvisi e registri — non reversibili.",
       "purgeAll": "Elimina tutto…",
       "archiveProtected": "L'archivio dei checksum non viene mai interessato da alcuna operazione di eliminazione."
@@ -1114,64 +1104,6 @@
       "notValid": "Non è un file di tema valido",
       "imported": "Tema importato",
       "parseFailed": "Impossibile analizzare il file del tema"
-    }
-  },
-  "fingerprint": {
-    "configure": {
-      "title": "Configurare",
-      "subtitle": "Trova le voci della raccolta per una data, quindi identifica l'audio rispetto ad esse.",
-      "date": "Data di esecuzione",
-      "findEntries": "Trova voci",
-      "finding": "Trovare...",
-      "found": "Trovate le voci {{count}} LB per questa data - {{withPath}} hanno percorsi del disco.",
-      "noEntries": "Non sono state trovate voci di raccolta per questa data.",
-      "userFolder": "La vostra cartella misteriosa",
-      "noFolderSelected": "Nessuna cartella selezionata",
-      "browse": "Sfogliare",
-      "match": "Partita di corsa",
-      "matchHint": "Selezionare una data con le voci del percorso del disco e una cartella misteriosa per iniziare"
-    },
-    "entries": {
-      "lb": "LB#",
-      "location": "Posizione",
-      "folder": "Cartella",
-      "onDisk": "Su disco",
-      "yes": "Sì",
-      "no": "No"
-    },
-    "progress": {
-      "phase1": "Fase 1 - Creazione delle impronte digitali LB",
-      "phase2": "Fase 2 - Identificazione dei file",
-      "files": "File {{done}} / {{total}}",
-      "current": "{{name}}",
-      "stop": "Fermarsi"
-    },
-    "results": {
-      "title": "Risultati",
-      "filesIdentified": "file",
-      "yourFile": "Il vostro file",
-      "bestMatch": "Miglior abbinamento LB",
-      "location": "Posizione",
-      "score": "Punteggio",
-      "confident": "Fiducioso",
-      "noMatch": "Nessuna corrispondenza",
-      "yes": "Sì",
-      "no": "No",
-      "errors": "Impossibile identificare i file {{count}}",
-      "noResults": "Non è stato identificato alcun file: la cartella misteriosa potrebbe essere vuota o non contenere audio supportato.",
-      "cleanup": "Pulire i dati delle impronte digitali"
-    },
-    "toast": {
-      "noPath": "Non sono state trovate voci di raccolta con percorsi del disco per questa data.",
-      "loadFailed": "Impossibile caricare le voci della raccolta.",
-      "pickFailed": "Impossibile aprire il raccoglitore di cartelle.",
-      "buildFailed": "Impossibile avviare la creazione di impronte digitali.",
-      "identifyFailed": "Impossibile avviare l'identificazione dei file.",
-      "stopped": "Fermato.",
-      "done": "Partita completata.",
-      "cleanupDone": "I dati delle impronte digitali sono stati eliminati.",
-      "cleanupFailed": "Pulizia fallita.",
-      "noEntries": "Non sono state trovate voci di raccolta per {{date}}."
     }
   },
   "dbeditor": {

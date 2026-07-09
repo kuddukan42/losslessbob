@@ -9,7 +9,7 @@ import { useSettingsStore } from '../store'
 type NavId =
   | 'home' | 'pipeline' | 'verify' | 'lookup' | 'quicklookup' | 'rename' | 'lbdir'
   | 'library' | 'collection' | 'trading' | 'sharing' | 'search' | 'bootlegs'
-  | 'attachments' | 'spectrograms' | 'map' | 'fingerprint'
+  | 'attachments' | 'spectrograms' | 'map'
   | 'scraper' | 'setup' | 'mounts' | 'themes' | 'dbeditor'
 
 const ADVANCED_TOOLS: NavItem[] = [
@@ -71,7 +71,6 @@ const NAV_GROUPS: NavGroup[] = [
       { id: 'attachments',  label: 'Attachments',  icon: 'attachments' },
       { id: 'spectrograms', label: 'Spectrograms', icon: 'spectro' },
       { id: 'map',          label: 'Map',          icon: 'map' },
-      { id: 'fingerprint',  label: 'Fingerprint',  icon: 'fingerprint' },
     ],
   },
   {

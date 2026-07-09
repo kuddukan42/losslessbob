@@ -48,7 +48,6 @@
       "attachments": "Archivos adjuntos",
       "spectrograms": "Espectrogramas",
       "map": "Mapa",
-      "fingerprint": "Huella dactilar",
       "curator": "Comisario",
       "curatorBadge": "CURADOR",
       "dbeditor": "Editor DB",
@@ -713,9 +712,6 @@
       "diskPath": "Ruta del disco",
       "size": "Talla",
       "confirmed": "Confirmado",
-      "fingerprinted": "Huellas dactilares",
-      "fingerprintedYes": "Sí - acoustid",
-      "fingerprintedNo": "No",
       "archRating": "Arco. Clasificación",
       "myRating": "Mi valoración",
       "perFive": "/ 5",
@@ -816,9 +812,6 @@
       "queuedScrape": "Cola de búsqueda para {{lb}}",
       "scrapeFailed": "Error de raspado",
       "scrapeRequestFailed": "Error en la solicitud de raspado",
-      "fingerprinting": "Huellas dactilares {{lb}}...",
-      "fingerprintFailed": "Huella digital fallida",
-      "fingerprintRequestFailed": "Error en la solicitud de huellas dactilares",
       "vlcNotFound": "VLC no se encuentra en este sistema",
       "vlcRequestFailed": "Fallo en la solicitud de VLC",
       "spectrogramFailed": "Espectrograma fallido",
@@ -937,7 +930,6 @@
       "lookupHistory": "Historial de búsquedas",
       "importLog": "Registro de importación",
       "scraperCache": "Caché del rascador",
-      "fingerprintCache": "Caché de huellas dactilares",
       "allUserData": "Todos los datos del usuario",
       "purge": "Purga…",
       "disclaimer": "Sólo datos de usuario. El archivo de sumas de comprobación nunca se ve afectado.",
@@ -949,8 +941,6 @@
       "importLogUnit": "líneas",
       "scraperCacheDesc": "HTML de la página de detalles almacenado en caché",
       "scraperCacheUnit": "páginas",
-      "fingerprintCacheDesc": "Blobs de huellas digitales de audio",
-      "fingerprintCacheUnit": "blobs",
       "allUserDataDesc": "Colección, lista de deseos, valoraciones, alertas y registros: no reversible.",
       "purgeAll": "Borrar todo…",
       "archiveProtected": "El archivo de suma de comprobación nunca se ve afectado por ninguna purga."
@@ -1114,64 +1104,6 @@
       "notValid": "Archivo de tema no válido",
       "imported": "Tema importado",
       "parseFailed": "Error al analizar el archivo del tema"
-    }
-  },
-  "fingerprint": {
-    "configure": {
-      "title": "Configurar",
-      "subtitle": "Busque las entradas de la colección correspondientes a una fecha e identifique su audio en función de ellas.",
-      "date": "Fecha de ejecución",
-      "findEntries": "Buscar entradas",
-      "finding": "Encontrar...",
-      "found": "Encontradas entradas {{count}} LB para esta fecha - {{withPath}} tienen rutas de disco.",
-      "noEntries": "No se han encontrado entradas de recogida para esta fecha.",
-      "userFolder": "Su carpeta misteriosa",
-      "noFolderSelected": "No hay carpeta seleccionada",
-      "browse": "Visite",
-      "match": "Ejecutar partido",
-      "matchHint": "Seleccione una fecha con entradas de ruta de disco y una carpeta misteriosa para comenzar"
-    },
-    "entries": {
-      "lb": "LB#",
-      "location": "Ubicación",
-      "folder": "Carpeta",
-      "onDisk": "En disco",
-      "yes": "Sí",
-      "no": "No"
-    },
-    "progress": {
-      "phase1": "Fase 1 - Creación de huellas dactilares LB",
-      "phase2": "Fase 2 - Identificación de los expedientes",
-      "files": "Ficheros {{done}} / {{total}}",
-      "current": "{{name}}",
-      "stop": "Detener"
-    },
-    "results": {
-      "title": "Resultados",
-      "filesIdentified": "archivos",
-      "yourFile": "Su expediente",
-      "bestMatch": "Mejor partido LB",
-      "location": "Ubicación",
-      "score": "Puntuación",
-      "confident": "Confianza",
-      "noMatch": "No coincide",
-      "yes": "Sí",
-      "no": "No",
-      "errors": "{{count}} archivo(s) no ha podido ser identificado",
-      "noResults": "No se identificaron archivos - la carpeta misteriosa puede estar vacía o no contener audio compatible.",
-      "cleanup": "Limpiar datos de huellas dactilares"
-    },
-    "toast": {
-      "noPath": "No se han encontrado entradas de recogida con rutas de disco para esta fecha.",
-      "loadFailed": "Error al cargar las entradas de la colección.",
-      "pickFailed": "No se ha podido abrir el selector de carpetas.",
-      "buildFailed": "No se ha podido iniciar la creación de huellas dactilares.",
-      "identifyFailed": "Error al iniciar la identificación de archivos.",
-      "stopped": "Detenido.",
-      "done": "Partido completado.",
-      "cleanupDone": "Datos de huellas dactilares purgados.",
-      "cleanupFailed": "Limpieza fallida.",
-      "noEntries": "No se han encontrado entradas de colección para {{date}}."
     }
   },
   "dbeditor": {

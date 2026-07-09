@@ -26,7 +26,6 @@ import { ScreenRename } from './screens/ScreenRename'
 import { ScreenLookup } from './screens/ScreenLookup'
 import { ScreenLBDIR } from './screens/ScreenLBDIR'
 import { ScreenSpectrograms } from './screens/ScreenSpectrograms'
-import { ScreenFingerprint } from './screens/ScreenFingerprint'
 import { ScreenDbEditor } from './screens/ScreenDbEditor'
 import { ScreenScraper } from './screens/ScreenScraper'
 import { ScreenTrading } from './screens/ScreenTrading'
@@ -274,7 +273,6 @@ export default function App(): React.JSX.Element {
           <Route path="/bootlegs"    element={<ScreenBootlegs />} />
           <Route path="/attachments" element={<ScreenAttachments />} />
           <Route path="/spectrograms"element={<ScreenSpectrograms />} />
-          <Route path="/fingerprint" element={<ScreenFingerprint />} />
           <Route path="/map"         element={<ScreenMap />} />
           <Route path="/dbeditor"    element={<ScreenDbEditor />} />
           <Route path="/scraper"     element={<CuratorRoute element={<ScreenScraper />} />} />

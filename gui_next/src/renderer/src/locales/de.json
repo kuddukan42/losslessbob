@@ -48,7 +48,6 @@
       "attachments": "Anhänge",
       "spectrograms": "Spektrogramme",
       "map": "Karte",
-      "fingerprint": "Fingerabdruck",
       "curator": "Kurator",
       "curatorBadge": "KURATOR",
       "dbeditor": "DB-Editor",
@@ -713,9 +712,6 @@
       "diskPath": "Pfad zur Festplatte",
       "size": "Größe",
       "confirmed": "Bestätigt",
-      "fingerprinted": "Fingerabdrücke",
-      "fingerprintedYes": "Ja - akustisch",
-      "fingerprintedNo": "Nein",
       "archRating": "Arch. Bewertung",
       "myRating": "Meine Bewertung",
       "perFive": "/ 5",
@@ -816,9 +812,6 @@
       "queuedScrape": "Scrape in der Warteschlange für {{lb}}",
       "scrapeFailed": "Scrape fehlgeschlagen",
       "scrapeRequestFailed": "Scrape-Anfrage fehlgeschlagen",
-      "fingerprinting": "Fingerabdrucknahme {{lb}}...",
-      "fingerprintFailed": "Fingerabdruck fehlgeschlagen",
-      "fingerprintRequestFailed": "Fingerabdruckabfrage fehlgeschlagen",
       "vlcNotFound": "VLC wird auf diesem System nicht gefunden",
       "vlcRequestFailed": "VLC-Anfrage fehlgeschlagen",
       "spectrogramFailed": "Spektrogramm fehlgeschlagen",
@@ -937,7 +930,6 @@
       "lookupHistory": "Historie nachschlagen",
       "importLog": "Protokoll importieren",
       "scraperCache": "Scraper-Cache",
-      "fingerprintCache": "Fingerabdruck-Cache",
       "allUserData": "Alle Benutzerdaten",
       "purge": "Säubern…",
       "disclaimer": "Nur Benutzerdaten. Das Prüfsummenarchiv ist davon nicht betroffen.",
@@ -949,8 +941,6 @@
       "importLogUnit": "Zeilen",
       "scraperCacheDesc": "Zwischengespeicherter HTML-Code der Detailseite",
       "scraperCacheUnit": "Seiten",
-      "fingerprintCacheDesc": "Audio-Fingerabdruck-Blobs",
-      "fingerprintCacheUnit": "Blobs",
       "allUserDataDesc": "Sammlung, Wunschliste, Bewertungen, Benachrichtigungen und Protokolle – nicht rückgängig zu machen.",
       "purgeAll": "Alle löschen…",
       "archiveProtected": "Das Prüfsummenarchiv wird bei keiner Bereinigung berührt."
@@ -1114,64 +1104,6 @@
       "notValid": "Keine gültige Theme-Datei",
       "imported": "Thema importiert",
       "parseFailed": "Theme-Datei konnte nicht geparst werden"
-    }
-  },
-  "fingerprint": {
-    "configure": {
-      "title": "Konfigurieren Sie",
-      "subtitle": "Finden Sie Sammlungseinträge für ein bestimmtes Datum, und identifizieren Sie Ihre Audiodaten anhand dieser Einträge.",
-      "date": "Datum der Leistung",
-      "findEntries": "Einträge finden",
-      "finding": "Die Suche...",
-      "found": "Gefundene {{count}} LB-Einträge für dieses Datum - {{withPath}} haben Festplattenpfade.",
-      "noEntries": "Keine Sammlungseinträge für dieses Datum gefunden.",
-      "userFolder": "Ihr geheimnisvoller Ordner",
-      "noFolderSelected": "Kein Ordner ausgewählt",
-      "browse": "Durchsuchen Sie",
-      "match": "Laufspiel",
-      "matchHint": "Wählen Sie ein Datum mit Datenträgerpfad-Einträgen und einen Testordner, um zu beginnen"
-    },
-    "entries": {
-      "lb": "LB#",
-      "location": "Standort",
-      "folder": "Mappe",
-      "onDisk": "Auf Diskette",
-      "yes": "Ja",
-      "no": "Nein"
-    },
-    "progress": {
-      "phase1": "Phase 1 - Erstellung von LB-Fingerabdrücken",
-      "phase2": "Phase 2 - Identifizierung Ihrer Dateien",
-      "files": "{{done}} / {{total}} Dateien",
-      "current": "{{name}}",
-      "stop": "Stopp"
-    },
-    "results": {
-      "title": "Ergebnisse",
-      "filesIdentified": "Dateien",
-      "yourFile": "Ihre Datei",
-      "bestMatch": "Beste Übereinstimmung LB",
-      "location": "Standort",
-      "score": "Ergebnis",
-      "confident": "Zuversichtlich",
-      "noMatch": "Keine Übereinstimmung",
-      "yes": "Ja",
-      "no": "Nein",
-      "errors": "{{count}} Datei(en) konnte(n) nicht identifiziert werden",
-      "noResults": "Es wurden keine Dateien gefunden - der geheimnisvolle Ordner ist möglicherweise leer oder enthält keine unterstützten Audiodateien.",
-      "cleanup": "Bereinigung von Fingerabdruckdaten"
-    },
-    "toast": {
-      "noPath": "Keine Sammlungseinträge mit Datenträgerpfaden für dieses Datum gefunden.",
-      "loadFailed": "Sammlungseinträge konnten nicht geladen werden.",
-      "pickFailed": "Ordnerauswahl konnte nicht geöffnet werden.",
-      "buildFailed": "Die Erstellung von Fingerabdrücken konnte nicht gestartet werden.",
-      "identifyFailed": "Die Dateiidentifizierung konnte nicht gestartet werden.",
-      "stopped": "Gestoppt.",
-      "done": "Spiel beendet.",
-      "cleanupDone": "Fingerabdruckdaten werden gelöscht.",
-      "cleanupFailed": "Bereinigung fehlgeschlagen.",
-      "noEntries": "Keine Sammlungseinträge gefunden für {{date}}."
     }
   },
   "dbeditor": {

@@ -4,11 +4,14 @@ Provides single-location lookup, manual pin placement, and a batch runner
 that reads un-geocoded entries.location values from the database and writes
 results back via UPSERT.  Respects the Nominatim ToS 1-second rate limit.
 
-Performance-table integration: before calling Nominatim, run_batch() checks
-dylan_performances for a structured venue/city/state/country string that
-matches any entry associated with the location being geocoded.  When found,
-that structured string is used as the Nominatim query (better accuracy than
-the raw LB metadata location) and the result is stored with source='performances'.
+Structured-source integration: before calling Nominatim, run_batch() checks
+three tables, in priority order, for a structured venue/city/state/country
+string that matches any entry associated with the location being geocoded:
+bobdylan_shows (most standardized), then setlistfm_shows, then
+dylan_performances as a last resort.  When found, that structured string is
+used as the Nominatim query (better accuracy than the raw LB metadata
+location) and the result is stored with source set to the matching table
+name ('bobdylan_shows' / 'setlistfm_shows' / 'performances').
 """
 
 import json
@@ -81,6 +84,29 @@ def _entry_date_to_iso(date_str: str) -> str | None:
         return None
 
 
+def _entries_iso_dates(location_text: str, conn) -> list[str]:
+    """Return the distinct ISO dates (YYYY-MM-DD) of entries at this location.
+
+    Args:
+        location_text: Raw location string from ``entries.location``.
+        conn: SQLite connection (read-only usage).
+
+    Returns:
+        List of ISO date strings, one per distinct entries.date_str that
+        converts cleanly. Unparseable / partial dates are skipped.
+    """
+    date_rows = conn.execute(
+        "SELECT DISTINCT date_str FROM entries WHERE location = ? AND date_str != ''",
+        (location_text,),
+    ).fetchall()
+    isos = []
+    for row in date_rows:
+        iso = _entry_date_to_iso(row["date_str"])
+        if iso is not None:
+            isos.append(iso)
+    return isos
+
+
 def _get_performance_location_string(location_text: str, conn) -> str | None:
     """Return a structured geocoding string from dylan_performances for this location.
 
@@ -97,15 +123,7 @@ def _get_performance_location_string(location_text: str, conn) -> str | None:
         Structured geocoding string (e.g. ``"Massey Hall, Toronto, ON, Canada"``),
         or ``None`` if no matching performance exists.
     """
-    date_rows = conn.execute(
-        "SELECT DISTINCT date_str FROM entries WHERE location = ? AND date_str != ''",
-        (location_text,),
-    ).fetchall()
-
-    for row in date_rows:
-        iso = _entry_date_to_iso(row["date_str"])
-        if iso is None:
-            continue
+    for iso in _entries_iso_dates(location_text, conn):
         perf = conn.execute(
             "SELECT venue, city, state, country FROM dylan_performances WHERE date_str = ?",
             (iso,),
@@ -120,6 +138,81 @@ def _get_performance_location_string(location_text: str, conn) -> str | None:
             return ", ".join(parts)
 
     return None
+
+
+def _get_bobdylan_shows_location_string(location_text: str, conn) -> str | None:
+    """Return a structured geocoding string from bobdylan_shows for this location.
+
+    Scans all distinct date_str values in entries that share this location, converts
+    each to ISO format, and checks bobdylan_shows for a match.  On the first hit,
+    builds a comma-joined ``"venue, location"`` string (blank parts dropped) and
+    returns it — ``bobdylan_shows.location`` is already a ``"City, ST"``-style string.
+    Returns ``None`` if no show record matches.
+
+    Args:
+        location_text: Raw location string from ``entries.location``.
+        conn: SQLite connection (read-only usage).
+
+    Returns:
+        Structured geocoding string (e.g. ``"The Purple Onion, St. Paul, MN"``),
+        or ``None`` if no matching show exists.
+    """
+    for iso in _entries_iso_dates(location_text, conn):
+        show = conn.execute(
+            "SELECT venue, location FROM bobdylan_shows WHERE date_str = ?",
+            (iso,),
+        ).fetchone()
+        if show is None:
+            continue
+        parts = [p for p in (show["venue"], show["location"]) if p and p.strip()]
+        if parts:
+            return ", ".join(parts)
+
+    return None
+
+
+def _get_setlistfm_location_string(location_text: str, conn) -> str | None:
+    """Return a structured geocoding string from setlistfm_shows for this location.
+
+    Scans all distinct date_str values in entries that share this location, converts
+    each to ISO format, and checks setlistfm_shows for a match.  On the first hit,
+    builds a comma-joined ``"venue_name, city, country"`` string (blank parts dropped)
+    and returns it.  Returns ``None`` if no setlist record matches.
+
+    Args:
+        location_text: Raw location string from ``entries.location``.
+        conn: SQLite connection (read-only usage).
+
+    Returns:
+        Structured geocoding string (e.g. ``"Thalia Mara Hall, Jackson, United States"``),
+        or ``None`` if no matching setlist exists.
+    """
+    for iso in _entries_iso_dates(location_text, conn):
+        show = conn.execute(
+            "SELECT venue_name, city, country FROM setlistfm_shows WHERE date_str = ?",
+            (iso,),
+        ).fetchone()
+        if show is None:
+            continue
+        parts = [
+            p for p in (show["venue_name"], show["city"], show["country"])
+            if p and p.strip()
+        ]
+        if parts:
+            return ", ".join(parts)
+
+    return None
+
+
+# Structured-source lookups tried in priority order before falling back to the
+# raw entries.location text. The key becomes location_geocoded.source on a hit.
+# bobdylan_shows is the most standardized (curated "City, ST" location strings),
+# setlistfm_shows is the backup, and dylan_performances is the last resort.
+_STRUCTURED_SOURCES = (
+    ("bobdylan_shows", _get_bobdylan_shows_location_string),
+    ("setlistfm_shows", _get_setlistfm_location_string),
+    ("performances", _get_performance_location_string),
+)
 
 
 # ---------------------------------------------------------------------------
@@ -265,10 +358,12 @@ def run_batch(
     ``location_geocoded`` (or whose ``source='failed'`` when ``retry_failed``
     is True).  Rows with ``manual_override=1`` are always skipped.
 
-    For each location, the dylan_performances table is checked first: if any
-    entry with that location has a matching performance record (by ISO date),
-    the structured ``venue, city, state, country`` string is used as the
-    Nominatim query and the result is stored with ``source='performances'``.
+    For each location, three structured sources are checked in priority order:
+    bobdylan_shows (most standardized), then setlistfm_shows, then
+    dylan_performances as a last resort. If any entry with that location has
+    a matching record (by ISO date) in one of these tables, the structured
+    venue/city/state/country string is used as the Nominatim query and the
+    result is stored with ``source`` set to the matching table name.
     Otherwise the raw ``entries.location`` text is geocoded as before.
 
     Sleeps 1.1 seconds between each Nominatim request to comply with the
@@ -339,14 +434,22 @@ def run_batch(
                 _progress["current"] = location_text
                 _progress["stage"] = "querying"
 
-            # Check dylan_performances for a structured location string first.
-            # If a matching performance exists, geocode that structured string
-            # (venue, city, state, country) rather than the raw LB metadata text.
-            perf_query = _get_performance_location_string(location_text, conn)
-            if perf_query:
-                geocode_input = perf_query
+            # Check structured sources in priority order (dylan_performances,
+            # bobdylan_shows, setlistfm_shows) for a matching venue/city string.
+            # If one is found, geocode that structured string rather than the
+            # raw LB metadata text.
+            structured_query = None
+            matched_source = None
+            for source_name, lookup_fn in _STRUCTURED_SOURCES:
+                structured_query = lookup_fn(location_text, conn)
+                if structured_query:
+                    matched_source = source_name
+                    break
+
+            if structured_query:
+                geocode_input = structured_query
                 logger.debug(
-                    "Performances hit for %r → geocoding %r", location_text, perf_query
+                    "%s hit for %r → geocoding %r", matched_source, location_text, structured_query
                 )
             else:
                 geocode_input = location_text
@@ -382,13 +485,13 @@ def run_batch(
                             "note": f"HTTP 429: rate-limited after {_MAX_429_RETRIES} retries",
                         }
 
-            # When performances table supplied the query, override the source flag
+            # When a structured source supplied the query, override the source flag
             # and record the structured query in note for provenance.
             # Also promote 'low' confidence to 'medium': Nominatim importance scores
             # penalise specific venues even when the structured query is accurate.
-            if perf_query and result.get("source") == "nominatim":
-                result["source"] = "performances"
-                result["note"] = f"performances: {perf_query}"
+            if structured_query and result.get("source") == "nominatim":
+                result["source"] = matched_source
+                result["note"] = f"{matched_source}: {structured_query}"
                 if result.get("confidence") == "low":
                     result["confidence"] = "medium"
 
@@ -400,7 +503,7 @@ def run_batch(
                 _loc = location_text
                 _r = result
                 get_write_queue().execute(
-                    lambda c: c.execute(
+                    lambda c, _loc=_loc, _r=_r: c.execute(
                         """INSERT INTO location_geocoded
                                (location_text, lat, lon, source, confidence, display_name,
                                 manual_override, note, geocoded_at)

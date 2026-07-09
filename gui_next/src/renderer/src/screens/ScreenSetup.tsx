@@ -1161,7 +1161,6 @@ const [dbStats, setDbStats] = useState<DbStats | null>(null)
     { label: t('setup.purges.lookupHistory'),    desc: t('setup.purges.lookupHistoryDesc'),    unit: t('setup.purges.lookupHistoryUnit'),    endpoint: '/api/rename_history/purge', statKey: 'lookup_history' },
     { label: t('setup.purges.importLog'),        desc: t('setup.purges.importLogDesc'),        unit: t('setup.purges.importLogUnit'),        endpoint: '/api/flat_file/purge',      statKey: 'import_log' },
     { label: t('setup.purges.scraperCache'),     desc: t('setup.purges.scraperCacheDesc'),     unit: t('setup.purges.scraperCacheUnit'),     endpoint: '/api/scraper/purge',        statKey: 'scraper_cache' },
-    { label: t('setup.purges.fingerprintCache'), desc: t('setup.purges.fingerprintCacheDesc'), unit: t('setup.purges.fingerprintCacheUnit'), endpoint: '/api/fingerprint/purge',    statKey: 'fingerprint_cache' },
   ]
 
   const ALL_USER_DATA_ITEM: PurgeItem = {
@@ -1171,7 +1170,7 @@ const [dbStats, setDbStats] = useState<DbStats | null>(null)
     statKey: 'all_user_data',
     endpoint: [
       '/api/rename_history/purge', '/api/flat_file/purge',
-      '/api/scraper/purge', '/api/fingerprint/purge',
+      '/api/scraper/purge',
       '/api/collection/purge?scope=collection',
       '/api/collection/purge?scope=wishlist',
       '/api/collection/purge?scope=personal_meta',

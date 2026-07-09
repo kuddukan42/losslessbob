@@ -48,7 +48,6 @@
       "attachments": "Attachments",
       "spectrograms": "Spectrograms",
       "map": "Map",
-      "fingerprint": "Fingerprint",
       "curator": "Curator",
       "curatorBadge": "CURATOR",
       "dbeditor": "DB Editor",
@@ -713,9 +712,6 @@
       "diskPath": "Disk path",
       "size": "Size",
       "confirmed": "Confirmed",
-      "fingerprinted": "Fingerprinted",
-      "fingerprintedYes": "Yes · acoustid",
-      "fingerprintedNo": "No",
       "archRating": "Arch. Rating",
       "myRating": "My Rating",
       "perFive": "/ 5",
@@ -817,9 +813,6 @@
       "queuedScrape": "Queued scrape for {{lb}}",
       "scrapeFailed": "Scrape failed",
       "scrapeRequestFailed": "Scrape request failed",
-      "fingerprinting": "Fingerprinting {{lb}}…",
-      "fingerprintFailed": "Fingerprint failed",
-      "fingerprintRequestFailed": "Fingerprint request failed",
       "vlcNotFound": "VLC not found on this system",
       "vlcRequestFailed": "VLC request failed",
       "spectrogramFailed": "Spectrogram failed",
@@ -945,9 +938,6 @@
       "scraperCache": "Scraper cache",
       "scraperCacheDesc": "Cached detail-page HTML",
       "scraperCacheUnit": "pages",
-      "fingerprintCache": "Fingerprint cache",
-      "fingerprintCacheDesc": "Audio fingerprint blobs",
-      "fingerprintCacheUnit": "blobs",
       "allUserData": "Purge all user data",
       "allUserDataDesc": "Collection, wishlist, ratings, alerts & logs — not reversible.",
       "purge": "Purge",
@@ -1114,64 +1104,6 @@
       "notValid": "Not a valid theme file",
       "imported": "Theme imported",
       "parseFailed": "Failed to parse theme file"
-    }
-  },
-  "fingerprint": {
-    "configure": {
-      "title": "Configure",
-      "subtitle": "Find collection entries for a date, then identify your audio against them",
-      "date": "Performance date",
-      "findEntries": "Find entries",
-      "finding": "Finding…",
-      "found": "Found {{count}} LB entries for this date — {{withPath}} have disk paths.",
-      "noEntries": "No collection entries found for this date.",
-      "userFolder": "Your mystery folder",
-      "noFolderSelected": "No folder selected",
-      "browse": "Browse",
-      "match": "Run Match",
-      "matchHint": "Select a date with disk-path entries and a mystery folder to begin"
-    },
-    "entries": {
-      "lb": "LB#",
-      "location": "Location",
-      "folder": "Folder",
-      "onDisk": "On disk",
-      "yes": "Yes",
-      "no": "No"
-    },
-    "progress": {
-      "phase1": "Phase 1 — Building LB fingerprints",
-      "phase2": "Phase 2 — Identifying your files",
-      "files": "{{done}} / {{total}} files",
-      "current": "{{name}}",
-      "stop": "Stop"
-    },
-    "results": {
-      "title": "Results",
-      "filesIdentified": "files",
-      "yourFile": "Your file",
-      "bestMatch": "Best match LB",
-      "location": "Location",
-      "score": "Score",
-      "confident": "Confident",
-      "noMatch": "No match",
-      "yes": "Yes",
-      "no": "No",
-      "errors": "{{count}} file(s) could not be identified",
-      "noResults": "No files were identified — the mystery folder may be empty or contain no supported audio.",
-      "cleanup": "Clean up fingerprint data"
-    },
-    "toast": {
-      "noPath": "No collection entries with disk paths found for this date.",
-      "loadFailed": "Failed to load collection entries.",
-      "pickFailed": "Could not open folder picker.",
-      "buildFailed": "Failed to start fingerprint build.",
-      "identifyFailed": "Failed to start file identification.",
-      "stopped": "Stopped.",
-      "done": "Match complete.",
-      "cleanupDone": "Fingerprint data purged.",
-      "cleanupFailed": "Cleanup failed.",
-      "noEntries": "No collection entries found for {{date}}."
     }
   },
   "dbeditor": {

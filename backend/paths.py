@@ -23,7 +23,6 @@ def _app_root() -> Path:
 APP_ROOT = _app_root()
 DATA_DIR = APP_ROOT / "data"
 DB_PATH    = DATA_DIR / "losslessbob.db"
-FP_DB_PATH           = DATA_DIR / "fingerprints.db"
 BATCH_VERIFY_DB_PATH = DATA_DIR / "batch_verify.db"
 TORRENTS_DIR = DATA_DIR / "torrents"
 LOGS_DIR = DATA_DIR / "logs"

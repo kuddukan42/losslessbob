@@ -16,7 +16,7 @@ const BASE = window.api.flaskBase
 // ── Types ─────────────────────────────────────────────────────────────────────
 
 type CollectionStatus = 'Public' | 'Private' | 'New' | 'Missing'
-type FilterKey = 'all' | 'public' | 'private' | 'missing' | 'wishlist' | 'duplicates' | 'forum' | 'torrent' | 'unconfirmed' | 'nofp' | 'forum_global' | 'torrent_global'
+type FilterKey = 'all' | 'public' | 'private' | 'missing' | 'wishlist' | 'duplicates' | 'forum' | 'torrent' | 'unconfirmed' | 'forum_global' | 'torrent_global'
 type ColKey = 'status' | 'type' | 'date' | 'location' | 'folder' | 'diskPath' | 'notes' | 'confirmed'
 
 const ALL_COLS: ColKey[] = ['status', 'type', 'date', 'location', 'folder', 'diskPath', 'notes', 'confirmed']
@@ -111,7 +111,6 @@ interface CollectionRow {
   diskPath: string
   notes: string
   confirmed: string
-  fingerprinted: boolean
   title: string
   discs: number
   size: string
@@ -143,7 +142,7 @@ const SAMPLE_DATA: CollectionRow[] = [
     location: "Earl's Court, London, UK",
     folder: 'LB-00018 1981-06-29 Earls Court London',
     diskPath: '/media/dylan/archive/LB-00018 1981-06-29 Earls Court London',
-    notes: '', confirmed: '2024-03-15', fingerprinted: true, title: "Earl's Court Night 1",
+    notes: '', confirmed: '2024-03-15', title: "Earl's Court Night 1",
     discs: 2, size: '1.4 GB', rating: 'A', wishlist: false, wishlistPriority: null, wishlistNotes: '', wishlistAddedAt: '',
     isDuplicate: false, isXref: false, linkedLbs: [],
     historyTorrents: [{ date: '2024-01-10', filename: 'LB-00018.torrent', kind: 'In qBt' }],
@@ -155,7 +154,7 @@ const SAMPLE_DATA: CollectionRow[] = [
     location: 'Royal Albert Hall, London, UK',
     folder: 'LB-00042 1966-05-26 Royal Albert Hall London',
     diskPath: '/media/dylan/archive/LB-00042 1966-05-26 Royal Albert Hall London',
-    notes: '', confirmed: '2024-02-01', fingerprinted: true, title: 'Royal Albert Hall 1966',
+    notes: '', confirmed: '2024-02-01', title: 'Royal Albert Hall 1966',
     discs: 2, size: '890 MB', rating: 'A+', wishlist: false, wishlistPriority: null, wishlistNotes: '', wishlistAddedAt: '',
     isDuplicate: false, isXref: true, linkedLbs: [],
     historyTorrents: [{ date: '2023-12-01', filename: 'LB-00042.torrent', kind: 'Local' }],
@@ -166,7 +165,7 @@ const SAMPLE_DATA: CollectionRow[] = [
     location: 'Isle of Wight Festival, UK',
     folder: 'LB-01001 1970-08-31 Isle of Wight',
     diskPath: '/media/dylan/imports/LB-01001 1970-08-31 Isle of Wight',
-    notes: '', confirmed: '', fingerprinted: false, title: 'Isle of Wight 1970',
+    notes: '', confirmed: '', title: 'Isle of Wight 1970',
     discs: 1, size: '620 MB', rating: 'B+', wishlist: false, wishlistPriority: null, wishlistNotes: '', wishlistAddedAt: '',
     isDuplicate: false, isXref: false, linkedLbs: [],
     historyTorrents: [], historyForum: [], category: 'concert',
@@ -176,7 +175,7 @@ const SAMPLE_DATA: CollectionRow[] = [
     location: 'Madison Square Garden, New York, NY',
     folder: 'LB-05421 1974-01-30 Madison Square Garden',
     diskPath: '/media/dylan/archive/LB-05421 1974-01-30 Madison Square Garden',
-    notes: '', confirmed: '2024-01-05', fingerprinted: true, title: 'Before The Flood Night 1',
+    notes: '', confirmed: '2024-01-05', title: 'Before The Flood Night 1',
     discs: 2, size: '1.8 GB', rating: 'A', wishlist: false, wishlistPriority: null, wishlistNotes: '', wishlistAddedAt: '',
     isDuplicate: true, isXref: false, linkedLbs: [],
     historyTorrents: [{ date: '2024-01-05', filename: 'LB-05421.torrent', kind: 'In qBt' }],
@@ -186,7 +185,7 @@ const SAMPLE_DATA: CollectionRow[] = [
   {
     lbNumber: 'LB-05422', lbNumberInt: 5422, status: 'Missing', date: '02/03/74',
     location: 'Forum, Los Angeles, CA', folder: '', diskPath: '', notes: '', confirmed: '',
-    fingerprinted: false, title: 'Before The Flood Night 2',
+    title: 'Before The Flood Night 2',
     discs: 2, size: '', rating: '', wishlist: true, wishlistPriority: 3, wishlistNotes: '', wishlistAddedAt: '2024-01-01',
     isDuplicate: false, isXref: false, linkedLbs: [],
     historyTorrents: [], historyForum: [], category: null,
@@ -1227,9 +1226,6 @@ function DetailPanel({ row, historyTab, onHistoryTab, onClose, onReveal, onRegen
     [t('collection.detail.diskPath'),     <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)' }}>{row.diskPath || '—'}</span>],
     [t('collection.detail.size'),          <span style={{ fontFamily: 'var(--lbb-mono)' }}>{row.size || '—'}</span>],
     [t('collection.detail.confirmed'),     <span style={{ fontFamily: 'var(--lbb-mono)' }}>{row.confirmed || '—'}</span>],
-    [t('collection.detail.fingerprinted'), row.fingerprinted
-      ? <Pill tone="ok" soft>{t('collection.detail.fingerprintedYes')}</Pill>
-      : <Pill tone="mute" soft>{t('collection.detail.fingerprintedNo')}</Pill>],
     [t('collection.detail.archRating'),  row.rating
       ? <Pill tone="ok" soft>{row.rating}</Pill>
       : <span style={{ color: 'var(--lbb-fg3)' }}>—</span>],
@@ -1909,9 +1905,6 @@ export function ScreenCollection(): React.JSX.Element {
       return
     }
 
-    const fpMap: Record<string, number> =
-      prefetch.fingerprints && !prefetch.fingerprints.error ? prefetch.fingerprints : {}
-
     const wishlistMap = new Map<number, { priority: number | null; notes: string; added_at: string }>(
       Array.isArray(prefetch.wishlist)
         ? prefetch.wishlist.map((w: any) => [
@@ -1984,7 +1977,6 @@ export function ScreenCollection(): React.JSX.Element {
         diskPath:    c.disk_path ?? '',
         notes:       c.notes ?? '',
         confirmed:   c.confirmed_at ?? '',
-        fingerprinted: (fpMap[String(lb)] ?? 0) > 0,
         title:       c.description ?? '',
         discs:       parseInt(c.cdr ?? '0') || 0,
         size:        '',
@@ -2066,14 +2058,12 @@ export function ScreenCollection(): React.JSX.Element {
     forum:       rows.filter(r => r.historyForum.length > 0).length,
     torrent:     rows.filter(r => r.historyTorrents.length > 0).length,
     unconfirmed: rows.filter(r => !r.confirmed).length,
-    nofp:        rows.filter(r => !r.fingerprinted).length,
     not_owned:      filteredMissingRows.length,
     forum_global:   rawForumPosts.length,
     torrent_global: rawTorrentRecs.length,
   }
 
   const confirmedCount     = rows.filter(r => r.confirmed).length
-  const fingerprintedCount = rows.filter(r => r.fingerprinted).length
 
   const filteredRows = rows.filter(r => {
     switch (filter) {
@@ -2085,7 +2075,6 @@ export function ScreenCollection(): React.JSX.Element {
       case 'forum':       if (r.historyForum.length === 0) return false; break
       case 'torrent':     if (r.historyTorrents.length === 0) return false; break
       case 'unconfirmed': if (r.confirmed) return false; break
-      case 'nofp':        if (r.fingerprinted) return false; break
     }
     if (yearFilter !== null) {
       const y = extractYear(r.date)
@@ -2145,7 +2134,6 @@ export function ScreenCollection(): React.JSX.Element {
       else if (sortCol === 'folder')    { va = a.folder;       vb = b.folder }
       else if (sortCol === 'diskPath')  { va = a.diskPath;     vb = b.diskPath }
       else if (sortCol === 'confirmed') { va = a.confirmed;    vb = b.confirmed }
-      else if (sortCol === 'fp')        { va = a.fingerprinted ? 1 : 0; vb = b.fingerprinted ? 1 : 0 }
       const cmp = typeof va === 'number'
         ? va - (vb as number)
         : String(va).localeCompare(String(vb))
@@ -2489,22 +2477,6 @@ export function ScreenCollection(): React.JSX.Element {
         data.ok !== false ? 'ok' : 'bad',
       )
     } catch { showToast(t('collection.toast.scrapeRequestFailed'), 'bad') }
-  }, [showToast])
-
-  const handleCtxFingerprint = useCallback(async (row: CollectionRow) => {
-    if (!row.diskPath) return
-    try {
-      const resp = await fetch(`${BASE}/api/fingerprint/build`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ folders: [{ disk_path: row.diskPath, lb_number: row.lbNumberInt }] }),
-      })
-      const data = await resp.json()
-      showToast(
-        data.ok ? t('collection.toast.fingerprinting', { lb: row.lbNumber }) : (data.error || t('collection.toast.fingerprintFailed')),
-        data.ok ? 'ok' : 'bad',
-      )
-    } catch { showToast(t('collection.toast.fingerprintRequestFailed'), 'bad') }
   }, [showToast])
 
   const handleCtxVlc = useCallback(async (row: CollectionRow) => {
@@ -3463,11 +3435,6 @@ export function ScreenCollection(): React.JSX.Element {
             {
               label: 'Scrape Entry',
               action: () => handleCtxScrape(ctxMenu.row),
-            },
-            {
-              label: 'Fingerprint Folder',
-              disabled: !ctxMenu.row.diskPath,
-              action: () => handleCtxFingerprint(ctxMenu.row),
             },
             {
               label: 'Play in VLC',
