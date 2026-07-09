@@ -29,8 +29,6 @@
     "search": "Rechercher LB#, dossier, emplacement...",
     "curatorHint": "Maintenance de la base de données principale ?",
     "curatorEnable": "Activer le mode Curator →",
-    "user": "tonnerre.roulant",
-    "userSub": "Local - 4 montages",
     "nav": {
       "home": "Accueil",
       "ingest": "Ingérer",
@@ -65,6 +63,8 @@
       "checksums": "Sommes de contrôle :",
       "lastImport": "Dernière importation :",
       "bootlegs": "Bootlegs :",
+      "collectionSize": "Taille de la collection :",
+      "computing": "Calcul en cours…",
       "synced": "Synchronisé",
       "updateAvailable": "Mise à jour disponible",
       "idle": "Inactif",
@@ -81,7 +81,8 @@
         "updating_app": "Mise à jour de l'application…",
         "downloading_data": "Téléchargement des données…"
       }
-    }
+    },
+    "noWtrfAccount": "Pas de compte WTRF"
   },
   "home": {
     "welcome": "Bienvenue, Rolling",
@@ -90,16 +91,6 @@
     "checkUpdate": "Vérification de la mise à jour de la base de données",
     "checking": "Vérification…",
     "ingestNew": "Intégrer de nouveaux dossiers",
-    "primaryWorkflow": "FLUX DE TRAVAIL PRIMAIRE",
-    "pipelineTagline": "Le pipeline des nouvelles acquisitions",
-    "ingestTitle": "Ingérer de la nouvelle musique",
-    "ingestDesc": "Déposez les dossiers ici - le pipeline exécute <strong>vérification → recherche → renommage → LBDIR → collecter</strong> sur l'ensemble du lot. Plus d'onglets rebondissants.",
-    "dragHere": "Faire glisser les dossiers ici",
-    "orClickBrowse": "ou cliquez pour naviguer",
-    "stepVerify": "Vérifier les sommes de contrôle",
-    "stepLookup": "Recherche LB#",
-    "stepRename": "Renommer le dossier",
-    "stepLbdir": "Vérifier le LBDIR",
     "atAGlance": "En bref",
     "atAGlanceSub": "votre collection dès maintenant",
     "inMyCollection": "dans ma collection",
@@ -1398,6 +1389,7 @@
       "status": "État",
       "date": "Date",
       "location": "Lieu",
+      "taper": "Taper",
       "description": "Description",
       "folder": "Dossier",
       "confirmed": "Confirmé",

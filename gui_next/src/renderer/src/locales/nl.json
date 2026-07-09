@@ -29,8 +29,6 @@
     "search": "LB#, map, locatie zoeken...",
     "curatorHint": "De master-DB onderhouden?",
     "curatorEnable": "Curatormodus inschakelen →",
-    "user": "rollende.donder",
-    "userSub": "Lokaal - 4 steunen",
     "nav": {
       "home": "Home",
       "ingest": "Inlezen",
@@ -65,6 +63,8 @@
       "checksums": "Checksommen:",
       "lastImport": "Laatste invoer:",
       "bootlegs": "Bootlegs:",
+      "collectionSize": "Omvang van de collectie:",
+      "computing": "Bezig met berekenen…",
       "synced": "Gesynchroniseerd",
       "updateAvailable": "Update beschikbaar",
       "idle": "Inactief",
@@ -81,7 +81,8 @@
         "updating_app": "App bijwerken…",
         "downloading_data": "Gegevens downloaden…"
       }
-    }
+    },
+    "noWtrfAccount": "Geen WTRF-account"
   },
   "home": {
     "welcome": "Welkom terug, Rolling",
@@ -90,16 +91,6 @@
     "checkUpdate": "Controleren op DB-update",
     "checking": "Controleren…",
     "ingestNew": "Nieuwe mappen laden",
-    "primaryWorkflow": "PRIMAIRE WORKFLOW",
-    "pipelineTagline": "De pijplijn voor nieuwe aankopen",
-    "ingestTitle": "Nieuwe muziek downloaden",
-    "ingestDesc": "Drop mappen hier - de pijplijn voert <strong>verifiëren → opzoeken → hernoemen → LBDIR → verzamelen</strong> uit op de hele batch. Geen stuiterende tabbladen meer.",
-    "dragHere": "Sleep mappen hierheen",
-    "orClickBrowse": "of klik om te bladeren",
-    "stepVerify": "Controlesommen controleren",
-    "stepLookup": "LB# opzoeken",
-    "stepRename": "Map hernoemen",
-    "stepLbdir": "Controleer LBDIR",
     "atAGlance": "In één oogopslag",
     "atAGlanceSub": "je verzameling nu",
     "inMyCollection": "In Mijn Verzameling",
@@ -1398,6 +1389,7 @@
       "status": "Status",
       "date": "Datum",
       "location": "Locatie",
+      "taper": "Taper",
       "description": "Beschrijving",
       "folder": "Map",
       "confirmed": "Bevestigd",

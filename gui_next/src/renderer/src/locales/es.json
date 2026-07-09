@@ -29,8 +29,6 @@
     "search": "Buscar LB#, carpeta, ubicación...",
     "curatorHint": "¿Mantenimiento de la BD maestra?",
     "curatorEnable": "Activar el modo Conservador →",
-    "user": "trueno.rodante",
-    "userSub": "Local - 4 monturas",
     "nav": {
       "home": "Inicio",
       "ingest": "Ingerir",
@@ -65,6 +63,8 @@
       "checksums": "Sumas de comprobación:",
       "lastImport": "Última importación:",
       "bootlegs": "Bootlegs:",
+      "collectionSize": "Tamaño de la colección:",
+      "computing": "Calculando…",
       "synced": "Sincronizado",
       "updateAvailable": "Actualización disponible",
       "idle": "Inactivo",
@@ -81,7 +81,8 @@
         "updating_app": "Actualizando la aplicación…",
         "downloading_data": "Descargando datos…"
       }
-    }
+    },
+    "noWtrfAccount": "No tengo cuenta en WTRF"
   },
   "home": {
     "welcome": "Bienvenido, Rolling",
@@ -90,16 +91,6 @@
     "checkUpdate": "Comprobación de la actualización de la base de datos",
     "checking": "Comprobando…",
     "ingestNew": "Ingesta de nuevas carpetas",
-    "primaryWorkflow": "FLUJO DE TRABAJO PRIMARIO",
-    "pipelineTagline": "El proceso de nuevas adquisiciones",
-    "ingestTitle": "Ingerir música nueva",
-    "ingestDesc": "Suelte las carpetas aquí y el proceso ejecutará <strong>verificar → buscar → renombrar → LBDIR → recopilar</strong> en todo el lote. Se acabaron las pestañas rebotantes.",
-    "dragHere": "Arrastre las carpetas aquí",
-    "orClickBrowse": "o haga clic para navegar",
-    "stepVerify": "Verificar las sumas de comprobación",
-    "stepLookup": "Buscar LB#",
-    "stepRename": "Cambiar nombre de carpeta",
-    "stepLbdir": "Comprobar LBDIR",
     "atAGlance": "De un vistazo",
     "atAGlanceSub": "su colección ahora mismo",
     "inMyCollection": "en Mi colección",
@@ -1398,6 +1389,7 @@
       "status": "Estado",
       "date": "Fecha",
       "location": "Ubicación",
+      "taper": "Taper",
       "description": "Descripción",
       "folder": "Carpeta",
       "confirmed": "Confirmado",

@@ -62,13 +62,6 @@ function relTime(iso: string | null): string {
   return d.toISOString().slice(0, 10)
 }
 
-const STEP_STRIPS = [
-  { n: 1, label: 'Verify checksums', icon: 'verify' },
-  { n: 2, label: 'Lookup LB#',       icon: 'lookup' },
-  { n: 3, label: 'Rename folder',    icon: 'rename' },
-  { n: 4, label: 'Check LBDIR',      icon: 'lbdir'  },
-]
-
 const JUMP_TILES = [
   { id: 'collection', icon: 'collection', label: 'My Collection'    },
   { id: 'search',     icon: 'search',     label: 'Search master DB' },
@@ -188,142 +181,75 @@ export function ScreenHome(): React.JSX.Element {
         </div>
       </div>
 
-      {/* ── Primary two-column grid ─────────────────────────────────────────── */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1.45fr 1fr', gap: 18, marginBottom: 18 }}>
-
-        {/* Hero ingest card */}
-        <div style={{
-          background: 'linear-gradient(180deg, var(--lbb-accent-soft), var(--lbb-surface))',
-          border: '1px solid var(--lbb-accent-mid)',
-          borderRadius: 12, padding: 22,
-        }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
-            <span style={{
-              fontSize: 'var(--lbb-fs-10)', letterSpacing: 0.14, textTransform: 'uppercase',
-              color: 'var(--lbb-accent-mid)', fontWeight: 700,
-              padding: '2px 7px', borderRadius: 4,
-              background: 'var(--lbb-surface)', border: '1px solid var(--lbb-accent-mid)',
-            }}>{t('home.primaryWorkflow')}</span>
-            <span style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)' }}>{t('home.pipelineTagline')}</span>
+      {/* ── At a glance + Jump to ───────────────────────────────────────────── */}
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18, marginBottom: 18 }}>
+        <Card title={t('home.atAGlance')} subtitle={t('home.atAGlanceSub')} pad={16}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
+            <Stat value={d(stats?.collection_count, '…')} label={t('home.inMyCollection')} />
+            <Stat value={d(stats?.missing_count,    '…')} label={t('home.missingEntries')} />
+            <Stat value={d(stats?.wishlist_count,   '…')} label={t('home.onWishlist')} />
+            <Stat value={d(stats?.bootleg_count,    '…')} label={t('home.bootlegTitles')} />
           </div>
-          <h2 style={{ margin: '2px 0 4px', fontSize: 'var(--lbb-fs-22)', fontWeight: 700, letterSpacing: -0.01 }}>
-            {t('home.ingestTitle')}
-          </h2>
-          <p style={{ margin: '0 0 16px', color: 'var(--lbb-fg2)', fontSize: 'var(--lbb-fs-13-5)', maxWidth: '60ch' }}
-            dangerouslySetInnerHTML={{ __html: t('home.ingestDesc') }}
-          />
-
-          <button
-            type="button"
-            onClick={() => onNav('pipeline')}
-            style={{
-              width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 14,
-              padding: '30px 20px', borderRadius: 10,
-              background: 'var(--lbb-surface)',
-              border: '2px dashed var(--lbb-accent-mid)',
-              color: 'var(--lbb-fg2)', fontSize: 'var(--lbb-fs-13-5)', cursor: 'pointer', fontFamily: 'inherit',
-            }}
-          >
-            <Icon name="folderPlus" size={22} style={{ color: 'var(--lbb-accent-mid)' }} />
+          <div style={{
+            marginTop: 14, padding: '10px 12px', borderRadius: 8,
+            background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
+            display: 'flex', alignItems: 'center', gap: 10, fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)',
+          }}>
+            <Icon name="check" size={13} style={{ color: 'var(--lbb-ok-bar)' }} />
             <span>
-              <strong style={{ color: 'var(--lbb-fg)' }}>{t('home.dragHere')}</strong>
-              {' '}&nbsp;·&nbsp;{' '}{t('home.orClickBrowse')}
+              <strong style={{ color: 'var(--lbb-fg)' }}>
+                {d(stats?.checksum_count, '…')}
+              </strong>{' '}{t('home.checksumsIndexed')}
             </span>
-          </button>
-
-          <div style={{ marginTop: 16, display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 8 }}>
-            {STEP_STRIPS.map(s => (
-              <div key={s.n} style={{
-                display: 'flex', alignItems: 'center', gap: 8,
-                padding: '9px 10px', borderRadius: 8,
-                background: 'var(--lbb-surface)',
-                border: '1px solid var(--lbb-border)',
-              }}>
-                <span style={{
-                  width: 18, height: 18, borderRadius: '50%',
-                  background: 'var(--lbb-accent-mid)', color: 'var(--lbb-accent-onMid)',
-                  display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-                  fontSize: 'var(--lbb-fs-10)', fontWeight: 700, flexShrink: 0,
-                }}>{s.n}</span>
-                <Icon name={s.icon} size={14} style={{ color: 'var(--lbb-fg2)' }} />
-                <span style={{ fontSize: 'var(--lbb-fs-11-5)', fontWeight: 500, color: 'var(--lbb-fg2)' }}>
-                  {s.n === 1 ? t('home.stepVerify') : s.n === 2 ? t('home.stepLookup') : s.n === 3 ? t('home.stepRename') : t('home.stepLbdir')}
-                </span>
-              </div>
-            ))}
           </div>
-        </div>
+        </Card>
 
-        {/* At a glance + Jump to */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-          <Card title={t('home.atAGlance')} subtitle={t('home.atAGlanceSub')} pad={16}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
-              <Stat value={d(stats?.collection_count, '…')} label={t('home.inMyCollection')} />
-              <Stat value={d(stats?.missing_count,    '…')} label={t('home.missingEntries')} />
-              <Stat value={d(stats?.wishlist_count,   '…')} label={t('home.onWishlist')} />
-              <Stat value={d(stats?.bootleg_count,    '…')} label={t('home.bootlegTitles')} />
-            </div>
-            <div style={{
-              marginTop: 14, padding: '10px 12px', borderRadius: 8,
-              background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
-              display: 'flex', alignItems: 'center', gap: 10, fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)',
-            }}>
-              <Icon name="check" size={13} style={{ color: 'var(--lbb-ok-bar)' }} />
-              <span>
-                <strong style={{ color: 'var(--lbb-fg)' }}>
-                  {d(stats?.checksum_count, '…')}
-                </strong>{' '}{t('home.checksumsIndexed')}
-              </span>
-            </div>
-          </Card>
-
-          <Card title={t('home.jumpTo')} pad={14}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
-              {JUMP_TILES.map(tile => {
-                const sub =
-                  tile.id === 'collection' ? d(stats?.collection_count, '…')
-                  : tile.id === 'bootlegs' ? d(stats?.bootleg_count,    '…')
-                  : tile.id === 'search'   ? d(stats?.latest_lb,        '…')
-                  : '—'
-                const tileLabel =
-                  tile.id === 'collection' ? t('home.jumpCollection')
-                  : tile.id === 'search'   ? t('home.jumpSearch')
-                  : tile.id === 'bootlegs' ? t('home.jumpBootlegs')
-                  : t('home.jumpMap')
-                return (
-                  <button
-                    key={tile.id}
-                    type="button"
-                    onClick={() => onNav(tile.id)}
-                    style={{
-                      display: 'flex', alignItems: 'center', gap: 10, padding: '9px 10px',
-                      background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)',
-                      borderRadius: 8, cursor: 'pointer', textAlign: 'left', fontFamily: 'inherit',
-                      color: 'var(--lbb-fg)',
-                    }}
-                    onMouseEnter={e => { e.currentTarget.style.background = 'var(--lbb-surface2)' }}
-                    onMouseLeave={e => { e.currentTarget.style.background = 'var(--lbb-surface)' }}
-                  >
-                    <span style={{
-                      width: 30, height: 30, borderRadius: 7, flexShrink: 0,
-                      background: 'var(--lbb-accent-soft)', color: 'var(--lbb-accent-mid)',
-                      display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-                    }}>
-                      <Icon name={tile.icon} size={15} />
-                    </span>
-                    <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ fontSize: 'var(--lbb-fs-12-5)', fontWeight: 600 }}>{tileLabel}</div>
-                      <div style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)', fontVariantNumeric: 'tabular-nums' }}>
-                        {sub}
-                      </div>
+        <Card title={t('home.jumpTo')} pad={14}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
+            {JUMP_TILES.map(tile => {
+              const sub =
+                tile.id === 'collection' ? d(stats?.collection_count, '…')
+                : tile.id === 'bootlegs' ? d(stats?.bootleg_count,    '…')
+                : tile.id === 'search'   ? d(stats?.latest_lb,        '…')
+                : '—'
+              const tileLabel =
+                tile.id === 'collection' ? t('home.jumpCollection')
+                : tile.id === 'search'   ? t('home.jumpSearch')
+                : tile.id === 'bootlegs' ? t('home.jumpBootlegs')
+                : t('home.jumpMap')
+              return (
+                <button
+                  key={tile.id}
+                  type="button"
+                  onClick={() => onNav(tile.id)}
+                  style={{
+                    display: 'flex', alignItems: 'center', gap: 10, padding: '9px 10px',
+                    background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)',
+                    borderRadius: 8, cursor: 'pointer', textAlign: 'left', fontFamily: 'inherit',
+                    color: 'var(--lbb-fg)',
+                  }}
+                  onMouseEnter={e => { e.currentTarget.style.background = 'var(--lbb-surface2)' }}
+                  onMouseLeave={e => { e.currentTarget.style.background = 'var(--lbb-surface)' }}
+                >
+                  <span style={{
+                    width: 30, height: 30, borderRadius: 7, flexShrink: 0,
+                    background: 'var(--lbb-accent-soft)', color: 'var(--lbb-accent-mid)',
+                    display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+                  }}>
+                    <Icon name={tile.icon} size={15} />
+                  </span>
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <div style={{ fontSize: 'var(--lbb-fs-12-5)', fontWeight: 600 }}>{tileLabel}</div>
+                    <div style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)', fontVariantNumeric: 'tabular-nums' }}>
+                      {sub}
                     </div>
-                    <Icon name="chevRight" size={12} style={{ color: 'var(--lbb-fg3)' }} />
-                  </button>
-                )
-              })}
-            </div>
-          </Card>
-        </div>
+                  </div>
+                  <Icon name="chevRight" size={12} style={{ color: 'var(--lbb-fg3)' }} />
+                </button>
+              )
+            })}
+          </div>
+        </Card>
       </div>
 
       {/* ── Bottom row ─────────────────────────────────────────────────────── */}

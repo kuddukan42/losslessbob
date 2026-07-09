@@ -1,3 +1,28 @@
+[2026-07-09] — feat(gui): TODO-169 + TODO-192 + TODO-168 + TODO-180 — Home/Library/AppShell UI cleanup batch
+Changed: gui_next/src/renderer/src/screens/ScreenHome.tsx: removed the Hero ingest card and the
+  now-dead STEP_STRIPS constant; reflowed "At a glance"/"Jump to" into a 2-column grid to fill
+  the freed width (TODO-169).
+Added: gui_next/src/renderer/src/screens/ScreenLibrary.tsx: taper_name badge inline in the
+  Location column of the recording-lens table, gated by a NON_TAPER_LABELS blocklist (master,
+  sbd, bootleg, soundboard, audience, ald, mixed, incomplete, unknown, n/a) so generic
+  source-type words parsed into taper_name by the free-text parser don't show as fake taper
+  handles. No backend change — /api/search already returns taper_name (TODO-192).
+Added: backend/app.py: GET /api/credentials/wtrf returns the stored WTRF username only (never
+  the password). gui_next/src/renderer/src/components/AppShell.tsx: sidebar identity now shows
+  the real username/initials instead of the hardcoded "rolling.thunder"/"RW", falling back to a
+  new appShell.noWtrfAccount blank-state string when no WTRF credential is configured. Removed
+  the dead appShell.user/userSub locale keys, which were never referenced (TODO-168).
+Added: backend/filer.py: _compute_collection_size()/start_collection_size_scan_async()/
+  get_collection_size_stats() — sums on-disk bytes across all my_collection folders, cached in
+  meta (collection_size_bytes/_folders/_computed_at) and refreshed via a background thread when
+  >24h stale (COLLECTION_SIZE_STALE_HOURS) rather than walking ~16k folders synchronously per
+  request. Wired into GET /api/home/stats as collection_size {bytes, human, folders,
+  computed_at, computing}; surfaced in the AppShell footer stats bar (TODO-180).
+Changed: PROJECT.md: documented the collection_size field on GET /api/home/stats.
+Changed: gui_next/src/renderer/src/locales/{de,fr,es,it,nl}.json: DeepL sync for all new/removed
+  keys above (library.columns.taper, appShell.noWtrfAccount, appShell.statusBar.collectionSize/
+  computing; removed home.* hero-card keys and appShell.user/userSub).
+
 [2026-07-09] — feat(backend): TODO-167 — geocoder pulls structured location from bobdylan_shows/setlistfm_shows
 Changed: backend/geocoder.py: extracted _entries_iso_dates() shared helper; added
   _get_bobdylan_shows_location_string() and _get_setlistfm_location_string(), matching the
