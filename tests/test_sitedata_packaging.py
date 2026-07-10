@@ -1,6 +1,6 @@
-"""Tests for ONBOARDING spec Phase P1: site-data packaging (backend/app.py).
+"""Tests for ONBOARDING spec Phases P1 + P2 (backend/app.py).
 
-Covers (see instructions/FABLE_ONBOARDING_SYNC.md §3):
+Covers P1 (see instructions/FABLE_ONBOARDING_SYNC.md §3):
   - POST /api/package/scrape_data with part=core|files|omitted selects the
     right files from data/site/ into each zip, with omitted staying
     backward-compatible with existing callers (whole-tree zip).
@@ -10,17 +10,31 @@ Covers (see instructions/FABLE_ONBOARDING_SYNC.md §3):
   - POST /api/sitedata/github_release is curator-gated (smoke only — no
     network/gh CLI calls happen before the 403).
 
+Covers P2 (§3 item 3 + §4):
+  - GET /api/sitedata/github_check pairs collision-suffixed asset names
+    (e.g. losslessbob_sitedata_core_2026-07-10_2.zip) with their
+    .manifest.json sidecars, per part.
+  - POST /api/sitedata/github_install verifies SHA256 before extraction —
+    a mismatch errors out and leaves SITE_DIR untouched.
+  - /api/package/restore's site-extraction path accepts the new
+    sitedata_core/sitedata_files manifest types.
+  - GET /api/onboarding/status shape + complete logic, empty vs populated DB.
+
 All tests build a throwaway data/ dir (temp) with a fake site/ tree and
 redirect backend.app's module-level path constants + backend.paths.DB_PATH
-so nothing touches the real data/ directory or a real DB.
+so nothing touches the real data/ directory or a real DB. P2's GitHub calls
+are mocked via unittest.mock.patch("requests.get", ...) — no network reached.
 """
 
 import hashlib
+import io
 import json
 import shutil
+import sqlite3
 import tempfile
 import zipfile
 from pathlib import Path
+from unittest.mock import MagicMock, patch
 
 
 def _make_site_tree() -> Path:
@@ -284,6 +298,257 @@ def test_sitedata_github_release_requires_curator():
             r = client.post("/api/sitedata/github_release")
             assert r.status_code == 403
             assert r.get_json().get("error") == "curator_required"
+        finally:
+            restore()
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+# ---------------------------------------------------------------------------
+# P2: /api/sitedata/github_check + github_install (mocked GitHub)
+# ---------------------------------------------------------------------------
+
+_CORE_ZIP_NAME = "losslessbob_sitedata_core_2026-07-10_2.zip"
+_CORE_ZIP_URL = "https://dl.example/core.zip"
+_CORE_MANIFEST_URL = "https://dl.example/core.zip.manifest.json"
+
+
+def _make_sitedata_zip_bytes(entries: dict[str, str]) -> bytes:
+    """Build an in-memory site/-prefixed zip from {relative_path: text}."""
+    buf = io.BytesIO()
+    with zipfile.ZipFile(buf, "w") as zf:
+        for rel, text in entries.items():
+            zf.writestr(f"site/{rel}", text)
+    return buf.getvalue()
+
+
+def _core_release_assets(zip_bytes: bytes) -> list[dict]:
+    return [
+        {"name": _CORE_ZIP_NAME, "size": len(zip_bytes),
+         "browser_download_url": _CORE_ZIP_URL},
+        {"name": _CORE_ZIP_NAME + ".manifest.json", "size": 200,
+         "browser_download_url": _CORE_MANIFEST_URL},
+    ]
+
+
+def _mock_github_get(assets: list[dict], downloads: dict):
+    """Build a requests.get side_effect serving a fake GitHub Releases API.
+
+    Args:
+        assets: asset dicts for a single sitedata-2026-07-10 release.
+        downloads: browser_download_url -> dict (JSON body) or bytes
+            (streamed zip content).
+    """
+    release = {
+        "tag_name": "sitedata-2026-07-10",
+        "html_url": "https://github.com/x/y/releases/tag/sitedata-2026-07-10",
+        "published_at": "2026-07-10T00:00:00Z",
+        "assets": assets,
+    }
+
+    def _get(url, **_kwargs):
+        resp = MagicMock()
+        resp.status_code = 200
+        resp.raise_for_status.return_value = None
+        if "api.github.com" in url:
+            resp.json.return_value = [release]
+            return resp
+        payload = downloads[url]
+        if isinstance(payload, bytes):
+            resp.iter_content = lambda chunk_size: iter(
+                payload[i:i + chunk_size] for i in range(0, len(payload), chunk_size)
+            )
+        else:
+            resp.json.return_value = payload
+        return resp
+
+    return _get
+
+
+def _sse_events(raw: str) -> list[dict]:
+    """Parse 'data: {...}' lines out of an SSE response body."""
+    return [json.loads(line[len("data: "):])
+            for line in raw.splitlines() if line.startswith("data: ")]
+
+
+def test_github_check_pairs_collision_suffixed_assets():
+    """github_check must match _core_/_files_ zips by substring (GitHub adds
+    a numeric collision suffix), pair each with its .manifest.json sidecar,
+    and omit parts whose sidecar is missing."""
+    zip_bytes = _make_sitedata_zip_bytes({"detail/1.html": "x"})
+    manifest = {"type": "sitedata_core",
+                "sha256": hashlib.sha256(zip_bytes).hexdigest(), "file_count": 1}
+    # files part zip present but WITHOUT a manifest sidecar → must be omitted.
+    assets = _core_release_assets(zip_bytes) + [
+        {"name": "losslessbob_sitedata_files_2026-07-10.zip", "size": 10,
+         "browser_download_url": "https://dl.example/files.zip"},
+    ]
+    tmp = _make_site_tree()
+    try:
+        db_path = _make_db(tmp)
+        client, restore = _app_client(tmp, db_path)
+        try:
+            with patch("requests.get",
+                       side_effect=_mock_github_get(assets, {_CORE_MANIFEST_URL: manifest})):
+                r = client.get("/api/sitedata/github_check")
+            assert r.status_code == 200
+            data = r.get_json()
+            assert data["available"] is True
+            assert data["tag"] == "sitedata-2026-07-10"
+            core = data["parts"]["core"]
+            assert core["asset_name"] == _CORE_ZIP_NAME
+            assert core["asset_size"] == len(zip_bytes)
+            assert core["manifest"] == manifest
+            assert "files" not in data["parts"]
+        finally:
+            restore()
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def test_github_install_sha_mismatch_leaves_site_untouched():
+    """A manifest/zip SHA256 mismatch must error out before extraction and
+    delete the downloaded zip."""
+    zip_bytes = _make_sitedata_zip_bytes({"detail/999.html": "new"})
+    manifest = {"type": "sitedata_core", "sha256": "0" * 64, "file_count": 1}
+    tmp = _make_site_tree()
+    try:
+        db_path = _make_db(tmp)
+        client, restore = _app_client(tmp, db_path)
+        try:
+            with patch("requests.get", side_effect=_mock_github_get(
+                    _core_release_assets(zip_bytes),
+                    {_CORE_MANIFEST_URL: manifest, _CORE_ZIP_URL: zip_bytes})):
+                r = client.post("/api/sitedata/github_install", json={"parts": ["core"]})
+                events = _sse_events(r.get_data(as_text=True))
+            assert events[-1]["type"] == "error"
+            assert events[-1]["error"] == "sha256_mismatch"
+            assert not (tmp / "site" / "detail" / "999.html").exists()
+            assert not (tmp / "imports" / _CORE_ZIP_NAME).exists()
+            assert not (tmp / "site" / ".sitedata_core_manifest.json").exists()
+        finally:
+            restore()
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def test_github_install_success_extracts_and_writes_marker():
+    zip_bytes = _make_sitedata_zip_bytes({"detail/999.html": "new",
+                                          "detail/12345.html": "overwrite"})
+    manifest = {"type": "sitedata_core",
+                "sha256": hashlib.sha256(zip_bytes).hexdigest(), "file_count": 2}
+    tmp = _make_site_tree()
+    try:
+        db_path = _make_db(tmp)
+        client, restore = _app_client(tmp, db_path)
+        try:
+            with patch("requests.get", side_effect=_mock_github_get(
+                    _core_release_assets(zip_bytes),
+                    {_CORE_MANIFEST_URL: manifest, _CORE_ZIP_URL: zip_bytes})):
+                r = client.post("/api/sitedata/github_install", json={"parts": ["core"]})
+                events = _sse_events(r.get_data(as_text=True))
+            assert events[-1]["type"] == "done"
+            part = events[-1]["summary"]["parts"]["core"]
+            # detail/999.html is new; detail/12345.html pre-exists in the fixture.
+            assert part["restored"] == 1
+            assert part["conflicts"] == 1
+            assert (tmp / "site" / "detail" / "999.html").read_text() == "new"
+            assert (tmp / "site" / "detail" / "12345.html").read_text() == "overwrite"
+            marker = tmp / "site" / ".sitedata_core_manifest.json"
+            assert json.loads(marker.read_text()) == manifest
+        finally:
+            restore()
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def test_github_install_invalid_part_400():
+    tmp = _make_site_tree()
+    try:
+        db_path = _make_db(tmp)
+        client, restore = _app_client(tmp, db_path)
+        try:
+            r = client.post("/api/sitedata/github_install", json={"parts": ["bogus"]})
+            assert r.status_code == 400
+            assert r.get_json()["error"] == "invalid_part"
+        finally:
+            restore()
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+# ---------------------------------------------------------------------------
+# P2: /api/package/restore accepts sitedata_core/sitedata_files manifest types
+# ---------------------------------------------------------------------------
+
+def test_restore_accepts_sitedata_manifest_types():
+    tmp = _make_site_tree()
+    try:
+        db_path = _make_db(tmp)
+        zp = tmp / "core_pkg.zip"
+        with zipfile.ZipFile(zp, "w") as zf:
+            zf.writestr("manifest.json", json.dumps({"type": "sitedata_core"}))
+            zf.writestr("site/detail/777.html", "restored")
+        client, restore = _app_client(tmp, db_path)
+        try:
+            r = client.post("/api/package/restore", json={"zip_path": str(zp)})
+            assert r.status_code == 200
+            data = r.get_json()
+            assert data["ok"] is True
+            assert data["type"] == "sitedata_core"
+            assert (tmp / "site" / "detail" / "777.html").read_text() == "restored"
+        finally:
+            restore()
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+# ---------------------------------------------------------------------------
+# P2: /api/onboarding/status
+# ---------------------------------------------------------------------------
+
+def test_onboarding_status_empty_db():
+    tmp = _make_site_tree()
+    try:
+        db_path = _make_db(tmp)
+        client, restore = _app_client(tmp, db_path)
+        try:
+            r = client.get("/api/onboarding/status")
+            assert r.status_code == 200
+            data = r.get_json()
+            assert data["entries_count"] == 0
+            assert data["master_version"] is None
+            # fixture tree has site/detail/ + 2 files in site/files/
+            assert data["sitedata_core_present"] is True
+            assert data["sitedata_files_count"] == 2
+            assert data["mounts_configured"] is False
+            assert data["collection_count"] == 0
+            assert data["complete"] is False
+        finally:
+            restore()
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def test_onboarding_status_complete_when_populated():
+    tmp = _make_site_tree()
+    try:
+        db_path = _make_db(tmp)
+        conn = sqlite3.connect(db_path)
+        conn.execute("INSERT INTO entries(lb_number) VALUES (1)")
+        conn.execute("INSERT OR REPLACE INTO meta(key, value) VALUES ('master_version', '1.2.0')")
+        conn.execute("INSERT INTO collection_mounts(label, root_path) VALUES ('main', '/mnt/x')")
+        conn.commit()
+        conn.close()
+        client, restore = _app_client(tmp, db_path)
+        try:
+            r = client.get("/api/onboarding/status")
+            assert r.status_code == 200
+            data = r.get_json()
+            assert data["entries_count"] == 1
+            assert data["master_version"] == "1.2.0"
+            assert data["mounts_configured"] is True
+            assert data["complete"] is True
         finally:
             restore()
     finally:
