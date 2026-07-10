@@ -1,3 +1,22 @@
+[2026-07-10] — feat(backend): ONBOARDING P2 — sitedata github_check/github_install + onboarding/status (spec §3–§4; commit a9759209; closes TODO-216)
+Added: backend/app.py: GET /api/sitedata/github_check — latest sitedata-* release, per-part
+  (core/files) zip discovery by _core_/_files_ substring (collision-suffix tolerant, per P1's
+  _2 core asset) paired with .manifest.json sidecars; parts missing a sidecar are omitted.
+Added: backend/app.py: POST /api/sitedata/github_install (SSE, same event shapes as master
+  install) — body {parts:[core|files]}, default core; downloads to data/imports/, verifies
+  SHA256 against manifest BEFORE extraction (mismatch deletes zip + errors, site dir
+  untouched), extracts into data/site/ via shared _restore_sitedata_zip (clean overwrite),
+  writes .sitedata_<part>_manifest.json marker for cheap status reads.
+Added: backend/app.py: GET /api/onboarding/status — {entries_count, master_version,
+  sitedata_core_present, sitedata_files_count, mounts_configured, collection_count, complete};
+  complete = entries ∧ master_version ∧ ≥1 mount. Live-verified: 63 ms (<100 ms spec target),
+  github_check pairs both parts of the real sitedata-2026-07-10 release.
+Changed: backend/app.py: /api/package/restore site-extraction path deduped into
+  _restore_sitedata_zip; embedded-manifest types sitedata_core/sitedata_files now accepted.
+Added: tests/test_sitedata_packaging.py: 7 P2 tests (mocked GitHub releases API + SSE stream
+  parsing: check pairing, sha mismatch aborts pre-extraction, success + marker, invalid part,
+  restore manifest types, onboarding status empty/populated) — 15/15 pass.
+
 [2026-07-10] — feat(backend): ONBOARDING P1 — site-data split packaging + first sitedata GitHub release (spec §3; commit 55501726)
 Added: backend/app.py: _package_site_data(part) — core (everything but files/) / files (files/
   only) / None (legacy whole-tree) zips of data/site/ with .manifest.json sidecars (type,

@@ -838,11 +838,14 @@ scheduled scan interval, checked hourly by `scheduler._integrity_scan_worker`.
 | GET  | `/api/master/github_check` | Queries `kuddukan42/losslessbob`'s latest GitHub release, downloads its `.manifest.json` sidecar, and compares `master_version` against the local `meta` table. Returns `{available, tag, remote_version, remote_published_at, local_version, local_published_at, asset_name, asset_size, release_url}`, or `{available: false, message}` if no usable release exists. |
 | POST | `/api/master/github_install` | `text/event-stream`. Downloads the latest master `.db` + `.manifest.json` from GitHub Releases into `data/imports/`, verifies SHA256, and applies via `import_master_db()`. Events: `progress` (`label`, `pct`), `done` (`summary`), `error` (`error`, `message`) — same shape as `/api/master/github_release`. |
 
-### Site-Data Packaging (FABLE_ONBOARDING_SYNC §3, P1)
+### Site-Data Packaging & Onboarding (FABLE_ONBOARDING_SYNC §3–§4, P1+P2)
 | Method | Route | Description |
 |--------|-------|-------------|
 | POST | `/api/package/scrape_data` | Bundles `data/site/` into a dated zip in `data/exports/` + `.manifest.json` sidecar (`type`, `created_at`, `file_count`, `total_bytes`, `sha256`). Query `part=core` (all but `files/`, `type: sitedata_core`), `part=files` (`files/` only, `type: sitedata_files`); omitted = legacy whole-tree zip (`type: scrape_data`, backward compatible with ScreenSetup / gui/setup_tab.py). Returns `{ok, path, manifest_path, manifest}`; 400 `invalid_part` / `no_site_data`. |
 | POST | `/api/sitedata/github_release` | **Curator-only** (403 otherwise). `text/event-stream`. Builds core+files zips + manifests, creates GitHub release `sitedata-YYYY-MM-DD[.N]` on `kuddukan42/losslessbob`, uploads 4 assets (2 zips + 2 manifest sidecars) with progress. Same event shapes as the master release flow. First release published 2026-07-10 (`sitedata-2026-07-10`). |
+| GET | `/api/sitedata/github_check` | Latest `sitedata-*` release on `kuddukan42/losslessbob`. Matches part zips by `_core_`/`_files_` substring (collision-suffix tolerant) + `.manifest.json` sidecar pairing; parts missing their sidecar are omitted. Returns `{available, tag, release_url, published_at, parts: {core?, files?: {asset_name, asset_size, manifest}}}` or `{available: false, message}`. |
+| POST | `/api/sitedata/github_install` | `text/event-stream`, same event shapes as master install. Body `{parts: ["core"\|"files", …]}` (default `["core"]`, 400 `invalid_part`). Per part: downloads zip to `data/imports/`, verifies SHA256 vs manifest **before** extraction (mismatch deletes zip, errors, site dir untouched), extracts into `data/site/` (overwrite semantics), writes `.sitedata_<part>_manifest.json` marker in `data/site/`. |
+| GET | `/api/onboarding/status` | Cheap first-run progress for wizard/Home checklist (spec §4): `{entries_count, master_version, sitedata_core_present, sitedata_files_count, mounts_configured, collection_count, complete}`. `complete` = entries ∧ master_version ∧ ≥1 mount. Reads install markers when present; falls back to dir checks/scandir. Live: ~63 ms. |
 
 ### LB Master Integrity
 | Method | Route | Description |
