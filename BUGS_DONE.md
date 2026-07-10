@@ -1,6 +1,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-245: Library grid taper pill shows unvalidated free-text guesses (mono/poor sound/etc.)
+Status: Fixed
+File(s): backend/db.py:1034,gui_next/src/renderer/src/screens/ScreenLibrary.tsx:857
+Reported: 2026-07-09
+Fixed: 2026-07-09
+Root cause: Two disconnected taper systems: legacy free-text parser (db.py extract_taper_and_source) stores an unvalidated best-guess taper_name per recording, while the newer taper_attribution.py engine only recognizes curated _KNOWN_TAPER_ALIASES. The Library grid pill read raw taper_name filtered only against a small generic-word denylist (NON_TAPER_LABELS), never against the curated universe the Taper tab uses, so parser false positives (rule 12's loose stopword list didn't cover quality/broadcast descriptor words) rendered as authoritative-looking pills.
+Fix: Tightened rule-12 stopwords (mono/sound/poor/good/excellent/hum/hiss/radio/broadcast/special/dylan/bob) and added 'poor sound'/'mono' to the _NOT_TAPER denylist in backend/db.py. Added is_known_taper()/_TAPER_UNIVERSE (shared with taper_attribution.py, which now imports it instead of recomputing) and a taper_known field on every /api/search row. ScreenLibrary.tsx's taper pill now gates on r.taperKnown, so it only renders when the taper_attribution engine would also recognize the name -- closing the disagreement even for already-persisted bad taper_name values.
+
 BUG-236: gui_next renderer has 14 pre-existing baseline TypeScript errors
 Status: Fixed
 File(s): gui_next/src/renderer/src (ScreenScraper.tsx ×4, ScreenCollection.tsx ×4,

@@ -916,7 +916,7 @@ scheduled scan interval, checked hourly by `scheduler._integrity_scan_worker`.
 ### Search
 | Method | Route | Description |
 |--------|-------|-------------|
-| GET | `/api/search?q=&field=` | `field`: `all`, `location`, `date`, `description`. Returns all matching entries (no limit). |
+| GET | `/api/search?q=&field=` | `field`: `all`, `location`, `date`, `description`. Returns all matching entries (no limit). As of 2026-07-09 (BUG-245) each entry also carries `taper_known` (bool) — whether `taper_name` canonicalises into `db._TAPER_UNIVERSE`, the same curated set `taper_attribution.py` uses; the gui_next Library grid's taper pill gates on it so unvalidated free-text guesses (rule-12 parser artifacts) never render as if they were attribution-engine output. |
 | GET | `/api/checksums/xref_lb_numbers` | Return sorted list of lb_numbers that have at least one xref checksum (xref > 0). |
 | GET | `/api/checksums/xref_map` | Return `{lb_number: [xref_values]}` for all LBs with xref checksums. |
 | POST | `/api/checksums/reconcile_audio` | Validate proposed audio file renames. Body: `{proposals:[{checksum, input_filename, db_filename, folder}]}`. Returns each proposal annotated with `status: ok\|from_missing\|to_exists`. Non-audio extensions skipped. |
