@@ -51,10 +51,45 @@ Parallel, zero-token: tj's curator review of the 265 census-flagged pairs
 duration-only pairs need a different method (partial/incomplete-set judgment).
 Rescoring against v3 stays behind the calibration freeze.
 
+---
+
+## Phase 2 — surplus schedule (agreed 2026-07-10)
+
+Original package fully landed by 07-10 (all slots incl. stretch). ~2.5 days of
+window remain. Decisions (Fable 5 + tj, 2026-07-10):
+
+1. **ONBOARDING P1→P3 pulled forward** into this window — the 07-09 deferral was
+   a budget call and the budget didn't get spent. Spec step 7 prerequisites all
+   exist (F1 recompute chain, taper confirmations in master, public repo for the
+   sitedata release).
+2. **TODO-213 (High) stays tj-gated and opportunistic**: tj unsure he can curate
+   wrong-badge examples in the next 2 days. If examples arrive, tracing them
+   preempts any slot below; otherwise TODO-213 carries past 7/12 as the top
+   priority of the next window.
+3. Escalated analysis backlog (329, of which 210 merge-judgment) remains a
+   recognized token sink — untouched this window.
+
+### Phase 2 timeline
+
+| Slot | Work | Token cost | Closes |
+|---|---|---|---|
+| **7/10: finish spec step 6** | LISTENING §9 "tonight card" — consumes show_picks; do the M/D/YY→ISO `concert_date` reconciliation + `GET /api/picks?date=` here (parked for exactly this session per TODO-212). Ends `/gui-next-i18n` + `/gui-check` | Medium | step 6 complete |
+| **7/10–11: ONBOARDING P1** | Site-data packaging — split export, `sitedata/github_release`, curator publishes first `sitedata-*` release to the public repo | Medium | spec §7 P1 |
+| **7/11: ONBOARDING P2** | `sitedata/github_check` + `github_install`, `onboarding/status` endpoint — backend-only, verify via curl against the real P1 release | Medium | spec §7 P2 |
+| **7/11–12: ONBOARDING P3** | First-run wizard + Home checklist card + Setup/Scraper copy changes + i18n; wizard "Done" fires the F1 recompute chain. Ends `/gui-next-i18n` + `/gui-check` | Medium-high | spec §7 P3 |
+| **Small bounded (idle)** | TODO-210 implementation (investigation done 07-09): (a) family-sync conf bump for same-date abs_score-within-0.5 + same-grade shortlisted pairs; (b) "likely duplicate encode" review flag for same-scan-config metric_json-identical same-date pairs (never auto-merge) | Low | 210 |
+| **If it fits** | ONBOARDING P4 (README rewrite) — spec says it can run any time; otherwise it rides with LISTENING §3+ per step 8 | Low | spec §7 P4 |
+
+Preempt rule: tj wrong-badge examples → TODO-213 evidence_json tracing takes the
+slot. Parallel, zero-token: crawl keeps churning (1,319 runs / 1,169 dates as of
+07-10); check `crawl_status.sh` at session open.
+
 ## Explicitly deferred past 7/12
 
-Onboarding (spec order puts it after step 5), LISTENING §3+, concert ranker
-scoring calibration, TODO-204 probe, trading / sharing / web-GUI specs.
+~~Onboarding (spec order puts it after step 5)~~ (pulled forward 07-10, see
+Phase 2), LISTENING §3+, concert ranker scoring calibration, TODO-204 probe,
+trading / sharing / web-GUI specs. TODO-213 joins this list if tj's examples
+don't arrive by 7/12.
 
 ## Session hygiene
 
