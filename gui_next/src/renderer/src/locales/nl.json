@@ -121,6 +121,10 @@
       "newRelease": "Nieuwe release beschikbaar: {{filename}}",
       "upToDate": "Al bijgewerkt.",
       "checkFailed": "Controle mislukt: {{message}}"
+    },
+    "tonight": {
+      "title": "Vanavond in de geschiedenis van Dylan",
+      "shuffle": "Een andere selectie weergeven"
     }
   },
   "lookup": {

@@ -116,6 +116,10 @@
     "tips": "Tips",
     "tip1": "Maintaining master data? Enable Curator mode in Settings to reveal DB Editor and Scraper.",
     "tip2": "Star a filter combo in Search to make it a one-click saved view.",
+    "tonight": {
+      "title": "Tonight in Dylan history",
+      "shuffle": "Show another pick"
+    },
     "toast": {
       "error": "Error: {{error}}",
       "newRelease": "New release available: {{filename}}",

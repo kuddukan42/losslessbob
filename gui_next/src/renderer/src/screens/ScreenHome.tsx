@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Icon } from '../components/Icon'
-import { Button, Card, Stat, Pill } from '../components'
+import { Button, Card, Stat, Pill, IconButton } from '../components'
 import { TableShell, TH, TR, TD } from '../components'
 
 const BASE = window.api.flaskBase
@@ -23,6 +23,16 @@ interface ActivityRow {
   target: string
   result: string
   type: 'import' | 'rename' | 'forum'
+}
+
+interface TonightPick {
+  lb_number: number
+  year: number
+  concert_date_iso: string
+  location: string
+  rating: string | null
+  pick_score: number
+  description: string
 }
 
 type ToastTone = 'ok' | 'bad' | 'info'
@@ -50,6 +60,19 @@ function fmtNum(n: number): string {
 
 function fmtLb(n: number): string {
   return `LB-${String(n).padStart(5, '0')}`
+}
+
+function fmtTonightDate(iso: string): string {
+  const d = new Date(`${iso}T00:00:00`)
+  if (Number.isNaN(d.getTime())) return iso
+  return d.toLocaleDateString(undefined, { month: 'long', day: 'numeric', year: 'numeric' })
+}
+
+function ratingTone(r: string): 'ok' | 'info' | 'warn' | 'mute' {
+  if (r.startsWith('A')) return 'ok'
+  if (r.startsWith('B')) return 'info'
+  if (r.startsWith('C')) return 'warn'
+  return 'mute'
 }
 
 function relTime(iso: string | null): string {
@@ -94,6 +117,8 @@ export function ScreenHome(): React.JSX.Element {
   const [checkBusy,    setCheckBusy]    = useState(false)
   const [showFullLog,  setShowFullLog]  = useState(false)
   const [toast,        setToast]        = useState<{ msg: string; tone: ToastTone } | null>(null)
+  const [tonightPicks, setTonightPicks] = useState<TonightPick[]>([])
+  const [tonightIdx,   setTonightIdx]   = useState(0)
 
   const showToast = useCallback((msg: string, tone: ToastTone) => setToast({ msg, tone }), [])
 
@@ -110,6 +135,27 @@ export function ScreenHome(): React.JSX.Element {
       .then((rows: ActivityRow[]) => setActivity(rows))
       .catch(() => { /* activity stays empty */ })
   }, [])
+
+  useEffect(() => {
+    fetch(`${BASE}/api/picks/tonight`)
+      .then(r => (r.ok ? r.json() : Promise.reject()))
+      .then((data: { candidates?: TonightPick[] }) => {
+        const cands = data.candidates ?? []
+        if (cands.length === 0) return
+        setTonightPicks(cands)
+        setTonightIdx(Math.floor(Math.random() * cands.length))
+      })
+      .catch(() => { /* tonightPicks stays empty, card stays hidden */ })
+  }, [])
+
+  const handleShuffleTonight = useCallback(() => {
+    setTonightIdx(prev => {
+      if (tonightPicks.length <= 1) return prev
+      let next = prev
+      while (next === prev) next = Math.floor(Math.random() * tonightPicks.length)
+      return next
+    })
+  }, [tonightPicks])
 
   const handleCheckUpdate = useCallback(async () => {
     setCheckBusy(true)
@@ -151,6 +197,8 @@ export function ScreenHome(): React.JSX.Element {
 
   const d = (n: number | undefined, fallback = '—') =>
     n !== undefined ? fmtNum(n) : fallback
+
+  const tonightPick = tonightPicks[tonightIdx]
 
   return (
     <div style={{ padding: '24px 28px 36px', maxWidth: 1680, margin: '0 auto' }}>
@@ -322,6 +370,48 @@ export function ScreenHome(): React.JSX.Element {
 
         {/* Right column */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+          {tonightPick && (
+            <Card
+              title={t('home.tonight.title')}
+              action={tonightPicks.length > 1 && (
+                <IconButton
+                  icon="refresh"
+                  size={26}
+                  title={t('home.tonight.shuffle')}
+                  onClick={handleShuffleTonight}
+                />
+              )}
+              pad={14}
+            >
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
+                  <span style={{ fontSize: 'var(--lbb-fs-13)', fontWeight: 700 }}>
+                    {fmtTonightDate(tonightPick.concert_date_iso)}
+                  </span>
+                  {tonightPick.rating && (
+                    <Pill tone={ratingTone(tonightPick.rating)} soft>{tonightPick.rating}</Pill>
+                  )}
+                  <span style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', marginLeft: 'auto' }}>
+                    {fmtLb(tonightPick.lb_number)}
+                  </span>
+                </div>
+                <div style={{
+                  fontSize: 'var(--lbb-fs-12-5)', color: 'var(--lbb-fg2)',
+                  overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+                }}>
+                  {tonightPick.location}
+                </div>
+                {tonightPick.description && (
+                  <div style={{
+                    fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)',
+                    overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+                  }}>
+                    {tonightPick.description}
+                  </div>
+                )}
+              </div>
+            </Card>
+          )}
           <Card title={t('home.tips')} pad={14}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
               {TIPS.map((tip, i) => (
