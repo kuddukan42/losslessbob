@@ -1389,7 +1389,9 @@
       "recommended": "Aanbevolen, in bezit",
       "superseded": "Vervangen exemplaren",
       "carbonbitPicks": "carbonbit's selectie",
-      "tenhaafPicks": "De selectie van 10haaf"
+      "tenhaafPicks": "De selectie van 10haaf",
+      "taperConfirmed": "Bevestigde taper",
+      "taperReview": "Taper: moet worden gecontroleerd"
     },
     "statusValue": {
       "public": "Openbaar",
@@ -1521,7 +1523,8 @@
       "recordingFamilies": "Opnamefamilies · {{count}}",
       "groupedByTapeMatch": "gegroepeerd op TapeMatch",
       "needsReview": "Moet worden gecontroleerd",
-      "tabPicks": "Selecties"
+      "tabPicks": "Selecties",
+      "tabTaper": "Taper"
     },
     "coverage": {
       "ownedFull": "Eigen {{owned}}/{{total}}",
@@ -1614,7 +1617,21 @@
       "scoreLabel": "Kies een score",
       "gradeBadge": "Cijfer {{grade}}",
       "curatedBadge": "De keuze van {{curator}}",
-      "notComputedNote": "Nog niet berekend — voer „Afgeleide gegevens opnieuw berekenen“ uit in de instellingen."
+      "notComputedNote": "Nog niet berekend — voer „Afgeleide gegevens opnieuw berekenen“ uit in de instellingen.",
+      "taperBadge": "{{taper}}"
+    },
+    "taper": {
+      "label": "Taper-vermelding",
+      "taperLabel": "Taper",
+      "emptyNote": "Geen vermelding van de opnamemaker voor deze opname.",
+      "tier": {
+        "confirmed": "Bevestigd",
+        "propagated": "Doorgegeven",
+        "inferred": "Afgeleid"
+      },
+      "conflict": "Tegenstrijdige bewijzen",
+      "confirm": "Bevestigen",
+      "reject": "Afwijzen"
     }
   }
 }

@@ -1389,7 +1389,9 @@
       "recommended": "Consigliato, di proprietà",
       "superseded": "Copie obsolete",
       "carbonbitPicks": "Le scelte di carbonbit",
-      "tenhaafPicks": "Le scelte di 10haaf"
+      "tenhaafPicks": "Le scelte di 10haaf",
+      "taperConfirmed": "Registratore confermato",
+      "taperReview": "Taper: da rivedere"
     },
     "statusValue": {
       "public": "Pubblico",
@@ -1521,7 +1523,8 @@
       "recordingFamilies": "Famiglie di registrazioni · {{count}}",
       "groupedByTapeMatch": "raggruppate per TapeMatch",
       "needsReview": "Da revisionare",
-      "tabPicks": "Selezioni"
+      "tabPicks": "Selezioni",
+      "tabTaper": "Taper"
     },
     "coverage": {
       "ownedFull": "Di proprietà di {{owned}}/{{total}}",
@@ -1614,7 +1617,21 @@
       "scoreLabel": "Scegli punteggio",
       "gradeBadge": "Voto {{grade}}",
       "curatedBadge": "La scelta di {{curator}}",
-      "notComputedNote": "Non ancora calcolato — eseguire “Ricalcola dati derivati” in Configurazione."
+      "notComputedNote": "Non ancora calcolato — eseguire “Ricalcola dati derivati” in Configurazione.",
+      "taperBadge": "{{taper}}"
+    },
+    "taper": {
+      "label": "Attribuzione a Taper",
+      "taperLabel": "Taper",
+      "emptyNote": "Nessuna attribuzione del tecnico di registrazione per questa registrazione.",
+      "tier": {
+        "confirmed": "Confermato",
+        "propagated": "Propagato",
+        "inferred": "Dedotto"
+      },
+      "conflict": "Prove contraddittorie",
+      "confirm": "Conferma",
+      "reject": "Rifiuta"
     }
   }
 }

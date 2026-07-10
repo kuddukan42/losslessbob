@@ -1,4 +1,26 @@
-[2026-07-09] — feat(gui): RANKING phases 3–4 shipped (spec complete) + TODO-201 label flips applied
+[2026-07-09] — feat(backend+gui): TAPER phase 2 shipped — curator confirm/reject API, Library taper pill + filters, DetailPanel Taper tab (closes TODO-173)
+Added: backend/taper_attribution.py: phase 2 curator API functions — confirm()/reject() write
+  sticky MASTER taper_confirmations rows (upsert on lb_number PK, F2) and apply the decision to
+  taper_attributions immediately, recompute-equivalent (confirm reuses _confirmed_row's shape via
+  extraction from _apply_confirmations; reject uses _apply_rejects' pair-match rule so an
+  unrelated attribution is never deleted while the suppression still lands). get_attribution_for_lb(),
+  list_attributions() (confidence/taper/conflict filters), _resolve_taper() (explicit taper or
+  sourced from existing row; confirm validates against _TAPER_UNIVERSE).
+Added: backend/app.py: GET /api/tapers/attributions/<lb> (200 with attribution:null when absent),
+  GET /api/tapers/attributions?confidence=&taper=&conflict=1 (spec §5 list), and curator-gated
+  POST .../confirm + .../reject (400 on unresolvable taper). 11 new tests in
+  tests/test_taper_attribution.py incl. _AppClient route tests (535 pass).
+Added: backend/db.py: get_performances() F4 payload extension — optional taperConfirmed
+  (confidence='confirmed' only, per spec §7 "no pill below confirmed") and taperReview
+  (propagated/inferred/conflict) via _load_taper_attributions() single pre-fetched map,
+  feature-detected for pre-attribution DBs.
+Added: gui_next ScreenLibrary.tsx: confirmed-taper pill (collapsed + family-member rows) and two
+  filter views ("Confirmed taper", "Taper: needs review" — the spec's review queue) with counts,
+  mirroring the RANKING filter pattern. Heuristic recording-lens taper_name badge untouched (TODO-212).
+Added: gui_next DetailPanel.tsx: Taper tab (TaperZone) — tier/conflict pills, taper Fact, shared
+  EvidenceList, lazy fetch; confirm/reject buttons gated on curatorMode (TODO-160 convention),
+  response pushed into the React Query cache. i18n: library.taper.* / views/tab keys, en + DeepL
+  de/fr/es/it/nl (4,039 chars). gui-check: node/renderer tsc 0 errors, build clean.
 Added: backend/db.py: get_performances() payload extension (F4 pattern — flat fields, no N+1):
   each recording gains optional pickRank (show_picks), absGrade (latest quality scan,
   PRAGMA-feature-detected), curated (list names). New delete_curated_list(),

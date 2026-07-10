@@ -1,6 +1,36 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-173: Confirmed taper tag on LB entries (soomlos, spot, hide, lta, etc.) — only show when confirmed
+Priority: Medium
+Status: Done
+Added: 2026-06-22
+Closed: 2026-07-09
+Description: entries.taper_name (backend/db.py:137) already exists and is populated
+  heuristically by extract_taper_and_source() (db.py:678-811), which parses free-text
+  descriptions for "Taper:" labels etc. — but it's unconfirmed/best-guess text, no curation
+  or confidence flag, and nothing gates whether it's shown. Add a real taper tag concept:
+  a curated set of known taper names (soomlos, spot, hide, lta, and others as identified)
+  with a confirmed flag per entry, and only display the tag in the UI when an entry's taper
+  is confirmed — not just whatever extract_taper_and_source guessed from the description text.
+  Needs a DB field/table for the confirmed flag (separate from or alongside taper_name) and
+  UI work to surface the tag (e.g. as a pill) on confirmed entries.
+  Known tapers now implemented in _KNOWN_TAPER_ALIASES (backend/db.py). Curated list:
+  soomlos, spot, hide, lta, mk, southside butcher (ssb), iar, mjs, bw, dolphinsmile, jtt,
+  pl, cedar, holy grail, vw, cck, jt, cta, tyrus, zimmy21, fine wine, hv, condor, lowgen,
+  schubert, mb, jersey john, theodore, mike savage, m&a, wario, mani (=manie), bach, romeo,
+  cb master, lk, hhtfp, jf, sullylove, ebr, tom moore, dk-wi, tk, bt, vito, glen dundas,
+  nightly moth, csheb, streetcar visions, sk, jerseyboy, spyder9, bob meyer, markp,
+  downfromtheglen, mrsoul, sh, sm, gs, rcm, mike millard (=mm), billie, jgb, tom paine (tp/tompaine56),
+  mango farmer, ironchef, soledriver, goodnitesteve, clapberry, bigjim, teddy ballgame,
+  theshadow, robert, sfy, caretaker, beer (=beerly=mikebeerly), caspar (=jon caspar), kuddukan,
+  pdub, audiowhore, arashi, dopersan, markitospb, krw co, maloney, radioshack, kingrue,
+  warburton (=jimmy warburton), captain acid (=captainacid=acidproject), andrea82, pike1957,
+  sway, whofan70, two of us, mcforce, thelonius (=thelonious), jems, tarantula, lbp51,
+  unwanted man music (uww), travelin man records (tmr), stevemtl, bobby bourbon (=bourbon),
+  elliot, jvs, v4tx, lta–ltz (legendary taper series), nta–ntz (net taper series)
+TAPER phase 2 shipped: confirmed-only taper pill in Library performance lens (taperConfirmed payload field), 'Confirmed taper' + 'Taper: needs review' filter views, DetailPanel Taper tab (tier/conflict/evidence via shared EvidenceList) with curator confirm/reject writing sticky MASTER taper_confirmations (F2). GET/POST /api/tapers/attributions* routes. Heuristic taper_name remains display-fallback only per spec.
+
 TODO-186: Library UI — quality grade + curated-pick badges, saved curated-list filter views
 Priority: Medium
 Status: Done

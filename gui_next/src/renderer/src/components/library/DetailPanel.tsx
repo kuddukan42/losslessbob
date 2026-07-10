@@ -9,7 +9,7 @@
 
 import React, { useState, useRef, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useQuery } from '@tanstack/react-query'
+import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { Pill, Button, IconButton } from '../primitives'
 import type { ActionRow, ActionHandlers, LibAction } from './actions'
 import { buildRecordingActions, buildPerformanceActions } from './actions'
@@ -17,6 +17,7 @@ import { Icon } from '../Icon'
 import { EvidenceList } from '../EvidenceList'
 import type { EvidenceRecord } from '../EvidenceList'
 import { lbDetailUrl } from '../../lib/lbUrl'
+import { useSettingsStore } from '../../store'
 
 const BASE = window.api.flaskBase
 
@@ -922,6 +923,100 @@ function PicksZone({ row, hideLabel }: { row: DetailRow; hideLabel?: boolean }) 
   )
 }
 
+// ── TaperZone — FABLE_TAPER_ATTRIBUTION §5: tier + taper + conflict flag +
+// evidence for ANY attribution (confirmed/propagated/inferred), via the shared
+// EvidenceList (F3). Lazily fetched per row like PicksZone, from the read-only
+// GET /api/tapers/attributions/<lb>. Confirm/Reject only render in curator mode
+// (TODO-160 convention: useSettingsStore's curatorMode, same gate ScreenSetup's
+// publish button uses) and POST to the existing curator-gated confirm/reject
+// routes, pushing the response straight into the query cache so the tab
+// reflects the decision without a second round-trip. ───────────────────────
+interface TaperAttribution {
+  lb_number: number
+  taper_normalised: string
+  confidence: 'confirmed' | 'propagated' | 'inferred'
+  evidence: EvidenceRecord[]
+  conflict: number
+  confirmed_at: string | null
+  computed_at: string
+}
+interface TaperAttributionResponse {
+  lb_number: number
+  attribution: TaperAttribution | null
+}
+
+function TaperZone({ row, hideLabel }: { row: DetailRow; hideLabel?: boolean }) {
+  const { t } = useTranslation()
+  const curatorMode = useSettingsStore((s) => s.curatorMode)
+  const queryClient = useQueryClient()
+  const queryKey = ['library-taper-for', row.lbNumber]
+  const { data, isLoading } = useQuery<TaperAttributionResponse>({
+    queryKey,
+    queryFn: () => fetch(`${BASE}/api/tapers/attributions/${row.lbNumber}`).then(r => r.json()),
+    staleTime: 60_000,
+  })
+  const [busy, setBusy] = useState(false)
+
+  const decide = async (action: 'confirm' | 'reject') => {
+    setBusy(true)
+    try {
+      const resp = await fetch(`${BASE}/api/tapers/attributions/${row.lbNumber}/${action}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({}),
+      })
+      if (resp.ok) {
+        const body: TaperAttributionResponse = await resp.json()
+        queryClient.setQueryData(queryKey, body)
+      }
+    } finally {
+      setBusy(false)
+    }
+  }
+
+  if (isLoading) {
+    return <div style={{ fontSize: 'var(--t-meta)', color: 'var(--lbb-fg3)' }}>{t('library.empty.loading')}</div>
+  }
+  const attribution = data?.attribution ?? null
+  if (!attribution) {
+    return (
+      <div style={{
+        padding: '14px 12px', borderRadius: 6, textAlign: 'center',
+        border: '1px dashed var(--lbb-border2)', color: 'var(--lbb-fg3)', fontSize: 'var(--t-meta)',
+      }}>
+        {t('library.taper.emptyNote')}
+      </div>
+    )
+  }
+  return (
+    <div style={{ flexShrink: 0 }}>
+      {!hideLabel && <ZoneLabel>{t('library.taper.label')}</ZoneLabel>}
+      <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 10, flexWrap: 'wrap' }}>
+        <Pill tone={attribution.confidence === 'confirmed' ? 'ok' : 'mute'} soft>
+          {t(`library.taper.tier.${attribution.confidence}`)}
+        </Pill>
+        {attribution.conflict === 1 && (
+          <Pill tone="warn" soft>{t('library.taper.conflict')}</Pill>
+        )}
+      </div>
+      <div style={{ marginBottom: 14 }}>
+        <Fact label={t('library.taper.taperLabel')} value={attribution.taper_normalised} />
+      </div>
+      <EvidenceList evidence={attribution.evidence} />
+      {curatorMode && (
+        <div style={{ display: 'flex', gap: 8, marginTop: 14 }}>
+          <Button variant="primary" size="sm" disabled={busy} onClick={() => decide('confirm')}>
+            {t('library.taper.confirm')}
+          </Button>
+          <Button variant="danger" size="sm" disabled={busy} onClick={() => decide('reject')}>
+            {t('library.taper.reject')}
+          </Button>
+        </div>
+      )}
+    </div>
+  )
+}
+
 // ── Tab strip (spec §8) — pinned below the identity block; routes the pane
 // body. Idle tabs are --t-body/500 fg3; the active tab is accent-mid with a
 // 2px inset underline. Count pills sit inline. ──────────────────────────────
@@ -1015,6 +1110,7 @@ export function RecordingDetailPanel({ row, history, attachCount, actionHandlers
   const tabs: PanelTab[] = [
     { id: 'overview', label: t('library.panel.tabOverview') },
     { id: 'picks', label: t('library.panel.tabPicks') },
+    { id: 'taper', label: t('library.panel.tabTaper') },
   ]
   if (row.owned) {
     tabs.push({ id: 'assets', label: t('library.panel.tabAssets') })
@@ -1115,6 +1211,10 @@ export function RecordingDetailPanel({ row, history, attachCount, actionHandlers
 
         {activeTab === 'picks' && (
           <PicksZone row={row} hideLabel />
+        )}
+
+        {activeTab === 'taper' && (
+          <TaperZone row={row} hideLabel />
         )}
 
         {activeTab === 'assets' && row.owned && (

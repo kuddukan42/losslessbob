@@ -2702,6 +2702,38 @@ def _load_latest_abs_grades(conn: sqlite3.Connection) -> dict[int, str]:
     return {r["lb_number"]: r["abs_grade"] for r in rows}
 
 
+def _load_taper_attributions(conn: sqlite3.Connection) -> dict[int, dict]:
+    """Return ``{lb_number: {"confirmed": str|None, "review": bool}}``.
+
+    Per `instructions/FABLE_TAPER_ATTRIBUTION.md` §5, only `confidence='confirmed'`
+    rows ever render a taper pill; `propagated`/`inferred`/`conflict` rows feed the
+    Library's "taper: needs review" filter instead. Feature-detected like
+    `_load_latest_abs_grades` since `taper_attributions` may not exist yet on an
+    older DB that hasn't run `tools/attribute_tapers.py`.
+    """
+    tables = {
+        r[0]
+        for r in conn.execute(
+            "SELECT name FROM sqlite_master WHERE type='table' AND name='taper_attributions'"
+        ).fetchall()
+    }
+    if "taper_attributions" not in tables:
+        return {}
+    rows = conn.execute(
+        "SELECT lb_number, taper_normalised, confidence, conflict FROM taper_attributions"
+    ).fetchall()
+    out: dict[int, dict] = {}
+    for r in rows:
+        entry: dict = {}
+        if r["confidence"] == "confirmed":
+            entry["confirmed"] = r["taper_normalised"]
+        if r["confidence"] in ("propagated", "inferred") or r["conflict"]:
+            entry["review"] = True
+        if entry:
+            out[r["lb_number"]] = entry
+    return out
+
+
 def get_performances(db_path=None) -> list[dict]:
     """Group catalog entries into shows for the Library screen's performance lens.
 
@@ -2750,6 +2782,13 @@ def get_performances(db_path=None) -> list[dict]:
     already used for TapeMatch family data (merged client-side instead, since
     it's a different consumer — see the class docstring's TapeMatch note).
 
+    Per `instructions/FABLE_TAPER_ATTRIBUTION.md` §5 (TAPER phase 2), each
+    recording also carries flat, optional `taperConfirmed` (canonical taper
+    name, only when `taper_attributions.confidence='confirmed'` — never for
+    propagated/inferred) and `taperReview` (`true` when confidence is
+    `propagated`/`inferred` or the row is flagged `conflict`), following the
+    same F4 payload-extension pattern.
+
     Args:
         db_path: Optional path to the SQLite database file.
 
@@ -2759,9 +2798,10 @@ def get_performances(db_path=None) -> list[dict]:
         always present; `dow`, `tour`, `tracks`, `setlist`, `title` omitted
         (not null-faked) when no source data exists for that show; `confirmed`
         omitted (true by default) except `False` on degraded unknown-only rows.
-        Each recording additionally omits `pickRank`/`absGrade`/`curated` when
-        that signal doesn't exist yet for its LB number (pre-recompute,
-        never scanned, or in no curated list).
+        Each recording additionally omits `pickRank`/`absGrade`/`curated`/
+        `taperConfirmed`/`taperReview` when that signal doesn't exist yet for
+        its LB number (pre-recompute, never scanned, in no curated list, or
+        no taper attribution row).
     """
     from datetime import datetime as _dt
 
@@ -2769,6 +2809,7 @@ def get_performances(db_path=None) -> list[dict]:
     pick_ranks = _load_pick_ranks(conn)
     curated_by_lb = _load_curated_by_lb(conn)
     abs_grades = _load_latest_abs_grades(conn)
+    taper_attrs = _load_taper_attributions(conn)
 
     rows = conn.execute(
         """
@@ -2860,6 +2901,12 @@ def get_performances(db_path=None) -> list[dict]:
         curated_names = curated_by_lb.get(r["lb_number"])
         if curated_names:
             rec_out["curated"] = curated_names
+        taper_attr = taper_attrs.get(r["lb_number"])
+        if taper_attr:
+            if "confirmed" in taper_attr:
+                rec_out["taperConfirmed"] = taper_attr["confirmed"]
+            if taper_attr.get("review"):
+                rec_out["taperReview"] = True
         g["recordings"].append(rec_out)
 
     performances: list[dict] = []

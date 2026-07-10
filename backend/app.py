@@ -37,6 +37,7 @@ from backend import (
 )
 from backend import db as database
 from backend import setlistfm as setlistfm_mod
+from backend import taper_attribution as _taper_attribution
 from backend.paths import (
     BATCH_VERIFY_DB_PATH,
     DATA_DIR,
@@ -4886,6 +4887,96 @@ def create_app() -> Flask:
             mimetype="text/event-stream",
             headers={"X-Accel-Buffering": "no", "Cache-Control": "no-cache"},
         )
+
+    # ── Taper attribution read API (FABLE_TAPER_ATTRIBUTION phase 2 §5) ─────────
+    # Read-only, no curator gate — confirm/reject below are the only gated actions.
+
+    @app.route("/api/tapers/attributions/<int:lb>", methods=["GET"])
+    def taper_attribution_for_lb(lb: int) -> Response:
+        """Return this LB's taper attribution for the DetailPanel's lazy fetch.
+
+        Mirrors ``GET /api/picks/for/<lb>``'s response/error style (F3). Unlike
+        the picks route, absence is a normal 200 with ``attribution: null``
+        rather than 204, since the caller needs the ``lb_number`` echoed back
+        either way for cache bookkeeping.
+        """
+        try:
+            row = _taper_attribution.get_attribution_for_lb(lb)
+            return jsonify({"lb_number": lb, "attribution": row})
+        except Exception as exc:
+            _log.exception("taper_attribution_for_lb failed for LB-%s", lb)
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
+    @app.route("/api/tapers/attributions", methods=["GET"])
+    def taper_attributions_list() -> Response:
+        """Filtered list of taper attributions with parsed evidence (spec §5).
+
+        Read-only, no curator gate. Query params (all optional):
+            confidence: restrict to 'confirmed' / 'propagated' / 'inferred'.
+            taper: restrict to one taper (raw or canonical; normalised here).
+            conflict: '1' (or 'true') restricts to conflict=1 rows only.
+        """
+        try:
+            conflict_arg = request.args.get("conflict")
+            conflict = conflict_arg.lower() in ("1", "true") if conflict_arg else None
+            rows = _taper_attribution.list_attributions(
+                confidence=request.args.get("confidence") or None,
+                taper=request.args.get("taper") or None,
+                conflict=conflict,
+            )
+            return jsonify({"attributions": rows})
+        except Exception as exc:
+            _log.exception("taper_attributions_list failed")
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
+    # ── Taper attribution curator API (FABLE_TAPER_ATTRIBUTION phase 2, F2) ─────
+
+    @app.route("/api/tapers/attributions/<int:lb>/confirm", methods=["POST"])
+    def taper_attribution_confirm(lb: int) -> Response:
+        """Curator-only. Confirm this LB's taper attribution immediately.
+
+        Body: {taper?} — raw or canonical taper name. If omitted, taken from
+        the entry's existing taper_attributions row. Writes a sticky
+        'confirm' row to the MASTER-tier taper_confirmations table
+        (overwriting any prior decision for this lb) and applies it to
+        taper_attributions right away, without waiting for a full
+        /api/derived/recompute run.
+        """
+        if not database.is_curator():
+            return jsonify({"error": "curator_required"}), 403
+        try:
+            body = request.get_json(silent=True) or {}
+            row = _taper_attribution.confirm(lb, taper=body.get("taper"))
+            return jsonify({"lb_number": lb, "attribution": row})
+        except ValueError as exc:
+            return jsonify({"error": "bad_request", "message": str(exc)}), 400
+        except Exception as exc:
+            _log.exception("taper_attribution_confirm failed for LB-%s", lb)
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
+    @app.route("/api/tapers/attributions/<int:lb>/reject", methods=["POST"])
+    def taper_attribution_reject(lb: int) -> Response:
+        """Curator-only. Reject this LB's taper attribution immediately.
+
+        Body: {taper?} — raw or canonical taper name being rejected. If
+        omitted, taken from the entry's existing taper_attributions row.
+        Writes a sticky 'reject' row to the MASTER-tier taper_confirmations
+        table (overwriting any prior decision for this lb) and, if the
+        current taper_attributions row matches, deletes it right away —
+        future /api/derived/recompute runs stay suppressed via
+        taper_confirmations regardless.
+        """
+        if not database.is_curator():
+            return jsonify({"error": "curator_required"}), 403
+        try:
+            body = request.get_json(silent=True) or {}
+            row = _taper_attribution.reject(lb, taper=body.get("taper"))
+            return jsonify({"lb_number": lb, "attribution": row})
+        except ValueError as exc:
+            return jsonify({"error": "bad_request", "message": str(exc)}), 400
+        except Exception as exc:
+            _log.exception("taper_attribution_reject failed for LB-%s", lb)
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
 
     @app.route("/api/tapematch/families", methods=["GET"])
     def tapematch_families() -> Response:
