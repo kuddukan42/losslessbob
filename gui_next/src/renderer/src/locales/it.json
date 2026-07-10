@@ -121,6 +121,10 @@
       "newRelease": "Nuova release disponibile: {{filename}}",
       "upToDate": "Già aggiornato.",
       "checkFailed": "Controllo fallito: {{message}}"
+    },
+    "tonight": {
+      "title": "Stasera nella storia di Dylan",
+      "shuffle": "Mostra un'altra selezione"
     }
   },
   "lookup": {
