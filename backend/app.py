@@ -7423,6 +7423,47 @@ def create_app() -> Flask:
             _log.exception("package_scrape_data failed")
             return jsonify({"error": "internal_error"}), 500
 
+    def _restore_sitedata_zip(zip_path: "Path", dry_run: bool = False) -> dict:
+        """Extract a ``site/``-prefixed zip (whole-tree, core, or files) into SITE_DIR.
+
+        Shared by ``/api/package/restore`` (local zip path, legacy manifest-less
+        ``scrape_data`` zips) and the ``/api/sitedata/github_install`` pipeline
+        (P1's ``sitedata_core``/``sitedata_files`` zips — same ``site/``-prefixed
+        entry layout, just a subset of the tree). Every entry is written to
+        ``SITE_DIR / <relative path>``, overwriting any existing file, so
+        re-running against the same or an updated zip is a clean overwrite —
+        no doubled files.
+
+        Args:
+            zip_path: Path to the zip archive.
+            dry_run: If True, compute the restored/conflicts split without
+                writing anything to disk.
+
+        Returns:
+            {"restored": [{name, dest}], "conflicts": [{name, dest}]} — a
+            "conflict" is an entry whose destination already existed (still
+            overwritten unless dry_run).
+        """
+        import zipfile
+
+        restored: list[dict] = []
+        conflicts: list[dict] = []
+        with zipfile.ZipFile(zip_path, "r") as zf:
+            for arc_name in zf.namelist():
+                if not arc_name.startswith("site/") or arc_name.endswith("/"):
+                    continue
+                rel = arc_name[len("site/"):]
+                dest = SITE_DIR / rel
+                entry = {"name": arc_name, "dest": str(dest)}
+                if dest.exists():
+                    conflicts.append(entry)
+                else:
+                    restored.append(entry)
+                if not dry_run:
+                    dest.parent.mkdir(parents=True, exist_ok=True)
+                    dest.write_bytes(zf.read(arc_name))
+        return {"restored": restored, "conflicts": conflicts}
+
     @app.route("/api/package/restore", methods=["POST"])
     def package_restore() -> Response:
         """Restore a zip archive produced by /api/package/user_data or /api/package/scrape_data.
@@ -7457,6 +7498,12 @@ def create_app() -> Flask:
 
                 if pkg_type is None:
                     if any(n.startswith("site/") for n in names):
+                        # Covers legacy whole-tree scrape_data zips as well as
+                        # P1's sitedata_core/sitedata_files zips — all three
+                        # share the same "site/"-prefixed entry layout and are
+                        # distinguished only by the manifest.json *sidecar*
+                        # (never embedded in the zip itself), so name-based
+                        # detection collapses them onto the same restore path.
                         pkg_type = "scrape_data"
                     elif any(n in ("losslessbob.db", "settings.ini", "gui_state.json") for n in names):
                         pkg_type = "user_data"
@@ -7488,24 +7535,12 @@ def create_app() -> Flask:
                         _log.info("package_restore(user_data): restored %d files from %s",
                                   len(restored) + len(conflicts), zip_path.name)
 
-                elif pkg_type == "scrape_data":
-                    site_dest = DATA_DIR / "site"
-                    for arc_name in names:
-                        if not arc_name.startswith("site/") or arc_name.endswith("/"):
-                            continue
-                        rel = arc_name[len("site/"):]
-                        dest = site_dest / rel
-                        entry = {"name": arc_name, "dest": str(dest)}
-                        if dest.exists():
-                            conflicts.append(entry)
-                        else:
-                            restored.append(entry)
-                        if not dry_run:
-                            dest.parent.mkdir(parents=True, exist_ok=True)
-                            dest.write_bytes(zf.read(arc_name))
+                elif pkg_type in ("scrape_data", "sitedata_core", "sitedata_files"):
+                    extraction = _restore_sitedata_zip(zip_path, dry_run=dry_run)
+                    restored, conflicts = extraction["restored"], extraction["conflicts"]
                     if not dry_run:
-                        _log.info("package_restore(scrape_data): restored %d files from %s",
-                                  len(restored) + len(conflicts), zip_path.name)
+                        _log.info("package_restore(%s): restored %d files from %s",
+                                  pkg_type, len(restored) + len(conflicts), zip_path.name)
 
                 return jsonify({
                     "ok": True,
@@ -7709,6 +7744,345 @@ def create_app() -> Flask:
             content_type="text/event-stream",
             headers={"X-Accel-Buffering": "no", "Cache-Control": "no-cache"},
         )
+
+    def _find_sitedata_release(_req) -> "tuple[dict, dict]":
+        """Search recent GitHub releases for the latest ``sitedata-*`` release.
+
+        Mirrors ``_find_master_release`` but scoped to the ``sitedata-``
+        tag prefix (the repo also carries ``master-*`` releases on the same
+        endpoint) and pairs *both* core and files parts rather than a single
+        asset. Real releases carry GitHub's numeric collision suffix on the
+        zip name (e.g. ``losslessbob_sitedata_core_2026-07-10_2.zip`` when a
+        same-day zip of that part already existed at packaging time), so
+        parts are identified by substring (``_core_`` / ``_files_``) rather
+        than an exact date-stamped filename, then paired with the
+        ``<zip_name>.manifest.json`` sidecar asset uploaded alongside it.
+
+        Args:
+            _req: the ``requests`` module (or compatible), passed in for
+                testability.
+
+        Returns:
+            (release, parts) where ``parts`` is a dict with up to
+            ``"core"``/``"files"`` keys, each
+            ``{"zip_asset": asset, "manifest_asset": asset}``. Only parts
+            with both a zip and a matching manifest sidecar present are
+            included.
+
+        Raises:
+            RuntimeError: No ``sitedata-*`` release with at least one
+                complete (zip + manifest) part is found in the most recent
+                5 pages of releases.
+        """
+        _REPO = "kuddukan42/losslessbob"
+        page = 1
+        while page <= 5:
+            resp = _req.get(
+                f"https://api.github.com/repos/{_REPO}/releases",
+                headers={"Accept": "application/vnd.github+json"},
+                params={"per_page": 20, "page": page},
+                timeout=15,
+            )
+            if resp.status_code == 404 or (page == 1 and resp.json() == []):
+                raise RuntimeError("No releases found on GitHub yet.")
+            resp.raise_for_status()
+            releases = resp.json()
+            if not releases:
+                break
+            for release in releases:
+                if not str(release.get("tag_name", "")).startswith("sitedata-"):
+                    continue
+                assets = release.get("assets", [])
+                parts: dict = {}
+                for part in ("core", "files"):
+                    zip_asset = next(
+                        (a for a in assets
+                         if f"_{part}_" in a["name"] and a["name"].endswith(".zip")),
+                        None,
+                    )
+                    if not zip_asset:
+                        continue
+                    manifest_name = zip_asset["name"] + ".manifest.json"
+                    manifest_asset = next((a for a in assets if a["name"] == manifest_name), None)
+                    if not manifest_asset:
+                        continue
+                    parts[part] = {"zip_asset": zip_asset, "manifest_asset": manifest_asset}
+                if parts:
+                    return release, parts
+            page += 1
+        raise RuntimeError("No release with sitedata assets found on GitHub.")
+
+    @app.route("/api/sitedata/github_check", methods=["GET"])
+    def sitedata_github_check() -> Response:
+        """Check GitHub Releases for the latest ``sitedata-*`` release.
+
+        Returns:
+            JSON dict with ``available`` (bool), ``tag``, ``release_url``,
+            ``published_at`` plus a ``parts`` dict keyed by whichever of
+            ``core``/``files`` are present in the release, each
+            ``{asset_name, asset_size, manifest}`` (manifest sidecars are a
+            few hundred bytes, so fetched eagerly — cheap). If no usable
+            release exists, ``available`` is ``false`` with a human-readable
+            ``message``, mirroring ``master_github_check``.
+        """
+        import requests as _req
+
+        try:
+            try:
+                release, parts = _find_sitedata_release(_req)
+            except RuntimeError as exc:
+                return jsonify({"available": False, "message": str(exc)})
+
+            parts_out = {}
+            for part, info in parts.items():
+                zip_asset = info["zip_asset"]
+                manifest_asset = info["manifest_asset"]
+                mresp = _req.get(manifest_asset["browser_download_url"], timeout=30)
+                mresp.raise_for_status()
+                parts_out[part] = {
+                    "asset_name": zip_asset["name"],
+                    "asset_size": zip_asset.get("size", 0),
+                    "manifest": mresp.json(),
+                }
+
+            return jsonify({
+                "available": True,
+                "tag": release.get("tag_name", "?"),
+                "release_url": release.get("html_url", ""),
+                "published_at": release.get("published_at", ""),
+                "parts": parts_out,
+            })
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/sitedata/github_install", methods=["POST"])
+    def sitedata_github_install() -> Response:
+        """Download and install site-data part(s) from the latest ``sitedata-*`` release.
+
+        Body: ``{"parts": ["core"]}`` or ``["core", "files"]`` — default
+        ``["core"]``.
+
+        Streams progress via ``text/event-stream``, mirroring
+        ``master_github_install``'s event shape:
+          data: {"type": "progress", "label": "...", "pct": N_or_null}
+          data: {"type": "done", "summary": {...}}
+          data: {"type": "error", "error": "...", "message": "..."}
+
+        For each selected part: downloads the zip asset to ``data/imports/``,
+        fetches its manifest sidecar, and verifies the zip's SHA256 against
+        the manifest *before* any extraction — a mismatch deletes the
+        downloaded zip and errors out without touching ``SITE_DIR``. On
+        success, extracts into ``SITE_DIR`` via ``_restore_sitedata_zip``
+        (overwrite semantics — re-running is a clean overwrite, no doubled
+        files) and writes a ``.sitedata_<part>_manifest.json`` marker in
+        ``SITE_DIR`` so ``/api/onboarding/status`` can read part presence /
+        file counts without rescanning the filesystem.
+        """
+        import hashlib
+        import json as _json
+        import queue
+
+        import requests as _req
+
+        body = request.get_json(silent=True) or {}
+        parts = body.get("parts") or ["core"]
+        invalid = [p for p in parts if p not in ("core", "files")]
+        if invalid:
+            return jsonify({
+                "error": "invalid_part",
+                "message": f"Unknown part(s): {invalid}. Must be 'core' and/or 'files'.",
+            }), 400
+
+        ev_q: queue.Queue = queue.Queue()
+
+        def _work() -> None:
+            try:
+                ev_q.put({"type": "progress",
+                          "label": "Checking GitHub for latest site-data release…", "pct": None})
+                try:
+                    release, available_parts = _find_sitedata_release(_req)
+                except RuntimeError as exc:
+                    ev_q.put({"type": "error", "error": "no_releases", "message": str(exc)})
+                    return
+
+                tag = release.get("tag_name", "?")
+                dest_dir = DATA_DIR / "imports"
+                dest_dir.mkdir(parents=True, exist_ok=True)
+
+                summary: dict = {"tag": tag, "parts": {}}
+
+                for part in parts:
+                    part_info = available_parts.get(part)
+                    if part_info is None:
+                        ev_q.put({"type": "error", "error": "part_not_found",
+                                  "message": f"No '{part}' asset found in release {tag}."})
+                        return
+
+                    zip_asset = part_info["zip_asset"]
+                    manifest_asset = part_info["manifest_asset"]
+
+                    ev_q.put({"type": "progress",
+                              "label": f"Downloading manifest for {part}…", "pct": None})
+                    mresp = _req.get(manifest_asset["browser_download_url"], timeout=30)
+                    mresp.raise_for_status()
+                    manifest = mresp.json()
+
+                    zip_dest = dest_dir / zip_asset["name"]
+                    manifest_dest = dest_dir / manifest_asset["name"]
+
+                    total_bytes = zip_asset.get("size", 0)
+                    total_mb = total_bytes / (1 << 20)
+                    ev_q.put({"type": "progress",
+                              "label": f"Downloading {zip_asset['name']} ({total_mb:.0f} MB)…",
+                              "pct": 0})
+                    dresp = _req.get(zip_asset["browser_download_url"], stream=True, timeout=600)
+                    dresp.raise_for_status()
+
+                    downloaded = 0
+                    with open(zip_dest, "wb") as fh:
+                        for chunk in dresp.iter_content(chunk_size=1 << 18):
+                            if chunk:
+                                fh.write(chunk)
+                                downloaded += len(chunk)
+                                if total_bytes:
+                                    pct = downloaded * 100 // total_bytes
+                                    dl_mb = downloaded / (1 << 20)
+                                    ev_q.put({
+                                        "type": "progress",
+                                        "label": (f"Downloading {part}… {pct}%  "
+                                                  f"({dl_mb:.1f} / {total_mb:.0f} MB)"),
+                                        "pct": pct,
+                                    })
+
+                    ev_q.put({"type": "progress",
+                              "label": f"Verifying {part} checksum…", "pct": None})
+                    sha = hashlib.sha256()
+                    with open(zip_dest, "rb") as fh:
+                        for chunk in iter(lambda: fh.read(1 << 20), b""):
+                            sha.update(chunk)
+                    expected_sha = manifest.get("sha256", "")
+                    if sha.hexdigest() != expected_sha:
+                        zip_dest.unlink(missing_ok=True)
+                        ev_q.put({"type": "error", "error": "sha256_mismatch",
+                                  "message": f"SHA256 mismatch for {part} — download may be "
+                                             "corrupt. Please try again."})
+                        return
+
+                    with open(manifest_dest, "w", encoding="utf-8") as fh:
+                        _json.dump(manifest, fh, indent=2)
+
+                    ev_q.put({"type": "progress",
+                              "label": f"Extracting {part} into site data…", "pct": None})
+                    extraction = _restore_sitedata_zip(zip_dest)
+
+                    # Cheap local signal for /api/onboarding/status — avoids an
+                    # os.scandir() over up to ~94k files on every status poll.
+                    SITE_DIR.mkdir(parents=True, exist_ok=True)
+                    marker_path = SITE_DIR / f".sitedata_{part}_manifest.json"
+                    with open(marker_path, "w", encoding="utf-8") as fh:
+                        _json.dump(manifest, fh, indent=2)
+
+                    summary["parts"][part] = {
+                        "restored": len(extraction["restored"]),
+                        "conflicts": len(extraction["conflicts"]),
+                        "manifest": manifest,
+                    }
+
+                ev_q.put({"type": "done", "summary": summary})
+
+            except Exception as exc:
+                ev_q.put({"type": "error", "error": type(exc).__name__, "message": str(exc)})
+
+        threading.Thread(target=_work, daemon=True).start()
+
+        def _stream():
+            while True:
+                try:
+                    ev = ev_q.get(timeout=680)
+                except queue.Empty:
+                    ev = {"type": "error", "error": "timeout",
+                          "message": "Install timed out after 680 s."}
+                yield f"data: {_json.dumps(ev)}\n\n"
+                if ev.get("type") in ("done", "error"):
+                    break
+
+        return Response(
+            stream_with_context(_stream()),
+            content_type="text/event-stream",
+            headers={"X-Accel-Buffering": "no", "Cache-Control": "no-cache"},
+        )
+
+    def _sitedata_local_state() -> "tuple[bool, int]":
+        """Cheap local read of installed site-data extent, for onboarding/status.
+
+        Prefers the ``.sitedata_<part>_manifest.json`` marker written by
+        ``sitedata_github_install`` (a single small JSON read) over scanning
+        the filesystem. Falls back to a directory-existence check (core) and
+        an ``os.scandir`` count (files — ~94k entries, ≈1s, acceptable per
+        FABLE_ONBOARDING_SYNC.md §4) when a marker is missing, e.g. site data
+        restored via the legacy ``/api/package/restore`` local-zip path
+        rather than the GitHub installer.
+
+        Returns:
+            (sitedata_core_present, sitedata_files_count).
+        """
+        core_marker = SITE_DIR / ".sitedata_core_manifest.json"
+        if core_marker.exists():
+            core_present = True
+        else:
+            core_dir = SITE_DIR / "detail"
+            core_present = core_dir.exists() and any(core_dir.iterdir())
+
+        files_marker = SITE_DIR / ".sitedata_files_manifest.json"
+        files_count = 0
+        if files_marker.exists():
+            try:
+                files_count = int(
+                    json.loads(files_marker.read_text(encoding="utf-8")).get("file_count", 0)
+                )
+            except Exception:
+                files_count = 0
+        elif SITE_FILES_DIR.exists():
+            files_count = sum(1 for _ in os.scandir(SITE_FILES_DIR))
+
+        return core_present, files_count
+
+    @app.route("/api/onboarding/status", methods=["GET"])
+    def onboarding_status() -> Response:
+        """Report first-run onboarding progress for the wizard / Home checklist.
+
+        See FABLE_ONBOARDING_SYNC.md §4. Cheap only: COUNT queries, a
+        ``meta`` read, and directory existence/marker checks (see
+        ``_sitedata_local_state``) — no full table scans.
+
+        Returns:
+            JSON: {entries_count, master_version, sitedata_core_present,
+            sitedata_files_count, mounts_configured, collection_count,
+            complete}. ``complete`` is true iff entries are present AND
+            ``master_version`` is stamped AND at least one collection mount
+            is configured.
+        """
+        try:
+            with database.get_connection() as conn:
+                entries_count = conn.execute("SELECT COUNT(*) FROM entries").fetchone()[0]
+                collection_count = conn.execute("SELECT COUNT(*) FROM my_collection").fetchone()[0]
+            master_version = database.get_meta("master_version")
+            sitedata_core_present, sitedata_files_count = _sitedata_local_state()
+            mounts_configured = bool(database.get_collection_mounts())
+
+            complete = bool(entries_count) and bool(master_version) and mounts_configured
+
+            return jsonify({
+                "entries_count": entries_count,
+                "master_version": master_version,
+                "sitedata_core_present": sitedata_core_present,
+                "sitedata_files_count": sitedata_files_count,
+                "mounts_configured": mounts_configured,
+                "collection_count": collection_count,
+                "complete": complete,
+            })
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
 
     # ------------------------------------------------------------------
     # bobdylan.com setlist routes
