@@ -56,8 +56,12 @@ type HealthFlag  = 'Wishlist' | 'Duplicates' | 'Unconfirmed'
 // pickRank against ownership (own the #1 pick vs. own a lower-ranked copy —
 // the latter "doubles as a collection-pruning view" per the spec); 'carbonbit'
 // / 'tenhaaf' are the curated-list filters from TODO-181's deferred UI half.
+// FABLE_TAPER_ATTRIBUTION phase 2 (TODO-192): 'taperConfirmed' filters shows with a
+// curator-confirmed taper pill; 'taperReview' surfaces propagated/inferred/conflict
+// rows per §5's "review queue = a Library filter" decision (no new screen).
 type PerfView = 'all' | 'owned' | 'gaps' | 'wishlist' | 'duplicates'
   | 'recommended' | 'superseded' | 'carbonbit' | 'tenhaaf'
+  | 'taperConfirmed' | 'taperReview'
 
 interface RecordingRow {
   lb: string
@@ -93,6 +97,12 @@ interface RecordingRow {
   pickRank?: number
   absGrade?: string
   curated?: string[]
+  // FABLE_TAPER_ATTRIBUTION phase 2 (F4 Library payload pattern, §5) — merged
+  // in from /api/library/performances alongside the ranking fields above.
+  // taperConfirmed only exists for confidence='confirmed' rows (pill-eligible);
+  // taperReview flags propagated/inferred/conflict rows for the review filter.
+  taperConfirmed?: string
+  taperReview?: boolean
 }
 
 type FlatItem =
@@ -158,11 +168,13 @@ type ViewLabelKey = 'library.views.allPerformances' | 'library.views.myCollectio
   | 'library.views.coverageGaps' | 'library.views.wishlist' | 'library.views.duplicates'
   | 'library.views.recommended' | 'library.views.superseded'
   | 'library.views.carbonbitPicks' | 'library.views.tenhaafPicks'
+  | 'library.views.taperConfirmed' | 'library.views.taperReview'
 const VIEW_LABEL_KEY: Record<string, ViewLabelKey> = {
   all: 'library.views.allPerformances', owned: 'library.views.myCollection', gaps: 'library.views.coverageGaps',
   wishlist: 'library.views.wishlist', duplicates: 'library.views.duplicates',
   recommended: 'library.views.recommended', superseded: 'library.views.superseded',
   carbonbit: 'library.views.carbonbitPicks', tenhaaf: 'library.views.tenhaafPicks',
+  taperConfirmed: 'library.views.taperConfirmed', taperReview: 'library.views.taperReview',
 }
 const COVERAGE_LABEL_KEY: Record<string, 'library.coverageValue.covered' | 'library.coverageValue.upgrade' | 'library.coverageValue.gap' | 'library.coverageValue.undocumented'> = {
   Covered: 'library.coverageValue.covered', Upgrade: 'library.coverageValue.upgrade',
@@ -1593,12 +1605,15 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
             row.famConf = fam.fam_conf; row.famBy = fam.fam_by as RecordingRow['famBy']
             row.famNeedsReview = !!fam.fam_needs_review; row.famReviewReason = fam.fam_review_reason ?? null
           }
-          // pickRank/absGrade/curated only exist on the performance payload's
-          // stub (show_picks/quality/curated_lists never joined into
-          // /api/search) — merge unconditionally, same as the fam fields above.
+          // pickRank/absGrade/curated/taperConfirmed/taperReview only exist on
+          // the performance payload's stub (show_picks/quality/curated_lists/
+          // taper_attributions never joined into /api/search) — merge
+          // unconditionally, same as the fam fields above.
           if (stub.pickRank != null) row.pickRank = stub.pickRank
           if (stub.absGrade) row.absGrade = stub.absGrade
           if (stub.curated) row.curated = stub.curated
+          if (stub.taperConfirmed) row.taperConfirmed = stub.taperConfirmed
+          if (stub.taperReview) row.taperReview = stub.taperReview
           return row
         })
         // Performance lens has no per-recording Status filter (unlike the
@@ -1686,6 +1701,8 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
       if (perfView === 'superseded') return p.recordings.some(r => r.owned && (r.pickRank ?? 1) > 1)
       if (perfView === 'carbonbit') return p.recordings.some(r => r.curated?.includes('carbonbit'))
       if (perfView === 'tenhaaf') return p.recordings.some(r => r.curated?.includes('10haaf'))
+      if (perfView === 'taperConfirmed') return p.recordings.some(r => r.taperConfirmed != null)
+      if (perfView === 'taperReview') return p.recordings.some(r => r.taperReview)
       return true
     })
   }, [performances, query, activeDecade, activeYear, activeCoverage, activeSource, activeRating, perfView])
@@ -1791,6 +1808,8 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
     superseded: performances.filter(p => p.recordings.some(r => r.owned && (r.pickRank ?? 1) > 1)).length,
     carbonbit: performances.filter(p => p.recordings.some(r => r.curated?.includes('carbonbit'))).length,
     tenhaaf:   performances.filter(p => p.recordings.some(r => r.curated?.includes('10haaf'))).length,
+    taperConfirmed: performances.filter(p => p.recordings.some(r => r.taperConfirmed != null)).length,
+    taperReview:    performances.filter(p => p.recordings.some(r => r.taperReview)).length,
   }), [performances])
 
   const hasActiveFilters = activeDecade.size > 0 || activeYear.size > 0 || activeCoverage.size > 0 || activeSource.size > 0 || activeRating.size > 0 || perfView !== 'all'
@@ -1867,6 +1886,8 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
               {opt('superseded', t('library.views.superseded'), viewCounts.superseded)}
               {opt('carbonbit', t('library.views.carbonbitPicks'), viewCounts.carbonbit)}
               {opt('tenhaaf', t('library.views.tenhaafPicks'), viewCounts.tenhaaf)}
+              {opt('taperConfirmed', t('library.views.taperConfirmed'), viewCounts.taperConfirmed)}
+              {opt('taperReview', t('library.views.taperReview'), viewCounts.taperReview)}
             </>
           }}
         </FilterMenu>
@@ -2224,6 +2245,9 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
                                 {single && lone?.curated?.map(name => (
                                   <Pill key={name} tone="info" soft>{t('library.picks.curatedBadge', { curator: name })}</Pill>
                                 ))}
+                                {single && lone?.taperConfirmed && (
+                                  <Pill tone="info" soft>{t('library.picks.taperBadge', { taper: lone.taperConfirmed })}</Pill>
+                                )}
                                 {single && lone?.desc && (
                                   <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', color: 'var(--lbb-fg2)', fontSize: 'var(--lbb-fs-11-5)', minWidth: 0 }}>
                                     {lone.desc}
@@ -2285,6 +2309,9 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
                               {rec.curated?.map(name => (
                                 <Pill key={name} tone="info" soft>{t('library.picks.curatedBadge', { curator: name })}</Pill>
                               ))}
+                              {rec.taperConfirmed && (
+                                <Pill tone="info" soft>{t('library.picks.taperBadge', { taper: rec.taperConfirmed })}</Pill>
+                              )}
                               <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{rec.desc}</span>
                               <span style={{ color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-11)' }}>{rec.src ? (SOURCE_FULL[rec.src] ?? rec.src) : '—'}</span>
                             </span>

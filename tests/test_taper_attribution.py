@@ -1,8 +1,10 @@
 """Tests for backend.taper_attribution: Layer 0 seeding, Layer 1 propagation,
-conflict detection, taper_confirmations (confirm/reject), and idempotency.
+conflict detection, taper_confirmations (confirm/reject), idempotency, and
+the Phase 2 curator confirm/reject HTTP API.
 """
 import json
 import os
+import shutil
 import tempfile
 
 import backend.db as db
@@ -332,3 +334,244 @@ def test_dry_run_does_not_write():
 
     assert stats["confirmed"] == 1
     assert _get_attr(conn, 1000) is None
+
+
+# ── Phase 2 curator confirm/reject HTTP API ────────────────────────────────────
+
+class _AppClient:
+    """Context manager wiring backend.app's create_app() to a temp DB path,
+    mirroring tests/test_library_picks_api.py's pattern.
+    """
+
+    def __init__(self, db_path):
+        self.db_path = db_path
+
+    def __enter__(self):
+        self._orig_db_path = _paths.DB_PATH
+        self._orig_module_db_path = getattr(db, "DB_PATH", None)
+        _paths.DB_PATH = self.db_path
+        db.DB_PATH = self.db_path
+        from backend.app import create_app
+        app = create_app()
+        return app.test_client()
+
+    def __exit__(self, *exc):
+        _paths.DB_PATH = self._orig_db_path
+        if self._orig_module_db_path is not None:
+            db.DB_PATH = self._orig_module_db_path
+
+
+def _get_confirmation(conn, lb):
+    row = conn.execute(
+        "SELECT * FROM taper_confirmations WHERE lb_number = ?", (lb,)
+    ).fetchone()
+    return dict(row) if row else None
+
+
+def test_confirm_route_sets_confirmed_and_records_confirmation():
+    db_path, tmp_dir = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_entry(conn, 1100, "Audience recording, no taper info given.")
+    db.set_curator(True, db_path)
+
+    with _AppClient(db_path) as client:
+        resp = client.post("/api/tapers/attributions/1100/confirm", json={"taper": "spot"})
+        assert resp.status_code == 200
+        body = resp.get_json()
+        assert body["lb_number"] == 1100
+        assert body["attribution"]["taper_normalised"] == "spot"
+        assert body["attribution"]["confidence"] == "confirmed"
+        assert body["attribution"]["confirmed_at"] is not None
+        assert any(e["kind"] == "confirmation" for e in body["attribution"]["evidence"])
+
+    conf = _get_confirmation(conn, 1100)
+    assert conf["action"] == "confirm"
+    assert conf["taper_normalised"] == "spot"
+    row = _get_attr(conn, 1100)
+    assert row["confidence"] == "confirmed"
+
+    shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_confirm_route_sources_taper_from_existing_attribution():
+    db_path, tmp_dir = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_entry(conn, 1101, "Great show, thanks to spot for the tape.",
+                taper_name="spot", taper_normalised="spot")
+    taper_attribution.recompute(db_path=db_path)  # seeds a 'propagated' row
+    assert _get_attr(conn, 1101)["confidence"] == "propagated"
+    db.set_curator(True, db_path)
+
+    with _AppClient(db_path) as client:
+        resp = client.post("/api/tapers/attributions/1101/confirm", json={})
+        assert resp.status_code == 200
+        body = resp.get_json()
+        assert body["attribution"]["taper_normalised"] == "spot"
+        assert body["attribution"]["confidence"] == "confirmed"
+
+    shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_confirm_route_400_when_no_attribution_and_no_taper():
+    db_path, tmp_dir = _make_db()
+    _seed_entry(db.get_connection(db_path), 1102, "No taper info at all.")
+    db.set_curator(True, db_path)
+
+    with _AppClient(db_path) as client:
+        resp = client.post("/api/tapers/attributions/1102/confirm", json={})
+        assert resp.status_code == 400
+
+    shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_reject_route_deletes_matching_attribution_and_records_confirmation():
+    db_path, tmp_dir = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_entry(conn, 1103, "Taper: Spot\nSource: X", taper_name="spot", taper_normalised="spot")
+    taper_attribution.recompute(db_path=db_path)
+    assert _get_attr(conn, 1103) is not None
+    db.set_curator(True, db_path)
+
+    with _AppClient(db_path) as client:
+        resp = client.post("/api/tapers/attributions/1103/reject", json={})
+        assert resp.status_code == 200
+        body = resp.get_json()
+        assert body["lb_number"] == 1103
+        assert body["attribution"] is None
+
+    conf = _get_confirmation(conn, 1103)
+    assert conf["action"] == "reject"
+    assert conf["taper_normalised"] == "spot"
+    assert _get_attr(conn, 1103) is None
+
+    shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_reconfirm_after_reject_overwrites_prior_decision():
+    db_path, tmp_dir = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_entry(conn, 1104, "Taper: Spot\nSource: X", taper_name="spot", taper_normalised="spot")
+    taper_attribution.recompute(db_path=db_path)
+    db.set_curator(True, db_path)
+
+    with _AppClient(db_path) as client:
+        resp = client.post("/api/tapers/attributions/1104/reject", json={})
+        assert resp.status_code == 200
+        assert resp.get_json()["attribution"] is None
+        assert _get_confirmation(conn, 1104)["action"] == "reject"
+
+        # Attribution row is gone, so the taper must be supplied explicitly.
+        resp = client.post("/api/tapers/attributions/1104/confirm", json={"taper": "spot"})
+        assert resp.status_code == 200
+        body = resp.get_json()
+        assert body["attribution"]["confidence"] == "confirmed"
+        assert body["attribution"]["taper_normalised"] == "spot"
+
+    conf = _get_confirmation(conn, 1104)
+    assert conf["action"] == "confirm"
+    row = _get_attr(conn, 1104)
+    assert row["confidence"] == "confirmed"
+
+    shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_confirm_and_reject_routes_403_when_not_curator():
+    db_path, tmp_dir = _make_db()
+    _seed_entry(db.get_connection(db_path), 1105, "Taper: Spot\nSource: X",
+                taper_name="spot", taper_normalised="spot")
+    taper_attribution.recompute(db_path=db_path)
+    db.set_curator(False, db_path)
+
+    with _AppClient(db_path) as client:
+        resp = client.post("/api/tapers/attributions/1105/confirm", json={})
+        assert resp.status_code == 403
+
+        resp = client.post("/api/tapers/attributions/1105/reject", json={})
+        assert resp.status_code == 403
+
+    shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+# ── Phase 2 read API: GET single + filtered list (no curator gate) ────────────
+
+def test_get_route_returns_null_when_no_attribution():
+    db_path, tmp_dir = _make_db()
+    _seed_entry(db.get_connection(db_path), 1200, "No taper info at all.")
+    db.set_curator(False, db_path)  # explicitly non-curator: read route must not gate
+
+    with _AppClient(db_path) as client:
+        resp = client.get("/api/tapers/attributions/1200")
+        assert resp.status_code == 200
+        body = resp.get_json()
+        assert body == {"lb_number": 1200, "attribution": None}
+
+    shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_get_route_returns_attribution_with_evidence():
+    db_path, tmp_dir = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_entry(conn, 1201, "Taper: Spot\nSource: X", taper_name="spot", taper_normalised="spot")
+    taper_attribution.recompute(db_path=db_path)
+    db.set_curator(False, db_path)
+
+    with _AppClient(db_path) as client:
+        resp = client.get("/api/tapers/attributions/1201")
+        assert resp.status_code == 200
+        body = resp.get_json()
+        assert body["lb_number"] == 1201
+        assert body["attribution"]["taper_normalised"] == "spot"
+        assert body["attribution"]["confidence"] == "confirmed"
+        assert any(e["kind"] == "explicit" for e in body["attribution"]["evidence"])
+
+    shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_list_route_filters_by_confidence_taper_and_conflict():
+    db_path, tmp_dir = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_entry(conn, 1300, "Taper: Spot\nSource: X", taper_name="spot", taper_normalised="spot")
+    _seed_entry(conn, 1301, "Taper: Hide\nSource: Y", taper_name="hide", taper_normalised="hide")
+    _seed_entry(conn, 1302, "No taper info.")
+    _seed_family(conn, "F5", "1979-01-01", [1300, 1301, 1302])
+    db.set_curator(False, db_path)
+
+    taper_attribution.recompute(db_path=db_path)
+
+    with _AppClient(db_path) as client:
+        resp = client.get("/api/tapers/attributions")
+        assert resp.status_code == 200
+        all_rows = resp.get_json()["attributions"]
+        lb_set = {r["lb_number"] for r in all_rows}
+        assert {1300, 1301, 1302}.issubset(lb_set)
+        assert all("evidence" in r and isinstance(r["evidence"], list) for r in all_rows)
+
+        resp = client.get("/api/tapers/attributions?confidence=confirmed")
+        confirmed_lbs = {r["lb_number"] for r in resp.get_json()["attributions"]}
+        assert {1300, 1301}.issubset(confirmed_lbs)
+        assert 1302 not in confirmed_lbs
+
+        resp = client.get("/api/tapers/attributions?taper=spot")
+        spot_rows = resp.get_json()["attributions"]
+        assert all(r["taper_normalised"] == "spot" for r in spot_rows)
+        assert 1300 in {r["lb_number"] for r in spot_rows}
+
+        resp = client.get("/api/tapers/attributions?conflict=1")
+        conflict_rows = resp.get_json()["attributions"]
+        assert all(r["conflict"] == 1 for r in conflict_rows)
+        assert 1302 in {r["lb_number"] for r in conflict_rows}
+
+    shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_list_and_get_routes_no_curator_gate():
+    """Read routes must return 200 (never 403) regardless of curator flag."""
+    db_path, tmp_dir = _make_db()
+    _seed_entry(db.get_connection(db_path), 1400, "No taper info at all.")
+    db.set_curator(False, db_path)
+
+    with _AppClient(db_path) as client:
+        assert client.get("/api/tapers/attributions").status_code == 200
+        assert client.get("/api/tapers/attributions/1400").status_code == 200
+
+    shutil.rmtree(tmp_dir, ignore_errors=True)

@@ -1389,7 +1389,9 @@
       "recommended": "Recomendado, de mi propiedad",
       "superseded": "Copias sustituidas",
       "carbonbitPicks": "Selección de carbonbit",
-      "tenhaafPicks": "Selección de 10haaf"
+      "tenhaafPicks": "Selección de 10haaf",
+      "taperConfirmed": "Grabador confirmado",
+      "taperReview": "Taper: necesita revisión"
     },
     "statusValue": {
       "public": "Público",
@@ -1521,7 +1523,8 @@
       "recordingFamilies": "Familias de grabaciones · {{count}}",
       "groupedByTapeMatch": "agrupadas por TapeMatch",
       "needsReview": "Necesita revisión",
-      "tabPicks": "Selecciones"
+      "tabPicks": "Selecciones",
+      "tabTaper": "Taper"
     },
     "coverage": {
       "ownedFull": "Propiedad de {{owned}}/{{total}}",
@@ -1614,7 +1617,21 @@
       "scoreLabel": "Elegir partitura",
       "gradeBadge": "Calificación: {{grade}}",
       "curatedBadge": "Selección de {{curator}}",
-      "notComputedNote": "Aún no se han calculado: ejecuta «Recalcular datos derivados» en Configuración."
+      "notComputedNote": "Aún no se han calculado: ejecuta «Recalcular datos derivados» en Configuración.",
+      "taperBadge": "{{taper}}"
+    },
+    "taper": {
+      "label": "Atribución de Taper",
+      "taperLabel": "Taper",
+      "emptyNote": "No se indica quién realizó esta grabación.",
+      "tier": {
+        "confirmed": "Confirmado",
+        "propagated": "Propagado",
+        "inferred": "Deducido"
+      },
+      "conflict": "Pruebas contradictorias",
+      "confirm": "Confirmar",
+      "reject": "Rechazar"
     }
   }
 }

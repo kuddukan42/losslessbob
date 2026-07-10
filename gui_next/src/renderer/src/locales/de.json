@@ -1389,7 +1389,9 @@
       "recommended": "Empfohlen, im Besitz",
       "superseded": "Veraltete Versionen",
       "carbonbitPicks": "carbonbits Auswahl",
-      "tenhaafPicks": "10haafs Auswahl"
+      "tenhaafPicks": "10haafs Auswahl",
+      "taperConfirmed": "Bestätigter Taper",
+      "taperReview": "Taper: muss noch überprüft werden"
     },
     "statusValue": {
       "public": "Öffentlich",
@@ -1521,7 +1523,8 @@
       "recordingFamilies": "Aufnahmefamilien · {{count}}",
       "groupedByTapeMatch": "gruppiert nach TapeMatch",
       "needsReview": "Muss noch überprüft werden",
-      "tabPicks": "Auswahl"
+      "tabPicks": "Auswahl",
+      "tabTaper": "Taper"
     },
     "coverage": {
       "ownedFull": "Zugeordnet zu {{owned}}/{{total}}",
@@ -1614,7 +1617,21 @@
       "scoreLabel": "Auswahl der Partitur",
       "gradeBadge": "Note {{grade}}",
       "curatedBadge": "Die Auswahl von {{curator}}",
-      "notComputedNote": "Noch nicht berechnet – führen Sie im Setup den Befehl „Abgeleitete Daten neu berechnen“ aus."
+      "notComputedNote": "Noch nicht berechnet – führen Sie im Setup den Befehl „Abgeleitete Daten neu berechnen“ aus.",
+      "taperBadge": "{{taper}}"
+    },
+    "taper": {
+      "label": "Taper-Quellenangabe",
+      "taperLabel": "Taper",
+      "emptyNote": "Für diese Aufnahme liegt keine Angabe zum Urheber vor.",
+      "tier": {
+        "confirmed": "Bestätigt",
+        "propagated": "Weitergeleitet",
+        "inferred": "Abgeleitet"
+      },
+      "conflict": "Widersprüchliche Beweise",
+      "confirm": "Bestätigen",
+      "reject": "Ablehnen"
     }
   }
 }

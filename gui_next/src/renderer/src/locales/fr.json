@@ -1389,7 +1389,9 @@
       "recommended": "Recommandé, en ma possession",
       "superseded": "Versions précédentes",
       "carbonbitPicks": "Les coups de cœur de carbonbit",
-      "tenhaafPicks": "Les coups de cœur de 10haaf"
+      "tenhaafPicks": "Les coups de cœur de 10haaf",
+      "taperConfirmed": "Enregistreur confirmé",
+      "taperReview": "Taper : à vérifier"
     },
     "statusValue": {
       "public": "Public",
@@ -1521,7 +1523,8 @@
       "recordingFamilies": "Familles d'enregistrements · {{count}}",
       "groupedByTapeMatch": "regroupées par TapeMatch",
       "needsReview": "À vérifier",
-      "tabPicks": "Sélection"
+      "tabPicks": "Sélection",
+      "tabTaper": "Taper"
     },
     "coverage": {
       "ownedFull": "Propriétaire : {{owned}}/{{total}}",
@@ -1614,7 +1617,21 @@
       "scoreLabel": "Choisir un score",
       "gradeBadge": "Note : {{grade}}",
       "curatedBadge": "Sélection de {{curator}}",
-      "notComputedNote": "Pas encore calculé — lancez « Recalculer les données dérivées » dans la configuration."
+      "notComputedNote": "Pas encore calculé — lancez « Recalculer les données dérivées » dans la configuration.",
+      "taperBadge": "{{taper}}"
+    },
+    "taper": {
+      "label": "Crédits : Taper",
+      "taperLabel": "Taper",
+      "emptyNote": "Aucune mention de l'auteur de cet enregistrement.",
+      "tier": {
+        "confirmed": "Confirmé",
+        "propagated": "Propagé",
+        "inferred": "Déduit"
+      },
+      "conflict": "Preuves contradictoires",
+      "confirm": "Confirmer",
+      "reject": "Refusé"
     }
   }
 }

@@ -1389,7 +1389,9 @@
       "recommended": "Recommended, owned",
       "superseded": "Superseded copies",
       "carbonbitPicks": "carbonbit's picks",
-      "tenhaafPicks": "10haaf's picks"
+      "tenhaafPicks": "10haaf's picks",
+      "taperConfirmed": "Confirmed taper",
+      "taperReview": "Taper: needs review"
     },
     "statusValue": {
       "public": "Public",
@@ -1486,6 +1488,7 @@
       "tabShare": "Seed & Share",
       "tabQuality": "Quality",
       "tabPicks": "Picks",
+      "tabTaper": "Taper",
       "showDetails": "Show details",
       "collapseDetails": "Collapse details",
       "lbPage": "LB page",
@@ -1603,7 +1606,21 @@
       "scoreLabel": "Pick score",
       "gradeBadge": "Grade {{grade}}",
       "curatedBadge": "{{curator}}'s pick",
+      "taperBadge": "{{taper}}",
       "notComputedNote": "Not yet computed — run “Recompute derived data” in Setup."
+    },
+    "taper": {
+      "label": "Taper Attribution",
+      "taperLabel": "Taper",
+      "emptyNote": "No taper attribution for this recording.",
+      "tier": {
+        "confirmed": "Confirmed",
+        "propagated": "Propagated",
+        "inferred": "Inferred"
+      },
+      "conflict": "Conflicting evidence",
+      "confirm": "Confirm",
+      "reject": "Reject"
     },
     "scope": {
       "everything": "Everything",

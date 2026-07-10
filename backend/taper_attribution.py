@@ -45,6 +45,7 @@ from backend.db import (
     _EXPLICIT_TAPER_LABEL_RE,
     _KNOWN_TAPER_ALIASES,
     _NOT_TAPER,
+    _normalise_taper,
     get_connection,
     get_write_queue,
     init_db,
@@ -230,6 +231,22 @@ def _layer0_seed(rows: list[sqlite3.Row], universe: frozenset[str]) -> dict[int,
 
 # ── taper_confirmations (MASTER, curator decisions) — locked decision, F2 ─────
 
+def _confirmed_row(taper: str, decided_at) -> dict:
+    """Build the in-memory attrs entry for a sticky curator 'confirm' decision.
+
+    Shared by the bulk :func:`recompute` pass (via :func:`_apply_confirmations`)
+    and the Phase 2 confirm/reject API's :func:`confirm`, so both paths produce
+    byte-identical evidence/tier shapes for the same decision.
+    """
+    return {
+        "taper": taper,
+        "tier": "confirmed",
+        "conflict": 0,
+        "evidence": [_evidence("confirmation", "curator confirmed")],
+        "confirmed_at": decided_at,
+    }
+
+
 def _apply_confirmations(
     attrs: dict[int, dict], confirmations: dict[int, sqlite3.Row]
 ) -> dict[int, str]:
@@ -239,13 +256,7 @@ def _apply_confirmations(
         action = row["action"]
         taper = row["taper_normalised"]
         if action == "confirm":
-            attrs[lb] = {
-                "taper": taper,
-                "tier": "confirmed",
-                "conflict": 0,
-                "evidence": [_evidence("confirmation", "curator confirmed")],
-                "confirmed_at": row["decided_at"],
-            }
+            attrs[lb] = _confirmed_row(taper, row["decided_at"])
         elif action == "reject":
             rejects[lb] = taper
         else:
@@ -515,3 +526,225 @@ def recompute(db_path: str | None = None, dry_run: bool = False) -> dict:
     if not dry_run:
         _write_attributions(attrs, db_path)
     return stats
+
+
+# ── Phase 2 curator API — confirm/reject (spec §5/§6, F2) ─────────────────────
+#
+# These apply a single curator decision immediately (no full recompute wait):
+# they write the sticky taper_confirmations row exactly as a full recompute
+# would read it, and reuse _confirmed_row / the same reject-matching rule as
+# _apply_rejects so the taper_attributions row they leave behind is byte-
+# identical to what the next full recompute() would produce for this lb.
+
+def get_attribution_for_lb(lb: int, db_path: str | None = None) -> dict | None:
+    """Return one LB's taper_attributions row, evidence_json parsed to a list.
+
+    Args:
+        lb: LB number to look up.
+        db_path: Optional database path override.
+
+    Returns:
+        Dict with lb_number, taper_normalised, confidence, evidence (parsed
+        list of {kind, detail, ...} records per F3), conflict, confirmed_at,
+        computed_at — or None if this lb has no taper_attributions row.
+    """
+    conn = get_connection(db_path)
+    row = conn.execute(
+        """SELECT lb_number, taper_normalised, confidence, evidence_json, conflict,
+                  confirmed_at, computed_at
+           FROM taper_attributions WHERE lb_number=?""",
+        (lb,),
+    ).fetchone()
+    if row is None:
+        return None
+    result = dict(row)
+    result["evidence"] = json.loads(result.pop("evidence_json"))
+    return result
+
+
+def list_attributions(
+    confidence: str | None = None,
+    taper: str | None = None,
+    conflict: bool | None = None,
+    db_path: str | None = None,
+) -> list[dict]:
+    """Return taper_attributions rows matching optional filters (Phase 2 API, spec §5).
+
+    Args:
+        confidence: Restrict to this confidence tier ('confirmed' / 'propagated' /
+            'inferred'), if given.
+        taper: Restrict to this taper (raw or canonical; normalised via
+            ``_normalise_taper`` before matching ``taper_normalised``), if given.
+        conflict: True restricts to conflict=1 rows, False to conflict=0 rows,
+            None applies no filter.
+        db_path: Optional database path override.
+
+    Returns:
+        List of dicts (lb_number, taper_normalised, confidence, evidence — parsed
+        list of {kind, detail, ...} records per F3 — conflict, confirmed_at,
+        computed_at), ordered by lb_number.
+    """
+    conn = get_connection(db_path)
+    clauses: list[str] = []
+    params: list = []
+    if confidence:
+        clauses.append("confidence = ?")
+        params.append(confidence)
+    if taper:
+        clauses.append("taper_normalised = ?")
+        params.append(_normalise_taper(taper) or taper)
+    if conflict is not None:
+        clauses.append("conflict = ?")
+        params.append(1 if conflict else 0)
+    where = f" WHERE {' AND '.join(clauses)}" if clauses else ""
+    rows = conn.execute(
+        f"""SELECT lb_number, taper_normalised, confidence, evidence_json, conflict,
+                   confirmed_at, computed_at
+            FROM taper_attributions{where} ORDER BY lb_number""",
+        params,
+    ).fetchall()
+    result = []
+    for row in rows:
+        d = dict(row)
+        d["evidence"] = json.loads(d.pop("evidence_json"))
+        result.append(d)
+    return result
+
+
+def _resolve_taper(conn: sqlite3.Connection, lb: int, taper: str | None) -> str:
+    """Normalise *taper* if given, else source it from lb's existing attribution row.
+
+    Args:
+        conn: A connection to read the existing taper_attributions row from.
+        lb: LB number the decision applies to.
+        taper: Raw or canonical taper name supplied by the caller, or None.
+
+    Returns:
+        Canonical taper_normalised value.
+
+    Raises:
+        ValueError: *taper* is None/blank and lb has no existing attribution
+            row to source one from.
+    """
+    resolved = _normalise_taper(taper) if taper else None
+    if not resolved:
+        existing = conn.execute(
+            "SELECT taper_normalised FROM taper_attributions WHERE lb_number=?", (lb,)
+        ).fetchone()
+        if existing is None:
+            raise ValueError(
+                f"LB-{lb} has no existing attribution and no taper was supplied"
+            )
+        resolved = existing["taper_normalised"]
+    return resolved
+
+
+def confirm(lb: int, taper: str | None = None, db_path: str | None = None) -> dict:
+    """Curator-confirm one LB's taper attribution immediately (Phase 2 API).
+
+    Writes a sticky 'confirm' row to the MASTER-tier taper_confirmations
+    table, overwriting any prior decision for this lb (PK is lb_number), then
+    immediately upserts taper_attributions to confidence='confirmed' using
+    _confirmed_row's evidence shape — the same shape a full recompute()
+    produces for a 'confirm' row via _apply_confirmations — so a later
+    recompute is a no-op for this lb.
+
+    Args:
+        lb: LB number to confirm.
+        taper: Raw or canonical taper name. Normalised via _normalise_taper.
+            If omitted, taken from this lb's existing taper_attributions row.
+        db_path: Optional database path override.
+
+    Returns:
+        The updated taper_attributions row (see get_attribution_for_lb).
+
+    Raises:
+        ValueError: No taper was supplied and no existing attribution row
+            exists to source one from, or the resolved taper is not in the
+            known-taper universe (_TAPER_UNIVERSE).
+    """
+    init_db(db_path)
+    conn = get_connection(db_path)
+    taper_norm = _resolve_taper(conn, lb, taper)
+    if taper_norm not in _TAPER_UNIVERSE:
+        raise ValueError(f"{taper_norm!r} is not in the known-taper universe")
+
+    def _do(c: sqlite3.Connection) -> None:
+        c.execute(
+            """INSERT INTO taper_confirmations (lb_number, taper_normalised, action, decided_at)
+               VALUES (?, ?, 'confirm', CURRENT_TIMESTAMP)
+               ON CONFLICT(lb_number) DO UPDATE SET
+                   taper_normalised = excluded.taper_normalised,
+                   action = 'confirm',
+                   decided_at = CURRENT_TIMESTAMP""",
+            (lb, taper_norm),
+        )
+        decided_at = c.execute(
+            "SELECT decided_at FROM taper_confirmations WHERE lb_number=?", (lb,)
+        ).fetchone()["decided_at"]
+        confirmed = _confirmed_row(taper_norm, decided_at)
+        c.execute(
+            """INSERT INTO taper_attributions
+                   (lb_number, taper_normalised, confidence, evidence_json, conflict, confirmed_at)
+               VALUES (?, ?, ?, ?, ?, ?)
+               ON CONFLICT(lb_number) DO UPDATE SET
+                   taper_normalised = excluded.taper_normalised,
+                   confidence = excluded.confidence,
+                   evidence_json = excluded.evidence_json,
+                   conflict = excluded.conflict,
+                   confirmed_at = excluded.confirmed_at""",
+            (lb, taper_norm, confirmed["tier"], json.dumps(confirmed["evidence"]),
+             confirmed["conflict"], confirmed["confirmed_at"]),
+        )
+
+    get_write_queue().execute(_do)
+    return get_attribution_for_lb(lb, db_path)
+
+
+def reject(lb: int, taper: str | None = None, db_path: str | None = None) -> dict | None:
+    """Curator-reject one LB's taper attribution immediately (Phase 2 API).
+
+    Writes a sticky 'reject' row to the MASTER-tier taper_confirmations
+    table, overwriting any prior decision for this lb, and deletes the
+    taper_attributions row for (lb, taper_norm) if it currently matches —
+    the same same-pair check _apply_rejects uses during a full recompute, so
+    rejecting a taper this entry doesn't currently carry still records the
+    suppression (for the next recompute) without touching an unrelated,
+    currently-correct attribution.
+
+    Args:
+        lb: LB number to reject.
+        taper: Raw or canonical taper name being rejected. Normalised via
+            _normalise_taper. If omitted, taken from this lb's existing
+            taper_attributions row.
+        db_path: Optional database path override.
+
+    Returns:
+        The updated taper_attributions row, or None if it was deleted (or
+        never existed).
+
+    Raises:
+        ValueError: No taper was supplied and no existing attribution row
+            exists to source one from.
+    """
+    init_db(db_path)
+    conn = get_connection(db_path)
+    taper_norm = _resolve_taper(conn, lb, taper)
+
+    def _do(c: sqlite3.Connection) -> None:
+        c.execute(
+            """INSERT INTO taper_confirmations (lb_number, taper_normalised, action, decided_at)
+               VALUES (?, ?, 'reject', CURRENT_TIMESTAMP)
+               ON CONFLICT(lb_number) DO UPDATE SET
+                   taper_normalised = excluded.taper_normalised,
+                   action = 'reject',
+                   decided_at = CURRENT_TIMESTAMP""",
+            (lb, taper_norm),
+        )
+        c.execute(
+            "DELETE FROM taper_attributions WHERE lb_number=? AND taper_normalised=?",
+            (lb, taper_norm),
+        )
+
+    get_write_queue().execute(_do)
+    return get_attribution_for_lb(lb, db_path)
