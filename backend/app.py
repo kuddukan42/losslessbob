@@ -7306,50 +7306,119 @@ def create_app() -> Flask:
             _log.exception("package_user_data failed")
             return jsonify({"error": "internal_error"}), 500
 
+    def _package_site_data(part: str | None) -> "tuple[Path, Path, dict]":
+        """Bundle ``data/site/`` (or a subset of it) into a dated zip + manifest.
+
+        Mirrors :func:`backend.db.export_master_db`'s manifest convention: a
+        ``<zip_name>.manifest.json`` sidecar written next to the zip with
+        ``type``, ``created_at``, ``file_count``, ``total_bytes``, ``sha256``.
+
+        Args:
+            part: ``None`` to package the whole ``data/site/`` tree (legacy,
+                backward-compatible behavior); ``"core"`` for everything
+                except ``data/site/files/``; ``"files"`` for only
+                ``data/site/files/``. See FABLE_ONBOARDING_SYNC.md §3.
+
+        Returns:
+            (zip_path, manifest_path, manifest_dict).
+
+        Raises:
+            FileNotFoundError: If ``data/site/`` does not exist yet.
+        """
+        import hashlib
+        import zipfile
+        from datetime import UTC, date, datetime
+
+        if not SITE_DIR.exists():
+            raise FileNotFoundError("data/site/ does not exist. Run the site crawler first.")
+
+        exports_dir = DATA_DIR / "exports"
+        exports_dir.mkdir(parents=True, exist_ok=True)
+
+        date_str = date.today().isoformat()
+        if part is None:
+            base_name = f"losslessbob_sitedata_{date_str}"
+            manifest_type = "scrape_data"
+        else:
+            base_name = f"losslessbob_sitedata_{part}_{date_str}"
+            manifest_type = f"sitedata_{part}"
+
+        zip_path = exports_dir / f"{base_name}.zip"
+        counter = 2
+        while zip_path.exists():
+            zip_path = exports_dir / f"{base_name}_{counter}.zip"
+            counter += 1
+
+        def _include(src: Path) -> bool:
+            if part is None:
+                return True
+            under_files = src.is_relative_to(SITE_FILES_DIR)
+            return under_files if part == "files" else not under_files
+
+        file_count = 0
+        total_bytes = 0
+        with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED) as zf:
+            for src in sorted(SITE_DIR.rglob("*")):
+                if src.is_file() and _include(src):
+                    arc_name = "site/" + src.relative_to(SITE_DIR).as_posix()
+                    zf.write(src, arc_name)
+                    file_count += 1
+                    total_bytes += src.stat().st_size
+
+        sha = hashlib.sha256()
+        with open(zip_path, "rb") as f:
+            for chunk in iter(lambda: f.read(1 << 20), b""):
+                sha.update(chunk)
+
+        manifest = {
+            "type": manifest_type,
+            "created_at": datetime.now(UTC).isoformat() + "Z",
+            "file_count": file_count,
+            "total_bytes": total_bytes,
+            "sha256": sha.hexdigest(),
+        }
+        manifest_path = zip_path.with_name(zip_path.name + ".manifest.json")
+        with open(manifest_path, "w", encoding="utf-8") as mf:
+            json.dump(manifest, mf, indent=2)
+
+        return zip_path, manifest_path, manifest
+
     @app.route("/api/package/scrape_data", methods=["POST"])
     def package_scrape_data() -> Response:
         """Bundle scraped site data (data/site/) into a dated zip in data/exports/.
 
-        Returns: {ok, path, manifest: {type, created_at, file_count, total_bytes}}
+        Query param ``part`` selects the subset to package:
+          - omitted (default): the whole ``data/site/`` tree in one zip —
+            backward-compatible with existing callers (ScreenSetup, gui/setup_tab.py).
+          - ``core``: everything except ``data/site/files/`` (detail pages,
+            artwork, lbbcd/bynumber indexes). Recommended for all users.
+          - ``files``: only ``data/site/files/`` (checksum/fingerprint text
+            attachments). Optional, much larger.
+
+        A ``<zip_name>.manifest.json`` sidecar is written next to the zip.
+
+        Returns: {ok, path, manifest_path, manifest: {type, created_at,
+        file_count, total_bytes, sha256}}
         """
-        import zipfile
-        from datetime import UTC, date, datetime
+        part = request.args.get("part")
+        if part not in (None, "core", "files"):
+            return jsonify({
+                "error": "invalid_part",
+                "message": "part must be 'core' or 'files'",
+            }), 400
 
         try:
-            if not SITE_DIR.exists():
-                return jsonify({
-                    "error": "no_site_data",
-                    "message": "data/site/ does not exist. Run the site crawler first.",
-                }), 400
-
-            exports_dir = DATA_DIR / "exports"
-            exports_dir.mkdir(parents=True, exist_ok=True)
-
-            date_str = date.today().isoformat()
-            zip_path = exports_dir / f"losslessbob_sitedata_{date_str}.zip"
-            counter = 2
-            while zip_path.exists():
-                zip_path = exports_dir / f"losslessbob_sitedata_{date_str}_{counter}.zip"
-                counter += 1
-
-            file_count = 0
-            total_bytes = 0
-            with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED) as zf:
-                for src in sorted(SITE_DIR.rglob("*")):
-                    if src.is_file():
-                        arc_name = "site/" + src.relative_to(SITE_DIR).as_posix()
-                        zf.write(src, arc_name)
-                        file_count += 1
-                        total_bytes += src.stat().st_size
-
-            manifest = {
-                "type": "scrape_data",
-                "created_at": datetime.now(UTC).isoformat() + "Z",
-                "file_count": file_count,
-                "total_bytes": total_bytes,
-            }
-            _log.info("package_scrape_data: wrote %s (%d files)", zip_path.name, file_count)
-            return jsonify({"ok": True, "path": str(zip_path), "manifest": manifest})
+            zip_path, manifest_path, manifest = _package_site_data(part)
+            _log.info("package_scrape_data: wrote %s (%d files, part=%s)",
+                       zip_path.name, manifest["file_count"], part or "all")
+            return jsonify({
+                "ok": True,
+                "path": str(zip_path),
+                "manifest_path": str(manifest_path),
+                "manifest": manifest,
+            })
+        except FileNotFoundError as exc:
+            return jsonify({"error": "no_site_data", "message": str(exc)}), 400
         except Exception:
             _log.exception("package_scrape_data failed")
             return jsonify({"error": "internal_error"}), 500
@@ -7450,6 +7519,196 @@ def create_app() -> Flask:
         except Exception:
             _log.exception("package_restore failed")
             return jsonify({"error": "internal_error"}), 500
+
+    @app.route("/api/sitedata/github_release", methods=["POST"])
+    def sitedata_github_release() -> Response:
+        """Package site data (core + files) and publish both as a GitHub release.
+
+        Curator-only. Mirror of ``master_github_release``: builds the two
+        assets locally (via ``_package_site_data``), obtains a token via
+        ``gh auth token``, then uses the GitHub REST API to create a release
+        tagged ``sitedata-<YYYY-MM-DD>`` and upload all 4 assets (2 zips +
+        2 ``.manifest.json`` sidecars) with byte-accurate progress.
+
+        Body: none required.
+        Returns: text/event-stream with events:
+          data: {"type": "progress", "label": "...", "pct": N_or_null}
+          data: {"type": "done", "tag": "...", "url": "..."}
+          data: {"type": "error", "error": "...", "message": "..."}
+        """
+        import json as _json
+        import queue
+        import subprocess
+        from datetime import date
+
+        import requests as _req
+
+        if not database.is_curator():
+            return jsonify({"error": "curator_required"}), 403
+
+        _REPO = "kuddukan42/losslessbob"
+        _GH_API = "https://api.github.com"
+        ev_q: queue.Queue = queue.Queue()
+
+        def _work() -> None:
+            try:
+                # Build both assets first so a packaging failure surfaces
+                # before we ever touch the network.
+                ev_q.put({"type": "progress", "label": "Packaging core site data…", "pct": None})
+                try:
+                    core_zip, core_manifest_path, _core_manifest = _package_site_data("core")
+                except FileNotFoundError as exc:
+                    ev_q.put({"type": "error", "error": "no_site_data", "message": str(exc)})
+                    return
+
+                ev_q.put({"type": "progress", "label": "Packaging site files…", "pct": None})
+                files_zip, files_manifest_path, _files_manifest = _package_site_data("files")
+
+                # Obtain token via gh CLI
+                tok = subprocess.run(
+                    ["gh", "auth", "token"], capture_output=True, text=True, timeout=15,
+                )
+                if tok.returncode != 0:
+                    ev_q.put({"type": "error", "error": "gh_auth_failed",
+                              "message": tok.stderr.strip() or "gh auth token failed"})
+                    return
+                token = tok.stdout.strip()
+                if not token:
+                    ev_q.put({"type": "error", "error": "gh_no_token",
+                              "message": "gh auth token returned empty — run `gh auth login` first."})
+                    return
+
+                gh_hdr = {
+                    "Authorization": f"token {token}",
+                    "Accept": "application/vnd.github+json",
+                }
+
+                date_str = date.today().isoformat()
+
+                # Find an unused tag: sitedata-YYYY-MM-DD[.N]
+                ev_q.put({"type": "progress", "label": "Checking for existing releases…", "pct": None})
+                base_tag = f"sitedata-{date_str}"
+                tag = None
+                for suffix in ["", ".2", ".3", ".4", ".5"]:
+                    candidate = f"{base_tag}{suffix}" if suffix else base_tag
+                    chk = _req.get(
+                        f"{_GH_API}/repos/{_REPO}/releases/tags/{candidate}",
+                        headers=gh_hdr, timeout=15,
+                    )
+                    if chk.status_code == 404:
+                        tag = candidate
+                        break
+                if tag is None:
+                    ev_q.put({"type": "error", "error": "too_many_releases",
+                              "message": f"5 releases already exist for {date_str}."})
+                    return
+
+                # Create the GitHub release
+                ev_q.put({"type": "progress", "label": f"Creating release {tag}…", "pct": None})
+                cr = _req.post(
+                    f"{_GH_API}/repos/{_REPO}/releases",
+                    headers=gh_hdr,
+                    json={
+                        "tag_name": tag,
+                        "name": f"Site Data {date_str}",
+                        "body": "Cached LB site data (detail pages, artwork, "
+                                "attachments). See manifest sidecars for contents.",
+                    },
+                    timeout=30,
+                )
+                if not cr.ok:
+                    msg = cr.json().get("message", cr.text[:300]) if cr.content else cr.reason
+                    ev_q.put({"type": "error", "error": "create_failed", "message": msg})
+                    return
+                release = cr.json()
+                # upload_url: "https://uploads.github.com/.../assets{?name,label}" — strip template
+                upload_base = release["upload_url"].split("{")[0]
+                release_url = release["html_url"]
+
+                def _upload_asset(file_path: Path, label: str) -> None:
+                    fsize = os.path.getsize(file_path)
+                    fmb = fsize / (1 << 20)
+                    fname = file_path.name
+                    sent_ref = [0]
+
+                    # A plain generator has no __len__, so requests can't determine
+                    # Content-Length and falls back to Transfer-Encoding: chunked —
+                    # which uploads.github.com rejects with a 400 Bad Request. A
+                    # file-like object with __len__ lets requests send a real
+                    # Content-Length while still reporting progress via read().
+                    class _ProgressFile:
+                        def __init__(self, path: Path) -> None:
+                            self._fh = open(path, "rb")
+
+                        def __len__(self) -> int:
+                            return fsize
+
+                        def read(self, _amt: int = -1) -> bytes:
+                            chunk = self._fh.read(1 << 20)  # 1 MB chunks
+                            if chunk:
+                                sent_ref[0] += len(chunk)
+                                pct = int(sent_ref[0] * 100 / fsize) if fsize else 100
+                                ev_q.put({
+                                    "type": "progress",
+                                    "label": (
+                                        f"Uploading {label}… {pct}%"
+                                        f"  ({sent_ref[0] / (1<<20):.1f} / {fmb:.0f} MB)"
+                                    ),
+                                    "pct": pct,
+                                })
+                            return chunk
+
+                        def close(self) -> None:
+                            self._fh.close()
+
+                    body = _ProgressFile(file_path)
+                    try:
+                        up = _req.post(
+                            upload_base,
+                            params={"name": fname},
+                            data=body,
+                            headers={
+                                "Authorization": f"token {token}",
+                                "Accept": "application/vnd.github+json",
+                                "Content-Type": "application/octet-stream",
+                                "Content-Length": str(fsize),
+                            },
+                            timeout=600,
+                        )
+                    finally:
+                        body.close()
+                    up.raise_for_status()
+
+                for asset_path in (core_zip, core_manifest_path, files_zip, files_manifest_path):
+                    ev_q.put({"type": "progress", "label": f"Uploading {asset_path.name}…", "pct": 0})
+                    _upload_asset(asset_path, asset_path.name)
+
+                ev_q.put({"type": "done", "tag": tag, "url": release_url})
+
+            except FileNotFoundError:
+                ev_q.put({"type": "error", "error": "gh_not_found",
+                          "message": "gh CLI not found — install GitHub CLI first."})
+            except Exception as exc:
+                ev_q.put({"type": "error", "error": type(exc).__name__, "message": str(exc)})
+
+        threading.Thread(target=_work, daemon=True).start()
+
+        def _stream():
+            while True:
+                try:
+                    ev = ev_q.get(timeout=680)
+                except queue.Empty:
+                    ev = {"type": "error", "error": "timeout",
+                          "message": "Upload timed out after 680 s."}
+                yield f"data: {_json.dumps(ev)}\n\n"
+                if ev.get("type") in ("done", "error"):
+                    break
+
+        return Response(
+            stream_with_context(_stream()),
+            content_type="text/event-stream",
+            headers={"X-Accel-Buffering": "no", "Cache-Control": "no-cache"},
+        )
 
     # ------------------------------------------------------------------
     # bobdylan.com setlist routes
