@@ -14,6 +14,8 @@ import { Pill, Button, IconButton } from '../primitives'
 import type { ActionRow, ActionHandlers, LibAction } from './actions'
 import { buildRecordingActions, buildPerformanceActions } from './actions'
 import { Icon } from '../Icon'
+import { EvidenceList } from '../EvidenceList'
+import type { EvidenceRecord } from '../EvidenceList'
 import { lbDetailUrl } from '../../lib/lbUrl'
 
 const BASE = window.api.flaskBase
@@ -35,6 +37,13 @@ export interface DetailRow extends ActionRow {
   conf: string
   dup: boolean
   xref: boolean
+  // FABLE_UNIFIED_RANKING phase 3/4 (F4 Library payload pattern): merged in
+  // from /api/library/performances via the performance lens's row merge —
+  // absent when the recording lens's own /api/search-sourced row is passed
+  // straight through (show_picks/curated data doesn't ride that payload).
+  pickRank?: number
+  absGrade?: string
+  curated?: string[]
 }
 
 // Minimal recording shape used inside PerformanceDetailPanel family cards.
@@ -50,6 +59,9 @@ export interface PerfRecording {
   src: string | null
   famBy?: string
   famConf?: number | null
+  pickRank?: number
+  absGrade?: string
+  curated?: string[]
 }
 
 export interface PerfFamily {
@@ -306,8 +318,19 @@ function MemberRow({ r, isCanonical }: { r: PerfRecording; isCanonical: boolean 
           <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--t-mono)', fontWeight: 'var(--w-semi)', color: r.owned ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg2)' }}>
             {r.lb}
           </span>
+          {r.pickRank === 1 && (
+            <span title={t('library.picks.recommendedTitle')} style={{ color: 'var(--lbb-accent-mid)', fontSize: 'var(--t-meta)' }}>★</span>
+          )}
           {tag && <Pill tone={tag.tone} soft style={{ fontSize: 'var(--t-micro)', padding: '0 5px' }}>{tag.label}</Pill>}
           <div style={{ flex: 1 }} />
+          {r.curated?.map(name => (
+            <Pill key={name} tone="info" soft style={{ fontSize: 'var(--t-micro)', padding: '0 5px' }}>
+              {t('library.picks.curatedBadge', { curator: name })}
+            </Pill>
+          ))}
+          {r.owned && r.absGrade && (
+            <Pill tone="info" soft style={{ fontSize: 'var(--t-micro)', padding: '0 5px' }}>{r.absGrade}</Pill>
+          )}
           {r.rating !== '—' && <Pill tone={ratingTone(r.rating)} soft style={{ fontSize: 'var(--t-micro)', padding: '0 5px' }}>{r.rating}</Pill>}
           {r.owned
             ? <Pill tone="ok" soft dot style={{ fontSize: 'var(--t-micro)', padding: '0 5px' }}>{t('library.family.owned')}</Pill>
@@ -849,6 +872,56 @@ function QualityZone({ row, hideLabel }: { row: DetailRow; hideLabel?: boolean }
   )
 }
 
+// ── PicksZone — FABLE_UNIFIED_RANKING §6/§4: why this recording ranked where
+// it did for its date, via the shared EvidenceList (F3). Lazily fetched per
+// row (evidence_json is deliberately NOT in the bulk /api/library/performances
+// payload, to keep that payload flat — only pickRank/absGrade/curated ride
+// it, per F4). 204 means show_picks has no row yet (pre-recompute or no
+// usable date), not an error. ─────────────────────────────────────────────
+interface ShowPick {
+  concert_date: string
+  lb_number: number
+  pick_score: number
+  pick_rank: number
+  evidence: EvidenceRecord[]
+}
+
+function PicksZone({ row, hideLabel }: { row: DetailRow; hideLabel?: boolean }) {
+  const { t } = useTranslation()
+  const { data, isLoading } = useQuery<ShowPick | null>({
+    queryKey: ['library-picks-for', row.lbNumber],
+    queryFn: () => fetch(`${BASE}/api/picks/for/${row.lbNumber}`).then(r => (r.status === 204 ? null : r.json())),
+    staleTime: 60_000,
+  })
+
+  if (isLoading) {
+    return <div style={{ fontSize: 'var(--t-meta)', color: 'var(--lbb-fg3)' }}>{t('library.empty.loading')}</div>
+  }
+  if (!data) {
+    return (
+      <div style={{
+        padding: '14px 12px', borderRadius: 6, textAlign: 'center',
+        border: '1px dashed var(--lbb-border2)', color: 'var(--lbb-fg3)', fontSize: 'var(--t-meta)',
+      }}>
+        {t('library.picks.notComputedNote')}
+      </div>
+    )
+  }
+  return (
+    <div style={{ flexShrink: 0 }}>
+      {!hideLabel && <ZoneLabel>{t('library.picks.label')}</ZoneLabel>}
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 14 }}>
+        <Fact
+          label={t('library.picks.rankLabel')}
+          value={data.pick_rank === 1 ? t('library.picks.recommended') : `#${data.pick_rank}`}
+        />
+        <Fact label={t('library.picks.scoreLabel')} value={Math.round(data.pick_score)} />
+      </div>
+      <EvidenceList evidence={data.evidence} />
+    </div>
+  )
+}
+
 // ── Tab strip (spec §8) — pinned below the identity block; routes the pane
 // body. Idle tabs are --t-body/500 fg3; the active tab is accent-mid with a
 // 2px inset underline. Count pills sit inline. ──────────────────────────────
@@ -936,7 +1009,13 @@ export function RecordingDetailPanel({ row, history, attachCount, actionHandlers
   const actions = buildRecordingActions(row, [], actionHandlers, t)
   // Overview is always present; Assets and Seed & Share only when the recording
   // is owned (nothing local to act on otherwise — spec §10 unowned note).
-  const tabs: PanelTab[] = [{ id: 'overview', label: t('library.panel.tabOverview') }]
+  // Picks is always present (unlike Quality, which needs an owned scan) —
+  // show_picks scores every dated candidate regardless of ownership, so an
+  // unowned recording's rank/evidence can still help decide whether to get it.
+  const tabs: PanelTab[] = [
+    { id: 'overview', label: t('library.panel.tabOverview') },
+    { id: 'picks', label: t('library.panel.tabPicks') },
+  ]
   if (row.owned) {
     tabs.push({ id: 'assets', label: t('library.panel.tabAssets') })
     tabs.push({ id: 'share', label: t('library.panel.tabShare') })
@@ -963,6 +1042,13 @@ export function RecordingDetailPanel({ row, history, attachCount, actionHandlers
           {row.wish && <Pill tone="warn" soft>{t('library.panel.wishlist')}</Pill>}
           {row.dup && <Pill tone="mute" soft>{t('library.panel.dup')}</Pill>}
           {row.xref && <Pill tone="mute" soft>{t('library.panel.xref')}</Pill>}
+          {row.pickRank === 1 && (
+            <Pill tone="ok" soft title={t('library.picks.recommendedTitle')}>★ {t('library.picks.recommended')}</Pill>
+          )}
+          {row.owned && row.absGrade && <Pill tone="info" soft>{t('library.picks.gradeBadge', { grade: row.absGrade })}</Pill>}
+          {row.curated?.map(name => (
+            <Pill key={name} tone="info" soft>{t('library.picks.curatedBadge', { curator: name })}</Pill>
+          ))}
         </div>
         <div style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--t-display)', fontWeight: 'var(--w-bold)', color: 'var(--lbb-accent-mid)', marginBottom: 2 }}>
           {row.lb}
@@ -1025,6 +1111,10 @@ export function RecordingDetailPanel({ row, history, attachCount, actionHandlers
               </div>
             )}
           </>
+        )}
+
+        {activeTab === 'picks' && (
+          <PicksZone row={row} hideLabel />
         )}
 
         {activeTab === 'assets' && row.owned && (

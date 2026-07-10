@@ -1,4 +1,16 @@
 
+TODO-213: Show-pick / badge data curation — weight tuning pass on pick_rank + attribution signals
+Priority: High
+Status: Open
+Added: 2026-07-09
+Description: tj eyeballed the new Library badges (2026-07-09, RANKING phases 3-4 ship): verdict 'lots of obviously wrong badges but more are accurate' — the pipeline works but the underlying derived data needs curation before the badges are trustworthy. Matches FABLE_UNIFIED_RANKING (now instructions/complete/) §8 acceptance note: pick disagreements are a weight-tuning session, not a bug. Likely levers: picks.py term weights (§4), taper_attributions conflicts (168 flagged rows), curated-list vintage, stale/absent quality scans. Approach: collect concrete wrong-badge examples from tj first (which LB, what was wrong), then trace each through evidence_json (the Picks tab shows the full trail per recording) before touching weights.
+
+TODO-212: Recording-lens pick/grade/curated badges + combined 'any curated pick' view
+Priority: Low
+Status: Open
+Added: 2026-07-09
+Description: Deferred from TODO-186's close (2026-07-09, RANKING phase 4): pickRank/absGrade/curated only ride the extended /api/library/performances payload, so the badges/filters shipped on the Performance lens only. The flat Recording lens sources rows from /api/search + /api/collection/prefetch, which carry none of these fields. To surface them there: either extend /api/search's payload or add a client-side merge endpoint (the /api/tapematch/families pattern). Also deferred: a combined 'any curated pick' filter view (TODO-186 listed it; only per-curator views shipped) and GET /api/picks?date= (spec §6 — show_picks.concert_date is raw M/D/YY, ISO reconciliation deliberately left for the FABLE_LISTENING 'tonight card' session which has a concrete date-query shape).
+
 TODO-210: Detect exact-quality-match splits as family-matching signal (LB-1594/LB-5065)
 Priority: Medium
 Status: Open
@@ -253,28 +265,6 @@ Description: The LB site's two "what the information means" pages define the aut
   Relates to: [[TODO-188]] (text features use this vocabulary), [[TODO-189]], [[TODO-190]], [[TODO-191]].
 
 
-TODO-186: Library UI — quality grade + curated-pick badges, saved curated-list filter views
-Priority: Medium
-Status: Open
-Added: 2026-06-24
-Description: Surface the two new "best of" signals on the Library screen as at-a-glance chips
-  rather than leaving them buried in detail views:
-    - Quality grade chip: render concert_ranker's `quality_recording_scores.final_score` /
-      A+..F grade (TODO-183) on each recording row/card — likely the recording lens row and
-      DetailPanel.tsx, following the existing "Unconfirmed" pill pattern used for
-      fam_needs_review (ScreenLibrary.tsx).
-    - Curated-pick chip(s): for any LB present in `curated_list_entries`, show a small badge
-      naming the curator(s) (e.g. "carbonbit's pick", "10haaf's pick") — a date/recording can
-      carry more than one.
-    - Saved filter views: add "carbonbit's picks" / "10haaf's picks" (and a combined "any
-      curated pick") as selectable filters alongside the existing activeDecade/activeStatus
-      filter sets (ScreenLibrary.tsx:336-340), backed by the still-open GET /api/curated_lists
-      route from TODO-181.
-  Depends on / relates to: [[TODO-181]] (curated_lists DB + import done; GET routes + filter
-  wiring explicitly deferred from that pass — this TODO is that deferred UI work plus the new
-  badge requirement), [[TODO-183]] (grade field this surfaces).
-
-
 TODO-184: tapematch — rescue same-source false-negatives (channel-polarity inversion + partial overlap)
 Priority: Medium
 Status: In Progress
@@ -494,26 +484,6 @@ Description: New `concert_ranker/` package (repo root) that scores the audio qua
   read from `quality_recording_metrics.metric_json` and banded via `concert_ranker.scoring.band_metric()`
   (`backend/app.py:_quality_metrics_for()`); `DetailPanel.tsx` Quality tab renders these as tone-colored
   meters (`QualityMetricsPanel`/`MetricBar`/`FlagChip`) below the LB Rating/AI Quality Index tiles.
-
-TODO-181: Add curated "best of" lists as filter views (carbonbit, 10haaf)
-Priority: Medium
-Status: In Progress
-Added: 2026-06-22
-Description: No curated-list mechanism currently exists in backend/db.py. Add support for
-  named curated lists of best LB recordings (starting with carbonbit and 10haaf's lists) —
-  needs a new table (e.g. curated_lists + curated_list_entries mapping lb_number to a list
-  name/source) and a way to import each curator's picks. Surface as a filter option on the
-  Library screen (alongside the existing activeDecade/activeStatus/etc. filter sets in
-  ScreenLibrary.tsx:336-340) so users can filter to "carbonbit's picks" or "10haaf's picks".
-  DONE (2026-06-24): curated_lists/curated_list_entries MASTER tables (schema v9->v10) +
-  CRUD in backend/db.py; tools/import_curated_lists.py (stdlib-only xlsx/zip parsing) imports
-  carbonbit's data/lists/FLglist.xlsx (4503 entries, multiple LB picks per date allowed) and
-  10haaf's data/lists/dylan_boots.zip + years.zip (7572 entries, union of both archives — they
-  disagree on ~1,100 LB numbers between an older per-year snapshot and a newer allboots.html
-  dump, neither a clean superset of the other). Ran once against the live DB.
-  REMAINING: GET (and curator-gated POST/DELETE) routes for /api/curated_lists; wire a
-  "carbonbit's picks" / "10haaf's picks" filter into ScreenLibrary.tsx. Explicitly deferred —
-  this pass was scoped to DB + import only.
 
 TODO-179: Consider removing the top bar to gain vertical space
 Priority: Low

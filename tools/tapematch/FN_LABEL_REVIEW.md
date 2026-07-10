@@ -27,6 +27,11 @@ pair-scoped relation text whose "different recording than LB-X" refers to a
 - 2026-07-09 (Fable), batch 2: explicit-only tier — 103/103 reviewed.
   **66 FLIP / 30 KEEP / 7 UNSURE.**
 - Cumulative: 128/264 reviewed — **83 FLIP / 37 KEEP / 8 UNSURE.**
+- 2026-07-09: tj approved the 83 batch-1+2 FLIPs. Applied via
+  `make_regression_set_v3.py` → `regression_set_v3.json` (positives 1578→1495,
+  negatives 1387→1470; v2 untouched per frozen-set rules). UNSURE rows were
+  NOT applied. Honest-recall rescoring against v3 deferred — calibration is
+  FROZEN for the 7/09–7/12 window (WORK_PACKAGE_2026-07-09.md).
 - Remaining: 136 duration-only pairs. These have no curator same/different
   text by construction — they need the partial/incomplete-set judgment
   (durations, setlists, "incomplete" notes), a different review method than

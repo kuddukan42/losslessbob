@@ -4920,6 +4920,65 @@ def create_app() -> Flask:
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
+    # ── Curated "best of" lists (TODO-181 remainder + FABLE_UNIFIED_RANKING §6) ──
+
+    @app.route("/api/curated_lists", methods=["GET"])
+    def curated_lists_list() -> Response:
+        """List curated lists with entry counts (carbonbit, 10haaf, ...)."""
+        try:
+            return jsonify(database.get_curated_lists())
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/curated_lists", methods=["POST"])
+    def curated_lists_create() -> Response:
+        """Curator-only. Create (or fetch, if it already exists) a curated list.
+
+        Body: {name, label?, source?}
+        """
+        if not database.is_curator():
+            return jsonify({"error": "curator_required"}), 403
+        try:
+            body = request.get_json(force=True) or {}
+            name = body.get("name")
+            if not isinstance(name, str) or not name.strip():
+                return jsonify({"error": "name is required"}), 400
+            list_id = database.get_or_create_curated_list(
+                name.strip(), body.get("label", ""), body.get("source", "")
+            )
+            return jsonify({"ok": True, "id": list_id, "name": name.strip()})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/curated_lists/<string:name>", methods=["DELETE"])
+    def curated_lists_delete(name: str) -> Response:
+        """Curator-only. Delete a curated list and all its entries."""
+        if not database.is_curator():
+            return jsonify({"error": "curator_required"}), 403
+        try:
+            deleted = database.delete_curated_list(name)
+            if not deleted:
+                return jsonify({"error": "not_found"}), 404
+            return jsonify({"ok": True, "name": name})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    # ── Show picks lookup (FABLE_UNIFIED_RANKING §6) ─────────────────────────────
+
+    @app.route("/api/picks/for/<int:lb_number>", methods=["GET"])
+    def picks_for_lb(lb_number: int) -> Response:
+        """Return this LB's show-pick rank/score/evidence, for DetailPanel's
+        EvidenceList (per SPEC_INTEGRATION_NOTES.md F3). 204 when show_picks
+        has no row for this LB yet (pre-recompute, or no usable date).
+        """
+        try:
+            pick = database.get_show_pick_for_lb(lb_number)
+            if pick is None:
+                return "", 204
+            return jsonify(pick)
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
     def _find_master_release(_req):
         """Search recent GitHub releases for the latest one containing a .db master asset.
 

@@ -39,14 +39,17 @@ they land. Move to `instructions/complete/` when the window closes.
 | **Today: unblock** | ✅ DONE 07-09: committed (39687e37 + 0c2d3e1e); crawl launched detached over 2,232 remaining dates — `tools/tapematch/crawl_start.sh` / `crawl_stop.sh` / `crawl_status.sh`, log at `data/tapematch/crawl.log` | Minimal | — |
 | **Today: consolidate** | ✅ DONE 07-09: retired 4 specs to `complete/` (ADDON, FIXES, TAPEMATCH_PLAN, WEB_GUI_PLAN — all TODO-050..066 shipped), closed TODO-182 + TODO-203, deferred TODO-204. TODO-209 renumber DEFERRED past window — report reviewed, all 39 ids are archived-entry cosmetics needing manual cross-ref attribution | Low | 182, 203, backlog relief |
 | **Today: triage script** | ✅ DONE 07-09: `tools/tapematch/triage_analysis.py` — AUTO/ESCALATE/SKIP classifier; first pass 395 pending → 11 auto-written, 329 escalated (210 are merges needing judgment), 55 incomplete; families synced (2,902, 0 errors). Run before every future `/tapematch-batch` | Low | analysis sink triaged |
-| **Day 2: spec steps 1–3** | Verify LB_KNOWLEDGE.md (TODO-187) → TAPER phase 1 (schema/harvest/CLI) → RANKING phase 2 (picks + chained recompute endpoint). Backend-only, one or two sessions, sonnet-delegation candidates | Medium | 187 |
-| **Day 3: spec step 4** | RANKING phases 3–4: Library payload, badges/filters, EvidenceList. Ends `/gui-next-i18n` + `/gui-check` | Medium-high | 186, 181 |
-| **Day 3–4: spec step 5** | TAPER phase 2: confirm/reject API, taper pill, DetailPanel section | Medium | 173, 192 |
+| **Day 2: spec steps 1–3** | ✅ DONE 07-09 (commit 7a304abf): TAPER phase 1 (7,817 attributions: 2,643 confirmed / 5,174 propagated / 168 conflicts) + RANKING phase 2 (`show_picks` 15,204 picks / 4,031 dates; `POST /api/derived/recompute` SSE chain per F1) | Medium | 187 |
+| **Day 3: spec step 4** | ✅ DONE 07-09 (sonnet agent, Fable-reviewed; uncommitted at close→committed): payload F4 fields, badges, 4 filter views, Picks tab + shared `EvidenceList` (F3); i18n 13 keys × 5 locales; tsc 0 errors, build clean. TODO-181+186 closed, TODO-212 opened (flat-lens remainder), RANKING spec retired to `complete/`. **tj eyeball verdict: pipeline works, badge DATA needs curation — TODO-213 (High) before trusting badges** | Medium-high | 186, 181 |
+| **Day 3–4: spec step 5** | ⏭ NEXT SESSION: TAPER phase 2: confirm/reject API (writes MASTER `taper_confirmations`, F2 — schema already shipped), taper pill, DetailPanel section (reuse `EvidenceList` + tab-strip pattern, NOT F4's collapsible sections — see 07-09 CHANGELOG note). Consider folding TODO-213 example-collection into the same session | Medium | 173, 192 |
 | **Stretch (budget permitting)** | LISTENING §1 pairs sync + TapeMatch screen v1 (TODO-170), text-sketch first | High | 170 |
 | **Fill (idle moments)** | TODO-210 + TODO-184 as small bounded tasks; a few `/tapematch-batch` batches only if triage script leaves ambiguous backlog | Low each | 210, 184 |
 
 Parallel, zero-token: tj's curator review of the 265 census-flagged pairs
-(TODO-201) while runs churn.
+(TODO-201) while runs churn. — Update 07-09: batches 1+2 (128 pairs) reviewed,
+83 FLIPs tj-approved and applied → `regression_set_v3.json`; remaining 136
+duration-only pairs need a different method (partial/incomplete-set judgment).
+Rescoring against v3 stays behind the calibration freeze.
 
 ## Explicitly deferred past 7/12
 

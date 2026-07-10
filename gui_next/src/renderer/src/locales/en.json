@@ -1385,7 +1385,11 @@
       "myCollection": "My collection",
       "coverageGaps": "Coverage gaps",
       "wishlist": "Wishlist",
-      "duplicates": "Duplicates"
+      "duplicates": "Duplicates",
+      "recommended": "Recommended, owned",
+      "superseded": "Superseded copies",
+      "carbonbitPicks": "carbonbit's picks",
+      "tenhaafPicks": "10haaf's picks"
     },
     "statusValue": {
       "public": "Public",
@@ -1481,6 +1485,7 @@
       "tabAssets": "Assets",
       "tabShare": "Seed & Share",
       "tabQuality": "Quality",
+      "tabPicks": "Picks",
       "showDetails": "Show details",
       "collapseDetails": "Collapse details",
       "lbPage": "LB page",
@@ -1589,6 +1594,16 @@
         "sourceFlags": "Source Flags",
         "noFlags": "No source-type flags detected"
       }
+    },
+    "picks": {
+      "label": "Show Picks",
+      "recommended": "Recommended",
+      "recommendedTitle": "The recommended copy for this date",
+      "rankLabel": "Rank for date",
+      "scoreLabel": "Pick score",
+      "gradeBadge": "Grade {{grade}}",
+      "curatedBadge": "{{curator}}'s pick",
+      "notComputedNote": "Not yet computed — run “Recompute derived data” in Setup."
     },
     "scope": {
       "everything": "Everything",

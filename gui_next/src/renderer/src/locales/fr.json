@@ -1385,7 +1385,11 @@
       "myCollection": "Ma collection",
       "coverageGaps": "Lacunes dans la couverture",
       "wishlist": "Liste de souhaits",
-      "duplicates": "Doublons"
+      "duplicates": "Doublons",
+      "recommended": "Recommandé, en ma possession",
+      "superseded": "Versions précédentes",
+      "carbonbitPicks": "Les coups de cœur de carbonbit",
+      "tenhaafPicks": "Les coups de cœur de 10haaf"
     },
     "statusValue": {
       "public": "Public",
@@ -1516,7 +1520,8 @@
       "tracksUnit": "pistes",
       "recordingFamilies": "Familles d'enregistrements · {{count}}",
       "groupedByTapeMatch": "regroupées par TapeMatch",
-      "needsReview": "À vérifier"
+      "needsReview": "À vérifier",
+      "tabPicks": "Sélection"
     },
     "coverage": {
       "ownedFull": "Propriétaire : {{owned}}/{{total}}",
@@ -1600,6 +1605,16 @@
       "upgrade": "Mise à jour",
       "gap": "Gap",
       "undocumented": "Non documenté"
+    },
+    "picks": {
+      "label": "Sélectionner les favoris",
+      "recommended": "Recommandé",
+      "recommendedTitle": "Texte recommandé pour cette date",
+      "rankLabel": "Classement par date",
+      "scoreLabel": "Choisir un score",
+      "gradeBadge": "Note : {{grade}}",
+      "curatedBadge": "Sélection de {{curator}}",
+      "notComputedNote": "Pas encore calculé — lancez « Recalculer les données dérivées » dans la configuration."
     }
   }
 }
