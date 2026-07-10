@@ -1,6 +1,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-216: ONBOARDING P2 — sitedata github_check/github_install + onboarding/status endpoint
+Priority: High
+Status: Done
+Added: 2026-07-10
+Closed: 2026-07-10
+Description: Spec instructions/FABLE_ONBOARDING_SYNC.md §3 item 3 + §4. GET /api/sitedata/github_check (latest sitedata-* release; assets carry collision suffixes — match by _core_/_files_ pattern + manifest sidecar pairing, never exact filename), POST /api/sitedata/github_install (SSE; download to data/imports/, verify manifest SHA256 BEFORE extraction, extract into SITE_DIR reusing package_restore's path extended to sitedata_core/sitedata_files manifest types; idempotent re-runs), GET /api/onboarding/status (spec §4 shape; cheap counts + meta reads). Test against the real sitedata-2026-07-10 release. NOTE: a partial, UNVERIFIED implementation from an interrupted agent sits uncommitted in backend/app.py + tests/test_sitedata_packaging.py (2026-07-10) — all 3 routes present and compiling, agent's own P2 tests unwritten; review it rather than trusting it.
+Shipped in a9759209: sitedata github_check/github_install (SSE, SHA256-before-extract, install markers) + onboarding/status endpoint; 7 new tests, live-verified against sitedata-2026-07-10 release.
+
 TODO-170: Add a dedicated TapeMatch screen — visualize results, review logs, provide user
   feedback/corrections, and manage running the scripts
 Priority: Medium
