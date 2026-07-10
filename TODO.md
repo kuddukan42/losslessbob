@@ -22,6 +22,17 @@ Priority: Medium
 Status: Open
 Added: 2026-07-08
 Description: User found LB-1594 and LB-5065 have identical quality ratings and are audibly the exact same recording — only difference is track splits a few seconds apart. Investigate using exact/near-identical quality-score equality as an additional signal in family matching (e.g. as a corroborating feature or a targeted check for split-only duplicates), since a quality-rating match this precise is unlikely by chance for unrelated masters.
+  Update 2026-07-09 (investigation done; implementation remains): 1594/5065 are ALREADY in
+  family 1996-11-20#1594-5065 (conf 0.0156 — the signal's value is corroborating low-conf
+  families, not surfacing new ones). abs_score equality alone is unusable library-wide:
+  515 same-date exact-score pairs vs 325,858 cross-date coincidences (>99.8% noise; wider
+  tolerances get worse). Full metric_json identity is near-collision-free (13 same-date
+  candidates vs 6 cross-date library-wide) but only comparable within one scan config version.
+  Recommendation: (a) small confidence bump in the tapematch family-sync conf step when a
+  same-date shortlisted pair has abs_score within ~0.5 + same grade letter; (b) surface
+  same-scan-config metric_json-identical same-date pairs as a "likely duplicate encode"
+  review flag (never auto-merge). 429 same-date exact-score non-family candidate pairs exist;
+  the 13 metric-identical ones (e.g. 3136/7538 7/8/78, 3147/7523 7/4/78) are prime curation bait.
 
 TODO-209: Ledger duplicate-ID audit — 17 TODO + 22 BUG header IDs reused across open/done files
 Priority: Low
