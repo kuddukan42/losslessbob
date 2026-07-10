@@ -5340,6 +5340,48 @@ def create_app() -> Flask:
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
+    @app.route("/api/picks", methods=["GET"])
+    def picks_for_date() -> Response:
+        """Return all show picks for one ISO concert date, rank-ordered.
+
+        Query param ``date`` (``YYYY-MM-DD``) is required; missing or
+        malformed values are a 400. No computed picks for that date is a
+        normal 200 with an empty list.
+        """
+        date_param = request.args.get("date", "")
+        if not re.match(r"^\d{4}-\d{2}-\d{2}$", date_param):
+            return jsonify({"error": "date query param (YYYY-MM-DD) is required"}), 400
+        from datetime import date as _date
+        try:
+            _date.fromisoformat(date_param)
+        except ValueError:
+            return jsonify({"error": "invalid date"}), 400
+        try:
+            picks = database.get_picks_for_date(date_param)
+            return jsonify(picks)
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/picks/tonight", methods=["GET"])
+    def picks_tonight() -> Response:
+        """"This night in Dylan history" (LISTENING spec §9): rank-1 show
+        picks whose concert date falls on today's calendar day (MM-DD)
+        across all years, best-scored first. Accepts ``?mmdd=MM-DD`` to
+        override "today" for testing. No matches is a normal 200 with an
+        empty candidates list.
+        """
+        mmdd = request.args.get("mmdd", "")
+        if mmdd and not re.match(r"^\d{2}-\d{2}$", mmdd):
+            return jsonify({"error": "mmdd must be MM-DD"}), 400
+        if not mmdd:
+            from datetime import date as _date
+            mmdd = _date.today().strftime("%m-%d")
+        try:
+            candidates = database.get_tonight_picks(mmdd)
+            return jsonify({"mmdd": mmdd, "candidates": candidates})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
     def _find_master_release(_req):
         """Search recent GitHub releases for the latest one containing a .db master asset.
 

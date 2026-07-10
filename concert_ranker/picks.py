@@ -29,6 +29,7 @@ import logging
 import re
 import sqlite3
 from collections import defaultdict
+from datetime import date as _date
 from pathlib import Path
 from statistics import median
 
@@ -45,6 +46,41 @@ _RATING_MAX_RANK = max(RATING_RANK.values())   # 13 (A+)
 # already-circulating copy — it offers nothing new (concert_ranker/LB_KNOWLEDGE.md
 # §5/§8). Cheap regex, big precision.
 _EAC_MATCH_RE = re.compile(r'exact eac match|close eac match', re.IGNORECASE)
+
+# Two-digit year pivot, matching backend/bootleg_scraper.py's _YEAR_PIVOT
+# convention: >=30 -> 19xx, <30 -> 20xx (Dylan's touring career runs 1961-now).
+_DATE_YEAR_PIVOT = 30
+
+
+def _parse_concert_date_iso(date_str: str) -> str | None:
+    """Parse ``entries.date_str`` (``M/D/YY``, ``'xx'`` placeholders) to ISO.
+
+    Mirrors the two-digit year pivot in ``backend/bootleg_scraper.py``'s
+    ``_parse_date`` (pivot at 30) but is stricter about completeness: a full
+    calendar date is required for "this night in Dylan history" (LISTENING
+    spec §9) MM-DD matching, so any ``'xx'`` placeholder (month or day
+    unknown) yields None rather than a partial ISO string.
+
+    Args:
+        date_str: Raw date as stored on ``entries.date_str``, e.g.
+            ``"7/28/00"``, ``"5/xx/87"``, ``"xx/xx/74"``.
+
+    Returns:
+        ``YYYY-MM-DD`` if month, day, and year are all known digits forming
+        a valid calendar date, else None.
+    """
+    parts = (date_str or "").strip().split("/")
+    if len(parts) != 3:
+        return None
+    m_raw, d_raw, y_raw = (p.strip().lower() for p in parts)
+    if not (m_raw.isdigit() and d_raw.isdigit() and y_raw.isdigit()):
+        return None
+    try:
+        y2 = int(y_raw)
+        year = (1900 + y2) if y2 >= _DATE_YEAR_PIVOT else (2000 + y2)
+        return _date(year, int(m_raw), int(d_raw)).isoformat()
+    except ValueError:
+        return None
 
 # ── Scoring configuration (spec §4) — one dict, tweakable, self-documenting ──
 PICK_WEIGHTS: dict = {
@@ -350,7 +386,7 @@ def _rank_date(rows: list[tuple[int, float, list[dict]]]) -> list[tuple[int, flo
 
 # ── Orchestration ──────────────────────────────────────────────────────────────
 
-def _write_picks(all_rows: list[tuple[str, int, float, int, list[dict]]],
+def _write_picks(all_rows: list[tuple[str, int, float, int, list[dict], str | None]],
                  db_path: str | None) -> None:
     """Wholesale-replace show_picks with the freshly computed rows.
 
@@ -364,16 +400,17 @@ def _write_picks(all_rows: list[tuple[str, int, float, int, list[dict]]],
         return
 
     payload = [
-        (date, lb, round(score, 2), rank, json.dumps(ev))
-        for date, lb, score, rank, ev in all_rows
+        (date, lb, round(score, 2), rank, json.dumps(ev), date_iso)
+        for date, lb, score, rank, ev, date_iso in all_rows
     ]
 
     def _do(conn: sqlite3.Connection) -> None:
         conn.execute("DELETE FROM show_picks")
         conn.executemany(
             "INSERT INTO show_picks"
-            " (concert_date, lb_number, pick_score, pick_rank, evidence_json)"
-            " VALUES (?, ?, ?, ?, ?)",
+            " (concert_date, lb_number, pick_score, pick_rank, evidence_json,"
+            " concert_date_iso)"
+            " VALUES (?, ?, ?, ?, ?, ?)",
             payload,
         )
 
@@ -391,7 +428,7 @@ def _write_picks(all_rows: list[tuple[str, int, float, int, list[dict]]],
         queue.execute(_do)
 
 
-def _summarize(all_rows: list[tuple[str, int, float, int, list[dict]]]) -> dict:
+def _summarize(all_rows: list[tuple[str, int, float, int, list[dict], str | None]]) -> dict:
     """Row/date counts + score distribution (spec §7 phase-2 report)."""
     scores = sorted(r[2] for r in all_rows)
     dates = {r[0] for r in all_rows}
@@ -435,11 +472,12 @@ def recompute(db_path: str | None = None, dry_run: bool = False) -> dict:
     quality = _load_latest_quality(conn)
     lb_taper, reputable_tapers = _load_taper_reputation(conn)
 
-    all_rows: list[tuple[str, int, float, int, list[dict]]] = []
+    all_rows: list[tuple[str, int, float, int, list[dict], str | None]] = []
     for date, candidates in by_date.items():
+        date_iso = _parse_concert_date_iso(date)
         scored = _score_date(candidates, curated, lineage, quality, lb_taper, reputable_tapers)
         for lb, score, ev, rank in _rank_date(scored):
-            all_rows.append((date, lb, score, rank, ev))
+            all_rows.append((date, lb, score, rank, ev, date_iso))
 
     summary = _summarize(all_rows)
     if not dry_run:
