@@ -1,4 +1,22 @@
 
+TODO-218: ONBOARDING P4 — README.md rewrite (retire PyQt flow docs)
+Priority: Low
+Status: Open
+Added: 2026-07-10
+Description: Spec §6 (instructions/FABLE_ONBOARDING_SYNC.md): quickstart via GitHub Releases installer + first-run wizard, data-model note (master release vs site data vs monthly flat-file), dev setup (.venv, run_backend.py, gui_next dev), keep flat-file/checksum format reference sections. Can run any time; no dependencies.
+
+TODO-217: ONBOARDING P3 — first-run wizard + Home setup-checklist card + Setup/Scraper copy
+Priority: Medium
+Status: Open
+Added: 2026-07-10
+Description: Spec §5+§6 (instructions/FABLE_ONBOARDING_SYNC.md): OnboardingWizard modal over ScreenHome when entries_count==0 (4 steps: master install, sitedata install checkboxes, mounts navigation, done — Done fires POST /api/derived/recompute per F1), Home checklist card while onboarding/status complete==false, flat-file 'Monthly update' rewording + ScreenScraper curator-only note. Ends /gui-next-i18n + /gui-check. Depends: P2 (TODO-216).
+
+TODO-216: ONBOARDING P2 — sitedata github_check/github_install + onboarding/status endpoint
+Priority: High
+Status: Open
+Added: 2026-07-10
+Description: Spec instructions/FABLE_ONBOARDING_SYNC.md §3 item 3 + §4. GET /api/sitedata/github_check (latest sitedata-* release; assets carry collision suffixes — match by _core_/_files_ pattern + manifest sidecar pairing, never exact filename), POST /api/sitedata/github_install (SSE; download to data/imports/, verify manifest SHA256 BEFORE extraction, extract into SITE_DIR reusing package_restore's path extended to sitedata_core/sitedata_files manifest types; idempotent re-runs), GET /api/onboarding/status (spec §4 shape; cheap counts + meta reads). Test against the real sitedata-2026-07-10 release. NOTE: a partial, UNVERIFIED implementation from an interrupted agent sits uncommitted in backend/app.py + tests/test_sitedata_packaging.py (2026-07-10) — all 3 routes present and compiling, agent's own P2 tests unwritten; review it rather than trusting it.
+
 TODO-215: TapeMatch screen v2 — pair corrections, run management, LB deep-links
 Priority: Medium
 Status: Open
