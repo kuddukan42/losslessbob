@@ -530,14 +530,15 @@ present) `taper_attributions`. Never exported in master data. Scoring model:
 `instructions/FABLE_UNIFIED_RANKING.md` §3/§4.
 | Column | Type | Notes |
 |--------|------|-------|
-| concert_date | TEXT NOT NULL | PK part 1 (YYYY-MM-DD) |
+| concert_date | TEXT NOT NULL | PK part 1 — raw LB-site format `M/D/YY`, may contain `xx` components |
 | lb_number | INTEGER NOT NULL | PK part 2 |
 | pick_score | REAL NOT NULL | Comparable within a date only |
 | pick_rank | INTEGER NOT NULL | 1 = recommended for the date |
 | evidence_json | TEXT NOT NULL | Ordered list of `{kind, detail, points}` |
+| concert_date_iso | TEXT | `YYYY-MM-DD` parsed from `concert_date` (two-digit-year pivot 30); NULL when any component is `xx` (LISTENING §9) |
 | computed_at | TIMESTAMP | DEFAULT CURRENT_TIMESTAMP |
 
-Index: `idx_show_picks_lb(lb_number)`.
+Indexes: `idx_show_picks_lb(lb_number)`, `idx_show_picks_date_iso(concert_date_iso)`.
 
 ### `tapematch_pairs` — Per-date pairwise similarity (USER table)
 Slim mirror of `tools/tapematch/observations.db` `pairs`, synced by
@@ -837,6 +838,12 @@ scheduled scan interval, checked hourly by `scheduler._integrity_scan_worker`.
 | GET  | `/api/master/github_check` | Queries `kuddukan42/losslessbob`'s latest GitHub release, downloads its `.manifest.json` sidecar, and compares `master_version` against the local `meta` table. Returns `{available, tag, remote_version, remote_published_at, local_version, local_published_at, asset_name, asset_size, release_url}`, or `{available: false, message}` if no usable release exists. |
 | POST | `/api/master/github_install` | `text/event-stream`. Downloads the latest master `.db` + `.manifest.json` from GitHub Releases into `data/imports/`, verifies SHA256, and applies via `import_master_db()`. Events: `progress` (`label`, `pct`), `done` (`summary`), `error` (`error`, `message`) — same shape as `/api/master/github_release`. |
 
+### Site-Data Packaging (FABLE_ONBOARDING_SYNC §3, P1)
+| Method | Route | Description |
+|--------|-------|-------------|
+| POST | `/api/package/scrape_data` | Bundles `data/site/` into a dated zip in `data/exports/` + `.manifest.json` sidecar (`type`, `created_at`, `file_count`, `total_bytes`, `sha256`). Query `part=core` (all but `files/`, `type: sitedata_core`), `part=files` (`files/` only, `type: sitedata_files`); omitted = legacy whole-tree zip (`type: scrape_data`, backward compatible with ScreenSetup / gui/setup_tab.py). Returns `{ok, path, manifest_path, manifest}`; 400 `invalid_part` / `no_site_data`. |
+| POST | `/api/sitedata/github_release` | **Curator-only** (403 otherwise). `text/event-stream`. Builds core+files zips + manifests, creates GitHub release `sitedata-YYYY-MM-DD[.N]` on `kuddukan42/losslessbob`, uploads 4 assets (2 zips + 2 manifest sidecars) with progress. Same event shapes as the master release flow. First release published 2026-07-10 (`sitedata-2026-07-10`). |
+
 ### LB Master Integrity
 | Method | Route | Description |
 |--------|-------|-------------|
@@ -878,6 +885,8 @@ scheduled scan interval, checked hourly by `scheduler._integrity_scan_worker`.
 |--------|-------|-------------|
 | POST | `/api/derived/recompute` | SSE-streamed chained recompute: `tools.parse_lineage.run()` → `tools.attribute_tapers.run()` → `tools.compute_show_picks.run()` in canonical order (finding F1/F5, `instructions/SPEC_INTEGRATION_NOTES.md`). Events: `start`/`done` (with per-step `stats`)/`skipped` (module not importable — later phase not shipped)/`error` (aborts chain)/`chain_done`. Manual trigger only (onboarding "Done" step + curator recompute button); not curator-gated — rewrites only USER-tier derived tables (`entry_lineage`, `taper_attributions`, `show_picks`). |
 | GET | `/api/picks/for/<lb>` | One LB's `show_picks` row: `{concert_date, lb_number, pick_score, pick_rank, evidence, computed_at}` with `evidence` parsed from `evidence_json` (F3 record shape). 204 when no row (pre-recompute, or entry has no usable date). Feeds DetailPanel's Picks tab / `EvidenceList`. |
+| GET | `/api/picks?date=` | All `show_picks` rows for one ISO date (`YYYY-MM-DD`, matched on `concert_date_iso`), rank-ordered, evidence parsed (LISTENING §9). |
+| GET | `/api/picks/tonight` | Rank-1 picks whose `concert_date_iso` falls on today's month-day across all years (`?mmdd=MM-DD` override for testing), best `pick_score` first. Returns `{mmdd, candidates: [{lb_number, year, concert_date_iso, location, rating, pick_score, description}]}`; empty candidates is a normal 200. Feeds the Home "Tonight in Dylan history" card. |
 
 ### Taper Attribution (FABLE_TAPER_ATTRIBUTION phase 2)
 | Method | Route | Description |

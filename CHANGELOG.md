@@ -1,3 +1,23 @@
+[2026-07-10] — feat(backend): ONBOARDING P1 — site-data split packaging + first sitedata GitHub release (spec §3; commit 55501726)
+Added: backend/app.py: _package_site_data(part) — core (everything but files/) / files (files/
+  only) / None (legacy whole-tree) zips of data/site/ with .manifest.json sidecars (type,
+  created_at, file_count, total_bytes, sha256 — master manifest convention; new types
+  sitedata_core/sitedata_files). POST /api/package/scrape_data grew ?part=core|files, no-arg
+  callers (ScreenSetup, gui/setup_tab.py) keep the old whole-tree behavior. New
+  POST /api/sitedata/github_release (curator, SSE) mirrors master_github_release: builds both
+  zips + manifests, creates sitedata-<date>[.N] release, uploads 4 assets with progress.
+Added: tests/test_sitedata_packaging.py — 8 tests (part selection, manifest sha256/counts,
+  invalid part, curator gate); full suite 581 pass.
+Changed: first sitedata release published to kuddukan42/losslessbob: tag sitedata-2026-07-10,
+  core 24.9 MB (16,829 files) + files 187 MB + 2 manifests. Core asset carries a _2 filename
+  suffix (collision counter vs a same-day smoke-test zip) — P2 discovery must match assets by
+  _core_/_files_ pattern + manifest pairing, not exact filename. Verified: core zip sha256
+  matches manifest, zero site/files/ entries in core.
+Changed: ledger: TODO-216 (P2 endpoints, High — next session), TODO-217 (P3 wizard, Medium),
+  TODO-218 (P4 README, Low) opened per the spec's allocate-at-first-session rule. PROJECT.md:
+  show_picks schema corrected (concert_date is raw M/D/YY, + concert_date_iso column/index),
+  picks date/tonight routes + Site-Data Packaging routes documented.
+
 [2026-07-10] — feat(backend+gui): LISTENING §9 "tonight card" — concert_date_iso + picks date endpoints + Home card (spec step 6 complete)
 Added: concert_ranker/picks.py: _parse_concert_date_iso() — M/D/YY→ISO reconciliation of
   show_picks.concert_date (two-digit year pivot 30, any 'xx' component → NULL); populated on
