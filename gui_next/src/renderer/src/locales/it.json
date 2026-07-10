@@ -56,7 +56,8 @@
       "themes": "Temi",
       "advancedTools": "Strumenti avanzati",
       "trading": "Trading",
-      "sharing": "Condivisione"
+      "sharing": "Condivisione",
+      "tapematch": "TapeMatch"
     },
     "statusBar": {
       "db": "DB:",
@@ -1632,6 +1633,43 @@
       "conflict": "Prove contraddittorie",
       "confirm": "Conferma",
       "reject": "Rifiuta"
+    }
+  },
+  "tapematch": {
+    "title": "TapeMatch",
+    "subtitle": "Revisione della corrispondenza acustica — matrice di correlazione, famiglie e verdetti di analisi per data di spettacolo.",
+    "filterPlaceholder": "Filtra per date, località…",
+    "noSelection": "Seleziona una data per visualizzarne la matrice di corrispondenza",
+    "runId": "Esegui {{runId}}",
+    "crawl": {
+      "label": "Crawl:",
+      "running": "IN ESECUZIONE",
+      "idle": "inattivo",
+      "counts": "{{runs}} esegue · {{dates}} date",
+      "noLog": "Nessuna riga recente nel log di scansione"
+    },
+    "rail": {
+      "dates": "Date",
+      "viewAll": "tutto",
+      "viewConflicts": "conflitti",
+      "viewNoAnalysis": "nessuna analisi",
+      "noMatches": "Nessun risultato"
+    },
+    "families": {
+      "label": "Famiglie:",
+      "none": "Nessun raggruppamento per famiglia per questa data"
+    },
+    "matrix": {
+      "label": "Percentuale di somiglianza",
+      "header": "LB",
+      "empty": "Nessuna coppia sincronizzata per questa data",
+      "noContact": "n/c",
+      "cellTooltip": "corr {{corr}} · emb {{emb}} · fp {{fp}} · stessa famiglia: {{sameFamily}}"
+    },
+    "analysis": {
+      "title": "Analisi (analysis.md)",
+      "flagged": "Contrassegnato",
+      "none": "Non è stato ancora scritto alcun file analysis.md per questa esecuzione."
     }
   }
 }

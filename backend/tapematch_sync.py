@@ -331,16 +331,174 @@ def _sync_one_date(
     stats["recordings_linked"] += len(member_rows)
 
 
+def _clamp01(x: float) -> float:
+    """Clamp ``x`` to the closed interval [0.0, 1.0]."""
+    return max(0.0, min(1.0, x))
+
+
+def similarity_pct(
+    corr: "float | None", emb_score: "float | None", same_family: bool
+) -> "int | None":
+    """Map raw TapeMatch similarity signals to a presentation-friendly 0-100 %.
+
+    Raw ``corr`` (residual cross-correlation) is not a linear "percent
+    similar" — it collapses toward the noise floor for unrelated recordings,
+    where e.g. 0.12 vs 0.08 is meaningless. ``emb_score`` (pretrained-embedding
+    cosine similarity) tracks perceptual "sounds similar" better for
+    cross-family comparisons. This applies a banded, monotone blend
+    calibrated against the verdict distribution
+    (instructions/FABLE_LISTENING_INSIGHT_IDEAS.md §1.2) so same-family pairs
+    render ~85-100 and unrelated pairs render ~0-40, leaving the raw signals
+    available separately (e.g. a tooltip) for anyone who wants them.
+
+    Breakpoints measured 2026-07-10 from observations.db (n=10,369 pairs):
+    same_family corr p50=0.108/p75=0.883, different_family corr p95=0.041,
+    same_family emb p25=0.316/p95=0.987, different_family emb p50=0.208/p95=0.644.
+
+    Args:
+        corr: Residual cross-correlation (0-1), or None if not measured.
+        emb_score: Pretrained-embedding cosine similarity, or None if not
+            scored (addon_links rule_d abstains — see tapematch_session.py).
+        same_family: Whether TapeMatch's verdict paired these two LBs as the
+            same source family (``tapematch_verdict == 'same_family'``).
+
+    Returns:
+        An integer percent 0-100, or None when neither signal is available
+        for a different-family pair — "not comparable", which the GUI should
+        render as "n/c" rather than implying a real 0% match.
+    """
+    if same_family:
+        corr_term = _clamp01((corr - 0.05) / 0.85) if corr is not None else 0.0
+        emb_term = _clamp01((emb_score - 0.30) / 0.65) if emb_score is not None else 0.0
+        return 85 + round(15 * max(corr_term, emb_term))
+
+    if emb_score is not None:
+        return round(40 * _clamp01(emb_score / 0.65))
+    if corr is not None:
+        return round(40 * _clamp01(corr / 0.041) * 0.5)
+    return None
+
+
+def sync_tapematch_pairs(
+    db_path=None,
+    observations_db_path: "Path | str | None" = None,
+) -> dict:
+    """Ingest TapeMatch pairwise similarity data into the main DB.
+
+    Slim per-pair sync into ``tapematch_pairs`` (concert_date, lb_a, lb_b,
+    corr, emb_score, fp_score, same_family, similarity_pct, run_id), mirroring
+    ``sync_tapematch_families``'s latest-complete-run-per-date rule
+    (``_pick_best_run``) and wholesale replace-per-date semantics — a date's
+    rows are always deleted and reinserted together so they never blend two
+    different tapematch runs. See
+    instructions/FABLE_LISTENING_INSIGHT_IDEAS.md §1.
+
+    Args:
+        db_path: Main app DB path, or None for the default.
+        observations_db_path: Path to tapematch's observations.db, or None
+            for the default location under tools/tapematch/.
+
+    Returns:
+        Stats dict: ``{dates_processed, pairs_written, errors}``.
+    """
+    observations_db_path = observations_db_path or DEFAULT_OBSERVATIONS_DB_PATH
+    if not Path(observations_db_path).exists():
+        raise FileNotFoundError(f"observations.db not found: {observations_db_path}")
+
+    # Standalone CLI runs never go through app.py's startup init_db() call —
+    # see sync_tapematch_families's docstring for the same rationale.
+    init_db(db_path)
+
+    obs_conn = _open_observations_db(observations_db_path)
+    conn = get_connection(db_path)
+
+    stats = {
+        "dates_processed": 0,
+        "pairs_written": 0,
+        "errors": [],
+    }
+
+    try:
+        best_run_by_date = _pick_best_run(obs_conn)
+
+        for concert_date, run_id in best_run_by_date.items():
+            try:
+                _sync_pairs_for_date(obs_conn, conn, concert_date, run_id, stats)
+                stats["dates_processed"] += 1
+            except Exception as e:  # noqa: BLE001 — one bad date shouldn't abort the rest
+                log.exception(
+                    "tapematch pairs sync failed for %s (run %s)", concert_date, run_id
+                )
+                stats["errors"].append(f"{concert_date} ({run_id}): {e}")
+    finally:
+        obs_conn.close()
+
+    return stats
+
+
+def _sync_pairs_for_date(
+    obs_conn: sqlite3.Connection,
+    conn: sqlite3.Connection,
+    concert_date: str,
+    run_id: str,
+    stats: dict,
+) -> None:
+    """Compute and wholesale-replace pairwise rows for one date's chosen run."""
+    rows = obs_conn.execute(
+        "SELECT lb_a, lb_b, corr, emb_score, fp_score, tapematch_verdict "
+        "FROM pairs WHERE run_id = ? AND lb_a IS NOT NULL AND lb_b IS NOT NULL",
+        (run_id,),
+    ).fetchall()
+
+    # Key on the normalised (lb_a, lb_b) pair so a source-data duplicate can
+    # never collide with tapematch_pairs' PK during insert.
+    pairs_by_key: dict[tuple[int, int], tuple] = {}
+    for row in rows:
+        lb_a, lb_b = row["lb_a"], row["lb_b"]
+        if lb_a == lb_b:
+            continue
+        if lb_a > lb_b:
+            lb_a, lb_b = lb_b, lb_a
+        same_family = row["tapematch_verdict"] == "same_family"
+        pct = similarity_pct(row["corr"], row["emb_score"], same_family)
+        pairs_by_key[(lb_a, lb_b)] = (
+            concert_date, lb_a, lb_b, row["corr"], row["emb_score"], row["fp_score"],
+            int(same_family), pct, run_id,
+        )
+
+    pair_rows = list(pairs_by_key.values())
+
+    with conn:
+        conn.execute("BEGIN IMMEDIATE")
+        conn.execute("DELETE FROM tapematch_pairs WHERE concert_date = ?", (concert_date,))
+        conn.executemany(
+            """
+            INSERT INTO tapematch_pairs
+                (concert_date, lb_a, lb_b, corr, emb_score, fp_score, same_family,
+                 similarity_pct, run_id)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """,
+            pair_rows,
+        )
+
+    stats["pairs_written"] += len(pair_rows)
+
+
 def _main() -> int:
     """CLI entry point: `.venv/bin/python3 -m backend.tapematch_sync`.
 
     Runs standalone, without the Flask backend — tapematch batch runs happen
-    via shell scripts and may not have the app server up.
+    via shell scripts and may not have the app server up. Syncs families
+    then pairs, same combined order as the POST /api/tapematch/sync route.
     """
     import json
 
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
     stats = sync_tapematch_families()
+    pair_stats = sync_tapematch_pairs()
+    stats["pairs_synced"] = pair_stats["pairs_written"]
+    stats["pair_dates"] = pair_stats["dates_processed"]
+    stats["errors"] = [*stats["errors"], *pair_stats["errors"]]
     print(json.dumps(stats, indent=2))
     return 1 if stats["errors"] else 0
 

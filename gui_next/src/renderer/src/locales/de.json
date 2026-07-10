@@ -56,7 +56,8 @@
       "themes": "Themen",
       "advancedTools": "Erweiterte Tools",
       "trading": "Handel",
-      "sharing": "Teilen"
+      "sharing": "Teilen",
+      "tapematch": "TapeMatch"
     },
     "statusBar": {
       "db": "DB:",
@@ -1632,6 +1633,43 @@
       "conflict": "Widersprüchliche Beweise",
       "confirm": "Bestätigen",
       "reject": "Ablehnen"
+    }
+  },
+  "tapematch": {
+    "title": "TapeMatch",
+    "subtitle": "Überprüfung akustischer Übereinstimmungen – Korrelationsmatrix, Familien und Analyseergebnisse pro Sendetermin.",
+    "filterPlaceholder": "Nach Datum, Ort filtern…",
+    "noSelection": "Wählen Sie ein Datum aus, um die zugehörige Übereinstimmungsmatrix anzuzeigen",
+    "runId": "{{runId}} ausführen",
+    "crawl": {
+      "label": "Crawl:",
+      "running": "AUSFÜHRUNG",
+      "idle": "idle",
+      "counts": "{{runs}} läuft · {{dates}} Termine",
+      "noLog": "Keine aktuellen Einträge im Crawl-Protokoll"
+    },
+    "rail": {
+      "dates": "Daten",
+      "viewAll": "alle",
+      "viewConflicts": "Konflikte",
+      "viewNoAnalysis": "keine Analyse",
+      "noMatches": "Keine Treffer"
+    },
+    "families": {
+      "label": "Gruppen:",
+      "none": "Für dieses Datum liegen keine Familiengruppierungen vor"
+    },
+    "matrix": {
+      "label": "Ähnlichkeitsgrad in %",
+      "header": "LB",
+      "empty": "Für dieses Datum liegen keine synchronisierten Paare vor",
+      "noContact": "n/c",
+      "cellTooltip": "corr {{corr}} · emb {{emb}} · fp {{fp}} · aus derselben Familie: {{sameFamily}}"
+    },
+    "analysis": {
+      "title": "Analyse (analysis.md)",
+      "flagged": "Markiert",
+      "none": "Für diesen Durchlauf wurde noch keine „analysis.md“-Datei erstellt."
     }
   }
 }

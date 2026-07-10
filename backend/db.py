@@ -83,6 +83,7 @@ USER_TABLES = (
     "entry_lineage",
     "taper_attributions",
     "show_picks",
+    "tapematch_pairs",
     "pipeline_file_hash",
     "pipeline_folder_state",
 )
@@ -782,6 +783,29 @@ CREATE TABLE IF NOT EXISTS show_picks (
     PRIMARY KEY (concert_date, lb_number)
 );
 CREATE INDEX IF NOT EXISTS idx_show_picks_lb ON show_picks(lb_number);
+
+-- ── TapeMatch pairwise similarity (USER — per-date match % between LBs) ──────
+-- Slim per-pair mirror of tools/tapematch/observations.db's `pairs` table,
+-- synced via backend/tapematch_sync.py:sync_tapematch_pairs() (same
+-- latest-complete-run-per-date rule as recording_families). Wholesale
+-- replaced per concert_date on every sync — a row is never a blend of two
+-- different tapematch runs. See instructions/FABLE_LISTENING_INSIGHT_IDEAS.md
+-- §1. Never exported in master data — like quality/show_picks, this is the
+-- user's own derived analysis, rewritten wholesale, never hand-edited.
+CREATE TABLE IF NOT EXISTS tapematch_pairs (
+    concert_date    TEXT NOT NULL,
+    lb_a            INTEGER NOT NULL,     -- always lb_a < lb_b (normalised on sync)
+    lb_b            INTEGER NOT NULL,
+    corr            REAL,                 -- residual cross-correlation (0-1)
+    emb_score       REAL,                 -- pretrained-embedding cosine similarity
+    fp_score        REAL,                 -- fingerprint match score
+    same_family     INTEGER NOT NULL DEFAULT 0,  -- 1 = tapematch_verdict='same_family'
+    similarity_pct  INTEGER,              -- 0-100, or NULL = "not comparable"
+    run_id          TEXT,
+    imported_at     TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (concert_date, lb_a, lb_b)
+);
+CREATE INDEX IF NOT EXISTS idx_tapematch_pairs_date ON tapematch_pairs(concert_date);
 
 -- ── WTRF Torrent Downloads (USER — fetch attempts for missing items) ──────────
 CREATE TABLE IF NOT EXISTS wtrf_downloads (

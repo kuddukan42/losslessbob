@@ -1,6 +1,26 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-170: Add a dedicated TapeMatch screen — visualize results, review logs, provide user
+  feedback/corrections, and manage running the scripts
+Priority: Medium
+Status: Done
+Added: 2026-06-22
+Closed: 2026-07-10
+Description: There is currently no GUI screen for TapeMatch at all — only backend sync
+  endpoints (/api/tapematch/sync, /api/tapematch/families in backend/app.py:4255-4304,
+  backend/tapematch_sync.py) that ingest tools/tapematch/observations.db family clusters
+  into recording_families/tapematch_family_meta for display on the Library screen. TapeMatch
+  itself is run/managed entirely outside the app via tools/tapematch scripts, with run output
+  (results, logs, report.md) in data/tapematch/runs/ (per project memory) and
+  observations.db + last_run_report.md at root. Add a new screen that: (1) visualizes
+  TapeMatch results/family clusters per run, (2) lets the user review run logs and
+  analysis.md/report.md write-ups in-app, (3) provides a way to submit user feedback or
+  corrections on a match (e.g. wrong family grouping) that feeds back into the
+  observations.db / tapematch_family_meta data, and (4) lets the user kick off/manage
+  running the TapeMatch scripts themselves rather than only via the command line.
+v1 shipped 2026-07-10: dedicated ScreenTapeMatch (route /tapematch, Library nav group) — date rail with all/conflicts/no-analysis views + text filter, per-date similarity-% matrix (calibrated banded blend from tapematch_pairs, raw corr/emb/fp in tooltip), family chips, collapsible analysis.md viewer, crawl status strip. Backend: LISTENING §1 pairs sync (tapematch_pairs USER table + 4 GET routes + sync chaining). Deferred remainder (pair corrections, run management, LB deep-link) → follow-up TODO.
+
 TODO-173: Confirmed taper tag on LB entries (soomlos, spot, hide, lta, etc.) — only show when confirmed
 Priority: Medium
 Status: Done

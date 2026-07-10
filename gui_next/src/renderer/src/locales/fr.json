@@ -56,7 +56,8 @@
       "themes": "Thèmes",
       "advancedTools": "Outils avancés",
       "trading": "Trading",
-      "sharing": "Partage"
+      "sharing": "Partage",
+      "tapematch": "TapeMatch"
     },
     "statusBar": {
       "db": "DB :",
@@ -1632,6 +1633,43 @@
       "conflict": "Preuves contradictoires",
       "confirm": "Confirmer",
       "reject": "Refusé"
+    }
+  },
+  "tapematch": {
+    "title": "TapeMatch",
+    "subtitle": "Analyse des correspondances acoustiques — matrice de corrélation, familles et conclusions d'analyse par date de spectacle.",
+    "filterPlaceholder": "Filtrer par dates, lieu…",
+    "noSelection": "Sélectionnez une date pour afficher sa matrice de correspondance",
+    "runId": "exécuter {{runId}}",
+    "crawl": {
+      "label": "Crawl :",
+      "running": "EN COURS D'EXÉCUTION",
+      "idle": "inactif",
+      "counts": "{{runs}} exécutions · {{dates}} dates",
+      "noLog": "Aucune ligne récente dans le journal d'exploration"
+    },
+    "rail": {
+      "dates": "Dates",
+      "viewAll": "tout",
+      "viewConflicts": "conflits",
+      "viewNoAnalysis": "aucune analyse",
+      "noMatches": "Aucun résultat"
+    },
+    "families": {
+      "label": "Familles :",
+      "none": "Aucun regroupement par famille pour cette date"
+    },
+    "matrix": {
+      "label": "Pourcentage de similitude",
+      "header": "LB",
+      "empty": "Aucune paire synchronisée pour cette date",
+      "noContact": "n/c",
+      "cellTooltip": "corr {{corr}} · emb {{emb}} · fp {{fp}} · même famille : {{sameFamily}}"
+    },
+    "analysis": {
+      "title": "Analyse (analysis.md)",
+      "flagged": "Signalé",
+      "none": "Aucun fichier « analysis.md » n'a encore été rédigé pour cette exécution."
     }
   }
 }

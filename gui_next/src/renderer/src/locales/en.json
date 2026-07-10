@@ -42,6 +42,7 @@
       "collection": "My Collection",
       "search": "Search",
       "bootlegs": "Bootlegs",
+      "tapematch": "TapeMatch",
       "assets": "Assets",
       "attachments": "Attachments",
       "spectrograms": "Spectrograms",
@@ -1632,6 +1633,43 @@
       "upgrade": "Upgrade",
       "gap": "Gap",
       "undocumented": "Undocumented"
+    }
+  },
+  "tapematch": {
+    "title": "TapeMatch",
+    "subtitle": "Acoustic match review — correlation matrix, families, and analysis verdicts per show date.",
+    "filterPlaceholder": "Filter dates, location…",
+    "noSelection": "Select a date to view its match matrix",
+    "runId": "run {{runId}}",
+    "crawl": {
+      "label": "Crawl:",
+      "running": "RUNNING",
+      "idle": "idle",
+      "counts": "{{runs}} runs · {{dates}} dates",
+      "noLog": "No recent crawl log lines"
+    },
+    "rail": {
+      "dates": "Dates",
+      "viewAll": "all",
+      "viewConflicts": "conflicts",
+      "viewNoAnalysis": "no analysis",
+      "noMatches": "No matches"
+    },
+    "families": {
+      "label": "Families:",
+      "none": "No family groupings for this date"
+    },
+    "matrix": {
+      "label": "Similarity %",
+      "header": "LB",
+      "empty": "No synced pairs for this date",
+      "noContact": "n/c",
+      "cellTooltip": "corr {{corr}} · emb {{emb}} · fp {{fp}} · same family: {{sameFamily}}"
+    },
+    "analysis": {
+      "title": "Analysis (analysis.md)",
+      "flagged": "Flagged",
+      "none": "No analysis.md written for this run yet."
     }
   }
 }

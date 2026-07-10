@@ -56,7 +56,8 @@
       "themes": "Temas",
       "advancedTools": "Herramientas avanzadas",
       "trading": "Comercio",
-      "sharing": "Compartir"
+      "sharing": "Compartir",
+      "tapematch": "TapeMatch"
     },
     "statusBar": {
       "db": "BD:",
@@ -1632,6 +1633,43 @@
       "conflict": "Pruebas contradictorias",
       "confirm": "Confirmar",
       "reject": "Rechazar"
+    }
+  },
+  "tapematch": {
+    "title": "TapeMatch",
+    "subtitle": "Revisión de coincidencias acústicas: matriz de correlación, familias y veredictos de análisis por fecha de emisión.",
+    "filterPlaceholder": "Filtrar por fechas, ubicación…",
+    "noSelection": "Selecciona una fecha para ver su matriz de coincidencias",
+    "runId": "ejecutar {{runId}}",
+    "crawl": {
+      "label": "Rastreo:",
+      "running": "EN MARCHA",
+      "idle": "inactivo",
+      "counts": "{{runs}} se ejecuta · {{dates}} fechas",
+      "noLog": "No hay líneas recientes en el registro de rastreo"
+    },
+    "rail": {
+      "dates": "Fechas",
+      "viewAll": "todo",
+      "viewConflicts": "conflictos",
+      "viewNoAnalysis": "sin análisis",
+      "noMatches": "No se han encontrado resultados"
+    },
+    "families": {
+      "label": "Familias:",
+      "none": "No hay agrupaciones por familias para esta fecha"
+    },
+    "matrix": {
+      "label": "Porcentaje de similitud",
+      "header": "LB",
+      "empty": "No hay pares sincronizados para esta fecha",
+      "noContact": "n/c",
+      "cellTooltip": "corr {{corr}} · emb {{emb}} · fp {{fp}} · de la misma familia: {{sameFamily}}"
+    },
+    "analysis": {
+      "title": "Análisis (analysis.md)",
+      "flagged": "Marcado",
+      "none": "Aún no se ha escrito ningún archivo «analysis.md» para esta ejecución."
     }
   }
 }

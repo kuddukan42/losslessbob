@@ -1,3 +1,34 @@
+[2026-07-10] — feat(backend+gui): LISTENING §1 pairs sync + TapeMatch screen v1 (closes TODO-170; work-package stretch slot)
+Added: backend/tapematch_sync.py: sync_tapematch_pairs() — slim per-pair mirror of
+  observations.db pairs into new USER-tier tapematch_pairs table (db.py schema + USER_TABLES;
+  PK (concert_date, lb_a<lb_b), latest-complete-run-per-date via _pick_best_run, wholesale
+  DELETE+INSERT per date so rows never blend two runs). similarity_pct() banded monotone blend
+  calibrated 2026-07-10 against verdict distributions from 10,369 real pairs (same-family
+  renders 85–100 from max(corr,emb) terms, different-family 0–40 from emb (corr fallback),
+  both-NULL different-family → NULL = "n/c"). CLI _main() now syncs families then pairs.
+  Live sync: 9,037 pairs / 1,094 dates, 0 errors; bands verified (diff mean 8.7, same mean 92).
+Added: backend/app.py: POST /api/tapematch/sync chains families→pairs (existing keys unchanged;
+  pairs_synced/pair_dates merged in). New GET routes: /api/tapematch/pairs?date= (per-date
+  matrix rows), /api/tapematch/analysis?date= (best run's analysis.md text + parsed verdict;
+  409 when observations.db locked), /api/tapematch/crawl/status (pgrep + runs-dir counts +
+  log tail, read-only), /api/tapematch/dates (left-rail summary: n_lbs/n_pairs/has_analysis/
+  needs_review/location). Fixed during review: dates location lookup joined ISO concert_date
+  against US-format entries.date_str (matched 0/1,094 rows) — now resolves via the date's LB
+  numbers; fixture date_str made US-format so a regression fails the test. 35 tapematch tests
+  (tests/test_tapematch_sync.py + new tests/test_tapematch_routes.py); full suite 560 pass.
+Added: gui_next ScreenTapeMatch.tsx (route /tapematch, Library nav group, existing tapematch
+  icon) — tj-approved sketch built as-is: date rail (all/conflicts/no-analysis views, date+
+  location text filter, analysis ✓ / needs-review ⚠ marks), per-date similarity-% matrix
+  (color-mix heatmap tint on theme tokens, raw corr/emb/fp + verdict in cell tooltip, n/c for
+  never-compared, diagonal —), family chips (F1/F2… by lowest LB from /api/tapematch/families
+  fam_id groups), collapsible lazy-fetched analysis.md <pre> viewer, crawl status strip
+  (30 s poll). Read-only v1 — no run controls or pair corrections (→ TODO-215). i18n:
+  tapematch.* namespace + nav key, en + DeepL de/fr/es/it/nl (5,131 chars; residual gaps are
+  benign identical-form strings). gui-check: node+web tsc 0 errors, production build clean.
+Changed: ledger: TODO-170 closed (v1 shipped), TODO-215 opened (v2 remainder: pair
+  corrections into observations.db, run start/stop, LB deep-links pending an in-app
+  deep-link mechanism). WORK_PACKAGE_2026-07-09 stretch slot done.
+
 [2026-07-09] — feat(backend+gui): TAPER phase 2 shipped — curator confirm/reject API, Library taper pill + filters, DetailPanel Taper tab (closes TODO-173)
 Added: backend/taper_attribution.py: phase 2 curator API functions — confirm()/reject() write
   sticky MASTER taper_confirmations rows (upsert on lb_number PK, F2) and apply the decision to

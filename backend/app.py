@@ -44,6 +44,7 @@ from backend.paths import (
     SITE_DIR,
     SITE_FILES_DIR,
     TAPEMATCH_DB_PATH,
+    TAPEMATCH_RUNS_DIR,
     attachment_path,
     find_lbdir_attachment,
 )
@@ -4809,15 +4810,25 @@ def create_app() -> Flask:
 
     @app.route("/api/tapematch/sync", methods=["POST"])
     def tapematch_sync() -> Response:
-        """Ingest TapeMatch family clusters from tools/tapematch/observations.db.
+        """Ingest TapeMatch family clusters + pairwise similarity from
+        tools/tapematch/observations.db.
 
         Manual trigger only — not run automatically at startup, since that
         would make backend boot depend on observations.db existing/unlocked.
+        One trigger runs both syncs (families, then pairs — per
+        instructions/FABLE_LISTENING_INSIGHT_IDEAS.md §1) so callers never
+        need to remember to fire two requests. The families stats keys are
+        unchanged; pairs stats are merged in as ``pairs_synced``/``pair_dates``
+        plus any pairs-specific errors appended to the shared ``errors`` list.
         """
         from backend import tapematch_sync as _tapematch_sync
 
         try:
             stats = _tapematch_sync.sync_tapematch_families()
+            pair_stats = _tapematch_sync.sync_tapematch_pairs()
+            stats["pairs_synced"] = pair_stats["pairs_written"]
+            stats["pair_dates"] = pair_stats["dates_processed"]
+            stats["errors"] = [*stats["errors"], *pair_stats["errors"]]
             return jsonify({"ok": True, **stats})
         except FileNotFoundError as exc:
             return jsonify({"error": "not_found", "message": str(exc)}), 404
@@ -4997,6 +5008,265 @@ def create_app() -> Flask:
             """
         ).fetchall()
         return jsonify([dict(r) for r in rows])
+
+    @app.route("/api/tapematch/pairs", methods=["GET"])
+    def tapematch_pairs_for_date() -> Response:
+        """Pairwise similarity matrix for one concert date (LISTENING §1).
+
+        Query param: date=YYYY-MM-DD (required). 200 with pairs: [] when the
+        date has no synced tapematch_pairs rows — an un-synced or unknown
+        date is not an error, same style as /api/tapematch/families.
+        """
+        concert_date = request.args.get("date")
+        if not concert_date:
+            return jsonify({"error": "missing_date"}), 400
+        try:
+            conn = database.get_connection()
+            rows = conn.execute(
+                """
+                SELECT lb_a, lb_b, corr, emb_score, fp_score, same_family,
+                       similarity_pct, run_id
+                FROM tapematch_pairs
+                WHERE concert_date = ?
+                ORDER BY lb_a, lb_b
+                """,
+                (concert_date,),
+            ).fetchall()
+            run_id = rows[0]["run_id"] if rows else None
+            pairs = [
+                {
+                    "lb_a": r["lb_a"],
+                    "lb_b": r["lb_b"],
+                    "corr": r["corr"],
+                    "emb_score": r["emb_score"],
+                    "fp_score": r["fp_score"],
+                    "same_family": bool(r["same_family"]),
+                    "similarity_pct": r["similarity_pct"],
+                }
+                for r in rows
+            ]
+            return jsonify({"date": concert_date, "run_id": run_id, "pairs": pairs})
+        except Exception as exc:
+            _log.exception("tapematch_pairs_for_date failed for date=%s", concert_date)
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
+    @app.route("/api/tapematch/analysis", methods=["GET"])
+    def tapematch_analysis_for_date() -> Response:
+        """The chosen TapeMatch run's analysis.md verdict for one concert date.
+
+        Query param: date=YYYY-MM-DD (required). Reads observations.db only
+        to resolve the best run + its archive dir (_pick_best_run,
+        _resolve_run_dir) then reads analysis.md straight off disk — never
+        writes. 200 with run_id/verdict/analysis_md all null when the date
+        has no run yet, and analysis_md null (verdict still populated as
+        null) when the run exists but hasn't had its analysis.md written.
+        """
+        from backend import tapematch_sync as _tapematch_sync
+
+        concert_date = request.args.get("date")
+        if not concert_date:
+            return jsonify({"error": "missing_date"}), 400
+        try:
+            obs_path = _tapematch_sync.DEFAULT_OBSERVATIONS_DB_PATH
+            if not Path(obs_path).exists():
+                return jsonify(
+                    {"date": concert_date, "run_id": None, "verdict": None,
+                     "analysis_md": None}
+                )
+            obs_conn = _tapematch_sync._open_observations_db(obs_path)
+            try:
+                run_id = _tapematch_sync._pick_best_run(obs_conn).get(concert_date)
+                if run_id is None:
+                    return jsonify(
+                        {"date": concert_date, "run_id": None, "verdict": None,
+                         "analysis_md": None}
+                    )
+                run_dir = _tapematch_sync._resolve_run_dir(obs_conn, run_id, concert_date)
+            finally:
+                obs_conn.close()
+
+            analysis_path = run_dir / "analysis.md"
+            if not analysis_path.exists():
+                return jsonify(
+                    {"date": concert_date, "run_id": run_id, "verdict": None,
+                     "analysis_md": None}
+                )
+            text = analysis_path.read_text(encoding="utf-8")
+            needs_review, reason = _tapematch_sync._parse_verdict(text)
+            verdict = {"needs_review": needs_review, "reason": reason}
+            return jsonify(
+                {"date": concert_date, "run_id": run_id, "verdict": verdict,
+                 "analysis_md": text}
+            )
+        except RuntimeError as exc:
+            return jsonify({"error": "locked", "message": str(exc)}), 409
+        except Exception as exc:
+            _log.exception("tapematch_analysis_for_date failed for date=%s", concert_date)
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
+    @app.route("/api/tapematch/dates", methods=["GET"])
+    def tapematch_dates() -> Response:
+        """Per-date summary of synced TapeMatch pairs, for the screen's left
+        rail (LISTENING §1 / TODO-170).
+
+        One row per concert_date in tapematch_pairs, sorted date DESC:
+        run_id (the date's single synced run), n_lbs (distinct LBs across
+        lb_a/lb_b), n_pairs (row count), location (first non-empty
+        entries.location for the date; null if none), has_analysis /
+        needs_review (does the chosen run's dir hold an analysis.md, and
+        does its verdict flag review — via _resolve_run_dir/_parse_verdict).
+        If observations.db is missing or locked, has_analysis/needs_review
+        are null for every row rather than failing the endpoint.
+        """
+        from backend import tapematch_sync as _tapematch_sync
+
+        try:
+            conn = database.get_connection()
+            rows = conn.execute(
+                "SELECT concert_date, lb_a, lb_b, run_id FROM tapematch_pairs"
+            ).fetchall()
+
+            by_date: dict[str, dict] = {}
+            for r in rows:
+                agg = by_date.setdefault(
+                    r["concert_date"],
+                    {"run_id": r["run_id"], "lbs": set(), "n_pairs": 0},
+                )
+                agg["lbs"].add(r["lb_a"])
+                agg["lbs"].add(r["lb_b"])
+                agg["n_pairs"] += 1
+
+            # First non-empty entries.location per date, one query. Joined via
+            # lb_number, not date: entries.date_str is US-format ("7/28/00",
+            # "xx/xx/87") and can never equal tapematch's ISO concert_date.
+            locations: dict[str, str | None] = {}
+            if by_date:
+                all_lbs = sorted({lb for agg in by_date.values() for lb in agg["lbs"]})
+                placeholders = ",".join("?" * len(all_lbs))
+                loc_rows = conn.execute(
+                    f"SELECT lb_number, location FROM entries "
+                    f"WHERE lb_number IN ({placeholders}) "
+                    f"AND location IS NOT NULL AND location != ''",
+                    all_lbs,
+                ).fetchall()
+                loc_by_lb = {r["lb_number"]: r["location"] for r in loc_rows}
+                for date, agg in by_date.items():
+                    locations[date] = next(
+                        (loc_by_lb[lb] for lb in sorted(agg["lbs"]) if lb in loc_by_lb),
+                        None,
+                    )
+
+            # One read-only observations.db pass to resolve each date's run
+            # dir; one stat per date, file read only when parsing a verdict.
+            analysis_by_date: dict[str, tuple] = {}
+            obs_ok = False
+            obs_path = _tapematch_sync.DEFAULT_OBSERVATIONS_DB_PATH
+            if Path(obs_path).exists():
+                try:
+                    obs_conn = _tapematch_sync._open_observations_db(obs_path)
+                except RuntimeError:
+                    _log.warning(
+                        "tapematch_dates: observations.db locked; "
+                        "has_analysis/needs_review omitted"
+                    )
+                else:
+                    try:
+                        for date, agg in by_date.items():
+                            run_dir = _tapematch_sync._resolve_run_dir(
+                                obs_conn, agg["run_id"], date
+                            )
+                            analysis_path = run_dir / "analysis.md"
+                            if not analysis_path.exists():
+                                analysis_by_date[date] = (False, None)
+                                continue
+                            try:
+                                text = analysis_path.read_text(encoding="utf-8")
+                            except OSError:
+                                analysis_by_date[date] = (True, None)
+                                continue
+                            flagged, _reason = _tapematch_sync._parse_verdict(text)
+                            analysis_by_date[date] = (True, flagged)
+                        obs_ok = True
+                    finally:
+                        obs_conn.close()
+
+            dates = []
+            for date in sorted(by_date, reverse=True):
+                agg = by_date[date]
+                has_analysis, needs_review = (
+                    analysis_by_date.get(date, (False, None)) if obs_ok else (None, None)
+                )
+                dates.append(
+                    {
+                        "date": date,
+                        "run_id": agg["run_id"],
+                        "n_lbs": len(agg["lbs"]),
+                        "n_pairs": agg["n_pairs"],
+                        "has_analysis": has_analysis,
+                        "needs_review": needs_review,
+                        "location": locations.get(date),
+                    }
+                )
+            return jsonify({"dates": dates})
+        except Exception as exc:
+            _log.exception("tapematch_dates failed")
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
+    @app.route("/api/tapematch/crawl/status", methods=["GET"])
+    def tapematch_crawl_status() -> Response:
+        """Read-only status for the detached TapeMatch library crawl.
+
+        Replicates tools/tapematch/crawl_status.sh: is run_crawl.sh running
+        (via pgrep, no shell=True), how many run dirs exist on disk / how
+        many distinct dates they cover, and the crawl log's last 5 lines.
+        No start/stop controls here — this is observation only.
+        """
+        import subprocess
+
+        try:
+            pid = None
+            try:
+                proc = subprocess.run(
+                    ["pgrep", "-o", "-f", "run_crawl.sh"],
+                    capture_output=True, text=True, timeout=5,
+                )
+                if proc.returncode == 0 and proc.stdout.strip():
+                    pid = int(proc.stdout.strip())
+            except (FileNotFoundError, subprocess.TimeoutExpired, ValueError):
+                pid = None
+
+            runs_dir = TAPEMATCH_RUNS_DIR
+            dir_names = (
+                [d.name for d in runs_dir.iterdir() if d.is_dir()]
+                if runs_dir.exists() else []
+            )
+            runs_on_disk = len(dir_names)
+            date_re = re.compile(r"(\d{4}-\d{2}-\d{2})$")
+            distinct_dates = len(
+                {m.group(1) for name in dir_names if (m := date_re.search(name))}
+            )
+
+            log_path = runs_dir.parent / "crawl.log"
+            log_tail: list = []
+            if log_path.exists():
+                try:
+                    lines = log_path.read_text(encoding="utf-8", errors="replace").splitlines()
+                    log_tail = lines[-5:]
+                except OSError:
+                    log_tail = []
+
+            return jsonify(
+                {
+                    "running": pid is not None,
+                    "pid": pid,
+                    "runs_on_disk": runs_on_disk,
+                    "distinct_dates": distinct_dates,
+                    "log_tail": log_tail,
+                }
+            )
+        except Exception as exc:
+            _log.exception("tapematch_crawl_status failed")
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
 
     @app.route("/api/library/performances", methods=["GET"])
     def library_performances() -> Response:

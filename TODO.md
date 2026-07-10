@@ -1,4 +1,10 @@
 
+TODO-215: TapeMatch screen v2 — pair corrections, run management, LB deep-links
+Priority: Medium
+Status: Open
+Added: 2026-07-10
+Description: Remainder of the original TODO-170 wish list deferred from screen v1 (2026-07-10): (1) curator feedback on a match — matrix-cell action writing human_judgment/human_notes back into tools/tapematch/observations.db pairs; (2) kick off/manage TapeMatch runs from the screen (start/stop wrapping tools/tapematch/crawl_start.sh|crawl_stop.sh; the status readout already exists via GET /api/tapematch/crawl/status); (3) LB deep-links from matrix/family chips into the Library DetailPanel — needs an in-app deep-link mechanism first (ScreenSearch never consumes ScreenBootlegs' /search?lb= param; fix or add a Library equivalent).
+
 TODO-214: TAPER phase 3 — Layer 2 token-profile fingerprints (inferred tier)
 Priority: Low
 Status: Open
@@ -544,24 +550,6 @@ Description: Note: column-header click-to-sort already exists (ScreenDbEditor.ts
   SqlQueryPanel instances open at once, ScreenDbEditor.tsx:566), copyable cell/row selection
   in the results grid, query history/favorites, pinned/frozen first column, and per-column
   type-aware cell formatting (dates, booleans, NULL styling) in the rows view.
-
-TODO-170: Add a dedicated TapeMatch screen — visualize results, review logs, provide user
-  feedback/corrections, and manage running the scripts
-Priority: Medium
-Status: Open
-Added: 2026-06-22
-Description: There is currently no GUI screen for TapeMatch at all — only backend sync
-  endpoints (/api/tapematch/sync, /api/tapematch/families in backend/app.py:4255-4304,
-  backend/tapematch_sync.py) that ingest tools/tapematch/observations.db family clusters
-  into recording_families/tapematch_family_meta for display on the Library screen. TapeMatch
-  itself is run/managed entirely outside the app via tools/tapematch scripts, with run output
-  (results, logs, report.md) in data/tapematch/runs/ (per project memory) and
-  observations.db + last_run_report.md at root. Add a new screen that: (1) visualizes
-  TapeMatch results/family clusters per run, (2) lets the user review run logs and
-  analysis.md/report.md write-ups in-app, (3) provides a way to submit user feedback or
-  corrections on a match (e.g. wrong family grouping) that feeds back into the
-  observations.db / tapematch_family_meta data, and (4) lets the user kick off/manage
-  running the TapeMatch scripts themselves rather than only via the command line.
 
 TODO-166: Collection screen — view/filter folders stored in nonstandard locations (not matching mount routing)
 Priority: Medium
