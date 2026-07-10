@@ -539,6 +539,28 @@ present) `taper_attributions`. Never exported in master data. Scoring model:
 
 Index: `idx_show_picks_lb(lb_number)`.
 
+### `tapematch_pairs` — Per-date pairwise similarity (USER table)
+Slim mirror of `tools/tapematch/observations.db` `pairs`, synced by
+`backend/tapematch_sync.py:sync_tapematch_pairs()` (chained after the families sync in both
+`POST /api/tapematch/sync` and the standalone CLI). Same latest-complete-run-per-date rule as
+`recording_families`; wholesale replaced per `concert_date` so a date's rows never blend two
+runs. Never exported in master data. Feeds the TapeMatch screen's similarity matrix
+(LISTENING §1, `instructions/FABLE_LISTENING_INSIGHT_IDEAS.md`).
+| Column | Type | Notes |
+|--------|------|-------|
+| concert_date | TEXT NOT NULL | PK part 1 (YYYY-MM-DD) |
+| lb_a | INTEGER NOT NULL | PK part 2; always lb_a < lb_b (normalised on sync) |
+| lb_b | INTEGER NOT NULL | PK part 3 |
+| corr | REAL | Residual cross-correlation (0–1) |
+| emb_score | REAL | Pretrained-embedding cosine similarity |
+| fp_score | REAL | Fingerprint match score |
+| same_family | INTEGER NOT NULL | 1 = tapematch_verdict was `same_family` |
+| similarity_pct | INTEGER | 0–100 banded blend (`similarity_pct()`, breakpoints 2026-07-10); NULL = not comparable |
+| run_id | TEXT | tapematch run the row came from |
+| imported_at | TIMESTAMP | DEFAULT CURRENT_TIMESTAMP |
+
+Index: `idx_tapematch_pairs_date(concert_date)`.
+
 ### `lb_problems` — Known problems with specific LB entries (MASTER table)
 Curator-authored table for flagging LB entries with known issues (bad checksums,
 incomplete torrent, corrupt files, mislabelled metadata, etc.). Included in master-data export.
@@ -841,11 +863,15 @@ scheduled scan interval, checked hourly by `scheduler._integrity_scan_worker`.
 |--------|-------|-------------|
 | GET | `/api/performances` | Query `dylan_performances`. Params: `date` (YYYY-MM-DD), `lb` (int — resolved via entries.date_str), `category`, `limit` (default 200), `offset`. Returns list of `{event_id, date_str, category, city, state, country, venue}`. |
 
-### TapeMatch Family Sync
+### TapeMatch Family + Pairs Sync
 | Method | Route | Description |
 |--------|-------|-------------|
-| POST | `/api/tapematch/sync` | Ingests `tools/tapematch/observations.db` into `recording_families`/`tapematch_family_meta` via `tapematch_sync.sync_tapematch_families()`. Manual trigger only. Returns `{ok, dates_processed, families_written, recordings_linked, errors}`. |
+| POST | `/api/tapematch/sync` | Ingests `tools/tapematch/observations.db` into `recording_families`/`tapematch_family_meta` then `tapematch_pairs` (chained, one trigger). Manual trigger only. Returns `{ok, dates_processed, families_written, recordings_linked, pairs_synced, pair_dates, errors}`. |
 | GET | `/api/tapematch/families` | Flat list for client-side merge by `lb_number`. Returns `[{lb_number, fam_id, fam_label, fam_conf, fam_by, concert_date}]`. |
+| GET | `/api/tapematch/pairs?date=` | One date's `tapematch_pairs` rows for the similarity matrix: `{date, run_id, pairs: [{lb_a, lb_b, corr, emb_score, fp_score, same_family, similarity_pct}]}`. 200 with `pairs: []` for un-synced dates. |
+| GET | `/api/tapematch/analysis?date=` | Best run's `analysis.md` for a date: `{date, run_id, verdict: {needs_review, reason}\|null, analysis_md\|null}`. 409 `locked` when observations.db is write-locked. |
+| GET | `/api/tapematch/dates` | Left-rail summary, date DESC: `{dates: [{date, run_id, n_lbs, n_pairs, has_analysis, needs_review, location}]}`. `location` resolved via the date's LB numbers (entries.date_str is US-format, never joined on). has/needs fields null when observations.db missing/locked. |
+| GET | `/api/tapematch/crawl/status` | Read-only crawl status (mirrors `tools/tapematch/crawl_status.sh`): `{running, pid, runs_on_disk, distinct_dates, log_tail}`. |
 
 ### Derived-Data Recompute
 | Method | Route | Description |
@@ -1608,6 +1634,7 @@ Second-generation GUI (primary, merged into main 2026-05-29) built with **Electr
 | ScreenSearch | `screens/ScreenSearch.tsx` | Done — virtual table, sort, group-by-year, CSV export, column picker, saved views |
 | ScreenLibrary | `screens/ScreenLibrary.tsx`, `components/library/actions.tsx`, `components/library/DetailPanel.tsx` | In progress (TODO-150) — "By performance \| By recording" lens toggle (defaults to performance). Both lenses share the same merged `RecordingRow[]` (from `/api/search` + `/api/collection/prefetch`); the performance lens additionally fetches `/api/library/performances` + `/api/tapematch/families` and groups recordings by show → TapeMatch family → member. Each lens has its own facet rail and virtual year-grouped table. Right-click context menu and a checkbox bulk-select bar (recording lens: Create torrent/Add to qBittorrent/Update location/Remove) are wired in via `actions.tsx`'s shared registry. Selecting a row opens a zoned detail panel (`DetailPanel.tsx`: ActionBar/ShareSeed/AssetStrip/Setlist, step 8; recording lens also has a Quality tab showing LB Rating + Concert Ranker AI Quality Index side by side, a Picks tab (show-pick rank/score + `EvidenceList`, lazy `/api/picks/for/<lb>`), and a Taper tab (attribution tier/conflict + `EvidenceList`, lazy `/api/tapers/attributions/<lb>`, confirm/reject buttons in curator mode) as a third column on either lens. Live at `/library`, sidebar nav item "Library" (featured, top of the Library group, above My Collection) — step 9. Performance lens show rows and the detail panel render an "Unconfirmed" pill for degraded (`confirmed: false`) shows recovered from the `lb_category='unknown'` bucket (TODO-151). `m3u` (Export show as M3U) is wired for performance rows. `sources`/`notify` row actions and the TapeMatch family `note` field remain unexposed (no backend/UI to wire to). i18n pass (step 10) **done** — all in-screen strings extracted to the `library` namespace in `locales/*.json` and the three files converted to `t()` (the shared action registry takes a `TFunction` param since the builders are plain functions; counts pluralised via `_one`/`_other` keys); the 5 non-English locales filled via DeepL. |
 | ScreenBootlegs | `screens/ScreenBootlegs.tsx` | Done — year/CDs filters, catalog browser, CSV export |
+| ScreenTapeMatch | `screens/ScreenTapeMatch.tsx` | v1 (2026-07-10, TODO-170 closed) — read-only TapeMatch review at `/tapematch` (Library nav group): date rail (`/api/tapematch/dates`; all/conflicts/no-analysis views + date/location filter), per-date similarity-% matrix (`/api/tapematch/pairs`; heatmap tint, raw corr/emb/fp in tooltip, "n/c" for never-compared), family chips (F1/F2… from `/api/tapematch/families` fam_id groups), collapsible lazy `analysis.md` viewer (`/api/tapematch/analysis`), crawl-status strip (`/api/tapematch/crawl/status`, 30 s poll). v2 remainder (pair corrections, run start/stop, LB deep-links) → TODO-215. |
 | ScreenThemes | `screens/ScreenThemes.tsx` | Done — mode/density/accent, frame theme (palette) + card style (framed/flat), typeface/font-size, custom color tokens |
 | ScreenPipeline | `screens/ScreenPipeline.tsx` | Done — folder queue, 5-step workflow (verify/lookup/lbdir/rename/collect), bulk-actions menu, Auto-run + Auto-rename toggles |
 | ScreenQuickLookup | `screens/ScreenQuickLookup.tsx` | Done — paste/clipboard/drop zone, per-row checksum results table |

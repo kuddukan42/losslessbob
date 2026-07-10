@@ -56,7 +56,8 @@
       "themes": "Thema's",
       "advancedTools": "Geavanceerde tools",
       "trading": "Handel",
-      "sharing": "Delen"
+      "sharing": "Delen",
+      "tapematch": "TapeMatch"
     },
     "statusBar": {
       "db": "DB:",
@@ -1632,6 +1633,43 @@
       "conflict": "Tegenstrijdige bewijzen",
       "confirm": "Bevestigen",
       "reject": "Afwijzen"
+    }
+  },
+  "tapematch": {
+    "title": "TapeMatch",
+    "subtitle": "Beoordeling van akoestische overeenkomsten — correlatiematrix, families en analysebeoordelingen per uitzenddatum.",
+    "filterPlaceholder": "Filter op datums, locatie…",
+    "noSelection": "Selecteer een datum om de bijbehorende matchmatrix te bekijken",
+    "runId": "run {{runId}}",
+    "crawl": {
+      "label": "Crawl:",
+      "running": "IN WERKING",
+      "idle": "inactief",
+      "counts": "{{runs}}-versies · {{dates}}-datums",
+      "noLog": "Geen recente regels in het crawl-logboek"
+    },
+    "rail": {
+      "dates": "Datums",
+      "viewAll": "alles",
+      "viewConflicts": "conflicten",
+      "viewNoAnalysis": "geen analyse",
+      "noMatches": "Geen resultaten"
+    },
+    "families": {
+      "label": "Categorieën:",
+      "none": "Geen familiegroeperingen voor deze datum"
+    },
+    "matrix": {
+      "label": "Overeenkomst %",
+      "header": "LB",
+      "empty": "Geen gesynchroniseerde paren voor deze datum",
+      "noContact": "n.v.t.",
+      "cellTooltip": "corr {{corr}} · emb {{emb}} · fp {{fp}} · uit dezelfde familie: {{sameFamily}}"
+    },
+    "analysis": {
+      "title": "Analyse (analysis.md)",
+      "flagged": "Gemarkeerd",
+      "none": "Er is voor deze run nog geen analysis.md geschreven."
     }
   }
 }
