@@ -1,4 +1,12 @@
 
+BUG-246: Live show_picks wiped — first-init-wins write queue lets derived writers hit a different DB than they read from
+Status: Open
+File(s): backend/db_queue.py:146,concert_ranker/picks.py:353
+Reported: 2026-07-10
+Description: Found 2026-07-10: live show_picks was 0 rows (15,204 computed 07-09; taper_attributions/tapematch_pairs intact). Only deleter is picks._write_picks (wholesale DELETE+insert). Queue writes are transactional, so the empty state means a COMMITTED replace with 0 rows — only possible when the compute's read connection (get_connection(db_path)) and the singleton write queue (init_write_queue = first-caller-wins, silent no-op on later paths) point at DIFFERENT databases: reads see an empty DB, write DELETEs the live one. Exact trigger not reproduced (full pytest suite twice = no wipe; backend log truncated by 08:11 restart). Fixed defensively same day: (1) _write_picks refuses empty wholesale replace; (2) _write_picks writes directly via get_connection(db_path) when the queue is bound to a different DB; (3) init_write_queue WARNs on ignored re-init with different path; regression tests added. Data restored via tools/compute_show_picks (15,204/4,031). REMAINING AUDIT: same first-init-wins exposure in other db_path-taking writers (tapematch_sync, parse_lineage, taper_attribution, scrapers) — sweep them for the same read/write split before closing.
+Root cause: Unknown
+Fix: —
+
 BUG-230: GNOME Wayland dev window still shows generic gear icon in the dock/taskbar
 Status: Open
 File(s): gui_next/src/main/index.ts, gui_next/resources/losslessbob-next.desktop

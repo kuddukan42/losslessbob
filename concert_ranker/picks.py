@@ -29,6 +29,7 @@ import logging
 import re
 import sqlite3
 from collections import defaultdict
+from pathlib import Path
 from statistics import median
 
 from backend.db import get_connection, get_write_queue, init_db
@@ -351,7 +352,17 @@ def _rank_date(rows: list[tuple[int, float, list[dict]]]) -> list[tuple[int, flo
 
 def _write_picks(all_rows: list[tuple[str, int, float, int, list[dict]]],
                  db_path: str | None) -> None:
-    """Wholesale-replace show_picks with the freshly computed rows."""
+    """Wholesale-replace show_picks with the freshly computed rows.
+
+    Refuses an empty replace: zero computed picks means the read side saw no
+    candidate entries (empty/wrong DB), and committing DELETE + nothing is how
+    the live table got wiped on 2026-07-10 (BUG-246) — keep the old rows.
+    """
+    if not all_rows:
+        log.error("recompute produced 0 picks — refusing wholesale replace, "
+                  "existing show_picks rows kept")
+        return
+
     payload = [
         (date, lb, round(score, 2), rank, json.dumps(ev))
         for date, lb, score, rank, ev in all_rows
@@ -366,7 +377,18 @@ def _write_picks(all_rows: list[tuple[str, int, float, int, list[dict]]],
             payload,
         )
 
-    get_write_queue().execute(_do)
+    # init_write_queue is first-caller-wins, so the singleton may be bound to a
+    # different DB than the one this recompute read from (BUG-246). Only route
+    # through the queue when the paths agree; otherwise write directly.
+    queue = get_write_queue()
+    if db_path is not None and str(Path(db_path).resolve()) != str(Path(queue.db_path).resolve()):
+        log.warning("write queue bound to %s but recompute targets %s — writing directly",
+                    queue.db_path, db_path)
+        conn = get_connection(db_path)
+        with conn:
+            _do(conn)
+    else:
+        queue.execute(_do)
 
 
 def _summarize(all_rows: list[tuple[str, int, float, int, list[dict]]]) -> dict:
