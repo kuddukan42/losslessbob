@@ -554,8 +554,9 @@ Managed via `GET/POST /api/lb_problems` and `PUT/DELETE /api/lb_problems/<id>`.
 
 ### `curated_lists` / `curated_list_entries` — Curator "best of" picks (TODO-181, MASTER tables)
 Named lists of curator-picked best LB recordings (e.g. carbonbit, 10haaf), imported via
-`tools/import_curated_lists.py` from `data/lists/`. No GET/POST routes or GUI filter yet — DB +
-import only so far; the Library-screen filter view remains open on TODO-181.
+`tools/import_curated_lists.py` from `data/lists/`. Routes: `GET/POST /api/curated_lists`,
+`DELETE /api/curated_lists/<name>` (POST/DELETE curator-gated). Surfaced as performance-lens
+filter views + badges on the Library screen (TODO-181/186, closed 2026-07-09).
 | Column (`curated_lists`) | Type | Notes |
 |--------|------|-------|
 | id | INTEGER PK | Auto-increment |
@@ -850,11 +851,19 @@ scheduled scan interval, checked hourly by `scheduler._integrity_scan_worker`.
 | Method | Route | Description |
 |--------|-------|-------------|
 | POST | `/api/derived/recompute` | SSE-streamed chained recompute: `tools.parse_lineage.run()` → `tools.attribute_tapers.run()` → `tools.compute_show_picks.run()` in canonical order (finding F1/F5, `instructions/SPEC_INTEGRATION_NOTES.md`). Events: `start`/`done` (with per-step `stats`)/`skipped` (module not importable — later phase not shipped)/`error` (aborts chain)/`chain_done`. Manual trigger only (onboarding "Done" step + curator recompute button); not curator-gated — rewrites only USER-tier derived tables (`entry_lineage`, `taper_attributions`, `show_picks`). |
+| GET | `/api/picks/for/<lb>` | One LB's `show_picks` row: `{concert_date, lb_number, pick_score, pick_rank, evidence, computed_at}` with `evidence` parsed from `evidence_json` (F3 record shape). 204 when no row (pre-recompute, or entry has no usable date). Feeds DetailPanel's Picks tab / `EvidenceList`. |
+
+### Curated Lists
+| Method | Route | Description |
+|--------|-------|-------------|
+| GET | `/api/curated_lists` | All curated lists with entry counts. Open (no curator gate). |
+| POST | `/api/curated_lists` | Curator-only. Create-or-fetch a list. Body `{name, label?, source?}`; 400 on missing name. |
+| DELETE | `/api/curated_lists/<name>` | Curator-only. Delete a list and all its entries; 404 if no such name. |
 
 ### Library — Performance/Show Grouping
 | Method | Route | Description |
 |--------|-------|-------------|
-| GET | `/api/library/performances` | `db.get_performances()` — groups `entries` by raw `(date_str, location)` into shows for the Library screen's performance lens (TODO-150 step 5). `lb_category = 'concert'` entries are always grouped — as of TODO-151 (2026-06-18) this includes dates only known via `dylan_performances` category `GUEST` (guest spot at another artist's show) or `NET` (Never Ending Tour era), both now mapped to `'concert'` in `_PERF_CATEGORY_MAP`; when `bobdylan_shows` has no row for the date, `venue` falls back to `dylan_performances.venue`. `lb_category = 'unknown'` entries are ALSO grouped when they have a fully-specified date + non-blank location, flagged `confirmed: false` (degraded fallback for whatever `dylan_performances` still doesn't cover, e.g. category `FILM` — ~19 shows after the GUEST/NET fix, down from 198). Other non-concert categories (radio/tv/interview/studio/etc.) and bare 'unknown' rows (no date or no location) stay recording-lens-only. Cross-references `bobdylan_shows` (venue/setlist key/track count), `dylan_performances` (venue fallback), `setlistfm_shows` (tour), `bootleg_titles` (release title). Returns `[{id, date, disp, year, venue, city, status, recordings: [{lb, lbNumber, src, rating, status}], dow?, tour?, setlist?, tracks?, title?, confirmed?}]` — optional keys omitted (not null-faked) when no source data exists; `confirmed` omitted (true by default) except `false` on degraded unknown-only rows. TapeMatch family data is **not** joined in; the GUI merges `/api/tapematch/families` client-side by `lb_number`, same pattern as `/api/collection/prefetch`. |
+| GET | `/api/library/performances` | `db.get_performances()` — groups `entries` by raw `(date_str, location)` into shows for the Library screen's performance lens (TODO-150 step 5). `lb_category = 'concert'` entries are always grouped — as of TODO-151 (2026-06-18) this includes dates only known via `dylan_performances` category `GUEST` (guest spot at another artist's show) or `NET` (Never Ending Tour era), both now mapped to `'concert'` in `_PERF_CATEGORY_MAP`; when `bobdylan_shows` has no row for the date, `venue` falls back to `dylan_performances.venue`. `lb_category = 'unknown'` entries are ALSO grouped when they have a fully-specified date + non-blank location, flagged `confirmed: false` (degraded fallback for whatever `dylan_performances` still doesn't cover, e.g. category `FILM` — ~19 shows after the GUEST/NET fix, down from 198). Other non-concert categories (radio/tv/interview/studio/etc.) and bare 'unknown' rows (no date or no location) stay recording-lens-only. Cross-references `bobdylan_shows` (venue/setlist key/track count), `dylan_performances` (venue fallback), `setlistfm_shows` (tour), `bootleg_titles` (release title). Returns `[{id, date, disp, year, venue, city, status, recordings: [{lb, lbNumber, src, rating, status}], dow?, tour?, setlist?, tracks?, title?, confirmed?}]` — optional keys omitted (not null-faked) when no source data exists; `confirmed` omitted (true by default) except `false` on degraded unknown-only rows. TapeMatch family data is **not** joined in; the GUI merges `/api/tapematch/families` client-side by `lb_number`, same pattern as `/api/collection/prefetch`. As of 2026-07-09 (FABLE_UNIFIED_RANKING phase 3, finding F4) each recording also carries flat optional `pickRank` (`show_picks.pick_rank`, 1 = recommended), `absGrade` (latest Concert Ranker scan grade), and `curated` (curated-list names) — omitted when the signal doesn't exist for that LB. |
 
 ### LB Problems (known issues with LB entries)
 | Method | Route | Description |

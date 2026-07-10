@@ -742,3 +742,18 @@ LB14682 + LB2147 absent from my_collection) + fullset_pairs_12x_scores.json + v1
   pairs in both directions. Kept t_emb 0.75 / 5× cache; 12× artifacts retained for TODO-204.
 - BUG-237 fixed en route: emb_fullset_eval.py acceptance check was stale post-Rule-D ship
   (false 25-TP MISMATCH); reference now strips rule_d, identity re-proven exactly.
+
+## TODO-201 label flips APPLIED → regression_set_v3.json (2026-07-09)
+
+- tj approved the 83 batch-1+2 FLIPs from FN_LABEL_REVIEW.md (census-flagged frozen-set
+  positives whose curator/info text explicitly asserts, pair-scoped, "different recording").
+- Applied via make_regression_set_v3.py (parses the ledger's FLIP rows, count pinned to 83;
+  v4 for any batch 3). regression_set_v3.json: positives 1578→1495, negatives 1387→1470,
+  total 2,965 conserved; flip list embedded as v3_flips. regression_set.json / _v2.json
+  untouched per frozen-set rules.
+- NOT rescored: honest-recall re-basing against v3 (est. corr<0.05 FN population 830→~747)
+  deferred — calibration FROZEN for the 7/09–7/12 window. Note consumers (regression.py,
+  calibrate_*.py, audit_fn.py) still read regression_set.json (v1) by default; pointing the
+  harness at v3 is part of the future rescore, not this apply step.
+- Remaining TODO-201 scope: 136 duration-only pairs (partial/incomplete-set judgment method)
+  + 8 UNSURE. TODO-201 stays open.

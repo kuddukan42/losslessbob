@@ -52,6 +52,12 @@ type Scope       = 'all' | 'owned' | 'unowned'
 type SortKey     = 'lb' | 'date' | 'rating'
 type SortDir     = 'asc' | 'desc'
 type HealthFlag  = 'Wishlist' | 'Duplicates' | 'Unconfirmed'
+// FABLE_UNIFIED_RANKING phase 4 (TODO-186): 'recommended'/'superseded' read
+// pickRank against ownership (own the #1 pick vs. own a lower-ranked copy —
+// the latter "doubles as a collection-pruning view" per the spec); 'carbonbit'
+// / 'tenhaaf' are the curated-list filters from TODO-181's deferred UI half.
+type PerfView = 'all' | 'owned' | 'gaps' | 'wishlist' | 'duplicates'
+  | 'recommended' | 'superseded' | 'carbonbit' | 'tenhaaf'
 
 interface RecordingRow {
   lb: string
@@ -81,6 +87,12 @@ interface RecordingRow {
   famBy?: 'lb' | 'ai' | 'ai+lb'
   famNeedsReview?: boolean
   famReviewReason?: string | null
+  // FABLE_UNIFIED_RANKING phase 3 (F4 Library payload pattern) — merged in
+  // from /api/library/performances, same as the TapeMatch fields above:
+  // never set by the recording lens's /api/search-sourced adapter.
+  pickRank?: number
+  absGrade?: string
+  curated?: string[]
 }
 
 type FlatItem =
@@ -142,9 +154,15 @@ function statusTone(s: LibStatus): 'ok' | 'warn' | 'mute' {
 const STATUS_LABEL_KEY = {
   Public: 'library.statusValue.public', Private: 'library.statusValue.private', Missing: 'library.statusValue.missing',
 } as const
-const VIEW_LABEL_KEY: Record<string, 'library.views.allPerformances' | 'library.views.myCollection' | 'library.views.coverageGaps' | 'library.views.wishlist' | 'library.views.duplicates'> = {
+type ViewLabelKey = 'library.views.allPerformances' | 'library.views.myCollection'
+  | 'library.views.coverageGaps' | 'library.views.wishlist' | 'library.views.duplicates'
+  | 'library.views.recommended' | 'library.views.superseded'
+  | 'library.views.carbonbitPicks' | 'library.views.tenhaafPicks'
+const VIEW_LABEL_KEY: Record<string, ViewLabelKey> = {
   all: 'library.views.allPerformances', owned: 'library.views.myCollection', gaps: 'library.views.coverageGaps',
   wishlist: 'library.views.wishlist', duplicates: 'library.views.duplicates',
+  recommended: 'library.views.recommended', superseded: 'library.views.superseded',
+  carbonbit: 'library.views.carbonbitPicks', tenhaaf: 'library.views.tenhaafPicks',
 }
 const COVERAGE_LABEL_KEY: Record<string, 'library.coverageValue.covered' | 'library.coverageValue.upgrade' | 'library.coverageValue.gap' | 'library.coverageValue.undocumented'> = {
   Covered: 'library.coverageValue.covered', Upgrade: 'library.coverageValue.upgrade',
@@ -399,8 +417,8 @@ interface LibraryFilterStore {
   setPerfActiveSource: React.Dispatch<React.SetStateAction<Set<string>>>
   perfActiveRating: Set<RatingGrade>
   setPerfActiveRating: React.Dispatch<React.SetStateAction<Set<RatingGrade>>>
-  perfView: 'all' | 'owned' | 'gaps' | 'wishlist' | 'duplicates'
-  setPerfView: React.Dispatch<React.SetStateAction<'all' | 'owned' | 'gaps' | 'wishlist' | 'duplicates'>>
+  perfView: PerfView
+  setPerfView: React.Dispatch<React.SetStateAction<PerfView>>
 }
 
 const useLibraryFilterStore = create<LibraryFilterStore>((set, get) => ({
@@ -1575,6 +1593,12 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
             row.famConf = fam.fam_conf; row.famBy = fam.fam_by as RecordingRow['famBy']
             row.famNeedsReview = !!fam.fam_needs_review; row.famReviewReason = fam.fam_review_reason ?? null
           }
+          // pickRank/absGrade/curated only exist on the performance payload's
+          // stub (show_picks/quality/curated_lists never joined into
+          // /api/search) — merge unconditionally, same as the fam fields above.
+          if (stub.pickRank != null) row.pickRank = stub.pickRank
+          if (stub.absGrade) row.absGrade = stub.absGrade
+          if (stub.curated) row.curated = stub.curated
           return row
         })
         // Performance lens has no per-recording Status filter (unlike the
@@ -1593,6 +1617,17 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
       }
     })
   }, [perfData, rowsByLb, famMap])
+
+  // pickRank/absGrade/curated only live on the merged `performances` rows
+  // (built above from the extended /api/library/performances payload), not
+  // on `rowsByLb` (the recording lens's plain /api/search-sourced rows) — so
+  // the detail panel (opened via selectedMemberLb below) needs its own
+  // lookup into the merged rows, not rowsByLb, to see them.
+  const mergedRowsByLb = useMemo(() => {
+    const m = new Map<number, RecordingRow>()
+    for (const p of performances) for (const r of p.recordings) m.set(r.lbNumber, r)
+    return m
+  }, [performances])
 
   // Auto-expand the first multi-recording show when data loads — mirrors the
   // prototype which starts with one show pre-expanded so family groups are
@@ -1644,6 +1679,13 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
       if (perfView === 'gaps')      return ru.coverage === 'Gap'
       if (perfView === 'wishlist')  return p.recordings.some(r => r.wish)
       if (perfView === 'duplicates') return p.recordings.some(r => r.dup)
+      // TODO-186: "recommended" = you already own the date's #1 pick;
+      // "superseded" = you own a copy that isn't the #1 pick — a
+      // collection-pruning view (spec §6 note).
+      if (perfView === 'recommended') return p.recordings.some(r => r.owned && r.pickRank === 1)
+      if (perfView === 'superseded') return p.recordings.some(r => r.owned && (r.pickRank ?? 1) > 1)
+      if (perfView === 'carbonbit') return p.recordings.some(r => r.curated?.includes('carbonbit'))
+      if (perfView === 'tenhaaf') return p.recordings.some(r => r.curated?.includes('10haaf'))
       return true
     })
   }, [performances, query, activeDecade, activeYear, activeCoverage, activeSource, activeRating, perfView])
@@ -1745,6 +1787,10 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
     gaps:      performances.filter(p => rollupOf(p.recordings).coverage === 'Gap').length,
     wishlist:  performances.filter(p => p.recordings.some(r => r.wish)).length,
     duplicates: performances.filter(p => p.recordings.some(r => r.dup)).length,
+    recommended: performances.filter(p => p.recordings.some(r => r.owned && r.pickRank === 1)).length,
+    superseded: performances.filter(p => p.recordings.some(r => r.owned && (r.pickRank ?? 1) > 1)).length,
+    carbonbit: performances.filter(p => p.recordings.some(r => r.curated?.includes('carbonbit'))).length,
+    tenhaaf:   performances.filter(p => p.recordings.some(r => r.curated?.includes('10haaf'))).length,
   }), [performances])
 
   const hasActiveFilters = activeDecade.size > 0 || activeYear.size > 0 || activeCoverage.size > 0 || activeSource.size > 0 || activeRating.size > 0 || perfView !== 'all'
@@ -1816,6 +1862,11 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
               {opt('gaps', t('library.views.coverageGaps'), viewCounts.gaps)}
               {opt('wishlist', t('library.views.wishlist'), viewCounts.wishlist)}
               {opt('duplicates', t('library.views.duplicates'), viewCounts.duplicates)}
+              <div style={{ height: 1, background: 'var(--lbb-border)', margin: '4px 0' }} />
+              {opt('recommended', t('library.views.recommended'), viewCounts.recommended)}
+              {opt('superseded', t('library.views.superseded'), viewCounts.superseded)}
+              {opt('carbonbit', t('library.views.carbonbitPicks'), viewCounts.carbonbit)}
+              {opt('tenhaaf', t('library.views.tenhaafPicks'), viewCounts.tenhaaf)}
             </>
           }}
         </FilterMenu>
@@ -2167,6 +2218,12 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
                                     {lone?.lb}
                                   </span>
                                 )}
+                                {single && lone?.pickRank === 1 && (
+                                  <span title={t('library.picks.recommendedTitle')} style={{ color: 'var(--lbb-accent-mid)', flex: '0 0 auto' }}>★</span>
+                                )}
+                                {single && lone?.curated?.map(name => (
+                                  <Pill key={name} tone="info" soft>{t('library.picks.curatedBadge', { curator: name })}</Pill>
+                                ))}
                                 {single && lone?.desc && (
                                   <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', color: 'var(--lbb-fg2)', fontSize: 'var(--lbb-fs-11-5)', minWidth: 0 }}>
                                     {lone.desc}
@@ -2178,9 +2235,12 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
                               {fam.multi ? `×${fam.total}` : ''}
                             </td>
                             <td style={{ borderBottom: '1px solid var(--lbb-border)', textAlign: 'center' }}>
-                              {fam.bestRating !== '—'
-                                ? <Pill tone={ratingTone(fam.bestRating)} soft>{fam.bestRating}</Pill>
-                                : <span style={{ color: 'var(--lbb-fg3)' }}>—</span>}
+                              <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4 }}>
+                                {fam.bestRating !== '—'
+                                  ? <Pill tone={ratingTone(fam.bestRating)} soft>{fam.bestRating}</Pill>
+                                  : <span style={{ color: 'var(--lbb-fg3)' }}>—</span>}
+                                {single && lone?.owned && lone?.absGrade && <Pill tone="info" soft>{lone.absGrade}</Pill>}
+                              </span>
                             </td>
                             <td style={{ borderBottom: '1px solid var(--lbb-border)', padding: '0 var(--lbb-d-pad)', overflow: 'visible' }}>
                               {fam.owned
@@ -2214,20 +2274,29 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
                             <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
                               <span style={{ color: 'var(--lbb-fg3)' }}>{isLast ? '└' : '├'}</span>
                               <span style={{ color: rec.owned ? 'var(--lbb-accent-mid)' : 'var(--lbb-fg3)', fontWeight: 'var(--w-semi)' }}>{rec.lb}</span>
+                              {rec.pickRank === 1 && (
+                                <span title={t('library.picks.recommendedTitle')} style={{ color: 'var(--lbb-accent-mid)' }}>★</span>
+                              )}
                             </span>
                           </TD>
                           <TD dim colSpan={3} style={{ fontSize: 'var(--lbb-fs-11-5)' }}>
                             <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6, minWidth: 0 }}>
                               {isCanonical && <Pill tone="info" soft>{t('library.family.best')}</Pill>}
+                              {rec.curated?.map(name => (
+                                <Pill key={name} tone="info" soft>{t('library.picks.curatedBadge', { curator: name })}</Pill>
+                              ))}
                               <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{rec.desc}</span>
                               <span style={{ color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-11)' }}>{rec.src ? (SOURCE_FULL[rec.src] ?? rec.src) : '—'}</span>
                             </span>
                           </TD>
                           <td style={{ borderBottom: '1px solid var(--lbb-border)' }} />
                           <TD align="center">
-                            {rec.rating !== '—'
-                              ? <Pill tone={ratingTone(rec.rating)} soft>{rec.rating}</Pill>
-                              : <span style={{ color: 'var(--lbb-fg3)' }}>—</span>}
+                            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4 }}>
+                              {rec.rating !== '—'
+                                ? <Pill tone={ratingTone(rec.rating)} soft>{rec.rating}</Pill>
+                                : <span style={{ color: 'var(--lbb-fg3)' }}>—</span>}
+                              {rec.owned && rec.absGrade && <Pill tone="info" soft>{rec.absGrade}</Pill>}
+                            </span>
                           </TD>
                           <TD style={{ overflow: 'visible' }}>
                             {rec.owned ? <Pill tone="ok" soft dot>{t('library.family.owned')}</Pill>
@@ -2271,7 +2340,7 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
         {(() => {
           const toggle = () => setDetailPanelOpen(o => !o)
           if (selectedMemberLb !== null) {
-            const rec = rowsByLb.get(selectedMemberLb) ?? null
+            const rec = mergedRowsByLb.get(selectedMemberLb) ?? rowsByLb.get(selectedMemberLb) ?? null
             return (
               <RecordingDetailPanel
                 row={rec}

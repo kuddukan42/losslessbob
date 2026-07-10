@@ -1385,7 +1385,11 @@
       "myCollection": "La mia raccolta",
       "coverageGaps": "Lacune nella copertura",
       "wishlist": "Lista dei desideri",
-      "duplicates": "Duplicati"
+      "duplicates": "Duplicati",
+      "recommended": "Consigliato, di proprietà",
+      "superseded": "Copie obsolete",
+      "carbonbitPicks": "Le scelte di carbonbit",
+      "tenhaafPicks": "Le scelte di 10haaf"
     },
     "statusValue": {
       "public": "Pubblico",
@@ -1516,7 +1520,8 @@
       "tracksUnit": "brani",
       "recordingFamilies": "Famiglie di registrazioni · {{count}}",
       "groupedByTapeMatch": "raggruppate per TapeMatch",
-      "needsReview": "Da revisionare"
+      "needsReview": "Da revisionare",
+      "tabPicks": "Selezioni"
     },
     "coverage": {
       "ownedFull": "Di proprietà di {{owned}}/{{total}}",
@@ -1600,6 +1605,16 @@
       "upgrade": "Aggiornamento",
       "gap": "Gap",
       "undocumented": "Non documentato"
+    },
+    "picks": {
+      "label": "Selezioni in primo piano",
+      "recommended": "Consigliato",
+      "recommendedTitle": "Il testo consigliato per questa data",
+      "rankLabel": "Ordinamento per data",
+      "scoreLabel": "Scegli punteggio",
+      "gradeBadge": "Voto {{grade}}",
+      "curatedBadge": "La scelta di {{curator}}",
+      "notComputedNote": "Non ancora calcolato — eseguire “Ricalcola dati derivati” in Configurazione."
     }
   }
 }

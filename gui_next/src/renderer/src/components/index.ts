@@ -25,3 +25,6 @@ export { AboutDialog } from './AboutDialog'
 export type { AboutDialogProps } from './AboutDialog'
 
 export { FolderQueueRail } from './FolderQueueRail'
+
+export { EvidenceList } from './EvidenceList'
+export type { EvidenceListProps, EvidenceRecord } from './EvidenceList'

@@ -1385,7 +1385,11 @@
       "myCollection": "Mi colección",
       "coverageGaps": "Lagunas en la cobertura",
       "wishlist": "Lista de deseos",
-      "duplicates": "Duplicados"
+      "duplicates": "Duplicados",
+      "recommended": "Recomendado, de mi propiedad",
+      "superseded": "Copias sustituidas",
+      "carbonbitPicks": "Selección de carbonbit",
+      "tenhaafPicks": "Selección de 10haaf"
     },
     "statusValue": {
       "public": "Público",
@@ -1516,7 +1520,8 @@
       "tracksUnit": "pistas",
       "recordingFamilies": "Familias de grabaciones · {{count}}",
       "groupedByTapeMatch": "agrupadas por TapeMatch",
-      "needsReview": "Necesita revisión"
+      "needsReview": "Necesita revisión",
+      "tabPicks": "Selecciones"
     },
     "coverage": {
       "ownedFull": "Propiedad de {{owned}}/{{total}}",
@@ -1600,6 +1605,16 @@
       "upgrade": "Actualización",
       "gap": "Gap",
       "undocumented": "Sin documentar"
+    },
+    "picks": {
+      "label": "Mostrar selecciones",
+      "recommended": "Recomendado",
+      "recommendedTitle": "El texto recomendado para esta fecha",
+      "rankLabel": "Ordenar por fecha",
+      "scoreLabel": "Elegir partitura",
+      "gradeBadge": "Calificación: {{grade}}",
+      "curatedBadge": "Selección de {{curator}}",
+      "notComputedNote": "Aún no se han calculado: ejecuta «Recalcular datos derivados» en Configuración."
     }
   }
 }

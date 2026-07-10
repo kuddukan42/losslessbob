@@ -1385,7 +1385,11 @@
       "myCollection": "Meine Sammlung",
       "coverageGaps": "Lücken in der Abdeckung",
       "wishlist": "Wunschliste",
-      "duplicates": "Duplikate"
+      "duplicates": "Duplikate",
+      "recommended": "Empfohlen, im Besitz",
+      "superseded": "Veraltete Versionen",
+      "carbonbitPicks": "carbonbits Auswahl",
+      "tenhaafPicks": "10haafs Auswahl"
     },
     "statusValue": {
       "public": "Öffentlich",
@@ -1516,7 +1520,8 @@
       "tracksUnit": "Titel",
       "recordingFamilies": "Aufnahmefamilien · {{count}}",
       "groupedByTapeMatch": "gruppiert nach TapeMatch",
-      "needsReview": "Muss noch überprüft werden"
+      "needsReview": "Muss noch überprüft werden",
+      "tabPicks": "Auswahl"
     },
     "coverage": {
       "ownedFull": "Zugeordnet zu {{owned}}/{{total}}",
@@ -1600,6 +1605,16 @@
       "upgrade": "Upgrade",
       "gap": "Lücke",
       "undocumented": "Nicht dokumentiert"
+    },
+    "picks": {
+      "label": "Empfehlungen anzeigen",
+      "recommended": "Empfohlen",
+      "recommendedTitle": "Der empfohlene Text für dieses Datum",
+      "rankLabel": "Sortierung nach Datum",
+      "scoreLabel": "Auswahl der Partitur",
+      "gradeBadge": "Note {{grade}}",
+      "curatedBadge": "Die Auswahl von {{curator}}",
+      "notComputedNote": "Noch nicht berechnet – führen Sie im Setup den Befehl „Abgeleitete Daten neu berechnen“ aus."
     }
   }
 }

@@ -1,3 +1,31 @@
+[2026-07-09] — feat(gui): RANKING phases 3–4 shipped (spec complete) + TODO-201 label flips applied
+Added: backend/db.py: get_performances() payload extension (F4 pattern — flat fields, no N+1):
+  each recording gains optional pickRank (show_picks), absGrade (latest quality scan,
+  PRAGMA-feature-detected), curated (list names). New delete_curated_list(),
+  get_show_pick_for_lb(), 3 loader helpers.
+Added: backend/app.py: GET/POST /api/curated_lists + DELETE /api/curated_lists/<name>
+  (POST/DELETE curator-gated) — TODO-181 remainder; GET /api/picks/for/<lb> (evidence for
+  DetailPanel, 204 pre-recompute). tests/test_library_picks_api.py (6 tests).
+Added: gui_next EvidenceList.tsx — the one shared {kind, detail, points} evidence renderer
+  (F3), reused by taper/listening specs later. DetailPanel: Picks tab (rank/score Facts +
+  EvidenceList, lazy fetch), star/grade/curated badges in identity block + family MemberRow.
+  ScreenLibrary: badges on performance-lens rows; 4 new Views filters (recommended,
+  superseded, carbonbit's, 10haaf's); fixed latent bug where DetailPanel read the un-merged
+  recording-lens row (mergedRowsByLb). i18n: 13 new keys, all 5 locales DeepL'd (3,992 chars).
+Changed: ledger: TODO-181 + TODO-186 closed (phase 4 closes both per spec §7); TODO-212 opened
+  (flat recording-lens badges + 'any curated pick' view + /api/picks?date= — the deferred
+  remainder). FABLE_UNIFIED_RANKING.md retired to instructions/complete/ (all 4 phases done).
+Changed: tools/tapematch: TODO-201 batch-1+2 FLIPs (83, tj-approved) applied via new
+  make_regression_set_v3.py → regression_set_v3.json (positives 1578→1495, negatives
+  1387→1470, total conserved; flip list embedded as v3_flips; v1/v2 untouched). Rescoring
+  deferred — calibration frozen this window. FN_LABEL_REVIEW.md + CALIBRATION_PROGRESS.md
+  updated. TODO-201 stays open (136 duration-only pairs + 8 UNSURE).
+Verified: 34 backend tests pass (525 full suite per implementing agent); tsc node + web clean
+  (0 errors, better than 14-error baseline); production build clean. tj visual eyeball:
+  badges render, but derived DATA needs curation ("lots of obviously wrong badges but more
+  are accurate") → TODO-213 (High) opened — collect wrong-badge examples, trace via the Picks
+  tab's evidence trail, then weight-tune picks.py §4 terms. Pipeline itself signed off.
+
 [2026-07-09] — feat(backend): TAPER phase 1 + RANKING phase 2 — taper attribution engine, show picks, chained recompute endpoint
 Added: backend/taper_attribution.py: taper attribution engine (FABLE_TAPER_ATTRIBUTION phase 1) —
   harvests evidence from entry_lineage / _KNOWN_TAPER_ALIASES / recording_families and writes

@@ -1385,7 +1385,11 @@
       "myCollection": "Mijn verzameling",
       "coverageGaps": "Hiaten in de dekking",
       "wishlist": "Verlanglijstje",
-      "duplicates": "Duplicaten"
+      "duplicates": "Duplicaten",
+      "recommended": "Aanbevolen, in bezit",
+      "superseded": "Vervangen exemplaren",
+      "carbonbitPicks": "carbonbit's selectie",
+      "tenhaafPicks": "De selectie van 10haaf"
     },
     "statusValue": {
       "public": "Openbaar",
@@ -1516,7 +1520,8 @@
       "tracksUnit": "nummers",
       "recordingFamilies": "Opnamefamilies · {{count}}",
       "groupedByTapeMatch": "gegroepeerd op TapeMatch",
-      "needsReview": "Moet worden gecontroleerd"
+      "needsReview": "Moet worden gecontroleerd",
+      "tabPicks": "Selecties"
     },
     "coverage": {
       "ownedFull": "Eigen {{owned}}/{{total}}",
@@ -1600,6 +1605,16 @@
       "upgrade": "Upgrade",
       "gap": "Gap",
       "undocumented": "Niet gedocumenteerd"
+    },
+    "picks": {
+      "label": "Topkeuzes weergeven",
+      "recommended": "Aanbevolen",
+      "recommendedTitle": "De aanbevolen tekst voor deze datum",
+      "rankLabel": "Sorteren op datum",
+      "scoreLabel": "Kies een score",
+      "gradeBadge": "Cijfer {{grade}}",
+      "curatedBadge": "De keuze van {{curator}}",
+      "notComputedNote": "Nog niet berekend — voer „Afgeleide gegevens opnieuw berekenen“ uit in de instellingen."
     }
   }
 }

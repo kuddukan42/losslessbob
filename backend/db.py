@@ -2642,6 +2642,66 @@ _STATUS_RANK: dict[str, int] = {"public": 0, "private": 1, "missing": 2}
 _STATUS_LABEL: dict[str, str] = {"public": "Public", "private": "Private", "missing": "Missing"}
 
 
+# ── Library payload extension (FABLE_UNIFIED_RANKING phase 3) ───────────────
+# Per instructions/SPEC_INTEGRATION_NOTES.md finding F4, ranking phase 3
+# defines the payload-extension pattern for get_performances(): flat fields
+# merged onto each recording, no N+1 calls — taper phase 2 follows the same
+# pattern for confirmed-taper. All three helpers below feature-detect their
+# source table/column so a fresh install (or one that hasn't run a Concert
+# Ranker scan yet) degrades to "no extra fields" instead of erroring.
+
+def _load_pick_ranks(conn: sqlite3.Connection) -> dict[int, int]:
+    """Return ``{lb_number: pick_rank}`` from ``show_picks``.
+
+    Empty on a fresh install (pre ``POST /api/derived/recompute``) — the
+    table always exists (``USER_TABLES``/``SCHEMA_SQL``) but starts empty.
+    """
+    rows = conn.execute("SELECT lb_number, pick_rank FROM show_picks").fetchall()
+    return {r["lb_number"]: r["pick_rank"] for r in rows}
+
+
+def _load_curated_by_lb(conn: sqlite3.Connection) -> dict[int, list[str]]:
+    """Return ``{lb_number: [curated_list_name, ...]}`` from curated lists.
+
+    A recording can appear in more than one curator's list (e.g. carbonbit
+    and 10haaf agreeing), so the value is always a list.
+    """
+    rows = conn.execute(
+        "SELECT cl.name AS name, ce.lb_number AS lb_number"
+        " FROM curated_list_entries ce JOIN curated_lists cl ON cl.id = ce.list_id"
+    ).fetchall()
+    out: dict[int, list[str]] = {}
+    for r in rows:
+        out.setdefault(r["lb_number"], []).append(r["name"])
+    return out
+
+
+def _load_latest_abs_grades(conn: sqlite3.Connection) -> dict[int, str]:
+    """Return ``{lb_number: abs_grade}`` from the most recent scan.
+
+    Mirrors ``concert_ranker/picks.py:_load_latest_quality`` — the newest
+    scan is the one that actually wrote ``quality_recording_scores`` rows
+    (``quality_scans`` also includes small calibration-only runs), and
+    ``abs_grade`` is feature-detected via ``PRAGMA table_info`` because it's
+    added by ``concert_ranker/lb/repo.py``'s ``ensure_schema`` migration, not
+    this module's ``SCHEMA_SQL``, so a DB that has never been scanned via
+    Concert Ranker doesn't have the column yet.
+    """
+    scan_row = conn.execute("SELECT MAX(scan_id) AS m FROM quality_recording_scores").fetchone()
+    scan_id = scan_row["m"] if scan_row else None
+    if scan_id is None:
+        return {}
+    cols = {r[1] for r in conn.execute("PRAGMA table_info(quality_recording_scores)")}
+    if "abs_grade" not in cols:
+        return {}
+    rows = conn.execute(
+        "SELECT lb_number, abs_grade FROM quality_recording_scores"
+        " WHERE scan_id=? AND abs_grade IS NOT NULL",
+        (scan_id,),
+    ).fetchall()
+    return {r["lb_number"]: r["abs_grade"] for r in rows}
+
+
 def get_performances(db_path=None) -> list[dict]:
     """Group catalog entries into shows for the Library screen's performance lens.
 
@@ -2681,6 +2741,15 @@ def get_performances(db_path=None) -> list[dict]:
     real show to group into; they remain visible in the recording lens instead
     (TODO-150 decision, 2026-06-18).
 
+    Per instructions/FABLE_UNIFIED_RANKING.md §6 and finding F4, each
+    recording also carries flat, optional `pickRank` (`show_picks.pick_rank`
+    for its date — 1 is the recommended copy), `absGrade` (latest Concert
+    Ranker `quality_recording_scores.abs_grade` scan), and `curated` (list of
+    curated-list names it appears in, e.g. `["carbonbit"]`) fields, following
+    the same "merge flat fields onto each recording, no N+1 calls" pattern
+    already used for TapeMatch family data (merged client-side instead, since
+    it's a different consumer — see the class docstring's TapeMatch note).
+
     Args:
         db_path: Optional path to the SQLite database file.
 
@@ -2690,10 +2759,16 @@ def get_performances(db_path=None) -> list[dict]:
         always present; `dow`, `tour`, `tracks`, `setlist`, `title` omitted
         (not null-faked) when no source data exists for that show; `confirmed`
         omitted (true by default) except `False` on degraded unknown-only rows.
+        Each recording additionally omits `pickRank`/`absGrade`/`curated` when
+        that signal doesn't exist yet for its LB number (pre-recompute,
+        never scanned, or in no curated list).
     """
     from datetime import datetime as _dt
 
     conn = get_connection(db_path)
+    pick_ranks = _load_pick_ranks(conn)
+    curated_by_lb = _load_curated_by_lb(conn)
+    abs_grades = _load_latest_abs_grades(conn)
 
     rows = conn.execute(
         """
@@ -2769,13 +2844,23 @@ def get_performances(db_path=None) -> list[dict]:
         status_raw = r["lb_status"] or "missing"
         if _STATUS_RANK.get(status_raw, 2) < _STATUS_RANK.get(g["best_status"], 2):
             g["best_status"] = status_raw
-        g["recordings"].append({
+        rec_out = {
             "lb": f"LB-{r['lb_number']:05d}",
             "lbNumber": r["lb_number"],
             "src": r["source_type"] or classify_source_type(r["description"], r["source_chain"]),
             "rating": r["rating"] or "",
             "status": _STATUS_LABEL.get(status_raw, "Missing"),
-        })
+        }
+        pick_rank = pick_ranks.get(r["lb_number"])
+        if pick_rank is not None:
+            rec_out["pickRank"] = pick_rank
+        abs_grade = abs_grades.get(r["lb_number"])
+        if abs_grade:
+            rec_out["absGrade"] = abs_grade
+        curated_names = curated_by_lb.get(r["lb_number"])
+        if curated_names:
+            rec_out["curated"] = curated_names
+        g["recordings"].append(rec_out)
 
     performances: list[dict] = []
     for key in order:
@@ -5741,6 +5826,30 @@ def get_or_create_curated_list(
     return get_write_queue().execute(_run)
 
 
+def delete_curated_list(name: str, db_path=None) -> bool:
+    """Delete a curated list and all of its entries, by name.
+
+    Args:
+        name: The curated list's unique slug (e.g. ``'carbonbit'``).
+        db_path: Optional database path override.
+
+    Returns:
+        True if a list with that name was deleted, False if none existed.
+    """
+    conn = get_connection(db_path)
+    row = conn.execute("SELECT id FROM curated_lists WHERE name=?", (name,)).fetchone()
+    if row is None:
+        return False
+    list_id = row[0]
+
+    def _run(c):
+        c.execute("DELETE FROM curated_list_entries WHERE list_id=?", (list_id,))
+        c.execute("DELETE FROM curated_lists WHERE id=?", (list_id,))
+
+    get_write_queue().execute(_run)
+    return True
+
+
 def get_curated_lists(db_path=None) -> list[dict]:
     """Return all curated lists with their entry counts.
 
@@ -5822,6 +5931,37 @@ def get_curated_list_entries(
         params,
     ).fetchall()
     return [dict(r) for r in rows]
+
+
+# ── Show picks lookup (FABLE_UNIFIED_RANKING §6 — GET /api/picks/for/<lb>) ────
+
+def get_show_pick_for_lb(lb_number: int, db_path=None) -> dict | None:
+    """Return one LB's ``show_picks`` row (rank/score/evidence), if computed.
+
+    Args:
+        lb_number: The LB number to look up.
+        db_path: Optional database path override.
+
+    Returns:
+        Dict with ``concert_date``, ``lb_number``, ``pick_score``,
+        ``pick_rank``, ``evidence`` (parsed from ``evidence_json`` — a list
+        of ``{kind, detail, ...}`` records per F3), and ``computed_at``, or
+        None if ``show_picks`` has no row for this LB (pre-recompute, or the
+        entry has no usable date so it was never a scoring candidate).
+    """
+    import json
+
+    conn = get_connection(db_path)
+    row = conn.execute(
+        "SELECT concert_date, lb_number, pick_score, pick_rank, evidence_json,"
+        " computed_at FROM show_picks WHERE lb_number=?",
+        (lb_number,),
+    ).fetchone()
+    if row is None:
+        return None
+    result = dict(row)
+    result["evidence"] = json.loads(result.pop("evidence_json"))
+    return result
 
 
 # ── Archive.org upload history ────────────────────────────────────────────────

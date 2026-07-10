@@ -1,6 +1,51 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-186: Library UI — quality grade + curated-pick badges, saved curated-list filter views
+Priority: Medium
+Status: Done
+Added: 2026-06-24
+Closed: 2026-07-09
+Description: Surface the two new "best of" signals on the Library screen as at-a-glance chips
+  rather than leaving them buried in detail views:
+    - Quality grade chip: render concert_ranker's `quality_recording_scores.final_score` /
+      A+..F grade (TODO-183) on each recording row/card — likely the recording lens row and
+      DetailPanel.tsx, following the existing "Unconfirmed" pill pattern used for
+      fam_needs_review (ScreenLibrary.tsx).
+    - Curated-pick chip(s): for any LB present in `curated_list_entries`, show a small badge
+      naming the curator(s) (e.g. "carbonbit's pick", "10haaf's pick") — a date/recording can
+      carry more than one.
+    - Saved filter views: add "carbonbit's picks" / "10haaf's picks" (and a combined "any
+      curated pick") as selectable filters alongside the existing activeDecade/activeStatus
+      filter sets (ScreenLibrary.tsx:336-340), backed by the still-open GET /api/curated_lists
+      route from TODO-181.
+  Depends on / relates to: [[TODO-181]] (curated_lists DB + import done; GET routes + filter
+  wiring explicitly deferred from that pass — this TODO is that deferred UI work plus the new
+  badge requirement), [[TODO-183]] (grade field this surfaces).
+Shipped 2026-07-09 (RANKING phases 3-4): pickRank/absGrade/curated ride /api/library/performances (flat fields, no N+1, F4 pattern); star + grade + curated-pick badges on performance-lens rows, family MemberRow, and DetailPanel identity block; recommended/superseded/carbonbit/10haaf filter views; Picks tab with shared EvidenceList (F3). Flat recording-lens badges + combined 'any curated pick' view spun off to a follow-up TODO.
+
+TODO-181: Add curated "best of" lists as filter views (carbonbit, 10haaf)
+Priority: Medium
+Status: Done
+Added: 2026-06-22
+Closed: 2026-07-09
+Description: No curated-list mechanism currently exists in backend/db.py. Add support for
+  named curated lists of best LB recordings (starting with carbonbit and 10haaf's lists) —
+  needs a new table (e.g. curated_lists + curated_list_entries mapping lb_number to a list
+  name/source) and a way to import each curator's picks. Surface as a filter option on the
+  Library screen (alongside the existing activeDecade/activeStatus/etc. filter sets in
+  ScreenLibrary.tsx:336-340) so users can filter to "carbonbit's picks" or "10haaf's picks".
+  DONE (2026-06-24): curated_lists/curated_list_entries MASTER tables (schema v9->v10) +
+  CRUD in backend/db.py; tools/import_curated_lists.py (stdlib-only xlsx/zip parsing) imports
+  carbonbit's data/lists/FLglist.xlsx (4503 entries, multiple LB picks per date allowed) and
+  10haaf's data/lists/dylan_boots.zip + years.zip (7572 entries, union of both archives — they
+  disagree on ~1,100 LB numbers between an older per-year snapshot and a newer allboots.html
+  dump, neither a clean superset of the other). Ran once against the live DB.
+  REMAINING: GET (and curator-gated POST/DELETE) routes for /api/curated_lists; wire a
+  "carbonbit's picks" / "10haaf's picks" filter into ScreenLibrary.tsx. Explicitly deferred —
+  this pass was scoped to DB + import only.
+Remainder shipped 2026-07-09 (RANKING phase 4): GET /api/curated_lists (open) + curator-gated POST/DELETE routes in backend/app.py; 'carbonbit's picks' / '10haaf's picks' filter views wired into ScreenLibrary.tsx performance-lens Views dropdown. DB + import half was done 2026-06-24.
+
 TODO-203: Tier C retrain with family-aware hard negatives (label-noise fix)
 Priority: Low
 Status: Done
