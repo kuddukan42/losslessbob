@@ -774,15 +774,19 @@ CREATE INDEX IF NOT EXISTS idx_taper_attr_conf ON taper_attributions(confidence)
 -- §3/§4 for the scoring model and instructions/SPEC_INTEGRATION_NOTES.md
 -- finding F3 for the evidence_json record shape.
 CREATE TABLE IF NOT EXISTS show_picks (
-    concert_date   TEXT NOT NULL,
-    lb_number      INTEGER NOT NULL,
-    pick_score     REAL NOT NULL,        -- comparable within a date only
-    pick_rank      INTEGER NOT NULL,     -- 1 = recommended for the date
-    evidence_json  TEXT NOT NULL,        -- ordered list of {kind, detail, points}
-    computed_at    TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    concert_date     TEXT NOT NULL,
+    lb_number        INTEGER NOT NULL,
+    pick_score       REAL NOT NULL,        -- comparable within a date only
+    pick_rank        INTEGER NOT NULL,     -- 1 = recommended for the date
+    evidence_json    TEXT NOT NULL,        -- ordered list of {kind, detail, points}
+    concert_date_iso TEXT,                 -- YYYY-MM-DD, NULL if unparseable/'xx' (LISTENING §9)
+    computed_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (concert_date, lb_number)
 );
 CREATE INDEX IF NOT EXISTS idx_show_picks_lb ON show_picks(lb_number);
+-- idx_show_picks_date_iso is created by the concert_date_iso migration below
+-- (not here): on an existing DB this CREATE TABLE is a no-op, so an index on
+-- the new column at this point would run before the ALTER TABLE adds it.
 
 -- ── TapeMatch pairwise similarity (USER — per-date match % between LBs) ──────
 -- Slim per-pair mirror of tools/tapematch/observations.db's `pairs` table,
@@ -1966,6 +1970,17 @@ def init_db(db_path=None):
                     ON folder_lb_link(lb_number);
                 PRAGMA foreign_keys = ON;
             """)
+
+        # Migration: add concert_date_iso to show_picks (LISTENING spec §9 —
+        # "this night in Dylan history"). Populated by concert_ranker/picks.py
+        # at recompute time; NULL until the next recompute runs.
+        _sp_cols = [r[1] for r in conn.execute("PRAGMA table_info(show_picks)").fetchall()]
+        if "concert_date_iso" not in _sp_cols:
+            conn.execute("ALTER TABLE show_picks ADD COLUMN concert_date_iso TEXT")
+            conn.execute(
+                "CREATE INDEX IF NOT EXISTS idx_show_picks_date_iso"
+                " ON show_picks(concert_date_iso)"
+            )
 
         # Always commit: UPDATE above opens a Python implicit transaction regardless
         # of rowcount.  Without this, a zero-row UPDATE leaves the read connection
@@ -6062,6 +6077,70 @@ def get_show_pick_for_lb(lb_number: int, db_path=None) -> dict | None:
     result = dict(row)
     result["evidence"] = json.loads(result.pop("evidence_json"))
     return result
+
+
+def get_picks_for_date(date_iso: str, db_path=None) -> list[dict]:
+    """Return all ``show_picks`` rows for one ISO concert date, rank-ordered.
+
+    Args:
+        date_iso: Concert date as ``YYYY-MM-DD``.
+        db_path: Optional database path override.
+
+    Returns:
+        List of dicts (``concert_date``, ``lb_number``, ``pick_score``,
+        ``pick_rank``, ``evidence``, ``concert_date_iso``, ``computed_at``),
+        ordered by ``pick_rank`` ascending. Empty list if no picks were
+        computed for that date.
+    """
+    import json
+
+    conn = get_connection(db_path)
+    rows = conn.execute(
+        "SELECT concert_date, lb_number, pick_score, pick_rank, evidence_json,"
+        " concert_date_iso, computed_at FROM show_picks"
+        " WHERE concert_date_iso=? ORDER BY pick_rank ASC",
+        (date_iso,),
+    ).fetchall()
+    out = []
+    for row in rows:
+        result = dict(row)
+        result["evidence"] = json.loads(result.pop("evidence_json"))
+        out.append(result)
+    return out
+
+
+def get_tonight_picks(mmdd: str, db_path=None, limit: int = 10) -> list[dict]:
+    """Return rank-1 show picks whose concert date falls on this calendar day
+    across all years — "this night in Dylan history" (LISTENING spec §9).
+
+    Args:
+        mmdd: Calendar day as ``MM-DD`` (e.g. ``"07-28"``).
+        db_path: Optional database path override.
+        limit: Max candidates to return, ordered by ``pick_score`` desc.
+
+    Returns:
+        List of dicts: ``lb_number``, ``concert_date_iso``, ``year``,
+        ``location``, ``rating``, ``pick_score``, ``description``
+        (truncated to ~200 chars). Empty list if nothing matches.
+    """
+    conn = get_connection(db_path)
+    rows = conn.execute(
+        "SELECT sp.lb_number AS lb_number, sp.concert_date_iso AS concert_date_iso,"
+        " sp.pick_score AS pick_score, e.location AS location, e.rating AS rating,"
+        " e.description AS description"
+        " FROM show_picks sp JOIN entries e ON e.lb_number = sp.lb_number"
+        " WHERE sp.pick_rank = 1 AND substr(sp.concert_date_iso, 6, 5) = ?"
+        " ORDER BY sp.pick_score DESC LIMIT ?",
+        (mmdd, limit),
+    ).fetchall()
+    out = []
+    for row in rows:
+        d = dict(row)
+        desc = d.get("description") or ""
+        d["description"] = desc[:200]
+        d["year"] = int(d["concert_date_iso"][:4]) if d["concert_date_iso"] else None
+        out.append(d)
+    return out
 
 
 # ── Archive.org upload history ────────────────────────────────────────────────
