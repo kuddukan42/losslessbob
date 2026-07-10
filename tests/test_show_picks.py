@@ -338,6 +338,50 @@ def test_dry_run_does_not_write():
     assert count == 0
 
 
+# ── Wholesale-write guards (BUG-246) ───────────────────────────────────────────
+
+def test_empty_recompute_keeps_existing_picks():
+    """Zero computed picks must not commit the wholesale DELETE (BUG-246)."""
+    db_path, _ = _make_db()
+    conn = db.get_connection(db_path)
+    _seed_entry(conn, 1300, "1997-01-01", rating="A")
+    picks.recompute(db_path=db_path)
+    assert conn.execute("SELECT COUNT(*) FROM show_picks").fetchone()[0] == 1
+
+    conn.execute("DELETE FROM entries")
+    conn.commit()
+    stats = picks.recompute(db_path=db_path)
+
+    assert stats["total"] == 0
+    kept = conn.execute("SELECT COUNT(*) FROM show_picks").fetchone()[0]
+    assert kept == 1  # old rows preserved, not wiped
+
+
+def test_write_targets_db_path_not_queue_binding():
+    """When the singleton queue is bound to another DB, writes must still land
+    in the recompute's db_path (BUG-246: first-init-wins queue caused reads and
+    writes to split across databases)."""
+    import backend.db_queue as db_queue
+
+    db_path_a, _ = _make_db()  # binds the queue (if this test runs first)
+    db.init_db(db_path_a)
+    queue_db = db_queue.get_write_queue().db_path
+
+    db_path_b, _ = _make_db()
+    assert str(queue_db) != str(db_path_b)  # queue still bound to its first DB
+    conn_b = db.get_connection(db_path_b)
+    _seed_entry(conn_b, 1400, "1998-01-01", rating="B")
+
+    picks.recompute(db_path=db_path_b)
+
+    in_b = conn_b.execute("SELECT COUNT(*) FROM show_picks").fetchone()[0]
+    assert in_b == 1  # landed in the DB that was read from
+    conn_q = db.get_connection(queue_db)
+    in_q = conn_q.execute(
+        "SELECT COUNT(*) FROM show_picks WHERE lb_number = 1400").fetchone()[0]
+    assert in_q == 0  # and NOT in the queue's DB
+
+
 # ── POST /api/derived/recompute (F1 chained endpoint) ──────────────────────────
 
 def test_derived_recompute_endpoint_event_sequence():

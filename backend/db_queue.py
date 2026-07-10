@@ -89,6 +89,11 @@ class DatabaseWriteQueue:
                 if result_event is not None:
                     result_event.set()
 
+    @property
+    def db_path(self) -> str:
+        """Absolute path of the database this queue's writer connection is bound to."""
+        return self._db_path
+
     def execute(self, fn: Callable[[sqlite3.Connection], Any], timeout: float = 30.0) -> Any:
         """Submit fn(conn) to the writer thread; block until done; return result or raise.
 
@@ -154,6 +159,12 @@ def init_write_queue(db_path: str) -> None:
     global _write_queue
     with _wq_lock:
         if _write_queue is not None:
+            if str(db_path) != str(_write_queue.db_path):
+                _log.warning(
+                    "init_write_queue(%s) ignored — queue already bound to %s; "
+                    "writers using the queue will hit the ORIGINAL database",
+                    db_path, _write_queue.db_path,
+                )
             return
         _write_queue = DatabaseWriteQueue(db_path)
     _log.info("DatabaseWriteQueue initialised → %s", db_path)
