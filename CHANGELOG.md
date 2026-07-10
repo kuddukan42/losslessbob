@@ -1,3 +1,32 @@
+[2026-07-10] — feat(backend+gui): LISTENING §9 "tonight card" — concert_date_iso + picks date endpoints + Home card (spec step 6 complete)
+Added: concert_ranker/picks.py: _parse_concert_date_iso() — M/D/YY→ISO reconciliation of
+  show_picks.concert_date (two-digit year pivot 30, any 'xx' component → NULL); populated on
+  every recompute. Live DB: 14,618/15,204 rows ISO-dated (586 NULL = 'xx' unknown-date entries,
+  by design). Satisfies TODO-212's deferred GET /api/picks?date= item (TODO-212 stays open for
+  the Recording-lens badges + combined curated view).
+Added: backend/db.py: show_picks.concert_date_iso column (idempotent PRAGMA-guarded migration)
+  + index. backend/app.py: GET /api/picks?date=YYYY-MM-DD exact-date filter and
+  GET /api/picks/tonight — month-day match across all years (?mmdd=MM-DD override), returns
+  ranked candidates. tests/test_picks_tonight.py (parser + endpoint coverage; suite 573 pass).
+Added: gui_next ScreenHome.tsx "Tonight in Dylan history" card (right column, above Tips) —
+  one random candidate from /api/picks/tonight (long-form date, rating pill, LB number,
+  location, truncated description) + shuffle button (non-repeating; hidden when single
+  candidate). Card fully hidden on fetch failure/empty. No deep-links (→ TODO-215). i18n:
+  home.tonight.* en + DeepL de/fr/es/it/nl (3,639 chars). gui-check: node+web tsc 0 errors,
+  production build clean.
+Note: BUG-246 detour committed earlier in this slot (73266f6b, see 07-10 entry below); bug
+  stays open for the db_path-writer audit (tapematch_sync, parse_lineage, taper_attribution,
+  scrapers). Backend commit 70392d14, frontend 09e57b11. WORK_PACKAGE Phase 2 slot 1 done.
+
+[2026-07-10] — fix(backend): BUG-246 — guard show_picks wholesale write against DB-path splits (73266f6b)
+Fixed: live show_picks table found wiped (0 rows) at session open; root cause: a writer taking
+  an explicit db_path could target a different DB than the queue-backed connection, letting the
+  wholesale DELETE phase land without the INSERT phase. Guards added: empty-replace guard
+  (refuse to replace non-empty table with 0 rows), path-mismatch direct write, queue re-init
+  warning. 2 regression tests. Data restored via tools.compute_show_picks: 15,204 picks /
+  4,031 dates. BUG-246 stays open for the same-class audit of other db_path-taking writers
+  (tapematch_sync, parse_lineage, taper_attribution, scrapers).
+
 [2026-07-10] — feat(backend+gui): LISTENING §1 pairs sync + TapeMatch screen v1 (closes TODO-170; work-package stretch slot)
 Added: backend/tapematch_sync.py: sync_tapematch_pairs() — slim per-pair mirror of
   observations.db pairs into new USER-tier tapematch_pairs table (db.py schema + USER_TABLES;
