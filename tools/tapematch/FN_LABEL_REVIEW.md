@@ -36,6 +36,11 @@ pair-scoped relation text whose "different recording than LB-X" refers to a
   text by construction — they need the partial/incomplete-set judgment
   (durations, setlists, "incomplete" notes), a different review method than
   batches 1–2.
+- 2026-07-10: batch 3 scope exported to `calibration_audit_review.html`
+  (interactive companion page, untracked in git) — the 136 duration-only
+  pairs plus the 8 UNSURE carryovers from batches 1–2, 144 total. tj reviews
+  there; decisions paste into Batch 3 below via the page's
+  "Copy ledger markdown" button.
 
 ## Batch 1 — overlap tier (explicit + duration), 2026-07-09
 
@@ -190,3 +195,19 @@ reviewed: **66 FLIP / 30 KEEP / 7 UNSURE.**
 | 2001-05-01 | LB-00993 / LB-04342 | FLIP | partner named in diff phrase: "…nt download 12/06; excellent sound [A]; different recording than LB-0993 based on different background talking…" |
 | 2001-05-01 | LB-04222 / LB-04342 | KEEP | 'probably same recording as bootleg LB-4222 based on same crowd at beginning of d1t7'; diff targets LB-0993 |
 | 2001-10-30 | LB-07888 / LB-08413 | FLIP | partner named in diff phrase: "…ent: unknown bittorrent download 03/10; different recording than LB-7888 based on different crowd at end of d1…" |
+
+## Batch 3 — duration-only tier + carried UNSURE, 2026-07-10
+
+Scope: the 136 pairs where only heuristic (b) `duration_mismatch_15pct` fired
+(no curator same/different text) plus the 8 UNSURE rows from batches 1–2.
+No curator relation text to key off by construction, so the judgment method
+differs from batches 1–2: durations, setlists, "incomplete"/"partial" notes,
+and — per the batch-1 side-observation — watch for `perf_dur_sec`
+measurements that are physically implausible (3×+ or 0.33×- ratios have
+shown up as broken measurements, not real evidence) before trusting the
+ratio itself. Reviewed interactively in `calibration_audit_review.html`;
+decisions pasted in below via that page's "Copy ledger markdown" export.
+
+| date | pair | decision | rationale |
+|---|---|---|---|
+| _pending — paste export from calibration_audit_review.html_ | | | |

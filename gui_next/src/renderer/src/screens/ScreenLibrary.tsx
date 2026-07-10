@@ -74,6 +74,7 @@ interface RecordingRow {
   rating: RatingGrade
   src: string | null
   taper: string
+  taperKnown: boolean
   status: LibStatus
   owned: boolean
   wish: boolean
@@ -122,7 +123,10 @@ const SOURCE_FULL: Record<string, string> = {
 
 // Generic source-type words that occasionally end up in taper_name via the
 // free-text parser (backend/db.py) — not real taper handles, so the badge
-// omits them rather than duplicating the Source column.
+// omits them rather than duplicating the Source column. This is a cosmetic
+// dedup pass only: the row's `taperKnown` flag (backend `is_known_taper()`,
+// same curated universe the Taper tab's attribution engine uses) is what
+// actually gates whether the pill renders at all — see its use-site below.
 const NON_TAPER_LABELS = new Set([
   'master', 'sbd', 'bootleg', 'soundboard', 'audience', 'ald', 'mixed', 'incomplete', 'unknown', 'n/a',
 ])
@@ -855,6 +859,7 @@ export function ScreenLibrary(): React.JSX.Element {
         rating:   (VALID_RATINGS.has(raw) ? raw : '—') as RatingGrade,
         src:      (d.source_type as string | null) ?? null,
         taper:    (d.taper_name as string | null) ?? '',
+        taperKnown: Boolean(d.taper_known),
         status:   ({ public: 'Public', private: 'Private', missing: 'Missing' }[d.lb_status as string] ?? 'Missing') as LibStatus,
         owned,
         wish:     wishSet.has(lbNumber),
@@ -1270,7 +1275,7 @@ export function ScreenLibrary(): React.JSX.Element {
                           <TD>
                             <div style={{ display: 'flex', alignItems: 'center', gap: 6, minWidth: 0 }}>
                               <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{r.loc}</span>
-                              {taperBadgeLabel(r.taper) && (
+                              {r.taperKnown && taperBadgeLabel(r.taper) && (
                                 <Pill tone="mute" soft title={t('library.columns.taper')}>{taperBadgeLabel(r.taper)}</Pill>
                               )}
                             </div>
@@ -1596,7 +1601,7 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
             lb: stub.lb, lbNumber: stub.lbNumber, year: p.year ?? 0, decade: decadeOf(p.year ?? 0),
             date: p.date ?? '', loc: p.city ?? '', desc: '',
             rating: (VALID_RATINGS.has(stub.rating) ? stub.rating : '—') as RatingGrade,
-            src: stub.src ?? null, taper: '', status: (stub.status ?? 'Missing') as LibStatus,
+            src: stub.src ?? null, taper: '', taperKnown: false, status: (stub.status ?? 'Missing') as LibStatus,
             owned: false, wish: false, dup: false, xref: false, unconf: false,
             folder: '', path: '', conf: '',
           }

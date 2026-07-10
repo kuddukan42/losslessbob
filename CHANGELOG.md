@@ -47,6 +47,17 @@ Verified: 34 backend tests pass (525 full suite per implementing agent); tsc nod
   badges render, but derived DATA needs curation ("lots of obviously wrong badges but more
   are accurate") → TODO-213 (High) opened — collect wrong-badge examples, trace via the Picks
   tab's evidence trail, then weight-tune picks.py §4 terms. Pipeline itself signed off.
+Fixed: backend/db.py: extract_taper_and_source() rule-12 short-handle heuristic captured
+  quality/broadcast descriptor phrases ("mono", "poor sound", "dylan radio special hilversum3")
+  as taper_name — stopword list didn't cover them (BUG-245). Tightened stopwords; added "poor
+  sound"/"mono" to _NOT_TAPER. Added is_known_taper()/_TAPER_UNIVERSE (shared with
+  taper_attribution.py, which now imports rather than recomputes it) and a taper_known field
+  on every /api/search row, so the recording-lens grid pill and the DetailPanel Taper tab check
+  the same curated universe instead of disagreeing. (TODO-212 is unrelated/still open — that's
+  pickRank/absGrade/curated payload parity, not this taper pill.)
+Changed: gui_next ScreenLibrary.tsx: taper pill now gates on row.taperKnown (backend
+  is_known_taper()) in addition to the existing NON_TAPER_LABELS dedup, so unvalidated
+  free-text guesses never render as an authoritative-looking pill.
 
 [2026-07-09] — feat(backend): TAPER phase 1 + RANKING phase 2 — taper attribution engine, show picks, chained recompute endpoint
 Added: backend/taper_attribution.py: taper attribution engine (FABLE_TAPER_ATTRIBUTION phase 1) —

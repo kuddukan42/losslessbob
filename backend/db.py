@@ -1039,7 +1039,9 @@ def extract_taper_and_source(description: str) -> tuple[str | None, str | None]:
         _STOPWORDS = re.compile(
             r'\b(the|and|or|of|in|a|an|is|was|has|have|from|this|that|by|also|'
             r'bittorrent|version|alternate|audience|recorded|received|transfer|upgrade|'
-            r'floor|center|centre|section|row|seat|stage|balcony|orchestra|main|front|back|side)\b',
+            r'floor|center|centre|section|row|seat|stage|balcony|orchestra|main|front|back|side|'
+            r'mono|stereo|sound|poor|good|excellent|fair|hum|hiss|noise|clipping|'
+            r'radio|broadcast|special|dylan|bob)\b',
             re.IGNORECASE,
         )
         m = handle_re.match(fl) or handle_re.match(d)
@@ -1395,7 +1397,30 @@ _NOT_TAPER: frozenset[str] = frozenset({
     'very good sound', 'same recording', 'not certain',
     'cos11pt', 'zoom h2',
     'late show', 'early show', 'unknown source',
+    'poor sound', 'mono',
 })
+
+# Whitelist of validated taper names (locked decision, mirrors
+# taper_attribution._TAPER_UNIVERSE): canonical values of _KNOWN_TAPER_ALIASES,
+# excluding anything in _NOT_TAPER. Free-text parsing (extract_taper_and_source)
+# can still store an unrecognised guess in taper_name for curator review (see
+# ScreenSearch's scrape-preview use), but any *display* surface aimed at end
+# users (e.g. the Library grid's taper pill) must check is_known_taper() first
+# so it never shows a guess the attribution engine itself would reject.
+_TAPER_UNIVERSE: frozenset[str] = frozenset(_KNOWN_TAPER_ALIASES.values()) - _NOT_TAPER
+
+
+def is_known_taper(name: str | None) -> bool:
+    """Return True if ``name`` normalises to a curated, validated taper.
+
+    Args:
+        name: Raw or already-normalised taper name (may be None).
+
+    Returns:
+        True if the normalised form is a member of ``_TAPER_UNIVERSE``.
+    """
+    norm = _normalise_taper(name)
+    return norm is not None and norm in _TAPER_UNIVERSE
 
 # Sorted known-taper keys longest-first for prefix-match canonicalization.
 _KNOWN_TAPER_KEYS_SORTED: list[str] = sorted(_KNOWN_TAPER_ALIASES, key=len, reverse=True)
@@ -2588,6 +2613,10 @@ def search_entries(query, field="all", year=None, limit=None, db_path=None):
     for r in results:
         if not r.get("source_type"):
             r["source_type"] = classify_source_type(r.get("description"), r.get("source_chain"))
+        # taper_known lets consumers distinguish a curated taper (display-worthy,
+        # e.g. Library grid pill) from an unvalidated free-text guess (still
+        # shown raw in the scrape-preview screen, but not as an authoritative badge).
+        r["taper_known"] = is_known_taper(r.get("taper_name"))
 
     return results
 

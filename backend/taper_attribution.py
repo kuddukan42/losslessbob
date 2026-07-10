@@ -44,7 +44,7 @@ from collections import defaultdict
 from backend.db import (
     _EXPLICIT_TAPER_LABEL_RE,
     _KNOWN_TAPER_ALIASES,
-    _NOT_TAPER,
+    _TAPER_UNIVERSE,
     _normalise_taper,
     get_connection,
     get_write_queue,
@@ -53,10 +53,11 @@ from backend.db import (
 
 log = logging.getLogger(__name__)
 
-# Taper universe (locked decision): canonical values of _KNOWN_TAPER_ALIASES,
-# excluding anything in _NOT_TAPER (e.g. dolphinsmile — an uploader/curator,
-# not a taper; mentions of him are uploader credit, not taper evidence).
-_TAPER_UNIVERSE: frozenset[str] = frozenset(_KNOWN_TAPER_ALIASES.values()) - _NOT_TAPER
+# _TAPER_UNIVERSE (locked decision, defined in backend.db so the Library grid's
+# is_known_taper() check shares the exact same set): canonical values of
+# _KNOWN_TAPER_ALIASES, excluding anything in _NOT_TAPER (e.g. dolphinsmile —
+# an uploader/curator, not a taper; mentions of him are uploader credit, not
+# taper evidence).
 
 # Legendary Taper (lta..ltz) / Net Taper (net taper a..z) series codes, in the
 # canonical form _normalise_taper() produces. These are unambiguous formal
