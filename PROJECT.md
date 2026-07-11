@@ -448,6 +448,16 @@ Flask backend up) or `.venv/bin/python3 -m backend.tapematch_sync` (standalone C
 needed). The latter is wired as the final step of the `/tapematch-batch` skill
 (`.claude/commands/tapematch-batch.md`), run once a batch of analysis write-ups is done.
 
+Quality-score corroboration (TODO-210a): during family sync, a family whose members include a
+same-scan pair with `|Δabs_score| ≤ 0.5` and the same grade letter gets a one-time
+`conf + 0.05` bump (clamped to 1.0). Feature-detected — DBs without Concert Ranker's
+`abs_score`/`abs_grade` columns skip it silently.
+
+Duplicate-encode leads (TODO-210b): `GET /api/tapematch/dup_encodes` (or
+`python -m backend.tapematch_sync --dup-encodes`) lists same-date pairs whose
+`quality_recording_metrics.metric_json` is byte-identical within one scan_id — near-certain
+split-only duplicates. Read-only curation signal, never auto-merged; no GUI yet (TODO-215).
+
 ### `quality_scans` / `quality_recording_metrics` / `quality_recording_scores` — Concert Ranker (USER tables)
 Audio-quality analysis of the user's own copies, produced by the `concert_ranker/` package. USER-tier
 (in `USER_TABLES`, never shipped in master). The RAW aggregated metrics (`metric_json`) are stored
@@ -906,6 +916,7 @@ scheduled scan interval, checked hourly by `scheduler._integrity_scan_worker`.
 | GET | `/api/tapematch/analysis?date=` | Best run's `analysis.md` for a date: `{date, run_id, verdict: {needs_review, reason}\|null, analysis_md\|null}`. 409 `locked` when observations.db is write-locked. |
 | GET | `/api/tapematch/dates` | Left-rail summary, date DESC: `{dates: [{date, run_id, n_lbs, n_pairs, has_analysis, needs_review, location}]}`. `location` resolved via the date's LB numbers (entries.date_str is US-format, never joined on). has/needs fields null when observations.db missing/locked. |
 | GET | `/api/tapematch/crawl/status` | Read-only crawl status (mirrors `tools/tapematch/crawl_status.sh`): `{running, pid, runs_on_disk, distinct_dates, log_tail}`. |
+| GET | `/api/tapematch/dup_encodes` | Likely-duplicate-encode curation leads (TODO-210b): same-date pairs with byte-identical `metric_json` within one scan_id. `{candidates: [{date, lb_a, lb_b, scan_id, same_family, reason}]}`. Read-only, never auto-merges; no GUI yet (TODO-215). |
 
 ### Derived-Data Recompute
 | Method | Route | Description |

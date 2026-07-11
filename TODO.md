@@ -5,12 +5,6 @@ Status: Open
 Added: 2026-07-10
 Description: P4 finding: bobserve.com publishes 2013+ Yearly Chronicles as PDF only (except 2016 HTML) — chronologies.htm links '2022 Philosopher Pirate.pdf' … '2025 …pdf'. olof_fetcher mirrors HTML only, so the P4 appendix path (2022+ setlists -> olof_events/olof_songs synthetic IDs, backend/olof_chronicle_parser.py) is dormant: 0 synthetic events. Needed to extend setlist coverage past DSN's 2021 cutoff (spec §2.3/§6 P4; feeds TODO-224/225 for recent shows). Scope: fetch chronicle PDFs into the mirror + PDF text extraction feeding the existing appendix parser; also revisit _is_show_para false-positive risk on full-page scans when real 2022+ content arrives.
 
-TODO-227: run_crawl.sh: backoff / same-date failure guard to prevent hot crash-loops
-Priority: Low
-Status: Open
-Added: 2026-07-10
-Description: run_crawl.sh continues on any exit code other than 75 (queue empty) and 130 (Ctrl+C) with no delay, so an unhandled per-date exception hot-loops forever on the same date (BUG-247 looped ~3 h at ~1.2 s/iteration with full clean+copy disk churn each pass). Add: small sleep between iterations after a failure, and abort or skip-with-log after N consecutive failures on the same date (tapematch_session.py could write the date to a skip list that --next respects).
-
 TODO-226: Surface BobTalk + Olof narrative in GUI (search, show pages) and add Olof/bobserve.com credits to About screen
 Priority: Medium
 Status: Open
@@ -82,23 +76,6 @@ Priority: Low
 Status: Open
 Added: 2026-07-09
 Description: Deferred from TODO-186's close (2026-07-09, RANKING phase 4): pickRank/absGrade/curated only ride the extended /api/library/performances payload, so the badges/filters shipped on the Performance lens only. The flat Recording lens sources rows from /api/search + /api/collection/prefetch, which carry none of these fields. To surface them there: either extend /api/search's payload or add a client-side merge endpoint (the /api/tapematch/families pattern). Also deferred: a combined 'any curated pick' filter view (TODO-186 listed it; only per-curator views shipped). [2026-07-10: the GET /api/picks?date= item shipped with the tonight-card session (70392d14) — show_picks.concert_date_iso now populated, ISO reconciliation done. Remaining scope is the Recording-lens badges + combined view only.]
-
-TODO-210: Detect exact-quality-match splits as family-matching signal (LB-1594/LB-5065)
-Priority: Medium
-Status: Open
-Added: 2026-07-08
-Description: User found LB-1594 and LB-5065 have identical quality ratings and are audibly the exact same recording — only difference is track splits a few seconds apart. Investigate using exact/near-identical quality-score equality as an additional signal in family matching (e.g. as a corroborating feature or a targeted check for split-only duplicates), since a quality-rating match this precise is unlikely by chance for unrelated masters.
-  Update 2026-07-09 (investigation done; implementation remains): 1594/5065 are ALREADY in
-  family 1996-11-20#1594-5065 (conf 0.0156 — the signal's value is corroborating low-conf
-  families, not surfacing new ones). abs_score equality alone is unusable library-wide:
-  515 same-date exact-score pairs vs 325,858 cross-date coincidences (>99.8% noise; wider
-  tolerances get worse). Full metric_json identity is near-collision-free (13 same-date
-  candidates vs 6 cross-date library-wide) but only comparable within one scan config version.
-  Recommendation: (a) small confidence bump in the tapematch family-sync conf step when a
-  same-date shortlisted pair has abs_score within ~0.5 + same grade letter; (b) surface
-  same-scan-config metric_json-identical same-date pairs as a "likely duplicate encode"
-  review flag (never auto-merge). 429 same-date exact-score non-family candidate pairs exist;
-  the 13 metric-identical ones (e.g. 3136/7538 7/8/78, 3147/7523 7/4/78) are prime curation bait.
 
 TODO-209: Ledger duplicate-ID audit — 17 TODO + 22 BUG header IDs reused across open/done files
 Priority: Low
