@@ -1,4 +1,10 @@
 
+TODO-229: Geocoder GUI: render skipped count + 'stopping' badge in ScreenScraper
+Priority: Low
+Status: Open
+Added: 2026-07-11
+Description: Rider from TODO-219/221 close (2026-07-11): backend now returns skipped and stop_requested in /api/geocode/status and skipped in /api/geocode/stats, but gui_next ScreenScraper.tsx GeocoderStatus/GeoStats TS interfaces don't declare them, so nothing renders. Add the fields, show skipped in the stats row, and switch the run badge to 'stopping' while stop_requested && running. Locale updates via /gui-next-i18n.
+
 TODO-228: Olof 2022+ chronicles are PDF-only — fetch + extract appendix setlists from PDFs
 Priority: Medium
 Status: Open
@@ -34,24 +40,6 @@ Priority: Medium
 Status: Open
 Added: 2026-07-10
 Description: Nominatim free-text is weak on venue names (especially historic/renamed venues). Improvements, cheapest first: (1) setlist.fm API already returns venue.city.coords.lat/long (and venue.city.stateCode) in every setlist response — backend/setlistfm.py currently discards them and setlistfm_shows has no coord columns. Add city_lat/city_lon (+ state) columns (PRAGMA table_info guard per repo SQLite rules), store on scrape, backfill via one re-scrape or the API. Gives a guaranteed city-level coordinate with zero geocoding. (2) Two-step venue lookup: geocode/lookup the city first (from setlist.fm coords or Nominatim), then re-query Nominatim for the bare venue name with viewbox=<~30km box around city>&bounded=1 — venue-name hit rate improves dramatically when spatially constrained. (3) Optional last resort for famous venues: Wikidata SPARQL (P625 coordinate) by venue label. Fold into the TODO-220 cascade: bobdylan venue string -> bounded venue search near city -> setlist.fm city coords (confidence=medium, source='setlistfm_city') -> city string geocode. Respect Nominatim 1 req/s throughout; setlist.fm API needs the existing API key + its own rate limit.
-
-TODO-221: Geocoder concert-only eligibility filter (skip studio/compilation/interview entries)
-Priority: High
-Status: Open
-Added: 2026-07-10
-Description: DESIGN INTENT: geocoding = 'Bob held a concert at this venue, here is where the venue is'. Only routine single-date concert entries with LB numbers qualify; studio bootlegs, multi-date compilations, interviews, radio/TV do NOT. CURRENT: run_batch() geocodes every distinct entries.location, so '1974 Tour Anthology', '65 Outtakes Compilation', 'ABC TV 20/20 Interview' etc get geocoded or fail-spam (and a date match alone is not a concert test: 'ABC TV 20/20 Interview' date-matches dylan_performances and would geocode to Bob's Malibu home). FIX: in the candidate SELECT / loop of run_batch() (backend/geocoder.py ~386-455), only geocode a location when at least one of its entries has a single clean parseable date (no 'xx', no ranges) AND that date matches a bobdylan_shows or setlistfm_shows row (i.e. a documented show). Everything else: write row with new source value 'skipped_not_concert' (lat/lon NULL, manual_override=0) so it is cached, excluded from the map JOIN, not retried every run, and NOT counted in the errors stat — count separately as 'skipped' in _progress and the /api/geocode/stats payload. Keep manual place_manual() as the escape hatch for edge cases. Consider also skipping locations matching obvious non-venue keywords (compilation, outtakes, interview, rehearsal, soundcheck, demos, various) as a secondary guard.
-
-TODO-220: Geocoder cascading fallback on Nominatim miss + query provenance in note
-Priority: High
-Status: Open
-Added: 2026-07-10
-Description: PROBLEM: run_batch() (backend/geocoder.py ~432-497) picks ONE structured query (bobdylan_shows -> setlistfm_shows -> dylan_performances -> raw entries.location) and gives Nominatim one shot; venue-level queries often miss (Nominatim is weak on venue names, e.g. 'Abilene Auditorium, Abilene, Texas' -> failed) and the row is stored source='failed' with note=NULL, so it looks like LB metadata was used. FIX: on a Nominatim no-result, cascade: (1) next structured source's string, (2) venue-stripped variant of each structured string (city/state/country only — for bobdylan_shows that is the 'location' column alone; for setlistfm 'city, country'), (3) raw entries.location last. Record every attempted query in note (e.g. 'tried: bobdylan_shows:<q1> | bobdylan_shows-cityonly:<q2>') on BOTH success and failure. Keep 1.1s sleep between every Nominatim call including fallback attempts. Set source to the source that actually succeeded; add suffix '-city' when the venue-stripped variant won and cap its confidence at medium. NOTE: 48/117 rows from the 2026-07-10 run are failed; after implementing, re-run with retry_failed=True.
-
-TODO-219: Geocoder stop support — stop flag in run_batch + POST /api/geocode/stop
-Priority: High
-Status: Open
-Added: 2026-07-10
-Description: BUG: GUI Stop button (ScreenScraper.tsx:797) posts /api/geocode/stop but the route does not exist (silent 404), and run_batch() in backend/geocoder.py has no stop-flag check, so a batch can only be killed by restarting the backend. FIX: (1) add module-level _stop_requested bool + threading.Lock use in backend/geocoder.py; check it at the top of each loop iteration in run_batch() and break cleanly (finally block already resets progress); reset the flag at batch start; also honor it inside the 60s rate-limit sleep (sleep in small slices). (2) add POST /api/geocode/stop in backend/app.py next to /api/geocode/run (~line 5747) that sets the flag and returns current progress; mirror the pattern of /api/bobdylan/stop. (3) expose stop_requested in get_progress() so the GUI badge can show 'stopping'.
 
 TODO-215: TapeMatch screen v2 — pair corrections, run management, LB deep-links
 Priority: Medium
