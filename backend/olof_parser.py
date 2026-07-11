@@ -327,6 +327,39 @@ def _locate_events(soup: BeautifulSoup) -> tuple[list, list[tuple[int, int]]]:
 # Header (date / venue / city / region / country / session_title)
 # ---------------------------------------------------------------------------
 
+def _split_city_region_country(parts: list[str]) -> dict:
+    """Classify comma-separated location parts into city/region/country.
+
+    Shared by the DSN header parser and the chronicle appendix header
+    parser (backend/olof_chronicle_parser.py) — same 'City[, Region]
+    [, Country]' comma-split ambiguity applies to both corpora's headers.
+    Best-effort per spec §7: a 2-part tail is a country if it matches
+    `_KNOWN_COUNTRIES`, otherwise treated as a region (US state, Canadian/
+    Australian province, ...).
+
+    Args:
+        parts: Already comma-split, stripped, non-empty location tokens
+            (venue excluded — this only classifies what follows it).
+
+    Returns:
+        dict with keys city/region/country (each '' if not applicable).
+    """
+    fields = {"city": "", "region": "", "country": ""}
+    if len(parts) == 1:
+        fields["city"] = parts[0]
+    elif len(parts) == 2:
+        fields["city"] = parts[0]
+        if parts[1].lower() in _KNOWN_COUNTRIES:
+            fields["country"] = parts[1]
+        else:
+            fields["region"] = parts[1]
+    elif len(parts) >= 3:
+        fields["city"] = parts[0]
+        fields["region"] = parts[1]
+        fields["country"] = ", ".join(parts[2:])
+    return fields
+
+
 def _parse_header(lines: list[str], event_id: int) -> tuple[dict, int]:
     """Parse the venue/date header from the start of an event block.
 
@@ -373,18 +406,7 @@ def _parse_header(lines: list[str], event_id: int) -> tuple[dict, int]:
         return fields, date_idx
     fields["venue"] = loc_lines[0]
     parts = [p.strip() for p in loc_lines[-1].split(",") if p.strip()]
-    if len(parts) == 1:
-        fields["city"] = parts[0]
-    elif len(parts) == 2:
-        fields["city"] = parts[0]
-        if parts[1].lower() in _KNOWN_COUNTRIES:
-            fields["country"] = parts[1]
-        else:
-            fields["region"] = parts[1]
-    elif len(parts) >= 3:
-        fields["city"] = parts[0]
-        fields["region"] = parts[1]
-        fields["country"] = ", ".join(parts[2:])
+    fields.update(_split_city_region_country(parts))
     return fields, date_idx
 
 
@@ -795,12 +817,16 @@ def parse_page(path: Path, filename: str,
 # DB
 # ---------------------------------------------------------------------------
 
-def _ensure_page_row(conn, filename: str, path: Path, segment_title: str) -> None:
+def _ensure_page_row(conn, filename: str, path: Path, segment_title: str,
+                      corpus: str = "dsn", year: int | None = None) -> None:
     """Register a minimal olof_pages row if *filename* isn't tracked yet.
 
     olof_events.page_filename is a foreign key (PRAGMA foreign_keys=ON, see
     db.py get_connection) so ad-hoc `--file` reparses of untracked pages
-    (e.g. data/olof/samples/ dev fixtures) need a parent row first.
+    (e.g. data/olof/samples/ dev fixtures) need a parent row first. Shared
+    with backend.olof_chronicle_parser (corpus='chronicle', year set) —
+    *corpus*/*year* default to the original DSN-only behavior so this call
+    is unchanged for olof_parser itself.
 
     Args:
         conn: Open connection (see run_parse — written to directly, not via
@@ -810,14 +836,16 @@ def _ensure_page_row(conn, filename: str, path: Path, segment_title: str) -> Non
         filename: olof_pages.filename key.
         path: On-disk file, hashed if a row must be created.
         segment_title: Used as segment_title if a row must be created.
+        corpus: olof_pages.corpus value ('dsn' or 'chronicle').
+        year: olof_pages.year value (chronicle pages only).
     """
     if conn.execute("SELECT 1 FROM olof_pages WHERE filename = ?", (filename,)).fetchone():
         return
     sha256 = hashlib.sha256(path.read_bytes()).hexdigest()
     conn.execute(
-        """INSERT INTO olof_pages (filename, url, corpus, segment_title, sha256, fetched_at)
-           VALUES (?, '', 'dsn', ?, ?, ?)""",
-        (filename, segment_title, sha256, time.strftime("%Y-%m-%dT%H:%M:%S")),
+        """INSERT INTO olof_pages (filename, url, corpus, segment_title, year, sha256, fetched_at)
+           VALUES (?, '', ?, ?, ?, ?, ?)""",
+        (filename, corpus, segment_title, year, sha256, time.strftime("%Y-%m-%dT%H:%M:%S")),
     )
     conn.commit()
 

@@ -669,6 +669,28 @@ CREATE TABLE IF NOT EXISTS olof_songs (
 );
 CREATE INDEX IF NOT EXISTS idx_olof_songs_title ON olof_songs(song_title);
 
+-- chronicle calendar/diary entries: one row per dated item (TODO-162 P4)
+CREATE TABLE IF NOT EXISTS olof_chronicle (
+    year         INTEGER NOT NULL,
+    seq          INTEGER NOT NULL,           -- order within the year's calendar
+    date_str     TEXT NOT NULL DEFAULT '',   -- ISO where the entry has a resolvable date
+    date_raw     TEXT NOT NULL DEFAULT '',   -- '31 January'
+    entry_text   TEXT NOT NULL DEFAULT '',   -- cleaned paragraph(s), XE/PAGEREF junk stripped
+    PRIMARY KEY (year, seq)
+);
+CREATE INDEX IF NOT EXISTS idx_olof_chronicle_date ON olof_chronicle(date_str);
+
+-- 'New tapes & bootlegs' subsections: circulation provenance per tape (TODO-162 P4)
+CREATE TABLE IF NOT EXISTS olof_new_tapes (
+    year         INTEGER NOT NULL,           -- chronicle year = when it entered circulation
+    seq          INTEGER NOT NULL,
+    title        TEXT NOT NULL DEFAULT '',   -- 'Sydney, Australia, 24 February 1986'
+    date_str     TEXT NOT NULL DEFAULT '',   -- ISO show date parsed from title, '' if a range/box set
+    body_text    TEXT NOT NULL DEFAULT '',
+    PRIMARY KEY (year, seq)
+);
+CREATE INDEX IF NOT EXISTS idx_olof_new_tapes_date ON olof_new_tapes(date_str);
+
 -- ── Collection trading tables (USER — never exported in master snapshot) ─────
 CREATE TABLE IF NOT EXISTS friend_collections (
     id          INTEGER PRIMARY KEY AUTOINCREMENT,
