@@ -1,3 +1,21 @@
+[2026-07-10] — feat(scraper): Olof P4 — Yearly Chronicles parser → olof_chronicle + olof_new_tapes (FABLE_OLOF_FILES §6; TODO-162 P4)
+Added: backend/db.py: olof_chronicle + olof_new_tapes tables + date indexes (spec §4).
+Added: backend/olof_chronicle_parser.py: chronicle corpus parser — heading-based section
+  location tolerant of ~50 years of Word export drift, calendar diary entries (date-heading
+  shapes: 'D Month', 'Month D', day lists/ranges, Early/Mid/Late), 'New tapes & bootlegs'
+  subsections with ISO show-date from title, XE/PAGEREF field-junk stripping, per-year
+  delete+reinsert idempotency, olof_pages bookkeeping, CLI mirroring olof_parser.
+  Full-mirror parse: 1,244 olof_chronicle rows (43 years), 79 olof_new_tapes (17 years),
+  253 pages ok / 2 partial / 0 error; 11 years are PDF-only stubs on Olof's site.
+  DSN data untouched (4,533 events / 61,708 songs); rerun idempotent; junk-free (SQL check).
+Changed: backend/olof_parser.py: extracted _split_city_region_country, corpus/year params on
+  _ensure_page_row — shared with the chronicle parser, DSN behavior unchanged.
+Note: 2022+ appendix setlist path (synthetic year*1000+seq event IDs) implemented but dormant —
+  bobserve.com publishes 2013+ chronicles as PDF only (2016 excepted), so 0 synthetic events;
+  structurally validated on 2002 A.htm incl. spec §7 malformed headers. TODO-228 opened for
+  PDF fetch + extraction. Riders NOT parsed (deferred per spec §8): tour stats, uncirculated.
+Changed: instructions/WORK_PACKAGE_2026-07-09.md: Olof row updated — P4 done, next P5.
+
 [2026-07-10] — feat(scraper): Olof P3 — DSN song/take parser → olof_songs (FABLE_OLOF_FILES §6; TODO-162 P3)
 Added: backend/db.py: olof_songs table (event_id+position PK, title, cover credits, is_encore,
   take_number/status, annotations, released_on) + idx_olof_songs_title (spec §4).

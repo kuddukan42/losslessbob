@@ -1,4 +1,10 @@
 
+TODO-228: Olof 2022+ chronicles are PDF-only — fetch + extract appendix setlists from PDFs
+Priority: Medium
+Status: Open
+Added: 2026-07-10
+Description: P4 finding: bobserve.com publishes 2013+ Yearly Chronicles as PDF only (except 2016 HTML) — chronologies.htm links '2022 Philosopher Pirate.pdf' … '2025 …pdf'. olof_fetcher mirrors HTML only, so the P4 appendix path (2022+ setlists -> olof_events/olof_songs synthetic IDs, backend/olof_chronicle_parser.py) is dormant: 0 synthetic events. Needed to extend setlist coverage past DSN's 2021 cutoff (spec §2.3/§6 P4; feeds TODO-224/225 for recent shows). Scope: fetch chronicle PDFs into the mirror + PDF text extraction feeding the existing appendix parser; also revisit _is_show_para false-positive risk on full-page scans when real 2022+ content arrives.
+
 TODO-227: run_crawl.sh: backoff / same-date failure guard to prevent hot crash-loops
 Priority: Low
 Status: Open
