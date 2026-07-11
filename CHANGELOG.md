@@ -1,3 +1,21 @@
+[2026-07-10] — feat(scraper): Olof scraper P1+P2 — bobserve.com mirror + DSN event parser (FABLE_OLOF_FILES §6; TODO-162 P1–P2) + tapematch crawl merged-folder crash fix
+Added: backend/olof_fetcher.py: verbatim byte mirror of Olof Björner's Still On The Road +
+  Yearly Chronicles (browser UA for Cloudflare, ≥2 s throttle, resume-safe skip/backfill,
+  --corpus/--limit/--refresh/--dry-run). Full mirror fetched: 471 pages (214 DSN + 257
+  chronicle), 324 MB, 0 errors → data/olof/pages/.
+Added: backend/olof_parser.py: DSN event parser — windows-1252 Word-HTML, per-paragraph line
+  joining, <a name=DSNnnnnn> segmentation; extracts date/venue/city/region/country, NET +
+  year concert #, recording kind/mins, notes, BobTalk, releases, raw_text; event_type
+  heuristic; coverage report. Full DSN corpus: 4,533 events (99.7% anchor→event, 95% ISO
+  date; concert 3,879 / session 205 / broadcast 91 / interview 63 / rehearsal 6 / other 293).
+  5-date archive spot-check passed (incl. 1966-05-17 Manchester vs "Royal Albert Hall" label).
+Added: backend/db.py: olof_pages + olof_events tables + date/tour indexes (spec §4).
+Fixed: tools/tapematch/tapematch_session.py: copy_folders() crashed on merged folders (two LB
+  ids sharing one directory, e.g. "… (LB-05034 + LB-07279)") — FileExistsError crash-looped
+  the detached crawl ~3 h on 2000-03-12; now dedupes by source path and skips already-copied
+  folders. Crawl verified resumed (2000-03-13…16 processed).
+Changed: instructions/WORK_PACKAGE_2026-07-09.md: Olof P1+P2 row added to Phase 2 timeline.
+
 [2026-07-10] — docs: ONBOARDING P4 — README rewrite, retires PyQt flow docs (spec §6; closes TODO-218; ONBOARDING spec complete)
 Changed: README.md: full rewrite — quickstart = Releases installer (AppImage / windows-Setup.exe,
   verified against v1.5.2 assets) + first-run wizard; data-model table (master release vs

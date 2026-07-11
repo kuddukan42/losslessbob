@@ -1,4 +1,10 @@
 
+TODO-227: run_crawl.sh: backoff / same-date failure guard to prevent hot crash-loops
+Priority: Low
+Status: Open
+Added: 2026-07-10
+Description: run_crawl.sh continues on any exit code other than 75 (queue empty) and 130 (Ctrl+C) with no delay, so an unhandled per-date exception hot-loops forever on the same date (BUG-247 looped ~3 h at ~1.2 s/iteration with full clean+copy disk churn each pass). Add: small sleep between iterations after a failure, and abort or skip-with-log after N consecutive failures on the same date (tapematch_session.py could write the date to a skip list that --next respects).
+
 TODO-226: Surface BobTalk + Olof narrative in GUI (search, show pages) and add Olof/bobserve.com credits to About screen
 Priority: Medium
 Status: Open

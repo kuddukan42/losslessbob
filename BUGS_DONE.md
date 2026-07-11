@@ -1,6 +1,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-247: tapematch crawl crash-loops on merged folders (two LB ids, one directory)
+Status: Fixed
+File(s): tools/tapematch/tapematch_session.py:514
+Reported: 2026-07-10
+Fixed: 2026-07-10
+Root cause: Merged archive folders map several LB ids to one physical directory; copy_folders() iterated per LB id and re-copytree'd the same destination, crashing on the duplicate.
+Fix: copy_folders() now tracks already-copied source paths and skips duplicates with a log line (tapematch_session.py copy_folders). Verified live: skip fired once, crawl resumed through 2000-03-16.
+
 BUG-245: Library grid taper pill shows unvalidated free-text guesses (mono/poor sound/etc.)
 Status: Fixed
 File(s): backend/db.py:1034,gui_next/src/renderer/src/screens/ScreenLibrary.tsx:857
