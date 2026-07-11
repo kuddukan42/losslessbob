@@ -66,6 +66,10 @@ const ACKS: Ack[] = [
     name: 'Robert Cook', handle: 'r9453', tone: 'memory',
     note: 'Contributor and close friend. His work and company shaped this project. Remembered.',
   },
+  {
+    name: 'Olof Björner', handle: '"Still On The Road" · bobserve.com',
+    note: 'Author of the definitive Dylan performance history and Yearly Chronicles — the setlist, concert-numbering, recording, and circulation-provenance data behind the app’s Olof panel.',
+  },
 ]
 
 const CHANGELOG = {

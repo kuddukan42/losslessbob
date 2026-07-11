@@ -1541,7 +1541,8 @@
       "groupedByTapeMatch": "gruppiert nach TapeMatch",
       "needsReview": "Muss noch überprüft werden",
       "tabPicks": "Auswahl",
-      "tabTaper": "Taper"
+      "tabTaper": "Taper",
+      "tabOlof": "Olof"
     },
     "coverage": {
       "ownedFull": "Zugeordnet zu {{owned}}/{{total}}",
@@ -1649,6 +1650,23 @@
       "conflict": "Widersprüchliche Beweise",
       "confirm": "Bestätigen",
       "reject": "Ablehnen"
+    },
+    "olof": {
+      "label": "Immer noch unterwegs",
+      "emptyNote": "Für dieses Datum liegen keine Daten von Olof Björner vor.",
+      "encore": "Encore",
+      "take": "Nimm {{n}}",
+      "coverCredit": "Titelbild: {{credits}}",
+      "releasedOn": "Veröffentlicht: {{where}}",
+      "concertNoNet": "Konzert-Nr. (insgesamt)",
+      "concertNoYear": "Konzert Nr. (dieses Jahr)",
+      "recordingMinutes": "~{{count}} min",
+      "chronicleLabel": "Chronicle",
+      "newTapesLabel": "Ausleihe",
+      "circulatedAs": "Ursprünglich unter der Bezeichnung „{{title}}“ veröffentlicht",
+      "matchPct": "{{pct}}% Setlist-Übereinstimmung",
+      "expectedMinutes": "~{{count}} min erwartet",
+      "missingFromCopy": "In dieser Version fehlt: {{titles}}"
     }
   },
   "tapematch": {

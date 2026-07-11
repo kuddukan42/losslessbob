@@ -1541,7 +1541,8 @@
       "groupedByTapeMatch": "raggruppate per TapeMatch",
       "needsReview": "Da revisionare",
       "tabPicks": "Selezioni",
-      "tabTaper": "Taper"
+      "tabTaper": "Taper",
+      "tabOlof": "Olof"
     },
     "coverage": {
       "ownedFull": "Di proprietà di {{owned}}/{{total}}",
@@ -1649,6 +1650,23 @@
       "conflict": "Prove contraddittorie",
       "confirm": "Conferma",
       "reject": "Rifiuta"
+    },
+    "olof": {
+      "label": "Ancora in viaggio",
+      "emptyNote": "Nessun dato relativo a Olof Björner per questa data.",
+      "encore": "Encore",
+      "take": "Prendi {{n}}",
+      "coverCredit": "Copertina: {{credits}}",
+      "releasedOn": "Versione rilasciata: {{where}}",
+      "concertNoNet": "Concerto n. (di tutti i tempi)",
+      "concertNoYear": "Concerto n. (quest'anno)",
+      "recordingMinutes": "~{{count}} min",
+      "chronicleLabel": "Cronaca",
+      "newTapesLabel": "Circolazione",
+      "circulatedAs": "Diffusa inizialmente come “{{title}}”",
+      "matchPct": "{{pct}}% corrispondenza setlist",
+      "expectedMinutes": "~{{count}} min previsto",
+      "missingFromCopy": "Manca in questa copia: {{titles}}"
     }
   },
   "tapematch": {

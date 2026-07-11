@@ -1017,6 +1017,286 @@ function TaperZone({ row, hideLabel }: { row: DetailRow; hideLabel?: boolean }) 
   )
 }
 
+// ── OlofZone — FABLE_OLOF_FILES §5 items 1/2/7, §6 P5b: Olof Björner's "Still
+// On The Road" + Yearly Chronicles corpus for this show date — setlist
+// (position, encore, cover credits, per-song annotations, studio take
+// numbers/statuses), NET/year concert numbering, tour name, recording info,
+// notes, BobTalk, chronicle diary entries, and new-tapes circulation
+// provenance — plus a setlist-vs-folder comparison against this recording's
+// own tracklist via POST /api/olof/compare. olof_* tables are local-only;
+// callers gate rendering entirely on useOlofStatus().events > 0 rather than
+// showing an empty/broken panel on most installs. ──────────────────────────
+
+interface OlofSong {
+  position: number
+  song_title: string
+  credits: string | null
+  is_encore: number
+  take_number: number | null
+  take_status: string | null
+  annotations: string | null
+  released_on: string | null
+}
+
+interface OlofEventRow {
+  event_id: number
+  event_type: string
+  date_str: string
+  venue: string | null
+  city: string | null
+  tour_name: string | null
+  session_title: string | null
+  concert_no_net: number | null
+  concert_no_year: number | null
+  recording_info: string | null
+  recording_kind: string | null
+  recording_mins: number | null
+  notes: string | null
+  bobtalk: string | null
+  songs: OlofSong[]
+}
+
+interface OlofChronicleEntry { year: number; seq: number; date_str: string; date_raw: string; entry_text: string }
+interface OlofNewTapeEntry { year: number; seq: number; title: string; date_str: string; body_text: string }
+
+interface OlofDateResponse {
+  date_str: string
+  events: OlofEventRow[]
+  chronicle: OlofChronicleEntry[]
+  new_tapes: OlofNewTapeEntry[]
+}
+
+export interface OlofStatus {
+  pages: number
+  events: number
+  songs: number
+  chronicle_rows: number
+  new_tapes: number
+  chronicle_years: number
+  max_dsn_year: number | null
+}
+
+interface OlofCompareResponse {
+  date_str: string
+  olof_event_id: number | null
+  olof_setlist: { position: number; song_title: string }[]
+  matches: { input_title: string; matched_position: number | null; matched_title: string | null }[]
+  olof_missing: string[]
+  match_pct: number
+  recording_info: string
+  recording_kind: string
+  recording_mins: number | null
+}
+
+export const OLOF_DATE_RE = /^\d{4}-\d{2}-\d{2}$/
+
+// Fetches /api/olof/status once per app session (staleTime: Infinity, same
+// convention as the db-settings-data-dir query above) — react-query dedupes
+// on the shared queryKey, so every caller (tab-visibility checks + the zone
+// itself) reads the same cached result instead of refetching per row.
+export function useOlofStatus() {
+  return useQuery<OlofStatus>({
+    queryKey: ['olof-status'],
+    queryFn: () => fetch(`${BASE}/api/olof/status`).then(r => r.json()),
+    staleTime: Infinity,
+  })
+}
+
+function OlofSongRow({ s, i, showTakes }: { s: OlofSong; i: number; showTakes: boolean }) {
+  const { t } = useTranslation()
+  const note = [
+    s.credits ? t('library.olof.coverCredit', { credits: s.credits }) : null,
+    s.annotations || null,
+    s.released_on ? t('library.olof.releasedOn', { where: s.released_on }) : null,
+  ].filter(Boolean).join(' · ')
+  return (
+    <div style={{
+      display: 'flex', flexDirection: 'column', gap: 2, padding: '5px 10px',
+      fontSize: 'var(--t-meta)', lineHeight: 1.4,
+      background: i % 2 === 1 ? 'color-mix(in srgb, var(--lbb-surface2) 40%, transparent)' : 'transparent',
+    }}>
+      <div style={{ display: 'flex', alignItems: 'baseline', gap: 8 }}>
+        <span style={{ width: 18, textAlign: 'right', fontFamily: 'var(--lbb-mono)', fontSize: 'var(--t-mono-sm)', color: 'var(--lbb-fg3)', flexShrink: 0 }}>
+          {s.position}
+        </span>
+        <span style={{ flex: 1, color: 'var(--lbb-fg)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+          {s.song_title}
+        </span>
+        {!!s.is_encore && (
+          <Pill tone="info" soft style={{ fontSize: 'var(--t-micro)', padding: '0 5px' }}>{t('library.olof.encore')}</Pill>
+        )}
+        {showTakes && s.take_number != null && (
+          <Pill tone="mute" soft style={{ fontSize: 'var(--t-micro)', padding: '0 5px' }}>
+            {t('library.olof.take', { n: s.take_number })}{s.take_status ? ` · ${s.take_status}` : ''}
+          </Pill>
+        )}
+      </div>
+      {note && (
+        <div style={{ paddingLeft: 26, fontSize: 'var(--t-micro)', color: 'var(--lbb-fg3)' }}>{note}</div>
+      )}
+    </div>
+  )
+}
+
+function OlofEventCard({ ev }: { ev: OlofEventRow }) {
+  const { t } = useTranslation()
+  const isStudio = ev.event_type !== 'concert'
+  const recLine = [
+    ev.recording_kind || null,
+    ev.recording_info || null,
+    ev.recording_mins != null ? t('library.olof.recordingMinutes', { count: ev.recording_mins }) : null,
+  ].filter(Boolean).join(' · ')
+
+  return (
+    <div style={{ marginBottom: 18 }}>
+      {(ev.concert_no_net != null || ev.concert_no_year != null) && (
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 10 }}>
+          {ev.concert_no_net != null && <Fact label={t('library.olof.concertNoNet')} value={ev.concert_no_net} />}
+          {ev.concert_no_year != null && <Fact label={t('library.olof.concertNoYear')} value={ev.concert_no_year} />}
+        </div>
+      )}
+      {(ev.tour_name || ev.session_title) && (
+        <div style={{ fontSize: 'var(--t-meta)', color: 'var(--lbb-fg3)', marginBottom: 8 }}>
+          {ev.tour_name || ev.session_title}
+        </div>
+      )}
+
+      {ev.songs.length > 0 && (
+        <div style={{ border: '1px solid var(--lbb-border)', borderRadius: 6, overflow: 'hidden', marginBottom: 10 }}>
+          {ev.songs.map((s, i) => (
+            <OlofSongRow key={`${ev.event_id}-${s.position}`} s={s} i={i} showTakes={isStudio} />
+          ))}
+        </div>
+      )}
+
+      {recLine && (
+        <div style={{ fontSize: 'var(--t-meta)', color: 'var(--lbb-fg2)', marginBottom: 8 }}>{recLine}</div>
+      )}
+
+      {ev.notes && (
+        <div style={{ fontSize: 'var(--t-meta)', color: 'var(--lbb-fg2)', lineHeight: 1.5, marginBottom: 8 }}>{ev.notes}</div>
+      )}
+
+      {ev.bobtalk && (
+        <div style={{
+          borderLeft: '2px solid var(--lbb-accent-mid)', paddingLeft: 10, margin: '8px 0',
+          fontSize: 'var(--t-meta)', fontStyle: 'italic', color: 'var(--lbb-fg2)', lineHeight: 1.5,
+        }}>
+          “{ev.bobtalk}”
+        </div>
+      )}
+    </div>
+  )
+}
+
+function OlofChronicleList({ entries }: { entries: OlofChronicleEntry[] }) {
+  const { t } = useTranslation()
+  if (entries.length === 0) return null
+  return (
+    <div style={{ marginBottom: 14 }}>
+      <ZoneLabel>{t('library.olof.chronicleLabel')}</ZoneLabel>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+        {entries.map(e => (
+          <div key={`${e.year}-${e.seq}`} style={{ fontSize: 'var(--t-meta)', color: 'var(--lbb-fg2)', lineHeight: 1.5 }}>
+            {e.entry_text}
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function OlofNewTapesList({ entries }: { entries: OlofNewTapeEntry[] }) {
+  const { t } = useTranslation()
+  if (entries.length === 0) return null
+  return (
+    <div style={{ marginBottom: 14 }}>
+      <ZoneLabel>{t('library.olof.newTapesLabel')}</ZoneLabel>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+        {entries.map(e => (
+          <div key={`${e.year}-${e.seq}`} style={{ fontSize: 'var(--t-meta)', color: 'var(--lbb-fg2)' }}>
+            <span style={{ fontFamily: 'var(--lbb-mono)', color: 'var(--lbb-fg3)', marginRight: 6 }}>{e.year}</span>
+            {t('library.olof.circulatedAs', { title: e.title })}
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+// Setlist-vs-folder comparison (spec §5 item 2) — silently renders nothing
+// while loading, on fetch failure, or when Olof has no event for this date
+// (olof_event_id null), rather than showing a broken/empty comparison block.
+function OlofCompareNote({ date, lbNumber }: { date: string; lbNumber: number }) {
+  const { t } = useTranslation()
+  const { data, isLoading } = useQuery<OlofCompareResponse>({
+    queryKey: ['olof-compare', date, lbNumber],
+    queryFn: () => fetch(`${BASE}/api/olof/compare`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ date_str: date, lb_number: lbNumber }),
+    }).then(r => r.json()),
+    staleTime: 60_000,
+  })
+
+  if (isLoading || !data || data.olof_event_id == null) return null
+
+  return (
+    <div style={{ marginBottom: 14, padding: '10px 12px', borderRadius: 6, background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
+        <span style={{ fontSize: 'var(--t-meta)', fontWeight: 'var(--w-semi)', color: 'var(--lbb-fg)' }}>
+          {t('library.olof.matchPct', { pct: data.match_pct })}
+        </span>
+        {data.recording_mins != null && (
+          <span style={{ fontSize: 'var(--t-micro)', color: 'var(--lbb-fg3)' }}>
+            {t('library.olof.expectedMinutes', { count: data.recording_mins })}
+          </span>
+        )}
+      </div>
+      {data.olof_missing.length > 0 && (
+        <div style={{ marginTop: 6, fontSize: 'var(--t-meta)', color: 'var(--lbb-warn-fg)' }}>
+          {t('library.olof.missingFromCopy', { titles: data.olof_missing.join(', ') })}
+        </div>
+      )}
+    </div>
+  )
+}
+
+function OlofZone({ date, lbNumber, hideLabel }: { date: string; lbNumber?: number; hideLabel?: boolean }) {
+  const { t } = useTranslation()
+  const { data, isLoading } = useQuery<OlofDateResponse>({
+    queryKey: ['olof-date', date],
+    queryFn: () => fetch(`${BASE}/api/olof/date/${encodeURIComponent(date)}`).then(r => r.json()),
+    staleTime: 300_000,
+    enabled: !!date,
+  })
+
+  if (isLoading) {
+    return <div style={{ fontSize: 'var(--t-meta)', color: 'var(--lbb-fg3)' }}>{t('library.empty.loading')}</div>
+  }
+  const hasContent = !!data && (data.events.length > 0 || data.chronicle.length > 0 || data.new_tapes.length > 0)
+  if (!hasContent) {
+    return (
+      <div style={{
+        padding: '14px 12px', borderRadius: 6, textAlign: 'center',
+        border: '1px dashed var(--lbb-border2)', color: 'var(--lbb-fg3)', fontSize: 'var(--t-meta)',
+      }}>
+        {t('library.olof.emptyNote')}
+      </div>
+    )
+  }
+
+  return (
+    <div style={{ flexShrink: 0 }}>
+      {!hideLabel && <ZoneLabel>{t('library.olof.label')}</ZoneLabel>}
+      {lbNumber != null && <OlofCompareNote date={date} lbNumber={lbNumber} />}
+      {data!.events.map(ev => <OlofEventCard key={ev.event_id} ev={ev} />)}
+      <OlofChronicleList entries={data!.chronicle} />
+      <OlofNewTapesList entries={data!.new_tapes} />
+    </div>
+  )
+}
+
 // ── Tab strip (spec §8) — pinned below the identity block; routes the pane
 // body. Idle tabs are --t-body/500 fg3; the active tab is accent-mid with a
 // 2px inset underline. Count pills sit inline. ──────────────────────────────
@@ -1087,6 +1367,9 @@ export function RecordingDetailPanel({ row, history, attachCount, actionHandlers
   const [tab, setTab] = useState('overview')
   const paneRef = useRef<HTMLDivElement>(null)
   useEffect(() => { if (paneRef.current) paneRef.current.scrollTop = 0 }, [tab, row?.lb])
+  // FABLE_OLOF_FILES §6 P5b: shared once-per-session status fetch — decides
+  // whether the Olof tab appears at all (most installs have olof_events == 0).
+  const { data: olofStatus } = useOlofStatus()
 
   if (!open) return <CollapsedStub onToggle={toggle} />
 
@@ -1107,11 +1390,18 @@ export function RecordingDetailPanel({ row, history, attachCount, actionHandlers
   // Picks is always present (unlike Quality, which needs an owned scan) —
   // show_picks scores every dated candidate regardless of ownership, so an
   // unowned recording's rank/evidence can still help decide whether to get it.
+  // FABLE_OLOF_FILES §6 P5b: Olof tab only when the local corpus has events
+  // (status gate) and this row's date is a usable ISO date (Olof keys on
+  // date_str, same as the bobdylan setlist fetch).
+  const olofDate = OLOF_DATE_RE.test(row.date) ? row.date : null
+  const showOlof = (olofStatus?.events ?? 0) > 0 && !!olofDate
+
   const tabs: PanelTab[] = [
     { id: 'overview', label: t('library.panel.tabOverview') },
     { id: 'picks', label: t('library.panel.tabPicks') },
     { id: 'taper', label: t('library.panel.tabTaper') },
   ]
+  if (showOlof) tabs.push({ id: 'olof', label: t('library.panel.tabOlof') })
   if (row.owned) {
     tabs.push({ id: 'assets', label: t('library.panel.tabAssets') })
     tabs.push({ id: 'share', label: t('library.panel.tabShare') })
@@ -1217,6 +1507,10 @@ export function RecordingDetailPanel({ row, history, attachCount, actionHandlers
           <TaperZone row={row} hideLabel />
         )}
 
+        {activeTab === 'olof' && olofDate && (
+          <OlofZone date={olofDate} lbNumber={row.lbNumber} hideLabel />
+        )}
+
         {activeTab === 'assets' && row.owned && (
           <AssetStripZone
             row={row} attachCount={attachCount} hideLabel
@@ -1265,6 +1559,9 @@ export function PerformanceDetailPanel({ perf, recordings, families, canonical, 
   const [tab, setTab] = useState('overview')
   const paneRef = useRef<HTMLDivElement>(null)
   useEffect(() => { if (paneRef.current) paneRef.current.scrollTop = 0 }, [tab, perf?.id])
+  // FABLE_OLOF_FILES §6 P5b: shared once-per-session status fetch — decides
+  // whether the Olof tab appears at all (most installs have olof_events == 0).
+  const { data: olofStatus } = useOlofStatus()
 
   if (!open) return <CollapsedStub onToggle={toggle} />
 
@@ -1294,11 +1591,20 @@ export function PerformanceDetailPanel({ perf, recordings, families, canonical, 
     : null
   const dupeCount = recordings.filter(r => r.dup).length
 
+  // FABLE_OLOF_FILES §6 P5b: Olof tab only when the local corpus has events
+  // (status gate) and the performance has a usable ISO date — reuses
+  // perf.setlist, the same bobdylan_shows-backed ISO date the Setlist tab
+  // fetches against, rather than perf.date (which can fall back to raw,
+  // non-ISO scraped text when there's no bobdylan_shows match).
+  const olofDate = perf.setlist && OLOF_DATE_RE.test(perf.setlist) ? perf.setlist : null
+  const showOlof = (olofStatus?.events ?? 0) > 0 && !!olofDate
+
   // Overview always; Recordings/Setlist/Seed & Share only when they have content
   // (spec §9). Each focus item is a peer tab, not a footer in a long scroll.
   const tabs: PanelTab[] = [{ id: 'overview', label: t('library.panel.tabOverview') }]
   if (families.length > 0) tabs.push({ id: 'recordings', label: t('library.panel.tabRecordings'), count: families.length })
   if (perf.setlist) tabs.push({ id: 'setlist', label: t('library.panel.tabSetlist') })
+  if (showOlof) tabs.push({ id: 'olof', label: t('library.panel.tabOlof') })
   if (owned.length > 0 && canonical) tabs.push({ id: 'share', label: t('library.panel.tabShare') })
   const activeTab = tabs.some(x => x.id === tab) ? tab : 'overview'
 
@@ -1452,6 +1758,11 @@ export function PerformanceDetailPanel({ perf, recordings, families, canonical, 
             </div>
             <Setlist date={perf.setlist} />
           </div>
+        )}
+
+        {/* Olof tab — Still On The Road / Yearly Chronicles for this date */}
+        {activeTab === 'olof' && olofDate && (
+          <OlofZone date={olofDate} lbNumber={canonical?.lbNumber} hideLabel />
         )}
 
         {/* Seed & Share tab — scoped to the best owned source */}
