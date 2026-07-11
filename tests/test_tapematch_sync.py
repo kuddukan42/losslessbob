@@ -12,9 +12,19 @@ import shutil
 import sqlite3
 import tempfile
 
+import pytest
+
 import backend.db as db
 import backend.paths as _paths
-from backend.tapematch_sync import _parse_verdict, similarity_pct, sync_tapematch_pairs
+from backend.tapematch_sync import (
+    _has_quality_match,
+    _load_latest_abs_scores,
+    _parse_verdict,
+    duplicate_encode_candidates,
+    similarity_pct,
+    sync_tapematch_families,
+    sync_tapematch_pairs,
+)
 
 
 def test_parse_verdict_clean_looks_correct():
@@ -273,6 +283,383 @@ def test_sync_tapematch_pairs_multiple_dates_and_null_similarity():
             "SELECT similarity_pct FROM tapematch_pairs WHERE concert_date = '1991-02-02'"
         ).fetchone()
         assert row["similarity_pct"] is None
+    finally:
+        db.close_connection(db_path)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+# ── TODO-210(a): quality-match confidence bump ──────────────────────────────
+
+_FAMILY_RUNS_SCHEMA = (
+    "CREATE TABLE runs (run_id TEXT PRIMARY KEY, concert_date TEXT NOT NULL, "
+    "n_sources_ran INTEGER, archive_dir TEXT)"
+)
+_SOURCES_SCHEMA = (
+    "CREATE TABLE sources (id INTEGER PRIMARY KEY AUTOINCREMENT, run_id TEXT NOT NULL, "
+    "concert_date TEXT NOT NULL, lb_number INTEGER, family_id INTEGER)"
+)
+_FAMILY_PAIRS_SCHEMA = (
+    "CREATE TABLE pairs (id INTEGER PRIMARY KEY AUTOINCREMENT, run_id TEXT NOT NULL, "
+    "concert_date TEXT NOT NULL, lb_a INTEGER, lb_b INTEGER, corr REAL, "
+    "tapematch_verdict TEXT, family_id_a INTEGER, family_id_b INTEGER, lb_says_same INTEGER)"
+)
+
+
+def _make_family_obs_db(tmp_dir, filename, run, sources, pairs):
+    """observations.db fixture with runs/sources/pairs for sync_tapematch_families.
+
+    Args:
+        run: (run_id, concert_date, n_sources_ran, archive_dir) tuple.
+        sources: list of (run_id, concert_date, lb_number, family_id) tuples.
+        pairs: list of (run_id, concert_date, lb_a, lb_b, corr, tapematch_verdict,
+            family_id_a, family_id_b, lb_says_same) tuples.
+    """
+    obs_path = os.path.join(tmp_dir, filename)
+    conn = sqlite3.connect(obs_path)
+    conn.execute(_FAMILY_RUNS_SCHEMA)
+    conn.execute(_SOURCES_SCHEMA)
+    conn.execute(_FAMILY_PAIRS_SCHEMA)
+    conn.execute(
+        "INSERT INTO runs (run_id, concert_date, n_sources_ran, archive_dir) VALUES (?, ?, ?, ?)",
+        run,
+    )
+    conn.executemany(
+        "INSERT INTO sources (run_id, concert_date, lb_number, family_id) VALUES (?, ?, ?, ?)",
+        sources,
+    )
+    conn.executemany(
+        "INSERT INTO pairs (run_id, concert_date, lb_a, lb_b, corr, tapematch_verdict, "
+        "family_id_a, family_id_b, lb_says_same) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        pairs,
+    )
+    conn.commit()
+    conn.close()
+    return obs_path
+
+
+def _seed_abs_score(conn, lb_number, scan_id, abs_score, abs_grade):
+    """Insert a quality_recording_scores row with abs_score/abs_grade columns
+    added (mirrors tests/test_show_picks.py's _seed_quality pattern).
+
+    Also inserts a placeholder ``entries`` row since
+    ``quality_recording_scores.lb_number`` is FK-constrained to it.
+    """
+    from concert_ranker.lb import repo as cr_repo
+
+    cr_repo.ensure_schema(conn)
+    conn.execute(
+        "INSERT OR IGNORE INTO entries (lb_number, status) VALUES (?, 'ok')", (lb_number,)
+    )
+    conn.execute(
+        "INSERT OR REPLACE INTO quality_recording_scores"
+        " (lb_number, scan_id, abs_score, abs_grade) VALUES (?, ?, ?, ?)",
+        (lb_number, scan_id, abs_score, abs_grade),
+    )
+    conn.commit()
+
+
+def test_load_latest_abs_scores_missing_columns_returns_empty():
+    db_path, tmp_dir = _make_app_db()
+    try:
+        conn = db.get_connection(db_path)
+        # No cr_repo.ensure_schema() call -> abs_score/abs_grade don't exist yet.
+        assert _load_latest_abs_scores(conn) == {}
+    finally:
+        db.close_connection(db_path)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_load_latest_abs_scores_picks_each_lbs_newest_scan():
+    db_path, tmp_dir = _make_app_db()
+    try:
+        conn = db.get_connection(db_path)
+        _seed_abs_score(conn, 100, scan_id=1, abs_score=80.0, abs_grade="B+")
+        _seed_abs_score(conn, 100, scan_id=2, abs_score=85.0, abs_grade="A-")
+        _seed_abs_score(conn, 200, scan_id=1, abs_score=79.5, abs_grade="B")
+
+        result = _load_latest_abs_scores(conn)
+        assert result[100] == (2, 85.0, "A-")
+        assert result[200] == (1, 79.5, "B")
+    finally:
+        db.close_connection(db_path)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_has_quality_match_true_within_tolerance_and_same_grade_letter():
+    abs_scores = {10: (5, 80.0, "B+"), 20: (5, 80.3, "B-")}
+    assert _has_quality_match([10, 20], abs_scores) is True
+
+
+def test_has_quality_match_false_different_scan_id():
+    abs_scores = {10: (5, 80.0, "B+"), 20: (6, 80.3, "B-")}
+    assert _has_quality_match([10, 20], abs_scores) is False
+
+
+def test_has_quality_match_false_outside_tolerance():
+    abs_scores = {10: (5, 80.0, "B"), 20: (5, 81.0, "B")}
+    assert _has_quality_match([10, 20], abs_scores) is False
+
+
+def test_has_quality_match_false_different_grade_letter():
+    abs_scores = {10: (5, 80.0, "B"), 20: (5, 80.1, "C")}
+    assert _has_quality_match([10, 20], abs_scores) is False
+
+
+def test_has_quality_match_false_missing_lb():
+    abs_scores = {10: (5, 80.0, "B")}
+    assert _has_quality_match([10, 20], abs_scores) is False
+
+
+def test_sync_families_applies_quality_match_bump():
+    db_path, tmp_dir = _make_app_db()
+    try:
+        conn = db.get_connection(db_path)
+        _seed_abs_score(conn, 10, scan_id=1, abs_score=80.0, abs_grade="B+")
+        _seed_abs_score(conn, 20, scan_id=1, abs_score=80.3, abs_grade="B-")
+
+        obs_path = _make_family_obs_db(
+            tmp_dir,
+            "observations.db",
+            run=("20260101_000000", "1991-01-01", 2, None),
+            sources=[
+                ("20260101_000000", "1991-01-01", 10, 1),
+                ("20260101_000000", "1991-01-01", 20, 1),
+            ],
+            pairs=[
+                ("20260101_000000", "1991-01-01", 10, 20, 0.5, "same_family", 1, 1, None),
+            ],
+        )
+        stats = sync_tapematch_families(db_path=db_path, observations_db_path=obs_path)
+        assert stats["errors"] == []
+
+        row = conn.execute(
+            "SELECT conf FROM tapematch_family_meta WHERE concert_date = '1991-01-01'"
+        ).fetchone()
+        assert row["conf"] == pytest.approx(0.55)
+    finally:
+        db.close_connection(db_path)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_sync_families_no_bump_when_quality_scores_dont_match():
+    db_path, tmp_dir = _make_app_db()
+    try:
+        conn = db.get_connection(db_path)
+        _seed_abs_score(conn, 10, scan_id=1, abs_score=80.0, abs_grade="B")
+        _seed_abs_score(conn, 20, scan_id=1, abs_score=95.0, abs_grade="A")
+
+        obs_path = _make_family_obs_db(
+            tmp_dir,
+            "observations.db",
+            run=("20260101_000000", "1991-01-01", 2, None),
+            sources=[
+                ("20260101_000000", "1991-01-01", 10, 1),
+                ("20260101_000000", "1991-01-01", 20, 1),
+            ],
+            pairs=[
+                ("20260101_000000", "1991-01-01", 10, 20, 0.5, "same_family", 1, 1, None),
+            ],
+        )
+        stats = sync_tapematch_families(db_path=db_path, observations_db_path=obs_path)
+        assert stats["errors"] == []
+
+        row = conn.execute(
+            "SELECT conf FROM tapematch_family_meta WHERE concert_date = '1991-01-01'"
+        ).fetchone()
+        assert row["conf"] == pytest.approx(0.5)
+    finally:
+        db.close_connection(db_path)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_sync_families_bump_clamps_to_one():
+    db_path, tmp_dir = _make_app_db()
+    try:
+        conn = db.get_connection(db_path)
+        _seed_abs_score(conn, 10, scan_id=1, abs_score=80.0, abs_grade="A")
+        _seed_abs_score(conn, 20, scan_id=1, abs_score=80.0, abs_grade="A")
+
+        obs_path = _make_family_obs_db(
+            tmp_dir,
+            "observations.db",
+            run=("20260101_000000", "1991-01-01", 2, None),
+            sources=[
+                ("20260101_000000", "1991-01-01", 10, 1),
+                ("20260101_000000", "1991-01-01", 20, 1),
+            ],
+            pairs=[
+                ("20260101_000000", "1991-01-01", 10, 20, 0.98, "same_family", 1, 1, None),
+            ],
+        )
+        stats = sync_tapematch_families(db_path=db_path, observations_db_path=obs_path)
+        assert stats["errors"] == []
+
+        row = conn.execute(
+            "SELECT conf FROM tapematch_family_meta WHERE concert_date = '1991-01-01'"
+        ).fetchone()
+        assert row["conf"] == pytest.approx(1.0)
+    finally:
+        db.close_connection(db_path)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_sync_families_no_bump_when_abs_columns_missing():
+    # No cr_repo.ensure_schema() call anywhere -> quality_recording_scores has
+    # no abs_score/abs_grade columns -> _load_latest_abs_scores degrades to {}
+    # -> sync must proceed with the raw mean conf, not crash.
+    db_path, tmp_dir = _make_app_db()
+    try:
+        conn = db.get_connection(db_path)
+
+        obs_path = _make_family_obs_db(
+            tmp_dir,
+            "observations.db",
+            run=("20260101_000000", "1991-01-01", 2, None),
+            sources=[
+                ("20260101_000000", "1991-01-01", 10, 1),
+                ("20260101_000000", "1991-01-01", 20, 1),
+            ],
+            pairs=[
+                ("20260101_000000", "1991-01-01", 10, 20, 0.5, "same_family", 1, 1, None),
+            ],
+        )
+        stats = sync_tapematch_families(db_path=db_path, observations_db_path=obs_path)
+        assert stats["errors"] == []
+
+        row = conn.execute(
+            "SELECT conf FROM tapematch_family_meta WHERE concert_date = '1991-01-01'"
+        ).fetchone()
+        assert row["conf"] == pytest.approx(0.5)
+    finally:
+        db.close_connection(db_path)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+# ── TODO-210(b): duplicate_encode_candidates ────────────────────────────────
+
+
+def _seed_entry_date(conn, lb_number, date_str):
+    conn.execute(
+        "INSERT OR REPLACE INTO entries (lb_number, date_str, status) VALUES (?, ?, 'ok')",
+        (lb_number, date_str),
+    )
+    conn.commit()
+
+
+def _seed_metric(conn, lb_number, scan_id, metric_json):
+    conn.execute(
+        "INSERT OR REPLACE INTO quality_recording_metrics"
+        " (lb_number, scan_id, metric_json) VALUES (?, ?, ?)",
+        (lb_number, scan_id, metric_json),
+    )
+    conn.commit()
+
+
+def test_duplicate_encode_candidates_finds_identical_metric_json_same_scan():
+    db_path, tmp_dir = _make_app_db()
+    try:
+        conn = db.get_connection(db_path)
+        _seed_entry_date(conn, 100, "7/8/78")
+        _seed_entry_date(conn, 200, "7/8/78")
+        _seed_metric(conn, 100, scan_id=1, metric_json='{"a": 1}')
+        _seed_metric(conn, 200, scan_id=1, metric_json='{"a": 1}')
+
+        candidates = duplicate_encode_candidates(conn)
+        assert candidates == [
+            {
+                "date": "7/8/78",
+                "lb_a": 100,
+                "lb_b": 200,
+                "scan_id": 1,
+                "same_family": False,
+                "reason": "likely duplicate encode",
+            }
+        ]
+    finally:
+        db.close_connection(db_path)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_duplicate_encode_candidates_ignores_different_scan_id():
+    db_path, tmp_dir = _make_app_db()
+    try:
+        conn = db.get_connection(db_path)
+        _seed_entry_date(conn, 100, "7/8/78")
+        _seed_entry_date(conn, 200, "7/8/78")
+        _seed_metric(conn, 100, scan_id=1, metric_json='{"a": 1}')
+        _seed_metric(conn, 200, scan_id=2, metric_json='{"a": 1}')
+
+        assert duplicate_encode_candidates(conn) == []
+    finally:
+        db.close_connection(db_path)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_duplicate_encode_candidates_ignores_different_date():
+    db_path, tmp_dir = _make_app_db()
+    try:
+        conn = db.get_connection(db_path)
+        _seed_entry_date(conn, 100, "7/8/78")
+        _seed_entry_date(conn, 200, "7/9/78")
+        _seed_metric(conn, 100, scan_id=1, metric_json='{"a": 1}')
+        _seed_metric(conn, 200, scan_id=1, metric_json='{"a": 1}')
+
+        assert duplicate_encode_candidates(conn) == []
+    finally:
+        db.close_connection(db_path)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_duplicate_encode_candidates_ignores_non_identical_metric_json():
+    db_path, tmp_dir = _make_app_db()
+    try:
+        conn = db.get_connection(db_path)
+        _seed_entry_date(conn, 100, "7/8/78")
+        _seed_entry_date(conn, 200, "7/8/78")
+        _seed_metric(conn, 100, scan_id=1, metric_json='{"a": 1}')
+        _seed_metric(conn, 200, scan_id=1, metric_json='{"a": 2}')
+
+        assert duplicate_encode_candidates(conn) == []
+    finally:
+        db.close_connection(db_path)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_duplicate_encode_candidates_flags_already_same_family():
+    db_path, tmp_dir = _make_app_db()
+    try:
+        conn = db.get_connection(db_path)
+        _seed_entry_date(conn, 100, "11/20/96")
+        _seed_entry_date(conn, 200, "11/20/96")
+        _seed_metric(conn, 100, scan_id=1, metric_json='{"a": 1}')
+        _seed_metric(conn, 200, scan_id=1, metric_json='{"a": 1}')
+        conn.execute(
+            "INSERT INTO recording_families (lb_number, fam_id, concert_date) "
+            "VALUES (100, 'fam-a', '1996-11-20')"
+        )
+        conn.execute(
+            "INSERT INTO recording_families (lb_number, fam_id, concert_date) "
+            "VALUES (200, 'fam-a', '1996-11-20')"
+        )
+        conn.commit()
+
+        candidates = duplicate_encode_candidates(conn)
+        assert len(candidates) == 1
+        assert candidates[0]["same_family"] is True
+    finally:
+        db.close_connection(db_path)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_duplicate_encode_candidates_distinct_lb_numbers_only_one_row_each():
+    # A single lb_number scored once must never pair with itself.
+    db_path, tmp_dir = _make_app_db()
+    try:
+        conn = db.get_connection(db_path)
+        _seed_entry_date(conn, 100, "7/8/78")
+        _seed_metric(conn, 100, scan_id=1, metric_json='{"a": 1}')
+
+        assert duplicate_encode_candidates(conn) == []
     finally:
         db.close_connection(db_path)
         shutil.rmtree(tmp_dir, ignore_errors=True)

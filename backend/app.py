@@ -5009,6 +5009,26 @@ def create_app() -> Flask:
         ).fetchall()
         return jsonify([dict(r) for r in rows])
 
+    @app.route("/api/tapematch/dup_encodes", methods=["GET"])
+    def tapematch_dup_encodes() -> Response:
+        """Likely-duplicate-encode candidates (TODO-210b).
+
+        Read-only curation leads — same-date recording pairs whose
+        ``quality_recording_metrics.metric_json`` is byte-identical within
+        one scan_id. Never auto-merges or mutates any family data; see
+        ``backend.tapematch_sync.duplicate_encode_candidates`` for the full
+        signal rationale.
+        """
+        from backend import tapematch_sync as _tapematch_sync
+
+        try:
+            conn = database.get_connection()
+            candidates = _tapematch_sync.duplicate_encode_candidates(conn)
+            return jsonify({"candidates": candidates})
+        except Exception as exc:
+            _log.exception("tapematch_dup_encodes failed")
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
     @app.route("/api/tapematch/pairs", methods=["GET"])
     def tapematch_pairs_for_date() -> Response:
         """Pairwise similarity matrix for one concert date (LISTENING §1).
