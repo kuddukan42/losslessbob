@@ -69,6 +69,8 @@ losslessbob/
 │   ├── site_crawler.py       # Full-domain BFS site mirror spider (data/site/)
 │   ├── html_utils.py         # rewrite_links(): server-absolute → relative for file:// browsing
 │   ├── bootleg_scraper.py    # Bootleg-CD catalog (LBBCD index) scraper
+│   ├── olof_fetcher.py       # Olof Björner (bobserve.com) page mirror → data/olof/pages/ (TODO-162 P1)
+│   ├── olof_parser.py        # DSN event parser: olof_pages → olof_events (TODO-162 P2)
 │   ├── scheduler.py          # Watchdog file watcher, auto-import, scheduled integrity scans
 │   ├── integrity_monitor.py  # TODO-111: lbdir-based collection integrity scan engine
 │   ├── sox_utils.py          # SoX/ffmpeg tool detection + spectrogram generation
@@ -647,6 +649,18 @@ One row per unique URL discovered or fetched by the site crawler.
 | session_id | INTEGER | FK → `scrape_sessions.id` of last session that touched this row |
 
 Indexes: `idx_inventory_status`, `idx_inventory_session`.
+
+### `olof_pages` / `olof_events` — Olof Björner mirror + parsed events (TODO-162, local-only)
+Spec: `instructions/FABLE_OLOF_FILES.md` §4 (authoritative column list). `olof_pages` = one row
+per mirrored bobserve.com page (filename PK, url, corpus `'dsn'`/`'chronicle'`, segment_title,
+year, sha256, fetched_at, parsed_at, parse_status, event_count); pages live verbatim in
+`data/olof/pages/` via `backend/olof_fetcher.py`. `olof_events` = one row per Still On The Road
+event (event_id PK = DSN number; date_str ISO + raw, venue/city/region/country split fields,
+event_type `concert|session|rehearsal|broadcast|interview|other`, tour_name, NET/year concert
+numbers, lineup, recording kind/mins, notes, bobtalk, releases_raw, references_raw, raw_text
+safety net) via `backend/olof_parser.py`. Indexes: `idx_olof_events_date`,
+`idx_olof_events_tour`. Not in `MASTER_TABLES` yet — master/sitedata export tier is a P5
+decision. P3 will add `olof_songs`; P4 adds `olof_chronicle` / `olof_new_tapes`.
 
 ### `location_geocoded` — Geocoded concert locations (MASTER TABLE)
 | Column | Type | Notes |
