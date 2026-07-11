@@ -25,6 +25,11 @@ _OPEN_RETRY_BACKOFF_SEC = 1.0
 
 _VERDICT_LINE_RE = re.compile(r"^## Verdict:\s*(?P<text>.+)$", re.MULTILINE)
 
+# TODO-210(a): one-time confidence bump when a family's members corroborate
+# via matching Concert Ranker quality scores (see _has_quality_match).
+_QUALITY_MATCH_BUMP = 0.05
+_QUALITY_MATCH_TOL = 0.5
+
 
 def _resolve_run_dir(obs_conn: sqlite3.Connection, run_id: str, concert_date: str) -> Path:
     """Best-effort path to a tapematch run's archive directory.
@@ -152,6 +157,7 @@ def sync_tapematch_families(
 
     obs_conn = _open_observations_db(observations_db_path)
     conn = get_connection(db_path)
+    abs_scores_by_lb = _load_latest_abs_scores(conn)
 
     stats = {
         "dates_processed": 0,
@@ -165,7 +171,7 @@ def sync_tapematch_families(
 
         for concert_date, run_id in best_run_by_date.items():
             try:
-                _sync_one_date(obs_conn, conn, concert_date, run_id, stats)
+                _sync_one_date(obs_conn, conn, concert_date, run_id, stats, abs_scores_by_lb)
                 stats["dates_processed"] += 1
             except Exception as e:  # noqa: BLE001 — one bad date shouldn't abort the rest
                 log.exception("tapematch sync failed for %s (run %s)", concert_date, run_id)
@@ -176,12 +182,83 @@ def sync_tapematch_families(
     return stats
 
 
+def _load_latest_abs_scores(conn: sqlite3.Connection) -> "dict[int, tuple[int, float, str]]":
+    """Return ``{lb_number: (scan_id, abs_score, abs_grade)}`` from each lb's
+    own most recent scored scan.
+
+    ``abs_score``/``abs_grade`` are feature-detected via ``PRAGMA table_info``
+    (same idiom as ``backend.db._load_latest_abs_grades``) since they're added
+    by Concert Ranker's ``ensure_schema`` migration, not this app's base
+    schema — a DB that has never run Concert Ranker doesn't have them yet, so
+    the quality-match confidence bump (TODO-210a) degrades silently to a
+    no-op when they're absent.
+
+    Unlike ``_load_latest_abs_grades`` (one global ``MAX(scan_id)`` for the
+    whole library), this picks each lb_number's own newest scored scan
+    independently, since different recordings can have last been scanned in
+    different scan runs.
+    """
+    cols = {r[1] for r in conn.execute("PRAGMA table_info(quality_recording_scores)")}
+    if "abs_score" not in cols or "abs_grade" not in cols:
+        return {}
+    rows = conn.execute(
+        "SELECT lb_number, scan_id, abs_score, abs_grade FROM quality_recording_scores "
+        "WHERE abs_score IS NOT NULL AND abs_grade IS NOT NULL "
+        "ORDER BY lb_number, scan_id DESC"
+    ).fetchall()
+    out: dict[int, tuple[int, float, str]] = {}
+    for row in rows:
+        lb_number = row["lb_number"]
+        if lb_number not in out:
+            out[lb_number] = (row["scan_id"], row["abs_score"], row["abs_grade"])
+    return out
+
+
+def _has_quality_match(
+    lb_numbers: "list[int]",
+    abs_scores_by_lb: "dict[int, tuple[int, float, str]]",
+) -> bool:
+    """Whether any pair of ``lb_numbers`` corroborates via matching quality scores.
+
+    A match requires both lb_numbers' most-recent-scan rows to come from the
+    SAME ``scan_id`` (``abs_score`` isn't comparable across different scan
+    configs), an absolute ``abs_score`` difference within
+    ``_QUALITY_MATCH_TOL``, and the same leading grade letter (e.g. "B+" and
+    "B-" both match on "B"). Per TODO-210's investigation, abs_score equality
+    alone is too noisy library-wide to surface brand-new families, but is a
+    good corroborating signal for a family TapeMatch has already acoustically
+    matched.
+
+    Args:
+        lb_numbers: A family's member lb_numbers.
+        abs_scores_by_lb: Output of ``_load_latest_abs_scores``.
+
+    Returns:
+        True if any member pair matches.
+    """
+    present = [abs_scores_by_lb[lb] for lb in lb_numbers if lb in abs_scores_by_lb]
+    for i in range(len(present)):
+        scan_a, score_a, grade_a = present[i]
+        for j in range(i + 1, len(present)):
+            scan_b, score_b, grade_b = present[j]
+            if scan_a != scan_b:
+                continue
+            if not grade_a or not grade_b:
+                continue
+            if grade_a[0] != grade_b[0]:
+                continue
+            if abs(score_a - score_b) <= _QUALITY_MATCH_TOL:
+                return True
+    return False
+
+
 def _sync_one_date(
     obs_conn: sqlite3.Connection,
     conn: sqlite3.Connection,
     concert_date: str,
     run_id: str,
     stats: dict,
+    abs_scores_by_lb: "dict[int, tuple[int, float, str]]",
 ) -> None:
     """Compute and upsert families for a single concert_date's chosen run."""
     sources = obs_conn.execute(
@@ -242,6 +319,14 @@ def _sync_one_date(
         label = f"Family {chr(ord('A') + i)}"
         corrs = corrs_by_family.get(tm_family_id, [])
         conf = sum(corrs) / len(corrs) if corrs else None
+        if conf is not None and _has_quality_match(lb_numbers, abs_scores_by_lb):
+            bumped = min(1.0, conf + _QUALITY_MATCH_BUMP)
+            log.info(
+                "tapematch sync: quality-match bump for %s (tapematch family %s): "
+                "conf %.4f -> %.4f",
+                fam_id, tm_family_id, conf, bumped,
+            )
+            conf = bumped
         by = "ai+lb" if lb_says_same_by_family.get(tm_family_id) else "ai"
         member_count = len(lb_numbers)
 
@@ -484,16 +569,109 @@ def _sync_pairs_for_date(
     stats["pairs_written"] += len(pair_rows)
 
 
+def duplicate_encode_candidates(conn: sqlite3.Connection) -> "list[dict]":
+    """Surface same-date recording pairs with byte-identical quality metrics.
+
+    Read-only signal for TODO-210(b): two distinct ``lb_number``s scored in
+    the SAME ``quality_recording_metrics.scan_id`` whose ``metric_json`` is a
+    byte-for-byte match are near-certainly the same underlying tape with only
+    a track-split difference (per TODO-210's investigation, full metric_json
+    identity is near-collision-free within one scan config, unlike abs_score
+    equality alone, which is too noisy library-wide). Grouped by
+    ``entries.date_str`` (the show date as scraped) rather than TapeMatch's
+    normalised ``concert_date`` — most of these candidates predate or fall
+    outside TapeMatch's clustering coverage entirely (never appear in
+    ``recording_families``) and would otherwise be silently dropped by
+    joining through it. This function never writes anything; it is purely a
+    curation lead for a human to review, never an auto-merge.
+
+    Args:
+        conn: Open connection to the main app DB.
+
+    Returns:
+        List of dicts sorted by date then lb_a/lb_b, each:
+        ``{"date", "lb_a", "lb_b", "scan_id", "same_family", "reason"}``.
+        ``same_family`` is True only when both lb_numbers already share a
+        ``recording_families.fam_id`` — i.e. this is corroboration of an
+        already-known family, not a new lead.
+    """
+    rows = conn.execute(
+        "SELECT e.lb_number AS lb_number, e.date_str AS date_str, "
+        "m.scan_id AS scan_id, m.metric_json AS metric_json "
+        "FROM quality_recording_metrics m "
+        "JOIN entries e ON e.lb_number = m.lb_number "
+        "WHERE e.date_str IS NOT NULL AND e.date_str != ''"
+    ).fetchall()
+
+    groups: dict[tuple[str, int, str], list[int]] = {}
+    for row in rows:
+        key = (row["date_str"], row["scan_id"], row["metric_json"])
+        groups.setdefault(key, []).append(row["lb_number"])
+
+    fam_by_lb = {
+        r["lb_number"]: r["fam_id"]
+        for r in conn.execute("SELECT lb_number, fam_id FROM recording_families")
+    }
+
+    candidates: list[dict] = []
+    for (date_str, scan_id, _metric_json), lb_numbers in groups.items():
+        distinct = sorted(set(lb_numbers))
+        if len(distinct) < 2:
+            continue
+        for i in range(len(distinct)):
+            for j in range(i + 1, len(distinct)):
+                lb_a, lb_b = distinct[i], distinct[j]
+                same_family = (
+                    fam_by_lb.get(lb_a) is not None
+                    and fam_by_lb.get(lb_a) == fam_by_lb.get(lb_b)
+                )
+                candidates.append(
+                    {
+                        "date": date_str,
+                        "lb_a": lb_a,
+                        "lb_b": lb_b,
+                        "scan_id": scan_id,
+                        "same_family": same_family,
+                        "reason": "likely duplicate encode",
+                    }
+                )
+
+    candidates.sort(key=lambda c: (c["date"], c["lb_a"], c["lb_b"]))
+    return candidates
+
+
 def _main() -> int:
     """CLI entry point: `.venv/bin/python3 -m backend.tapematch_sync`.
 
     Runs standalone, without the Flask backend — tapematch batch runs happen
     via shell scripts and may not have the app server up. Syncs families
     then pairs, same combined order as the POST /api/tapematch/sync route.
+    Pass ``--dup-encodes`` to instead print TODO-210(b)'s duplicate-encode
+    candidates (one per line) and skip the sync entirely.
     """
+    import argparse
     import json
 
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
+
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--dup-encodes",
+        action="store_true",
+        help="Print likely-duplicate-encode candidates (TODO-210b) and exit.",
+    )
+    args = parser.parse_args()
+
+    if args.dup_encodes:
+        conn = get_connection()
+        candidates = duplicate_encode_candidates(conn)
+        for c in candidates:
+            print(
+                f"{c['date']} LB-{c['lb_a']} / LB-{c['lb_b']} "
+                f"(scan_id={c['scan_id']}, same_family={c['same_family']}): {c['reason']}"
+            )
+        return 0
+
     stats = sync_tapematch_families()
     pair_stats = sync_tapematch_pairs()
     stats["pairs_synced"] = pair_stats["pairs_written"]

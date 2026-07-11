@@ -44,6 +44,58 @@ class _AppClient:
             db.DB_PATH = self._orig_module_db_path
 
 
+# ── GET /api/tapematch/dup_encodes ───────────────────────────────────────────
+
+
+def test_dup_encodes_route_returns_candidates():
+    db_path, tmp_dir = _make_db()
+    try:
+        conn = db.get_connection(db_path)
+        conn.execute(
+            "INSERT INTO entries (lb_number, date_str, status) VALUES (100, '7/8/78', 'ok')"
+        )
+        conn.execute(
+            "INSERT INTO entries (lb_number, date_str, status) VALUES (200, '7/8/78', 'ok')"
+        )
+        conn.execute(
+            "INSERT INTO quality_recording_metrics (lb_number, scan_id, metric_json) "
+            "VALUES (100, 1, '{\"a\": 1}')"
+        )
+        conn.execute(
+            "INSERT INTO quality_recording_metrics (lb_number, scan_id, metric_json) "
+            "VALUES (200, 1, '{\"a\": 1}')"
+        )
+        conn.commit()
+
+        with _AppClient(db_path) as client:
+            resp = client.get("/api/tapematch/dup_encodes")
+            assert resp.status_code == 200
+            body = resp.get_json()
+            assert body == {
+                "candidates": [
+                    {
+                        "date": "7/8/78", "lb_a": 100, "lb_b": 200, "scan_id": 1,
+                        "same_family": False, "reason": "likely duplicate encode",
+                    }
+                ]
+            }
+    finally:
+        db.close_connection(db_path)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_dup_encodes_route_empty_when_no_matches():
+    db_path, tmp_dir = _make_db()
+    try:
+        with _AppClient(db_path) as client:
+            resp = client.get("/api/tapematch/dup_encodes")
+            assert resp.status_code == 200
+            assert resp.get_json() == {"candidates": []}
+    finally:
+        db.close_connection(db_path)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
 # ── GET /api/tapematch/pairs ─────────────────────────────────────────────────
 
 
