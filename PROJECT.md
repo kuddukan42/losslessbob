@@ -71,6 +71,7 @@ losslessbob/
 │   ├── bootleg_scraper.py    # Bootleg-CD catalog (LBBCD index) scraper
 │   ├── olof_fetcher.py       # Olof Björner (bobserve.com) page mirror → data/olof/pages/ (TODO-162 P1)
 │   ├── olof_parser.py        # DSN event+song parser: olof_pages → olof_events + olof_songs (TODO-162 P2–P3)
+│   ├── olof_chronicle_parser.py  # Yearly Chronicles parser: calendar + new-tapes (+2022+ appendix, dormant) (TODO-162 P4)
 │   ├── scheduler.py          # Watchdog file watcher, auto-import, scheduled integrity scans
 │   ├── integrity_monitor.py  # TODO-111: lbdir-based collection integrity scan engine
 │   ├── sox_utils.py          # SoX/ffmpeg tool detection + spectrogram generation
@@ -660,10 +661,16 @@ event_type `concert|session|rehearsal|broadcast|interview|other`, tour_name, NET
 numbers, lineup, recording kind/mins, notes, bobtalk, releases_raw, references_raw, raw_text
 safety net) via `backend/olof_parser.py`. `olof_songs` = one row per performed song / studio
 take (event_id+position PK, song_title, credits, is_encore, take_number, take_status,
-annotations, released_on — annotation/release position-ranges resolved per song). Indexes:
-`idx_olof_events_date`, `idx_olof_events_tour`, `idx_olof_songs_title`. Not in `MASTER_TABLES`
-yet — master/sitedata export tier is a P5 decision. P4 adds `olof_chronicle` /
-`olof_new_tapes`.
+annotations, released_on — annotation/release position-ranges resolved per song).
+`olof_chronicle` = one row per dated calendar/diary entry (year+seq PK, date_str ISO where
+resolvable, date_raw, entry_text — Word field junk stripped); `olof_new_tapes` = one row per
+'New tapes & bootlegs' subsection (year+seq PK, title, date_str ISO show date or '', body_text)
+— both via `backend/olof_chronicle_parser.py`. 2022+ appendix setlists parse into
+`olof_events`/`olof_songs` with synthetic `year*1000+seq` IDs (source `'chronicle_appendix'`)
+but the path is dormant — 2013+ chronicles are PDF-only on bobserve (TODO-228). Indexes:
+`idx_olof_events_date`, `idx_olof_events_tour`, `idx_olof_songs_title`,
+`idx_olof_chronicle_date`, `idx_olof_new_tapes_date`. Not in `MASTER_TABLES` yet —
+master/sitedata export tier is a P5 decision.
 
 ### `location_geocoded` — Geocoded concert locations (MASTER TABLE)
 | Column | Type | Notes |
