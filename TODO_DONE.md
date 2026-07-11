@@ -1,6 +1,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-218: ONBOARDING P4 — README.md rewrite (retire PyQt flow docs)
+Priority: Low
+Status: Done
+Added: 2026-07-10
+Closed: 2026-07-10
+Description: Spec §6 (instructions/FABLE_ONBOARDING_SYNC.md): quickstart via GitHub Releases installer + first-run wizard, data-model note (master release vs site data vs monthly flat-file), dev setup (.venv, run_backend.py, gui_next dev), keep flat-file/checksum format reference sections. Can run any time; no dependencies.
+Shipped 2026-07-10: README.md rewritten per spec §6 — Releases-installer quickstart + first-run wizard, master/sitedata/flat-file data-model table, .venv + run_backend.py + gui_next dev setup, flat-file/checksum reference sections kept, all PyQt flow docs retired. ONBOARDING spec moved to instructions/complete/.
+
 TODO-217: ONBOARDING P3 — first-run wizard + Home setup-checklist card + Setup/Scraper copy
 Priority: Medium
 Status: Done

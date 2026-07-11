@@ -1,3 +1,13 @@
+[2026-07-10] — docs: ONBOARDING P4 — README rewrite, retires PyQt flow docs (spec §6; closes TODO-218; ONBOARDING spec complete)
+Changed: README.md: full rewrite — quickstart = Releases installer (AppImage / windows-Setup.exe,
+  verified against v1.5.2 assets) + first-run wizard; data-model table (master release vs
+  sitedata release vs monthly flat file, curator-only scraping note); dev setup (.venv,
+  run_backend.py, gui_next npm run dev, dist:linux/win) + PROJECT.md pointer. Kept the
+  flat-file + checksum format reference sections. Dropped: python main.py install, manual
+  Setup-tab flat-file first-import, PyQt tab feature list, Map/WebEngine + PyInstaller sections.
+Changed: instructions/FABLE_ONBOARDING_SYNC.md → instructions/complete/ (all P1–P4 shipped);
+  instructions/README.md row swapped for new FABLE_OLOF_FILES.md entry.
+
 [2026-07-10] — feat(gui): ONBOARDING P3 — first-run wizard + Home setup checklist + Setup/Scraper copy (spec §5–§6; closes TODO-217)
 Added: gui_next/src/renderer/src/components/OnboardingWizard.tsx: 4-step first-run modal
   (1 master github_check/install SSE — required to proceed; 2 sitedata core/files checkboxes

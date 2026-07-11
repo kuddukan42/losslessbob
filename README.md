@@ -1,73 +1,35 @@
 # LosslessBob Checksum Lookup
 
-Cross-platform replacement for the original Windows Checksum_Lookup utility for the [LosslessBob](http://www.losslessbob.wonderingwhattochoose.com/) Bob Dylan lossless recording archive.
+Cross-platform desktop app for the [LosslessBob](http://www.losslessbob.wonderingwhattochoose.com/) Bob Dylan lossless recording archive: checksum lookup, collection tracking, verification, and browsing — Electron/React frontend over a local Flask backend.
 
-## Prerequisites
+## Quickstart
 
-- Python 3.11 or newer
-- pip (comes with Python)
-- **Windows:** Microsoft Visual C++ Redistributable (for PyQt6)
+1. Download the installer for your platform from the latest `v*` release on the [Releases page](https://github.com/kuddukan42/losslessbob/releases) — `LosslessBob-<version>-linux-x86_64.AppImage` or `LosslessBob-<version>-windows-Setup.exe` (a portable `.exe` is also available).
+2. Launch the app.
+3. Follow the first-run wizard — it downloads the full dataset, optional cached site pages, and points you at adding your collection folders. No manual imports needed.
 
-## Installation
+## How the data gets to you
+
+| Release | Contents | Cadence |
+|---|---|---|
+| `master-YYYY-MM-DD` | The full database snapshot: all LB entries, checksums, curated status, geocoded concert locations, setlists, TapeMatch families, curated lists, flat-file history | Roughly monthly, published by the curator |
+| `sitedata-YYYY-MM-DD` | Cached LB site pages: detail pages, artwork, lbbcd indexes (core), plus optional checksum/fingerprint text attachments (files) | On demand, changes slowly |
+| Monthly flat file | Checksum deltas from the LB site, applied between master snapshots via Setup → Monthly update | Monthly, from the LB site |
+
+The first-run wizard installs the master snapshot and (optionally) site data. After that, the in-app monthly update keeps checksums current between master releases. End users never scrape the LB site — scraping and geocoding are curator tasks whose output ships in the releases above.
+
+## Development setup
 
 ```bash
-git clone <repo>
+git clone git@github.com:kuddukan42/losslessbob.git
 cd losslessbob
-pip install -r requirements.txt
-python main.py
+python3 -m venv .venv
+.venv/bin/pip install -r requirements.txt
+.venv/bin/python3 run_backend.py        # Flask backend on port 5174
+cd gui_next && npm install && npm run dev   # Electron/React frontend
 ```
 
-## First Database Import
-
-1. Download the latest zip from the LosslessBob downloads page
-2. Unzip — you will find a flat file (`.txt`)
-3. Open the app, go to the **Setup** tab, click **Import Database File...**
-4. Select the `.txt` flat file
-5. Wait for import to complete (progress shown in status bar)
-6. Optionally start the scraper to fetch entry metadata
-
-## Monthly Update Workflow
-
-1. Click **Check for Update** in the Setup tab (or Database menu)
-2. If an update is available, download the new zip from the LosslessBob site
-3. Drop the new flat file (`.txt`) into the `data/` folder
-4. The app detects the new file automatically (via file watcher) and starts import
-5. Only new LB entries are processed — takes seconds, not minutes
-
-## Features
-
-- **Lookup tab:** Paste checksum text from clipboard or drag-drop files/folders to look up LB numbers
-- **Color coding:** Green = complete match, Orange = not found, Pink = incomplete set, Yellow = duplicate
-- **Rename Folders tab:** Propose and execute folder renames to append LB numbers
-- **Verify tab:** Verify audio files against their checksum files (FFP, MD5, ST5)
-- **lbdir tab:** Check and retrieve lbdir verification files from the LosslessBob cache
-- **Search tab:** Full-text search across entry metadata (date, location, description)
-- **My Collection tab:** Track which LB entries you own, scan directories, export missing list
-- **Attachments tab:** Browse locally cached files (ffp, txt, html) for each LB entry
-- **Setup tab:** Import database, configure scraper, check for updates
-
-## Map Tab
-
-The **Map** tab displays concert locations on an interactive OpenStreetMap map (Leaflet).
-
-- Requires `PyQt6-WebEngine` (already in `requirements.txt`)
-- The map can also be viewed in any browser at `http://localhost:5174/map` while the app is running
-- **Geocoding (curators only):** Run `python tools/geocode_locations.py` once to populate coordinates
-  via Nominatim. End users receive pre-geocoded coordinates as part of the master data release and
-  never call Nominatim themselves.
-- OSM tile requests reveal your IP address to OpenStreetMap's tile CDN
-- Attribution: © OpenStreetMap contributors
-
-## Packaging with PyInstaller
-
-Use the provided `losslessbob.spec`:
-
-```bash
-pip install pyinstaller
-pyinstaller losslessbob.spec
-```
-
-Output is in `dist/LosslessBob/`. Keep the `data/` folder alongside the executable — do not bundle it, so it persists across updates.
+Architecture, DB schema, Flask routes, and screen inventory live in `PROJECT.md`. Distribution builds: `npm run dist:linux` / `npm run dist:win` from `gui_next/`.
 
 ## Flat File Format
 

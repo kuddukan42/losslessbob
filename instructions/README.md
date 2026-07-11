@@ -15,7 +15,7 @@ its contents; they are not listed individually here.
 | design_handoff_unified_library/ | Design handoff docs for the unified Library screen (overview + theme additions) | not triaged |
 | FABLE_IDEAS.md | Raw idea dump from a Fable 5 brainstorm (2026-07-06) — not a spec, ideas need expansion before execution | not triaged |
 | FABLE_LISTENING_INSIGHT_IDEAS.md | Listening & Insight features idea spec pack | active — see SPEC_INTEGRATION_NOTES.md §2 for order, not yet implemented |
-| FABLE_ONBOARDING_SYNC.md | New-user onboarding & data sync design spec | active — see SPEC_INTEGRATION_NOTES.md §2 for order, not yet implemented |
+| FABLE_OLOF_FILES.md | Olof Björner scraper + schema spec (Still On The Road + Yearly Chronicles) | active — implements TODO-162; consumed by TODO-224/225/226 |
 | FABLE_TAPEMATCH_LISTENING_SIGNALS.md | TapeMatch "simulated listening" signals idea spec pack | active — see SPEC_INTEGRATION_NOTES.md §2 for order, not yet implemented |
 | FABLE_TAPER_ATTRIBUTION.md | Taper Attribution Engine design spec | active — phase 1 shipped 2026-07-09 (engine/schema/recompute, 7,817 attributions); phase 2 (confirm/reject API + GUI) open |
 | library/ | Standalone HTML pixel specs for the unified Library screen | not triaged |
