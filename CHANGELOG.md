@@ -1,3 +1,27 @@
+[2026-07-11] — feat(backend+scraper): quality-score family corroboration + dup-encode surfacing (TODO-210), crawl hot-loop guard (TODO-227)
+Added: backend/tapematch_sync.py: TODO-210a conf bump — _load_latest_abs_scores (per-lb newest
+  scored scan, abs_score/abs_grade feature-detected via PRAGMA, degrades to no-op pre-Ranker) +
+  _has_quality_match (same scan_id, |Δabs_score| ≤ 0.5, same grade letter); families matching
+  get a one-time min(1.0, conf + 0.05) bump in _sync_one_date, logged. Corroboration only —
+  investigation showed raw score equality is >99.8% noise for surfacing new families.
+Added: backend/tapematch_sync.py: TODO-210b duplicate_encode_candidates() — read-only pairs with
+  byte-identical quality_recording_metrics.metric_json within one scan_id, grouped by
+  entries.date_str (not via recording_families — the interesting leads aren't in families yet);
+  never auto-merges. CLI: python -m backend.tapematch_sync --dup-encodes.
+Added: backend/app.py: GET /api/tapematch/dup_encodes → {"candidates": [...]}. Live-verified on
+  5174 post-restart: 15 pairs / 13 metric-identical groups incl. investigation's LB-3136/7538 +
+  LB-3147/7523 (same_family=False) — GUI surfacing rides TODO-215 (TapeMatch screen v2).
+Added: tools/tapematch/run_crawl.sh: TODO-227 failure guard — non-continue rc sleeps 30 s; 3
+  consecutive failures on the same date append it to data/tapematch/crawl_skip.txt and move on;
+  10 consecutive failures overall abort (systemic). Also fixed latent stale-$rc bug (rc never
+  reset on success — would have cascaded false failures once the guard existed). Replaced via
+  mv (new inode); the live crawl keeps its old copy until next restart.
+Changed: tools/tapematch/tapematch_session.py: next_run() honors crawl_skip.txt (ISO date per
+  line, # comments; prints skipped count) and writes the attempted date to
+  crawl_last_attempt.txt before run_date so the shell guard knows what failed.
+Changed: tests/test_tapematch_sync.py + tests/test_tapematch_routes.py: 26 new tests (bump
+  apply/degrade/clamp, dup-encode grouping, route). Suite 607 passed / 5 skipped.
+
 [2026-07-10] — feat(backend+gui): Olof P5 — surfacing: endpoints, tour-name fallback, setlist compare, GUI panel (FABLE_OLOF_FILES §5–§6; closes TODO-162 + TODO-153; Olof spec complete)
 Added: backend/db.py: get_olof_date/get_olof_event/get_olof_chronicle_year/get_olof_status
   readers (all degrade to empty — olof_* stays local-only, NOT in MASTER_TABLES; export tier

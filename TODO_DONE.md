@@ -1,6 +1,33 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-227: run_crawl.sh: backoff / same-date failure guard to prevent hot crash-loops
+Priority: Low
+Status: Done
+Added: 2026-07-10
+Closed: 2026-07-11
+Description: run_crawl.sh continues on any exit code other than 75 (queue empty) and 130 (Ctrl+C) with no delay, so an unhandled per-date exception hot-loops forever on the same date (BUG-247 looped ~3 h at ~1.2 s/iteration with full clean+copy disk churn each pass). Add: small sleep between iterations after a failure, and abort or skip-with-log after N consecutive failures on the same date (tapematch_session.py could write the date to a skip list that --next respects).
+run_crawl.sh: 30s sleep on failure rc, 3 consecutive same-date failures append the date to data/tapematch/crawl_skip.txt (next_run now honors it + writes crawl_last_attempt.txt), 10 consecutive failures overall abort. Latent stale-$rc bug fixed. Live crawl untouched (mv replacement); guard active from next crawl restart.
+
+TODO-210: Detect exact-quality-match splits as family-matching signal (LB-1594/LB-5065)
+Priority: Medium
+Status: Done
+Added: 2026-07-08
+Closed: 2026-07-11
+Description: User found LB-1594 and LB-5065 have identical quality ratings and are audibly the exact same recording — only difference is track splits a few seconds apart. Investigate using exact/near-identical quality-score equality as an additional signal in family matching (e.g. as a corroborating feature or a targeted check for split-only duplicates), since a quality-rating match this precise is unlikely by chance for unrelated masters.
+  Update 2026-07-09 (investigation done; implementation remains): 1594/5065 are ALREADY in
+  family 1996-11-20#1594-5065 (conf 0.0156 — the signal's value is corroborating low-conf
+  families, not surfacing new ones). abs_score equality alone is unusable library-wide:
+  515 same-date exact-score pairs vs 325,858 cross-date coincidences (>99.8% noise; wider
+  tolerances get worse). Full metric_json identity is near-collision-free (13 same-date
+  candidates vs 6 cross-date library-wide) but only comparable within one scan config version.
+  Recommendation: (a) small confidence bump in the tapematch family-sync conf step when a
+  same-date shortlisted pair has abs_score within ~0.5 + same grade letter; (b) surface
+  same-scan-config metric_json-identical same-date pairs as a "likely duplicate encode"
+  review flag (never auto-merge). 429 same-date exact-score non-family candidate pairs exist;
+  the 13 metric-identical ones (e.g. 3136/7538 7/8/78, 3147/7523 7/4/78) are prime curation bait.
+Implemented per 07-09 investigation: (a) family-sync conf bump +0.05 when a member pair shares scan_id with abs_score within 0.5 and same grade letter (corroboration only, feature-detected columns); (b) read-only duplicate-encode surfacing — duplicate_encode_candidates(), --dup-encodes CLI, GET /api/tapematch/dup_encodes (15 pairs live incl. LB-3136/7538, LB-3147/7523); never auto-merges. GUI surfacing deferred to TODO-215.
+
 TODO-153: Library/perf screen — backfill good tour names across all dates
 Priority: Medium
 Status: Done
