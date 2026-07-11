@@ -1680,7 +1680,14 @@
       "running": "RUNNING",
       "idle": "idle",
       "counts": "{{runs}} runs · {{dates}} dates",
-      "noLog": "No recent crawl log lines"
+      "noLog": "No recent crawl log lines",
+      "start": "Start",
+      "stop": "Stop",
+      "starting": "Starting…",
+      "stopping": "Stopping…",
+      "startFailed": "Could not reach the crawl control endpoint.",
+      "alreadyRunning": "A crawl or live session is already running.",
+      "stopped": "Crawl stopped."
     },
     "rail": {
       "dates": "Dates",
@@ -1698,12 +1705,27 @@
       "header": "LB",
       "empty": "No synced pairs for this date",
       "noContact": "n/c",
-      "cellTooltip": "corr {{corr}} · emb {{emb}} · fp {{fp}} · same family: {{sameFamily}}"
+      "cellTooltip": "corr {{corr}} · emb {{emb}} · fp {{fp}} · same family: {{sameFamily}}",
+      "openInLibrary": "Open in Library"
     },
     "analysis": {
       "title": "Analysis (analysis.md)",
       "flagged": "Flagged",
       "none": "No analysis.md written for this run yet."
+    },
+    "judgment": {
+      "title": "Curator judgment",
+      "pairLabel": "LB {{a}} ↔ LB {{b}}",
+      "notesPlaceholder": "Notes (optional)…",
+      "saving": "Saving…",
+      "locked": "Run in progress, try again.",
+      "saveFailed": "Save failed, try again.",
+      "options": {
+        "confirmed_same": "Confirmed same",
+        "confirmed_different": "Confirmed different",
+        "uncertain": "Uncertain",
+        "lb_wrong": "LB wrong"
+      }
     }
   },
   "onboarding": {

@@ -1680,7 +1680,14 @@
       "running": "IN WERKING",
       "idle": "inactief",
       "counts": "{{runs}}-versies · {{dates}}-datums",
-      "noLog": "Geen recente regels in het crawl-logboek"
+      "noLog": "Geen recente regels in het crawl-logboek",
+      "start": "Start",
+      "stop": "Stop",
+      "starting": "Beginnen…",
+      "stopping": "Beëindigen…",
+      "startFailed": "Het crawl control-eindpunt kon niet worden bereikt.",
+      "alreadyRunning": "Er is al een crawl of live-sessie actief.",
+      "stopped": "Het crawlen is gestopt."
     },
     "rail": {
       "dates": "Datums",
@@ -1698,12 +1705,27 @@
       "header": "LB",
       "empty": "Geen gesynchroniseerde paren voor deze datum",
       "noContact": "n.v.t.",
-      "cellTooltip": "corr {{corr}} · emb {{emb}} · fp {{fp}} · uit dezelfde familie: {{sameFamily}}"
+      "cellTooltip": "corr {{corr}} · emb {{emb}} · fp {{fp}} · uit dezelfde familie: {{sameFamily}}",
+      "openInLibrary": "Openen in bibliotheek"
     },
     "analysis": {
       "title": "Analyse (analysis.md)",
       "flagged": "Gemarkeerd",
       "none": "Er is voor deze run nog geen analysis.md geschreven."
+    },
+    "judgment": {
+      "title": "Beoordeling door de curator",
+      "pairLabel": "LB {{a}} ↔ LB {{b}}",
+      "notesPlaceholder": "Opmerkingen (optioneel)…",
+      "saving": "Bezig met opslaan…",
+      "locked": "De bewerking is bezig, probeer het opnieuw.",
+      "saveFailed": "Opslaan mislukt, probeer het opnieuw.",
+      "options": {
+        "confirmed_same": "Bevestigd: hetzelfde",
+        "confirmed_different": "Bevestigd: anders",
+        "uncertain": "Onzeker",
+        "lb_wrong": "LB fout"
+      }
     }
   },
   "onboarding": {

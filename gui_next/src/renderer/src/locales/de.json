@@ -1680,7 +1680,14 @@
       "running": "AUSFÜHRUNG",
       "idle": "idle",
       "counts": "{{runs}} läuft · {{dates}} Termine",
-      "noLog": "Keine aktuellen Einträge im Crawl-Protokoll"
+      "noLog": "Keine aktuellen Einträge im Crawl-Protokoll",
+      "start": "Start",
+      "stop": "Stopp",
+      "starting": "Es geht los…",
+      "stopping": "Wird angehalten…",
+      "startFailed": "Der Crawl-Control-Endpunkt konnte nicht erreicht werden.",
+      "alreadyRunning": "Ein Crawl oder eine Live-Sitzung läuft bereits.",
+      "stopped": "Crawling wurde angehalten."
     },
     "rail": {
       "dates": "Daten",
@@ -1698,12 +1705,27 @@
       "header": "LB",
       "empty": "Für dieses Datum liegen keine synchronisierten Paare vor",
       "noContact": "n/c",
-      "cellTooltip": "corr {{corr}} · emb {{emb}} · fp {{fp}} · aus derselben Familie: {{sameFamily}}"
+      "cellTooltip": "corr {{corr}} · emb {{emb}} · fp {{fp}} · aus derselben Familie: {{sameFamily}}",
+      "openInLibrary": "In der Bibliothek öffnen"
     },
     "analysis": {
       "title": "Analyse (analysis.md)",
       "flagged": "Markiert",
       "none": "Für diesen Durchlauf wurde noch keine „analysis.md“-Datei erstellt."
+    },
+    "judgment": {
+      "title": "Beurteilung durch den Kurator",
+      "pairLabel": "LB {{a}} ↔ LB {{b}}",
+      "notesPlaceholder": "Anmerkungen (optional)…",
+      "saving": "Wird gespeichert…",
+      "locked": "Der Vorgang läuft, bitte versuchen Sie es erneut.",
+      "saveFailed": "Speichern fehlgeschlagen, bitte erneut versuchen.",
+      "options": {
+        "confirmed_same": "Bestätigt: unverändert",
+        "confirmed_different": "Bestätigt: unterschiedlich",
+        "uncertain": "Unsicher",
+        "lb_wrong": "LB falsch"
+      }
     }
   },
   "onboarding": {
