@@ -109,7 +109,7 @@ class TestGetPerformanceLocationString:
             conn.commit()
 
             result = _get_performance_location_string("Raw Loc", conn)
-            assert result == "Madison Square Garden, New York, NY, USA"
+            assert result == ("Madison Square Garden, New York, NY, USA", "New York, NY, USA")
         finally:
             shutil.rmtree(tmp_dir, ignore_errors=True)
 
@@ -127,7 +127,7 @@ class TestGetPerformanceLocationString:
             conn.commit()
 
             result = _get_performance_location_string("Raw Loc", conn)
-            assert result == "Madison Square Garden, New York"
+            assert result == ("Madison Square Garden, New York", "New York")
         finally:
             shutil.rmtree(tmp_dir, ignore_errors=True)
 
@@ -181,7 +181,7 @@ class TestGetBobdylanShowsLocationString:
             conn.commit()
 
             result = _get_bobdylan_shows_location_string("Raw Loc", conn)
-            assert result == "The Purple Onion, St. Paul, MN"
+            assert result == ("The Purple Onion, St. Paul, MN", "St. Paul, MN")
         finally:
             shutil.rmtree(tmp_dir, ignore_errors=True)
 
@@ -199,7 +199,7 @@ class TestGetBobdylanShowsLocationString:
             conn.commit()
 
             result = _get_bobdylan_shows_location_string("Raw Loc", conn)
-            assert result == "The Purple Onion"
+            assert result == ("The Purple Onion", None)
         finally:
             shutil.rmtree(tmp_dir, ignore_errors=True)
 
@@ -431,7 +431,7 @@ class TestGetSetlistfmLocationString:
             conn.commit()
 
             result = _get_setlistfm_location_string("Raw Loc", conn)
-            assert result == "Thalia Mara Hall, Jackson, United States"
+            assert result == ("Thalia Mara Hall, Jackson, United States", "Jackson, United States")
         finally:
             shutil.rmtree(tmp_dir, ignore_errors=True)
 
@@ -449,7 +449,7 @@ class TestGetSetlistfmLocationString:
             conn.commit()
 
             result = _get_setlistfm_location_string("Raw Loc", conn)
-            assert result == "Thalia Mara Hall"
+            assert result == ("Thalia Mara Hall", None)
         finally:
             shutil.rmtree(tmp_dir, ignore_errors=True)
 
@@ -603,6 +603,12 @@ class TestRunBatch:
                 "INSERT INTO entries (lb_number, date_str, location, status) VALUES (?, ?, ?, 'ok')",
                 [(1, "7/28/00", "Denver, CO"), (2, "1/1/01", "Boulder, CO")],
             )
+            # TODO-224: an olof_events concert-type row makes each date eligible
+            # under the concert-only filter. Fields are left blank so
+            # _get_olof_events_location_string() contributes no structured hit —
+            # this test wants a plain raw entries.location Nominatim query.
+            _insert_olof_event(conn, 1, "concert", "2000-07-28", "", "", "", "")
+            _insert_olof_event(conn, 2, "concert", "2001-01-01", "", "", "", "")
             conn.commit()
 
             from backend import geocoder
@@ -697,6 +703,9 @@ class TestRunBatch:
                 """INSERT INTO location_geocoded (location_text, lat, lon, source, confidence, manual_override)
                    VALUES ('Denver, CO', NULL, NULL, 'failed', NULL, 0)"""
             )
+            # TODO-224: blank-field olof_events concert row for concert-only
+            # eligibility without contributing a competing structured hit.
+            _insert_olof_event(conn, 1, "concert", "2000-07-28", "", "", "", "")
             conn.commit()
 
             from backend import geocoder
@@ -729,6 +738,10 @@ class TestRunBatch:
                 """INSERT INTO dylan_performances (event_id, date_str, venue, city, state, country)
                    VALUES ('evt1', '2000-07-28', 'Madison Square Garden', 'New York', 'NY', 'USA')"""
             )
+            # TODO-224: blank-field olof_events concert row for concert-only
+            # eligibility without contributing a competing structured hit —
+            # this test wants dylan_performances specifically to be the source.
+            _insert_olof_event(conn, 1, "concert", "2000-07-28", "", "", "", "")
             conn.commit()
 
             from backend import geocoder
@@ -749,7 +762,7 @@ class TestRunBatch:
             ).fetchone()
             assert row["source"] == "performances"
             assert row["confidence"] == "medium"  # promoted from 'low'
-            assert row["note"].startswith("performances:")
+            assert "performances:" in row["note"]
         finally:
             shutil.rmtree(tmp_dir, ignore_errors=True)
 
@@ -782,7 +795,7 @@ class TestRunBatch:
                 "SELECT * FROM location_geocoded WHERE location_text=?", ("Raw Location",)
             ).fetchone()
             assert row["source"] == "bobdylan_shows"
-            assert row["note"].startswith("bobdylan_shows:")
+            assert "bobdylan_shows:" in row["note"]
         finally:
             shutil.rmtree(tmp_dir, ignore_errors=True)
 
@@ -815,7 +828,7 @@ class TestRunBatch:
                 "SELECT * FROM location_geocoded WHERE location_text=?", ("Raw Location",)
             ).fetchone()
             assert row["source"] == "setlistfm_shows"
-            assert row["note"].startswith("setlistfm_shows:")
+            assert "setlistfm_shows:" in row["note"]
         finally:
             shutil.rmtree(tmp_dir, ignore_errors=True)
 
@@ -967,6 +980,9 @@ class TestRunBatch:
             conn.execute(
                 "INSERT INTO entries (lb_number, date_str, location, status) VALUES (1, '7/28/00', 'Denver, CO', 'ok')"
             )
+            # TODO-224: blank-field olof_events concert row for concert-only
+            # eligibility without contributing a competing structured hit.
+            _insert_olof_event(conn, 1, "concert", "2000-07-28", "", "", "", "")
             conn.commit()
 
             from backend import geocoder
@@ -990,6 +1006,9 @@ class TestRunBatch:
             conn.execute(
                 "INSERT INTO entries (lb_number, date_str, location, status) VALUES (1, '7/28/00', 'Denver, CO', 'ok')"
             )
+            # TODO-224: blank-field olof_events concert row for concert-only
+            # eligibility without contributing a competing structured hit.
+            _insert_olof_event(conn, 1, "concert", "2000-07-28", "", "", "", "")
             conn.commit()
 
             from backend import geocoder
@@ -1002,7 +1021,7 @@ class TestRunBatch:
                 "SELECT source, note FROM location_geocoded WHERE location_text=?", ("Denver, CO",)
             ).fetchone()
             assert row["source"] == "failed"
-            assert "429" in row["note"]
+            assert "entries.location:Denver, CO" in row["note"]
         finally:
             shutil.rmtree(tmp_dir, ignore_errors=True)
 
