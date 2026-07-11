@@ -654,6 +654,21 @@ CREATE TABLE IF NOT EXISTS olof_events (
 CREATE INDEX IF NOT EXISTS idx_olof_events_date ON olof_events(date_str);
 CREATE INDEX IF NOT EXISTS idx_olof_events_tour ON olof_events(tour_name);
 
+-- one row per performed song / studio take (TODO-162 P3, FABLE_OLOF_FILES.md §4)
+CREATE TABLE IF NOT EXISTS olof_songs (
+    event_id     INTEGER NOT NULL REFERENCES olof_events(event_id) ON DELETE CASCADE,
+    position     INTEGER NOT NULL,
+    song_title   TEXT NOT NULL DEFAULT '',
+    credits      TEXT NOT NULL DEFAULT '',   -- cover writer(s) from parens
+    is_encore    INTEGER NOT NULL DEFAULT 0,
+    take_number  INTEGER,                    -- studio rows only
+    take_status  TEXT NOT NULL DEFAULT '',   -- complete | breakdown | rehearsal | false start | incomplete
+    annotations  TEXT NOT NULL DEFAULT '',   -- 'acoustic w band', 'harmonica', …
+    released_on  TEXT NOT NULL DEFAULT '',   -- release titles resolved from position ranges, '; '-joined
+    PRIMARY KEY (event_id, position)
+);
+CREATE INDEX IF NOT EXISTS idx_olof_songs_title ON olof_songs(song_title);
+
 -- ── Collection trading tables (USER — never exported in master snapshot) ─────
 CREATE TABLE IF NOT EXISTS friend_collections (
     id          INTEGER PRIMARY KEY AUTOINCREMENT,
