@@ -512,10 +512,17 @@ def clean_examples() -> None:
 
 
 def copy_folders(folders: dict[int, Path]) -> None:
+    # Merged folders (e.g. "… (LB-05034 + LB-07279)") map several lb ids to the
+    # same source directory — copy each physical folder only once.
+    copied: set[Path] = set()
     for lb_num, src in sorted(folders.items()):
+        if src in copied:
+            print(f"  Skipping {_lb_tag(lb_num)}: {src.name} (merged folder, already copied)")
+            continue
         dest = EXAMPLES_DIR / src.name
         print(f"  Copying {_lb_tag(lb_num)}: {src.name} …")
         shutil.copytree(str(src), str(dest))
+        copied.add(src)
 
 
 # ── tapematch runner ───────────────────────────────────────────────────────────
