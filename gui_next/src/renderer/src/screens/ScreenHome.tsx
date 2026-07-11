@@ -4,8 +4,13 @@ import { useTranslation } from 'react-i18next'
 import { Icon } from '../components/Icon'
 import { Button, Card, Stat, Pill, IconButton } from '../components'
 import { TableShell, TH, TR, TD } from '../components'
+import { OnboardingWizard, type OnboardingStatus } from '../components/OnboardingWizard'
 
 const BASE = window.api.flaskBase
+
+// sessionStorage flag — "Skip for now" (or Finish) dismisses the auto-popup
+// for the rest of this launch; the Home checklist card remains the resume path.
+const ONBOARDING_DISMISS_KEY = 'lbb_onboarding_dismissed_session'
 
 interface HomeStats {
   collection_count: number
@@ -108,6 +113,28 @@ const TYPE_COLOUR: Record<string, string> = {
   forum:  'var(--lbb-fg3)',
 }
 
+function ChecklistRow({
+  icon, label, actionLabel, onAction,
+}: {
+  icon: string; label: string; actionLabel: string; onAction: () => void
+}) {
+  return (
+    <div style={{
+      display: 'flex', alignItems: 'center', gap: 10, padding: '6px 4px',
+    }}>
+      <span style={{
+        width: 26, height: 26, borderRadius: 7, flexShrink: 0,
+        background: 'var(--lbb-accent-soft)', color: 'var(--lbb-accent-mid)',
+        display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+      }}>
+        <Icon name={icon} size={13} />
+      </span>
+      <span style={{ flex: 1, fontSize: 'var(--lbb-fs-12-5)', color: 'var(--lbb-fg2)' }}>{label}</span>
+      <Button variant="ghost" size="sm" iconRight="chevRight" onClick={onAction}>{actionLabel}</Button>
+    </div>
+  )
+}
+
 export function ScreenHome(): React.JSX.Element {
   const navigate = useNavigate()
   const { t } = useTranslation()
@@ -119,8 +146,42 @@ export function ScreenHome(): React.JSX.Element {
   const [toast,        setToast]        = useState<{ msg: string; tone: ToastTone } | null>(null)
   const [tonightPicks, setTonightPicks] = useState<TonightPick[]>([])
   const [tonightIdx,   setTonightIdx]   = useState(0)
+  const [onboarding,   setOnboarding]   = useState<OnboardingStatus | null>(null)
+  const [wizardOpen,   setWizardOpen]   = useState(false)
+  const [wizardStep,   setWizardStep]   = useState(1)
 
   const showToast = useCallback((msg: string, tone: ToastTone) => setToast({ msg, tone }), [])
+
+  const loadOnboarding = useCallback(() => {
+    fetch(`${BASE}/api/onboarding/status`)
+      .then(r => (r.ok ? r.json() : Promise.reject()))
+      .then((data: OnboardingStatus) => setOnboarding(data))
+      .catch(() => { /* onboarding stays null — checklist/wizard stay hidden */ })
+  }, [])
+
+  useEffect(() => {
+    fetch(`${BASE}/api/onboarding/status`)
+      .then(r => (r.ok ? r.json() : Promise.reject()))
+      .then((data: OnboardingStatus) => {
+        setOnboarding(data)
+        if (data.entries_count === 0 && !sessionStorage.getItem(ONBOARDING_DISMISS_KEY)) {
+          setWizardStep(1)
+          setWizardOpen(true)
+        }
+      })
+      .catch(() => { /* onboarding stays null — checklist/wizard stay hidden */ })
+  }, [])
+
+  const openWizardAt = useCallback((step: number) => {
+    setWizardStep(step)
+    setWizardOpen(true)
+  }, [])
+
+  const handleWizardClose = useCallback(() => {
+    sessionStorage.setItem(ONBOARDING_DISMISS_KEY, '1')
+    setWizardOpen(false)
+    loadOnboarding()
+  }, [loadOnboarding])
 
   useEffect(() => {
     fetch(`${BASE}/api/home/stats`)
@@ -228,6 +289,46 @@ export function ScreenHome(): React.JSX.Element {
           </Button>
         </div>
       </div>
+
+      {/* ── Setup checklist (visible until onboarding is complete) ─────────── */}
+      {onboarding && !onboarding.complete && (
+        <Card title={t('home.setupChecklist.title')} subtitle={t('home.setupChecklist.subtitle')} pad={14} style={{ marginBottom: 18 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+            {!onboarding.master_version && (
+              <ChecklistRow
+                icon="download"
+                label={t('home.setupChecklist.master')}
+                actionLabel={t('home.setupChecklist.openWizard')}
+                onAction={() => openWizardAt(1)}
+              />
+            )}
+            {!onboarding.sitedata_core_present && (
+              <ChecklistRow
+                icon="link"
+                label={t('home.setupChecklist.sitedataCore')}
+                actionLabel={t('home.setupChecklist.openWizard')}
+                onAction={() => openWizardAt(2)}
+              />
+            )}
+            {!onboarding.mounts_configured && (
+              <ChecklistRow
+                icon="mounts"
+                label={t('home.setupChecklist.mounts')}
+                actionLabel={t('home.setupChecklist.goToMounts')}
+                onAction={() => onNav('mounts')}
+              />
+            )}
+            {onboarding.collection_count === 0 && (
+              <ChecklistRow
+                icon="pipeline"
+                label={t('home.setupChecklist.collection')}
+                actionLabel={t('home.setupChecklist.goToPipeline')}
+                onAction={() => onNav('pipeline')}
+              />
+            )}
+          </div>
+        </Card>
+      )}
 
       {/* ── At a glance + Jump to ───────────────────────────────────────────── */}
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18, marginBottom: 18 }}>
@@ -512,6 +613,14 @@ export function ScreenHome(): React.JSX.Element {
       )}
 
       {toast && <Toast msg={toast.msg} tone={toast.tone} onDone={() => setToast(null)} />}
+
+      <OnboardingWizard
+        open={wizardOpen}
+        initialStep={wizardStep}
+        status={onboarding}
+        onClose={handleWizardClose}
+        onStatusRefresh={loadOnboarding}
+      />
     </div>
   )
 }

@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
-import { Button, Chip, Pill, Card, SectionHead, Toolbar, Input } from '../components'
+import { useTranslation } from 'react-i18next'
+import { Button, Chip, Pill, Card, SectionHead, Toolbar, Input, Banner } from '../components'
 import { TableShell, TH, TR, TD } from '../components'
 import { Icon } from '../components/Icon'
 import { useScraperLogStore } from '../lib/scraperLogStore'
@@ -881,6 +882,7 @@ const TABS: { id: TabId; label: string }[] = [
 ]
 
 function ScreenScraperInner() {
+  const { t } = useTranslation()
   const [activeTab, setActiveTab] = useState<TabId>('crawler')
 
   // All statuses
@@ -1104,6 +1106,11 @@ function ScreenScraperInner() {
   return (
     <>
       <div style={{ display: 'flex', flexDirection: 'column', height: '100%', minHeight: 0 }}>
+
+        {/* Curator-only note (spec §6: end users get scraped data via master + site-data releases) */}
+        <div style={{ padding: '10px 16px 0', flexShrink: 0 }}>
+          <Banner tone="info" icon="info">{t('scraper.curatorNote')}</Banner>
+        </div>
 
         {/* Status Strip */}
         <div style={{

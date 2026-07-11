@@ -28,3 +28,6 @@ export { FolderQueueRail } from './FolderQueueRail'
 
 export { EvidenceList } from './EvidenceList'
 export type { EvidenceListProps, EvidenceRecord } from './EvidenceList'
+
+export { OnboardingWizard } from './OnboardingWizard'
+export type { OnboardingWizardProps, OnboardingStatus } from './OnboardingWizard'

@@ -125,6 +125,17 @@
     "tonight": {
       "title": "Esta noche en la historia de Dylan",
       "shuffle": "Mostrar otra selección"
+    },
+    "setupChecklist": {
+      "title": "Finalizar la configuración",
+      "subtitle": "Retoma donde lo dejaste",
+      "master": "Instalar la base de datos principal",
+      "sitedataCore": "Instalar páginas web almacenadas en caché",
+      "mounts": "Añadir un montaje de colección",
+      "collection": "Escanea tu colección",
+      "openWizard": "Abrir",
+      "goToMounts": "Ir a «Mounts»",
+      "goToPipeline": "Ir a Pipeline"
     }
   },
   "lookup": {
@@ -979,7 +990,8 @@
       "applying": "Aplicando…",
       "applyConfirmTitle": "¿Aplicar la actualización?",
       "applyConfirmBody": "¿Aplicar {{filename}} a tu base de datos?\n\n+{{added}} añadido, ~{{changed}} modificado, -{{removed}} eliminado.\n\nPrimero se realiza automáticamente una copia de seguridad.",
-      "applyDone": "Actualización aplicada: se ha añadido +{{added}}, se ha modificado ~{{changed}} y se ha eliminado -{{removed}}."
+      "applyDone": "Actualización aplicada: se ha añadido +{{added}}, se ha modificado ~{{changed}} y se ha eliminado -{{removed}}.",
+      "desc": "Pequeñas actualizaciones incrementales que mantienen tu base de datos al día entre sincronizaciones principales. No forman parte de la configuración inicial; compruébalas mensualmente."
     },
     "toast": {
       "dataFolderUnavailable": "Ruta de carpeta de datos no disponible",
@@ -1675,5 +1687,55 @@
       "flagged": "Marcado",
       "none": "Aún no se ha escrito ningún archivo «analysis.md» para esta ejecución."
     }
+  },
+  "onboarding": {
+    "stepLabel": "Paso {{n}} de 4",
+    "skip": "Saltar por ahora",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "finish": "Finalizar",
+    "step1": {
+      "title": "Descargar el conjunto de datos",
+      "desc": "Descarga la base de datos maestra de sumas de comprobación: el catálogo principal de LB en el que se basa esta aplicación.",
+      "checking": "Comprobando si hay una versión más reciente…",
+      "noRelease": "No se ha encontrado ninguna versión principal.",
+      "version": "Versión",
+      "published": "Publicado",
+      "size": "Tamaño",
+      "install": "Descargar e instalar",
+      "installing": "Instalando…",
+      "installed": "Base de datos principal instalada."
+    },
+    "step2": {
+      "title": "Páginas web almacenadas en caché",
+      "desc": "Acelera las búsquedas instalando páginas web ya extraídas, de modo que la aplicación no tenga que acceder a losslessbob.com para cada entrada.",
+      "checking": "Comprobando si hay nuevas versiones de los datos del sitio…",
+      "noRelease": "No se ha encontrado ninguna publicación de datos del sitio.",
+      "core": "Páginas principales",
+      "coreDesc": "Recomendado: páginas de detalles de entradas utilizadas en toda la aplicación.",
+      "files": "Listas de archivos",
+      "filesDesc": "Opcional: páginas con el listado completo de archivos y archivos adjuntos ({{size}}).",
+      "install": "Instalar los seleccionados",
+      "installing": "Instalando…",
+      "installed": "Datos del sitio instalados."
+    },
+    "step3": {
+      "title": "Tu colección",
+      "desc": "Selecciona en la aplicación las carpetas donde tienes tus grabaciones y, a continuación, ejecuta un análisis para compararlas con la base de datos principal.",
+      "addMount": "Añadir un dispositivo montado…",
+      "goPipeline": "Ir a Pipeline…"
+    },
+    "step4": {
+      "title": "Hecho",
+      "desc": "Esto es lo que se ha configurado. Puedes volver a revisar cualquiera de estos elementos más tarde desde «Configuración» o la lista de comprobación de la página de inicio.",
+      "summaryMaster": "Base de datos principal",
+      "summarySitedataCore": "Páginas web almacenadas en caché",
+      "summaryMounts": "Montajes de colecciones configurados",
+      "recomputing": "Rectificando… — Recalculando los datos derivados…",
+      "recomputeDone": "Todo listo."
+    }
+  },
+  "scraper": {
+    "curatorNote": "Los usuarios finales obtienen datos extraídos a través de las versiones «master» y «site-data»; la extracción de datos está destinada a los curadores."
   }
 }

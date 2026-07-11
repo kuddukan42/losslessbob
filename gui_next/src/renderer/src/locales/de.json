@@ -125,6 +125,17 @@
     "tonight": {
       "title": "Heute Abend in der Dylan-Geschichte",
       "shuffle": "Eine weitere Auswahl anzeigen"
+    },
+    "setupChecklist": {
+      "title": "Einrichtung abschließen",
+      "subtitle": "Machen Sie dort weiter, wo Sie aufgehört haben",
+      "master": "Installieren Sie die Master-Datenbank",
+      "sitedataCore": "Zwischengespeicherte Seiten der Website installieren",
+      "mounts": "Sammlung einbinden",
+      "collection": "Scannen Sie Ihre Sammlung",
+      "openWizard": "Öffnen",
+      "goToMounts": "Weiter zu „Mounts“",
+      "goToPipeline": "Zur Pipeline"
     }
   },
   "lookup": {
@@ -979,7 +990,8 @@
       "applying": "Wird angewendet…",
       "applyConfirmTitle": "Aktualisierung anwenden?",
       "applyConfirmBody": "{{filename}} auf Ihre Datenbank anwenden?\n\n+{{added}} hinzugefügt, ~{{changed}} geändert, -{{removed}} entfernt.\n\nZunächst wird automatisch eine Sicherungskopie erstellt.",
-      "applyDone": "Aktualisierung durchgeführt: +{{added}} hinzugefügt, ~{{changed}} geändert, -{{removed}} entfernt."
+      "applyDone": "Aktualisierung durchgeführt: +{{added}} hinzugefügt, ~{{changed}} geändert, -{{removed}} entfernt.",
+      "desc": "Kleine inkrementelle Updates, die Ihre Datenbank zwischen den Hauptsynchronisierungen auf dem neuesten Stand halten. Nicht Teil der Ersteinrichtung – schauen Sie monatlich wieder vorbei."
     },
     "toast": {
       "dataFolderUnavailable": "Datenordnerpfad nicht verfügbar",
@@ -1675,5 +1687,55 @@
       "flagged": "Markiert",
       "none": "Für diesen Durchlauf wurde noch keine „analysis.md“-Datei erstellt."
     }
+  },
+  "onboarding": {
+    "stepLabel": "Schritt {{n}} von 4",
+    "skip": "Vorerst überspringen",
+    "back": "Zurück",
+    "next": "Weiter",
+    "finish": "Fertig",
+    "step1": {
+      "title": "Datenbestand herunterladen",
+      "desc": "Laden Sie die Master-Prüfsummen-Datenbank herunter – den zentralen LB-Katalog, auf dem diese App basiert.",
+      "checking": "Suche nach der neuesten Version…",
+      "noRelease": "Es wurde keine Master-Version gefunden.",
+      "version": "Version",
+      "published": "Veröffentlicht",
+      "size": "Größe",
+      "install": "Herunterladen und installieren",
+      "installing": "Wird installiert…",
+      "installed": "Master-Datenbank installiert."
+    },
+    "step2": {
+      "title": "Zwischengespeicherte Webseiten",
+      "desc": "Beschleunigen Sie die Suche, indem Sie vorab heruntergeladene Webseiten installieren, sodass die App nicht für jeden Eintrag losslessbob.com abfragen muss.",
+      "checking": "Prüfung auf Veröffentlichungen von Website-Daten…",
+      "noRelease": "Es wurden keine veröffentlichten Website-Daten gefunden.",
+      "core": "Kernseiten",
+      "coreDesc": "Empfohlen – Detailseiten für Einträge, die in der gesamten App verwendet werden.",
+      "files": "Dateilisten",
+      "filesDesc": "Optional – Seiten mit vollständiger Auflistung der Anhänge/Dateien ({{size}}).",
+      "install": "Ausgewählte installieren",
+      "installing": "Wird installiert…",
+      "installed": "Website-Daten installiert."
+    },
+    "step3": {
+      "title": "Ihre Sammlung",
+      "desc": "Weisen Sie der App Ihre Aufnahmeordner zu und führen Sie anschließend einen Scan durch, um diese mit der Master-Datenbank abzugleichen.",
+      "addMount": "Ein Laufwerk einbinden…",
+      "goPipeline": "Zur Pipeline…"
+    },
+    "step4": {
+      "title": "Erledigt",
+      "desc": "Das wurde eingerichtet. Sie können all dies später über „Einrichtung“ oder die Checkliste auf der Startseite erneut aufrufen.",
+      "summaryMaster": "Stammdatenbank",
+      "summarySitedataCore": "Zwischengespeicherte Webseiten",
+      "summaryMounts": "Konfigurierte Sammlungs-Mounts",
+      "recomputing": "Abschluss — Neuberechnung abgeleiteter Daten…",
+      "recomputeDone": "Alles fertig."
+    }
+  },
+  "scraper": {
+    "curatorNote": "Endnutzer erhalten die gesammelten Daten über Master- und Standortdaten-Veröffentlichungen; das Sammeln der Daten ist Aufgabe der Kuratoren."
   }
 }
