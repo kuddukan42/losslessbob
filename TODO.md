@@ -622,17 +622,6 @@ Description: Add a view or filter on gui_next/src/renderer/src/screens/ScreenCol
   should route to, or resolves to no configured mount at all. Lets the user spot folders
   that drifted to a nonstandard location instead of finding them by accident.
 
-TODO-162: Add Olof's Files database table + scrape show/tour info into it
-Priority: Medium
-Status: Open
-Added: 2026-06-22
-Description: Add a new DB table for Olof's Files (Dylan tour/setlist archive) data, modeled
-  on the existing setlistfm_shows table (backend/db.py:533-541), and a new scraper module
-  (alongside backend/bobdylan_scraper.py and backend/site_crawler.py) to pull show and tour
-  info from olofsfiles.com into it. This is a candidate secondary source for the tour-name
-  gaps tracked in TODO-153 — setlist.fm's tour_name field is empty for a large share of
-  dates, and Olof's Files may have better/more complete tour coverage.
-
 TODO-160: Revamp curator mode — consolidate options and hide existence from normal users
 Priority: Medium
 Status: Open
@@ -713,18 +702,6 @@ Description: Add a new database field to capture "r####"-style source info seen 
   which table it belongs on (likely tied to the recording/LB record or a per-file source
   table) and what the r#### value actually identifies (taper/source catalog id) before
   implementing.
-
-TODO-153: Library/perf screen — backfill good tour names across all dates
-Priority: Medium
-Status: Open
-Added: 2026-06-22
-Description: The Library screen's tour column (gui_next/src/renderer/src/screens/ScreenLibrary.tsx,
-  `p.tour`) is sourced from setlistfm_shows.tour_name joined onto dylan_performances in
-  backend/db.py:2121-2206 (tours dict keyed by date_str, applied at line 2204-2206). tour_name is
-  empty for a large share of dates, so the column is blank for most performances. Need a way to
-  pull/derive good tour names across all dates — likely requires either a better/secondary tour
-  data source beyond setlist.fm, or a manual/heuristic backfill (e.g. date-range-based tour
-  era tagging) for shows setlist.fm doesn't have tour info for.
 
 TODO-136: Post editor form for existing WTRF posts
 Priority: Low
