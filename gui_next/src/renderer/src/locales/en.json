@@ -125,6 +125,17 @@
       "newRelease": "New release available: {{filename}}",
       "upToDate": "Already up to date.",
       "checkFailed": "Check failed: {{message}}"
+    },
+    "setupChecklist": {
+      "title": "Finish setup",
+      "subtitle": "Pick up where you left off",
+      "master": "Install the master database",
+      "sitedataCore": "Install cached site pages",
+      "mounts": "Add a collection mount",
+      "collection": "Scan your collection",
+      "openWizard": "Open",
+      "goToMounts": "Go to Mounts",
+      "goToPipeline": "Go to Pipeline"
     }
   },
   "lookup": {
@@ -962,7 +973,8 @@
       "restoreBtn": "Restore from zip…"
     },
     "flatFile": {
-      "title": "Flat file history",
+      "title": "Monthly update",
+      "desc": "Small incremental releases that keep your database current between master syncs. Not part of first-run setup — check back monthly.",
       "colDetected": "Detected",
       "colFilename": "Filename",
       "colStatus": "Status",
@@ -1675,5 +1687,55 @@
       "flagged": "Flagged",
       "none": "No analysis.md written for this run yet."
     }
+  },
+  "onboarding": {
+    "stepLabel": "Step {{n}} of 4",
+    "skip": "Skip for now",
+    "back": "Back",
+    "next": "Next",
+    "finish": "Finish",
+    "step1": {
+      "title": "Get the dataset",
+      "desc": "Download the master checksum database — the core LB catalog this app is built around.",
+      "checking": "Checking for the latest release…",
+      "noRelease": "No master release found.",
+      "version": "Version",
+      "published": "Published",
+      "size": "Size",
+      "install": "Download & install",
+      "installing": "Installing…",
+      "installed": "Master database installed."
+    },
+    "step2": {
+      "title": "Cached site pages",
+      "desc": "Speed up lookups by installing pre-scraped site pages, so the app doesn't need to hit losslessbob.com for every entry.",
+      "checking": "Checking for site-data releases…",
+      "noRelease": "No site-data release found.",
+      "core": "Core pages",
+      "coreDesc": "Recommended — entry detail pages used throughout the app.",
+      "files": "File listings",
+      "filesDesc": "Optional — full attachment/file listing pages ({{size}}).",
+      "install": "Install selected",
+      "installing": "Installing…",
+      "installed": "Site data installed."
+    },
+    "step3": {
+      "title": "Your collection",
+      "desc": "Point the app at your recording folders, then run a scan to match them against the master database.",
+      "addMount": "Add a mount…",
+      "goPipeline": "Go to Pipeline…"
+    },
+    "step4": {
+      "title": "Done",
+      "desc": "Here's what got set up. You can revisit any of this later from Setup or the Home checklist.",
+      "summaryMaster": "Master database",
+      "summarySitedataCore": "Cached site pages",
+      "summaryMounts": "Collection mounts configured",
+      "recomputing": "Finishing up — recomputing derived data…",
+      "recomputeDone": "All set."
+    }
+  },
+  "scraper": {
+    "curatorNote": "End users get scraped data via master + site-data releases; scraping is for curators."
   }
 }

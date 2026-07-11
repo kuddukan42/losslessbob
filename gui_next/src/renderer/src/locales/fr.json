@@ -125,6 +125,17 @@
     "tonight": {
       "title": "Ce soir dans l'histoire de Dylan",
       "shuffle": "Afficher une autre sélection"
+    },
+    "setupChecklist": {
+      "title": "Terminer la configuration",
+      "subtitle": "Reprenez là où vous vous êtes arrêté",
+      "master": "Installer la base de données principale",
+      "sitedataCore": "Installer les pages mises en cache du site",
+      "mounts": "Ajouter un montage de collection",
+      "collection": "Numérisez votre collection",
+      "openWizard": "Ouvrir",
+      "goToMounts": "Aller à « Mounts »",
+      "goToPipeline": "Aller à Pipeline"
     }
   },
   "lookup": {
@@ -979,7 +990,8 @@
       "applying": "Application en cours…",
       "applyConfirmTitle": "Appliquer la mise à jour ?",
       "applyConfirmBody": "Appliquer {{filename}} à votre base de données ?\n\n+{{added}} ajouté, ~{{changed}} modifié, -{{removed}} supprimé.\n\nUne sauvegarde est d'abord effectuée automatiquement.",
-      "applyDone": "Mise à jour appliquée : +{{added}} ajouté, ~{{changed}} modifié, -{{removed}} supprimé."
+      "applyDone": "Mise à jour appliquée : +{{added}} ajouté, ~{{changed}} modifié, -{{removed}} supprimé.",
+      "desc": "Petites mises à jour incrémentielles qui maintiennent votre base de données à jour entre les synchronisations principales. Ne font pas partie de la configuration initiale — revenez vérifier chaque mois."
     },
     "toast": {
       "dataFolderUnavailable": "Le chemin du dossier de données n'est pas disponible",
@@ -1675,5 +1687,55 @@
       "flagged": "Signalé",
       "none": "Aucun fichier « analysis.md » n'a encore été rédigé pour cette exécution."
     }
+  },
+  "onboarding": {
+    "stepLabel": "Étape {{n}} sur 4",
+    "skip": "Passer pour l'instant",
+    "back": "Retour",
+    "next": "Suivant",
+    "finish": "Terminer",
+    "step1": {
+      "title": "Télécharger le jeu de données",
+      "desc": "Téléchargez la base de données principale des sommes de contrôle — le catalogue LB central sur lequel repose cette application.",
+      "checking": "Vérification de la dernière version…",
+      "noRelease": "Aucune version principale trouvée.",
+      "version": "Version",
+      "published": "Publié",
+      "size": "Taille",
+      "install": "Télécharger et installer",
+      "installing": "Installation en cours…",
+      "installed": "Base de données principale installée."
+    },
+    "step2": {
+      "title": "Pages de site mises en cache",
+      "desc": "Accélérez les recherches en installant des pages du site préalablement extraites, afin que l'application n'ait pas besoin de se connecter à losslessbob.com pour chaque entrée.",
+      "checking": "Vérification des mises à jour des données du site…",
+      "noRelease": "Aucune publication de données relatives au site n'a été trouvée.",
+      "core": "Pages principales",
+      "coreDesc": "Recommandé — pages de détails des entrées utilisées dans toute l'application.",
+      "files": "Listes de fichiers",
+      "filesDesc": "Facultatif — pages présentant la liste complète des pièces jointes/fichiers ({{size}}).",
+      "install": "Installer la sélection",
+      "installing": "Installation en cours…",
+      "installed": "Données du site installées."
+    },
+    "step3": {
+      "title": "Votre collection",
+      "desc": "Indiquez à l'application l'emplacement de vos dossiers d'enregistrements, puis lancez une analyse pour les comparer à la base de données principale.",
+      "addMount": "Ajouter un montage…",
+      "goPipeline": "Aller au pipeline…"
+    },
+    "step4": {
+      "title": "Terminé",
+      "desc": "Voici ce qui a été configuré. Vous pouvez revenir sur n'importe lequel de ces éléments ultérieurement depuis la section « Configuration » ou la liste de contrôle de la page d'accueil.",
+      "summaryMaster": "Base de données principale",
+      "summarySitedataCore": "Pages de site mises en cache",
+      "summaryMounts": "Montages de collections configurés",
+      "recomputing": "En cours de finalisation — recalcul des données dérivées…",
+      "recomputeDone": "Tout est prêt."
+    }
+  },
+  "scraper": {
+    "curatorNote": "Les utilisateurs finaux reçoivent les données extraites via les versions « master » et « site-data » ; l'extraction des données est réservée aux conservateurs."
   }
 }

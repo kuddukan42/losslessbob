@@ -1738,6 +1738,11 @@ const [dbStats, setDbStats] = useState<DbStats | null>(null)
 
           {/* ── Flat file history ── */}
           <SetupCard title={t('setup.flatFile.title')} style={{ gridColumn: 'span 2' }}>
+            <p style={{
+              margin: '-4px 0 12px', fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)', lineHeight: 1.5,
+            }}>
+              {t('setup.flatFile.desc')}
+            </p>
             <div style={{ overflowX: 'auto' }}>
               <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 'var(--lbb-fs-12)' }}>
                 <thead>

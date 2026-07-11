@@ -125,6 +125,17 @@
     "tonight": {
       "title": "Vanavond in de geschiedenis van Dylan",
       "shuffle": "Een andere selectie weergeven"
+    },
+    "setupChecklist": {
+      "title": "Installatie voltooien",
+      "subtitle": "Ga verder waar je was gebleven",
+      "master": "Installeer de masterdatabase",
+      "sitedataCore": "Gecacheerde webpagina’s installeren",
+      "mounts": "Een verzameling koppelen",
+      "collection": "Scan je collectie",
+      "openWizard": "Open",
+      "goToMounts": "Ga naar Mounts",
+      "goToPipeline": "Ga naar Pipeline"
     }
   },
   "lookup": {
@@ -979,7 +990,8 @@
       "applying": "Wordt toegepast…",
       "applyConfirmTitle": "Update toepassen?",
       "applyConfirmBody": "{{filename}} toepassen op uw database?\n\n+{{added}} toegevoegd, ~{{changed}} gewijzigd, -{{removed}} verwijderd.\n\nEr wordt eerst automatisch een back-up gemaakt.",
-      "applyDone": "Update toegepast: +{{added}} toegevoegd, ~{{changed}} gewijzigd, -{{removed}} verwijderd."
+      "applyDone": "Update toegepast: +{{added}} toegevoegd, ~{{changed}} gewijzigd, -{{removed}} verwijderd.",
+      "desc": "Kleine incrementele releases die uw database up-to-date houden tussen de hoofdsynchronisaties door. Maakt geen deel uit van de eerste installatie — kom maandelijks even terug."
     },
     "toast": {
       "dataFolderUnavailable": "Pad gegevensmap niet beschikbaar",
@@ -1675,5 +1687,55 @@
       "flagged": "Gemarkeerd",
       "none": "Er is voor deze run nog geen analysis.md geschreven."
     }
+  },
+  "onboarding": {
+    "stepLabel": "Stap {{n}} van 4",
+    "skip": "Voorlopig overslaan",
+    "back": "Terug",
+    "next": "Volgende",
+    "finish": "Voltooien",
+    "step1": {
+      "title": "Download de dataset",
+      "desc": "Download de master-checksumdatabase — de kern van de LB-catalogus waarop deze app is gebaseerd.",
+      "checking": "Controleren of er een nieuwere versie beschikbaar is…",
+      "noRelease": "Er is geen hoofdversie gevonden.",
+      "version": "Versie",
+      "published": "Gepubliceerd",
+      "size": "Grootte",
+      "install": "Downloaden en installeren",
+      "installing": "Bezig met installeren…",
+      "installed": "Hoofddatabase geïnstalleerd."
+    },
+    "step2": {
+      "title": "In de cache opgeslagen webpagina’s",
+      "desc": "Versnel het opzoeken van gegevens door vooraf gedownloade webpagina's te installeren, zodat de app niet voor elk item een verzoek naar losslessbob.com hoeft te sturen.",
+      "checking": "Controleren of er nieuwe sitegegevens zijn vrijgegeven…",
+      "noRelease": "Er zijn geen gepubliceerde sitegegevens gevonden.",
+      "core": "Belangrijkste pagina’s",
+      "coreDesc": "Aanbevolen — detailpagina’s van items die overal in de app worden gebruikt.",
+      "files": "Bestandslijsten",
+      "filesDesc": "Optioneel — volledige pagina's met bijlagen/bestandenlijsten ({{size}}).",
+      "install": "Geselecteerde installeren",
+      "installing": "Bezig met installeren…",
+      "installed": "Sitegegevens geïnstalleerd."
+    },
+    "step3": {
+      "title": "Je verzameling",
+      "desc": "Wijs de app naar uw opnamemappen en voer vervolgens een scan uit om deze te vergelijken met de hoofddatabase.",
+      "addMount": "Een mount toevoegen…",
+      "goPipeline": "Ga naar Pipeline…"
+    },
+    "step4": {
+      "title": "Klaar",
+      "desc": "Dit is wat er is ingesteld. Je kunt dit later allemaal nog eens bekijken via ‘Instellingen’ of de checklist op de startpagina.",
+      "summaryMaster": "Hoofddatabase",
+      "summarySitedataCore": "In de cache opgeslagen webpagina’s",
+      "summaryMounts": "Geconfigureerde collectiemounts",
+      "recomputing": "De laatste hand leggen — afgeleide gegevens opnieuw berekenen…",
+      "recomputeDone": "Alles is klaar."
+    }
+  },
+  "scraper": {
+    "curatorNote": "Eindgebruikers ontvangen gescrapte gegevens via releases van master- en site-data; het scrapen is voorbehouden aan curatoren."
   }
 }

@@ -125,6 +125,17 @@
     "tonight": {
       "title": "Stasera nella storia di Dylan",
       "shuffle": "Mostra un'altra selezione"
+    },
+    "setupChecklist": {
+      "title": "Completa la configurazione",
+      "subtitle": "Riprendi da dove avevi interrotto",
+      "master": "Installare il database principale",
+      "sitedataCore": "Installa le pagine del sito memorizzate nella cache",
+      "mounts": "Aggiungi un montaggio della raccolta",
+      "collection": "Scansiona la tua collezione",
+      "openWizard": "Apri",
+      "goToMounts": "Vai a Mounts",
+      "goToPipeline": "Vai a Pipeline"
     }
   },
   "lookup": {
@@ -979,7 +990,8 @@
       "applying": "Applicazione in corso…",
       "applyConfirmTitle": "Applicare l'aggiornamento?",
       "applyConfirmBody": "Applicare {{filename}} al proprio database?\n\n+{{added}} aggiunto, ~{{changed}} modificato, -{{removed}} rimosso.\n\nViene prima eseguito automaticamente un backup.",
-      "applyDone": "Aggiornamento applicato: +{{added}} aggiunto, ~{{changed}} modificato, -{{removed}} rimosso."
+      "applyDone": "Aggiornamento applicato: +{{added}} aggiunto, ~{{changed}} modificato, -{{removed}} rimosso.",
+      "desc": "Piccole versioni incrementali che mantengono aggiornato il database tra una sincronizzazione principale e l’altra. Non fanno parte della configurazione iniziale — ricontrolla ogni mese."
     },
     "toast": {
       "dataFolderUnavailable": "Percorso della cartella dati non disponibile",
@@ -1675,5 +1687,55 @@
       "flagged": "Contrassegnato",
       "none": "Non è stato ancora scritto alcun file analysis.md per questa esecuzione."
     }
+  },
+  "onboarding": {
+    "stepLabel": "Fase {{n}} di 4",
+    "skip": "Salta per ora",
+    "back": "Indietro",
+    "next": "Avanti",
+    "finish": "Fine",
+    "step1": {
+      "title": "Scarica il set di dati",
+      "desc": "Scarica il database dei checksum principale — il catalogo LB principale su cui si basa questa app.",
+      "checking": "Verifica della versione più recente…",
+      "noRelease": "Nessuna versione principale trovata.",
+      "version": "Versione",
+      "published": "Pubblicato",
+      "size": "Dimensioni",
+      "install": "Scarica e installa",
+      "installing": "Installazione in corso…",
+      "installed": "Database principale installato."
+    },
+    "step2": {
+      "title": "Pagine del sito memorizzate nella cache",
+      "desc": "Accelerare le ricerche installando pagine del sito già scaricate in precedenza, in modo che l’app non debba collegarsi a losslessbob.com per ogni voce.",
+      "checking": "Verifica della disponibilità di nuovi dati del sito…",
+      "noRelease": "Non sono stati trovati dati relativi al sito.",
+      "core": "Pagine principali",
+      "coreDesc": "Consigliato: pagine di dettaglio delle voci utilizzate in tutta l’app.",
+      "files": "Elenchi di file",
+      "filesDesc": "Opzionale — pagine con l'elenco completo degli allegati/file ({{size}}).",
+      "install": "Installa quelli selezionati",
+      "installing": "Installazione in corso…",
+      "installed": "Dati del sito installati."
+    },
+    "step3": {
+      "title": "La tua raccolta",
+      "desc": "Indica all’app le tue cartelle di registrazioni, quindi avvia una scansione per confrontarle con il database principale.",
+      "addMount": "Aggiungi un volume…",
+      "goPipeline": "Vai a Pipeline…"
+    },
+    "step4": {
+      "title": "Fatto",
+      "desc": "Ecco cosa è stato configurato. Puoi rivedere qualsiasi di queste impostazioni in un secondo momento dalla sezione «Configurazione» o dalla checklist della pagina iniziale.",
+      "summaryMaster": "Database principale",
+      "summarySitedataCore": "Pagine del sito memorizzate nella cache",
+      "summaryMounts": "Configurazione dei mount delle raccolte",
+      "recomputing": "In fase di completamento — ricalcolo dei dati derivati…",
+      "recomputeDone": "Tutto pronto."
+    }
+  },
+  "scraper": {
+    "curatorNote": "Gli utenti finali ottengono i dati raccolti tramite le versioni master e site-data; la raccolta dei dati è riservata ai curatori."
   }
 }
