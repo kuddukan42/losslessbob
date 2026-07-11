@@ -5794,6 +5794,23 @@ def create_app() -> Flask:
         t.start()
         return jsonify({"status": "started"})
 
+    @app.route("/api/geocode/stop", methods=["POST"])
+    def api_geocode_stop():
+        """Signal the active geocode batch to stop; mirrors /api/bobdylan/stop.
+
+        Returns:
+            The current _geocoder._progress dict (with stop_requested=True
+            once the flag is set) or 503 if the geocoder module is
+            unavailable.
+        """
+        try:
+            import backend.geocoder as _geocoder
+        except ImportError:
+            return jsonify({"error": "geocoder module not available"}), 503
+
+        _geocoder.stop()
+        return jsonify(_geocoder.get_progress())
+
     @app.route("/api/geocode/status")
     def api_geocode_status():
         """Return current geocode batch progress dict.
@@ -5813,7 +5830,8 @@ def create_app() -> Flask:
 
         Returns:
             JSON dict with keys: total_cached, geocoded, failed, manual,
-            entries_total, entries_covered, pct_covered.
+            skipped (TODO-221 source='skipped_not_concert', excluded from
+            failed), entries_total, entries_covered, pct_covered.
         """
         try:
             conn = database.get_connection()
@@ -5821,8 +5839,12 @@ def create_app() -> Flask:
                 SELECT
                     COUNT(*)                                                   AS total_cached,
                     COALESCE(SUM(CASE WHEN lat IS NOT NULL THEN 1 ELSE 0 END), 0) AS geocoded,
-                    COALESCE(SUM(CASE WHEN lat IS NULL     THEN 1 ELSE 0 END), 0) AS failed,
-                    COALESCE(SUM(CASE WHEN manual_override = 1 THEN 1 ELSE 0 END), 0) AS manual
+                    COALESCE(SUM(CASE WHEN lat IS NULL
+                                       AND source != 'skipped_not_concert'
+                                  THEN 1 ELSE 0 END), 0)                       AS failed,
+                    COALESCE(SUM(CASE WHEN manual_override = 1 THEN 1 ELSE 0 END), 0) AS manual,
+                    COALESCE(SUM(CASE WHEN source = 'skipped_not_concert'
+                                  THEN 1 ELSE 0 END), 0)                       AS skipped
                 FROM location_geocoded
             """).fetchone()
             cov = conn.execute("""
