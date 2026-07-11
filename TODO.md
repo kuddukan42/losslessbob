@@ -32,12 +32,6 @@ Status: Open
 Added: 2026-07-10
 Description: Nominatim free-text is weak on venue names (especially historic/renamed venues). Improvements, cheapest first: (1) setlist.fm API already returns venue.city.coords.lat/long (and venue.city.stateCode) in every setlist response — backend/setlistfm.py currently discards them and setlistfm_shows has no coord columns. Add city_lat/city_lon (+ state) columns (PRAGMA table_info guard per repo SQLite rules), store on scrape, backfill via one re-scrape or the API. Gives a guaranteed city-level coordinate with zero geocoding. (2) Two-step venue lookup: geocode/lookup the city first (from setlist.fm coords or Nominatim), then re-query Nominatim for the bare venue name with viewbox=<~30km box around city>&bounded=1 — venue-name hit rate improves dramatically when spatially constrained. (3) Optional last resort for famous venues: Wikidata SPARQL (P625 coordinate) by venue label. Fold into the TODO-220 cascade: bobdylan venue string -> bounded venue search near city -> setlist.fm city coords (confidence=medium, source='setlistfm_city') -> city string geocode. Respect Nominatim 1 req/s throughout; setlist.fm API needs the existing API key + its own rate limit.
 
-TODO-215: TapeMatch screen v2 — pair corrections, run management, LB deep-links
-Priority: Medium
-Status: Open
-Added: 2026-07-10
-Description: Remainder of the original TODO-170 wish list deferred from screen v1 (2026-07-10): (1) curator feedback on a match — matrix-cell action writing human_judgment/human_notes back into tools/tapematch/observations.db pairs; (2) kick off/manage TapeMatch runs from the screen (start/stop wrapping tools/tapematch/crawl_start.sh|crawl_stop.sh; the status readout already exists via GET /api/tapematch/crawl/status); (3) LB deep-links from matrix/family chips into the Library DetailPanel — needs an in-app deep-link mechanism first (ScreenSearch never consumes ScreenBootlegs' /search?lb= param; fix or add a Library equivalent).
-
 TODO-214: TAPER phase 3 — Layer 2 token-profile fingerprints (inferred tier)
 Priority: Low
 Status: Open

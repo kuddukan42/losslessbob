@@ -137,7 +137,25 @@ function panelAsideStyle(width: number): React.CSSProperties {
     borderRadius: 'var(--sep-radius, 0px)',
     boxShadow: 'var(--sep-detail-shadow, none)',
     display: 'flex', flexDirection: 'column', minHeight: 0, overflow: 'hidden',
+    position: 'relative',
   }
+}
+
+// Drag handle on the panel's left edge — lets the user widen it when its fixed
+// default width clips content (e.g. the tab strip growing past ~5 tabs).
+function ResizeHandle({ onResizeStart }: { onResizeStart: (e: React.MouseEvent) => void }) {
+  return (
+    <div
+      onMouseDown={e => { e.preventDefault(); onResizeStart(e) }}
+      style={{
+        position: 'absolute', left: 0, top: 0, bottom: 0, width: 6,
+        cursor: 'col-resize', zIndex: 1,
+        borderLeft: '2px solid transparent',
+      }}
+      onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.borderLeftColor = 'var(--lbb-border2)' }}
+      onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.borderLeftColor = 'transparent' }}
+    />
+  )
 }
 
 // Collapsed stub — 40px wide with single info icon (matches prototype collapsed state)
@@ -1307,6 +1325,7 @@ function TabStrip({ tabs, active, onChange }: { tabs: PanelTab[]; active: string
     <div style={{
       display: 'flex', gap: 2, padding: '6px 10px 0',
       borderBottom: '1px solid var(--lbb-border)', flexShrink: 0,
+      overflowX: 'auto', overflowY: 'hidden',
     }}>
       {tabs.map(tab => {
         const on = tab.id === active
@@ -1349,7 +1368,7 @@ function TabStrip({ tabs, active, onChange }: { tabs: PanelTab[]; active: string
 
 // ── Recording detail panel ──────────────────────────────────────────────────
 
-export function RecordingDetailPanel({ row, history, attachCount, actionHandlers, openMenu, onClose, open = true, onToggle, width = 380 }: {
+export function RecordingDetailPanel({ row, history, attachCount, actionHandlers, openMenu, onClose, open = true, onToggle, width = 380, onResizeStart }: {
   row: DetailRow | null
   history: RowHistory | undefined
   attachCount: number | undefined
@@ -1359,6 +1378,7 @@ export function RecordingDetailPanel({ row, history, attachCount, actionHandlers
   open?: boolean
   onToggle?: () => void
   width?: number
+  onResizeStart?: (e: React.MouseEvent) => void
 }) {
   const { t } = useTranslation()
   const toggle = onToggle ?? onClose
@@ -1376,6 +1396,7 @@ export function RecordingDetailPanel({ row, history, attachCount, actionHandlers
   if (!row) {
     return (
       <aside style={panelAsideStyle(width)} data-panel="recording-detail">
+        {onResizeStart && <ResizeHandle onResizeStart={onResizeStart} />}
         <PanelHeader label={t('library.panel.details')} onToggle={toggle} />
         <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--lbb-fg3)', fontSize: 'var(--t-body)' }}>
           {t('library.panel.selectRow')}
@@ -1411,6 +1432,7 @@ export function RecordingDetailPanel({ row, history, attachCount, actionHandlers
 
   return (
     <aside style={panelAsideStyle(width)} data-panel="recording-detail">
+      {onResizeStart && <ResizeHandle onResizeStart={onResizeStart} />}
       <PanelHeader
         label={t('library.panel.details')}
         lbPageLabel={t('library.panel.openLbPage')}
@@ -1539,7 +1561,7 @@ export function RecordingDetailPanel({ row, history, attachCount, actionHandlers
 
 // ── Performance (show) detail panel ─────────────────────────────────────────
 
-export function PerformanceDetailPanel({ perf, recordings, families, canonical, history, attachCount, actionHandlers, openMenu, onClose, open = true, onToggle, width = 400 }: {
+export function PerformanceDetailPanel({ perf, recordings, families, canonical, history, attachCount, actionHandlers, openMenu, onClose, open = true, onToggle, width = 400, onResizeStart }: {
   perf: PerfMeta | null
   recordings: DetailRow[]
   families: PerfFamily[]
@@ -1552,6 +1574,7 @@ export function PerformanceDetailPanel({ perf, recordings, families, canonical, 
   open?: boolean
   onToggle?: () => void
   width?: number
+  onResizeStart?: (e: React.MouseEvent) => void
 }) {
   const { t } = useTranslation()
   const toggle = onToggle ?? onClose
@@ -1568,6 +1591,7 @@ export function PerformanceDetailPanel({ perf, recordings, families, canonical, 
   if (!perf) {
     return (
       <aside style={panelAsideStyle(width)} data-panel="performance-detail">
+        {onResizeStart && <ResizeHandle onResizeStart={onResizeStart} />}
         <PanelHeader label={t('library.panel.performance')} lbPageLabel={t('library.panel.lbPage')} onToggle={toggle} />
         <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--lbb-fg3)', fontSize: 'var(--t-body)' }}>
           {t('library.panel.selectPerformance')}
@@ -1610,6 +1634,7 @@ export function PerformanceDetailPanel({ perf, recordings, families, canonical, 
 
   return (
     <aside style={panelAsideStyle(width)} data-panel="performance-detail">
+      {onResizeStart && <ResizeHandle onResizeStart={onResizeStart} />}
       <PanelHeader
         label={t('library.panel.performance')}
         onOpenLbPage={() => {}}

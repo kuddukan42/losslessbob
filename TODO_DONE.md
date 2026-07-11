@@ -1,6 +1,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-215: TapeMatch screen v2 — pair corrections, run management, LB deep-links
+Priority: Medium
+Status: Done
+Added: 2026-07-10
+Closed: 2026-07-11
+Description: Remainder of the original TODO-170 wish list deferred from screen v1 (2026-07-10): (1) [DONE 2026-07-11] curator feedback on a match — matrix-cell action writing human_judgment/human_notes back into tools/tapematch/observations.db pairs (POST /api/tapematch/pairs/judgment + GET /api/tapematch/pairs enrichment + JudgmentPanel in ScreenTapeMatch.tsx); (2) kick off/manage TapeMatch runs from the screen (start/stop wrapping tools/tapematch/crawl_start.sh|crawl_stop.sh; the status readout already exists via GET /api/tapematch/crawl/status); (3) LB deep-links from matrix/family chips into the Library DetailPanel — needs an in-app deep-link mechanism first (ScreenSearch never consumes ScreenBootlegs' /search?lb= param; fix or add a Library equivalent).
+All 3 sub-features shipped 2026-07-11: (1) curator match feedback — POST /api/tapematch/pairs/judgment + live pairs enrichment + JudgmentPanel; (2) crawl run management — POST /api/tapematch/crawl/start|stop wrapping crawl_start.sh/crawl_stop.sh (script stays single-instance authority) + Start/Stop buttons on the crawl strip; (3) LB deep-links — LbLinkButton → /library?lb=<n>, one-shot param consumption in ScreenLibrary, drag-resizable DetailPanel + scrollable tab strip. 10 endpoint tests in tests/test_tapematch_routes.py. A/B player + dup-encodes GUI riders carry to the LISTENING §2 stream.
+
 TODO-224: Olof as geocoder location source + authoritative concert-type filter
 Priority: Medium
 Status: Done

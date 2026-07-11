@@ -1794,7 +1794,12 @@ export function ScreenPipeline(): React.JSX.Element {
             folderPath: data.new_path!,
             folderName: newName,
             id: data.new_path!,
-            bucket: (r.steps.file.status === 'warn' ? 'shelf' : 'done') as Bucket,
+            // A rename never files anything, so it can land in "In collection"
+            // (done) only if this folder was already filed (file step ok);
+            // otherwise it is at most "ready to file" (shelf). Guards against a
+            // rename on a folder whose file step is still mute being promoted to
+            // a false "In collection".
+            bucket: (r.steps.file.status === 'ok' ? 'done' : 'shelf') as Bucket,
             steps: { ...r.steps, rename: { status: 'ok' as const, label: 'Renamed' } },
           }
           _pipelineCache.delete(row.id)
@@ -1990,6 +1995,14 @@ export function ScreenPipeline(): React.JSX.Element {
           _pipelineCache.set(newPath, { steps: updated.steps, bucket: updated.bucket, errors: updated.errors })
           return updated
         }))
+        // Keep the persisted folder queue in step with the on-disk move: the
+        // folder now lives at newPath. Without this the store retains the old
+        // (now-moved) source path, which is re-hydrated and re-verified as
+        // "Missing" (blocked) on the next reload/autorun. Mirrors applyRename.
+        if (newPath !== row.folderPath) {
+          useFolderQueueStore.getState().removeFolders([row.folderPath])
+          useFolderQueueStore.getState().addFolders([newPath])
+        }
         queryClient.invalidateQueries({ queryKey: ['collection-prefetch'] })
         if (result.qbt_synced) {
           showToast(t('pipeline.file.qbtSynced'), true)

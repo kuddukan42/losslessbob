@@ -103,6 +103,13 @@ _PIPELINE_CANCEL_EVENT = threading.Event()
 # (P8, TODO-205 Ph.6).
 _TRUE_ATTN_BLOCK_CODES = {"no_date", "no_route"}
 
+# TODO-215 sub-feature 1 (curator match feedback): authoritative human_judgment
+# vocabulary for tools/tapematch/observations.db's pairs table. regression.py
+# reads confirmed_same/confirmed_different as calibration truth — do not change.
+_TAPEMATCH_JUDGMENTS = frozenset(
+    {"confirmed_same", "confirmed_different", "uncertain", "lb_wrong"}
+)
+
 
 def compute_pipeline_severity(
     verify: dict,
@@ -149,7 +156,12 @@ def compute_pipeline_severity(
         # A pending_fetch lbdir is exempt: it's parked on a background prefetch,
         # not un-run, so it must fall through to the all-ok/mute → done rule.
         return "attn"
-    if all(s in ("ok", "mute") for s in statuses) and "ok" in statuses:
+    # A folder is only "done" (in collection) once Lookup has actually
+    # identified it: my_collection is keyed by LB#, so no resolved LB# means it
+    # was never filed. Without this guard a partial run whose only non-mute step
+    # is verify=ok (a re-verify or generate-missing pass, lookup/lbdir/rename all
+    # still mute) reads as all-ok/mute and is wrongly promoted to "In collection".
+    if lb_number and all(s in ("ok", "mute") for s in statuses) and "ok" in statuses:
         return "done"
     return "attn"
 
@@ -5036,7 +5048,17 @@ def create_app() -> Flask:
         Query param: date=YYYY-MM-DD (required). 200 with pairs: [] when the
         date has no synced tapematch_pairs rows — an un-synced or unknown
         date is not an error, same style as /api/tapematch/families.
+
+        Each pair is enriched with ``human_judgment``/``human_notes`` read
+        LIVE from observations.db's ``pairs`` table (TODO-215 sub-feature 1:
+        curator match feedback) so the matrix reflects edits made moments
+        ago without waiting for a sync. Enrichment is best-effort: if
+        observations.db is missing, locked, or errors, every pair falls back
+        to ``human_judgment``/``human_notes`` = null rather than failing the
+        whole request.
         """
+        from backend import tapematch_sync as _tapematch_sync
+
         concert_date = request.args.get("date")
         if not concert_date:
             return jsonify({"error": "missing_date"}), 400
@@ -5062,12 +5084,146 @@ def create_app() -> Flask:
                     "fp_score": r["fp_score"],
                     "same_family": bool(r["same_family"]),
                     "similarity_pct": r["similarity_pct"],
+                    "human_judgment": None,
+                    "human_notes": None,
                 }
                 for r in rows
             ]
+
+            try:
+                obs_path = _tapematch_sync.DEFAULT_OBSERVATIONS_DB_PATH
+                if pairs and Path(obs_path).exists():
+                    obs_conn = _tapematch_sync._open_observations_db(obs_path)
+                    try:
+                        feedback: dict[tuple[int, int], tuple] = {}
+                        for r in obs_conn.execute(
+                            """
+                            SELECT lb_a, lb_b, human_judgment, human_notes
+                            FROM pairs
+                            WHERE concert_date = ? AND run_id = ?
+                              AND lb_a IS NOT NULL AND lb_b IS NOT NULL
+                            """,
+                            (concert_date, run_id),
+                        ):
+                            key = tuple(sorted((r["lb_a"], r["lb_b"])))
+                            feedback[key] = (r["human_judgment"], r["human_notes"])
+                    finally:
+                        obs_conn.close()
+                    for pair in pairs:
+                        key = tuple(sorted((pair["lb_a"], pair["lb_b"])))
+                        judgment, notes = feedback.get(key, (None, None))
+                        pair["human_judgment"] = judgment
+                        pair["human_notes"] = notes
+            except Exception:
+                _log.warning(
+                    "tapematch_pairs_for_date: human feedback enrichment failed "
+                    "for date=%s; leaving human_judgment/human_notes null",
+                    concert_date, exc_info=True,
+                )
+
             return jsonify({"date": concert_date, "run_id": run_id, "pairs": pairs})
         except Exception as exc:
             _log.exception("tapematch_pairs_for_date failed for date=%s", concert_date)
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
+    @app.route("/api/tapematch/pairs/judgment", methods=["POST"])
+    def tapematch_pairs_judgment() -> Response:
+        """Write a curator's human judgment/notes for one TapeMatch pair.
+
+        TODO-215 sub-feature 1 (curator match feedback). JSON body::
+
+            {"date": "YYYY-MM-DD", "lb_a": int, "lb_b": int,
+             "run_id": str (optional), "judgment": str | null,
+             "notes": str | null (optional)}
+
+        ``judgment`` must be one of ``confirmed_same``, ``confirmed_different``,
+        ``uncertain``, ``lb_wrong``, or null/absent to clear it. This
+        vocabulary is authoritative — tools/tapematch/regression.py reads
+        ``confirmed_same``/``confirmed_different`` as calibration truth.
+
+        Writes straight to tools/tapematch/observations.db's ``pairs`` table
+        (read-write, unlike the read-only helper used elsewhere in this
+        file), matching on run_id + concert_date + either lb ordering.
+
+        Returns:
+            200 ``{"ok": true, "rows_updated": n, "judgment": ..., "notes": ...}``
+            on success; 400 ``bad_judgment``/``missing_fields``; 404
+            ``no_run``/``pair_not_found``; 409 ``locked`` if observations.db
+            is write-locked by an in-progress tapematch run.
+        """
+        from backend import tapematch_sync as _tapematch_sync
+
+        body = request.get_json(force=True) or {}
+        concert_date = body.get("date")
+        lb_a = body.get("lb_a")
+        lb_b = body.get("lb_b")
+        run_id = body.get("run_id")
+        judgment = body.get("judgment")
+        notes = body.get("notes")
+
+        if not concert_date or lb_a is None or lb_b is None:
+            return jsonify({"error": "missing_fields"}), 400
+        if judgment is not None and judgment not in _TAPEMATCH_JUDGMENTS:
+            return jsonify({"error": "bad_judgment"}), 400
+
+        try:
+            if not run_id:
+                obs_path = _tapematch_sync.DEFAULT_OBSERVATIONS_DB_PATH
+                if not Path(obs_path).exists():
+                    return jsonify({"error": "no_run"}), 404
+                obs_conn_ro = _tapematch_sync._open_observations_db(obs_path)
+                try:
+                    run_id = _tapematch_sync._pick_best_run(obs_conn_ro).get(concert_date)
+                finally:
+                    obs_conn_ro.close()
+                if run_id is None:
+                    return jsonify({"error": "no_run"}), 404
+
+            conn = sqlite3.connect(str(TAPEMATCH_DB_PATH))
+            conn.execute("PRAGMA busy_timeout=3000")
+            try:
+                conn.execute("BEGIN IMMEDIATE")
+                cur = conn.execute(
+                    """
+                    UPDATE pairs
+                    SET human_judgment = ?, human_notes = ?
+                    WHERE run_id = ? AND concert_date = ?
+                      AND ((lb_a = ? AND lb_b = ?) OR (lb_a = ? AND lb_b = ?))
+                    """,
+                    (judgment, notes, run_id, concert_date, lb_a, lb_b, lb_b, lb_a),
+                )
+                rows_updated = cur.rowcount
+                if rows_updated == 0:
+                    conn.rollback()
+                    return jsonify({"error": "pair_not_found"}), 404
+                conn.commit()
+            except sqlite3.OperationalError as exc:
+                conn.rollback()
+                msg = str(exc)
+                if "locked" in msg.lower() or "busy" in msg.lower():
+                    return jsonify({"error": "locked", "message": msg}), 409
+                raise
+            finally:
+                conn.close()
+
+            return jsonify(
+                {
+                    "ok": True,
+                    "rows_updated": rows_updated,
+                    "judgment": judgment,
+                    "notes": notes,
+                }
+            )
+        except RuntimeError as exc:
+            # _open_observations_db (run_id resolution) raises RuntimeError when
+            # observations.db stays locked past its retry budget — same 409
+            # shape as /api/tapematch/analysis.
+            return jsonify({"error": "locked", "message": str(exc)}), 409
+        except Exception as exc:
+            _log.exception(
+                "tapematch_pairs_judgment failed for date=%s lb_a=%s lb_b=%s",
+                concert_date, lb_a, lb_b,
+            )
             return jsonify({"error": "internal_error", "message": str(exc)}), 500
 
     @app.route("/api/tapematch/analysis", methods=["GET"])
@@ -5286,6 +5442,80 @@ def create_app() -> Flask:
             )
         except Exception as exc:
             _log.exception("tapematch_crawl_status failed")
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
+    @app.route("/api/tapematch/crawl/start", methods=["POST"])
+    def tapematch_crawl_start() -> Response:
+        """Start the detached TapeMatch library crawl via crawl_start.sh.
+
+        The script is the single-instance authority (pgrep-guards against a
+        second crawl or a live tapematch_session.py) — no Python-side lock is
+        added here. Optional JSON body: ``min_entries`` (int) and
+        ``allow_missing`` (bool) map to the script's ``--min-entries`` and
+        ``--allow-missing`` flags.
+
+        Returns:
+            200 with ``{ok, message}`` on successful launch; 409
+            ``{error: "already_running", message}`` if the script's guard
+            refused to start; 400 for a malformed body; 500 on unexpected
+            failure to invoke the script.
+        """
+        import subprocess
+
+        body = request.get_json(silent=True) or {}
+        min_entries = body.get("min_entries")
+        allow_missing = body.get("allow_missing")
+        if min_entries is not None and not isinstance(min_entries, int):
+            return jsonify({"error": "bad_request", "message": "min_entries must be an int"}), 400
+        if allow_missing is not None and not isinstance(allow_missing, bool):
+            return jsonify({"error": "bad_request", "message": "allow_missing must be a bool"}), 400
+
+        args: list[str] = []
+        if min_entries is not None:
+            args.extend(["--min-entries", str(min_entries)])
+        if allow_missing:
+            args.append("--allow-missing")
+
+        try:
+            from backend import tapematch_sync as _tapematch_sync
+
+            script_dir = _tapematch_sync.DEFAULT_OBSERVATIONS_DB_PATH.parent
+            script = script_dir / "crawl_start.sh"
+            proc = subprocess.run(
+                [str(script), *args], capture_output=True, text=True, timeout=15,
+            )
+            if proc.returncode != 0:
+                message = (proc.stdout + proc.stderr).strip()
+                return jsonify({"error": "already_running", "message": message}), 409
+            return jsonify({"ok": True, "message": proc.stdout.strip()})
+        except (FileNotFoundError, subprocess.TimeoutExpired) as exc:
+            _log.exception("tapematch_crawl_start failed")
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
+    @app.route("/api/tapematch/crawl/stop", methods=["POST"])
+    def tapematch_crawl_stop() -> Response:
+        """Stop the detached TapeMatch library crawl via crawl_stop.sh.
+
+        The script always exits 0 — it sends SIGINT to the running session (or
+        run_crawl.sh between dates) and is a no-op if nothing is running.
+
+        Returns:
+            200 with ``{ok, message}`` on success; 500 on unexpected failure
+            to invoke the script.
+        """
+        import subprocess
+
+        try:
+            from backend import tapematch_sync as _tapematch_sync
+
+            script_dir = _tapematch_sync.DEFAULT_OBSERVATIONS_DB_PATH.parent
+            script = script_dir / "crawl_stop.sh"
+            proc = subprocess.run(
+                [str(script)], capture_output=True, text=True, timeout=15,
+            )
+            return jsonify({"ok": True, "message": proc.stdout.strip()})
+        except (FileNotFoundError, subprocess.TimeoutExpired) as exc:
+            _log.exception("tapematch_crawl_stop failed")
             return jsonify({"error": "internal_error", "message": str(exc)}), 500
 
     @app.route("/api/library/performances", methods=["GET"])
@@ -6833,9 +7063,25 @@ def create_app() -> Flask:
             row["file"] = {"status": "mute", "label": "—", "error": None, "error_code": None}
 
         # ── Severity (pure fn extracted for testability/warm-start, TODO-211) ──
+        # On a partial run the steps that weren't requested stay "mute" in `row`.
+        # Fold in the last-known verdicts from the validated folder-state cache so
+        # severity reflects the whole folder, not just the step(s) that ran this
+        # call — a re-verify of an already-filed folder keeps its "done" state
+        # instead of being demoted, and a lone verify pass on an unidentified
+        # folder is not promoted to "done".
+        def _sev_step(name: str) -> dict:
+            cur = row[name]
+            if name in steps or cur.get("status", "mute") != "mute":
+                return cur
+            if cache_valid and name in state["steps"]:
+                return state["steps"][name]
+            return cur
+
+        _sev_lookup = _sev_step("lookup")
+        _sev_lb = lb_number if lb_number is not None else _sev_lookup.get("lb_number")
         row["severity"] = compute_pipeline_severity(
-            row["verify"], row["lookup"], row["lbdir"], row["rename"],
-            row["file"]["status"], row["file"].get("error_code"), lb_number,
+            _sev_step("verify"), _sev_lookup, _sev_step("lbdir"), _sev_step("rename"),
+            row["file"]["status"], row["file"].get("error_code"), _sev_lb,
         )
 
         # ── P7 folder-state cache write (design §4d) ─────────────────────────

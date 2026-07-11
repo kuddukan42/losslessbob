@@ -1680,7 +1680,14 @@
       "running": "IN ESECUZIONE",
       "idle": "inattivo",
       "counts": "{{runs}} esegue · {{dates}} date",
-      "noLog": "Nessuna riga recente nel log di scansione"
+      "noLog": "Nessuna riga recente nel log di scansione",
+      "start": "Inizio",
+      "stop": "Stop",
+      "starting": "Inizio...",
+      "stopping": "Interruzione…",
+      "startFailed": "Impossibile raggiungere l'endpoint di controllo della scansione.",
+      "alreadyRunning": "È già in corso una sessione di crawl o una sessione live.",
+      "stopped": "La scansione è stata interrotta."
     },
     "rail": {
       "dates": "Date",
@@ -1698,12 +1705,27 @@
       "header": "LB",
       "empty": "Nessuna coppia sincronizzata per questa data",
       "noContact": "n/c",
-      "cellTooltip": "corr {{corr}} · emb {{emb}} · fp {{fp}} · stessa famiglia: {{sameFamily}}"
+      "cellTooltip": "corr {{corr}} · emb {{emb}} · fp {{fp}} · stessa famiglia: {{sameFamily}}",
+      "openInLibrary": "Apri nella Libreria"
     },
     "analysis": {
       "title": "Analisi (analysis.md)",
       "flagged": "Contrassegnato",
       "none": "Non è stato ancora scritto alcun file analysis.md per questa esecuzione."
+    },
+    "judgment": {
+      "title": "Giudizio del curatore",
+      "pairLabel": "LB {{a}} ↔ LB {{b}}",
+      "notesPlaceholder": "Note (facoltative)…",
+      "saving": "Salvataggio in corso…",
+      "locked": "Esecuzione in corso, riprova.",
+      "saveFailed": "Salvataggio non riuscito, riprova.",
+      "options": {
+        "confirmed_same": "Confermato identico",
+        "confirmed_different": "Confermato diverso",
+        "uncertain": "Incerto",
+        "lb_wrong": "LB errato"
+      }
     }
   },
   "onboarding": {

@@ -1680,7 +1680,14 @@
       "running": "EN COURS D'EXÉCUTION",
       "idle": "inactif",
       "counts": "{{runs}} exécutions · {{dates}} dates",
-      "noLog": "Aucune ligne récente dans le journal d'exploration"
+      "noLog": "Aucune ligne récente dans le journal d'exploration",
+      "start": "Démarrer",
+      "stop": "Arrêt",
+      "starting": "C'est parti…",
+      "stopping": "Arrêt…",
+      "startFailed": "Impossible d'accéder au point de terminaison de contrôle d'exploration.",
+      "alreadyRunning": "Un crawl ou une session en direct est déjà en cours.",
+      "stopped": "L'exploration s'est arrêtée."
     },
     "rail": {
       "dates": "Dates",
@@ -1698,12 +1705,27 @@
       "header": "LB",
       "empty": "Aucune paire synchronisée pour cette date",
       "noContact": "n/c",
-      "cellTooltip": "corr {{corr}} · emb {{emb}} · fp {{fp}} · même famille : {{sameFamily}}"
+      "cellTooltip": "corr {{corr}} · emb {{emb}} · fp {{fp}} · même famille : {{sameFamily}}",
+      "openInLibrary": "Ouvrir dans la bibliothèque"
     },
     "analysis": {
       "title": "Analyse (analysis.md)",
       "flagged": "Signalé",
       "none": "Aucun fichier « analysis.md » n'a encore été rédigé pour cette exécution."
+    },
+    "judgment": {
+      "title": "Avis du conservateur",
+      "pairLabel": "LB {{a}} ↔ LB {{b}}",
+      "notesPlaceholder": "Remarques (facultatif)…",
+      "saving": "Enregistrement en cours…",
+      "locked": "Exécution en cours, réessayez.",
+      "saveFailed": "Échec de l'enregistrement, réessayez.",
+      "options": {
+        "confirmed_same": "Confirmé identique",
+        "confirmed_different": "Confirmé : différent",
+        "uncertain": "Incertain",
+        "lb_wrong": "LB incorrect"
+      }
     }
   },
   "onboarding": {

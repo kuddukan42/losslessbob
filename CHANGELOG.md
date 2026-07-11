@@ -1,3 +1,51 @@
+[2026-07-11] — feat(backend+gui): TODO-215 (parts 2+3/3, closes it) — crawl run management + LB deep-links
+Added: backend/app.py POST /api/tapematch/crawl/start — wraps tools/tapematch/crawl_start.sh
+  (optional body min_entries/allow_missing → script flags; the script's pgrep guard stays the
+  single-instance authority — 409 already_running when it refuses). POST /api/tapematch/crawl/stop
+  wraps crawl_stop.sh (SIGINT, no-op-safe, always 200).
+Added: gui_next ScreenTapeMatch.tsx crawl strip — Start/Stop buttons with pending states,
+  409-aware error copy (tapematch.crawl.* keys, 5 locales via /gui-next-i18n).
+Added: LB deep-links (sub-feature 3): LbLinkButton in matrix headers/cells + family chips
+  navigates to /library?lb=<n>; ScreenLibrary consumes the param one-shot (selects the row,
+  opens the DetailPanel, clears the param). DetailPanel gains a drag-resizable width
+  (useResizableWidth in useResizableColumns.ts, persisted to localStorage) and a horizontally-
+  scrollable tab strip so the deep-linked panel never clips.
+Tests: 10 new endpoint tests in tests/test_tapematch_routes.py (judgment set/clear/400/404,
+  crawl start success/409/400/500, stop success/500; subprocess fully mocked — no real crawl).
+Note: TODO-215 closed — TapeMatch screen v2 complete. A/B player + dup-encodes GUI riders
+  carry to the LISTENING §2 stream (WORK_PACKAGE_NEXT slot 3).
+
+[2026-07-11] — fix(backend+gui): pipeline severity/state correctness on partial runs, renames and moves
+Fixed: backend/app.py — on a partial pipeline run, severity was computed from only the step(s)
+  requested this call (others "mute"): _sev_step now folds last-known verdicts from the validated
+  folder-state cache, so a re-verify of an already-filed folder keeps "done" instead of being
+  demoted, and a lone verify on an unidentified folder is not promoted.
+Fixed: gui_next ScreenPipeline.tsx applyRename — a rename promoted rows to "In collection" unless
+  the file step was warn; inverted to promote only when file step is ok (rename never files).
+Fixed: gui_next ScreenPipeline.tsx file/move — the persisted folder queue kept the old source
+  path after a move, re-hydrating as a false "Missing/blocked" on next reload; now swaps in the
+  new path (mirrors applyRename).
+
+[2026-07-11] — feat(backend+gui): TODO-215 (part 1/3) — curator match feedback on the TapeMatch matrix
+Added: backend/app.py POST /api/tapematch/pairs/judgment — writes human_judgment
+  (confirmed_same|confirmed_different|uncertain|lb_wrong, or null to clear) + human_notes
+  straight into tools/tapematch/observations.db pairs (opened read-write, unlike the mode=ro
+  helper used elsewhere; BEGIN IMMEDIATE + busy_timeout). Vocabulary is authoritative —
+  tools/tapematch/regression.py reads confirmed_same/confirmed_different as calibration truth.
+  Validation: 400 bad_judgment/missing_fields, 404 no_run/pair_not_found, 409 locked when a
+  crawl holds the DB (mirrors the /api/tapematch/analysis 409 pattern).
+Added: gui_next ScreenTapeMatch.tsx — matrix cells clickable; a JudgmentPanel below the matrix
+  (not a popover — the matrix lives in overflow-x) lets the curator set/clear a judgment + notes;
+  judged cells get a tone marker. Saves via the new endpoint + invalidates the pairs query.
+Changed: backend/app.py GET /api/tapematch/pairs now enriches each pair with human_judgment/
+  human_notes read LIVE (best-effort) from observations.db so edits show without a re-sync.
+Fixed: backend/app.py — the enrichment SELECT initially crashed on observations.db pairs rows
+  with NULL lb_a/lb_b (single-source rows): sorted((None, int)) raised TypeError, aborting
+  enrichment for the whole date so every judgment silently fell back to null. Now filters
+  lb_a/lb_b IS NOT NULL in SQL. (Caught pre-commit via end-to-end HTTP verification.)
+Note: TODO-215 stays open — sub-features 2 (run start/stop management) and 3 (LB deep-links)
+  not yet done. Locales de/fr/es/it/nl updated via /gui-next-i18n.
+
 [2026-07-11] — feat(gui): TODO-226B — About-screen data-source credits (setlist.fm, bobdylan.com, bobserve link)
 Changed: gui_next AboutDialog.tsx: TODO-226 Part B — added setlist.fm and bobdylan.com credit
   cards to the Credits tab (after the existing Olof Björner card) and a "bobserve.com · About

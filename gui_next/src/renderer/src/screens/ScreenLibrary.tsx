@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import type { TFunction } from 'i18next'
 import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { useVirtualizer } from '@tanstack/react-virtual'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { Icon } from '../components/Icon'
 import { Button, IconButton, Input, Pill, Toast, ConfirmDialog } from '../components'
 import type { ToastTone } from '../components'
@@ -19,7 +19,7 @@ import { useAttachmentsStore } from '../lib/attachmentsStore'
 import { useSpectrogramStore } from '../lib/spectrogramStore'
 import { useFolderQueueStore } from '../lib/folderQueueStore'
 import { lbDetailUrl } from '../lib/lbUrl'
-import { useResizableColumns } from '../lib/useResizableColumns'
+import { useResizableColumns, useResizableWidth } from '../lib/useResizableColumns'
 
 // ── TODO-150 step (4): Recording lens / no-families fallback ──────────────────
 // Flat, LB#-keyed table over the full catalog. Per the design contract
@@ -499,6 +499,7 @@ export function ScreenLibrary(): React.JSX.Element {
   const [collapsedYears, setCollapsedYears] = useState<Set<string>>(new Set())
   const [selectedLb, setSelectedLb] = useState<number | null>(null)
   const [detailPanelOpen, setDetailPanelOpen] = useState(true)
+  const { width: detailWidth, startResize: startDetailResize } = useResizableWidth('lbb_library_rec_detail_width', 380)
   const [sortKey, setSortKey] = useState<SortKey>('lb')
   const [sortDir, setSortDir] = useState<SortDir>('asc')
   // TODO-150 step 7: checkbox multi-select for the recording lens's bulk bar.
@@ -525,6 +526,7 @@ export function ScreenLibrary(): React.JSX.Element {
   // these ids — this isn't new backend behavior, just a second surface for it.
 
   const navigate = useNavigate()
+  const [searchParams, setSearchParams] = useSearchParams()
   const queryClient = useQueryClient()
   const setActiveAttachLb = useAttachmentsStore(s => s.setActiveLb)
   const addPendingSpectro = useSpectrogramStore(s => s.addPending)
@@ -872,6 +874,22 @@ export function ScreenLibrary(): React.JSX.Element {
       }
     })
   }, [catalog, prefetch])
+
+  // TODO-215 sub-feature 3: consume a one-shot `?lb=<n>` deep-link (from
+  // TapeMatch) once `rows` is populated, then clear the param so it can't
+  // re-trigger on later renders or clobber a selection the user makes later.
+  useEffect(() => {
+    if (rows.length === 0) return
+    const raw = searchParams.get('lb')
+    if (raw !== null) {
+      const n = Number(raw)
+      if (Number.isInteger(n) && n > 0 && rows.some(r => r.lbNumber === n)) {
+        setSelectedLb(n)
+        setDetailPanelOpen(true)
+      }
+      setSearchParams(prev => { prev.delete('lb'); return prev }, { replace: true })
+    }
+  }, [rows, searchParams, setSearchParams])
 
   const ownedCount = useMemo(() => rows.reduce((n, r) => n + (r.owned ? 1 : 0), 0), [rows])
 
@@ -1373,6 +1391,8 @@ export function ScreenLibrary(): React.JSX.Element {
               onClose={() => setSelectedLb(null)}
               open={detailPanelOpen}
               onToggle={() => setDetailPanelOpen(o => !o)}
+              width={detailWidth}
+              onResizeStart={e => startDetailResize(e.clientX, detailWidth)}
             />
           )
         })()}
@@ -1543,6 +1563,7 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [selectedMemberLb, setSelectedMemberLb] = useState<number | null>(null)
   const [detailPanelOpen, setDetailPanelOpen] = useState(true)
+  const { width: detailWidth, startResize: startDetailResize } = useResizableWidth('lbb_library_perf_detail_width', 400)
   const autoExpandedRef = useRef(false)
 
   const { widths: colWidths, startResize: startColResize } = useResizableColumns('lbb_library_perf_col_widths', PERF_COL_DEFAULTS)
@@ -2383,6 +2404,8 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
                 onClose={() => setSelectedMemberLb(null)}
                 open={detailPanelOpen}
                 onToggle={toggle}
+                width={detailWidth}
+                onResizeStart={e => startDetailResize(e.clientX, detailWidth)}
               />
             )
           }
@@ -2402,6 +2425,8 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
               onClose={() => setSelectedId(null)}
               open={detailPanelOpen}
               onToggle={toggle}
+              width={detailWidth}
+              onResizeStart={e => startDetailResize(e.clientX, detailWidth)}
             />
           )
         })()}

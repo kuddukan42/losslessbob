@@ -1680,7 +1680,14 @@
       "running": "EN MARCHA",
       "idle": "inactivo",
       "counts": "{{runs}} se ejecuta · {{dates}} fechas",
-      "noLog": "No hay líneas recientes en el registro de rastreo"
+      "noLog": "No hay líneas recientes en el registro de rastreo",
+      "start": "Inicio",
+      "stop": "Detener",
+      "starting": "Comenzando…",
+      "stopping": "Deteniéndose…",
+      "startFailed": "No se ha podido acceder al punto final de control de rastreo.",
+      "alreadyRunning": "Ya se está ejecutando un rastreo o una sesión en directo.",
+      "stopped": "El rastreo se ha detenido."
     },
     "rail": {
       "dates": "Fechas",
@@ -1698,12 +1705,27 @@
       "header": "LB",
       "empty": "No hay pares sincronizados para esta fecha",
       "noContact": "n/c",
-      "cellTooltip": "corr {{corr}} · emb {{emb}} · fp {{fp}} · de la misma familia: {{sameFamily}}"
+      "cellTooltip": "corr {{corr}} · emb {{emb}} · fp {{fp}} · de la misma familia: {{sameFamily}}",
+      "openInLibrary": "Abrir en la biblioteca"
     },
     "analysis": {
       "title": "Análisis (analysis.md)",
       "flagged": "Marcado",
       "none": "Aún no se ha escrito ningún archivo «analysis.md» para esta ejecución."
+    },
+    "judgment": {
+      "title": "Opinión del comisario",
+      "pairLabel": "LB {{a}} ↔ LB {{b}}",
+      "notesPlaceholder": "Notas (opcional)…",
+      "saving": "Guardando…",
+      "locked": "Ejecución en curso, inténtalo de nuevo.",
+      "saveFailed": "Error al guardar, inténtalo de nuevo.",
+      "options": {
+        "confirmed_same": "Confirmado igual",
+        "confirmed_different": "Se han confirmado diferencias",
+        "uncertain": "Incerto",
+        "lb_wrong": "LB incorrecto"
+      }
     }
   },
   "onboarding": {
