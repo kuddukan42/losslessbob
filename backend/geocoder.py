@@ -4,14 +4,31 @@ Provides single-location lookup, manual pin placement, and a batch runner
 that reads un-geocoded entries.location values from the database and writes
 results back via UPSERT.  Respects the Nominatim ToS 1-second rate limit.
 
-Structured-source integration: before calling Nominatim, run_batch() checks
-three tables, in priority order, for a structured venue/city/state/country
-string that matches any entry associated with the location being geocoded:
-bobdylan_shows (most standardized), then setlistfm_shows, then
-dylan_performances as a last resort.  When found, that structured string is
-used as the Nominatim query (better accuracy than the raw LB metadata
-location) and the result is stored with source set to the matching table
-name ('bobdylan_shows' / 'setlistfm_shows' / 'performances').
+Concert-only eligibility (TODO-221): geocoding exists to answer "where did
+Bob play this show", not to plot studio bootlegs, interviews, or multi-date
+compilation reissues.  run_batch() only geocodes a location when it does not
+match an obvious non-venue keyword AND at least one entry sharing that
+location has a single clean, parseable date matching a row in bobdylan_shows
+or setlistfm_shows.  Everything else is written with
+source='skipped_not_concert' (lat/lon NULL) so it is cached and never
+retried, and is excluded from the errors stat.
+
+Structured-source cascade (TODO-220): before calling Nominatim, run_batch()
+checks three tables, in priority order, for a structured venue/city/state/
+country string that matches any entry associated with the location being
+geocoded: bobdylan_shows (most standardized), then setlistfm_shows, then
+dylan_performances as a last resort.  Every structured hit's full string is
+tried first (in priority order); on an all-miss, a venue-stripped
+city/state/country-only variant of each is tried next (source suffixed
+'-city', confidence capped at medium); the raw entries.location text is
+tried last.  Every attempted query is recorded in ``note`` on both success
+and failure, and the 1.1s Nominatim rate-limit sleep applies between every
+attempt, including fallbacks.
+
+Stop support (TODO-219): stop() sets a module-level flag (guarded by
+_lock) that run_batch() checks at the top of every location and inside the
+rate-limited 429 backoff sleep (sliced so a stop request is honored
+promptly); get_progress() exposes stop_requested for the GUI.
 """
 
 import json
@@ -32,8 +49,24 @@ class _RateLimitError(Exception):
     """Raised by geocode_one() when Nominatim returns HTTP 429."""
 
 
+class _StopSignal(Exception):
+    """Internal control-flow signal: a stop was requested mid-sleep."""
+
+
 _MAX_429_RETRIES = 3      # max retries per location after a 429
 _RATE_LIMIT_SLEEP = 60    # seconds to sleep after a 429 before retrying
+_STOP_CHECK_SLICE = 1.0   # seconds; granularity for the interruptible 429 sleep
+
+# Non-venue keywords: locations whose text matches one of these are never
+# concerts (studio bootlegs, interview/TV appearances, multi-date reissue
+# compilations) and are skipped outright, regardless of date match (TODO-221).
+_NON_VENUE_KEYWORDS = (
+    "compilation", "outtakes", "interview", "rehearsal",
+    "soundcheck", "demos", "various",
+)
+
+# Confidence rank used to cap city-only fallback results at 'medium' (TODO-220).
+_CONFIDENCE_RANK = {"low": 0, "medium": 1, "high": 2}
 
 # ---------------------------------------------------------------------------
 # Module-level thread-safe progress state
@@ -45,13 +78,46 @@ _progress: dict = {
     "total": 0,
     "current": "",
     "errors": 0,
+    "skipped": 0,
     "stage": "",       # "querying" | "saving" | "sleeping" | "rate_limited" | "done" | ""
     "succeeded": 0,
+    "stop_requested": False,
 }
 _lock = threading.Lock()
 
 _NOMINATIM_URL = "https://nominatim.openstreetmap.org/search"
 _USER_AGENT = "LosslessBob-Geocoder/1.0 (tjjenkin42@gmail.com)"
+
+
+def stop() -> None:
+    """Signal the active batch geocode run to stop as soon as possible.
+
+    Sets the module-level stop flag; run_batch() checks it at the top of
+    every location-loop iteration and inside the 429 rate-limit backoff
+    sleep, then breaks cleanly (its ``finally`` block resets progress).
+    """
+    with _lock:
+        _progress["stop_requested"] = True
+    logger.info("Geocode batch stop requested")
+
+
+def _rate_limit_sleep() -> None:
+    """Sleep ``_RATE_LIMIT_SLEEP`` seconds in small slices, honoring a stop.
+
+    Raises:
+        _StopSignal: if a stop is requested while sleeping.
+    """
+    remaining = _RATE_LIMIT_SLEEP
+    while remaining > 0:
+        with _lock:
+            if _progress.get("stop_requested"):
+                raise _StopSignal()
+        chunk = min(_STOP_CHECK_SLICE, remaining)
+        time.sleep(chunk)
+        remaining -= chunk
+    with _lock:
+        if _progress.get("stop_requested"):
+            raise _StopSignal()
 
 
 # ---------------------------------------------------------------------------
@@ -107,21 +173,23 @@ def _entries_iso_dates(location_text: str, conn) -> list[str]:
     return isos
 
 
-def _get_performance_location_string(location_text: str, conn) -> str | None:
-    """Return a structured geocoding string from dylan_performances for this location.
+def _get_performance_location_string(location_text: str, conn) -> tuple[str, str | None] | None:
+    """Return structured geocoding strings from dylan_performances for this location.
 
     Scans all distinct date_str values in entries that share this location, converts
     each to ISO format, and checks dylan_performances for a match.  On the first hit,
-    builds a comma-joined ``"venue, city, state, country"`` string (blank / ``"?"``
-    parts dropped) and returns it.  Returns ``None`` if no performance record matches.
+    builds a comma-joined ``"venue, city, state, country"`` full string (blank / ``"?"``
+    parts dropped) plus a venue-stripped ``"city, state, country"`` variant for the
+    TODO-220 fallback cascade.  Returns ``None`` if no performance record matches.
 
     Args:
         location_text: Raw location string from ``entries.location``.
         conn: SQLite connection (read-only usage).
 
     Returns:
-        Structured geocoding string (e.g. ``"Massey Hall, Toronto, ON, Canada"``),
-        or ``None`` if no matching performance exists.
+        ``(full, city_only)`` tuple, e.g. ``("Massey Hall, Toronto, ON, Canada",
+        "Toronto, ON, Canada")`` — ``city_only`` is ``None`` if venue is the only
+        non-blank part.  ``None`` if no matching performance exists.
     """
     for iso in _entries_iso_dates(location_text, conn):
         perf = conn.execute(
@@ -130,32 +198,42 @@ def _get_performance_location_string(location_text: str, conn) -> str | None:
         ).fetchone()
         if perf is None:
             continue
-        parts = [
-            p for p in (perf["venue"], perf["city"], perf["state"], perf["country"])
+        venue = (perf["venue"] or "").strip()
+        if venue == "?":
+            venue = ""
+        city_parts = [
+            p.strip() for p in (perf["city"], perf["state"], perf["country"])
             if p and p.strip() and p.strip() != "?"
         ]
-        if parts:
-            return ", ".join(parts)
+        full_parts = ([venue] if venue else []) + city_parts
+        if full_parts:
+            full = ", ".join(full_parts)
+            city_only = ", ".join(city_parts) if city_parts else None
+            return full, city_only
 
     return None
 
 
-def _get_bobdylan_shows_location_string(location_text: str, conn) -> str | None:
-    """Return a structured geocoding string from bobdylan_shows for this location.
+def _get_bobdylan_shows_location_string(
+    location_text: str, conn
+) -> tuple[str, str | None] | None:
+    """Return structured geocoding strings from bobdylan_shows for this location.
 
     Scans all distinct date_str values in entries that share this location, converts
     each to ISO format, and checks bobdylan_shows for a match.  On the first hit,
-    builds a comma-joined ``"venue, location"`` string (blank parts dropped) and
-    returns it — ``bobdylan_shows.location`` is already a ``"City, ST"``-style string.
-    Returns ``None`` if no show record matches.
+    builds a comma-joined ``"venue, location"`` full string (blank parts dropped) —
+    ``bobdylan_shows.location`` is already a ``"City, ST"``-style string — plus a
+    venue-stripped city-only variant (the ``location`` column alone) for the
+    TODO-220 fallback cascade.  Returns ``None`` if no show record matches.
 
     Args:
         location_text: Raw location string from ``entries.location``.
         conn: SQLite connection (read-only usage).
 
     Returns:
-        Structured geocoding string (e.g. ``"The Purple Onion, St. Paul, MN"``),
-        or ``None`` if no matching show exists.
+        ``(full, city_only)`` tuple, e.g. ``("The Purple Onion, St. Paul, MN",
+        "St. Paul, MN")``.  ``city_only`` is ``None`` if ``location`` is blank.
+        ``None`` if no matching show exists.
     """
     for iso in _entries_iso_dates(location_text, conn):
         show = conn.execute(
@@ -164,28 +242,36 @@ def _get_bobdylan_shows_location_string(location_text: str, conn) -> str | None:
         ).fetchone()
         if show is None:
             continue
-        parts = [p for p in (show["venue"], show["location"]) if p and p.strip()]
+        venue = (show["venue"] or "").strip()
+        loc = (show["location"] or "").strip()
+        parts = [p for p in (venue, loc) if p]
         if parts:
-            return ", ".join(parts)
+            full = ", ".join(parts)
+            city_only = loc or None
+            return full, city_only
 
     return None
 
 
-def _get_setlistfm_location_string(location_text: str, conn) -> str | None:
-    """Return a structured geocoding string from setlistfm_shows for this location.
+def _get_setlistfm_location_string(
+    location_text: str, conn
+) -> tuple[str, str | None] | None:
+    """Return structured geocoding strings from setlistfm_shows for this location.
 
     Scans all distinct date_str values in entries that share this location, converts
     each to ISO format, and checks setlistfm_shows for a match.  On the first hit,
-    builds a comma-joined ``"venue_name, city, country"`` string (blank parts dropped)
-    and returns it.  Returns ``None`` if no setlist record matches.
+    builds a comma-joined ``"venue_name, city, country"`` full string (blank parts
+    dropped) plus a venue-stripped ``"city, country"`` variant for the TODO-220
+    fallback cascade.  Returns ``None`` if no setlist record matches.
 
     Args:
         location_text: Raw location string from ``entries.location``.
         conn: SQLite connection (read-only usage).
 
     Returns:
-        Structured geocoding string (e.g. ``"Thalia Mara Hall, Jackson, United States"``),
-        or ``None`` if no matching setlist exists.
+        ``(full, city_only)`` tuple, e.g. ``("Thalia Mara Hall, Jackson, United
+        States", "Jackson, United States")``.  ``city_only`` is ``None`` if city
+        and country are both blank.  ``None`` if no matching setlist exists.
     """
     for iso in _entries_iso_dates(location_text, conn):
         show = conn.execute(
@@ -194,12 +280,15 @@ def _get_setlistfm_location_string(location_text: str, conn) -> str | None:
         ).fetchone()
         if show is None:
             continue
-        parts = [
-            p for p in (show["venue_name"], show["city"], show["country"])
-            if p and p.strip()
+        venue_name = (show["venue_name"] or "").strip()
+        city_parts = [
+            p.strip() for p in (show["city"], show["country"]) if p and p.strip()
         ]
-        if parts:
-            return ", ".join(parts)
+        full_parts = ([venue_name] if venue_name else []) + city_parts
+        if full_parts:
+            full = ", ".join(full_parts)
+            city_only = ", ".join(city_parts) if city_parts else None
+            return full, city_only
 
     return None
 
@@ -208,11 +297,56 @@ def _get_setlistfm_location_string(location_text: str, conn) -> str | None:
 # raw entries.location text. The key becomes location_geocoded.source on a hit.
 # bobdylan_shows is the most standardized (curated "City, ST" location strings),
 # setlistfm_shows is the backup, and dylan_performances is the last resort.
+# Each lookup function returns (full_query, city_only_query | None) on a hit,
+# or None on a miss — see TODO-220 cascading fallback in run_batch().
 _STRUCTURED_SOURCES = (
     ("bobdylan_shows", _get_bobdylan_shows_location_string),
     ("setlistfm_shows", _get_setlistfm_location_string),
     ("performances", _get_performance_location_string),
 )
+
+
+def _is_concert_location(location_text: str, conn) -> bool:
+    """Return True if *location_text* represents a documented, dated concert.
+
+    Applies the TODO-221 "concert-only" eligibility test: geocoding exists to
+    answer "where did Bob play this show", not to plot studio bootlegs,
+    interviews, rehearsals, or multi-date compilation reissues. A location
+    qualifies only when:
+
+    1. It does not match an obvious non-venue keyword
+       (see ``_NON_VENUE_KEYWORDS``), and
+    2. At least one entry sharing this location string has a single clean,
+       parseable date (no 'xx', no ranges — enforced by ``_entry_date_to_iso``)
+       that matches a row in ``bobdylan_shows`` or ``setlistfm_shows``.
+       ``dylan_performances`` alone does NOT count: it also carries non-concert
+       dates (TV/radio interviews etc.) that would otherwise geocode to a
+       venue that was never actually played.
+
+    Args:
+        location_text: Raw location string from ``entries.location``.
+        conn: SQLite connection (read-only usage).
+
+    Returns:
+        True if this location should be geocoded via Nominatim; False if it
+        should instead be written with ``source='skipped_not_concert'``.
+    """
+    lowered = location_text.lower()
+    if any(keyword in lowered for keyword in _NON_VENUE_KEYWORDS):
+        return False
+
+    for iso in _entries_iso_dates(location_text, conn):
+        hit = conn.execute(
+            "SELECT 1 FROM bobdylan_shows WHERE date_str = ? LIMIT 1", (iso,)
+        ).fetchone()
+        if hit is None:
+            hit = conn.execute(
+                "SELECT 1 FROM setlistfm_shows WHERE date_str = ? LIMIT 1", (iso,)
+            ).fetchone()
+        if hit is not None:
+            return True
+
+    return False
 
 
 # ---------------------------------------------------------------------------
@@ -346,6 +480,51 @@ def place_manual(
     logger.info("Manual geocode saved: %r → (%.4f, %.4f)", location_text, lat, lon)
 
 
+def _save_geocode_result(write_queue, location_text: str, result: dict) -> None:
+    """UPSERT one batch-geocode result into ``location_geocoded``.
+
+    Always keys by the raw ``entries.location`` text so the map JOIN and the
+    "already geocoded" candidate-selection query in ``run_batch()`` still
+    work, regardless of which query string actually succeeded. Never
+    overwrites a manually-placed row (``manual_override=1``).
+
+    Args:
+        write_queue: The shared DB write queue (``get_write_queue()``).
+        location_text: Raw ``entries.location`` string to key the row by.
+        result: A geocode result dict as returned by ``geocode_one()`` (or
+                the synthetic ``skipped_not_concert`` / rate-limit-failed dicts
+                built in ``run_batch()``).
+    """
+    _loc = location_text
+    _r = result
+    write_queue.execute(
+        lambda c, _loc=_loc, _r=_r: c.execute(
+            """INSERT INTO location_geocoded
+                   (location_text, lat, lon, source, confidence, display_name,
+                    manual_override, note, geocoded_at)
+               VALUES (?, ?, ?, ?, ?, ?, 0, ?, CURRENT_TIMESTAMP)
+               ON CONFLICT(location_text) DO UPDATE SET
+                   lat=excluded.lat,
+                   lon=excluded.lon,
+                   source=excluded.source,
+                   confidence=excluded.confidence,
+                   display_name=excluded.display_name,
+                   note=excluded.note,
+                   geocoded_at=CURRENT_TIMESTAMP
+               WHERE manual_override = 0""",
+            (
+                _loc,
+                _r.get("lat"),
+                _r.get("lon"),
+                _r["source"],
+                _r.get("confidence"),
+                _r.get("display_name"),
+                _r.get("note"),
+            ),
+        )
+    )
+
+
 def run_batch(
     limit: int | None = None,
     retry_failed: bool = False,
@@ -358,16 +537,29 @@ def run_batch(
     ``location_geocoded`` (or whose ``source='failed'`` when ``retry_failed``
     is True).  Rows with ``manual_override=1`` are always skipped.
 
-    For each location, three structured sources are checked in priority order:
-    bobdylan_shows (most standardized), then setlistfm_shows, then
-    dylan_performances as a last resort. If any entry with that location has
-    a matching record (by ISO date) in one of these tables, the structured
-    venue/city/state/country string is used as the Nominatim query and the
-    result is stored with ``source`` set to the matching table name.
-    Otherwise the raw ``entries.location`` text is geocoded as before.
+    Each candidate location is first checked for TODO-221 concert-only
+    eligibility (see ``_is_concert_location``): locations that are not tied
+    to a documented, single-dated show in bobdylan_shows or setlistfm_shows
+    (or that match an obvious non-venue keyword) are written with
+    ``source='skipped_not_concert'`` and never sent to Nominatim.
 
-    Sleeps 1.1 seconds between each Nominatim request to comply with the
-    Nominatim Usage Policy (max 1 request/second).
+    For eligible locations, a TODO-220 cascading fallback is used: every
+    structured source (bobdylan_shows, then setlistfm_shows, then
+    dylan_performances) that has a matching record contributes its full
+    venue/city/state/country query string, tried in priority order; if all
+    of those miss, each source's venue-stripped city-only variant is tried
+    next (source suffixed ``-city``, confidence capped at ``medium``); the
+    raw ``entries.location`` text is tried last. The result is stored with
+    ``source`` set to whichever query actually succeeded (or 'failed' if
+    every attempt missed), and ``note`` records every query attempted, on
+    both success and failure.
+
+    Sleeps 1.1 seconds between every Nominatim request — including fallback
+    attempts — to comply with the Nominatim Usage Policy (max 1 req/second).
+
+    A stop request (see ``stop()``) is checked at the top of every location
+    and inside the 429 rate-limit backoff sleep, and breaks the batch
+    cleanly without losing already-written results.
 
     Args:
         limit: Maximum number of locations to process in this run.
@@ -425,109 +617,151 @@ def run_batch(
         _progress["total"] = total
         _progress["current"] = ""
         _progress["errors"] = 0
+        _progress["skipped"] = 0
         _progress["succeeded"] = 0
         _progress["stage"] = "starting"
+        _progress["stop_requested"] = False
 
     try:
         for i, location_text in enumerate(locations):
             with _lock:
+                if _progress.get("stop_requested"):
+                    break
                 _progress["current"] = location_text
                 _progress["stage"] = "querying"
 
-            # Check structured sources in priority order (dylan_performances,
-            # bobdylan_shows, setlistfm_shows) for a matching venue/city string.
-            # If one is found, geocode that structured string rather than the
-            # raw LB metadata text.
-            structured_query = None
-            matched_source = None
+            # TODO-221: concert-only eligibility filter. Locations that are not
+            # tied to a documented, single-dated show never reach Nominatim.
+            if not _is_concert_location(location_text, conn):
+                result = {
+                    "location_text": location_text,
+                    "lat": None,
+                    "lon": None,
+                    "display_name": None,
+                    "source": "skipped_not_concert",
+                    "confidence": None,
+                    "note": (
+                        "no single clean date matching bobdylan_shows/setlistfm_shows, "
+                        "or non-venue keyword"
+                    ),
+                }
+                with _lock:
+                    _progress["stage"] = "saving"
+                if not dry_run:
+                    _save_geocode_result(get_write_queue(), location_text, result)
+                with _lock:
+                    _progress["done"] = i + 1
+                    _progress["skipped"] += 1
+                if (i + 1) % 10 == 0:
+                    logger.info(
+                        "Geocoding progress: %d/%d done, %d errors, %d skipped",
+                        i + 1, total, _progress["errors"], _progress["skipped"],
+                    )
+                continue
+
+            # TODO-220: gather every structured-source hit (not just the first),
+            # each as (source_name, full_query, city_only_query | None).
+            structured_hits = []
             for source_name, lookup_fn in _STRUCTURED_SOURCES:
-                structured_query = lookup_fn(location_text, conn)
-                if structured_query:
-                    matched_source = source_name
-                    break
+                hit = lookup_fn(location_text, conn)
+                if hit:
+                    structured_hits.append((source_name, hit[0], hit[1]))
 
-            if structured_query:
-                geocode_input = structured_query
-                logger.debug(
-                    "%s hit for %r → geocoding %r", matched_source, location_text, structured_query
+            # Cascade order: every structured source's full string first (in
+            # priority order), then each source's venue-stripped city-only
+            # variant, then the raw entries.location text last. Skip a query
+            # string that duplicates one already queued.
+            candidate_queries: list[tuple[str, str | None]] = (
+                [(name, full_q) for name, full_q, _ in structured_hits]
+                + [(f"{name}-city", city_q) for name, _, city_q in structured_hits]
+                + [("entries.location", location_text)]
+            )
+            attempts: list[tuple[str, str]] = []
+            seen_queries: set[str] = set()
+            for tag, query in candidate_queries:
+                if query and query not in seen_queries:
+                    attempts.append((tag, query))
+                    seen_queries.add(query)
+
+            tried_log: list[str] = []
+            matched_tag: str | None = None
+            result: dict = {}
+            for query_tag, query in attempts:
+                for attempt in range(_MAX_429_RETRIES + 1):
+                    try:
+                        result = geocode_one(query)
+                        break
+                    except _RateLimitError:
+                        if attempt < _MAX_429_RETRIES:
+                            logger.warning(
+                                "Rate-limited on %r; sleeping %ds (retry %d/%d)",
+                                query, _RATE_LIMIT_SLEEP,
+                                attempt + 1, _MAX_429_RETRIES,
+                            )
+                            with _lock:
+                                _progress["stage"] = "rate_limited"
+                            _rate_limit_sleep()
+                            with _lock:
+                                _progress["stage"] = "querying"
+                        else:
+                            logger.error(
+                                "Still rate-limited after %d retries on %r; marking failed",
+                                _MAX_429_RETRIES, query,
+                            )
+                            result = {
+                                "location_text": query,
+                                "lat": None,
+                                "lon": None,
+                                "display_name": None,
+                                "source": "failed",
+                                "confidence": None,
+                                "note": f"HTTP 429: rate-limited after {_MAX_429_RETRIES} retries",
+                            }
+
+                tried_log.append(f"{query_tag}:{query}")
+
+                is_last_attempt_of_run = (i == total - 1) and (
+                    (query_tag, query) == attempts[-1]
                 )
-            else:
-                geocode_input = location_text
+                if not is_last_attempt_of_run:
+                    with _lock:
+                        _progress["stage"] = "sleeping"
+                    time.sleep(1.1)
+                    with _lock:
+                        _progress["stage"] = "querying"
 
-            for attempt in range(_MAX_429_RETRIES + 1):
-                try:
-                    result = geocode_one(geocode_input)
+                if result.get("source") == "nominatim":
+                    matched_tag = query_tag
                     break
-                except _RateLimitError:
-                    if attempt < _MAX_429_RETRIES:
-                        logger.warning(
-                            "Rate-limited on %r; sleeping %ds (retry %d/%d)",
-                            geocode_input, _RATE_LIMIT_SLEEP,
-                            attempt + 1, _MAX_429_RETRIES,
-                        )
-                        with _lock:
-                            _progress["stage"] = "rate_limited"
-                        time.sleep(_RATE_LIMIT_SLEEP)
-                        with _lock:
-                            _progress["stage"] = "querying"
-                    else:
-                        logger.error(
-                            "Still rate-limited after %d retries on %r; marking failed",
-                            _MAX_429_RETRIES, geocode_input,
-                        )
-                        result = {
-                            "location_text": geocode_input,
-                            "lat": None,
-                            "lon": None,
-                            "display_name": None,
-                            "source": "failed",
-                            "confidence": None,
-                            "note": f"HTTP 429: rate-limited after {_MAX_429_RETRIES} retries",
-                        }
+                logger.debug("Cascade miss for %r on %s:%r", location_text, query_tag, query)
 
-            # When a structured source supplied the query, override the source flag
-            # and record the structured query in note for provenance.
-            # Also promote 'low' confidence to 'medium': Nominatim importance scores
-            # penalise specific venues even when the structured query is accurate.
-            if structured_query and result.get("source") == "nominatim":
-                result["source"] = matched_source
-                result["note"] = f"{matched_source}: {structured_query}"
-                if result.get("confidence") == "low":
-                    result["confidence"] = "medium"
+            # Apply source/confidence overrides based on which attempt succeeded.
+            # A plain 'entries.location' hit needs no override (source stays
+            # 'nominatim', as when there was no structured match at all).
+            if result.get("source") == "nominatim" and matched_tag not in (
+                None, "entries.location",
+            ):
+                result["source"] = matched_tag
+                if matched_tag.endswith("-city"):
+                    # Venue-stripped variant: cap confidence at medium.
+                    if _CONFIDENCE_RANK.get(result.get("confidence"), 0) > (
+                        _CONFIDENCE_RANK["medium"]
+                    ):
+                        result["confidence"] = "medium"
+                else:
+                    # Full structured-source hit: promote 'low' to 'medium' —
+                    # Nominatim importance scores penalise specific venues even
+                    # when the structured query is accurate.
+                    if result.get("confidence") == "low":
+                        result["confidence"] = "medium"
+
+            result["note"] = "tried: " + " | ".join(tried_log)
 
             with _lock:
                 _progress["stage"] = "saving"
 
             if not dry_run:
-                # Always key by the raw entries.location so the map JOIN still works.
-                _loc = location_text
-                _r = result
-                get_write_queue().execute(
-                    lambda c, _loc=_loc, _r=_r: c.execute(
-                        """INSERT INTO location_geocoded
-                               (location_text, lat, lon, source, confidence, display_name,
-                                manual_override, note, geocoded_at)
-                           VALUES (?, ?, ?, ?, ?, ?, 0, ?, CURRENT_TIMESTAMP)
-                           ON CONFLICT(location_text) DO UPDATE SET
-                               lat=excluded.lat,
-                               lon=excluded.lon,
-                               source=excluded.source,
-                               confidence=excluded.confidence,
-                               display_name=excluded.display_name,
-                               note=excluded.note,
-                               geocoded_at=CURRENT_TIMESTAMP
-                           WHERE manual_override = 0""",
-                        (
-                            _loc,
-                            _r.get("lat"),
-                            _r.get("lon"),
-                            _r["source"],
-                            _r.get("confidence"),
-                            _r.get("display_name"),
-                            _r.get("note"),
-                        ),
-                    )
-                )
+                _save_geocode_result(get_write_queue(), location_text, result)
 
             with _lock:
                 _progress["done"] = i + 1
@@ -538,16 +772,12 @@ def run_batch(
 
             if (i + 1) % 10 == 0:
                 logger.info(
-                    "Geocoding progress: %d/%d done, %d errors",
-                    i + 1, total, _progress["errors"],
+                    "Geocoding progress: %d/%d done, %d errors, %d skipped",
+                    i + 1, total, _progress["errors"], _progress["skipped"],
                 )
 
-            # Nominatim ToS: maximum 1 request per second
-            if i < total - 1:
-                with _lock:
-                    _progress["stage"] = "sleeping"
-                time.sleep(1.1)
-
+    except _StopSignal:
+        logger.info("Batch geocode stopped by request at %d/%d", _progress["done"], total)
     finally:
         with _lock:
             _progress["running"] = False
@@ -555,8 +785,8 @@ def run_batch(
             _progress["stage"] = "done"
 
     logger.info(
-        "Batch geocode complete: %d/%d processed, %d errors, dry_run=%s",
-        _progress["done"], total, _progress["errors"], dry_run,
+        "Batch geocode complete: %d/%d processed, %d errors, %d skipped, dry_run=%s",
+        _progress["done"], total, _progress["errors"], _progress["skipped"], dry_run,
     )
 
 
@@ -565,7 +795,9 @@ def get_progress() -> dict:
 
     Returns:
         Dict with keys: running (bool), done (int), total (int),
-        current (str), errors (int).
+        current (str), errors (int), skipped (int) — locations written as
+        source='skipped_not_concert' (TODO-221) — and stop_requested (bool),
+        so the GUI can show a "stopping" state after ``stop()`` is called.
     """
     with _lock:
         return dict(_progress)
