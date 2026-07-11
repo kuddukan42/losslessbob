@@ -70,7 +70,7 @@ losslessbob/
 │   ├── html_utils.py         # rewrite_links(): server-absolute → relative for file:// browsing
 │   ├── bootleg_scraper.py    # Bootleg-CD catalog (LBBCD index) scraper
 │   ├── olof_fetcher.py       # Olof Björner (bobserve.com) page mirror → data/olof/pages/ (TODO-162 P1)
-│   ├── olof_parser.py        # DSN event parser: olof_pages → olof_events (TODO-162 P2)
+│   ├── olof_parser.py        # DSN event+song parser: olof_pages → olof_events + olof_songs (TODO-162 P2–P3)
 │   ├── scheduler.py          # Watchdog file watcher, auto-import, scheduled integrity scans
 │   ├── integrity_monitor.py  # TODO-111: lbdir-based collection integrity scan engine
 │   ├── sox_utils.py          # SoX/ffmpeg tool detection + spectrogram generation
@@ -650,7 +650,7 @@ One row per unique URL discovered or fetched by the site crawler.
 
 Indexes: `idx_inventory_status`, `idx_inventory_session`.
 
-### `olof_pages` / `olof_events` — Olof Björner mirror + parsed events (TODO-162, local-only)
+### `olof_pages` / `olof_events` / `olof_songs` — Olof Björner mirror + parsed events (TODO-162, local-only)
 Spec: `instructions/FABLE_OLOF_FILES.md` §4 (authoritative column list). `olof_pages` = one row
 per mirrored bobserve.com page (filename PK, url, corpus `'dsn'`/`'chronicle'`, segment_title,
 year, sha256, fetched_at, parsed_at, parse_status, event_count); pages live verbatim in
@@ -658,9 +658,12 @@ year, sha256, fetched_at, parsed_at, parse_status, event_count); pages live verb
 event (event_id PK = DSN number; date_str ISO + raw, venue/city/region/country split fields,
 event_type `concert|session|rehearsal|broadcast|interview|other`, tour_name, NET/year concert
 numbers, lineup, recording kind/mins, notes, bobtalk, releases_raw, references_raw, raw_text
-safety net) via `backend/olof_parser.py`. Indexes: `idx_olof_events_date`,
-`idx_olof_events_tour`. Not in `MASTER_TABLES` yet — master/sitedata export tier is a P5
-decision. P3 will add `olof_songs`; P4 adds `olof_chronicle` / `olof_new_tapes`.
+safety net) via `backend/olof_parser.py`. `olof_songs` = one row per performed song / studio
+take (event_id+position PK, song_title, credits, is_encore, take_number, take_status,
+annotations, released_on — annotation/release position-ranges resolved per song). Indexes:
+`idx_olof_events_date`, `idx_olof_events_tour`, `idx_olof_songs_title`. Not in `MASTER_TABLES`
+yet — master/sitedata export tier is a P5 decision. P4 adds `olof_chronicle` /
+`olof_new_tapes`.
 
 ### `location_geocoded` — Geocoded concert locations (MASTER TABLE)
 | Column | Type | Notes |

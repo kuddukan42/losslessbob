@@ -1,3 +1,18 @@
+[2026-07-10] — feat(scraper): Olof P3 — DSN song/take parser → olof_songs (FABLE_OLOF_FILES §6; TODO-162 P3)
+Added: backend/db.py: olof_songs table (event_id+position PK, title, cover credits, is_encore,
+  take_number/status, annotations, released_on) + idx_olof_songs_title (spec §4).
+Added: backend/olof_parser.py: song/take rows threaded through the P2 pipeline — combined
+  ("N. Title (credits)") and split-cell session layouts, take statuses (incl. bare-status
+  source quirk), encore separator, annotation/release position-range resolution with
+  lineup-line guard, duplicate-position renumbering (Olof numbering slips), delete+reinsert
+  idempotent upsert; coverage report extended (songs_emitted, % concerts with songs).
+  Full-mirror parse: 61,708 song rows; 97.8% of concerts / 95.1% of sessions with ≥1 row.
+  Gate: DSN01225 17/17 takes with statuses; DSN11050 19/19 titles match setlistfm bd4a956,
+  encore + credits + annotation ranges correct; P2 event coverage byte-identical (4,533
+  events), page ok/partial split unchanged. Known soft spot: "released in <country> on …"
+  phrasing lands in annotations, not released_on (documented in module).
+Changed: instructions/WORK_PACKAGE_2026-07-09.md: Olof row updated — P3 done, next P4.
+
 [2026-07-10] — feat(scraper): Olof scraper P1+P2 — bobserve.com mirror + DSN event parser (FABLE_OLOF_FILES §6; TODO-162 P1–P2) + tapematch crawl merged-folder crash fix
 Added: backend/olof_fetcher.py: verbatim byte mirror of Olof Björner's Still On The Road +
   Yearly Chronicles (browser UA for Cloudflare, ≥2 s throttle, resume-safe skip/backfill,
