@@ -54,6 +54,9 @@ REPORT_PATH  = SESSION_DIR / "last_run_report.md"
 LOG_PATH     = SESSION_DIR / "last_run.log"
 OBS_DB_PATH  = SESSION_DIR / "observations.db"
 RUNS_DIR     = PROJECT_ROOT / "data" / "tapematch" / "runs"
+CRAWL_DIR            = PROJECT_ROOT / "data" / "tapematch"
+CRAWL_LAST_ATTEMPT_PATH = CRAWL_DIR / "crawl_last_attempt.txt"
+CRAWL_SKIP_PATH         = CRAWL_DIR / "crawl_skip.txt"
 
 AUDIO_EXTS = {".flac", ".wav", ".shn", ".aiff", ".aif", ".ape", ".m4a", ".mp3"}
 
@@ -1361,6 +1364,19 @@ def next_run(min_entries: int = 2, dry_run: bool = False,
     todo = [(iso, n, loc) for iso, n, loc, _ in all_dates if iso not in done]
     todo.sort(key=lambda x: (_decade_priority(x[0]), x[0]))
 
+    skip_dates: set[str] = set()
+    if CRAWL_SKIP_PATH.exists():
+        for line in CRAWL_SKIP_PATH.read_text().splitlines():
+            line = line.strip()
+            if line and not line.startswith("#"):
+                skip_dates.add(line)
+    if skip_dates:
+        before = len(todo)
+        todo = [t for t in todo if t[0] not in skip_dates]
+        skipped = before - len(todo)
+        if skipped:
+            print(f"=== tapematch --next: skipping {skipped} date(s) listed in {CRAWL_SKIP_PATH.name} ===")
+
     if not todo:
         print("=== tapematch --next: queue empty, nothing to do. ===")
         return RC_QUEUE_EMPTY
@@ -1368,6 +1384,8 @@ def next_run(min_entries: int = 2, dry_run: bool = False,
     iso, n, loc = todo[0]
     remaining = len(todo)
     print(f"=== tapematch --next: {iso}  —  {loc[:50]}  ({n} entries, {remaining} remaining) ===")
+    CRAWL_DIR.mkdir(parents=True, exist_ok=True)
+    CRAWL_LAST_ATTEMPT_PATH.write_text(iso + "\n")
     return run_date(iso, dry_run=dry_run, allow_missing=allow_missing)
 
 
