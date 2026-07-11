@@ -1754,6 +1754,10 @@
     }
   },
   "scraper": {
-    "curatorNote": "Los usuarios finales obtienen datos extraídos a través de las versiones «master» y «site-data»; la extracción de datos está destinada a los curadores."
+    "curatorNote": "Los usuarios finales obtienen datos extraídos a través de las versiones «master» y «site-data»; la extracción de datos está destinada a los curadores.",
+    "geocoder": {
+      "skippedLabel": "Omitido",
+      "stoppingBadge": "detener"
+    }
   }
 }

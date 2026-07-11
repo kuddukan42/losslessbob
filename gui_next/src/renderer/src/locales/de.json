@@ -1754,6 +1754,10 @@
     }
   },
   "scraper": {
-    "curatorNote": "Endnutzer erhalten die gesammelten Daten über Master- und Standortdaten-Veröffentlichungen; das Sammeln der Daten ist Aufgabe der Kuratoren."
+    "curatorNote": "Endnutzer erhalten die gesammelten Daten über Master- und Standortdaten-Veröffentlichungen; das Sammeln der Daten ist Aufgabe der Kuratoren.",
+    "geocoder": {
+      "skippedLabel": "Übersprungen",
+      "stoppingBadge": "Beenden"
+    }
   }
 }

@@ -1,3 +1,39 @@
+[2026-07-11] — feat(gui): TODO-226B — About-screen data-source credits (setlist.fm, bobdylan.com, bobserve link)
+Changed: gui_next AboutDialog.tsx: TODO-226 Part B — added setlist.fm and bobdylan.com credit
+  cards to the Credits tab (after the existing Olof Björner card) and a "bobserve.com · About
+  Bob" entry to the About-tab Links list. Ground truth vs. ticket: the Olof/bobserve credit it
+  asked to add was already shipped (commit 3b9ca946); the "existing setlist.fm/bobdylan.com
+  credits" it referenced did not exist — this fills that real gap. Component is static-English
+  constants (no locale keys) so /gui-next-i18n is a no-op. Types + build pass. TODO-226 stays
+  open for Part A (BobTalk search + show-page surfacing).
+
+[2026-07-11] — feat(backend+gui): olof_events geocoder source + authoritative concert filter (TODO-224 pts 1–2), geocoder skipped/stopping GUI (TODO-229)
+Added: backend/geocoder.py: TODO-224 pt 1 — _get_olof_events_location_string() slotted into
+  _STRUCTURED_SOURCES directly after bobdylan_shows: on an entries-date match builds
+  "venue, city, region, country" from olof_events' split fields (blank parts dropped) + a
+  city-only variant for the TODO-220 cascade; prefers event_type='concert' on multi-event
+  dates (mirrors db.compare_olof_setlist tie-break). _table_exists() feature-detects
+  olof_events so installs without the Olof scraper degrade to prior behavior.
+Changed: backend/geocoder.py: TODO-224 pt 2 — _is_concert_location() now returns
+  (eligible, skip_note): an olof_events date match is AUTHORITATIVE (concert → eligible even
+  past the keyword blacklist; any other event_type → skipped_not_concert with
+  "olof_events: non-concert event_type=<type>" in note); no olof match → original TODO-221
+  heuristic unchanged. Pt 3 (gazetteer seeding from olof_events) deliberately deferred to
+  TODO-223 with the rest of the gazetteer work.
+Added: tests/test_geocoder.py: 12 new tests (olof lookup hit/blank-drop/tie-break/absent-table,
+  authoritative eligibility incl. conflict-with-bobdylan_shows case, 2 run_batch end-to-end).
+  All 12 pass; 13 pre-existing failures from stale TODO-220/221-era fixtures confirmed present
+  before this change (stash-verified) → BUG opened this session.
+Changed: gui_next ScreenScraper.tsx: TODO-229 — GeocoderStatus gains skipped/stop_requested,
+  GeoStats gains skipped; "Skipped" row in the geocoder Cache Stats grid; StripCard gains an
+  optional badge override → geocoder card shows "stopping" while running && stop_requested.
+  New scraper.geocoder.* keys in en.json; DeepL pass synced de/fr/es/it/nl (3,409 chars).
+  Verified: backend restarted (live /api/geocode/stats serves skipped=31), tsc node+renderer
+  0 errors, production build clean.
+Added: instructions/WORK_PACKAGE_NEXT.md: queue for post-7/12 windows — LISTENING §3 (song
+  index on the olof_songs spine) + §2 (A/B) + TODO-215 next window; TODO-213 standing preempt;
+  N+2 slot unassigned (pipeline Phase 7, its original occupant, verified already shipped 07-09).
+
 [2026-07-11] — feat(backend): geocoder stop support (TODO-219), concert-only eligibility filter (TODO-221), cascading Nominatim fallback (TODO-220)
 Added: backend/geocoder.py: TODO-219 — stop() sets _progress["stop_requested"] under _lock;
   run_batch() checks it at the top of every location iteration and the 429 backoff sleep is

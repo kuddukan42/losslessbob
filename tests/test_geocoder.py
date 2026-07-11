@@ -5,6 +5,8 @@ Covers:
   - _entry_date_to_iso()                    — M/D/YY -> YYYY-MM-DD (pure function)
   - _get_performance_location_string()      — dylan_performances lookup
   - _get_bobdylan_shows_location_string()    — bobdylan_shows lookup
+  - _get_olof_events_location_string()      — olof_events lookup (TODO-224)
+  - _is_concert_location()                  — concert-only eligibility, olof-authoritative (TODO-224)
   - _get_setlistfm_location_string()        — setlistfm_shows lookup
   - geocode_one()                           — Nominatim lookup (mocked urllib)
   - place_manual()                          — manual pin upsert
@@ -216,7 +218,202 @@ class TestGetBobdylanShowsLocationString:
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# 4. _get_setlistfm_location_string()
+# 4. _get_olof_events_location_string()  (TODO-224)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+def _insert_olof_event(conn, event_id, event_type, date_str, venue, city, region, country,
+                        page_filename="p1"):
+    """Insert an olof_pages row (if needed) and an olof_events row for tests."""
+    existing = conn.execute(
+        "SELECT 1 FROM olof_pages WHERE filename=?", (page_filename,)
+    ).fetchone()
+    if existing is None:
+        conn.execute(
+            "INSERT INTO olof_pages (filename, url, corpus) VALUES (?, 'http://x', 'dsn')",
+            (page_filename,),
+        )
+    conn.execute(
+        """INSERT INTO olof_events
+           (event_id, page_filename, event_type, date_str, venue, city, region, country)
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?)""",
+        (event_id, page_filename, event_type, date_str, venue, city, region, country),
+    )
+
+
+class TestGetOlofEventsLocationString:
+    def test_returns_structured_string_on_match(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            from backend.geocoder import _get_olof_events_location_string
+            conn.execute(
+                "INSERT INTO entries (lb_number, date_str, location, status) VALUES (1, '7/28/00', 'Raw Loc', 'ok')"
+            )
+            _insert_olof_event(conn, 1, "concert", "2000-07-28", "Massey Hall", "Toronto", "ON", "Canada")
+            conn.commit()
+
+            result = _get_olof_events_location_string("Raw Loc", conn)
+            assert result == ("Massey Hall, Toronto, ON, Canada", "Toronto, ON, Canada")
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_drops_blank_parts(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            from backend.geocoder import _get_olof_events_location_string
+            conn.execute(
+                "INSERT INTO entries (lb_number, date_str, location, status) VALUES (1, '7/28/00', 'Raw Loc', 'ok')"
+            )
+            _insert_olof_event(conn, 1, "concert", "2000-07-28", "Massey Hall", "Toronto", "", "")
+            conn.commit()
+
+            result = _get_olof_events_location_string("Raw Loc", conn)
+            assert result == ("Massey Hall, Toronto", "Toronto")
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_no_matching_event_returns_none(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            from backend.geocoder import _get_olof_events_location_string
+            conn.execute(
+                "INSERT INTO entries (lb_number, date_str, location, status) VALUES (1, '7/28/00', 'Raw Loc', 'ok')"
+            )
+            conn.commit()
+
+            assert _get_olof_events_location_string("Raw Loc", conn) is None
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_prefers_concert_event_type_when_multiple_events_same_date(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            from backend.geocoder import _get_olof_events_location_string
+            conn.execute(
+                "INSERT INTO entries (lb_number, date_str, location, status) VALUES (1, '7/28/00', 'Raw Loc', 'ok')"
+            )
+            _insert_olof_event(conn, 1, "interview", "2000-07-28", "TV Studio", "Toronto", "ON", "Canada")
+            _insert_olof_event(conn, 2, "concert", "2000-07-28", "Massey Hall", "Toronto", "ON", "Canada")
+            conn.commit()
+
+            result = _get_olof_events_location_string("Raw Loc", conn)
+            assert result == ("Massey Hall, Toronto, ON, Canada", "Toronto, ON, Canada")
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_absent_table_returns_none(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            from backend.geocoder import _get_olof_events_location_string
+            conn.execute(
+                "INSERT INTO entries (lb_number, date_str, location, status) VALUES (1, '7/28/00', 'Raw Loc', 'ok')"
+            )
+            conn.execute("DROP TABLE olof_events")
+            conn.commit()
+
+            assert _get_olof_events_location_string("Raw Loc", conn) is None
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# 5. _is_concert_location()  (TODO-221, olof-authoritative TODO-224)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+class TestIsConcertLocation:
+    def test_olof_concert_event_is_eligible(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            from backend.geocoder import _is_concert_location
+            conn.execute(
+                "INSERT INTO entries (lb_number, date_str, location, status) VALUES (1, '7/28/00', 'Raw Loc', 'ok')"
+            )
+            _insert_olof_event(conn, 1, "concert", "2000-07-28", "Massey Hall", "Toronto", "ON", "Canada")
+            conn.commit()
+
+            eligible, note = _is_concert_location("Raw Loc", conn)
+            assert eligible is True
+            assert note is None
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_olof_non_concert_event_is_ineligible_with_note(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            from backend.geocoder import _is_concert_location
+            conn.execute(
+                "INSERT INTO entries (lb_number, date_str, location, status) VALUES (1, '7/28/00', 'Raw Loc', 'ok')"
+            )
+            _insert_olof_event(conn, 1, "interview", "2000-07-28", "TV Studio", "Toronto", "ON", "Canada")
+            conn.commit()
+
+            eligible, note = _is_concert_location("Raw Loc", conn)
+            assert eligible is False
+            assert note == "olof_events: non-concert event_type=interview"
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_olof_match_is_authoritative_over_bobdylan_shows_match(self):
+        # Same date has a bobdylan_shows row too, but the TODO-224 rule is
+        # that an olof_events match wins outright once present.
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            from backend.geocoder import _is_concert_location
+            conn.execute(
+                "INSERT INTO entries (lb_number, date_str, location, status) VALUES (1, '7/28/00', 'Raw Loc', 'ok')"
+            )
+            conn.execute(
+                """INSERT INTO bobdylan_shows (bobdylan_url, date_str, venue, location)
+                   VALUES ('u1', '2000-07-28', 'The Fillmore', 'San Francisco, CA')"""
+            )
+            _insert_olof_event(conn, 1, "rehearsal", "2000-07-28", "Rehearsal Hall", "SF", "CA", "USA")
+            conn.commit()
+
+            eligible, note = _is_concert_location("Raw Loc", conn)
+            assert eligible is False
+            assert note == "olof_events: non-concert event_type=rehearsal"
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_absent_olof_table_falls_back_to_heuristic_eligible(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            from backend.geocoder import _is_concert_location
+            conn.execute(
+                "INSERT INTO entries (lb_number, date_str, location, status) VALUES (1, '7/28/00', 'Raw Loc', 'ok')"
+            )
+            conn.execute(
+                """INSERT INTO bobdylan_shows (bobdylan_url, date_str, venue, location)
+                   VALUES ('u1', '2000-07-28', 'The Fillmore', 'San Francisco, CA')"""
+            )
+            conn.execute("DROP TABLE olof_events")
+            conn.commit()
+
+            eligible, note = _is_concert_location("Raw Loc", conn)
+            assert eligible is True
+            assert note is None
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_absent_olof_table_falls_back_to_heuristic_ineligible(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            from backend.geocoder import _is_concert_location
+            conn.execute(
+                "INSERT INTO entries (lb_number, date_str, location, status) "
+                "VALUES (1, '7/28/00', 'compilation tape', 'ok')"
+            )
+            conn.execute("DROP TABLE olof_events")
+            conn.commit()
+
+            eligible, note = _is_concert_location("compilation tape", conn)
+            assert eligible is False
+            assert note is None
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# 6. _get_setlistfm_location_string()
 # ═══════════════════════════════════════════════════════════════════════════════
 
 class TestGetSetlistfmLocationString:
@@ -271,7 +468,7 @@ class TestGetSetlistfmLocationString:
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# 5. geocode_one()
+# 7. geocode_one()
 # ═══════════════════════════════════════════════════════════════════════════════
 
 class TestGeocodeOne:
@@ -346,7 +543,7 @@ class TestGeocodeOne:
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# 6. place_manual()
+# 8. place_manual()
 # ═══════════════════════════════════════════════════════════════════════════════
 
 class TestPlaceManual:
@@ -388,7 +585,7 @@ class TestPlaceManual:
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# 7. run_batch()
+# 9. run_batch()
 # ═══════════════════════════════════════════════════════════════════════════════
 
 def _fake_geocode(loc):
@@ -622,6 +819,76 @@ class TestRunBatch:
         finally:
             shutil.rmtree(tmp_dir, ignore_errors=True)
 
+    def test_uses_olof_events_when_no_bobdylan_shows_match(self):
+        """TODO-224: olof_events is a structured source, hit end-to-end via run_batch."""
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            conn.execute(
+                "INSERT INTO entries (lb_number, date_str, location, status) VALUES (1, '7/28/00', 'Raw Location', 'ok')"
+            )
+            conn.execute(
+                "INSERT INTO olof_pages (filename, url, corpus) VALUES ('p1', 'http://x', 'dsn')"
+            )
+            conn.execute(
+                """INSERT INTO olof_events
+                   (event_id, page_filename, event_type, date_str, venue, city, region, country)
+                   VALUES (1, 'p1', 'concert', '2000-07-28', 'Massey Hall', 'Toronto', 'ON', 'Canada')"""
+            )
+            conn.commit()
+
+            from backend import geocoder
+            captured = {}
+
+            def _capture_geocode(loc):
+                captured["query"] = loc
+                return {"location_text": loc, "lat": 1.0, "lon": 2.0,
+                        "display_name": loc, "source": "nominatim", "confidence": "high"}
+
+            with patch.object(geocoder, "geocode_one", side_effect=_capture_geocode), \
+                 patch.object(geocoder.time, "sleep"):
+                geocoder.run_batch(db_path=db_path)
+
+            assert captured["query"] == "Massey Hall, Toronto, ON, Canada"
+            row = conn.execute(
+                "SELECT * FROM location_geocoded WHERE location_text=?", ("Raw Location",)
+            ).fetchone()
+            assert row["source"] == "olof_events"
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_olof_non_concert_event_skipped_with_event_type_note(self):
+        """TODO-224: a non-concert olof_events date match is authoritative — the
+        location is written skipped_not_concert with the event_type in note, and
+        Nominatim is never called."""
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            conn.execute(
+                "INSERT INTO entries (lb_number, date_str, location, status) VALUES (1, '7/28/00', 'Raw Location', 'ok')"
+            )
+            conn.execute(
+                "INSERT INTO olof_pages (filename, url, corpus) VALUES ('p1', 'http://x', 'dsn')"
+            )
+            conn.execute(
+                """INSERT INTO olof_events
+                   (event_id, page_filename, event_type, date_str, venue, city, region, country)
+                   VALUES (1, 'p1', 'session', '2000-07-28', 'Studio A', 'New York', 'NY', 'USA')"""
+            )
+            conn.commit()
+
+            from backend import geocoder
+            with patch.object(geocoder, "geocode_one") as mock_geocode, \
+                 patch.object(geocoder.time, "sleep"):
+                geocoder.run_batch(db_path=db_path)
+
+            mock_geocode.assert_not_called()
+            row = conn.execute(
+                "SELECT * FROM location_geocoded WHERE location_text=?", ("Raw Location",)
+            ).fetchone()
+            assert row["source"] == "skipped_not_concert"
+            assert row["note"] == "olof_events: non-concert event_type=session"
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
     def test_bobdylan_shows_takes_priority_over_performances(self):
         db_path, conn, tmp_dir = _make_db()
         try:
@@ -741,7 +1008,7 @@ class TestRunBatch:
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# 8. get_progress()
+# 10. get_progress()
 # ═══════════════════════════════════════════════════════════════════════════════
 
 class TestGetProgress:

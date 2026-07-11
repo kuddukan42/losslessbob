@@ -1754,6 +1754,10 @@
     }
   },
   "scraper": {
-    "curatorNote": "Les utilisateurs finaux reçoivent les données extraites via les versions « master » et « site-data » ; l'extraction des données est réservée aux conservateurs."
+    "curatorNote": "Les utilisateurs finaux reçoivent les données extraites via les versions « master » et « site-data » ; l'extraction des données est réservée aux conservateurs.",
+    "geocoder": {
+      "skippedLabel": "Ignoré",
+      "stoppingBadge": "arrêt"
+    }
   }
 }

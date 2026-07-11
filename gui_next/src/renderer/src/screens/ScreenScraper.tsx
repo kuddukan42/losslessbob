@@ -85,9 +85,11 @@ interface SetlistFmStatus {
 interface GeocoderStatus {
   running: boolean; done: number; total: number
   current: string; errors: number; succeeded: number; stage: string
+  skipped: number; stop_requested: boolean
 }
 interface GeoStats {
   total_cached: number; geocoded: number | null; failed: number | null; manual: number | null
+  skipped: number | null
   entries_total: number; entries_covered: number; pct_covered: number
 }
 interface CrawlerSession {
@@ -182,10 +184,10 @@ function LogPanel({ lines, onClear }: { lines: LogLine[]; onClear: () => void })
 
 interface StripCardProps {
   label: string; active: boolean; running: boolean; status: string
-  stat: string; lastDate: string; onClick: () => void
+  stat: string; lastDate: string; onClick: () => void; badge?: string
 }
 
-function StripCard({ label, active, running, status, stat, lastDate, onClick }: StripCardProps) {
+function StripCard({ label, active, running, status, stat, lastDate, onClick, badge }: StripCardProps) {
   const dot = dotColor(running, status)
   return (
     <button type="button" onClick={onClick} style={{
@@ -202,7 +204,7 @@ function StripCard({ label, active, running, status, stat, lastDate, onClick }: 
           {label}
         </span>
         <span style={{ fontSize: 'var(--lbb-fs-10)', color: 'var(--lbb-fg3)', marginLeft: 'auto' }}>
-          {running ? 'running' : status}
+          {badge ?? (running ? 'running' : status)}
         </span>
       </div>
       <div style={{ fontSize: 'var(--lbb-fs-12)', fontWeight: 600, color: 'var(--lbb-fg2)', fontVariantNumeric: 'tabular-nums' }}>
@@ -769,6 +771,7 @@ function SetlistFmTab({ status, logs, onClearLog }: {
 function GeocoderTab({ status, geoStats, logs, onClearLog }: {
   status: GeocoderStatus | null; geoStats: GeoStats | null; logs: LogLine[]; onClearLog: () => void
 }) {
+  const { t } = useTranslation()
   const [manualLoc, setManualLoc] = useState('')
   const [manualLat, setManualLat] = useState('')
   const [manualLon, setManualLon] = useState('')
@@ -828,6 +831,7 @@ function GeocoderTab({ status, geoStats, logs, onClearLog }: {
               ['Geocoded', geoStats.geocoded ?? 0],
               ['Failed', geoStats.failed ?? 0],
               ['Manual pins', geoStats.manual ?? 0],
+              [t('scraper.geocoder.skippedLabel'), geoStats.skipped ?? 0],
             ]} />
             <CtrlLabel>Coverage</CtrlLabel>
             <StatGrid rows={[
@@ -1056,7 +1060,7 @@ function ScreenScraperInner() {
   }, [pollAll])
 
   // Strip card data
-  const stripCards: { id: TabId; label: string; running: boolean; status: string; stat: string; lastDate: string }[] = [
+  const stripCards: { id: TabId; label: string; running: boolean; status: string; stat: string; lastDate: string; badge?: string }[] = [
     {
       id: 'crawler', label: 'LB Crawler',
       running: crawlerStatus?.running ?? false,
@@ -1100,6 +1104,9 @@ function ScreenScraperInner() {
       status: geocoderStatus?.running ? 'running' : 'idle',
       stat: geoStats ? `${geoStats.pct_covered}% covered` : '—',
       lastDate: geoStats ? `${(geoStats.geocoded ?? 0).toLocaleString()} cached` : '—',
+      badge: geocoderStatus?.running && geocoderStatus?.stop_requested
+        ? t('scraper.geocoder.stoppingBadge')
+        : undefined,
     },
   ]
 
