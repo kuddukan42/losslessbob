@@ -15,14 +15,15 @@ below.
 
 ## Next window — LISTENING
 
-Spec: `instructions/FABLE_LISTENING_INSIGHT_IDEAS.md` (§1 pairs sync + §9 tonight
-card already shipped 07-10).
+Spec: `instructions/complete/FABLE_LISTENING_INSIGHT_IDEAS.md` (retired to
+complete/ 07-11; §1 pairs sync + §9 tonight card shipped 07-10 — §2/§3 below are
+the live remainder).
 
 | Slot | Work | Notes |
 |---|---|---|
-| 1 | **LISTENING §3 — song-centric index** | Key update to the spec (written 07-06, pre-Olof): use `olof_songs` as the spine, NOT setlist.fm + free-text parsing — 61,708 normalized per-performance rows, 97.8% concert coverage, take statuses + positions. Remaining work: song-canonicalisation table (curator-editable, not code constants), `song_performances` derived table, join to `show_picks`/`abs_grade`, song browser screen. The canonicalisation work directly feeds TODO-225 (setlist fingerprinting) — consider landing both in one stream. |
-| 2 | **LISTENING §2 — aligned A/B listening** | Start with a scoping pass: inspect one `data/tapematch/runs/<RUN_ID>/` archive for per-pair offset artifacts (`align.py` is the writer). v1 restricts to cleanly-aligned pairs (no staircase). Backend clip service (`POST /api/ab_clip`) + A/B player widget. |
-| 3 | **TODO-215 — TapeMatch screen v2** | Corrections, run management, LB deep-links; natural home for the §2 A/B player and the dup-encodes GUI (TODO-210 rider). Pairs well with slot 2. |
+| 1 | ~~**TODO-215 — TapeMatch screen v2**~~ **DONE 2026-07-11 (TODO-215 closed)** — all 3 parts: (1) curator match feedback (POST /api/tapematch/pairs/judgment + JudgmentPanel), (2) crawl start/stop endpoints + buttons (crawl_start.sh/crawl_stop.sh wrappers, script stays single-instance authority), (3) LB deep-links (LbLinkButton → `/library?lb=`, one-shot consumption in ScreenLibrary + drag-resizable DetailPanel). 10 endpoint tests added. §2 A/B player + dup-encodes GUI riders move to slot 3's stream. |
+| 2 | **LISTENING §3 — song-centric index** | Key update to the spec (written 07-06, pre-Olof): use `olof_songs` as the spine, NOT setlist.fm + free-text parsing — 61,708 normalized per-performance rows, 97.8% concert coverage, take statuses + positions. Remaining work: song-canonicalisation table (curator-editable, not code constants), `song_performances` derived table, join to `show_picks`/`abs_grade`, song browser screen. The canonicalisation work directly feeds TODO-225 (setlist fingerprinting) — consider landing both in one stream. |
+| 3 | **LISTENING §2 — aligned A/B listening** | Start with a scoping pass: inspect one `data/tapematch/runs/<RUN_ID>/` archive for per-pair offset artifacts (`align.py` is the writer). v1 restricts to cleanly-aligned pairs (no staircase). Backend clip service (`POST /api/ab_clip`) + A/B player widget. Pairs well with slot 1. |
 
 Session hygiene unchanged: GUI slots end `/gui-next-i18n` + `/gui-check`; every
 code session ends `/session-close`.

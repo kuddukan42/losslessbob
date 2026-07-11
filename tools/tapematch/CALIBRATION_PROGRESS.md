@@ -757,3 +757,38 @@ LB14682 + LB2147 absent from my_collection) + fullset_pairs_12x_scores.json + v1
   harness at v3 is part of the future rescore, not this apply step.
 - Remaining TODO-201 scope: 136 duration-only pairs (partial/incomplete-set judgment method)
   + 8 UNSURE. TODO-201 stays open.
+
+## EDGE CASE OBSERVED IN THE WILD (2026-07-11) — staircase relaxation × same-show fp floor false-merge
+
+Confirms the risk flagged abstractly in FINDINGS (1990-06-01 note, "LOWERING the
+staircase/curator fp bar to 0.40–0.43 can manufacture new false merges") with a concrete
+real-world instance from an adhoc run (1997-11-11 Lisle IL, 7 audience sources, run
+`20260711_142949`; NOT in the frozen set — no regression-harness signal, logged adhoc only).
+
+- **Symptom:** LB-01126 merged into a same-source family (LB-13287/LB-09042/LB-04854,
+  intra-corr 0.91–0.99) despite primary corr 0.003–0.018, windowed_frac 0.0, hiss_frac 0.0,
+  hiss_median ~0.006 to every member. Pipeline self-flagged it `chain-unverified`.
+- **Sole linking signal = fingerprint at the relaxed bar.** LB-01126's fp Dice is a flat
+  **~0.40–0.43 to ALL SIX other sources** (DAT 0.416 · LB-13287 0.409 · LB-04283 0.398 ·
+  LB-09042 0.407 · LB-9394 0.432 · LB-04854 0.410) — i.e. the *same-show musical-content
+  floor*, source-agnostic, exactly the 0.35–0.47 band the config warns about. It is NOT a
+  source-specific match.
+- **Why it landed in THIS family and not the others:** the genuine same-source pair
+  LB-04854↔LB-09042 has a staircase/splice lag curve (CD-R re-tracking) → those sources carry
+  `speed_kind='staircase/splice'`. `verdict.fp_threshold` drops the fp cluster bar 0.50→0.40
+  for **any pair touching a staircase-flagged source** (not just the staircase pair itself).
+  LB-01126↔LB-04854 fp=0.410 ≥ 0.40 → single-linkage merge. Reproduced: with the flag
+  `pair_links→True` (thr 0.40); without it `→False` (thr 0.50). Families 1/3/4 kept the 0.50
+  bar (no staircase member), so 01126's identical ~0.41 fp to them did not merge — the
+  asymmetry is purely which family happened to contain a staircase pair.
+- **Generalised hazard (beyond the 1990-06-01 note):** the staircase relaxation is
+  *source-scoped, not pair-scoped* — one staircase pair inside an otherwise-clean family
+  lowers the fp bar for that family's edges to **every unrelated source on the date**, so any
+  same-show fingerprint floor (~0.40) can cross. Precision cost scales with family size × #
+  other sources, and is invisible to the frozen harness whenever the date isn't in the set.
+- **No config change made** (calibration FROZEN 7/09–7/12; single adhoc anecdote, not a
+  frozen-set FP). Candidate mitigations if this recurs on measured dates: (a) require a
+  corroborating non-fingerprint signal (windowed/hiss > floor) before a staircase-relaxed fp
+  merge — fingerprint is confirmatory-only per WORKFLOW; (b) gate the 0.40 bar to the
+  staircase *pair* rather than either source globally; (c) raise `cluster_threshold_staircase`
+  toward the 0.47 same-show ceiling. Left for the post-7/12 rescore.
