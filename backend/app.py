@@ -8374,6 +8374,98 @@ def create_app() -> Flask:
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
+    # ── Olof Björner (Still On The Road + Yearly Chronicles) ──────────────────
+    # olof_* tables are local-only (not in MASTER_TABLES); every route here
+    # degrades to empty lists/counts rather than 404ing when they're empty.
+
+    @app.route("/api/olof/date/<date_str>", methods=["GET"])
+    def olof_date(date_str: str):
+        """Return everything Olof's corpus knows about a show date.
+
+        Returns:
+            JSON: {date_str, events: [olof_events row + songs: [...]],
+                   chronicle: [olof_chronicle rows], new_tapes: [olof_new_tapes
+                   rows]}. Lists are empty (not 404) when nothing matches.
+        """
+        try:
+            return jsonify(database.get_olof_date(date_str))
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/olof/event/<int:event_id>", methods=["GET"])
+    def olof_event(event_id: int):
+        """Return one olof_events row (all columns) plus its ordered songs.
+
+        Returns:
+            JSON: olof_events columns + {songs: [...]}. 404 if event_id is
+            unknown.
+        """
+        try:
+            event = database.get_olof_event(event_id)
+            if event is None:
+                return jsonify({"error": "event not found"}), 404
+            return jsonify(event)
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/olof/chronicle/<int:year>", methods=["GET"])
+    def olof_chronicle_year(year: int):
+        """Return one chronicle year's entries in calendar order.
+
+        Returns:
+            JSON: {year, entries: [olof_chronicle rows]}. Empty list if the
+            year has no chronicle page parsed.
+        """
+        try:
+            return jsonify({"year": year, "entries": database.get_olof_chronicle_year(year)})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/olof/status", methods=["GET"])
+    def olof_status():
+        """Return per-table Olof row counts + max DSN year, for GUI gating.
+
+        Returns:
+            JSON: {pages, events, songs, chronicle_rows, new_tapes,
+                   chronicle_years, max_dsn_year}
+        """
+        try:
+            return jsonify(database.get_olof_status())
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/olof/compare", methods=["POST"])
+    def olof_compare():
+        """Compare a folder's track titles against Olof's setlist for a date.
+
+        Body JSON:
+            date_str (str, required) — ISO yyyy-mm-dd.
+            titles (list[str], optional) — track titles in any order.
+            lb_number (int, optional) — resolves titles server-side from the
+                catalog entry's stored ``entries.setlist`` tracklist text.
+                Used only when ``titles`` is omitted/empty.
+
+        Returns:
+            JSON: {date_str, olof_event_id, olof_setlist: [{position,
+                   song_title}], matches: [{input_title, matched_position,
+                   matched_title}], olof_missing: [song_title, ...],
+                   match_pct, recording_info, recording_kind, recording_mins}
+            400 if neither titles nor a resolvable lb_number is given.
+        """
+        try:
+            data = request.get_json() or {}
+            date_str = (data.get("date_str") or "").strip()
+            if not date_str:
+                return jsonify({"error": "date_str required"}), 400
+            titles = data.get("titles") or []
+            if not titles and data.get("lb_number") is not None:
+                titles = database.resolve_lb_number_titles(int(data["lb_number"])) or []
+            if not titles:
+                return jsonify({"error": "titles or a resolvable lb_number required"}), 400
+            return jsonify(database.compare_olof_setlist(date_str, titles))
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
     # ── Collection Trading ────────────────────────────────────────────────────
 
     @app.route("/api/trading/export", methods=["GET"])
