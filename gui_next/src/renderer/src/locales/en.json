@@ -1506,6 +1506,7 @@
       "tabQuality": "Quality",
       "tabPicks": "Picks",
       "tabTaper": "Taper",
+      "tabOlof": "Olof",
       "showDetails": "Show details",
       "collapseDetails": "Collapse details",
       "lbPage": "LB page",
@@ -1638,6 +1639,23 @@
       "conflict": "Conflicting evidence",
       "confirm": "Confirm",
       "reject": "Reject"
+    },
+    "olof": {
+      "label": "Still On The Road",
+      "emptyNote": "No Olof Björner data for this date.",
+      "encore": "Encore",
+      "take": "Take {{n}}",
+      "coverCredit": "Cover: {{credits}}",
+      "releasedOn": "Released: {{where}}",
+      "concertNoNet": "Concert # (all-time)",
+      "concertNoYear": "Concert # (this year)",
+      "recordingMinutes": "~{{count}} min",
+      "chronicleLabel": "Chronicle",
+      "newTapesLabel": "Circulation",
+      "circulatedAs": "First circulated as “{{title}}”",
+      "matchPct": "{{pct}}% setlist match",
+      "expectedMinutes": "~{{count}} min expected",
+      "missingFromCopy": "Missing from this copy: {{titles}}"
     },
     "scope": {
       "everything": "Everything",
