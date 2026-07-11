@@ -1,3 +1,27 @@
+[2026-07-10] — feat(backend+gui): Olof P5 — surfacing: endpoints, tour-name fallback, setlist compare, GUI panel (FABLE_OLOF_FILES §5–§6; closes TODO-162 + TODO-153; Olof spec complete)
+Added: backend/db.py: get_olof_date/get_olof_event/get_olof_chronicle_year/get_olof_status
+  readers (all degrade to empty — olof_* stays local-only, NOT in MASTER_TABLES; export tier
+  deliberately deferred as a redistribution-rights question); normalize_title_for_match (reuses
+  checksum_utils apostrophe fold) + conservative containment matcher; parse_entry_setlist_titles
+  (entries.setlist free-text tracklists, 11,796 rows); compare_olof_setlist order-independent
+  greedy matcher returning matches/missing/match_pct + recording info for duration sanity.
+Added: backend/app.py: GET /api/olof/date/<date>, /api/olof/event/<id>, /api/olof/chronicle/<year>,
+  /api/olof/status; POST /api/olof/compare ({date_str, titles[] | lb_number}).
+Changed: backend/db.py get_performances(): tour-name fallback chain setlistfm → olof_events
+  (TODO-153) — setdefault so setlistfm wins, concert rows preferred; dated shows with a tour
+  name 3,783 → 4,540 (+757; e.g. 1974-01-03 "Tour '74").
+Added: gui_next DetailPanel.tsx: Olof tab on both library lenses — setlist (encore pills, cover
+  credits, annotations, take status), NET/year concert #s, recording info, notes, BobTalk quote,
+  chronicle entries, circulation provenance, per-copy setlist comparison (match %, missing
+  titles, expected minutes). Gated on /api/olof/status events>0 (react-query staleTime Infinity).
+Changed: gui_next AboutDialog.tsx: Olof Björner / bobserve.com acknowledgement card (TODO-226
+  part B; part A remainder — BobTalk full-text search — stays open on TODO-226).
+Changed: locales: 15 new library.olof.* + tabOlof keys; de/fr/es/it/nl via /gui-next-i18n
+  (DeepL, 4,857 chars). /gui-check PASS (node+renderer tsc 0 errors, build clean).
+Changed: instructions/FABLE_OLOF_FILES.md → instructions/complete/ (all P1–P5 shipped);
+  instructions/README.md row removed. Verified live on 5174 post-restart (status counts,
+  1990-05-29 panel data, compare normalization smoke test).
+
 [2026-07-10] — feat(scraper): Olof P4 — Yearly Chronicles parser → olof_chronicle + olof_new_tapes (FABLE_OLOF_FILES §6; TODO-162 P4)
 Added: backend/db.py: olof_chronicle + olof_new_tapes tables + date indexes (spec §4).
 Added: backend/olof_chronicle_parser.py: chronicle corpus parser — heading-based section

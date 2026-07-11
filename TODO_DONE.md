@@ -1,6 +1,33 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-153: Library/perf screen — backfill good tour names across all dates
+Priority: Medium
+Status: Done
+Added: 2026-06-22
+Closed: 2026-07-10
+Description: The Library screen's tour column (gui_next/src/renderer/src/screens/ScreenLibrary.tsx,
+  `p.tour`) is sourced from setlistfm_shows.tour_name joined onto dylan_performances in
+  backend/db.py:2121-2206 (tours dict keyed by date_str, applied at line 2204-2206). tour_name is
+  empty for a large share of dates, so the column is blank for most performances. Need a way to
+  pull/derive good tour names across all dates — likely requires either a better/secondary tour
+  data source beyond setlist.fm, or a manual/heuristic backfill (e.g. date-range-based tour
+  era tagging) for shows setlist.fm doesn't have tour info for.
+Fallback chain setlistfm → olof_events landed in get_performances (backend/db.py, TODO-162 P5a, commit bd48dd4e): setdefault semantics so setlistfm wins, olof concert rows preferred on multi-event dates. Dated shows with a tour name: 3,783 → 4,540 (+757); Olof covers 1956–2021 (e.g. 1974-01-03 'Tour 74'), setlistfm covers recent years. Library tour column now populated for nearly all touring dates.
+
+TODO-162: Add Olof's Files database table + scrape show/tour info into it
+Priority: Medium
+Status: Done
+Added: 2026-06-22
+Closed: 2026-07-10
+Description: Add a new DB table for Olof's Files (Dylan tour/setlist archive) data, modeled
+  on the existing setlistfm_shows table (backend/db.py:533-541), and a new scraper module
+  (alongside backend/bobdylan_scraper.py and backend/site_crawler.py) to pull show and tour
+  info from olofsfiles.com into it. This is a candidate secondary source for the tour-name
+  gaps tracked in TODO-153 — setlist.fm's tour_name field is empty for a large share of
+  dates, and Olof's Files may have better/more complete tour coverage.
+All 5 phases of FABLE_OLOF_FILES.md shipped 2026-07-10: P1 fetcher/mirror (471 pages) + P2 events (4,533) + P3 songs (61,708) + P4 chronicles (1,244 calendar + 79 new-tapes rows) + P5 surfacing (/api/olof/* endpoints, tour-name fallback, POST /api/olof/compare setlist matcher, gui_next Olof panel + About credit, i18n). olof_* stays local-only (not MASTER_TABLES) pending a redistribution decision. Follow-ups tracked separately: TODO-228 (2013+ PDF chronicles), TODO-226 Part A remainder (BobTalk search), TODO-224/225 (geocoder/fingerprinting riders).
+
 TODO-218: ONBOARDING P4 — README.md rewrite (retire PyQt flow docs)
 Priority: Low
 Status: Done
