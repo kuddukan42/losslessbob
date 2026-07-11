@@ -1,3 +1,10 @@
+[2026-07-11] — test(backend): un-rot tests/test_geocoder.py (13 failures from TODO-220/224 behavior changes)
+Fixed: 6 assertions updated to the (full, city_only) tuple returns introduced by TODO-220
+  (9ac938b0); 5 TestRunBatch fixtures gained a blank-field olof_events concert row so the
+  TODO-224 (f044dcd2) concert-only eligibility filter passes without adding a competing
+  structured source; 3 note assertions updated to the "tried: ..." cascade-log format.
+  Tests only — backend/geocoder.py untouched. Suite: 52/52 pass (was 39/52).
+
 [2026-07-11] — feat(backend+gui): TODO-215 (parts 2+3/3, closes it) — crawl run management + LB deep-links
 Added: backend/app.py POST /api/tapematch/crawl/start — wraps tools/tapematch/crawl_start.sh
   (optional body min_entries/allow_missing → script flags; the script's pgrep guard stays the
