@@ -70,6 +70,14 @@ const ACKS: Ack[] = [
     name: 'Olof Björner', handle: '"Still On The Road" · bobserve.com',
     note: 'Author of the definitive Dylan performance history and Yearly Chronicles — the setlist, concert-numbering, recording, and circulation-provenance data behind the app’s Olof panel.',
   },
+  {
+    name: 'setlist.fm', handle: 'crowd-sourced setlist database',
+    note: 'Community-maintained setlist data synced per performance — the song orders behind the app’s setlist views and matching.',
+  },
+  {
+    name: 'bobdylan.com', handle: 'official tour archive',
+    note: 'The official site’s concert listings — a source for authoritative show dates and venue locations.',
+  },
 ]
 
 const CHANGELOG = {
@@ -90,6 +98,7 @@ const LINKS: Link[] = [
   { icon: 'globe', label: 'losslessbob.org',           sub: 'Project home' },
   { icon: 'lbdir', label: 'Documentation & LB system',  sub: 'rumrunners guide' },
   { icon: 'link',  label: 'github · checksum-lookup',   sub: 'Source & issues' },
+  { icon: 'globe', label: 'bobserve.com · About Bob',    sub: 'Olof Björner chronicles' },
   { icon: 'star',  label: 'Support the archive',         sub: 'Donate / mirror' },
 ]
 
