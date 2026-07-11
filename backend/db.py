@@ -608,6 +608,52 @@ CREATE TABLE IF NOT EXISTS setlistfm_setlist (
 CREATE INDEX IF NOT EXISTS idx_setlistfm_setlist_id   ON setlistfm_setlist(setlistfm_id);
 CREATE INDEX IF NOT EXISTS idx_setlistfm_setlist_track ON setlistfm_setlist(track_name);
 
+-- Olof Björner mirror bookkeeping (TODO-162, FABLE_OLOF_FILES.md §4)
+-- one row per fetched page (crawl bookkeeping, both corpora)
+CREATE TABLE IF NOT EXISTS olof_pages (
+    filename      TEXT PRIMARY KEY,          -- 'DSN11050 - 1990 Spring Tour of North America.htm'
+    url           TEXT NOT NULL DEFAULT '',
+    corpus        TEXT NOT NULL DEFAULT '',  -- dsn | chronicle
+    segment_title TEXT NOT NULL DEFAULT '',  -- '1990 SPRING TOUR OF NORTH AMERICA' / 'Bob Dylan 2002'
+    year          INTEGER,                   -- chronicle pages only
+    sha256        TEXT NOT NULL DEFAULT '',
+    fetched_at    TEXT NOT NULL DEFAULT '',
+    parsed_at     TEXT NOT NULL DEFAULT '',
+    parse_status  TEXT NOT NULL DEFAULT '',  -- ok | partial | error:<msg>
+    event_count   INTEGER NOT NULL DEFAULT 0
+);
+
+-- one row per event; joins to entries/bobdylan_shows/setlistfm_shows via date_str
+CREATE TABLE IF NOT EXISTS olof_events (
+    event_id        INTEGER PRIMARY KEY,     -- DSN number; appendix shows get year*1000+seq
+                                             -- (e.g. 2022017 — no collision, DSN maxes ~5 digits)
+    source          TEXT NOT NULL DEFAULT '',-- dsn | chronicle_appendix
+    page_filename   TEXT NOT NULL REFERENCES olof_pages(filename),
+    event_type      TEXT NOT NULL DEFAULT '',-- concert | session | rehearsal | broadcast | interview | other
+    date_str        TEXT NOT NULL DEFAULT '',-- ISO yyyy-mm-dd ('' if unparsed)
+    date_raw        TEXT NOT NULL DEFAULT '',
+    venue           TEXT NOT NULL DEFAULT '',
+    city            TEXT NOT NULL DEFAULT '',
+    region          TEXT NOT NULL DEFAULT '',
+    country         TEXT NOT NULL DEFAULT '',
+    tour_name       TEXT NOT NULL DEFAULT '',-- from DSN segment title / chronicle tour section
+    session_title   TEXT NOT NULL DEFAULT '',-- 'The 3rd Blonde On Blonde session, produced by …'
+    concert_no_net  INTEGER,                 -- 'Concert # 186 of The Never-Ending Tour'
+    concert_no_year INTEGER,                 -- '1990 concert # 16'
+    lineup          TEXT NOT NULL DEFAULT '',
+    recording_info  TEXT NOT NULL DEFAULT '',-- 'Stereo audience recording, 100 minutes.'
+    recording_kind  TEXT NOT NULL DEFAULT '',-- audience | soundboard | studio | broadcast | ''
+    recording_mins  INTEGER,
+    notes           TEXT NOT NULL DEFAULT '',
+    bobtalk         TEXT NOT NULL DEFAULT '',
+    releases_raw    TEXT NOT NULL DEFAULT '',
+    references_raw  TEXT NOT NULL DEFAULT '',
+    updated_raw     TEXT NOT NULL DEFAULT '',-- 'Session info updated 6 February 2001'
+    raw_text        TEXT NOT NULL DEFAULT '' -- full block plain text (search + reparse safety net)
+);
+CREATE INDEX IF NOT EXISTS idx_olof_events_date ON olof_events(date_str);
+CREATE INDEX IF NOT EXISTS idx_olof_events_tour ON olof_events(tour_name);
+
 -- ── Collection trading tables (USER — never exported in master snapshot) ─────
 CREATE TABLE IF NOT EXISTS friend_collections (
     id          INTEGER PRIMARY KEY AUTOINCREMENT,
