@@ -1,10 +1,4 @@
 
-TODO-229: Geocoder GUI: render skipped count + 'stopping' badge in ScreenScraper
-Priority: Low
-Status: Open
-Added: 2026-07-11
-Description: Rider from TODO-219/221 close (2026-07-11): backend now returns skipped and stop_requested in /api/geocode/status and skipped in /api/geocode/stats, but gui_next ScreenScraper.tsx GeocoderStatus/GeoStats TS interfaces don't declare them, so nothing renders. Add the fields, show skipped in the stats row, and switch the run badge to 'stopping' while stop_requested && running. Locale updates via /gui-next-i18n.
-
 TODO-228: Olof 2022+ chronicles are PDF-only — fetch + extract appendix setlists from PDFs
 Priority: Medium
 Status: Open
@@ -15,6 +9,9 @@ TODO-226: Surface BobTalk + Olof narrative in GUI (search, show pages) and add O
 Priority: Medium
 Status: Open
 Added: 2026-07-10
+Progress: Part B (attribution) DONE 2026-07-11 — Olof/bobserve credit already shipped (3b9ca946);
+  setlist.fm + bobdylan.com credit cards and a bobserve "About Bob" link added to the About screen
+  (AboutDialog.tsx). Remaining: Part A (BobTalk search + show-page surfacing).
 Description: Two parts. (A) BobTalk surfacing — depends on TODO-162 P2 (olof_events.bobtalk already in spec schema): full-text search over bobtalk + notes (backend endpoint, e.g. /api/olof/bobtalk_search with LIKE or FTS5), display the night's BobTalk quote + Olof notes + NET concert # on gui_next show pages; optional 'on this day' widget from olof_chronicle later. (B) Attribution — independent, can ship NOW: add credit to Olof Bjorner and bobserve.com (source: 'About Bob', https://www.bobserve.com/olof/) in the gui_next About screen credits section, alongside existing setlist.fm/bobdylan.com credits; run /gui-next-i18n after copy change. Part B should land with or before the first Olof-derived data appearing in the GUI.
 
 TODO-225: Setlist fingerprinting — identify entries with garbage/'various' metadata via Olof setlist match
@@ -22,12 +19,6 @@ Priority: Medium
 Status: Open
 Added: 2026-07-10
 Description: Depends on TODO-162 Olof scraper P3 (olof_songs). PURPOSE: date/show identification for entries whose location/date metadata is unusable ('various', 'vsrious', '4 rare tracks from 1966', 'various 98-99', empty/xx dates) — NOT bulk re-dating: mislabeled dates are rare in this archive per tj, so this targets the unknown/junk-metadata tail only. METHOD: take an entry's tracklist (folder track titles), normalize titles (cp1252/curly-quote helpers exist), and score against olof_songs setlists per event (set overlap + order similarity, tolerate partial tapes); setlists are near-unique per show, so a strong best-match pins the date -> venue -> geocode pin. OUTPUT: suggestions only — a curator-mode review queue (entry, best-match event, score, matched/missing songs), never auto-applied to entries. Start with entries that have no parseable date or a location in the skipped_not_concert/'various' bucket (TODO-221). Also reusable in tapematch as a cheap same-show discriminator (song-count/encore-structure mismatch = different shows) before audio comparison.
-
-TODO-224: Olof as geocoder location source + authoritative concert-type filter
-Priority: Medium
-Status: Open
-Added: 2026-07-10
-Description: Rider on TODO-221/222/223; depends on TODO-162 (Olof scraper, spec instructions/FABLE_OLOF_FILES.md) P1-P2 landing. olof_events has venue/city/region/country as SEPARATE clean fields for every event 1956-2021 plus event_type (concert|session|rehearsal|broadcast|interview|other). Use: (1) add olof_events to the geocoder structured-source chain in backend/geocoder.py — slot it directly after bobdylan_shows (cleanly split fields beat comma-soup); build query 'venue, city, region, country'. (2) Make TODO-221's concert-only filter authoritative: when a date matches an olof_event, trust event_type — geocode only event_type='concert'; label sessions/interviews/broadcasts as skipped_not_concert with the event_type recorded in note. (3) Seed TODO-223's venue gazetteer from SELECT DISTINCT venue, city, region, country FROM olof_events WHERE event_type='concert' — the definitive list of venues Dylan played, pre-split by locality.
 
 TODO-223: Venue gazetteer table — one curated coordinate per distinct venue, incl. demolished venues
 Priority: Medium

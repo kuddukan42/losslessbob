@@ -1754,6 +1754,10 @@
     }
   },
   "scraper": {
-    "curatorNote": "End users get scraped data via master + site-data releases; scraping is for curators."
+    "curatorNote": "End users get scraped data via master + site-data releases; scraping is for curators.",
+    "geocoder": {
+      "skippedLabel": "Skipped",
+      "stoppingBadge": "stopping"
+    }
   }
 }

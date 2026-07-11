@@ -1,6 +1,22 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-224: Olof as geocoder location source + authoritative concert-type filter
+Priority: Medium
+Status: Done
+Added: 2026-07-10
+Closed: 2026-07-11
+Description: Rider on TODO-221/222/223; depends on TODO-162 (Olof scraper, spec instructions/FABLE_OLOF_FILES.md) P1-P2 landing. olof_events has venue/city/region/country as SEPARATE clean fields for every event 1956-2021 plus event_type (concert|session|rehearsal|broadcast|interview|other). Use: (1) add olof_events to the geocoder structured-source chain in backend/geocoder.py — slot it directly after bobdylan_shows (cleanly split fields beat comma-soup); build query 'venue, city, region, country'. (2) Make TODO-221's concert-only filter authoritative: when a date matches an olof_event, trust event_type — geocode only event_type='concert'; label sessions/interviews/broadcasts as skipped_not_concert with the event_type recorded in note. (3) Seed TODO-223's venue gazetteer from SELECT DISTINCT venue, city, region, country FROM olof_events WHERE event_type='concert' — the definitive list of venues Dylan played, pre-split by locality.
+Parts 1+2 shipped 2026-07-11 (sonnet agent, Fable-reviewed): olof_events in _STRUCTURED_SOURCES after bobdylan_shows (split-field query + city-only cascade variant, concert-preference tie-break); _is_concert_location() returns (eligible, skip_note) with olof event_type authoritative (non-concert -> skipped_not_concert + event_type in note), heuristic fallback unchanged; feature-detected via _table_exists. 12 new tests pass. Part 3 (gazetteer seeding from olof_events DISTINCT venues) deferred into TODO-223 where the gazetteer table gets built.
+
+TODO-229: Geocoder GUI: render skipped count + 'stopping' badge in ScreenScraper
+Priority: Low
+Status: Done
+Added: 2026-07-11
+Closed: 2026-07-11
+Description: Rider from TODO-219/221 close (2026-07-11): backend now returns skipped and stop_requested in /api/geocode/status and skipped in /api/geocode/stats, but gui_next ScreenScraper.tsx GeocoderStatus/GeoStats TS interfaces don't declare them, so nothing renders. Add the fields, show skipped in the stats row, and switch the run badge to 'stopping' while stop_requested && running. Locale updates via /gui-next-i18n.
+Shipped 2026-07-11 (sonnet agent, Fable-reviewed): GeocoderStatus/GeoStats interfaces gain skipped/stop_requested; Skipped row in Cache Stats grid; StripCard badge override shows 'stopping' while running && stop_requested. i18n all 5 locales via DeepL; tsc + build clean; live-verified against restarted backend.
+
 TODO-220: Geocoder cascading fallback on Nominatim miss + query provenance in note
 Priority: High
 Status: Done

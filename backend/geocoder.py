@@ -4,26 +4,31 @@ Provides single-location lookup, manual pin placement, and a batch runner
 that reads un-geocoded entries.location values from the database and writes
 results back via UPSERT.  Respects the Nominatim ToS 1-second rate limit.
 
-Concert-only eligibility (TODO-221): geocoding exists to answer "where did
-Bob play this show", not to plot studio bootlegs, interviews, or multi-date
-compilation reissues.  run_batch() only geocodes a location when it does not
-match an obvious non-venue keyword AND at least one entry sharing that
+Concert-only eligibility (TODO-221, made authoritative by olof_events in
+TODO-224): geocoding exists to answer "where did Bob play this show", not to
+plot studio bootlegs, interviews, or multi-date compilation reissues.  When a
+location's date matches an olof_events row, that row's event_type decides
+outright (event_type='concert' is eligible; anything else is skipped with
+the event_type recorded in note).  When no olof_events row matches, run_batch()
+falls back to the original heuristic: eligible only when the location does
+not match an obvious non-venue keyword AND at least one entry sharing that
 location has a single clean, parseable date matching a row in bobdylan_shows
-or setlistfm_shows.  Everything else is written with
+or setlistfm_shows.  Everything ineligible is written with
 source='skipped_not_concert' (lat/lon NULL) so it is cached and never
 retried, and is excluded from the errors stat.
 
-Structured-source cascade (TODO-220): before calling Nominatim, run_batch()
-checks three tables, in priority order, for a structured venue/city/state/
-country string that matches any entry associated with the location being
-geocoded: bobdylan_shows (most standardized), then setlistfm_shows, then
-dylan_performances as a last resort.  Every structured hit's full string is
-tried first (in priority order); on an all-miss, a venue-stripped
-city/state/country-only variant of each is tried next (source suffixed
-'-city', confidence capped at medium); the raw entries.location text is
-tried last.  Every attempted query is recorded in ``note`` on both success
-and failure, and the 1.1s Nominatim rate-limit sleep applies between every
-attempt, including fallbacks.
+Structured-source cascade (TODO-220, +olof_events TODO-224): before calling
+Nominatim, run_batch() checks four tables, in priority order, for a
+structured venue/city/state/country string that matches any entry
+associated with the location being geocoded: bobdylan_shows (most
+standardized), then olof_events (clean separate venue/city/region/country
+fields, 1956-2021), then setlistfm_shows, then dylan_performances as a last
+resort.  Every structured hit's full string is tried first (in priority
+order); on an all-miss, a venue-stripped city/state/country-only variant of
+each is tried next (source suffixed '-city', confidence capped at medium);
+the raw entries.location text is tried last.  Every attempted query is
+recorded in ``note`` on both success and failure, and the 1.1s Nominatim
+rate-limit sleep applies between every attempt, including fallbacks.
 
 Stop support (TODO-219): stop() sets a module-level flag (guarded by
 _lock) that run_batch() checks at the top of every location and inside the
@@ -173,6 +178,27 @@ def _entries_iso_dates(location_text: str, conn) -> list[str]:
     return isos
 
 
+def _table_exists(conn, table_name: str) -> bool:
+    """Return True if *table_name* exists in the connected SQLite database.
+
+    Used to feature-detect optional tables (``olof_events``, TODO-224) that
+    may be absent on installs whose database predates the table's migration,
+    so callers can degrade to prior behavior instead of raising
+    ``sqlite3.OperationalError``.
+
+    Args:
+        conn: SQLite connection.
+        table_name: Table name to check for.
+
+    Returns:
+        True if a table with that name exists, False otherwise.
+    """
+    row = conn.execute(
+        "SELECT 1 FROM sqlite_master WHERE type='table' AND name=?", (table_name,)
+    ).fetchone()
+    return row is not None
+
+
 def _get_performance_location_string(location_text: str, conn) -> tuple[str, str | None] | None:
     """Return structured geocoding strings from dylan_performances for this location.
 
@@ -253,6 +279,57 @@ def _get_bobdylan_shows_location_string(
     return None
 
 
+def _get_olof_events_location_string(
+    location_text: str, conn
+) -> tuple[str, str | None] | None:
+    """Return structured geocoding strings from olof_events for this location.
+
+    Scans all distinct date_str values in entries that share this location,
+    converts each to ISO format, and checks ``olof_events`` for a matching
+    row (preferring an ``event_type='concert'`` row when a date has more
+    than one event, mirroring the tie-break in
+    :func:`backend.db.compare_olof_setlist`). On the first hit, builds a
+    comma-joined ``"venue, city, region, country"`` full string (blank parts
+    dropped) plus a venue-stripped ``"city, region, country"`` variant for
+    the TODO-220 fallback cascade. Feature-detects the ``olof_events`` table
+    (TODO-224) so installs whose database predates it fall through cleanly.
+
+    Args:
+        location_text: Raw location string from ``entries.location``.
+        conn: SQLite connection (read-only usage).
+
+    Returns:
+        ``(full, city_only)`` tuple, e.g. ``("Massey Hall, Toronto, ON,
+        Canada", "Toronto, ON, Canada")``. ``city_only`` is ``None`` if venue
+        is the only non-blank part. ``None`` if ``olof_events`` doesn't
+        exist or no matching event exists.
+    """
+    if not _table_exists(conn, "olof_events"):
+        return None
+
+    for iso in _entries_iso_dates(location_text, conn):
+        event = conn.execute(
+            """SELECT venue, city, region, country FROM olof_events
+               WHERE date_str = ?
+               ORDER BY (event_type != 'concert'), event_id LIMIT 1""",
+            (iso,),
+        ).fetchone()
+        if event is None:
+            continue
+        venue = (event["venue"] or "").strip()
+        city_parts = [
+            p.strip() for p in (event["city"], event["region"], event["country"])
+            if p and p.strip()
+        ]
+        full_parts = ([venue] if venue else []) + city_parts
+        if full_parts:
+            full = ", ".join(full_parts)
+            city_only = ", ".join(city_parts) if city_parts else None
+            return full, city_only
+
+    return None
+
+
 def _get_setlistfm_location_string(
     location_text: str, conn
 ) -> tuple[str, str | None] | None:
@@ -296,44 +373,79 @@ def _get_setlistfm_location_string(
 # Structured-source lookups tried in priority order before falling back to the
 # raw entries.location text. The key becomes location_geocoded.source on a hit.
 # bobdylan_shows is the most standardized (curated "City, ST" location strings),
+# olof_events is next (clean separate venue/city/region/country fields, TODO-224),
 # setlistfm_shows is the backup, and dylan_performances is the last resort.
 # Each lookup function returns (full_query, city_only_query | None) on a hit,
 # or None on a miss — see TODO-220 cascading fallback in run_batch().
 _STRUCTURED_SOURCES = (
     ("bobdylan_shows", _get_bobdylan_shows_location_string),
+    ("olof_events", _get_olof_events_location_string),
     ("setlistfm_shows", _get_setlistfm_location_string),
     ("performances", _get_performance_location_string),
 )
 
 
-def _is_concert_location(location_text: str, conn) -> bool:
-    """Return True if *location_text* represents a documented, dated concert.
+def _is_concert_location(location_text: str, conn) -> tuple[bool, str | None]:
+    """Return whether *location_text* represents a documented, dated concert.
 
-    Applies the TODO-221 "concert-only" eligibility test: geocoding exists to
-    answer "where did Bob play this show", not to plot studio bootlegs,
-    interviews, rehearsals, or multi-date compilation reissues. A location
-    qualifies only when:
+    Applies the TODO-221 "concert-only" eligibility test, made authoritative
+    for olof_events-matched dates by TODO-224: geocoding exists to answer
+    "where did Bob play this show", not to plot studio bootlegs, interviews,
+    rehearsals, or multi-date compilation reissues.
 
-    1. It does not match an obvious non-venue keyword
-       (see ``_NON_VENUE_KEYWORDS``), and
-    2. At least one entry sharing this location string has a single clean,
-       parseable date (no 'xx', no ranges — enforced by ``_entry_date_to_iso``)
-       that matches a row in ``bobdylan_shows`` or ``setlistfm_shows``.
-       ``dylan_performances`` alone does NOT count: it also carries non-concert
-       dates (TV/radio interviews etc.) that would otherwise geocode to a
-       venue that was never actually played.
+    Priority:
+
+    1. If the ``olof_events`` table exists (feature-detected — some installs
+       may predate it, TODO-224) and at least one entry sharing this location
+       has a date matching an ``olof_events`` row (preferring an
+       ``event_type='concert'`` row when a date has more than one), that
+       row's ``event_type`` is authoritative: ``'concert'`` is eligible;
+       any other event_type (session/rehearsal/broadcast/interview/other)
+       is not, and the event_type is returned as the skip note.
+    2. Otherwise (no olof_events table, or no olof_events row matches any
+       of this location's dates), fall back to the original TODO-221
+       heuristic, unchanged: the location must not match an obvious
+       non-venue keyword (see ``_NON_VENUE_KEYWORDS``), and at least one
+       entry sharing this location must have a single clean, parseable date
+       (no 'xx', no ranges — enforced by ``_entry_date_to_iso``) that
+       matches a row in ``bobdylan_shows`` or ``setlistfm_shows``.
+       ``dylan_performances`` alone does NOT count: it also carries
+       non-concert dates (TV/radio interviews etc.) that would otherwise
+       geocode to a venue that was never actually played.
 
     Args:
         location_text: Raw location string from ``entries.location``.
         conn: SQLite connection (read-only usage).
 
     Returns:
-        True if this location should be geocoded via Nominatim; False if it
-        should instead be written with ``source='skipped_not_concert'``.
+        ``(eligible, skip_note)``. ``eligible`` is True if this location
+        should be geocoded via Nominatim; False if it should instead be
+        written with ``source='skipped_not_concert'``. ``skip_note`` is a
+        specific reason to store in ``location_geocoded.note`` when an
+        olof_events non-concert row forced the skip (e.g.
+        ``"olof_events: non-concert event_type=interview"``); ``None`` when
+        eligible, or when the generic TODO-221 heuristic note should be used
+        instead.
     """
+    if _table_exists(conn, "olof_events"):
+        for iso in _entries_iso_dates(location_text, conn):
+            event = conn.execute(
+                """SELECT event_type FROM olof_events WHERE date_str = ?
+                   ORDER BY (event_type != 'concert'), event_id LIMIT 1""",
+                (iso,),
+            ).fetchone()
+            if event is not None:
+                event_type = (event["event_type"] or "").strip()
+                if event_type == "concert":
+                    return True, None
+                return (
+                    False,
+                    f"olof_events: non-concert event_type={event_type or 'unknown'}",
+                )
+
     lowered = location_text.lower()
     if any(keyword in lowered for keyword in _NON_VENUE_KEYWORDS):
-        return False
+        return False, None
 
     for iso in _entries_iso_dates(location_text, conn):
         hit = conn.execute(
@@ -344,9 +456,9 @@ def _is_concert_location(location_text: str, conn) -> bool:
                 "SELECT 1 FROM setlistfm_shows WHERE date_str = ? LIMIT 1", (iso,)
             ).fetchone()
         if hit is not None:
-            return True
+            return True, None
 
-    return False
+    return False, None
 
 
 # ---------------------------------------------------------------------------
@@ -538,14 +650,19 @@ def run_batch(
     is True).  Rows with ``manual_override=1`` are always skipped.
 
     Each candidate location is first checked for TODO-221 concert-only
-    eligibility (see ``_is_concert_location``): locations that are not tied
-    to a documented, single-dated show in bobdylan_shows or setlistfm_shows
-    (or that match an obvious non-venue keyword) are written with
-    ``source='skipped_not_concert'`` and never sent to Nominatim.
+    eligibility (see ``_is_concert_location``), made authoritative by an
+    olof_events date match (TODO-224): when the location's date matches an
+    olof_events row, that row's event_type decides outright (non-concert
+    types are skipped with the event_type recorded in note). Otherwise,
+    locations that are not tied to a documented, single-dated show in
+    bobdylan_shows or setlistfm_shows (or that match an obvious non-venue
+    keyword) are written with ``source='skipped_not_concert'`` and never
+    sent to Nominatim.
 
     For eligible locations, a TODO-220 cascading fallback is used: every
-    structured source (bobdylan_shows, then setlistfm_shows, then
-    dylan_performances) that has a matching record contributes its full
+    structured source (bobdylan_shows, then olof_events, then
+    setlistfm_shows, then dylan_performances) that has a matching record
+    contributes its full
     venue/city/state/country query string, tried in priority order; if all
     of those miss, each source's venue-stripped city-only variant is tried
     next (source suffixed ``-city``, confidence capped at ``medium``); the
@@ -630,9 +747,11 @@ def run_batch(
                 _progress["current"] = location_text
                 _progress["stage"] = "querying"
 
-            # TODO-221: concert-only eligibility filter. Locations that are not
-            # tied to a documented, single-dated show never reach Nominatim.
-            if not _is_concert_location(location_text, conn):
+            # TODO-221: concert-only eligibility filter, made authoritative by
+            # an olof_events date match (TODO-224). Locations that are not
+            # tied to a documented, single-dated concert never reach Nominatim.
+            eligible, skip_note = _is_concert_location(location_text, conn)
+            if not eligible:
                 result = {
                     "location_text": location_text,
                     "lat": None,
@@ -640,7 +759,7 @@ def run_batch(
                     "display_name": None,
                     "source": "skipped_not_concert",
                     "confidence": None,
-                    "note": (
+                    "note": skip_note or (
                         "no single clean date matching bobdylan_shows/setlistfm_shows, "
                         "or non-venue keyword"
                     ),

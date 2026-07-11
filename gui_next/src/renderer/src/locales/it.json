@@ -1754,6 +1754,10 @@
     }
   },
   "scraper": {
-    "curatorNote": "Gli utenti finali ottengono i dati raccolti tramite le versioni master e site-data; la raccolta dei dati è riservata ai curatori."
+    "curatorNote": "Gli utenti finali ottengono i dati raccolti tramite le versioni master e site-data; la raccolta dei dati è riservata ai curatori.",
+    "geocoder": {
+      "skippedLabel": "Saltato",
+      "stoppingBadge": "interruzione"
+    }
   }
 }

@@ -1754,6 +1754,10 @@
     }
   },
   "scraper": {
-    "curatorNote": "Eindgebruikers ontvangen gescrapte gegevens via releases van master- en site-data; het scrapen is voorbehouden aan curatoren."
+    "curatorNote": "Eindgebruikers ontvangen gescrapte gegevens via releases van master- en site-data; het scrapen is voorbehouden aan curatoren.",
+    "geocoder": {
+      "skippedLabel": "Overgeslagen",
+      "stoppingBadge": "stoppen"
+    }
   }
 }

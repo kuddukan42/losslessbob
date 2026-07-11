@@ -133,7 +133,7 @@ losslessbob/
 │   ├── test_bootleg_scraper.py # backend/bootleg_scraper.py: date/row parsing, diff/apply, scrape_bootlegs (mocked HTTP)
 │   ├── test_bobdylan_scraper.py # backend/bobdylan_scraper.py: sitemap + show-page parsing, run_discover/run_scrape/run_update (mocked HTTP)
 │   ├── test_setlistfm.py     # backend/setlistfm.py: date/setlist parsing, API key storage, run_update pagination (mocked HTTP)
-│   ├── test_geocoder.py      # backend/geocoder.py: date conversion, performances/bobdylan_shows/setlistfm_shows lookup + priority, geocode_one/run_batch (mocked urllib)
+│   ├── test_geocoder.py      # backend/geocoder.py: date conversion, performances/bobdylan_shows/olof_events/setlistfm_shows lookup + priority, concert eligibility, geocode_one/run_batch (mocked urllib)
 │   ├── test_checksum_utils_site_recovery.py # find_site_recoverable_files: MD5 + filename-fallback matching against data/site/files/
 │   └── test_db_writes.py     # 114-test battery: all DB write functions, constraint violations, rollback, thread safety
 ├── losslessbob_backend.spec  # PyInstaller onefile spec: backend-only (no PyQt6); bundled inside Electron AppImage
@@ -688,7 +688,7 @@ master/sitedata export tier is a P5 decision.
 | location_text | TEXT PK | Matches `entries.location` verbatim |
 | lat | REAL | WGS-84 latitude (NULL if geocoding failed) |
 | lon | REAL | WGS-84 longitude (NULL if geocoding failed) |
-| source | TEXT NOT NULL | `'nominatim'` / `'performances'` / `'bobdylan_shows'` / `'setlistfm_shows'` / `'manual'` / `'failed'` |
+| source | TEXT NOT NULL | `'nominatim'` / `'performances'` / `'bobdylan_shows'` / `'olof_events'` / `'setlistfm_shows'` (each also with `-city` suffix for the venue-stripped fallback) / `'manual'` / `'failed'` / `'skipped_not_concert'` |
 | confidence | TEXT | `'high'` / `'medium'` / `'low'` / NULL |
 | display_name | TEXT | Full display name returned by Nominatim |
 | manual_override | INTEGER | 1 = curator-placed pin; batch run never overwrites |
