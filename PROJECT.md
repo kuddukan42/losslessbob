@@ -1639,7 +1639,7 @@ Second-generation GUI (primary, merged into main 2026-05-29) built with **Electr
 
 | Screen | File | Status |
 |--------|------|--------|
-| ScreenHome | `screens/ScreenHome.tsx` | Done — dashboard, live stats, activity log, flat-file update |
+| ScreenHome | `screens/ScreenHome.tsx` | Done — dashboard, live stats, activity log, flat-file update; first-run onboarding (TODO-217): auto-opens `components/OnboardingWizard.tsx` (4-step modal: master install → sitedata install → mounts/pipeline nav → done + `/api/derived/recompute`) once per launch when `entries_count == 0`, plus a setup-checklist card while `/api/onboarding/status` `complete == false` |
 | ScreenSetup | `screens/ScreenSetup.tsx` | Done — all 16 handlers: credentials, purge, import/export, master, data packages |
 | ScreenMounts | `screens/ScreenMounts.tsx` | Done — storage mounts, year routing, filing mode, preview tester (split out of ScreenSetup) |
 | ScreenCollection | `screens/ScreenCollection.tsx` | Done — sortable columns, wishlist, forum, torrents, duplicates, batch actions |

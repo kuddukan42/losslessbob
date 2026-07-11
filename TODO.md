@@ -1,15 +1,57 @@
 
+TODO-226: Surface BobTalk + Olof narrative in GUI (search, show pages) and add Olof/bobserve.com credits to About screen
+Priority: Medium
+Status: Open
+Added: 2026-07-10
+Description: Two parts. (A) BobTalk surfacing — depends on TODO-162 P2 (olof_events.bobtalk already in spec schema): full-text search over bobtalk + notes (backend endpoint, e.g. /api/olof/bobtalk_search with LIKE or FTS5), display the night's BobTalk quote + Olof notes + NET concert # on gui_next show pages; optional 'on this day' widget from olof_chronicle later. (B) Attribution — independent, can ship NOW: add credit to Olof Bjorner and bobserve.com (source: 'About Bob', https://www.bobserve.com/olof/) in the gui_next About screen credits section, alongside existing setlist.fm/bobdylan.com credits; run /gui-next-i18n after copy change. Part B should land with or before the first Olof-derived data appearing in the GUI.
+
+TODO-225: Setlist fingerprinting — identify entries with garbage/'various' metadata via Olof setlist match
+Priority: Medium
+Status: Open
+Added: 2026-07-10
+Description: Depends on TODO-162 Olof scraper P3 (olof_songs). PURPOSE: date/show identification for entries whose location/date metadata is unusable ('various', 'vsrious', '4 rare tracks from 1966', 'various 98-99', empty/xx dates) — NOT bulk re-dating: mislabeled dates are rare in this archive per tj, so this targets the unknown/junk-metadata tail only. METHOD: take an entry's tracklist (folder track titles), normalize titles (cp1252/curly-quote helpers exist), and score against olof_songs setlists per event (set overlap + order similarity, tolerate partial tapes); setlists are near-unique per show, so a strong best-match pins the date -> venue -> geocode pin. OUTPUT: suggestions only — a curator-mode review queue (entry, best-match event, score, matched/missing songs), never auto-applied to entries. Start with entries that have no parseable date or a location in the skipped_not_concert/'various' bucket (TODO-221). Also reusable in tapematch as a cheap same-show discriminator (song-count/encore-structure mismatch = different shows) before audio comparison.
+
+TODO-224: Olof as geocoder location source + authoritative concert-type filter
+Priority: Medium
+Status: Open
+Added: 2026-07-10
+Description: Rider on TODO-221/222/223; depends on TODO-162 (Olof scraper, spec instructions/FABLE_OLOF_FILES.md) P1-P2 landing. olof_events has venue/city/region/country as SEPARATE clean fields for every event 1956-2021 plus event_type (concert|session|rehearsal|broadcast|interview|other). Use: (1) add olof_events to the geocoder structured-source chain in backend/geocoder.py — slot it directly after bobdylan_shows (cleanly split fields beat comma-soup); build query 'venue, city, region, country'. (2) Make TODO-221's concert-only filter authoritative: when a date matches an olof_event, trust event_type — geocode only event_type='concert'; label sessions/interviews/broadcasts as skipped_not_concert with the event_type recorded in note. (3) Seed TODO-223's venue gazetteer from SELECT DISTINCT venue, city, region, country FROM olof_events WHERE event_type='concert' — the definitive list of venues Dylan played, pre-split by locality.
+
+TODO-223: Venue gazetteer table — one curated coordinate per distinct venue, incl. demolished venues
+Priority: Medium
+Status: Open
+Added: 2026-07-10
+Description: Follow-on to TODO-220/222. Shows repeat venues, so build a venue-level coordinate table (e.g. venue_geocoded: venue_norm, city, lat, lon, source, confidence, manual_override, note) keyed by normalized (venue, city) — solve each of the ~1000-1500 distinct venues ONCE and every show/entry at that venue inherits the pin; manual fixes persist forever. Resolution ladder per venue: (1) bounded Nominatim venue-name search near the setlist.fm city coord (TODO-222 step 2); (2) Wikidata SPARQL by venue label + city (P625 coordinates) — covers DEMOLISHED notable venues (old Boston Garden, Chicago Stadium, historic theaters) that Nominatim/OSM lack because OSM only maps what exists now; (3) one-time enrichment pass for the tail: find historical street address (research/LLM), then Nominatim STRUCTURED query (street=..., city=...) — street grids outlive buildings; sanity-check result lands within ~20km of city coord to reject bad addresses; (4) fallback = setlist.fm city coord, confidence=city. place_manual() should write into this table too so a manual venue fix applies to all dates at that venue. Map screen: flag city-level-only pins so precision can be improved incrementally.
+
+TODO-222: Better venue coordinates — capture setlist.fm city coords + bounded Nominatim venue search
+Priority: Medium
+Status: Open
+Added: 2026-07-10
+Description: Nominatim free-text is weak on venue names (especially historic/renamed venues). Improvements, cheapest first: (1) setlist.fm API already returns venue.city.coords.lat/long (and venue.city.stateCode) in every setlist response — backend/setlistfm.py currently discards them and setlistfm_shows has no coord columns. Add city_lat/city_lon (+ state) columns (PRAGMA table_info guard per repo SQLite rules), store on scrape, backfill via one re-scrape or the API. Gives a guaranteed city-level coordinate with zero geocoding. (2) Two-step venue lookup: geocode/lookup the city first (from setlist.fm coords or Nominatim), then re-query Nominatim for the bare venue name with viewbox=<~30km box around city>&bounded=1 — venue-name hit rate improves dramatically when spatially constrained. (3) Optional last resort for famous venues: Wikidata SPARQL (P625 coordinate) by venue label. Fold into the TODO-220 cascade: bobdylan venue string -> bounded venue search near city -> setlist.fm city coords (confidence=medium, source='setlistfm_city') -> city string geocode. Respect Nominatim 1 req/s throughout; setlist.fm API needs the existing API key + its own rate limit.
+
+TODO-221: Geocoder concert-only eligibility filter (skip studio/compilation/interview entries)
+Priority: High
+Status: Open
+Added: 2026-07-10
+Description: DESIGN INTENT: geocoding = 'Bob held a concert at this venue, here is where the venue is'. Only routine single-date concert entries with LB numbers qualify; studio bootlegs, multi-date compilations, interviews, radio/TV do NOT. CURRENT: run_batch() geocodes every distinct entries.location, so '1974 Tour Anthology', '65 Outtakes Compilation', 'ABC TV 20/20 Interview' etc get geocoded or fail-spam (and a date match alone is not a concert test: 'ABC TV 20/20 Interview' date-matches dylan_performances and would geocode to Bob's Malibu home). FIX: in the candidate SELECT / loop of run_batch() (backend/geocoder.py ~386-455), only geocode a location when at least one of its entries has a single clean parseable date (no 'xx', no ranges) AND that date matches a bobdylan_shows or setlistfm_shows row (i.e. a documented show). Everything else: write row with new source value 'skipped_not_concert' (lat/lon NULL, manual_override=0) so it is cached, excluded from the map JOIN, not retried every run, and NOT counted in the errors stat — count separately as 'skipped' in _progress and the /api/geocode/stats payload. Keep manual place_manual() as the escape hatch for edge cases. Consider also skipping locations matching obvious non-venue keywords (compilation, outtakes, interview, rehearsal, soundcheck, demos, various) as a secondary guard.
+
+TODO-220: Geocoder cascading fallback on Nominatim miss + query provenance in note
+Priority: High
+Status: Open
+Added: 2026-07-10
+Description: PROBLEM: run_batch() (backend/geocoder.py ~432-497) picks ONE structured query (bobdylan_shows -> setlistfm_shows -> dylan_performances -> raw entries.location) and gives Nominatim one shot; venue-level queries often miss (Nominatim is weak on venue names, e.g. 'Abilene Auditorium, Abilene, Texas' -> failed) and the row is stored source='failed' with note=NULL, so it looks like LB metadata was used. FIX: on a Nominatim no-result, cascade: (1) next structured source's string, (2) venue-stripped variant of each structured string (city/state/country only — for bobdylan_shows that is the 'location' column alone; for setlistfm 'city, country'), (3) raw entries.location last. Record every attempted query in note (e.g. 'tried: bobdylan_shows:<q1> | bobdylan_shows-cityonly:<q2>') on BOTH success and failure. Keep 1.1s sleep between every Nominatim call including fallback attempts. Set source to the source that actually succeeded; add suffix '-city' when the venue-stripped variant won and cap its confidence at medium. NOTE: 48/117 rows from the 2026-07-10 run are failed; after implementing, re-run with retry_failed=True.
+
+TODO-219: Geocoder stop support — stop flag in run_batch + POST /api/geocode/stop
+Priority: High
+Status: Open
+Added: 2026-07-10
+Description: BUG: GUI Stop button (ScreenScraper.tsx:797) posts /api/geocode/stop but the route does not exist (silent 404), and run_batch() in backend/geocoder.py has no stop-flag check, so a batch can only be killed by restarting the backend. FIX: (1) add module-level _stop_requested bool + threading.Lock use in backend/geocoder.py; check it at the top of each loop iteration in run_batch() and break cleanly (finally block already resets progress); reset the flag at batch start; also honor it inside the 60s rate-limit sleep (sleep in small slices). (2) add POST /api/geocode/stop in backend/app.py next to /api/geocode/run (~line 5747) that sets the flag and returns current progress; mirror the pattern of /api/bobdylan/stop. (3) expose stop_requested in get_progress() so the GUI badge can show 'stopping'.
+
 TODO-218: ONBOARDING P4 — README.md rewrite (retire PyQt flow docs)
 Priority: Low
 Status: Open
 Added: 2026-07-10
 Description: Spec §6 (instructions/FABLE_ONBOARDING_SYNC.md): quickstart via GitHub Releases installer + first-run wizard, data-model note (master release vs site data vs monthly flat-file), dev setup (.venv, run_backend.py, gui_next dev), keep flat-file/checksum format reference sections. Can run any time; no dependencies.
-
-TODO-217: ONBOARDING P3 — first-run wizard + Home setup-checklist card + Setup/Scraper copy
-Priority: Medium
-Status: Open
-Added: 2026-07-10
-Description: Spec §5+§6 (instructions/FABLE_ONBOARDING_SYNC.md): OnboardingWizard modal over ScreenHome when entries_count==0 (4 steps: master install, sitedata install checkboxes, mounts navigation, done — Done fires POST /api/derived/recompute per F1), Home checklist card while onboarding/status complete==false, flat-file 'Monthly update' rewording + ScreenScraper curator-only note. Ends /gui-next-i18n + /gui-check. Depends: P2 (TODO-216).
 
 TODO-215: TapeMatch screen v2 — pair corrections, run management, LB deep-links
 Priority: Medium

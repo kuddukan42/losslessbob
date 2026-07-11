@@ -1,3 +1,23 @@
+[2026-07-10] — feat(gui): ONBOARDING P3 — first-run wizard + Home setup checklist + Setup/Scraper copy (spec §5–§6; closes TODO-217)
+Added: gui_next/src/renderer/src/components/OnboardingWizard.tsx: 4-step first-run modal
+  (1 master github_check/install SSE — required to proceed; 2 sitedata core/files checkboxes
+  → sitedata github_install SSE; 3 navigation-only Mounts/Pipeline links; 4 summary +
+  auto-fired POST /api/derived/recompute per SPEC_INTEGRATION_NOTES F1, per-step status list).
+  Skip always available; controlled component — ScreenHome owns show/hide.
+Added: gui_next/src/renderer/src/screens/ScreenHome.tsx: auto-opens wizard once per launch
+  when onboarding/status entries_count==0 (sessionStorage dismiss flag set on Skip/Finish);
+  setup-checklist card while complete==false — one row per unmet item (master, sitedata core,
+  mounts, collection scan), each reopening the wizard at the right step or navigating.
+Changed: gui_next/src/renderer/src/screens/ScreenSetup.tsx: flat-file card reworded to
+  "Monthly update" framing (spec §6 demotion — no first-run role, copy only).
+Changed: gui_next/src/renderer/src/screens/ScreenScraper.tsx: curator-only banner note
+  (end users get scraped data via master + site-data releases).
+Changed: gui_next/src/renderer/src/locales/*.json: ~45 new keys (onboarding.*,
+  home.setupChecklist.*, scraper.curatorNote, setup.flatFile.*) — de/fr/es/it/nl via DeepL
+  (10,294 chars); the 3 residual "gaps" are identical-in-target words (Version/Open), benign.
+Verified: tsc node+web 0 errors (ScreenScraper baseline errors no longer present), vite build
+  PASS.
+
 [2026-07-10] — feat(backend): ONBOARDING P2 — sitedata github_check/github_install + onboarding/status (spec §3–§4; commit a9759209; closes TODO-216)
 Added: backend/app.py: GET /api/sitedata/github_check — latest sitedata-* release, per-part
   (core/files) zip discovery by _core_/_files_ substring (collision-suffix tolerant, per P1's
