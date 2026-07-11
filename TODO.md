@@ -47,12 +47,6 @@ Status: Open
 Added: 2026-07-10
 Description: BUG: GUI Stop button (ScreenScraper.tsx:797) posts /api/geocode/stop but the route does not exist (silent 404), and run_batch() in backend/geocoder.py has no stop-flag check, so a batch can only be killed by restarting the backend. FIX: (1) add module-level _stop_requested bool + threading.Lock use in backend/geocoder.py; check it at the top of each loop iteration in run_batch() and break cleanly (finally block already resets progress); reset the flag at batch start; also honor it inside the 60s rate-limit sleep (sleep in small slices). (2) add POST /api/geocode/stop in backend/app.py next to /api/geocode/run (~line 5747) that sets the flag and returns current progress; mirror the pattern of /api/bobdylan/stop. (3) expose stop_requested in get_progress() so the GUI badge can show 'stopping'.
 
-TODO-218: ONBOARDING P4 — README.md rewrite (retire PyQt flow docs)
-Priority: Low
-Status: Open
-Added: 2026-07-10
-Description: Spec §6 (instructions/FABLE_ONBOARDING_SYNC.md): quickstart via GitHub Releases installer + first-run wizard, data-model note (master release vs site data vs monthly flat-file), dev setup (.venv, run_backend.py, gui_next dev), keep flat-file/checksum format reference sections. Can run any time; no dependencies.
-
 TODO-215: TapeMatch screen v2 — pair corrections, run management, LB deep-links
 Priority: Medium
 Status: Open
