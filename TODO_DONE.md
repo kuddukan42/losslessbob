@@ -1,6 +1,30 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-220: Geocoder cascading fallback on Nominatim miss + query provenance in note
+Priority: High
+Status: Done
+Added: 2026-07-10
+Closed: 2026-07-11
+Description: PROBLEM: run_batch() (backend/geocoder.py ~432-497) picks ONE structured query (bobdylan_shows -> setlistfm_shows -> dylan_performances -> raw entries.location) and gives Nominatim one shot; venue-level queries often miss (Nominatim is weak on venue names, e.g. 'Abilene Auditorium, Abilene, Texas' -> failed) and the row is stored source='failed' with note=NULL, so it looks like LB metadata was used. FIX: on a Nominatim no-result, cascade: (1) next structured source's string, (2) venue-stripped variant of each structured string (city/state/country only — for bobdylan_shows that is the 'location' column alone; for setlistfm 'city, country'), (3) raw entries.location last. Record every attempted query in note (e.g. 'tried: bobdylan_shows:<q1> | bobdylan_shows-cityonly:<q2>') on BOTH success and failure. Keep 1.1s sleep between every Nominatim call including fallback attempts. Set source to the source that actually succeeded; add suffix '-city' when the venue-stripped variant won and cap its confidence at medium. NOTE: 48/117 rows from the 2026-07-10 run are failed; after implementing, re-run with retry_failed=True.
+Shipped 2026-07-11: cascade full structured strings -> city-only variants ('-city' source suffix, confidence capped medium) -> raw entries.location; note records every attempted query on success+failure; 1.1s between all Nominatim calls. Re-ran the 48 failed rows: 17 geocoded, 31 skipped_not_concert, 0 failed remain; coverage 69->86.
+
+TODO-221: Geocoder concert-only eligibility filter (skip studio/compilation/interview entries)
+Priority: High
+Status: Done
+Added: 2026-07-10
+Closed: 2026-07-11
+Description: DESIGN INTENT: geocoding = 'Bob held a concert at this venue, here is where the venue is'. Only routine single-date concert entries with LB numbers qualify; studio bootlegs, multi-date compilations, interviews, radio/TV do NOT. CURRENT: run_batch() geocodes every distinct entries.location, so '1974 Tour Anthology', '65 Outtakes Compilation', 'ABC TV 20/20 Interview' etc get geocoded or fail-spam (and a date match alone is not a concert test: 'ABC TV 20/20 Interview' date-matches dylan_performances and would geocode to Bob's Malibu home). FIX: in the candidate SELECT / loop of run_batch() (backend/geocoder.py ~386-455), only geocode a location when at least one of its entries has a single clean parseable date (no 'xx', no ranges) AND that date matches a bobdylan_shows or setlistfm_shows row (i.e. a documented show). Everything else: write row with new source value 'skipped_not_concert' (lat/lon NULL, manual_override=0) so it is cached, excluded from the map JOIN, not retried every run, and NOT counted in the errors stat — count separately as 'skipped' in _progress and the /api/geocode/stats payload. Keep manual place_manual() as the escape hatch for edge cases. Consider also skipping locations matching obvious non-venue keywords (compilation, outtakes, interview, rehearsal, soundcheck, demos, various) as a secondary guard.
+Shipped 2026-07-11: _is_concert_location() keyword guard + clean-date match against bobdylan_shows/setlistfm_shows (dylan_performances excluded); ineligible rows cached as source='skipped_not_concert', excluded from failed stat, counted as skipped in _progress + /api/geocode/stats. Live run: 31/48 previously-failed rows correctly skipped. Known edge: non-venue text on a documented show date (hotel-room recordings) still passes — place_manual() escape hatch.
+
+TODO-219: Geocoder stop support — stop flag in run_batch + POST /api/geocode/stop
+Priority: High
+Status: Done
+Added: 2026-07-10
+Closed: 2026-07-11
+Description: BUG: GUI Stop button (ScreenScraper.tsx:797) posts /api/geocode/stop but the route does not exist (silent 404), and run_batch() in backend/geocoder.py has no stop-flag check, so a batch can only be killed by restarting the backend. FIX: (1) add module-level _stop_requested bool + threading.Lock use in backend/geocoder.py; check it at the top of each loop iteration in run_batch() and break cleanly (finally block already resets progress); reset the flag at batch start; also honor it inside the 60s rate-limit sleep (sleep in small slices). (2) add POST /api/geocode/stop in backend/app.py next to /api/geocode/run (~line 5747) that sets the flag and returns current progress; mirror the pattern of /api/bobdylan/stop. (3) expose stop_requested in get_progress() so the GUI badge can show 'stopping'.
+Shipped 2026-07-11: stop() flag + sliced 429 sleep in backend/geocoder.py, POST /api/geocode/stop in backend/app.py (GUI Stop button 404 fixed), stop_requested exposed in get_progress(). Live-verified: stop endpoint returns progress dict; flag resets at batch start.
+
 TODO-227: run_crawl.sh: backoff / same-date failure guard to prevent hot crash-loops
 Priority: Low
 Status: Done

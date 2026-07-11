@@ -1,3 +1,28 @@
+[2026-07-11] — feat(backend): geocoder stop support (TODO-219), concert-only eligibility filter (TODO-221), cascading Nominatim fallback (TODO-220)
+Added: backend/geocoder.py: TODO-219 — stop() sets _progress["stop_requested"] under _lock;
+  run_batch() checks it at the top of every location iteration and the 429 backoff sleep is
+  sliced (1 s chunks, _StopSignal unwinds into the existing finally). get_progress() exposes
+  stop_requested for the GUI badge.
+Added: backend/app.py: POST /api/geocode/stop (mirrors /api/bobdylan/stop) — fixes the GUI Stop
+  button's silent 404 (ScreenScraper.tsx already posted this path).
+Added: backend/geocoder.py: TODO-221 — _is_concert_location(): non-venue keyword guard
+  (compilation/outtakes/interview/rehearsal/soundcheck/demos/various) + requires one entry with
+  a single clean date matching bobdylan_shows or setlistfm_shows (dylan_performances deliberately
+  excluded — it date-matches interviews). Ineligible locations cached as
+  source='skipped_not_concert' (lat/lon NULL, never retried, no Nominatim call), counted in new
+  _progress["skipped"]; /api/geocode/stats excludes them from failed and reports skipped.
+Changed: backend/geocoder.py: TODO-220 — cascading fallback: all structured-source full strings
+  (priority order) → venue-stripped city-only variants (source suffix '-city', confidence capped
+  at medium) → raw entries.location last; every attempted query recorded in note
+  ("tried: <tag>:<query> | …") on success and failure; 1.1 s sleep between every Nominatim call
+  incl. fallbacks. Shared _save_geocode_result() extracted for the UPSERT.
+Fixed: data: re-ran the 48 source='failed' rows from the 2026-07-10 batch (retry_failed=true,
+  limit=48, live-verified on 5174 post-restart): 17 geocoded (9 bobdylan_shows-city,
+  1 setlistfm_shows-city, 7 full-string), 31 skipped_not_concert, 0 errors — failed count now 0,
+  coverage 69 → 86 locations. Known wart: a non-venue location on a documented show date (e.g.
+  "A Hotel Room, Denver" during a Lincoln NE run) passes eligibility and pins to the show's
+  city; place_manual() is the escape hatch, gazetteer work (TODO-222/223) will revisit.
+
 [2026-07-11] — feat(backend+scraper): quality-score family corroboration + dup-encode surfacing (TODO-210), crawl hot-loop guard (TODO-227)
 Added: backend/tapematch_sync.py: TODO-210a conf bump — _load_latest_abs_scores (per-lb newest
   scored scan, abs_score/abs_grade feature-detected via PRAGMA, degrades to no-op pre-Ranker) +

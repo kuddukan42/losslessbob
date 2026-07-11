@@ -1135,7 +1135,8 @@ The latter two are always read-only (`_DBEDIT_READONLY_DBS` in `app.py`) — wri
 | Method | Route | Description |
 |--------|-------|-------------|
 | POST | `/api/geocode/run` | **Curator-only.** Start batch Nominatim geocode of all un-geocoded `location` values. Returns `{ok, queued}` immediately; progress polled via `/api/geocode/status`. |
-| GET | `/api/geocode/status` | Poll batch geocode state: `{running, done, total, errors, last_location}`. |
+| GET | `/api/geocode/status` | Poll batch geocode state: `{running, done, total, errors, skipped, stop_requested, current, stage, succeeded}`. |
+| POST | `/api/geocode/stop` | **Curator-only.** Signal the running batch to stop (checked per location + inside 429 backoff); returns current progress dict. |
 | POST | `/api/geocode/location` | **Curator-only.** Manually place or correct a coordinate. Body: `{location, lat, lon}`. Sets `manual=1` so the batch geocoder never overwrites it. |
 | GET | `/api/geocode/locations` | **Curator-only.** List all rows in `location_geocoded` with geocode status. Returns `[{location, lat, lon, display_name, geocoded_at, manual}]`. |
 | POST | `/api/geocode/purge` | **Curator-only.** Purge cached geocoding rows. Body: `{scope: "failed"\|"all"}`. `"failed"` removes source='failed'/lat IS NULL rows; `"all"` removes entire table. Returns `{ok, deleted}`. |
