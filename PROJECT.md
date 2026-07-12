@@ -77,6 +77,7 @@ losslessbob/
 │   ├── sox_utils.py          # SoX/ffmpeg tool detection + spectrogram generation
 │   ├── startup_log.py        # Startup timing logger → data/logs/startup.log
 │   ├── taper_attribution.py  # Taper attribution engine: evidence harvest → confirmed/propagated/inferred designations
+│   ├── song_index.py         # Song-centric index: song_canonical seeding + song_performances recompute (TODO-230)
 │   ├── torrent_maker.py      # torf-based .torrent generation; tracker CDN fetch
 │   ├── qbittorrent.py        # qBittorrent WebUI API v2 integration
 │   ├── forum_poster.py       # SMF 2.x WTRF forum topic posting
@@ -156,6 +157,7 @@ losslessbob/
 │   ├── import_curated_lists.py # CLI: import curator "best of" picks (TODO-181) — carbonbit's FLglist.xlsx + 10haaf's dylan_boots.zip/years.zip → curated_lists/curated_list_entries
 │   ├── attribute_tapers.py   # CLI wrapper: backend.taper_attribution recompute → taper_attributions (--dry-run)
 │   ├── compute_show_picks.py # CLI wrapper: concert_ranker.picks recompute → show_picks (--dry-run)
+│   ├── compute_song_performances.py # CLI wrapper: backend.song_index recompute → song_performances (--dry-run)
 │   ├── losslessbob.iss       # Inno Setup 6 script — builds LosslessBob_Setup_<ver>.exe from dist/LosslessBob/
 │   ├── build_windows.bat     # Local helper: pyinstaller + iscc in sequence (Windows only)
 │   ├── shntool.exe           # Windows shntool binary (GPL-2); bundled into PyInstaller dist via losslessbob.spec
@@ -553,6 +555,17 @@ present) `taper_attributions`. Never exported in master data. Scoring model:
 
 Indexes: `idx_show_picks_lb(lb_number)`, `idx_show_picks_date_iso(concert_date_iso)`.
 
+### `song_canonical` / `song_performances` — Song-centric index (USER tables, TODO-230)
+LISTENING §3, olof_songs spine. `song_canonical(alias_norm PK, canonical, source 'auto'|'curator',
+updated_at)` — normalised-alias → display-spelling map, auto-seeded from `olof_songs.song_title`
+norm-groups (most frequent raw spelling wins); curator rows are sticky against re-seeding.
+`song_performances(event_id+position PK, song_norm, song_canonical, concert_date_iso, is_encore,
+take_status, event_type, computed_at)` — derived wholesale (guarded DELETE+reinsert) from
+`olof_songs JOIN olof_events` by `backend/song_index.py` (`tools/compute_song_performances.py`
+CLI; 4th step of `/api/derived/recompute`). Normalisation: NFKD/casefold/apostrophe-unify/
+punct→space/ws-collapse. Both USER-tier — never in master export (rebuilt from local olof_*).
+Indexes: `idx_song_perf_norm(song_norm)`, `idx_song_perf_date(concert_date_iso)`.
+
 ### `tapematch_pairs` — Per-date pairwise similarity (USER table)
 Slim mirror of `tools/tapematch/observations.db` `pairs`, synced by
 `backend/tapematch_sync.py:sync_tapematch_pairs()` (chained after the families sync in both
@@ -924,7 +937,10 @@ scheduled scan interval, checked hourly by `scheduler._integrity_scan_worker`.
 ### Derived-Data Recompute
 | Method | Route | Description |
 |--------|-------|-------------|
-| POST | `/api/derived/recompute` | SSE-streamed chained recompute: `tools.parse_lineage.run()` → `tools.attribute_tapers.run()` → `tools.compute_show_picks.run()` in canonical order (finding F1/F5, `instructions/SPEC_INTEGRATION_NOTES.md`). Events: `start`/`done` (with per-step `stats`)/`skipped` (module not importable — later phase not shipped)/`error` (aborts chain)/`chain_done`. Manual trigger only (onboarding "Done" step + curator recompute button); not curator-gated — rewrites only USER-tier derived tables (`entry_lineage`, `taper_attributions`, `show_picks`). |
+| POST | `/api/derived/recompute` | SSE-streamed chained recompute: `tools.parse_lineage.run()` → `tools.attribute_tapers.run()` → `tools.compute_show_picks.run()` in canonical order (finding F1/F5, `instructions/SPEC_INTEGRATION_NOTES.md`). Events: `start`/`done` (with per-step `stats`)/`skipped` (module not importable — later phase not shipped)/`error` (aborts chain)/`chain_done`. Manual trigger only (onboarding "Done" step + curator recompute button); not curator-gated — rewrites only USER-tier derived tables (`entry_lineage`, `taper_attributions`, `show_picks`, `song_canonical`/`song_performances` — `backend.song_index.run()` appended as 4th step 2026-07-11, TODO-230). |
+| GET | `/api/songs?q=` | Song-centric index (LISTENING §3, TODO-230): distinct songs from `song_performances`, most-performed first; `q` = substring filter on canonical/norm. Returns `{songs: [{song_norm, canonical, n_performances, n_concerts, n_dates_with_recordings, first_date, last_date}]}` (`n_dates_with_recordings` via `show_picks.concert_date_iso`). |
+| GET | `/api/songs/performances?song=` | Every performance of one `song_norm`: `{song_norm, canonical, performances: [{date_iso, event_id, event_type, venue, city, is_encore, take_status, recordings: [{lb_number, pick_rank, abs_grade}]}]}` — venue/city from `olof_events`, recordings via `show_picks` + latest quality scan. 404 unknown. |
+| POST | `/api/songs/alias` | Curator-only (403). Body `{alias, canonical}` — normalises alias, upserts `song_canonical` `source='curator'` (sticky against re-seeding), re-runs the song_performances recompute. |
 | GET | `/api/picks/for/<lb>` | One LB's `show_picks` row: `{concert_date, lb_number, pick_score, pick_rank, evidence, computed_at}` with `evidence` parsed from `evidence_json` (F3 record shape). 204 when no row (pre-recompute, or entry has no usable date). Feeds DetailPanel's Picks tab / `EvidenceList`. |
 | GET | `/api/picks?date=` | All `show_picks` rows for one ISO date (`YYYY-MM-DD`, matched on `concert_date_iso`), rank-ordered, evidence parsed (LISTENING §9). |
 | GET | `/api/picks/tonight` | Rank-1 picks whose `concert_date_iso` falls on today's month-day across all years (`?mmdd=MM-DD` override for testing), best `pick_score` first. Returns `{mmdd, candidates: [{lb_number, year, concert_date_iso, location, rating, pick_score, description}]}`; empty candidates is a normal 200. Feeds the Home "Tonight in Dylan history" card. |
@@ -1695,6 +1711,7 @@ Second-generation GUI (primary, merged into main 2026-05-29) built with **Electr
 | ScreenLibrary | `screens/ScreenLibrary.tsx`, `components/library/actions.tsx`, `components/library/DetailPanel.tsx` | In progress (TODO-150) — "By performance \| By recording" lens toggle (defaults to performance). Both lenses share the same merged `RecordingRow[]` (from `/api/search` + `/api/collection/prefetch`); the performance lens additionally fetches `/api/library/performances` + `/api/tapematch/families` and groups recordings by show → TapeMatch family → member. Each lens has its own facet rail and virtual year-grouped table. Right-click context menu and a checkbox bulk-select bar (recording lens: Create torrent/Add to qBittorrent/Update location/Remove) are wired in via `actions.tsx`'s shared registry. Selecting a row opens a zoned detail panel (`DetailPanel.tsx`: ActionBar/ShareSeed/AssetStrip/Setlist, step 8; recording lens also has a Quality tab showing LB Rating + Concert Ranker AI Quality Index side by side, a Picks tab (show-pick rank/score + `EvidenceList`, lazy `/api/picks/for/<lb>`), and a Taper tab (attribution tier/conflict + `EvidenceList`, lazy `/api/tapers/attributions/<lb>`, confirm/reject buttons in curator mode) as a third column on either lens; TODO-162 P5b added an Olof tab on both lenses (Still On The Road setlist with encore/credits/annotations/take status, NET + year concert #s, recording info, notes, BobTalk quote, chronicle diary entries, circulation provenance, and a per-copy setlist comparison via `POST /api/olof/compare`) — gated on `/api/olof/status` `events > 0` (react-query `staleTime: Infinity`), so it never renders on installs without local Olof data. Live at `/library`, sidebar nav item "Library" (featured, top of the Library group, above My Collection) — step 9. Performance lens show rows and the detail panel render an "Unconfirmed" pill for degraded (`confirmed: false`) shows recovered from the `lb_category='unknown'` bucket (TODO-151). `m3u` (Export show as M3U) is wired for performance rows. `sources`/`notify` row actions and the TapeMatch family `note` field remain unexposed (no backend/UI to wire to). i18n pass (step 10) **done** — all in-screen strings extracted to the `library` namespace in `locales/*.json` and the three files converted to `t()` (the shared action registry takes a `TFunction` param since the builders are plain functions; counts pluralised via `_one`/`_other` keys); the 5 non-English locales filled via DeepL. |
 | ScreenBootlegs | `screens/ScreenBootlegs.tsx` | Done — year/CDs filters, catalog browser, CSV export |
 | ScreenTapeMatch | `screens/ScreenTapeMatch.tsx` | v1 (2026-07-10, TODO-170 closed) — read-only TapeMatch review at `/tapematch` (Library nav group): date rail (`/api/tapematch/dates`; all/conflicts/no-analysis views + date/location filter), per-date similarity-% matrix (`/api/tapematch/pairs`; heatmap tint, raw corr/emb/fp in tooltip, "n/c" for never-compared), family chips (F1/F2… from `/api/tapematch/families` fam_id groups), collapsible lazy `analysis.md` viewer (`/api/tapematch/analysis`), crawl-status strip (`/api/tapematch/crawl/status`, 30 s poll). v2 (2026-07-11, TODO-215 closed): matrix-cell JudgmentPanel writing `human_judgment`/`human_notes` via `POST /api/tapematch/pairs/judgment`, crawl start/stop buttons on the status strip, LB deep-links (`LbLinkButton` → `/library?lb=<n>`, consumed one-shot by ScreenLibrary). |
+| ScreenSongs | `screens/ScreenSongs.tsx` | Song-centric browser at `/songs` (Library nav group; 2026-07-11, TODO-230). Debounced song search rail (`/api/songs?q=`), per-song performance table (`/api/songs/performances`): date, venue/city, event-type pill, take status, encore marker, recordings as LB deep-link buttons (pick pill for `pick_rank===1`, abs_grade letter). Sort: date (default) or best-first (rank-1 recording's grade). Curator-gated canonical-rename → `POST /api/songs/alias` (hidden for non-curators via `useSettingsStore.curatorMode`). |
 | ScreenThemes | `screens/ScreenThemes.tsx` | Done — mode/density/accent, frame theme (palette) + card style (framed/flat), typeface/font-size, custom color tokens |
 | ScreenPipeline | `screens/ScreenPipeline.tsx` | Done — folder queue, 5-step workflow (verify/lookup/lbdir/rename/collect), bulk-actions menu, Auto-run + Auto-rename toggles |
 | ScreenQuickLookup | `screens/ScreenQuickLookup.tsx` | Done — paste/clipboard/drop zone, per-row checksum results table |

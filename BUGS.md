@@ -1,4 +1,12 @@
 
+BUG-249: pytest full-suite intermittent native crash in test_lb_master.py::test_status_combobox_exists
+Status: Open
+File(s): tests/test_lb_master.py:373
+Reported: 2026-07-11
+Description: Intermittent native crash (not a Python exception/traceback — process dies) in test_status_combobox_exists when run as part of the full pytest suite. Not reproduced in isolation. Observed during TODO-231 session (2026-07-11) while running the full suite for unrelated backend/ab_clips.py work; predates today's changes and is unrelated to them. Likely a native Qt/PyQt6 widget-teardown or event-loop interaction under pytest-qt when combined with other GUI tests earlier in the same suite run (ordering/state leakage), rather than a logic bug in the test itself. Root cause not yet investigated. Needs repro: re-run full suite a few times, note whether it always follows the same preceding test(s), and whether isolating the class or module avoids it.
+Root cause: Unknown
+Fix: —
+
 BUG-248: tests/test_geocoder.py: 13 stale TODO-220/221-era tests fail on main
 Status: Open
 File(s): tests/test_geocoder.py

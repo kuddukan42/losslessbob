@@ -99,7 +99,7 @@ def test_dup_encodes_route_empty_when_no_matches():
 # ── GET /api/tapematch/pairs ─────────────────────────────────────────────────
 
 
-def test_pairs_route_returns_synced_rows_for_date():
+def test_pairs_route_returns_synced_rows_for_date(monkeypatch):
     db_path, tmp_dir = _make_db()
     try:
         conn = db.get_connection(db_path)
@@ -110,6 +110,11 @@ def test_pairs_route_returns_synced_rows_for_date():
             ("1991-01-01", 10, 20, 0.9, 0.95, 0.8, 1, 100, "20260101_000000"),
         )
         conn.commit()
+        # No observations.db -> human feedback + ab_eligible enrichment skipped.
+        monkeypatch.setattr(
+            tapematch_sync, "DEFAULT_OBSERVATIONS_DB_PATH",
+            os.path.join(tmp_dir, "nope.db"),
+        )
 
         with _AppClient(db_path) as client:
             resp = client.get("/api/tapematch/pairs?date=1991-01-01")
@@ -122,6 +127,7 @@ def test_pairs_route_returns_synced_rows_for_date():
                     "lb_a": 10, "lb_b": 20, "corr": 0.9, "emb_score": 0.95,
                     "fp_score": 0.8, "same_family": True, "similarity_pct": 100,
                     "human_judgment": None, "human_notes": None,
+                    "ab_eligible": None,
                 }
             ]
     finally:

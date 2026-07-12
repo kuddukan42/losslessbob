@@ -1,6 +1,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-230: LISTENING §3 — song-centric index (olof_songs spine)
+Priority: Medium
+Status: Done
+Added: 2026-07-11
+Closed: 2026-07-11
+Description: Invert the catalog: browse by song. (a) song_canonical alias table (curator-editable, seeded from olof_songs.song_title norm-groups; canonical = most frequent raw spelling); (b) song_performances derived table (event_id+position PK, song_norm/song_canonical/concert_date_iso/is_encore/take_status/event_type, wholesale recompute via backend/song_index.py + tools/compute_song_performances.py, appended feature-detected to the /api/derived/recompute chain); (c) GET /api/songs?q= + GET /api/songs/performances?song= (recordings joined via show_picks/abs_grade) + curator POST /api/songs/alias; (d) ScreenSongs browser (search, performance list best-first, LB deep-links via /library?lb=). Spec: instructions/complete/FABLE_LISTENING_INSIGHT_IDEAS.md §3 amended by WORK_PACKAGE_NEXT slot 2 (olof_songs spine, NOT setlist.fm). Canonicalisation feeds TODO-225.
+Shipped 2026-07-11: backend/song_index.py (normalization, curator-sticky song_canonical seeding, song_performances wholesale recompute guarded against empty replace), tools/compute_song_performances.py, 4th step in /api/derived/recompute chain, GET /api/songs + GET /api/songs/performances + curator POST /api/songs/alias, ScreenSongs at /songs with LB deep-links and best-first sort. 61,707 rows / 1,298 songs / 3,994 events on real DB; 13 tests; tsc+build clean; live-verified (visions of johanna: 227 performances, 201 dates with recordings).
+
 TODO-215: TapeMatch screen v2 — pair corrections, run management, LB deep-links
 Priority: Medium
 Status: Done

@@ -57,7 +57,8 @@
       "advancedTools": "Geavanceerde tools",
       "trading": "Handel",
       "sharing": "Delen",
-      "tapematch": "TapeMatch"
+      "tapematch": "TapeMatch",
+      "songs": "Nummers"
     },
     "statusBar": {
       "db": "DB:",
@@ -1780,6 +1781,47 @@
     "geocoder": {
       "skippedLabel": "Overgeslagen",
       "stoppingBadge": "stoppen"
+    }
+  },
+  "songs": {
+    "title": "Nummers",
+    "subtitle": "Blader door de catalogus op nummer — elke uitvoering, met circulerende opnames.",
+    "rail": {
+      "searchPlaceholder": "Zoek nummers…",
+      "meta": "{{recDates}} datums met opnames",
+      "empty": "Geen nummers gevonden",
+      "loading": "Nummers worden geladen…"
+    },
+    "noSelection": "Selecteer een nummer om de uitvoeringen ervan te bekijken",
+    "header": {
+      "stats": "{{performances}} optredens · {{concerts}} concerten · {{first}} – {{last}}",
+      "unknownDate": "onbekend"
+    },
+    "edit": {
+      "title": "De canonieke spelling hernoemen",
+      "placeholder": "Canonieke spelling…",
+      "curatorRequired": "Curator-modus vereist om nummers te hernoemen.",
+      "saveFailed": "Opslaan mislukt, probeer het opnieuw.",
+      "saving": "Bezig met opslaan…"
+    },
+    "sort": {
+      "label": "Sorteren:",
+      "date": "datum",
+      "best": "beste eerst"
+    },
+    "table": {
+      "date": "Datum",
+      "venue": "Locatie",
+      "city": "Stad",
+      "type": "Type",
+      "take": "Neem",
+      "encore": "Encore",
+      "encoreYes": "encore",
+      "recordings": "Opnames",
+      "none": "—",
+      "pick": "kies",
+      "openInLibrary": "Openen in bibliotheek",
+      "empty": "Er zijn geen uitvoeringen gevonden voor dit nummer."
     }
   }
 }

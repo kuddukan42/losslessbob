@@ -57,7 +57,8 @@
       "advancedTools": "Herramientas avanzadas",
       "trading": "Comercio",
       "sharing": "Compartir",
-      "tapematch": "TapeMatch"
+      "tapematch": "TapeMatch",
+      "songs": "Canciones"
     },
     "statusBar": {
       "db": "BD:",
@@ -1780,6 +1781,47 @@
     "geocoder": {
       "skippedLabel": "Omitido",
       "stoppingBadge": "detener"
+    }
+  },
+  "songs": {
+    "title": "Canciones",
+    "subtitle": "Explora el catálogo por canciones: todas las interpretaciones, con grabaciones disponibles.",
+    "rail": {
+      "searchPlaceholder": "Buscar canciones…",
+      "meta": "{{recDates}} fechas con grabaciones",
+      "empty": "No se han encontrado canciones",
+      "loading": "Cargando canciones…"
+    },
+    "noSelection": "Selecciona una canción para ver sus interpretaciones",
+    "header": {
+      "stats": "{{performances}} actuaciones · {{concerts}} conciertos · {{first}} – {{last}}",
+      "unknownDate": "desconocido"
+    },
+    "edit": {
+      "title": "Renombrar según la ortografía canónica",
+      "placeholder": "Ortografía canónica…",
+      "curatorRequired": "Se requiere el modo «Curator» para renombrar canciones.",
+      "saveFailed": "Error al guardar, inténtalo de nuevo.",
+      "saving": "Guardando…"
+    },
+    "sort": {
+      "label": "Ordenar:",
+      "date": "fecha",
+      "best": "Lo mejor primero"
+    },
+    "table": {
+      "date": "Fecha",
+      "venue": "Lugar",
+      "city": "Ciudad",
+      "type": "Tipo",
+      "take": "Tomar",
+      "encore": "Encore",
+      "encoreYes": "encore",
+      "recordings": "Grabaciones",
+      "none": "—",
+      "pick": "seleccionar",
+      "openInLibrary": "Abrir en la biblioteca",
+      "empty": "No se han encontrado interpretaciones de esta canción."
     }
   }
 }

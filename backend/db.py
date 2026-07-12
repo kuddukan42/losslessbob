@@ -87,6 +87,8 @@ USER_TABLES = (
     "tapematch_pairs",
     "pipeline_file_hash",
     "pipeline_folder_state",
+    "song_canonical",
+    "song_performances",
 )
 
 # Guard against f-string injection if a table name is ever mis-typed (#10)
@@ -871,6 +873,39 @@ CREATE INDEX IF NOT EXISTS idx_show_picks_lb ON show_picks(lb_number);
 -- idx_show_picks_date_iso is created by the concert_date_iso migration below
 -- (not here): on an existing DB this CREATE TABLE is a no-op, so an index on
 -- the new column at this point would run before the ALTER TABLE adds it.
+
+-- ── Song index (LISTENING §3, TODO-230 — song-centric catalog view) ──────────
+-- song_canonical is USER-tier but curator-editable: a normalised-alias ->
+-- display-spelling table, seeded automatically from olof_songs.song_title
+-- norm-groups (most frequent raw spelling wins) and never overwritten by
+-- re-seeding once a curator has hand-edited a row (source='curator'). See
+-- backend/song_index.py for the normalisation function and seeding logic.
+CREATE TABLE IF NOT EXISTS song_canonical (
+    alias_norm  TEXT PRIMARY KEY,          -- normalised grouping key
+    canonical   TEXT NOT NULL,             -- display spelling shown in the GUI
+    source      TEXT NOT NULL DEFAULT 'auto',  -- 'auto' | 'curator'
+    updated_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- song_performances is a derived, wholesale-recomputed table (like show_picks)
+-- built from olof_songs JOIN olof_events — one row per performed song/take.
+-- Never exported in master data (in USER_TABLES): it's rebuilt locally from
+-- olof_* (itself local-only, not in MASTER_TABLES) on every recompute, never
+-- hand-edited. See backend/song_index.py.
+CREATE TABLE IF NOT EXISTS song_performances (
+    event_id         INTEGER NOT NULL,
+    position         INTEGER NOT NULL,
+    song_norm        TEXT NOT NULL,
+    song_canonical   TEXT NOT NULL,
+    concert_date_iso TEXT,                 -- NULL when olof_events.date_str is unparsed
+    is_encore        INTEGER NOT NULL DEFAULT 0,
+    take_status      TEXT NOT NULL DEFAULT '',
+    event_type       TEXT NOT NULL DEFAULT '',
+    computed_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (event_id, position)
+);
+CREATE INDEX IF NOT EXISTS idx_song_perf_norm ON song_performances(song_norm);
+CREATE INDEX IF NOT EXISTS idx_song_perf_date ON song_performances(concert_date_iso);
 
 -- ── TapeMatch pairwise similarity (USER — per-date match % between LBs) ──────
 -- Slim per-pair mirror of tools/tapematch/observations.db's `pairs` table,
