@@ -57,7 +57,8 @@
       "advancedTools": "Strumenti avanzati",
       "trading": "Trading",
       "sharing": "Condivisione",
-      "tapematch": "TapeMatch"
+      "tapematch": "TapeMatch",
+      "songs": "Brani"
     },
     "statusBar": {
       "db": "DB:",
@@ -1780,6 +1781,47 @@
     "geocoder": {
       "skippedLabel": "Saltato",
       "stoppingBadge": "interruzione"
+    }
+  },
+  "songs": {
+    "title": "Brani",
+    "subtitle": "Sfoglia il catalogo per brano: ogni esecuzione, con le registrazioni disponibili.",
+    "rail": {
+      "searchPlaceholder": "Cerca brani…",
+      "meta": "{{recDates}} date con registrazioni",
+      "empty": "Nessun brano trovato",
+      "loading": "Caricamento dei brani in corso…"
+    },
+    "noSelection": "Seleziona un brano per visualizzarne le esecuzioni",
+    "header": {
+      "stats": "{{performances}} esibizioni · {{concerts}} concerti · {{first}} – {{last}}",
+      "unknownDate": "sconosciuto"
+    },
+    "edit": {
+      "title": "Rinominare secondo l'ortografia canonica",
+      "placeholder": "Ortografia canonica…",
+      "curatorRequired": "Per rinominare i brani è necessaria la modalità Curator.",
+      "saveFailed": "Salvataggio non riuscito, riprova.",
+      "saving": "Salvataggio in corso…"
+    },
+    "sort": {
+      "label": "Ordina:",
+      "date": "data",
+      "best": "la migliore per prima"
+    },
+    "table": {
+      "date": "Data",
+      "venue": "Luogo",
+      "city": "Città",
+      "type": "Tipo",
+      "take": "Prendi",
+      "encore": "Encore",
+      "encoreYes": "encore",
+      "recordings": "Registrazioni",
+      "none": "—",
+      "pick": "seleziona",
+      "openInLibrary": "Apri nella Libreria",
+      "empty": "Non sono state trovate esecuzioni per questo brano."
     }
   }
 }

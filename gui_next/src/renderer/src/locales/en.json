@@ -43,6 +43,7 @@
       "search": "Search",
       "bootlegs": "Bootlegs",
       "tapematch": "TapeMatch",
+      "songs": "Songs",
       "assets": "Assets",
       "attachments": "Attachments",
       "spectrograms": "Spectrograms",
@@ -1726,6 +1727,47 @@
         "uncertain": "Uncertain",
         "lb_wrong": "LB wrong"
       }
+    }
+  },
+  "songs": {
+    "title": "Songs",
+    "subtitle": "Browse the catalog by song — every performance, with circulating recordings.",
+    "rail": {
+      "searchPlaceholder": "Search songs…",
+      "meta": "{{recDates}} dates w/ recordings",
+      "empty": "No songs found",
+      "loading": "Loading songs…"
+    },
+    "noSelection": "Select a song to view its performances",
+    "header": {
+      "stats": "{{performances}} performances · {{concerts}} concerts · {{first}} – {{last}}",
+      "unknownDate": "unknown"
+    },
+    "edit": {
+      "title": "Rename canonical spelling",
+      "placeholder": "Canonical spelling…",
+      "curatorRequired": "Curator mode required to rename songs.",
+      "saveFailed": "Save failed, try again.",
+      "saving": "Saving…"
+    },
+    "sort": {
+      "label": "Sort:",
+      "date": "date",
+      "best": "best first"
+    },
+    "table": {
+      "date": "Date",
+      "venue": "Venue",
+      "city": "City",
+      "type": "Type",
+      "take": "Take",
+      "encore": "Encore",
+      "encoreYes": "encore",
+      "recordings": "Recordings",
+      "none": "—",
+      "pick": "pick",
+      "openInLibrary": "Open in Library",
+      "empty": "No performances found for this song."
     }
   },
   "onboarding": {

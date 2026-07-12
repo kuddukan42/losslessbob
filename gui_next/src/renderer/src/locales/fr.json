@@ -57,7 +57,8 @@
       "advancedTools": "Outils avancés",
       "trading": "Trading",
       "sharing": "Partage",
-      "tapematch": "TapeMatch"
+      "tapematch": "TapeMatch",
+      "songs": "Chansons"
     },
     "statusBar": {
       "db": "DB :",
@@ -1780,6 +1781,47 @@
     "geocoder": {
       "skippedLabel": "Ignoré",
       "stoppingBadge": "arrêt"
+    }
+  },
+  "songs": {
+    "title": "Chansons",
+    "subtitle": "Parcourez le catalogue par morceau — chaque interprétation, avec les enregistrements disponibles en circulation.",
+    "rail": {
+      "searchPlaceholder": "Rechercher des morceaux…",
+      "meta": "{{recDates}} dates avec enregistrements",
+      "empty": "Aucun morceau trouvé",
+      "loading": "Chargement des morceaux…"
+    },
+    "noSelection": "Sélectionnez un morceau pour afficher ses interprétations",
+    "header": {
+      "stats": "{{performances}} représentations · {{concerts}} concerts · {{first}} – {{last}}",
+      "unknownDate": "inconnu"
+    },
+    "edit": {
+      "title": "Renommer selon l'orthographe canonique",
+      "placeholder": "Orthographe canonique…",
+      "curatorRequired": "Le mode « Curator » est nécessaire pour renommer les morceaux.",
+      "saveFailed": "Échec de l'enregistrement, réessayez.",
+      "saving": "Enregistrement en cours…"
+    },
+    "sort": {
+      "label": "Trier :",
+      "date": "date",
+      "best": "le meilleur en premier"
+    },
+    "table": {
+      "date": "Date",
+      "venue": "Lieu",
+      "city": "Ville",
+      "type": "Type",
+      "take": "Prendre",
+      "encore": "Encore",
+      "encoreYes": "encore",
+      "recordings": "Enregistrements",
+      "none": "—",
+      "pick": "choisir",
+      "openInLibrary": "Ouvrir dans la bibliothèque",
+      "empty": "Aucune interprétation trouvée pour cette chanson."
     }
   }
 }

@@ -37,6 +37,7 @@ from backend import (
 )
 from backend import db as database
 from backend import setlistfm as setlistfm_mod
+from backend import song_index as _song_index
 from backend import taper_attribution as _taper_attribution
 from backend.paths import (
     BATCH_VERIFY_DB_PATH,
@@ -4856,29 +4857,32 @@ def create_app() -> Flask:
     @app.route("/api/derived/recompute", methods=["POST"])
     def derived_recompute() -> Response:
         """Chained derived-data recompute: parse_lineage -> attribute_tapers ->
-        compute_show_picks.
+        compute_show_picks -> song_index.
 
         Per instructions/SPEC_INTEGRATION_NOTES.md finding F1, this replaces
         the ranking spec's standalone ``POST /api/picks/recompute`` — it's the
         one endpoint the onboarding wizard's "Done" step (and a "Recompute
         derived data" button, for curators after rating/list changes) calls,
-        so a fresh install regenerates lineage, taper attributions, and show
-        picks from master data alone. SSE, sequential; each step is run in
-        canonical order (attribution before picks, per F5, so the taper
-        reputation scoring term sees fresh attributions) and skipped
+        so a fresh install regenerates lineage, taper attributions, show
+        picks, and the song index from master data alone. SSE, sequential;
+        each step is run in canonical order (attribution before picks, per
+        F5, so the taper reputation scoring term sees fresh attributions;
+        song_index last since it has no cross-step dependency) and skipped
         gracefully (a 'skipped' event) if its module isn't importable, so the
         chain degrades cleanly when a later phase hasn't shipped yet.
 
         Manual trigger only (like /api/tapematch/sync) — never run at
         startup. Not curator-gated: unlike the master-data endpoints above,
         this recomputes only the user's OWN local USER-tier derived tables
-        (entry_lineage, taper_attributions, show_picks), never exported in
-        master — same rationale as /api/tapematch/sync.
+        (entry_lineage, taper_attributions, show_picks, song_canonical/
+        song_performances), never exported in master — same rationale as
+        /api/tapematch/sync.
         """
         steps = (
             ("parse_lineage", "tools.parse_lineage", "run"),
             ("attribute_tapers", "tools.attribute_tapers", "run"),
             ("compute_show_picks", "tools.compute_show_picks", "run"),
+            ("song_index", "backend.song_index", "run"),
         )
 
         def _stream():
@@ -5057,6 +5061,7 @@ def create_app() -> Flask:
         to ``human_judgment``/``human_notes`` = null rather than failing the
         whole request.
         """
+        from backend import ab_clips as _ab_clips
         from backend import tapematch_sync as _tapematch_sync
 
         concert_date = request.args.get("date")
@@ -5086,6 +5091,7 @@ def create_app() -> Flask:
                     "similarity_pct": r["similarity_pct"],
                     "human_judgment": None,
                     "human_notes": None,
+                    "ab_eligible": None,
                 }
                 for r in rows
             ]
@@ -5107,6 +5113,9 @@ def create_app() -> Flask:
                         ):
                             key = tuple(sorted((r["lb_a"], r["lb_b"])))
                             feedback[key] = (r["human_judgment"], r["human_notes"])
+                        eligible_lbs = _ab_clips.eligible_lb_set(
+                            obs_conn, concert_date, run_id
+                        )
                     finally:
                         obs_conn.close()
                     for pair in pairs:
@@ -5114,6 +5123,10 @@ def create_app() -> Flask:
                         judgment, notes = feedback.get(key, (None, None))
                         pair["human_judgment"] = judgment
                         pair["human_notes"] = notes
+                        pair["ab_eligible"] = (
+                            pair["lb_a"] in eligible_lbs
+                            and pair["lb_b"] in eligible_lbs
+                        )
             except Exception:
                 _log.warning(
                     "tapematch_pairs_for_date: human feedback enrichment failed "
@@ -5125,6 +5138,76 @@ def create_app() -> Flask:
         except Exception as exc:
             _log.exception("tapematch_pairs_for_date failed for date=%s", concert_date)
             return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
+    @app.route("/api/ab_clip", methods=["POST"])
+    def ab_clip_create() -> Response:
+        """Build two performance-time-aligned A/B clips for a TapeMatch pair.
+
+        LISTENING §2 (TODO-231), v1 restricted to cleanly-aligned pairs (both
+        sources ``speed_kind IN ('reference','aligned')``). JSON body::
+
+            {"date": "YYYY-MM-DD", "lb_a": int, "lb_b": int,
+             "t_sec": float (>=0), "dur_sec": int (5..60, default 20)}
+
+        Resolves each LB's folder via ``my_collection.disk_path``, maps the
+        performance time to each source's local audio offset via
+        ``trim_head_sec`` (from observations.db), extracts WAV clips into
+        ``data/ab_clips/`` and returns their ``/api/ab_clip/<name>`` URLs.
+
+        Returns:
+            200 with clip URLs; 400 for bad params/position; 409
+            ``not_eligible`` (wrong speed_kind) or ``locked`` (observations.db
+            busy); 404 ``pair_not_found`` (unknown pair/date) or
+            ``folder_missing`` (unresolvable/unmounted disk path).
+        """
+        from backend import ab_clips as _ab_clips
+        from backend import tapematch_sync as _tapematch_sync
+
+        body = request.get_json(force=True) or {}
+        concert_date = body.get("date")
+        lb_a = body.get("lb_a")
+        lb_b = body.get("lb_b")
+        t_sec = body.get("t_sec")
+        if not concert_date or lb_a is None or lb_b is None or t_sec is None:
+            return jsonify({"error": "missing_fields"}), 400
+        try:
+            t_val = float(t_sec)
+        except (TypeError, ValueError):
+            return jsonify({"error": "bad_t_sec"}), 400
+        dur_val = _ab_clips.clamp_dur(body.get("dur_sec"))
+
+        try:
+            conn = database.get_connection()
+            result = _ab_clips.generate_ab_clips(
+                conn, _tapematch_sync.DEFAULT_OBSERVATIONS_DB_PATH,
+                concert_date, int(lb_a), int(lb_b), t_val, dur_val,
+            )
+            return jsonify(result)
+        except _ab_clips.AbClipError as exc:
+            return jsonify(exc.payload), exc.status
+        except Exception as exc:
+            _log.exception("ab_clip_create failed for date=%s", concert_date)
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
+    @app.route("/api/ab_clip/<path:filename>", methods=["GET"])
+    def ab_clip_serve(filename: str) -> Response:
+        """Serve a cached A/B WAV clip from ``data/ab_clips/`` (TODO-231).
+
+        ``send_from_directory`` rejects path-traversal, so only files inside
+        the cache directory are reachable. 404 if the named clip is absent
+        (e.g. pruned from the LRU cache).
+        """
+        from werkzeug.exceptions import NotFound
+
+        from backend import ab_clips as _ab_clips
+
+        try:
+            return send_from_directory(
+                str(_ab_clips.AB_CLIPS_DIR), filename,
+                mimetype="audio/wav", conditional=True,
+            )
+        except NotFound:
+            return jsonify({"error": "clip_not_found"}), 404
 
     @app.route("/api/tapematch/pairs/judgment", methods=["POST"])
     def tapematch_pairs_judgment() -> Response:
@@ -5630,6 +5713,62 @@ def create_app() -> Flask:
             candidates = database.get_tonight_picks(mmdd)
             return jsonify({"mmdd": mmdd, "candidates": candidates})
         except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    # ── Song index (LISTENING spec §3, TODO-230 — song-centric catalog view) ────
+
+    @app.route("/api/songs", methods=["GET"])
+    def songs_list() -> Response:
+        """List distinct songs from song_performances, most-performed first.
+
+        Query param ``q`` (optional): substring filter against the canonical
+        display spelling or the normalised key. No ``q`` returns every song.
+        """
+        try:
+            songs = _song_index.get_songs(q=request.args.get("q") or None)
+            return jsonify({"songs": songs})
+        except Exception as e:
+            _log.exception("songs_list failed")
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/songs/performances", methods=["GET"])
+    def song_performances() -> Response:
+        """Every performance of one song, joined to venue + circulating recordings.
+
+        Query param ``song`` (required, the normalised ``song_norm`` key
+        from ``GET /api/songs``). 404 if unknown.
+        """
+        song_norm = request.args.get("song", "")
+        if not song_norm:
+            return jsonify({"error": "song query param is required"}), 400
+        try:
+            result = _song_index.get_song_performances(song_norm)
+            if result is None:
+                return jsonify({"error": "not_found"}), 404
+            return jsonify(result)
+        except Exception as e:
+            _log.exception("song_performances failed for song_norm=%r", song_norm)
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/songs/alias", methods=["POST"])
+    def songs_alias() -> Response:
+        """Curator-only. Map an alias spelling to a canonical display spelling.
+
+        Body: {alias, canonical}. Normalises the alias, upserts song_canonical
+        with source='curator' (sticky against future auto-seeding), then
+        re-runs the song_performances recompute so the new spelling is live
+        immediately. Returns the recompute stats dict.
+        """
+        if not database.is_curator():
+            return jsonify({"error": "curator_required"}), 403
+        try:
+            body = request.get_json(silent=True) or {}
+            stats = _song_index.upsert_alias(body.get("alias", ""), body.get("canonical", ""))
+            return jsonify({"ok": True, "stats": stats})
+        except ValueError as exc:
+            return jsonify({"error": "bad_request", "message": str(exc)}), 400
+        except Exception as e:
+            _log.exception("songs_alias failed")
             return jsonify({"error": str(e)}), 500
 
     def _find_master_release(_req):

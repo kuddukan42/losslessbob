@@ -57,7 +57,8 @@
       "advancedTools": "Erweiterte Tools",
       "trading": "Handel",
       "sharing": "Teilen",
-      "tapematch": "TapeMatch"
+      "tapematch": "TapeMatch",
+      "songs": "Songs"
     },
     "statusBar": {
       "db": "DB:",
@@ -1780,6 +1781,47 @@
     "geocoder": {
       "skippedLabel": "Übersprungen",
       "stoppingBadge": "Beenden"
+    }
+  },
+  "songs": {
+    "title": "Songs",
+    "subtitle": "Durchsuchen Sie den Katalog nach Titeln – jede Aufführung mit verfügbaren Aufnahmen.",
+    "rail": {
+      "searchPlaceholder": "Songs suchen…",
+      "meta": "{{recDates}} – Datumsangaben zu Aufnahmen",
+      "empty": "Es wurden keine Titel gefunden",
+      "loading": "Titel werden geladen…"
+    },
+    "noSelection": "Wählen Sie einen Titel aus, um dessen Interpretationen anzuzeigen",
+    "header": {
+      "stats": "{{performances}} Aufführungen · {{concerts}} Konzerte · {{first}} – {{last}}",
+      "unknownDate": "unbekannt"
+    },
+    "edit": {
+      "title": "Umbenennung der kanonischen Schreibweise",
+      "placeholder": "Kanonische Schreibweise…",
+      "curatorRequired": "Zum Umbenennen von Titeln ist der Kurator-Modus erforderlich.",
+      "saveFailed": "Speichern fehlgeschlagen, bitte erneut versuchen.",
+      "saving": "Wird gespeichert…"
+    },
+    "sort": {
+      "label": "Sortieren:",
+      "date": "Datum",
+      "best": "am besten zuerst"
+    },
+    "table": {
+      "date": "Datum",
+      "venue": "Veranstaltungsort",
+      "city": "Stadt",
+      "type": "Typ",
+      "take": "Beispiel",
+      "encore": "Encore",
+      "encoreYes": "encore",
+      "recordings": "Aufnahmen",
+      "none": "—",
+      "pick": "Auswahl",
+      "openInLibrary": "In der Bibliothek öffnen",
+      "empty": "Für diesen Song wurden keine Aufführungen gefunden."
     }
   }
 }

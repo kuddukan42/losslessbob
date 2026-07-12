@@ -33,6 +33,7 @@ import { ScreenSharing } from './screens/ScreenSharing'
 import { ScreenQuickLookup } from './screens/ScreenQuickLookup'
 import { ScreenLibrary } from './screens/ScreenLibrary'
 import { ScreenTapeMatch } from './screens/ScreenTapeMatch'
+import { ScreenSongs } from './screens/ScreenSongs'
 
 // ── React Query client — prefetch collection data immediately at module load ──
 
@@ -266,6 +267,7 @@ export default function App(): React.JSX.Element {
           <Route path="/quicklookup" element={<ScreenQuickLookup />} />
           <Route path="/library"     element={<ScreenLibrary />} />
           <Route path="/tapematch"   element={<ScreenTapeMatch />} />
+          <Route path="/songs"       element={<ScreenSongs />} />
           <Route path="/rename"      element={<ScreenRename />} />
           <Route path="/lbdir"       element={<ScreenLBDIR />} />
           <Route path="/collection"  element={<ScreenCollection />} />

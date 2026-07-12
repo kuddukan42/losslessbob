@@ -1,3 +1,47 @@
+[2026-07-11] — feat(backend): TODO-231 (part 1/2) — LISTENING §2 aligned A/B clip service
+Added: backend/ab_clips.py — POST /api/ab_clip {date, lb_a, lb_b, t_sec, dur_sec 5..60} extracts
+  two performance-time-aligned WAV clips (16-bit/44.1k/stereo) via ffmpeg from the pair's library
+  FLAC folders (my_collection.disk_path; t located across the folder's track sequence via cached
+  ffprobe durations, clips may span N adjacent tracks via concat demuxer). Per-source offset =
+  t + trim_head_sec from tools/tapematch/observations.db sources. v1 eligibility: both sources
+  speed_kind IN ('reference','aligned') — 409 not_eligible otherwise; 404 no-common-run/
+  folder_missing (unmounted drive path echoed), 409 locked (obs db write-locked), 400 bad t/dur.
+  Clips cached in data/ab_clips/ (gitignored), pruned to newest 40; GET /api/ab_clip/<name> serves.
+Added: GET /api/tapematch/pairs rows now carry ab_eligible (live best-effort from observations.db,
+  same pattern as human_judgment enrichment; null when db missing/locked).
+Fixed (Fable review of agent output, pre-commit): trims for A and B are now taken from the latest
+  run containing BOTH sources (get_pair_source_info) — per-source-latest-run selection could mix
+  trims from two runs whose performance windows disagree, silently misaligning the pair; clip
+  cache key now hashes the post-trim source offset (not raw performance time) so a rerun that
+  changes a trim can't serve a stale cached clip.
+Tests: 24 in tests/test_ab_clips.py (ffmpeg/ffprobe mocked; offset math, boundary spanning,
+  eligibility, cache prune, enrichment, same-run selection). Real-audio smoke test: LB-5953/
+  LB-6162 1995-07-08 Munich, 15.0 s clips ffprobe-verified, incl. track-boundary concat path.
+Note: part 2/2 (A/B player widget in ScreenTapeMatch + dup-encodes GUI rider) follows.
+
+[2026-07-11] — feat(backend+gui): TODO-230 — LISTENING §3 song-centric index (olof_songs spine)
+Added: backend/song_index.py — normalize_song_title (NFKD/casefold/apostrophe-unify/punct-strip),
+  song_canonical seeding (most-frequent raw spelling wins; curator rows sticky via
+  ON CONFLICT ... WHERE source != 'curator'), song_performances wholesale recompute (empty-replace
+  guarded per BUG-246 pattern), upsert_alias, get_songs/get_song_performances queries.
+Added: backend/db.py — song_canonical (alias_norm PK, canonical, source auto|curator) +
+  song_performances (event_id+position PK, song_norm/song_canonical/concert_date_iso/is_encore/
+  take_status/event_type; idx on norm + date) — both USER-tier, never in master export.
+Added: tools/compute_song_performances.py CLI (--dry-run); song_index appended as 4th
+  feature-detected step of POST /api/derived/recompute (F1 chain).
+Added: backend/app.py routes — GET /api/songs?q= (counts + date span + n_dates_with_recordings
+  via show_picks), GET /api/songs/performances?song= (venue/city from olof_events; recordings
+  {lb_number, pick_rank, abs_grade} via show_picks + latest quality scan; 404 unknown),
+  POST /api/songs/alias (curator-gated 403; recompute-on-write).
+Added: gui_next ScreenSongs.tsx at /songs (Library nav group) — debounced song search rail,
+  performance table (date/venue/event-type pill/take status/encore, LB deep-link buttons with
+  pick + grade), date vs best-first sort, curator canonical-rename affordance. i18n songs.* keys,
+  5 locales via /gui-next-i18n.
+Data: real-DB recompute — 61,707 performance rows, 1,298 songs, 3,994 events (88.1% of all
+  olof_events incl. sessions/broadcasts). Verified live: "visions of johanna" → 227 performances
+  (220 concerts, 201 dates with local recordings). 13 new tests (tests/test_song_index.py).
+Note: canonicalisation table feeds TODO-225 (setlist fingerprinting).
+
 [2026-07-11] — test(backend): un-rot tests/test_geocoder.py (13 failures from TODO-220/224 behavior changes)
 Fixed: 6 assertions updated to the (full, city_only) tuple returns introduced by TODO-220
   (9ac938b0); 5 TestRunBatch fixtures gained a blank-field olof_events concert row so the
