@@ -1,6 +1,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-231: LISTENING §2 — aligned A/B listening (clip service + player)
+Priority: Medium
+Status: Done
+Added: 2026-07-11
+Closed: 2026-07-12
+Description: v1 restricted to cleanly-aligned pairs (both sources speed_kind IN ('reference','aligned') in tools/tapematch/observations.db). Backend: POST /api/ab_clip {date, lb_a, lb_b, t_sec, dur_sec<=60} — resolves each LB's folder via my_collection.disk_path, locates t within the folder's FLAC track sequence (ffprobe durations, cached), applies per-source trim_head_sec from observations.db sources so both clips are performance-time-aligned, extracts WAV clips via ffmpeg into data/ab_clips/ cache (bounded, LRU-pruned), returns clip URLs served by GET /api/ab_clip/<name>. 400/409 for ineligible pairs (staircase/speed-unknown/insufficient/constant-speed-offset in v1), 404 unresolvable paths. GET /api/tapematch/pairs enrichment adds ab_eligible (live best-effort, human_judgment pattern). GUI: A/B player widget in ScreenTapeMatch below JudgmentPanel — two synced HTML5 Audio elements, instant A/B source toggle at same position, duration select, disabled when !ab_eligible. Rider: dup-encodes GUI (TODO-210 read-only surface, GET /api/tapematch/dup_encodes). Scoping findings 2026-07-11: no cached audio in runs; lag ephemeral; trims+speed survive in sources table.
+GUI part 2/2 shipped 2026-07-12: AbPlayerPanel in ScreenTapeMatch (synced audio elements, instant A/B toggle, disabled when !ab_eligible). Also fixed ab_eligible enrichment staleness bug (per-pair latest-common-run resolution now shared with generate_ab_clips).
+
 TODO-230: LISTENING §3 — song-centric index (olof_songs spine)
 Priority: Medium
 Status: Done

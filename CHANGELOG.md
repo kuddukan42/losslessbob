@@ -1,3 +1,25 @@
+[2026-07-12] — feat(backend+gui): TODO-231 (part 2/2, closes it) — A/B player widget
+Added: gui_next/src/renderer/src/screens/ScreenTapeMatch.tsx — AbPlayerPanel, rendered next to
+  JudgmentPanel when a matrix pair is selected. Position (t_sec) + duration inputs, "Load clips"
+  hits POST /api/ab_clip; once loaded, two hidden <audio> elements are started together and stay
+  sample-aligned for the clip's fixed duration, so the A/B chip toggle is an instant (un)mute swap
+  rather than a reload/reseek. Disabled (inert controls + notEligible pill) when
+  pair.ab_eligible !== true. Per-error messaging for the ab_clip failure taxonomy (not_eligible/
+  t_out_of_range/folder_missing/locked).
+Fixed: backend/app.py tapematch_pairs_for_date — ab_eligible enrichment computed eligibility from
+  the (possibly stale) run_id synced into tapematch_pairs, not each pair's actual latest common
+  tapematch run; a pair could show ab_eligible: false while POST /api/ab_clip accepted it fine
+  (observed live: LB-5953/LB-6162 1995-07-08 — synced run had speed_kind staircase/splice, two
+  newer un-synced runs had aligned/reference). Now resolved per-pair via
+  ab_clips.get_pair_source_info, the same function generate_ab_clips uses, so the two routes can't
+  disagree.
+Changed: root adhoc_quality investigation scratch files (adhoc_quality.py/.json, adhoc_report.*,
+  adhoc_tapematch.log, build_adhoc_pdf.py) moved to tools/adhoc_quality/; dropped a stray empty
+  tools/tapematch/observations.db?mode=ro artifact (accidental sqlite URI-as-filename).
+i18n: de/fr/es/it/nl synced via DeepL for the new tapematch.abPlayer.* keys; manually corrected
+  three mistranslations of "Position" (fr "Poste", es "Puesto", nl "Functie" — all read as
+  employment position, not playback position) to Position/Posición/Positie.
+
 [2026-07-11] — feat(backend): TODO-231 (part 1/2) — LISTENING §2 aligned A/B clip service
 Added: backend/ab_clips.py — POST /api/ab_clip {date, lb_a, lb_b, t_sec, dur_sec 5..60} extracts
   two performance-time-aligned WAV clips (16-bit/44.1k/stereo) via ffmpeg from the pair's library
