@@ -4,7 +4,7 @@
 // analysis.md verdict. No run controls, no pair-correction actions — those
 // stay in the tools/tapematch CLI workflow; this screen is observation only.
 
-import React, { useMemo, useState } from 'react'
+import React, { useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { useTranslation } from 'react-i18next'
@@ -36,6 +36,7 @@ interface PairRow {
   similarity_pct: number | null
   human_judgment?: string | null
   human_notes?: string | null
+  ab_eligible?: boolean | null
 }
 
 // TODO-215 sub-feature 1 (curator match feedback) — authoritative vocabulary,
@@ -513,6 +514,179 @@ function JudgmentPanel({
   )
 }
 
+// ── A/B listening player (TODO-231 part 2/2: aligned A/B listening) ──────────
+// Rendered next to JudgmentPanel when a pair is selected. Loading fetches one
+// performance-time-aligned WAV clip per source (POST /api/ab_clip); both
+// <audio> elements are started together and stay sample-aligned for the
+// clip's duration, so the A/B toggle is just an instant (un)mute swap, never
+// a reload/reseek. Disabled (controls inert, notEligible pill) when the pair
+// isn't cleanly aligned per `ab_eligible` from GET /api/tapematch/pairs.
+
+const AB_NUMBER_INPUT_STYLE: React.CSSProperties = {
+  width: 56, padding: '3px 6px', borderRadius: 5,
+  background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border2)',
+  color: 'var(--lbb-fg)', fontFamily: 'inherit', fontSize: 'var(--lbb-fs-11-5)',
+  outline: 'none',
+}
+
+interface AbClipResult {
+  clip_a: string
+  clip_b: string
+  t_sec: number
+  dur_sec: number
+}
+
+function AbPlayerPanel({ pair, date }: { pair: PairRow; date: string }) {
+  const { t } = useTranslation()
+  const eligible = pair.ab_eligible === true
+  const [tSec, setTSec] = useState('0')
+  const [durSec, setDurSec] = useState('20')
+  const [clips, setClips] = useState<AbClipResult | null>(null)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+  const [active, setActive] = useState<'a' | 'b'>('a')
+  const [playing, setPlaying] = useState(false)
+  const audioARef = useRef<HTMLAudioElement>(null)
+  const audioBRef = useRef<HTMLAudioElement>(null)
+
+  const applyMute = (nextActive: 'a' | 'b') => {
+    if (audioARef.current) audioARef.current.muted = nextActive !== 'a'
+    if (audioBRef.current) audioBRef.current.muted = nextActive !== 'b'
+  }
+
+  const handleLoad = async () => {
+    setLoading(true)
+    setError(null)
+    setPlaying(false)
+    setClips(null)
+    try {
+      const resp = await fetch(`${BASE}/api/ab_clip`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          date, lb_a: pair.lb_a, lb_b: pair.lb_b,
+          t_sec: Number(tSec) || 0, dur_sec: Number(durSec) || 20,
+        }),
+      })
+      const body = await resp.json().catch(() => ({}))
+      if (!resp.ok) {
+        const key = body?.error === 'not_eligible' ? 'notEligible'
+          : body?.error === 't_out_of_range' ? 'outOfRange'
+          : body?.error === 'folder_missing' ? 'folderMissing'
+          : body?.error === 'locked' ? 'locked'
+          : 'loadFailed'
+        setError(t(`tapematch.abPlayer.${key}`))
+        return
+      }
+      setClips(body)
+      setActive('a')
+    } catch {
+      setError(t('tapematch.abPlayer.loadFailed'))
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const handlePlayPause = () => {
+    const a = audioARef.current
+    const b = audioBRef.current
+    if (!a || !b) return
+    if (playing) {
+      a.pause()
+      b.pause()
+      setPlaying(false)
+      return
+    }
+    a.currentTime = 0
+    b.currentTime = 0
+    applyMute(active)
+    Promise.all([a.play(), b.play()]).catch(() => {})
+    setPlaying(true)
+  }
+
+  const handleSetActive = (next: 'a' | 'b') => {
+    setActive(next)
+    applyMute(next)
+  }
+
+  const handleEnded = () => setPlaying(false)
+
+  return (
+    <div style={{
+      marginTop: 10, padding: 14, borderRadius: 8,
+      background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border)',
+      display: 'flex', flexDirection: 'column', gap: 10,
+      opacity: eligible ? 1 : 0.55,
+    }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
+        <span style={{
+          fontSize: 'var(--lbb-fs-11)', fontWeight: 700, letterSpacing: '0.04em',
+          textTransform: 'uppercase', color: 'var(--lbb-fg3)',
+        }}>
+          {t('tapematch.abPlayer.title')}
+        </span>
+        {!eligible && (
+          <Pill tone="mute" soft>{t('tapematch.abPlayer.notEligible')}</Pill>
+        )}
+      </div>
+
+      <div style={{ display: 'flex', gap: 14, alignItems: 'center', flexWrap: 'wrap' }}>
+        <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)' }}>
+          {t('tapematch.abPlayer.position')}
+          <input
+            type="number" min={0} step={1} value={tSec}
+            disabled={!eligible}
+            onChange={e => setTSec(e.target.value)}
+            style={AB_NUMBER_INPUT_STYLE}
+          />
+          {t('tapematch.abPlayer.seconds')}
+        </label>
+        <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg2)' }}>
+          {t('tapematch.abPlayer.duration')}
+          <input
+            type="number" min={5} max={60} step={1} value={durSec}
+            disabled={!eligible}
+            onChange={e => setDurSec(e.target.value)}
+            style={AB_NUMBER_INPUT_STYLE}
+          />
+          {t('tapematch.abPlayer.seconds')}
+        </label>
+        <Button variant="secondary" size="sm" disabled={!eligible || loading} onClick={handleLoad}>
+          {loading ? t('tapematch.abPlayer.loading') : t('tapematch.abPlayer.load')}
+        </Button>
+      </div>
+
+      {error && (
+        <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-bad-fg)' }}>{error}</div>
+      )}
+
+      {clips && (
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
+          <Button variant="primary" size="sm" onClick={handlePlayPause}>
+            {playing ? t('tapematch.abPlayer.pause') : t('tapematch.abPlayer.play')}
+          </Button>
+          <div style={{ display: 'flex', gap: 4 }}>
+            <Chip size="sm" active={active === 'a'} onClick={() => handleSetActive('a')}>
+              {t('tapematch.abPlayer.sourceLabel', { role: 'A', lb: fmtLb(pair.lb_a) })}
+            </Chip>
+            <Chip size="sm" active={active === 'b'} onClick={() => handleSetActive('b')}>
+              {t('tapematch.abPlayer.sourceLabel', { role: 'B', lb: fmtLb(pair.lb_b) })}
+            </Chip>
+          </div>
+          <audio
+            ref={audioARef} src={`${BASE}${clips.clip_a}`} preload="auto"
+            onEnded={handleEnded} style={{ display: 'none' }}
+          />
+          <audio
+            ref={audioBRef} src={`${BASE}${clips.clip_b}`} preload="auto"
+            onEnded={handleEnded} style={{ display: 'none' }}
+          />
+        </div>
+      )}
+    </div>
+  )
+}
+
 // ── Analysis collapsible section ──────────────────────────────────────────────
 
 function AnalysisSection({ date, open, onToggle }: { date: string; open: boolean; onToggle: () => void }) {
@@ -786,6 +960,13 @@ export function ScreenTapeMatch(): React.JSX.Element {
                       queryClient.invalidateQueries({ queryKey: ['tapematch-pairs', selectedDate] })
                       setSelectedPair(null)
                     }}
+                  />
+                )}
+                {selectedPairRow && selectedDate && (
+                  <AbPlayerPanel
+                    key={`ab-${selectedPairRow.lb_a}-${selectedPairRow.lb_b}`}
+                    pair={selectedPairRow}
+                    date={selectedDate}
                   />
                 )}
               </div>

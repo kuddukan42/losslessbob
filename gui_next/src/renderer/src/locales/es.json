@@ -1727,6 +1727,22 @@
         "uncertain": "Incerto",
         "lb_wrong": "LB incorrecto"
       }
+    },
+    "abPlayer": {
+      "title": "Escucha A/B",
+      "notEligible": "Aún no están bien alineadas para la escucha A/B.",
+      "position": "Posición",
+      "duration": "Duración",
+      "seconds": "s",
+      "load": "Cargar clips",
+      "loading": "Cargando…",
+      "play": "Reproducir",
+      "pause": "Pausa",
+      "sourceLabel": "{{role}}: {{lb}}",
+      "outOfRange": "La posición va más allá de la interpretación grabada.",
+      "folderMissing": "Una de estas carpetas LB no está disponible en el disco.",
+      "locked": "Ejecución en curso, inténtalo de nuevo.",
+      "loadFailed": "No se han podido cargar los clips. Inténtalo de nuevo."
     }
   },
   "onboarding": {

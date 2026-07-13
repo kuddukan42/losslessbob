@@ -5056,10 +5056,14 @@ def create_app() -> Flask:
         Each pair is enriched with ``human_judgment``/``human_notes`` read
         LIVE from observations.db's ``pairs`` table (TODO-215 sub-feature 1:
         curator match feedback) so the matrix reflects edits made moments
-        ago without waiting for a sync. Enrichment is best-effort: if
-        observations.db is missing, locked, or errors, every pair falls back
-        to ``human_judgment``/``human_notes`` = null rather than failing the
-        whole request.
+        ago without waiting for a sync. ``ab_eligible`` (TODO-231) is
+        computed per pair via ``ab_clips.get_pair_source_info`` — each
+        pair's own latest common tapematch run, not the (possibly stale)
+        run_id synced into ``tapematch_pairs`` — so it always agrees with
+        what POST /api/ab_clip will actually accept. Enrichment is
+        best-effort: if observations.db is missing, locked, or errors,
+        every pair falls back to ``human_judgment``/``human_notes`` = null
+        and ``ab_eligible`` = null rather than failing the whole request.
         """
         from backend import ab_clips as _ab_clips
         from backend import tapematch_sync as _tapematch_sync
@@ -5113,9 +5117,27 @@ def create_app() -> Flask:
                         ):
                             key = tuple(sorted((r["lb_a"], r["lb_b"])))
                             feedback[key] = (r["human_judgment"], r["human_notes"])
-                        eligible_lbs = _ab_clips.eligible_lb_set(
-                            obs_conn, concert_date, run_id
-                        )
+                        # Per-pair, not a single global eligible_lb_set(): an LB's
+                        # speed_kind can differ across tapematch runs (e.g. a
+                        # staircase-relaxed rerun after the last synced run), and
+                        # eligibility requires both members' rows to come from the
+                        # SAME run — exactly what generate_ab_clips checks via
+                        # get_pair_source_info. Using the synced tapematch_pairs
+                        # run_id here (rather than each pair's latest common run)
+                        # under-reports eligibility once a newer un-synced run
+                        # exists in observations.db.
+                        ab_eligible: dict[tuple[int, int], bool] = {}
+                        for pair in pairs:
+                            key = tuple(sorted((pair["lb_a"], pair["lb_b"])))
+                            if key in ab_eligible:
+                                continue
+                            pair_info = _ab_clips.get_pair_source_info(
+                                obs_conn, concert_date, pair["lb_a"], pair["lb_b"]
+                            )
+                            ab_eligible[key] = bool(pair_info) and (
+                                _ab_clips.is_eligible_speed(pair_info[0]["speed_kind"])
+                                and _ab_clips.is_eligible_speed(pair_info[1]["speed_kind"])
+                            )
                     finally:
                         obs_conn.close()
                     for pair in pairs:
@@ -5123,10 +5145,7 @@ def create_app() -> Flask:
                         judgment, notes = feedback.get(key, (None, None))
                         pair["human_judgment"] = judgment
                         pair["human_notes"] = notes
-                        pair["ab_eligible"] = (
-                            pair["lb_a"] in eligible_lbs
-                            and pair["lb_b"] in eligible_lbs
-                        )
+                        pair["ab_eligible"] = ab_eligible.get(key, False)
             except Exception:
                 _log.warning(
                     "tapematch_pairs_for_date: human feedback enrichment failed "

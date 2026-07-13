@@ -1727,6 +1727,22 @@
         "uncertain": "Uncertain",
         "lb_wrong": "LB wrong"
       }
+    },
+    "abPlayer": {
+      "title": "A/B listening",
+      "notEligible": "Not cleanly aligned for A/B listening yet",
+      "position": "Position",
+      "duration": "Duration",
+      "seconds": "s",
+      "load": "Load clips",
+      "loading": "Loading…",
+      "play": "Play",
+      "pause": "Pause",
+      "sourceLabel": "{{role}}: {{lb}}",
+      "outOfRange": "Position is beyond the recorded performance.",
+      "folderMissing": "One of these LB folders isn't available on disk.",
+      "locked": "Run in progress, try again.",
+      "loadFailed": "Could not load clips, try again."
     }
   },
   "songs": {

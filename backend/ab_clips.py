@@ -30,8 +30,11 @@ offset-math functions (:func:`source_offset`, :func:`plan_extraction`,
 any audio.
 
 Entry points: :func:`generate_ab_clips` (the POST /api/ab_clip backing
-function) and :func:`eligible_lb_set` (the GET /api/tapematch/pairs
-``ab_eligible`` enrichment).
+function) and :func:`get_pair_source_info` (also used by the GET
+/api/tapematch/pairs ``ab_eligible`` enrichment, so both routes agree on
+which run/speed_kind decides eligibility for a given pair). :func:`
+eligible_lb_set` is a coarser single-run lookup, kept for callers that only
+need "is this LB eligible in run X" without pairing semantics.
 """
 from __future__ import annotations
 

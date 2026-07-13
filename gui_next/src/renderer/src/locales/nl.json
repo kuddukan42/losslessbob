@@ -1727,6 +1727,22 @@
         "uncertain": "Onzeker",
         "lb_wrong": "LB fout"
       }
+    },
+    "abPlayer": {
+      "title": "A/B-luisteren",
+      "notEligible": "Nog niet netjes uitgelijnd voor A/B-luisteren",
+      "position": "Positie",
+      "duration": "Duur",
+      "seconds": "s",
+      "load": "Clips laden",
+      "loading": "Bezig met laden…",
+      "play": "Afspelen",
+      "pause": "Pauze",
+      "sourceLabel": "{{role}}: {{lb}}",
+      "outOfRange": "De positie ligt buiten de opgenomen uitvoering.",
+      "folderMissing": "Een van deze LB-mappen is niet beschikbaar op de schijf.",
+      "locked": "De bewerking is bezig, probeer het opnieuw.",
+      "loadFailed": "Clips konden niet worden geladen, probeer het opnieuw."
     }
   },
   "onboarding": {

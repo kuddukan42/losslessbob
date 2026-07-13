@@ -1727,6 +1727,22 @@
         "uncertain": "Unsicher",
         "lb_wrong": "LB falsch"
       }
+    },
+    "abPlayer": {
+      "title": "A/B-Hörvergleich",
+      "notEligible": "Noch nicht optimal für A/B-Vergleiche ausgerichtet",
+      "position": "Position",
+      "duration": "Dauer",
+      "seconds": "s",
+      "load": "Clips laden",
+      "loading": "Wird geladen…",
+      "play": "Abspielen",
+      "pause": "Pause",
+      "sourceLabel": "{{role}}: {{lb}}",
+      "outOfRange": "Die Position liegt jenseits der aufgezeichneten Darbietung.",
+      "folderMissing": "Einer dieser LB-Ordner ist auf der Festplatte nicht verfügbar.",
+      "locked": "Der Vorgang läuft, bitte versuchen Sie es erneut.",
+      "loadFailed": "Clips konnten nicht geladen werden. Bitte versuchen Sie es erneut."
     }
   },
   "onboarding": {
