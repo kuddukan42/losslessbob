@@ -1,3 +1,11 @@
+[2026-07-12] — fix(gui): TODO-231 A/B player had no audio — missing CSP media-src directive
+Fixed: gui_next/src/renderer/index.html — the Content-Security-Policy meta tag whitelisted
+  http://127.0.0.1:5174 for connect-src/img-src/frame-src but had no media-src directive, so it
+  fell back to default-src 'self' and silently blocked the AbPlayerPanel's <audio src=...> GET
+  requests. POST /api/ab_clip (connect-src) succeeded — clips "loaded" fine — but the WAV bytes
+  themselves never fetched, so Play produced no sound and no visible error. Added
+  media-src 'self' http://127.0.0.1:5174.
+
 [2026-07-12] — feat(backend+gui): TODO-231 (part 2/2, closes it) — A/B player widget
 Added: gui_next/src/renderer/src/screens/ScreenTapeMatch.tsx — AbPlayerPanel, rendered next to
   JudgmentPanel when a matrix pair is selected. Position (t_sec) + duration inputs, "Load clips"
