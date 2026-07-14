@@ -445,10 +445,6 @@
         <div class="stat-label">Total</div>
         <div class="stat-value" id="master-total">—</div>
       </div>
-      <div class="stat">
-        <div class="stat-label">Conflicts</div>
-        <div class="stat-value" id="master-conflicts">—</div>
-      </div>
     </div>
     <div class="btn-row">
       <button class="btn btn-primary" onclick="masterReconcile()">🔄 Reconcile</button>
@@ -642,8 +638,7 @@
 
       // Master
       if (d.master) {
-        document.getElementById('master-total').textContent     = fmt(d.master.total);
-        document.getElementById('master-conflicts').textContent = fmt(d.master.conflicts);
+        document.getElementById('master-total').textContent = fmt(d.master.total);
       }
 
     } catch (e) {

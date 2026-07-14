@@ -357,17 +357,19 @@ def _propagate_strong(
             continue
 
         target = next(iter(confirmed_tapers))
-        disagreeing = [(lb, attrs[lb]["taper"]) for lb in members
-                        if lb in attrs and attrs[lb]["tier"] != "confirmed"
-                        and attrs[lb]["taper"] != target]
-        if disagreeing:
-            _mark_conflicts(attrs, members, confirmed + disagreeing)
-            for lb, _t in disagreeing:
-                attrs[lb]["conflict"] = 1
-                attrs[lb]["evidence"].append(
-                    _evidence("conflict", f"disagrees with component consensus taper '{target}'")
-                )
-            continue
+        # A member that disagrees with the single confirmed taper can only be a
+        # bare *mention* here — Layer 0's sole non-'confirmed' tier (a passing
+        # name-drop, the weakest evidence). Per spec §4.2 ("weak edges lose to
+        # strong edges instead of raising a conflict"), a mention must never
+        # contest a confirmed series-code/explicit taper: the strong evidence
+        # wins silently. Demote such members to unattributed so the flood-fill
+        # below re-assigns them `target` rather than flagging a conflict
+        # (TODO-213 mention-downgrade, 2026-07-13). A genuine strong-vs-strong
+        # disagreement is the len(confirmed_tapers) >= 2 case handled above.
+        for lb in members:
+            row = attrs.get(lb)
+            if row and row["tier"] != "confirmed" and row["taper"] != target:
+                del attrs[lb]
 
         # Single uncontested taper for this component: BFS flood-fill.
         frontier = [lb for lb in members if lb in attrs]

@@ -89,6 +89,7 @@ USER_TABLES = (
     "pipeline_folder_state",
     "song_canonical",
     "song_performances",
+    "setlist_fingerprint_suggestions",
 )
 
 # Guard against f-string injection if a table name is ever mis-typed (#10)
@@ -907,6 +908,33 @@ CREATE TABLE IF NOT EXISTS song_performances (
 CREATE INDEX IF NOT EXISTS idx_song_perf_norm ON song_performances(song_norm);
 CREATE INDEX IF NOT EXISTS idx_song_perf_date ON song_performances(concert_date_iso);
 
+-- ── Setlist fingerprint suggestions (USER — TODO-225 curator review queue) ───
+-- Wholesale-recomputed by backend/setlist_fingerprint.py:run_fingerprint_scan()
+-- for entries whose date/location metadata is unusable ('various', empty/xx
+-- dates, or a location parked in location_geocoded.source='skipped_not_concert'
+-- by the TODO-221 geocoder filter): scores the entry's folder tracklist
+-- against every olof_events setlist and keeps the top few candidate shows.
+-- Suggestions only — never auto-applied to entries.status; a curator either
+-- fixes entries.date_str by hand after reviewing a match, or dismisses a bad
+-- suggestion (status='dismissed', preserved across rescans for the same
+-- lb_number+event_id pair so a rescan doesn't resurface it).
+CREATE TABLE IF NOT EXISTS setlist_fingerprint_suggestions (
+    lb_number         INTEGER NOT NULL,
+    rank              INTEGER NOT NULL,     -- 1 = best match for this entry
+    event_id          INTEGER NOT NULL,
+    score             REAL NOT NULL,        -- 0-1, entry_coverage/order/olof_coverage blend
+    matched_count     INTEGER NOT NULL,
+    entry_song_count  INTEGER NOT NULL,     -- non-blank titles parsed from entries.setlist
+    olof_song_count   INTEGER NOT NULL,     -- songs in the candidate event's Olof setlist
+    matches_json      TEXT NOT NULL,        -- [{entry_index, position, matched_title}, ...]
+    missing_json      TEXT NOT NULL,        -- Olof songs no entry title matched
+    status            TEXT NOT NULL DEFAULT 'pending',  -- pending | dismissed
+    computed_at       TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (lb_number, rank)
+);
+CREATE INDEX IF NOT EXISTS idx_fp_suggest_status ON setlist_fingerprint_suggestions(status);
+CREATE INDEX IF NOT EXISTS idx_fp_suggest_event ON setlist_fingerprint_suggestions(event_id);
+
 -- ── TapeMatch pairwise similarity (USER — per-date match % between LBs) ──────
 -- Slim per-pair mirror of tools/tapematch/observations.db's `pairs` table,
 -- synced via backend/tapematch_sync.py:sync_tapematch_pairs() (same
@@ -1405,8 +1433,10 @@ _KNOWN_TAPER_ALIASES: dict[str, str] = {
     "manie": "mani",
     "bach": "bach",
     "romeo": "romeo",
-    "cb master": "cb master",
-    "cb": "cb master",
+    # cb is the taper; "cb master" just means a master tape *from* cb — the
+    # "master" is a source descriptor, not part of the handle (TODO-213, 2026-07-13).
+    "cb master": "cb",
+    "cb": "cb",
     "lk": "lk",
     "hhtfp": "hhtfp",
     "jf": "jf",
@@ -1465,7 +1495,9 @@ _KNOWN_TAPER_ALIASES: dict[str, str] = {
     "teddyballgame": "teddy ballgame",
     "theshadow": "theshadow",
     "the shadow": "theshadow",
-    "robert": "robert",
+    # "robert" removed 2026-07-13 (TODO-213): too generic a bare token — it
+    # matched songwriter/personnel credits ("Robert Hunter", "Robert Friemark")
+    # in setlists, not tapers. 179 of its 198 attributions were false mentions.
     "sfy": "sfy",
     "caretaker": "caretaker",
     "beer": "beer",
@@ -1536,6 +1568,16 @@ _NOT_TAPER: frozenset[str] = frozenset({
     # dolphinsmile curates/transfers others' tapes — not a taper (curator, 2026-07-04);
     # common misspellings in entry text included
     'dolphinsmile', 'dolphinmile', 'dolphindmile', 'dolphinsme', 'dolphin',
+    # Not tapers: lk curates, captain acid remasters existing recordings, and
+    # jtt transfers/masters others' tapes ("Mastered to Digital by JTT",
+    # "Transfer from Low Generation Cassette JTT" — not generally a taper).
+    # TODO-213 curation pass, 2026-07-13. Kept as _KNOWN_TAPER_ALIASES keys so
+    # the parser still collapses their spellings to one canonical token, but
+    # excluded here so the attribution engine never seeds them as candidates:
+    # when such a mention collides with a real taper in a family (e.g. LB-1945 =
+    # ltd via LB-4396 vs captain acid via LB-4401), the real taper propagates
+    # cleanly with no conflict — no curation required.
+    'lk', 'captain acid', 'jtt',
     'sbd', 'aud', 'master', 'series', 'incomplete',
     'aud master', 'master aud', 'excellent sound', 'net tapers',
     'km140s', 'km140',
@@ -2918,6 +2960,53 @@ def _load_taper_attributions(conn: sqlite3.Connection) -> dict[int, dict]:
             entry["review"] = True
         if entry:
             out[r["lb_number"]] = entry
+    return out
+
+
+def get_pick_badges(db_path=None) -> dict[int, dict]:
+    """Flat pick/quality/curated/taper badge fields keyed by LB number.
+
+    The Library's recording lens is sourced from ``/api/search`` +
+    ``/api/collection/prefetch`` — neither joins ``show_picks``,
+    ``quality_recording_scores``, ``curated_lists`` or ``taper_attributions`` —
+    so it can't surface the badges the performance lens gets inline from
+    ``get_performances``. This feeds a client-side merge-by-``lb_number``, the
+    same pattern the recording lens already uses for TapeMatch families and
+    collection prefetch (``instructions/SPEC_INTEGRATION_NOTES.md`` F4; the
+    TODO-186 remainder). Reuses the exact loaders ``get_performances`` uses, so
+    the two lenses can never disagree on a badge.
+
+    Only LB numbers carrying at least one signal appear, and each dict omits
+    fields that don't exist for that recording — identical to the per-recording
+    shape ``get_performances`` merges.
+
+    Args:
+        db_path: Optional path to the SQLite database file.
+
+    Returns:
+        ``{lb_number: {"pickRank"?, "absGrade"?, "curated"?, "taperConfirmed"?,
+        "taperReview"?}}`` — empty on a fresh install before recompute.
+    """
+    conn = get_connection(db_path)
+    pick_ranks = _load_pick_ranks(conn)
+    curated_by_lb = _load_curated_by_lb(conn)
+    abs_grades = _load_latest_abs_grades(conn)
+    taper_attrs = _load_taper_attributions(conn)
+
+    out: dict[int, dict] = {}
+    for lb, rank in pick_ranks.items():
+        out.setdefault(lb, {})["pickRank"] = rank
+    for lb, grade in abs_grades.items():
+        if grade:
+            out.setdefault(lb, {})["absGrade"] = grade
+    for lb, names in curated_by_lb.items():
+        if names:
+            out.setdefault(lb, {})["curated"] = names
+    for lb, attr in taper_attrs.items():
+        if "confirmed" in attr:
+            out.setdefault(lb, {})["taperConfirmed"] = attr["confirmed"]
+        if attr.get("review"):
+            out.setdefault(lb, {})["taperReview"] = True
     return out
 
 
@@ -6985,13 +7074,17 @@ def normalize_title_for_match(title: str) -> str:
     return _TITLE_WS_RE.sub(" ", t).strip()
 
 
-def _titles_match(norm_a: str, norm_b: str) -> bool:
+def titles_match(norm_a: str, norm_b: str) -> bool:
     """Whether two already-normalized titles should be treated as the same song.
 
     Exact match, or a conservative containment check (one is a substring of
     the other and covers at least ``_TITLE_CONTAINMENT_RATIO`` of its length)
     — titles are short enough that fuzzy edit-distance matching isn't needed,
     per FABLE_OLOF_FILES.md §5.1.
+
+    Public (not module-private) because ``backend/setlist_fingerprint.py``
+    (TODO-225) reuses it to score a folder tracklist against every Olof
+    setlist, not just one date's — same matching rule, different caller.
     """
     if not norm_a or not norm_b:
         return False
@@ -7049,7 +7142,7 @@ def compare_olof_setlist(date_str: str, titles: list[str], db_path=None) -> dict
 
     Matches each input title against the date's Olof setlist (preferring a
     'concert' event when a date has more than one olof_events row) using
-    :func:`normalize_title_for_match` + :func:`_titles_match`. Matching is
+    :func:`normalize_title_for_match` + :func:`titles_match`. Matching is
     greedy per input title against not-yet-claimed Olof positions, order
     -independent — the folder's track order need not match Olof's.
 
@@ -7108,7 +7201,7 @@ def compare_olof_setlist(date_str: str, titles: list[str], db_path=None) -> dict
         for pos, song_title, norm_o in olof_norm:
             if pos in matched_positions:
                 continue
-            if _titles_match(norm_in, norm_o):
+            if titles_match(norm_in, norm_o):
                 found = (pos, song_title)
                 break
         if found:

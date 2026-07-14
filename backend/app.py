@@ -36,6 +36,7 @@ from backend import (
     site_crawler,
 )
 from backend import db as database
+from backend import setlist_fingerprint as _setlist_fingerprint
 from backend import setlistfm as setlistfm_mod
 from backend import song_index as _song_index
 from backend import taper_attribution as _taper_attribution
@@ -3794,8 +3795,10 @@ def create_app() -> Flask:
         """Post a topic to the WTRF forum for one LB entry.
 
         Body: {username?, password?, torrent_id?}
-        Requires a torrents record for the entry to exist.
-        Returns: {ok, topic_url} or {ok=False, error}.
+        If no torrents record exists (and torrent_id isn't given), a torrent is generated
+        from the entry's my_collection folder and added to qBittorrent automatically before
+        posting; qBittorrent failure is reported but does not block the post.
+        Returns: {ok, topic_url, torrent_auto_created?, qbt_auto_add?} or {ok=False, error}.
         """
         try:
             # Guard: block private and missing LBs from being posted to the forum
@@ -3836,10 +3839,32 @@ def create_app() -> Flask:
             if bootlegs:
                 entry["bootleg_title"] = bootlegs[0]["title"]
 
+            conn = database.get_connection()
+            coll_row = conn.execute(
+                "SELECT disk_path FROM my_collection WHERE lb_number=?", (lb,)
+            ).fetchone()
+
+            # Integrity gate: block posting a folder whose audio no longer matches
+            # its stored checksums (see BUG-120 — swapped/re-encoded audio slipping
+            # through undetected). Runs before torrent resolution so a bad folder
+            # isn't auto-torrented/seeded either.
+            if coll_row and coll_row["disk_path"]:
+                verify_result = checksum_utils.verify_folder(coll_row["disk_path"])
+                verify_status = verify_result.get("status")
+                if verify_status in ("fail", "incomplete"):
+                    return jsonify({
+                        "ok": False,
+                        "error": (
+                            f"LBDIR verify failed ({verify_status}: "
+                            f"{verify_result.get('mismatch', 0)} mismatch, "
+                            f"{verify_result.get('missing', 0)} missing) — "
+                            "fix the folder's integrity before posting to the forum."
+                        ),
+                    }), 400
+
             # Resolve torrent file
             torrent_id = data.get("torrent_id")
             if torrent_id:
-                conn = database.get_connection()
                 row = conn.execute(
                     "SELECT torrent_path FROM torrents WHERE id=?", (torrent_id,)
                 ).fetchone()
@@ -3848,8 +3873,42 @@ def create_app() -> Flask:
                 rows = database.get_torrents_for_lb(lb)
                 torrent_path = rows[0]["torrent_path"] if rows else None
 
+            qbt_auto_add_result = None
             if not torrent_path:
-                return jsonify({"ok": False, "error": "No torrent file found for this entry. Create one first."}), 400
+                if not coll_row or not coll_row["disk_path"]:
+                    return jsonify({
+                        "ok": False,
+                        "error": "No torrent file found for this entry, and no collection "
+                                 "folder to generate one from. Create a torrent first.",
+                    }), 400
+                try:
+                    from backend.torrent_maker import make_torrent
+                    tracker_list = database.get_meta("tracker_list") or "best"
+                    mk_result = make_torrent(lb, coll_row["disk_path"], tracker_list=tracker_list)
+                except RuntimeError as exc:
+                    return jsonify({"ok": False, "error": f"Auto torrent creation failed: {exc}"}), 500
+                torrent_path = mk_result["torrent_path"]
+                database.clear_superseded_torrent_paths(
+                    lb, mk_result["torrent_id"], torrent_path
+                )
+
+                from backend.credentials import SERVICE_QBT, SERVICE_QBT_KEY
+                from backend.credentials import get_credentials as get_qbt_credentials
+                from backend.qbittorrent import add_torrent_from_db
+                qbt_host = database.get_meta("qbt_host") or "localhost"
+                qbt_port = int(database.get_meta("qbt_port") or 8080)
+                qbt_category = database.get_meta("qbt_category") or ""
+                qbt_tags = database.get_meta("qbt_tags") or ""
+                _, qbt_api_key = get_qbt_credentials(SERVICE_QBT_KEY)
+                qbt_username = qbt_password = ""
+                if not qbt_api_key:
+                    qbt_username, qbt_password = get_qbt_credentials(SERVICE_QBT)
+                qbt_auto_add_result = add_torrent_from_db(
+                    mk_result["torrent_id"], qbt_host, qbt_port, qbt_username, qbt_password,
+                    qbt_category, qbt_tags, api_key=qbt_api_key,
+                )
+                # Best-effort: a failed qBittorrent add doesn't block the forum post
+                # (the torrent file itself was created fine and can be added manually).
 
             board_id = int(database.get_meta("wtrf_board_id") or 0)
             if not board_id:
@@ -3881,6 +3940,9 @@ def create_app() -> Flask:
                     topic_url=result.get("topic_url", ""),
                     board_id=board_id,
                 )
+            if qbt_auto_add_result is not None:
+                result["torrent_auto_created"] = True
+                result["qbt_auto_add"] = qbt_auto_add_result
             return jsonify(result)
         except Exception as exc:
             return jsonify({"ok": False, "error": str(exc)}), 500
@@ -5633,6 +5695,18 @@ def create_app() -> Flask:
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
+    @app.route("/api/library/badges", methods=["GET"])
+    def library_badges() -> Response:
+        """Flat pick/quality/curated/taper badge fields keyed by LB number, for
+        the Library recording lens's client-side merge (SPEC_INTEGRATION_NOTES.md
+        F4, TODO-186 remainder). Same signals the performance lens gets inline
+        from /api/library/performances; empty on a fresh install pre-recompute.
+        """
+        try:
+            return jsonify(database.get_pick_badges())
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
     # ── Curated "best of" lists (TODO-181 remainder + FABLE_UNIFIED_RANKING §6) ──
 
     @app.route("/api/curated_lists", methods=["GET"])
@@ -6355,6 +6429,18 @@ def create_app() -> Flask:
         admin_html = Path(__file__).parent / "admin.html"
         return send_from_directory(str(admin_html.parent), admin_html.name)
 
+    @app.route("/taper-review")
+    def taper_review_page() -> Response:
+        """Serve the mobile-friendly taper conflict curation queue.
+
+        One-card-at-a-time review of ``taper_attributions`` rows with
+        ``conflict=1``, backed entirely by the existing curator confirm/reject
+        API (TAPER phase 2) — each decision persists immediately server-side,
+        so the queue can be worked in short sessions across page reloads.
+        """
+        review_html = Path(__file__).parent / "taper_review.html"
+        return send_from_directory(str(review_html.parent), review_html.name)
+
     @app.route("/api/admin/status", methods=["GET"])
     def admin_status() -> Response:
         """Return combined server/DB/scraper status for the admin dashboard.
@@ -6389,10 +6475,7 @@ def create_app() -> Flask:
             try:
                 conn = database.get_connection()
                 total = conn.execute("SELECT COUNT(*) FROM lb_master").fetchone()[0]
-                conflicts = conn.execute(
-                    "SELECT COUNT(*) FROM lb_master WHERE status='conflict'"
-                ).fetchone()[0]
-                result["master"] = {"total": total, "conflicts": conflicts}
+                result["master"] = {"total": total}
             except Exception:
                 result["master"] = None
             return jsonify(result)
@@ -8910,6 +8993,76 @@ def create_app() -> Flask:
                 return jsonify({"error": "titles or a resolvable lb_number required"}), 400
             return jsonify(database.compare_olof_setlist(date_str, titles))
         except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/fingerprint/scan", methods=["POST"])
+    def fingerprint_scan():
+        """TODO-225: (re)scan candidate entries and rebuild the suggestion queue.
+
+        Candidates are entries with no clean parseable date or a location in
+        the TODO-221 skipped_not_concert bucket — see
+        backend/setlist_fingerprint.py:_find_candidate_entries. Wholesale-
+        replaces setlist_fingerprint_suggestions; not curator-gated, like
+        POST /api/derived/recompute — it only rebuilds a local-only derived
+        suggestion table, no master data or curator decision involved.
+
+        Body JSON (optional): {limit: int} — cap on candidates scanned.
+
+        Returns:
+            JSON: {candidates_scanned, candidates_matched,
+                   suggestions_written, skipped_no_titles}
+        """
+        try:
+            data = request.get_json(silent=True) or {}
+            limit = data.get("limit")
+            stats = _setlist_fingerprint.run_fingerprint_scan(limit=int(limit) if limit else None)
+            return jsonify(stats)
+        except Exception as e:
+            _log.exception("fingerprint_scan failed")
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/fingerprint/suggestions", methods=["GET"])
+    def fingerprint_suggestions():
+        """List the setlist-fingerprint curator review queue.
+
+        Query param ``status`` (optional): 'pending' (default), 'dismissed',
+        or 'all'.
+
+        Returns:
+            JSON: {suggestions: [...]} — see
+            backend.setlist_fingerprint.get_suggestions for the row shape.
+        """
+        try:
+            status = request.args.get("status", "pending")
+            return jsonify({"suggestions": _setlist_fingerprint.get_suggestions(status=status)})
+        except Exception as e:
+            _log.exception("fingerprint_suggestions failed")
+            return jsonify({"error": str(e)}), 500
+
+    @app.route("/api/fingerprint/suggestions/dismiss", methods=["POST"])
+    def fingerprint_dismiss():
+        """Curator-only. Dismiss one suggestion; sticky across rescans.
+
+        Body JSON: {lb_number: int, event_id: int}
+
+        Returns:
+            JSON: {ok}. 404 if no matching row existed.
+        """
+        if not database.is_curator():
+            return jsonify({"error": "curator_required"}), 403
+        try:
+            data = request.get_json(force=True)
+            lb_number = int(data["lb_number"])
+            event_id = int(data["event_id"])
+        except (KeyError, TypeError, ValueError):
+            return jsonify({"error": "lb_number and event_id are required"}), 400
+        try:
+            found = _setlist_fingerprint.dismiss_suggestion(lb_number, event_id)
+            if not found:
+                return jsonify({"error": "not_found"}), 404
+            return jsonify({"ok": True})
+        except Exception as e:
+            _log.exception("fingerprint_dismiss failed")
             return jsonify({"error": str(e)}), 500
 
     # ── Collection Trading ────────────────────────────────────────────────────
