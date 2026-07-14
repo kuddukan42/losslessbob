@@ -94,6 +94,23 @@ _FILENAME_ID_RE = re.compile(r"^bobserve_event_(\d+)\.html$")
 _DATE_LINE_RE = re.compile(r"^([A-Za-z]+)\s+(\d{1,2}),\s+(\d{4})$")
 _SONG_LINE_RE = re.compile(r"^\d+\.\s*(.+)$")
 
+# DSN olof_events canonical event_type taxonomy — see backend/olof_parser.py.
+# bobserve's own event_type is free text like 'concert - outlaw music
+# festival' or 'tribute speech - ...'; this maps its prefix onto the
+# canonical set so downstream event_type == 'concert' checks (e.g.
+# backend/geocoder.py) don't silently skip real shows.
+_EVENT_TYPE_MAP = {
+    "concert": "concert",
+    "benefit": "concert",
+    "soundcheck": "other",
+    "rehearsal": "rehearsal",
+    "tribute": "other",
+    "tribute speech": "other",
+    "session": "session",
+    "broadcast": "broadcast",
+    "interview": "interview",
+}
+
 
 def _event_id_from_filename(filename: str) -> int:
     """Return bobserve's own numeric event id encoded in *filename*."""
@@ -144,6 +161,74 @@ def _parse_date(line: str) -> tuple[str, str]:
     return f"{int(year):04d}-{month:02d}-{int(day):02d}", line
 
 
+def _normalize_event_type(raw: str) -> tuple[str, str]:
+    """Map a bobserve event_type string onto the DSN canonical taxonomy.
+
+    bobserve's event_type is free text, sometimes with a qualifier after
+    ' - ' (e.g. 'concert - outlaw music festival', 'benefit - farm aid',
+    'tribute speech - ...'). Only the prefix before ' - ' is used to
+    classify; the full original string is preserved by the caller so no
+    information is lost.
+
+    Args:
+        raw: The raw event_type line from the clipboard blob header,
+            e.g. 'Concert', 'benefit - farm aid', 'soundcheck'.
+
+    Returns:
+        (normalized, raw_stripped): normalized is one of
+        concert|session|rehearsal|broadcast|interview|other; raw_stripped
+        is the input with surrounding whitespace removed.
+    """
+    raw_stripped = raw.strip()
+    prefix = raw_stripped.split(" - ", 1)[0].strip().lower()
+    normalized = _EVENT_TYPE_MAP.get(prefix, "other")
+    return normalized, raw_stripped
+
+
+# Used by _split_bobserve_location to detect US shows. DSN convention
+# leaves country empty for US shows (region holds the state instead) —
+# the shared _split_city_region_country has no such rule and mis-shifts
+# bobserve's 'City, State' / 'City, District, State' headers.
+_US_STATES = frozenset({
+    "alabama", "alaska", "arizona", "arkansas", "california", "colorado",
+    "connecticut", "delaware", "florida", "georgia", "hawaii", "idaho",
+    "illinois", "indiana", "iowa", "kansas", "kentucky", "louisiana",
+    "maine", "maryland", "massachusetts", "michigan", "minnesota",
+    "mississippi", "missouri", "montana", "nebraska", "nevada",
+    "new hampshire", "new jersey", "new mexico", "new york",
+    "north carolina", "north dakota", "ohio", "oklahoma", "oregon",
+    "pennsylvania", "rhode island", "south carolina", "south dakota",
+    "tennessee", "texas", "utah", "vermont", "virginia", "washington",
+    "west virginia", "wisconsin", "wyoming", "district of columbia",
+    "washington dc",
+})
+
+
+def _split_bobserve_location(parts: list[str]) -> dict:
+    """Classify bobserve location parts, correcting for US shows.
+
+    bobserve headers list US shows as 'City, State' or 'City, District,
+    State' (e.g. 'Hollywood, Los Angeles, California') with no country
+    token. The shared DSN `_split_city_region_country` assumes a trailing
+    'City, Region, Country' shape and mis-shifts these (city=Hollywood,
+    region=Los Angeles, country=California) — DSN convention leaves
+    country empty for US shows, so when the last part is a recognized US
+    state this classifies directly instead of delegating. Any leading
+    district/neighborhood token (e.g. 'Hollywood') is dropped: only the
+    token immediately before the state becomes city.
+
+    Args:
+        parts: Already comma-split, stripped, non-empty location tokens
+            (venue excluded — this only classifies what follows it).
+
+    Returns:
+        dict with keys city/region/country (each '' if not applicable).
+    """
+    if len(parts) >= 2 and parts[-1].strip().lower() in _US_STATES:
+        return {"city": parts[-2], "region": parts[-1], "country": ""}
+    return _split_city_region_country(parts)
+
+
 def _parse_header_block(lines: list[str]) -> dict:
     """Parse the clipboard blob's first block: date / location / venue / type.
 
@@ -161,7 +246,7 @@ def _parse_header_block(lines: list[str]) -> dict:
     fields["date_str"], fields["date_raw"] = _parse_date(lines[0])
     if len(lines) >= 2:
         parts = [p.strip() for p in lines[1].split(",") if p.strip()]
-        fields.update(_split_city_region_country(parts))
+        fields.update(_split_bobserve_location(parts))
     if len(lines) >= 4:
         fields["venue"] = " ".join(lines[2:-1])
         fields["event_type_raw"] = lines[-1]
@@ -245,7 +330,13 @@ def parse_page(path: Path, filename: str) -> tuple[EventRecord | None, list[Song
 
     tour_name = ""
     if song_block_idx is not None and song_block_idx + 1 < len(blocks):
-        tail = [ln for ln in blocks[song_block_idx + 1] if not ln.isdigit()]
+        tail = [
+            ln for ln in blocks[song_block_idx + 1]
+            if not ln.isdigit()
+            and ln.strip().lower() != "musicians"
+            and not ln.startswith("Info via bobserve:")
+            and not ln.startswith("http")
+        ]
         if tail:
             tour_name = tail[0]
 
@@ -255,14 +346,21 @@ def parse_page(path: Path, filename: str) -> tuple[EventRecord | None, list[Song
             musicians = " ".join(block[1:])
             break
 
-    event_type = event_type_raw.strip().lower() or "other"
+    event_type, event_type_raw_stripped = _normalize_event_type(event_type_raw)
+
+    # Preserve the raw event_type only when it carries detail the normalized
+    # value drops (a qualifier or a non-concert label) — a case-only
+    # difference like 'Concert' -> 'concert' is not worth a notes row.
+    notes = ""
+    if event_type_raw_stripped and event_type_raw_stripped.lower() != event_type:
+        notes = f"event_type_raw: {event_type_raw_stripped}"
 
     rec = EventRecord(
         event_id=event_id, source="bobserve", page_filename=filename,
         event_type=event_type, date_str=header["date_str"], date_raw=header["date_raw"],
         venue=header["venue"], city=header["city"], region=header["region"],
         country=header["country"], tour_name=tour_name, lineup=musicians,
-        raw_text=clip,
+        notes=notes, raw_text=clip,
     )
 
     status = "ok"
