@@ -336,6 +336,33 @@ def test_dry_run_does_not_write():
     assert _get_attr(conn, 1000) is None
 
 
+def test_write_targets_db_path_not_queue_binding():
+    """When the singleton queue is bound to another DB, the wholesale
+    DELETE+reinsert of taper_attributions must still land in the recompute's
+    db_path (BUG-246: first-init-wins queue caused reads and writes to split
+    across databases, wiping the live table)."""
+    import backend.db_queue as db_queue
+
+    db_path_a, _ = _make_db()  # binds the queue (if this test runs first)
+    db.init_db(db_path_a)
+    queue_db = db_queue.get_write_queue().db_path
+
+    db_path_b, _ = _make_db()
+    assert str(queue_db) != str(db_path_b)  # queue still bound to its first DB
+    conn_b = db.get_connection(db_path_b)
+    _seed_entry(conn_b, 1300, "Taper: Spot\nSource: X",
+                taper_name="spot", taper_normalised="spot")
+
+    taper_attribution.recompute(db_path=db_path_b)
+
+    in_b = conn_b.execute("SELECT COUNT(*) FROM taper_attributions").fetchone()[0]
+    assert in_b == 1  # landed in the DB that was read from
+    conn_q = db.get_connection(queue_db)
+    in_q = conn_q.execute(
+        "SELECT COUNT(*) FROM taper_attributions WHERE lb_number = 1300").fetchone()[0]
+    assert in_q == 0  # and NOT in the queue's DB
+
+
 # ── Phase 2 curator confirm/reject HTTP API ────────────────────────────────────
 
 class _AppClient:

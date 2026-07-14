@@ -58,11 +58,21 @@ their `evidence_json` preempts everything below. Start with `taper_attributions`
 
 ## Session 1 — housekeeping + data-safety (small bite)
 
-1. Commit the 07-13 backlog (see State), restart backend.
-2. **BUG-246 remaining audit** — sweep the other `db_path`-taking writers
-   (tapematch_sync, parse_lineage, taper_attribution, scrapers) for the same
-   first-init-wins read/write split that wiped show_picks. Data-loss class;
-   highest-priority code work this week. Close BUG-246 when the sweep is clean.
+1. ~~Commit the 07-13 backlog (see State), restart backend.~~ **DONE 2026-07-14**
+   — the uncommitted tree was actually a newer *complete* inflight session
+   (the 07-13 backlog had already shipped in ea7f82e4/ab29045b). Verified
+   (ab_clips 37 / taper 25 / gui-check PASS) and committed as two scoped
+   commits: `674968d6` A/B listening (TODO-232 closed, TODO-233 pt1) +
+   `398b498f` TODO-213 taper conflict queue. Backend restarted; new routes
+   confirmed live (kind=bad→400, kind=mention→0, kind=series→22).
+2. ~~**BUG-246 remaining audit**~~ **DONE 2026-07-14 — BUG-246 CLOSED.** Swept
+   all db_path-taking writers. Two unguarded matches found + fixed with the
+   picks-style `_run_write` path-match guard: `taper_attribution._write_attributions`
+   (wipe class) and `flat_file.apply_flat_file_release` (desync class); the
+   single-row taper confirm/reject/mark_unresolved routed through it too.
+   tapematch_sync (same-conn, no queue), parse_lineage/scrapers/geocoder/importer
+   (upsert-only/external-driven), song_index/setlist_fingerprint (already guarded)
+   = clean. Regression test added; 42 taper+show_picks tests pass.
 3. Opportunistic: BUG-249 repro attempts (2–3 full pytest runs, note the
    preceding tests).
 

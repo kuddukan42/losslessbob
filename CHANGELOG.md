@@ -1,3 +1,30 @@
+[2026-07-14] — fix(backend): BUG-246 (CLOSED) — remaining-writer audit; guard the last two DB writers that could split reads/writes across databases
+Context: BUG-246 (live show_picks wiped 2026-07-10) was fixed defensively in picks._write_picks the
+  same day; the ticket left a REMAINING AUDIT — sweep the other db_path-taking writers for the same
+  first-init-wins exposure (a writer READS current state via get_connection(db_path) but commits a
+  state-dependent write through the get_write_queue() singleton, which is first-caller-wins and may
+  be bound to a DIFFERENT db). Swept taper_attribution, flat_file, tapematch_sync, parse_lineage,
+  the scrapers, geocoder, importer, song_index, setlist_fingerprint.
+Found: two unguarded matches. (1) taper_attribution._write_attributions — wholesale DELETE FROM
+  taper_attributions + reinsert of read-derived rows through the unguarded queue (WIPE class,
+  identical shape to the original show_picks bug). (2) flat_file.apply_flat_file_release — an
+  add/change/remove diff computed from a get_connection(db_path) read, committed through the
+  unguarded queue (DESYNC class: a path mismatch skips real removals rather than wiping). All other
+  swept writers are safe: tapematch_sync reads+writes on the same conn (never uses the queue),
+  parse_lineage/scrapers/geocoder/importer are upsert-only or externally-driven (no read-then-
+  wholesale-replace), and song_index/setlist_fingerprint already carry the guard.
+Fixed: added the sanctioned picks-style _run_write(fn, db_path) helper (mirrors
+  setlist_fingerprint.py) to backend/taper_attribution.py and backend/flat_file.py — when
+  db_path != the queue's bound db, the write goes DIRECTLY via get_connection(db_path) instead of
+  the singleton. Routed taper_attribution._write_attributions (+ single-row confirm/reject/
+  mark_unresolved, all of which take db_path) and flat_file.apply_flat_file_release through it. No
+  empty-payload refusal added (unlike picks): the path-match guard is the whole fix and
+  taper_attributions can be legitimately empty on a minimal DB.
+Verified: 42 tests pass (tests/test_taper_attribution.py + tests/test_show_picks.py), including a
+  new regression test test_write_targets_db_path_not_queue_binding that binds the queue to DB A,
+  recomputes against DB B, and asserts the taper_attributions rows land in B and NOT in A. BUG-246
+  closed.
+
 [2026-07-14] — feat(backend): TODO-213 taper conflict queue — 'kind' filter + "can't determine" verdict; mention queue cleared
 Context: the /taper-review conflict queue held 53 conflict=1 rows, but 22 are series-vs-series
   (two legitimate taper series on one over-merged recording_families family) — un-pickable in the

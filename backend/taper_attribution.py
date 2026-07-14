@@ -40,6 +40,7 @@ import logging
 import re
 import sqlite3
 from collections import defaultdict
+from pathlib import Path
 
 from backend.db import (
     _EXPLICIT_TAPER_LABEL_RE,
@@ -81,6 +82,24 @@ for _canonical in _ALIAS_KEYS_BY_CANONICAL:
 
 
 # ── Small helpers ─────────────────────────────────────────────────────────────
+
+def _run_write(fn, db_path: str | None):
+    """Route a write callable through the write queue, matching the BUG-246
+    guard used elsewhere (song_index.py, setlist_fingerprint.py): the write
+    queue singleton is first-caller-wins, so under pytest (each test its own
+    temp DB) it may be bound to a different DB than *db_path*.
+    """
+    queue = get_write_queue()
+    if db_path is not None and str(Path(db_path).resolve()) != str(Path(queue.db_path).resolve()):
+        log.warning(
+            "taper_attribution: write queue bound to %s but this write targets %s"
+            " — writing directly", queue.db_path, db_path,
+        )
+        conn = get_connection(db_path)
+        with conn:
+            return fn(conn)
+    return queue.execute(fn)
+
 
 def _evidence(kind: str, detail: str, **extras) -> dict:
     """Build one evidence record: common core + optional non-None extras (F3)."""
@@ -520,7 +539,7 @@ def _write_attributions(attrs: dict[int, dict], db_path: str | None = None) -> N
             payload,
         )
 
-    get_write_queue().execute(_do)
+    _run_write(_do, db_path)
 
 
 def _summarize(attrs: dict[int, dict]) -> dict:
@@ -773,7 +792,7 @@ def confirm(lb: int, taper: str | None = None, db_path: str | None = None) -> di
              confirmed["conflict"], confirmed["confirmed_at"]),
         )
 
-    get_write_queue().execute(_do)
+    _run_write(_do, db_path)
     return get_attribution_for_lb(lb, db_path)
 
 
@@ -822,7 +841,7 @@ def reject(lb: int, taper: str | None = None, db_path: str | None = None) -> dic
             (lb, taper_norm),
         )
 
-    get_write_queue().execute(_do)
+    _run_write(_do, db_path)
     return get_attribution_for_lb(lb, db_path)
 
 
@@ -867,5 +886,5 @@ def mark_unresolved(lb: int, db_path: str | None = None) -> dict | None:
         )
         c.execute("DELETE FROM taper_attributions WHERE lb_number=?", (lb,))
 
-    get_write_queue().execute(_do)
+    _run_write(_do, db_path)
     return get_attribution_for_lb(lb, db_path)
