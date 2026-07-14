@@ -65,6 +65,11 @@ log = logging.getLogger(__name__)
 # whether an explicit "Taper:" label is also present.
 _SERIES_CODE_RE = re.compile(r'^(?:lt[a-z]|net taper [a-z])$')
 
+# Pulls the candidate taper name out of a conflict evidence record's detail
+# string, e.g. "component candidate taper 'net taper j' via LB-6083" -> "net
+# taper j". Used to classify a conflict as series-vs-series (§ list_attributions).
+_CONFLICT_CAND_RE = re.compile(r"candidate taper '([^']+)'")
+
 # Reverse index: canonical taper -> raw alias keys, used to find a snippet of
 # description text around a bare handle mention for Layer-0 'mention' evidence.
 _ALIAS_KEYS_BY_CANONICAL: dict[str, list[str]] = defaultdict(list)
@@ -84,6 +89,34 @@ def _evidence(kind: str, detail: str, **extras) -> dict:
         if v is not None:
             rec[k] = v
     return rec
+
+
+def _is_series_vs_series(taper_normalised: str, evidence: list[dict]) -> bool:
+    """Whether a conflict pits only formal taper *series* against each other.
+
+    Series-vs-series conflicts (e.g. ``net taper f`` vs ``net taper i``, ``ltg``
+    vs ``net taper a``) are two *legitimate* tapers landing on one over-merged
+    ``recording_families`` family — a TapeMatch family-split problem (TODO-234),
+    not something the curator can resolve in the hand-review queue (rejecting
+    either candidate discards a real taper). The mention-vs-mention conflicts are
+    the genuine hand queue. Classification: the row's own taper plus every
+    contesting candidate parsed from the conflict evidence all match
+    :data:`_SERIES_CODE_RE`.
+
+    Args:
+        taper_normalised: The row's canonical taper (one candidate in the contest).
+        evidence: Parsed evidence records; conflict details name the others.
+
+    Returns:
+        True if every candidate in the conflict is a series code.
+    """
+    candidates = {taper_normalised}
+    for rec in evidence:
+        if rec.get("kind") == "conflict":
+            m = _CONFLICT_CAND_RE.search(rec.get("detail", ""))
+            if m:
+                candidates.add(m.group(1))
+    return bool(candidates) and all(_SERIES_CODE_RE.match(c) for c in candidates)
 
 
 def _row(taper: str, tier: str, evidence: list[dict]) -> dict:
@@ -250,9 +283,19 @@ def _confirmed_row(taper: str, decided_at) -> dict:
 
 def _apply_confirmations(
     attrs: dict[int, dict], confirmations: dict[int, sqlite3.Row]
-) -> dict[int, str]:
-    """Apply sticky 'confirm' rows in place; return {lb: rejected_taper} for 'reject' rows."""
+) -> tuple[dict[int, str], set[int]]:
+    """Apply sticky 'confirm' rows in place; collect deferred suppressions.
+
+    Returns:
+        ``(rejects, unresolved)`` where *rejects* maps ``{lb: rejected_taper}``
+        (a curator 'reject' of one taper) and *unresolved* is the set of lbs a
+        curator marked 'unresolved' — a "can't determine" verdict that suppresses
+        *any* taper for that lb (a genuine historical two-taper conflict with no
+        ground truth; §_apply_unresolved). Both are applied after propagation so
+        a re-derived attribution cannot resurrect them.
+    """
     rejects: dict[int, str] = {}
+    unresolved: set[int] = set()
     for lb, row in confirmations.items():
         action = row["action"]
         taper = row["taper_normalised"]
@@ -260,11 +303,13 @@ def _apply_confirmations(
             attrs[lb] = _confirmed_row(taper, row["decided_at"])
         elif action == "reject":
             rejects[lb] = taper
+        elif action == "unresolved":
+            unresolved.add(lb)
         else:
             log.warning(
                 "taper_confirmations: unrecognised action %r for LB-%s (ignored)", action, lb
             )
-    return rejects
+    return rejects, unresolved
 
 
 def _apply_rejects(attrs: dict[int, dict], rejects: dict[int, str]) -> None:
@@ -280,6 +325,20 @@ def _apply_rejects(attrs: dict[int, dict], rejects: dict[int, str]) -> None:
         row = attrs.get(lb)
         if row and row["taper"] == rejected_taper:
             del attrs[lb]
+
+
+def _apply_unresolved(attrs: dict[int, dict], unresolved: set[int]) -> None:
+    """Drop any attribution for lbs a curator marked 'unresolved', in place.
+
+    Unlike a reject (which suppresses one named taper), an 'unresolved' verdict
+    means the curator judged the conflict undecidable — a genuine historical
+    error where the same recording carries two different documented tapers and
+    there is no ground truth to pick. The honest outcome is *no* attribution
+    (no pill, per spec §3/§6) rather than a guessed one, so every taper is
+    suppressed for the lb regardless of tier.
+    """
+    for lb in unresolved:
+        attrs.pop(lb, None)
 
 
 # ── Layer 1 — same-source propagation ──────────────────────────────────────────
@@ -514,16 +573,18 @@ def recompute(db_path: str | None = None, dry_run: bool = False) -> dict:
     same_as_adj, derived_from_adj = _build_adjacency(lineage_rows)
 
     attrs = _layer0_seed(lineage_rows, _TAPER_UNIVERSE)
-    rejects = _apply_confirmations(attrs, confirmations)
+    rejects, unresolved = _apply_confirmations(attrs, confirmations)
     _apply_rejects(attrs, rejects)
 
     _propagate_strong(attrs, fam_members, fam_review, same_as_adj, derived_from_adj)
     _propagate_weak(attrs, fam_members, fam_review)
 
-    # Re-apply rejects: propagation may have re-derived exactly what a curator
-    # rejected via a different edge (spec: reject suppresses that lb/taper
-    # pair from recompute *output*, regardless of how it was (re-)derived).
+    # Re-apply rejects/unresolved: propagation may have re-derived exactly what a
+    # curator rejected (or marked undecidable) via a different edge. A reject
+    # suppresses that lb/taper pair; an unresolved suppresses every taper for the
+    # lb — both act on recompute *output*, regardless of how it was (re-)derived.
     _apply_rejects(attrs, rejects)
+    _apply_unresolved(attrs, unresolved)
 
     stats = _summarize(attrs)
     if not dry_run:
@@ -569,6 +630,7 @@ def list_attributions(
     confidence: str | None = None,
     taper: str | None = None,
     conflict: bool | None = None,
+    conflict_kind: str | None = None,
     db_path: str | None = None,
 ) -> list[dict]:
     """Return taper_attributions rows matching optional filters (Phase 2 API, spec §5).
@@ -580,6 +642,11 @@ def list_attributions(
             ``_normalise_taper`` before matching ``taper_normalised``), if given.
         conflict: True restricts to conflict=1 rows, False to conflict=0 rows,
             None applies no filter.
+        conflict_kind: Sub-classify conflict rows (see :func:`_is_series_vs_series`).
+            'mention' excludes series-vs-series conflicts (the genuine hand-review
+            queue — the /taper-review page uses this); 'series' keeps only them
+            (TODO-234 family-split leads). None applies no sub-filter. Ignored
+            unless the row is a conflict.
         db_path: Optional database path override.
 
     Returns:
@@ -610,6 +677,12 @@ def list_attributions(
     for row in rows:
         d = dict(row)
         d["evidence"] = json.loads(d.pop("evidence_json"))
+        if conflict_kind and d["conflict"]:
+            is_series = _is_series_vs_series(d["taper_normalised"], d["evidence"])
+            if conflict_kind == "mention" and is_series:
+                continue
+            if conflict_kind == "series" and not is_series:
+                continue
         result.append(d)
     return result
 
@@ -748,6 +821,51 @@ def reject(lb: int, taper: str | None = None, db_path: str | None = None) -> dic
             "DELETE FROM taper_attributions WHERE lb_number=? AND taper_normalised=?",
             (lb, taper_norm),
         )
+
+    get_write_queue().execute(_do)
+    return get_attribution_for_lb(lb, db_path)
+
+
+def mark_unresolved(lb: int, db_path: str | None = None) -> dict | None:
+    """Curator verdict: this taper conflict is undecidable — attribute nothing.
+
+    For a genuine historical conflict (the same recording documented with two
+    different tapers), there is no ground truth to pick, so the honest outcome is
+    no attribution at all rather than a guessed pill. Writes a sticky
+    'unresolved' row to the MASTER-tier ``taper_confirmations`` table (overwriting
+    any prior decision for this lb) and deletes the current ``taper_attributions``
+    row immediately, so the entry leaves both the review queue and the display
+    without ever showing a taper. Future ``recompute`` runs stay suppressed via
+    :func:`_apply_unresolved`. Reversible: a later confirm/reject overwrites the
+    'unresolved' row (``taper_confirmations`` PK is lb_number alone).
+
+    Args:
+        lb: LB number whose conflict is being parked as undecidable.
+        db_path: Optional database path override.
+
+    Returns:
+        The updated ``taper_attributions`` row (None, since it is deleted).
+    """
+    init_db(db_path)
+    conn = get_connection(db_path)
+    # Record the contested taper for provenance (which value was on display when
+    # parked); the apply logic suppresses every taper regardless of it.
+    existing = conn.execute(
+        "SELECT taper_normalised FROM taper_attributions WHERE lb_number=?", (lb,)
+    ).fetchone()
+    taper_norm = existing["taper_normalised"] if existing else "?"
+
+    def _do(c: sqlite3.Connection) -> None:
+        c.execute(
+            """INSERT INTO taper_confirmations (lb_number, taper_normalised, action, decided_at)
+               VALUES (?, ?, 'unresolved', CURRENT_TIMESTAMP)
+               ON CONFLICT(lb_number) DO UPDATE SET
+                   taper_normalised = excluded.taper_normalised,
+                   action = 'unresolved',
+                   decided_at = CURRENT_TIMESTAMP""",
+            (lb, taper_norm),
+        )
+        c.execute("DELETE FROM taper_attributions WHERE lb_number=?", (lb,))
 
     get_write_queue().execute(_do)
     return get_attribution_for_lb(lb, db_path)
