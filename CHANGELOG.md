@@ -1,3 +1,32 @@
+[2026-07-14] — feat(backend): TODO-223 (in progress) — venue gazetteer resolution ladder (bite 2 of 3)
+Context: Bite 1 seeded 4109 distinct venues unresolved. This bite adds the ladder that turns a seeded
+  venue into a coordinate. Planning premise correction: the ladder was specified to anchor on
+  setlist.fm city coords (TODO-222), but those columns (setlistfm_shows.city_lat/city_lon/city_state)
+  are entirely NULL — the force re-scrape that backfills them was never run (0/4131 rows). So the
+  ladder anchors on a setlist.fm coord WHEN present, else a Nominatim city geocode — self-sufficient
+  today, and it auto-upgrades if the backfill later runs.
+Added: backend/venue_gazetteer.py resolution ladder, reusing backend.geocoder's geocode_one /
+  _city_viewbox / 429-retry constants. Per seeded venue, stopping at the first hit: (1) bounded
+  Nominatim venue-name search inside a ~30km box around the city anchor (source='bounded_venue');
+  (2) Wikidata P625 via an mwapi EntitySearch SPARQL query, accepted only within 50km of the anchor
+  so a same-name venue elsewhere is rejected (source='wikidata', covers demolished venues OSM lacks);
+  (3) the city anchor itself as a city-level pin (source='setlistfm_city' or 'city_geocode',
+  confidence='city'); else source='failed'. City anchors are cached per city so each city costs at
+  most one Nominatim call. resolve_venues() drives the batch — processes source IN ('seeded'[,
+  'failed' when retry_failed]), skips manual_override=1, updates in place, commits every 25, honors a
+  limit. `python -m backend.venue_gazetteer resolve [N]` runs it. Helpers: _haversine_km,
+  _geocode_retry (standalone 429 backoff + 1.1s Nominatim politeness), _city_anchor,
+  _setlistfm_city_coord, _wikidata_venue_coord.
+Verification: live smoke test (limit=3) resolved 1 bounded_venue + 2 city_geocode, 0 errors. Tests
+  tests/test_venue_gazetteer.py +13 (27 total): haversine, anchor setlistfm-vs-geocode + cache,
+  each ladder step, Wikidata accept/reject-by-distance/network-error, resolve_venues update + manual
+  skip + limit. 88 passed with test_geocoder.
+Deferred: the full 4109-venue resolution is a ~1-2h rate-limited Nominatim+Wikidata run — trigger
+  it deliberately with `python -m backend.venue_gazetteer resolve`. Bite 3 wires resolved pins into
+  geocoder run_batch (inherit, dedupe Nominatim) + place_manual venue propagation. Minor follow-up:
+  38 purely-numeric junk venue seeds (~0.9%) should be filtered at seed time; the ladder currently
+  falls them back to a city pin.
+
 [2026-07-14] — feat(db): TODO-223 (in progress) — venue gazetteer table + seeding (bite 1 of 3)
 Context: Shows repeat venues, so geocoding each show re-solves the same coordinate and scatters any
   manual fix across dates. TODO-223 builds a venue-level table so each distinct venue is solved once
