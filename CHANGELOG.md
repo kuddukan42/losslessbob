@@ -1,3 +1,28 @@
+[2026-07-14] — feat(db): TODO-223 (in progress) — venue gazetteer table + seeding (bite 1 of 3)
+Context: Shows repeat venues, so geocoding each show re-solves the same coordinate and scatters any
+  manual fix across dates. TODO-223 builds a venue-level table so each distinct venue is solved once
+  and every date inherits the pin. This is the first of three bites (table+seed, then the resolution
+  ladder, then run_batch inheritance + place_manual propagation).
+Added: backend/db.py — venue_geocoded(venue_norm, city_norm, venue, city, region, country, lat, lon,
+  source, confidence, manual_override, note, geocoded_at), PK (venue_norm, city_norm), + source
+  index. CREATE TABLE IF NOT EXISTS in SCHEMA_SQL (idempotent, additive).
+  backend/venue_gazetteer.py — _norm_venue/_norm_city normalization (casefold + drop punctuation +
+  collapse whitespace; the CITY key takes only the first comma-segment so a venue does not fragment
+  across source-specific city strings like 'Birmingham' vs 'Birmingham, AL' vs 'Birmingham,
+  Alabama'; venue keys keep commas since venue names legitimately contain them). seed_venues()
+  enumerates DISTINCT concert venues from olof_events (event_type='concert'), setlistfm_shows and
+  bobdylan_shows — richest source first — and inserts each unresolved (source='seeded', lat/lon
+  NULL) via ON CONFLICT DO NOTHING, so re-seeding never disturbs resolved or manual_override rows.
+Data: seeded 4109 distinct venues (the first-comma city key collapsed 6029→4109 by de-duplicating
+  the same venue across city-string variants). Idempotent: a re-run inserts 0. bobserve 2022+
+  festival venues (e.g. Ameris Bank Amphitheatre) now seed correctly thanks to the event_type fix.
+Tests: tests/test_venue_gazetteer.py (14) — normalization keys incl. city-collapse and
+  venue-comma-preservation, seed enumeration + concert filter + dedup, re-run idempotency preserving
+  a manual row, tolerance of missing optional source tables. Full suite 739 passed, 5 skipped.
+Deferred (later bites): resolution ladder (bounded Nominatim near the setlist.fm city coord →
+  Wikidata SPARQL for demolished venues → setlistfm_city fallback), then geocoder run_batch
+  inheriting gazetteer pins and place_manual writing venue-level fixes.
+
 [2026-07-14] — fix(scraper): bobserve field normalization — 66 festival/benefit concerts now geocode; US location fields de-shifted (TODO-228 follow-up, unblocks TODO-223)
 Context: TODO-228 loaded 391 bobserve shows (2022+) into olof_events, but three field-quality bugs
   made the data unusable by the geocoder (which trusts the DSN taxonomy) and by any concert-venue

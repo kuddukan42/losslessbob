@@ -301,6 +301,29 @@ CREATE TABLE IF NOT EXISTS location_geocoded (
 );
 CREATE INDEX IF NOT EXISTS idx_geo_source ON location_geocoded(source);
 
+-- TODO-223: venue-level gazetteer. One coordinate per DISTINCT (venue, city),
+-- solved once so every show/entry at that venue inherits the pin; manual fixes
+-- persist per-venue forever (manual_override=1). Seeded unresolved (source=
+-- 'seeded', lat/lon NULL) from the concert venues in olof_events/bobdylan_shows/
+-- setlistfm_shows; the resolution ladder fills coords in a later pass.
+CREATE TABLE IF NOT EXISTS venue_geocoded (
+    venue_norm      TEXT NOT NULL,
+    city_norm       TEXT NOT NULL,
+    venue           TEXT,
+    city            TEXT,
+    region          TEXT,
+    country         TEXT,
+    lat             REAL,
+    lon             REAL,
+    source          TEXT NOT NULL,
+    confidence      TEXT,
+    manual_override INTEGER NOT NULL DEFAULT 0,
+    note            TEXT,
+    geocoded_at     TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (venue_norm, city_norm)
+);
+CREATE INDEX IF NOT EXISTS idx_venue_geo_source ON venue_geocoded(source);
+
 CREATE VIRTUAL TABLE IF NOT EXISTS entries_fts USING fts5(
     description,
     setlist,
