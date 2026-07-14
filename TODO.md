@@ -1,4 +1,10 @@
 
+TODO-239: Backfill setlist.fm city coords (force re-scrape) to upgrade venue gazetteer anchors
+Priority: Medium
+Status: Open
+Added: 2026-07-14
+Description: Discovered during TODO-223 bite 2: setlistfm_shows.city_lat/city_lon/city_state are entirely NULL (0/4131 rows) — the TODO-222 step-1 columns exist but were never populated because the force re-scrape that stores venue.city.coords at scrape time has not run. Consequence: the venue_gazetteer resolution ladder (backend/venue_gazetteer.py) cannot anchor on a stored city coord, so it falls back to a per-city Nominatim geocode (source='city_geocode') and can never use the zero-cost 'setlistfm_city' pin. Action: run POST /api/setlistfm/update {force:true} to backfill, then re-run 'python -m backend.venue_gazetteer resolve --retry-failed' so city-level pins get a chance to upgrade to bounded_venue precision. No code change expected — operational. Verifies TODO-222's backfill claim.
+
 TODO-236: Build a flowchart of the taper attribution process
 Priority: Low
 Status: Open
