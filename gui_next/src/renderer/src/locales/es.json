@@ -1757,7 +1757,9 @@
       "outOfRange": "La posición va más allá de la interpretación grabada.",
       "folderMissing": "Una de estas carpetas LB no está disponible en el disco.",
       "locked": "Ejecución en curso, inténtalo de nuevo.",
-      "loadFailed": "No se han podido cargar los clips. Inténtalo de nuevo."
+      "loadFailed": "No se han podido cargar los clips. Inténtalo de nuevo.",
+      "autoPlaceholder": "auto",
+      "autoPickHint": "Déjalo en blanco para que se seleccione automáticamente un pasaje vocal tranquilo"
     }
   },
   "onboarding": {

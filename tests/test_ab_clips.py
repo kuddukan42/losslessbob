@@ -13,10 +13,13 @@ import shutil
 import sqlite3
 import tempfile
 
+import numpy as np
+
 import backend.ab_clips as ab_clips
 import backend.db as db
 import backend.paths as _paths
 import backend.tapematch_sync as tapematch_sync
+from concert_ranker.audio.cache import build_track_cache
 
 
 # ── _AppClient (mirrors tests/test_tapematch_routes.py) ──────────────────────
@@ -50,14 +53,16 @@ class _AppClient:
             db.DB_PATH = self._orig_module_db_path
 
 
-def _make_obs_db(tmp_dir, rows, run_id="20260101_000000", concert_date="1991-01-01"):
+def _make_obs_db(tmp_dir, rows, run_id="20260707_000000", concert_date="1991-01-01"):
     """Create a synthetic observations.db with a ``sources`` table.
 
     Args:
         tmp_dir: Directory to create observations.db in.
         rows: Iterable of ``(lb_number, folder_name, trim_head_sec,
-            perf_dur_sec, speed_kind)`` tuples.
-        run_id: Run id seeded on every row.
+            perf_dur_sec, speed_kind)`` tuples, optionally with a trailing
+            ``speed_ppm`` element (defaults to 0.0 when omitted).
+        run_id: Run id seeded on every row (default is post the 2026-07-06
+            confidence gate so seeded eligible pairs pass ``is_run_eligible``).
         concert_date: Concert date seeded on every row.
 
     Returns:
@@ -68,7 +73,8 @@ def _make_obs_db(tmp_dir, rows, run_id="20260101_000000", concert_date="1991-01-
     conn.execute(
         "CREATE TABLE sources (id INTEGER PRIMARY KEY AUTOINCREMENT, run_id TEXT, "
         "concert_date TEXT, lb_number INTEGER, folder_name TEXT, "
-        "trim_head_sec REAL, perf_dur_sec REAL, total_dur_sec REAL, speed_kind TEXT)"
+        "trim_head_sec REAL, perf_dur_sec REAL, total_dur_sec REAL, "
+        "speed_ppm REAL, speed_kind TEXT)"
     )
     # The real observations.db also has a ``pairs`` table (used by the pairs
     # route's human-feedback enrichment); create an empty one so that query
@@ -78,12 +84,15 @@ def _make_obs_db(tmp_dir, rows, run_id="20260101_000000", concert_date="1991-01-
         "concert_date TEXT, lb_a INTEGER, lb_b INTEGER, "
         "human_judgment TEXT, human_notes TEXT)"
     )
-    for lb, folder, trim, perf, kind in rows:
+    for row in rows:
+        lb, folder, trim, perf, kind = row[:5]
+        ppm = row[5] if len(row) > 5 else 0.0
         conn.execute(
             "INSERT INTO sources (run_id, concert_date, lb_number, folder_name, "
-            "trim_head_sec, perf_dur_sec, total_dur_sec, speed_kind) "
-            "VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
-            (run_id, concert_date, lb, folder, trim, perf, (perf or 0) + (trim or 0), kind),
+            "trim_head_sec, perf_dur_sec, total_dur_sec, speed_ppm, speed_kind) "
+            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+            (run_id, concert_date, lb, folder, trim, perf,
+             (perf or 0) + (trim or 0), ppm, kind),
         )
     conn.commit()
     conn.close()
@@ -204,9 +213,108 @@ def test_pair_source_info_uses_latest_common_run():
 def test_is_eligible_speed():
     assert ab_clips.is_eligible_speed("reference")
     assert ab_clips.is_eligible_speed("aligned")
+    assert ab_clips.is_eligible_speed("constant-speed-offset")  # TODO-233
     assert not ab_clips.is_eligible_speed("staircase/splice")
     assert not ab_clips.is_eligible_speed("speed-unknown")
     assert not ab_clips.is_eligible_speed(None)
+
+
+def test_speed_factor():
+    assert ab_clips.speed_factor(0.0) == 1.0
+    assert ab_clips.speed_factor(None) == 1.0
+    assert ab_clips.speed_factor(1_000_000) == 2.0
+    assert abs(ab_clips.speed_factor(50_000) - 1.05) < 1e-9
+
+
+def test_source_offset_scales_by_factor():
+    # factor 1.0 reduces to the v1 t + trim_head.
+    assert ab_clips.source_offset(100.0, 8.0, 1.0) == 108.0
+    # A fast source (factor > 1) consumes more source seconds per perf second.
+    assert ab_clips.source_offset(100.0, 8.0, 1.05) == 8.0 + 105.0
+    # Default factor keeps the v1 two-arg call working.
+    assert ab_clips.source_offset(100.0, 8.0) == 108.0
+
+
+def test_raw_take_sec():
+    assert ab_clips.raw_take_sec(20, 1.0) == 20.0
+    assert ab_clips.raw_take_sec(20, 1.05) == 21.0
+
+
+def test_is_run_eligible():
+    assert ab_clips.is_run_eligible("20260707_000000")
+    assert ab_clips.is_run_eligible("20260706_000000")  # boundary is inclusive
+    assert not ab_clips.is_run_eligible("20260705_235959")
+    assert not ab_clips.is_run_eligible("20260101_000000")
+    assert not ab_clips.is_run_eligible(None)
+
+
+def test_cache_filename_scoped_by_speed_ppm():
+    a = ab_clips.cache_filename(6162, 100.0, 20, 0.0)
+    b = ab_clips.cache_filename(6162, 100.0, 20, 50_000.0)
+    # Same lb/offset/dur but different speed -> different resampled clip.
+    assert a != b
+    # ppm defaults to 0 -> old 3-arg call is stable.
+    assert ab_clips.cache_filename(6162, 100.0, 20) == a
+
+
+def test_compute_gain_db():
+    # Below target -> boosts to target.
+    assert ab_clips.compute_gain_db(-30.0, -12.0) == 10.0
+    # Above target -> attenuates.
+    assert ab_clips.compute_gain_db(-12.0, -1.0) == -8.0
+    # Peak ceiling caps the boost (no clipping): max -0.5 -> gain <= -0.5.
+    assert ab_clips.compute_gain_db(-40.0, -0.5) == ab_clips.AB_PEAK_CEIL_DBFS + 0.5
+    # Near-silence is not blown up past the max gain.
+    assert ab_clips.compute_gain_db(-90.0, -70.0) == ab_clips.AB_MAX_GAIN_DB
+    # No measurement -> no gain.
+    assert ab_clips.compute_gain_db(None, None) == 0.0
+
+
+# ── pick_start_frame (TODO-232 part 2 scorer) ────────────────────────────────
+def _synthetic_three_region_track(sr=8000, region_sec=20.0):
+    """Build a synthetic mono track with three back-to-back regions:
+
+    0. Loud but NOT vocal: a big low-frequency (300 Hz) tone — a loud,
+       bass/rhythm-heavy passage with negligible energy in the 1-4 kHz
+       vocal band (high broadband energy, low vocal-band energy).
+    1. Quiet, no tone (sets a low vocal-band floor and a low broadband floor).
+    2. Quiet BUT with a 2 kHz tone superimposed — the deliberately "quiet vocal
+       passage" that pick_start_frame must prefer: low broadband energy (like
+       region 1) but an elevated vocal-band (1-4 kHz) level thanks to the tone.
+
+    Returns:
+        ``(mono, sr, region_sec)``.
+    """
+    rng = np.random.default_rng(42)
+    n = int(region_sec * sr)
+    t = np.arange(n) / sr
+
+    loud = (0.7 * np.sin(2 * np.pi * 300.0 * t)).astype(np.float32)
+    quiet_no_vocal = rng.normal(0.0, 0.02, n).astype(np.float32)
+    tone = (0.05 * np.sin(2 * np.pi * 2000.0 * t)).astype(np.float32)
+    quiet_vocal = rng.normal(0.0, 0.02, n).astype(np.float32) + tone
+
+    mono = np.concatenate([loud, quiet_no_vocal, quiet_vocal])
+    return mono, sr, region_sec
+
+
+def test_pick_start_frame_prefers_quiet_vocal_window():
+    mono, sr, region_sec = _synthetic_three_region_track()
+    cache = build_track_cache(mono, sr)
+
+    picked = ab_clips.pick_start_frame(cache, win_sec=5.0, step_sec=2.0)
+
+    assert picked is not None
+    # The winning 5s window must land inside region 2 ([2*region_sec, 3*region_sec)),
+    # entirely clear of the boundary so it doesn't bleed into region 1.
+    assert 2 * region_sec <= picked <= 3 * region_sec - 5.0
+
+
+def test_pick_start_frame_none_when_too_few_frames():
+    # A track shorter than a single window's worth of frames.
+    mono = np.zeros(2048, dtype=np.float32)
+    cache = build_track_cache(mono, 8000)
+    assert ab_clips.pick_start_frame(cache, win_sec=20.0, step_sec=5.0) is None
 
 
 # ── eligible_lb_set ──────────────────────────────────────────────────────────
@@ -220,9 +328,10 @@ def test_eligible_lb_set_filters_by_speed_kind():
         ])
         conn = ab_clips._open_obs_ro(obs_path)
         try:
-            elig = ab_clips.eligible_lb_set(conn, "1991-01-01", "20260101_000000")
+            elig = ab_clips.eligible_lb_set(conn, "1991-01-01", "20260707_000000")
         finally:
             conn.close()
+        # reference + aligned + constant-speed-offset are eligible; staircase not.
         assert elig == {10, 20}
     finally:
         shutil.rmtree(tmp_dir, ignore_errors=True)
@@ -249,7 +358,14 @@ def test_prune_cache_keeps_newest(monkeypatch):
 
 # ── generate_ab_clips (with stubbed ffprobe/ffmpeg) ──────────────────────────
 def _patch_audio(monkeypatch, per_file_dur=300.0):
-    """Stub ffprobe (fixed durations) and ffmpeg extraction (touch output)."""
+    """Stub ffprobe/ffmpeg: fixed durations, raw extraction, RMS + finalize.
+
+    build_clip extracts a raw span to a scratch temp, measures RMS, then
+    finalises (resample + level-match) into the cache. None of that shells out
+    to real ffmpeg here: extraction writes a placeholder, RMS returns a fixed
+    already-on-target reading (so gain is a no-op), and finalise copies the
+    raw file to the destination.
+    """
     ab_clips.clear_duration_cache()
     monkeypatch.setattr(ab_clips, "_ffprobe_duration", lambda p: per_file_dur)
 
@@ -258,6 +374,14 @@ def _patch_audio(monkeypatch, per_file_dur=300.0):
             fh.write(b"RIFFfake")
 
     monkeypatch.setattr(ab_clips, "_extract_clip", _fake_extract)
+    monkeypatch.setattr(
+        ab_clips, "_measure_rms_dbfs",
+        lambda p: (ab_clips.AB_RMS_TARGET_DBFS, -6.0),
+    )
+    monkeypatch.setattr(
+        ab_clips, "_finalize_clip",
+        lambda raw, out, factor, gain: shutil.copy(raw, out),
+    )
 
 
 def test_generate_ab_clips_happy_path(monkeypatch):
@@ -294,6 +418,129 @@ def test_generate_ab_clips_happy_path(monkeypatch):
         assert result["clip_b"].startswith("/api/ab_clip/ab_5953_")
         # Both files were written into the cache.
         assert len(os.listdir(clips_dir)) == 2
+    finally:
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_generate_ab_clips_constant_speed_offset_resamples(monkeypatch):
+    """A constant-speed-offset source is eligible; build_clip gets its factor.
+
+    Verifies the TODO-233 plumbing end to end at the generate layer: the
+    performance->source offset is scaled by the speed factor and that factor is
+    handed to build_clip (which applies the resample).
+    """
+    tmp_dir = tempfile.mkdtemp(prefix="lb_ab_cso_")
+    try:
+        clips_dir = os.path.join(tmp_dir, "ab_clips")
+        monkeypatch.setattr(ab_clips, "AB_CLIPS_DIR", ab_clips.Path(clips_dir))
+        _patch_audio(monkeypatch)
+
+        captured: dict[int, dict] = {}
+
+        def _fake_build(disk_path, offset, dur, out_name, factor=1.0, normalize=True):
+            captured[out_name] = {"offset": offset, "factor": factor}
+            open(os.path.join(clips_dir, out_name), "wb").close()
+            return out_name
+
+        os.makedirs(clips_dir, exist_ok=True)
+        monkeypatch.setattr(ab_clips, "build_clip", _fake_build)
+
+        folder_a = _seed_collection_folder(tmp_dir, 6162)
+        folder_b = _seed_collection_folder(tmp_dir, 5953)
+        obs_path = _make_obs_db(tmp_dir, [
+            (6162, "f_a", 8.0, 7230.0, "reference", 0.0),
+            (5953, "f_b", 4.0, 8434.0, "constant-speed-offset", 50_000.0),
+        ])
+        main = sqlite3.connect(":memory:")
+        main.row_factory = sqlite3.Row
+        main.execute("CREATE TABLE my_collection (lb_number INTEGER, disk_path TEXT)")
+        main.execute("INSERT INTO my_collection VALUES (6162, ?)", (folder_a,))
+        main.execute("INSERT INTO my_collection VALUES (5953, ?)", (folder_b,))
+        main.commit()
+
+        ab_clips.generate_ab_clips(
+            main, obs_path, "1991-01-01", 6162, 5953, t_sec=100.0, dur_sec=20,
+        )
+        vals = list(captured.values())
+        factors = sorted(v["factor"] for v in vals)
+        # reference factor 1.0, constant-speed-offset factor 1.05 (50k ppm).
+        assert abs(factors[0] - 1.0) < 1e-9
+        assert abs(factors[1] - 1.05) < 1e-9
+        # The offset for the 1.05 source = trim(4) + 100 * 1.05 = 109.
+        cso = next(v for v in vals if v["factor"] > 1.001)
+        assert abs(cso["offset"] - (4.0 + 100.0 * 1.05)) < 1e-6
+    finally:
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_generate_ab_clips_auto_picks_t_sec_when_omitted(monkeypatch):
+    """t_sec=None -> auto_pick_t_sec is consulted and its value flows into the response."""
+    tmp_dir = tempfile.mkdtemp(prefix="lb_ab_autopick_")
+    try:
+        clips_dir = os.path.join(tmp_dir, "ab_clips")
+        monkeypatch.setattr(ab_clips, "AB_CLIPS_DIR", ab_clips.Path(clips_dir))
+        _patch_audio(monkeypatch)
+
+        captured_args = {}
+
+        def _fake_auto_pick(disk_path, trim_head_sec, factor, perf_dur_sec):
+            captured_args["disk_path"] = disk_path
+            captured_args["trim_head_sec"] = trim_head_sec
+            captured_args["factor"] = factor
+            captured_args["perf_dur_sec"] = perf_dur_sec
+            return 321.5
+
+        monkeypatch.setattr(ab_clips, "auto_pick_t_sec", _fake_auto_pick)
+
+        folder_a = _seed_collection_folder(tmp_dir, 6162)
+        folder_b = _seed_collection_folder(tmp_dir, 5953)
+        obs_path = _make_obs_db(tmp_dir, [
+            (6162, "f_a", 8.0, 7230.0, "reference"),
+            (5953, "f_b", 35.5, 8434.0, "aligned"),
+        ])
+
+        main = sqlite3.connect(":memory:")
+        main.row_factory = sqlite3.Row
+        main.execute("CREATE TABLE my_collection (lb_number INTEGER, disk_path TEXT)")
+        main.execute("INSERT INTO my_collection VALUES (6162, ?)", (folder_a,))
+        main.execute("INSERT INTO my_collection VALUES (5953, ?)", (folder_b,))
+        main.commit()
+
+        result = ab_clips.generate_ab_clips(
+            main, obs_path, "1991-01-01", 6162, 5953, t_sec=None, dur_sec=20,
+        )
+        # The picked value is what generate_ab_clips reports and builds clips from.
+        assert result["t_sec"] == 321.5
+        # The reference source (6162) was analyzed, since one side is reference.
+        assert captured_args["disk_path"] == folder_a
+        assert captured_args["trim_head_sec"] == 8.0
+        assert captured_args["perf_dur_sec"] == 7230.0
+    finally:
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_generate_ab_clips_stale_run_not_eligible_409(monkeypatch):
+    """Eligible speed_kind but a pre-2026-07-06 run -> not_eligible (TODO-233)."""
+    tmp_dir = tempfile.mkdtemp(prefix="lb_ab_stale_")
+    try:
+        _patch_audio(monkeypatch)
+        obs_path = _make_obs_db(
+            tmp_dir,
+            [(6162, "f_a", 8.0, 7230.0, "reference"),
+             (5953, "f_b", 35.5, 8434.0, "aligned")],
+            run_id="20260101_000000",  # pre-gate
+        )
+        main = sqlite3.connect(":memory:")
+        main.execute("CREATE TABLE my_collection (lb_number INTEGER, disk_path TEXT)")
+        try:
+            ab_clips.generate_ab_clips(
+                main, obs_path, "1991-01-01", 6162, 5953, t_sec=10.0, dur_sec=20,
+            )
+            assert False, "expected NotEligibleError"
+        except ab_clips.NotEligibleError as exc:
+            assert exc.status == 409
+            assert exc.payload["error"] == "not_eligible"
+            assert exc.payload["run_id"] == "20260101_000000"
     finally:
         shutil.rmtree(tmp_dir, ignore_errors=True)
 
@@ -414,6 +661,13 @@ def test_build_clip_uses_trim_head_offset(monkeypatch):
             open(out_path, "wb").close()
 
         monkeypatch.setattr(ab_clips, "_extract_clip", _fake_extract)
+        monkeypatch.setattr(
+            ab_clips, "_measure_rms_dbfs", lambda p: (ab_clips.AB_RMS_TARGET_DBFS, -6.0)
+        )
+        monkeypatch.setattr(
+            ab_clips, "_finalize_clip",
+            lambda raw, out, factor, gain: shutil.copy(raw, out),
+        )
 
         folder = _seed_collection_folder(tmp_dir, 6162, n_tracks=3)
         # t=350, trim_head=8 -> offset 358 -> 58s into file index 1.
@@ -549,18 +803,59 @@ def test_post_ab_clip_route_happy_path_and_serve(monkeypatch):
         shutil.rmtree(tmp_dir, ignore_errors=True)
 
 
+def test_post_ab_clip_route_omitted_t_sec_auto_picks(monkeypatch):
+    """t_sec omitted from the JSON body -> 200, auto-picked t_sec in response."""
+    db_path, tmp_dir = _make_db()
+    try:
+        clips_dir = os.path.join(tmp_dir, "ab_clips")
+        monkeypatch.setattr(ab_clips, "AB_CLIPS_DIR", ab_clips.Path(clips_dir))
+        obs_path = _make_obs_db(tmp_dir, [
+            (6162, "f_a", 8.0, 7230.0, "reference"),
+            (5953, "f_b", 35.5, 8434.0, "aligned"),
+        ])
+        monkeypatch.setattr(tapematch_sync, "DEFAULT_OBSERVATIONS_DB_PATH", obs_path)
+        _patch_audio(monkeypatch)
+        monkeypatch.setattr(ab_clips, "auto_pick_t_sec", lambda *a, **k: 246.0)
+
+        folder_a = _seed_collection_folder(tmp_dir, 6162)
+        folder_b = _seed_collection_folder(tmp_dir, 5953)
+        conn = db.get_connection(db_path)
+        for lb, folder in ((6162, folder_a), (5953, folder_b)):
+            conn.execute(
+                "INSERT INTO entries (lb_number, date_str, status) VALUES (?, '1/1/91', 'ok')",
+                (lb,),
+            )
+            conn.execute(
+                "INSERT INTO my_collection (lb_number, folder_name, disk_path) "
+                "VALUES (?, 'f', ?)", (lb, folder),
+            )
+        conn.commit()
+
+        with _AppClient(db_path) as client:
+            # Note: no "t_sec" key at all.
+            resp = client.post("/api/ab_clip", json={
+                "date": "1991-01-01", "lb_a": 6162, "lb_b": 5953,
+            })
+            assert resp.status_code == 200
+            body = resp.get_json()
+            assert body["t_sec"] == 246.0
+    finally:
+        db.close_connection(db_path)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
 # ── Route: GET /api/tapematch/pairs ab_eligible enrichment ───────────────────
 def test_pairs_route_enriches_ab_eligible(monkeypatch):
     db_path, tmp_dir = _make_db()
     try:
         conn = db.get_connection(db_path)
-        # Two pairs on the same date/run.
-        for lb_a, lb_b in ((6162, 5953), (6162, 3030)):
+        # Three pairs on the same date/run.
+        for lb_a, lb_b in ((6162, 5953), (6162, 3030), (6162, 4040)):
             conn.execute(
                 "INSERT INTO tapematch_pairs "
                 "(concert_date, lb_a, lb_b, corr, emb_score, fp_score, same_family, "
                 " similarity_pct, run_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
-                ("1991-01-01", lb_a, lb_b, 0.9, 0.9, 0.9, 1, 90, "20260101_000000"),
+                ("1991-01-01", lb_a, lb_b, 0.9, 0.9, 0.9, 1, 90, "20260707_000000"),
             )
         conn.commit()
 
@@ -568,6 +863,7 @@ def test_pairs_route_enriches_ab_eligible(monkeypatch):
             (6162, "f_a", 8.0, 7230.0, "reference"),
             (5953, "f_b", 8.0, 8434.0, "aligned"),
             (3030, "f_c", 8.0, 8000.0, "staircase/splice"),
+            (4040, "f_d", 8.0, 8000.0, "constant-speed-offset", 40_000.0),
         ])
         monkeypatch.setattr(tapematch_sync, "DEFAULT_OBSERVATIONS_DB_PATH", obs_path)
 
@@ -579,6 +875,39 @@ def test_pairs_route_enriches_ab_eligible(monkeypatch):
             assert pairs[(6162, 5953)]["ab_eligible"] is True
             # one staircase -> False
             assert pairs[(6162, 3030)]["ab_eligible"] is False
+            # constant-speed-offset is eligible (TODO-233) -> True
+            assert pairs[(6162, 4040)]["ab_eligible"] is True
+    finally:
+        db.close_connection(db_path)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def test_pairs_route_ab_eligible_false_for_stale_run(monkeypatch):
+    """Eligible speed_kinds from a pre-gate run are demoted to False (TODO-233)."""
+    db_path, tmp_dir = _make_db()
+    try:
+        conn = db.get_connection(db_path)
+        conn.execute(
+            "INSERT INTO tapematch_pairs "
+            "(concert_date, lb_a, lb_b, corr, emb_score, fp_score, same_family, "
+            " similarity_pct, run_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+            ("1991-01-01", 6162, 5953, 0.9, 0.9, 0.9, 1, 90, "20260101_000000"),
+        )
+        conn.commit()
+
+        obs_path = _make_obs_db(
+            tmp_dir,
+            [(6162, "f_a", 8.0, 7230.0, "reference"),
+             (5953, "f_b", 8.0, 8434.0, "aligned")],
+            run_id="20260101_000000",  # pre-gate
+        )
+        monkeypatch.setattr(tapematch_sync, "DEFAULT_OBSERVATIONS_DB_PATH", obs_path)
+
+        with _AppClient(db_path) as client:
+            resp = client.get("/api/tapematch/pairs?date=1991-01-01")
+            assert resp.status_code == 200
+            pairs = {(p["lb_a"], p["lb_b"]): p for p in resp.get_json()["pairs"]}
+            assert pairs[(6162, 5953)]["ab_eligible"] is False
     finally:
         db.close_connection(db_path)
         shutil.rmtree(tmp_dir, ignore_errors=True)
