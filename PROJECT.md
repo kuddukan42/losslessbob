@@ -71,7 +71,9 @@ losslessbob/
 │   ├── bootleg_scraper.py    # Bootleg-CD catalog (LBBCD index) scraper
 │   ├── olof_fetcher.py       # Olof Björner (bobserve.com) page mirror → data/olof/pages/ (TODO-162 P1)
 │   ├── olof_parser.py        # DSN event+song parser: olof_pages → olof_events + olof_songs (TODO-162 P2–P3)
-│   ├── olof_chronicle_parser.py  # Yearly Chronicles parser: calendar + new-tapes (+2022+ appendix, dormant) (TODO-162 P4)
+│   ├── olof_chronicle_parser.py  # Yearly Chronicles parser: calendar + new-tapes (2022+ appendix superseded, see below) (TODO-162 P4)
+│   ├── bobserve_fetcher.py   # bobserve.com setlist page mirror (2022+, supersedes chronicle appendix) → data/olof/bobserve_pages/ (TODO-228)
+│   ├── bobserve_parser.py    # bobserve setlist parser: olof_pages(corpus=bobserve) → olof_events + olof_songs, source='bobserve' (TODO-228)
 │   ├── scheduler.py          # Watchdog file watcher, auto-import, scheduled integrity scans
 │   ├── integrity_monitor.py  # TODO-111: lbdir-based collection integrity scan engine
 │   ├── sox_utils.py          # SoX/ffmpeg tool detection + spectrogram generation
@@ -691,21 +693,30 @@ Indexes: `idx_inventory_status`, `idx_inventory_session`.
 
 ### `olof_pages` / `olof_events` / `olof_songs` — Olof Björner mirror + parsed events (TODO-162, local-only)
 Spec: `instructions/FABLE_OLOF_FILES.md` §4 (authoritative column list). `olof_pages` = one row
-per mirrored bobserve.com page (filename PK, url, corpus `'dsn'`/`'chronicle'`, segment_title,
-year, sha256, fetched_at, parsed_at, parse_status, event_count); pages live verbatim in
-`data/olof/pages/` via `backend/olof_fetcher.py`. `olof_events` = one row per Still On The Road
-event (event_id PK = DSN number; date_str ISO + raw, venue/city/region/country split fields,
-event_type `concert|session|rehearsal|broadcast|interview|other`, tour_name, NET/year concert
-numbers, lineup, recording kind/mins, notes, bobtalk, releases_raw, references_raw, raw_text
-safety net) via `backend/olof_parser.py`. `olof_songs` = one row per performed song / studio
-take (event_id+position PK, song_title, credits, is_encore, take_number, take_status,
-annotations, released_on — annotation/release position-ranges resolved per song).
-`olof_chronicle` = one row per dated calendar/diary entry (year+seq PK, date_str ISO where
-resolvable, date_raw, entry_text — Word field junk stripped); `olof_new_tapes` = one row per
-'New tapes & bootlegs' subsection (year+seq PK, title, date_str ISO show date or '', body_text)
-— both via `backend/olof_chronicle_parser.py`. 2022+ appendix setlists parse into
-`olof_events`/`olof_songs` with synthetic `year*1000+seq` IDs (source `'chronicle_appendix'`)
-but the path is dormant — 2013+ chronicles are PDF-only on bobserve (TODO-228). Indexes:
+per mirrored page (filename PK, url, corpus `'dsn'`/`'chronicle'`/`'bobserve'`, segment_title,
+year, sha256, fetched_at, parsed_at, parse_status, event_count); DSN/chronicle pages live
+verbatim in `data/olof/pages/` via `backend/olof_fetcher.py`, bobserve setlist pages in
+`data/olof/bobserve_pages/` via `backend/bobserve_fetcher.py`. `olof_events` = one row per
+event (event_id PK = DSN number `source='dsn'`, `year*1000+seq` `source='chronicle_appendix'`,
+or `9_000_000 + bobserve event id` `source='bobserve'` — three disjoint ranges, no collision;
+date_str ISO + raw, venue/city/region/country split fields, event_type
+`concert|session|rehearsal|broadcast|interview|other` (bobserve also emits richer compound
+labels like `concert - outlaw music festival` verbatim), tour_name, NET/year concert numbers,
+lineup, recording kind/mins, notes, bobtalk, releases_raw, references_raw, raw_text safety net)
+via `backend/olof_parser.py` (DSN) / `backend/bobserve_parser.py` (2022+). `olof_songs` = one
+row per performed song / studio take (event_id+position PK, song_title, credits, is_encore,
+take_number, take_status, annotations, released_on — annotation/release position-ranges
+resolved per song for DSN; bobserve rows are title+credits only, parsed from the page's
+`data-clipboard-text` blob). `olof_chronicle` = one row per dated calendar/diary entry
+(year+seq PK, date_str ISO where resolvable, date_raw, entry_text — Word field junk stripped);
+`olof_new_tapes` = one row per 'New tapes & bootlegs' subsection (year+seq PK, title, date_str
+ISO show date or '', body_text) — both via `backend/olof_chronicle_parser.py`. The chronicle
+appendix's `source='chronicle_appendix'` setlist path (`_APPENDIX_CUTOFF_YEAR=2022`) is
+superseded and was never populated: TODO-228 found the 2013+ Yearly Chronicle PDFs carry no
+per-show setlists at all (a calendar + bare tour-itinerary table only, confirmed by extracting
+real 2022/2023 PDFs) — bobserve.com's own setlist database (`/setlist?event=N`, one page per
+show, real setlists incl. cover-song credits) is the actual 2022+ source, mirrored/parsed by
+`backend/bobserve_fetcher.py` + `backend/bobserve_parser.py` instead. Indexes:
 `idx_olof_events_date`, `idx_olof_events_tour`, `idx_olof_songs_title`,
 `idx_olof_chronicle_date`, `idx_olof_new_tapes_date`. Not in `MASTER_TABLES` yet —
 master/sitedata export tier is a P5 decision.
