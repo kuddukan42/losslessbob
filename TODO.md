@@ -1,4 +1,22 @@
 
+TODO-234: TapeMatch family over-merge review — 22 series-vs-series taper conflicts
+Priority: Medium
+Status: Open
+Added: 2026-07-13
+Description: After the TODO-213 taper-attribution curation pass (non-taper credits excluded, robert removed, mention-downgrade rule) the taper_attributions conflict queue dropped to 53, of which 22 are SERIES-vs-SERIES: two *legitimate* taper series (e.g. ltc/ltg, net taper a/net taper i, lta/ntj) attributed to members of one recording_families family, both with strong (series_code/explicit) evidence. These are NOT an attribution bug and NOT a wordlist fix — they indicate the fingerprint/clustering pulled two genuinely different sources into one family (a false-merge). Recurs around prolific series: net taper a (10 merges), ltb (6), ltc/ltg (5). Approach: for each of the 22, pull the family's members + tapematch evidence (observations.db corr / duration / explicit signals for the pair), decide split vs keep; if split, the family_meta review_flag or a family-split path in tapematch is the lever, then re-run taper_attribution.recompute(). Belongs to the tapematch calibration/family subsystem, not backend/db.py taper curation. Query for the 22: SELECT lb_number, evidence_json FROM taper_attributions WHERE conflict=1 — filter to rows whose candidate tokens are all lt[a-z]/net taper [a-z]. Related: [TODO-213].
+
+TODO-233: LISTENING §2 follow-up — expand A/B eligibility beyond reference/aligned speed kinds
+Priority: Medium
+Status: Open
+Added: 2026-07-13
+Description: Only ~1/3 of sources qualify for aligned A/B listening (TODO-231 v1: both sources must be speed_kind reference/aligned in their latest common run), so most pairs on ScreenTapeMatch show 'Not cleanly aligned for A/B listening yet'. Re-running tapematch does NOT help: the 2026-07-06 confidence gate (commit 936e0a64, ratio_confidence_min=6.0) made classification stricter — June-script runs were 34% eligible, July-script runs 28%, with speed-unknown (1,406 sources) absorbing most of what the old script called constant-speed-offset (1,744 -> 103). Expansion order: (1) constant-speed-offset — the time mapping IS known (rate + offset), so backend/ab_clips.py can scale t per source (t*rate + offset) and optionally ffmpeg-resample (atempo/asetrate) the clip to reference speed; check what rate detail observations.db sources rows / run archives store per source. (2) staircase/splice — needs per-segment offsets from run archive lag curves; substantially more work. (3) speed-unknown — unservable without new analysis; out of scope. Also handle the stale-label asymmetry: pairs eligible only via an old June run may carry 'aligned' labels the confidence-gated script would demote to speed-unknown — consider trusting only post-936e0a64 runs for eligibility, or re-verifying old 'aligned' labels. Related: [TODO-232] auto-pick start point.
+
+TODO-232: LISTENING §2 follow-up — auto-pick A/B clip start point (quiet vocal passage) + RMS level matching
+Priority: Medium
+Status: Open
+Added: 2026-07-13
+Description: TODO-231 v1 shipped with manual t_sec only (GUI defaults to 0s = start of performance time). Original spec (instructions/complete/FABLE_LISTENING_INSIGHT_IDEAS.md §2) called for auto-picking t when not given, per the LB curator method (TODO-187): a 15-30s quiet vocal passage. Method: decode one side of the pair via the ranker ffmpeg path (concert_ranker/audio/io.py), build a TrackCache (concert_ranker/audio/cache.py — per-frame STFT, frame_energy_db, quiet-frame mask); score candidate ~20s windows where broadband energy is low (musically quiet) but vocal/speech-band (1-4 kHz) level sits well above the mid-band crowd floor (cf. extract_clarity/extract_crowd in concert_ranker/features.py); skip first/last ~60s (tuning/applause); return best window's performance-time t. Backend: POST /api/ab_clip accepts omitted t_sec and auto-picks; GUI start field pre-fills with the picked value so the user can still override. Also from spec, not shipped in v1: RMS level-match the two clips before serving.
+
 TODO-228: Olof 2022+ chronicles are PDF-only — fetch + extract appendix setlists from PDFs
 Priority: Medium
 Status: Open
@@ -13,12 +31,6 @@ Progress: Part B (attribution) DONE 2026-07-11 — Olof/bobserve credit already 
   setlist.fm + bobdylan.com credit cards and a bobserve "About Bob" link added to the About screen
   (AboutDialog.tsx). Remaining: Part A (BobTalk search + show-page surfacing).
 Description: Two parts. (A) BobTalk surfacing — depends on TODO-162 P2 (olof_events.bobtalk already in spec schema): full-text search over bobtalk + notes (backend endpoint, e.g. /api/olof/bobtalk_search with LIKE or FTS5), display the night's BobTalk quote + Olof notes + NET concert # on gui_next show pages; optional 'on this day' widget from olof_chronicle later. (B) Attribution — independent, can ship NOW: add credit to Olof Bjorner and bobserve.com (source: 'About Bob', https://www.bobserve.com/olof/) in the gui_next About screen credits section, alongside existing setlist.fm/bobdylan.com credits; run /gui-next-i18n after copy change. Part B should land with or before the first Olof-derived data appearing in the GUI.
-
-TODO-225: Setlist fingerprinting — identify entries with garbage/'various' metadata via Olof setlist match
-Priority: Medium
-Status: Open
-Added: 2026-07-10
-Description: Depends on TODO-162 Olof scraper P3 (olof_songs). PURPOSE: date/show identification for entries whose location/date metadata is unusable ('various', 'vsrious', '4 rare tracks from 1966', 'various 98-99', empty/xx dates) — NOT bulk re-dating: mislabeled dates are rare in this archive per tj, so this targets the unknown/junk-metadata tail only. METHOD: take an entry's tracklist (folder track titles), normalize titles (cp1252/curly-quote helpers exist), and score against olof_songs setlists per event (set overlap + order similarity, tolerate partial tapes); setlists are near-unique per show, so a strong best-match pins the date -> venue -> geocode pin. OUTPUT: suggestions only — a curator-mode review queue (entry, best-match event, score, matched/missing songs), never auto-applied to entries. Start with entries that have no parseable date or a location in the skipped_not_concert/'various' bucket (TODO-221). Also reusable in tapematch as a cheap same-show discriminator (song-count/encore-structure mismatch = different shows) before audio comparison.
 
 TODO-223: Venue gazetteer table — one curated coordinate per distinct venue, incl. demolished venues
 Priority: Medium
@@ -43,12 +55,7 @@ Priority: High
 Status: Open
 Added: 2026-07-09
 Description: tj eyeballed the new Library badges (2026-07-09, RANKING phases 3-4 ship): verdict 'lots of obviously wrong badges but more are accurate' — the pipeline works but the underlying derived data needs curation before the badges are trustworthy. Matches FABLE_UNIFIED_RANKING (now instructions/complete/) §8 acceptance note: pick disagreements are a weight-tuning session, not a bug. Likely levers: picks.py term weights (§4), taper_attributions conflicts (168 flagged rows), curated-list vintage, stale/absent quality scans. Approach: collect concrete wrong-badge examples from tj first (which LB, what was wrong), then trace each through evidence_json (the Picks tab shows the full trail per recording) before touching weights. CLARIFIED 2026-07-10: tj says the wrong badges he saw were TAPER NAME badges, not show-pick badges — start the curation pass with taper_attributions (the 168 flagged conflicts + _KNOWN_TAPER_ALIASES coverage), not picks.py weights.
-
-TODO-212: Recording-lens pick/grade/curated badges + combined 'any curated pick' view
-Priority: Low
-Status: Open
-Added: 2026-07-09
-Description: Deferred from TODO-186's close (2026-07-09, RANKING phase 4): pickRank/absGrade/curated only ride the extended /api/library/performances payload, so the badges/filters shipped on the Performance lens only. The flat Recording lens sources rows from /api/search + /api/collection/prefetch, which carry none of these fields. To surface them there: either extend /api/search's payload or add a client-side merge endpoint (the /api/tapematch/families pattern). Also deferred: a combined 'any curated pick' filter view (TODO-186 listed it; only per-curator views shipped). [2026-07-10: the GET /api/picks?date= item shipped with the tonight-card session (70392d14) — show_picks.concert_date_iso now populated, ISO reconciliation done. Remaining scope is the Recording-lens badges + combined view only.]
+PROGRESS 2026-07-13 (taper_attributions curation pass, via /taper-review page): tj worked the conflict queue (68 confirm/reject decisions) and named a repeating pattern — NON-TAPER CREDITS colliding with real tapers. Rule captured in code (_NOT_TAPER / _KNOWN_TAPER_ALIASES in backend/db.py): (1) `lk` is a curator, (2) `captain acid` remasters, (3) `jtt` transfers/masters ("Mastered to Digital by JTT") — all three excluded from the taper universe, so a mention colliding with a real taper (e.g. LB-1945: ltd vs captain acid) auto-resolves to the real taper with NO conflict, no curation. (4) `cb master` renamed to canonical `cb` (cb is the taper; "master" = a master tape from cb) — 185 lineage + 19 confirmation rows migrated. Full recompute run + DB backed up (data/backups/…_pre_todo213_curation.db). Then removed `robert` from _KNOWN_TAPER_ALIASES entirely (generic bare token matching songwriter credits "Robert Hunter"/"Robert Friemark"; 179/198 false), and added a MENTION-DOWNGRADE rule to taper_attribution._propagate_strong: a bare mention (Layer 0's only non-confirmed tier) no longer conflicts against a family's single confirmed series/explicit taper — strong wins silently, mention member flood-filled to it (spec §4.2). Conflict queue arc: 121 stale 07-09 (~191 fresh) → 161 (non-taper credits+cb) → 126 (robert) → 53 (mention-downgrade); ~1200 spurious rows dropped. REMAINING 53 = (a) 31 genuine MENTION-vs-MENTION ambiguities — the real /taper-review hand-curation queue; (b) 22 SERIES-vs-SERIES (two real tapers on one family, e.g. ltc vs ltg, net taper a vs net taper i) — genuine, point at tapematch family OVER-MERGING (family-split review, different subsystem, NOT a wordlist fix). Next: keep working the review queue + escalate the 22 family over-merges to tapematch calibration.
 
 TODO-209: Ledger duplicate-ID audit — 17 TODO + 22 BUG header IDs reused across open/done files
 Priority: Low
@@ -228,75 +235,6 @@ Description: backend/wtrf_scraper.py + tools/wtrf_fetch_missing.py implement the
     throttled or returns unexpected results (walk board=16.0, board=16.20, …).
   Relates to: [[TODO-135]] (scrape WTRF for existing posts), [[TODO-194]] (match quality
     refinement — audit data from the 2026-06-30 batch runs).
-
-TODO-187: Concert ranker / project — document LB rating philosophy and artifact taxonomy
-Priority: Low
-Status: Open
-Added: 2026-06-25
-Description: The LB site's two "what the information means" pages define the authoritative
-  semantics behind the rating scale and the controlled vocabulary used in recording descriptions.
-  This knowledge should be captured in a project document so it informs future feature
-  development, calibration decisions, and new contributor onboarding — rather than living only
-  in the source HTML of a page with a self-signed certificate and cp1252 encoding.
-
-  Sources:
-    - http://www.losslessbob.wonderingwhattochoose.com/LosslessBob-what.html
-    - http://www.losslessbob.wonderingwhattochoose.com/LosslessBob-what-images.html
-
-  Content to document:
-    1. Rating scale semantics (from what.html):
-         A+ / 5 = outstanding — casual Bob fans can enjoy
-         A / A- / 4 = excellent — casual fans can enjoy
-         B+/B/B- / 3 = very good — "a little more into Bob" needed
-         C+/C/C- / 2 = average/good — serious devotees only
-         D+/D/D- / 1 = poor — completionists only; "probably listened to once"
-         F / 0 = very poor — completionists only
-       These map exactly to RATING_RANK in `concert_ranker/calibrate.py:27`.
-    2. Comparison methodology (from what.html): 15–30s sample from a quiet vocal passage,
-       levels matched, bias toward warmer/less harsh sound; binaural > cardioid; wider capture
-       > narrower. Most remasters that fiddle with tone add harshness; clipping / midrange boost
-       = bad; vocal peaks clipping = especially penalised.
-    3. Rating subjectivity caveats: can drift ±1 letter tier across sessions; more likely to
-       move down by one tier than up; up moves ≤ 1 sublevel. Not all recordings have letter
-       ratings (older ones may only have numeric 0–5).
-    4. Audience annoyance policy: brief/resolved talking/singing not cited; noted when
-       persistent enough to be annoying.
-    5. Full artifact taxonomy (from what-images page) — all 17 named artifact types with their
-       spectral/waveform signatures and quality implications (DAT, cassette, mini-disc "lego
-       parapets", floating parapets, 32k DAT, digital clipping, limiting, brickwalling,
-       compression, digi-pops, discontinuity pop, square wav static, digital drops, between-track
-       gap, mic hit, TV band, high-end streaking).
-    6. EAC match note: "exact eac match" or "close eac match" in description = recording is a
-       CDR rip of a prior version, offers nothing new. The ranker could use txt_eac_match as a
-       strong negative feature (see [[TODO-188]]).
-
-  The document should also include the 22 reference image filenames and what each depicts,
-  since the images add visual precision the text alone doesn't convey:
-    lb_dat_spectral_view.JPG — full-spectrum DAT benchmark (reference "good" state)
-    lb_cassette.JPG — dense HF noise above 18k, fuzzy grain vs. clean DAT
-    lb_parapet.JPG — continuous alternating step ceiling at 15-17k (mini-disc staircase)
-    lb_floating_parapet.JPG — scattered rectangular islands at irregular intervals (MP3/streaming)
-    lb_dat_at_32k.JPG — perfectly clean wall at 16kHz, completely black above (most distinctive)
-    lb_clipping.JPG — flat-topped peaks at 0dB
-    lb_limiting.JPG, lb_limiting2.JPG — rounded/plateaued peaks, two asymmetry examples
-    lb_brickwall.JPG/.2/.3 — diagonal/curved lines filling the VALLEYS BETWEEN peaks
-    lb_heavily_compressed.JPG — solid rectangle waveform at full-track zoom (no dynamics)
-    lb_heavily_compressed_before.JPG — natural dynamic range on same track pre-compression
-    lb_digipops.JPG — isolated narrow high-amplitude spikes above quiet music
-    lb_discontinuity.JPG — abrupt step-change in signal level (not silence, a DC jump)
-    lb_square_wav_static.JPG — repeating rectangular/square waveform shapes (DAT error)
-    lb_drops.JPG — multiple multi-second silence segments through a track
-    lb_gap.JPG — abrupt step in noise floor level at a precise timestamp (sector boundary)
-    lb_mic_hit.JPG — single-channel only spike (other channel flat); distinguishes from digipop
-    lb_tv_band.JPG — thin horizontal stripe at 15-16k pulsing in brightness over time
-    lb_high_end_streaking.JPG — chaotic vertical noise above 15k during loud passages
-    lb_high_end_streaking_done_right.JPG — same track, clean professional transfer (no streaks)
-  Images are from http://www.losslessbob.wonderingwhattochoose.com/lbjpg/ and were downloaded
-  2026-06-25 (the site uses self-signed HTTPS and cp1252 encoding; curl -sk required).
-  Suggested location: `concert_ranker/LB_KNOWLEDGE.md` (new file). Keep it factual/reference,
-  not opinionated — this is the curator's own words, not our interpretation.
-  Relates to: [[TODO-188]] (text features use this vocabulary), [[TODO-189]], [[TODO-190]], [[TODO-191]].
-
 
 TODO-184: tapematch — rescue same-source false-negatives (channel-polarity inversion + partial overlap)
 Priority: Medium
@@ -587,37 +525,6 @@ Description: Curator mode currently exposes itself to every user: AppShell.tsx:4
   combo, hidden settings entry, or build-time flag) so normal users have no visible
   indication curator mode exists at all.
 
-TODO-158: Batch forum posting via multi-select or pasted LB list
-Priority: Medium
-Status: Open
-Added: 2026-06-22
-Description: Forum posting (backend/forum_poster.py:post_lb_topic, UI in
-  gui_next/src/renderer/src/screens/ScreenCollection.tsx) currently posts one LB at a time.
-  Add a batch mode: either multi-select rows in the Collection screen or paste/enter a list
-  of LB numbers, then post_lb_topic for each in sequence (with per-item success/failure
-  reporting) instead of requiring one post action per LB.
-
-TODO-159: LBDIR verify prior to forum post, to ensure integrity before posting
-Priority: Medium
-Status: Open
-Added: 2026-06-22
-Description: Before calling post_lb_topic (backend/forum_poster.py), run an LBDIR verify pass
-  (backend/checksum_utils.py:verify_folder, same check used in the Pipeline verify step) on
-  the folder being posted, to confirm the on-disk audio still matches its checksums. Currently
-  nothing blocks a forum post if the folder's integrity has degraded (see BUG-120 for examples
-  of verify-fail folders); add a pre-post integrity gate so a bad/modified recording can't be
-  posted without at least a warning.
-
-TODO-157: Auto-create torrent + add to qBittorrent on forum post when no torrent exists
-Priority: Medium
-Status: Open
-Added: 2026-06-22
-Description: When posting to the forum for a recording that has no torrent yet, the forum-post
-  flow should automatically generate the torrent (backend/torrent_maker.py) and add it to
-  qBittorrent (backend/qbittorrent.py) as part of a single one-click "post" action in
-  backend/forum_poster.py, instead of requiring the torrent to be created/added manually
-  beforehand.
-
 TODO-156: Populate all the LB problem entries
 Priority: Medium
 Status: Open
@@ -640,18 +547,6 @@ Description: xref handling needs improvement. Current xref logic lives in the `c
   (see BUG-201, LookupDetail.tsx STATE_TONE). Specific improvements not yet scoped —
   needs follow-up on what's currently breaking/missing in xref handling before
   implementation.
-
-TODO-154: New DB field for r#### source info (e.g. r9453)
-Priority: Medium
-Status: Open
-Added: 2026-06-22
-Description: Add a new database field to capture "r####"-style source info seen in info
-  filenames (e.g. LBF-04929-bd1990-08-16.info.r9453.txt — see
-  data/tapematch/runs/20260616_200028_1990-08-16/analysis_input.md:95). This r#### id is not
-  currently parsed or stored anywhere in backend/db.py or the importer; need to determine
-  which table it belongs on (likely tied to the recording/LB record or a per-file source
-  table) and what the r#### value actually identifies (taper/source catalog id) before
-  implementing.
 
 TODO-136: Post editor form for existing WTRF posts
 Priority: Low
@@ -690,16 +585,6 @@ Note: BEST_PRACTICES.md written 2026-06-09. ruff + pre-commit configured 2026-06
 Code-pass over backend files deferred. 36 pre-existing ruff violations remain (E701 x12,
 B023 x9, F841 x5, B905 x3, B007 x2, B904 x2, LOG015 x2, F821 x1) — will surface as
 blockers when those files are next edited. E501 suppressed in pyproject.toml until then.
-
-TODO-108: Collection tab — fix header UI problems
-Priority: Medium
-Status: Open
-Added: 2026-06-03
-Description: Investigate and fix UI problems with column headers on the Collection tab.
-  Exact issues to be identified on investigation (misalignment, overflow, sticky behaviour,
-  sort indicators, etc.).
-
----
 
 TODO-107: Disk Scanner — find audio folders on disk for bulk collection add
 Priority: Medium

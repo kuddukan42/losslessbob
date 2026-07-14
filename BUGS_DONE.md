@@ -1,6 +1,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-248: tests/test_geocoder.py: 13 stale TODO-220/221-era tests fail on main
+Status: Fixed
+File(s): tests/test_geocoder.py
+Reported: 2026-07-11
+Fixed: 2026-07-13
+Root cause: TODO-220/221 session changed geocoder.py contracts (tuple returns, concert-eligibility filter) without updating the 13 pre-existing test fixtures/assertions
+Fix: Fixed 2026-07-11 in commit 74507645 (test(backend): un-rot tests/test_geocoder.py): fixtures updated to insert bobdylan_shows/setlistfm_shows rows and assertions updated to the (full, city_only) tuple contract; 52/52 pass, no production code change
+
 BUG-247: tapematch crawl crash-loops on merged folders (two LB ids, one directory)
 Status: Fixed
 File(s): tools/tapematch/tapematch_session.py:514

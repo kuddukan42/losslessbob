@@ -4,17 +4,27 @@ Verbatim capture of a Fable 5 brainstorm, per user request. NOT a spec — an ex
 session should expand any chosen idea into a plan first (existing spec-pack docs in
 instructions/ show the expected shape). None of these overlap the six existing specs.
 
+> **Shipped-status legend** (updated 2026-07-13): ✅ SHIPPED = idea delivered in full;
+> 🟡 FOUNDATION = the enabling infrastructure landed but the idea itself is not built yet;
+> ❌ CANCELLED = decided against, not pursuing.
+
 ---
 
-**1. The Repair Shop (measurements → fixes).** The pipeline now *measures* defects it never acts on: exact speed error (`speed_ppm`, soon ENF-precise), staircase segment boundaries, hum frequency, trim offsets, channel issues. Add an "export corrected copy" action: speed-correct via resample, notch the measured hum and harmonics, apply patch-map composites (§5) into a single best-listenable file with a generated lineage note documenting exactly what was done. No tool in the trading world does measured, documented, reversible restoration. Every piece of analysis you've hardened becomes a repair instruction.
+**1. ~~The Repair Shop (measurements → fixes).~~** The pipeline now *measures* defects it never acts on: exact speed error (`speed_ppm`, soon ENF-precise), staircase segment boundaries, hum frequency, trim offsets, channel issues. Add an "export corrected copy" action: speed-correct via resample, notch the measured hum and harmonics, apply patch-map composites (§5) into a single best-listenable file with a generated lineage note documenting exactly what was done. No tool in the trading world does measured, documented, reversible restoration. Every piece of analysis you've hardened becomes a repair instruction.
+
+> ❌ **CANCELLED** (2026-07-13, per user) — not pursuing.
 
 **2. Arrangement evolution explorer.** Dylan is the one artist where this matters most — he rearranges songs beyond recognition. Once the song index exists, compute per-performance features (tempo, key, duration, electric/acoustic band energy) for every performance of a song and cluster them into arrangement eras: "Tangled Up in Blue has 6 distinct arrangements; here's when each lived, here's the best-graded recording of each." Nobody has ever built this; your quality grades make it a *listening guide*, not just a chart.
 
+> 🟡 **FOUNDATION SHIPPED** (TODO-230, 2026-07-11) — the song index this idea depends on now exists: `song_canonical`/`song_performances` tables, `backend/song_index.py`, `GET /api/songs[/performances]`, and the ScreenSongs browser (best-first, LB deep-links). The arrangement-clustering / per-performance feature step itself is not built.
+
 **3. Listening journal + coverage map.** The app knows the archive but not what you've actually *heard*. Log plays (from the A/B player and any future player affordance), then render coverage: "you've heard 340 of 1,850 circulating shows — 90% of 1966, 4% of the gospel years," with a "next unheard, best-graded show from your weakest era" suggestion. It also quietly produces a personal-taste signal that could someday become another weight in `show_picks`.
+
+> 🟡 **FOUNDATION SHIPPED** (TODO-231, 2026-07-12) — the A/B player this idea names as its play source now exists in ScreenTapeMatch (synced HTML5 audio, `POST /api/ab_clip`). No play-logging, journal, or coverage map yet.
 
 **4. Ask the Archive (semantic search).** Descriptions, lineage notes, and (post-ASR-spec) transcripts are a text corpus nobody can currently query except by keyword. Embed it and answer questions like "soundboards from 1981 with complete In the Garden" or "which Supper Club show does carbonbit call the keeper?" — results are LB entries with evidence snippets, never generated prose without a citation. Local embedding model, fully offline, fits the app's philosophy.
 
-**5. Show dossier / liner notes export.** One command renders everything the app knows about a date into a beautiful printable page: setlist with rarities flagged, all circulating sources with family tree and pick ranking, taper credit, quality verdict with artifact snippets, historical context from the scraped data. Export as PDF/HTML for archive folders, trades, or forum posts — every dossier shared on WTRF is quiet advertising for the project.
+**5. Show dossier / liner notes export.** ⭐ **HIGH PRIORITY** (2026-07-13, per user). One command renders everything the app knows about a date into a beautiful printable page: setlist with rarities flagged, all circulating sources with family tree and pick ranking, taper credit, quality verdict with artifact snippets, historical context from the scraped data. Export as PDF/HTML for archive folders, trades, or forum posts — every dossier shared on WTRF is quiet advertising for the project.
 
 ---
 
@@ -23,6 +33,9 @@ tapematch hardening work into user-audible payoff, and the arrangement explorer 
 genuinely novel contribution to Dylan scholarship. (Context notes: "§5" in idea 1 refers
 to the patch map in FABLE_LISTENING_INSIGHT_IDEAS.md; "ASR-spec" in idea 4 refers to
 FABLE_TAPEMATCH_LISTENING_SIGNALS.md §3.)
+
+> **Priority override (2026-07-13, per user):** idea 1 (Repair Shop) is ❌ CANCELLED;
+> idea 5 (Show dossier / liner notes export) is now ⭐ **HIGH PRIORITY**.
 
 ---
 
@@ -33,6 +46,8 @@ FABLE_TAPEMATCH_LISTENING_SIGNALS.md §3.)
 **2. Timeline as a first-class navigator.** The archive is fundamentally temporal, but browsing is list-shaped. A zoomable horizontal timeline strip (decades → tours → individual nights), with density/color encoding what you hold and how good it is — dark gap for no circulating tape, warm color for high grades. Click to zoom, land in the Library pre-filtered. It doubles as the natural home for the gap list and tonight-in-history features, and it's the first screen that would make a visitor say "whoa."
 
 **3. Side-by-side entry comparison.** Curators constantly compare two LBs — checksums, lineage, ratings, family membership, quality metrics. A "compare" mode (select two rows → split view with differences highlighted, like a diff) turns that from tab-juggling into one glance. Later it becomes the natural shell around the A/B listening player and the pairwise-similarity score.
+
+> 🟡 **FOUNDATION SHIPPED** (TODO-231, 2026-07-12) — the A/B listening player this idea says it would "later become the natural shell around" is live in ScreenTapeMatch. The metadata compare/diff view itself is not built.
 
 **4. Unified activity center.** The app runs many long jobs — scrapes, scans, master installs, tapematch syncs, future recompute chains — each with its own per-screen SSE progress today. One persistent tray (bottom corner) listing running/queued/finished jobs with progress, elapsed time, and a click-through to the owning screen. Kill the "did that scan finish?" screen-hopping, and every future spec's SSE endpoint plugs into it for free.
 
@@ -47,9 +62,13 @@ screen today; 2 is the showpiece.
 
 **1. `/session-open` — the missing mirror of `/session-close`.** Every session cold-starts by re-deriving state: git status, which TODOs are in flight, where calibration stands, what the last session changed. A skill that greps exactly those places (last CHANGELOG entry, open branch diff summary, CALIBRATION_PROGRESS tail, TODO items tagged in-progress) and emits a ~20-line briefing would save that discovery cost every single session — and it's precisely the kind of token conservation you already optimize for. Close writes the state down; open should read it back.
 
+> ✅ **SHIPPED** — implemented as `.claude/hooks/session_brief.sh`, auto-injected at session start by the SessionStart hook, and re-runnable mid-session via the `/session-open` skill. Emits exactly the briefing described (branch, uncommitted count, last CHANGELOG entry, top TODOs, calibration tail).
+
 **2. CI on GitHub Actions, backed by a checked-in fixture dataset.** The repo is public but nothing verifies it between sessions. Two pieces that reinforce each other: a tiny golden fixture DB (~100 entries, synthetic checksums, a few families) checked into the repo, and an Actions workflow running `py_compile`, backend unit tests against the fixture, and the `/gui-check` pair (tsc + vite build) on every push. Payoffs beyond safety: Claude sessions can trust CI instead of re-running builds locally, cloud agents (ultrareview, remote workers) can actually exercise the backend without your 2.4 GB of data, and the fixture doubles as the onboarding spec's "new person test" environment.
 
 **3. Verification hooks instead of verification steps.** CLAUDE.md tells every session to remember to run `py_compile` and `/gui-check`. Move the cheap half into PostToolUse hooks (the Cloudflare deploy hook is the pattern): any Edit/Write to `*.py` auto-runs `py_compile` on that file; edits under `gui_next/src` set a flag that `/session-close` checks ("gui changed but gui-check never ran"). Rules that enforce themselves don't consume instruction-following attention — which is exactly what's scarce in cheaper models.
+
+> ✅ **SHIPPED** — `.claude/hooks/py_compile_check.sh` auto-runs `py_compile` on every `.py` edit; companion PostToolUse/session hooks (`i18n_reminder.sh`, `changelog_check.sh`, `session_end_check.sh`) enforce the other self-checks. CLAUDE.md now points at these instead of asking sessions to remember them.
 
 **4. Commit checkpoints, not session-sized diffs.** 2026-07-06 git status showed ~40 modified files uncommitted on `concert-ranker` — one bad `git checkout` or disk hiccup from losing weeks of distinct changes, and impossible for `/code-review` to review meaningfully. Two habit changes: `/session-close` ends with a commit (it already writes the CHANGELOG entry that *is* the commit message), and each spec-implementation stream gets its own branch/worktree so parallel sessions can't tangle. Smaller commits also make `git bisect` usable when a regression surfaces three sessions later.
 
