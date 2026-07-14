@@ -7,14 +7,6 @@ Description: Intermittent native crash (not a Python exception/traceback — pro
 Root cause: Unknown
 Fix: —
 
-BUG-248: tests/test_geocoder.py: 13 stale TODO-220/221-era tests fail on main
-Status: Open
-File(s): tests/test_geocoder.py
-Reported: 2026-07-11
-Description: Found during TODO-224 (2026-07-11), stash-verified pre-existing: 13 of 52 tests fail on unmodified main. Two causes from the TODO-220/221 session (which changed geocoder.py without updating these fixtures): (a) three _get_*_location_string tests compare the new (full, city_only) tuple return against a bare string; (b) TestRunBatch fixtures never insert bobdylan_shows/setlistfm_shows rows, so the TODO-221 concert-eligibility filter now correctly marks their locations skipped_not_concert before Nominatim is reached. Fix = update fixtures/assertions to the current contracts, no production code change expected. The 12 TODO-224 tests added 2026-07-11 all pass and model the current patterns to follow.
-Root cause: Unknown
-Fix: —
-
 BUG-246: Live show_picks wiped — first-init-wins write queue lets derived writers hit a different DB than they read from
 Status: Open
 File(s): backend/db_queue.py:146,concert_ranker/picks.py:353

@@ -1,6 +1,155 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-212: Recording-lens pick/grade/curated badges + combined 'any curated pick' view
+Priority: Low
+Status: Done
+Added: 2026-07-09
+Closed: 2026-07-13
+Description: Deferred from TODO-186's close (2026-07-09, RANKING phase 4): pickRank/absGrade/curated only ride the extended /api/library/performances payload, so the badges/filters shipped on the Performance lens only. The flat Recording lens sources rows from /api/search + /api/collection/prefetch, which carry none of these fields. To surface them there: either extend /api/search's payload or add a client-side merge endpoint (the /api/tapematch/families pattern). Also deferred: a combined 'any curated pick' filter view (TODO-186 listed it; only per-curator views shipped). [2026-07-10: the GET /api/picks?date= item shipped with the tonight-card session (70392d14) — show_picks.concert_date_iso now populated, ISO reconciliation done. Remaining scope is the Recording-lens badges + combined view only.]
+Shipped: backend get_pick_badges() + GET /api/library/badges (flat lb_number->badge map, reuses get_performances loaders); recording lens merges it by lb_number client-side (F4 families/prefetch pattern) and renders star-recommended/curated/absGrade/confirmed-taper badges; perf lens gains combined 'Any curated pick' (curatedAny) view. i18n synced. gui-check PASS.
+
+TODO-187: Concert ranker / project — document LB rating philosophy and artifact taxonomy
+Priority: Low
+Status: Done
+Added: 2026-06-25
+Closed: 2026-07-13
+Description: The LB site's two "what the information means" pages define the authoritative
+  semantics behind the rating scale and the controlled vocabulary used in recording descriptions.
+  This knowledge should be captured in a project document so it informs future feature
+  development, calibration decisions, and new contributor onboarding — rather than living only
+  in the source HTML of a page with a self-signed certificate and cp1252 encoding.
+
+  Sources:
+    - http://www.losslessbob.wonderingwhattochoose.com/LosslessBob-what.html
+    - http://www.losslessbob.wonderingwhattochoose.com/LosslessBob-what-images.html
+
+  Content to document:
+    1. Rating scale semantics (from what.html):
+         A+ / 5 = outstanding — casual Bob fans can enjoy
+         A / A- / 4 = excellent — casual fans can enjoy
+         B+/B/B- / 3 = very good — "a little more into Bob" needed
+         C+/C/C- / 2 = average/good — serious devotees only
+         D+/D/D- / 1 = poor — completionists only; "probably listened to once"
+         F / 0 = very poor — completionists only
+       These map exactly to RATING_RANK in `concert_ranker/calibrate.py:27`.
+    2. Comparison methodology (from what.html): 15–30s sample from a quiet vocal passage,
+       levels matched, bias toward warmer/less harsh sound; binaural > cardioid; wider capture
+       > narrower. Most remasters that fiddle with tone add harshness; clipping / midrange boost
+       = bad; vocal peaks clipping = especially penalised.
+    3. Rating subjectivity caveats: can drift ±1 letter tier across sessions; more likely to
+       move down by one tier than up; up moves ≤ 1 sublevel. Not all recordings have letter
+       ratings (older ones may only have numeric 0–5).
+    4. Audience annoyance policy: brief/resolved talking/singing not cited; noted when
+       persistent enough to be annoying.
+    5. Full artifact taxonomy (from what-images page) — all 17 named artifact types with their
+       spectral/waveform signatures and quality implications (DAT, cassette, mini-disc "lego
+       parapets", floating parapets, 32k DAT, digital clipping, limiting, brickwalling,
+       compression, digi-pops, discontinuity pop, square wav static, digital drops, between-track
+       gap, mic hit, TV band, high-end streaking).
+    6. EAC match note: "exact eac match" or "close eac match" in description = recording is a
+       CDR rip of a prior version, offers nothing new. The ranker could use txt_eac_match as a
+       strong negative feature (see [[TODO-188]]).
+
+  The document should also include the 22 reference image filenames and what each depicts,
+  since the images add visual precision the text alone doesn't convey:
+    lb_dat_spectral_view.JPG — full-spectrum DAT benchmark (reference "good" state)
+    lb_cassette.JPG — dense HF noise above 18k, fuzzy grain vs. clean DAT
+    lb_parapet.JPG — continuous alternating step ceiling at 15-17k (mini-disc staircase)
+    lb_floating_parapet.JPG — scattered rectangular islands at irregular intervals (MP3/streaming)
+    lb_dat_at_32k.JPG — perfectly clean wall at 16kHz, completely black above (most distinctive)
+    lb_clipping.JPG — flat-topped peaks at 0dB
+    lb_limiting.JPG, lb_limiting2.JPG — rounded/plateaued peaks, two asymmetry examples
+    lb_brickwall.JPG/.2/.3 — diagonal/curved lines filling the VALLEYS BETWEEN peaks
+    lb_heavily_compressed.JPG — solid rectangle waveform at full-track zoom (no dynamics)
+    lb_heavily_compressed_before.JPG — natural dynamic range on same track pre-compression
+    lb_digipops.JPG — isolated narrow high-amplitude spikes above quiet music
+    lb_discontinuity.JPG — abrupt step-change in signal level (not silence, a DC jump)
+    lb_square_wav_static.JPG — repeating rectangular/square waveform shapes (DAT error)
+    lb_drops.JPG — multiple multi-second silence segments through a track
+    lb_gap.JPG — abrupt step in noise floor level at a precise timestamp (sector boundary)
+    lb_mic_hit.JPG — single-channel only spike (other channel flat); distinguishes from digipop
+    lb_tv_band.JPG — thin horizontal stripe at 15-16k pulsing in brightness over time
+    lb_high_end_streaking.JPG — chaotic vertical noise above 15k during loud passages
+    lb_high_end_streaking_done_right.JPG — same track, clean professional transfer (no streaks)
+  Images are from http://www.losslessbob.wonderingwhattochoose.com/lbjpg/ and were downloaded
+  2026-06-25 (the site uses self-signed HTTPS and cp1252 encoding; curl -sk required).
+  Suggested location: `concert_ranker/LB_KNOWLEDGE.md` (new file). Keep it factual/reference,
+  not opinionated — this is the curator's own words, not our interpretation.
+  Relates to: [[TODO-188]] (text features use this vocabulary), [[TODO-189]], [[TODO-190]], [[TODO-191]].
+Verified complete: concert_ranker/LB_KNOWLEDGE.md diffed 1:1 against both live LosslessBob 'what-it-means' source pages (rating scale, comparison methodology, EAC convention, notes policy, all 17 artifact terms / 22 reference images). Doc already existed and needed no edits; local cache (2 HTML + 22 JPGs) present.
+
+TODO-225: Setlist fingerprinting — identify entries with garbage/'various' metadata via Olof setlist match
+Priority: Medium
+Status: Done
+Added: 2026-07-10
+Closed: 2026-07-13
+Description: Depends on TODO-162 Olof scraper P3 (olof_songs). PURPOSE: date/show identification for entries whose location/date metadata is unusable ('various', 'vsrious', '4 rare tracks from 1966', 'various 98-99', empty/xx dates) — NOT bulk re-dating: mislabeled dates are rare in this archive per tj, so this targets the unknown/junk-metadata tail only. METHOD: take an entry's tracklist (folder track titles), normalize titles (cp1252/curly-quote helpers exist), and score against olof_songs setlists per event (set overlap + order similarity, tolerate partial tapes); setlists are near-unique per show, so a strong best-match pins the date -> venue -> geocode pin. OUTPUT: suggestions only — a curator-mode review queue (entry, best-match event, score, matched/missing songs), never auto-applied to entries. Start with entries that have no parseable date or a location in the skipped_not_concert/'various' bucket (TODO-221). Also reusable in tapematch as a cheap same-show discriminator (song-count/encore-structure mismatch = different shows) before audio comparison.
+Shipped 2026-07-13: backend/setlist_fingerprint.py (candidate selection, containment-tolerant title matching reusing db.titles_match, LIS order scoring, wholesale scan with dismissed-status preservation), setlist_fingerprint_suggestions table, 3 curator-gated-on-dismiss /api/fingerprint/* routes, ScreenFingerprint.tsx review queue (Curator nav group), i18n all 5 locales, 10 backend tests. Live full-catalog scan: 408 candidates, 242 matched, 691 suggestions written in ~35s.
+
+TODO-158: Batch forum posting via multi-select or pasted LB list
+Priority: Medium
+Status: Done
+Added: 2026-06-22
+Closed: 2026-07-13
+Description: Forum posting (backend/forum_poster.py:post_lb_topic, UI in
+  gui_next/src/renderer/src/screens/ScreenCollection.tsx) currently posts one LB at a time.
+  Add a batch mode: either multi-select rows in the Collection screen or paste/enter a list
+  of LB numbers, then post_lb_topic for each in sequence (with per-item success/failure
+  reporting) instead of requiring one post action per LB.
+Multi-select batch posting already existed (2026-06-01, cfa19f07); added the missing paste/enter-LB-list input path via new ForumListModal + shared runForumBatch() helper, satisfying the TODO's 'either/or' batch-entry requirement.
+
+TODO-157: Auto-create torrent + add to qBittorrent on forum post when no torrent exists
+Priority: Medium
+Status: Done
+Added: 2026-06-22
+Closed: 2026-07-13
+Description: When posting to the forum for a recording that has no torrent yet, the forum-post
+  flow should automatically generate the torrent (backend/torrent_maker.py) and add it to
+  qBittorrent (backend/qbittorrent.py) as part of a single one-click "post" action in
+  backend/forum_poster.py, instead of requiring the torrent to be created/added manually
+  beforehand.
+Implemented in backend/app.py post_forum: when no torrent record exists (and no torrent_id given), auto-generates one via torrent_maker.make_torrent(lb, my_collection.disk_path) and adds it to qBittorrent via qbittorrent.add_torrent_from_db, reusing the same qbt_host/port/credentials resolution pattern as the existing /api/torrent/*/qbt_add route. Runs after the TODO-159 integrity gate (won't auto-torrent a folder that already failed LBDIR verify). qBittorrent-add failure is reported in the response (qbt_auto_add) but does not block the forum post — the .torrent file itself was still created and can be added manually. Response gains torrent_auto_created/qbt_auto_add when this path fires.
+
+TODO-159: LBDIR verify prior to forum post, to ensure integrity before posting
+Priority: Medium
+Status: Done
+Added: 2026-06-22
+Closed: 2026-07-13
+Description: Before calling post_lb_topic (backend/forum_poster.py), run an LBDIR verify pass
+  (backend/checksum_utils.py:verify_folder, same check used in the Pipeline verify step) on
+  the folder being posted, to confirm the on-disk audio still matches its checksums. Currently
+  nothing blocks a forum post if the folder's integrity has degraded (see BUG-120 for examples
+  of verify-fail folders); add a pre-post integrity gate so a bad/modified recording can't be
+  posted without at least a warning.
+Implemented: POST /api/entry/<lb>/post_forum (backend/app.py) now looks up the entry's my_collection.disk_path and runs checksum_utils.verify_folder() on it before contacting WTRF; blocks with 400 + mismatch/missing counts when status is fail or incomplete (the BUG-120 swapped/re-encoded-audio scenario). No gate when the LB isn't in my_collection (nothing to verify).
+
+TODO-108: Collection tab — fix header UI problems
+Priority: Medium
+Status: Done
+Added: 2026-06-03
+Closed: 2026-07-13
+Description: Investigate and fix UI problems with column headers on the Collection tab.
+  Exact issues to be identified on investigation (misalignment, overflow, sticky behaviour,
+  sort indicators, etc.).
+
+---
+Root bug: gui_next/src/renderer/src/components/table.tsx TH had whiteSpace:nowrap with no overflow/textOverflow, unlike TD — a resized-narrow column's header label spilled unclipped into the next column instead of ellipsizing. Wrapped header content in a clipped inner span (resize-handle hit target untouched). Also found 2 hardcoded English column headers (Type/Notes in ScreenCollection.tsx) skipping i18n; added collection.table.type/.notes keys, translated via DeepL to de/fr/es/it/nl.
+
+TODO-154: New DB field for r#### source info (e.g. r9453)
+Priority: Medium
+Status: Done
+Added: 2026-06-22
+Closed: 2026-07-13
+Description: Add a new database field to capture "r####"-style source info seen in info
+  filenames (e.g. LBF-04929-bd1990-08-16.info.r9453.txt — see
+  data/tapematch/runs/20260616_200028_1990-08-16/analysis_input.md:95). This r#### id is not
+  currently parsed or stored anywhere in backend/db.py or the importer; need to determine
+  which table it belongs on (likely tied to the recording/LB record or a per-file source
+  table) and what the r#### value actually identifies (taper/source catalog id) before
+  implementing.
+Investigated (2026-07-13): grepped data/site/files/ archive-wide — 57/7371 *.info.txt attachments carry a '.r9453.' filename suffix, and ALL 57 share the identical value r9453, spanning dates 1978-2004 with no date/taper correlation. The 57 LB numbers cluster tightly in LB-04856..05215, a single narrow band — meaning the suffix tracks a one-off import/scrape batch (collision-avoidance or session artifact from whatever tool fetched those particular attachments), not a per-recording taper/source catalog id. Since the value never varies, it carries no discriminating signal and isn't worth a DB column. No source elsewhere in the archive uses a different r#### value to compare against. Closing as not-applicable — re-open only if a future scrape run turns up a *different* r#### value that would make the field meaningful.
+
 TODO-231: LISTENING §2 — aligned A/B listening (clip service + player)
 Priority: Medium
 Status: Done

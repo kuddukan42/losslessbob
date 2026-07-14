@@ -1,3 +1,114 @@
+[2026-07-13] — fix(backend): TODO-213 — taper-attribution curation: exclude non-taper credits (lk/captain acid/jtt/robert), rename cb master→cb, downgrade bare mentions vs confirmed tapers
+Context: tj worked the /taper-review conflict queue (68 confirm/reject decisions) and named a
+  repeating pattern — NON-TAPER credits (curators / remasterers / transfer engineers) colliding
+  with real tapers in a family, which the attribution engine surfaced as bogus conflicts and wrong
+  taper-name badges (the specific complaint behind TODO-213).
+Changed: backend/db.py — added `lk` (curator), `captain acid` (remaster), `jtt` (transfer/master
+  engineer, "Mastered to Digital by JTT") to _NOT_TAPER, so they drop out of _TAPER_UNIVERSE and are
+  never seeded as attribution candidates. A mention colliding with a real taper now auto-resolves to
+  the real taper with NO conflict / no curation (e.g. LB-1945: ltd via LB-4396 vs captain acid via
+  LB-4401 → ltd, conflict cleared). Kept them as _KNOWN_TAPER_ALIASES keys so the parser still
+  collapses their spellings to one canonical token. Renamed canonical `cb master`→`cb` (cb is the
+  taper; "master" = a master tape from cb). Removed `robert` from _KNOWN_TAPER_ALIASES entirely —
+  too generic a bare token, it matched songwriter/personnel credits ("Robert Hunter", "Robert
+  Friemark") in setlists (179 of its 198 attributions were false mentions).
+Changed: backend/taper_attribution.py _propagate_strong — mention-downgrade rule. A bare `mention`
+  (Layer 0's sole non-confirmed tier) no longer raises a conflict against a family's single
+  confirmed series-code/explicit taper; per spec §4.2 the strong evidence wins silently and the
+  mention member is flood-filled to the confirmed taper. Genuine strong-vs-strong disagreement
+  (len(confirmed_tapers) >= 2, i.e. series-vs-series) still conflicts as before.
+Data: migrated 185 entry_lineage + 19 taper_confirmations rows (cb master→cb); ran full
+  deterministic taper_attribution.recompute() after each rule. Conflict queue 121 (stale 07-09
+  snapshot; ~191 on a fresh recompute) → 161 (non-taper credits + cb) → 126 (robert) → 53
+  (mention-downgrade). ~1200 spurious attribution rows dropped overall. Remaining 53 = 31
+  genuine mention-vs-mention ambiguities (the real /taper-review queue) + 22 series-vs-series
+  (tapematch family over-merge, for family-split review). DB backed up to
+  data/backups/losslessbob_2026-07-13_221639_pre_todo213_curation.db.
+
+[2026-07-13] — feat(backend+gui): TODO-212 (closes it) — recording-lens pick/curated badges + "any curated pick" view
+Added: backend/db.py get_pick_badges() + GET /api/library/badges — flat
+  {lb_number: {pickRank, absGrade, curated, taperConfirmed, taperReview}} map. Reuses the exact
+  loaders get_performances() uses (so the two lenses can never disagree on a badge); only LBs with
+  a signal appear, absent fields omitted. Empty on a fresh install pre-recompute.
+Changed: gui_next ScreenLibrary.tsx — the recording lens (sourced from /api/search +
+  /api/collection/prefetch, which join none of show_picks/quality/curated_lists/taper_attributions)
+  now fetches /api/library/badges and merges it by lb_number client-side, same F4 pattern it already
+  uses for TapeMatch families/prefetch (SPEC_INTEGRATION_NOTES.md F4). Rows render ★ recommended,
+  curated pills, absGrade (owned), and a confirmed-taper pill that *upgrades* the raw free-text taper
+  pill rather than duplicating it. Perf lens gains a combined "Any curated pick" view (curatedAny)
+  alongside the per-curator carbonbit/10haaf views. Closes the last two deferred items from TODO-186's
+  RANKING phase-4 close.
+i18n: library.views.curatedAny added to en.json + de/fr/es/it/nl (DeepL).
+Docs: TODO-187 verified complete (no code change) — concert_ranker/LB_KNOWLEDGE.md diffed against
+  both live LosslessBob "what-it-means" source pages; all rating/comparison/EAC/notes semantics and
+  17 terms / 22 images covered 1:1.
+
+[2026-07-13] — feat(backend+gui): TODO-225 setlist fingerprinting curator review queue
+Added: backend/setlist_fingerprint.py — scores an entry's folder tracklist against every Olof
+  Björner setlist (olof_songs) to identify shows for entries whose date/location metadata is
+  unusable ('various', empty/xx dates, or a location the TODO-221 geocoder filter parked in
+  skipped_not_concert); candidates only (not bulk re-dating). Scoring blends entry_coverage,
+  order-preservation (longest increasing subsequence of matched positions), and olof_coverage;
+  matching reuses db.normalize_title_for_match/titles_match (containment-tolerant, same rule as
+  compare_olof_setlist). New setlist_fingerprint_suggestions table (USER-tier, wholesale-
+  recomputed per scan, curator dismiss status preserved across rescans). Suggestions only — never
+  auto-applied to entries.
+Added: backend/app.py — POST /api/fingerprint/scan, GET /api/fingerprint/suggestions, POST
+  /api/fingerprint/suggestions/dismiss (curator-gated).
+Added: gui_next/src/renderer/src/screens/ScreenFingerprint.tsx — curator review queue at
+  /fingerprint (Curator nav group): scan button, status filter (pending/dismissed/all),
+  expandable rows showing matched/missing songs, curator-only dismiss. New "fingerprint" Icon,
+  nav entry, i18n across all 5 locales.
+Added: tests/test_setlist_fingerprint.py — 10 tests (candidate selection, scoring/order,
+  scan wholesale-replace + dismissed-status preservation, route + curator gating).
+Changed: backend/db.py — _titles_match renamed to titles_match (public; now shared with
+  setlist_fingerprint.py, not just compare_olof_setlist).
+
+[2026-07-13] — feat(gui): TODO-158 batch forum posting via pasted LB list
+Added: gui_next/src/renderer/src/screens/ScreenCollection.tsx — new "Post from list…" button
+  opens ForumListModal, letting the user paste/type LB numbers (any separator) instead of
+  multi-selecting rows; resolves against the full in-memory collection, shows matched/unmatched
+  counts, then reuses the same preview_forum + post_forum sequence as the existing multi-select
+  batch flow. Extracted the shared per-item post loop into runForumBatch() so the context-menu,
+  toolbar multi-select, and new list-modal paths share one implementation instead of three copies.
+Changed: gui_next/src/renderer/src/locales/en.json — added collection.forumList.* strings;
+  de/fr/es/it/nl synced via /gui-next-i18n (also swept up unrelated pre-existing translation
+  backlog in those five files, ~80-150 strings each, still English before this run).
+
+[2026-07-13] — feat(backend): TODO-157 auto-create torrent + qBittorrent add on forum post
+Added: backend/app.py post_forum — when no torrents record exists for the entry (and no
+  torrent_id given), generates one via torrent_maker.make_torrent(lb, my_collection.disk_path)
+  and adds it to qBittorrent via qbittorrent.add_torrent_from_db, reusing the same
+  qbt_host/port/credential resolution as the existing qbt_add route. Runs after the TODO-159
+  integrity gate, so a folder that already failed LBDIR verify is never auto-torrented/seeded.
+  qBittorrent-add failure is reported (qbt_auto_add in the response) but doesn't block the
+  forum post — the .torrent file was still created and can be added manually. Response gains
+  torrent_auto_created/qbt_auto_add fields when this path fires.
+
+[2026-07-13] — fix(backend): TODO-159 LBDIR verify gate before forum posting
+Added: backend/app.py post_forum — before contacting WTRF, resolves the entry's
+  my_collection.disk_path and runs checksum_utils.verify_folder() on it; blocks the post with a
+  400 (mismatch/missing counts included) when status is fail or incomplete, so a folder whose
+  audio no longer matches its stored checksums (BUG-120) can't be posted undetected. No-op when
+  the LB isn't in my_collection.
+
+[2026-07-13] — fix(gui): TODO-108 Collection tab header text overflow + missing i18n
+Fixed: gui_next/src/renderer/src/components/table.tsx TH — headers had whiteSpace:nowrap but no
+  overflow/textOverflow (unlike TD), so a header label wider than its resized column spilled
+  unclipped into the next column instead of ellipsizing. Wrapped header content in a clipped
+  inner span; resize-handle hit target unaffected.
+Changed: gui_next/src/renderer/src/screens/ScreenCollection.tsx — "Type"/"Notes" column headers
+  were hardcoded English, skipping i18n; now use t('collection.table.type'/'notes').
+i18n: de/fr/es/it/nl synced via DeepL for the two new collection.table keys.
+
+[2026-07-13] — docs: TODO-154 closed — r#### filename suffix is not per-recording source info
+Investigated: grepped data/site/files/ archive-wide — only 57/7371 *.info.txt attachments carry
+  a ".r####." filename suffix, and all 57 share the identical value r9453 across dates 1978-2004
+  with no date/taper correlation; the 57 LB numbers cluster tightly in LB-04856..05215 (one
+  import/scrape batch). The suffix is a session/collision-avoidance artifact of that batch, not
+  a per-recording taper/source catalog id — a DB column would store a constant, not a signal.
+  Closed as not-applicable.
+
 [2026-07-12] — fix(gui): TODO-231 A/B player had no audio — missing CSP media-src directive
 Fixed: gui_next/src/renderer/index.html — the Content-Security-Policy meta tag whitelisted
   http://127.0.0.1:5174 for connect-src/img-src/frame-src but had no media-src directive, so it
