@@ -5004,14 +5004,22 @@ def create_app() -> Flask:
             confidence: restrict to 'confirmed' / 'propagated' / 'inferred'.
             taper: restrict to one taper (raw or canonical; normalised here).
             conflict: '1' (or 'true') restricts to conflict=1 rows only.
+            kind: sub-classify conflicts — 'mention' drops series-vs-series
+                (the /taper-review hand queue), 'series' keeps only them
+                (TODO-234 family-split leads).
         """
         try:
             conflict_arg = request.args.get("conflict")
             conflict = conflict_arg.lower() in ("1", "true") if conflict_arg else None
+            kind_arg = (request.args.get("kind") or "").lower() or None
+            if kind_arg not in (None, "mention", "series"):
+                return jsonify({"error": "bad_request",
+                                "message": "kind must be 'mention' or 'series'"}), 400
             rows = _taper_attribution.list_attributions(
                 confidence=request.args.get("confidence") or None,
                 taper=request.args.get("taper") or None,
                 conflict=conflict,
+                conflict_kind=kind_arg,
             )
             return jsonify({"attributions": rows})
         except Exception as exc:
@@ -5065,6 +5073,25 @@ def create_app() -> Flask:
             return jsonify({"error": "bad_request", "message": str(exc)}), 400
         except Exception as exc:
             _log.exception("taper_attribution_reject failed for LB-%s", lb)
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
+    @app.route("/api/tapers/attributions/<int:lb>/unresolved", methods=["POST"])
+    def taper_attribution_unresolved(lb: int) -> Response:
+        """Curator-only. Mark this LB's taper conflict as undecidable.
+
+        For a genuine historical conflict (the same recording documented with
+        two different tapers, no ground truth to pick), records a sticky
+        'unresolved' decision in taper_confirmations and drops the current
+        taper_attributions row — the entry leaves the review queue and shows no
+        taper, rather than a guessed one. Reversible via a later confirm/reject.
+        """
+        if not database.is_curator():
+            return jsonify({"error": "curator_required"}), 403
+        try:
+            row = _taper_attribution.mark_unresolved(lb)
+            return jsonify({"lb_number": lb, "attribution": row})
+        except Exception as exc:
+            _log.exception("taper_attribution_unresolved failed for LB-%s", lb)
             return jsonify({"error": "internal_error", "message": str(exc)}), 500
 
     @app.route("/api/tapematch/families", methods=["GET"])

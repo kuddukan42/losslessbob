@@ -1,3 +1,85 @@
+[2026-07-14] — feat(backend): TODO-213 taper conflict queue — 'kind' filter + "can't determine" verdict; mention queue cleared
+Context: the /taper-review conflict queue held 53 conflict=1 rows, but 22 are series-vs-series
+  (two legitimate taper series on one over-merged recording_families family) — un-pickable in the
+  hand queue and owned by TODO-234 (family split), while polluting the review flow. The other 31
+  are mention-vs-mention. Separately, a genuine same-family two-taper conflict is a historical
+  documentation error with no ground truth, so confirm (fabricates a pill) and reject (implicitly
+  picks the sibling on recompute) are both dishonest — the queue had no way to say "attribute
+  nothing" and move on. All 53 conflict rows were tier 'propagated' (no pill), so nothing was
+  mis-badged; the cost was pure queue-gating.
+Added: backend/taper_attribution.py — `_is_series_vs_series()` (reuses `_SERIES_CODE_RE` +
+  `_CONFLICT_CAND_RE` to classify a conflict as all-series-code candidates) and a `conflict_kind`
+  arg on `list_attributions()` ('mention' excludes series-vs-series, 'series' keeps only them).
+  New `mark_unresolved(lb)` curator API (mirrors `reject()`): upserts a sticky `taper_confirmations`
+  'unresolved' row + deletes the `taper_attributions` row immediately. `_apply_unresolved()` drops
+  every taper for an unresolved lb during recompute (vs reject's single-taper suppression);
+  `_apply_confirmations()` now returns `(rejects, unresolved)` and recompute re-applies both after
+  propagation. Idempotent + sticky (verified: full recompute keeps 31 parked, 0 attribution rows,
+  22 conflicts remain).
+Added: backend/app.py — `POST /api/tapers/attributions/<lb>/unresolved` (curator-gated); `kind=`
+  param on the attributions list route (validated, 400 on bad value).
+Changed: backend/taper_review.html — queue fetches `conflict=1&kind=mention` (series-vs-series no
+  longer shown); new "Can't determine (historical conflict)" button → `/unresolved`; done-state
+  explains the series exclusion points to TODO-234.
+Data: bulk-parked the 31 mention-vs-mention conflicts as 'unresolved' via the live endpoint after
+  a DB backup (data/backups/…_pre_unresolved_bulk.db) — /taper-review hand queue now empty; 22
+  series-vs-series remain for TODO-234. taper_confirmations ledger: 58 confirm / 10 reject / 31
+  unresolved.
+Verified: 25 taper-attribution tests pass; apply-logic unit test (unresolved suppresses all tapers,
+  reject/confirm unaffected); live endpoint checks (kind=mention→0, kind=series→22, bad kind→400).
+
+[2026-07-14] — feat(backend+gui): TODO-232 part 2 (CLOSES TODO-232) — A/B auto-pick start point (quiet vocal passage) + GUI prefill
+Context: TODO-231/232 A/B listening defaulted the start field to 0 s (start of performance). The LB
+  curator method (TODO-187) is to A/B on a musically quiet passage where a vocal is still clearly
+  present. With part 1 (RMS match) already shipped this session, this closes TODO-232.
+Added: backend/ab_clips.py — pick_start_frame() (pure, audio-free scorer over a concert_ranker
+  TrackCache: per-frame 1-4 kHz vocal band from stft_mag vs its 20th-pct floor, minus 0.5x the
+  broadband-energy excess, so a quiet-but-vocal window wins over both silence and loud
+  instrumentation); _decode_mono_region() (ffmpeg f32le decode-to-memory, mirrors embed_extract);
+  auto_pick_t_sec() decodes a bounded perf-time search region (skip 60 s head/tail, cap 300 s so a
+  2 h show is never fully decoded), builds the TrackCache @22050, scores it, and maps the winning
+  window back to perf time (region_start + picked/factor). Blanket-safe: any decode/analysis
+  failure logs + returns a fallback t, never blocks a clip request. _resolve_auto_t_sec() analyzes
+  the pair's reference source (else lb_a). generate_ab_clips() now takes t_sec: float|None and
+  auto-picks when omitted (after the eligibility/recency gates, before the perf-bound check),
+  returning the resolved t_sec.
+Changed: backend/app.py — POST /api/ab_clip: t_sec is now optional (dropped from missing_fields;
+  still 400 bad_t_sec on an unparseable value); omitted -> backend auto-picks. Docstrings updated.
+Changed: gui_next ScreenTapeMatch.tsx (AbPlayerPanel) — start field defaults blank ("auto"); blank
+  omits t_sec from the POST so the backend auto-picks, and the response's t_sec pre-fills the field
+  so the curator can override + reload. New i18n keys tapematch.abPlayer.autoPlaceholder/
+  autoPickHint (en + de/fr/es/it/nl via DeepL).
+Verified: 37 ab_clips tests pass (4 new: pick_start_frame scorer, None-underflow, generate+route
+  omitted-t_sec); real-ffmpeg end-to-end confirms auto-pick lands in a planted quiet-vocal region
+  and the factor!=1 perf-time mapping; gui-check (node/renderer types + build) PASS.
+
+[2026-07-14] — feat(backend): TODO-233 part 1 + TODO-232 part 1 — A/B listening: constant-speed-offset eligibility (resampled to reference speed) + RMS level-match
+Context: only ~1/3 of sources qualified for A/B listening (reference/aligned only), so most
+  ScreenTapeMatch pairs showed "Not cleanly aligned for A/B listening yet". constant-speed-offset
+  is the single largest speed bucket (1,854 sources) and its perf->source map is fully derivable
+  from the sources table (rate = 1 + speed_ppm/1e6, offset = trim_head_sec) — no run-archive
+  parsing needed. speed_ppm confirmed fully populated for those rows; run_id is a sortable
+  YYYYMMDD_HHMMSS so the stale-label recency gate is directly expressible.
+Added: backend/ab_clips.py — constant-speed-offset added to ELIGIBLE_SPEED_KINDS; speed_factor()/
+  raw_take_sec() and a factor arg on source_offset() generalise the perf->source map to
+  `trim_head + t*factor` (mirrors embed_extract.py's nominal-time convention); build_clip() now
+  extracts the raw dur*factor span, then _finalize_clip() speed-corrects it back to reference via
+  `asetrate=44100*factor,aresample=44100` (only above RESAMPLE_MIN_ABS_PPM=50; reference/aligned
+  keep the v1 straight cut). RMS level-match (TODO-232 pt1): _measure_rms_dbfs (ffmpeg
+  volumedetect) + compute_gain_db normalise every clip to AB_RMS_TARGET_DBFS=-20 with a
+  no-clip peak ceiling and a 30 dB max-gain cap. Stale-label recency gate (TODO-233):
+  is_run_eligible() rejects speed labels from runs before the 2026-07-06 confidence tightening
+  (commit 936e0a64); enforced in generate_ab_clips (409 not_eligible w/ run_id) and mirrored in
+  the GET /api/tapematch/pairs ab_eligible enrichment so badges agree with POST. cache_filename
+  now keys on speed_ppm too. get_source_info/get_pair_source_info select speed_ppm (PRAGMA-guarded
+  for legacy DBs missing the column).
+Changed: backend/app.py — ab_eligible enrichment adds is_run_eligible gate; POST /api/ab_clip
+  docstring updated for the new eligibility tiers.
+Verified: 33 ab_clips + 24 tapematch-route tests pass; real-ffmpeg smoke test confirms a 21 s
+  raw clip at factor 1.05 finalises to 20.000 s at the -20 dBFS target under the peak ceiling.
+Remaining: TODO-233 pts 2/3 (staircase/splice per-segment offsets; speed-unknown) and TODO-232
+  pt2 (auto-pick quiet-vocal start point) stay open.
+
 [2026-07-13] — fix(backend): TODO-213 — taper-attribution curation: exclude non-taper credits (lk/captain acid/jtt/robert), rename cb master→cb, downgrade bare mentions vs confirmed tapers
 Context: tj worked the /taper-review conflict queue (68 confirm/reject decisions) and named a
   repeating pattern — NON-TAPER credits (curators / remasterers / transfer engineers) colliding

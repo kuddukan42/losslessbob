@@ -144,6 +144,7 @@
     .btn-success { background: var(--success); color: #fff; }
     .btn-danger  { background: var(--danger);  color: #fff; }
     .btn-ghost   { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+    .btn-warn    { background: #b8860b; color: #fff; }
     .btn-wide    { width: 100%; }
 
     .custom-row { display: flex; gap: 8px; }
@@ -257,7 +258,9 @@
 
   async function loadQueue() {
     try {
-      const data = await api('GET', '/api/tapers/attributions?conflict=1');
+      // 'mention' drops series-vs-series conflicts: two legitimate tapers on one
+      // over-merged family (TODO-234), unresolvable by confirm/reject here.
+      const data = await api('GET', '/api/tapers/attributions?conflict=1&kind=mention');
       queue = data.attributions || [];
       total = Math.max(total, queue.length + doneThisSession);
       updateProgress();
@@ -271,7 +274,10 @@
   async function renderCurrent() {
     const el = document.getElementById('content');
     if (!queue.length) {
-      el.innerHTML = '<div class="empty">🎉 No taper conflicts left to review.</div>';
+      el.innerHTML = '<div class="empty">🎉 No taper conflicts left to review.' +
+        '<br><small>Series-vs-series conflicts (two real tapers on one over-merged ' +
+        'family) are excluded here — they are a TapeMatch family-split task (TODO-234).' +
+        '</small></div>';
       return;
     }
     const row = queue[0];
@@ -322,6 +328,7 @@
         <div class="footer-row">
           <button class="btn btn-danger btn-wide" onclick="doReject(${lb})">✕ Reject / no taper</button>
         </div>
+        <button class="btn btn-warn btn-wide" onclick="doUnresolved(${lb})" title="Same recording, two documented tapers, no way to know which is right — attribute nothing and stop asking.">? Can't determine (historical conflict)</button>
         <button class="btn btn-ghost btn-wide" onclick="doSkip()">Skip for now</button>
       </div>
     `;
@@ -356,6 +363,19 @@
       afterDecision();
     } catch (e) {
       toast('Reject failed: ' + e.message, 'error');
+    }
+  }
+
+  async function doUnresolved(lb) {
+    // Historical conflict with no ground truth: park it as undecidable. Suppresses
+    // any taper for this lb (no pill) and drops it from the queue for good, unlike
+    // 'Skip for now' (local-only) or 'Reject' (suppresses only one taper).
+    try {
+      await api('POST', '/api/tapers/attributions/' + lb + '/unresolved', {});
+      toast('LB-' + lb + " parked — can't determine", 'success');
+      afterDecision();
+    } catch (e) {
+      toast("Can't-determine failed: " + e.message, 'error');
     }
   }
 

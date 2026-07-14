@@ -1,6 +1,16 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-232: LISTENING §2 follow-up — auto-pick A/B clip start point (quiet vocal passage) + RMS level matching
+Priority: Medium
+Status: Done
+Added: 2026-07-13
+Closed: 2026-07-14
+Description: TODO-231 v1 shipped with manual t_sec only (GUI defaults to 0s = start of performance time). Original spec (instructions/complete/FABLE_LISTENING_INSIGHT_IDEAS.md §2) called for auto-picking t when not given, per the LB curator method (TODO-187): a 15-30s quiet vocal passage. Method: decode one side of the pair via the ranker ffmpeg path (concert_ranker/audio/io.py), build a TrackCache (concert_ranker/audio/cache.py — per-frame STFT, frame_energy_db, quiet-frame mask); score candidate ~20s windows where broadband energy is low (musically quiet) but vocal/speech-band (1-4 kHz) level sits well above the mid-band crowd floor (cf. extract_clarity/extract_crowd in concert_ranker/features.py); skip first/last ~60s (tuning/applause); return best window's performance-time t. Backend: POST /api/ab_clip accepts omitted t_sec and auto-picks; GUI start field pre-fills with the picked value so the user can still override. Also from spec, not shipped in v1: RMS level-match the two clips before serving.
+  DONE 2026-07-14 — RMS level-match: every served clip is normalised to AB_RMS_TARGET_DBFS=-20 (ab_clips._measure_rms_dbfs via ffmpeg volumedetect + compute_gain_db) with a no-clip peak ceiling and a 30 dB max-gain cap; independent-to-fixed-target so single-clip caching stays pair-independent.
+  REMAINING — auto-pick start point (quiet-vocal-passage detection via concert_ranker decode/STFT + GUI start-field pre-fill). This is the larger half and pulls in the ranker audio pipeline.
+DONE 2026-07-14. Part 1 (RMS level-match) + Part 2 (auto-pick quiet-vocal start point via concert_ranker TrackCache scoring + GUI blank-means-auto prefill) both shipped. Backend: ab_clips.pick_start_frame/auto_pick_t_sec/_resolve_auto_t_sec; POST /api/ab_clip t_sec now optional. GUI: AbPlayerPanel auto placeholder + response prefill. 37 tests + real-ffmpeg smoke + gui-check green.
+
 TODO-212: Recording-lens pick/grade/curated badges + combined 'any curated pick' view
 Priority: Low
 Status: Done
