@@ -1,4 +1,37 @@
-[2026-07-14] — feat(backend): TODO-222 (CLOSED) — setlist.fm city coords + bounded venue search in the geocoder cascade
+[2026-07-14] — feat(backend): TODO-228 (CLOSED) — bobserve.com setlist scraper supersedes the PDF-chronicle approach for 2022+ shows
+Context: TODO-228 assumed the 2013+ Yearly Chronicle PDFs just needed text extraction to feed the
+  existing chronicle-appendix setlist parser. Extracting real 2022/2023 chronicle PDFs directly
+  found they carry NO per-show setlists at all — a calendar diary + a bare tour-itinerary table
+  (date/city/venue only). bobserve.com's own current site instead publishes a full setlist
+  database, one page per show at /setlist?event=<id>, with real per-song setlists (incl. cover
+  credits), confirmed against real 2022 (Oslo) and 2023 (NYC) pages. That's the actual 2022+
+  source; the PDF-itinerary path was not built.
+Added: backend/bobserve_fetcher.py — two-step mirror: bobserve.com/eventsperiod?period=<year>
+  lists every show's event id chronologically (ids themselves are NOT chronologically assigned,
+  confirmed: id 4000 -> a 2004 show, id 3950 -> a 2014 show, so the index page is the only
+  reliable id-discovery path), then each event page is fetched once into
+  data/olof/bobserve_pages/, registered in the shared olof_pages table (corpus='bobserve').
+  Reuses backend.olof_fetcher's browser-UA/retry/rate-limit helpers.
+  backend/bobserve_parser.py — extracts each page's `data-clipboard-text` attribute (a clean,
+  pre-formatted plain-text show summary bobserve renders for its own copy button) rather than
+  the surrounding Tailwind markup; parses date/venue/city/region/country/event_type/songs/
+  tour_name/musicians into olof_events (source='bobserve', event_id = 9,000,000 + bobserve's own
+  id — a disjoint range from DSN's ~440620 max and chronicle_appendix's year*1000+seq) and
+  olof_songs, reusing EventRecord/SongRecord/_split_city_region_country/_split_title_credits
+  from olof_parser. A medley entry wraps its second song onto an unnumbered continuation line
+  (confirmed: event 4801, '8.Medley To Be Alone With You' / 'Watching The River Flow' with no
+  leading number) — folded into the preceding song's title with ' / ' rather than silently
+  dropping the whole show's setlist, which the first pass at the song-block detector did.
+Data: full crawl of 2022-2026 (391 pages, 0 fetch errors) -> 391 olof_events / 6137 olof_songs,
+  source='bobserve'. 373 pages parsed clean; the 18 partial are all legitimate (15 are
+  not-yet-played 2026 shows with no setlist posted yet, 3 are non-dated entries like a tribute
+  video/rehearsal/speech). /api/olof/date, /api/olof/event, and the setlist-fingerprint scan
+  (TODO-225) all query olof_events/olof_songs unfiltered by source, so 2022+ shows surface
+  through the existing GUI/matching paths with no further wiring.
+Docs: PROJECT.md — documents the three disjoint event_id ranges and marks the chronicle-appendix
+  setlist path (source='chronicle_appendix') as superseded/never populated for its stated reason.
+
+
 Added: backend/setlistfm.py + backend/db.py — setlistfm_shows gains city_lat/city_lon/city_state
   columns (PRAGMA table_info migration guard), populated from the setlist.fm API's
   venue.city.coords/stateCode at scrape time — a zero-geocoding, guaranteed city-level coordinate.

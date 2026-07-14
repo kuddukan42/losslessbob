@@ -1,6 +1,26 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-228: Olof 2022+ chronicles are PDF-only — fetch + extract appendix setlists from PDFs
+Priority: Medium
+Status: Done
+Added: 2026-07-10
+Closed: 2026-07-14
+Description: P4 finding: bobserve.com publishes 2013+ Yearly Chronicles as PDF only (except 2016 HTML) — chronologies.htm links '2022 Philosopher Pirate.pdf' … '2025 …pdf'. olof_fetcher mirrors HTML only, so the P4 appendix path (2022+ setlists -> olof_events/olof_songs synthetic IDs, backend/olof_chronicle_parser.py) is dormant: 0 synthetic events. Needed to extend setlist coverage past DSN's 2021 cutoff (spec §2.3/§6 P4; feeds TODO-224/225 for recent shows). Scope: fetch chronicle PDFs into the mirror + PDF text extraction feeding the existing appendix parser; also revisit _is_show_para false-positive risk on full-page scans when real 2022+ content arrives.
+Shipped 2026-07-14: the PDF premise didn't hold — extracting real 2022/2023 chronicle PDFs found
+  no per-show setlists at all (a calendar diary + a bare tour-itinerary table only). bobserve.com's
+  own current site instead publishes a full setlist database, one page per show at
+  /setlist?event=<id>, with real per-song setlists incl. cover credits, confirmed against real
+  2022 (Oslo) and 2023 (NYC) pages. Built backend/bobserve_fetcher.py (eventsperiod?period=<year>
+  index -> per-event page mirror; event ids are NOT chronologically assigned so the index is the
+  only reliable discovery path) + backend/bobserve_parser.py (parses each page's
+  data-clipboard-text blob into olof_events/olof_songs, source='bobserve', event_id =
+  9,000,000 + bobserve's own id). Full crawl 2022-2026: 391 pages, 0 fetch errors -> 391 events /
+  6137 songs; 373 pages clean, 18 partial all legitimate (15 not-yet-played 2026 shows, 3 non-dated
+  entries). The chronicle-appendix path (source='chronicle_appendix') stays superseded/dormant for
+  its documented reason. Feeds TODO-224/225 with no further wiring (existing /api/olof/date,
+  /api/olof/event, and the fingerprint scan query olof_events/olof_songs unfiltered by source).
+
 TODO-222: Better venue coordinates — capture setlist.fm city coords + bounded Nominatim venue search
 Priority: Medium
 Status: Done

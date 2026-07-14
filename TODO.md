@@ -25,12 +25,6 @@ Description: Only ~1/3 of sources qualify for aligned A/B listening (TODO-231 v1
   DONE 2026-07-14 — part (1) constant-speed-offset: served from the sources table alone (rate = 1 + speed_ppm/1e6, offset = trim_head_sec — no run-archive parsing). ab_clips.speed_factor()/raw_take_sec() + a factor arg on source_offset() generalise the map to `trim_head + t*factor`; _finalize_clip() speed-corrects the raw span to reference via asetrate/aresample (only above 50 ppm). Stale-label asymmetry resolved via is_run_eligible() — only runs >= 2026-07-06 (post-936e0a64) count, enforced in generate_ab_clips (409) and the pairs ab_eligible enrichment.
   REMAINING — part (2) staircase/splice: BLOCKED on [TODO-235] (per-segment lag curves are not persisted — investigated 2026-07-14); part (3) speed-unknown (out of scope, no time mapping exists).
 
-TODO-228: Olof 2022+ chronicles are PDF-only — fetch + extract appendix setlists from PDFs
-Priority: Medium
-Status: Open
-Added: 2026-07-10
-Description: P4 finding: bobserve.com publishes 2013+ Yearly Chronicles as PDF only (except 2016 HTML) — chronologies.htm links '2022 Philosopher Pirate.pdf' … '2025 …pdf'. olof_fetcher mirrors HTML only, so the P4 appendix path (2022+ setlists -> olof_events/olof_songs synthetic IDs, backend/olof_chronicle_parser.py) is dormant: 0 synthetic events. Needed to extend setlist coverage past DSN's 2021 cutoff (spec §2.3/§6 P4; feeds TODO-224/225 for recent shows). Scope: fetch chronicle PDFs into the mirror + PDF text extraction feeding the existing appendix parser; also revisit _is_show_para false-positive risk on full-page scans when real 2022+ content arrives.
-
 TODO-226: Surface BobTalk + Olof narrative in GUI (search, show pages) and add Olof/bobserve.com credits to About screen
 Priority: Medium
 Status: Open
