@@ -84,7 +84,8 @@ losslessbob/
 │   ├── torrent_maker.py      # torf-based .torrent generation; tracker CDN fetch
 │   ├── qbittorrent.py        # qBittorrent WebUI API v2 integration
 │   ├── forum_poster.py       # SMF 2.x WTRF forum topic posting
-│   └── geocoder.py           # Nominatim geocoder: geocode_one, place_manual, run_batch, get_progress
+│   ├── geocoder.py           # Nominatim geocoder: geocode_one, place_manual, run_batch, get_progress
+│   └── venue_gazetteer.py    # TODO-223: venue_geocoded seed + resolution ladder (bounded Nominatim → Wikidata P625 → city anchor)
 ├── concert_ranker/           # Audio quality scoring + ranking (TODO-183). Run: python -m concert_ranker.cli
 │   ├── config.py             # All thresholds/weights/bands (# CALIBRATE markers), externalized
 │   ├── features.py           # DSP feature extractors: clarity/crowd/tonal/distortion/spatial/hf_native
@@ -737,6 +738,26 @@ master/sitedata export tier is a P5 decision.
 
 Index: `idx_geo_source ON location_geocoded(source)`.
 Populated by `backend/geocoder.py:run_batch()` or `place_manual()`. Included in master-data export/import (`MASTER_TABLES`).
+
+### `venue_geocoded` — Venue-level gazetteer (TODO-223, in progress)
+One coordinate per DISTINCT `(venue, city)` so a venue is solved once and every
+date at it inherits the pin; keyed by normalized `(venue_norm, city_norm)`.
+| Column | Type | Notes |
+|--------|------|-------|
+| venue_norm | TEXT | PK part 1 — casefold + punctuation-stripped venue |
+| city_norm | TEXT | PK part 2 — casefold + first-comma-segment of city (drops embedded state/country so source variants collapse) |
+| venue / city / region / country | TEXT | Display fields from the richest seeding source |
+| lat / lon | REAL | WGS-84 coordinate (NULL until resolved) |
+| source | TEXT NOT NULL | `'seeded'` (unresolved) / `'bounded_venue'` / `'wikidata'` / `'setlistfm_city'` / `'city_geocode'` (Nominatim city anchor — used while setlist.fm city coords are NULL) / `'manual'` / `'failed'` |
+| confidence | TEXT | `'high'` / `'medium'` / `'city'` / `'none'` / NULL |
+| manual_override | INTEGER | 1 = curator-placed; seed/resolve never overwrite |
+| note / geocoded_at | TEXT / TIMESTAMP | Optional note; last write time |
+
+Index: `idx_venue_geo_source ON venue_geocoded(source)`. Seeded by
+`backend/venue_gazetteer.py:seed_venues()` from concert venues in
+`olof_events`/`setlistfm_shows`/`bobdylan_shows`; resolved by `resolve_venues()`
+(bounded Nominatim → Wikidata P625 → city-anchor fallback). Bite 3 (geocoder
+`run_batch` inheritance + `place_manual` propagation) is pending.
 
 ### `meta` — Key-value configuration store
 Persists settings between runs. Key examples:
