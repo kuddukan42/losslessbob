@@ -589,7 +589,10 @@ CREATE TABLE IF NOT EXISTS setlistfm_shows (
     city           TEXT NOT NULL DEFAULT '',
     country        TEXT NOT NULL DEFAULT '',
     info           TEXT NOT NULL DEFAULT '',
-    setlistfm_url  TEXT NOT NULL DEFAULT ''
+    setlistfm_url  TEXT NOT NULL DEFAULT '',
+    city_lat       REAL,     -- venue.city.coords.lat from the API (TODO-222)
+    city_lon       REAL,     -- venue.city.coords.long from the API (TODO-222)
+    city_state     TEXT NOT NULL DEFAULT ''  -- venue.city.stateCode from the API (TODO-222)
 );
 CREATE INDEX IF NOT EXISTS idx_setlistfm_shows_date ON setlistfm_shows(date_str);
 CREATE INDEX IF NOT EXISTS idx_setlistfm_shows_tour ON setlistfm_shows(tour_name);
@@ -1948,6 +1951,16 @@ def init_db(db_path=None):
         _ie_cols = [r[1] for r in conn.execute("PRAGMA table_info(integrity_events)").fetchall()]
         if "mount_id" not in _ie_cols:
             conn.execute("ALTER TABLE integrity_events ADD COLUMN mount_id INTEGER")
+        # Migration: add city_lat/city_lon/city_state to setlistfm_shows (TODO-222) —
+        # setlist.fm's API returns venue.city.coords + stateCode on every setlist;
+        # storing them gives a zero-geocoding, guaranteed city-level coordinate.
+        _sfs_cols = [r[1] for r in conn.execute("PRAGMA table_info(setlistfm_shows)").fetchall()]
+        if "city_lat" not in _sfs_cols:
+            conn.execute("ALTER TABLE setlistfm_shows ADD COLUMN city_lat REAL")
+            conn.execute("ALTER TABLE setlistfm_shows ADD COLUMN city_lon REAL")
+            conn.execute(
+                "ALTER TABLE setlistfm_shows ADD COLUMN city_state TEXT NOT NULL DEFAULT ''"
+            )
         # Migration: add review_flag/review_reason to tapematch_family_meta —
         # carries the tapematch-batch skill's human "needs review" verdict
         # (parsed from each run's analysis.md) into the synced family rows.
