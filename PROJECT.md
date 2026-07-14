@@ -716,7 +716,7 @@ master/sitedata export tier is a P5 decision.
 | location_text | TEXT PK | Matches `entries.location` verbatim |
 | lat | REAL | WGS-84 latitude (NULL if geocoding failed) |
 | lon | REAL | WGS-84 longitude (NULL if geocoding failed) |
-| source | TEXT NOT NULL | `'nominatim'` / `'performances'` / `'bobdylan_shows'` / `'olof_events'` / `'setlistfm_shows'` (each also with `-city` suffix for the venue-stripped fallback) / `'manual'` / `'failed'` / `'skipped_not_concert'` |
+| source | TEXT NOT NULL | `'nominatim'` / `'performances'` / `'bobdylan_shows'` / `'olof_events'` / `'setlistfm_shows'` (each also with `-city` suffix for the venue-stripped fallback) / `'bounded_venue'` (TODO-222: bare venue name, Nominatim search bounded to a ~30km box around a known setlist.fm city coordinate) / `'setlistfm_city'` (TODO-222: setlist.fm's own city coordinate used directly, no Nominatim call) / `'manual'` / `'failed'` / `'skipped_not_concert'` |
 | confidence | TEXT | `'high'` / `'medium'` / `'low'` / NULL |
 | display_name | TEXT | Full display name returned by Nominatim |
 | manual_override | INTEGER | 1 = curator-placed pin; batch run never overwrites |
@@ -1260,19 +1260,37 @@ Nominatim-based geocoder for concert location strings. Uses stdlib `urllib` only
 
 | Function | Description |
 |----------|-------------|
-| `geocode_one(location_text)` | Single Nominatim lookup. Returns dict with lat, lon, display_name, source, confidence. source='failed' on error or no result. |
+| `geocode_one(location_text, viewbox, bounded)` | Single Nominatim lookup. `viewbox`/`bounded` (TODO-222) bias/restrict results to a box. Returns dict with lat, lon, display_name, source, confidence. source='failed' on error or no result. |
 | `place_manual(location_text, lat, lon, note)` | UPSERT with manual_override=1; batch run never overwrites manual rows. |
-| `run_batch(limit, retry_failed, dry_run, db_path)` | Batch-geocode all un-geocoded entries.location values. Sleeps 1.1 s between requests (Nominatim ToS). Updates thread-safe _progress dict. |
-| `get_progress()` | Snapshot of {running, done, total, current, errors} for GUI polling. |
+| `run_batch(limit, retry_failed, dry_run, db_path)` | Batch-geocode all un-geocoded entries.location values. Sleeps 1.1 s between Nominatim requests (Nominatim ToS). Updates thread-safe _progress dict. |
+| `get_progress()` | Snapshot of {running, done, total, current, errors, skipped, succeeded, stop_requested} for GUI polling. |
 
-**Structured-source priority (TODO-167):** before querying Nominatim with the raw
-`entries.location` text, `run_batch()` checks three tables in order — via each
-entry's ISO date (`entries.date_str` converted by `_entry_date_to_iso()`) — for a
-more accurate structured string: `bobdylan_shows` (`_get_bobdylan_shows_location_string`,
-most standardized), then `setlistfm_shows` (`_get_setlistfm_location_string`), then
-`dylan_performances` (`_get_performance_location_string`) as a last resort. First
-match wins; the result's `source` column is set to the matching table name
-(`'bobdylan_shows'` / `'setlistfm_shows'` / `'performances'`) instead of `'nominatim'`.
+**Concert-only eligibility (TODO-221, olof-authoritative TODO-224):** before geocoding,
+`_is_concert_location()` checks whether the location's date matches an `olof_events` row
+(when the table exists) — that row's `event_type` decides outright (`'concert'` eligible,
+anything else skipped with the type recorded in `note`). Otherwise it falls back to the
+original heuristic (no non-venue keyword match + a clean date matching `bobdylan_shows` or
+`setlistfm_shows`). Ineligible locations are written `source='skipped_not_concert'`, never
+sent to Nominatim.
+
+**Structured-source cascade (TODO-220, +olof_events TODO-224, +TODO-222):** for eligible
+locations, `run_batch()` checks four tables in priority order — via each entry's ISO date
+(`entries.date_str` converted by `_entry_date_to_iso()`) — for a structured
+`(full, city_only, venue_only)` string: `bobdylan_shows` (`_get_bobdylan_shows_location_string`,
+most standardized), `olof_events` (`_get_olof_events_location_string`), `setlistfm_shows`
+(`_get_setlistfm_location_string`), then `dylan_performances`
+(`_get_performance_location_string`) as a last resort. Cascade order: every source's full
+string first (in priority order); then, if a bare venue name and setlist.fm's own city
+coordinate (`setlistfm_shows.city_lat`/`city_lon`, TODO-222 step 1 — populated from the
+API's `venue.city.coords` at scrape time, zero geocoding) are both known, a Nominatim search
+for just the venue name bounded to a ~30km box around that coordinate
+(`source='bounded_venue'`, `_city_viewbox()`); then, if everything above misses and the city
+coordinate is known, it's used directly with no further Nominatim call
+(`source='setlistfm_city'`, confidence capped medium — `_get_setlistfm_city_coords()`);
+otherwise each source's venue-stripped city-only variant (`-city` suffix, confidence capped
+medium), then the raw `entries.location` text last. Every attempted query is recorded in
+`note`. Wikidata SPARQL (TODO-222's optional step 3, for demolished venues Nominatim lacks)
+is deferred to TODO-238's venue-level table.
 
 **CLI tool:** `tools/geocode_locations.py` — run `python tools/geocode_locations.py --help` from project root.
 

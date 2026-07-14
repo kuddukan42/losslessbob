@@ -7,7 +7,9 @@ Public API:
     stop()                              — signal worker to stop after current page
     is_running()                        — True while worker is active
 
-Schema: setlistfm_shows + setlistfm_setlist (see db.py).
+Schema: setlistfm_shows + setlistfm_setlist (see db.py). Also stores each
+show's venue.city.coords + stateCode (TODO-222) as a zero-geocoding,
+city-level coordinate consumed by the geocoder's structured cascade.
 Link to entries / bobdylan_shows via date_str (YYYY-MM-DD).
 
 API key:  stored in meta table under key 'setlistfm_api_key'.
@@ -156,6 +158,7 @@ def _parse_setlist(sl: dict) -> tuple[dict, list[dict]]:
     city_obj = venue.get("city") or {}
     country = (city_obj.get("country") or {}).get("name", "")
     tour = (sl.get("tour") or {}).get("name", "")
+    coords = city_obj.get("coords") or {}
 
     show_row = {
         "setlistfm_id": sl.get("id", ""),
@@ -166,6 +169,11 @@ def _parse_setlist(sl: dict) -> tuple[dict, list[dict]]:
         "country": country,
         "info": sl.get("info", "") or "",
         "setlistfm_url": sl.get("url", ""),
+        # TODO-222: guaranteed city-level coordinate straight from the API,
+        # zero geocoding required — feeds the geocoder's structured cascade.
+        "city_lat": coords.get("lat"),
+        "city_lon": coords.get("long"),
+        "city_state": city_obj.get("stateCode", "") or "",
     }
 
     track_rows: list[dict] = []
@@ -281,9 +289,11 @@ def run_update(
                     conn.execute(
                         """INSERT OR REPLACE INTO setlistfm_shows
                            (setlistfm_id, date_str, tour_name, venue_name,
-                            city, country, info, setlistfm_url)
+                            city, country, info, setlistfm_url,
+                            city_lat, city_lon, city_state)
                            VALUES (:setlistfm_id,:date_str,:tour_name,:venue_name,
-                                   :city,:country,:info,:setlistfm_url)""",
+                                   :city,:country,:info,:setlistfm_url,
+                                   :city_lat,:city_lon,:city_state)""",
                         sr,
                     )
                     conn.execute(
@@ -296,9 +306,11 @@ def run_update(
                     cur = conn.execute(
                         """INSERT OR IGNORE INTO setlistfm_shows
                            (setlistfm_id, date_str, tour_name, venue_name,
-                            city, country, info, setlistfm_url)
+                            city, country, info, setlistfm_url,
+                            city_lat, city_lon, city_state)
                            VALUES (:setlistfm_id,:date_str,:tour_name,:venue_name,
-                                   :city,:country,:info,:setlistfm_url)""",
+                                   :city,:country,:info,:setlistfm_url,
+                                   :city_lat,:city_lon,:city_state)""",
                         sr,
                     )
                     if cur.rowcount:

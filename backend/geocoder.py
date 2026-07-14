@@ -30,6 +30,19 @@ the raw entries.location text is tried last.  Every attempted query is
 recorded in ``note`` on both success and failure, and the 1.1s Nominatim
 rate-limit sleep applies between every attempt, including fallbacks.
 
+Bounded venue search + setlist.fm city pin (TODO-222): setlist.fm's API
+returns a city-level coordinate (venue.city.coords) on every setlist, stored
+at scrape time in setlistfm_shows.city_lat/city_lon (zero geocoding
+required).  When that coordinate is known and a bare venue name is
+available, a Nominatim search for just the venue name — bounded to a ~30km
+box around the city coordinate (source='bounded_venue') — is inserted into
+the cascade right after the full structured-string attempts, since
+Nominatim's hit rate on venue names alone improves dramatically once
+spatially constrained.  If every Nominatim attempt up to that point misses
+and the city coordinate is known, it is used directly as a fallback pin with
+no further API call (source='setlistfm_city', confidence capped at medium)
+before falling through to a city-text Nominatim geocode.
+
 Stop support (TODO-219): stop() sets a module-level flag (guarded by
 _lock) that run_batch() checks at the top of every location and inside the
 rate-limited 429 backoff sleep (sliced so a stop request is honored
@@ -38,6 +51,7 @@ promptly); get_progress() exposes stop_requested for the GUI.
 
 import json
 import logging
+import math
 import threading
 import time
 import urllib.error
@@ -199,23 +213,26 @@ def _table_exists(conn, table_name: str) -> bool:
     return row is not None
 
 
-def _get_performance_location_string(location_text: str, conn) -> tuple[str, str | None] | None:
+def _get_performance_location_string(
+    location_text: str, conn
+) -> tuple[str, str | None, str | None] | None:
     """Return structured geocoding strings from dylan_performances for this location.
 
     Scans all distinct date_str values in entries that share this location, converts
     each to ISO format, and checks dylan_performances for a match.  On the first hit,
     builds a comma-joined ``"venue, city, state, country"`` full string (blank / ``"?"``
     parts dropped) plus a venue-stripped ``"city, state, country"`` variant for the
-    TODO-220 fallback cascade.  Returns ``None`` if no performance record matches.
+    TODO-220 fallback cascade, and the bare venue name for the TODO-222 bounded
+    venue search.  Returns ``None`` if no performance record matches.
 
     Args:
         location_text: Raw location string from ``entries.location``.
         conn: SQLite connection (read-only usage).
 
     Returns:
-        ``(full, city_only)`` tuple, e.g. ``("Massey Hall, Toronto, ON, Canada",
-        "Toronto, ON, Canada")`` — ``city_only`` is ``None`` if venue is the only
-        non-blank part.  ``None`` if no matching performance exists.
+        ``(full, city_only, venue_only)`` tuple, e.g. ``("Massey Hall, Toronto, ON,
+        Canada", "Toronto, ON, Canada", "Massey Hall")`` — ``city_only``/``venue_only``
+        are ``None`` when absent.  ``None`` if no matching performance exists.
     """
     for iso in _entries_iso_dates(location_text, conn):
         perf = conn.execute(
@@ -235,14 +252,14 @@ def _get_performance_location_string(location_text: str, conn) -> tuple[str, str
         if full_parts:
             full = ", ".join(full_parts)
             city_only = ", ".join(city_parts) if city_parts else None
-            return full, city_only
+            return full, city_only, (venue or None)
 
     return None
 
 
 def _get_bobdylan_shows_location_string(
     location_text: str, conn
-) -> tuple[str, str | None] | None:
+) -> tuple[str, str | None, str | None] | None:
     """Return structured geocoding strings from bobdylan_shows for this location.
 
     Scans all distinct date_str values in entries that share this location, converts
@@ -250,16 +267,17 @@ def _get_bobdylan_shows_location_string(
     builds a comma-joined ``"venue, location"`` full string (blank parts dropped) —
     ``bobdylan_shows.location`` is already a ``"City, ST"``-style string — plus a
     venue-stripped city-only variant (the ``location`` column alone) for the
-    TODO-220 fallback cascade.  Returns ``None`` if no show record matches.
+    TODO-220 fallback cascade, and the bare venue name for the TODO-222 bounded
+    venue search.  Returns ``None`` if no show record matches.
 
     Args:
         location_text: Raw location string from ``entries.location``.
         conn: SQLite connection (read-only usage).
 
     Returns:
-        ``(full, city_only)`` tuple, e.g. ``("The Purple Onion, St. Paul, MN",
-        "St. Paul, MN")``.  ``city_only`` is ``None`` if ``location`` is blank.
-        ``None`` if no matching show exists.
+        ``(full, city_only, venue_only)`` tuple, e.g. ``("The Purple Onion, St. Paul,
+        MN", "St. Paul, MN", "The Purple Onion")``.  ``city_only``/``venue_only`` are
+        ``None`` when absent.  ``None`` if no matching show exists.
     """
     for iso in _entries_iso_dates(location_text, conn):
         show = conn.execute(
@@ -274,14 +292,14 @@ def _get_bobdylan_shows_location_string(
         if parts:
             full = ", ".join(parts)
             city_only = loc or None
-            return full, city_only
+            return full, city_only, (venue or None)
 
     return None
 
 
 def _get_olof_events_location_string(
     location_text: str, conn
-) -> tuple[str, str | None] | None:
+) -> tuple[str, str | None, str | None] | None:
     """Return structured geocoding strings from olof_events for this location.
 
     Scans all distinct date_str values in entries that share this location,
@@ -291,7 +309,8 @@ def _get_olof_events_location_string(
     :func:`backend.db.compare_olof_setlist`). On the first hit, builds a
     comma-joined ``"venue, city, region, country"`` full string (blank parts
     dropped) plus a venue-stripped ``"city, region, country"`` variant for
-    the TODO-220 fallback cascade. Feature-detects the ``olof_events`` table
+    the TODO-220 fallback cascade, and the bare venue name for the TODO-222
+    bounded venue search. Feature-detects the ``olof_events`` table
     (TODO-224) so installs whose database predates it fall through cleanly.
 
     Args:
@@ -299,10 +318,10 @@ def _get_olof_events_location_string(
         conn: SQLite connection (read-only usage).
 
     Returns:
-        ``(full, city_only)`` tuple, e.g. ``("Massey Hall, Toronto, ON,
-        Canada", "Toronto, ON, Canada")``. ``city_only`` is ``None`` if venue
-        is the only non-blank part. ``None`` if ``olof_events`` doesn't
-        exist or no matching event exists.
+        ``(full, city_only, venue_only)`` tuple, e.g. ``("Massey Hall, Toronto, ON,
+        Canada", "Toronto, ON, Canada", "Massey Hall")``. ``city_only``/``venue_only``
+        are ``None`` when absent. ``None`` if ``olof_events`` doesn't exist or no
+        matching event exists.
     """
     if not _table_exists(conn, "olof_events"):
         return None
@@ -325,30 +344,32 @@ def _get_olof_events_location_string(
         if full_parts:
             full = ", ".join(full_parts)
             city_only = ", ".join(city_parts) if city_parts else None
-            return full, city_only
+            return full, city_only, (venue or None)
 
     return None
 
 
 def _get_setlistfm_location_string(
     location_text: str, conn
-) -> tuple[str, str | None] | None:
+) -> tuple[str, str | None, str | None] | None:
     """Return structured geocoding strings from setlistfm_shows for this location.
 
     Scans all distinct date_str values in entries that share this location, converts
     each to ISO format, and checks setlistfm_shows for a match.  On the first hit,
     builds a comma-joined ``"venue_name, city, country"`` full string (blank parts
     dropped) plus a venue-stripped ``"city, country"`` variant for the TODO-220
-    fallback cascade.  Returns ``None`` if no setlist record matches.
+    fallback cascade, and the bare venue name for the TODO-222 bounded venue
+    search.  Returns ``None`` if no setlist record matches.
 
     Args:
         location_text: Raw location string from ``entries.location``.
         conn: SQLite connection (read-only usage).
 
     Returns:
-        ``(full, city_only)`` tuple, e.g. ``("Thalia Mara Hall, Jackson, United
-        States", "Jackson, United States")``.  ``city_only`` is ``None`` if city
-        and country are both blank.  ``None`` if no matching setlist exists.
+        ``(full, city_only, venue_only)`` tuple, e.g. ``("Thalia Mara Hall, Jackson,
+        United States", "Jackson, United States", "Thalia Mara Hall")``.
+        ``city_only``/``venue_only`` are ``None`` when absent.  ``None`` if no
+        matching setlist exists.
     """
     for iso in _entries_iso_dates(location_text, conn):
         show = conn.execute(
@@ -365,9 +386,79 @@ def _get_setlistfm_location_string(
         if full_parts:
             full = ", ".join(full_parts)
             city_only = ", ".join(city_parts) if city_parts else None
-            return full, city_only
+            return full, city_only, (venue_name or None)
 
     return None
+
+
+def _get_setlistfm_city_coords(location_text: str, conn) -> dict | None:
+    """Return setlist.fm's own city-level coordinate for this location, if stored.
+
+    setlist.fm's API returns ``venue.city.coords`` (lat/long) and
+    ``venue.city.stateCode`` on every setlist; :mod:`backend.setlistfm` stores
+    them in ``setlistfm_shows.city_lat``/``city_lon``/``city_state`` at scrape
+    time (TODO-222 step 1). This is a zero-geocoding, guaranteed city-level
+    pin, used two ways in the TODO-222 cascade: to center the bounded
+    venue-name search (step 2), and as a direct fallback pin
+    (source='setlistfm_city') when no Nominatim query — structured or
+    city-text — succeeds.
+
+    Args:
+        location_text: Raw location string from ``entries.location``.
+        conn: SQLite connection (read-only usage).
+
+    Returns:
+        Dict with keys ``venue_name``, ``city``, ``state``, ``country``,
+        ``lat``, ``lon`` for the first matching dated ``setlistfm_shows`` row
+        that has non-null coordinates. ``None`` if no such row exists, or the
+        database predates the TODO-222 migration.
+    """
+    _cols = {r[1] for r in conn.execute("PRAGMA table_info(setlistfm_shows)").fetchall()}
+    if "city_lat" not in _cols:
+        return None
+
+    for iso in _entries_iso_dates(location_text, conn):
+        row = conn.execute(
+            """SELECT venue_name, city, city_state, country, city_lat, city_lon
+               FROM setlistfm_shows
+               WHERE date_str = ? AND city_lat IS NOT NULL AND city_lon IS NOT NULL""",
+            (iso,),
+        ).fetchone()
+        if row is not None:
+            return {
+                "venue_name": (row["venue_name"] or "").strip(),
+                "city": (row["city"] or "").strip(),
+                "state": (row["city_state"] or "").strip(),
+                "country": (row["country"] or "").strip(),
+                "lat": row["city_lat"],
+                "lon": row["city_lon"],
+            }
+
+    return None
+
+
+def _city_viewbox(lat: float, lon: float, km: float = 30.0) -> str:
+    """Return a Nominatim ``viewbox`` string: a box of side ``2*km`` centered on (lat, lon).
+
+    Used with ``bounded=1`` (TODO-222 step 2) to spatially constrain a bare
+    venue-name search to the vicinity of a known city coordinate — Nominatim's
+    unconstrained hit rate on venue names alone is poor, but improves
+    dramatically once the search area is bounded.
+
+    Args:
+        lat: City latitude (WGS-84).
+        lon: City longitude (WGS-84).
+        km: Half-width of the box in kilometers (default 30km per TODO-222).
+
+    Returns:
+        ``"left,top,right,bottom"`` string for the Nominatim ``viewbox`` param.
+    """
+    delta_lat = km / 111.0
+    delta_lon = km / (111.0 * max(0.01, math.cos(math.radians(lat))))
+    return (
+        f"{lon - delta_lon:.5f},{lat + delta_lat:.5f},"
+        f"{lon + delta_lon:.5f},{lat - delta_lat:.5f}"
+    )
 
 
 # Structured-source lookups tried in priority order before falling back to the
@@ -375,8 +466,9 @@ def _get_setlistfm_location_string(
 # bobdylan_shows is the most standardized (curated "City, ST" location strings),
 # olof_events is next (clean separate venue/city/region/country fields, TODO-224),
 # setlistfm_shows is the backup, and dylan_performances is the last resort.
-# Each lookup function returns (full_query, city_only_query | None) on a hit,
-# or None on a miss — see TODO-220 cascading fallback in run_batch().
+# Each lookup function returns (full_query, city_only_query | None, venue_only | None)
+# on a hit, or None on a miss — see TODO-220 cascading fallback and the TODO-222
+# bounded venue search / setlistfm_city fallback in run_batch().
 _STRUCTURED_SOURCES = (
     ("bobdylan_shows", _get_bobdylan_shows_location_string),
     ("olof_events", _get_olof_events_location_string),
@@ -465,11 +557,16 @@ def _is_concert_location(location_text: str, conn) -> tuple[bool, str | None]:
 # Public API
 # ---------------------------------------------------------------------------
 
-def geocode_one(location_text: str) -> dict:
+def geocode_one(location_text: str, viewbox: str | None = None, bounded: bool = False) -> dict:
     """Perform a single Nominatim geocoding lookup.
 
     Args:
         location_text: Free-text location string (e.g. "Denver, Colorado").
+        viewbox: Optional ``"left,top,right,bottom"`` box (see
+            :func:`_city_viewbox`) to bias/constrain results spatially
+            (TODO-222 bounded venue search).
+        bounded: When True (and ``viewbox`` is set), restrict results to
+            inside the box instead of merely preferring them.
 
     Returns:
         Dict with keys: location_text, lat, lon, display_name, source,
@@ -478,7 +575,12 @@ def geocode_one(location_text: str) -> dict:
         network error.  ``confidence`` is 'high' / 'medium' / 'low' based
         on the Nominatim importance score, or None when source='failed'.
     """
-    encoded = urllib.parse.urlencode({"q": location_text, "format": "json", "limit": 1})
+    params = {"q": location_text, "format": "json", "limit": 1}
+    if viewbox:
+        params["viewbox"] = viewbox
+        if bounded:
+            params["bounded"] = 1
+    encoded = urllib.parse.urlencode(params)
     url = f"{_NOMINATIM_URL}?{encoded}"
     req = urllib.request.Request(url, headers={"User-Agent": _USER_AGENT})
 
@@ -659,17 +761,25 @@ def run_batch(
     keyword) are written with ``source='skipped_not_concert'`` and never
     sent to Nominatim.
 
-    For eligible locations, a TODO-220 cascading fallback is used: every
-    structured source (bobdylan_shows, then olof_events, then
+    For eligible locations, a TODO-220/TODO-222 cascading fallback is used:
+    every structured source (bobdylan_shows, then olof_events, then
     setlistfm_shows, then dylan_performances) that has a matching record
-    contributes its full
-    venue/city/state/country query string, tried in priority order; if all
-    of those miss, each source's venue-stripped city-only variant is tried
-    next (source suffixed ``-city``, confidence capped at ``medium``); the
-    raw ``entries.location`` text is tried last. The result is stored with
-    ``source`` set to whichever query actually succeeded (or 'failed' if
-    every attempt missed), and ``note`` records every query attempted, on
-    both success and failure.
+    contributes its full venue/city/state/country query string, tried in
+    priority order; then, if setlist.fm's own city-level coordinate is known
+    for this location (``setlistfm_shows.city_lat``/``city_lon``, stored at
+    scrape time — TODO-222 step 1) and a bare venue name is available, a
+    Nominatim search for just the venue name is tried bounded to a ~30km box
+    around that city coordinate (``source='bounded_venue'`` — TODO-222 step
+    2, dramatically improves Nominatim's poor unconstrained venue-name hit
+    rate); if all of those miss and the city coordinate is known, it is used
+    directly as a fallback pin with no further Nominatim call
+    (``source='setlistfm_city'``, confidence capped at ``medium``);
+    otherwise each structured source's venue-stripped city-only variant is
+    tried next (source suffixed ``-city``, confidence capped at
+    ``medium``); the raw ``entries.location`` text is tried last. The
+    result is stored with ``source`` set to whichever query/fallback
+    actually succeeded (or 'failed' if every attempt missed), and ``note``
+    records every query attempted, on both success and failure.
 
     Sleeps 1.1 seconds between every Nominatim request — including fallback
     attempts — to comply with the Nominatim Usage Policy (max 1 req/second).
@@ -779,20 +889,31 @@ def run_batch(
                 continue
 
             # TODO-220: gather every structured-source hit (not just the first),
-            # each as (source_name, full_query, city_only_query | None).
+            # each as (source_name, full_query, city_only_query | None, venue_only | None).
             structured_hits = []
             for source_name, lookup_fn in _STRUCTURED_SOURCES:
                 hit = lookup_fn(location_text, conn)
                 if hit:
-                    structured_hits.append((source_name, hit[0], hit[1]))
+                    structured_hits.append((source_name, hit[0], hit[1], hit[2]))
 
-            # Cascade order: every structured source's full string first (in
-            # priority order), then each source's venue-stripped city-only
-            # variant, then the raw entries.location text last. Skip a query
-            # string that duplicates one already queued.
+            # TODO-222: setlist.fm's own city-level coordinate for this location
+            # (zero geocoding — stored at scrape time), and the best available
+            # bare venue name across the structured sources, in priority order.
+            city_coords = _get_setlistfm_city_coords(location_text, conn)
+            venue_only_pick = next((v for _, _, _, v in structured_hits if v), None)
+
+            # Cascade order (TODO-220 + TODO-222): every structured source's full
+            # string first (in priority order), then a Nominatim search for the
+            # bare venue name bounded to a ~30km box around the known city
+            # coordinate (when both are available), then each structured source's
+            # venue-stripped city-only variant, then the raw entries.location text
+            # last. A direct setlistfm_city pin (no Nominatim call) is tried
+            # between the bounded venue search and the city-only variants — see
+            # below. Skip a query string that duplicates one already queued.
             candidate_queries: list[tuple[str, str | None]] = (
-                [(name, full_q) for name, full_q, _ in structured_hits]
-                + [(f"{name}-city", city_q) for name, _, city_q in structured_hits]
+                [(name, full_q) for name, full_q, _, _ in structured_hits]
+                + ([("bounded_venue", venue_only_pick)] if venue_only_pick and city_coords else [])
+                + [(f"{name}-city", city_q) for name, _, city_q, _ in structured_hits]
                 + [("entries.location", location_text)]
             )
             attempts: list[tuple[str, str]] = []
@@ -805,10 +926,49 @@ def run_batch(
             tried_log: list[str] = []
             matched_tag: str | None = None
             result: dict = {}
+            city_direct_checked = False
             for query_tag, query in attempts:
+                # TODO-222: once the cascade reaches the city-text-geocode phase
+                # (a "-city" variant or the raw location fallback) without a hit
+                # yet, use setlist.fm's own city coordinate directly instead of
+                # spending another Nominatim call on a city-text geocode — it is
+                # already a guaranteed, zero-ambiguity city-level pin.
+                if (
+                    not city_direct_checked
+                    and matched_tag is None
+                    and (query_tag == "entries.location" or query_tag.endswith("-city"))
+                ):
+                    city_direct_checked = True
+                    if city_coords is not None:
+                        matched_tag = "setlistfm_city"
+                        result = {
+                            "location_text": location_text,
+                            "lat": city_coords["lat"],
+                            "lon": city_coords["lon"],
+                            "display_name": ", ".join(
+                                p for p in (
+                                    city_coords["city"], city_coords["state"],
+                                    city_coords["country"],
+                                ) if p
+                            ),
+                            "source": "setlistfm_city",
+                            "confidence": "medium",
+                        }
+                        tried_log.append(
+                            f"setlistfm_city:{city_coords['lat']},{city_coords['lon']}"
+                        )
+                        break
+
                 for attempt in range(_MAX_429_RETRIES + 1):
                     try:
-                        result = geocode_one(query)
+                        if query_tag == "bounded_venue":
+                            result = geocode_one(
+                                query,
+                                viewbox=_city_viewbox(city_coords["lat"], city_coords["lon"]),
+                                bounded=True,
+                            )
+                        else:
+                            result = geocode_one(query)
                         break
                     except _RateLimitError:
                         if attempt < _MAX_429_RETRIES:

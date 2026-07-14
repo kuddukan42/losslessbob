@@ -1,6 +1,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-222: Better venue coordinates — capture setlist.fm city coords + bounded Nominatim venue search
+Priority: Medium
+Status: Done
+Added: 2026-07-10
+Closed: 2026-07-14
+Description: Nominatim free-text is weak on venue names (especially historic/renamed venues). Improvements, cheapest first: (1) setlist.fm API already returns venue.city.coords.lat/long (and venue.city.stateCode) in every setlist response — backend/setlistfm.py currently discards them and setlistfm_shows has no coord columns. Add city_lat/city_lon (+ state) columns (PRAGMA table_info guard per repo SQLite rules), store on scrape, backfill via one re-scrape or the API. Gives a guaranteed city-level coordinate with zero geocoding. (2) Two-step venue lookup: geocode/lookup the city first (from setlist.fm coords or Nominatim), then re-query Nominatim for the bare venue name with viewbox=<~30km box around city>&bounded=1 — venue-name hit rate improves dramatically when spatially constrained. (3) Optional last resort for famous venues: Wikidata SPARQL (P625 coordinate) by venue label. Fold into the TODO-220 cascade: bobdylan venue string -> bounded venue search near city -> setlist.fm city coords (confidence=medium, source='setlistfm_city') -> city string geocode. Respect Nominatim 1 req/s throughout; setlist.fm API needs the existing API key + its own rate limit.
+Shipped 2026-07-14: setlistfm_shows gains city_lat/city_lon/city_state (TODO-222 step 1, zero-geocoding city pin from the setlist.fm API); geocoder cascade (TODO-220) gains a bounded Nominatim venue-name search around that city coordinate (source=bounded_venue) plus a direct setlistfm_city fallback pin when all Nominatim attempts miss (step 2). Step 3 (Wikidata SPARQL for demolished venues) deferred to TODO-238's venue-level table, which already plans it. 700 tests passed.
+
 TODO-213: Show-pick / badge data curation — weight tuning pass on pick_rank + attribution signals
 Priority: High
 Status: Done

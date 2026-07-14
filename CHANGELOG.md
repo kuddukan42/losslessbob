@@ -1,3 +1,25 @@
+[2026-07-14] — feat(backend): TODO-222 (CLOSED) — setlist.fm city coords + bounded venue search in the geocoder cascade
+Added: backend/setlistfm.py + backend/db.py — setlistfm_shows gains city_lat/city_lon/city_state
+  columns (PRAGMA table_info migration guard), populated from the setlist.fm API's
+  venue.city.coords/stateCode at scrape time — a zero-geocoding, guaranteed city-level coordinate.
+  Existing rows backfill on the next force re-scrape (POST /api/setlistfm/update {force:true}).
+Changed: backend/geocoder.py — folded two new steps into the TODO-220 cascade in run_batch():
+  (1) once a bare venue name and a known setlist.fm city coordinate are both available, a
+  Nominatim search for just the venue name, bounded to a ~30km viewbox around that coordinate
+  (source='bounded_venue'), is tried right after the full structured-string attempts —
+  Nominatim's unconstrained hit rate on venue names alone is poor but improves once spatially
+  constrained; (2) if every attempt up to that point misses, the known setlist.fm city coordinate
+  is used directly as a fallback pin with no further Nominatim call (source='setlistfm_city',
+  confidence capped medium) before falling to a city-text Nominatim geocode. The four structured
+  lookup helpers (_get_bobdylan_shows_location_string etc.) now also return a bare venue_only
+  string alongside the existing full/city_only pair. geocode_one() gained optional
+  viewbox/bounded params. Wikidata SPARQL (TODO-222's optional step 3, for demolished venues) is
+  deferred to TODO-238's venue-level table, which already plans it explicitly.
+Tests: tests/test_geocoder.py + tests/test_setlistfm.py — updated the 3 structured-lookup
+  functions' expected tuples, added coverage for _get_setlistfm_city_coords, _city_viewbox,
+  geocode_one's viewbox/bounded encoding, and both new cascade steps end-to-end via run_batch();
+  700 passed, 5 skipped.
+
 [2026-07-14] — fix(backend): BUG-246 (CLOSED) — remaining-writer audit; guard the last two DB writers that could split reads/writes across databases
 Context: BUG-246 (live show_picks wiped 2026-07-10) was fixed defensively in picks._write_picks the
   same day; the ticket left a REMAINING AUDIT — sweep the other db_path-taking writers for the same

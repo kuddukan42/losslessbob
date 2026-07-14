@@ -109,7 +109,10 @@ class TestGetPerformanceLocationString:
             conn.commit()
 
             result = _get_performance_location_string("Raw Loc", conn)
-            assert result == ("Madison Square Garden, New York, NY, USA", "New York, NY, USA")
+            assert result == (
+                "Madison Square Garden, New York, NY, USA", "New York, NY, USA",
+                "Madison Square Garden",
+            )
         finally:
             shutil.rmtree(tmp_dir, ignore_errors=True)
 
@@ -127,7 +130,7 @@ class TestGetPerformanceLocationString:
             conn.commit()
 
             result = _get_performance_location_string("Raw Loc", conn)
-            assert result == ("Madison Square Garden, New York", "New York")
+            assert result == ("Madison Square Garden, New York", "New York", "Madison Square Garden")
         finally:
             shutil.rmtree(tmp_dir, ignore_errors=True)
 
@@ -181,7 +184,7 @@ class TestGetBobdylanShowsLocationString:
             conn.commit()
 
             result = _get_bobdylan_shows_location_string("Raw Loc", conn)
-            assert result == ("The Purple Onion, St. Paul, MN", "St. Paul, MN")
+            assert result == ("The Purple Onion, St. Paul, MN", "St. Paul, MN", "The Purple Onion")
         finally:
             shutil.rmtree(tmp_dir, ignore_errors=True)
 
@@ -199,7 +202,7 @@ class TestGetBobdylanShowsLocationString:
             conn.commit()
 
             result = _get_bobdylan_shows_location_string("Raw Loc", conn)
-            assert result == ("The Purple Onion", None)
+            assert result == ("The Purple Onion", None, "The Purple Onion")
         finally:
             shutil.rmtree(tmp_dir, ignore_errors=True)
 
@@ -252,7 +255,7 @@ class TestGetOlofEventsLocationString:
             conn.commit()
 
             result = _get_olof_events_location_string("Raw Loc", conn)
-            assert result == ("Massey Hall, Toronto, ON, Canada", "Toronto, ON, Canada")
+            assert result == ("Massey Hall, Toronto, ON, Canada", "Toronto, ON, Canada", "Massey Hall")
         finally:
             shutil.rmtree(tmp_dir, ignore_errors=True)
 
@@ -267,7 +270,7 @@ class TestGetOlofEventsLocationString:
             conn.commit()
 
             result = _get_olof_events_location_string("Raw Loc", conn)
-            assert result == ("Massey Hall, Toronto", "Toronto")
+            assert result == ("Massey Hall, Toronto", "Toronto", "Massey Hall")
         finally:
             shutil.rmtree(tmp_dir, ignore_errors=True)
 
@@ -296,7 +299,7 @@ class TestGetOlofEventsLocationString:
             conn.commit()
 
             result = _get_olof_events_location_string("Raw Loc", conn)
-            assert result == ("Massey Hall, Toronto, ON, Canada", "Toronto, ON, Canada")
+            assert result == ("Massey Hall, Toronto, ON, Canada", "Toronto, ON, Canada", "Massey Hall")
         finally:
             shutil.rmtree(tmp_dir, ignore_errors=True)
 
@@ -431,7 +434,10 @@ class TestGetSetlistfmLocationString:
             conn.commit()
 
             result = _get_setlistfm_location_string("Raw Loc", conn)
-            assert result == ("Thalia Mara Hall, Jackson, United States", "Jackson, United States")
+            assert result == (
+                "Thalia Mara Hall, Jackson, United States", "Jackson, United States",
+                "Thalia Mara Hall",
+            )
         finally:
             shutil.rmtree(tmp_dir, ignore_errors=True)
 
@@ -449,7 +455,7 @@ class TestGetSetlistfmLocationString:
             conn.commit()
 
             result = _get_setlistfm_location_string("Raw Loc", conn)
-            assert result == ("Thalia Mara Hall", None)
+            assert result == ("Thalia Mara Hall", None, "Thalia Mara Hall")
         finally:
             shutil.rmtree(tmp_dir, ignore_errors=True)
 
@@ -465,6 +471,89 @@ class TestGetSetlistfmLocationString:
             assert _get_setlistfm_location_string("Raw Loc", conn) is None
         finally:
             shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# 6b. _get_setlistfm_city_coords()  (TODO-222 step 1)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+class TestGetSetlistfmCityCoords:
+    def test_returns_coords_when_present(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            from backend.geocoder import _get_setlistfm_city_coords
+            conn.execute(
+                "INSERT INTO entries (lb_number, date_str, location, status) VALUES (1, '7/28/00', 'Raw Loc', 'ok')"
+            )
+            conn.execute(
+                """INSERT INTO setlistfm_shows
+                   (setlistfm_id, date_str, venue_name, city, city_state, country, city_lat, city_lon)
+                   VALUES ('s1', '2000-07-28', 'Thalia Mara Hall', 'Jackson', 'MS',
+                           'United States', 32.29, -90.18)"""
+            )
+            conn.commit()
+
+            result = _get_setlistfm_city_coords("Raw Loc", conn)
+            assert result == {
+                "venue_name": "Thalia Mara Hall", "city": "Jackson", "state": "MS",
+                "country": "United States", "lat": 32.29, "lon": -90.18,
+            }
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_returns_none_when_coords_null(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            from backend.geocoder import _get_setlistfm_city_coords
+            conn.execute(
+                "INSERT INTO entries (lb_number, date_str, location, status) VALUES (1, '7/28/00', 'Raw Loc', 'ok')"
+            )
+            conn.execute(
+                """INSERT INTO setlistfm_shows (setlistfm_id, date_str, venue_name, city, country)
+                   VALUES ('s1', '2000-07-28', 'Thalia Mara Hall', 'Jackson', 'United States')"""
+            )
+            conn.commit()
+
+            assert _get_setlistfm_city_coords("Raw Loc", conn) is None
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_returns_none_when_no_matching_show(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            from backend.geocoder import _get_setlistfm_city_coords
+            conn.execute(
+                "INSERT INTO entries (lb_number, date_str, location, status) VALUES (1, '7/28/00', 'Raw Loc', 'ok')"
+            )
+            conn.commit()
+
+            assert _get_setlistfm_city_coords("Raw Loc", conn) is None
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# 6c. _city_viewbox()  (TODO-222 step 2)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+class TestCityViewbox:
+    def test_box_centered_on_equator(self):
+        from backend.geocoder import _city_viewbox
+        left, top, right, bottom = (
+            float(x) for x in _city_viewbox(0.0, 0.0, km=111.0).split(",")
+        )
+        assert left == pytest.approx(-1.0, abs=0.01)
+        assert right == pytest.approx(1.0, abs=0.01)
+        assert top == pytest.approx(1.0, abs=0.01)
+        assert bottom == pytest.approx(-1.0, abs=0.01)
+
+    def test_box_straddles_center_at_mid_latitude(self):
+        from backend.geocoder import _city_viewbox
+        left, top, right, bottom = (
+            float(x) for x in _city_viewbox(40.0, -105.0).split(",")
+        )
+        assert left < -105.0 < right
+        assert bottom < 40.0 < top
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -540,6 +629,37 @@ class TestGeocodeOne:
 
         assert result["source"] == "failed"
         assert result["confidence"] is None
+
+    def test_viewbox_and_bounded_are_encoded_in_the_request(self):
+        """TODO-222: bounded venue search passes viewbox/bounded=1 to Nominatim."""
+        from backend import geocoder
+        nominatim_result = [{"lat": "1.0", "lon": "2.0", "display_name": "X", "importance": 0.5}]
+        captured = {}
+
+        def _fake_urlopen(req, timeout=15):
+            captured["url"] = req.full_url
+            return _make_urlopen_response(nominatim_result)
+
+        with patch.object(geocoder.urllib.request, "urlopen", side_effect=_fake_urlopen):
+            geocoder.geocode_one("Massey Hall", viewbox="1,2,3,4", bounded=True)
+
+        assert "viewbox=1%2C2%2C3%2C4" in captured["url"]
+        assert "bounded=1" in captured["url"]
+
+    def test_no_viewbox_params_by_default(self):
+        from backend import geocoder
+        nominatim_result = [{"lat": "1.0", "lon": "2.0", "display_name": "X", "importance": 0.5}]
+        captured = {}
+
+        def _fake_urlopen(req, timeout=15):
+            captured["url"] = req.full_url
+            return _make_urlopen_response(nominatim_result)
+
+        with patch.object(geocoder.urllib.request, "urlopen", side_effect=_fake_urlopen):
+            geocoder.geocode_one("Denver, CO")
+
+        assert "viewbox" not in captured["url"]
+        assert "bounded" not in captured["url"]
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -971,6 +1091,95 @@ class TestRunBatch:
                 "SELECT source FROM location_geocoded WHERE location_text=?", ("Raw Location",)
             ).fetchone()
             assert row["source"] == "setlistfm_shows"
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_bounded_venue_search_used_after_full_string_misses(self):
+        """TODO-222 step 2: a bare venue-name Nominatim search, bounded to a box
+        around setlist.fm's city coordinate, is tried after the full structured
+        strings miss and before falling to city-text geocoding."""
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            conn.execute(
+                "INSERT INTO entries (lb_number, date_str, location, status) VALUES (1, '7/28/00', 'Raw Location', 'ok')"
+            )
+            conn.execute(
+                """INSERT INTO bobdylan_shows (bobdylan_url, date_str, venue, location)
+                   VALUES ('u1', '2000-07-28', 'Old Boston Garden', 'Boston, MA')"""
+            )
+            conn.execute(
+                """INSERT INTO setlistfm_shows
+                   (setlistfm_id, date_str, venue_name, city, city_state, country, city_lat, city_lon)
+                   VALUES ('s1', '2000-07-28', '', 'Boston', 'MA', 'United States', 42.36, -71.06)"""
+            )
+            conn.commit()
+
+            from backend import geocoder
+            calls = []
+
+            def _cascade_geocode(query, viewbox=None, bounded=False):
+                calls.append((query, viewbox, bounded))
+                if query == "Old Boston Garden" and bounded:
+                    return {"location_text": query, "lat": 1.0, "lon": 2.0,
+                            "display_name": query, "source": "nominatim", "confidence": "medium"}
+                return {"location_text": query, "lat": None, "lon": None,
+                        "display_name": None, "source": "failed", "confidence": None}
+
+            with patch.object(geocoder, "geocode_one", side_effect=_cascade_geocode), \
+                 patch.object(geocoder.time, "sleep"):
+                geocoder.run_batch(db_path=db_path)
+
+            row = conn.execute(
+                "SELECT * FROM location_geocoded WHERE location_text=?", ("Raw Location",)
+            ).fetchone()
+            assert row["source"] == "bounded_venue"
+            assert row["lat"] == 1.0
+            assert row["lon"] == 2.0
+            assert "bounded_venue:Old Boston Garden" in row["note"]
+
+            bounded_calls = [c for c in calls if c[0] == "Old Boston Garden"]
+            assert bounded_calls and bounded_calls[0][2] is True
+            assert bounded_calls[0][1] is not None
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_setlistfm_city_direct_pin_used_when_nominatim_all_miss(self):
+        """TODO-222: when every Nominatim attempt (including bounded venue search)
+        misses, setlist.fm's own city coordinate is used directly as a fallback
+        pin — with no further Nominatim call spent on a city-text geocode."""
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            conn.execute(
+                "INSERT INTO entries (lb_number, date_str, location, status) VALUES (1, '7/28/00', 'Raw Location', 'ok')"
+            )
+            conn.execute(
+                """INSERT INTO setlistfm_shows
+                   (setlistfm_id, date_str, venue_name, city, city_state, country, city_lat, city_lon)
+                   VALUES ('s1', '2000-07-28', 'Small Club', 'Boston', 'MA', 'United States', 42.36, -71.06)"""
+            )
+            conn.commit()
+
+            from backend import geocoder
+            calls = []
+
+            def _always_miss(query, viewbox=None, bounded=False):
+                calls.append(query)
+                return {"location_text": query, "lat": None, "lon": None,
+                        "display_name": None, "source": "failed", "confidence": None}
+
+            with patch.object(geocoder, "geocode_one", side_effect=_always_miss), \
+                 patch.object(geocoder.time, "sleep"):
+                geocoder.run_batch(db_path=db_path)
+
+            row = conn.execute(
+                "SELECT * FROM location_geocoded WHERE location_text=?", ("Raw Location",)
+            ).fetchone()
+            assert row["source"] == "setlistfm_city"
+            assert row["lat"] == pytest.approx(42.36)
+            assert row["lon"] == pytest.approx(-71.06)
+            assert row["confidence"] == "medium"
+            assert "setlistfm_city:" in row["note"]
+            assert "Boston, United States" not in calls
         finally:
             shutil.rmtree(tmp_dir, ignore_errors=True)
 

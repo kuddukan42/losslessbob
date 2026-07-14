@@ -162,7 +162,31 @@ class TestParseSetlist:
             "country": "USA",
             "info": "Great show",
             "setlistfm_url": "https://www.setlist.fm/setlist/bob-dylan/1978/the-forum-abc123.html",
+            "city_lat": None,
+            "city_lon": None,
+            "city_state": "",
         }
+
+    def test_show_row_captures_city_coords_and_state(self):
+        """TODO-222: venue.city.coords + stateCode are stored for the geocoder cascade."""
+        from backend.setlistfm import _parse_setlist
+        obj = {
+            **SETLIST_OBJ,
+            "venue": {
+                "name": "The Forum",
+                "city": {
+                    "name": "Los Angeles",
+                    "stateCode": "CA",
+                    "coords": {"lat": 33.9584, "long": -118.3417},
+                    "country": {"name": "USA"},
+                },
+            },
+        }
+        show_row, _ = _parse_setlist(obj)
+
+        assert show_row["city_lat"] == 33.9584
+        assert show_row["city_lon"] == -118.3417
+        assert show_row["city_state"] == "CA"
 
     def test_track_rows_flattened_with_global_position(self):
         from backend.setlistfm import _parse_setlist
