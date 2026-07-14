@@ -92,8 +92,15 @@ venue query. Sets up TODO-223.
 ## Session 4 — pick one
 
 - **TODO-223 venue gazetteer** (natural follow-on to Session 3), or
-- **TODO-228 Olof 2022+ PDF chronicles** (extends setlists past 2021; feeds
-  TODO-224/225 for recent shows), or
+- ~~**TODO-228 Olof 2022+ PDF chronicles**~~ **DONE 2026-07-14 — pivoted mid-session.**
+  The PDF premise didn't hold (2013+ chronicle PDFs have no per-show setlists,
+  confirmed by extracting real 2022/2023 PDFs — calendar + itinerary table only).
+  bobserve.com's own setlist database (`/setlist?event=N`) is the real 2022+
+  source; built `backend/bobserve_fetcher.py` + `backend/bobserve_parser.py`
+  instead. Full 2022-2026 crawl: 391 events / 6137 songs, 0 fetch errors, 18
+  legitimate partials (mostly not-yet-played 2026 shows). Feeds TODO-224/225
+  with no further wiring. Scraping bobserve.com/setlist was cleared with tj
+  despite its robots.txt explicitly disallowing ClaudeBot — see session note.
 - **TapeMatch post-7/12 rescore** — CALIBRATION_PROGRESS.md tail has three
   queued levers (corroborating-signal gate, staircase-pair-scoped 0.40 bar,
   `cluster_threshold_staircase` toward 0.47). Now past its 7/12 gate; needs a
