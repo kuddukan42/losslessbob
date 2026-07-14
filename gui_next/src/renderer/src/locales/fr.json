@@ -1757,7 +1757,9 @@
       "outOfRange": "La position se situe au-delà de l'interprétation enregistrée.",
       "folderMissing": "L'un de ces dossiers LB n'est pas disponible sur le disque.",
       "locked": "Exécution en cours, réessayez.",
-      "loadFailed": "Impossible de charger les extraits, réessayez."
+      "loadFailed": "Impossible de charger les extraits, réessayez.",
+      "autoPlaceholder": "auto",
+      "autoPickHint": "Laissez ce champ vide pour sélectionner automatiquement un passage vocal calme"
     }
   },
   "onboarding": {

@@ -539,7 +539,7 @@ interface AbClipResult {
 function AbPlayerPanel({ pair, date }: { pair: PairRow; date: string }) {
   const { t } = useTranslation()
   const eligible = pair.ab_eligible === true
-  const [tSec, setTSec] = useState('0')
+  const [tSec, setTSec] = useState('')
   const [durSec, setDurSec] = useState('20')
   const [clips, setClips] = useState<AbClipResult | null>(null)
   const [loading, setLoading] = useState(false)
@@ -560,12 +560,14 @@ function AbPlayerPanel({ pair, date }: { pair: PairRow; date: string }) {
     setPlaying(false)
     setClips(null)
     try {
+      const trimmed = tSec.trim()
       const resp = await fetch(`${BASE}/api/ab_clip`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           date, lb_a: pair.lb_a, lb_b: pair.lb_b,
-          t_sec: Number(tSec) || 0, dur_sec: Number(durSec) || 20,
+          ...(trimmed === '' ? {} : { t_sec: Number(trimmed) }),
+          dur_sec: Number(durSec) || 20,
         }),
       })
       const body = await resp.json().catch(() => ({}))
@@ -579,6 +581,9 @@ function AbPlayerPanel({ pair, date }: { pair: PairRow; date: string }) {
         return
       }
       setClips(body)
+      if (typeof body?.t_sec === 'number') {
+        setTSec(String(Math.round(body.t_sec * 10) / 10))
+      }
       setActive('a')
     } catch {
       setError(t('tapematch.abPlayer.loadFailed'))
@@ -635,6 +640,7 @@ function AbPlayerPanel({ pair, date }: { pair: PairRow; date: string }) {
           {t('tapematch.abPlayer.position')}
           <input
             type="number" min={0} step={1} value={tSec}
+            placeholder={t('tapematch.abPlayer.autoPlaceholder')}
             disabled={!eligible}
             onChange={e => setTSec(e.target.value)}
             style={AB_NUMBER_INPUT_STYLE}
@@ -654,6 +660,10 @@ function AbPlayerPanel({ pair, date }: { pair: PairRow; date: string }) {
         <Button variant="secondary" size="sm" disabled={!eligible || loading} onClick={handleLoad}>
           {loading ? t('tapematch.abPlayer.loading') : t('tapematch.abPlayer.load')}
         </Button>
+      </div>
+
+      <div style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)' }}>
+        {t('tapematch.abPlayer.autoPickHint')}
       </div>
 
       {error && (

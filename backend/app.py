@@ -5197,7 +5197,8 @@ def create_app() -> Flask:
                                 obs_conn, concert_date, pair["lb_a"], pair["lb_b"]
                             )
                             ab_eligible[key] = bool(pair_info) and (
-                                _ab_clips.is_eligible_speed(pair_info[0]["speed_kind"])
+                                _ab_clips.is_run_eligible(pair_info[0]["run_id"])
+                                and _ab_clips.is_eligible_speed(pair_info[0]["speed_kind"])
                                 and _ab_clips.is_eligible_speed(pair_info[1]["speed_kind"])
                             )
                     finally:
@@ -5224,11 +5225,18 @@ def create_app() -> Flask:
     def ab_clip_create() -> Response:
         """Build two performance-time-aligned A/B clips for a TapeMatch pair.
 
-        LISTENING §2 (TODO-231), v1 restricted to cleanly-aligned pairs (both
-        sources ``speed_kind IN ('reference','aligned')``). JSON body::
+        LISTENING §2 (TODO-231 + TODO-233): both sources must have an eligible
+        ``speed_kind`` (``reference``/``aligned``, or ``constant-speed-offset``
+        which is resampled to reference speed) from a run on/after the
+        2026-07-06 confidence gate. JSON body::
 
             {"date": "YYYY-MM-DD", "lb_a": int, "lb_b": int,
-             "t_sec": float (>=0), "dur_sec": int (5..60, default 20)}
+             "t_sec": float (>=0, optional), "dur_sec": int (5..60, default 20)}
+
+        ``t_sec`` is optional (TODO-232 part 2): when omitted, the backend
+        auto-picks a quiet-vocal-passage start point (:func:`ab_clips.
+        auto_pick_t_sec`) and returns the picked value in the response's
+        ``t_sec`` field so the caller can display/override it.
 
         Resolves each LB's folder via ``my_collection.disk_path``, maps the
         performance time to each source's local audio offset via
@@ -5236,10 +5244,11 @@ def create_app() -> Flask:
         ``data/ab_clips/`` and returns their ``/api/ab_clip/<name>`` URLs.
 
         Returns:
-            200 with clip URLs; 400 for bad params/position; 409
-            ``not_eligible`` (wrong speed_kind) or ``locked`` (observations.db
-            busy); 404 ``pair_not_found`` (unknown pair/date) or
-            ``folder_missing`` (unresolvable/unmounted disk path).
+            200 with clip URLs and the resolved ``t_sec``; 400 for bad
+            params/position; 409 ``not_eligible`` (wrong speed_kind) or
+            ``locked`` (observations.db busy); 404 ``pair_not_found``
+            (unknown pair/date) or ``folder_missing`` (unresolvable/unmounted
+            disk path).
         """
         from backend import ab_clips as _ab_clips
         from backend import tapematch_sync as _tapematch_sync
@@ -5249,12 +5258,14 @@ def create_app() -> Flask:
         lb_a = body.get("lb_a")
         lb_b = body.get("lb_b")
         t_sec = body.get("t_sec")
-        if not concert_date or lb_a is None or lb_b is None or t_sec is None:
+        if not concert_date or lb_a is None or lb_b is None:
             return jsonify({"error": "missing_fields"}), 400
-        try:
-            t_val = float(t_sec)
-        except (TypeError, ValueError):
-            return jsonify({"error": "bad_t_sec"}), 400
+        t_val: float | None = None
+        if t_sec is not None:
+            try:
+                t_val = float(t_sec)
+            except (TypeError, ValueError):
+                return jsonify({"error": "bad_t_sec"}), 400
         dur_val = _ab_clips.clamp_dur(body.get("dur_sec"))
 
         try:

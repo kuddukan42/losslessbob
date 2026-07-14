@@ -1757,7 +1757,9 @@
       "outOfRange": "De positie ligt buiten de opgenomen uitvoering.",
       "folderMissing": "Een van deze LB-mappen is niet beschikbaar op de schijf.",
       "locked": "De bewerking is bezig, probeer het opnieuw.",
-      "loadFailed": "Clips konden niet worden geladen, probeer het opnieuw."
+      "loadFailed": "Clips konden niet worden geladen, probeer het opnieuw.",
+      "autoPlaceholder": "auto",
+      "autoPickHint": "Laat leeg om automatisch een rustige zangpassage te selecteren"
     }
   },
   "onboarding": {

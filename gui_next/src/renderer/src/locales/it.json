@@ -1757,7 +1757,9 @@
       "outOfRange": "La posizione va oltre la performance registrata.",
       "folderMissing": "Una di queste cartelle LB non è disponibile sul disco.",
       "locked": "Esecuzione in corso, riprova.",
-      "loadFailed": "Impossibile caricare i clip, riprova."
+      "loadFailed": "Impossibile caricare i clip, riprova.",
+      "autoPlaceholder": "auto",
+      "autoPickHint": "Lasciare vuoto per selezionare automaticamente un passaggio vocale tranquillo"
     }
   },
   "onboarding": {

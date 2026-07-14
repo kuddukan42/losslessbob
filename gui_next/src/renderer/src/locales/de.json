@@ -1757,7 +1757,9 @@
       "outOfRange": "Die Position liegt jenseits der aufgezeichneten Darbietung.",
       "folderMissing": "Einer dieser LB-Ordner ist auf der Festplatte nicht verfügbar.",
       "locked": "Der Vorgang läuft, bitte versuchen Sie es erneut.",
-      "loadFailed": "Clips konnten nicht geladen werden. Bitte versuchen Sie es erneut."
+      "loadFailed": "Clips konnten nicht geladen werden. Bitte versuchen Sie es erneut.",
+      "autoPlaceholder": "auto",
+      "autoPickHint": "Lassen Sie das Feld leer, um automatisch eine leise Gesangspassage auszuwählen"
     }
   },
   "onboarding": {

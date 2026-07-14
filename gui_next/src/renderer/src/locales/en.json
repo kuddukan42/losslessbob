@@ -1747,6 +1747,8 @@
       "title": "A/B listening",
       "notEligible": "Not cleanly aligned for A/B listening yet",
       "position": "Position",
+      "autoPlaceholder": "auto",
+      "autoPickHint": "Leave blank to auto-pick a quiet vocal passage",
       "duration": "Duration",
       "seconds": "s",
       "load": "Load clips",
