@@ -51,10 +51,11 @@ Recent shipped work that only ears/eyes can sign off:
 
 ## Standing preempt (any window)
 
-**TODO-213 (High) — taper-badge data curation.** Unchanged from last package:
-the moment tj supplies wrong-badge examples (checklist item above), tracing
-their `evidence_json` preempts everything below. Start with `taper_attributions`
-(168 flagged conflicts + `_KNOWN_TAPER_ALIASES` coverage), NOT picks.py weights.
+~~**TODO-213 (High) — taper-badge data curation.**~~ **CLOSED 2026-07-14 (tj's
+call).** The attribution-curation half shipped; the badge weight-tuning half was
+cancelled as unnecessary — only ~22 taper-badge conflicts remain, all
+series-vs-series and well understood, owned by TODO-234 (family over-merge), not
+a weight-tuning problem. No standing preempt anymore.
 
 ## Session 1 — housekeeping + data-safety (small bite)
 
@@ -76,10 +77,11 @@ their `evidence_json` preempts everything below. Start with `taper_attributions`
 3. Opportunistic: BUG-249 repro attempts (2–3 full pytest runs, note the
    preceding tests).
 
-## Session 2 — TODO-213 curation pass
+## Session 2 — TODO-213 curation pass — CANCELLED 2026-07-14
 
-Requires tj's examples. Trace each through the Picks-tab evidence trail before
-touching any weights/aliases. This unblocks badge trust, the oldest open High.
+Closed by tj's decision (see Standing preempt above): the taper badge state is
+trustworthy enough, the ~22 remaining conflicts are series-vs-series (TODO-234),
+and the weight-tuning pass is not worth doing. Not a blocker on anything below.
 
 ## Session 3 — TODO-222: setlist.fm city coords + bounded venue search
 
