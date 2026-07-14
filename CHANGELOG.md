@@ -1,3 +1,29 @@
+[2026-07-14] — fix(scraper): bobserve field normalization — 66 festival/benefit concerts now geocode; US location fields de-shifted (TODO-228 follow-up, unblocks TODO-223)
+Context: TODO-228 loaded 391 bobserve shows (2022+) into olof_events, but three field-quality bugs
+  made the data unusable by the geocoder (which trusts the DSN taxonomy) and by any concert-venue
+  seed. (1) bobserve event_type is free text ('concert - outlaw music festival', 'benefit - farm
+  aid', 'soundcheck', 'tribute speech - …') where the geocoder tests event_type=='concert' exactly,
+  so 64 real festival/benefit concerts were flagged skipped_not_concert. (2) US location lines omit
+  country and sometimes carry a district ('Hollywood, Los Angeles, California'); the shared
+  _split_city_region_country assumed 'City, Region, Country' and shifted them to
+  city=Hollywood/region=Los Angeles/country=California. (3) A few non-standard pages captured
+  tour_name='Musicians' (a section header) or an 'Info via bobserve: <url>' line.
+Changed: backend/bobserve_parser.py — _normalize_event_type() maps the pre-'-' prefix onto the DSN
+  canonical set (concert|session|rehearsal|broadcast|interview|other; benefit→concert since Farm Aid
+  et al. are real gigs, soundcheck/tribute→other), preserving any lost detail (festival/benefit/
+  soundcheck qualifier) in notes as 'event_type_raw: …' — but only on a real difference, not a
+  case-only 'Concert'→'concert' one (74 rows, not 391). _split_bobserve_location() + _US_STATES
+  detect a trailing US state → region=state, country='' (matching DSN's empty-country-for-US
+  convention), city=the token before the state (leading district dropped); non-US rows still defer
+  to _split_city_region_country. tour_name extraction skips 'Musicians' / 'Info via bobserve:' /
+  'http…' tail lines. Re-parsed the mirrored data/olof/bobserve_pages/ (idempotent, no network).
+Data: source='bobserve' event_type now concert=383 (was 317, +66 to the geocoder), other=7,
+  rehearsal=1 — zero 'concert -'-prefixed strings; 270 US rows carry empty country + state region;
+  0 tour_name='Musicians' remain.
+Tests: tests/test_bobserve_parser.py (new, 25 tests) — event_type mapping table, US 2-part /
+  3-part-with-district splits, non-US unchanged, tour_name guard, case-only-no-notes. 86 passed
+  (with test_geocoder).
+
 [2026-07-14] — feat(backend): TODO-228 (CLOSED) — bobserve.com setlist scraper supersedes the PDF-chronicle approach for 2022+ shows
 Context: TODO-228 assumed the 2013+ Yearly Chronicle PDFs just needed text extraction to feed the
   existing chronicle-appendix setlist parser. Extracting real 2022/2023 chronicle PDFs directly
