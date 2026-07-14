@@ -171,3 +171,164 @@ def test_seed_tolerates_missing_optional_source_tables(tmp_path, monkeypatch):
     assert summary["per_source"]["setlistfm_shows"] == 0
     assert summary["per_source"]["bobdylan_shows"] == 0
     assert summary["inserted"] == 1
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# 3. resolution ladder
+# ═══════════════════════════════════════════════════════════════════════════════
+
+class TestHaversine:
+    def test_zero_distance(self):
+        assert vg._haversine_km(40.0, -74.0, 40.0, -74.0) == pytest.approx(0.0)
+
+    def test_known_distance(self):
+        # NYC <-> LA is ~3936 km.
+        d = vg._haversine_km(40.7128, -74.0060, 34.0522, -118.2437)
+        assert d == pytest.approx(3936, abs=30)
+
+
+def _row(**kw):
+    base = {"venue": "", "city": "", "region": "", "country": "",
+            "venue_norm": "", "city_norm": ""}
+    base.update(kw)
+    return base
+
+
+class TestCityAnchor:
+    def test_prefers_setlistfm_coord(self, monkeypatch):
+        monkeypatch.setattr(vg, "_setlistfm_city_coord", lambda conn, cn: (51.5, -0.1))
+        called = []
+        monkeypatch.setattr(vg, "_geocode_retry", lambda *a, **k: called.append(1) or {})
+        cache = {}
+        coord, src = vg._city_anchor(None, _row(city="London", city_norm="london"), cache)
+        assert (coord, src) == ((51.5, -0.1), "setlistfm_city")
+        assert called == []  # no Nominatim call when setlist.fm has the coord
+
+    def test_falls_back_to_city_geocode_and_caches(self, monkeypatch):
+        monkeypatch.setattr(vg, "_setlistfm_city_coord", lambda conn, cn: None)
+        calls = []
+
+        def fake_geo(query, viewbox=None, bounded=False):
+            calls.append(query)
+            return {"lat": 41.0, "lon": -73.0, "source": "nominatim", "confidence": "high"}
+
+        monkeypatch.setattr(vg, "_geocode_retry", fake_geo)
+        cache = {}
+        row = _row(city="Oakland", region="California", city_norm="oakland")
+        coord, src = vg._city_anchor(None, row, cache)
+        assert (coord, src) == ((41.0, -73.0), "city_geocode")
+        # Second venue in the same city hits the cache — no second geocode.
+        vg._city_anchor(None, _row(city="Oakland", city_norm="oakland"), cache)
+        assert calls == ["Oakland, California"]
+
+    def test_empty_city_cannot_anchor(self, monkeypatch):
+        monkeypatch.setattr(vg, "_setlistfm_city_coord", lambda conn, cn: None)
+        monkeypatch.setattr(vg, "_geocode_retry", lambda *a, **k: pytest.fail("no geocode"))
+        coord, src = vg._city_anchor(None, _row(city="", city_norm=""), {})
+        assert (coord, src) == (None, "")
+
+
+class TestResolveOne:
+    def _anchor(self, monkeypatch, coord=(40.0, -74.0), src="city_geocode"):
+        monkeypatch.setattr(vg, "_city_anchor", lambda conn, row, cache: (coord, src))
+
+    def test_step1_bounded_venue_hit(self, monkeypatch):
+        self._anchor(monkeypatch)
+        monkeypatch.setattr(vg, "_geocode_retry",
+                            lambda q, viewbox=None, bounded=False:
+                            {"lat": 40.75, "lon": -73.99, "confidence": "high",
+                             "display_name": "Beacon Theatre"})
+        out = vg.resolve_one(None, _row(venue="Beacon Theatre"), {})
+        assert out["source"] == "bounded_venue"
+        assert (out["lat"], out["lon"], out["confidence"]) == (40.75, -73.99, "high")
+
+    def test_step2_wikidata_when_bounded_misses(self, monkeypatch):
+        self._anchor(monkeypatch)
+        monkeypatch.setattr(vg, "_geocode_retry",
+                            lambda *a, **k: {"lat": None, "lon": None, "source": "failed"})
+        monkeypatch.setattr(vg, "_wikidata_venue_coord", lambda venue, anchor: (40.1, -74.1))
+        out = vg.resolve_one(None, _row(venue="Old Boston Garden"), {})
+        assert out["source"] == "wikidata"
+        assert (out["lat"], out["lon"], out["confidence"]) == (40.1, -74.1, "high")
+
+    def test_step3_city_fallback(self, monkeypatch):
+        self._anchor(monkeypatch, coord=(40.0, -74.0), src="setlistfm_city")
+        monkeypatch.setattr(vg, "_geocode_retry",
+                            lambda *a, **k: {"lat": None, "lon": None, "source": "failed"})
+        monkeypatch.setattr(vg, "_wikidata_venue_coord", lambda venue, anchor: None)
+        out = vg.resolve_one(None, _row(venue="Nowhere Hall"), {})
+        assert out["source"] == "setlistfm_city"
+        assert (out["lat"], out["lon"], out["confidence"]) == (40.0, -74.0, "city")
+
+    def test_failed_when_no_anchor(self, monkeypatch):
+        monkeypatch.setattr(vg, "_city_anchor", lambda conn, row, cache: (None, ""))
+        out = vg.resolve_one(None, _row(venue="Ghost Venue", city=""), {})
+        assert out["source"] == "failed"
+        assert out["lat"] is None
+
+
+class TestWikidataVenueCoord:
+    def _resp(self, monkeypatch, bindings):
+        import io
+        import json as _json
+
+        class _Ctx:
+            def __enter__(self_): return io.BytesIO(
+                _json.dumps({"results": {"bindings": bindings}}).encode())
+            def __exit__(self_, *a): return False
+
+        monkeypatch.setattr(vg.time, "sleep", lambda *a: None)
+        monkeypatch.setattr(vg.urllib.request, "urlopen", lambda *a, **k: _Ctx())
+
+    def test_accepts_coord_within_radius(self, monkeypatch):
+        self._resp(monkeypatch, [{"coord": {"value": "Point(-74.01 40.71)"}}])
+        assert vg._wikidata_venue_coord("Madison Square Garden", (40.75, -73.99)) \
+            == (40.71, -74.01)
+
+    def test_rejects_coord_outside_radius(self, monkeypatch):
+        # A same-name venue on the other side of the world must be rejected.
+        self._resp(monkeypatch, [{"coord": {"value": "Point(151.2 -33.8)"}}])
+        assert vg._wikidata_venue_coord("Fox Theatre", (40.75, -73.99)) is None
+
+    def test_network_error_returns_none(self, monkeypatch):
+        monkeypatch.setattr(vg.time, "sleep", lambda *a: None)
+
+        def boom(*a, **k):
+            raise vg.urllib.error.URLError("down")
+
+        monkeypatch.setattr(vg.urllib.request, "urlopen", boom)
+        assert vg._wikidata_venue_coord("Any", (0.0, 0.0)) is None
+
+
+class TestResolveVenues:
+    def test_updates_seeded_skips_manual_and_honors_limit(self, tmp_path, monkeypatch):
+        _db, c = _make_db(tmp_path, monkeypatch)
+        c.executemany(
+            """INSERT INTO venue_geocoded (venue_norm, city_norm, venue, city, source,
+                   manual_override) VALUES (?,?,?,?,?,?)""",
+            [
+                ("a hall", "oakland", "A Hall", "Oakland", "seeded", 0),
+                ("b hall", "oakland", "B Hall", "Oakland", "seeded", 0),
+                ("m hall", "oakland", "M Hall", "Oakland", "manual", 1),
+            ],
+        )
+        c.commit()
+        monkeypatch.setattr(vg, "_city_anchor",
+                            lambda conn, row, cache: ((37.8, -122.3), "city_geocode"))
+        monkeypatch.setattr(vg, "_geocode_retry",
+                            lambda q, viewbox=None, bounded=False:
+                            {"lat": 37.81, "lon": -122.27, "confidence": "high",
+                             "display_name": q})
+        monkeypatch.setattr(vg, "_wikidata_venue_coord", lambda venue, anchor: None)
+
+        summary = vg.resolve_venues(limit=1)
+        assert summary["processed"] == 1  # limit honored
+
+        vg.resolve_venues()  # process the rest
+        rows = {r["venue_norm"]: r for r in c.execute("SELECT * FROM venue_geocoded")}
+        assert rows["a hall"]["source"] == "bounded_venue"
+        assert rows["b hall"]["source"] == "bounded_venue"
+        assert rows["a hall"]["lat"] == 37.81
+        # manual row untouched.
+        assert rows["m hall"]["source"] == "manual"
+        assert rows["m hall"]["lat"] is None
