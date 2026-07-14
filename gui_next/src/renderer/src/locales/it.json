@@ -58,7 +58,8 @@
       "trading": "Trading",
       "sharing": "Condivisione",
       "tapematch": "TapeMatch",
-      "songs": "Brani"
+      "songs": "Brani",
+      "fingerprint": "Impronta digitale"
     },
     "statusBar": {
       "db": "DB:",
@@ -790,7 +791,9 @@
       "size": "Dimensione",
       "rating": "Valutazione",
       "wishlist": "Lista dei desideri",
-      "actions": "Azioni"
+      "actions": "Azioni",
+      "type": "Tipo",
+      "notes": "Note"
     },
     "toast": {
       "savedPersonalInfo": "Informazioni personali salvate per {{lb}}",
@@ -831,6 +834,15 @@
       "title": "Esporta colonne",
       "baseNote": "LB #, Stato, Data, Posizione, Cartella e Note sono sempre inclusi. Aggiungi altro:",
       "export": "Esporta"
+    },
+    "forumList": {
+      "button": "Messaggio dalla lista…",
+      "modalTitle": "Pubblica sul forum dalla lista",
+      "instructions": "Incolla o digita i numeri LB (con qualsiasi separatore: virgole, spazi o righe nuove)",
+      "placeholder": "LB-00018, LB-00042, 1001…",
+      "foundCount": "{{count}} trovato nella tua raccolta",
+      "missingCount": "{{count}} non trovato: {{list}}",
+      "postButton": "Post {{count}}"
     }
   },
   "map": {
@@ -891,7 +903,9 @@
       "checkUpdate": "Controlla aggiornamenti",
       "checkingUpdate": "Verifica in corso…",
       "installUpdate": "Installa da file...",
-      "githubUpdateBody": "Su GitHub è disponibile un nuovo snapshot master ({{tag}}).\n\nScaricarlo e applicarlo ora? La tua collezione, la lista dei desideri e le impostazioni personali verranno conservate."
+      "githubUpdateBody": "Su GitHub è disponibile un nuovo snapshot master ({{tag}}).\n\nScaricarlo e applicarlo ora? La tua collezione, la lista dei desideri e le impostazioni personali verranno conservate.",
+      "publishSitedata": "Pubblica i dati del sito…",
+      "publishingSitedata": "Pubblicazione in corso…"
     },
     "integrations": {
       "title": "Integrazioni",
@@ -1409,7 +1423,8 @@
       "carbonbitPicks": "Le scelte di carbonbit",
       "tenhaafPicks": "Le scelte di 10haaf",
       "taperConfirmed": "Registratore confermato",
-      "taperReview": "Taper: da rivedere"
+      "taperReview": "Taper: da rivedere",
+      "curatedAny": "Qualsiasi selezione curata"
     },
     "statusValue": {
       "public": "Pubblico",
@@ -1838,6 +1853,43 @@
       "pick": "seleziona",
       "openInLibrary": "Apri nella Libreria",
       "empty": "Non sono state trovate esecuzioni per questo brano."
+    }
+  },
+  "fingerprint": {
+    "title": "Identificazione delle scalette",
+    "subtitle": "Voci con metadati relativi a data e luogo non utilizzabili, confrontate con le scalette di Olof Björner — si tratta solo di suggerimenti, che non vengono mai applicati automaticamente.",
+    "count": "Suggerimenti per {{count}}",
+    "empty": "Nessun suggerimento in questa schermata. Esegui una scansione per cercare corrispondenze.",
+    "scan": {
+      "button": "Cerca corrispondenze",
+      "running": "Scansione in corso…",
+      "failed": "La scansione non è andata a buon fine, riprova.",
+      "stats": "Voci candidate {{scanned}} analizzate · Corrispondenze {{matched}} · Suggerimenti {{written}} redatti"
+    },
+    "filter": {
+      "pending": "In sospeso",
+      "dismissed": "Rifiutato",
+      "all": "Tutto"
+    },
+    "table": {
+      "lb": "LB",
+      "rank": "#{{rank}}",
+      "entry": "Metadati delle voci",
+      "matchDate": "Data di corrispondenza",
+      "matchVenue": "Luogo dell'evento",
+      "type": "Tipo",
+      "score": "Punteggio",
+      "songs": "Brani",
+      "dismiss": "Chiudi",
+      "dismissedBadge": "scartato",
+      "openInLibrary": "Apri nella Libreria",
+      "noDate": "senza data",
+      "noLocation": "—"
+    },
+    "detail": {
+      "matched": "Abbinate ({{count}})",
+      "missing": "Non presente in questo nastro ({{count}})",
+      "completeMatch": "Ogni brano della scaletta è presente."
     }
   }
 }

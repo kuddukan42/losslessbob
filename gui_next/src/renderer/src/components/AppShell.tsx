@@ -10,7 +10,7 @@ type NavId =
   | 'home' | 'pipeline' | 'verify' | 'lookup' | 'quicklookup' | 'rename' | 'lbdir'
   | 'library' | 'collection' | 'trading' | 'sharing' | 'search' | 'bootlegs' | 'tapematch' | 'songs'
   | 'attachments' | 'spectrograms' | 'map'
-  | 'scraper' | 'setup' | 'mounts' | 'themes' | 'dbeditor'
+  | 'scraper' | 'fingerprint' | 'setup' | 'mounts' | 'themes' | 'dbeditor'
 
 const ADVANCED_TOOLS: NavItem[] = [
   { id: 'verify', label: 'Verify', icon: 'verify' },
@@ -79,7 +79,8 @@ const NAV_GROUPS: NavGroup[] = [
     label: 'Curator',
     gatedGroup: true,
     items: [
-      { id: 'scraper', label: 'Scraper', icon: 'scraper' },
+      { id: 'scraper',     label: 'Scraper',     icon: 'scraper' },
+      { id: 'fingerprint', label: 'Fingerprint', icon: 'fingerprint' },
     ],
   },
   {

@@ -58,7 +58,8 @@
       "trading": "Handel",
       "sharing": "Delen",
       "tapematch": "TapeMatch",
-      "songs": "Nummers"
+      "songs": "Nummers",
+      "fingerprint": "Vingerafdruk"
     },
     "statusBar": {
       "db": "DB:",
@@ -790,7 +791,9 @@
       "size": "Maat",
       "rating": "Beoordeling",
       "wishlist": "Verlanglijst",
-      "actions": "Acties"
+      "actions": "Acties",
+      "type": "Type",
+      "notes": "Opmerkingen"
     },
     "toast": {
       "savedPersonalInfo": "Opgeslagen persoonlijke info voor {{lb}}",
@@ -831,6 +834,15 @@
       "title": "Kolommen exporteren",
       "baseNote": "LB #, Status, Datum, Locatie, Map en Notities worden altijd weergegeven. Voeg meer toe:",
       "export": "Exporteren"
+    },
+    "forumList": {
+      "button": "Bericht uit lijst…",
+      "modalTitle": "Bericht op het forum plaatsen vanuit de lijst",
+      "instructions": "Plak of typ LB-nummers (elk scheidingsteken — komma's, spaties of regeleinden)",
+      "placeholder": "LB-00018, LB-00042, 1001…",
+      "foundCount": "{{count}} gevonden in uw collectie",
+      "missingCount": "{{count}} niet gevonden: {{list}}",
+      "postButton": "Bericht {{count}}"
     }
   },
   "map": {
@@ -891,7 +903,9 @@
       "checkUpdate": "Controleren op updates",
       "checkingUpdate": "Controleren…",
       "installUpdate": "Installeren vanuit bestand...",
-      "githubUpdateBody": "Er is een nieuwe master-snapshot beschikbaar op GitHub ({{tag}}).\n\nNu downloaden en toepassen? Je collectie, verlanglijst en persoonlijke instellingen blijven behouden."
+      "githubUpdateBody": "Er is een nieuwe master-snapshot beschikbaar op GitHub ({{tag}}).\n\nNu downloaden en toepassen? Je collectie, verlanglijst en persoonlijke instellingen blijven behouden.",
+      "publishSitedata": "Sitegegevens publiceren…",
+      "publishingSitedata": "Bezig met publiceren…"
     },
     "integrations": {
       "title": "Integraties",
@@ -1409,7 +1423,8 @@
       "carbonbitPicks": "carbonbit's selectie",
       "tenhaafPicks": "De selectie van 10haaf",
       "taperConfirmed": "Bevestigde taper",
-      "taperReview": "Taper: moet worden gecontroleerd"
+      "taperReview": "Taper: moet worden gecontroleerd",
+      "curatedAny": "Een willekeurige selectie"
     },
     "statusValue": {
       "public": "Openbaar",
@@ -1838,6 +1853,43 @@
       "pick": "kies",
       "openInLibrary": "Openen in bibliotheek",
       "empty": "Er zijn geen uitvoeringen gevonden voor dit nummer."
+    }
+  },
+  "fingerprint": {
+    "title": "Setlist-vingerafdrukken",
+    "subtitle": "Items met onbruikbare metadata over datum en locatie, vergeleken met de setlists van Olof Björner — dit zijn slechts suggesties, die nooit automatisch worden toegepast.",
+    "count": "{{count}} suggesties",
+    "empty": "Geen suggesties in deze weergave. Voer een scan uit om naar overeenkomsten te zoeken.",
+    "scan": {
+      "button": "Zoeken naar overeenkomsten",
+      "running": "Bezig met scannen…",
+      "failed": "Scannen is mislukt, probeer het opnieuw.",
+      "stats": "{{scanned}}-kandidaatvermeldingen gescand · {{matched}}-overeenkomsten gevonden · {{written}}-suggesties geschreven"
+    },
+    "filter": {
+      "pending": "In behandeling",
+      "dismissed": "Afgewezen",
+      "all": "Alles"
+    },
+    "table": {
+      "lb": "LB",
+      "rank": "#{{rank}}",
+      "entry": "Metadata van items",
+      "matchDate": "Datum matchen",
+      "matchVenue": "Locatie matchen",
+      "type": "Type",
+      "score": "Score",
+      "songs": "Nummers",
+      "dismiss": "Sluiten",
+      "dismissedBadge": "afgewezen",
+      "openInLibrary": "Openen in bibliotheek",
+      "noDate": "geen datum",
+      "noLocation": "—"
+    },
+    "detail": {
+      "matched": "Aangepast ({{count}})",
+      "missing": "Niet op deze tape ({{count}})",
+      "completeMatch": "Elk nummer in de setlist is opgenomen."
     }
   }
 }

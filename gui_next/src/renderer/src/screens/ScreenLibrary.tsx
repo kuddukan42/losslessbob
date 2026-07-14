@@ -60,7 +60,7 @@ type HealthFlag  = 'Wishlist' | 'Duplicates' | 'Unconfirmed'
 // curator-confirmed taper pill; 'taperReview' surfaces propagated/inferred/conflict
 // rows per §5's "review queue = a Library filter" decision (no new screen).
 type PerfView = 'all' | 'owned' | 'gaps' | 'wishlist' | 'duplicates'
-  | 'recommended' | 'superseded' | 'carbonbit' | 'tenhaaf'
+  | 'recommended' | 'superseded' | 'carbonbit' | 'tenhaaf' | 'curatedAny'
   | 'taperConfirmed' | 'taperReview'
 
 interface RecordingRow {
@@ -171,13 +171,14 @@ const STATUS_LABEL_KEY = {
 type ViewLabelKey = 'library.views.allPerformances' | 'library.views.myCollection'
   | 'library.views.coverageGaps' | 'library.views.wishlist' | 'library.views.duplicates'
   | 'library.views.recommended' | 'library.views.superseded'
-  | 'library.views.carbonbitPicks' | 'library.views.tenhaafPicks'
+  | 'library.views.carbonbitPicks' | 'library.views.tenhaafPicks' | 'library.views.curatedAny'
   | 'library.views.taperConfirmed' | 'library.views.taperReview'
 const VIEW_LABEL_KEY: Record<string, ViewLabelKey> = {
   all: 'library.views.allPerformances', owned: 'library.views.myCollection', gaps: 'library.views.coverageGaps',
   wishlist: 'library.views.wishlist', duplicates: 'library.views.duplicates',
   recommended: 'library.views.recommended', superseded: 'library.views.superseded',
   carbonbit: 'library.views.carbonbitPicks', tenhaaf: 'library.views.tenhaafPicks',
+  curatedAny: 'library.views.curatedAny',
   taperConfirmed: 'library.views.taperConfirmed', taperReview: 'library.views.taperReview',
 }
 const COVERAGE_LABEL_KEY: Record<string, 'library.coverageValue.covered' | 'library.coverageValue.upgrade' | 'library.coverageValue.gap' | 'library.coverageValue.undocumented'> = {
@@ -779,6 +780,17 @@ export function ScreenLibrary(): React.JSX.Element {
     staleTime: Infinity,
   })
 
+  // FABLE_UNIFIED_RANKING phase 4 (TODO-186 remainder): pick/quality/curated/
+  // taper badges for the recording lens. /api/search doesn't join those tables,
+  // so — same as families/prefetch — fetch a flat lb_number→badge map and merge
+  // it client-side (SPEC_INTEGRATION_NOTES.md F4). The performance lens gets the
+  // same fields inline from /api/library/performances.
+  const { data: badgeData } = useQuery({
+    queryKey: ['library-badges'],
+    queryFn: () => fetch(`${BASE}/api/library/badges`).then(r => r.json()),
+    staleTime: Infinity,
+  })
+
   // TODO-150 step 8: detail-panel ShareSeed zone. `prefetch.torrents`/
   // `prefetch.forum_posts` already cover every LB — no new backend endpoint,
   // just grouped by lb_number into the per-row shape the panel reads.
@@ -844,13 +856,18 @@ export function ScreenLibrary(): React.JSX.Element {
       prefetch && Array.isArray(prefetch.xref_lb_numbers) ? prefetch.xref_lb_numbers : []
     )
 
+    const badges = (badgeData ?? {}) as Record<string, {
+      pickRank?: number; absGrade?: string; curated?: string[]
+      taperConfirmed?: string; taperReview?: boolean
+    }>
+
     return (catalog as any[]).map((d): RecordingRow => {
       const lbNumber = d.lb_number as number
       const owned = ownedMap.has(lbNumber)
       const own = ownedMap.get(lbNumber)
       const year = extractYear(d.date_str ?? '')
       const raw = d.rating ?? ''
-      return {
+      const row: RecordingRow = {
         lb:       `LB-${String(lbNumber).padStart(5, '0')}`,
         lbNumber,
         year,
@@ -872,8 +889,19 @@ export function ScreenLibrary(): React.JSX.Element {
         path:     own?.path ?? '',
         conf:     own?.conf ?? '',
       }
+      // Merge pick/curated/taper badges (F4 pattern), same as the performance
+      // lens does from its own payload — absent keys just stay undefined.
+      const b = badges[lbNumber]
+      if (b) {
+        if (b.pickRank != null) row.pickRank = b.pickRank
+        if (b.absGrade) row.absGrade = b.absGrade
+        if (b.curated) row.curated = b.curated
+        if (b.taperConfirmed) row.taperConfirmed = b.taperConfirmed
+        if (b.taperReview) row.taperReview = b.taperReview
+      }
+      return row
     })
-  }, [catalog, prefetch])
+  }, [catalog, prefetch, badgeData])
 
   // TODO-215 sub-feature 3: consume a one-shot `?lb=<n>` deep-link (from
   // TapeMatch) once `rows` is populated, then clear the param so it can't
@@ -1293,15 +1321,28 @@ export function ScreenLibrary(): React.JSX.Element {
                           <TD>
                             <div style={{ display: 'flex', alignItems: 'center', gap: 6, minWidth: 0 }}>
                               <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{r.loc}</span>
-                              {r.taperKnown && taperBadgeLabel(r.taper) && (
-                                <Pill tone="mute" soft title={t('library.columns.taper')}>{taperBadgeLabel(r.taper)}</Pill>
+                              {r.pickRank === 1 && (
+                                <span title={t('library.picks.recommendedTitle')} style={{ color: 'var(--lbb-accent-mid)', flex: '0 0 auto' }}>★</span>
                               )}
+                              {/* Confirmed-taper attribution upgrades the raw free-text
+                                  taper pill (F4 badges on the recording lens, TODO-186). */}
+                              {r.taperConfirmed
+                                ? <Pill tone="info" soft>{t('library.picks.taperBadge', { taper: r.taperConfirmed })}</Pill>
+                                : r.taperKnown && taperBadgeLabel(r.taper) && (
+                                    <Pill tone="mute" soft title={t('library.columns.taper')}>{taperBadgeLabel(r.taper)}</Pill>
+                                  )}
+                              {r.curated?.map(name => (
+                                <Pill key={name} tone="info" soft>{t('library.picks.curatedBadge', { curator: name })}</Pill>
+                              ))}
                             </div>
                           </TD>
                           <TD align="center">
-                            {r.rating !== '—'
-                              ? <Pill tone={ratingTone(r.rating)} soft>{r.rating}</Pill>
-                              : <span style={{ color: 'var(--lbb-fg3)' }}>—</span>}
+                            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4 }}>
+                              {r.rating !== '—'
+                                ? <Pill tone={ratingTone(r.rating)} soft>{r.rating}</Pill>
+                                : <span style={{ color: 'var(--lbb-fg3)' }}>—</span>}
+                              {r.owned && r.absGrade && <Pill tone="info" soft>{r.absGrade}</Pill>}
+                            </span>
                           </TD>
                           {scope === 'owned' ? <>
                             <TD dim style={{ fontSize: 'var(--lbb-fs-11-5)' }}>{r.desc}</TD>
@@ -1727,6 +1768,7 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
       if (perfView === 'superseded') return p.recordings.some(r => r.owned && (r.pickRank ?? 1) > 1)
       if (perfView === 'carbonbit') return p.recordings.some(r => r.curated?.includes('carbonbit'))
       if (perfView === 'tenhaaf') return p.recordings.some(r => r.curated?.includes('10haaf'))
+      if (perfView === 'curatedAny') return p.recordings.some(r => (r.curated?.length ?? 0) > 0)
       if (perfView === 'taperConfirmed') return p.recordings.some(r => r.taperConfirmed != null)
       if (perfView === 'taperReview') return p.recordings.some(r => r.taperReview)
       return true
@@ -1834,6 +1876,7 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
     superseded: performances.filter(p => p.recordings.some(r => r.owned && (r.pickRank ?? 1) > 1)).length,
     carbonbit: performances.filter(p => p.recordings.some(r => r.curated?.includes('carbonbit'))).length,
     tenhaaf:   performances.filter(p => p.recordings.some(r => r.curated?.includes('10haaf'))).length,
+    curatedAny: performances.filter(p => p.recordings.some(r => (r.curated?.length ?? 0) > 0)).length,
     taperConfirmed: performances.filter(p => p.recordings.some(r => r.taperConfirmed != null)).length,
     taperReview:    performances.filter(p => p.recordings.some(r => r.taperReview)).length,
   }), [performances])
@@ -1912,6 +1955,7 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
               {opt('superseded', t('library.views.superseded'), viewCounts.superseded)}
               {opt('carbonbit', t('library.views.carbonbitPicks'), viewCounts.carbonbit)}
               {opt('tenhaaf', t('library.views.tenhaafPicks'), viewCounts.tenhaaf)}
+              {opt('curatedAny', t('library.views.curatedAny'), viewCounts.curatedAny)}
               {opt('taperConfirmed', t('library.views.taperConfirmed'), viewCounts.taperConfirmed)}
               {opt('taperReview', t('library.views.taperReview'), viewCounts.taperReview)}
             </>

@@ -52,6 +52,7 @@
       "curatorBadge": "CURATOR",
       "dbeditor": "DB Editor",
       "scraper": "Scraper",
+      "fingerprint": "Fingerprint",
       "settings": "Settings",
       "setup": "Setup",
       "mounts": "Mounts",
@@ -719,6 +720,15 @@
       "posting": "Posting…",
       "postTopic": "Post topic"
     },
+    "forumList": {
+      "button": "Post from list…",
+      "modalTitle": "Post to forum from list",
+      "instructions": "Paste or type LB numbers (any separator — commas, spaces, or newlines)",
+      "placeholder": "LB-00018, LB-00042, 1001…",
+      "foundCount": "{{count}} matched in your collection",
+      "missingCount": "{{count}} not found: {{list}}",
+      "postButton": "Post {{count}}"
+    },
     "detail": {
       "owned": "Owned",
       "xref": "Xref",
@@ -789,6 +799,7 @@
     "table": {
       "lb": "LB#",
       "status": "Status",
+      "type": "Type",
       "date": "Date",
       "location": "Location",
       "folder": "Folder",
@@ -796,6 +807,7 @@
       "size": "Size",
       "rating": "Rating",
       "wishlist": "Wishlist",
+      "notes": "Notes",
       "actions": "Actions"
     },
     "toast": {
@@ -891,7 +903,9 @@
       "checkUpdate": "Check for updates",
       "checkingUpdate": "Checking…",
       "installUpdate": "Install from file…",
-      "githubUpdateBody": "A new master snapshot is available on GitHub ({{tag}}).\n\nDownload and apply it now? Your collection, wishlist, and personal settings are preserved."
+      "githubUpdateBody": "A new master snapshot is available on GitHub ({{tag}}).\n\nDownload and apply it now? Your collection, wishlist, and personal settings are preserved.",
+      "publishSitedata": "Publish site data…",
+      "publishingSitedata": "Publishing…"
     },
     "integrations": {
       "title": "Integrations",
@@ -1408,6 +1422,7 @@
       "superseded": "Superseded copies",
       "carbonbitPicks": "carbonbit's picks",
       "tenhaafPicks": "10haaf's picks",
+      "curatedAny": "Any curated pick",
       "taperConfirmed": "Confirmed taper",
       "taperReview": "Taper: needs review"
     },
@@ -1784,6 +1799,43 @@
       "pick": "pick",
       "openInLibrary": "Open in Library",
       "empty": "No performances found for this song."
+    }
+  },
+  "fingerprint": {
+    "title": "Setlist Fingerprinting",
+    "subtitle": "Entries with unusable date/location metadata, matched against Olof Björner's setlists — suggestions only, never applied automatically.",
+    "count": "{{count}} suggestions",
+    "empty": "No suggestions in this view. Run a scan to look for matches.",
+    "scan": {
+      "button": "Scan for matches",
+      "running": "Scanning…",
+      "failed": "Scan failed, try again.",
+      "stats": "Scanned {{scanned}} candidate entries · {{matched}} matched · {{written}} suggestions written"
+    },
+    "filter": {
+      "pending": "Pending",
+      "dismissed": "Dismissed",
+      "all": "All"
+    },
+    "table": {
+      "lb": "LB",
+      "rank": "#{{rank}}",
+      "entry": "Entry metadata",
+      "matchDate": "Match date",
+      "matchVenue": "Match venue",
+      "type": "Type",
+      "score": "Score",
+      "songs": "Songs",
+      "dismiss": "Dismiss",
+      "dismissedBadge": "dismissed",
+      "openInLibrary": "Open in Library",
+      "noDate": "no date",
+      "noLocation": "—"
+    },
+    "detail": {
+      "matched": "Matched ({{count}})",
+      "missing": "Not in this tape ({{count}})",
+      "completeMatch": "Every song in the setlist is accounted for."
     }
   },
   "onboarding": {

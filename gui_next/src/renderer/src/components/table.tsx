@@ -66,10 +66,15 @@ export function TH({ children, align = 'left', width, style, onClick, sorted, on
         ...style,
       }}
     >
-      {children}
-      {sorted === 'asc'  && <span style={{ marginLeft: 4, opacity: 0.7 }}>▲</span>}
-      {sorted === 'desc' && <span style={{ marginLeft: 4, opacity: 0.7 }}>▼</span>}
-      {!sorted && onClick && <span style={{ marginLeft: 4, opacity: 0.25 }}>⇅</span>}
+      <span style={{
+        display: 'block', overflow: 'hidden', textOverflow: 'ellipsis',
+        whiteSpace: 'nowrap', paddingRight: onResizeStart ? 8 : 0,
+      }}>
+        {children}
+        {sorted === 'asc'  && <span style={{ marginLeft: 4, opacity: 0.7 }}>▲</span>}
+        {sorted === 'desc' && <span style={{ marginLeft: 4, opacity: 0.7 }}>▼</span>}
+        {!sorted && onClick && <span style={{ marginLeft: 4, opacity: 0.25 }}>⇅</span>}
+      </span>
       {onResizeStart && (
         <div
           onMouseDown={e => { e.stopPropagation(); e.preventDefault(); onResizeStart(e) }}
