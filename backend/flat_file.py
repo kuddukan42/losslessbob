@@ -34,6 +34,25 @@ _ZIP_PATTERN = re.compile(
 _SIZE_PATTERN = re.compile(r"([\d.]+)\s*(Meg|MB|KB|GB|B)", re.IGNORECASE)
 
 
+def _run_write(fn, db_path: str | None):
+    """Route a write callable through the write queue, matching the BUG-246
+    guard used elsewhere (song_index.py, setlist_fingerprint.py,
+    taper_attribution.py): the write queue singleton is first-caller-wins, so
+    under pytest (each test its own temp DB) it may be bound to a different
+    DB than *db_path*.
+    """
+    queue = database.get_write_queue()
+    if db_path is not None and str(Path(db_path).resolve()) != str(Path(queue.db_path).resolve()):
+        logger.warning(
+            "flat_file: write queue bound to %s but this write targets %s"
+            " — writing directly", queue.db_path, db_path,
+        )
+        conn = database.get_connection(db_path)
+        with conn:
+            return fn(conn)
+    return queue.execute(fn)
+
+
 def _parse_size(text: str) -> int:
     """Parse a human-readable size string to bytes.
 
@@ -540,7 +559,7 @@ def apply_flat_file_release(release_id: int, db_path=None) -> dict:
             (_ra, _rc, _rr, _nlmin, _nlmax, _rel_id),
         )
 
-    database.get_write_queue().execute(_apply_writes)
+    _run_write(_apply_writes, db_path)
 
     # Update meta keys to reflect the new state (each goes through queue separately)
     database.set_meta("import_hash", row["zip_sha256"] or "", db_path)

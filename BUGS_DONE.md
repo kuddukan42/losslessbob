@@ -1,6 +1,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-246: Live show_picks wiped — first-init-wins write queue lets derived writers hit a different DB than they read from
+Status: Fixed
+File(s): backend/db_queue.py:146,concert_ranker/picks.py:353
+Reported: 2026-07-10
+Fixed: 2026-07-14
+Root cause: Writers that READ current state via get_connection(db_path) but committed a state-dependent wholesale/derived write through the first-caller-wins get_write_queue() singleton could split reads and writes across different DBs (empty read on the intended DB → destructive commit against the queue's live DB).
+Fix: Applied the picks-style _run_write path-match guard to the two remaining vulnerable writers: taper_attribution._write_attributions (wholesale DELETE+reinsert; wipe class) plus its single-row confirm/reject/mark_unresolved, and flat_file.apply_flat_file_release (read-derived diff; desync class) — on db_path != queue.db_path they write directly via get_connection(db_path). Audit of tapematch_sync (uses same conn, no queue), parse_lineage (upsert-only), scrapers/geocoder/importer (external-driven or upsert-only) found no further exposure; song_index/setlist_fingerprint already carried the guard. Regression test test_write_targets_db_path_not_queue_binding added for the taper wipe vector.
+
 BUG-248: tests/test_geocoder.py: 13 stale TODO-220/221-era tests fail on main
 Status: Fixed
 File(s): tests/test_geocoder.py
