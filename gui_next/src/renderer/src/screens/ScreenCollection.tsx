@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { useQuery, useQueryClient } from '@tanstack/react-query'
@@ -1045,6 +1045,93 @@ function ForumModal({ lb, subject: initSubject, body: initBody, onClose, onPoste
   )
 }
 
+// ── ForumListModal ──────────────────────────────────────────────────────────────
+
+function ForumListModal({ rows, onClose, onPost }: {
+  rows: CollectionRow[]
+  onClose: () => void
+  onPost: (targets: CollectionRow[]) => Promise<void>
+}) {
+  const { t } = useTranslation()
+  const [text, setText] = useState('')
+  const [busy, setBusy] = useState(false)
+
+  const { found, missing } = useMemo(() => {
+    const nums = Array.from(new Set((text.match(/\d+/g) ?? []).map(Number)))
+    const found: CollectionRow[] = []
+    const missing: number[] = []
+    for (const n of nums) {
+      const row = rows.find(r => r.lbNumberInt === n)
+      if (row) found.push(row); else missing.push(n)
+    }
+    return { found, missing }
+  }, [text, rows])
+
+  const handlePost = async () => {
+    if (!found.length) return
+    setBusy(true)
+    try {
+      await onPost(found)
+      onClose()
+    } finally {
+      setBusy(false)
+    }
+  }
+
+  return (
+    <div style={{
+      position: 'fixed', inset: 0, zIndex: 1000,
+      background: 'rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center',
+    }}>
+      <div style={{
+        background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border)',
+        borderRadius: 10, padding: 20, width: 520, maxWidth: '95vw',
+        maxHeight: '85vh', display: 'flex', flexDirection: 'column',
+        boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
+      }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14 }}>
+          <span style={{ fontSize: 'var(--lbb-fs-14)', fontWeight: 700, color: 'var(--lbb-fg)' }}>{t('collection.forumList.modalTitle')}</span>
+          <IconButton icon="x" size={14} title="Close" onClick={onClose} />
+        </div>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 10, flex: 1, minHeight: 0 }}>
+          <label style={{ fontSize: 'var(--lbb-fs-10-5)', fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: 'var(--lbb-fg3)' }}>
+            {t('collection.forumList.instructions')}
+          </label>
+          <textarea
+            value={text}
+            onChange={e => setText(e.target.value)}
+            placeholder={t('collection.forumList.placeholder')}
+            style={{
+              minHeight: 140, resize: 'vertical',
+              padding: '8px 10px', fontSize: 'var(--lbb-fs-11-5)',
+              fontFamily: 'var(--lbb-mono)',
+              background: 'var(--lbb-surface2)', border: '1px solid var(--lbb-border2)',
+              borderRadius: 6, color: 'var(--lbb-fg)', outline: 'none',
+              lineHeight: 1.5,
+            }}
+          />
+          <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-fg3)' }}>
+            {t('collection.forumList.foundCount', { count: found.length })}
+          </div>
+          {missing.length > 0 && (
+            <div style={{ fontSize: 'var(--lbb-fs-11-5)', color: 'var(--lbb-err-fg)', background: 'var(--lbb-err-bg)', padding: '6px 10px', borderRadius: 5 }}>
+              {t('collection.forumList.missingCount', { count: missing.length, list: missing.join(', ') })}
+            </div>
+          )}
+        </div>
+
+        <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end', marginTop: 14, flexShrink: 0 }}>
+          <Button variant="ghost" size="sm" onClick={onClose}>{t('common.cancel')}</Button>
+          <Button variant="primary" size="sm" disabled={busy || !found.length} onClick={handlePost}>
+            {busy ? t('collection.forum.posting') : t('collection.forumList.postButton', { count: found.length })}
+          </Button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 // ── Detail panel ──────────────────────────────────────────────────────────────
 
 interface PersonalMeta {
@@ -1912,6 +1999,7 @@ export function ScreenCollection(): React.JSX.Element {
   const [confirm, setConfirm]         = useState<{ title: string; body: string; onConfirm: () => void } | null>(null)
   const [addModal, setAddModal]       = useState<{ paths: string[] } | null>(null)
   const [forumModal, setForumModal]   = useState<{ lb: number; subject: string; body: string } | null>(null)
+  const [forumListModalOpen, setForumListModalOpen] = useState(false)
   const [removeProgress, setRemoveProgress]   = useState<{ done: number; total: number } | null>(null)
   const [torrentProgress, setTorrentProgress] = useState<{ done: number; total: number; label: string } | null>(null)
   const [ctxMenu, setCtxMenu]               = useState<CtxMenuState | null>(null)
@@ -2645,6 +2733,28 @@ export function ScreenCollection(): React.JSX.Element {
     } catch { showToast('qBittorrent request failed', 'bad') }
   }, [getCtxRows, showToast])
 
+  const runForumBatch = useCallback(async (targets: CollectionRow[]) => {
+    let ok = 0; let fail = 0
+    for (const r of targets) {
+      try {
+        const previewResp = await fetch(`${BASE}/api/entry/${r.lbNumberInt}/preview_forum`)
+        const previewData = await previewResp.json()
+        const postResp = await fetch(`${BASE}/api/entry/${r.lbNumberInt}/post_forum`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ subject: previewData.subject ?? '', body: previewData.body ?? '' }),
+        })
+        const postData = await postResp.json()
+        if (postData.ok) ok++; else fail++
+      } catch { fail++ }
+    }
+    showToast(
+      `${ok} post${ok !== 1 ? 's' : ''} created${fail > 0 ? `, ${fail} failed` : ''}`,
+      ok > 0 ? 'ok' : 'bad'
+    )
+    refetch()
+  }, [showToast, refetch])
+
   const handleCtxPostForum = useCallback(async (row: CollectionRow) => {
     const targets = getCtxRows(row)
     if (targets.length === 1) {
@@ -2656,28 +2766,10 @@ export function ScreenCollection(): React.JSX.Element {
       body: `Post ${targets.length} entries to the forum? Each will be posted using its auto-generated subject and body.`,
       onConfirm: async () => {
         setConfirm(null)
-        let ok = 0; let fail = 0
-        for (const r of targets) {
-          try {
-            const previewResp = await fetch(`${BASE}/api/entry/${r.lbNumberInt}/preview_forum`)
-            const previewData = await previewResp.json()
-            const postResp = await fetch(`${BASE}/api/entry/${r.lbNumberInt}/post_forum`, {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ subject: previewData.subject ?? '', body: previewData.body ?? '' }),
-            })
-            const postData = await postResp.json()
-            if (postData.ok) ok++; else fail++
-          } catch { fail++ }
-        }
-        showToast(
-          `${ok} post${ok !== 1 ? 's' : ''} created${fail > 0 ? `, ${fail} failed` : ''}`,
-          ok > 0 ? 'ok' : 'bad'
-        )
-        refetch()
+        await runForumBatch(targets)
       },
     })
-  }, [getCtxRows, handlePostForum, showToast, refetch])
+  }, [getCtxRows, handlePostForum, runForumBatch])
 
   const handleBatchPostForum = useCallback(async () => {
     const targets = getTargetRows()
@@ -2691,28 +2783,10 @@ export function ScreenCollection(): React.JSX.Element {
       body: `Post ${targets.length} entries to the forum? Each will be posted using its auto-generated subject and body.`,
       onConfirm: async () => {
         setConfirm(null)
-        let ok = 0; let fail = 0
-        for (const r of targets) {
-          try {
-            const previewResp = await fetch(`${BASE}/api/entry/${r.lbNumberInt}/preview_forum`)
-            const previewData = await previewResp.json()
-            const postResp = await fetch(`${BASE}/api/entry/${r.lbNumberInt}/post_forum`, {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ subject: previewData.subject ?? '', body: previewData.body ?? '' }),
-            })
-            const postData = await postResp.json()
-            if (postData.ok) ok++; else fail++
-          } catch { fail++ }
-        }
-        showToast(
-          `${ok} post${ok !== 1 ? 's' : ''} created${fail > 0 ? `, ${fail} failed` : ''}`,
-          ok > 0 ? 'ok' : 'bad'
-        )
-        refetch()
+        await runForumBatch(targets)
       },
     })
-  }, [getTargetRows, handlePostForum, showToast, refetch])
+  }, [getTargetRows, handlePostForum, showToast, runForumBatch])
 
 
   // ── Missing LB (not-owned) handlers ───────────────────────────────────────
@@ -2778,6 +2852,7 @@ export function ScreenCollection(): React.JSX.Element {
             <Button variant="ghost"     size="sm" onClick={() => setColumnPickerOpen(true)}>{t('collection.columnPicker.button')}</Button>
             <Button variant="ghost"     size="sm" icon="download" onClick={handleExportM3u}>Export M3U</Button>
             <Button variant="secondary" size="sm" onClick={handleBatchPostForum}>Post to forum</Button>
+            <Button variant="ghost"     size="sm" onClick={() => setForumListModalOpen(true)}>{t('collection.forumList.button')}</Button>
             <Button variant="secondary" size="sm" onClick={handleBatchCreateTorrent}>Create torrent</Button>
             <Button variant="primary"   size="sm" icon="plus" onClick={handleBatchAddToQbt}>Add to qBittorrent</Button>
           </>
@@ -3314,12 +3389,12 @@ export function ScreenCollection(): React.JSX.Element {
                 </TH>
                 <TH onClick={() => handleSort('lb')} sorted={sortCol === 'lb' ? sortDir : null} onResizeStart={e => startColResize('lb', e.clientX, lbColWidth)}>{t('collection.table.lb')}</TH>
                 {visibleCols.has('status')   && <TH onClick={() => handleSort('status')}   sorted={sortCol === 'status'   ? sortDir : null} onResizeStart={e => startColResize('status',   e.clientX, colWidths.status)}>{t('collection.table.status')}</TH>}
-                {visibleCols.has('type')     && <TH onResizeStart={e => startColResize('type', e.clientX, colWidths.type)}>Type</TH>}
+                {visibleCols.has('type')     && <TH onResizeStart={e => startColResize('type', e.clientX, colWidths.type)}>{t('collection.table.type')}</TH>}
                 {visibleCols.has('date')     && <TH onClick={() => handleSort('date')}     sorted={sortCol === 'date'     ? sortDir : null} onResizeStart={e => startColResize('date',     e.clientX, colWidths.date)}>{t('collection.table.date')}</TH>}
                 {visibleCols.has('location') && <TH onClick={() => handleSort('location')} sorted={sortCol === 'location' ? sortDir : null} onResizeStart={e => startColResize('location', e.clientX, colWidths.location)}>{t('collection.table.location')}</TH>}
                 {visibleCols.has('folder')   && <TH onClick={() => handleSort('folder')}   sorted={sortCol === 'folder'   ? sortDir : null} onResizeStart={e => startColResize('folder',   e.clientX, colWidths.folder)}>{t('collection.table.folder')}</TH>}
                 {visibleCols.has('diskPath') && <TH onClick={() => handleSort('diskPath')} sorted={sortCol === 'diskPath' ? sortDir : null} onResizeStart={e => startColResize('diskPath', e.clientX, colWidths.diskPath)}>{t('collection.detail.diskPath')}</TH>}
-                {visibleCols.has('notes')    && <TH onResizeStart={e => startColResize('notes', e.clientX, colWidths.notes)}>Notes</TH>}
+                {visibleCols.has('notes')    && <TH onResizeStart={e => startColResize('notes', e.clientX, colWidths.notes)}>{t('collection.table.notes')}</TH>}
                 {visibleCols.has('confirmed') && <TH onClick={() => handleSort('confirmed')} sorted={sortCol === 'confirmed' ? sortDir : null}>{t('collection.detail.confirmed')}</TH>}
               </tr>
             </thead>
@@ -3469,6 +3544,14 @@ export function ScreenCollection(): React.JSX.Element {
           body={forumModal.body}
           onClose={() => setForumModal(null)}
           onPosted={handleForumPosted}
+        />
+      )}
+
+      {forumListModalOpen && (
+        <ForumListModal
+          rows={rows}
+          onClose={() => setForumListModalOpen(false)}
+          onPost={runForumBatch}
         />
       )}
 

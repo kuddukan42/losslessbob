@@ -58,7 +58,8 @@
       "trading": "Handel",
       "sharing": "Teilen",
       "tapematch": "TapeMatch",
-      "songs": "Songs"
+      "songs": "Songs",
+      "fingerprint": "Fingerabdruck"
     },
     "statusBar": {
       "db": "DB:",
@@ -790,7 +791,9 @@
       "size": "Größe",
       "rating": "Bewertung",
       "wishlist": "Wunschzettel",
-      "actions": "Aktionen"
+      "actions": "Aktionen",
+      "type": "Typ",
+      "notes": "Anmerkungen"
     },
     "toast": {
       "savedPersonalInfo": "Gespeicherte persönliche Informationen für {{lb}}",
@@ -831,6 +834,15 @@
       "title": "Spalten exportieren",
       "baseNote": "LB-Nr., Status, Datum, Speicherort, Ordner und Notizen sind immer enthalten. Weitere hinzufügen:",
       "export": "Exportieren"
+    },
+    "forumList": {
+      "button": "Beitrag aus der Liste…",
+      "modalTitle": "Beitrag aus der Liste im Forum veröffentlichen",
+      "instructions": "Fügen Sie LB-Nummern ein oder geben Sie sie ein (beliebiges Trennzeichen – Kommas, Leerzeichen oder Zeilenumbrüche)",
+      "placeholder": "LB-00018, LB-00042, 1001…",
+      "foundCount": "{{count}} wurde in Ihrer Sammlung gefunden",
+      "missingCount": "{{count}} nicht gefunden: {{list}}",
+      "postButton": "Beitrag {{count}}"
     }
   },
   "map": {
@@ -891,7 +903,9 @@
       "checkUpdate": "Nach Updates suchen",
       "checkingUpdate": "Wird geprüft…",
       "installUpdate": "Aus Datei installieren...",
-      "githubUpdateBody": "Auf GitHub ist ein neuer Master-Snapshot verfügbar ({{tag}}).\n\nJetzt herunterladen und anwenden? Ihre Sammlung, Wunschliste und persönlichen Einstellungen bleiben erhalten."
+      "githubUpdateBody": "Auf GitHub ist ein neuer Master-Snapshot verfügbar ({{tag}}).\n\nJetzt herunterladen und anwenden? Ihre Sammlung, Wunschliste und persönlichen Einstellungen bleiben erhalten.",
+      "publishSitedata": "Website-Daten veröffentlichen…",
+      "publishingSitedata": "Wird veröffentlicht…"
     },
     "integrations": {
       "title": "Integrationen",
@@ -1409,7 +1423,8 @@
       "carbonbitPicks": "carbonbits Auswahl",
       "tenhaafPicks": "10haafs Auswahl",
       "taperConfirmed": "Bestätigter Taper",
-      "taperReview": "Taper: muss noch überprüft werden"
+      "taperReview": "Taper: muss noch überprüft werden",
+      "curatedAny": "Eine beliebige kuratierte Auswahl"
     },
     "statusValue": {
       "public": "Öffentlich",
@@ -1838,6 +1853,43 @@
       "pick": "Auswahl",
       "openInLibrary": "In der Bibliothek öffnen",
       "empty": "Für diesen Song wurden keine Aufführungen gefunden."
+    }
+  },
+  "fingerprint": {
+    "title": "Setlist-Fingerprinting",
+    "subtitle": "Einträge mit unbrauchbaren Datums- und Ortsmetadaten, abgeglichen mit den Setlists von Olof Björner – lediglich Vorschläge, die niemals automatisch übernommen werden.",
+    "count": "{{count}} Vorschläge",
+    "empty": "In dieser Ansicht liegen keine Vorschläge vor. Führen Sie einen Scan durch, um nach Übereinstimmungen zu suchen.",
+    "scan": {
+      "button": "Nach Übereinstimmungen suchen",
+      "running": "Wird gescannt…",
+      "failed": "Der Scan ist fehlgeschlagen, bitte versuchen Sie es erneut.",
+      "stats": "{{scanned}}-Kandidateneinträge gescannt · {{matched}}-Übereinstimmungen gefunden · {{written}}-Vorschläge verfasst"
+    },
+    "filter": {
+      "pending": "Ausstehend",
+      "dismissed": "Abgelehnt",
+      "all": "Alle"
+    },
+    "table": {
+      "lb": "LB",
+      "rank": "#{{rank}}",
+      "entry": "Metadaten der Einträge",
+      "matchDate": "Übereinstimmungsdatum",
+      "matchVenue": "Veranstaltungsort abgleichen",
+      "type": "Typ",
+      "score": "Partitur",
+      "songs": "Songs",
+      "dismiss": "Schließen",
+      "dismissedBadge": "abgelehnt",
+      "openInLibrary": "In der Bibliothek öffnen",
+      "noDate": "ohne Datum",
+      "noLocation": "—"
+    },
+    "detail": {
+      "matched": "Abgestimmt ({{count}})",
+      "missing": "Nicht auf dieser Kassette ({{count}})",
+      "completeMatch": "Jeder Titel in der Setlist wird berücksichtigt."
     }
   }
 }

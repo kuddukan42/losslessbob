@@ -34,6 +34,7 @@ import { ScreenQuickLookup } from './screens/ScreenQuickLookup'
 import { ScreenLibrary } from './screens/ScreenLibrary'
 import { ScreenTapeMatch } from './screens/ScreenTapeMatch'
 import { ScreenSongs } from './screens/ScreenSongs'
+import { ScreenFingerprint } from './screens/ScreenFingerprint'
 
 // ── React Query client — prefetch collection data immediately at module load ──
 
@@ -280,6 +281,7 @@ export default function App(): React.JSX.Element {
           <Route path="/map"         element={<ScreenMap />} />
           <Route path="/dbeditor"    element={<ScreenDbEditor />} />
           <Route path="/scraper"     element={<CuratorRoute element={<ScreenScraper />} />} />
+          <Route path="/fingerprint" element={<CuratorRoute element={<ScreenFingerprint />} />} />
           <Route path="/setup"       element={<ScreenSetup />} />
           <Route path="/mounts"      element={<ScreenMounts />} />
           <Route path="/themes"      element={<ScreenThemes />} />

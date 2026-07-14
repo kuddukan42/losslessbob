@@ -58,7 +58,8 @@
       "trading": "Trading",
       "sharing": "Partage",
       "tapematch": "TapeMatch",
-      "songs": "Chansons"
+      "songs": "Chansons",
+      "fingerprint": "Empreinte digitale"
     },
     "statusBar": {
       "db": "DB :",
@@ -790,7 +791,9 @@
       "size": "Taille",
       "rating": "Evaluation",
       "wishlist": "Liste de souhaits",
-      "actions": "Actions"
+      "actions": "Actions",
+      "type": "Type",
+      "notes": "Remarques"
     },
     "toast": {
       "savedPersonalInfo": "Enregistrement d'informations personnelles pour {{lb}}",
@@ -831,6 +834,15 @@
       "title": "Colonnes d'exportation",
       "baseNote": "Le numéro de piste (LB #), le statut, la date, l'emplacement, le dossier et les notes sont toujours inclus. Ajouter d'autres éléments :",
       "export": "Exporter"
+    },
+    "forumList": {
+      "button": "Message issu de la liste…",
+      "modalTitle": "Publier sur le forum à partir de la liste",
+      "instructions": "Collez ou saisissez les numéros LB (séparateurs au choix : virgules, espaces ou sauts de ligne)",
+      "placeholder": "LB-00018, LB-00042, 1001…",
+      "foundCount": "{{count}} trouvé dans votre collection",
+      "missingCount": "{{count}} introuvable : {{list}}",
+      "postButton": "Post {{count}}"
     }
   },
   "map": {
@@ -891,7 +903,9 @@
       "checkUpdate": "Vérifier les mises à jour",
       "checkingUpdate": "Vérification…",
       "installUpdate": "Installer depuis un fichier...",
-      "githubUpdateBody": "Un nouvel instantané principal est disponible sur GitHub ({{tag}}).\n\nLe télécharger et l'appliquer maintenant ? Votre collection, votre liste de souhaits et vos paramètres personnels sont conservés."
+      "githubUpdateBody": "Un nouvel instantané principal est disponible sur GitHub ({{tag}}).\n\nLe télécharger et l'appliquer maintenant ? Votre collection, votre liste de souhaits et vos paramètres personnels sont conservés.",
+      "publishSitedata": "Publier les données du site…",
+      "publishingSitedata": "Publication en cours…"
     },
     "integrations": {
       "title": "Intégrations",
@@ -1409,7 +1423,8 @@
       "carbonbitPicks": "Les coups de cœur de carbonbit",
       "tenhaafPicks": "Les coups de cœur de 10haaf",
       "taperConfirmed": "Enregistreur confirmé",
-      "taperReview": "Taper : à vérifier"
+      "taperReview": "Taper : à vérifier",
+      "curatedAny": "Une sélection soignée"
     },
     "statusValue": {
       "public": "Public",
@@ -1731,7 +1746,7 @@
     "abPlayer": {
       "title": "Écoute A/B",
       "notEligible": "Pas encore parfaitement aligné pour l'écoute A/B",
-      "position": "Position",
+      "position": "Poste",
       "duration": "Durée",
       "seconds": "s",
       "load": "Charger des extraits",
@@ -1838,6 +1853,43 @@
       "pick": "choisir",
       "openInLibrary": "Ouvrir dans la bibliothèque",
       "empty": "Aucune interprétation trouvée pour cette chanson."
+    }
+  },
+  "fingerprint": {
+    "title": "Empreinte digitale des setlists",
+    "subtitle": "Entrées comportant des métadonnées de date/lieu inutilisables, mises en correspondance avec les setlists d’Olof Björner — il s’agit uniquement de suggestions, qui ne sont jamais appliquées automatiquement.",
+    "count": "Suggestions {{count}}",
+    "empty": "Aucune suggestion dans cette vue. Lancez une analyse pour rechercher des correspondances.",
+    "scan": {
+      "button": "Rechercher les correspondances",
+      "running": "Analyse en cours…",
+      "failed": "Échec de l'analyse, réessayez.",
+      "stats": "Entrées candidates {{scanned}} analysées · Correspondances {{matched}} · Suggestions {{written}} rédigées"
+    },
+    "filter": {
+      "pending": "En attente",
+      "dismissed": "Rejeté",
+      "all": "Tout"
+    },
+    "table": {
+      "lb": "LB",
+      "rank": "#{{rank}}",
+      "entry": "Métadonnées des entrées",
+      "matchDate": "Date de correspondance",
+      "matchVenue": "Lieu de l'événement",
+      "type": "Type",
+      "score": "Partition",
+      "songs": "Chansons",
+      "dismiss": "Fermer",
+      "dismissedBadge": "rejeté",
+      "openInLibrary": "Ouvrir dans la bibliothèque",
+      "noDate": "sans date",
+      "noLocation": "—"
+    },
+    "detail": {
+      "matched": "Correspondance ({{count}})",
+      "missing": "Absent de cette cassette ({{count}})",
+      "completeMatch": "Chaque morceau de la setlist est pris en compte."
     }
   }
 }

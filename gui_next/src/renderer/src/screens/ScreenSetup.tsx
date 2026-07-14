@@ -267,12 +267,14 @@ function CuratorToggle({
   masterStatus,
   busy,
   onPublish,
+  onPublishSitedata,
   onCheckGithub,
   onInstall,
 }: {
   masterStatus: MasterStatus | null
   busy: string | null
   onPublish: () => void
+  onPublishSitedata: () => void
   onCheckGithub: () => void
   onInstall: () => void
 }) {
@@ -346,6 +348,18 @@ function CuratorToggle({
         </Button>
         <Button variant="ghost" icon="download" onClick={onInstall}>
           {t('setup.masterData.installUpdate')}
+        </Button>
+      </div>
+      <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+        <Button
+          variant="secondary"
+          icon="upload"
+          disabled={!curatorMode || busy === 'publishSitedata'}
+          onClick={onPublishSitedata}
+        >
+          {busy === 'publishSitedata'
+            ? t('setup.masterData.publishingSitedata')
+            : t('setup.masterData.publishSitedata')}
         </Button>
       </div>
     </div>
@@ -886,6 +900,57 @@ const [dbStats, setDbStats] = useState<DbStats | null>(null)
       },
     })
   }, [showToast, masterStatus, loadMasterStatus, t])
+
+  // ── Curator: Publish site data ────────────────────────────────────────────────
+
+  const handlePublishSitedata = useCallback(() => {
+    setConfirm({
+      title: 'Publish Site Data?',
+      body: 'Package the cached site data (detail pages, artwork, attachments) into '
+        + 'core + files zips and upload them as a new GitHub release? This may take a '
+        + 'while for large collections.',
+      onConfirm: async () => {
+        setConfirm(null)
+        setBusy('publishSitedata')
+        try {
+          const gr = await fetch(`${BASE}/api/sitedata/github_release`, { method: 'POST' })
+          if (!gr.ok || !gr.body) {
+            const errBody = await gr.json().catch(() => ({})) as { error?: string; message?: string }
+            showToast(t('setup.toast.githubFailed', { message: errBody.message ?? errBody.error ?? gr.statusText }), 'bad')
+            return
+          }
+          const reader = gr.body.getReader()
+          const decoder = new TextDecoder()
+          let buf = ''
+          for (;;) {
+            const { done, value } = await reader.read()
+            if (done) break
+            buf += decoder.decode(value, { stream: true })
+            let nl: number
+            while ((nl = buf.indexOf('\n\n')) >= 0) {
+              const frame = buf.slice(0, nl)
+              buf = buf.slice(nl + 2)
+              if (!frame.startsWith('data: ')) continue
+              const ev = JSON.parse(frame.slice(6)) as {
+                type: string; label?: string; tag?: string; url?: string; error?: string; message?: string
+              }
+              if (ev.type === 'progress' && ev.label) {
+                showToast(ev.label, 'info')
+              } else if (ev.type === 'done') {
+                showToast(t('setup.toast.released', { tag: ev.tag ?? '' }), 'ok')
+              } else if (ev.type === 'error') {
+                showToast(t('setup.toast.githubFailed', { message: ev.message ?? ev.error }), 'bad')
+              }
+            }
+          }
+        } catch (e) {
+          showToast(t('setup.toast.publishFailed', { message: (e as Error).message }), 'bad')
+        } finally {
+          setBusy(null)
+        }
+      },
+    })
+  }, [showToast, t])
 
   // ── Install master ──────────────────────────────────────────────────────────
 
@@ -1431,6 +1496,7 @@ const [dbStats, setDbStats] = useState<DbStats | null>(null)
               masterStatus={masterStatus}
               busy={busy}
               onPublish={handlePublishMaster}
+              onPublishSitedata={handlePublishSitedata}
               onCheckGithub={handleCheckGithubMaster}
               onInstall={handleInstallMaster}
             />

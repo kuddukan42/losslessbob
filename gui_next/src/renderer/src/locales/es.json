@@ -58,7 +58,8 @@
       "trading": "Comercio",
       "sharing": "Compartir",
       "tapematch": "TapeMatch",
-      "songs": "Canciones"
+      "songs": "Canciones",
+      "fingerprint": "Huella digital"
     },
     "statusBar": {
       "db": "BD:",
@@ -790,7 +791,9 @@
       "size": "Talla",
       "rating": "Clasificación",
       "wishlist": "Lista de deseos",
-      "actions": "Acciones"
+      "actions": "Acciones",
+      "type": "Tipo",
+      "notes": "Notas"
     },
     "toast": {
       "savedPersonalInfo": "Información personal guardada de {{lb}}",
@@ -831,6 +834,15 @@
       "title": "Columnas de exportación",
       "baseNote": "Siempre se incluyen el n.º de LB, el estado, la fecha, la ubicación, la carpeta y las notas. Añadir más:",
       "export": "Exportar"
+    },
+    "forumList": {
+      "button": "Publicar desde la lista…",
+      "modalTitle": "Publicar en el foro desde la lista",
+      "instructions": "Pega o escribe los números LB (con cualquier separador: comas, espacios o saltos de línea)",
+      "placeholder": "LB-00018, LB-00042, 1001…",
+      "foundCount": "{{count}} encontrado en tu colección",
+      "missingCount": "{{count}} no encontrado: {{list}}",
+      "postButton": "Publicación {{count}}"
     }
   },
   "map": {
@@ -891,7 +903,9 @@
       "checkUpdate": "Buscar actualizaciones",
       "checkingUpdate": "Comprobando…",
       "installUpdate": "Instalar desde archivo...",
-      "githubUpdateBody": "Hay disponible una nueva instantánea maestra en GitHub ({{tag}}).\n\n¿Descargarla y aplicarla ahora? Tu colección, lista de deseos y configuración personal se conservarán."
+      "githubUpdateBody": "Hay disponible una nueva instantánea maestra en GitHub ({{tag}}).\n\n¿Descargarla y aplicarla ahora? Tu colección, lista de deseos y configuración personal se conservarán.",
+      "publishSitedata": "Publicar datos del sitio…",
+      "publishingSitedata": "Publicando…"
     },
     "integrations": {
       "title": "Integraciones",
@@ -1409,7 +1423,8 @@
       "carbonbitPicks": "Selección de carbonbit",
       "tenhaafPicks": "Selección de 10haaf",
       "taperConfirmed": "Grabador confirmado",
-      "taperReview": "Taper: necesita revisión"
+      "taperReview": "Taper: necesita revisión",
+      "curatedAny": "Cualquier selección destacada"
     },
     "statusValue": {
       "public": "Público",
@@ -1838,6 +1853,43 @@
       "pick": "seleccionar",
       "openInLibrary": "Abrir en la biblioteca",
       "empty": "No se han encontrado interpretaciones de esta canción."
+    }
+  },
+  "fingerprint": {
+    "title": "Identificación de listas de canciones",
+    "subtitle": "Entradas con metadatos de fecha y ubicación no válidos, comparadas con las listas de canciones de Olof Björner: son solo sugerencias, nunca se aplican automáticamente.",
+    "count": "{{count}} sugerencias",
+    "empty": "No hay sugerencias en esta vista. Realiza un análisis para buscar coincidencias.",
+    "scan": {
+      "button": "Buscar coincidencias",
+      "running": "Escaneando…",
+      "failed": "El escaneo ha fallado, inténtalo de nuevo.",
+      "stats": "Entradas candidatas de {{scanned}} analizadas · Coincidencias de {{matched}} · Sugerencias de {{written}} redactadas"
+    },
+    "filter": {
+      "pending": "Pendiente",
+      "dismissed": "Rechazado",
+      "all": "Todo"
+    },
+    "table": {
+      "lb": "LB",
+      "rank": "#{{rank}}",
+      "entry": "Metadatos de las entradas",
+      "matchDate": "Fecha de coincidencia",
+      "matchVenue": "Lugar del evento",
+      "type": "Tipo",
+      "score": "Puntuación",
+      "songs": "Canciones",
+      "dismiss": "Cerrar",
+      "dismissedBadge": "desestimado",
+      "openInLibrary": "Abrir en la biblioteca",
+      "noDate": "sin fecha",
+      "noLocation": "—"
+    },
+    "detail": {
+      "matched": "Coincidente ({{count}})",
+      "missing": "No está en esta cinta ({{count}})",
+      "completeMatch": "Se tienen en cuenta todas las canciones de la lista de reproducción."
     }
   }
 }

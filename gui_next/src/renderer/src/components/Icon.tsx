@@ -60,6 +60,7 @@ const PATHS: Record<string, string> = {
   share:       "M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8 M16 6l-4-4-4 4 M12 2v13",
   tapematch:   "M3 9a2 2 0 0 1 2-2h2l2-4 4 8 2-4 2 4h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z",
   songs:       "M9 18V5l12-2v13 M9 18a3 3 0 1 1-6 0 3 3 0 0 1 6 0z M21 16a3 3 0 1 1-6 0 3 3 0 0 1 6 0z",
+  fingerprint: "M12 3a9 9 0 0 0-9 9v2 M12 3a9 9 0 0 1 9 9v2 M9 21c1.2-1 1.8-2.6 1.8-4.5v-6a1.2 1.2 0 0 1 2.4 0v3 M12 6.5a6.5 6.5 0 0 0-6.5 6.5v1.5 M12 6.5a6.5 6.5 0 0 1 6.5 6.5 M8.5 13v1.5a3.5 3.5 0 0 0 1 2.5",
 }
 
 export type IconName = keyof typeof PATHS
