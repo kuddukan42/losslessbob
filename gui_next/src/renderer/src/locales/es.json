@@ -1682,7 +1682,15 @@
       "circulatedAs": "Distribuida inicialmente como «{{title}}»",
       "matchPct": "{{pct}}% coincidencia de lista de reproducción",
       "expectedMinutes": "~{{count}} mín. previsto",
-      "missingFromCopy": "Falta en esta copia: {{titles}}"
+      "missingFromCopy": "Falta en esta copia: {{titles}}",
+      "search": {
+        "buttonTitle": "Buscar en BobTalk y notas",
+        "placeholder": "Bob dijo algo sobre…",
+        "minChars": "Sigue escribiendo (mín. 2 caracteres)",
+        "loading": "Buscando…",
+        "noResults": "No se han encontrado resultados",
+        "notInLibrary": "No está en la biblioteca"
+      }
     }
   },
   "tapematch": {
