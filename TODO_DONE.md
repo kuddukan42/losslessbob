@@ -1,6 +1,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-226: Surface BobTalk + Olof narrative in GUI (search, show pages) and add Olof/bobserve.com credits to About screen
+Priority: Medium
+Status: Done
+Added: 2026-07-10
+Closed: 2026-07-14
+Description: Two parts. (A) BobTalk surfacing — depends on TODO-162 P2 (olof_events.bobtalk already in spec schema): full-text search over bobtalk + notes (backend endpoint, e.g. /api/olof/bobtalk_search with LIKE or FTS5), display the night's BobTalk quote + Olof notes + NET concert # on gui_next show pages; optional 'on this day' widget from olof_chronicle later. (B) Attribution — independent, can ship NOW: add credit to Olof Bjorner and bobserve.com (source: 'About Bob', https://www.bobserve.com/olof/) in the gui_next About screen credits section, alongside existing setlist.fm/bobdylan.com credits; run /gui-next-i18n after copy change. Part B should land with or before the first Olof-derived data appearing in the GUI.
+Complete 2026-07-14. Part B (Olof/bobserve + setlist.fm/bobdylan.com credits, About screen) shipped 07-11. Part A show-page surfacing (BobTalk quote, notes, NET concert #, chronicle, new tapes) had already shipped with the TODO-162 P5b Olof tab in DetailPanel — the entry text was stale. The genuinely missing piece, BobTalk/notes full-text search, shipped 0d277297: GET /api/olof/bobtalk_search (LIKE, escaped wildcards, snippets, bobtalk-before-notes ordering, 10 tests) + BobTalkSearch dropdown in the Library performance lens (debounced, results jump to the show's detail panel, not-in-library dates disabled) + de/fr/es/it/nl locale sync (d2e50aa0). Optional 'on this day' chronicle widget deliberately not built — re-file if wanted.
+
 TODO-223: Venue gazetteer table — one curated coordinate per distinct venue, incl. demolished venues
 Priority: Medium
 Status: Done

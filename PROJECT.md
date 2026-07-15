@@ -1023,6 +1023,7 @@ scheduled scan interval, checked hourly by `scheduler._integrity_scan_worker`.
 | GET | `/api/olof/event/<int:event_id>` | One `olof_events` row (all columns incl. bobtalk/raw trailers) + ordered `songs`. 404 if unknown. |
 | GET | `/api/olof/chronicle/<int:year>` | `{year, entries: [olof_chronicle rows]}` in seq order — year-timeline surface. |
 | GET | `/api/olof/status` | `{pages, events, songs, chronicle_rows, new_tapes, chronicle_years, max_dsn_year}` — the GUI gates all Olof UI on `events > 0`. |
+| GET | `/api/olof/bobtalk_search` | Full-text search over `olof_events.bobtalk`/`notes` (`?q=` min 2 chars, `limit` capped 200; LIKE with escaped wildcards). Returns `{q, hits: [{event_id, date_str, venue, city, country, event_type, concert_no_net, field, snippet}]}` — bobtalk hits before notes hits. Feeds the Library lens BobTalk search (TODO-226 Part A). |
 | POST | `/api/olof/compare` | Setlist-vs-folder comparison. Body `{date_str, titles?: [...], lb_number?}` (`lb_number` resolves titles server-side from `entries.setlist` free text). Returns `{olof_event_id, olof_setlist, matches: [{input_title, matched_position, matched_title}], olof_missing, match_pct, recording_info, recording_kind, recording_mins}`. Order-independent matching via `db.normalize_title_for_match` (cp1252 apostrophe fold, case/punctuation collapse, leading-"The" strip) + conservative containment. 400 without date_str or resolvable titles. |
 
 ### Setlist Fingerprinting (TODO-225, `backend/setlist_fingerprint.py`)
