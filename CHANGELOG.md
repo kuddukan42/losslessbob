@@ -1,3 +1,34 @@
+[2026-07-15] — feat(gui): TODO-247 Electron visual-verification driver (Tier B) — bites 1-2
+Context: instructions/FABLE_VISUAL_VERIFICATION.md, attempt 3 at driving the real app.
+  Prior attempts failed because they captured pixels from OUTSIDE the app (compositor/
+  VNC) — locked down on Wayland, flaky on NVIDIA. This one captures from inside the
+  render pipeline (Playwright page.screenshot() -> CDP), so neither is involved.
+Added: tools/electron_preflight.mjs — probes all 4 display backends on this machine
+  and records the winner in tools/electron_driver.config.json (committed; the one
+  durable output of Bite 1). Result: Xvfb at 2560x1440x24, --ozone-platform=x11
+  --disable-gpu --no-sandbox. Wayland and XWayland also booted (~1.6s, same as Xvfb)
+  but a window cannot exceed its screen, and size-matrix needs 2560x1440 which no real
+  display here provides; Xvfb is also deterministic and session-independent. Ozone
+  headless is dead as the spec predicted — CDP attaches, no window is ever created.
+Added: tools/electron_driver.mjs — Tier B MVP (screenshot/navigate/click/fill/eval/
+  session), same session-JSON format as Tier A; PNGs go to .debug/electron/ so the two
+  tiers can share debug_screens.json without overwriting each other. Full tour passes.
+Added: tools/driver_core.mjs — action runner extracted and shared with browser_driver
+  .mjs (spec §3: don't fork two copies); tools/electron_display.mjs — Xvfb lifecycle +
+  X11/Wayland socket discovery, shared by preflight and driver.
+Fixed: gui_next main/index.ts ensureBackend() now honors LB_NO_BACKEND_SPAWN=1 (dev
+  only, !app.isPackaged) — it kills whatever owns :5174 and respawns, which would
+  murder a manually-started backend mid-driver-session.
+Notes: three findings amend the spec (§4/§6, recorded there for Bite 3). (1) Display
+  env is never inherited — the shell has DISPLAY and WAYLAND_DISPLAY empty with
+  XDG_SESSION_TYPE=tty; the sockets exist but must be discovered and set explicitly.
+  This is a likely cause of the 2026-06-04 attempt's failure: the missing env, not the
+  backend. (2) ready-to-show never fires under Playwright on any backend, and
+  index.ts gates win.show() on it — every driver must force show via app.evaluate().
+  (3) app.evaluate() has no require in scope; destructure electron off the callback arg.
+Remaining: Bite 3 (resize/size-matrix/scale-matrix/watch + progress fixture), Bite 4
+  (/verify --electron, docs). Screenshot verification stays user-invoked only.
+
 [2026-07-15] — fix(gui): TODO-243 renderer silent-catch audit — surface user-action failures
 Context: STRUCTURE_REVIEW item 15 follow-up. Audited all 29 (was 26) renderer
   `.catch(() => {})` sites; 23 kept (mount-time/passive display fetches, true polls,

@@ -162,11 +162,38 @@ and whether intermediate frames are monotonic — that's the "watch the meter fi
 Resume tracking (update in place, per usage-pacing convention):
 
 ```
-[ ] Bite 1 — preflight        (not started)
-[ ] Bite 2 — driver MVP       (not started)
+[x] Bite 1 — preflight        (DONE 2026-07-15 — backend decided: Xvfb)
+[x] Bite 2 — driver MVP       (DONE 2026-07-15 — full tour passes on Tier B)
 [ ] Bite 3 — resize/scale/watch (not started)
-[ ] Bite 4 — skill + docs     (not started)
+[ ] Bite 4 — skill + docs     (not started — incl. CHANGELOG/TODO bookkeeping)
 ```
+
+### Findings from bites 1–2 (amend §4/§6 — read before Bite 3)
+
+1. **Display env is never inherited.** §4 says rows 1/2 inherit `WAYLAND_DISPLAY`/`DISPLAY`;
+   in reality the shell has both empty with `XDG_SESSION_TYPE=tty`. The sockets exist and are
+   reachable (`/run/user/1000/wayland-0`, `/tmp/.X11-unix/X0`) but must be **discovered and set
+   explicitly**. This is a likely contributor to the 2026-06-04 attempt's failure — the backend
+   was never the problem, the missing env was.
+2. **`ready-to-show` never fires under Playwright**, on any backend (not backend-specific).
+   `index.ts:146` gates `win.show()` on it, so every driver must force show via `app.evaluate()`.
+   The §4 gotcha was real and is now handled in `electron_driver.mjs`.
+3. **`app.evaluate()` has no `require` in scope** — destructure the electron module off the
+   callback's first arg: `app.evaluate(({ BrowserWindow }) => …)`.
+4. **XWayland (row 2) needs an Xauthority cookie**, `/run/user/1000/.mutter-Xwaylandauth.<rand>`,
+   random per session — one reason it lost to Xvfb.
+5. **Xvfb chosen over the working Wayland/XWayland rows** (all three booted fine, ~1.6s each).
+   Decisive reason: a window cannot exceed its screen — row 3 was clamped to 1280×771 by a
+   1280×800 virtual screen. §6's `size-matrix` needs 2560×1440, which no real display here can
+   satisfy, so the Xvfb screen is created at **2560×1440×24**. Xvfb is also deterministic
+   (rows 1/2 disagreed on window height, 835 vs 871, from decoration variance) and
+   session-independent. Full rationale in `electron_driver.config.json`'s `selected` block.
+6. **Ozone headless (row 4) is dead** as §4 predicted: main process starts and CDP attaches,
+   but no window is ever created — 45s timeout.
+7. Tier B writes PNGs to **`.debug/electron/`**, Tier A keeps `.debug/` — the two tiers share
+   `debug_screens.json` and would otherwise silently overwrite each other.
+8. `electron_preflight.mjs` preserves the `selected` decision on re-run (`--reset-selection` to
+   discard deliberately). Don't hand-edit the matrix; do hand-own the decision.
 
 ## 9. Acceptance criteria
 

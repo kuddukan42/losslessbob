@@ -2,6 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(node tools/browser_driver.mjs*)",
+      "Bash(node tools/electron_driver.mjs*)",
+      "Bash(node tools/electron_preflight.mjs*)",
       "Bash(npm run build --prefix gui_next*)",
       "Read(/home/tjenkins/Documents/losslessbob/.debug/**)",
       "Bash(npx tsc *)",

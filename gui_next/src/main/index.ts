@@ -86,6 +86,14 @@ async function killPortProcess(port: number): Promise<void> {
 }
 
 async function ensureBackend(): Promise<void> {
+  // Dev-only escape hatch for the verification drivers: they attach to a backend
+  // started by hand, so the kill-and-respawn below would murder it mid-session.
+  // Packaged builds ignore the var — a shipped app must always own its backend.
+  if (process.env.LB_NO_BACKEND_SPAWN === '1' && !app.isPackaged) {
+    console.log(`[main] LB_NO_BACKEND_SPAWN=1 — assuming backend already on :${FLASK_PORT}`)
+    return
+  }
+
   // Kill any backend left over from a previous session or a hot-reload restart.
   // Two-pass kill: PID file first (fast path), then port scan (catches manually
   // started backends or cases where the PID file was never written).
