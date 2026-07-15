@@ -22,6 +22,14 @@
  *   click <selector>               Click an element (CSS selector)
  *   fill <selector> <value>        Fill an input field
  *   eval <js>                      Evaluate JS expression, print result
+ *   resize <w> <h> [file]          Resize the real window, optional screenshot
+ *   size-matrix [prefix]           Screenshot at 1280x768/1440x900/1920x1080/2560x1440
+ *   scale-matrix [prefix] [route]  Relaunch at --force-device-scale-factor
+ *                                  1/1.25/1.5/2, screenshot each (see §6)
+ *   watch <interval_ms> <max_ms> <prefix> [until-selector]
+ *                                  Screenshot every interval_ms until the
+ *                                  selector appears or max_ms elapses
+ *   main-eval <js>                 Evaluate JS in the MAIN process, print result
  *   session <json|path>            Run a JSON action sequence (array or {actions:[...]})
  *
  * Flags:
@@ -29,7 +37,9 @@
  *   --keep        Keep the app (and Xvfb) open after actions complete
  *
  * Session action types: screenshot, navigate, click, fill, type, clear,
- *   wait, wait-for, eval, hover, scroll-to, select (see tools/driver_core.mjs)
+ *   wait, wait-for, eval, hover, scroll-to, select, resize, size-matrix,
+ *   watch, main-eval (see tools/driver_core.mjs). `scale-matrix` is CLI-only
+ *   here — it needs a fresh app launch per scale, not a single session.
  *
  * Hard constraints honored here (do not relax without updating the spec):
  *   - LB_NO_BACKEND_SPAWN=1 is always set — the manually-started Flask
@@ -68,6 +78,14 @@ const CONFIG_PATH  = join(ROOT, 'tools/electron_driver.config.json')
 
 const BACKEND_URL     = 'http://127.0.0.1:5174/api/status'
 const LAUNCH_TIMEOUT_MS = 45000
+
+// Logical (DIP) content box every scale-matrix row is pinned to before its
+// screenshot, so each PNG lands at exactly SCALE_BASELINE * scale. Together
+// with the largest size-matrix entry this drives the Xvfb screen geometry in
+// electron_driver.config.json (`selected.xvfbScreen`) — the screen must fit
+// 1440x900 at the max scale (2x => 2880x1800) plus window decoration, or the
+// frame gets clamped and the row is a lie.
+const SCALE_BASELINE = { w: 1440, h: 900 }
 
 function log(...args) {
   process.stderr.write('[electron-driver] ' + args.join(' ') + '\n')
@@ -112,9 +130,10 @@ function loadSelectedConfig() {
 // ── Launch + session ────────────────────────────────────────────────────────
 
 async function runSession(actions, opts) {
-  const { keepOpen } = opts
+  const { keepOpen, extraFlags = [] } = opts
   const selected = loadSelectedConfig()
-  log(`display backend: ${selected.name} (flags: ${selected.flags.join(' ')})`)
+  const launchFlags = [...selected.flags, ...extraFlags]
+  log(`display backend: ${selected.name} (flags: ${launchFlags.join(' ')})`)
 
   if (!existsSync(MAIN_ENTRY)) {
     throw new Error(`Main entry not found: ${MAIN_ENTRY} — build gui_next first.`)
@@ -147,7 +166,7 @@ async function runSession(actions, opts) {
     log('launching Electron...')
     app = await _electron.launch({
       executablePath: ELECTRON_BIN,
-      args: [MAIN_ENTRY, ...selected.flags],
+      args: [MAIN_ENTRY, ...launchFlags],
       cwd: GUI_DIR,
       env,
       timeout: LAUNCH_TIMEOUT_MS,
@@ -175,8 +194,44 @@ async function runSession(actions, opts) {
       log(`splash overlay did not clear: ${err.message} — continuing anyway`)
     }
 
+    // Tier B capabilities for driver_core's shared action runner (§6):
+    // real window resize and main-process eval, both only possible because
+    // this tier drives the actual Electron app, not a bare Chromium tab.
+    const caps = {
+      resize: async (w, h) => {
+        // DELIBERATE DEVIATION from spec §6 (which says setSize): we use
+        // setContentSize. Tier A's resize is page.setViewportSize(), which
+        // sets CONTENT size exactly; if Tier B sized the outer frame, the
+        // same shared session file (tools/debug_screens.json) would produce
+        // differently-sized PNGs per tier and a "2560x1440" screenshot
+        // wouldn't actually be 2560x1440 (setSize gave 2559x1411 — the
+        // title bar/borders eat the difference). Tier parity and honest
+        // filenames beat the spec's literal wording. The app's minWidth/
+        // minHeight (1280/768, gui_next/src/main/index.ts:141) are OUTER
+        // constraints, so setContentSize(1280, 768) yields a larger outer
+        // window and the minimum is still respected.
+        //
+        // app.evaluate()'s callback has no `require` in scope (finding 3,
+        // §8 of the spec) — destructure BrowserWindow off the callback's
+        // first argument instead of requiring 'electron' again, and pass
+        // w/h as the second `evaluate()` argument rather than closing over
+        // them (closures don't cross the IPC boundary to the main process).
+        await app.evaluate(({ BrowserWindow }, size) => {
+          const win = BrowserWindow.getAllWindows()[0]
+          // setPosition is a Wayland no-op — never use it.
+          if (win) win.setContentSize(size.w, size.h)
+        }, { w, h })
+      },
+      mainEval: async (js) => {
+        return app.evaluate((_electronModule, jsString) => {
+          // eslint-disable-next-line no-eval
+          return eval(jsString)
+        }, js)
+      },
+    }
+
     ensureDebugDir()
-    results = await runActions(page, actions, { debugDir: DEBUG_DIR, log })
+    results = await runActions(page, actions, { debugDir: DEBUG_DIR, log, caps })
 
     if (keepOpen) {
       log('--keep: app left open. Ctrl+C to exit.')
@@ -218,6 +273,13 @@ async function main() {
       '  click <selector>            Click element',
       '  fill <selector> <value>     Fill input',
       '  eval <js>                   Evaluate JS expression',
+      '  resize <w> <h> [file]       Resize window, optional screenshot',
+      '  size-matrix [prefix]        Screenshot at 1280x768/1440x900/1920x1080/2560x1440',
+      '  scale-matrix [prefix] [route]',
+      '                              Relaunch at scale 1/1.25/1.5/2, screenshot each',
+      '  watch <interval_ms> <max_ms> <prefix> [until-selector]',
+      '                              Screenshot every interval until selector/timeout',
+      '  main-eval <js>              Evaluate JS in the main process',
       '  session <json|path>        Run a JSON action sequence',
       '',
       'Flags:',
@@ -228,6 +290,48 @@ async function main() {
   }
 
   if (!noBuild) build()
+
+  // scale-matrix needs a fresh app launch per scale (--force-device-scale-factor
+  // is a launch flag, not something app.evaluate() can flip at runtime — see
+  // §6/§8 of the spec), so it drives its own sequence of runSession() calls
+  // instead of building one `actions` array for the generic path below.
+  if (cmd === 'scale-matrix') {
+    const prefix = args[1] ?? 'scale'
+    const route  = args[2] ?? '/'
+    const scales = [1, 1.25, 1.5, 2]
+    const runs   = []
+    try {
+      for (const scale of scales) {
+        log(`scale-matrix: relaunching at --force-device-scale-factor=${scale}`)
+        const file = `${prefix}-${scale}x.png`
+        const results = await runSession(
+          [
+            // Pin the logical baseline before shooting. Electron sizes are in
+            // DIPs, so resizing to the same 1440x900 CONTENT box at every scale
+            // makes each PNG come out at exactly 1440*scale x 900*scale — i.e.
+            // the matrix means "same logical layout, varying DPR", which is the
+            // point. Without this the run would inherit the default window's
+            // 1440x872 content area and the rows wouldn't be comparable.
+            { action: 'resize', w: SCALE_BASELINE.w, h: SCALE_BASELINE.h },
+            { action: 'navigate', route },
+            { action: 'screenshot', file },
+          ],
+          { keepOpen: false, extraFlags: [`--force-device-scale-factor=${scale}`] },
+        )
+        runs.push({ scale, results })
+      }
+      console.log(JSON.stringify(runs, null, 2))
+      const anyFailed = runs.some(({ results }) => results.some(r => !r.ok))
+      if (anyFailed) {
+        process.stderr.write('\nscale-matrix: some action(s) failed.\n')
+        process.exit(1)
+      }
+    } catch (err) {
+      console.error(`Fatal: ${err.stack || err.message}`)
+      process.exit(1)
+    }
+    return
+  }
 
   let actions = []
 
@@ -261,6 +365,37 @@ async function main() {
     case 'eval':
       if (!args[1]) { console.error('eval requires a JS expression'); process.exit(1) }
       actions = [{ action: 'eval', js: args[1] }]
+      break
+
+    case 'resize': {
+      if (!args[1] || !args[2]) { console.error('resize requires w and h'); process.exit(1) }
+      actions = [{
+        action: 'resize', w: parseInt(args[1], 10), h: parseInt(args[2], 10), file: args[3],
+      }]
+      break
+    }
+
+    case 'size-matrix':
+      actions = [{ action: 'size-matrix', prefix: args[1] ?? 'size' }]
+      break
+
+    case 'watch': {
+      if (!args[1] || !args[2] || !args[3]) {
+        console.error('watch requires interval_ms, max_ms, and prefix'); process.exit(1)
+      }
+      actions = [{
+        action: 'watch',
+        interval_ms: parseInt(args[1], 10),
+        max_ms: parseInt(args[2], 10),
+        prefix: args[3],
+        until: args[4],
+      }]
+      break
+    }
+
+    case 'main-eval':
+      if (!args[1]) { console.error('main-eval requires a JS expression'); process.exit(1) }
+      actions = [{ action: 'main-eval', js: args[1] }]
       break
 
     case 'session': {

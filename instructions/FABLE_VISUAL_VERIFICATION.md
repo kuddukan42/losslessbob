@@ -126,7 +126,7 @@ Same CLI/session shape as browser_driver, plus:
 
 | Action | Args | Behavior |
 |---|---|---|
-| `resize` | `w h [file]` | `BrowserWindow.setSize` via `app.evaluate`, settle ~300ms, optional screenshot |
+| `resize` | `w h [file]` | `BrowserWindow.setContentSize` via `app.evaluate` (**not** `setSize` — see finding 9), settle ~300ms, optional screenshot |
 | `size-matrix` | `[prefix]` | screenshots at 1280×768 (app min — index.ts:133), 1440×900 (default), 1920×1080, 2560×1440 |
 | `scale-matrix` | `[prefix]` | relaunch per `--force-device-scale-factor` ∈ {1, 1.25, 1.5, 2}, same route each time |
 | `watch` | `interval_ms max_ms prefix [until-selector]` | screenshot every interval until selector appears/timeout → `prefix-000.png…`; for progress meters |
@@ -162,11 +162,16 @@ and whether intermediate frames are monotonic — that's the "watch the meter fi
 Resume tracking (update in place, per usage-pacing convention):
 
 ```
-[x] Bite 1 — preflight        (DONE 2026-07-15 — backend decided: Xvfb)
-[x] Bite 2 — driver MVP       (DONE 2026-07-15 — full tour passes on Tier B)
-[ ] Bite 3 — resize/scale/watch (not started)
-[ ] Bite 4 — skill + docs     (not started — incl. CHANGELOG/TODO bookkeeping)
+[x] Bite 1  — preflight        (DONE 2026-07-15 — backend decided: Xvfb)
+[x] Bite 2  — driver MVP       (DONE 2026-07-15 — full tour passes on Tier B)
+[x] Bite 3a — resize/size-matrix/scale-matrix/watch/main-eval
+                               (DONE 2026-07-15 — all matrices verified exact; findings 9-11)
+[ ] Bite 3b — progress fixture (not started — bigger than §5 assumed, see finding 12)
+[ ] Bite 4  — skill + docs     (not started — incl. CHANGELOG/TODO bookkeeping)
 ```
+
+Bite 3 split into 3a (driver actions, no backend work) and 3b (progress fixture) once
+finding 12 showed the fixture is a backend design job, not driver plumbing.
 
 ### Findings from bites 1–2 (amend §4/§6 — read before Bite 3)
 
@@ -194,6 +199,43 @@ Resume tracking (update in place, per usage-pacing convention):
    `debug_screens.json` and would otherwise silently overwrite each other.
 8. `electron_preflight.mjs` preserves the `selected` decision on re-run (`--reset-selection` to
    discard deliberately). Don't hand-edit the matrix; do hand-own the decision.
+
+### Findings from bite 3a (amend §4/§6 — read before Bite 3b)
+
+9. **`resize` uses `setContentSize`, not §6's `setSize`** — a deliberate deviation, recorded in
+   a code comment so it isn't "fixed" back. Tier A's resize is `page.setViewportSize()`, which
+   sets *content* size exactly; an outer-frame Tier B makes the shared `debug_screens.json`
+   produce different PNG sizes per tier, and a "2560x1440" file that is really 2559x1411 (the
+   native title bar eats ~28px on the height axis). Tier parity and honest filenames win. The
+   app's `minWidth`/`minHeight` (1280/768, `index.ts:141`) are *outer* constraints, so
+   `setContentSize(1280, 768)` yields a larger outer window and still respects the minimum.
+10. **The Xvfb screen is sized by both matrix consumers**, now `2920x1860x24`. It must fit
+    `max(size-matrix largest content, scale-matrix baseline × max scale) + decoration` —
+    2560×1440 at 1x vs 2880×1800 at 2x, so 2x wins. Undersizing does not error, it **silently
+    clamps**: a 2600×1500 screen capped the 2x row at 2600×1480, which at DPR 2 is 1300×740
+    *logical* — below the app's own 768 minimum, i.e. a frame showing a layout no real user can
+    ever have. A clamped frame is worse than no frame. `scale-matrix` therefore pins a 1440×900
+    DIP baseline (`SCALE_BASELINE`) before every shot, so each row is "same logical layout,
+    varying DPR" rather than whatever the default window happened to be.
+11. **1.25x lands at 1800×1128, not 1800×1125** — accepted, not a bug to chase. At DPR 1.25
+    Electron's own `getContentSize()` reports 902 DIP after a `setContentSize(1440, 900)` call
+    (902 × 1.25 = 1127.5 → 1128); 1x/1.5x/2x are exact. This is Chromium DIP↔physical rounding
+    at a fractional scale factor, and the capture is honest about the window it actually got.
+    Fixing it would mean fudging the input (request 898 to land on 900) or a measure-and-retry
+    loop. §10 puts pixel-diff baselines out of scope, so a 3px drift on one row has no consumer.
+12. **The progress fixture (§5) is a backend design job, not driver plumbing** — this is why
+    Bite 3 was split. §5 says to feed "the same job/progress transport ScreenPipeline polls",
+    but there are *two* and it matters which: `/api/pipeline/run/start` + `/run/status` is the
+    per-folder verdict job (no meter), while the thing that visibly fills 0→100% is
+    `FileProgressBar`, fed by `/api/pipeline/file/start` + `/file/status` and backed by
+    `_FILE_JOB` in `backend/filer.py:265`. Feeding `_FILE_JOB` alone is **not enough**: the
+    screen only renders the bar off client state (`row.running && row.fileProgress`) set by
+    clicking File, and a pre-armed `_FILE_JOB` would make the real `start_file_job` return
+    `busy`. So the fixture must intercept inside `start_file_job` (past its busy, stale-verify
+    and `resolve_destination_for_lb` guards) and simulate `_run()` with no filesystem IO, and
+    the driver still needs a staged row with a real folder + a valid LB in `entries`. Design
+    that before writing it; `status.path` must match the row's folder path or the screen
+    reports a job mismatch (`ScreenPipeline.tsx:1968`).
 
 ## 9. Acceptance criteria
 

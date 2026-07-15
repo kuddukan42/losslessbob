@@ -12,6 +12,11 @@
  *   click <selector>               Click an element (CSS selector)
  *   fill <selector> <value>        Fill an input field
  *   eval <js>                      Evaluate JS expression, print result
+ *   resize <w> <h> [file]          Resize the viewport, optional screenshot
+ *   size-matrix [prefix]           Screenshot at 1280x768/1440x900/1920x1080/2560x1440
+ *   watch <interval_ms> <max_ms> <prefix> [until-selector]
+ *                                  Screenshot every interval_ms until the
+ *                                  selector appears or max_ms elapses
  *   session <json|path>            Run a JSON action sequence (array or {actions:[...]})
  *
  * Flags:
@@ -21,7 +26,12 @@
  *   --no-server   Don't spawn a server — assume one is already running on the target port
  *
  * Session action types: screenshot, navigate, click, fill, type, clear,
- *   wait, wait-for, eval, hover, scroll-to, select
+ *   wait, wait-for, eval, hover, scroll-to, select, resize, size-matrix, watch
+ *   (see tools/driver_core.mjs). `main-eval` is also a shared action type but
+ *   always fails cleanly here — this tier has no Electron main process (no
+ *   `caps.mainEval`); use tools/electron_driver.mjs for that. `scale-matrix`
+ *   is not offered here either — it relaunches Electron per scale, which has
+ *   no equivalent for a persistent Chromium `page.setViewportSize()` tab.
  */
 
 import { chromium } from 'playwright'
@@ -133,7 +143,17 @@ async function runSession(actions, opts) {
     log(`splash overlay did not clear: ${err.message} — continuing anyway`)
   }
 
-  const results = await runActions(page, actions, { debugDir: DEBUG_DIR, log })
+  // Tier A capability for driver_core's shared action runner (§6): resize
+  // maps to a Playwright viewport resize (not a real OS window — there is
+  // no window here). No `mainEval` — Chromium tier has no main process, so
+  // that key is left undefined and the action fails cleanly per-step.
+  const caps = {
+    resize: async (w, h) => {
+      await page.setViewportSize({ width: w, height: h })
+    },
+  }
+
+  const results = await runActions(page, actions, { debugDir: DEBUG_DIR, log, caps })
 
   if (keepOpen) {
     log('--keep: browser left open. Ctrl+C to exit.')
@@ -166,6 +186,10 @@ async function main() {
       '  click <selector>            Click element',
       '  fill <selector> <value>     Fill input',
       '  eval <js>                   Evaluate JS expression',
+      '  resize <w> <h> [file]       Resize viewport, optional screenshot',
+      '  size-matrix [prefix]        Screenshot at 1280x768/1440x900/1920x1080/2560x1440',
+      '  watch <interval_ms> <max_ms> <prefix> [until-selector]',
+      '                              Screenshot every interval until selector/timeout',
       '  session <json|path>         Run a JSON action sequence',
       '',
       'Flags:',
@@ -212,6 +236,32 @@ async function main() {
       if (!args[1]) { console.error('eval requires a JS expression'); process.exit(1) }
       actions = [{ action: 'eval', js: args[1] }]
       break
+
+    case 'resize': {
+      if (!args[1] || !args[2]) { console.error('resize requires w and h'); process.exit(1) }
+      actions = [{
+        action: 'resize', w: parseInt(args[1], 10), h: parseInt(args[2], 10), file: args[3],
+      }]
+      break
+    }
+
+    case 'size-matrix':
+      actions = [{ action: 'size-matrix', prefix: args[1] ?? 'size' }]
+      break
+
+    case 'watch': {
+      if (!args[1] || !args[2] || !args[3]) {
+        console.error('watch requires interval_ms, max_ms, and prefix'); process.exit(1)
+      }
+      actions = [{
+        action: 'watch',
+        interval_ms: parseInt(args[1], 10),
+        max_ms: parseInt(args[2], 10),
+        prefix: args[3],
+        until: args[4],
+      }]
+      break
+    }
 
     case 'session': {
       if (!args[1]) { console.error('session requires JSON or a file path'); process.exit(1) }
