@@ -173,6 +173,28 @@ Resume tracking (update in place, per usage-pacing convention):
 Bite 3 split into 3a (driver actions, no backend work) and 3b (progress fixture) once
 finding 12 showed the fixture is a backend design job, not driver plumbing.
 
+**OPEN DECISION — needs tj, carried to next session (2026-07-15).** Bite 3b and Bite 4 are
+independent; either can go first. Put to tj at the end of the 07-15 session, not yet answered:
+
+- **Bite 3b first** — the progress fixture. Unblocks acceptance criterion 4 (`watch` a meter
+  fill 0→100%), the one criterion still unmet. But it is the bigger job and it touches
+  `backend/filer.py` (finding 12: a `start_file_job` intercept past the busy/stale-verify/
+  destination guards, plus a staged pipeline row with a real folder + valid LB). Wants a
+  design agreed with tj *before* code — do not let an agent improvise this one.
+- **Bite 4 first** — `/verify --electron`, PROJECT.md tooling section, CLAUDE.md note.
+  Self-contained, no backend risk, and makes the driver *usable* immediately: bites 1-3a
+  already satisfy acceptance criteria 1, 2, 3, 5 and 6. Leaves criterion 4 open.
+
+Recommendation on the table: **Bite 4 first** — it banks the working driver behind a skill
+before spending a chunk on backend design, and 3b's design conversation is better had fresh.
+
+Also deferred to Bite 4 (deliberate, not an oversight): PROJECT.md's `tools/` listing does not
+mention ANY driver — `browser_driver.mjs` was already absent before this work. Rather than add
+five new `.mjs`/config rows next to that pre-existing gap, Bite 4 adds them all in one pass
+(browser_driver + driver_core + electron_driver + electron_preflight + electron_display +
+electron_driver.config.json). `tools/check_project_refs.py` exits 0 either way — it checks
+routes/tables/screens/backend modules, not `tools/*.mjs`.
+
 ### Findings from bites 1–2 (amend §4/§6 — read before Bite 3)
 
 1. **Display env is never inherited.** §4 says rows 1/2 inherit `WAYLAND_DISPLAY`/`DISPLAY`;
