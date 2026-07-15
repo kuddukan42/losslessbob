@@ -1,4 +1,10 @@
 
+TODO-248: Ledger ID integrity: 20 duplicate BUG numbers, 17 duplicate TODO numbers, 2 IDs both open and fixed
+Priority: Medium
+Status: Open
+Added: 2026-07-15
+Description: Pre-existing (NOT introduced 2026-07-15; no session touched BUGS.md in the range). Found by /session-close step 7. Distinct bugs share a number: BUG-107 names 5 different bugs in BUGS_DONE.md. Worse, BUG-175 and BUG-200 each exist in BOTH BUGS.md (Open) and BUGS_DONE.md (Fixed) as entirely different bugs — BUG-175 is both 'LBDIR reconcile MD5 mismatch' (open) and 'Windows fonts render badly' (fixed); BUG-200 is both 'tapematch report.md cross-contamination' (open) and 'Verify tab no checksums' (fixed). Consequence: 'tools/ledger.py bug-close 175' is ambiguous, and any BUG-<N> reference in CHANGELOG/commits may resolve to the wrong bug. New IDs are safe (next-id takes max: BUG-251/TODO-248). Counts: 20 dup BUG ids within BUGS_DONE.md, 17 dup TODO ids across TODO.md/TODO_DONE.md, 0 dups within open BUGS.md. tools/ledger_dedup.py exists and may already cover part of this — assess it first. Renumbering rewrites archive history and breaks existing cross-references, so decide the policy (renumber-with-alias vs leave-archive-frozen and only fix the 2 open/done collisions) BEFORE editing. Repro: grep -hoE '^BUG-[0-9]+' BUGS.md BUGS_DONE.md | sort | uniq -d
+
 TODO-247: Electron visual-verification driver (Tier B) — FABLE_VISUAL_VERIFICATION.md
 Priority: Medium
 Status: In progress
