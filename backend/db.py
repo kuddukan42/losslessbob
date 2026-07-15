@@ -7032,6 +7032,101 @@ def get_olof_chronicle_year(year: int, db_path=None) -> list[dict]:
     return [dict(r) for r in rows]
 
 
+_OLOF_LIKE_ESCAPE = "\\"
+
+
+def _olof_like_pattern(q: str) -> str:
+    """Escape ``%``/``_``/the escape char itself so *q* matches literally in LIKE."""
+    escaped = (
+        q.replace(_OLOF_LIKE_ESCAPE, _OLOF_LIKE_ESCAPE * 2)
+        .replace("%", _OLOF_LIKE_ESCAPE + "%")
+        .replace("_", _OLOF_LIKE_ESCAPE + "_")
+    )
+    return f"%{escaped}%"
+
+
+def _olof_snippet(text: str, q: str, context: int = 60) -> str:
+    """Return ~*context* chars of *text* on either side of the first hit of *q*.
+
+    Ellipsizes with ``…`` on whichever side(s) were truncated. Case-insensitive
+    match; returns an empty string if *q* is not found (should not happen for
+    rows the caller already matched via LIKE).
+    """
+    idx = text.lower().find(q.lower())
+    if idx == -1:
+        return ""
+    start = max(0, idx - context)
+    end = min(len(text), idx + len(q) + context)
+    snippet = text[start:end].strip()
+    if start > 0:
+        snippet = "…" + snippet
+    if end < len(text):
+        snippet = snippet + "…"
+    return snippet
+
+
+def get_olof_bobtalk_search(q: str, limit: int = 50, db_path=None) -> list[dict]:
+    """Case-insensitive substring search over olof_events.bobtalk and .notes.
+
+    "Bob said something about X — which night was that?": lets the GUI find
+    the show whose BobTalk or notes text mentions *q*, without a schema
+    change or FTS5 (the table is small — 4,924 rows).
+
+    Args:
+        q: Search text. ``%``/``_`` are escaped so they match literally
+           rather than as SQL LIKE wildcards.
+        limit: Maximum number of hits to return, applied after ordering.
+        db_path: Optional path to the SQLite database file.
+
+    Returns:
+        List of hit dicts: ``{event_id, date_str, venue, city, country,
+        event_type, concert_no_net, field, snippet}`` where ``field`` is
+        ``'bobtalk'`` or ``'notes'``. A row that matches in both fields
+        yields only the ``'bobtalk'`` hit (dedupe). Ordered with all
+        ``'bobtalk'`` hits before ``'notes'`` hits, and ``date_str``
+        ascending within each group. Empty list if *q* is blank.
+    """
+    q = (q or "").strip()
+    if not q:
+        return []
+    like_pat = _olof_like_pattern(q)
+    conn = get_connection(db_path)
+    rows = conn.execute(
+        f"""SELECT event_id, date_str, venue, city, country, event_type,
+                   concert_no_net, bobtalk, notes
+            FROM olof_events
+            WHERE bobtalk LIKE ? ESCAPE '{_OLOF_LIKE_ESCAPE}'
+               OR notes LIKE ? ESCAPE '{_OLOF_LIKE_ESCAPE}'
+            ORDER BY date_str ASC""",
+        (like_pat, like_pat),
+    ).fetchall()
+
+    q_lower = q.lower()
+    bobtalk_hits: list[dict] = []
+    notes_hits: list[dict] = []
+    for r in rows:
+        base = {
+            "event_id": r["event_id"],
+            "date_str": r["date_str"],
+            "venue": r["venue"],
+            "city": r["city"],
+            "country": r["country"],
+            "event_type": r["event_type"],
+            "concert_no_net": r["concert_no_net"],
+        }
+        bobtalk = r["bobtalk"] or ""
+        notes = r["notes"] or ""
+        if q_lower in bobtalk.lower():
+            bobtalk_hits.append({
+                **base, "field": "bobtalk", "snippet": _olof_snippet(bobtalk, q),
+            })
+        elif q_lower in notes.lower():
+            notes_hits.append({
+                **base, "field": "notes", "snippet": _olof_snippet(notes, q),
+            })
+    return (bobtalk_hits + notes_hits)[:limit]
+
+
 def get_olof_status(db_path=None) -> dict:
     """Return per-table row counts and the max DSN year, for GUI gating.
 

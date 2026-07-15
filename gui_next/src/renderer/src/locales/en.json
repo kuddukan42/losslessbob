@@ -1671,7 +1671,15 @@
       "circulatedAs": "First circulated as “{{title}}”",
       "matchPct": "{{pct}}% setlist match",
       "expectedMinutes": "~{{count}} min expected",
-      "missingFromCopy": "Missing from this copy: {{titles}}"
+      "missingFromCopy": "Missing from this copy: {{titles}}",
+      "search": {
+        "buttonTitle": "Search BobTalk & notes",
+        "placeholder": "Bob said something about…",
+        "minChars": "Keep typing (min. 2 characters)",
+        "loading": "Searching…",
+        "noResults": "No matches",
+        "notInLibrary": "Not in library"
+      }
     },
     "scope": {
       "everything": "Everything",
