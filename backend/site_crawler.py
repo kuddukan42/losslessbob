@@ -34,14 +34,14 @@ from backend.db import (
 )
 from backend.db_queue import get_write_queue
 from backend.html_utils import rewrite_links
-from backend.paths import SITE_DIR
+from backend.paths import SITE_BASE_URL, SITE_DIR
 
 logger = logging.getLogger(__name__)
 
 # ── Constants ─────────────────────────────────────────────────────────────────
 
-BASE_URL    = "http://www.losslessbob.wonderingwhattochoose.com"
-BASE_DOMAIN = "www.losslessbob.wonderingwhattochoose.com"
+BASE_URL    = SITE_BASE_URL
+BASE_DOMAIN = urlparse(SITE_BASE_URL).netloc
 
 # Real site entry point.  The domain root (/) serves a DreamHost placeholder.
 SITE_HOME_URL = BASE_URL + "/LosslessBob.html"

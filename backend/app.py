@@ -48,6 +48,7 @@ from backend.paths import (
     TAPEMATCH_DB_PATH,
     TAPEMATCH_RUNS_DIR,
     attachment_path,
+    detail_url,
     find_lbdir_attachment,
 )
 from concert_ranker.config import resolve_band_set
@@ -1810,10 +1811,7 @@ def create_app() -> Flask:
                 entries.append({
                     "lb": lb,
                     "lb_str": f"LB-{lb:05d}",
-                    "url": (
-                        "http://www.losslessbob.wonderingwhattochoose.com"
-                        f"/detail/LB-{lb:05d}.html"
-                    ),
+                    "url": detail_url(lb),
                     "status": r.get("lb_status") or "unknown",
                     "date": date_str,
                     "year": year,

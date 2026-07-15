@@ -11,6 +11,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from backend.credentials import SERVICE_WTRF, get_credentials
+from backend.paths import detail_url
 from backend.version import VERSION as APP_VERSION
 
 logger = logging.getLogger(__name__)
@@ -367,10 +368,8 @@ def _build_body(entry: dict, attachments_dir: Path | None, lb_number: int | None
         meta_fields.append(f"[b]Timing:[/b] {timing}")
     if lb_number is not None:
         lb_id = f"LB-{lb_number:05d}"
-        detail_url = (
-            f"http://www.losslessbob.wonderingwhattochoose.com/detail/{lb_id}.html"
-        )
-        meta_fields.append(f"[url={detail_url}][color=red][b]{lb_id}[/b][/color][/url]")
+        url = detail_url(lb_number)
+        meta_fields.append(f"[url={url}][color=red][b]{lb_id}[/b][/color][/url]")
 
     if meta_fields:
         # Slightly larger than body text so the header stands out; [hr] follows on next line

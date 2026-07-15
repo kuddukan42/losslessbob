@@ -22,6 +22,7 @@ from backend.db import (
 from backend.db_queue import get_write_queue
 from backend.html_utils import rewrite_links
 from backend.paths import (
+    SITE_BASE_URL,
     SITE_DETAIL_DIR,
     SITE_FILES_DIR,
     attachment_path,
@@ -29,7 +30,7 @@ from backend.paths import (
     to_long_path,
 )
 
-BASE_URL = "http://www.losslessbob.wonderingwhattochoose.com"
+BASE_URL = SITE_BASE_URL
 DETAIL_URL = BASE_URL + "/detail/LB-{n}.html"
 FILE_URL = BASE_URL + "/files/{filename}"
 BYNUMBER_URL = BASE_URL + "/bynumber/LBMbynumber.html"
