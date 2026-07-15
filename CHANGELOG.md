@@ -1,8 +1,16 @@
-[2026-07-15] — feat(gui): TODO-247 visual-verification driver — bite 4: /verify --electron + docs
+[2026-07-15] — feat(gui): TODO-247 visual-verification driver — bite 4 + spec CLOSED (3b won't-do)
 Context: instructions/complete/FABLE_VISUAL_VERIFICATION.md §8. tj chose bite 4 over bite 3b
-  when the two were put to him as independent next steps — it banks the working driver
-  behind a skill before a chunk is spent on backend design, and 3b's design conversation
-  is better had fresh. Bite 3b (progress fixture) stays open under TODO-247.
+  when the two were put to him as independent next steps, then killed 3b outright: "not
+  enough animation in the app to matter". TODO-247 is CLOSED and the spec is closed in
+  full — bites 1/2/3a/4 shipped, bite 3b deliberately never built.
+Decision: bite 3b (dev-gated progress fixture) WON'T DO, tj sign-off 2026-07-15. Its only
+  consumer was one progress meter (FileProgressBar) and its price was a test-only intercept
+  inside start_file_job in PRODUCTION code (backend/filer.py), past three guards, plus a
+  simulated _run() and a staged pipeline row (spec finding 12). Accepted consequence:
+  acceptance criterion 4 is permanently unmet by choice and the meter's mid-fill state is
+  not machine-verifiable. The `watch` ACTION itself is built and works (bite 3a) and still
+  runs against real jobs — only the synthetic fixture was dropped; don't read this as
+  "watch was cancelled". Finding 12 kept as the record of why, for any future revisit.
 Added: .claude/skills/verify/SKILL.md `--electron` mode (Tier B). Documents both tiers as a
   table (driver, PNG dir, extra actions, window.api, cost) and when to reach for B over A:
   window chrome, real sizes, display scale, native preload flows, main-process state.
@@ -23,9 +31,10 @@ Verified: full Tier B tour re-run after the path edits — all 17 screens captur
   .debug/electron/, every action ok, backend on :5174 survived. `node --check` clean on
   all 5 .mjs files; check_project_refs.py exits 0. Screenshots NOT reviewed — that was a
   smoke test of the tool, not a /verify run; tj verifies visuals.
-Remaining: bite 3b only (progress fixture, acceptance criterion 4 — watch a meter fill
-  0->100%). Criteria 1/2/3/5/6 are met. See spec finding 12 before starting it: it needs
-  a start_file_job intercept in backend/filer.py, not driver work. Design with tj first.
+Remaining: nothing. Criteria 1/2/3/5/6 met; criterion 4 withdrawn with the fixture (above).
+Verified (example run, tj-requested): 25 PNGs in .debug/electron/ — the 17-screen tour, plus
+  size-matrix at exactly 1280x768/1440x900/1920x1080/2560x1440 and scale-matrix on /lookup at
+  1440x900/1800x1128/2160x1350/2880x1800. Spot-checked two: live data, nothing clamped.
 
 [2026-07-15] — feat(gui): TODO-247 visual-verification driver — bite 3a: resize/size/scale/watch
 Context: instructions/FABLE_VISUAL_VERIFICATION.md §6. Bite 3 split into 3a (driver
