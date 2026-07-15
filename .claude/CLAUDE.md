@@ -31,6 +31,10 @@ Follow every session. No asking.
   cause false "fix didn't work" confusion.
 - gui_next changes: `/gui-check` (typecheck + production build). **No screenshots
   or browser/UI automation** — the user verifies visuals themselves.
+  The one exception is `/verify`, and only when the user invokes it by name:
+  Tier A screenshots the renderer, `/verify --electron` drives the real Electron
+  app on Xvfb (resize, display scale, real `window.api`). Having the capability
+  is not permission to use it on your own initiative after a code change.
 - A PostToolUse hook (`.claude/hooks/py_compile_check.sh`) auto-runs
   `py_compile` on every `.py` edit — no manual syntax-check step needed.
 

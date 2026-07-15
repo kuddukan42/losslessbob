@@ -232,12 +232,19 @@ losslessbob/
 │   ├── refit_aud_model.py    # CLI: refit/recalibrate the AUD quality model against new labels
 │   ├── gui_next_locale_parity.py # CLI: check gui_next locales/*.json for missing/extra keys vs en.json
 │   ├── ledger_dedup.py       # CLI: de-duplicate BUG/TODO ledger entries (tools/ledger.py helper)
-│   └── test_site_headers.py  # CLI: probe losslessbob.com HTTP headers (Last-Modified/ETag support check)
+│   ├── test_site_headers.py  # CLI: probe losslessbob.com HTTP headers (Last-Modified/ETag support check)
+│   ├── browser_driver.mjs    # Visual-verification driver, Tier A: Playwright Chromium vs the Vite build; PNGs → .debug/ (used by /verify)
+│   ├── electron_driver.mjs   # Visual-verification driver, Tier B: Playwright _electron vs the REAL built app on Xvfb; adds resize/size-matrix/scale-matrix/watch/main-eval; PNGs → .debug/electron/ (used by /verify --electron; TODO-247)
+│   ├── driver_core.mjs       # Shared session-JSON action runner for both drivers (screenshot/navigate/click/fill/wait/eval/resize/...)
+│   ├── electron_preflight.mjs # CLI: display-backend probe matrix (Wayland/XWayland/Xvfb/ozone-headless); writes + preserves the `selected` decision
+│   ├── electron_display.mjs  # Shared X11/Wayland socket discovery + Xvfb lifecycle helpers (preflight + electron_driver)
+│   ├── electron_driver.config.json # Committed display-backend decision (Xvfb, screen 2920x1860x24) + probe matrix; electron_driver.mjs reads it, never re-probes
+│   └── debug_screens.json    # Tier-agnostic screen tour (session action list) — same file feeds both drivers
 ├── instructions/              # Fable spec pack + working docs (not shipped; planning/reference only)
 │   ├── README.md              # Index of instructions/ docs and how to use them
 │   ├── SPEC_INTEGRATION_NOTES.md # Cross-spec integration notes; read before implementing any spec-pack item
 │   ├── WORK_PACKAGE_2026-07-14.md # Active work-package tracking doc
-│   ├── FABLE_IDEAS.md, FABLE_TAPEMATCH_LISTENING_SIGNALS.md, FABLE_VISUAL_VERIFICATION.md
+│   ├── FABLE_IDEAS.md, FABLE_TAPEMATCH_LISTENING_SIGNALS.md, FABLE_PLATFORM_ROADMAP.md
 │   ├── TAPEMATCH_CALIBRATION_GUIDE.md, CC_TRADING_PLAN.md
 │   ├── complete/               # Finished spec docs, kept for history
 │   └── future/                 # Not-yet-started spec docs

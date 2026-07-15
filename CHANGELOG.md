@@ -1,3 +1,32 @@
+[2026-07-15] — feat(gui): TODO-247 visual-verification driver — bite 4: /verify --electron + docs
+Context: instructions/complete/FABLE_VISUAL_VERIFICATION.md §8. tj chose bite 4 over bite 3b
+  when the two were put to him as independent next steps — it banks the working driver
+  behind a skill before a chunk is spent on backend design, and 3b's design conversation
+  is better had fresh. Bite 3b (progress fixture) stays open under TODO-247.
+Added: .claude/skills/verify/SKILL.md `--electron` mode (Tier B). Documents both tiers as a
+  table (driver, PNG dir, extra actions, window.api, cost) and when to reach for B over A:
+  window chrome, real sizes, display scale, native preload flows, main-process state.
+  Both tiers share tools/debug_screens.json, so the screen tour is identical.
+Added: PROJECT.md tools/ listing now names all 7 driver files (browser_driver, driver_core,
+  electron_driver, electron_preflight, electron_display, electron_driver.config.json,
+  debug_screens.json). Closes a PRE-EXISTING gap — the listing mentioned no driver at all;
+  browser_driver.mjs was already absent before this work. check_project_refs.py exits 0
+  either way (it checks routes/tables/screens/backend modules, not tools/*.mjs).
+Changed: .claude/CLAUDE.md Verification section — /verify is the named exception to the
+  "no screenshots" rule, and only on explicit user invocation. Wording is deliberate:
+  having the capability is not permission to use it on initiative.
+Changed: instructions/FABLE_VISUAL_VERIFICATION.md -> instructions/complete/ (+ README.md
+  row, + the instructions/ path references inside the 3 driver source headers).
+  complete/ here means "design record for a shipped driver", NOT "every bite landed" —
+  the spec's resume block and README row both say bite 3b is deferred.
+Verified: full Tier B tour re-run after the path edits — all 17 screens captured to
+  .debug/electron/, every action ok, backend on :5174 survived. `node --check` clean on
+  all 5 .mjs files; check_project_refs.py exits 0. Screenshots NOT reviewed — that was a
+  smoke test of the tool, not a /verify run; tj verifies visuals.
+Remaining: bite 3b only (progress fixture, acceptance criterion 4 — watch a meter fill
+  0->100%). Criteria 1/2/3/5/6 are met. See spec finding 12 before starting it: it needs
+  a start_file_job intercept in backend/filer.py, not driver work. Design with tj first.
+
 [2026-07-15] — feat(gui): TODO-247 visual-verification driver — bite 3a: resize/size/scale/watch
 Context: instructions/FABLE_VISUAL_VERIFICATION.md §6. Bite 3 split into 3a (driver
   actions, tools/ only) and 3b (progress fixture) — see the Notes below.

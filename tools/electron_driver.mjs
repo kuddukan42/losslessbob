@@ -5,7 +5,7 @@
  * backend tools/electron_preflight.mjs already selected (Xvfb, recorded in
  * tools/electron_driver.config.json `.selected`). Same session-JSON action
  * format as tools/browser_driver.mjs (Tier A, Chromium vs the Vite build) —
- * see instructions/FABLE_VISUAL_VERIFICATION.md §3, §6 (Bite 2).
+ * see instructions/complete/FABLE_VISUAL_VERIFICATION.md §3, §6 (Bite 2).
  *
  * This driver does NOT re-probe display backends — it reads the committed
  * config and reuses the Xvfb lifecycle + socket-discovery helpers from

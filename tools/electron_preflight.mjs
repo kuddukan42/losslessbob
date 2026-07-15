@@ -17,7 +17,7 @@
  * nulling it silently would break Tier B. Use --reset-selection for the
  * deliberate "throw the decision away" case.
  *
- * See instructions/FABLE_VISUAL_VERIFICATION.md §3, §4, §7 (Bite 1).
+ * See instructions/complete/FABLE_VISUAL_VERIFICATION.md §3, §4, §7 (Bite 1).
  *
  * Usage:
  *   node tools/electron_preflight.mjs [--no-build] [--rows=1,2,3,4] [--reset-selection]
