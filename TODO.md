@@ -1,4 +1,10 @@
 
+TODO-240: Trigger geocoder run_batch once the 2026-07-14 venue resolve batch completes
+Priority: Medium
+Status: Open
+Added: 2026-07-14
+Description: Operational follow-up to TODO-223 (closed): a full 'python -m backend.venue_gazetteer resolve' batch was still running at session close 2026-07-14 (652/4071 resolved; per-venue commits, durable, detached). When it finishes, trigger geocoder run_batch (POST /api/geocode/run or CLI) so the ~6,584 un-geocoded entries.location values inherit venue_geocoded pins — mostly zero Nominatim calls via the TODO-223 bite-3 inheritance. Then spot-check /api/map/data marker counts and city_level flags. If the resolve batch died early, re-run it (idempotent: processes source='seeded' remainder only).
+
 TODO-239: Backfill setlist.fm city coords (force re-scrape) to upgrade venue gazetteer anchors
 Priority: Medium
 Status: Open
@@ -22,15 +28,6 @@ Priority: Medium
 Status: Open
 Added: 2026-07-13
 Description: After the TODO-213 taper-attribution curation pass (non-taper credits excluded, robert removed, mention-downgrade rule) the taper_attributions conflict queue dropped to 53, of which 22 are SERIES-vs-SERIES: two *legitimate* taper series (e.g. ltc/ltg, net taper a/net taper i, lta/ntj) attributed to members of one recording_families family, both with strong (series_code/explicit) evidence. These are NOT an attribution bug and NOT a wordlist fix — they indicate the fingerprint/clustering pulled two genuinely different sources into one family (a false-merge). Recurs around prolific series: net taper a (10 merges), ltb (6), ltc/ltg (5). Approach: for each of the 22, pull the family's members + tapematch evidence (observations.db corr / duration / explicit signals for the pair), decide split vs keep; if split, the family_meta review_flag or a family-split path in tapematch is the lever, then re-run taper_attribution.recompute(). Belongs to the tapematch calibration/family subsystem, not backend/db.py taper curation. Query for the 22: SELECT lb_number, evidence_json FROM taper_attributions WHERE conflict=1 — filter to rows whose candidate tokens are all lt[a-z]/net taper [a-z]. Related: [TODO-213].
-
-TODO-226: Surface BobTalk + Olof narrative in GUI (search, show pages) and add Olof/bobserve.com credits to About screen
-Priority: Medium
-Status: Open
-Added: 2026-07-10
-Progress: Part B (attribution) DONE 2026-07-11 — Olof/bobserve credit already shipped (3b9ca946);
-  setlist.fm + bobdylan.com credit cards and a bobserve "About Bob" link added to the About screen
-  (AboutDialog.tsx). Remaining: Part A (BobTalk search + show-page surfacing).
-Description: Two parts. (A) BobTalk surfacing — depends on TODO-162 P2 (olof_events.bobtalk already in spec schema): full-text search over bobtalk + notes (backend endpoint, e.g. /api/olof/bobtalk_search with LIKE or FTS5), display the night's BobTalk quote + Olof notes + NET concert # on gui_next show pages; optional 'on this day' widget from olof_chronicle later. (B) Attribution — independent, can ship NOW: add credit to Olof Bjorner and bobserve.com (source: 'About Bob', https://www.bobserve.com/olof/) in the gui_next About screen credits section, alongside existing setlist.fm/bobdylan.com credits; run /gui-next-i18n after copy change. Part B should land with or before the first Olof-derived data appearing in the GUI.
 
 TODO-214: TAPER phase 3 — Layer 2 token-profile fingerprints (inferred tier)
 Priority: Low

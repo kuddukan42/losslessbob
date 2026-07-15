@@ -1,3 +1,25 @@
+[2026-07-14] — feat(backend): TODO-226 COMPLETE — BobTalk/notes full-text search + Library lens search UI
+Context: discovery shrank the scope — Part A's show-page surfacing (BobTalk quote, notes, NET
+  concert #, chronicle) had already shipped with the TODO-162 P5b Olof tab in DetailPanel; the
+  entry text was stale. Only the search was missing. Data: 859 events with bobtalk, 2,874 with
+  notes (of 4,924) — LIKE suffices, no FTS5, no schema change.
+Added: backend/db.py get_olof_bobtalk_search() (+_olof_like_pattern/_olof_snippet) — case-
+  insensitive LIKE over olof_events.bobtalk/notes with %/_ escaping, ~60-char context snippets,
+  both-fields dedupe (bobtalk wins), bobtalk-before-notes then date ordering. backend/app.py
+  GET /api/olof/bobtalk_search (q min 2 chars else 400, limit capped 200) in the local-only olof
+  route block. tests/test_olof_bobtalk_search.py (10).
+Added: gui_next ScreenLibrary.tsx BobTalkSearch — speech-bubble IconButton + dropdown next to the
+  performance-lens search (FilterMenu outside-click/Escape idiom), 300ms debounce, results show
+  date + venue + snippet (italic for bobtalk); clicking navigates the lens to the show via the
+  same selection path as a manual row click (un-collapse year, scrollToIndex, open DetailPanel);
+  dates with no library rows render disabled with a "Not in library" hint. New Icon 'message'.
+  Locale keys library.olof.search.* — en + DeepL de/fr/es/it/nl (4,730 chars).
+Verification: full suite 780 passed / 5 skipped; tsc node+web 0 errors; production build clean.
+  Reviewed subagent-reported git-stash incident: working tree verified clean, both pre-existing
+  stashes intact, only intended files changed.
+Bookkeeping: PROJECT.md olof route table + TODO-226 closed. TODO-240 opened for the TODO-223
+  operational tail (trigger run_batch when the venue resolve batch — 652/4071 at close — finishes).
+
 [2026-07-14] — feat(backend): TODO-223 COMPLETE — gazetteer wired into geocoder, map city-level flag (bite 3 of 3)
 Context: bites 1–2 built venue_geocoded + the resolution ladder; this bite makes the gazetteer
   actually feed the map. High-value discovery: location_geocoded held only ~117 rows with 6,584
