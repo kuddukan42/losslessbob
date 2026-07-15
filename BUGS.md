@@ -7,28 +7,6 @@ Description: Intermittent native crash (not a Python exception/traceback — pro
 Root cause: Unknown
 Fix: —
 
-BUG-230: GNOME Wayland dev window still shows generic gear icon in the dock/taskbar
-Status: Open
-File(s): gui_next/src/main/index.ts, gui_next/resources/losslessbob-next.desktop
-Reported: 2026-07-01
-Root cause: UNCONFIRMED. Under `npm run dev` on GNOME + native Wayland (Debian), the taskbar/dock
-  icon remains Electron's default gear despite: (1) BrowserWindow `icon` set to resources/icon.png
-  — ignored on native Wayland; (2) a dev-helper .desktop (losslessbob-next.desktop) installed to
-  ~/.local/share/applications/ named to match the window's reported Wayland app_id. GNOME reports
-  wmclass=losslessbob-next (confirmed by user); on native Wayland the dock icon is resolved by
-  matching the window's app_id to a .desktop whose basename equals the app_id, but installing that
-  .desktop + restarting dev did not resolve it. Candidate causes not yet ruled out: app_id vs
-  desktop-file-id normalization/casing mismatch in GNOME's matcher; the .desktop not being picked
-  up (needs `update-desktop-database`, GNOME Shell restart, or logout — impossible to hot-reload
-  the shell on Wayland); Icon= not resolvable (absolute path vs hicolor theme name + icon cache);
-  or Electron/Ozone not emitting the app_id we assume. NOTE: the packaged AppImage is expected to
-  be unaffected (electron-builder generates its own matching .desktop) — this is a dev-only cosmetic
-  issue and has NOT been verified against a packaged build.
-Fix: TBD. Next steps to try: confirm the installed .desktop is actually being matched (GNOME
-  Looking Glass → Windows tab shows the matched app + icon path); verify Icon= resolves (absolute
-  PNG path); force a known app_id and match the .desktop basename to it exactly; test a packaged
-  AppImage to confirm the shipped app is correct and scope this to dev-only.
-
 BUG-210: backend/lossless_bob.db keeps reappearing in repo root (untracked, empty)
 Status: Open
 File(s): backend/lossless_bob.db (unknown origin)

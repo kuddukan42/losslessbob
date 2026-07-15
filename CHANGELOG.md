@@ -1,3 +1,20 @@
+[2026-07-14] — backlog completion drive: landed in-flight GUI/docs work, closed 4 TODOs + 1 BUG
+Context: session goal was shortening the backlog — close churners, not advance everything a little.
+Changed: gui_next/src/renderer/src/screens/ScreenLibrary.tsx: library picks now show a muted
+  known-taper fallback pill (taperBadgeLabel, tone=mute) when a taper is known but not confirmed —
+  confirmed tapers keep the info-tone badge (in-flight from 07-13, committed 8fe70a3b after
+  gui-check: node types PASS, renderer types PASS at 0 errors — old 14-error ScreenScraper baseline
+  is gone — build PASS; reuses existing i18n keys, no locale run needed).
+Added: instructions/FABLE_VISUAL_VERIFICATION.md (Electron visual-verification driver spec,
+  attempt 3) + README.md index row, status "ready — not started" (in-flight from 07-13, 1d110c99).
+Closed (no code change): TODO-233 by rescope (pt1 shipped 07-14, pt2 continues as TODO-235,
+  pt3 out of scope); TODO-109 done — the 36 listed ruff violations no longer exist (ruff check
+  clean across backend/, pytest 752 passed / 5 skipped; pre-commit auto-fix + feature commits since
+  06-09 eliminated them), retroactive polish pass declined; TODO-209 won't-fix (cosmetic legacy
+  ids, all in closed/archived entries, ledger.py prevents new collisions); TODO-179 won't-do
+  (tentative "maybe"); BUG-230 won't-fix (dev-only cosmetic gear icon, reopen if packaged
+  AppImage shows it). All five were user decisions 2026-07-14.
+
 [2026-07-14] — feat(backend): TODO-223 (in progress) — venue gazetteer resolution ladder (bite 2 of 3)
 Context: Bite 1 seeded 4109 distinct venues unresolved. This bite adds the ladder that turns a seeded
   venue into a coordinate. Planning premise correction: the ladder was specified to anchor on
