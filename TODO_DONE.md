@@ -1,6 +1,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-223: Venue gazetteer table — one curated coordinate per distinct venue, incl. demolished venues
+Priority: Medium
+Status: Done
+Added: 2026-07-10
+Closed: 2026-07-14
+Description: Follow-on to TODO-220/222. Shows repeat venues, so build a venue-level coordinate table (e.g. venue_geocoded: venue_norm, city, lat, lon, source, confidence, manual_override, note) keyed by normalized (venue, city) — solve each of the ~1000-1500 distinct venues ONCE and every show/entry at that venue inherits the pin; manual fixes persist forever. Resolution ladder per venue: (1) bounded Nominatim venue-name search near the setlist.fm city coord (TODO-222 step 2); (2) Wikidata SPARQL by venue label + city (P625 coordinates) — covers DEMOLISHED notable venues (old Boston Garden, Chicago Stadium, historic theaters) that Nominatim/OSM lack because OSM only maps what exists now; (3) one-time enrichment pass for the tail: find historical street address (research/LLM), then Nominatim STRUCTURED query (street=..., city=...) — street grids outlive buildings; sanity-check result lands within ~20km of city coord to reject bad addresses; (4) fallback = setlist.fm city coord, confidence=city. place_manual() should write into this table too so a manual venue fix applies to all dates at that venue. Map screen: flag city-level-only pins so precision can be improved incrementally.
+All 3 bites shipped 2026-07-14: venue_geocoded table + seeding (8c9e27f7), resolution ladder (6d7af58d), geocoder wiring + map city-level flag (609aec6b) + resolve_venues per-venue-commit lock fix (d1f49dc9). Manual venue fixes propagate venue-wide via place_manual. Operational tail: full resolution batch running at close (~2h, per-venue commits, durable); then trigger geocoder run_batch so the 6,584 un-geocoded locations inherit pins. TODO-239 (setlist.fm city-coord backfill) remains the open anchor-quality upgrade.
+
 TODO-233: LISTENING §2 follow-up — expand A/B eligibility beyond reference/aligned speed kinds
 Priority: Medium
 Status: Done

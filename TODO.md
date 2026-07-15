@@ -32,12 +32,6 @@ Progress: Part B (attribution) DONE 2026-07-11 — Olof/bobserve credit already 
   (AboutDialog.tsx). Remaining: Part A (BobTalk search + show-page surfacing).
 Description: Two parts. (A) BobTalk surfacing — depends on TODO-162 P2 (olof_events.bobtalk already in spec schema): full-text search over bobtalk + notes (backend endpoint, e.g. /api/olof/bobtalk_search with LIKE or FTS5), display the night's BobTalk quote + Olof notes + NET concert # on gui_next show pages; optional 'on this day' widget from olof_chronicle later. (B) Attribution — independent, can ship NOW: add credit to Olof Bjorner and bobserve.com (source: 'About Bob', https://www.bobserve.com/olof/) in the gui_next About screen credits section, alongside existing setlist.fm/bobdylan.com credits; run /gui-next-i18n after copy change. Part B should land with or before the first Olof-derived data appearing in the GUI.
 
-TODO-223: Venue gazetteer table — one curated coordinate per distinct venue, incl. demolished venues
-Priority: Medium
-Status: Open
-Added: 2026-07-10
-Description: Follow-on to TODO-220/222. Shows repeat venues, so build a venue-level coordinate table (e.g. venue_geocoded: venue_norm, city, lat, lon, source, confidence, manual_override, note) keyed by normalized (venue, city) — solve each of the ~1000-1500 distinct venues ONCE and every show/entry at that venue inherits the pin; manual fixes persist forever. Resolution ladder per venue: (1) bounded Nominatim venue-name search near the setlist.fm city coord (TODO-222 step 2); (2) Wikidata SPARQL by venue label + city (P625 coordinates) — covers DEMOLISHED notable venues (old Boston Garden, Chicago Stadium, historic theaters) that Nominatim/OSM lack because OSM only maps what exists now; (3) one-time enrichment pass for the tail: find historical street address (research/LLM), then Nominatim STRUCTURED query (street=..., city=...) — street grids outlive buildings; sanity-check result lands within ~20km of city coord to reject bad addresses; (4) fallback = setlist.fm city coord, confidence=city. place_manual() should write into this table too so a manual venue fix applies to all dates at that venue. Map screen: flag city-level-only pins so precision can be improved incrementally.
-
 TODO-214: TAPER phase 3 — Layer 2 token-profile fingerprints (inferred tier)
 Priority: Low
 Status: Open
