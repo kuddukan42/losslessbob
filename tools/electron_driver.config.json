@@ -1,0 +1,194 @@
+{
+  "generatedAt": "2026-07-15T18:52:47.592Z",
+  "versions": {
+    "electronVersion": "42.3.0",
+    "playwrightVersion": "1.60.0",
+    "nodeVersion": "v24.18.0"
+  },
+  "informational": {
+    "apparmorRestrictUnprivilegedUserns": "not present on this kernel",
+    "xvfbAvailable": true,
+    "inheritedDisplayEnv": {
+      "DISPLAY": "(empty)",
+      "WAYLAND_DISPLAY": "(empty)",
+      "XDG_SESSION_TYPE": "tty"
+    },
+    "discoveredSockets": {
+      "wayland": {
+        "socket": "wayland-0",
+        "dir": "/run/user/1000"
+      },
+      "x11Displays": [
+        0,
+        1
+      ],
+      "xwaylandXauthFile": "/run/user/1000/.mutter-Xwaylandauth.5CJFS3",
+      "xvfbDisplayNumUsed": 90
+    }
+  },
+  "backendStatus": {
+    "before": {
+      "exitCode": 0,
+      "stdout": "{\"bootlegs\":{\"last_scraped_at\":\"2026-05-31 23:53:30\",\"last_status\":\"no_change\",\"total\":1380},\"last_import\":\"2026-06-22 01:53:08\",\"latest_lb\":16652,\"ok_entries\":15207,\"total_checksums\":705352,\"total_entries\":16653,\"total_lb_numbers\":16545}",
+      "stderr": "",
+      "ok": true
+    },
+    "after": {
+      "exitCode": 0,
+      "stdout": "{\"bootlegs\":{\"last_scraped_at\":\"2026-05-31 23:53:30\",\"last_status\":\"no_change\",\"total\":1380},\"last_import\":\"2026-06-22 01:53:08\",\"latest_lb\":16652,\"ok_entries\":15207,\"total_checksums\":705352,\"total_entries\":16653,\"total_lb_numbers\":16545}",
+      "stderr": "",
+      "ok": true
+    }
+  },
+  "matrix": [
+    {
+      "id": 1,
+      "name": "native Wayland",
+      "flags": [
+        "--ozone-platform=wayland",
+        "--disable-gpu",
+        "--no-sandbox"
+      ],
+      "env": {
+        "WAYLAND_DISPLAY": "wayland-0",
+        "XDG_RUNTIME_DIR": "/run/user/1000"
+      },
+      "skipped": false,
+      "launched": true,
+      "firstWindowResolved": true,
+      "readyToShowFired": false,
+      "forcedShow": true,
+      "usedCapturePage": false,
+      "screenshotPath": ".debug/preflight-row1-wayland-native.png",
+      "screenshotNonBlank": true,
+      "screenshotDetail": {
+        "width": 1440,
+        "height": 835,
+        "colorType": 2,
+        "uniqueColors": 51,
+        "lumRange": 228.744,
+        "nonBlank": true
+      },
+      "ms": 1554,
+      "error": null
+    },
+    {
+      "id": 2,
+      "name": "XWayland",
+      "flags": [
+        "--ozone-platform=x11",
+        "--disable-gpu",
+        "--no-sandbox"
+      ],
+      "env": {
+        "DISPLAY": ":0",
+        "XAUTHORITY": "/run/user/1000/.mutter-Xwaylandauth.5CJFS3"
+      },
+      "skipped": false,
+      "launched": true,
+      "firstWindowResolved": true,
+      "readyToShowFired": false,
+      "forcedShow": true,
+      "usedCapturePage": false,
+      "screenshotPath": ".debug/preflight-row2-xwayland.png",
+      "screenshotNonBlank": true,
+      "screenshotDetail": {
+        "width": 1440,
+        "height": 871,
+        "colorType": 2,
+        "uniqueColors": 85,
+        "lumRange": 228.744,
+        "nonBlank": true
+      },
+      "ms": 1554,
+      "error": null
+    },
+    {
+      "id": 3,
+      "name": "Xvfb",
+      "flags": [
+        "--ozone-platform=x11",
+        "--disable-gpu",
+        "--no-sandbox"
+      ],
+      "env": {
+        "DISPLAY": ":90"
+      },
+      "skipped": false,
+      "launched": true,
+      "firstWindowResolved": true,
+      "readyToShowFired": false,
+      "forcedShow": true,
+      "usedCapturePage": false,
+      "screenshotPath": ".debug/preflight-row3-xvfb.png",
+      "screenshotNonBlank": true,
+      "screenshotDetail": {
+        "width": 1280,
+        "height": 771,
+        "colorType": 2,
+        "uniqueColors": 91,
+        "lumRange": 228.744,
+        "nonBlank": true
+      },
+      "ms": 1648,
+      "error": null
+    },
+    {
+      "id": 4,
+      "name": "ozone headless",
+      "flags": [
+        "--ozone-platform=headless",
+        "--disable-gpu",
+        "--no-sandbox"
+      ],
+      "env": {},
+      "skipped": false,
+      "launched": false,
+      "firstWindowResolved": false,
+      "readyToShowFired": null,
+      "forcedShow": false,
+      "usedCapturePage": false,
+      "screenshotPath": null,
+      "screenshotNonBlank": null,
+      "screenshotDetail": null,
+      "ms": 45004,
+      "error": "electron.launch: Timeout 45000ms exceeded.\nCall log:\n  - <launching> /home/tjenkins/Documents/losslessbob/gui_next/node_modules/electron/dist/electron --inspect=0 --remote-debugging-port=0 /home/tjenkins/Documents/losslessbob/gui_next/out/main/index.js --ozone-platform=headless --disable-gpu --no-sandbox\n  - <launched> pid=2503350\n  - [pid=2503350][err] Debugger listening on ws://127.0.0.1:33891/ae44588a-776a-45ef-9ab8-60375cf5c0bb\n  - [pid=2503350][err] For help, see: https://nodejs.org/en/docs/inspector\n  - <ws connecting> ws://127.0.0.1:33891/ae44588a-776a-45ef-9ab8-60375cf5c0bb\n  - <ws connected> ws://127.0.0.1:33891/ae44588a-776a-45ef-9ab8-60375cf5c0bb\n  - [pid=2503350][err] Debugger attached.\n  - [pid=2503350][err]\n  - [pid=2503350][err] DevTools listening on ws://127.0.0.1:40859/devtools/browser/473b8519-f9c5-44e3-a169-160cdb5d2094\n  - <ws connecting> ws://127.0.0.1:40859/devtools/browser/473b8519-f9c5-44e3-a169-160cdb5d2094\n  - [pid=2503350][out] [main] LB_NO_BACKEND_SPAWN=1 — assuming backend already on :5174\n"
+    }
+  ],
+  "selected": {
+    "id": 3,
+    "name": "Xvfb",
+    "flags": [
+      "--ozone-platform=x11",
+      "--disable-gpu",
+      "--no-sandbox"
+    ],
+    "xvfbScreen": "2560x1440x24",
+    "requiredEnv": {
+      "LB_NO_BACKEND_SPAWN": "1"
+    },
+    "forceShowRequired": true,
+    "rationale": [
+      "Only backend whose screen geometry we control. A window cannot exceed its screen: row 3 was clamped to 1280x771 by the probe's 1280x800 Xvfb screen. size-matrix needs 2560x1440, so the Xvfb screen is created at 2560x1440x24 (larger than tj's real display, which rows 1-2 could not satisfy).",
+      "Deterministic: rows 1 and 2 disagreed on window height (835 vs 871) due to compositor decoration variance.",
+      "Invisible and session-independent — no windows on tj's desktop, works from tty/ssh/cron. Rows 1-2 require a live login session.",
+      "No XAUTHORITY fragility: row 2 needs a per-session random /run/user/1000/.mutter-Xwaylandauth.<rand> cookie.",
+      "No speed cost: all three working rows landed at ~1.6s."
+    ],
+    "fallback": {
+      "id": 1,
+      "name": "native Wayland",
+      "when": "interactive debugging — puts a real window on tj's desktop"
+    },
+    "rejected": {
+      "id": 4,
+      "name": "ozone headless",
+      "why": "never creates a window; launch times out at 45s (main process starts, CDP attaches, no window)"
+    },
+    "decidedBy": "Opus (orchestrator), 2026-07-15, from the full probe matrix"
+  },
+  "notes": [
+    "ready-to-show never fires under any backend when driven by Playwright (index.ts:146 gates win.show() on it). All drivers MUST force show via app.evaluate() — this is not backend-specific.",
+    "Display env is never inherited (shell has empty DISPLAY/WAYLAND_DISPLAY, XDG_SESSION_TYPE=tty). Sockets must be discovered and set explicitly. This likely contributed to the 2026-06-04 attempt's failure."
+  ]
+}

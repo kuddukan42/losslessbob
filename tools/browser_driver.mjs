@@ -29,6 +29,7 @@ import { spawnSync, spawn } from 'child_process'
 import { existsSync, mkdirSync, readFileSync } from 'fs'
 import { resolve, dirname, join } from 'path'
 import { fileURLToPath } from 'url'
+import { runActions, parseSessionArg } from './driver_core.mjs'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname  = dirname(__filename)
@@ -132,102 +133,7 @@ async function runSession(actions, opts) {
     log(`splash overlay did not clear: ${err.message} — continuing anyway`)
   }
 
-  ensureDebugDir()
-
-  const results = []
-
-  for (const step of actions) {
-    log(`action: ${step.action}`)
-    let result = { action: step.action, ok: true }
-
-    try {
-      switch (step.action) {
-
-        case 'screenshot': {
-          const file    = step.file ?? 'shot.png'
-          const outPath = join(DEBUG_DIR, file)
-          await page.screenshot({ path: outPath, fullPage: step.fullPage ?? false })
-          log(`screenshot saved → ${outPath}`)
-          result.path = outPath
-          break
-        }
-
-        case 'navigate': {
-          const route = step.route ?? '/'
-          await page.evaluate((r) => { window.location.hash = '#' + r }, route)
-          await page.waitForTimeout(step.wait ?? 600)
-          break
-        }
-
-        case 'click': {
-          await page.click(step.selector, { timeout: step.timeout ?? 8000 })
-          await page.waitForTimeout(step.wait ?? 250)
-          break
-        }
-
-        case 'fill': {
-          await page.fill(step.selector, step.value ?? '', { timeout: step.timeout ?? 5000 })
-          break
-        }
-
-        case 'type': {
-          await page.type(step.selector, step.value ?? '', { delay: step.delay ?? 50 })
-          break
-        }
-
-        case 'clear': {
-          await page.fill(step.selector, '')
-          break
-        }
-
-        case 'wait': {
-          await page.waitForTimeout(step.ms ?? 1000)
-          break
-        }
-
-        case 'wait-for': {
-          await page.waitForSelector(step.selector, { timeout: step.timeout ?? 12000 })
-          break
-        }
-
-        case 'hover': {
-          await page.hover(step.selector, { timeout: step.timeout ?? 5000 })
-          await page.waitForTimeout(step.wait ?? 200)
-          break
-        }
-
-        case 'scroll-to': {
-          await page.evaluate((sel) => {
-            const el = document.querySelector(sel)
-            if (el) el.scrollIntoView({ behavior: 'instant', block: 'center' })
-          }, step.selector)
-          await page.waitForTimeout(300)
-          break
-        }
-
-        case 'select': {
-          await page.selectOption(step.selector, step.value)
-          break
-        }
-
-        case 'eval': {
-          const value = await page.evaluate(step.js)
-          log(`eval → ${JSON.stringify(value)}`)
-          result.value = value
-          break
-        }
-
-        default:
-          throw new Error(`Unknown action type: "${step.action}"`)
-      }
-    } catch (err) {
-      log(`FAILED: ${err.message}`)
-      result.ok    = false
-      result.error = err.message
-    }
-
-    results.push(result)
-  }
+  const results = await runActions(page, actions, { debugDir: DEBUG_DIR, log })
 
   if (keepOpen) {
     log('--keep: browser left open. Ctrl+C to exit.')
@@ -309,13 +215,7 @@ async function main() {
 
     case 'session': {
       if (!args[1]) { console.error('session requires JSON or a file path'); process.exit(1) }
-      let data
-      if (existsSync(args[1])) {
-        data = JSON.parse(readFileSync(args[1], 'utf8'))
-      } else {
-        data = JSON.parse(args[1])
-      }
-      actions = Array.isArray(data) ? data : data.actions
+      actions = parseSessionArg(args[1], existsSync, readFileSync)
       break
     }
 

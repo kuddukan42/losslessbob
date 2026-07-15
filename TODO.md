@@ -1,4 +1,10 @@
 
+TODO-247: Electron visual-verification driver (Tier B) — FABLE_VISUAL_VERIFICATION.md
+Priority: Medium
+Status: In progress
+Added: 2026-07-15
+Description: Drive the real gui_next Electron app (not just Chromium vs the Vite build) so screens, window resize, display scale and progress meters can be verified as PNGs on this machine. 4 bites per spec §8. Bite 1 DONE 2026-07-15 (tools/electron_preflight.mjs, probe matrix run, Xvfb 2560x1440x24 selected + recorded in tools/electron_driver.config.json, settings.json rules). Bite 2 DONE 2026-07-15 (tools/electron_driver.mjs MVP + tools/driver_core.mjs shared action runner + LB_NO_BACKEND_SPAWN gate; full debug_screens.json tour passes). Remaining: Bite 3 (resize/size-matrix/scale-matrix/watch + dev-gated progress fixture endpoint), Bite 4 (/verify --electron mode, PROJECT.md + CLAUDE.md notes, move spec to complete/). Verification stays user-invoked only. Full spec: instructions/FABLE_VISUAL_VERIFICATION.md.
+
 TODO-246: Xref audit — document semantics, fix badge usage and pipeline wiring
 Priority: High
 Status: Open
