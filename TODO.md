@@ -1,9 +1,15 @@
 
-TODO-243: Audit 26 renderer fetch sites with silent .catch(() => {}) — keep only on polling loops (STRUCTURE_REVIEW item 15)
-Priority: Medium
+TODO-246: Xref audit — document semantics, fix badge usage and pipeline wiring
+Priority: High
 Status: Open
 Added: 2026-07-15
-Description: gui_next renderer has 26 fetch calls swallowing errors via .catch(() => {}) (heaviest: ScreenScraper x5, ScreenPipeline x3, ScreenLBDIR x3, ScreenCollection x3). Fine for interval polls, wrong for user-initiated actions which should Toast. Audit each site; keep silent-catch only on polls. See instructions/complete/STRUCTURE_REVIEW.md item 15.
+Description: tj: xref badges in the app are probably not used correctly, and xref numbering is not properly wired in the pipeline. Not a corner case: 70,751 checksums have xref>0 across 1,507 distinct LB numbers (~9% of catalog, verified 2026-07-15). Step 1: write the intended semantics (what an xref number means on the site, how Jeff assigns them, what a folder named LB-N-xrefXXXX implies) — one page, BEFORE touching code. Step 2: audit every touchpoint against it: backend/db.py, app.py, importer.py, flat_file.py; GET /api/checksums/xref_lb_numbers + xref_map; GUI (9 files: lookupStore.ts, lookupState.ts, LookupDetail.tsx, ScreenLookup/QuickLookup/Search/Collection/Library, library/DetailPanel.tsx). Known wobble to check first: Collection "Xref only" filter matches folder_name LIKE '%xref%' (string heuristic) instead of the master DB xref list (PROJECT.md changelog 2026-05-16). Step 3: fix wiring so the pipeline resolves xref checksums to their primary LB consistently and badges mean one documented thing everywhere. Full context: instructions/FABLE_PLATFORM_ROADMAP.md §2. Related: [TODO-245].
+
+TODO-245: Import private LB entry metadata (Jeff's unpublished numbers)
+Priority: High
+Status: Open
+Added: 2026-07-15
+Description: 62 of the 92 site_inventory not_found URLs are /detail/LB-XXXXX.html pages (verified 2026-07-15: e.g. LB-00000, LB-09075, LB-09599, LB-10723, LB-14093, LB-08893/94) — "private" entries: Jeff assigned the numbers and wrote full metadata but deliberately never published them (friends-only, not for public www). They currently sit as blank rows; entries has 1,446 status='missing' rows (private + never-assigned holes; lb_missing has only 36 confirmed non-existent). tj holds copies of SOME private-entry metadata. Work: (1) inventory tj's holdings and map to the 62 numbers; (2) import into entries/checksums/entry_files with a provenance marker (came from private material, not scrape); (3) MANDATORY privacy flag so private metadata is excluded from every public surface (public repo derivatives, docs/schema.html Cloudflare deploy, archive.org uploads, any future published mirror) — friends-only channels decided per-channel; (4) reconcile the three absent populations (private / lb_missing / numbering holes) so the DB distinguishes them. Respect Jeff's intent: local + friends only, never on a public URL. Full context: instructions/FABLE_PLATFORM_ROADMAP.md §1. Related: [TODO-246].
 
 TODO-242: Clarify taper propagation and "Needs review" flags in library view
 Priority: Medium

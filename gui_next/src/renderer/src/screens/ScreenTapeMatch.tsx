@@ -605,7 +605,7 @@ function AbPlayerPanel({ pair, date }: { pair: PairRow; date: string }) {
     a.currentTime = 0
     b.currentTime = 0
     applyMute(active)
-    Promise.all([a.play(), b.play()]).catch(() => {})
+    Promise.all([a.play(), b.play()]).catch(() => setPlaying(false))
     setPlaying(true)
   }
 

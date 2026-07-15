@@ -1,6 +1,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-243: Audit 26 renderer fetch sites with silent .catch(() => {}) — keep only on polling loops (STRUCTURE_REVIEW item 15)
+Priority: Medium
+Status: Done
+Added: 2026-07-15
+Closed: 2026-07-15
+Description: gui_next renderer has 26 fetch calls swallowing errors via .catch(() => {}) (heaviest: ScreenScraper x5, ScreenPipeline x3, ScreenLBDIR x3, ScreenCollection x3). Fine for interval polls, wrong for user-initiated actions which should Toast. Audit each site; keep silent-catch only on polls. See instructions/complete/STRUCTURE_REVIEW.md item 15.
+Audited all 29 renderer silent-catch sites: 23 kept (mount-time/passive fetches, polls, 2 deliberate best-effort calls), 6 fixed to surface user-action failures (Pipeline copy-report toast, Scraper copy-log feedback, Library copied-claim gating, DbEditor loadSchema setStatus, Spectrograms stop toast, TapeMatch play-state revert). gui-check PASS.
+
 TODO-244: STRUCTURE_REVIEW P1: regenerate PROJECT.md reference sections from code
 Priority: Medium
 Status: Done

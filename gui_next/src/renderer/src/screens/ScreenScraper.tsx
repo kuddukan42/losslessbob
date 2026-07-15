@@ -132,6 +132,11 @@ function dotColor(running: boolean, status: string): string {
 // ── LogPanel ─────────────────────────────────────────────────────────────────
 
 function LogPanel({ lines, onClear }: { lines: LogLine[]; onClear: () => void }) {
+  const [copyLabel, setCopyLabel] = useState<string | null>(null)
+  const flashCopyLabel = (label: string) => {
+    setCopyLabel(label)
+    setTimeout(() => setCopyLabel(null), 1500)
+  }
   const endRef = useRef<HTMLDivElement>(null)
   useEffect(() => { endRef.current?.scrollIntoView({ behavior: 'smooth' }) }, [lines.length])
 
@@ -149,11 +154,13 @@ function LogPanel({ lines, onClear }: { lines: LogLine[]; onClear: () => void })
         }}>Clear</button>
         <button type="button" onClick={() => {
           const text = lines.map(l => `${l.ts}  ${l.text}`).join('\n')
-          navigator.clipboard.writeText(text).catch(() => {})
+          navigator.clipboard.writeText(text)
+            .then(() => flashCopyLabel('Copied ✓'))
+            .catch(() => flashCopyLabel('Copy failed'))
         }} style={{
           fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', background: 'none', border: 'none',
           cursor: 'pointer', padding: '2px 6px',
-        }}>Copy</button>
+        }}>{copyLabel ?? 'Copy'}</button>
       </div>
       <div style={{
         flex: 1, overflowY: 'auto', padding: '6px 10px',

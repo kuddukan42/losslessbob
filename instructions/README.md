@@ -10,10 +10,10 @@ specs deliberately parked for a later window (currently SHARING_FEATURE.md).
 
 | Name | Purpose | Status |
 |---|---|---|
-| CC_CONCERT_RANKER.md | Handoff spec for Claude Code: audio quality ranking — scoring brain already built, DB integration/mining/staging/calibration work remains | not triaged |
 | CC_TRADING_PLAN.md | Collection Trading feature — export/import/diff/generate a trading list with friends | not triaged |
-| concert ranker v1.zip | Source package (`concert_ranker/` code) attached to CC_CONCERT_RANKER.md | not triaged |
+| complete/CC_CONCERT_RANKER.md | Handoff spec: audio quality ranking (`concert_ranker/` package) | closed 2026-07-15 — all 7 tasks + calibration shipped (TODO-183); leftovers signed off won't-do |
 | FABLE_IDEAS.md | Raw idea dump from a Fable 5 brainstorm (2026-07-06) — not a spec, ideas need expansion before execution | not triaged |
+| FABLE_PLATFORM_ROADMAP.md | Platform leverage plan from 2026-07-15 brainstorm: private LB import (§1→TODO-245), xref audit (§2→TODO-246), gaps view, shadow-pile triage, preservation stack, lineage; §7 annex numbering parked | active — §1/§2 filed as TODOs 2026-07-15 |
 | FABLE_TAPEMATCH_LISTENING_SIGNALS.md | TapeMatch "simulated listening" signals idea spec pack | parked — calibration frozen 07-09; future window |
 | complete/FABLE_TAPER_ATTRIBUTION.md | Taper Attribution Engine design spec | closed 2026-07-15 — phases 1–2 shipped 2026-07-09; phase 3 fingerprints (TODO-214) built + calibrated but gated OFF (`taper_fingerprints.LAYER2_ENABLED=False`, precision verdict); revisit options in WORK_PACKAGE_2026-07-14.md Session 6 |
 | FABLE_VISUAL_VERIFICATION.md | Electron visual-verification driver (attempt 3) — drive the real app, resize, scale, watch progress; Wayland/NVIDIA-proof capture | ready — not started |

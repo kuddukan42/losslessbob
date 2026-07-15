@@ -1,3 +1,21 @@
+[2026-07-15] — fix(gui): TODO-243 renderer silent-catch audit — surface user-action failures
+Context: STRUCTURE_REVIEW item 15 follow-up. Audited all 29 (was 26) renderer
+  `.catch(() => {})` sites; 23 kept (mount-time/passive display fetches, true polls,
+  2 deliberate best-effort calls: LBDIR auto-retrieve, Pipeline stopRun server cancel),
+  6 fixed where user-initiated actions failed invisibly. No new locale keys: Pipeline
+  reuses translated verify.toast.* keys; Scraper/Spectrograms keep their screens'
+  hardcoded-English convention. gui-check: node types + renderer types + build PASS.
+Fixed: gui_next ScreenPipeline.tsx: VerifyStageContent copy-report now toasts
+  ok/bad via shared Toast primitive (was silent; its ScreenVerify twin already toasted).
+Fixed: gui_next ScreenScraper.tsx: LogPanel Copy button flashes "Copied ✓"/"Copy failed"
+  (screen has no toast infra; local label feedback).
+Fixed: gui_next ScreenLibrary.tsx: forum-post toasts no longer claim "link copied" when
+  the clipboard write failed — copyUrls returns success and gates the copied-suffix.
+Fixed: gui_next ScreenDbEditor.tsx: loadSchema surfaces errors via setStatus (matches loadRows).
+Fixed: gui_next ScreenSpectrograms.tsx: Stop button toasts "Stop failed" on request failure.
+Fixed: gui_next ScreenTapeMatch.tsx: A/B play() rejection reverts playing state (UI no
+  longer stuck showing "playing" after autoplay/decode failure).
+
 [2026-07-15] — docs: TODO-244 PROJECT.md reference sections regenerated from code — STRUCTURE_REVIEW COMPLETE
 Context: final STRUCTURE_REVIEW session (P1, items 1-8 + item 19 listing + item 12 convention
   note). Review closed: doc moved to instructions/complete/, sole survivor item 15 -> TODO-243.
