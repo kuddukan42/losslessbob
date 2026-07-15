@@ -533,6 +533,108 @@ class TestGetSetlistfmCityCoords:
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
+# 6d. _venue_key_for_location()  (TODO-223 bite 3)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+class TestVenueKeyForLocation:
+    def test_prefers_olof_events_over_setlistfm_and_bobdylan(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            conn.execute(
+                "INSERT INTO entries (lb_number, date_str, location, status) VALUES (1, '7/28/00', 'Raw Location', 'ok')"
+            )
+            _insert_olof_event(conn, 1, "concert", "2000-07-28", "Massey Hall", "Toronto", "ON", "Canada")
+            conn.execute(
+                """INSERT INTO setlistfm_shows (setlistfm_id, date_str, venue_name, city, country)
+                   VALUES ('s1', '2000-07-28', 'Other Hall', 'Toronto', 'Canada')"""
+            )
+            conn.execute(
+                """INSERT INTO bobdylan_shows (bobdylan_url, date_str, venue, location)
+                   VALUES ('u1', '2000-07-28', 'Yet Another Hall', 'Toronto, ON')"""
+            )
+            conn.commit()
+
+            from backend.geocoder import _venue_key_for_location
+            from backend.venue_gazetteer import _norm_city, _norm_venue
+            key = _venue_key_for_location("Raw Location", conn)
+            assert key == (_norm_venue("Massey Hall"), _norm_city("Toronto"))
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_falls_back_to_setlistfm_when_no_olof(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            conn.execute(
+                "INSERT INTO entries (lb_number, date_str, location, status) VALUES (1, '7/28/00', 'Raw Location', 'ok')"
+            )
+            conn.execute(
+                """INSERT INTO setlistfm_shows (setlistfm_id, date_str, venue_name, city, country)
+                   VALUES ('s1', '2000-07-28', 'Thalia Mara Hall', 'Jackson', 'United States')"""
+            )
+            conn.commit()
+
+            from backend.geocoder import _venue_key_for_location
+            from backend.venue_gazetteer import _norm_city, _norm_venue
+            key = _venue_key_for_location("Raw Location", conn)
+            assert key == (_norm_venue("Thalia Mara Hall"), _norm_city("Jackson"))
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_falls_back_to_bobdylan_shows_last(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            conn.execute(
+                "INSERT INTO entries (lb_number, date_str, location, status) VALUES (1, '7/28/00', 'Raw Location', 'ok')"
+            )
+            conn.execute(
+                """INSERT INTO bobdylan_shows (bobdylan_url, date_str, venue, location)
+                   VALUES ('u1', '2000-07-28', 'The Fillmore', 'San Francisco, CA')"""
+            )
+            conn.commit()
+
+            from backend.geocoder import _venue_key_for_location
+            from backend.venue_gazetteer import _norm_city, _norm_venue
+            key = _venue_key_for_location("Raw Location", conn)
+            assert key == (_norm_venue("The Fillmore"), _norm_city("San Francisco"))
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_source_with_empty_venue_is_skipped_in_favor_of_next(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            conn.execute(
+                "INSERT INTO entries (lb_number, date_str, location, status) VALUES (1, '7/28/00', 'Raw Location', 'ok')"
+            )
+            # olof_events matches this date but has no venue — must not win.
+            _insert_olof_event(conn, 1, "concert", "2000-07-28", "", "Toronto", "ON", "Canada")
+            conn.execute(
+                """INSERT INTO bobdylan_shows (bobdylan_url, date_str, venue, location)
+                   VALUES ('u1', '2000-07-28', 'The Fillmore', 'San Francisco, CA')"""
+            )
+            conn.commit()
+
+            from backend.geocoder import _venue_key_for_location
+            from backend.venue_gazetteer import _norm_city, _norm_venue
+            key = _venue_key_for_location("Raw Location", conn)
+            assert key == (_norm_venue("The Fillmore"), _norm_city("San Francisco"))
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_returns_none_when_no_structured_source_matches(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            conn.execute(
+                "INSERT INTO entries (lb_number, date_str, location, status) VALUES (1, '7/28/00', 'Raw Location', 'ok')"
+            )
+            conn.commit()
+
+            from backend.geocoder import _venue_key_for_location
+            assert _venue_key_for_location("Raw Location", conn) is None
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
 # 6c. _city_viewbox()  (TODO-222 step 2)
 # ═══════════════════════════════════════════════════════════════════════════════
 
@@ -700,6 +802,108 @@ class TestPlaceManual:
             assert row["lon"] == 21.0
             assert row["note"] == "updated"
             assert row["lb_number"] == "123"
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# 8b. place_manual() venue-gazetteer propagation (TODO-223 bite 3)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+class TestPlaceManualVenuePropagation:
+    def test_writes_manual_venue_row_and_propagates_to_matching_locations(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            conn.executemany(
+                "INSERT INTO entries (lb_number, date_str, location, status) VALUES (?, ?, ?, 'ok')",
+                [
+                    (1, "7/28/00", "Location A"),
+                    (2, "7/29/00", "Location B"),
+                    (3, "7/31/00", "Location D"),
+                ],
+            )
+            conn.executemany(
+                """INSERT INTO bobdylan_shows (bobdylan_url, date_str, venue, location)
+                   VALUES (?, ?, ?, ?)""",
+                [
+                    ("u1", "2000-07-28", "The Fillmore", "San Francisco, CA"),
+                    ("u2", "2000-07-29", "The Fillmore", "San Francisco, CA"),
+                    ("u4", "2000-07-31", "The Fillmore", "San Francisco, CA"),
+                ],
+            )
+            # Location B already geocoded via the ordinary cascade — must be
+            # propagated to the new manual coordinate.
+            conn.execute(
+                """INSERT INTO location_geocoded (location_text, lat, lon, source, confidence, manual_override)
+                   VALUES ('Location B', 1.0, 2.0, 'bobdylan_shows', 'high', 0)"""
+            )
+            # Location C is a pre-existing, unrelated manual pin — must be left alone.
+            conn.execute(
+                """INSERT INTO location_geocoded (location_text, lat, lon, source, confidence, manual_override)
+                   VALUES ('Location C', 9.0, 9.0, 'manual', 'high', 1)"""
+            )
+            # Location D shares the same venue but was ruled non-concert — must be left alone.
+            conn.execute(
+                """INSERT INTO location_geocoded (location_text, lat, lon, source, confidence, manual_override)
+                   VALUES ('Location D', NULL, NULL, 'skipped_not_concert', NULL, 0)"""
+            )
+            conn.commit()
+
+            from backend import geocoder
+            from backend.venue_gazetteer import _norm_city, _norm_venue
+            geocoder.place_manual("Location A", 10.0, 20.0, note="fixed", lb_number="LB-1")
+
+            venue_row = conn.execute(
+                "SELECT * FROM venue_geocoded WHERE venue_norm=? AND city_norm=?",
+                (_norm_venue("The Fillmore"), _norm_city("San Francisco")),
+            ).fetchone()
+            assert venue_row is not None
+            assert (venue_row["lat"], venue_row["lon"]) == (10.0, 20.0)
+            assert venue_row["source"] == "manual"
+            assert venue_row["manual_override"] == 1
+            assert "LB-1" in venue_row["note"]
+            assert "Location A" in venue_row["note"]
+
+            row_a = conn.execute(
+                "SELECT * FROM location_geocoded WHERE location_text='Location A'"
+            ).fetchone()
+            assert (row_a["lat"], row_a["lon"], row_a["source"], row_a["manual_override"]) \
+                == (10.0, 20.0, "manual", 1)
+
+            row_b = conn.execute(
+                "SELECT * FROM location_geocoded WHERE location_text='Location B'"
+            ).fetchone()
+            assert (row_b["lat"], row_b["lon"], row_b["source"]) == (10.0, 20.0, "gazetteer_manual")
+            assert row_b["confidence"] == "high"
+            assert row_b["manual_override"] == 0
+
+            row_c = conn.execute(
+                "SELECT * FROM location_geocoded WHERE location_text='Location C'"
+            ).fetchone()
+            assert (row_c["lat"], row_c["lon"], row_c["source"]) == (9.0, 9.0, "manual")
+
+            row_d = conn.execute(
+                "SELECT * FROM location_geocoded WHERE location_text='Location D'"
+            ).fetchone()
+            assert row_d["source"] == "skipped_not_concert"
+            assert row_d["lat"] is None
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_no_venue_key_behaves_as_a_location_only_pin(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            from backend import geocoder
+            geocoder.place_manual("Nowhere In Particular", 1.0, 2.0)
+
+            row = conn.execute(
+                "SELECT * FROM location_geocoded WHERE location_text='Nowhere In Particular'"
+            ).fetchone()
+            assert (row["lat"], row["lon"], row["source"], row["manual_override"]) \
+                == (1.0, 2.0, "manual", 1)
+
+            count = conn.execute("SELECT COUNT(*) FROM venue_geocoded").fetchone()[0]
+            assert count == 0
         finally:
             shutil.rmtree(tmp_dir, ignore_errors=True)
 
@@ -1231,6 +1435,142 @@ class TestRunBatch:
             ).fetchone()
             assert row["source"] == "failed"
             assert "entries.location:Denver, CO" in row["note"]
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# 9b. run_batch() venue-gazetteer inheritance (TODO-223 bite 3)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+class TestRunBatchGazetteerInheritance:
+    def test_inherits_resolved_gazetteer_pin_without_network(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            conn.execute(
+                "INSERT INTO entries (lb_number, date_str, location, status) VALUES (1, '7/28/00', 'Raw Location', 'ok')"
+            )
+            conn.execute(
+                """INSERT INTO bobdylan_shows (bobdylan_url, date_str, venue, location)
+                   VALUES ('u1', '2000-07-28', 'The Fillmore', 'San Francisco, CA')"""
+            )
+            from backend.venue_gazetteer import _norm_city, _norm_venue
+            conn.execute(
+                """INSERT INTO venue_geocoded
+                       (venue_norm, city_norm, venue, city, lat, lon, source, confidence, manual_override)
+                   VALUES (?, ?, 'The Fillmore', 'San Francisco', 37.78, -122.43,
+                           'bounded_venue', 'high', 0)""",
+                (_norm_venue("The Fillmore"), _norm_city("San Francisco")),
+            )
+            conn.commit()
+
+            from backend import geocoder
+            with patch.object(geocoder, "geocode_one") as mock_geocode, \
+                 patch.object(geocoder.time, "sleep"):
+                geocoder.run_batch(db_path=db_path)
+
+            mock_geocode.assert_not_called()
+            row = conn.execute(
+                "SELECT * FROM location_geocoded WHERE location_text=?", ("Raw Location",)
+            ).fetchone()
+            assert row["source"] == "gazetteer_venue"
+            assert row["lat"] == 37.78
+            assert row["lon"] == -122.43
+            assert row["confidence"] == "high"
+            assert "venue_geocoded:" in row["note"]
+
+            progress = geocoder.get_progress()
+            assert progress["succeeded"] == 1
+            assert progress["errors"] == 0
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_city_level_gazetteer_pin_is_capped_at_medium_confidence(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            conn.execute(
+                "INSERT INTO entries (lb_number, date_str, location, status) VALUES (1, '7/28/00', 'Raw Location', 'ok')"
+            )
+            conn.execute(
+                """INSERT INTO bobdylan_shows (bobdylan_url, date_str, venue, location)
+                   VALUES ('u1', '2000-07-28', 'The Fillmore', 'San Francisco, CA')"""
+            )
+            from backend.venue_gazetteer import _norm_city, _norm_venue
+            conn.execute(
+                """INSERT INTO venue_geocoded
+                       (venue_norm, city_norm, venue, city, lat, lon, source, confidence, manual_override)
+                   VALUES (?, ?, 'The Fillmore', 'San Francisco', 37.78, -122.43,
+                           'city_geocode', 'city', 0)""",
+                (_norm_venue("The Fillmore"), _norm_city("San Francisco")),
+            )
+            conn.commit()
+
+            from backend import geocoder
+            with patch.object(geocoder, "geocode_one") as mock_geocode, \
+                 patch.object(geocoder.time, "sleep"):
+                geocoder.run_batch(db_path=db_path)
+
+            mock_geocode.assert_not_called()
+            row = conn.execute(
+                "SELECT * FROM location_geocoded WHERE location_text=?", ("Raw Location",)
+            ).fetchone()
+            assert row["source"] == "gazetteer_city"
+            assert row["confidence"] == "medium"
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_falls_through_to_cascade_on_gazetteer_miss(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            conn.execute(
+                "INSERT INTO entries (lb_number, date_str, location, status) VALUES (1, '7/28/00', 'Raw Location', 'ok')"
+            )
+            conn.execute(
+                """INSERT INTO bobdylan_shows (bobdylan_url, date_str, venue, location)
+                   VALUES ('u1', '2000-07-28', 'The Fillmore', 'San Francisco, CA')"""
+            )
+            from backend.venue_gazetteer import _norm_city, _norm_venue
+            # Seeded-only (unresolved) row must NOT be inherited.
+            conn.execute(
+                """INSERT INTO venue_geocoded
+                       (venue_norm, city_norm, venue, city, lat, lon, source, confidence, manual_override)
+                   VALUES (?, ?, 'The Fillmore', 'San Francisco', NULL, NULL, 'seeded', NULL, 0)""",
+                (_norm_venue("The Fillmore"), _norm_city("San Francisco")),
+            )
+            conn.commit()
+
+            from backend import geocoder
+            with patch.object(geocoder, "geocode_one", side_effect=_fake_geocode), \
+                 patch.object(geocoder.time, "sleep"):
+                geocoder.run_batch(db_path=db_path)
+
+            row = conn.execute(
+                "SELECT * FROM location_geocoded WHERE location_text=?", ("Raw Location",)
+            ).fetchone()
+            assert row["source"] == "bobdylan_shows"
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    def test_falls_through_when_no_venue_key_derivable(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            conn.executemany(
+                "INSERT INTO entries (lb_number, date_str, location, status) VALUES (?, ?, ?, 'ok')",
+                [(1, "7/28/00", "Denver, CO"), (2, "1/1/01", "Boulder, CO")],
+            )
+            _insert_olof_event(conn, 1, "concert", "2000-07-28", "", "", "", "")
+            _insert_olof_event(conn, 2, "concert", "2001-01-01", "", "", "", "")
+            conn.commit()
+
+            from backend import geocoder
+            with patch.object(geocoder, "geocode_one", side_effect=_fake_geocode), \
+                 patch.object(geocoder.time, "sleep"):
+                geocoder.run_batch(db_path=db_path)
+
+            rows = conn.execute(
+                "SELECT location_text, source FROM location_geocoded ORDER BY location_text"
+            ).fetchall()
+            assert all(r["source"] == "nominatim" for r in rows)
         finally:
             shutil.rmtree(tmp_dir, ignore_errors=True)
 

@@ -157,6 +157,62 @@ def test_seed_is_idempotent_and_preserves_resolved_rows(tmp_path, monkeypatch):
     assert (fox["source"], fox["manual_override"], fox["lat"]) == ("manual", 1, 37.8080)
 
 
+class TestIsNumericOrEmptyVenue:
+    @pytest.mark.parametrize("venue_norm, expected", [
+        ("", True),
+        ("2", True),
+        ("123 456", True),
+        ("o2 arena", False),
+        ("fox theater", False),
+    ])
+    def test_numeric_or_empty(self, venue_norm, expected):
+        assert vg._is_numeric_or_empty_venue(venue_norm) == expected
+
+
+def test_seed_skips_numeric_or_empty_venue(tmp_path, monkeypatch):
+    _db, c = _make_db(tmp_path, monkeypatch)
+    c.executemany(
+        "INSERT INTO olof_events (event_type, venue, city, region, country) VALUES (?,?,?,?,?)",
+        [
+            ("concert", "2", "Somewhere", "", ""),         # purely numeric -> skip
+            ("concert", "123 456", "Elsewhere", "", ""),   # numeric + space -> skip
+            ("concert", "Fox Theater", "Oakland", "California", ""),
+        ],
+    )
+    c.commit()
+
+    summary = vg.seed_venues()
+    assert summary["distinct_candidates"] == 1
+    assert summary["inserted"] == 1
+
+    rows = {r["venue_norm"] for r in c.execute("SELECT * FROM venue_geocoded")}
+    assert rows == {"fox theater"}
+
+
+def test_seed_cleanup_deletes_existing_numeric_row_but_not_manual(tmp_path, monkeypatch):
+    _db, c = _make_db(tmp_path, monkeypatch)
+    # Pre-existing junk row seeded before the numeric filter existed.
+    c.execute(
+        """INSERT INTO venue_geocoded (venue_norm, city_norm, venue, city, source, manual_override)
+           VALUES ('2', 'somewhere', '2', 'Somewhere', 'seeded', 0)"""
+    )
+    # A manually-fixed row with a numeric key must survive — deliberate user action.
+    c.execute(
+        """INSERT INTO venue_geocoded (venue_norm, city_norm, venue, city, source,
+               confidence, manual_override)
+           VALUES ('3', 'elsewhere', '3', 'Elsewhere', 'manual', 'high', 1)"""
+    )
+    c.commit()
+
+    summary = vg.seed_venues()
+    assert summary["cleaned_numeric_junk"] == 1
+
+    rows = {r["venue_norm"]: r for r in c.execute("SELECT * FROM venue_geocoded")}
+    assert "2" not in rows
+    assert "3" in rows
+    assert rows["3"]["manual_override"] == 1
+
+
 def test_seed_tolerates_missing_optional_source_tables(tmp_path, monkeypatch):
     _db, c = _make_db(tmp_path, monkeypatch)
     c.execute("DROP TABLE setlistfm_shows")

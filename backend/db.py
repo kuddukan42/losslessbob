@@ -5253,7 +5253,8 @@ def get_map_data(filters: dict, db_path=None) -> dict:
     Returns:
         Dict with keys "markers" (list of dicts) and "unplottable_count" (int).
         Each marker dict contains: lb_number, date_str, location, lb_status,
-        owned, lat, lon, display_name.
+        owned, lat, lon, display_name, city_level (bool — True when the pin
+        is only city-precision rather than a resolved venue, TODO-223 bite 3).
     """
     conn = get_connection(db_path)
 
@@ -5297,7 +5298,7 @@ def get_map_data(filters: dict, db_path=None) -> dict:
         SELECT e.lb_number, e.date_str, e.location,
                lm.lb_status,
                CASE WHEN mc.lb_number IS NOT NULL THEN 1 ELSE 0 END AS owned,
-               geo.lat, geo.lon, geo.display_name
+               geo.lat, geo.lon, geo.display_name, geo.source, geo.confidence
         FROM entries e
         LEFT JOIN location_geocoded geo
                ON e.location = geo.location_text AND geo.confidence != 'low'
@@ -5312,8 +5313,10 @@ def get_map_data(filters: dict, db_path=None) -> dict:
     markers: list[dict] = []
     unplottable_count = 0
 
+    city_level_sources = {"setlistfm_city", "city_geocode", "gazetteer_city"}
     for row in rows:
         if row["lat"] is not None and row["lon"] is not None:
+            source = row["source"] or ""
             markers.append({
                 "lb_number": row["lb_number"],
                 "date_str": row["date_str"],
@@ -5323,6 +5326,7 @@ def get_map_data(filters: dict, db_path=None) -> dict:
                 "lat": row["lat"],
                 "lon": row["lon"],
                 "display_name": row["display_name"],
+                "city_level": source in city_level_sources or source.endswith("-city"),
             })
         else:
             unplottable_count += 1

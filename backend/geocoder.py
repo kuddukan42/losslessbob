@@ -47,6 +47,19 @@ Stop support (TODO-219): stop() sets a module-level flag (guarded by
 _lock) that run_batch() checks at the top of every location and inside the
 rate-limited 429 backoff sleep (sliced so a stop request is honored
 promptly); get_progress() exposes stop_requested for the GUI.
+
+Venue gazetteer inheritance (TODO-223 bite 3): before any Nominatim call,
+run_batch() derives a venue_geocoded key for the location (see
+_venue_key_for_location()) and checks for an already-resolved (or manually
+fixed) pin at that venue. A hit is written straight to location_geocoded
+with no network round-trip (source='gazetteer_venue', or 'gazetteer_city'
+when the gazetteer row itself is only a city-level pin) — so once one show
+at a venue is solved, every other show there inherits it for free. A miss
+falls through to the existing structured-source cascade unchanged.
+place_manual() derives the same key: a fix with a derivable venue key is
+also upserted into venue_geocoded (manual_override=1, wins over future
+resolve_venues() runs) and propagated immediately to every other
+location_geocoded row sharing that venue (source='gazetteer_manual').
 """
 
 import json
@@ -554,6 +567,83 @@ def _is_concert_location(location_text: str, conn) -> tuple[bool, str | None]:
 
 
 # ---------------------------------------------------------------------------
+# Venue gazetteer key derivation (TODO-223 bite 3)
+# ---------------------------------------------------------------------------
+
+def _venue_lookup_for_location(
+    location_text: str, conn
+) -> tuple[str, str, str, str] | None:
+    """Resolve a ``venue_geocoded`` key + display strings for *location_text*.
+
+    Shared implementation behind :func:`_venue_key_for_location`; also used
+    by :func:`place_manual` to populate ``venue_geocoded.venue``/``city``
+    display columns when propagating a manual pin.
+
+    Tries the same structured sources the run_batch() cascade consults, but
+    in the venue gazetteer's *seeding* priority order — olof_events,
+    setlistfm_shows, bobdylan_shows (see
+    :func:`backend.venue_gazetteer.seed_venues`) — rather than run_batch()'s
+    own bobdylan_shows-first cascade order, so a hit here always lines up
+    with the key a venue was actually seeded under. Matches this location's
+    date(s) the same way the ``_get_*_location_string`` helpers do (each
+    scans the distinct ``entries.date_str`` values sharing this location,
+    converted to ISO, against its source table).
+
+    Args:
+        location_text: Raw location string from ``entries.location``.
+        conn: SQLite connection (read-only usage).
+
+    Returns:
+        ``(venue_norm, city_norm, venue_display, city_display)`` from the
+        first source with a usable (non-empty after normalization) venue
+        name, or ``None`` if no structured source yields one.
+    """
+    from backend.venue_gazetteer import _norm_city, _norm_venue
+
+    for lookup_fn in (
+        _get_olof_events_location_string,
+        _get_setlistfm_location_string,
+        _get_bobdylan_shows_location_string,
+    ):
+        hit = lookup_fn(location_text, conn)
+        if hit is None:
+            continue
+        _full, city_only, venue_only = hit
+        venue_norm = _norm_venue(venue_only)
+        if not venue_norm:
+            continue
+        city_display = (city_only or "").split(",", 1)[0].strip()
+        return venue_norm, _norm_city(city_only), (venue_only or "").strip(), city_display
+
+    return None
+
+
+def _venue_key_for_location(location_text: str, conn) -> tuple[str, str] | None:
+    """Derive a ``venue_geocoded`` lookup key for *location_text*, if any.
+
+    Consults the same structured sources the cascade uses, in the venue
+    gazetteer's seeding priority order (olof_events, setlistfm_shows,
+    bobdylan_shows — see :func:`backend.venue_gazetteer.seed_venues`),
+    matching this location's date(s) the way the ``_get_*_location_string``
+    helpers do. Normalizes with :func:`backend.venue_gazetteer._norm_venue`/
+    ``_norm_city`` — the gazetteer's single source of truth for its key form
+    — so a hit here is guaranteed to line up with however the venue row was
+    seeded/resolved.
+
+    Args:
+        location_text: Raw location string from ``entries.location``.
+        conn: SQLite connection (read-only usage).
+
+    Returns:
+        ``(venue_norm, city_norm)`` tuple, or ``None`` if no structured
+        source yields a usable (non-empty) venue name for this location's
+        date(s).
+    """
+    hit = _venue_lookup_for_location(location_text, conn)
+    return (hit[0], hit[1]) if hit is not None else None
+
+
+# ---------------------------------------------------------------------------
 # Public API
 # ---------------------------------------------------------------------------
 
@@ -663,6 +753,19 @@ def place_manual(
     Manual entries are never overwritten by batch geocoding because
     ``manual_override=1`` is set.
 
+    TODO-223 bite 3: when *location_text* resolves to a venue-gazetteer key
+    (see :func:`_venue_lookup_for_location`), the fix also propagates
+    venue-wide: the resolved ``(venue_norm, city_norm)`` is upserted into
+    ``venue_geocoded`` as a ``manual_override=1`` row (so a later
+    ``resolve_venues()`` run never overwrites it — that function already
+    skips manual rows), and every *other* ``location_geocoded`` row that
+    derives the same venue key is updated to this coordinate immediately
+    (``source='gazetteer_manual'``), without waiting for the next batch run.
+    Rows that are already manually fixed (``manual_override=1``) or were
+    ruled non-concert (``source='skipped_not_concert'``) are left alone by
+    the propagation. When no venue key is derivable, behavior is unchanged
+    (a location-only manual pin).
+
     Args:
         location_text: The location string that matches entries.location.
         lat: WGS-84 latitude.
@@ -673,8 +776,9 @@ def place_manual(
     from backend.db_queue import get_write_queue
 
     _loc, _lat, _lon, _note, _lb = location_text, lat, lon, note, lb_number
-    get_write_queue().execute(
-        lambda c: c.execute(
+
+    def _do(c):
+        c.execute(
             """INSERT INTO location_geocoded
                    (location_text, lat, lon, source, confidence, manual_override, note,
                     lb_number, geocoded_at)
@@ -690,7 +794,49 @@ def place_manual(
                    geocoded_at=CURRENT_TIMESTAMP""",
             (_loc, _lat, _lon, _note, _lb),
         )
-    )
+
+        venue_hit = _venue_lookup_for_location(_loc, c)
+        if venue_hit is None:
+            return
+        venue_norm, city_norm, venue_disp, city_disp = venue_hit
+        manual_note = f"manual pin for {_lb or '?'} / {_loc!r}"
+        c.execute(
+            """INSERT INTO venue_geocoded
+                   (venue_norm, city_norm, venue, city, lat, lon,
+                    source, confidence, manual_override, note, geocoded_at)
+               VALUES (?, ?, ?, ?, ?, ?, 'manual', 'high', 1, ?, CURRENT_TIMESTAMP)
+               ON CONFLICT(venue_norm, city_norm) DO UPDATE SET
+                   venue=excluded.venue,
+                   city=excluded.city,
+                   lat=excluded.lat,
+                   lon=excluded.lon,
+                   source='manual',
+                   confidence='high',
+                   manual_override=1,
+                   note=excluded.note,
+                   geocoded_at=CURRENT_TIMESTAMP""",
+            (venue_norm, city_norm, venue_disp, city_disp, _lat, _lon, manual_note),
+        )
+
+        # Propagate immediately to every other location sharing this venue key.
+        other_rows = c.execute(
+            """SELECT location_text FROM location_geocoded
+                   WHERE manual_override = 0 AND source != 'skipped_not_concert'"""
+        ).fetchall()
+        for row in other_rows:
+            other_loc = row["location_text"]
+            other_hit = _venue_lookup_for_location(other_loc, c)
+            if other_hit is None or (other_hit[0], other_hit[1]) != (venue_norm, city_norm):
+                continue
+            c.execute(
+                """UPDATE location_geocoded
+                       SET lat = ?, lon = ?, source = 'gazetteer_manual',
+                           confidence = 'high', geocoded_at = CURRENT_TIMESTAMP
+                       WHERE location_text = ? AND manual_override = 0""",
+                (_lat, _lon, other_loc),
+            )
+
+    get_write_queue().execute(_do)
     logger.info("Manual geocode saved: %r → (%.4f, %.4f)", location_text, lat, lon)
 
 
@@ -761,7 +907,18 @@ def run_batch(
     keyword) are written with ``source='skipped_not_concert'`` and never
     sent to Nominatim.
 
-    For eligible locations, a TODO-220/TODO-222 cascading fallback is used:
+    For eligible locations, the venue gazetteer is checked next (TODO-223
+    bite 3, see ``_venue_key_for_location``): if this location's derived
+    ``(venue_norm, city_norm)`` key already has a resolved (or manually
+    fixed) ``venue_geocoded`` row, that pin is written straight to
+    ``location_geocoded`` with no Nominatim call and no rate-limit sleep
+    (``source='gazetteer_venue'``, or ``'gazetteer_city'`` when the
+    gazetteer row is itself only a city-level pin) — one venue solved once
+    means every other show there is free. A miss falls through unchanged to
+    the structured-source cascade below.
+
+    For locations without a gazetteer hit, a TODO-220/TODO-222 cascading
+    fallback is used:
     every structured source (bobdylan_shows, then olof_events, then
     setlistfm_shows, then dylan_performances) that has a matching record
     contributes its full venue/city/state/country query string, tried in
@@ -887,6 +1044,48 @@ def run_batch(
                         i + 1, total, _progress["errors"], _progress["skipped"],
                     )
                 continue
+
+            # TODO-223 bite 3: inherit a resolved venue-gazetteer pin, if this
+            # location's venue was already solved (or manually fixed) via
+            # some other show at the same venue — no Nominatim call spent.
+            venue_key = _venue_key_for_location(location_text, conn)
+            if venue_key is not None:
+                gaz_row = conn.execute(
+                    """SELECT venue, city, lat, lon, source, confidence
+                           FROM venue_geocoded
+                           WHERE venue_norm = ? AND city_norm = ?
+                                 AND lat IS NOT NULL
+                                 AND source NOT IN ('seeded', 'failed')""",
+                    venue_key,
+                ).fetchone()
+                if gaz_row is not None:
+                    is_city_pin = gaz_row["confidence"] == "city"
+                    gaz_confidence = (
+                        "medium" if is_city_pin else (gaz_row["confidence"] or "medium")
+                    )
+                    result = {
+                        "location_text": location_text,
+                        "lat": gaz_row["lat"],
+                        "lon": gaz_row["lon"],
+                        "display_name": None,
+                        "source": "gazetteer_city" if is_city_pin else "gazetteer_venue",
+                        "confidence": gaz_confidence,
+                        "note": f"venue_geocoded: {venue_key[0]} | {venue_key[1]} "
+                                f"({gaz_row['source']})",
+                    }
+                    with _lock:
+                        _progress["stage"] = "saving"
+                    if not dry_run:
+                        _save_geocode_result(get_write_queue(), location_text, result)
+                    with _lock:
+                        _progress["done"] = i + 1
+                        _progress["succeeded"] += 1
+                    if (i + 1) % 10 == 0:
+                        logger.info(
+                            "Geocoding progress: %d/%d done, %d errors, %d skipped",
+                            i + 1, total, _progress["errors"], _progress["skipped"],
+                        )
+                    continue
 
             # TODO-220: gather every structured-source hit (not just the first),
             # each as (source_name, full_query, city_only_query | None, venue_only | None).
