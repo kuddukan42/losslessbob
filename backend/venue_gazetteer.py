@@ -6,12 +6,17 @@ module builds a ``venue_geocoded`` table keyed by normalized ``(venue, city)``
 so each distinct venue is solved **once** and every show/entry at that venue
 inherits the pin; a manual fix on the venue then persists for all its dates.
 
-This first slice only **seeds** the table: it enumerates the distinct concert
-venues Dylan has played from the three structured sources and inserts them
-unresolved (``source='seeded'``, ``lat``/``lon`` NULL). A later slice adds the
-resolution ladder (bounded Nominatim search near the setlist.fm city coord,
-Wikidata SPARQL for demolished venues, setlist.fm city-coord fallback) and wires
-the resolved pins into the geocoder's per-location cascade.
+The first slice (bite 1) only **seeds** the table: it enumerates the distinct
+concert venues Dylan has played from the three structured sources and inserts
+them unresolved (``source='seeded'``, ``lat``/``lon`` NULL). The second slice
+(bite 2) adds the resolution ladder (bounded Nominatim search near the
+setlist.fm city coord, Wikidata SPARQL for demolished venues, setlist.fm
+city-coord fallback). The third slice (bite 3, see
+:mod:`backend.geocoder`'s ``_venue_key_for_location``/``run_batch``/
+``place_manual``) wires the resolved pins into the geocoder's per-location
+cascade: a resolved venue is inherited by every show at that venue with no
+further Nominatim call, and a manual per-location fix propagates back to
+every other show sharing the venue.
 
 Sources, richest first (so a conflicting key keeps the most complete fields):
   1. ``olof_events`` concerts — clean, pre-split venue/city/region/country.
@@ -99,6 +104,59 @@ def _norm_city(city: str | None) -> str:
     return _normalize(city.split(",", 1)[0])
 
 
+_NUMERIC_VENUE_RE = re.compile(r"^[\d\s]+$")
+
+
+def _is_numeric_or_empty_venue(venue_norm: str) -> bool:
+    """True if *venue_norm* is junk: empty, or nothing but digits/spaces.
+
+    A handful of seeded rows come from scraper artifacts where a stray
+    number (a day-of-month, a set number) landed in the venue field instead
+    of a real venue name — these are not usable gazetteer keys and pollute
+    the table. Real venue names retain at least one letter after
+    normalization (e.g. ``"o2 arena"``), so a purely-numeric key is safe to
+    treat as junk.
+
+    Args:
+        venue_norm: A normalized venue key, as produced by :func:`_norm_venue`.
+
+    Returns:
+        True if the key is empty or purely numeric/whitespace.
+    """
+    return not venue_norm or bool(_NUMERIC_VENUE_RE.fullmatch(venue_norm))
+
+
+def _cleanup_numeric_junk(conn) -> int:
+    """Delete existing ``venue_geocoded`` rows with a numeric/empty venue key.
+
+    Cleans up rows seeded before :func:`seed_venues` started filtering them
+    out (TODO-223 bite 3). Deletes regardless of ``source`` (seeded,
+    resolved, whatever a stray earlier resolve run produced), but never a
+    ``manual_override=1`` row — a manual fix, however oddly keyed, is a
+    deliberate user action and is left alone.
+
+    Args:
+        conn: SQLite connection.
+
+    Returns:
+        Number of rows deleted.
+    """
+    rows = conn.execute(
+        "SELECT venue_norm, city_norm FROM venue_geocoded WHERE manual_override = 0"
+    ).fetchall()
+    junk = [(r[0], r[1]) for r in rows if _is_numeric_or_empty_venue(r[0])]
+    if junk:
+        conn.executemany(
+            "DELETE FROM venue_geocoded WHERE venue_norm = ? AND city_norm = ? "
+            "AND manual_override = 0",
+            junk,
+        )
+    if junk:
+        logger.info("venue_gazetteer cleanup: deleted %d numeric/empty-venue junk row(s)",
+                     len(junk))
+    return len(junk)
+
+
 def _table_exists(conn, table_name: str) -> bool:
     """True if *table_name* exists (feature-detect optional source tables)."""
     row = conn.execute(
@@ -136,8 +194,11 @@ def seed_venues(db_path: str | None = None) -> dict:
     inserts one placeholder row per distinct key with ``source='seeded'`` and
     NULL coordinates. Uses ``ON CONFLICT DO NOTHING`` so already-present rows —
     resolved pins or ``manual_override=1`` fixes — are never disturbed, making
-    the seed safe to re-run. Rows whose venue normalizes to empty are skipped
-    (no usable key).
+    the seed safe to re-run. Rows whose venue normalizes to empty, or to
+    nothing but digits/spaces (scraper artifacts — see
+    :func:`_is_numeric_or_empty_venue`), are skipped as unusable keys. Also
+    runs :func:`_cleanup_numeric_junk` to delete any such junk rows seeded by
+    an earlier run, before this filter existed.
 
     Args:
         db_path: Optional DB path override (defaults to the app DB).
@@ -146,7 +207,9 @@ def seed_venues(db_path: str | None = None) -> dict:
         Summary dict: ``per_source`` (candidate rows read per table),
         ``distinct_candidates`` (unique keys across all sources),
         ``inserted`` (new rows added), ``already_present`` (kept as-is),
-        ``total_rows`` (venue_geocoded row count after seeding).
+        ``cleaned_numeric_junk`` (pre-existing numeric/empty-venue rows
+        deleted), ``total_rows`` (venue_geocoded row count after seeding and
+        cleanup).
     """
     init_db(db_path)
     conn = get_connection(db_path)
@@ -162,7 +225,7 @@ def seed_venues(db_path: str | None = None) -> dict:
         per_source[table] = len(rows)
         for venue, city, region, country in rows:
             key = (_norm_venue(venue), _norm_city(city))
-            if not key[0]:
+            if _is_numeric_or_empty_venue(key[0]):
                 continue
             candidates.setdefault(
                 key,
@@ -187,14 +250,20 @@ def seed_venues(db_path: str | None = None) -> dict:
         ],
     )
     conn.commit()
-    after = conn.execute("SELECT COUNT(*) FROM venue_geocoded").fetchone()[0]
+    after_insert = conn.execute("SELECT COUNT(*) FROM venue_geocoded").fetchone()[0]
+    inserted = after_insert - before
+
+    cleaned = _cleanup_numeric_junk(conn)
+    conn.commit()
+    total_rows = conn.execute("SELECT COUNT(*) FROM venue_geocoded").fetchone()[0]
 
     summary = {
         "per_source": per_source,
         "distinct_candidates": len(candidates),
-        "inserted": after - before,
-        "already_present": len(candidates) - (after - before),
-        "total_rows": after,
+        "inserted": inserted,
+        "already_present": len(candidates) - inserted,
+        "cleaned_numeric_junk": cleaned,
+        "total_rows": total_rows,
     }
     logger.info("venue_gazetteer seed: %s", summary)
     return summary
