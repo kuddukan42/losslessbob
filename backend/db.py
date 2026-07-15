@@ -567,7 +567,7 @@ CREATE INDEX IF NOT EXISTS idx_curated_entries_lb ON curated_list_entries(lb_num
 CREATE INDEX IF NOT EXISTS idx_curated_entries_list ON curated_list_entries(list_id);
 
 -- taper_confirmations (MASTER — curator decisions on taper attribution, sticky
--- across recompute). See instructions/FABLE_TAPER_ATTRIBUTION.md + finding F2 in
+-- across recompute). See instructions/complete/FABLE_TAPER_ATTRIBUTION.md + finding F2 in
 -- instructions/SPEC_INTEGRATION_NOTES.md: this table (not a `confirmed_at` flag
 -- on the derived, USER-tier `taper_attributions` table) is the curated-knowledge
 -- surface exported in master data, so an import can never clobber another
@@ -2970,7 +2970,7 @@ def _load_latest_abs_grades(conn: sqlite3.Connection) -> dict[int, str]:
 def _load_taper_attributions(conn: sqlite3.Connection) -> dict[int, dict]:
     """Return ``{lb_number: {"confirmed": str|None, "review": bool}}``.
 
-    Per `instructions/FABLE_TAPER_ATTRIBUTION.md` §5, only `confidence='confirmed'`
+    Per `instructions/complete/FABLE_TAPER_ATTRIBUTION.md` §5, only `confidence='confirmed'`
     rows ever render a taper pill; `propagated`/`inferred`/`conflict` rows feed the
     Library's "taper: needs review" filter instead. Feature-detected like
     `_load_latest_abs_grades` since `taper_attributions` may not exist yet on an
@@ -3094,7 +3094,7 @@ def get_performances(db_path=None) -> list[dict]:
     already used for TapeMatch family data (merged client-side instead, since
     it's a different consumer — see the class docstring's TapeMatch note).
 
-    Per `instructions/FABLE_TAPER_ATTRIBUTION.md` §5 (TAPER phase 2), each
+    Per `instructions/complete/FABLE_TAPER_ATTRIBUTION.md` §5 (TAPER phase 2), each
     recording also carries flat, optional `taperConfirmed` (canonical taper
     name, only when `taper_attributions.confidence='confirmed'` — never for
     propagated/inferred) and `taperReview` (`true` when confidence is

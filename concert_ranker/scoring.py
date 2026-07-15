@@ -137,7 +137,7 @@ def normalize_siblings(sibling_raw: dict[int, dict]) -> dict[int, dict]:
 FAMILY_METRICS = {
     "clarity":    ["presence_ratio_db"],  # directness/onset_clarity excluded: backwards vs data
     "crowd":      ["crowd_snr_db", "intrusion_rate", "handling_rate"],
-    "tonal":      ["mud_ratio_db", "harsh_ratio_db", "sibilance_ratio_db"],
+    "tonal":      ["mud_ratio_db", "harsh_ratio_db"],  # sibilance_ratio_db excluded: brightness confound
     "distortion": ["clip_fraction", "crest_factor_db", "hiss_floor_db", "hum_excess_db"],
     "spatial":    ["channel_balance_db", "azimuth_lag_us"],
 }

@@ -20,11 +20,9 @@ Run all from `gui_next/`:
    ```bash
    ./node_modules/.bin/tsc --noEmit -p tsconfig.web.json
    ```
-   **Known baseline:** the renderer has pre-existing errors (14 in
-   `ScreenScraper.tsx` as of 2026-07-04, tracked in BUGS.md). Compare against
-   the files you touched: new errors in changed files = FAIL; the untouched
-   baseline is not your failure, but report the current total so drift is
-   visible.
+   **Known baseline:** 0 errors as of 2026-07-15 (the old 14-error
+   `ScreenScraper.tsx` baseline was cleared). Any error = FAIL; report the
+   total so drift is visible.
 3. Production build:
    ```bash
    npm run build

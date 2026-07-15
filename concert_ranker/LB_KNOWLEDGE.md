@@ -94,7 +94,7 @@ for the same flaws). → strong negative signal for ranking (see §8, TODO-188).
   versions have been misreported as another taper"); flaws are sometimes missed,
   entered on the wrong show, or carry track/time typos. "But overall the
   accuracy rate should be high." (Directly relevant to
-  `instructions/FABLE_TAPER_ATTRIBUTION.md` — confirmed-tier evidence must
+  `instructions/complete/FABLE_TAPER_ATTRIBUTION.md` — confirmed-tier evidence must
   outrank old info-file claims.)
 
 ## 7. Artifact taxonomy (17 terms, 22 reference images)

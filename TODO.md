@@ -1,4 +1,28 @@
 
+TODO-244: STRUCTURE_REVIEW P1: regenerate PROJECT.md reference sections from code
+Priority: Medium
+Status: Open
+Added: 2026-07-15
+Description: Items 1-8 of instructions/STRUCTURE_REVIEW.md: 88 undocumented Flask routes, 14 undocumented tables, file tree omits gui_next/ + 11 backend modules, stale screens/IPC/port/GUI-conventions sections, stale data/pages refs. Prefer generating routes/schema/tree from code (@app.route decorators, CREATE TABLE statements, disk) so it cannot drift again. Also fold in: item 19 concert_ranker module listing (quality_score.py/text_features.py), item 12 error-shape convention note ({"error": ...} + JSON errorhandler, added 2026-07-15).
+
+TODO-243: Audit 26 renderer fetch sites with silent .catch(() => {}) — keep only on polling loops (STRUCTURE_REVIEW item 15)
+Priority: Medium
+Status: Open
+Added: 2026-07-15
+Description: gui_next renderer has 26 fetch calls swallowing errors via .catch(() => {}) (heaviest: ScreenScraper x5, ScreenPipeline x3, ScreenLBDIR x3, ScreenCollection x3). Fine for interval polls, wrong for user-initiated actions which should Toast. Audit each site; keep silent-catch only on polls. See instructions/STRUCTURE_REVIEW.md item 15.
+
+TODO-242: Clarify taper propagation and "Needs review" flags in library view
+Priority: Medium
+Status: Open
+Added: 2026-07-14
+Description: Two UI clarity issues discovered in library view (1996 filtered): (1) Taper propagation across families — LB-14922 is tagged "ltf" but links to same_as LB-10678; the library view doesn't clarify whether these should show matching tapers or if the propagation failed. Check recording_families flood-fill logic (backend/taper_attribution.py _propagate_strong) — does it traverse same_as links? If yes, why isn't LB-10678 also showing "ltf"? If no, should it? (2) "Needs review" badge visibility — multiple recordings (LB-07911, LB-16158, Family A, LB-13789, LB-03987, LB-18258, LB-14779, LB-13159) display "Needs review" without clear signal what triggered it. Is it: attribution conflict? quality concern? incomplete metadata (missing venue/tour/notes)? The backend must set this flag somewhere — trace it (likely taper_attributions.conflict=1 or a quality_flag column, or missing venue gazetteer entry). Add a tooltip or legend in the library UI to explain. Related: [TODO-241] (taper curation), [TODO-236] (attribution flowchart), [TODO-234] (series-vs-series conflicts).
+
+TODO-241: Build UI/CLI conduit for taper curation — add/remove from known list without code changes
+Priority: Medium
+Status: Open
+Added: 2026-07-14
+Description: Discovered while reviewing library/recording views: several legitimate tapers (cartoonist, 10kat, greeney55, nak300, markp) appear in recording descriptions but do NOT badge as taper attributions because they're missing from backend/db.py _KNOWN_TAPER_ALIASES. Current workflow requires manual code edits to backend/db.py + re-deploy. Build a low-friction curation path: (1) add a /taper-admin page (or extend /taper-review) with controls to add/remove handles from the known list, (2) persist to a .db table (e.g., user_taper_aliases) with approval_flag, (3) export the merged list on backend startup, (4) add a button/endpoint to trigger taper_attribution.recompute() after updates (or schedule overnight). This unblocks rapid taper onboarding (TODO-213 taper curation was manual mention-downgrade; this is handle discovery). Bonus: compare learned handles vs FABLE_TAPER_ATTRIBUTION.md mention-tier rules to flag borderline cases. Related: [TODO-236] (attribution flowchart), [TODO-213] (conflict curation).
+
 TODO-240: Trigger geocoder run_batch once the 2026-07-14 venue resolve batch completes
 Priority: Medium
 Status: Open
@@ -28,12 +52,6 @@ Priority: Medium
 Status: Open
 Added: 2026-07-13
 Description: After the TODO-213 taper-attribution curation pass (non-taper credits excluded, robert removed, mention-downgrade rule) the taper_attributions conflict queue dropped to 53, of which 22 are SERIES-vs-SERIES: two *legitimate* taper series (e.g. ltc/ltg, net taper a/net taper i, lta/ntj) attributed to members of one recording_families family, both with strong (series_code/explicit) evidence. These are NOT an attribution bug and NOT a wordlist fix — they indicate the fingerprint/clustering pulled two genuinely different sources into one family (a false-merge). Recurs around prolific series: net taper a (10 merges), ltb (6), ltc/ltg (5). Approach: for each of the 22, pull the family's members + tapematch evidence (observations.db corr / duration / explicit signals for the pair), decide split vs keep; if split, the family_meta review_flag or a family-split path in tapematch is the lever, then re-run taper_attribution.recompute(). Belongs to the tapematch calibration/family subsystem, not backend/db.py taper curation. Query for the 22: SELECT lb_number, evidence_json FROM taper_attributions WHERE conflict=1 — filter to rows whose candidate tokens are all lt[a-z]/net taper [a-z]. Related: [TODO-213].
-
-TODO-214: TAPER phase 3 — Layer 2 token-profile fingerprints (inferred tier)
-Priority: Low
-Status: Open
-Added: 2026-07-09
-Description: FABLE_TAPER_ATTRIBUTION.md §4.3/§6 phase 3: per-taper token profiles (>=~8 attributed entries), write 'inferred' rows above a precision threshold calibrated against held-out confirmed entries (>=~90%). Deliberately sequenced after phase 2 (shipped 2026-07-09) so its output is reviewable via the DetailPanel Taper tab + 'needs review' filter. Never renders a pill (confirmed-only per spec §7).
 
 TODO-204: emb-gated MrMsDTW confirmation probe (near-miss band rescue)
 Priority: Low
@@ -250,175 +268,6 @@ Description: Across the Jun-22 analysis batch, tapematch repeatedly contradicts 
         remaining lever for the contradicted-claim dates than polarity. To demonstrate a polarity
         WIN, pick a date whose curator note is a clean whole-recording "right channel inverted"
         (not segment clapping-wav). Consider a new TODO for segment-level overlap rescue.
-
-TODO-183: Concert Ranker — audio quality scoring & ranking
-Priority: Medium
-Status: In Progress
-Added: 2026-06-23
-Description: New `concert_ranker/` package (repo root) that scores the audio quality of the user's
-  own copies and ranks the best transfer of each show. The "scoring brain" (config/scoring/features/
-  calibrate/audio.cache) arrived pre-built + synthetic-tested in the v1 package; this session wired it
-  to the real machine per instructions/CC_CONCERT_RANKER.md — DONE: DB integration (lb/repo.py + USER
-  tables quality_scans/quality_recording_metrics/quality_recording_scores), source-class derivation
-  (lb/source_type.py), commentary mining (lb/commentary.py), real ffmpeg decode (audio/io.py),
-  per-folder scan + producer/consumer staging loop (scan.py/runner.py, crash=scrap), recording_families
-  ranking + standalone fallback (families.py), calibration harness orchestration (calibration.py), and
-  the scan/calibrate/rerank/report CLI (cli.py). 11 pytest tests pass; verified end-to-end on real
-  generated audio (scan→rank→rerank→report).
-  CALIBRATION (done 2026-06-23): ran `calibrate` on a 117-show sample (73 AUD + 44 SBD), staged via
-  /mnt/DATA2, recorded as scan_id 3. Replaced the first-principles SIGNED/SEVERITY/QUALITY band cutoffs
-  + crowd_snr "buried" disqualifier in config.py with values fitted from the AUD percentiles (label-fires
-  476→171; muddy/dull/boomy no longer fire on ~everything; harsh/hissy/thin/bright now functional).
-  Source-class derivation switched to trust the curator entries.source_type column. Staging added to
-  scan/calibrate CLI.
-  ROUND 2 (done 2026-06-23): de-confounded harsh_ratio_db (now a local 2-5 kHz bump; rating rho
-  +0.44->+0.06) and hiss_floor_db (now quiet-vs-loud HF persistence; rho +0.31->-0.52, correctly
-  negative). Re-scanned the 117-show sample as scan_id 4, refit harsh/hiss bands — "hissy"/"harsh"
-  now fire only on B-/C/D shows (zero A-tier false positives, verified against LB comments).
-  ROUND 3 (done 2026-06-24): reworked dropout_count (isolated-discontinuity detection + worst-track
-  aggregation; clean shows now 0, glitchy tracks surfaced) and hum_excess_db (50/60 Hz harmonic comb;
-  no longer confounded by bass). Added decade-stratified sampler + `calibrate --by-decade`. Launched
-  overnight scan_id 6 = 697 recordings across all 6 decades (all bad-tier included) for further iteration.
-  ROUND 4 (done 2026-06-24): ran the overnight 697-show decade scan (scan_id 6, 696/697 ok), fixed a
-  score_separation None-handling crash, and refit ALL bands + the dropout disqualifier (->6900, worst-
-  track p95) from the 697-set into config.py. De-confounding held at scale (hiss -0.64 = top predictor);
-  crowd-heavy recall restored. label-fires 1117->930; verdicts validated vs LB comments.
-  ROUND 5 (done 2026-06-24): PER-DECADE bands implemented — config.DECADE_BANDS (1960s-2010s, AUD
-  percentiles from scan_id 6); scoring.all_bands/explain_recording + families.rank_scan band each
-  recording against its own era (global fallback when decade unknown). 'hissy' now ~10%/decade instead
-  of vintage-over-flagged / modern-never-flagged. 13 tests pass.
-  ROUND 6 (done 2026-06-24): PER-CLASS bands (hybrid). config.CLASS_BANDS["SBD"] + resolve_band_set();
-  SBD/FM band hiss + tonal against soundboard norms. crowd_snr held GLOBAL/absolute for all classes —
-  full per-class relativization wrongly made ~60% of soundboards read "crowd-heavy"; within-class
-  fairness is already in the MAD-z ranking. 14 tests pass.
-  ABSOLUTE SCORE (done 2026-06-24): concert_ranker/quality_score.py + config.QUALITY_MODEL — ridge
-  model gives every recording a 0-100 score + A+..F grade (prepended to verdicts; stored as
-  quality_recording_scores.abs_score/abs_grade). Middle filled via scan_id 7 (C tier 7->132).
-  AUD MODEL REFIT (done 2026-06-25) on scan_id 8 = 2798 rated AUD (the full by-decade overnight
-  scan, 6x the prior 466). 5-fold CV (3 seeds) to LB rating: Spearman 0.659, 75.6% within one tier.
-  Predictors forward-selected from a 17-metric pool (alpha=0.3): hiss_floor_db, bass_ratio_db,
-  mud_ratio_db, onset_clarity, directness, crowd_snr_db, harsh_ratio_db, presence_ratio_db — every
-  weight sign matches its univariate direction (no confound). The old HF metrics (hf_ceiling/
-  centroid/air/crest) dropped as collinear. The previous 466-fit "0.65" was small-sample-optimistic:
-  it scored only 0.561 / 46%-within-1 on the full set, mostly from a mis-centered intercept (fit on
-  a middle-focused sample vs the collection's true mean rank ~9.8). New model verified via the live
-  predict_rank path: Spearman 0.661 / 75.9% in-sample; 16 tests pass.
-  SBD QUALITY MODEL (done 2026-06-24, refit 2026-06-25): config.QUALITY_MODEL_SBD — dedicated ridge
-  model for SBD/FM (predictors hiss_floor_db, hf_ceiling_hz, crest_factor_db, air_ratio_db,
-  harsh_ratio_db, directness; AUD's mud_ratio_db/presence_ratio_db/spectral_centroid_hz/crowd_snr_db
-  don't separate SBD tiers). Initial fit (2026-06-24) on 223 recordings (scans 3-7): Spearman 0.53,
-  69% within one tier. Refit (2026-06-25, scan_id=9): 506 SBD+FM recordings all scanned with the
-  current detector. dropout_count tested: rho=-0.077 (p=0.082), weight ~0 — not predictive with
-  consistent detector values (old rho=0.375 was a scan-version artifact). Excluded. Same 6-predictor
-  model, Spearman 0.562, 80.2% within one tier (5-fold CV, alpha=0.5). AUD model on same set:
-  Spearman 0.429, 73.5% within one tier. 24 tests pass.
-  FILTERING + FLOORS (done 2026-06-29, scan_id=18 = full-library rescan post hum-fix):
-    - Non-concert recordings (studio/interview/tv/compilation/rehearsal/radio/soundcheck) excluded
-      from scan worklist + rerank metrics (`concert_ranker/cli.py` `_NON_CONCERT_CATEGORIES` /
-      `_filter_non_concerts()`); 469 entries removed (15630 vs 16099 rows).
-    - hf_ceiling_hz forced back into QUALITY_MODEL as 10th predictor (w=+0.42, rho_uni=+0.341;
-      forward selection had dropped it as collinear, but D/D-/F recordings showed 26-43%
-      incidence of hf_ceiling < 5kHz vs 0.17% for A-tier). CV impact neutral.
-    - Private/missing/nonexistent entries excluded (`_collection_worklist` LEFT JOIN lb_master
-      filtered to lb_status='public', `_filter_non_public()`); xx-date (multi-date, day/month
-      unknown) entries reclassified to 'compilation' tier-0 in `classify_entry_categories`
-      (344 reclassified, 183 of them non-concert). 1377 non-public + 808 non-concert removed
-      (13914 rows).
-    - `_HF_FLOOR_RULES` hard ceiling caps added in `concert_ranker/quality_score.py`
-      `_apply_hard_floors()` (post-`predict_rank()`): hf_ceiling_hz < 4000 Hz -> D- ceiling
-      (rank 2); < 6000 Hz -> D ceiling (rank 3). D- now produced (26 recordings); D 1->150.
-    - `_MIN_CONCERT_DURATION_SEC` = 1800s gate in `cli.py` (`_filter_short_recordings()`)
-      excludes sub-30-min recordings from metrics (162 excluded). Final scored set: 13752 rows.
-  REMAINING:
-    - SBD-per-decade bands (deferred — sparse, esp. 2010s n=7); per-decade DISQUALIFIERS (still global).
-    - dropout_count RETIRED AS MODEL PREDICTOR 2026-06-25. Reworked 2026-06-25 to detect
-      3 defect types modelled on DFF (silence gaps / stuck samples / digipops). However the
-      DFF pipeline (dff_vert_occ, 89% corpus coverage) supersedes it for model purposes:
-      DFF drop/horz had near-zero rho; DFF vert_occ already captures the digipop signal with
-      ground-truth data from the reference tool. No validation re-scan needed. Code kept
-      in features.py — useful for per-recording defect display in the UI; not a model input.
-    - POP/CLICK DETECTOR: the digipop arm of dropout_count covers single-sample anomalies
-      (width-2 first-diff spike). A broader multi-sample click detector (2–20 samples, ~0.1–1ms)
-      is NOT worth building for this corpus — DAT/cassette transfers are already well-covered by
-      DFF vert_occ; vinyl clicks are rare here. Deferred/low-priority.
-    - DFF ON LINUX (deferred, low priority): DFF is a Windows-only tool (sffog.com, 2009).
-      New recordings added to the collection won't have pre-existing DFF HTML reports; for those
-      LBs the model falls back to the training median (~2 verticals = A-/B+ level). Investigate
-      whether DFF runs under Wine, or whether a comparable open-source tool exists, only if the
-      fraction of unanalysed new recordings becomes large enough to matter.
-    - DFF PIPELINE COMPLETE 2026-06-25: parse_dff_reports.py (12,523 LBs in dff_reports);
-      dff_vert_occ = log1p(vert_occ) added to QUALITY_MODEL via forward selection — 7th
-      predictor, CV rho 0.659→0.664 (+0.005), weight -0.1274; injected at rerank time by
-      _inject_dff() in cli.py (89% scan_id=8 coverage; falls back to model median). Scan_id=8
-      reranked. fitting script: tools/fit_aud_quality_model.py.
-    - hum_excess_db FIXED 2026-06-25: root cause was PSD frequency resolution (nperseg=4096,
-      Δf≈5.4 Hz) — G1 bass (49 Hz) and 50 Hz mains shared the same bin; 100 Hz and 250 Hz
-      harmonic windows were EMPTY (no bin within ±2 Hz), making detection unreliable. Fixed
-      with dedicated high-res Welch (nperseg=sr×2, Δf=0.5 Hz) and tight ±0.5 Hz peak window.
-      Synthetic tests pass. RE-SCANNED 2026-06-26/27 (scan_id=18, full-library scan, fixed
-      detector) — confirmed negative rho(hum_excess_db, rating_rank) = -0.213 (n=11723 AUD,
-      p=2.4e-120; no nulls). Direction matches expectation (more hum -> worse rating).
-      EVALUATED 2026-06-30 (`tools/fit_aud_quality_model.py --scan-id 18`, n=11723): full
-      forward selection over the 17-candidate pool does NOT pick hum_excess_db — air_ratio_db/
-      onset_clarity/crest_factor_db/hiss_floor_db/directness/dff_vert_occ/brickwall_score/
-      hf_ceiling_hz already cover its signal. Isolated test (current 10 production predictors
-      +hum_excess_db, no reshuffle) on the same scan: CV rho 0.6674->0.6696 (+0.0022, right at
-      the 0.002 inclusion threshold), within-1 +0.07pp — within noise, not worth the added
-      complexity. NOT added to QUALITY_MODEL. Closed.
-    - SIDE FINDING (2026-06-30) — EVALUATED, DECLINED, CLOSED: the CURRENT production
-      QUALITY_MODEL's 10 predictors score CV rho=0.6674 on scan_id=18 (full-library, post-filter
-      corpus, n=11723) vs the documented 0.659-0.664 fit on scan_id=8 (n=2799) — most of that gap
-      is dataset size/cleanliness, not predictor choice. A full forward-select refit on scan_id=18
-      reaches rho=0.686/within-1=84.9% with a DIFFERENT 8-predictor set (drops bass_ratio_db/
-      mud_ratio_db/crowd_snr_db/harsh_ratio_db/presence_ratio_db; adds air_ratio_db/
-      crest_factor_db/brickwall_score) — isolated from the dataset effect, the predictor swap
-      itself is only +0.019 rho / +0.16pp within-1 over running the CURRENT predictors on the
-      same scan_id=18 data. DECISION: too small a gain for the blast radius (would re-rank all
-      ~13,752 scored recordings and change which signals drive every score) — not applied.
-      config.py unchanged. No further action.
-    - lossy_flag never fires — NOT calibratable without labeled known-lossy files; needs a handful of
-      known-lossy recordings to tune the 25 dB brick-wall. Parked/inert.
-    - SIBILANCE DETECTION implemented 2026-06-30, calibration OPEN QUESTION (see below):
-      `concert_ranker/features.py` `_sibilance_native()` produces real `sibilance_ratio_db`
-      (native 5-9 kHz band local excess vs its flanking bands — 2-5 kHz below, 9-14 kHz above)
-      and `sibilance_crest` (loudest-window vs median-window excess in the band, from
-      `NativeProbe.window_psds_db`). Wired into `extract_hf_native()`; the `test_pipeline.py`
-      stand-in (`sibilance_ratio_db = harsh_ratio_db`) removed. `POLARITY`/`SEVERITY_BANDS`/
-      `FAMILY_METRICS["tonal"]`/calibration `_FIT_METRICS` already referenced `sibilance_ratio_db`
-      and needed no changes. 6 new tests in `tests/test_concert_ranker.py` (synthetic NativeProbe
-      PSDs). Neither metric is in `QUALITY_MODEL` yet.
-      CALIBRATION INVESTIGATION (2026-06-30, scan_id=20 then 21, 107 recordings each, ~19 min/scan):
-      First pass used a plain `sib - ref_mid` ratio — found it correlated POSITIVELY with rating
-      in all 4 source classes (rho +0.50 to +0.67), the opposite of its polarity=-1. That's the
-      same overall-brightness confound `harsh_ratio_db` had pre-ROUND-2 (brighter recordings rate
-      higher in this corpus — see `hf_ceiling_hz` rho=+0.80 AUD). Rewrote to the local-excess form
-      above (mirroring the proven `harsh_ratio_db` fix) and re-scanned (scan_id=21): rho dropped
-      but stayed positive (+0.50 SBD/+0.50 AUD/+0.57 UNKNOWN; FM not significant). Root cause
-      found from the scan_id=21 per-recording data WITHOUT a third rescan: when `hf_ceiling_hz`
-      falls inside/near the sibilance band, the band + flanks read noise floor asymmetrically
-      (the lower 2-5 kHz flank straddles the ceiling and still carries real signal; the band and
-      upper flank don't), producing deep spurious-negative values for band-limited (low-rated)
-      recordings — an `hf_ceiling_hz` artifact, not sibilance. Splitting scan_id=21 by ceiling:
-      recordings with `hf_ceiling_hz` < 9000 show rho≈0 (pure floor noise, AUD 0.0/UNKNOWN -0.20);
-      recordings with `hf_ceiling_hz` >= 9000 (real spectral content in-band) still show rho=+0.34
-      (p=0.005, n=66 pooled) — weaker but not fully neutral, possibly an irreducible residual of
-      the same brightness-correlates-with-source-quality pattern `air_ratio_db`/`hf_ceiling_hz`
-      already carry in this corpus. `sibilance_crest` has NO such problem — validated cleanly in
-      BOTH scans with the correct sign (rho -0.34 to -0.65, p<0.05, SBD/AUD/UNKNOWN).
-      DECISION NEEDED (not yet made): (a) gate `sibilance_ratio_db` to NaN below ~9000 Hz ceiling
-      and re-scan once more to see if the residual +0.34 is an acceptable "useful but imperfect"
-      tonal metric, (b) drop its defect framing — set polarity=0 (informational, like
-      `air_ratio_db`) and lean on `sibilance_crest` as the real sibilance signal, or (c) something
-      else. Code currently left as the local-excess form (b above's polarity=-1 unchanged) pending
-      this decision — do not wire `sibilance_ratio_db` into `QUALITY_MODEL` or trust its
-      `SEVERITY_BANDS` labels until resolved.
-    - dynamic_range_dr from the NativeProbe still not produced by the scan.
-    - Polish band-label phrasing; GUI surface for quality scores/verdicts (backend + CLI only so far).
-  GUI QUALITY TAB (2026-07-01): `/api/quality/<lb>` now also returns a banded `metrics` sub-dict
-  (stereo/mono + width, clip_fraction, crowd_snr_db, bass/mud/harsh tonal ratios, source-type flags)
-  read from `quality_recording_metrics.metric_json` and banded via `concert_ranker.scoring.band_metric()`
-  (`backend/app.py:_quality_metrics_for()`); `DetailPanel.tsx` Quality tab renders these as tone-colored
-  meters (`QualityMetricsPanel`/`MetricBar`/`FlagChip`) below the LB Rating/AI Quality Index tiles.
 
 TODO-178: Minimized left sidebar — new icon-only nav representation
 Priority: Low

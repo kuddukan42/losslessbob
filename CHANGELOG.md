@@ -1,3 +1,76 @@
+[2026-07-15] — refactor: STRUCTURE_REVIEW P2+P3 cleared (items 9-14, 16-20) — dead code removed, site URL + conventions consolidated
+Context: working through instructions/STRUCTURE_REVIEW.md (2026-07-04) bottom-up. Three commits:
+  a305caf2 (P3), 30d97229 (item 9), 8f689b3a (items 10-14). Remaining: item 15 -> TODO-243,
+  P1 doc regeneration -> TODO-244.
+Fixed: backend/db.py — checksum-lookup detail_url built from int LB without zero-padding
+  (LB-42.html -> 404); now uses paths.detail_url() which pads to 5 digits.
+Added: backend/paths.py — SITE_BASE_URL + detail_url(lb), single source for losslessbob.com URLs
+  (backend twin of BUG-221's lbUrl.ts). backend/app.py — JSON @app.errorhandler(Exception) in
+  create_app(): unhandled exceptions return {"error": ...} 500 instead of Flask's HTML page;
+  HTTPExceptions pass through. gui_next lib/lbUrl.ts — exports LB_SITE_BASE + lbLabel();
+  ScreenScraper's two hardcoded base-URL literals replaced.
+Changed: scraper/site_crawler/flat_file/forum_poster/app/db all derive from SITE_BASE_URL;
+  checksum_utils.md5_file is the one canonical file-MD5 (raising; compute_md5 delegates,
+  importer/scheduler import it); module loggers standardized to logger=getLogger(__name__) in
+  db.py (10 inline calls + 3 local variants + 5 orphaned local imports), sharing.py, scheduler.py.
+Removed: stray 0-byte backend/losslessbob.db; committed smoke-run output tests/pipeline_smoke_*
+  (now gitignored; their BUG-200..202 ids were generator placeholders colliding with real ledger
+  ids); tools/_wtrf_batch_85_runner.py; concert_ranker/BUILD_REPORT.md. Moved:
+  backend/debug_forum_post.py -> tools/ (standalone CLI diagnostic); concert_ranker/test_pipeline.py
+  -> tests/test_concert_ranker_pipeline.py, converted from print-only script (zero asserts, pytest
+  collected nothing) to a real test — found its implied orderings no longer hold under production
+  calibration (decent-AUD vs muddy-AUD synthetics within 0.009; lossy sibling unflagged); asserts
+  kept to the stable invariant (clean SBD ranks #1).
+Notes: full suite 799 passed (one order-dependent flake in test_db_lookup: daemon migrate_lb_master
+  thread from an earlier test — pre-existing, passes on rerun). Renderer tsc is at 0 errors; the
+  14-error ScreenScraper baseline in the gui-check skill doc is stale (updated this session).
+  app.py static HTML footer link + html_utils.py docstring keep the URL literal deliberately.
+
+[2026-07-15] — chore(backend): TODO-183 Concert Ranker CLOSED — sibilance_ratio_db demoted to informational, remaining riders won't-do
+Context: the ranker has been functionally complete and in production for weeks (13,752 recordings
+  scored; AUD CV Spearman 0.66 / SBD 0.56; GUI Quality tab since 07-01). tj signed off closing the
+  open riders as not worth the value. One closing code action: resolved the open sibilance decision
+  as option (b) from the 06-30 investigation.
+Changed: concert_ranker/config.py — POLARITY["sibilance_ratio_db"] -1 -> 0 (informational; never
+  de-confounded from brightness: rho +0.34 above 9 kHz hf_ceiling, artifact below it), its
+  SEVERITY_BANDS entry ("slightly essy"/"sibilant") removed globally + from _build_decade_bands;
+  sibilance_crest (validated, rho -0.34..-0.65 correct sign) kept at polarity -1 as the sibilance
+  defect signal. concert_ranker/scoring.py — sibilance_ratio_db removed from FAMILY_METRICS["tonal"]
+  fusion. Feature extraction (_sibilance_native) unchanged; both metrics still stored per recording.
+Won't-do (documented in TODO_DONE-183): 9kHz-gate rescan, SBD-per-decade bands, pop/click detector,
+  DFF-on-Linux, lossy_flag calibration, dynamic_range_dr production, band-label phrasing polish.
+Verified: tests/test_concert_ranker.py 49/49 green.
+
+[2026-07-15] — feat(backend): TODO-214 Layer-2 taper fingerprints BUILT + CALIBRATED — gated OFF pending tj sign-off
+Context: implemented the Session-5 design (WORK_PACKAGE_2026-07-14.md), then calibration forced a
+  redesign: raw argmax scoring was only ~53% precise on a 5-fold confirmed-tier holdout. Shipped
+  design uses THREE gates — score >= 150, top1−top2 margin >= 80, and winner in a per-run
+  cross-validated reliable-taper set (per-taper precision >= 0.90 with >= 10 gated assignments) —
+  plus exclusion of ALL known taper alias tokens from every profile. Holdout at shipped gates:
+  96.2% precision / 23.6% coverage / 12 reliable tapers / 93 would-be inferred rows.
+Added: backend/taper_fingerprints.py — Monroe weighted-log-odds vocabulary profiles, DSU
+  poisoned-component exclusion (conflict=1 / curator-unresolved components contribute no source
+  docs), 3-gate infer(), K-fold calibrate(). LAYER2_ENABLED=False kill-switch (see below).
+  tests/test_taper_fingerprints.py (18 tests; suite 44/44 green).
+Changed: backend/taper_attribution.py — _compute_layers01() extracted from recompute() (returns
+  rejects too); recompute() calls Layer 2 between _propagate_weak and the reject/unresolved
+  re-apply, gated on LAYER2_ENABLED. tools/attribute_tapers.py — new --calibrate-fingerprints
+  (read-only gate sweep + reliable-taper table).
+Fixed (pre-ship, in-flight code): _poisoned_lbs missed edge-less curator-unresolved lbs (never
+  entered the DSU); non-deterministic evidence-token ordering on tied weights.
+Decision: NOT enabled — spot-checks of would-be rows on the real unattributed pool found
+  systematic misattributions invisible to the holdout (profiles latch onto era/setlist vocabulary,
+  description formatting style, and 16bit/44.1khz-type boilerplate; docs explicitly crediting
+  OTHER tapers — Walkin' Dude, mary_lynch, Ray Ackerman, hanno — were assigned to profile owners;
+  est. true precision ~60–75%, below the spec's >= 90% bar). Era-matched backgrounds and
+  gear-token-only vocabularies were prototyped; neither eliminates the leakage. Verified: 44/44
+  tests; --dry-run recompute writes Inferred: 0 with the flag off (6,702 rows, identical to
+  pre-Layer-2 output).
+Decided (tj, same day): leave disabled, revisit later — TODO-214 closed (won't-ship, revisit
+  options preserved in WORK_PACKAGE_2026-07-14.md Session 6); FABLE_TAPER_ATTRIBUTION.md spec
+  git-mv'd to instructions/complete/ (all code/doc references repointed, instructions/README.md
+  row updated); taper_attribution.py tier docstring updated (inferred tier implemented but gated).
+
 [2026-07-14] — feat(backend): TODO-226 COMPLETE — BobTalk/notes full-text search + Library lens search UI
 Context: discovery shrank the scope — Part A's show-page surfacing (BobTalk quote, notes, NET
   concert #, chronicle) had already shipped with the TODO-162 P5b Olof tab in DetailPanel; the
