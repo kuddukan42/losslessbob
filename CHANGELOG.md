@@ -1,3 +1,26 @@
+[2026-07-15] — docs: TODO-244 PROJECT.md reference sections regenerated from code — STRUCTURE_REVIEW COMPLETE
+Context: final STRUCTURE_REVIEW session (P1, items 1-8 + item 19 listing + item 12 convention
+  note). Review closed: doc moved to instructions/complete/, sole survivor item 15 -> TODO-243.
+  Also committed the uncommitted 07-14/07-15 session tail first (84fa1e1f: TODO-214 fingerprints
+  gated OFF, TODO-183 close, ledger moves) so this work got its own clean commit.
+Changed: PROJECT.md (+428 lines): route tables for 78 undocumented Flask routes (~26 new
+  group sections); 12 missing schema blocks (lb_master, lb_status_history, my_collection,
+  collection_meta, my_wishlist, bobdylan_*, setlistfm_*, friend_collection*, wtrf_downloads),
+  each flagged MASTER/USER; file tree regenerated from disk (gui_next/ layout, 12 backend
+  modules, instructions/, docs/, ~26 test files, 13 tools/ scripts); gui_next screens table
+  now 24 files (hardcoded count dropped), +lbUrl.ts/useResizableColumns.ts store rows; 4 stale
+  data/pages|attachments refs -> data/site/detail|files; preload IPC list = actual 10-member
+  window.api surface; port-5174 note enumerates all real sites; GUI Conventions retitled
+  "Legacy GUI Conventions (frozen)" + new gui_next conventions section; concert_ranker listing
+  gains quality_score.py/text_features.py; API error-shape convention note added.
+Added: tools/check_project_refs.py — drift checker extracting routes/@app.route, tables/CREATE
+  TABLE (excl. *_new migration temporaries), gui_next screens, backend modules from disk and
+  requiring each to be mentioned in PROJECT.md; exit 1 on drift. Clean run: 294 routes,
+  62 tables, 24 screens, 42 modules, 0 missing. Wired into /session-close step 5.
+Notes: review's fingerprints/audio_tracks tables (item 2) don't exist in current code
+  (taper_fingerprints computes in-memory) — nothing to document. ScreenFingerprint had already
+  been documented since 07-04; 4 screen rows were truly missing, not 5.
+
 [2026-07-15] — refactor: STRUCTURE_REVIEW P2+P3 cleared (items 9-14, 16-20) — dead code removed, site URL + conventions consolidated
 Context: working through instructions/STRUCTURE_REVIEW.md (2026-07-04) bottom-up. Three commits:
   a305caf2 (P3), 30d97229 (item 9), 8f689b3a (items 10-14). Remaining: item 15 -> TODO-243,

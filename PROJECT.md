@@ -13,8 +13,8 @@ Scraper / Scheduler / Site Crawler ·
 GUI (legacy tabs): Scraper / Main Window / Lookup / Verify / lbdir / Search /
 Bootlegs / Setup / Attachments / Rename / DB Editor / Theme ·
 GUI (Next): Electron/React Frontend ·
-Key Data Flows · Checksum Format Reference · GUI Conventions ·
-Notable Implementation Details · Change Log
+Key Data Flows · Checksum Format Reference · Legacy GUI Conventions (frozen) ·
+GUI (Next) Conventions · Notable Implementation Details · Change Log
 
 ---
 
@@ -59,16 +59,22 @@ losslessbob/
 │   ├── admin.html            # Mobile-friendly admin control panel (served at /admin)
 │   ├── db.py                 # SQLite layer, checksum parsing, search
 │   ├── db_queue.py           # DB-09: DatabaseWriteQueue — single writer thread, serialises all writes
+│   ├── paths.py              # Central path resolver: normal / PyInstaller-frozen / portable-ZIP builds; SITE_* dirs
+│   ├── version.py            # App VERSION string, read from the VERSION file at APP_ROOT
+│   ├── updater.py            # restart_application(): relaunch the app after an in-place update
 │   ├── checksum_utils.py     # Shared: FFP/MD5/shntool compute, lbdir parse, verify, generate
 │   ├── credentials.py        # OS keyring credential storage (SERVICE_QBT, SERVICE_WTRF)
 │   ├── flat_file.py          # Flat-file update pipeline: discover/download/diff/apply + audit tables
 │   ├── importer.py           # Flat-file import logic (legacy: imports from local file path)
 │   ├── folder_naming.py      # Shared helpers: apply_nft_suffix, strip_nft_suffix, nft_discrepancy, build_standard_name
+│   ├── filer.py              # Pipeline step 5: file a folder into the collection (mounts/routing)
 │   ├── rename.py             # write_rename_log() — rename_log.txt + rename_history DB row
 │   ├── scraper.py            # Web scraper for losslessbob.com (per-entry metadata)
 │   ├── site_crawler.py       # Full-domain BFS site mirror spider (data/site/)
 │   ├── html_utils.py         # rewrite_links(): server-absolute → relative for file:// browsing
 │   ├── bootleg_scraper.py    # Bootleg-CD catalog (LBBCD index) scraper
+│   ├── bobdylan_scraper.py   # bobdylan.com official setlist scraper (bobdylan_shows/bobdylan_setlist)
+│   ├── setlistfm.py          # setlist.fm API integration (setlistfm_shows/setlistfm_setlist)
 │   ├── olof_fetcher.py       # Olof Björner (bobserve.com) page mirror → data/olof/pages/ (TODO-162 P1)
 │   ├── olof_parser.py        # DSN event+song parser: olof_pages → olof_events + olof_songs (TODO-162 P2–P3)
 │   ├── olof_chronicle_parser.py  # Yearly Chronicles parser: calendar + new-tapes (2022+ appendix superseded, see below) (TODO-162 P4)
@@ -85,6 +91,11 @@ losslessbob/
 │   ├── torrent_maker.py      # torf-based .torrent generation; tracker CDN fetch
 │   ├── qbittorrent.py        # qBittorrent WebUI API v2 integration
 │   ├── forum_poster.py       # SMF 2.x WTRF forum topic posting
+│   ├── wtrf_scraper.py       # Searches the WTRF SMF forum for torrent posts matching missing items
+│   ├── ab_clips.py           # Aligned A/B listening clip service (LISTENING §2, TODO-231/232/233)
+│   ├── archive_org.py        # Internet Archive (archive.org) S3-like upload integration
+│   ├── sharing.py            # File-sharing: ephemeral token-based share state, streaming, Cloudflare Tunnel
+│   ├── tapematch_sync.py     # Syncs TapeMatch family clustering from tools/tapematch/observations.db
 │   ├── geocoder.py           # Nominatim geocoder: geocode_one, place_manual, run_batch, get_progress
 │   └── venue_gazetteer.py    # TODO-223: venue_geocoded seed + resolution ladder (bounded Nominatim → Wikidata P625 → city anchor)
 ├── concert_ranker/           # Audio quality scoring + ranking (TODO-183). Run: python -m concert_ranker.cli
@@ -97,6 +108,8 @@ losslessbob/
 │   ├── families.py           # Rank within recording_families; standalone fallback (absolute bands)
 │   ├── picks.py              # Per-date "best of show" pick scoring → show_picks (FABLE_UNIFIED_RANKING §3/§4)
 │   ├── calibration.py        # Orchestration: stratified rating×source_class sample → scan → fit
+│   ├── quality_score.py      # Standalone 0-100 absolute quality score + A+..F letter grade
+│   ├── text_features.py      # Text feature extraction from LosslessBob curator description fields
 │   ├── cli.py                # scan / calibrate / rerank / report subcommands
 │   ├── audio/
 │   │   ├── cache.py          # TrackCache + NativeProbe — the one-decode/one-STFT shared cache
@@ -130,6 +143,20 @@ losslessbob/
 │       ├── state_store.py       # GuiStateStore: column widths + window geometry → data/gui_state.json
 │       ├── sort_keys.py         # SortableTableItem + sort_key_for() for typed client-side sort
 │       └── reconcile_dialog.py  # AudioReconcileDialog: shared preview dialog for audio file renames
+├── gui_next/                 # PRIMARY GUI — Electron + React + TypeScript (electron-vite)
+│   ├── package.json / electron.vite.config.ts / tsconfig*.json
+│   ├── resources/            # icon.png, installer.nsh, losslessbob-next.desktop
+│   └── src/
+│       ├── main/index.ts     # Electron main process: window, FLASK_PORT, ensureBackend(), IPC handlers
+│       ├── preload/index.ts  # contextBridge: typed `window.api` surface (see GUI (Next) section for the full list)
+│       └── renderer/src/
+│           ├── App.tsx, main.tsx, store.ts, i18n.ts, index.css
+│           ├── components/   # AppShell, EvidenceList, OnboardingWizard, table.tsx, primitives.tsx, etc.
+│           │   ├── library/  # actions.tsx, DetailPanel.tsx (Library screen shared pieces)
+│           │   └── pipeline/ # PipelineParts, LookupDetail, VerifyDetail, LbdirDetail, CollectDetail, ConfirmDialog
+│           ├── screens/      # 24 ScreenXxx.tsx components — see GUI (Next) screens table
+│           ├── lib/          # zustand stores + shared helpers — see GUI (Next) shared stores table
+│           └── locales/      # en/de/fr/es/it/nl.json (i18next)
 ├── conftest.py               # pytest: autouse fixture resets DatabaseWriteQueue singleton + thread-local connections between tests
 ├── tests/
 │   ├── test_lb_master.py     # lb_master schema, reconcile, override, forum guard, GUI presence
@@ -138,10 +165,35 @@ losslessbob/
 │   ├── test_scraper.py       # backend/scraper.py: entry metadata parsing, scrape_entry/scrape_range, download_pages_range
 │   ├── test_bootleg_scraper.py # backend/bootleg_scraper.py: date/row parsing, diff/apply, scrape_bootlegs (mocked HTTP)
 │   ├── test_bobdylan_scraper.py # backend/bobdylan_scraper.py: sitemap + show-page parsing, run_discover/run_scrape/run_update (mocked HTTP)
+│   ├── test_bobserve_parser.py # backend/bobserve_parser.py: bobserve.com setlist parser (TODO-228)
 │   ├── test_setlistfm.py     # backend/setlistfm.py: date/setlist parsing, API key storage, run_update pagination (mocked HTTP)
 │   ├── test_geocoder.py      # backend/geocoder.py: date conversion, performances/bobdylan_shows/olof_events/setlistfm_shows lookup + priority, concert eligibility, geocode_one/run_batch (mocked urllib)
+│   ├── test_venue_gazetteer.py # backend/venue_gazetteer.py: venue-level gazetteer seeding (TODO-223)
+│   ├── test_wtrf_scraper.py  # backend/wtrf_scraper.py: WTRF forum torrent scraper
 │   ├── test_checksum_utils_site_recovery.py # find_site_recoverable_files: MD5 + filename-fallback matching against data/site/files/
-│   └── test_db_writes.py     # 114-test battery: all DB write functions, constraint violations, rollback, thread safety
+│   ├── test_db_writes.py     # 114-test battery: all DB write functions, constraint violations, rollback, thread safety
+│   ├── test_db_lookup.py     # lookup_checksums() in backend/db.py
+│   ├── test_dbedit_lb_filter.py # TODO-175: DB Editor LB filter (multi comma/space-separated values)
+│   ├── test_pipeline_cache.py # TODO-205 Phase-1 pipeline hash/state cache (backend/db.py)
+│   ├── test_pipeline_smoke.py # Pipeline smoke test: sample N collection folders, run all 4 steps
+│   ├── test_hash_cache_verify.py # TODO-205 Phase-4 hash-cache consultation
+│   ├── test_p8_blocked_severity.py # TODO-205 Phase 6 (P8): "blocked" collect severity split
+│   ├── test_sitedata_packaging.py # ONBOARDING spec Phases P1+P2 (backend/app.py)
+│   ├── test_lineage.py       # entry_lineage: extract_lb_references, parse_confidence, taper_normalised
+│   ├── test_taper_attribution.py # backend/taper_attribution.py: Layer 0 seeding, Layer 1 propagation
+│   ├── test_taper_fingerprints.py # backend/taper_fingerprints.py: Layer 2 vocabulary fingerprints (TODO-214)
+│   ├── test_setlist_fingerprint.py # backend/setlist_fingerprint.py: candidate-entry matching (TODO-225)
+│   ├── test_song_index.py    # backend/song_index.py: song-centric index (LISTENING §3, TODO-230)
+│   ├── test_show_picks.py    # concert_ranker.picks: one date fixture per §4 scoring term
+│   ├── test_picks_tonight.py # LISTENING §9 "this night in Dylan history"
+│   ├── test_library_picks_api.py # FABLE_UNIFIED_RANKING phases 3-4: Library payload extension
+│   ├── test_olof_bobtalk_search.py # TODO-226 Part A: BobTalk/notes full-text search
+│   ├── test_concert_ranker.py # concert_ranker LB-integration layer
+│   ├── test_concert_ranker_pipeline.py # Synthetic end-to-end concert_ranker pipeline test
+│   ├── test_ab_clips.py      # backend/ab_clips.py: aligned A/B listening clip service (LISTENING §2, TODO-231)
+│   ├── test_tapematch_routes.py # LISTENING §1 read routes in backend/app.py
+│   ├── test_tapematch_sync.py # backend/tapematch_sync.py
+│   └── test_batch_verify.py  # tools/batch_verify.py helper functions
 ├── losslessbob_backend.spec  # PyInstaller onefile spec: backend-only (no PyQt6); bundled inside Electron AppImage
 ├── losslessbob_linux.spec    # LEGACY — old PyInstaller full-app spec (PyQt6 GUI); superseded by losslessbob_backend.spec + electron-builder
 ├── Dockerfile                # Docker image: python:3.11-slim + Xvfb + x11vnc + noVNC + Qt6 runtime
@@ -167,12 +219,37 @@ losslessbob/
 │   ├── build_windows.bat     # Local helper: pyinstaller + iscc in sequence (Windows only)
 │   ├── shntool.exe           # Windows shntool binary (GPL-2); bundled into PyInstaller dist via losslessbob.spec
 │   ├── flac.exe              # Windows flac 1.5.0 Win64 binary (GPL-2); bundled via losslessbob.spec (TODO-146)
-│   └── libFLAC.dll           # Required by tools/flac.exe (LGPL-2.1); bundled alongside it
+│   ├── libFLAC.dll           # Required by tools/flac.exe (LGPL-2.1); bundled alongside it
+│   ├── check_project_refs.py # CLI: drift checker — routes/tables/screens/backend modules on disk vs PROJECT.md (used by /session-close and pre-commit review; TODO-244)
+│   ├── debug_forum_post.py   # CLI: dumps/replays a single WTRF forum post render for debugging
+│   ├── batch_verify.py       # CLI: batch-verify checksums across many folders at once
+│   ├── batch_lbdir_copy.py   # CLI: batch-copy lbdir*.txt into many folders at once
+│   ├── scan_collection_folders.py # CLI: scan disk for candidate collection folders not yet in my_collection
+│   ├── parse_dff_reports.py  # CLI: parse DigiFlawFinder reports attached to entries
+│   ├── parse_lineage.py      # CLI wrapper: backend.taper_attribution / entry_lineage batch parse (see backend/db.py extract_lb_references)
+│   ├── wtrf_fetch_missing.py # CLI: batch WTRF torrent fetch for missing items (wraps /api/wtrf/fetch_torrent logic)
+│   ├── fit_aud_quality_model.py # CLI: fit the AUD quality regression model used by concert_ranker
+│   ├── refit_aud_model.py    # CLI: refit/recalibrate the AUD quality model against new labels
+│   ├── gui_next_locale_parity.py # CLI: check gui_next locales/*.json for missing/extra keys vs en.json
+│   ├── ledger_dedup.py       # CLI: de-duplicate BUG/TODO ledger entries (tools/ledger.py helper)
+│   └── test_site_headers.py  # CLI: probe losslessbob.com HTTP headers (Last-Modified/ETag support check)
+├── instructions/              # Fable spec pack + working docs (not shipped; planning/reference only)
+│   ├── README.md              # Index of instructions/ docs and how to use them
+│   ├── SPEC_INTEGRATION_NOTES.md # Cross-spec integration notes; read before implementing any spec-pack item
+│   ├── STRUCTURE_REVIEW.md    # 2026-07-04 structural/consistency review (PROJECT.md drift, dead code, conventions)
+│   ├── WORK_PACKAGE_2026-07-14.md # Active work-package tracking doc
+│   ├── FABLE_IDEAS.md, FABLE_TAPEMATCH_LISTENING_SIGNALS.md, FABLE_VISUAL_VERIFICATION.md
+│   ├── TAPEMATCH_CALIBRATION_GUIDE.md, CC_CONCERT_RANKER.md, CC_TRADING_PLAN.md
+│   ├── complete/               # Finished spec docs, kept for history
+│   └── future/                 # Not-yet-started spec docs
 ├── docs/
 │   ├── index.html            # GitHub Pages marketing/landing page
 │   ├── CLI.md                # CLI usage reference
 │   ├── scraping.md           # Scraper behaviour and queue logic
 │   ├── data_ownership.md     # Master vs. user data split, export/import enforcement
+│   ├── schema.html           # Auto-deployed DB schema browser (Cloudflare Pages, losslessbob-schema.pages.dev)
+│   ├── lb_missing_vs_missing_status.md # Explains lb_missing table vs lb_master 'missing' status distinction
+│   ├── wiki/                 # Agentic wiki: Home.md + 8 topic pages (Architecture, Backend-API, Database, Data-Flows, GUI, Concert-Ranker, TapeMatch, Dev-Workflow), refreshed via /wiki-update
 │   └── screenshots/          # Screenshot placeholders (replace with real app screenshots)
 │       └── README.md         # Guide for which screenshots to capture
 └── data/
@@ -238,7 +315,7 @@ Unique index on `(checksum, lb_number)`.
 | filename | TEXT | Remote filename (`LBF-N-name.ext`) |
 | clean_name | TEXT | Display name (prefix stripped) |
 | file_url | TEXT | Full remote URL |
-| downloaded | INTEGER | 1 = cached locally in `data/attachments/` |
+| downloaded | INTEGER | 1 = cached locally in `data/site/files/` |
 
 PK: `(lb_number, filename)`.
 
@@ -305,6 +382,61 @@ Index: `idx_changes_lb ON entry_changes(lb_number, changed_at DESC)`.
 | board_id | INTEGER | SMF board number posted to |
 | posted_at | TEXT | UTC datetime, defaults to datetime('now') |
 
+### `wtrf_downloads` — WTRF forum torrent-fetch attempts (USER table)
+One row per attempt to locate and download a missing item's torrent from the WTRF forum
+(`backend/forum_poster.py` / `POST /api/wtrf/fetch_torrent`, `POST /api/wtrf/crawl_missing`).
+| Column | Type | Notes |
+|--------|------|-------|
+| id | INTEGER PK | Auto-increment |
+| lb_number | INTEGER NOT NULL | Entry the fetch was for |
+| topic_url | TEXT | Matched WTRF topic URL, if found |
+| torrent_path | TEXT | Local path of the downloaded .torrent, if any |
+| confidence | TEXT | `'definitive'`, `'high'`, `'medium'`, `'needs_review'`, `'ambiguous'`, `'not_found'` |
+| signals_json | TEXT | JSON blob of the matching signals used to score confidence |
+| status | TEXT NOT NULL | `'pending'`, `'downloaded'`, `'qbt_added'`, `'failed'`, `'skipped'` (default `'pending'`) |
+| error | TEXT | Failure detail, if any |
+| attempted_at | TIMESTAMP | Defaults to CURRENT_TIMESTAMP |
+| qbt_added_at | TIMESTAMP | When the torrent was added to qBittorrent, if applicable |
+
+Indexes: `idx_wtrf_downloads_lb(lb_number, attempted_at DESC)`, `idx_wtrf_downloads_status(status, attempted_at DESC)`.
+
+### `lb_master` — Unified per-LB status/integrity record (MASTER table)
+The single source of truth for whether an LB number is public/private/missing/nonexistent;
+reconciled from `entries`, `checksums`, `entry_files`, and `lb_missing` by `reconcile_lb_master()`.
+Referenced throughout PROJECT.md (badges, NFT suffix logic, forum-guard).
+| Column | Type | Notes |
+|--------|------|-------|
+| lb_number | INTEGER PK | LosslessBob number |
+| lb_status | TEXT NOT NULL | `'public'`, `'private'`, `'missing'`, `'nonexistent'` |
+| has_webpage | INTEGER NOT NULL | 1 if a detail page was ever scraped |
+| has_checksums | INTEGER NOT NULL | 1 if any checksum row exists |
+| has_attachments | INTEGER NOT NULL | 1 if any attachment file was downloaded |
+| first_seen_at | TIMESTAMP | Defaults to CURRENT_TIMESTAMP |
+| last_status_at | TIMESTAMP | Last time `lb_status` changed |
+| previous_status | TEXT | Prior `lb_status` value, for transition logging |
+| manual_override | INTEGER NOT NULL | 1 if a curator has pinned `manual_status` |
+| manual_status | TEXT | Curator-set status, wins over the reconciled value |
+| manual_notes | TEXT | Curator note explaining the override |
+| manual_set_by | TEXT | Who set the override |
+| manual_set_at | TIMESTAMP | When the override was set |
+| needs_review | INTEGER NOT NULL | 1 if reconciliation flagged an ambiguous case |
+| public_no_checksums | INTEGER NOT NULL | 1 if `lb_status='public'` but no checksum rows exist |
+
+Indexes: `idx_lb_master_status(lb_status)`, `idx_lb_master_override(manual_override) WHERE manual_override=1`,
+`idx_lb_master_review(needs_review) WHERE needs_review=1`.
+
+### `lb_status_history` — Per-LB status transition log (MASTER table)
+| Column | Type | Notes |
+|--------|------|-------|
+| id | INTEGER PK | Auto-increment |
+| lb_number | INTEGER NOT NULL | Entry that transitioned |
+| old_status | TEXT | Previous `lb_status` |
+| new_status | TEXT NOT NULL | New `lb_status` |
+| changed_at | TIMESTAMP | Defaults to CURRENT_TIMESTAMP |
+| trigger_event | TEXT | What caused the transition (e.g. `'reconcile'`, `'import'`, `'manual'`) |
+
+Index: `idx_lb_history_lb ON lb_status_history(lb_number, changed_at DESC)`.
+
 ### `lb_missing` — Confirmed non-existent LB entries (MASTER table)
 Permanently records LB numbers that are allocated but never had (or permanently lost) a page on the LosslessBob site. Seeded with 36 known entries on first run. Entries in this table receive `lb_status='nonexistent'` in `lb_master` and are never scraped.
 | Column | Type | Notes |
@@ -324,6 +456,36 @@ Permanently records LB numbers that are allocated but never had (or permanently 
 
 CHECK constraint: `alias_lb != canonical_lb`. Chains are rewritten to max 1 hop on insert.
 Index: `idx_lb_alias_canonical ON lb_alias(canonical_lb)`.
+
+### `my_collection` — User's owned recordings (USER table)
+| Column | Type | Notes |
+|--------|------|-------|
+| id | INTEGER PK | Auto-increment |
+| lb_number | INTEGER NOT NULL UNIQUE | LosslessBob number, FK to `entries` |
+| folder_name | TEXT NOT NULL | Folder name on disk |
+| disk_path | TEXT NOT NULL | Absolute path to the folder |
+| confirmed_at | TIMESTAMP | Defaults to CURRENT_TIMESTAMP |
+| notes | TEXT | Free-text user note |
+
+### `collection_meta` — Personal per-recording metadata (USER table)
+| Column | Type | Notes |
+|--------|------|-------|
+| lb_number | INTEGER PK | FK to `my_collection(lb_number)`, cascades on delete |
+| personal_rating | INTEGER | 1–5, CHECK constrained |
+| listen_count | INTEGER | Defaults 0; incremented via `/api/collection/<lb>/listen` |
+| last_listened | TIMESTAMP | Last listen timestamp |
+| tags | TEXT | Free-text tags |
+
+### `my_wishlist` — User's wanted-but-not-owned recordings (USER table)
+| Column | Type | Notes |
+|--------|------|-------|
+| id | INTEGER PK | Auto-increment |
+| lb_number | INTEGER NOT NULL UNIQUE | LosslessBob number, FK to `entries` |
+| added_at | TIMESTAMP | Defaults to CURRENT_TIMESTAMP |
+| priority | INTEGER | 1–5, CHECK constrained, default 3 |
+| notes | TEXT | Free-text user note |
+
+Index: `idx_wishlist_lb ON my_wishlist(lb_number)`.
 
 ### `folder_lb_link` — User-saved folder→LB sticky links (USER table)
 | Column | Type | Notes |
@@ -415,6 +577,70 @@ so all users receive the same reference dataset when installing a master update.
 Indexes: `idx_perf_date`, `idx_perf_category`, `idx_perf_country`.
 Queried via `GET /api/performances?lb=<n>` or `?date=YYYY-MM-DD`.
 
+### `bobdylan_shows` / `bobdylan_setlist` — bobdylan.com official setlist data (MASTER tables)
+One row per concert page on bobdylan.com/date/, joined to `entries`/`dylan_performances` on
+`date_str`. Populated by `backend/bobdylan_scraper.py` (`POST /api/bobdylan/update`).
+
+`bobdylan_shows`:
+| Column | Type | Notes |
+|--------|------|-------|
+| bobdylan_url | TEXT PK | Source page URL |
+| date_str | TEXT NOT NULL | ISO date, `YYYY-MM-DD` |
+| venue | TEXT NOT NULL | Venue name |
+| location | TEXT NOT NULL | City/state/country |
+| notes | TEXT NOT NULL | Free-text page notes |
+| scraped_at | TEXT | ISO timestamp of last scrape |
+
+Index: `idx_bobdylan_shows_date ON bobdylan_shows(date_str)`.
+
+`bobdylan_setlist` — ordered track list per show:
+| Column | Type | Notes |
+|--------|------|-------|
+| bobdylan_url | TEXT NOT NULL | FK to `bobdylan_shows`, cascades on delete |
+| position | INTEGER NOT NULL | Track order |
+| track_name | TEXT NOT NULL | Song title |
+| song_url | TEXT NOT NULL | bobdylan.com song page URL |
+
+PK: `(bobdylan_url, position)`. Index: `idx_bobdylan_setlist_url`.
+
+### `setlistfm_shows` / `setlistfm_setlist` — setlist.fm API data (MASTER tables)
+One row per setlist fetched from the setlist.fm API, joined to `entries`/`bobdylan_shows` via
+`date_str`. Populated by `backend/setlistfm.py` (`POST /api/setlistfm/update`).
+
+`setlistfm_shows`:
+| Column | Type | Notes |
+|--------|------|-------|
+| setlistfm_id | TEXT PK | setlist.fm setlist ID |
+| date_str | TEXT NOT NULL | ISO date |
+| tour_name | TEXT NOT NULL | Tour name, if known |
+| venue_name | TEXT NOT NULL | Venue name |
+| city | TEXT NOT NULL | City |
+| country | TEXT NOT NULL | Country |
+| info | TEXT NOT NULL | Free-text setlist.fm info field |
+| setlistfm_url | TEXT NOT NULL | Public setlist.fm URL |
+| city_lat | REAL | Venue city latitude (TODO-222) |
+| city_lon | REAL | Venue city longitude (TODO-222) |
+| city_state | TEXT NOT NULL | State/province code (TODO-222) |
+
+Indexes: `idx_setlistfm_shows_date`, `idx_setlistfm_shows_tour`.
+
+`setlistfm_setlist` — one row per song; `(set_index, position)` reconstructs set structure:
+| Column | Type | Notes |
+|--------|------|-------|
+| setlistfm_id | TEXT NOT NULL | FK to `setlistfm_shows`, cascades on delete |
+| set_index | INTEGER NOT NULL | Set number (main set = 0, encores follow) |
+| set_name | TEXT NOT NULL | Set label (e.g. `'Encore'`) |
+| is_encore | INTEGER NOT NULL | 1 if part of an encore set |
+| position | INTEGER NOT NULL | Overall track order (PK component) |
+| set_position | INTEGER NOT NULL | Position within this set |
+| track_name | TEXT NOT NULL | Song title |
+| info | TEXT NOT NULL | Free-text per-song info |
+| is_cover | INTEGER NOT NULL | 1 if a cover song |
+| cover_artist | TEXT NOT NULL | Original artist, if a cover |
+| is_tape | INTEGER NOT NULL | 1 if noted as tape playback |
+
+PK: `(setlistfm_id, position)`. Indexes: `idx_setlistfm_setlist_id`, `idx_setlistfm_setlist_track`.
+
 ### `recording_families` / `tapematch_family_meta` — TapeMatch family clustering (MASTER tables)
 Synced from `tools/tapematch/observations.db` via `backend/tapematch_sync.py:sync_tapematch_families()`,
 triggered manually via `POST /api/tapematch/sync` (not run at startup). Groups circulating LB#
@@ -505,7 +731,7 @@ wholesale on every rerank (derived data — recomputable from `quality_recording
 ### `entry_lineage` — Per-LB parsed lineage signals (USER table)
 Structured lineage metadata extracted from `entries.description` for use by the recording-family
 clustering / learning phase. Never exported in master data. Populated by `tools/parse_lineage.py`.
-Exposed via `GET /api/lineage/<lb>`.
+Exposed via GET `/api/lineage/<lb>`.
 | Column | Type | Notes |
 |--------|------|-------|
 | lb_number | INTEGER PK | LosslessBob entry number |
@@ -767,7 +993,7 @@ Persists settings between runs. Key examples:
 - `auto_scrape` — `'1'` or `'0'`
 - `scrape_delay_ms` — Delay between scrape requests
 - `download_files` — Whether to cache attachment files
-- `use_local_pages` — `'1'` or `'0'` — read metadata from `data/pages/` instead of web when available
+- `use_local_pages` — `'1'` or `'0'` — read metadata from `data/site/detail/` instead of web when available
 - `search_page_size` — integer string, results per page in Search tab (default `'50'`)
 - `qbt_host` — qBittorrent WebUI hostname (default `'localhost'`)
 - `qbt_port` — qBittorrent WebUI port (default `'8080'`)
@@ -818,6 +1044,32 @@ Index: `idx_flat_releases_status ON flat_file_releases(status, detected_at DESC)
 | old_xref | INTEGER | Previous xref (op=change only) |
 
 Indexes: `idx_flat_changelog_release(release_id)`, `idx_flat_changelog_lb(lb_number)`.
+
+### `friend_collections` / `friend_collection_entries` — Collection trading data (USER tables)
+Never exported in the master snapshot. Populated by `POST /api/trading/friends` from an imported
+`.lbcollection` JSON blob (see `/api/trading/export`); compared against the user's own collection
+via `GET /api/trading/compare/<friend_id>`.
+
+`friend_collections`:
+| Column | Type | Notes |
+|--------|------|-------|
+| id | INTEGER PK | Auto-increment |
+| friend_name | TEXT NOT NULL UNIQUE | Display name for the friend |
+| imported_at | TIMESTAMP | Defaults to CURRENT_TIMESTAMP |
+| updated_at | TIMESTAMP | Defaults to CURRENT_TIMESTAMP |
+| lb_count | INTEGER | Cached count of entries, default 0 |
+
+`friend_collection_entries`:
+| Column | Type | Notes |
+|--------|------|-------|
+| id | INTEGER PK | Auto-increment |
+| friend_id | INTEGER NOT NULL | FK to `friend_collections`, cascades on delete |
+| lb_number | INTEGER NOT NULL | LB number the friend owns |
+| date_str | TEXT | Concert date, as supplied by the friend's export |
+| location | TEXT | Venue/city, as supplied |
+| lb_status | TEXT | `lb_master` status, as supplied |
+
+Unique constraint: `(friend_id, lb_number)`.
 
 ### `archive_org_uploads` — Internet Archive upload history (USER table)
 | Column | Type | Notes |
@@ -896,13 +1148,17 @@ scheduled scan interval, checked hourly by `scheduler._integrity_scan_worker`.
 | Method | Route | Description |
 |--------|-------|-------------|
 | POST | `/api/lookup` | Parse text input and match checksums. Body: `{text}`. Returns `{summary, detail}` arrays. |
+| POST | `/api/lookup/scan_folders` | Recursively scan folders for `.ffp`/`.md5`/`.st5`/`.sha1` sidecar files. Body: `{folders:[...]}`. Returns `{content, files}` combined text ready for `/api/lookup`. |
 
 ### Database Management
 | Method | Route | Description |
 |--------|-------|-------------|
+| GET | `/api/status` | Combined DB + bootleg stats in one round-trip (halves GUI status-bar poller overhead). |
+| GET | `/api/app/version` | Current app version and runtime info. |
 | GET | `/api/db/stats` | Row counts, latest LB number, last import date |
 | GET | `/api/home/stats` | `{collection_count, wishlist_count, missing_count, bootleg_count, checksum_count, latest_lb, last_import, collection_size}` — single-query counts for the Home dashboard and AppShell footer. `collection_size` is `{bytes, human, folders, computed_at, computing}` — total on-disk bytes across all `my_collection` folders, cached in `meta` (`collection_size_bytes`/`_folders`/`_computed_at`) and refreshed via a background thread (`backend/filer.py: get_collection_size_stats()`) when older than 24h rather than walked per request. |
 | GET | `/api/activity/busy` | `{busy, activity}` — polls import/scrape/bootleg-scrape/integrity-scan/file-job workers plus app-update/data-download state. `activity` is one of `importing`, `scraping`, `scraping_bootlegs`, `scanning`, `filing`, `updating_app`, `downloading_data`, or `null` when idle. Used by the AppShell footer busy indicator. |
+| GET | `/api/activity/log` | Unified activity log merging DB imports, renames, and forum posts. Query param: `limit` (default 20; 0 = unlimited). Returns `[{when, action, target, result, type}]`. |
 | GET | `/api/system/uptime` | `{uptime_seconds}` since the Flask process started (About screen uptime clock) |
 | GET | `/api/db/missing_lb_numbers` | List of integers in 1..max_lb absent from checksums table |
 | POST | `/api/db/import` | Start async flat-file import. Returns `{ok, running}` immediately. |
@@ -911,6 +1167,21 @@ scheduled scan interval, checked hourly by `scheduler._integrity_scan_worker`.
 | POST | `/api/db/settings` | Save `meta` key-value pairs |
 | POST | `/api/db/reset` | Drop and recreate all tables (destructive) |
 | POST | `/api/db/backup` | Create a manual DB backup via VACUUM INTO. Body `{reason?}`. Returns `{ok, path, size_bytes}`. |
+
+### App Update & Data Download
+| Method | Route | Description |
+|--------|-------|-------------|
+| GET | `/api/update/check` | Query the GitHub releases API for a newer app version. |
+| GET | `/api/update/status` | Current update download/apply progress. |
+| POST | `/api/update/apply` | Start a background download + apply of the update. |
+| POST | `/api/data/download` | Start a background download+extract of the configured `data_zip_url`. |
+| GET | `/api/data/download/status` | Current data ZIP download/extract progress. |
+
+### Integrity Events (Watchdog)
+| Method | Route | Description |
+|--------|-------|-------------|
+| GET | `/api/integrity/events` | Watchdog file-change / integrity-scan alert events (`integrity_events`). |
+| POST | `/api/integrity/ack` | Acknowledge integrity events by ID. |
 
 ### Flat File Update Pipeline
 | Method | Route | Description |
@@ -928,6 +1199,7 @@ scheduled scan interval, checked hourly by `scheduler._integrity_scan_worker`.
 |--------|-------|-------------|
 | GET  | `/api/curator` | Returns `{is_curator: bool}` (reads `meta.is_curator`). |
 | POST | `/api/curator` | Body `{enabled: bool}`. Toggles the curator flag (local-only, never shipped). |
+| GET  | `/api/master/status` | Current master snapshot version and publish timestamp. |
 | POST | `/api/master/export` | **Curator-only** (returns 403 `curator_required` otherwise). Builds a master-only snapshot in `data/exports/`: VACUUM INTO → drops every `USER_TABLES` table → filters `meta` to `MASTER_META_KEYS` → stamps `master_version` / `master_published_at` / `master_schema_version` → verifies (no user data leaked) → SHA256 → writes `.manifest.json` sidecar. Returns `{ok, path, manifest_path, manifest}`. |
 | POST | `/api/master/import` | Body `{path}`. Validates manifest SHA256, refuses schema versions newer than this client (400 `schema_too_new`), takes a `pre_master_import` backup, ATTACHes the snapshot, copies only `MASTER_TABLES` rows, replaces only `MASTER_META_KEYS` rows in `meta`, rebuilds `entries_fts`. Returns the import summary (row counts, pre/post status distribution, backup path). Errors: 400 `sha256_mismatch`, 404 `not_found`. |
 | GET  | `/api/master/github_check` | Queries `kuddukan42/losslessbob`'s latest GitHub release, downloads its `.manifest.json` sidecar, and compares `master_version` against the local `meta` table. Returns `{available, tag, remote_version, remote_published_at, local_version, local_published_at, asset_name, asset_size, release_url}`, or `{available: false, message}` if no usable release exists. |
@@ -941,6 +1213,8 @@ scheduled scan interval, checked hourly by `scheduler._integrity_scan_worker`.
 | GET | `/api/sitedata/github_check` | Latest `sitedata-*` release on `kuddukan42/losslessbob`. Matches part zips by `_core_`/`_files_` substring (collision-suffix tolerant) + `.manifest.json` sidecar pairing; parts missing their sidecar are omitted. Returns `{available, tag, release_url, published_at, parts: {core?, files?: {asset_name, asset_size, manifest}}}` or `{available: false, message}`. |
 | POST | `/api/sitedata/github_install` | `text/event-stream`, same event shapes as master install. Body `{parts: ["core"\|"files", …]}` (default `["core"]`, 400 `invalid_part`). Per part: downloads zip to `data/imports/`, verifies SHA256 vs manifest **before** extraction (mismatch deletes zip, errors, site dir untouched), extracts into `data/site/` (overwrite semantics), writes `.sitedata_<part>_manifest.json` marker in `data/site/`. |
 | GET | `/api/onboarding/status` | Cheap first-run progress for wizard/Home checklist (spec §4): `{entries_count, master_version, sitedata_core_present, sitedata_files_count, mounts_configured, collection_count, complete}`. `complete` = entries ∧ master_version ∧ ≥1 mount. Reads install markers when present; falls back to dir checks/scandir. Live: ~63 ms. |
+| POST | `/api/package/user_data` | Bundle user data (DB + settings + `gui_state`) into a dated zip in `data/exports/`. |
+| POST | `/api/package/restore` | Restore a zip archive produced by `/api/package/user_data` or `/api/package/scrape_data`. |
 
 ### LB Master Integrity
 | Method | Route | Description |
@@ -967,6 +1241,28 @@ scheduled scan interval, checked hourly by `scheduler._integrity_scan_worker`.
 | Method | Route | Description |
 |--------|-------|-------------|
 | GET | `/api/performances` | Query `dylan_performances`. Params: `date` (YYYY-MM-DD), `lb` (int — resolved via entries.date_str), `category`, `limit` (default 200), `offset`. Returns list of `{event_id, date_str, category, city, state, country, venue}`. |
+
+### Bob Dylan Setlist Scraper (`backend/bobdylan_scraper.py`, `bobdylan_shows`/`bobdylan_setlist`)
+| Method | Route | Description |
+|--------|-------|-------------|
+| POST | `/api/bobdylan/update` | Start background discover + scrape of bobdylan.com setlists. |
+| POST | `/api/bobdylan/discover` | Start background sitemap URL discovery (no page scraping). |
+| POST | `/api/bobdylan/scrape` | Start background scrape of unscraped show pages. |
+| POST | `/api/bobdylan/stop` | Signal the active bobdylan scrape worker to stop. |
+| GET | `/api/bobdylan/status` | Current bobdylan scraper progress state. |
+| GET | `/api/bobdylan/show` | bobdylan.com show record and setlist for a given date. |
+| GET | `/api/bobdylan/stats` | Counts for `bobdylan_shows` coverage. |
+
+### Setlist.fm Integration (`backend/setlistfm.py`, `setlistfm_shows`/`setlistfm_setlist`)
+| Method | Route | Description |
+|--------|-------|-------------|
+| POST | `/api/setlistfm/key` | Store the setlist.fm API key. Body `{api_key: str}`. |
+| GET | `/api/setlistfm/key` | Whether an API key is configured (never returns the key itself). |
+| POST | `/api/setlistfm/update` | Start background fetch of all setlist.fm setlists. |
+| POST | `/api/setlistfm/stop` | Signal the active setlistfm worker to stop. |
+| GET | `/api/setlistfm/status` | Current setlistfm worker progress state. |
+| GET | `/api/setlistfm/show` | setlist.fm show + structured setlist for a given date. |
+| GET | `/api/setlistfm/stats` | setlist.fm coverage counts. |
 
 ### TapeMatch Family + Pairs Sync
 | Method | Route | Description |
@@ -1062,6 +1358,12 @@ scheduled scan interval, checked hourly by `scheduler._integrity_scan_worker`.
 | PUT | `/api/folder_link` | Set or replace a link. Body: `{folder_path, lb_number, note?}`. Returns `{ok}`. |
 | DELETE | `/api/folder_link` | Clear a link. Query param `path=...`. Returns `{ok}`. |
 
+### Entry Listing & Reclassification
+| Method | Route | Description |
+|--------|-------|-------------|
+| GET | `/api/entries/year/<year>` | All entries for a given year string. |
+| POST | `/api/entries/reclassify` | Re-classify all entries' `lb_category` using `bobdylan_shows` + `dylan_performances` + keywords. |
+
 ### Entry Detail
 | Method | Route | Description |
 |--------|-------|-------------|
@@ -1113,6 +1415,30 @@ scheduled scan interval, checked hourly by `scheduler._integrity_scan_worker`.
 | GET | `/api/bootlegs/scrapes` | Recent scrape history. Query param: `limit` (default 20). |
 | GET | `/api/bootlegs/stats` | Summary: `{total, last_scraped_at, last_status}`. |
 
+### My Collection (CRUD, `my_collection`/`collection_meta`)
+| Method | Route | Description |
+|--------|-------|-------------|
+| GET | `/api/collection` | All entries in the user's collection. |
+| POST | `/api/collection` | Add an LB entry to the user's collection. |
+| PATCH | `/api/collection/<lb>` | Update fields on an existing collection entry. |
+| DELETE | `/api/collection/<lb>` | Remove an LB entry from the user's collection. |
+| GET | `/api/collection/missing` | Collection entries whose `disk_path` no longer exists on disk. |
+| GET | `/api/collection/search` | Search the user's collection by keyword. |
+| GET | `/api/collection/lb_numbers` | All LB numbers currently in the user's collection. |
+| GET | `/api/collection/duplicates` | Collection entries that share the same LB number (duplicates). |
+| GET | `/api/collection/<lb>/meta` | Personal metadata (`collection_meta`) for a collection entry. |
+| POST | `/api/collection/<lb>/meta` | Set personal metadata for a collection entry. |
+| POST | `/api/collection/<lb>/listen` | Increment the listen count for a collection entry. |
+| GET | `/api/collection/<lb>/audioinfo` | Audio format / bit-depth / sample-rate for a collection entry. |
+
+### Wishlist (`my_wishlist`)
+| Method | Route | Description |
+|--------|-------|-------------|
+| GET | `/api/wishlist` | All entries in the user's wishlist. |
+| POST | `/api/wishlist` | Add an LB entry to the user's wishlist. |
+| PATCH | `/api/wishlist/<lb>` | Update priority and/or notes on a wishlist entry. |
+| DELETE | `/api/wishlist/<lb>` | Remove an LB entry from the user's wishlist. |
+
 ### Collection Data Management
 | Method | Route | Description |
 |--------|-------|-------------|
@@ -1121,6 +1447,10 @@ scheduled scan interval, checked hourly by `scheduler._integrity_scan_worker`.
 | GET | `/api/collection/audit` | Cross-check my_collection against checksums table. Returns `{total, missing_checksums, entries:[{lb_number, folder_name, disk_path, date_str, location, lb_status}]}` for entries with no checksum rows. |
 | GET | `/api/collection/export/html` | Download My Collection as a self-contained HTML table. Optional `?cols=` (comma-separated, ordered) picks which columns to render/export — `lb` always included; see `_EXPORT_COLUMN_DEFS` in `app.py` for the full set (base six plus `disk_path`/`confirmed_at`/`source_type`/`lb_category`/`rating`). Falls back to the base six if omitted/invalid. Returns `collection.html` attachment. |
 | GET | `/api/collection/export/m3u` | Download My Collection (or a subset) as an M3U playlist of audio files. Walks each entry's `disk_path`; skips missing folders. Optional `?lb_numbers=1,2,3` restricts the export (used by the Library performance lens's "Export show as M3U" action, TODO-150 step 9 follow-up) — returns `show.m3u` when filtered, `collection.m3u` for the full export. |
+| POST | `/api/rename_history/purge` | Purge all rows from `rename_history` (lookup history). |
+| POST | `/api/flat_file/purge` | Purge all `flat_file_releases`/`flat_file_changelog` rows (import log). |
+| POST | `/api/scraper/purge` | Purge all `scrape_sessions`/`site_inventory` rows (scraper cache). |
+| GET | `/api/purge/stats` | Row counts for each purgeable data group, plus recoverable disk bytes. |
 
 ### Collection Routing & Pipeline Filing (Step 5)
 | Method | Route | Description |
@@ -1140,6 +1470,8 @@ scheduled scan interval, checked hourly by `scheduler._integrity_scan_worker`.
 | GET | `/api/pipeline/run/status` | Poll the async pipeline job. Returns `{running, folders_total, folders_done, in_progress:[path], results:{path: PipelineRow}, errors:[{folder,message}], steps, started_at, cancelled}`. Rows land in `results` as each folder completes. |
 | POST | `/api/pipeline/run/cancel` | Cooperatively cancel the async pipeline job: in-flight folders finish, no new folder starts. Returns `{ok, was_running}`. |
 | POST | `/api/pipeline/state` | Warm-start (TODO-205 P7): return last-known cached verdicts for a set of folders so the GUI paints buckets immediately after a restart, before any re-run. Body: `{folders:[path,...]}`. Returns `{ok, results:{path: PipelineRow}}` — only folders whose stored fingerprint still matches on disk (design R3) are included, each with a freshly computed `severity`; the file step is appearance-only and re-resolved live on the next run (P8). |
+| POST | `/api/pipeline/scan-tree` | Walk a root directory and return subdirectories containing audio files. |
+| POST | `/api/pipeline/scan-dir` | Walk a directory and return LB-numbered subdirectories. |
 
 ### Collection Integrity Monitor (TODO-111)
 | Method | Route | Description |
@@ -1173,12 +1505,24 @@ The latter two are always read-only (`_DBEDIT_READONLY_DBS` in `app.py`) — wri
 | PATCH | `/api/torrent/<id>` | Update a torrents row (e.g. source_folder after relocation). |
 | GET | `/api/torrents` | List all torrent records across every LB entry, newest first. Each row includes `source_folder_exists`, `torrent_file_exists`, `date_str`, `location`. |
 | GET | `/api/trackers` | Return tracker list. Query params: `list_name`, `force_refresh`. |
+| DELETE | `/api/torrent/<id>/file` | Delete the `.torrent` file from disk and clear `torrent_path` in the DB. |
 
 ### qBittorrent Integration
 | Method | Route | Description |
 |--------|-------|-------------|
 | POST | `/api/qbt/test` | Test WebUI connectivity. Body: `{host, port, username?, password?}`. Returns `{ok, version}`. |
 | POST | `/api/qbt/add` | Add torrent(s) to qBittorrent. Body: `{torrent_id?, lb_numbers?, host?, port?, username?, password?, category?, tags?}`. Returns `{ok, added, total, results}`. |
+| POST | `/api/torrent/<id>/qbt_remove` | Remove a torrent from qBittorrent (content files are NOT deleted). |
+| GET | `/api/torrent/<id>/qbt_check` | Check whether a torrent is present in qBittorrent and sync the DB flag. |
+
+### Credentials Storage
+| Method | Route | Description |
+|--------|-------|-------------|
+| GET | `/api/credentials/wtrf` | Stored WTRF username only — never the password. |
+| POST | `/api/credentials/wtrf` | Save WTRF forum credentials to the OS keyring. |
+| DELETE | `/api/credentials/wtrf` | Remove WTRF forum credentials from the OS keyring. |
+| POST | `/api/credentials/qbt` | Save qBittorrent credentials to the OS keyring. |
+| DELETE | `/api/credentials/qbt` | Remove qBittorrent credentials from the OS keyring. |
 
 ### Forum Posting
 | Method | Route | Description |
@@ -1189,6 +1533,13 @@ The latter two are always read-only (`_DBEDIT_READONLY_DBS` in `app.py`) — wri
 | GET | `/api/entry/<lb>/forum_posts` | List all logged forum posts for an LB entry, newest first. |
 | DELETE | `/api/forum_post/<id>` | Delete a forum post log record by id. |
 | GET | `/api/forum_posts` | List all logged forum posts across every LB entry, newest first. Includes `date_str` and `location` from entries. |
+
+### WTRF Torrent Search (`wtrf_downloads`)
+| Method | Route | Description |
+|--------|-------|-------------|
+| POST | `/api/wtrf/fetch_torrent` | Search WTRF for a torrent matching a single LB entry and download it. |
+| GET | `/api/wtrf/downloads` | List `wtrf_downloads` records, optionally filtered by `lb_number`. |
+| POST | `/api/wtrf/crawl_missing` | Start a background batch crawl of missing items (SSE stream). |
 
 ### Archive.org Upload
 | Method | Route | Description |
@@ -1201,6 +1552,26 @@ The latter two are always read-only (`_DBEDIT_READONLY_DBS` in `app.py`) — wri
 | GET | `/api/archive_org/status` | Poll upload progress. Returns `{running, lb_number, identifier, current_file, files_done, files_total, bytes_done, bytes_total, status, error, stop_requested}`. |
 | POST | `/api/archive_org/stop` | Request running upload to stop after current file. Returns `{ok}`. |
 | GET | `/api/archive_org/uploads` | List upload history rows, newest first. Query param: `lb=<int>`. Returns `[{id, lb_number, identifier, folder_path, files_total, files_uploaded, status, started_at, finished_at, error, date_str?, location?}]`. |
+
+### Trading / Friend Collections (`friend_collections`/`friend_collection_entries`)
+| Method | Route | Description |
+|--------|-------|-------------|
+| GET | `/api/trading/export` | Export the user's collection as a `.lbcollection` JSON blob. |
+| GET | `/api/trading/friends` | List all stored friend collections. |
+| POST | `/api/trading/friends` | Import or update a friend's collection. |
+| DELETE | `/api/trading/friends/<id>` | Remove a stored friend collection. |
+| GET | `/api/trading/compare/<id>` | Diff the user's collection against a friend's. |
+
+### File Sharing (Cloudflare Tunnel)
+| Method | Route | Description |
+|--------|-------|-------------|
+| POST | `/api/share/create` | Create a new file share for a collection entry folder. |
+| GET | `/api/share/<token>/` | Serve the self-contained HTML file listing for a share. |
+| GET | `/api/share/<token>/file/<filename>` | Serve a single audio file from a share (supports Range / 206). |
+| GET | `/api/share/<token>/zip` | Stream the entire share as a ZIP archive (chunked transfer). |
+| GET | `/api/share/list` | JSON list of all active shares for GUI status display. |
+| DELETE | `/api/share/<token>` | Revoke a share and stop tunnel if no shares remain. |
+| GET | `/api/share/tunnel/status` | Cloudflare Tunnel availability and current state. |
 
 ### Map
 | Method | Route | Description |
@@ -1215,6 +1586,7 @@ The latter two are always read-only (`_DBEDIT_READONLY_DBS` in `app.py`) — wri
 |--------|-------|-------------|
 | POST | `/api/geocode/run` | **Curator-only.** Start batch Nominatim geocode of all un-geocoded `location` values. Returns `{ok, queued}` immediately; progress polled via `/api/geocode/status`. |
 | GET | `/api/geocode/status` | Poll batch geocode state: `{running, done, total, errors, skipped, stop_requested, current, stage, succeeded}`. |
+| GET | `/api/geocode/stats` | Cache and coverage stats for the geocoder tab. |
 | POST | `/api/geocode/stop` | **Curator-only.** Signal the running batch to stop (checked per location + inside 429 backoff); returns current progress dict. |
 | POST | `/api/geocode/location` | **Curator-only.** Manually place or correct a coordinate. Body: `{location, lat, lon}`. Sets `manual=1` so the batch geocoder never overwrites it. |
 | GET | `/api/geocode/locations` | **Curator-only.** List all rows in `location_geocoded` with geocode status. Returns `[{location, lat, lon, display_name, geocoded_at, manual}]`. |
@@ -1253,13 +1625,25 @@ The latter two are always read-only (`_DBEDIT_READONLY_DBS` in `app.py`) — wri
 | Method | Route | Description |
 |--------|-------|-------------|
 | POST | `/api/lbdir/check` | Find `lbdir*.txt` in each folder, parse, and verify all listed files. Returns extended result with `lbdir_found`, `lbdir_path`, `lb_number`, plus `length`/`expanded_size`/`cdr`/`wave_problems`/`fmt`/`ratio` per file from shntool_len section. `lb_number` resolves via `my_collection.disk_path` -> `LB-NNNNN` in the folder name -> optional `lb_number_hint` body param (pipeline passes the Lookup step's resolved LB# since LBDIR now runs before Rename). |
-| POST | `/api/lbdir/retrieve` | Copy `lbdir*.txt` from `data/attachments/LB-{N:05d}/` to the target folder (triggering a scrape if not yet cached). Looks up LB number from `my_collection` by `disk_path`, then folder name, then optional `lb_number_hint` body param. |
+| POST | `/api/lbdir/retrieve` | Copy `lbdir*.txt` from `data/site/files/` to the target folder (triggering a scrape if not yet cached). Looks up LB number from `my_collection` by `disk_path`, then folder name, then optional `lb_number_hint` body param. |
 | POST | `/api/lbdir/reconcile` | Preview-only: scan disk files recursively, compute MD5, match against missing lbdir entries. Returns `{results: [{folder, proposals:[{disk_rel,lbdir_rel,md5}], unmatched_lbdir, unmatched_disk, warnings, site_proposals}]}`. Does NOT move any files. `site_proposals` lb_number resolves via `my_collection` -> folder name -> optional `lb_number_hint` body param; each entry is `{site_path, lbdir_rel, md5, expected_md5, matched_by}` where `matched_by` is `'md5'` (exact content match) or `'name'` (filename matches after stripping `LBF-{N:05d}-`, but `md5` != `expected_md5` — site copy is a different lbdir revision, e.g. the manifest's self-checksum or a regenerated DigiFlawFinder report). |
 | POST | `/api/lbdir/apply_reconcile` | Apply selected rename proposals from `/api/lbdir/reconcile`. Body: `{folder, renames:[{from,to}]}`. Uses `shutil.move`; creates subdirectories as needed; never deletes. If folder is qBittorrent-tracked, best-effort syncs the new file paths via `renameFile` + recheck (BUG-229) so applied renames don't break seeding. Returns `{applied, errors}`. |
 | POST | `/api/lbdir/find_extra` | List files in each folder not referenced in the lbdir MD5 section (lbdir file itself excluded). Returns `{results: [{folder, extra:['rel/path',...], lbdir_rel}]}`. |
 | POST | `/api/lbdir/delete_extra` | Permanently delete selected extra files. Body: `{folder, files:['rel/path',...]}`. After deletion, prunes empty subdirectories bottom-up. Returns `{deleted, removed_dirs, errors}`. |
 | POST | `/api/lbdir/move_extras` | Move extra files (not in lbdir) to `<folder>/extras/`, preserving relative path structure. Body: `{folder, files:['rel/path',...]}`. Prunes empty subdirs after move. If folder is qBittorrent-tracked, best-effort syncs the new file paths via `renameFile` + recheck (BUG-229) so the move doesn't break seeding. Returns `{moved, errors}`. |
 | POST | `/api/lbdir/verified_status` | Return `lbdir_verified_at` timestamp for each folder path. Body: `{folders:[path,...]}`. Returns `{[path]: timestamp\|null}` — null when folder is not in `my_collection` or has never been lbdir-verified. |
+
+### Misc Utilities
+| Method | Route | Description |
+|--------|-------|-------------|
+| POST | `/api/open/vlc` | Launch VLC with a list of paths. |
+
+### API Error-Shape Convention
+Two response shapes coexist across `backend/app.py`: `jsonify({"error": ...})` (majority of routes)
+and `jsonify({"ok": False, ...})` (older bulk/batch-style routes). **New routes should use the
+`{"error": ...}` shape.** As of 2026-07-15 an app-wide `@app.errorhandler(Exception)` also catches
+any unhandled exception and returns `{"error": ...}` JSON (instead of Flask's default HTML 500
+page), so every client can assume JSON on error regardless of which route it called.
 
 ---
 
@@ -1775,9 +2159,9 @@ Fourteen preset themes (Light, Dark, Black, Dracula, Blue, Purple, Red, Nord, Gr
 
 ## GUI (Next): Electron/React Frontend (`gui_next/`) — PRIMARY GUI
 
-Second-generation GUI (primary, merged into main 2026-05-29) built with **Electron + React + TypeScript** (Vite + electron-vite). Communicates with the same Flask backend on port 5174 via `fetch()`. Preload bridge (`preload/index.ts`) exposes typed IPC handlers (`openPath`, `pickFile`, `pickFiles`, `pickDir`, `pickFolders`). All screens are registered in `App.tsx` and routed via a sidebar nav. **All future development happens here.** The legacy `gui/` PyQt6 frontend is frozen — it receives no new features or bug fixes.
+Second-generation GUI (primary, merged into main 2026-05-29) built with **Electron + React + TypeScript** (Vite + electron-vite). Communicates with the same Flask backend on port 5174 via `fetch()`. Preload bridge (`preload/index.ts`) exposes a typed `window.api` surface: `flaskPort`, `flaskBase`, `platform` (plain values, not IPC calls) plus IPC handlers `pickFolders`, `pickDir`, `pickFile`, `openPath`, `saveFile`, `pickAndReadFile`, `pickAndReadFiles` — `pickFiles` (plural, no read-back) no longer exists under that name; use `pickAndReadFiles`. All screens are registered in `App.tsx` and routed via a sidebar nav. **All future development happens here.** The legacy `gui/` PyQt6 frontend is frozen — it receives no new features or bug fixes.
 
-### Screens (16 fully wired as of 2026-06-12)
+### Screens (24 files in `screens/`, drop-in registered via `App.tsx` routes)
 
 | Screen | File | Status |
 |--------|------|--------|
@@ -1801,6 +2185,10 @@ Second-generation GUI (primary, merged into main 2026-05-29) built with **Electr
 | ScreenAttachments | `screens/ScreenAttachments.tsx` | Done — LB rail, file list, text/HTML/image/binary viewer |
 | ScreenSpectrograms | `screens/ScreenSpectrograms.tsx` | Done — tool dots, batch generate, PNG viewer |
 | ScreenMap | `screens/ScreenMap.tsx` | Done — filter rail + browser map launcher |
+| ScreenDbEditor | `screens/ScreenDbEditor.tsx` | Done — multi-DB (`losslessbob`/`batchverify`/`tapematch`) table browser, query console, curator-gated edit/delete/export at `/dbeditor` |
+| ScreenScraper | `screens/ScreenScraper.tsx` | Done — curator-gated (`CuratorRoute`) at `/scraper`: site crawler, entry scraper, bootleg catalog, per-tab live log (`scraperLogStore`) |
+| ScreenSharing | `screens/ScreenSharing.tsx` | Done — Cloudflare Tunnel file-sharing at `/sharing`: create/list/revoke shares, copy share URL |
+| ScreenTrading | `screens/ScreenTrading.tsx` | Done — collection trading at `/trading`: export `.lbcollection`, import/manage friend collections, compare diffs |
 
 ### Shared stores (`lib/`)
 
@@ -1814,6 +2202,8 @@ Second-generation GUI (primary, merged into main 2026-05-29) built with **Electr
 | `attachmentsStore.ts` | Attachments viewer state |
 | `scraperLogStore.ts` | Scraper screen per-tab live log lines (module-level, survives tab navigation) |
 | `tokens.ts` | CSS design tokens (colors, spacing, typography) |
+| `lbUrl.ts` | Consolidated `losslessbob.com` base URL + `detail_url()`/link builders (BUG-221 GUI-side fix — backend twin is `paths.py: SITE_BASE_URL`/`detail_url()`) |
+| `useResizableColumns.ts` | Shared hook for draggable/persisted virtual-table column widths |
 
 ---
 
@@ -1847,13 +2237,13 @@ User clicks Import / file dropped in data/
 User clicks Scrape All / Range / Single
   → POST /api/scrape/start {lb_numbers, force, use_local_pages}
     → Background thread: for each LB:
-        if use_local_pages and data/pages/LB-N.html exists:
+        if use_local_pages and data/site/detail/LB-{N:05d}.html exists:
             read HTML from disk (no network)
         else:
             GET /detail/LB-{N:05d}.html
-            save HTML → data/pages/LB-{N:05d}.html
+            save HTML → data/site/detail/LB-{N:05d}.html
         Parse HTML → entries table
-        Download missing files → data/attachments/LB-{N:05d}/
+        Download missing files → data/site/files/
         Sleep delay_ms only if source was web
   ← GET /api/scrape/status every 1s
   → Progress bar + log update ([local] / [web] label per entry)
@@ -1877,7 +2267,10 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 
 ---
 
-## GUI Conventions
+## Legacy GUI Conventions (frozen)
+
+*The `gui/` PyQt6 frontend is frozen — this section documents its historical conventions for
+reference only. New work follows the "GUI (Next) Conventions" section below instead.*
 
 - **Table column resizing:** All `QTableView` instances use `QHeaderView.ResizeMode.Interactive` for the horizontal header so the user can drag column borders freely. After data loads, call `view.resizeColumnsToContents()` once to set sensible initial widths. Never use `ResizeToContents` or `Stretch` as the persistent resize mode.
 
@@ -1908,11 +2301,31 @@ filename.flac:8d08d2e3b1e3c3c8f3a3c3c3c3c3c3c3
 
 ---
 
+## GUI (Next) Conventions
+
+- **State: zustand stores, not Context/Redux.** `store.ts` holds app-wide settings (`useSettingsStore`, persisted to localStorage via `zustand/middleware`'s `persist`). Screen-scoped shared state (folder queues, job progress, viewer state) lives in one small store per concern under `lib/` (`folderQueueStore.ts`, `verifyStore.ts`, `lbdirStore.ts`, `spectrogramStore.ts`, `attachmentsStore.ts`, `scraperLogStore.ts`, `lookupStore.ts`) — never one giant store. Data fetched from the backend is NOT put in zustand; it goes through `@tanstack/react-query` instead.
+
+- **Refetch after mutation:** The dominant pattern is `@tanstack/react-query`'s `queryClient.invalidateQueries({ queryKey: [...] })` right after a successful mutation (e.g. `ScreenLibrary.tsx` invalidates `['library-catalog']`/`['collection-prefetch']` after an edit). Where a value must be threaded down as a plain prop instead of re-queried (no query involved), bump a local numeric "version" state (`useState(0)`, incremented on save) and pass it as a prop so the child's own `useEffect` re-derives from it — see `ScreenCollection.tsx`'s `personalSaveVer`/`personalMetaVersion`. Long-lived reference data uses `staleTime: Infinity` (e.g. Library's `library-catalog` query) since it only changes via an explicit recompute action.
+
+- **Virtual tables:** Large row sets (Search, Library, similar screens) use `@tanstack/react-virtual`'s `useVirtualizer` — `count` = flattened row+group-header item list, `getScrollElement` = the table's scrolling container ref, `estimateSize` per item kind (group header vs. data row), `overscan: 12`. Group headers (e.g. year dividers) are flattened into the same virtualized item list as regular rows, not rendered separately, so scroll math stays correct.
+
+- **Toast:** `components/primitives.tsx` exports a shared `Toast` component (`ToastTone = 'ok' | 'bad' | 'info'`), ported from an original per-screen implementation in `ScreenCollection.tsx`. New screens should import the shared one rather than re-implementing a local toast.
+
+- **i18n `t()` rules:** All in-screen user-facing strings go through `react-i18next`'s `useTranslation()` / `t()` — no hardcoded English strings in JSX. Each screen (or closely related screen group, e.g. Library's three files) gets its own namespace key in `locales/*.json`; counts that pluralise use `_one`/`_other` key suffixes (i18next pluralization), not manual `count === 1 ? … : …` ternaries. New keys are added to `en.json` first, then translated into `de`/`fr`/`es`/`it`/`nl` via `/gui-next-i18n` (DeepL) before merging — see CLAUDE.md's i18n bookkeeping rule.
+
+---
+
 ## Notable Implementation Details
 
 - **LB number URL padding:** LosslessBob URLs use 5-digit zero-padded numbers (`LB-00042`). The scraper and directory names use `f"{lb_number:05d}"` formatting.
 - **Checksum generation (FFP):** Reads raw FLAC file bytes 18–34 from the `STREAM_INFO` metadata block, which is the MD5 signature of the decoded audio stream — not a hash of the file itself.
-- **Local API port:** Flask runs on port 5174. If this conflicts with another service, it is hardcoded in `backend/app.py` and `gui/` tabs that construct the base URL.
+- **Local API port:** Flask runs on port 5174, hardcoded in every place below — change atomically and log it in CHANGELOG.md:
+  - `backend/app.py` (fallback when run as `__main__`)
+  - `gui_next/src/main/index.ts` (`FLASK_PORT`, Electron main process)
+  - `gui_next/src/preload/index.ts:7` (`FLASK_PORT`, exposed to renderer as `window.api.flaskPort`/`flaskBase`)
+  - `run_backend.py:40` (`--port` default) and `main.py:15` (`FLASK_PORT`, legacy entrypoint)
+  - `cli.py` (`--port` default, `serve`/interactive subcommands)
+  - `gui/map_tab.py` (`_FLASK_PORT`) and `gui/rename_tab.py` (`flask_port` default) — frozen legacy GUI
 - **File access restriction:** `.claude/settings.json` restricts Claude Code to read/write only within this project directory and `~/.claude/` (memory). Bash commands are not path-restricted.
 
 ---
