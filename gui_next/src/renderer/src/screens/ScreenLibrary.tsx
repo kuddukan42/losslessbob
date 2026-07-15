@@ -2315,9 +2315,11 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
                                 {single && lone?.curated?.map(name => (
                                   <Pill key={name} tone="info" soft>{t('library.picks.curatedBadge', { curator: name })}</Pill>
                                 ))}
-                                {single && lone?.taperConfirmed && (
-                                  <Pill tone="info" soft>{t('library.picks.taperBadge', { taper: lone.taperConfirmed })}</Pill>
-                                )}
+                                {single && (lone?.taperConfirmed
+                                  ? <Pill tone="info" soft>{t('library.picks.taperBadge', { taper: lone.taperConfirmed })}</Pill>
+                                  : lone?.taperKnown && taperBadgeLabel(lone.taper) && (
+                                      <Pill tone="mute" soft title={t('library.columns.taper')}>{taperBadgeLabel(lone.taper)}</Pill>
+                                    ))}
                                 {single && lone?.desc && (
                                   <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', color: 'var(--lbb-fg2)', fontSize: 'var(--lbb-fs-11-5)', minWidth: 0 }}>
                                     {lone.desc}
@@ -2379,9 +2381,11 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
                               {rec.curated?.map(name => (
                                 <Pill key={name} tone="info" soft>{t('library.picks.curatedBadge', { curator: name })}</Pill>
                               ))}
-                              {rec.taperConfirmed && (
-                                <Pill tone="info" soft>{t('library.picks.taperBadge', { taper: rec.taperConfirmed })}</Pill>
-                              )}
+                              {rec.taperConfirmed
+                                ? <Pill tone="info" soft>{t('library.picks.taperBadge', { taper: rec.taperConfirmed })}</Pill>
+                                : rec.taperKnown && taperBadgeLabel(rec.taper) && (
+                                    <Pill tone="mute" soft title={t('library.columns.taper')}>{taperBadgeLabel(rec.taper)}</Pill>
+                                  )}
                               <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{rec.desc}</span>
                               <span style={{ color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-11)' }}>{rec.src ? (SOURCE_FULL[rec.src] ?? rec.src) : '—'}</span>
                             </span>
