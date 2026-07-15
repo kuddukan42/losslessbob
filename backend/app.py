@@ -23,6 +23,7 @@ from flask import (
     stream_with_context,
 )
 from flask_cors import CORS
+from werkzeug.exceptions import HTTPException
 
 from backend import archive_org as _archive_org
 from backend import (
@@ -408,6 +409,14 @@ def create_app() -> Flask:
     _slog.t("Flask: create_app start")
     app = Flask(__name__)
     CORS(app)
+
+    @app.errorhandler(Exception)
+    def _unhandled_exception(e):
+        if isinstance(e, HTTPException):
+            return e
+        logging.getLogger(__name__).exception("Unhandled exception: %s %s",
+                                              request.method, request.path)
+        return jsonify({"error": str(e)}), 500
 
     # Process start time, used by /api/system/uptime and /api/admin/status to
     # show how long the backend has been running (TODO-112).

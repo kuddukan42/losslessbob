@@ -336,14 +336,19 @@ def compute_ffp(filepath):
         return None
 
 
+def md5_file(path):
+    """MD5 of full file bytes. Raises OSError on read failure."""
+    h = hashlib.md5()
+    with open(to_long_path(Path(path)), "rb") as f:
+        for chunk in iter(lambda: f.read(65536), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
 def compute_md5(filepath):
     """MD5 of full file bytes. Returns 32-char hex or None on IOError."""
     try:
-        h = hashlib.md5()
-        with open(to_long_path(Path(filepath)), 'rb') as f:
-            for chunk in iter(lambda: f.read(65536), b''):
-                h.update(chunk)
-        return h.hexdigest()
+        return md5_file(filepath)
     except OSError:
         return None
 

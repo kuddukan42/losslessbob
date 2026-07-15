@@ -1,10 +1,10 @@
-import hashlib
 import logging
 import sqlite3
 import threading
 from datetime import UTC, datetime
 from pathlib import Path
 
+from backend.checksum_utils import md5_file
 from backend.db import (
     DB_PATH,
     close_connection,
@@ -44,14 +44,6 @@ def get_import_status() -> dict:
 def _set_state(**kwargs) -> None:
     with _import_lock:
         _import_state.update(kwargs)
-
-
-def md5_file(path):
-    h = hashlib.md5()
-    with open(path, "rb") as f:
-        for chunk in iter(lambda: f.read(65536), b""):
-            h.update(chunk)
-    return h.hexdigest()
 
 
 def _import_flat_file(flat_path, temp_db_path):
