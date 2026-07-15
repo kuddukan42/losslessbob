@@ -1,3 +1,38 @@
+[2026-07-14] — feat(backend): TODO-223 COMPLETE — gazetteer wired into geocoder, map city-level flag (bite 3 of 3)
+Context: bites 1–2 built venue_geocoded + the resolution ladder; this bite makes the gazetteer
+  actually feed the map. High-value discovery: location_geocoded held only ~117 rows with 6,584
+  distinct entry locations un-geocoded — gazetteer inheritance is the mechanism that populates the
+  map without burning Nominatim calls.
+Added: backend/geocoder.py — _venue_lookup_for_location()/_venue_key_for_location() derive the
+  gazetteer (venue_norm, city_norm) key from the structured sources in seeding priority order
+  (olof_events, setlistfm_shows, bobdylan_shows), normalizing via venue_gazetteer._norm_venue/_norm_city
+  (deferred import; single source of truth for key form). run_batch(): eligible locations first
+  inherit a resolved venue_geocoded pin (lat NOT NULL, source NOT IN seeded/failed) with no API call
+  and no rate-limit sleep — source='gazetteer_venue', or 'gazetteer_city' + confidence capped
+  'medium' for city pins (matches the TODO-222 cap; keeps the map's confidence != 'low' join);
+  note records the venue key + gazetteer source. place_manual(): a fix whose location derives a
+  venue key also upserts venue_geocoded (source='manual', manual_override=1 — resolve_venues never
+  overwrites it) and immediately propagates to every other non-manual, non-skipped location_geocoded
+  row at that venue (source='gazetteer_manual').
+Added: backend/db.py get_map_data() emits city_level (bool; setlistfm_city/city_geocode/
+  gazetteer_city/*-city sources); gui/resources/map.html popup shows a muted "city-level location
+  (venue not yet pinned)" hint — deliberate narrow exception to the gui/ freeze: map.html is the
+  shared Leaflet renderer that gui_next ScreenMap iframes, so the flag must live there (plain-JS
+  page, hardcoded English like its other strings; no gui_next locale change).
+Changed: backend/venue_gazetteer.py seed_venues() skips + cleans purely-numeric/empty venue keys
+  (_is_numeric_or_empty_venue/_cleanup_numeric_junk; live run deleted 38 junk rows, table now 4071).
+Fixed: backend/venue_gazetteer.py resolve_venues() now commits per venue — the 25-row batch commit
+  held the SQLite write lock across the next venues' network waits (minutes at a stretch), which
+  crashed backend startup with "database is locked" while a resolve batch ran. Found live when the
+  post-deploy backend restart collided with the full resolution run.
+Verification: +18 tests (tests/test_geocoder.py, test_venue_gazetteer.py) — key derivation/priority/
+  miss, run_batch inheritance/fallthrough, place_manual propagation + skip cases, junk seed/cleanup.
+  Full suite 770 passed / 5 skipped; gui_next tsc (node+web) + production build clean; backend
+  restarted (uptime-verified) and coexists with the live resolve batch after the lock fix.
+Operational: full resolution batch running (per-venue commits, ~2h; 280 resolved at last check —
+  153 bounded_venue / 25 wikidata / 102 city). Follow-up once it completes: trigger geocoder
+  run_batch so the 6,584 un-geocoded locations inherit pins (mostly zero API calls).
+
 [2026-07-14] — backlog completion drive: landed in-flight GUI/docs work, closed 4 TODOs + 1 BUG
 Context: session goal was shortening the backlog — close churners, not advance everything a little.
 Changed: gui_next/src/renderer/src/screens/ScreenLibrary.tsx: library picks now show a muted

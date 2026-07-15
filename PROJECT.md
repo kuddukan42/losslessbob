@@ -1205,7 +1205,7 @@ The latter two are always read-only (`_DBEDIT_READONLY_DBS` in `app.py`) — wri
 |--------|-------|-------------|
 | GET | `/map` | Serve `gui/resources/map.html` — Leaflet map page (OpenStreetMap tiles, OSM attribution). |
 | GET | `/leaflet/<filename>` | Serve bundled Leaflet JS/CSS from `gui/resources/leaflet/`. |
-| GET | `/api/map/data` | Marker data with optional query filters (`year`, `owned`, `lb_status`). Returns `[{lb_number, lat, lon, date_str, location, display_name, owned}]`. |
+| GET | `/api/map/data` | Marker data with optional query filters (`year`, `owned`, `lb_status`). Returns `[{lb_number, lat, lon, date_str, location, display_name, owned, city_level}]`. |
 | GET | `/api/entries/by_lb_list` | Fetch search-compatible entry dicts for `?lbs=1,2,3` (comma-separated LB numbers, max 500). Used by Map → List in Search. |
 
 ### Geocoding
@@ -1282,7 +1282,7 @@ For each parsed checksum, queries `checksums` table, then aggregates per LB numb
 - **XREF** — matched, but entry is a cross-reference
 
 ### Map data (`get_map_data`)
-Returns `{"markers": [...], "unplottable_count": int}`. Each marker dict: `{lb_number, date_str, location, lb_status, owned (bool), lat, lon, display_name}`. Entries with no geocoded coordinates are counted in `unplottable_count` and omitted from `markers`. Supported filter keys: `status` (str), `owned` (bool), `year_min` (int), `year_max` (int), `q` (text LIKE on lb_number/location).
+Returns `{"markers": [...], "unplottable_count": int}`. Each marker dict: `{lb_number, date_str, location, lb_status, owned (bool), lat, lon, display_name, city_level (bool — pin is city-precision only, TODO-223)}`. Entries with no geocoded coordinates are counted in `unplottable_count` and omitted from `markers`. Supported filter keys: `status` (str), `owned` (bool), `year_min` (int), `year_max` (int), `q` (text LIKE on lb_number/location).
 
 ---
 
@@ -1293,8 +1293,8 @@ Nominatim-based geocoder for concert location strings. Uses stdlib `urllib` only
 | Function | Description |
 |----------|-------------|
 | `geocode_one(location_text, viewbox, bounded)` | Single Nominatim lookup. `viewbox`/`bounded` (TODO-222) bias/restrict results to a box. Returns dict with lat, lon, display_name, source, confidence. source='failed' on error or no result. |
-| `place_manual(location_text, lat, lon, note)` | UPSERT with manual_override=1; batch run never overwrites manual rows. |
-| `run_batch(limit, retry_failed, dry_run, db_path)` | Batch-geocode all un-geocoded entries.location values. Sleeps 1.1 s between Nominatim requests (Nominatim ToS). Updates thread-safe _progress dict. |
+| `place_manual(location_text, lat, lon, note)` | UPSERT with manual_override=1; batch run never overwrites manual rows. TODO-223: when the location derives a venue key, also upserts a manual_override venue_geocoded row and immediately propagates the coordinate to every other location_geocoded row at that venue (source='gazetteer_manual'). |
+| `run_batch(limit, retry_failed, dry_run, db_path)` | Batch-geocode all un-geocoded entries.location values. TODO-223: eligible locations first inherit a resolved venue_geocoded pin (source='gazetteer_venue'/'gazetteer_city', no API call); only misses go to the Nominatim cascade, with a 1.1 s sleep between requests (Nominatim ToS). Updates thread-safe _progress dict. |
 | `get_progress()` | Snapshot of {running, done, total, current, errors, skipped, succeeded, stop_requested} for GUI polling. |
 
 **Concert-only eligibility (TODO-221, olof-authoritative TODO-224):** before geocoding,
