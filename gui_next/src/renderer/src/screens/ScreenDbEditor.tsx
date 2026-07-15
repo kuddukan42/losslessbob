@@ -826,7 +826,7 @@ export function ScreenDbEditor() {
       .then((data: ColumnDef[]) => {
         if (Array.isArray(data)) setSchema(data)
       })
-      .catch(() => {})
+      .catch((e) => setStatus(`Error: ${e}`))
   }
 
   // ── Rows ──────────────────────────────────────────────────────────────────

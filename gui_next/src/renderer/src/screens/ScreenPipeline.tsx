@@ -5,7 +5,8 @@ import { useVirtualizer } from '@tanstack/react-virtual'
 import { useTranslation } from 'react-i18next'
 import type { TFunction } from 'i18next'
 import { Icon } from '../components/Icon'
-import { Button, IconButton, Input, Pill, Banner, Chip } from '../components'
+import { Button, IconButton, Input, Pill, Banner, Chip, Toast } from '../components'
+import type { ToastTone } from '../components'
 import { TableShell, TH, TR, TD, GroupRow } from '../components'
 import { useFolderQueueStore } from '../lib/folderQueueStore'
 import { CheckResult, ReconcileResult, ReconcileProposal, SiteProposal } from '../lib/lbdirStore'
@@ -558,13 +559,16 @@ function VerifyStageContent({ step, row, onRun }: {
   const { t } = useTranslation()
   const [generating, setGenerating] = useState(false)
   const [showAll, setShowAll] = useState(false)
+  const [toast, setToast] = useState<{ msg: string; tone: ToastTone } | null>(null)
 
   const handleCopyReport = useCallback(() => {
     const lines = (step.files ?? []).map(f =>
       `${f.overall === 'pass' ? '✓' : '✗'} ${f.filename}\t[md5] ${f.md5_status}\t[ffp] ${f.ffp_status}`
     )
-    navigator.clipboard.writeText(lines.join('\n')).catch(() => {})
-  }, [step.files])
+    navigator.clipboard.writeText(lines.join('\n'))
+      .then(() => setToast({ msg: t('verify.toast.reportCopied'), tone: 'ok' }))
+      .catch(() => setToast({ msg: t('verify.toast.copyFailed'), tone: 'bad' }))
+  }, [step.files, t])
 
   const handleGenerate = useCallback(async () => {
     setGenerating(true)
@@ -696,6 +700,8 @@ function VerifyStageContent({ step, row, onRun }: {
           {t('pipeline.verify.mismatchedFiles', { count: mismatch })}
         </div>
       )}
+
+      {toast && <Toast msg={toast.msg} tone={toast.tone} onDone={() => setToast(null)} />}
     </div>
   )
 }

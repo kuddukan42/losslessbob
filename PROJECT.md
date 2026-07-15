@@ -236,10 +236,9 @@ losslessbob/
 ├── instructions/              # Fable spec pack + working docs (not shipped; planning/reference only)
 │   ├── README.md              # Index of instructions/ docs and how to use them
 │   ├── SPEC_INTEGRATION_NOTES.md # Cross-spec integration notes; read before implementing any spec-pack item
-│   ├── STRUCTURE_REVIEW.md    # 2026-07-04 structural/consistency review (PROJECT.md drift, dead code, conventions)
 │   ├── WORK_PACKAGE_2026-07-14.md # Active work-package tracking doc
 │   ├── FABLE_IDEAS.md, FABLE_TAPEMATCH_LISTENING_SIGNALS.md, FABLE_VISUAL_VERIFICATION.md
-│   ├── TAPEMATCH_CALIBRATION_GUIDE.md, CC_CONCERT_RANKER.md, CC_TRADING_PLAN.md
+│   ├── TAPEMATCH_CALIBRATION_GUIDE.md, CC_TRADING_PLAN.md
 │   ├── complete/               # Finished spec docs, kept for history
 │   └── future/                 # Not-yet-started spec docs
 ├── docs/

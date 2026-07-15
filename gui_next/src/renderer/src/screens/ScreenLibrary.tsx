@@ -606,14 +606,13 @@ export function ScreenLibrary(): React.JSX.Element {
           return { ok: !!data.ok, topicUrl: data.topic_url ?? '' }
         } catch { return { ok: false, topicUrl: '' } }
       }
-      const copyUrls = (urls: string[]) => {
-        if (urls.length === 0) return
-        navigator.clipboard.writeText(urls.join('\n')).catch(() => {})
+      const copyUrls = (urls: string[]): Promise<boolean> => {
+        if (urls.length === 0) return Promise.resolve(false)
+        return navigator.clipboard.writeText(urls.join('\n')).then(() => true, () => false)
       }
       if (rows.length === 1) {
-        postOne(rows[0]).then(({ ok, topicUrl }) => {
-          if (ok && topicUrl) {
-            copyUrls([topicUrl])
+        postOne(rows[0]).then(async ({ ok, topicUrl }) => {
+          if (ok && topicUrl && await copyUrls([topicUrl])) {
             showToast(t('library.toast.postedForumCopied', { lb: rows[0].lb }), 'ok')
           } else {
             showToast(ok ? t('library.toast.postedForum', { lb: rows[0].lb }) : t('library.toast.forumPostFailed'), ok ? 'ok' : 'bad')
@@ -633,10 +632,10 @@ export function ScreenLibrary(): React.JSX.Element {
             const res = await postOne(r)
             if (res.ok) { ok++; if (res.topicUrl) urls.push(res.topicUrl) } else fail++
           }
-          copyUrls(urls)
+          const copied = await copyUrls(urls)
           setActionBusy(false)
           const base = t('library.toast.postsCreated', { count: ok }) + (fail > 0 ? t('library.toast.failedSuffix', { count: fail }) : '')
-          showToast(ok > 0 && urls.length > 0 ? base + t('library.toast.linksCopiedSuffix', { count: urls.length }) : base, ok > 0 ? 'ok' : 'bad')
+          showToast(ok > 0 && copied ? base + t('library.toast.linksCopiedSuffix', { count: urls.length }) : base, ok > 0 ? 'ok' : 'bad')
         },
       })
     },

@@ -145,8 +145,9 @@ export function ScreenSpectrograms(): React.JSX.Element {
   }, [folders, width, height, dynRange, forceRerender, startPoll, showToast])
 
   const handleStop = useCallback(async () => {
-    await fetch(`${BASE}/api/spectrogram/stop`, { method: 'POST' }).catch(() => {})
-  }, [])
+    await fetch(`${BASE}/api/spectrogram/stop`, { method: 'POST' })
+      .catch(() => showToast('Stop failed', 'bad'))
+  }, [showToast])
 
   const handleRescan = useCallback(async () => {
     await loadInventory()
