@@ -9001,6 +9001,32 @@ def create_app() -> Flask:
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
+    @app.route("/api/olof/bobtalk_search", methods=["GET"])
+    def olof_bobtalk_search():
+        """Search olof_events.bobtalk/notes for "Bob said X — which night?" lookups.
+
+        Query params:
+            q (str, required) — search text, min 2 chars after strip.
+            limit (int, optional, default 50, capped at 200).
+
+        Returns:
+            JSON: {q, hits: [{event_id, date_str, venue, city, country,
+                   event_type, concert_no_net, field, snippet}]}.
+            400 if q is missing or shorter than 2 chars.
+        """
+        q = (request.args.get("q") or "").strip()
+        if len(q) < 2:
+            return jsonify({"error": "q must be at least 2 characters"}), 400
+        try:
+            limit = min(int(request.args.get("limit", 50)), 200)
+        except ValueError:
+            limit = 50
+        try:
+            hits = database.get_olof_bobtalk_search(q, limit=limit)
+            return jsonify({"q": q, "hits": hits})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
     @app.route("/api/olof/compare", methods=["POST"])
     def olof_compare():
         """Compare a folder's track titles against Olof's setlist for a date.

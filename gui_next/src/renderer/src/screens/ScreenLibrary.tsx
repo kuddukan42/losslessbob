@@ -1581,6 +1581,147 @@ const PERF_COL_DEFAULTS: Record<PerfColKey, number> = {
   date: 104, show: 345, tour: 155, families: 116, recs: 52, rating: 46, coverage: 112,
 }
 
+// ── BobTalkSearch — TODO-226 Part A remainder ─────────────────────────────────
+// "Bob said something about X — which night was that?": a compact toolbar
+// affordance searching /api/olof/bobtalk_search (LIKE over olof_events.bobtalk
+// + .notes) and letting the user jump straight to that show's date in the
+// performance lens. Follows FilterMenu's positioned-dropdown idiom (toggle
+// button + absolute panel, close on outside click/Escape) rather than reusing
+// FilterMenu itself, since this panel needs a live-typing input + async fetch
+// instead of FilterMenu's static children.
+interface BobTalkHit {
+  event_id: number
+  date_str: string
+  venue: string
+  city: string
+  country: string
+  event_type: string
+  concert_no_net: number | null
+  field: 'bobtalk' | 'notes'
+  snippet: string
+}
+
+function BobTalkSearch({ hasDate, onNavigate }: {
+  hasDate: (dateStr: string) => boolean
+  onNavigate: (dateStr: string) => void
+}) {
+  const { t } = useTranslation()
+  const [open, setOpen] = useState(false)
+  const [q, setQ] = useState('')
+  const [debouncedQ, setDebouncedQ] = useState('')
+  const ref = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (!open) return
+    const onDoc = (e: MouseEvent) => { if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false) }
+    const onEsc = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false) }
+    document.addEventListener('mousedown', onDoc)
+    document.addEventListener('keydown', onEsc)
+    return () => { document.removeEventListener('mousedown', onDoc); document.removeEventListener('keydown', onEsc) }
+  }, [open])
+
+  // Debounce ~300ms, only fire once the trimmed query is at least 2 chars —
+  // matches the backend route's own min-length 400 guard.
+  useEffect(() => {
+    const trimmed = q.trim()
+    if (trimmed.length < 2) { setDebouncedQ(''); return }
+    const id = setTimeout(() => setDebouncedQ(trimmed), 300)
+    return () => clearTimeout(id)
+  }, [q])
+
+  const { data, isFetching } = useQuery({
+    queryKey: ['olof-bobtalk-search', debouncedQ],
+    queryFn: () => fetch(`${BASE}/api/olof/bobtalk_search?q=${encodeURIComponent(debouncedQ)}&limit=25`).then(r => r.json()),
+    enabled: debouncedQ.length >= 2,
+    staleTime: 60_000,
+  })
+  const hits: BobTalkHit[] = Array.isArray(data?.hits) ? data.hits : []
+
+  return (
+    <div ref={ref} style={{ position: 'relative', flex: '0 0 auto' }}>
+      <IconButton
+        icon="message" active={open}
+        title={t('library.olof.search.buttonTitle')}
+        onClick={() => setOpen(o => !o)}
+      />
+      {open && (
+        <div onClick={e => e.stopPropagation()} style={{
+          position: 'absolute', top: 'calc(100% + 6px)', right: 0, width: 360, zIndex: 80,
+          background: 'var(--lbb-surface)', border: '1px solid var(--lbb-border2)',
+          borderRadius: 10, boxShadow: 'var(--lbb-shadowLg)', padding: 12,
+        }}>
+          <Input
+            icon="search"
+            placeholder={t('library.olof.search.placeholder')}
+            value={q} onChange={e => setQ(e.target.value)}
+            style={{ width: '100%', height: 32 }}
+          />
+          <div style={{ maxHeight: 360, overflowY: 'auto', marginTop: 8, display: 'flex', flexDirection: 'column', gap: 2 }}>
+            {q.trim().length > 0 && q.trim().length < 2 && (
+              <div style={{ fontSize: 'var(--t-meta)', color: 'var(--lbb-fg3)', padding: '6px 4px' }}>
+                {t('library.olof.search.minChars')}
+              </div>
+            )}
+            {debouncedQ.length >= 2 && isFetching && (
+              <div style={{ fontSize: 'var(--t-meta)', color: 'var(--lbb-fg3)', padding: '6px 4px' }}>
+                {t('library.olof.search.loading')}
+              </div>
+            )}
+            {debouncedQ.length >= 2 && !isFetching && hits.length === 0 && (
+              <div style={{ fontSize: 'var(--t-meta)', color: 'var(--lbb-fg3)', padding: '6px 4px' }}>
+                {t('library.olof.search.noResults')}
+              </div>
+            )}
+            {hits.map(h => {
+              const clickable = hasDate(h.date_str)
+              const venueLine = [h.venue, h.city].filter(Boolean).join(', ')
+              return (
+                <button
+                  key={`${h.field}-${h.event_id}`}
+                  type="button"
+                  disabled={!clickable}
+                  onClick={() => { if (clickable) { onNavigate(h.date_str); setOpen(false) } }}
+                  style={{
+                    display: 'flex', flexDirection: 'column', gap: 2, textAlign: 'left',
+                    width: '100%', padding: '6px 8px', borderRadius: 6, border: 'none',
+                    fontFamily: 'inherit', background: 'transparent',
+                    cursor: clickable ? 'pointer' : 'default',
+                    opacity: clickable ? 1 : 0.6,
+                  }}
+                  onMouseEnter={e => { if (clickable) e.currentTarget.style.background = 'var(--lbb-accent-soft)' }}
+                  onMouseLeave={e => { e.currentTarget.style.background = 'transparent' }}
+                >
+                  <span style={{ display: 'flex', alignItems: 'baseline', gap: 6 }}>
+                    <span style={{ fontFamily: 'var(--lbb-mono)', fontSize: 'var(--t-meta)', fontWeight: 'var(--w-semi)', color: 'var(--lbb-fg)' }}>
+                      {h.date_str}
+                    </span>
+                    {venueLine && (
+                      <span style={{ fontSize: 'var(--t-meta)', color: 'var(--lbb-fg2)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                        {venueLine}
+                      </span>
+                    )}
+                  </span>
+                  <span style={{
+                    fontSize: 'var(--t-meta)', color: 'var(--lbb-fg2)', lineHeight: 1.4,
+                    fontStyle: h.field === 'bobtalk' ? 'italic' : 'normal',
+                  }}>
+                    {h.field === 'bobtalk' ? `“${h.snippet}”` : h.snippet}
+                  </span>
+                  {!clickable && (
+                    <span style={{ fontSize: 'var(--t-micro)', color: 'var(--lbb-fg3)' }}>
+                      {t('library.olof.search.notInLibrary')}
+                    </span>
+                  )}
+                </button>
+              )
+            })}
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
+
 function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandlers, openCtxMenu, historyMap, attachCountMap }: {
   lens: 'performance' | 'recording'
   setLens: (v: 'performance' | 'recording') => void
@@ -1606,6 +1747,10 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
   const [detailPanelOpen, setDetailPanelOpen] = useState(true)
   const { width: detailWidth, startResize: startDetailResize } = useResizableWidth('lbb_library_perf_detail_width', 400)
   const autoExpandedRef = useRef(false)
+  // TODO-226 Part A remainder: BobTalk search result click navigates here —
+  // set to a performance id once filters/year-collapse state are cleared,
+  // then an effect below scrolls to it once it lands in flatItems.
+  const [pendingNavId, setPendingNavId] = useState<string | null>(null)
 
   const { widths: colWidths, startResize: startColResize } = useResizableColumns('lbb_library_perf_col_widths', PERF_COL_DEFAULTS)
 
@@ -1889,6 +2034,43 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
   const viewName = (v: string): string => t(VIEW_LABEL_KEY[v] ?? 'library.views.allPerformances')
   const coverageName = (c: string): string => t(COVERAGE_LABEL_KEY[c] ?? 'library.coverageValue.gap')
 
+  // TODO-226 Part A remainder: BobTalk search — a hit's ISO date_str only has
+  // a show to jump to when a performance in this lens carries that same
+  // date (get_performances() only groups catalog entries into shows, so
+  // Olof-only dates — sessions/interviews/broadcasts/undocumented concerts —
+  // legitimately have no match here).
+  const performanceIdByDate = useMemo(() => {
+    const m = new Map<string, string>()
+    for (const p of performances) if (p.date && !m.has(p.date)) m.set(p.date, p.id)
+    return m
+  }, [performances])
+  const hasLibraryDate = (dateStr: string): boolean => performanceIdByDate.has(dateStr)
+  const navigateToDate = (dateStr: string): void => {
+    const perf = performances.find(p => p.date === dateStr)
+    if (!perf) return
+    clearAll()
+    setCollapsedYears(prev => {
+      const year = perf.year > 0 ? String(perf.year) : 'Unknown'
+      if (!prev.has(year)) return prev
+      const n = new Set(prev); n.delete(year); return n
+    })
+    if (perf.recordings.length > 0) setExpandedShows(s => (s.has(perf.id) ? s : new Set(s).add(perf.id)))
+    setPendingNavId(perf.id)
+  }
+
+  // Runs once the filter/year-collapse reset above has flowed through to
+  // flatItems, so the target show's flat index actually exists to scroll to.
+  useEffect(() => {
+    if (!pendingNavId) return
+    const idx = flatItems.findIndex(it => it.kind === 'show' && it.perf.id === pendingNavId)
+    if (idx === -1) return
+    virtualizer.scrollToIndex(idx, { align: 'center' })
+    setSelectedId(pendingNavId)
+    setSelectedMemberLb(null)
+    setDetailPanelOpen(true)
+    setPendingNavId(null)
+  }, [pendingNavId, flatItems, virtualizer])
+
   const filterChips: Array<{ label: string; onRemove: () => void }> = [
     ...(perfView !== 'all' ? [{ label: `${t('library.facets.views')}: ${viewName(perfView)}`, onRemove: () => setPerfView('all') }] : []),
     ...[...activeDecade].map(d => ({ label: `${t('library.facets.decade')}: ${d}`, onRemove: () => toggleSet(setActiveDecade, d) })),
@@ -1916,6 +2098,7 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
           value={query} onChange={e => setQuery(e.target.value)}
           style={{ flex: 1, height: 32 }}
         />
+        <BobTalkSearch hasDate={hasLibraryDate} onNavigate={navigateToDate} />
         <IconButton icon="download" title={t('library.toolbar.export')} />
         <IconButton icon="more" title={t('library.toolbar.more')} />
       </div>
