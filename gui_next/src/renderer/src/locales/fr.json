@@ -1682,7 +1682,15 @@
       "circulatedAs": "Initialement diffusé sous la référence « {{title}} »",
       "matchPct": "{{pct}}% correspondance de setlist",
       "expectedMinutes": "~{{count}} min prévu",
-      "missingFromCopy": "Manquant dans cette version : {{titles}}"
+      "missingFromCopy": "Manquant dans cette version : {{titles}}",
+      "search": {
+        "buttonTitle": "Rechercher dans BobTalk et les notes",
+        "placeholder": "Bob a dit quelque chose à propos de…",
+        "minChars": "Continuez à taper (au moins 2 caractères)",
+        "loading": "Recherche en cours…",
+        "noResults": "Aucun résultat",
+        "notInLibrary": "Absent de la bibliothèque"
+      }
     }
   },
   "tapematch": {

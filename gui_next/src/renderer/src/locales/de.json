@@ -1682,7 +1682,15 @@
       "circulatedAs": "Ursprünglich unter der Bezeichnung „{{title}}“ veröffentlicht",
       "matchPct": "{{pct}}% Setlist-Übereinstimmung",
       "expectedMinutes": "~{{count}} min erwartet",
-      "missingFromCopy": "In dieser Version fehlt: {{titles}}"
+      "missingFromCopy": "In dieser Version fehlt: {{titles}}",
+      "search": {
+        "buttonTitle": "Suche in BobTalk & Notizen",
+        "placeholder": "Bob hat etwas gesagt über…",
+        "minChars": "Bitte weiter tippen (mind. 2 Zeichen)",
+        "loading": "Suche läuft…",
+        "noResults": "Keine Treffer",
+        "notInLibrary": "Nicht in der Bibliothek enthalten"
+      }
     }
   },
   "tapematch": {

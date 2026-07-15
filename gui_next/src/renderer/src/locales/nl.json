@@ -1682,7 +1682,15 @@
       "circulatedAs": "Voor het eerst verspreid als „{{title}}“",
       "matchPct": "{{pct}}% setlist-overeenkomst",
       "expectedMinutes": "~{{count}} min verwacht",
-      "missingFromCopy": "Ontbreekt in deze versie: {{titles}}"
+      "missingFromCopy": "Ontbreekt in deze versie: {{titles}}",
+      "search": {
+        "buttonTitle": "Zoeken in BobTalk en notities",
+        "placeholder": "Bob zei iets over…",
+        "minChars": "Blijf typen (min. 2 tekens)",
+        "loading": "Zoeken…",
+        "noResults": "Geen resultaten",
+        "notInLibrary": "Niet in de bibliotheek"
+      }
     }
   },
   "tapematch": {
