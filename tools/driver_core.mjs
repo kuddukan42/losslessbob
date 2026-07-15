@@ -10,7 +10,7 @@
  * produced the page, so the step loop lives here once instead of being
  * forked.
  *
- * See instructions/FABLE_VISUAL_VERIFICATION.md §3 (Bite 2): "If
+ * See instructions/complete/FABLE_VISUAL_VERIFICATION.md §3 (Bite 2): "If
  * action-runner code is shared between the two drivers, extract it to
  * tools/driver_core.mjs — do not fork two copies of the action runner."
  *
