@@ -489,8 +489,11 @@ def resolve_venues(db_path: str | None = None, limit: int | None = None,
         )
         by_source[result["source"]] = by_source.get(result["source"], 0) + 1
         processed += 1
+        # Commit per venue: each row's UPDATE otherwise holds the SQLite write
+        # lock across the NEXT venues' network waits (a 25-row batch = minutes
+        # locked), starving the live backend's writes.
+        conn.commit()
         if processed % 25 == 0:
-            conn.commit()
             logger.info("venue resolve progress: %d/%d", processed, len(rows))
     conn.commit()
 
