@@ -32,6 +32,11 @@ WEBENGINE_DIR = DATA_DIR / "webengine_cache"
 TAPEMATCH_RUNS_DIR = DATA_DIR / "tapematch" / "runs"
 TAPEMATCH_DB_PATH = TOOLS_DIR / "tapematch" / "observations.db"
 
+# Public site base URL — the single source of truth for every backend module
+# that builds losslessbob.com links (mirrors lbUrl.ts on the GUI side).
+SITE_BASE_URL = "http://www.losslessbob.wonderingwhattochoose.com"
+
+
 # ── Offline site mirror ───────────────────────────────────────────────────────
 # data/site/ mirrors the URL directory structure of losslessbob.wonderingwhattochoose.com
 # so that relative links work natively when browsing offline via file:// or Flask.
@@ -53,6 +58,18 @@ SITE_BN_DIR      = SITE_DIR / "bynumber"
 def detail_page_path(lb_id: str) -> "Path":
     """Return the local path for an entry detail page, e.g. LB-00001.html."""
     return SITE_DETAIL_DIR / f"LB-{lb_id}.html"
+
+
+def detail_url(lb: int | str) -> str:
+    """Return the public detail-page URL for an LB number, zero-padded to 5 digits.
+
+    Args:
+        lb: LB number as int or numeric string (e.g. 42 or "42").
+
+    Returns:
+        Absolute URL, e.g. ``…/detail/LB-00042.html``.
+    """
+    return f"{SITE_BASE_URL}/detail/LB-{int(lb):05d}.html"
 
 
 def attachment_path(filename: str) -> "Path":

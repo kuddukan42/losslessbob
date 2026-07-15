@@ -10,6 +10,8 @@ from backend.checksum_utils import _APOSTROPHE_TRANS  # reused for title normali
 from backend.db_queue import get_write_queue, init_write_queue  # DB-09
 from backend.paths import (
     DB_PATH,  # noqa: F401  — re-exported for callers
+    SITE_BASE_URL,
+    detail_url,
     to_long_path,
 )
 
@@ -2509,7 +2511,7 @@ def lookup_checksums(parsed_entries, db_path=None):
                     "status": status,
                     "is_duplicate": is_duplicate,
                     "missing_from_set": [],
-                    "detail_url": f"http://www.losslessbob.wonderingwhattochoose.com/detail/LB-{lb}.html",
+                    "detail_url": detail_url(lb),
                 })
         else:
             detail.append({
@@ -5779,9 +5781,7 @@ def get_aliases_for_canonical(canonical_lb: int, db_path=None) -> list[int]:
 
 # ── Bootleg-CD Catalog ────────────────────────────────────────────────────────
 
-_BOOTLEG_SOURCE_URL = (
-    "http://www.losslessbob.wonderingwhattochoose.com/detail/LB-bootleg-by-title.html"
-)
+_BOOTLEG_SOURCE_URL = SITE_BASE_URL + "/detail/LB-bootleg-by-title.html"
 
 
 def get_bootleg_lb_numbers(db_path=None) -> list[int]:

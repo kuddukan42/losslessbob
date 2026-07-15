@@ -19,14 +19,11 @@ import requests
 from bs4 import BeautifulSoup
 
 from . import db as database
-from .paths import DATA_DIR
+from .paths import DATA_DIR, SITE_BASE_URL
 
 logger = logging.getLogger(__name__)
 
-_PAGE_URL = (
-    "http://www.losslessbob.wonderingwhattochoose.com"
-    "/checksum_lookup/checksum_lookup_lb_zip_download.htm"
-)
+_PAGE_URL = SITE_BASE_URL + "/checksum_lookup/checksum_lookup_lb_zip_download.htm"
 _DOWNLOADS_DIR = DATA_DIR / "downloads"
 _ZIP_PATTERN = re.compile(
     r"Checksum_Lookup_flat_file_LastLB_(\d+)\.zip", re.IGNORECASE
