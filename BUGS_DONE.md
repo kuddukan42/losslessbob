@@ -1,6 +1,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-230: GNOME Wayland dev window still shows generic gear icon in the dock/taskbar
+Status: Fixed
+File(s): gui_next/src/main/index.ts, gui_next/resources/losslessbob-next.desktop
+Reported: 2026-07-01
+Fixed: 2026-07-14
+Root cause: Unconfirmed (candidates: Wayland app_id/desktop-file-id mismatch, .desktop not picked up in dev, Electron app_id emission) — dev-window-only cosmetic; packaged AppImage expected unaffected.
+Fix: Won't-fix (user decision 2026-07-14): dev-only cosmetic issue, not worth root-causing. Reopen if the packaged AppImage ever shows the generic gear icon.
+
 BUG-246: Live show_picks wiped — first-init-wins write queue lets derived writers hit a different DB than they read from
 Status: Fixed
 File(s): backend/db_queue.py:146,concert_ranker/picks.py:353

@@ -1,6 +1,60 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-233: LISTENING §2 follow-up — expand A/B eligibility beyond reference/aligned speed kinds
+Priority: Medium
+Status: Done
+Added: 2026-07-13
+Closed: 2026-07-14
+Description: Only ~1/3 of sources qualify for aligned A/B listening (TODO-231 v1: both sources must be speed_kind reference/aligned in their latest common run), so most pairs on ScreenTapeMatch show 'Not cleanly aligned for A/B listening yet'. Re-running tapematch does NOT help: the 2026-07-06 confidence gate (commit 936e0a64, ratio_confidence_min=6.0) made classification stricter — June-script runs were 34% eligible, July-script runs 28%, with speed-unknown (1,406 sources) absorbing most of what the old script called constant-speed-offset (1,744 -> 103). Expansion order: (1) constant-speed-offset — the time mapping IS known (rate + offset), so backend/ab_clips.py can scale t per source (t*rate + offset) and optionally ffmpeg-resample (atempo/asetrate) the clip to reference speed; check what rate detail observations.db sources rows / run archives store per source. (2) staircase/splice — needs per-segment offsets from run archive lag curves; substantially more work. (3) speed-unknown — unservable without new analysis; out of scope. Also handle the stale-label asymmetry: pairs eligible only via an old June run may carry 'aligned' labels the confidence-gated script would demote to speed-unknown — consider trusting only post-936e0a64 runs for eligibility, or re-verifying old 'aligned' labels. Related: [TODO-232] auto-pick start point.
+  DONE 2026-07-14 — part (1) constant-speed-offset: served from the sources table alone (rate = 1 + speed_ppm/1e6, offset = trim_head_sec — no run-archive parsing). ab_clips.speed_factor()/raw_take_sec() + a factor arg on source_offset() generalise the map to `trim_head + t*factor`; _finalize_clip() speed-corrects the raw span to reference via asetrate/aresample (only above 50 ppm). Stale-label asymmetry resolved via is_run_eligible() — only runs >= 2026-07-06 (post-936e0a64) count, enforced in generate_ab_clips (409) and the pairs ab_eligible enrichment.
+  REMAINING — part (2) staircase/splice: BLOCKED on [TODO-235] (per-segment lag curves are not persisted — investigated 2026-07-14); part (3) speed-unknown (out of scope, no time mapping exists).
+Closed by rescope 2026-07-14: part (1) constant-speed-offset shipped 2026-07-14 (ab_clips speed_factor/raw_take_sec, is_run_eligible post-936e0a64 gate). Part (2) staircase/splice is fully tracked under TODO-235 (persist per-segment lag curves) and continues there. Part (3) speed-unknown declared out of scope (no time mapping exists).
+
+TODO-179: Consider removing the top bar to gain vertical space
+Priority: Low
+Status: Done
+Added: 2026-06-22
+Closed: 2026-07-14
+Description: Tentative idea (user said "maybe") — consider removing the Topbar component
+  (gui_next/src/renderer/src/components/AppShell.tsx:565+, breadcrumbs + actions, 52px height)
+  to reclaim vertical space for screen content. Needs a decision on where breadcrumbs/
+  per-screen actions would go instead (e.g. fold into each screen's own header) before
+  actually removing it — not yet committed, just flagged as worth considering.
+Won't-do (user decision 2026-07-14): was a tentative 'maybe' from 06-22. If the vertical-space itch returns, re-file with a concrete decision on where breadcrumbs/per-screen actions move.
+
+TODO-209: Ledger duplicate-ID audit — 17 TODO + 22 BUG header IDs reused across open/done files
+Priority: Low
+Status: Done
+Added: 2026-07-08
+Deferred (2026-07-09): report re-run and reviewed — all 39 ids sit in closed/archived
+  entries and each renumber needs manual cross-ref attribution (hours, cosmetic only).
+  Out of scope for the 7/09–7/12 window (WORK_PACKAGE_2026-07-09).
+Progress (2026-07-08): audit script shipped — tools/ledger_dedup.py (report-only default;
+  --apply exists but is experimental and unused). Report finds 21 duplicated BUG ids and the
+  TODO set, proposes keep/renumber per entry, and lists every cross-reference (CHANGELOG,
+  archive, other ledger files) that needs manual attribution before renumbering. Remaining
+  work: review the plan, attribute shared cross-refs, then renumber via next-id.
+Closed: 2026-07-14
+Description: Found while closing TODO-198 (2026-07-08): header-line grep (^TODO-N / ^BUG-N across the open+done pairs) turns up 17 duplicated TODO ids (024, 086, 102, 106-113, 140, 151, 153-155, 198) and 22 duplicated BUG ids (107-118ish, 167, 168, 175, 176, 193, 195, 200, 214-218). Almost all are low-numbered and predate tools/ledger.py (added 2026-07-07, TODO-205) — legacy manual-numbering debt from before next-id existed. TODO-198 was the one recent exception: its number was hand-set rather than assigned via next-id, bypassing the tool's own duplicate protection (_collect_ids scans both open+done files correctly, so the tool itself cannot produce a collision). Fix requires, per id: confirm which of the N entries is authoritative (check dates/content), grep every cross-reference (CHANGELOG.md mentions, [[TODO-NNN]]/[[BUG-NNN]] links in other entries, instructions/ docs) before renumbering the duplicate(s) via next-id, then verify no reference breaks. Do this as a batch script, not by hand — 39 ids is too many for manual edits to stay safe. Low priority: cosmetic/traceability issue, not a functional bug.
+Won't-fix (user decision 2026-07-14): all 39 duplicated ids sit in closed/archived entries, ledger.py next-id prevents new collisions, and the renumber needs hours of manual cross-ref attribution for zero functional gain. tools/ledger_dedup.py (report mode) remains available if it ever matters.
+
+TODO-109: Python best practices — BP document and code review
+Priority: Low
+Status: Done
+Added: 2026-06-03
+Closed: 2026-07-14
+Description: Create a BEST_PRACTICES.md document summarising agreed Python conventions for
+this project. Then do a pass over existing backend files to apply improvements: add missing
+type hints to older public functions (db.py, app.py, etc.), break up oversized functions
+(e.g. init_db), remove late imports, and fill in missing docstrings on exported functions.
+Start with db.py as the reference — it was rated 8/10 and has the most surface area.
+Note: BEST_PRACTICES.md written 2026-06-09. ruff + pre-commit configured 2026-06-09.
+Code-pass over backend files deferred. 36 pre-existing ruff violations remain (E701 x12,
+B023 x9, F841 x5, B905 x3, B007 x2, B904 x2, LOG015 x2, F821 x1) — will surface as
+blockers when those files are next edited. E501 suppressed in pyproject.toml until then.
+Closed 2026-07-14 (user decision): BEST_PRACTICES.md + ruff/pre-commit shipped 06-09 and enforce the bar on every edit. The 36 pre-existing ruff violations listed here no longer exist — verified 2026-07-14 (ruff check clean across backend/, full pytest 752 passed / 5 skipped); the pre-commit auto-fix hook and ~15 feature commits since 06-09 eliminated them incidentally. The open-ended retroactive type-hint/docstring/refactor pass is declined as churn.
+
 TODO-228: Olof 2022+ chronicles are PDF-only — fetch + extract appendix setlists from PDFs
 Priority: Medium
 Status: Done
