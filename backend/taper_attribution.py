@@ -1,7 +1,7 @@
 """Taper attribution engine — Phase 1: schema seeding via Layer 0 (direct
 extraction) and Layer 1 (same-source propagation).
 
-See ``instructions/FABLE_TAPER_ATTRIBUTION.md`` for the design and
+See ``instructions/complete/FABLE_TAPER_ATTRIBUTION.md`` for the design and
 ``instructions/SPEC_INTEGRATION_NOTES.md`` findings F2/F3/F5/F6, which amend
 and override the spec where noted:
 
@@ -28,8 +28,11 @@ Confidence tiers (spec §3):
                  same_as_lb / derived_from_lb), or a bare handle mention in an
                  entry's own description (weaker Layer-0 evidence — a mention
                  is not a taping claim).
-    inferred   — vocabulary fingerprints (Layer 2). Out of scope for Phase 1;
-                 no code here produces this tier yet.
+    inferred   — vocabulary fingerprints (Layer 2, ``backend.taper_fingerprints``).
+                 Implemented but gated OFF in :func:`recompute` via
+                 ``taper_fingerprints.LAYER2_ENABLED`` (2026-07-15 calibration
+                 verdict — see that flag's comment); no rows are produced
+                 until it is flipped after sign-off.
 
 Entry point is :func:`recompute`.
 """
@@ -53,6 +56,13 @@ from backend.db import (
 )
 
 log = logging.getLogger(__name__)
+
+# NOTE: taper_fingerprints (Layer 2) is imported further down this file,
+# after _DSU / _evidence / _row are defined, not here alongside the other
+# imports. taper_fingerprints imports *this* module back (as a module object,
+# not specific names) to reuse those helpers, so importing it before they
+# exist would break at import time; see taper_fingerprints.py's module
+# docstring for the full explanation.
 
 # _TAPER_UNIVERSE (locked decision, defined in backend.db so the Library grid's
 # is_known_taper() check shares the exact same set): canonical values of
@@ -184,6 +194,11 @@ class _DSU:
         if ra != rb:
             self.parent[ra] = rb
 
+
+# Layer 2 (vocabulary fingerprints, TODO-214). Placed here — after _DSU,
+# _evidence, _row exist — rather than with the other top-of-file imports; see
+# the NOTE near those imports.
+from backend import taper_fingerprints  # noqa: E402
 
 # ── Data loading ──────────────────────────────────────────────────────────────
 
@@ -563,8 +578,47 @@ def _summarize(attrs: dict[int, dict]) -> dict:
     }
 
 
+def _compute_layers01(
+    conn: sqlite3.Connection,
+) -> tuple[dict[int, dict], dict[str, list[int]], dict[int, list[int]], dict[int, list[int]],
+           dict[int, str], set[int]]:
+    """Run Layer 0 (direct extraction) + Layer 1 (same-source propagation).
+
+    Factored out of :func:`recompute` so both it and
+    ``tools/attribute_tapers.py --calibrate-fingerprints`` can obtain the
+    exact intermediate state Layer 2 fingerprinting sees, without a full
+    recompute-and-write. Behavior-identical refactor: :func:`recompute` calls
+    this and then continues exactly as it did before.
+
+    Args:
+        conn: Database connection.
+
+    Returns:
+        ``(attrs, fam_members, same_as_adj, derived_from_adj, rejects,
+        unresolved)`` — attrs after Layer 0 seeding, curator 'confirm' rows,
+        one pass of reject suppression, and both propagation passes (strong
+        then weak). Rejects have not yet been re-applied a second time and
+        'unresolved' rows have not yet been stripped — :func:`recompute` does
+        both after Layer 2 runs, so Layer 2's own poisoning check (which takes
+        *unresolved* directly) sees the same state.
+    """
+    confirmations = _load_taper_confirmations(conn)
+    lineage_rows = _load_lineage_rows(conn)
+    fam_members, fam_review = _load_families(conn)
+    same_as_adj, derived_from_adj = _build_adjacency(lineage_rows)
+
+    attrs = _layer0_seed(lineage_rows, _TAPER_UNIVERSE)
+    rejects, unresolved = _apply_confirmations(attrs, confirmations)
+    _apply_rejects(attrs, rejects)
+
+    _propagate_strong(attrs, fam_members, fam_review, same_as_adj, derived_from_adj)
+    _propagate_weak(attrs, fam_members, fam_review)
+
+    return attrs, fam_members, same_as_adj, derived_from_adj, rejects, unresolved
+
+
 def recompute(db_path: str | None = None, dry_run: bool = False) -> dict:
-    """Recompute taper_attributions wholesale: Layer 0 seeding + Layer 1 propagation.
+    """Recompute taper_attributions wholesale: Layers 0 + 1 + 2.
 
     Assumes entry_lineage is already fresh — callers that need the F5
     freshness guarantee should run ``tools/parse_lineage.py``'s ``run()``
@@ -586,22 +640,23 @@ def recompute(db_path: str | None = None, dry_run: bool = False) -> dict:
     init_db(db_path)  # idempotent; ensures taper_attributions/taper_confirmations exist
     conn = get_connection(db_path)
 
-    confirmations = _load_taper_confirmations(conn)
-    lineage_rows = _load_lineage_rows(conn)
-    fam_members, fam_review = _load_families(conn)
-    same_as_adj, derived_from_adj = _build_adjacency(lineage_rows)
+    attrs, fam_members, same_as_adj, derived_from_adj, rejects, unresolved = (
+        _compute_layers01(conn))
 
-    attrs = _layer0_seed(lineage_rows, _TAPER_UNIVERSE)
-    rejects, unresolved = _apply_confirmations(attrs, confirmations)
-    _apply_rejects(attrs, rejects)
+    # Layer 2 (vocabulary fingerprints, TODO-214): runs after Layer 1 and
+    # before the reject/unresolved re-apply below, so curator decisions also
+    # suppress inferred rows, and Layer 2 output can never feed back into
+    # Layer 1 propagation (spec §4.3). Gated OFF pending precision sign-off —
+    # see taper_fingerprints.LAYER2_ENABLED for the calibration verdict.
+    if taper_fingerprints.LAYER2_ENABLED:
+        taper_fingerprints.infer(attrs, conn, fam_members, same_as_adj,
+                                 derived_from_adj, unresolved)
 
-    _propagate_strong(attrs, fam_members, fam_review, same_as_adj, derived_from_adj)
-    _propagate_weak(attrs, fam_members, fam_review)
-
-    # Re-apply rejects/unresolved: propagation may have re-derived exactly what a
-    # curator rejected (or marked undecidable) via a different edge. A reject
-    # suppresses that lb/taper pair; an unresolved suppresses every taper for the
-    # lb — both act on recompute *output*, regardless of how it was (re-)derived.
+    # Re-apply rejects/unresolved: propagation (and now Layer 2) may have
+    # re-derived exactly what a curator rejected (or marked undecidable) via a
+    # different edge. A reject suppresses that lb/taper pair; an unresolved
+    # suppresses every taper for the lb — both act on recompute *output*,
+    # regardless of how it was (re-)derived.
     _apply_rejects(attrs, rejects)
     _apply_unresolved(attrs, unresolved)
 

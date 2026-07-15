@@ -15,7 +15,7 @@ specs deliberately parked for a later window (currently SHARING_FEATURE.md).
 | concert ranker v1.zip | Source package (`concert_ranker/` code) attached to CC_CONCERT_RANKER.md | not triaged |
 | FABLE_IDEAS.md | Raw idea dump from a Fable 5 brainstorm (2026-07-06) — not a spec, ideas need expansion before execution | not triaged |
 | FABLE_TAPEMATCH_LISTENING_SIGNALS.md | TapeMatch "simulated listening" signals idea spec pack | parked — calibration frozen 07-09; future window |
-| FABLE_TAPER_ATTRIBUTION.md | Taper Attribution Engine design spec | active — phases 1–2 shipped 2026-07-09; phase 3 fingerprints = TODO-214 |
+| complete/FABLE_TAPER_ATTRIBUTION.md | Taper Attribution Engine design spec | closed 2026-07-15 — phases 1–2 shipped 2026-07-09; phase 3 fingerprints (TODO-214) built + calibrated but gated OFF (`taper_fingerprints.LAYER2_ENABLED=False`, precision verdict); revisit options in WORK_PACKAGE_2026-07-14.md Session 6 |
 | FABLE_VISUAL_VERIFICATION.md | Electron visual-verification driver (attempt 3) — drive the real app, resize, scale, watch progress; Wayland/NVIDIA-proof capture | ready — not started |
 | SPEC_INTEGRATION_NOTES.md | Cross-review / integration notes for the four Fable spec-pack docs | active — see SPEC_INTEGRATION_NOTES.md §2 for order, not yet implemented |
 | STRUCTURE_REVIEW.md | Structural & consistency review of backend + gui_next (2026-07-04) | not triaged |

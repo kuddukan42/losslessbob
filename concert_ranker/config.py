@@ -76,7 +76,12 @@ POLARITY = {
     "air_ratio_db":           0,
     "mud_ratio_db":          -1,   # higher low-mid excess = worse
     "harsh_ratio_db":        -1,
-    "sibilance_ratio_db":    -1,
+    # sibilance_ratio_db: informational only (2026-07-15). Correlates POSITIVELY
+    # with rating even in local-excess form (+0.34 above 9 kHz ceiling; hf_ceiling
+    # artifact below it) — same brightness confound as hf_ceiling_hz/air_ratio_db.
+    # sibilance_crest is the trusted sibilance defect signal (rho -0.34..-0.65,
+    # correct sign in both calibration scans).
+    "sibilance_ratio_db":     0,
     "sibilance_crest":       -1,
     # distortion / defects
     "clip_fraction":         -1,
@@ -199,14 +204,12 @@ SIGNED_BANDS = {
 # One-directional severity bands: (cutoff, label) ascending; higher = worse.
 # Cuts = AUD p70 / p90 / p98 (mud, harsh); crowd_snr reversed (low = worse) at
 # p10 / p30 / p60 (widened to restore "crowd-heavy" recall); hiss at p15/p70/p90/p98.
-# sibilance_ratio_db cuts are still first-principles (TODO-183: the scan now
-# produces real native-rate sibilance_ratio_db/sibilance_crest values as of
-# 2026-06-30, but these cutoffs haven't been refit against them yet — run
-# `concert_ranker calibrate` against real data before trusting the labels).
+# sibilance_ratio_db REMOVED from banding (2026-07-15): its labels never
+# validated (brightness/hf_ceiling confound — see POLARITY note); the essy
+# signal lives in sibilance_crest, which has no bands fitted yet.
 SEVERITY_BANDS = {
     "mud_ratio_db":       [(16.6, None), (23.0, "slightly muddy"), (33.5, "muddy")],
     "harsh_ratio_db":     [(2.3, None), (5.5, "a little forward"), (8.8, "harsh")],
-    "sibilance_ratio_db": [(3.0, None), (6.0, "slightly essy"), (10.0, "sibilant")],
     "hiss_floor_db":      [(-9.7, "very quiet"), (-2.1, None), (-0.3, "some hiss"), (-0.02, "hissy")],
     "crowd_snr_db":       [(2.1, "buried in crowd"), (4.5, "crowd-heavy"), (6.9, "some crowd"), (999, "clean")],
 }
@@ -230,9 +233,7 @@ QUALITY_BANDS = {
 # (AUD percentiles per decade from scan_id 6) let the scorer band a recording
 # against the norms of its OWN era; the scorer falls back to the global bands
 # above when a recording's decade is unknown or not represented here.
-# sibilance_ratio_db stays global pending a per-decade refit (real values are
-# now produced by the scan — TODO-183 — but no decade-stratified fit exists
-# yet); dynamic_range_dr stays global (not produced by the scan at all).
+# dynamic_range_dr stays global (not produced by the scan at all).
 # Re-derive with: concert_ranker calibrate --by-decade  then refit per decade.
 # ─────────────────────────────────────────────────────────────────────────────
 _DECADE_CUTS = {
@@ -282,7 +283,7 @@ def _build_decade_bands(c: dict) -> dict:
     the GLOBAL (absolute) band — it measures actual crowd level, so a soundboard
     should read "clean" regardless of class/era. Relativizing it made ~60% of
     soundboards read "some crowd"/"crowd-heavy" (clean shows judged against their
-    cleaner-than-AUD peers). sibilance/dynamic_range likewise stay global (no
+    cleaner-than-AUD peers). dynamic_range likewise stays global (no
     per-decade data). Everything else (hiss, tonal) is class/era-relative.
     """
     return {
@@ -294,7 +295,6 @@ def _build_decade_bands(c: dict) -> dict:
         "SEVERITY": {
             "mud_ratio_db": [(c["mud"][0], None), (c["mud"][1], "slightly muddy"), (c["mud"][2], "muddy")],
             "harsh_ratio_db": [(c["harsh"][0], None), (c["harsh"][1], "a little forward"), (c["harsh"][2], "harsh")],
-            "sibilance_ratio_db": SEVERITY_BANDS["sibilance_ratio_db"],
             "hiss_floor_db": [(c["hiss"][0], "very quiet"), (c["hiss"][1], None),
                               (c["hiss"][2], "some hiss"), (c["hiss"][3], "hissy")],
             "crowd_snr_db": SEVERITY_BANDS["crowd_snr_db"],  # absolute — see docstring

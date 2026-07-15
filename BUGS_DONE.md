@@ -1,6 +1,14 @@
 # Fixed Bugs Archive
 # Active/open bugs are in BUGS.md. Entries here are Fixed or Wontfix.
 
+BUG-250: Checksum-lookup detail_url built without zero-padding — LB-42.html style 404 links
+Status: Fixed
+File(s): backend/db.py:2512
+Reported: 2026-07-15
+Fixed: 2026-07-15
+Root cause: Site base URL was an independent literal in 6 backend modules; db.py's copy interpolated the raw int (f"LB-{lb}.html") instead of the LB-%05d convention.
+Fix: Added SITE_BASE_URL + detail_url(lb) (zero-pads via int(lb):05d) to backend/paths.py; all 6 modules now derive from it (commit 30d97229). Backend twin of BUG-221's lbUrl.ts consolidation.
+
 BUG-230: GNOME Wayland dev window still shows generic gear icon in the dock/taskbar
 Status: Fixed
 File(s): gui_next/src/main/index.ts, gui_next/resources/losslessbob-next.desktop
