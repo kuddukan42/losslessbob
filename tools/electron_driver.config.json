@@ -163,13 +163,14 @@
       "--disable-gpu",
       "--no-sandbox"
     ],
-    "xvfbScreen": "2560x1440x24",
+    "xvfbScreen": "2920x1860x24",
     "requiredEnv": {
       "LB_NO_BACKEND_SPAWN": "1"
     },
     "forceShowRequired": true,
     "rationale": [
-      "Only backend whose screen geometry we control. A window cannot exceed its screen: row 3 was clamped to 1280x771 by the probe's 1280x800 Xvfb screen. size-matrix needs 2560x1440, so the Xvfb screen is created at 2560x1440x24 (larger than tj's real display, which rows 1-2 could not satisfy).",
+      "Only backend whose screen geometry we control. A window cannot exceed its screen: row 3 was clamped to 1280x771 by the probe's 1280x800 Xvfb screen. size-matrix needs 2560x1440, so the Xvfb screen is created larger than tj's real display, which rows 1-2 could not satisfy.",
+      "Screen geometry is driven by BOTH matrix consumers: it must fit max(size-matrix's largest content entry, scale-matrix's logical baseline x max scale) PLUS window decoration. The driver resizes by CONTENT size (setContentSize, for parity with Tier A's page.setViewportSize) and a window cannot exceed its screen. size-matrix's largest is 2560x1440 content at 1x; scale-matrix pins a 1440x900 DIP baseline and its largest is 2880x1800 physical at 2x. 2880x1800 wins, so the screen is 2920x1860x24 — 40x60 of decoration headroom over it. Undersizing here does not error, it silently clamps: a 2600x1500 screen capped the 2x row at 2600x1480, which at DPR 2 is only 1300x740 logical — below the app's own 768 minimum height, i.e. a layout no real user could ever see. ~22MB of virtual framebuffer is an irrelevant cost next to that.",
       "Deterministic: rows 1 and 2 disagreed on window height (835 vs 871) due to compositor decoration variance.",
       "Invisible and session-independent — no windows on tj's desktop, works from tty/ssh/cron. Rows 1-2 require a live login session.",
       "No XAUTHORITY fragility: row 2 needs a per-session random /run/user/1000/.mutter-Xwaylandauth.<rand> cookie.",

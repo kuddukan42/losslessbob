@@ -1,3 +1,35 @@
+[2026-07-15] — feat(gui): TODO-247 visual-verification driver — bite 3a: resize/size/scale/watch
+Context: instructions/FABLE_VISUAL_VERIFICATION.md §6. Bite 3 split into 3a (driver
+  actions, tools/ only) and 3b (progress fixture) — see the Notes below.
+Added: driver_core.mjs actions `resize`, `size-matrix`, `watch`, `main-eval`, shared by
+  both tiers via a new `caps` opt ({resize, mainEval}) each driver supplies — a driver
+  that can't do one omits it and the action fails that step cleanly instead of the run.
+  Tier A resize = page.setViewportSize; Tier B = real window; Tier A has no mainEval.
+Added: electron_driver.mjs `scale-matrix` (CLI-level, not a session action:
+  --force-device-scale-factor is a launch flag, so each scale needs its own launch).
+  Pins a 1440x900 DIP baseline per row, so the matrix means "same logical layout,
+  varying DPR" rather than inheriting whatever the default window was.
+Changed: Tier B resize uses setContentSize, NOT spec §6's setSize (deviation recorded in
+  code + spec finding 9). Tier A's setViewportSize sets content size exactly, so an
+  outer-frame Tier B would make the shared debug_screens.json produce different PNG
+  sizes per tier — setSize gave 2559x1411 for a "2560x1440" shot, the title bar eating
+  the difference. The app's minWidth/minHeight are outer constraints, still respected.
+Changed: electron_driver.config.json xvfbScreen 2560x1440x24 -> 2920x1860x24. The screen
+  is sized by both consumers: max(size-matrix largest content, scale-matrix baseline x
+  max scale) + decoration. Undersizing silently CLAMPS rather than erroring — at
+  2600x1500 the 2x row capped at 2600x1480, which is 1300x740 logical, below the app's
+  own 768 minimum: a frame showing a layout no real user could have. ~22MB of extra
+  virtual framebuffer is nothing against a lying screenshot.
+Verified: size-matrix PNGs land at exactly 1280x768 / 1440x900 / 1920x1080 / 2560x1440
+  (112-186KB each, non-blank); scale-matrix at 1440x900 / 1800x1128 / 2160x1350 /
+  2880x1800, nothing clamped; watch emits 5 frames at 300ms and stops on both the
+  selector and timeout paths; backend on :5174 survived every run.
+Known: scale-matrix 1.25x is 1128px tall, not 1125 — Electron reports a 902 DIP content
+  height at fractional DPR (902x1.25=1127.5). Accepted: the capture is honest about the
+  window it got, and §10 puts pixel-diff baselines out of scope. Finding 11.
+Remaining: bite 3b (progress fixture — finding 12: it needs a start_file_job intercept
+  in backend/filer.py, not just driver work), bite 4 (/verify --electron, docs).
+
 [2026-07-15] — feat(gui): TODO-247 Electron visual-verification driver (Tier B) — bites 1-2
 Context: instructions/FABLE_VISUAL_VERIFICATION.md, attempt 3 at driving the real app.
   Prior attempts failed because they captured pixels from OUTSIDE the app (compositor/
