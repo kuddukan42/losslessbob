@@ -4,11 +4,16 @@ Scope: backend + gui_next (PyQt6 `gui/` frozen — excluded; tapematch excluded)
 Focus: PROJECT.md drift, duplicated logic, dead code, error-handling/logging consistency.
 Not covered: line-level correctness bugs.
 
-> **Status 2026-07-15:** P2 + P3 cleared except item 15.
+> **Status 2026-07-15 (review COMPLETE):** all items cleared or tracked.
 > Items 16–20 → commit a305caf2; item 9 → 30d97229 (also fixed the unpadded
 > LB-{n}.html 404 bug in db.py); items 10–14 → 8f689b3a (lbLabel call-site
-> migration stays opportunistic). Item 15 → TODO-243. P1 (items 1–8, plus the
-> item 19 PROJECT.md listing and item 12 convention note) → TODO-244.
+> migration stays opportunistic). P1 (items 1–8, plus the item 19 PROJECT.md
+> listing and item 12 convention note) → TODO-244, DONE same day: PROJECT.md
+> reference sections regenerated from code + new tools/check_project_refs.py
+> drift checker (wired into /session-close step 5). Only survivor: item 15
+> (renderer silent-catch audit) → TODO-243, still open.
+> Note (item 2): `fingerprints`/`audio_tracks` tables don't exist in current
+> code — taper_fingerprints.py computes in-memory; nothing to document.
 
 ---
 

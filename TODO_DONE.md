@@ -1,6 +1,14 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-244: STRUCTURE_REVIEW P1: regenerate PROJECT.md reference sections from code
+Priority: Medium
+Status: Done
+Added: 2026-07-15
+Closed: 2026-07-15
+Description: Items 1-8 of instructions/STRUCTURE_REVIEW.md: 88 undocumented Flask routes, 14 undocumented tables, file tree omits gui_next/ + 11 backend modules, stale screens/IPC/port/GUI-conventions sections, stale data/pages refs. Prefer generating routes/schema/tree from code (@app.route decorators, CREATE TABLE statements, disk) so it cannot drift again. Also fold in: item 19 concert_ranker module listing (quality_score.py/text_features.py), item 12 error-shape convention note ({"error": ...} + JSON errorhandler, added 2026-07-15).
+PROJECT.md reference sections regenerated from code (items 1-8 + item 19 listing + item 12 convention note): +428 lines — 78 routes, 12 schema blocks, file tree from disk incl gui_next/, screens/IPC/port/conventions sections rewritten, data/pages->data/site refs fixed. New tools/check_project_refs.py drift checker (294 routes, 62 tables, 24 screens, 42 modules -> 0 missing) wired into /session-close step 5. fingerprints/audio_tracks tables from the review don't exist in code — nothing to document.
+
 TODO-183: Concert Ranker — audio quality scoring & ranking
 Priority: Medium
 Status: Done

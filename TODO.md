@@ -1,15 +1,9 @@
 
-TODO-244: STRUCTURE_REVIEW P1: regenerate PROJECT.md reference sections from code
-Priority: Medium
-Status: Open
-Added: 2026-07-15
-Description: Items 1-8 of instructions/STRUCTURE_REVIEW.md: 88 undocumented Flask routes, 14 undocumented tables, file tree omits gui_next/ + 11 backend modules, stale screens/IPC/port/GUI-conventions sections, stale data/pages refs. Prefer generating routes/schema/tree from code (@app.route decorators, CREATE TABLE statements, disk) so it cannot drift again. Also fold in: item 19 concert_ranker module listing (quality_score.py/text_features.py), item 12 error-shape convention note ({"error": ...} + JSON errorhandler, added 2026-07-15).
-
 TODO-243: Audit 26 renderer fetch sites with silent .catch(() => {}) — keep only on polling loops (STRUCTURE_REVIEW item 15)
 Priority: Medium
 Status: Open
 Added: 2026-07-15
-Description: gui_next renderer has 26 fetch calls swallowing errors via .catch(() => {}) (heaviest: ScreenScraper x5, ScreenPipeline x3, ScreenLBDIR x3, ScreenCollection x3). Fine for interval polls, wrong for user-initiated actions which should Toast. Audit each site; keep silent-catch only on polls. See instructions/STRUCTURE_REVIEW.md item 15.
+Description: gui_next renderer has 26 fetch calls swallowing errors via .catch(() => {}) (heaviest: ScreenScraper x5, ScreenPipeline x3, ScreenLBDIR x3, ScreenCollection x3). Fine for interval polls, wrong for user-initiated actions which should Toast. Audit each site; keep silent-catch only on polls. See instructions/complete/STRUCTURE_REVIEW.md item 15.
 
 TODO-242: Clarify taper propagation and "Needs review" flags in library view
 Priority: Medium

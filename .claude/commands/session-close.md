@@ -73,6 +73,10 @@ schema, Flask routes, GUI screens/tabs, dependencies. The `## Change Log`
 table is **frozen** (see its header note) — do not add rows there.
 CHANGELOG.md is the only narrative change log.
 
+If the session touched backend routes/schema/modules or gui_next screens, run
+`.venv/bin/python3 tools/check_project_refs.py` — it lists anything on disk
+that PROJECT.md fails to mention and must exit 0 before finishing.
+
 ## Step 6 — Cross-cutting reminders
 
 - User-facing GUI strings changed → locale files must be updated
