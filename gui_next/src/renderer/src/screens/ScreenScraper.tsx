@@ -4,6 +4,7 @@ import { Button, Chip, Pill, Card, SectionHead, Toolbar, Input, Banner } from '.
 import { TableShell, TH, TR, TD } from '../components'
 import { Icon } from '../components/Icon'
 import { useScraperLogStore } from '../lib/scraperLogStore'
+import { LB_SITE_BASE } from '../lib/lbUrl'
 
 // ── Error Boundary ─────────────────────────────────────────────────────────────
 
@@ -321,7 +322,7 @@ function CrawlerTab({ status, logs, onClearLog }: {
               </div>
               {running && status.current_url && (
                 <div style={{ fontSize: 'var(--lbb-fs-10-5)', color: 'var(--lbb-fg3)', marginTop: 6, fontFamily: 'var(--lbb-mono)', wordBreak: 'break-all' }}>
-                  {status.current_url.replace('http://www.losslessbob.wonderingwhattochoose.com', '')}
+                  {status.current_url.replace(LB_SITE_BASE, '')}
                 </div>
               )}
               <StatGrid rows={[
@@ -966,7 +967,7 @@ function ScreenScraperInner() {
       if (crawler.running) {
         if (crawler.current_url && crawler.current_url !== p.crawlerUrl) {
           const action = crawler.stage === 'crawling' ? 'fetched' : crawler.stage
-          const shortUrl = (crawler.current_url as string).replace('http://www.losslessbob.wonderingwhattochoose.com', '')
+          const shortUrl = (crawler.current_url as string).replace(LB_SITE_BASE, '')
           pushLog('crawler', `${action.padEnd(8)} ${shortUrl}`)
           p.crawlerUrl = crawler.current_url
         }

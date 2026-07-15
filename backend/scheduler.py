@@ -7,11 +7,12 @@ from pathlib import Path
 from watchdog.events import FileSystemEventHandler
 from watchdog.observers import Observer
 
+from backend.checksum_utils import md5_file
 from backend.db import DB_PATH, get_integrity_scan_history, get_meta
-from backend.importer import md5_file, run_import
+from backend.importer import run_import
 from backend.paths import DATA_DIR
 
-_log = logging.getLogger(__name__)
+logger = logging.getLogger(__name__)
 _import_callbacks = []
 _observer = None
 
@@ -129,7 +130,7 @@ def _collection_poll_worker(stop_event: threading.Event, db_path=None) -> None:
                     "SELECT lb_number, disk_path FROM my_collection WHERE disk_path IS NOT NULL"
                 ).fetchall()
         except Exception:
-            _log.exception("collection_poll: DB query failed")
+            logger.exception("collection_poll: DB query failed")
             continue
         current_ids = {row["lb_number"] for row in rows}
         reported_missing &= current_ids
@@ -145,7 +146,7 @@ def _collection_poll_worker(stop_event: threading.Event, db_path=None) -> None:
                             "missing", f"Path no longer accessible: {dp}",
                         )
                     except Exception:
-                        _log.exception("collection_poll: log_integrity_event failed")
+                        logger.exception("collection_poll: log_integrity_event failed")
             else:
                 reported_missing.discard(lb)
 
@@ -201,7 +202,7 @@ def _integrity_scan_worker(stop_event: threading.Event, db_path=None) -> None:
                     continue
             integrity_monitor.start_scan_async()
         except Exception:
-            _log.exception("integrity_scan: scheduler check failed")
+            logger.exception("integrity_scan: scheduler check failed")
 
 
 def start_integrity_scan_scheduler(db_path=None):

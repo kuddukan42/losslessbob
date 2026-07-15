@@ -15,6 +15,8 @@ from backend.paths import (
     to_long_path,
 )
 
+logger = logging.getLogger(__name__)
+
 # --- Thread-local persistent connection pool (DB-02) ---
 _local = threading.local()
 
@@ -1927,7 +1929,7 @@ def init_db(db_path=None):
                         (_t, _s, _lb),
                     )
             conn.commit()
-            logging.getLogger(__name__).info(
+            logger.info(
                 "entries: backfilled taper_name/source_chain for %d rows", len(_rows)
             )
 
@@ -2113,7 +2115,7 @@ def init_db(db_path=None):
             )
             if _backfilled:
                 conn.execute("INSERT INTO entries_fts(entries_fts) VALUES('rebuild')")
-            logging.getLogger(__name__).info(
+            logger.info(
                 "entries: backfilled setlist for %d rows", _backfilled
             )
 
@@ -2125,7 +2127,7 @@ def init_db(db_path=None):
             conn.execute(
                 "INSERT OR REPLACE INTO meta(key, value) VALUES('lb_category_backfill_v2', '1')"
             )
-            logging.getLogger(__name__).info(
+            logger.info(
                 "entries: classified lb_category for %d rows (concert=%d, unknown=%d)",
                 _classified["classified"],
                 _classified.get("concert", 0),
@@ -2214,8 +2216,6 @@ def _bootstrap_flat_file_legacy(db_path=None) -> None:
     insert a placeholder row so the history panel is not completely empty and
     the discovery logic has a baseline to compare against.
     """
-    import logging as _log_mod
-    _log = _log_mod.getLogger(__name__)
     try:
         conn = get_connection(db_path)
         count = conn.execute("SELECT COUNT(*) FROM flat_file_releases").fetchone()[0]
@@ -2237,9 +2237,9 @@ def _bootstrap_flat_file_legacy(db_path=None) -> None:
                 ("", "", _zip_name, last_lb, import_hash, last_date)
             )
         )
-        _log.info("flat_file: bootstrapped legacy applied row (LastLB=%d)", last_lb)
+        logger.info("flat_file: bootstrapped legacy applied row (LastLB=%d)", last_lb)
     except Exception as exc:
-        _log.warning("flat_file bootstrap failed: %s", exc)
+        logger.warning("flat_file bootstrap failed: %s", exc)
 
 
 def import_dylan_performances(db_path=None) -> int:
@@ -2254,15 +2254,13 @@ def import_dylan_performances(db_path=None) -> int:
 
     from backend.paths import DATA_DIR as _DATA
 
-    _log = logging.getLogger(__name__)
-
     conn = get_connection(db_path)
     if conn.execute("SELECT COUNT(*) FROM dylan_performances").fetchone()[0] > 0:
         return 0  # already imported
 
     candidates = sorted(_DATA.glob("*Dylan_Performance_fixed.ods"))
     if not candidates:
-        _log.warning("dylan_performances: ODS file not found in %s", _DATA)
+        logger.warning("dylan_performances: ODS file not found in %s", _DATA)
         return 0
     ods_path = candidates[-1]  # take the most recent if multiple
 
@@ -2275,12 +2273,12 @@ def import_dylan_performances(db_path=None) -> int:
         with _zf.ZipFile(ods_path) as z:
             root = ET.fromstring(z.read("content.xml"))
     except Exception as exc:
-        _log.error("dylan_performances: failed to read ODS: %s", exc)
+        logger.error("dylan_performances: failed to read ODS: %s", exc)
         return 0
 
     sheet = root.find(".//{urn:oasis:names:tc:opendocument:xmlns:table:1.0}table")
     if sheet is None:
-        _log.error("dylan_performances: no table element found in ODS")
+        logger.error("dylan_performances: no table element found in ODS")
         return 0
 
     rows = sheet.findall("table:table-row", NS)
@@ -2314,7 +2312,7 @@ def import_dylan_performances(db_path=None) -> int:
             _records,
         )
     )
-    _log.info("dylan_performances: imported %d rows from %s", len(records), ods_path.name)
+    logger.info("dylan_performances: imported %d rows from %s", len(records), ods_path.name)
     return len(records)
 
 
@@ -2343,7 +2341,7 @@ def get_performance_by_date(date_str: str, db_path=None) -> dict | None:
     if not rows:
         return None
     if len(rows) > 1:
-        logging.getLogger(__name__).warning(
+        logger.warning(
             "get_performance_by_date: %d performances on %s — returning first",
             len(rows), date_str,
         )
@@ -4396,7 +4394,6 @@ def backup_database(reason: str = "manual", db_path=None) -> "Path":
     Keeps the 10 most recent backups, pruning older ones.
     Returns the Path of the new backup file.
     """
-    import logging
     from datetime import UTC
     from datetime import datetime as _dt
 
@@ -4411,7 +4408,7 @@ def backup_database(reason: str = "manual", db_path=None) -> "Path":
 
     conn = get_connection(db_path)
     conn.execute("VACUUM INTO ?", (str(out_path),))
-    logging.getLogger(__name__).info("Database backed up to %s", out_path)
+    logger.info("Database backed up to %s", out_path)
 
     # Prune: keep newest 10 backups only
     backups = sorted(backup_dir.glob("losslessbob_*.db"), key=lambda p: p.stat().st_mtime)
@@ -4446,7 +4443,6 @@ def migrate_lb_master(db_path=None) -> int:
     Deletes entries.status='missing' tombstones after populating lb_master.
     Returns number of rows inserted, or 0 if skipped.
     """
-    import logging
     conn = get_connection(db_path)
 
     existing = conn.execute("SELECT COUNT(*) FROM lb_master").fetchone()[0]
@@ -4497,7 +4493,7 @@ def migrate_lb_master(db_path=None) -> int:
 
     get_write_queue().execute(_run)
 
-    logging.getLogger(__name__).info(
+    logger.info(
         "lb_master populated: %d rows (%d public, %d private, %d missing)",
         len(rows),
         sum(1 for r in rows if r[1] == "public"),
@@ -4861,7 +4857,7 @@ def import_overrides(overrides: list[dict], db_path=None) -> dict:
             )
         )
         imported += 1
-    logging.getLogger(__name__).info(
+    logger.info(
         "import_overrides: %d imported, %d skipped", imported, skipped
     )
     return {"imported": imported, "skipped": skipped}
@@ -5062,13 +5058,11 @@ def export_master_db(reason: str = "publish", db_path=None) -> "tuple[Path, dict
     """
     import hashlib
     import json
-    import logging
     from datetime import UTC
     from datetime import datetime as _dt
 
     from backend.paths import DATA_DIR as _DATA
 
-    log = logging.getLogger(__name__)
     export_dir = _DATA / "exports"
     export_dir.mkdir(parents=True, exist_ok=True)
 
@@ -5080,7 +5074,7 @@ def export_master_db(reason: str = "publish", db_path=None) -> "tuple[Path, dict
     # Step 1: consistent snapshot via VACUUM INTO
     src = get_connection(db_path)
     src.execute("VACUUM INTO ?", (str(out_path),))
-    log.info("Master export snapshot created at %s", out_path)
+    logger.info("Master export snapshot created at %s", out_path)
 
     # Steps 2-5: clean the snapshot in-place (separate connection on the file)
     snap = sqlite3.connect(str(out_path))
@@ -5173,7 +5167,7 @@ def export_master_db(reason: str = "publish", db_path=None) -> "tuple[Path, dict
     }
     with open(manifest_path, "w", encoding="utf-8") as f:
         json.dump(manifest, f, indent=2)
-    log.info(
+    logger.info(
         "Master export verified: %s rows (lb_master), %s bytes, sha256=%s",
         lb_count, size_bytes, sha256[:12],
     )
@@ -5367,11 +5361,9 @@ def import_master_db(snapshot_path: "Path | str", db_path=None) -> dict:
     """
     import hashlib
     import json
-    import logging
     from datetime import UTC
     from datetime import datetime as _dt
 
-    log = logging.getLogger(__name__)
     snapshot_path = Path(snapshot_path)
     manifest_path = snapshot_path.with_name(snapshot_path.name + ".manifest.json")
     if not snapshot_path.exists():
@@ -5426,7 +5418,7 @@ def import_master_db(snapshot_path: "Path | str", db_path=None) -> dict:
 
     # Step 3: backup local DB before destructive replace
     backup_path = backup_database(reason="pre_master_import", db_path=db_path)
-    log.info("Pre-import backup written to %s", backup_path)
+    logger.info("Pre-import backup written to %s", backup_path)
 
     # Step 4-7: copy under a transaction
     conn = get_connection(db_path)
@@ -5477,7 +5469,7 @@ def import_master_db(snapshot_path: "Path | str", db_path=None) -> dict:
                 try:
                     conn.execute("INSERT INTO entries_fts(entries_fts) VALUES('rebuild')")
                 except sqlite3.OperationalError as e:
-                    log.warning("FTS rebuild failed (will rebuild on next FTS access): %s", e)
+                    logger.warning("FTS rebuild failed (will rebuild on next FTS access): %s", e)
                 conn.commit()
             finally:
                 conn.execute("DETACH DATABASE incoming")

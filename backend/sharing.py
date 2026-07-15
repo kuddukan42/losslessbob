@@ -15,7 +15,7 @@ from collections.abc import Generator
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
-log = logging.getLogger(__name__)
+logger = logging.getLogger(__name__)
 
 SHARE_STATE_FILE = Path("data/active_share.json")
 AUDIO_EXTENSIONS = {".flac", ".shn", ".ape", ".wav", ".mp3", ".ogg", ".m4a", ".wv"}
@@ -48,7 +48,7 @@ def _persist() -> None:
         SHARE_STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
         SHARE_STATE_FILE.write_text(json.dumps(payload, indent=2))
     except OSError as exc:
-        log.warning("sharing: failed to persist state: %s", exc)
+        logger.warning("sharing: failed to persist state: %s", exc)
 
 
 def load_persisted_shares() -> None:
@@ -59,7 +59,7 @@ def load_persisted_shares() -> None:
     try:
         payload = json.loads(SHARE_STATE_FILE.read_text())
     except (OSError, json.JSONDecodeError) as exc:
-        log.warning("sharing: could not read state file: %s", exc)
+        logger.warning("sharing: could not read state file: %s", exc)
         return
 
     now = datetime.now(UTC)
@@ -68,7 +68,7 @@ def load_persisted_shares() -> None:
         _tunnel_url = payload.get("tunnel_url")
 
         if _tunnel_pid and not is_tunnel_alive():
-            log.info("sharing: saved tunnel PID %s is dead; clearing tunnel state", _tunnel_pid)
+            logger.info("sharing: saved tunnel PID %s is dead; clearing tunnel state", _tunnel_pid)
             _tunnel_pid = None
             _tunnel_url = None
 
@@ -89,7 +89,7 @@ def load_persisted_shares() -> None:
             except (KeyError, ValueError):
                 continue
 
-        log.info("sharing: loaded %d active share(s) from disk", len(_active_shares))
+        logger.info("sharing: loaded %d active share(s) from disk", len(_active_shares))
 
 
 # ── Share CRUD ────────────────────────────────────────────────────────────────
@@ -123,7 +123,7 @@ def create_share(folder_path: str, ttl_hours: int = DEFAULT_TTL_HOURS,
     with _shares_lock:
         _active_shares[token] = share
         _persist()
-    log.info("sharing: created share %s (%d files, TTL %dh)", token[:8], len(files), ttl_hours)
+    logger.info("sharing: created share %s (%d files, TTL %dh)", token[:8], len(files), ttl_hours)
     return {"token": token, **share}
 
 
@@ -148,7 +148,7 @@ def revoke_share(token: str) -> None:
         _active_shares.pop(token, None)
         _persist()
         remaining = len(_active_shares)
-    log.info("sharing: revoked share %s; %d remaining", token[:8], remaining)
+    logger.info("sharing: revoked share %s; %d remaining", token[:8], remaining)
     if remaining == 0:
         stop_cloudflare_tunnel()
 
@@ -278,10 +278,10 @@ def start_cloudflare_tunnel(port: int = 5174) -> str | None:
     """
     global _tunnel_pid, _tunnel_url
     if not cloudflared_available():
-        log.warning("sharing: cloudflared not found on PATH")
+        logger.warning("sharing: cloudflared not found on PATH")
         return None
     if is_tunnel_alive():
-        log.info("sharing: tunnel already alive (PID %s)", _tunnel_pid)
+        logger.info("sharing: tunnel already alive (PID %s)", _tunnel_pid)
         return _tunnel_url
 
     proc = subprocess.Popen(
@@ -313,9 +313,9 @@ def start_cloudflare_tunnel(port: int = 5174) -> str | None:
             for share in _active_shares.values():
                 share["tunnel_url"] = url
             _persist()
-        log.info("sharing: tunnel started PID=%s url=%s", proc.pid, url)
+        logger.info("sharing: tunnel started PID=%s url=%s", proc.pid, url)
     else:
-        log.warning("sharing: could not parse tunnel URL from cloudflared output")
+        logger.warning("sharing: could not parse tunnel URL from cloudflared output")
 
     return url
 
@@ -327,7 +327,7 @@ def stop_cloudflare_tunnel() -> None:
         return
     try:
         os.kill(_tunnel_pid, 15)
-        log.info("sharing: sent SIGTERM to tunnel PID %s", _tunnel_pid)
+        logger.info("sharing: sent SIGTERM to tunnel PID %s", _tunnel_pid)
     except OSError:
         pass
     with _shares_lock:
@@ -352,7 +352,7 @@ def _reaper_loop() -> None:
                     try:
                         exp = datetime.fromisoformat(share["expires_at"])
                     except (KeyError, TypeError, ValueError):
-                        log.warning("sharing: share %s has invalid expires_at; reaping it",
+                        logger.warning("sharing: share %s has invalid expires_at; reaping it",
                                     token[:8])
                         expired.append(token)
                         continue
@@ -363,9 +363,9 @@ def _reaper_loop() -> None:
             for token in expired:
                 revoke_share(token)
             if expired:
-                log.info("sharing: reaped %d expired share(s)", len(expired))
+                logger.info("sharing: reaped %d expired share(s)", len(expired))
         except Exception:
-            log.exception("sharing: reaper iteration failed; retrying next interval")
+            logger.exception("sharing: reaper iteration failed; retrying next interval")
 
 
 threading.Thread(target=_reaper_loop, name="share-reaper", daemon=True).start()
