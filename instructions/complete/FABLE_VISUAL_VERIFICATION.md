@@ -166,9 +166,8 @@ Resume tracking (update in place, per usage-pacing convention):
 [x] Bite 2  — driver MVP       (DONE 2026-07-15 — full tour passes on Tier B)
 [x] Bite 3a — resize/size-matrix/scale-matrix/watch/main-eval
                                (DONE 2026-07-15 — all matrices verified exact; findings 9-11)
-[ ] Bite 3b — progress fixture (DEFERRED — bigger than §5 assumed, see finding 12;
-                               tj chose Bite 4 first on 2026-07-15. Tracked in TODO-247,
-                               which stays OPEN for it. Design with tj before any code.)
+[–] Bite 3b — progress fixture (WON'T DO — tj sign-off 2026-07-15: "not enough animation
+                               in the app to matter". Never built. See the note below.)
 [x] Bite 4  — skill + docs     (DONE 2026-07-15 — /verify --electron, PROJECT.md tools/
                                listing, CLAUDE.md note, this spec moved to complete/)
 ```
@@ -176,13 +175,26 @@ Resume tracking (update in place, per usage-pacing convention):
 Bite 3 split into 3a (driver actions, no backend work) and 3b (progress fixture) once
 finding 12 showed the fixture is a backend design job, not driver plumbing.
 
-**DECISION (tj, 2026-07-15): Bite 4 first.** Bite 3b and Bite 4 were independent; Bite 4 banks
-the working driver behind a skill before a chunk is spent on backend design, and 3b's design
-conversation is better had fresh. Bites 1-3a + 4 satisfy acceptance criteria 1, 2, 3, 5 and 6.
-Criterion 4 (`watch` a meter fill 0→100%) remains **unmet** and is the whole content of 3b.
+**DECISION 1 (tj, 2026-07-15): Bite 4 before Bite 3b.** The two were independent; Bite 4 banked
+the working driver behind a skill before a chunk went on backend design.
 
-This spec lives in `complete/` as the design record for the shipped driver — it is *not* a
-statement that every bite landed. Bite 3b is still open; see finding 12 before starting it.
+**DECISION 2 (tj, 2026-07-15): Bite 3b is WON'T DO — this spec is closed.** Rationale: *"not
+enough animation in the app to matter"*. The fixture's only consumer was one progress meter,
+and its price was a test-only intercept inside `start_file_job` in **production** code
+(`backend/filer.py`), past three guards, plus a simulated `_run()` and a staged pipeline row
+(finding 12). Not worth it for a meter.
+
+Consequences, accepted knowingly:
+- Acceptance criterion 4 is **permanently unmet**. Criteria 1, 2, 3, 5, 6 are met.
+- `FileProgressBar`'s mid-fill state is **not machine-verifiable**. Nothing else regressed.
+- The `watch` **action itself is built and works** (Bite 3a — 5 frames at 300ms, stops on both
+  the selector and timeout paths). Only the *synthetic fixture* was dropped: `watch` still runs
+  against a real job. Do not mistake this decision for "watch was cancelled".
+
+Revisit only if a future screen grows progress/animation genuinely worth machine-verifying —
+then re-read finding 12 first, because the design problem it describes has not changed.
+
+This spec is now closed in full: 1, 2, 3a and 4 shipped; 3b deliberately killed.
 
 Bite 4 also cleared a pre-existing gap (deliberate, not an oversight): PROJECT.md's `tools/`
 listing mentioned no driver at all — `browser_driver.mjs` was already absent before this work.
@@ -242,7 +254,9 @@ way — it checks routes/tables/screens/backend modules, not `tools/*.mjs`.
     Fixing it would mean fudging the input (request 898 to land on 900) or a measure-and-retry
     loop. §10 puts pixel-diff baselines out of scope, so a 3px drift on one row has no consumer.
 12. **The progress fixture (§5) is a backend design job, not driver plumbing** — this is why
-    Bite 3 was split. §5 says to feed "the same job/progress transport ScreenPipeline polls",
+    Bite 3 was split, and ultimately why tj killed it (§8 Decision 2: the cost below, for one
+    meter, in production code). Kept as the record of *why* — read it before any revisit.
+    §5 says to feed "the same job/progress transport ScreenPipeline polls",
     but there are *two* and it matters which: `/api/pipeline/run/start` + `/run/status` is the
     per-folder verdict job (no meter), while the thing that visibly fills 0→100% is
     `FileProgressBar`, fed by `/api/pipeline/file/start` + `/file/status` and backed by
@@ -261,7 +275,11 @@ way — it checks routes/tables/screens/backend modules, not `tools/*.mjs`.
    Lookup screen, with no manual display setup and no compositor/portal interaction.
 2. Window resized to each size-matrix entry with a PNG per size; layout differences visible.
 3. `scale-matrix` produces visibly re-scaled UI at 1.25/1.5/2 DPR.
-4. `watch` on the progress fixture yields ≥5 frames showing monotonic meter progress.
+4. ~~`watch` on the progress fixture yields ≥5 frames showing monotonic meter progress.~~
+   **WITHDRAWN 2026-07-15 (tj): the fixture is won't-do — see §8 Decision 2. This criterion is
+   permanently unmet by choice, not by failure.** `watch` itself works and was verified against
+   the selector and timeout paths; only the synthetic progress fixture it would have watched
+   was never built.
 5. A manually-started backend on 5174 survives a full driver session (`LB_NO_BACKEND_SPAWN`).
 6. All of the above run without touching NVIDIA GL (`--disable-gpu` in every probe row) and
    without any screen-capture API.
