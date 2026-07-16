@@ -100,9 +100,12 @@ interface RecordingRow {
   curated?: string[]
   // FABLE_TAPER_ATTRIBUTION phase 2 (F4 Library payload pattern, §5) — merged
   // in from /api/library/performances alongside the ranking fields above.
-  // taperConfirmed only exists for confidence='confirmed' rows (pill-eligible);
-  // taperReview flags propagated/inferred/conflict rows for the review filter.
+  // taperConfirmed only exists for confidence='confirmed' rows (solid pill);
+  // taperPropagated for conflict-free 'propagated' rows (outline pill,
+  // TODO-242 decision 2026-07-16); taperReview flags propagated/inferred/
+  // conflict rows for the review filter.
   taperConfirmed?: string
+  taperPropagated?: string
   taperReview?: boolean
 }
 
@@ -857,7 +860,7 @@ export function ScreenLibrary(): React.JSX.Element {
 
     const badges = (badgeData ?? {}) as Record<string, {
       pickRank?: number; absGrade?: string; curated?: string[]
-      taperConfirmed?: string; taperReview?: boolean
+      taperConfirmed?: string; taperPropagated?: string; taperReview?: boolean
     }>
 
     return (catalog as any[]).map((d): RecordingRow => {
@@ -896,6 +899,7 @@ export function ScreenLibrary(): React.JSX.Element {
         if (b.absGrade) row.absGrade = b.absGrade
         if (b.curated) row.curated = b.curated
         if (b.taperConfirmed) row.taperConfirmed = b.taperConfirmed
+        if (b.taperPropagated) row.taperPropagated = b.taperPropagated
         if (b.taperReview) row.taperReview = b.taperReview
       }
       return row
@@ -1324,12 +1328,15 @@ export function ScreenLibrary(): React.JSX.Element {
                                 <span title={t('library.picks.recommendedTitle')} style={{ color: 'var(--lbb-accent-mid)', flex: '0 0 auto' }}>★</span>
                               )}
                               {/* Confirmed-taper attribution upgrades the raw free-text
-                                  taper pill (F4 badges on the recording lens, TODO-186). */}
+                                  taper pill (F4 badges on the recording lens, TODO-186).
+                                  Propagated tier renders outline (non-soft), TODO-242. */}
                               {r.taperConfirmed
                                 ? <Pill tone="info" soft>{t('library.picks.taperBadge', { taper: r.taperConfirmed })}</Pill>
-                                : r.taperKnown && taperBadgeLabel(r.taper) && (
-                                    <Pill tone="mute" soft title={t('library.columns.taper')}>{taperBadgeLabel(r.taper)}</Pill>
-                                  )}
+                                : r.taperPropagated
+                                  ? <Pill tone="info" title={t('library.picks.taperPropagatedTitle')}>{t('library.picks.taperBadge', { taper: r.taperPropagated })}</Pill>
+                                  : r.taperKnown && taperBadgeLabel(r.taper) && (
+                                      <Pill tone="mute" soft title={t('library.columns.taper')}>{taperBadgeLabel(r.taper)}</Pill>
+                                    )}
                               {r.curated?.map(name => (
                                 <Pill key={name} tone="info" soft>{t('library.picks.curatedBadge', { curator: name })}</Pill>
                               ))}
@@ -1826,6 +1833,7 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
           if (stub.absGrade) row.absGrade = stub.absGrade
           if (stub.curated) row.curated = stub.curated
           if (stub.taperConfirmed) row.taperConfirmed = stub.taperConfirmed
+          if (stub.taperPropagated) row.taperPropagated = stub.taperPropagated
           if (stub.taperReview) row.taperReview = stub.taperReview
           return row
         })
@@ -2501,9 +2509,11 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
                                 ))}
                                 {single && (lone?.taperConfirmed
                                   ? <Pill tone="info" soft>{t('library.picks.taperBadge', { taper: lone.taperConfirmed })}</Pill>
-                                  : lone?.taperKnown && taperBadgeLabel(lone.taper) && (
-                                      <Pill tone="mute" soft title={t('library.columns.taper')}>{taperBadgeLabel(lone.taper)}</Pill>
-                                    ))}
+                                  : lone?.taperPropagated
+                                    ? <Pill tone="info" title={t('library.picks.taperPropagatedTitle')}>{t('library.picks.taperBadge', { taper: lone.taperPropagated })}</Pill>
+                                    : lone?.taperKnown && taperBadgeLabel(lone.taper) && (
+                                        <Pill tone="mute" soft title={t('library.columns.taper')}>{taperBadgeLabel(lone.taper)}</Pill>
+                                      ))}
                                 {single && lone?.desc && (
                                   <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', color: 'var(--lbb-fg2)', fontSize: 'var(--lbb-fs-11-5)', minWidth: 0 }}>
                                     {lone.desc}
@@ -2567,9 +2577,11 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
                               ))}
                               {rec.taperConfirmed
                                 ? <Pill tone="info" soft>{t('library.picks.taperBadge', { taper: rec.taperConfirmed })}</Pill>
-                                : rec.taperKnown && taperBadgeLabel(rec.taper) && (
-                                    <Pill tone="mute" soft title={t('library.columns.taper')}>{taperBadgeLabel(rec.taper)}</Pill>
-                                  )}
+                                : rec.taperPropagated
+                                  ? <Pill tone="info" title={t('library.picks.taperPropagatedTitle')}>{t('library.picks.taperBadge', { taper: rec.taperPropagated })}</Pill>
+                                  : rec.taperKnown && taperBadgeLabel(rec.taper) && (
+                                      <Pill tone="mute" soft title={t('library.columns.taper')}>{taperBadgeLabel(rec.taper)}</Pill>
+                                    )}
                               <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{rec.desc}</span>
                               <span style={{ color: 'var(--lbb-fg3)', fontSize: 'var(--lbb-fs-11)' }}>{rec.src ? (SOURCE_FULL[rec.src] ?? rec.src) : '—'}</span>
                             </span>

@@ -1663,7 +1663,8 @@
       "gradeBadge": "Voto {{grade}}",
       "curatedBadge": "La scelta di {{curator}}",
       "notComputedNote": "Non ancora calcolato — eseguire “Ricalcola dati derivati” in Configurazione.",
-      "taperBadge": "{{taper}}"
+      "taperBadge": "{{taper}}",
+      "taperPropagatedTitle": "Il nastro è stato copiato da una registrazione collegata dello stesso nastro (non confermato direttamente)"
     },
     "taper": {
       "label": "Attribuzione a Taper",

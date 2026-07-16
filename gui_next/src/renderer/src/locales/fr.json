@@ -843,7 +843,7 @@
       "placeholder": "LB-00018, LB-00042, 1001…",
       "foundCount": "{{count}} trouvé dans votre collection",
       "missingCount": "{{count}} introuvable : {{list}}",
-      "postButton": "Post {{count}}"
+      "postButton": "Message {{count}}"
     },
     "filters": {
       "xrefCopies": "Mes copies de références croisées",
@@ -1663,7 +1663,8 @@
       "gradeBadge": "Note : {{grade}}",
       "curatedBadge": "Sélection de {{curator}}",
       "notComputedNote": "Pas encore calculé — lancez « Recalculer les données dérivées » dans la configuration.",
-      "taperBadge": "{{taper}}"
+      "taperBadge": "{{taper}}",
+      "taperPropagatedTitle": "Copie réalisée à partir d'un enregistrement lié provenant de la même bande (non confirmé directement)"
     },
     "taper": {
       "label": "Crédits : Taper",

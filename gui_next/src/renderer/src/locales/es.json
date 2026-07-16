@@ -1663,7 +1663,8 @@
       "gradeBadge": "Calificación: {{grade}}",
       "curatedBadge": "Selección de {{curator}}",
       "notComputedNote": "Aún no se han calculado: ejecuta «Recalcular datos derivados» en Configuración.",
-      "taperBadge": "{{taper}}"
+      "taperBadge": "{{taper}}",
+      "taperPropagatedTitle": "La copia se ha obtenido a partir de una grabación vinculada de la misma cinta (sin confirmar directamente)."
     },
     "taper": {
       "label": "Atribución de Taper",

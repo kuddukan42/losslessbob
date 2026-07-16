@@ -1652,6 +1652,7 @@
       "gradeBadge": "Grade {{grade}}",
       "curatedBadge": "{{curator}}'s pick",
       "taperBadge": "{{taper}}",
+      "taperPropagatedTitle": "Taper propagated from a linked recording of the same tape (not directly confirmed)",
       "notComputedNote": "Not yet computed — run “Recompute derived data” in Setup."
     },
     "taper": {
