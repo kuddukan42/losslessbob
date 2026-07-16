@@ -672,6 +672,9 @@ export function ScreenSearch(): React.JSX.Element {
   const [rows, setRows]           = useState<SearchRow[]>([])
   const [loading, setLoading]     = useState(false)
   const [ownedLbs, setOwnedLbs]   = useState<Set<number>>(new Set())
+  // Entry-level xref map ({lb_number: [xref ids]}) — one fetch, cached for the
+  // life of the screen (same shape/consumer the legacy Search tab used).
+  const [xrefMap, setXrefMap]     = useState<Record<number, number[]>>({})
 
   // ── Filter ───────────────────────────────────────────────────────────────
   const [search, setSearch]           = useState('')
@@ -720,6 +723,17 @@ export function ScreenSearch(): React.JSX.Element {
   }, [])
 
   useEffect(() => { refreshOwned() }, [refreshOwned])
+
+  // ── Fetch entry-level xref map (once, cached) ─────────────────────────────
+
+  useEffect(() => {
+    fetch(`${BASE}/api/checksums/xref_map`)
+      .then(r => r.json())
+      .then((data: Record<string, number[]>) => {
+        if (data && typeof data === 'object' && !Array.isArray(data)) setXrefMap(data)
+      })
+      .catch(() => {})
+  }, [])
 
   // ── Fetch year range bounds ───────────────────────────────────────────────
 
@@ -819,8 +833,15 @@ export function ScreenSearch(): React.JSX.Element {
   // ── Derived: rows with correct owned field ────────────────────────────────
 
   const ownedRows = useMemo(() =>
-    rows.map(r => ({ ...r, owned: ownedLbs.has(r.lbNumber) })),
-    [rows, ownedLbs]
+    rows.map(r => ({
+      ...r,
+      owned: ownedLbs.has(r.lbNumber),
+      // Entry-level: this LB entry has alternate filesets documented (A13) —
+      // display as the comma-joined xref ids, the same shape the legacy
+      // Search tab used. Not a copy-level statement (docs/XREF_SEMANTICS.md).
+      xref:  xrefMap[r.lbNumber]?.length ? xrefMap[r.lbNumber].join(', ') : null,
+    })),
+    [rows, ownedLbs, xrefMap]
   )
 
   // ── Facet counts (from all unfiltered results) ────────────────────────────

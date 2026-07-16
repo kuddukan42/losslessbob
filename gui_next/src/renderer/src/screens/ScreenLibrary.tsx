@@ -1362,8 +1362,10 @@ export function ScreenLibrary(): React.JSX.Element {
                             <TD align="center">
                               {r.dup
                                 ? <Pill tone="warn" soft>{t('library.panel.dup')}</Pill>
+                                // Entry-level (A15/D4): this LB has alternate filesets
+                                // documented, not that this row's copy is one of them.
                                 : r.xref
-                                  ? <Pill tone="info" soft>{t('library.panel.xref')}</Pill>
+                                  ? <Pill tone="info" soft>{t('library.panel.altFilesets')}</Pill>
                                   : null}
                             </TD>
                           </>}

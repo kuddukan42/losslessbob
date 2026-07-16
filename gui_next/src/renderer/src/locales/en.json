@@ -731,7 +731,6 @@
     },
     "detail": {
       "owned": "Owned",
-      "xref": "Xref",
       "xrefCopy": "Xref fileset · xref-{{id}}",
       "altFilesetsNote": "Alt filesets documented for this entry",
       "folder": "Folder",
@@ -1541,7 +1540,6 @@
       "notOwned": "Not owned",
       "wishlist": "Wishlist",
       "dup": "dup",
-      "xref": "xref",
       "altFilesets": "Alt filesets",
       "folder": "Folder",
       "confirmed": "Confirmed",
