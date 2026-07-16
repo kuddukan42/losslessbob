@@ -52,24 +52,33 @@ def _resolve_run_dir(obs_conn: sqlite3.Connection, run_id: str, concert_date: st
 def _parse_verdict(analysis_md_text: str) -> "tuple[bool, str | None]":
     """Parse an analysis.md's ``## Verdict:`` line for a needs-review flag + reason.
 
-    Per tools/tapematch/ANALYSIS_WRITER_PROMPT.md, a flagged verdict always
-    reads ``<N> recordings — <M> families — result needs review — <reason>``.
-    Returns ``(False, None)`` if there's no Verdict line or it doesn't flag
-    review (e.g. "result looks correct" / "all sources confirmed different").
+    Per tools/tapematch/ANALYSIS_WRITER_PROMPT.md the canonical flagged form is
+    ``<N> recordings — <M> families — result needs review — <reason>``, but the
+    written corpus also contains ``needs review: <reason>`` and
+    ``needs review (<reason>)`` variants (the pre-2026-07-16 parser dropped
+    those reasons, leaving NULL review_reason — the TODO-242 tooltip gap).
+    All three delimiters are accepted; a bare ``needs review`` with no trailing
+    reason yields ``(True, None)``. Returns ``(False, None)`` if there's no
+    Verdict line or it doesn't flag review (e.g. "result looks correct" /
+    "all sources confirmed different").
     """
     m = _VERDICT_LINE_RE.search(analysis_md_text)
     if not m:
         return False, None
     text = m.group("text")
-    if "needs review" not in text.lower():
+    pos = text.lower().find("needs review")
+    if pos < 0:
         return False, None
-    parts = text.split("—")
-    for i, part in enumerate(parts):
-        if "needs review" in part.lower():
-            tail = parts[i + 1 :]
-            reason = "—".join(tail).strip() or None
-            return True, reason
-    return True, None
+    rest = text[pos + len("needs review"):].strip()
+    reason: str | None = None
+    if rest.startswith("—"):
+        reason = rest.lstrip("—").strip() or None
+    elif rest.startswith(":"):
+        reason = rest[1:].strip() or None
+    elif rest.startswith("("):
+        m2 = re.match(r"\((?P<r>.+)\)\s*$", rest, re.DOTALL)
+        reason = (m2.group("r") if m2 else rest.strip("() ")).strip() or None
+    return True, reason
 
 
 def _read_review_flag(run_dir: Path) -> "tuple[bool, str | None]":

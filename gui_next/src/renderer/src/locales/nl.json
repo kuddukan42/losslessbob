@@ -1703,6 +1703,18 @@
         "noResults": "Geen resultaten",
         "notInLibrary": "Niet in de bibliotheek"
       }
+    },
+    "legend": {
+      "label": "Legenda",
+      "title": "Badges in deze lijst",
+      "taperSample": "taper",
+      "recommended": "Aanbevolen tekst voor deze datum",
+      "taperConfirmed": "Taper — bevestigde bronvermelding (seriecode of door curator geverifieerd)",
+      "taperPropagated": "Taper — afgeleid van een gekoppelde opname van dezelfde tape (beweeg de muis erover voor details)",
+      "taperFreeText": "Taper — niet geverifieerd, ontleend aan de vrije tekstbeschrijving van het item",
+      "needsReview": "TapeMatch heeft deze groep gemarkeerd — beweeg de muis over het pictogram voor de specifieke reden",
+      "familyBest": "Best beoordeelde versie binnen de TapeMatch-familie",
+      "curated": "Verschijnt op de lijst met aanbevelingen van deze curator"
     }
   },
   "tapematch": {
