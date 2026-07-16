@@ -96,6 +96,7 @@ USER_TABLES = (
     "setlist_fingerprint_suggestions",
     "xref_ingest_filesets",
     "xref_ingest_rows",
+    "user_taper_aliases",
 )
 
 # Guard against f-string injection if a table name is ever mis-typed (#10)
@@ -451,6 +452,24 @@ CREATE TABLE IF NOT EXISTS xref_ingest_rows (
 );
 CREATE INDEX IF NOT EXISTS idx_xref_ingest_rows_fileset
     ON xref_ingest_rows(fileset_id);
+
+-- Curator/install-local overrides on top of backend.db._BUILTIN_TAPER_ALIASES
+-- (TODO-241): audit trail / provenance only, USER-tier, never exported (see
+-- USER_TABLES). 'add' rows add/override an alias_norm -> canonical mapping;
+-- 'remove' rows suppress a builtin alias key so it no longer resolves. See
+-- backend.db.reload_taper_aliases, which merges these into the live
+-- _KNOWN_TAPER_ALIASES / _TAPER_UNIVERSE globals.
+CREATE TABLE IF NOT EXISTS user_taper_aliases (
+    alias_norm  TEXT PRIMARY KEY,
+    canonical   TEXT NOT NULL,
+    action      TEXT NOT NULL CHECK(action IN ('add', 'remove')),
+    approved    INTEGER NOT NULL DEFAULT 1,
+    note        TEXT,
+    created_at  TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at  TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+CREATE INDEX IF NOT EXISTS idx_user_taper_aliases_action
+    ON user_taper_aliases(action, approved);
 
 CREATE TABLE IF NOT EXISTS lb_alias (
     alias_lb       INTEGER PRIMARY KEY,
@@ -1132,6 +1151,27 @@ def _strip_bt_parens(text: str) -> str:
     return out
 
 
+def _normalise_alias_key(text: str | None) -> str:
+    """Lowercase + strip punctuation to the exact key form used in
+    :data:`_KNOWN_TAPER_ALIASES` (the pre-lookup half of :func:`_normalise_taper`,
+    factored out so a curator-entered alias — TODO-241, ``user_taper_aliases`` —
+    hashes to the same key that free-text parsing would produce).
+
+    Args:
+        text: Raw text (name, handle, or free-text fragment). May be None.
+
+    Returns:
+        The normalised key, or '' for falsy/blank input (never None), so
+        callers can treat an empty return as "not a valid alias" uniformly.
+    """
+    if not text:
+        return ""
+    s = text.lower()
+    s = re.sub(r'[^a-z0-9\s]', ' ', s)
+    s = re.sub(r'\s+', ' ', s).strip()
+    return s
+
+
 def extract_taper_and_source(description: str) -> tuple[str | None, str | None]:
     """Parse free-text description into (taper_name, source_chain).
 
@@ -1157,7 +1197,7 @@ def extract_taper_and_source(description: str) -> tuple[str | None, str | None]:
     m0 = _KNOWN_TAPER_RE.search(d600)
     if m0:
         raw_h = m0.group(1)
-        norm_h = re.sub(r'\s+', ' ', re.sub(r'[^a-z0-9\s]', ' ', raw_h.lower())).strip()
+        norm_h = _normalise_alias_key(raw_h)
         taper_name = _KNOWN_TAPER_ALIASES.get(norm_h, raw_h)
     if not taper_name:
         m_lt = _LT_TAPER_RE.search(d600)
@@ -1362,7 +1402,7 @@ def extract_taper_and_source(description: str) -> tuple[str | None, str | None]:
 
     # Canonicalize, lowercase, and suppress non-taper labels
     if taper_name:
-        _norm = re.sub(r'\s+', ' ', re.sub(r'[^a-z0-9\s]', ' ', taper_name.lower())).strip()
+        _norm = _normalise_alias_key(taper_name)
         if _norm in _NOT_TAPER:
             taper_name = None
         else:
@@ -1474,8 +1514,11 @@ _SEMI_EXPLICIT_TAPER_RE = re.compile(
 
 # Curated known tapers: maps every normalised variant → canonical display name.
 # All canonical values are lowercase; taper_name is always stored lowercase.
-# Add new tapers here.
-_KNOWN_TAPER_ALIASES: dict[str, str] = {
+# Add new tapers here. This is the code-only builtin table; TODO-241 adds a
+# `user_taper_aliases` table for install-local additions/suppressions on top
+# of it without a code edit — see _KNOWN_TAPER_ALIASES and reload_taper_aliases
+# below.
+_BUILTIN_TAPER_ALIASES: dict[str, str] = {
     "soomlos": "soomlos",
     "spot": "spot",
     "hide": "hide",
@@ -1648,6 +1691,14 @@ _KNOWN_TAPER_ALIASES: dict[str, str] = {
     **{f"nt{c}": f"net taper {c}" for c in "abcdefghijklmnopqrstuvwxyz"},
 }
 
+# Live, merged alias table: builtin plus approved `user_taper_aliases` rows
+# (TODO-241). Starts as a copy of the builtin table; reload_taper_aliases()
+# rebuilds it IN PLACE (.clear() + .update()) rather than reassigning, so every
+# module that imported this name directly (backend.taper_attribution,
+# backend.taper_fingerprints) sees the update through the same dict object —
+# no re-import or process restart needed.
+_KNOWN_TAPER_ALIASES: dict[str, str] = dict(_BUILTIN_TAPER_ALIASES)
+
 # Labels that must never be stored as taper_name (mis-parses / source-type labels).
 _NOT_TAPER: frozenset[str] = frozenset({
     # dolphinsmile curates/transfers others' tapes — not a taper (curator, 2026-07-04);
@@ -1722,14 +1773,260 @@ def _normalise_taper(name: str | None) -> str | None:
     Returns:
         Canonical normalised string (e.g. "southside butcher"), or None.
     """
-    if not name:
-        return None
-    s = name.lower()
-    s = re.sub(r'[^a-z0-9\s]', ' ', s)
-    s = re.sub(r'\s+', ' ', s).strip()
+    s = _normalise_alias_key(name)
     if not s:
         return None
     return _KNOWN_TAPER_ALIASES.get(s, s)
+
+
+# ── User taper aliases (TODO-241): add/remove known-taper handles without a
+# code edit. `user_taper_aliases` is USER-tier (audit/provenance only, never
+# exported — see USER_TABLES); 'add' rows create or override an alias key,
+# 'remove' rows suppress a _BUILTIN_TAPER_ALIASES key. reload_taper_aliases()
+# is the single place that turns those rows into the live _KNOWN_TAPER_ALIASES
+# / _TAPER_UNIVERSE / _KNOWN_TAPER_KEYS_SORTED / _KNOWN_TAPER_RE globals used
+# by parsing and attribution.
+
+def _run_alias_write(fn, db_path: str | None):
+    """Route a user_taper_aliases write through the write queue, matching the
+    BUG-246 guard used elsewhere (taper_attribution.py, song_index.py,
+    xref_ingest.py): the write queue singleton is first-caller-wins, so under
+    pytest (each test module's own temp DB) it may be bound to a different DB
+    than *db_path*.
+    """
+    queue = get_write_queue()
+    if db_path is not None and str(Path(db_path).resolve()) != str(Path(queue.db_path).resolve()):
+        logger.warning(
+            "user_taper_aliases: write queue bound to %s but this write targets %s"
+            " — writing directly", queue.db_path, db_path,
+        )
+        conn = get_connection(db_path)
+        with conn:
+            return fn(conn)
+    return queue.execute(fn)
+
+
+def reload_taper_aliases(db_path: str | None = None) -> dict:
+    """Rebuild the merged known-taper alias tables from user overrides.
+
+    Reads approved rows from ``user_taper_aliases`` and rebuilds
+    :data:`_KNOWN_TAPER_ALIASES` **in place** (``.clear()`` + ``.update()``) so
+    every module holding a reference to that same dict object (e.g.
+    ``backend.taper_attribution``, ``backend.taper_fingerprints``, both of
+    which import it by name) sees the update without being reloaded.
+    :data:`_TAPER_UNIVERSE`, :data:`_KNOWN_TAPER_KEYS_SORTED`, and
+    :data:`_KNOWN_TAPER_RE` are all derived, and a frozenset/list/compiled
+    regex can't be mutated in place, so they are reassigned here instead — any
+    consumer that needs a reload to propagate must access them as module
+    attributes (``db._TAPER_UNIVERSE``) rather than importing the name
+    directly at its own top level (see ``taper_attribution``'s module-level
+    ``__getattr__`` for the one existing direct-import consumer).
+
+    Apply order per alias key: start from the builtin table, apply every
+    approved 'remove' row (deletes that key if present), then apply every
+    approved 'add' row (sets/overrides that key) — so 'add' always wins for a
+    given ``alias_norm`` (moot in practice: the table's PRIMARY KEY means one
+    ``alias_norm`` can only ever hold one row/action at a time).
+
+    Args:
+        db_path: Optional database path override.
+
+    Returns:
+        Counts dict: ``{"builtin", "user_add", "user_remove", "merged"}``.
+    """
+    init_db(db_path)
+    conn = get_connection(db_path)
+    rows = conn.execute(
+        "SELECT alias_norm, canonical, action FROM user_taper_aliases WHERE approved = 1"
+    ).fetchall()
+    removes = [r for r in rows if r["action"] == "remove"]
+    adds = [r for r in rows if r["action"] == "add"]
+
+    _KNOWN_TAPER_ALIASES.clear()
+    _KNOWN_TAPER_ALIASES.update(_BUILTIN_TAPER_ALIASES)
+    for r in removes:
+        _KNOWN_TAPER_ALIASES.pop(r["alias_norm"], None)
+    for r in adds:
+        _KNOWN_TAPER_ALIASES[r["alias_norm"]] = r["canonical"]
+
+    global _TAPER_UNIVERSE, _KNOWN_TAPER_KEYS_SORTED, _KNOWN_TAPER_RE
+    _TAPER_UNIVERSE = frozenset(_KNOWN_TAPER_ALIASES.values()) - _NOT_TAPER
+    _KNOWN_TAPER_KEYS_SORTED = sorted(_KNOWN_TAPER_ALIASES, key=len, reverse=True)
+    _KNOWN_TAPER_RE = re.compile(
+        r'\b(' + '|'.join(
+            re.escape(k) for k in sorted(_KNOWN_TAPER_ALIASES, key=len, reverse=True)
+        ) + r')\b',
+        re.IGNORECASE,
+    )
+
+    counts = {
+        "builtin": len(_BUILTIN_TAPER_ALIASES),
+        "user_add": len(adds),
+        "user_remove": len(removes),
+        "merged": len(_KNOWN_TAPER_ALIASES),
+    }
+    logger.info(
+        "reload_taper_aliases: builtin=%(builtin)d user_add=%(user_add)d "
+        "user_remove=%(user_remove)d merged=%(merged)d", counts,
+    )
+    return counts
+
+
+def list_taper_aliases(db_path: str | None = None) -> dict:
+    """Merged known-taper alias listing with builtin/user provenance.
+
+    Args:
+        db_path: Optional database path override.
+
+    Returns:
+        ``{"entries": [{"alias", "canonical", "origin": "builtin"|"user"}, ...]
+        (alias-sorted), "suppressed": [alias_norm, ...] (builtin keys removed
+        by an approved user 'remove' row), "counts": {...}}`` — see
+        :func:`reload_taper_aliases` for the counts shape.
+
+    Reloads the merged tables first so a listing (and the counts it reports)
+    always reflects the DB — user_taper_aliases can be edited out-of-band by
+    tools/taper_aliases.py while a backend process is running, and without the
+    reload this process's in-memory merge would be stale.
+    """
+    reload_taper_aliases(db_path)
+    conn = get_connection(db_path)
+    user_rows = conn.execute(
+        "SELECT alias_norm, canonical, action, approved FROM user_taper_aliases"
+    ).fetchall()
+    user_add = {r["alias_norm"]: r["canonical"] for r in user_rows
+                if r["action"] == "add" and r["approved"]}
+    user_remove = {r["alias_norm"] for r in user_rows
+                   if r["action"] == "remove" and r["approved"]}
+
+    entries = [
+        {"alias": alias, "canonical": canonical, "origin": "builtin"}
+        for alias, canonical in _BUILTIN_TAPER_ALIASES.items()
+        if alias not in user_remove
+    ]
+    entries.extend(
+        {"alias": alias, "canonical": canonical, "origin": "user"}
+        for alias, canonical in user_add.items()
+    )
+    entries.sort(key=lambda e: e["alias"])
+
+    return {
+        "entries": entries,
+        "suppressed": sorted(user_remove),
+        "counts": {
+            "builtin": len(_BUILTIN_TAPER_ALIASES),
+            "user_add": len(user_add),
+            "user_remove": len(user_remove),
+            "merged": len(_KNOWN_TAPER_ALIASES),
+        },
+    }
+
+
+def add_taper_alias(alias: str, canonical: str, note: str | None = None,
+                     db_path: str | None = None) -> dict:
+    """Upsert a user 'add' alias override, then reload the merged tables.
+
+    Args:
+        alias: Raw or already-normalised alias text. Normalised the same way
+            :func:`_normalise_taper` keys are (lowercase, punctuation-stripped)
+            — NOT resolved against the existing alias table, since that's
+            exactly the mapping being created/overridden here.
+        canonical: Canonical taper name to store (lowercased). Not validated
+            against the existing universe — a curator may be introducing a
+            brand-new taper the alias is the first handle for.
+        note: Optional free-text provenance note.
+        db_path: Optional database path override.
+
+    Returns:
+        The stored ``user_taper_aliases`` row as a dict.
+
+    Raises:
+        ValueError: alias or canonical is missing/blank, or alias normalises
+            to the empty string.
+    """
+    alias_norm = _normalise_alias_key(alias)
+    canonical_norm = (canonical or "").strip().lower()
+    if not alias_norm or not canonical_norm:
+        raise ValueError("alias and canonical must be non-empty")
+
+    init_db(db_path)
+
+    def _do(conn: sqlite3.Connection) -> None:
+        conn.execute(
+            """INSERT INTO user_taper_aliases
+                   (alias_norm, canonical, action, approved, note, created_at, updated_at)
+               VALUES (?, ?, 'add', 1, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+               ON CONFLICT(alias_norm) DO UPDATE SET
+                   canonical  = excluded.canonical,
+                   action     = 'add',
+                   approved   = 1,
+                   note       = excluded.note,
+                   updated_at = CURRENT_TIMESTAMP""",
+            (alias_norm, canonical_norm, note),
+        )
+
+    _run_alias_write(_do, db_path)
+    reload_taper_aliases(db_path)
+    row = get_connection(db_path).execute(
+        "SELECT * FROM user_taper_aliases WHERE alias_norm = ?", (alias_norm,)
+    ).fetchone()
+    return dict(row)
+
+
+def remove_taper_alias(alias: str, db_path: str | None = None) -> str:
+    """Remove or suppress a known-taper alias, then reload the merged tables.
+
+    If *alias* is a live user 'add' row, the row is deleted outright (the
+    builtin table is untouched, since the alias never existed there). If
+    *alias* is a builtin key, an 'remove' row is upserted to suppress it
+    locally (the builtin table itself is code, never edited).
+
+    Args:
+        alias: Raw or already-normalised alias text.
+        db_path: Optional database path override.
+
+    Returns:
+        ``"deleted"`` if a user 'add' row was removed, ``"suppressed"`` if a
+        builtin key was newly suppressed.
+
+    Raises:
+        KeyError: *alias* is neither a user 'add' row nor a builtin key.
+    """
+    alias_norm = _normalise_alias_key(alias)
+    init_db(db_path)
+    conn = get_connection(db_path)
+
+    existing = conn.execute(
+        "SELECT action FROM user_taper_aliases WHERE alias_norm = ?", (alias_norm,)
+    ).fetchone()
+
+    if existing is not None and existing["action"] == "add":
+        def _do(c: sqlite3.Connection) -> None:
+            c.execute("DELETE FROM user_taper_aliases WHERE alias_norm = ?", (alias_norm,))
+        _run_alias_write(_do, db_path)
+        reload_taper_aliases(db_path)
+        return "deleted"
+
+    if alias_norm in _BUILTIN_TAPER_ALIASES:
+        canonical = _BUILTIN_TAPER_ALIASES[alias_norm]
+
+        def _do(c: sqlite3.Connection) -> None:
+            c.execute(
+                """INSERT INTO user_taper_aliases
+                       (alias_norm, canonical, action, approved, note, created_at, updated_at)
+                   VALUES (?, ?, 'remove', 1, NULL, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+                   ON CONFLICT(alias_norm) DO UPDATE SET
+                       canonical  = excluded.canonical,
+                       action     = 'remove',
+                       approved   = 1,
+                       updated_at = CURRENT_TIMESTAMP""",
+                (alias_norm, canonical),
+            )
+        _run_alias_write(_do, db_path)
+        reload_taper_aliases(db_path)
+        return "suppressed"
+
+    raise KeyError(alias_norm)
 
 
 def _compute_parse_confidence(

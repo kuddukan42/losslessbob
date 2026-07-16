@@ -169,6 +169,74 @@
       line-height: 1.6;
     }
 
+    details.alias-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 4px 20px 20px;
+    }
+    details.alias-section summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 14px 0;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      user-select: none;
+    }
+    details.alias-section summary::-webkit-details-marker { display: none; }
+    details.alias-section summary::before { content: "▸"; color: var(--muted); }
+    details.alias-section[open] summary::before { content: "▾"; }
+    .alias-body { display: flex; flex-direction: column; gap: 12px; }
+    .alias-counts { color: var(--muted); font-size: 0.82rem; }
+    .alias-add-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .alias-add-row input {
+      flex: 1;
+      min-width: 100px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 9px 10px;
+      color: var(--text);
+      font-size: 0.85rem;
+    }
+    .alias-add-row input:focus { outline: none; border-color: var(--accent); }
+    .alias-list {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      max-height: 320px;
+      overflow-y: auto;
+    }
+    .alias-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 10px;
+      background: var(--surface2);
+      border-radius: 6px;
+      font-size: 0.82rem;
+    }
+    .alias-row .alias-name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .alias-row .alias-arrow { color: var(--muted); }
+    .origin-pill {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .origin-pill.builtin { background: rgba(125,133,144,.2); color: var(--muted); }
+    .origin-pill.user { background: rgba(37,99,235,.2); color: #93c5fd; }
+    .alias-row .btn { padding: 6px 10px; font-size: 0.75rem; }
+
     #toast-container {
       position: fixed;
       bottom: 20px;
@@ -206,6 +274,23 @@
 <main>
   <div class="prog-wrap"><div class="prog-bar" id="prog-bar" style="width:0%"></div></div>
   <div id="content"><div class="empty">Loading conflicts…</div></div>
+
+  <details class="alias-section" id="alias-section">
+    <summary>Taper aliases</summary>
+    <div class="alias-body">
+      <div class="alias-counts" id="alias-counts">Loading…</div>
+      <div class="alias-add-row">
+        <input type="text" id="alias-input" placeholder="alias, e.g. mysoundman">
+        <input type="text" id="canonical-input" placeholder="canonical taper">
+        <input type="text" id="note-input" placeholder="note (optional)">
+        <button class="btn btn-success" onclick="addAlias()">+ Add</button>
+      </div>
+      <div class="alias-list" id="alias-list"></div>
+      <button class="btn btn-ghost btn-wide" onclick="recomputeAttributions()">
+        Recompute attributions
+      </button>
+    </div>
+  </details>
 </main>
 
 <div id="toast-container"></div>
@@ -393,7 +478,70 @@
     renderCurrent();
   }
 
+  // ── Taper aliases admin (TODO-241) ────────────────────────────────────────
+
+  async function loadAliases() {
+    const counts = document.getElementById('alias-counts');
+    const list = document.getElementById('alias-list');
+    try {
+      const data = await api('GET', '/api/tapers/aliases');
+      const c = data.counts;
+      counts.textContent = c.merged + ' aliases total (' + c.builtin + ' builtin, ' +
+        c.user_add + ' added, ' + c.user_remove + ' suppressed)';
+      list.innerHTML = data.entries.map(e => `
+        <div class="alias-row">
+          <span class="origin-pill ${e.origin}">${e.origin}</span>
+          <span class="alias-name">${escapeHtml(e.alias)}
+            <span class="alias-arrow">&rarr;</span> ${escapeHtml(e.canonical)}</span>
+          <button class="btn btn-danger" onclick="removeAlias(${escapeHtml(JSON.stringify(e.alias))})">
+            ${e.origin === 'builtin' ? 'Suppress' : 'Remove'}
+          </button>
+        </div>
+      `).join('') || '<div class="empty">No aliases.</div>';
+    } catch (e) {
+      counts.textContent = '';
+      list.innerHTML = '<div class="empty">Failed to load aliases: ' + escapeHtml(e.message) + '</div>';
+    }
+  }
+
+  async function addAlias() {
+    const alias = document.getElementById('alias-input').value.trim();
+    const canonical = document.getElementById('canonical-input').value.trim();
+    const note = document.getElementById('note-input').value.trim();
+    if (!alias || !canonical) { toast('Alias and canonical taper are both required', 'error'); return; }
+    try {
+      await api('POST', '/api/tapers/aliases', { alias, canonical, note: note || undefined });
+      toast('Added alias: ' + alias + ' → ' + canonical, 'success');
+      document.getElementById('alias-input').value = '';
+      document.getElementById('canonical-input').value = '';
+      document.getElementById('note-input').value = '';
+      loadAliases();
+    } catch (e) {
+      toast('Add failed: ' + e.message, 'error');
+    }
+  }
+
+  async function removeAlias(alias) {
+    try {
+      const data = await api('DELETE', '/api/tapers/aliases/' + encodeURIComponent(alias));
+      toast('Alias ' + alias + ': ' + data.result, 'success');
+      loadAliases();
+    } catch (e) {
+      toast('Remove failed: ' + e.message, 'error');
+    }
+  }
+
+  async function recomputeAttributions() {
+    try {
+      await api('POST', '/api/derived/recompute', {});
+      toast('Recompute started', 'success');
+    } catch (e) {
+      toast('Recompute failed: ' + e.message, 'error');
+    }
+  }
+
   loadQueue();
+  loadAliases();
 </script>
 
 </body>
