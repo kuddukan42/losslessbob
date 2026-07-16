@@ -1703,6 +1703,18 @@
         "noResults": "Aucun résultat",
         "notInLibrary": "Absent de la bibliothèque"
       }
+    },
+    "legend": {
+      "label": "Légende",
+      "title": "Badges figurant dans cette liste",
+      "taperSample": "taper",
+      "recommended": "Texte recommandé pour cette date",
+      "taperConfirmed": "Taper — attribution confirmée (code de série ou vérifiée par le conservateur)",
+      "taperPropagated": "Taper — extrait d'un enregistrement lié provenant de la même bande (passez la souris dessus pour plus de détails)",
+      "taperFreeText": "Taper — non vérifié, extrait de la description en texte libre de l'entrée",
+      "needsReview": "TapeMatch a signalé ce regroupement — survolez le badge pour connaître la raison précise",
+      "familyBest": "Version la mieux notée de la gamme TapeMatch",
+      "curated": "Figurant dans la liste des coups de cœur de ce curateur"
     }
   },
   "tapematch": {

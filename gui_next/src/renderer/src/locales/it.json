@@ -1703,6 +1703,18 @@
         "noResults": "Nessun risultato",
         "notInLibrary": "Non presente nella libreria"
       }
+    },
+    "legend": {
+      "label": "Legenda",
+      "title": "Badge presenti in questo elenco",
+      "taperSample": "taper",
+      "recommended": "Testo consigliato per questa data",
+      "taperConfirmed": "Taper — attribuzione confermata (codice della serie o verificata dal curatore)",
+      "taperPropagated": "Taper — ricavato da una registrazione collegata dello stesso nastro (passare il mouse per i dettagli)",
+      "taperFreeText": "Taper — non verificato, estratto dalla descrizione in testo libero della voce",
+      "needsReview": "TapeMatch ha segnalato questo raggruppamento: passa il mouse sul badge per visualizzare il motivo specifico",
+      "familyBest": "La versione più apprezzata della famiglia TapeMatch",
+      "curated": "Presente nell'elenco delle scelte del curatore"
     }
   },
   "tapematch": {

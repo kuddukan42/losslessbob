@@ -277,6 +277,54 @@ function MenuLabel({ children }: { children: React.ReactNode }) {
   )
 }
 
+// ── LegendMenu — badge/pill legend popover (TODO-242) ─────────────────────────
+
+function LegendRow({ sample, text }: { sample: React.ReactNode; text: string }) {
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '4px 0' }}>
+      <span style={{ flex: '0 0 96px', display: 'inline-flex', justifyContent: 'flex-start' }}>{sample}</span>
+      <span style={{ fontSize: 'var(--t-meta)', color: 'var(--lbb-fg2)', lineHeight: 1.4 }}>{text}</span>
+    </div>
+  )
+}
+
+function LegendMenu() {
+  const { t } = useTranslation()
+  return (
+    <FilterMenu label={t('library.legend.label')} width={340} align="right">
+      <MenuLabel>{t('library.legend.title')}</MenuLabel>
+      <LegendRow
+        sample={<span style={{ color: 'var(--lbb-accent-mid)' }}>★</span>}
+        text={t('library.legend.recommended')}
+      />
+      <LegendRow
+        sample={<Pill tone="info" soft>{t('library.legend.taperSample')}</Pill>}
+        text={t('library.legend.taperConfirmed')}
+      />
+      <LegendRow
+        sample={<Pill tone="info">{t('library.legend.taperSample')}</Pill>}
+        text={t('library.legend.taperPropagated')}
+      />
+      <LegendRow
+        sample={<Pill tone="mute" soft>{t('library.legend.taperSample')}</Pill>}
+        text={t('library.legend.taperFreeText')}
+      />
+      <LegendRow
+        sample={<Pill tone="warn" soft>{t('library.panel.needsReview')}</Pill>}
+        text={t('library.legend.needsReview')}
+      />
+      <LegendRow
+        sample={<Pill tone="info" soft>{t('library.family.best')}</Pill>}
+        text={t('library.legend.familyBest')}
+      />
+      <LegendRow
+        sample={<Pill tone="info" soft>{t('library.picks.curatedBadge', { curator: 'jt' })}</Pill>}
+        text={t('library.legend.curated')}
+      />
+    </FilterMenu>
+  )
+}
+
 // ── FacetOption / FacetList — single-column row filter list (matches Year menu) ─
 
 function FacetOption({ label, count, active, onClick }: {
@@ -1179,6 +1227,7 @@ export function ScreenLibrary(): React.JSX.Element {
           </FilterMenu>
         )}
         <div style={{ flex: 1 }} />
+        <LegendMenu />
         {recActiveCount > 0 && (
           <button type="button" onClick={clearAll} style={{
             background: 'none', border: 'none', cursor: 'pointer', padding: '0 6px',
@@ -2240,6 +2289,7 @@ function PerformanceLensView({ lens, setLens, rows, catalogLoading, actionHandle
           {allShowsExpanded ? t('library.toolbar.collapseAll') : t('library.toolbar.expandAll')}
         </button>
         <div style={{ flex: 1 }} />
+        <LegendMenu />
         {hasActiveFilters && (
           <button type="button" onClick={clearAll} style={{
             background: 'none', border: 'none', cursor: 'pointer', padding: '0 6px',

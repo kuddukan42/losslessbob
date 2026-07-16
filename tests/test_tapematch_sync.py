@@ -75,6 +75,40 @@ def test_parse_verdict_needs_review_no_reason():
     assert reason is None
 
 
+def test_parse_verdict_needs_review_colon_reason():
+    # Variant form observed in the written corpus (run 20260616_090656):
+    # "needs review: <reason>" — pre-2026-07-16 the parser dropped these
+    # reasons, leaving NULL review_reason (TODO-242 tooltip gap).
+    text = (
+        "## Verdict: 6 recordings — 3 families — result needs review: "
+        "low-confidence merge in Family 2, LB-12842 not found on disk\n"
+    )
+    flagged, reason = _parse_verdict(text)
+    assert flagged is True
+    assert reason == "low-confidence merge in Family 2, LB-12842 not found on disk"
+
+
+def test_parse_verdict_needs_review_parenthesized_reason():
+    # Variant form observed in the written corpus (runs 20260616_19xxxx):
+    # "needs review (<reason>)".
+    text = (
+        "## Verdict: 2 recordings — 2 families — result needs review "
+        "(commentary contradicts the distinct-source split; 1 DB entry missing from disk)\n"
+    )
+    flagged, reason = _parse_verdict(text)
+    assert flagged is True
+    assert reason == "commentary contradicts the distinct-source split; 1 DB entry missing from disk"
+
+
+def test_parse_verdict_bare_needs_review_mid_line():
+    # Bare "needs review" with a parenthetical earlier in the line (run
+    # 20260615_154028): the "(1 not on disk)" count is NOT the reason.
+    text = "## Verdict: 7 recordings (1 not on disk) — 5 families — needs review\n"
+    flagged, reason = _parse_verdict(text)
+    assert flagged is True
+    assert reason is None
+
+
 def test_parse_verdict_no_verdict_line():
     assert _parse_verdict("# Analysis — 1991-01-01 — Nowhere\n\nNo verdict here.\n") == (False, None)
 

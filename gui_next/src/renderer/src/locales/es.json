@@ -1703,6 +1703,18 @@
         "noResults": "No se han encontrado resultados",
         "notInLibrary": "No está en la biblioteca"
       }
+    },
+    "legend": {
+      "label": "Leyenda",
+      "title": "Insignias de esta lista",
+      "taperSample": "taper",
+      "recommended": "Texto recomendado para esta fecha",
+      "taperConfirmed": "Taper — atribución confirmada (código de serie o verificada por el curador)",
+      "taperPropagated": "Taper — extraído de una grabación vinculada de la misma cinta (pasa el cursor por encima para ver más detalles)",
+      "taperFreeText": "Taper — sin verificar, extraído de la descripción de texto libre de la entrada",
+      "needsReview": "TapeMatch ha marcado esta agrupación; pasa el cursor por encima de la insignia para ver el motivo concreto.",
+      "familyBest": "La versión mejor valorada de la familia TapeMatch",
+      "curated": "Aparece en la lista de selecciones de este curador"
     }
   },
   "tapematch": {

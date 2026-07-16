@@ -1643,6 +1643,18 @@
         "noFlags": "No source-type flags detected"
       }
     },
+    "legend": {
+      "label": "Legend",
+      "title": "Badges in this list",
+      "taperSample": "taper",
+      "recommended": "Recommended copy for this date",
+      "taperConfirmed": "Taper — confirmed attribution (series code or curator-verified)",
+      "taperPropagated": "Taper — propagated from a linked recording of the same tape (hover for details)",
+      "taperFreeText": "Taper — unverified, parsed from the entry's free-text description",
+      "needsReview": "TapeMatch flagged this family's grouping — hover the badge for the specific reason",
+      "familyBest": "Best-rated copy within its TapeMatch family",
+      "curated": "Appears on this curator's picks list"
+    },
     "picks": {
       "label": "Show Picks",
       "recommended": "Recommended",
