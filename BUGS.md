@@ -1,4 +1,12 @@
 
+BUG-255: site mirror: 88 entry_files URLs permanently undownloadable (mangled/double-encoded)
+Status: Open
+File(s): backend/site_crawler.py
+Reported: 2026-07-16
+Description: Found 2026-07-16 after crawl session 33 converged the mirror (4,357 -> 88 undownloaded). The 88 residual entry_files rows have defective file_url values: double-encoded UTF-8 (%c3%83%c2%a9 for e-acute), names truncated mid-URL (no extension, e.g. LBF-11127 discs), and .md5.html suffix variants. Session 33 reported 0 fetch failures, so these are skipped/mis-seeded, not 404s. Only one is xref-named (LBF-12229 track artwork, not a checksum fileset) — no xref ingest impact (rescan staged 0 new). Fix direction: repair file_url at scrape/parse time (encoding + truncation), or mark rows dead so downloaded=0 converges to 0.
+Root cause: Unknown
+Fix: —
+
 BUG-254: Flaky test: test_mixed_shn_and_wav_checksums_still_matched fails in full-suite run, passes solo
 Status: Open
 File(s): tests/test_db_lookup.py
