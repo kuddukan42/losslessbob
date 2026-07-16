@@ -4,7 +4,7 @@ import { Icon } from '../Icon'
 import { Button, Pill, Banner, TableShell, TH, TR, TD } from '../index'
 import { LookupSummaryRow, LookupDetail as LookupDetailRow } from '../../lib/lookupStore'
 import { lbDetailUrl } from '../../lib/lbUrl'
-import { LookupState, STATE_TONE, apiStatusToState } from './lookupState'
+import { LookupState, STATE_TONE, apiStatusToState, XREF_TONE, formatXrefTag } from './lookupState'
 
 export function categoryPill(cat: string | null | undefined): React.JSX.Element | null {
   if (!cat || cat === 'unknown') return null
@@ -73,7 +73,16 @@ export function LookupSummaryTable({
               <TD align="right" mono style={{ color: r.missing_from_set > 0 ? 'var(--lbb-warn-fg)' : 'var(--lbb-fg3)' }}>{r.missing_from_set || '—'}</TD>
               <TD align="right" mono style={{ color: r.duplicates   > 0 ? '#a08200'            : 'var(--lbb-fg3)' }}>{r.duplicates   || '—'}</TD>
               <TD align="right" mono style={{ color: r.xrefs        > 0 ? 'var(--lbb-info-fg)' : 'var(--lbb-fg3)' }}>{r.xrefs        || '—'}</TD>
-              <TD><Pill tone={tone.tone} soft dot={state !== 'matched'}>{t(tone.labelKey as any)}</Pill></TD>
+              <TD>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+                  <Pill tone={tone.tone} soft dot={state !== 'matched'}>{t(tone.labelKey as any)}</Pill>
+                  {r.matched_xref > 0 && (
+                    <Pill tone={XREF_TONE.tone} soft title={t('lookup.xrefPill', { id: formatXrefTag(r.matched_xref) })}>
+                      {formatXrefTag(r.matched_xref)}
+                    </Pill>
+                  )}
+                </div>
+              </TD>
               <TD align="right" style={{ display: 'flex', gap: 8, justifyContent: 'flex-end' }}>
                 <Button size="sm" variant="ghost" icon="reveal"
                   onClick={() => window.open(lbDetailUrl(r.lb_number))}
@@ -159,6 +168,11 @@ export function LookupChecksumTable({ summaryRows, detailRows }: LookupChecksumT
                         </span>
                         {summRow && categoryPill(summRow.lb_category)}
                         <Pill tone={groupTone.tone} soft dot={groupState !== 'matched'}>{t(groupTone.labelKey as any)}</Pill>
+                        {summRow && summRow.matched_xref > 0 && (
+                          <Pill tone={XREF_TONE.tone} soft title={t('lookup.xrefPill', { id: formatXrefTag(summRow.matched_xref) })}>
+                            {formatXrefTag(summRow.matched_xref)}
+                          </Pill>
+                        )}
                         <span style={{ fontSize: 'var(--lbb-fs-11)', color: 'var(--lbb-fg3)', fontFamily: 'var(--lbb-mono)' }}>
                           {t('lookup.status.rows', { count: group.rows.length })}
                         </span>

@@ -3,12 +3,16 @@ import { useTranslation } from 'react-i18next'
 import { Icon } from '../components/Icon'
 import { Button, Pill } from '../components'
 import { TableShell, TH, TR, TD } from '../components'
+import { formatXrefTag, XREF_TONE } from '../components/pipeline/lookupState'
+import type { LookupSummaryRow } from '../lib/lookupStore'
 
 const BASE = window.api.flaskBase
 
 // ── Types ──────────────────────────────────────────────────────────────────────
 
-type RowStatus = 'matched' | 'incomplete' | 'notfound' | 'duplicate' | 'xref'
+// Per FABLE_XREF_INCORPORATION.md D1: copy-level xref is a dimension
+// (`matched_xref > 0`), never a status — there is no "XREF" member here.
+type RowStatus = 'matched' | 'incomplete' | 'notfound' | 'duplicate'
 
 interface DetailRow {
   checksum: string
@@ -24,7 +28,6 @@ const STATUS_TONE: Record<RowStatus, { tone: 'ok' | 'warn' | 'bad' | 'info' | 'm
   incomplete: { tone: 'warn', label: 'Incomplete' },
   notfound:   { tone: 'bad',  label: 'Not found'  },
   duplicate:  { tone: 'warn', label: 'Duplicate'  },
-  xref:       { tone: 'info', label: 'XRef'       },
 }
 
 function toRowStatus(status: string): RowStatus {
@@ -33,7 +36,6 @@ function toRowStatus(status: string): RowStatus {
   if (status === 'INCOMPLETE')            return 'incomplete'
   if (status === 'NOT FOUND')             return 'notfound'
   if (status === 'DUPLICATE')             return 'duplicate'
-  if (status === 'XREF')                  return 'xref'
   return 'notfound'
 }
 
@@ -43,6 +45,9 @@ export function ScreenQuickLookup(): React.JSX.Element {
   const { t } = useTranslation()
   const [text, setText]       = useState('')
   const [rows, setRows]       = useState<DetailRow[]>([])
+  // Copy-level xref (D4): lb_number → winning fileset id, populated from summary.lb_summary
+  // alongside the per-checksum rows. Only entries with matched_xref > 0 are kept.
+  const [xrefByLb, setXrefByLb] = useState<Map<number, number>>(new Map())
   const [busy, setBusy]       = useState(false)
   const [dragging, setDragging] = useState(false)
   const [toast, setToast]     = useState<string | null>(null)
@@ -63,8 +68,13 @@ export function ScreenQuickLookup(): React.JSX.Element {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text: input }),
       })
-      const d = await r.json() as { detail: DetailRow[] }
+      const d = await r.json() as { detail: DetailRow[]; summary?: { lb_summary: LookupSummaryRow[] } }
       setRows(d.detail ?? [])
+      const xrefMap = new Map<number, number>()
+      for (const s of d.summary?.lb_summary ?? []) {
+        if (s.matched_xref > 0) xrefMap.set(s.lb_number, s.matched_xref)
+      }
+      setXrefByLb(xrefMap)
     } catch {
       showToast(t('quickLookup.toast.failed'))
     } finally {
@@ -120,7 +130,7 @@ export function ScreenQuickLookup(): React.JSX.Element {
     runLookup(combined)
   }, [runLookup, t])
 
-  const handleClear = useCallback(() => { setText(''); setRows([]) }, [])
+  const handleClear = useCallback(() => { setText(''); setRows([]); setXrefByLb(new Map()) }, [])
 
   const matchedCount = rows.filter(r => toRowStatus(r.status) === 'matched').length
 
@@ -245,7 +255,7 @@ export function ScreenQuickLookup(): React.JSX.Element {
                 <col style={{ width: 160 }} />
                 <col />
                 <col style={{ width: 120 }} />
-                <col style={{ width: 120 }} />
+                <col style={{ width: 160 }} />
               </colgroup>
               <thead>
                 <tr>
@@ -263,6 +273,7 @@ export function ScreenQuickLookup(): React.JSX.Element {
                   const lbStr = r.lb_number !== null
                     ? `LB-${String(r.lb_number).padStart(5, '0')}`
                     : '—'
+                  const matchedXref = r.lb_number !== null ? xrefByLb.get(r.lb_number) : undefined
                   return (
                     <TR key={i} edge={info.tone === 'mute' ? undefined : info.tone}>
                       <TD mono dim>{r.checksum.slice(0, 12)}…</TD>
@@ -274,7 +285,14 @@ export function ScreenQuickLookup(): React.JSX.Element {
                         {lbStr}
                       </TD>
                       <TD>
-                        <Pill tone={info.tone} soft dot={st !== 'matched'}>{info.label}</Pill>
+                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
+                          <Pill tone={info.tone} soft dot={st !== 'matched'}>{info.label}</Pill>
+                          {matchedXref !== undefined && (
+                            <Pill tone={XREF_TONE.tone} soft title={t('quickLookup.xrefPill', { id: formatXrefTag(matchedXref) })}>
+                              {formatXrefTag(matchedXref)}
+                            </Pill>
+                          )}
+                        </div>
                       </TD>
                     </TR>
                   )

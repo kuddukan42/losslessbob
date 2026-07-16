@@ -3,12 +3,12 @@ import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Icon } from '../components/Icon'
 import { Button, Chip, Pill } from '../components'
-import { useLookupStore, LookupSource, LookupSummaryRow, LookupDetail } from '../lib/lookupStore'
+import { useLookupStore, LookupSource, LookupSummaryRow, LookupDetail, type LookupFilterState } from '../lib/lookupStore'
 import { useFolderQueueStore } from '../lib/folderQueueStore'
 import {
   LookupSummaryTable, LookupChecksumTable, LookupNotFoundHint,
 } from '../components/pipeline/LookupDetail'
-import { STATE_TONE, apiStatusToState, type LookupState } from '../components/pipeline/lookupState'
+import { STATE_TONE, apiStatusToState, XREF_TONE } from '../components/pipeline/lookupState'
 
 const BASE = window.api.flaskBase
 
@@ -331,7 +331,13 @@ export function ScreenLookup(): React.JSX.Element {
   const detailRows  = detail ?? []
 
   const filteredSummary = summaryRows.filter(r => {
-    if (filter !== 'all' && apiStatusToState(r.status) !== filter) return false
+    // "Cross-refs" (A12) counts/filters on the copy-level matched_xref dimension,
+    // not a lookup status — handled separately from apiStatusToState (D1).
+    if (filter === 'xref') {
+      if (!(r.matched_xref > 0)) return false
+    } else if (filter !== 'all' && apiStatusToState(r.status) !== filter) {
+      return false
+    }
     if (categoryFilter.size > 0 && !categoryFilter.has(r.lb_category ?? '')) return false
     return true
   })
@@ -349,13 +355,16 @@ export function ScreenLookup(): React.JSX.Element {
     a.total = (a.total || 0) + 1
     return a
   }, {})
+  // A12: "Cross-refs" counts rows with matched_xref > 0 — a copy-level dimension,
+  // not a status, so it's tallied separately from the apiStatusToState reduce above.
+  counts.xref = summaryRows.filter(r => r.matched_xref > 0).length
 
   const totalSums = summary?.given ?? 0
 
   const ownedVerifiedCount   = summaryRows.filter(r => r.owned && r.lbdir_verified).length
   const ownedUnverifiedCount = summaryRows.filter(r => r.owned && !r.lbdir_verified).length
 
-  const statusBars: Array<{ k: LookupState; l: string }> = [
+  const statusBars: Array<{ k: LookupFilterState; l: string }> = [
     { k: 'matched',    l: 'Matched'    },
     { k: 'incomplete', l: 'Incomplete' },
     { k: 'notfound',   l: 'Not found'  },
@@ -448,7 +457,7 @@ export function ScreenLookup(): React.JSX.Element {
               display: 'flex', alignItems: 'stretch', gap: 8,
             }}>
               {statusBars.map(c => {
-                const tone   = STATE_TONE[c.k]
+                const tone   = c.k === 'xref' ? XREF_TONE : STATE_TONE[c.k]
                 const n      = counts[c.k] || 0
                 const active = filter === c.k
                 return (

@@ -17,6 +17,14 @@ export interface LookupDetail {
   canonical_lb:   number | null
 }
 
+/** One `(lb, xref)` fileset group touched by the lookup input (FABLE_XREF_INCORPORATION.md D1). */
+export interface LookupXrefGroup {
+  xref:    number
+  given:   number
+  matched: number
+  missing: number
+}
+
 export interface LookupSummaryRow {
   lb_number:          number
   given:              number
@@ -30,6 +38,10 @@ export interface LookupSummaryRow {
   lb_category:        string | null
   owned:              boolean
   lbdir_verified:     boolean
+  /** Winning fileset id for this copy — 0 = canonical fileset (D1). */
+  matched_xref:       number
+  /** Every `(lb, xref)` group the input touched; `matched_xref` is the group with fewest missing. */
+  xref_groups:        LookupXrefGroup[]
 }
 
 export interface LookupSummary {
