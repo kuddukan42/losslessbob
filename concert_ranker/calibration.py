@@ -160,7 +160,8 @@ def build_samples(conn: sqlite3.Connection, scan_id: int,
     try:
         placeholders = ",".join("?" * len(lbs))
         dff_rows = conn.execute(
-            f"SELECT lb_number, vert_occ FROM dff_reports WHERE lb_number IN ({placeholders})",
+            "SELECT lb_number, vert_occ FROM dff_reports "
+            f"WHERE xref = 0 AND lb_number IN ({placeholders})",
             lbs,
         ).fetchall()
         dff_map = {row[0]: row[1] for row in dff_rows}

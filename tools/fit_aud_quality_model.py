@@ -148,7 +148,7 @@ def load_rows(conn: sqlite3.Connection, scan_id: int) -> list[dict]:
                d.vert_occ AS dff_vert_raw
         FROM quality_recording_metrics m
         JOIN entries e ON m.lb_number = e.lb_number
-        LEFT JOIN dff_reports d ON m.lb_number = d.lb_number
+        LEFT JOIN dff_reports d ON m.lb_number = d.lb_number AND d.xref = 0
         WHERE m.scan_id = ?
           AND e.rating IS NOT NULL AND e.rating != ''
           AND m.source_class = 'AUD'
