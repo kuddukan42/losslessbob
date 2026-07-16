@@ -454,6 +454,10 @@ def create_app() -> Flask:
     _slog.t("Flask: init_db start")
     database.init_db()
     _slog.t("Flask: init_db done")
+    # TODO-241: merge any user_taper_aliases overrides into the live
+    # _KNOWN_TAPER_ALIASES / _TAPER_UNIVERSE tables before any request or
+    # background job (file watcher, scheduler) can read them.
+    database.reload_taper_aliases()
     _slog.t("Flask: start_file_watcher start")
     scheduler.start_file_watcher()
     scheduler.start_collection_watcher()
@@ -5150,6 +5154,77 @@ def create_app() -> Flask:
             return jsonify({"lb_number": lb, "attribution": row})
         except Exception as exc:
             _log.exception("taper_attribution_unresolved failed for LB-%s", lb)
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
+    # ── Known-taper alias admin (TODO-241) ──────────────────────────────────────
+    # UI/CLI conduit to add/remove known-taper handles without a code edit. See
+    # backend.db.{list,add,remove}_taper_alias / reload_taper_aliases and the
+    # "Taper aliases" section on /taper-review. Read is open (matches the
+    # attributions list route above); add/remove are curator-gated, matching
+    # confirm/reject/unresolved above — both redefine the shared known-taper
+    # vocabulary, not just one LB's attribution.
+
+    @app.route("/api/tapers/aliases", methods=["GET"])
+    def taper_aliases_list() -> Response:
+        """Merged known-taper alias table: builtin + approved user overrides.
+
+        Returns entries (each tagged ``origin: "builtin"|"user"``), the list
+        of builtin keys currently suppressed by a user 'remove' row, and
+        counts. Powers the /taper-review "Taper aliases" admin section.
+        """
+        try:
+            return jsonify(database.list_taper_aliases())
+        except Exception as exc:
+            _log.exception("taper_aliases_list failed")
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
+    @app.route("/api/tapers/aliases", methods=["POST"])
+    def taper_aliases_add() -> Response:
+        """Curator-only. Add or override one known-taper alias.
+
+        Body: {alias, canonical, note?}. Upserts a 'add' row in
+        user_taper_aliases, reloads backend.db's merged alias tables, and
+        rebuilds taper_attribution's alias reverse index so both take effect
+        immediately (a later /api/derived/recompute is what actually re-scores
+        existing entries against the new alias).
+        """
+        if not database.is_curator():
+            return jsonify({"error": "curator_required"}), 403
+        body = request.get_json(silent=True) or {}
+        alias = body.get("alias")
+        canonical = body.get("canonical")
+        if not alias or not str(alias).strip() or not canonical or not str(canonical).strip():
+            return jsonify({"error": "bad_request",
+                             "message": "alias and canonical are required"}), 400
+        try:
+            row = database.add_taper_alias(alias, canonical, note=body.get("note"))
+            _taper_attribution._rebuild_alias_index()
+            return jsonify({"alias": row})
+        except ValueError as exc:
+            return jsonify({"error": "bad_request", "message": str(exc)}), 400
+        except Exception as exc:
+            _log.exception("taper_aliases_add failed")
+            return jsonify({"error": "internal_error", "message": str(exc)}), 500
+
+    @app.route("/api/tapers/aliases/<path:alias>", methods=["DELETE"])
+    def taper_aliases_remove(alias: str) -> Response:
+        """Curator-only. Remove a user alias, or suppress a builtin one.
+
+        If *alias* is a user 'add' row, deletes it outright. If *alias* is a
+        builtin key, upserts a 'remove' row to suppress it locally (the
+        builtin table is code, never edited). 404 if *alias* is neither.
+        """
+        if not database.is_curator():
+            return jsonify({"error": "curator_required"}), 403
+        try:
+            result = database.remove_taper_alias(alias)
+            _taper_attribution._rebuild_alias_index()
+            return jsonify({"alias": alias, "result": result})
+        except KeyError:
+            return jsonify({"error": "not_found",
+                             "message": f"{alias!r} is not a known alias"}), 404
+        except Exception as exc:
+            _log.exception("taper_aliases_remove failed")
             return jsonify({"error": "internal_error", "message": str(exc)}), 500
 
     @app.route("/api/tapematch/families", methods=["GET"])

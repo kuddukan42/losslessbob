@@ -45,10 +45,10 @@ import sqlite3
 from collections import defaultdict
 from pathlib import Path
 
+from backend import db as _db
 from backend.db import (
     _EXPLICIT_TAPER_LABEL_RE,
     _KNOWN_TAPER_ALIASES,
-    _TAPER_UNIVERSE,
     _normalise_taper,
     get_connection,
     get_write_queue,
@@ -68,7 +68,14 @@ log = logging.getLogger(__name__)
 # is_known_taper() check shares the exact same set): canonical values of
 # _KNOWN_TAPER_ALIASES, excluding anything in _NOT_TAPER (e.g. dolphinsmile —
 # an uploader/curator, not a taper; mentions of him are uploader credit, not
-# taper evidence).
+# taper evidence). Deliberately NOT imported by name here (unlike
+# _KNOWN_TAPER_ALIASES, a dict mutated in place): backend.db.reload_taper_aliases
+# (TODO-241) reassigns _TAPER_UNIVERSE to a new frozenset on every reload, and a
+# `from ... import` binding would keep pointing at the stale object. Every use
+# below goes through the `_db` module reference instead so a reload always
+# propagates; module-level __getattr__ at the bottom of this file forwards the
+# same way for external attribute access (e.g. existing tests referencing
+# taper_attribution._TAPER_UNIVERSE).
 
 # Legendary Taper (lta..ltz) / Net Taper (net taper a..z) series codes, in the
 # canonical form _normalise_taper() produces. These are unambiguous formal
@@ -84,11 +91,40 @@ _CONFLICT_CAND_RE = re.compile(r"candidate taper '([^']+)'")
 # Reverse index: canonical taper -> raw alias keys, used to find a snippet of
 # description text around a bare handle mention for Layer-0 'mention' evidence.
 _ALIAS_KEYS_BY_CANONICAL: dict[str, list[str]] = defaultdict(list)
-for _key, _canonical in _KNOWN_TAPER_ALIASES.items():
-    _ALIAS_KEYS_BY_CANONICAL[_canonical].append(_key)
-# Longest keys first so multi-word phrases are preferred over short substrings.
-for _canonical in _ALIAS_KEYS_BY_CANONICAL:
-    _ALIAS_KEYS_BY_CANONICAL[_canonical].sort(key=len, reverse=True)
+
+
+def _rebuild_alias_index() -> None:
+    """Rebuild :data:`_ALIAS_KEYS_BY_CANONICAL` from the current
+    :data:`_KNOWN_TAPER_ALIASES`.
+
+    Called once at import time (below) and again at the top of every
+    :func:`recompute`, so a user alias add/remove (TODO-241,
+    ``backend.db.reload_taper_aliases``) is reflected in mention-snippet
+    lookups without this module needing to be reloaded.
+    """
+    _ALIAS_KEYS_BY_CANONICAL.clear()
+    for _key, _canonical in _KNOWN_TAPER_ALIASES.items():
+        _ALIAS_KEYS_BY_CANONICAL[_canonical].append(_key)
+    # Longest keys first so multi-word phrases are preferred over short substrings.
+    for _canonical in _ALIAS_KEYS_BY_CANONICAL:
+        _ALIAS_KEYS_BY_CANONICAL[_canonical].sort(key=len, reverse=True)
+
+
+_rebuild_alias_index()
+
+
+def __getattr__(name: str):
+    """PEP 562 module attribute fallback for ``_TAPER_UNIVERSE``.
+
+    ``_TAPER_UNIVERSE`` lives in :mod:`backend.db` and is reassigned (not
+    mutated) on every :func:`backend.db.reload_taper_aliases` call. Forwarding
+    external attribute access here — rather than binding a name at import time
+    that would go stale after a reload — keeps ``taper_attribution._TAPER_UNIVERSE``
+    (used by existing tests/consumers) always current.
+    """
+    if name == "_TAPER_UNIVERSE":
+        return _db._TAPER_UNIVERSE
+    raise AttributeError(f"module {__name__!r} has no attribute {name!r}")
 
 
 # ── Small helpers ─────────────────────────────────────────────────────────────
@@ -607,7 +643,7 @@ def _compute_layers01(
     fam_members, fam_review = _load_families(conn)
     same_as_adj, derived_from_adj = _build_adjacency(lineage_rows)
 
-    attrs = _layer0_seed(lineage_rows, _TAPER_UNIVERSE)
+    attrs = _layer0_seed(lineage_rows, _db._TAPER_UNIVERSE)
     rejects, unresolved = _apply_confirmations(attrs, confirmations)
     _apply_rejects(attrs, rejects)
 
@@ -637,6 +673,11 @@ def recompute(db_path: str | None = None, dry_run: bool = False) -> dict:
         Summary dict: total, confirmed, propagated, inferred, conflict counts,
         and top_tapers (list of (taper, count) tuples, top 10).
     """
+    # TODO-241: pick up any user_taper_aliases add/remove that landed since
+    # this module was imported (or since the last recompute) before seeding —
+    # _KNOWN_TAPER_ALIASES itself is mutated in place by reload_taper_aliases,
+    # so this only needs to refresh the derived reverse index.
+    _rebuild_alias_index()
     init_db(db_path)  # idempotent; ensures taper_attributions/taper_confirmations exist
     conn = get_connection(db_path)
 
@@ -816,7 +857,7 @@ def confirm(lb: int, taper: str | None = None, db_path: str | None = None) -> di
     init_db(db_path)
     conn = get_connection(db_path)
     taper_norm = _resolve_taper(conn, lb, taper)
-    if taper_norm not in _TAPER_UNIVERSE:
+    if taper_norm not in _db._TAPER_UNIVERSE:
         raise ValueError(f"{taper_norm!r} is not in the known-taper universe")
 
     def _do(c: sqlite3.Connection) -> None:
