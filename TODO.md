@@ -1,10 +1,4 @@
 
-TODO-246: Xref audit — document semantics, fix badge usage and pipeline wiring
-Priority: High
-Status: Open
-Added: 2026-07-15
-Description: tj: xref badges in the app are probably not used correctly, and xref numbering is not properly wired in the pipeline. Not a corner case: 70,751 checksums have xref>0 across 1,507 distinct LB numbers (~9% of catalog, verified 2026-07-15). Step 1: write the intended semantics (what an xref number means on the site, how Jeff assigns them, what a folder named LB-N-xrefXXXX implies) — one page, BEFORE touching code. Step 2: audit every touchpoint against it: backend/db.py, app.py, importer.py, flat_file.py; GET /api/checksums/xref_lb_numbers + xref_map; GUI (9 files: lookupStore.ts, lookupState.ts, LookupDetail.tsx, ScreenLookup/QuickLookup/Search/Collection/Library, library/DetailPanel.tsx). Known wobble to check first: Collection "Xref only" filter matches folder_name LIKE '%xref%' (string heuristic) instead of the master DB xref list (PROJECT.md changelog 2026-05-16). Step 3: fix wiring so the pipeline resolves xref checksums to their primary LB consistently and badges mean one documented thing everywhere. Full context: instructions/FABLE_PLATFORM_ROADMAP.md §2. Related: [TODO-245].
-
 TODO-245: Import private LB entry metadata (Jeff's unpublished numbers)
 Priority: High
 Status: Open

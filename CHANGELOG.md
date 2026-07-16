@@ -1,3 +1,31 @@
+[2026-07-16] — feat: xref incorporation shipped end to end — copy-level filesets (TODO-246, B1–B7)
+Context: instructions/complete/FABLE_XREF_INCORPORATION.md; xref = fileset id (0 = canonical),
+  copy-level (this copy IS xref-N) vs entry-level (entry HAS alt filesets) per
+  docs/XREF_SEMANTICS.md. Covers B1/B2/B5/B6 committed in the cut-off prior session
+  (never logged) + B3/B4/B7 today. B8 site-mirror ingest NOT built per D-2 default —
+  master import stays the only checksums write path; D-1 (5-digit xrefYYYYY) and
+  D-3 (legacy gui/ frozen) defaults also applied.
+Added: backend lookup lb_summary carries matched_xref + xref_groups (B1); my_collection.xref
+  + folder_lb_link.xref columns, pipeline names xref copies "… (LB-XXXXX-xrefYYYYY)" (B2).
+Fixed: dff_reports rekeyed (lb_number, xref) — LBF-*-xref-* reports attributed to the right
+  fileset (B5); cli.py dead XREF guard dropped, missing list uses winning fileset (B6).
+Changed: gui_next lookup surfaces (B3) — XREF removed as a status; xref-NNNNN pill augments
+  the status pill (quick lookup, summary, checksum groups); Cross-refs bar counts/filters
+  matched_xref > 0 (lookupState.ts, lookupStore.ts, ScreenQuickLookup/ScreenLookup,
+  LookupDetail).
+Changed: gui_next entry-level surfaces (B4) — Search Xref column from xref_map; Collection
+  filter split into "My xref copies" (copy-level) vs "Entries with alt filesets"
+  (entry-level, detail-pane marker); Library/DetailPanel relabeled "Alt filesets",
+  detail checksums grouped by fileset, canonical first (ScreenSearch/ScreenCollection/
+  ScreenLibrary, DetailPanel).
+Changed: locales de/fr/es/it/nl DeepL-synced (5,487 chars); dead xref keys pruned from all six.
+Docs: PROJECT.md schema rows, matched_xref dimension, collection/lookup API fields (B7);
+  spec moved to instructions/complete/ + README row.
+Verified: /gui-check PASS (node+renderer types, build); fixture LB-2 xref-961 → MATCHED with
+  matched_xref 961 + correct xref_groups (after backend restart — stale process gave null);
+  backend suite 826 passed. One order-dependent flake logged as BUG-254 (passes solo,
+  pre-existing).
+
 [2026-07-16] — chore(docs): repo sweep — stray root files and dead Qt scripts moved to attic/
 Context: root had ~19 stray one-off reports/artifacts; grep-verified nothing in live code
   references any of them (attic/README.md documents each file's origin and verdict).
