@@ -5,7 +5,8 @@ Context: spec'd and executed same-session (instructions/complete/LEGACY_GUI_REMO
 Removed: gui/ (19 modules, 18.5k LOC, Qt locales/resources), main.py, run_next.py (dead
   pre-Electron launcher), losslessbob.spec + losslessbob_linux.spec, tools/losslessbob.iss +
   build_windows.bat, scripts/translate_ts.py, /i18n-update skill, Dockerfile +
-  docker-compose.yml + docker/ (noVNC stack), .dockerignore, PyQt6/PyQt6-WebEngine pins
+  docker-compose.yml + docker/ (noVNC stack), .dockerignore, secrets/ (Docker-only secret
+  templates; all .txt were 0 bytes — no real credentials), PyQt6/PyQt6-WebEngine pins
   (+ pytest-qt uninstalled from .venv).
 Changed: backend/resources/ now hosts map.html + leaflet/ (moved from gui/resources/;
   /map + /leaflet routes repointed; QWebChannel bridge and Search-tab buttons stripped from

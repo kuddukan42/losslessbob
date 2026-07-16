@@ -169,13 +169,6 @@ losslessbob/
 │   ├── test_tapematch_sync.py # backend/tapematch_sync.py
 │   └── test_batch_verify.py  # tools/batch_verify.py helper functions
 ├── losslessbob_backend.spec  # PyInstaller onefile spec: backend-only; bundled inside Electron AppImage
-├── secrets/                  # Container secret file templates (git-ignored *.txt; safe *.example templates)
-│   ├── qbt_username.txt      # qBittorrent username (empty = unused)
-│   ├── qbt_password.txt      # qBittorrent password
-│   ├── qbt_apikey_user.txt   # qBittorrent API key label
-│   ├── qbt_apikey.txt        # qBittorrent API key value
-│   ├── wtrf_username.txt     # WTRF forum username
-│   └── wtrf_password.txt     # WTRF forum password
 ├── tools/
 │   ├── ledger.py              # CLI: BUG/TODO ledger ops (next-id, bug-open/close, todo-open/close, --dry-run); used by /session-close
 │   ├── geocode_locations.py  # CLI: batch-geocode entries.location via Nominatim (--limit, --retry-failed, --dry-run)
