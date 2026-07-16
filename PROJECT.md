@@ -244,6 +244,9 @@ losslessbob/
 
 **File:** `data/losslessbob.db`
 
+Xref semantics (fileset ids, copy-level vs entry-level) are defined in
+`docs/XREF_SEMANTICS.md` — the authority for every `xref` column below.
+
 ### `checksums` — Core lookup table
 | Column | Type | Notes |
 |--------|------|-------|
@@ -252,7 +255,7 @@ losslessbob/
 | filename | TEXT NOT NULL | Audio filename |
 | chk_type | TEXT | `'f'` FFP, `'s'` ST5/SHA1, `'m'` MD5 |
 | lb_number | INTEGER NOT NULL | Links to LosslessBob entry |
-| xref | INTEGER | 1 = cross-reference entry (not primary) |
+| xref | INTEGER | Fileset id: 0 = canonical fileset, N = alternate fileset xref-N (NOT a flag or an LB number — see docs/XREF_SEMANTICS.md) |
 
 Unique index on `(checksum, lb_number)`.
 
@@ -432,6 +435,7 @@ Index: `idx_lb_alias_canonical ON lb_alias(canonical_lb)`.
 | disk_path | TEXT NOT NULL | Absolute path to the folder |
 | confirmed_at | TIMESTAMP | Defaults to CURRENT_TIMESTAMP |
 | notes | TEXT | Free-text user note |
+| xref | INTEGER NOT NULL DEFAULT 0 | Copy-level fileset id this copy matched (0 = canonical), from the pipeline's `matched_xref` |
 
 ### `collection_meta` — Personal per-recording metadata (USER table)
 | Column | Type | Notes |
@@ -460,6 +464,7 @@ Index: `idx_wishlist_lb ON my_wishlist(lb_number)`.
 | lb_number | INTEGER NOT NULL | LB number the user pinned this folder to |
 | linked_at | TIMESTAMP | Defaults to CURRENT_TIMESTAMP |
 | note | TEXT | Optional user note |
+| xref | INTEGER NOT NULL DEFAULT 0 | Copy-level fileset id the folder matched (0 = canonical); refreshed on re-link |
 
 Index: `idx_folder_link_lb ON folder_lb_link(lb_number)`.
 
@@ -1005,7 +1010,7 @@ Index: `idx_flat_releases_status ON flat_file_releases(status, detected_at DESC)
 | checksum | TEXT | The checksum value |
 | filename | TEXT | New filename (after op) |
 | chk_type | TEXT | `f` / `s` / `m` |
-| xref | INTEGER | Cross-reference flag (0 or 1) |
+| xref | INTEGER | Fileset id (0 = canonical, N = alternate fileset xref-N) |
 | old_filename | TEXT | Previous filename (op=change only) |
 | old_xref | INTEGER | Previous xref (op=change only) |
 
@@ -1113,7 +1118,7 @@ scheduled scan interval, checked hourly by `scheduler._integrity_scan_worker`.
 ### Checksum Lookup
 | Method | Route | Description |
 |--------|-------|-------------|
-| POST | `/api/lookup` | Parse text input and match checksums. Body: `{text}`. Returns `{summary, detail}` arrays. |
+| POST | `/api/lookup` | Parse text input and match checksums. Body: `{text}`. Returns `{summary, detail}` arrays; each `summary.lb_summary` entry carries `matched_xref` + `xref_groups` (copy-level fileset resolution, docs/XREF_SEMANTICS.md). |
 | POST | `/api/lookup/scan_folders` | Recursively scan folders for `.ffp`/`.md5`/`.st5`/`.sha1` sidecar files. Body: `{folders:[...]}`. Returns `{content, files}` combined text ready for `/api/lookup`. |
 
 ### Database Management
@@ -1384,8 +1389,8 @@ scheduled scan interval, checked hourly by `scheduler._integrity_scan_worker`.
 ### My Collection (CRUD, `my_collection`/`collection_meta`)
 | Method | Route | Description |
 |--------|-------|-------------|
-| GET | `/api/collection` | All entries in the user's collection. |
-| POST | `/api/collection` | Add an LB entry to the user's collection. |
+| GET | `/api/collection` | All entries in the user's collection. Rows include `xref` (copy-level fileset id, 0 = canonical). |
+| POST | `/api/collection` | Add an LB entry to the user's collection. Body accepts optional `xref` (default 0). |
 | PATCH | `/api/collection/<lb>` | Update fields on an existing collection entry. |
 | DELETE | `/api/collection/<lb>` | Remove an LB entry from the user's collection. |
 | GET | `/api/collection/missing` | Collection entries whose `disk_path` no longer exists on disk. |
@@ -1631,7 +1636,12 @@ For each parsed checksum, queries `checksums` table, then aggregates per LB numb
 - **MATCHED (INCOMPLETE)** — some files from DB set not in input
 - **DUPLICATE** — same checksum exists in multiple LB entries
 - **NOT FOUND** — no DB match at all
-- **XREF** — matched, but entry is a cross-reference
+
+There is no XREF status. Copy-level xref is a *dimension* orthogonal to the
+statuses: each `lb_summary` entry carries `matched_xref` (the winning fileset
+id, 0 = canonical) and `xref_groups` (`[{xref, given, matched, missing}]`, one
+per `(lb, xref)` group touched). Completeness is judged within the winning
+group (docs/XREF_SEMANTICS.md §3).
 
 ### Map data (`get_map_data`)
 Returns `{"markers": [...], "unplottable_count": int}`. Each marker dict: `{lb_number, date_str, location, lb_status, owned (bool), lat, lon, display_name, city_level (bool — pin is city-precision only, TODO-223)}`. Entries with no geocoded coordinates are counted in `unplottable_count` and omitted from `markers`. Supported filter keys: `status` (str), `owned` (bool), `year_min` (int), `year_max` (int), `q` (text LIKE on lb_number/location).
