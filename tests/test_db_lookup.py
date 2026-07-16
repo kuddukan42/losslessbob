@@ -64,6 +64,49 @@ def _make_db_with_shn_set(tracks: list[dict]) -> tuple[str, str]:
     return db_path, tmp_dir
 
 
+def _make_db_with_xref_set(lb_number: int = 2, xref_id: int = 42) -> tuple[str, str]:
+    """Create a temp DB with a canonical fileset (xref=0) and one alternate
+    xref fileset (xref=`xref_id`) for the same LB, two tracks each.
+
+    Args:
+        lb_number: LB entry both filesets belong to.
+        xref_id: id of the alternate fileset group.
+
+    Returns:
+        (db_path, tmp_dir).
+    """
+    tmp_dir = tempfile.mkdtemp(prefix="lb_lookup_xref_test_")
+    db_path = os.path.join(tmp_dir, "test.db")
+
+    import backend.paths as _paths
+    _paths.DATA_DIR = type(_paths.DATA_DIR)(tmp_dir)
+
+    import backend.db as db
+    db.init_db(db_path)
+    conn = db.get_connection(db_path)
+
+    conn.execute(
+        "INSERT OR IGNORE INTO entries(lb_number, status) VALUES(?, 'ok')",
+        (lb_number,),
+    )
+
+    rows = [
+        ("1" * 32, "track01.flac", 0),
+        ("2" * 32, "track02.flac", 0),
+        ("3" * 32, "track01.flac", xref_id),
+        ("4" * 32, "track02.flac", xref_id),
+    ]
+    for chk, fname, xref_val in rows:
+        conn.execute(
+            "INSERT INTO checksums(checksum, filename, chk_type, lb_number, xref)"
+            " VALUES(?,?,?,?,?)",
+            (chk, fname, "m", lb_number, xref_val),
+        )
+    conn.commit()
+
+    return db_path, tmp_dir
+
+
 # ---------------------------------------------------------------------------
 # BUG-130: SHN completeness — foo.shn + foo.wav treated as same track
 # ---------------------------------------------------------------------------
@@ -169,5 +212,71 @@ class TestLookupChecksumsSnhCompleteness:
             assert lb1_summary["status"] != "INCOMPLETE", (
                 f"Got {lb1_summary['status']!r}; all tracks should be covered."
             )
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+
+# ---------------------------------------------------------------------------
+# B1 (FABLE_XREF_INCORPORATION.md D1): lb_summary exposes xref_groups +
+# matched_xref, built from the already-computed _lb_xref_missing map.
+# ---------------------------------------------------------------------------
+
+class TestXrefGroupsAndMatchedXref:
+    """A copy matching an xref fileset group is MATCHED with matched_xref set
+    to that group's id; a copy matching the canonical fileset gets
+    matched_xref = 0. No "XREF" lookup status is introduced — copy-level xref
+    stays a dimension alongside MATCHED/INCOMPLETE/DUPLICATE."""
+
+    LB = 2
+    XREF_ID = 42
+
+    def test_full_match_against_xref_group_yields_matched_and_matched_xref(self):
+        """A folder fully matching an xref group's checksums yields MATCHED
+        with matched_xref equal to that group's id."""
+        db_path, tmp = _make_db_with_xref_set(self.LB, self.XREF_ID)
+        try:
+            import backend.db as db
+            parsed = [
+                ("3" * 32, "track01.flac", "m"),
+                ("4" * 32, "track02.flac", "m"),
+            ]
+            summary, detail = db.lookup_checksums(parsed, db_path=db_path)
+
+            lb_summary = next(
+                (s for s in summary["lb_summary"] if s["lb_number"] == self.LB), None
+            )
+            assert lb_summary is not None
+            assert lb_summary["status"] == "MATCHED"
+            assert lb_summary["matched_xref"] == self.XREF_ID
+
+            groups = {g["xref"]: g for g in lb_summary["xref_groups"]}
+            assert groups.get(self.XREF_ID) == {
+                "xref": self.XREF_ID, "given": 2, "matched": 2, "missing": 0,
+            }
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_canonical_match_yields_matched_xref_zero(self):
+        """A folder matching the canonical fileset yields matched_xref = 0,
+        and an untouched alternate xref group is not listed."""
+        db_path, tmp = _make_db_with_xref_set(self.LB, self.XREF_ID)
+        try:
+            import backend.db as db
+            parsed = [
+                ("1" * 32, "track01.flac", "m"),
+                ("2" * 32, "track02.flac", "m"),
+            ]
+            summary, detail = db.lookup_checksums(parsed, db_path=db_path)
+
+            lb_summary = next(
+                (s for s in summary["lb_summary"] if s["lb_number"] == self.LB), None
+            )
+            assert lb_summary is not None
+            assert lb_summary["status"] == "MATCHED"
+            assert lb_summary["matched_xref"] == 0
+
+            groups = {g["xref"]: g for g in lb_summary["xref_groups"]}
+            assert groups.get(0) == {"xref": 0, "given": 2, "matched": 2, "missing": 0}
+            assert self.XREF_ID not in groups
         finally:
             shutil.rmtree(tmp, ignore_errors=True)
