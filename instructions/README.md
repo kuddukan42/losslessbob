@@ -10,7 +10,6 @@ specs deliberately parked for a later window (currently SHARING_FEATURE.md).
 
 | Name | Purpose | Status |
 |---|---|---|
-| CC_TRADING_PLAN.md | Collection Trading feature — export/import/diff/generate a trading list with friends | not triaged |
 | complete/CC_CONCERT_RANKER.md | Handoff spec: audio quality ranking (`concert_ranker/` package) | closed 2026-07-15 — all 7 tasks + calibration shipped (TODO-183); leftovers signed off won't-do |
 | FABLE_IDEAS.md | Raw idea dump from a Fable 5 brainstorm (2026-07-06) — not a spec, ideas need expansion before execution | not triaged |
 | FABLE_PLATFORM_ROADMAP.md | Platform leverage plan from 2026-07-15 brainstorm: private LB import (§1→TODO-245), xref audit (§2→TODO-246), gaps view, shadow-pile triage, preservation stack, lineage; §7 annex numbering parked | active — §1/§2 filed as TODOs 2026-07-15 |
