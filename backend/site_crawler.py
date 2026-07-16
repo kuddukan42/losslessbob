@@ -29,6 +29,7 @@ from backend.db import (
     finish_scrape_session,
     get_downloaded_urls,
     get_inventory_last_modified,
+    get_missing_attachment_urls,
     get_pending_urls,
     upsert_inventory,
 )
@@ -346,6 +347,14 @@ def crawl(
     # Always seed known index pages — the root URL is a placeholder with no links.
     for seed in SEED_URLS:
         _seed(seed)
+
+    # Seed every attachment URL the scraper knows about that the mirror lacks
+    # (entry_files.downloaded=0, xref attachments included). Many of these are
+    # not linked from any page the crawler re-fetches, so BFS discovery alone
+    # never reaches them.
+    for url in get_missing_attachment_urls(db_path):
+        if _is_same_domain(url) and not _should_skip(url):
+            _seed(url, discovered_by="entry_files")
 
     # Re-queue anything marked pending in the DB
     for row in pending_db:

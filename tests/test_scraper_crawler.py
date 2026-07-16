@@ -348,6 +348,28 @@ class TestDbCrawlerTables:
         finally:
             shutil.rmtree(tmp_dir, ignore_errors=True)
 
+    def test_get_missing_attachment_urls_returns_undownloaded_only(self):
+        db_path, conn, tmp_dir = _make_db()
+        try:
+            import backend.db as db
+            conn.execute(
+                "INSERT INTO entry_files (lb_number, filename, clean_name, file_url, downloaded) "
+                "VALUES (?, ?, ?, ?, ?)",
+                (329, "LBF-00329-xref-02017-text.txt", "xref-02017-text.txt",
+                 "http://ex.com/files/LBF-00329-xref-02017-text.txt", 0),
+            )
+            conn.execute(
+                "INSERT INTO entry_files (lb_number, filename, clean_name, file_url, downloaded) "
+                "VALUES (?, ?, ?, ?, ?)",
+                (2, "LBF-00002-text.txt", "text.txt",
+                 "http://ex.com/files/LBF-00002-text.txt", 1),
+            )
+            conn.commit()
+            urls = db.get_missing_attachment_urls(db_path)
+            assert urls == ["http://ex.com/files/LBF-00329-xref-02017-text.txt"]
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
     def test_get_downloaded_urls_returns_set_of_downloaded(self):
         db_path, conn, tmp_dir = _make_db()
         try:
