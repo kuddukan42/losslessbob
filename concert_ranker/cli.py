@@ -139,7 +139,8 @@ def _inject_dff(conn, metrics: dict) -> None:
     try:
         placeholders = ",".join("?" * len(lbs))
         rows = conn.execute(
-            f"SELECT lb_number, vert_occ FROM dff_reports WHERE lb_number IN ({placeholders})",
+            "SELECT lb_number, vert_occ FROM dff_reports "
+            f"WHERE xref = 0 AND lb_number IN ({placeholders})",
             lbs,
         ).fetchall()
     except Exception:

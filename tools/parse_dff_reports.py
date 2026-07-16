@@ -12,18 +12,23 @@ transfers and reports four flaw types:
 14,090 DFF HTML reports are downloaded and stored in data/site/files/ under the
 pattern::
 
-  LBF-{lb}-DigiFlawFinder-{name}.html          primary: report for LB {lb}
-  LBF-{lb1}-xref-{lb2}-DigiFlawFinder.html     xref: report for LB {lb2}
+  LBF-{lb}-DigiFlawFinder-{name}.html      primary: canonical report for LB {lb}
+  LBF-{lb}-xref-{id}-DigiFlawFinder.html   report for LB {lb}'s alternate
+                                            fileset xref-{id}
+
+Per docs/XREF_SEMANTICS.md §2, ``{id}`` is a fileset id from a global
+sequence — it is *not* an LB number and must not be treated as one. The row
+belongs to ``lb_number = {lb}``, ``xref = {id}``.
 
 This tool reads all downloaded reports, extracts the total occurrence counts
-from the "Totals" section, and writes them to the ``dff_reports`` table.
+from the "Totals" section, and writes them to the ``dff_reports`` table,
+keyed by the composite ``(lb_number, xref)`` fileset identity (``xref = 0``
+for the primary/canonical report).
 
 Strategy
 --------
-* Primary files (non-xref) are attributed to the LB in the filename prefix.
-  Multiple primary files for the same LB (e.g. disc-1 + disc-2) are **summed**.
-* Xref files are attributed to the cross-referenced LB (the ``{lb2}`` number).
-  They are only used for LBs that have **no** primary file of their own.
+* Each ``(lb_number, xref)`` fileset is its own row. Multiple files for the
+  same fileset (e.g. disc-1 + disc-2) are **summed**.
 * Re-running is idempotent: existing rows are replaced.
 
 Usage::
@@ -56,18 +61,37 @@ log = logging.getLogger(__name__)
 
 _DFF_SCHEMA = """
 CREATE TABLE IF NOT EXISTS dff_reports (
-    lb_number  INTEGER PRIMARY KEY,
+    lb_number  INTEGER NOT NULL,
+    xref       INTEGER NOT NULL DEFAULT 0,
     drop_occ   INTEGER NOT NULL DEFAULT 0,
     clip_occ   INTEGER NOT NULL DEFAULT 0,
     horz_occ   INTEGER NOT NULL DEFAULT 0,
     vert_occ   INTEGER NOT NULL DEFAULT 0,
     file_count INTEGER NOT NULL DEFAULT 0,
-    parsed_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    parsed_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (lb_number, xref)
 );
 """
 
 _RE_PRIMARY = re.compile(r'^LBF-(\d+)-DigiFlawFinder-', re.IGNORECASE)
-_RE_XREF = re.compile(r'^LBF-\d+-xref-(\d+)-DigiFlawFinder', re.IGNORECASE)
+_RE_XREF = re.compile(r'^LBF-(\d+)-xref-(\d+)-DigiFlawFinder', re.IGNORECASE)
+
+
+def _ensure_schema(conn: sqlite3.Connection) -> None:
+    """Create ``dff_reports`` with the ``(lb_number, xref)`` composite PK.
+
+    Migrates from the legacy ``lb_number``-only-PK schema (pre-TODO-246 B5)
+    by dropping and recreating the table — it has no consumers that depend
+    on rows surviving a schema change, so a full reparse is acceptable.
+    """
+    cols = {row[1] for row in conn.execute("PRAGMA table_info(dff_reports)")}
+    if cols and "xref" not in cols:
+        log.info(
+            "Migrating dff_reports to (lb_number, xref) composite PK — "
+            "dropping legacy table"
+        )
+        conn.execute("DROP TABLE dff_reports")
+    conn.executescript(_DFF_SCHEMA)
 
 
 def _parse_totals(path: Path) -> dict[str, int] | None:
@@ -116,28 +140,27 @@ def _parse_totals(path: Path) -> dict[str, int] | None:
     return result
 
 
-def _classify_files(
-    files_dir: Path,
-) -> tuple[dict[int, list[Path]], dict[int, list[Path]]]:
-    """Separate DFF files into (primary_by_lb, xref_by_target_lb).
+def _classify_files(files_dir: Path) -> dict[tuple[int, int], list[Path]]:
+    """Group DFF report files by ``(lb_number, xref)`` fileset identity.
 
-    primary_by_lb  — lb → list of paths for that LB's own DFF reports
-    xref_by_lb     — lb → list of paths that cross-reference lb's data
+    ``xref == 0`` is the LB's own canonical/primary report(s); ``xref > 0``
+    is an alternate fileset, keyed by the LB it belongs to (the filename's
+    first number) and the fileset id (the filename's second number) — per
+    docs/XREF_SEMANTICS.md §2 the id is *not* an LB number.
     """
-    primary: dict[int, list[Path]] = defaultdict(list)
-    xref: dict[int, list[Path]] = defaultdict(list)
+    groups: dict[tuple[int, int], list[Path]] = defaultdict(list)
 
     for path in files_dir.iterdir():
         name = path.name
         m = _RE_XREF.match(name)
         if m:
-            xref[int(m.group(1))].append(path)
+            groups[(int(m.group(1)), int(m.group(2)))].append(path)
             continue
         m = _RE_PRIMARY.match(name)
         if m:
-            primary[int(m.group(1))].append(path)
+            groups[(int(m.group(1)), 0)].append(path)
 
-    return dict(primary), dict(xref)
+    return dict(groups)
 
 
 def _aggregate(paths: list[Path]) -> dict[str, int] | None:
@@ -172,39 +195,29 @@ def parse_and_store(
         return {"parsed": 0, "skipped": 0, "written": 0, "errors": 1}
 
     log.info("Scanning %s for DFF reports …", files_dir)
-    primary_by_lb, xref_by_lb = _classify_files(files_dir)
+    groups = _classify_files(files_dir)
+    n_primary = sum(1 for (_, xref) in groups if xref == 0)
+    n_xref = len(groups) - n_primary
     log.info(
-        "Found %d LBs with primary files, %d LBs with xref-only files",
-        len(primary_by_lb),
-        len(set(xref_by_lb) - set(primary_by_lb)),
+        "Found %d filesets (%d primary, %d xref)", len(groups), n_primary, n_xref
     )
 
-    rows: list[tuple[int, int, int, int, int, int]] = []
+    rows: list[tuple[int, int, int, int, int, int, int]] = []
     errors = 0
 
-    # Pass 1: primary files (sum across discs)
-    for lb, paths in primary_by_lb.items():
+    for (lb, xref), paths in groups.items():
         t = _aggregate(paths)
         if t is None:
             errors += 1
-            log.debug("Parse failed for LB-%d (primary, %d files)", lb, len(paths))
+            log.debug(
+                "Parse failed for LB-%d xref-%d (%d files)", lb, xref, len(paths)
+            )
             continue
-        rows.append((lb, t["drop"], t["clip"], t["horz"], t["vert"], len(paths)))
+        rows.append(
+            (lb, xref, t["drop"], t["clip"], t["horz"], t["vert"], len(paths))
+        )
 
-    primary_lbs = set(primary_by_lb)
-
-    # Pass 2: xref-only LBs (no primary file of their own)
-    for lb, paths in xref_by_lb.items():
-        if lb in primary_lbs:
-            continue  # already have primary data
-        t = _aggregate(paths)
-        if t is None:
-            errors += 1
-            log.debug("Parse failed for LB-%d (xref-only, %d files)", lb, len(paths))
-            continue
-        rows.append((lb, t["drop"], t["clip"], t["horz"], t["vert"], len(paths)))
-
-    log.info("Parsed %d LBs (%d errors)", len(rows), errors)
+    log.info("Parsed %d filesets (%d errors)", len(rows), errors)
 
     if dry_run:
         log.info("[dry-run] Would write %d rows — no DB changes made", len(rows))
@@ -212,12 +225,12 @@ def parse_and_store(
 
     conn = sqlite3.connect(str(db_path))
     try:
-        conn.executescript(_DFF_SCHEMA)
+        _ensure_schema(conn)
         conn.executemany(
             """INSERT OR REPLACE INTO dff_reports
-               (lb_number, drop_occ, clip_occ, horz_occ, vert_occ, file_count,
-                parsed_at)
-               VALUES (?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)""",
+               (lb_number, xref, drop_occ, clip_occ, horz_occ, vert_occ,
+                file_count, parsed_at)
+               VALUES (?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)""",
             rows,
         )
         conn.commit()
@@ -229,7 +242,11 @@ def parse_and_store(
 
 
 def _print_summary(db_path: Path | None = None) -> None:
-    """Print correlation of DFF vert_occ with LB rating (quick validation)."""
+    """Print correlation of DFF vert_occ with LB rating (quick validation).
+
+    Restricted to canonical (``xref = 0``) rows so each LB contributes once;
+    alternate-fileset rows would otherwise fan out the join.
+    """
     db_path = db_path or DB_PATH
     conn = sqlite3.connect(str(db_path))
     try:
@@ -237,7 +254,7 @@ def _print_summary(db_path: Path | None = None) -> None:
             SELECT e.rating, d.vert_occ
             FROM dff_reports d
             JOIN entries e ON d.lb_number = e.lb_number
-            WHERE e.rating IS NOT NULL
+            WHERE e.rating IS NOT NULL AND d.xref = 0
         """).fetchall()
     finally:
         conn.close()
