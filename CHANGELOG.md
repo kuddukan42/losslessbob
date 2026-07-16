@@ -14,8 +14,22 @@ Added: en.json library.picks.taperPropagatedTitle + DeepL sync de/fr/es/it/nl (4
 Verified: taper_attribution 26 tests green; gui-check PASS (node+renderer types, build);
   live /api/library/badges: 2,657 taperConfirmed + 4,023 taperPropagated (4,045 review minus
   22 conflicts); tj's original pair resolves — LB-10678 solid 'ltf', LB-14922 outline 'ltf'.
-Not done (optional Q2 leftovers, revive on request): backfill 17 NULL
-  tapematch_family_meta.review_reason rows; pill legend entry.
+Follow-up same day (tj: "do the backfill and legend too") — Q2 leftovers shipped:
+Fixed: tapematch_sync.py _parse_verdict only extracted reasons from the canonical
+  "needs review — <reason>" form; the corpus also has "needs review: <reason>" and
+  "needs review (<reason>)" variants whose reasons were silently dropped (the actual root
+  cause of the 17 NULL review_reason rows). Parser now accepts all three delimiters;
+  3 new tests (43 green). Note: sync reads analysis.md from archive_dir (<run_id>_<date>);
+  bare <run_id> dirs under data/tapematch/runs/ are stray empties.
+Changed: one-off backfill of the 17 flagged NULL-reason tapematch_family_meta rows (5 runs) —
+  4 runs re-parsed with the fixed parser; run 20260615_154028's verdict is bare "needs review"
+  so its reason was hand-derived from the analysis body (LB-12192-vs-4378 commentary
+  contradiction, LB-06940 inflated ingest, LB-01489 not on disk). 0 NULL-reason flagged rows
+  remain; reasons verified live in /api/tapematch/families.
+Added: ScreenLibrary LegendMenu — "Legend" popover (FilterMenu pattern, both lenses' toolbars)
+  with live Pill samples: ★ recommended, solid/outline/mute taper pills, Needs review, family
+  best, curated pick. en.json library.legend.* + DeepL sync (6,210 chars).
+Verified: gui-check PASS (node+renderer types, build).
 
 [2026-07-16] — feat(backend): taper alias curation conduit — add/remove known-taper handles without code edits (TODO-241)
 Context: TODO-222 (tj's pick) turned out already shipped+closed 2026-07-14 (stale work-package
