@@ -1,4 +1,12 @@
 
+BUG-254: Flaky test: test_mixed_shn_and_wav_checksums_still_matched fails in full-suite run, passes solo
+Status: Open
+File(s): tests/test_db_lookup.py
+Reported: 2026-07-16
+Description: Failed once in a full 'pytest tests/' run (2026-07-16), passed in isolation and on full-suite re-run — order-dependent state pollution (likely shared temp DB fixture). Not caused by the xref session (no backend changes that day).
+Root cause: Unknown
+Fix: —
+
 BUG-253: pytest suite leaks lb_*_test_* temp dirs and tmp*.wav files into /tmp
 Status: Open
 File(s): tests/,conftest.py
