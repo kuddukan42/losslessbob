@@ -919,6 +919,55 @@ def create_app() -> Flask:
         except Exception as exc:
             return jsonify({"error": str(exc)}), 500
 
+    # ── Site-mirror xref ingest (TODO-252 / B8) ───────────────────────────────
+
+    @app.route("/api/xref_ingest/scan", methods=["POST"])
+    def xref_ingest_scan() -> Response:
+        """Scan the site mirror for new xref checksum filesets and stage them."""
+        from . import xref_ingest as xi
+        try:
+            return jsonify(xi.scan_mirror())
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/xref_ingest/filesets", methods=["GET"])
+    def xref_ingest_filesets() -> Response:
+        """List staged/approved/rejected filesets. Query param: status (optional)."""
+        from . import xref_ingest as xi
+        status = request.args.get("status")
+        try:
+            return jsonify(xi.get_filesets(status=status))
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/xref_ingest/approve", methods=["POST"])
+    def xref_ingest_approve() -> Response:
+        """Approve staged filesets. Body: {ids: [int, ...]}."""
+        from . import xref_ingest as xi
+        body = request.get_json(force=True) or {}
+        try:
+            ids = [int(i) for i in body.get("ids", [])]
+        except (TypeError, ValueError):
+            return jsonify({"error": "ids must be a list of integers"}), 400
+        try:
+            return jsonify(xi.approve_filesets(ids))
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
+    @app.route("/api/xref_ingest/reject", methods=["POST"])
+    def xref_ingest_reject() -> Response:
+        """Reject staged filesets. Body: {ids: [int, ...]}."""
+        from . import xref_ingest as xi
+        body = request.get_json(force=True) or {}
+        try:
+            ids = [int(i) for i in body.get("ids", [])]
+        except (TypeError, ValueError):
+            return jsonify({"error": "ids must be a list of integers"}), 400
+        try:
+            return jsonify(xi.reject_filesets(ids))
+        except Exception as exc:
+            return jsonify({"error": str(exc)}), 500
+
     # ── Entry Detail & Attachments ───────────────────────────────────────────
 
     @app.route("/api/entry/<int:lb_number>", methods=["GET"])
