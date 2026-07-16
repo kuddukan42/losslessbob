@@ -167,16 +167,17 @@ interface StageTrackerProps {
 }
 
 export function StageTracker({
-  folder, stages = DEFAULT_STAGES, currentKey, onPick, size = 30,
+  folder, stages = DEFAULT_STAGES, currentKey, onPick, size = 26,
 }: StageTrackerProps) {
   // Fixed-width connectors keep the group compact and left-aligned (rather than
-  // stretching edge-to-edge), and the generous padding gives the running Pulse
-  // rings — which expand ~22px past each tile — room to breathe on all sides
-  // without being clipped by the column edges.
+  // stretching edge-to-edge), and the padding gives the running Pulse rings —
+  // which expand ~22px past each tile — room to breathe without being clipped
+  // by the column edges. Kept tight so the tracker fits the responsive stages
+  // column at the 1280px minimum window width.
   return (
     <div style={{
       display: 'flex', alignItems: 'center', justifyContent: 'flex-start',
-      padding: '14px 36px',
+      padding: '12px 16px',
     }}>
       {stages.map((st, i) => {
         const stepData = folder.steps[st.key] ?? { state: 'mute' as StepState }
@@ -195,7 +196,7 @@ export function StageTracker({
             </button>
             {next && (
               <span style={{
-                flex: '0 0 18px', height: 2, margin: '0 4px',
+                flex: '0 0 12px', height: 2, margin: '0 3px',
                 background: state === 'pass' ? 'var(--lbb-ok-bar)' : 'var(--lbb-border2)',
                 borderRadius: 2,
               }} />

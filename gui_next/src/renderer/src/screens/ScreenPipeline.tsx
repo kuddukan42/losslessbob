@@ -2194,7 +2194,8 @@ export function ScreenPipeline(): React.JSX.Element {
       <div style={{
         padding: '12px 24px', borderBottom: '1px solid var(--lbb-border)',
         background: 'linear-gradient(180deg, var(--lbb-accent-soft) 0%, transparent 140%)',
-        display: 'flex', alignItems: 'center', gap: 16, flexShrink: 0,
+        display: 'flex', alignItems: 'center', gap: 16, rowGap: 10, flexWrap: 'wrap',
+        flexShrink: 0,
       }}>
         {/* Icon square */}
         <div style={{
@@ -2576,10 +2577,10 @@ export function ScreenPipeline(): React.JSX.Element {
                   <col style={{ width: 3 }} />
                   <col style={{ width: 32 }} />
                   <col />
-                  <col style={{ width: 340 }} />
-                  <col style={{ width: 420 }} />
-                  <col style={{ width: 104 }} />
-                  <col style={{ width: 160 }} />
+                  <col style={{ width: 236 }} />
+                  <col style={{ width: 300 }} />
+                  <col style={{ width: 88 }} />
+                  <col style={{ width: 132 }} />
                 </colgroup>
                 <thead>
                   <tr>
