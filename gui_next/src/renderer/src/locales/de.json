@@ -195,8 +195,7 @@
       "matched": "Abgestimmt",
       "incomplete": "Unvollständig",
       "notfound": "Nicht gefunden",
-      "duplicate": "Duplizieren Sie",
-      "xref": "XRef"
+      "duplicate": "Duplizieren Sie"
     },
     "notFoundHint": "Entweder handelt es sich um einen neuen Eintrag, der der Master-DB noch nicht bekannt ist, oder die Prüfsummen stimmen nicht mit den vorhandenen Daten überein.",
     "footer": {
@@ -225,7 +224,8 @@
       "unverifiedNote": "noch nicht von lbdir verifiziert",
       "badgeOwned": "In der Sammlung",
       "badgeVerified": "In der Sammlung · verifiziert"
-    }
+    },
+    "xrefPill": "Xref-Dateisatz · {{id}}"
   },
   "verify": {
     "title": "Überprüfen Sie",
@@ -716,7 +716,6 @@
     },
     "detail": {
       "owned": "Eigene",
-      "xref": "Xref",
       "folder": "Mappe",
       "diskPath": "Pfad zur Festplatte",
       "size": "Größe",
@@ -751,7 +750,9 @@
       "noTorrents": "Keine Torrent-Aufzeichnungen.",
       "noForumHistory": "Keine Forumshistorie.",
       "forumLoadError": "Forumhistorie konnte nicht geladen werden.",
-      "delRecord": "Aufzeichnung"
+      "delRecord": "Aufzeichnung",
+      "xrefCopy": "Xref-Dateisatz · xref-{{id}}",
+      "altFilesetsNote": "Für diesen Eintrag dokumentierte alternative Dateisätze"
     },
     "confirmDelete": {
       "torrentTitle": ".torrent-Datei löschen",
@@ -843,6 +844,10 @@
       "foundCount": "{{count}} wurde in Ihrer Sammlung gefunden",
       "missingCount": "{{count}} nicht gefunden: {{list}}",
       "postButton": "Beitrag {{count}}"
+    },
+    "filters": {
+      "xrefCopies": "Meine XRef-Kopien",
+      "altFilesets": "Einträge mit alternativen Dateisätzen"
     }
   },
   "map": {
@@ -1297,7 +1302,8 @@
       "clipboardEmpty": "Zwischenablage ist leer",
       "clipboardFailed": "Zwischenablage kann nicht gelesen werden",
       "noValidFiles": "Keine Prüfsummendateien gefunden (.md5, .ffp, .st5, .sha1)"
-    }
+    },
+    "xrefPill": "Xref-Dateisatz · {{id}}"
   },
   "archiveOrg": {
     "title": "Upload auf Archive.org",
@@ -1531,7 +1537,6 @@
       "notOwned": "Nicht in meinem Besitz",
       "wishlist": "Wunschliste",
       "dup": "dup",
-      "xref": "xref",
       "folder": "Ordner",
       "confirmed": "Bestätigt",
       "rating": "Bewertung",
@@ -1558,7 +1563,13 @@
       "needsReview": "Muss noch überprüft werden",
       "tabPicks": "Auswahl",
       "tabTaper": "Taper",
-      "tabOlof": "Olof"
+      "tabOlof": "Olof",
+      "altFilesets": "Alternative Dateisätze",
+      "checksumsLabel": "Prüfsummen",
+      "checksumsCanonical_one": "Canonical ({{count}}-Datei)",
+      "checksumsCanonical_other": "Canonical ({{count}}-Dateien)",
+      "checksumsXrefGroup_one": "xref-{{id}} ({{count}}-Datei)",
+      "checksumsXrefGroup_other": "xref-{{id}} ({{count}}-Dateien)"
     },
     "coverage": {
       "ownedFull": "Zugeordnet zu {{owned}}/{{total}}",

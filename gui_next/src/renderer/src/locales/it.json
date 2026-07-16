@@ -195,8 +195,7 @@
       "matched": "Abbinato",
       "incomplete": "Incompleto",
       "notfound": "Non trovato",
-      "duplicate": "Duplicato",
-      "xref": "XRef"
+      "duplicate": "Duplicato"
     },
     "notFoundHint": "O si tratta di una nuova voce di cui il DB principale non è ancora a conoscenza, oppure le checksum non corrispondono a quelle presenti nel file.",
     "footer": {
@@ -225,7 +224,8 @@
       "unverifiedNote": "non ancora verificato da lbdir",
       "badgeOwned": "Nella raccolta",
       "badgeVerified": "Nella raccolta · verificato"
-    }
+    },
+    "xrefPill": "Set di file Xref · {{id}}"
   },
   "verify": {
     "title": "Verifica",
@@ -512,7 +512,7 @@
       "recheckRoute": "Ricontrolla il percorso",
       "addedTitle": "Aggiunto alla raccolta",
       "lbLabel": "LB#",
-      "mountLabelText": "Mount",
+      "mountLabelText": "Montare",
       "cantFile": "Impossibile archiviare",
       "unknownError": "Errore sconosciuto",
       "lastStepInfo": "Questo è l’ultimo passaggio: il collegamento a «La mia raccolta». Una volta che il sidecar si è sincronizzato in LBDIR, la cartella viene indirizzata al punto di montaggio di archiviazione corretto, spostata lì e contrassegnata come di proprietà. Completa prima le fasi precedenti oppure utilizza «Contrassegna come completato» in qualsiasi fase per aggirare i blocchi e procedere da qui.",
@@ -716,7 +716,6 @@
     },
     "detail": {
       "owned": "Di proprietà",
-      "xref": "Riferimento incrociato",
       "folder": "Cartella",
       "diskPath": "Percorso del disco",
       "size": "Dimensione",
@@ -751,7 +750,9 @@
       "noTorrents": "Nessun record di torrent.",
       "noForumHistory": "Nessuna storia del forum.",
       "forumLoadError": "Impossibile caricare la cronologia del forum.",
-      "delRecord": "Elimina record"
+      "delRecord": "Elimina record",
+      "xrefCopy": "Set di file Xref · xref-{{id}}",
+      "altFilesetsNote": "Set di file alternativi documentati per questa voce"
     },
     "confirmDelete": {
       "torrentTitle": "Eliminare il file .torrent",
@@ -843,6 +844,10 @@
       "foundCount": "{{count}} trovato nella tua raccolta",
       "missingCount": "{{count}} non trovato: {{list}}",
       "postButton": "Post {{count}}"
+    },
+    "filters": {
+      "xrefCopies": "Le mie copie di riferimenti incrociati",
+      "altFilesets": "Voci con set di file alt"
     }
   },
   "map": {
@@ -1297,7 +1302,8 @@
       "clipboardEmpty": "Gli appunti sono vuoti",
       "clipboardFailed": "Impossibile leggere gli appunti",
       "noValidFiles": "Nessun file di checksum trovato (.md5, .ffp, .st5, .sha1)"
-    }
+    },
+    "xrefPill": "Set di file Xref · {{id}}"
   },
   "archiveOrg": {
     "title": "Caricamento su Archive.org",
@@ -1531,7 +1537,6 @@
       "notOwned": "Non di proprietà",
       "wishlist": "Lista dei desideri",
       "dup": "dup",
-      "xref": "xref",
       "folder": "Cartella",
       "confirmed": "Confermato",
       "rating": "Valutazione",
@@ -1558,7 +1563,13 @@
       "needsReview": "Da revisionare",
       "tabPicks": "Selezioni",
       "tabTaper": "Taper",
-      "tabOlof": "Olof"
+      "tabOlof": "Olof",
+      "altFilesets": "Set di file alternativi",
+      "checksumsLabel": "Checksum",
+      "checksumsCanonical_one": "Canonical (file {{count}})",
+      "checksumsCanonical_other": "Canonical (file {{count}})",
+      "checksumsXrefGroup_one": "xref-{{id}} (file {{count}})",
+      "checksumsXrefGroup_other": "xref-{{id}} (file {{count}})"
     },
     "coverage": {
       "ownedFull": "Di proprietà di {{owned}}/{{total}}",

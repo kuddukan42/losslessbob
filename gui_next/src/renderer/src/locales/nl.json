@@ -135,7 +135,7 @@
       "sitedataCore": "Gecacheerde webpagina’s installeren",
       "mounts": "Een verzameling koppelen",
       "collection": "Scan je collectie",
-      "openWizard": "Open",
+      "openWizard": "Openen",
       "goToMounts": "Ga naar Mounts",
       "goToPipeline": "Ga naar Pipeline"
     }
@@ -195,8 +195,7 @@
       "matched": "Bijpassend",
       "incomplete": "Onvolledig",
       "notfound": "Niet gevonden",
-      "duplicate": "Dubbele",
-      "xref": "XRef"
+      "duplicate": "Dubbele"
     },
     "notFoundHint": "Of dit is een nieuw item waar de master DB nog niets van weet, of de checksums komen niet overeen met wat er in het bestand staat.",
     "footer": {
@@ -225,7 +224,8 @@
       "unverifiedNote": "nog niet door lbdir geverifieerd",
       "badgeOwned": "In collectie",
       "badgeVerified": "In collectie · geverifieerd"
-    }
+    },
+    "xrefPill": "Xref-bestandsset · {{id}}"
   },
   "verify": {
     "title": "Controleer",
@@ -246,7 +246,7 @@
     "stats": {
       "total": "Totaal",
       "pass": "Pas",
-      "mismatch": "Mismatch",
+      "mismatch": "Afwijking",
       "missing": "Ontbreekt",
       "extra": "Extra",
       "ffp": "FFP",
@@ -262,7 +262,7 @@
     },
     "states": {
       "pass": "Pas",
-      "mismatch": "Mismatch",
+      "mismatch": "Afwijking",
       "fail": "Mislukt - ontbrekende bestanden",
       "incomplete": "Onvolledig",
       "shntool": "shntool ontbreekt",
@@ -425,7 +425,7 @@
       "readyToRename": "Klaar om te hernoemen",
       "done": "Gedaan",
       "notFound": "Niet gevonden",
-      "mismatch": "Mismatch",
+      "mismatch": "Afwijking",
       "incomplete": "Onvolledig",
       "filterFolders": "Mappen filteren..."
     },
@@ -551,7 +551,7 @@
         "total": "Totaal",
         "pass": "Pass",
         "missing": "Ontbreekt",
-        "mismatch": "Mismatch",
+        "mismatch": "Afwijking",
         "extra": "Extra"
       },
       "missingFiles_one": "Het bestand {{count}} in de checksumlijst staat niet op de schijf. Herstel de ontbrekende bestanden en controleer vervolgens opnieuw.",
@@ -651,7 +651,7 @@
         "total": "Totaal",
         "pass": "Pass",
         "missing": "Ontbreekt",
-        "mismatch": "Mismatch"
+        "mismatch": "Afwijking"
       },
       "noLbdirFound": "Geen lbdir*.txt gevonden. Probeer de invoer uit het LBDIR-scherm te kopiëren.",
       "archiveCleanTitle": "Archiefschoon",
@@ -716,7 +716,6 @@
     },
     "detail": {
       "owned": "Eigendom",
-      "xref": "Xref",
       "folder": "Map",
       "diskPath": "Schijfpad",
       "size": "Maat",
@@ -751,7 +750,9 @@
       "noTorrents": "Geen torrentrecords.",
       "noForumHistory": "Geen forumgeschiedenis.",
       "forumLoadError": "Forum geschiedenis laden mislukt.",
-      "delRecord": "Opname verwijderen"
+      "delRecord": "Opname verwijderen",
+      "xrefCopy": "Xref-bestandsset · xref-{{id}}",
+      "altFilesetsNote": "Alt-bestandsets gedocumenteerd voor dit item"
     },
     "confirmDelete": {
       "torrentTitle": ".torrent-bestand verwijderen",
@@ -843,6 +844,10 @@
       "foundCount": "{{count}} gevonden in uw collectie",
       "missingCount": "{{count}} niet gevonden: {{list}}",
       "postButton": "Bericht {{count}}"
+    },
+    "filters": {
+      "xrefCopies": "Mijn xref-kopieën",
+      "altFilesets": "Items met alt-bestandsets"
     }
   },
   "map": {
@@ -1297,7 +1302,8 @@
       "clipboardEmpty": "Klembord is leeg",
       "clipboardFailed": "Kan klembord niet lezen",
       "noValidFiles": "Geen controlesombestanden gevonden (.md5, .ffp, .st5, .sha1)"
-    }
+    },
+    "xrefPill": "Xref-bestandsset · {{id}}"
   },
   "archiveOrg": {
     "title": "Uploaden naar Archive.org",
@@ -1531,7 +1537,6 @@
       "notOwned": "Niet in bezit",
       "wishlist": "Verlanglijstje",
       "dup": "dup",
-      "xref": "xref",
       "folder": "Map",
       "confirmed": "Bevestigd",
       "rating": "Beoordeling",
@@ -1558,7 +1563,13 @@
       "needsReview": "Moet worden gecontroleerd",
       "tabPicks": "Selecties",
       "tabTaper": "Taper",
-      "tabOlof": "Olof"
+      "tabOlof": "Olof",
+      "altFilesets": "Alternatieve bestandsets",
+      "checksumsLabel": "Checksums",
+      "checksumsCanonical_one": "Canonical ({{count}}-bestand)",
+      "checksumsCanonical_other": "Canonical ({{count}}-bestanden)",
+      "checksumsXrefGroup_one": "xref-{{id}} ({{count}}-bestand)",
+      "checksumsXrefGroup_other": "xref-{{id}} ({{count}}-bestanden)"
     },
     "coverage": {
       "ownedFull": "Eigen {{owned}}/{{total}}",

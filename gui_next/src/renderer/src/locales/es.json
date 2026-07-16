@@ -195,8 +195,7 @@
       "matched": "Emparejado",
       "incomplete": "Incompleto",
       "notfound": "No se ha encontrado",
-      "duplicate": "Duplicar",
-      "xref": "XRef"
+      "duplicate": "Duplicar"
     },
     "notFoundHint": "O bien se trata de una nueva entrada que la base de datos principal aún no conoce, o bien las sumas de comprobación no coinciden con lo que hay en el archivo.",
     "footer": {
@@ -225,7 +224,8 @@
       "unverifiedNote": "Aún no verificado por lbdir",
       "badgeOwned": "En la colección",
       "badgeVerified": "En la colección · verificado"
-    }
+    },
+    "xrefPill": "Conjunto de archivos de referencia cruzada · {{id}}"
   },
   "verify": {
     "title": "Verifique",
@@ -716,7 +716,6 @@
     },
     "detail": {
       "owned": "Propiedad",
-      "xref": "Referencia cruzada",
       "folder": "Carpeta",
       "diskPath": "Ruta del disco",
       "size": "Talla",
@@ -751,7 +750,9 @@
       "noTorrents": "No hay registros de torrents.",
       "noForumHistory": "Sin historial en el foro.",
       "forumLoadError": "Error al cargar el historial del foro.",
-      "delRecord": "Eliminar registro"
+      "delRecord": "Eliminar registro",
+      "xrefCopy": "Conjunto de archivos Xref · xref-{{id}}",
+      "altFilesetsNote": "Conjuntos de archivos alternativos documentados para esta entrada"
     },
     "confirmDelete": {
       "torrentTitle": "Eliminar archivo .torrent",
@@ -843,6 +844,10 @@
       "foundCount": "{{count}} encontrado en tu colección",
       "missingCount": "{{count}} no encontrado: {{list}}",
       "postButton": "Publicación {{count}}"
+    },
+    "filters": {
+      "xrefCopies": "Mis copias de referencias cruzadas",
+      "altFilesets": "Entradas con conjuntos de archivos alternativos"
     }
   },
   "map": {
@@ -1297,7 +1302,8 @@
       "clipboardEmpty": "El portapapeles está vacío",
       "clipboardFailed": "No se puede leer el portapapeles",
       "noValidFiles": "No se encontraron archivos de suma de verificación (.md5, .ffp, .st5, .sha1)"
-    }
+    },
+    "xrefPill": "Conjunto de archivos de referencia cruzada · {{id}}"
   },
   "archiveOrg": {
     "title": "Subida a Archive.org",
@@ -1531,7 +1537,6 @@
       "notOwned": "No es de mi propiedad",
       "wishlist": "Lista de deseos",
       "dup": "dup",
-      "xref": "xref",
       "folder": "Carpeta",
       "confirmed": "Confirmado",
       "rating": "Valoración",
@@ -1558,7 +1563,13 @@
       "needsReview": "Necesita revisión",
       "tabPicks": "Selecciones",
       "tabTaper": "Taper",
-      "tabOlof": "Olof"
+      "tabOlof": "Olof",
+      "altFilesets": "Conjuntos de archivos alternativos",
+      "checksumsLabel": "Sumas de comprobación",
+      "checksumsCanonical_one": "Canonical (archivo {{count}})",
+      "checksumsCanonical_other": "Canonical (archivos {{count}})",
+      "checksumsXrefGroup_one": "xref-{{id}} (archivo {{count}})",
+      "checksumsXrefGroup_other": "xref-{{id}} (archivos {{count}})"
     },
     "coverage": {
       "ownedFull": "Propiedad de {{owned}}/{{total}}",

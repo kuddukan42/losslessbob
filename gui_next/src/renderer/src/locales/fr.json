@@ -195,8 +195,7 @@
       "matched": "Apparié",
       "incomplete": "Incomplet",
       "notfound": "Non trouvé",
-      "duplicate": "Duplicata",
-      "xref": "XRef"
+      "duplicate": "Duplicata"
     },
     "notFoundHint": "Soit il s'agit d'une nouvelle entrée dont la base de données principale n'a pas encore connaissance, soit les sommes de contrôle ne correspondent pas à ce qui se trouve dans le fichier.",
     "footer": {
@@ -225,7 +224,8 @@
       "unverifiedNote": "pas encore vérifié par lbdir",
       "badgeOwned": "Dans la collection",
       "badgeVerified": "Dans la collection · vérifié"
-    }
+    },
+    "xrefPill": "Ensemble de fichiers Xref · {{id}}"
   },
   "verify": {
     "title": "Vérifier",
@@ -716,7 +716,6 @@
     },
     "detail": {
       "owned": "Propriétaire",
-      "xref": "Référence croisée",
       "folder": "Dossier",
       "diskPath": "Chemin d'accès au disque",
       "size": "Taille",
@@ -751,7 +750,9 @@
       "noTorrents": "Aucun enregistrement de torrent.",
       "noForumHistory": "Pas d'historique de forum.",
       "forumLoadError": "Échec du chargement de l'historique du forum.",
-      "delRecord": "Enregistrement Del"
+      "delRecord": "Enregistrement Del",
+      "xrefCopy": "Ensemble de fichiers Xref · xref-{{id}}",
+      "altFilesetsNote": "Ensembles de fichiers « Alt » documentés pour cette entrée"
     },
     "confirmDelete": {
       "torrentTitle": "Supprimer un fichier .torrent",
@@ -843,6 +844,10 @@
       "foundCount": "{{count}} trouvé dans votre collection",
       "missingCount": "{{count}} introuvable : {{list}}",
       "postButton": "Post {{count}}"
+    },
+    "filters": {
+      "xrefCopies": "Mes copies de références croisées",
+      "altFilesets": "Entrées avec des jeux de fichiers alternatifs"
     }
   },
   "map": {
@@ -1297,7 +1302,8 @@
       "clipboardEmpty": "Le presse-papiers est vide",
       "clipboardFailed": "Impossible de lire le presse-papiers",
       "noValidFiles": "Aucun fichier de somme de contrôle trouvé (.md5, .ffp, .st5, .sha1)"
-    }
+    },
+    "xrefPill": "Ensemble de fichiers Xref · {{id}}"
   },
   "archiveOrg": {
     "title": "Mise en ligne sur Archive.org",
@@ -1531,7 +1537,6 @@
       "notOwned": "Non détenu",
       "wishlist": "Liste de souhaits",
       "dup": "dup",
-      "xref": "xref",
       "folder": "Dossier",
       "confirmed": "Confirmé",
       "rating": "Évaluation",
@@ -1558,7 +1563,13 @@
       "needsReview": "À vérifier",
       "tabPicks": "Sélection",
       "tabTaper": "Taper",
-      "tabOlof": "Olof"
+      "tabOlof": "Olof",
+      "altFilesets": "Ensembles de fichiers alternatifs",
+      "checksumsLabel": "Sommes de contrôle",
+      "checksumsCanonical_one": "Canonical (fichier {{count}})",
+      "checksumsCanonical_other": "Canonical (fichiers {{count}})",
+      "checksumsXrefGroup_one": "xref-{{id}} (fichier {{count}})",
+      "checksumsXrefGroup_other": "xref-{{id}} (fichiers {{count}})"
     },
     "coverage": {
       "ownedFull": "Propriétaire : {{owned}}/{{total}}",
