@@ -2694,6 +2694,45 @@ def lookup_checksums(parsed_entries, db_path=None):
         if s["duplicates"] == s["given"] and s["status"] == "INCOMPLETE":
             s["status"] = "DUPLICATE"
 
+    # xref_groups / matched_xref (FABLE_XREF_INCORPORATION.md D1): expose, per LB,
+    # which (lb, xref) fileset group(s) the input touched and which one "won" —
+    # this is a re-packaging of _lb_xref_missing / lb_xref_to_matched, already
+    # computed above for the reverse-lookup completeness check, not new analysis.
+    # No new lookup status is introduced; copy-level xref stays a dimension
+    # (matched_xref) orthogonal to MATCHED/INCOMPLETE/DUPLICATE.
+    _group_stats: dict = {}
+    for item in detail:
+        if item.get("ignored"):
+            continue
+        lb = item["lb_number"]
+        if lb is None:
+            continue
+        key = (lb, item["xref"])
+        gstats = _group_stats.setdefault(key, {"given": 0, "matched": 0})
+        gstats["given"] += 1
+        if item["status"] in ("MATCHED", "MATCHED (INCOMPLETE)"):
+            gstats["matched"] += 1
+
+    for s in lb_summary.values():
+        lb = s["lb_number"]
+        groups = [
+            {
+                "xref": gxref,
+                "given": gstats["given"],
+                "matched": gstats["matched"],
+                "missing": len(_lb_xref_missing.get((glb, gxref), set())),
+            }
+            for (glb, gxref), gstats in _group_stats.items()
+            if glb == lb
+        ]
+        groups.sort(key=lambda g: g["xref"])
+        s["xref_groups"] = groups
+        # Winning group = fewest missing files; ties broken by lowest xref id,
+        # so canonical (0) wins ties against any alternate fileset group.
+        s["matched_xref"] = (
+            min(groups, key=lambda g: (g["missing"], g["xref"]))["xref"] if groups else 0
+        )
+
     summary = {
         "given": len(parsed_entries),
         "matched": sum(1 for d in detail if d["lb_number"] is not None),

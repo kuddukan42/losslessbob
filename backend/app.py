@@ -1199,10 +1199,12 @@ def create_app() -> Flask:
 
     @app.route("/api/checksums/xref_map", methods=["GET"])
     def xref_map() -> Response:
-        """Return a mapping of xref identifiers to their canonical LB numbers.
+        """Return, per LB entry, the alternate xref fileset ids documented for it.
 
         Returns:
-            JSON dict {xref_id: lb_number}.
+            JSON dict {lb_number: [xref ids]} (entry-level: which LBs have
+            alternate circulating filesets, and which fileset ids those are —
+            see docs/XREF_SEMANTICS.md §3).
         """
         try:
             return jsonify(database.get_xref_map())
