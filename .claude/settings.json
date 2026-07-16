@@ -15,10 +15,6 @@
       "Read(/home/tjenkins/.aws/**)",
       "Read(/home/tjenkins/.kube/**)",
       "Read(/home/tjenkins/.netrc)",
-      "Write(/home/tjenkins/.ssh/**)",
-      "Write(/home/tjenkins/.gnupg/**)",
-      "Write(/home/tjenkins/.aws/**)",
-      "Write(/home/tjenkins/.kube/**)",
       "Edit(/home/tjenkins/.ssh/**)",
       "Edit(/home/tjenkins/.gnupg/**)",
       "Edit(/home/tjenkins/.aws/**)",
@@ -26,10 +22,10 @@
       "Read(/etc/shadow)",
       "Read(/etc/sudoers)",
       "Read(/root/**)",
-      "Write(/etc/**)",
-      "Write(/root/**)",
-      "Write(/usr/**)",
-      "Write(/var/**)"
+      "Edit(/etc/**)",
+      "Edit(/root/**)",
+      "Edit(/usr/**)",
+      "Edit(/var/**)"
     ]
   },
   "hooks": {
