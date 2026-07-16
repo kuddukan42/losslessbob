@@ -1,3 +1,21 @@
+[2026-07-16] — chore(docs): repo sweep — stray root files and dead Qt scripts moved to attic/
+Context: root had ~19 stray one-off reports/artifacts; grep-verified nothing in live code
+  references any of them (attic/README.md documents each file's origin and verdict).
+Added: attic/ + attic/README.md — holding pen for deletion candidates, tj to review/purge.
+Changed: moved to attic/ — 4 wtrf_*.md reports, shared_checksums_report.md,
+  missing_from_collection.tsv, public_not_owned.html, scan.json, batch_verify_run.log,
+  notes.todo (pre-TODO.md Qt-era notes, all items done/superseded), 0-byte root
+  observations.db + losslessbob.db strays, losslessbob.tar.gz, screenshot_log.txt +
+  screenshot-lookup.png, tools/tapematch/observations.db.bak-20260612 (month-old backup),
+  and Qt-era scripts/{build_qm,port_qt_to_json,fix_ts,fix_ts2}.py (dead since GUI removal;
+  scripts/deepl_translate_gui_next.py kept — used by /gui-next-i18n).
+Changed: .gitignore: attic/observations.db.bak-* line (other moved blobs already covered
+  by bare-name patterns).
+Removed: .claude/worktrees/* — 19 stale agent worktrees, 68 MB (gitignored, no log entry
+  impact). Left alone by decision: tapematch .venv-emb/.venv-nmfp (staircase rescore may
+  still use fp code), docs/screenshots (live, wiki-referenced). CHANGELOG rotation checked:
+  May already archived 07-06, June not due until August.
+
 [2026-07-16] — chore(gui): legacy PyQt6 GUI removed — gui_next is the sole frontend
 Context: spec'd and executed same-session (instructions/complete/LEGACY_GUI_REMOVAL_SPEC.md);
   tj signed off D1=delete Docker stack, D5=no frozen-build users. 4 commits (a4326e47,
