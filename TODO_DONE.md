@@ -1,6 +1,27 @@
 # Completed TODO Archive
 # Active/open tasks are in TODO.md. Entries here are Done or Cancelled.
 
+TODO-242: Clarify taper propagation and "Needs review" flags in library view
+Priority: Medium
+Status: Done
+Added: 2026-07-14
+Findings (2026-07-15): (1) Propagation WORKS — taper_attributions has ltf on BOTH LBs:
+  LB-10678 confidence='confirmed' (series_code) and LB-14922 confidence='propagated'
+  (evidence same_as LB-10678, computed 2026-07-14 17:57). _propagate_strong does traverse
+  same_as (taper_attribution.py:473). The asymmetry seen in the library is the SPEC'D
+  confirmed-only pill policy: ScreenLibrary.tsx:103-106 gives a taper pill only to
+  confidence='confirmed' rows; propagated rows are surfaced via the 'taperReview' filter
+  instead. Decision needed: keep confirmed-only pills, or add a visually-distinct
+  (e.g. outline) pill for propagated tier. (2) "Needs review" is NOT attribution conflict —
+  it is tapematch_family_meta.review_flag (family-level, set from tapematch analysis
+  verdicts), and the pill ALREADY shows the specific review_reason as a hover tooltip
+  (ScreenLibrary.tsx:2485, falls back to generic text). Residual gap: 17 flagged families
+  have NULL review_reason → generic tooltip only. Optional follow-ups: backfill those 17
+  reasons from their runs' analysis.md, and/or a legend entry.
+Closed: 2026-07-16
+Description: Two UI clarity issues discovered in library view (1996 filtered): (1) Taper propagation across families — LB-14922 is tagged "ltf" but links to same_as LB-10678; the library view doesn't clarify whether these should show matching tapers or if the propagation failed. Check recording_families flood-fill logic (backend/taper_attribution.py _propagate_strong) — does it traverse same_as links? If yes, why isn't LB-10678 also showing "ltf"? If no, should it? (2) "Needs review" badge visibility — multiple recordings (LB-07911, LB-16158, Family A, LB-13789, LB-03987, LB-18258, LB-14779, LB-13159) display "Needs review" without clear signal what triggered it. Is it: attribution conflict? quality concern? incomplete metadata (missing venue/tour/notes)? The backend must set this flag somewhere — trace it (likely taper_attributions.conflict=1 or a quality_flag column, or missing venue gazetteer entry). Add a tooltip or legend in the library UI to explain. Related: [TODO-241] (taper curation), [TODO-236] (attribution flowchart), [TODO-234] (series-vs-series conflicts).
+Both questions answered (07-15 investigation) and the decision shipped 2026-07-16: tj chose to display propagated attributions as visually-distinct outline pills. Backend emits taperPropagated (conflict-free propagated rows) in /api/library/badges + /api/library/performances; ScreenLibrary renders outline info pills with explanatory tooltip at all three pill sites; locales synced. 'Needs review' was confirmed to be tapematch_family_meta.review_flag with reason tooltips already present. Optional leftovers NOT done: backfill 17 NULL review_reason rows, legend entry — open a small TODO if wanted.
+
 TODO-241: Build UI/CLI conduit for taper curation — add/remove from known list without code changes
 Priority: Medium
 Status: Done
